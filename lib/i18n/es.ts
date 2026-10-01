@@ -200,22 +200,12 @@ const es: Strings = {
   },
   credits: {
     title: 'Créditos',
-    body:
-      'Datos de frecuencia de palabras: FrequencyWords de Hermit Dave, CC BY-SA 4.0, derivado del ' +
-      'corpus OpenSubtitles 2018. Las listas de palabras de esta app son una obra adaptada y se ' +
-      'comparten bajo CC BY-SA 4.0.',
     cefrjBody:
       'Lista de palabras de inglés B1: The CEFR-J Wordlist Version 1.5, compilada por Yukio Tono, ' +
       'Universidad de Estudios Extranjeros de Tokio (cefr-j.org). Se usa según sus términos para ' +
       'investigación y uso comercial, con atribución.',
     cefrjLabel: 'github.com/openlanguageprofiles/olp-en-cefrj',
     cefrjUrl: 'https://github.com/openlanguageprofiles/olp-en-cefrj',
-    frequencyWordsLabel: 'github.com/hermitdave/FrequencyWords',
-    frequencyWordsUrl: 'https://github.com/hermitdave/FrequencyWords',
-    openSubtitlesLabel: 'opus.nlpl.eu',
-    openSubtitlesUrl: 'https://opus.nlpl.eu',
-    licenseLabel: 'creativecommons.org/licenses/by-sa/4.0',
-    licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0',
   },
   feedback: {
     button: 'Comentarios',

@@ -12,7 +12,8 @@
 import { existsSync, readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
 
-import { LEVELS, words } from '@/data/words';
+import { LEVELS } from '@/data/words';
+import { openWords } from '@/data/openWords';
 
 const SV_DIR = join(__dirname, '../../data/words/sv');
 const SURFACE_LANGS = ['es', 'hu', 'en', 'de', 'sv'] as const;
@@ -44,7 +45,7 @@ describe('Swedish corpus', () => {
   it('gives every entry a unique id, above the range the other tracks use', () => {
     const ids = entries.map((w) => Number(w.id));
     expect(new Set(ids).size).toBe(ids.length);
-    const shared = new Set(words.map((w) => w.id));
+    const shared = new Set(openWords.map((w) => w.id));
     for (const id of ids) {
       expect(id).toBeGreaterThanOrEqual(SV_ID_FLOOR);
       expect(shared.has(id)).toBe(false);

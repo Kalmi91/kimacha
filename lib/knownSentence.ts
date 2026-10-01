@@ -4,6 +4,7 @@
 // alakja, feloldott igeidőben ragozott tanult ige, vagy szabad szó (névelő,
 // elöljáró, kötőszó). Tiszta modul: nincs adatbázis, nincs korpusz-import.
 
+import { esFeminine, esPlural } from '@/lib/esInflect';
 import { conjugate, TENSES, type Tense } from '@/lib/games/conjugate';
 import { detectStructures, tokenize, type Structure } from '@/lib/grammar/tenseGate';
 import type { Sm2Card } from '@/lib/sm2';
@@ -54,7 +55,6 @@ const UNMODELED_STRUCTURES: ReadonlySet<Structure> = new Set<Structure>([
 ]);
 
 const ES_INFINITIVE = /^[a-záéíóúñü]+(ar|er|ir)$/;
-const ACCENT_DROP: Record<string, string> = { á: 'a', é: 'e', í: 'i', ó: 'o', ú: 'u' };
 const ACCENT_ADD: Record<string, string> = { a: 'á', e: 'é', i: 'í', o: 'ó', u: 'ú' };
 
 /**
@@ -110,29 +110,6 @@ function enTokenize(text: string): string[] {
     .split(/\s+/)
     .map((t) => t.replace(/^'+|'+$/g, ''))
     .filter(Boolean);
-}
-
-// Többes szám: magánhangzó után -s, -z után -ces, hangsúlyos -ón/-án/-én/-ín/-és
-// végnél az ékezet leesik (canción → canciones), egyéb mássalhangzó után -es.
-function esPlural(word: string): string | null {
-  if (/[aeiouáéíóú]$/.test(word)) return `${word}s`;
-  if (word.endsWith('z')) return `${word.slice(0, -1)}ces`;
-  const accented = word.match(/^(.*)([áéíóú])([nsl]?)$/);
-  if (/[óáéí]n$|és$/.test(word) && accented) {
-    return `${accented[1]}${ACCENT_DROP[accented[2]]}${accented[3]}es`;
-  }
-  if (word.endsWith('s')) return null; // lunes, crisis: változatlan
-  return `${word}es`;
-}
-
-// Nemi alak, csak melléknévre: -o → -a, -or/-ol → +a (español → española),
-// hangsúlyos -án/-ón/-és → ékezet nélkül +a (francés → francesa).
-function esFeminine(word: string): string | null {
-  if (word.endsWith('o')) return `${word.slice(0, -1)}a`;
-  if (word.length >= 5 && /(or|ol)$/.test(word)) return `${word}a`;
-  const m = word.match(/^(.*)([áéó])(n|s)$/);
-  if (m && (m[3] === 'n' || m[2] === 'é')) return `${m[1]}${ACCENT_DROP[m[2]]}${m[3]}a`;
-  return null;
 }
 
 // Kötőmód imperfecto: a 3. személy többes indefinido tövéből (-ron helyett -ra…).

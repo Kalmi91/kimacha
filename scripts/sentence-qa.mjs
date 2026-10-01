@@ -79,9 +79,9 @@ function add(card, cls, why) {
 for (const lvl of levels) {
   let cards;
   try {
-    cards = JSON.parse(readFileSync(join(ROOT, 'data', 'words', `${lvl}.json`), 'utf8'));
+    cards = JSON.parse(readFileSync(join(ROOT, 'data', 'words-open', `${lvl}.json`), 'utf8'));
   } catch {
-    console.error(`skip ${lvl}: no data/words/${lvl}.json`);
+    console.error(`skip ${lvl}: no data/words-open/${lvl}.json`);
     continue;
   }
   const lowLevel = lvl === 'a0' || lvl === 'a1';

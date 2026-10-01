@@ -1,21 +1,11 @@
 # Prompt policy audit (PROMPT-POLICY 1 + 9)
 
-Generated: 2026-09-28T17:20:46.885Z
+Generated: 2026-10-01T20:28:28.110Z
 
 Ez a riport a PROMPT-POLICY 9.1 "egyszeri korpusz-menet" bemenete: minden
 sor egy szó, ami egy másik szóval megosztja a promptját (egy szinten belül).
 A `[exact]` a teljesen azonos promptot jelöli, a `[partial: <sense>]` a
 részleges átfedést és annak okát (a közös, normalizált sense).
-
-## es sáv
-
-- headword mező: `es`, prompt mező: `en`
-- spec-elvárás: 17 exact + 179 partial
-
-## hu sáv
-
-- headword mező: `hu`, prompt mező: `en`
-- spec-elvárás: 24 exact + 19 partial
 
 ## en sáv
 
@@ -24,6 +14,4 @@ részleges átfedést és annak okát (a közös, normalizált sense).
 
 ## Summary
 
-- es: 0 exact, 0 partial, 0 leak (OK)
-- hu: 0 exact, 0 partial (OK)
 - en: 0 exact, 0 partial (OK)

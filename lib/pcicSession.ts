@@ -158,12 +158,11 @@ export function countIntroducedTodayByKind(
 // a korábbi esedékesség (hogy az ismétlés ne csússzon ki). A `cardMerge.ts`
 // pickSurvivor-jának Sm2Card-megfelelője (az ottani `stability` mező itt
 // nincs, az FSRS-only `cards` táblára épült).
-// PLAN-fb0924 8. lépés (FB394/396): a bevezetendő új kártyák (a lánc-
-// átrendezés, lib/pcicChains.ts applyChainOrder, UTÁN futó) sorrendjében két
-// mondat (vagy lánc, ami `groupOf` szerint EGY egységnek számít) közt
+// PLAN-fb0924 8. lépés (FB394/396): a bevezetendő új kártyák sorrendjében két
+// mondat (vagy csoport, ami `groupOf` szerint EGY egységnek számít) közt
 // legalább `minGap` nem-mondat kártyának kell lennie ("10 kártyánként max 1
 // mondat"). Ami idő előtt jönne, EBBŐL a hívásból kimarad (nem a sor végére
-// kerül, hanem eldobódik - mint az applyChainOrder `excluded` halmaza): a
+// kerül, hanem eldobódik): a
 // következő sor-építés (load()/handleMoreNew()) újra megvizsgálja, mert addigra
 // már más kártyák is bevezetődtek. Az "A1+"/"A2+" (csak mondatot tartalmazó)
 // szinten NEM hívandó (ott minden ritkítás mindent kidobna).

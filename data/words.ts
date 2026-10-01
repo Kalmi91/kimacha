@@ -3,10 +3,8 @@ export type Level = 'A0' | 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2';
 export const LEVELS: Level[] = ['A0', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 
 // GAMES.md F-1 (K6 DÖNTÉS, 2026-08-26): word-class metadata for the game
-// modules (bubble-pop, odd-one-out, ...). Annotated by scripts/annotate-pos.mjs
-// on the shared Spanish set (a0..c1) and the en/hu branches; c2.json is frozen
-// and intentionally left without this metadata. Both fields are optional so
-// older/unannotated entries (and the frozen c2 set) keep type-checking.
+// modules (bubble-pop, odd-one-out, ...). Both fields are optional so
+// unannotated entries (e.g. the words-open conj/det/interj cards) keep type-checking.
 export type WordPos = 'noun' | 'verb' | 'adj' | 'adv' | 'pron' | 'prep' | 'num' | 'phrase';
 export type WordGender = 'm' | 'f' | 'mf' | 'n' | '-';
 
@@ -44,81 +42,12 @@ export interface WordEntry {
   region?: WordRegion;
   plural?: WordPlural;
   // FB357 (grammar:indefinido-10-verbos:drill): a lecke szűri ki a szót a
-  // fókusz-módból/lessonWordIds()-ból/témakör-szószámból (getWordsForTopic
-  // alapból), a kártya maga marad, haladás nem vész el.
+  // fókusz-módból/lessonWordIds()-ból, a kártya maga marad, haladás nem vész el.
   vosotros?: boolean;
   [key: string]: string | number | boolean | undefined;
 }
 
-import a0 from './words/a0.json';
-import a1 from './words/a1.json';
-import a2 from './words/a2.json';
-import b1 from './words/b1.json';
-import b2 from './words/b2.json';
-import c1 from './words/c1.json';
-import c2 from './words/c2.json';
-
-export const words: WordEntry[] = [...a0, ...a1, ...a2, ...b1, ...b2, ...c1, ...c2] as WordEntry[];
-
-// Play-vágás 7. lépés (2026-09-23): the app runs a single en-es pair, target
-// always 'es', so the dedicated English-target/Hungarian-target word sets
-// (the `en` and `hu` subfolders next to these files) are unreachable and
-// dropped from this loader. The JSON files stay in the repo. `lang` is kept
-// on every function below only so call sites (which pass the active pair's
-// target, always 'es' now) don't need to change.
-export function getWordsForLevel(level: Level, lang: string = 'es'): WordEntry[] {
-  return words.filter(w => w.level === level);
-}
-
-// Card rows in the DB only carry a word id, looked up in the shared Spanish
-// set (the only one this loader carries any more, see the note above).
-export function findWordById(id: number, lang: string = 'es'): WordEntry | undefined {
-  return words.find(w => w.id === id);
-}
-
-// FB357: `includeVosotros` defaults to false, so every existing caller (the
-// grammar lesson's word-halmaz, the Learn tab's tree-tile/mastery counts)
-// automatically drops the vosotros-flagged cards without a call-site change.
-export function getWordsForTopic(level: Level, topicId: string, lang: string = 'es', includeVosotros: boolean = false): WordEntry[] {
-  return getWordsForLevel(level, lang)
-    .filter(w => w['topic'] === topicId && (includeVosotros || !w.vosotros))
-    .sort((a, b) => (Number(a['topicOrder']) || 0) - (Number(b['topicOrder']) || 0));
-}
-
-export function getWordTopic(w: WordEntry): string | undefined {
-  const t = w['topic'];
-  return typeof t === 'string' ? t : undefined;
-}
-
-// The `gender` field annotated by scripts/annotate-pos.mjs is the gender of the
-// SPANISH headword ("a só" carries 'f' from "la sal"), so it is simply wrong for
-// any other target: German "das Salz" is neuter, and Spanish has no neuter at
-// all. German writes the gender on the article the headword already carries, so
-// read it from there rather than annotate a second field. Targets with no gender
-// to teach (en, hu) return undefined, which starves the games' gender category
-// and drops it, exactly as an unannotated word already does.
-const DE_ARTICLE_GENDER: Record<string, WordGender> = { der: 'm', die: 'f', das: 'n' };
-
-// "die" is also the plural article for every gender ("die Eltern"), so it only
-// means feminine on a SINGULAR headword. The shared set carries the Spanish
-// headword next to the German one, and its article says which it is: los/las
-// mark the plural, so "die" beside them is a plural, not a feminine.
-const ES_PLURAL_ARTICLE = /^(los|las)\s/;
-
-export function genderOf(word: WordEntry | undefined, targetLang: string): WordGender | undefined {
-  if (!word) return undefined;
-  if (targetLang === 'es') return word.gender;
-  if (targetLang === 'de') {
-    const head = String(word.de ?? '').trim().toLowerCase();
-    const article = head.split(/\s+/)[0];
-    const gender = DE_ARTICLE_GENDER[article];
-    if (gender === 'f' && ES_PLURAL_ARTICLE.test(String(word.es ?? '').trim().toLowerCase())) {
-      return undefined;
-    }
-    return gender;
-  }
-  return undefined;
-}
+import { findOpenWordByForm, openWords } from './openWords';
 
 // FB150, Kálmán 2026-08-22 (`sentence:El calabacín es una verdura verde.`):
 // "ha rákattintok ... akár arra hogy calabacín akár arra hogy courset ... bele
@@ -134,8 +63,10 @@ export function normalizeWordToken(raw: string): string {
   return raw.toLowerCase().replace(TOKEN_PUNCTUATION, '').replace(/\s+/g, ' ').trim();
 }
 
+// PLAN-regi-szavak-ki 5. lépés: a szöveg szerinti keresés (glossza, kevert felolvasás)
+// a words-open kártyáin fut (data/openWords.ts), nem a régi szólistán.
 function allWordsFor(lang: string): WordEntry[] {
-  return words;
+  return openWords;
 }
 
 // A headword field can carry several glosses ("the lorry / the truck"), and each
@@ -176,7 +107,7 @@ function textIndexFor(lang: string, field: string): Map<string, WordEntry> {
 }
 
 // `field` is the language the tapped text is written in ('es', 'en', 'hu', 'de'),
-// `lang` the branch being learned, the same branch convention findWordById uses.
+// `lang` the branch being learned (kept so the call sites need no change; the words-open deck is the only source).
 export function findWordByText(token: string, field: string, lang: string = 'es'): WordEntry | undefined {
   const norm = normalizeWordToken(token);
   if (!norm) return undefined;
@@ -188,5 +119,7 @@ export function findWordByText(token: string, field: string, lang: string = 'es'
   for (const [key, entry] of map) {
     if (key.endsWith(` ${norm}`)) return entry;
   }
+  // A ragozott/többes/nemi alak a words-open tőalakú kártyájához tartozik (csak spanyol).
+  if (field === 'es') return findOpenWordByForm(norm);
   return undefined;
 }

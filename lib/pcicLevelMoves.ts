@@ -1,4 +1,4 @@
-// GENERÁLT FÁJL, ne szerkeszd kézzel: node scripts/pcic-level-fit.mjs --write
+// GENERÁLT FÁJL (a generáló scripts/pcic-level-fit.mjs a PLAN-regi-szavak-ki 6. lépésében kikerült), ne szerkeszd kézzel.
 //
 // PLAN-fb0924 7a. lépés (FB396, D3): a nehézség-igazítás régi PCIC-item-id ->
 // új PCIC-item-id térképe (a régi és az új id KÜLÖNBÖZŐ szintet jelöl - lásd

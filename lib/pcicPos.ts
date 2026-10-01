@@ -1,23 +1,25 @@
 // 5c (FB348/351/358/359, döntés 6b: nincs adat-generálás): a PCIC-tételnek
-// (data/pcic/<szint>-all.json: id, order, es, kind, source, section,
+// (a régi PCIC-korpusz: id, order, es, kind, source, section,
 // headword) nincs szófaj-mezője. Kálmán 2026-09-21 a (b) opciót választotta:
 // olcsó szabály a spanyol alakból, generálás/adatbővítés nélkül. Ha egyszer
 // lesz valódi `pos` mező a tételen, ez a függvény azt olvassa előbb.
 //
 // FB350 (3. commit, 2026-09-21): a PCIC névelő nélkül tárolja a spanyol
 // alakot (`"es": "vida"`), ezért a főnevek a névelő-szabályból kimaradtak.
-// A fő szókorpusz (data/words/*.json, FB184 óta `pos`+`gender`) viszont
-// névelővel tárolja ("la vida"), és sokkal pontosabb, mint az olcsó szabály.
-// Mostantól ez a korpusz az elsődleges forrás, a névelő/igevégződés-szabály
-// csak akkor fut, ha a lemma nincs benne.
+// A fő szókorpusz viszont névelővel tárolja ("la vida"), és sokkal pontosabb,
+// mint az olcsó szabály. Mostantól ez a korpusz az elsődleges forrás, a
+// névelő/igevégződés-szabály csak akkor fut, ha a lemma nincs benne.
+// PLAN-regi-szavak-ki 5. lépés: a fő korpusz a data/words-open (data/openWords.ts),
+// a főnév neme a névelőből jön (a régi annotáló is onnan vette).
 import type { PcicKind } from '@/data/pcic';
-import { words, type WordGender, type WordPos } from '@/data/words';
+import { openWords } from '@/data/openWords';
+import type { WordGender, WordPos } from '@/data/words';
 
 // FB361-362: a chip minden korpusz-szófajt kaphat (nem csak noun/verb/phrase),
 // ezért a Pos lefedi a teljes WordPos-készletet. A `conj`/`prefix`/`suffix`
 // csak a PCIC oldalon létezik (kötőszó, illetve képző-tétel, pl. "-ísimo"),
 // a korpusz WordPos típusát ez nem bővíti, azt kézzel írt PCIC `pos` mező
-// adja, a lemma-index (korpuszból) sose ad ilyet.
+// adja; a lemma-index (korpuszból) csak a `conj`-ot adja (a words-open kötőszavai).
 export type Pos = WordPos | 'conj' | 'prefix' | 'suffix';
 
 export interface PosInfo {
@@ -33,7 +35,8 @@ const VERB_ENDING = /^[a-záéíóúñü]+(ar|er|ir|arse|erse|irse)$/i;
 
 // FB361-362: a Pos lefedi a teljes WordPos-készletet, ezért minden
 // korpusz-szófaj átjön a lemma-indexbe (korábban csak noun/verb/phrase).
-const CORPUS_POS_TO_PCIC: Partial<Record<WordPos, Pos>> = {
+// A words-open nyers szófajából (OpenWord.openPos); a det és interj nem képezhető le.
+const CORPUS_POS_TO_PCIC: Partial<Record<string, Pos>> = {
   noun: 'noun',
   verb: 'verb',
   adj: 'adj',
@@ -41,7 +44,7 @@ const CORPUS_POS_TO_PCIC: Partial<Record<WordPos, Pos>> = {
   pron: 'pron',
   prep: 'prep',
   num: 'num',
-  phrase: 'phrase',
+  conj: 'conj',
 };
 
 function normalizeLemma(es: string): string {
@@ -55,20 +58,23 @@ let lemmaIndex: Map<string, PosInfo | null> | null = null;
 function getLemmaIndex(): Map<string, PosInfo | null> {
   if (lemmaIndex) return lemmaIndex;
   const map = new Map<string, PosInfo | null>();
-  for (const w of words) {
-    const pos = w.pos ? CORPUS_POS_TO_PCIC[w.pos] : undefined;
+  for (const w of openWords) {
+    const pos = CORPUS_POS_TO_PCIC[w.openPos];
     if (!pos) continue;
-    const lemma = normalizeLemma(w.es);
-    if (!lemma) continue;
     const info: PosInfo = pos === 'noun' && w.gender ? { pos, gender: w.gender } : { pos };
-    if (!map.has(lemma)) {
-      map.set(lemma, info);
-      continue;
-    }
-    const existing = map.get(lemma);
-    if (existing === null) continue; // már ütközőnek jelölve
-    if (!existing || existing.pos !== info.pos || existing.gender !== info.gender) {
-      map.set(lemma, null);
+    // A perjeles alak ("el carro / el coche") minden alternatívája külön lemma.
+    for (const alt of w.es.split(' / ')) {
+      const lemma = normalizeLemma(alt);
+      if (!lemma) continue;
+      if (!map.has(lemma)) {
+        map.set(lemma, info);
+        continue;
+      }
+      const existing = map.get(lemma);
+      if (existing === null) continue; // már ütközőnek jelölve
+      if (!existing || existing.pos !== info.pos || existing.gender !== info.gender) {
+        map.set(lemma, null);
+      }
     }
   }
   lemmaIndex = map;
@@ -84,7 +90,7 @@ export function posOf(item: { es: string; kind: PcicKind; pos?: Pos | null }): P
   const es = item.es.trim();
   if (!es) return null;
 
-  const corpusHit = getLemmaIndex().get(normalizeLemma(es));
+  const corpusHit = getLemmaIndex().get(normalizeLemma(es.split(' / ')[0]));
   if (corpusHit !== undefined) return corpusHit;
 
   const parts = es.split(/\s+/);

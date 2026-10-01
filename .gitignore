@@ -45,9 +45,6 @@ yarn-error.*
 /ios
 /android
 
-# Word data backups (timestamped snapshots, redundant with git history)
-data/words/backup_*/
-
 # Word generation work-in-progress files
 /todo_*.txt
 /word_batches

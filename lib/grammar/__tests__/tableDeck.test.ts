@@ -371,10 +371,11 @@ describe('wordCellsForLesson (csak a tábla szavai)', () => {
     }
   });
 
-  it('clases-de-palabras és társai (20 lecke) elvesztették a paklit: a küszöb alatt maradnak, nincs belépő', () => {
-    for (const id of ['clases-de-palabras', 'articulos-genero', 'sustantivo-numero', 'hay-estar', 'pronombres-od']) {
+  it('articulos-genero és társai elvesztették a paklit: a küszöb alatt maradnak, nincs belépő (a clases-de-palabras a lecke szintjére került szavakkal visszanyerte)', () => {
+    for (const id of ['articulos-genero', 'sustantivo-numero', 'hay-estar', 'pronombres-od']) {
       expect(wordCellsForLesson(lessonFor('es', id)).length).toBeLessThan(WORD_DECK_MIN_CARDS);
     }
+    expect(wordCellsForLesson(lessonFor('es', 'clases-de-palabras')).length).toBeGreaterThanOrEqual(WORD_DECK_MIN_CARDS);
   });
 
   it('nincs szó-pakli rossz bemenetre sem', () => {
