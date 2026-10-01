@@ -544,7 +544,7 @@
     },
     {
       "id": "rc-ch-03",
-      "sentence": "Llegó tarde a la reunión, ___ molestó mucho al jefe.",
+      "sentence": "Llegó tarde otra vez, ___ molestó mucho al jefe.",
       "options": [
         "lo cual",
         "la cual",
@@ -559,16 +559,16 @@
       },
       "wrong": {
         "la cual": {
-          "hu": "A la cual a reunión főnévre utalna, de a főnököt nem a megbeszélés bosszantotta, hanem a késés; helyesen: Llegó tarde a la reunión, lo cual molestó mucho al jefe.",
-          "en": "La cual would refer to the noun reunión, but it was not the meeting that annoyed the boss, it was the lateness; correctly: Llegó tarde a la reunión, lo cual molestó mucho al jefe.",
-          "es": "La cual remitiría al sustantivo reunión, pero lo que molestó al jefe no fue la reunión, sino el retraso; correctamente: Llegó tarde a la reunión, lo cual molestó mucho al jefe.",
-          "de": "La cual würde sich auf das Nomen reunión beziehen, aber nicht die Sitzung ärgerte den Chef, sondern die Verspätung; richtig: Llegó tarde a la reunión, lo cual molestó mucho al jefe."
+          "hu": "A la cual egy nőnemű főnévre utalna, de a mondatban nincs ilyen: az előzmény az egész állítás (llegó tarde otra vez); helyesen: Llegó tarde otra vez, lo cual molestó mucho al jefe.",
+          "en": "La cual would refer to a feminine noun, but there is none: the antecedent is the whole statement (llegó tarde otra vez); correctly: Llegó tarde otra vez, lo cual molestó mucho al jefe.",
+          "es": "La cual remitiría a un sustantivo femenino, pero no lo hay: el antecedente es toda la afirmación (llegó tarde otra vez); correctamente: Llegó tarde otra vez, lo cual molestó mucho al jefe.",
+          "de": "La cual würde sich auf ein feminines Nomen beziehen, aber es gibt keines: Das Bezugswort ist die ganze Aussage (llegó tarde otra vez); richtig: Llegó tarde otra vez, lo cual molestó mucho al jefe."
         },
         "el cual": {
-          "hu": "Az el cual hímnemű főnévre utalna, de a mondatban nincs ilyen: az előzmény egy egész állítás; helyesen: Llegó tarde a la reunión, lo cual molestó mucho al jefe.",
-          "en": "El cual would refer to a masculine noun, but there is none: the antecedent is a whole statement; correctly: Llegó tarde a la reunión, lo cual molestó mucho al jefe.",
-          "es": "El cual remitiría a un sustantivo masculino, pero no lo hay: el antecedente es toda una afirmación; correctamente: Llegó tarde a la reunión, lo cual molestó mucho al jefe.",
-          "de": "El cual würde sich auf ein maskulines Nomen beziehen, aber es gibt keines: Das Bezugswort ist eine ganze Aussage; richtig: Llegó tarde a la reunión, lo cual molestó mucho al jefe."
+          "hu": "Az el cual hímnemű főnévre utalna, de a mondatban nincs ilyen: az előzmény egy egész állítás; helyesen: Llegó tarde otra vez, lo cual molestó mucho al jefe.",
+          "en": "El cual would refer to a masculine noun, but there is none: the antecedent is a whole statement; correctly: Llegó tarde otra vez, lo cual molestó mucho al jefe.",
+          "es": "El cual remitiría a un sustantivo masculino, pero no lo hay: el antecedente es toda una afirmación; correctamente: Llegó tarde otra vez, lo cual molestó mucho al jefe.",
+          "de": "El cual würde sich auf ein maskulines Nomen beziehen, aber es gibt keines: Das Bezugswort ist eine ganze Aussage; richtig: Llegó tarde otra vez, lo cual molestó mucho al jefe."
         }
       }
     },
