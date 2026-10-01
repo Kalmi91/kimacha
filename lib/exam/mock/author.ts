@@ -99,4 +99,30 @@ export const MOCK_WRITING: Record<string, WritingTask[]> = {
       ],
     },
   ],
+  'en:A2': [
+    {
+      kind: 'short_message',
+      instruction: 'PART 1. Write an email of 50 to 60 words.',
+      prompt: 'A friend has invited you to a party on Saturday, but you cannot go. Write an email: thank your friend for the invitation, explain why you cannot come, say what you did last weekend, and suggest another day to meet.',
+      minWords: 45,
+      points: [
+        { id: 'thanks', label: 'Thanks for the invitation', keywords: ['thank', 'thanks'] },
+        { id: 'reason', label: 'Explains why not', keywords: ['cannot', 'can\'t', 'because', 'have to', 'sorry'] },
+        { id: 'past', label: 'Says something about the past', keywords: ['went', 'was', 'were', 'had', 'worked', 'visited', 'stayed'] },
+        { id: 'propose', label: 'Suggests another day', keywords: ['next', 'how about', 'shall we', 'meet', 'another day'] },
+      ],
+    },
+    {
+      kind: 'short_message',
+      instruction: 'PART 2. Write a text of 60 to 80 words.',
+      prompt: 'Write about a trip or a special day last year: where you went, who with, what you did there, what you liked most and what you did not like.',
+      minWords: 55,
+      points: [
+        { id: 'where', label: 'Says where', keywords: ['i went to', 'i was in', 'we visited', 'we travelled', 'we traveled'] },
+        { id: 'who', label: 'Says who with', keywords: ['with my', 'with a', 'alone', 'with some'] },
+        { id: 'what', label: 'Says what they did', keywords: ['we saw', 'we ate', 'we walked', 'we visited', 'we went'] },
+        { id: 'opinion', label: 'Says what they liked and did not like', keywords: ['i liked', 'i did not like', 'didn\'t like', 'the best', 'the worst'] },
+      ],
+    },
+  ],
 };

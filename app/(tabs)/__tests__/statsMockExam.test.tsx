@@ -58,6 +58,15 @@ describe('Stats fül: Practice exam kártya (E1 a)', () => {
     view.unmount();
   });
 
+  it('es→en irány: csak az A2 gomb (az angol A1-hez nincs hivatalos alak)', async () => {
+    await getDb().setOnboarding('es', 'en');
+    const view = await renderStats();
+    expect(view.queryByTestId('mock-exam-start-A1')).toBeNull();
+    fireEvent.press(view.getByTestId('mock-exam-start-A2'));
+    expect(mockPush).toHaveBeenCalledWith({ pathname: '/mock-exam', params: { level: 'A2' } });
+    view.unmount();
+  });
+
   it('a legutóbbi eredmény látszik a kártyán (szint, átment-e, dátum)', async () => {
     await getDb().setOnboarding('en', 'es');
     await getDb().setGameProgress(MOCK_EXAM_PROGRESS_KEY, 'es-A1', 'passed', {

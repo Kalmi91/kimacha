@@ -84,17 +84,18 @@ const EN_NAMES: Record<MockSkill, string> = {
   speaking: 'Speaking',
 };
 
-// A régi blueprint.ts percei: es A1 45 / 25 / 25 / 10, es A2 60 / 45 / 40 / 12.
+// A régi blueprint.ts percei: es A1 45 / 25 / 25 / 10, es A2 60 / 45 / 40 / 12, en A2 40 / 20 / 30 / 10.
 const MINUTES: Record<string, Record<MockSkill, number>> = {
   'es:A1': { reading: 45, writing: 25, listening: 25, speaking: 10 },
   'es:A2': { reading: 60, writing: 45, listening: 40, speaking: 12 },
+  'en:A2': { reading: 40, writing: 20, listening: 30, speaking: 10 },
 };
 
 // Az es→en (spanyolul beszélő tanul angolt) irányban csak az A2 alakja ismert a régi
 // blueprint.ts-ből; az A1-nek nincs ellenőrzött hivatalos felépítése, ezért nincs (DÖNTÉS KELL).
 export const MOCK_LEVELS: Record<MockTarget, readonly MockLevel[]> = {
   es: ['A1', 'A2'],
-  en: [],
+  en: ['A2'],
 };
 
 export function mockAvailable(target: MockTarget, level: string): level is MockLevel {
