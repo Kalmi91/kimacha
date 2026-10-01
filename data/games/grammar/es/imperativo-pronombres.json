@@ -210,22 +210,22 @@
           "poner + te, tú, afirmativo"
         ],
         [
-          "Ana, ___ , por favor. (devolver, tú, a mí, el libro)",
+          "Ana, ___ , por favor. (devolver, tú, a mí, el libro, en una palabra)",
           "devuélvemelo",
           "devolver + me + lo, tú, afirmativo"
         ],
         [
-          "Luis, ___ , por favor. (pasar, tú, a mí, el teléfono)",
+          "Luis, ___ , por favor. (pasar, tú, a mí, el teléfono, en una palabra)",
           "pásamelo",
           "pasar + me + lo, tú, afirmativo"
         ],
         [
-          "Diego, ___ ya. (dar, tú, a tu mamá, las llaves)",
+          "Diego, ___ ya. (dar, tú, a tu mamá, las llaves, en una palabra)",
           "dáselas",
           "dar + se + las, tú, afirmativo"
         ],
         [
-          "Señora, ___ , por favor. (pasar, usted, a mí, el pan)",
+          "Señora, ___ , por favor. (pasar, usted, a mí, el pan, en una palabra)",
           "pásemelo",
           "pasar + me + lo, usted, afirmativo"
         ],
@@ -245,7 +245,7 @@
           "no + me + esperes, tú, negativo"
         ],
         [
-          "Ana, no ___ . (enviar, tú, a Luis, mi número)",
+          "Ana, no ___ . (enviar, tú, a Luis, mi número, en tres palabras)",
           "se lo envíes",
           "no + se + lo + envíes, tú, negativo"
         ],
@@ -255,7 +255,7 @@
           "no + te + vayas, tú, negativo"
         ],
         [
-          "Es tarde, Luis: ___ a la cama. (acostarse, tú)",
+          "Es tarde, Luis: ___ ya. (acostarse, tú)",
           "acuéstate",
           "acostar + te, tú, afirmativo"
         ]
@@ -545,9 +545,9 @@
       "word": "tómalo",
       "gloss": {
         "hu": "idd meg azt (tomar + lo)",
-        "en": "take it (tomar + lo)",
+        "en": "drink it (tomar + lo)",
         "es": "tómalo (tomar + lo, imperativo de tú)",
-        "de": "nimm es (tomar + lo)"
+        "de": "trink es (tomar + lo)"
       }
     },
     {
@@ -1037,7 +1037,7 @@
       "id": "ip-form-03",
       "kind": "form",
       "verb": "forma",
-      "person": "Ana, ___ , por favor. (devolver, tú, a mí, el libro)",
+      "person": "Ana, ___ , por favor. (devolver, tú, a mí, el libro, en una palabra)",
       "answer": "devuélvemelo",
       "table": "imperativo-pronombres-formas"
     },
@@ -1045,7 +1045,7 @@
       "id": "ip-form-04",
       "kind": "form",
       "verb": "forma",
-      "person": "Luis, ___ , por favor. (pasar, tú, a mí, el teléfono)",
+      "person": "Luis, ___ , por favor. (pasar, tú, a mí, el teléfono, en una palabra)",
       "answer": "pásamelo",
       "table": "imperativo-pronombres-formas"
     },
@@ -1053,7 +1053,7 @@
       "id": "ip-form-05",
       "kind": "form",
       "verb": "forma",
-      "person": "Diego, ___ ya. (dar, tú, a tu mamá, las llaves)",
+      "person": "Diego, ___ ya. (dar, tú, a tu mamá, las llaves, en una palabra)",
       "answer": "dáselas",
       "table": "imperativo-pronombres-formas"
     },
@@ -1061,7 +1061,7 @@
       "id": "ip-form-06",
       "kind": "form",
       "verb": "forma",
-      "person": "Señora, ___ , por favor. (pasar, usted, a mí, el pan)",
+      "person": "Señora, ___ , por favor. (pasar, usted, a mí, el pan, en una palabra)",
       "answer": "pásemelo",
       "table": "imperativo-pronombres-formas"
     },
@@ -1093,7 +1093,7 @@
       "id": "ip-form-10",
       "kind": "form",
       "verb": "forma",
-      "person": "Ana, no ___ . (enviar, tú, a Luis, mi número)",
+      "person": "Ana, no ___ . (enviar, tú, a Luis, mi número, en tres palabras)",
       "answer": "se lo envíes",
       "table": "imperativo-pronombres-formas"
     },
@@ -1109,7 +1109,7 @@
       "id": "ip-form-12",
       "kind": "form",
       "verb": "forma",
-      "person": "Es tarde, Luis: ___ a la cama. (acostarse, tú)",
+      "person": "Es tarde, Luis: ___ ya. (acostarse, tú)",
       "answer": "acuéstate",
       "table": "imperativo-pronombres-formas"
     },
