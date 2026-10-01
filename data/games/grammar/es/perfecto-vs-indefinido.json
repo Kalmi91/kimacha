@@ -341,7 +341,7 @@
           "comí"
         ],
         [
-          "Hasta ahora no ___ (hablar, yo) con mi padre.",
+          "Hasta ahora no ___ (hablar, yo; perfecto) con mi padre.",
           "he hablado"
         ],
         [
@@ -349,11 +349,11 @@
           "vieron"
         ],
         [
-          "Nunca ___ (estar, yo) en un hospital.",
+          "Nunca ___ (estar, yo; perfecto) en un hospital.",
           "he estado"
         ],
         [
-          "¿Ya ___ (comprar, tú) el pan?",
+          "¿Ya ___ (comprar, tú; perfecto) el pan?",
           "has comprado"
         ],
         [
@@ -369,7 +369,7 @@
           "hablé"
         ],
         [
-          "Todavía no ___ (escribir, ella) la carta.",
+          "Todavía no ___ (escribir, ella; perfecto) la carta.",
           "ha escrito"
         ],
         [
@@ -377,11 +377,11 @@
           "viajé"
         ],
         [
-          "¿___ (ver, tú) alguna vez el mar?",
+          "¿___ (ver, tú; perfecto) alguna vez el mar?",
           "Has visto"
         ],
         [
-          "Últimamente ___ (hacer, yo) mucho ejercicio.",
+          "Últimamente ___ (hacer, yo; perfecto) mucho ejercicio.",
           "he hecho"
         ]
       ]
@@ -453,7 +453,7 @@
       "sentence": "¿___ (ustedes) alguna vez esa película?",
       "options": [
         "han visto",
-        "vieron",
+        "verán",
         "veían"
       ],
       "correct": 0,
@@ -464,17 +464,17 @@
         "de": "«alguna vez» (jemals) betrifft das Leben bis jetzt, deshalb steht das Perfekt: han visto."
       },
       "wrong": {
-        "vieron": {
-          "hu": "vieron: befejezett múlt (indefinido): egy lezárt múltbeli dolgot mondana. Ide nem illik, mert a(z) «alguna vez» (valaha) a mostanig tartó időre néz, az indefinido pedig lezárt időpontot jelölne. Helyesen: ¿han visto alguna vez esa película?",
-          "en": "vieron: preterite (indefinido): it would state a closed event in the past. It does not fit here, because «alguna vez» (ever) looks at the time up to now, while the indefinido would mark a closed moment. Correct: ¿han visto alguna vez esa película?",
-          "es": "vieron: indefinido: diría algo cerrado en el pasado. Aquí no encaja, porque «alguna vez» mira el tiempo hasta ahora, y el indefinido marcaría un momento cerrado. Correcto: ¿han visto alguna vez esa película?",
-          "de": "vieron: Indefinido: es würde ein abgeschlossenes Ereignis der Vergangenheit sagen. Das passt hier nicht, weil «alguna vez» (jemals) blickt auf die Zeit bis jetzt, das Indefinido würde einen abgeschlossenen Zeitpunkt markieren. Richtig: ¿han visto alguna vez esa película?"
+        "verán": {
+          "hu": "verán: egyszerű jövő (futuro simple): azt kérdezné, hogy valaha meg fogják-e nézni a filmet. Ide nem illik, mert a(z) «alguna vez» (valaha) a mostanig tartó időre néz. Helyesen: ¿Han visto alguna vez esa película?",
+          "en": "verán: simple future (futuro simple): it would ask whether you will ever watch the film. It does not fit here, because «alguna vez» (ever) looks at the time up to now. Correct: ¿Han visto alguna vez esa película?",
+          "es": "verán: futuro simple: preguntaría si alguna vez la verán. Aquí no encaja, porque «alguna vez» mira el tiempo hasta ahora. Correcto: ¿Han visto alguna vez esa película?",
+          "de": "verán: einfaches Futur: es würde fragen, ob ihr den Film jemals sehen werdet. Das passt hier nicht, weil «alguna vez» (jemals) auf die Zeit bis jetzt blickt. Richtig: ¿Han visto alguna vez esa película?"
         },
         "veían": {
-          "hu": "veían: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «alguna vez» (valaha) a mostanig tartó időre néz, nem múltbeli szokásra vagy háttérre. Helyesen: ¿han visto alguna vez esa película?",
-          "en": "veían: imperfect (imperfecto): it would describe a habit or a background. It does not fit here, because «alguna vez» (ever) looks at the time up to now, not at a past habit or a background. Correct: ¿han visto alguna vez esa película?",
-          "es": "veían: imperfecto: describiría una costumbre o un fondo. Aquí no encaja, porque «alguna vez» mira el tiempo hasta ahora, no una costumbre ni un fondo del pasado. Correcto: ¿han visto alguna vez esa película?",
-          "de": "veían: Imperfekt: es würde eine Gewohnheit oder einen Hintergrund beschreiben. Das passt hier nicht, weil «alguna vez» (jemals) blickt auf die Zeit bis jetzt, nicht auf eine vergangene Gewohnheit oder einen Hintergrund. Richtig: ¿han visto alguna vez esa película?"
+          "hu": "veían: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «alguna vez» (valaha) a mostanig tartó időre néz, nem múltbeli szokásra vagy háttérre. Helyesen: ¿Han visto alguna vez esa película?",
+          "en": "veían: imperfect (imperfecto): it would describe a habit or a background. It does not fit here, because «alguna vez» (ever) looks at the time up to now, not at a past habit or a background. Correct: ¿Han visto alguna vez esa película?",
+          "es": "veían: imperfecto: describiría una costumbre o un fondo. Aquí no encaja, porque «alguna vez» mira el tiempo hasta ahora, no una costumbre ni un fondo del pasado. Correcto: ¿Han visto alguna vez esa película?",
+          "de": "veían: Imperfekt: es würde eine Gewohnheit oder einen Hintergrund beschreiben. Das passt hier nicht, weil «alguna vez» (jemals) blickt auf die Zeit bis jetzt, nicht auf eine vergangene Gewohnheit oder einen Hintergrund. Richtig: ¿Han visto alguna vez esa película?"
         }
       },
       "examples": [
@@ -522,7 +522,7 @@
       "options": [
         "iba",
         "he ido",
-        "fui"
+        "iré"
       ],
       "correct": 1,
       "why": {
@@ -538,11 +538,11 @@
           "es": "iba: imperfecto: describiría una costumbre o un fondo. Aquí no encaja, porque «nunca» mira el tiempo hasta ahora, no una costumbre ni un fondo del pasado. Correcto: Nunca he ido al mar, pero quiero ir.",
           "de": "iba: Imperfekt: es würde eine Gewohnheit oder einen Hintergrund beschreiben. Das passt hier nicht, weil «nunca» (nie) blickt auf die Zeit bis jetzt, nicht auf eine vergangene Gewohnheit oder einen Hintergrund. Richtig: Nunca he ido al mar, pero quiero ir."
         },
-        "fui": {
-          "hu": "fui: befejezett múlt (indefinido): egy lezárt múltbeli dolgot mondana. Ide nem illik, mert a(z) «nunca» (soha) a mostanig tartó időre néz, az indefinido pedig lezárt időpontot jelölne. Helyesen: Nunca he ido al mar, pero quiero ir.",
-          "en": "fui: preterite (indefinido): it would state a closed event in the past. It does not fit here, because «nunca» (never) looks at the time up to now, while the indefinido would mark a closed moment. Correct: Nunca he ido al mar, pero quiero ir.",
-          "es": "fui: indefinido: diría algo cerrado en el pasado. Aquí no encaja, porque «nunca» mira el tiempo hasta ahora, y el indefinido marcaría un momento cerrado. Correcto: Nunca he ido al mar, pero quiero ir.",
-          "de": "fui: Indefinido: es würde ein abgeschlossenes Ereignis der Vergangenheit sagen. Das passt hier nicht, weil «nunca» (nie) blickt auf die Zeit bis jetzt, das Indefinido würde einen abgeschlossenen Zeitpunkt markieren. Richtig: Nunca he ido al mar, pero quiero ir."
+        "iré": {
+          "hu": "iré: egyszerű jövő (futuro simple): azt mondaná, hogy soha nem fogok a tengerre menni, ami ellentmond a «pero quiero ir»-nek. Ide nem illik, mert a(z) «nunca» (soha) a mostanig tartó időre néz. Helyesen: Nunca he ido al mar, pero quiero ir.",
+          "en": "iré: simple future (futuro simple): it would say that I will never go to the sea, which contradicts «pero quiero ir». It does not fit here, because «nunca» (never) looks at the time up to now. Correct: Nunca he ido al mar, pero quiero ir.",
+          "es": "iré: futuro simple: diría que nunca iré al mar, lo que contradice «pero quiero ir». Aquí no encaja, porque «nunca» mira el tiempo hasta ahora. Correcto: Nunca he ido al mar, pero quiero ir.",
+          "de": "iré: einfaches Futur: es würde sagen, dass ich nie ans Meer fahren werde, was «pero quiero ir» widerspricht. Das passt hier nicht, weil «nunca» (nie) auf die Zeit bis jetzt blickt. Richtig: Nunca he ido al mar, pero quiero ir."
         }
       },
       "examples": [
@@ -552,7 +552,7 @@
     },
     {
       "id": "pvi-05",
-      "sentence": "El año pasado ___ (nosotros) a la playa en julio.",
+      "sentence": "El año pasado ___ (nosotros) a la playa por primera vez.",
       "options": [
         "hemos ido",
         "íbamos",
@@ -567,16 +567,16 @@
       },
       "wrong": {
         "hemos ido": {
-          "hu": "hemos ido: közelmúlt (perfecto): a mostanihoz kötné a dolgot. Ide nem illik, mert a(z) «el año pasado» (tavaly) lezárt időpont, a perfecto pedig a mostanihoz kötődő időt jelöl. Helyesen: El año pasado fuimos a la playa en julio.",
-          "en": "hemos ido: present perfect (perfecto): it would link the event to now. It does not fit here, because «el año pasado» (last year) is a closed point in time, and the perfecto belongs to the time up to now. Correct: El año pasado fuimos a la playa en julio.",
-          "es": "hemos ido: perfecto: uniría el hecho con el ahora. Aquí no encaja, porque «el año pasado» es un momento cerrado, y el perfecto pertenece al tiempo hasta ahora. Correcto: El año pasado fuimos a la playa en julio.",
-          "de": "hemos ido: Perfekt: es würde das Ereignis mit dem Jetzt verbinden. Das passt hier nicht, weil «el año pasado» (letztes Jahr) ist ein abgeschlossener Zeitpunkt, und das Perfekt gehört zur Zeit bis jetzt. Richtig: El año pasado fuimos a la playa en julio."
+          "hu": "hemos ido: közelmúlt (perfecto): a mostanihoz kötné a dolgot. Ide nem illik, mert a(z) «el año pasado» (tavaly) lezárt időpont, a perfecto pedig a mostanihoz kötődő időt jelöl. Helyesen: El año pasado fuimos a la playa por primera vez.",
+          "en": "hemos ido: present perfect (perfecto): it would link the event to now. It does not fit here, because «el año pasado» (last year) is a closed point in time, and the perfecto belongs to the time up to now. Correct: El año pasado fuimos a la playa por primera vez.",
+          "es": "hemos ido: perfecto: uniría el hecho con el ahora. Aquí no encaja, porque «el año pasado» es un momento cerrado, y el perfecto pertenece al tiempo hasta ahora. Correcto: El año pasado fuimos a la playa por primera vez.",
+          "de": "hemos ido: Perfekt: es würde das Ereignis mit dem Jetzt verbinden. Das passt hier nicht, weil «el año pasado» (letztes Jahr) ist ein abgeschlossener Zeitpunkt, und das Perfekt gehört zur Zeit bis jetzt. Richtig: El año pasado fuimos a la playa por primera vez."
         },
         "íbamos": {
-          "hu": "íbamos: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «el año pasado» (tavaly) egyetlen lezárt alkalmat jelöl, nem szokást vagy hátteret. Helyesen: El año pasado fuimos a la playa en julio.",
-          "en": "íbamos: imperfect (imperfecto): it would describe a habit or a background. It does not fit here, because «el año pasado» (last year) marks one closed occasion, not a habit or a background. Correct: El año pasado fuimos a la playa en julio.",
-          "es": "íbamos: imperfecto: describiría una costumbre o un fondo. Aquí no encaja, porque «el año pasado» señala una ocasión cerrada, no una costumbre ni un fondo. Correcto: El año pasado fuimos a la playa en julio.",
-          "de": "íbamos: Imperfekt: es würde eine Gewohnheit oder einen Hintergrund beschreiben. Das passt hier nicht, weil «el año pasado» (letztes Jahr) markiert einen abgeschlossenen Einzelfall, keine Gewohnheit und keinen Hintergrund. Richtig: El año pasado fuimos a la playa en julio."
+          "hu": "íbamos: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «el año pasado» (tavaly) egyetlen lezárt alkalmat jelöl, nem szokást vagy hátteret. Helyesen: El año pasado fuimos a la playa por primera vez.",
+          "en": "íbamos: imperfect (imperfecto): it would describe a habit or a background. It does not fit here, because «el año pasado» (last year) marks one closed occasion, not a habit or a background. Correct: El año pasado fuimos a la playa por primera vez.",
+          "es": "íbamos: imperfecto: describiría una costumbre o un fondo. Aquí no encaja, porque «el año pasado» señala una ocasión cerrada, no una costumbre ni un fondo. Correcto: El año pasado fuimos a la playa por primera vez.",
+          "de": "íbamos: Imperfekt: es würde eine Gewohnheit oder einen Hintergrund beschreiben. Das passt hier nicht, weil «el año pasado» (letztes Jahr) markiert einen abgeschlossenen Einzelfall, keine Gewohnheit und keinen Hintergrund. Richtig: El año pasado fuimos a la playa por primera vez."
         }
       },
       "examples": [
@@ -588,7 +588,7 @@
       "id": "pvi-06",
       "sentence": "Todavía no ___ (yo) la cena.",
       "options": [
-        "hice",
+        "haré",
         "he hecho",
         "hacía"
       ],
@@ -600,11 +600,11 @@
         "de": "«todavía no» (noch nicht) verweist auf die Lage bis jetzt, deshalb steht das Perfekt: he hecho."
       },
       "wrong": {
-        "hice": {
-          "hu": "hice: befejezett múlt (indefinido): egy lezárt múltbeli dolgot mondana. Ide nem illik, mert a(z) «todavía no» (még nem) a mostanig tartó időre néz, az indefinido pedig lezárt időpontot jelölne. Helyesen: Todavía no he hecho la cena.",
-          "en": "hice: preterite (indefinido): it would state a closed event in the past. It does not fit here, because «todavía no» (not yet) looks at the time up to now, while the indefinido would mark a closed moment. Correct: Todavía no he hecho la cena.",
-          "es": "hice: indefinido: diría algo cerrado en el pasado. Aquí no encaja, porque «todavía no» mira el tiempo hasta ahora, y el indefinido marcaría un momento cerrado. Correcto: Todavía no he hecho la cena.",
-          "de": "hice: Indefinido: es würde ein abgeschlossenes Ereignis der Vergangenheit sagen. Das passt hier nicht, weil «todavía no» (noch nicht) blickt auf die Zeit bis jetzt, das Indefinido würde einen abgeschlossenen Zeitpunkt markieren. Richtig: Todavía no he hecho la cena."
+        "haré": {
+          "hu": "haré: egyszerű jövő (futuro simple): azt mondaná, hogy még nem fogom elkészíteni a vacsorát. Ide nem illik, mert a(z) «todavía no» (még nem) a mostanig tartó időre néz. Helyesen: Todavía no he hecho la cena.",
+          "en": "haré: simple future (futuro simple): it would say that I will not make dinner yet. It does not fit here, because «todavía no» (not yet) looks at the time up to now. Correct: Todavía no he hecho la cena.",
+          "es": "haré: futuro simple: diría que todavía no haré la cena. Aquí no encaja, porque «todavía no» mira el tiempo hasta ahora. Correcto: Todavía no he hecho la cena.",
+          "de": "haré: einfaches Futur: es würde sagen, dass ich das Abendessen noch nicht machen werde. Das passt hier nicht, weil «todavía no» (noch nicht) auf die Zeit bis jetzt blickt. Richtig: Todavía no he hecho la cena."
         },
         "hacía": {
           "hu": "hacía: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «todavía no» (még nem) a mostanig tartó időre néz, nem múltbeli szokásra vagy háttérre. Helyesen: Todavía no he hecho la cena.",
@@ -656,7 +656,7 @@
       "id": "pvi-08",
       "sentence": "¿Ya ___ (tú) con tu padre?",
       "options": [
-        "hablaste",
+        "hablarás",
         "hablabas",
         "has hablado"
       ],
@@ -668,11 +668,11 @@
         "de": "«ya» (schon) verweist auf die Lage bis jetzt, deshalb steht das Perfekt: has hablado."
       },
       "wrong": {
-        "hablaste": {
-          "hu": "hablaste: befejezett múlt (indefinido): egy lezárt múltbeli dolgot mondana. Ide nem illik, mert a(z) «ya» (már) a mostanig tartó időre néz, az indefinido pedig lezárt időpontot jelölne. Helyesen: ¿Ya has hablado con tu padre?",
-          "en": "hablaste: preterite (indefinido): it would state a closed event in the past. It does not fit here, because «ya» (already) looks at the time up to now, while the indefinido would mark a closed moment. Correct: ¿Ya has hablado con tu padre?",
-          "es": "hablaste: indefinido: diría algo cerrado en el pasado. Aquí no encaja, porque «ya» mira el tiempo hasta ahora, y el indefinido marcaría un momento cerrado. Correcto: ¿Ya has hablado con tu padre?",
-          "de": "hablaste: Indefinido: es würde ein abgeschlossenes Ereignis der Vergangenheit sagen. Das passt hier nicht, weil «ya» (schon) blickt auf die Zeit bis jetzt, das Indefinido würde einen abgeschlossenen Zeitpunkt markieren. Richtig: ¿Ya has hablado con tu padre?"
+        "hablarás": {
+          "hu": "hablarás: egyszerű jövő (futuro simple): azt kérdezné, hogy már fogsz-e beszélni az apáddal. Ide nem illik, mert a(z) «ya» (már) a mostanig tartó időre néz. Helyesen: ¿Ya has hablado con tu padre?",
+          "en": "hablarás: simple future (futuro simple): it would ask whether you are already going to talk to your father. It does not fit here, because «ya» (already) looks at the time up to now. Correct: ¿Ya has hablado con tu padre?",
+          "es": "hablarás: futuro simple: preguntaría si ya vas a hablar con tu padre. Aquí no encaja, porque «ya» mira el tiempo hasta ahora. Correcto: ¿Ya has hablado con tu padre?",
+          "de": "hablarás: einfaches Futur: es würde fragen, ob du schon mit deinem Vater sprechen wirst. Das passt hier nicht, weil «ya» (schon) auf die Zeit bis jetzt blickt. Richtig: ¿Ya has hablado con tu padre?"
         },
         "hablabas": {
           "hu": "hablabas: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «ya» (már) a mostanig tartó időre néz, nem múltbeli szokásra vagy háttérre. Helyesen: ¿Ya has hablado con tu padre?",
@@ -688,7 +688,7 @@
     },
     {
       "id": "pvi-09",
-      "sentence": "El lunes ___ (yo) a la oficina en tren.",
+      "sentence": "El lunes pasado ___ (yo) a la oficina en tren.",
       "options": [
         "fui",
         "he ido",
@@ -696,23 +696,23 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A(z) «el lunes» (hétfőn) lezárt időpont, ezért befejezett múlt jön: fui.",
-        "en": "«el lunes» (on Monday) is a closed point in time, so the preterite is used: fui.",
-        "es": "«el lunes» es un momento cerrado, por eso va el indefinido: fui.",
-        "de": "«el lunes» (am Montag) ist ein abgeschlossener Zeitpunkt, deshalb steht das Indefinido: fui."
+        "hu": "A(z) «el lunes pasado» (múlt hétfőn) lezárt időpont, ezért befejezett múlt jön: fui.",
+        "en": "«el lunes pasado» (last Monday) is a closed point in time, so the preterite is used: fui.",
+        "es": "«el lunes pasado» es un momento cerrado, por eso va el indefinido: fui.",
+        "de": "«el lunes pasado» (letzten Montag) ist ein abgeschlossener Zeitpunkt, deshalb steht das Indefinido: fui."
       },
       "wrong": {
         "he ido": {
-          "hu": "he ido: közelmúlt (perfecto): a mostanihoz kötné a dolgot. Ide nem illik, mert a(z) «el lunes» (hétfőn) lezárt időpont, a perfecto pedig a mostanihoz kötődő időt jelöl. Helyesen: El lunes fui a la oficina en tren.",
-          "en": "he ido: present perfect (perfecto): it would link the event to now. It does not fit here, because «el lunes» (on Monday) is a closed point in time, and the perfecto belongs to the time up to now. Correct: El lunes fui a la oficina en tren.",
-          "es": "he ido: perfecto: uniría el hecho con el ahora. Aquí no encaja, porque «el lunes» es un momento cerrado, y el perfecto pertenece al tiempo hasta ahora. Correcto: El lunes fui a la oficina en tren.",
-          "de": "he ido: Perfekt: es würde das Ereignis mit dem Jetzt verbinden. Das passt hier nicht, weil «el lunes» (am Montag) ist ein abgeschlossener Zeitpunkt, und das Perfekt gehört zur Zeit bis jetzt. Richtig: El lunes fui a la oficina en tren."
+          "hu": "he ido: közelmúlt (perfecto): a mostanihoz kötné a dolgot. Ide nem illik, mert a(z) «el lunes pasado» (múlt hétfőn) lezárt időpont, a perfecto pedig a mostanihoz kötődő időt jelöl. Helyesen: El lunes pasado fui a la oficina en tren.",
+          "en": "he ido: present perfect (perfecto): it would link the event to now. It does not fit here, because «el lunes pasado» (last Monday) is a closed point in time, and the perfecto belongs to the time up to now. Correct: El lunes pasado fui a la oficina en tren.",
+          "es": "he ido: perfecto: uniría el hecho con el ahora. Aquí no encaja, porque «el lunes pasado» es un momento cerrado, y el perfecto pertenece al tiempo hasta ahora. Correcto: El lunes pasado fui a la oficina en tren.",
+          "de": "he ido: Perfekt: es würde das Ereignis mit dem Jetzt verbinden. Das passt hier nicht, weil «el lunes pasado» (letzten Montag) ist ein abgeschlossener Zeitpunkt, und das Perfekt gehört zur Zeit bis jetzt. Richtig: El lunes pasado fui a la oficina en tren."
         },
         "iba": {
-          "hu": "iba: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «el lunes» (hétfőn) egyetlen lezárt alkalmat jelöl, nem szokást vagy hátteret. Helyesen: El lunes fui a la oficina en tren.",
-          "en": "iba: imperfect (imperfecto): it would describe a habit or a background. It does not fit here, because «el lunes» (on Monday) marks one closed occasion, not a habit or a background. Correct: El lunes fui a la oficina en tren.",
-          "es": "iba: imperfecto: describiría una costumbre o un fondo. Aquí no encaja, porque «el lunes» señala una ocasión cerrada, no una costumbre ni un fondo. Correcto: El lunes fui a la oficina en tren.",
-          "de": "iba: Imperfekt: es würde eine Gewohnheit oder einen Hintergrund beschreiben. Das passt hier nicht, weil «el lunes» (am Montag) markiert einen abgeschlossenen Einzelfall, keine Gewohnheit und keinen Hintergrund. Richtig: El lunes fui a la oficina en tren."
+          "hu": "iba: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «el lunes pasado» (múlt hétfőn) egyetlen lezárt alkalmat jelöl, nem szokást vagy hátteret. Helyesen: El lunes pasado fui a la oficina en tren.",
+          "en": "iba: imperfect (imperfecto): it would describe a habit or a background. It does not fit here, because «el lunes pasado» (last Monday) marks one closed occasion, not a habit or a background. Correct: El lunes pasado fui a la oficina en tren.",
+          "es": "iba: imperfecto: describiría una costumbre o un fondo. Aquí no encaja, porque «el lunes pasado» señala una ocasión cerrada, no una costumbre ni un fondo. Correcto: El lunes pasado fui a la oficina en tren.",
+          "de": "iba: Imperfekt: es würde eine Gewohnheit oder einen Hintergrund beschreiben. Das passt hier nicht, weil «el lunes pasado» (letzten Montag) markiert einen abgeschlossenen Einzelfall, keine Gewohnheit und keinen Hintergrund. Richtig: El lunes pasado fui a la oficina en tren."
         }
       },
       "examples": [
@@ -759,7 +759,7 @@
       "sentence": "Hace dos días ___ (ellos) en el hospital.",
       "options": [
         "han estado",
-        "estaban",
+        "estarán",
         "estuvieron"
       ],
       "correct": 2,
@@ -776,11 +776,11 @@
           "es": "han estado: perfecto: uniría el hecho con el ahora. Aquí no encaja, porque «hace dos días» es un momento cerrado, y el perfecto pertenece al tiempo hasta ahora. Correcto: Hace dos días estuvieron en el hospital.",
           "de": "han estado: Perfekt: es würde das Ereignis mit dem Jetzt verbinden. Das passt hier nicht, weil «hace dos días» (vor zwei Tagen) ist ein abgeschlossener Zeitpunkt, und das Perfekt gehört zur Zeit bis jetzt. Richtig: Hace dos días estuvieron en el hospital."
         },
-        "estaban": {
-          "hu": "estaban: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «hace dos días» (két napja) egyetlen lezárt alkalmat jelöl, nem szokást vagy hátteret. Helyesen: Hace dos días estuvieron en el hospital.",
-          "en": "estaban: imperfect (imperfecto): it would describe a habit or a background. It does not fit here, because «hace dos días» (two days ago) marks one closed occasion, not a habit or a background. Correct: Hace dos días estuvieron en el hospital.",
-          "es": "estaban: imperfecto: describiría una costumbre o un fondo. Aquí no encaja, porque «hace dos días» señala una ocasión cerrada, no una costumbre ni un fondo. Correcto: Hace dos días estuvieron en el hospital.",
-          "de": "estaban: Imperfekt: es würde eine Gewohnheit oder einen Hintergrund beschreiben. Das passt hier nicht, weil «hace dos días» (vor zwei Tagen) markiert einen abgeschlossenen Einzelfall, keine Gewohnheit und keinen Hintergrund. Richtig: Hace dos días estuvieron en el hospital."
+        "estarán": {
+          "hu": "estarán: egyszerű jövő (futuro simple): előre nézne (a kórházban lesznek). Ide nem illik, mert a(z) «hace dos días» (két napja) lezárt múltbeli időpont. Helyesen: Hace dos días estuvieron en el hospital.",
+          "en": "estarán: simple future (futuro simple): it would look ahead (they will be in the hospital). It does not fit here, because «hace dos días» (two days ago) is a closed point in the past. Correct: Hace dos días estuvieron en el hospital.",
+          "es": "estarán: futuro simple: miraría hacia adelante (estarán en el hospital). Aquí no encaja, porque «hace dos días» es un momento cerrado del pasado. Correcto: Hace dos días estuvieron en el hospital.",
+          "de": "estarán: einfaches Futur: es würde nach vorn blicken (sie werden im Krankenhaus sein). Das passt hier nicht, weil «hace dos días» (vor zwei Tagen) ein abgeschlossener Zeitpunkt in der Vergangenheit ist. Richtig: Hace dos días estuvieron en el hospital."
         }
       },
       "examples": [
@@ -864,7 +864,7 @@
       "id": "pvi-form-02",
       "kind": "form",
       "verb": "forma verbal",
-      "person": "Hasta ahora no ___ (hablar, yo) con mi padre.",
+      "person": "Hasta ahora no ___ (hablar, yo; perfecto) con mi padre.",
       "answer": "he hablado",
       "table": "perfecto-indefinido-formas"
     },
@@ -880,7 +880,7 @@
       "id": "pvi-form-04",
       "kind": "form",
       "verb": "forma verbal",
-      "person": "Nunca ___ (estar, yo) en un hospital.",
+      "person": "Nunca ___ (estar, yo; perfecto) en un hospital.",
       "answer": "he estado",
       "table": "perfecto-indefinido-formas"
     },
@@ -888,7 +888,7 @@
       "id": "pvi-form-05",
       "kind": "form",
       "verb": "forma verbal",
-      "person": "¿Ya ___ (comprar, tú) el pan?",
+      "person": "¿Ya ___ (comprar, tú; perfecto) el pan?",
       "answer": "has comprado",
       "table": "perfecto-indefinido-formas"
     },
@@ -920,7 +920,7 @@
       "id": "pvi-form-09",
       "kind": "form",
       "verb": "forma verbal",
-      "person": "Todavía no ___ (escribir, ella) la carta.",
+      "person": "Todavía no ___ (escribir, ella; perfecto) la carta.",
       "answer": "ha escrito",
       "table": "perfecto-indefinido-formas"
     },
@@ -936,7 +936,7 @@
       "id": "pvi-form-11",
       "kind": "form",
       "verb": "forma verbal",
-      "person": "¿___ (ver, tú) alguna vez el mar?",
+      "person": "¿___ (ver, tú; perfecto) alguna vez el mar?",
       "answer": "Has visto",
       "table": "perfecto-indefinido-formas"
     },
@@ -944,7 +944,7 @@
       "id": "pvi-form-12",
       "kind": "form",
       "verb": "forma verbal",
-      "person": "Últimamente ___ (hacer, yo) mucho ejercicio.",
+      "person": "Últimamente ___ (hacer, yo; perfecto) mucho ejercicio.",
       "answer": "he hecho",
       "table": "perfecto-indefinido-formas"
     },

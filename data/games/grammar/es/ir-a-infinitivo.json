@@ -473,7 +473,7 @@
     }
   ],
   "speak": {
-    "hu": "A mindennapi beszélt spanyolban, amikor arról beszélnek, mit fognak csinálni, szinte mindig a menni igét használják, utána egy kis kötőszót, majd egy főnévi igenevet. A menni ige a személynek megfelelően ragozott, a kis kötőszó pedig sosem marad el. A második ige változatlan, főnévi igenév marad. Ez a szerkezet terveket és közeli jövőt fejez ki, azt is, ami mindjárt megtörténik, például az esőt. Néha a többes szám első személy ebben a szerkezetben egyáltalán nem terv, hanem javaslat: gyerünk, csináljuk. A formálisabb jövő idő inkább az íráshoz vagy a bizonytalan találgatáshoz tartozik, a beszélt nyelvben a menni-szerkezet a természetes választás.",
+    "hu": "A mindennapi beszélt spanyolban, amikor arról beszélnek, mit fognak csinálni, szinte mindig a menni igét használják, utána egy kis szócskát, majd egy főnévi igenevet. A menni ige a személynek megfelelően ragozott, a kis szócska pedig sosem marad el. A második ige változatlan, főnévi igenév marad. Ez a szerkezet terveket és közeli jövőt fejez ki, azt is, ami mindjárt megtörténik, például az esőt. Néha a többes szám első személy ebben a szerkezetben egyáltalán nem terv, hanem javaslat: gyerünk, csináljuk. A formálisabb jövő idő inkább az íráshoz vagy a bizonytalan találgatáshoz tartozik, a beszélt nyelvben a menni-szerkezet a természetes választás.",
     "en": "In everyday spoken Spanish, when people talk about what they are going to do, they almost always use the verb for going, then a small connecting word, then an infinitive. The verb for going is conjugated for the person, and the small connecting word never disappears. The second verb stays unchanged, like an infinitive. This structure expresses plans and the near future, including things about to happen, such as rain. Sometimes the first person plural of this structure is not a plan at all but a suggestion, meaning let us do it, come on. The more formal future tense belongs more to writing or uncertain guesses, while in spoken language the going form is the natural choice.",
     "es": "En el español hablado de todos los días, cuando se habla de lo que se va a hacer, casi siempre se usa el verbo ir, luego una palabra pequeña de enlace y después un infinitivo. El verbo ir se conjuga según la persona y la palabra de enlace nunca desaparece. El segundo verbo queda sin cambios, como infinitivo. Esta estructura expresa planes y futuro cercano, incluso cosas a punto de ocurrir, como la lluvia. A veces la primera persona del plural de esta estructura no es un plan, sino una sugerencia, que significa vamos a hacerlo, ánimo. El futuro más formal pertenece más a la escritura o a las suposiciones inciertas, mientras que en la lengua hablada la forma con ir es la natural.",
     "de": "Im gesprochenen Alltagsspanisch benutzt man, wenn man sagt, was man tun wird, fast immer das Verb für gehen, dann ein kleines Bindewort und dann einen Infinitiv. Das Verb für gehen wird nach der Person konjugiert, und das kleine Bindewort fällt nie weg. Das zweite Verb bleibt unverändert, wie ein Infinitiv. Diese Struktur drückt Pläne und die nahe Zukunft aus, auch Dinge, die gleich geschehen, etwa Regen. Manchmal ist die erste Person Plural dieser Struktur gar kein Plan, sondern ein Vorschlag, also lass uns das tun. Das formellere Futur gehört eher zur Schrift oder zu unsicheren Vermutungen, in der gesprochenen Sprache ist die Gehen-Form die natürliche Wahl."
@@ -923,7 +923,7 @@
           "de": "\"Va\" ist die er/sie/Sie-Form (Singular), hier ist aber ellos (sie, Plural) das Subjekt; richtig: Ellos van a viajar a México."
         },
         "vamos": {
-          "hu": "A \"vamos\" a nosotros alakja, itt viszont ellos a beszélgetőpartner; helyesen: Ellos van a viajar a México.",
+          "hu": "A \"vamos\" a nosotros alakja, itt viszont ellos (ők) az alany; helyesen: Ellos van a viajar a México.",
           "en": "\"Vamos\" is the nosotros form, but here ellos is the subject; correctly: Ellos van a viajar a México.",
           "es": "\"Vamos\" es la forma de nosotros, pero aquí el sujeto es ellos; correctamente: Ellos van a viajar a México.",
           "de": "\"Vamos\" ist die nosotros-Form, hier ist aber ellos das Subjekt; richtig: Ellos van a viajar a México."
@@ -1275,13 +1275,13 @@
     {
       "kind": "why",
       "id": "iai-why-05",
-      "es": "Vais a llegar tarde.",
-      "target": "Vais",
+      "es": "Ustedes van a llegar tarde.",
+      "target": "van",
       "tr": {
-        "hu": "El fogtok késni.",
+        "hu": "Önök el fognak késni.",
         "en": "You all are going to arrive late.",
-        "es": "Vais a llegar tarde.",
-        "de": "Ihr werdet zu spät kommen."
+        "es": "Ustedes van a llegar tarde.",
+        "de": "Sie werden zu spät kommen."
       },
       "options": [
         {
@@ -1292,18 +1292,18 @@
             "de": "wir (nosotros)"
           },
           "wrong": {
-            "hu": "Ha nosotros lenne, 'Vamos a llegar tarde' állna, azaz MI fogunk elkésni, nem ti.",
+            "hu": "Ha nosotros lenne, 'Vamos a llegar tarde' állna, azaz MI fogunk elkésni, nem Önök.",
             "en": "If it were nosotros, it would say 'Vamos a llegar tarde', meaning WE are going to be late, not you all.",
-            "es": "Si fuera nosotros, diría 'Vamos a llegar tarde', o sea que NOSOTROS vamos a llegar tarde, no vosotros.",
-            "de": "Wäre es nosotros, hieße es 'Vamos a llegar tarde', also werden WIR zu spät kommen, nicht ihr."
+            "es": "Si fuera nosotros, diría 'Vamos a llegar tarde', o sea que NOSOTROS vamos a llegar tarde, no ustedes.",
+            "de": "Wäre es nosotros, hieße es 'Vamos a llegar tarde', also werden WIR zu spät kommen, nicht Sie."
           }
         },
         {
           "text": {
-            "hu": "ti (vosotros, Spo.)",
-            "en": "you all (vosotros, Spain)",
-            "es": "vosotros",
-            "de": "ihr (vosotros, Spanien)"
+            "hu": "ők / Önök",
+            "en": "they/you all (ustedes)",
+            "es": "ellos/ellas/ustedes",
+            "de": "sie/Sie (Plural)"
           }
         },
         {
@@ -1314,10 +1314,10 @@
             "de": "er/sie/Sie"
           },
           "wrong": {
-            "hu": "Ha él/ella lenne, 'Va a llegar tarde' állna, azaz Ő fog elkésni, egyedül, nem ti, többen.",
+            "hu": "Ha él/ella lenne, 'Va a llegar tarde' állna, azaz Ő fog elkésni, egyedül, nem Önök, többen.",
             "en": "If it were él/ella, it would say 'Va a llegar tarde', meaning HE/SHE is going to be late, alone, not you all.",
-            "es": "Si fuera él/ella, diría 'Va a llegar tarde', o sea que ÉL/ELLA va a llegar tarde, solo, no vosotros.",
-            "de": "Wäre es él/ella, hieße es 'Va a llegar tarde', also wird ER/SIE allein zu spät kommen, nicht ihr."
+            "es": "Si fuera él/ella, diría 'Va a llegar tarde', o sea que ÉL/ELLA va a llegar tarde, solo, no ustedes.",
+            "de": "Wäre es él/ella, hieße es 'Va a llegar tarde', also wird ER/SIE allein zu spät kommen, nicht Sie."
           }
         }
       ],
@@ -1479,7 +1479,7 @@
         "de": "Sie essen früh."
       },
       "answer": "Van a comer temprano.",
-      "accept": ["Ellos van a comer temprano."],
+      "accept": ["Ellos van a comer temprano.", "Ellas van a comer temprano.", "Ustedes van a comer temprano."],
       "wordIds": ["31", "25", "1239"],
       "why": {
         "hu": "Terv ellos-ra: ir a + főnévi igenév. Ir rendhagyó, ellos: van.",
@@ -1519,7 +1519,7 @@
         "de": "Isst er morgen?"
       },
       "answer": "¿Va a comer mañana?",
-      "accept": ["¿Él va a comer mañana?"],
+      "accept": ["¿Mañana va a comer?", "¿Él va a comer mañana?", "¿Mañana él va a comer?", "¿Ella va a comer mañana?", "¿Mañana ella va a comer?", "¿Usted va a comer mañana?", "¿Mañana usted va a comer?"],
       "wordIds": ["31", "25", "56"],
       "why": {
         "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, él: va.",
@@ -1539,7 +1539,7 @@
         "de": "Sie gehen zusammen."
       },
       "answer": "Van a ir juntos.",
-      "accept": ["Ellos van a ir juntos."],
+      "accept": ["Ellos van a ir juntos.", "Ellas van a ir juntos.", "Ustedes van a ir juntos."],
       "wordIds": ["31", "86"],
       "why": {
         "hu": "Eldöntött terv, itt a második ige maga az ir: ir a + ir. Ir rendhagyó, ellos: van.",
@@ -1573,14 +1573,14 @@
       "kind": "transform",
       "tense": { "from": "presente", "to": "ir-a" },
       "prompt": {
-        "es": "Vamos tarde.",
-        "hu": "Későn megyünk.",
-        "en": "We go late.",
-        "de": "Wir gehen spät."
+        "es": "Vamos temprano.",
+        "hu": "Korán megyünk.",
+        "en": "We go early.",
+        "de": "Wir gehen früh."
       },
-      "answer": "Vamos a ir tarde.",
-      "accept": ["Nosotros vamos a ir tarde."],
-      "wordIds": ["31", "1240"],
+      "answer": "Vamos a ir temprano.",
+      "accept": ["Nosotros vamos a ir temprano."],
+      "wordIds": ["31", "1239"],
       "why": {
         "hu": "Terv többes számban, itt a második ige maga az ir: ir a + ir. Ir rendhagyó, nosotros: vamos.",
         "en": "A plan in the plural, here the second verb is ir itself: ir a + ir. Ir is irregular, nosotros: vamos.",
@@ -1613,19 +1613,19 @@
       "kind": "transform",
       "tense": { "from": "presente", "to": "ir-a" },
       "prompt": {
-        "es": "¿Vais el domingo?",
-        "hu": "Vasárnap mentek?",
+        "es": "¿Ustedes van el domingo?",
+        "hu": "Önök vasárnap mennek?",
         "en": "Are you all going on Sunday?",
-        "de": "Geht ihr am Sonntag?"
+        "de": "Gehen Sie am Sonntag?"
       },
-      "answer": "¿Vais a ir el domingo?",
-      "accept": ["¿Vosotros vais a ir el domingo?"],
+      "answer": "¿Ustedes van a ir el domingo?",
+      "accept": ["¿Van a ir el domingo?", "¿El domingo van a ir?", "¿El domingo ustedes van a ir?"],
       "wordIds": ["31", "1202"],
       "why": {
-        "hu": "Kérdés, itt a második ige maga az ir: ir a + ir. Ir rendhagyó, vosotros: vais.",
-        "en": "A question, here the second verb is ir itself: ir a + ir. Ir is irregular, vosotros: vais.",
-        "es": "Una pregunta, aquí el segundo verbo es ir mismo: ir a + ir. Ir es irregular, vosotros: vais.",
-        "de": "Eine Frage, hier ist das zweite Verb ir selbst: ir a + ir. Ir ist unregelmäßig, vosotros: vais."
+        "hu": "Kérdés, itt a második ige maga az ir: ir a + ir. Ir rendhagyó, ustedes: van.",
+        "en": "A question, here the second verb is ir itself: ir a + ir. Ir is irregular, ustedes: van.",
+        "es": "Una pregunta, aquí el segundo verbo es ir mismo: ir a + ir. Ir es irregular, ustedes: van.",
+        "de": "Eine Frage, hier ist das zweite Verb ir selbst: ir a + ir. Ir ist unregelmäßig, ustedes: van."
       }
     },
     {
@@ -1659,7 +1659,7 @@
         "de": "Sie macht das auch."
       },
       "answer": "También va a hacer esto.",
-      "accept": ["Ella también va a hacer esto."],
+      "accept": ["Va a hacer esto también.", "También él va a hacer esto.", "Él va a hacer esto también.", "Él también va a hacer esto.", "También ella va a hacer esto.", "Ella va a hacer esto también.", "Ella también va a hacer esto.", "También usted va a hacer esto.", "Usted va a hacer esto también.", "Usted también va a hacer esto."],
       "wordIds": ["31", "34", "101", "59"],
       "why": {
         "hu": "Terv ella-ra: ir a + főnévi igenév. Ir rendhagyó, ella: va.",
@@ -1679,7 +1679,7 @@
         "de": "Sie machen das zusammen."
       },
       "answer": "Van a hacer esto juntos.",
-      "accept": ["Ellos van a hacer esto juntos."],
+      "accept": ["Ellos van a hacer esto juntos.", "Ellas van a hacer esto juntos.", "Ustedes van a hacer esto juntos."],
       "wordIds": ["31", "34", "101", "86"],
       "why": {
         "hu": "Terv ellos-ra: ir a + főnévi igenév. Ir rendhagyó, ellos: van.",
@@ -1719,7 +1719,7 @@
         "de": "Machen sie das morgen?"
       },
       "answer": "¿Van a hacer eso mañana?",
-      "accept": ["¿Ellas van a hacer eso mañana?"],
+      "accept": ["¿Mañana van a hacer eso?", "¿Ellos van a hacer eso mañana?", "¿Mañana ellos van a hacer eso?", "¿Ellas van a hacer eso mañana?", "¿Mañana ellas van a hacer eso?", "¿Ustedes van a hacer eso mañana?", "¿Mañana ustedes van a hacer eso?"],
       "wordIds": ["31", "34", "102", "56"],
       "why": {
         "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, ellas: van.",
@@ -1759,7 +1759,7 @@
         "de": "Wir sehen das auch."
       },
       "answer": "Vamos a ver eso también.",
-      "accept": ["Nosotros vamos a ver eso también."],
+      "accept": ["También vamos a ver eso.", "Nosotros vamos a ver eso también.", "También nosotros vamos a ver eso.", "Nosotros también vamos a ver eso."],
       "wordIds": ["31", "37", "102", "59"],
       "why": {
         "hu": "Terv többes számban: ir a + főnévi igenév. Ir rendhagyó, nosotros: vamos.",
@@ -1773,14 +1773,14 @@
       "kind": "transform",
       "tense": { "from": "presente", "to": "ir-a" },
       "prompt": {
-        "es": "Ve temprano.",
-        "hu": "Korán néz.",
-        "en": "He watches early.",
-        "de": "Er schaut früh."
+        "es": "Ve la tele.",
+        "hu": "Tévét néz.",
+        "en": "He watches TV.",
+        "de": "Er sieht fern."
       },
-      "answer": "Va a ver temprano.",
-      "accept": ["Él va a ver temprano."],
-      "wordIds": ["31", "37", "1239"],
+      "answer": "Va a ver la tele.",
+      "accept": ["Él va a ver la tele.", "Ella va a ver la tele.", "Usted va a ver la tele."],
+      "wordIds": ["31", "37", "1837"],
       "why": {
         "hu": "Terv él-re: ir a + főnévi igenév. Ir rendhagyó, él: va.",
         "en": "A plan for él: ir a + infinitive. Ir is irregular, él: va.",
@@ -1813,19 +1813,19 @@
       "kind": "transform",
       "tense": { "from": "presente", "to": "ir-a" },
       "prompt": {
-        "es": "¿Veis el domingo?",
-        "hu": "Vasárnap néztek?",
-        "en": "Do you all watch on Sunday?",
-        "de": "Schaut ihr am Sonntag?"
+        "es": "¿Ustedes ven la tele el domingo?",
+        "hu": "Önök vasárnap tévét néznek?",
+        "en": "Do you all watch TV on Sunday?",
+        "de": "Sehen Sie am Sonntag fern?"
       },
-      "answer": "¿Vais a ver el domingo?",
-      "accept": ["¿Vosotros vais a ver el domingo?"],
-      "wordIds": ["31", "37", "1202"],
+      "answer": "¿Ustedes van a ver la tele el domingo?",
+      "accept": ["¿Van a ver la tele el domingo?", "¿El domingo van a ver la tele?", "¿El domingo ustedes van a ver la tele?"],
+      "wordIds": ["31", "37", "1837", "1202"],
       "why": {
-        "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, vosotros: vais.",
-        "en": "A question about a planned action: ir a + infinitive. Ir is irregular, vosotros: vais.",
-        "es": "Una pregunta sobre una acción planeada: ir a + infinitivo. Ir es irregular, vosotros: vais.",
-        "de": "Eine Frage zu einer geplanten Handlung: ir a + Infinitiv. Ir ist unregelmäßig, vosotros: vais."
+        "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, ustedes: van.",
+        "en": "A question about a planned action: ir a + infinitive. Ir is irregular, ustedes: van.",
+        "es": "Una pregunta sobre una acción planeada: ir a + infinitivo. Ir es irregular, ustedes: van.",
+        "de": "Eine Frage zu einer geplanten Handlung: ir a + Infinitiv. Ir ist unregelmäßig, ustedes: van."
       }
     },
     {
@@ -1899,7 +1899,7 @@
         "de": "Sie lernt auch nicht."
       },
       "answer": "No va a estudiar tampoco.",
-      "accept": ["Ella no va a estudiar tampoco."],
+      "accept": ["Tampoco va a estudiar.", "Él no va a estudiar tampoco.", "Él tampoco va a estudiar.", "Ella no va a estudiar tampoco.", "Ella tampoco va a estudiar.", "Usted no va a estudiar tampoco.", "Usted tampoco va a estudiar."],
       "wordIds": ["31", "1410", "1317", "1"],
       "why": {
         "hu": "Tagadás: a no az ir elé kerül. Ir rendhagyó, ella: va.",
@@ -1919,7 +1919,7 @@
         "de": "Lernen sie vorher?"
       },
       "answer": "¿Van a estudiar antes?",
-      "accept": ["¿Ellos van a estudiar antes?"],
+      "accept": ["¿Antes van a estudiar?", "¿Ellos van a estudiar antes?", "¿Antes ellos van a estudiar?", "¿Ellas van a estudiar antes?", "¿Antes ellas van a estudiar?", "¿Ustedes van a estudiar antes?", "¿Antes ustedes van a estudiar?"],
       "wordIds": ["31", "1410", "63"],
       "why": {
         "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, ellos: van.",
@@ -1959,7 +1959,7 @@
         "de": "Er arbeitet langsam."
       },
       "answer": "Va a trabajar lento.",
-      "accept": ["Él va a trabajar lento."],
+      "accept": ["Él va a trabajar lento.", "Ella va a trabajar lento.", "Usted va a trabajar lento."],
       "wordIds": ["31", "1409", "91"],
       "why": {
         "hu": "Terv él-re: ir a + főnévi igenév. Ir rendhagyó, él: va.",
@@ -1979,7 +1979,7 @@
         "de": "Wir arbeiten danach."
       },
       "answer": "Vamos a trabajar después.",
-      "accept": ["Nosotros vamos a trabajar después."],
+      "accept": ["Después vamos a trabajar.", "Nosotros vamos a trabajar después.", "Después nosotros vamos a trabajar."],
       "wordIds": ["31", "1409", "62"],
       "why": {
         "hu": "Terv többes számban: ir a + főnévi igenév. Ir rendhagyó, nosotros: vamos.",
@@ -1999,7 +1999,7 @@
         "de": "Du arbeitest morgen nicht."
       },
       "answer": "No vas a trabajar mañana.",
-      "accept": ["Tú no vas a trabajar mañana."],
+      "accept": ["Mañana no vas a trabajar.", "Tú no vas a trabajar mañana.", "Mañana tú no vas a trabajar."],
       "wordIds": ["31", "1409", "56", "1"],
       "why": {
         "hu": "Tagadás: a no az ir elé kerül. Ir rendhagyó, tú: vas.",
@@ -2019,7 +2019,7 @@
         "de": "Arbeiten Sie am Sonntag?"
       },
       "answer": "¿Van a trabajar el domingo?",
-      "accept": ["¿Ustedes van a trabajar el domingo?"],
+      "accept": ["¿El domingo van a trabajar?", "¿Ellos van a trabajar el domingo?", "¿El domingo ellos van a trabajar?", "¿Ellas van a trabajar el domingo?", "¿El domingo ellas van a trabajar?", "¿Ustedes van a trabajar el domingo?", "¿El domingo ustedes van a trabajar?"],
       "wordIds": ["31", "1409", "1202"],
       "why": {
         "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, ustedes: van.",
@@ -2033,14 +2033,14 @@
       "kind": "transform",
       "tense": { "from": "presente", "to": "ir-a" },
       "prompt": {
-        "es": "Compro bien.",
-        "hu": "Jól vásárolok.",
-        "en": "I shop well.",
-        "de": "Ich kaufe gut ein."
+        "es": "Compro pan.",
+        "hu": "Kenyeret veszek.",
+        "en": "I buy bread.",
+        "de": "Ich kaufe Brot."
       },
-      "answer": "Voy a comprar bien.",
-      "accept": ["Yo voy a comprar bien."],
-      "wordIds": ["31", "1394", "6"],
+      "answer": "Voy a comprar pan.",
+      "accept": ["Yo voy a comprar pan."],
+      "wordIds": ["31", "1394", "1062"],
       "why": {
         "hu": "Eldöntött terv: ir a + főnévi igenév. Ir rendhagyó, yo: voy.",
         "en": "A decided plan: ir a + infinitive. Ir is irregular, yo: voy.",
@@ -2079,7 +2079,7 @@
         "de": "Sie kauft hier ein."
       },
       "answer": "Va a comprar aquí.",
-      "accept": ["Ella va a comprar aquí."],
+      "accept": ["Él va a comprar aquí.", "Ella va a comprar aquí.", "Usted va a comprar aquí."],
       "wordIds": ["31", "1394", "8"],
       "why": {
         "hu": "Terv ella-ra: ir a + főnévi igenév. Ir rendhagyó, ella: va.",
@@ -2119,7 +2119,7 @@
         "de": "Kaufen sie auch ein?"
       },
       "answer": "¿Van a comprar también?",
-      "accept": ["¿Ellos van a comprar también?"],
+      "accept": ["¿También van a comprar?", "¿Ellos van a comprar también?", "¿También ellos van a comprar?", "¿Ellos también van a comprar?", "¿Ellas van a comprar también?", "¿También ellas van a comprar?", "¿Ellas también van a comprar?", "¿Ustedes van a comprar también?", "¿También ustedes van a comprar?", "¿Ustedes también van a comprar?"],
       "wordIds": ["31", "1394", "59"],
       "why": {
         "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, ellos: van.",
@@ -2179,7 +2179,7 @@
         "de": "Wir sprechen danach."
       },
       "answer": "Vamos a hablar después.",
-      "accept": ["Nosotros vamos a hablar después."],
+      "accept": ["Después vamos a hablar.", "Nosotros vamos a hablar después.", "Después nosotros vamos a hablar."],
       "wordIds": ["31", "27", "62"],
       "why": {
         "hu": "Terv többes számban: ir a + főnévi igenév. Ir rendhagyó, nosotros: vamos.",
@@ -2199,7 +2199,7 @@
         "de": "Er spricht auch nicht."
       },
       "answer": "No va a hablar tampoco.",
-      "accept": ["Él no va a hablar tampoco."],
+      "accept": ["Tampoco va a hablar.", "Él no va a hablar tampoco.", "Él tampoco va a hablar.", "Ella no va a hablar tampoco.", "Ella tampoco va a hablar.", "Usted no va a hablar tampoco.", "Usted tampoco va a hablar."],
       "wordIds": ["31", "27", "1317", "1"],
       "why": {
         "hu": "Tagadás: a no az ir elé kerül. Ir rendhagyó, él: va.",
@@ -2213,19 +2213,19 @@
       "kind": "transform",
       "tense": { "from": "presente", "to": "ir-a" },
       "prompt": {
-        "es": "¿Habláis dentro?",
-        "hu": "Bent beszéltek?",
+        "es": "¿Ustedes hablan dentro?",
+        "hu": "Önök bent beszélnek?",
         "en": "Do you all talk inside?",
-        "de": "Sprecht ihr drinnen?"
+        "de": "Sprechen Sie drinnen?"
       },
-      "answer": "¿Vais a hablar dentro?",
-      "accept": ["¿Vosotros vais a hablar dentro?"],
+      "answer": "¿Ustedes van a hablar dentro?",
+      "accept": ["¿Van a hablar dentro?"],
       "wordIds": ["31", "27", "65"],
       "why": {
-        "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, vosotros: vais.",
-        "en": "A question about a planned action: ir a + infinitive. Ir is irregular, vosotros: vais.",
-        "es": "Una pregunta sobre una acción planeada: ir a + infinitivo. Ir es irregular, vosotros: vais.",
-        "de": "Eine Frage zu einer geplanten Handlung: ir a + Infinitiv. Ir ist unregelmäßig, vosotros: vais."
+        "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, ustedes: van.",
+        "en": "A question about a planned action: ir a + infinitive. Ir is irregular, ustedes: van.",
+        "es": "Una pregunta sobre una acción planeada: ir a + infinitivo. Ir es irregular, ustedes: van.",
+        "de": "Eine Frage zu einer geplanten Handlung: ir a + Infinitiv. Ir ist unregelmäßig, ustedes: van."
       }
     },
     {
@@ -2259,7 +2259,7 @@
         "de": "Sie lebt hier."
       },
       "answer": "Va a vivir aquí.",
-      "accept": ["Ella va a vivir aquí."],
+      "accept": ["Él va a vivir aquí.", "Ella va a vivir aquí.", "Usted va a vivir aquí."],
       "wordIds": ["31", "82", "8"],
       "why": {
         "hu": "Terv ella-ra: ir a + főnévi igenév. Ir rendhagyó, ella: va.",
@@ -2319,7 +2319,7 @@
         "de": "Leben sie zufrieden?"
       },
       "answer": "¿Van a vivir contentos?",
-      "accept": ["¿Ellos van a vivir contentos?"],
+      "accept": ["¿Ellos van a vivir contentos?", "¿Ellas van a vivir contentos?", "¿Ustedes van a vivir contentos?"],
       "wordIds": ["31", "82", "1360"],
       "why": {
         "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, ellos: van.",
@@ -2339,7 +2339,7 @@
         "de": "Ich lese vorher."
       },
       "answer": "Voy a leer antes.",
-      "accept": ["Yo voy a leer antes."],
+      "accept": ["Antes voy a leer.", "Yo voy a leer antes.", "Antes yo voy a leer."],
       "wordIds": ["31", "1411", "63"],
       "why": {
         "hu": "Eldöntött terv: ir a + főnévi igenév. Ir rendhagyó, yo: voy.",
@@ -2359,7 +2359,7 @@
         "de": "Du liest danach."
       },
       "answer": "Vas a leer después.",
-      "accept": ["Tú vas a leer después."],
+      "accept": ["Después vas a leer.", "Tú vas a leer después.", "Después tú vas a leer."],
       "wordIds": ["31", "1411", "62"],
       "why": {
         "hu": "Terv tú-ra: ir a + főnévi igenév. Ir rendhagyó, tú: vas.",
@@ -2399,7 +2399,7 @@
         "de": "Sie liest auch nicht."
       },
       "answer": "No va a leer tampoco.",
-      "accept": ["Ella no va a leer tampoco."],
+      "accept": ["Tampoco va a leer.", "Él no va a leer tampoco.", "Él tampoco va a leer.", "Ella no va a leer tampoco.", "Ella tampoco va a leer.", "Usted no va a leer tampoco.", "Usted tampoco va a leer."],
       "wordIds": ["31", "1411", "1317", "1"],
       "why": {
         "hu": "Tagadás: a no az ir elé kerül. Ir rendhagyó, ella: va.",
@@ -2419,7 +2419,7 @@
         "de": "Lesen sie draußen?"
       },
       "answer": "¿Van a leer fuera?",
-      "accept": ["¿Ellos van a leer fuera?"],
+      "accept": ["¿Ellos van a leer fuera?", "¿Ellas van a leer fuera?", "¿Ustedes van a leer fuera?"],
       "wordIds": ["31", "1411", "64"],
       "why": {
         "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, ellos: van.",

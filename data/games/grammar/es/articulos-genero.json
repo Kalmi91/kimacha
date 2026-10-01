@@ -152,10 +152,10 @@
         },
         {
           "text": {
-            "hu": "A görög eredetű -ma végű szavak az -a ellenére hímneműek: el problema, el idioma, el planeta, el sistema.",
-            "en": "Greek-origin words ending in -ma are masculine despite the -a: el problema, el idioma, el planeta, el sistema.",
-            "es": "Las palabras de origen griego en -ma son masculinas pese a la -a: el problema, el idioma, el planeta, el sistema.",
-            "de": "Wörter griechischen Ursprungs auf -ma sind trotz -a männlich: el problema, el idioma, el planeta, el sistema."
+            "hu": "A görög eredetű -ma végű szavak az -a ellenére hímneműek: el problema, el idioma, el sistema, el programa.",
+            "en": "Greek-origin words ending in -ma are masculine despite the -a: el problema, el idioma, el sistema, el programa.",
+            "es": "Las palabras de origen griego en -ma son masculinas pese a la -a: el problema, el idioma, el sistema, el programa.",
+            "de": "Wörter griechischen Ursprungs auf -ma sind trotz -a männlich: el problema, el idioma, el sistema, el programa."
           },
           "examples": [
             {
@@ -263,11 +263,11 @@
               }
             },
             {
-              "es": "Hay un problema con el coche.",
+              "es": "Hay un problema con el carro.",
               "tr": {
                 "hu": "Van egy probléma az autóval.",
                 "en": "There is a problem with the car.",
-                "es": "Hay un problema con el coche.",
+                "es": "Hay un problema con el carro.",
                 "de": "Es gibt ein Problem mit dem Auto."
               }
             }
@@ -477,7 +477,7 @@
     }
   ],
   "speak": {
-    "hu": "A spanyol névelő megmutatja a főnév nemét és azt, hogy határozott-e. Négy határozott és négy határozatlan alakja van. A legtöbb o végű főnév hímnemű, a legtöbb a végű nőnemű, de a görög eredetű, m-mel és a-val végződő főnevek hímneműek, és néhány mindennapi szó egyszerű kivétel. A hangsúlyos a-val kezdődő nőnemű főnév egyes számban a hímnemű névelőt kapja, többes számban viszont újra szabályos. A foglalkozás elől nem áll névelő, a \"-hoz\" és a \"-nak a\" elöljáró pedig összeolvad a hímnemű névelővel.",
+    "hu": "A spanyol névelő megmutatja a főnév nemét és azt, hogy határozott-e. Négy határozott és négy határozatlan alakja van. A legtöbb o végű főnév hímnemű, a legtöbb a végű nőnemű, de a görög eredetű, m-mel és a-val végződő főnevek hímneműek, és néhány mindennapi szó egyszerű kivétel. A hangsúlyos a-val kezdődő nőnemű főnév egyes számban a hímnemű névelőt kapja, többes számban viszont újra szabályos. A foglalkozás neve előtt nem áll névelő, a \"-hoz\" és a \"-nak a\" elöljáró pedig összeolvad a hímnemű névelővel.",
     "en": "The Spanish article shows the gender of the noun and whether it is definite. There are four definite forms and four indefinite forms. Most nouns ending in o are masculine and most ending in a are feminine, but nouns ending in the letters m and a that come from Greek are masculine, and a few everyday words are simple exceptions. A feminine noun that starts with a stressed a takes the masculine article in the singular, but the plural is normal again. A profession takes no article, and the preposition to and the preposition of merge with the masculine article.",
     "es": "El artículo español indica el género del sustantivo y si es determinado. Hay cuatro formas determinadas y cuatro indeterminadas. La mayoría de los sustantivos que acaban en o son masculinos y los que acaban en a son femeninos, pero los de origen griego que acaban en ma son masculinos, y unas pocas palabras de uso diario son excepciones simples. Un sustantivo femenino que empieza con a tónica lleva el artículo masculino en singular, pero el plural es normal. La profesión no lleva artículo, y las preposiciones que significan a y de se funden con el artículo masculino.",
     "de": "Der spanische Artikel zeigt das Geschlecht des Nomens und ob es bestimmt ist. Es gibt vier bestimmte und vier unbestimmte Formen. Die meisten Nomen auf o sind maskulin und die meisten auf a feminin, aber Nomen griechischen Ursprungs auf ma sind maskulin, und einige alltägliche Wörter sind einfache Ausnahmen. Ein feminines Nomen mit betontem a am Anfang bekommt im Singular den maskulinen Artikel, im Plural ist es wieder normal. Ein Beruf steht ohne Artikel, und die Präpositionen für zu und von verschmelzen mit dem maskulinen Artikel."
@@ -508,6 +508,24 @@
         "en": "planet",
         "es": "el planeta",
         "de": "Planet"
+      }
+    },
+    {
+      "word": "carro",
+      "gloss": {
+        "hu": "autó",
+        "en": "car",
+        "es": "el carro",
+        "de": "Auto"
+      }
+    },
+    {
+      "word": "carros",
+      "gloss": {
+        "hu": "autók",
+        "en": "cars",
+        "es": "los carros",
+        "de": "Autos"
       }
     }
   ],
@@ -589,7 +607,7 @@
         }
       },
       "examples": [
-        "Los coches son caros.",
+        "Los carros son caros.",
         "Los estudiantes trabajan mucho."
       ]
     },
@@ -710,10 +728,10 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A día görög eredetű, -a végű szó, de hímnemű: el día.",
-        "en": "Día is a Greek-origin word ending in -a, but it's masculine: el día.",
-        "es": "Día es una palabra de origen griego terminada en -a, pero es masculina: el día.",
-        "de": "Día ist ein Wort griechischen Ursprungs auf -a, aber es ist männlich: el día."
+        "hu": "A día -a végű szó, de hímnemű: el día.",
+        "en": "Día ends in -a, but it's masculine: el día.",
+        "es": "Día termina en -a, pero es masculino: el día.",
+        "de": "Día endet auf -a, ist aber männlich: el día."
       },
       "wrong": {
         "La": {
@@ -784,24 +802,24 @@
     },
     {
       "id": "ag-11",
-      "sentence": "El coche es ___.",
+      "sentence": "El carro es ___.",
       "options": [
         "nuevo",
         "nueva"
       ],
       "correct": 0,
       "why": {
-        "hu": "A melléknévnek egyeztetnie kell a főnév nemével: coche hímnemű, ezért nuevo.",
-        "en": "The adjective must agree with the noun's gender: coche is masculine, so nuevo.",
-        "es": "El adjetivo debe concordar en género con el sustantivo: coche es masculino, por eso nuevo.",
-        "de": "Das Adjektiv muss im Geschlecht mit dem Substantiv übereinstimmen: coche ist männlich, deshalb nuevo."
+        "hu": "A melléknévnek egyeztetnie kell a főnév nemével: carro hímnemű, ezért nuevo.",
+        "en": "The adjective must agree with the noun's gender: carro is masculine, so nuevo.",
+        "es": "El adjetivo debe concordar en género con el sustantivo: carro es masculino, por eso nuevo.",
+        "de": "Das Adjektiv muss im Geschlecht mit dem Substantiv übereinstimmen: carro ist männlich, deshalb nuevo."
       },
       "wrong": {
         "nueva": {
-          "hu": "Ezzel a mondat azt jelentené, hogy a coche nőnemű, de a coche hímnemű szó, tehát nuevo a helyes alak; helyesen: El coche es nuevo.",
-          "en": "This would treat coche as feminine, but coche is a masculine word, so nuevo is the right form; correctly: El coche es nuevo.",
-          "es": "Esto trataría a coche como femenino, pero coche es una palabra masculina, así que nuevo es la forma correcta; correctamente: El coche es nuevo.",
-          "de": "Das würde coche als feminin behandeln, aber coche ist ein männliches Wort, daher ist nuevo die richtige Form; richtig: El coche es nuevo."
+          "hu": "Ezzel a mondat azt jelentené, hogy a carro nőnemű, de a carro hímnemű szó, tehát nuevo a helyes alak; helyesen: El carro es nuevo.",
+          "en": "This would treat carro as feminine, but carro is a masculine word, so nuevo is the right form; correctly: El carro es nuevo.",
+          "es": "Esto trataría a carro como femenino, pero carro es una palabra masculina, así que nuevo es la forma correcta; correctamente: El carro es nuevo.",
+          "de": "Das würde carro als feminin behandeln, aber carro ist ein männliches Wort, daher ist nuevo die richtige Form; richtig: El carro es nuevo."
         }
       },
       "examples": [

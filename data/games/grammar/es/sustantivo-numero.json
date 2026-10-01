@@ -83,10 +83,10 @@
         },
         {
           "text": {
-            "hu": "-or, -aje végű szavak hímneműek: el color, el viaje.",
-            "en": "Nouns ending in -or, -aje are masculine: el color, el viaje.",
-            "es": "Los sustantivos en -or, -aje son masculinos: el color, el viaje.",
-            "de": "Nomen auf -or, -aje sind maskulin: el color, el viaje."
+            "hu": "-or, -aje végű szavak többnyire hímneműek: el color, el viaje.",
+            "en": "Nouns ending in -or, -aje are mostly masculine: el color, el viaje.",
+            "es": "Los sustantivos en -or, -aje son casi siempre masculinos: el color, el viaje.",
+            "de": "Nomen auf -or, -aje sind meist maskulin: el color, el viaje."
           },
           "examples": [
             {
@@ -112,10 +112,10 @@
       "items": [
         {
           "text": {
-            "hu": "Néhány -a végű szó görög eredetű és hímnemű kivétel: el día, el mapa, el problema, el sistema, el idioma, el clima.",
-            "en": "A few words ending in -a are Greek in origin and masculine exceptions: el día, el mapa, el problema, el sistema, el idioma, el clima.",
-            "es": "Algunas palabras en -a son de origen griego y son excepciones masculinas: el día, el mapa, el problema, el sistema, el idioma, el clima.",
-            "de": "Einige Wörter auf -a sind griechischen Ursprungs und maskuline Ausnahmen: el día, el mapa, el problema, el sistema, el idioma, el clima."
+            "hu": "Néhány -a végű szó hímnemű kivétel (sok közülük görög eredetű): el día, el mapa, el problema, el sistema, el idioma, el clima.",
+            "en": "A few words ending in -a are masculine exceptions (many are Greek in origin): el día, el mapa, el problema, el sistema, el idioma, el clima.",
+            "es": "Algunas palabras en -a son excepciones masculinas (muchas de origen griego): el día, el mapa, el problema, el sistema, el idioma, el clima.",
+            "de": "Einige Wörter auf -a sind maskuline Ausnahmen (viele griechischen Ursprungs): el día, el mapa, el problema, el sistema, el idioma, el clima."
           },
           "examples": [
             {
@@ -363,10 +363,10 @@
         },
         {
           "text": {
-            "hu": "Néhány szót szinte mindig többes számban használunk: las gafas, los pantalones, las vacaciones, las tijeras.",
-            "en": "A few words are almost always used in the plural: las gafas, los pantalones, las vacaciones, las tijeras.",
-            "es": "Algunas palabras se usan casi siempre en plural: las gafas, los pantalones, las vacaciones, las tijeras.",
-            "de": "Einige Wörter stehen fast immer im Plural: las gafas, los pantalones, las vacaciones, las tijeras."
+            "hu": "Néhány szót szinte mindig többes számban használunk: los lentes, los pantalones, las vacaciones, las tijeras.",
+            "en": "A few words are almost always used in the plural: los lentes, los pantalones, las vacaciones, las tijeras.",
+            "es": "Algunas palabras se usan casi siempre en plural: los lentes, los pantalones, las vacaciones, las tijeras.",
+            "de": "Einige Wörter stehen fast immer im Plural: los lentes, los pantalones, las vacaciones, las tijeras."
           },
           "examples": [
             {
@@ -588,6 +588,14 @@
     {
       "word": "radio",
       "gloss": { "hu": "rádió", "en": "radio", "es": "la radio", "de": "Radio" }
+    },
+    {
+      "word": "carro",
+      "gloss": { "hu": "autó", "en": "car", "es": "el carro", "de": "Auto" }
+    },
+    {
+      "word": "pongo",
+      "gloss": { "hu": "teszek, rakok", "en": "I put", "es": "poner → pongo", "de": "ich lege, ich stelle" }
     }
   ],
   "items": [
@@ -616,7 +624,7 @@
           "de": "Das würde bedeuten, dass mehrere Bücher auf dem Tisch liegen, aber hier gibt es nur ein Buch; richtig: El libro está en la mesa."
         }
       },
-      "examples": ["El coche es nuevo.", "La casa es grande."]
+      "examples": ["El carro es nuevo.", "La casa es grande."]
     },
     {
       "id": "sn-02",
@@ -712,10 +720,10 @@
       },
       "wrong": {
         "La": {
-          "hu": "Ezzel a mondat azt jelentené, hogy a día nőnemű, de a día görög eredetű -a végű szó, mégis hímnemű kivétel; helyesen: El día es muy largo.",
-          "en": "This would treat día as feminine, but día is a Greek-origin -a word that is a masculine exception; correctly: El día es muy largo.",
-          "es": "Esto trataría a día como femenino, pero día es una palabra de origen griego en -a que es una excepción masculina; correctamente: El día es muy largo.",
-          "de": "Das würde día als feminin behandeln, aber día ist ein griechisches -a-Wort, das eine maskuline Ausnahme ist; richtig: El día es muy largo."
+          "hu": "Ezzel a mondat azt jelentené, hogy a día nőnemű, de a día -a végű, mégis hímnemű kivétel; helyesen: El día es muy largo.",
+          "en": "This would treat día as feminine, but día ends in -a yet is a masculine exception; correctly: El día es muy largo.",
+          "es": "Esto trataría a día como femenino, pero día acaba en -a pero es una excepción masculina; correctamente: El día es muy largo.",
+          "de": "Das würde día als feminin behandeln, aber día endet auf -a und ist eine maskuline Ausnahme; richtig: El día es muy largo."
         },
         "Las": {
           "hu": "Ezzel a mondat azt jelentené, hogy több napról van szó és hogy nőnemű, de itt egyetlen, hímnemű napról van szó; helyesen: El día es muy largo.",
@@ -772,10 +780,10 @@
           "de": "Das würde bedeuten, dass es nur einen Studenten gibt, aber quince verlangt den Plural; richtig: En la clase hay quince estudiantes."
         },
         "estudiantas": {
-          "hu": "Ezzel a mondat egy nem létező alakot használna; az estudiante alakja nem változik nem szerint, egy nőnemű alanynál is estudiante marad; helyesen: En la clase hay quince estudiantes.",
-          "en": "This would use a form that doesn't exist; estudiante does not change form for gender, even for a female subject it stays estudiante; correctly: En la clase hay quince estudiantes.",
-          "es": "Esto usaría una forma que no existe; estudiante no cambia de forma por género, incluso para un sujeto femenino sigue siendo estudiante; correctamente: En la clase hay quince estudiantes.",
-          "de": "Das würde eine nicht existierende Form verwenden; estudiante ändert die Form nicht nach Genus, auch bei einem weiblichen Subjekt bleibt es estudiante; richtig: En la clase hay quince estudiantes."
+          "hu": "Ezzel a mondat helytelen alakot használna; az estudiante alakja nem változik nem szerint, egy nőnemű alanynál is estudiante marad; helyesen: En la clase hay quince estudiantes.",
+          "en": "This would use an incorrect form; estudiante does not change form for gender, even for a female subject it stays estudiante; correctly: En la clase hay quince estudiantes.",
+          "es": "Esto usaría una forma incorrecta; estudiante no cambia de forma por género, incluso para un sujeto femenino sigue siendo estudiante; correctamente: En la clase hay quince estudiantes.",
+          "de": "Das würde eine falsche Form verwenden; estudiante ändert die Form nicht nach Genus, auch bei einem weiblichen Subjekt bleibt es estudiante; richtig: En la clase hay quince estudiantes."
         }
       },
       "examples": ["Hay dos profesores nuevos.", "Tengo tres hermanas."]
@@ -793,7 +801,7 @@
       },
       "wrong": {
         "La": {
-          "hu": "Ezzel a mondat kimondhatatlanul csúszna; a hangsúlyos a- előtt a la el-re vált, bár a szó nőnemű marad, ahogy a melléknév (fría) is mutatja; helyesen: El agua está muy fría.",
+          "hu": "Ezzel a mondat furcsán hangzana; a hangsúlyos a- előtt a la el-re vált, bár a szó nőnemű marad, ahogy a melléknév (fría) is mutatja; helyesen: El agua está muy fría.",
           "en": "This would be awkward to say; before a stressed a-, la becomes el, even though the noun stays feminine, as the adjective (fría) shows; correctly: El agua está muy fría.",
           "es": "Esto sonaría mal; ante a tónica, la pasa a el, aunque el sustantivo sigue siendo femenino, como muestra el adjetivo (fría); correctamente: El agua está muy fría.",
           "de": "Das würde sich seltsam anhören; vor betontem a- wird la zu el, auch wenn das Nomen feminin bleibt, wie das Adjektiv (fría) zeigt; richtig: El agua está muy fría."
@@ -840,17 +848,17 @@
       "options": ["El", "La", "Las"],
       "correct": 0,
       "why": {
-        "hu": "Az -or végű szavak hímneműek: el color.",
-        "en": "Nouns in -or are masculine: el color.",
-        "es": "Los sustantivos en -or son masculinos: el color.",
-        "de": "Nomen auf -or sind maskulin: el color."
+        "hu": "Az -or végű szavak többnyire hímneműek: el color.",
+        "en": "Nouns in -or are mostly masculine: el color.",
+        "es": "Los sustantivos en -or son casi siempre masculinos: el color.",
+        "de": "Nomen auf -or sind meist maskulin: el color."
       },
       "wrong": {
         "La": {
-          "hu": "Ezzel a mondat azt jelentené, hogy a color nőnemű, de az -or végű szavak hímneműek; helyesen: El color de la casa es azul.",
-          "en": "This would treat color as feminine, but -or nouns are masculine; correctly: El color de la casa es azul.",
-          "es": "Esto trataría a color como femenino, pero los sustantivos en -or son masculinos; correctamente: El color de la casa es azul.",
-          "de": "Das würde color als feminin behandeln, aber Nomen auf -or sind maskulin; richtig: El color de la casa es azul."
+          "hu": "Ezzel a mondat azt jelentené, hogy a color nőnemű, de az -or végű szavak többnyire hímneműek; helyesen: El color de la casa es azul.",
+          "en": "This would treat color as feminine, but -or nouns are mostly masculine; correctly: El color de la casa es azul.",
+          "es": "Esto trataría a color como femenino, pero los sustantivos en -or son casi siempre masculinos; correctamente: El color de la casa es azul.",
+          "de": "Das würde color als feminin behandeln, aber Nomen auf -or sind meist maskulin; richtig: El color de la casa es azul."
         },
         "Las": {
           "hu": "Ezzel a mondat azt jelentené, hogy több színről van szó és hogy nőnemű, de itt egyetlen, hímnemű színről van szó; helyesen: El color de la casa es azul.",
@@ -863,7 +871,7 @@
     },
     {
       "id": "sn-11",
-      "sentence": "Mis dos hermanos y mis tres hermanas son ___ .",
+      "sentence": "Carlos y Ana son ___ .",
       "options": ["mis hermanos", "mis hermanas", "mi hermanos"],
       "correct": 0,
       "why": {
@@ -874,16 +882,16 @@
       },
       "wrong": {
         "mis hermanas": {
-          "hu": "Ezzel a mondat azt jelentené, hogy csak a lányok tartoznak a csoportba, de a fiúk és lányok vegyes csoportja hímnemű többesbe megy; helyesen: Mis dos hermanos y mis tres hermanas son mis hermanos.",
-          "en": "This would mean only the sisters belong to the group, but a mixed group of brothers and sisters takes the masculine plural; correctly: Mis dos hermanos y mis tres hermanas son mis hermanos.",
-          "es": "Esto significaría que solo las hermanas pertenecen al grupo, pero un grupo mixto de hermanos y hermanas va en masculino plural; correctamente: Mis dos hermanos y mis tres hermanas son mis hermanos.",
-          "de": "Das würde bedeuten, dass nur die Schwestern zur Gruppe gehören, aber eine gemischte Gruppe aus Brüdern und Schwestern steht im maskulinen Plural; richtig: Mis dos hermanos y mis tres hermanas son mis hermanos."
+          "hu": "Ezzel a mondat azt jelentené, hogy csak a lányok tartoznak a csoportba, de a fiúk és lányok vegyes csoportja hímnemű többesbe megy; helyesen: Carlos y Ana son mis hermanos.",
+          "en": "This would mean only the sisters belong to the group, but a mixed group of brothers and sisters takes the masculine plural; correctly: Carlos y Ana son mis hermanos.",
+          "es": "Esto significaría que solo las hermanas pertenecen al grupo, pero un grupo mixto de hermanos y hermanas va en masculino plural; correctamente: Carlos y Ana son mis hermanos.",
+          "de": "Das würde bedeuten, dass nur die Schwestern zur Gruppe gehören, aber eine gemischte Gruppe aus Brüdern und Schwestern steht im maskulinen Plural; richtig: Carlos y Ana son mis hermanos."
         },
         "mi hermanos": {
-          "hu": "Ezzel a mondat egy nyelvtanilag hibás alakot használna; a birtokos névmás is többesbe megy a többes főnév előtt: mis hermanos, nem mi hermanos; helyesen: Mis dos hermanos y mis tres hermanas son mis hermanos.",
-          "en": "This would use a grammatically wrong form; the possessive also goes plural before a plural noun: mis hermanos, not mi hermanos; correctly: Mis dos hermanos y mis tres hermanas son mis hermanos.",
-          "es": "Esto usaría una forma gramaticalmente incorrecta; el posesivo también va en plural ante un sustantivo plural: mis hermanos, no mi hermanos; correctamente: Mis dos hermanos y mis tres hermanas son mis hermanos.",
-          "de": "Das würde eine grammatisch falsche Form verwenden; das Possessivpronomen geht vor einem Plural-Nomen ebenfalls in den Plural: mis hermanos, nicht mi hermanos; richtig: Mis dos hermanos y mis tres hermanas son mis hermanos."
+          "hu": "Ezzel a mondat egy nyelvtanilag hibás alakot használna; a birtokos névmás is többesbe megy a többes főnév előtt: mis hermanos, nem mi hermanos; helyesen: Carlos y Ana son mis hermanos.",
+          "en": "This would use a grammatically wrong form; the possessive also goes plural before a plural noun: mis hermanos, not mi hermanos; correctly: Carlos y Ana son mis hermanos.",
+          "es": "Esto usaría una forma gramaticalmente incorrecta; el posesivo también va en plural ante un sustantivo plural: mis hermanos, no mi hermanos; correctamente: Carlos y Ana son mis hermanos.",
+          "de": "Das würde eine grammatisch falsche Form verwenden; das Possessivpronomen geht vor einem Plural-Nomen ebenfalls in den Plural: mis hermanos, nicht mi hermanos; richtig: Carlos y Ana son mis hermanos."
         }
       },
       "examples": ["Los niños juegan en el parque.", "Mis padres viven aquí."]
@@ -1191,10 +1199,10 @@
         {
           "text": { "hu": "mássalhangzó után -es a többes szám", "en": "after a consonant, the plural is -es", "es": "tras consonante, el plural es -es", "de": "nach einem Konsonanten lautet der Plural -es" },
           "wrong": {
-            "hu": "Nem csak -es kerül a szóhoz, az ékezet is eltűnik: lección → lecciones, mert a hangsúly helye a szótagszám miatt megváltozik.",
-            "en": "It's not just -es being added, the accent mark also disappears: lección → lecciones, because the stress position shifts due to the extra syllable.",
-            "es": "No solo se añade -es, la tilde también desaparece: lección → lecciones, porque la posición del acento cambia por la sílaba extra.",
-            "de": "Es wird nicht nur -es angehängt, auch das Akzentzeichen verschwindet: lección → lecciones, weil sich die Betonung durch die zusätzliche Silbe verschiebt."
+            "hu": "Nem csak -es kerül a szóhoz, az ékezet is eltűnik: lección → lecciones, mert a hangsúly az utolsó előtti szótagra esik, és az -s végű ilyen szó nem kap írott ékezetet.",
+            "en": "It's not just -es being added, the accent mark also disappears: lección → lecciones, because the stress now falls on the second-to-last syllable of a word ending in -s, which takes no written accent.",
+            "es": "No solo se añade -es, la tilde también desaparece: lección → lecciones, porque el acento cae en la penúltima sílaba de una palabra terminada en -s, que no lleva tilde.",
+            "de": "Es wird nicht nur -es angehängt, auch das Akzentzeichen verschwindet: lección → lecciones, weil die Betonung auf der vorletzten Silbe eines Wortes auf -s liegt, das keinen Akzent braucht."
           }
         },
         {
@@ -1388,10 +1396,10 @@
       },
       "wrong": {
         "carácteres": {
-          "hu": "A többesben a hangsúly a ra szótagra kerül, ezért az ékezet nem kell: Ellos tienen caracteres diferentes.",
-          "en": "In the plural the stress moves to the ra syllable, so no accent mark is needed: Ellos tienen caracteres diferentes.",
-          "es": "En el plural el acento pasa a la sílaba ra, por eso no lleva tilde: Ellos tienen caracteres diferentes.",
-          "de": "Im Plural wandert die Betonung auf die Silbe ra, deshalb ist kein Akzent nötig: Ellos tienen caracteres diferentes."
+          "hu": "A többesben a hangsúly a te szótagra kerül, ezért az ékezet nem kell: Ellos tienen caracteres diferentes.",
+          "en": "In the plural the stress moves to the te syllable, so no accent mark is needed: Ellos tienen caracteres diferentes.",
+          "es": "En el plural el acento pasa a la sílaba te, por eso no lleva tilde: Ellos tienen caracteres diferentes.",
+          "de": "Im Plural wandert die Betonung auf die Silbe te, deshalb ist kein Akzent nötig: Ellos tienen caracteres diferentes."
         },
         "caractes": {
           "hu": "Ezzel a mondat egy nem létező alakot használna; helyesen: Ellos tienen caracteres diferentes.",
@@ -1481,24 +1489,24 @@
     {
       "id": "sn-art-01",
       "set": "article",
-      "sentence": "Mi madre tiene ___ coche nuevo.",
+      "sentence": "Mi madre tiene ___ carro nuevo.",
       "options": ["el", "la"],
       "correct": 0,
       "why": {
-        "hu": "A coche -o végű, tehát hímnem: el coche.",
-        "en": "«coche» ends in -o, so it is masculine: el coche.",
-        "es": "«coche» acaba en -o: es masculino, el coche.",
-        "de": "«coche» endet auf -o, also maskulin: el coche."
+        "hu": "A carro -o végű, tehát hímnem: el carro.",
+        "en": "«carro» ends in -o, so it is masculine: el carro.",
+        "es": "«carro» acaba en -o: es masculino, el carro.",
+        "de": "«carro» endet auf -o, also maskulin: el carro."
       },
       "wrong": {
         "la": {
-          "hu": "Ezzel a coche nőnemű lenne, de hímnem; helyesen: Mi madre tiene el coche nuevo.",
-          "en": "This would make «coche» feminine, but it is masculine; correct: Mi madre tiene el coche nuevo.",
-          "es": "Esto haría femenino a «coche», pero es masculino; correcto: Mi madre tiene el coche nuevo.",
-          "de": "Damit wäre «coche» feminin, aber es ist maskulin; richtig: Mi madre tiene el coche nuevo."
+          "hu": "Ezzel a carro nőnemű lenne, de hímnem; helyesen: Mi madre tiene el carro nuevo.",
+          "en": "This would make «carro» feminine, but it is masculine; correct: Mi madre tiene el carro nuevo.",
+          "es": "Esto haría femenino a «carro», pero es masculino; correcto: Mi madre tiene el carro nuevo.",
+          "de": "Damit wäre «carro» feminin, aber es ist maskulin; richtig: Mi madre tiene el carro nuevo."
         }
       },
-      "examples": ["El coche es nuevo.", "El gato está en la mesa."]
+      "examples": ["El carro es nuevo.", "El gato está en la mesa."]
     },
     {
       "id": "sn-art-02",
@@ -1525,7 +1533,7 @@
     {
       "id": "sn-art-03",
       "set": "article",
-      "sentence": "Veo ___ hombre en la calle.",
+      "sentence": "Creo que ___ hombre está en la calle.",
       "options": ["el", "la"],
       "correct": 0,
       "why": {
@@ -1536,10 +1544,10 @@
       },
       "wrong": {
         "la": {
-          "hu": "Ezzel a hombre nőnemű lenne, de hímnem; helyesen: Veo el hombre en la calle.",
-          "en": "This would make «hombre» feminine, but it is masculine; correct: Veo el hombre en la calle.",
-          "es": "Esto haría femenino a «hombre», pero es masculino; correcto: Veo el hombre en la calle.",
-          "de": "Damit wäre «hombre» feminin, aber es ist maskulin; richtig: Veo el hombre en la calle."
+          "hu": "Ezzel a hombre nőnemű lenne, de hímnem; helyesen: Creo que el hombre está en la calle.",
+          "en": "This would make «hombre» feminine, but it is masculine; correct: Creo que el hombre está en la calle.",
+          "es": "Esto haría femenino a «hombre», pero es masculino; correcto: Creo que el hombre está en la calle.",
+          "de": "Damit wäre «hombre» feminin, aber es ist maskulin; richtig: Creo que el hombre está en la calle."
         }
       },
       "examples": ["El libro está en la mesa.", "El lunes tengo clase."]
@@ -1591,7 +1599,7 @@
     {
       "id": "sn-art-06",
       "set": "article",
-      "sentence": "México es ___ país grande.",
+      "sentence": "Me gusta ___ país donde vivo.",
       "options": ["el", "la"],
       "correct": 0,
       "why": {
@@ -1602,10 +1610,10 @@
       },
       "wrong": {
         "la": {
-          "hu": "Ezzel a país nőnemű lenne, de hímnem; helyesen: México es el país grande.",
-          "en": "This would make «país» feminine, but it is masculine; correct: México es el país grande.",
-          "es": "Esto haría femenino a «país», pero es masculino; correcto: México es el país grande.",
-          "de": "Damit wäre «país» feminin, aber es ist maskulin; richtig: México es el país grande."
+          "hu": "Ezzel a país nőnemű lenne, de hímnem; helyesen: Me gusta el país donde vivo.",
+          "en": "This would make «país» feminine, but it is masculine; correct: Me gusta el país donde vivo.",
+          "es": "Esto haría femenino a «país», pero es masculino; correcto: Me gusta el país donde vivo.",
+          "de": "Damit wäre «país» feminin, aber es ist maskulin; richtig: Me gusta el país donde vivo."
         }
       },
       "examples": ["El libro está en la mesa.", "El lunes tengo clase."]
@@ -1727,14 +1735,14 @@
       "options": ["el", "la"],
       "correct": 0,
       "why": {
-        "hu": "A idioma -a végű, mégis hímnem: ez a kivételek közé tartozik, el idioma.",
+        "hu": "Az idioma -a végű, mégis hímnem: ez a kivételek közé tartozik, el idioma.",
         "en": "«idioma» ends in -a but is masculine, one of the exceptions to learn: el idioma.",
         "es": "«idioma» acaba en -a pero es masculino, una de las excepciones que hay que aprender: el idioma.",
         "de": "«idioma» endet auf -a, ist aber maskulin, eine der Ausnahmen zum Lernen: el idioma."
       },
       "wrong": {
         "la": {
-          "hu": "Ezzel a idioma nőnemű lenne, de hímnem; helyesen: Me gusta el idioma español.",
+          "hu": "Ezzel az idioma nőnemű lenne, de hímnem; helyesen: Me gusta el idioma español.",
           "en": "This would make «idioma» feminine, but it is masculine; correct: Me gusta el idioma español.",
           "es": "Esto haría femenino a «idioma», pero es masculino; correcto: Me gusta el idioma español.",
           "de": "Damit wäre «idioma» feminin, aber es ist maskulin; richtig: Me gusta el idioma español."
@@ -1833,21 +1841,21 @@
     {
       "id": "sn-art-17",
       "set": "article",
-      "sentence": "Tengo ___ mano en la mesa.",
+      "sentence": "Pongo ___ mano en la mesa.",
       "options": ["la", "el"],
       "correct": 0,
       "why": {
-        "hu": "A mano -o végű, mégis nőnem (kivétel, gyakran rövidített szó): la mano.",
-        "en": "«mano» ends in -o but is feminine (an exception, often a shortened word): la mano.",
-        "es": "«mano» acaba en -o pero es femenino (una excepción, a menudo una palabra abreviada): la mano.",
-        "de": "«mano» endet auf -o, ist aber feminin (eine Ausnahme, oft ein verkürztes Wort): la mano."
+        "hu": "A mano -o végű, mégis nőnem (kivétel): la mano.",
+        "en": "«mano» ends in -o but is feminine (an exception): la mano.",
+        "es": "«mano» acaba en -o pero es femenino (una excepción): la mano.",
+        "de": "«mano» endet auf -o, ist aber feminin (eine Ausnahme): la mano."
       },
       "wrong": {
         "el": {
-          "hu": "Ezzel a mano hímnemű lenne, de nőnem; helyesen: Tengo la mano en la mesa.",
-          "en": "This would make «mano» masculine, but it is feminine; correct: Tengo la mano en la mesa.",
-          "es": "Esto haría masculino a «mano», pero es femenino; correcto: Tengo la mano en la mesa.",
-          "de": "Damit wäre «mano» maskulin, aber es ist feminin; richtig: Tengo la mano en la mesa."
+          "hu": "Ezzel a mano hímnemű lenne, de nőnem; helyesen: Pongo la mano en la mesa.",
+          "en": "This would make «mano» masculine, but it is feminine; correct: Pongo la mano en la mesa.",
+          "es": "Esto haría masculino a «mano», pero es femenino; correcto: Pongo la mano en la mesa.",
+          "de": "Damit wäre «mano» maskulin, aber es ist feminin; richtig: Pongo la mano en la mesa."
         }
       },
       "examples": ["Me duele la mano.", "La foto es bonita."]
@@ -1899,7 +1907,7 @@
     {
       "id": "sn-art-20",
       "set": "article",
-      "sentence": "Escucho ___ radio en casa.",
+      "sentence": "Mi tío trabaja en ___ radio.",
       "options": ["la", "el"],
       "correct": 0,
       "why": {
@@ -1910,10 +1918,10 @@
       },
       "wrong": {
         "el": {
-          "hu": "Ezzel a radio hímnemű lenne, de nőnem; helyesen: Escucho la radio en casa.",
-          "en": "This would make «radio» masculine, but it is feminine; correct: Escucho la radio en casa.",
-          "es": "Esto haría masculino a «radio», pero es femenino; correcto: Escucho la radio en casa.",
-          "de": "Damit wäre «radio» maskulin, aber es ist feminin; richtig: Escucho la radio en casa."
+          "hu": "Ezzel a radio hímnemű lenne; a készüléket Mexikóban valóban el radio-nak mondják, de a rádió mint médium nőnemű; helyesen: Mi tío trabaja en la radio.",
+          "en": "This would make «radio» masculine; in Mexico the device is indeed el radio, but radio as a medium is feminine; correct: Mi tío trabaja en la radio.",
+          "es": "Esto haría masculino a «radio»; en México el aparato sí es el radio, pero la radio como medio es femenina; correcto: Mi tío trabaja en la radio.",
+          "de": "Damit wäre «radio» maskulin; in Mexiko heißt das Gerät tatsächlich el radio, aber das Radio als Medium ist feminin; richtig: Mi tío trabaja en la radio."
         }
       },
       "examples": ["Me duele la mano.", "La foto es bonita."]
@@ -2070,7 +2078,7 @@
           "de": "Damit wäre «noche» maskulin, aber es ist feminin; richtig: Por la noche estudio español."
         }
       },
-      "examples": ["La casa es grande.", "El coche es nuevo."]
+      "examples": ["La casa es grande.", "El carro es nuevo."]
     },
     {
       "id": "sn-art-28",
@@ -2092,7 +2100,7 @@
           "de": "Damit wäre «calle» maskulin, aber es ist feminin; richtig: Mi casa está en la calle grande."
         }
       },
-      "examples": ["La casa es grande.", "El coche es nuevo."]
+      "examples": ["La casa es grande.", "El carro es nuevo."]
     },
     {
       "id": "sn-art-29",
@@ -2114,7 +2122,7 @@
           "de": "Damit wäre «leche» maskulin, aber es ist feminin; richtig: Quiero la leche fría."
         }
       },
-      "examples": ["La casa es grande.", "El coche es nuevo."]
+      "examples": ["La casa es grande.", "El carro es nuevo."]
     },
     {
       "id": "sn-art-30",
@@ -2136,12 +2144,12 @@
           "de": "Damit wäre «clase» maskulin, aber es ist feminin; richtig: La clase es a las nueve."
         }
       },
-      "examples": ["La casa es grande.", "El coche es nuevo."]
+      "examples": ["La casa es grande.", "El carro es nuevo."]
     },
     {
       "id": "sn-art-31",
       "set": "article",
-      "sentence": "Veo ___ mujer en la calle.",
+      "sentence": "Creo que ___ mujer está en la calle.",
       "options": ["la", "el"],
       "correct": 0,
       "why": {
@@ -2152,10 +2160,10 @@
       },
       "wrong": {
         "el": {
-          "hu": "Ezzel a mujer hímnemű lenne, de nőnem; helyesen: Veo la mujer en la calle.",
-          "en": "This would make «mujer» masculine, but it is feminine; correct: Veo la mujer en la calle.",
-          "es": "Esto haría masculino a «mujer», pero es femenino; correcto: Veo la mujer en la calle.",
-          "de": "Damit wäre «mujer» maskulin, aber es ist feminin; richtig: Veo la mujer en la calle."
+          "hu": "Ezzel a mujer hímnemű lenne, de nőnem; helyesen: Creo que la mujer está en la calle.",
+          "en": "This would make «mujer» masculine, but it is feminine; correct: Creo que la mujer está en la calle.",
+          "es": "Esto haría masculino a «mujer», pero es femenino; correcto: Creo que la mujer está en la calle.",
+          "de": "Damit wäre «mujer» maskulin, aber es ist feminin; richtig: Creo que la mujer está en la calle."
         }
       },
       "examples": ["La casa es grande.", "La foto es bonita."]
@@ -2163,7 +2171,7 @@
     {
       "id": "sn-art-32",
       "set": "article",
-      "sentence": "Tengo ___ flor en la mesa.",
+      "sentence": "Pongo ___ flor en la mesa.",
       "options": ["la", "el"],
       "correct": 0,
       "why": {
@@ -2174,10 +2182,10 @@
       },
       "wrong": {
         "el": {
-          "hu": "Ezzel a flor hímnemű lenne, de nőnem; helyesen: Tengo la flor en la mesa.",
-          "en": "This would make «flor» masculine, but it is feminine; correct: Tengo la flor en la mesa.",
-          "es": "Esto haría masculino a «flor», pero es femenino; correcto: Tengo la flor en la mesa.",
-          "de": "Damit wäre «flor» maskulin, aber es ist feminin; richtig: Tengo la flor en la mesa."
+          "hu": "Ezzel a flor hímnemű lenne, de nőnem; helyesen: Pongo la flor en la mesa.",
+          "en": "This would make «flor» masculine, but it is feminine; correct: Pongo la flor en la mesa.",
+          "es": "Esto haría masculino a «flor», pero es femenino; correcto: Pongo la flor en la mesa.",
+          "de": "Damit wäre «flor» maskulin, aber es ist feminin; richtig: Pongo la flor en la mesa."
         }
       },
       "examples": ["La casa es grande.", "La foto es bonita."]

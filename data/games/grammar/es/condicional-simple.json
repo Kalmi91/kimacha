@@ -703,12 +703,30 @@
         "es": "pudiéramos",
         "de": "wir könnten (Konjunktiv, in Wenn-Sätzen)"
       }
+    },
+    {
+      "word": "invitaras",
+      "gloss": {
+        "hu": "meghívnád (kötőmód, múlt idejű feltétel)",
+        "en": "you invited (subjunctive, used in if-clauses)",
+        "es": "invitaras",
+        "de": "du einladen würdest (Konjunktiv, in Wenn-Sätzen)"
+      }
+    },
+    {
+      "word": "ayudara",
+      "gloss": {
+        "hu": "segítene (kötőmód, múlt idejű feltétel)",
+        "en": "helped (subjunctive, used in if-clauses)",
+        "es": "ayudara",
+        "de": "helfen würde (Konjunktiv, in Wenn-Sätzen)"
+      }
     }
   ],
   "items": [
     {
       "id": "cd-01",
-      "sentence": "___ descansar más.",
+      "sentence": "No es una orden, pero tú ___ descansar más.",
       "options": [
         "Deberías",
         "Debes",
@@ -746,11 +764,11 @@
     },
     {
       "id": "cd-02",
-      "sentence": "¿___ ayudarme con esto?",
+      "sentence": "¿___ ayudarme con esto, por favor?",
       "options": [
         "Podrías",
-        "Puedes",
-        "Podía"
+        "Podemos",
+        "Pudiste"
       ],
       "correct": 0,
       "why": {
@@ -760,17 +778,17 @@
         "de": "Eine höfliche Bitte im Konditional: podrías."
       },
       "wrong": {
-        "Puedes": {
-          "hu": "A „Puedes” jelen idő: ezzel a mondat egy közvetlenebb, kevésbé udvarias kérés lenne, „Tudsz segíteni?”, nem a podrías lágyabb formája.",
-          "en": "\"Puedes\" is present tense: with it the sentence would be a more direct, less polite request, \"Can you help?\", not the softer form podrías gives.",
-          "es": "«Puedes» es presente: con él la frase sería una petición más directa, menos cortés, «¿Puedes ayudar?», no la forma más suave de podrías.",
-          "de": "„Puedes” ist Präsens: damit wäre der Satz eine direktere, weniger höfliche Bitte, „Kannst du helfen?”, nicht die sanftere Form, die podrías bietet."
+        "Podemos": {
+          "hu": "A \"Podemos\" a nosotros alakja jelen időben: ezzel a mondat azt kérdezné, hogy MI segíthetünk-e nekem, ami értelmetlen, mert az ayudarme éppen engem jelent; a kérés a másik személyhez szól, ahogy a podrías (a te-alak udvarias formája).",
+          "en": "\"Podemos\" is the nosotros form in the present: with it the sentence would ask whether WE can help me, which makes no sense, since ayudarme means help me; the request goes to the other person, as podrías does (the polite tú form).",
+          "es": "\"Podemos\" es la forma de nosotros en presente: con ella la frase preguntaría si NOSOTROS podemos ayudarme, lo cual no tiene sentido, porque ayudarme significa ayudar a mí; la petición va a la otra persona, como hace podrías (la forma cortés de tú).",
+          "de": "\"Podemos\" ist die nosotros-Form im Präsens: damit würde der Satz fragen, ob WIR mir helfen können, was keinen Sinn ergibt, denn ayudarme heißt mir helfen; die Bitte richtet sich an die andere Person, wie es podrías tut (die höfliche tú-Form)."
         },
-        "Podía": {
-          "hu": "A „Podía” múlt idő (imperfecto): ezzel a mondat azt kérdezné, hogy régen TUDTAM-e segíteni, nem egy mostani, udvarias kérést fejezne ki.",
-          "en": "\"Podía\" is past tense (imperfect): with it the sentence would ask whether I used to be able to help, not express a present, polite request.",
-          "es": "«Podía» es pasado (imperfecto): con él la frase preguntaría si antes yo PODÍA ayudar, no expresaría una petición cortés de ahora.",
-          "de": "„Podía” ist Vergangenheit (Imperfekt): damit würde der Satz fragen, ob ich früher helfen KONNTE, nicht eine höfliche Bitte von jetzt ausdrücken."
+        "Pudiste": {
+          "hu": "A \"Pudiste\" befejezett múlt: ezzel a mondat azt kérdezné, hogy egy múltbeli alkalommal SIKERÜLT-e segítened, ami nem fér össze a \"por favor\" kéréssel; a podrías egy mostani, udvarias kérés.",
+          "en": "\"Pudiste\" is the preterite: with it the sentence would ask whether you MANAGED to help on a past occasion, which does not fit the request with \"por favor\"; podrías is a present, polite request.",
+          "es": "\"Pudiste\" es el perfecto simple: con él la frase preguntaría si en una ocasión pasada LOGRASTE ayudarme, lo cual no encaja con la petición con \"por favor\"; podrías es una petición cortés de ahora.",
+          "de": "\"Pudiste\" ist das Indefinido: damit würde der Satz fragen, ob es dir bei einer vergangenen Gelegenheit GELANG zu helfen, was nicht zur Bitte mit \"por favor\" passt; podrías ist eine höfliche Bitte von jetzt."
         }
       },
       "examples": [
@@ -822,7 +840,7 @@
     },
     {
       "id": "cd-04",
-      "sentence": "___ buena idea invitar a Ana.",
+      "sentence": "En tu lugar, ___ buena idea invitar a Ana.",
       "options": [
         "Sería",
         "Es",
@@ -860,7 +878,7 @@
     },
     {
       "id": "cd-05",
-      "sentence": "Nosotros ___ mañana si hay tiempo.",
+      "sentence": "Con más tiempo, nosotros ___ mañana.",
       "options": [
         "saldríamos",
         "salimos",
@@ -936,7 +954,7 @@
     },
     {
       "id": "cd-07",
-      "sentence": "Ellos ___ a la fiesta.",
+      "sentence": "Ellos ___ a la fiesta si los invitaras.",
       "options": [
         "vendrían",
         "vienen",
@@ -964,7 +982,7 @@
         }
       },
       "examples": [
-        "Vendrían si los invitas.",
+        "Vendrían si los invitaras.",
         "Ellos vendrían con mucho gusto."
       ],
       "tense": {
@@ -1012,7 +1030,7 @@
     },
     {
       "id": "cd-09",
-      "sentence": "Ella ___ mucho dinero con ese trabajo.",
+      "sentence": "Ella ___ mucho dinero con ese trabajo si trabajara más.",
       "options": [
         "tendría",
         "tiene",
@@ -1050,7 +1068,7 @@
     },
     {
       "id": "cd-10",
-      "sentence": "Mi hermano ___ estudiar más.",
+      "sentence": "Mi hermano ___ estudiar más, pero no tiene que hacerlo.",
       "options": [
         "debería",
         "debe",
@@ -1088,7 +1106,7 @@
     },
     {
       "id": "cd-11",
-      "sentence": "Nosotros no ___ eso sin ayuda.",
+      "sentence": "Si nadie nos ayudara, nosotros no ___ hacer eso.",
       "options": [
         "podríamos",
         "podemos",
@@ -1129,7 +1147,7 @@
       "sentence": "¿Me ___ decir la hora, por favor?",
       "options": [
         "podría",
-        "puede",
+        "podemos",
         "pudo"
       ],
       "correct": 0,
@@ -1140,11 +1158,11 @@
         "de": "Eine höfliche, formelle Bitte an usted, in Läden/Ämtern üblich: me podría decir."
       },
       "wrong": {
-        "puede": {
-          "hu": "A „puede” jelen idő: ezzel a mondat egy közvetlenebb, kevésbé udvarias kérés lenne, „Meg tudja mondani?”, nem a podría lágyabb, formálisabb hangja.",
-          "en": "\"Puede\" is present tense: with it the sentence would be a more direct, less polite request, \"Can you tell me?\", not the softer, more formal tone of podría.",
-          "es": "«Puede» es presente: con él la frase sería una petición más directa, menos cortés, «¿Puede decirme?», no el tono más suave y formal de podría.",
-          "de": "„Puede” ist Präsens: damit wäre der Satz eine direktere, weniger höfliche Bitte, „Können Sie mir sagen?”, nicht der sanftere, formellere Ton von podría."
+        "podemos": {
+          "hu": "A \"podemos\" a nosotros alakja: ezzel a mondat azt kérdezné, hogy MI mondhatjuk-e meg nekem az időt, ami értelmetlen, mert a \"me\" éppen engem jelöl; a kérés a másik személyhez szól, usted esetén a podría.",
+          "en": "\"Podemos\" is the nosotros form: with it the sentence would ask whether WE can tell me the time, which makes no sense, since \"me\" is me; the request goes to the other person, for usted that is podría.",
+          "es": "\"Podemos\" es la forma de nosotros: con ella la frase preguntaría si NOSOTROS podemos decirme la hora, lo cual no tiene sentido, porque \"me\" soy yo; la petición va a la otra persona, y para usted es podría.",
+          "de": "\"Podemos\" ist die nosotros-Form: damit würde der Satz fragen, ob WIR mir die Uhrzeit sagen können, was keinen Sinn ergibt, denn \"me\" bin ich; die Bitte richtet sich an die andere Person, für usted ist das podría."
         },
         "pudo": {
           "hu": "A „pudo” múlt idő: ezzel a mondat azt kérdezné, egy múltbeli alkalommal SIKERÜLT-e megmondania az órát, nem egy mostani, udvarias kérést fejezne ki.",
@@ -1618,13 +1636,13 @@
     {
       "kind": "why",
       "id": "cs-why-06",
-      "es": "Ellos vendrían si los invitas.",
+      "es": "Ellos vendrían si los invitaras.",
       "target": "vendrían",
       "tr": {
-        "hu": "Eljönnének, ha meghívod őket.",
-        "en": "They would come if you invite them.",
-        "es": "Ellos vendrían si los invitas.",
-        "de": "Sie würden kommen, wenn du sie einlädst."
+        "hu": "Eljönnének, ha meghívnád őket.",
+        "en": "They would come if you invited them.",
+        "es": "Ellos vendrían si los invitaras.",
+        "de": "Sie würden kommen, wenn du sie einladen würdest."
       },
       "options": [
         {
@@ -1635,10 +1653,10 @@
             "de": "yo (ich)"
           },
           "wrong": {
-            "hu": "Ha yo lenne, 'Yo vendría si me invitas' állna, azaz ÉN jönnék, nem ők.",
-            "en": "If it were yo, it would say 'Yo vendría si me invitas', meaning I would come, not them.",
-            "es": "Si fuera yo, diría 'Yo vendría si me invitas', o sea que YO vendría, no ellos.",
-            "de": "Wäre es yo, hieße es 'Yo vendría si me invitas', also würde ICH kommen, nicht sie."
+            "hu": "Ha yo lenne, 'Yo vendría si me invitaras' állna, azaz ÉN jönnék, nem ők.",
+            "en": "If it were yo, it would say 'Yo vendría si me invitaras', meaning I would come, not them.",
+            "es": "Si fuera yo, diría 'Yo vendría si me invitaras', o sea que YO vendría, no ellos.",
+            "de": "Wäre es yo, hieße es 'Yo vendría si me invitaras', also würde ICH kommen, nicht sie."
           }
         },
         {
@@ -1649,10 +1667,10 @@
             "de": "wir (nosotros)"
           },
           "wrong": {
-            "hu": "Ha nosotros lenne, 'Nosotros vendríamos si nos invitas' állna, azaz MI jönnénk, nem ők.",
-            "en": "If it were nosotros, it would say 'Nosotros vendríamos si nos invitas', meaning WE would come, not them.",
-            "es": "Si fuera nosotros, diría 'Nosotros vendríamos si nos invitas', o sea que NOSOTROS vendríamos, no ellos.",
-            "de": "Wäre es nosotros, hieße es 'Nosotros vendríamos si nos invitas', also würden WIR kommen, nicht sie."
+            "hu": "Ha nosotros lenne, 'Nosotros vendríamos si nos invitaras' állna, azaz MI jönnénk, nem ők.",
+            "en": "If it were nosotros, it would say 'Nosotros vendríamos si nos invitaras', meaning WE would come, not them.",
+            "es": "Si fuera nosotros, diría 'Nosotros vendríamos si nos invitaras', o sea que NOSOTROS vendríamos, no ellos.",
+            "de": "Wäre es nosotros, hieße es 'Nosotros vendríamos si nos invitaras', also würden WIR kommen, nicht sie."
           }
         },
         {
@@ -1910,7 +1928,8 @@
       },
       "answer": "No comerías tanto por la noche.",
       "accept": [
-        "Tú no comerías tanto por la noche."
+        "Tú no comerías tanto por la noche.",
+        "Por la noche no comerías tanto."
       ],
       "wordIds": [
         "1",
@@ -2430,7 +2449,8 @@
       },
       "answer": "Podrían llamar después.",
       "accept": [
-        "Ellos podrían llamar después."
+        "Ellos podrían llamar después.",
+        "Después podrían llamar."
       ],
       "wordIds": [
         "29",
@@ -2723,7 +2743,10 @@
         "en": "A hypothetical situation (what would happen): condicional. Decir is an irregular-stem verb (dir-), ellos: dirían.",
         "es": "Una situación hipotética (lo que pasaría): condicional. decir es un verbo de raíz irregular (dir-), ellos: dirían.",
         "de": "Eine hypothetische Situation (was passieren würde): condicional. decir ist ein Verb mit unregelmäßigem Stamm (dir-), ellos: dirían."
-      }
+      },
+      "accept": [
+        "Dirían otra cosa."
+      ]
     },
     {
       "id": "cd-tr-36",
@@ -2907,7 +2930,7 @@
       },
       "prompt": {
         "hu": "Nem szabad ennyit költenem.",
-        "en": "I shouldn't spend so much.",
+        "en": "I must not spend so much.",
         "es": "No debo gastar tanto.",
         "de": "Ich darf nicht so viel ausgeben."
       },
@@ -2943,7 +2966,8 @@
       },
       "answer": "Debería llamar a su madre.",
       "accept": [
-        "Él debería llamar a su madre."
+        "Él debería llamar a su madre.",
+        "Ella debería llamar a su madre."
       ],
       "wordIds": [
         "3747",
@@ -3113,7 +3137,8 @@
       },
       "answer": "Vendríamos más tarde.",
       "accept": [
-        "Nosotros vendríamos más tarde."
+        "Nosotros vendríamos más tarde.",
+        "Más tarde vendríamos."
       ],
       "wordIds": [
         "32",

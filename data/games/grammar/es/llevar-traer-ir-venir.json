@@ -222,7 +222,7 @@
       ],
       "rows": [
         [
-          "Estoy en la oficina. Mañana ___ (tú) a verme, ¿no?",
+          "Estoy en la oficina. Mañana ___ (tú) aquí, ¿no?",
           "vienes"
         ],
         [
@@ -254,7 +254,7 @@
           "llevamos"
         ],
         [
-          "Estamos en casa. ¿___ (ustedes) a cenar el sábado?",
+          "Estamos en casa. ¿___ (ustedes) aquí el sábado?",
           "vienen"
         ],
         [
@@ -391,7 +391,7 @@
   "items": [
     {
       "id": "llt-01",
-      "sentence": "Ahora estoy en casa, pero mañana ___ a la oficina.",
+      "sentence": "Ahora estoy en casa, pero mañana ___ al mercado.",
       "options": [
         "vengo",
         "voy",
@@ -399,17 +399,17 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Az iroda nem ott van, ahol most beszélek (otthon vagyok): a mozgás a beszélő helyétől távolodik, ezért voy.",
-        "en": "The office is not where I am speaking from (I am at home): the movement leads away from the speaker's place, so voy.",
-        "es": "La oficina no está donde hablo (estoy en casa): el movimiento se aleja del lugar del hablante, por eso voy.",
-        "de": "Das Büro ist nicht dort, wo ich spreche (ich bin zu Hause): Die Bewegung führt vom Ort des Sprechers weg, also voy."
+        "hu": "A piac nem ott van, ahol most beszélek (otthon vagyok): a mozgás a beszélő helyétől távolodik, ezért voy.",
+        "en": "The market is not where I am speaking from (I am at home): the movement leads away from the speaker's place, so voy.",
+        "es": "El mercado no está donde hablo (estoy en casa): el movimiento se aleja del lugar del hablante, por eso voy.",
+        "de": "Der Markt ist nicht dort, wo ich spreche (ich bin zu Hause): Die Bewegung führt vom Ort des Sprechers weg, also voy."
       },
       "wrong": {
         "vengo": {
-          "hu": "A \"vengo\" azt jelentené, hogy abba a helyre jövök, ahol most beszélek; de otthon vagyok, az iroda másik hely. Ide ez illik: voy.",
-          "en": "\"Vengo\" would mean I come to the place where I am speaking now; but I am at home and the office is somewhere else. It needs: voy.",
-          "es": "\"Vengo\" significaría que vengo al lugar donde hablo ahora; pero estoy en casa y la oficina es otro lugar. Hace falta: voy.",
-          "de": "\"Vengo\" würde bedeuten, dass ich an den Ort komme, an dem ich gerade spreche; ich bin aber zu Hause, das Büro ist woanders. Richtig ist: voy."
+          "hu": "A \"vengo\" azt jelentené, hogy abba a helyre jövök, ahol most beszélek; de otthon vagyok, a piac másik hely. Ide ez illik: voy.",
+          "en": "\"Vengo\" would mean I come to the place where I am speaking now; but I am at home and the market is somewhere else. It needs: voy.",
+          "es": "\"Vengo\" significaría que vengo al lugar donde hablo ahora; pero estoy en casa y el mercado es otro lugar. Hace falta: voy.",
+          "de": "\"Vengo\" würde bedeuten, dass ich an den Ort komme, an dem ich gerade spreche; ich bin aber zu Hause, der Markt ist woanders. Richtig ist: voy."
         },
         "llevo": {
           "hu": "A \"llevo\" azt jelenti, hogy viszek valamit vagy valakit; a mondatban nincs mit vinni, magam megyek. Csak a saját mozgásom: voy.",
@@ -425,7 +425,7 @@
     },
     {
       "id": "llt-02",
-      "sentence": "Estamos en casa y mis tíos ___ a cenar hoy.",
+      "sentence": "Estamos en casa y mis tíos ___ aquí esta noche.",
       "options": [
         "vienen",
         "van",
@@ -459,7 +459,7 @@
     },
     {
       "id": "llt-03",
-      "sentence": "Mis padres están en la escuela y mi hermana ___ con ellos.",
+      "sentence": "Mañana mis padres van a la escuela y mi hermana ___ con ellos.",
       "options": [
         "viene",
         "lleva",
@@ -474,10 +474,10 @@
       },
       "wrong": {
         "viene": {
-          "hu": "A \"viene\" azt jelentené, hogy a húgom abba a helyre jön, ahol én most vagyok; a szüleim viszont az iskolában vannak, nem nálam: va.",
-          "en": "\"Viene\" would mean my sister comes to the place where I am now; but my parents are at school, not with me: va.",
-          "es": "\"Viene\" significaría que mi hermana viene al lugar donde estoy yo ahora; pero mis padres están en la escuela, no conmigo: va.",
-          "de": "\"Viene\" würde bedeuten, dass meine Schwester dorthin kommt, wo ich jetzt bin; meine Eltern sind aber in der Schule, nicht bei mir: va."
+          "hu": "A \"viene\" azt jelentené, hogy a húgom abba a helyre jön, ahol én most vagyok; a szüleim viszont az iskolába mennek, nem hozzám: va.",
+          "en": "\"Viene\" would mean my sister comes to the place where I am now; but my parents are going to school, not to me: va.",
+          "es": "\"Viene\" significaría que mi hermana viene al lugar donde estoy yo ahora; pero mis padres van a la escuela, no a donde estoy yo: va.",
+          "de": "\"Viene\" würde bedeuten, dass meine Schwester dorthin kommt, wo ich jetzt bin; meine Eltern gehen aber in die Schule, nicht zu mir: va."
         },
         "lleva": {
           "hu": "A \"lleva\" azt jelentené, hogy a húgom valamit vagy valakit visz magával; a mondatban nincs tárgy, csak ő maga megy: va.",
@@ -731,7 +731,7 @@
     },
     {
       "id": "llt-11",
-      "sentence": "Mi fiesta es en mi casa: mis amigos ___ la comida.",
+      "sentence": "Mi fiesta es en mi casa: mis amigos ___ la comida aquí.",
       "options": [
         "llevan",
         "traen",
@@ -831,7 +831,7 @@
       "id": "llt-form-01",
       "kind": "form",
       "verb": "forma verbal",
-      "person": "Estoy en la oficina. Mañana ___ (tú) a verme, ¿no?",
+      "person": "Estoy en la oficina. Mañana ___ (tú) aquí, ¿no?",
       "answer": "vienes",
       "table": "llevar-traer-formas"
     },
@@ -895,7 +895,7 @@
       "id": "llt-form-09",
       "kind": "form",
       "verb": "forma verbal",
-      "person": "Estamos en casa. ¿___ (ustedes) a cenar el sábado?",
+      "person": "Estamos en casa. ¿___ (ustedes) aquí el sábado?",
       "answer": "vienen",
       "table": "llevar-traer-formas"
     },

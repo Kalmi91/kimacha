@@ -64,11 +64,11 @@
           },
           "examples": [
             {
-              "es": "Ese coche es tuyo.",
+              "es": "Ese carro es tuyo.",
               "tr": {
                 "hu": "Az az autó a tiéd.",
                 "en": "That car is yours.",
-                "es": "Ese coche es tuyo.",
+                "es": "Ese carro es tuyo.",
                 "de": "Das Auto dort ist deins."
               }
             },
@@ -215,11 +215,11 @@
           },
           "examples": [
             {
-              "es": "Este coche es mío, ese es tuyo.",
+              "es": "Este carro es mío, ese es tuyo.",
               "tr": {
                 "hu": "Ez az autó az enyém, az a tiéd.",
                 "en": "This car is mine, that one is yours.",
-                "es": "Este coche es mío, ese es tuyo.",
+                "es": "Este carro es mío, ese es tuyo.",
                 "de": "Dieses Auto ist meins, jenes ist deins."
               }
             },
@@ -344,10 +344,10 @@
           "a": "esto",
           "b": "este",
           "note": {
-            "hu": "ESTO akkor áll, ha NEM TUDOD, mi az a dolog (nincs mögötte főnév); ESTE akkor, ha TUDOD, és meg is nevezed a főnevet.",
-            "en": "ESTO stands when you DO NOT KNOW what the thing is (no noun follows); ESTE stands when you DO know, and name the noun.",
-            "es": "ESTO va cuando NO SABES qué es la cosa (sin sustantivo detrás); ESTE va cuando SÍ lo sabes, y nombras el sustantivo.",
-            "de": "ESTO steht, wenn du NICHT WEISST, was die Sache ist (kein Nomen folgt); ESTE steht, wenn du es WEISST und das Nomen nennst."
+            "hu": "ESTO akkor áll, ha NEM TUDOD, mi az a dolog (nincs mögötte főnév); ESTE akkor, ha TUDOD, mi az (megnevezed a főnevet, vagy már ismert).",
+            "en": "ESTO stands when you DO NOT KNOW what the thing is (no noun follows); ESTE stands when you DO know what it is (you name the noun, or it is already known).",
+            "es": "ESTO va cuando NO SABES qué es la cosa (sin sustantivo detrás); ESTE va cuando SÍ lo sabes (nombras el sustantivo, o ya se conoce).",
+            "de": "ESTO steht, wenn du NICHT WEISST, was die Sache ist (kein Nomen folgt); ESTE steht, wenn du es WEISST (du nennst das Nomen, oder es ist schon bekannt)."
           },
           "examples": [
             {
@@ -375,7 +375,7 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "A régi helyesírás ékezettel különböztette meg a névmást (éste) a melléklettől (este), de a mai helyesírás szerint sosem kell ékezet: mindig este, ese, aquel.",
+        "hu": "A régi helyesírás ékezettel különböztette meg a névmást (éste) a főnév előtt álló alaktól (este), de a mai helyesírás szerint sosem kell ékezet: mindig este, ese, aquel.",
         "en": "Old spelling used an accent to tell the pronoun (éste) apart from the adjective (este), but modern spelling never uses an accent: always este, ese, aquel.",
         "es": "La ortografía antigua usaba tilde para distinguir el pronombre (éste) del adjetivo (este), pero la ortografía actual nunca lleva tilde: siempre este, ese, aquel.",
         "de": "Die alte Rechtschreibung nutzte einen Akzent, um das Pronomen (éste) vom Adjektiv (este) zu unterscheiden, aber die heutige Rechtschreibung braucht nie einen Akzent: immer este, ese, aquel."
@@ -388,7 +388,12 @@
     "es": "Tres palabras, tres distancias. La primera señala lo que está aquí, cerca de mí; la segunda, lo que está cerca de ti; y la tercera, lo que está lejos de los dos, allá. Las tres concuerdan con el sustantivo en género y número. También hay una forma neutra, que se usa cuando no sabes qué es la cosa o cuando señalas una situación entera. La forma neutra nunca va delante de un sustantivo y la ortografía actual no le pone tilde. El sustantivo se puede omitir cuando queda claro a qué te refieres.",
     "de": "Drei Wörter, drei Entfernungen. Das erste zeigt auf das, was hier bei mir ist, das zweite auf das, was bei dir ist, und das dritte auf das, was von uns beiden weit weg ist, dort drüben. Alle drei stimmen mit dem Nomen in Geschlecht und Zahl überein. Es gibt auch eine neutrale Form, die man benutzt, wenn man nicht weiß, was die Sache ist, oder wenn man auf eine ganze Situation zeigt. Die neutrale Form steht nie vor einem Nomen, und die moderne Rechtschreibung gibt ihr keinen Akzent. Das Nomen kann weggelassen werden, wenn klar ist, was gemeint ist."
   },
-  "glossary": [],
+  "glossary": [
+    {
+      "word": "carro",
+      "gloss": { "hu": "autó", "en": "car", "es": "el carro (el coche)", "de": "Auto" }
+    }
+  ],
   "items": [
     {
       "id": "dem-01",
@@ -413,7 +418,7 @@
         }
       },
       "examples": [
-        "Este coche es nuevo.",
+        "Este carro es nuevo.",
         "Esta casa es grande."
       ]
     },
@@ -460,10 +465,10 @@
       },
       "wrong": {
         "este": {
-          "hu": "Ezzel a mondat azt jelentené, hogy ¿Qué es este?, de az este mindig főnév előtt áll, itt viszont nincs utána főnév, ismeretlen dologra kérdezünk; helyesen: ¿Qué es esto?",
-          "en": "This would give ¿Qué es este?, but este always stands before a noun, and here no noun follows since we are asking about an unknown thing; correctly: ¿Qué es esto?",
-          "es": "Esto daría ¿Qué es este?, pero este siempre va delante de un sustantivo, y aquí no hay sustantivo detrás porque preguntamos por algo desconocido; correctamente: ¿Qué es esto?",
-          "de": "Das würde ¿Qué es este? ergeben, aber este steht immer vor einem Nomen, und hier folgt kein Nomen, weil wir nach etwas Unbekanntem fragen; richtig: ¿Qué es esto?"
+          "hu": "Ezzel a mondat azt jelentené, hogy ¿Qué es este?, de az este főnévhez (vagy egy már ismert főnév helyett) tartozik, itt viszont nincs főnév, ismeretlen dologra kérdezünk; helyesen: ¿Qué es esto?",
+          "en": "This would give ¿Qué es este?, but este goes with a noun (or stands in for a known one), and here there is no noun since we are asking about an unknown thing; correctly: ¿Qué es esto?",
+          "es": "Esto daría ¿Qué es este?, pero este acompaña a un sustantivo (o sustituye a uno ya conocido), y aquí no hay sustantivo porque preguntamos por algo desconocido; correctamente: ¿Qué es esto?",
+          "de": "Das würde ¿Qué es este? ergeben, aber este gehört zu einem Nomen (oder steht für ein bekanntes), und hier gibt es kein Nomen, weil wir nach etwas Unbekanntem fragen; richtig: ¿Qué es esto?"
         }
       },
       "examples": [
@@ -581,24 +586,24 @@
     },
     {
       "id": "dem-08",
-      "sentence": "Este coche es mío y ___ es tuyo.",
+      "sentence": "Este carro es mío y ___ es tuyo.",
       "options": [
         "ese",
         "esa"
       ],
       "correct": 0,
       "why": {
-        "hu": "A coche hímnemű, és a főnév elmaradhat, ha már tudjuk, miről van szó: ese (coche).",
-        "en": "Coche is masculine, and the noun can be dropped once it is clear: ese (coche).",
-        "es": "Coche es masculino, y el sustantivo puede omitirse si ya se sabe: ese (coche).",
-        "de": "Coche ist maskulin, und das Nomen kann wegfallen, wenn es klar ist: ese (coche)."
+        "hu": "A carro hímnemű, és a főnév elmaradhat, ha már tudjuk, miről van szó: ese (carro).",
+        "en": "Carro is masculine, and the noun can be dropped once it is clear: ese (carro).",
+        "es": "Carro es masculino, y el sustantivo puede omitirse si ya se sabe: ese (carro).",
+        "de": "Carro ist maskulin, und das Nomen kann wegfallen, wenn es klar ist: ese (carro)."
       },
       "wrong": {
         "esa": {
-          "hu": "Ezzel a mondat azt jelentené, hogy Este coche es mío y esa es tuyo, de az esa nőnemű, a kihagyott főnév itt a coche, ami hímnemű; helyesen: Este coche es mío y ese es tuyo.",
-          "en": "This would give Este coche es mío y esa es tuyo, but esa is feminine, while the dropped noun here, coche, is masculine; correctly: Este coche es mío y ese es tuyo.",
-          "es": "Esto daría Este coche es mío y esa es tuyo, pero esa es femenino, y el sustantivo omitido aquí, coche, es masculino; correctamente: Este coche es mío y ese es tuyo.",
-          "de": "Das würde Este coche es mío y esa es tuyo ergeben, aber esa ist feminin, während das weggelassene Nomen hier, coche, maskulin ist; richtig: Este coche es mío y ese es tuyo."
+          "hu": "Ezzel a mondat azt jelentené, hogy Este carro es mío y esa es tuyo, de az esa nőnemű, a kihagyott főnév itt a carro, ami hímnemű; helyesen: Este carro es mío y ese es tuyo.",
+          "en": "This would give Este carro es mío y esa es tuyo, but esa is feminine, while the dropped noun here, carro, is masculine; correctly: Este carro es mío y ese es tuyo.",
+          "es": "Esto daría Este carro es mío y esa es tuyo, pero esa es femenino, y el sustantivo omitido aquí, carro, es masculino; correctamente: Este carro es mío y ese es tuyo.",
+          "de": "Das würde Este carro es mío y esa es tuyo ergeben, aber esa ist feminin, während das weggelassene Nomen hier, carro, maskulin ist; richtig: Este carro es mío y ese es tuyo."
         }
       },
       "examples": [
@@ -820,13 +825,13 @@
     {
       "id": "dem-why-01",
       "kind": "why",
-      "es": "Este libro es mío.",
+      "es": "Este libro que tengo aquí es mío.",
       "target": "Este",
       "tr": {
-        "hu": "Ez a könyv az enyém.",
-        "en": "This book is mine.",
-        "es": "Este libro es mío.",
-        "de": "Dieses Buch ist meins."
+        "hu": "Ez a könyv, ami itt van nálam, az enyém.",
+        "en": "This book that I have here is mine.",
+        "es": "Este libro que tengo aquí es mío.",
+        "de": "Dieses Buch, das ich hier habe, ist meins."
       },
       "options": [
         {
@@ -845,10 +850,10 @@
             "de": "ese = bei dir"
           },
           "wrong": {
-            "hu": "Az ese azt jelölné, ami NÁLAD van, itt viszont a mío (az enyém) mutatja, hogy a beszélőnél van.",
-            "en": "Ese would mark what is by YOU, but here mío (mine) shows it is by the speaker.",
-            "es": "Ese señalaría lo que está junto a TI, pero aquí mío muestra que está junto al hablante.",
-            "de": "Ese würde bezeichnen, was bei DIR ist, aber hier zeigt mío (meins), dass es beim Sprecher ist."
+            "hu": "Az ese azt jelölné, ami NÁLAD van, itt viszont az aquí (itt) mutatja, hogy a beszélőnél van.",
+            "en": "Ese would mark what is by YOU, but here aquí (here) shows it is by the speaker.",
+            "es": "Ese señalaría lo que está junto a TI, pero aquí la palabra aquí muestra que está junto al hablante.",
+            "de": "Ese würde bezeichnen, was bei DIR ist, aber hier zeigt aquí (hier), dass es beim Sprecher ist."
           }
         },
         {
@@ -871,13 +876,13 @@
     {
       "id": "dem-why-02",
       "kind": "why",
-      "es": "Ese coche es tuyo.",
+      "es": "Ese libro que tienes en la mano es mío.",
       "target": "Ese",
       "tr": {
-        "hu": "Az az autó a tiéd.",
-        "en": "That car is yours.",
-        "es": "Ese coche es tuyo.",
-        "de": "Das Auto dort ist deins."
+        "hu": "Az a könyv, ami a kezedben van, az enyém.",
+        "en": "That book in your hand is mine.",
+        "es": "Ese libro que tienes en la mano es mío.",
+        "de": "Das Buch in deiner Hand ist meins."
       },
       "options": [
         {
@@ -888,10 +893,10 @@
             "de": "este = hier (bei mir)"
           },
           "wrong": {
-            "hu": "Az este azt jelölné, ami NÁLAM van, itt viszont a tuyo (a tiéd) mutatja, hogy a hallgatónál van.",
-            "en": "Este would mark what is by ME, but here tuyo (yours) shows it is by the listener.",
-            "es": "Este señalaría lo que está junto a MÍ, pero aquí tuyo muestra que está junto al oyente.",
-            "de": "Este würde bezeichnen, was bei MIR ist, aber hier zeigt tuyo (deins), dass es beim Hörer ist."
+            "hu": "Az este azt jelölné, ami NÁLAM van, itt viszont a que tienes en la mano (ami a kezedben van) mutatja, hogy a hallgatónál van.",
+            "en": "Este would mark what is by ME, but here que tienes en la mano (in your hand) shows it is by the listener.",
+            "es": "Este señalaría lo que está junto a MÍ, pero aquí que tienes en la mano muestra que está junto al oyente.",
+            "de": "Este würde bezeichnen, was bei MIR ist, aber hier zeigt que tienes en la mano (in deiner Hand), dass es beim Hörer ist."
           }
         },
         {
@@ -910,10 +915,10 @@
             "de": "aquel = weit von uns beiden"
           },
           "wrong": {
-            "hu": "Az aquel azt jelölné, ami mindkettőnktől távol van, itt viszont az autó a hallgatónál van, tehát közel hozzá.",
-            "en": "Aquel would mark what is far from both of us, but here the car is with the listener, so close to them.",
-            "es": "Aquel señalaría lo que está lejos de los dos, pero aquí el coche está con el oyente, cerca de él.",
-            "de": "Aquel würde bezeichnen, was von uns beiden weit weg ist, aber hier ist das Auto beim Hörer, also nah bei ihm."
+            "hu": "Az aquel azt jelölné, ami mindkettőnktől távol van, itt viszont a könyv a hallgatónál van, tehát közel hozzá.",
+            "en": "Aquel would mark what is far from both of us, but here the book is with the listener, so close to them.",
+            "es": "Aquel señalaría lo que está lejos de los dos, pero aquí el libro está con el oyente, cerca de él.",
+            "de": "Aquel würde bezeichnen, was von uns beiden weit weg ist, aber hier ist das Buch beim Hörer, also nah bei ihm."
           }
         }
       ],
@@ -922,13 +927,13 @@
     {
       "id": "dem-why-03",
       "kind": "why",
-      "es": "Aquellas montañas están lejos.",
+      "es": "Aquellas montañas están lejos de ti y de mí.",
       "target": "Aquellas",
       "tr": {
-        "hu": "Azok a hegyek messze vannak.",
-        "en": "Those mountains are far away.",
-        "es": "Aquellas montañas están lejos.",
-        "de": "Jene Berge dort sind weit weg."
+        "hu": "Azok a hegyek messze vannak tőled és tőlem.",
+        "en": "Those mountains are far from you and me.",
+        "es": "Aquellas montañas están lejos de ti y de mí.",
+        "de": "Jene Berge sind weit weg von dir und mir."
       },
       "options": [
         {
@@ -939,10 +944,10 @@
             "de": "este = hier (bei mir)"
           },
           "wrong": {
-            "hu": "Az estas azt jelölné, ami itt van nálam, a mondat viszont lejos (messze) szót mond.",
-            "en": "Estas would mark what is here by me, but the sentence says lejos (far away).",
-            "es": "Estas señalaría lo que está aquí junto a mí, pero la frase dice lejos.",
-            "de": "Estas würde bezeichnen, was hier bei mir ist, aber der Satz sagt lejos (weit weg)."
+            "hu": "Az estas azt jelölné, ami itt van nálam, a mondat viszont azt mondja, hogy messze van tőled és tőlem.",
+            "en": "Estas would mark what is here by me, but the sentence says it is far from you and me.",
+            "es": "Estas señalaría lo que está aquí junto a mí, pero la frase dice que está lejos de ti y de mí.",
+            "de": "Estas würde bezeichnen, was hier bei mir ist, aber der Satz sagt, dass es weit weg von dir und mir ist."
           }
         },
         {
@@ -953,10 +958,10 @@
             "de": "ese = bei dir"
           },
           "wrong": {
-            "hu": "Az esas azt jelölné, ami nálad van, a mondat viszont lejos (messze, mindkettőnktől) szót mond.",
-            "en": "Esas would mark what is by you, but the sentence says lejos (far from both of us).",
-            "es": "Esas señalaría lo que está junto a ti, pero la frase dice lejos, de los dos.",
-            "de": "Esas würde bezeichnen, was bei dir ist, aber der Satz sagt lejos (weit von uns beiden)."
+            "hu": "Az esas azt jelölné, ami nálad van, a mondat viszont azt mondja, hogy messze van tőled és tőlem.",
+            "en": "Esas would mark what is by you, but the sentence says it is far from you and me.",
+            "es": "Esas señalaría lo que está junto a ti, pero la frase dice que está lejos de ti y de mí.",
+            "de": "Esas würde bezeichnen, was bei dir ist, aber der Satz sagt, dass es weit weg von dir und mir ist."
           }
         },
         {
@@ -990,10 +995,10 @@
             "de": "este = hier (bei mir)"
           },
           "wrong": {
-            "hu": "Az este mindig főnév előtt áll, itt viszont nincs utána főnév: ismeretlen dologra kérdezünk.",
-            "en": "Este always stands before a noun, but here no noun follows: we are asking about an unknown thing.",
-            "es": "Este siempre va delante de un sustantivo, pero aquí no hay sustantivo detrás: preguntamos por algo desconocido.",
-            "de": "Este steht immer vor einem Nomen, aber hier folgt kein Nomen: Wir fragen nach etwas Unbekanntem."
+            "hu": "Az este főnévhez (vagy egy már ismert főnév helyett) tartozik, itt viszont nincs főnév: ismeretlen dologra kérdezünk.",
+            "en": "Este goes with a noun (or stands in for a known one), but here there is no noun: we are asking about an unknown thing.",
+            "es": "Este acompaña a un sustantivo (o sustituye a uno ya conocido), pero aquí no hay sustantivo: preguntamos por algo desconocido.",
+            "de": "Este gehört zu einem Nomen (oder steht für ein bekanntes), aber hier gibt es kein Nomen: Wir fragen nach etwas Unbekanntem."
           }
         },
         {
@@ -1049,10 +1054,10 @@
             "de": "ese = bei dir"
           },
           "wrong": {
-            "hu": "Az ese semana egy MÁSIK hetet jelölne, amiről már beszéltünk; itt viszont a mostani, jelen hétről van szó.",
-            "en": "Ese semana would mark ANOTHER week, one already mentioned; but here it is the current week.",
-            "es": "Ese semana señalaría OTRA semana, ya mencionada; pero aquí se habla de la semana actual.",
-            "de": "Ese semana würde eine ANDERE, bereits erwähnte Woche bezeichnen; hier geht es aber um die laufende Woche."
+            "hu": "Az esa semana egy MÁSIK hetet jelölne, amiről már beszéltünk; itt viszont a mostani, jelen hétről van szó.",
+            "en": "Esa semana would mark ANOTHER week, one already mentioned; but here it is the current week.",
+            "es": "Esa semana señalaría OTRA semana, ya mencionada; pero aquí se habla de la semana actual.",
+            "de": "Esa semana würde eine ANDERE, bereits erwähnte Woche bezeichnen; hier geht es aber um die laufende Woche."
           }
         },
         {
@@ -1075,13 +1080,13 @@
     {
       "id": "dem-why-06",
       "kind": "why",
-      "es": "Esos zapatos son tuyos.",
-      "target": "Esos",
+      "es": "Esa bolsa que llevas es muy bonita.",
+      "target": "Esa",
       "tr": {
-        "hu": "Azok a cipők a tieid.",
-        "en": "Those shoes are yours.",
-        "es": "Esos zapatos son tuyos.",
-        "de": "Diese Schuhe dort sind deine."
+        "hu": "Az a táska, amit hordasz, nagyon szép.",
+        "en": "That bag you are carrying is very pretty.",
+        "es": "Esa bolsa que llevas es muy bonita.",
+        "de": "Die Tasche, die du trägst, ist sehr hübsch."
       },
       "options": [
         {
@@ -1092,10 +1097,10 @@
             "de": "este = hier (bei mir)"
           },
           "wrong": {
-            "hu": "Az estos azt jelölné, ami nálam van, itt viszont a tuyos (a tieid) mutatja, hogy nálad vannak.",
-            "en": "Estos would mark what is by me, but here tuyos (yours) shows they are by you.",
-            "es": "Estos señalaría lo que está junto a mí, pero aquí tuyos muestra que están junto a ti.",
-            "de": "Estos würde bezeichnen, was bei mir ist, aber hier zeigt tuyos (deine), dass sie bei dir sind."
+            "hu": "Az esta azt jelölné, ami nálam van, itt viszont a que llevas (amit hordasz) mutatja, hogy nálad van.",
+            "en": "Esta would mark what is by me, but here que llevas (what you are carrying) shows it is by you.",
+            "es": "Esta señalaría lo que está junto a mí, pero aquí que llevas muestra que está junto a ti.",
+            "de": "Esta würde bezeichnen, was bei mir ist, aber hier zeigt que llevas (die du trägst), dass sie bei dir ist."
           }
         },
         {
@@ -1114,10 +1119,10 @@
             "de": "aquel = weit von uns beiden"
           },
           "wrong": {
-            "hu": "Az aquellos azt jelölné, ami mindkettőnktől távol van, itt viszont a cipők nálad vannak, tehát közel hozzád.",
-            "en": "Aquellos would mark what is far from both of us, but here the shoes are by you, so close to you.",
-            "es": "Aquellos señalaría lo que está lejos de los dos, pero aquí los zapatos están junto a ti, cerca.",
-            "de": "Aquellos würde bezeichnen, was von uns beiden weit weg ist, aber hier sind die Schuhe bei dir, also nah."
+            "hu": "Az aquella azt jelölné, ami mindkettőnktől távol van, itt viszont a táska nálad van, tehát közel hozzád.",
+            "en": "Aquella would mark what is far from both of us, but here the bag is by you, so close to you.",
+            "es": "Aquella señalaría lo que está lejos de los dos, pero aquí la bolsa está junto a ti, cerca.",
+            "de": "Aquella würde bezeichnen, was von uns beiden weit weg ist, aber hier ist die Tasche bei dir, also nah."
           }
         }
       ],

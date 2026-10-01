@@ -57,18 +57,18 @@
         },
         {
           "text": {
-            "hu": "Az -e vagy mássalhangzó végű melléknév nemben nem változik, csak számban: grande, grandes; azul, azules.",
-            "en": "An adjective ending in -e or a consonant does not change for gender, only for number: grande, grandes; azul, azules.",
-            "es": "El adjetivo en -e o consonante no cambia de género, solo de número: grande, grandes; azul, azules.",
-            "de": "Ein Adjektiv auf -e oder Konsonant ändert sich nicht nach Genus, nur nach Numerus: grande, grandes; azul, azules."
+            "hu": "Az -e vagy mássalhangzó végű melléknév általában nemben nem változik, csak számban: grande, grandes; azul, azules.",
+            "en": "An adjective ending in -e or a consonant usually does not change for gender, only for number: grande, grandes; azul, azules.",
+            "es": "El adjetivo en -e o consonante normalmente no cambia de género, solo de número: grande, grandes; azul, azules.",
+            "de": "Ein Adjektiv auf -e oder Konsonant ändert sich in der Regel nicht nach Genus, nur nach Numerus: grande, grandes; azul, azules."
           },
           "examples": [
             {
-              "es": "El coche es grande.",
+              "es": "El carro es grande.",
               "tr": {
                 "hu": "Az autó nagy.",
                 "en": "The car is big.",
-                "es": "El coche es grande.",
+                "es": "El carro es grande.",
                 "de": "Das Auto ist groß."
               }
             },
@@ -85,10 +85,10 @@
         },
         {
           "text": {
-            "hu": "A nemzetiség-melléknevek mássalhangzó után is kapnak nőnemű alakot: español, española, españoles, españolas.",
-            "en": "Nationality adjectives take a feminine form even after a consonant: español, española, españoles, españolas.",
-            "es": "Los adjetivos de nacionalidad tienen femenino aunque acaben en consonante: español, española, españoles, españolas.",
-            "de": "Nationalitätsadjektive haben auch nach Konsonant eine feminine Form: español, española, españoles, españolas."
+            "hu": "A nemzetiség-melléknevek és az -dor végűek mássalhangzó után is kapnak nőnemű alakot: español, española, españoles, españolas; trabajador, trabajadora.",
+            "en": "Nationality adjectives and those in -dor take a feminine form even after a consonant: español, española, españoles, españolas; trabajador, trabajadora.",
+            "es": "Los adjetivos de nacionalidad y los terminados en -dor tienen femenino aunque acaben en consonante: español, española, españoles, españolas; trabajador, trabajadora.",
+            "de": "Nationalitätsadjektive und Adjektive auf -dor haben auch nach Konsonant eine feminine Form: español, española, españoles, españolas; trabajador, trabajadora."
           },
           "examples": [
             {
@@ -317,10 +317,10 @@
         },
         {
           "text": {
-            "hu": "A bueno, malo és grande a hímnemű EGYES szám előtt lerövidül: un buen día, un mal año, un gran problema.",
-            "en": "Bueno, malo, and grande shorten before a masculine SINGULAR noun: un buen día, un mal año, un gran problema.",
-            "es": "Bueno, malo y grande se acortan ante un sustantivo masculino SINGULAR: un buen día, un mal año, un gran problema.",
-            "de": "Bueno, malo und grande verkürzen sich vor einem maskulinen SINGULAR-Nomen: un buen día, un mal año, un gran problema."
+            "hu": "A bueno és malo hímnemű EGYES szám előtt lerövidül (buen, mal), a grande pedig bármilyen EGYES számú főnév előtt (gran): un buen día, un mal año, un gran problema, una gran casa.",
+            "en": "Bueno and malo shorten before a masculine SINGULAR noun (buen, mal), while grande shortens before any SINGULAR noun (gran): un buen día, un mal año, un gran problema, una gran casa.",
+            "es": "Bueno y malo se acortan ante un sustantivo masculino SINGULAR (buen, mal); grande se acorta ante cualquier sustantivo SINGULAR (gran): un buen día, un mal año, un gran problema, una gran casa.",
+            "de": "Bueno und malo verkürzen sich vor einem maskulinen SINGULAR-Nomen (buen, mal), grande vor jedem SINGULAR-Nomen (gran): un buen día, un mal año, un gran problema, una gran casa."
           },
           "examples": [
             {
@@ -383,21 +383,21 @@
       },
       "pairs": [
         {
-          "a": "un coche rojo",
+          "a": "un carro rojo",
           "b": "una casa roja",
           "note": {
-            "hu": "A rojo -o végű, ezért négy alakja van; a főnév neme dönti el, melyik jön: coche hímnemű → rojo, casa nőnemű → roja.",
-            "en": "Rojo ends in -o, so it has four forms; the noun's gender decides which one: coche is masculine → rojo, casa is feminine → roja.",
-            "es": "Rojo acaba en -o, así que tiene cuatro formas; el género del sustantivo decide cuál usar: coche es masculino → rojo, casa es femenino → roja.",
-            "de": "Rojo endet auf -o und hat daher vier Formen; das Genus des Nomens entscheidet, welche Form: coche ist maskulin → rojo, casa ist feminin → roja."
+            "hu": "A rojo -o végű, ezért négy alakja van; a főnév neme dönti el, melyik jön: carro hímnemű → rojo, casa nőnemű → roja.",
+            "en": "Rojo ends in -o, so it has four forms; the noun's gender decides which one: carro is masculine → rojo, casa is feminine → roja.",
+            "es": "Rojo acaba en -o, así que tiene cuatro formas; el género del sustantivo decide cuál usar: carro es masculino → rojo, casa es femenino → roja.",
+            "de": "Rojo endet auf -o und hat daher vier Formen; das Genus des Nomens entscheidet, welche Form: carro ist maskulin → rojo, casa ist feminin → roja."
           },
           "examples": [
             {
-              "es": "El coche rojo es nuevo.",
+              "es": "El carro rojo es nuevo.",
               "tr": {
                 "hu": "A piros autó új.",
                 "en": "The red car is new.",
-                "es": "El coche rojo es nuevo.",
+                "es": "El carro rojo es nuevo.",
                 "de": "Das rote Auto ist neu."
               }
             },
@@ -447,10 +447,10 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "A buen, mal, gran CSAK hímnemű egyes szám előtt rövidül; utána mindig a teljes alak áll: buena, mala, grande.",
-        "en": "Buen, mal, and gran shorten ONLY before a masculine singular noun; after the noun, the full form always stands: buena, mala, grande.",
-        "es": "Buen, mal y gran se acortan SOLO ante un sustantivo masculino singular; detrás siempre va la forma entera: buena, mala, grande.",
-        "de": "Buen, mal und gran verkürzen sich NUR vor einem maskulinen Singular-Nomen; dahinter steht immer die volle Form: buena, mala, grande."
+        "hu": "A buen és mal CSAK hímnemű egyes szám előtt rövidül, a gran bármilyen egyes számú főnév előtt; utána mindig a teljes alak áll: buena, mala, grande.",
+        "en": "Buen and mal shorten ONLY before a masculine singular noun, gran before any singular noun; after the noun, the full form always stands: buena, mala, grande.",
+        "es": "Buen y mal se acortan SOLO ante un sustantivo masculino singular, gran ante cualquier sustantivo singular; detrás siempre va la forma entera: buena, mala, grande.",
+        "de": "Buen und mal verkürzen sich NUR vor einem maskulinen Singular-Nomen, gran vor jedem Singular-Nomen; dahinter steht immer die volle Form: buena, mala, grande."
       }
     }
   ],
@@ -550,6 +550,24 @@
         "es": "mexicanos",
         "de": "Mexikaner"
       }
+    },
+    {
+      "word": "carro",
+      "gloss": {
+        "hu": "autó",
+        "en": "car",
+        "es": "el carro",
+        "de": "Auto"
+      }
+    },
+    {
+      "word": "carros",
+      "gloss": {
+        "hu": "autók",
+        "en": "cars",
+        "es": "los carros",
+        "de": "Autos"
+      }
     }
   ],
   "items": [
@@ -589,7 +607,7 @@
     },
     {
       "id": "ac-02",
-      "sentence": "Los coches son ___ .",
+      "sentence": "Los carros son ___ .",
       "options": [
         "nuevos",
         "nuevo",
@@ -597,23 +615,23 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A coches hímnemű többes: nuevos.",
+        "hu": "A carros hímnemű többes: nuevos.",
         "en": "Coches is masculine plural: nuevos.",
         "es": "Coches es masculino plural: nuevos.",
         "de": "Coches ist maskulin Plural: nuevos."
       },
       "wrong": {
         "nuevo": {
-          "hu": "Ezzel a mondat azt jelentené, hogy egyetlen autóról van szó, de a coches többes szám; helyesen: Los coches son nuevos.",
-          "en": "This would say there is a single car, but coches is plural; correctly: Los coches son nuevos.",
-          "es": "Esto diría que hay un solo coche, pero coches es plural; correctamente: Los coches son nuevos.",
-          "de": "Das würde ein einziges Auto andeuten, aber coches steht im Plural; richtig: Los coches son nuevos."
+          "hu": "Ezzel a mondat azt jelentené, hogy egyetlen autóról van szó, de a carros többes szám; helyesen: Los carros son nuevos.",
+          "en": "This would say there is a single car, but carros is plural; correctly: Los carros son nuevos.",
+          "es": "Esto diría que hay un solo carro, pero carros es plural; correctamente: Los carros son nuevos.",
+          "de": "Das würde ein einziges Auto andeuten, aber carros steht im Plural; richtig: Los carros son nuevos."
         },
         "nuevas": {
-          "hu": "Ezzel a mondat azt jelentené, hogy a coches nőnemű, de a coche hímnemű; helyesen: Los coches son nuevos.",
-          "en": "This would treat coches as feminine, but coche is masculine; correctly: Los coches son nuevos.",
-          "es": "Esto trataría a coches como femenino, pero coche es masculino; correctamente: Los coches son nuevos.",
-          "de": "Das würde coches als feminin behandeln, aber coche ist maskulin; richtig: Los coches son nuevos."
+          "hu": "Ezzel a mondat azt jelentené, hogy a carros nőnemű, de a carro hímnemű; helyesen: Los carros son nuevos.",
+          "en": "This would treat carros as feminine, but carro is masculine; correctly: Los carros son nuevos.",
+          "es": "Esto trataría a carros como femenino, pero carro es masculino; correctamente: Los carros son nuevos.",
+          "de": "Das würde carros als feminin behandeln, aber carro ist maskulin; richtig: Los carros son nuevos."
         }
       },
       "examples": [
@@ -638,10 +656,10 @@
       },
       "wrong": {
         "inteligenta": {
-          "hu": "Ezzel a mondat egy nem létező alakot használna; az -e végű melléknév nem változik nem szerint, egy nőnemű alanynál is inteligente marad; helyesen: Mi hermana es muy inteligente.",
-          "en": "This would use a form that doesn't exist; an -e adjective does not change for gender, so it stays inteligente even for a feminine subject; correctly: Mi hermana es muy inteligente.",
-          "es": "Esto usaría una forma que no existe; el adjetivo en -e no cambia de género, sigue siendo inteligente incluso para un sujeto femenino; correctamente: Mi hermana es muy inteligente.",
-          "de": "Das würde eine nicht existierende Form verwenden; ein Adjektiv auf -e ändert sich nicht nach Genus, es bleibt inteligente auch bei einem femininen Subjekt; richtig: Mi hermana es muy inteligente."
+          "hu": "Ezzel a mondat helytelen alakot használna; az -e végű melléknév nem változik nem szerint, egy nőnemű alanynál is inteligente marad; helyesen: Mi hermana es muy inteligente.",
+          "en": "This would use an incorrect form; an -e adjective does not change for gender, so it stays inteligente even for a feminine subject; correctly: Mi hermana es muy inteligente.",
+          "es": "Esto usaría una forma incorrecta; el adjetivo en -e no cambia de género, sigue siendo inteligente incluso para un sujeto femenino; correctamente: Mi hermana es muy inteligente.",
+          "de": "Das würde eine falsche Form verwenden; ein Adjektiv auf -e ändert sich nicht nach Genus, es bleibt inteligente auch bei einem femininen Subjekt; richtig: Mi hermana es muy inteligente."
         },
         "inteligentes": {
           "hu": "Ezzel a mondat azt jelentené, hogy többen intelligensek, de a hermana egyetlen személy; helyesen: Mi hermana es muy inteligente.",
@@ -774,10 +792,10 @@
       },
       "wrong": {
         "bueno": {
-          "hu": "Ezzel a mondat azt jelentené, hogy a teljes alak a főnév ELŐTT áll, de bueno csak a főnév MÖGÖTT marad teljes alakban; helyesen: Hoy es un buen día.",
-          "en": "This would put the full form BEFORE the noun, but bueno only stays full AFTER the noun; correctly: Hoy es un buen día.",
-          "es": "Esto pondría la forma entera DELANTE del sustantivo, pero bueno solo se queda entero DETRÁS; correctamente: Hoy es un buen día.",
-          "de": "Das würde die volle Form VOR das Nomen setzen, aber bueno bleibt nur DAHINTER vollständig; richtig: Hoy es un buen día."
+          "hu": "Ezzel a mondat a teljes bueno-t használná hímnemű egyes számú főnév ELŐTT, de ott buen-re rövidül; helyesen: Hoy es un buen día.",
+          "en": "This would use the full bueno BEFORE a masculine singular noun, but there it shortens to buen; correctly: Hoy es un buen día.",
+          "es": "Esto usaría bueno entero DELANTE de un sustantivo masculino singular, pero ahí se acorta a buen; correctamente: Hoy es un buen día.",
+          "de": "Das würde das volle bueno VOR ein maskulines Singular-Nomen setzen, aber dort verkürzt es sich zu buen; richtig: Hoy es un buen día."
         },
         "buena": {
           "hu": "Ezzel a mondat azt jelentené, hogy a día nőnemű, de a día hímnemű; helyesen: Hoy es un buen día.",
@@ -889,7 +907,7 @@
         }
       },
       "examples": [
-        "Un coche negro.",
+        "Un carro negro.",
         "Unas flores amarillas."
       ]
     },
@@ -974,7 +992,7 @@
           "en": "the happy girl"
         },
         {
-          "es": "los coches rojos",
+          "es": "los carros rojos",
           "en": "the red cars"
         },
         {

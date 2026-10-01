@@ -141,10 +141,10 @@
         },
         {
           "text": {
-            "hu": "Az életkort tener + szám + años fejezi ki: Tengo veinte años. Az árat costar adja: Cuesta cien pesos, nem 'es cien pesos'.",
-            "en": "Age is expressed with tener + number + años: Tengo veinte años. Price is expressed with costar: Cuesta cien pesos, not 'es cien pesos'.",
-            "es": "La edad se expresa con tener + número + años: Tengo veinte años. El precio se expresa con costar: Cuesta cien pesos, no 'es cien pesos'.",
-            "de": "Das Alter wird mit tener + Zahl + años ausgedrückt: Tengo veinte años. Der Preis wird mit costar ausgedrückt: Cuesta cien pesos, nicht 'es cien pesos'."
+            "hu": "Az életkort tener + szám + años fejezi ki: Tengo veinte años. Egy dolog árát costar adja: Cuesta cien pesos (a kasszánál viszont: ¿Cuánto es? Son cien pesos).",
+            "en": "Age is expressed with tener + number + años: Tengo veinte años. The price of a thing is expressed with costar: Cuesta cien pesos (at the till, though: ¿Cuánto es? Son cien pesos).",
+            "es": "La edad se expresa con tener + número + años: Tengo veinte años. El precio de una cosa se expresa con costar: Cuesta cien pesos (en la caja, en cambio: ¿Cuánto es? Son cien pesos).",
+            "de": "Das Alter wird mit tener + Zahl + años ausgedrückt: Tengo veinte años. Der Preis einer Sache wird mit costar ausgedrückt: Cuesta cien pesos (an der Kasse aber: ¿Cuánto es? Son cien pesos)."
           },
           "examples": [
             {
@@ -227,8 +227,8 @@
         ["100", "cien"],
         ["1:00", "la una"],
         ["2:00", "las dos"],
-        ["3:30", "las tres y media"],
-        ["2:45", "las tres menos cuarto"],
+        ["3:30 (media)", "las tres y media"],
+        ["2:45 (menos)", "las tres menos cuarto"],
         ["1 de enero", "el primero de enero"],
         ["5 de mayo", "el cinco de mayo"],
         ["21 años", "veintiún años"]
@@ -316,7 +316,7 @@
     }
   ],
   "speak": {
-    "hu": "A számok, az idő és a dátum a mindennapi boldoguláshoz kell: mikor találkozunk, mennyibe kerül valami, hányadika van ma. Tizenhattól huszonkilencig a számokat egy szóba írjuk, utána egy kis és szó köti össze a tízeseket és az egyeseket. Az óra kivétel: egy órakor az ige egyes szám, utána többes szám lesz. A perceket az és szóval adjuk hozzá, vagy a következő órából a mínusz szóval vonjuk le. A dátumhoz névelő és a nak-nek jellegű szócska kell. És ne felejtsd el az árat és a kort.",
+    "hu": "A számok, az idő és a dátum a mindennapi boldoguláshoz kell: mikor találkozunk, mennyibe kerül valami, hányadika van ma. Tizenhattól huszonkilencig a számokat egy szóba írjuk, utána egy kis és szó köti össze a tízeseket és az egyeseket. Az óra kivétel: egy órakor az ige egyes szám, utána többes szám lesz. A perceket az és szóval adjuk hozzá, vagy a következő órából a mínusz szóval vonjuk le. A dátumhoz névelő és a birtokviszonyt jelző szócska kell. És ne felejtsd el az árat és a kort.",
     "en": "Numbers, the time and the date are what you need for everyday survival: when we meet, how much something costs, what today's date is. From sixteen to twenty-nine the numbers are written as one word, and after that a small word for and joins the tens and the units. The hour is an exception: for one o'clock the verb is singular, and after that it turns plural. Minutes are added with the word for and, or subtracted from the next hour with the word for minus. A date needs the article and the word for of. And don't forget price and age.",
     "es": "Los números, la hora y la fecha son lo que necesitas para desenvolverte cada día: cuándo nos vemos, cuánto cuesta algo, qué fecha es hoy. Del dieciséis al veintinueve los números se escriben en una sola palabra, y después una palabrita que significa y une las decenas y las unidades. La hora es una excepción: para la una el verbo va en singular, y después pasa al plural. Los minutos se suman con la palabra y, o se restan de la hora siguiente con la palabra menos. Una fecha necesita el artículo y la palabra de. Y no olvides el precio y la edad.",
     "de": "Zahlen, Uhrzeit und Datum braucht man im Alltag: wann wir uns treffen, was etwas kostet, welches Datum heute ist. Von sechzehn bis neunundzwanzig schreibt man die Zahlen in einem Wort, danach verbindet ein kleines Wort für und die Zehner und Einer. Die Uhrzeit ist eine Ausnahme: bei ein Uhr steht das Verb im Singular, danach im Plural. Minuten werden mit dem Wort für und addiert oder mit dem Wort für minus von der nächsten Stunde abgezogen. Ein Datum braucht den Artikel und das Wort für von. Und vergiss Preis und Alter nicht."
@@ -428,7 +428,7 @@
     },
     {
       "id": "nh-02",
-      "sentence": "Mi abuelo tiene ___ años.",
+      "sentence": "Mi hermano tiene ___ años.",
       "options": ["dieciséis", "diez y seis"],
       "correct": 0,
       "why": {
@@ -445,7 +445,7 @@
           "de": "Diez y seis ist eine altmodische, dreiteilige Schreibweise; heute ist dieciséis die anerkannte Form."
         }
       },
-      "examples": ["Mi abuela tiene diecisiete años.", "Tenemos dieciocho años."]
+      "examples": ["Mi hermana tiene diecisiete años.", "Tenemos dieciocho años."]
     },
     {
       "id": "nh-03",
@@ -555,7 +555,7 @@
     {
       "id": "nh-08",
       "sentence": "Llegamos a las tres menos ___.",
-      "options": ["cuarto", "cuatro"],
+      "options": ["cuarto", "media"],
       "correct": 0,
       "why": {
         "hu": "A negyedórát menos cuarto fejezi ki: cuarto itt negyedórát jelent, nem szobát.",
@@ -564,11 +564,11 @@
         "de": "Eine Viertelstunde wird mit menos cuarto ausgedrückt: cuarto bedeutet hier Viertel, nicht Zimmer."
       },
       "wrong": {
-        "cuatro": {
-          "hu": "A cuatro a négyes szám; a menos cuatro nem szokásos módja a percek kifejezésének, csak a menos cuarto az.",
-          "en": "Cuatro is the number four; menos cuatro is not the standard way to express minutes before the hour, only menos cuarto is.",
-          "es": "Cuatro es el número cuatro; menos cuatro no es la forma habitual de expresar los minutos antes de la hora, solo menos cuarto lo es.",
-          "de": "Cuatro ist die Zahl vier; menos cuatro ist nicht die übliche Art, Minuten vor der Stunde auszudrücken, nur menos cuarto ist es."
+        "media": {
+          "hu": "A media csak az y-nal áll (las tres y media); a menos mellé a negyedórára a cuarto kell: las tres menos cuarto.",
+          "en": "Media only goes with y (las tres y media); after menos the quarter hour needs cuarto: las tres menos cuarto.",
+          "es": "Media solo va con y (las tres y media); después de menos el cuarto de hora pide cuarto: las tres menos cuarto.",
+          "de": "Media steht nur mit y (las tres y media); nach menos braucht die Viertelstunde cuarto: las tres menos cuarto."
         }
       },
       "examples": ["Salimos a las ocho menos cuarto.", "La clase empieza a las dos menos cuarto."]
@@ -597,7 +597,7 @@
     {
       "id": "nh-10",
       "sentence": "Hoy es el ___ de enero.",
-      "options": ["primero", "uno"],
+      "options": ["primero", "un"],
       "correct": 0,
       "why": {
         "hu": "Mexikóban a hónap első napját el primero de... formában mondják.",
@@ -606,11 +606,11 @@
         "de": "In Mexiko sagt man den ersten Tag des Monats als el primero de..."
       },
       "wrong": {
-        "uno": {
-          "hu": "Az el uno de... is érthető és máshol is használt alak, de Mexikóban a primero a megszokott.",
-          "en": "El uno de... is also understood and used elsewhere, but in Mexico primero is the usual form.",
-          "es": "El uno de... también se entiende y se usa en otros lugares, pero en México lo habitual es primero.",
-          "de": "El uno de... versteht man auch, und es wird anderswo verwendet, aber in Mexiko ist primero die übliche Form."
+        "un": {
+          "hu": "Az un csak közvetlenül főnév előtt áll (un libro), dátumban nem használjuk: el primero de enero.",
+          "en": "Un only stands directly before a noun (un libro); it is not used in a date: el primero de enero.",
+          "es": "Un solo va directamente ante un sustantivo (un libro); en una fecha no se usa: el primero de enero.",
+          "de": "Un steht nur direkt vor einem Nomen (un libro); in einem Datum wird es nicht benutzt: el primero de enero."
         }
       },
       "examples": ["Mañana es el primero de marzo.", "El examen es el primero de agosto."]
@@ -639,20 +639,20 @@
     {
       "id": "nh-12",
       "sentence": "El café ___ treinta pesos.",
-      "options": ["cuesta", "es"],
+      "options": ["cuesta", "tiene"],
       "correct": 0,
       "why": {
-        "hu": "Az árat costar fejezi ki, nem ser: el café cuesta treinta pesos.",
-        "en": "Price is expressed with costar, not ser: el café cuesta treinta pesos.",
-        "es": "El precio se expresa con costar, no con ser: el café cuesta treinta pesos.",
-        "de": "Der Preis wird mit costar ausgedrückt, nicht mit ser: el café cuesta treinta pesos."
+        "hu": "Egy dolog árát costar fejezi ki: el café cuesta treinta pesos.",
+        "en": "The price of a thing is expressed with costar: el café cuesta treinta pesos.",
+        "es": "El precio de una cosa se expresa con costar: el café cuesta treinta pesos.",
+        "de": "Der Preis einer Sache wird mit costar ausgedrückt: el café cuesta treinta pesos."
       },
       "wrong": {
-        "es": {
-          "hu": "Az es azonosságot vagy besorolást fejez ki, nem árat; az árra costar kell.",
-          "en": "Es expresses identity or classification, not price; costar is needed for a price.",
-          "es": "Es expresa identidad o clasificación, no precio; para el precio hace falta costar.",
-          "de": "Es drückt Identität oder Einordnung aus, keinen Preis; für den Preis braucht man costar."
+        "tiene": {
+          "hu": "A tiene a tener igéből jön, és az életkort fejezi ki (tiene veinte años), nem árat; az árra costar kell: el café cuesta treinta pesos.",
+          "en": "Tiene comes from tener and expresses age (tiene veinte años), not price; a price needs costar: el café cuesta treinta pesos.",
+          "es": "Tiene viene de tener y expresa la edad (tiene veinte años), no el precio; para el precio hace falta costar: el café cuesta treinta pesos.",
+          "de": "Tiene kommt von tener und drückt das Alter aus (tiene veinte años), nicht den Preis; für den Preis braucht man costar: el café cuesta treinta pesos."
         }
       },
       "examples": ["El libro cuesta cien pesos.", "La comida cuesta treinta pesos."]
@@ -676,8 +676,8 @@
     { "id": "nh-form-05", "kind": "form", "verb": "palabra", "person": "100", "answer": "cien", "table": "numeros" },
     { "id": "nh-form-06", "kind": "form", "verb": "palabra", "person": "1:00", "answer": "la una", "table": "numeros" },
     { "id": "nh-form-07", "kind": "form", "verb": "palabra", "person": "2:00", "answer": "las dos", "table": "numeros" },
-    { "id": "nh-form-08", "kind": "form", "verb": "palabra", "person": "3:30", "answer": "las tres y media", "table": "numeros" },
-    { "id": "nh-form-09", "kind": "form", "verb": "palabra", "person": "2:45", "answer": "las tres menos cuarto", "table": "numeros" },
+    { "id": "nh-form-08", "kind": "form", "verb": "palabra", "person": "3:30 (media)", "answer": "las tres y media", "table": "numeros" },
+    { "id": "nh-form-09", "kind": "form", "verb": "palabra", "person": "2:45 (menos)", "answer": "las tres menos cuarto", "table": "numeros" },
     { "id": "nh-form-10", "kind": "form", "verb": "palabra", "person": "1 de enero", "answer": "el primero de enero", "table": "numeros" },
     { "id": "nh-form-11", "kind": "form", "verb": "palabra", "person": "5 de mayo", "answer": "el cinco de mayo", "table": "numeros" },
     { "id": "nh-form-12", "kind": "form", "verb": "palabra", "person": "21 años", "answer": "veintiún años", "table": "numeros" },
@@ -840,7 +840,7 @@
       "es": "Mi hermano tiene treinta y un años.",
       "target": "treinta y un",
       "tr": {
-        "hu": "A bátyám harmincegy éves.",
+        "hu": "A testvérem harmincegy éves.",
         "en": "My brother is thirty-one years old.",
         "es": "Mi hermano tiene treinta y un años.",
         "de": "Mein Bruder ist einunddreißig Jahre alt."

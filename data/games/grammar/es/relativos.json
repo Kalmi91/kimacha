@@ -779,7 +779,7 @@
       },
       "wrong": {
         "quien": {
-          "hu": "A quien egy személyre áll, a „amigos” pedig többes szám; helyesen: Los amigos de quienes te hablé son de Oaxaca.",
+          "hu": "A quien egy személyre áll, az „amigos” pedig többes szám; helyesen: Los amigos de quienes te hablé son de Oaxaca.",
           "en": "Quien is for one person, and “amigos” is plural; correctly: Los amigos de quienes te hablé son de Oaxaca.",
           "es": "Quien es para una persona, y “amigos” es plural; correctamente: Los amigos de quienes te hablé son de Oaxaca.",
           "de": "Quien steht für eine Person, und „amigos“ ist Plural; richtig: Los amigos de quienes te hablé son de Oaxaca."
@@ -1197,10 +1197,10 @@
             "de": "zwischen Kommas bei Personen que oder quien"
           },
           "wrong": {
-            "hu": "Vesszők között a que is jó volna, de az a elöljáró után csak quien áll.",
-            "en": "Between commas que would be fine too, but after the preposition a only quien is used.",
-            "es": "Entre comas también serviría que, pero después de la preposición a solo va quien.",
-            "de": "Zwischen Kommas wäre auch que möglich, aber nach der Präposition a steht nur quien."
+            "hu": "Vesszők között a que is jó volna, de az a elöljáró után a puszta que nem áll, ott quien kell.",
+            "en": "Between commas que would be fine too, but after the preposition a bare que does not fit; you need quien.",
+            "es": "Entre comas también serviría que, pero después de la preposición a, que solo no encaja; hace falta quien.",
+            "de": "Zwischen Kommas wäre auch que möglich, aber nach der Präposition a passt das bloße que nicht; man braucht quien."
           }
         },
         {

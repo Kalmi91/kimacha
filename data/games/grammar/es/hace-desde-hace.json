@@ -224,17 +224,17 @@
           "hace ... que + presente, ellos"
         ],
         [
-          "Mi hermano ___ inglés desde hace cinco años. (estudiar)",
+          "Mi hermano ___ inglés desde hace cinco años. (estudiar, presente)",
           "estudia",
           "desde hace + presente, él"
         ],
         [
-          "Nosotros ___ en esta ciudad desde hace diez años. (vivir)",
+          "Nosotros ___ en esta ciudad desde hace diez años. (vivir, presente)",
           "vivimos",
           "desde hace + presente, nosotros"
         ],
         [
-          "Mi papá ___ seis meses buscando trabajo. (llevar)",
+          "Mi papá ___ seis meses buscando trabajo. (llevar, presente)",
           "lleva",
           "llevar + tiempo + gerundio, él"
         ],
@@ -568,7 +568,7 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A llevar + időtartam után gerundio áll: viviendo. Ez azt mondja, hogy a szüleim öt éve élnek Querétaróban, és ma is ott élnek.",
+        "hu": "A llevar + időtartam után gerundio áll: viviendo. Ez azt mondja, hogy a szüleim öt éve élnek Mexikóban, és ma is ott élnek.",
         "en": "After llevar + length of time comes a gerund: viviendo. It says that my parents have lived in México for five years and still do.",
         "es": "Después de llevar + tiempo va un gerundio: viviendo. Dice que mis papás viven en México desde hace cinco años y siguen allí.",
         "de": "Nach llevar + Zeitdauer steht ein Gerundium: viviendo. Es sagt, dass meine Eltern seit fünf Jahren in México wohnen und noch dort leben."
@@ -854,7 +854,7 @@
       "id": "hdh-form-04",
       "kind": "form",
       "verb": "forma",
-      "person": "Mi hermano ___ inglés desde hace cinco años. (estudiar)",
+      "person": "Mi hermano ___ inglés desde hace cinco años. (estudiar, presente)",
       "answer": "estudia",
       "table": "hace-desde-hace-formas"
     },
@@ -862,7 +862,7 @@
       "id": "hdh-form-05",
       "kind": "form",
       "verb": "forma",
-      "person": "Nosotros ___ en esta ciudad desde hace diez años. (vivir)",
+      "person": "Nosotros ___ en esta ciudad desde hace diez años. (vivir, presente)",
       "answer": "vivimos",
       "table": "hace-desde-hace-formas"
     },
@@ -870,7 +870,7 @@
       "id": "hdh-form-06",
       "kind": "form",
       "verb": "forma",
-      "person": "Mi papá ___ seis meses buscando trabajo. (llevar)",
+      "person": "Mi papá ___ seis meses buscando trabajo. (llevar, presente)",
       "answer": "lleva",
       "table": "hace-desde-hace-formas"
     },
@@ -1211,10 +1211,10 @@
             "de": "hace + Zeitdauer + que + Präsens: die Situation dauert noch an"
           },
           "wrong": {
-            "hu": "A hace ... que szerkezet jelen idejű igéhez tartozik. Itt a llegó múlt idejű, és nincs que: az érkezés egy órával ezelőtt történt.",
-            "en": "The hace ... que structure goes with a verb in the present. Here llegó is in the past and there is no que: the arrival happened an hour ago.",
-            "es": "La estructura hace ... que va con un verbo en presente. Aquí llegó está en pasado y no hay que: la llegada ocurrió hace una hora.",
-            "de": "Die Struktur hace ... que gehört zu einem Verb im Präsens. Hier steht llegó in der Vergangenheit, und es gibt kein que: Die Ankunft geschah vor einer Stunde."
+            "hu": "A hace ... que + jelen a ma is tartó helyzetet mondja. Itt a llegó múlt idejű, lezárt esemény, és nincs que: az érkezés egy órával ezelőtt történt.",
+            "en": "Hace ... que + present states a situation that is still going. Here llegó is in the past, a finished event, and there is no que: the arrival happened an hour ago.",
+            "es": "Hace ... que + presente dice una situación que sigue. Aquí llegó está en pasado, un hecho terminado, y no hay que: la llegada ocurrió hace una hora.",
+            "de": "Hace ... que + Präsens nennt eine Situation, die noch andauert. Hier steht llegó in der Vergangenheit, ein abgeschlossenes Ereignis, und es gibt kein que: Die Ankunft geschah vor einer Stunde."
           }
         },
         {
