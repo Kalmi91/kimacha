@@ -61,12 +61,18 @@ export default function PcicRevealedAnswer({
   const example = target === 'es' ? currentItem?.exampleEs : currentItem?.exampleEn;
   const exampleGloss = target === 'es' ? currentItem?.exampleEn : currentItem?.exampleEs;
 
+  // PLAN-learn-words-open 5a: ha a beírt válasz betűre és ékezetre pontosan a cél
+  // (kis-nagybetűt és a széli szóközt nem számítva), a zöld visszhang kimarad, a
+  // szó csak egyszer látszik (a rózsaszín sor a hangszóróval).
+  const typedExact = typedAnswer.trim().toLowerCase() === grade.best.trim().toLowerCase();
+
   return (
     <>
       <View style={styles.resultSection}>
         {/* FB403: egyetlen, minden kártyán azonos jó / rossz jelzés (szín + alak + ✓/✗ + szöveg). */}
         <ResultBadge correct={nextGrade === 'good'} align="center" testID="pcic-result-badge" />
-        <Text style={styles.diffLine}>
+        {!typedExact && (
+        <Text testID="pcic-diff-line" style={styles.diffLine}>
           {charDiff(typedAnswer, grade.best, { case: true, accents: false }).map((d, i) => (
             <Text
               key={i}
@@ -82,6 +88,7 @@ export default function PcicRevealedAnswer({
             </Text>
           ))}
         </Text>
+        )}
         <View style={styles.frontRow}>
           <Text style={[styles.correctAnswer, { color: colors.tint }]}>{grade.best}</Text>
           <Pressable onPress={() => speak(grade.best, speechLang(target))} style={styles.speakBtn}>
