@@ -15,10 +15,12 @@ import ExamButton from './ExamButton';
 type Props = {
   levels: readonly MockLevel[];
   overview: MockOverview;
+  /** Hivatalos felépítésű vizsga (spanyol irány) vagy nemzetközi minta (angol): a szöveg másképp jelöli. */
+  official: boolean;
   onStart: (level: MockLevel) => void;
 };
 
-export default function MockExamCard({ levels, overview, onStart }: Props) {
+export default function MockExamCard({ levels, overview, official, onStart }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t().mockExam;
@@ -26,7 +28,7 @@ export default function MockExamCard({ levels, overview, onStart }: Props) {
   return (
     <Card testID="mock-exam-card" classicStyle={styles.card} boxStyle={styles.brutalCard} style={styles.outer}>
       <Text style={[styles.title, { color: colors.text }]}>{s.cardTitle}</Text>
-      <Text style={[styles.body, { color: colors.textMuted }]}>{s.cardBody}</Text>
+      <Text style={[styles.body, { color: colors.textMuted }]}>{official ? s.cardBody : s.cardBodyIntl}</Text>
       {levels.map((level) => {
         const entry = overview[level];
         const status = entry?.session ? s.cardInProgress(level) : entry?.last ? s.cardLast(level, entry.last.passed, entry.last.date) : null;

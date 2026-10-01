@@ -30,7 +30,7 @@ import {
   secondsLeft,
   type MockSession,
 } from '@/lib/exam/mock/session';
-import type { MockAnswers, MockExam, MockLevel, MockSkill, MockTaskAnswer } from '@/lib/exam/mock/types';
+import type { MockAnswers, MockExam, MockLevel, MockTaskAnswer } from '@/lib/exam/mock/types';
 import { isExamLearned } from '@/lib/exam/unlock';
 
 // PLAN-vizsga E. szakasz (15-16. lépés, Kálmán 2026-10-01): a próbavizsga képernyője a hivatalos
@@ -60,7 +60,7 @@ export default function MockExamScreen() {
   const [paperIdx, setPaperIdx] = useState(0);
   const [taskIdx, setTaskIdx] = useState(0);
   const [answers, setAnswers] = useState<MockAnswers>({});
-  const [done, setDone] = useState<MockSkill[]>([]);
+  const [done, setDone] = useState<string[]>([]);
   const [startedAt, setStartedAt] = useState(0);
   const [now, setNow] = useState(0);
   const [timedOut, setTimedOut] = useState(false);
@@ -135,7 +135,7 @@ export default function MockExamScreen() {
     stopSpeaking();
     setLeaving(false);
     if (byClock) setTimedOut(true);
-    const nextDone = [...done, paper.skill];
+    const nextDone = [...done, paper.id];
     setDone(nextDone);
     if (paperIdx + 1 >= exam.papers.length) {
       await finish(answers, exam);
@@ -207,7 +207,7 @@ export default function MockExamScreen() {
     setAnswers(saved.answers);
     setDone(saved.done);
     setTimedOut(false);
-    setPaperIdx(Math.max(0, exam.papers.findIndex((p) => !saved.done.includes(p.skill))));
+    setPaperIdx(Math.max(0, exam.papers.findIndex((p) => !saved.done.includes(p.id))));
     setTaskIdx(0);
     setPhase('paperIntro');
   };
@@ -244,19 +244,19 @@ export default function MockExamScreen() {
   }
 
   if (phase === 'intro') {
-    const groupsRule = exam.groups[0];
+    const rule = exam.rule;
     return shell(
       <ScrollView contentContainerStyle={styles.body}>
         {card(
           <>
             <Text style={[styles.title, { color: colors.text }]}>{s.title(level)}</Text>
-            <Text style={[styles.line, { color: colors.textMuted }]}>{s.modelNote(level)}</Text>
+            <Text style={[styles.line, { color: colors.textMuted }]}>{exam.official ? s.modelNote(level) : s.modelNoteIntl(level)}</Text>
             {exam.papers.map((p) => (
-              <Text key={p.skill} testID={`mock-paper-${p.skill}`} style={[styles.line, { color: colors.text }]}>
+              <Text key={p.id} testID={`mock-paper-${p.id}`} style={[styles.line, { color: colors.text }]}>
                 {p.placeholder ? s.paperLineSoon(p.name, p.minutes) : s.paperLine(p.name, p.minutes, p.tasks.length, p.points)}
               </Text>
             ))}
-            <Text style={[styles.line, { color: colors.text }]}>{s.passRule(groupsRule.needed, groupsRule.of)}</Text>
+            <Text style={[styles.line, { color: colors.text }]}>{rule.kind === 'groups' ? s.passRule(rule.groups[0].needed, rule.groups[0].of) : rule.kind === 'total' ? s.passRuleTotal(rule.needed, rule.of) : s.passRuleAverage(rule.passPct)}</Text>
             <Text style={[styles.note, { color: colors.textMuted }]}>{s.shortNote}</Text>
           </>,
         )}
@@ -283,7 +283,7 @@ export default function MockExamScreen() {
             <Text style={[styles.line, { color: colors.textMuted }]}>
               {paper.placeholder ? s.paperLineSoon(paper.name, paper.minutes) : s.paperMeta(paper.minutes, paper.tasks.length, paper.points)}
             </Text>
-            {paper.skill === 'listening' && !canSpeak && <Text style={[styles.note, { color: colors.warning }]}>{s.noVoice}</Text>}
+            {paper.tasks.some((tk) => tk.skill === 'listening') && !canSpeak && <Text style={[styles.note, { color: colors.warning }]}>{s.noVoice}</Text>}
             {timedOut && <Text style={[styles.note, { color: colors.warning }]}>{s.timeUp}</Text>}
           </>,
         )}
@@ -300,7 +300,7 @@ export default function MockExamScreen() {
             <Text testID="mock-speaking-title" style={[styles.title, { color: colors.text }]}>
               {s.speakingTitle}
             </Text>
-            <Text style={[styles.line, { color: colors.textMuted }]}>{s.speakingBody}</Text>
+            <Text style={[styles.line, { color: colors.textMuted }]}>{exam.rule.kind === 'groups' ? s.speakingBody : s.speakingBodyScaled}</Text>
           </>,
         )}
         <ExamButton testID="mock-speaking-continue" label={s.continue} onPress={() => void closePaper(false)} />
