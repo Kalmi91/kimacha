@@ -149,3 +149,15 @@ Az app élő pakli-modulja a `data/pcic.ts` (words-open + angol track): ez NEM a
     - #680 to drive → manejar / conducir | Mi padre maneja un carro nuevo.
     - #682 to turn on → encender | Necesito encender el teléfono.
     - #691 menu → el menú | El menú está en la mesa.
+- 15:31 7b. lépés, 2. adag (A2): +83 kártya, order 694-776 (a2.json vége): words-open-check ZÖLD (776 kártya); lecke-kapu P1 2518 → 2060 (a wordIds 1409 még nincs átállítva). A visszaható igék (levantarse, despertarse, preocuparse) is kártyák: a lib/esForms a tő-infinitív alakjait adja hozzájuk (teszt). A mondatokban a tőhangváltó o>ue igéknél (sonar, doler) a words-open-check R5 tiltja a suena/duele alakot (a rendhagyó-lista nem ismeri), ezért ir a + infinitív szerepel; a kaput nem módosítottam.
+  - Minta, 10 véletlen új kártya (en → es | mondat):
+    - #701 some → alguno / algún | Algún día voy a viajar.
+    - #718 silence → el silencio | Hay mucho silencio en la casa.
+    - #738 first → primero / primer | Mi primer día en la escuela es hoy.
+    - #743 bottle → la botella | Quiero una botella de agua.
+    - #747 lately → últimamente | Últimamente trabajo mucho en la oficina.
+    - #749 inside → dentro | Mi libro está dentro de la mochila.
+    - #756 salesperson → el vendedor | El vendedor trabaja en la tienda.
+    - #764 to love → encantar | Me encanta la música.
+    - #766 to interest → interesar | Me interesa la historia.
+    - #775 to last → durar | El viaje dura una semana.

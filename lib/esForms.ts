@@ -150,8 +150,10 @@ export function formsOfCard(es: string, pos: string, deps: FormDeps): string[] {
   const { conjugate, TENSES, esPlural, esFeminine } = deps;
   const out: string[] = [];
   for (const alt of es.split(' / ')) {
-    const head = alt.trim().toLowerCase();
-    if (!head) continue;
+    const written = alt.trim().toLowerCase();
+    if (!written) continue;
+    // a visszaható ige (levantarse) a tő-infinitív alakjait adja (me levanto, se levantó)
+    const head = pos === 'verb' && /(ar|er|ir)se$/.test(written) ? written.slice(0, -2) : written;
     if (pos === 'verb') {
       if (!ES_INFINITIVE.test(head)) continue;
       let any = false;
