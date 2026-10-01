@@ -1,0 +1,117 @@
+// PLAN-vizsga A. szakasz 2. lépés (Kálmán, 2026-10-01, A1 a): a tanulófül szint-választó lapján
+// az A1 sor alatt ott a vizsga-sor, az SM-2 adatból és a kész leckékből számolva; a koppintás
+// a vizsgára (nyitva), a szavak gyakorlására vagy a nyelvtani leckékre visz. A valódi
+// words-open korpusszal fut (nem mockolt data/pcic). Mock-minta: pcicLevelPicker.test.tsx.
+
+jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
+jest.mock('@/lib/speech', () => ({
+  speak: jest.fn(),
+  speakSequence: jest.fn(),
+  stopSpeaking: jest.fn(),
+}));
+
+const mockPush = jest.fn();
+jest.mock('expo-router', () => ({
+  router: { push: (...args: unknown[]) => mockPush(...args) },
+  useFocusEffect: (cb: () => void) => {
+    const { useEffect } = require('react');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    useEffect(cb, []);
+  },
+}));
+
+jest.mock('react-native-safe-area-context', () => ({
+  useSafeAreaInsets: () => ({ top: 0, left: 0, right: 0, bottom: 0 }),
+}));
+
+import { act, fireEvent, render } from '@testing-library/react-native';
+
+import { pcicItemsForLevel, setPcicTarget } from '@/data/pcic';
+import { getDb } from '@/lib/database';
+import { seedA1ExamState, a1SeedCards } from '@/lib/exam/devSeed';
+import { EXAM_PROGRESS_KEY } from '@/lib/exam/result';
+import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
+import PcicScreen from '../index';
+
+jest.setTimeout(30000);
+
+const flush = async (times = 8) => {
+  for (let i = 0; i < times; i++) {
+    await act(async () => {
+      await Promise.resolve();
+    });
+  }
+};
+
+const openSheet = async () => {
+  const screen = render(<PcicScreen />);
+  await flush();
+  fireEvent.press(screen.getByText('A1 ▾'));
+  await flush();
+  return screen;
+};
+
+describe('Tanulófül: A1 vizsga-sor a szint-választó lapon', () => {
+  beforeEach(async () => {
+    mockPush.mockClear();
+    setPcicTarget('es');
+    await getDb().setOnboarding('en', 'es');
+    await getDb().resetPcicCards();
+    await getDb().resetGameProgress(GRAMMAR_PROGRESS_KEY);
+    await getDb().resetGameProgress(EXAM_PROGRESS_KEY);
+    await getDb().setPcicLevel('A1');
+  });
+
+  it('haladás nélkül zárva: 0 / 120 szó, és koppintásra nem indul vizsga', async () => {
+    const screen = await openSheet();
+    expect(screen.getByTestId('exam-row-words').props.children).toBe('0 / 120 words learned, 120 to go');
+    expect(screen.getByText(/Finish one A1 grammar lesson/)).toBeTruthy();
+
+    fireEvent.press(screen.getByTestId('exam-row-A1'));
+    await flush();
+    expect(mockPush).not.toHaveBeenCalled();
+  });
+
+  it('79%-on (119 / 150) még zárva, 80%-on (120) és egy kész leckével nyitva', async () => {
+    const ids = pcicItemsForLevel('A1').map((i) => i.id);
+    for (const c of a1SeedCards(ids, '2026-10-01').slice(0, 119)) await getDb().upsertPcicCard(c);
+    await getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, 'presente-regular', 'done', { correct: 1, total: 1 });
+    let screen = await openSheet();
+    expect(screen.getByTestId('exam-row-words').props.children).toBe('119 / 120 words learned, 1 to go');
+    screen.unmount();
+
+    for (const c of a1SeedCards(ids, '2026-10-01').slice(0, 120)) await getDb().upsertPcicCard(c);
+    screen = await openSheet();
+    expect(screen.queryByTestId('exam-row-words')).toBeNull();
+    expect(screen.getByTestId('exam-row-ready')).toBeTruthy();
+  });
+
+  it('nyitva a koppintás a vizsga képernyőre visz az A1 szinttel, és a lap bezárul', async () => {
+    await seedA1ExamState(getDb(), 'es', '2026-10-01');
+    const screen = await openSheet();
+    expect(screen.getByTestId('exam-row-ready').props.children).toEqual(['Ready', '']);
+
+    fireEvent.press(screen.getByTestId('exam-row-A1'));
+    await flush();
+    expect(mockPush).toHaveBeenCalledWith({ pathname: '/exam', params: { level: 'A1' } });
+    expect(screen.queryByTestId('exam-row-A1')).toBeNull();
+  });
+
+  it('a mentett eredmény (átment, legjobb pontszám) megjelenik a nyitott soron', async () => {
+    await seedA1ExamState(getDb(), 'es', '2026-10-01');
+    await getDb().saveExamResult('A1', 90, true, '2026-10-01');
+    const screen = await openSheet();
+    expect(screen.getByTestId('exam-row-ready').props.children).toEqual(['Ready', ' · Passed · best 90%']);
+  });
+
+  it('ha csak a lecke hiányzik, a koppintás a nyelvtani leckékre visz', async () => {
+    const ids = pcicItemsForLevel('A1').map((i) => i.id);
+    for (const c of a1SeedCards(ids, '2026-10-01')) await getDb().upsertPcicCard(c);
+    const screen = await openSheet();
+    expect(screen.queryByTestId('exam-row-words')).toBeNull();
+
+    fireEvent.press(screen.getByTestId('exam-row-A1'));
+    await flush();
+    expect(mockPush).toHaveBeenCalledWith('/(tabs)/course');
+  });
+});
