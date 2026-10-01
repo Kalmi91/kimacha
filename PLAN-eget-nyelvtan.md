@@ -157,7 +157,10 @@ A „BRIEF új lecke (2026-10-01 …)” érvényes, a munkahely helyett ez a wo
   - minta: `Ojalá ___ mañana.` → llueva
   - minta: `A lo mejor ___ (ella) hoy.` → viene
   - minta: `Quizás ___ (ella), pero lo dudo mucho.` → venga
-- [ ] B2. `relativos` (B1 full) új lecke → kész, ha: ugyanaz
+- [x] B2. `relativos` (B1 full) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `feat(grammar): relativos lesson (nyelvtan)` (00:45; audit 0 P1/0 P2, jest 1579 passed/132 suite, tsc 0, lint 0 error; 12 választós + 1 match + 12 form + 7 why, nincs `tense`/transform (nem igeidős téma); glossary nincs)
+  - minta: `La película ___ vimos ayer fue muy buena.` → que
+  - minta: `El chico ___ conocí ayer es de Puebla.` → que (nem: que lo)
+  - minta: `La mujer con ___ hablé es mi tía.` → quien (nem: quién)
 - [ ] B3. `perifrasis` (B1 full) új lecke → kész, ha: ugyanaz
 - [ ] B4. `pluscuamperfecto` (B1 full) új lecke → kész, ha: ugyanaz
 - [ ] B5. `indefinidos` (A2 full) új lecke → kész, ha: ugyanaz
