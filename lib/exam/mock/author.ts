@@ -73,4 +73,30 @@ export const MOCK_WRITING: Record<string, WritingTask[]> = {
       ],
     },
   ],
+  'es:A2': [
+    {
+      kind: 'short_message',
+      instruction: 'TAREA 1. Escriba un correo de 60 a 70 palabras.',
+      prompt: 'Un amigo le invitó a una fiesta el sábado, pero usted no puede ir. Escríbale un correo: dele las gracias por la invitación, explique por qué no puede ir, diga qué hizo el fin de semana pasado y propóngale otro día para verse.',
+      minWords: 55,
+      points: [
+        { id: 'thanks', label: 'Da las gracias por la invitación', keywords: ['gracias', 'te agradezco'] },
+        { id: 'reason', label: 'Explica por qué no puede ir', keywords: ['no puedo', 'porque', 'tengo que'] },
+        { id: 'past', label: 'Cuenta algo en pasado', keywords: ['fui', 'estuve', 'hice', 'comí', 'trabajé', 'salí', 'pasé'] },
+        { id: 'propose', label: 'Propone otro día', keywords: ['podemos', 'qué te parece', 'nos vemos', 'quedamos', 'próxim'] },
+      ],
+    },
+    {
+      kind: 'short_message',
+      instruction: 'TAREA 2. Escriba un texto de 70 a 80 palabras.',
+      prompt: 'Escriba sobre un viaje o un día especial del año pasado: adónde fue, con quién, qué hizo allí, qué le gustó más y qué no le gustó.',
+      minWords: 65,
+      points: [
+        { id: 'where', label: 'Dice adónde fue', keywords: ['fui a', 'estuve en', 'viajé a', 'visité'] },
+        { id: 'who', label: 'Dice con quién', keywords: ['con mi', 'con mis', 'con un', 'con una', 'solo', 'sola'] },
+        { id: 'what', label: 'Cuenta qué hizo', keywords: ['visitamos', 'comimos', 'vimos', 'fuimos', 'hicimos', 'caminamos'] },
+        { id: 'opinion', label: 'Dice qué le gustó y qué no', keywords: ['me gustó', 'no me gustó', 'lo mejor', 'lo peor'] },
+      ],
+    },
+  ],
 };

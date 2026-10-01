@@ -47,12 +47,12 @@ describe('Stats fül: Practice exam kártya (E1 a)', () => {
     await getDb().resetGameProgress(MOCK_EXAM_PROGRESS_KEY);
   });
 
-  it('es irány (en→es): A1 gomb, a gomb a próbavizsgára visz a szinttel', async () => {
+  it('es irány (en→es): A1 és A2 gomb, a gomb a próbavizsgára visz a szinttel', async () => {
     await getDb().setOnboarding('en', 'es');
     const view = await renderStats();
     expect(view.getByTestId('mock-exam-card')).toBeTruthy();
     expect(view.getByText('Practice exam')).toBeTruthy();
-    expect(view.queryByTestId('mock-exam-start-A2')).toBeNull();
+    expect(view.getByTestId('mock-exam-start-A2')).toBeTruthy();
     fireEvent.press(view.getByTestId('mock-exam-start-A1'));
     expect(mockPush).toHaveBeenCalledWith({ pathname: '/mock-exam', params: { level: 'A1' } });
     view.unmount();
@@ -69,6 +69,14 @@ describe('Stats fül: Practice exam kártya (E1 a)', () => {
     const view = await renderStats();
     expect(view.getByTestId('mock-exam-status-A1').props.children).toBe('Last result A1: passed, 2026-10-01');
     expect(view.queryByTestId('mock-exam-status-A2')).toBeNull();
+    view.unmount();
+  });
+
+  it('a félbehagyott vizsgát jelzi a kártya', async () => {
+    await getDb().setOnboarding('en', 'es');
+    await getDb().setGameProgress(MOCK_EXAM_PROGRESS_KEY, 'es-A2-session', 'open', { seed: 1, sig: 'x', done: ['reading'], answers: {} });
+    const view = await renderStats();
+    expect(view.getByTestId('mock-exam-status-A2').props.children).toBe('A2 exam in progress');
     view.unmount();
   });
 });

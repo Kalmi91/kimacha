@@ -20,7 +20,7 @@ const paper = (e: MockExam, skill: string) => e.papers.find((p) => p.skill === s
 const kinds = (tasks: MockTask[]) => tasks.map((t) => t.kind);
 
 describe('blueprint: irányonkénti, szintenkénti vizsga-alak', () => {
-  it('es A1: a hivatalos percek (45/25/25/10), minden papír 25 pont', () => {
+  it('es A1 / A2: a hivatalos percek (45/25/25/10 és 60/45/40/12), minden papír 25 pont', () => {
     const a1 = getMockBlueprint('es', 'A1').sections;
     expect(a1.map((s) => [s.skill, s.minutes, s.points])).toEqual([
       ['reading', 45, 25],
@@ -28,6 +28,7 @@ describe('blueprint: irányonkénti, szintenkénti vizsga-alak', () => {
       ['listening', 25, 25],
       ['speaking', 10, 25],
     ]);
+    expect(getMockBlueprint('es', 'A2').sections.map((s) => s.minutes)).toEqual([60, 45, 40, 12]);
   });
 
   it('két csoport, mindkettőben 30 / 50', () => {
@@ -39,7 +40,7 @@ describe('blueprint: irányonkénti, szintenkénti vizsga-alak', () => {
   });
 
   it('es→en: még nincs próbavizsga (az A1-nek nincs ellenőrzött hivatalos alakja)', () => {
-    expect(MOCK_LEVELS.es).toEqual(['A1']);
+    expect(MOCK_LEVELS.es).toEqual(['A1', 'A2']);
     expect(MOCK_LEVELS.en).toEqual([]);
     expect(mockAvailable('en', 'A1')).toBe(false);
     expect(mockAvailable('en', 'A2')).toBe(false);
@@ -146,6 +147,17 @@ describe('buildMockExam: es A1 (angolul beszélő tanul spanyolt)', () => {
   it('egy mondat egy feladatsoron belül csak egy helyen a gazda (nincs ismétlődő hallás/olvasás mondat)', () => {
     const heard = paper(e, 'listening').tasks.flatMap((t) => ('audio' in t && t.audio ? t.audio : []));
     expect(new Set(heard).size).toBe(heard.length);
+  });
+});
+
+describe('buildMockExam: es A2', () => {
+  const { exam: e } = exam('es', 'A2');
+
+  it('a hivatalos A2 percek és nagyobb tételszám', () => {
+    expect(e.papers.map((p) => p.minutes)).toEqual([60, 45, 40, 12]);
+    expect(paper(e, 'reading').tasks.map(mockTaskItemCount)).toEqual([4, 6, 5, 6]);
+    expect(paper(e, 'listening').tasks.map(mockTaskItemCount)).toEqual([6, 5, 4]);
+    expect(kinds(paper(e, 'writing').tasks)).toEqual(['short_message', 'short_message']);
   });
 });
 
