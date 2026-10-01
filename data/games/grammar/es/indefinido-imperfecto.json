@@ -811,7 +811,7 @@
     },
     {
       "id": "ii2-02",
-      "sentence": "Cuando era estudiante ___ (yo) en una cafetería.",
+      "sentence": "Cuando era estudiante, ___ en una cafetería y vivía con mi tía.",
       "options": [
         "trabajaba",
         "trabajé",
@@ -826,10 +826,10 @@
       },
       "wrong": {
         "trabajé": {
-          "hu": "A \"trabajé\" is helyes mondatot adna, de mást jelentene: azt, hogy egy megadott, lezárt ideig dolgoztál ott (pl. két évig), nem azt, hogy ez volt életed akkori háttere; így lenne helyes: Trabajé allí dos años.",
-          "en": "\"Trabajé\" would also make a correct sentence, but a different one: that you worked there for a stated, closed stretch (e.g. two years), not that this was the background of your life then; it would be correct like this: Trabajé allí dos años.",
-          "es": "\"Trabajé\" también formaría una frase correcta, pero distinta: que trabajaste allí durante un periodo cerrado y dicho (p. ej. dos años), no que era el fondo de tu vida entonces; sería correcto así: Trabajé allí dos años.",
-          "de": "\"Trabajé\" würde ebenfalls einen korrekten Satz ergeben, aber einen anderen: dass du dort eine angegebene, abgeschlossene Zeit arbeitetest (z. B. zwei Jahre), nicht dass dies der Hintergrund deines damaligen Lebens war; richtig wäre: Trabajé allí dos años."
+          "hu": "A \"trabajé\" lezárt, egyszeri tényt jelentene (pl. hogy két évig dolgoztam ott), de a mondat másik fele (vivía) a háttér állapotát írja le; a kettő így nem illik össze, a háttérben az imperfecto marad: trabajaba.",
+          "en": "\"Trabajé\" would state a closed, one-off fact (e.g. that I worked there for two years), but the other half of the sentence (vivía) describes a background state; the two do not fit together, the background stays in the imperfect: trabajaba.",
+          "es": "\"Trabajé\" enunciaría un hecho cerrado y único (p. ej. que trabajé allí dos años), pero la otra mitad de la frase (vivía) describe un estado de fondo; las dos no encajan, el fondo se queda en imperfecto: trabajaba.",
+          "de": "\"Trabajé\" würde eine abgeschlossene, einmalige Tatsache nennen (z. B. dass ich dort zwei Jahre arbeitete), aber die andere Satzhälfte (vivía) beschreibt einen Hintergrundzustand; beides passt nicht zusammen, der Hintergrund bleibt im Imperfekt: trabajaba."
         },
         "trabajo": {
           "hu": "A \"trabajo\" jelen idő; ha ide kerülne, azt jelentené, hogy most dolgozom egy kávézóban, nem azt, hogy egyetemista koromban, a múltban.",
@@ -887,7 +887,7 @@
     },
     {
       "id": "ii2-04",
-      "sentence": "Mientras cenábamos, ___ el teléfono.",
+      "sentence": "Mientras cenábamos, de repente ___ el teléfono.",
       "options": [
         "sonó",
         "sonaba",
@@ -1001,7 +1001,7 @@
     },
     {
       "id": "ii2-07",
-      "sentence": "Todos los veranos ___ a la playa, pero el año pasado no.",
+      "sentence": "Antes ___ a la playa, pero el año pasado no.",
       "options": [
         "íbamos",
         "fuimos",
@@ -1009,10 +1009,10 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A todos los veranos szokás (imperfecto), a mondat második fele egyszeri esemény (indefinido). A kettő szembeállítása maga a lecke.",
-        "en": "Todos los veranos is a habit (imperfect); the second half is one event (preterite). The contrast is the whole lesson.",
-        "es": "Todos los veranos es costumbre (imperfecto); la segunda parte es un hecho (perfecto simple).",
-        "de": "Todos los veranos ist Gewohnheit (Imperfekt), die zweite Hälfte ein Ereignis (Indefinido)."
+        "hu": "Az antes múltbeli szokás (imperfecto), a mondat második fele egyszeri esemény (indefinido). A kettő szembeállítása maga a lecke.",
+        "en": "Antes marks a habit in the past (imperfect); the second half is one event (preterite). The contrast is the whole lesson.",
+        "es": "Antes marca una costumbre pasada (imperfecto); la segunda parte es un hecho (perfecto simple).",
+        "de": "Antes zeigt eine vergangene Gewohnheit (Imperfekt), die zweite Hälfte ein Ereignis (Indefinido)."
       },
       "wrong": {
         "fuimos": {
@@ -1022,10 +1022,10 @@
           "de": "\"Fuimos\" würde ebenfalls einen Satz ergeben, aber den Sinn zerstören: dasselbe Indefinido zweimal würde bedeuten, wir gingen einmal an den Strand, und letztes Jahr auch nicht, was keinen echten Kontrast ergibt; die Gewohnheit steht im Imperfekt: íbamos."
         },
         "vamos": {
-          "hu": "A \"vamos\" jelen idő; ha ide kerülne, azt jelentené, hogy minden nyáron a strandra megyünk, most is, nem azt, hogy ez egy múltbeli szokás volt, ami tavaly megszakadt.",
-          "en": "\"Vamos\" is present tense; if used here it would mean we go to the beach every summer, even now, not that this was a past habit that broke last year.",
-          "es": "\"Vamos\" es presente; si se usara aquí significaría que vamos a la playa cada verano, incluso ahora, no que era una costumbre pasada que se rompió el año pasado.",
-          "de": "\"Vamos\" ist Präsens; würde man es hier verwenden, hieße es, dass wir jeden Sommer an den Strand gehen, auch jetzt, nicht dass dies eine vergangene Gewohnheit war, die letztes Jahr brach."
+          "hu": "A \"vamos\" jelen idő; ha ide kerülne, azt jelentené, hogy most is a strandra megyünk, nem azt, hogy ez egy múltbeli szokás volt, ami tavaly megszakadt.",
+          "en": "\"Vamos\" is present tense; if used here it would mean we go to the beach, even now, not that this was a past habit that broke last year.",
+          "es": "\"Vamos\" es presente; si se usara aquí significaría que vamos a la playa, incluso ahora, no que era una costumbre pasada que se rompió el año pasado.",
+          "de": "\"Vamos\" ist Präsens; würde man es hier verwenden, hieße es, dass wir an den Strand gehen, auch jetzt, nicht dass dies eine vergangene Gewohnheit war, die letztes Jahr brach."
         }
       },
       "examples": [
@@ -1115,7 +1115,7 @@
     },
     {
       "id": "ii2-10",
-      "sentence": "___ (yo) llamarte, pero no tenía tu número.",
+      "sentence": "Todos los días ___ (yo) llamarte, pero no tenía tu número.",
       "options": [
         "Quería",
         "Quise",
@@ -1130,10 +1130,10 @@
       },
       "wrong": {
         "Quise": {
-          "hu": "A \"Quise\" is helyes mondatot adna, de mást jelentene: azt, hogy meg is próbáltam felhívni, konkrétan, egyszer, nem azt, hogy csak a szándék, a háttér volt meg bennem, ami aztán nem valósult meg.",
-          "en": "\"Quise\" would also make a sentence, but a different one: that I actually tried to call, once, concretely, not that I merely had the intention, the background, which then did not happen.",
-          "es": "\"Quise\" también formaría una frase, pero distinta: que lo intenté llamar, una vez, en concreto, no que solo tenía la intención, el fondo, que luego no se cumplió.",
-          "de": "\"Quise\" würde ebenfalls einen Satz ergeben, aber einen anderen: dass ich tatsächlich versuchte anzurufen, einmal, konkret, nicht dass ich nur die Absicht, den Hintergrund, hatte, der dann nicht eintrat."
+          "hu": "A \"Quise\" nem illik a \"todos los días\" ismétlődéséhez: az indefinido egyetlen, lezárt próbálkozást jelentene, nem napról napra visszatérő szándékot; a szándék háttere imperfecto: quería.",
+          "en": "\"Quise\" does not fit the repetition of \"todos los días\": the preterite would mean one single, closed attempt, not an intention that returned day after day; the background intention is the imperfect: quería.",
+          "es": "\"Quise\" no encaja con la repetición de \"todos los días\": el perfecto simple significaría un solo intento cerrado, no una intención que volvía día tras día; la intención de fondo va en imperfecto: quería.",
+          "de": "\"Quise\" passt nicht zur Wiederholung von \"todos los días\": das Indefinido würde einen einzigen, abgeschlossenen Versuch bedeuten, keine Absicht, die Tag für Tag wiederkehrte; die Hintergrundabsicht steht im Imperfekt: quería."
         },
         "Quiero": {
           "hu": "A \"Quiero\" jelen idő; ha ide kerülne, azt jelentené, hogy most akarlak felhívni, nem azt, hogy akkor, a múltban akartalak.",
@@ -1153,7 +1153,7 @@
     },
     {
       "id": "ii2-11",
-      "sentence": "La película ___ tres horas y terminó muy tarde.",
+      "sentence": "Ayer la película ___ tres horas y terminó muy tarde.",
       "options": [
         "duró",
         "duraba",
@@ -1168,10 +1168,10 @@
       },
       "wrong": {
         "duraba": {
-          "hu": "A \"duraba\" azt jelentené, hogy a filmek általában, rendszeresen három órásak szoktak lenni, nem azt, hogy ez a konkrét film tartott három óráig egyszer.",
-          "en": "\"Duraba\" would mean movies generally, habitually used to last three hours, not that this particular movie lasted three hours on this occasion.",
-          "es": "\"Duraba\" significaría que las películas generalmente solían durar tres horas, no que esta película en concreto duró tres horas esta vez.",
-          "de": "\"Duraba\" würde bedeuten, dass Filme im Allgemeinen gewohnheitsmäßig drei Stunden dauerten, nicht dass dieser Film bei dieser Gelegenheit drei Stunden dauerte."
+          "hu": "A \"duraba\" a film hosszát háttérként írná le, nem azt, hogy a tegnapi vetítés tartott három órát, és véget ért; az \"ayer\" és a \"terminó\" lezárt eseményt kér: duró.",
+          "en": "\"Duraba\" would describe the film's length as a background, not say that yesterday's showing lasted three hours and ended; \"ayer\" and \"terminó\" call for a closed event: duró.",
+          "es": "\"Duraba\" describiría la duración de la película como fondo, no que la proyección de ayer duró tres horas y terminó; \"ayer\" y \"terminó\" piden un hecho cerrado: duró.",
+          "de": "\"Duraba\" würde die Länge des Films als Hintergrund beschreiben, nicht dass die gestrige Vorführung drei Stunden dauerte und endete; \"ayer\" und \"terminó\" verlangen ein abgeschlossenes Ereignis: duró."
         },
         "dura": {
           "hu": "A \"dura\" jelen idő; ha ide kerülne, azt jelentené, hogy a film most tart három óráig, nem azt, hogy egy múltbeli vetítés tartott addig.",
@@ -1191,7 +1191,7 @@
     },
     {
       "id": "ii2-12",
-      "sentence": "Mi madre ___ la comida mientras mi padre ponía la mesa.",
+      "sentence": "Mientras mi madre ___ la comida, mi padre ponía la mesa.",
       "options": [
         "preparaba",
         "preparó",
@@ -1199,17 +1199,17 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Két párhuzamosan futó folyamat: a mientras mindkét oldalára imperfecto jár.",
-        "en": "Two actions running in parallel: mientras takes the imperfect on both sides.",
-        "es": "Dos acciones simultáneas: con mientras, imperfecto en los dos lados.",
-        "de": "Zwei parallele Handlungen: mit mientras steht beidseitig das Imperfekt."
+        "hu": "Két párhuzamosan futó folyamat: a mientras után a folyamatban lévő, párhuzamos cselekvés imperfecto.",
+        "en": "Two actions running in parallel: after mientras, the ongoing parallel action takes the imperfect.",
+        "es": "Dos acciones simultáneas: tras mientras, la acción en curso va en imperfecto.",
+        "de": "Zwei parallele Handlungen: nach mientras steht die laufende, parallele Handlung im Imperfekt."
       },
       "wrong": {
         "preparó": {
-          "hu": "A \"preparó\" azt jelentené, hogy anyám befejezte az étel elkészítését, mint egy lezárt eseményt, nem azt, hogy a cselekvés párhuzamosan zajlott apám asztalterítésével; a mientras mindkét oldalára imperfecto jár.",
-          "en": "\"Preparó\" would mean my mother finished making the food, as a closed event, not that the action was running in parallel with my father setting the table; mientras takes the imperfect on both sides.",
-          "es": "\"Preparó\" significaría que mi madre terminó de preparar la comida, como hecho cerrado, no que la acción iba en paralelo con que mi padre ponía la mesa; con mientras, imperfecto en los dos lados.",
-          "de": "\"Preparó\" würde bedeuten, dass meine Mutter das Essen fertig zubereitete, als abgeschlossenes Ereignis, nicht dass die Handlung parallel zum Tischdecken meines Vaters verlief; mit mientras steht beidseitig das Imperfekt."
+          "hu": "A \"preparó\" azt jelentené, hogy anyám befejezte az étel elkészítését, mint egy lezárt eseményt, nem azt, hogy a cselekvés párhuzamosan zajlott apám asztalterítésével; a mientras után a folyamatban lévő, párhuzamos cselekvés imperfectót kap.",
+          "en": "\"Preparó\" would mean my mother finished making the food, as a closed event, not that the action was running in parallel with my father setting the table; after mientras, the ongoing parallel action takes the imperfect.",
+          "es": "\"Preparó\" significaría que mi madre terminó de preparar la comida, como hecho cerrado, no que la acción iba en paralelo con que mi padre ponía la mesa; tras mientras, la acción en curso va en imperfecto.",
+          "de": "\"Preparó\" würde bedeuten, dass meine Mutter das Essen fertig zubereitete, als abgeschlossenes Ereignis, nicht dass die Handlung parallel zum Tischdecken meines Vaters verlief; nach mientras steht die laufende, parallele Handlung im Imperfekt."
         },
         "prepara": {
           "hu": "A \"prepara\" jelen idő; ha ide kerülne, azt jelentené, hogy anyám most készíti az ételt, nem azt, hogy egy múltbeli pillanatban, apám asztalterítésével párhuzamosan tette.",
