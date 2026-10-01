@@ -548,7 +548,7 @@
             "hu": "Az estará en casa találgatás, valószínűség a jelenről (biztos otthon van); az está en casa egy biztos, ellenőrzött tény.",
             "en": "Estará en casa is a guess, probability about the present (she must be home); está en casa is a certain, checked fact.",
             "es": "Estará en casa es una suposición, probabilidad sobre el presente (seguro está en casa); está en casa es un hecho seguro, comprobado.",
-            "de": "Estará en casa ist eine Vermutung, Wahrscheinlichkeit über die Gegenwart (sie ist sicher zu Hause); está en casa ist eine sichere, geprüfte Tatsache."
+            "de": "Estará en casa ist eine Vermutung, Wahrscheinlichkeit über die Gegenwart (sie ist wohl zu Hause); está en casa ist eine sichere, geprüfte Tatsache."
           },
           "examples": [
             {
@@ -663,12 +663,12 @@
       }
     },
     {
-      "word": "apruebas",
+      "word": "aprobará",
       "gloss": {
-        "hu": "átmész (vizsgán)",
-        "en": "you pass",
-        "es": "apruebas",
-        "de": "du bestehst"
+        "hu": "átmegy (vizsgán)",
+        "en": "will pass (an exam)",
+        "es": "aprobará (un examen)",
+        "de": "wird bestehen (Prüfung)"
       }
     },
     {
@@ -717,12 +717,12 @@
       }
     },
     {
-      "word": "resuelven",
+      "word": "resolverá",
       "gloss": {
-        "hu": "megoldják",
-        "en": "they solve",
-        "es": "resuelven",
-        "de": "sie lösen"
+        "hu": "meg fogja oldani",
+        "en": "will solve",
+        "es": "resolverá",
+        "de": "wird lösen"
       }
     }
   ],
@@ -771,7 +771,7 @@
       "options": [
         "viajaremos",
         "viajarémos",
-        "viajamos"
+        "viajarán"
       ],
       "correct": 0,
       "why": {
@@ -787,11 +787,11 @@
           "es": "Esto diría: «esta forma no existe, la de nosotros nunca lleva tilde», lo cual no encaja aquí; correctamente: El año que viene viajaremos a España.",
           "de": "Das würde bedeuten: „diese Form gibt es nicht, die nosotros-Form trägt nie einen Akzent“, was hier nicht passt; richtig: El año que viene viajaremos a España."
         },
-        "viajamos": {
-          "hu": "Ezzel a mondat azt jelentené: „utazunk Spanyolországba (jelen vagy múlt idő, nem jövő)”, ami nem illik ide; helyesen: El año que viene viajaremos a España.",
-          "en": "This would say: “we travel to Spain (present or past, not the future)”, which does not fit here; correctly: El año que viene viajaremos a España.",
-          "es": "Esto diría: «viajamos a España (presente o pasado, no futuro)», lo cual no encaja aquí; correctamente: El año que viene viajaremos a España.",
-          "de": "Das würde bedeuten: „wir reisen nach Spanien (Präsens oder Vergangenheit, keine Zukunft)“, was hier nicht passt; richtig: El año que viene viajaremos a España."
+        "viajarán": {
+          "hu": "Ezzel a mondat azt jelentené: \"ők utaznak majd Spanyolországba (3. személy), a (nosotros) viszont mi-t kér\", ami nem illik ide; helyesen: El año que viene viajaremos a España.",
+          "en": "This would say: \"they will travel to Spain (third person), but (nosotros) means we\", which does not fit here; correctly: El año que viene viajaremos a España.",
+          "es": "Esto diría: \"ellos viajarán a España (tercera persona), pero (nosotros) indica que somos nosotros\", lo cual no encaja aquí; correctamente: El año que viene viajaremos a España.",
+          "de": "Das würde bedeuten: \"sie werden nach Spanien reisen (dritte Person), aber (nosotros) bedeutet wir\", was hier nicht passt; richtig: El año que viene viajaremos a España."
         }
       },
       "examples": [
@@ -805,7 +805,7 @@
     },
     {
       "id": "fu-03",
-      "sentence": "¿___ (tú) tiempo el sábado?",
+      "sentence": "¿___ (tú) tiempo el próximo sábado?",
       "options": [
         "Tendrás",
         "Tenerás",
@@ -820,16 +820,16 @@
       },
       "wrong": {
         "Tenerás": {
-          "hu": "Ezzel a mondat azt jelentené: „ilyen alak nem létezik, a tener nem tartja meg a teljes főnévi igenevet a jövőben”, ami nem illik ide; helyesen: ¿Tendrás tiempo el sábado?",
-          "en": "This would say: “no such form exists, tener does not keep the full infinitive in the future”, which does not fit here; correctly: ¿Tendrás tiempo el sábado?",
-          "es": "Esto diría: «esta forma no existe, tener no conserva el infinitivo entero en futuro», lo cual no encaja aquí; correctamente: ¿Tendrás tiempo el sábado?",
-          "de": "Das würde bedeuten: „diese Form gibt es nicht, tener behält den vollen Infinitiv im Futur nicht“, was hier nicht passt; richtig: ¿Tendrás tiempo el sábado?"
+          "hu": "Ezzel a mondat azt jelentené: „ilyen alak nem létezik, a tener nem tartja meg a teljes főnévi igenevet a jövőben”, ami nem illik ide; helyesen: ¿Tendrás tiempo el próximo sábado?",
+          "en": "This would say: “no such form exists, tener does not keep the full infinitive in the future”, which does not fit here; correctly: ¿Tendrás tiempo el próximo sábado?",
+          "es": "Esto diría: «esta forma no existe, tener no conserva el infinitivo entero en futuro», lo cual no encaja aquí; correctamente: ¿Tendrás tiempo el próximo sábado?",
+          "de": "Das würde bedeuten: „diese Form gibt es nicht, tener behält den vollen Infinitiv im Futur nicht“, was hier nicht passt; richtig: ¿Tendrás tiempo el próximo sábado?"
         },
         "Tenías": {
-          "hu": "Ezzel a mondat azt jelentené: „volt időd (múlt idő), nem a szombati jövőről kérdez”, ami nem illik ide; helyesen: ¿Tendrás tiempo el sábado?",
-          "en": "This would say: “you used to have time (the past), not asking about Saturday's future”, which does not fit here; correctly: ¿Tendrás tiempo el sábado?",
-          "es": "Esto diría: «tenías tiempo (pasado), no pregunta sobre el sábado que viene», lo cual no encaja aquí; correctamente: ¿Tendrás tiempo el sábado?",
-          "de": "Das würde bedeuten: „du hattest Zeit (Vergangenheit), fragt nicht nach dem kommenden Samstag“, was hier nicht passt; richtig: ¿Tendrás tiempo el sábado?"
+          "hu": "Ezzel a mondat azt jelentené: „volt időd (múlt idő), nem a következő szombatról kérdez”, ami nem illik ide; helyesen: ¿Tendrás tiempo el próximo sábado?",
+          "en": "This would say: “you used to have time (the past), not asking about Saturday's future”, which does not fit here; correctly: ¿Tendrás tiempo el próximo sábado?",
+          "es": "Esto diría: «tenías tiempo (pasado), no pregunta sobre el sábado que viene», lo cual no encaja aquí; correctamente: ¿Tendrás tiempo el próximo sábado?",
+          "de": "Das würde bedeuten: „du hattest Zeit (Vergangenheit), fragt nicht nach dem kommenden Samstag“, was hier nicht passt; richtig: ¿Tendrás tiempo el próximo sábado?"
         }
       },
       "examples": [
@@ -885,7 +885,7 @@
       "options": [
         "habrá",
         "habrán",
-        "hay"
+        "había"
       ],
       "correct": 0,
       "why": {
@@ -901,11 +901,11 @@
           "es": "Esto diría: «la forma hay/habrá nunca se pone en plural, ni cuando la frase habla de una fiesta», lo cual no encaja aquí; correctamente: Mañana habrá una fiesta en casa de Ana.",
           "de": "Das würde bedeuten: „die Form hay/habrá wird nie in den Plural gesetzt, auch nicht bei einer Party“, was hier nicht passt; richtig: Mañana habrá una fiesta en casa de Ana."
         },
-        "hay": {
-          "hu": "Ezzel a mondat azt jelentené: „most van egy buli (jelen idő), a mañana viszont jövőt kér”, ami nem illik ide; helyesen: Mañana habrá una fiesta en casa de Ana.",
-          "en": "This would say: “there is a party now (the present), but mañana calls for the future”, which does not fit here; correctly: Mañana habrá una fiesta en casa de Ana.",
-          "es": "Esto diría: «hay una fiesta ahora (presente), pero mañana pide futuro», lo cual no encaja aquí; correctamente: Mañana habrá una fiesta en casa de Ana.",
-          "de": "Das würde bedeuten: „es gibt jetzt eine Party (Präsens), aber mañana verlangt die Zukunft“, was hier nicht passt; richtig: Mañana habrá una fiesta en casa de Ana."
+        "había": {
+          "hu": "Ezzel a mondat azt jelentené: \"volt egy buli (múlt idő), a mañana viszont jövőt kér\", ami nem illik ide; helyesen: Mañana habrá una fiesta en casa de Ana.",
+          "en": "This would say: \"there was a party (past tense), but mañana calls for the future\", which does not fit here; correctly: Mañana habrá una fiesta en casa de Ana.",
+          "es": "Esto diría: \"había una fiesta (pasado), pero mañana pide futuro\", lo cual no encaja aquí; correctamente: Mañana habrá una fiesta en casa de Ana.",
+          "de": "Das würde bedeuten: \"es gab eine Party (Vergangenheit), aber mañana verlangt die Zukunft\", was hier nicht passt; richtig: Mañana habrá una fiesta en casa de Ana."
         }
       },
       "examples": [
@@ -919,7 +919,7 @@
     },
     {
       "id": "fu-06",
-      "sentence": "¿Dónde está Luis? ___ en el trabajo, como siempre.",
+      "sentence": "¿Dónde está Luis? No sé, ___ en el trabajo, como siempre.",
       "options": [
         "Estará",
         "Estuvo",
@@ -957,7 +957,7 @@
     },
     {
       "id": "fu-07",
-      "sentence": "El tren ___ a las diez en punto.",
+      "sentence": "Mañana el tren ___ a las diez en punto.",
       "options": [
         "saldrá",
         "salirá",
@@ -972,16 +972,16 @@
       },
       "wrong": {
         "salirá": {
-          "hu": "Ezzel a mondat azt jelentené: „ilyen alak nem létezik, a salir lerövidíti a tövét: saldr-”, ami nem illik ide; helyesen: El tren saldrá a las diez en punto.",
-          "en": "This would say: “no such form exists, salir shortens its stem to saldr-”, which does not fit here; correctly: El tren saldrá a las diez en punto.",
-          "es": "Esto diría: «esta forma no existe, salir acorta la raíz a saldr-», lo cual no encaja aquí; correctamente: El tren saldrá a las diez en punto.",
-          "de": "Das würde bedeuten: „diese Form gibt es nicht, salir kürzt den Stamm zu saldr-“, was hier nicht passt; richtig: El tren saldrá a las diez en punto."
+          "hu": "Ezzel a mondat azt jelentené: „ilyen alak nem létezik, a salir lerövidíti a tövét: saldr-”, ami nem illik ide; helyesen: Mañana el tren saldrá a las diez en punto.",
+          "en": "This would say: “no such form exists, salir shortens its stem to saldr-”, which does not fit here; correctly: Mañana el tren saldrá a las diez en punto.",
+          "es": "Esto diría: «esta forma no existe, salir acorta la raíz a saldr-», lo cual no encaja aquí; correctamente: Mañana el tren saldrá a las diez en punto.",
+          "de": "Das würde bedeuten: „diese Form gibt es nicht, salir kürzt den Stamm zu saldr-“, was hier nicht passt; richtig: Mañana el tren saldrá a las diez en punto."
         },
         "salía": {
-          "hu": "Ezzel a mondat azt jelentené: „a vonat szokott indulni (múltbeli szokás), nem egy konkrét jövőbeli indulásról szól”, ami nem illik ide; helyesen: El tren saldrá a las diez en punto.",
-          "en": "This would say: “the train used to leave (a past habit), not a specific future departure”, which does not fit here; correctly: El tren saldrá a las diez en punto.",
-          "es": "Esto diría: «el tren salía (costumbre pasada), no una salida futura concreta», lo cual no encaja aquí; correctamente: El tren saldrá a las diez en punto.",
-          "de": "Das würde bedeuten: „der Zug fuhr früher ab (vergangene Gewohnheit), keine konkrete zukünftige Abfahrt“, was hier nicht passt; richtig: El tren saldrá a las diez en punto."
+          "hu": "Ezzel a mondat azt jelentené: „a vonat szokott indulni (múltbeli szokás), nem egy konkrét jövőbeli indulásról szól”, ami nem illik ide; helyesen: Mañana el tren saldrá a las diez en punto.",
+          "en": "This would say: “the train used to leave (a past habit), not a specific future departure”, which does not fit here; correctly: Mañana el tren saldrá a las diez en punto.",
+          "es": "Esto diría: «el tren salía (costumbre pasada), no una salida futura concreta», lo cual no encaja aquí; correctamente: Mañana el tren saldrá a las diez en punto.",
+          "de": "Das würde bedeuten: „der Zug fuhr früher ab (vergangene Gewohnheit), keine konkrete zukünftige Abfahrt“, was hier nicht passt; richtig: Mañana el tren saldrá a las diez en punto."
         }
       },
       "examples": [
@@ -999,7 +999,7 @@
       "options": [
         "aprobarás",
         "aprobaste",
-        "apruebas"
+        "aprobará"
       ],
       "correct": 0,
       "why": {
@@ -1015,11 +1015,11 @@
           "es": "Esto diría: «aprobaste el examen (pasado), que no encaja con la condición», lo cual no encaja aquí; correctamente: Si estudias, aprobarás el examen.",
           "de": "Das würde bedeuten: „du hast die Prüfung bestanden (Vergangenheit), passt nicht zur Bedingung“, was hier nicht passt; richtig: Si estudias, aprobarás el examen."
         },
-        "apruebas": {
-          "hu": "Ezzel a mondat azt jelentené: „átmész a vizsgán (jelen idejű, általános kijelentés), nem a feltételhez kötött ígéret”, ami nem illik ide; helyesen: Si estudias, aprobarás el examen.",
-          "en": "This would say: “you pass the exam (a present, general statement), not the promise tied to the condition”, which does not fit here; correctly: Si estudias, aprobarás el examen.",
-          "es": "Esto diría: «apruebas el examen (afirmación general en presente), no la promesa ligada a la condición», lo cual no encaja aquí; correctamente: Si estudias, aprobarás el examen.",
-          "de": "Das würde bedeuten: „du bestehst die Prüfung (allgemeine Aussage im Präsens), nicht das an die Bedingung geknüpfte Versprechen“, was hier nicht passt; richtig: Si estudias, aprobarás el examen."
+        "aprobará": {
+          "hu": "Ezzel a mondat azt jelentené: \"ő átmegy a vizsgán (3. személy), a (tú) viszont téged jelöl\", ami nem illik ide; helyesen: Si estudias, aprobarás el examen.",
+          "en": "This would say: \"he or she will pass the exam (third person), but (tú) means you\", which does not fit here; correctly: Si estudias, aprobarás el examen.",
+          "es": "Esto diría: \"él o ella aprobará el examen (tercera persona), pero (tú) indica que eres tú\", lo cual no encaja aquí; correctamente: Si estudias, aprobarás el examen.",
+          "de": "Das würde bedeuten: \"er oder sie wird die Prüfung bestehen (dritte Person), aber (tú) bedeutet du\", was hier nicht passt; richtig: Si estudias, aprobarás el examen."
         }
       },
       "examples": [
@@ -1033,11 +1033,11 @@
     },
     {
       "id": "fu-09",
-      "sentence": "Ellos ___ el problema sin ayuda.",
+      "sentence": "Mañana ellos ___ el problema sin ayuda.",
       "options": [
         "resolverán",
         "resolvieron",
-        "resuelven"
+        "resolverá"
       ],
       "correct": 0,
       "why": {
@@ -1048,21 +1048,21 @@
       },
       "wrong": {
         "resolvieron": {
-          "hu": "Ezzel a mondat azt jelentené: „megoldották a problémát (múlt idő), nem egy jövőbeli tervről van szó”, ami nem illik ide; helyesen: Ellos resolverán el problema sin ayuda.",
-          "en": "This would say: “they solved the problem (the past), not about a future plan”, which does not fit here; correctly: Ellos resolverán el problema sin ayuda.",
-          "es": "Esto diría: «resolvieron el problema (pasado), no se trata de un plan futuro», lo cual no encaja aquí; correctamente: Ellos resolverán el problema sin ayuda.",
-          "de": "Das würde bedeuten: „sie haben das Problem gelöst (Vergangenheit), es geht nicht um einen zukünftigen Plan“, was hier nicht passt; richtig: Ellos resolverán el problema sin ayuda."
+          "hu": "Ezzel a mondat azt jelentené: „megoldották a problémát (múlt idő), nem egy jövőbeli tervről van szó”, ami nem illik ide; helyesen: Mañana ellos resolverán el problema sin ayuda.",
+          "en": "This would say: “they solved the problem (the past), not about a future plan”, which does not fit here; correctly: Mañana ellos resolverán el problema sin ayuda.",
+          "es": "Esto diría: «resolvieron el problema (pasado), no se trata de un plan futuro», lo cual no encaja aquí; correctamente: Mañana ellos resolverán el problema sin ayuda.",
+          "de": "Das würde bedeuten: „sie haben das Problem gelöst (Vergangenheit), es geht nicht um einen zukünftigen Plan“, was hier nicht passt; richtig: Mañana ellos resolverán el problema sin ayuda."
         },
-        "resuelven": {
-          "hu": "Ezzel a mondat azt jelentené: „megoldják a problémát (jelen idő), nem egy jövőbeli jóslatról van szó”, ami nem illik ide; helyesen: Ellos resolverán el problema sin ayuda.",
-          "en": "This would say: “they solve the problem (the present), not about a future prediction”, which does not fit here; correctly: Ellos resolverán el problema sin ayuda.",
-          "es": "Esto diría: «resuelven el problema (presente), no se trata de una predicción futura», lo cual no encaja aquí; correctamente: Ellos resolverán el problema sin ayuda.",
-          "de": "Das würde bedeuten: „sie lösen das Problem (Präsens), es geht nicht um eine zukünftige Vorhersage“, was hier nicht passt; richtig: Ellos resolverán el problema sin ayuda."
+        "resolverá": {
+          "hu": "Ezzel a mondat azt jelentené: \"ő oldja meg a problémát (egyes szám), az ellos viszont többes számot kér\", ami nem illik ide; helyesen: Mañana ellos resolverán el problema sin ayuda.",
+          "en": "This would say: \"he or she will solve the problem (singular), but ellos calls for the plural\", which does not fit here; correctly: Mañana ellos resolverán el problema sin ayuda.",
+          "es": "Esto diría: \"él o ella resolverá el problema (singular), pero ellos pide el plural\", lo cual no encaja aquí; correctamente: Mañana ellos resolverán el problema sin ayuda.",
+          "de": "Das würde bedeuten: \"er oder sie wird das Problem lösen (Singular), aber ellos verlangt den Plural\", was hier nicht passt; richtig: Mañana ellos resolverán el problema sin ayuda."
         }
       },
       "examples": [
         "Los niños crecerán rápido.",
-        "Mis amigos vendrán en coche."
+        "Mis amigos vendrán en carro."
       ],
       "tense": {
         "from": "presente",
@@ -1071,7 +1071,7 @@
     },
     {
       "id": "fu-10",
-      "sentence": "No te preocupes, todo ___ bien.",
+      "sentence": "No te preocupes, mañana todo ___ bien.",
       "options": [
         "saldrá",
         "salió",
@@ -1086,16 +1086,16 @@
       },
       "wrong": {
         "salió": {
-          "hu": "Ezzel a mondat azt jelentené: „minden jól alakult (múltbeli tény), nem egy megnyugtató jóslat a jövőről”, ami nem illik ide; helyesen: No te preocupes, todo saldrá bien.",
-          "en": "This would say: “everything turned out fine (a past fact), not a reassuring prediction about the future”, which does not fit here; correctly: No te preocupes, todo saldrá bien.",
-          "es": "Esto diría: «todo salió bien (hecho pasado), no una predicción tranquilizadora sobre el futuro», lo cual no encaja aquí; correctamente: No te preocupes, todo saldrá bien.",
-          "de": "Das würde bedeuten: „alles ist gut ausgegangen (vergangene Tatsache), keine beruhigende Vorhersage über die Zukunft“, was hier nicht passt; richtig: No te preocupes, todo saldrá bien."
+          "hu": "Ezzel a mondat azt jelentené: „minden jól alakult (múltbeli tény), nem egy megnyugtató jóslat a jövőről”, ami nem illik ide; helyesen: No te preocupes, mañana todo saldrá bien.",
+          "en": "This would say: “everything turned out fine (a past fact), not a reassuring prediction about the future”, which does not fit here; correctly: No te preocupes, mañana todo saldrá bien.",
+          "es": "Esto diría: «todo salió bien (hecho pasado), no una predicción tranquilizadora sobre el futuro», lo cual no encaja aquí; correctamente: No te preocupes, mañana todo saldrá bien.",
+          "de": "Das würde bedeuten: „alles ist gut ausgegangen (vergangene Tatsache), keine beruhigende Vorhersage über die Zukunft“, was hier nicht passt; richtig: No te preocupes, mañana todo saldrá bien."
         },
         "salía": {
-          "hu": "Ezzel a mondat azt jelentené: „minden jól szokott alakulni (múltbeli háttér), nem egy mostani biztatás a jövőre”, ami nem illik ide; helyesen: No te preocupes, todo saldrá bien.",
-          "en": "This would say: “everything used to turn out fine (a past background), not reassurance about now”, which does not fit here; correctly: No te preocupes, todo saldrá bien.",
-          "es": "Esto diría: «todo salía bien (fondo pasado), no un ánimo sobre ahora», lo cual no encaja aquí; correctamente: No te preocupes, todo saldrá bien.",
-          "de": "Das würde bedeuten: „alles ging früher gut aus (vergangener Hintergrund), keine Beruhigung für jetzt“, was hier nicht passt; richtig: No te preocupes, todo saldrá bien."
+          "hu": "Ezzel a mondat azt jelentené: „minden jól szokott alakulni (múltbeli háttér), nem egy mostani biztatás a jövőre”, ami nem illik ide; helyesen: No te preocupes, mañana todo saldrá bien.",
+          "en": "This would say: “everything used to turn out fine (a past background), not reassurance about now”, which does not fit here; correctly: No te preocupes, mañana todo saldrá bien.",
+          "es": "Esto diría: «todo salía bien (fondo pasado), no un ánimo sobre ahora», lo cual no encaja aquí; correctamente: No te preocupes, mañana todo saldrá bien.",
+          "de": "Das würde bedeuten: „alles ging früher gut aus (vergangener Hintergrund), keine Beruhigung für jetzt“, was hier nicht passt; richtig: No te preocupes, mañana todo saldrá bien."
         }
       },
       "examples": [
@@ -1168,7 +1168,7 @@
           "de": "Das würde bedeuten: „ich war vorsichtig (vergangene Tatsache), kein Versprechen für die Zukunft“, was hier nicht passt; richtig: Te lo prometo: tendré más cuidado."
         },
         "tenía": {
-          "hu": "Ezzel a mondat azt jelentené: „vigyáztam szoktam (múltbeli állapot), nem egy ígéret a jövőre”, ami nem illik ide; helyesen: Te lo prometo: tendré más cuidado.",
+          "hu": "Ezzel a mondat azt jelentené: „óvatosabb voltam (múltbeli állapot), nem egy ígéret a jövőre”, ami nem illik ide; helyesen: Te lo prometo: tendré más cuidado.",
           "en": "This would say: “I used to be careful (a past state), not a promise about the future”, which does not fit here; correctly: Te lo prometo: tendré más cuidado.",
           "es": "Esto diría: «tenía cuidado (estado pasado), no una promesa sobre el futuro», lo cual no encaja aquí; correctamente: Te lo prometo: tendré más cuidado.",
           "de": "Das würde bedeuten: „ich war vorsichtig gewesen (vergangener Zustand), kein Versprechen für die Zukunft“, was hier nicht passt; richtig: Te lo prometo: tendré más cuidado."
@@ -1375,10 +1375,10 @@
       "options": [
         {
           "text": {
-            "hu": "ígéret vagy eldöntött terv",
-            "en": "a promise or a decided plan",
-            "es": "una promesa o un plan decidido",
-            "de": "ein Versprechen oder ein entschiedener Plan"
+            "hu": "ígéret, vállalás",
+            "en": "a promise, a commitment",
+            "es": "una promesa, un compromiso",
+            "de": "ein Versprechen, eine Zusage"
           }
         },
         {
@@ -1430,10 +1430,10 @@
       "options": [
         {
           "text": {
-            "hu": "ígéret vagy eldöntött terv",
-            "en": "a promise or a decided plan",
-            "es": "una promesa o un plan decidido",
-            "de": "ein Versprechen oder ein entschiedener Plan"
+            "hu": "ígéret, vállalás",
+            "en": "a promise, a commitment",
+            "es": "una promesa, un compromiso",
+            "de": "ein Versprechen, eine Zusage"
           },
           "wrong": {
             "hu": "ez ígéret lenne, de az esőnek nincs akarata, senki sem vállal itt semmit",
@@ -1485,10 +1485,10 @@
       "options": [
         {
           "text": {
-            "hu": "ígéret vagy eldöntött terv",
-            "en": "a promise or a decided plan",
-            "es": "una promesa o un plan decidido",
-            "de": "ein Versprechen oder ein entschiedener Plan"
+            "hu": "ígéret, vállalás",
+            "en": "a promise, a commitment",
+            "es": "una promesa, un compromiso",
+            "de": "ein Versprechen, eine Zusage"
           },
           "wrong": {
             "hu": "ez ígéret lenne, de itt senki sem vállal semmit, csak egy találgatás hangzik el arról, hol lehet Ana",
@@ -1540,10 +1540,10 @@
       "options": [
         {
           "text": {
-            "hu": "ígéret vagy eldöntött terv",
-            "en": "a promise or a decided plan",
-            "es": "una promesa o un plan decidido",
-            "de": "ein Versprechen oder ein entschiedener Plan"
+            "hu": "ígéret, vállalás",
+            "en": "a promise, a commitment",
+            "es": "una promesa, un compromiso",
+            "de": "ein Versprechen, eine Zusage"
           }
         },
         {
@@ -1595,10 +1595,10 @@
       "options": [
         {
           "text": {
-            "hu": "ígéret vagy eldöntött terv",
-            "en": "a promise or a decided plan",
-            "es": "una promesa o un plan decidido",
-            "de": "ein Versprechen oder ein entschiedener Plan"
+            "hu": "ígéret, vállalás",
+            "en": "a promise, a commitment",
+            "es": "una promesa, un compromiso",
+            "de": "ein Versprechen, eine Zusage"
           },
           "wrong": {
             "hu": "ez ígéret lenne, de a mondatban nincs olyan szó (mint a prometo), ami konkrét vállalást jelezne, csak egy jövőbeli terv kijelentése",
@@ -1650,10 +1650,10 @@
       "options": [
         {
           "text": {
-            "hu": "ígéret vagy eldöntött terv",
-            "en": "a promise or a decided plan",
-            "es": "una promesa o un plan decidido",
-            "de": "ein Versprechen oder ein entschiedener Plan"
+            "hu": "ígéret, vállalás",
+            "en": "a promise, a commitment",
+            "es": "una promesa, un compromiso",
+            "de": "ein Versprechen, eine Zusage"
           },
           "wrong": {
             "hu": "ez ígéret lenne, de az életkorra senki sem tehet ígéretet, ez csak egy találgatás",
@@ -1705,10 +1705,10 @@
       "options": [
         {
           "text": {
-            "hu": "ígéret vagy eldöntött terv",
-            "en": "a promise or a decided plan",
-            "es": "una promesa o un plan decidido",
-            "de": "ein Versprechen oder ein entschiedener Plan"
+            "hu": "ígéret, vállalás",
+            "en": "a promise, a commitment",
+            "es": "una promesa, un compromiso",
+            "de": "ein Versprechen, eine Zusage"
           },
           "wrong": {
             "hu": "ez ígéret lenne, de itt egy feltételhez kötött tervről van szó (si + jelen), nem egy önálló vállalásról",
@@ -1719,10 +1719,10 @@
         },
         {
           "text": {
-            "hu": "jóslat vagy terv a távolabbi jövőre",
-            "en": "a prediction or a plan for the more distant future",
-            "es": "una predicción o un plan para el futuro más lejano",
-            "de": "eine Vorhersage oder ein Plan für die fernere Zukunft"
+            "hu": "valós feltétel: si + jelen, a másik felében jövő",
+            "en": "a real condition: si plus present, future in the other half",
+            "es": "una condición real: si más presente, futuro en la otra mitad",
+            "de": "eine reale Bedingung: si plus Präsens, im anderen Teil Futur"
           }
         },
         {
@@ -1817,7 +1817,9 @@
       },
       "answer": "No hablará de dinero.",
       "accept": [
-        "Él no hablará de dinero."
+        "Él no hablará de dinero.",
+        "Ella no hablará de dinero.",
+        "Usted no hablará de dinero."
       ],
       "wordIds": [
         "27",
@@ -1874,7 +1876,9 @@
       },
       "answer": "¿Hablarán con el médico?",
       "accept": [
-        "¿Ellos hablarán con el médico?"
+        "¿Ellos hablarán con el médico?",
+        "¿Ellas hablarán con el médico?",
+        "¿Ustedes hablarán con el médico?"
       ],
       "wordIds": [
         "27",
@@ -1958,7 +1962,9 @@
       },
       "answer": "Comeremos juntos mañana.",
       "accept": [
-        "Nosotros comeremos juntos mañana."
+        "Nosotros comeremos juntos mañana.",
+        "Mañana comeremos juntos.",
+        "Mañana nosotros comeremos juntos."
       ],
       "wordIds": [
         "25",
@@ -1987,7 +1993,9 @@
       },
       "answer": "No comerán mucho.",
       "accept": [
-        "Ellas no comerán mucho."
+        "Ellos no comerán mucho.",
+        "Ellas no comerán mucho.",
+        "Ustedes no comerán mucho."
       ],
       "wordIds": [
         "25",
@@ -2100,7 +2108,9 @@
       },
       "answer": "Vivirá en el país.",
       "accept": [
-        "Ella vivirá en el país."
+        "Él vivirá en el país.",
+        "Ella vivirá en el país.",
+        "Usted vivirá en el país."
       ],
       "wordIds": [
         "82",
@@ -2157,7 +2167,8 @@
       },
       "answer": "¿Vivirán contentos?",
       "accept": [
-        "¿Ellos vivirán contentos?"
+        "¿Ellos vivirán contentos?",
+        "¿Ustedes vivirán contentos?"
       ],
       "wordIds": [
         "82",
@@ -2269,7 +2280,13 @@
       },
       "answer": "No estudiarán de noche.",
       "accept": [
-        "Ellos no estudiarán de noche."
+        "Ellos no estudiarán de noche.",
+        "Ellas no estudiarán de noche.",
+        "Ustedes no estudiarán de noche.",
+        "De noche no estudiarán.",
+        "De noche ellos no estudiarán.",
+        "De noche ellas no estudiarán.",
+        "De noche ustedes no estudiarán."
       ],
       "wordIds": [
         "1410",
@@ -2298,7 +2315,8 @@
       },
       "answer": "¿Estudiará solo?",
       "accept": [
-        "¿Él estudiará solo?"
+        "¿Él estudiará solo?",
+        "¿Usted estudiará solo?"
       ],
       "wordIds": [
         "1410",
@@ -2382,7 +2400,13 @@
       },
       "answer": "Trabajará mañana temprano.",
       "accept": [
-        "Ella trabajará mañana temprano."
+        "Él trabajará mañana temprano.",
+        "Ella trabajará mañana temprano.",
+        "Usted trabajará mañana temprano.",
+        "Mañana trabajará temprano.",
+        "Mañana él trabajará temprano.",
+        "Mañana ella trabajará temprano.",
+        "Mañana usted trabajará temprano."
       ],
       "wordIds": [
         "1409",
@@ -2411,7 +2435,9 @@
       },
       "answer": "No trabajaremos después.",
       "accept": [
-        "Nosotros no trabajaremos después."
+        "Nosotros no trabajaremos después.",
+        "Después no trabajaremos.",
+        "Después nosotros no trabajaremos."
       ],
       "wordIds": [
         "1409",
@@ -2440,7 +2466,8 @@
       },
       "answer": "¿Trabajarán juntos?",
       "accept": [
-        "¿Ellos trabajarán juntos?"
+        "¿Ellos trabajarán juntos?",
+        "¿Ustedes trabajarán juntos?"
       ],
       "wordIds": [
         "1409",
@@ -2524,7 +2551,9 @@
       },
       "answer": "Viajaremos pronto.",
       "accept": [
-        "Nosotros viajaremos pronto."
+        "Nosotros viajaremos pronto.",
+        "Pronto viajaremos.",
+        "Pronto nosotros viajaremos."
       ],
       "wordIds": [
         "1579",
@@ -2552,7 +2581,8 @@
       },
       "answer": "No viajarán solas.",
       "accept": [
-        "Ellas no viajarán solas."
+        "Ellas no viajarán solas.",
+        "Ustedes no viajarán solas."
       ],
       "wordIds": [
         "1579",
@@ -2581,7 +2611,8 @@
       },
       "answer": "¿Viajarán contentos?",
       "accept": [
-        "¿Ellos viajarán contentos?"
+        "¿Ellos viajarán contentos?",
+        "¿Ustedes viajarán contentos?"
       ],
       "wordIds": [
         "1579",
@@ -2666,7 +2697,9 @@
       },
       "answer": "Tendrá un problema.",
       "accept": [
-        "Ella tendrá un problema."
+        "Él tendrá un problema.",
+        "Ella tendrá un problema.",
+        "Usted tendrá un problema."
       ],
       "wordIds": [
         "33",
@@ -2723,7 +2756,13 @@
       },
       "answer": "¿Tendrán tiempo mañana?",
       "accept": [
-        "¿Ellos tendrán tiempo mañana?"
+        "¿Ellos tendrán tiempo mañana?",
+        "¿Ellas tendrán tiempo mañana?",
+        "¿Ustedes tendrán tiempo mañana?",
+        "¿Mañana tendrán tiempo?",
+        "¿Mañana ellos tendrán tiempo?",
+        "¿Mañana ellas tendrán tiempo?",
+        "¿Mañana ustedes tendrán tiempo?"
       ],
       "wordIds": [
         "33",
@@ -2752,7 +2791,9 @@
       },
       "answer": "Podré ayudar pronto.",
       "accept": [
-        "Yo podré ayudar pronto."
+        "Yo podré ayudar pronto.",
+        "Pronto podré ayudar.",
+        "Pronto yo podré ayudar."
       ],
       "wordIds": [
         "29",
@@ -2810,7 +2851,9 @@
       },
       "answer": "Podrá hablar con el jefe.",
       "accept": [
-        "Él podrá hablar con el jefe."
+        "Él podrá hablar con el jefe.",
+        "Ella podrá hablar con el jefe.",
+        "Usted podrá hablar con el jefe."
       ],
       "wordIds": [
         "29",
@@ -2869,7 +2912,9 @@
       },
       "answer": "¿Podrán venir temprano?",
       "accept": [
-        "¿Ellos podrán venir temprano?"
+        "¿Ellos podrán venir temprano?",
+        "¿Ellas podrán venir temprano?",
+        "¿Ustedes podrán venir temprano?"
       ],
       "wordIds": [
         "29",
@@ -2954,7 +2999,9 @@
       },
       "answer": "Hará un viaje.",
       "accept": [
-        "Ella hará un viaje."
+        "Él hará un viaje.",
+        "Ella hará un viaje.",
+        "Usted hará un viaje."
       ],
       "wordIds": [
         "34",
@@ -3011,7 +3058,9 @@
       },
       "answer": "¿Harán la comida?",
       "accept": [
-        "¿Ellos harán la comida?"
+        "¿Ellos harán la comida?",
+        "¿Ellas harán la comida?",
+        "¿Ustedes harán la comida?"
       ],
       "wordIds": [
         "34",
@@ -3095,7 +3144,13 @@
       },
       "answer": "Dirá la verdad siempre.",
       "accept": [
-        "Él dirá la verdad siempre."
+        "Él dirá la verdad siempre.",
+        "Ella dirá la verdad siempre.",
+        "Usted dirá la verdad siempre.",
+        "Siempre dirá la verdad.",
+        "Siempre él dirá la verdad.",
+        "Siempre ella dirá la verdad.",
+        "Siempre usted dirá la verdad."
       ],
       "wordIds": [
         "35",
@@ -3153,7 +3208,9 @@
       },
       "answer": "¿Dirán la verdad?",
       "accept": [
-        "¿Ellos dirán la verdad?"
+        "¿Ellos dirán la verdad?",
+        "¿Ellas dirán la verdad?",
+        "¿Ustedes dirán la verdad?"
       ],
       "wordIds": [
         "35",

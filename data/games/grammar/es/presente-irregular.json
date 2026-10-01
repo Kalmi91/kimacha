@@ -38,7 +38,7 @@
             {
               "es": "Yo hago la comida.",
               "tr": {
-                "hu": "Én csinálom az ételt.",
+                "hu": "Én készítem az ételt.",
                 "en": "I make the food.",
                 "es": "Yo hago la comida.",
                 "de": "Ich mache das Essen."
@@ -92,20 +92,20 @@
           },
           "examples": [
             {
-              "es": "Tengo hambre, ¿y tú tienes?",
+              "es": "Yo tengo hambre, ¿tú tienes sed?",
               "tr": {
-                "hu": "Éhes vagyok, és te?",
-                "en": "I am hungry, and are you?",
-                "es": "Tengo hambre, ¿y tú tienes?",
-                "de": "Ich habe Hunger, und du?"
+                "hu": "Én éhes vagyok, te szomjas vagy?",
+                "en": "I am hungry, are you thirsty?",
+                "es": "Yo tengo hambre, ¿tú tienes sed?",
+                "de": "Ich habe Hunger, hast du Durst?"
               }
             },
             {
-              "es": "Yo vengo en autobús, ella viene en coche.",
+              "es": "Yo vengo en autobús, ella viene en carro.",
               "tr": {
                 "hu": "Én busszal jövök, ő autóval jön.",
                 "en": "I come by bus, she comes by car.",
-                "es": "Yo vengo en autobús, ella viene en coche.",
+                "es": "Yo vengo en autobús, ella viene en carro.",
                 "de": "Ich komme mit dem Bus, sie kommt mit dem Auto."
               }
             }
@@ -792,12 +792,12 @@
               }
             },
             {
-              "es": "Yo conduzco el coche de mi padre.",
+              "es": "Yo conduzco un programa de radio.",
               "tr": {
-                "hu": "Én vezetem az apám autóját.",
-                "en": "I drive my father's car.",
-                "es": "Yo conduzco el coche de mi padre.",
-                "de": "Ich fahre das Auto meines Vaters."
+                "hu": "Én egy rádióműsort vezetek.",
+                "en": "I host a radio show.",
+                "es": "Yo conduzco un programa de radio.",
+                "de": "Ich moderiere eine Radiosendung."
               }
             }
           ]
@@ -1296,6 +1296,33 @@
         "es": "una forma de conducir (conducir)",
         "de": "eine Form von conducir (fahren)"
       }
+    },
+    {
+      "word": "carro",
+      "gloss": {
+        "hu": "autó",
+        "en": "car",
+        "es": "el carro (el coche)",
+        "de": "Auto"
+      }
+    },
+    {
+      "word": "programa",
+      "gloss": {
+        "hu": "műsor",
+        "en": "show, program",
+        "es": "el programa",
+        "de": "Sendung"
+      }
+    },
+    {
+      "word": "radio",
+      "gloss": {
+        "hu": "rádió",
+        "en": "radio",
+        "es": "la radio",
+        "de": "Radio"
+      }
     }
   ],
   "items": [
@@ -1554,10 +1581,10 @@
       },
       "wrong": {
         "estás": {
-          "hu": "Az \"estás\" is helyes mondatot adna, de mást jelentene: \"¿De dónde estás?\" a pillanatnyi tartózkodási helyre kérdezne, nem a származásra.",
-          "en": "\"Estás\" would also make a sentence, but a different one: \"¿De dónde estás?\" would ask about your current whereabouts, not your origin.",
-          "es": "\"Estás\" también formaría una frase, pero distinta: \"¿De dónde estás?\" preguntaría por tu paradero actual, no por tu origen.",
-          "de": "\"Estás\" würde ebenfalls einen Satz ergeben, aber einen anderen: \"¿De dónde estás?\" würde nach deinem aktuellen Aufenthaltsort fragen, nicht nach deiner Herkunft."
+          "hu": "Az „estás” helyet vagy állapotot mondana (¿Dónde estás?, ¿Cómo estás?); a „de dónde” a származásra kérdez, ahhoz ser kell: ¿De dónde eres?",
+          "en": "\"Estás\" would speak of place or state (¿Dónde estás?, ¿Cómo estás?); \"de dónde\" asks about origin, which takes ser: ¿De dónde eres?",
+          "es": "«Estás» hablaría de lugar o estado (¿Dónde estás?, ¿Cómo estás?); «de dónde» pregunta por el origen, que lleva ser: ¿De dónde eres?",
+          "de": "„Estás\" würde von Ort oder Zustand sprechen (¿Dónde estás?, ¿Cómo estás?); „de dónde\" fragt nach der Herkunft, und die steht mit ser: ¿De dónde eres?"
         },
         "es": {
           "hu": "Az \"es\" az ő alakja; ha ide kerülne, a kérdés azt jelentené: honnan van Ő, nem te, és nem egyezne a tú alannyal.",
@@ -2362,7 +2389,7 @@
     },
     {
       "id": "pi-18",
-      "sentence": "Yo ___ el coche de mi padre.",
+      "sentence": "Yo ___ un programa de radio.",
       "options": [
         "conduzco",
         "conduco",
@@ -2377,21 +2404,21 @@
       },
       "wrong": {
         "conduco": {
-          "hu": "Ezzel a mondat egy nem létező alakot használna; helyesen: Yo conduzco el coche de mi padre.",
-          "en": "This would use a form that doesn't exist; the correct form is: Yo conduzco el coche de mi padre.",
-          "es": "Esto usaría una forma que no existe; la forma correcta es: Yo conduzco el coche de mi padre.",
-          "de": "Das würde eine nicht existierende Form verwenden; richtig ist: Yo conduzco el coche de mi padre."
+          "hu": "Ezzel a mondat egy nem létező alakot használna; helyesen: Yo conduzco un programa de radio.",
+          "en": "This would use a form that doesn't exist; the correct form is: Yo conduzco un programa de radio.",
+          "es": "Esto usaría una forma que no existe; la forma correcta es: Yo conduzco un programa de radio.",
+          "de": "Das würde eine nicht existierende Form verwenden; richtig ist: Yo conduzco un programa de radio."
         },
         "conduce": {
-          "hu": "Ez a(z) él/ella/usted alak, de itt az alany yo; helyesen: Yo conduzco el coche de mi padre.",
-          "en": "This is the él/ella/usted form, but the subject here is yo; correct: Yo conduzco el coche de mi padre.",
-          "es": "Esta es la forma de él/ella/usted, pero aquí el sujeto es yo; correcto: Yo conduzco el coche de mi padre.",
-          "de": "Das ist die Form für él/ella/usted, aber das Subjekt ist hier yo; richtig: Yo conduzco el coche de mi padre."
+          "hu": "Ez a(z) él/ella/usted alak, de itt az alany yo; helyesen: Yo conduzco un programa de radio.",
+          "en": "This is the él/ella/usted form, but the subject here is yo; correct: Yo conduzco un programa de radio.",
+          "es": "Esta es la forma de él/ella/usted, pero aquí el sujeto es yo; correcto: Yo conduzco un programa de radio.",
+          "de": "Das ist die Form für él/ella/usted, aber das Subjekt ist hier yo; richtig: Yo conduzco un programa de radio."
         }
       },
       "examples": [
-        "Yo conduzco el coche de mi padre.",
-        "Ella conduce el coche."
+        "Yo conduzco un programa de radio.",
+        "Ella conduce el programa."
       ]
     },
     {

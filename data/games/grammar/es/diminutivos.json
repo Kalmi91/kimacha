@@ -1,0 +1,1763 @@
+{
+  "schema": 2,
+  "topic": "diminutivos",
+  "level": "A2",
+  "title": {
+    "hu": "Kicsinyítők: -ito, -cito, -ecito",
+    "en": "Diminutives: -ito, -cito, -ecito",
+    "es": "Diminutivos: -ito, -cito, -ecito",
+    "de": "Verkleinerungsformen: -ito, -cito, -ecito"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A spanyolban a szavak végére kis végződést tehetsz, és így lesz a casából casita, a caféból cafecito. A kicsinyítő nem csak azt jelenti, hogy valami kicsi: Mexikóban gyakran kedvességet, udvariasságot vagy lágyabb hangot ad. Az un momentito, az un cafecito és az ahorita szóban nem a méret számít, hanem a hangnem. Három fő végződés van: -ito / -ita, -cito / -cita és -ecito / -ecita, és hogy melyik jön, azt a szó vége dönti el.",
+        "en": "Spanish lets you put a small ending on a word, so casa becomes casita and café becomes cafecito. A diminutive does not only mean that something is small: in Mexico it often adds warmth, politeness or a softer tone. In un momentito, un cafecito and ahorita the size does not matter, the tone does. There are three main endings, -ito / -ita, -cito / -cita and -ecito / -ecita, and the end of the word decides which one you need.",
+        "es": "En español puedes poner una terminación pequeña al final de una palabra: casa pasa a casita y café a cafecito. El diminutivo no solo dice que algo es pequeño: en México suele dar cariño, cortesía o un tono más suave. En un momentito, un cafecito y ahorita no importa el tamaño, importa el tono. Hay tres terminaciones principales, -ito / -ita, -cito / -cita y -ecito / -ecita, y el final de la palabra decide cuál toca.",
+        "de": "Im Spanischen hängt man an ein Wort eine kleine Endung, so wird aus casa casita und aus café cafecito. Die Verkleinerungsform sagt nicht nur, dass etwas klein ist: In Mexiko gibt sie oft Wärme, Höflichkeit oder einen weicheren Ton. In un momentito, un cafecito und ahorita spielt die Größe keine Rolle, sondern der Ton. Es gibt drei Hauptendungen, -ito / -ita, -cito / -cita und -ecito / -ecita, und das Wortende entscheidet, welche du brauchst."
+      }
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "hu": "A képzés szabályai",
+        "en": "The rules of the formation",
+        "es": "Las reglas de la formación",
+        "de": "Die Regeln der Bildung"
+      },
+      "points": [
+        {
+          "text": {
+            "hu": "Az -o vagy -a végű szavaknál az utolsó magánhangzó elmarad, és hímnemben -ito, nőnemben -ita jön: casa → casita, gato → gatito, mesa → mesita, rato → ratito, ahora → ahorita. A kicsinyítő megtartja az alapszó nemét (una gata → una gatita), és többes számban csak az s jön hozzá: perritos, casitas. A kétszótagú -l végű szavak is simán -ito / -ita végződést kapnak: papel → papelito, pastel → pastelito.",
+            "en": "In words ending in -o or -a the last vowel drops and -ito (masculine) or -ita (feminine) comes: casa → casita, gato → gatito, mesa → mesita, rato → ratito, ahora → ahorita. The diminutive keeps the gender of the base word (una gata → una gatita), and the plural just adds s: perritos, casitas. Two-syllable words ending in -l also take plain -ito / -ita: papel → papelito, pastel → pastelito.",
+            "es": "En las palabras que terminan en -o o -a se quita la última vocal y se añade -ito (masculino) o -ita (femenino): casa → casita, gato → gatito, mesa → mesita, rato → ratito, ahora → ahorita. El diminutivo conserva el género de la palabra base (una gata → una gatita) y en plural solo se añade s: perritos, casitas. Las palabras de dos sílabas en -l también llevan -ito / -ita sin más: papel → papelito, pastel → pastelito.",
+            "de": "Bei Wörtern auf -o oder -a fällt der letzte Vokal weg, und es kommt -ito (maskulin) oder -ita (feminin) dazu: casa → casita, gato → gatito, mesa → mesita, rato → ratito, ahora → ahorita. Die Verkleinerungsform behält das Geschlecht des Grundworts (una gata → una gatita), und im Plural kommt nur ein s dazu: perritos, casitas. Auch zweisilbige Wörter auf -l bekommen einfach -ito / -ita: papel → papelito, pastel → pastelito."
+          },
+          "examples": [
+            {
+              "es": "Mis abuelos tienen una casita en Puebla.",
+              "tr": {
+                "hu": "A nagyszüleimnek van egy házikójuk Pueblában.",
+                "en": "My grandparents have a little house in Puebla.",
+                "es": "Mis abuelos tienen una casita en Puebla.",
+                "de": "Meine Großeltern haben ein Häuschen in Puebla."
+              }
+            },
+            {
+              "es": "Espérame un ratito, por favor.",
+              "tr": {
+                "hu": "Várj meg egy kicsit, kérlek.",
+                "en": "Wait for me a little while, please.",
+                "es": "Espérame un ratito, por favor.",
+                "de": "Warte bitte ein Weilchen auf mich."
+              }
+            },
+            {
+              "es": "Quiero un pastelito de chocolate.",
+              "tr": {
+                "hu": "Kérek egy kis csokis süteményt.",
+                "en": "I would like a little chocolate cake.",
+                "es": "Quiero un pastelito de chocolate.",
+                "de": "Ich möchte ein Schokoladenküchlein."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A végződés előtt a hangnak meg kell maradnia, ezért a helyesírás megváltozik: c → qu (poco → poquito, boca → boquita, cerca → cerquita), g → gu (amigo → amiguito, jugo → juguito), z → c (taza → tacita, luz → lucecita, pez → pececito). A c és a g e és i előtt másként hangzik, ezért lesz belőlük qu és gu, a z pedig e és i előtt c-re változik.",
+            "en": "Before the ending the sound has to stay the same, so the spelling changes: c → qu (poco → poquito, boca → boquita, cerca → cerquita), g → gu (amigo → amiguito, jugo → juguito), z → c (taza → tacita, luz → lucecita, pez → pececito). Before e and i the letters c and g sound different, so they become qu and gu, and z becomes c.",
+            "es": "Antes de la terminación el sonido debe mantenerse, por eso cambia la ortografía: c → qu (poco → poquito, boca → boquita, cerca → cerquita), g → gu (amigo → amiguito, jugo → juguito), z → c (taza → tacita, luz → lucecita, pez → pececito). Delante de e y de i las letras c y g suenan distinto, y la z se escribe c.",
+            "de": "Vor der Endung muss der Laut gleich bleiben, deshalb ändert sich die Schreibung: c → qu (poco → poquito, boca → boquita, cerca → cerquita), g → gu (amigo → amiguito, jugo → juguito), z → c (taza → tacita, luz → lucecita, pez → pececito). Vor e und i klingen c und g anders, und das z wird zu c."
+          },
+          "examples": [
+            {
+              "es": "Hablo un poquito de español.",
+              "tr": {
+                "hu": "Egy kicsit beszélek spanyolul.",
+                "en": "I speak a little Spanish.",
+                "es": "Hablo un poquito de español.",
+                "de": "Ich spreche ein bisschen Spanisch."
+              }
+            },
+            {
+              "es": "Quiero una tacita de té.",
+              "tr": {
+                "hu": "Kérek egy csésze teát.",
+                "en": "I would like a little cup of tea.",
+                "es": "Quiero una tacita de té.",
+                "de": "Ich möchte ein Tässchen Tee."
+              }
+            },
+            {
+              "es": "Mi hijo tiene un amiguito nuevo.",
+              "tr": {
+                "hu": "A fiamnak új kis barátja van.",
+                "en": "My son has a new little friend.",
+                "es": "Mi hijo tiene un amiguito nuevo.",
+                "de": "Mein Sohn hat einen neuen kleinen Freund."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Az -n és -r végű szavak, valamint a hangsúlyos -é végű szavak -cito / -cita végződést kapnak: café → cafecito, camión → camioncito (a hangsúlyjel eltűnik), limón → limoncito, corazón → corazoncito. Az -e végű szavaknál mindkét végződés hallható (nubecita, de lechita), ezért a feladatokban a végződést zárójelben megadjuk.",
+            "en": "Words ending in -n or -r, and words ending in a stressed -é, take -cito / -cita: café → cafecito, camión → camioncito (the accent mark disappears), limón → limoncito, corazón → corazoncito. With words ending in -e both endings are heard (nubecita, but lechita), so in the exercises the ending is given in brackets.",
+            "es": "Las palabras que terminan en -n o -r, y las que terminan en -é acentuada, llevan -cito / -cita: café → cafecito, camión → camioncito (desaparece la tilde), limón → limoncito, corazón → corazoncito. Con palabras en -e se oyen las dos terminaciones (nubecita, pero lechita), por eso en los ejercicios la terminación va entre paréntesis.",
+            "de": "Wörter auf -n oder -r sowie Wörter auf betontes -é bekommen -cito / -cita: café → cafecito, camión → camioncito (der Akzent entfällt), limón → limoncito, corazón → corazoncito. Bei Wörtern auf -e hört man beide Endungen (nubecita, aber lechita), deshalb steht die Endung in den Übungen in Klammern."
+          },
+          "examples": [
+            {
+              "es": "¿Quieres un cafecito con leche?",
+              "tr": {
+                "hu": "Kérsz egy kávét tejjel?",
+                "en": "Would you like a coffee with milk?",
+                "es": "¿Quieres un cafecito con leche?",
+                "de": "Möchtest du ein Käffchen mit Milch?"
+              }
+            },
+            {
+              "es": "Mi hijo juega con un camioncito.",
+              "tr": {
+                "hu": "A fiam egy kis teherautóval játszik.",
+                "en": "My son plays with a little truck.",
+                "es": "Mi hijo juega con un camioncito.",
+                "de": "Mein Sohn spielt mit einem kleinen Lastwagen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Az egy szótagú szavak -ecito / -ecita végződést kapnak: pan → panecito, sol → solecito, flor → florecita, tren → trenecito. A z itt is c-re változik: luz → lucecita, pez → pececito. A pan mellett a beszédben a pancito is előfordul; a szabályos alak a panecito.",
+            "en": "One-syllable words take -ecito / -ecita: pan → panecito, sol → solecito, flor → florecita, tren → trenecito. The z becomes c here too: luz → lucecita, pez → pececito. Next to pan you also hear pancito in speech; the regular form is panecito.",
+            "es": "Las palabras de una sola sílaba llevan -ecito / -ecita: pan → panecito, sol → solecito, flor → florecita, tren → trenecito. La z también cambia a c: luz → lucecita, pez → pececito. Junto a pan también se oye pancito en el habla; la forma regular es panecito.",
+            "de": "Einsilbige Wörter bekommen -ecito / -ecita: pan → panecito, sol → solecito, flor → florecita, tren → trenecito. Auch hier wird das z zu c: luz → lucecita, pez → pececito. Neben pan hört man in der Umgangssprache auch pancito; die regelmäßige Form ist panecito."
+          },
+          "examples": [
+            {
+              "es": "Hoy hay un solecito muy rico.",
+              "tr": {
+                "hu": "Ma nagyon kellemes kis napsütés van.",
+                "en": "Today there is lovely gentle sunshine.",
+                "es": "Hoy hay un solecito muy rico.",
+                "de": "Heute gibt es angenehmen, milden Sonnenschein."
+              }
+            },
+            {
+              "es": "Mi hija tiene un pececito rojo.",
+              "tr": {
+                "hu": "A lányomnak van egy kis piros halacskája.",
+                "en": "My daughter has a little red fish.",
+                "es": "Mi hija tiene un pececito rojo.",
+                "de": "Meine Tochter hat ein kleines rotes Fischchen."
+              }
+            },
+            {
+              "es": "Compré una florecita para mi mamá.",
+              "tr": {
+                "hu": "Vettem egy kis virágot anyukámnak.",
+                "en": "I bought a little flower for my mom.",
+                "es": "Compré una florecita para mi mamá.",
+                "de": "Ich habe ein Blümchen für meine Mama gekauft."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Mexikóban a kicsinyítő gyakran a hangnemről szól, nem a méretről. Kérésnél lágyít és udvariasabbá tesz: ¿Me da un cafecito, por favor? Kedvességet fejez ki: mi abuelita, mi amiguito. A mennyiséget is lágyítja: un poquito. A cafecito nem feltétlenül kis csésze, és a momentito sem feltétlenül rövidebb a momentónál: csak kedvesebb.",
+            "en": "In Mexico a diminutive is often about tone, not size. In a request it softens and makes you sound more polite: ¿Me da un cafecito, por favor? It shows warmth: mi abuelita, mi amiguito. It also softens a quantity: un poquito. A cafecito is not necessarily a small cup, and a momentito is not necessarily shorter than a momento: it is just friendlier.",
+            "es": "En México el diminutivo suele ser cuestión de tono, no de tamaño. En una petición suaviza y suena más cortés: ¿Me da un cafecito, por favor? Expresa cariño: mi abuelita, mi amiguito. También suaviza una cantidad: un poquito. Un cafecito no es necesariamente una taza pequeña, ni un momentito es necesariamente más corto que un momento: solo es más amable.",
+            "de": "In Mexiko geht es bei der Verkleinerungsform oft um den Ton, nicht um die Größe. Bei einer Bitte macht sie weicher und höflicher: ¿Me da un cafecito, por favor? Sie zeigt Zuneigung: mi abuelita, mi amiguito. Auch eine Menge wird weicher: un poquito. Ein cafecito ist nicht unbedingt eine kleine Tasse, und ein momentito ist nicht unbedingt kürzer als ein momento: Es ist nur freundlicher."
+          },
+          "examples": [
+            {
+              "es": "¿Me da un cafecito, por favor?",
+              "tr": {
+                "hu": "Kaphatnék egy kávét, kérem?",
+                "en": "Could I have a coffee, please?",
+                "es": "¿Me da un cafecito, por favor?",
+                "de": "Könnte ich bitte einen Kaffee haben?"
+              }
+            },
+            {
+              "es": "Mi abuelita me llama todos los días.",
+              "tr": {
+                "hu": "A nagymamám minden nap felhív.",
+                "en": "My grandma calls me every day.",
+                "es": "Mi abuelita me llama todos los días.",
+                "de": "Meine Oma ruft mich jeden Tag an."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Az ahorita az ahora (most) kicsinyítője, és Mexikóban nagyon gyakori. Hogy mikor van, azt az ige ideje és a helyzet mondja meg: Ahorita no puedo hablar (éppen most), Ahorita llegó mi hermano (az imént), Ahorita voy (egy perc múlva).",
+            "en": "Ahorita is the diminutive of ahora (now) and is very common in Mexico. When it is depends on the verb tense and the situation: Ahorita no puedo hablar (right now), Ahorita llegó mi hermano (a moment ago), Ahorita voy (in a moment).",
+            "es": "Ahorita es el diminutivo de ahora y es muy frecuente en México. El tiempo del verbo y la situación dicen cuándo es: Ahorita no puedo hablar (ahora mismo), Ahorita llegó mi hermano (hace un momento), Ahorita voy (dentro de un momento).",
+            "de": "Ahorita ist die Verkleinerungsform von ahora (jetzt) und in Mexiko sehr häufig. Wann es ist, sagen die Zeit des Verbs und die Situation: Ahorita no puedo hablar (gerade jetzt), Ahorita llegó mi hermano (soeben), Ahorita voy (gleich)."
+          },
+          "examples": [
+            {
+              "es": "Ahorita no puedo hablar, estoy manejando.",
+              "tr": {
+                "hu": "Most nem tudok beszélni, vezetek.",
+                "en": "I cannot talk right now, I am driving.",
+                "es": "Ahorita no puedo hablar, estoy manejando.",
+                "de": "Ich kann gerade nicht sprechen, ich fahre."
+              }
+            },
+            {
+              "es": "Ahorita llegó mi hermano.",
+              "tr": {
+                "hu": "Az imént érkezett meg a fivérem.",
+                "en": "My brother just arrived.",
+                "es": "Ahorita llegó mi hermano.",
+                "de": "Mein Bruder ist gerade angekommen."
+              }
+            },
+            {
+              "es": "Ahorita voy, espérame un momentito.",
+              "tr": {
+                "hu": "Mindjárt megyek, várj egy pillanatot.",
+                "en": "I am coming in a moment, wait a moment.",
+                "es": "Ahorita voy, espérame un momentito.",
+                "de": "Ich komme gleich, warte einen Moment."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "diminutivos-formas",
+      "title": {
+        "hu": "Példák: a lyukba a kicsinyítő alak kerül",
+        "en": "Examples: the gap takes the diminutive",
+        "es": "Ejemplos: el hueco lleva el diminutivo",
+        "de": "Beispiele: die Lücke braucht die Verkleinerungsform"
+      },
+      "header": [
+        {
+          "hu": "mondat, zárójelben a tő és a végződés",
+          "en": "sentence; in brackets the base word and the ending",
+          "es": "frase; entre paréntesis la palabra base y la terminación",
+          "de": "Satz; in Klammern das Grundwort und die Endung"
+        },
+        {
+          "hu": "a gyártandó alak",
+          "en": "the form to produce",
+          "es": "forma",
+          "de": "die zu bildende Form"
+        },
+        {
+          "hu": "végződés és helyesírás",
+          "en": "ending and spelling",
+          "es": "terminación y ortografía",
+          "de": "Endung und Schreibung"
+        }
+      ],
+      "rows": [
+        [
+          "Pon el vaso en la ___, por favor. (mesa + -ita)",
+          "mesita",
+          "-a + -ita"
+        ],
+        [
+          "Espérame un ___, ya casi termino. (rato + -ito)",
+          "ratito",
+          "-o + -ito"
+        ],
+        [
+          "Abre la ___, hijo, y come. (boca + -ita)",
+          "boquita",
+          "c → qu + -ita"
+        ],
+        [
+          "Quiero una ___ de té caliente. (taza + -ita)",
+          "tacita",
+          "z → c + -ita"
+        ],
+        [
+          "Mi hijo tiene un ___ en la escuela. (amigo + -ito)",
+          "amiguito",
+          "g → gu + -ito"
+        ],
+        [
+          "Tomamos dos ___ en la mañana. (café + -cito, plural)",
+          "cafecitos",
+          "-é + -cito + s"
+        ],
+        [
+          "Ven, mi ___, dame un abrazo. (corazón + -cito)",
+          "corazoncito",
+          "-ón → -oncito"
+        ],
+        [
+          "Quiero un ___ con mantequilla. (pan + -ecito)",
+          "panecito",
+          "-ecito"
+        ],
+        [
+          "Compré una ___ para mi mamá. (flor + -ecita)",
+          "florecita",
+          "-ecita"
+        ],
+        [
+          "Mi hija tiene un ___ rojo. (pez + -ecito)",
+          "pececito",
+          "z → c + -ecito"
+        ],
+        [
+          "Mi hijo juega todo el día con su ___. (tren + -ecito)",
+          "trenecito",
+          "-ecito"
+        ],
+        [
+          "Dame un ___ y un lápiz, por favor. (papel + -ito)",
+          "papelito",
+          "-l + -ito"
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Összetéveszthető párok",
+        "en": "Pairs that get mixed up",
+        "es": "Parejas que se confunden",
+        "de": "Paare, die man verwechselt"
+      },
+      "pairs": [
+        {
+          "a": "ahora",
+          "b": "ahorita",
+          "note": {
+            "hu": "Az ahora semleges: most. Az ahorita lágyabb, és Mexikóban az igeidőtől függően jelenthet éppen most, az imént vagy mindjárt.",
+            "en": "Ahora is neutral: now. Ahorita is softer, and in Mexico, depending on the tense, it can mean right now, a moment ago or in a moment.",
+            "es": "Ahora es neutro: ahora. Ahorita es más suave y en México, según el tiempo del verbo, puede significar ahora mismo, hace un momento o dentro de un momento.",
+            "de": "Ahora ist neutral: jetzt. Ahorita ist weicher und kann in Mexiko je nach Zeit des Verbs gerade jetzt, soeben oder gleich bedeuten."
+          },
+          "examples": [
+            {
+              "es": "Ahora tengo clase.",
+              "tr": {
+                "hu": "Most órám van.",
+                "en": "I have class now.",
+                "es": "Ahora tengo clase.",
+                "de": "Jetzt habe ich Unterricht."
+              }
+            },
+            {
+              "es": "Ahorita llegó mi hermano.",
+              "tr": {
+                "hu": "Az imént érkezett meg a fivérem.",
+                "en": "My brother just arrived.",
+                "es": "Ahorita llegó mi hermano.",
+                "de": "Mein Bruder ist gerade angekommen."
+              }
+            }
+          ]
+        },
+        {
+          "a": "un poco",
+          "b": "un poquito",
+          "note": {
+            "hu": "Az un poco semleges mennyiség. Az un poquito lágyabb és kedvesebb, kérésnél udvariasabban hangzik.",
+            "en": "Un poco is a neutral quantity. Un poquito is softer and friendlier, and sounds more polite in a request.",
+            "es": "Un poco es una cantidad neutra. Un poquito es más suave y amable, y en una petición suena más cortés.",
+            "de": "Un poco ist eine neutrale Menge. Un poquito ist weicher und freundlicher und klingt bei einer Bitte höflicher."
+          },
+          "examples": [
+            {
+              "es": "Quiero un poco de agua.",
+              "tr": {
+                "hu": "Kérek egy kis vizet.",
+                "en": "I want a little water.",
+                "es": "Quiero un poco de agua.",
+                "de": "Ich möchte etwas Wasser."
+              }
+            },
+            {
+              "es": "Quiero un poquito de agua.",
+              "tr": {
+                "hu": "Kérek egy kicsike vizet.",
+                "en": "I would like just a little water.",
+                "es": "Quiero un poquito de agua.",
+                "de": "Ich hätte gern nur ein bisschen Wasser."
+              }
+            }
+          ]
+        },
+        {
+          "a": "solito",
+          "b": "solecito",
+          "note": {
+            "hu": "A solito a solo (egyedül) kicsinyítője: Mi hijo come solito azt jelenti, hogy egyedül eszik. A solecito a sol (nap) kicsinyítője: kellemes napsütés. Két külön szó.",
+            "en": "Solito is the diminutive of solo (alone): Mi hijo come solito means that he eats by himself. Solecito is the diminutive of sol (sun): pleasant sunshine. They are two different words.",
+            "es": "Solito es el diminutivo de solo: Mi hijo come solito quiere decir que come por sí mismo. Solecito es el diminutivo de sol: un sol agradable. Son dos palabras distintas.",
+            "de": "Solito ist die Verkleinerungsform von solo (allein): Mi hijo come solito heißt, dass er allein isst. Solecito ist die Verkleinerungsform von sol (Sonne): angenehmer Sonnenschein. Es sind zwei verschiedene Wörter."
+          },
+          "examples": [
+            {
+              "es": "Mi hijo ya come solito.",
+              "tr": {
+                "hu": "A fiam már egyedül eszik.",
+                "en": "My son already eats by himself.",
+                "es": "Mi hijo ya come solito.",
+                "de": "Mein Sohn isst schon allein."
+              }
+            },
+            {
+              "es": "Hoy hay solecito.",
+              "tr": {
+                "hu": "Ma kellemesen süt a nap.",
+                "en": "It is pleasantly sunny today.",
+                "es": "Hoy hay solecito.",
+                "de": "Heute scheint angenehm die Sonne."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Gyors próba: a szó vége dönt. Egy szótag: -ecito / -ecita. Egyébként -o, -a, -l: -ito / -ita, és -n, -r, -é: -cito / -cita. Ha a végződés előtt c, g vagy z áll, a helyesírás igazodik: qu, gu, c. Mexikóban kérésnél és kedveskedéskor használd a kicsinyítőt, a mérethez nem is kell.",
+        "en": "Quick test: the end of the word decides. One syllable: -ecito / -ecita. Otherwise -o, -a, -l: -ito / -ita, and -n, -r, -é: -cito / -cita. If a c, g or z comes before the ending, the spelling adjusts: qu, gu, c. In Mexico use a diminutive for requests and for warmth; it does not need to be about size.",
+        "es": "Prueba rápida: decide el final de la palabra. Una sílaba: -ecito / -ecita. Si no, -o, -a, -l: -ito / -ita, y -n, -r, -é: -cito / -cita. Si antes de la terminación hay c, g o z, la ortografía se ajusta: qu, gu, c. En México usa el diminutivo para pedir y para dar cariño; no hace falta que hable de tamaño.",
+        "de": "Schnelltest: Das Wortende entscheidet. Eine Silbe: -ecito / -ecita. Sonst -o, -a, -l: -ito / -ita und -n, -r, -é: -cito / -cita. Steht vor der Endung c, g oder z, passt sich die Schreibung an: qu, gu, c. In Mexiko benutzt man die Verkleinerungsform bei Bitten und für Zuneigung; es muss nicht um die Größe gehen."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "Ez a lecke a kicsinyítő végződéseket tanítja. A spanyolban a szó végére kis végződést teszel, és így lesz a házból házikó, a kávéból kávécska. Három fő végződés van. Az o vagy a végű szavaknál a magánhangzó elmarad, és egy i betűvel kezdődő végződés jön. Az n, r vagy hangsúlyos é végű szavak a végződés előtt c-t kapnak, az egy szótagú szavak pedig még egy e-t is a c elé. Ha a végződés előtt c, g vagy z áll, a helyesírás változik, mert a hangnak meg kell maradnia. Mexikóban a kicsinyítő sokszor nem a méretről szól, hanem a hangnemről: kérésnél lágyít és udvariasabbá tesz, a családban kedvességet fejez ki. Külön figyelj arra a szóra, amelyik a most jelentésű szóból lesz: az igeidő dönti el, hogy éppen most, az imént vagy mindjárt jelent.",
+    "en": "This lesson teaches the diminutive endings. In Spanish you put a small ending on a word, so house becomes little house and coffee becomes a friendly little coffee. There are three main endings. With words that end in o or a, the last vowel drops and an ending that starts with i comes in its place. Words that end in n, r or a stressed e take a c in front of that ending, and one syllable words get an extra e before the c. When the letter before the ending is c, g or z, the spelling changes, because the sound has to stay the same. In Mexico a diminutive is often about tone rather than size: in a request it softens and sounds more polite, and in the family it shows affection. Watch the word that comes from the word for now: the verb tense decides whether it means right now, a moment ago or in a moment.",
+    "es": "Esta lección enseña las terminaciones del diminutivo. En español se añade una terminación pequeña al final de la palabra: de casa sale casita y de café sale cafecito. Hay tres terminaciones principales. En las palabras que terminan en o o en a se quita la vocal y se añade ito o ita. Las palabras que terminan en n, en r o en é acentuada llevan cito o cita, y las de una sola sílaba llevan ecito o ecita. Si antes de la terminación hay una c, una g o una z, cambia la ortografía, porque el sonido debe mantenerse. En México el diminutivo suele ser cuestión de tono más que de tamaño: en una petición suaviza y suena más cortés, y en la familia muestra cariño. Presta atención a ahorita: el tiempo del verbo decide si significa ahora mismo, hace un momento o dentro de un momento.",
+    "de": "Diese Lektion zeigt die Endungen der Verkleinerungsform. Im Spanischen hängt man an ein Wort eine kleine Endung, aus Haus wird Häuschen und aus Kaffee ein freundliches Käffchen. Es gibt drei Hauptendungen. Bei Wörtern auf o oder a fällt der Vokal weg, und eine Endung mit i kommt dazu. Wörter auf n, auf r oder auf betontes é bekommen vor dieser Endung ein c, und einsilbige Wörter bekommen vor dem c noch ein e. Steht vor der Endung ein c, ein g oder ein z, ändert sich die Schreibung, weil der Laut gleich bleiben muss. In Mexiko geht es bei der Verkleinerungsform oft um den Ton und nicht um die Größe: Bei einer Bitte macht sie weicher und höflicher, in der Familie zeigt sie Zuneigung. Achte auf das Wort, das aus dem Wort für jetzt entsteht: Die Zeit des Verbs entscheidet, ob es gerade jetzt, soeben oder gleich bedeutet."
+  },
+  "glossary": [
+    {
+      "word": "casita",
+      "gloss": {
+        "hu": "házikó, kis ház",
+        "en": "little house",
+        "es": "casa pequeña",
+        "de": "Häuschen"
+      }
+    },
+    {
+      "word": "juguito",
+      "gloss": {
+        "hu": "gyümölcslé (kedvesen)",
+        "en": "a little juice",
+        "es": "jugo, en diminutivo",
+        "de": "Saftchen"
+      }
+    },
+    {
+      "word": "cerquita",
+      "gloss": {
+        "hu": "egészen közel",
+        "en": "very close by",
+        "es": "muy cerca",
+        "de": "ganz in der Nähe"
+      }
+    },
+    {
+      "word": "poquito",
+      "gloss": {
+        "hu": "egy kicsit",
+        "en": "a little bit",
+        "es": "un poco, en diminutivo",
+        "de": "ein bisschen"
+      }
+    },
+    {
+      "word": "camioncito",
+      "gloss": {
+        "hu": "kis teherautó",
+        "en": "little truck",
+        "es": "camión pequeño",
+        "de": "kleiner Lastwagen"
+      }
+    },
+    {
+      "word": "pastelito",
+      "gloss": {
+        "hu": "kis sütemény",
+        "en": "little cake",
+        "es": "pastel pequeño",
+        "de": "Küchlein"
+      }
+    },
+    {
+      "word": "lucecita",
+      "gloss": {
+        "hu": "kis fény, lámpácska",
+        "en": "little light",
+        "es": "luz pequeña",
+        "de": "Lämpchen"
+      }
+    },
+    {
+      "word": "solecito",
+      "gloss": {
+        "hu": "kellemes napsütés",
+        "en": "gentle sunshine",
+        "es": "sol suave y agradable",
+        "de": "milder Sonnenschein"
+      }
+    },
+    {
+      "word": "momentito",
+      "gloss": {
+        "hu": "egy pillanat",
+        "en": "just a moment",
+        "es": "un momento, en tono amable",
+        "de": "ein Momentchen"
+      }
+    },
+    {
+      "word": "gatita",
+      "gloss": {
+        "hu": "kiscica (nőstény)",
+        "en": "little cat (female)",
+        "es": "gata pequeña",
+        "de": "Kätzchen (weiblich)"
+      }
+    },
+    {
+      "word": "gatito",
+      "gloss": {
+        "hu": "kiscica (hím)",
+        "en": "little cat, kitten",
+        "es": "gato pequeño",
+        "de": "Kätzchen"
+      }
+    },
+    {
+      "word": "perrito",
+      "gloss": {
+        "hu": "kiskutya",
+        "en": "puppy, little dog",
+        "es": "perro pequeño",
+        "de": "Hündchen"
+      }
+    },
+    {
+      "word": "perritas",
+      "gloss": {
+        "hu": "kiskutyák (nőnem)",
+        "en": "little dogs (feminine)",
+        "es": "perras pequeñas",
+        "de": "kleine Hündinnen"
+      }
+    },
+    {
+      "word": "ahorita",
+      "gloss": {
+        "hu": "most, mindjárt, az imént",
+        "en": "right now, in a moment, a moment ago",
+        "es": "ahora, enseguida o hace un momento",
+        "de": "jetzt, gleich oder soeben"
+      }
+    },
+    {
+      "word": "mesita",
+      "gloss": {
+        "hu": "kis asztal",
+        "en": "little table",
+        "es": "mesa pequeña",
+        "de": "Tischchen"
+      }
+    },
+    {
+      "word": "ratito",
+      "gloss": {
+        "hu": "egy kis idő",
+        "en": "a little while",
+        "es": "un rato corto",
+        "de": "Weilchen"
+      }
+    },
+    {
+      "word": "boquita",
+      "gloss": {
+        "hu": "szájacska",
+        "en": "little mouth",
+        "es": "boca pequeña",
+        "de": "Mündchen"
+      }
+    },
+    {
+      "word": "tacita",
+      "gloss": {
+        "hu": "csészécske",
+        "en": "little cup",
+        "es": "taza pequeña",
+        "de": "Tässchen"
+      }
+    },
+    {
+      "word": "amiguito",
+      "gloss": {
+        "hu": "kis barát",
+        "en": "little friend",
+        "es": "amigo pequeño",
+        "de": "kleiner Freund"
+      }
+    },
+    {
+      "word": "cafecito",
+      "gloss": {
+        "hu": "kávé (barátságosan)",
+        "en": "a coffee, friendly tone",
+        "es": "café, en tono amable",
+        "de": "Käffchen"
+      }
+    },
+    {
+      "word": "corazoncito",
+      "gloss": {
+        "hu": "szívecském",
+        "en": "little heart, darling",
+        "es": "corazón, en tono cariñoso",
+        "de": "Herzchen"
+      }
+    },
+    {
+      "word": "panecito",
+      "gloss": {
+        "hu": "kis zsemle",
+        "en": "small bread roll",
+        "es": "pan pequeño",
+        "de": "Brötchen"
+      }
+    },
+    {
+      "word": "florecita",
+      "gloss": {
+        "hu": "virágocska",
+        "en": "little flower",
+        "es": "flor pequeña",
+        "de": "Blümchen"
+      }
+    },
+    {
+      "word": "pececito",
+      "gloss": {
+        "hu": "halacska",
+        "en": "little fish",
+        "es": "pez pequeño",
+        "de": "Fischchen"
+      }
+    },
+    {
+      "word": "trenecito",
+      "gloss": {
+        "hu": "kis vonat",
+        "en": "little train",
+        "es": "tren pequeño",
+        "de": "kleiner Zug"
+      }
+    },
+    {
+      "word": "papelito",
+      "gloss": {
+        "hu": "papírfecni",
+        "en": "small piece of paper",
+        "es": "papel pequeño",
+        "de": "Zettelchen"
+      }
+    },
+    {
+      "word": "abuelita",
+      "gloss": {
+        "hu": "nagyi",
+        "en": "grandma",
+        "es": "abuela, con cariño",
+        "de": "Oma"
+      }
+    },
+    {
+      "word": "solito",
+      "gloss": {
+        "hu": "egyedül (kedvesen)",
+        "en": "by himself",
+        "es": "solo, en diminutivo",
+        "de": "ganz allein"
+      }
+    },
+    {
+      "word": "casacita",
+      "gloss": {
+        "hu": "nem létező alak (helyesen: casita)",
+        "en": "non-existent form (correctly: casita)",
+        "es": "forma inexistente (correcto: casita)",
+        "de": "nicht existierende Form (richtig: casita)"
+      }
+    },
+    {
+      "word": "casecita",
+      "gloss": {
+        "hu": "nem létező alak (helyesen: casita)",
+        "en": "non-existent form (correctly: casita)",
+        "es": "forma inexistente (correcto: casita)",
+        "de": "nicht existierende Form (richtig: casita)"
+      }
+    },
+    {
+      "word": "jugito",
+      "gloss": {
+        "hu": "nem létező alak (helyesen: juguito)",
+        "en": "non-existent form (correctly: juguito)",
+        "es": "forma inexistente (correcto: juguito)",
+        "de": "nicht existierende Form (richtig: juguito)"
+      }
+    },
+    {
+      "word": "jugocito",
+      "gloss": {
+        "hu": "nem létező alak (helyesen: juguito)",
+        "en": "non-existent form (correctly: juguito)",
+        "es": "forma inexistente (correcto: juguito)",
+        "de": "nicht existierende Form (richtig: juguito)"
+      }
+    },
+    {
+      "word": "cercita",
+      "gloss": {
+        "hu": "nem létező alak (helyesen: cerquita)",
+        "en": "non-existent form (correctly: cerquita)",
+        "es": "forma inexistente (correcto: cerquita)",
+        "de": "nicht existierende Form (richtig: cerquita)"
+      }
+    },
+    {
+      "word": "cercacita",
+      "gloss": {
+        "hu": "nem létező alak (helyesen: cerquita)",
+        "en": "non-existent form (correctly: cerquita)",
+        "es": "forma inexistente (correcto: cerquita)",
+        "de": "nicht existierende Form (richtig: cerquita)"
+      }
+    },
+    {
+      "word": "camionito",
+      "gloss": {
+        "hu": "nem létező alak (helyesen: camioncito)",
+        "en": "non-existent form (correctly: camioncito)",
+        "es": "forma inexistente (correcto: camioncito)",
+        "de": "nicht existierende Form (richtig: camioncito)"
+      }
+    },
+    {
+      "word": "camionecito",
+      "gloss": {
+        "hu": "nem létező alak (helyesen: camioncito)",
+        "en": "non-existent form (correctly: camioncito)",
+        "es": "forma inexistente (correcto: camioncito)",
+        "de": "nicht existierende Form (richtig: camioncito)"
+      }
+    },
+    {
+      "word": "pastelcito",
+      "gloss": {
+        "hu": "nem létező alak (helyesen: pastelito)",
+        "en": "non-existent form (correctly: pastelito)",
+        "es": "forma inexistente (correcto: pastelito)",
+        "de": "nicht existierende Form (richtig: pastelito)"
+      }
+    },
+    {
+      "word": "pastelecito",
+      "gloss": {
+        "hu": "nem létező alak (helyesen: pastelito)",
+        "en": "non-existent form (correctly: pastelito)",
+        "es": "forma inexistente (correcto: pastelito)",
+        "de": "nicht existierende Form (richtig: pastelito)"
+      }
+    },
+    {
+      "word": "luzcita",
+      "gloss": {
+        "hu": "nem létező alak (helyesen: lucecita)",
+        "en": "non-existent form (correctly: lucecita)",
+        "es": "forma inexistente (correcto: lucecita)",
+        "de": "nicht existierende Form (richtig: lucecita)"
+      }
+    },
+    {
+      "word": "luzecita",
+      "gloss": {
+        "hu": "nem létező alak (helyesen: lucecita)",
+        "en": "non-existent form (correctly: lucecita)",
+        "es": "forma inexistente (correcto: lucecita)",
+        "de": "nicht existierende Form (richtig: lucecita)"
+      }
+    },
+    {
+      "word": "solcito",
+      "gloss": {
+        "hu": "nem létező alak (helyesen: solecito)",
+        "en": "non-existent form (correctly: solecito)",
+        "es": "forma inexistente (correcto: solecito)",
+        "de": "nicht existierende Form (richtig: solecito)"
+      }
+    },
+    {
+      "word": "soleito",
+      "gloss": {
+        "hu": "nem létező alak (helyesen: solecito)",
+        "en": "non-existent form (correctly: solecito)",
+        "es": "forma inexistente (correcto: solecito)",
+        "de": "nicht existierende Form (richtig: solecito)"
+      }
+    },
+    {
+      "word": "momentocito",
+      "gloss": {
+        "hu": "nem létező alak (helyesen: momentito)",
+        "en": "non-existent form (correctly: momentito)",
+        "es": "forma inexistente (correcto: momentito)",
+        "de": "nicht existierende Form (richtig: momentito)"
+      }
+    },
+    {
+      "word": "momentecito",
+      "gloss": {
+        "hu": "nem létező alak (helyesen: momentito)",
+        "en": "non-existent form (correctly: momentito)",
+        "es": "forma inexistente (correcto: momentito)",
+        "de": "nicht existierende Form (richtig: momentito)"
+      }
+    },
+    {
+      "word": "gatecita",
+      "gloss": {
+        "hu": "nem létező alak (helyesen: gatita)",
+        "en": "non-existent form (correctly: gatita)",
+        "es": "forma inexistente (correcto: gatita)",
+        "de": "nicht existierende Form (richtig: gatita)"
+      }
+    },
+    {
+      "word": "poquecito",
+      "gloss": {
+        "hu": "nem létező alak (helyesen: poquito)",
+        "en": "non-existent form (correctly: poquito)",
+        "es": "forma inexistente (correcto: poquito)",
+        "de": "nicht existierende Form (richtig: poquito)"
+      }
+    },
+    {
+      "word": "pocoito",
+      "gloss": {
+        "hu": "nem létező alak (helyesen: poquito)",
+        "en": "non-existent form (correctly: poquito)",
+        "es": "forma inexistente (correcto: poquito)",
+        "de": "nicht existierende Form (richtig: poquito)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "dim-01",
+      "sentence": "Mis abuelos viven en una ___ en Puebla.",
+      "options": [
+        "casita",
+        "casacita",
+        "casecita"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A casa -a-ra végződik, ezért az -a elmarad, és -ita jön: casa → casita. A kicsinyítő megtartja a nemet: una casita.",
+        "en": "Casa ends in -a, so the -a drops and -ita comes: casa → casita. The diminutive keeps the gender: una casita.",
+        "es": "Casa termina en -a, así que se quita la -a y se añade -ita: casa → casita. El diminutivo conserva el género: una casita.",
+        "de": "Casa endet auf -a, also fällt das -a weg und -ita kommt dazu: casa → casita. Die Verkleinerungsform behält das Geschlecht: una casita."
+      },
+      "wrong": {
+        "casacita": {
+          "hu": "Casacita: a casa után az -a nem marad meg a végződés előtt, és a -cita az -n, -r és hangsúlyos -é végű szavaké. Helyesen: Mis abuelos viven en una casita en Puebla.",
+          "en": "Casacita: the -a of casa does not stay before the ending, and -cita is for words ending in -n, -r or a stressed -é. Correct: Mis abuelos viven en una casita en Puebla.",
+          "es": "Casacita: la -a de casa no se queda antes de la terminación, y -cita es para palabras en -n, -r o -é acentuada. Correcto: Mis abuelos viven en una casita en Puebla.",
+          "de": "Casacita: das -a von casa bleibt vor der Endung nicht stehen, und -cita ist für Wörter auf -n, -r oder betontes -é. Richtig: Mis abuelos viven en una casita en Puebla."
+        },
+        "casecita": {
+          "hu": "Casecita: az -ecita az egy szótagú szavaknál jön (pan, sol, flor), a casa viszont két szótagú és -a-ra végződik, ezért -ita jön. Helyesen: Mis abuelos viven en una casita en Puebla.",
+          "en": "Casecita: -ecita comes with one-syllable words (pan, sol, flor), but casa has two syllables and ends in -a, so -ita comes. Correct: Mis abuelos viven en una casita en Puebla.",
+          "es": "Casecita: -ecita va con palabras de una sílaba (pan, sol, flor), pero casa tiene dos sílabas y termina en -a, así que va -ita. Correcto: Mis abuelos viven en una casita en Puebla.",
+          "de": "Casecita: -ecita kommt bei einsilbigen Wörtern (pan, sol, flor), aber casa hat zwei Silben und endet auf -a, also kommt -ita. Richtig: Mis abuelos viven en una casita en Puebla."
+        }
+      },
+      "examples": [
+        "Mi mamá quiere una casita con jardín.",
+        "Mis papás tienen una casita en Puebla."
+      ]
+    },
+    {
+      "id": "dim-02",
+      "sentence": "¿Quieres un ___ de naranja?",
+      "options": [
+        "juguito",
+        "jugito",
+        "jugocito"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A jugo -o-ra végződik, ezért az -o elmarad, és -ito jön. A g-nek meg kell tartania a kemény hangját, ezért az i előtt gu lesz: jugo → juguito.",
+        "en": "Jugo ends in -o, so the -o drops and -ito comes. The g has to keep its hard sound, so it becomes gu before i: jugo → juguito.",
+        "es": "Jugo termina en -o: se quita la -o y se añade -ito. La g debe conservar su sonido fuerte, por eso delante de i se escribe gu: jugo → juguito.",
+        "de": "Jugo endet auf -o, also fällt das -o weg und -ito kommt dazu. Das g muss seinen harten Laut behalten, deshalb wird vor i daraus gu: jugo → juguito."
+      },
+      "wrong": {
+        "jugito": {
+          "hu": "Jugito: a gi spanyolul úgy hangzik, mint a „hi”, a g j-hang lenne, nem g-hang. Ezért gu kell az i előtt. Helyesen: ¿Quieres un juguito de naranja?",
+          "en": "Jugito: gi is pronounced like „hi” in Spanish, the g would turn into the j sound. So you need gu before i. Correct: ¿Quieres un juguito de naranja?",
+          "es": "Jugito: gi se pronuncia como „ji”, la g sería el sonido de la j. Por eso hace falta gu delante de i. Correcto: ¿Quieres un juguito de naranja?",
+          "de": "Jugito: gi wird im Spanischen wie „hi” gesprochen, das g würde zum j-Laut. Deshalb braucht man vor i ein gu. Richtig: ¿Quieres un juguito de naranja?"
+        },
+        "jugocito": {
+          "hu": "Jugocito: a -cito az -n, -r és hangsúlyos -é végű szavaké; a jugo -o-ra végződik, ott az -o elmarad. Helyesen: ¿Quieres un juguito de naranja?",
+          "en": "Jugocito: -cito is for words ending in -n, -r or a stressed -é; jugo ends in -o, where the -o drops. Correct: ¿Quieres un juguito de naranja?",
+          "es": "Jugocito: -cito es para palabras en -n, -r o -é acentuada; jugo termina en -o, y ahí se quita la -o. Correcto: ¿Quieres un juguito de naranja?",
+          "de": "Jugocito: -cito ist für Wörter auf -n, -r oder betontes -é; jugo endet auf -o, und dort fällt das -o weg. Richtig: ¿Quieres un juguito de naranja?"
+        }
+      },
+      "examples": [
+        "Mi hijo toma un juguito en la mañana.",
+        "Quiero un juguito de manzana, por favor."
+      ]
+    },
+    {
+      "id": "dim-03",
+      "sentence": "Mi trabajo queda muy ___ de mi casa.",
+      "options": [
+        "cerquita",
+        "cercita",
+        "cercacita"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A cerca -a-ra végződik, ezért az -a elmarad, és -ita jön. Az i előtt a c s-nek hangzana, ezért qu lesz, hogy megmaradjon a k hang: cerca → cerquita.",
+        "en": "Cerca ends in -a, so the -a drops and -ita comes. Before i the c would sound like s, so it becomes qu to keep the k sound: cerca → cerquita.",
+        "es": "Cerca termina en -a: se quita la -a y se añade -ita. Delante de i la c sonaría como s, por eso se escribe qu y se conserva el sonido k: cerca → cerquita.",
+        "de": "Cerca endet auf -a, also fällt das -a weg und -ita kommt dazu. Vor i würde das c wie s klingen, deshalb wird daraus qu und der k-Laut bleibt: cerca → cerquita."
+      },
+      "wrong": {
+        "cercita": {
+          "hu": "Cercita: a ci Latin-Amerikában „szi”-nek hangzik, nem „ki”-nek, így megváltozna a hang. c → qu kell. Helyesen: Mi trabajo queda muy cerquita de mi casa.",
+          "en": "Cercita: in Latin America ci sounds like „si”, not „ki”, so the sound would change. You need c → qu. Correct: Mi trabajo queda muy cerquita de mi casa.",
+          "es": "Cercita: en América Latina ci suena como „si”, no como „ki”, y el sonido cambiaría. Hace falta c → qu. Correcto: Mi trabajo queda muy cerquita de mi casa.",
+          "de": "Cercita: In Lateinamerika klingt ci wie „si”, nicht wie „ki”, der Laut würde sich ändern. Man braucht c → qu. Richtig: Mi trabajo queda muy cerquita de mi casa."
+        },
+        "cercacita": {
+          "hu": "Cercacita: a cerca -a-ra végződik, az -a elmarad; a -cita végződés az -n, -r és hangsúlyos -é végű szavaké. Helyesen: Mi trabajo queda muy cerquita de mi casa.",
+          "en": "Cercacita: cerca ends in -a, and the -a drops; the ending -cita is for words ending in -n, -r or a stressed -é. Correct: Mi trabajo queda muy cerquita de mi casa.",
+          "es": "Cercacita: cerca termina en -a y se quita la -a; la terminación -cita es para palabras en -n, -r o -é acentuada. Correcto: Mi trabajo queda muy cerquita de mi casa.",
+          "de": "Cercacita: cerca endet auf -a, und das -a fällt weg; die Endung -cita ist für Wörter auf -n, -r oder betontes -é. Richtig: Mi trabajo queda muy cerquita de mi casa."
+        }
+      },
+      "examples": [
+        "Mi oficina está muy cerquita.",
+        "El banco queda cerquita de aquí."
+      ]
+    },
+    {
+      "id": "dim-04",
+      "sentence": "Mi hijo juega con un ___ rojo.",
+      "options": [
+        "camioncito",
+        "camionito",
+        "camionecito"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A camión -n-re végződik, ezért -cito jön, és a hangsúlyjel eltűnik: camión → camioncito. Az -n, -r végű szavak kapják a -cito / -cita végződést.",
+        "en": "Camión ends in -n, so -cito comes and the accent mark disappears: camión → camioncito. Words ending in -n or -r take -cito / -cita.",
+        "es": "Camión termina en -n, así que va -cito y desaparece la tilde: camión → camioncito. Las palabras en -n o -r llevan -cito / -cita.",
+        "de": "Camión endet auf -n, also kommt -cito und der Akzent verschwindet: camión → camioncito. Wörter auf -n oder -r bekommen -cito / -cita."
+      },
+      "wrong": {
+        "camionito": {
+          "hu": "Camionito: az -n végű szó nem kap sima -ito-t, ott -cito kell. Helyesen: Mi hijo juega con un camioncito rojo.",
+          "en": "Camionito: a word ending in -n does not take plain -ito, it needs -cito. Correct: Mi hijo juega con un camioncito rojo.",
+          "es": "Camionito: una palabra en -n no lleva -ito sin más, ahí hace falta -cito. Correcto: Mi hijo juega con un camioncito rojo.",
+          "de": "Camionito: ein Wort auf -n bekommt nicht einfach -ito, dort braucht man -cito. Richtig: Mi hijo juega con un camioncito rojo."
+        },
+        "camionecito": {
+          "hu": "Camionecito: az -ecito az egy szótagú szavaknál jön, mint a pan vagy a sol; a camión két szótagú és -n-re végződik, ezért -cito jön. Helyesen: Mi hijo juega con un camioncito rojo.",
+          "en": "Camionecito: -ecito comes with one-syllable words like pan or sol; camión has two syllables and ends in -n, so -cito comes. Correct: Mi hijo juega con un camioncito rojo.",
+          "es": "Camionecito: -ecito va con palabras de una sílaba como pan o sol; camión tiene dos sílabas y termina en -n, así que va -cito. Correcto: Mi hijo juega con un camioncito rojo.",
+          "de": "Camionecito: -ecito kommt bei einsilbigen Wörtern wie pan oder sol; camión hat zwei Silben und endet auf -n, also kommt -cito. Richtig: Mi hijo juega con un camioncito rojo."
+        }
+      },
+      "examples": [
+        "Compré un camioncito para mi hijo.",
+        "Ana tiene un camioncito amarillo."
+      ]
+    },
+    {
+      "id": "dim-05",
+      "sentence": "Quiero un ___ de chocolate con mi café.",
+      "options": [
+        "pastelito",
+        "pastelcito",
+        "pastelecito"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A pastel kétszótagú és -l-re végződik, ezért simán -ito jön: pastel → pastelito.",
+        "en": "Pastel has two syllables and ends in -l, so plain -ito comes: pastel → pastelito.",
+        "es": "Pastel tiene dos sílabas y termina en -l, por eso va -ito sin más: pastel → pastelito.",
+        "de": "Pastel hat zwei Silben und endet auf -l, deshalb kommt einfach -ito: pastel → pastelito."
+      },
+      "wrong": {
+        "pastelcito": {
+          "hu": "Pastelcito: a -cito az -n, -r és hangsúlyos -é végű szavaké, a kétszótagú -l végű szavak után sima -ito jön. Helyesen: Quiero un pastelito de chocolate con mi café.",
+          "en": "Pastelcito: -cito is for words ending in -n, -r or a stressed -é; after a two-syllable word ending in -l comes plain -ito. Correct: Quiero un pastelito de chocolate con mi café.",
+          "es": "Pastelcito: -cito es para palabras en -n, -r o -é acentuada; después de una palabra de dos sílabas en -l va -ito sin más. Correcto: Quiero un pastelito de chocolate con mi café.",
+          "de": "Pastelcito: -cito ist für Wörter auf -n, -r oder betontes -é; nach einem zweisilbigen Wort auf -l kommt einfach -ito. Richtig: Quiero un pastelito de chocolate con mi café."
+        },
+        "pastelecito": {
+          "hu": "Pastelecito: az -ecito az egy szótagú szavaknál jön, mint a pan vagy a sol; a pastel két szótagú, -l-re végződik, ezért -ito jön. Helyesen: Quiero un pastelito de chocolate con mi café.",
+          "en": "Pastelecito: -ecito comes with one-syllable words like pan or sol; pastel has two syllables and ends in -l, so -ito comes. Correct: Quiero un pastelito de chocolate con mi café.",
+          "es": "Pastelecito: -ecito va con palabras de una sílaba como pan o sol; pastel tiene dos sílabas y termina en -l, así que va -ito. Correcto: Quiero un pastelito de chocolate con mi café.",
+          "de": "Pastelecito: -ecito kommt bei einsilbigen Wörtern wie pan oder sol; pastel hat zwei Silben und endet auf -l, also kommt -ito. Richtig: Quiero un pastelito de chocolate con mi café."
+        }
+      },
+      "examples": [
+        "Mi mamá hace un pastelito para mí.",
+        "¿Quieres un pastelito de fresa?"
+      ]
+    },
+    {
+      "id": "dim-06",
+      "sentence": "Hay una ___ roja en la ventana.",
+      "options": [
+        "lucecita",
+        "luzcita",
+        "luzecita"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A luz egy szótagú szó, ezért -ecita jön. A z e és i előtt c-re változik: luz → lucecita.",
+        "en": "Luz has one syllable, so -ecita comes. The z becomes c before e and i: luz → lucecita.",
+        "es": "Luz tiene una sola sílaba, por eso va -ecita. La z cambia a c delante de e y de i: luz → lucecita.",
+        "de": "Luz hat nur eine Silbe, deshalb kommt -ecita. Das z wird vor e und i zu c: luz → lucecita."
+      },
+      "wrong": {
+        "luzcita": {
+          "hu": "Luzcita: az egy szótagú szavak -ecita végződést kapnak, és a z c-re változik. Helyesen: Hay una lucecita roja en la ventana.",
+          "en": "Luzcita: one-syllable words take -ecita, and the z becomes c. Correct: Hay una lucecita roja en la ventana.",
+          "es": "Luzcita: las palabras de una sílaba llevan -ecita, y la z cambia a c. Correcto: Hay una lucecita roja en la ventana.",
+          "de": "Luzcita: einsilbige Wörter bekommen -ecita, und das z wird zu c. Richtig: Hay una lucecita roja en la ventana."
+        },
+        "luzecita": {
+          "hu": "Luzecita: a végződés jó, de a z e előtt c-re változik, ezért lucecita lesz. Helyesen: Hay una lucecita roja en la ventana.",
+          "en": "Luzecita: the ending is right, but the z becomes c before e, so it is lucecita. Correct: Hay una lucecita roja en la ventana.",
+          "es": "Luzecita: la terminación es correcta, pero la z cambia a c delante de e, así que es lucecita. Correcto: Hay una lucecita roja en la ventana.",
+          "de": "Luzecita: Die Endung stimmt, aber das z wird vor e zu c, also lucecita. Richtig: Hay una lucecita roja en la ventana."
+        }
+      },
+      "examples": [
+        "Veo una lucecita en la calle.",
+        "Mi hija duerme con una lucecita."
+      ]
+    },
+    {
+      "id": "dim-07",
+      "sentence": "Hoy hay un ___ muy rico.",
+      "options": [
+        "solecito",
+        "solcito",
+        "soleito"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A sol egy szótagú szó, ezért -ecito jön: sol → solecito. A solecito kellemes, enyhe napsütés.",
+        "en": "Sol has one syllable, so -ecito comes: sol → solecito. A solecito is gentle, pleasant sunshine.",
+        "es": "Sol tiene una sola sílaba, por eso va -ecito: sol → solecito. Un solecito es un sol suave y agradable.",
+        "de": "Sol hat nur eine Silbe, deshalb kommt -ecito: sol → solecito. Ein solecito ist angenehme, milde Sonne."
+      },
+      "wrong": {
+        "solcito": {
+          "hu": "Solcito: az egy szótagú szavaknál a végződés -ecito, nem -cito. Helyesen: Hoy hay un solecito muy rico.",
+          "en": "Solcito: with one-syllable words the ending is -ecito, not -cito. Correct: Hoy hay un solecito muy rico.",
+          "es": "Solcito: con palabras de una sílaba la terminación es -ecito, no -cito. Correcto: Hoy hay un solecito muy rico.",
+          "de": "Solcito: bei einsilbigen Wörtern lautet die Endung -ecito, nicht -cito. Richtig: Hoy hay un solecito muy rico."
+        },
+        "soleito": {
+          "hu": "Soleito: a végződésből hiányzik a c; -ecito a helyes. Helyesen: Hoy hay un solecito muy rico.",
+          "en": "Soleito: the c is missing from the ending; it is -ecito. Correct: Hoy hay un solecito muy rico.",
+          "es": "Soleito: a la terminación le falta la c; es -ecito. Correcto: Hoy hay un solecito muy rico.",
+          "de": "Soleito: In der Endung fehlt das c; es heißt -ecito. Richtig: Hoy hay un solecito muy rico."
+        }
+      },
+      "examples": [
+        "Me gusta caminar con el solecito.",
+        "Hace frío, pero hay solecito."
+      ]
+    },
+    {
+      "id": "dim-08",
+      "sentence": "Espere un ___, por favor.",
+      "options": [
+        "momentito",
+        "momentocito",
+        "momentecito"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A momento -o-ra végződik, ezért az -o elmarad, és -ito jön: momento → momentito. Kérésnél a momentito lágyabb és udvariasabb a puszta momentónál.",
+        "en": "Momento ends in -o, so the -o drops and -ito comes: momento → momentito. In a request momentito is softer and more polite than plain momento.",
+        "es": "Momento termina en -o: se quita la -o y se añade -ito: momento → momentito. En una petición, momentito es más suave y cortés que momento a secas.",
+        "de": "Momento endet auf -o, also fällt das -o weg und -ito kommt dazu: momento → momentito. Bei einer Bitte ist momentito weicher und höflicher als das bloße momento."
+      },
+      "wrong": {
+        "momentocito": {
+          "hu": "Momentocito: a -cito az -n, -r és hangsúlyos -é végű szavaké; a momento -o-ra végződik, ott az -o elmarad. Helyesen: Espere un momentito, por favor.",
+          "en": "Momentocito: -cito is for words ending in -n, -r or a stressed -é; momento ends in -o, where the -o drops. Correct: Espere un momentito, por favor.",
+          "es": "Momentocito: -cito es para palabras en -n, -r o -é acentuada; momento termina en -o, y ahí se quita la -o. Correcto: Espere un momentito, por favor.",
+          "de": "Momentocito: -cito ist für Wörter auf -n, -r oder betontes -é; momento endet auf -o, und dort fällt das -o weg. Richtig: Espere un momentito, por favor."
+        },
+        "momentecito": {
+          "hu": "Momentecito: az -ecito az egy szótagú szavaknál jön, mint a pan vagy a sol; a momento háromszótagú és -o-ra végződik, ezért -ito jön. Helyesen: Espere un momentito, por favor.",
+          "en": "Momentecito: -ecito comes with one-syllable words like pan or sol; momento has three syllables and ends in -o, so -ito comes. Correct: Espere un momentito, por favor.",
+          "es": "Momentecito: -ecito va con palabras de una sílaba como pan o sol; momento tiene tres sílabas y termina en -o, así que va -ito. Correcto: Espere un momentito, por favor.",
+          "de": "Momentecito: -ecito kommt bei einsilbigen Wörtern wie pan oder sol; momento hat drei Silben und endet auf -o, also kommt -ito. Richtig: Espere un momentito, por favor."
+        }
+      },
+      "examples": [
+        "¿Me esperas un momentito?",
+        "Un momentito, ya voy."
+      ]
+    },
+    {
+      "id": "dim-09",
+      "sentence": "Mi vecina tiene una ___ negra.",
+      "options": [
+        "gatita",
+        "gatito",
+        "gatecita"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az una nőnemű, ezért a kicsinyítő is nőnemű: gata → gatita. A kicsinyítő megtartja az alapszó nemét: un gatito, una gatita.",
+        "en": "Una is feminine, so the diminutive is feminine too: gata → gatita. The diminutive keeps the gender of the base word: un gatito, una gatita.",
+        "es": "Una es femenino, por eso el diminutivo también: gata → gatita. El diminutivo conserva el género de la palabra base: un gatito, una gatita.",
+        "de": "Una ist feminin, also ist auch die Verkleinerungsform feminin: gata → gatita. Sie behält das Geschlecht des Grundworts: un gatito, una gatita."
+      },
+      "wrong": {
+        "gatito": {
+          "hu": "Gatito: hímnemű alak (un gatito negro). Itt az una és a negra nőnemet kér, ezért gatita. Helyesen: Mi vecina tiene una gatita negra.",
+          "en": "Gatito: a masculine form (un gatito negro). Here una and negra ask for the feminine, so gatita. Correct: Mi vecina tiene una gatita negra.",
+          "es": "Gatito: forma masculina (un gatito negro). Aquí una y negra piden femenino, por eso gatita. Correcto: Mi vecina tiene una gatita negra.",
+          "de": "Gatito: eine maskuline Form (un gatito negro). Hier verlangen una und negra das Femininum, also gatita. Richtig: Mi vecina tiene una gatita negra."
+        },
+        "gatecita": {
+          "hu": "Gatecita: a gata két szótagú, -a végű szó, ezért az -a elmarad, és -ita jön, nem -ecita. Helyesen: Mi vecina tiene una gatita negra.",
+          "en": "Gatecita: gata has two syllables and ends in -a, so the -a drops and -ita comes, not -ecita. Correct: Mi vecina tiene una gatita negra.",
+          "es": "Gatecita: gata tiene dos sílabas y termina en -a, así que se quita la -a y va -ita, no -ecita. Correcto: Mi vecina tiene una gatita negra.",
+          "de": "Gatecita: gata hat zwei Silben und endet auf -a, also fällt das -a weg und -ita kommt dazu, nicht -ecita. Richtig: Mi vecina tiene una gatita negra."
+        }
+      },
+      "examples": [
+        "La gatita duerme en la cama.",
+        "Mi hijo tiene un gatito blanco."
+      ]
+    },
+    {
+      "id": "dim-10",
+      "sentence": "En el parque hay muchos ___ jugando.",
+      "options": [
+        "perritos",
+        "perrito",
+        "perritas"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A muchos többes számú hímnemű alakot kér: perro → perrito → perritos. A kicsinyítő is többes számba kerül, ha a főnév többes.",
+        "en": "Muchos asks for a masculine plural: perro → perrito → perritos. The diminutive goes into the plural too when the noun is plural.",
+        "es": "Muchos pide un plural masculino: perro → perrito → perritos. El diminutivo también va en plural cuando el sustantivo es plural.",
+        "de": "Muchos verlangt einen maskulinen Plural: perro → perrito → perritos. Auch die Verkleinerungsform steht im Plural, wenn das Nomen im Plural steht."
+      },
+      "wrong": {
+        "perrito": {
+          "hu": "Perrito: egyes szám, a muchos viszont többest kér. Helyesen: En el parque hay muchos perritos jugando.",
+          "en": "Perrito: singular, but muchos asks for the plural. Correct: En el parque hay muchos perritos jugando.",
+          "es": "Perrito: singular, pero muchos pide plural. Correcto: En el parque hay muchos perritos jugando.",
+          "de": "Perrito: Singular, aber muchos verlangt den Plural. Richtig: En el parque hay muchos perritos jugando."
+        },
+        "perritas": {
+          "hu": "Perritas: nőnemű többes szám, a muchos viszont hímnemű. Nőnemű csoportnál muchas perritas lenne. Helyesen: En el parque hay muchos perritos jugando.",
+          "en": "Perritas: a feminine plural, but muchos is masculine. For a feminine group it would be muchas perritas. Correct: En el parque hay muchos perritos jugando.",
+          "es": "Perritas: plural femenino, pero muchos es masculino. Para un grupo femenino sería muchas perritas. Correcto: En el parque hay muchos perritos jugando.",
+          "de": "Perritas: ein feminines Plural, aber muchos ist maskulin. Für eine weibliche Gruppe hieße es muchas perritas. Richtig: En el parque hay muchos perritos jugando."
+        }
+      },
+      "examples": [
+        "Mis hijos quieren dos perritos.",
+        "Los perritos duermen en la cocina."
+      ]
+    },
+    {
+      "id": "dim-11",
+      "sentence": "¿Dónde está Ana? ___ estaba aquí.",
+      "options": [
+        "Ahorita",
+        "Ahora",
+        "Mañana"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az ahorita az ahora kicsinyítője. Mexikóban a múltra néző estaba mellett azt jelenti: az imént, nemrég (Ahorita estaba aquí: az imént még itt volt).",
+        "en": "Ahorita is the diminutive of ahora. In Mexico, next to the backward-looking estaba it means: a moment ago (Ahorita estaba aquí: she was here a moment ago).",
+        "es": "Ahorita es el diminutivo de ahora. En México, junto a estaba, que mira hacia atrás, significa: hace un momento (Ahorita estaba aquí).",
+        "de": "Ahorita ist die Verkleinerungsform von ahora. In Mexiko bedeutet es neben dem rückblickenden estaba: soeben (Ahorita estaba aquí: Sie war gerade noch hier)."
+      },
+      "wrong": {
+        "Ahora": {
+          "hu": "Ahora: a jelent nevezi meg (Ahora está aquí), az estaba viszont múltra néz vissza. Az imént jelentésre Mexikóban az ahorita áll. Helyesen: ¿Dónde está Ana? Ahorita estaba aquí.",
+          "en": "Ahora: it names the present (Ahora está aquí), but estaba looks back into the past. For a moment ago Mexican Spanish uses ahorita. Correct: ¿Dónde está Ana? Ahorita estaba aquí.",
+          "es": "Ahora: nombra el presente (Ahora está aquí), pero estaba mira hacia el pasado. Para hace un momento en México se dice ahorita. Correcto: ¿Dónde está Ana? Ahorita estaba aquí.",
+          "de": "Ahora: es nennt die Gegenwart (Ahora está aquí), aber estaba blickt in die Vergangenheit zurück. Für soeben sagt man in Mexiko ahorita. Richtig: ¿Dónde está Ana? Ahorita estaba aquí."
+        },
+        "Mañana": {
+          "hu": "Mañana: holnap, a jövő; az estaba viszont múltra utal. Helyesen: ¿Dónde está Ana? Ahorita estaba aquí.",
+          "en": "Mañana: tomorrow, the future; but estaba points to the past. Correct: ¿Dónde está Ana? Ahorita estaba aquí.",
+          "es": "Mañana: el futuro; pero estaba apunta al pasado. Correcto: ¿Dónde está Ana? Ahorita estaba aquí.",
+          "de": "Mañana: morgen, die Zukunft; estaba verweist aber auf die Vergangenheit. Richtig: ¿Dónde está Ana? Ahorita estaba aquí."
+        }
+      },
+      "examples": [
+        "Ahorita no puedo hablar.",
+        "Ahorita llegó mi hermano."
+      ]
+    },
+    {
+      "id": "dim-12",
+      "sentence": "Solo quiero un ___ de sopa, gracias.",
+      "options": [
+        "poquito",
+        "poquecito",
+        "pocoito"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A poco -o-ra végződik, ezért az -o elmarad, és -ito jön. A c i előtt qu-ra változik, hogy k hang maradjon: poco → poquito. A poquito kisebb és lágyabb mennyiség a puszta pocónál.",
+        "en": "Poco ends in -o, so the -o drops and -ito comes. The c becomes qu before i to keep the k sound: poco → poquito. Poquito is a smaller, softer quantity than plain poco.",
+        "es": "Poco termina en -o: se quita la -o y se añade -ito. La c cambia a qu delante de i para conservar el sonido k: poco → poquito. Poquito es una cantidad más pequeña y suave que poco a secas.",
+        "de": "Poco endet auf -o, also fällt das -o weg und -ito kommt dazu. Das c wird vor i zu qu, damit der k-Laut bleibt: poco → poquito. Poquito ist eine kleinere, weichere Menge als das bloße poco."
+      },
+      "wrong": {
+        "poquecito": {
+          "hu": "Poquecito: az -ecito az egy szótagú szavaknál jön, mint a pan vagy a sol; a poco két szótagú, -o-ra végződik: az -o elmarad, és a c qu lesz. Helyesen: Solo quiero un poquito de sopa, gracias.",
+          "en": "Poquecito: -ecito comes with one-syllable words like pan or sol; poco has two syllables and ends in -o: the -o drops and the c becomes qu. Correct: Solo quiero un poquito de sopa, gracias.",
+          "es": "Poquecito: -ecito va con palabras de una sílaba como pan o sol; poco tiene dos sílabas y termina en -o: se quita la -o y la c cambia a qu. Correcto: Solo quiero un poquito de sopa, gracias.",
+          "de": "Poquecito: -ecito kommt bei einsilbigen Wörtern wie pan oder sol; poco hat zwei Silben und endet auf -o: Das -o fällt weg und das c wird zu qu. Richtig: Solo quiero un poquito de sopa, gracias."
+        },
+        "pocoito": {
+          "hu": "Pocoito: az -o nem marad meg a végződés előtt, és a c-nek qu-ra kell változnia. Helyesen: Solo quiero un poquito de sopa, gracias.",
+          "en": "Pocoito: the -o does not stay before the ending, and the c has to change to qu. Correct: Solo quiero un poquito de sopa, gracias.",
+          "es": "Pocoito: la -o no se queda antes de la terminación, y la c tiene que cambiar a qu. Correcto: Solo quiero un poquito de sopa, gracias.",
+          "de": "Pocoito: das -o bleibt vor der Endung nicht stehen, und das c muss zu qu werden. Richtig: Solo quiero un poquito de sopa, gracias."
+        }
+      },
+      "examples": [
+        "¿Me das un poquito de agua?",
+        "Hablo un poquito de español."
+      ]
+    },
+    {
+      "kind": "match",
+      "id": "dim-match-01",
+      "pairs": [
+        {
+          "es": "casita",
+          "en": "little house"
+        },
+        {
+          "es": "poquito",
+          "en": "a little bit"
+        },
+        {
+          "es": "cerquita",
+          "en": "very close by"
+        },
+        {
+          "es": "momentito",
+          "en": "just a moment"
+        },
+        {
+          "es": "abuelita",
+          "en": "grandma, with affection"
+        },
+        {
+          "es": "cafecito",
+          "en": "a coffee, friendly tone"
+        }
+      ]
+    },
+    {
+      "id": "dim-form-01",
+      "kind": "form",
+      "verb": "forma",
+      "person": "Pon el vaso en la ___, por favor. (mesa + -ita)",
+      "answer": "mesita",
+      "table": "diminutivos-formas"
+    },
+    {
+      "id": "dim-form-02",
+      "kind": "form",
+      "verb": "forma",
+      "person": "Espérame un ___, ya casi termino. (rato + -ito)",
+      "answer": "ratito",
+      "table": "diminutivos-formas"
+    },
+    {
+      "id": "dim-form-03",
+      "kind": "form",
+      "verb": "forma",
+      "person": "Abre la ___, hijo, y come. (boca + -ita)",
+      "answer": "boquita",
+      "table": "diminutivos-formas"
+    },
+    {
+      "id": "dim-form-04",
+      "kind": "form",
+      "verb": "forma",
+      "person": "Quiero una ___ de té caliente. (taza + -ita)",
+      "answer": "tacita",
+      "table": "diminutivos-formas"
+    },
+    {
+      "id": "dim-form-05",
+      "kind": "form",
+      "verb": "forma",
+      "person": "Mi hijo tiene un ___ en la escuela. (amigo + -ito)",
+      "answer": "amiguito",
+      "table": "diminutivos-formas"
+    },
+    {
+      "id": "dim-form-06",
+      "kind": "form",
+      "verb": "forma",
+      "person": "Tomamos dos ___ en la mañana. (café + -cito, plural)",
+      "answer": "cafecitos",
+      "table": "diminutivos-formas"
+    },
+    {
+      "id": "dim-form-07",
+      "kind": "form",
+      "verb": "forma",
+      "person": "Ven, mi ___, dame un abrazo. (corazón + -cito)",
+      "answer": "corazoncito",
+      "table": "diminutivos-formas"
+    },
+    {
+      "id": "dim-form-08",
+      "kind": "form",
+      "verb": "forma",
+      "person": "Quiero un ___ con mantequilla. (pan + -ecito)",
+      "answer": "panecito",
+      "table": "diminutivos-formas"
+    },
+    {
+      "id": "dim-form-09",
+      "kind": "form",
+      "verb": "forma",
+      "person": "Compré una ___ para mi mamá. (flor + -ecita)",
+      "answer": "florecita",
+      "table": "diminutivos-formas"
+    },
+    {
+      "id": "dim-form-10",
+      "kind": "form",
+      "verb": "forma",
+      "person": "Mi hija tiene un ___ rojo. (pez + -ecito)",
+      "answer": "pececito",
+      "table": "diminutivos-formas"
+    },
+    {
+      "id": "dim-form-11",
+      "kind": "form",
+      "verb": "forma",
+      "person": "Mi hijo juega todo el día con su ___. (tren + -ecito)",
+      "answer": "trenecito",
+      "table": "diminutivos-formas"
+    },
+    {
+      "id": "dim-form-12",
+      "kind": "form",
+      "verb": "forma",
+      "person": "Dame un ___ y un lápiz, por favor. (papel + -ito)",
+      "answer": "papelito",
+      "table": "diminutivos-formas"
+    },
+    {
+      "kind": "why",
+      "id": "dim-why-01",
+      "es": "Mi abuelita me llama todos los días.",
+      "target": "abuelita",
+      "tr": {
+        "hu": "A nagymamám minden nap felhív.",
+        "en": "My grandma calls me every day.",
+        "es": "Mi abuelita me llama todos los días.",
+        "de": "Meine Oma ruft mich jeden Tag an."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "kis méret vagy kor: a dolog valóban kicsi",
+            "en": "small size or age: the thing really is small",
+            "es": "tamaño o edad pequeños: la cosa es de verdad pequeña",
+            "de": "kleine Größe oder junges Alter: die Sache ist wirklich klein"
+          },
+          "wrong": {
+            "hu": "Itt nem a méretről van szó: a nagymama nem kisebb, az -ita a szeretetet fejezi ki.",
+            "en": "This is not about size: a grandmother is not smaller, the -ita expresses affection.",
+            "es": "Aquí no se habla del tamaño: la abuela no es más pequeña, la terminación -ita expresa cariño.",
+            "de": "Hier geht es nicht um die Größe: Die Oma ist nicht kleiner, die Endung -ita drückt Zuneigung aus."
+          }
+        },
+        {
+          "text": {
+            "hu": "udvarias, lágyító hang kérésnél: a méret mellékes",
+            "en": "a polite, softening tone in a request: size does not matter",
+            "es": "un tono cortés y suave al pedir: el tamaño no importa",
+            "de": "ein höflicher, weicher Ton bei einer Bitte: die Größe spielt keine Rolle"
+          },
+          "wrong": {
+            "hu": "Nincs kérés, amit lágyítani kellene: a mondat azt mondja, hogy hív, és a szó a nagymama iránti szeretetet hordozza.",
+            "en": "There is no request to soften: the sentence says she calls, and the word carries affection for the grandmother.",
+            "es": "No hay ninguna petición que suavizar: la frase dice que llama, y la palabra lleva cariño hacia la abuela.",
+            "de": "Es gibt keine Bitte, die man abschwächen müsste: Der Satz sagt, dass sie anruft, und das Wort trägt Zuneigung zur Oma."
+          }
+        },
+        {
+          "text": {
+            "hu": "szeretet, kedveskedés valaki iránt",
+            "en": "affection toward someone",
+            "es": "cariño hacia alguien",
+            "de": "Zuneigung zu jemandem"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "dim-why-02",
+      "es": "¿Me da un cafecito, por favor?",
+      "target": "cafecito",
+      "tr": {
+        "hu": "Kaphatnék egy kávét, kérem?",
+        "en": "Could I have a coffee, please?",
+        "es": "¿Me da un cafecito, por favor?",
+        "de": "Könnte ich bitte einen Kaffee haben?"
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "szeretet, kedveskedés valaki iránt",
+            "en": "affection toward someone",
+            "es": "cariño hacia alguien",
+            "de": "Zuneigung zu jemandem"
+          },
+          "wrong": {
+            "hu": "Itt nincs szó szeretetről valaki iránt: ez egy kérés (me da, por favor), a -cito a hangot teszi barátságossá.",
+            "en": "There is no affection for anyone here: this is a request (me da, por favor), and -cito makes the tone friendly.",
+            "es": "Aquí no hay cariño hacia nadie: es una petición (me da, por favor), y -cito vuelve el tono amable.",
+            "de": "Hier geht es nicht um Zuneigung zu jemandem: Es ist eine Bitte (me da, por favor), und -cito macht den Ton freundlich."
+          }
+        },
+        {
+          "text": {
+            "hu": "kis méret vagy kor: a dolog valóban kicsi",
+            "en": "small size or age: the thing really is small",
+            "es": "tamaño o edad pequeños: la cosa es de verdad pequeña",
+            "de": "kleine Größe oder junges Alter: die Sache ist wirklich klein"
+          },
+          "wrong": {
+            "hu": "Ebben a mondatban nem a csésze méretéről van szó: a -cito a kérést teszi lágyabbá és udvariasabbá.",
+            "en": "In this sentence the size of the cup is not the point: -cito makes the request softer and more polite.",
+            "es": "En esta frase no se trata del tamaño de la taza: -cito vuelve la petición más suave y cortés.",
+            "de": "In diesem Satz geht es nicht um die Größe der Tasse: -cito macht die Bitte weicher und höflicher."
+          }
+        },
+        {
+          "text": {
+            "hu": "udvarias, lágyító hang kérésnél: a méret mellékes",
+            "en": "a polite, softening tone in a request: size does not matter",
+            "es": "un tono cortés y suave al pedir: el tamaño no importa",
+            "de": "ein höflicher, weicher Ton bei einer Bitte: die Größe spielt keine Rolle"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "dim-why-03",
+      "es": "Vivimos en una casita: solo tiene un cuarto.",
+      "target": "casita",
+      "tr": {
+        "hu": "Egy házikóban lakunk: csak egy szobája van.",
+        "en": "We live in a little house: it has only one room.",
+        "es": "Vivimos en una casita: solo tiene un cuarto.",
+        "de": "Wir wohnen in einem Häuschen: Es hat nur ein Zimmer."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "udvarias, lágyító hang kérésnél: a méret mellékes",
+            "en": "a polite, softening tone in a request: size does not matter",
+            "es": "un tono cortés y suave al pedir: el tamaño no importa",
+            "de": "ein höflicher, weicher Ton bei einer Bitte: die Größe spielt keine Rolle"
+          },
+          "wrong": {
+            "hu": "Nem kérsz semmit, amit lágyítani kellene: a mondat leírja a lakást, és a második fele (solo tiene un cuarto) a kis méretet adja meg.",
+            "en": "You are not asking for anything that needs softening: the sentence describes the home, and its second half (solo tiene un cuarto) gives the small size.",
+            "es": "No pides nada que haya que suavizar: la frase describe la vivienda, y su segunda parte (solo tiene un cuarto) da el tamaño pequeño.",
+            "de": "Du bittest um nichts, was man abschwächen müsste: Der Satz beschreibt die Wohnung, und seine zweite Hälfte (solo tiene un cuarto) nennt die kleine Größe."
+          }
+        },
+        {
+          "text": {
+            "hu": "kis méret vagy kor: a dolog valóban kicsi",
+            "en": "small size or age: the thing really is small",
+            "es": "tamaño o edad pequeños: la cosa es de verdad pequeña",
+            "de": "kleine Größe oder junges Alter: die Sache ist wirklich klein"
+          }
+        },
+        {
+          "text": {
+            "hu": "szeretet, kedveskedés valaki iránt",
+            "en": "affection toward someone",
+            "es": "cariño hacia alguien",
+            "de": "Zuneigung zu jemandem"
+          },
+          "wrong": {
+            "hu": "Ebben a mondatban a második fele (solo tiene un cuarto) a méretet adja meg, nem a szeretetet.",
+            "en": "In this sentence the second half (solo tiene un cuarto) gives the size, not affection.",
+            "es": "En esta frase la segunda parte (solo tiene un cuarto) da el tamaño, no el cariño.",
+            "de": "In diesem Satz nennt die zweite Hälfte (solo tiene un cuarto) die Größe, nicht Zuneigung."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "dim-why-04",
+      "es": "Ahorita llegó mi hermano.",
+      "target": "Ahorita",
+      "tr": {
+        "hu": "Az imént érkezett meg a fivérem.",
+        "en": "My brother just arrived.",
+        "es": "Ahorita llegó mi hermano.",
+        "de": "Mein Bruder ist gerade angekommen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ahorita + folyamatban lévő ige: éppen most",
+            "en": "ahorita + a verb in progress: right now",
+            "es": "ahorita + verbo en curso: ahora mismo",
+            "de": "ahorita + ein laufendes Verb: gerade jetzt"
+          },
+          "wrong": {
+            "hu": "Az „éppen most” folyamatban lévő igével áll (Ahorita estoy comiendo). Itt a llegó múlt idő: a fivéred már megérkezett.",
+            "en": "Right now goes with a verb in progress (Ahorita estoy comiendo). Here llegó is past tense: your brother has already arrived.",
+            "es": "Ahora mismo va con un verbo en curso (Ahorita estoy comiendo). Aquí llegó es pasado: tu hermano ya llegó.",
+            "de": "Gerade jetzt steht mit einem laufenden Verb (Ahorita estoy comiendo). Hier ist llegó Vergangenheit: Dein Bruder ist schon angekommen."
+          }
+        },
+        {
+          "text": {
+            "hu": "ahorita + múlt idő: az imént, nemrég",
+            "en": "ahorita + past tense: a moment ago",
+            "es": "ahorita + pasado: hace un momento",
+            "de": "ahorita + Vergangenheit: soeben"
+          }
+        },
+        {
+          "text": {
+            "hu": "ahorita + jövőre utaló ige: mindjárt",
+            "en": "ahorita + a verb pointing to the future: in a moment",
+            "es": "ahorita + verbo que apunta al futuro: dentro de un momento",
+            "de": "ahorita + ein Verb mit Zukunftsbezug: gleich"
+          },
+          "wrong": {
+            "hu": "A „mindjárt” jövőre utaló igével áll (Ahorita voy). A llegó múlt idő: ami megtörtént, az már megtörtént.",
+            "en": "In a moment goes with a verb pointing to the future (Ahorita voy). Llegó is past tense: it has already happened.",
+            "es": "Dentro de un momento va con un verbo que apunta al futuro (Ahorita voy). Llegó es pasado: ya ocurrió.",
+            "de": "Gleich steht mit einem Verb mit Zukunftsbezug (Ahorita voy). Llegó ist Vergangenheit: Es ist schon passiert."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "dim-why-05",
+      "es": "Ahorita no puedo hablar, estoy manejando.",
+      "target": "Ahorita",
+      "tr": {
+        "hu": "Most nem tudok beszélni, vezetek.",
+        "en": "I cannot talk right now, I am driving.",
+        "es": "Ahorita no puedo hablar, estoy manejando.",
+        "de": "Ich kann gerade nicht sprechen, ich fahre."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ahorita + jövőre utaló ige: mindjárt",
+            "en": "ahorita + a verb pointing to the future: in a moment",
+            "es": "ahorita + verbo que apunta al futuro: dentro de un momento",
+            "de": "ahorita + ein Verb mit Zukunftsbezug: gleich"
+          },
+          "wrong": {
+            "hu": "A mondat nem azt mondja, hogy később tudsz beszélni: az estoy manejando éppen zajlik, ezért az ahorita itt éppen most.",
+            "en": "The sentence does not say you can talk later: estoy manejando is happening now, so ahorita here means right now.",
+            "es": "La frase no dice que puedas hablar luego: estoy manejando ocurre ahora, por eso ahorita aquí significa ahora mismo.",
+            "de": "Der Satz sagt nicht, dass du später sprechen kannst: estoy manejando läuft gerade, deshalb heißt ahorita hier gerade jetzt."
+          }
+        },
+        {
+          "text": {
+            "hu": "ahorita + folyamatban lévő ige: éppen most",
+            "en": "ahorita + a verb in progress: right now",
+            "es": "ahorita + verbo en curso: ahora mismo",
+            "de": "ahorita + ein laufendes Verb: gerade jetzt"
+          }
+        },
+        {
+          "text": {
+            "hu": "ahorita + múlt idő: az imént, nemrég",
+            "en": "ahorita + past tense: a moment ago",
+            "es": "ahorita + pasado: hace un momento",
+            "de": "ahorita + Vergangenheit: soeben"
+          },
+          "wrong": {
+            "hu": "Az „imént” múlt idejű igével áll (Ahorita llegó mi hermano). Itt a no puedo és az estoy manejando jelen idő.",
+            "en": "A moment ago goes with a past-tense verb (Ahorita llegó mi hermano). Here no puedo and estoy manejando are present tense.",
+            "es": "Hace un momento va con un verbo en pasado (Ahorita llegó mi hermano). Aquí no puedo y estoy manejando están en presente.",
+            "de": "Soeben steht mit einem Verb in der Vergangenheit (Ahorita llegó mi hermano). Hier stehen no puedo und estoy manejando im Präsens."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "dim-why-06",
+      "es": "Mi hijo juega con un camioncito.",
+      "target": "camioncito",
+      "tr": {
+        "hu": "A fiam egy kis teherautóval játszik.",
+        "en": "My son plays with a little truck.",
+        "es": "Mi hijo juega con un camioncito.",
+        "de": "Mein Sohn spielt mit einem kleinen Lastwagen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "egy szótagú szó + -ecito: pan → panecito",
+            "en": "one-syllable word + -ecito: pan → panecito",
+            "es": "palabra de una sílaba + -ecito: pan → panecito",
+            "de": "einsilbiges Wort + -ecito: pan → panecito"
+          },
+          "wrong": {
+            "hu": "Az -ecito az egy szótagú szavaknál jön, mint a pan vagy a sol. A camión két szótagú és -n-re végződik, ezért -cito jön.",
+            "en": "-ecito comes with one-syllable words like pan or sol. Camión has two syllables and ends in -n, so -cito comes.",
+            "es": "-ecito va con palabras de una sílaba como pan o sol. Camión tiene dos sílabas y termina en -n, por eso va -cito.",
+            "de": "-ecito kommt bei einsilbigen Wörtern wie pan oder sol. Camión hat zwei Silben und endet auf -n, deshalb kommt -cito."
+          }
+        },
+        {
+          "text": {
+            "hu": "-n végű szó + -cito: camión → camioncito",
+            "en": "word ending in -n + -cito: camión → camioncito",
+            "es": "palabra en -n + -cito: camión → camioncito",
+            "de": "Wort auf -n + -cito: camión → camioncito"
+          }
+        },
+        {
+          "text": {
+            "hu": "-o / -a elmarad + -ito / -ita: casa → casita",
+            "en": "-o / -a drops + -ito / -ita: casa → casita",
+            "es": "se quita -o / -a + -ito / -ita: casa → casita",
+            "de": "-o / -a fällt weg + -ito / -ita: casa → casita"
+          },
+          "wrong": {
+            "hu": "Az -o / -a elmaradása az -o és -a végű szavaknál van (casa → casita). A camión -n-re végződik, ott -cito jön.",
+            "en": "Dropping -o / -a is for words ending in -o and -a (casa → casita). Camión ends in -n, and there -cito comes.",
+            "es": "Quitar -o / -a es para palabras en -o y -a (casa → casita). Camión termina en -n, y ahí va -cito.",
+            "de": "Das Wegfallen von -o / -a gilt für Wörter auf -o und -a (casa → casita). Camión endet auf -n, und dort kommt -cito."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "dim-why-07",
+      "es": "Quiero una tacita de té.",
+      "target": "tacita",
+      "tr": {
+        "hu": "Kérek egy csésze teát.",
+        "en": "I would like a little cup of tea.",
+        "es": "Quiero una tacita de té.",
+        "de": "Ich möchte ein Tässchen Tee."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "c → qu helyesírás-váltás: boca → boquita",
+            "en": "spelling change c → qu: boca → boquita",
+            "es": "cambio de ortografía c → qu: boca → boquita",
+            "de": "Schreibwechsel c → qu: boca → boquita"
+          },
+          "wrong": {
+            "hu": "A c → qu a c végű szavaknál van (boca → boquita). A taza z-re végződik, nem c-re.",
+            "en": "The change c → qu is for words with a c (boca → boquita). Taza has a z, not a c.",
+            "es": "El cambio c → qu es para palabras con c (boca → boquita). Taza tiene z, no c.",
+            "de": "Der Wechsel c → qu gilt für Wörter mit c (boca → boquita). Taza hat ein z, kein c."
+          }
+        },
+        {
+          "text": {
+            "hu": "z → c helyesírás-váltás: taza → tacita",
+            "en": "spelling change z → c: taza → tacita",
+            "es": "cambio de ortografía z → c: taza → tacita",
+            "de": "Schreibwechsel z → c: taza → tacita"
+          }
+        },
+        {
+          "text": {
+            "hu": "g → gu helyesírás-váltás: amigo → amiguito",
+            "en": "spelling change g → gu: amigo → amiguito",
+            "es": "cambio de ortografía g → gu: amigo → amiguito",
+            "de": "Schreibwechsel g → gu: amigo → amiguito"
+          },
+          "wrong": {
+            "hu": "A g → gu a g-s szavaknál van (amigo → amiguito). A taza-ban nincs g, hanem z van.",
+            "en": "The change g → gu is for words with a g (amigo → amiguito). Taza has no g, it has a z.",
+            "es": "El cambio g → gu es para palabras con g (amigo → amiguito). Taza no tiene g, tiene z.",
+            "de": "Der Wechsel g → gu gilt für Wörter mit g (amigo → amiguito). Taza hat kein g, sondern ein z."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

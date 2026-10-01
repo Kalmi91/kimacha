@@ -904,7 +904,7 @@
       "sentence": "Ayer ___ (yo) mucho trabajo en la oficina.",
       "options": [
         "tuve",
-        "tenía",
+        "tuvo",
         "tengo"
       ],
       "correct": 0,
@@ -915,11 +915,11 @@
         "de": "Der Vergangenheitsstamm von tener ist tuv-, mit unbetonten Endungen: tuve. \"Ayer\" bezeichnet einen konkreten, abgeschlossenen Tag."
       },
       "wrong": {
-        "tenía": {
-          "hu": "A \"tenía\" a folyamatos múlt (imperfecto): azt jelentené, hogy ÁLTALÁBAN sok munkád volt akkoriban, nem azt, hogy pontosan tegnap, egy konkrét napon volt sok dolgod.",
-          "en": "\"Tenía\" is the imperfect: it would mean you generally had a lot of work back then, not that specifically yesterday, on one concrete day, you had a lot.",
-          "es": "\"Tenía\" es el imperfecto: significaría que en general tenías mucho trabajo en esa época, no que concretamente ayer, un día puntual, tuviste mucho.",
-          "de": "\"Tenía\" ist das Imperfekt: es würde bedeuten, dass du damals allgemein viel Arbeit hattest, nicht dass du speziell gestern, an einem bestimmten Tag, viel Arbeit hattest."
+        "tuvo": {
+          "hu": "A \"tuvo\" a tener ő-alakja (él/ella); a zárójelben álló alany viszont yo, ezért tuve kell.",
+          "en": "\"Tuvo\" is the él/ella form of tener; the subject in brackets is yo, so you need tuve.",
+          "es": "\"Tuvo\" es la forma de él/ella de tener; el sujeto entre paréntesis es yo, así que hace falta tuve.",
+          "de": "\"Tuvo\" ist die Form von tener für él/ella; das Subjekt in der Klammer ist aber yo, also braucht man tuve."
         },
         "tengo": {
           "hu": "A \"tengo\" jelen idő; ha ide kerülne, a mondat azt állítaná, hogy MOST van sok munkád az irodában, ami ellentmond az \"ayer\" (tegnap) szónak.",
@@ -977,11 +977,11 @@
     },
     {
       "id": "ii-03",
-      "sentence": "¿Qué ___ (tú) el fin de semana?",
+      "sentence": "¿Qué ___ (tú) el fin de semana pasado?",
       "options": [
         "hiciste",
         "haces",
-        "hacías"
+        "hizo"
       ],
       "correct": 0,
       "why": {
@@ -992,16 +992,16 @@
       },
       "wrong": {
         "haces": {
-          "hu": "A \"haces\" jelen idő; ha ide kerülne, a kérdés azt jelentené, mit csinálsz a (közelgő) hétvégén, nem azt, hogy mit csináltál egy már elmúlt hétvégén.",
-          "en": "\"Haces\" is present tense; if used here the question would ask what you are doing this (upcoming) weekend, not what you did on a weekend that already passed.",
-          "es": "\"Haces\" es presente; si se usara aquí, la pregunta sería qué haces este fin de semana (próximo), no qué hiciste en uno ya pasado.",
-          "de": "\"Haces\" ist Präsens; würde man es hier verwenden, würde die Frage lauten, was du an diesem (kommenden) Wochenende machst, nicht was du an einem bereits vergangenen gemacht hast."
+          "hu": "A \"haces\" jelen idő; a \"pasado\" (múlt) hétvége mellett nem állhat, ide múlt idő kell: hiciste.",
+          "en": "\"Haces\" is present tense; it cannot go with \"el fin de semana pasado\" (last weekend), a past form is needed: hiciste.",
+          "es": "\"Haces\" es presente; no puede ir con \"el fin de semana pasado\", hace falta un pasado: hiciste.",
+          "de": "\"Haces\" ist Präsens; es passt nicht zu \"el fin de semana pasado\" (letztes Wochenende), man braucht eine Vergangenheitsform: hiciste."
         },
-        "hacías": {
-          "hu": "A \"hacías\" a folyamatos múlt: azt kérdezné, mit szoktál csinálni általában hétvégénként, nem azt, hogy ezen a konkrét, most már elmúlt hétvégén mit csináltál.",
-          "en": "\"Hacías\" is the imperfect: it would ask what you used to do on weekends in general, not what you did on this one specific, now-past weekend.",
-          "es": "\"Hacías\" es el imperfecto: preguntaría qué solías hacer los fines de semana en general, no qué hiciste en este fin de semana concreto y ya pasado.",
-          "de": "\"Hacías\" ist das Imperfekt: es würde fragen, was du an Wochenenden im Allgemeinen zu tun pflegtest, nicht was du an diesem einen, nun vergangenen Wochenende gemacht hast."
+        "hizo": {
+          "hu": "A \"hizo\" a hacer ő-alakja (él/ella); a zárójelben álló alany viszont tú, ezért hiciste kell.",
+          "en": "\"Hizo\" is the él/ella form of hacer; the subject in brackets is tú, so you need hiciste.",
+          "es": "\"Hizo\" es la forma de él/ella de hacer; el sujeto entre paréntesis es tú, así que hace falta hiciste.",
+          "de": "\"Hizo\" ist die Form von hacer für él/ella; das Subjekt in der Klammer ist aber tú, also braucht man hiciste."
         }
       },
       "examples": [
@@ -1015,11 +1015,11 @@
     },
     {
       "id": "ii-04",
-      "sentence": "Ella ___ que no podía venir.",
+      "sentence": "Ayer ella ___ que no podía venir.",
       "options": [
         "dijo",
         "dice",
-        "decía"
+        "dije"
       ],
       "correct": 0,
       "why": {
@@ -1035,11 +1035,11 @@
           "es": "\"Dice\" es presente; si se usara aquí significaría que ELLA lo dice AHORA, no que lo anunció antes.",
           "de": "\"Dice\" ist Präsens; würde man es hier verwenden, hieße es, dass sie JETZT sagt, dass sie nicht kommen kann, nicht dass sie es vorher angekündigt hat."
         },
-        "decía": {
-          "hu": "A \"decía\" a folyamatos múlt: azt jelentené, hogy ISMÉTELTEN, szokásszerűen mondogatta ezt, nem azt, hogy egyetlen konkrét alkalommal jelentette be.",
-          "en": "\"Decía\" is the imperfect: it would mean she kept repeating this, as a habit, not that she announced it on one specific occasion.",
-          "es": "\"Decía\" es el imperfecto: significaría que lo repetía como costumbre, no que lo anunció en una ocasión concreta.",
-          "de": "\"Decía\" ist das Imperfekt: es würde bedeuten, dass sie das wiederholt sagte, gewohnheitsmäßig, nicht dass sie es bei einer bestimmten Gelegenheit ankündigte."
+        "dije": {
+          "hu": "A \"dije\" a decir yo-alakja; a mondat alanya viszont ella, ezért dijo kell.",
+          "en": "\"Dije\" is the yo form of decir; the subject of the sentence is ella, so you need dijo.",
+          "es": "\"Dije\" es la forma de yo de decir; el sujeto de la frase es ella, así que hace falta dijo.",
+          "de": "\"Dije\" ist die yo-Form von decir; das Subjekt des Satzes ist aber ella, also braucht man dijo."
         }
       },
       "examples": [
@@ -1053,7 +1053,7 @@
     },
     {
       "id": "ii-05",
-      "sentence": "Ellos ___ los libros a la escuela.",
+      "sentence": "Ayer ellos ___ los libros a la escuela.",
       "options": [
         "trajeron",
         "traieron",
@@ -1095,7 +1095,7 @@
       "options": [
         "fui",
         "era",
-        "iba"
+        "fuimos"
       ],
       "correct": 0,
       "why": {
@@ -1106,16 +1106,16 @@
       },
       "wrong": {
         "era": {
-          "hu": "Az \"era\" a ser folyamatos múltja: azt jelentené, hogy valaminek LENNI (pl. valamilyen szerepben) voltál a piacon, teljesen más jelentés, mint elmenni valahova; itt a mozgást az ir fejezi ki: fui.",
-          "en": "\"Era\" is ser's imperfect: it would mean you WERE something (in some role) at the market, a completely different meaning from going somewhere; the movement here is expressed with ir: fui.",
-          "es": "\"Era\" es el imperfecto de ser: significaría que ERAS algo (en algún papel) en el mercado, un significado muy distinto de ir a un sitio; aquí el movimiento se expresa con ir: fui.",
-          "de": "\"Era\" ist das Imperfekt von ser: es würde bedeuten, dass du auf dem Markt etwas (in irgendeiner Rolle) WARST, eine ganz andere Bedeutung als irgendwohin zu gehen; die Bewegung wird hier mit ir ausgedrückt: fui."
+          "hu": "Az \"era\" a ser folyamatos múltja (lenni), a menést nem fejezi ki: az \"al mercado\" (a piacra) mellé az ir kell, azaz fui.",
+          "en": "\"Era\" is the imperfect of ser (to be) and does not express going: \"al mercado\" (to the market) needs ir, that is fui.",
+          "es": "\"Era\" es el imperfecto de ser y no expresa movimiento: con \"al mercado\" hace falta ir, es decir fui.",
+          "de": "\"Era\" ist das Imperfekt von ser (sein) und drückt keine Bewegung aus: zu \"al mercado\" (zum Markt) braucht man ir, also fui."
         },
-        "iba": {
-          "hu": "Az \"iba\" azt jelentené, hogy RENDSZERESEN, szokásból jártál a piacra, nem azt, hogy ez egyszer, egy konkrét alkalommal történt (és utána gyümölcsöt vettél).",
-          "en": "\"Iba\" would mean you USED TO go to the market regularly, not that this happened once, on one specific occasion (after which you bought fruit).",
-          "es": "\"Iba\" significaría que SOLÍAS ir al mercado, no que esto pasó una vez, en una ocasión concreta (tras la cual compraste fruta).",
-          "de": "\"Iba\" würde bedeuten, dass du REGELMÄSSIG zum Markt zu gehen pflegtest, nicht dass dies einmal, bei einer bestimmten Gelegenheit geschah (wonach du Obst kauftest)."
+        "fuimos": {
+          "hu": "A \"fuimos\" az ir (és a ser) mi-alakja (nosotros); a mondat alanya viszont yo, ezért fui kell.",
+          "en": "\"Fuimos\" is the nosotros form of ir (and ser); the subject of the sentence is yo, so you need fui.",
+          "es": "\"Fuimos\" es la forma de nosotros de ir (y de ser); el sujeto de la frase es yo, así que hace falta fui.",
+          "de": "\"Fuimos\" ist die wir-Form von ir (und ser); das Subjekt des Satzes ist aber yo, also braucht man fui."
         }
       },
       "examples": [
@@ -1167,11 +1167,11 @@
     },
     {
       "id": "ii-08",
-      "sentence": "No ___ (nosotros) terminar el trabajo a tiempo.",
+      "sentence": "Ayer no ___ (nosotros) terminar el trabajo a tiempo.",
       "options": [
         "pudimos",
         "podemos",
-        "podíamos"
+        "pude"
       ],
       "correct": 0,
       "why": {
@@ -1187,11 +1187,11 @@
           "es": "\"Podemos\" es presente; si se usara aquí significaría que EN GENERAL no podemos terminar a tiempo, no que en una ocasión no se logró.",
           "de": "\"Podemos\" ist Präsens; würde man es hier verwenden, hieße es, dass wir die Arbeit ALLGEMEIN nicht rechtzeitig beenden können, nicht dass es bei einer Gelegenheit nicht klappte."
         },
-        "podíamos": {
-          "hu": "A \"podíamos\" a folyamatos múlt: azt jelentené, hogy ÁLTALÁBAN, egy időszakban nem voltunk képesek időben végezni, nem azt, hogy egy KONKRÉT esetben nem sikerült.",
-          "en": "\"Podíamos\" is the imperfect: it would describe a general inability over a period, not that it did not work out on one SPECIFIC occasion.",
-          "es": "\"Podíamos\" es el imperfecto: describiría una incapacidad general en una época, no que en un caso CONCRETO no se logró.",
-          "de": "\"Podíamos\" ist das Imperfekt: es würde eine allgemeine Unfähigkeit über einen Zeitraum beschreiben, nicht dass es bei einem KONKRETEN Fall nicht klappte."
+        "pude": {
+          "hu": "A \"pude\" a poder yo-alakja; a zárójelben álló alany viszont nosotros, ezért pudimos kell.",
+          "en": "\"Pude\" is the yo form of poder; the subject in brackets is nosotros, so you need pudimos.",
+          "es": "\"Pude\" es la forma de yo de poder; el sujeto entre paréntesis es nosotros, así que hace falta pudimos.",
+          "de": "\"Pude\" ist die yo-Form von poder; das Subjekt in der Klammer ist aber nosotros, also braucht man pudimos."
         }
       },
       "examples": [
@@ -1243,11 +1243,11 @@
     },
     {
       "id": "ii-10",
-      "sentence": "Él ___ el dinero en la mesa.",
+      "sentence": "Ayer él ___ el dinero en la mesa.",
       "options": [
         "puso",
         "pone",
-        "ponía"
+        "puse"
       ],
       "correct": 0,
       "why": {
@@ -1263,11 +1263,11 @@
           "es": "\"Pone\" es presente; si se usara aquí significaría que AHORA pone el dinero en la mesa, no que lo hizo una vez, en una ocasión concreta.",
           "de": "\"Pone\" ist Präsens; würde man es hier verwenden, hieße es, dass er das Geld JETZT auf den Tisch legt, nicht dass er es einmal, bei einer bestimmten Gelegenheit, tat."
         },
-        "ponía": {
-          "hu": "A \"ponía\" a folyamatos múlt: azt jelentené, hogy SZOKÁSA volt oda tenni a pénzt, ismétlődően, nem azt, hogy egyetlen alkalommal megtette.",
-          "en": "\"Ponía\" is the imperfect: it would mean he USED TO put the money there, repeatedly, not that he did it on one single occasion.",
-          "es": "\"Ponía\" es el imperfecto: significaría que SOLÍA poner el dinero ahí, repetidamente, no que lo hizo en una sola ocasión.",
-          "de": "\"Ponía\" ist das Imperfekt: es würde bedeuten, dass er das Geld wiederholt dort hinzulegen PFLEGTE, nicht dass er es bei einer einzigen Gelegenheit tat."
+        "puse": {
+          "hu": "A \"puse\" a poner yo-alakja; a mondat alanya viszont él, ezért puso kell.",
+          "en": "\"Puse\" is the yo form of poner; the subject of the sentence is él, so you need puso.",
+          "es": "\"Puse\" es la forma de yo de poner; el sujeto de la frase es él, así que hace falta puso.",
+          "de": "\"Puse\" ist die yo-Form von poner; das Subjekt des Satzes ist aber él, also braucht man puso."
         }
       },
       "examples": [
@@ -1281,11 +1281,11 @@
     },
     {
       "id": "ii-11",
-      "sentence": "Mis amigos ___ a la fiesta sin avisar.",
+      "sentence": "Ayer mis amigos ___ a la fiesta sin avisar.",
       "options": [
         "vinieron",
         "vienen",
-        "venían"
+        "vino"
       ],
       "correct": 0,
       "why": {
@@ -1301,11 +1301,11 @@
           "es": "\"Vienen\" es presente; si se usara aquí significaría que tus amigos EN GENERAL vienen sin avisar a las fiestas, no que aparecieron en esta ocasión.",
           "de": "\"Vienen\" ist Präsens; würde man es hier verwenden, hieße es, dass deine Freunde IM ALLGEMEINEN unangekündigt zu Partys kommen, nicht dass sie bei dieser Gelegenheit auftauchten."
         },
-        "venían": {
-          "hu": "A \"venían\" a folyamatos múlt: azt jelentené, hogy RENDSZERESEN szoktak szólás nélkül jönni, nem azt, hogy egyetlen konkrét alkalommal történt ez.",
-          "en": "\"Venían\" is the imperfect: it would mean they USED TO come without warning regularly, not that this happened on one specific occasion.",
-          "es": "\"Venían\" es el imperfecto: significaría que SOLÍAN venir sin avisar, no que esto pasó en una ocasión concreta.",
-          "de": "\"Venían\" ist das Imperfekt: es würde bedeuten, dass sie REGELMÄSSIG unangekündigt zu kommen pflegten, nicht dass dies bei einer bestimmten Gelegenheit geschah."
+        "vino": {
+          "hu": "A \"vino\" a venir ő-alakja (él/ella, egyes szám); a mondat alanya viszont mis amigos (többes szám), ezért vinieron kell.",
+          "en": "\"Vino\" is the él/ella form of venir (singular); the subject mis amigos is plural, so you need vinieron.",
+          "es": "\"Vino\" es la forma de él/ella de venir (singular); el sujeto mis amigos es plural, así que hace falta vinieron.",
+          "de": "\"Vino\" ist die Form von venir für él/ella (Singular); das Subjekt mis amigos steht aber im Plural, also braucht man vinieron."
         }
       },
       "examples": [
@@ -1319,11 +1319,11 @@
     },
     {
       "id": "ii-12",
-      "sentence": "Ella me ___ un regalo por mi cumpleaños.",
+      "sentence": "El año pasado ella me ___ un regalo por mi cumpleaños.",
       "options": [
         "dio",
         "da",
-        "daba"
+        "di"
       ],
       "correct": 0,
       "why": {
@@ -1339,11 +1339,11 @@
           "es": "\"Da\" es presente; si se usara aquí significaría que ELLA me da un regalo AHORA por mi cumpleaños, no que lo dio en un cumpleaños pasado.",
           "de": "\"Da\" ist Präsens; würde man es hier verwenden, hieße es, dass sie mir JETZT ein Geschenk zum Geburtstag gibt, nicht dass sie eines an einem vergangenen Geburtstag gab."
         },
-        "daba": {
-          "hu": "A \"daba\" a folyamatos múlt: azt jelentené, hogy MINDEN ÉVBEN szokott ajándékot adni a születésnapomra, nem azt, hogy egy konkrét alkalommal adott.",
-          "en": "\"Daba\" is the imperfect: it would mean she USED TO give me a gift every year on my birthday, not that she gave one on one specific occasion.",
-          "es": "\"Daba\" es el imperfecto: significaría que SOLÍA darme un regalo cada año, no que lo dio en una ocasión concreta.",
-          "de": "\"Daba\" ist das Imperfekt: es würde bedeuten, dass sie mir JEDES JAHR ein Geschenk zu geben pflegte, nicht dass sie eines bei einer bestimmten Gelegenheit gab."
+        "di": {
+          "hu": "A \"di\" a dar yo-alakja; a mondat alanya viszont ella, ezért dio kell.",
+          "en": "\"Di\" is the yo form of dar; the subject of the sentence is ella, so you need dio.",
+          "es": "\"Di\" es la forma de yo de dar; el sujeto de la frase es ella, así que hace falta dio.",
+          "de": "\"Di\" ist die yo-Form von dar; das Subjekt des Satzes ist aber ella, also braucht man dio."
         }
       },
       "examples": [
@@ -1602,16 +1602,16 @@
       "options": [
         {
           "text": {
-            "hu": "erős tő (új tő + ékezet nélküli végződés)",
-            "en": "strong stem (new stem, unaccented ending)",
-            "es": "raíz fuerte (nueva raíz, sin tilde)",
-            "de": "starker Stamm (neuer Stamm, ohne Akzent)"
+            "hu": "dar: -er/-ir végződéseket kap",
+            "en": "dar: takes -er/-ir endings",
+            "es": "dar: lleva terminaciones de -er/-ir",
+            "de": "dar: -er/-ir-Endungen"
           },
           "wrong": {
-            "hu": "Az erős tövű igék rendes -ieron végződést kapnak többes 3. személyben (tuvieron, estuvieron); a traer töve traj-, ami -j-re végződik, ezért kivételesen -eron jár: trajeron.",
-            "en": "Strong-stem verbs take the regular -ieron ending in the third person plural (tuvieron, estuvieron); traer's stem is traj-, ending in j, so it exceptionally takes -eron: trajeron.",
-            "es": "Los verbos de raíz fuerte llevan la terminación regular -ieron en tercera persona del plural (tuvieron, estuvieron); la raíz de traer es traj-, termina en j, por eso lleva -eron por excepción: trajeron.",
-            "de": "Verben mit starkem Stamm nehmen in der 3. Person Plural die reguläre Endung -ieron (tuvieron, estuvieron); der Stamm von traer ist traj-, endet auf j, deshalb ausnahmsweise -eron: trajeron."
+            "hu": "A dar-szabály egy -ar igéről szól, ami -er/-ir végződést kap (di, dieron); a traer viszont eleve -er ige, és a trajeron lényege a j-re végződő tő: -eron, nem -ieron.",
+            "en": "The dar rule is about an -ar verb taking -er/-ir endings (di, dieron); traer is already an -er verb, and what matters in trajeron is the stem ending in j: -eron, not -ieron.",
+            "es": "La regla de dar trata de un verbo en -ar que toma terminaciones de -er/-ir (di, dieron); traer ya es un verbo en -er, y en trajeron lo que cuenta es la raíz terminada en j: -eron, no -ieron.",
+            "de": "Die dar-Regel betrifft ein -ar-Verb, das -er/-ir-Endungen bekommt (di, dieron); traer ist bereits ein -er-Verb, und bei trajeron zählt der Stamm auf j: -eron, nicht -ieron."
           }
         },
         {
@@ -1657,16 +1657,16 @@
       "options": [
         {
           "text": {
-            "hu": "erős tő (új tő + ékezet nélküli végződés)",
-            "en": "strong stem (new stem, unaccented ending)",
-            "es": "raíz fuerte (nueva raíz, sin tilde)",
-            "de": "starker Stamm (neuer Stamm, ohne Akzent)"
+            "hu": "ser/ir: azonos alakok",
+            "en": "ser/ir: identical forms",
+            "es": "ser/ir: formas idénticas",
+            "de": "ser/ir: gleiche Formen"
           },
           "wrong": {
-            "hu": "Az erős tövű igék végződése ékezet nélküli, de a tövük más marad (tuv-, estuv-); a hacer harmadik személye külön szabály: c helyett z, hogy a kiejtés ne változzon.",
-            "en": "Strong-stem verbs have an unaccented ending, but their stem stays different (tuv-, estuv-); hacer's third person is a separate rule: z instead of c, so the pronunciation stays the same.",
-            "es": "Los verbos de raíz fuerte tienen terminación sin tilde, pero su raíz es distinta (tuv-, estuv-); la tercera persona de hacer es una regla aparte: zeta en vez de ce, para que no cambie la pronunciación.",
-            "de": "Verben mit starkem Stamm haben eine unbetonte Endung, aber ihr Stamm bleibt anders (tuv-, estuv-); die dritte Person von hacer ist eine eigene Regel: z statt c, damit sich die Aussprache nicht ändert."
+            "hu": "A ser/ir-szabály arról szól, hogy két IGE ugyanazt az alakot kapja (fue); a hizo egyetlen igéhez, a hacerhez tartozik, és itt a c helyett z a lényeg.",
+            "en": "The ser/ir rule is about two VERBS sharing one form (fue); hizo belongs to a single verb, hacer, and here the z instead of c is what matters.",
+            "es": "La regla de ser/ir trata de dos VERBOS que comparten una forma (fue); hizo es de un solo verbo, hacer, y aquí lo que importa es la z en lugar de la c.",
+            "de": "Die ser/ir-Regel besagt, dass zwei VERBEN eine Form teilen (fue); hizo gehört zu einem einzigen Verb, hacer, und hier zählt das z statt c."
           }
         },
         {

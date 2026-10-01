@@ -1,0 +1,2927 @@
+{
+  "schema": 2,
+  "topic": "perfecto-vs-indefinido",
+  "level": "A2",
+  "title": {
+    "hu": "Perfecto vagy indefinido?",
+    "en": "Present perfect or preterite?",
+    "es": "¿Pretérito perfecto o indefinido?",
+    "de": "Perfekt oder Indefinido?"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "Mindkét idő a múltról szól, de más szemszögből. A befejezett múlt (indefinido) lezárt, egyszeri eseményt jelöl: tegnap, tavaly, 2020-ban, hétfőn, és mexikói beszédben a ya, todavía no, alguna vez, nunca mellett is. A közelmúlt (perfecto) a mostanáig tartó vagy a mostanáig ismétlődő helyzethez kapcsolódik: hasta ahora, últimamente, siempre, desde hace. Mexikóban beszédben az indefinido az alapidő, a perfecto ritkább, de ezeken a helyeken ott is természetes. Spanyolországban a perfecto gyakoribb: ott a mai napra és a közelmúltra is azt mondják.",
+        "en": "Both tenses talk about the past, but from a different point of view. The preterite (indefinido) marks a closed, one-time event: yesterday, last year, in 2020, on Monday, and in Mexican speech also with ya, todavía no, alguna vez, nunca. The present perfect (perfecto) is tied to a situation that lasts or keeps repeating up to now: hasta ahora, últimamente, siempre, desde hace. In Mexico the indefinido is the everyday past in speech and the perfecto is rarer, but in these places it is natural there too. In Spain the perfecto is more common: there it is used for today and for the recent past as well.",
+        "es": "Los dos tiempos hablan del pasado, pero desde otro punto de vista. El indefinido marca un hecho cerrado y puntual: ayer, el año pasado, en 2020, el lunes, y en el habla mexicana también con ya, todavía no, alguna vez, nunca. El perfecto se une a una situación que dura o se repite hasta ahora: hasta ahora, últimamente, siempre, desde hace. En México, al hablar, el indefinido es el pasado de todos los días y el perfecto es menos frecuente, pero en estos casos también es natural. En España el perfecto se usa más: allí se dice también para hoy y para el pasado reciente.",
+        "de": "Beide Zeiten sprechen über die Vergangenheit, aber aus einem anderen Blickwinkel. Das Indefinido markiert ein abgeschlossenes, einmaliges Ereignis: gestern, letztes Jahr, 2020, am Montag, und in der mexikanischen Alltagssprache auch mit ya, todavía no, alguna vez, nunca. Das Perfekt hängt mit einer Lage zusammen, die bis jetzt dauert oder sich bis jetzt wiederholt: hasta ahora, últimamente, siempre, desde hace. In Mexiko ist das Indefinido beim Sprechen die Alltagsvergangenheit und das Perfekt seltener, aber an diesen Stellen ist es auch dort natürlich. In Spanien ist das Perfekt häufiger: dort sagt man es auch für heute und für die jüngste Vergangenheit."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "perfecto-indefinido-jelolok",
+      "title": {
+        "hu": "Melyik jelölő melyik igeidőt kéri",
+        "en": "Which marker asks for which tense",
+        "es": "Qué marcador pide qué tiempo",
+        "de": "Welcher Marker welche Zeit verlangt"
+      },
+      "header": [
+        {
+          "hu": "igeidő",
+          "en": "tense",
+          "es": "tiempo",
+          "de": "Zeit"
+        },
+        {
+          "hu": "jelölők",
+          "en": "markers",
+          "es": "marcadores",
+          "de": "Marker"
+        },
+        {
+          "hu": "példa",
+          "en": "example",
+          "es": "ejemplo",
+          "de": "Beispiel"
+        }
+      ],
+      "rows": [
+        [
+          "indefinido (pretérito perfecto simple)",
+          "ayer, anoche, hace dos días, en 2020, el lunes, hoy, esta semana, ya, todavía no, nunca, jamás, alguna vez",
+          "Ayer comí en casa. ¿Ya comiste?"
+        ],
+        [
+          "perfecto (pretérito perfecto compuesto)",
+          "hasta ahora, hasta ahorita, últimamente, siempre … hasta hoy, desde hace, toda la semana",
+          "Hasta ahora hemos comido en casa."
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "hu": "Mikor melyik",
+        "en": "Which one when",
+        "es": "Cuándo cada uno",
+        "de": "Wann welche Zeit"
+      },
+      "points": [
+        {
+          "text": {
+            "hu": "Lezárt időpont vagy időszak a múltban: ayer, anoche, hace dos días, en 2020, el lunes. A dolog megtörtént, és az idő, amiben történt, vége: befejezett múlt (indefinido). Mexikóban minden lezárt, egyszeri eseményre ez a szokásos, a jelölőtől függetlenül (lásd a következő két pontot).",
+            "en": "A closed moment or period in the past: ayer, anoche, hace dos días, en 2020, el lunes. The thing happened, and the time it happened in is over: the preterite (indefinido). In Mexico this is the usual choice for every closed, one-time event, whatever the marker (see the next two points).",
+            "es": "Un momento o periodo cerrado en el pasado: ayer, anoche, hace dos días, en 2020, el lunes. La cosa pasó y el tiempo en que pasó ya terminó: el indefinido. En México es lo normal para todo hecho cerrado y puntual, sea cual sea el marcador (véanse los dos puntos siguientes).",
+            "de": "Ein abgeschlossener Zeitpunkt oder Zeitraum in der Vergangenheit: ayer, anoche, hace dos días, en 2020, el lunes. Es geschah, und die Zeit, in der es geschah, ist vorbei: das Indefinido. In Mexiko ist das für jedes abgeschlossene, einmalige Ereignis das Übliche, welcher Marker auch dabeisteht (siehe die nächsten zwei Punkte)."
+          },
+          "examples": [
+            {
+              "es": "Ayer comí en casa de mi madre.",
+              "tr": {
+                "hu": "Tegnap anyámnál ettem.",
+                "en": "Yesterday I ate at my mother's house.",
+                "es": "Ayer comí en casa de mi madre.",
+                "de": "Gestern habe ich bei meiner Mutter gegessen."
+              }
+            },
+            {
+              "es": "El lunes fuimos al cine.",
+              "tr": {
+                "hu": "Hétfőn moziba mentünk.",
+                "en": "On Monday we went to the cinema.",
+                "es": "El lunes fuimos al cine.",
+                "de": "Am Montag sind wir ins Kino gegangen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Az eddigi élet tapasztalata: alguna vez, nunca, jamás. Mexikóban beszédben ez is egyszeri, lezárt eseményként hangzik el, ezért indefinido jön: megtörtént-e valaha, vagy soha nem történt meg. A perfecto is előfordul (¿Has ido alguna vez…?), de beszédben ritkább.",
+            "en": "Your experience so far: alguna vez, nunca, jamás. In Mexican speech this too is told as a closed, one-time event, so the indefinido is used: did it ever happen, or never. The perfecto exists as well (¿Has ido alguna vez…?), but it is rarer in speech.",
+            "es": "La experiencia de la vida hasta ahora: alguna vez, nunca, jamás. En el habla mexicana también se cuenta como un hecho puntual y cerrado, por eso va el indefinido: si pasó alguna vez o nunca pasó. El perfecto también existe (¿Has ido alguna vez…?), pero es menos frecuente al hablar.",
+            "de": "Die Erfahrung des bisherigen Lebens: alguna vez, nunca, jamás. In der mexikanischen Alltagssprache wird auch das als abgeschlossenes, einmaliges Ereignis erzählt, deshalb steht das Indefinido: ob es jemals geschah oder nie geschah. Das Perfekt gibt es auch (¿Has ido alguna vez…?), aber es ist beim Sprechen seltener."
+          },
+          "examples": [
+            {
+              "es": "¿Alguna vez fuiste al campo?",
+              "tr": {
+                "hu": "Voltál valaha vidéken?",
+                "en": "Did you ever go to the countryside?",
+                "es": "¿Alguna vez fuiste al campo?",
+                "de": "Warst du schon einmal auf dem Land?"
+              }
+            },
+            {
+              "es": "Nunca vi el mar.",
+              "tr": {
+                "hu": "Soha nem láttam a tengert.",
+                "en": "I have never seen the sea.",
+                "es": "Nunca vi el mar.",
+                "de": "Ich habe nie das Meer gesehen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A «már» és a «még nem»: ya, todavía no. Mexikóban a már megtörtént vagy a még meg nem történt egyszeri esemény is indefinidót kap: a ya azt mondja, hogy megtörtént, a todavía no azt, hogy még nem, de még jöhet.",
+            "en": "Already and not yet: ya, todavía no. In Mexico a one-time event that has already happened, or has not happened yet, also takes the indefinido: ya says it happened, todavía no says it has not, but it still can.",
+            "es": "El ya y el todavía no. En México, un hecho puntual que ya pasó, o que todavía no pasó, también va en indefinido: el ya dice que pasó, el todavía no dice que no, pero todavía puede pasar.",
+            "de": "Schon und noch nicht: ya, todavía no. In Mexiko steht auch ein einmaliges Ereignis, das schon geschah oder noch nicht geschah, im Indefinido: ya sagt, dass es geschah, todavía no sagt, dass es noch nicht geschah, aber noch kann."
+          },
+          "examples": [
+            {
+              "es": "Todavía no comí.",
+              "tr": {
+                "hu": "Még nem ettem.",
+                "en": "I have not eaten yet.",
+                "es": "Todavía no comí.",
+                "de": "Ich habe noch nicht gegessen."
+              }
+            },
+            {
+              "es": "Ya escribí la carta.",
+              "tr": {
+                "hu": "Már megírtam a levelet.",
+                "en": "I have already written the letter.",
+                "es": "Ya escribí la carta.",
+                "de": "Ich habe den Brief schon geschrieben."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A mostanáig tartó vagy a mostanáig ismétlődő helyzet: hasta ahora, hasta ahorita, últimamente, siempre … hasta hoy, desde hace, toda la semana. A helyzet a mostanihoz kötődik, és még nem zárult le, ezért a perfecto. A lezárt időjelölő (la semana pasada, el año pasado) indefinidót kér.",
+            "en": "A situation that lasts, or keeps repeating, up to now: hasta ahora, hasta ahorita, últimamente, siempre … hasta hoy, desde hace, toda la semana. The situation is tied to now and is not closed yet, so the perfecto. A closed time word (la semana pasada, el año pasado) asks for the indefinido.",
+            "es": "La situación que dura, o se repite, hasta ahora: hasta ahora, hasta ahorita, últimamente, siempre … hasta hoy, desde hace, toda la semana. La situación está unida al ahora y todavía no se cerró, por eso el perfecto. Una palabra de tiempo cerrada (la semana pasada, el año pasado) pide el indefinido.",
+            "de": "Die Lage, die bis jetzt dauert oder sich bis jetzt wiederholt: hasta ahora, hasta ahorita, últimamente, siempre … hasta hoy, desde hace, toda la semana. Die Lage hängt mit dem Jetzt zusammen und ist noch nicht abgeschlossen, deshalb das Perfekt. Ein abgeschlossener Zeitausdruck (la semana pasada, el año pasado) verlangt das Indefinido."
+          },
+          "examples": [
+            {
+              "es": "Hasta ahora he trabajado mucho.",
+              "tr": {
+                "hu": "Eddig sokat dolgoztam.",
+                "en": "So far I have worked a lot.",
+                "es": "Hasta ahora he trabajado mucho.",
+                "de": "Bis jetzt habe ich viel gearbeitet."
+              }
+            },
+            {
+              "es": "Últimamente hemos viajado mucho.",
+              "tr": {
+                "hu": "Mostanában sokat utaztunk.",
+                "en": "Lately we have travelled a lot.",
+                "es": "Últimamente hemos viajado mucho.",
+                "de": "In letzter Zeit sind wir viel gereist."
+              }
+            },
+            {
+              "es": "Siempre he querido ir a Japón.",
+              "tr": {
+                "hu": "Mindig is el akartam menni Japánba.",
+                "en": "I have always wanted to go to Japan.",
+                "es": "Siempre he querido ir a Japón.",
+                "de": "Ich wollte schon immer nach Japan fahren."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Mexikói használat: a «hoy», «esta semana», «este mes», «este año» és «esta mañana» mellett beszédben az indefinido a megszokott (Hoy trabajé en la oficina. Esta semana trabajamos en casa.). Spanyolországban ezekkel, és a «ya», «todavía no» mellett is a perfecto a szokásos (Hoy he trabajado en la oficina. ¿Ya has comido?). A gyakorló feladatok a mexikói használatot kérik: a perfectót csak a mostanáig tartó helyzetet jelölő szavak mellé teszik.",
+            "en": "Mexican usage: with «hoy», «esta semana», «este mes», «este año» and «esta mañana» the indefinido is the usual choice in speech (Hoy trabajé en la oficina. Esta semana trabajamos en casa.). In Spain the perfecto is the usual choice with these, and with «ya» and «todavía no» too (Hoy he trabajado en la oficina. ¿Ya has comido?). The exercises ask for the Mexican usage: they use the perfecto only with words that mark a situation lasting up to now.",
+            "es": "Uso mexicano: con «hoy», «esta semana», «este mes», «este año» y «esta mañana» lo normal al hablar es el indefinido (Hoy trabajé en la oficina. Esta semana trabajamos en casa.). En España, con estas palabras y también con «ya» y «todavía no», lo normal es el perfecto (Hoy he trabajado en la oficina. ¿Ya has comido?). Los ejercicios piden el uso mexicano: el perfecto solo va con palabras que marcan una situación que dura hasta ahora.",
+            "de": "Mexikanischer Gebrauch: mit «hoy», «esta semana», «este mes», «este año» und «esta mañana» ist beim Sprechen das Indefinido üblich (Hoy trabajé en la oficina. Esta semana trabajamos en casa.). In Spanien ist mit diesen Wörtern und auch mit «ya» und «todavía no» das Perfekt üblich (Hoy he trabajado en la oficina. ¿Ya has comido?). Die Übungen verlangen den mexikanischen Gebrauch: das Perfekt steht nur mit Wörtern, die eine bis jetzt dauernde Lage markieren."
+          },
+          "examples": [
+            {
+              "es": "Hoy trabajé en la oficina.",
+              "tr": {
+                "hu": "Ma az irodában dolgoztam.",
+                "en": "Today I worked at the office.",
+                "es": "Hoy trabajé en la oficina.",
+                "de": "Heute habe ich im Büro gearbeitet."
+              }
+            },
+            {
+              "es": "Esta semana trabajamos en casa.",
+              "tr": {
+                "hu": "Ezen a héten otthon dolgoztunk.",
+                "en": "This week we worked at home.",
+                "es": "Esta semana trabajamos en casa.",
+                "de": "Diese Woche haben wir zu Hause gearbeitet."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Hasonló, mégis más",
+        "en": "Similar, yet different",
+        "es": "Parecido, pero distinto",
+        "de": "Ähnlich, aber anders"
+      },
+      "pairs": [
+        {
+          "a": "el año pasado viajé",
+          "b": "hasta ahora he viajado",
+          "note": {
+            "hu": "Mindkettő múlt, de az «el año pasado» lezárt időszak (indefinido), a «hasta ahora» a mostanáig tartó időre néz (perfecto).",
+            "en": "Both are past, but «el año pasado» is a closed period (preterite) and «hasta ahora» looks at the time up to now (present perfect).",
+            "es": "Los dos son pasado, pero «el año pasado» es un periodo cerrado (indefinido) y «hasta ahora» abarca el tiempo hasta el presente (perfecto).",
+            "de": "Beides ist Vergangenheit, aber «el año pasado» ist ein abgeschlossener Zeitraum (Indefinido) und «hasta ahora» blickt auf die Zeit bis jetzt (Perfekt)."
+          },
+          "examples": [
+            {
+              "es": "El año pasado viajé a la playa.",
+              "tr": {
+                "hu": "Tavaly a tengerpartra utaztam.",
+                "en": "Last year I travelled to the beach.",
+                "es": "El año pasado viajé a la playa.",
+                "de": "Letztes Jahr bin ich an den Strand gereist."
+              }
+            },
+            {
+              "es": "Hasta ahora he viajado mucho.",
+              "tr": {
+                "hu": "Eddig sokat utaztam.",
+                "en": "So far I have travelled a lot.",
+                "es": "Hasta ahora he viajado mucho.",
+                "de": "Bis jetzt bin ich viel gereist."
+              }
+            }
+          ]
+        },
+        {
+          "a": "anoche vi esa película",
+          "b": "últimamente he visto muchas películas",
+          "note": {
+            "hu": "Az «anoche» egy konkrét, lezárt alkalom (indefinido), az «últimamente» a mostanáig tartó időszakról szól (perfecto).",
+            "en": "«Anoche» is one specific, closed occasion (preterite), «últimamente» is about the period up to now (present perfect).",
+            "es": "«Anoche» es una ocasión concreta y cerrada (indefinido), «últimamente» habla del periodo hasta ahora (perfecto).",
+            "de": "«Anoche» ist ein bestimmter, abgeschlossener Einzelfall (Indefinido), «últimamente» betrifft die Zeit bis jetzt (Perfekt)."
+          },
+          "examples": [
+            {
+              "es": "Anoche vi esa película en el cine.",
+              "tr": {
+                "hu": "Tegnap este láttam azt a filmet a moziban.",
+                "en": "Last night I saw that film at the cinema.",
+                "es": "Anoche vi esa película en el cine.",
+                "de": "Gestern Abend habe ich diesen Film im Kino gesehen."
+              }
+            },
+            {
+              "es": "Últimamente he visto muchas películas.",
+              "tr": {
+                "hu": "Mostanában sok filmet néztem meg.",
+                "en": "Lately I have watched a lot of films.",
+                "es": "Últimamente he visto muchas películas.",
+                "de": "In letzter Zeit habe ich viele Filme gesehen."
+              }
+            }
+          ]
+        },
+        {
+          "a": "ayer no comí",
+          "b": "desde hace un mes no he comido en casa",
+          "note": {
+            "hu": "Az «ayer no comí» a lezárt tegnapról szól (indefinido), a «desde hace un mes no he comido en casa» a mostanáig tartó helyzetről: egy hónapja így van, és még tart (perfecto).",
+            "en": "«Ayer no comí» is about the closed yesterday (preterite), «desde hace un mes no he comido en casa» about the situation up to now: it has been so for a month and still is (present perfect).",
+            "es": "«Ayer no comí» habla del ayer cerrado (indefinido), «desde hace un mes no he comido en casa» de la situación hasta ahora: hace un mes que es así y sigue (perfecto).",
+            "de": "«Ayer no comí» betrifft das abgeschlossene Gestern (Indefinido), «desde hace un mes no he comido en casa» die Lage bis jetzt: seit einem Monat ist es so, und es dauert noch an (Perfekt)."
+          },
+          "examples": [
+            {
+              "es": "Ayer no comí en casa.",
+              "tr": {
+                "hu": "Tegnap nem otthon ettem.",
+                "en": "Yesterday I did not eat at home.",
+                "es": "Ayer no comí en casa.",
+                "de": "Gestern habe ich nicht zu Hause gegessen."
+              }
+            },
+            {
+              "es": "Desde hace un mes no he comido en casa.",
+              "tr": {
+                "hu": "Egy hónapja nem eszem otthon.",
+                "en": "For a month I have not eaten at home.",
+                "es": "Desde hace un mes no he comido en casa.",
+                "de": "Seit einem Monat habe ich nicht zu Hause gegessen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "perfecto-indefinido-formas",
+      "title": {
+        "hu": "Példák: jelölőből igealak",
+        "en": "Examples: from the marker to the verb form",
+        "es": "Ejemplos: del marcador a la forma verbal",
+        "de": "Beispiele: vom Marker zur Verbform"
+      },
+      "header": [
+        {
+          "hu": "mondat",
+          "en": "sentence",
+          "es": "frase",
+          "de": "Satz"
+        },
+        {
+          "hu": "igealak",
+          "en": "verb form",
+          "es": "forma verbal",
+          "de": "Verbform"
+        }
+      ],
+      "rows": [
+        [
+          "Ayer ___ (comer, yo) con mi madre.",
+          "comí"
+        ],
+        [
+          "Hasta ahora no ___ (hablar, yo; perfecto) con mi padre.",
+          "he hablado"
+        ],
+        [
+          "Anoche ___ (ver, ellos) una película en casa.",
+          "vieron"
+        ],
+        [
+          "Nunca ___ (estar, yo; indefinido) en un hospital.",
+          "estuve"
+        ],
+        [
+          "¿Ya ___ (comprar, tú; indefinido) el pan?",
+          "compraste"
+        ],
+        [
+          "El lunes ___ (ir, nosotros) al cine.",
+          "fuimos"
+        ],
+        [
+          "El año pasado ___ (viajar, ellos) a la playa.",
+          "viajaron"
+        ],
+        [
+          "Hace tres meses ___ (hablar, yo) con mi jefe.",
+          "hablé"
+        ],
+        [
+          "Todavía no ___ (escribir, ella; indefinido) la carta.",
+          "escribió"
+        ],
+        [
+          "En 2018 ___ (viajar, yo) en tren.",
+          "viajé"
+        ],
+        [
+          "¿___ (ver, tú; indefinido) alguna vez el mar?",
+          "Viste"
+        ],
+        [
+          "Últimamente ___ (hacer, yo; perfecto) mucho ejercicio.",
+          "he hecho"
+        ]
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A jelölő támpont, nem törvény: a beszédhelyzet felülírhatja. A döntő kérdés az, hogy lezárt, egyszeri eseményről van-e szó (befejezett múlt, mexikói beszédben a ya, todavía no, alguna vez, nunca mellett is), vagy a mostanáig tartó helyzetről (közelmúlt: hasta ahora, últimamente, siempre, desde hace).",
+        "en": "A marker is a clue, not a law: the situation can override it. The deciding question is whether it is a closed, one-time event (preterite, in Mexican speech also with ya, todavía no, alguna vez, nunca) or a situation that lasts up to now (present perfect: hasta ahora, últimamente, siempre, desde hace).",
+        "es": "El marcador es una pista, no una ley: la situación puede cambiarlo. La pregunta clave es si se trata de un hecho puntual y cerrado (indefinido, en el habla mexicana también con ya, todavía no, alguna vez, nunca) o de una situación que llega hasta ahora (perfecto: hasta ahora, últimamente, siempre, desde hace).",
+        "de": "Der Marker ist ein Hinweis, kein Gesetz: die Situation kann ihn überstimmen. Die entscheidende Frage ist, ob es ein abgeschlossenes, einmaliges Ereignis ist (Indefinido, in der mexikanischen Alltagssprache auch mit ya, todavía no, alguna vez, nunca) oder eine Lage, die bis jetzt andauert (Perfekt: hasta ahora, últimamente, siempre, desde hace)."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A két múlt idő közti választás azon múlik, hogy egy lezárt, egyszeri eseményről beszélünk, vagy a mostanáig tartó helyzetről. Ha tegnapról, tavalyról, egy konkrét napról, vagy Mexikóban a már, a még nem, a soha és a valaha szavakról beszélünk, befejezett múlt kell. Ha a mostanáig tartó vagy a mostanáig ismétlődő helyzetről beszélünk, közelmúlt kell. A közelmúlt alakja a segédige jelen ideje és a melléknévi igenév. Mexikóban beszédben gyakran befejezett múltat mondanak a mai napra, erre a hétre vagy erre az évre is, Spanyolországban ilyenkor inkább közelmúltat. A feladatokban a jelölő dönt.",
+    "en": "The choice between the two past tenses depends on whether we talk about a closed, one-time event or about a situation that lasts up to now. If we talk about yesterday, last year, one particular day, or, in Mexico, about already, not yet, never and ever, the simple past is needed. If we talk about a situation that lasts or keeps repeating up to now, the present perfect is needed. The present perfect is made of the present of the helping verb and a participle. In Mexico people often use the simple past in speech even for today, this week or this year, while in Spain they prefer the present perfect there. In the exercises the marker decides.",
+    "es": "La elección entre los dos pasados depende de si hablamos de un hecho cerrado y puntual o de una situación que llega hasta ahora. Si hablamos de ayer, del año pasado, de un día concreto o, en México, del ya, del todavía no, del nunca y del alguna vez, se usa el indefinido. Si hablamos de una situación que dura o se repite hasta ahora, se usa el perfecto. El perfecto se forma con el presente de haber y un participio. En México, al hablar, se usa mucho el indefinido incluso para hoy, esta semana o este año; en España allí se prefiere el perfecto. En los ejercicios decide el marcador.",
+    "de": "Die Wahl zwischen den beiden Vergangenheitsformen hängt davon ab, ob wir über ein abgeschlossenes, einmaliges Ereignis sprechen oder über eine Lage, die bis jetzt dauert. Sprechen wir über gestern, letztes Jahr, einen bestimmten Tag oder, in Mexiko, über schon, noch nicht, nie und jemals, braucht es die einfache Vergangenheit. Sprechen wir über eine Lage, die bis jetzt dauert oder sich bis jetzt wiederholt, braucht es das Perfekt. Das Perfekt wird aus dem Präsens des Hilfsverbs und einem Partizip gebildet. In Mexiko benutzt man beim Sprechen oft die einfache Vergangenheit, sogar für heute, diese Woche oder dieses Jahr, in Spanien bevorzugt man dort das Perfekt. In den Übungen entscheidet der Marker."
+  },
+  "glossary": [
+    {
+      "word": "alguna vez",
+      "gloss": {
+        "hu": "valaha, valamikor az eddigi életben",
+        "en": "ever, at some point so far",
+        "es": "en algún momento hasta ahora",
+        "de": "jemals, irgendwann bisher"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "pvi-01",
+      "sentence": "Ayer ___ (yo) en casa de mi madre.",
+      "options": [
+        "comía",
+        "comí",
+        "he comido"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A(z) «ayer» (tegnap) lezárt időpont, ezért befejezett múlt jön: comí.",
+        "en": "«ayer» (yesterday) is a closed point in time, so the preterite is used: comí.",
+        "es": "«ayer» es un momento cerrado, por eso va el indefinido: comí.",
+        "de": "«ayer» (gestern) ist ein abgeschlossener Zeitpunkt, deshalb steht das Indefinido: comí."
+      },
+      "wrong": {
+        "comía": {
+          "hu": "comía: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «ayer» (tegnap) egyetlen lezárt alkalmat jelöl, nem szokást vagy hátteret. Helyesen: Ayer comí en casa de mi madre.",
+          "en": "comía: imperfect (imperfecto): it would describe a habit or a background. It does not fit here, because «ayer» (yesterday) marks one closed occasion, not a habit or a background. Correct: Ayer comí en casa de mi madre.",
+          "es": "comía: imperfecto: describiría una costumbre o un fondo. Aquí no encaja, porque «ayer» señala una ocasión cerrada, no una costumbre ni un fondo. Correcto: Ayer comí en casa de mi madre.",
+          "de": "comía: Imperfekt: es würde eine Gewohnheit oder einen Hintergrund beschreiben. Das passt hier nicht, weil «ayer» (gestern) markiert einen abgeschlossenen Einzelfall, keine Gewohnheit und keinen Hintergrund. Richtig: Ayer comí en casa de mi madre."
+        },
+        "he comido": {
+          "hu": "he comido: közelmúlt (perfecto): a mostanihoz kötné a dolgot. Ide nem illik, mert a(z) «ayer» (tegnap) lezárt időpont, a perfecto pedig a mostanihoz kötődő időt jelöl. Helyesen: Ayer comí en casa de mi madre.",
+          "en": "he comido: present perfect (perfecto): it would link the event to now. It does not fit here, because «ayer» (yesterday) is a closed point in time, and the perfecto belongs to the time up to now. Correct: Ayer comí en casa de mi madre.",
+          "es": "he comido: perfecto: uniría el hecho con el ahora. Aquí no encaja, porque «ayer» es un momento cerrado, y el perfecto pertenece al tiempo hasta ahora. Correcto: Ayer comí en casa de mi madre.",
+          "de": "he comido: Perfekt: es würde das Ereignis mit dem Jetzt verbinden. Das passt hier nicht, weil «ayer» (gestern) ist ein abgeschlossener Zeitpunkt, und das Perfekt gehört zur Zeit bis jetzt. Richtig: Ayer comí en casa de mi madre."
+        }
+      },
+      "examples": [
+        "Ayer comí con mi familia.",
+        "El sábado comí en casa de mi abuela."
+      ]
+    },
+    {
+      "id": "pvi-02",
+      "sentence": "¿___ (ustedes) alguna vez esa película?",
+      "options": [
+        "vieron",
+        "verán",
+        "veían"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A(z) «alguna vez» (valaha) azt kérdezi, megtörtént-e már egyszer: egyszeri, lezárt esemény, ezért mexikói beszédben befejezett múlt (indefinido) jön: vieron.",
+        "en": "«alguna vez» (ever) asks whether it happened once: a closed, one-time event, so in Mexican speech the preterite is used: vieron.",
+        "es": "«alguna vez» pregunta si pasó una vez: un hecho puntual y cerrado, por eso en el habla mexicana va el indefinido: vieron.",
+        "de": "«alguna vez» (jemals) fragt, ob es einmal geschah: ein abgeschlossenes, einmaliges Ereignis, deshalb steht in der mexikanischen Alltagssprache das Indefinido: vieron."
+      },
+      "wrong": {
+        "verán": {
+          "hu": "verán: egyszerű jövő (futuro simple): azt kérdezné, hogy valaha meg fogják-e nézni a filmet. Ide nem illik, mert a(z) «alguna vez» (valaha) itt arra kérdez, hogy megtörtént-e már. Helyesen: ¿Vieron alguna vez esa película?",
+          "en": "verán: simple future (futuro simple): it would ask whether you will ever watch the film. It does not fit here, because «alguna vez» (ever) asks here whether it has happened already. Correct: ¿Vieron alguna vez esa película?",
+          "es": "verán: futuro simple: preguntaría si alguna vez la verán. Aquí no encaja, porque «alguna vez» pregunta aquí si ya pasó. Correcto: ¿Vieron alguna vez esa película?",
+          "de": "verán: einfaches Futur: es würde fragen, ob ihr den Film jemals sehen werdet. Das passt hier nicht, weil «alguna vez» (jemals) hier fragt, ob es schon geschah. Richtig: ¿Vieron alguna vez esa película?"
+        },
+        "veían": {
+          "hu": "veían: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «alguna vez» (valaha) egyetlen, lezárt alkalomra kérdez, nem szokásra vagy háttérre. Helyesen: ¿Vieron alguna vez esa película?",
+          "en": "veían: imperfect (imperfecto): it would describe a habit or a background. It does not fit here, because «alguna vez» (ever) asks about one closed occasion, not a habit or a background. Correct: ¿Vieron alguna vez esa película?",
+          "es": "veían: imperfecto: describiría una costumbre o un fondo. Aquí no encaja, porque «alguna vez» pregunta por una ocasión cerrada, no por una costumbre ni un fondo del pasado. Correcto: ¿Vieron alguna vez esa película?",
+          "de": "veían: Imperfekt: es würde eine Gewohnheit oder einen Hintergrund beschreiben. Das passt hier nicht, weil «alguna vez» (jemals) nach einem abgeschlossenen Einzelfall fragt, nicht nach einer vergangenen Gewohnheit oder einem Hintergrund. Richtig: ¿Vieron alguna vez esa película?"
+        }
+      },
+      "examples": [
+        "¿Alguna vez viajaste en tren?",
+        "¿Alguna vez hablaste con un médico?"
+      ]
+    },
+    {
+      "id": "pvi-03",
+      "sentence": "Anoche ___ (yo) con mi hermana por teléfono.",
+      "options": [
+        "hablaba",
+        "he hablado",
+        "hablé"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A(z) «anoche» (tegnap este) lezárt időpont, ezért befejezett múlt jön: hablé.",
+        "en": "«anoche» (last night) is a closed point in time, so the preterite is used: hablé.",
+        "es": "«anoche» es un momento cerrado, por eso va el indefinido: hablé.",
+        "de": "«anoche» (gestern Abend) ist ein abgeschlossener Zeitpunkt, deshalb steht das Indefinido: hablé."
+      },
+      "wrong": {
+        "hablaba": {
+          "hu": "hablaba: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «anoche» (tegnap este) egyetlen lezárt alkalmat jelöl, nem szokást vagy hátteret. Helyesen: Anoche hablé con mi hermana por teléfono.",
+          "en": "hablaba: imperfect (imperfecto): it would describe a habit or a background. It does not fit here, because «anoche» (last night) marks one closed occasion, not a habit or a background. Correct: Anoche hablé con mi hermana por teléfono.",
+          "es": "hablaba: imperfecto: describiría una costumbre o un fondo. Aquí no encaja, porque «anoche» señala una ocasión cerrada, no una costumbre ni un fondo. Correcto: Anoche hablé con mi hermana por teléfono.",
+          "de": "hablaba: Imperfekt: es würde eine Gewohnheit oder einen Hintergrund beschreiben. Das passt hier nicht, weil «anoche» (gestern Abend) markiert einen abgeschlossenen Einzelfall, keine Gewohnheit und keinen Hintergrund. Richtig: Anoche hablé con mi hermana por teléfono."
+        },
+        "he hablado": {
+          "hu": "he hablado: közelmúlt (perfecto): a mostanihoz kötné a dolgot. Ide nem illik, mert a(z) «anoche» (tegnap este) lezárt időpont, a perfecto pedig a mostanihoz kötődő időt jelöl. Helyesen: Anoche hablé con mi hermana por teléfono.",
+          "en": "he hablado: present perfect (perfecto): it would link the event to now. It does not fit here, because «anoche» (last night) is a closed point in time, and the perfecto belongs to the time up to now. Correct: Anoche hablé con mi hermana por teléfono.",
+          "es": "he hablado: perfecto: uniría el hecho con el ahora. Aquí no encaja, porque «anoche» es un momento cerrado, y el perfecto pertenece al tiempo hasta ahora. Correcto: Anoche hablé con mi hermana por teléfono.",
+          "de": "he hablado: Perfekt: es würde das Ereignis mit dem Jetzt verbinden. Das passt hier nicht, weil «anoche» (gestern Abend) ist ein abgeschlossener Zeitpunkt, und das Perfekt gehört zur Zeit bis jetzt. Richtig: Anoche hablé con mi hermana por teléfono."
+        }
+      },
+      "examples": [
+        "Anoche hablé con mi madre.",
+        "Anoche escribí un correo a mi jefe."
+      ]
+    },
+    {
+      "id": "pvi-04",
+      "sentence": "Nunca ___ (yo) al mar, pero quiero ir.",
+      "options": [
+        "iba",
+        "fui",
+        "iré"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A(z) «nunca» (soha) azt mondja, hogy egyszer sem történt meg: egyszeri, lezárt esemény, ezért mexikói beszédben befejezett múlt (indefinido) jön: fui.",
+        "en": "«nunca» (never) says that it did not happen even once: a closed, one-time event, so in Mexican speech the preterite is used: fui.",
+        "es": "«nunca» dice que no pasó ni una vez: un hecho puntual y cerrado, por eso en el habla mexicana va el indefinido: fui.",
+        "de": "«nunca» (nie) sagt, dass es kein einziges Mal geschah: ein abgeschlossenes, einmaliges Ereignis, deshalb steht in der mexikanischen Alltagssprache das Indefinido: fui."
+      },
+      "wrong": {
+        "iba": {
+          "hu": "iba: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «nunca» (soha) itt azt mondja, hogy egyszer sem történt meg, nem múltbeli szokásról vagy háttérről szól. Helyesen: Nunca fui al mar, pero quiero ir.",
+          "en": "iba: imperfect (imperfecto): it would describe a habit or a background. It does not fit here, because «nunca» (never) says here that it did not happen even once, not a past habit or a background. Correct: Nunca fui al mar, pero quiero ir.",
+          "es": "iba: imperfecto: describiría una costumbre o un fondo. Aquí no encaja, porque «nunca» dice aquí que no pasó ni una vez, no una costumbre ni un fondo del pasado. Correcto: Nunca fui al mar, pero quiero ir.",
+          "de": "iba: Imperfekt: es würde eine Gewohnheit oder einen Hintergrund beschreiben. Das passt hier nicht, weil «nunca» (nie) hier sagt, dass es kein einziges Mal geschah, nicht eine vergangene Gewohnheit oder einen Hintergrund. Richtig: Nunca fui al mar, pero quiero ir."
+        },
+        "iré": {
+          "hu": "iré: egyszerű jövő (futuro simple): azt mondaná, hogy soha nem fogok a tengerre menni, ami ellentmond a «pero quiero ir»-nek. Ide nem illik, mert a(z) «nunca» (soha) itt a múltra néz. Helyesen: Nunca fui al mar, pero quiero ir.",
+          "en": "iré: simple future (futuro simple): it would say that I will never go to the sea, which contradicts «pero quiero ir». It does not fit here, because «nunca» (never) looks at the past here. Correct: Nunca fui al mar, pero quiero ir.",
+          "es": "iré: futuro simple: diría que nunca iré al mar, lo que contradice «pero quiero ir». Aquí no encaja, porque «nunca» mira aquí al pasado. Correcto: Nunca fui al mar, pero quiero ir.",
+          "de": "iré: einfaches Futur: es würde sagen, dass ich nie ans Meer fahren werde, was «pero quiero ir» widerspricht. Das passt hier nicht, weil «nunca» (nie) hier auf die Vergangenheit blickt. Richtig: Nunca fui al mar, pero quiero ir."
+        }
+      },
+      "examples": [
+        "Nunca viajé en tren.",
+        "Nunca estuve en el campo."
+      ]
+    },
+    {
+      "id": "pvi-05",
+      "sentence": "El año pasado ___ (nosotros) a la playa por primera vez.",
+      "options": [
+        "hemos ido",
+        "íbamos",
+        "fuimos"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A(z) «el año pasado» (tavaly) lezárt időpont, ezért befejezett múlt jön: fuimos.",
+        "en": "«el año pasado» (last year) is a closed point in time, so the preterite is used: fuimos.",
+        "es": "«el año pasado» es un momento cerrado, por eso va el indefinido: fuimos.",
+        "de": "«el año pasado» (letztes Jahr) ist ein abgeschlossener Zeitpunkt, deshalb steht das Indefinido: fuimos."
+      },
+      "wrong": {
+        "hemos ido": {
+          "hu": "hemos ido: közelmúlt (perfecto): a mostanihoz kötné a dolgot. Ide nem illik, mert a(z) «el año pasado» (tavaly) lezárt időpont, a perfecto pedig a mostanihoz kötődő időt jelöl. Helyesen: El año pasado fuimos a la playa por primera vez.",
+          "en": "hemos ido: present perfect (perfecto): it would link the event to now. It does not fit here, because «el año pasado» (last year) is a closed point in time, and the perfecto belongs to the time up to now. Correct: El año pasado fuimos a la playa por primera vez.",
+          "es": "hemos ido: perfecto: uniría el hecho con el ahora. Aquí no encaja, porque «el año pasado» es un momento cerrado, y el perfecto pertenece al tiempo hasta ahora. Correcto: El año pasado fuimos a la playa por primera vez.",
+          "de": "hemos ido: Perfekt: es würde das Ereignis mit dem Jetzt verbinden. Das passt hier nicht, weil «el año pasado» (letztes Jahr) ist ein abgeschlossener Zeitpunkt, und das Perfekt gehört zur Zeit bis jetzt. Richtig: El año pasado fuimos a la playa por primera vez."
+        },
+        "íbamos": {
+          "hu": "íbamos: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «el año pasado» (tavaly) egyetlen lezárt alkalmat jelöl, nem szokást vagy hátteret. Helyesen: El año pasado fuimos a la playa por primera vez.",
+          "en": "íbamos: imperfect (imperfecto): it would describe a habit or a background. It does not fit here, because «el año pasado» (last year) marks one closed occasion, not a habit or a background. Correct: El año pasado fuimos a la playa por primera vez.",
+          "es": "íbamos: imperfecto: describiría una costumbre o un fondo. Aquí no encaja, porque «el año pasado» señala una ocasión cerrada, no una costumbre ni un fondo. Correcto: El año pasado fuimos a la playa por primera vez.",
+          "de": "íbamos: Imperfekt: es würde eine Gewohnheit oder einen Hintergrund beschreiben. Das passt hier nicht, weil «el año pasado» (letztes Jahr) markiert einen abgeschlossenen Einzelfall, keine Gewohnheit und keinen Hintergrund. Richtig: El año pasado fuimos a la playa por primera vez."
+        }
+      },
+      "examples": [
+        "El año pasado viajé con mi padre.",
+        "El año pasado compré un coche."
+      ]
+    },
+    {
+      "id": "pvi-06",
+      "sentence": "Todavía no ___ (yo) la cena y ya es tarde.",
+      "options": [
+        "haré",
+        "hice",
+        "hacía"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A(z) «todavía no» (még nem) azt mondja, hogy az egyszeri esemény még nem történt meg, és mexikói beszédben erre befejezett múlt (indefinido) jön: hice.",
+        "en": "«todavía no» (not yet) says that the one-time event has not happened yet, and in Mexican speech the preterite is used for that: hice.",
+        "es": "«todavía no» dice que el hecho puntual aún no pasó, y en el habla mexicana para eso va el indefinido: hice.",
+        "de": "«todavía no» (noch nicht) sagt, dass das einmalige Ereignis noch nicht geschah, und in der mexikanischen Alltagssprache steht dafür das Indefinido: hice."
+      },
+      "wrong": {
+        "haré": {
+          "hu": "haré: egyszerű jövő (futuro simple): azt mondaná, hogy a vacsorát még nem fogom megcsinálni. Ide nem illik, mert a(z) «todavía no» (még nem) itt a múltra néz: eddig nem történt meg. Helyesen: Todavía no hice la cena y ya es tarde.",
+          "en": "haré: simple future (futuro simple): it would say that I will not make dinner yet. It does not fit here, because «todavía no» (not yet) looks at the past here: it has not happened so far. Correct: Todavía no hice la cena y ya es tarde.",
+          "es": "haré: futuro simple: diría que todavía no voy a hacer la cena. Aquí no encaja, porque «todavía no» mira aquí al pasado: hasta ahora no pasó. Correcto: Todavía no hice la cena y ya es tarde.",
+          "de": "haré: einfaches Futur: es würde sagen, dass ich das Abendessen noch nicht machen werde. Das passt hier nicht, weil «todavía no» (noch nicht) hier auf die Vergangenheit blickt: bis jetzt geschah es nicht. Richtig: Todavía no hice la cena y ya es tarde."
+        },
+        "hacía": {
+          "hu": "hacía: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «todavía no» (még nem) egy meg nem történt egyszeri eseményre néz, nem múltbeli szokásra vagy háttérre. Helyesen: Todavía no hice la cena y ya es tarde.",
+          "en": "hacía: imperfect (imperfecto): it would describe a habit or a background. It does not fit here, because «todavía no» (not yet) looks at a one-time event that has not happened, not at a past habit or a background. Correct: Todavía no hice la cena y ya es tarde.",
+          "es": "hacía: imperfecto: describiría una costumbre o un fondo. Aquí no encaja, porque «todavía no» mira un hecho puntual que no pasó, no una costumbre ni un fondo del pasado. Correcto: Todavía no hice la cena y ya es tarde.",
+          "de": "hacía: Imperfekt: es würde eine Gewohnheit oder einen Hintergrund beschreiben. Das passt hier nicht, weil «todavía no» (noch nicht) auf ein einmaliges Ereignis blickt, das nicht geschah, nicht auf eine vergangene Gewohnheit oder einen Hintergrund. Richtig: Todavía no hice la cena y ya es tarde."
+        }
+      },
+      "examples": [
+        "Todavía no compré el pan.",
+        "Todavía no hablé con mi jefe."
+      ]
+    },
+    {
+      "id": "pvi-07",
+      "sentence": "En 2020 mis padres ___ una casa nueva.",
+      "options": [
+        "compraron",
+        "han comprado",
+        "compraban"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A(z) «en 2020» (2020-ban) lezárt időpont, ezért befejezett múlt jön: compraron.",
+        "en": "«en 2020» (in 2020) is a closed point in time, so the preterite is used: compraron.",
+        "es": "«en 2020» es un momento cerrado, por eso va el indefinido: compraron.",
+        "de": "«en 2020» (im Jahr 2020) ist ein abgeschlossener Zeitpunkt, deshalb steht das Indefinido: compraron."
+      },
+      "wrong": {
+        "han comprado": {
+          "hu": "han comprado: közelmúlt (perfecto): a mostanihoz kötné a dolgot. Ide nem illik, mert a(z) «en 2020» (2020-ban) lezárt időpont, a perfecto pedig a mostanihoz kötődő időt jelöl. Helyesen: En 2020 mis padres compraron una casa nueva.",
+          "en": "han comprado: present perfect (perfecto): it would link the event to now. It does not fit here, because «en 2020» (in 2020) is a closed point in time, and the perfecto belongs to the time up to now. Correct: En 2020 mis padres compraron una casa nueva.",
+          "es": "han comprado: perfecto: uniría el hecho con el ahora. Aquí no encaja, porque «en 2020» es un momento cerrado, y el perfecto pertenece al tiempo hasta ahora. Correcto: En 2020 mis padres compraron una casa nueva.",
+          "de": "han comprado: Perfekt: es würde das Ereignis mit dem Jetzt verbinden. Das passt hier nicht, weil «en 2020» (im Jahr 2020) ist ein abgeschlossener Zeitpunkt, und das Perfekt gehört zur Zeit bis jetzt. Richtig: En 2020 mis padres compraron una casa nueva."
+        },
+        "compraban": {
+          "hu": "compraban: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «en 2020» (2020-ban) egyetlen lezárt alkalmat jelöl, nem szokást vagy hátteret. Helyesen: En 2020 mis padres compraron una casa nueva.",
+          "en": "compraban: imperfect (imperfecto): it would describe a habit or a background. It does not fit here, because «en 2020» (in 2020) marks one closed occasion, not a habit or a background. Correct: En 2020 mis padres compraron una casa nueva.",
+          "es": "compraban: imperfecto: describiría una costumbre o un fondo. Aquí no encaja, porque «en 2020» señala una ocasión cerrada, no una costumbre ni un fondo. Correcto: En 2020 mis padres compraron una casa nueva.",
+          "de": "compraban: Imperfekt: es würde eine Gewohnheit oder einen Hintergrund beschreiben. Das passt hier nicht, weil «en 2020» (im Jahr 2020) markiert einen abgeschlossenen Einzelfall, keine Gewohnheit und keinen Hintergrund. Richtig: En 2020 mis padres compraron una casa nueva."
+        }
+      },
+      "examples": [
+        "En 2018 viajé en tren.",
+        "En 2022 trabajé en una oficina."
+      ]
+    },
+    {
+      "id": "pvi-08",
+      "sentence": "¿Ya ___ (tú) con tu padre?",
+      "options": [
+        "hablarás",
+        "hablabas",
+        "hablaste"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A(z) «ya» (már) azt kérdezi, megtörtént-e már az egyszeri esemény, és mexikói beszédben erre befejezett múlt (indefinido) jön: hablaste.",
+        "en": "«ya» (already) asks whether the one-time event has already happened, and in Mexican speech the preterite is used for that: hablaste.",
+        "es": "«ya» pregunta si el hecho puntual ya pasó, y en el habla mexicana para eso va el indefinido: hablaste.",
+        "de": "«ya» (schon) fragt, ob das einmalige Ereignis schon geschah, und in der mexikanischen Alltagssprache steht dafür das Indefinido: hablaste."
+      },
+      "wrong": {
+        "hablarás": {
+          "hu": "hablarás: egyszerű jövő (futuro simple): azt kérdezné, hogy majd beszélsz-e az apáddal. Ide nem illik, mert a(z) «ya» (már) itt a múltra néz: megtörtént-e már. Helyesen: ¿Ya hablaste con tu padre?",
+          "en": "hablarás: simple future (futuro simple): it would ask whether you will talk to your father. It does not fit here, because «ya» (already) looks at the past here: has it happened already. Correct: ¿Ya hablaste con tu padre?",
+          "es": "hablarás: futuro simple: preguntaría si hablarás con tu padre. Aquí no encaja, porque «ya» mira aquí al pasado: si ya pasó. Correcto: ¿Ya hablaste con tu padre?",
+          "de": "hablarás: einfaches Futur: es würde fragen, ob du mit deinem Vater sprechen wirst. Das passt hier nicht, weil «ya» (schon) hier auf die Vergangenheit blickt: ob es schon geschah. Richtig: ¿Ya hablaste con tu padre?"
+        },
+        "hablabas": {
+          "hu": "hablabas: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «ya» (már) egy lezárt, egyszeri eseményre kérdez, nem szokásra vagy háttérre. Helyesen: ¿Ya hablaste con tu padre?",
+          "en": "hablabas: imperfect (imperfecto): it would describe a habit or a background. It does not fit here, because «ya» (already) asks about a closed, one-time event, not a habit or a background. Correct: ¿Ya hablaste con tu padre?",
+          "es": "hablabas: imperfecto: describiría una costumbre o un fondo. Aquí no encaja, porque «ya» pregunta por un hecho cerrado y puntual, no por una costumbre ni un fondo del pasado. Correcto: ¿Ya hablaste con tu padre?",
+          "de": "hablabas: Imperfekt: es würde eine Gewohnheit oder einen Hintergrund beschreiben. Das passt hier nicht, weil «ya» (schon) nach einem abgeschlossenen, einmaligen Ereignis fragt, nicht nach einer vergangenen Gewohnheit oder einem Hintergrund. Richtig: ¿Ya hablaste con tu padre?"
+        }
+      },
+      "examples": [
+        "¿Ya comiste?",
+        "¿Ya viste esa película?"
+      ]
+    },
+    {
+      "id": "pvi-09",
+      "sentence": "El lunes pasado ___ (yo) a la oficina en tren.",
+      "options": [
+        "fui",
+        "he ido",
+        "iba"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A(z) «el lunes pasado» (múlt hétfőn) lezárt időpont, ezért befejezett múlt jön: fui.",
+        "en": "«el lunes pasado» (last Monday) is a closed point in time, so the preterite is used: fui.",
+        "es": "«el lunes pasado» es un momento cerrado, por eso va el indefinido: fui.",
+        "de": "«el lunes pasado» (letzten Montag) ist ein abgeschlossener Zeitpunkt, deshalb steht das Indefinido: fui."
+      },
+      "wrong": {
+        "he ido": {
+          "hu": "he ido: közelmúlt (perfecto): a mostanihoz kötné a dolgot. Ide nem illik, mert a(z) «el lunes pasado» (múlt hétfőn) lezárt időpont, a perfecto pedig a mostanihoz kötődő időt jelöl. Helyesen: El lunes pasado fui a la oficina en tren.",
+          "en": "he ido: present perfect (perfecto): it would link the event to now. It does not fit here, because «el lunes pasado» (last Monday) is a closed point in time, and the perfecto belongs to the time up to now. Correct: El lunes pasado fui a la oficina en tren.",
+          "es": "he ido: perfecto: uniría el hecho con el ahora. Aquí no encaja, porque «el lunes pasado» es un momento cerrado, y el perfecto pertenece al tiempo hasta ahora. Correcto: El lunes pasado fui a la oficina en tren.",
+          "de": "he ido: Perfekt: es würde das Ereignis mit dem Jetzt verbinden. Das passt hier nicht, weil «el lunes pasado» (letzten Montag) ist ein abgeschlossener Zeitpunkt, und das Perfekt gehört zur Zeit bis jetzt. Richtig: El lunes pasado fui a la oficina en tren."
+        },
+        "iba": {
+          "hu": "iba: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «el lunes pasado» (múlt hétfőn) egyetlen lezárt alkalmat jelöl, nem szokást vagy hátteret. Helyesen: El lunes pasado fui a la oficina en tren.",
+          "en": "iba: imperfect (imperfecto): it would describe a habit or a background. It does not fit here, because «el lunes pasado» (last Monday) marks one closed occasion, not a habit or a background. Correct: El lunes pasado fui a la oficina en tren.",
+          "es": "iba: imperfecto: describiría una costumbre o un fondo. Aquí no encaja, porque «el lunes pasado» señala una ocasión cerrada, no una costumbre ni un fondo. Correcto: El lunes pasado fui a la oficina en tren.",
+          "de": "iba: Imperfekt: es würde eine Gewohnheit oder einen Hintergrund beschreiben. Das passt hier nicht, weil «el lunes pasado» (letzten Montag) markiert einen abgeschlossenen Einzelfall, keine Gewohnheit und keinen Hintergrund. Richtig: El lunes pasado fui a la oficina en tren."
+        }
+      },
+      "examples": [
+        "El viernes fuimos al parque.",
+        "El domingo comimos en casa."
+      ]
+    },
+    {
+      "id": "pvi-10",
+      "sentence": "Hasta ahora mi hermana ___ mucho.",
+      "options": [
+        "viajó",
+        "ha viajado",
+        "viajaba"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A(z) «hasta ahora» (eddig) a mostanáig tartó helyzetre utal, ezért közelmúlt (perfecto) jön: ha viajado.",
+        "en": "«hasta ahora» (so far) points at the situation up to now, so the present perfect is used: ha viajado.",
+        "es": "«hasta ahora» apunta a la situación hasta ahora, por eso va el perfecto: ha viajado.",
+        "de": "«hasta ahora» (bis jetzt) verweist auf die Lage bis jetzt, deshalb steht das Perfekt: ha viajado."
+      },
+      "wrong": {
+        "viajó": {
+          "hu": "viajó: befejezett múlt (indefinido): egy lezárt múltbeli dolgot mondana. Ide nem illik, mert a(z) «hasta ahora» (eddig) a mostanáig tartó időre néz, az indefinido pedig lezárt időpontot jelölne. Helyesen: Hasta ahora mi hermana ha viajado mucho.",
+          "en": "viajó: preterite (indefinido): it would state a closed event in the past. It does not fit here, because «hasta ahora» (so far) looks at the time up to now, while the indefinido would mark a closed moment. Correct: Hasta ahora mi hermana ha viajado mucho.",
+          "es": "viajó: indefinido: diría algo cerrado en el pasado. Aquí no encaja, porque «hasta ahora» mira el tiempo hasta ahora, y el indefinido marcaría un momento cerrado. Correcto: Hasta ahora mi hermana ha viajado mucho.",
+          "de": "viajó: Indefinido: es würde ein abgeschlossenes Ereignis der Vergangenheit sagen. Das passt hier nicht, weil «hasta ahora» (bis jetzt) blickt auf die Zeit bis jetzt, das Indefinido würde einen abgeschlossenen Zeitpunkt markieren. Richtig: Hasta ahora mi hermana ha viajado mucho."
+        },
+        "viajaba": {
+          "hu": "viajaba: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «hasta ahora» (eddig) a mostanáig tartó időre néz, nem múltbeli szokásra vagy háttérre. Helyesen: Hasta ahora mi hermana ha viajado mucho.",
+          "en": "viajaba: imperfect (imperfecto): it would describe a habit or a background. It does not fit here, because «hasta ahora» (so far) looks at the time up to now, not at a past habit or a background. Correct: Hasta ahora mi hermana ha viajado mucho.",
+          "es": "viajaba: imperfecto: describiría una costumbre o un fondo. Aquí no encaja, porque «hasta ahora» mira el tiempo hasta ahora, no una costumbre ni un fondo del pasado. Correcto: Hasta ahora mi hermana ha viajado mucho.",
+          "de": "viajaba: Imperfekt: es würde eine Gewohnheit oder einen Hintergrund beschreiben. Das passt hier nicht, weil «hasta ahora» (bis jetzt) blickt auf die Zeit bis jetzt, nicht auf eine vergangene Gewohnheit oder einen Hintergrund. Richtig: Hasta ahora mi hermana ha viajado mucho."
+        }
+      },
+      "examples": [
+        "Hasta ahora hemos viajado mucho.",
+        "Hasta ahora he trabajado bien."
+      ]
+    },
+    {
+      "id": "pvi-11",
+      "sentence": "Hace dos días ___ (ellos) en el hospital.",
+      "options": [
+        "han estado",
+        "estarán",
+        "estuvieron"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A(z) «hace dos días» (két napja) lezárt időpont, ezért befejezett múlt jön: estuvieron.",
+        "en": "«hace dos días» (two days ago) is a closed point in time, so the preterite is used: estuvieron.",
+        "es": "«hace dos días» es un momento cerrado, por eso va el indefinido: estuvieron.",
+        "de": "«hace dos días» (vor zwei Tagen) ist ein abgeschlossener Zeitpunkt, deshalb steht das Indefinido: estuvieron."
+      },
+      "wrong": {
+        "han estado": {
+          "hu": "han estado: közelmúlt (perfecto): a mostanihoz kötné a dolgot. Ide nem illik, mert a(z) «hace dos días» (két napja) lezárt időpont, a perfecto pedig a mostanihoz kötődő időt jelöl. Helyesen: Hace dos días estuvieron en el hospital.",
+          "en": "han estado: present perfect (perfecto): it would link the event to now. It does not fit here, because «hace dos días» (two days ago) is a closed point in time, and the perfecto belongs to the time up to now. Correct: Hace dos días estuvieron en el hospital.",
+          "es": "han estado: perfecto: uniría el hecho con el ahora. Aquí no encaja, porque «hace dos días» es un momento cerrado, y el perfecto pertenece al tiempo hasta ahora. Correcto: Hace dos días estuvieron en el hospital.",
+          "de": "han estado: Perfekt: es würde das Ereignis mit dem Jetzt verbinden. Das passt hier nicht, weil «hace dos días» (vor zwei Tagen) ist ein abgeschlossener Zeitpunkt, und das Perfekt gehört zur Zeit bis jetzt. Richtig: Hace dos días estuvieron en el hospital."
+        },
+        "estarán": {
+          "hu": "estarán: egyszerű jövő (futuro simple): előre nézne (a kórházban lesznek). Ide nem illik, mert a(z) «hace dos días» (két napja) lezárt múltbeli időpont. Helyesen: Hace dos días estuvieron en el hospital.",
+          "en": "estarán: simple future (futuro simple): it would look ahead (they will be in the hospital). It does not fit here, because «hace dos días» (two days ago) is a closed point in the past. Correct: Hace dos días estuvieron en el hospital.",
+          "es": "estarán: futuro simple: miraría hacia adelante (estarán en el hospital). Aquí no encaja, porque «hace dos días» es un momento cerrado del pasado. Correcto: Hace dos días estuvieron en el hospital.",
+          "de": "estarán: einfaches Futur: es würde nach vorn blicken (sie werden im Krankenhaus sein). Das passt hier nicht, weil «hace dos días» (vor zwei Tagen) ein abgeschlossener Zeitpunkt in der Vergangenheit ist. Richtig: Hace dos días estuvieron en el hospital."
+        }
+      },
+      "examples": [
+        "Hace dos días hablé con mi madre.",
+        "Hace tres meses viajamos en tren."
+      ]
+    },
+    {
+      "id": "pvi-12",
+      "sentence": "Últimamente ___ (tú) muy bien.",
+      "options": [
+        "has comido",
+        "comiste",
+        "comías"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A(z) «últimamente» (mostanában) még tartó időszak, ezért közelmúlt (perfecto) jön: has comido.",
+        "en": "«últimamente» (lately) is a period that is still going, so the present perfect is used: has comido.",
+        "es": "«últimamente» es un periodo que sigue abierto, por eso va el perfecto: has comido.",
+        "de": "«últimamente» (in letzter Zeit) ist ein Zeitraum, der noch läuft, deshalb steht das Perfekt: has comido."
+      },
+      "wrong": {
+        "comiste": {
+          "hu": "comiste: befejezett múlt (indefinido): egy lezárt múltbeli dolgot mondana. Ide nem illik, mert a(z) «últimamente» (mostanában) a mostanáig tartó időre néz, az indefinido pedig lezárt időpontot jelölne. Helyesen: Últimamente has comido muy bien.",
+          "en": "comiste: preterite (indefinido): it would state a closed event in the past. It does not fit here, because «últimamente» (lately) looks at the time up to now, while the indefinido would mark a closed moment. Correct: Últimamente has comido muy bien.",
+          "es": "comiste: indefinido: diría algo cerrado en el pasado. Aquí no encaja, porque «últimamente» mira el tiempo hasta ahora, y el indefinido marcaría un momento cerrado. Correcto: Últimamente has comido muy bien.",
+          "de": "comiste: Indefinido: es würde ein abgeschlossenes Ereignis der Vergangenheit sagen. Das passt hier nicht, weil «últimamente» (in letzter Zeit) blickt auf die Zeit bis jetzt, das Indefinido würde einen abgeschlossenen Zeitpunkt markieren. Richtig: Últimamente has comido muy bien."
+        },
+        "comías": {
+          "hu": "comías: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «últimamente» (mostanában) a mostanáig tartó időre néz, nem múltbeli szokásra vagy háttérre. Helyesen: Últimamente has comido muy bien.",
+          "en": "comías: imperfect (imperfecto): it would describe a habit or a background. It does not fit here, because «últimamente» (lately) looks at the time up to now, not at a past habit or a background. Correct: Últimamente has comido muy bien.",
+          "es": "comías: imperfecto: describiría una costumbre o un fondo. Aquí no encaja, porque «últimamente» mira el tiempo hasta ahora, no una costumbre ni un fondo del pasado. Correcto: Últimamente has comido muy bien.",
+          "de": "comías: Imperfekt: es würde eine Gewohnheit oder einen Hintergrund beschreiben. Das passt hier nicht, weil «últimamente» (in letzter Zeit) blickt auf die Zeit bis jetzt, nicht auf eine vergangene Gewohnheit oder einen Hintergrund. Richtig: Últimamente has comido muy bien."
+        }
+      },
+      "examples": [
+        "Últimamente he comido bien.",
+        "Últimamente hemos hablado mucho."
+      ]
+    },
+    {
+      "id": "pvi-match-01",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "fui",
+          "en": "I went"
+        },
+        {
+          "es": "he ido",
+          "en": "I have gone"
+        },
+        {
+          "es": "escribí",
+          "en": "I wrote"
+        },
+        {
+          "es": "he escrito",
+          "en": "I have written"
+        },
+        {
+          "es": "vi",
+          "en": "I saw"
+        },
+        {
+          "es": "he visto",
+          "en": "I have seen"
+        }
+      ]
+    },
+    {
+      "id": "pvi-form-01",
+      "kind": "form",
+      "verb": "forma verbal",
+      "person": "Ayer ___ (comer, yo) con mi madre.",
+      "answer": "comí",
+      "table": "perfecto-indefinido-formas"
+    },
+    {
+      "id": "pvi-form-02",
+      "kind": "form",
+      "verb": "forma verbal",
+      "person": "Hasta ahora no ___ (hablar, yo; perfecto) con mi padre.",
+      "answer": "he hablado",
+      "table": "perfecto-indefinido-formas"
+    },
+    {
+      "id": "pvi-form-03",
+      "kind": "form",
+      "verb": "forma verbal",
+      "person": "Anoche ___ (ver, ellos) una película en casa.",
+      "answer": "vieron",
+      "table": "perfecto-indefinido-formas"
+    },
+    {
+      "id": "pvi-form-04",
+      "kind": "form",
+      "verb": "forma verbal",
+      "person": "Nunca ___ (estar, yo; indefinido) en un hospital.",
+      "answer": "estuve",
+      "table": "perfecto-indefinido-formas"
+    },
+    {
+      "id": "pvi-form-05",
+      "kind": "form",
+      "verb": "forma verbal",
+      "person": "¿Ya ___ (comprar, tú; indefinido) el pan?",
+      "answer": "compraste",
+      "table": "perfecto-indefinido-formas"
+    },
+    {
+      "id": "pvi-form-06",
+      "kind": "form",
+      "verb": "forma verbal",
+      "person": "El lunes ___ (ir, nosotros) al cine.",
+      "answer": "fuimos",
+      "table": "perfecto-indefinido-formas"
+    },
+    {
+      "id": "pvi-form-07",
+      "kind": "form",
+      "verb": "forma verbal",
+      "person": "El año pasado ___ (viajar, ellos) a la playa.",
+      "answer": "viajaron",
+      "table": "perfecto-indefinido-formas"
+    },
+    {
+      "id": "pvi-form-08",
+      "kind": "form",
+      "verb": "forma verbal",
+      "person": "Hace tres meses ___ (hablar, yo) con mi jefe.",
+      "answer": "hablé",
+      "table": "perfecto-indefinido-formas"
+    },
+    {
+      "id": "pvi-form-09",
+      "kind": "form",
+      "verb": "forma verbal",
+      "person": "Todavía no ___ (escribir, ella; indefinido) la carta.",
+      "answer": "escribió",
+      "table": "perfecto-indefinido-formas"
+    },
+    {
+      "id": "pvi-form-10",
+      "kind": "form",
+      "verb": "forma verbal",
+      "person": "En 2018 ___ (viajar, yo) en tren.",
+      "answer": "viajé",
+      "table": "perfecto-indefinido-formas"
+    },
+    {
+      "id": "pvi-form-11",
+      "kind": "form",
+      "verb": "forma verbal",
+      "person": "¿___ (ver, tú; indefinido) alguna vez el mar?",
+      "answer": "Viste",
+      "table": "perfecto-indefinido-formas"
+    },
+    {
+      "id": "pvi-form-12",
+      "kind": "form",
+      "verb": "forma verbal",
+      "person": "Últimamente ___ (hacer, yo; perfecto) mucho ejercicio.",
+      "answer": "he hecho",
+      "table": "perfecto-indefinido-formas"
+    },
+    {
+      "kind": "why",
+      "id": "pvi-why-01",
+      "es": "Ayer comí en casa.",
+      "target": "Ayer",
+      "tr": {
+        "hu": "Tegnap otthon ettem.",
+        "en": "Yesterday I ate at home.",
+        "es": "Ayer comí en casa.",
+        "de": "Gestern habe ich zu Hause gegessen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "szokás vagy háttér a múltban → folyamatos múlt (imperfecto)",
+            "en": "a past habit or background → imperfect (imperfecto)",
+            "es": "una costumbre o un fondo en el pasado → pretérito imperfecto",
+            "de": "eine Gewohnheit oder ein Hintergrund in der Vergangenheit → Imperfekt"
+          },
+          "wrong": {
+            "hu": "ez szokás vagy háttér lenne, de a(z) «ayer» (tegnap) egyetlen lezárt alkalmat jelöl",
+            "en": "this would be a habit or a background, but «ayer» (yesterday) marks one closed occasion",
+            "es": "esto sería una costumbre o un fondo, pero «ayer» señala una ocasión cerrada",
+            "de": "das wäre eine Gewohnheit oder ein Hintergrund, aber «ayer» (gestern) markiert einen abgeschlossenen Einzelfall"
+          }
+        },
+        {
+          "text": {
+            "hu": "lezárt, egyszeri esemény a múltban → befejezett múlt (indefinido)",
+            "en": "a closed, one-time event in the past → preterite (indefinido)",
+            "es": "un hecho cerrado y puntual en el pasado → pretérito perfecto simple (indefinido)",
+            "de": "ein abgeschlossenes, einmaliges Ereignis in der Vergangenheit → Indefinido"
+          }
+        },
+        {
+          "text": {
+            "hu": "a mostanáig tartó vagy a mostanáig ismétlődő helyzet → közelmúlt (perfecto)",
+            "en": "a situation that lasts or keeps repeating up to now → present perfect (perfecto)",
+            "es": "una situación que dura o se repite hasta ahora → pretérito perfecto compuesto (perfecto)",
+            "de": "eine Lage, die bis jetzt dauert oder sich bis jetzt wiederholt → Perfekt (perfecto)"
+          },
+          "wrong": {
+            "hu": "ez a mostanihoz kötődő időt jelölne, de a(z) «ayer» (tegnap) lezárt időpont",
+            "en": "this would mark time tied to now, but «ayer» (yesterday) is a closed point in time",
+            "es": "esto marcaría un tiempo unido al ahora, pero «ayer» es un momento cerrado",
+            "de": "das würde eine mit dem Jetzt verbundene Zeit markieren, aber «ayer» (gestern) ist ein abgeschlossener Zeitpunkt"
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "pvi-why-02",
+      "es": "Hasta ahora he trabajado mucho.",
+      "target": "Hasta ahora",
+      "tr": {
+        "hu": "Eddig sokat dolgoztam.",
+        "en": "So far I have worked a lot.",
+        "es": "Hasta ahora he trabajado mucho.",
+        "de": "Bis jetzt habe ich viel gearbeitet."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a mostanáig tartó vagy a mostanáig ismétlődő helyzet → közelmúlt (perfecto)",
+            "en": "a situation that lasts or keeps repeating up to now → present perfect (perfecto)",
+            "es": "una situación que dura o se repite hasta ahora → pretérito perfecto compuesto (perfecto)",
+            "de": "eine Lage, die bis jetzt dauert oder sich bis jetzt wiederholt → Perfekt (perfecto)"
+          }
+        },
+        {
+          "text": {
+            "hu": "szokás vagy háttér a múltban → folyamatos múlt (imperfecto)",
+            "en": "a past habit or background → imperfect (imperfecto)",
+            "es": "una costumbre o un fondo en el pasado → pretérito imperfecto",
+            "de": "eine Gewohnheit oder ein Hintergrund in der Vergangenheit → Imperfekt"
+          },
+          "wrong": {
+            "hu": "ez múltbeli szokás vagy háttér lenne, de a(z) «hasta ahora» (eddig) a mostanáig tartó időre néz",
+            "en": "this would be a past habit or background, but «hasta ahora» (so far) looks at the time up to now",
+            "es": "esto sería una costumbre o un fondo del pasado, pero «hasta ahora» mira el tiempo hasta ahora",
+            "de": "das wäre eine vergangene Gewohnheit oder ein Hintergrund, aber «hasta ahora» (bis jetzt) blickt auf die Zeit bis jetzt"
+          }
+        },
+        {
+          "text": {
+            "hu": "lezárt, egyszeri esemény a múltban → befejezett múlt (indefinido)",
+            "en": "a closed, one-time event in the past → preterite (indefinido)",
+            "es": "un hecho cerrado y puntual en el pasado → pretérito perfecto simple (indefinido)",
+            "de": "ein abgeschlossenes, einmaliges Ereignis in der Vergangenheit → Indefinido"
+          },
+          "wrong": {
+            "hu": "ez lezárt időpontot jelölne, de a(z) «hasta ahora» (eddig) a mostanáig tartó időre néz",
+            "en": "this would mark a closed moment, but «hasta ahora» (so far) looks at the time up to now",
+            "es": "esto marcaría un momento cerrado, pero «hasta ahora» mira el tiempo hasta ahora",
+            "de": "das würde einen abgeschlossenen Zeitpunkt markieren, aber «hasta ahora» (bis jetzt) blickt auf die Zeit bis jetzt"
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "pvi-why-03",
+      "es": "¿Estuviste alguna vez en el campo?",
+      "target": "alguna vez",
+      "tr": {
+        "hu": "Voltál már valaha vidéken?",
+        "en": "Have you ever been in the countryside?",
+        "es": "¿Estuviste alguna vez en el campo?",
+        "de": "Warst du schon einmal auf dem Land?"
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "lezárt, egyszeri esemény a múltban → befejezett múlt (indefinido)",
+            "en": "a closed, one-time event in the past → preterite (indefinido)",
+            "es": "un hecho cerrado y puntual en el pasado → pretérito perfecto simple (indefinido)",
+            "de": "ein abgeschlossenes, einmaliges Ereignis in der Vergangenheit → Indefinido"
+          }
+        },
+        {
+          "text": {
+            "hu": "a mostanáig tartó vagy a mostanáig ismétlődő helyzet → közelmúlt (perfecto)",
+            "en": "a situation that lasts or keeps repeating up to now → present perfect (perfecto)",
+            "es": "una situación que dura o se repite hasta ahora → pretérito perfecto compuesto (perfecto)",
+            "de": "eine Lage, die bis jetzt dauert oder sich bis jetzt wiederholt → Perfekt (perfecto)"
+          },
+          "wrong": {
+            "hu": "ez a mostanáig tartó vagy ismétlődő helyzet lenne, de a(z) «alguna vez» (valaha) egyetlen, lezárt alkalomra kérdez",
+            "en": "this would be a situation that lasts or repeats up to now, but «alguna vez» (ever) asks about one closed occasion",
+            "es": "esto sería una situación que dura o se repite hasta ahora, pero «alguna vez» pregunta por una ocasión cerrada",
+            "de": "das wäre eine Lage, die bis jetzt dauert oder sich wiederholt, aber «alguna vez» (jemals) fragt nach einem abgeschlossenen Einzelfall"
+          }
+        },
+        {
+          "text": {
+            "hu": "szokás vagy háttér a múltban → folyamatos múlt (imperfecto)",
+            "en": "a past habit or background → imperfect (imperfecto)",
+            "es": "una costumbre o un fondo en el pasado → pretérito imperfecto",
+            "de": "eine Gewohnheit oder ein Hintergrund in der Vergangenheit → Imperfekt"
+          },
+          "wrong": {
+            "hu": "ez múltbeli szokás vagy háttér lenne, de a(z) «alguna vez» (valaha) egyetlen, lezárt alkalomra kérdez",
+            "en": "this would be a past habit or background, but «alguna vez» (ever) asks about one closed occasion",
+            "es": "esto sería una costumbre o un fondo del pasado, pero «alguna vez» pregunta por una ocasión cerrada",
+            "de": "das wäre eine vergangene Gewohnheit oder ein Hintergrund, aber «alguna vez» (jemals) fragt nach einem abgeschlossenen Einzelfall"
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "pvi-why-04",
+      "es": "En 2020 fuimos a la playa.",
+      "target": "En 2020",
+      "tr": {
+        "hu": "2020-ban a tengerpartra mentünk.",
+        "en": "In 2020 we went to the beach.",
+        "es": "En 2020 fuimos a la playa.",
+        "de": "2020 sind wir an den Strand gegangen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a mostanáig tartó vagy a mostanáig ismétlődő helyzet → közelmúlt (perfecto)",
+            "en": "a situation that lasts or keeps repeating up to now → present perfect (perfecto)",
+            "es": "una situación que dura o se repite hasta ahora → pretérito perfecto compuesto (perfecto)",
+            "de": "eine Lage, die bis jetzt dauert oder sich bis jetzt wiederholt → Perfekt (perfecto)"
+          },
+          "wrong": {
+            "hu": "ez a mostanihoz kötődő időt jelölne, de a(z) «en 2020» (2020-ban) lezárt időpont",
+            "en": "this would mark time tied to now, but «en 2020» (in 2020) is a closed point in time",
+            "es": "esto marcaría un tiempo unido al ahora, pero «en 2020» es un momento cerrado",
+            "de": "das würde eine mit dem Jetzt verbundene Zeit markieren, aber «en 2020» (im Jahr 2020) ist ein abgeschlossener Zeitpunkt"
+          }
+        },
+        {
+          "text": {
+            "hu": "szokás vagy háttér a múltban → folyamatos múlt (imperfecto)",
+            "en": "a past habit or background → imperfect (imperfecto)",
+            "es": "una costumbre o un fondo en el pasado → pretérito imperfecto",
+            "de": "eine Gewohnheit oder ein Hintergrund in der Vergangenheit → Imperfekt"
+          },
+          "wrong": {
+            "hu": "ez szokás vagy háttér lenne, de a(z) «en 2020» (2020-ban) egyetlen lezárt alkalmat jelöl",
+            "en": "this would be a habit or a background, but «en 2020» (in 2020) marks one closed occasion",
+            "es": "esto sería una costumbre o un fondo, pero «en 2020» señala una ocasión cerrada",
+            "de": "das wäre eine Gewohnheit oder ein Hintergrund, aber «en 2020» (im Jahr 2020) markiert einen abgeschlossenen Einzelfall"
+          }
+        },
+        {
+          "text": {
+            "hu": "lezárt, egyszeri esemény a múltban → befejezett múlt (indefinido)",
+            "en": "a closed, one-time event in the past → preterite (indefinido)",
+            "es": "un hecho cerrado y puntual en el pasado → pretérito perfecto simple (indefinido)",
+            "de": "ein abgeschlossenes, einmaliges Ereignis in der Vergangenheit → Indefinido"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "pvi-why-05",
+      "es": "Todavía no comí.",
+      "target": "Todavía no",
+      "tr": {
+        "hu": "Még nem ettem.",
+        "en": "I have not eaten yet.",
+        "es": "Todavía no comí.",
+        "de": "Ich habe noch nicht gegessen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "szokás vagy háttér a múltban → folyamatos múlt (imperfecto)",
+            "en": "a past habit or background → imperfect (imperfecto)",
+            "es": "una costumbre o un fondo en el pasado → pretérito imperfecto",
+            "de": "eine Gewohnheit oder ein Hintergrund in der Vergangenheit → Imperfekt"
+          },
+          "wrong": {
+            "hu": "ez múltbeli szokás vagy háttér lenne, de a(z) «todavía no» (még nem) egy meg nem történt egyszeri eseményre néz",
+            "en": "this would be a past habit or background, but «todavía no» (not yet) looks at a one-time event that has not happened",
+            "es": "esto sería una costumbre o un fondo del pasado, pero «todavía no» mira un hecho puntual que no pasó",
+            "de": "das wäre eine vergangene Gewohnheit oder ein Hintergrund, aber «todavía no» (noch nicht) blickt auf ein einmaliges Ereignis, das nicht geschah"
+          }
+        },
+        {
+          "text": {
+            "hu": "a mostanáig tartó vagy a mostanáig ismétlődő helyzet → közelmúlt (perfecto)",
+            "en": "a situation that lasts or keeps repeating up to now → present perfect (perfecto)",
+            "es": "una situación que dura o se repite hasta ahora → pretérito perfecto compuesto (perfecto)",
+            "de": "eine Lage, die bis jetzt dauert oder sich bis jetzt wiederholt → Perfekt (perfecto)"
+          },
+          "wrong": {
+            "hu": "ez a mostanáig tartó vagy ismétlődő helyzet lenne, de a(z) «todavía no» (még nem) itt egy egyszeri, még meg nem történt eseményt jelöl",
+            "en": "this would be a situation that lasts or repeats up to now, but «todavía no» (not yet) here marks a one-time event that has not happened yet",
+            "es": "esto sería una situación que dura o se repite hasta ahora, pero «todavía no» marca aquí un hecho puntual que todavía no pasó",
+            "de": "das wäre eine Lage, die bis jetzt dauert oder sich wiederholt, aber «todavía no» (noch nicht) markiert hier ein einmaliges Ereignis, das noch nicht geschah"
+          }
+        },
+        {
+          "text": {
+            "hu": "lezárt, egyszeri esemény a múltban → befejezett múlt (indefinido)",
+            "en": "a closed, one-time event in the past → preterite (indefinido)",
+            "es": "un hecho cerrado y puntual en el pasado → pretérito perfecto simple (indefinido)",
+            "de": "ein abgeschlossenes, einmaliges Ereignis in der Vergangenheit → Indefinido"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "pvi-why-06",
+      "es": "Anoche vi una película.",
+      "target": "Anoche",
+      "tr": {
+        "hu": "Tegnap este láttam egy filmet.",
+        "en": "Last night I saw a film.",
+        "es": "Anoche vi una película.",
+        "de": "Gestern Abend habe ich einen Film gesehen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "lezárt, egyszeri esemény a múltban → befejezett múlt (indefinido)",
+            "en": "a closed, one-time event in the past → preterite (indefinido)",
+            "es": "un hecho cerrado y puntual en el pasado → pretérito perfecto simple (indefinido)",
+            "de": "ein abgeschlossenes, einmaliges Ereignis in der Vergangenheit → Indefinido"
+          }
+        },
+        {
+          "text": {
+            "hu": "a mostanáig tartó vagy a mostanáig ismétlődő helyzet → közelmúlt (perfecto)",
+            "en": "a situation that lasts or keeps repeating up to now → present perfect (perfecto)",
+            "es": "una situación que dura o se repite hasta ahora → pretérito perfecto compuesto (perfecto)",
+            "de": "eine Lage, die bis jetzt dauert oder sich bis jetzt wiederholt → Perfekt (perfecto)"
+          },
+          "wrong": {
+            "hu": "ez a mostanihoz kötődő időt jelölne, de a(z) «anoche» (tegnap este) lezárt időpont",
+            "en": "this would mark time tied to now, but «anoche» (last night) is a closed point in time",
+            "es": "esto marcaría un tiempo unido al ahora, pero «anoche» es un momento cerrado",
+            "de": "das würde eine mit dem Jetzt verbundene Zeit markieren, aber «anoche» (gestern Abend) ist ein abgeschlossener Zeitpunkt"
+          }
+        },
+        {
+          "text": {
+            "hu": "szokás vagy háttér a múltban → folyamatos múlt (imperfecto)",
+            "en": "a past habit or background → imperfect (imperfecto)",
+            "es": "una costumbre o un fondo en el pasado → pretérito imperfecto",
+            "de": "eine Gewohnheit oder ein Hintergrund in der Vergangenheit → Imperfekt"
+          },
+          "wrong": {
+            "hu": "ez szokás vagy háttér lenne, de a(z) «anoche» (tegnap este) egyetlen lezárt alkalmat jelöl",
+            "en": "this would be a habit or a background, but «anoche» (last night) marks one closed occasion",
+            "es": "esto sería una costumbre o un fondo, pero «anoche» señala una ocasión cerrada",
+            "de": "das wäre eine Gewohnheit oder ein Hintergrund, aber «anoche» (gestern Abend) markiert einen abgeschlossenen Einzelfall"
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "pvi-why-07",
+      "es": "Últimamente he comido bien.",
+      "target": "Últimamente",
+      "tr": {
+        "hu": "Mostanában jól ettem.",
+        "en": "Lately I have eaten well.",
+        "es": "Últimamente he comido bien.",
+        "de": "In letzter Zeit habe ich gut gegessen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "lezárt, egyszeri esemény a múltban → befejezett múlt (indefinido)",
+            "en": "a closed, one-time event in the past → preterite (indefinido)",
+            "es": "un hecho cerrado y puntual en el pasado → pretérito perfecto simple (indefinido)",
+            "de": "ein abgeschlossenes, einmaliges Ereignis in der Vergangenheit → Indefinido"
+          },
+          "wrong": {
+            "hu": "ez lezárt időpontot jelölne, de a(z) «últimamente» (mostanában) a mostanáig tartó időre néz",
+            "en": "this would mark a closed moment, but «últimamente» (lately) looks at the time up to now",
+            "es": "esto marcaría un momento cerrado, pero «últimamente» mira el tiempo hasta ahora",
+            "de": "das würde einen abgeschlossenen Zeitpunkt markieren, aber «últimamente» (in letzter Zeit) blickt auf die Zeit bis jetzt"
+          }
+        },
+        {
+          "text": {
+            "hu": "szokás vagy háttér a múltban → folyamatos múlt (imperfecto)",
+            "en": "a past habit or background → imperfect (imperfecto)",
+            "es": "una costumbre o un fondo en el pasado → pretérito imperfecto",
+            "de": "eine Gewohnheit oder ein Hintergrund in der Vergangenheit → Imperfekt"
+          },
+          "wrong": {
+            "hu": "ez múltbeli szokás vagy háttér lenne, de a(z) «últimamente» (mostanában) a mostanáig tartó időre néz",
+            "en": "this would be a past habit or background, but «últimamente» (lately) looks at the time up to now",
+            "es": "esto sería una costumbre o un fondo del pasado, pero «últimamente» mira el tiempo hasta ahora",
+            "de": "das wäre eine vergangene Gewohnheit oder ein Hintergrund, aber «últimamente» (in letzter Zeit) blickt auf die Zeit bis jetzt"
+          }
+        },
+        {
+          "text": {
+            "hu": "a mostanáig tartó vagy a mostanáig ismétlődő helyzet → közelmúlt (perfecto)",
+            "en": "a situation that lasts or keeps repeating up to now → present perfect (perfecto)",
+            "es": "una situación que dura o se repite hasta ahora → pretérito perfecto compuesto (perfecto)",
+            "de": "eine Lage, die bis jetzt dauert oder sich bis jetzt wiederholt → Perfekt (perfecto)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "pvi-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "hu": "Anyámnál eszem. (tegnap)",
+        "en": "I eat at my mother's house. (yesterday)",
+        "es": "Como en casa de mi madre. (ayer)",
+        "de": "Ich esse bei meiner Mutter. (gestern)"
+      },
+      "answer": "Ayer comí en casa de mi madre.",
+      "accept": [
+        "Ayer yo comí en casa de mi madre.",
+        "Comí en casa de mi madre ayer.",
+        "Yo ayer comí en casa de mi madre.",
+        "Yo comí en casa de mi madre ayer."
+      ],
+      "wordIds": [
+        "25",
+        "14",
+        "42",
+        "1311"
+      ],
+      "why": {
+        "hu": "A(z) «ayer» (tegnap) lezárt időpontot jelöl: indefinido. comer, yo: comí.",
+        "en": "«ayer» (yesterday) marks a closed point in time: indefinido. comer, yo: comí.",
+        "es": "«ayer» señala un momento cerrado: indefinido. comer, yo: comí.",
+        "de": "«ayer» (gestern) markiert einen abgeschlossenen Zeitpunkt: Indefinido. comer, yo: comí."
+      }
+    },
+    {
+      "id": "pvi-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Nem nézed meg azt a filmet. (egészen mostanáig)",
+        "en": "You don't watch that film. (up to right now)",
+        "es": "No ves esa película. (hasta ahorita)",
+        "de": "Du siehst diesen Film nicht. (bis jetzt)"
+      },
+      "answer": "Hasta ahorita no has visto esa película.",
+      "accept": [
+        "Hasta ahorita tú no has visto esa película.",
+        "No has visto esa película hasta ahorita.",
+        "Tú hasta ahorita no has visto esa película.",
+        "Tú no has visto esa película hasta ahorita."
+      ],
+      "wordIds": [
+        "37",
+        "104",
+        "1875"
+      ],
+      "why": {
+        "hu": "A(z) «hasta ahorita» (egészen mostanáig) a mostanáig tartó helyzetre utal: perfecto. ver, tú: has visto.",
+        "en": "«hasta ahorita» (up to right now) points at the situation up to now: perfecto. ver, tú: has visto.",
+        "es": "«hasta ahorita» apunta a la situación hasta ahora: perfecto. ver, tú: has visto.",
+        "de": "«hasta ahorita» (bis jetzt) verweist auf die Lage bis jetzt: Perfekt. ver, tú: has visto."
+      }
+    },
+    {
+      "id": "pvi-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "hu": "A családoddal eszel? (vasárnap)",
+        "en": "Do you eat with your family? (on Sunday)",
+        "es": "¿Comes con tu familia? (el domingo)",
+        "de": "Isst du mit deiner Familie? (am Sonntag)"
+      },
+      "answer": "¿Comiste con tu familia el domingo?",
+      "accept": [
+        "¿El domingo comiste con tu familia?",
+        "¿Tú comiste con tu familia el domingo?",
+        "¿El domingo tú comiste con tu familia?",
+        "¿Tú el domingo comiste con tu familia?"
+      ],
+      "wordIds": [
+        "25",
+        "1852",
+        "1202"
+      ],
+      "why": {
+        "hu": "A(z) «el domingo» (vasárnap) lezárt időpontot jelöl: indefinido. comer, tú: comiste.",
+        "en": "«el domingo» (on Sunday) marks a closed point in time: indefinido. comer, tú: comiste.",
+        "es": "«el domingo» señala un momento cerrado: indefinido. comer, tú: comiste.",
+        "de": "«el domingo» (am Sonntag) markiert einen abgeschlossenen Zeitpunkt: Indefinido. comer, tú: comiste."
+      }
+    },
+    {
+      "id": "pvi-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Látják a nagyapjukat? (mostanában)",
+        "en": "Do they see their grandfather? (lately)",
+        "es": "¿Ven a su abuelo? (últimamente)",
+        "de": "Sehen sie ihren Großvater? (in letzter Zeit)"
+      },
+      "answer": "¿Han visto a su abuelo últimamente?",
+      "accept": [
+        "¿Últimamente han visto a su abuelo?",
+        "¿Ellos han visto a su abuelo últimamente?",
+        "¿Últimamente ellos han visto a su abuelo?",
+        "¿Ellos últimamente han visto a su abuelo?"
+      ],
+      "wordIds": [
+        "37",
+        "1345",
+        "2099"
+      ],
+      "why": {
+        "hu": "A(z) «últimamente» (mostanában) még tartó időszak: perfecto. ver, ellos: han visto.",
+        "en": "«últimamente» (lately) is a period that is still going: perfecto. ver, ellos: han visto.",
+        "es": "«últimamente» es un periodo que sigue abierto: perfecto. ver, ellos: han visto.",
+        "de": "«últimamente» (in letzter Zeit) ist ein Zeitraum, der noch läuft: Perfekt. ver, ellos: han visto."
+      }
+    },
+    {
+      "id": "pvi-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "hu": "Nem eszünk halat. (júliusban)",
+        "en": "We don't eat fish. (in July)",
+        "es": "No comemos pescado. (en julio)",
+        "de": "Wir essen keinen Fisch. (im Juli)"
+      },
+      "answer": "En julio no comimos pescado.",
+      "accept": [
+        "En julio nosotros no comimos pescado.",
+        "No comimos pescado en julio.",
+        "Nosotros en julio no comimos pescado.",
+        "Nosotros no comimos pescado en julio."
+      ],
+      "wordIds": [
+        "25",
+        "1059",
+        "1209"
+      ],
+      "why": {
+        "hu": "A(z) «en julio» (júliusban) lezárt időpontot jelöl: indefinido. comer, nosotros: comimos.",
+        "en": "«en julio» (in July) marks a closed point in time: indefinido. comer, nosotros: comimos.",
+        "es": "«en julio» señala un momento cerrado: indefinido. comer, nosotros: comimos.",
+        "de": "«en julio» (im Juli) markiert einen abgeschlossenen Zeitpunkt: Indefinido. comer, nosotros: comimos."
+      }
+    },
+    {
+      "id": "pvi-tr-06",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Három filmet nézünk. (eddig)",
+        "en": "We watch three films. (so far)",
+        "es": "Vemos tres películas. (hasta el momento)",
+        "de": "Wir sehen drei Filme. (bis jetzt)"
+      },
+      "answer": "Hasta el momento hemos visto tres películas.",
+      "accept": [
+        "Hasta el momento nosotros hemos visto tres películas.",
+        "Hemos visto tres películas hasta el momento.",
+        "Nosotros hasta el momento hemos visto tres películas.",
+        "Nosotros hemos visto tres películas hasta el momento."
+      ],
+      "wordIds": [
+        "37",
+        "1812",
+        "1875",
+        "1977"
+      ],
+      "why": {
+        "hu": "A(z) «hasta el momento» (eddig) a mostanáig tartó helyzetre utal: perfecto. ver, nosotros: hemos visto.",
+        "en": "«hasta el momento» (so far) points at the situation up to now: perfecto. ver, nosotros: hemos visto.",
+        "es": "«hasta el momento» apunta a la situación hasta ahora: perfecto. ver, nosotros: hemos visto.",
+        "de": "«hasta el momento» (bis jetzt) verweist auf die Lage bis jetzt: Perfekt. ver, nosotros: hemos visto."
+      }
+    },
+    {
+      "id": "pvi-tr-07",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "hu": "Sportolsz. (hétfőn)",
+        "en": "You exercise. (on Monday)",
+        "es": "Haces ejercicio. (el lunes)",
+        "de": "Du machst Sport. (am Montag)"
+      },
+      "answer": "El lunes hiciste ejercicio.",
+      "accept": [
+        "El lunes tú hiciste ejercicio.",
+        "Hiciste ejercicio el lunes.",
+        "Tú el lunes hiciste ejercicio.",
+        "Tú hiciste ejercicio el lunes."
+      ],
+      "wordIds": [
+        "34",
+        "707",
+        "1196"
+      ],
+      "why": {
+        "hu": "A(z) «el lunes» (hétfőn) lezárt időpontot jelöl: indefinido. hacer, tú: hiciste.",
+        "en": "«el lunes» (on Monday) marks a closed point in time: indefinido. hacer, tú: hiciste.",
+        "es": "«el lunes» señala un momento cerrado: indefinido. hacer, tú: hiciste.",
+        "de": "«el lunes» (am Montag) markiert einen abgeschlossenen Zeitpunkt: Indefinido. hacer, tú: hiciste."
+      }
+    },
+    {
+      "id": "pvi-tr-08",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Nem vagyok vidéken. (egészen mostanáig)",
+        "en": "I am not in the countryside. (up to right now)",
+        "es": "No estoy en el campo. (hasta ahorita)",
+        "de": "Ich bin nicht auf dem Land. (bis jetzt)"
+      },
+      "answer": "Hasta ahorita no he estado en el campo.",
+      "accept": [
+        "Hasta ahorita yo no he estado en el campo.",
+        "No he estado en el campo hasta ahorita.",
+        "Yo hasta ahorita no he estado en el campo.",
+        "Yo no he estado en el campo hasta ahorita."
+      ],
+      "wordIds": [
+        "3743",
+        "1862"
+      ],
+      "why": {
+        "hu": "A(z) «hasta ahorita» (egészen mostanáig) a mostanáig tartó helyzetre utal: perfecto. estar, yo: he estado.",
+        "en": "«hasta ahorita» (up to right now) points at the situation up to now: perfecto. estar, yo: he estado.",
+        "es": "«hasta ahorita» apunta a la situación hasta ahora: perfecto. estar, yo: he estado.",
+        "de": "«hasta ahorita» (bis jetzt) verweist auf die Lage bis jetzt: Perfekt. estar, yo: he estado."
+      }
+    },
+    {
+      "id": "pvi-tr-09",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "hu": "Hosszú utat tesznek? (2018-ban)",
+        "en": "Do they take a long trip? (in 2018)",
+        "es": "¿Hacen un viaje largo? (en 2018)",
+        "de": "Machen sie eine lange Reise? (2018)"
+      },
+      "answer": "¿Hicieron un viaje largo en 2018?",
+      "accept": [
+        "¿En 2018 hicieron un viaje largo?",
+        "¿Ellos hicieron un viaje largo en 2018?",
+        "¿En 2018 ellos hicieron un viaje largo?",
+        "¿Ellos en 2018 hicieron un viaje largo?"
+      ],
+      "wordIds": [
+        "34",
+        "202",
+        "1422"
+      ],
+      "why": {
+        "hu": "A(z) «en 2018» (2018-ban) lezárt időpontot jelöl: indefinido. hacer, ellos: hicieron.",
+        "en": "«en 2018» (in 2018) marks a closed point in time: indefinido. hacer, ellos: hicieron.",
+        "es": "«en 2018» señala un momento cerrado: indefinido. hacer, ellos: hicieron.",
+        "de": "«en 2018» (im Jahr 2018) markiert einen abgeschlossenen Zeitpunkt: Indefinido. hacer, ellos: hicieron."
+      }
+    },
+    {
+      "id": "pvi-tr-10",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Otthon vagy? (mindeddig)",
+        "en": "Are you at home? (all this time)",
+        "es": "¿Estás en casa? (todo este tiempo)",
+        "de": "Bist du zu Hause? (die ganze Zeit)"
+      },
+      "answer": "¿Has estado en casa todo este tiempo?",
+      "accept": [
+        "¿Todo este tiempo has estado en casa?",
+        "¿Tú has estado en casa todo este tiempo?",
+        "¿Todo este tiempo tú has estado en casa?",
+        "¿Tú todo este tiempo has estado en casa?"
+      ],
+      "wordIds": [
+        "3743",
+        "14",
+        "13"
+      ],
+      "why": {
+        "hu": "A(z) «todo este tiempo» (mindeddig) még tartó időszak: perfecto. estar, tú: has estado.",
+        "en": "«todo este tiempo» (all this time) is a period that is still going: perfecto. estar, tú: has estado.",
+        "es": "«todo este tiempo» es un periodo que sigue abierto: perfecto. estar, tú: has estado.",
+        "de": "«todo este tiempo» (die ganze Zeit) ist ein Zeitraum, der noch läuft: Perfekt. estar, tú: has estado."
+      }
+    },
+    {
+      "id": "pvi-tr-11",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "hu": "Nem csinálom meg a vacsorát. (két napja)",
+        "en": "I don't make dinner. (two days ago)",
+        "es": "No hago la cena. (hace dos días)",
+        "de": "Ich mache das Abendessen nicht. (vor zwei Tagen)"
+      },
+      "answer": "Hace dos días no hice la cena.",
+      "accept": [
+        "Hace dos días yo no hice la cena.",
+        "No hice la cena hace dos días.",
+        "Yo hace dos días no hice la cena.",
+        "Yo no hice la cena hace dos días."
+      ],
+      "wordIds": [
+        "34",
+        "1261",
+        "1811",
+        "49"
+      ],
+      "why": {
+        "hu": "A(z) «hace dos días» (két napja) lezárt időpontot jelöl: indefinido. hacer, yo: hice.",
+        "en": "«hace dos días» (two days ago) marks a closed point in time: indefinido. hacer, yo: hice.",
+        "es": "«hace dos días» señala un momento cerrado: indefinido. hacer, yo: hice.",
+        "de": "«hace dos días» (vor zwei Tagen) markiert einen abgeschlossenen Zeitpunkt: Indefinido. hacer, yo: hice."
+      }
+    },
+    {
+      "id": "pvi-tr-12",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Jól vagyunk. (eddig)",
+        "en": "We are fine. (so far)",
+        "es": "Estamos bien. (hasta ahora)",
+        "de": "Es geht uns gut. (bis jetzt)"
+      },
+      "answer": "Hasta ahora hemos estado bien.",
+      "accept": [
+        "Hasta ahora nosotros hemos estado bien.",
+        "Hemos estado bien hasta ahora.",
+        "Nosotros hasta ahora hemos estado bien.",
+        "Nosotros hemos estado bien hasta ahora."
+      ],
+      "wordIds": [
+        "3743",
+        "6",
+        "12"
+      ],
+      "why": {
+        "hu": "A(z) «hasta ahora» (eddig) a mostanáig tartó helyzetre utal: perfecto. estar, nosotros: hemos estado.",
+        "en": "«hasta ahora» (so far) points at the situation up to now: perfecto. estar, nosotros: hemos estado.",
+        "es": "«hasta ahora» apunta a la situación hasta ahora: perfecto. estar, nosotros: hemos estado.",
+        "de": "«hasta ahora» (bis jetzt) verweist auf die Lage bis jetzt: Perfekt. estar, nosotros: hemos estado."
+      }
+    },
+    {
+      "id": "pvi-tr-13",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "hu": "A barátaimmal a parkba megyünk. (szombaton)",
+        "en": "We go to the park with my friends. (on Saturday)",
+        "es": "Vamos al parque con mis amigos. (el sábado)",
+        "de": "Wir gehen mit meinen Freunden in den Park. (am Samstag)"
+      },
+      "answer": "El sábado fuimos al parque con mis amigos.",
+      "accept": [
+        "El sábado nosotros fuimos al parque con mis amigos.",
+        "Fuimos al parque con mis amigos el sábado.",
+        "Nosotros el sábado fuimos al parque con mis amigos.",
+        "Nosotros fuimos al parque con mis amigos el sábado."
+      ],
+      "wordIds": [
+        "31",
+        "1224",
+        "22",
+        "1201"
+      ],
+      "why": {
+        "hu": "A(z) «el sábado» (szombaton) lezárt időpontot jelöl: indefinido. ir, nosotros: fuimos.",
+        "en": "«el sábado» (on Saturday) marks a closed point in time: indefinido. ir, nosotros: fuimos.",
+        "es": "«el sábado» señala un momento cerrado: indefinido. ir, nosotros: fuimos.",
+        "de": "«el sábado» (am Samstag) markiert einen abgeschlossenen Zeitpunkt: Indefinido. ir, nosotros: fuimos."
+      }
+    },
+    {
+      "id": "pvi-tr-14",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Nem utazom repülővel. (egész életemben)",
+        "en": "I don't travel by plane. (in my whole life)",
+        "es": "No viajo en avión. (en toda mi vida)",
+        "de": "Ich reise nicht mit dem Flugzeug. (in meinem ganzen Leben)"
+      },
+      "answer": "No he viajado en avión en toda mi vida.",
+      "accept": [
+        "Yo no he viajado en avión en toda mi vida.",
+        "En toda mi vida no he viajado en avión.",
+        "En toda mi vida yo no he viajado en avión.",
+        "Yo en toda mi vida no he viajado en avión."
+      ],
+      "wordIds": [
+        "1579",
+        "1164",
+        "15"
+      ],
+      "why": {
+        "hu": "A(z) «en toda mi vida» (egész életemben) még tartó időszak: perfecto. viajar, yo: he viajado.",
+        "en": "«en toda mi vida» (in my whole life) is a period that is still going: perfecto. viajar, yo: he viajado.",
+        "es": "«en toda mi vida» es un periodo que sigue abierto: perfecto. viajar, yo: he viajado.",
+        "de": "«en toda mi vida» (in meinem ganzen Leben) ist ein Zeitraum, der noch läuft: Perfekt. viajar, yo: he viajado."
+      }
+    },
+    {
+      "id": "pvi-tr-15",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "hu": "Kórházba megy? (tegnap este)",
+        "en": "Does he/she go to the hospital? (last night)",
+        "es": "¿Va al hospital? (anoche)",
+        "de": "Geht er/sie ins Krankenhaus? (gestern Abend)"
+      },
+      "answer": "¿Fue al hospital anoche?",
+      "accept": [
+        "¿Anoche fue al hospital?",
+        "¿Ella fue al hospital anoche?",
+        "¿Anoche ella fue al hospital?",
+        "¿Ella anoche fue al hospital?"
+      ],
+      "wordIds": [
+        "31",
+        "1306",
+        "3681"
+      ],
+      "why": {
+        "hu": "A(z) «anoche» (tegnap este) lezárt időpontot jelöl: indefinido. ir, él/ella: fue.",
+        "en": "«anoche» (last night) marks a closed point in time: indefinido. ir, él/ella: fue.",
+        "es": "«anoche» señala un momento cerrado: indefinido. ir, él/ella: fue.",
+        "de": "«anoche» (gestern Abend) markiert einen abgeschlossenen Zeitpunkt: Indefinido. ir, él/ella: fue."
+      }
+    },
+    {
+      "id": "pvi-tr-16",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Egyedül utaznak. (mindig)",
+        "en": "They travel alone. (always)",
+        "es": "Viajan solos. (siempre)",
+        "de": "Sie reisen allein. (immer)"
+      },
+      "answer": "Siempre han viajado solos.",
+      "accept": [
+        "Ellos siempre han viajado solos.",
+        "Han viajado solos siempre.",
+        "Siempre ellos han viajado solos.",
+        "Ellos han viajado solos siempre."
+      ],
+      "wordIds": [
+        "1579",
+        "87",
+        "57"
+      ],
+      "why": {
+        "hu": "A(z) «siempre» (mindig) a mostanáig tartó helyzetre utal: perfecto. viajar, ellos: han viajado.",
+        "en": "«siempre» (always) points at the situation up to now: perfecto. viajar, ellos: han viajado.",
+        "es": "«siempre» apunta a la situación hasta ahora: perfecto. viajar, ellos: han viajado.",
+        "de": "«siempre» (immer) verweist auf die Lage bis jetzt: Perfekt. viajar, ellos: han viajado."
+      }
+    },
+    {
+      "id": "pvi-tr-17",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "hu": "A nővéremmel a piacra megyek. (tegnap)",
+        "en": "I go to the market with my sister. (yesterday)",
+        "es": "Voy al mercado con mi hermana. (ayer)",
+        "de": "Ich gehe mit meiner Schwester auf den Markt. (gestern)"
+      },
+      "answer": "Ayer fui al mercado con mi hermana.",
+      "accept": [
+        "Ayer yo fui al mercado con mi hermana.",
+        "Fui al mercado con mi hermana ayer.",
+        "Yo ayer fui al mercado con mi hermana.",
+        "Yo fui al mercado con mi hermana ayer."
+      ],
+      "wordIds": [
+        "31",
+        "1401",
+        "1359",
+        "1311"
+      ],
+      "why": {
+        "hu": "A(z) «ayer» (tegnap) lezárt időpontot jelöl: indefinido. ir, yo: fui.",
+        "en": "«ayer» (yesterday) marks a closed point in time: indefinido. ir, yo: fui.",
+        "es": "«ayer» señala un momento cerrado: indefinido. ir, yo: fui.",
+        "de": "«ayer» (gestern) markiert einen abgeschlossenen Zeitpunkt: Indefinido. ir, yo: fui."
+      }
+    },
+    {
+      "id": "pvi-tr-18",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Nem írod meg az e-mailt. (két napja)",
+        "en": "You don't write the email. (for two days)",
+        "es": "No escribes el correo. (desde hace dos días)",
+        "de": "Du schreibst die E-Mail nicht. (seit zwei Tagen)"
+      },
+      "answer": "Desde hace dos días no has escrito el correo.",
+      "accept": [
+        "Desde hace dos días tú no has escrito el correo.",
+        "No has escrito el correo desde hace dos días.",
+        "Tú desde hace dos días no has escrito el correo.",
+        "Tú no has escrito el correo desde hace dos días."
+      ],
+      "wordIds": [
+        "1412",
+        "1042",
+        "1811",
+        "49"
+      ],
+      "why": {
+        "hu": "A(z) «desde hace dos días» (két napja) a mostanáig tartó helyzetre utal: perfecto. escribir, tú: has escrito.",
+        "en": "«desde hace dos días» (for two days) points at the situation up to now: perfecto. escribir, tú: has escrito.",
+        "es": "«desde hace dos días» apunta a la situación hasta ahora: perfecto. escribir, tú: has escrito.",
+        "de": "«desde hace dos días» (seit zwei Tagen) verweist auf die Lage bis jetzt: Perfekt. escribir, tú: has escrito."
+      }
+    },
+    {
+      "id": "pvi-tr-19",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "hu": "Filmet nézünk a moziban. (tegnap este)",
+        "en": "We watch a film at the cinema. (last night)",
+        "es": "Vemos una película en el cine. (anoche)",
+        "de": "Wir sehen einen Film im Kino. (gestern Abend)"
+      },
+      "answer": "Anoche vimos una película en el cine.",
+      "accept": [
+        "Anoche nosotros vimos una película en el cine.",
+        "Vimos una película en el cine anoche.",
+        "Nosotros anoche vimos una película en el cine.",
+        "Nosotros vimos una película en el cine anoche."
+      ],
+      "wordIds": [
+        "37",
+        "1875",
+        "3587",
+        "3681"
+      ],
+      "why": {
+        "hu": "A(z) «anoche» (tegnap este) lezárt időpontot jelöl: indefinido. ver, nosotros: vimos.",
+        "en": "«anoche» (last night) marks a closed point in time: indefinido. ver, nosotros: vimos.",
+        "es": "«anoche» señala un momento cerrado: indefinido. ver, nosotros: vimos.",
+        "de": "«anoche» (gestern Abend) markiert einen abgeschlossenen Zeitpunkt: Indefinido. ver, nosotros: vimos."
+      }
+    },
+    {
+      "id": "pvi-tr-20",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Nem írja meg a levelet. (eddig)",
+        "en": "She doesn't write the letter. (so far)",
+        "es": "No escribe la carta. (hasta el momento)",
+        "de": "Sie schreibt den Brief nicht. (bis jetzt)"
+      },
+      "answer": "Hasta el momento no ha escrito la carta.",
+      "accept": [
+        "Hasta el momento ella no ha escrito la carta.",
+        "No ha escrito la carta hasta el momento.",
+        "Ella hasta el momento no ha escrito la carta.",
+        "Ella no ha escrito la carta hasta el momento."
+      ],
+      "wordIds": [
+        "1412",
+        "1290",
+        "1977"
+      ],
+      "why": {
+        "hu": "A(z) «hasta el momento» (eddig) a mostanáig tartó helyzetre utal: perfecto. escribir, ella: ha escrito.",
+        "en": "«hasta el momento» (so far) points at the situation up to now: perfecto. escribir, ella: ha escrito.",
+        "es": "«hasta el momento» apunta a la situación hasta ahora: perfecto. escribir, ella: ha escrito.",
+        "de": "«hasta el momento» (bis jetzt) verweist auf die Lage bis jetzt: Perfekt. escribir, ella: ha escrito."
+      }
+    },
+    {
+      "id": "pvi-tr-21",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "hu": "Látod a nagyapádat? (szerdán)",
+        "en": "Do you see your grandfather? (on Wednesday)",
+        "es": "¿Ves a tu abuelo? (el miércoles)",
+        "de": "Siehst du deinen Großvater? (am Mittwoch)"
+      },
+      "answer": "¿Viste a tu abuelo el miércoles?",
+      "accept": [
+        "¿El miércoles viste a tu abuelo?",
+        "¿Tú viste a tu abuelo el miércoles?",
+        "¿El miércoles tú viste a tu abuelo?",
+        "¿Tú el miércoles viste a tu abuelo?"
+      ],
+      "wordIds": [
+        "37",
+        "1345",
+        "1198"
+      ],
+      "why": {
+        "hu": "A(z) «el miércoles» (szerdán) lezárt időpontot jelöl: indefinido. ver, tú: viste.",
+        "en": "«el miércoles» (on Wednesday) marks a closed point in time: indefinido. ver, tú: viste.",
+        "es": "«el miércoles» señala un momento cerrado: indefinido. ver, tú: viste.",
+        "de": "«el miércoles» (am Mittwoch) markiert einen abgeschlossenen Zeitpunkt: Indefinido. ver, tú: viste."
+      }
+    },
+    {
+      "id": "pvi-tr-22",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Sokat írok. (mostanában)",
+        "en": "I write a lot. (lately)",
+        "es": "Escribo mucho. (últimamente)",
+        "de": "Ich schreibe viel. (in letzter Zeit)"
+      },
+      "answer": "Últimamente he escrito mucho.",
+      "accept": [
+        "Últimamente yo he escrito mucho.",
+        "He escrito mucho últimamente.",
+        "Yo últimamente he escrito mucho.",
+        "Yo he escrito mucho últimamente."
+      ],
+      "wordIds": [
+        "1412",
+        "3752",
+        "2099"
+      ],
+      "why": {
+        "hu": "A(z) «últimamente» (mostanában) még tartó időszak: perfecto. escribir, yo: he escrito.",
+        "en": "«últimamente» (lately) is a period that is still going: perfecto. escribir, yo: he escrito.",
+        "es": "«últimamente» es un periodo que sigue abierto: perfecto. escribir, yo: he escrito.",
+        "de": "«últimamente» (in letzter Zeit) ist ein Zeitraum, der noch läuft: Perfekt. escribir, yo: he escrito."
+      }
+    },
+    {
+      "id": "pvi-tr-23",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "hu": "Későig vagyok az irodában. (tegnap)",
+        "en": "I am at the office until late. (yesterday)",
+        "es": "Estoy en la oficina hasta tarde. (ayer)",
+        "de": "Ich bin bis spät im Büro. (gestern)"
+      },
+      "answer": "Ayer estuve en la oficina hasta tarde.",
+      "accept": [
+        "Ayer yo estuve en la oficina hasta tarde.",
+        "Estuve en la oficina hasta tarde ayer.",
+        "Yo ayer estuve en la oficina hasta tarde.",
+        "Yo estuve en la oficina hasta tarde ayer."
+      ],
+      "wordIds": [
+        "3743",
+        "1310",
+        "1240",
+        "1311"
+      ],
+      "why": {
+        "hu": "A(z) «ayer» (tegnap) lezárt időpontot jelöl: indefinido. estar, yo: estuve.",
+        "en": "«ayer» (yesterday) marks a closed point in time: indefinido. estar, yo: estuve.",
+        "es": "«ayer» señala un momento cerrado: indefinido. estar, yo: estuve.",
+        "de": "«ayer» (gestern) markiert einen abgeschlossenen Zeitpunkt: Indefinido. estar, yo: estuve."
+      }
+    },
+    {
+      "id": "pvi-tr-24",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Otthon dolgozunk. (eddig)",
+        "en": "We work at home. (so far)",
+        "es": "Trabajamos en casa. (hasta ahora)",
+        "de": "Wir arbeiten zu Hause. (bis jetzt)"
+      },
+      "answer": "Hasta ahora hemos trabajado en casa.",
+      "accept": [
+        "Hasta ahora nosotros hemos trabajado en casa.",
+        "Hemos trabajado en casa hasta ahora.",
+        "Nosotros hasta ahora hemos trabajado en casa.",
+        "Nosotros hemos trabajado en casa hasta ahora."
+      ],
+      "wordIds": [
+        "1409",
+        "14",
+        "12"
+      ],
+      "why": {
+        "hu": "A(z) «hasta ahora» (eddig) a mostanáig tartó helyzetre utal: perfecto. trabajar, nosotros: hemos trabajado.",
+        "en": "«hasta ahora» (so far) points at the situation up to now: perfecto. trabajar, nosotros: hemos trabajado.",
+        "es": "«hasta ahora» apunta a la situación hasta ahora: perfecto. trabajar, nosotros: hemos trabajado.",
+        "de": "«hasta ahora» (bis jetzt) verweist auf die Lage bis jetzt: Perfekt. trabajar, nosotros: hemos trabajado."
+      }
+    },
+    {
+      "id": "pvi-tr-25",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "hu": "Nincsenek otthon. (pénteken)",
+        "en": "They are not at home. (on Friday)",
+        "es": "No están en casa. (el viernes)",
+        "de": "Sie sind nicht zu Hause. (am Freitag)"
+      },
+      "answer": "El viernes no estuvieron en casa.",
+      "accept": [
+        "El viernes ellos no estuvieron en casa.",
+        "No estuvieron en casa el viernes.",
+        "Ellos el viernes no estuvieron en casa.",
+        "Ellos no estuvieron en casa el viernes."
+      ],
+      "wordIds": [
+        "3743",
+        "14",
+        "1200"
+      ],
+      "why": {
+        "hu": "A(z) «el viernes» (pénteken) lezárt időpontot jelöl: indefinido. estar, ellos: estuvieron.",
+        "en": "«el viernes» (on Friday) marks a closed point in time: indefinido. estar, ellos: estuvieron.",
+        "es": "«el viernes» señala un momento cerrado: indefinido. estar, ellos: estuvieron.",
+        "de": "«el viernes» (am Freitag) markiert einen abgeschlossenen Zeitpunkt: Indefinido. estar, ellos: estuvieron."
+      }
+    },
+    {
+      "id": "pvi-tr-26",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Jól dolgozol. (eddig)",
+        "en": "You work well. (so far)",
+        "es": "Trabajas bien. (hasta ahora)",
+        "de": "Du arbeitest gut. (bis jetzt)"
+      },
+      "answer": "Hasta ahora has trabajado bien.",
+      "accept": [
+        "Hasta ahora tú has trabajado bien.",
+        "Has trabajado bien hasta ahora.",
+        "Tú hasta ahora has trabajado bien.",
+        "Tú has trabajado bien hasta ahora."
+      ],
+      "wordIds": [
+        "1409",
+        "6",
+        "12"
+      ],
+      "why": {
+        "hu": "A(z) «hasta ahora» (eddig) a mostanáig tartó helyzetre utal: perfecto. trabajar, tú: has trabajado.",
+        "en": "«hasta ahora» (so far) points at the situation up to now: perfecto. trabajar, tú: has trabajado.",
+        "es": "«hasta ahora» apunta a la situación hasta ahora: perfecto. trabajar, tú: has trabajado.",
+        "de": "«hasta ahora» (bis jetzt) verweist auf die Lage bis jetzt: Perfekt. trabajar, tú: has trabajado."
+      }
+    },
+    {
+      "id": "pvi-tr-27",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "hu": "A családommal a tengerpartra utazom. (májusban)",
+        "en": "I travel to the beach with my family. (in May)",
+        "es": "Viajo a la playa con mi familia. (en mayo)",
+        "de": "Ich reise mit meiner Familie an den Strand. (im Mai)"
+      },
+      "answer": "En mayo viajé a la playa con mi familia.",
+      "accept": [
+        "En mayo yo viajé a la playa con mi familia.",
+        "Viajé a la playa con mi familia en mayo.",
+        "Yo en mayo viajé a la playa con mi familia.",
+        "Yo viajé a la playa con mi familia en mayo."
+      ],
+      "wordIds": [
+        "1579",
+        "1869",
+        "1852",
+        "1207"
+      ],
+      "why": {
+        "hu": "A(z) «en mayo» (májusban) lezárt időpontot jelöl: indefinido. viajar, yo: viajé.",
+        "en": "«en mayo» (in May) marks a closed point in time: indefinido. viajar, yo: viajé.",
+        "es": "«en mayo» señala un momento cerrado: indefinido. viajar, yo: viajé.",
+        "de": "«en mayo» (im Mai) markiert einen abgeschlossenen Zeitpunkt: Indefinido. viajar, yo: viajé."
+      }
+    },
+    {
+      "id": "pvi-tr-28",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Az irodában dolgozom. (mindig)",
+        "en": "I work at the office. (always)",
+        "es": "Trabajo en la oficina. (siempre)",
+        "de": "Ich arbeite im Büro. (immer)"
+      },
+      "answer": "Siempre he trabajado en la oficina.",
+      "accept": [
+        "Yo siempre he trabajado en la oficina.",
+        "He trabajado en la oficina siempre.",
+        "Siempre yo he trabajado en la oficina.",
+        "Yo he trabajado en la oficina siempre."
+      ],
+      "wordIds": [
+        "1409",
+        "1310",
+        "57"
+      ],
+      "why": {
+        "hu": "A(z) «siempre» (mindig) a mostanáig tartó helyzetre utal: perfecto. trabajar, yo: he trabajado.",
+        "en": "«siempre» (always) points at the situation up to now: perfecto. trabajar, yo: he trabajado.",
+        "es": "«siempre» apunta a la situación hasta ahora: perfecto. trabajar, yo: he trabajado.",
+        "de": "«siempre» (immer) verweist auf die Lage bis jetzt: Perfekt. trabajar, yo: he trabajado."
+      }
+    },
+    {
+      "id": "pvi-tr-29",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "hu": "Vonattal utaznak? (kedden)",
+        "en": "Do they travel by train? (on Tuesday)",
+        "es": "¿Viajan en tren? (el martes)",
+        "de": "Reisen sie mit dem Zug? (am Dienstag)"
+      },
+      "answer": "¿Viajaron en tren el martes?",
+      "accept": [
+        "¿El martes viajaron en tren?",
+        "¿Ellos viajaron en tren el martes?",
+        "¿El martes ellos viajaron en tren?",
+        "¿Ellos el martes viajaron en tren?"
+      ],
+      "wordIds": [
+        "1579",
+        "1163",
+        "1197"
+      ],
+      "why": {
+        "hu": "A(z) «el martes» (kedden) lezárt időpontot jelöl: indefinido. viajar, ellos: viajaron.",
+        "en": "«el martes» (on Tuesday) marks a closed point in time: indefinido. viajar, ellos: viajaron.",
+        "es": "«el martes» señala un momento cerrado: indefinido. viajar, ellos: viajaron.",
+        "de": "«el martes» (am Dienstag) markiert einen abgeschlossenen Zeitpunkt: Indefinido. viajar, ellos: viajaron."
+      }
+    },
+    {
+      "id": "pvi-tr-30",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Anyám megveszi a kenyeret. (mindig)",
+        "en": "My mother buys the bread. (always)",
+        "es": "Mi madre compra el pan. (siempre)",
+        "de": "Meine Mutter kauft das Brot. (immer)"
+      },
+      "answer": "Mi madre siempre ha comprado el pan.",
+      "accept": [
+        "Siempre mi madre ha comprado el pan.",
+        "Mi madre ha comprado el pan siempre."
+      ],
+      "wordIds": [
+        "1394",
+        "42",
+        "1062",
+        "57"
+      ],
+      "why": {
+        "hu": "A(z) «siempre» (mindig) a mostanáig tartó helyzetre utal: perfecto. comprar, ella: ha comprado.",
+        "en": "«siempre» (always) points at the situation up to now: perfecto. comprar, ella: ha comprado.",
+        "es": "«siempre» apunta a la situación hasta ahora: perfecto. comprar, ella: ha comprado.",
+        "de": "«siempre» (immer) verweist auf die Lage bis jetzt: Perfekt. comprar, ella: ha comprado."
+      }
+    },
+    {
+      "id": "pvi-tr-31",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "hu": "Nem utazol egyedül. (2016-ban)",
+        "en": "You don't travel alone. (in 2016)",
+        "es": "No viajas solo. (en 2016)",
+        "de": "Du reist nicht allein. (2016)"
+      },
+      "answer": "En 2016 no viajaste solo.",
+      "accept": [
+        "En 2016 tú no viajaste solo.",
+        "No viajaste solo en 2016.",
+        "Tú en 2016 no viajaste solo.",
+        "Tú no viajaste solo en 2016."
+      ],
+      "wordIds": [
+        "1579",
+        "87"
+      ],
+      "why": {
+        "hu": "A(z) «en 2016» (2016-ban) lezárt időpontot jelöl: indefinido. viajar, tú: viajaste.",
+        "en": "«en 2016» (in 2016) marks a closed point in time: indefinido. viajar, tú: viajaste.",
+        "es": "«en 2016» señala un momento cerrado: indefinido. viajar, tú: viajaste.",
+        "de": "«en 2016» (im Jahr 2016) markiert einen abgeschlossenen Zeitpunkt: Indefinido. viajar, tú: viajaste."
+      }
+    },
+    {
+      "id": "pvi-tr-32",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Új ruhát veszünk. (mostanában)",
+        "en": "We buy new clothes. (lately)",
+        "es": "Compramos ropa nueva. (últimamente)",
+        "de": "Wir kaufen neue Kleidung. (in letzter Zeit)"
+      },
+      "answer": "Últimamente hemos comprado ropa nueva.",
+      "accept": [
+        "Últimamente nosotros hemos comprado ropa nueva.",
+        "Hemos comprado ropa nueva últimamente.",
+        "Nosotros últimamente hemos comprado ropa nueva.",
+        "Nosotros hemos comprado ropa nueva últimamente."
+      ],
+      "wordIds": [
+        "1394",
+        "1831",
+        "45",
+        "2099"
+      ],
+      "why": {
+        "hu": "A(z) «últimamente» (mostanában) még tartó időszak: perfecto. comprar, nosotros: hemos comprado.",
+        "en": "«últimamente» (lately) is a period that is still going: perfecto. comprar, nosotros: hemos comprado.",
+        "es": "«últimamente» es un periodo que sigue abierto: perfecto. comprar, nosotros: hemos comprado.",
+        "de": "«últimamente» (in letzter Zeit) ist ein Zeitraum, der noch läuft: Perfekt. comprar, nosotros: hemos comprado."
+      }
+    },
+    {
+      "id": "pvi-tr-33",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "hu": "E-mailt írok a főnökömnek. (csütörtökön)",
+        "en": "I write an email to my boss. (on Thursday)",
+        "es": "Escribo un correo a mi jefe. (el jueves)",
+        "de": "Ich schreibe meinem Chef eine E-Mail. (am Donnerstag)"
+      },
+      "answer": "El jueves escribí un correo a mi jefe.",
+      "accept": [
+        "El jueves yo escribí un correo a mi jefe.",
+        "Escribí un correo a mi jefe el jueves.",
+        "Yo el jueves escribí un correo a mi jefe.",
+        "Yo escribí un correo a mi jefe el jueves."
+      ],
+      "wordIds": [
+        "1412",
+        "1042",
+        "1854",
+        "1199"
+      ],
+      "why": {
+        "hu": "A(z) «el jueves» (csütörtökön) lezárt időpontot jelöl: indefinido. escribir, yo: escribí.",
+        "en": "«el jueves» (on Thursday) marks a closed point in time: indefinido. escribir, yo: escribí.",
+        "es": "«el jueves» señala un momento cerrado: indefinido. escribir, yo: escribí.",
+        "de": "«el jueves» (am Donnerstag) markiert einen abgeschlossenen Zeitpunkt: Indefinido. escribir, yo: escribí."
+      }
+    },
+    {
+      "id": "pvi-tr-34",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Nem beszélek a főnökömmel. (egy hónapja)",
+        "en": "I don't talk to my boss. (for a month)",
+        "es": "No hablo con mi jefe. (desde hace un mes)",
+        "de": "Ich spreche nicht mit meinem Chef. (seit einem Monat)"
+      },
+      "answer": "Desde hace un mes no he hablado con mi jefe.",
+      "accept": [
+        "Desde hace un mes yo no he hablado con mi jefe.",
+        "No he hablado con mi jefe desde hace un mes.",
+        "Yo desde hace un mes no he hablado con mi jefe.",
+        "Yo no he hablado con mi jefe desde hace un mes."
+      ],
+      "wordIds": [
+        "27",
+        "1854",
+        "1315"
+      ],
+      "why": {
+        "hu": "A(z) «desde hace un mes» (egy hónapja) a mostanáig tartó helyzetre utal: perfecto. hablar, yo: he hablado.",
+        "en": "«desde hace un mes» (for a month) points at the situation up to now: perfecto. hablar, yo: he hablado.",
+        "es": "«desde hace un mes» apunta a la situación hasta ahora: perfecto. hablar, yo: he hablado.",
+        "de": "«desde hace un mes» (seit einem Monat) verweist auf die Lage bis jetzt: Perfekt. hablar, yo: he hablado."
+      }
+    },
+    {
+      "id": "pvi-tr-35",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "hu": "Levelet ír a nagymamájának. (tegnap este)",
+        "en": "He/She writes a letter to his/her grandmother. (last night)",
+        "es": "Escribe una carta a su abuela. (anoche)",
+        "de": "Er/Sie schreibt seiner/ihrer Großmutter einen Brief. (gestern Abend)"
+      },
+      "answer": "Anoche escribió una carta a su abuela.",
+      "accept": [
+        "Anoche ella escribió una carta a su abuela.",
+        "Escribió una carta a su abuela anoche.",
+        "Ella anoche escribió una carta a su abuela.",
+        "Ella escribió una carta a su abuela anoche."
+      ],
+      "wordIds": [
+        "1412",
+        "1290",
+        "1346",
+        "3681"
+      ],
+      "why": {
+        "hu": "A(z) «anoche» (tegnap este) lezárt időpontot jelöl: indefinido. escribir, él/ella: escribió.",
+        "en": "«anoche» (last night) marks a closed point in time: indefinido. escribir, él/ella: escribió.",
+        "es": "«anoche» señala un momento cerrado: indefinido. escribir, él/ella: escribió.",
+        "de": "«anoche» (gestern Abend) markiert einen abgeschlossenen Zeitpunkt: Indefinido. escribir, él/ella: escribió."
+      }
+    },
+    {
+      "id": "pvi-tr-36",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Beszélsz az orvossal? (mostanában)",
+        "en": "Do you talk to the doctor? (lately)",
+        "es": "¿Hablas con el médico? (últimamente)",
+        "de": "Sprichst du mit dem Arzt? (in letzter Zeit)"
+      },
+      "answer": "¿Has hablado con el médico últimamente?",
+      "accept": [
+        "¿Últimamente has hablado con el médico?",
+        "¿Tú has hablado con el médico últimamente?",
+        "¿Últimamente tú has hablado con el médico?",
+        "¿Tú últimamente has hablado con el médico?"
+      ],
+      "wordIds": [
+        "27",
+        "1292",
+        "2099"
+      ],
+      "why": {
+        "hu": "A(z) «últimamente» (mostanában) még tartó időszak: perfecto. hablar, tú: has hablado.",
+        "en": "«últimamente» (lately) is a period that is still going: perfecto. hablar, tú: has hablado.",
+        "es": "«últimamente» es un periodo que sigue abierto: perfecto. hablar, tú: has hablado.",
+        "de": "«últimamente» (in letzter Zeit) ist ein Zeitraum, der noch läuft: Perfekt. hablar, tú: has hablado."
+      }
+    },
+    {
+      "id": "pvi-tr-37",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "hu": "Az apáddal dolgozol. (2020-ban)",
+        "en": "You work with your father. (in 2020)",
+        "es": "Trabajas con tu padre. (en 2020)",
+        "de": "Du arbeitest mit deinem Vater. (2020)"
+      },
+      "answer": "En 2020 trabajaste con tu padre.",
+      "accept": [
+        "En 2020 tú trabajaste con tu padre.",
+        "Trabajaste con tu padre en 2020.",
+        "Tú en 2020 trabajaste con tu padre.",
+        "Tú trabajaste con tu padre en 2020."
+      ],
+      "wordIds": [
+        "1409",
+        "43"
+      ],
+      "why": {
+        "hu": "A(z) «en 2020» (2020-ban) lezárt időpontot jelöl: indefinido. trabajar, tú: trabajaste.",
+        "en": "«en 2020» (in 2020) marks a closed point in time: indefinido. trabajar, tú: trabajaste.",
+        "es": "«en 2020» señala un momento cerrado: indefinido. trabajar, tú: trabajaste.",
+        "de": "«en 2020» (im Jahr 2020) markiert einen abgeschlossenen Zeitpunkt: Indefinido. trabajar, tú: trabajaste."
+      }
+    },
+    {
+      "id": "pvi-tr-38",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Nem beszél a testvérével. (egészen mostanáig)",
+        "en": "He doesn't talk to his brother. (up to right now)",
+        "es": "No habla con su hermano. (hasta ahorita)",
+        "de": "Er spricht nicht mit seinem Bruder. (bis jetzt)"
+      },
+      "answer": "Hasta ahorita no ha hablado con su hermano.",
+      "accept": [
+        "Hasta ahorita él no ha hablado con su hermano.",
+        "No ha hablado con su hermano hasta ahorita.",
+        "Él hasta ahorita no ha hablado con su hermano.",
+        "Él no ha hablado con su hermano hasta ahorita."
+      ],
+      "wordIds": [
+        "27",
+        "1358"
+      ],
+      "why": {
+        "hu": "A(z) «hasta ahorita» (egészen mostanáig) a mostanáig tartó helyzetre utal: perfecto. hablar, él: ha hablado.",
+        "en": "«hasta ahorita» (up to right now) points at the situation up to now: perfecto. hablar, él: ha hablado.",
+        "es": "«hasta ahorita» apunta a la situación hasta ahora: perfecto. hablar, él: ha hablado.",
+        "de": "«hasta ahorita» (bis jetzt) verweist auf die Lage bis jetzt: Perfekt. hablar, él: ha hablado."
+      }
+    },
+    {
+      "id": "pvi-tr-39",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "hu": "Sokat dolgoznak? (márciusban)",
+        "en": "Do they work a lot? (in March)",
+        "es": "¿Trabajan mucho? (en marzo)",
+        "de": "Arbeiten sie viel? (im März)"
+      },
+      "answer": "¿Trabajaron mucho en marzo?",
+      "accept": [
+        "¿En marzo trabajaron mucho?",
+        "¿Ellos trabajaron mucho en marzo?",
+        "¿En marzo ellos trabajaron mucho?",
+        "¿Ellos en marzo trabajaron mucho?"
+      ],
+      "wordIds": [
+        "1409",
+        "3752",
+        "1205"
+      ],
+      "why": {
+        "hu": "A(z) «en marzo» (márciusban) lezárt időpontot jelöl: indefinido. trabajar, ellos: trabajaron.",
+        "en": "«en marzo» (in March) marks a closed point in time: indefinido. trabajar, ellos: trabajaron.",
+        "es": "«en marzo» señala un momento cerrado: indefinido. trabajar, ellos: trabajaron.",
+        "de": "«en marzo» (im März) markiert einen abgeschlossenen Zeitpunkt: Indefinido. trabajar, ellos: trabajaron."
+      }
+    },
+    {
+      "id": "pvi-tr-40",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Nem sportolunk. (eddig)",
+        "en": "We don't exercise. (so far)",
+        "es": "No hacemos ejercicio. (hasta el momento)",
+        "de": "Wir machen keinen Sport. (bis jetzt)"
+      },
+      "answer": "Hasta el momento no hemos hecho ejercicio.",
+      "accept": [
+        "Hasta el momento nosotros no hemos hecho ejercicio.",
+        "No hemos hecho ejercicio hasta el momento.",
+        "Nosotros hasta el momento no hemos hecho ejercicio.",
+        "Nosotros no hemos hecho ejercicio hasta el momento."
+      ],
+      "wordIds": [
+        "34",
+        "707",
+        "1977"
+      ],
+      "why": {
+        "hu": "A(z) «hasta el momento» (eddig) a mostanáig tartó helyzetre utal: perfecto. hacer, nosotros: hemos hecho.",
+        "en": "«hasta el momento» (so far) points at the situation up to now: perfecto. hacer, nosotros: hemos hecho.",
+        "es": "«hasta el momento» apunta a la situación hasta ahora: perfecto. hacer, nosotros: hemos hecho.",
+        "de": "«hasta el momento» (bis jetzt) verweist auf die Lage bis jetzt: Perfekt. hacer, nosotros: hemos hecho."
+      }
+    },
+    {
+      "id": "pvi-tr-41",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "hu": "Ajándékot veszek az apámnak. (két napja)",
+        "en": "I buy a present for my father. (two days ago)",
+        "es": "Compro un regalo para mi padre. (hace dos días)",
+        "de": "Ich kaufe ein Geschenk für meinen Vater. (vor zwei Tagen)"
+      },
+      "answer": "Hace dos días compré un regalo para mi padre.",
+      "accept": [
+        "Hace dos días yo compré un regalo para mi padre.",
+        "Compré un regalo para mi padre hace dos días.",
+        "Yo hace dos días compré un regalo para mi padre.",
+        "Yo compré un regalo para mi padre hace dos días."
+      ],
+      "wordIds": [
+        "1394",
+        "217",
+        "43",
+        "1811",
+        "49"
+      ],
+      "why": {
+        "hu": "A(z) «hace dos días» (két napja) lezárt időpontot jelöl: indefinido. comprar, yo: compré.",
+        "en": "«hace dos días» (two days ago) marks a closed point in time: indefinido. comprar, yo: compré.",
+        "es": "«hace dos días» señala un momento cerrado: indefinido. comprar, yo: compré.",
+        "de": "«hace dos días» (vor zwei Tagen) markiert einen abgeschlossenen Zeitpunkt: Indefinido. comprar, yo: compré."
+      }
+    },
+    {
+      "id": "pvi-tr-42",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Elkészítem az ebédet. (egész héten)",
+        "en": "I make the meal. (all week)",
+        "es": "Hago la comida. (toda la semana)",
+        "de": "Ich mache das Essen. (die ganze Woche)"
+      },
+      "answer": "Toda la semana he hecho la comida.",
+      "accept": [
+        "Toda la semana yo he hecho la comida.",
+        "He hecho la comida toda la semana.",
+        "Yo toda la semana he hecho la comida.",
+        "Yo he hecho la comida toda la semana."
+      ],
+      "wordIds": [
+        "34",
+        "70",
+        "1314"
+      ],
+      "why": {
+        "hu": "A(z) «toda la semana» (egész héten) még tartó időszak: perfecto. hacer, yo: he hecho.",
+        "en": "«toda la semana» (all week) is a period that is still going: perfecto. hacer, yo: he hecho.",
+        "es": "«toda la semana» es un periodo que sigue abierto: perfecto. hacer, yo: he hecho.",
+        "de": "«toda la semana» (die ganze Woche) ist ein Zeitraum, der noch läuft: Perfekt. hacer, yo: he hecho."
+      }
+    },
+    {
+      "id": "pvi-tr-43",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "hu": "Nem vesz autót. (2022-ben)",
+        "en": "He/She doesn't buy a car. (in 2022)",
+        "es": "No compra coche. (en 2022)",
+        "de": "Er/Sie kauft kein Auto. (2022)"
+      },
+      "answer": "En 2022 no compró coche.",
+      "accept": [
+        "En 2022 ella no compró coche.",
+        "No compró coche en 2022.",
+        "Ella en 2022 no compró coche.",
+        "Ella no compró coche en 2022."
+      ],
+      "wordIds": [
+        "1394",
+        "1842"
+      ],
+      "why": {
+        "hu": "A(z) «en 2022» (2022-ben) lezárt időpontot jelöl: indefinido. comprar, él/ella: compró.",
+        "en": "«en 2022» (in 2022) marks a closed point in time: indefinido. comprar, él/ella: compró.",
+        "es": "«en 2022» señala un momento cerrado: indefinido. comprar, él/ella: compró.",
+        "de": "«en 2022» (im Jahr 2022) markiert einen abgeschlossenen Zeitpunkt: Indefinido. comprar, él/ella: compró."
+      }
+    },
+    {
+      "id": "pvi-tr-44",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Mész a tengerpartra? (egész héten)",
+        "en": "Do you go to the beach? (all week)",
+        "es": "¿Vas a la playa? (toda la semana)",
+        "de": "Gehst du an den Strand? (die ganze Woche)"
+      },
+      "answer": "¿Has ido a la playa toda la semana?",
+      "accept": [
+        "¿Toda la semana has ido a la playa?",
+        "¿Tú has ido a la playa toda la semana?",
+        "¿Toda la semana tú has ido a la playa?",
+        "¿Tú toda la semana has ido a la playa?"
+      ],
+      "wordIds": [
+        "31",
+        "1869",
+        "1314"
+      ],
+      "why": {
+        "hu": "A(z) «toda la semana» (egész héten) még tartó időszak: perfecto. ir, tú: has ido.",
+        "en": "«toda la semana» (all week) is a period that is still going: perfecto. ir, tú: has ido.",
+        "es": "«toda la semana» es un periodo que sigue abierto: perfecto. ir, tú: has ido.",
+        "de": "«toda la semana» (die ganze Woche) ist ein Zeitraum, der noch läuft: Perfekt. ir, tú: has ido."
+      }
+    },
+    {
+      "id": "pvi-tr-45",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "hu": "Cipőt veszel. (októberben)",
+        "en": "You buy shoes. (in October)",
+        "es": "Compras zapatos. (en octubre)",
+        "de": "Du kaufst Schuhe. (im Oktober)"
+      },
+      "answer": "En octubre compraste zapatos.",
+      "accept": [
+        "En octubre tú compraste zapatos.",
+        "Compraste zapatos en octubre.",
+        "Tú en octubre compraste zapatos.",
+        "Tú compraste zapatos en octubre."
+      ],
+      "wordIds": [
+        "1394",
+        "1078",
+        "1212"
+      ],
+      "why": {
+        "hu": "A(z) «en octubre» (októberben) lezárt időpontot jelöl: indefinido. comprar, tú: compraste.",
+        "en": "«en octubre» (in October) marks a closed point in time: indefinido. comprar, tú: compraste.",
+        "es": "«en octubre» señala un momento cerrado: indefinido. comprar, tú: compraste.",
+        "de": "«en octubre» (im Oktober) markiert einen abgeschlossenen Zeitpunkt: Indefinido. comprar, tú: compraste."
+      }
+    },
+    {
+      "id": "pvi-tr-46",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Nem megyünk moziba. (egy hónapja)",
+        "en": "We don't go to the cinema. (for a month)",
+        "es": "No vamos al cine. (desde hace un mes)",
+        "de": "Wir gehen nicht ins Kino. (seit einem Monat)"
+      },
+      "answer": "Desde hace un mes no hemos ido al cine.",
+      "accept": [
+        "Desde hace un mes nosotros no hemos ido al cine.",
+        "No hemos ido al cine desde hace un mes.",
+        "Nosotros desde hace un mes no hemos ido al cine.",
+        "Nosotros no hemos ido al cine desde hace un mes."
+      ],
+      "wordIds": [
+        "31",
+        "3587",
+        "1315"
+      ],
+      "why": {
+        "hu": "A(z) «desde hace un mes» (egy hónapja) a mostanáig tartó helyzetre utal: perfecto. ir, nosotros: hemos ido.",
+        "en": "«desde hace un mes» (for a month) points at the situation up to now: perfecto. ir, nosotros: hemos ido.",
+        "es": "«desde hace un mes» apunta a la situación hasta ahora: perfecto. ir, nosotros: hemos ido.",
+        "de": "«desde hace un mes» (seit einem Monat) verweist auf die Lage bis jetzt: Perfekt. ir, nosotros: hemos ido."
+      }
+    },
+    {
+      "id": "pvi-tr-47",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "hu": "Telefonon beszélek a nagyapámmal. (hétfőn)",
+        "en": "I talk to my grandfather on the phone. (on Monday)",
+        "es": "Hablo con mi abuelo por teléfono. (el lunes)",
+        "de": "Ich spreche mit meinem Großvater am Telefon. (am Montag)"
+      },
+      "answer": "El lunes hablé con mi abuelo por teléfono.",
+      "accept": [
+        "El lunes yo hablé con mi abuelo por teléfono.",
+        "Hablé con mi abuelo por teléfono el lunes.",
+        "Yo el lunes hablé con mi abuelo por teléfono.",
+        "Yo hablé con mi abuelo por teléfono el lunes."
+      ],
+      "wordIds": [
+        "27",
+        "1345",
+        "1255",
+        "1196"
+      ],
+      "why": {
+        "hu": "A(z) «el lunes» (hétfőn) lezárt időpontot jelöl: indefinido. hablar, yo: hablé.",
+        "en": "«el lunes» (on Monday) marks a closed point in time: indefinido. hablar, yo: hablé.",
+        "es": "«el lunes» señala un momento cerrado: indefinido. hablar, yo: hablé.",
+        "de": "«el lunes» (am Montag) markiert einen abgeschlossenen Zeitpunkt: Indefinido. hablar, yo: hablé."
+      }
+    },
+    {
+      "id": "pvi-tr-48",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "Jól eszel. (mostanában)",
+        "en": "You eat well. (lately)",
+        "es": "Comes bien. (últimamente)",
+        "de": "Du isst gut. (in letzter Zeit)"
+      },
+      "answer": "Últimamente has comido bien.",
+      "accept": [
+        "Últimamente tú has comido bien.",
+        "Has comido bien últimamente.",
+        "Tú últimamente has comido bien.",
+        "Tú has comido bien últimamente."
+      ],
+      "wordIds": [
+        "25",
+        "6",
+        "2099"
+      ],
+      "why": {
+        "hu": "A(z) «últimamente» (mostanában) még tartó időszak: perfecto. comer, tú: has comido.",
+        "en": "«últimamente» (lately) is a period that is still going: perfecto. comer, tú: has comido.",
+        "es": "«últimamente» es un periodo que sigue abierto: perfecto. comer, tú: has comido.",
+        "de": "«últimamente» (in letzter Zeit) ist ein Zeitraum, der noch läuft: Perfekt. comer, tú: has comido."
+      }
+    },
+    {
+      "id": "pvi-tr-49",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "hu": "Beszélsz a szomszédoddal? (két napja)",
+        "en": "Do you talk to your neighbour? (two days ago)",
+        "es": "¿Hablas con tu vecino? (hace dos días)",
+        "de": "Sprichst du mit deinem Nachbarn? (vor zwei Tagen)"
+      },
+      "answer": "¿Hablaste con tu vecino hace dos días?",
+      "accept": [
+        "¿Hace dos días hablaste con tu vecino?",
+        "¿Tú hablaste con tu vecino hace dos días?",
+        "¿Hace dos días tú hablaste con tu vecino?",
+        "¿Tú hace dos días hablaste con tu vecino?"
+      ],
+      "wordIds": [
+        "27",
+        "211",
+        "1811",
+        "49"
+      ],
+      "why": {
+        "hu": "A(z) «hace dos días» (két napja) lezárt időpontot jelöl: indefinido. hablar, tú: hablaste.",
+        "en": "«hace dos días» (two days ago) marks a closed point in time: indefinido. hablar, tú: hablaste.",
+        "es": "«hace dos días» señala un momento cerrado: indefinido. hablar, tú: hablaste.",
+        "de": "«hace dos días» (vor zwei Tagen) markiert einen abgeschlossenen Zeitpunkt: Indefinido. hablar, tú: hablaste."
+      }
+    },
+    {
+      "id": "pvi-tr-50",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "perfecto"
+      },
+      "prompt": {
+        "hu": "A testvéreim gyümölcsöt esznek. (egész héten)",
+        "en": "My brothers eat fruit. (all week)",
+        "es": "Mis hermanos comen fruta. (toda la semana)",
+        "de": "Meine Brüder essen Obst. (die ganze Woche)"
+      },
+      "answer": "Mis hermanos han comido fruta toda la semana.",
+      "accept": [
+        "Toda la semana mis hermanos han comido fruta.",
+        "Mis hermanos toda la semana han comido fruta."
+      ],
+      "wordIds": [
+        "25",
+        "1358",
+        "1060",
+        "1314"
+      ],
+      "why": {
+        "hu": "A(z) «toda la semana» (egész héten) még tartó időszak: perfecto. comer, ellos: han comido.",
+        "en": "«toda la semana» (all week) is a period that is still going: perfecto. comer, ellos: han comido.",
+        "es": "«toda la semana» es un periodo que sigue abierto: perfecto. comer, ellos: han comido.",
+        "de": "«toda la semana» (die ganze Woche) ist ein Zeitraum, der noch läuft: Perfekt. comer, ellos: han comido."
+      }
+    }
+  ]
+}

@@ -30,21 +30,21 @@ beforeEach(() => speech.speak.mockClear());
 describe('hibakereső (spot)', () => {
   it('a rossz szóra bökve jön a javítás-választó, a jó opció után jó jelzés, javított mondat, elhangzik, a Next pontoz', () => {
     const onFinish = jest.fn();
-    render(<GrammarDrill topic={only(serEstar, 'spot')} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['spot']} />);
+    render(<GrammarDrill topic={only(negacion, 'spot')} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['spot']} />);
 
     // ÚJ · TESZT jelvény a feladaton
     expect(screen.getByTestId('trial-badge')).toBeTruthy();
     expect(screen.getByText('Tap the word that is wrong')).toBeTruthy();
 
-    // "Yo soy cansado." -> a 2. szó (soy, index 1) a hibás
-    fireEvent.press(screen.getByTestId('spot-word-1'));
+    // "No veo algo." -> a 3. szó (algo, index 2) a hibás
+    fireEvent.press(screen.getByTestId('spot-word-2'));
     expect(screen.getByText('Pick the right form')).toBeTruthy();
-    fireEvent.press(screen.getByText('estoy'));
+    fireEvent.press(screen.getByText('nada'));
 
     expect(screen.getByTestId('spot-result')).toBeTruthy();
     expect(screen.getByText('Correct!')).toBeTruthy();
-    expect(screen.getByText('Yo estoy cansado.')).toBeTruthy();
-    expect(speech.speak).toHaveBeenCalledWith('Yo estoy cansado.', 'es-MX');
+    expect(screen.getByText('No veo nada.')).toBeTruthy();
+    expect(speech.speak).toHaveBeenCalledWith('No veo nada.', 'es-MX');
 
     fireEvent.press(screen.getByTestId('grammar-next'));
     expect(onFinish).toHaveBeenCalledWith(1, 1);
@@ -52,11 +52,11 @@ describe('hibakereső (spot)', () => {
 
   it('egy jó szóra bökés hiba: nem lesz pont, de a feladat végigvihető', () => {
     const onFinish = jest.fn();
-    render(<GrammarDrill topic={only(serEstar, 'spot')} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['spot']} />);
+    render(<GrammarDrill topic={only(negacion, 'spot')} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['spot']} />);
     fireEvent.press(screen.getByTestId('spot-word-0'));
     expect(screen.getByText('That word is fine. Look again.')).toBeTruthy();
-    fireEvent.press(screen.getByTestId('spot-word-1'));
-    fireEvent.press(screen.getByText('estoy'));
+    fireEvent.press(screen.getByTestId('spot-word-2'));
+    fireEvent.press(screen.getByText('nada'));
     expect(screen.getByText('Not quite!')).toBeTruthy();
     fireEvent.press(screen.getByTestId('grammar-next'));
     expect(onFinish).toHaveBeenCalledWith(0, 1);
@@ -64,9 +64,9 @@ describe('hibakereső (spot)', () => {
 
   it('a rossz javítás-opció hibás jelzés', () => {
     const onFinish = jest.fn();
-    render(<GrammarDrill topic={only(serEstar, 'spot')} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['spot']} />);
-    fireEvent.press(screen.getByTestId('spot-word-1'));
-    fireEvent.press(screen.getByText('eres'));
+    render(<GrammarDrill topic={only(negacion, 'spot')} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['spot']} />);
+    fireEvent.press(screen.getByTestId('spot-word-2'));
+    fireEvent.press(screen.getByText('nunca'));
     expect(screen.getByText('Not quite!')).toBeTruthy();
     fireEvent.press(screen.getByTestId('grammar-next'));
     expect(onFinish).toHaveBeenCalledWith(0, 1);

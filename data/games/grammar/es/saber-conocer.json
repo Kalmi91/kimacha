@@ -1,0 +1,1237 @@
+{
+  "schema": 2,
+  "topic": "saber-conocer",
+  "level": "A2",
+  "title": {
+    "hu": "Saber vagy conocer?",
+    "en": "Saber or conocer?",
+    "es": "¿Saber o conocer?",
+    "de": "Saber oder conocer?"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "Az angol a know igével mond mindent, a spanyolban viszont két ige van. A saber azt jelenti: tudni valamit, vagyis egy tényt, egy információt vagy egy megtanult képességet: tudom, hol laksz, tudok úszni. A conocer azt jelenti: ismerni valakit vagy valamit, vagyis találkoztál vele, jártál ott, volt már dolgod vele: ismerem a barátodat, ismerem ezt az éttermet. A magyar tudni és ismerni páros nagyjából ezt a két igét követi, ezért a magyar anyanyelvűeknek ez a lecke könnyebb, mint az angolosoknak.",
+        "en": "English uses the single verb know for everything, while Spanish has two. Saber means to know a fact, a piece of information or a learned skill: I know where you live, I know how to swim. Conocer means to be acquainted with a person or a place: you have met them, been there or used them before. I know your friend, I know this restaurant. If you think in Hungarian or German, the pairs tudni and ismerni, wissen and kennen follow roughly the same split.",
+        "es": "El inglés usa un solo verbo, know, para todo, y el español tiene dos. Saber es tener un dato, una información o una habilidad aprendida: sé dónde vives, sé nadar. Conocer es estar familiarizado con una persona, un lugar o una cosa: ya has tratado con ella, has estado allí o la has usado. Conozco a tu amigo, conozco este restaurante.",
+        "de": "Das Englische benutzt für alles das eine Verb know, das Spanische hat zwei. Saber heißt, etwas zu wissen: eine Tatsache, eine Information oder eine gelernte Fähigkeit (ich weiß, wo du wohnst; ich kann schwimmen). Conocer heißt, jemanden oder etwas zu kennen: man ist der Person begegnet, war an dem Ort oder hat die Sache schon benutzt (ich kenne deinen Freund, ich kenne dieses Restaurant). Das deutsche Paar wissen und kennen folgt genau diesem Muster."
+      }
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "hu": "Mikor melyiket",
+        "en": "When to use which",
+        "es": "Cuándo usar cada uno",
+        "de": "Wann welches"
+      },
+      "points": [
+        {
+          "text": {
+            "hu": "A saber tényt vagy információt jelent: amit tudsz, mert megtanultad vagy elmondták neked. Gyakran kérdőszó (dónde, cuándo, qué, cuánto) vagy que, si követi. Tagadva is ez marad: no sé (nem tudom).",
+            "en": "Saber means knowing a fact or a piece of information: something you have learned or been told. It is often followed by a question word (dónde, cuándo, qué, cuánto) or by que or si. Negated, it stays the same: no sé (I do not know).",
+            "es": "Saber es tener un dato o una información: algo que has aprendido o que te han dicho. Suele ir seguido de una palabra interrogativa (dónde, cuándo, qué, cuánto) o de que o si. En negativo sigue igual: no sé.",
+            "de": "Saber heißt, eine Tatsache oder eine Information zu wissen: etwas, das man gelernt hat oder gesagt bekommen hat. Danach folgt oft ein Fragewort (dónde, cuándo, qué, cuánto) oder que oder si. Verneint bleibt es dasselbe: no sé (ich weiß nicht)."
+          },
+          "examples": [
+            {
+              "es": "Sé dónde vives.",
+              "tr": {
+                "hu": "Tudom, hol laksz.",
+                "en": "I know where you live.",
+                "es": "Sé dónde vives.",
+                "de": "Ich weiß, wo du wohnst."
+              }
+            },
+            {
+              "es": "¿Sabes qué hora es?",
+              "tr": {
+                "hu": "Tudod, hány óra van?",
+                "en": "Do you know what time it is?",
+                "es": "¿Sabes qué hora es?",
+                "de": "Weißt du, wie spät es ist?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A saber + főnévi igenév azt jelenti: tudni csinálni valamit, vagyis megtanult képesség: sé nadar, sabe tocar la guitarra. Képességnél sosem conocer áll, mert az nem kapcsolódik főnévi igenévhez.",
+            "en": "Saber plus an infinitive means knowing how to do something, a learned skill: sé nadar (I can swim), sabe tocar la guitarra (he plays the guitar). For a skill, conocer is never used, because it does not take an infinitive.",
+            "es": "Saber más infinitivo significa saber hacer algo, una habilidad aprendida: sé nadar, sabe tocar la guitarra. Para una habilidad no se usa conocer, porque conocer no lleva infinitivo.",
+            "de": "Saber plus Infinitiv heißt, etwas zu können, eine gelernte Fähigkeit: sé nadar (ich kann schwimmen), sabe tocar la guitarra (er spielt Gitarre). Für eine Fähigkeit steht nie conocer, denn es wird nicht mit einem Infinitiv benutzt."
+          },
+          "examples": [
+            {
+              "es": "Mi hermano sabe tocar la guitarra.",
+              "tr": {
+                "hu": "A fivérem tud gitározni.",
+                "en": "My brother can play the guitar.",
+                "es": "Mi hermano sabe tocar la guitarra.",
+                "de": "Mein Bruder kann Gitarre spielen."
+              }
+            },
+            {
+              "es": "No sé nadar.",
+              "tr": {
+                "hu": "Nem tudok úszni.",
+                "en": "I cannot swim.",
+                "es": "No sé nadar.",
+                "de": "Ich kann nicht schwimmen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A conocer azt jelenti: ismerni egy személyt, vagyis találkoztál vele, van közöd hozzá. A személy előtt kötelező az a (a személyes a): conozco a tu hermana. Megismerkedni is conocer: quiero conocer a tu familia (szeretném megismerni a családodat).",
+            "en": "Conocer means to know a person: you have met them and have some contact with them. Before the person comes the personal a: conozco a tu hermana. Conocer also covers meeting someone for the first time: quiero conocer a tu familia (I want to meet your family).",
+            "es": "Conocer es conocer a una persona: la has visto o tratado antes. Delante de la persona va la a personal: conozco a tu hermana. Conocer también es encontrarse con alguien por primera vez: quiero conocer a tu familia.",
+            "de": "Conocer heißt, eine Person zu kennen: man ist ihr begegnet und hat mit ihr zu tun. Vor der Person steht das persönliche a: conozco a tu hermana. Conocer deckt auch das erste Kennenlernen ab: quiero conocer a tu familia (ich möchte deine Familie kennenlernen)."
+          },
+          "examples": [
+            {
+              "es": "Conozco a tu madre.",
+              "tr": {
+                "hu": "Ismerem az édesanyádat.",
+                "en": "I know your mother.",
+                "es": "Conozco a tu madre.",
+                "de": "Ich kenne deine Mutter."
+              }
+            },
+            {
+              "es": "¿Conoces a mi amigo Carlos?",
+              "tr": {
+                "hu": "Ismered a barátomat, Carlost?",
+                "en": "Do you know my friend Carlos?",
+                "es": "¿Conoces a mi amigo Carlos?",
+                "de": "Kennst du meinen Freund Carlos?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Helyet, várost, éttermet is conocer-rel mondunk, ha jártál ott vagy használtad: conozco Oaxaca, conocemos este restaurante. Itt nincs személyes a. Ha csak azt tudod, hol van valami, az tény: sé dónde está el museo, de conozco el museo, ha bent is jártál.",
+            "en": "Places, cities and restaurants are also conocer when you have been there or used them: conozco Oaxaca, conocemos este restaurante. There is no personal a here. If you only know where something is, that is a fact: sé dónde está el museo, but conozco el museo means you have been inside.",
+            "es": "Los lugares, las ciudades y los restaurantes también son conocer cuando has estado allí o los has usado: conozco Oaxaca, conocemos este restaurante. Aquí no va la a personal. Si solo sabes dónde está algo, es un dato: sé dónde está el museo; conozco el museo significa que has estado dentro.",
+            "de": "Auch Orte, Städte und Restaurants sind conocer, wenn man dort war oder sie benutzt hat: conozco Oaxaca, conocemos este restaurante. Hier steht kein persönliches a. Wenn man nur weiß, wo etwas ist, ist das eine Tatsache: sé dónde está el museo, aber conozco el museo heißt, dass man drin war."
+          },
+          "examples": [
+            {
+              "es": "Conozco Oaxaca muy bien.",
+              "tr": {
+                "hu": "Nagyon jól ismerem Oaxacát.",
+                "en": "I know Oaxaca very well.",
+                "es": "Conozco Oaxaca muy bien.",
+                "de": "Ich kenne Oaxaca sehr gut."
+              }
+            },
+            {
+              "es": "Mis amigos conocen este restaurante.",
+              "tr": {
+                "hu": "A barátaim ismerik ezt az éttermet.",
+                "en": "My friends know this restaurant.",
+                "es": "Mis amigos conocen este restaurante.",
+                "de": "Meine Freunde kennen dieses Restaurant."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Jelen időben mindkét ige szabályos, kivéve az yo alakot: saber: sé (nem „sabo”), conocer: conozco (nem „conoco”). A többi: sabes, sabe, sabemos, saben; conoces, conoce, conocemos, conocen.",
+            "en": "In the present tense both verbs are regular except for the yo form: saber gives sé (not \"sabo\"), conocer gives conozco (not \"conoco\"). The rest: sabes, sabe, sabemos, saben; conoces, conoce, conocemos, conocen.",
+            "es": "En presente los dos verbos son regulares, salvo la forma de yo: saber da sé (no \"sabo\"), conocer da conozco (no \"conoco\"). El resto: sabes, sabe, sabemos, saben; conoces, conoce, conocemos, conocen.",
+            "de": "Im Präsens sind beide Verben regelmäßig, außer in der yo-Form: saber ergibt sé (nicht \"sabo\"), conocer ergibt conozco (nicht \"conoco\"). Der Rest: sabes, sabe, sabemos, saben; conoces, conoce, conocemos, conocen."
+          },
+          "examples": [
+            {
+              "es": "Sé la respuesta.",
+              "tr": {
+                "hu": "Tudom a választ.",
+                "en": "I know the answer.",
+                "es": "Sé la respuesta.",
+                "de": "Ich weiß die Antwort."
+              }
+            },
+            {
+              "es": "Conozco bien esta ciudad.",
+              "tr": {
+                "hu": "Jól ismerem ezt a várost.",
+                "en": "I know this city well.",
+                "es": "Conozco bien esta ciudad.",
+                "de": "Ich kenne diese Stadt gut."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "saber-conocer-formas",
+      "title": {
+        "hu": "Saber vagy conocer: melyik alak kell?",
+        "en": "Saber or conocer: which form is needed?",
+        "es": "Saber o conocer: ¿qué forma hace falta?",
+        "de": "Saber oder conocer: welche Form wird gebraucht?"
+      },
+      "header": [
+        {
+          "hu": "helyzet",
+          "en": "situation",
+          "es": "situación",
+          "de": "Situation"
+        },
+        {
+          "hu": "igealak",
+          "en": "verb form",
+          "es": "forma verbal",
+          "de": "Verbform"
+        }
+      ],
+      "rows": [
+        [
+          "Sí, ___ (yo) dónde está tu casa.",
+          "sé"
+        ],
+        [
+          "Mis hermanos ___ (ellos) tocar la guitarra.",
+          "saben"
+        ],
+        [
+          "¿___ (tú) a mi novio? Se llama Carlos.",
+          "conoces"
+        ],
+        [
+          "Mi jefe ___ (él) a mucha gente.",
+          "conoce"
+        ],
+        [
+          "Nosotros no ___ (nosotros) qué hora es.",
+          "sabemos"
+        ],
+        [
+          "Quiero ___ manejar, pero no tengo coche.",
+          "saber"
+        ],
+        [
+          "Sí, ___ (yo) a tu hermana. Es muy inteligente.",
+          "conozco"
+        ],
+        [
+          "Mi abuela ___ (ella) cocinar muy bien.",
+          "sabe"
+        ],
+        [
+          "¿___ (tú) cuándo llega el tren?",
+          "sabes"
+        ],
+        [
+          "Mis amigos ___ (ellos) muy bien México.",
+          "conocen"
+        ],
+        [
+          "Mi hijo no ___ (él) leer todavía.",
+          "sabe"
+        ],
+        [
+          "Nosotros ___ (nosotros) Oaxaca, pero no Puebla.",
+          "conocemos"
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Hasonló, mégis más",
+        "en": "Similar, yet different",
+        "es": "Parecido, pero distinto",
+        "de": "Ähnlich, aber anders"
+      },
+      "pairs": [
+        {
+          "a": "saber",
+          "b": "conocer",
+          "note": {
+            "hu": "A saber azt tudja, hol van valami; a conocer azt, hogy te már jártál ott. Ugyanaz a hely, két mondat: sé dónde está el museo (tudom, hol van), conozco el museo (jártam benne).",
+            "en": "Saber knows where something is; conocer means you have been there yourself. The same place, two sentences: sé dónde está el museo (I know where it is), conozco el museo (I have been inside).",
+            "es": "Saber sabe dónde está algo; conocer significa que tú ya has estado allí. El mismo lugar, dos frases: sé dónde está el museo, conozco el museo.",
+            "de": "Saber weiß, wo etwas ist; conocer heißt, dass du selbst schon dort warst. Derselbe Ort, zwei Sätze: sé dónde está el museo (ich weiß, wo es ist), conozco el museo (ich war schon drin)."
+          },
+          "examples": [
+            {
+              "es": "Sé dónde está el museo.",
+              "tr": {
+                "hu": "Tudom, hol van a múzeum.",
+                "en": "I know where the museum is.",
+                "es": "Sé dónde está el museo.",
+                "de": "Ich weiß, wo das Museum ist."
+              }
+            },
+            {
+              "es": "Conozco el museo.",
+              "tr": {
+                "hu": "Ismerem a múzeumot, jártam benne.",
+                "en": "I know the museum, I have been inside.",
+                "es": "Conozco el museo.",
+                "de": "Ich kenne das Museum, ich war schon drin."
+              }
+            }
+          ]
+        },
+        {
+          "a": "saber + infinitivo",
+          "b": "conocer + a + persona",
+          "note": {
+            "hu": "A saber + főnévi igenév azt mondja meg, mit tudsz csinálni; a conocer + a azt, kit ismersz. Ana tud főzni (sabe cocinar), te pedig ismered Anát (conoces a Ana).",
+            "en": "Saber plus an infinitive tells what you can do; conocer plus a tells whom you know. Ana can cook (sabe cocinar), and you know Ana (conoces a Ana).",
+            "es": "Saber más infinitivo dice qué sabes hacer; conocer más a dice a quién conoces. Ana sabe cocinar, y tú conoces a Ana.",
+            "de": "Saber plus Infinitiv sagt, was du kannst; conocer plus a sagt, wen du kennst. Ana kann kochen (sabe cocinar), und du kennst Ana (conoces a Ana)."
+          },
+          "examples": [
+            {
+              "es": "Ana sabe cocinar muy bien.",
+              "tr": {
+                "hu": "Ana nagyon jól tud főzni.",
+                "en": "Ana can cook very well.",
+                "es": "Ana sabe cocinar muy bien.",
+                "de": "Ana kann sehr gut kochen."
+              }
+            },
+            {
+              "es": "Conozco a Ana, es mi vecina.",
+              "tr": {
+                "hu": "Ismerem Anát, a szomszédom.",
+                "en": "I know Ana, she is my neighbour.",
+                "es": "Conozco a Ana, es mi vecina.",
+                "de": "Ich kenne Ana, sie ist meine Nachbarin."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Kérdezd meg magadtól: tényt tudok, vagy valakit, valamit ismerek? Tény vagy megtanult képesség (saber + főnévi igenév): saber. Személy, hely vagy dolog, amivel volt már dolgod: conocer, személy előtt az a-val. Az yo alakok: sé és conozco.",
+        "en": "Ask yourself: do I know a fact, or am I acquainted with someone or something? A fact or a learned skill (saber plus infinitive): saber. A person, place or thing you have dealt with before: conocer, with a before a person. The yo forms: sé and conozco.",
+        "es": "Pregúntate: ¿sé un dato, o conozco a alguien o algo? Un dato o una habilidad aprendida (saber más infinitivo): saber. Una persona, un lugar o una cosa que ya has tratado: conocer, con a delante de una persona. Las formas de yo: sé y conozco.",
+        "de": "Frag dich: Weiß ich eine Tatsache, oder kenne ich jemanden oder etwas? Eine Tatsache oder gelernte Fähigkeit (saber plus Infinitiv): saber. Eine Person, ein Ort oder eine Sache, mit der man schon zu tun hatte: conocer, vor einer Person mit a. Die yo-Formen: sé und conozco."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "Két ige, két feladat. Az egyik azt jelenti, hogy tudsz valamit: egy tényt, egy információt vagy egy megtanult képességet, például hogy hol lakik valaki, vagy hogy tudsz úszni. A másik azt jelenti, hogy ismersz valakit vagy valamit: egy embert, akivel már találkoztál, vagy egy várost, egy éttermet, ahol már jártál. Az angol mindkettőre ugyanazt az egy igét használja, a magyarban viszont ott van a tudni és az ismerni páros, ezért a magyar anyanyelvűeknek ez könnyebb. Egy dolgot jegyezz meg: az első személyű alak mindkét igénél rendhagyó, ezt külön meg kell tanulni. Ha egy személyt ismersz, a név előtt még egy kis szó áll.",
+    "en": "Two verbs, two jobs. One means that you know something: a fact, a piece of information or a learned skill, for example where someone lives, or that you can swim. The other means that you are acquainted with someone or something: a person you have already met, or a city or a restaurant you have already been to. English uses the single verb know for both, while Hungarian and German have two verbs, so speakers of those languages have it a little easier. One more thing to remember: the form for I is irregular in both verbs, so it has to be learned by heart. When the thing you know is a person, a small extra word comes before the name.",
+    "es": "Dos verbos, dos tareas. Uno significa que sabes algo: un dato, una información o una habilidad aprendida, por ejemplo dónde vive alguien o que sabes nadar. El otro significa que estás familiarizado con alguien o con algo: una persona a la que ya has visto, o una ciudad o un restaurante en los que ya has estado. El inglés usa un solo verbo para los dos, así que hay que prestar atención. Recuerda además que la forma de yo es irregular en los dos verbos y hay que aprenderla de memoria. Cuando lo que conoces es una persona, delante de su nombre va una palabra pequeña más.",
+    "de": "Zwei Verben, zwei Aufgaben. Das eine bedeutet, dass du etwas weißt: eine Tatsache, eine Information oder eine gelernte Fähigkeit, zum Beispiel wo jemand wohnt oder dass du schwimmen kannst. Das andere bedeutet, dass du jemanden oder etwas kennst: eine Person, der du schon begegnet bist, oder eine Stadt oder ein Restaurant, in dem du schon warst. Das Englische benutzt für beides dasselbe Verb, das Deutsche hat wie das Ungarische zwei Verben und folgt damit dem spanischen Muster. Merke dir noch: Die Form für ich ist bei beiden Verben unregelmäßig und muss auswendig gelernt werden. Wenn du eine Person kennst, steht vor dem Namen ein kleines zusätzliches Wort."
+  },
+  "glossary": [
+    {
+      "word": "conozco",
+      "gloss": {
+        "hu": "ismerem (én)",
+        "en": "I know (a person, a place)",
+        "es": "yo conozco",
+        "de": "ich kenne"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "sc-01",
+      "sentence": "¿___ usted dónde vive Ana?",
+      "options": [
+        "Sabe",
+        "Conoce",
+        "Sabes"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „hol lakik Ana” tény, egy információ, amit tudni lehet: ¿sabe usted dónde vive Ana?",
+        "en": "Where Ana lives is a fact, a piece of information you can know: ¿sabe usted dónde vive Ana?",
+        "es": "Dónde vive Ana es un dato, una información que se puede saber: ¿sabe usted dónde vive Ana?",
+        "de": "Wo Ana wohnt, ist eine Tatsache, eine Information, die man wissen kann: ¿sabe usted dónde vive Ana?"
+      },
+      "wrong": {
+        "Conoce": {
+          "hu": "A conocer személyt vagy helyet ismer (conoce a Ana), de itt nem Anát ismerjük, hanem egy tényt tudunk: azt, hol lakik. Ide ez illik: sabe.",
+          "en": "Conocer is for knowing a person or a place (conoce a Ana), but here it is not about knowing Ana, it is a fact: where she lives. It needs: sabe.",
+          "es": "Conocer es para conocer a una persona o un lugar (conoce a Ana), pero aquí no se trata de conocer a Ana, sino de un dato: dónde vive. Hace falta: sabe.",
+          "de": "Conocer steht für das Kennen einer Person oder eines Ortes (conoce a Ana), aber hier geht es nicht darum, Ana zu kennen, sondern um eine Tatsache: wo sie wohnt. Richtig ist: sabe."
+        },
+        "Sabes": {
+          "hu": "A sabes a tú alakja; az usted mellett harmadik személyű alak áll: sabe.",
+          "en": "Sabes is the tú form; usted takes the third-person form: sabe.",
+          "es": "Sabes es la forma de tú; con usted va la forma de tercera persona: sabe.",
+          "de": "Sabes ist die tú-Form; zu usted gehört die Form der dritten Person: sabe."
+        }
+      },
+      "examples": [
+        "¿Sabes qué hora es?",
+        "No sé dónde está tu casa."
+      ]
+    },
+    {
+      "id": "sc-02",
+      "sentence": "Mi hermana ___ cantar muy bien.",
+      "options": [
+        "conoce",
+        "sabe",
+        "sé"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A cantar megtanult képesség, a saber + főnévi igenév azt jelenti, tud valamit csinálni: mi hermana sabe cantar.",
+        "en": "Singing is a learned skill, and saber plus infinitive means knowing how to do something: mi hermana sabe cantar.",
+        "es": "Cantar es una habilidad aprendida, y saber más infinitivo significa saber hacer algo: mi hermana sabe cantar.",
+        "de": "Singen ist eine gelernte Fähigkeit, und saber plus Infinitiv heißt, etwas zu können: mi hermana sabe cantar."
+      },
+      "wrong": {
+        "conoce": {
+          "hu": "A conocer nem áll főnévi igenévvel: személyt vagy helyet ismer. A képességet a saber fejezi ki: sabe cantar.",
+          "en": "Conocer is not used with an infinitive: it is for a person or a place. A skill is expressed by saber: sabe cantar.",
+          "es": "Conocer no se usa con infinitivo: es para una persona o un lugar. Una habilidad se expresa con saber: sabe cantar.",
+          "de": "Conocer wird nicht mit einem Infinitiv benutzt: es steht für eine Person oder einen Ort. Eine Fähigkeit drückt saber aus: sabe cantar."
+        },
+        "sé": {
+          "hu": "A sé az yo alak (én tudok), de a mondat alanya a lánytestvérem, ezért harmadik személyű alak kell: sabe.",
+          "en": "Sé is the yo form (I know), but the subject is my sister, so the third-person form is needed: sabe.",
+          "es": "Sé es la forma de yo, pero el sujeto es mi hermana, así que hace falta la tercera persona: sabe.",
+          "de": "Sé ist die yo-Form (ich weiß), aber das Subjekt ist meine Schwester, also braucht man die dritte Person: sabe."
+        }
+      },
+      "examples": [
+        "Mi padre sabe tocar la guitarra.",
+        "No sé nadar muy bien."
+      ]
+    },
+    {
+      "id": "sc-03",
+      "sentence": "Mañana vas a ___ a mis padres.",
+      "options": [
+        "saber",
+        "conoces",
+        "conocer"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Az első találkozás is conocer, és a személy előtt ott az a: vas a conocer a mis padres (megismered a szüleimet).",
+        "en": "Meeting someone for the first time is also conocer, and the personal a stands before the person: vas a conocer a mis padres (you will meet my parents).",
+        "es": "Encontrarse con alguien por primera vez también es conocer, y delante de la persona va la a personal: vas a conocer a mis padres.",
+        "de": "Auch das erste Kennenlernen ist conocer, und vor der Person steht das persönliche a: vas a conocer a mis padres (du wirst meine Eltern kennenlernen)."
+      },
+      "wrong": {
+        "saber": {
+          "hu": "A saber tényt vagy képességet jelent; a szülők megismerése személyek megismerése, az conocer. Ide ez illik: conocer.",
+          "en": "Saber is for facts or skills; meeting parents is getting to know people, and that is conocer. It needs: conocer.",
+          "es": "Saber es para datos o habilidades; conocer a los padres es tratar con personas, y eso es conocer. Hace falta: conocer.",
+          "de": "Saber steht für Tatsachen oder Fähigkeiten; die Eltern kennenzulernen heißt, Menschen zu begegnen, und das ist conocer. Richtig ist: conocer."
+        },
+        "conoces": {
+          "hu": "Az „ir a” után főnévi igenév áll, ragozott alak nem: vas a conocer, nem „vas a conoces”.",
+          "en": "After ir a comes the infinitive, not a conjugated form: vas a conocer, not \"vas a conoces\".",
+          "es": "Después de ir a va el infinitivo, no una forma conjugada: vas a conocer, no \"vas a conoces\".",
+          "de": "Nach ir a steht der Infinitiv, keine konjugierte Form: vas a conocer, nicht \"vas a conoces\"."
+        }
+      },
+      "examples": [
+        "Quiero conocer a tu familia.",
+        "Voy a conocer la ciudad."
+      ]
+    },
+    {
+      "id": "sc-04",
+      "sentence": "No ___ la respuesta. ¿Me ayudas?",
+      "options": [
+        "sabes",
+        "sé",
+        "sabo"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A válasz egy információ, amit tudsz vagy nem tudsz: no sé la respuesta. Az yo alak: sé.",
+        "en": "The answer is a piece of information, something you know or do not know: no sé la respuesta. The yo form is sé.",
+        "es": "La respuesta es una información, algo que se sabe o no se sabe: no sé la respuesta. La forma de yo es sé.",
+        "de": "Die Antwort ist eine Information, etwas, das man weiß oder nicht weiß: no sé la respuesta. Die yo-Form ist sé."
+      },
+      "wrong": {
+        "sabes": {
+          "hu": "A sabes a tú alakja; itt én nem tudom a választ, ezért az yo alak kell: sé.",
+          "en": "Sabes is the tú form; here I do not know the answer, so the yo form is needed: sé.",
+          "es": "Sabes es la forma de tú; aquí yo no sé la respuesta, así que hace falta la forma de yo: sé.",
+          "de": "Sabes ist die tú-Form; hier weiß ich die Antwort nicht, also braucht man die yo-Form: sé."
+        },
+        "sabo": {
+          "hu": "A sabo nem létező alak: a saber yo alakja rendhagyó: sé.",
+          "en": "Sabo does not exist: the yo form of saber is irregular: sé.",
+          "es": "Sabo no existe: la forma de yo de saber es irregular: sé.",
+          "de": "Sabo gibt es nicht: die yo-Form von saber ist unregelmäßig: sé."
+        }
+      },
+      "examples": [
+        "No sé qué hacer.",
+        "Sé la dirección de tu casa."
+      ]
+    },
+    {
+      "id": "sc-05",
+      "sentence": "Mis padres ___ muy bien esta ciudad.",
+      "options": [
+        "saben",
+        "conocen",
+        "conocemos"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A város olyan hely, amit jól ismersz, mert jártál ott és éltél ott: mis padres conocen esta ciudad.",
+        "en": "A city is a place you know well because you have been there and lived there: mis padres conocen esta ciudad.",
+        "es": "Una ciudad es un lugar que se conoce bien porque se ha estado y vivido allí: mis padres conocen esta ciudad.",
+        "de": "Eine Stadt ist ein Ort, den man gut kennt, weil man dort war und gelebt hat: mis padres conocen esta ciudad."
+      },
+      "wrong": {
+        "saben": {
+          "hu": "A saben tényt tud, de a város nem tény: helyet ismerünk. Ide ez illik: conocen.",
+          "en": "Saben knows a fact, but a city is not a fact: you know a place. It needs: conocen.",
+          "es": "Saben es para datos, pero una ciudad no es un dato: es un lugar que se conoce. Hace falta: conocen.",
+          "de": "Saben steht für Tatsachen, aber eine Stadt ist keine Tatsache: einen Ort kennt man. Richtig ist: conocen."
+        },
+        "conocemos": {
+          "hu": "A conocemos a nosotros alak (mi ismerjük); az alany a szüleim, tehát ők: conocen.",
+          "en": "Conocemos is the nosotros form (we know); the subject is my parents, so it is they: conocen.",
+          "es": "Conocemos es la forma de nosotros; el sujeto son mis padres, así que hace falta la forma de ellos: conocen.",
+          "de": "Conocemos ist die nosotros-Form (wir kennen); das Subjekt sind meine Eltern, also braucht man die Form für sie: conocen."
+        }
+      },
+      "examples": [
+        "Conozco bien este barrio.",
+        "Mi jefe conoce la ciudad."
+      ]
+    },
+    {
+      "id": "sc-06",
+      "sentence": "¿___ a mi jefe? Se llama Diego.",
+      "options": [
+        "Sabes",
+        "Conoces",
+        "Conozco"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A főnököm személy, előtte ott a személyes a: a conocer személyt ismer. A kérdés hozzád szól (tú): ¿conoces a mi jefe?",
+        "en": "My boss is a person, and the personal a stands before it: conocer is for knowing a person. The question is addressed to you (tú): ¿conoces a mi jefe?",
+        "es": "Mi jefe es una persona, y delante va la a personal: conocer es para conocer a una persona. La pregunta es para ti (tú): ¿conoces a mi jefe?",
+        "de": "Mein Chef ist eine Person, und davor steht das persönliche a: conocer steht für das Kennen einer Person. Die Frage richtet sich an dich (tú): ¿conoces a mi jefe?"
+      },
+      "wrong": {
+        "Sabes": {
+          "hu": "A sabes tényt vagy képességet jelent; a főnök személy, akit ismerünk. Ide ez illik: conoces.",
+          "en": "Sabes is for a fact or a skill; the boss is a person you know. It needs: conoces.",
+          "es": "Sabes es para un dato o una habilidad; el jefe es una persona a la que se conoce. Hace falta: conoces.",
+          "de": "Sabes steht für eine Tatsache oder Fähigkeit; der Chef ist eine Person, die man kennt. Richtig ist: conoces."
+        },
+        "Conozco": {
+          "hu": "A conozco az yo alak (én ismerem), de te kérdezed a másikat, ezért tú alak kell: conoces.",
+          "en": "Conozco is the yo form (I know), but you are asking the other person, so the tú form is needed: conoces.",
+          "es": "Conozco es la forma de yo, pero se pregunta a la otra persona, así que hace falta la forma de tú: conoces.",
+          "de": "Conozco ist die yo-Form (ich kenne), aber du fragst die andere Person, also braucht man die tú-Form: conoces."
+        }
+      },
+      "examples": [
+        "¿Conoces a mi hermano?",
+        "No conozco a tu amigo."
+      ]
+    },
+    {
+      "id": "sc-07",
+      "sentence": "Yo no ___ a nadie en esta fiesta.",
+      "options": [
+        "sé",
+        "conozco",
+        "conoco"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A nadie (senki) személy, előtte ott a személyes a: embereket ismerni conocer. Az yo alak: conozco.",
+        "en": "Nadie is a person, and the personal a stands before it: knowing people is conocer. The yo form is conozco.",
+        "es": "Nadie es una persona, y delante va la a personal: conocer a la gente es conocer. La forma de yo es conozco.",
+        "de": "Nadie ist eine Person, und davor steht das persönliche a: Menschen zu kennen ist conocer. Die yo-Form ist conozco."
+      },
+      "wrong": {
+        "sé": {
+          "hu": "A sé a saber alakja, tényt vagy képességet jelent; itt embereket ismerünk. Ide ez illik: conozco.",
+          "en": "Sé is the saber form, for facts or skills; here we know people. It needs: conozco.",
+          "es": "Sé es la forma de saber, para datos o habilidades; aquí se conoce a personas. Hace falta: conozco.",
+          "de": "Sé ist die saber-Form, für Tatsachen oder Fähigkeiten; hier kennt man Menschen. Richtig ist: conozco."
+        },
+        "conoco": {
+          "hu": "A conoco nem létező alak: a conocer yo alakja -zco végű, conozco.",
+          "en": "Conoco does not exist: the yo form of conocer ends in -zco, conozco.",
+          "es": "Conoco no existe: la forma de yo de conocer termina en -zco, conozco.",
+          "de": "Conoco gibt es nicht: die yo-Form von conocer endet auf -zco, conozco."
+        }
+      },
+      "examples": [
+        "No conozco a nadie aquí.",
+        "Conozco a tu madre."
+      ]
+    },
+    {
+      "id": "sc-08",
+      "sentence": "Ellos no ___ si hay clase hoy.",
+      "options": [
+        "conocen",
+        "sabes",
+        "saben"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A „van-e ma óra” tény, egy információ, amit tudni lehet: ellos no saben si hay clase hoy.",
+        "en": "Whether there is a class today is a fact, a piece of information you can know: ellos no saben si hay clase hoy.",
+        "es": "Si hay clase hoy es un dato, una información que se puede saber: ellos no saben si hay clase hoy.",
+        "de": "Ob heute Unterricht ist, ist eine Tatsache, eine Information, die man wissen kann: ellos no saben si hay clase hoy."
+      },
+      "wrong": {
+        "conocen": {
+          "hu": "A conocen személyt vagy helyet ismer; az órarend-kérdés tény, nem ismeretség. Ide ez illik: saben.",
+          "en": "Conocen is for knowing a person or a place; whether there is a class is a fact, not an acquaintance. It needs: saben.",
+          "es": "Conocen es para conocer a una persona o un lugar; si hay clase es un dato, no un conocimiento de alguien. Hace falta: saben.",
+          "de": "Conocen steht für das Kennen einer Person oder eines Ortes; ob Unterricht ist, ist eine Tatsache, keine Bekanntschaft. Richtig ist: saben."
+        },
+        "sabes": {
+          "hu": "A sabes a tú alakja; az alany itt ellos, ezért: saben.",
+          "en": "Sabes is the tú form; the subject here is ellos, so: saben.",
+          "es": "Sabes es la forma de tú; el sujeto aquí es ellos, así que: saben.",
+          "de": "Sabes ist die tú-Form; das Subjekt ist hier ellos, also: saben."
+        }
+      },
+      "examples": [
+        "No sé si hay clase mañana.",
+        "¿Sabes si tu madre está en casa?"
+      ]
+    },
+    {
+      "id": "sc-09",
+      "sentence": "Nosotros ___ ese restaurante, es muy bueno.",
+      "options": [
+        "sabemos",
+        "conocemos",
+        "conocen"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az étterem olyan hely, amit ismerhetsz, ha már jártál ott: nosotros conocemos ese restaurante.",
+        "en": "A restaurant is a place you can know if you have been there: nosotros conocemos ese restaurante.",
+        "es": "Un restaurante es un lugar que se puede conocer si ya has estado allí: nosotros conocemos ese restaurante.",
+        "de": "Ein Restaurant ist ein Ort, den man kennen kann, wenn man schon dort war: nosotros conocemos ese restaurante."
+      },
+      "wrong": {
+        "sabemos": {
+          "hu": "A sabemos tényt tud, nem helyet ismer. Ide ez illik: conocemos.",
+          "en": "Sabemos knows a fact, it does not know a place. It needs: conocemos.",
+          "es": "Sabemos es para datos, no para conocer un lugar. Hace falta: conocemos.",
+          "de": "Sabemos steht für Tatsachen, nicht für das Kennen eines Ortes. Richtig ist: conocemos."
+        },
+        "conocen": {
+          "hu": "A conocen az ellos alak; az alany nosotros, ezért: conocemos.",
+          "en": "Conocen is the ellos form; the subject is nosotros, so: conocemos.",
+          "es": "Conocen es la forma de ellos; el sujeto es nosotros, así que: conocemos.",
+          "de": "Conocen ist die ellos-Form; das Subjekt ist nosotros, also: conocemos."
+        }
+      },
+      "examples": [
+        "Conocemos un restaurante muy bueno.",
+        "¿Conoces este parque?"
+      ]
+    },
+    {
+      "id": "sc-10",
+      "sentence": "¿___ ustedes hablar inglés?",
+      "options": [
+        "Conocen",
+        "Saben",
+        "Sabemos"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A nyelvtudás megtanult képesség: saber + főnévi igenév. ¿Saben ustedes hablar inglés?",
+        "en": "Speaking a language is a learned skill: saber plus infinitive. ¿Saben ustedes hablar inglés?",
+        "es": "Hablar un idioma es una habilidad aprendida: saber más infinitivo. ¿Saben ustedes hablar inglés?",
+        "de": "Eine Sprache zu sprechen ist eine gelernte Fähigkeit: saber plus Infinitiv. ¿Saben ustedes hablar inglés?"
+      },
+      "wrong": {
+        "Conocen": {
+          "hu": "A conocen nem áll főnévi igenévvel; a képességet a saber mondja: saben.",
+          "en": "Conocen is not used with an infinitive; a skill is said with saber: saben.",
+          "es": "Conocen no se usa con infinitivo; una habilidad se dice con saber: saben.",
+          "de": "Conocen wird nicht mit einem Infinitiv benutzt; eine Fähigkeit sagt man mit saber: saben."
+        },
+        "Sabemos": {
+          "hu": "A sabemos a nosotros alak; itt az ustedes a címzett, ezért: saben.",
+          "en": "Sabemos is the nosotros form; here ustedes is addressed, so: saben.",
+          "es": "Sabemos es la forma de nosotros; aquí se pregunta a ustedes, así que: saben.",
+          "de": "Sabemos ist die nosotros-Form; hier wird ustedes angesprochen, also: saben."
+        }
+      },
+      "examples": [
+        "Mi madre sabe hablar inglés.",
+        "Yo no sé manejar."
+      ]
+    },
+    {
+      "id": "sc-11",
+      "sentence": "Mi vecino ___ a todos en el barrio.",
+      "options": [
+        "sabe",
+        "conoce",
+        "conozco"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A „todos” itt személyek: mindenkit ismer, előttük a személyes a: mi vecino conoce a todos.",
+        "en": "Todos means people here, he knows everybody, and the personal a stands before it: mi vecino conoce a todos.",
+        "es": "Todos son aquí personas, las conoce a todas, y delante va la a personal: mi vecino conoce a todos.",
+        "de": "Todos sind hier Personen, er kennt alle, und davor steht das persönliche a: mi vecino conoce a todos."
+      },
+      "wrong": {
+        "sabe": {
+          "hu": "A sabe tényt tud; a szomszéd itt embereket ismer, az conocer. Ide ez illik: conoce.",
+          "en": "Sabe knows a fact; here the neighbour knows people, and that is conocer. It needs: conoce.",
+          "es": "Sabe es para datos; aquí el vecino conoce a personas, y eso es conocer. Hace falta: conoce.",
+          "de": "Sabe steht für Tatsachen; hier kennt der Nachbar Menschen, und das ist conocer. Richtig ist: conoce."
+        },
+        "conozco": {
+          "hu": "A conozco az yo alak; az alany a szomszédom, ezért: conoce.",
+          "en": "Conozco is the yo form; the subject is my neighbour, so: conoce.",
+          "es": "Conozco es la forma de yo; el sujeto es mi vecino, así que: conoce.",
+          "de": "Conozco ist die yo-Form; das Subjekt ist mein Nachbar, also: conoce."
+        }
+      },
+      "examples": [
+        "Mi jefe conoce a mucha gente.",
+        "Conozco a toda tu familia."
+      ]
+    },
+    {
+      "id": "sc-12",
+      "sentence": "Mi madre y yo no ___ nadar.",
+      "options": [
+        "conocemos",
+        "sabemos",
+        "saben"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A nadar megtanult képesség: saber + főnévi igenév. Az alany mi madre y yo, vagyis nosotros: sabemos.",
+        "en": "Swimming is a learned skill: saber plus infinitive. The subject is mi madre y yo, that is nosotros: sabemos.",
+        "es": "Nadar es una habilidad aprendida: saber más infinitivo. El sujeto es mi madre y yo, es decir, nosotros: sabemos.",
+        "de": "Schwimmen ist eine gelernte Fähigkeit: saber plus Infinitiv. Das Subjekt ist mi madre y yo, also nosotros: sabemos."
+      },
+      "wrong": {
+        "conocemos": {
+          "hu": "A conocer nem áll főnévi igenévvel, a képességet a saber mondja: sabemos.",
+          "en": "Conocer is not used with an infinitive, a skill is said with saber: sabemos.",
+          "es": "Conocer no se usa con infinitivo, una habilidad se dice con saber: sabemos.",
+          "de": "Conocer wird nicht mit einem Infinitiv benutzt, eine Fähigkeit sagt man mit saber: sabemos."
+        },
+        "saben": {
+          "hu": "A saben az ellos alak; az alany az anyám és én, vagyis nosotros: sabemos.",
+          "en": "Saben is the ellos form; the subject is my mother and I, that is nosotros: sabemos.",
+          "es": "Saben es la forma de ellos; el sujeto es mi madre y yo, es decir, nosotros: sabemos.",
+          "de": "Saben ist die ellos-Form; das Subjekt sind meine Mutter und ich, also nosotros: sabemos."
+        }
+      },
+      "examples": [
+        "No sabemos cocinar.",
+        "Sabemos cantar muy bien."
+      ]
+    },
+    {
+      "id": "sc-match-01",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "saber",
+          "en": "to know a fact or a skill"
+        },
+        {
+          "es": "conocer",
+          "en": "to know a person or a place"
+        },
+        {
+          "es": "saber nadar",
+          "en": "to know how to swim"
+        },
+        {
+          "es": "conocer a alguien",
+          "en": "to know someone, to meet someone"
+        },
+        {
+          "es": "saber dónde está",
+          "en": "to know where it is"
+        },
+        {
+          "es": "conocer una ciudad",
+          "en": "to know a city, to have been there"
+        }
+      ]
+    },
+    {
+      "id": "sc-form-01",
+      "kind": "form",
+      "verb": "forma verbal",
+      "person": "Sí, ___ (yo) dónde está tu casa.",
+      "answer": "sé",
+      "table": "saber-conocer-formas"
+    },
+    {
+      "id": "sc-form-02",
+      "kind": "form",
+      "verb": "forma verbal",
+      "person": "Mis hermanos ___ (ellos) tocar la guitarra.",
+      "answer": "saben",
+      "table": "saber-conocer-formas"
+    },
+    {
+      "id": "sc-form-03",
+      "kind": "form",
+      "verb": "forma verbal",
+      "person": "¿___ (tú) a mi novio? Se llama Carlos.",
+      "answer": "conoces",
+      "table": "saber-conocer-formas"
+    },
+    {
+      "id": "sc-form-04",
+      "kind": "form",
+      "verb": "forma verbal",
+      "person": "Mi jefe ___ (él) a mucha gente.",
+      "answer": "conoce",
+      "table": "saber-conocer-formas"
+    },
+    {
+      "id": "sc-form-05",
+      "kind": "form",
+      "verb": "forma verbal",
+      "person": "Nosotros no ___ (nosotros) qué hora es.",
+      "answer": "sabemos",
+      "table": "saber-conocer-formas"
+    },
+    {
+      "id": "sc-form-06",
+      "kind": "form",
+      "verb": "forma verbal",
+      "person": "Quiero ___ manejar, pero no tengo coche.",
+      "answer": "saber",
+      "table": "saber-conocer-formas"
+    },
+    {
+      "id": "sc-form-07",
+      "kind": "form",
+      "verb": "forma verbal",
+      "person": "Sí, ___ (yo) a tu hermana. Es muy inteligente.",
+      "answer": "conozco",
+      "table": "saber-conocer-formas"
+    },
+    {
+      "id": "sc-form-08",
+      "kind": "form",
+      "verb": "forma verbal",
+      "person": "Mi abuela ___ (ella) cocinar muy bien.",
+      "answer": "sabe",
+      "table": "saber-conocer-formas"
+    },
+    {
+      "id": "sc-form-09",
+      "kind": "form",
+      "verb": "forma verbal",
+      "person": "¿___ (tú) cuándo llega el tren?",
+      "answer": "sabes",
+      "table": "saber-conocer-formas"
+    },
+    {
+      "id": "sc-form-10",
+      "kind": "form",
+      "verb": "forma verbal",
+      "person": "Mis amigos ___ (ellos) muy bien México.",
+      "answer": "conocen",
+      "table": "saber-conocer-formas"
+    },
+    {
+      "id": "sc-form-11",
+      "kind": "form",
+      "verb": "forma verbal",
+      "person": "Mi hijo no ___ (él) leer todavía.",
+      "answer": "sabe",
+      "table": "saber-conocer-formas"
+    },
+    {
+      "id": "sc-form-12",
+      "kind": "form",
+      "verb": "forma verbal",
+      "person": "Nosotros ___ (nosotros) Oaxaca, pero no Puebla.",
+      "answer": "conocemos",
+      "table": "saber-conocer-formas"
+    },
+    {
+      "kind": "why",
+      "id": "sc-why-01",
+      "es": "No sé dónde vives.",
+      "target": "sé",
+      "tr": {
+        "hu": "Nem tudom, hol laksz.",
+        "en": "I don't know where you live.",
+        "es": "No sé dónde vives.",
+        "de": "Ich weiß nicht, wo du wohnst."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "saber: tudni egy tényt, információt (dónde, qué, si)",
+            "en": "saber: knowing a fact or information (dónde, qué, si)",
+            "es": "saber: tener un dato o una información (dónde, qué, si)",
+            "de": "saber: eine Tatsache oder Information wissen (dónde, qué, si)"
+          }
+        },
+        {
+          "text": {
+            "hu": "saber + infinitivo: megtanult képesség",
+            "en": "saber + infinitivo: a learned skill",
+            "es": "saber + infinitivo: una habilidad aprendida",
+            "de": "saber + infinitivo: eine gelernte Fähigkeit"
+          },
+          "wrong": {
+            "hu": "A saber + főnévi igenév képességet jelentene (sé nadar), de a mondatban nincs főnévi igenév: a „hol laksz” tény.",
+            "en": "Saber plus an infinitive would be a skill (sé nadar), but there is no infinitive here: where you live is a fact.",
+            "es": "Saber más infinitivo sería una habilidad (sé nadar), pero aquí no hay infinitivo: dónde vives es un dato.",
+            "de": "Saber plus Infinitiv wäre eine Fähigkeit (sé nadar), aber hier gibt es keinen Infinitiv: wo du wohnst, ist eine Tatsache."
+          }
+        },
+        {
+          "text": {
+            "hu": "conocer: személyt vagy helyet ismerni",
+            "en": "conocer: knowing a person or a place",
+            "es": "conocer: estar familiarizado con una persona o un lugar",
+            "de": "conocer: eine Person oder einen Ort kennen"
+          },
+          "wrong": {
+            "hu": "A conocer személyt vagy helyet ismerne; itt nem ismerek semmit, hanem nem tudok egy tényt: azt, hol laksz.",
+            "en": "Conocer would be knowing a person or a place; here I am not acquainted with anything, I lack a fact: where you live.",
+            "es": "Conocer sería conocer a una persona o un lugar; aquí no conozco nada, me falta un dato: dónde vives.",
+            "de": "Conocer wäre das Kennen einer Person oder eines Ortes; hier kenne ich nichts, mir fehlt eine Tatsache: wo du wohnst."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "sc-why-02",
+      "es": "Ana sabe cocinar muy bien.",
+      "target": "sabe cocinar",
+      "tr": {
+        "hu": "Ana nagyon jól tud főzni.",
+        "en": "Ana can cook very well.",
+        "es": "Ana sabe cocinar muy bien.",
+        "de": "Ana kann sehr gut kochen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "saber: tudni egy tényt, információt (dónde, qué, si)",
+            "en": "saber: knowing a fact or information (dónde, qué, si)",
+            "es": "saber: tener un dato o una información (dónde, qué, si)",
+            "de": "saber: eine Tatsache oder Information wissen (dónde, qué, si)"
+          },
+          "wrong": {
+            "hu": "A tény-saber után kérdőszó vagy que áll (sé dónde…); itt főnévi igenév követi, az képességet jelent.",
+            "en": "Saber for a fact is followed by a question word or que (sé dónde…); here an infinitive follows, and that means a skill.",
+            "es": "Saber para un dato va seguido de una palabra interrogativa o que (sé dónde…); aquí sigue un infinitivo, y eso es una habilidad.",
+            "de": "Saber für eine Tatsache wird von einem Fragewort oder que gefolgt (sé dónde…); hier folgt ein Infinitiv, und das ist eine Fähigkeit."
+          }
+        },
+        {
+          "text": {
+            "hu": "saber + infinitivo: megtanult képesség",
+            "en": "saber + infinitivo: a learned skill",
+            "es": "saber + infinitivo: una habilidad aprendida",
+            "de": "saber + infinitivo: eine gelernte Fähigkeit"
+          }
+        },
+        {
+          "text": {
+            "hu": "conocer: személyt vagy helyet ismerni",
+            "en": "conocer: knowing a person or a place",
+            "es": "conocer: estar familiarizado con una persona o un lugar",
+            "de": "conocer: eine Person oder einen Ort kennen"
+          },
+          "wrong": {
+            "hu": "A conocer személyt vagy helyet ismer, főnévi igenévvel nem áll: itt Ana képességéről van szó.",
+            "en": "Conocer is for a person or a place and does not take an infinitive: here it is about Ana's skill.",
+            "es": "Conocer es para una persona o un lugar y no lleva infinitivo: aquí se trata de la habilidad de Ana.",
+            "de": "Conocer steht für eine Person oder einen Ort und nimmt keinen Infinitiv: hier geht es um Anas Fähigkeit."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "sc-why-03",
+      "es": "Conozco a tu madre.",
+      "target": "Conozco",
+      "tr": {
+        "hu": "Ismerem az édesanyádat.",
+        "en": "I know your mother.",
+        "es": "Conozco a tu madre.",
+        "de": "Ich kenne deine Mutter."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "saber: tudni egy tényt, információt (dónde, qué, si)",
+            "en": "saber: knowing a fact or information (dónde, qué, si)",
+            "es": "saber: tener un dato o una información (dónde, qué, si)",
+            "de": "saber: eine Tatsache oder Information wissen (dónde, qué, si)"
+          },
+          "wrong": {
+            "hu": "A saber tényt tudna; itt a személyes a jelzi, hogy személyt ismerek.",
+            "en": "Saber would be a fact; here the personal a shows that I know a person.",
+            "es": "Saber sería un dato; aquí la a personal indica que conozco a una persona.",
+            "de": "Saber wäre eine Tatsache; hier zeigt das persönliche a, dass ich eine Person kenne."
+          }
+        },
+        {
+          "text": {
+            "hu": "saber + infinitivo: megtanult képesség",
+            "en": "saber + infinitivo: a learned skill",
+            "es": "saber + infinitivo: una habilidad aprendida",
+            "de": "saber + infinitivo: eine gelernte Fähigkeit"
+          },
+          "wrong": {
+            "hu": "Nincs főnévi igenév a mondatban, és a conozco nem a saber alakja: a madre személy, akit ismerek.",
+            "en": "There is no infinitive in the sentence, and conozco is not a form of saber: your mother is a person I know.",
+            "es": "No hay infinitivo en la frase, y conozco no es una forma de saber: tu madre es una persona a la que conozco.",
+            "de": "Im Satz gibt es keinen Infinitiv, und conozco ist keine Form von saber: deine Mutter ist eine Person, die ich kenne."
+          }
+        },
+        {
+          "text": {
+            "hu": "conocer: személyt vagy helyet ismerni",
+            "en": "conocer: knowing a person or a place",
+            "es": "conocer: estar familiarizado con una persona o un lugar",
+            "de": "conocer: eine Person oder einen Ort kennen"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "sc-why-04",
+      "es": "Mis amigos conocen este restaurante.",
+      "target": "conocen",
+      "tr": {
+        "hu": "A barátaim ismerik ezt az éttermet.",
+        "en": "My friends know this restaurant.",
+        "es": "Mis amigos conocen este restaurante.",
+        "de": "Meine Freunde kennen dieses Restaurant."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "saber + infinitivo: megtanult képesség",
+            "en": "saber + infinitivo: a learned skill",
+            "es": "saber + infinitivo: una habilidad aprendida",
+            "de": "saber + infinitivo: eine gelernte Fähigkeit"
+          },
+          "wrong": {
+            "hu": "A saber + főnévi igenév képességet jelentene, de nincs főnévi igenév: az étterem egy hely, amit ismernek.",
+            "en": "Saber plus an infinitive would be a skill, but there is no infinitive: the restaurant is a place they know.",
+            "es": "Saber más infinitivo sería una habilidad, pero no hay infinitivo: el restaurante es un lugar que conocen.",
+            "de": "Saber plus Infinitiv wäre eine Fähigkeit, aber es gibt keinen Infinitiv: das Restaurant ist ein Ort, den sie kennen."
+          }
+        },
+        {
+          "text": {
+            "hu": "conocer: személyt vagy helyet ismerni",
+            "en": "conocer: knowing a person or a place",
+            "es": "conocer: estar familiarizado con una persona o un lugar",
+            "de": "conocer: eine Person oder einen Ort kennen"
+          }
+        },
+        {
+          "text": {
+            "hu": "saber: tudni egy tényt, információt (dónde, qué, si)",
+            "en": "saber: knowing a fact or information (dónde, qué, si)",
+            "es": "saber: tener un dato o una información (dónde, qué, si)",
+            "de": "saber: eine Tatsache oder Information wissen (dónde, qué, si)"
+          },
+          "wrong": {
+            "hu": "A saber tényt tudna (dónde, qué, si); az étterem nem tény, hanem hely, ahol jártak.",
+            "en": "Saber would be a fact (dónde, qué, si); the restaurant is not a fact but a place they have been to.",
+            "es": "Saber sería un dato (dónde, qué, si); el restaurante no es un dato, sino un lugar donde han estado.",
+            "de": "Saber wäre eine Tatsache (dónde, qué, si); das Restaurant ist keine Tatsache, sondern ein Ort, an dem sie waren."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "sc-why-05",
+      "es": "¿Sabes qué hora es?",
+      "target": "Sabes",
+      "tr": {
+        "hu": "Tudod, hány óra van?",
+        "en": "Do you know what time it is?",
+        "es": "¿Sabes qué hora es?",
+        "de": "Weißt du, wie spät es ist?"
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "conocer: személyt vagy helyet ismerni",
+            "en": "conocer: knowing a person or a place",
+            "es": "conocer: estar familiarizado con una persona o un lugar",
+            "de": "conocer: eine Person oder einen Ort kennen"
+          },
+          "wrong": {
+            "hu": "A conocer személyt vagy helyet ismer; az idő nem ilyen, hanem információ, amit tudni lehet.",
+            "en": "Conocer is for a person or a place; the time is neither, it is information you can know.",
+            "es": "Conocer es para una persona o un lugar; la hora no es ninguna de las dos, es una información que se puede saber.",
+            "de": "Conocer steht für eine Person oder einen Ort; die Uhrzeit ist keines von beiden, sondern eine Information, die man wissen kann."
+          }
+        },
+        {
+          "text": {
+            "hu": "saber: tudni egy tényt, információt (dónde, qué, si)",
+            "en": "saber: knowing a fact or information (dónde, qué, si)",
+            "es": "saber: tener un dato o una información (dónde, qué, si)",
+            "de": "saber: eine Tatsache oder Information wissen (dónde, qué, si)"
+          }
+        },
+        {
+          "text": {
+            "hu": "saber + infinitivo: megtanult képesség",
+            "en": "saber + infinitivo: a learned skill",
+            "es": "saber + infinitivo: una habilidad aprendida",
+            "de": "saber + infinitivo: eine gelernte Fähigkeit"
+          },
+          "wrong": {
+            "hu": "A saber + főnévi igenév képességet jelentene, de itt a qué hora es kérdés követi: tény, nem képesség.",
+            "en": "Saber plus an infinitive would be a skill, but here a question follows (qué hora es): a fact, not a skill.",
+            "es": "Saber más infinitivo sería una habilidad, pero aquí sigue una pregunta (qué hora es): un dato, no una habilidad.",
+            "de": "Saber plus Infinitiv wäre eine Fähigkeit, aber hier folgt eine Frage (qué hora es): eine Tatsache, keine Fähigkeit."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "sc-why-06",
+      "es": "No sabemos nadar.",
+      "target": "sabemos nadar",
+      "tr": {
+        "hu": "Nem tudunk úszni.",
+        "en": "We cannot swim.",
+        "es": "No sabemos nadar.",
+        "de": "Wir können nicht schwimmen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "saber + infinitivo: megtanult képesség",
+            "en": "saber + infinitivo: a learned skill",
+            "es": "saber + infinitivo: una habilidad aprendida",
+            "de": "saber + infinitivo: eine gelernte Fähigkeit"
+          }
+        },
+        {
+          "text": {
+            "hu": "conocer: személyt vagy helyet ismerni",
+            "en": "conocer: knowing a person or a place",
+            "es": "conocer: estar familiarizado con una persona o un lugar",
+            "de": "conocer: eine Person oder einen Ort kennen"
+          },
+          "wrong": {
+            "hu": "A conocer nem áll főnévi igenévvel; az úszni tudás megtanult képesség, nem ismeretség.",
+            "en": "Conocer does not take an infinitive; being able to swim is a learned skill, not an acquaintance.",
+            "es": "Conocer no lleva infinitivo; saber nadar es una habilidad aprendida, no un conocimiento de alguien.",
+            "de": "Conocer nimmt keinen Infinitiv; schwimmen zu können ist eine gelernte Fähigkeit, keine Bekanntschaft."
+          }
+        },
+        {
+          "text": {
+            "hu": "saber: tudni egy tényt, információt (dónde, qué, si)",
+            "en": "saber: knowing a fact or information (dónde, qué, si)",
+            "es": "saber: tener un dato o una información (dónde, qué, si)",
+            "de": "saber: eine Tatsache oder Information wissen (dónde, qué, si)"
+          },
+          "wrong": {
+            "hu": "A tény-saber után kérdőszó vagy que áll; itt főnévi igenév követi, vagyis képességről van szó.",
+            "en": "Saber for a fact is followed by a question word or que; here an infinitive follows, so it is a skill.",
+            "es": "Saber para un dato va seguido de una palabra interrogativa o que; aquí sigue un infinitivo, así que es una habilidad.",
+            "de": "Saber für eine Tatsache wird von einem Fragewort oder que gefolgt; hier folgt ein Infinitiv, also ist es eine Fähigkeit."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "sc-why-07",
+      "es": "Quiero conocer a tu familia.",
+      "target": "conocer",
+      "tr": {
+        "hu": "Szeretném megismerni a családodat.",
+        "en": "I want to meet your family.",
+        "es": "Quiero conocer a tu familia.",
+        "de": "Ich möchte deine Familie kennenlernen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "saber: tudni egy tényt, információt (dónde, qué, si)",
+            "en": "saber: knowing a fact or information (dónde, qué, si)",
+            "es": "saber: tener un dato o una información (dónde, qué, si)",
+            "de": "saber: eine Tatsache oder Information wissen (dónde, qué, si)"
+          },
+          "wrong": {
+            "hu": "A saber tényt tudna; a család személyek csoportja, és előtte ott a személyes a: megismerni őket conocer.",
+            "en": "Saber would be a fact; a family is a group of people, and the personal a stands before it: meeting them is conocer.",
+            "es": "Saber sería un dato; una familia es un grupo de personas, y delante va la a personal: conocerlos es conocer.",
+            "de": "Saber wäre eine Tatsache; eine Familie ist eine Gruppe von Personen, und davor steht das persönliche a: sie kennenzulernen ist conocer."
+          }
+        },
+        {
+          "text": {
+            "hu": "saber + infinitivo: megtanult képesség",
+            "en": "saber + infinitivo: a learned skill",
+            "es": "saber + infinitivo: una habilidad aprendida",
+            "de": "saber + infinitivo: eine gelernte Fähigkeit"
+          },
+          "wrong": {
+            "hu": "A saber + főnévi igenév képességet jelentene; a quiero után ugyan főnévi igenév áll, de az nem képesség, hanem a megismerés.",
+            "en": "Saber plus an infinitive would be a skill; an infinitive does follow quiero, but it is not a skill here, it is meeting someone.",
+            "es": "Saber más infinitivo sería una habilidad; tras quiero sí va un infinitivo, pero aquí no es una habilidad, sino conocer a alguien.",
+            "de": "Saber plus Infinitiv wäre eine Fähigkeit; nach quiero folgt zwar ein Infinitiv, aber hier ist es keine Fähigkeit, sondern das Kennenlernen."
+          }
+        },
+        {
+          "text": {
+            "hu": "conocer: személyt vagy helyet ismerni",
+            "en": "conocer: knowing a person or a place",
+            "es": "conocer: estar familiarizado con una persona o un lugar",
+            "de": "conocer: eine Person oder einen Ort kennen"
+          }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}

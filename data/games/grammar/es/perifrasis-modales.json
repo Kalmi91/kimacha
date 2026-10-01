@@ -103,7 +103,7 @@
             {
               "es": "Quiero ir contigo al cine.",
               "tr": {
-                "hu": "El akarok veled menni moziba.",
+                "hu": "Moziba akarok menni veled.",
                 "en": "I want to go to the movies with you.",
                 "es": "Quiero ir contigo al cine.",
                 "de": "Ich möchte mit dir ins Kino gehen."
@@ -312,7 +312,7 @@
             {
               "es": "Quiero ir contigo al cine.",
               "tr": {
-                "hu": "El akarok veled menni moziba.",
+                "hu": "Moziba akarok menni veled.",
                 "en": "I want to go to the movies with you.",
                 "es": "Quiero ir contigo al cine.",
                 "de": "Ich möchte mit dir ins Kino gehen."
@@ -482,10 +482,10 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Csak a tener que után áll que; a poder, a querer és a deber közvetlenül a főnévi igenevet veszi fel, que nélkül.",
-        "en": "Only tener que is followed by que; poder, querer and deber take the bare infinitive directly, without que.",
-        "es": "Solo después de tener que va que; poder, querer y deber llevan el infinitivo directo, sin que.",
-        "de": "Nur nach tener que steht que; poder, querer und deber nehmen den bloßen Infinitiv direkt, ohne que."
+        "hu": "Csak a tener que és a hay que szerkezetben áll que; a poder, a querer és a deber közvetlenül a főnévi igenevet veszi fel, que nélkül.",
+        "en": "Only tener que and hay que contain que; poder, querer and deber take the bare infinitive directly, without que.",
+        "es": "Solo tener que y hay que llevan que; poder, querer y deber llevan el infinitivo directo, sin que.",
+        "de": "Nur tener que und hay que enthalten que; poder, querer und deber nehmen den bloßen Infinitiv direkt, ohne que."
       }
     },
     {
@@ -508,10 +508,10 @@
     }
   ],
   "speak": {
-    "hu": "Amikor a spanyolban két ige áll egymás mellett, az első ragozott, a második főnévi igenévben marad. Az egyik szerkezet azt jelenti, hogy a körülmények miatt valamit meg kell tenned. A másik képességet vagy engedélyt fejez ki. Egy másik kívánságot. A negyedik inkább erkölcsi kötelességről vagy tanácsról szól, szelídebb, mint az első. Van személytelen alak is, amelynek nincs alanya, és mindenkire vonatkozik. Ezek közül csak az első kap egy kis kötőszót a főnévi igenév előtt, a többi közvetlenül a puszta főnévi igenevet.",
-    "en": "When two verbs stand together in Spanish, the first one is conjugated and the second stays in the infinitive. One phrase means you must do something because of the circumstances. Another expresses ability or permission. Another expresses a wish. A fourth is more about moral duty or advice, softer than the first. There is also an impersonal form, which has no subject and applies to everyone. Only the first of these takes a little connecting word before the infinitive, the others take the bare infinitive directly.",
-    "es": "Cuando dos verbos van juntos en español, el primero se conjuga y el segundo queda en infinitivo. Una perífrasis significa que debes hacer algo por las circunstancias. Otra expresa capacidad o permiso. Otra expresa un deseo. Una cuarta trata más de un deber moral o de un consejo, más suave que la primera. También hay una forma impersonal, que no tiene sujeto y vale para todos. Solo la primera de ellas lleva una pequeña palabra de enlace antes del infinitivo, las demás toman el infinitivo directamente.",
-    "de": "Wenn im Spanischen zwei Verben zusammenstehen, wird das erste konjugiert und das zweite bleibt im Infinitiv. Eine Wendung bedeutet, dass du etwas wegen der Umstände tun musst. Eine andere drückt Fähigkeit oder Erlaubnis aus. Eine weitere drückt einen Wunsch aus. Eine vierte betrifft eher eine moralische Pflicht oder einen Rat, sanfter als die erste. Es gibt auch eine unpersönliche Form, die kein Subjekt hat und für alle gilt. Nur die erste davon hat ein kleines Bindewort vor dem Infinitiv, die anderen nehmen den Infinitiv direkt."
+    "hu": "Amikor a spanyolban két ige áll egymás mellett, az első ragozott, a második főnévi igenévben marad. Az egyik szerkezet azt jelenti, hogy a körülmények miatt valamit meg kell tenned. A másik képességet vagy engedélyt fejez ki. Egy másik kívánságot. A negyedik inkább erkölcsi kötelességről vagy tanácsról szól, szelídebb, mint az első. Van személytelen alak is, amelynek nincs alanya, és mindenkire vonatkozik. Ezek közül az első és az utolsó kap egy kis kötőszót a főnévi igenév előtt, a többi közvetlenül a puszta főnévi igenevet.",
+    "en": "When two verbs stand together in Spanish, the first one is conjugated and the second stays in the infinitive. One phrase means you must do something because of the circumstances. Another expresses ability or permission. Another expresses a wish. A fourth is more about moral duty or advice, softer than the first. There is also an impersonal form, which has no subject and applies to everyone. Only the first and the last of these take a little connecting word before the infinitive, the others take the bare infinitive directly.",
+    "es": "Cuando dos verbos van juntos en español, el primero se conjuga y el segundo queda en infinitivo. Una perífrasis significa que debes hacer algo por las circunstancias. Otra expresa capacidad o permiso. Otra expresa un deseo. Una cuarta trata más de un deber moral o de un consejo, más suave que la primera. También hay una forma impersonal, que no tiene sujeto y vale para todos. Solo la primera y la última de ellas llevan una pequeña palabra de enlace antes del infinitivo, las demás toman el infinitivo directamente.",
+    "de": "Wenn im Spanischen zwei Verben zusammenstehen, wird das erste konjugiert und das zweite bleibt im Infinitiv. Eine Wendung bedeutet, dass du etwas wegen der Umstände tun musst. Eine andere drückt Fähigkeit oder Erlaubnis aus. Eine weitere drückt einen Wunsch aus. Eine vierte betrifft eher eine moralische Pflicht oder einen Rat, sanfter als die erste. Es gibt auch eine unpersönliche Form, die kein Subjekt hat und für alle gilt. Nur die erste und die letzte davon haben ein kleines Bindewort vor dem Infinitiv, die anderen nehmen den Infinitiv direkt."
   },
   "glossary": [
     {
@@ -901,10 +901,10 @@
       },
       "wrong": {
         "que salir": {
-          "hu": "A \"que salir\" nem létező szerkezet: a que csak a tener que után kötelező, a poder közvetlenül a főnévi igenevet veszi; helyesen: Podemos salir mañana temprano.",
-          "en": "\"Que salir\" is not a real structure: que is only obligatory after tener que, poder takes the bare infinitive directly; correctly: Podemos salir mañana temprano.",
-          "es": "\"Que salir\" no es una estructura real: el que solo es obligatorio después de tener que, poder lleva el infinitivo directo; correctamente: Podemos salir mañana temprano.",
-          "de": "\"Que salir\" ist keine reale Struktur: que ist nur nach tener que Pflicht, poder nimmt den bloßen Infinitiv direkt; richtig: Podemos salir mañana temprano."
+          "hu": "A \"que salir\" nem létező szerkezet: a que a tener que és a hay que része, a poder közvetlenül a főnévi igenevet veszi; helyesen: Podemos salir mañana temprano.",
+          "en": "\"Que salir\" is not a real structure: que belongs to tener que and hay que, poder takes the bare infinitive directly; correctly: Podemos salir mañana temprano.",
+          "es": "\"Que salir\" no es una estructura real: el que pertenece a tener que y hay que, poder lleva el infinitivo directo; correctamente: Podemos salir mañana temprano.",
+          "de": "\"Que salir\" ist keine reale Struktur: que gehört zu tener que und hay que, poder nimmt den bloßen Infinitiv direkt; richtig: Podemos salir mañana temprano."
         },
         "salimos": {
           "hu": "A \"salimos\" újra ragozná a második igét, pedig a \"podemos\" már hordozza a személyt; helyesen: Podemos salir mañana temprano.",
@@ -1003,10 +1003,10 @@
       },
       "wrong": {
         "que ir": {
-          "hu": "A \"que ir\" nem létező szerkezet: a que csak a tener que után kötelező, a querer közvetlenül a főnévi igenevet veszi; helyesen: Quiero ir contigo al cine.",
-          "en": "\"Que ir\" is not a real structure: que is only obligatory after tener que, querer takes the bare infinitive directly; correctly: Quiero ir contigo al cine.",
-          "es": "\"Que ir\" no es una estructura real: el que solo es obligatorio después de tener que, querer lleva el infinitivo directo; correctamente: Quiero ir contigo al cine.",
-          "de": "\"Que ir\" ist keine reale Struktur: que ist nur nach tener que Pflicht, querer nimmt den bloßen Infinitiv direkt; richtig: Quiero ir contigo al cine."
+          "hu": "A \"que ir\" nem létező szerkezet: a que a tener que és a hay que része, a querer közvetlenül a főnévi igenevet veszi; helyesen: Quiero ir contigo al cine.",
+          "en": "\"Que ir\" is not a real structure: que belongs to tener que and hay que, querer takes the bare infinitive directly; correctly: Quiero ir contigo al cine.",
+          "es": "\"Que ir\" no es una estructura real: el que pertenece a tener que y hay que, querer lleva el infinitivo directo; correctamente: Quiero ir contigo al cine.",
+          "de": "\"Que ir\" ist keine reale Struktur: que gehört zu tener que und hay que, querer nimmt den bloßen Infinitiv direkt; richtig: Quiero ir contigo al cine."
         },
         "voy": {
           "hu": "A \"voy\" újra ragozná a második igét, pedig a \"quiero\" már hordozza a személyt; helyesen: Quiero ir contigo al cine.",
@@ -1064,7 +1064,7 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Mexikóban a vosotros helyett ustedes-t használunk, ehhez a tienen tartozik.",
+        "hu": "Mexikóban a vosotros helyett ustedes-t használnak, ehhez a tienen tartozik.",
         "en": "In Mexico ustedes replaces vosotros, and it takes tienen.",
         "es": "En México se usa ustedes en vez de vosotros, y le corresponde tienen.",
         "de": "In Mexiko wird ustedes statt vosotros verwendet, dazu gehört tienen."
@@ -1111,7 +1111,7 @@
           "de": "\"Puedo\" ist die yo-Form, hier ist aber ella (sie) das Subjekt; richtig: Ella no puede venir mañana."
         },
         "podemos": {
-          "hu": "A \"podemos\" nosotros alakja, itt viszont ella a beszélgetőpartner; helyesen: Ella no puede venir mañana.",
+          "hu": "A \"podemos\" nosotros alakja, itt viszont ella az alany; helyesen: Ella no puede venir mañana.",
           "en": "\"Podemos\" is the nosotros form, but here the subject is ella; correctly: Ella no puede venir mañana.",
           "es": "\"Podemos\" es la forma de nosotros, pero aquí el sujeto es ella; correctamente: Ella no puede venir mañana.",
           "de": "\"Podemos\" ist die nosotros-Form, hier ist aber ella gemeint; richtig: Ella no puede venir mañana."
@@ -1574,7 +1574,7 @@
             "de": "unpersönliche Pflicht (hay que)"
           },
           "wrong": {
-            "hu": "A hay que személytelen lenne (\"No hay que mentir\" = nem kell hazudni, akárkinek); itt viszont van alany (nosotros), ezért deber.",
+            "hu": "A hay que személytelen lenne (\"No hay que mentir\" = nem szabad hazudni, általában); itt viszont van alany (nosotros), ezért deber.",
             "en": "Hay que would be impersonal (\"No hay que mentir\" = one must not lie); here there is a subject (nosotros), so deber.",
             "es": "Hay que sería impersonal (\"No hay que mentir\" = no hay que mentir, en general); aquí hay sujeto (nosotros), por eso deber.",
             "de": "Hay que wäre unpersönlich (\"No hay que mentir\" = man darf nicht lügen); hier gibt es aber ein Subjekt (nosotros), deshalb deber."

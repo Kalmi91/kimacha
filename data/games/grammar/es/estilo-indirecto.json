@@ -120,11 +120,11 @@
           },
           "examples": [
             {
-              "es": "Dijo que ese era su coche.",
+              "es": "Dijo que ese era su carro.",
               "tr": {
                 "hu": "Azt mondta, hogy az az ő autója.",
                 "en": "He said that was his car.",
-                "es": "Dijo que ese era su coche.",
+                "es": "Dijo que ese era su carro.",
                 "de": "Er sagte, das sei sein Auto."
               }
             },
@@ -228,62 +228,62 @@
       ],
       "rows": [
         [
-          "tengo",
+          "tengo → imperfecto",
           "tenía",
           "Dijo que tenía hambre."
         ],
         [
-          "vivo",
+          "vivo → imperfecto",
           "vivía",
           "Contó que vivía en Madrid."
         ],
         [
-          "comí",
+          "comí → pluscuamperfecto",
           "había comido",
           "Dijo que había comido."
         ],
         [
-          "llegó",
+          "llegó → pluscuamperfecto",
           "había llegado",
           "Contó que había llegado tarde."
         ],
         [
-          "he trabajado",
+          "he trabajado → pluscuamperfecto",
           "había trabajado",
           "Dijo que había trabajado mucho."
         ],
         [
-          "he estudiado",
+          "he estudiado → pluscuamperfecto",
           "había estudiado",
           "Contó que había estudiado toda la noche."
         ],
         [
-          "vendré",
+          "vendré → condicional",
           "vendría",
           "Dijo que vendría al día siguiente."
         ],
         [
-          "llegaré",
+          "llegaré → condicional",
           "llegaría",
           "Dijo que llegaría tarde."
         ],
         [
-          "¡Cierra!",
+          "¡Cierra! → imperfecto de subjuntivo (-ra)",
           "cerrara",
           "Me pidió que cerrara la puerta."
         ],
         [
-          "¡Ven!",
+          "¡Ven! → imperfecto de subjuntivo (-ra)",
           "viniera",
           "Me dijo que viniera pronto."
         ],
         [
-          "quiero que vengas",
+          "quiero que (vengas) → imperfecto de subjuntivo (-ra)",
           "vinieras",
           "Dijo que quería que vinieras."
         ],
         [
-          "espero que estudies",
+          "espero que (estudies) → imperfecto de subjuntivo (-ra)",
           "estudiaras",
           "Dijo que esperaba que estudiaras más."
         ]
@@ -385,12 +385,21 @@
         "es": "él/ella dice",
         "de": "er/sie sagt"
       }
+    },
+    {
+      "word": "acá",
+      "gloss": {
+        "hu": "itt (Latin-Amerikában az aquí megfelelője)",
+        "en": "here (in Latin America, the same as aquí)",
+        "es": "aquí, en este lugar",
+        "de": "hier (in Lateinamerika dasselbe wie aquí)"
+      }
     }
   ],
   "items": [
     {
       "id": "ei-01",
-      "sentence": "Dice que ___ tarde.",
+      "sentence": "Dice que mañana ___ tarde.",
       "options": [
         "llega",
         "llegó",
@@ -405,16 +414,16 @@
       },
       "wrong": {
         "llegó": {
-          "hu": "A „llegó” indefinido: azt jelentené, hogy MÁR megérkezett, de a bevezető jelen idejű, nincs ok az eltolásra, helyesen: llega.",
-          "en": "\"Llegó\" is preterite: it would mean he has ALREADY arrived, but the introducer is present tense, there's no reason to shift, correctly: llega.",
-          "es": "«Llegó» es perfecto simple: significaría que YA llegó, pero el introductor está en presente, no hay motivo para desplazar, correcto: llega.",
-          "de": "„Llegó” ist Indefinido: es würde bedeuten, dass er SCHON angekommen ist, aber die Einleitung steht im Präsens, kein Grund zur Verschiebung, richtig: llega."
+          "hu": "A „llegó” indefinido: múltat jelentene, a „mañana” viszont jövőre utal, helyesen: llega.",
+          "en": "\"Llegó\" is preterite: it would be past, but \"mañana\" points to the future, correctly: llega.",
+          "es": "«Llegó» es perfecto simple: sería pasado, pero «mañana» apunta al futuro, correcto: llega.",
+          "de": "„Llegó” ist Indefinido: es wäre Vergangenheit, „mañana” verweist aber auf die Zukunft, richtig: llega."
         },
         "llegaba": {
-          "hu": "A „llegaba” imperfecto: egy múltbeli szokást jelentene, de a bevezető jelen idejű, nincs eltolás, helyesen: llega.",
-          "en": "\"Llegaba\" is imperfect: it would describe a past habit, but the introducer is present tense, no shift, correctly: llega.",
-          "es": "«Llegaba» es imperfecto: describiría un hábito pasado, pero el introductor está en presente, no hay desplazamiento, correcto: llega.",
-          "de": "„Llegaba” ist Imperfekt: es würde eine vergangene Gewohnheit beschreiben, aber die Einleitung steht im Präsens, keine Verschiebung, richtig: llega."
+          "hu": "A „llegaba” imperfecto: a bevezető jelen idejű (dice), nincs eltolás, helyesen: llega.",
+          "en": "\"Llegaba\" is imperfect: the introducer is present tense (dice), no shift, correctly: llega.",
+          "es": "«Llegaba» es imperfecto: el introductor está en presente (dice), no hay desplazamiento, correcto: llega.",
+          "de": "„Llegaba” ist Imperfekt: die Einleitung steht im Präsens (dice), keine Verschiebung, richtig: llega."
         }
       },
       "examples": [
@@ -424,10 +433,10 @@
     },
     {
       "id": "ei-02",
-      "sentence": "Dijo que ___ mucho.",
+      "sentence": "\"Trabajo mucho.\" Dijo que ___ mucho.",
       "options": [
         "trabajaba",
-        "trabaja",
+        "trabajaría",
         "trabajó"
       ],
       "correct": 0,
@@ -438,11 +447,11 @@
         "de": "Das einleitende Verb steht in der Vergangenheit (dijo): das Präsens verschiebt sich zum Imperfekt, trabaja → trabajaba."
       },
       "wrong": {
-        "trabaja": {
-          "hu": "A „trabaja” jelen idő: azt jelentené, hogy MOST is dolgozik, holott a bevezető múlt, el kell tolni, helyesen: trabajaba.",
-          "en": "\"Trabaja\" is present: it would mean he's working RIGHT NOW, but the introducer is past, it must shift, correctly: trabajaba.",
-          "es": "«Trabaja» es presente: significaría que trabaja AHORA, pero el introductor es pasado, hay que desplazarlo, correcto: trabajaba.",
-          "de": "„Trabaja” ist Präsens: es würde bedeuten, dass er JETZT arbeitet, aber die Einleitung ist Vergangenheit, es muss verschoben werden, richtig: trabajaba."
+        "trabajaría": {
+          "hu": "A „trabajaría” feltételes mód: jövőbeli vagy feltételezett dolgot jelentene, az eredeti mondat viszont jelen idejű állítás volt, helyesen: trabajaba.",
+          "en": "\"Trabajaría\" is conditional: it would express a future or hypothetical matter, but the original was a present-tense statement, correctly: trabajaba.",
+          "es": "«Trabajaría» es condicional: expresaría algo futuro o hipotético, pero la oración original era una afirmación en presente, correcto: trabajaba.",
+          "de": "„Trabajaría” ist Konditional: es würde etwas Zukünftiges oder Hypothetisches ausdrücken, der Originalsatz war aber eine Aussage im Präsens, richtig: trabajaba."
         },
         "trabajó": {
           "hu": "A „trabajó” indefinido: egy lezárt eseményt jelentene, nem egy akkor-fennálló állapotot, helyesen: trabajaba.",
@@ -461,7 +470,7 @@
       "sentence": "Contó que ya ___ comido.",
       "options": [
         "había",
-        "ha",
+        "haber",
         "tiene"
       ],
       "correct": 0,
@@ -472,11 +481,11 @@
         "de": "Ein vergangenes Ereignis (Indefinido/Perfekt) verschiebt sich nach einer vergangenen Einleitung zum Plusquamperfekt: había comido."
       },
       "wrong": {
-        "ha": {
-          "hu": "A „ha” perfecto de indicativo, a mához kötött közelmúlt: itt viszont egy korábbi előzményről van szó, helyesen: había.",
-          "en": "\"Ha\" is present perfect, tied to now: but here it's an earlier event, correctly: había.",
-          "es": "«Ha» es perfecto de indicativo, ligado a ahora: pero aquí es un hecho anterior, correcto: había.",
-          "de": "„Ha” ist Perfekt, an das Jetzt gebunden: hier ist es aber ein früheres Ereignis, richtig: había."
+        "haber": {
+          "hu": "A „haber” főnévi igenév: ide ragozott segédige kell, helyesen: había.",
+          "en": "\"Haber\" is an infinitive: a conjugated auxiliary is needed here, correctly: había.",
+          "es": "«Haber» es un infinitivo: aquí hace falta el auxiliar conjugado, correcto: había.",
+          "de": "„Haber” ist ein Infinitiv: hier braucht es das konjugierte Hilfsverb, richtig: había."
         },
         "tiene": {
           "hu": "A „tiene” jelen idő: azt jelentené, hogy MOST birtokol valamit, itt viszont az evésről (comido) van szó, helyesen: había.",
@@ -492,10 +501,10 @@
     },
     {
       "id": "ei-04",
-      "sentence": "Dijo que ___ tarde.",
+      "sentence": "\"Llegaré tarde.\" Dijo que ___ tarde.",
       "options": [
         "llegaría",
-        "llega",
+        "llegara",
         "llegó"
       ],
       "correct": 0,
@@ -506,11 +515,11 @@
         "de": "Das Futur verschiebt sich nach einer vergangenen Einleitung zum Konditional: llegaré → llegaría."
       },
       "wrong": {
-        "llega": {
-          "hu": "A „llega” jelen idő: nem fejez ki egy korábban tett jövőbeli ígéretet, helyesen: llegaría.",
-          "en": "\"Llega\" is present: it doesn't express a future promise made earlier, correctly: llegaría.",
-          "es": "«Llega» es presente: no expresa una promesa futura hecha antes, correcto: llegaría.",
-          "de": "„Llega” ist Präsens: es drückt kein zuvor gegebenes Zukunftsversprechen aus, richtig: llegaría."
+        "llegara": {
+          "hu": "A „llegara” imperfecto de subjuntivo: kérést vagy parancsot fejezne ki, az eredeti mondat viszont egy jövőre tett ígéret volt, helyesen: llegaría.",
+          "en": "\"Llegara\" is imperfect subjunctive: it would express a request or command, but the original was a promise about the future, correctly: llegaría.",
+          "es": "«Llegara» es imperfecto de subjuntivo: expresaría una petición u orden, pero la oración original era una promesa de futuro, correcto: llegaría.",
+          "de": "„Llegara” ist Imperfecto de subjuntivo: es würde eine Bitte oder einen Befehl ausdrücken, der Originalsatz war aber ein Zukunftsversprechen, richtig: llegaría."
         },
         "llegó": {
           "hu": "A „llegó” indefinido: egy megtörtént tényt jelentene, nem egy jövőre tett ígéretet, helyesen: llegaría.",
@@ -628,7 +637,7 @@
     },
     {
       "id": "ei-08",
-      "sentence": "Preguntó ___ vivía.",
+      "sentence": "Preguntó ___ vivía, y le contesté: en Puebla.",
       "options": [
         "dónde",
         "si",
@@ -662,11 +671,11 @@
     },
     {
       "id": "ei-09",
-      "sentence": "Dijo que iba a llegar ___.",
+      "sentence": "Desde Puebla: \"Llego aquí.\" Dijo que llegaba ___.",
       "options": [
         "allí",
         "aquí",
-        "ahí"
+        "acá"
       ],
       "correct": 0,
       "why": {
@@ -682,11 +691,11 @@
           "es": "En la oración original, el hablante se refería a su propio lugar (aquí), pero en el relato ya es otro lugar, correcto: allí.",
           "de": "Im Originalsatz meinte der Sprecher seinen eigenen Ort (aquí), im Bericht ist es aber ein anderer Ort, richtig: allí."
         },
-        "ahí": {
-          "hu": "Az „ahí” egy közelebbi távolságot jelöl, itt viszont a nagyobb távolságot kifejező allí illik, helyesen: allí.",
-          "en": "\"Ahí\" marks a closer distance, but here the farther allí fits, correctly: allí.",
-          "es": "«Ahí» marca una distancia más cercana, pero aquí encaja el más lejano allí, correcto: allí.",
-          "de": "„Ahí” markiert eine nähere Entfernung, hier passt aber das weiter entfernte allí, richtig: allí."
+        "acá": {
+          "hu": "Az „acá” az „aquí” megfelelője (a beszélő helye): a beszámolóban viszont már egy másik helyről van szó, helyesen: allí.",
+          "en": "\"Acá\" is the counterpart of \"aquí\" (the speaker's place): in the report it is already a different place, correctly: allí.",
+          "es": "«Acá» equivale a «aquí» (el lugar del hablante): en el relato ya es otro lugar, correcto: allí.",
+          "de": "„Acá” entspricht „aquí” (der Ort des Sprechers): im Bericht ist es aber ein anderer Ort, richtig: allí."
         }
       },
       "examples": [
@@ -730,7 +739,7 @@
     },
     {
       "id": "ei-11",
-      "sentence": "Dijo que ese era ___ coche.",
+      "sentence": "\"Ese es mi carro.\" Dijo que ese era ___ carro.",
       "options": [
         "su",
         "mi",
@@ -767,7 +776,7 @@
       "sentence": "El profesor dijo que la Tierra ___ redonda.",
       "options": [
         "es",
-        "era",
+        "ser",
         "fue"
       ],
       "correct": 0,
@@ -778,11 +787,11 @@
         "de": "Bei einer Wahrheit, die auch heute noch gilt, gibt es trotz der vergangenen Einleitung keine Verschiebung: es bleibt."
       },
       "wrong": {
-        "era": {
-          "hu": "Az „era” az eltolás általános szabályát követi, de itt kivétel él, mert az állítás ma is igaz, helyesen: es.",
-          "en": "\"Era\" follows the general shift rule, but here an exception applies because the statement is still true today, correctly: es.",
-          "es": "«Era» sigue la regla general del desplazamiento, pero aquí hay una excepción porque la afirmación sigue siendo verdad hoy, correcto: es.",
-          "de": "„Era” folgt der allgemeinen Verschiebungsregel, hier gilt aber eine Ausnahme, weil die Aussage auch heute noch wahr ist, richtig: es."
+        "ser": {
+          "hu": "A „ser” főnévi igenév: ide ragozott alak kell, helyesen: es.",
+          "en": "\"Ser\" is an infinitive: a conjugated form is needed here, correctly: es.",
+          "es": "«Ser» es un infinitivo: aquí hace falta una forma conjugada, correcto: es.",
+          "de": "„Ser” ist ein Infinitiv: hier braucht es eine konjugierte Form, richtig: es."
         },
         "fue": {
           "hu": "A „fue” indefinido: egy lezárt múltbeli tényt jelentene, itt viszont egy örök igazságról van szó, helyesen: es.",
@@ -830,7 +839,7 @@
       "id": "ei-form-01",
       "kind": "form",
       "verb": "indirecto",
-      "person": "tengo",
+      "person": "tengo → imperfecto",
       "answer": "tenía",
       "table": "cambio"
     },
@@ -838,7 +847,7 @@
       "id": "ei-form-02",
       "kind": "form",
       "verb": "indirecto",
-      "person": "vivo",
+      "person": "vivo → imperfecto",
       "answer": "vivía",
       "table": "cambio"
     },
@@ -846,7 +855,7 @@
       "id": "ei-form-03",
       "kind": "form",
       "verb": "indirecto",
-      "person": "comí",
+      "person": "comí → pluscuamperfecto",
       "answer": "había comido",
       "table": "cambio"
     },
@@ -854,7 +863,7 @@
       "id": "ei-form-04",
       "kind": "form",
       "verb": "indirecto",
-      "person": "llegó",
+      "person": "llegó → pluscuamperfecto",
       "answer": "había llegado",
       "table": "cambio"
     },
@@ -862,7 +871,7 @@
       "id": "ei-form-05",
       "kind": "form",
       "verb": "indirecto",
-      "person": "he trabajado",
+      "person": "he trabajado → pluscuamperfecto",
       "answer": "había trabajado",
       "table": "cambio"
     },
@@ -870,7 +879,7 @@
       "id": "ei-form-06",
       "kind": "form",
       "verb": "indirecto",
-      "person": "he estudiado",
+      "person": "he estudiado → pluscuamperfecto",
       "answer": "había estudiado",
       "table": "cambio"
     },
@@ -878,7 +887,7 @@
       "id": "ei-form-07",
       "kind": "form",
       "verb": "indirecto",
-      "person": "vendré",
+      "person": "vendré → condicional",
       "answer": "vendría",
       "table": "cambio"
     },
@@ -886,7 +895,7 @@
       "id": "ei-form-08",
       "kind": "form",
       "verb": "indirecto",
-      "person": "llegaré",
+      "person": "llegaré → condicional",
       "answer": "llegaría",
       "table": "cambio"
     },
@@ -894,7 +903,7 @@
       "id": "ei-form-09",
       "kind": "form",
       "verb": "indirecto",
-      "person": "¡Cierra!",
+      "person": "¡Cierra! → imperfecto de subjuntivo (-ra)",
       "answer": "cerrara",
       "table": "cambio"
     },
@@ -902,7 +911,7 @@
       "id": "ei-form-10",
       "kind": "form",
       "verb": "indirecto",
-      "person": "¡Ven!",
+      "person": "¡Ven! → imperfecto de subjuntivo (-ra)",
       "answer": "viniera",
       "table": "cambio"
     },
@@ -910,7 +919,7 @@
       "id": "ei-form-11",
       "kind": "form",
       "verb": "indirecto",
-      "person": "quiero que vengas",
+      "person": "quiero que (vengas) → imperfecto de subjuntivo (-ra)",
       "answer": "vinieras",
       "table": "cambio"
     },
@@ -918,7 +927,7 @@
       "id": "ei-form-12",
       "kind": "form",
       "verb": "indirecto",
-      "person": "espero que estudies",
+      "person": "espero que (estudies) → imperfecto de subjuntivo (-ra)",
       "answer": "estudiaras",
       "table": "cambio"
     },

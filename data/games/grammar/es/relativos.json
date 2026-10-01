@@ -1,0 +1,1283 @@
+{
+  "schema": 2,
+  "topic": "relativos",
+  "level": "B1",
+  "title": {
+    "hu": "Vonatkozó névmások: que, quien, donde",
+    "en": "Relative pronouns: que, quien, donde",
+    "es": "Relativos: que, quien, donde",
+    "de": "Relativpronomen: que, quien, donde"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A vonatkozó névmás két mondatot kapcsol össze egyetlen szóval: Tengo una amiga. Ella vive en Puebla. → Tengo una amiga que vive en Puebla. Három szó kell hozzá. A que a leggyakoribb: személyre és dologra is áll, alanyként és tárgyként is. A quien (többes számban quienes) személyre áll, elöljáró után. A donde helyre áll.",
+        "en": "A relative pronoun joins two sentences with a single word: Tengo una amiga. Ella vive en Puebla. → Tengo una amiga que vive en Puebla. You need three words. Que is the most common: it works for people and things, as subject or object. Quien (plural quienes) is for people after a preposition. Donde is for places.",
+        "es": "El relativo une dos frases con una sola palabra: Tengo una amiga. Ella vive en Puebla. → Tengo una amiga que vive en Puebla. Hacen falta tres palabras. Que es la más común: sirve para personas y cosas, como sujeto y como objeto. Quien (en plural quienes) se usa para personas después de una preposición. Donde se usa para lugares.",
+        "de": "Ein Relativpronomen verbindet zwei Sätze mit einem einzigen Wort: Tengo una amiga. Ella vive en Puebla. → Tengo una amiga que vive en Puebla. Dafür brauchst du drei Wörter. Que ist das häufigste: es steht für Personen und Dinge, als Subjekt und als Objekt. Quien (Plural quienes) steht für Personen nach einer Präposition. Donde steht für Orte."
+      }
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "hu": "Mikor melyik vonatkozó szó",
+        "en": "Which relative word when",
+        "es": "Qué relativo y cuándo",
+        "de": "Welches Relativwort wann"
+      },
+      "points": [
+        {
+          "text": {
+            "hu": "Que = személy vagy dolog, alanyként: a que után közvetlenül az ige jön. Nem változik se nemben, se számban.",
+            "en": "Que = a person or a thing, as the subject: the verb comes right after que. It does not change for gender or number.",
+            "es": "Que = persona o cosa, como sujeto: el verbo va justo después de que. No cambia por género ni por número.",
+            "de": "Que = eine Person oder eine Sache als Subjekt: direkt nach que steht das Verb. Es ändert sich nicht nach Genus oder Numerus."
+          },
+          "examples": [
+            {
+              "es": "La chica que vive aquí es mi prima.",
+              "tr": {
+                "hu": "A lány, aki itt lakik, az unokatestvérem.",
+                "en": "The girl who lives here is my cousin.",
+                "es": "La chica que vive aquí es mi prima.",
+                "de": "Das Mädchen, das hier wohnt, ist meine Cousine."
+              }
+            },
+            {
+              "es": "Los libros que están en la mesa son míos.",
+              "tr": {
+                "hu": "Az asztalon lévő könyvek az enyémek.",
+                "en": "The books that are on the table are mine.",
+                "es": "Los libros que están en la mesa son míos.",
+                "de": "Die Bücher, die auf dem Tisch liegen, gehören mir."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Que = személy vagy dolog, tárgyként. A tárgyat a mellékmondatban nem ismételjük meg: el libro que compré, nem el libro que lo compré.",
+            "en": "Que = a person or a thing, as the object. The object is not repeated inside the clause: el libro que compré, not el libro que lo compré.",
+            "es": "Que = persona o cosa, como objeto. El objeto no se repite dentro de la frase: el libro que compré, no el libro que lo compré.",
+            "de": "Que = eine Person oder eine Sache als Objekt. Das Objekt wird im Nebensatz nicht wiederholt: el libro que compré, nicht el libro que lo compré."
+          },
+          "examples": [
+            {
+              "es": "El libro que compré es muy bueno.",
+              "tr": {
+                "hu": "A könyv, amit vettem, nagyon jó.",
+                "en": "The book that I bought is very good.",
+                "es": "El libro que compré es muy bueno.",
+                "de": "Das Buch, das ich gekauft habe, ist sehr gut."
+              }
+            },
+            {
+              "es": "La chica que conocí ayer es de Puebla.",
+              "tr": {
+                "hu": "A lány, akit tegnap megismertem, pueblai.",
+                "en": "The girl I met yesterday is from Puebla.",
+                "es": "La chica que conocí ayer es de Puebla.",
+                "de": "Das Mädchen, das ich gestern kennengelernt habe, kommt aus Puebla."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Quien (egy személy) és quienes (több személy) = elöljáró + személy: con quien, a quien, de quien, para quien. Dologra nem használjuk.",
+            "en": "Quien (one person) and quienes (several people) = preposition + person: con quien, a quien, de quien, para quien. They are not used for things.",
+            "es": "Quien (una persona) y quienes (varias personas) = preposición + persona: con quien, a quien, de quien, para quien. No se usan para cosas.",
+            "de": "Quien (eine Person) und quienes (mehrere Personen) = Präposition + Person: con quien, a quien, de quien, para quien. Für Dinge werden sie nicht verwendet."
+          },
+          "examples": [
+            {
+              "es": "La mujer con quien hablé es mi tía.",
+              "tr": {
+                "hu": "A nő, akivel beszéltem, a nagynéném.",
+                "en": "The woman I talked to is my aunt.",
+                "es": "La mujer con quien hablé es mi tía.",
+                "de": "Die Frau, mit der ich gesprochen habe, ist meine Tante."
+              }
+            },
+            {
+              "es": "Los vecinos a quienes ayudé son muy amables.",
+              "tr": {
+                "hu": "A szomszédok, akiknek segítettem, nagyon kedvesek.",
+                "en": "The neighbors I helped are very kind.",
+                "es": "Los vecinos a quienes ayudé son muy amables.",
+                "de": "Die Nachbarn, denen ich geholfen habe, sind sehr nett."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Vesszők között (kiegészítő információ) személynél a que mellett a quien is jó, kicsit választékosabb. Elöljáró után itt is quien áll.",
+            "en": "Between commas (extra information) about a person, quien is also fine next to que, a little more formal. After a preposition quien stays here too.",
+            "es": "Entre comas (información adicional) con personas, además de que también sirve quien, algo más formal. Después de una preposición aquí también va quien.",
+            "de": "Zwischen Kommas (Zusatzinformation) kann bei Personen neben que auch quien stehen, etwas gehobener. Nach einer Präposition steht auch hier quien."
+          },
+          "examples": [
+            {
+              "es": "Mi hermano, que vive en Puebla, viene hoy.",
+              "tr": {
+                "hu": "A bátyám, aki Pueblában lakik, ma jön.",
+                "en": "My brother, who lives in Puebla, is coming today.",
+                "es": "Mi hermano, que vive en Puebla, viene hoy.",
+                "de": "Mein Bruder, der in Puebla wohnt, kommt heute."
+              }
+            },
+            {
+              "es": "Mi hermano, quien vive en Puebla, viene hoy.",
+              "tr": {
+                "hu": "A bátyám, aki Pueblában lakik, ma jön.",
+                "en": "My brother, who lives in Puebla, is coming today.",
+                "es": "Mi hermano, quien vive en Puebla, viene hoy.",
+                "de": "Mein Bruder, der in Puebla wohnt, kommt heute."
+              }
+            },
+            {
+              "es": "Mi tía, a quien quiero mucho, vive en Madrid.",
+              "tr": {
+                "hu": "A nagynéném, akit nagyon szeretek, Madridban lakik.",
+                "en": "My aunt, whom I love very much, lives in Madrid.",
+                "es": "Mi tía, a quien quiero mucho, vive en Madrid.",
+                "de": "Meine Tante, die ich sehr gern habe, wohnt in Madrid."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Donde = hely: a donde előtt egy helyet jelentő főnév áll (város, kávézó, ház). Ékezet nincs, mert nem kérdés.",
+            "en": "Donde = a place: before donde stands a noun for a place (city, café, house). No accent, because it is not a question.",
+            "es": "Donde = lugar: antes de donde va un sustantivo de lugar (ciudad, café, casa). No lleva tilde, porque no es una pregunta.",
+            "de": "Donde = Ort: vor donde steht ein Nomen für einen Ort (Stadt, Café, Haus). Kein Akzent, weil es keine Frage ist."
+          },
+          "examples": [
+            {
+              "es": "La ciudad donde vivo es muy grande.",
+              "tr": {
+                "hu": "A város, ahol lakom, nagyon nagy.",
+                "en": "The city where I live is very big.",
+                "es": "La ciudad donde vivo es muy grande.",
+                "de": "Die Stadt, in der ich wohne, ist sehr groß."
+              }
+            },
+            {
+              "es": "El café donde trabajo está cerca.",
+              "tr": {
+                "hu": "A kávézó, ahol dolgozom, közel van.",
+                "en": "The café where I work is nearby.",
+                "es": "El café donde trabajo está cerca.",
+                "de": "Das Café, in dem ich arbeite, ist in der Nähe."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "relativos",
+      "title": {
+        "hu": "Helyzet + vonatkozó szó",
+        "en": "Situation + relative word",
+        "es": "Situación + relativo",
+        "de": "Situation + Relativwort"
+      },
+      "header": [
+        {
+          "hu": "Mondat (a lyuk a vonatkozó szó helye)",
+          "en": "Sentence (the gap is the relative word)",
+          "es": "Frase (el hueco es el relativo)",
+          "de": "Satz (die Lücke ist das Relativwort)"
+        },
+        {
+          "hu": "Vonatkozó szó",
+          "en": "Relative word",
+          "es": "relativo",
+          "de": "Relativwort"
+        },
+        {
+          "hu": "Mikor",
+          "en": "When",
+          "es": "uso",
+          "de": "Wann"
+        }
+      ],
+      "rows": [
+        [
+          "El señor ___ vive aquí es mi vecino.",
+          "que",
+          "persona, sujeto"
+        ],
+        [
+          "La mesa ___ está en la cocina es nueva.",
+          "que",
+          "cosa, sujeto"
+        ],
+        [
+          "El libro ___ compré en la tienda es muy bueno.",
+          "que",
+          "cosa, objeto"
+        ],
+        [
+          "La chica ___ conocí en la escuela es mi amiga.",
+          "que",
+          "persona, objeto"
+        ],
+        [
+          "El amigo con ___ vivo es de Oaxaca.",
+          "quien",
+          "preposición + persona"
+        ],
+        [
+          "Las chicas con ___ estudio son de México.",
+          "quienes",
+          "preposición + personas"
+        ],
+        [
+          "El jefe para ___ trabajo es muy amable.",
+          "quien",
+          "preposición + persona"
+        ],
+        [
+          "Las señoras a ___ ayudé son mis vecinas.",
+          "quienes",
+          "preposición + personas"
+        ],
+        [
+          "La ciudad ___ vivo es muy grande.",
+          "donde",
+          "lugar"
+        ],
+        [
+          "El café ___ trabajo está cerca.",
+          "donde",
+          "lugar"
+        ],
+        [
+          "La casa ___ nací es muy vieja.",
+          "donde",
+          "lugar"
+        ],
+        [
+          "Mi tía, a ___ quiero mucho, vive en Madrid.",
+          "quien",
+          "entre comas + preposición"
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Gyakori párok",
+        "en": "Common pairs",
+        "es": "Pares frecuentes",
+        "de": "Häufige Paare"
+      },
+      "pairs": [
+        {
+          "a": "la chica que vive aquí",
+          "b": "la chica con quien hablé",
+          "note": {
+            "hu": "Elöljáró nélkül (alany vagy tárgy) que áll; elöljáró + személy után quien. Dolog után soha nem quien.",
+            "en": "Without a preposition (subject or object) que is used; after preposition + person, quien. Never quien after a thing.",
+            "es": "Sin preposición (sujeto u objeto) va que; después de preposición + persona, quien. Después de una cosa nunca va quien.",
+            "de": "Ohne Präposition (Subjekt oder Objekt) steht que; nach Präposition + Person quien. Nach einer Sache nie quien."
+          },
+          "examples": [
+            {
+              "es": "Conozco a la chica que vive aquí.",
+              "tr": {
+                "hu": "Ismerem a lányt, aki itt lakik.",
+                "en": "I know the girl who lives here.",
+                "es": "Conozco a la chica que vive aquí.",
+                "de": "Ich kenne das Mädchen, das hier wohnt."
+              }
+            },
+            {
+              "es": "Esta es la chica con quien hablé.",
+              "tr": {
+                "hu": "Ő az a lány, akivel beszéltem.",
+                "en": "This is the girl I talked to.",
+                "es": "Esta es la chica con quien hablé.",
+                "de": "Das ist das Mädchen, mit dem ich gesprochen habe."
+              }
+            }
+          ]
+        },
+        {
+          "a": "la mujer con quien hablé",
+          "b": "las mujeres con quienes hablé",
+          "note": {
+            "hu": "A quien egy személyre áll, a quienes többre. A que ezzel szemben nem változik.",
+            "en": "Quien is for one person, quienes for several. Que, by contrast, does not change.",
+            "es": "Quien es para una persona, quienes para varias. Que, en cambio, no cambia.",
+            "de": "Quien steht für eine Person, quienes für mehrere. Que dagegen ändert sich nicht."
+          },
+          "examples": [
+            {
+              "es": "La mujer con quien hablé es mi tía.",
+              "tr": {
+                "hu": "A nő, akivel beszéltem, a nagynéném.",
+                "en": "The woman I talked to is my aunt.",
+                "es": "La mujer con quien hablé es mi tía.",
+                "de": "Die Frau, mit der ich gesprochen habe, ist meine Tante."
+              }
+            },
+            {
+              "es": "Las mujeres con quienes hablé son mis tías.",
+              "tr": {
+                "hu": "A nők, akikkel beszéltem, a nagynénéim.",
+                "en": "The women I talked to are my aunts.",
+                "es": "Las mujeres con quienes hablé son mis tías.",
+                "de": "Die Frauen, mit denen ich gesprochen habe, sind meine Tanten."
+              }
+            }
+          ]
+        },
+        {
+          "a": "la ciudad donde vivo",
+          "b": "¿Dónde vives?",
+          "note": {
+            "hu": "A vonatkozó donde ékezet nélkül áll, a kérdő dónde ékezettel. Ugyanez a que / qué és a quien / quién párra is igaz.",
+            "en": "The relative donde has no accent, the question word dónde has one. The same goes for the pairs que / qué and quien / quién.",
+            "es": "El relativo donde no lleva tilde, la palabra interrogativa dónde sí. Lo mismo vale para los pares que / qué y quien / quién.",
+            "de": "Das Relativwort donde hat keinen Akzent, das Fragewort dónde schon. Dasselbe gilt für die Paare que / qué und quien / quién."
+          },
+          "examples": [
+            {
+              "es": "Esta es la ciudad donde nací.",
+              "tr": {
+                "hu": "Ez az a város, ahol születtem.",
+                "en": "This is the city where I was born.",
+                "es": "Esta es la ciudad donde nací.",
+                "de": "Das ist die Stadt, in der ich geboren wurde."
+              }
+            },
+            {
+              "es": "¿Dónde vives ahora?",
+              "tr": {
+                "hu": "Hol laksz most?",
+                "en": "Where do you live now?",
+                "es": "¿Dónde vives ahora?",
+                "de": "Wo wohnst du jetzt?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Que = az alap: személy és dolog, alany és tárgy. Quien / quienes = elöljáró után, személynél. Donde = hely. A tárgyat nem ismételjük meg: el libro que compré.",
+        "en": "Que = the default: person and thing, subject and object. Quien / quienes = after a preposition, for people. Donde = place. The object is not repeated: el libro que compré.",
+        "es": "Que = lo básico: persona y cosa, sujeto y objeto. Quien / quienes = después de una preposición, para personas. Donde = lugar. El objeto no se repite: el libro que compré.",
+        "de": "Que = die Grundform: Person und Sache, Subjekt und Objekt. Quien / quienes = nach einer Präposition, für Personen. Donde = Ort. Das Objekt wird nicht wiederholt: el libro que compré."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "Két mondatot egyetlen szóval kapcsolhatsz össze, ez a vonatkozó névmás. A leggyakoribb szó személyre és dologra is áll, alanyként és tárgyként is, és nem változik se nemben, se számban. A mellékmondatban a tárgyat nem ismétled meg. Ha elöljáró után személy jön, egy másik szót használsz, amelynek többes számban saját alakja van. Ha helyről beszélsz, egy harmadik szót kapsz, amely a kérdőszó ékezet nélküli párja. Vesszők között személynél a leggyakoribb szó mellett a személyre szóló szó is állhat.",
+    "en": "You can join two sentences with a single word, the relative pronoun. The most common word works for people and things, as subject and as object, and it does not change for gender or number. Inside the clause you do not repeat the object. When a person follows a preposition, you use a different word, which has its own plural form. When you talk about a place, you use a third word, the accentless twin of the question word. Between commas, for a person, the word made for people can stand next to the most common one.",
+    "es": "Puedes unir dos frases con una sola palabra, el relativo. Que sirve para personas y cosas, como sujeto y como objeto, y no cambia por género ni por número. Dentro de la frase relativa no repites el objeto. Si después de una preposición viene una persona, usas quien, y en plural quienes. Si hablas de un lugar, usas donde, sin tilde, porque no es una pregunta. Entre comas, con personas, también puede ir quien en lugar de que.",
+    "de": "Du kannst zwei Sätze mit einem einzigen Wort verbinden, dem Relativpronomen. Das häufigste Wort steht für Personen und Dinge, als Subjekt und als Objekt, und ändert sich nicht nach Genus oder Numerus. Im Nebensatz wiederholst du das Objekt nicht. Folgt nach einer Präposition eine Person, verwendest du ein anderes Wort, das im Plural eine eigene Form hat. Sprichst du von einem Ort, verwendest du ein drittes Wort, das Zwillingswort des Fragewortes ohne Akzent. Zwischen Kommas kann bei Personen neben dem häufigsten Wort auch das Wort für Personen stehen."
+  },
+  "items": [
+    {
+      "id": "rel-ch-01",
+      "sentence": "La película ___ vimos ayer fue muy buena.",
+      "options": [
+        "donde",
+        "que",
+        "quien"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Dolog, tárgyként: que.",
+        "en": "A thing, as the object: que.",
+        "es": "Cosa, como objeto: que.",
+        "de": "Eine Sache als Objekt: que."
+      },
+      "wrong": {
+        "donde": {
+          "hu": "A donde helyre áll, a film pedig nem hely („a film, ahol láttuk”); helyesen: La película que vimos ayer fue muy buena.",
+          "en": "Donde is for places, and a film is not a place (“the film where we saw”); correctly: La película que vimos ayer fue muy buena.",
+          "es": "Donde es para lugares, y una película no es un lugar (“la película donde vimos”); correctamente: La película que vimos ayer fue muy buena.",
+          "de": "Donde steht für Orte, und ein Film ist kein Ort („der Film, wo wir sahen“); richtig: La película que vimos ayer fue muy buena."
+        },
+        "quien": {
+          "hu": "A quien személyre áll, a film pedig dolog; dologra que kell; helyesen: La película que vimos ayer fue muy buena.",
+          "en": "Quien is for people, and a film is a thing; for things you need que; correctly: La película que vimos ayer fue muy buena.",
+          "es": "Quien es para personas, y una película es una cosa; para cosas hace falta que; correctamente: La película que vimos ayer fue muy buena.",
+          "de": "Quien steht für Personen, und ein Film ist eine Sache; für Dinge braucht man que; richtig: La película que vimos ayer fue muy buena."
+        }
+      },
+      "examples": [
+        "La película que vimos ayer fue muy buena.",
+        "Las películas que vimos fueron buenas."
+      ]
+    },
+    {
+      "id": "rel-ch-02",
+      "sentence": "Las chicas ___ juegan en el parque son mis primas.",
+      "options": [
+        "que",
+        "quien",
+        "donde"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Személy, alanyként, elöljáró nélkül: que.",
+        "en": "A person, as the subject, without a preposition: que.",
+        "es": "Persona, como sujeto, sin preposición: que.",
+        "de": "Eine Person als Subjekt, ohne Präposition: que."
+      },
+      "wrong": {
+        "quien": {
+          "hu": "A quien elöljáró után áll; elöljáró nélkül, alanyként személyre is que kell; helyesen: Las chicas que juegan en el parque son mis primas.",
+          "en": "Quien comes after a preposition; without one, as a subject, even for people you need que; correctly: Las chicas que juegan en el parque son mis primas.",
+          "es": "Quien va después de una preposición; sin ella, como sujeto, también para personas hace falta que; correctamente: Las chicas que juegan en el parque son mis primas.",
+          "de": "Quien steht nach einer Präposition; ohne sie, als Subjekt, braucht man auch für Personen que; richtig: Las chicas que juegan en el parque son mis primas."
+        },
+        "donde": {
+          "hu": "A donde helyre áll, a „chicas” pedig emberek, nem hely; helyesen: Las chicas que juegan en el parque son mis primas.",
+          "en": "Donde is for places, and “chicas” are people, not a place; correctly: Las chicas que juegan en el parque son mis primas.",
+          "es": "Donde es para lugares, y “chicas” son personas, no un lugar; correctamente: Las chicas que juegan en el parque son mis primas.",
+          "de": "Donde steht für Orte, und „chicas“ sind Menschen, kein Ort; richtig: Las chicas que juegan en el parque son mis primas."
+        }
+      },
+      "examples": [
+        "Las chicas que juegan en el parque son mis primas.",
+        "La chica que juega en el parque es mi prima."
+      ]
+    },
+    {
+      "id": "rel-ch-03",
+      "sentence": "El chico ___ conocí ayer es de Puebla.",
+      "options": [
+        "que lo",
+        "donde",
+        "que"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A que már maga a tárgy, ezért nem ismételjük meg: que.",
+        "en": "Que already is the object, so it is not repeated: que.",
+        "es": "Que ya es el objeto, por eso no se repite: que.",
+        "de": "Que ist schon das Objekt, deshalb wird es nicht wiederholt: que."
+      },
+      "wrong": {
+        "que lo": {
+          "hu": "Ezzel a „lo” a tárgyat másodszor is megnevezné; a que már a tárgy; helyesen: El chico que conocí ayer es de Puebla.",
+          "en": "With this, “lo” would name the object a second time; que already is the object; correctly: El chico que conocí ayer es de Puebla.",
+          "es": "Con esto, “lo” nombraría el objeto por segunda vez; que ya es el objeto; correctamente: El chico que conocí ayer es de Puebla.",
+          "de": "Damit würde „lo“ das Objekt ein zweites Mal nennen; que ist schon das Objekt; richtig: El chico que conocí ayer es de Puebla."
+        },
+        "donde": {
+          "hu": "A donde helyre áll, a „chico” pedig személy; helyesen: El chico que conocí ayer es de Puebla.",
+          "en": "Donde is for places, and “chico” is a person; correctly: El chico que conocí ayer es de Puebla.",
+          "es": "Donde es para lugares, y “chico” es una persona; correctamente: El chico que conocí ayer es de Puebla.",
+          "de": "Donde steht für Orte, und „chico“ ist eine Person; richtig: El chico que conocí ayer es de Puebla."
+        }
+      },
+      "examples": [
+        "El chico que conocí ayer es de Puebla.",
+        "El chico que conocí es muy amable."
+      ]
+    },
+    {
+      "id": "rel-ch-04",
+      "sentence": "La mujer con ___ hablé es mi tía.",
+      "options": [
+        "quién",
+        "quien",
+        "que"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Elöljáró (con) után személynél quien áll, ékezet nélkül.",
+        "en": "After a preposition (con) quien is used for a person, without an accent.",
+        "es": "Después de una preposición (con) se usa quien para una persona, sin tilde.",
+        "de": "Nach einer Präposition (con) steht quien für eine Person, ohne Akzent."
+      },
+      "wrong": {
+        "quién": {
+          "hu": "A quién ékezettel kérdőszó („Ki?”), a vonatkozó quien ékezet nélkül áll; helyesen: La mujer con quien hablé es mi tía.",
+          "en": "Quién with an accent is a question word (“Who?”); the relative quien has no accent; correctly: La mujer con quien hablé es mi tía.",
+          "es": "Quién con tilde es una palabra interrogativa (“¿Quién?”); el relativo quien no lleva tilde; correctamente: La mujer con quien hablé es mi tía.",
+          "de": "Quién mit Akzent ist ein Fragewort („Wer?“); das Relativwort quien hat keinen Akzent; richtig: La mujer con quien hablé es mi tía."
+        },
+        "que": {
+          "hu": "A con után személynél a que nem áll jól, ott quien kell; helyesen: La mujer con quien hablé es mi tía.",
+          "en": "After con, for a person, que does not fit; you need quien; correctly: La mujer con quien hablé es mi tía.",
+          "es": "Después de con, para una persona, que no encaja; hace falta quien; correctamente: La mujer con quien hablé es mi tía.",
+          "de": "Nach con passt für eine Person que nicht; man braucht quien; richtig: La mujer con quien hablé es mi tía."
+        }
+      },
+      "examples": [
+        "La mujer con quien hablé es mi tía.",
+        "El hombre con quien hablé es mi jefe."
+      ]
+    },
+    {
+      "id": "rel-ch-05",
+      "sentence": "Mi amigo, en ___ confío mucho, vive en Guadalajara.",
+      "options": [
+        "que",
+        "donde",
+        "quien"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Vesszők között is elöljáró (en) + személy = quien.",
+        "en": "Between commas too, preposition (en) + person = quien.",
+        "es": "También entre comas, preposición (en) + persona = quien.",
+        "de": "Auch zwischen Kommas gilt Präposition (en) + Person = quien."
+      },
+      "wrong": {
+        "que": {
+          "hu": "Az en után személynél a que nem áll jól, ott quien kell; helyesen: Mi amigo, en quien confío mucho, vive en Guadalajara.",
+          "en": "After en, for a person, que does not fit; you need quien; correctly: Mi amigo, en quien confío mucho, vive en Guadalajara.",
+          "es": "Después de en, para una persona, que no encaja; hace falta quien; correctamente: Mi amigo, en quien confío mucho, vive en Guadalajara.",
+          "de": "Nach en passt für eine Person que nicht; man braucht quien; richtig: Mi amigo, en quien confío mucho, vive en Guadalajara."
+        },
+        "donde": {
+          "hu": "A donde helyre áll, a „mi amigo” pedig személy; helyesen: Mi amigo, en quien confío mucho, vive en Guadalajara.",
+          "en": "Donde is for places, and “mi amigo” is a person; correctly: Mi amigo, en quien confío mucho, vive en Guadalajara.",
+          "es": "Donde es para lugares, y “mi amigo” es una persona; correctamente: Mi amigo, en quien confío mucho, vive en Guadalajara.",
+          "de": "Donde steht für Orte, und „mi amigo“ ist eine Person; richtig: Mi amigo, en quien confío mucho, vive en Guadalajara."
+        }
+      },
+      "examples": [
+        "Mi amigo, en quien confío mucho, vive en Guadalajara.",
+        "Mi tía, en quien confío, vive en Madrid."
+      ]
+    },
+    {
+      "id": "rel-ch-06",
+      "sentence": "Los vecinos por ___ pregunté están en casa.",
+      "options": [
+        "quien",
+        "que",
+        "quienes"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Elöljáró (por) + több személy = quienes.",
+        "en": "Preposition (por) + several people = quienes.",
+        "es": "Preposición (por) + varias personas = quienes.",
+        "de": "Präposition (por) + mehrere Personen = quienes."
+      },
+      "wrong": {
+        "quien": {
+          "hu": "A quien egy személyre áll, a „vecinos” pedig többes szám; helyesen: Los vecinos por quienes pregunté están en casa.",
+          "en": "Quien is for one person, and “vecinos” is plural; correctly: Los vecinos por quienes pregunté están en casa.",
+          "es": "Quien es para una persona, y “vecinos” es plural; correctamente: Los vecinos por quienes pregunté están en casa.",
+          "de": "Quien steht für eine Person, und „vecinos“ ist Plural; richtig: Los vecinos por quienes pregunté están en casa."
+        },
+        "que": {
+          "hu": "A por után személyeknél a que nem áll jól, ott quien / quienes kell; helyesen: Los vecinos por quienes pregunté están en casa.",
+          "en": "After por, for people, que does not fit; you need quien / quienes; correctly: Los vecinos por quienes pregunté están en casa.",
+          "es": "Después de por, para personas, que no encaja; hace falta quien / quienes; correctamente: Los vecinos por quienes pregunté están en casa.",
+          "de": "Nach por passt für Personen que nicht; man braucht quien / quienes; richtig: Los vecinos por quienes pregunté están en casa."
+        }
+      },
+      "examples": [
+        "Los vecinos por quienes pregunté están en casa.",
+        "Las chicas por quienes pregunté son mis primas."
+      ]
+    },
+    {
+      "id": "rel-ch-07",
+      "sentence": "Este es el hotel ___ nos quedamos.",
+      "options": [
+        "donde",
+        "dónde",
+        "que"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Hely: donde, ékezet nélkül.",
+        "en": "A place: donde, without an accent.",
+        "es": "Lugar: donde, sin tilde.",
+        "de": "Ein Ort: donde, ohne Akzent."
+      },
+      "wrong": {
+        "dónde": {
+          "hu": "A dónde ékezettel kérdőszó („Hol?”), a vonatkozó donde ékezet nélkül áll; helyesen: Este es el hotel donde nos quedamos.",
+          "en": "Dónde with an accent is a question word (“Where?”); the relative donde has no accent; correctly: Este es el hotel donde nos quedamos.",
+          "es": "Dónde con tilde es una palabra interrogativa (“¿Dónde?”); el relativo donde no lleva tilde; correctamente: Este es el hotel donde nos quedamos.",
+          "de": "Dónde mit Akzent ist ein Fragewort („Wo?“); das Relativwort donde hat keinen Akzent; richtig: Este es el hotel donde nos quedamos."
+        },
+        "que": {
+          "hu": "Ezzel a hotel a „quedarse” tárgya lenne, de a quedarse nem kér tárgyat; a hely donde-val megy; helyesen: Este es el hotel donde nos quedamos.",
+          "en": "With this, the hotel would be the object of “quedarse”, but quedarse takes no object; a place goes with donde; correctly: Este es el hotel donde nos quedamos.",
+          "es": "Con esto, el hotel sería el objeto de “quedarse”, pero quedarse no lleva objeto; un lugar va con donde; correctamente: Este es el hotel donde nos quedamos.",
+          "de": "Damit wäre das Hotel das Objekt von „quedarse“, aber quedarse hat kein Objekt; ein Ort geht mit donde; richtig: Este es el hotel donde nos quedamos."
+        }
+      },
+      "examples": [
+        "Este es el hotel donde nos quedamos.",
+        "El hotel donde nos quedamos es barato."
+      ]
+    },
+    {
+      "id": "rel-ch-08",
+      "sentence": "Ese es el restaurante ___ comimos ayer.",
+      "options": [
+        "que",
+        "quien",
+        "donde"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Hely (ott ettünk): donde.",
+        "en": "A place (we ate there): donde.",
+        "es": "Lugar (comimos allí): donde.",
+        "de": "Ein Ort (wir haben dort gegessen): donde."
+      },
+      "wrong": {
+        "que": {
+          "hu": "Ezzel azt mondanád, hogy magát az éttermet ettük meg („el restaurante que comimos”); a hely donde-val megy; helyesen: Ese es el restaurante donde comimos ayer.",
+          "en": "With this you would say we ate the restaurant itself (“el restaurante que comimos”); a place goes with donde; correctly: Ese es el restaurante donde comimos ayer.",
+          "es": "Con esto dirías que nos comimos el restaurante mismo (“el restaurante que comimos”); un lugar va con donde; correctamente: Ese es el restaurante donde comimos ayer.",
+          "de": "Damit würdest du sagen, dass wir das Restaurant selbst gegessen haben („el restaurante que comimos“); ein Ort geht mit donde; richtig: Ese es el restaurante donde comimos ayer."
+        },
+        "quien": {
+          "hu": "A quien személyre áll, az étterem pedig hely; helyesen: Ese es el restaurante donde comimos ayer.",
+          "en": "Quien is for people, and a restaurant is a place; correctly: Ese es el restaurante donde comimos ayer.",
+          "es": "Quien es para personas, y un restaurante es un lugar; correctamente: Ese es el restaurante donde comimos ayer.",
+          "de": "Quien steht für Personen, und ein Restaurant ist ein Ort; richtig: Ese es el restaurante donde comimos ayer."
+        }
+      },
+      "examples": [
+        "Ese es el restaurante donde comimos ayer.",
+        "El restaurante donde comimos está cerca."
+      ]
+    },
+    {
+      "id": "rel-ch-09",
+      "sentence": "La escuela ___ estudio está en el centro.",
+      "options": [
+        "donde",
+        "que",
+        "quien"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Hely (ott tanulok): donde.",
+        "en": "A place (I study there): donde.",
+        "es": "Lugar (estudio allí): donde.",
+        "de": "Ein Ort (ich lerne dort): donde."
+      },
+      "wrong": {
+        "que": {
+          "hu": "Ezzel azt mondanád, hogy magát az iskolát tanulod („la escuela que estudio”); a hely donde-val megy; helyesen: La escuela donde estudio está en el centro.",
+          "en": "With this you would say you study the school itself (“la escuela que estudio”); a place goes with donde; correctly: La escuela donde estudio está en el centro.",
+          "es": "Con esto dirías que estudias la escuela misma (“la escuela que estudio”); un lugar va con donde; correctamente: La escuela donde estudio está en el centro.",
+          "de": "Damit würdest du sagen, dass du die Schule selbst lernst („la escuela que estudio“); ein Ort geht mit donde; richtig: La escuela donde estudio está en el centro."
+        },
+        "quien": {
+          "hu": "A quien személyre áll, az iskola pedig hely; helyesen: La escuela donde estudio está en el centro.",
+          "en": "Quien is for people, and a school is a place; correctly: La escuela donde estudio está en el centro.",
+          "es": "Quien es para personas, y una escuela es un lugar; correctamente: La escuela donde estudio está en el centro.",
+          "de": "Quien steht für Personen, und eine Schule ist ein Ort; richtig: La escuela donde estudio está en el centro."
+        }
+      },
+      "examples": [
+        "La escuela donde estudio está en el centro.",
+        "La escuela donde estudio es grande."
+      ]
+    },
+    {
+      "id": "rel-ch-10",
+      "sentence": "La ropa ___ compré es muy barata.",
+      "options": [
+        "que la",
+        "que",
+        "donde"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A que már maga a tárgy, ezért nem ismételjük meg: que.",
+        "en": "Que already is the object, so it is not repeated: que.",
+        "es": "Que ya es el objeto, por eso no se repite: que.",
+        "de": "Que ist schon das Objekt, deshalb wird es nicht wiederholt: que."
+      },
+      "wrong": {
+        "que la": {
+          "hu": "Ezzel a „la” a tárgyat másodszor is megnevezné; a que már a tárgy; helyesen: La ropa que compré es muy barata.",
+          "en": "With this, “la” would name the object a second time; que already is the object; correctly: La ropa que compré es muy barata.",
+          "es": "Con esto, “la” nombraría el objeto por segunda vez; que ya es el objeto; correctamente: La ropa que compré es muy barata.",
+          "de": "Damit würde „la“ das Objekt ein zweites Mal nennen; que ist schon das Objekt; richtig: La ropa que compré es muy barata."
+        },
+        "donde": {
+          "hu": "A donde helyre áll, a ruha pedig dolog, nem hely; helyesen: La ropa que compré es muy barata.",
+          "en": "Donde is for places, and clothes are things, not a place; correctly: La ropa que compré es muy barata.",
+          "es": "Donde es para lugares, y la ropa es una cosa, no un lugar; correctamente: La ropa que compré es muy barata.",
+          "de": "Donde steht für Orte, und Kleidung ist eine Sache, kein Ort; richtig: La ropa que compré es muy barata."
+        }
+      },
+      "examples": [
+        "La ropa que compré es muy barata.",
+        "La ropa que compré es nueva."
+      ]
+    },
+    {
+      "id": "rel-ch-11",
+      "sentence": "Tengo un amigo ___ vive en Madrid.",
+      "options": [
+        "quien",
+        "donde",
+        "que"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Személy, alanyként, elöljáró nélkül: que.",
+        "en": "A person, as the subject, without a preposition: que.",
+        "es": "Persona, como sujeto, sin preposición: que.",
+        "de": "Eine Person als Subjekt, ohne Präposition: que."
+      },
+      "wrong": {
+        "quien": {
+          "hu": "Elöljáró nélkül, alanyként a quien nem áll jól; személyre is que kell; helyesen: Tengo un amigo que vive en Madrid.",
+          "en": "Without a preposition, as a subject, quien does not fit; even for people you need que; correctly: Tengo un amigo que vive en Madrid.",
+          "es": "Sin preposición, como sujeto, quien no encaja; también para personas hace falta que; correctamente: Tengo un amigo que vive en Madrid.",
+          "de": "Ohne Präposition, als Subjekt, passt quien nicht; man braucht auch für Personen que; richtig: Tengo un amigo que vive en Madrid."
+        },
+        "donde": {
+          "hu": "Ezzel a barát helynek tűnne („a barát, ahol lakik”), pedig ő a lakó; helyesen: Tengo un amigo que vive en Madrid.",
+          "en": "With this the friend would sound like a place (“the friend where he lives”), but he is the one who lives; correctly: Tengo un amigo que vive en Madrid.",
+          "es": "Con esto el amigo sonaría como un lugar (“el amigo donde vive”), pero él es quien vive; correctamente: Tengo un amigo que vive en Madrid.",
+          "de": "Damit klänge der Freund wie ein Ort („der Freund, wo er wohnt“), dabei ist er derjenige, der wohnt; richtig: Tengo un amigo que vive en Madrid."
+        }
+      },
+      "examples": [
+        "Tengo un amigo que vive en Madrid.",
+        "Tengo una amiga que vive en Puebla."
+      ]
+    },
+    {
+      "id": "rel-ch-12",
+      "sentence": "Los amigos de ___ te hablé son de Oaxaca.",
+      "options": [
+        "quienes",
+        "quien",
+        "que"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Elöljáró (de) + több személy = quienes.",
+        "en": "Preposition (de) + several people = quienes.",
+        "es": "Preposición (de) + varias personas = quienes.",
+        "de": "Präposition (de) + mehrere Personen = quienes."
+      },
+      "wrong": {
+        "quien": {
+          "hu": "A quien egy személyre áll, az „amigos” pedig többes szám; helyesen: Los amigos de quienes te hablé son de Oaxaca.",
+          "en": "Quien is for one person, and “amigos” is plural; correctly: Los amigos de quienes te hablé son de Oaxaca.",
+          "es": "Quien es para una persona, y “amigos” es plural; correctamente: Los amigos de quienes te hablé son de Oaxaca.",
+          "de": "Quien steht für eine Person, und „amigos“ ist Plural; richtig: Los amigos de quienes te hablé son de Oaxaca."
+        },
+        "que": {
+          "hu": "A de után személyeknél a que nem áll jól, ott quien / quienes kell; helyesen: Los amigos de quienes te hablé son de Oaxaca.",
+          "en": "After de, for people, que does not fit; you need quien / quienes; correctly: Los amigos de quienes te hablé son de Oaxaca.",
+          "es": "Después de de, para personas, que no encaja; hace falta quien / quienes; correctamente: Los amigos de quienes te hablé son de Oaxaca.",
+          "de": "Nach de passt für Personen que nicht; man braucht quien / quienes; richtig: Los amigos de quienes te hablé son de Oaxaca."
+        }
+      },
+      "examples": [
+        "Los amigos de quienes te hablé son de Oaxaca.",
+        "Las amigas de quienes te hablé son de Perú."
+      ]
+    },
+    {
+      "id": "rel-match-01",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "que",
+          "en": "that / who / which"
+        },
+        {
+          "es": "quien",
+          "en": "who, whom (one person)"
+        },
+        {
+          "es": "quienes",
+          "en": "who, whom (several people)"
+        },
+        {
+          "es": "donde",
+          "en": "where (a place)"
+        },
+        {
+          "es": "con quien",
+          "en": "with whom"
+        },
+        {
+          "es": "el libro que compré",
+          "en": "the book that I bought"
+        }
+      ]
+    },
+    {
+      "id": "rel-form-01",
+      "kind": "form",
+      "verb": "relativo",
+      "person": "El señor ___ vive aquí es mi vecino.",
+      "answer": "que",
+      "table": "relativos"
+    },
+    {
+      "id": "rel-form-02",
+      "kind": "form",
+      "verb": "relativo",
+      "person": "La mesa ___ está en la cocina es nueva.",
+      "answer": "que",
+      "table": "relativos"
+    },
+    {
+      "id": "rel-form-03",
+      "kind": "form",
+      "verb": "relativo",
+      "person": "El libro ___ compré en la tienda es muy bueno.",
+      "answer": "que",
+      "table": "relativos"
+    },
+    {
+      "id": "rel-form-04",
+      "kind": "form",
+      "verb": "relativo",
+      "person": "La chica ___ conocí en la escuela es mi amiga.",
+      "answer": "que",
+      "table": "relativos"
+    },
+    {
+      "id": "rel-form-05",
+      "kind": "form",
+      "verb": "relativo",
+      "person": "El amigo con ___ vivo es de Oaxaca.",
+      "answer": "quien",
+      "table": "relativos"
+    },
+    {
+      "id": "rel-form-06",
+      "kind": "form",
+      "verb": "relativo",
+      "person": "Las chicas con ___ estudio son de México.",
+      "answer": "quienes",
+      "table": "relativos"
+    },
+    {
+      "id": "rel-form-07",
+      "kind": "form",
+      "verb": "relativo",
+      "person": "El jefe para ___ trabajo es muy amable.",
+      "answer": "quien",
+      "table": "relativos"
+    },
+    {
+      "id": "rel-form-08",
+      "kind": "form",
+      "verb": "relativo",
+      "person": "Las señoras a ___ ayudé son mis vecinas.",
+      "answer": "quienes",
+      "table": "relativos"
+    },
+    {
+      "id": "rel-form-09",
+      "kind": "form",
+      "verb": "relativo",
+      "person": "La ciudad ___ vivo es muy grande.",
+      "answer": "donde",
+      "table": "relativos"
+    },
+    {
+      "id": "rel-form-10",
+      "kind": "form",
+      "verb": "relativo",
+      "person": "El café ___ trabajo está cerca.",
+      "answer": "donde",
+      "table": "relativos"
+    },
+    {
+      "id": "rel-form-11",
+      "kind": "form",
+      "verb": "relativo",
+      "person": "La casa ___ nací es muy vieja.",
+      "answer": "donde",
+      "table": "relativos"
+    },
+    {
+      "id": "rel-form-12",
+      "kind": "form",
+      "verb": "relativo",
+      "person": "Mi tía, a ___ quiero mucho, vive en Madrid.",
+      "answer": "quien",
+      "table": "relativos"
+    },
+    {
+      "kind": "why",
+      "id": "rel-why-01",
+      "es": "La chica que vive aquí es mi prima.",
+      "target": "que",
+      "tr": {
+        "hu": "A lány, aki itt lakik, az unokatestvérem.",
+        "en": "The girl who lives here is my cousin.",
+        "es": "La chica que vive aquí es mi prima.",
+        "de": "Das Mädchen, das hier wohnt, ist meine Cousine."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "donde = hely",
+            "en": "donde = a place",
+            "es": "donde = lugar",
+            "de": "donde = Ort"
+          },
+          "wrong": {
+            "hu": "A donde helyre áll, a lány pedig személy, nem hely.",
+            "en": "Donde is for places, and the girl is a person, not a place.",
+            "es": "Donde es para lugares, y la chica es una persona, no un lugar.",
+            "de": "Donde steht für Orte, und das Mädchen ist eine Person, kein Ort."
+          }
+        },
+        {
+          "text": {
+            "hu": "que = személy és dolog, alany vagy tárgy",
+            "en": "que = a person or a thing, subject or object",
+            "es": "que = persona o cosa, sujeto u objeto",
+            "de": "que = Person oder Sache, Subjekt oder Objekt"
+          }
+        },
+        {
+          "text": {
+            "hu": "quien = elöljáró után, egy személyre",
+            "en": "quien = after a preposition, for one person",
+            "es": "quien = después de una preposición, para una persona",
+            "de": "quien = nach einer Präposition, für eine Person"
+          },
+          "wrong": {
+            "hu": "A quien elöljáró után áll; itt nincs elöljáró, a lány az alany, ezért que.",
+            "en": "Quien comes after a preposition; there is none here, the girl is the subject, so que.",
+            "es": "Quien va después de una preposición; aquí no hay ninguna, la chica es el sujeto, por eso que.",
+            "de": "Quien steht nach einer Präposition; hier gibt es keine, das Mädchen ist das Subjekt, deshalb que."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "rel-why-02",
+      "es": "El libro que compré es muy bueno.",
+      "target": "que compré",
+      "tr": {
+        "hu": "A könyv, amit vettem, nagyon jó.",
+        "en": "The book that I bought is very good.",
+        "es": "El libro que compré es muy bueno.",
+        "de": "Das Buch, das ich gekauft habe, ist sehr gut."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "quien = elöljáró után, egy személyre",
+            "en": "quien = after a preposition, for one person",
+            "es": "quien = después de una preposición, para una persona",
+            "de": "quien = nach einer Präposition, für eine Person"
+          },
+          "wrong": {
+            "hu": "A quien személyre áll elöljáró után; a könyv dolog, és nincs elöljáró.",
+            "en": "Quien is for people after a preposition; a book is a thing, and there is no preposition.",
+            "es": "Quien es para personas después de una preposición; un libro es una cosa, y no hay preposición.",
+            "de": "Quien steht für Personen nach einer Präposition; ein Buch ist eine Sache, und es gibt keine Präposition."
+          }
+        },
+        {
+          "text": {
+            "hu": "a tárgyat nem ismételjük meg (que compré)",
+            "en": "the object is not repeated (que compré)",
+            "es": "el objeto no se repite (que compré)",
+            "de": "das Objekt wird nicht wiederholt (que compré)"
+          }
+        },
+        {
+          "text": {
+            "hu": "donde = hely",
+            "en": "donde = a place",
+            "es": "donde = lugar",
+            "de": "donde = Ort"
+          },
+          "wrong": {
+            "hu": "A donde helyre áll; a könyv nem hely.",
+            "en": "Donde is for places; a book is not a place.",
+            "es": "Donde es para lugares; un libro no es un lugar.",
+            "de": "Donde steht für Orte; ein Buch ist kein Ort."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "rel-why-03",
+      "es": "La mujer con quien hablé es mi tía.",
+      "target": "quien",
+      "tr": {
+        "hu": "A nő, akivel beszéltem, a nagynéném.",
+        "en": "The woman I talked to is my aunt.",
+        "es": "La mujer con quien hablé es mi tía.",
+        "de": "Die Frau, mit der ich gesprochen habe, ist meine Tante."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "quien = elöljáró után, egy személyre",
+            "en": "quien = after a preposition, for one person",
+            "es": "quien = después de una preposición, para una persona",
+            "de": "quien = nach einer Präposition, für eine Person"
+          }
+        },
+        {
+          "text": {
+            "hu": "que = személy és dolog, alany vagy tárgy",
+            "en": "que = a person or a thing, subject or object",
+            "es": "que = persona o cosa, sujeto u objeto",
+            "de": "que = Person oder Sache, Subjekt oder Objekt"
+          },
+          "wrong": {
+            "hu": "A que elöljáró nélküli alanyra vagy tárgyra áll; itt a con után személy jön, ott quien kell.",
+            "en": "Que is for a subject or object without a preposition; here a person follows con, and there you need quien.",
+            "es": "Que es para un sujeto u objeto sin preposición; aquí después de con viene una persona, y ahí hace falta quien.",
+            "de": "Que steht für ein Subjekt oder Objekt ohne Präposition; hier folgt auf con eine Person, und dort braucht man quien."
+          }
+        },
+        {
+          "text": {
+            "hu": "donde = hely",
+            "en": "donde = a place",
+            "es": "donde = lugar",
+            "de": "donde = Ort"
+          },
+          "wrong": {
+            "hu": "A donde helyre áll; a nő személy.",
+            "en": "Donde is for places; the woman is a person.",
+            "es": "Donde es para lugares; la mujer es una persona.",
+            "de": "Donde steht für Orte; die Frau ist eine Person."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "rel-why-04",
+      "es": "Los vecinos a quienes ayudé son muy amables.",
+      "target": "quienes",
+      "tr": {
+        "hu": "A szomszédok, akiknek segítettem, nagyon kedvesek.",
+        "en": "The neighbors I helped are very kind.",
+        "es": "Los vecinos a quienes ayudé son muy amables.",
+        "de": "Die Nachbarn, denen ich geholfen habe, sind sehr nett."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "que = személy és dolog, alany vagy tárgy",
+            "en": "que = a person or a thing, subject or object",
+            "es": "que = persona o cosa, sujeto u objeto",
+            "de": "que = Person oder Sache, Subjekt oder Objekt"
+          },
+          "wrong": {
+            "hu": "A que nem változik, de elöljáró (a) + személy után quien / quienes áll.",
+            "en": "Que does not change, but after preposition (a) + person comes quien / quienes.",
+            "es": "Que no cambia, pero después de preposición (a) + persona va quien / quienes.",
+            "de": "Que ändert sich nicht, aber nach Präposition (a) + Person steht quien / quienes."
+          }
+        },
+        {
+          "text": {
+            "hu": "quienes = elöljáró után, több személyre",
+            "en": "quienes = after a preposition, for several people",
+            "es": "quienes = después de una preposición, para varias personas",
+            "de": "quienes = nach einer Präposition, für mehrere Personen"
+          }
+        },
+        {
+          "text": {
+            "hu": "quien = elöljáró után, egy személyre",
+            "en": "quien = after a preposition, for one person",
+            "es": "quien = después de una preposición, para una persona",
+            "de": "quien = nach einer Präposition, für eine Person"
+          },
+          "wrong": {
+            "hu": "A quien egy személyre áll, a „vecinos” pedig többes szám: quienes.",
+            "en": "Quien is for one person, and “vecinos” is plural: quienes.",
+            "es": "Quien es para una persona, y “vecinos” es plural: quienes.",
+            "de": "Quien steht für eine Person, und „vecinos“ ist Plural: quienes."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "rel-why-05",
+      "es": "La ciudad donde vivo es muy grande.",
+      "target": "donde",
+      "tr": {
+        "hu": "A város, ahol lakom, nagyon nagy.",
+        "en": "The city where I live is very big.",
+        "es": "La ciudad donde vivo es muy grande.",
+        "de": "Die Stadt, in der ich wohne, ist sehr groß."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "que = személy és dolog, alany vagy tárgy",
+            "en": "que = a person or a thing, subject or object",
+            "es": "que = persona o cosa, sujeto u objeto",
+            "de": "que = Person oder Sache, Subjekt oder Objekt"
+          },
+          "wrong": {
+            "hu": "A que után itt hiányozna az elöljáró („la ciudad en que vivo”); a hely donde-val egyszerű.",
+            "en": "After que the preposition would be missing here (“la ciudad en que vivo”); a place is simple with donde.",
+            "es": "Después de que aquí faltaría la preposición (“la ciudad en que vivo”); un lugar es sencillo con donde.",
+            "de": "Nach que würde hier die Präposition fehlen („la ciudad en que vivo“); ein Ort ist mit donde einfach."
+          }
+        },
+        {
+          "text": {
+            "hu": "quien = elöljáró után, egy személyre",
+            "en": "quien = after a preposition, for one person",
+            "es": "quien = después de una preposición, para una persona",
+            "de": "quien = nach einer Präposition, für eine Person"
+          },
+          "wrong": {
+            "hu": "A quien személyre áll; a város nem személy.",
+            "en": "Quien is for people; a city is not a person.",
+            "es": "Quien es para personas; una ciudad no es una persona.",
+            "de": "Quien steht für Personen; eine Stadt ist keine Person."
+          }
+        },
+        {
+          "text": {
+            "hu": "donde = hely",
+            "en": "donde = a place",
+            "es": "donde = lugar",
+            "de": "donde = Ort"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "rel-why-06",
+      "es": "Mi tía, a quien quiero mucho, vive en Madrid.",
+      "target": "quien",
+      "tr": {
+        "hu": "A nagynéném, akit nagyon szeretek, Madridban lakik.",
+        "en": "My aunt, whom I love very much, lives in Madrid.",
+        "es": "Mi tía, a quien quiero mucho, vive en Madrid.",
+        "de": "Meine Tante, die ich sehr gern habe, wohnt in Madrid."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "vesszők között személynél que vagy quien",
+            "en": "between commas, for a person, que or quien",
+            "es": "entre comas, con personas, que o quien",
+            "de": "zwischen Kommas bei Personen que oder quien"
+          },
+          "wrong": {
+            "hu": "Vesszők között a que is jó volna, de az a elöljáró után a puszta que nem áll, ott quien kell.",
+            "en": "Between commas que would be fine too, but after the preposition a bare que does not fit; you need quien.",
+            "es": "Entre comas también serviría que, pero después de la preposición a, que solo no encaja; hace falta quien.",
+            "de": "Zwischen Kommas wäre auch que möglich, aber nach der Präposition a passt das bloße que nicht; man braucht quien."
+          }
+        },
+        {
+          "text": {
+            "hu": "quien = elöljáró után, egy személyre",
+            "en": "quien = after a preposition, for one person",
+            "es": "quien = después de una preposición, para una persona",
+            "de": "quien = nach einer Präposition, für eine Person"
+          }
+        },
+        {
+          "text": {
+            "hu": "donde = hely",
+            "en": "donde = a place",
+            "es": "donde = lugar",
+            "de": "donde = Ort"
+          },
+          "wrong": {
+            "hu": "A donde helyre áll; a nagynéni személy.",
+            "en": "Donde is for places; the aunt is a person.",
+            "es": "Donde es para lugares; la tía es una persona.",
+            "de": "Donde steht für Orte; die Tante ist eine Person."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "rel-why-07",
+      "es": "Mi hermano, que vive en Puebla, viene hoy.",
+      "target": "que",
+      "tr": {
+        "hu": "A bátyám, aki Pueblában lakik, ma jön.",
+        "en": "My brother, who lives in Puebla, is coming today.",
+        "es": "Mi hermano, que vive en Puebla, viene hoy.",
+        "de": "Mein Bruder, der in Puebla wohnt, kommt heute."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a tárgyat nem ismételjük meg (que compré)",
+            "en": "the object is not repeated (que compré)",
+            "es": "el objeto no se repite (que compré)",
+            "de": "das Objekt wird nicht wiederholt (que compré)"
+          },
+          "wrong": {
+            "hu": "Itt a que az alany, nincs tárgy, amit ismételni kellene.",
+            "en": "Here que is the subject, there is no object that could be repeated.",
+            "es": "Aquí que es el sujeto, no hay un objeto que se pudiera repetir.",
+            "de": "Hier ist que das Subjekt, es gibt kein Objekt, das wiederholt werden könnte."
+          }
+        },
+        {
+          "text": {
+            "hu": "vesszők között személynél que vagy quien",
+            "en": "between commas, for a person, que or quien",
+            "es": "entre comas, con personas, que o quien",
+            "de": "zwischen Kommas bei Personen que oder quien"
+          }
+        },
+        {
+          "text": {
+            "hu": "donde = hely",
+            "en": "donde = a place",
+            "es": "donde = lugar",
+            "de": "donde = Ort"
+          },
+          "wrong": {
+            "hu": "A donde helyre áll; a báty személy.",
+            "en": "Donde is for places; the brother is a person.",
+            "es": "Donde es para lugares; el hermano es una persona.",
+            "de": "Donde steht für Orte; der Bruder ist eine Person."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}
