@@ -8,7 +8,7 @@ Jóváhagyott minta: https://claude.ai/artifact/BW7QfMboUhRby7DyZNL6WQ (4. verzi
 
 - [x] 1. (12:02) Ág + worktree + ez a terv → kész, ha: a worktree áll, a PLAN megvan
 - [x] 2. (12:09) Kapuk: `scripts/words-open-check.mjs` (R1/R2 lazítás, R11-R14) és `scripts/validate-en-track.mjs` (R11-R14) → kész, ha: mindkét kapu lefut és listázza a mostani sértéseket
-- [ ] 3. App: kis mondat (hint) a nagy szó alatt + „also:” sor a Check után + tesztek → kész, ha: `npm run typecheck:ci`, `npm run lint`, `npm run test:ci` zöld
+- [x] 3. (12:19) App: kis mondat (hint) a nagy szó alatt + „also:” sor a Check után + tesztek → kész, ha: `npm run typecheck:ci`, `npm run lint`, `npm run test:ci` zöld
 - [ ] 4. Átnézés A: a 600 words-open kártya (angol→spanyol) a Spec szerint → kész, ha: `node scripts/words-open-check.mjs` zöld
 - [ ] 5. Átnézés B: a 2 804 tételes angol track (spanyol→angol), adagokban → kész, ha: `node scripts/validate-en-track.mjs` zöld
 - [ ] 6. Régi adat leltára (csak olvasás): ki használja a `data/words/{a0..c2}.json`, `data/words/hu/**` és `data/pcic/**` fájlokat → kész, ha: a lista megvan, az orkesztrátor döntött a törlési körről
@@ -33,7 +33,7 @@ Jóváhagyott minta: https://claude.ai/artifact/BW7QfMboUhRby7DyZNL6WQ (4. verzi
 
 ### Adatszabályok
 
-- **S1 Azonos jelentés, több jó válasz.** A VÁLASZ-mezőben (words-open: `es`, angol track: `en`) az azonos jelentésű, az adott szinten szokásos alakok ` / `-lel elválasztva, az első a fő alak: `el carro / el coche / el auto`. Spanyolnál a fő alak a mexikói (S4). Ritka, regionális, szleng alak nem kerül be. Az app értékelője (`lib/pcicMatch.ts` `pcicAlternatives`) a perjeles alakokat már most mind elfogadja.
+- **S1 Azonos jelentés, több jó válasz.** A VÁLASZ-mezőben (words-open: `es`, angol track: `en`) az azonos jelentésű, az adott szinten szokásos alakok ` / `-lel elválasztva, az első a fő alak: `el carro / el coche / el auto`. Spanyolnál a fő alak a mexikói (S4). Ritka, regionális, szleng alak nem kerül be. Az app értékelője (`lib/pcicMatch.ts` `pcicAlternatives`) eredetileg csak a szóközmentes `a/b` alakot oldotta fel; a ` / ` bontását a 3. lépésben javítottuk (`pcicAlternatives`, `kindOfEs`), a szóközmentes `a/b` változatlan.
 - **S2 Különböző jelentés = külön kártya + kis mondat.** Ha a KÉRDÉS szavának két (vagy több) gyakori, különböző jelentése van, amely más-más válaszszót kíván (to play → jugar / tocar; while → mientras / un rato; banco → bank / bench), akkor jelentésenként külön kártya van, és MINDEGYIK kap egy kis mondatot a kérdés nyelvén (words-open: `hint_en` angolul, angol track: `hint_es` spanyolul). A mondatban a kérdezett szó `*csillag*` között áll, pontosan egyszer (ragozott alak is jó: „I *play* soccer.”). A mondat legfeljebb 8 szó, hétköznapi, és egyértelműen csak azt az egy jelentést engedi. A hiányzó jelentés kártyáját létre kell hozni.
 - **S3 Kis mondat csak ott.** `hint_*` csak olyan kártyán van, amelynek a kérdése (normalizálva: kisbetű, trim, névelő nélkül) a paklin belül legalább két kártyán szerepel. Máshol nincs.
 - **S4 Mexikói norma** a spanyol oldalon (words-open `es` és mondatai, az angol track `es` kérdése és `sentence_es`-e): carro, celular, computadora, departamento, papa, boleto, jugo, manejar, rentar; a „hoy/ya” + indefinido. Spanyolországi alak legfeljebb második alternatívaként (S1), kérdésben soha.
@@ -74,3 +74,4 @@ A kapu szabályonként kiírja a hibák számát és az első 5 példát, hibán
 - 12:02 ág + worktree kész (`feat/multi-meaning-words` origin/main 149460a-ról).
 - 12:09 2. lépés kész: words-open-check (R1/R2 lazítás, R4 szint-alapú „tanult" halmaz 600 fölött, R11-R14 a scripts/multi-meaning-rules.mjs-ben közösen) + validate-en-track R11-R14. Mostani adaton: words-open R11 4 hiba (there×2, when×2), R1-R10 ok; angol track R11 195 hiba, R12-R14 ok.
 - 12:13 R12 lazítva a scripts/multi-meaning-rules.mjs-ben (első 2 betű, ékezet nélkül); a Spec R12 sora frissítve.
+- 12:19 3. lépés kész: `pcicAlternatives` ( / ) javítva, `kindOfEs` alternatívánként számol, PcicItem.hint + learn-hint a nagy szó alatt, learn-also a Check után (pcic.alsoLabel en/es), jest tesztek (pcicMatch, articlePicker, pcicHint). typecheck:ci, lint (0 hiba), test:ci zöld; words-open-check csak R11 (4).
