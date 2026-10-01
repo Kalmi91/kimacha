@@ -15,8 +15,9 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath, pathToFileURL } from 'node:url';
+import { fileURLToPath } from 'node:url';
 import { checkMultiMeaning } from './multi-meaning-rules.mjs';
+import { importTs } from './lib/importTs.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIR = path.join(ROOT, 'data', 'words-open');
@@ -202,10 +203,7 @@ if (!listOnly) {
   };
 
   // ----- R6 igeidő-besorolás: conjugate.ts táblái + saját szabályos generálás
-  const origEmit = process.emitWarning;
-  process.emitWarning = () => {};
-  const { conjugate, TENSES } = await import(pathToFileURL(path.join(ROOT, 'lib', 'games', 'conjugate.ts')).href);
-  process.emitWarning = origEmit;
+  const { conjugate, TENSES } = await importTs(path.join(ROOT, 'lib', 'games', 'conjugate.ts'));
 
   const STRUCT_LEVEL = {
     presente: 1,

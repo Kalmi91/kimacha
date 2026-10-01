@@ -53,8 +53,9 @@
  */
 
 import { readFileSync, readdirSync, existsSync } from 'fs';
-import { fileURLToPath, pathToFileURL } from 'url';
+import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import { importTs } from './lib/importTs.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -279,14 +280,12 @@ for (const lvl of LEVELS) {
 
 // PLAN-regi-szavak-ki 7b: a tanított szó ragozott alakja (és az igéhez írt névmás, verlo) is
 // tanított, ugyanazzal az alak-készlettel, amelyet az app glossza-indexe használ (lib/esForms).
-// A modul tiszta TS, a words-open-check.mjs is így tölti a lib/games/conjugate.ts-t.
-const origEmitWarning = process.emitWarning;
-process.emitWarning = () => {};
-const libUrl = (f) => pathToFileURL(join(ROOT, 'lib', f)).href;
-const { formsOfCard, encliticBases } = await import(libUrl('esForms.ts'));
-const { conjugate, TENSES } = await import(libUrl('games/conjugate.ts'));
-const { esPlural, esFeminine } = await import(libUrl('esInflect.ts'));
-process.emitWarning = origEmitWarning;
+// A modulok tiszta TS, a words-open-check.mjs is így tölti a lib/games/conjugate.ts-t
+// (scripts/lib/importTs.mjs: transzpilálás, így Node 20-on is megy).
+const libUrl = (f) => join(ROOT, 'lib', f);
+const { formsOfCard, encliticBases } = await importTs(libUrl('esForms.ts'));
+const { conjugate, TENSES } = await importTs(libUrl('games/conjugate.ts'));
+const { esPlural, esFeminine } = await importTs(libUrl('esInflect.ts'));
 const FORM_DEPS = { conjugate, TENSES, esPlural, esFeminine };
 
 const formsByLevel = {};
