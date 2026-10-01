@@ -5747,10 +5747,11 @@
   {
     "id": 10376,
     "level": "B1",
-    "es": "tocar (a la puerta)",
+    "es": "tocar",
     "hu": "kopog",
     "en": "to knock",
     "de": "klopfen",
+    "hint_es": "Alguien *toca* a la puerta.",
     "topic": "actions",
     "topicOrder": 46,
     "sentence_es": "Si tocas la puerta, él la abrirá.",
@@ -12088,5 +12089,37 @@
     "sentence_de": "Wassersparen ist wichtig, also verschwende es nicht.",
     "pos": "noun",
     "gender": "m"
+  },
+  {
+    "id": 10807,
+    "level": "B1",
+    "es": "tocar",
+    "hu": "megérint",
+    "en": "to touch",
+    "de": "berühren",
+    "hint_es": "Puedes *tocar* la pantalla con el dedo.",
+    "topic": "actions",
+    "topicOrder": 72,
+    "sentence_es": "No toques el fuego, está muy caliente.",
+    "sentence_hu": "Ne érj a tűzhöz, nagyon forró.",
+    "sentence_en": "Don't touch the fire, it is very hot.",
+    "sentence_de": "Berühre das Feuer nicht, es ist sehr heiß.",
+    "pos": "verb"
+  },
+  {
+    "id": 10808,
+    "level": "B1",
+    "es": "tocar",
+    "hu": "játszik (hangszeren)",
+    "en": "to play (an instrument)",
+    "de": "spielen",
+    "hint_es": "Mi hermano sabe *tocar* la guitarra.",
+    "topic": "actions",
+    "topicOrder": 73,
+    "sentence_es": "Mi hermano toca la guitarra en una banda.",
+    "sentence_hu": "A bátyám gitározik egy zenekarban.",
+    "sentence_en": "My brother plays the guitar in a band.",
+    "sentence_de": "Mein Bruder spielt in einer Band Gitarre.",
+    "pos": "verb"
   }
 ]

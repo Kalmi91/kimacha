@@ -264,3 +264,42 @@ A kapu szabályonként kiírja a hibák számát és az első 5 példát, hibán
   - Hiányzó jelentés pótolva (S2+S7, mindkét/mindhárom kártya hint_es-sel): rose (rosa), only (solo), safe és sure (seguro).
   - Kapu: validate-en-track R11-R14 = ok (0), id-blokk hiba 1105 → 1100, cross-level dup 8 → 5 (kártyák: 2755 → 2730); typecheck:ci, lint (0 hiba), test:ci (136 suite) zöld.
   - [?] marad, nem nyúltam hozzá (a zárójel pontosabb, mint egy mondat, vagy nyelvtani alakot jelöl): `necesitar (+inf)`, `los niños (en general)` / `(concretos)` és `el profesor (concreto)` (névelő-lecke), `su (de él/ella/ellos/eso)`, `suyo (de ella/ellos)`, `vas a / va a / vamos a (+inf)` és a `¿…?` párjaik, `no hay (contracción)`, `no hace falta (contracción)`, `no puede (contracción)`, `no debes (contracción)`. A "contracción" kártyák (there isn't, can't...) külön kártyák maradtak; a "there is not / there isn't" típusú összevonás általános megoldása a bíráló lenne (összehúzott alak elfogadása), nem kártyánként.
+- 12:58 5. lépés, 3. adag (átnézés 1-700. sor): módosítva 31, hozzáadva 6, törölve 0 kártya; spanyol kérdés átírva 5.
+  - Új kártya:
+    - #10803 (A2 travel) la banca → bench
+    - #10804 (A1 prepositions) sobre → about, hint_es "Es un libro *sobre* animales."
+    - #10805 (A1 present_simple) llevar → to take / to carry, hint_es "Voy a *llevar* a mi hijo al doctor."
+    - #10806 (A1 present_simple) tomar → to drink, hint_es "Quiero *tomar* un vaso de agua."
+    - #10807 (B1 actions) tocar → to touch, hint_es "Puedes *tocar* la pantalla con el dedo."
+    - #10808 (B1 actions) tocar → to play (an instrument), hint_es "Mi hermano sabe *tocar* la guitarra."
+  - Törölt id: nincs.
+  - Átírt spanyol kérdés:
+    - #5148: "el camarero" → "el mesero"
+    - #5181: "la hierba" → "el pasto"
+    - #7641: "el salón" → "la sala"
+    - #8729: "la mesa del salón" → "la mesa de la sala"
+    - #10376: "tocar (a la puerta)" → "tocar"
+  - Minta, 20 véletlen módosítás (előtte → utána):
+    - #5030 en: "gray" → "gray / grey"
+    - #5089 en: "pants" → "pants / trousers"
+    - #5116 hint_es: (nincs) → "El libro está *sobre* la mesa."
+    - #5144 en: "cook" → "cook / chef"
+    - #5147 en: "police officer" → "police officer / policeman"
+    - #5148 es: "el camarero" → "el mesero"
+    - #5181 es: "la hierba" → "el pasto"
+    - #5382 en: "watch tv" → "watch tv / watch television"
+    - #5818 en: "pardon" → "pardon / sorry"
+    - #5829 en: "no worries" → "no worries / don't worry"
+    - #5852 en: "big" → "big / large"
+    - #5853 en: "small" → "small / little"
+    - #5873 en: "near" → "near / close"
+    - #5894 en: "store" → "store / shop"
+    - #7641 es: "el salón" → "la sala"
+    - #7722 en: "midday" → "midday / noon"
+    - #7742 en: "fall" → "fall / autumn"
+    - #7761 en: "child" → "child / kid"
+    - #8763 hint_es: (nincs) → "Ella *lleva* un vestido rojo."
+    - #10376 es: "tocar (a la puerta)" → "tocar"; hint_es: (nincs) → "Alguien *toca* a la puerta."
+  - Átnézés: az 1. sortól a ~700. sorig (A0 + az A1 eleje). Mit kerestem: S1 szinonima (big/large, small/little, near/close, store/shop, pants/trousers, gray/grey, bathroom/restroom, at home, cook/chef, police officer/policeman, kid, bicycle, autumn, noon, eat/have breakfast-lunch-dinner, take a shower, watch television, sorry/pardon, don't worry, plate/dish, goldfish/fish), S4 mexikói norma a kérdésben (a mondat már mexikói volt: `el salón` → `la sala`, `la mesa del salón` → `la mesa de la sala`, `el camarero` → `el mesero`, `la hierba` → `el pasto`), hiányzó jelentés (sobre on/about, llevar wear/take-carry, tomar take/drink, tocar touch/play/knock, banca bench: a `la banca` mexikói szó, ezért nincs kettős kérdés és hint sem).
+  - Kapu: validate-en-track R11-R14 = ok (0), id-blokk hiba 1100 → 1104 (a 4 új A1/A2 kártya miatt, a 1132 alap alatt), cross-level dup 5 → 4 (kártyák: 2730 → 2736); typecheck:ci, lint (0 hiba), test:ci (136 suite) zöld.
+  - [?] marad, nem nyúltam hozzá: `la ducha` (mexikói: la regadera), `el marido` (mexikói: el esposo), `el dormitorio` (mexikói: la recámara), `el bolso pequeño`; a `7640 el cuarto de baño → bathroom` az A0 `el baño → bathroom` angol duplikátuma (más kérdés, ezért nem R11); az összehúzott alakok (I'm, there isn't) elfogadása a bírálóban volna általános megoldás.
