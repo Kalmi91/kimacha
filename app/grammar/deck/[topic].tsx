@@ -327,6 +327,8 @@ export default function TableDeckScreen() {
             onSubmitEditing={checked ? handleNext : handleCheck}
             editable={!checked}
             autoFocus
+            placeholder={s.card.typeIn(learnedLang)}
+            placeholderTextColor={colors.tabIconDefault}
             {...answerInputProps}
           />
 

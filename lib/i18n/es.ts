@@ -20,6 +20,8 @@ const es: Strings = {
     wrong: 'Incorrecto',
     next: 'Siguiente',
     typeSentence: 'Escribe la frase',
+    // PLAN-fb1001 K4: a válasz-beírómező szürke placeholdere, a célnyelv nevével.
+    typeIn: (lang: string): string => (lang === 'es' ? 'Escribe en español' : 'Escribe en inglés'),
   },
   buttons: {
     spelling: 'Ortografía',
