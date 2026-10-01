@@ -28,6 +28,7 @@ import { posOf } from '@/lib/pcicPos';
 import { pcicNoteText } from '@/lib/pcicNotes';
 import { sensesFor } from '@/lib/pcicSenses';
 import FeedbackButton from '@/components/FeedbackModal';
+import SpeakButton from '@/components/SpeakButton';
 import BadgeRow from '@/components/learn/BadgeRow';
 import CardShell from '@/components/learn/CardShell';
 import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
@@ -712,9 +713,7 @@ export default function PcicScreen() {
             <FitText base={32} maxLines={3} reserve={note ? 200 : 150} style={[styles.frontText, { color: colors.text }]}>
               {promptText ?? ''}
             </FitText>
-            <Pressable onPress={() => speak(promptText ?? promptSource ?? '', speechLang(sourceLang))} style={styles.speakBtn}>
-              <Text style={styles.speakIcon}>🔊</Text>
-            </Pressable>
+            <SpeakButton onPress={() => speak(promptText ?? promptSource ?? '', speechLang(sourceLang))} style={styles.speakBtn} iconStyle={styles.speakIcon} />
             {/* FB392/393: ℹ️ gomb, csak jegyzetes itemen; koppintásra ki/be
                 nyílik a jegyzet, kártyaváltáskor levezetve becsukódik. */}
             {note && (

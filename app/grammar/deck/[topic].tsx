@@ -31,6 +31,7 @@ import {
 } from '@/lib/grammar/tableDeck';
 import FeedbackButton from '@/components/FeedbackModal';
 import FitText from '@/components/FitText';
+import SpeakButton from '@/components/SpeakButton';
 import CardShell from '@/components/learn/CardShell';
 import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
@@ -344,9 +345,7 @@ export default function TableDeckScreen() {
                   </Text>
                   <View style={styles.frontRow}>
                     <Text style={[styles.correctAnswer, { color: colors.tint }]}>{current.answer}</Text>
-                    <Pressable onPress={() => speak(current.answer, speechLang(learnedLang))} style={styles.speakBtn}>
-                      <Text style={styles.speakIcon}>🔊</Text>
-                    </Pressable>
+                    <SpeakButton onPress={() => speak(current.answer, speechLang(learnedLang))} style={styles.speakBtn} iconStyle={styles.speakIcon} />
                   </View>
                 </>
               )}

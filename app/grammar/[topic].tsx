@@ -33,6 +33,7 @@ import LessonBody from '@/components/grammar/LessonBody';
 import MoreBlocks from '@/components/grammar/MoreBlocks';
 import FeedbackButton from '@/components/FeedbackModal';
 import FitText from '@/components/FitText';
+import SpeakButton from '@/components/SpeakButton';
 import TrialBadge from '@/components/TrialBadge';
 import { BrutalBox, Card, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
@@ -556,10 +557,17 @@ export default function GrammarLessonScreen() {
             {/* LECKE-SEMA 1+3: a body-blokkok váltják a rule/more prózát, a
                 lesson.speak felolvasása egyetlen play<->stop gombbal. */}
             <Text style={[styles.sectionLabel, { color: accentText }]}>{s.grammar.ruleLabel}</Text>
-            <Pressable testID="speakToggle" style={styles.readRow} onPress={toggleLessonSpeech} hitSlop={10}>
-              <Text style={styles.speak}>{speaking ? '⏹' : '🔊'}</Text>
-              <Text style={[styles.readLabel, { color: accentText }]}>{s.grammar.readAloud}</Text>
-            </Pressable>
+            <SpeakButton
+              testID="speakToggle"
+              speaking={speaking}
+              style={styles.readRow}
+              brutalStyle={styles.readRowBrutal}
+              iconStyle={styles.speak}
+              labelStyle={[styles.readLabel, { color: accentText }]}
+              label={s.grammar.readAloud}
+              onPress={toggleLessonSpeech}
+              hitSlop={10}
+            />
             <LessonBody blocks={lesson.body} contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'} learnedLang={learnedLang} />
           </>
         ) : (
@@ -569,10 +577,16 @@ export default function GrammarLessonScreen() {
               <Text style={[styles.ruleText, { color: colors.text }]}>{ruleText}</Text>
               {/* FB216: a hosszú magyarázatot fel is olvassa, a benne lévő spanyol
                   példákat spanyol hangon (lib/mixedSpeech.ts). */}
-              <Pressable testID="grammar-read-rule" style={styles.readRow} onPress={() => readAloud(ruleText)} hitSlop={10}>
-                <Text style={styles.speak}>🔊</Text>
-                <Text style={[styles.readLabel, { color: accentText }]}>{s.grammar.readAloud}</Text>
-              </Pressable>
+              <SpeakButton
+                testID="grammar-read-rule"
+                style={styles.readRow}
+                brutalStyle={styles.readRowBrutal}
+                iconStyle={styles.speak}
+                labelStyle={[styles.readLabel, { color: accentText }]}
+                label={s.grammar.readAloud}
+                onPress={() => readAloud(ruleText)}
+                hitSlop={10}
+              />
             </Card>
           </>
         )}
@@ -587,9 +601,7 @@ export default function GrammarLessonScreen() {
                 learnedLang={learnedLang}
                 style={[styles.exampleText, { color: colors.text }]}
               />
-              <Pressable onPress={() => speak(w.filled, speechLang(learnedLang))} hitSlop={10}>
-                <Text style={styles.speak}>🔊</Text>
-              </Pressable>
+              <SpeakButton onPress={() => speak(w.filled, speechLang(learnedLang))} iconStyle={styles.speak} hitSlop={10} />
             </View>
             <Text style={[styles.exampleWhy, { color: colors.tabIconDefault }]}>{w.why}</Text>
           </Card>
@@ -600,15 +612,16 @@ export default function GrammarLessonScreen() {
             <Text style={[styles.sectionLabel, { color: accentText }]}>{s.grammar.exceptionsLabel}</Text>
             <Card classicStyle={styles.card}>
               <MoreBlocks more={lesson.more} contentLang={contentLang} color={colors.text} />
-              <Pressable
+              <SpeakButton
                 testID="grammar-read-more"
                 style={styles.readRow}
+                brutalStyle={styles.readRowBrutal}
+                iconStyle={styles.speak}
+                labelStyle={[styles.readLabel, { color: accentText }]}
+                label={s.grammar.readAloud}
                 onPress={() => readAloud(lesson.more?.[contentLang] ?? lesson.more?.en ?? '')}
                 hitSlop={10}
-              >
-                <Text style={styles.speak}>🔊</Text>
-                <Text style={[styles.readLabel, { color: accentText }]}>{s.grammar.readAloud}</Text>
-              </Pressable>
+              />
             </Card>
           </>
         ) : null}
@@ -717,6 +730,8 @@ const styles = StyleSheet.create({
   exampleWhy: { fontSize: 13, lineHeight: 19 },
   speak: { fontSize: 18 },
   readRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 12 },
+  // PLAN-fb1001 K2: a brutalista SpeakButton doboz-sora (nem nyúlik a kártya teljes szélességére).
+  readRowBrutal: { alignSelf: 'flex-start', marginTop: 12 },
   readLabel: { fontSize: 14, fontWeight: '700' },
   // Kálmán 2026-09-09: „ne legyen ilyen igénytelen a szöveg mező szépe az egyik
   // pici a másik nagy". Egy gomb-alak az egész képernyőn: azonos szélesség
