@@ -142,7 +142,10 @@ Párhuzamos agent: `feat/learn-words-open` (`C:\AI\kimacha-wt-learn-open`) a `da
   - minta (transform): «Hablo con mi abuela todos los días.» → Hablaba con mi abuela todos los días.
   - minta (transform): «No va a la escuela en coche.» → No iba a la escuela en coche.
   - minta (transform): «¿Ven el fútbol juntos?» → ¿Veían el fútbol juntos?
-- [ ] T2. `condicional-simple` (B1): +50 transform (presente → condicional) → kész, ha: ugyanaz, commit `feat(grammar): condicional-simple 50 transform (nyelvtan)`
+- [x] T2. `condicional-simple` (B1): +50 transform (presente → condicional) → kész, ha: ugyanaz, commit `feat(grammar): condicional-simple 50 transform (nyelvtan)` · 02:44 · audit 0/0, jest 1670 ok, tsc 0, lint 0 err · 10 ige × 5 (hablar, comer, vivir, tener, poder, hacer, decir, ser, deber, venir), 30 kijelentő + 10 tagadó + 10 kérdő, yo/tú/él-ella/nosotros/ellos (vosotros nincs), `tense` presente → condicional, wordIds ige-lemma + tartalmas szavak (A0-A2, ragozott kártya: ayudarme), nem ige tartalmas szó max 3×, a meglévő itemekhez nem nyúltam · hash: a `feat(grammar): condicional-simple 50 transform (nyelvtan)` commit
+  - minta (transform): «¿Puedes ayudarme?» → ¿Podrías ayudarme?
+  - minta (transform): «No puedo ir contigo.» → No podría ir contigo.
+  - minta (transform): «Es una buena idea.» → Sería una buena idea.
 - [ ] T3. `indefinido-imperfecto` (A2): +50 transform, csak ha a transform-séma enged igeidő-jelölő súgót (pl. «ayer» / «de niño») → kész, ha: ugyanaz, vagy `[!]` + ok
 - Szándékosan kimarad: `indefinido-regular` / `-irregular` (az `indefinido-10-verbos` már 50 transformmal viszi, K2), `subjuntivo-disparadores` / `temporales-subjuntivo` (a `subjuntivo-presente-forma` 50 transformja ugyanez a fajta).
 
