@@ -165,7 +165,10 @@ A „BRIEF új lecke (2026-10-01 …)” érvényes, a munkahely helyett ez a wo
   - minta: `Mi hermano ___ de beber café hace un año.` → dejó
   - minta: `Nosotros ___ a trabajar a las ocho.` → empezamos (nem: empiezamos)
   - minta: `Llegamos a casa y nos ___ a cocinar.` → ponemos
-- [ ] B4. `pluscuamperfecto` (B1 full) új lecke → kész, ha: ugyanaz
+- [x] B4. `pluscuamperfecto` (B1 full) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `feat(grammar): pluscuamperfecto lesson (nyelvtan)` (01:07; audit 0 P1/0 P2, jest 1605 passed/132 suite, tsc 0, lint 0 error; 12 választós + 1 match + 12 form + 7 why, nincs `tense`/transform; glossary nincs; TenseId-bővítés kell: pluscuamperfecto, /kimacha_nyelvtan)
+  - minta: `Cuando llegué, el tren ya ___.` → había salido
+  - minta: `Nosotros ya ___ cuando ellos llegaron.` → habíamos cenado
+  - minta: `hacer` + `vosotros` → habíais hecho
 - [ ] B5. `indefinidos` (A2 full) új lecke → kész, ha: ugyanaz
 - [ ] B6. `gerundio-participio-construcciones` (B2 exam) új lecke → kész, ha: ugyanaz
 - [ ] B7. `lo-neutro` (B2 exam) új lecke → kész, ha: ugyanaz
