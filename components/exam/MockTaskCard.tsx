@@ -123,7 +123,7 @@ export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak,
           ) : (
             <>
               <Text style={[styles.body, { color: colors.warning }]}>{s.noVoice}</Text>
-              <Pressable testID="mock-transcript-toggle" accessibilityRole="button" onPress={() => setShowTranscript((v) => !v)}>
+              <Pressable testID="mock-transcript-toggle" accessibilityRole="button" style={styles.linkBox} onPress={() => setShowTranscript((v) => !v)}>
                 <Text style={[styles.link, { color: colors.tint }]}>{showTranscript ? s.hideTranscript : s.showTranscript}</Text>
               </Pressable>
             </>
@@ -287,7 +287,7 @@ export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak,
 
       {glossary.length > 0 && (
         <View style={styles.glossary}>
-          <Pressable testID="mock-glossary-toggle" accessibilityRole="button" onPress={() => setShowGlossary((v) => !v)}>
+          <Pressable testID="mock-glossary-toggle" accessibilityRole="button" style={styles.linkBox} onPress={() => setShowGlossary((v) => !v)}>
             <Text style={[styles.link, { color: colors.tint }]}>{showGlossary ? s.glossaryHide : s.glossaryShow(glossary.length)}</Text>
           </Pressable>
           {showGlossary &&
@@ -308,7 +308,8 @@ const styles = StyleSheet.create({
   hint: { fontSize: fontSize.sm, lineHeight: lineHeight.sm },
   body: { fontSize: fontSize.md, lineHeight: lineHeight.md },
   small: { fontSize: fontSize.sm, lineHeight: lineHeight.sm },
-  link: { fontSize: fontSize.sm, fontWeight: fontWeight.semibold, minHeight: tapTarget, textAlignVertical: 'center' },
+  link: { fontSize: fontSize.sm, fontWeight: fontWeight.semibold },
+  linkBox: { minHeight: tapTarget, justifyContent: 'center' },
   item: { gap: spacing.sm },
   question: { fontSize: fontSize.md, fontWeight: fontWeight.semibold, lineHeight: lineHeight.md },
   box: { borderWidth: 1, borderRadius: radius.md, padding: spacing.md, gap: spacing.xs },
