@@ -105,6 +105,11 @@ const styles = StyleSheet.create({
     lineHeight: 22,
     marginBottom: 20,
   },
+  // PLAN-temak 2B: a betű-licencek bekezdése (a main 1b1c0c6 a régi bodySpaced-et a
+  // gyakorisági forrással együtt kivette; itt ugyanazzal az értékkel él tovább).
+  bodySpaced: {
+    marginTop: 8,
+  },
   brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   brutalLink: { fontWeight: '500', textDecorationLine: 'underline' },
   link: {
