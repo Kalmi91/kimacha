@@ -83,6 +83,69 @@ Szakasz kezdete: 2026-09-19T05:10Z (a cap-szabály előtt indult, cap nélkül).
 2. adag (4-6) pusholva 2026-09-19, PR #25 frissül.
 1. adag (1-3) pusholva 2026-09-19, PR #25: https://github.com/Kalmi91/kimacha/pull/25 (mainbe csak Kálmán szavára).
 
+## Menet 2026-10-01 (éjszakai, Windows)
+
+Ág: `nyelvtan` (új, main 3a7313b-ről), worktree `C:\AI\kimacha-wt-eget-nyelvtan`. Skill: `C:\Users\kalma\.claude\skills\eget-nyelvtan\SKILL.md` (a Lenovóról másolva), probe: `node C:/Users/kalma/.claude/skills/eget-nyelvtan/probe.cjs` a worktree gyökeréből. NYELVTAN.md + LECKE-SEMA.md: `C:\AI\ai-workspace\kimacha\`.
+Szakasz kezdete: 2026-10-01T06:17Z (00:17 CDMX), cap: 09:00 CDMX (Kálmán kérése, 8,7 óra, a 7 órás plafon fölött), max 15 tétel.
+Állás induláskor (probe): 65 téma: 43 V2, 0 V1, 22 hiányzik (D exam 17, E full 5); NY18 [?] kód, nem ide. A C-sor (negacion, posesivos, por-para, perfecto) közben elkészült.
+Becslés: javítás-tétel ≈ 50-100K, új lecke ≈ 150-300K Sonnet-token; a menet ≈ 2-3 M token.
+Párhuzamos agent: `feat/learn-words-open` (`C:\AI\kimacha-wt-learn-open`) a `data/pcic.ts`, `app/onboarding.tsx`, `app/(tabs)/stats.tsx`, `lib/grammar/__tests__/tableDeckEn.test.ts` fájlokon dolgozik. Ez a menet ezekhez NEM nyúl; csak `data/games/grammar/es/*.json`, `lib/games/content/es.ts`, `lib/grammar/syllabus.ts` (új témánál) és a lecke-darabszámot állító teszt. Push előtt `git fetch` + rebase `origin/main`-re.
+Éjszakai sáv (RULES.md 9.3): csak tartalom; app-kódot igénylő tétel `[!]`, napközbenre.
+
+- [ ] J1. `interrogativos`: 12 form item spanyol gyártásra (tábla átfordítva: row[0] = válasz/kontextus, pl. «En Narvarte.», oszlop = kérdőszó, cella = a kérdőszó) → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `fix(grammar): interrogativos form items (nyelvtan)`
+- [ ] J2. `marcadores-discursivos`: ugyanez a hiba, 12 form item mondat-gyártásra (row[0] = helyzet, cella = a gyártandó kötőelem) → kész, ha: ugyanaz, commit `fix(grammar): marcadores-discursivos form items (nyelvtan)`
+- [ ] F1. FB435 `ser-estar`: az 5 `spot` (hibakereső) item ki → kész, ha: ugyanaz
+- [ ] F2. FB436 `demostrativos`: `dem-12` („tap the noun”, mark) ki → kész, ha: ugyanaz
+- [ ] F3. FB437 `pronombres-oi`: a felesleges szavak ki, ha tartalommal megoldható → kész, ha: ugyanaz, vagy `[!]` + ok
+- [ ] F4. FB438 `ir-a-infinitivo` tabledeck: a felesleges szavak ki, ha tartalommal megoldható → kész, ha: ugyanaz, vagy `[!]` + ok
+- [ ] 1. `marcadores-temporales` (A2-queue, új téma, Kálmán 2026-09-20; syllabus-sor + tier + lecke egy commitban) → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit
+- [ ] 2. `muy-mucho` (A1 exam) új lecke → kész, ha: ugyanaz
+- [ ] 3. `combinacion-pronombres` (A2 exam) új lecke → kész, ha: ugyanaz
+- [ ] 4. `imperativo-negativo` (A2 exam) új lecke → kész, ha: ugyanaz
+- [ ] 5. `llevar-traer-ir-venir` (A2 exam) új lecke → kész, ha: ugyanaz
+- [ ] 6. `pedir-preguntar` (A2 exam) új lecke → kész, ha: ugyanaz
+- [ ] 7. `saber-conocer` (A2 exam) új lecke → kész, ha: ugyanaz
+- [ ] 8. `por-para-avanzado` (B1 exam) új lecke → kész, ha: ugyanaz
+- [ ] 9. `se-impersonal-pasiva` (B1 exam) új lecke → kész, ha: ugyanaz
+- …és a probe szerinti folytatás: D `ojala-quizas`, `gerundio-participio-construcciones`, `lo-neutro`, `pasiva-ser-participio`, `subjuntivo-perfecto`, `futuro-condicional-perfecto`, `leismo-laismo`, `probabilidad-con-tiempos`, `relativos-complejos`; E `indefinidos`, `perifrasis`, `pluscuamperfecto`, `relativos`, `concesivas`.
+
+Napközbenre (kód vagy nem nyelvtan, Feedback sheet 2026-10-01 00:20, üres F oszlop, FB428-438; FB397-427 a PR #57-ben kész, de az F oszlopuk üres):
+- [!] FB437/FB438 gyökere kód: `lib/grammar/tableDeck.ts` (378-) a lecke szó-paklija = glossary + mondat-szavak; Kálmán szabálya: a tabledeck-pakliban csak a táblázat szavai. `/kimacha_nyelvtan`.
+- [!] Kérdés: a `mark` („tap the noun”) item az `interrogativos` és a `negacion` leckében is van (2-2); ott is ki?
+- [!] FB428 settings-tab: az „Ajustes” résznél elcsúszott UI (automático, színek). Kód.
+- [!] FB429 pcic:e10002: hangszóró-ikonok egységes UI. Kód.
+- [!] FB430 pcic:w3780: a felső fekete csík a pakliból hátralévőt számolja. Kód.
+- [!] FB431 pcic:w218: jobb felső újrakezdés-gomb ki, újrakezdés a Settingsbe (minden pakli + nyelvtan). Kód.
+- [!] FB432 pcic:w3767: noun névelő nélkül. Szavak (`/eget-szavak`).
+- [!] FB433 pcic:w3673: ear vs hearing, melyiket kérdezi. Szavak.
+- [!] FB434 sentence:w1236: értelmetlen mondat átírása + angol kiejtés. Szavak + kód.
+
+## BRIEF J1-J2 + F1-F4 (2026-10-01, javítások, EGY agent, sorban)
+
+Munkahely KIZÁRÓLAG `C:\AI\kimacha-wt-eget-nyelvtan` (ág `nyelvtan`); minden `npx`/`node` innen fut. Más worktree-hez és a fenti „Párhuzamos agent” fájlokhoz nem nyúlsz.
+Olvasd: `lib/grammar/lessonTypes.ts`, `scripts/audit-games.mjs` fejléc-kommentje, `C:\AI\ai-workspace\kimacha\LECKE-SEMA.md`, és a skill „Egy lecke receptje” szakasza (`C:\Users\kalma\.claude\skills\eget-nyelvtan\SKILL.md` 131-180. sor). A `wordIds`-kényszer és a mondat-szabályok onnan érvényesek.
+Tételenként: javítás → kapu (`node scripts/audit-games.mjs` 0 P1 és cél 0 P2; `npx jest`; `npx tsc --noEmit`; `npx expo lint` 0 error) → külön commit, csak zöld kapuval, AI-marker nélkül (nincs Co-Authored-By) → a PLAN tétel-sora `[x]` + `date '+%H:%M'` + hash + kapu-számok, vagy `[!]` + egy mondat ok.
+- J1 `data/games/grammar/es/interrogativos.json`: a 12 form item jelenleg „kérdőszó → magyar jelentés” (person=dónde, answer=hol). Átírás: a form-tábla row[0] = a válasz/kontextus (pl. «En Narvarte.», «A las tres.», «Con mi hermana.»), az oszlop(ok) = a kérdőszó, a cella = a gyártandó spanyol kérdőszó (Dónde, Cuándo, Con quién…). Az auditFormItem szabálya: person = a tábla row[0], answer = a col≥1 cella. 12 különböző kérdőszó/helyzet, ismétlés-plafon szerint. Commit `fix(grammar): interrogativos form items (nyelvtan)`.
+- J2 `marcadores-discursivos.json`: ugyanez, a form item most „kötőelem → funkció/regiszter” felismerés. Átírás: row[0] = a helyzet (pl. «ellentét: Estudió mucho; ___, no aprobó.»), cella = a gyártandó kötőelem (sin embargo…). Commit `fix(grammar): marcadores-discursivos form items (nyelvtan)`.
+- F1 (FB435, Kálmán: „ide a spot the mistake vedd ki ide nem jó”) `ser-estar.json`: mind az 5 `spot` item ki; a `dictation` itemek maradnak. Ha teszt vagy a trial-jelölés fix spot-darabszámot vár ebben a leckében, a tesztet igazítod (csak a darabszámot). Commit `fix(grammar): ser-estar spot items out (nyelvtan)`.
+- F2 (FB436, Kálmán: „ide felesleges a tap the noun dolog, vedd ki innen ezt a feladatot”) `demostrativos.json`: a `dem-12` item ki; ha a lecke másik `mark` iteme ugyanilyen „tap the noun”, az is ki, és a jelentésben szólsz. Más leckéhez nem nyúlsz. Commit `fix(grammar): demostrativos mark item out (nyelvtan)`.
+- F3 (FB437, a `pronombres-oi` leckén: „itt miért vannak ilyen szavak? felesleges, vedd ki”): nézd meg, mely szavakat mutatja a lecke a táblázaton kívül (glossary, ill. a `lib/grammar/tableDeck.ts` 378-440 szó-pakli forrása). Ha a glossary szavai kiválthatók a lecke szintjéig tanított szavakkal (mondat-átírás), írd át, és a glossary üres; ha a megjelenés a kód miatt van (mondat-szavak a pakliban), NEM nyúlsz kódhoz: a sor `[!]` + egy mondat, mit kellene a kódban változtatni. Commit `fix(grammar): pronombres-oi extra words out (nyelvtan)`.
+- F4 (FB438, `ir-a-infinitivo` tabledeck glossary-pakli: „itt is felesleges szavak vannak, ha jól tudom itt az a szabály hogy a táblázatban szereplő szavakat tedd bele az itteni kártya paklikba”): mint F3, `ir-a-infinitivo.json`. A 50 transform item `wordIds`-e nem sérülhet. Commit `fix(grammar): ir-a-infinitivo extra words out (nyelvtan)`.
+Piros kapu, amit 20 perc alatt nem tudsz zöldre hozni: a fájl-változás vissza (`git checkout -- <fájl>`), a sor `[!]` + ok, a következő tétel jön.
+Jelentés a végén max 10 sor: tételenként hash vagy `[!]` ok, a kapu utolsó sorai (jest, audit), J1-ből és J2-ből 2-2 minta (row[0] → answer).
+
+## BRIEF új lecke (2026-10-01, a fenti 1-9. tétel és a folytatás, leckénként EGY agent)
+
+Munkahely és tiltott fájlok: mint a javítás-briefben. A recept a skill „Egy lecke receptje” szakasza (`C:\Users\kalma\.claude\skills\eget-nyelvtan\SKILL.md` 131-180. sor), 1:1; a forrásai ugyanott a 35-57. sor (a Lenovo-útvonalak helyett: `C:\AI\ai-workspace\kimacha\NYELVTAN.md`, `...\LECKE-SEMA.md`; a probe: `node C:/Users/kalma/.claude/skills/eget-nyelvtan/probe.cjs --cards <SZINT> <fájl>`).
+- A téma id-ja, szintje, címe, blurbje: `lib/grammar/syllabus.ts`; a sáv: `GRAMMAR_TIER`. Regisztráció: `lib/games/content/es.ts` a többi mintájára; a lecke-darabszámot állító teszt (pl. `grammarSyllabus.test.ts`) frissül.
+- Minta-lecke: `data/games/grammar/es/ser-estar.json` (de a `spot`/`dictation`/`order` trial-itemeket NEM másolod), igeidős témánál `futuro-simple.json`.
+- Tanulság az előző menetből: a nem-ige tábláknál row[0] = a helyzet/kiváltó, az oszlopok = igék vagy kategóriák, a cella = a GYÁRTANDÓ spanyol alak (soha nem magyar jelentés, soha nem felismerés). Mondat természetes, anyanyelvű így mondja; ha a `wordIds`-kényszer miatt erőltetett lenne, másik mondat.
+- `marcadores-temporales` (1. tétel): új téma, a tartalom a skill 98-116. sora 1:1 (jelölő-szóból igeidő-GYÁRTÁS, sáv `core-plus`, ha egy leckébe nem fér: bontás). A syllabus-sor (id, level A2, unit, title ×4, blurb ×4) + tier + lecke + regisztráció EGY commitban; ez az egyetlen kód-sor, amit írhatsz.
+- Ha a téma igeideje nincs a `TENSE_IDS`-ben, a lecke transform nélkül készül, és a PLAN tétel-sorába: „TenseId-bővítés kell: <id>, /kimacha_nyelvtan”.
+- Kártya-hiány: „kártya-kérés: <szó> <szint>” a tétel-sor alá, szót nem veszel fel.
+- Kapu, commit (`feat(grammar): <téma> lesson (nyelvtan)`, AI-marker nélkül), PLAN-sor frissítés `date '+%H:%M'`-mel: mint a javítás-briefben.
+- Jelentés max 10 sor: fájl + item-számok fajtánként, a kapu utolsó sora, hash, 5 minta (3 választós `sentence` + 2 form `row[0] → answer`).
+
 ---
 
 ## BRIEF ir-a-infinitivo (1. lépés, NY6a)
