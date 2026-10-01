@@ -9,8 +9,9 @@ Kálmán (2026-10-01 00:00 körül): „2a az új szavakat akarom letesztelni”
 - [x] 2. B2 a szintválasztóban → kész, ha: a B2 választható és 150 tételt ad (00:11)
 - [x] 3. A régi haladás megmarad → kész, ha: teszt bizonyítja, hogy a régi `w<id>` SRS-sor nem törlődik a DB-ből (00:12)
 - [x] 4. Teljes kapu → kész, ha: `npm run typecheck:ci`, `npm run lint`, `npm run test:ci` zöld (00:13)
-- [~] 5. Képernyőkép (web), PR, merge Kálmán szavára → kész, ha: kép a PR előtt, PR nyitva
-- [ ] 6. 4.1.7 build a Linuxon, Drive → kész, ha: `/kimacha-build` minden ellenőrzése zöld
+- [x] 5. Képernyőkép (web), PR, merge Kálmán szavára → kész, ha: kép a PR előtt, PR nyitva (00:30, PR #60 mergelve)
+- [x] 5a. (00:43) Kártya-hibák: „1 days” → „1 day” (4 nyelv), a „DIDN'T KNOW” / „KNEW IT” gomb egyforma, tördelés és fekete folt nélkül → kész, ha: új képernyőkép, kapu zöld, PR mergelve (ág `fix/learn-card-buttons`) (kód kész, kép kész 00:32) PR #61, merge Kálmán szavára
+- [!] 6. 4.1.7 build a Linuxon, Drive → kész, ha: `/kimacha-build` minden ellenőrzése zöld Kálmán 00:40: ma éjjel NEM, reggel a másik agenttel együtt
 
 ## Spec az 1-4. lépéshez (a subagent 1:1 ezt hajtja végre)
 
