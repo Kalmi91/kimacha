@@ -126,6 +126,18 @@ describe('Témák képernyő (PLAN-temak 4D)', () => {
     view.unmount();
   });
 
+  it('7F (FB428): a mód-gomb ikonja a felirat fölött, a felirat egysoros', async () => {
+    const view = await mount();
+    for (const [value, label] of [['system', 'Auto'], ['light', 'Light'], ['dark', 'Dark']] as const) {
+      const button = view.getByTestId(`themes-mode-${value}`);
+      const text = within(button).getByText(label);
+      expect(text.props.numberOfLines).toBe(1);
+      expect(text.props.adjustsFontSizeToFit).toBe(true);
+      expect(text.props.minimumFontScale).toBe(0.8);
+    }
+    view.unmount();
+  });
+
   it('az 5 al-paletta csak a Neo-brutál alatt látszik', async () => {
     const view = await mount();
     for (const id of ['brand', 'electric', 'lime', 'cyan', 'orange']) {
