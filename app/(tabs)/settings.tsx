@@ -17,6 +17,7 @@ import { setPcicTarget, pcicItemsForLevel, PCIC_LEVELS, type PcicTarget, type Pc
 import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
 import { validateBackupPayload } from '@/lib/backup';
 import { validateMistakesPayload } from '@/lib/mistakes/format';
+import { seedA1ExamState } from '@/lib/exam/devSeed';
 import {
   DEFAULT_WEEKLY_GOAL_MINUTES,
   MIN_WEEKLY_GOAL_MINUTES,
@@ -26,6 +27,7 @@ import {
   MIN_DAILY_NEW_LIMIT,
   MAX_DAILY_NEW_LIMIT,
   DAILY_NEW_LIMIT_STEP,
+  localDateString,
 } from '@/lib/usageStats';
 import {
   DEFAULT_AGAIN_DELAY_SEC,
@@ -138,6 +140,8 @@ export default function SettingsScreen() {
   // haladás, és egy nyelvtan-sor, ha van nyelvtan-haladás.
   const [resetLevels, setResetLevels] = useState<PcicLevel[]>([]);
   const [hasGrammarProgress, setHasGrammarProgress] = useState(false);
+  // PLAN-vizsga A. szakasz 2. lépés: a __DEV__-only vizsga-vezérlő állapota (lásd lent).
+  const [examSeeded, setExamSeeded] = useState(false);
 
   useFocusEffect(
     useCallback(() => {
@@ -324,6 +328,17 @@ export default function SettingsScreen() {
   const handleResetGrammar = () =>
     confirmReset(s.settings.resetGrammarTitle, s.settings.resetGrammarMessage, () => getDb().resetGameProgress(GRAMMAR_PROGRESS_KEY));
 
+  // PLAN-vizsga A. szakasz 2. lépés (8. követelmény): csak __DEV__-ben látszó sor; beállít egy A1
+  // állapotot (a szint kártyáinak 85%-a graduált + egy A1 lecke kész), hogy a vizsga végigkattintható legyen.
+  const handleSeedExamA1 = async () => {
+    const db = getDb();
+    const onboarding = await db.getOnboarding();
+    const target = (onboarding?.target as PcicTarget | undefined) ?? 'es';
+    setPcicTarget(target);
+    await seedA1ExamState(db, target, localDateString());
+    setExamSeeded(true);
+  };
+
   // PLAN-hibaim.md 3. lépés: pick a kimacha-hibaim JSON (the /hibaim skill's
   // output), validate it with the app's own rules (lib/mistakes/format.ts),
   // save it (loading the same batchId again replaces its content, card
@@ -492,6 +507,16 @@ export default function SettingsScreen() {
 
       {/* FB82: app version, small and grey, so the user can tell which build runs. */}
       <Text style={[styles.versionText, { color: colors.tabIconDefault }]}>{appVersionLabel}</Text>
+
+      {/* PLAN-vizsga A. szakasz 2. lépés: fejlesztői vezérlő, release-buildben (`__DEV__ === false`) nem renderelődik. */}
+      {__DEV__ && (
+        <Row onPress={handleSeedExamA1}>
+          <Text testID="dev-seed-exam" style={[styles.wordsOnlyLabel, { color: colors.text }]}>
+            {examSeeded ? s.settings.devSeedExamA1Done : s.settings.devSeedExamA1}
+          </Text>
+          <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
+        </Row>
+      )}
       </ScrollView>
 
       <FeedbackButton level={level} languagePair={direction.join('→')} currentCard="settings-tab" />

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { StyleSheet, View, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform, ActivityIndicator, Keyboard } from 'react-native';
 import { Text } from '@/components/KText';
-import { useFocusEffect } from 'expo-router';
+import { router, useFocusEffect } from 'expo-router';
 import { speak, speakSequence, stopSpeaking } from '@/lib/speech';
 
 import Colors from '@/constants/Colors';
@@ -44,6 +44,7 @@ import TypedSentenceCard from '@/components/TypedSentenceCard';
 import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress } from '@/lib/grammar/syllabus';
 import { resolvedTensesFromLessons, type ResolvedTense } from '@/lib/knownSentence';
 import { INITIAL_CADENCE, nextSentenceStep, type CadenceState, type SentenceCardData } from '@/lib/sentenceCards';
+import { examStatusFor, type ExamLevelStatus } from '@/lib/exam/unlock';
 
 // PLAN-pcic 5. lépés: a PCIC fül. Angol -> spanyol gépelés, Anki-gombokkal
 // (again/hard/good/easy), az önálló SM-2 ütemezőn (lib/sm2.ts, 4. lépés).
@@ -88,6 +89,8 @@ export default function PcicScreen() {
   // haladáshoz MIND a négy szint kártyája kell, nem csak az aktívé.
   const [levelSheetOpen, setLevelSheetOpen] = useState(false);
   const [allLevelCards, setAllLevelCards] = useState<Sm2Card[]>([]);
+  // PLAN-vizsga A. szakasz 2. lépés (A1 a): az A1 szintvizsga sora a szint-választó lapon.
+  const [examA1, setExamA1] = useState<ExamLevelStatus | null>(null);
   // s2 (anki-ui-terv.html): a Beállítások ékezet-szigor kapcsolója a PCIC
   // gépelésén is dönt (gradePcicAnswer strictAccents paramja).
   const [strictAccents, setStrictAccents] = useState(false);
@@ -174,6 +177,8 @@ export default function PcicScreen() {
     setTenses(resolvedTensesFromLessons(doneGrammarTopicProgress(dir, grammarRows).keys()));
     setLevel(lvl);
     setAllLevelCards(rawCards);
+    const examGrammarRows = dir === 'es' ? grammarRows : await db.getGameProgress(GRAMMAR_PROGRESS_KEY);
+    setExamA1(examStatusFor('A1', dir, rawCards, examGrammarRows, (await db.getExamResults()).A1));
     setStrictAccents(strict);
     setDailyNewLimit(newLimit);
     setAgainDelaySec(delaySec);
@@ -211,6 +216,23 @@ export default function PcicScreen() {
     setLoading(true);
     await load(lvl);
   };
+
+  // PLAN-vizsga A. szakasz 2. lépés (A1 a): a vizsga-sor három útja: indul a vizsga, a hiányzó
+  // szavak gyakorlása (az A1 pakli), vagy a nyelvtani leckék (ha csak a lecke hiányzik).
+  const examRow = examA1
+    ? {
+        status: examA1,
+        onStart: () => {
+          setLevelSheetOpen(false);
+          router.push({ pathname: '/exam', params: { level: examA1.level } });
+        },
+        onPractice: () => handleSelectLevel(examA1.level),
+        onGrammar: () => {
+          setLevelSheetOpen(false);
+          router.push('/(tabs)/course');
+        },
+      }
+    : undefined;
 
   const newOrder = useMemo(() => pcicItemsForViewLevel(level).map((i) => i.id), [level]);
   const current = queue[0];
@@ -480,6 +502,7 @@ export default function PcicScreen() {
           colors={colors}
           title={s.pcic.chooseLevel}
           target={target}
+          exam={examRow}
           onSelect={handleSelectLevel}
           onClose={() => setLevelSheetOpen(false)}
         />
@@ -542,6 +565,7 @@ export default function PcicScreen() {
           colors={colors}
           title={s.pcic.chooseLevel}
           target={target}
+          exam={examRow}
           onSelect={handleSelectLevel}
           onClose={() => setLevelSheetOpen(false)}
         />
@@ -649,6 +673,7 @@ export default function PcicScreen() {
         colors={colors}
         title={s.pcic.chooseLevel}
         target={target}
+        exam={examRow}
         onSelect={handleSelectLevel}
         onClose={() => setLevelSheetOpen(false)}
       />
