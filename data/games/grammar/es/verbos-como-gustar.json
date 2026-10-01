@@ -758,7 +758,7 @@
           "hu": "mi: birtokos névmás (az én). Ide nem illik, mert a me már megmondja, kié a fej, ezért névelő kell, nem birtokos. Helyesen: Me duele la cabeza.",
           "en": "mi: possessive (my). It does not fit here, because me already says whose head it is, so the article is needed, not a possessive. Correct: Me duele la cabeza.",
           "es": "mi: posesivo. Aquí no encaja, porque me ya dice de quién es la cabeza, por eso va el artículo, no el posesivo. Correcto: Me duele la cabeza.",
-          "de": "mi: Possessivum (mein). Das passt hier nicht, weil me schon sagt, wessen Kopf es ist, deshalb steht der Artikel, nicht das Possessivum. Richtig: Me duele la cabeza."
+          "de": "mi: Possessivum (mein). Das passt hier nicht, denn me sagt schon, wessen Kopf es ist, deshalb steht der Artikel, nicht das Possessivum. Richtig: Me duele la cabeza."
         },
         "su": {
           "hu": "su: birtokos névmás (az ő). Ide nem illik, mert a fej a me szerint az enyém, és a testrész névelővel áll. Helyesen: Me duele la cabeza.",
@@ -792,7 +792,7 @@
           "hu": "le: egy személy névmása. Ide nem illik, mert a(z) «mis padres» (a szüleim) több személy, tehát les kell. Helyesen: A mis padres les importa el dinero.",
           "en": "le: the pronoun for one person. It does not fit here, because «mis padres» (my parents) are several persons, so les is needed. Correct: A mis padres les importa el dinero.",
           "es": "le: pronombre para una persona. Aquí no encaja, porque «mis padres» son varias personas, por eso va les. Correcto: A mis padres les importa el dinero.",
-          "de": "le: das Pronomen für eine Person. Das passt hier nicht, weil «mis padres» (meine Eltern) mehrere Personen sind, deshalb steht les. Richtig: A mis padres les importa el dinero."
+          "de": "le: das Pronomen für eine Person. Das passt hier nicht, denn «mis padres» (meine Eltern) sind mehrere Personen, deshalb steht les. Richtig: A mis padres les importa el dinero."
         },
         "los": {
           "hu": "los: tárgyas névmás (őket). Ide nem illik, mert ezeknél az igéknél a személy részes névmást kap: les. Helyesen: A mis padres les importa el dinero.",
@@ -968,7 +968,7 @@
           "hu": "le: egy személy névmása. Ide nem illik, mert az «ustedes» több személy, tehát les kell. Helyesen: ¿A ustedes les interesa el cine?",
           "en": "le: the pronoun for one person. It does not fit here, because «ustedes» are several persons, so les is needed. Correct: ¿A ustedes les interesa el cine?",
           "es": "le: pronombre para una persona. Aquí no encaja, porque «ustedes» son varias personas, por eso va les. Correcto: ¿A ustedes les interesa el cine?",
-          "de": "le: das Pronomen für eine Person. Das passt hier nicht, weil «ustedes» mehrere Personen sind, deshalb steht les. Richtig: ¿A ustedes les interesa el cine?"
+          "de": "le: das Pronomen für eine Person. Das passt hier nicht, denn «ustedes» sind mehrere Personen, deshalb steht les. Richtig: ¿A ustedes les interesa el cine?"
         }
       },
       "examples": [
@@ -1191,7 +1191,7 @@
       "kind": "why",
       "id": "vcg-why-02",
       "es": "Me duele la cabeza.",
-      "target": "la cabeza",
+      "target": "la",
       "tr": {
         "hu": "Fáj a fejem.",
         "en": "My head hurts.",
