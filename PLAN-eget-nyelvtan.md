@@ -194,7 +194,12 @@ Párhuzamos agent: `feat/learn-words-open` (`C:\AI\kimacha-wt-learn-open`) a `da
   - minta (választós): «Mis abuelos viven en una ___ en Puebla.» → casita
   - minta (választós): «¿Dónde está Ana? ___ estaba aquí.» → Ahorita
   - minta (form): «Quiero una ___ de té caliente. (taza + -ita)» → tacita
-- [ ] F-10. `oraciones-consecutivas` (B2, új téma) → kész, ha: ugyanaz
+- [x] F-10. `oraciones-consecutivas` (B2, új téma) → kész, ha: ugyanaz · 05:50 · audit 0/0, jest 1995 ok, tsc 0, lint 0 err · sáv `full`: egy mondat sem marad gyárthatatlan nélküle (az así que / por lo tanto a `marcadores-discursivos`-ban is áll), későbbi téma nem épül rá, vizsga-igényt külön nem ellenőriztem · 12 választós + 1 match (6 pár) + 12 form (tábla `oraciones-consecutivas-formas`, row[0] = lyukas mondat + zárójelben a szó vagy az ige: `(tanto)`, `(tan / tanto)`, `(ir, nosotros, indefinido)`; cella = a tan / tanto alak vagy az eredmény igéje: tantas, tanta, tanto, tantos, tan, fuimos, abrimos, durmió) + 7 why (rule-név: tan + mn./hat. / tanto + fn. / ige + tanto que / así que / por eso / por lo tanto / de modo que); transform és `tense` nincs (nem igeidős téma: a szerkezet a mellette álló szó szófaján múlik); unit `b2-oraciones`, syllabus-sor a `finales-causales` után; minden választósban EGY opció helyes: az összekötő-tételekben a rossz opciók ok-irányú (porque), célos (para que) vagy kérdő (por qué) alakok, nem szinonim összekötők (así que / por eso / por lo tanto / de modo que sehol nincs egymás opciója), a kötőmód-tételben igenlő főmondat után csak a kijelentő jó, a tan ... que / tan ... como párban a mondat vagy tagmondatot, vagy összehasonlítást követel; a `wrong` mondat-specifikus, nem állít hamis általános szabályt; mexikói szóhasználat (carro, manejar, camión, boleto, mamá, papá); glossary üres; tesztek: speakNoSpanish 75→76, syllabusEn 75→76 + ujjlenyomat · hash: a `feat(grammar): oraciones-consecutivas lesson (nyelvtan)` commit
+  - minta (választós): «Estoy ___ cansada que no puedo hablar.» → tan
+  - minta (választós): «Hace mucho frío; ___ me puse el abrigo.» → por eso
+  - minta (választós): «Mi tío es tan alto ___ no cabe en el carro.» → que
+  - minta (form): «Tiene ___ dinero que no necesita trabajar. (tanto)» → tanto
+  - minta (form): «Perdimos el camión, así que ___ a pie. (ir, nosotros, indefinido)» → fuimos
 
 ## BRIEF F-sor (2026-10-01, új téma a tantervbe, tételenként EGY agent)
 

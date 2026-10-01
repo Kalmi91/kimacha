@@ -127,6 +127,7 @@ export const GRAMMAR_TIER: Record<string, GrammarTier> = {
   'lo-neutro': 'exam',
   'gerundio-participio-construcciones': 'exam',
   'verbos-de-cambio': 'exam',
+  'oraciones-consecutivas': 'full',
   // --- C1 ---
   'futuro-condicional-perfecto': 'exam',
   'probabilidad-con-tiempos': 'exam',
@@ -642,6 +643,13 @@ export const GRAMMAR_SYLLABUS: SyllabusTopic[] = [
     unit: 'b2-oraciones',
     title: { hu: 'Cél és ok: para que, porque, ya que', en: 'Purpose and cause: para que, porque, ya que', es: 'Finales y causales', de: 'Final- und Kausalsätze' },
     blurb: { hu: 'Para que + kötőmód, porque + kijelentő.', en: 'Para que + subjunctive, porque + indicative.', es: 'Para que + subjuntivo, porque + indicativo.', de: 'Para que + Subjuntivo, porque + Indikativ.' },
+  },
+  {
+    id: 'oraciones-consecutivas',
+    level: 'B2',
+    unit: 'b2-oraciones',
+    title: { hu: 'Következmény: tan ... que, así que, por eso', en: 'Result: tan ... que, así que, por eso', es: 'Consecutivas: tan ... que, así que, por eso', de: 'Konsekutivsätze: tan ... que, así que, por eso' },
+    blurb: { hu: 'Tan cansado que, tanto trabajo que, así que: mi lett az eredménye.', en: 'Tan cansado que, tanto trabajo que, así que: what came of it.', es: 'Tan cansado que, tanto trabajo que, así que: el resultado.', de: 'Tan cansado que, tanto trabajo que, así que: das Ergebnis.' },
   },
   {
     id: 'lo-neutro',
