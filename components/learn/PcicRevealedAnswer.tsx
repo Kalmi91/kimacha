@@ -6,7 +6,7 @@ import { t } from '@/lib/i18n';
 import { charDiff } from '@/lib/charDiff';
 import { speechLang } from '@/lib/languages';
 import type { PcicItem, PcicTarget } from '@/data/pcic';
-import type { PcicGrade } from '@/lib/pcicMatch';
+import { pcicAlternatives, type PcicGrade } from '@/lib/pcicMatch';
 import { sm2PreviewDays, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
 import { sensesFor } from '@/lib/pcicSenses';
 import ResultBadge from '@/components/ResultBadge';
@@ -66,6 +66,12 @@ export default function PcicRevealedAnswer({
   // szó csak egyszer látszik (a rózsaszín sor a hangszóróval).
   const typedExact = typedAnswer.trim().toLowerCase() === grade.best.trim().toLowerCase();
 
+  // PLAN-tobbjelentes 3. lépés (SZ8): ha a válasznak több alternatívája van (S1, pl. "el carro /
+  // el coche"), a mutatott helyes alak alatt a többi is látszik, hogy a tanuló tudja, melyik még jó.
+  const alsoAlternatives = pcicAlternatives(target === 'es' ? currentItem.es : currentItem.en).filter(
+    (alt) => alt !== grade.best
+  );
+
   return (
     <>
       <View style={styles.resultSection}>
@@ -95,6 +101,17 @@ export default function PcicRevealedAnswer({
             <Text style={styles.speakIcon}>🔊</Text>
           </Pressable>
         </View>
+        {alsoAlternatives.length > 0 && (
+          <Text testID="learn-also" style={[styles.alsoLine, { color: colors.tabIconDefault }]}>
+            {s.pcic.alsoLabel}:{' '}
+            {alsoAlternatives.map((alt, i) => (
+              <Text key={alt}>
+                {i > 0 ? ' · ' : ''}
+                <Text style={styles.alsoAlt}>{alt}</Text>
+              </Text>
+            ))}
+          </Text>
+        )}
         {/* s2 (anki-ui-terv.html): ékezet-szigor KI + csak-ékezet eltérés
             -> a diff sárga jelölése mellett kimondva is 100%-nak számít. */}
         {grade.accentOnly && (
@@ -207,6 +224,15 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     gap: 8,
     marginTop: 8,
+  },
+  // PLAN-tobbjelentes 3. lépés: "also: b · c" sor a helyes alak alatt.
+  alsoLine: {
+    fontSize: 13,
+    textAlign: 'center',
+    marginTop: 4,
+  },
+  alsoAlt: {
+    fontWeight: '700',
   },
   // s2 (anki-ui-terv.html): "Missing accent, counted as correct" sor.
   accentNote: {

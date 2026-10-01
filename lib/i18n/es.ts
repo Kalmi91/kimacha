@@ -339,6 +339,7 @@ const es: Strings = {
     chooseLevel: 'Elige el nivel',
     next: (label: string) => `Siguiente → ${label}`,
     accentForgiven: 'Falta el acento, se cuenta como correcto',
+    alsoLabel: 'también',
     levelBeginner: 'Principiante',
     levelElementary: 'Elemental',
     levelIntermediate: 'Intermedio',
