@@ -126,7 +126,12 @@ Párhuzamos agent: `feat/learn-words-open` (`C:\AI\kimacha-wt-learn-open`) a `da
   - minta (választós): «¿___ a mi jefe? Se llama Diego.» → Conoces / Sabes / Conozco
   - minta (választós): «Mis padres ___ muy bien esta ciudad.» → conocen / saben / conocemos
   - minta (form): row[0] «Quiero ___ conducir, pero no tengo coche.» → saber
-- [ ] 8. `por-para-avanzado` (B1 exam) új lecke → kész, ha: ugyanaz
+- [x] 8. `por-para-avanzado` (B1 exam) új lecke → kész, ha: ugyanaz · 02:12 · audit 0/0, jest 1657 ok, tsc 0, lint 0 err · 12 választós + 1 match (6 pár) + 12 form (tábla `por-para-avanzado-expresiones`, row[0] = lyukas helyzet-mondat, cella = a rögzült kifejezés: por si acaso, para nada, para colmo, no es para tanto…) + 7 why; a por-para (A2) alapjait (cél, ok, ár, útvonal, por favor, por eso…) nem ismétli: por + inf (ok, ami megtörtént), ir/pasar por (érte menni), por = per, por aquí, ige + por (preocuparse), estar por + inf; para = összevetés (para ser…), trabajar para vs por, bueno/malo para, no estar para; syllabus-sor és sáv (exam) már megvolt (nem nyúltam hozzá), nincs glossary, nincs transform (nem igeidős téma); es.ts-ben a condicionales-tipo1 után, a subjuntivo-imperfecto előtt (syllabus-sorrend); teszt: speakNoSpanish 50→51; a `felicitó` és az `aún` nincs tanítva, ezért a mondatok átírva · hash: a `feat(grammar): por-para-avanzado lesson (nyelvtan)` commit
+  - minta (választós): «___ ser tan joven, habla muy bien inglés.» → Para / Por
+  - minta (választós): «Mañana paso ___ ti a las ocho.» → por / para
+  - minta (választós): «Hoy trabajo ___ mi compañero, porque está enfermo.» → por / para
+  - minta (form): row[0] «Perdí las llaves y, ___, empezó a llover.» → para colmo
+  - minta (form): row[0] «Rompí un vaso, pero ___.» → no es para tanto
 - [ ] 9. `se-impersonal-pasiva` (B1 exam) új lecke → kész, ha: ugyanaz
 - …és a probe szerinti folytatás: D `ojala-quizas`, `gerundio-participio-construcciones`, `lo-neutro`, `pasiva-ser-participio`, `subjuntivo-perfecto`, `futuro-condicional-perfecto`, `leismo-laismo`, `probabilidad-con-tiempos`, `relativos-complejos`; E `indefinidos`, `perifrasis`, `pluscuamperfecto`, `relativos`, `concesivas`.
 
