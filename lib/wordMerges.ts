@@ -1,4 +1,4 @@
-// GENERÁLT FÁJL, ne szerkeszd kézzel: node scripts/dedupe-words.mjs --write
+// GENERÁLT FÁJL (a generáló scripts/dedupe-words.mjs a PLAN-regi-szavak-ki 7. lépésében kikerült), ne szerkeszd kézzel.
 //
 // Törölt szó-id -> a megmaradt (alacsonyabb szintű) iker id-je. A DB-migráció
 // ezen a térképen viszi át a haladást, hogy a duplikátum-takarítás ne dobja el,

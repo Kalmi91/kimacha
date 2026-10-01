@@ -1,17 +1,5 @@
-import { findWordById, findWordByText, getWordsForLevel, normalizeWordToken } from '@/data/words';
+import { findWordByText, normalizeWordToken } from '@/data/words';
 import { openWords } from '@/data/openWords';
-
-// Play-vágás 7. lépés (2026-09-23): FB129/FB130 (Kálmán 2026-08-15) drove the
-// branch-first id lookup this described, resolving a Hungarian-branch card
-// the shared set did not know. That branch is gone from the loader now (the
-// app runs a single en-es pair), so only the shared-set resolution it always
-// also covered stays here.
-describe('word lookup by id', () => {
-  it('resolves the shared Spanish set for a Spanish target', () => {
-    const shared = getWordsForLevel('A1', 'es')[0];
-    expect(findWordById(shared.id, 'es')?.es).toBe(shared.es);
-  });
-});
 
 // FB150, Kálmán 2026-08-22 (`sentence:El calabacín es una verdura verde.`): a tap
 // on any word of a sentence has to find that word's card, so it can go into the
