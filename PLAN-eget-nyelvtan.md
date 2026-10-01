@@ -197,7 +197,10 @@ A „BRIEF új lecke (2026-10-01 …)” érvényes, a munkahely helyett ez a wo
   - minta: `Para el viernes ya ___ el informe.` → habré terminado
   - minta: `Yo, en tu lugar, ___ el contrato antes de firmar.` → habría leído
   - minta: `Para mañana ya ___ la tarea.` → habré hecho (nem: habré hacido)
-- [ ] B12. `leismo-laismo` (C1 exam) új lecke → kész, ha: ugyanaz
+- [x] B12. `leismo-laismo` (C1 exam) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `feat(grammar): leismo-laismo lesson (nyelvtan)` (02:40; audit 0 P1/0 P2, jest 1709 passed/132 suite, tsc 0, lint 0 error; 12 választós + 1 match + 12 form (egy tábla: 4 személy × ver/invitar/escribir/preguntar, a cella névmás + ige) + 7 why, nincs `tense`/transform (nem igeidős téma); glossary: conozco; a leísmo de persona (férfi, egyes szám, ibériai) csak a magyarázatban/`wrong`-ban, a lecke a latin-amerikai normát gyakoroltatja; a ch-01 és ch-12 `le` opciója ibériai leísmo, a `wrong` ezt kimondja)
+  - minta: `A mi jefe ___ vi ayer en la calle.` → lo (a le: ibériai leísmo, a lecke a latin-amerikai normát kéri)
+  - minta: `A mi hermana ___ dije la verdad.` → le (nem: la)
+  - minta: `A mis tías ___ mandé un mensaje anoche.` → les (nem: las)
 - [ ] B13. `probabilidad-con-tiempos` (C1 exam) új lecke → kész, ha: ugyanaz
 - [ ] B14. `relativos-complejos` (C1 exam) új lecke → kész, ha: ugyanaz
 

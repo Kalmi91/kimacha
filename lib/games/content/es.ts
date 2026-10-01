@@ -43,6 +43,7 @@ import grammarEsSubjuntivoImperfecto from '@/data/games/grammar/es/subjuntivo-im
 import grammarEsSubjuntivoPerfecto from '@/data/games/grammar/es/subjuntivo-perfecto.json';
 import grammarEsConcesivas from '@/data/games/grammar/es/concesivas.json';
 import grammarEsFuturoCondicionalPerfecto from '@/data/games/grammar/es/futuro-condicional-perfecto.json';
+import grammarEsLeismoLaismo from '@/data/games/grammar/es/leismo-laismo.json';
 import grammarEsCondicionalesTipo23 from '@/data/games/grammar/es/condicionales-tipo2-3.json';
 import grammarEsEstiloIndirecto from '@/data/games/grammar/es/estilo-indirecto.json';
 import grammarEsComparativosSuperlativos from '@/data/games/grammar/es/comparativos-superlativos.json';
@@ -134,6 +135,7 @@ export const esContent: LanguageContentBundle = {
     grammarEsSubjuntivoPerfecto,
     grammarEsConcesivas,
     grammarEsFuturoCondicionalPerfecto,
+    grammarEsLeismoLaismo,
     grammarEsCondicionalesTipo23,
     grammarEsEstiloIndirecto,
     grammarEsComparativosSuperlativos,
