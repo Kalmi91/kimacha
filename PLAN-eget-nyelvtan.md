@@ -152,6 +152,26 @@ Párhuzamos agent: `feat/learn-words-open` (`C:\AI\kimacha-wt-learn-open`) a `da
   - minta (transform): «No tenemos coche. (antes)» → Antes no teníamos coche.
 - Szándékosan kimarad: `indefinido-regular` / `-irregular` (az `indefinido-10-verbos` már 50 transformmal viszi, K2), `subjuntivo-disparadores` / `temporales-subjuntivo` (a `subjuntivo-presente-forma` 50 transformja ugyanez a fajta).
 
+- F-sor (02:55-től, az A sáv a T-sor után; skill F-lépés, leltár-bővítés, az első 5 téma Kálmánnak listázva 02:45-kor, utólag dobhatja):
+- [ ] F-1. `perfecto-vs-indefinido` (A2, új téma) → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit
+- [ ] F-2. `verbos-como-gustar` (A2, új téma) → kész, ha: ugyanaz
+- [ ] F-3. `subjuntivo-relativo` (B1, új téma) → kész, ha: ugyanaz
+- [ ] F-4. `verbos-preposicion` (B1, új téma) → kész, ha: ugyanaz
+- [ ] F-5. `verbos-de-cambio` (B2, új téma) → kész, ha: ugyanaz
+
+## BRIEF F-sor (2026-10-01, új téma a tantervbe, tételenként EGY agent)
+
+A „BRIEF új lecke” érvényes 1:1, ezekkel a kiegészítésekkel (a skill F-lépése, `SKILL.md` 124-129. sor):
+- Új téma = `lib/grammar/syllabus.ts` sor (id, level, a meglévő unitok közül a szintnek megfelelő, title ×4, blurb ×4) + sáv a `GRAMMAR_TIER`-ben + lecke + regisztráció + a darabszám- és ujjlenyomat-tesztek (`speakNoSpanish.test.ts`, `syllabusEn.test.ts`) frissítése, EGY commitban (minta: a `marcadores-temporales` commitja, 6d84d85). Ez az egyetlen kód, amit írhatsz.
+- Sáv a három mérhető jel szerint (hány mondat nem gyártható nélküle, hány későbbi téma épül rá, kéri-e a vizsga); ha bizonytalan, `full`. A választott sávot és egy mondat okát a PLAN-sorba írod.
+- Igeidős témánál (a tárgy igeideje a `TENSE_IDS`-ben) 50 transform + `tense`, a T3 mintájára jelölő-súgóval («Como en casa. (ayer)» → «Ayer comí en casa.»), `accept` a jelölő-helyzet változataira.
+- Tartalom tételenként:
+  - F-1 `perfecto-vs-indefinido`: pretérito perfecto vs indefinido; a latin-amerikai (mexikói) használat az alap (közeli múltra is indefinido; perfecto: tapasztalat «alguna vez», «ya / todavía no», le nem zárt időszak «este año»), a spanyolországi különbség csak a magyarázatban. 50 transform jelölő-súgóval (hoy / esta semana / ya / alguna vez vs ayer / el año pasado / en 2020).
+  - F-2 `verbos-como-gustar`: encantar, interesar, importar, molestar, doler, parecer, faltar, quedar (me queda bien); a kész `gustar` leckét nézd meg, ne ismételd.
+  - F-3 `subjuntivo-relativo`: ismeretlen / nem létező előzmény → kötőmód («Busco un piso que tenga balcón», «No hay nadie que sepa»), ismert → kijelentő («Tengo un piso que tiene balcón»); a kész `relativos` (B sáv, `C:\AI\kimacha-wt-eget-nyelvtan-b\data\games\grammar\es\relativos.json`, csak olvasd) és `subjuntivo-disparadores` leckére épül.
+  - F-4 `verbos-preposicion`: pensar en, soñar con, depender de, confiar en, acordarse de, casarse con, enamorarse de, tratar de, quedar en, insistir en; a form-tábla row[0] = ige + helyzet, cella = a gyártandó elöljáró + folytatás.
+  - F-5 `verbos-de-cambio`: ponerse, volverse, hacerse, quedarse, convertirse en, llegar a ser; a különbség (hirtelen/átmeneti, tartós jellem, akarattal elért, végeredmény) a `why` itemekben.
+
 ## BRIEF T-sor (2026-10-01, 50 transform meglévő leckébe, tételenként EGY agent)
 
 Munkahely és tiltott fájlok: mint a javítás-briefben. A transform-szabály a skill (`C:\Users\kalma\.claude\skills\eget-nyelvtan\SKILL.md`) 147-166. sora 1:1: 50 `transform` item, 10 ige × 5 mondat, vegyes személyek, kijelentő / tagadó / kérdő, `tense` minden új itemen, `wordIds` a mondat minden tartalmas szavára (kártya-id stringként, csak `A0 … <lecke szintje>`), ismétlés-plafon (egy tartalmas szó max 3×, egy szerkezet max 2×), `prompt.es ≠ answer`, `accept` a kitett-névmásos / szórendi változatra, max 12 szó, természetes mondat.
