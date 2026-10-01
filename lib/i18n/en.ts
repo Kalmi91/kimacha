@@ -15,6 +15,8 @@ export default {
     wrong: 'Wrong',
     next: 'Next',
     typeSentence: 'Type the sentence',
+    // PLAN-fb1001 K4: a válasz-beírómező szürke placeholdere, a célnyelv nevével.
+    typeIn: (lang: string): string => (lang === 'es' ? 'Type in Spanish' : 'Type in English'),
   },
   buttons: {
     spelling: 'Spelling',

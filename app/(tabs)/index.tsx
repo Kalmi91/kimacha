@@ -811,6 +811,8 @@ export default function PcicScreen() {
             onSubmitEditing={grade ? () => nextGrade && handleGrade(nextGrade) : handleCheck}
             editable={!grade}
             autoFocus={!grade}
+            placeholder={s.card.typeIn(target)}
+            placeholderTextColor={colors.tabIconDefault}
             {...answerInputProps}
           />
 

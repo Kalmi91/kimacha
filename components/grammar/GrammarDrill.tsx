@@ -367,6 +367,8 @@ function FormDrillItem({
             value={value}
             onChangeText={setValue}
             editable={!checked}
+            placeholder={s.card.typeIn(learnedLang)}
+            placeholderTextColor={g.mu}
             autoCapitalize="none"
             autoCorrect={false}
           />
@@ -409,6 +411,8 @@ function FormDrillItem({
         value={value}
         onChangeText={setValue}
         editable={!checked}
+        placeholder={s.card.typeIn(learnedLang)}
+        placeholderTextColor={colors.tabIconDefault}
         autoCapitalize="none"
         autoCorrect={false}
       />
@@ -720,6 +724,8 @@ function TransformDrillItem({
             value={input}
             onChangeText={setInput}
             editable={result === null}
+            placeholder={s.card.typeIn('es')}
+            placeholderTextColor={g.mu}
           />
         </BrutalBox>
 
@@ -775,6 +781,8 @@ function TransformDrillItem({
         value={input}
         onChangeText={setInput}
         editable={result === null}
+        placeholder={s.card.typeIn('es')}
+        placeholderTextColor={colors.tabIconDefault}
       />
 
       {result === null ? (

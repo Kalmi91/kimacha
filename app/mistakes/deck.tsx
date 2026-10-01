@@ -170,6 +170,8 @@ export default function MistakesDeckScreen() {
             onSubmitEditing={checked ? () => handleGrade(nextGrade) : handleCheck}
             editable={!checked}
             autoFocus
+            placeholder={s.card.typeIn('es')}
+            placeholderTextColor={colors.tabIconDefault}
             {...answerInputProps}
           />
 
