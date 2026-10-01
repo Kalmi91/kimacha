@@ -36,7 +36,7 @@ import SpeakButton from '@/components/SpeakButton';
 import { isInfinitive } from '@/lib/grammar/tableShape';
 import { useDiffStyles } from '@/lib/useDiffStyles';
 import CardShell from '@/components/learn/CardShell';
-import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
+import DockedAction, { DOCK_RESERVE, FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
 
 // PLAN-play 13. lépés (s6, jóváhagyó lap
@@ -306,7 +306,7 @@ export default function TableDeckScreen() {
 
       <ScrollView
         style={styles.cardScroll}
-        contentContainerStyle={[styles.cardScrollContent, { paddingBottom: 16 + dockH + dockLift }]}
+        contentContainerStyle={[styles.cardScrollContent, { paddingBottom: FAB_CLEARANCE + dockH + dockLift }]}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"
       >

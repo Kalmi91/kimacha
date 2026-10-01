@@ -30,7 +30,7 @@ import SpeakButton from '@/components/SpeakButton';
 import BadgeRow from '@/components/learn/BadgeRow';
 import CardShell from '@/components/learn/CardShell';
 import { SkinBackdrop, SkinHeader, SkinSpeakLabel, SkinWord } from '@/components/skins/Slots';
-import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
+import DockedAction, { DOCK_RESERVE, FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
 import PcicRevealedAnswer from '@/components/learn/PcicRevealedAnswer';
 import MistakesEntry from '@/components/learn/MistakesEntry';
@@ -663,7 +663,7 @@ export default function PcicScreen() {
 
       <ScrollView
         style={styles.cardScroll}
-        contentContainerStyle={[styles.cardScrollContent, { paddingBottom: 16 + dockH + dockLift }]}
+        contentContainerStyle={[styles.cardScrollContent, { paddingBottom: FAB_CLEARANCE + dockH + dockLift }]}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"
       >

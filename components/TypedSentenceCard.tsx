@@ -7,7 +7,7 @@ import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { Card, brutalInputStyle } from '@/components/grammar/Brutal';
 import ResultBadge from '@/components/ResultBadge';
-import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
+import DockedAction, { DOCK_RESERVE, FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import { t } from '@/lib/i18n';
 import { gradeSentenceAnswer, suggestedGrade } from '@/lib/pcicMatch';
 import { stripSentencePunct } from '@/lib/sentenceCards';
@@ -79,7 +79,7 @@ export default function TypedSentenceCard({
     <>
       <ScrollView
         style={styles.scroll}
-        contentContainerStyle={{ paddingBottom: 16 + dockH + dockLift }}
+        contentContainerStyle={{ paddingBottom: FAB_CLEARANCE + dockH + dockLift }}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"
       >

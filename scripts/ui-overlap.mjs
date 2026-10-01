@@ -29,6 +29,8 @@
 // összeérő sorokat / betűket).
 // A díszeket rajzoló elemek (data-testid="decor-...") és leszármazottaik kimaradnak; ugyanígy
 // az átmeneti, szándékosan a tartalom fölé rajzolt UsageToast (data-testid="usage-toast").
+// A lebegő 💬 gomb (data-testid="feedback-fab") a görgetés tetején kimarad (a görgetés megoldja),
+// a görgető aljára állított vizsgálatban viszont része az átfedés-vizsgálatnak.
 //
 // Kimenet: ui-overlap-report.json + PNG a hibás kombinációkról az ui-shots/ mappába
 // (--shots: minden kombinációról). Kilépési kód: 0 = nincs hiba, 1 = van hiba, 2 = a teszt
@@ -367,7 +369,8 @@ function pageScrollBottom() {
 
 // A vizsgálat: { issues: [{ type, text, other? }], stats }. opts.underDock: a görgetés tetején
 // a dokkolt sáv (learn-dock) alá lógó, még görgethető tartalom nem átfedés (az aljára görgetve
-// külön vizsgáljuk, hogy kiér-e a sáv alól).
+// külön vizsgáljuk, hogy kiér-e a sáv alól). opts.fab: a 💬 gomb is része a vizsgálatnak (az aljára
+// görgetett állapotban semmi nem lóghat alá; a tetején a görgetés megoldja, ott kizárt).
 function pageAnalyze(checks, opts = {}) {
   const want = new Set(checks);
   const vw = document.documentElement.clientWidth;
@@ -376,8 +379,8 @@ function pageAnalyze(checks, opts = {}) {
   const SKIP = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT', 'TITLE', 'META', 'LINK', 'HEAD']);
   const visible = (el) => el.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true });
   // díszek + a szándékosan a tartalom fölé rajzolt lebegő elemek (UsageToast, 💬 gomb)
-  const IGNORE = '[data-testid^="decor-"], [data-testid^="usage-toast"], [data-testid="feedback-fab"]';
-  const inDecor = (el) => !!el.closest(IGNORE) || (el.innerText ?? '').trim() === '💬';
+  const IGNORE = `[data-testid^="decor-"], [data-testid^="usage-toast"]${opts.fab ? '' : ', [data-testid="feedback-fab"]'}`;
+  const inDecor = (el) => !!el.closest(IGNORE) || (!opts.fab && (el.innerText ?? '').trim() === '💬');
   const desc = (el) => {
     const r = el.getBoundingClientRect();
     const id = el.getAttribute('data-testid') ?? el.closest('[data-testid]')?.getAttribute('data-testid');
@@ -898,7 +901,7 @@ async function main() {
           const rest = checks.filter((k) => k !== 'contrast');
           if (rest.length && (await cdp.evaluate(`(${pageScrollBottom})()`))) {
             await settle();
-            const res2 = await cdp.evaluate(`(${pageAnalyze})(${JSON.stringify(rest)}, {})`);
+            const res2 = await cdp.evaluate(`(${pageAnalyze})(${JSON.stringify(rest)}, { fab: true })`);
             const seen = new Set(comboIssues.map((i) => `${i.type}|${i.text}|${i.other ?? ''}`));
             bottomIssues = res2.issues.filter((i) => !seen.has(`${i.type}|${i.text}|${i.other ?? ''}`));
             comboIssues.push(...bottomIssues);
