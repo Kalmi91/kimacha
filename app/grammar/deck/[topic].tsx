@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
-import { ActivityIndicator, Keyboard, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { ActivityIndicator, Keyboard, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
+import { Text } from '@/components/KText';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
@@ -222,7 +223,7 @@ export default function TableDeckScreen() {
         <Text style={[styles.back, { color: colors.text }]}>←</Text>
       </Pressable>
       )}
-      <FitText base={17} maxLines={2} reserve={g.brutal ? 190 : 150} caps={g.brutal} style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>
+      <FitText variant="title" base={17} maxLines={2} reserve={g.brutal ? 190 : 150} caps={g.brutal} style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>
         {lessonTitle}
       </FitText>
       {g.brutal ? (
@@ -260,7 +261,7 @@ export default function TableDeckScreen() {
         {progressBar}
         <View style={styles.doneBody}>
           <Text style={styles.doneEmoji}>🎉</Text>
-          <Text style={[styles.doneTitle, { color: colors.text }]}>{s.tableDeck.completeTitle(items.length)}</Text>
+          <Text variant="title" style={[styles.doneTitle, { color: colors.text }]}>{s.tableDeck.completeTitle(items.length)}</Text>
           {g.brutal ? (
             <BrutalButton testID="tabledeck-start-again" fill="a" label={s.tableDeck.startAgain} onPress={handleStartAgain} style={styles.brutalBtn} />
           ) : (
@@ -317,7 +318,7 @@ export default function TableDeckScreen() {
                 ? s.tableDeck.wordPromptCaptionEn
                 : s.tableDeck.wordPromptCaption}
           </Text>
-          <FitText base={32} maxLines={3} reserve={100} style={[styles.promptBig, { color: colors.text }]}>
+          <FitText variant="word" base={32} maxLines={3} reserve={100} style={[styles.promptBig, { color: colors.text }]}>
             {current.promptBig}
           </FitText>
           {/* FB390: a meaning-table cell (lib/grammar/tableDeck.ts) has no
@@ -365,7 +366,7 @@ export default function TableDeckScreen() {
                     ))}
                   </Text>
                   <View style={styles.frontRow}>
-                    <Text style={[styles.correctAnswer, { color: colors.tint }]}>{current.answer}</Text>
+                    <Text variant="word" style={[styles.correctAnswer, { color: colors.tint }]}>{current.answer}</Text>
                     <SpeakButton onPress={() => speak(current.answer, speechLang(learnedLang))} style={styles.speakBtn} iconStyle={styles.speakIcon} />
                   </View>
                 </>

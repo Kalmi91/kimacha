@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
-import { StyleSheet, Text, View, ScrollView, Pressable } from 'react-native';
+import { StyleSheet, View, ScrollView, Pressable } from 'react-native';
+import { Text } from '@/components/KText';
 import { useFocusEffect } from 'expo-router';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
@@ -25,6 +26,7 @@ import { countKnown, countGraduated, countLearned } from '@/lib/pcicStats';
 import { countDoneToday } from '@/lib/pcicSession';
 import FeedbackButton from '@/components/FeedbackModal';
 import { Card, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
+import { SkinBackdrop } from '@/components/skins/Slots';
 
 const EMPTY_SCHEDULE: SchedulePreview = { dueNow: 0, buckets: [], scheduled: 0, nextDue: null };
 
@@ -142,8 +144,9 @@ export default function StatsScreen() {
 
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
+      <SkinBackdrop />
       <ScrollView style={styles.container} contentContainerStyle={[styles.content, g.brutal && styles.brutalContent]}>
-        <Text style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.stats.title}</Text>
+        <Text variant="title" style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.stats.title}</Text>
 
       {/* PLAN-play 12. lépés (s5): a PCIC-szint jelvénye + known/total (interval
           >= 21 nap), alatta a másik 3 PCIC-szint known-száma. */}
@@ -230,7 +233,7 @@ export default function StatsScreen() {
         ) : (
           <>
             <Text style={styles.goalDoneEmoji}>🏆</Text>
-            <Text style={styles.goalDoneTitle}>{s.stats.goalReached}</Text>
+            <Text variant="title" style={styles.goalDoneTitle}>{s.stats.goalReached}</Text>
           </>
         )}
       </Card>
@@ -268,8 +271,8 @@ export default function StatsScreen() {
       </Text>
       <View style={styles.tileRow}>
         <Card fill="b" style={styles.tile} classicStyle={styles.tileClassic} boxStyle={styles.tileBox}>
-          <Text style={[tileValueStyle(colors.accent), g.brutal && { color: g.onFill }]}>{streak}</Text>
-          <Text style={[styles.tileLabel, { color: colors.tabIconDefault }, g.brutal && { color: g.onFill }]}>{s.done.streak}</Text>
+          <Text style={[tileValueStyle(colors.accent), g.brutal && { color: g.onB }]}>{streak}</Text>
+          <Text style={[styles.tileLabel, { color: colors.tabIconDefault }, g.brutal && { color: g.onB }]}>{s.done.streak}</Text>
         </Card>
         <Card style={styles.tile} classicStyle={styles.tileClassic} boxStyle={styles.tileBox}>
           <Text style={tileValueStyle(colors.accent)}>{known}</Text>

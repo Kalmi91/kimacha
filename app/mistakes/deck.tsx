@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
-import { ActivityIndicator, Keyboard, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { ActivityIndicator, Keyboard, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
+import { Text } from '@/components/KText';
 import { useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
@@ -119,7 +120,7 @@ export default function MistakesDeckScreen() {
         <Text style={[styles.back, { color: colors.text }]}>←</Text>
       </Pressable>
       )}
-      <Text style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]} numberOfLines={1}>
+      <Text variant="title" style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]} numberOfLines={1}>
         {s.mistakes.title}
       </Text>
       <View style={styles.backSpacer} />
@@ -132,7 +133,7 @@ export default function MistakesDeckScreen() {
         {header}
         <View style={styles.doneBody}>
           <Text style={styles.doneEmoji}>🎉</Text>
-          <Text style={[styles.doneTitle, { color: colors.text }]}>{s.mistakes.allDone}</Text>
+          <Text variant="title" style={[styles.doneTitle, { color: colors.text }]}>{s.mistakes.allDone}</Text>
           {g.brutal ? (
             <BrutalButton fill="a" label={s.mistakes.title} onPress={() => router.back()} style={styles.brutalDone} />
           ) : (
@@ -158,7 +159,7 @@ export default function MistakesDeckScreen() {
         keyboardDismissMode="on-drag"
       >
         <CardShell compact colors={colors} chip={CHIP_LABEL[currentCard.kind](s)} onPress={() => Keyboard.dismiss()}>
-          <Text style={[styles.promptBig, { color: colors.text }]}>{currentCard.prompt}</Text>
+          <Text variant="word" style={[styles.promptBig, { color: colors.text }]}>{currentCard.prompt}</Text>
           {currentCard.kind === 'drill' && (
             <Text style={[styles.promptEn, { color: colors.tabIconDefault }]}>{currentCard.promptEn}</Text>
           )}
@@ -185,7 +186,7 @@ export default function MistakesDeckScreen() {
                 ))}
               </Text>
               <View style={styles.frontRow}>
-                <Text style={[styles.correctAnswer, { color: colors.tint }]}>{currentCard.answer}</Text>
+                <Text variant="word" style={[styles.correctAnswer, { color: colors.tint }]}>{currentCard.answer}</Text>
                 <Pressable onPress={() => speak(currentCard.answer, speechLang('es'))} style={styles.speakBtn}>
                   <Text style={styles.speakIcon}>🔊</Text>
                 </Pressable>
@@ -219,7 +220,7 @@ export default function MistakesDeckScreen() {
                       boxStyle={styles.brutalGradeBox}
                       onPress={() => handleGrade(gr)}
                     >
-                      <Text style={[styles.gradeLabel, { color: g.onFill, fontWeight: '500', textTransform: 'uppercase' }]}>{s.pcic[gr]}</Text>
+                      <Text style={[styles.gradeLabel, { color: gr === 'good' ? g.onA : g.onB, fontWeight: '500', textTransform: 'uppercase' }]}>{s.pcic[gr]}</Text>
                     </BrutalBox>
                   );
                 }

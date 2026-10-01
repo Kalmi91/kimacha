@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
+import { Text } from '@/components/KText';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
@@ -140,7 +141,7 @@ export default function GrammarLessonScreen() {
           <Pressable onPress={() => router.back()} hitSlop={12}>
             <Text style={[styles.back, { color: colors.text }]}>←</Text>
           </Pressable>
-          <FitText base={17} maxLines={2} reserve={100} style={[styles.title, { color: colors.text }]}>
+          <FitText variant="title" base={17} maxLines={2} reserve={100} style={[styles.title, { color: colors.text }]}>
             {entry?.title[contentLang] ?? String(topicId)}
           </FitText>
           <View style={{ width: 24 }} />
@@ -274,7 +275,7 @@ export default function GrammarLessonScreen() {
       </BrutalBox>
       {/* FB404/405/413: a hosszú (spanyol) cím két sorba törik és lépcsőzötten kisebb,
           nem vágódik le "..."-tal. */}
-      <FitText base={17} maxLines={2} reserve={150} caps style={[styles.title, styles.brutalTitle, { color: g.ink }]}>
+      <FitText variant="title" base={17} maxLines={2} reserve={150} caps style={[styles.title, styles.brutalTitle, { color: g.ink }]}>
         {lessonTitle}
       </FitText>
       <Sticker label={lesson.level} fill="a" rotate={5} />
@@ -284,7 +285,7 @@ export default function GrammarLessonScreen() {
       <Pressable onPress={() => (phase === 'lesson' ? router.back() : setPhase('lesson'))} hitSlop={12}>
         <Text style={[styles.back, { color: colors.text }]}>←</Text>
       </Pressable>
-      <FitText base={17} maxLines={2} reserve={130} style={[styles.title, { color: colors.text }]}>
+      <FitText variant="title" base={17} maxLines={2} reserve={130} style={[styles.title, { color: colors.text }]}>
         {lessonTitle}
       </FitText>
       <Text style={[styles.levelTag, { color: colors.tint }]}>{lesson.level}</Text>
@@ -369,8 +370,8 @@ export default function GrammarLessonScreen() {
       const missAt = miss ? miss.sentence.indexOf(miss.highlight) : -1;
       const stat = (label: string, value: string, fill: 'paper' | 'b') => (
         <BrutalBox fill={fill} style={styles.brutalStatWrap} boxStyle={styles.brutalStat}>
-          <Text style={[styles.brutalStatValue, { color: fill === 'b' ? g.onFill : g.ink }]}>{value}</Text>
-          <Text style={[styles.brutalStatLabel, { color: fill === 'b' ? g.onFill : g.mu }]}>{label}</Text>
+          <Text style={[styles.brutalStatValue, { color: fill === 'b' ? g.onB : g.ink }]}>{value}</Text>
+          <Text style={[styles.brutalStatLabel, { color: fill === 'b' ? g.onB : g.mu }]}>{label}</Text>
         </BrutalBox>
       );
       return (
@@ -411,7 +412,7 @@ export default function GrammarLessonScreen() {
                 <Text style={[styles.brutalMiss, { color: g.ink }]}>
                   {missAt >= 0 ? miss.sentence.slice(0, missAt) : miss.sentence}
                   {missAt >= 0 ? (
-                    <Text style={{ backgroundColor: g.b, color: g.onFill }}>{miss.highlight}</Text>
+                    <Text style={{ backgroundColor: g.b, color: g.onB }}>{miss.highlight}</Text>
                   ) : null}
                   {missAt >= 0 ? miss.sentence.slice(missAt + miss.highlight.length) : ''}
                 </Text>

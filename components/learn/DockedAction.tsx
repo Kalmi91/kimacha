@@ -1,4 +1,5 @@
-import { StyleSheet, View, Text, Pressable, type LayoutChangeEvent } from 'react-native';
+import { StyleSheet, View, Pressable, type LayoutChangeEvent } from 'react-native';
+import { Text } from '@/components/KText';
 
 import Colors from '@/constants/Colors';
 import { useGrammarColors } from '@/lib/grammarColors';
@@ -39,7 +40,7 @@ export default function DockedAction({ label, onPress, tone, color, bottom, colo
     >
       {g.brutal ? (
         // NY19: Check = ink kitöltés, Next = a kitöltés.
-        <BrutalButton testID="learn-docked-action" label={label} fill={tone === 'next' ? 'a' : 'ink'} onPress={onPress} />
+        <BrutalButton testID="learn-docked-action" label={label} fill={tone === 'next' ? 'a' : 'ink'} icon={tone === 'next' ? '→' : '✓'} onPress={onPress} />
       ) : (
         <Pressable style={[styles.inlineCheckBtn, { backgroundColor: color ?? TONE_COLOR[tone] }]} onPress={onPress}>
           <Text style={styles.inlineCheckText}>{label}</Text>
