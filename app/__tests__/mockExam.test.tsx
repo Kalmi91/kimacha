@@ -407,4 +407,16 @@ describe('Próbavizsga: nem elérhető szint', () => {
     expect(mockBack).toHaveBeenCalled();
     s.unmount();
   });
+
+  it('es→en irányban az A2 próbavizsga a felület nyelvén (spanyolul) nyílik', async () => {
+    setLanguage('es');
+    await getDb().setOnboarding('es', 'en');
+    mockLevel = 'A2';
+    const s = await mount();
+    expect(s.getByText('Examen de práctica A2')).toBeTruthy();
+    expect(s.getByText('Basado en el formato oficial del examen A2')).toBeTruthy();
+    expect(s.getByText('Para aprobar: al menos 30 de 50 puntos en los dos grupos')).toBeTruthy();
+    expect(s.getByTestId('mock-begin')).toBeTruthy();
+    s.unmount();
+  });
 });
