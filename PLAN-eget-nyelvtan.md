@@ -185,7 +185,10 @@ A „BRIEF új lecke (2026-10-01 …)” érvényes, a munkahely helyett ez a wo
   - minta: `La casa fue ___ por mi abuelo.` → construida (nem: construido)
   - minta: `Las fotos ___ tomadas por mi hermano.` → fueron (nem: fue)
   - minta: `Antes, los niños ___ (llevar) al colegio por su tío.` → eran llevados
-- [ ] B9. `subjuntivo-perfecto` (B2 exam, SUBJ) új lecke → kész, ha: ugyanaz
+- [x] B9. `subjuntivo-perfecto` (B2 exam, SUBJ) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `feat(grammar): subjuntivo-perfecto lesson (nyelvtan)` (02:02; audit 0 P1/0 P2, jest 1670 passed/132 suite, tsc 0, lint 0 error; 12 választós + 1 match + 12 form + 7 why, nincs `tense`/transform; glossary: hubiera, hubieras, hubieran, hubiéramos, habría, habrás, llámame; egy tábla (haya + participio), a hubiera-alakok a törzsben, mert két azonos igés tábla a form-kérdésben igeidő-jelzés nélkül félreérthető; TenseId-bővítés kell: subjuntivo-perfecto, /kimacha_nyelvtan)
+  - minta: `No creo que Ana ya ___ llegado.` → haya (nem: ha)
+  - minta: `Ojalá ___ (yo) estudiado más antes del examen.` → hubiera (nem: haya)
+  - minta: `hacer` + `vosotros` → hayáis hecho
 - [ ] B10. `concesivas` (B2 full) új lecke → kész, ha: ugyanaz
 - [ ] B11. `futuro-condicional-perfecto` (C1 exam) új lecke → kész, ha: ugyanaz
 - [ ] B12. `leismo-laismo` (C1 exam) új lecke → kész, ha: ugyanaz

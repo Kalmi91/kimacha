@@ -40,6 +40,7 @@ import grammarEsGerundioParticipio from '@/data/games/grammar/es/gerundio-partic
 import grammarEsLoNeutro from '@/data/games/grammar/es/lo-neutro.json';
 import grammarEsPasivaSerParticipio from '@/data/games/grammar/es/pasiva-ser-participio.json';
 import grammarEsSubjuntivoImperfecto from '@/data/games/grammar/es/subjuntivo-imperfecto.json';
+import grammarEsSubjuntivoPerfecto from '@/data/games/grammar/es/subjuntivo-perfecto.json';
 import grammarEsCondicionalesTipo23 from '@/data/games/grammar/es/condicionales-tipo2-3.json';
 import grammarEsEstiloIndirecto from '@/data/games/grammar/es/estilo-indirecto.json';
 import grammarEsComparativosSuperlativos from '@/data/games/grammar/es/comparativos-superlativos.json';
@@ -128,6 +129,7 @@ export const esContent: LanguageContentBundle = {
     grammarEsLoNeutro,
     grammarEsPasivaSerParticipio,
     grammarEsSubjuntivoImperfecto,
+    grammarEsSubjuntivoPerfecto,
     grammarEsCondicionalesTipo23,
     grammarEsEstiloIndirecto,
     grammarEsComparativosSuperlativos,
