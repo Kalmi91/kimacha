@@ -772,7 +772,7 @@
     },
     {
       "id": "fcp-ch-08",
-      "sentence": "Me prometió que para las cinco ya ___ todo.",
+      "sentence": "Me prometió que para las cinco ya ___ todo, pero no.",
       "options": [
         "habrá terminado",
         "habré terminado",
@@ -788,22 +788,22 @@
       },
       "wrong": {
         "habrá terminado": {
-          "hu": "A habrá terminado a közvetlen beszéd alakja, múlt idejű bevezető ige után át kell váltani; helyesen: Me prometió que para las cinco ya habría terminado todo.",
-          "en": "Habrá terminado is the direct-speech form, after a past-tense introducing verb it must shift; correctly: Me prometió que para las cinco ya habría terminado todo.",
-          "es": "Habrá terminado es la forma del estilo directo, tras un verbo introductor en pasado debe cambiar; correctamente: Me prometió que para las cinco ya habría terminado todo.",
-          "de": "Habrá terminado ist die Form der direkten Rede, nach einem einleitenden Verb in der Vergangenheit muss sie wechseln; richtig: Me prometió que para las cinco ya habría terminado todo."
+          "hu": "A habrá terminado azt mondaná, hogy az öt óra még előttünk áll; a pero no viszont azt mutatja, hogy a határidő már elmúlt, ezért a múlt szempontjából jövőbeli habría terminado kell; helyesen: Me prometió que para las cinco ya habría terminado todo, pero no.",
+          "en": "Habrá terminado would say that five o’clock is still ahead of us, but pero no shows that the deadline has already passed, so the future seen from the past, habría terminado, is needed; correctly: Me prometió que para las cinco ya habría terminado todo, pero no.",
+          "es": "Habrá terminado diría que las cinco todavía están por llegar, pero el «pero no» muestra que el plazo ya pasó, y entonces hace falta habría terminado, el futuro visto desde el pasado; correctamente: Me prometió que para las cinco ya habría terminado todo, pero no.",
+          "de": "Habrá terminado würde sagen, dass fünf Uhr noch bevorsteht, das pero no zeigt aber, dass die Frist schon vorbei ist, deshalb braucht man habría terminado, die Zukunft aus der Sicht der Vergangenheit; richtig: Me prometió que para las cinco ya habría terminado todo, pero no."
         },
         "habré terminado": {
-          "hu": "A habré terminado első személyű közvetlen beszéd, itt viszont egy másik személy ígért, és az időt is át kell váltani; helyesen: Me prometió que para las cinco ya habría terminado todo.",
-          "en": "Habré terminado is a first-person direct-speech form, but here another person made the promise, and the tense must shift too; correctly: Me prometió que para las cinco ya habría terminado todo.",
-          "es": "Habré terminado es una forma de estilo directo en primera persona, pero aquí prometió otra persona y además hay que cambiar el tiempo; correctamente: Me prometió que para las cinco ya habría terminado todo.",
-          "de": "Habré terminado ist eine Form der direkten Rede in der ersten Person, hier hat aber eine andere Person versprochen, und auch die Zeit muss wechseln; richtig: Me prometió que para las cinco ya habría terminado todo."
+          "hu": "A habré terminado első személyű közvetlen beszéd, itt viszont egy másik személy ígért, és az időt is át kell váltani; helyesen: Me prometió que para las cinco ya habría terminado todo, pero no.",
+          "en": "Habré terminado is a first-person direct-speech form, but here another person made the promise, and the tense must shift too; correctly: Me prometió que para las cinco ya habría terminado todo, pero no.",
+          "es": "Habré terminado es una forma de estilo directo en primera persona, pero aquí prometió otra persona y además hay que cambiar el tiempo; correctamente: Me prometió que para las cinco ya habría terminado todo, pero no.",
+          "de": "Habré terminado ist eine Form der direkten Rede in der ersten Person, hier hat aber eine andere Person versprochen, und auch die Zeit muss wechseln; richtig: Me prometió que para las cinco ya habría terminado todo, pero no."
         },
         "terminará": {
-          "hu": "A terminará egyszerű jövő, nem fejezi ki, hogy a munka ötre már lezárul, és az idő sem váltott át; helyesen: Me prometió que para las cinco ya habría terminado todo.",
-          "en": "Terminará is the simple future, it does not say the work is complete by five, and the tense has not shifted either; correctly: Me prometió que para las cinco ya habría terminado todo.",
-          "es": "Terminará es el futuro simple, no dice que el trabajo ya estará terminado a las cinco, y el tiempo tampoco ha cambiado; correctamente: Me prometió que para las cinco ya habría terminado todo.",
-          "de": "Terminará ist das einfache Futur, es sagt nicht, dass die Arbeit um fünf schon abgeschlossen ist, und die Zeit hat auch nicht gewechselt; richtig: Me prometió que para las cinco ya habría terminado todo."
+          "hu": "A terminará egyszerű jövő, nem fejezi ki, hogy a munka ötre már lezárul, és az idő sem váltott át; helyesen: Me prometió que para las cinco ya habría terminado todo, pero no.",
+          "en": "Terminará is the simple future, it does not say the work is complete by five, and the tense has not shifted either; correctly: Me prometió que para las cinco ya habría terminado todo, pero no.",
+          "es": "Terminará es el futuro simple, no dice que el trabajo ya estará terminado a las cinco, y el tiempo tampoco ha cambiado; correctamente: Me prometió que para las cinco ya habría terminado todo, pero no.",
+          "de": "Terminará ist das einfache Futur, es sagt nicht, dass die Arbeit um fünf schon abgeschlossen ist, und die Zeit hat auch nicht gewechselt; richtig: Me prometió que para las cinco ya habría terminado todo, pero no."
         }
       }
     },
@@ -1203,10 +1203,10 @@
             "de": "habré + Partizip: bis zu einem Zeitpunkt in der Zukunft abgeschlossene Handlung"
           },
           "wrong": {
-            "hu": "A habré a közvetlen beszéd alakja; a dijo után át kell váltani habría alakra.",
-            "en": "Habré is the direct-speech form; after dijo it has to shift to habría.",
-            "es": "Habré es la forma del estilo directo; tras dijo debe pasar a habría.",
-            "de": "Habré ist die Form der direkten Rede; nach dijo muss es zu habría wechseln."
+            "hu": "A habré a közvetlen beszéd alakja (dice que habrá); a dijo után az idő a múlt szempontjába tolódik, ezért habría áll.",
+            "en": "Habré is the direct-speech form (dice que habrá); after dijo the time shifts to the past point of view, so habría is used.",
+            "es": "Habré es la forma del estilo directo (dice que habrá); tras dijo el tiempo pasa al punto de vista del pasado, por eso va habría.",
+            "de": "Habré ist die Form der direkten Rede (dice que habrá); nach dijo verschiebt sich die Zeit auf die Sicht der Vergangenheit, deshalb steht habría."
           }
         },
         {
@@ -1342,7 +1342,7 @@
       "es": "Antes de las diez ya habremos salido.",
       "target": "habremos salido",
       "tr": {
-        "hu": "Tízig már elindulunk.",
+        "hu": "Tíz előtt már elindulunk.",
         "en": "By ten we will have left.",
         "es": "Antes de las diez ya habremos salido.",
         "de": "Bis zehn Uhr sind wir schon losgegangen."
@@ -1393,7 +1393,7 @@
       "es": "Si hubiéramos salido antes, habríamos llegado a tiempo.",
       "target": "habríamos llegado",
       "tr": {
-        "hu": "Ha korábban indulunk, időben érkeztünk volna.",
+        "hu": "Ha korábban indultunk volna, időben érkeztünk volna.",
         "en": "If we had left earlier, we would have arrived on time.",
         "es": "Si hubiéramos salido antes, habríamos llegado a tiempo.",
         "de": "Wenn wir früher losgegangen wären, wären wir rechtzeitig angekommen."
