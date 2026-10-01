@@ -85,6 +85,7 @@ export const GRAMMAR_TIER: Record<string, GrammarTier> = {
   perfecto: 'exam',
   'estar-gerundio': 'core-plus',
   'futuro-simple': 'exam',
+  'marcadores-temporales': 'core-plus',
   'imperativo-afirmativo': 'core',
   'imperativo-negativo': 'exam',
   'combinacion-pronombres': 'exam',
@@ -371,6 +372,13 @@ export const GRAMMAR_SYLLABUS: SyllabusTopic[] = [
     unit: 'a2-futuro',
     title: { hu: 'Egyszerű jövő idő', en: 'The simple future', es: 'El futuro simple', de: 'Das einfache Futur' },
     blurb: { hu: 'Hablaré, comeré: ígéret, jóslat, valószínűség.', en: 'Hablaré, comeré: promise, prediction, probability.', es: 'Hablaré, comeré: promesa, predicción, probabilidad.', de: 'Hablaré, comeré: Versprechen, Vorhersage, Vermutung.' },
+  },
+  {
+    id: 'marcadores-temporales',
+    level: 'A2',
+    unit: 'a2-futuro',
+    title: { hu: 'Időjelölők: melyik szó, melyik igeidő', en: 'Time markers: which word, which tense', es: 'Marcadores temporales: qué palabra, qué tiempo', de: 'Zeitangaben: welches Wort, welche Zeit' },
+    blurb: { hu: 'Ayer, hace dos años, antes, esta semana, mañana: a szóból kiderül az igeidő.', en: 'Ayer, hace dos años, antes, esta semana, mañana: the word tells you the tense.', es: 'Ayer, hace dos años, antes, esta semana, mañana: la palabra dice el tiempo.', de: 'Ayer, hace dos años, antes, esta semana, mañana: das Wort verrät die Zeit.' },
   },
   {
     id: 'imperativo-afirmativo',
