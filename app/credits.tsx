@@ -16,7 +16,7 @@ function Wrap({ children }: { children: ReactNode }) {
 }
 
 // PLAN-credits.md: word-data attribution screen, entered from Settings.
-// Pattern follows app/spelling.tsx's header row (back arrow + centered title).
+// Pattern follows app/mistakes/index.tsx's header row (back arrow + centered title).
 export default function CreditsScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];

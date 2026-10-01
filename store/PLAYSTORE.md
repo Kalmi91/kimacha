@@ -162,7 +162,6 @@ HOW YOU LEARN
   words, because this is a vocabulary app first.
 - A daily new-word budget you control, with a brake that stops new words piling
   up while half-learned ones are still open.
-- Tap any word in a sentence to add it to the spelling trainer.
 - An "i" button on the cards that explains the actual grammar rule behind what
   you are seeing, in your own language.
 
