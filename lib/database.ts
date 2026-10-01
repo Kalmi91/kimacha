@@ -72,6 +72,8 @@ export interface DB {
   // other per-pair setting/state in this interface.
   getGameProgress(gameId: string): Promise<{ itemId: string; state: string; data: unknown }[]>;
   setGameProgress(gameId: string, itemId: string, state: string, data?: unknown): Promise<void>;
+  // PLAN-fb1001 7. lépés (FB431): egy játék/kurzus (pl. a nyelvtan) teljes haladása az aktív párra.
+  resetGameProgress(gameId: string): Promise<void>;
   // PLAN-pcic 4. lépés: PCIC fül, SM-2, független a FSRS `cards`-tól
   getPcicCards(): Promise<Sm2Card[]>;
   upsertPcicCard(card: Sm2Card): Promise<void>;
@@ -473,6 +475,11 @@ class SQLiteDB implements DB {
        ON CONFLICT(pair, game_id, item_id) DO UPDATE SET state = excluded.state, data_json = excluded.data_json`,
       [this.activePair, gameId, itemId, state, data !== undefined ? JSON.stringify(data) : null]
     );
+  }
+
+  async resetGameProgress(gameId: string) {
+    const db = await this.open();
+    await db.runAsync('DELETE FROM game_progress WHERE pair = ? AND game_id = ?', [this.activePair, gameId]);
   }
 
   // PLAN-pcic 4. lépés: PCIC fül, SM-2, független a FSRS `cards`-tól. Nem

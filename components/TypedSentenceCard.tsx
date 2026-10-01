@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ScrollView, StyleSheet, Text, TextInput, Keyboard } from 'react-native';
 import { speak, stop as stopSpeech } from '@/lib/speech';
 import Colors from '@/constants/Colors';
@@ -18,6 +18,9 @@ interface Props {
   onResult: (correct: boolean) => void;
   // Speech locale of the learned language, the right sentence is read aloud.
   speechLocale?: string;
+  // PLAN-fb1001 10. lépés (FB434): a feladat-mondat (a kiinduló nyelven) a kártya megnyitásakor
+  // elhangzik, mint a szókártya promptja (FB319).
+  sourceSpeechLocale?: string;
   // Same accent rule as the word card (Settings -> Difficulty).
   strictAccents?: boolean;
   // FB397 (PLAN-fb0929 2. lépés): a Check/Next sáv ugyanaz a dokkolt sáv a
@@ -34,6 +37,7 @@ export default function TypedSentenceCard({
   targetSentence,
   onResult,
   speechLocale,
+  sourceSpeechLocale,
   strictAccents = false,
   dockLift = 0,
   dockH = DOCK_RESERVE,
@@ -46,6 +50,11 @@ export default function TypedSentenceCard({
 
   const [typed, setTyped] = useState('');
   const [result, setResult] = useState<'correct' | 'wrong' | null>(null);
+
+  useEffect(() => {
+    if (sourceSpeechLocale) speak(sourceSentence, sourceSpeechLocale);
+    return () => stopSpeech();
+  }, [sourceSentence, sourceSpeechLocale]);
 
   const handleCheck = () => {
     Keyboard.dismiss();

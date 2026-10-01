@@ -213,16 +213,20 @@ export function pickStrongerSm2Card(a: Sm2Card, b: Sm2Card): Sm2Card {
   return a.due <= b.due ? a : b;
 }
 
-// FB401 (PLAN-fb0929 6. lépés), Kálmán: „nav 8 fekete négyzet, aminek szerintem az előre
-// haladást kellene mutatnia, de nem mutatja". A sáv eddig a MAI összes kártyához mérte a
-// haladást (kész / kész + a sorban maradók), ezért egy sok esedékes kártyás napon a
-// 8 blokk egyszer sem mozdult. Mostantól 10-es SZETTEKBEN mér (mint a "+10 új szó"): a
-// szett n. kártyája után n/szett-méret a kitöltött rész, és minden megválaszolt kártya
-// látszik. Az utolsó, rövidebb szett a hátralévő kártyákhoz igazodik.
-export const PROGRESS_SET_SIZE = 10;
+// PLAN-fb1001 9. lépés (FB430, D1), Kálmán: „fenn a fekete csík, azt úgy akarom, hogy azt
+// számolja, mennyi van még a pakliból, mikor fejeződik be, most nem tudom, mit számol,
+// mert újraindult". (Az FB401-es 10-es szettes sáv minden 10. kártyánál újraindult.) A sáv
+// most a MAI adag hátralévőjét mutatja: az első kártyánál üres, a nap utolsó kártyájánál
+// tele, adag közben nem indul újra. A "kész" kártya = ma értékelt és már nincs a sorban
+// (egy "again" kártya a sorban marad, tehát még nem kész, az adag mérete nem ingadozik).
+// A "+10 új szó" bővítés a sort növeli, így az új teljes adaghoz mér.
+export function countFinishedToday(cards: Sm2Card[], queue: Sm2Card[], today: string): number {
+  const inQueue = new Set(queue.map((c) => c.itemId));
+  return cards.filter((c) => c.lastReview === today && !inQueue.has(c.itemId)).length;
+}
 
-export function setProgressPercent(answered: number, remaining: number, setSize: number = PROGRESS_SET_SIZE): number {
-  const inSet = answered % setSize;
-  const size = Math.min(setSize, inSet + remaining);
-  return size > 0 ? (inSet / size) * 100 : 0;
+export function dayProgressPercent(finished: number, remaining: number): number {
+  const total = finished + remaining;
+  if (total <= 1) return remaining === 0 && finished > 0 ? 100 : 0;
+  return Math.min(100, (finished / (total - 1)) * 100);
 }

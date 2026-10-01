@@ -241,6 +241,8 @@ export function DictationDrillItem({
           value={typed}
           onChangeText={setTyped}
           editable={!result}
+          placeholder={s.card.typeIn(learnedLang)}
+          placeholderTextColor={g.mu}
           onSubmitEditing={result ? undefined : check}
         />
       </BrutalBox>

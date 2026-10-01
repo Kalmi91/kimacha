@@ -123,3 +123,41 @@ describe('TypedSentenceCard (begépelős)', () => {
     expect(docked.props.tone).toBe('check');
   });
 });
+
+// PLAN-fb1001 10. lépés (FB434): a feladat-mondat a kártya megnyitásakor elhangzik (a
+// kiinduló nyelven), mint a szókártya promptja; locale nélkül nem szól semmi.
+describe('a feladat-mondat felolvasása megnyitáskor (FB434)', () => {
+  it('begépelős kártya: a forrás-mondat elhangzik angolul', () => {
+    render(
+      <TypedSentenceCard
+        sourceSentence="The book and the table."
+        targetSentence="El libro y la mesa."
+        speechLocale="es-MX"
+        sourceSpeechLocale="en-US"
+        onResult={jest.fn()}
+      />
+    );
+    expect(speech.speak).toHaveBeenCalledTimes(1);
+    expect(speech.speak).toHaveBeenCalledWith('The book and the table.', 'en-US');
+  });
+
+  it('összerakós kártya: a forrás-mondat elhangzik angolul', () => {
+    render(
+      <EasySentenceCard
+        sourceSentence="The book and the table."
+        targetWords={['el', 'libro', 'y', 'la', 'mesa']}
+        trapWords={['los']}
+        speechLocale="es-MX"
+        sourceSpeechLocale="en-US"
+        onResult={jest.fn()}
+      />
+    );
+    expect(speech.speak).toHaveBeenCalledTimes(1);
+    expect(speech.speak).toHaveBeenCalledWith('The book and the table.', 'en-US');
+  });
+
+  it('forrás-locale nélkül nem szól a megnyitáskor', () => {
+    render(<TypedSentenceCard sourceSentence="x" targetSentence="y" speechLocale="es-MX" onResult={jest.fn()} />);
+    expect(speech.speak).not.toHaveBeenCalled();
+  });
+});

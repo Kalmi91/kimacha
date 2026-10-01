@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { StyleSheet, Text, View, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform, ActivityIndicator, Keyboard, Alert } from 'react-native';
+import { StyleSheet, Text, View, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform, ActivityIndicator, Keyboard } from 'react-native';
 import { useFocusEffect } from 'expo-router';
 import { speak, speakSequence, stopSpeaking } from '@/lib/speech';
 
@@ -21,16 +21,17 @@ import {
   type ArticlePick,
 } from '@/lib/articlePicker';
 import { sm2Review, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
-import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC, nextPcicNewBonus, pcicNewBudget, thinSentences, dropOrphanCards, setProgressPercent } from '@/lib/pcicSession';
+import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC, nextPcicNewBonus, pcicNewBudget, thinSentences, dropOrphanCards, countFinishedToday, dayProgressPercent } from '@/lib/pcicSession';
 import { applyChainOrder, chainGroupId } from '@/lib/pcicChains';
 import { cardsForViewLevel } from '@/lib/pcicLevels';
 import { posOf } from '@/lib/pcicPos';
 import { pcicNoteText } from '@/lib/pcicNotes';
 import { sensesFor } from '@/lib/pcicSenses';
 import FeedbackButton from '@/components/FeedbackModal';
+import SpeakButton from '@/components/SpeakButton';
 import BadgeRow from '@/components/learn/BadgeRow';
 import CardShell from '@/components/learn/CardShell';
-import DockedAction, { DOCK_RESERVE, FEEDBACK_INSET } from '@/components/learn/DockedAction';
+import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
 import PcicRevealedAnswer from '@/components/learn/PcicRevealedAnswer';
 import MistakesEntry from '@/components/learn/MistakesEntry';
@@ -408,24 +409,7 @@ export default function PcicScreen() {
     setCardSeq((n) => n + 1);
   };
 
-  const handleReset = () => {
-    const doReset = async () => {
-      // Csak az AKTÍV szint kártyáit üríti (a haladás szintenként külön él);
-      // "A1+"/"A2+" nézeten a mögöttes valódi szintet (a lánc/mondat ugyanaz
-      // a fájl/haladás, mint a szó-pakli, PLAN-fb0924 8. lépés).
-      await getDb().resetPcicCards(realLevelOfView(level).toLowerCase());
-      setLoading(true);
-      await load();
-    };
-    if (Platform.OS === 'web') {
-      if (window.confirm(`${s.pcic.resetConfirmTitle}\n${s.pcic.resetConfirmMessage}`)) doReset();
-    } else {
-      Alert.alert(s.pcic.resetConfirmTitle, s.pcic.resetConfirmMessage, [
-        { text: s.feedback.cancel, style: 'cancel' },
-        { text: s.pcic.resetConfirmYes, style: 'destructive', onPress: doReset },
-      ]);
-    }
-  };
+  // PLAN-fb1001 K1: a haladás-nullázás (a régi 🗑️) a Beállítások fülre költözött.
 
   // FB314/385/386: nincs több esedékes/új lap, de a témakörben van még be
   // nem vezetett tétel; ez a napi keretet bővíti +10-zel (perzisztálva,
@@ -487,9 +471,6 @@ export default function PcicScreen() {
             <Text style={styles.resetIcon}>↶</Text>
           </Pressable>
         )}
-        <Pressable onPress={handleReset} hitSlop={12} style={styles.resetBtn}>
-          <Text style={styles.resetIcon}>🗑️</Text>
-        </Pressable>
       </View>
     </View>
     {/* FB387/395 javítás: a régi ötödik BadgeRow-chip (miből áll a mai bevezetés
@@ -544,6 +525,7 @@ export default function PcicScreen() {
               targetWords={sentenceCard.targetWords}
               trapWords={sentenceCard.trapWords}
               speechLocale={speechLang(target)}
+              sourceSpeechLocale={speechLang(sourceLang)}
               onResult={() => setSentenceCard(null)}
             />
           </ScrollView>
@@ -556,6 +538,7 @@ export default function PcicScreen() {
             targetSentence={sentenceCard.target}
             strictAccents={strictAccents}
             speechLocale={speechLang(target)}
+            sourceSpeechLocale={speechLang(sourceLang)}
             onResult={() => setSentenceCard(null)}
             dockLift={dockLift}
             dockH={dockH}
@@ -650,9 +633,10 @@ export default function PcicScreen() {
   // számból épül (nem a mountonként nullázódó `sessionAnswered`-ből), hogy
   // tab-váltás vagy app-újraindítás után is a valós napi haladást mutassa,
   // ne ugorjon vissza üresre.
-  // FB401: a sáv 10-es szettekben mér (lib/pcicSession.ts setProgressPercent), hogy sok
-  // esedékes kártya mellett is minden megválaszolt kártya látsszon.
-  const barPct = setProgressPercent(doneToday, queue.length);
+  // PLAN-fb1001 9. lépés (FB430, D1): a sáv a MAI adag hátralévőjét mutatja (az első
+  // kártyánál üres, az utolsónál tele, adag közben nem indul újra; lib/pcicSession.ts
+  // dayProgressPercent). Az FB401-es 10-es szettes mérés minden 10. kártyánál újraindult.
+  const barPct = dayProgressPercent(countFinishedToday([...allCards.values()], queue, today), queue.length);
 
   // 5b: a lap tetejére kerülő lap/lépés-jelvény (CardShell chip propja),
   // a korábbi sectionRow-beli stepBadge szövegek helyén.
@@ -732,9 +716,7 @@ export default function PcicScreen() {
             <FitText base={32} maxLines={3} reserve={note ? 200 : 150} style={[styles.frontText, { color: colors.text }]}>
               {promptText ?? ''}
             </FitText>
-            <Pressable onPress={() => speak(promptText ?? promptSource ?? '', speechLang(sourceLang))} style={styles.speakBtn}>
-              <Text style={styles.speakIcon}>🔊</Text>
-            </Pressable>
+            <SpeakButton onPress={() => speak(promptText ?? promptSource ?? '', speechLang(sourceLang))} style={styles.speakBtn} iconStyle={styles.speakIcon} />
             {/* FB392/393: ℹ️ gomb, csak jegyzetes itemen; koppintásra ki/be
                 nyílik a jegyzet, kártyaváltáskor levezetve becsukódik. */}
             {note && (
@@ -832,6 +814,8 @@ export default function PcicScreen() {
             onSubmitEditing={grade ? () => nextGrade && handleGrade(nextGrade) : handleCheck}
             editable={!grade}
             autoFocus={!grade}
+            placeholder={s.card.typeIn(target)}
+            placeholderTextColor={colors.tabIconDefault}
             {...answerInputProps}
           />
 
@@ -882,14 +866,11 @@ export default function PcicScreen() {
         tone={grade ? 'next' : 'check'}
         color={grade ? '#22C55E' : undefined}
         bottom={dockLift}
-        endInset={FEEDBACK_INSET}
         colors={colors}
         onHeight={setDockH}
       />
 
-      {/* PLAN-learn-words-open 5a: a 💬 a dokkolt sáv MELLETT ül (a sáv jobb szélén
-          hagyott hely), így a kártyát nem takarja; 10 = a sáv alsó paddingje. */}
-      <FeedbackButton level={level} languagePair={languagePair} currentCard={`pcic:${current.itemId}`} bottom={dockLift + 10} />
+      <FeedbackButton level={level} languagePair={languagePair} currentCard={`pcic:${current.itemId}`} bottomOffset={dockH + dockLift} />
     </KeyboardAvoidingView>
   );
 }

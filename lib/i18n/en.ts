@@ -15,6 +15,8 @@ export default {
     wrong: 'Wrong',
     next: 'Next',
     typeSentence: 'Type the sentence',
+    // PLAN-fb1001 K4: a válasz-beírómező szürke placeholdere, a célnyelv nevével.
+    typeIn: (lang: string): string => (lang === 'es' ? 'Type in Spanish' : 'Type in English'),
   },
   buttons: {
     spelling: 'Spelling',
@@ -184,6 +186,10 @@ export default {
     directionEnEs: 'English → Spanish',
     directionEsEn: 'Spanish → English',
     credits: 'Credits',
+    // PLAN-fb1001 7. lépés (FB431): a nyelvtan-haladás nullázó sora és megerősítése.
+    resetGrammar: '🗑️ Reset grammar progress',
+    resetGrammarTitle: 'Reset grammar progress',
+    resetGrammarMessage: 'This clears all grammar lesson and practice progress. Are you sure?',
   },
   backup: {
     backup: 'Backup',
@@ -343,6 +349,9 @@ export default {
     resetConfirmTitle: 'Reset progress',
     resetConfirmMessage: 'This clears all PCIC progress. Are you sure?',
     resetConfirmYes: 'Reset',
+    // PLAN-fb1001 K1: a Beállítások sor, a nullázódó szint nevével.
+    resetRow: (level: string) => `🗑️ Reset progress (${level})`,
+    resetConfirmLevel: (level: string) => `This clears all progress on the ${level} deck. Are you sure?`,
     undo: 'Undo',
     dontLearn: "Don't learn this",
     // PLAN-play 12. lépés (s3): "Add to spelling" gomb Check után.
@@ -403,6 +412,8 @@ export default {
     wordPromptCaptionEn: 'How do you say it in English?',
     // FB378: caption for a cell with an English prompt (translate to Spanish).
     promptCaptionEn: 'translate to Spanish',
+    // PLAN-fb1001 13. lépés (FB440): a ragozó kártyán az infinitivus rejtett, a súgó-gomb mutatja.
+    showVerb: 'Show the verb',
     progress: (done: number, total: number) => `${done} / ${total} done`,
     completeTitle: (n: number) => `All ${n} cells done 🎉`,
     startAgain: 'Start again',
