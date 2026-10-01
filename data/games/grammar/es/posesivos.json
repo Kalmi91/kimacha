@@ -64,11 +64,11 @@
           },
           "examples": [
             {
-              "es": "Nuestro coche es nuevo.",
+              "es": "Nuestro carro es nuevo.",
               "tr": {
                 "hu": "Az autónk új.",
                 "en": "Our car is new.",
-                "es": "Nuestro coche es nuevo.",
+                "es": "Nuestro carro es nuevo.",
                 "de": "Unser Auto ist neu."
               }
             },
@@ -184,7 +184,7 @@
       "kind": "table",
       "id": "posesivos",
       "title": {
-        "hu": "A birtokos névelők alakjai",
+        "hu": "A birtokos szavak alakjai",
         "en": "Forms of the possessive determiners",
         "es": "Formas de los posesivos",
         "de": "Formen der Possessivbegleiter"
@@ -269,10 +269,10 @@
         },
         {
           "text": {
-            "hu": "A hosszú, hangsúlyos alak (mío, tuyo, suyo, nuestro, vuestro) főnév UTÁN vagy önállóan áll, gyakran az es (van) mellett: es mío, el coche mío.",
-            "en": "The long, stressed form (mío, tuyo, suyo, nuestro, vuestro) stands AFTER a noun or alone, often with es (is): es mío, el coche mío.",
-            "es": "La forma larga y tónica (mío, tuyo, suyo, nuestro, vuestro) va DETRÁS de un sustantivo o sola, a menudo con es: es mío, el coche mío.",
-            "de": "Die lange, betonte Form (mío, tuyo, suyo, nuestro, vuestro) steht NACH einem Nomen oder allein, oft mit es (ist): es mío, el coche mío."
+            "hu": "A hosszú, hangsúlyos alak (mío, tuyo, suyo, nuestro, vuestro) főnév UTÁN vagy önállóan áll, gyakran az es (van) mellett: es mío, el carro mío.",
+            "en": "The long, stressed form (mío, tuyo, suyo, nuestro, vuestro) stands AFTER a noun or alone, often with es (is): es mío, el carro mío.",
+            "es": "La forma larga y tónica (mío, tuyo, suyo, nuestro, vuestro) va DETRÁS de un sustantivo o sola, a menudo con es: es mío, el carro mío.",
+            "de": "Die lange, betonte Form (mío, tuyo, suyo, nuestro, vuestro) steht NACH einem Nomen oder allein, oft mit es (ist): es mío, el carro mío."
           },
           "examples": [
             {
@@ -285,11 +285,11 @@
               }
             },
             {
-              "es": "¿Es suyo el coche rojo?",
+              "es": "¿Es suyo el carro rojo?",
               "tr": {
                 "hu": "Az övék a piros autó?",
                 "en": "Is the red car theirs?",
-                "es": "¿Es suyo el coche rojo?",
+                "es": "¿Es suyo el carro rojo?",
                 "de": "Gehört das rote Auto ihnen?"
               }
             }
@@ -500,12 +500,12 @@
       }
     },
     {
-      "word": "propias",
+      "word": "carro",
       "gloss": {
-        "hu": "saját (többes, nőnem)",
-        "en": "own (fem. pl.)",
-        "es": "propias",
-        "de": "eigene"
+        "hu": "autó",
+        "en": "car",
+        "es": "el carro",
+        "de": "Auto"
       }
     }
   ],
@@ -562,7 +562,7 @@
           "de": "Das würde ¿Dónde está tus casa? ergeben, aber tus steht bei mehreren Sachen, während casa hier Singular ist; richtig: ¿Dónde está tu casa?"
         }
       },
-      "examples": ["Tu coche es nuevo.", "¿Es tu teléfono?"]
+      "examples": ["Tu carro es nuevo.", "¿Es tu teléfono?"]
     },
     {
       "id": "po-03",
@@ -701,27 +701,27 @@
     },
     {
       "id": "po-08",
-      "sentence": "Nosotros vendemos ___ coche.",
+      "sentence": "Nosotros vendemos ___ carro.",
       "options": ["nuestro", "nuestra", "nuestros"],
       "correct": 0,
       "why": {
-        "hu": "A coche hímnemű egyes szám: nuestro coche.",
-        "en": "Coche is masculine singular: nuestro coche.",
-        "es": "Coche es masculino singular: nuestro coche.",
-        "de": "Coche ist maskulin Singular: nuestro coche."
+        "hu": "A carro hímnemű egyes szám: nuestro carro.",
+        "en": "Carro is masculine singular: nuestro carro.",
+        "es": "Carro es masculino singular: nuestro carro.",
+        "de": "Carro ist maskulin Singular: nuestro carro."
       },
       "wrong": {
         "nuestra": {
-          "hu": "Ezzel a mondat azt jelentené, hogy Nosotros vendemos nuestra coche, de a nuestra nőnemű szó mellé való, a coche viszont hímnemű; helyesen: Nosotros vendemos nuestro coche.",
-          "en": "This would give Nosotros vendemos nuestra coche, but nuestra goes with a feminine noun, while coche is masculine; correctly: Nosotros vendemos nuestro coche.",
-          "es": "Esto daría Nosotros vendemos nuestra coche, pero nuestra va con un sustantivo femenino, y coche es masculino; correctamente: Nosotros vendemos nuestro coche.",
-          "de": "Das würde Nosotros vendemos nuestra coche ergeben, aber nuestra steht bei einem femininen Nomen, während coche maskulin ist; richtig: Nosotros vendemos nuestro coche."
+          "hu": "Ezzel a mondat azt jelentené, hogy Nosotros vendemos nuestra carro, de a nuestra nőnemű szó mellé való, a carro viszont hímnemű; helyesen: Nosotros vendemos nuestro carro.",
+          "en": "This would give Nosotros vendemos nuestra carro, but nuestra goes with a feminine noun, while carro is masculine; correctly: Nosotros vendemos nuestro carro.",
+          "es": "Esto daría Nosotros vendemos nuestra carro, pero nuestra va con un sustantivo femenino, y carro es masculino; correctamente: Nosotros vendemos nuestro carro.",
+          "de": "Das würde Nosotros vendemos nuestra carro ergeben, aber nuestra steht bei einem femininen Nomen, während carro maskulin ist; richtig: Nosotros vendemos nuestro carro."
         },
         "nuestros": {
-          "hu": "Ezzel a mondat azt jelentené, hogy Nosotros vendemos nuestros coche, de a nuestros többes szám, a coche viszont egyes szám itt; helyesen: Nosotros vendemos nuestro coche.",
-          "en": "This would give Nosotros vendemos nuestros coche, but nuestros is plural, while coche is singular here; correctly: Nosotros vendemos nuestro coche.",
-          "es": "Esto daría Nosotros vendemos nuestros coche, pero nuestros es plural, y coche es singular aquí; correctamente: Nosotros vendemos nuestro coche.",
-          "de": "Das würde Nosotros vendemos nuestros coche ergeben, aber nuestros ist Plural, während coche hier Singular ist; richtig: Nosotros vendemos nuestro coche."
+          "hu": "Ezzel a mondat azt jelentené, hogy Nosotros vendemos nuestros carro, de a nuestros többes szám, a carro viszont egyes szám itt; helyesen: Nosotros vendemos nuestro carro.",
+          "en": "This would give Nosotros vendemos nuestros carro, but nuestros is plural, while carro is singular here; correctly: Nosotros vendemos nuestro carro.",
+          "es": "Esto daría Nosotros vendemos nuestros carro, pero nuestros es plural, y carro es singular aquí; correctamente: Nosotros vendemos nuestro carro.",
+          "de": "Das würde Nosotros vendemos nuestros carro ergeben, aber nuestros ist Plural, während carro hier Singular ist; richtig: Nosotros vendemos nuestro carro."
         }
       },
       "examples": ["Nuestro barrio es tranquilo.", "Nuestros amigos llegan mañana."]
@@ -729,7 +729,7 @@
     {
       "id": "po-09",
       "sentence": "Los niños tienen ___ mochilas.",
-      "options": ["sus", "su", "sus propias"],
+      "options": ["sus", "su", "suyas"],
       "correct": 0,
       "why": {
         "hu": "Több táska (mochilas), ezért sus, függetlenül attól, hogy több gyerek van.",
@@ -744,11 +744,11 @@
           "es": "Esto daría Los niños tienen su mochilas, pero su va con una sola cosa, y mochilas es plural; correctamente: Los niños tienen sus mochilas.",
           "de": "Das würde Los niños tienen su mochilas ergeben, aber su steht bei einer Sache, während mochilas Plural ist; richtig: Los niños tienen sus mochilas."
         },
-        "sus propias": {
-          "hu": "Ez a mondat (Los niños tienen sus propias mochilas) nyelvtanilag helyes lenne, de itt fölösleges nyomatékosítás; a semleges válasz: Los niños tienen sus mochilas.",
-          "en": "This sentence (Los niños tienen sus propias mochilas) would be grammatically fine, but here it is unnecessary emphasis; the plain answer: Los niños tienen sus mochilas.",
-          "es": "Esta frase (Los niños tienen sus propias mochilas) sería correcta, pero aquí es un énfasis innecesario; la respuesta neutra: Los niños tienen sus mochilas.",
-          "de": "Dieser Satz (Los niños tienen sus propias mochilas) wäre grammatisch richtig, ist hier aber eine unnötige Betonung; die neutrale Antwort: Los niños tienen sus mochilas."
+        "suyas": {
+          "hu": "Ezzel a mondat azt jelentené, hogy Los niños tienen suyas mochilas, de a suyas főnév UTÁN áll (las mochilas suyas), nem előtte; helyesen: Los niños tienen sus mochilas.",
+          "en": "This would give Los niños tienen suyas mochilas, but suyas comes AFTER the noun (las mochilas suyas), not before it; correctly: Los niños tienen sus mochilas.",
+          "es": "Esto daría Los niños tienen suyas mochilas, pero suyas va DETRÁS del sustantivo (las mochilas suyas), no delante; correctamente: Los niños tienen sus mochilas.",
+          "de": "Das würde Los niños tienen suyas mochilas ergeben, aber suyas steht NACH dem Nomen (las mochilas suyas), nicht davor; richtig: Los niños tienen sus mochilas."
         }
       },
       "examples": ["Sus zapatos están sucios.", "Sus padres viven en México."]
@@ -782,7 +782,7 @@
     },
     {
       "id": "po-11",
-      "sentence": "¿Es ___ el coche rojo? (de ellos)",
+      "sentence": "¿Es ___ el carro rojo? (de ellos)",
       "options": ["suyo", "su", "sus"],
       "correct": 0,
       "why": {
@@ -793,16 +793,16 @@
       },
       "wrong": {
         "su": {
-          "hu": "Ezzel a mondat azt jelentené, hogy ¿Es su el coche rojo?, de a su főnév ELŐTT áll (su coche), nem állítmányban, önállóan; helyesen: ¿Es suyo el coche rojo?",
-          "en": "This would give ¿Es su el coche rojo?, but su stands BEFORE a noun (su coche), not alone as a predicate; correctly: ¿Es suyo el coche rojo?",
-          "es": "Esto daría ¿Es su el coche rojo?, pero su va DELANTE de un sustantivo (su coche), no solo como atributo; correctamente: ¿Es suyo el coche rojo?",
-          "de": "Das würde ¿Es su el coche rojo? ergeben, aber su steht VOR einem Nomen (su coche), nicht allein als Prädikat; richtig: ¿Es suyo el coche rojo?"
+          "hu": "Ezzel a mondat azt jelentené, hogy ¿Es su el carro rojo?, de a su főnév ELŐTT áll (su carro), nem állítmányban, önállóan; helyesen: ¿Es suyo el carro rojo?",
+          "en": "This would give ¿Es su el carro rojo?, but su stands BEFORE a noun (su carro), not alone as a predicate; correctly: ¿Es suyo el carro rojo?",
+          "es": "Esto daría ¿Es su el carro rojo?, pero su va DELANTE de un sustantivo (su carro), no solo como atributo; correctamente: ¿Es suyo el carro rojo?",
+          "de": "Das würde ¿Es su el carro rojo? ergeben, aber su steht VOR einem Nomen (su carro), nicht allein als Prädikat; richtig: ¿Es suyo el carro rojo?"
         },
         "sus": {
-          "hu": "Ezzel a mondat azt jelentené, hogy ¿Es sus el coche rojo?, de a sus többes birtokra való, és szintén főnév előtt áll, nem önállóan; helyesen: ¿Es suyo el coche rojo?",
-          "en": "This would give ¿Es sus el coche rojo?, but sus is for several things, and it also stands before a noun, not alone; correctly: ¿Es suyo el coche rojo?",
-          "es": "Esto daría ¿Es sus el coche rojo?, pero sus es para varias cosas, y también va delante de un sustantivo, no solo; correctamente: ¿Es suyo el coche rojo?",
-          "de": "Das würde ¿Es sus el coche rojo? ergeben, aber sus ist für mehrere Sachen und steht ebenfalls vor einem Nomen, nicht allein; richtig: ¿Es suyo el coche rojo?"
+          "hu": "Ezzel a mondat azt jelentené, hogy ¿Es sus el carro rojo?, de a sus többes birtokra való, és szintén főnév előtt áll, nem önállóan; helyesen: ¿Es suyo el carro rojo?",
+          "en": "This would give ¿Es sus el carro rojo?, but sus is for several things, and it also stands before a noun, not alone; correctly: ¿Es suyo el carro rojo?",
+          "es": "Esto daría ¿Es sus el carro rojo?, pero sus es para varias cosas, y también va delante de un sustantivo, no solo; correctamente: ¿Es suyo el carro rojo?",
+          "de": "Das würde ¿Es sus el carro rojo? ergeben, aber sus ist für mehrere Sachen und steht ebenfalls vor einem Nomen, nicht allein; richtig: ¿Es suyo el carro rojo?"
         }
       },
       "examples": ["Este libro es suyo.", "La casa es nuestra."]
@@ -832,7 +832,7 @@
           "de": "Das würde Voy a casa de mía abuela ergeben, aber mía steht NACH dem Nomen (la abuela mía), nicht davor; richtig: Voy a casa de mi abuela."
         }
       },
-      "examples": ["Voy a casa de mi hermano.", "Es el coche de mi padre."]
+      "examples": ["Voy a casa de mi hermano.", "Es el carro de mi padre."]
     },
     {
       "id": "pos-match-01",
@@ -1007,16 +1007,16 @@
       "options": [
         {
           "text": {
-            "hu": "a birtokos a BIRTOK számával egyezik",
-            "en": "the possessive agrees with the NUMBER of the thing owned",
-            "es": "el posesivo concuerda con el NÚMERO de lo poseído",
-            "de": "das Possessiv richtet sich nach der ZAHL des Besitzes"
+            "hu": "a birtokos a BIRTOKLÓ számával egyezik",
+            "en": "the possessive agrees with the number of the OWNER",
+            "es": "el posesivo concuerda con el número del DUEÑO",
+            "de": "das Possessiv richtet sich nach der Zahl des BESITZERS"
           },
           "wrong": {
-            "hu": "A casa egyes szám akkor is, ha nuestro vagy nuestra áll ott; itt nem a szám, hanem a nem dönt.",
-            "en": "Casa is singular either way, whether nuestro or nuestra stands there; here it is gender, not number, that decides.",
-            "es": "Casa es singular tanto si va nuestro como nuestra; aquí decide el género, no el número.",
-            "de": "Casa ist so oder so Singular, ob nuestro oder nuestra dasteht; hier entscheidet das Geschlecht, nicht die Zahl."
+            "hu": "A birtokos nem a birtokló számával egyezik: a nosotros többes szám, mégis nuestra áll, mert a casa egyes szám; a nuestra és a nuestro között a nem dönt.",
+            "en": "The possessive does not agree with the number of the owner: nosotros is plural, yet nuestra stands because casa is singular; between nuestra and nuestro it is gender that decides.",
+            "es": "El posesivo no concuerda con el número del dueño: nosotros es plural y aun así va nuestra, porque casa es singular; entre nuestra y nuestro decide el género.",
+            "de": "Das Possessiv richtet sich nicht nach der Zahl des Besitzers: nosotros ist Plural, trotzdem steht nuestra, weil casa Singular ist; zwischen nuestra und nuestro entscheidet das Geschlecht."
           }
         },
         {
@@ -1058,16 +1058,16 @@
       "options": [
         {
           "text": {
-            "hu": "a birtokos a BIRTOK számával egyezik",
-            "en": "the possessive agrees with the NUMBER of the thing owned",
-            "es": "el posesivo concuerda con el NÚMERO de lo poseído",
-            "de": "das Possessiv richtet sich nach der ZAHL des Besitzes"
+            "hu": "testrésznél és ruhánál névelő áll, nem birtokos",
+            "en": "with body parts and clothes the article is used, not the possessive",
+            "es": "con partes del cuerpo y ropa se usa el artículo, no el posesivo",
+            "de": "bei Körperteilen und Kleidung steht der Artikel, nicht das Possessiv"
           },
           "wrong": {
-            "hu": "A hijo egyes szám, de itt nem az a kérdés, hogy su vagy sus kell-e, hanem hogy MELYIK gyök illik az Ön birtokosához.",
-            "en": "Hijo is singular, but the question here is not su versus sus, it is WHICH root word fits the usted possessor.",
-            "es": "Hijo es singular, pero aquí la pregunta no es su o sus, sino QUÉ raíz corresponde al poseedor usted.",
-            "de": "Hijo ist Singular, aber hier geht es nicht um su gegen sus, sondern darum, WELCHER Wortstamm zum Besitzer usted passt."
+            "hu": "A hijo nem testrész és nem ruhadarab, ezért itt birtokos áll: su hijo.",
+            "en": "Hijo is neither a body part nor a piece of clothing, so the possessive is used here: su hijo.",
+            "es": "Hijo no es una parte del cuerpo ni una prenda, por eso aquí va el posesivo: su hijo.",
+            "de": "Hijo ist weder ein Körperteil noch ein Kleidungsstück, deshalb steht hier das Possessiv: su hijo."
           }
         },
         {
@@ -1098,27 +1098,27 @@
     {
       "id": "pos-why-04",
       "kind": "why",
-      "es": "Nuestro coche es nuevo.",
+      "es": "Nuestro carro es nuevo.",
       "target": "Nuestro",
       "tr": {
         "hu": "Az autónk új.",
         "en": "Our car is new.",
-        "es": "Nuestro coche es nuevo.",
+        "es": "Nuestro carro es nuevo.",
         "de": "Unser Auto ist neu."
       },
       "options": [
         {
           "text": {
-            "hu": "a birtokos a BIRTOK számával egyezik",
-            "en": "the possessive agrees with the NUMBER of the thing owned",
-            "es": "el posesivo concuerda con el NÚMERO de lo poseído",
-            "de": "das Possessiv richtet sich nach der ZAHL des Besitzes"
+            "hu": "a birtokos a BIRTOKLÓ számával egyezik",
+            "en": "the possessive agrees with the number of the OWNER",
+            "es": "el posesivo concuerda con el número del DUEÑO",
+            "de": "das Possessiv richtet sich nach der Zahl des BESITZERS"
           },
           "wrong": {
-            "hu": "A coche egyes szám akkor is, ha nuestro vagy nuestra áll ott; itt a nem dönt, coche hímnemű.",
-            "en": "Coche is singular either way, whether nuestro or nuestra stands there; here gender decides, coche is masculine.",
-            "es": "Coche es singular tanto si va nuestro como nuestra; aquí decide el género, coche es masculino.",
-            "de": "Coche ist so oder so Singular, ob nuestro oder nuestra dasteht; hier entscheidet das Geschlecht, coche ist maskulin."
+            "hu": "A birtokos nem a birtokló számával egyezik: a nosotros többes szám, mégis nuestro áll, mert a carro egyes szám; a nuestro és a nuestra között a nem dönt.",
+            "en": "The possessive does not agree with the number of the owner: nosotros is plural, yet nuestro stands because carro is singular; between nuestro and nuestra it is gender that decides.",
+            "es": "El posesivo no concuerda con el número del dueño: nosotros es plural y aun así va nuestro, porque carro es singular; entre nuestro y nuestra decide el género.",
+            "de": "Das Possessiv richtet sich nicht nach der Zahl des Besitzers: nosotros ist Plural, trotzdem steht nuestro, weil carro Singular ist; zwischen nuestro und nuestra entscheidet das Geschlecht."
           }
         },
         {
@@ -1182,16 +1182,16 @@
         },
         {
           "text": {
-            "hu": "su = övé / Önöké / övék, a mondat dönti el, kié",
-            "en": "su = his / her / your (formal) / their, context decides whose",
-            "es": "su = de él / de ella / de usted / de ellos, el contexto aclara de quién",
-            "de": "su = sein / ihr / Ihr / deren, der Kontext klärt, wessen"
+            "hu": "testrésznél és ruhánál névelő áll, nem birtokos",
+            "en": "with body parts and clothes the article is used, not the possessive",
+            "es": "con partes del cuerpo y ropa se usa el artículo, no el posesivo",
+            "de": "bei Körperteilen und Kleidung steht der Artikel, nicht das Possessiv"
           },
           "wrong": {
-            "hu": "A su gyöke tényleg lehet övék is, de a kérdés itt nem a birtokos kilétéről szól, hanem arról, miért -s a vége: mert hijos többes szám.",
-            "en": "The su root can indeed mean their, but the question here is not about who owns it, it is about why it ends in -s: because hijos is plural.",
-            "es": "La raíz su sí puede ser de ellos, pero la pregunta aquí no es de quién es, sino por qué termina en -s: porque hijos es plural.",
-            "de": "Der Stamm su kann tatsächlich deren bedeuten, aber die Frage hier ist nicht, wem es gehört, sondern warum es auf -s endet: weil hijos Plural ist."
+            "hu": "A hijos nem testrész és nem ruhadarab, ezért itt birtokos áll: sus hijos.",
+            "en": "Hijos is neither a body part nor a piece of clothing, so the possessive is used here: sus hijos.",
+            "es": "Hijos no es una parte del cuerpo ni una prenda, por eso aquí va el posesivo: sus hijos.",
+            "de": "Hijos ist weder ein Körperteil noch ein Kleidungsstück, deshalb steht hier das Possessiv: sus hijos."
           }
         }
       ],
@@ -1200,27 +1200,27 @@
     {
       "id": "pos-why-06",
       "kind": "why",
-      "es": "Vuestra casa es bonita.",
-      "target": "Vuestra",
+      "es": "Nuestra abuela vive en Puebla.",
+      "target": "Nuestra",
       "tr": {
-        "hu": "A ti házatok szép.",
-        "en": "Your (plural) house is pretty.",
-        "es": "Vuestra casa es bonita.",
-        "de": "Euer Haus ist schön."
+        "hu": "A nagyanyánk Pueblában él.",
+        "en": "Our grandmother lives in Puebla.",
+        "es": "Nuestra abuela vive en Puebla.",
+        "de": "Unsere Großmutter lebt in Puebla."
       },
       "options": [
         {
           "text": {
-            "hu": "a birtokos a BIRTOK számával egyezik",
-            "en": "the possessive agrees with the NUMBER of the thing owned",
-            "es": "el posesivo concuerda con el NÚMERO de lo poseído",
-            "de": "das Possessiv richtet sich nach der ZAHL des Besitzes"
+            "hu": "a birtokos a BIRTOKLÓ számával egyezik",
+            "en": "the possessive agrees with the number of the OWNER",
+            "es": "el posesivo concuerda con el número del DUEÑO",
+            "de": "das Possessiv richtet sich nach der Zahl des BESITZERS"
           },
           "wrong": {
-            "hu": "A casa egyes szám akkor is, ha vuestro vagy vuestra áll ott; itt a nem dönt, casa nőnemű.",
-            "en": "Casa is singular either way, whether vuestro or vuestra stands there; here gender decides, casa is feminine.",
-            "es": "Casa es singular tanto si va vuestro como vuestra; aquí decide el género, casa es femenino.",
-            "de": "Casa ist so oder so Singular, ob vuestro oder vuestra dasteht; hier entscheidet das Geschlecht, casa ist feminin."
+            "hu": "A birtokos nem a birtokló számával egyezik: a nosotros többes szám, mégis nuestra áll, mert az abuela egyes szám; a nuestra és a nuestro között a nem dönt.",
+            "en": "The possessive does not agree with the number of the owner: nosotros is plural, yet nuestra stands because abuela is singular; between nuestra and nuestro it is gender that decides.",
+            "es": "El posesivo no concuerda con el número del dueño: nosotros es plural y aun así va nuestra, porque abuela es singular; entre nuestra y nuestro decide el género.",
+            "de": "Das Possessiv richtet sich nicht nach der Zahl des Besitzers: nosotros ist Plural, trotzdem steht nuestra, weil abuela Singular ist; zwischen nuestra und nuestro entscheidet das Geschlecht."
           }
         },
         {
@@ -1239,10 +1239,10 @@
             "de": "su = sein / ihr / Ihr / deren, der Kontext klärt, wessen"
           },
           "wrong": {
-            "hu": "A su itt nem állna: a birtokos ti (vosotros), nem ő, Ön vagy ők.",
-            "en": "Su would not fit here: the possessor is you all (vosotros), not he, she, usted or they.",
-            "es": "Su no encajaría aquí: el poseedor es vosotros, no él, ella, usted ni ellos.",
-            "de": "Su würde hier nicht passen: Besitzer ist ihr (vosotros), nicht er, sie, Sie oder sie (Plural)."
+            "hu": "A su itt nem szerepel: a birtokos nosotros, nem egy harmadik személy vagy Ön.",
+            "en": "Su does not appear here: the possessor is nosotros, not a third person or usted.",
+            "es": "Su no aparece aquí: el poseedor es nosotros, no una tercera persona ni usted.",
+            "de": "Su kommt hier nicht vor: Besitzer ist nosotros, keine dritte Person oder usted."
           }
         }
       ],
@@ -1262,16 +1262,16 @@
       "options": [
         {
           "text": {
-            "hu": "a birtokos a BIRTOK számával egyezik",
-            "en": "the possessive agrees with the NUMBER of the thing owned",
-            "es": "el posesivo concuerda con el NÚMERO de lo poseído",
-            "de": "das Possessiv richtet sich nach der ZAHL des Besitzes"
+            "hu": "testrésznél és ruhánál névelő áll, nem birtokos",
+            "en": "with body parts and clothes the article is used, not the possessive",
+            "es": "con partes del cuerpo y ropa se usa el artículo, no el posesivo",
+            "de": "bei Körperteilen und Kleidung steht der Artikel, nicht das Possessiv"
           },
           "wrong": {
-            "hu": "A casa egyes szám, a su/sus közti számbeli különbség itt nem kérdéses; a kérdés az, KI a birtokos.",
-            "en": "Casa is singular, the su/sus number difference is not in question here; the question is WHO the possessor is.",
-            "es": "Casa es singular, la diferencia de número su/sus no está en juego aquí; la pregunta es QUIÉN es el poseedor.",
-            "de": "Casa ist Singular, der Zahlenunterschied su/sus steht hier nicht zur Debatte; die Frage ist, WER der Besitzer ist."
+            "hu": "A casa nem testrész és nem ruhadarab, ezért itt birtokos áll: su casa.",
+            "en": "Casa is neither a body part nor a piece of clothing, so the possessive is used here: su casa.",
+            "es": "Casa no es una parte del cuerpo ni una prenda, por eso aquí va el posesivo: su casa.",
+            "de": "Casa ist weder ein Körperteil noch ein Kleidungsstück, deshalb steht hier das Possessiv: su casa."
           }
         },
         {
