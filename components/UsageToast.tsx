@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import { Animated, StyleSheet, Text } from 'react-native';
+import { Animated, StyleSheet } from 'react-native';
+import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
+import { legibleOn } from '@/constants/Skins';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalBox, textOnFill } from '@/components/grammar/Brutal';
@@ -24,7 +26,8 @@ const MILESTONE_VISIBLE_MS = 4000;
 const ROLLOVER_VISIBLE_MS = 8000;
 const ANIM_MS = 250;
 
-export default function UsageToast() {
+// PLAN-temak 7F: `hidden` (az onboarding alatt) nem rajzol semmit, hogy ne takarja el a címet.
+export default function UsageToast({ hidden = false }: { hidden?: boolean }) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -117,7 +120,7 @@ export default function UsageToast() {
     // because show() animates them.
   }, [greeting, opacity, translateY]);
 
-  if (!visible) return null;
+  if (!visible || hidden) return null;
 
   // NY25: brutalista palettán BrutalBox (sarok 0, tömör árnyék), nem pirula.
   if (g.brutal) {
@@ -134,13 +137,14 @@ export default function UsageToast() {
   return (
     <Animated.View
       pointerEvents="none"
+      testID="usage-toast-pill"
       style={[
         styles.pill,
-        { backgroundColor: isMilestone ? '#22C55E' : colors.tint, opacity, transform: [{ translateY }] },
+        { backgroundColor: isMilestone ? legibleOn('#22C55E', '#FFFFFF') : colors.tint, opacity, transform: [{ translateY }] },
         isMilestone && styles.milestonePill,
       ]}
     >
-      <Text style={[styles.text, isMilestone && styles.milestoneText]}>{message}</Text>
+      <Text style={[styles.text, !isMilestone && { color: colors.onTint }, isMilestone && styles.milestoneText]}>{message}</Text>
     </Animated.View>
   );
 }

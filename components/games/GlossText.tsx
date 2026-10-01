@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Modal, Pressable, StyleSheet, Text, View, type StyleProp, type TextStyle } from 'react-native';
+import { Modal, Pressable, StyleSheet, View, type StyleProp, type TextStyle } from 'react-native';
+import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { speak } from '@/lib/speech';

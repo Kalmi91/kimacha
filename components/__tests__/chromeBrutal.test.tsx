@@ -94,6 +94,29 @@ describe('Fejléc-elemek, neo-brutalista (NY25)', () => {
     classic.unmount();
   });
 
+  it('UsageToast: hidden alatt (onboarding) nem rajzol, a classic pirulának saját azonosítója van (7F)', async () => {
+    const { __fireMinute } = jest.requireMock('@/lib/usageTimer');
+    await getDb().setGrammarPalette('brand');
+    const hiddenBrand = render(wrap(<UsageToast hidden />));
+    await flush();
+    act(() => __fireMinute());
+    expect(hiddenBrand.queryByTestId('usage-toast')).toBeNull();
+    hiddenBrand.unmount();
+
+    await getDb().setGrammarPalette('classic');
+    const hiddenClassic = render(wrap(<UsageToast hidden />));
+    await flush();
+    act(() => __fireMinute());
+    expect(hiddenClassic.queryByTestId('usage-toast-pill')).toBeNull();
+    hiddenClassic.unmount();
+
+    const classic = render(wrap(<UsageToast />));
+    await flush();
+    act(() => __fireMinute());
+    expect(classic.queryByTestId('usage-toast-pill')).toBeTruthy();
+    classic.unmount();
+  });
+
   it('MistakesEntry: brand palettán BrutalBox belépő, classic palettán a mai sor', async () => {
     const result = validateMistakesPayload(sample);
     if (!result.ok) throw new Error(result.error);

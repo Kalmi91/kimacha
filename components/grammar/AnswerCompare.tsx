@@ -1,4 +1,5 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { Text } from '@/components/KText';
 
 import { charDiff } from '@/lib/charDiff';
 import { t } from '@/lib/i18n';
@@ -24,8 +25,8 @@ export default function AnswerCompare({
   onFill?: boolean;
 }) {
   const s = t();
-  const base = onFill ? g.onFill : g.ink;
-  const muted = onFill ? g.onFill : g.mu;
+  const base = onFill ? g.onB : g.ink;
+  const muted = onFill ? g.onB : g.mu;
   const fold = { case: true, accents: false };
   // A saját sor: a nem-egyező betűk jelölve; a kihagyott betűk (missing) nem a
   // tanuló írásai, ezért nem jelennek meg itt, csak a helyes sorban.

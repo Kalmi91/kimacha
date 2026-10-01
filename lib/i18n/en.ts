@@ -5,6 +5,27 @@ export default {
     // picker here, just a way to start the course.
     start: 'Get Started',
   },
+  // PLAN-temak 4C: the intro step after the welcome, and the theme step after it.
+  intro: {
+    title: 'How it works',
+    start: "Let's start",
+    first: 'Learning a language is a long, hard road. There will be tough days, but everyone can do it, and so can you.',
+    words: 'Words: on cards, a small batch every day.',
+    grammar: 'Grammar: short lessons where you build sentences.',
+    exam: 'Then an exam: show what you know.',
+    repetition: "Repetition is the key: a word comes back right when you're about to forget it.",
+    overdo:
+      "Don't overdo it: what's new today is a review tomorrow. Lots of new words today = lots of work tomorrow, when you might feel less like it.",
+    closing: "Every day you'll know a little more than yesterday.",
+  },
+  onboardingTheme: {
+    title: 'Pick a look',
+    // The sample word on each row: the learned language's word, so it shows the font.
+    sampleWord: 'el carro',
+    know: 'I know',
+    later: 'Later you can pick from 24 in Settings.',
+    next: 'Continue',
+  },
   // Play-vágás 7. lépés: the flashcard-review keys (word/sentence prompts,
   // typing, skip, borrowed-from-topic, new/review tags, spelling-tap hint)
   // are gone with the Learn tab (step 3); correct/wrong/check still label the
@@ -162,6 +183,28 @@ export default {
     paletteCyan: 'Cyan + violet',
     paletteOrange: 'Orange + teal',
     paletteClassic: 'Classic',
+    // PLAN-temak 4D: the theme grid (app/themes.tsx), My mix (app/theme-mix.tsx) and the theme decor texts.
+    themes: {
+      title: 'Themes',
+      oneLook: 'This theme has one look.',
+      posterSlogan: 'LEARN, LEARN, LEARN!',
+      sample: 'el carro',
+      know: 'I know',
+      // PLAN-temak 6E: the E1 theme decor texts (senior, retro95, y2k, gamer).
+      readAloud: 'Read aloud',
+      retroTitle: 'kimacha.exe',
+      newWord: 'new word',
+      gamerLevel: 'LVL',
+      mixTitle: 'My mix',
+      mixColors: 'Colors',
+      mixFont: 'Font',
+      mixShape: 'Shape',
+      mixDecor: 'Decor',
+      mixNone: 'None',
+      mixSave: 'Use this mix',
+      shockWorker: 'Shock worker',
+      dailyPlan: 'Daily plan',
+    },
     weeklyGoal: 'Weekly study goal',
     weeklyGoalHours: (h: string) => `${h} hours / week`,
     weeklyGoalDoneTag: '✓ DONE',
@@ -186,6 +229,43 @@ export default {
     resetGrammar: '🗑️ Reset grammar progress',
     resetGrammarTitle: 'Reset grammar progress',
     resetGrammarMessage: 'This clears all grammar lesson and practice progress. Are you sure?',
+  },
+  // PLAN-temak 2A: theme (skin) names and group names for the Settings theme grid.
+  skins: {
+    names: {
+      brutal: 'Neo-brutal',
+      deco: 'Art deco',
+      loteria: 'Lotería',
+      senior: 'Senior',
+      konnyu: 'Easy reading',
+      retro95: 'Retro 95',
+      y2k: 'Y2K',
+      kawaii: 'Kawaii',
+      gamer: 'Gamer',
+      botanikus: 'Botanical',
+      zen: 'Zen',
+      diszlexia: 'Dyslexia font',
+      szocreal: 'Socialist realism',
+      plakat: 'Poster',
+      csillampony: 'Glitter pony',
+      bauhaus: 'Bauhaus',
+      popart: 'Pop art',
+      szecesszio: 'Art nouveau',
+      kalocsai: 'Kalocsa folk',
+      memphis: 'Memphis',
+      kodex: 'Codex',
+      graffiti: 'Graffiti',
+      ukiyoe: 'Ukiyo-e',
+      classic: 'Classic',
+      mix: 'My mix',
+    },
+    groups: {
+      ajanlott: 'Recommended',
+      muveszet: 'Art movements',
+      kultura: 'Culture',
+      hangulat: 'Mood',
+      olvasas: 'Easy reading',
+    },
   },
   backup: {
     backup: 'Backup',
@@ -236,6 +316,9 @@ export default {
       'commercial use with attribution.',
     cefrjLabel: 'github.com/openlanguageprofiles/olp-en-cefrj',
     cefrjUrl: 'https://github.com/openlanguageprofiles/olp-en-cefrj',
+    fontsBody:
+      'Fonts used by the app themes. All are open source: SIL Open Font License 1.1, ' +
+      'except Permanent Marker (Apache License 2.0).',
   },
   feedback: {
     button: 'Feedback',

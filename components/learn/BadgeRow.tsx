@@ -1,6 +1,8 @@
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { Text } from '@/components/KText';
 
 import Colors from '@/constants/Colors';
+import { legibleOn } from '@/constants/Skins';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalBox, textOnFill, type BrutalFill } from '@/components/grammar/Brutal';
 
@@ -52,7 +54,7 @@ export default function BadgeRow({ items, colors }: Props) {
     <View style={styles.row}>
       {items.map((item, i) => (
         <View key={i} style={[styles.badge, { backgroundColor: colors.card }]}>
-          <Text style={[styles.badgeText, { color: TONE_COLOR[item.tone ?? 'default'] ?? colors.text }]}>
+          <Text style={[styles.badgeText, { color: legibleOn(TONE_COLOR[item.tone ?? 'default'] ?? colors.text, colors.card) }]}>
             {item.label}
           </Text>
         </View>

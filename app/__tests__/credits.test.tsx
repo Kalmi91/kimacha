@@ -22,4 +22,13 @@ describe('CreditsScreen (app/credits.tsx)', () => {
     expect(queryByText(/FrequencyWords/)).toBeNull();
     expect(queryByText(/CC BY-SA/)).toBeNull();
   });
+
+  it('PLAN-temak 2B: listázza a betűk licencét, családonként egyszer', () => {
+    const { getAllByTestId, getByText } = render(<CreditsScreen />);
+
+    // 29 betűfájl, de az Atkinson és a Jost két súllyal: 27 család.
+    expect(getAllByTestId('credits-font')).toHaveLength(27);
+    expect(getByText('Permanent Marker · Apache License 2.0')).toBeTruthy();
+    expect(getByText('OpenDyslexic · SIL Open Font License 1.1')).toBeTruthy();
+  });
 });

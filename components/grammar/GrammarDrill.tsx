@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
+import { Text } from '@/components/KText';
 
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
@@ -203,7 +204,7 @@ function MatchDrillItem({
         onPress={onPress}
         disabled={state === 'matched'}
       >
-        <Text style={[styles.matchCellText, { color: state === 'matched' || state === 'selected' ? g.onFill : g.ink }]}>{text}</Text>
+        <Text style={[styles.matchCellText, { color: state === 'matched' ? g.onA : state === 'selected' ? g.onB : g.ink }]}>{text}</Text>
         {state === 'matched' ? <Text style={[styles.matchCellText, { color: g.onFill }]}> ✓</Text> : null}
       </BrutalBox>
     );
@@ -480,7 +481,7 @@ function WhyDrillItem({
               {targetSpan ? (
                 <>
                   {item.es.slice(0, targetSpan.start)}
-                  <Text style={{ backgroundColor: g.b, color: g.onFill, fontWeight: '500' }}>
+                  <Text style={{ backgroundColor: g.b, color: g.onB, fontWeight: '500' }}>
                     {item.es.slice(targetSpan.start, targetSpan.end)}
                   </Text>
                   {item.es.slice(targetSpan.end)}
@@ -539,7 +540,7 @@ function WhyDrillItem({
           <>
             <BrutalFeedback g={g} correct={isCorrect} title={isCorrect ? s.games.correctFeedback : s.games.wrongFeedback}>
               {!isCorrect ? (
-                <Text style={[styles.explainText, { color: g.onFill }]}>
+                <Text style={[styles.explainText, { color: g.onB }]}>
                   {item.options[selected].wrong?.[contentLang] ?? item.options[selected].wrong?.en ?? ''}
                 </Text>
               ) : null}
@@ -705,7 +706,7 @@ function TransformDrillItem({
               boxStyle={styles.brutalF}
               onPress={() => setShowF((v) => !v)}
             >
-              <Text style={[styles.fButtonText, { color: showF ? g.onFill : g.ink }]}>F</Text>
+              <Text style={[styles.fButtonText, { color: showF ? g.onB : g.ink }]}>F</Text>
             </BrutalBox>
           </View>
           {showF ? (
@@ -737,7 +738,7 @@ function TransformDrillItem({
               {result === 'bad' ? (
                 <Text style={[styles.brutalAnswer, { backgroundColor: g.a, color: g.onFill }]}> {item.answer} </Text>
               ) : null}
-              <Text style={[styles.explainText, { color: g.onFill }]}>{item.why[contentLang] ?? item.why.en}</Text>
+              <Text style={[styles.explainText, { color: g.onB }]}>{item.why[contentLang] ?? item.why.en}</Text>
             </BrutalFeedback>
             <BrutalInkButton g={g} testID="transform-next" label={s.grammar.next} onPress={() => onDone(result === 'ok')} />
           </>
@@ -1081,7 +1082,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   // helyes = a kitöltés + pipa, a visszajelző doboz b kitöltésű.
   if (g.brutal) {
     const blankFill = answered ? (isCorrect ? g.a : g.ink) : g.b;
-    const blankColor = answered && !isCorrect ? g.bg : g.onFill;
+    const blankColor = answered ? (isCorrect ? g.onA : g.bg) : g.onB;
     return (
       <ScrollView contentContainerStyle={[styles.body, g.brutal && styles.brutalBodyPad]} keyboardShouldPersistTaps="handled">
         {header}
@@ -1161,9 +1162,9 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
           <>
           <ResultBadge correct={isCorrect} label={isCorrect ? s.grammar.perfect : s.games.wrongFeedback} />
           <BrutalBox fill="b" boxStyle={styles.brutalFeedback}>
-            <Text style={[styles.explainText, { color: g.onFill }]}>{current.item.why[contentLang] ?? current.item.why.en}</Text>
+            <Text style={[styles.explainText, { color: g.onB }]}>{current.item.why[contentLang] ?? current.item.why.en}</Text>
             {!isCorrect && pickedText !== undefined ? (
-              <Text style={[styles.explainText, { color: g.onFill }]}>
+              <Text style={[styles.explainText, { color: g.onB }]}>
                 {wrongExplanation(current.item, pickedText, contentLang) ??
                   (marking ? s.games.grammarChoice.markWrong : '')}
               </Text>
@@ -1174,19 +1175,19 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
                 text={ex}
                 glosses={buildGlossMap(ex, { learnedLang, nativeLang: contentLang, knownWordIds: knownIds, overrides })}
                 learnedLang={learnedLang}
-                style={[styles.example, { color: g.onFill }]}
+                style={[styles.example, { color: g.onB }]}
               />
             ))}
             {'more' in topic && topic.more ? (
-              <View style={[styles.moreSection, { borderTopColor: g.onFill }]}>
+              <View style={[styles.moreSection, { borderTopColor: g.onB }]}>
                 <Pressable onPress={() => setShowMore((v) => !v)} hitSlop={8}>
-                  <Text style={[styles.moreToggle, { color: g.onFill }]}>
+                  <Text style={[styles.moreToggle, { color: g.onB }]}>
                     {showMore ? `▾ ${s.games.moreLabel}` : `▸ ${s.games.moreLabel}`}
                   </Text>
                 </Pressable>
                 {showMore ? (
                   <View style={styles.moreBody}>
-                    <MoreBlocks more={topic.more} contentLang={contentLang} color={g.onFill} />
+                    <MoreBlocks more={topic.more} contentLang={contentLang} color={g.onB} />
                   </View>
                 ) : null}
               </View>

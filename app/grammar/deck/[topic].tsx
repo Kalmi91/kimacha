@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
-import { ActivityIndicator, Keyboard, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { ActivityIndicator, Keyboard, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
+import { Text } from '@/components/KText';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
@@ -33,8 +34,9 @@ import FeedbackButton from '@/components/FeedbackModal';
 import FitText from '@/components/FitText';
 import SpeakButton from '@/components/SpeakButton';
 import { isInfinitive } from '@/lib/grammar/tableShape';
+import { useDiffStyles } from '@/lib/useDiffStyles';
 import CardShell from '@/components/learn/CardShell';
-import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
+import DockedAction, { DOCK_RESERVE, FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
 
 // PLAN-play 13. lépés (s6, jóváhagyó lap
@@ -74,6 +76,7 @@ export default function TableDeckScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
+  const diff = useDiffStyles();
   const s = t();
   const router = useRouter();
   const { topic: topicId } = useLocalSearchParams<{ topic: string }>();
@@ -222,7 +225,7 @@ export default function TableDeckScreen() {
         <Text style={[styles.back, { color: colors.text }]}>←</Text>
       </Pressable>
       )}
-      <FitText base={17} maxLines={2} reserve={g.brutal ? 190 : 150} caps={g.brutal} style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>
+      <FitText variant="title" base={17} maxLines={2} reserve={g.brutal ? 190 : 150} caps={g.brutal} style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>
         {lessonTitle}
       </FitText>
       {g.brutal ? (
@@ -260,7 +263,7 @@ export default function TableDeckScreen() {
         {progressBar}
         <View style={styles.doneBody}>
           <Text style={styles.doneEmoji}>🎉</Text>
-          <Text style={[styles.doneTitle, { color: colors.text }]}>{s.tableDeck.completeTitle(items.length)}</Text>
+          <Text variant="title" style={[styles.doneTitle, { color: colors.text }]}>{s.tableDeck.completeTitle(items.length)}</Text>
           {g.brutal ? (
             <BrutalButton testID="tabledeck-start-again" fill="a" label={s.tableDeck.startAgain} onPress={handleStartAgain} style={styles.brutalBtn} />
           ) : (
@@ -303,7 +306,7 @@ export default function TableDeckScreen() {
 
       <ScrollView
         style={styles.cardScroll}
-        contentContainerStyle={[styles.cardScrollContent, { paddingBottom: 16 + dockH + dockLift }]}
+        contentContainerStyle={[styles.cardScrollContent, { paddingBottom: FAB_CLEARANCE + dockH + dockLift }]}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"
       >
@@ -317,7 +320,7 @@ export default function TableDeckScreen() {
                 ? s.tableDeck.wordPromptCaptionEn
                 : s.tableDeck.wordPromptCaption}
           </Text>
-          <FitText base={32} maxLines={3} reserve={100} style={[styles.promptBig, { color: colors.text }]}>
+          <FitText variant="word" base={32} maxLines={3} reserve={100} style={[styles.promptBig, { color: colors.text }]}>
             {current.promptBig}
           </FitText>
           {/* FB390: a meaning-table cell (lib/grammar/tableDeck.ts) has no
@@ -359,13 +362,13 @@ export default function TableDeckScreen() {
                 <>
                   <Text style={styles.diffLine}>
                     {charDiff(typed, current.answer, { case: true, accents: false }).map((d, i) => (
-                      <Text key={i} style={d.missing ? styles.diffMissing : d.wrong ? styles.diffWrong : { color: colors.text }}>
+                      <Text key={i} style={d.missing ? diff.missing : d.wrong ? diff.wrong : { color: colors.text }}>
                         {d.ch}
                       </Text>
                     ))}
                   </Text>
                   <View style={styles.frontRow}>
-                    <Text style={[styles.correctAnswer, { color: colors.tint }]}>{current.answer}</Text>
+                    <Text variant="word" style={[styles.correctAnswer, { color: colors.tint }]}>{current.answer}</Text>
                     <SpeakButton onPress={() => speak(current.answer, speechLang(learnedLang))} style={styles.speakBtn} iconStyle={styles.speakIcon} />
                   </View>
                 </>
@@ -428,8 +431,6 @@ const styles = StyleSheet.create({
   resultSection: { alignItems: 'center', marginTop: 16 },
   correctLine: { fontSize: 22, fontWeight: '700', textAlign: 'center', color: '#22C55E' },
   diffLine: { fontSize: 20, fontWeight: '700', textAlign: 'center', letterSpacing: 1, marginBottom: 6 },
-  diffWrong: { backgroundColor: '#EF4444', color: '#FFFFFF' },
-  diffMissing: { backgroundColor: '#EAB308', color: '#FFFFFF', textDecorationLine: 'underline' },
   frontRow: { flexDirection: 'row', alignItems: 'flex-start', gap: 8, marginTop: 8 },
   correctAnswer: { flex: 1, flexShrink: 1, fontSize: 22, fontWeight: '600', textAlign: 'center' },
   speakBtn: { padding: 4, flexShrink: 0 },

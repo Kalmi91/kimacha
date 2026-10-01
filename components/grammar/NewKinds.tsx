@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
-import { StyleSheet, Text, TextInput, View } from 'react-native';
+import { StyleSheet, TextInput, View } from 'react-native';
+import { Text } from '@/components/KText';
 
 import EasySentenceCard from '@/components/EasySentenceCard';
 import ResultBadge from '@/components/ResultBadge';
@@ -120,7 +121,7 @@ export function SpotDrillItem({
                 onPress={() => tapWord(i)}
                 disabled={phase !== 'find'}
               >
-                <Text style={[styles.chipText, { color: revealed ? g.onFill : g.ink }]}>{w}</Text>
+                <Text style={[styles.chipText, { color: revealed ? (phase === 'done' && correct ? g.onA : g.onB) : g.ink }]}>{w}</Text>
               </BrutalBox>
             );
           })}
@@ -143,9 +144,9 @@ export function SpotDrillItem({
         <>
           <ResultBadge correct={correct} testID="spot-result" />
           <BrutalBox fill="b" boxStyle={styles.feedback}>
-            <Text style={[styles.fixedLine, { color: g.onFill }]}>{fixed}</Text>
-            <Text style={[styles.explain, { color: g.onFill }]}>{item.explain[contentLang] ?? item.explain.en}</Text>
-            <Text style={[styles.translation, { color: g.onFill }]}>{item.tr[contentLang] ?? item.tr.en}</Text>
+            <Text style={[styles.fixedLine, { color: g.onB }]}>{fixed}</Text>
+            <Text style={[styles.explain, { color: g.onB }]}>{item.explain[contentLang] ?? item.explain.en}</Text>
+            <Text style={[styles.translation, { color: g.onB }]}>{item.tr[contentLang] ?? item.tr.en}</Text>
           </BrutalBox>
           <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(correct)}>
             <Text style={[styles.nextText, { color: inkButtonText(g) }]}>{s.grammar.nextArrow}</Text>
@@ -250,8 +251,8 @@ export function DictationDrillItem({
         <>
           <ResultBadge correct={result.correct} testID="dictation-result" />
           <BrutalBox fill="b" boxStyle={styles.feedback}>
-            {!result.correct ? <AnswerCompare typed={typed} correct={item.es} g={g} onFill /> : <Text style={[styles.fixedLine, { color: g.onFill }]}>{item.es}</Text>}
-            <Text style={[styles.translation, { color: g.onFill }]}>{item.tr[contentLang] ?? item.tr.en}</Text>
+            {!result.correct ? <AnswerCompare typed={typed} correct={item.es} g={g} onFill /> : <Text style={[styles.fixedLine, { color: g.onB }]}>{item.es}</Text>}
+            <Text style={[styles.translation, { color: g.onB }]}>{item.tr[contentLang] ?? item.tr.en}</Text>
           </BrutalBox>
           <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(result.correct)}>
             <Text style={[styles.nextText, { color: inkButtonText(g) }]}>{s.grammar.nextArrow}</Text>

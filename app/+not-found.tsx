@@ -1,5 +1,6 @@
 import { Link, Stack } from 'expo-router';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { Text } from '@/components/KText';
 
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
@@ -15,7 +16,7 @@ export default function NotFoundScreen() {
     <>
       <Stack.Screen options={{ title: 'Oops!' }} />
       <View style={[styles.container, { backgroundColor: colors.background }]}>
-        <Text style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>This screen doesn&apos;t exist.</Text>
+        <Text variant="title" style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>This screen doesn&apos;t exist.</Text>
 
         {g.brutal ? (
           // NY25: brutalista palettán fő gomb; a Link asChild adja a navigációt.

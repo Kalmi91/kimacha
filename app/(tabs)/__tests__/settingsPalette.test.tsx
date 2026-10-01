@@ -1,5 +1,6 @@
-// NY12: a Beállítások "Színek" sora; választás után a téma-kontextus értéke
-// változik, és a választás a db-be kerül. Mock-minta: pcicLevelPicker.test.tsx.
+// NY12: a színválasztó; választás után a téma-kontextus értéke változik, és a választás a db-be
+// kerül. PLAN-temak 4D: a paletta-chipek a Beállítások helyett a Témák képernyőn vannak
+// (app/themes.tsx), az állítások ugyanazok. Mock-minta: pcicLevelPicker.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-router', () => ({
@@ -19,7 +20,7 @@ import { act, fireEvent, render } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database';
 import { ThemeProvider, useTheme } from '@/lib/ThemeContext';
-import SettingsScreen from '../settings';
+import ThemesScreen from '../../themes';
 
 let ctx: ReturnType<typeof useTheme>;
 function Probe() {
@@ -38,12 +39,12 @@ const flush = async () => {
   }
 };
 
-describe('Beállítások: színválasztó (NY12)', () => {
+describe('Témák képernyő: színválasztó (NY12)', () => {
   it('6 opció, a választás átállítja a kontextust és perzisztál', async () => {
     const { getByTestId, getByText } = render(
       <ThemeProvider>
         <Probe />
-        <SettingsScreen />
+        <ThemesScreen />
       </ThemeProvider>
     );
     await flush();
