@@ -106,7 +106,10 @@ Párhuzamos agent: `feat/learn-words-open` (`C:\AI\kimacha-wt-learn-open`) a `da
   - minta (választós): «Mi madre trabaja ___.» → mucho / muy / mucha
   - minta (választós): «Hoy hace ___ calor.» → mucho / muy / mucha
   - minta (form): row[0] «Tengo ___ hambre.» → mucha
-- [ ] 3. `combinacion-pronombres` (A2 exam) új lecke → kész, ha: ugyanaz
+- [x] 3. `combinacion-pronombres` (A2 exam) új lecke → kész, ha: ugyanaz · 01:12 · audit 0/0, jest 1592 ok, tsc 0, lint 0 err · 12 választós + 1 match (6 pár) + 12 form (tábla `combinacion-pares`, row[0] = lyukas kontextus-mondat, cella = névmás-pár: me/te/se/nos + lo/la/los/las) + 7 why; syllabus-sor és sáv (exam) már megvolt (nem nyúltam hozzá), nincs glossary, nincs transform (nem igeidős téma); es.ts-ben az A2 blokkban (grammarChoice: A1 az A2 előtt), teszt: speakNoSpanish 45→46; a pronombres-od/oi táblái nincsenek ismételve, a lecke a sorrendet, le/les → se-t, a dologhoz igazodó 2. névmást, a névmás-pár helyét (ige előtt, no a pár előtt, infinitivo/gerundio + ékezet) tanítja · hash: a `feat(grammar): combinacion-pronombres lesson (nyelvtan)` commit
+  - minta (választós): «¿El pastel? ___ compro a mis padres.» → Se lo / Se los / Se la
+  - minta (választós): «Mi coche es nuevo: ___ a nadie.» → no se lo vendo / se lo no vendo / no lo se vendo
+  - minta (form): row[0] «¿Le diste el regalo a Ana? Sí, ___ di ayer.» → se lo
 - [ ] 4. `imperativo-negativo` (A2 exam) új lecke → kész, ha: ugyanaz
 - [ ] 5. `llevar-traer-ir-venir` (A2 exam) új lecke → kész, ha: ugyanaz
 - [ ] 6. `pedir-preguntar` (A2 exam) új lecke → kész, ha: ugyanaz
