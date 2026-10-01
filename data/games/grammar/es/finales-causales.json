@@ -286,7 +286,7 @@
           "Puesto que lo sabes, dímelo."
         ],
         [
-          "como",
+          "como (causa)",
           "indicativo",
           "Como llueve, no salgo."
         ],
@@ -391,10 +391,10 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Ok = már megtörtént vagy tény → kijelentő mód. Cél = még nem történt meg → kötőmód. Ez a két kötő 90%-át eldönti.",
-        "en": "Cause = already happened or a fact → indicative. Purpose = has not happened yet → subjunctive. This decides 90% of these two connector types.",
-        "es": "Causa = ya ha pasado o es un hecho → indicativo. Finalidad = todavía no ha pasado → subjuntivo. Esto decide el 90% de estos dos tipos de nexos.",
-        "de": "Grund = bereits geschehen oder Tatsache → Indikativ. Zweck = noch nicht geschehen → Subjuntivo. Das entscheidet 90% dieser beiden Konnektor-Typen."
+        "hu": "Ok = már megtörtént vagy tény → kijelentő mód. Cél = még nem történt meg → kötőmód. Ez a két szempont a legtöbb esetben eldönti a módot.",
+        "en": "Cause = already happened or a fact → indicative. Purpose = has not happened yet → subjunctive. This decides the mood in most cases.",
+        "es": "Causa = ya ha pasado o es un hecho → indicativo. Finalidad = todavía no ha pasado → subjuntivo. Esto decide el modo en la mayoría de los casos.",
+        "de": "Grund = bereits geschehen oder Tatsache → Indikativ. Zweck = noch nicht geschehen → Subjuntivo. Das entscheidet in den meisten Fällen über den Modus."
       }
     }
   ],
@@ -512,7 +512,7 @@
       "sentence": "___ no tengo tiempo, no puedo ayudarte.",
       "options": [
         "Como",
-        "Porque",
+        "Por",
         "Para que"
       ],
       "correct": 0,
@@ -523,11 +523,11 @@
         "de": "„Como” als Grund-Konnektor kann nur am Satzanfang stehen."
       },
       "wrong": {
-        "Porque": {
-          "hu": "A „porque” nem állhat mondat elején ebben az értelemben, ide „como” kell.",
-          "en": "\"Porque\" cannot stand at the start of the sentence in this sense, \"como\" is needed here.",
-          "es": "«Porque» no puede ir al principio de la oración en este sentido, aquí hace falta «como».",
-          "de": "„Porque” kann in diesem Sinn nicht am Satzanfang stehen, hier braucht es „como”."
+        "Por": {
+          "hu": "A „Por” után főnév vagy főnévi igenév áll (por no tener tiempo), ragozott ige nem, ide „como” kell.",
+          "en": "\"Por\" is followed by a noun or an infinitive (por no tener tiempo), not a conjugated verb, \"como\" is needed here.",
+          "es": "Después de «por» va un sustantivo o un infinitivo (por no tener tiempo), no un verbo conjugado, aquí hace falta «como».",
+          "de": "Nach „por” steht ein Substantiv oder ein Infinitiv (por no tener tiempo), kein konjugiertes Verb, hier braucht es „como”."
         },
         "Para que": {
           "hu": "A „para que” cél-kötő kötőmóddal, itt viszont ok áll kijelentő móddal (tengo), helyesen: Como.",
@@ -546,7 +546,7 @@
       "sentence": "No estudio porque me ___, sino porque debo.",
       "options": [
         "guste",
-        "gusta",
+        "gustara",
         "gustar"
       ],
       "correct": 0,
@@ -557,11 +557,11 @@
         "de": "Verneinter Grund: no porque + Subjuntivo, gustar → guste."
       },
       "wrong": {
-        "gusta": {
-          "hu": "A „gusta” kijelentő mód, de a tagadott ok kötőmódot kíván, helyesen: guste.",
-          "en": "\"Gusta\" is indicative, but a negated cause needs the subjunctive, correctly: guste.",
-          "es": "«Gusta» es indicativo, pero la causa negada pide subjuntivo, correcto: guste.",
-          "de": "„Gusta” ist Indikativ, aber der verneinte Grund verlangt den Subjuntivo, richtig: guste."
+        "gustara": {
+          "hu": "A „gustara” imperfecto de subjuntivo: jelen idejű főmondat után nem illik, itt jelen idejű kötőmód kell, helyesen: guste.",
+          "en": "\"Gustara\" is imperfect subjunctive: it doesn't fit after a present-tense main clause, the present subjunctive is needed, correctly: guste.",
+          "es": "«Gustara» es imperfecto de subjuntivo: no encaja después de una oración principal en presente, hace falta el presente de subjuntivo, correcto: guste.",
+          "de": "„Gustara” ist Imperfecto de subjuntivo: nach einem Hauptsatz im Präsens passt es nicht, der Presente de subjuntivo ist nötig, richtig: guste."
         },
         "gustar": {
           "hu": "A „gustar” infinitivo nem illik ide, a ragozott kötőmódú alak kell, helyesen: guste.",
@@ -682,7 +682,7 @@
       "sentence": "Ya que ___ aquí, ayúdame con esto.",
       "options": [
         "estás",
-        "estés",
+        "estando",
         "estar"
       ],
       "correct": 0,
@@ -693,11 +693,11 @@
         "de": "Ya que + Indikativ, weil es eine Tatsache erklärt."
       },
       "wrong": {
-        "estés": {
-          "hu": "Az „estés” kötőmód itt nem kell, ya que kijelentő módot kíván, helyesen: estás.",
-          "en": "\"Estés\" as a subjunctive isn't needed here, ya que wants the indicative, correctly: estás.",
-          "es": "«Estés» en subjuntivo no hace falta aquí, ya que pide indicativo, correcto: estás.",
-          "de": "„Estés” im Subjuntivo ist hier nicht nötig, ya que verlangt den Indikativ, richtig: estás."
+        "estando": {
+          "hu": "Az „estando” gerundio: a ya que után ragozott ige kell, helyesen: estás.",
+          "en": "\"Estando\" is a gerund: ya que needs a conjugated verb, correctly: estás.",
+          "es": "«Estando» es un gerundio: ya que necesita un verbo conjugado, correcto: estás.",
+          "de": "„Estando” ist ein Gerundium: ya que braucht ein konjugiertes Verb, richtig: estás."
         },
         "estar": {
           "hu": "Az „estar” infinitivo nem illik ide, ragozott alak kell, helyesen: estás.",
@@ -895,7 +895,7 @@
       "id": "fc-form-07",
       "kind": "form",
       "verb": "modo",
-      "person": "como",
+      "person": "como (causa)",
       "answer": "indicativo",
       "table": "nexos"
     },

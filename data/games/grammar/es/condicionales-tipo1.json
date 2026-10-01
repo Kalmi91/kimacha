@@ -135,18 +135,18 @@
         { "hu": "Példa", "en": "Example", "es": "ejemplo", "de": "Beispiel" }
       ],
       "rows": [
-        ["salir, nosotros", "salimos", "presente", "Si llueve, no salimos."],
-        ["tener, tú", "tienes", "presente", "Si tienes frío, cierra la ventana."],
-        ["decir, yo", "digo", "presente", "Si sé algo, lo digo."],
-        ["aprobar, tú", "aprobarás", "futuro simple", "Si estudias, aprobarás."],
-        ["venir, ellos", "vendrán", "futuro simple", "Si los invitas, vendrán temprano."],
-        ["hacer, tú", "harás", "futuro simple", "Si tienes tiempo, harás la tarea."],
-        ["cerrar, tú", "cierra", "imperativo", "Si tienes frío, cierra la ventana."],
-        ["llamar, usted", "llame", "imperativo", "Si necesita ayuda, llame ahora."],
-        ["quedarse, nosotros", "nos quedamos", "presente / futuro", "Si llueve, nos quedamos en casa."],
-        ["empezar, nosotros", "vamos a empezar", "ir a + infinitivo", "Si llegas tarde, vamos a empezar sin ti."],
-        ["salir, ellos", "van a salir", "ir a + infinitivo", "Si terminan pronto, van a salir."],
-        ["llegar, ellas", "van a llegar", "ir a + infinitivo", "Si las invitas, van a llegar tarde."]
+        ["salir, nosotros (presente)", "salimos", "presente", "Si llueve, no salimos."],
+        ["tener, tú (presente)", "tienes", "presente", "Si tienes frío, cierra la ventana."],
+        ["decir, yo (presente)", "digo", "presente", "Si sé algo, lo digo."],
+        ["aprobar, tú (futuro)", "aprobarás", "futuro simple", "Si estudias, aprobarás."],
+        ["venir, ellos (futuro)", "vendrán", "futuro simple", "Si los invitas, vendrán temprano."],
+        ["hacer, tú (futuro)", "harás", "futuro simple", "Si tienes tiempo, harás la tarea."],
+        ["cerrar, tú (imperativo)", "cierra", "imperativo", "Si tienes frío, cierra la ventana."],
+        ["llamar, usted (imperativo)", "llame", "imperativo", "Si necesita ayuda, llame ahora."],
+        ["quedarse, nosotros (presente)", "nos quedamos", "presente", "Si llueve, nos quedamos en casa."],
+        ["empezar, nosotros (ir a)", "vamos a empezar", "ir a + infinitivo", "Si llegas tarde, vamos a empezar sin ti."],
+        ["salir, ellos (ir a)", "van a salir", "ir a + infinitivo", "Si terminan pronto, van a salir."],
+        ["llegar, ellas (ir a)", "van a llegar", "ir a + infinitivo", "Si las invitas, van a llegar tarde."]
       ]
     },
     {
@@ -227,10 +227,10 @@
       "options": ["tienes", "tendrás", "tenías"],
       "correct": 0,
       "why": {
-        "hu": "A si-tagmondat mindig jelen időben áll: tienes.",
-        "en": "The si-clause is always in the present: tienes.",
-        "es": "La cláusula con si siempre va en presente: tienes.",
-        "de": "Der Si-Satz steht immer im Präsens: tienes."
+        "hu": "A valós feltétel si-tagmondata jelen időben áll: tienes.",
+        "en": "In a real condition the si-clause is in the present: tienes.",
+        "es": "En una condición real, la cláusula con si va en presente: tienes.",
+        "de": "Bei einer realen Bedingung steht der Si-Satz im Präsens: tienes."
       },
       "wrong": {
         "tendrás": {
@@ -250,7 +250,7 @@
     },
     {
       "id": "ct-02",
-      "sentence": "Si llueve, no ___.",
+      "sentence": "Si llueve, nosotros no ___.",
       "options": ["salimos", "sales", "salen"],
       "correct": 0,
       "why": {
@@ -261,23 +261,23 @@
       },
       "wrong": {
         "sales": {
-          "hu": "A „sales” tú-alak: azt jelentené, hogy TE nem mész ki, nem MI.",
-          "en": "\"Sales\" is the tú-form: it would mean YOU don't go out, not WE.",
-          "es": "«Sales» es la forma de tú: significaría que TÚ no sales, no NOSOTROS.",
-          "de": "„Sales” ist die tú-Form: es würde bedeuten, dass DU nicht rausgehst, nicht WIR."
+          "hu": "A „sales” tú-alak, a „nosotros” alanyhoz nem illik, helyesen: salimos.",
+          "en": "\"Sales\" is the tú-form, it doesn't agree with \"nosotros\", correctly: salimos.",
+          "es": "«Sales» es la forma de tú, no concuerda con «nosotros», correcto: salimos.",
+          "de": "„Sales” ist die tú-Form, sie passt nicht zu „nosotros”, richtig: salimos."
         },
         "salen": {
-          "hu": "A „salen” ők-alak: azt jelentené, hogy ŐK nem mennek ki, nem MI.",
-          "en": "\"Salen\" is the they-form: it would mean THEY don't go out, not WE.",
-          "es": "«Salen» es la forma de ellos: significaría que ELLOS no salen, no NOSOTROS.",
-          "de": "„Salen” ist die Sie/They-Form: es würde bedeuten, dass SIE nicht rausgehen, nicht WIR."
+          "hu": "A „salen” ők-alak, a „nosotros” alanyhoz nem illik, helyesen: salimos.",
+          "en": "\"Salen\" is the they-form, it doesn't agree with \"nosotros\", correctly: salimos.",
+          "es": "«Salen» es la forma de ellos, no concuerda con «nosotros», correcto: salimos.",
+          "de": "„Salen” ist die ellos-Form, sie passt nicht zu „nosotros”, richtig: salimos."
         }
       },
       "examples": ["Si tienes frío, cierra la ventana.", "Si necesita ayuda, llame ahora."]
     },
     {
       "id": "ct-03",
-      "sentence": "Si necesitas ayuda, te ___.",
+      "sentence": "Si necesitas ayuda, yo te ___ ahora.",
       "options": ["ayudo", "ayudas", "ayudamos"],
       "correct": 0,
       "why": {
@@ -288,16 +288,16 @@
       },
       "wrong": {
         "ayudas": {
-          "hu": "Az „ayudas” tú-alak: azt jelentené, hogy TE segítesz magadnak, értelmetlen itt.",
-          "en": "\"Ayudas\" is the tú-form: it would mean YOU help yourself, which makes no sense here.",
-          "es": "«Ayudas» es la forma de tú: significaría que TÚ te ayudas a ti mismo, no tiene sentido aquí.",
-          "de": "„Ayudas” ist die tú-Form: es würde bedeuten, dass DU dir selbst hilfst, das ergibt hier keinen Sinn."
+          "hu": "A „ayudas” tú-alak, a „yo” alanyhoz nem illik, helyesen: ayudo.",
+          "en": "\"Ayudas\" is the tú-form, it doesn't agree with \"yo\", correctly: ayudo.",
+          "es": "«Ayudas» es la forma de tú, no concuerda con «yo», correcto: ayudo.",
+          "de": "„Ayudas” ist die tú-Form, sie passt nicht zu „yo”, richtig: ayudo."
         },
         "ayudamos": {
-          "hu": "Az „ayudamos” mi-alak: azt jelentené, hogy TÖBBEN segítünk, nem csak én.",
-          "en": "\"Ayudamos\" is the we-form: it would mean SEVERAL of us help, not just me.",
-          "es": "«Ayudamos» es la forma de nosotros: significaría que ayudamos VARIOS, no solo yo.",
-          "de": "„Ayudamos” ist die Wir-Form: es würde bedeuten, dass WIR mehrere helfen, nicht nur ich."
+          "hu": "A „ayudamos” mi-alak, a „yo” alanyhoz nem illik, helyesen: ayudo.",
+          "en": "\"Ayudamos\" is the we-form, it doesn't agree with \"yo\", correctly: ayudo.",
+          "es": "«Ayudamos» es la forma de nosotros, no concuerda con «yo», correcto: ayudo.",
+          "de": "„Ayudamos” ist die Wir-Form, sie passt nicht zu „yo”, richtig: ayudo."
         }
       },
       "examples": ["Si llueve, no salimos.", "Si estudias, aprobarás."]
@@ -331,7 +331,7 @@
     },
     {
       "id": "ct-05",
-      "sentence": "Si los invitas, ___ temprano.",
+      "sentence": "Si los invitas, ellos ___ temprano.",
       "options": ["vendrán", "vendré", "vendrás"],
       "correct": 0,
       "why": {
@@ -342,16 +342,16 @@
       },
       "wrong": {
         "vendré": {
-          "hu": "A „vendré” én-alak: azt jelentené, hogy ÉN jövök, nem ők.",
-          "en": "\"Vendré\" is the I-form: it would mean I'M coming, not them.",
-          "es": "«Vendré» es la forma de yo: significaría que YO vengo, no ellos.",
-          "de": "„Vendré” ist die Ich-Form: es würde bedeuten, dass ICH komme, nicht sie."
+          "hu": "A „vendré” én-alak, az „ellos” alanyhoz nem illik, helyesen: vendrán.",
+          "en": "\"Vendré\" is the I-form, it doesn't agree with \"ellos\", correctly: vendrán.",
+          "es": "«Vendré» es la forma de yo, no concuerda con «ellos», correcto: vendrán.",
+          "de": "„Vendré” ist die Ich-Form, sie passt nicht zu „ellos”, richtig: vendrán."
         },
         "vendrás": {
-          "hu": "A „vendrás” te-alak: azt jelentené, hogy TE jössz, nem ők.",
-          "en": "\"Vendrás\" is the you-form: it would mean YOU'RE coming, not them.",
-          "es": "«Vendrás» es la forma de tú: significaría que TÚ vienes, no ellos.",
-          "de": "„Vendrás” ist die Du-Form: es würde bedeuten, dass DU kommst, nicht sie."
+          "hu": "A „vendrás” te-alak, az „ellos” alanyhoz nem illik, helyesen: vendrán.",
+          "en": "\"Vendrás\" is the you-form, it doesn't agree with \"ellos\", correctly: vendrán.",
+          "es": "«Vendrás» es la forma de tú, no concuerda con «ellos», correcto: vendrán.",
+          "de": "„Vendrás” ist die Du-Form, sie passt nicht zu „ellos”, richtig: vendrán."
         }
       },
       "examples": ["Si llueve, no salimos.", "Si necesita ayuda, llame ahora."]
@@ -378,7 +378,7 @@
           "hu": "Az „ayudaremos” mi-alak: azt jelentené, hogy TÖBBEN fogunk segíteni, nem csak én.",
           "en": "\"Ayudaremos\" is the we-form: it would mean SEVERAL of us will help, not just me.",
           "es": "«Ayudaremos» es la forma de nosotros: significaría que ayudaremos VARIOS, no solo yo.",
-          "de": "„Ayudaremos” ist die Wir-Form: es würde bedeuten, dass WIR mehrere helfen werden, nicht nur ich."
+          "de": "„Ayudaremos” ist die Wir-Form: es würde bedeuten, dass MEHRERE von uns helfen werden, nicht nur ich."
         }
       },
       "examples": ["Si tienes frío, cierra la ventana.", "Si estudias, aprobarás."]
@@ -386,7 +386,7 @@
     {
       "id": "ct-07",
       "sentence": "Si tienes frío, ___ la ventana.",
-      "options": ["cierra", "cierro", "cierren"],
+      "options": ["cierra", "cierres", "cierre"],
       "correct": 0,
       "why": {
         "hu": "Felszólítás tú-nak: cierra.",
@@ -395,24 +395,24 @@
         "de": "Ein Imperativ für tú: cierra."
       },
       "wrong": {
-        "cierro": {
-          "hu": "A „cierro” jelen idő, én-alak: kijelentés lenne, nem felszólítás.",
-          "en": "\"Cierro\" is present tense, I-form: it would be a statement, not a command.",
-          "es": "«Cierro» es presente, forma de yo: sería una afirmación, no una orden.",
-          "de": "„Cierro” ist Präsens, Ich-Form: es wäre eine Aussage, kein Befehl."
+        "cierres": {
+          "hu": "A „cierres” kötőmód: igenlő felszólításban tú-nak „cierra” áll, a „cierres” csak tiltásnál jön (no cierres).",
+          "en": "\"Cierres\" is subjunctive: an affirmative tú-command is \"cierra\", \"cierres\" only comes in a prohibition (no cierres).",
+          "es": "«Cierres» es subjuntivo: la orden afirmativa para tú es «cierra», «cierres» solo aparece en la prohibición (no cierres).",
+          "de": "„Cierres” ist Subjuntivo: der bejahte Befehl für tú ist „cierra”, „cierres” steht nur im Verbot (no cierres)."
         },
-        "cierren": {
-          "hu": "A „cierren” ustedes-felszólítás: többeknek szólna, nem egy tú-nak.",
-          "en": "\"Cierren\" is the ustedes-imperative: it would address several people, not one tú.",
-          "es": "«Cierren» es el imperativo de ustedes: se dirigiría a varias personas, no a un tú.",
-          "de": "„Cierren” ist der Ustedes-Imperativ: er würde sich an mehrere Personen richten, nicht an ein tú."
+        "cierre": {
+          "hu": "A „cierre” usted-felszólítás: nem illik a tú-hoz (tienes), helyesen: cierra.",
+          "en": "\"Cierre\" is the usted-imperative: it doesn't match tú (tienes), correctly: cierra.",
+          "es": "«Cierre» es el imperativo de usted: no concuerda con tú (tienes), correcto: cierra.",
+          "de": "„Cierre” ist der Usted-Imperativ: er passt nicht zu tú (tienes), richtig: cierra."
         }
       },
       "examples": ["Si llueve, no salimos.", "Si llegas tarde, vamos a empezar sin ti."]
     },
     {
       "id": "ct-08",
-      "sentence": "Si necesita ayuda, ___ ahora.",
+      "sentence": "Si usted necesita ayuda, ___ ahora.",
       "options": ["llame", "llama", "llamen"],
       "correct": 0,
       "why": {
@@ -466,7 +466,7 @@
     },
     {
       "id": "ct-10",
-      "sentence": "Si los invitas, ___ a llegar tarde.",
+      "sentence": "Si los invitas, ellos ___ a llegar tarde.",
       "options": ["van", "vamos", "vas"],
       "correct": 0,
       "why": {
@@ -477,23 +477,23 @@
       },
       "wrong": {
         "vamos": {
-          "hu": "A „vamos” mi-alak: azt jelentené, hogy MI érkezünk később, nem ők.",
-          "en": "\"Vamos\" is the we-form: it would mean WE arrive late, not them.",
-          "es": "«Vamos» es la forma de nosotros: significaría que NOSOTROS llegamos tarde, no ellos.",
-          "de": "„Vamos” ist die Wir-Form: es würde bedeuten, dass WIR spät ankommen, nicht sie."
+          "hu": "A „vamos” mi-alak, az „ellos” alanyhoz nem illik, helyesen: van.",
+          "en": "\"Vamos\" is the we-form, it doesn't agree with \"ellos\", correctly: van.",
+          "es": "«Vamos» es la forma de nosotros, no concuerda con «ellos», correcto: van.",
+          "de": "„Vamos” ist die Wir-Form, sie passt nicht zu „ellos”, richtig: van."
         },
         "vas": {
-          "hu": "A „vas” te-alak: azt jelentené, hogy TE érkezel később, nem ők.",
-          "en": "\"Vas\" is the you-form: it would mean YOU arrive late, not them.",
-          "es": "«Vas» es la forma de tú: significaría que TÚ llegas tarde, no ellos.",
-          "de": "„Vas” ist die Du-Form: es würde bedeuten, dass DU spät ankommst, nicht sie."
+          "hu": "A „vas” te-alak, az „ellos” alanyhoz nem illik, helyesen: van.",
+          "en": "\"Vas\" is the you-form, it doesn't agree with \"ellos\", correctly: van.",
+          "es": "«Vas» es la forma de tú, no concuerda con «ellos», correcto: van.",
+          "de": "„Vas” ist die tú-Form, sie passt nicht zu „ellos”, richtig: van."
         }
       },
       "examples": ["Si estudias, aprobarás.", "Si tienes frío, cierra la ventana."]
     },
     {
       "id": "ct-11",
-      "sentence": "Si necesitas ayuda, ___ a llamarte.",
+      "sentence": "Si necesitas ayuda, yo ___ a llamarte.",
       "options": ["voy", "vas", "va"],
       "correct": 0,
       "why": {
@@ -504,16 +504,16 @@
       },
       "wrong": {
         "vas": {
-          "hu": "A „vas” te-alak: azt jelentené, hogy TE fogsz hívni valakit, nem én téged.",
-          "en": "\"Vas\" is the you-form: it would mean YOU are going to call someone, not me calling you.",
-          "es": "«Vas» es la forma de tú: significaría que TÚ vas a llamar a alguien, no yo a ti.",
-          "de": "„Vas” ist die Du-Form: es würde bedeuten, dass DU jemanden anrufen wirst, nicht ich dich."
+          "hu": "A „vas” tú-alak, a „yo” alanyhoz nem illik, helyesen: voy.",
+          "en": "\"Vas\" is the tú-form, it doesn't agree with \"yo\", correctly: voy.",
+          "es": "«Vas» es la forma de tú, no concuerda con «yo», correcto: voy.",
+          "de": "„Vas” ist die tú-Form, sie passt nicht zu „yo”, richtig: voy."
         },
         "va": {
-          "hu": "A „va” ő-alak: azt jelentené, hogy Ő fog hívni, nem én.",
-          "en": "\"Va\" is the he/she-form: it would mean HE/SHE is going to call, not me.",
-          "es": "«Va» es la forma de él/ella: significaría que ÉL/ELLA va a llamar, no yo.",
-          "de": "„Va” ist die Er/Sie-Form: es würde bedeuten, dass ER/SIE anrufen wird, nicht ich."
+          "hu": "A „va” ő-alak, a „yo” alanyhoz nem illik, helyesen: voy.",
+          "en": "\"Va\" is the he/she-form, it doesn't agree with \"yo\", correctly: voy.",
+          "es": "«Va» es la forma de él/ella, no concuerda con «yo», correcto: voy.",
+          "de": "„Va” ist die Er/Sie-Form, sie passt nicht zu „yo”, richtig: voy."
         }
       },
       "examples": ["Si llueve, no salimos.", "Si necesita ayuda, llame ahora."]
@@ -521,7 +521,7 @@
     {
       "id": "ct-12",
       "sentence": "___ llueve, no salimos.",
-      "options": ["Si", "Porque", "Aunque"],
+      "options": ["Si", "Para", "Aunque"],
       "correct": 0,
       "why": {
         "hu": "A „Si” vezeti be a bizonytalan feltételt: lehet, hogy esik, lehet, hogy nem.",
@@ -530,11 +530,11 @@
         "de": "„Si” leitet die unsichere Bedingung ein: es könnte regnen, es könnte auch nicht."
       },
       "wrong": {
-        "Porque": {
-          "hu": "A „Porque” okot fejezne ki (miért nem megyünk ki), nem feltételt.",
-          "en": "\"Porque\" would express a reason (why we don't go out), not a condition.",
-          "es": "«Porque» expresaría una razón (por qué no salimos), no una condición.",
-          "de": "„Porque” würde einen Grund ausdrücken (warum wir nicht rausgehen), keine Bedingung."
+        "Para": {
+          "hu": "A „Para” célt fejezne ki, és után nem állhat sima kijelentő mondat, nem feltételt.",
+          "en": "\"Para\" would express a purpose, and a plain indicative clause can't follow it, not a condition.",
+          "es": "«Para» expresaría una finalidad, y no puede seguirle una oración en indicativo, no una condición.",
+          "de": "„Para” würde einen Zweck ausdrücken, und ein einfacher Indikativsatz kann nicht darauf folgen, keine Bedingung."
         },
         "Aunque": {
           "hu": "Az „Aunque” megengedő mellékmondatot vezetne be (annak ellenére, hogy esik), nem feltételt.",
@@ -561,7 +561,7 @@
       "id": "ct-form-01",
       "kind": "form",
       "verb": "forma",
-      "person": "salir, nosotros",
+      "person": "salir, nosotros (presente)",
       "answer": "salimos",
       "table": "tipo1"
     },
@@ -569,7 +569,7 @@
       "id": "ct-form-02",
       "kind": "form",
       "verb": "forma",
-      "person": "tener, tú",
+      "person": "tener, tú (presente)",
       "answer": "tienes",
       "table": "tipo1"
     },
@@ -577,7 +577,7 @@
       "id": "ct-form-03",
       "kind": "form",
       "verb": "forma",
-      "person": "decir, yo",
+      "person": "decir, yo (presente)",
       "answer": "digo",
       "table": "tipo1"
     },
@@ -585,7 +585,7 @@
       "id": "ct-form-04",
       "kind": "form",
       "verb": "forma",
-      "person": "aprobar, tú",
+      "person": "aprobar, tú (futuro)",
       "answer": "aprobarás",
       "table": "tipo1"
     },
@@ -593,7 +593,7 @@
       "id": "ct-form-05",
       "kind": "form",
       "verb": "forma",
-      "person": "venir, ellos",
+      "person": "venir, ellos (futuro)",
       "answer": "vendrán",
       "table": "tipo1"
     },
@@ -601,7 +601,7 @@
       "id": "ct-form-06",
       "kind": "form",
       "verb": "forma",
-      "person": "hacer, tú",
+      "person": "hacer, tú (futuro)",
       "answer": "harás",
       "table": "tipo1"
     },
@@ -609,7 +609,7 @@
       "id": "ct-form-07",
       "kind": "form",
       "verb": "forma",
-      "person": "cerrar, tú",
+      "person": "cerrar, tú (imperativo)",
       "answer": "cierra",
       "table": "tipo1"
     },
@@ -617,7 +617,7 @@
       "id": "ct-form-08",
       "kind": "form",
       "verb": "forma",
-      "person": "llamar, usted",
+      "person": "llamar, usted (imperativo)",
       "answer": "llame",
       "table": "tipo1"
     },
@@ -625,7 +625,7 @@
       "id": "ct-form-09",
       "kind": "form",
       "verb": "forma",
-      "person": "quedarse, nosotros",
+      "person": "quedarse, nosotros (presente)",
       "answer": "nos quedamos",
       "accept": ["nos quedaremos"],
       "table": "tipo1"
@@ -634,7 +634,7 @@
       "id": "ct-form-10",
       "kind": "form",
       "verb": "forma",
-      "person": "empezar, nosotros",
+      "person": "empezar, nosotros (ir a)",
       "answer": "vamos a empezar",
       "table": "tipo1"
     },
@@ -642,7 +642,7 @@
       "id": "ct-form-11",
       "kind": "form",
       "verb": "forma",
-      "person": "salir, ellos",
+      "person": "salir, ellos (ir a)",
       "answer": "van a salir",
       "table": "tipo1"
     },
@@ -650,7 +650,7 @@
       "id": "ct-form-12",
       "kind": "form",
       "verb": "forma",
-      "person": "llegar, ellas",
+      "person": "llegar, ellas (ir a)",
       "answer": "van a llegar",
       "table": "tipo1"
     },
@@ -754,7 +754,7 @@
         },
         {
           "text": { "hu": "si + jövő idő", "en": "si + future", "es": "si + futuro", "de": "si + Futur" },
-          "wrong": { "hu": "Se si, se jövő idő nincs a mondatban.", "en": "There's neither si nor a future tense in the sentence.", "es": "No hay ni si ni futuro en la oración.", "de": "Weder si noch Futur kommen im Satz vor." }
+          "wrong": { "hu": "Nincs a mondatban sem si, sem jövő idő.", "en": "There's neither si nor a future tense in the sentence.", "es": "No hay ni si ni futuro en la oración.", "de": "Weder si noch Futur kommen im Satz vor." }
         }
       ],
       "correctIndex": 0

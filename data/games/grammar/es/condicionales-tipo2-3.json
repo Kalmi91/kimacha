@@ -119,10 +119,10 @@
         },
         {
           "text": {
-            "hu": "A si után SOHA nem áll condicional (si tendría ✗) és soha nem áll presente de subjuntivo (si tenga ✗): a si-tagmondat mindig indicativo jelen, imperfecto de subjuntivo vagy pluscuamperfecto de subjuntivo.",
-            "en": "After si there is NEVER a conditional (si tendría ✗) and never a present subjunctive (si tenga ✗): the si-clause is always indicative present, imperfect subjunctive, or pluperfect subjunctive.",
-            "es": "Después de si NUNCA va un condicional (si tendría ✗) ni un presente de subjuntivo (si tenga ✗): la cláusula con si siempre es presente de indicativo, imperfecto de subjuntivo o pluscuamperfecto de subjuntivo.",
-            "de": "Nach si steht NIE ein Konditional (si tendría ✗) und nie ein Presente de subjuntivo (si tenga ✗): der Si-Satz steht immer im Indikativ Präsens, im Imperfecto de subjuntivo oder im Pluscuamperfecto de subjuntivo."
+            "hu": "A si után SOHA nem áll condicional (si tendría ✗) és soha nem áll presente de subjuntivo (si tenga ✗): ebben a három feltételtípusban a si-tagmondat indicativo jelen, imperfecto de subjuntivo vagy pluscuamperfecto de subjuntivo.",
+            "en": "After si there is NEVER a conditional (si tendría ✗) and never a present subjunctive (si tenga ✗): in these three condition types the si-clause is indicative present, imperfect subjunctive, or pluperfect subjunctive.",
+            "es": "Después de si NUNCA va un condicional (si tendría ✗) ni un presente de subjuntivo (si tenga ✗): en estos tres tipos de condición la cláusula con si es presente de indicativo, imperfecto de subjuntivo o pluscuamperfecto de subjuntivo.",
+            "de": "Nach si steht NIE ein Konditional (si tendría ✗) und nie ein Presente de subjuntivo (si tenga ✗): in diesen drei Bedingungstypen steht der Si-Satz im Indikativ Präsens, im Imperfecto de subjuntivo oder im Pluscuamperfecto de subjuntivo."
           },
           "examples": [
             {
@@ -173,10 +173,10 @@
         { "hu": "saber", "en": "saber", "es": "saber", "de": "saber" }
       ],
       "rows": [
-        ["imperfecto de subjuntivo, yo", "tuviera", "fuera", "hiciera", "pudiera", "supiera"],
-        ["imperfecto de subjuntivo, tú", "tuvieras", "fueras", "hicieras", "pudieras", "supieras"],
-        ["imperfecto de subjuntivo, él", "tuviera", "fuera", "hiciera", "pudiera", "supiera"],
-        ["pluscuamperfecto de subjuntivo, yo", "hubiera tenido", "hubiera sido", "hubiera hecho", "hubiera podido", "hubiera sabido"],
+        ["imperfecto de subjuntivo (-ra), yo", "tuviera", "fuera", "hiciera", "pudiera", "supiera"],
+        ["imperfecto de subjuntivo (-ra), tú", "tuvieras", "fueras", "hicieras", "pudieras", "supieras"],
+        ["imperfecto de subjuntivo (-ra), él", "tuviera", "fuera", "hiciera", "pudiera", "supiera"],
+        ["pluscuamperfecto de subjuntivo (hubiera), yo", "hubiera tenido", "hubiera sido", "hubiera hecho", "hubiera podido", "hubiera sabido"],
         ["condicional simple, yo", "tendría", "sería", "haría", "podría", "sabría"],
         ["condicional compuesto, yo", "habría tenido", "habría sido", "habría hecho", "habría podido", "habría sabido"]
       ]
@@ -257,7 +257,8 @@
     { "word": "supiera", "gloss": { "hu": "tudná (kötőmód, múlt idejű feltétel)", "en": "I/he/she would know (subjunctive)", "es": "yo/él/ella supiera", "de": "ich/er/sie wüsste (Subjuntivo)" } },
     { "word": "diría", "gloss": { "hu": "mondaná", "en": "I/he/she would say", "es": "yo/él/ella diría", "de": "ich/er/sie würde sagen" } },
     { "word": "apruebas", "gloss": { "hu": "átmész (vizsgán)", "en": "you pass (an exam)", "es": "tú apruebas", "de": "du bestehst" } },
-    { "word": "dices", "gloss": { "hu": "mondod", "en": "you say", "es": "tú dices", "de": "du sagst" } }
+    { "word": "dices", "gloss": { "hu": "mondod", "en": "you say", "es": "tú dices", "de": "du sagst" } },
+    { "word": "sabría", "gloss": { "hu": "tudna", "en": "I/he/she would know", "es": "yo/él/ella sabría", "de": "ich/er/sie würde wissen" } }
   ],
   "items": [
     {
@@ -366,11 +367,11 @@
           "de": "„Supo” ist Indefinido: es würde bedeuten, dass sie die Wahrheit zu einem bestimmten Zeitpunkt ERFAHREN hat, kein hypothetischer Fall, richtig: supiera."
         }
       },
-      "examples": ["Si tuviéramos más dinero, venderíamos el coche viejo.", "Si hubieras estudiado más, habrías aprobado el examen."]
+      "examples": ["Si tuviéramos más dinero, venderíamos el carro viejo.", "Si hubieras estudiado más, habrías aprobado el examen."]
     },
     {
       "id": "ct2-05",
-      "sentence": "Si tuviéramos más dinero, ___ el coche viejo.",
+      "sentence": "Si tuviéramos más dinero, ___ el carro viejo.",
       "options": ["venderíamos", "vendemos", "vendimos"],
       "correct": 0,
       "why": {
@@ -383,7 +384,7 @@
         "vendemos": {
           "hu": "A „vendemos” jelen idő: azt jelentené, hogy TÉNYLEG eladjuk az autót, holott a feltétel (tuviéramos) irreális, helyesen: venderíamos.",
           "en": "\"Vendemos\" is present: it would mean we REALLY sell the car, but the condition (tuviéramos) is unreal, correctly: venderíamos.",
-          "es": "«Vendemos» es presente: significaría que REALMENTE vendemos el coche, pero la condición (tuviéramos) es irreal, correcto: venderíamos.",
+          "es": "«Vendemos» es presente: significaría que REALMENTE vendemos el carro, pero la condición (tuviéramos) es irreal, correcto: venderíamos.",
           "de": "„Vendemos” ist Präsens: es würde bedeuten, dass wir das Auto WIRKLICH verkaufen, aber die Bedingung (tuviéramos) ist irreal, richtig: venderíamos."
         },
         "vendimos": {
@@ -397,7 +398,7 @@
     },
     {
       "id": "ct2-06",
-      "sentence": "Si ___ más despacio, entenderías mejor.",
+      "sentence": "Si ___ más despacio, te entendería mejor.",
       "options": ["hablaras", "hablas", "hablaste"],
       "correct": 0,
       "why": {
@@ -408,10 +409,10 @@
       },
       "wrong": {
         "hablas": {
-          "hu": "A „hablas” jelen idő: valós feltételt jelentene (tipo1), itt viszont a főtag (entenderías) irreálist jelez, helyesen: hablaras.",
-          "en": "\"Hablas\" is present: it would signal a real condition (tipo1), but the main clause (entenderías) signals an unreal one, correctly: hablaras.",
-          "es": "«Hablas» es presente: indicaría una condición real (tipo1), pero la oración principal (entenderías) marca una irreal, correcto: hablaras.",
-          "de": "„Hablas” ist Präsens: es würde eine reale Bedingung anzeigen (tipo1), aber der Hauptsatz (entenderías) zeigt eine irreale an, richtig: hablaras."
+          "hu": "A „hablas” jelen idő: valós feltételt jelentene (tipo1), itt viszont a főtag (entendería) irreálist jelez, helyesen: hablaras.",
+          "en": "\"Hablas\" is present: it would signal a real condition (tipo1), but the main clause (entendería) signals an unreal one, correctly: hablaras.",
+          "es": "«Hablas» es presente: indicaría una condición real (tipo1), pero la oración principal (entendería) marca una irreal, correcto: hablaras.",
+          "de": "„Hablas” ist Präsens: es würde eine reale Bedingung anzeigen (tipo1), aber der Hauptsatz (entendería) zeigt eine irreale an, richtig: hablaras."
         },
         "hablaste": {
           "hu": "A „hablaste” indefinido: egy megtörtént eseményt jelentene, nem egy feltételezett esetet, helyesen: hablaras.",
@@ -420,12 +421,12 @@
           "de": "„Hablaste” ist Indefinido: es würde etwas Geschehenes berichten, keinen hypothetischen Fall, richtig: hablaras."
         }
       },
-      "examples": ["Si fueras más amable, te ayudarían.", "Si tuviéramos más dinero, venderíamos el coche viejo."]
+      "examples": ["Si fueras más amable, te ayudarían.", "Si tuviéramos más dinero, venderíamos el carro viejo."]
     },
     {
       "id": "ct2-07",
       "sentence": "Si ___ la verdad, no habría dicho nada.",
-      "options": ["hubiera sabido", "sabía", "supe"],
+      "options": ["hubiera sabido", "sabría", "supe"],
       "correct": 0,
       "why": {
         "hu": "Múltbeli irreális feltétel: pluscuamperfecto de subjuntivo: hubiera sabido.",
@@ -434,11 +435,11 @@
         "de": "Irreale Bedingung der Vergangenheit: Pluscuamperfecto de subjuntivo: hubiera sabido."
       },
       "wrong": {
-        "sabía": {
-          "hu": "A „sabía” imperfecto de indicativo: egy régi, folyamatos tudásállapotot jelentene, nem egy múltbeli irreális feltételt, helyesen: hubiera sabido.",
-          "en": "\"Sabía\" is imperfect indicative: it would describe an ongoing past state of knowing, not an unreal past condition, correctly: hubiera sabido.",
-          "es": "«Sabía» es imperfecto de indicativo: describiría un estado pasado y continuo de saber, no una condición irreal de pasado, correcto: hubiera sabido.",
-          "de": "„Sabía” ist Indikativ Imperfekt: es würde einen andauernden vergangenen Wissenszustand beschreiben, keine irreale Bedingung der Vergangenheit, richtig: hubiera sabido."
+        "sabría": {
+          "hu": "A „sabría” feltételes mód: a si-tagmondatban nem állhat condicional, helyesen: hubiera sabido.",
+          "en": "\"Sabría\" is conditional: it can't stand in the si-clause, correctly: hubiera sabido.",
+          "es": "«Sabría» es condicional: no puede ir en la cláusula con si, correcto: hubiera sabido.",
+          "de": "„Sabría” ist Konditional: es kann nicht im Si-Satz stehen, richtig: hubiera sabido."
         },
         "supe": {
           "hu": "A „supe” indefinido: azt jelentené, hogy MEGTUDTAM az igazságot egy adott pillanatban, nem egy irreális feltételt, helyesen: hubiera sabido.",
@@ -543,10 +544,10 @@
       },
       "wrong": {
         "soy": {
-          "hu": "A „soy” jelen idő, kijelentő mód: azt jelentené, hogy TÉNYLEG orvos vagy, nem egy feltételezett állapotot, helyesen: sería.",
-          "en": "\"Soy\" is present indicative: it would mean you REALLY are a doctor, not a hypothetical state, correctly: sería.",
-          "es": "«Soy» es presente de indicativo: significaría que REALMENTE eres médico, no un estado hipotético, correcto: sería.",
-          "de": "„Soy” ist Indikativ Präsens: es würde bedeuten, dass du WIRKLICH Arzt bist, kein hypothetischer Zustand, richtig: sería."
+          "hu": "A „soy” jelen idő, kijelentő mód: azt jelentené, hogy TÉNYLEG orvos vagyok, nem egy feltételezett állapotot, helyesen: sería.",
+          "en": "\"Soy\" is present indicative: it would mean I REALLY am a doctor, not a hypothetical state, correctly: sería.",
+          "es": "«Soy» es presente de indicativo: significaría que REALMENTE soy médico, no un estado hipotético, correcto: sería.",
+          "de": "„Soy” ist Indikativ Präsens: es würde bedeuten, dass ich WIRKLICH Arzt bin, kein hypothetischer Zustand, richtig: sería."
         },
         "fui": {
           "hu": "A „fui” indefinido: egy múltbeli tényt jelentene (voltam orvos), nem egy máig tartó feltételezett állapotot, helyesen: sería.",
@@ -600,7 +601,7 @@
       "id": "ct2-form-01",
       "kind": "form",
       "verb": "tener",
-      "person": "imperfecto de subjuntivo, yo",
+      "person": "imperfecto de subjuntivo (-ra), yo",
       "answer": "tuviera",
       "table": "irreal"
     },
@@ -608,7 +609,7 @@
       "id": "ct2-form-02",
       "kind": "form",
       "verb": "ser",
-      "person": "imperfecto de subjuntivo, tú",
+      "person": "imperfecto de subjuntivo (-ra), tú",
       "answer": "fueras",
       "table": "irreal"
     },
@@ -616,7 +617,7 @@
       "id": "ct2-form-03",
       "kind": "form",
       "verb": "hacer",
-      "person": "imperfecto de subjuntivo, él",
+      "person": "imperfecto de subjuntivo (-ra), él",
       "answer": "hiciera",
       "table": "irreal"
     },
@@ -624,7 +625,7 @@
       "id": "ct2-form-04",
       "kind": "form",
       "verb": "poder",
-      "person": "imperfecto de subjuntivo, yo",
+      "person": "imperfecto de subjuntivo (-ra), yo",
       "answer": "pudiera",
       "table": "irreal"
     },
@@ -632,7 +633,7 @@
       "id": "ct2-form-05",
       "kind": "form",
       "verb": "saber",
-      "person": "imperfecto de subjuntivo, tú",
+      "person": "imperfecto de subjuntivo (-ra), tú",
       "answer": "supieras",
       "table": "irreal"
     },
@@ -640,7 +641,7 @@
       "id": "ct2-form-06",
       "kind": "form",
       "verb": "ser",
-      "person": "imperfecto de subjuntivo, yo",
+      "person": "imperfecto de subjuntivo (-ra), yo",
       "answer": "fuera",
       "table": "irreal"
     },
@@ -648,7 +649,7 @@
       "id": "ct2-form-07",
       "kind": "form",
       "verb": "tener",
-      "person": "pluscuamperfecto de subjuntivo, yo",
+      "person": "pluscuamperfecto de subjuntivo (hubiera), yo",
       "answer": "hubiera tenido",
       "table": "irreal"
     },
@@ -656,7 +657,7 @@
       "id": "ct2-form-08",
       "kind": "form",
       "verb": "saber",
-      "person": "pluscuamperfecto de subjuntivo, yo",
+      "person": "pluscuamperfecto de subjuntivo (hubiera), yo",
       "answer": "hubiera sabido",
       "table": "irreal"
     },
@@ -664,7 +665,7 @@
       "id": "ct2-form-09",
       "kind": "form",
       "verb": "hacer",
-      "person": "pluscuamperfecto de subjuntivo, yo",
+      "person": "pluscuamperfecto de subjuntivo (hubiera), yo",
       "answer": "hubiera hecho",
       "table": "irreal"
     },
