@@ -100,6 +100,7 @@ export const GRAMMAR_TIER: Record<string, GrammarTier> = {
   'saber-conocer': 'exam',
   'pedir-preguntar': 'exam',
   'llevar-traer-ir-venir': 'exam',
+  diminutivos: 'full',
   // --- B1 ---
   'subjuntivo-presente-forma': 'core',
   'subjuntivo-disparadores': 'core',
@@ -464,6 +465,13 @@ export const GRAMMAR_SYLLABUS: SyllabusTopic[] = [
     unit: 'a2-comparar',
     title: { hu: 'Por vagy para?', en: 'Por or para?', es: '¿Por o para?', de: 'Por oder para?' },
     blurb: { hu: 'Ok vagy cél: a magyarban mindkettő „-ért".', en: 'Cause or purpose, where English blurs them into "for".', es: 'Causa o finalidad.', de: 'Ursache oder Ziel, beides „für".' },
+  },
+  {
+    id: 'diminutivos',
+    level: 'A2',
+    unit: 'a2-comparar',
+    title: { hu: 'Kicsinyítők: -ito, -cito, -ecito', en: 'Diminutives: -ito, -cito, -ecito', es: 'Diminutivos: -ito, -cito, -ecito', de: 'Verkleinerungsformen: -ito, -cito, -ecito' },
+    blurb: { hu: 'Casita, cafecito, ahorita: kicsi, kedves, udvarias.', en: 'Casita, cafecito, ahorita: small, warm, polite.', es: 'Casita, cafecito, ahorita: pequeño, cariñoso, cortés.', de: 'Casita, cafecito, ahorita: klein, herzlich, höflich.' },
   },
   {
     id: 'saber-conocer',
