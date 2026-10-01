@@ -64,11 +64,11 @@
           },
           "examples": [
             {
-              "es": "Siendo tan joven, no puede conducir.",
+              "es": "Siendo tan joven, no puede manejar.",
               "tr": {
                 "hu": "Mivel olyan fiatal, nem vezethet.",
                 "en": "Being so young, he cannot drive.",
-                "es": "Siendo tan joven, no puede conducir.",
+                "es": "Siendo tan joven, no puede manejar.",
                 "de": "Da er so jung ist, darf er nicht fahren."
               }
             },
@@ -275,7 +275,7 @@
           "dejar + participio, concuerda"
         ],
         [
-          "Mi hermano, ___ (ser) muy joven, no conduce.",
+          "Mi hermano, ___ (ser) muy joven, no maneja.",
           "siendo",
           "gerundio de causa"
         ],
@@ -290,7 +290,7 @@
           "gerundio de condición"
         ],
         [
-          "Cenamos y ___ (volver) a casa.",
+          "Ayer cenamos y ___ (volver) a casa.",
           "volvimos",
           "y + verbo conjugado (acción posterior)"
         ],
@@ -448,10 +448,10 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "A gerundio alanya a főige alanya. Ha másik az alany, participio absoluto vagy cuando kell: Terminada la clase, salimos.",
-        "en": "The subject of the gerund is the subject of the main verb. If the subject is a different one, use the absolute participle or cuando: Terminada la clase, salimos.",
-        "es": "El sujeto del gerundio es el del verbo principal. Si el sujeto es otro, usa el participio absoluto o cuando: Terminada la clase, salimos.",
-        "de": "Das Subjekt des Gerundiums ist das des Hauptverbs. Bei einem anderen Subjekt nimmt man das absolute Partizip oder cuando: Terminada la clase, salimos."
+        "hu": "A gerundio alanya általában a főige alanya. Ha másik az alany, participio absoluto vagy cuando kell: Terminada la clase, salimos.",
+        "en": "The subject of the gerund is usually the subject of the main verb. If the subject is a different one, use the absolute participle or cuando: Terminada la clase, salimos.",
+        "es": "El sujeto del gerundio suele ser el del verbo principal. Si el sujeto es otro, usa el participio absoluto o cuando: Terminada la clase, salimos.",
+        "de": "Das Subjekt des Gerundiums ist meist das des Hauptverbs. Bei einem anderen Subjekt nimmt man das absolute Partizip oder cuando: Terminada la clase, salimos."
       }
     }
   ],
@@ -799,7 +799,7 @@
     },
     {
       "id": "gpc-ch-10",
-      "sentence": "Ya tengo ___ los billetes.",
+      "sentence": "Ya tengo ___ los boletos.",
       "options": [
         "comprando",
         "comprado",
@@ -807,23 +807,23 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Tener + participio: a participio a tárgyhoz (los billetes) igazodik, ezért comprados.",
-        "en": "Tener + participle: the participle agrees with the object (los billetes), so comprados.",
-        "es": "Tener + participio: el participio concuerda con el objeto (los billetes), por eso comprados.",
-        "de": "Tener + Partizip: Das Partizip stimmt mit dem Objekt (los billetes) überein, also comprados."
+        "hu": "Tener + participio: a participio a tárgyhoz (los boletos) igazodik, ezért comprados.",
+        "en": "Tener + participle: the participle agrees with the object (los boletos), so comprados.",
+        "es": "Tener + participio: el participio concuerda con el objeto (los boletos), por eso comprados.",
+        "de": "Tener + Partizip: Das Partizip stimmt mit dem Objekt (los boletos) überein, also comprados."
       },
       "wrong": {
         "comprando": {
-          "hu": "A tener mellett az eredményt participio fejezi ki, nem gerundio; helyesen: Ya tengo comprados los billetes.",
-          "en": "After tener the result is expressed by a participle, not a gerund; correctly: Ya tengo comprados los billetes.",
-          "es": "Con tener el resultado se expresa con participio, no con gerundio; correctamente: Ya tengo comprados los billetes.",
-          "de": "Nach tener wird das Ergebnis durch ein Partizip ausgedrückt, nicht durch ein Gerundium; richtig: Ya tengo comprados los billetes."
+          "hu": "A tener mellett az eredményt participio fejezi ki, nem gerundio; helyesen: Ya tengo comprados los boletos.",
+          "en": "After tener the result is expressed by a participle, not a gerund; correctly: Ya tengo comprados los boletos.",
+          "es": "Con tener el resultado se expresa con participio, no con gerundio; correctamente: Ya tengo comprados los boletos.",
+          "de": "Nach tener wird das Ergebnis durch ein Partizip ausgedrückt, nicht durch ein Gerundium; richtig: Ya tengo comprados los boletos."
         },
         "comprado": {
-          "hu": "A comprado a he comprado alakja, ami sosem változik; a tener mellett a participio igazodik a los billetes-hez; helyesen: Ya tengo comprados los billetes.",
-          "en": "Comprado is the form of he comprado, which never changes; after tener the participle agrees with los billetes; correctly: Ya tengo comprados los billetes.",
-          "es": "Comprado es la forma de he comprado, que nunca cambia; con tener el participio concuerda con los billetes; correctamente: Ya tengo comprados los billetes.",
-          "de": "Comprado ist die Form von he comprado, die sich nie ändert; nach tener richtet sich das Partizip nach los billetes; richtig: Ya tengo comprados los billetes."
+          "hu": "A comprado a he comprado alakja, ami sosem változik; a tener mellett a participio igazodik a los boletos-hoz; helyesen: Ya tengo comprados los boletos.",
+          "en": "Comprado is the form of he comprado, which never changes; after tener the participle agrees with los boletos; correctly: Ya tengo comprados los boletos.",
+          "es": "Comprado es la forma de he comprado, que nunca cambia; con tener el participio concuerda con los boletos; correctamente: Ya tengo comprados los boletos.",
+          "de": "Comprado ist die Form von he comprado, die sich nie ändert; nach tener richtet sich das Partizip nach los boletos; richtig: Ya tengo comprados los boletos."
         }
       },
       "examples": [
@@ -949,7 +949,7 @@
       "kind": "form",
       "id": "gpc-form-03",
       "verb": "forma",
-      "person": "Mi hermano, ___ (ser) muy joven, no conduce.",
+      "person": "Mi hermano, ___ (ser) muy joven, no maneja.",
       "answer": "siendo",
       "table": "construcciones"
     },
@@ -973,7 +973,7 @@
       "kind": "form",
       "id": "gpc-form-06",
       "verb": "forma",
-      "person": "Cenamos y ___ (volver) a casa.",
+      "person": "Ayer cenamos y ___ (volver) a casa.",
       "answer": "volvimos",
       "table": "construcciones"
     },
@@ -1028,12 +1028,12 @@
     {
       "kind": "why",
       "id": "gpc-why-01",
-      "es": "Mi padre conduce hablando por teléfono.",
+      "es": "Mi padre maneja hablando por teléfono.",
       "target": "hablando por teléfono",
       "tr": {
         "hu": "Apám telefonálva vezet.",
         "en": "My father drives while talking on the phone.",
-        "es": "Mi padre conduce hablando por teléfono.",
+        "es": "Mi padre maneja hablando por teléfono.",
         "de": "Mein Vater fährt und telefoniert dabei."
       },
       "options": [
@@ -1055,7 +1055,7 @@
           "wrong": {
             "hu": "Nem ok: a telefonálás nem az oka a vezetésnek, hanem vele egy időben történik.",
             "en": "It is not a cause: talking on the phone is not why he drives; it happens at the same time.",
-            "es": "No es una causa: hablar por teléfono no es la razón de conducir; pasa al mismo tiempo.",
+            "es": "No es una causa: hablar por teléfono no es la razón de manejar; pasa al mismo tiempo.",
             "de": "Es ist kein Grund: Telefonieren ist nicht der Grund fürs Fahren; es geschieht gleichzeitig."
           }
         },
@@ -1069,7 +1069,7 @@
           "wrong": {
             "hu": "Nem későbbi cselekvés: a telefonálás és a vezetés egyszerre zajlik.",
             "en": "It is not a later action: talking and driving happen together.",
-            "es": "No es una acción posterior: hablar y conducir pasan juntos.",
+            "es": "No es una acción posterior: hablar y manejar pasan juntos.",
             "de": "Es ist keine spätere Handlung: Sprechen und Fahren geschehen zusammen."
           }
         }
@@ -1334,12 +1334,12 @@
     {
       "kind": "why",
       "id": "gpc-why-07",
-      "es": "Compró un billete y subió al tren.",
+      "es": "Compró un boleto y subió al tren.",
       "target": "subió",
       "tr": {
         "hu": "Vett egy jegyet, és felszállt a vonatra.",
         "en": "He bought a ticket and got on the train.",
-        "es": "Compró un billete y subió al tren.",
+        "es": "Compró un boleto y subió al tren.",
         "de": "Er kaufte eine Fahrkarte und stieg in den Zug."
       },
       "options": [
@@ -1361,7 +1361,7 @@
           "wrong": {
             "hu": "Nem gerundio: a felszállás a jegyvásárlás után történik, nem azzal egy időben.",
             "en": "It is not a gerund: getting on comes after buying the ticket, not at the same time.",
-            "es": "No es un gerundio: subir viene después de comprar el billete, no a la vez.",
+            "es": "No es un gerundio: subir viene después de comprar el boleto, no a la vez.",
             "de": "Es ist kein Gerundium: Das Einsteigen kommt nach dem Fahrkartenkauf, nicht gleichzeitig."
           }
         },

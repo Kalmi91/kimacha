@@ -236,7 +236,7 @@
         ["En Narvarte.", "dónde", "¿Dónde vives?"],
         ["A la tienda.", "adónde", "¿Adónde vas?"],
         ["Mañana.", "cuándo", "¿Cuándo llegas?"],
-        ["Bien, gracias.", "cómo", "¿Cómo estás?"],
+        ["Es alto y delgado.", "cómo", "¿Cómo es tu hermano?"],
         ["Cuesta veinte pesos.", "cuánto", "¿Cuánto cuesta?"],
         ["Con mi hermana.", "con quién", "¿Con quién vas?"],
         ["Tengo treinta años.", "cuántos", "¿Cuántos años tienes?"],
@@ -343,7 +343,7 @@
     },
     {
       "id": "int-02",
-      "sentence": "¿___ es tu madre?",
+      "sentence": "¿___ vive contigo?",
       "options": [
         "Quién",
         "Qué"
@@ -357,10 +357,10 @@
       },
       "wrong": {
         "Qué": {
-          "hu": "Ezzel a mondat azt jelentené, hogy ¿Qué es tu madre?, de a qué DOLOGRA kérdez, az édesanyád viszont SZEMÉLY; helyesen: ¿Quién es tu madre?",
-          "en": "This would give ¿Qué es tu madre?, but qué asks about a THING, while your mother is a PERSON; correctly: ¿Quién es tu madre?",
-          "es": "Esto daría ¿Qué es tu madre?, pero qué pregunta por una COSA, y tu madre es una PERSONA; correctamente: ¿Quién es tu madre?",
-          "de": "Das würde ¿Qué es tu madre? ergeben, aber qué fragt nach einer SACHE, während deine Mutter eine PERSON ist; richtig: ¿Quién es tu madre?"
+          "hu": "Ezzel a mondat azt jelentené, hogy ¿Qué vive contigo?, de a qué DOLOGRA kérdez, a veled élő viszont SZEMÉLY; helyesen: ¿Quién vive contigo?",
+          "en": "This would give ¿Qué vive contigo?, but qué asks about a THING, while the one living with you is a PERSON; correctly: ¿Quién vive contigo?",
+          "es": "Esto daría ¿Qué vive contigo?, pero qué pregunta por una COSA, y quien vive contigo es una PERSONA; correctamente: ¿Quién vive contigo?",
+          "de": "Das würde ¿Qué vive contigo? ergeben, aber qué fragt nach einer SACHE, während der, der bei dir wohnt, eine PERSON ist; richtig: ¿Quién vive contigo?"
         }
       },
       "examples": [
@@ -618,7 +618,7 @@
     {
       "id": "int-12",
       "kind": "mark",
-      "sentence": "¿Cuántos libros tienes en casa?",
+      "sentence": "¿Cuántos libros tienes aquí?",
       "target": "noun",
       "answer": "libros",
       "why": {
@@ -633,12 +633,6 @@
           "en": "Tapping here marks Cuántos, but that is a QUESTION WORD, not a noun: it names no thing, it asks how many; the NOUN you are looking for is what is counted: libros.",
           "es": "Si tocas aquí, marcas Cuántos, pero eso es un INTERROGATIVO, no un sustantivo: no nombra la cosa, pregunta cuántas hay; el SUSTANTIVO buscado es lo que se cuenta: libros.",
           "de": "Tippst du hier, markierst du Cuántos, aber das ist ein FRAGEWORT, kein Nomen: Es benennt nichts, es fragt nach der Anzahl; das gesuchte NOMEN ist das Gezählte: libros."
-        },
-        "casa": {
-          "hu": "Ha erre koppintasz, a casa szót jelölöd meg, de az is FŐNÉV, csak nem az, amit számolunk: a mondat a könyveket számolja, nem a házat; a keresett FŐNÉV: libros.",
-          "en": "Tapping here marks casa, but that is also a NOUN, just not the one being counted: the sentence counts the books, not the house; the NOUN you are looking for is: libros.",
-          "es": "Si tocas aquí, marcas casa, pero también es un SUSTANTIVO, solo que no es el que se cuenta: la frase cuenta los libros, no la casa; el SUSTANTIVO buscado es: libros.",
-          "de": "Tippst du hier, markierst du casa, aber das ist ebenfalls ein NOMEN, nur nicht das gezählte: Der Satz zählt die Bücher, nicht das Haus; das gesuchte NOMEN ist: libros."
         }
       },
       "examples": [
@@ -702,7 +696,7 @@
       "id": "int-form-06",
       "kind": "form",
       "verb": "Interrogativo",
-      "person": "Bien, gracias.",
+      "person": "Es alto y delgado.",
       "answer": "cómo",
       "table": "interrogativos-respuestas"
     },

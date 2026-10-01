@@ -766,7 +766,7 @@
     },
     {
       "id": "sp2-ch-07",
-      "sentence": "Ojalá ___ (yo) estudiado más antes del examen.",
+      "sentence": "Ya es tarde. Ojalá ___ (yo) estudiado más antes del examen.",
       "options": [
         "hubiera",
         "haya",
@@ -893,10 +893,10 @@
       },
       "wrong": {
         "decido": {
-          "hu": "A decido nem létező alak, a decir participiója rendhagyó; helyesen: No creo que lo haya dicho ella.",
-          "en": "Decido is not a real form, the participle of decir is irregular; correctly: No creo que lo haya dicho ella.",
-          "es": "Decido no es una forma real, el participio de decir es irregular; correctamente: No creo que lo haya dicho ella.",
-          "de": "Decido ist keine echte Form, das Partizip von decir ist unregelmäßig; richtig: No creo que lo haya dicho ella."
+          "hu": "A decido a decidir (dönteni) ige alakja (yo decido = döntök), nem a decir participiója; a decir participiója rendhagyó: dicho; helyesen: No creo que lo haya dicho ella.",
+          "en": "Decido is a form of decidir (yo decido = I decide), not the participle of decir; the participle of decir is irregular: dicho; correctly: No creo que lo haya dicho ella.",
+          "es": "Decido es una forma de decidir (yo decido), no el participio de decir; el participio de decir es irregular: dicho; correctamente: No creo que lo haya dicho ella.",
+          "de": "Decido ist eine Form von decidir (yo decido = ich entscheide), nicht das Partizip von decir; das Partizip von decir ist unregelmäßig: dicho; richtig: No creo que lo haya dicho ella."
         },
         "decir": {
           "hu": "A decir főnévi igenév, a haber után viszont participio kell; helyesen: No creo que lo haya dicho ella.",
@@ -1172,7 +1172,7 @@
         "hu": "Azt reméltem, hogy korábban eljöttél.",
         "en": "I hoped you had come earlier.",
         "es": "Esperaba que hubieras venido antes.",
-        "de": "Ich hoffte, dass du früher gekommen warst."
+        "de": "Ich hoffte, dass du früher gekommen wärst."
       },
       "options": [
         {

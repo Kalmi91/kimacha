@@ -243,12 +243,12 @@
           "futuro simple: conjetura sobre ahora"
         ],
         [
-          "¿Dónde está Luis? No sé, ya ___ (llegar) a casa.",
+          "¿Dónde está Luis? No sé, a estas horas ya ___ (llegar) a casa.",
           "habrá llegado",
           "futuro compuesto: conjetura sobre algo que ya ocurrió"
         ],
         [
-          "Mi hija no quiere comer. No sé, ___ (comer) en la escuela.",
+          "Mi hija no quiere comer. No sé, ya ___ (comer) en la escuela.",
           "habrá comido",
           "futuro compuesto: conjetura sobre algo que ya ocurrió"
         ],
@@ -273,17 +273,17 @@
           "condicional simple: conjetura sobre un momento del pasado"
         ],
         [
-          "Cuando llegué, Luis ya no estaba. No sé, ___ (salir) antes.",
+          "Cuando llegué, Luis ya no estaba. No sé, ya ___ (salir).",
           "habría salido",
           "condicional compuesto: conjetura sobre algo anterior a un momento del pasado"
         ],
         [
-          "Cuando fui a verlos, la casa estaba cerrada. No sé, ___ (viajar).",
+          "Cuando fui a verlos, la casa estaba cerrada. No sé, ya ___ (viajar).",
           "habrían viajado",
           "condicional compuesto: conjetura sobre algo anterior a un momento del pasado"
         ],
         [
-          "Cuando llegué, el jefe ya no estaba. No sé, ___ (terminar) temprano.",
+          "Cuando llegué, el jefe ya no estaba. No sé, ya ___ (terminar) el trabajo.",
           "habría terminado",
           "condicional compuesto: conjetura sobre algo anterior a un momento del pasado"
         ]
@@ -477,7 +477,7 @@
   "items": [
     {
       "id": "pt-ch-01",
-      "sentence": "No tengo reloj, pero ___ las diez.",
+      "sentence": "No tengo reloj. No sé, ___ las diez.",
       "options": [
         "son",
         "serán",
@@ -492,16 +492,16 @@
       },
       "wrong": {
         "son": {
-          "hu": "A son biztos tényt mond, de óra nélkül a mostani időről csak találgatni lehet; helyesen: No tengo reloj, pero serán las diez.",
-          "en": "Son states a certain fact, but without a clock the present time can only be guessed; correctly: No tengo reloj, pero serán las diez.",
-          "es": "Son afirma un hecho seguro, pero sin reloj la hora de ahora solo se puede conjeturar; correctamente: No tengo reloj, pero serán las diez.",
-          "de": "Son nennt eine sichere Tatsache, ohne Uhr kann man die jetzige Zeit aber nur vermuten; richtig: No tengo reloj, pero serán las diez."
+          "hu": "A son biztos tényt mond, a «No sé» viszont azt mutatja, hogy találgatsz; helyesen: No tengo reloj. No sé, serán las diez.",
+          "en": "Son states a certain fact, but «No sé» shows that you are guessing; correctly: No tengo reloj. No sé, serán las diez.",
+          "es": "Son afirma un hecho seguro, pero «No sé» muestra que estás conjeturando; correctamente: No tengo reloj. No sé, serán las diez.",
+          "de": "Son nennt eine sichere Tatsache, «No sé» zeigt aber, dass du nur vermutest; richtig: No tengo reloj. No sé, serán las diez."
         },
         "serían": {
-          "hu": "A serían a múlt egy pillanatáról találgat, a mondat viszont a mostani időről szól; helyesen: No tengo reloj, pero serán las diez.",
-          "en": "Serían guesses about a moment in the past, but the sentence is about the present time; correctly: No tengo reloj, pero serán las diez.",
-          "es": "Serían conjetura sobre un momento del pasado, pero la frase trata de la hora de ahora; correctamente: No tengo reloj, pero serán las diez.",
-          "de": "Serían vermutet über einen Moment in der Vergangenheit, der Satz handelt aber von der jetzigen Zeit; richtig: No tengo reloj, pero serán las diez."
+          "hu": "A serían a múlt egy pillanatáról találgat, a mondat viszont a mostani időről szól; helyesen: No tengo reloj. No sé, serán las diez.",
+          "en": "Serían guesses about a moment in the past, but the sentence is about the present time; correctly: No tengo reloj. No sé, serán las diez.",
+          "es": "Serían conjetura sobre un momento del pasado, pero la frase trata de la hora de ahora; correctamente: No tengo reloj. No sé, serán las diez.",
+          "de": "Serían vermutet über einen Moment in der Vergangenheit, der Satz handelt aber von der jetzigen Zeit; richtig: No tengo reloj. No sé, serán las diez."
         }
       }
     },
@@ -627,7 +627,7 @@
     },
     {
       "id": "pt-ch-06",
-      "sentence": "___ las doce cuando salimos del cine.",
+      "sentence": "___ las doce cuando salí del cine.",
       "options": [
         "Serían",
         "Serán",
@@ -642,16 +642,16 @@
       },
       "wrong": {
         "Serán": {
-          "hu": "A serán a mostani időről találgat, a salimos viszont múlt idejű; helyesen: Serían las doce cuando salimos del cine.",
-          "en": "Serán guesses about the present time, but salimos is in the past; correctly: Serían las doce cuando salimos del cine.",
-          "es": "Serán conjetura sobre la hora de ahora, pero salimos está en pasado; correctamente: Serían las doce cuando salimos del cine.",
-          "de": "Serán vermutet über die jetzige Zeit, salimos steht aber in der Vergangenheit; richtig: Serían las doce cuando salimos del cine."
+          "hu": "A serán a mostani időről találgat, a salí viszont múlt idejű; helyesen: Serían las doce cuando salí del cine.",
+          "en": "Serán guesses about the present time, but salí is in the past; correctly: Serían las doce cuando salí del cine.",
+          "es": "Serán conjetura sobre la hora de ahora, pero salí está en pasado; correctamente: Serían las doce cuando salí del cine.",
+          "de": "Serán vermutet über die jetzige Zeit, salí steht aber in der Vergangenheit; richtig: Serían las doce cuando salí del cine."
         },
         "Son": {
-          "hu": "A son jelen idejű tény, a mondat viszont múltról szól; helyesen: Serían las doce cuando salimos del cine.",
-          "en": "Son is a present-tense fact, but the sentence is about the past; correctly: Serían las doce cuando salimos del cine.",
-          "es": "Son es un hecho en presente, pero la frase trata del pasado; correctamente: Serían las doce cuando salimos del cine.",
-          "de": "Son ist eine Tatsache im Präsens, der Satz handelt aber von der Vergangenheit; richtig: Serían las doce cuando salimos del cine."
+          "hu": "A son jelen idejű tény, a mondat viszont múltról szól; helyesen: Serían las doce cuando salí del cine.",
+          "en": "Son is a present-tense fact, but the sentence is about the past; correctly: Serían las doce cuando salí del cine.",
+          "es": "Son es un hecho en presente, pero la frase trata del pasado; correctamente: Serían las doce cuando salí del cine.",
+          "de": "Son ist eine Tatsache im Präsens, der Satz handelt aber von der Vergangenheit; richtig: Serían las doce cuando salí del cine."
         }
       }
     },
@@ -781,7 +781,7 @@
       "options": [
         "estará",
         "estaría",
-        "estaba"
+        "está"
       ],
       "correct": 1,
       "why": {
@@ -797,11 +797,11 @@
           "es": "Estará conjetura sobre dónde está ahora, pero llamé está en pasado; correctamente: Cuando lo llamé, estaría en el cine, porque no contestó.",
           "de": "Estará vermutet über den jetzigen Ort, llamé steht aber in der Vergangenheit; richtig: Cuando lo llamé, estaría en el cine, porque no contestó."
         },
-        "estaba": {
-          "hu": "Az estaba tényként állítja, itt viszont csak abból következtetsz, hogy nem vette fel; helyesen: Cuando lo llamé, estaría en el cine, porque no contestó.",
-          "en": "Estaba states it as a fact, but here you only conclude it from the fact that he did not answer; correctly: Cuando lo llamé, estaría en el cine, porque no contestó.",
-          "es": "Estaba lo afirma como un hecho, pero aquí solo lo deduces de que no contestó; correctamente: Cuando lo llamé, estaría en el cine, porque no contestó.",
-          "de": "Estaba stellt es als Tatsache hin, hier schließt du es aber nur daraus, dass er nicht abnahm; richtig: Cuando lo llamé, estaría en el cine, porque no contestó."
+        "está": {
+          "hu": "Ezzel a mondat azt jelentené: „amikor felhívtam, moziban van (jelen idő)”, ami nem illik ide, mert a llamé múltba teszi; helyesen: Cuando lo llamé, estaría en el cine, porque no contestó.",
+          "en": "This would say: “when I called him, he is at the cinema (present tense)”, which does not fit here, because llamé puts it in the past; correctly: Cuando lo llamé, estaría en el cine, porque no contestó.",
+          "es": "Esto diría: «cuando lo llamé, está en el cine» (presente), lo cual no encaja aquí, porque llamé lo sitúa en el pasado; correctamente: Cuando lo llamé, estaría en el cine, porque no contestó.",
+          "de": "Das würde bedeuten: „als ich ihn anrief, ist er im Kino“ (Präsens), was hier nicht passt, weil llamé es in die Vergangenheit setzt; richtig: Cuando lo llamé, estaría en el cine, porque no contestó."
         }
       }
     },
@@ -893,7 +893,7 @@
       "id": "pt-form-04",
       "kind": "form",
       "verb": "forma",
-      "person": "¿Dónde está Luis? No sé, ya ___ (llegar) a casa.",
+      "person": "¿Dónde está Luis? No sé, a estas horas ya ___ (llegar) a casa.",
       "answer": "habrá llegado",
       "table": "prob-forma"
     },
@@ -901,7 +901,7 @@
       "id": "pt-form-05",
       "kind": "form",
       "verb": "forma",
-      "person": "Mi hija no quiere comer. No sé, ___ (comer) en la escuela.",
+      "person": "Mi hija no quiere comer. No sé, ya ___ (comer) en la escuela.",
       "answer": "habrá comido",
       "table": "prob-forma"
     },
@@ -941,7 +941,7 @@
       "id": "pt-form-10",
       "kind": "form",
       "verb": "forma",
-      "person": "Cuando llegué, Luis ya no estaba. No sé, ___ (salir) antes.",
+      "person": "Cuando llegué, Luis ya no estaba. No sé, ya ___ (salir).",
       "answer": "habría salido",
       "table": "prob-forma"
     },
@@ -949,7 +949,7 @@
       "id": "pt-form-11",
       "kind": "form",
       "verb": "forma",
-      "person": "Cuando fui a verlos, la casa estaba cerrada. No sé, ___ (viajar).",
+      "person": "Cuando fui a verlos, la casa estaba cerrada. No sé, ya ___ (viajar).",
       "answer": "habrían viajado",
       "table": "prob-forma"
     },
@@ -957,7 +957,7 @@
       "id": "pt-form-12",
       "kind": "form",
       "verb": "forma",
-      "person": "Cuando llegué, el jefe ya no estaba. No sé, ___ (terminar) temprano.",
+      "person": "Cuando llegué, el jefe ya no estaba. No sé, ya ___ (terminar) el trabajo.",
       "answer": "habría terminado",
       "table": "prob-forma"
     },

@@ -352,11 +352,11 @@
           },
           "examples": [
             {
-              "es": "El coche está en la calle.",
+              "es": "El carro está en la calle.",
               "tr": {
                 "hu": "Az autó az utcán van.",
                 "en": "The car is on the street.",
-                "es": "El coche está en la calle.",
+                "es": "El carro está en la calle.",
                 "de": "Das Auto steht auf der Straße."
               }
             },
@@ -586,12 +586,21 @@
     }
   ],
   "speak": {
-    "hu": "A van jelentésű létezést kifejező szó és a valahol lenni ige is fordítható úgy, hogy van, de egészen másra használjuk őket. Az első azt állítja, hogy egy új, még ismeretlen dolog létezik, és sosem változik, sem számban, sem nemben. A második azt mondja meg, hol van egy már ismert dolog. Ha nincs névelő, vagy határozatlan névelő áll a főnév előtt, az az első jele. Ha határozott névelő, birtokos névmás vagy név áll előtte, mindig a második jön. Egy kis csapda: az első majdnem ugyanúgy hangzik, mint a ott szó, ezért a jelentésre figyelj, ne csak a hangra.",
+    "hu": "A van jelentésű létezést kifejező szó és a valahol lenni ige is fordítható úgy, hogy van, de egészen másra használjuk őket. Az első azt állítja, hogy egy új, még ismeretlen dolog létezik, és sosem változik, sem számban, sem nemben. A második azt mondja meg, hol van egy már ismert dolog. Ha nincs névelő, vagy határozatlan névelő áll a főnév előtt, az az első jele. Ha határozott névelő, birtokos névmás vagy név áll előtte, mindig a második jön. Egy kis csapda: az első majdnem ugyanúgy hangzik, mint az ott szó, ezért a jelentésre figyelj, ne csak a hangra.",
     "en": "The word for there is and the verb for being somewhere can both be translated as there is or is, but they are used for very different things. The first states that a new, still unknown thing exists, and it never changes, not for number and not for gender. The second tells you where an already known thing is. If there is no article, or an indefinite article stands before the noun, that is the sign for the first one. If a definite article, a possessive or a name comes before the noun, it is always the second one. One small trap: the first sounds almost the same as the word for there, so listen for the meaning, not just the sound.",
     "es": "La palabra que expresa existencia y el verbo que expresa estar en un lugar pueden traducirse los dos como hay o está, pero se usan para cosas muy distintas. La primera afirma que existe una cosa nueva, todavía desconocida, y nunca cambia, ni en número ni en género. El segundo dice dónde está una cosa ya conocida. Si no hay artículo, o delante del sustantivo va un artículo indefinido, esa es la señal del primero. Si delante va un artículo determinado, un posesivo o un nombre, siempre es el segundo. Una pequeña trampa: el primero suena casi igual que la palabra para allí, así que escucha el significado, no solo el sonido.",
     "de": "Das Wort für es gibt und das Verb für sich irgendwo befinden lassen sich beide mit es ist übersetzen, werden aber für ganz verschiedene Dinge benutzt. Das erste stellt fest, dass eine neue, noch unbekannte Sache existiert, und es ändert sich nie, weder in der Zahl noch im Geschlecht. Das zweite sagt, wo eine schon bekannte Sache ist. Steht kein Artikel oder ein unbestimmter Artikel vor dem Nomen, ist das das Zeichen für das erste. Steht ein bestimmter Artikel, ein Possessivpronomen oder ein Name davor, ist es immer das zweite. Eine kleine Falle: Das erste klingt fast wie das Wort für dort, achte also auf die Bedeutung, nicht nur auf den Klang."
   },
   "glossary": [
+    {
+      "word": "carro",
+      "gloss": {
+        "hu": "autó",
+        "en": "car",
+        "es": "el carro (el coche)",
+        "de": "Auto"
+      }
+    },
     {
       "word": "esquina",
       "gloss": {
@@ -599,6 +608,15 @@
         "en": "corner",
         "es": "la esquina",
         "de": "Ecke"
+      }
+    },
+    {
+      "word": "lentes",
+      "gloss": {
+        "hu": "szemüveg (Mexikó)",
+        "en": "glasses",
+        "es": "los lentes",
+        "de": "Brille"
       }
     },
     {
@@ -647,10 +665,10 @@
       },
       "wrong": {
         "está": {
-          "hu": "Az \"está\" egy már ismert dologra kérdez rá, ezért utána nem állhat \"una\": \"En mi calle está una farmacia\" nem helyes mondat; egy ismert patika helyét így mondanánk: La farmacia está en mi calle.",
-          "en": "Está points to something already known, so it cannot be followed by 'una': 'En mi calle está una farmacia' is not a correct sentence; to say where a known pharmacy is, you would say: La farmacia está en mi calle.",
-          "es": "Está señala algo ya conocido, así que no puede ir con «una»: «En mi calle está una farmacia» no es una frase correcta; para decir dónde está una farmacia conocida dirías: La farmacia está en mi calle.",
-          "de": "Está verweist auf etwas bereits Bekanntes, deshalb kann danach kein „una\" stehen: „En mi calle está una farmacia\" ist kein korrekter Satz; um zu sagen, wo eine bekannte Apotheke ist, würde man sagen: La farmacia está en mi calle."
+          "hu": "Az „está” egy már ismert dologra utal, ezért „una” mellett nem természetes: „En mi calle está una farmacia”; egy ismert patika helyét így mondanánk: La farmacia está en mi calle.",
+          "en": "\"Está\" points to something already known, so \"una\" after it is not natural: \"En mi calle está una farmacia\"; to say where a known pharmacy is, you would say: La farmacia está en mi calle.",
+          "es": "«Está» señala algo ya conocido, así que con «una» no suena natural: «En mi calle está una farmacia»; para decir dónde está una farmacia conocida dirías: La farmacia está en mi calle.",
+          "de": "„Está\" verweist auf etwas bereits Bekanntes, deshalb klingt „una\" danach nicht natürlich: „En mi calle está una farmacia\"; um zu sagen, wo eine bekannte Apotheke ist, würde man sagen: La farmacia está en mi calle."
         },
         "es": {
           "hu": "Az \"es\" azonosítást vagy leírást fejez ki, nem azt, hogy valami létezik; \"En mi calle es una farmacia\" nem helyes mondat, létezésre mindig hay kell: En mi calle hay una farmacia.",
@@ -715,10 +733,10 @@
       },
       "wrong": {
         "Está": {
-          "hu": "Az \"¿Está un baño aquí?\" hibás szórend: az estar mellett a névelő nélküli \"un baño\" nem állhat így; egy konkrét, ismert mosdóról így kérdeznénk: ¿Dónde está el baño?",
-          "en": "'¿Está un baño aquí?' has the wrong shape: estar cannot combine with the article-less 'un baño' like this; asking about a specific, known toilet would be '¿Dónde está el baño?'.",
-          "es": "«¿Está un baño aquí?» tiene una forma incorrecta: estar no puede combinarse así con «un baño» sin artículo definido; para preguntar por un baño concreto y conocido se diría «¿Dónde está el baño?».",
-          "de": "„¿Está un baño aquí?\" hat die falsche Form: estar kann sich so nicht mit dem artikellosen „un baño\" verbinden; nach einer bestimmten, bekannten Toilette würde man fragen: „¿Dónde está el baño?\"."
+          "hu": "Az „¿Está un baño aquí?” nem természetes: az estar már ismert dologra mutat, „un baño” mellett hay áll; egy konkrét, ismert mosdóról így kérdeznénk: ¿Dónde está el baño?",
+          "en": "\"¿Está un baño aquí?\" is not natural: estar points to something already known, and with \"un baño\" you use hay; asking about a specific, known toilet would be \"¿Dónde está el baño?\".",
+          "es": "«¿Está un baño aquí?» no suena natural: estar señala algo ya conocido, y con «un baño» se usa hay; para preguntar por un baño concreto y conocido se diría «¿Dónde está el baño?».",
+          "de": "„¿Está un baño aquí?\" klingt nicht natürlich: estar zeigt auf etwas bereits Bekanntes, mit „un baño\" steht hay; nach einer bestimmten, bekannten Toilette würde man fragen: „¿Dónde está el baño?\"."
         },
         "Son": {
           "hu": "A \"Son\" a ser többes száma, itt viszont egyetlen mosdóról kérdezel, ráadásul a ser nem létezést fejez ki; helyesen: ¿Hay un baño aquí?",
@@ -728,7 +746,7 @@
         }
       },
       "examples": [
-        "¿Hay leche en la nevera?",
+        "¿Hay leche en el refrigerador?",
         "¿Hay una farmacia cerca?"
       ]
     },
@@ -772,7 +790,7 @@
       "options": [
         "hay",
         "están",
-        "son"
+        "es"
       ],
       "correct": 0,
       "why": {
@@ -788,11 +806,11 @@
           "es": "Están señalaría a estudiantes concretos y ya conocidos, por ejemplo «los veinte estudiantes están…»; aquí dices una cantidad sobre un grupo sin especificar, por eso hace falta hay.",
           "de": "Están würde auf bestimmte, bereits bekannte Studenten verweisen, z. B. „los veinte estudiantes están…\"; hier nennst du aber eine Anzahl einer nicht näher bestimmten Gruppe, deshalb braucht es hay."
         },
-        "son": {
-          "hu": "A \"son\" azt mondaná meg, KIK ők (pl. son mis compañeros), nem azt, hogy hányan vannak a teremben; a mennyiséget mindig hay fejezi ki: En la clase hay veinte estudiantes.",
-          "en": "Son would say WHO they are (e.g. son mis compañeros), not how many are in the room; quantity always takes hay: En la clase hay veinte estudiantes.",
-          "es": "Son diría QUIÉNES son (p. ej. son mis compañeros), no cuántos hay en el aula; la cantidad siempre lleva hay: En la clase hay veinte estudiantes.",
-          "de": "Son würde sagen, WER sie sind (z. B. son mis compañeros), nicht wie viele im Raum sind; die Menge steht immer mit hay: En la clase hay veinte estudiantes."
+        "es": {
+          "hu": "Az „es” egyes számú, a „veinte estudiantes” viszont többes szám, és a ser nem létezést fejez ki; a létszámot hay mondja: En la clase hay veinte estudiantes.",
+          "en": "Es is singular, but \"veinte estudiantes\" is plural, and ser does not express existence; a headcount takes hay: En la clase hay veinte estudiantes.",
+          "es": "Es es singular, pero «veinte estudiantes» es plural, y ser no expresa existencia; la cantidad lleva hay: En la clase hay veinte estudiantes.",
+          "de": "Es ist Singular, „veinte estudiantes\" ist aber Plural, und ser drückt keine Existenz aus; die Anzahl steht mit hay: En la clase hay veinte estudiantes."
         }
       },
       "examples": [
@@ -831,7 +849,7 @@
       },
       "examples": [
         "Tu llave está en la puerta.",
-        "Su coche está en la calle."
+        "Su carro está en la calle."
       ]
     },
     {
@@ -933,7 +951,7 @@
       },
       "examples": [
         "Hay poca leche.",
-        "Hay muchos coches en la calle."
+        "Hay muchos carros en la calle."
       ]
     },
     {
@@ -1035,7 +1053,7 @@
       },
       "examples": [
         "Mis libros están en la mochila.",
-        "Sus gafas están en la mesa."
+        "Sus lentes están en la mesa."
       ]
     },
     {
@@ -1081,8 +1099,8 @@
           "en": "my parents are at home"
         },
         {
-          "es": "ana está en el trabajo",
-          "en": "ana is at work"
+          "es": "Ana está en el trabajo",
+          "en": "Ana is at work"
         },
         {
           "es": "¿dónde está el baño?",
