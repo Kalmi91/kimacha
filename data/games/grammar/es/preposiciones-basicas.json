@@ -53,10 +53,10 @@
         },
         {
           "text": {
-            "hu": "Az en helyet fejez ki (estoy en casa, en la mesa), hónapot vagy évet (en mayo), és egy közlekedési eszközt (en metro, en coche).",
-            "en": "En expresses place (estoy en casa, en la mesa), a month or year (en mayo), and a means of transport (en metro, en coche).",
-            "es": "En expresa lugar (estoy en casa, en la mesa), un mes o un año (en mayo), y un medio de transporte (en metro, en coche).",
-            "de": "En drückt einen Ort aus (estoy en casa, en la mesa), einen Monat oder ein Jahr (en mayo), und ein Verkehrsmittel (en metro, en coche)."
+            "hu": "Az en helyet fejez ki (estoy en casa, en la mesa), hónapot vagy évet (en mayo), és egy közlekedési eszközt (en metro, en carro).",
+            "en": "En expresses place (estoy en casa, en la mesa), a month or year (en mayo), and a means of transport (en metro, en carro).",
+            "es": "En expresa lugar (estoy en casa, en la mesa), un mes o un año (en mayo), y un medio de transporte (en metro, en carro).",
+            "de": "En drückt einen Ort aus (estoy en casa, en la mesa), einen Monat oder ein Jahr (en mayo), und ein Verkehrsmittel (en metro, en carro)."
           },
           "examples": [
             { "es": "Estoy en casa.", "tr": { "hu": "Otthon vagyok.", "en": "I am at home.", "es": "Estoy en casa.", "de": "Ich bin zu Hause." } },
@@ -197,6 +197,10 @@
     {
       "word": "madera",
       "gloss": { "hu": "fa (anyag)", "en": "wood (material)", "es": "madera", "de": "Holz" }
+    },
+    {
+      "word": "carro",
+      "gloss": { "hu": "autó", "en": "car", "es": "el carro", "de": "Auto" }
     }
   ],
   "items": [
@@ -282,7 +286,7 @@
           "de": "A würde Richtung oder einen Zeitpunkt markieren, nicht Besitz; für Besitz braucht man de: el libro de Ana."
         }
       },
-      "examples": ["Es la casa de mi amigo.", "Es el coche de mi hermano."]
+      "examples": ["Es la casa de mi amigo.", "Es el carro de mi hermano."]
     },
     {
       "id": "pb-05",
@@ -349,21 +353,21 @@
     },
     {
       "id": "pb-08",
-      "sentence": "El examen es ___ mayo.",
+      "sentence": "Hace calor ___ mayo.",
       "options": ["en", "de"],
       "correct": 0,
       "why": {
-        "hu": "Egy hónapot en vezet be: el examen es en mayo.",
-        "en": "A month is introduced with en: el examen es en mayo.",
-        "es": "Un mes se introduce con en: el examen es en mayo.",
-        "de": "Ein Monat wird mit en eingeleitet: el examen es en mayo."
+        "hu": "Egy hónapot en vezet be: hace calor en mayo.",
+        "en": "A month is introduced with en: hace calor en mayo.",
+        "es": "Un mes se introduce con en: hace calor en mayo.",
+        "de": "Ein Monat wird mit en eingeleitet: hace calor en mayo."
       },
       "wrong": {
         "de": {
-          "hu": "A de birtokot vagy eredetet jelezne, nem hónapot; a hónapra en kell: el examen es en mayo.",
-          "en": "De would mark possession or origin, not a month; a month needs en: el examen es en mayo.",
-          "es": "De marcaría posesión u origen, no un mes; el mes pide en: el examen es en mayo.",
-          "de": "De würde Besitz oder Herkunft markieren, keinen Monat; für den Monat braucht man en: el examen es en mayo."
+          "hu": "A de birtokot vagy eredetet jelezne, nem hónapot; a hónapra en kell: hace calor en mayo.",
+          "en": "De would mark possession or origin, not a month; a month needs en: hace calor en mayo.",
+          "es": "De marcaría posesión u origen, no un mes; el mes pide en: hace calor en mayo.",
+          "de": "De würde Besitz oder Herkunft markieren, keinen Monat; für den Monat braucht man en: hace calor en mayo."
         }
       },
       "examples": ["Vamos a España en mayo.", "Mi examen es en mayo."]
@@ -387,7 +391,7 @@
           "de": "Con würde Begleitung markieren (vamos con mi amigo), nicht das Verkehrsmittel; dafür braucht man en: vamos en metro."
         }
       },
-      "examples": ["Vamos en coche.", "Vamos en autobús."]
+      "examples": ["Vamos en carro.", "Vamos en autobús."]
     },
     {
       "id": "pb-10",
