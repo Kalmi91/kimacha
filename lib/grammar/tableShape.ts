@@ -48,7 +48,9 @@ function isPersonLabel(label: string): boolean {
 // (0 hosszú tő). Szóköz vagy "+" a cellában (pl. "ir a + infinitivo") kizárja.
 const INFINITIVE_RE = /^[a-zàáâäèéêëìíîïòóôöùúûüñç]*(ar|er|ir)(se)?$/i;
 
-function isInfinitive(word: string): boolean {
+// PLAN-fb1001 13. lépés (FB440): exportálva, a táblakártya ebből tudja, hogy a címke egy infinitivus
+// (az rejtett marad, súgó-gombra látszik), nem oszlop-fejléc (az látszik).
+export function isInfinitive(word: string): boolean {
   return INFINITIVE_RE.test(word.trim());
 }
 
@@ -60,6 +62,18 @@ export function isConjugationTable(header: Lang4[], rows: string[][]): boolean {
   if (header.length < 2 || rows.length === 0) return false;
   const verbHeaders = header.slice(1);
   if (!verbHeaders.every((h) => isInfinitive(h.es))) return false;
+  return rows.every((row) => isPersonLabel(row[0]));
+}
+
+// PLAN-fb1001 11. lépés (FB437/FB438): személy-tábla = minden sor címkéje személy-névmás
+// (yo, tú, él/ella/usted...), a fejléc 2..n cellája viszont NEM csupa infinitivus
+// (pl. "Sujeto -> pronombre de objeto indirecto", "Persona -> ir a + infinitivo",
+// "Persona -> Masculino singular | ..."). Az ilyen tábla egyértelműen kérdezhető
+// (személy x oszlop -> a cella), ezért a táblázat-pakli adja, nem a szó-pakli
+// fallback (szószedet + mondat-szavak), ami "felesleges szavakat" mutatott.
+export function isPersonTable(header: Lang4[], rows: string[][]): boolean {
+  if (header.length < 2 || rows.length === 0) return false;
+  if (isConjugationTable(header, rows)) return false;
   return rows.every((row) => isPersonLabel(row[0]));
 }
 

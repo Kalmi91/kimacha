@@ -368,30 +368,47 @@ describe('thinSentences (PLAN-fb0924 8. lépés, FB394/396)', () => {
   });
 });
 
-// FB401 (PLAN-fb0929 6. lépés): a haladás-sáv 10-es szettekben mér, minden válasz látszik.
-import { setProgressPercent } from '../pcicSession';
+// PLAN-fb1001 9. lépés (FB430, D1): a haladás-sáv a MAI adag hátralévőjét mutatja.
+import { countFinishedToday, dayProgressPercent } from '../pcicSession';
 
-describe('setProgressPercent (FB401)', () => {
-  it('0 válasz: üres sáv', () => {
-    expect(setProgressPercent(0, 300)).toBe(0);
+describe('dayProgressPercent (FB430)', () => {
+  it('az első kártyánál üres', () => {
+    expect(dayProgressPercent(0, 30)).toBe(0);
   });
 
-  it('sok esedékes kártya mellett is látszik a haladás: 1 válasz a 10-es szettből 10%', () => {
-    expect(setProgressPercent(1, 299)).toBe(10);
-    expect(setProgressPercent(5, 295)).toBe(50);
+  it('lineárisan tölt: a felénél 50%, nem indul újra 10 kártyánál', () => {
+    expect(dayProgressPercent(10, 20)).toBeCloseTo((10 / 29) * 100);
+    expect(dayProgressPercent(11, 19)).toBeGreaterThan(dayProgressPercent(10, 20));
+    expect(dayProgressPercent(15, 16)).toBe(50);
   });
 
-  it('a szett végén újraindul (10 válasz után új szett)', () => {
-    expect(setProgressPercent(10, 290)).toBe(0);
-    expect(setProgressPercent(13, 287)).toBe(30);
+  it('a nap utolsó kártyájánál tele', () => {
+    expect(dayProgressPercent(29, 1)).toBe(100);
   });
 
-  it('az utolsó rövid szett a hátralévőkhöz igazodik', () => {
-    // 3 válasz a szettben, még 1 kártya van hátra: a szett 4 kártyás, 75%
-    expect(setProgressPercent(3, 1)).toBe(75);
+  it('"+10 új" bővítés: a sor nő, az új teljes adaghoz mér (a sáv visszább lép, nem nullázódik)', () => {
+    const before = dayProgressPercent(29, 1);
+    const after = dayProgressPercent(29, 11); // 10 új kártya került a sorba
+    expect(before).toBe(100);
+    expect(after).toBeCloseTo((29 / 39) * 100);
+    expect(after).toBeGreaterThan(0);
   });
 
-  it('nincs több kártya: 0 (a kész-képernyő úgyis átveszi)', () => {
-    expect(setProgressPercent(0, 0)).toBe(0);
+  it('egyetlen kártya a napra: üres; nincs több kártya: tele csak ha volt kész', () => {
+    expect(dayProgressPercent(0, 1)).toBe(0);
+    expect(dayProgressPercent(0, 0)).toBe(0);
+    expect(dayProgressPercent(5, 0)).toBe(100);
+  });
+});
+
+describe('countFinishedToday (FB430)', () => {
+  const card = (itemId: string, lastReview: string | null) => ({ ...sm2NewCard(itemId), lastReview });
+
+  it('csak a ma értékelt ÉS már nem sorban álló kártyák számítanak késznek', () => {
+    const a = card('a', '2026-10-01'); // kész
+    const b = card('b', '2026-10-01'); // "again": ma értékelt, de a sorban maradt
+    const c = card('c', '2026-09-30'); // tegnapi
+    const d = card('d', null); // új
+    expect(countFinishedToday([a, b, c, d], [b, d], '2026-10-01')).toBe(1);
   });
 });

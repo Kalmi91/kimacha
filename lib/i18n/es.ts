@@ -20,6 +20,8 @@ const es: Strings = {
     wrong: 'Incorrecto',
     next: 'Siguiente',
     typeSentence: 'Escribe la frase',
+    // PLAN-fb1001 K4: a válasz-beírómező szürke placeholdere, a célnyelv nevével.
+    typeIn: (lang: string): string => (lang === 'es' ? 'Escribe en español' : 'Escribe en inglés'),
   },
   buttons: {
     spelling: 'Ortografía',
@@ -160,6 +162,10 @@ const es: Strings = {
     directionEnEs: 'Inglés → Español',
     directionEsEn: 'Español → Inglés',
     credits: 'Créditos',
+    // PLAN-fb1001 7. lépés (FB431): a nyelvtan-haladás nullázó sora és megerősítése.
+    resetGrammar: '🗑️ Reiniciar progreso de gramática',
+    resetGrammarTitle: 'Reiniciar progreso de gramática',
+    resetGrammarMessage: 'Esto borra todo el progreso de lecciones y práctica de gramática. ¿Estás seguro?',
   },
   backup: {
     backup: 'Copia de seguridad',
@@ -314,6 +320,9 @@ const es: Strings = {
     resetConfirmTitle: 'Reiniciar progreso',
     resetConfirmMessage: 'Esto borra todo el progreso de PCIC. ¿Estás seguro?',
     resetConfirmYes: 'Reiniciar',
+    // PLAN-fb1001 K1: a Beállítások sor, a nullázódó szint nevével.
+    resetRow: (level: string) => `🗑️ Reiniciar progreso (${level})`,
+    resetConfirmLevel: (level: string) => `Esto borra todo el progreso del mazo ${level}. ¿Estás seguro?`,
     undo: 'Deshacer',
     dontLearn: 'No aprender esto',
     addToSpelling: '✎ Añadir a ortografía',
@@ -359,6 +368,8 @@ const es: Strings = {
     // PLAN-fb0929 10. lépés: es→en irányban a kérdés a spanyol szó, a válasz az angol szó.
     wordPromptCaptionEn: '¿Cómo se dice en inglés?',
     promptCaptionEn: 'traducir al español',
+    // PLAN-fb1001 13. lépés (FB440): a ragozó kártyán az infinitivus rejtett, a súgó-gomb mutatja.
+    showVerb: 'Ver el verbo',
     progress: (done: number, total: number) => `${done} / ${total} hechas`,
     completeTitle: (n: number) => `Las ${n} celdas hechas 🎉`,
     startAgain: 'Empezar de nuevo',
