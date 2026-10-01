@@ -445,3 +445,64 @@ A kapu szabályonként kiírja a hibák számát és az első 5 példát, hibán
   - Kapu: validate-en-track R11-R14 = ok (0), id-blokk hiba 1112 → 1112 (az új kártyák B1-ben vannak, a B1 blokkon belül), cross-level dup 3 → 3 (kártyák: 2744 → 2759); typecheck:ci, lint (0 hiba), test:ci (136 suite), words-open-check zöld.
   - [?] marad, nem nyúltam hozzá: `la agenda` (diary/planner), `la vela` (sail), `la demanda` (lawsuit), `la conciencia` (conscience), `el cajero` (ATM), `quedar` (to stay/remain), `el paquete` (parcel), `la ducha`/`el marido`/`el dormitorio` mexikói alakja (regadera, esposo, recámara), `conocer` (to meet), a `contracción` kártyák és az `su (de él/ella...)`, `vas a` típusú nyelvtani zárójeles kártyák.
 - 13:11 5. lépés kész, összesítés (1-6. adag): 422 kártya-módosítás, 36 új kártya (10798-10833), 81 törölt id, 117 átírt spanyol kérdés; kártyák 2804 → 2759. validate-en-track: R11-R14 = 0, id-blokk hiba 1132 → 1112, cross-level dup 11 → 3. typecheck:ci, lint (0 hiba), test:ci (136 suite) zöld; a lib/grammar/tableDeck.ts a perjeles `en` fő alakját használja (2 sor). Subagent nem futott, a munkát egy session végezte (adagonként patch + merge-script).
+
+- 13:21 hint-átnézés (4-5. lépés minőség-átnézés): 258 kártya / 120 csoport ellenőrizve (words-open 14 kártya / 7 csoport, angol track 244 kártya / 113 csoport); 23 kártya javítva (angol track 23, words-open 0), 53 mezőváltozás. A hint-szabályok (nyelvhelyesség, jelölt szó = a kérdés szava vagy ragozott alakja, a testvérkártya jelentésére nem illik, a kártya saját mondata egyezik a kérdéssel) szerint.
+  - Kérdés javítva (Pontatlan kérdés, a csoport megszűnt, a hint törölve R13 miatt): #5005 eso es → es (it is), #5205 eso no es → no es (it is not); az #5068 és #5272 (that is / that is not) egyedül maradt, hintjük is törölve.
+  - Hint cserélve: #10493 clima (a *climático* származékszó volt), #10078 carrera (az orvosi-szakos mondat a degree course-ra is illett), #10745 emoción (természetesebb), #10802 seguro (sure; a confident-re is illett).
+  - Mondat javítva (a sentence_es nem a kérdés szavát használta, vagy nem a kérdéses alakot): #5005, #5068, #5205, #5272, #5103, #5116, #5140, #5312, #5314, #7808, #7816, #8763, #5412, #5482, #5490, #5641, #5706, #5720, #5732.
+  - Minden módosítás előtte → utána:
+    - #5005 es: "eso es" → "es"
+    - #5005 hint_es: "*Es* tarde y quiero dormir." → (törölve)
+    - #5005 sentence_es: "Afuera hace frío, pero hay sol." → "Es muy caro, pero es bueno."
+    - #5005 sentence_hu: "Kint hideg van, de süt a nap." → "Nagyon drága, de jó."
+    - #5005 sentence_en: "It's cold outside, but it's sunny." → "It's very expensive, but it's good."
+    - #5005 sentence_de: "Draußen ist es kalt, aber sonnig." → "Es ist sehr teuer, aber es ist gut."
+    - #5068 hint_es: "*Eso es* mi carro, allá." → (törölve)
+    - #5068 sentence_es: "Ese es mi maestro, allá." → "Eso es una escuela, allá."
+    - #5068 sentence_hu: "Ő ott a tanárom." → "Az ott egy iskola."
+    - #5068 sentence_en: "That's my teacher over there." → "That's a school over there."
+    - #5068 sentence_de: "Das ist mein Lehrer da drüben." → "Das da drüben ist eine Schule."
+    - #5103 sentence_es: "Anoche hubo una tormenta fuerte." → "Anoche había una tormenta fuerte."
+    - #5116 sentence_es: "Tu celular está en la cama." → "Tu celular está sobre la cama."
+    - #5140 sentence_es: "Nuestro maestro habla muy despacio." → "Nuestro profesor habla muy despacio."
+    - #5205 es: "eso no es" → "no es"
+    - #5205 hint_es: "*No es* tarde, todavía hay tiempo." → (törölve)
+    - #5205 sentence_es: "No está lejos, solo diez minutos." → "No es caro, es muy barato."
+    - #5205 sentence_hu: "Nincs messze, csak tíz perc." → "Nem drága, nagyon olcsó."
+    - #5205 sentence_en: "It isn't far, only ten minutes." → "It isn't expensive, it's very cheap."
+    - #5205 sentence_de: "Es ist nicht weit, nur zehn Minuten." → "Es ist nicht teuer, es ist sehr billig."
+    - #5272 hint_es: "*Eso no es* mío, es de ella." → (törölve)
+    - #5272 sentence_es: "Esa no es mi casa, es la de mi vecino." → "Eso no es mío, es de ella."
+    - #5272 sentence_hu: "Az nem az én házam, hanem a szomszédomé." → "Az nem az enyém, hanem az övé."
+    - #5272 sentence_en: "That isn't my house, it's my neighbor's." → "That isn't mine, it's hers."
+    - #5272 sentence_de: "Das ist nicht mein Haus, sondern das meines Nachbarn." → "Das ist nicht meins, das gehört ihr."
+    - #5312 sentence_es: "Adentro de la casa hace calor." → "Dentro de la casa hace calor."
+    - #5314 sentence_es: "El perro corre a la cocina." → "Pon los libros dentro de la mochila."
+    - #5314 sentence_hu: "A kutya beszalad a konyhába." → "Tedd a könyveket a hátizsákba."
+    - #5314 sentence_en: "The dog runs into the kitchen." → "Put the books into the backpack."
+    - #5314 sentence_de: "Der Hund rennt in die Küche." → "Leg die Bücher in den Rucksack."
+    - #7808 sentence_es: "La cocina es luminosa y tiene una ventana grande." → "La cocina es clara y tiene una ventana grande."
+    - #7816 sentence_es: "Este regalo es de mi hermana." → "Mi hermana me llama desde Canadá."
+    - #7816 sentence_hu: "Ez az ajándék a nővéremtől van." → "A nővérem Kanadából hív."
+    - #7816 sentence_en: "This present is from my sister." → "My sister calls me from Canada."
+    - #7816 sentence_de: "Dieses Geschenk ist von meiner Schwester." → "Meine Schwester ruft mich aus Kanada an."
+    - #8763 sentence_es: "Uso uniforme en el trabajo." → "Llevo uniforme en el trabajo."
+    - #5412 sentence_es: "El verano pasado fuimos a España." → "Mi hermana fue a España el verano pasado."
+    - #5412 sentence_hu: "Tavaly nyáron Spanyolországba mentünk." → "A nővérem tavaly nyáron Spanyolországba ment."
+    - #5412 sentence_en: "Last summer we went to Spain." → "My sister went to Spain last summer."
+    - #5412 sentence_de: "Letzten Sommer sind wir nach Spanien gefahren." → "Meine Schwester ist letzten Sommer nach Spanien gefahren."
+    - #5482 sentence_es: "Llevamos tres años trabajando juntos." → "Hemos trabajado juntos durante tres años."
+    - #5490 sentence_es: "Me siento mal esta mañana." → "Estoy malo esta mañana."
+    - #5641 sentence_es: "¿Él va a terminar el proyecto?" → "¿Él terminará el proyecto?"
+    - #5706 sentence_es: "Tom es tres años menor que yo." → "Tom es tres años más joven que yo."
+    - #5720 sentence_es: "Mi hermana es la menor de la familia." → "Mi hermana es la más joven de la familia."
+    - #5732 sentence_es: "Julio es el mes más caluroso en España." → "Este es el té más caliente de la mesa."
+    - #5732 sentence_hu: "A július a legmelegebb hónap Spanyolországban." → "Ez a legforróbb tea az asztalon."
+    - #5732 sentence_en: "July is the hottest month in Spain." → "This is the hottest tea on the table."
+    - #5732 sentence_de: "Der Juli ist der heißeste Monat in Spanien." → "Das ist der heißeste Tee auf dem Tisch."
+    - #10802 hint_es: "Estoy *seguro* de mi respuesta." → "¿Estás *seguro* de que es él?"
+    - #10078 hint_es: "Quiero una *carrera* en la medicina." → "Su *carrera* como actor duró veinte años."
+    - #10493 hint_es: "El cambio *climático* es un problema." → "El *clima* del desierto es muy seco."
+    - #10745 hint_es: "Los niños no duermen de *emoción*." → "No puedo dormir de la *emoción*."
+  - Kapu: words-open-check ZÖLD (601 kártya); validate-en-track R11-R14 = 0, id-blokk hiba 1112 → 1112, cross-level dup 3 → 3 (kártyák 2759 → 2759); typecheck:ci, lint (0 hiba, 5 régi figyelmeztetés), test:ci (2046 teszt) zöld.
+  - [?] nem nyúltam hozzá: #9021 el más cerca (the nearest; a köznyelvi alak, a mondata „más cercana”, a „más cercano” kérdésforma a hintet is megszüntetné a #9260-nal együtt); #5886 la noche (evening; a „a las siete de la noche” hint a night-ra is illhet); #7829 cuántos años mondata („¿Cuántos años van los niños a la escuela?” nem túl természetes); #5637/#5641 él + futuro (csak az „Él” jelölt, nem az „Él llamará”); words-open #2 estar mondatai üresek (eredetileg is); words-open #281 time (a mondat „once a week”, nem „time”); az #5067/#5267/#5268/#5271 (this_that) mondatai nemhez igazodó alakot (Este/Esta) használnak a semleges „esto/eso” kérdés helyett, nem hintes kártyák.
