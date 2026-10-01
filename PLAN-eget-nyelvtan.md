@@ -162,7 +162,10 @@ Párhuzamos agent: `feat/learn-words-open` (`C:\AI\kimacha-wt-learn-open`) a `da
   - minta (form): «A Ana ___ (doler) la cabeza.» → le duele
   - minta (form): «A mí ___ (quedar) grandes estos zapatos.» → me quedan
   - kártya-kérés: faltar A2 (csak a `la falta` főnév-kártya van), duele A1, duelen A1 (a `doler` ragozott alakjai)
-- [ ] F-3. `subjuntivo-relativo` (B1, új téma) → kész, ha: ugyanaz
+- [x] F-3. `subjuntivo-relativo` (B1, új téma) → kész, ha: ugyanaz · 03:59 · audit 0/0, jest 1904 ok, tsc 0, lint 0 err · sáv `exam`: beszédben gyakori (busco / necesito + ismeretlen, no hay nadie que), de nem blokkol, későbbi téma nem épül rá, vizsga-igényt külön nem ellenőriztem · 12 választós + 1 match (6 pár) + 12 form (tábla `subjuntivo-relativo-formas`, row[0] = lyukas mondat + ige, cella = az igealak, 7 kötőmód + 5 kijelentő) + 7 why (5 szabály-név: ismert előzmény, keresett előzmény, nem létező előzmény, kérdés a létezésről, konkrét előzmény busco mellett is kijelentő); transform és `tense` nincs (a téma a mód, nem egy igeidő, és a jelvény elárulná a választ, mint a perfecto-vs-indefinido-ban); unit `b1-subjuntivo`, syllabus-sor a `temporales-subjuntivo` után; mexikói használat (departamento, nem piso); glossary: `sea`, `conozco`; tesztek: speakNoSpanish 68→69, syllabusEn 68→69 + ujjlenyomat; minden választósban EGY opció helyes a kontextus miatt («todavía no encontré nada», «no sé si», «no hay nadie», «ayer lo vi»), a `wrong` a konkrét mondatról szól, nem mond általános szabályt (a busco önmagában nem von maga után kötőmódot: sr-10, sr-why-05) · hash: a `feat(grammar): subjuntivo-relativo lesson (nyelvtan)` commit
+  - minta (választós): «Quiero un departamento que ___ balcón, pero todavía no encontré nada.» → tenga
+  - minta (form): «No hay nadie en mi familia que ___ (hablar) alemán.» → hable
+  - minta (form): «Busco a la señora que ___ (vender) frutas; ayer la vi.» → vende
 - [ ] F-4. `verbos-preposicion` (B1, új téma) → kész, ha: ugyanaz
 - [ ] F-5. `verbos-de-cambio` (B2, új téma) → kész, ha: ugyanaz
 
