@@ -251,7 +251,7 @@ Napközbenre (kód vagy nem nyelvtan, Feedback sheet 2026-10-01 00:20, üres F o
 - [!] Kód: a transform-promptnak nincs külön súgó-mezője; az `indefinido-imperfecto` és a `perfecto-vs-indefinido` zárójeles jelölőt használ a prompt végén («Como en casa. (ayer)»). A `subjuntivo-presente-forma`-ban a «Creo → No creo» mellett a «Dudo que» is jó lenne, de nem fogadja el.
 - [!] Telefonon nézendő: a `subjuntivo-perfecto` és a `futuro-condicional-perfecto` form-sorai («hablar · yo») nem mondják ki, hogy haya / hubiera ill. habré / habría kell-e; ha a drill képernyője a tábla címét mutatja, rendben van.
 
-Szakasz vége: 2026-10-01T13:24:34Z; kész: 34 új lecke (a tanterv 75/75 V2), 3×50 transform, J1-J2 + FB435/FB436, független átnézés R1-R20 az összes nyelvtani leckén (kb. 700 javítás: két helyes opció, hamis `wrong`, nem mexikói szó, rossz fordítás); hátra: a Napközbenre lista.
+Szakasz vége: 2026-10-01T13:24:34Z; kész: 33 új lecke (a tanterv 76/76 V2), 3×50 transform, J1-J2 + FB435/FB436, független átnézés R1-R20 az összes nyelvtani leckén (kb. 700 javítás: két helyes opció, hamis `wrong`, nem mexikói szó, rossz fordítás); hátra: a Napközbenre lista.
 Önellenőrzés (MODEL.md): kb. 60 Sonnet-agent (1 lecke / 1 átnézés-adag = 1 agent, + 4 összefésülés), két párhuzamos sáv Kálmán kérésére; az orkesztrátor nem olvasott lecke-JSON-t. Az F-1 (`perfecto-vs-indefinido`) 3 kört kért kód-változással: a brief nem mondta ki elég pontosan a mexikói normát (hoy / este mes / este año + indefinido), ez a brief hibája volt. Az átnézés leckénként átlag kb. 10 valódi hibát talált a zöld kapu mögött: a szerző-agent kapuja nem lát nyelvi hibát, ezért új leckét ezentúl íráskor egy független átnézés zár.
 
 ## BRIEF J1-J2 + F1-F4 (2026-10-01, javítások, EGY agent, sorban)
