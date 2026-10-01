@@ -71,6 +71,7 @@ export default function StatsScreen() {
   // PLAN-vizsga E1 a: a próbavizsga kártya szintjei (irányfüggő) és a mentett eredmények.
   const [mockLevels, setMockLevels] = useState<readonly MockLevel[]>(MOCK_LEVELS.es);
   const [mockOverview, setMockOverview] = useState<MockOverview>({});
+  const [mockOfficial, setMockOfficial] = useState(true);
   // FB254: a napi oszlop 60 perc fölött órában áll, koppintásra percre vált.
   const [chartInMinutes, setChartInMinutes] = useState(false);
 
@@ -86,6 +87,7 @@ export default function StatsScreen() {
         setSourceLang(ob?.source ?? 'en');
         const mockTarget: MockTarget = ob?.target === 'en' ? 'en' : 'es';
         setMockLevels(MOCK_LEVELS[mockTarget]);
+        setMockOfficial(mockTarget === 'es');
         readMockOverview(db, mockTarget, MOCK_LEVELS[mockTarget]).then(setMockOverview);
       });
       // PLAN-play 12. lépés (s5): minden PCIC-számítás egyetlen getPcicCards()
@@ -190,6 +192,7 @@ export default function StatsScreen() {
       <MockExamCard
         levels={mockLevels}
         overview={mockOverview}
+        official={mockOfficial}
         onStart={level => router.push({ pathname: '/mock-exam', params: { level } })}
       />
 

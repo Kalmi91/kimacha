@@ -59,6 +59,10 @@ export function mockTaskTexts(task: MockTask): string[] {
       return [task.text];
     case 'gap_mc':
       return task.gaps.flatMap((g) => [g.text.replace('___', ' '), ...g.options]);
+    case 'gap_type':
+      // A lyukas mondat látszik (a hiányzó szó nem); a felolvasott sorok nem.
+      return task.gaps.map((g) => g.text.replace('___', ' '));
+    case 'dictation':
     case 'listen_mc':
     case 'listen_dialogue':
     case 'listen_match':

@@ -6,7 +6,7 @@
 // Papíronként mentünk: egy kész papír válaszai megmaradnak, a félbehagyott papír elölről indul.
 
 import type { MockResult } from './score';
-import type { MockAnswers, MockLevel, MockSkill, MockTarget } from './types';
+import type { MockAnswers, MockLevel, MockTarget } from './types';
 
 export const MOCK_EXAM_PROGRESS_KEY = 'mock-exam';
 
@@ -15,8 +15,8 @@ export interface MockSession {
   seed: number;
   /** A feladatsor ujjlenyomata: csak egyezéskor folytatható (változott a szókészlet = új vizsga). */
   sig: string;
-  /** A már lezárt papírok. */
-  done: MockSkill[];
+  /** A már lezárt papírok azonosítói (lib/exam/mock/types.ts MockPaper.id). */
+  done: string[];
   /** A lezárt papírok feladatainak válaszai. */
   answers: MockAnswers;
 }
@@ -27,6 +27,7 @@ export interface MockLast {
   provisional: boolean;
   /** YYYY-MM-DD. */
   date: string;
+  /** Az átmenési szabály számai: csoportonként, vagy egyetlen sor az összpontból / az átlag-százalékból. */
   groups: { points: number; needed: number; of: number }[];
 }
 
@@ -76,7 +77,12 @@ export function lastFromResult(result: MockResult, date: string): MockLast {
     passed: result.passed,
     provisional: result.provisional,
     date,
-    groups: result.groups.map((g) => ({ points: g.points, needed: g.needed, of: g.of })),
+    groups:
+      result.rule.kind === 'groups'
+        ? result.rule.groups.map((g) => ({ points: g.points, needed: g.needed, of: g.of }))
+        : result.rule.kind === 'total'
+          ? [{ points: result.rule.points, needed: result.rule.needed, of: result.rule.of }]
+          : [{ points: result.rule.pct, needed: result.rule.passPct, of: 100 }],
   };
 }
 

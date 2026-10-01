@@ -1,6 +1,6 @@
 // PLAN-vizsga E. szakasz (Kálmán E1 a): a Stats fül "Practice exam" kártyája a próbavizsga belépője.
-// Szintenként egy gomb (es irány: A1 és A2; es→en irány: csak az A2, az angol A1-nek nincs
-// ellenőrzött hivatalos alakja), a gomb a /mock-exam képernyőre visz, alatta a legutóbbi eredmény
+// Szintenként egy gomb (mindkét irányban A1 és A2; az angol irányon a felirat nemzetközi mintát jelöl,
+// nem hivatalosat), a gomb a /mock-exam képernyőre visz, alatta a legutóbbi eredmény
 // vagy a félbehagyott vizsga jelzése. Mock-minta: statsBrutal.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
@@ -52,16 +52,20 @@ describe('Stats fül: Practice exam kártya (E1 a)', () => {
     const view = await renderStats();
     expect(view.getByTestId('mock-exam-card')).toBeTruthy();
     expect(view.getByText('Practice exam')).toBeTruthy();
+    expect(view.getByText('A full practice exam in the official format: reading, listening, writing and speaking.')).toBeTruthy();
     expect(view.getByTestId('mock-exam-start-A2')).toBeTruthy();
     fireEvent.press(view.getByTestId('mock-exam-start-A1'));
     expect(mockPush).toHaveBeenCalledWith({ pathname: '/mock-exam', params: { level: 'A1' } });
     view.unmount();
   });
 
-  it('es→en irány: csak az A2 gomb (az angol A1-hez nincs hivatalos alak)', async () => {
+  it('es→en irány: A1 és A2 gomb is, nemzetközi-minta felirattal (nem "official")', async () => {
     await getDb().setOnboarding('es', 'en');
     const view = await renderStats();
-    expect(view.queryByTestId('mock-exam-start-A1')).toBeNull();
+    expect(view.getByText('A full practice exam modelled on an international format: reading, listening, writing and speaking.')).toBeTruthy();
+    expect(view.queryByText(/official/i)).toBeNull();
+    fireEvent.press(view.getByTestId('mock-exam-start-A1'));
+    expect(mockPush).toHaveBeenCalledWith({ pathname: '/mock-exam', params: { level: 'A1' } });
     fireEvent.press(view.getByTestId('mock-exam-start-A2'));
     expect(mockPush).toHaveBeenCalledWith({ pathname: '/mock-exam', params: { level: 'A2' } });
     view.unmount();

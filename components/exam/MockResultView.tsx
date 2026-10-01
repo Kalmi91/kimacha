@@ -29,18 +29,33 @@ export function MockResultView({ result, timedOut, onReview, onRetry, onExit }: 
     <ScrollView contentContainerStyle={styles.body}>
       <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
         <ResultBadge testID="mock-verdict" correct={result.passed} label={result.passed ? s.passed : s.notPassed} align="center" />
-        {result.provisional && <Text style={[styles.note, { color: colors.textMuted }]}>{s.provisionalNote}</Text>}
+        {result.provisional && (
+          <Text style={[styles.note, { color: colors.textMuted }]}>
+            {result.rule.kind === 'total' ? s.provisionalNoteTotal : result.rule.kind === 'average' ? s.provisionalNoteAverage : s.provisionalNote}
+          </Text>
+        )}
         {timedOut && <Text style={[styles.note, { color: colors.warning }]}>{s.timeUp}</Text>}
-        {result.papers.map((p) => (
+        {result.skills.map((p) => (
           <Text key={p.skill} testID={`mock-band-${p.skill}`} style={[styles.line, { color: p.included ? colors.text : colors.textMuted }]}>
             {p.included ? s.bandLine(p.name, p.points, p.maxPoints) : s.bandNotIncluded(p.name)}
           </Text>
         ))}
-        {result.groups.map((g, i) => (
-          <Text key={i} testID={`mock-group-${i + 1}`} style={[styles.line, { color: g.passed ? colors.success : colors.danger }]}>
-            {s.groupLine(i + 1, g.points, g.of, g.needed, g.passed, g.provisional)}
+        {result.rule.kind === 'groups' &&
+          result.rule.groups.map((g, i) => (
+            <Text key={i} testID={`mock-group-${i + 1}`} style={[styles.line, { color: g.passed ? colors.success : colors.danger }]}>
+              {s.groupLine(i + 1, g.points, g.of, g.needed, g.passed, g.provisional)}
+            </Text>
+          ))}
+        {result.rule.kind === 'total' && (
+          <Text testID="mock-total" style={[styles.line, { color: result.rule.passed ? colors.success : colors.danger }]}>
+            {s.totalLine(result.rule.points, result.rule.of, result.rule.needed, result.rule.passed, result.rule.provisional)}
           </Text>
-        ))}
+        )}
+        {result.rule.kind === 'average' && (
+          <Text testID="mock-average" style={[styles.line, { color: result.rule.passed ? colors.success : colors.danger }]}>
+            {s.averageLine(result.rule.pct, result.rule.passPct, result.rule.passed, result.rule.provisional)}
+          </Text>
+        )}
         <Text style={[styles.note, { color: colors.textMuted }]}>{s.shortNote}</Text>
       </Card>
       <ExamButton testID="mock-review" label={s.checkAnswers} onPress={onReview} />
@@ -58,10 +73,10 @@ export function MockReviewView({ result, onBack }: { result: MockResult; onBack:
     <ScrollView contentContainerStyle={styles.body}>
       <Text style={[styles.title, { color: colors.text }]}>{s.reviewTitle}</Text>
       {result.papers
-        .filter((p) => p.included)
+        .filter((p) => p.tasks.length > 0)
         .map((p) => (
-          <View key={p.skill} style={styles.paper}>
-            <Text style={[styles.paperName, { color: colors.tint }]}>{s.bandLine(p.name, p.points, p.maxPoints)}</Text>
+          <View key={p.id} style={styles.paper}>
+            <Text style={[styles.paperName, { color: colors.tint }]}>{p.name}</Text>
             {p.tasks.map((task, ti) => (
               <View key={task.taskId} style={[styles.task, { backgroundColor: colors.card, borderColor: colors.border }]}>
                 <Text style={[styles.small, { color: colors.textMuted }]}>{s.taskOf(ti + 1, p.tasks.length)}</Text>

@@ -3,9 +3,9 @@
 // szavaiból áll; ugyanaz a seed ugyanazt a vizsgát adja (a részenkénti mentés ebből folytat).
 
 import { pcicItemsForLevel, setPcicTarget, type PcicItem } from '@/data/pcic';
-import { getMockBlueprint, mockAvailable, MOCK_LEVELS } from '../blueprint';
+import { AVERAGE_PASS_PCT, getMockBlueprint, mockAvailable, MOCK_LEVELS, TOTAL_PASS_POINTS } from '../blueprint';
 import { buildMockExam, mockExamSignature, sentenceWords, singleWordForm } from '../build';
-import type { MockExam, MockLevel, MockTarget, MockTask } from '../types';
+import { DEFAULT_PLAYS, type MockExam, type MockLevel, type MockTarget, type MockTask } from '../types';
 import { mockTaskItemCount } from '../types';
 
 afterAll(() => setPcicTarget('es'));
@@ -16,35 +16,64 @@ function exam(target: MockTarget, level: MockLevel, seed = 1) {
   return { items, exam: buildMockExam({ target, level, items, seed }) };
 }
 
-const paper = (e: MockExam, skill: string) => e.papers.find((p) => p.skill === skill)!;
+const paper = (e: MockExam, id: string) => e.papers.find((p) => p.id === id)!;
 const kinds = (tasks: MockTask[]) => tasks.map((t) => t.kind);
+const tasksOf = (e: MockExam, skill: string) => e.papers.flatMap((p) => p.tasks).filter((t) => t.skill === skill);
+const plays = (t: MockTask) => ('plays' in t && typeof t.plays === 'number' ? t.plays : DEFAULT_PLAYS);
 
 describe('blueprint: irányonkénti, szintenkénti vizsga-alak', () => {
-  it('es A1 / A2: a hivatalos percek (45/25/25/10 és 60/45/40/12), minden papír 25 pont', () => {
-    const a1 = getMockBlueprint('es', 'A1').sections;
-    expect(a1.map((s) => [s.skill, s.minutes, s.points])).toEqual([
-      ['reading', 45, 25],
-      ['writing', 25, 25],
-      ['listening', 25, 25],
-      ['speaking', 10, 25],
+  it('es A1 / A2: a hivatalos percek (45/25/25/10 és 60/45/40/12), készségenként egy papír', () => {
+    const a1 = getMockBlueprint('es', 'A1');
+    expect(a1.papers.map((p) => [p.id, p.minutes])).toEqual([
+      ['reading', 45],
+      ['writing', 25],
+      ['listening', 25],
+      ['speaking', 10],
     ]);
-    expect(getMockBlueprint('es', 'A2').sections.map((s) => s.minutes)).toEqual([60, 45, 40, 12]);
+    expect(getMockBlueprint('es', 'A2').papers.map((p) => p.minutes)).toEqual([60, 45, 40, 12]);
+    expect(a1.official).toBe(true);
   });
 
-  it('két csoport, mindkettőben 30 / 50', () => {
-    const g = getMockBlueprint('es', 'A1').groups;
-    expect(g.map((x) => [x.skills, x.needed, x.of])).toEqual([
+  it('es: két csoport, mindkettőben 30 / 50', () => {
+    const rule = getMockBlueprint('es', 'A1').rule;
+    if (rule.kind !== 'groups') throw new Error('nem csoport-szabály');
+    expect(rule.groups.map((x) => [x.skills, x.needed, x.of])).toEqual([
       [['reading', 'writing'], 30, 50],
       [['listening', 'speaking'], 30, 50],
     ]);
   });
 
-  it('es→en: csak az A2 van meg (az A1-nek nincs ellenőrzött hivatalos alakja)', () => {
+  it('en A1: egy 75 perces írásbeli (hallás + olvasás + írás) és a szóbeli; összpont 50 / 100, részenkénti minimum nélkül', () => {
+    const bp = getMockBlueprint('en', 'A1');
+    expect(bp.papers.map((p) => [p.id, p.minutes, p.skills])).toEqual([
+      ['written', 75, ['listening', 'reading', 'writing']],
+      ['speaking', 3.5, ['speaking']],
+    ]);
+    expect(bp.rule).toEqual({ kind: 'total', needed: TOTAL_PASS_POINTS, of: 100 });
+    expect(TOTAL_PASS_POINTS).toBe(50);
+    expect(bp.official).toBe(false);
+  });
+
+  it('en A2: Olvasás + Írás egy közös 60 perces papír, Hallás 30 perc, szóbeli; átlag-szabály közelítő küszöbbel, a régi 40/20 és 30/50 nincs', () => {
+    const bp = getMockBlueprint('en', 'A2');
+    expect(bp.papers.map((p) => [p.id, p.minutes])).toEqual([
+      ['readingwriting', 60],
+      ['listening', 30],
+      ['speaking', 9],
+    ]);
+    expect(bp.papers[0].skills).toEqual(['reading', 'writing']);
+    expect(bp.rule).toEqual({ kind: 'average', passPct: AVERAGE_PASS_PCT, approximate: true });
+    expect(bp.papers.map((p) => p.minutes)).not.toContain(40);
+    expect(bp.papers.map((p) => p.minutes)).not.toContain(20);
+    expect(bp.rule.kind).not.toBe('groups');
+    expect(bp.official).toBe(false);
+  });
+
+  it('mindkét irányban A1 és A2 elérhető', () => {
     expect(MOCK_LEVELS.es).toEqual(['A1', 'A2']);
-    expect(MOCK_LEVELS.en).toEqual(['A2']);
-    expect(mockAvailable('en', 'A1')).toBe(false);
-    expect(mockAvailable('en', 'A2')).toBe(true);
-    expect(() => getMockBlueprint('en', 'A1')).toThrow();
+    expect(MOCK_LEVELS.en).toEqual(['A1', 'A2']);
+    expect(mockAvailable('en', 'A1')).toBe(true);
+    expect(mockAvailable('en', 'B1')).toBe(false);
   });
 });
 
@@ -52,10 +81,11 @@ describe('buildMockExam: es A1 (angolul beszélő tanul spanyolt)', () => {
   const { items, exam: e } = exam('es', 'A1');
 
   it('négy papír a hivatalos sorrendben, a szóbeli helyőrző feladat nélkül', () => {
-    expect(e.papers.map((p) => p.skill)).toEqual(['reading', 'writing', 'listening', 'speaking']);
+    expect(e.papers.map((p) => p.id)).toEqual(['reading', 'writing', 'listening', 'speaking']);
     expect(paper(e, 'speaking').placeholder).toBe(true);
     expect(paper(e, 'speaking').tasks).toHaveLength(0);
-    expect(e.papers.filter((p) => p.skill !== 'speaking').every((p) => !p.placeholder && p.tasks.length > 0)).toBe(true);
+    expect(e.papers.filter((p) => p.id !== 'speaking').every((p) => !p.placeholder && p.tasks.length > 0)).toBe(true);
+    expect(e.official).toBe(true);
   });
 
   it('olvasás: szöveg-értés, párosítás, igaz/hamis, lyukas mondat; hallás: három feladat; írás: űrlap + üzenet', () => {
@@ -68,6 +98,11 @@ describe('buildMockExam: es A1 (angolul beszélő tanul spanyolt)', () => {
     const [read, match, tf, gap] = paper(e, 'reading').tasks.map(mockTaskItemCount);
     expect([read, match, tf, gap]).toEqual([3, 5, 4, 5]);
     expect(paper(e, 'listening').tasks.map(mockTaskItemCount)).toEqual([5, 4, 3]);
+  });
+
+  it('minden feladat a papírja készségéhez tartozik, a hallás kétszer játszható', () => {
+    for (const p of e.papers) for (const t of p.tasks) expect(t.skill).toBe(p.id);
+    for (const t of paper(e, 'listening').tasks) expect(plays(t)).toBe(2);
   });
 
   it('ugyanaz a seed ugyanazt a vizsgát adja, más seed mást; az ujjlenyomat ezt követi', () => {
@@ -84,8 +119,9 @@ describe('buildMockExam: es A1 (angolul beszélő tanul spanyolt)', () => {
     expect(paper(e, 'reading').tasks[0].id).toBe('reading-1');
   });
 
-  it('az utasítás célnyelvű és sorszámozott (TAREA n.)', () => {
+  it('az utasítás célnyelvű és sorszámozott (TAREA n.), az írásé is a papíron belüli helye szerint', () => {
     expect(paper(e, 'reading').tasks.map((t) => t.instruction.slice(0, 9))).toEqual(['TAREA 1. ', 'TAREA 2. ', 'TAREA 3. ', 'TAREA 4. ']);
+    expect(paper(e, 'writing').tasks.map((t) => t.instruction.slice(0, 9))).toEqual(['TAREA 1. ', 'TAREA 2. ']);
   });
 
   it('minden olvasott mondat a szint egy tételének példamondata (nincs kézzel írt szöveg)', () => {
@@ -161,26 +197,120 @@ describe('buildMockExam: es A2', () => {
   });
 });
 
-describe('buildMockExam: es→en A2 (spanyolul beszélő tanul angolt)', () => {
-  const { items, exam: e } = exam('en', 'A2');
+describe('buildMockExam: es→en A1 (spanyolul beszélő tanul angolt, nemzetközi A1 minta)', () => {
+  const { items, exam: e } = exam('en', 'A1');
+  const written = paper(e, 'written');
 
-  it('a hivatalos angol alak: Reading / Writing / Listening / Speaking, 40 / 20 / 30 / 10 perc, PART n. utasítás', () => {
-    expect(e.papers.map((p) => [p.name, p.minutes])).toEqual([
-      ['Reading', 40],
-      ['Writing', 20],
-      ['Listening', 30],
-      ['Speaking', 10],
+  it('egy írásbeli papír (75 perc) és a szóbeli helyőrző; nem hivatalos felépítés', () => {
+    expect(e.papers.map((p) => [p.id, p.minutes, p.placeholder])).toEqual([
+      ['written', 75, false],
+      ['speaking', 3.5, true],
     ]);
-    expect(paper(e, 'reading').tasks[0].instruction.startsWith('PART 1. ')).toBe(true);
+    expect(written.points).toBe(75);
+    expect(e.official).toBe(false);
+    expect(e.rule.kind).toBe('total');
+  });
+
+  it('feladatok sorrendje: hallás (rövid közlések, diktálás, hézag felvétellel), olvasás (hézag, szöveg, begépelt hézag), írás (két üzenet)', () => {
+    expect(kinds(written.tasks)).toEqual(['listen_mc', 'dictation', 'gap_type', 'gap_mc', 'read_mc', 'gap_type', 'short_message', 'short_message']);
+    expect(written.tasks.map((t) => t.skill)).toEqual(['listening', 'listening', 'listening', 'reading', 'reading', 'reading', 'writing', 'writing']);
+  });
+
+  it('a hallás-újrajátszás szakaszonként: az első rész egyszer, a diktálás és a hézag kétszer', () => {
+    const [first, dict, fill] = written.tasks;
+    expect(plays(first)).toBe(1);
+    expect(plays(dict)).toBe(2);
+    expect(plays(fill)).toBe(2);
+    expect(first.instruction).toContain('once');
+    expect(dict.instruction).toContain('twice');
+  });
+
+  it('a feladatok sorszáma folyamatos a papíron belül (PART 1..8)', () => {
+    expect(written.tasks.map((t) => t.instruction.match(/^PART (\d+)\./)![1])).toEqual(['1', '2', '3', '4', '5', '6', '7', '8']);
+  });
+
+  it('a diktálás két tanult szint-mondat, a szöveg a felolvasott sorok egymásutánja; minden szó hallás- és írás-jegy', () => {
+    const dict = written.tasks[1];
+    if (dict.kind !== 'dictation') throw new Error('nincs dictation');
+    const sentences = new Set(items.map((i) => i.exampleEn?.trim()));
+    expect(dict.audio).toHaveLength(2);
+    for (const line of dict.audio) expect(sentences.has(line)).toBe(true);
+    expect(dict.text).toBe(dict.audio.join(' '));
+    expect(mockTaskItemCount(dict)).toBe(sentenceWords(dict.text).length * 2);
+  });
+
+  it('a begépelős hézag válasza a mondatban szereplő szó; a felvételes hézag mondatai szólnak, a képernyőn a lyukas szöveg áll', () => {
+    const fill = written.tasks[2];
+    if (fill.kind !== 'gap_type' || !fill.audio) throw new Error('nincs listen fill');
+    expect(fill.audio).toHaveLength(fill.gaps.length);
+    fill.gaps.forEach((g, i) => {
+      expect(g.text).toContain('___');
+      expect(fill.audio![i].toLowerCase()).toContain(g.answer);
+      expect(g.text.replace('___', g.answer).toLowerCase()).toBe(fill.audio![i].toLowerCase());
+    });
+    const open = written.tasks[5];
+    if (open.kind !== 'gap_type') throw new Error('nincs gap_type');
+    expect(open.audio).toBeUndefined();
+    expect(open.gaps.length).toBeGreaterThanOrEqual(2);
+  });
+
+  it('a szintnek megfelelő angol tételekből épül, és egy mondat csak egy helyen szerepel', () => {
+    const sentences = new Set(items.map((i) => i.exampleEn?.trim()));
+    const heard = written.tasks.flatMap((t) => ('audio' in t && t.audio ? t.audio : []));
+    for (const line of heard) expect(sentences.has(line)).toBe(true);
+    expect(new Set(heard).size).toBe(heard.length);
+    const msg = written.tasks.filter((t) => t.kind === 'short_message');
+    expect(msg.map((t) => (t.kind === 'short_message' ? t.minWords : 0))).toEqual([24, 30]);
+  });
+});
+
+describe('buildMockExam: es→en A2 (spanyolul beszélő tanul angolt, nemzetközi A2 minta)', () => {
+  const { items, exam: e } = exam('en', 'A2');
+  const rw = paper(e, 'readingwriting');
+  const listening = paper(e, 'listening');
+
+  it('Olvasás + Írás egy 60 perces papír, Hallás 30 perc, a szóbeli helyőrző; nem hivatalos felépítés', () => {
+    expect(e.papers.map((p) => [p.id, p.name, p.minutes, p.placeholder])).toEqual([
+      ['readingwriting', 'Reading and Writing', 60, false],
+      ['listening', 'Listening', 30, false],
+      ['speaking', 'Speaking', 9, true],
+    ]);
+    expect(rw.points).toBe(50);
+    expect(e.official).toBe(false);
+    expect(e.rule).toEqual({ kind: 'average', passPct: AVERAGE_PASS_PCT, approximate: true });
+  });
+
+  it('a közös papír: olvasás (öt rész), utána írás (két rész, 25 és 35 szó), PART n. folyamatos számozással', () => {
+    expect(kinds(rw.tasks)).toEqual(['read_mc', 'match', 'true_false', 'gap_mc', 'gap_type', 'short_message', 'short_message']);
+    expect(rw.tasks.map((t) => t.skill)).toEqual(['reading', 'reading', 'reading', 'reading', 'reading', 'writing', 'writing']);
+    expect(rw.tasks.map((t) => t.instruction.match(/^PART (\d+)\./)![1])).toEqual(['1', '2', '3', '4', '5', '6', '7']);
+    const min = rw.tasks.filter((t) => t.kind === 'short_message').map((t) => (t.kind === 'short_message' ? t.minWords : 0));
+    expect(min).toEqual([25, 35]);
+  });
+
+  it('a hallás minden szövege kétszer hallható, és a hézagos rész mondatai szólnak', () => {
+    expect(kinds(listening.tasks)).toEqual(['listen_mc', 'gap_type', 'listen_dialogue', 'listen_match']);
+    for (const t of listening.tasks) expect(plays(t)).toBe(2);
+    const fill = listening.tasks[1];
+    if (fill.kind !== 'gap_type') throw new Error('nincs gap_type');
+    expect(fill.audio).toHaveLength(fill.gaps.length);
+    for (const t of listening.tasks) expect(t.skill).toBe('listening');
   });
 
   it('a feladat az angol szint-szavakból épül (célnyelvi mondat = exampleEn)', () => {
     const sentences = new Set(items.map((i) => i.exampleEn?.trim()));
-    const match = paper(e, 'reading').tasks.find((t) => t.kind === 'match');
+    const match = rw.tasks.find((t) => t.kind === 'match');
     if (match?.kind !== 'match') throw new Error('nincs match');
     for (const p of match.prompts) expect(sentences.has(p.text)).toBe(true);
-    expect(paper(e, 'reading').tasks.length).toBe(4);
-    expect(paper(e, 'listening').tasks.length).toBe(3);
+    const heard = listening.tasks.flatMap((t) => ('audio' in t && t.audio ? t.audio : []));
+    for (const line of heard) expect(sentences.has(line)).toBe(true);
+  });
+
+  it('készségenként van pontozható tartalom (olvasás, írás, hallás), szóbeli nincs', () => {
+    expect(tasksOf(e, 'reading').length).toBe(5);
+    expect(tasksOf(e, 'writing').length).toBe(2);
+    expect(tasksOf(e, 'listening').length).toBe(4);
+    expect(tasksOf(e, 'speaking').length).toBe(0);
   });
 });
 
