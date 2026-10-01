@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View, Pressable } from 'react-native';
+import { StyleSheet, View, Pressable } from 'react-native';
+import { Text } from '@/components/KText';
 import { router } from 'expo-router';
 
 import Colors from '@/constants/Colors';
@@ -10,6 +11,7 @@ import { t, setLanguage } from '@/lib/i18n';
 import { PCIC_VIEW_LEVELS, pcicItemsForLevel, pcicItemsForViewLevel, realLevelOfView, setPcicTarget, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import LevelRow from '@/components/LevelRow';
 import { BrutalButton } from '@/components/grammar/Brutal';
+import { OnboardingIntro, OnboardingThemeStep } from '@/components/OnboardingSteps';
 
 // PLAN-ketiranyu 4. lépés (2026-09-28, jóváhagyott vázlat 1-5. pont): az
 // onboarding megint irányt kérdez, mint a régi (nem Kimacha Play) ág, de
@@ -26,7 +28,7 @@ export default function OnboardingScreen() {
   // NY19: brutalista palettán nagy, nagybetűs, ink színű cím.
   const welcomeStyle = [styles.welcome, { color: colors.tint }, g.brutal && [styles.brutalWelcome, { color: g.ink }]];
   const s = t();
-  const [step, setStep] = useState<'language' | 'welcome' | 'level'>('language');
+  const [step, setStep] = useState<'language' | 'welcome' | 'intro' | 'theme' | 'level'>('language');
   const [source, setSource] = useState<'en' | 'es'>('en');
   const [target, setTarget] = useState<PcicTarget>('es');
 
@@ -53,7 +55,7 @@ export default function OnboardingScreen() {
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         <View style={styles.content}>
-          <Text style={welcomeStyle}>
+          <Text variant="title" style={welcomeStyle}>
             Which language do you speak? / ¿Qué idioma hablas?
           </Text>
           {g.brutal ? (
@@ -64,16 +66,25 @@ export default function OnboardingScreen() {
           ) : (
           <View style={styles.langButtonGroup}>
             <Pressable style={[styles.startBtn, { backgroundColor: colors.tint }]} onPress={() => handleChooseLanguage('en')}>
-              <Text style={styles.startBtnText}>English</Text>
+              <Text style={[styles.startBtnText, { color: colors.onTint }]}>English</Text>
             </Pressable>
             <Pressable style={[styles.startBtn, { backgroundColor: colors.tint }]} onPress={() => handleChooseLanguage('es')}>
-              <Text style={styles.startBtnText}>Español</Text>
+              <Text style={[styles.startBtnText, { color: colors.onTint }]}>Español</Text>
             </Pressable>
           </View>
           )}
         </View>
       </View>
     );
+  }
+
+  // PLAN-temak 4C: üdvözlés után a bevezető, utána az 5 témás választó, csak aztán a szint.
+  if (step === 'intro') {
+    return <OnboardingIntro titleStyle={welcomeStyle} onStart={() => setStep('theme')} />;
+  }
+
+  if (step === 'theme') {
+    return <OnboardingThemeStep titleStyle={welcomeStyle} onNext={() => setStep('level')} />;
   }
 
   if (step === 'level') {
@@ -95,7 +106,7 @@ export default function OnboardingScreen() {
     };
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
-        <Text style={welcomeStyle}>{s.pcic.chooseLevel}</Text>
+        <Text variant="title" style={welcomeStyle}>{s.pcic.chooseLevel}</Text>
         {levels.map((lvl) => {
           const total = pcicItemsForLevel(lvl).length;
           return (
@@ -122,12 +133,12 @@ export default function OnboardingScreen() {
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <View style={styles.content}>
-        <Text style={welcomeStyle}>{s.onboarding.welcome}</Text>
+        <Text variant="title" style={welcomeStyle}>{s.onboarding.welcome}</Text>
         {g.brutal ? (
-          <BrutalButton testID="onboarding-start" label={s.onboarding.start} onPress={() => setStep('level')} style={styles.brutalBtn} />
+          <BrutalButton testID="onboarding-start" label={s.onboarding.start} onPress={() => setStep('intro')} style={styles.brutalBtn} />
         ) : (
-        <Pressable style={[styles.startBtn, { backgroundColor: colors.tint }]} onPress={() => setStep('level')}>
-          <Text style={styles.startBtnText}>{s.onboarding.start}</Text>
+        <Pressable style={[styles.startBtn, { backgroundColor: colors.tint }]} onPress={() => setStep('intro')}>
+          <Text style={[styles.startBtnText, { color: colors.onTint }]}>{s.onboarding.start}</Text>
         </Pressable>
         )}
       </View>

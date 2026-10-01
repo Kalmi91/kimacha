@@ -1,4 +1,5 @@
 import { BASE, ON_FILL, PALETTE_FILLS, type FillPaletteId } from './GrammarPalettes';
+import { SKINS, skinColorsFor, type SkinId, type SkinMode } from './Skins';
 
 const darkBlue = '#2563EB';
 const navy = '#0F172A';
@@ -36,6 +37,35 @@ function brutalColors(id: FillPaletteId, mode: 'light' | 'dark') {
   };
 }
 
+// PLAN-temak 2A: a téma-motor (constants/Skins.ts) témáihoz ugyanilyen Colors-bejegyzés,
+// `<téma-id>-<mód>` kulcson. tint/accent = a, secondary = b (ha nincs: a), card = paper,
+// border = a keret saját színe (ha nincs: ink), onTint = onA; a szemantikus színek
+// (success / danger / warning / info / overlay) a brutalista készletből jönnek.
+function skinColors(id: SkinId, mode: SkinMode) {
+  const c = skinColorsFor(SKINS[id], mode);
+  const { success, successFill, danger, warning, warningFill, info, overlay } = brutalColors('brand', mode);
+  return {
+    text: c.ink,
+    background: c.bg,
+    tint: c.a,
+    card: c.paper,
+    tabIconDefault: c.mu,
+    tabIconSelected: c.ink,
+    accent: c.a,
+    secondary: c.b ?? c.a,
+    textMuted: c.mu,
+    success,
+    successFill,
+    danger,
+    warning,
+    warningFill,
+    info,
+    border: c.border ?? c.ink,
+    overlay,
+    onTint: c.onA,
+  };
+}
+
 // A mód a classic light/dark kulcs-neveket követi.
 export const isDarkTheme = (theme: string) => theme === 'dark' || theme.endsWith('-dark');
 
@@ -50,6 +80,35 @@ export default {
   'cyan-dark': brutalColors('cyan', 'dark'),
   'orange-light': brutalColors('orange', 'light'),
   'orange-dark': brutalColors('orange', 'dark'),
+  'deco-dark': skinColors('deco', 'dark'),
+  'deco-light': skinColors('deco', 'light'),
+  'loteria-light': skinColors('loteria', 'light'),
+  'senior-light': skinColors('senior', 'light'),
+  'senior-dark': skinColors('senior', 'dark'),
+  'konnyu-light': skinColors('konnyu', 'light'),
+  'konnyu-dark': skinColors('konnyu', 'dark'),
+  'retro95-light': skinColors('retro95', 'light'),
+  'y2k-light': skinColors('y2k', 'light'),
+  'kawaii-light': skinColors('kawaii', 'light'),
+  'gamer-dark': skinColors('gamer', 'dark'),
+  'botanikus-light': skinColors('botanikus', 'light'),
+  'botanikus-dark': skinColors('botanikus', 'dark'),
+  'zen-light': skinColors('zen', 'light'),
+  'zen-dark': skinColors('zen', 'dark'),
+  'diszlexia-light': skinColors('diszlexia', 'light'),
+  'diszlexia-dark': skinColors('diszlexia', 'dark'),
+  'szocreal-light': skinColors('szocreal', 'light'),
+  'plakat-light': skinColors('plakat', 'light'),
+  'csillampony-light': skinColors('csillampony', 'light'),
+  'bauhaus-light': skinColors('bauhaus', 'light'),
+  'popart-light': skinColors('popart', 'light'),
+  'szecesszio-light': skinColors('szecesszio', 'light'),
+  'kalocsai-light': skinColors('kalocsai', 'light'),
+  'memphis-light': skinColors('memphis', 'light'),
+  'kodex-light': skinColors('kodex', 'light'),
+  'graffiti-dark': skinColors('graffiti', 'dark'),
+  'ukiyoe-light': skinColors('ukiyoe', 'light'),
+  'ukiyoe-dark': skinColors('ukiyoe', 'dark'),
   light: {
     text: '#1E293B',
     background: '#F8FAFC',
@@ -88,6 +147,8 @@ export default {
     info: '#38BDF8',
     border: '#334155',
     overlay: 'rgba(0,0,0,0.6)',
-    onTint: '#FFFFFF',
+    // PLAN-temak 7G: a fehér a #3B82F6-on 3,68 volt; a sötét alap-szín 4,85 (a tint szövegként a
+    // sötét alapon marad, ezért a kitöltés szövege változott, nem a tint).
+    onTint: navy,
   },
 };

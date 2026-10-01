@@ -1,7 +1,9 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { Text } from '@/components/KText';
 
 import Colors from '@/constants/Colors';
 import { ON_FILL } from '@/constants/GrammarPalettes';
+import { bestOn } from '@/constants/Skins';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
@@ -29,8 +31,10 @@ export default function ResultBadge({
   const g = useGrammarColors();
   const s = t();
   const fill = correct ? colors.successFill : colors.danger;
-  // Sötét szöveg mindkét kitöltésen (siker-zöld 7.8:1, danger 3.8:1 nagy félkövér szövegre elég), token: ON_FILL.
-  const ink = ON_FILL;
+  // Sötét szöveg a kitöltésen (token: ON_FILL; siker-zöld 7.8:1, a sötét mód danger-je 5.0:1).
+  // PLAN-temak 7H: a világos módú danger (#DC2626) a sötét szövegen 3.9:1 volt, a felirat (18 px) nem
+  // "nagy" szöveg (egyedi betűnél nincs félkövér), ezért 4.5 kell: ott a fehér (4.8:1) a jobb.
+  const ink = bestOn(fill, [ON_FILL, '#FFFFFF']);
   const text = label ?? (correct ? s.games.correctFeedback : s.games.wrongFeedback);
   return (
     <View

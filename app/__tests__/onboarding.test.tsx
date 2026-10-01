@@ -38,6 +38,9 @@ describe('OnboardingScreen: nyelv- és szint-lépés (PLAN-ketiranyu 4. lépés)
 
     expect(queryByText('Choose level')).toBeNull();
     fireEvent.press(getByText('Get Started'));
+    // PLAN-temak 4C: a "Get Started" után a bevezető és a téma-lépés jön, csak aztán a szint.
+    fireEvent.press(getByText("Let's start"));
+    fireEvent.press(getByText('Continue'));
 
     expect(getByText('Choose level')).toBeTruthy();
     expect(getByText('A1')).toBeTruthy();
@@ -53,6 +56,8 @@ describe('OnboardingScreen: nyelv- és szint-lépés (PLAN-ketiranyu 4. lépés)
     const { getByText } = render(<OnboardingScreen />);
     fireEvent.press(getByText('English'));
     fireEvent.press(getByText('Get Started'));
+    fireEvent.press(getByText("Let's start"));
+    fireEvent.press(getByText('Continue'));
 
     await act(async () => {
       fireEvent.press(getByText('Elementary'));
@@ -70,6 +75,8 @@ describe('OnboardingScreen: nyelv- és szint-lépés (PLAN-ketiranyu 4. lépés)
 
     expect(getByText('Empezar')).toBeTruthy();
     fireEvent.press(getByText('Empezar'));
+    fireEvent.press(getByText('Empecemos'));
+    fireEvent.press(getByText('Continuar'));
 
     expect(getByText('Elige el nivel')).toBeTruthy();
     expect(getByText('A1')).toBeTruthy();
@@ -87,6 +94,8 @@ describe('OnboardingScreen: nyelv- és szint-lépés (PLAN-ketiranyu 4. lépés)
     const { getByText } = render(<OnboardingScreen />);
     fireEvent.press(getByText('Español'));
     fireEvent.press(getByText('Empezar'));
+    fireEvent.press(getByText('Empecemos'));
+    fireEvent.press(getByText('Continuar'));
 
     await act(async () => {
       fireEvent.press(getByText('A1'));

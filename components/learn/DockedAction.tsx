@@ -1,8 +1,11 @@
-import { StyleSheet, View, Text, Pressable, type LayoutChangeEvent } from 'react-native';
+import { StyleSheet, View, Pressable, type LayoutChangeEvent } from 'react-native';
+import { Text } from '@/components/KText';
 
 import Colors from '@/constants/Colors';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalButton } from '@/components/grammar/Brutal';
+import { useSkinDecor } from '@/components/skins';
+import { legibleOn } from '@/constants/Skins';
 
 type ColorScheme = (typeof Colors)['light'];
 
@@ -10,6 +13,9 @@ type ColorScheme = (typeof Colors)['light'];
 // ülő egyetlen Check/→ sáv. A `dockedAction`/`inlineCheckBtn` stílusértékek
 // változatlanok, csak ide költöztek, hogy a PCIC is használhassa.
 export const DOCK_RESERVE = 76;
+// A sáv fölé emelt 💬 (FeedbackModal) alatt a görgető alján ennyi hely kell a sáv (dockH + dockLift)
+// fölött: a gomb alsó távolsága (styles.fab.bottom 24) + magassága (styles.brutalFab.height 55) + 12 px rés.
+export const FAB_CLEARANCE = 24 + 55 + 12;
 
 type Tone = 'check' | 'next';
 
@@ -32,16 +38,18 @@ type Props = {
 
 export default function DockedAction({ label, onPress, tone, color, bottom, colors, onHeight }: Props) {
   const g = useGrammarColors();
+  const checkFill = useSkinDecor().checkFill;
   return (
     <View
+      testID="learn-dock"
       style={[styles.dockedAction, { bottom, backgroundColor: colors.background }]}
       onLayout={onHeight ? (e: LayoutChangeEvent) => onHeight(e.nativeEvent.layout.height) : undefined}
     >
       {g.brutal ? (
         // NY19: Check = ink kitöltés, Next = a kitöltés.
-        <BrutalButton testID="learn-docked-action" label={label} fill={tone === 'next' ? 'a' : 'ink'} onPress={onPress} />
+        <BrutalButton testID="learn-docked-action" label={label} fill={tone === 'next' ? 'a' : checkFill ?? 'ink'} icon={tone === 'next' ? '→' : '✓'} onPress={onPress} />
       ) : (
-        <Pressable style={[styles.inlineCheckBtn, { backgroundColor: color ?? TONE_COLOR[tone] }]} onPress={onPress}>
+        <Pressable style={[styles.inlineCheckBtn, { backgroundColor: legibleOn(color ?? TONE_COLOR[tone], '#FFFFFF') }]} onPress={onPress}>
           <Text style={styles.inlineCheckText}>{label}</Text>
         </Pressable>
       )}

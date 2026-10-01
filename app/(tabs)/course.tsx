@@ -1,8 +1,10 @@
 import { useCallback, useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
+import { Text } from '@/components/KText';
 import { useFocusEffect, useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
+import { legibleOn } from '@/constants/Skins';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
@@ -27,6 +29,7 @@ import TrialBadge from '@/components/TrialBadge';
 import { DEFAULT_WEEKLY_GOAL_MINUTES } from '@/lib/usageStats';
 import FeedbackButton from '@/components/FeedbackModal';
 import { BrutalBox, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
+import { SkinBackdrop, SkinHeader } from '@/components/skins/Slots';
 
 // The grammar course: the whole syllabus from A1 to C1, in teaching order.
 //
@@ -108,11 +111,14 @@ export default function GrammarSyllabusScreen() {
     const shownDone = shownTopics.filter((tp) => progress.get(tp.id)?.state === 'done').length;
     return (
       <View style={[styles.container, { backgroundColor: g.bg }]}>
+        <SkinBackdrop />
         <ScrollView contentContainerStyle={styles.brutalBody}>
-          <View style={styles.brutalHeader}>
-            <Text style={[styles.brutalTitle, { color: g.ink }]}>{s.tabs.grammar}</Text>
-            <Sticker testID="grammar-streak" label={`🔥 ${streak}`} fill="b" rotate={6} />
-          </View>
+          <SkinHeader>
+            <View style={styles.brutalHeader}>
+              <Text variant="title" style={[styles.brutalTitle, { color: g.ink }]}>{s.tabs.grammar}</Text>
+              <Sticker testID="grammar-streak" label={`🔥 ${streak}`} fill="b" rotate={6} />
+            </View>
+          </SkinHeader>
           <Text style={[styles.brutalSmall, { color: g.mu }]}>
             {s.grammar.coverage(doneCount, coverage.written, coverage.planned)}
           </Text>
@@ -161,7 +167,7 @@ export default function GrammarSyllabusScreen() {
                         : s.grammar.notStarted;
                 const tier = getGrammarTier(topic.id);
                 const hasTrial = written2 && lessonHasTrial(lessonFor(learnedLang, topic.id));
-                const textColor = inProgress ? g.onFill : written2 ? g.ink : g.mu;
+                const textColor = inProgress ? g.onB : written2 ? g.ink : g.mu;
                 return (
                   <BrutalBox
                     key={topic.id}
@@ -173,7 +179,7 @@ export default function GrammarSyllabusScreen() {
                     boxStyle={styles.brutalTopic}
                   >
                     <View style={styles.brutalTopicTop}>
-                      <Text style={[styles.brutalTopicTitle, { color: textColor }]}>
+                      <Text variant="title" style={[styles.brutalTopicTitle, { color: textColor }]}>
                         {topic.title[contentLang] ?? topic.title.en}
                       </Text>
                     </View>
@@ -189,7 +195,8 @@ export default function GrammarSyllabusScreen() {
                         {hasTrial ? <TrialBadge testID={`trial-badge-${topic.id}`} /> : null}
                       </View>
                     ) : null}
-                    <Text style={[styles.brutalBlurb, { color: textColor }]} numberOfLines={2}>
+                    {/* 7F/G2: nincs numberOfLines-vágás: a széles / magas betűjű téma 3+ sorba tördeli, nem csonkítjuk. */}
+                    <Text style={[styles.brutalBlurb, { color: textColor }]}>
                       {topic.blurb[contentLang] ?? topic.blurb.en}
                     </Text>
                     {inProgress && badgePct !== null ? (
@@ -315,7 +322,7 @@ export default function GrammarSyllabusScreen() {
                           >
                             <View style={{ flex: 1 }}>
                               <View style={styles.topicTitleRow}>
-                                <Text style={[styles.topicTitle, { color: colors.text }]}>
+                                <Text variant="title" style={[styles.topicTitle, { color: colors.text }]}>
                                   {topic.title[contentLang] ?? topic.title.en}
                                 </Text>
                                 {getGrammarTier(topic.id) === 'core-plus' ? (
@@ -323,7 +330,7 @@ export default function GrammarSyllabusScreen() {
                                     {s.grammar.corePlusTag}
                                   </Text>
                                 ) : getGrammarTier(topic.id) === 'core' ? (
-                                  <Text testID={`grammar-core-${topic.id}`} style={styles.coreTag}>
+                                  <Text testID={`grammar-core-${topic.id}`} style={[styles.coreTag, { color: legibleOn('#7C3AED', colors.card) }]}>
                                     {s.grammar.coreTag}
                                   </Text>
                                 ) : null}

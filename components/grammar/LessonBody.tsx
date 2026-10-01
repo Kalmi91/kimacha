@@ -1,4 +1,5 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import { Text } from '@/components/KText';
 
 import Colors, { isDarkTheme } from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
@@ -189,7 +190,7 @@ export default function LessonBody({ blocks, contentLang, learnedLang }: Props) 
         if (block.kind === 'tip') {
           return (
             <Card key={i} fill="b" classicStyle={styles.tipCard}>
-              <Text style={[styles.tipText, { color: g.brutal ? g.onFill : colors.text }]}>💡 {block.text[contentLang] ?? block.text.en}</Text>
+              <Text style={[styles.tipText, { color: g.brutal ? g.onB : colors.text }]}>💡 {block.text[contentLang] ?? block.text.en}</Text>
             </Card>
           );
         }
@@ -199,7 +200,7 @@ export default function LessonBody({ blocks, contentLang, learnedLang }: Props) 
           return (
             <View key={i} style={styles.section}>
               {block.title ? (
-                <Text style={[styles.sectionTitle, { color: titleColor }]}>{block.title[contentLang] ?? block.title.en}</Text>
+                <Text variant="title" style={[styles.sectionTitle, { color: titleColor }]}>{block.title[contentLang] ?? block.title.en}</Text>
               ) : null}
               {points.map((point, pi) => (
                 <Card key={pi} classicStyle={styles.card}>
@@ -220,7 +221,7 @@ export default function LessonBody({ blocks, contentLang, learnedLang }: Props) 
           return (
             <View key={i} style={styles.section}>
               {block.title ? (
-                <Text style={[styles.sectionTitle, { color: titleColor }]}>{block.title[contentLang] ?? block.title.en}</Text>
+                <Text variant="title" style={[styles.sectionTitle, { color: titleColor }]}>{block.title[contentLang] ?? block.title.en}</Text>
               ) : null}
               <Card classicStyle={styles.card}>
                 {block.examples.map((ex, ei) => (
@@ -235,7 +236,7 @@ export default function LessonBody({ blocks, contentLang, learnedLang }: Props) 
           const conjugation = isConjugationTable(block.header, block.rows);
           return (
             <View key={i} style={styles.section} testID={`table-${block.id}`}>
-              <Text style={[styles.sectionTitle, { color: titleColor }]}>{block.title[contentLang] ?? block.title.en}</Text>
+              <Text variant="title" style={[styles.sectionTitle, { color: titleColor }]}>{block.title[contentLang] ?? block.title.en}</Text>
               {conjugation ? (
                 <ConjugationTable
                   header={block.header}
@@ -263,7 +264,7 @@ export default function LessonBody({ blocks, contentLang, learnedLang }: Props) 
           return (
             <View key={i} style={styles.section}>
               {block.title ? (
-                <Text style={[styles.sectionTitle, { color: titleColor }]}>{block.title[contentLang] ?? block.title.en}</Text>
+                <Text variant="title" style={[styles.sectionTitle, { color: titleColor }]}>{block.title[contentLang] ?? block.title.en}</Text>
               ) : null}
               {block.pairs.map((pair, pi) => (
                 <Card key={pi} classicStyle={styles.card}>

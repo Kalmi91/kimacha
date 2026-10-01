@@ -8,15 +8,18 @@ import 'react-native-reanimated';
 
 import { bottomGutter } from '@/lib/bottomGutter';
 import { isDarkTheme } from '@/constants/Colors';
+import { FONT_FILES } from '@/constants/Fonts';
 import { getDb } from '@/lib/database';
 import { initI18n, setLanguage, subscribeLanguage } from '@/lib/i18n';
 import { setPcicTarget, type PcicTarget } from '@/data/pcic';
 import { FORCED_PAIR, needsPairCorrection } from '@/lib/languages';
 import { ThemeProvider, useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
+import { useSkin } from '@/lib/useSkin';
 import { brutalHeaderOptions } from '@/lib/brutalHeader';
 import { startUsageTimer, stopUsageTimer, noteInteraction } from '@/lib/usageTimer';
 import { watchAppStateForSpeech } from '@/lib/speech';
+import { applyWebTestParams, getWebTestParams } from '@/lib/webTestHooks';
 import UsageToast from '@/components/UsageToast';
 import StatusBarStrip from '@/components/StatusBarStrip';
 
@@ -28,6 +31,7 @@ initI18n();
 export default function RootLayout() {
   const [loaded, error] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    ...FONT_FILES,
   });
   const [onboardingDone, setOnboardingDone] = useState<boolean | null>(null);
   // PLAN-ketiranyu 4. lépés (7. pont): a Settings irányváltó sora setLanguage()-t
@@ -45,6 +49,9 @@ export default function RootLayout() {
   useEffect(() => {
     async function check() {
       const db = getDb();
+      // Web teszt-horog (scripts/ui-overlap.mjs): csak webes URL-paraméterekből, natívon null.
+      const testParams = getWebTestParams();
+      if (testParams) await applyWebTestParams(db, testParams);
       let result = await db.getOnboarding();
       // Kimacha Play: single en-es pair (Kálmán, 2026-09-22). An install that
       // still has an older pair (hu-es, es-hu, hu-en, ...) is corrected to
@@ -88,6 +95,7 @@ export default function RootLayout() {
 function RootLayoutNav() {
   const { theme } = useTheme();
   const g = useGrammarColors();
+  const { skin } = useSkin();
   // FB202: a rendszer navigációs sávja alá futó képernyők egy helyen kapják meg a
   // rést, nem képernyőnkénti foltként (lib/bottomGutter.ts).
   const insets = useSafeAreaInsets();
@@ -117,14 +125,16 @@ function RootLayoutNav() {
         }}
       >
         <StatusBarStrip />
-        <Stack screenOptions={brutalHeaderOptions(g)}>
+        <Stack screenOptions={brutalHeaderOptions(g, skin)}>
           <Stack.Screen name="onboarding" options={{ headerShown: false }} />
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen name="credits" options={{ headerShown: false }} />
+          <Stack.Screen name="themes" options={{ headerShown: false }} />
+          <Stack.Screen name="theme-mix" options={{ headerShown: false }} />
           <Stack.Screen name="grammar" options={{ headerShown: false }} />
           <Stack.Screen name="mistakes" options={{ headerShown: false }} />
         </Stack>
-        <UsageToast />
+        <UsageToast hidden={(segments as string[])[0] === 'onboarding'} />
       </View>
     </NavThemeProvider>
   );

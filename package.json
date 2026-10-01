@@ -49,7 +49,8 @@
     "typecheck": "tsc --noEmit",
     "typecheck:ci": "tsc --noEmit",
     "test": "jest",
-    "test:ci": "jest --ci --coverage --maxWorkers=2"
+    "test:ci": "jest --ci --coverage --maxWorkers=2",
+    "ui:overlap": "node scripts/ui-overlap.mjs"
   },
   "private": true
 }
