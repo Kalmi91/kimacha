@@ -102,13 +102,6 @@ export default function SettingsScreen() {
   // PLAN-ketiranyu 4. lépés (6-7. pont): a tanulási irány váltó sora és a
   // hozzá tartozó kis lap.
   const [directionSheetOpen, setDirectionSheetOpen] = useState(false);
-  // FB39: due count for the "Spelling Practice (N)" settings row, refreshed
-  // every time Settings gains focus (e.g. after adding words on the Learn tab).
-  const [spellingDue, setSpellingDue] = useState(0);
-  // FB186, Kálmán 2026-09-08: „a settingsbe látom olyat hogy 522 szó félre van téve
-  // az miért van?" A puszta szám félreérthető volt, félretett szavaknak olvasta.
-  // A sor mostantól kimondja, mi az: ennyi esedékes, ennyi van összesen a listán.
-  const [spellingTotal, setSpellingTotal] = useState(0);
   // FB65: weekly study goal in minutes (UI shows whole hours).
   const [weeklyGoal, setWeeklyGoal] = useState(DEFAULT_WEEKLY_GOAL_MINUTES);
   // FB77: daily budget of brand-new words entering the queue.
@@ -150,10 +143,6 @@ export default function SettingsScreen() {
         setMissingVoices([o.source, o.target].filter(code => !hasVoiceFor(code)));
       });
       db.getLevel().then(l => setLevel(l.level as Level));
-      // PLAN-play 12. lépés: a sor a két forrás (szó-lista + PCIC-lista)
-      // együttes számát mutassa, nem csak a régié.
-      Promise.all([db.getSpellingDueCount(), db.getPcicSpellingDueCount()]).then(([a, b]) => setSpellingDue(a + b));
-      Promise.all([db.getSpellingListCount(), db.getPcicSpellingListCount()]).then(([a, b]) => setSpellingTotal(a + b));
       db.getArticlePicker().then(setArticlePicker);
       loadResettable().then(({ levels, grammar }) => {
         setResetLevels(levels);
@@ -551,12 +540,6 @@ export default function SettingsScreen() {
             {direction[0] === 'en' ? s.settings.directionEnEs : s.settings.directionEsEn}
           </Text>
         </View>
-        <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
-      </Row>
-
-      {/* FB39: entry point into the spelling-practice trainer screen. */}
-      <Row onPress={() => router.push('/spelling')}>
-        <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.spellingPractice(spellingDue, spellingTotal)}</Text>
         <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
       </Row>
 

@@ -12,7 +12,6 @@ describe('backup export/import round-trip (memory db)', () => {
     (db as any).__setLevelForTest('A1');
     await db.setFeedbackBtnSide('left');
     await db.setGrammarPalette('lime');
-    await db.addToSpellingList(5001);
     await db.setGameProgress('grammar', 'ser-estar:done', 'done', { correct: 3, total: 3 });
 
     const payload = await db.exportAll();
@@ -21,7 +20,6 @@ describe('backup export/import round-trip (memory db)', () => {
       expect(Array.isArray(payload.tables[table])).toBe(true);
     }
     expect(payload.tables.onboarding[0]).toMatchObject({ source: 'hu', target: 'en' });
-    expect(payload.tables.spelling_list).toHaveLength(1);
     expect(payload.tables.game_progress).toHaveLength(1);
 
     // Wreck the state, then restore from the payload.
@@ -42,17 +40,18 @@ describe('backup export/import round-trip (memory db)', () => {
     await db.setOnboarding('hu', 'en');
     expect((await db.getLevel()).level).toBe('A1');
     expect(await db.getFeedbackBtnSide()).toBe('left');
-    expect(await db.getSpellingList()).toEqual([{ wordId: 5001, step: 0, due: expect.any(String) }]);
+    expect(await db.getGameProgress('grammar')).toEqual([{ itemId: 'ser-estar:done', state: 'done', data: { correct: 3, total: 3 } }]);
   });
 
   // Play-vágás 7. lépés: game_scores/game_settings/selected_topic lost their
   // last DB method this step (no app-code caller); an older backup (e.g.
   // 4.0.25) can still carry them, and a restore must accept and skip them.
+  // Same for the spelling-practice lists (the feature was removed).
   it('accepts and restores an older backup that still carries legacy tables', async () => {
     // Own pair, so this test's state can't collide with the one above (the
     // singleton memory db is shared across tests in this file).
     await db.setOnboarding('pt', 'es');
-    await db.addToSpellingList(7001);
+    await db.setGameProgress('grammar', 'ser-estar:done', 'done');
     const payload = await db.exportAll();
     const legacyPayload = {
       ...payload,
@@ -61,6 +60,8 @@ describe('backup export/import round-trip (memory db)', () => {
         game_scores: [{ pair: 'pt-es', game_id: 'word-rain', best_score: 900, best_at: 'x', plays: 3, last_played: 'x' }],
         game_settings: [{ pair: 'pt-es', game_id: 'bubble-pop', settings_json: '{}' }],
         selected_topic: [{ pair: 'pt-es', topic_id: 'to_be' }],
+        spelling_list: [{ pair: 'pt-es', word_id: 7001, step: 0, due: 'x' }],
+        pcic_spelling_list: [{ item_id: 'b1-0184', step: 0, due: 'x' }],
       },
     };
 
@@ -71,26 +72,7 @@ describe('backup export/import round-trip (memory db)', () => {
     // row is still there and reachable once that pair is active again.
     expect(await db.getOnboarding()).toEqual({ source: 'en', target: 'es' });
     await db.setOnboarding('pt', 'es');
-    expect(await db.getSpellingList()).toEqual([{ wordId: 7001, step: 0, due: expect.any(String) }]);
-  });
-
-  // PLAN-play 12. lépés: the opposite direction of the legacy-table test above,
-  // an OLDER backup taken before pcic_spelling_list existed has no key for it
-  // at all (not even an empty array); restoring it must not throw, and the
-  // PCIC spelling list should come back empty rather than crash the restore.
-  it('accepts and restores an older backup that predates pcic_spelling_list', async () => {
-    await db.setOnboarding('de', 'es');
-    await db.addToSpellingList(8001);
-    const payload = await db.exportAll();
-    const olderPayload = { ...payload, tables: { ...payload.tables } };
-    delete (olderPayload.tables as any).pcic_spelling_list;
-
-    expect(() => validateBackupPayload(olderPayload)).not.toThrow();
-
-    await db.importAll(olderPayload as any);
-    expect(await db.getPcicSpellingList()).toEqual([]);
-    await db.setOnboarding('de', 'es');
-    expect(await db.getSpellingList()).toEqual([{ wordId: 8001, step: 0, due: expect.any(String) }]);
+    expect(await db.getGameProgress('grammar')).toEqual([{ itemId: 'ser-estar:done', state: 'done', data: undefined }]);
   });
 
   // Play-vágás 7. lépés (2026-09-23): the exact scenario the step's own

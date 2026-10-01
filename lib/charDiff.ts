@@ -4,7 +4,7 @@
 // `missing`, so the UI can show which character was dropped.
 //
 // The learning cards fold case + accents (those are forgiven by
-// strictAnswerMatch), the spelling trainer does not, because it grades
+// strictAnswerMatch), a strict caller (fold=false) does not, because it grades
 // byte-for-byte and every visual difference has to show up. Hence the `fold`
 // flag; the rendered characters are always the user's own.
 

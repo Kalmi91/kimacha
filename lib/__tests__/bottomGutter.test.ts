@@ -13,7 +13,7 @@ describe('bottomGutter', () => {
 
   it('pads the other top-level screens too', () => {
     expect(bottomGutter(['onboarding'], NAV_BAR)).toBe(NAV_BAR);
-    expect(bottomGutter(['spelling'], NAV_BAR)).toBe(NAV_BAR);
+    expect(bottomGutter(['credits'], NAV_BAR)).toBe(NAV_BAR);
     expect(bottomGutter(['games', 'chat'], NAV_BAR)).toBe(NAV_BAR);
     expect(bottomGutter(['talk', 'pack'], NAV_BAR)).toBe(NAV_BAR);
   });

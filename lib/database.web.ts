@@ -21,17 +21,6 @@ export interface DB {
   setGrammarPalette(id: GrammarPaletteId): Promise<void>;
   // PLAN-play 12. lépés: napi streak-írás visszakerült, a PCIC-értékelés hívja.
   updateStreak(): Promise<void>;
-  addToSpellingList(wordId: number): Promise<void>;
-  getSpellingList(): Promise<{ wordId: number; step: number; due: string }[]>;
-  getSpellingDueCount(): Promise<number>;
-  getSpellingListCount(): Promise<number>;
-  updateSpellingStep(wordId: number, step: number, due: string): Promise<void>;
-  // PLAN-play 12. lépés (s3): PCIC-tétel a helyesírás-listán, string id-vel.
-  addToPcicSpellingList(itemId: string): Promise<void>;
-  getPcicSpellingList(): Promise<{ itemId: string; step: number; due: string }[]>;
-  getPcicSpellingDueCount(): Promise<number>;
-  getPcicSpellingListCount(): Promise<number>;
-  updatePcicSpellingStep(itemId: string, step: number, due: string): Promise<void>;
   getStrictAccents(): Promise<boolean>;
   setStrictAccents(v: boolean): Promise<void>;
   // FB364: a PCIC "rontott" (again) kártya ennyi másodperc múlva jön
@@ -145,64 +134,6 @@ class MemoryDB implements DB {
 
   async getGrammarPalette(): Promise<GrammarPaletteId> { return this.grammarPalette; }
   async setGrammarPalette(id: GrammarPaletteId): Promise<void> { this.grammarPalette = id; }
-
-  // FB39: spelling-practice list, per-pair map like the other pair-scoped state.
-  // Web doesn't survive reload, known, fine (same limit as wordsOnlyMap etc).
-  private spellingLists: Map<string, Map<number, { step: number; due: string }>> = new Map();
-
-  private spellingListFor(pair: string) {
-    let m = this.spellingLists.get(pair);
-    if (!m) { m = new Map(); this.spellingLists.set(pair, m); }
-    return m;
-  }
-
-  async addToSpellingList(wordId: number) {
-    const list = this.spellingListFor(this.activePair);
-    if (!list.has(wordId)) list.set(wordId, { step: 0, due: new Date().toISOString() });
-  }
-
-  async getSpellingList() {
-    const list = this.spellingListFor(this.activePair);
-    return [...list.entries()].map(([wordId, v]) => ({ wordId, step: v.step, due: v.due }));
-  }
-
-  async getSpellingDueCount() {
-    const now = new Date().toISOString();
-    return [...this.spellingListFor(this.activePair).values()].filter(v => v.due <= now).length;
-  }
-
-  async getSpellingListCount() {
-    return this.spellingListFor(this.activePair).size;
-  }
-
-  async updateSpellingStep(wordId: number, step: number, due: string) {
-    this.spellingListFor(this.activePair).set(wordId, { step, due });
-  }
-
-  // PLAN-play 12. lépés (s3): PCIC-tétel a helyesírás-listán, nem pair-hez
-  // kötve (mint a pcic_cards map), item_id kulccsal.
-  private pcicSpellingList: Map<string, { step: number; due: string }> = new Map();
-
-  async addToPcicSpellingList(itemId: string) {
-    if (!this.pcicSpellingList.has(itemId)) this.pcicSpellingList.set(itemId, { step: 0, due: new Date().toISOString() });
-  }
-
-  async getPcicSpellingList() {
-    return [...this.pcicSpellingList.entries()].map(([itemId, v]) => ({ itemId, step: v.step, due: v.due }));
-  }
-
-  async getPcicSpellingDueCount() {
-    const now = new Date().toISOString();
-    return [...this.pcicSpellingList.values()].filter(v => v.due <= now).length;
-  }
-
-  async getPcicSpellingListCount() {
-    return this.pcicSpellingList.size;
-  }
-
-  async updatePcicSpellingStep(itemId: string, step: number, due: string) {
-    this.pcicSpellingList.set(itemId, { step, due });
-  }
 
   // Play-vágás 7. lépés: getWordsOnly/setWordsOnly and getRandomTopics/
   // setRandomTopics are gone (no caller since the Learn/Topics tabs left),
@@ -444,17 +375,6 @@ class MemoryDB implements DB {
       random_topics: this.randomTopicsMap.has(pair) ? (this.randomTopicsMap.get(pair) ? 1 : 0) : null,
       feedback_btn_side: this.feedbackBtnSideMap.get(pair) ?? null,
     }));
-    const spelling_list: any[] = [];
-    for (const [pair, list] of this.spellingLists) {
-      for (const [wordId, v] of list) {
-        spelling_list.push({ pair, word_id: wordId, step: v.step, due: v.due });
-      }
-    }
-    const pcic_spelling_list = [...this.pcicSpellingList.entries()].map(([itemId, v]) => ({
-      item_id: itemId,
-      step: v.step,
-      due: v.due,
-    }));
     return {
       schemaVersion: BACKUP_SCHEMA_VERSION,
       exportedAt: new Date().toISOString(),
@@ -472,8 +392,6 @@ class MemoryDB implements DB {
         }),
         learn_settings,
         onboarding: this.onboarding ? [{ id: 1, ...this.onboarding }] : [],
-        spelling_list,
-        pcic_spelling_list,
         streak: [{ id: 1, ...this.streak }],
         user_level: [...this.userLevels].map(([pair, l]) => ({ pair, ...l })),
         user_meta: [{ id: 1, user_id: this.meta.userId, first_use_date: this.meta.firstUseDate, last_sync_date: this.meta.lastSyncDate, grammar_palette: this.grammarPalette }],
@@ -521,15 +439,6 @@ class MemoryDB implements DB {
       ? (needsPairCorrection(ob) ? { ...FORCED_PAIR } : { source: ob.source, target: ob.target })
       : null;
     if (this.onboarding) this.activePair = `${this.onboarding.source}-${this.onboarding.target}`;
-    this.spellingLists = new Map();
-    for (const row of t.spelling_list) {
-      this.spellingListFor(row.pair).set(row.word_id, { step: row.step, due: row.due });
-    }
-    // Play-vágás 12. lépés: a régi mentések nem ismerik ezt a táblát, `?? []`
-    // az FB39-mintát követve visszatölthetővé teszi az új rész nélküli mentést.
-    this.pcicSpellingList = new Map(
-      (t.pcic_spelling_list ?? []).map((row: any) => [row.item_id, { step: row.step, due: row.due }])
-    );
     const st = t.streak[0];
     if (st) this.streak = { current_count: st.current_count, last_date: st.last_date, longest_count: st.longest_count };
     this.userLevels = new Map(t.user_level.map((r: any) => [r.pair, { level: r.level, correct_streak: r.correct_streak, mistakes_in_window: r.mistakes_in_window, fail_streak: r.fail_streak }]));
@@ -552,15 +461,6 @@ class MemoryDB implements DB {
       const twin = this.cards.get(twinKey);
       if (twin && pickSurvivor(twin, card) === twin) continue;
       this.cards.set(twinKey, { ...card, word_id: newId });
-    }
-    for (const [pair, list] of this.spellingLists) {
-      if (!pair.endsWith('-es')) continue;
-      for (const [wordId, entry] of [...list]) {
-        const newId = WORD_MERGES[wordId];
-        if (!newId) continue;
-        list.delete(wordId);
-        if (!list.has(newId)) list.set(newId, entry);
-      }
     }
     for (const attempt of this.attempts) {
       const newId = WORD_MERGES[attempt.word_id];
