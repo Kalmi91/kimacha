@@ -146,7 +146,10 @@ Párhuzamos agent: `feat/learn-words-open` (`C:\AI\kimacha-wt-learn-open`) a `da
   - minta (transform): «¿Puedes ayudarme?» → ¿Podrías ayudarme?
   - minta (transform): «No puedo ir contigo.» → No podría ir contigo.
   - minta (transform): «Es una buena idea.» → Sería una buena idea.
-- [ ] T3. `indefinido-imperfecto` (A2): +50 transform, csak ha a transform-séma enged igeidő-jelölő súgót (pl. «ayer» / «de niño») → kész, ha: ugyanaz, vagy `[!]` + ok
+- [x] T3. `indefinido-imperfecto` (A2): +50 transform, csak ha a transform-séma enged igeidő-jelölő súgót (pl. «ayer» / «de niño») → kész, ha: ugyanaz, vagy `[!]` + ok, commit `feat(grammar): indefinido-imperfecto 50 transform (nyelvtan)` · 02:53 · audit 0/0, jest 1670 ok, tsc 0, lint 0 err · séma enged kód nélkül: nincs súgó-mező, a jelölő a `prompt` végén zárójelben (`prompt.es` = presente mondat + «(ayer)»), itemenként `tense` presente → indefinido (25) / imperfecto (25), így a „Írd át: <igeidő>” felirat is a jelölő szerinti idő; 10 ige × 5 (hablar, comer, ir, ver, hacer, vivir, trabajar, tener, estar, ser), 30 kijelentő + 10 tagadó + 10 kérdő, yo/tú/él-ella/nosotros/ellos (12/9/10/10/9, vosotros nincs), indefinido-jelölők (ayer, anoche, hace dos días, hace tres meses, hace cinco años, de repente, una vez, el lunes/martes/jueves/viernes, en 2019) és imperfecto-jelölők (de niño/niños, de pequeño, de joven, siempre, antes, todos los veranos, los domingos/sábados, en aquella época, por las mañanas), wordIds ige-lemma + tartalmas szavak + jelölő-szó (A0-A2), nem ige tartalmas szó max 3×, a meglévő 32 itemhez nem nyúltam · hash: a `feat(grammar): indefinido-imperfecto 50 transform (nyelvtan)` commit
+  - minta (transform): «Como en casa. (ayer)» → Ayer comí en casa.
+  - minta (transform): «Como en casa. (de niño)» → De niño comía en casa.
+  - minta (transform): «No tenemos coche. (antes)» → Antes no teníamos coche.
 - Szándékosan kimarad: `indefinido-regular` / `-irregular` (az `indefinido-10-verbos` már 50 transformmal viszi, K2), `subjuntivo-disparadores` / `temporales-subjuntivo` (a `subjuntivo-presente-forma` 50 transformja ugyanez a fajta).
 
 ## BRIEF T-sor (2026-10-01, 50 transform meglévő leckébe, tételenként EGY agent)
