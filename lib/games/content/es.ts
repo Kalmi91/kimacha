@@ -88,6 +88,7 @@ import grammarEsEstarParticipio from '@/data/games/grammar/es/estar-participio.j
 import grammarEsImperativoPronombres from '@/data/games/grammar/es/imperativo-pronombres.json';
 import grammarEsHaceDesdeHace from '@/data/games/grammar/es/hace-desde-hace.json';
 import grammarEsDiminutivos from '@/data/games/grammar/es/diminutivos.json';
+import grammarEsOracionesConsecutivas from '@/data/games/grammar/es/oraciones-consecutivas.json';
 import grammarEsSeImpersonalPasiva from '@/data/games/grammar/es/se-impersonal-pasiva.json';
 
 // K33 (play-vágás, 2026-09-22): a Játék/Átbeszélő fülek és a hozzájuk tartozó
@@ -164,6 +165,7 @@ export const esContent: LanguageContentBundle = {
     grammarEsImperativoPronombres,
     grammarEsHaceDesdeHace,
     grammarEsDiminutivos,
+    grammarEsOracionesConsecutivas,
     grammarEsPluscuamperfecto,
     grammarEsIndefinidos,
     grammarEsGerundioParticipio,
