@@ -60,21 +60,6 @@
     "sentence_lemmas": ["tratar", "de", "comer", "menos", "carne"]
   },
   {
-    "order": 305,
-    "level": "B1",
-    "pos": "verb",
-    "lemma": "explicar",
-    "es": "explicar",
-    "hu": "elmagyarázni",
-    "en": "to explain",
-    "de": "erklären",
-    "sentence_es": "Me gustaría explicar mi idea.",
-    "sentence_hu": "Szeretném elmagyarázni az ötletemet.",
-    "sentence_en": "I would like to explain my idea.",
-    "sentence_de": "Ich würde gern meine Idee erklären.",
-    "sentence_lemmas": ["me", "gustar", "explicar", "mi", "idea"]
-  },
-  {
     "order": 306,
     "level": "B1",
     "pos": "verb",
@@ -103,21 +88,6 @@
     "sentence_en": "You can choose between coffee and milk.",
     "sentence_de": "Du kannst zwischen Kaffee und Milch wählen.",
     "sentence_lemmas": ["poder", "elegir", "entre", "café", "y", "leche"]
-  },
-  {
-    "order": 308,
-    "level": "B1",
-    "pos": "verb",
-    "lemma": "recibir",
-    "es": "recibir",
-    "hu": "kapni, fogadni",
-    "en": "to receive",
-    "de": "bekommen, erhalten, empfangen",
-    "sentence_es": "Mañana recibiré un mensaje de mi madre.",
-    "sentence_hu": "Holnap üzenetet fogok kapni anyámtól.",
-    "sentence_en": "Tomorrow I will receive a message from my mother.",
-    "sentence_de": "Morgen bekomme ich eine Nachricht von meiner Mutter.",
-    "sentence_lemmas": ["mañana", "recibir", "un", "mensaje", "de", "mi", "madre"]
   },
   {
     "order": 309,
@@ -390,21 +360,6 @@
     "sentence_lemmas": ["subir", "a", "mi", "habitación", "a", "el", "ocho"]
   },
   {
-    "order": 327,
-    "level": "B1",
-    "pos": "verb",
-    "lemma": "bajar",
-    "es": "bajar",
-    "hu": "lemenni, leszállni",
-    "en": "to go down, to get off",
-    "de": "hinuntergehen, aussteigen",
-    "sentence_es": "Bajo a la tienda con mi hijo.",
-    "sentence_hu": "Lemegyek a boltba a fiammal.",
-    "sentence_en": "I go down to the store with my son.",
-    "sentence_de": "Ich gehe mit meinem Sohn hinunter in den Laden.",
-    "sentence_lemmas": ["bajar", "a", "el", "tienda", "con", "mi", "hijo"]
-  },
-  {
     "order": 328,
     "level": "B1",
     "pos": "verb",
@@ -420,36 +375,6 @@
     "sentence_lemmas": ["el", "niño", "se", "caer", "de", "el", "cama"]
   },
   {
-    "order": 329,
-    "level": "B1",
-    "pos": "verb",
-    "lemma": "romper",
-    "es": "romper",
-    "hu": "eltörni, összetörni",
-    "en": "to break",
-    "de": "brechen, zerbrechen",
-    "sentence_es": "No rompas la ventana.",
-    "sentence_hu": "Ne törd be az ablakot.",
-    "sentence_en": "Do not break the window.",
-    "sentence_de": "Zerbrich das Fenster nicht.",
-    "sentence_lemmas": ["no", "romper", "el", "ventana"]
-  },
-  {
-    "order": 330,
-    "level": "B1",
-    "pos": "verb",
-    "lemma": "cortar",
-    "es": "cortar",
-    "hu": "vágni",
-    "en": "to cut",
-    "de": "schneiden",
-    "sentence_es": "Mi madre corta el pan para la cena.",
-    "sentence_hu": "Anyám felvágja a kenyeret a vacsorához.",
-    "sentence_en": "My mother cuts the bread for dinner.",
-    "sentence_de": "Meine Mutter schneidet das Brot für das Abendessen.",
-    "sentence_lemmas": ["mi", "madre", "cortar", "el", "pan", "para", "el", "cena"]
-  },
-  {
     "order": 331,
     "level": "B1",
     "pos": "verb",
@@ -463,21 +388,6 @@
     "sentence_en": "I am going to wash the clothes today.",
     "sentence_de": "Ich werde heute die Wäsche waschen.",
     "sentence_lemmas": ["ir", "a", "lavar", "el", "ropa", "hoy"]
-  },
-  {
-    "order": 332,
-    "level": "B1",
-    "pos": "verb",
-    "lemma": "limpiar",
-    "es": "limpiar",
-    "hu": "takarítani, tisztítani",
-    "en": "to clean",
-    "de": "putzen, reinigen",
-    "sentence_es": "Limpiaría la casa hoy, pero no tengo tiempo.",
-    "sentence_hu": "Ma kitakarítanám a házat, de nincs időm.",
-    "sentence_en": "I would clean the house today, but I have no time.",
-    "sentence_de": "Ich würde heute das Haus putzen, aber ich habe keine Zeit.",
-    "sentence_lemmas": ["limpiar", "el", "casa", "hoy", "pero", "no", "tener", "tiempo"]
   },
   {
     "order": 333,
@@ -525,21 +435,6 @@
     "sentence_lemmas": ["mañana", "ir", "a", "celebrar", "un", "fiesta", "en", "casa"]
   },
   {
-    "order": 336,
-    "level": "B1",
-    "pos": "verb",
-    "lemma": "visitar",
-    "es": "visitar",
-    "hu": "meglátogatni, felkeresni",
-    "en": "to visit",
-    "de": "besuchen",
-    "sentence_es": "Mañana visitaremos a mi madre.",
-    "sentence_hu": "Holnap meglátogatjuk anyámat.",
-    "sentence_en": "We will visit my mother tomorrow.",
-    "sentence_de": "Morgen besuchen wir meine Mutter.",
-    "sentence_lemmas": ["mañana", "visitar", "a", "mi", "madre"]
-  },
-  {
     "order": 337,
     "level": "B1",
     "pos": "verb",
@@ -583,21 +478,6 @@
     "sentence_en": "My family always supports me.",
     "sentence_de": "Meine Familie unterstützt mich immer.",
     "sentence_lemmas": ["mi", "familia", "siempre", "me", "apoyar"]
-  },
-  {
-    "order": 340,
-    "level": "B1",
-    "pos": "verb",
-    "lemma": "cuidar",
-    "es": "cuidar",
-    "hu": "vigyázni, gondozni",
-    "en": "to take care of",
-    "de": "aufpassen, pflegen",
-    "sentence_es": "Mi madre cuida a los niños.",
-    "sentence_hu": "Anyám vigyáz a gyerekekre.",
-    "sentence_en": "My mother takes care of the children.",
-    "sentence_de": "Meine Mutter passt auf die Kinder auf.",
-    "sentence_lemmas": ["mi", "madre", "cuidar", "a", "el", "niño"]
   },
   {
     "order": 341,
@@ -658,21 +538,6 @@
     "sentence_en": "What does this word mean?",
     "sentence_de": "Was bedeutet dieses Wort?",
     "sentence_lemmas": ["qué", "significar", "este", "palabra"]
-  },
-  {
-    "order": 345,
-    "level": "B1",
-    "pos": "verb",
-    "lemma": "faltar",
-    "es": "faltar",
-    "hu": "hiányozni",
-    "en": "to be missing, to lack",
-    "de": "fehlen",
-    "sentence_es": "Me falta tiempo para estudiar.",
-    "sentence_hu": "Nincs elég időm tanulni.",
-    "sentence_en": "I lack the time to study.",
-    "sentence_de": "Mir fehlt die Zeit zum Lernen.",
-    "sentence_lemmas": ["me", "faltar", "tiempo", "para", "estudiar"]
   },
   {
     "order": 346,
@@ -855,21 +720,6 @@
     "sentence_lemmas": ["el", "sistema", "no", "funcionar", "bien"]
   },
   {
-    "order": 358,
-    "level": "B1",
-    "pos": "noun",
-    "lemma": "proyecto",
-    "es": "el proyecto",
-    "hu": "projekt, terv",
-    "en": "project",
-    "de": "Projekt",
-    "sentence_es": "El proyecto terminará mañana.",
-    "sentence_hu": "A projekt holnap fejeződik be.",
-    "sentence_en": "The project will end tomorrow.",
-    "sentence_de": "Das Projekt endet morgen.",
-    "sentence_lemmas": ["el", "proyecto", "terminar", "mañana"]
-  },
-  {
     "order": 359,
     "level": "B1",
     "pos": "noun",
@@ -915,21 +765,6 @@
     "sentence_lemmas": ["el", "proceso", "ser", "largo", "y", "difícil"]
   },
   {
-    "order": 362,
-    "level": "B1",
-    "pos": "noun",
-    "lemma": "resultado",
-    "es": "el resultado",
-    "hu": "eredmény",
-    "en": "result",
-    "de": "Ergebnis",
-    "sentence_es": "El resultado fue muy bueno.",
-    "sentence_hu": "Az eredmény nagyon jó volt.",
-    "sentence_en": "The result was very good.",
-    "sentence_de": "Das Ergebnis war sehr gut.",
-    "sentence_lemmas": ["el", "resultado", "ser", "muy", "bueno"]
-  },
-  {
     "order": 363,
     "level": "B1",
     "pos": "noun",
@@ -958,21 +793,6 @@
     "sentence_en": "There would be another possibility.",
     "sentence_de": "Es gäbe noch eine andere Möglichkeit.",
     "sentence_lemmas": ["haber", "otro", "posibilidad"]
-  },
-  {
-    "order": 365,
-    "level": "B1",
-    "pos": "noun",
-    "lemma": "diferencia",
-    "es": "la diferencia",
-    "hu": "különbség",
-    "en": "difference",
-    "de": "Unterschied",
-    "sentence_es": "Hay una gran diferencia entre las dos casas.",
-    "sentence_hu": "Nagy a különbség a két ház között.",
-    "sentence_en": "There is a big difference between the two houses.",
-    "sentence_de": "Es gibt einen großen Unterschied zwischen den beiden Häusern.",
-    "sentence_lemmas": ["haber", "un", "grande", "diferencia", "entre", "el", "dos", "casa"]
   },
   {
     "order": 366,
@@ -1215,66 +1035,6 @@
     "sentence_lemmas": ["mi", "hijo", "estudiar", "en", "el", "universidad"]
   },
   {
-    "order": 382,
-    "level": "B1",
-    "pos": "noun",
-    "lemma": "estudiante",
-    "es": "el estudiante",
-    "hu": "diák, hallgató",
-    "en": "student",
-    "de": "Student, Schüler",
-    "sentence_es": "Soy estudiante de español.",
-    "sentence_hu": "Spanyol tanuló vagyok.",
-    "sentence_en": "I am a Spanish student.",
-    "sentence_de": "Ich bin Spanischstudent.",
-    "sentence_lemmas": ["ser", "estudiante", "de", "español"]
-  },
-  {
-    "order": 383,
-    "level": "B1",
-    "pos": "noun",
-    "lemma": "jefe",
-    "es": "el jefe",
-    "hu": "főnök",
-    "en": "boss",
-    "de": "Chef",
-    "sentence_es": "Mi jefe dice que llegue temprano.",
-    "sentence_hu": "A főnököm azt mondja, hogy korán érkezzek.",
-    "sentence_en": "My boss says that I should arrive early.",
-    "sentence_de": "Mein Chef sagt, dass ich früh kommen soll.",
-    "sentence_lemmas": ["mi", "jefe", "decir", "que", "llegar", "temprano"]
-  },
-  {
-    "order": 384,
-    "level": "B1",
-    "pos": "noun",
-    "lemma": "compañero",
-    "es": "el compañero",
-    "hu": "társ, munkatárs, osztálytárs",
-    "en": "companion, coworker, classmate",
-    "de": "Kamerad, Kollege, Mitschüler",
-    "sentence_es": "Mi compañero de trabajo vive cerca.",
-    "sentence_hu": "A munkatársam közel lakik.",
-    "sentence_en": "My coworker lives nearby.",
-    "sentence_de": "Mein Kollege wohnt in der Nähe.",
-    "sentence_lemmas": ["mi", "compañero", "de", "trabajo", "vivir", "cerca"]
-  },
-  {
-    "order": 385,
-    "level": "B1",
-    "pos": "noun",
-    "lemma": "vecino",
-    "es": "el vecino",
-    "hu": "szomszéd",
-    "en": "neighbor",
-    "de": "Nachbar",
-    "sentence_es": "Mi vecino tiene un perro grande.",
-    "sentence_hu": "A szomszédomnak nagy kutyája van.",
-    "sentence_en": "My neighbor has a big dog.",
-    "sentence_de": "Mein Nachbar hat einen großen Hund.",
-    "sentence_lemmas": ["mi", "vecino", "tener", "un", "perro", "grande"]
-  },
-  {
     "order": 386,
     "level": "B1",
     "pos": "noun",
@@ -1305,36 +1065,6 @@
     "sentence_lemmas": ["el", "clima", "de", "este", "ciudad", "ser", "muy", "bueno"]
   },
   {
-    "order": 388,
-    "level": "B1",
-    "pos": "noun",
-    "lemma": "viento",
-    "es": "el viento",
-    "hu": "szél",
-    "en": "wind",
-    "de": "Wind",
-    "sentence_es": "Mañana habrá mucho viento.",
-    "sentence_hu": "Holnap sok szél lesz.",
-    "sentence_en": "Tomorrow there will be a lot of wind.",
-    "sentence_de": "Morgen wird es viel Wind geben.",
-    "sentence_lemmas": ["mañana", "haber", "mucho", "viento"]
-  },
-  {
-    "order": 389,
-    "level": "B1",
-    "pos": "noun",
-    "lemma": "montaña",
-    "es": "la montaña",
-    "hu": "hegy",
-    "en": "mountain",
-    "de": "Berg",
-    "sentence_es": "Mi familia viaja a la montaña cada año.",
-    "sentence_hu": "A családom minden évben a hegyekbe utazik.",
-    "sentence_en": "My family travels to the mountains every year.",
-    "sentence_de": "Meine Familie reist jedes Jahr in die Berge.",
-    "sentence_lemmas": ["mi", "familia", "viajar", "a", "el", "montaña", "cada", "año"]
-  },
-  {
     "order": 390,
     "level": "B1",
     "pos": "noun",
@@ -1348,66 +1078,6 @@
     "sentence_en": "The river is near my house.",
     "sentence_de": "Der Fluss ist in der Nähe meines Hauses.",
     "sentence_lemmas": ["el", "río", "estar", "cerca", "de", "mi", "casa"]
-  },
-  {
-    "order": 391,
-    "level": "B1",
-    "pos": "noun",
-    "lemma": "playa",
-    "es": "la playa",
-    "hu": "strand, tengerpart",
-    "en": "beach",
-    "de": "Strand",
-    "sentence_es": "Iría a la playa con mi familia.",
-    "sentence_hu": "A családommal elmennék a strandra.",
-    "sentence_en": "I would go to the beach with my family.",
-    "sentence_de": "Ich würde mit meiner Familie an den Strand gehen.",
-    "sentence_lemmas": ["ir", "a", "el", "playa", "con", "mi", "familia"]
-  },
-  {
-    "order": 392,
-    "level": "B1",
-    "pos": "noun",
-    "lemma": "edificio",
-    "es": "el edificio",
-    "hu": "épület",
-    "en": "building",
-    "de": "Gebäude",
-    "sentence_es": "Mi oficina está en un edificio muy alto.",
-    "sentence_hu": "Az irodám egy nagyon magas épületben van.",
-    "sentence_en": "My office is in a very tall building.",
-    "sentence_de": "Mein Büro ist in einem sehr hohen Gebäude.",
-    "sentence_lemmas": ["mi", "oficina", "estar", "en", "un", "edificio", "muy", "alto"]
-  },
-  {
-    "order": 393,
-    "level": "B1",
-    "pos": "noun",
-    "lemma": "jardín",
-    "es": "el jardín",
-    "hu": "kert",
-    "en": "garden",
-    "de": "Garten",
-    "sentence_es": "Mi perro juega en el jardín.",
-    "sentence_hu": "A kutyám a kertben játszik.",
-    "sentence_en": "My dog plays in the garden.",
-    "sentence_de": "Mein Hund spielt im Garten.",
-    "sentence_lemmas": ["mi", "perro", "jugar", "en", "el", "jardín"]
-  },
-  {
-    "order": 394,
-    "level": "B1",
-    "pos": "noun",
-    "lemma": "pared",
-    "es": "la pared",
-    "hu": "fal",
-    "en": "wall",
-    "de": "Wand",
-    "sentence_es": "Hay una foto en la pared.",
-    "sentence_hu": "Van egy fénykép a falon.",
-    "sentence_en": "There is a photo on the wall.",
-    "sentence_de": "An der Wand hängt ein Foto.",
-    "sentence_lemmas": ["haber", "un", "foto", "en", "el", "pared"]
   },
   {
     "order": 395,
@@ -1425,36 +1095,6 @@
     "sentence_lemmas": ["el", "seguridad", "ser", "muy", "importante", "en", "un", "ciudad", "grande"]
   },
   {
-    "order": 396,
-    "level": "B1",
-    "pos": "noun",
-    "lemma": "policía",
-    "es": "la policía",
-    "hu": "rendőrség; rendőr",
-    "en": "police; police officer",
-    "de": "Polizei; Polizist",
-    "sentence_es": "Mi vecino llama a la policía.",
-    "sentence_hu": "A szomszédom hívja a rendőrséget.",
-    "sentence_en": "My neighbor calls the police.",
-    "sentence_de": "Mein Nachbar ruft die Polizei.",
-    "sentence_lemmas": ["mi", "vecino", "llamar", "a", "el", "policía"]
-  },
-  {
-    "order": 397,
-    "level": "B1",
-    "pos": "noun",
-    "lemma": "accidente",
-    "es": "el accidente",
-    "hu": "baleset",
-    "en": "accident",
-    "de": "Unfall",
-    "sentence_es": "Ayer hubo un accidente en mi calle.",
-    "sentence_hu": "Tegnap baleset történt az utcámban.",
-    "sentence_en": "Yesterday there was an accident on my street.",
-    "sentence_de": "Gestern gab es einen Unfall in meiner Straße.",
-    "sentence_lemmas": ["ayer", "haber", "un", "accidente", "en", "mi", "calle"]
-  },
-  {
     "order": 398,
     "level": "B1",
     "pos": "noun",
@@ -1468,36 +1108,6 @@
     "sentence_en": "The doctor explains my father's illness.",
     "sentence_de": "Der Arzt erklärt die Krankheit meines Vaters.",
     "sentence_lemmas": ["el", "médico", "explicar", "el", "enfermedad", "de", "mi", "padre"]
-  },
-  {
-    "order": 399,
-    "level": "B1",
-    "pos": "noun",
-    "lemma": "salud",
-    "es": "la salud",
-    "hu": "egészség",
-    "en": "health",
-    "de": "Gesundheit",
-    "sentence_es": "La salud es más importante que el dinero.",
-    "sentence_hu": "Az egészség fontosabb, mint a pénz.",
-    "sentence_en": "Health is more important than money.",
-    "sentence_de": "Gesundheit ist wichtiger als Geld.",
-    "sentence_lemmas": ["el", "salud", "ser", "más", "importante", "que", "el", "dinero"]
-  },
-  {
-    "order": 400,
-    "level": "B1",
-    "pos": "noun",
-    "lemma": "ejercicio",
-    "es": "el ejercicio",
-    "hu": "testmozgás, gyakorlat",
-    "en": "exercise",
-    "de": "Sport, Übung",
-    "sentence_es": "Es importante que hagas ejercicio.",
-    "sentence_hu": "Fontos, hogy mozogj.",
-    "sentence_en": "It is important that you exercise.",
-    "sentence_de": "Es ist wichtig, dass du Sport machst.",
-    "sentence_lemmas": ["ser", "importante", "que", "hacer", "ejercicio"]
   },
   {
     "order": 401,
@@ -1560,21 +1170,6 @@
     "sentence_lemmas": ["mi", "madre", "tener", "el", "pelo", "largo"]
   },
   {
-    "order": 405,
-    "level": "B1",
-    "pos": "noun",
-    "lemma": "mar",
-    "es": "el mar",
-    "hu": "tenger",
-    "en": "sea",
-    "de": "Meer",
-    "sentence_es": "Mi hijo quiere ver el mar.",
-    "sentence_hu": "A fiam látni akarja a tengert.",
-    "sentence_en": "My son wants to see the sea.",
-    "sentence_de": "Mein Sohn will das Meer sehen.",
-    "sentence_lemmas": ["mi", "hijo", "querer", "ver", "el", "mar"]
-  },
-  {
     "order": 406,
     "level": "B1",
     "pos": "noun",
@@ -1588,21 +1183,6 @@
     "sentence_en": "There is a big tree in the garden.",
     "sentence_de": "Im Garten steht ein großer Baum.",
     "sentence_lemmas": ["haber", "un", "árbol", "grande", "en", "el", "jardín"]
-  },
-  {
-    "order": 407,
-    "level": "B1",
-    "pos": "noun",
-    "lemma": "campo",
-    "es": "el campo",
-    "hu": "vidék; mező",
-    "en": "countryside; field",
-    "de": "Land; Feld",
-    "sentence_es": "Mis padres vivirán en el campo.",
-    "sentence_hu": "A szüleim vidéken fognak élni.",
-    "sentence_en": "My parents will live in the countryside.",
-    "sentence_de": "Meine Eltern werden auf dem Land leben.",
-    "sentence_lemmas": ["mi", "padre", "vivir", "en", "el", "campo"]
   },
   {
     "order": 408,
@@ -1695,21 +1275,6 @@
     "sentence_lemmas": ["el", "casa", "estar", "vacío", "hoy"]
   },
   {
-    "order": 414,
-    "level": "B1",
-    "pos": "adj",
-    "lemma": "sucio",
-    "es": "sucio",
-    "hu": "piszkos",
-    "en": "dirty",
-    "de": "schmutzig",
-    "sentence_es": "La ropa está sucia.",
-    "sentence_hu": "A ruha piszkos.",
-    "sentence_en": "The clothes are dirty.",
-    "sentence_de": "Die Kleidung ist schmutzig.",
-    "sentence_lemmas": ["el", "ropa", "estar", "sucio"]
-  },
-  {
     "order": 415,
     "level": "B1",
     "pos": "adj",
@@ -1725,21 +1290,6 @@
     "sentence_lemmas": ["estar", "claro", "que", "no", "tener", "tiempo"]
   },
   {
-    "order": 416,
-    "level": "B1",
-    "pos": "adj",
-    "lemma": "oscuro",
-    "es": "oscuro",
-    "hu": "sötét",
-    "en": "dark",
-    "de": "dunkel",
-    "sentence_es": "La habitación es muy oscura.",
-    "sentence_hu": "A szoba nagyon sötét.",
-    "sentence_en": "The room is very dark.",
-    "sentence_de": "Das Zimmer ist sehr dunkel.",
-    "sentence_lemmas": ["el", "habitación", "ser", "muy", "oscuro"]
-  },
-  {
     "order": 417,
     "level": "B1",
     "pos": "adj",
@@ -1753,21 +1303,6 @@
     "sentence_en": "My job is very hard.",
     "sentence_de": "Meine Arbeit ist sehr hart.",
     "sentence_lemmas": ["mi", "trabajo", "ser", "muy", "duro"]
-  },
-  {
-    "order": 418,
-    "level": "B1",
-    "pos": "adj",
-    "lemma": "rico",
-    "es": "rico",
-    "hu": "gazdag; finom (étel)",
-    "en": "rich; tasty (food)",
-    "de": "reich; lecker (Essen)",
-    "sentence_es": "El pollo está muy rico.",
-    "sentence_hu": "A csirke nagyon finom.",
-    "sentence_en": "The chicken is very tasty.",
-    "sentence_de": "Das Hähnchen schmeckt sehr gut.",
-    "sentence_lemmas": ["el", "pollo", "estar", "muy", "rico"]
   },
   {
     "order": 419,
@@ -1798,36 +1333,6 @@
     "sentence_en": "This street is very dangerous at night.",
     "sentence_de": "Diese Straße ist nachts sehr gefährlich.",
     "sentence_lemmas": ["este", "calle", "ser", "muy", "peligroso", "de", "noche"]
-  },
-  {
-    "order": 421,
-    "level": "B1",
-    "pos": "adj",
-    "lemma": "tranquilo",
-    "es": "tranquilo",
-    "hu": "nyugodt, csendes",
-    "en": "calm, quiet",
-    "de": "ruhig",
-    "sentence_es": "Este lugar es muy tranquilo.",
-    "sentence_hu": "Ez a hely nagyon nyugodt.",
-    "sentence_en": "This place is very quiet.",
-    "sentence_de": "Dieser Ort ist sehr ruhig.",
-    "sentence_lemmas": ["este", "lugar", "ser", "muy", "tranquilo"]
-  },
-  {
-    "order": 422,
-    "level": "B1",
-    "pos": "adj",
-    "lemma": "nervioso",
-    "es": "nervioso",
-    "hu": "ideges",
-    "en": "nervous",
-    "de": "nervös",
-    "sentence_es": "Estoy nervioso por mi trabajo nuevo.",
-    "sentence_hu": "Ideges vagyok az új munkám miatt.",
-    "sentence_en": "I am nervous about my new job.",
-    "sentence_de": "Ich bin wegen meiner neuen Arbeit nervös.",
-    "sentence_lemmas": ["estar", "nervioso", "por", "mi", "trabajo", "nuevo"]
   },
   {
     "order": 423,
@@ -2083,21 +1588,6 @@
     "sentence_en": "According to my mother, dinner is ready.",
     "sentence_de": "Laut meiner Mutter ist das Abendessen fertig.",
     "sentence_lemmas": ["según", "mi", "madre", "el", "cena", "estar", "listo"]
-  },
-  {
-    "order": 440,
-    "level": "B1",
-    "pos": "adv",
-    "lemma": "tampoco",
-    "es": "tampoco",
-    "hu": "sem, sem ... is",
-    "en": "neither, either (negative)",
-    "de": "auch nicht",
-    "sentence_es": "Tampoco entiendo esta palabra.",
-    "sentence_hu": "Én sem értem ezt a szót.",
-    "sentence_en": "I do not understand this word either.",
-    "sentence_de": "Ich verstehe dieses Wort auch nicht.",
-    "sentence_lemmas": ["tampoco", "entender", "este", "palabra"]
   },
   {
     "order": 441,
@@ -2491,21 +1981,6 @@
     "sentence_lemmas": ["mi", "hijo", "ganar", "un", "premio", "en", "el", "escuela"]
   },
   {
-    "order": 793,
-    "level": "B1",
-    "pos": "adv",
-    "lemma": "repente",
-    "es": "repente / de repente",
-    "hu": "hirtelen",
-    "en": "suddenly",
-    "de": "plötzlich",
-    "sentence_es": "De repente llega mi padre.",
-    "sentence_hu": "Hirtelen megérkezik apám.",
-    "sentence_en": "Suddenly my father arrives.",
-    "sentence_de": "Plötzlich kommt mein Vater an.",
-    "sentence_lemmas": ["de", "repente", "llegar", "mi", "padre"]
-  },
-  {
     "order": 794,
     "level": "B1",
     "pos": "verb",
@@ -2611,21 +2086,6 @@
     "sentence_lemmas": ["un", "camión", "grande", "llegar", "a", "el", "tienda"]
   },
   {
-    "order": 801,
-    "level": "B1",
-    "pos": "noun",
-    "lemma": "cita",
-    "es": "la cita",
-    "hu": "időpont, randevú",
-    "en": "appointment",
-    "de": "Termin",
-    "sentence_es": "Tengo una cita con el médico hoy.",
-    "sentence_hu": "Ma időpontom van az orvoshoz.",
-    "sentence_en": "I have an appointment with the doctor today.",
-    "sentence_de": "Ich habe heute einen Termin beim Arzt.",
-    "sentence_lemmas": ["tener", "un", "cita", "con", "el", "médico", "hoy"]
-  },
-  {
     "order": 802,
     "level": "B1",
     "pos": "interj",
@@ -2699,21 +2159,6 @@
     "sentence_en": "My father has a beer.",
     "sentence_de": "Mein Vater trinkt ein Bier.",
     "sentence_lemmas": ["mi", "padre", "tomar", "un", "cerveza"]
-  },
-  {
-    "order": 807,
-    "level": "B1",
-    "pos": "noun",
-    "lemma": "cliente",
-    "es": "el cliente",
-    "hu": "ügyfél, vevő",
-    "en": "customer",
-    "de": "Kunde",
-    "sentence_es": "Los clientes esperan en la tienda.",
-    "sentence_hu": "A vevők a boltban várnak.",
-    "sentence_en": "The customers wait in the store.",
-    "sentence_de": "Die Kunden warten im Laden.",
-    "sentence_lemmas": ["el", "cliente", "esperar", "en", "el", "tienda"]
   },
   {
     "order": 808,
@@ -2879,5 +2324,65 @@
     "sentence_en": "I remember my first day.",
     "sentence_de": "Ich erinnere mich an meinen ersten Tag.",
     "sentence_lemmas": ["me", "acordarse", "de", "mi", "primero", "día"]
+  },
+  {
+    "order": 598,
+    "level": "B1",
+    "pos": "adv",
+    "lemma": "así",
+    "es": "así",
+    "hu": "így",
+    "en": "like this, this way, so",
+    "de": "so, auf diese Weise",
+    "sentence_es": "Así funciona el sistema.",
+    "sentence_hu": "Így működik a rendszer.",
+    "sentence_en": "This is how the system works.",
+    "sentence_de": "So funktioniert das System.",
+    "sentence_lemmas": ["así", "funcionar", "el", "sistema"]
+  },
+  {
+    "order": 487,
+    "level": "B1",
+    "pos": "verb",
+    "lemma": "confiar",
+    "es": "confiar",
+    "hu": "bízni",
+    "en": "to trust",
+    "de": "vertrauen",
+    "sentence_es": "Confío en mi familia.",
+    "sentence_hu": "Bízom a családomban.",
+    "sentence_en": "I trust my family.",
+    "sentence_de": "Ich vertraue meiner Familie.",
+    "sentence_lemmas": ["confiar", "en", "mi", "familia"]
+  },
+  {
+    "order": 498,
+    "level": "B1",
+    "pos": "verb",
+    "lemma": "ahorrar",
+    "es": "ahorrar",
+    "hu": "spórolni, megtakarítani",
+    "en": "to save (money, time)",
+    "de": "sparen",
+    "sentence_es": "Ahorro dinero para mis vacaciones.",
+    "sentence_hu": "Pénzt takarítok meg a nyaralásomra.",
+    "sentence_en": "I save money for my vacation.",
+    "sentence_de": "Ich spare Geld für meinen Urlaub.",
+    "sentence_lemmas": ["ahorrar", "dinero", "para", "mi", "vacaciones"]
+  },
+  {
+    "order": 586,
+    "level": "B1",
+    "pos": "adj",
+    "lemma": "propio",
+    "es": "propio",
+    "hu": "saját",
+    "en": "own",
+    "de": "eigen",
+    "sentence_es": "Quiero tener mi propia casa.",
+    "sentence_hu": "Saját házat szeretnék.",
+    "sentence_en": "I want to have my own house.",
+    "sentence_de": "Ich möchte mein eigenes Haus haben.",
+    "sentence_lemmas": ["querer", "tener", "mi", "propio", "casa"]
   }
 ]
