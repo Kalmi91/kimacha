@@ -303,3 +303,46 @@ A kapu szabályonként kiírja a hibák számát és az első 5 példát, hibán
   - Átnézés: az 1. sortól a ~700. sorig (A0 + az A1 eleje). Mit kerestem: S1 szinonima (big/large, small/little, near/close, store/shop, pants/trousers, gray/grey, bathroom/restroom, at home, cook/chef, police officer/policeman, kid, bicycle, autumn, noon, eat/have breakfast-lunch-dinner, take a shower, watch television, sorry/pardon, don't worry, plate/dish, goldfish/fish), S4 mexikói norma a kérdésben (a mondat már mexikói volt: `el salón` → `la sala`, `la mesa del salón` → `la mesa de la sala`, `el camarero` → `el mesero`, `la hierba` → `el pasto`), hiányzó jelentés (sobre on/about, llevar wear/take-carry, tomar take/drink, tocar touch/play/knock, banca bench: a `la banca` mexikói szó, ezért nincs kettős kérdés és hint sem).
   - Kapu: validate-en-track R11-R14 = ok (0), id-blokk hiba 1100 → 1104 (a 4 új A1/A2 kártya miatt, a 1132 alap alatt), cross-level dup 5 → 4 (kártyák: 2730 → 2736); typecheck:ci, lint (0 hiba), test:ci (136 suite) zöld.
   - [?] marad, nem nyúltam hozzá: `la ducha` (mexikói: la regadera), `el marido` (mexikói: el esposo), `el dormitorio` (mexikói: la recámara), `el bolso pequeño`; a `7640 el cuarto de baño → bathroom` az A0 `el baño → bathroom` angol duplikátuma (más kérdés, ezért nem R11); az összehúzott alakok (I'm, there isn't) elfogadása a bírálóban volna általános megoldás.
+- 13:03 5. lépés, 4. adag (átnézés ~701-1400. sor): módosítva 50, hozzáadva 5, törölve 1 kártya; spanyol kérdés átírva 9.
+  - Új kártya:
+    - #10809 (A1 present_simple) hacer → to do, hint_es "Voy a *hacer* la tarea."
+    - #10810 (A2 feelings) querer → to love (someone), hint_es "Te *quiero* mucho, mamá."
+    - #10811 (A2 feelings) esperar → to hope, hint_es "*Espero* que estés bien."
+    - #10812 (A2 feelings) aburrido → boring, hint_es "La película es muy *aburrida*."
+    - #10813 (A2 past_simple_irregular) fue → was, hint_es "*Fue* un buen día."
+  - Törölt id (→ a megtartott id, ahová az alak átkerült; az `en` mezőben ` / ` alternatíva vagy a másik kártya azonos tartalmú):
+    8925 el horario de trabajo → work schedule.
+  - Átírt spanyol kérdés:
+    - #8235: "el mediodía de trabajo" → "el horario de trabajo"
+    - #8349: "el tiempo bueno" → "el buen tiempo"
+    - #8350: "el tiempo malo" → "el mal tiempo"
+    - #8353: "el camarero joven" → "el mesero joven"
+    - #5412: "fue (ir)" → "fue"
+    - #5535: "la nota" → "la calificación"
+    - #5543: "el estudiante universitario" → "el préstamo estudiantil"
+    - #5595: "corría" → "corrió"
+    - #5618: "el visado" → "la visa"
+  - Minta, 20 véletlen módosítás (előtte → utána):
+    - #5499 hint_es: (nincs) → "Estoy *aburrido* en la clase."
+    - #5618 es: "el visado" → "la visa"
+    - #5619 en: "currency" → "currency / coin"
+    - #5844 hint_es: (nincs) → "*Quiero* un café, por favor."
+    - #7958 en: "country (rural)" → "countryside / country"
+    - #8036 en: "trash" → "trash / garbage"
+    - #8105 en: "to speak" → "to speak / to talk"
+    - #8115 hint_es: (nincs) → "Voy a *esperar* el camión aquí."
+    - #8117 en: "to leave" → "to leave / to go out"
+    - #8204 en: "movie theater" → "movie theater / cinema"
+    - #8206 en: "square" → "square / plaza"
+    - #8215 en: "stone" → "stone / rock"
+    - #8231 en: "pleased" → "pleased / glad / happy"
+    - #8232 en: "kind" → "kind / nice"
+    - #8235 es: "el mediodía de trabajo" → "el horario de trabajo"; en: "working hours" → "working hours / work schedule"
+    - #8244 en: "nobody" → "nobody / no one"
+    - #8246 en: "somebody" → "somebody / someone"
+    - #8353 es: "el camarero joven" → "el mesero joven"
+    - #8520 en: "movie" → "movie / film"
+    - #8641 en: "at half past seven" → "at half past seven / at seven thirty"
+  - Átnézés: a ~701. sortól az ~1400. sorig (A1 közepe-vége, az A2 eleje a `travel` témáig). S1 alakok: countryside, trash/garbage, pay/salary, speak/talk, leave/go out, return/come back, how much does it cost, he is sick, cinema, plaza, rock, beautiful, metro, glad/happy, nice, no one, someone, lime (mexikói `limón`), straight ahead, look at/watch, show (`enseñar`), reply, film, gift, picture, coffee with milk, town, too, at seven thirty, baggage, holiday, mad, afraid, prohibited, cell phone/mobile phone, booking, coin. Hibás kérdés/válasz-pár javítva: `5543` (kérdés és mondat a diákhitelről szólt, a hu "hallgató" volt: kérdés `el préstamo estudiantil`, hu `diákhitel`), `5595` (`corría` → `corrió`, a mondat "Corrí"), `8235` (`el mediodía de trabajo` → `el horario de trabajo`, azonos az A2 `8925`-tel, összevonva: "working hours / work schedule"), `el visado` → `la visa`, `la nota` → `la calificación` (a mondat már így volt), `el camarero joven` → `el mesero joven`, `el tiempo bueno/malo` → `el buen/mal tiempo`. Hiányzó jelentés (új kártya, mindkét kártya hint_es-sel): hacer make/do, querer want/love, esperar wait/hope, aburrido bored/boring, fue went/was.
+  - Kapu: validate-en-track R11-R14 = ok (0), id-blokk hiba 1104 → 1108 (5 új A1/A2 kártya, 1 törölt), cross-level dup 4 → 3 (kártyák: 2736 → 2740); typecheck:ci, lint (0 hiba), test:ci (136 suite) zöld. A corpusIntegrity prompt-policy teszt a hu-promptra is figyel: az új `hacer → to do` kártya hu-ja ezért `elvégez` (a `csinál` az A1 `make` kártyáé).
+  - [?] marad: `conocer` (9207 "to know (a place)", a "to meet" jelentés hiányzik, a zárójeles en miatt nem összevontam); `la caja`/`el reloj` más jelentése (faucet, clock) összetett kérdésekkel már megvan (`el agua de la llave`, `el reloj de pared`).
