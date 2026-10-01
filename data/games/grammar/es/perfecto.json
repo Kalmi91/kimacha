@@ -584,8 +584,8 @@
       "sentence": "Hoy ___ (yo) mucho trabajo.",
       "options": [
         "he tenido",
-        "tuve",
-        "tenía"
+        "he tengo",
+        "has tenido"
       ],
       "correct": 0,
       "why": {
@@ -595,17 +595,17 @@
         "de": "Hoy ist ein noch offener Zeitraum, also Perfekt (spanische Norm)."
       },
       "wrong": {
-        "tuve": {
-          "hu": "Ezzel a mondat azt jelentené: „ma sok munkám volt (lezárt múlt)”. Mexikóban ezt mondanák, de ez a lecke a perfectóról szól; helyesen: Hoy he tenido mucho trabajo.",
-          "en": "This would say: “I had a lot of work today (a closed past)”. In Mexico you would hear that, but this lesson is about the perfect; correctly: Hoy he tenido mucho trabajo.",
-          "es": "Diría: «hoy tuve mucho trabajo (pasado cerrado)». En México se diría así, pero esta lección trata del perfecto; correctamente: Hoy he tenido mucho trabajo.",
-          "de": "Das würde bedeuten: „ich hatte heute viel Arbeit (abgeschlossene Vergangenheit)“. In Mexiko sagt man das, diese Lektion behandelt aber das Perfekt; richtig: Hoy he tenido mucho trabajo."
+        "he tengo": {
+          "hu": "Ilyen szerkezet nincs: a haber után participio áll, nem jelen idejű alak; helyesen: Hoy he tenido mucho trabajo.",
+          "en": "No such structure exists: after haber comes a participle, not a present-tense form; correctly: Hoy he tenido mucho trabajo.",
+          "es": "Esa estructura no existe: tras haber va un participio, no una forma de presente; correctamente: Hoy he tenido mucho trabajo.",
+          "de": "Diese Struktur gibt es nicht: nach haber steht ein Partizip, keine Präsensform; richtig: Hoy he tenido mucho trabajo."
         },
-        "tenía": {
-          "hu": "Ezzel a mondat azt jelentené: „ma sok munkám szokott lenni (szokás vagy háttér)”, ami nem illik ide; helyesen: Hoy he tenido mucho trabajo.",
-          "en": "This would say: “today I used to have a lot of work (a habit or background)”, which does not fit here; correctly: Hoy he tenido mucho trabajo.",
-          "es": "Diría: «hoy solía tener mucho trabajo (costumbre o fondo)», lo cual no encaja aquí; correctamente: Hoy he tenido mucho trabajo.",
-          "de": "Das würde bedeuten: „heute hatte ich gewöhnlich viel Arbeit (Gewohnheit oder Hintergrund)“, was hier nicht passt; richtig: Hoy he tenido mucho trabajo."
+        "has tenido": {
+          "hu": "Ezzel a mondat azt jelentené: \"ma sok munkád volt (2. személy), a (yo) viszont engem jelöl\", ami nem illik ide; helyesen: Hoy he tenido mucho trabajo.",
+          "en": "This would say: \"you had a lot of work today (second person), but (yo) means I\", which does not fit here; correctly: Hoy he tenido mucho trabajo.",
+          "es": "Esto diría: \"tú tuviste mucho trabajo hoy (segunda persona), pero (yo) indica que soy yo\", lo cual no encaja aquí; correctamente: Hoy he tenido mucho trabajo.",
+          "de": "Das würde bedeuten: \"du hattest heute viel Arbeit (zweite Person), aber (yo) bedeutet ich\", was hier nicht passt; richtig: Hoy he tenido mucho trabajo."
         }
       },
       "examples": [
@@ -660,7 +660,7 @@
       "sentence": "Todavía no ___ (nosotros) el resultado.",
       "options": [
         "hemos recibido",
-        "recibimos",
+        "han recibido",
         "recibíamos"
       ],
       "correct": 0,
@@ -671,11 +671,11 @@
         "de": "Todavía no ist ein typischer Begleiter des Perfekts."
       },
       "wrong": {
-        "recibimos": {
-          "hu": "Ezzel a mondat azt jelentené: „nem kaptuk meg az eredményt (lezárt múlt)”, a todavía no viszont a mostig tartó várakozást nézi; helyesen: Todavía no hemos recibido el resultado.",
-          "en": "This would say: “we did not receive the result (a closed past)”, while todavía no looks at the wait that runs up to now; correctly: Todavía no hemos recibido el resultado.",
-          "es": "Diría: «no recibimos el resultado (pasado cerrado)», y todavía no mira la espera hasta ahora; correctamente: Todavía no hemos recibido el resultado.",
-          "de": "Das würde bedeuten: „wir bekamen das Ergebnis nicht (abgeschlossene Vergangenheit)“, todavía no blickt aber auf das Warten bis jetzt; richtig: Todavía no hemos recibido el resultado."
+        "han recibido": {
+          "hu": "Ezzel a mondat azt jelentené: \"ők még nem kapták meg az eredményt (3. személy), a (nosotros) viszont mi-t kér\", ami nem illik ide; helyesen: Todavía no hemos recibido el resultado.",
+          "en": "This would say: \"they have not received the result yet (third person), but (nosotros) means we\", which does not fit here; correctly: Todavía no hemos recibido el resultado.",
+          "es": "Esto diría: \"ellos todavía no han recibido el resultado (tercera persona), pero (nosotros) indica que somos nosotros\", lo cual no encaja aquí; correctamente: Todavía no hemos recibido el resultado.",
+          "de": "Das würde bedeuten: \"sie haben das Ergebnis noch nicht erhalten (dritte Person), aber (nosotros) bedeutet wir\", was hier nicht passt; richtig: Todavía no hemos recibido el resultado."
         },
         "recibíamos": {
           "hu": "Ezzel a mondat azt jelentené: „nem szoktuk megkapni az eredményt (szokás)”, ami nem illik ide; helyesen: Todavía no hemos recibido el resultado.",
@@ -695,10 +695,10 @@
     },
     {
       "id": "pf-04",
-      "sentence": "Nunca ___ (yo) en avión.",
+      "sentence": "Hasta ahora nunca ___ (yo) en avión.",
       "options": [
         "he viajado",
-        "viajé",
+        "has viajado",
         "viajaba"
       ],
       "correct": 0,
@@ -709,11 +709,11 @@
         "de": "Nunca umfasst das ganze bisherige Leben: Perfekt."
       },
       "wrong": {
-        "viajé": {
-          "hu": "Ezzel a mondat egy konkrét, lezárt alkalomra utalna („akkor nem utaztam repülővel”); az egész eddigi életről a perfecto beszél; helyesen: Nunca he viajado en avión.",
-          "en": "This would point at one closed occasion (“back then I did not fly”); the perfect is what speaks about your whole life so far; correctly: Nunca he viajado en avión.",
-          "es": "Señalaría una ocasión cerrada («entonces no viajé en avión»); el perfecto habla de toda la vida hasta ahora; correctamente: Nunca he viajado en avión.",
-          "de": "Das zeigte auf einen abgeschlossenen Anlass („damals flog ich nicht“); das Perfekt spricht über das ganze bisherige Leben; richtig: Nunca he viajado en avión."
+        "has viajado": {
+          "hu": "Ezzel a mondat azt jelentené: \"te még nem utaztál repülővel (2. személy), a (yo) viszont engem jelöl\", ami nem illik ide; helyesen: Nunca he viajado en avión.",
+          "en": "This would say: \"you have never flown (second person), but (yo) means I\", which does not fit here; correctly: Nunca he viajado en avión.",
+          "es": "Esto diría: \"tú nunca has viajado en avión (segunda persona), pero (yo) indica que soy yo\", lo cual no encaja aquí; correctamente: Nunca he viajado en avión.",
+          "de": "Das würde bedeuten: \"du bist noch nie geflogen (zweite Person), aber (yo) bedeutet ich\", was hier nicht passt; richtig: Nunca he viajado en avión."
         },
         "viajaba": {
           "hu": "Ezzel a mondat azt jelentené: „akkoriban nem szoktam repülővel utazni (múltbeli szokás)”; helyesen: Nunca he viajado en avión.",
@@ -812,7 +812,7 @@
       "sentence": "Este año mis padres ___ dos veces a México.",
       "options": [
         "han venido",
-        "vinieron",
+        "ha venido",
         "venían"
       ],
       "correct": 0,
@@ -823,11 +823,11 @@
         "de": "Este año läuft noch, und die 3. Person Plural ist han plus Partizip."
       },
       "wrong": {
-        "vinieron": {
-          "hu": "Ezzel a mondat azt jelentené: „a szüleim kétszer jöttek Mexikóba (lezárt időszakban)”, ami lezárt évhez illene (el año pasado vinieron); helyesen: Este año mis padres han venido dos veces a México.",
-          "en": "This would say: “my parents came to Mexico twice (in a closed period)”, which would fit a closed year (el año pasado vinieron); correctly: Este año mis padres han venido dos veces a México.",
-          "es": "Diría: «mis padres vinieron dos veces a México (periodo cerrado)», lo que encajaría con un año cerrado (el año pasado vinieron); correctamente: Este año mis padres han venido dos veces a México.",
-          "de": "Das würde bedeuten: „meine Eltern kamen zweimal nach Mexiko (abgeschlossener Zeitraum)“, was zu einem abgeschlossenen Jahr passte (el año pasado vinieron); richtig: Este año mis padres han venido dos veces a México."
+        "ha venido": {
+          "hu": "Ezzel a mondat egyes számú alanyhoz illene (\"Mi padre ha venido dos veces\"), itt viszont az alany többes szám (mis padres), ezért han kell; helyesen: Este año mis padres han venido dos veces a México.",
+          "en": "This would fit a singular subject (\"Mi padre ha venido dos veces\"), but here the subject is plural (mis padres), so you need han; correctly: Este año mis padres han venido dos veces a México.",
+          "es": "Encajaría con un sujeto singular (\"Mi padre ha venido dos veces\"), pero aquí el sujeto es plural (mis padres), por eso hace falta han; correctamente: Este año mis padres han venido dos veces a México.",
+          "de": "Das passte zu einem Singular-Subjekt (\"Mi padre ha venido dos veces\"), hier ist das Subjekt aber Plural (mis padres), also braucht man han; richtig: Este año mis padres han venido dos veces a México."
         },
         "venían": {
           "hu": "Ezzel a mondat azt jelentené: „a szüleim szoktak jönni Mexikóba (szokás)”, ami nem illik ide; helyesen: Este año mis padres han venido dos veces a México.",
@@ -851,7 +851,7 @@
       "options": [
         "han hecho",
         "han hacido",
-        "hicieron ya"
+        "ha hecho"
       ],
       "correct": 0,
       "why": {
@@ -867,11 +867,11 @@
           "es": "Esa forma no existe: el participio de hacer es irregular, hecho, no «hacido»; correctamente: ¿Ya han hecho la reserva?",
           "de": "Diese Form gibt es nicht: das Partizip von hacer ist unregelmäßig, hecho, nicht „hacido“; richtig: ¿Ya han hecho la reserva?"
         },
-        "hicieron ya": {
-          "hu": "Ezzel a mondat azt jelentené: „már megcsinálták a foglalást (lezárt múlt)”; Latin-Amerikában elhangzik, de itt a perfecto szerkezetét gyakoroljuk; helyesen: ¿Ya han hecho la reserva?",
-          "en": "This would say: “they already made the reservation (a closed past)”; you would hear it in Latin America, but here we practise the perfect; correctly: ¿Ya han hecho la reserva?",
-          "es": "Diría: «ya hicieron la reserva (pasado cerrado)»; se oye en América, pero aquí practicamos el perfecto; correctamente: ¿Ya han hecho la reserva?",
-          "de": "Das würde bedeuten: „sie machten die Reservierung schon (abgeschlossene Vergangenheit)“; in Amerika hört man das, hier üben wir aber das Perfekt; richtig: ¿Ya han hecho la reserva?"
+        "ha hecho": {
+          "hu": "Ezzel a mondat egyes számú alanyhoz illene (\"¿Ya ha hecho la reserva?\", usted), itt viszont ustedes áll, többes szám, ezért han kell; helyesen: ¿Ya han hecho la reserva?",
+          "en": "This would fit a singular subject (\"¿Ya ha hecho la reserva?\", usted), but here the subject is ustedes, plural, so you need han; correctly: ¿Ya han hecho la reserva?",
+          "es": "Encajaría con un sujeto singular (\"¿Ya ha hecho la reserva?\", usted), pero aquí el sujeto es ustedes, plural, por eso hace falta han; correctamente: ¿Ya han hecho la reserva?",
+          "de": "Das passte zu einem Singular-Subjekt (\"¿Ya ha hecho la reserva?\", usted), hier ist das Subjekt aber ustedes, Plural, also braucht man han; richtig: ¿Ya han hecho la reserva?"
         }
       },
       "examples": [
@@ -1014,7 +1014,7 @@
       },
       "wrong": {
         "ha decido": {
-          "hu": "Ilyen alak nincs: a decir participiója dicho (a decidido a decidir igéé, más ige); helyesen: ¿Qué te ha dicho el médico?",
+          "hu": "Ilyen alak nincs: a decir participiója dicho (a decidido a decidir igéhez tartozik, az más ige); helyesen: ¿Qué te ha dicho el médico?",
           "en": "No such form exists: the participle of decir is dicho (decidido belongs to decidir, a different verb); correctly: ¿Qué te ha dicho el médico?",
           "es": "Esa forma no existe: el participio de decir es dicho (decidido es de decidir, otro verbo); correctamente: ¿Qué te ha dicho el médico?",
           "de": "Diese Form gibt es nicht: das Partizip von decir ist dicho (decidido gehört zu decidir, einem anderen Verb); richtig: ¿Qué te ha dicho el médico?"
@@ -1613,7 +1613,10 @@
       },
       "answer": "Hoy he hablado con mi jefe.",
       "accept": [
-        "Hoy yo he hablado con mi jefe."
+        "Yo hoy he hablado con mi jefe.",
+        "Hoy yo he hablado con mi jefe.",
+        "He hablado con mi jefe hoy.",
+        "Yo he hablado con mi jefe hoy."
       ],
       "wordIds": [
         "27",
@@ -1642,7 +1645,10 @@
       },
       "answer": "Esta semana has hablado mucho con tu familia.",
       "accept": [
-        "Esta semana tú has hablado mucho con tu familia."
+        "Tú esta semana has hablado mucho con tu familia.",
+        "Esta semana tú has hablado mucho con tu familia.",
+        "Has hablado mucho con tu familia esta semana.",
+        "Tú has hablado mucho con tu familia esta semana."
       ],
       "wordIds": [
         "27",
@@ -1673,7 +1679,10 @@
       },
       "answer": "Últimamente hemos hablado poco.",
       "accept": [
-        "Últimamente nosotros hemos hablado poco."
+        "Nosotros últimamente hemos hablado poco.",
+        "Últimamente nosotros hemos hablado poco.",
+        "Hemos hablado poco últimamente.",
+        "Nosotros hemos hablado poco últimamente."
       ],
       "wordIds": [
         "27",
@@ -1702,7 +1711,9 @@
       },
       "answer": "Todavía no he hablado con ella.",
       "accept": [
-        "Yo todavía no he hablado con ella."
+        "Yo todavía no he hablado con ella.",
+        "No he hablado con ella todavía.",
+        "Yo no he hablado con ella todavía."
       ],
       "wordIds": [
         "27",
@@ -1730,7 +1741,10 @@
       },
       "answer": "¿Has hablado alguna vez con el vecino?",
       "accept": [
-        "¿Tú has hablado alguna vez con el vecino?"
+        "¿Tú has hablado alguna vez con el vecino?",
+        "¿Alguna vez has hablado con el vecino?",
+        "¿Tú alguna vez has hablado con el vecino?",
+        "¿Alguna vez tú has hablado con el vecino?"
       ],
       "wordIds": [
         "27",
@@ -1759,7 +1773,10 @@
       },
       "answer": "Este año hemos comido pescado.",
       "accept": [
-        "Este año nosotros hemos comido pescado."
+        "Nosotros este año hemos comido pescado.",
+        "Este año nosotros hemos comido pescado.",
+        "Hemos comido pescado este año.",
+        "Nosotros hemos comido pescado este año."
       ],
       "wordIds": [
         "25",
@@ -1789,7 +1806,10 @@
       },
       "answer": "Hoy he comido en casa.",
       "accept": [
-        "Hoy yo he comido en casa."
+        "Yo hoy he comido en casa.",
+        "Hoy yo he comido en casa.",
+        "He comido en casa hoy.",
+        "Yo he comido en casa hoy."
       ],
       "wordIds": [
         "25",
@@ -1818,7 +1838,10 @@
       },
       "answer": "Nunca he comido carne.",
       "accept": [
-        "Yo nunca he comido carne."
+        "Yo nunca he comido carne.",
+        "Nunca yo he comido carne.",
+        "No he comido carne nunca.",
+        "Yo no he comido carne nunca."
       ],
       "wordIds": [
         "25",
@@ -1847,7 +1870,16 @@
       },
       "answer": "Esta semana han comido tarde.",
       "accept": [
-        "Esta semana ellos han comido tarde."
+        "Ellos esta semana han comido tarde.",
+        "Esta semana ellos han comido tarde.",
+        "Ellas esta semana han comido tarde.",
+        "Esta semana ellas han comido tarde.",
+        "Ustedes esta semana han comido tarde.",
+        "Esta semana ustedes han comido tarde.",
+        "Han comido tarde esta semana.",
+        "Ellos han comido tarde esta semana.",
+        "Ellas han comido tarde esta semana.",
+        "Ustedes han comido tarde esta semana."
       ],
       "wordIds": [
         "25",
@@ -1877,7 +1909,10 @@
       },
       "answer": "¿Has comido bien últimamente?",
       "accept": [
-        "¿Tú has comido bien últimamente?"
+        "¿Tú has comido bien últimamente?",
+        "¿Últimamente has comido bien?",
+        "¿Tú últimamente has comido bien?",
+        "¿Últimamente tú has comido bien?"
       ],
       "wordIds": [
         "25",
@@ -1906,7 +1941,10 @@
       },
       "answer": "Este mes hemos vivido con mi hermana.",
       "accept": [
-        "Este mes nosotros hemos vivido con mi hermana."
+        "Nosotros este mes hemos vivido con mi hermana.",
+        "Este mes nosotros hemos vivido con mi hermana.",
+        "Hemos vivido con mi hermana este mes.",
+        "Nosotros hemos vivido con mi hermana este mes."
       ],
       "wordIds": [
         "82",
@@ -1936,7 +1974,10 @@
       },
       "answer": "Siempre he vivido en la ciudad.",
       "accept": [
-        "Siempre yo he vivido en la ciudad."
+        "Yo siempre he vivido en la ciudad.",
+        "Siempre yo he vivido en la ciudad.",
+        "He vivido en la ciudad siempre.",
+        "Yo he vivido en la ciudad siempre."
       ],
       "wordIds": [
         "82",
@@ -1975,7 +2016,10 @@
         "en": "A period that is still open (últimamente): pretérito perfecto. Vivir is a regular -ir verb, participle: vivido, here: han vivido.",
         "es": "Un periodo que sigue abierto (últimamente): pretérito perfecto. vivir es un verbo regular en -ir, participio: vivido, aquí: han vivido.",
         "de": "Ein noch offener Zeitraum (últimamente): pretérito perfecto. vivir ist ein regelmäßiges -ir-Verb, Partizip: vivido, hier: han vivido."
-      }
+      },
+      "accept": [
+        "Mis padres han vivido con mi hermano últimamente."
+      ]
     },
     {
       "id": "pf-tr-14",
@@ -1992,7 +2036,10 @@
       },
       "answer": "Nunca hemos vivido en un hotel.",
       "accept": [
-        "Nunca nosotros hemos vivido en un hotel."
+        "Nosotros nunca hemos vivido en un hotel.",
+        "Nunca nosotros hemos vivido en un hotel.",
+        "No hemos vivido en un hotel nunca.",
+        "Nosotros no hemos vivido en un hotel nunca."
       ],
       "wordIds": [
         "82",
@@ -2049,7 +2096,10 @@
       },
       "answer": "Esta semana he trabajado mucho.",
       "accept": [
-        "Esta semana yo he trabajado mucho."
+        "Yo esta semana he trabajado mucho.",
+        "Esta semana yo he trabajado mucho.",
+        "He trabajado mucho esta semana.",
+        "Yo he trabajado mucho esta semana."
       ],
       "wordIds": [
         "1409",
@@ -2079,7 +2129,10 @@
       },
       "answer": "Hoy hemos trabajado en casa.",
       "accept": [
-        "Hoy nosotros hemos trabajado en casa."
+        "Nosotros hoy hemos trabajado en casa.",
+        "Hoy nosotros hemos trabajado en casa.",
+        "Hemos trabajado en casa hoy.",
+        "Nosotros hemos trabajado en casa hoy."
       ],
       "wordIds": [
         "1409",
@@ -2108,7 +2161,10 @@
       },
       "answer": "Este año has trabajado para un cliente.",
       "accept": [
-        "Este año tú has trabajado para un cliente."
+        "Tú este año has trabajado para un cliente.",
+        "Este año tú has trabajado para un cliente.",
+        "Has trabajado para un cliente este año.",
+        "Tú has trabajado para un cliente este año."
       ],
       "wordIds": [
         "1409",
@@ -2138,7 +2194,9 @@
       },
       "answer": "Todavía no he trabajado en el proyecto.",
       "accept": [
-        "Yo todavía no he trabajado en el proyecto."
+        "Yo todavía no he trabajado en el proyecto.",
+        "No he trabajado en el proyecto todavía.",
+        "Yo no he trabajado en el proyecto todavía."
       ],
       "wordIds": [
         "1409",
@@ -2167,7 +2225,10 @@
       },
       "answer": "¿Has trabajado alguna vez en un restaurante?",
       "accept": [
-        "¿Tú has trabajado alguna vez en un restaurante?"
+        "¿Tú has trabajado alguna vez en un restaurante?",
+        "¿Alguna vez has trabajado en un restaurante?",
+        "¿Tú alguna vez has trabajado en un restaurante?",
+        "¿Alguna vez tú has trabajado en un restaurante?"
       ],
       "wordIds": [
         "1409",
@@ -2196,7 +2257,10 @@
       },
       "answer": "Este año he viajado en avión.",
       "accept": [
-        "Este año yo he viajado en avión."
+        "Yo este año he viajado en avión.",
+        "Este año yo he viajado en avión.",
+        "He viajado en avión este año.",
+        "Yo he viajado en avión este año."
       ],
       "wordIds": [
         "1579",
@@ -2226,7 +2290,10 @@
       },
       "answer": "Este mes hemos viajado a la playa.",
       "accept": [
-        "Este mes nosotros hemos viajado a la playa."
+        "Nosotros este mes hemos viajado a la playa.",
+        "Este mes nosotros hemos viajado a la playa.",
+        "Hemos viajado a la playa este mes.",
+        "Nosotros hemos viajado a la playa este mes."
       ],
       "wordIds": [
         "1579",
@@ -2256,7 +2323,10 @@
       },
       "answer": "Hemos viajado siempre en tren.",
       "accept": [
-        "Nosotros hemos viajado siempre en tren."
+        "Nosotros hemos viajado siempre en tren.",
+        "Siempre hemos viajado en tren.",
+        "Nosotros siempre hemos viajado en tren.",
+        "Siempre nosotros hemos viajado en tren."
       ],
       "wordIds": [
         "1579",
@@ -2285,7 +2355,10 @@
       },
       "answer": "No he viajado nunca en autobús.",
       "accept": [
-        "Yo no he viajado nunca en autobús."
+        "Yo no he viajado nunca en autobús.",
+        "Nunca he viajado en autobús.",
+        "Yo nunca he viajado en autobús.",
+        "Nunca yo he viajado en autobús."
       ],
       "wordIds": [
         "1579",
@@ -2342,7 +2415,10 @@
       },
       "answer": "Este mes he estudiado para el examen.",
       "accept": [
-        "Este mes yo he estudiado para el examen."
+        "Yo este mes he estudiado para el examen.",
+        "Este mes yo he estudiado para el examen.",
+        "He estudiado para el examen este mes.",
+        "Yo he estudiado para el examen este mes."
       ],
       "wordIds": [
         "1410",
@@ -2372,7 +2448,10 @@
       },
       "answer": "Siempre he estudiado con música.",
       "accept": [
-        "Siempre yo he estudiado con música."
+        "Yo siempre he estudiado con música.",
+        "Siempre yo he estudiado con música.",
+        "He estudiado con música siempre.",
+        "Yo he estudiado con música siempre."
       ],
       "wordIds": [
         "1410",
@@ -2430,7 +2509,9 @@
       },
       "answer": "No he estudiado las palabras todavía.",
       "accept": [
-        "Yo no he estudiado las palabras todavía."
+        "Yo no he estudiado las palabras todavía.",
+        "Todavía no he estudiado las palabras.",
+        "Yo todavía no he estudiado las palabras."
       ],
       "wordIds": [
         "1410",
@@ -2487,7 +2568,10 @@
       },
       "answer": "Esta mañana he hecho café.",
       "accept": [
-        "Esta mañana yo he hecho café."
+        "Yo esta mañana he hecho café.",
+        "Esta mañana yo he hecho café.",
+        "He hecho café esta mañana.",
+        "Yo he hecho café esta mañana."
       ],
       "wordIds": [
         "34",
@@ -2632,7 +2716,10 @@
       },
       "answer": "He visto las noticias esta mañana.",
       "accept": [
-        "Yo he visto las noticias esta mañana."
+        "Yo he visto las noticias esta mañana.",
+        "Esta mañana he visto las noticias.",
+        "Yo esta mañana he visto las noticias.",
+        "Esta mañana yo he visto las noticias."
       ],
       "wordIds": [
         "37",
@@ -2741,7 +2828,7 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Látod ezt a filmet?",
+        "hu": "Nézed ezt a filmet?",
         "en": "Do you see this film?",
         "es": "¿Ves esta película?",
         "de": "Siehst du diesen Film?"
@@ -2844,7 +2931,8 @@
         "en": "A past that reaches up to now, focused on the result: pretérito perfecto. The participle of decir is irregular: dicho, here: ha dicho.",
         "es": "Un pasado que llega hasta ahora, centrado en el resultado: pretérito perfecto. El participio de decir es irregular: dicho, aquí: ha dicho.",
         "de": "Eine Vergangenheit, die bis jetzt reicht, mit Blick auf das Ergebnis: pretérito perfecto. Das Partizip von decir ist unregelmäßig: dicho, hier: ha dicho."
-      }
+      },
+      "accept": []
     },
     {
       "id": "pf-tr-44",
@@ -2899,7 +2987,8 @@
         "en": "A past that reaches up to now, focused on the result: pretérito perfecto. The participle of decir is irregular: dicho, here: ha dicho.",
         "es": "Un pasado que llega hasta ahora, centrado en el resultado: pretérito perfecto. El participio de decir es irregular: dicho, aquí: ha dicho.",
         "de": "Eine Vergangenheit, die bis jetzt reicht, mit Blick auf das Ergebnis: pretérito perfecto. Das Partizip von decir ist unregelmäßig: dicho, hier: ha dicho."
-      }
+      },
+      "accept": []
     },
     {
       "id": "pf-tr-46",
@@ -2916,7 +3005,10 @@
       },
       "answer": "Esta mañana he escrito un correo.",
       "accept": [
-        "Esta mañana yo he escrito un correo."
+        "Yo esta mañana he escrito un correo.",
+        "Esta mañana yo he escrito un correo.",
+        "He escrito un correo esta mañana.",
+        "Yo he escrito un correo esta mañana."
       ],
       "wordIds": [
         "1412",
