@@ -411,6 +411,17 @@ const es: Strings = {
     levelNotStarted: 'sin empezar',
     levelRowIntroduced: (n: number, total: number) => `${n} / ${total} presentadas`,
   },
+  lessonTest: {
+    take: 'Hacer el test de la lección',
+    rules: (n: number, pct: number) => `${n} ${n === 1 ? 'pregunta' : 'preguntas'}, para aprobar ${pct}%`,
+    finishFirst: 'Termina antes todos los tipos de práctica',
+    passedTag: 'Test superado',
+    passedBest: (best: number) => `Test superado · mejor ${best}%`,
+    verdictPassed: 'Test de la lección superado',
+    leaveTitle: 'Salir del test',
+    missedTitle: 'Preguntas falladas',
+    whyHeading: '¿Por qué la frase es así?',
+  },
   exam: {
     rowTitle: (level: string) => `Examen de nivel ${level}`,
     rowLocked: (learned: number, needed: number, missing: number) => `${learned} / ${needed} palabras aprendidas, faltan ${missing}`,
