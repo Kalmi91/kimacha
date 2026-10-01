@@ -346,3 +346,48 @@ A kapu szabályonként kiírja a hibák számát és az első 5 példát, hibán
   - Átnézés: a ~701. sortól az ~1400. sorig (A1 közepe-vége, az A2 eleje a `travel` témáig). S1 alakok: countryside, trash/garbage, pay/salary, speak/talk, leave/go out, return/come back, how much does it cost, he is sick, cinema, plaza, rock, beautiful, metro, glad/happy, nice, no one, someone, lime (mexikói `limón`), straight ahead, look at/watch, show (`enseñar`), reply, film, gift, picture, coffee with milk, town, too, at seven thirty, baggage, holiday, mad, afraid, prohibited, cell phone/mobile phone, booking, coin. Hibás kérdés/válasz-pár javítva: `5543` (kérdés és mondat a diákhitelről szólt, a hu "hallgató" volt: kérdés `el préstamo estudiantil`, hu `diákhitel`), `5595` (`corría` → `corrió`, a mondat "Corrí"), `8235` (`el mediodía de trabajo` → `el horario de trabajo`, azonos az A2 `8925`-tel, összevonva: "working hours / work schedule"), `el visado` → `la visa`, `la nota` → `la calificación` (a mondat már így volt), `el camarero joven` → `el mesero joven`, `el tiempo bueno/malo` → `el buen/mal tiempo`. Hiányzó jelentés (új kártya, mindkét kártya hint_es-sel): hacer make/do, querer want/love, esperar wait/hope, aburrido bored/boring, fue went/was.
   - Kapu: validate-en-track R11-R14 = ok (0), id-blokk hiba 1104 → 1108 (5 új A1/A2 kártya, 1 törölt), cross-level dup 4 → 3 (kártyák: 2736 → 2740); typecheck:ci, lint (0 hiba), test:ci (136 suite) zöld. A corpusIntegrity prompt-policy teszt a hu-promptra is figyel: az új `hacer → to do` kártya hu-ja ezért `elvégez` (a `csinál` az A1 `make` kártyáé).
   - [?] marad: `conocer` (9207 "to know (a place)", a "to meet" jelentés hiányzik, a zárójeles en miatt nem összevontam); `la caja`/`el reloj` más jelentése (faucet, clock) összetett kérdésekkel már megvan (`el agua de la llave`, `el reloj de pared`).
+- 13:06 5. lépés, 5. adag (átnézés ~1401-2100. sor): módosítva 44, hozzáadva 5, törölve 1 kártya; spanyol kérdés átírva 11.
+  - Új kártya:
+    - #10814 (A2 shopping) la receta → recipe, hint_es "Busco una *receta* de pastel."
+    - #10815 (A2 feelings) el sueño → dream, hint_es "Anoche tuve un *sueño* muy raro."
+    - #10816 (A2 shopping) el peso → peso, hint_es "Un café cuesta treinta *pesos*."
+    - #10817 (A2 education) la historia → story, hint_es "Mi abuelo cuenta una *historia* divertida."
+    - #10818 (A2 office_work) buscar → to look for, hint_es "Voy a *buscar* mis llaves."
+  - Törölt id (→ a megtartott id, ahová az alak átkerült; az `en` mezőben ` / ` alternatíva vagy a másik kártya azonos tartalmú):
+    8839 la lista de la compra → shopping note (→ 5662).
+  - Átírt spanyol kérdés:
+    - #8824: "el alquiler de carros" → "la renta de carros"
+    - #8830: "el escaparate de la tienda" → "el aparador de la tienda"
+    - #8862: "la nota alta" → "la calificación alta"
+    - #8910: "el altavoz dla computadora" → "la bocina de la computadora"
+    - #9003: "echar de menos" → "extrañar"
+    - #9061: "suspender" → "reprobar"
+    - #9064: "la nota final" → "la calificación final"
+    - #9115: "el ascensor" → "el elevador"
+    - #9166: "el vídeo corto" → "el video corto"
+    - #9308: "el ratón dla computadora" → "el ratón de la computadora"
+    - #10000: "buscar (revisar un lugar)" → "buscar"
+  - Minta, 20 véletlen módosítás (előtte → utána):
+    - #5648 en: "eventually" → "finally / eventually"
+    - #5651 en: "exchange" → "exchange / change"
+    - #5660 en: "order" → "order / ask for"
+    - #5690 hint_es: (nincs) → "Necesito una *receta* del médico."
+    - #8830 es: "el escaparate de la tienda" → "el aparador de la tienda"; sentence_es: "Vi una chamarra bonita en el escaparate." → "Vi una chamarra bonita en el aparador."
+    - #8845 hint_es: (nincs) → "Mi *peso* es de setenta kilos."
+    - #8910 es: "el altavoz dla computadora" → "la bocina de la computadora"
+    - #9003 es: "echar de menos" → "extrañar"
+    - #9010 en: "habit" → "habit / custom"
+    - #9061 es: "suspender" → "reprobar"
+    - #9062 en: "to revise" → "to revise / to review"
+    - #9064 es: "la nota final" → "la calificación final"
+    - #9222 en: "takeaway food" → "takeaway food / takeout food"
+    - #9225 en: "mall" → "mall / shopping mall"
+    - #9319 hint_es: (nincs) → "Me gusta la *historia* de México."
+    - #10010 en: "security" → "security / safety"
+    - #10055 en: "huge" → "huge / enormous"
+    - #10062 en: "engine" → "engine / motor"
+    - #10099 en: "male" → "male / masculine"
+    - #10109 en: "district" → "district / neighborhood"
+  - Átnézés: az ~1401. sortól a ~2100. sorig (A2 `going_to`-tól a B1 `10141`-ig). S1 alakok: finally, change, ask for, shopping cart, carry-on, round trip, car rental, raise, custom, same, zone, review, takeout, shopping mall, everyone, permit, hallway, safety, capable, choose, enormous, application, motor, additional, defeat, masculine, take care of, incredible, neighborhood (mexikói `colonia`), answer. S4 / elírás: `la renta de carros` (a mondat már így volt), `el aparador` (mondat is), `la bocina`, `el ratón de la computadora` és `la bocina de la computadora` (a "dla" elírás javítva), `extrañar` (nem `echar de menos`), `reprobar` (nem `suspender`), `la calificación alta/final`, `el elevador`, `el video`. Duplikátum törölve: `8839 la lista de la compra` (Spanyol szó, hibás "shopping note", azonos a `5662`-vel). Hiányzó jelentés (új kártya, mindkét kártya hint_es-sel): receta recipe, sueño dream, peso (pénznem), historia story, buscar look for (a `10000` zárójeles kérdése puszta szó lett).
+  - Kapu: validate-en-track R11-R14 = ok (0), id-blokk hiba 1108 → 1112 (5 új A2 kártya, 1 törölt), cross-level dup 3 → 3 (kártyák: 2740 → 2744); typecheck:ci, lint (0 hiba), test:ci (136 suite) zöld.
+  - [?] marad: `el cajero` (cashier mellett ATM), `quedar` (csak "to fit" van), `el paquete` (parcel); a B1 vége (10142-től) a 6. adagban.
