@@ -94,8 +94,8 @@ Párhuzamos agent: `feat/learn-words-open` (`C:\AI\kimacha-wt-learn-open`) a `da
 
 - [x] J1. `interrogativos`: 12 form item spanyol gyártásra (tábla átfordítva: row[0] = válasz/kontextus, pl. «En Narvarte.», oszlop = kérdőszó, cella = a kérdőszó) → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `fix(grammar): interrogativos form items (nyelvtan)` · 00:26 · audit 0/0, jest 1553 ok, tsc 0, lint 0 err · új `interrogativos-respuestas` tábla (a meglévő meaning-tábla a tabledeck FB390 miatt érintetlen) · hash: 7960298
 - [x] J2. `marcadores-discursivos`: ugyanez a hiba, 12 form item mondat-gyártásra (row[0] = helyzet, cella = a gyártandó kötőelem) → kész, ha: ugyanaz, commit `fix(grammar): marcadores-discursivos form items (nyelvtan)` · 00:28 · audit 0/0, jest 1553 ok, tsc 0, lint 0 err · új `marcadores-situaciones` tábla; szinonima-kockázat (sin embargo/no obstante, por lo tanto/por consiguiente): a FormItemnek nincs `accept`, kód-igény napközbenre · hash: 1cbacdb
-- [x] F1. FB435 `ser-estar`: az 5 `spot` (hibakereső) item ki → kész, ha: ugyanaz · 00:30 · audit 0/0, jest 1553 ok, tsc 0, lint 0 err · tesztek: lib newKinds (darabszám), components newKinds (spot-fixture negacion-ra) · hash: HASH-F1
-- [ ] F2. FB436 `demostrativos`: `dem-12` („tap the noun”, mark) ki → kész, ha: ugyanaz
+- [x] F1. FB435 `ser-estar`: az 5 `spot` (hibakereső) item ki → kész, ha: ugyanaz · 00:30 · audit 0/0, jest 1553 ok, tsc 0, lint 0 err · tesztek: lib newKinds (darabszám), components newKinds (spot-fixture negacion-ra) · hash: c12f1e1
+- [x] F2. FB436 `demostrativos`: `dem-12` („tap the noun”, mark) ki → kész, ha: ugyanaz · 00:32 · audit 0/0, jest 1553 ok, tsc 0, lint 0 err · a másik mark (`dem-11`, target adjective) marad · hash: HASH-F2
 - [ ] F3. FB437 `pronombres-oi`: a felesleges szavak ki, ha tartalommal megoldható → kész, ha: ugyanaz, vagy `[!]` + ok
 - [ ] F4. FB438 `ir-a-infinitivo` tabledeck: a felesleges szavak ki, ha tartalommal megoldható → kész, ha: ugyanaz, vagy `[!]` + ok
 - [ ] 1. `marcadores-temporales` (A2-queue, új téma, Kálmán 2026-09-20; syllabus-sor + tier + lecke egy commitban) → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit
