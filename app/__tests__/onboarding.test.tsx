@@ -10,8 +10,9 @@
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 const mockReplace = jest.fn();
+const mockPush = jest.fn();
 jest.mock('expo-router', () => ({
-  router: { replace: (...args: unknown[]) => mockReplace(...args) },
+  router: { replace: (...args: unknown[]) => mockReplace(...args), push: (...args: unknown[]) => mockPush(...args) },
 }));
 
 import { act, fireEvent, render } from '@testing-library/react-native';
@@ -67,6 +68,19 @@ describe('OnboardingScreen: nyelv- és szint-lépés (PLAN-ketiranyu 4. lépés)
     expect(await getDb().getOnboarding()).toEqual({ source: 'en', target: 'es' });
     expect(await getDb().getPcicLevel()).toBe('A2');
     expect(mockReplace).toHaveBeenCalledWith('/(tabs)');
+  });
+
+  // PLAN-vizsga C. szakasz (C1 a): a szint-sorok alatt halk belépő a szintfelméréshez; a sorok maradnak.
+  it('a szint-lépésen a sorok alatt ott a szintfelmérő-belépő, és a felmérő képernyőjére visz', () => {
+    const { getByText, getByTestId } = render(<OnboardingScreen />);
+    fireEvent.press(getByText('English'));
+    fireEvent.press(getByText('Get Started'));
+
+    expect(getByText('Elementary')).toBeTruthy();
+    expect(getByText('Not sure? Take the 3 minute placement test')).toBeTruthy();
+    fireEvent.press(getByTestId('placement-entry'));
+    expect(mockPush).toHaveBeenCalledWith('/placement');
+    expect(mockReplace).not.toHaveBeenCalled();
   });
 
   it('"Español" -> es→en: spanyol üdvözlés, a szint-választó A1-et, A2-t és B1-et kínálja', () => {

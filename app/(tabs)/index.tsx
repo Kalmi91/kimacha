@@ -229,6 +229,8 @@ export default function PcicScreen() {
     setLevelSheetOpen(false);
     setTimeout(go, SHEET_CLOSE_MS);
   };
+  // PLAN-vizsga C. szakasz (C1 a): a szintválasztó lap halk belépője az adaptív szintfelméréshez.
+  const openPlacement = () => closeSheetThen(() => router.push('/placement'));
   const examRow = examA1
     ? {
         status: examA1,
@@ -507,6 +509,7 @@ export default function PcicScreen() {
           title={s.pcic.chooseLevel}
           target={target}
           exam={examRow}
+          onPlacement={openPlacement}
           onSelect={handleSelectLevel}
           onClose={() => setLevelSheetOpen(false)}
         />
@@ -570,6 +573,7 @@ export default function PcicScreen() {
           title={s.pcic.chooseLevel}
           target={target}
           exam={examRow}
+          onPlacement={openPlacement}
           onSelect={handleSelectLevel}
           onClose={() => setLevelSheetOpen(false)}
         />
@@ -678,6 +682,7 @@ export default function PcicScreen() {
         title={s.pcic.chooseLevel}
         target={target}
         exam={examRow}
+        onPlacement={openPlacement}
         onSelect={handleSelectLevel}
         onClose={() => setLevelSheetOpen(false)}
       />

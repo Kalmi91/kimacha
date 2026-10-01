@@ -491,6 +491,29 @@ export default {
     emptyBody: 'There is not enough material for the exam yet.',
     back: 'Back',
   },
+  // PLAN-vizsga C. szakasz (Kálmán, 2026-10-01): az adaptív szintfelmérő feliratai
+  // (belépő a szintválasztón, kérdések, eredmény).
+  placement: {
+    entry: 'Not sure? Take the 3 minute placement test',
+    question: (i: number) => `Question ${i}`,
+    wordQuestion: (word: string) => `What does «${word}» mean?`,
+    dontKnow: "I don't know",
+    leaveTitle: 'Leave the placement test',
+    leaveBody: 'Your answers so far are not saved.',
+    suggestedStart: (level: string) => `Suggested start: ${level}`,
+    levelScore: (level: string, correct: number, asked: number) => `${level} ${correct}/${asked}`,
+    levelNote: {
+      A1: 'You are at the very start: the first words and sentences are next.',
+      A2: 'You manage the everyday basics: time to widen them.',
+      B1: 'You cope with most everyday situations: polish the details.',
+      B2: 'You are at ease with the language: rarer words and finer grammar are next.',
+    },
+    knownWords: (n: number) => `${n} ${n === 1 ? 'word' : 'words'} you already know will not come back as new.`,
+    startAt: (level: string) => `Start at ${level}`,
+    chooseOther: 'Choose another level',
+    again: 'Take it again',
+    emptyBody: 'There is not enough material for a placement test yet.',
+  },
   // 5c: szófaj-chip a PCIC szó alatt (lib/pcicPos.ts).
   // FB361-362: a teljes WordPos-készlet felirata (nem csak noun/verb/phrase),
   // + conj/prefix/suffix a PCIC-only Pos-értékekre.
