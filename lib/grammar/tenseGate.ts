@@ -15,7 +15,8 @@
 // Az összetett igeidőket (haber + participio) külön mintázat fogja, mert azok
 // két szóból állnak, és pont ezek a leggyakoribb szint-túllépések.
 
-import { LEVELS, words, type Level } from '@/data/words';
+import { LEVELS, type Level } from '@/data/words';
+import { openWords } from '@/data/openWords';
 import { TENSES, conjugate, type Tense as SimpleTense } from '@/lib/games/conjugate';
 
 export type Structure =
@@ -102,12 +103,16 @@ function levelRank(level: Level): number {
 function buildFormIndex(): Map<string, Structure> {
   const index = new Map<string, Structure>();
   const infinitives = new Set<string>();
-  for (const w of words) {
+  // PLAN-regi-szavak-ki 5. lépés: a words-open igéi; a perjeles alak ("volver / regresar")
+  // minden alternatívája külön főnévi igenév.
+  for (const w of openWords) {
     if (w.pos !== 'verb') continue;
-    const es = String(w.es ?? '').trim().toLowerCase();
-    // A szótári alakok között ragozott bejegyzés is van („yo hablo"), abból nem
-    // lehet ragozni; csak a főnévi igenevek kellenek.
-    if (/^[a-záéíóúñü]+(ar|er|ir)$/.test(es)) infinitives.add(es);
+    for (const alt of String(w.es ?? '').split(' / ')) {
+      const es = alt.trim().toLowerCase();
+      // A szótári alakok között ragozott bejegyzés is van („yo hablo"), abból nem
+      // lehet ragozni; csak a főnévi igenevek kellenek.
+      if (/^[a-záéíóúñü]+(ar|er|ir)$/.test(es)) infinitives.add(es);
+    }
   }
   for (const inf of infinitives) {
     for (const tense of TENSES) {
@@ -139,7 +144,7 @@ let nonVerbForms: Set<string> | null = null;
 function getNonVerbForms(): Set<string> {
   if (nonVerbForms) return nonVerbForms;
   const set = new Set<string>();
-  for (const w of words) {
+  for (const w of openWords) {
     if (w.pos === 'verb') continue;
     // A `phrase` bejegyzések több szóból állnak („no hablo español"), és a
     // szavaik közt IGEALAK is van. Ha azokat felvennénk, a saját alak-térképünket

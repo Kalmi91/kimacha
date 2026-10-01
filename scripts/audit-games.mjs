@@ -2,12 +2,12 @@
 /**
  * audit-games.mjs, GAMES.md 3.6, the mechanical guard for the Game tab's
  * content-driven games (grammar-choice, confusables, and future kinds: story,
- * chat, myth). Modeled on scripts/audit-corpus.mjs but scoped to
- * data/games/**.json instead of the main word corpus.
+ * chat, myth), scoped to data/games/**.json. PLAN-regi-szavak-ki 7. lépés: the
+ * Spanish taught vocabulary is the open deck (data/words-open, A1-B2).
  *
  * Guarantee (GAMES.md 0. szekció, the user's kőbe vésett kritérium): every
  * content word is EITHER already taught (in the target level's cumulative
- * Spanish vocabulary, built the same way audit-corpus.mjs builds it: the `es`
+ * Spanish vocabulary, built from the open deck: the `es`
  * field of every word card from A0 up to and including the content's own
  * `level`) OR carries an explicit gloss in the content JSON itself (a
  * confusables `members[].word`, or a `glossary[]` entry on the topic/set).
@@ -55,6 +55,7 @@
 import { readFileSync, readdirSync, existsSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import { importTs } from './lib/importTs.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -259,11 +260,11 @@ function matches(token, taughtSet) {
 }
 
 // ---------------------------------------------------------------------------
-// Cumulative taught-token sets, built once from the shared Spanish corpus.
+// Cumulative taught-token sets, built once from the open Spanish deck (data/words-open).
 // ---------------------------------------------------------------------------
 
 function loadLevelWords(level) {
-  const p = join(ROOT, `data/words/${level.toLowerCase()}.json`);
+  const p = join(ROOT, `data/words-open/${level.toLowerCase()}.json`);
   if (!existsSync(p)) return [];
   return JSON.parse(readFileSync(p, 'utf8'));
 }
@@ -277,11 +278,35 @@ for (const lvl of LEVELS) {
   taughtByLevel[lvl] = set;
 }
 
+// PLAN-regi-szavak-ki 7b: a tanított szó ragozott alakja (és az igéhez írt névmás, verlo) is
+// tanított, ugyanazzal az alak-készlettel, amelyet az app glossza-indexe használ (lib/esForms).
+// A modulok tiszta TS, a words-open-check.mjs is így tölti a lib/games/conjugate.ts-t
+// (scripts/lib/importTs.mjs: transzpilálás, így Node 20-on is megy).
+const libUrl = (f) => join(ROOT, 'lib', f);
+const { formsOfCard, encliticBases } = await importTs(libUrl('esForms.ts'));
+const { conjugate, TENSES } = await importTs(libUrl('games/conjugate.ts'));
+const { esPlural, esFeminine } = await importTs(libUrl('esInflect.ts'));
+const FORM_DEPS = { conjugate, TENSES, esPlural, esFeminine };
+
+const formsByLevel = {};
+for (const lvl of LEVELS) {
+  const forms = new Set();
+  for (const card of loadLevelWords(lvl)) {
+    for (const f of formsOfCard(card.es ?? '', card.pos ?? '', FORM_DEPS)) forms.add(removeAccents(f));
+  }
+  formsByLevel[lvl] = forms;
+}
+
 function cumulativeTaught(level) {
   const idx = LEVELS.indexOf(level);
   const set = new Set();
+  const forms = new Set();
   const upTo = idx === -1 ? LEVELS.length - 1 : idx; // unknown level: be generous, use everything loaded
-  for (let i = 0; i <= upTo; i++) for (const t of taughtByLevel[LEVELS[i]]) set.add(t);
+  for (let i = 0; i <= upTo; i++) {
+    for (const t of taughtByLevel[LEVELS[i]]) set.add(t);
+    for (const f of formsByLevel[LEVELS[i]]) forms.add(f);
+  }
+  set.forms = forms; // a tanított szavak ragozott alakjai (az O(1) kereséshez külön halmaz)
   return set;
 }
 
@@ -298,6 +323,18 @@ function tokenKnown(tok, taughtSet, extra) {
   // infinitive is taught.
   const infinitive = IRREGULAR_FORMS.get(stripped);
   if (infinitive && (taughtSet.has(infinitive) || extra?.has(infinitive))) return true;
+  // A tanított szó ragozott alakja (a ragozó motor + a tőváltozatok), vagy az igéhez írt névmás
+  // (verlo, ayúdame) után megmaradó tő ige-alak vagy infinitív.
+  const forms = taughtSet.forms;
+  if (forms) {
+    if (forms.has(stripped)) return true;
+    for (const base of encliticBases(stripped)) if (forms.has(base) || taughtSet.has(base)) return true;
+    // ugyanaz a végső o<->a / os<->as tűrés, mint a tanított szavaknál (matches): a hibás válaszlehetőség
+    // (vo a voy/va helyett) a tanított ige hibás alakja
+    const swapped = stripped.replace(/o$/, 'a').replace(/os$/, 'as');
+    const swappedBack = stripped.replace(/a$/, 'o').replace(/as$/, 'os');
+    if (stripped.length > 1 && (forms.has(swapped) || forms.has(swappedBack))) return true;
+  }
   // Glossary/member words can be conjugated forms of each other (a confusables
   // set's own infinitive member used inflected in an example), so stem-match
   // against them too, not just against the corpus.
@@ -696,12 +733,12 @@ const TENSE_IDS = [
   'subjuntivo-presente',
 ];
 
-// Kártya-id (string) -> szint, a hat words-fájlból egyszer felépítve, a
+// Kártya-azonosító (a words-open `order`-e, string) -> szint, a words-open fájlokból egyszer felépítve, a
 // transform item `wordIds` szint-ellenőrzéséhez.
 const wordLevelById = new Map();
 for (const lvl of LEVELS) {
   for (const card of loadLevelWords(lvl)) {
-    wordLevelById.set(String(card.id), lvl);
+    wordLevelById.set(String(card.order), lvl); // words-open: a kártya azonosítója az `order`
   }
 }
 

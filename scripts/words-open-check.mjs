@@ -15,8 +15,9 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath, pathToFileURL } from 'node:url';
+import { fileURLToPath } from 'node:url';
 import { checkMultiMeaning } from './multi-meaning-rules.mjs';
+import { importTs } from './lib/importTs.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIR = path.join(ROOT, 'data', 'words-open');
@@ -100,14 +101,12 @@ for (let i = 0; i < sortedOrders.length; i++) {
     break;
   }
 }
-const bandLevel = (order) => (order <= 150 ? 'A1' : order <= 300 ? 'A2' : order <= 450 ? 'B1' : 'B2');
 for (const c of cards) {
   if (!Number.isInteger(c.order)) {
     fail('R2', `${c.__file}.json[${c.__idx}] order nem egész`);
     continue;
   }
-  // az order-sáv = szint csak az 1-600-ra él, 600 fölött a level mező dönt (a fájl-egyezés lent mindkettőre)
-  if (c.order <= 600 && c.level !== bandLevel(c.order)) fail('R2', `${tag(c)}: level ${c.level}, kellene ${bandLevel(c.order)}`);
+  // a szintet a fájl dönti el (a nyelvtanleckék szavai a lecke szintjére kerülnek, az order marad): a level mező = a fájl szintje
   if (c.level !== c.__file.toUpperCase()) fail('R2', `${tag(c)}: ${c.__file}.json fájlban ${c.level} szint`);
   const keys = Object.keys(c).filter((k) => !k.startsWith('__'));
   const wantKeys = keys.includes('hint_en') ? [...KEYS.slice(0, 8), 'hint_en', ...KEYS.slice(8)] : KEYS; // hint_en: opcionális 14. kulcs a de után
@@ -142,8 +141,8 @@ if (!listOnly) {
   const byLemma = new Map();
   for (const c of cards) if (typeof c.lemma === 'string') byLemma.set(c.lemma, [...(byLemma.get(c.lemma) || []), c]);
   const isVerb = (l) => byLemma.get(l)?.some((k) => k.pos === 'verb') ?? false;
-  // „már tanult”: 1-600-nál a kisebb-egyenlő order, 600 fölött a legfeljebb ugyanilyen szintű kártya
-  const known = (k, c) => (c.order > 600 ? LEVEL_RANK[k.level] <= LEVEL_RANK[c.level] : k.order <= c.order);
+  // „már tanult”: az alacsonyabb szintű fájlok minden kártyája + a saját fájl tömbjében a kártya előtti (és a kártya maga)
+  const known = (k, c) => LEVEL_RANK[k.level] < LEVEL_RANK[c.level] || (k.level === c.level && k.__idx <= c.__idx);
   const target = cards.filter((c) => (!onlyLevel || c.__file === onlyLevel) && c.order <= toOrder);
 
   const tokenize = (s) =>
@@ -204,10 +203,7 @@ if (!listOnly) {
   };
 
   // ----- R6 igeidő-besorolás: conjugate.ts táblái + saját szabályos generálás
-  const origEmit = process.emitWarning;
-  process.emitWarning = () => {};
-  const { conjugate, TENSES } = await import(pathToFileURL(path.join(ROOT, 'lib', 'games', 'conjugate.ts')).href);
-  process.emitWarning = origEmit;
+  const { conjugate, TENSES } = await importTs(path.join(ROOT, 'lib', 'games', 'conjugate.ts'));
 
   const STRUCT_LEVEL = {
     presente: 1,
@@ -368,7 +364,7 @@ if (!listOnly) {
       lemmas.forEach((l) => {
         const ks = byLemma.get(l);
         if (!ks) fail('R4', `${tag(c)}: "${l}" nem kártya-lemma`);
-        else if (!ks.some((k) => known(k, c))) fail('R4', `${tag(c)}: "${l}" (#${ks[0].order}) ${c.order > 600 ? 'magasabb szintű' : 'később jön'}`);
+        else if (!ks.some((k) => known(k, c))) fail('R4', `${tag(c)}: "${l}" (#${ks[0].order}) ${LEVEL_RANK[ks[0].level] > LEVEL_RANK[c.level] ? 'magasabb szintű' : 'később jön'}`);
       });
     }
     if (!lemmas.includes(c.lemma)) fail('R4', `${tag(c)}: a kártya saját lemmája nincs a mondatban`);

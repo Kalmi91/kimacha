@@ -1,4 +1,4 @@
-import { getWordsForLevel } from '@/data/words';
+import { getOpenWordsForLevel } from '@/data/openWords';
 import { resolveGloss, buildGlossMap } from '../games/gloss';
 
 // GAMES.md 3.2 / 0. szekció: GlossText's data source. A token resolves either
@@ -6,7 +6,7 @@ import { resolveGloss, buildGlossMap } from '../games/gloss';
 // authored override (story/myth "newWords"/"gloss"), and never to a blank.
 
 describe('resolveGloss', () => {
-  const word = getWordsForLevel('A1', 'es')[0];
+  const word = getOpenWordsForLevel('A1')[0];
 
   it('resolves a corpus word and marks it new when not in knownWordIds', () => {
     const info = resolveGloss(word.es, { learnedLang: 'es', nativeLang: 'hu' });
@@ -42,7 +42,7 @@ describe('resolveGloss', () => {
 
 describe('buildGlossMap', () => {
   it('every entry in a resolved sentence is either known or glossable (the F0 core criterion)', () => {
-    const w = getWordsForLevel('A1', 'es').find((e) => typeof e.sentence_es === 'string' && e.sentence_es);
+    const w = getOpenWordsForLevel('A1').find((e) => typeof e.sentence_es === 'string' && e.sentence_es);
     expect(w).toBeDefined();
     const map = buildGlossMap(w!.sentence_es as string, { learnedLang: 'es', nativeLang: 'hu' });
     for (const info of map.values()) {

@@ -133,12 +133,12 @@ describe('wordCellsForLesson spanyol irány (en→es, hu→es) változatlan', ()
   // PLAN-fb1001 16. lépés (Kálmán "b" döntése): a spanyol szó-pakli csak a tábla szavaiból
   // épül, ezért a korábbi rögzített minták (ser-estar 30 kártya, glossary::boda...) helyett az
   // invariáns: a kártyák egyike sem szószedet-only szó, és a számok a küszöb alatt vannak.
-  it('a ser-estar, gustar, clases-de-palabras paklija már nem tartalmaz szószedet-only szót', () => {
+  it('a ser-estar, gustar, articulos-genero paklija már nem tartalmaz szószedet-only szót', () => {
     const cards = wordCellsForLesson(lessonFor('es', 'ser-estar'));
     expect(cards.some((c) => c.id === 'glossary::boda' || c.id === 'glossary::fiesta')).toBe(false);
     expect(cards.length).toBeLessThan(WORD_DECK_MIN_CARDS);
     expect(wordCellsForLesson(lessonFor('es', 'gustar')).length).toBeLessThan(WORD_DECK_MIN_CARDS);
-    expect(wordCellsForLesson(lessonFor('es', 'clases-de-palabras')).length).toBeLessThan(WORD_DECK_MIN_CARDS);
+    expect(wordCellsForLesson(lessonFor('es', 'articulos-genero')).length).toBeLessThan(WORD_DECK_MIN_CARDS);
   });
 });
 

@@ -183,22 +183,6 @@ function headwordLeaks(words, lang) {
 // csak a headword/prompt mező más-más.
 const BANDS = [
   {
-    label: 'es',
-    dir: join(ROOT, 'data/words'),
-    headwordField: 'es',
-    promptField: 'en',
-    promptLang: 'en',
-    expected: { exact: 17, partial: 179 },
-  },
-  {
-    label: 'hu',
-    dir: join(ROOT, 'data/words/hu'),
-    headwordField: 'hu',
-    promptField: 'en',
-    promptLang: 'en',
-    expected: { exact: 24, partial: 19 },
-  },
-  {
     label: 'en',
     dir: join(ROOT, 'data/words/en'),
     headwordField: 'en',

@@ -66,7 +66,7 @@ export async function applyWordMerges(db: SQLite.SQLiteDatabase) {
 }
 
 // PLAN-fb0924 7a. lépés (FB396, D3): a nehézség-igazítás egy PCIC-szót
-// (script: scripts/pcic-level-fit.mjs --write) a hozzá illő szint FÁJLJÁBA
+// (a törölt scripts/pcic-level-fit.mjs generálta) a hozzá illő szint FÁJLJÁBA
 // mozgat, ÚJ id-vel (lib/pcicLevelMoves.ts, régi id -> új id). Tiszta
 // átnevezés: a cél id mindig frissen generált, nincs "iker"-ütközés a másik
 // oldalon, ezért nincs pickSurvivor-ág, mint applyWordMerges-nél fent.
@@ -105,7 +105,7 @@ function pcicRowToSm2Card(row: any): Sm2Card {
 }
 
 // PLAN-fb0924 7b. lépés (FB384, D3+D4): a szintek közti/szinten belüli
-// duplikátum-egyesítés (script: scripts/pcic-dedup.mjs --write) egy törölt
+// duplikátum-egyesítés (a törölt scripts/pcic-dedup.mjs generálta) egy törölt
 // (loser) item-id-t a megmaradó (winner) item-id-re képez le
 // (lib/pcicDedupMoves.ts). Több loser is mutathat ugyanarra a winnerre
 // (many-to-one), ezért soronként, a WORD_MERGES/applyWordMerges mintáját
