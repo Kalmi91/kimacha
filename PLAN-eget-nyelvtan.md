@@ -118,7 +118,10 @@ Párhuzamos agent: `feat/learn-words-open` (`C:\AI\kimacha-wt-learn-open`) a `da
   - minta (választós): «Estamos en casa y mis tíos ___ a cenar hoy.» → vienen / van / llevan
   - minta (választós): «Mi madre va a la fiesta de Ana y ___ un regalo.» → lleva / trae / viene
   - minta (form): row[0] «Hoy no salgo de casa. ¿Me ___ (tú) pan del mercado?» → traes
-- [ ] 6. `pedir-preguntar` (A2 exam) új lecke → kész, ha: ugyanaz
+- [x] 6. `pedir-preguntar` (A2 exam) új lecke → kész, ha: ugyanaz · 01:51 · audit 0/0, jest 1631 ok, tsc 0, lint 0 err · 12 választós + 1 match (6 pár) + 12 form (tábla `pedir-preguntar-formas`, row[0] = lyukas helyzet-mondat személy-jelzéssel, cella = a pedir/preguntar megfelelő alakja) + 7 why (3 szabály-név: pedir / preguntar / preguntar por); syllabus-sor és sáv (exam) már megvolt (nem nyúltam hozzá), nincs glossary, nincs transform (nem igeidős téma); es.ts-ben a `por-para` után, a llevar-traer előtt (syllabus-sorrend); teszt: speakNoSpanish 48→49; a speak jelölő- és spanyol-szó-mentes (FB414-teszt) · hash: a `feat(grammar): pedir-preguntar lesson (nyelvtan)` commit
+  - minta (választós): «No sé dónde está la estación. Le ___ a un policía.» → pregunto / pido / llamo
+  - minta (választós): «Mi hijo ___ permiso a su padre para ir al parque.» → pide / da / pregunta
+  - minta (form): row[0] «Mi madre ___ (ella) por ti. ¿Cuándo vienes?» → pregunta
 - [ ] 7. `saber-conocer` (A2 exam) új lecke → kész, ha: ugyanaz
 - [ ] 8. `por-para-avanzado` (B1 exam) új lecke → kész, ha: ugyanaz
 - [ ] 9. `se-impersonal-pasiva` (B1 exam) új lecke → kész, ha: ugyanaz
