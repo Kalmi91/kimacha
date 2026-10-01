@@ -1940,7 +1940,7 @@
       },
       "answer": "Voy a trabajar fuera.",
       "accept": ["Yo voy a trabajar fuera."],
-      "wordIds": ["33", "49"],
+      "wordIds": ["33", "49", "870"],
       "why": {
         "hu": "Eldöntött terv: ir a + főnévi igenév. Ir rendhagyó, yo: voy.",
         "en": "A decided plan: ir a + infinitive. Ir is irregular, yo: voy.",
@@ -1960,7 +1960,7 @@
       },
       "answer": "Va a trabajar lento.",
       "accept": ["Él va a trabajar lento.", "Ella va a trabajar lento.", "Usted va a trabajar lento."],
-      "wordIds": ["33", "49"],
+      "wordIds": ["33", "49", "871"],
       "why": {
         "hu": "Terv él-re: ir a + főnévi igenév. Ir rendhagyó, él: va.",
         "en": "A plan for él: ir a + infinitive. Ir is irregular, él: va.",
@@ -2280,7 +2280,7 @@
       },
       "answer": "Vamos a vivir fuera.",
       "accept": ["Nosotros vamos a vivir fuera."],
-      "wordIds": ["33", "48"],
+      "wordIds": ["33", "48", "870"],
       "why": {
         "hu": "Terv többes számban: ir a + főnévi igenév. Ir rendhagyó, nosotros: vamos.",
         "en": "A plan in the plural: ir a + infinitive. Ir is irregular, nosotros: vamos.",
@@ -2420,7 +2420,7 @@
       },
       "answer": "¿Van a leer fuera?",
       "accept": ["¿Ellos van a leer fuera?", "¿Ellas van a leer fuera?", "¿Ustedes van a leer fuera?"],
-      "wordIds": ["33", "145"],
+      "wordIds": ["33", "145", "870"],
       "why": {
         "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, ellos: van.",
         "en": "A question about a planned action: ir a + infinitive. Ir is irregular, ellos: van.",
