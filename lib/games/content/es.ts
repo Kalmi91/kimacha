@@ -28,6 +28,7 @@ import grammarEsNumerosHoraFecha from '@/data/games/grammar/es/numeros-hora-fech
 import grammarEsPreposicionesBasicas from '@/data/games/grammar/es/preposiciones-basicas.json';
 import grammarEsEstarGerundio from '@/data/games/grammar/es/estar-gerundio.json';
 import grammarEsVerbosReflexivos from '@/data/games/grammar/es/verbos-reflexivos.json';
+import grammarEsVerbosComoGustar from '@/data/games/grammar/es/verbos-como-gustar.json';
 import grammarEsSubjuntivoPresenteForma from '@/data/games/grammar/es/subjuntivo-presente-forma.json';
 import grammarEsSubjuntivoDisparadores from '@/data/games/grammar/es/subjuntivo-disparadores.json';
 import grammarEsOjalaQuizas from '@/data/games/grammar/es/ojala-quizas.json';
@@ -134,6 +135,7 @@ export const esContent: LanguageContentBundle = {
     grammarEsImperativoNegativo,
     grammarEsCombinacionPronombres,
     grammarEsVerbosReflexivos,
+    grammarEsVerbosComoGustar,
     grammarEsPorPara,
     grammarEsSaberConocer,
     grammarEsPedirPreguntar,
