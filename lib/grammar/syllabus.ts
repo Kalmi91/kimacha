@@ -91,6 +91,7 @@ export const GRAMMAR_TIER: Record<string, GrammarTier> = {
   'imperativo-afirmativo': 'core',
   'imperativo-negativo': 'exam',
   'combinacion-pronombres': 'exam',
+  'pronombres-preposicion': 'core',
   'verbos-reflexivos': 'core-plus',
   'verbos-como-gustar': 'exam',
   'imperativo-pronombres': 'exam',
@@ -426,6 +427,13 @@ export const GRAMMAR_SYLLABUS: SyllabusTopic[] = [
     unit: 'a2-pronombres',
     title: { hu: 'Két névmás együtt: se lo doy', en: 'Two pronouns together: se lo doy', es: 'Dos pronombres juntos: se lo doy', de: 'Zwei Pronomen zusammen: se lo doy' },
     blurb: { hu: 'A sorrend kötött, és a le se-vé válik.', en: 'The order is fixed, and le turns into se.', es: 'El orden es fijo y le se convierte en se.', de: 'Die Reihenfolge ist fest, und le wird zu se.' },
+  },
+  {
+    id: 'pronombres-preposicion',
+    level: 'A2',
+    unit: 'a2-pronombres',
+    title: { hu: 'Névmás elöljáró után: para mí, contigo', en: 'Pronouns after prepositions: para mí, contigo', es: 'Pronombres después de preposición: para mí, contigo', de: 'Pronomen nach Präposition: para mí, contigo' },
+    blurb: { hu: 'Para mí, contigo, entre tú y yo: az elöljáró után külön névmás-alak áll.', en: 'Para mí, contigo, entre tú y yo: after a preposition the pronoun has its own form.', es: 'Para mí, contigo, entre tú y yo: después de la preposición el pronombre tiene su propia forma.', de: 'Para mí, contigo, entre tú y yo: nach der Präposition hat das Pronomen eine eigene Form.' },
   },
   {
     id: 'verbos-reflexivos',
