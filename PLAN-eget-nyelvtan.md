@@ -205,7 +205,10 @@ A „BRIEF új lecke (2026-10-01 …)” érvényes, a munkahely helyett ez a wo
   - minta: `Ya son las ocho: Ana ya ___ a casa.` → habrá llegado (nem: habría llegado)
   - minta: `Cuando lo llamé, ___ en el cine, porque no contestó.` → estaría (nem: estaba)
   - minta: `¿Cuánto costaba el boleto antes? No sé, ___ (costar) cinco pesos.` → costaría
-- [ ] B14. `relativos-complejos` (C1 exam) új lecke → kész, ha: ugyanaz
+- [x] B14. `relativos-complejos` (C1 exam) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `feat(grammar): relativos-complejos lesson (nyelvtan)` (03:10; audit 0 P1/0 P2, jest 1735 passed/132 suite, tsc 0, lint 0 error; 12 választós + 1 match + 12 form + 7 why, nincs `tense`/transform (nem igeidős téma); glossary: cuyo, cuya, cuyas; egy tábla (12 mondat: 4 cuyo-alak, 3 névelős szabad relatívum, 2 lo que, 3 elöljáró/névelő a que előtt), a form-lyukak egyértelmű válaszúak (el que/el cual csere nem fér a form-mondatokba, az a választós tételekben van))
+  - minta: `Ese es el autor ___ novelas leo siempre.` → cuyas (nem: cuyo)
+  - minta: `Llegó tarde a la reunión, ___ molestó mucho al jefe.` → lo cual (nem: la cual)
+  - minta: `Los amigos ___ los que cuento son pocos.` → con
 
 ## BRIEF ir-a-infinitivo (1. lépés, NY6a)
 
