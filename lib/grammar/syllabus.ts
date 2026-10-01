@@ -101,6 +101,7 @@ export const GRAMMAR_TIER: Record<string, GrammarTier> = {
   'pedir-preguntar': 'exam',
   'llevar-traer-ir-venir': 'exam',
   diminutivos: 'full',
+  'numerales-ordinales': 'full',
   // --- B1 ---
   'subjuntivo-presente-forma': 'core',
   'subjuntivo-disparadores': 'core',
@@ -474,6 +475,13 @@ export const GRAMMAR_SYLLABUS: SyllabusTopic[] = [
     unit: 'a2-comparar',
     title: { hu: 'Kicsinyítők: -ito, -cito, -ecito', en: 'Diminutives: -ito, -cito, -ecito', es: 'Diminutivos: -ito, -cito, -ecito', de: 'Verkleinerungsformen: -ito, -cito, -ecito' },
     blurb: { hu: 'Casita, cafecito, ahorita: kicsi, kedves, udvarias.', en: 'Casita, cafecito, ahorita: small, warm, polite.', es: 'Casita, cafecito, ahorita: pequeño, cariñoso, cortés.', de: 'Casita, cafecito, ahorita: klein, herzlich, höflich.' },
+  },
+  {
+    id: 'numerales-ordinales',
+    level: 'A2',
+    unit: 'a2-comparar',
+    title: { hu: 'Sorszámnevek: primero, segundo, tercer', en: 'Ordinal numbers: primero, segundo, tercer', es: 'Los ordinales: primero, segundo, tercer', de: 'Ordnungszahlen: primero, segundo, tercer' },
+    blurb: { hu: 'El primer piso, la tercera vez, el primero de mayo.', en: 'El primer piso, la tercera vez, el primero de mayo.', es: 'El primer piso, la tercera vez, el primero de mayo.', de: 'El primer piso, la tercera vez, el primero de mayo.' },
   },
   {
     id: 'saber-conocer',
