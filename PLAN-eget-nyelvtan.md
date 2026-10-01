@@ -122,7 +122,10 @@ Párhuzamos agent: `feat/learn-words-open` (`C:\AI\kimacha-wt-learn-open`) a `da
   - minta (választós): «No sé dónde está la estación. Le ___ a un policía.» → pregunto / pido / llamo
   - minta (választós): «Mi hijo ___ permiso a su padre para ir al parque.» → pide / da / pregunta
   - minta (form): row[0] «Mi madre ___ (ella) por ti. ¿Cuándo vienes?» → pregunta
-- [ ] 7. `saber-conocer` (A2 exam) új lecke → kész, ha: ugyanaz
+- [x] 7. `saber-conocer` (A2 exam) új lecke → kész, ha: ugyanaz · 02:00 · audit 0/0, jest 1644 ok, tsc 0, lint 0 err · 12 választós + 1 match (6 pár) + 12 form (tábla `saber-conocer-formas`, row[0] = lyukas helyzet-mondat személy-jelzéssel, cella = a saber/conocer megfelelő alakja, benne 1 saber-infinitivo) + 7 why (3 szabály-név: saber tény / saber + infinitivo / conocer); syllabus-sor és sáv (exam) már megvolt (nem nyúltam hozzá); glossary: `conozco` (az yo-alak -zco, A2-ig csak `conocí (conocer)` kártya van, glossary nélkül 9 P1), nincs transform (nem igeidős téma); es.ts-ben a `por-para` után, a pedir-preguntar előtt (syllabus-sorrend); teszt: speakNoSpanish 49→50; a speak jelölő-, szám-, zárójel- és spanyol-szó-mentes; kártya-kérés: conocer A2 (a szótári alak kártyája B1, A2-n csak a `conocí (conocer)` van), conozco A2 · hash: a `feat(grammar): saber-conocer lesson (nyelvtan)` commit
+  - minta (választós): «¿___ a mi jefe? Se llama Diego.» → Conoces / Sabes / Conozco
+  - minta (választós): «Mis padres ___ muy bien esta ciudad.» → conocen / saben / conocemos
+  - minta (form): row[0] «Quiero ___ conducir, pero no tengo coche.» → saber
 - [ ] 8. `por-para-avanzado` (B1 exam) új lecke → kész, ha: ugyanaz
 - [ ] 9. `se-impersonal-pasiva` (B1 exam) új lecke → kész, ha: ugyanaz
 - …és a probe szerinti folytatás: D `ojala-quizas`, `gerundio-participio-construcciones`, `lo-neutro`, `pasiva-ser-participio`, `subjuntivo-perfecto`, `futuro-condicional-perfecto`, `leismo-laismo`, `probabilidad-con-tiempos`, `relativos-complejos`; E `indefinidos`, `perifrasis`, `pluscuamperfecto`, `relativos`, `concesivas`.
