@@ -114,7 +114,10 @@ Párhuzamos agent: `feat/learn-words-open` (`C:\AI\kimacha-wt-learn-open`) a `da
   - minta (választós): «Doctor, ___ tan rápido, por favor.» → no hable / no hables / no habla
   - minta (választós): «Ana, ___ ahora, el café está caliente.» → no lo tomes / no los tomes / no tomes lo
   - minta (form): hablar · usted → no hable
-- [ ] 5. `llevar-traer-ir-venir` (A2 exam) új lecke → kész, ha: ugyanaz
+- [x] 5. `llevar-traer-ir-venir` (A2 exam) új lecke → kész, ha: ugyanaz · 01:40 · audit 0/0, jest 1618 ok, tsc 0, lint 0 err · 12 választós + 1 match (6 pár) + 12 form (tábla `llevar-traer-formas`, row[0] = lyukas helyzet-mondat személy-jelzéssel, cella = az ir/venir/llevar/traer megfelelő alakja) + 7 why; syllabus-sor és sáv (exam) már megvolt (nem nyúltam hozzá), nincs glossary, nincs transform (nem igeidős téma); es.ts-ben a `por-para` után; teszt: speakNoSpanish 47→48; a döntő mindig a beszélő helye (a `¡Ya voy!` külön szabálypont: hívásra ir, nem venir) · hash: a `feat(grammar): llevar-traer-ir-venir lesson (nyelvtan)` commit
+  - minta (választós): «Estamos en casa y mis tíos ___ a cenar hoy.» → vienen / van / llevan
+  - minta (választós): «Mi madre va a la fiesta de Ana y ___ un regalo.» → lleva / trae / viene
+  - minta (form): row[0] «Hoy no salgo de casa. ¿Me ___ (tú) pan del mercado?» → traes
 - [ ] 6. `pedir-preguntar` (A2 exam) új lecke → kész, ha: ugyanaz
 - [ ] 7. `saber-conocer` (A2 exam) új lecke → kész, ha: ugyanaz
 - [ ] 8. `por-para-avanzado` (B1 exam) új lecke → kész, ha: ugyanaz
