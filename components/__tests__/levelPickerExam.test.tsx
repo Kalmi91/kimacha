@@ -110,6 +110,26 @@ describe('LevelPickerSheet: vizsga-sor (A1)', () => {
     expect(queryByTestId('exam-row-B1')).toBeNull();
   });
 
+  it('4. lépés: A1-B2 mindegyik szint alatt van vizsga-sor, és mindegyik a saját szintjével indul', () => {
+    const levels = ['A1', 'A2', 'B1', 'B2'] as const;
+    const rows = levels.map((level) => ({
+      status: { ...base, level, learned: 120, missing: 0, unlocked: true },
+      onStart: jest.fn(),
+      onPractice: jest.fn(),
+      onGrammar: jest.fn(),
+    }));
+    const { getByTestId, getAllByText } = render(
+      <LevelPickerSheet visible active="A1" cards={[]} colors={Colors.light} title="Level" target="es" exam={rows} onSelect={jest.fn()} onClose={jest.fn()} />,
+    );
+    expect(getAllByText(/Start exam/)).toHaveLength(4);
+    levels.forEach((level, i) => {
+      fireEvent.press(getByTestId(`exam-row-${level}`));
+      expect(rows[i].onStart).toHaveBeenCalledTimes(1);
+      rows.forEach((row, j) => j !== i && expect(row.onStart).not.toHaveBeenCalledTimes(2));
+    });
+    rows.forEach((row) => expect(row.onStart).toHaveBeenCalledTimes(1));
+  });
+
   it('a felület sehol nem írja ki a DELE nevet', () => {
     const { toJSON } = renderSheet({ ...base, unlocked: true, learned: 120, missing: 0 });
     expect(JSON.stringify(toJSON())).not.toMatch(/DELE/i);

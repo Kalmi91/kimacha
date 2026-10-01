@@ -15,6 +15,8 @@ import type { ExamLevelStatus } from '@/lib/exam/unlock';
 
 type ColorScheme = (typeof Colors)['light'];
 
+type ExamRow = { status: ExamLevelStatus; onStart: () => void; onPractice: () => void; onGrammar: () => void };
+
 // s1 (anki-ui-terv.html): a PCIC fejléc-chipjére koppintva felcsúszó lap,
 // négy sorral (A1-B2). Koppintás egy sorra -> a lap bezárul, azonnal a
 // választott szint pakliját adja (PLAN-play 10., index.tsx handleSelectLevel).
@@ -29,8 +31,9 @@ type Props = {
   // feliratok a felület nyelvén jelennek meg (nem az adatmodul angoljával).
   target: PcicTarget;
   // PLAN-vizsga A. szakasz 2. lépés (A1 a): a szint alatti vizsga-sor; csak azoknak a
-  // szinteknek van, amiknek van vizsgájuk (lib/exam/types.ts EXAM_LEVELS, ma csak A1).
-  exam?: { status: ExamLevelStatus; onStart: () => void; onPractice: () => void; onGrammar: () => void };
+  // szinteknek van, amiknek van vizsgájuk (lib/exam/types.ts EXAM_LEVELS). 4. lépés: egy sor
+  // vagy szintenként egy (A1-B2); a sor a saját szintje (`status.level`) alatt jelenik meg.
+  exam?: ExamRow | ExamRow[];
   // PLAN-vizsga C. szakasz (C1 a): a szint-sorok alatti halk belépő az adaptív szintfelméréshez.
   onPlacement?: () => void;
   onSelect: (level: PcicViewLevel) => void;
@@ -51,6 +54,7 @@ export default function LevelPickerSheet({ visible, active, cards, colors, title
   // Ha egy szinthez nincs adat vagy nincs angol fordítás, ne kínáljuk fel;
   // PLAN-esen: es→en-ben is ugyanez a szűrő (A1 + A2 van adat).
   const levels: PcicViewLevel[] = PCIC_VIEW_LEVELS.filter((lvl) => pcicItemsForViewLevel(lvl).length > 0);
+  const examRows: ExamRow[] = exam ? (Array.isArray(exam) ? exam : [exam]) : [];
 
   return (
     <Modal visible={visible} transparent animationType="slide" onRequestClose={onClose}>
@@ -62,6 +66,7 @@ export default function LevelPickerSheet({ visible, active, cards, colors, title
           {levels.map((lvl) => {
             const total = pcicItemsForViewLevel(lvl).length;
             const { introduced } = levelProgressView(cards, lvl, total);
+            const examRow = examRows.find((row) => row.status.level === lvl && EXAM_LEVELS.includes(row.status.level));
             return (
               <View key={lvl}>
                 <LevelRow
@@ -73,13 +78,13 @@ export default function LevelPickerSheet({ visible, active, cards, colors, title
                   colors={colors}
                   onPress={() => onSelect(lvl)}
                 />
-                {exam && lvl === exam.status.level && EXAM_LEVELS.includes(exam.status.level) && (
+                {examRow && (
                   <ExamLevelRow
-                    status={exam.status}
+                    status={examRow.status}
                     colors={colors}
-                    onStart={exam.onStart}
-                    onPractice={exam.onPractice}
-                    onGrammar={exam.onGrammar}
+                    onStart={examRow.onStart}
+                    onPractice={examRow.onPractice}
+                    onGrammar={examRow.onGrammar}
                   />
                 )}
                 {target === 'en' && total === 0 && (

@@ -58,12 +58,12 @@ describe('Beállítások: __DEV__-only vizsga-vezérlő', () => {
       examStatusFor('A1', 'es', await getDb().getPcicCards(), await getDb().getGameProgress(GRAMMAR_PROGRESS_KEY));
     expect((await status()).unlocked).toBe(false);
 
-    expect(getByTestId('dev-seed-exam').props.children).toBe('DEV: set up the A1 exam state');
+    expect(getByTestId('dev-seed-exam').props.children).toBe('DEV: set up the exam state (A1-B2)');
     fireEvent.press(getByTestId('dev-seed-exam'));
     await flush();
 
     expect(await status()).toMatchObject({ unlocked: true, lessonDone: true, missing: 0 });
-    expect(getByTestId('dev-seed-exam').props.children).toBe('DEV: A1 exam state is set, open the level sheet');
+    expect(getByTestId('dev-seed-exam').props.children).toBe('DEV: exam state is set (A1-B2), open the level sheet');
   });
 
   it('release-buildben (__DEV__ === false) nem jelenik meg', async () => {
