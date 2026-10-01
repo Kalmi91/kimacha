@@ -3,6 +3,7 @@ import { StyleSheet, View, ScrollView, Pressable } from 'react-native';
 import { Text } from '@/components/KText';
 import { useFocusEffect } from 'expo-router';
 import Colors from '@/constants/Colors';
+import { legibleOn } from '@/constants/Skins';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { getDb } from '@/lib/database';
@@ -156,7 +157,7 @@ export default function StatsScreen() {
           {g.brutal ? (
             <Sticker label={pcicLevel} fill="a" rotate={-4} textStyle={styles.brutalBadgeText} />
           ) : (
-          <View style={[styles.levelBadge, { backgroundColor: '#38BDF8' }]}>
+          <View style={[styles.levelBadge, { backgroundColor: legibleOn('#38BDF8', '#FFFFFF') }]}>
             <Text style={styles.levelBadgeText}>{pcicLevel}</Text>
           </View>
           )}
@@ -229,7 +230,7 @@ export default function StatsScreen() {
         {/* FB147: a reached goal is the celebration, not a footnote, so it gets
             the trophy and the big type. */}
         {goal.behind ? (
-          <Text style={[styles.goalStatus, { color: '#EAB308' }]}>{s.stats.goalBehind(hours(goal.remaining))}</Text>
+          <Text style={[styles.goalStatus, { color: legibleOn('#EAB308', colors.card) }]}>{s.stats.goalBehind(hours(goal.remaining))}</Text>
         ) : (
           <>
             <Text style={styles.goalDoneEmoji}>🏆</Text>

@@ -147,6 +147,8 @@ export default {
     info: '#38BDF8',
     border: '#334155',
     overlay: 'rgba(0,0,0,0.6)',
-    onTint: '#FFFFFF',
+    // PLAN-temak 7G: a fehér a #3B82F6-on 3,68 volt; a sötét alap-szín 4,85 (a tint szövegként a
+    // sötét alapon marad, ezért a kitöltés szövege változott, nem a tint).
+    onTint: navy,
   },
 };

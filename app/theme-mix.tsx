@@ -141,7 +141,7 @@ export default function ThemeMixScreen() {
                 selected={draft.colors === id}
                 onPress={() => setDraft({ ...draft, colors: id })}
                 label={isSkinId(id) ? names[id] : paletteLabels[id as FillPaletteId]}
-                leading={<Dots a={a} b={b} ink={g.ink} />}
+                leading={<Dots a={a} b={b} ink={draft.colors === id ? g.onA : g.ink} />}
               />
             );
           })}
@@ -156,7 +156,7 @@ export default function ThemeMixScreen() {
               onPress={() => setDraft({ ...draft, font: id })}
               label={names[id]}
               leading={
-                <Text style={[styles.aa, { color: g.ink }, SKINS[id].fonts.title ? { fontFamily: SKINS[id].fonts.title } : { fontWeight: '700' }]}>
+                <Text style={[styles.aa, { color: draft.font === id ? g.onA : g.ink }, SKINS[id].fonts.title ? { fontFamily: SKINS[id].fonts.title } : { fontWeight: '700' }]}>
                   Aa
                 </Text>
               }
@@ -179,7 +179,7 @@ export default function ThemeMixScreen() {
                   <View
                     style={[
                       styles.shapeBox,
-                      { borderColor: g.ink, borderWidth: Math.min(3, shape.borderWidth), borderRadius: Math.min(9, radius) },
+                      { borderColor: shapeKey(draft.shape) === shapeKey(id) ? g.onA : g.ink, borderWidth: Math.min(3, shape.borderWidth), borderRadius: Math.min(9, radius) },
                     ]}
                   />
                 }

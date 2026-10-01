@@ -51,4 +51,5 @@ const styles = StyleSheet.create({
 export const retro95Decor: SkinDecor = {
   HeaderOrnament: RetroHeader,
   buttonVariant: 'bevel',
+  checkFill: 'a',
 };
