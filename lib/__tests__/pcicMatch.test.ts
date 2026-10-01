@@ -15,9 +15,26 @@ describe('pcicAlternatives', () => {
   it('expands an optional parenthetical part', () => {
     expect(pcicAlternatives('al final (de)')).toEqual(['al final de', 'al final']);
   });
+
+  // PLAN-tobbjelentes 3. lépés (S1): a " / " teljes alternatívákat választ el.
+  it('splits a " / " separated answer into whole alternatives', () => {
+    expect(pcicAlternatives('el carro / el coche / el auto')).toEqual(['el carro', 'el coche', 'el auto']);
+  });
+
+  it('keeps the no-space "a/b" behaviour inside a " / " alternative', () => {
+    expect(pcicAlternatives('tocar/sentir frío / jugar')).toEqual(['tocar frío', 'sentir frío', 'jugar']);
+  });
 });
 
 describe('gradePcicAnswer', () => {
+  it('a " / " alakból bármelyik alternatíva exact, a best a begépelt alak', () => {
+    const target = 'el carro / el coche / el auto';
+    expect(gradePcicAnswer('el coche', target)).toEqual({ match: 'exact', best: 'el coche' });
+    expect(gradePcicAnswer('el carro', target)).toEqual({ match: 'exact', best: 'el carro' });
+    expect(gradePcicAnswer('el auto', target)).toEqual({ match: 'exact', best: 'el auto' });
+    expect(gradePcicAnswer('el tren', target).match).toBe('wrong');
+  });
+
   it('accepts either side of a slash alternative as exact', () => {
     expect(gradePcicAnswer('tocar frío', 'tocar/sentir frío').match).toBe('exact');
     expect(gradePcicAnswer('sentir frío', 'tocar/sentir frío').match).toBe('exact');
