@@ -13,6 +13,9 @@ type ColorScheme = (typeof Colors)['light'];
 // ülő egyetlen Check/→ sáv. A `dockedAction`/`inlineCheckBtn` stílusértékek
 // változatlanok, csak ide költöztek, hogy a PCIC is használhassa.
 export const DOCK_RESERVE = 76;
+// A sáv fölé emelt 💬 (FeedbackModal) alatt a görgető alján ennyi hely kell a sáv (dockH + dockLift)
+// fölött: a gomb alsó távolsága (styles.fab.bottom 24) + magassága (styles.brutalFab.height 55) + 12 px rés.
+export const FAB_CLEARANCE = 24 + 55 + 12;
 
 type Tone = 'check' | 'next';
 
