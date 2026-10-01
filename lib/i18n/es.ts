@@ -368,6 +368,8 @@ const es: Strings = {
     // PLAN-fb0929 10. lépés: es→en irányban a kérdés a spanyol szó, a válasz az angol szó.
     wordPromptCaptionEn: '¿Cómo se dice en inglés?',
     promptCaptionEn: 'traducir al español',
+    // PLAN-fb1001 13. lépés (FB440): a ragozó kártyán az infinitivus rejtett, a súgó-gomb mutatja.
+    showVerb: 'Ver el verbo',
     progress: (done: number, total: number) => `${done} / ${total} hechas`,
     completeTitle: (n: number) => `Las ${n} celdas hechas 🎉`,
     startAgain: 'Empezar de nuevo',

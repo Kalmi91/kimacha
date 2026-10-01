@@ -32,6 +32,7 @@ import {
 import FeedbackButton from '@/components/FeedbackModal';
 import FitText from '@/components/FitText';
 import SpeakButton from '@/components/SpeakButton';
+import { isInfinitive } from '@/lib/grammar/tableShape';
 import CardShell from '@/components/learn/CardShell';
 import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
@@ -64,6 +65,9 @@ interface DeckItem {
   enPrompt?: string;
   /** The table cell's infinitive, shown under an enPrompt. */
   verb?: string;
+  /** PLAN-fb1001 13. lépés (FB440): a ragozó cella infinitivusa rejtett, a súgó-gombra (vagy
+   *  a Check után) látszik; oszlop-fejlécnél (személy-tábla) és szó-paklinál nincs. */
+  hintVerb?: boolean;
 }
 
 export default function TableDeckScreen() {
@@ -86,6 +90,9 @@ export default function TableDeckScreen() {
   const [deck, setDeck] = useState<DeckState>({ cells: [], resetCount: 0, shuffled: false });
   const [typed, setTyped] = useState('');
   const [checked, setChecked] = useState<{ correct: boolean } | null>(null);
+  // PLAN-fb1001 13. lépés (FB440): annak a cellának az id-je, amihez a súgó-gombot megnyomták
+  // (kártyaváltáskor levezetve "nincs megnyomva", nincs reset-effekt).
+  const [hintFor, setHintFor] = useState<string | null>(null);
   // FB422 (PLAN-fb0929 2. lépés): a beviteli mező minden új cellánál újra mountol
   // (a `key` ezt a számlálót tartalmazza), különben az `autoFocus` csak az első
   // cellánál fut, és a Check után letiltott (`editable={false}`), majd újra
@@ -116,9 +123,11 @@ export default function TableDeckScreen() {
         ? tableCells.map((c) => ({
             id: c.id,
             answer: c.answer,
-            promptBig: c.enPrompt ?? `${c.person} · ${c.verb}`,
+            // FB440: a rejtett infinitivus nincs a promptban (súgó-gomb mutatja).
+            promptBig: c.enPrompt ?? (isInfinitive(c.verb) ? c.person : `${c.person} · ${c.verb}`),
             enPrompt: c.enPrompt,
             verb: c.verb,
+            hintVerb: isInfinitive(c.verb),
           }))
         : // PLAN-fb0929 10. lépés: es→en irányban a kérdés a spanyol szó, a válasz az angol szó.
           wordCellsForLesson(lesson, target).map((c) =>
@@ -314,7 +323,17 @@ export default function TableDeckScreen() {
           {/* FB390: a meaning-table cell (lib/grammar/tableDeck.ts) has no
               infinitive to show underneath (verb: ''), so this caption stays
               hidden there instead of rendering an empty line. */}
-          {current.enPrompt && current.verb ? (
+          {current.hintVerb && hintFor !== current.id && !checked ? (
+            <SpeakButton
+              testID="tabledeck-hint"
+              icon="💡"
+              label={s.tableDeck.showVerb}
+              onPress={() => setHintFor(current.id)}
+              style={styles.hintBtn}
+              brutalStyle={styles.hintBtnBrutal}
+              labelStyle={[styles.hintLabel, { color: colors.tint }]}
+            />
+          ) : (current.hintVerb || current.enPrompt) && current.verb ? (
             <Text style={[styles.promptInfinitive, { color: colors.tabIconDefault }]}>{current.verb}</Text>
           ) : null}
 
@@ -401,6 +420,10 @@ const styles = StyleSheet.create({
   // FB378: the infinitive under the English prompt, pulled up into promptBig's
   // bottom margin so the two read as one prompt block.
   promptInfinitive: { fontSize: 15, fontStyle: 'italic', textAlign: 'center', marginTop: -12, marginBottom: 12 },
+  // A rejtett infinitivus súgó-gombja: középen a prompt alatt.
+  hintBtn: { flexDirection: 'row', alignSelf: 'center', alignItems: 'center', gap: 6, paddingVertical: 4, paddingHorizontal: 10, marginTop: -8, marginBottom: 12 },
+  hintBtnBrutal: { alignSelf: 'center', marginTop: -8, marginBottom: 12 },
+  hintLabel: { fontSize: 14, fontWeight: '600' },
   input: { width: '100%', borderWidth: 2, borderRadius: 12, padding: 14, fontSize: 18, textAlign: 'center' },
   resultSection: { alignItems: 'center', marginTop: 16 },
   correctLine: { fontSize: 22, fontWeight: '700', textAlign: 'center', color: '#22C55E' },
