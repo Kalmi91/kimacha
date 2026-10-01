@@ -372,51 +372,51 @@
       ],
       "rows": [
         [
-          "contraste: Es un libro corto; ___, es muy difícil.",
+          "contraste (empieza por «s»): Es un libro corto; ___, es muy difícil.",
           "sin embargo"
         ],
         [
-          "contraste entre dos personas: Ana vive en Madrid; su hermano, ___, en Lima.",
+          "contraste entre dos personas (empieza por «e»): Ana vive en Madrid; su hermano, ___, en Lima.",
           "en cambio"
         ],
         [
-          "contraste a pesar de todo: No tenía dinero; ___, hizo el viaje.",
+          "contraste a pesar de todo (empieza por «au»): No tenía dinero; ___, hizo el viaje.",
           "aun así"
         ],
         [
-          "consecuencia, escrito: No estudió nada; ___, no aprobó.",
-          "por lo tanto"
+          "consecuencia + subjuntivo (empieza por «d»): Llovía mucho, ___ cancelaran el partido.",
+          "de ahí que"
         ],
         [
-          "consecuencia, hablado: No tenía trabajo, ___ buscó otro.",
+          "consecuencia, hablado, sin pausa (empieza por «a»): No tenía trabajo, ___ buscó otro.",
           "así que"
         ],
         [
-          "adición: El piso es grande; ___, está bien ubicado.",
+          "adición neutra (empieza por «ad»): El piso es grande; ___, está bien ubicado.",
           "además"
         ],
         [
-          "adición más fuerte: No contestó el correo; ___, ni lo abrió.",
+          "adición más fuerte (empieza por «es»): No contestó el correo; ___, ni lo abrió.",
           "es más"
         ],
         [
-          "orden, al empezar: ___, hay que revisar el presupuesto.",
+          "orden, abre la lista (empieza por «en»): ___, hay que revisar el presupuesto; en segundo lugar, el plazo.",
           "en primer lugar"
         ],
         [
-          "orden, al terminar: ___, quiero agradecer a todo el equipo.",
+          "orden, cierra la lista (empieza por «por»): En primer lugar, el precio; en segundo, el plazo; ___, la calidad.",
           "por último"
         ],
         [
-          "tema nuevo: ___ los precios, subieron este año.",
+          "tema nuevo (empieza por «en»): ___ los precios, subieron este año.",
           "en cuanto a"
         ],
         [
-          "explicación, escrito: Trabaja por su cuenta, ___, es autónomo.",
+          "explicación, formal, escrito (empieza por «es»): Trabaja por su cuenta, ___, es autónomo.",
           "es decir"
         ],
         [
-          "explicación, hablado: Llegamos a las nueve, ___, media hora tarde.",
+          "explicación, hablado (empieza por «o»): Llegamos a las nueve, ___, media hora tarde.",
           "o sea"
         ]
       ]
@@ -989,7 +989,7 @@
       "id": "md-form-01",
       "kind": "form",
       "verb": "conector",
-      "person": "contraste: Es un libro corto; ___, es muy difícil.",
+      "person": "contraste (empieza por «s»): Es un libro corto; ___, es muy difícil.",
       "answer": "sin embargo",
       "table": "marcadores-situaciones"
     },
@@ -997,7 +997,7 @@
       "id": "md-form-02",
       "kind": "form",
       "verb": "conector",
-      "person": "contraste entre dos personas: Ana vive en Madrid; su hermano, ___, en Lima.",
+      "person": "contraste entre dos personas (empieza por «e»): Ana vive en Madrid; su hermano, ___, en Lima.",
       "answer": "en cambio",
       "table": "marcadores-situaciones"
     },
@@ -1005,7 +1005,7 @@
       "id": "md-form-03",
       "kind": "form",
       "verb": "conector",
-      "person": "contraste a pesar de todo: No tenía dinero; ___, hizo el viaje.",
+      "person": "contraste a pesar de todo (empieza por «au»): No tenía dinero; ___, hizo el viaje.",
       "answer": "aun así",
       "table": "marcadores-situaciones"
     },
@@ -1013,15 +1013,15 @@
       "id": "md-form-04",
       "kind": "form",
       "verb": "conector",
-      "person": "consecuencia, escrito: No estudió nada; ___, no aprobó.",
-      "answer": "por lo tanto",
+      "person": "consecuencia + subjuntivo (empieza por «d»): Llovía mucho, ___ cancelaran el partido.",
+      "answer": "de ahí que",
       "table": "marcadores-situaciones"
     },
     {
       "id": "md-form-05",
       "kind": "form",
       "verb": "conector",
-      "person": "consecuencia, hablado: No tenía trabajo, ___ buscó otro.",
+      "person": "consecuencia, hablado, sin pausa (empieza por «a»): No tenía trabajo, ___ buscó otro.",
       "answer": "así que",
       "table": "marcadores-situaciones"
     },
@@ -1029,7 +1029,7 @@
       "id": "md-form-06",
       "kind": "form",
       "verb": "conector",
-      "person": "adición: El piso es grande; ___, está bien ubicado.",
+      "person": "adición neutra (empieza por «ad»): El piso es grande; ___, está bien ubicado.",
       "answer": "además",
       "table": "marcadores-situaciones"
     },
@@ -1037,7 +1037,7 @@
       "id": "md-form-07",
       "kind": "form",
       "verb": "conector",
-      "person": "adición más fuerte: No contestó el correo; ___, ni lo abrió.",
+      "person": "adición más fuerte (empieza por «es»): No contestó el correo; ___, ni lo abrió.",
       "answer": "es más",
       "table": "marcadores-situaciones"
     },
@@ -1045,7 +1045,7 @@
       "id": "md-form-08",
       "kind": "form",
       "verb": "conector",
-      "person": "orden, al empezar: ___, hay que revisar el presupuesto.",
+      "person": "orden, abre la lista (empieza por «en»): ___, hay que revisar el presupuesto; en segundo lugar, el plazo.",
       "answer": "en primer lugar",
       "table": "marcadores-situaciones"
     },
@@ -1053,7 +1053,7 @@
       "id": "md-form-09",
       "kind": "form",
       "verb": "conector",
-      "person": "orden, al terminar: ___, quiero agradecer a todo el equipo.",
+      "person": "orden, cierra la lista (empieza por «por»): En primer lugar, el precio; en segundo, el plazo; ___, la calidad.",
       "answer": "por último",
       "table": "marcadores-situaciones"
     },
@@ -1061,7 +1061,7 @@
       "id": "md-form-10",
       "kind": "form",
       "verb": "conector",
-      "person": "tema nuevo: ___ los precios, subieron este año.",
+      "person": "tema nuevo (empieza por «en»): ___ los precios, subieron este año.",
       "answer": "en cuanto a",
       "table": "marcadores-situaciones"
     },
@@ -1069,7 +1069,7 @@
       "id": "md-form-11",
       "kind": "form",
       "verb": "conector",
-      "person": "explicación, escrito: Trabaja por su cuenta, ___, es autónomo.",
+      "person": "explicación, formal, escrito (empieza por «es»): Trabaja por su cuenta, ___, es autónomo.",
       "answer": "es decir",
       "table": "marcadores-situaciones"
     },
@@ -1077,7 +1077,7 @@
       "id": "md-form-12",
       "kind": "form",
       "verb": "conector",
-      "person": "explicación, hablado: Llegamos a las nueve, ___, media hora tarde.",
+      "person": "explicación, hablado (empieza por «o»): Llegamos a las nueve, ___, media hora tarde.",
       "answer": "o sea",
       "table": "marcadores-situaciones"
     },
