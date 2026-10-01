@@ -204,8 +204,8 @@ const es: Strings = {
     resetGrammarTitle: 'Reiniciar progreso de gramática',
     resetGrammarMessage: 'Esto borra todo el progreso de lecciones y práctica de gramática. ¿Estás seguro?',
     // PLAN-vizsga A. szakasz 2. lépés: a __DEV__-only vizsga-vezérlő (csak fejlesztői buildben látszik).
-    devSeedExamA1: 'DEV: preparar el estado del examen A1',
-    devSeedExamA1Done: 'DEV: estado del examen A1 listo, abre la hoja de niveles',
+    devSeedExamA1: 'DEV: preparar el estado del examen (A1-B2)',
+    devSeedExamA1Done: 'DEV: estado del examen listo (A1-B2), abre la hoja de niveles',
   },
   // PLAN-temak 2A: nombres de los temas (skins) y de los grupos para la cuadrícula de temas en Ajustes.
   skins: {
@@ -461,6 +461,14 @@ const es: Strings = {
     lockedBody: 'Aprende más palabras y termina una lección de gramática primero.',
     emptyBody: 'Todavía no hay material suficiente para el examen.',
     back: 'Volver',
+    skillWords: 'Palabras',
+    skillGrammar: 'Gramática',
+    skillReading: 'Lectura',
+    skillStrong: 'Fuerte',
+    skillWeak: 'Débil',
+    skillReviewLesson: (title: string) => `Repasa la lección: ${title}`,
+    skillReviewWords: 'Repasa estas palabras',
+    skillPracticeSentences: 'Practica oraciones',
   },
   placement: {
     entry: '¿No estás seguro? Haz la prueba de nivel de 3 minutos',
