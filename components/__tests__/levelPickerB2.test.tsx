@@ -1,5 +1,5 @@
 // PLAN-learn-words-open 2. lépés: a szint-választó lap a valódi data/pcic-kel
-// (nem mockolt) az en→es iránynál a B2-t is felkínálja, 150 tétellel; az
+// (nem mockolt) az en→es iránynál a B2-t is felkínálja, 201 tétellel; az
 // es→en iránynál a B2 üres, ezért a "0 tétel = nem kínáljuk fel" szűrő kihagyja.
 
 import { fireEvent, render } from '@testing-library/react-native';
@@ -36,12 +36,12 @@ describe('LevelPickerSheet: B2 (words-open)', () => {
     expect(onSelect).toHaveBeenCalledWith('B2');
   });
 
-  it('en→es: a B2 sor a 150 tételhez méri a haladást (a B2-höz tartozó o451 kártya "introduced")', () => {
+  it('en→es: a B2 sor a 201 tételhez méri a haladást (a B2-höz tartozó o451 kártya "introduced")', () => {
     setPcicTarget('es');
     const introduced = { ...sm2NewCard('o451'), state: 'learning' as const };
     const { getByText } = renderSheet('es', jest.fn(), [introduced]);
 
-    expect(getByText('1 / 150 introduced')).toBeTruthy();
+    expect(getByText('1 / 201 introduced')).toBeTruthy();
   });
 
   it('es→en: a B2 üres, nem kínáljuk fel', () => {

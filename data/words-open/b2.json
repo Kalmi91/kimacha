@@ -2492,17 +2492,17 @@
   {
     "order": 835,
     "level": "B2",
-    "pos": "adj",
-    "lemma": "español",
-    "es": "español",
-    "hu": "spanyol (melléknév)",
-    "en": "Spanish (adjective)",
-    "de": "spanisch",
-    "sentence_es": "La comida española es muy rica.",
-    "sentence_hu": "A spanyol étel nagyon finom.",
-    "sentence_en": "Spanish food is very tasty.",
-    "sentence_de": "Das spanische Essen ist sehr lecker.",
-    "sentence_lemmas": ["el", "comida", "español", "ser", "muy", "rico"]
+    "pos": "noun",
+    "lemma": "española",
+    "es": "la española",
+    "hu": "spanyol nő",
+    "en": "Spanish woman",
+    "de": "Spanierin",
+    "sentence_es": "La española habla muy bien español.",
+    "sentence_hu": "A spanyol nő nagyon jól beszél spanyolul.",
+    "sentence_en": "The Spanish woman speaks Spanish very well.",
+    "sentence_de": "Die Spanierin spricht sehr gut Spanisch.",
+    "sentence_lemmas": ["el", "española", "hablar", "muy", "bien", "español"]
   },
   {
     "order": 836,
