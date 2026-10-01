@@ -61,12 +61,18 @@ export default function PcicRevealedAnswer({
   const example = target === 'es' ? currentItem?.exampleEs : currentItem?.exampleEn;
   const exampleGloss = target === 'es' ? currentItem?.exampleEn : currentItem?.exampleEs;
 
+  // PLAN-learn-words-open 5a: ha a beírt válasz betűre és ékezetre pontosan a cél
+  // (kis-nagybetűt és a széli szóközt nem számítva), a zöld visszhang kimarad, a
+  // szó csak egyszer látszik (a rózsaszín sor a hangszóróval).
+  const typedExact = typedAnswer.trim().toLowerCase() === grade.best.trim().toLowerCase();
+
   return (
     <>
       <View style={styles.resultSection}>
         {/* FB403: egyetlen, minden kártyán azonos jó / rossz jelzés (szín + alak + ✓/✗ + szöveg). */}
         <ResultBadge correct={nextGrade === 'good'} align="center" testID="pcic-result-badge" />
-        <Text style={styles.diffLine}>
+        {!typedExact && (
+        <Text testID="pcic-diff-line" style={styles.diffLine}>
           {charDiff(typedAnswer, grade.best, { case: true, accents: false }).map((d, i) => (
             <Text
               key={i}
@@ -82,6 +88,7 @@ export default function PcicRevealedAnswer({
             </Text>
           ))}
         </Text>
+        )}
         <View style={styles.frontRow}>
           <Text style={[styles.correctAnswer, { color: colors.tint }]}>{grade.best}</Text>
           <Pressable onPress={() => speak(grade.best, speechLang(target))} style={styles.speakBtn}>
@@ -124,17 +131,18 @@ export default function PcicRevealedAnswer({
       {/* Kálmán 2026-09-21: a régi (PR #27 előtti) Tudtam/Nem tudtam
           gombsor vissza, intervallum-előnézettel; a koppintás dönt és
           értékel, üres beküldés után is. */}
-      <View style={styles.gradesRow}>
+      <View style={[styles.gradesRow, g.brutal && styles.brutalGradesRow]}>
         {GRADES.map((gr) => {
           const isPre = nextGrade === gr;
           if (g.brutal) {
-            // NY19: doboz (good = a, again = b); a javasolt értékelés nagyobb árnyékkal.
+            // NY19: doboz (good = a, again = b). PLAN-learn-words-open 5a: a két gomb
+            // egyforma (azonos árnyék-eltolás, a sor a kártya teljes szélességén).
             return (
               <BrutalBox
                 key={gr}
                 testID={`pcic-grade-${gr}`}
                 fill={gr === 'good' ? 'a' : 'b'}
-                offset={isPre ? 5 : 3}
+                offset={2}
                 style={styles.brutalGrade}
                 boxStyle={styles.brutalGradeBox}
                 onPress={() => onGrade(gr)}
@@ -250,8 +258,9 @@ const styles = StyleSheet.create({
     gap: 8,
     marginTop: 24,
   },
+  brutalGradesRow: { alignSelf: 'stretch' },
   brutalGrade: { flex: 1 },
-  brutalGradeBox: { paddingVertical: 8, alignItems: 'center', justifyContent: 'center' },
+  brutalGradeBox: { flex: 1, paddingVertical: 8, alignItems: 'center', justifyContent: 'center' },
   gradeBtn: {
     flex: 1,
     borderRadius: 12,
@@ -262,11 +271,13 @@ const styles = StyleSheet.create({
   gradeLabel: {
     fontSize: 14,
     fontWeight: '700',
+    textAlign: 'center',
     color: '#FFFFFF',
   },
   gradePreview: {
     fontSize: 11,
     marginTop: 2,
+    textAlign: 'center',
     color: '#FFFFFF',
   },
 });
