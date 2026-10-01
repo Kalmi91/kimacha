@@ -34,6 +34,7 @@ import FeedbackButton from '@/components/FeedbackModal';
 import FitText from '@/components/FitText';
 import SpeakButton from '@/components/SpeakButton';
 import { isInfinitive } from '@/lib/grammar/tableShape';
+import { useDiffStyles } from '@/lib/useDiffStyles';
 import CardShell from '@/components/learn/CardShell';
 import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
@@ -75,6 +76,7 @@ export default function TableDeckScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
+  const diff = useDiffStyles();
   const s = t();
   const router = useRouter();
   const { topic: topicId } = useLocalSearchParams<{ topic: string }>();
@@ -360,7 +362,7 @@ export default function TableDeckScreen() {
                 <>
                   <Text style={styles.diffLine}>
                     {charDiff(typed, current.answer, { case: true, accents: false }).map((d, i) => (
-                      <Text key={i} style={d.missing ? styles.diffMissing : d.wrong ? styles.diffWrong : { color: colors.text }}>
+                      <Text key={i} style={d.missing ? diff.missing : d.wrong ? diff.wrong : { color: colors.text }}>
                         {d.ch}
                       </Text>
                     ))}
@@ -429,8 +431,6 @@ const styles = StyleSheet.create({
   resultSection: { alignItems: 'center', marginTop: 16 },
   correctLine: { fontSize: 22, fontWeight: '700', textAlign: 'center', color: '#22C55E' },
   diffLine: { fontSize: 20, fontWeight: '700', textAlign: 'center', letterSpacing: 1, marginBottom: 6 },
-  diffWrong: { backgroundColor: '#EF4444', color: '#FFFFFF' },
-  diffMissing: { backgroundColor: '#EAB308', color: '#FFFFFF', textDecorationLine: 'underline' },
   frontRow: { flexDirection: 'row', alignItems: 'flex-start', gap: 8, marginTop: 8 },
   correctAnswer: { flex: 1, flexShrink: 1, fontSize: 22, fontWeight: '600', textAlign: 'center' },
   speakBtn: { padding: 4, flexShrink: 0 },

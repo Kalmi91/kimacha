@@ -20,6 +20,13 @@
 //            (::placeholder) a mező hátterén 4.5. Letiltott (disabled / aria-disabled) elem,
 //            ikon-betű (magánhasználatú kódpont) és emoji kimarad
 //   load     a kombináció nem töltött be / a lépés nem találta a gombot
+// Útvonal-állapotok: a `learn-revealed` / `learn-revealed-ok` a Learn fülön a Check UTÁNI állapot
+// (rossz válasz "xyz", ill. a kártya helyes válasza, amit egy előzetes Check után a felfedésből
+// olvas ki, majd újratölt és begépel). Ott a vizsgálat kétszer fut: a görgetés tetején és a
+// görgető aljára állítva (a dokkolt sáv alá nyúló tartalom kiér-e alóla); a tetején a sáv alatti,
+// még görgethető rész nem átfedés. Forgatott ős (pl. Graffiti kártya) alatt az átfedés a
+// forgatás nélküli méretű téglalapokkal megy (a határoló téglalap 1-2 px-en átlógatná az éppen
+// összeérő sorokat / betűket).
 // A díszeket rajzoló elemek (data-testid="decor-...") és leszármazottaik kimaradnak; ugyanígy
 // az átmeneti, szándékosan a tartalom fölé rajzolt UsageToast (data-testid="usage-toast").
 //
@@ -74,7 +81,13 @@ const ROUTES = {
   'theme-mix': { path: '/theme-mix', onboarded: true, file: 'app/theme-mix.tsx' },
   'onboarding-intro': { path: '/', onboarded: false, steps: [LANG, START], ready: 'onboarding-intro' },
   'onboarding-theme': { path: '/', onboarded: false, steps: [LANG, START, INTRO_START], ready: 'onboarding-theme' },
+  // A Check utáni állapot: `reveal` = a válaszmezőbe gépelt szöveg (wrong: "xyz"; ok: a kártya helyes
+  // válasza, amit egy előzetes "xyz" + Check után a felfedett válaszból olvas ki, majd újratölt).
+  'learn-revealed': { path: '/', onboarded: true, reveal: 'wrong' },
+  'learn-revealed-ok': { path: '/', onboarded: true, reveal: 'ok' },
 };
+// A Learn kártya dokkolt Check gombja: a Neo-brutál ágon testID, a Klasszikuson a felirat.
+const CHECK = { testId: 'learn-docked-action', text: '✓ Check' };
 
 // ---------------------------------------------------------------------------------------------
 // Paraméterek
@@ -322,8 +335,40 @@ function pageFindTarget(spec) {
   return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
 }
 
-// A vizsgálat: { issues: [{ type, text, other? }], stats }.
-function pageAnalyze(checks) {
+// A Learn válaszmezőt fókuszba teszi (a begépelés a CDP Input.insertText-tel megy); false, ha nincs.
+function pageFocusInput() {
+  const el = [...document.querySelectorAll('input[placeholder], textarea[placeholder]')].find(
+    (e) => e.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true }) && !e.readOnly && !e.disabled,
+  );
+  if (!el) return false;
+  el.focus();
+  el.select?.();
+  return true;
+}
+
+// A felfedett kártya helyes válasza (PcicRevealedAnswer), null, ha nincs.
+function pageCorrectAnswer() {
+  return document.querySelector('[data-testid="pcic-correct-answer"]')?.textContent?.trim() || null;
+}
+
+// A Learn kártya görgetőjét a legaljára viszi (a dokkolt sáv alól kiérő tartalom vizsgálatához; a
+// válaszmező a görgetőn belül van); true, ha volt hova görgetni.
+function pageScrollBottom() {
+  const input = document.querySelector('input[placeholder], textarea[placeholder]');
+  for (let a = input?.parentElement; a; a = a.parentElement) {
+    const cs = getComputedStyle(a);
+    if ((cs.overflowY === 'auto' || cs.overflowY === 'scroll') && a.scrollHeight > a.clientHeight + 1) {
+      a.scrollTop = a.scrollHeight;
+      return true;
+    }
+  }
+  return false;
+}
+
+// A vizsgálat: { issues: [{ type, text, other? }], stats }. opts.underDock: a görgetés tetején
+// a dokkolt sáv (learn-dock) alá lógó, még görgethető tartalom nem átfedés (az aljára görgetve
+// külön vizsgáljuk, hogy kiér-e a sáv alól).
+function pageAnalyze(checks, opts = {}) {
   const want = new Set(checks);
   const vw = document.documentElement.clientWidth;
   const issues = [];
@@ -371,6 +416,36 @@ function pageAnalyze(checks) {
     return out;
   };
 
+  // Forgatott ős (pl. a Graffiti kártya): a határoló téglalap a forgatás miatt nagyobb a valódi
+  // dobozánál, így az egymáshoz éppen érő sorok / betűk 1-2 px-en átlógnának. Az átfedés-vizsgálat
+  // ezért a forgatás nélküli méretű, azonos középpontú téglalapot veszi (oraw): a határoló
+  // W = w·|cos| + h·|sin|, H = w·|sin| + h·|cos| visszafejtve (a középpontok távolsága a forgatással
+  // csak cos-szorosára csökken, ez elhanyagolható). Közel 45°-nál nem fejthető vissza: marad a határoló.
+  const angleOf = (el) => {
+    let th = 0;
+    for (let a = el; a; a = a.parentElement) {
+      const tr = getComputedStyle(a).transform;
+      if (tr && tr !== 'none') {
+        const m = new DOMMatrix(tr);
+        th += Math.atan2(m.b, m.a);
+      }
+    }
+    return th;
+  };
+  const deinflate = (th, r) => {
+    const c = Math.abs(Math.cos(th));
+    const s = Math.abs(Math.sin(th));
+    const k = c * c - s * s;
+    if (s < 1e-3 || Math.abs(k) < 0.2) return r;
+    const W = r.r - r.l;
+    const H = r.b - r.t;
+    const w = Math.max(0, (W * c - H * s) / k);
+    const h = Math.max(0, (H * c - W * s) / k);
+    const cx = (r.l + r.r) / 2;
+    const cy = (r.t + r.b) / 2;
+    return { l: cx - w / 2, t: cy - h / 2, r: cx + w / 2, b: cy + h / 2 };
+  };
+
   // --- szöveges elemek: sor-téglalapok (Range), a line-height-ra szűkítve
   const byEl = new Map();
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
@@ -404,7 +479,8 @@ function pageAnalyze(checks) {
     if (!raw.length) continue;
     // a saját doboza is vág (numberOfLines: overflow hidden), a rejtett sorok nem számítanak
     const cl = clippingAncestors(el, true);
-    items.push({ kind: 'text', el, label: trunc(nodes.map((n) => n.nodeValue).join(' ')), raw, cl, cs });
+    const th = angleOf(el);
+    items.push({ kind: 'text', el, label: trunc(nodes.map((n) => n.nodeValue).join(' ')), raw, oraw: raw.map((r) => deinflate(th, r)), cl, cs });
   }
 
   // --- kattintható elemek: a határoló téglalap
@@ -426,7 +502,7 @@ function pageAnalyze(checks) {
     const label =
       (el.innerText ?? '').trim() || el.getAttribute('aria-label') || el.getAttribute('data-testid') || el.tagName;
     const rect = { l: r.left, t: r.top, r: r.right, b: r.bottom };
-    items.push({ kind: 'click', el, label: trunc(label), raw: [rect], cl: clippingAncestors(el, false), cs });
+    items.push({ kind: 'click', el, label: trunc(label), raw: [rect], oraw: [deinflate(angleOf(el), rect)], cl: clippingAncestors(el, false), cs });
   }
   const clickEls = new Map(items.map((it, i) => [it.el, i]).filter(([, i]) => items[i].kind === 'click'));
   // A szöveg legközelebbi kattintható őse (az okozó elemre vezetéshez).
@@ -509,11 +585,11 @@ function pageAnalyze(checks) {
     r: Math.max(...rs.map((r) => r.r)),
     b: Math.max(...rs.map((r) => r.b)),
   });
-  for (const it of items) it.box = bbox(it.raw);
+  for (const it of items) it.box = bbox(it.oraw);
   // Egy elem látható téglalapjai a másikhoz képest: a közös ősök nem vágnak (egy görgetőn belül a
   // lent lévő elemek is összevethetők), a másik elemet nem tartalmazó vágók igen (a görgető alól
   // kilógó sor nem fed át egy fölötte lévő sávot).
-  const visFor = (it, other) => clipRects(it.raw, it.cl.filter((a) => !a.el.contains(other.el)));
+  const visFor = (it, other) => clipRects(it.oraw, it.cl.filter((a) => !a.el.contains(other.el)));
   const overlaps = (p, q) => {
     if (area(p.box, q.box) <= 4) return false;
     const qs = visFor(q, p);
@@ -540,7 +616,7 @@ function pageAnalyze(checks) {
         const dup = lifts(i).some((a) => lifts(j).some((b) => a !== b && reported.has(key(a, b))));
         if (dup) continue;
         reported.add(key(i, j));
-        issues.push({ type: 'overlap', text: p.label, other: q.label, at: desc(p.el), otherAt: desc(q.el) });
+        issues.push({ type: 'overlap', text: p.label, other: q.label, at: desc(p.el), otherAt: desc(q.el), els: [p.el, q.el] });
       }
     }
   }
@@ -646,7 +722,24 @@ function pageAnalyze(checks) {
       report(el, trunc(el.getAttribute('placeholder')), fg, pt.bg, 4.5);
     }
   }
-  const kept = issues.filter((i) => want.has(i.type === 'overflow' ? 'offscreen' : i.type));
+  // van-e még hova görgetni a legközelebbi függőleges görgetőben (az elem alatt még van tartalom)
+  const dock = document.querySelector('[data-testid="learn-dock"]');
+  const canScroll = (el) => {
+    for (let a = el.parentElement; a; a = a.parentElement) {
+      const cs = getComputedStyle(a);
+      if ((cs.overflowY === 'auto' || cs.overflowY === 'scroll') && a.scrollHeight > a.clientHeight + 1) {
+        return a.scrollTop + a.clientHeight < a.scrollHeight - 1;
+      }
+    }
+    return false;
+  };
+  const kept = issues
+    .filter((i) => want.has(i.type === 'overflow' ? 'offscreen' : i.type))
+    .filter(
+      (i) =>
+        !(opts.underDock && dock && i.els && i.els.some((e) => dock.contains(e)) && i.els.some((e) => !dock.contains(e) && canScroll(e))),
+    )
+    .map(({ els, ...rest }) => rest);
   return { issues: kept, stats: { items: items.length } };
 }
 
@@ -722,6 +815,28 @@ async function main() {
       }
     };
     const settle = () => cdp.evaluate(`(${pageSettle})(450, 8000)`);
+    const click = async (pos) => {
+      for (const type of ['mouseMoved', 'mousePressed', 'mouseReleased']) {
+        await cdp.send('Input.dispatchMouseEvent', { type, x: pos.x, y: pos.y, button: 'left', clickCount: 1 });
+      }
+    };
+    const open = async (url) => {
+      const loaded = cdp.waitEvent('Page.loadEventFired', 60000);
+      await cdp.send('Page.navigate', { url });
+      await loaded;
+      // az app kirajzolása (a betűk betöltéséig üres)
+      if (!(await poll('document.body.innerText.trim().length > 0', 30000))) throw new Error('nem renderelt semmit');
+    };
+    // Begépeli a szöveget a Learn válaszmezőbe, megnyomja a Check-et, megvárja a felfedett állapotot.
+    const typeAndCheck = async (text) => {
+      if (!(await poll(`(${pageFocusInput})()`, 15000))) throw new Error('nincs válaszmező');
+      await cdp.send('Input.insertText', { text });
+      await sleep(100);
+      const pos = await poll(`(${pageFindTarget})(${JSON.stringify(CHECK)})`, 15000);
+      if (!pos) throw new Error('nincs Check gomb');
+      await click(pos);
+      if (!(await poll(`!!document.querySelector('[data-testid="pcic-grades"]')`, 15000))) throw new Error('nincs felfedés');
+    };
 
     for (const c of combos) {
       const def = ROUTES[c.route];
@@ -730,6 +845,17 @@ async function main() {
       if (def.onboarded) q.set('onboarded', '1');
       const url = `${base}${def.path}?${q}`;
       const comboIssues = [];
+      let bottomIssues = [];
+      let loadFailed = false;
+      const saveShot = async (suffix) => {
+        try {
+          const shot = await cdp.send('Page.captureScreenshot', { format: 'png' });
+          const name = `${c.skin}-${c.mode}-${c.route}-${c.vp.name}${suffix}.png`;
+          fs.writeFileSync(path.join(SHOTS, name), Buffer.from(shot.data, 'base64'));
+        } catch {
+          /* a kép nem kritikus */
+        }
+      };
       try {
         await cdp.send('Emulation.setDeviceMetricsOverride', {
           width: c.vp.width,
@@ -737,42 +863,59 @@ async function main() {
           deviceScaleFactor: 1,
           mobile: false,
         });
-        const loaded = cdp.waitEvent('Page.loadEventFired', 60000);
-        await cdp.send('Page.navigate', { url });
-        await loaded;
-        // az app kirajzolása (a betűk betöltéséig üres)
-        if (!(await poll('document.body.innerText.trim().length > 0', 30000))) throw new Error('nem renderelt semmit');
+        await open(url);
         // a betűk betöltése átrendezi az oldalt: a kattintás előtt megvárjuk (különben mellé kattint)
-        if (def.steps?.length) await settle();
+        if (def.steps?.length || def.reveal) await settle();
         for (const step of def.steps ?? []) {
           const spec = JSON.stringify(step);
           const pos = await poll(`(${pageFindTarget})(${spec})`, 15000);
           if (!pos) throw new Error(`lépés: nincs gomb (${step.testId ?? step.text})`);
-          for (const type of ['mouseMoved', 'mousePressed', 'mouseReleased']) {
-            await cdp.send('Input.dispatchMouseEvent', { type, x: pos.x, y: pos.y, button: 'left', clickCount: 1 });
-          }
+          await click(pos);
           await sleep(150);
         }
         if (def.ready && !(await poll(`!!document.querySelector('[data-testid="${def.ready}"]')`, 15000))) {
           throw new Error(`nincs ${def.ready}`);
         }
+        if (def.reveal) {
+          let typed = 'xyz';
+          if (def.reveal === 'ok') {
+            // a helyes válasz a felfedésből olvasható; újratöltés után (nincs értékelés, ugyanaz a kártya) azt gépeljük
+            await typeAndCheck(typed);
+            typed = await cdp.evaluate(`(${pageCorrectAnswer})()`);
+            if (!typed) throw new Error('nincs helyes válasz a DOM-ban');
+            await open(url);
+            await settle();
+          }
+          await typeAndCheck(typed);
+        }
         await settle();
-        const res = await cdp.evaluate(`(${pageAnalyze})(${JSON.stringify(checks)})`);
+        const res = await cdp.evaluate(`(${pageAnalyze})(${JSON.stringify(checks)}, ${JSON.stringify({ underDock: !!def.reveal })})`);
         comboIssues.push(...res.issues);
+        if (def.reveal) {
+          // a tartalom a dokkolt sáv alá nyúlik: az aljára görgetve kiér-e alóla (a tetején a sáv alatti,
+          // még görgethető rész nem hiba, lásd underDock). A kontraszt görgetéstől független, nem kell újra.
+          if (opt.shots || res.issues.length) await saveShot('');
+          const rest = checks.filter((k) => k !== 'contrast');
+          if (rest.length && (await cdp.evaluate(`(${pageScrollBottom})()`))) {
+            await settle();
+            const res2 = await cdp.evaluate(`(${pageAnalyze})(${JSON.stringify(rest)}, {})`);
+            const seen = new Set(comboIssues.map((i) => `${i.type}|${i.text}|${i.other ?? ''}`));
+            bottomIssues = res2.issues.filter((i) => !seen.has(`${i.type}|${i.text}|${i.other ?? ''}`));
+            comboIssues.push(...bottomIssues);
+          }
+        }
       } catch (err) {
+        loadFailed = true;
         comboIssues.push({ type: 'load', text: String(err.message ?? err).slice(0, 40) });
       }
       for (const i of comboIssues) {
         issues.push({ skin: c.skin, mode: c.mode, route: c.route, viewport: c.vp.name, ...i });
       }
-      if (opt.shots || comboIssues.length) {
-        try {
-          const shot = await cdp.send('Page.captureScreenshot', { format: 'png' });
-          const name = `${c.skin}-${c.mode}-${c.route}-${c.vp.name}.png`;
-          fs.writeFileSync(path.join(SHOTS, name), Buffer.from(shot.data, 'base64'));
-        } catch {
-          /* a kép nem kritikus */
-        }
+      // a felfedett állapotnál a tetejéről a fenti kép (-bottom nélkül), az aljára görgetett külön fájl
+      if (def.reveal && !loadFailed) {
+        if (opt.shots || bottomIssues.length) await saveShot('-bottom');
+      } else if (opt.shots || comboIssues.length) {
+        await saveShot('');
       }
       done++;
       if (done % 10 === 0 || done === combos.length) {
