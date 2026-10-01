@@ -30,7 +30,7 @@ import { sensesFor } from '@/lib/pcicSenses';
 import FeedbackButton from '@/components/FeedbackModal';
 import BadgeRow from '@/components/learn/BadgeRow';
 import CardShell from '@/components/learn/CardShell';
-import DockedAction, { DOCK_RESERVE, FEEDBACK_INSET } from '@/components/learn/DockedAction';
+import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
 import PcicRevealedAnswer from '@/components/learn/PcicRevealedAnswer';
 import MistakesEntry from '@/components/learn/MistakesEntry';
@@ -882,14 +882,11 @@ export default function PcicScreen() {
         tone={grade ? 'next' : 'check'}
         color={grade ? '#22C55E' : undefined}
         bottom={dockLift}
-        endInset={FEEDBACK_INSET}
         colors={colors}
         onHeight={setDockH}
       />
 
-      {/* PLAN-learn-words-open 5a: a 💬 a dokkolt sáv MELLETT ül (a sáv jobb szélén
-          hagyott hely), így a kártyát nem takarja; 10 = a sáv alsó paddingje. */}
-      <FeedbackButton level={level} languagePair={languagePair} currentCard={`pcic:${current.itemId}`} bottom={dockLift + 10} />
+      <FeedbackButton level={level} languagePair={languagePair} currentCard={`pcic:${current.itemId}`} bottomOffset={dockH + dockLift} />
     </KeyboardAvoidingView>
   );
 }
