@@ -5,7 +5,7 @@ import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, lineHeight, radius, spacing, tapTarget } from '@/constants/Theme';
 import type { GlossaryEntry } from '@/lib/exam/mock/glossary';
 import { countWords } from '@/lib/exam/mock/score';
-import type { MockTarget, MockTask, MockTaskAnswer } from '@/lib/exam/mock/types';
+import { DEFAULT_PLAYS, type MockTarget, type MockTask, type MockTaskAnswer } from '@/lib/exam/mock/types';
 import { answerInputProps } from '@/lib/inputProps';
 import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
@@ -16,9 +16,7 @@ import { useTheme } from '@/lib/ThemeContext';
 // (4afeb8c^) components/exam/ExamTaskCard.tsx szerkezete: az utasítás a CÉLNYELVEN, mint egy
 // valódi papíron (alatta a felület nyelvén egy rövid segítség), aztán a tételek. Semmi nem
 // mondja meg, jó-e a válasz: a vizsgán a végén derül ki. Az ismeretlen szóhoz szójegyzet
-// jár (Kálmán E5 c), koppintásra nyílik. A hallásnál legfeljebb 2 lejátszás (MAX_PLAYS).
-
-export const MAX_PLAYS = 2;
+// jár (Kálmán E5 c), koppintásra nyílik. A felvételes feladatnál a lejátszások száma a feladaté (alap: 2; az angol A1 első része egyszer).
 
 type Props = {
   task: MockTask;
@@ -50,13 +48,16 @@ export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak,
     };
   }, []);
 
-  const isListening = task.kind === 'listen_mc' || task.kind === 'listen_dialogue' || task.kind === 'listen_match';
   const audioLines = 'audio' in task && task.audio ? task.audio : [];
+  const isListening = audioLines.length > 0;
+  const maxPlays = 'plays' in task && typeof task.plays === 'number' ? task.plays : DEFAULT_PLAYS;
+  // A hallás utáni hézag külön segítséget kap (a hézagok szövege látszik, a mondatok szólnak).
+  const hintKey = task.kind === 'gap_type' && audioLines.length > 0 ? 'listen_fill' : task.kind;
   const isDialogue = task.kind === 'listen_dialogue';
 
   const playAudio = () => {
     // Amíg szól a felvétel, a gomb néma (a dupla koppintás ne égessen el két meghallgatást).
-    if (playingRef.current || plays >= MAX_PLAYS || audioLines.length === 0) return;
+    if (playingRef.current || plays >= maxPlays || audioLines.length === 0) return;
     playingRef.current = true;
     setPlays((p) => p + 1);
     stopSpeaking();
@@ -101,7 +102,7 @@ export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak,
       <Text testID="mock-instruction" style={[styles.instruction, { color: colors.tint }]}>
         {task.instruction}
       </Text>
-      <Text style={[styles.hint, { color: colors.textMuted }]}>{s.hint[task.kind]}</Text>
+      <Text style={[styles.hint, { color: colors.textMuted }]}>{s.hint[hintKey]}</Text>
 
       {isListening && (
         <View style={[styles.audioBox, { borderColor: colors.border, backgroundColor: colors.card }]}>
@@ -111,13 +112,13 @@ export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak,
                 testID="mock-play"
                 accessibilityRole="button"
                 onPress={playAudio}
-                disabled={plays >= MAX_PLAYS}
-                style={[styles.playBtn, { backgroundColor: plays >= MAX_PLAYS ? colors.border : colors.tint }]}
+                disabled={plays >= maxPlays}
+                style={[styles.playBtn, { backgroundColor: plays >= maxPlays ? colors.border : colors.tint }]}
               >
                 <Text style={[styles.playText, { color: colors.onTint }]}>🔊 {s.play}</Text>
               </Pressable>
               <Text testID="mock-plays-left" style={[styles.small, { color: colors.textMuted }]}>
-                {s.playsLeft(Math.max(0, MAX_PLAYS - plays))}
+                {s.playsLeft(Math.max(0, maxPlays - plays))}
               </Text>
             </>
           ) : (
@@ -248,6 +249,37 @@ export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak,
             </>
           );
         })()}
+
+      {task.kind === 'gap_type' &&
+        task.gaps.map((g, i) => (
+          <View key={`gt-${i}`} style={styles.item}>
+            {box(
+              <Text style={[styles.body, { color: colors.text }]}>
+                {i + 1}. {g.text}
+              </Text>,
+            )}
+            <TextInput
+              testID={`mock-gap-${i}`}
+              {...answerInputProps}
+              placeholder={g.hint ? `${g.hint}…` : undefined}
+              placeholderTextColor={colors.textMuted}
+              value={String(answer[String(i)] ?? '')}
+              onChangeText={(v) => onAnswer(String(i), v)}
+              style={[styles.input, { color: colors.text, borderColor: colors.border, backgroundColor: colors.card }]}
+            />
+          </View>
+        ))}
+
+      {task.kind === 'dictation' && (
+        <TextInput
+          testID="mock-dictation"
+          {...answerInputProps}
+          value={String(answer.text ?? '')}
+          onChangeText={(v) => onAnswer('text', v)}
+          multiline
+          style={[styles.input, styles.textarea, { color: colors.text, borderColor: colors.border, backgroundColor: colors.card }]}
+        />
+      )}
 
       {task.kind === 'form_fill' && (
         <>

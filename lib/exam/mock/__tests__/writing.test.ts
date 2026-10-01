@@ -156,12 +156,12 @@ describe('papír szinten: az értelmetlen írás 0 pont, a jó 25', () => {
   it('az írás-papír pontja a tartalomtól függ, nem attól, hogy írt-e valamit', () => {
     setPcicTarget('es');
     const exam = buildMockExam({ target: 'es', level: 'A1', items: pcicItemsForLevel('A1'), seed: 5 });
-    const writing = exam.papers.find((p) => p.skill === 'writing')!;
+    const writing = exam.papers.find((p) => p.id === 'writing')!;
     const [formTask, msgTask] = writing.tasks;
     const answers = (f: Record<string, string>, text: string): MockAnswers => ({ [formTask.id]: f, [msgTask.id]: { text } });
     const asdfForm = Object.fromEntries((formTask as MockFormFillTask).fields.map((f) => [f.id, 'asdf']));
     const goodForm = { nombre: 'Ana Kovács', edad: '30', nacionalidad: 'húngara', direccion: 'Calle Enrique Rébsamen 431', telefono: '5540990187', correo: 'ana@example.com', nivel: 'A1' };
-    const pts = (a: MockAnswers) => scoreMockExam(exam, a, { lexicon: LEX_ES }).papers.find((p) => p.skill === 'writing')!.points;
+    const pts = (a: MockAnswers) => scoreMockExam(exam, a, { lexicon: LEX_ES }).skills.find((p) => p.skill === 'writing')!.points;
     expect(pts(answers({}, ''))).toBe(0);
     expect(pts(answers(asdfForm, 'asdf '.repeat(60)))).toBe(0);
     expect(pts(answers(asdfForm, `${(msgTask as MockShortMessageTask).prompt} ${(msgTask as MockShortMessageTask).prompt}`))).toBe(0);

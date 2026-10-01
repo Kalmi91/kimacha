@@ -15,6 +15,7 @@ const ITEMS = [item('1', 'la ventana', 'the window'), item('2', 'la casa', 'the 
 
 const match: MockTask = {
   id: 'm',
+  skill: 'reading',
   kind: 'match',
   instruction: '',
   prompts: [
@@ -49,12 +50,12 @@ describe('mockGlossary: szójegyzet az ismeretlen szóhoz', () => {
   });
 
   it('a lyukas mondat lehetőségei is szerepelnek (a kihagyott szó jelentése is)', () => {
-    const gap: MockTask = { id: 'g', kind: 'gap_mc', instruction: '', gaps: [{ text: 'Quiero ___ agua.', options: ['beber', 'casa', 'zzz'], correct: 0 }] };
+    const gap: MockTask = { id: 'g', skill: 'reading', kind: 'gap_mc', instruction: '', gaps: [{ text: 'Quiero ___ agua.', options: ['beber', 'casa', 'zzz'], correct: 0 }] };
     expect(mockGlossary(gap, index, new Set()).map((e) => e.term)).toEqual(['beber', 'casa']);
   });
 
   it('hallás: a felolvasott szöveg nem látszik, ezért nincs szójegyzet hozzá', () => {
-    const listen: MockTask = { id: 'l', kind: 'listen_mc', instruction: 'TAREA 1. Va a escuchar.', audio: ['La ventana está abierta.'], questions: [{ options: ['a', 'b'], correct: 0 }] };
+    const listen: MockTask = { id: 'l', skill: 'listening', kind: 'listen_mc', instruction: 'TAREA 1. Va a escuchar.', audio: ['La ventana está abierta.'], questions: [{ options: ['a', 'b'], correct: 0 }] };
     expect(mockTaskTexts(listen)).toEqual([]);
     expect(mockGlossary(listen, index, new Set())).toEqual([]);
   });
@@ -81,5 +82,36 @@ describe('mockGlossary: valódi feladatsoron', () => {
     const allLearned = new Set(items.map((i) => i.id));
     expect(mockGlossary(reading, index, allLearned)).toEqual([]);
     for (const t of exam.papers[2].tasks) expect(mockGlossary(t, index, new Set())).toEqual([]);
+  });
+});
+
+describe('mockGlossary: az új feladat-fajták', () => {
+  const index = buildGlossaryIndex(ITEMS, 'es');
+
+  it('begépelős hézag: a lyukas mondat szavaihoz jár szójegyzet, a hiányzó szóhoz nem', () => {
+    const gap: MockTask = {
+      id: 'gt',
+      skill: 'reading',
+      kind: 'gap_type',
+      instruction: '',
+      gaps: [{ text: 'La ___ de la casa está abierta.', answer: 'ventana' }],
+    };
+    expect(mockGlossary(gap, index, new Set()).map((e) => e.term)).toEqual(['casa']);
+  });
+
+  it('hallás utáni hézag és diktálás: a felolvasott szöveg nem látszik; a hézag lyukas mondata igen', () => {
+    const fill: MockTask = {
+      id: 'lf',
+      skill: 'listening',
+      kind: 'gap_type',
+      instruction: '',
+      audio: ['La ventana está abierta.'],
+      plays: 2,
+      gaps: [{ text: 'La ___ está abierta.', answer: 'ventana' }],
+    };
+    expect(mockGlossary(fill, index, new Set())).toEqual([]);
+    const dict: MockTask = { id: 'd', skill: 'listening', kind: 'dictation', instruction: '', audio: ['La casa.'], text: 'La casa.' };
+    expect(mockTaskTexts(dict)).toEqual([]);
+    expect(mockGlossary(dict, index, new Set())).toEqual([]);
   });
 });
