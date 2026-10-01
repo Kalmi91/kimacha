@@ -233,7 +233,7 @@
           "a": "el año pasado viajé",
           "b": "hasta ahora he viajado",
           "note": {
-            "hu": "Mindkettő múlt, de az «el año pasado» lezárt időszak (indefinido), a «hasta ahora» a mostanig tartó időre néz (perfecto).",
+            "hu": "Mindkettő múlt, de az «el año pasado» lezárt időszak (indefinido), a «hasta ahora» a mostanáig tartó időre néz (perfecto).",
             "en": "Both are past, but «el año pasado» is a closed period (preterite) and «hasta ahora» looks at the time up to now (present perfect).",
             "es": "Los dos son pasado, pero «el año pasado» es un periodo cerrado (indefinido) y «hasta ahora» abarca el tiempo hasta el presente (perfecto).",
             "de": "Beides ist Vergangenheit, aber «el año pasado» ist ein abgeschlossener Zeitraum (Indefinido) und «hasta ahora» blickt auf die Zeit bis jetzt (Perfekt)."
@@ -595,7 +595,7 @@
     },
     {
       "id": "pvi-06",
-      "sentence": "Todavía no ___ (yo) la cena.",
+      "sentence": "Todavía no ___ (yo) la cena y ya es tarde.",
       "options": [
         "haré",
         "hice",
@@ -610,16 +610,16 @@
       },
       "wrong": {
         "haré": {
-          "hu": "haré: egyszerű jövő (futuro simple): azt mondaná, hogy a vacsorát még nem fogom megcsinálni. Ide nem illik, mert a(z) «todavía no» (még nem) itt a múltra néz: eddig nem történt meg. Helyesen: Todavía no hice la cena.",
-          "en": "haré: simple future (futuro simple): it would say that I will not make dinner yet. It does not fit here, because «todavía no» (not yet) looks at the past here: it has not happened so far. Correct: Todavía no hice la cena.",
-          "es": "haré: futuro simple: diría que todavía no voy a hacer la cena. Aquí no encaja, porque «todavía no» mira aquí al pasado: hasta ahora no pasó. Correcto: Todavía no hice la cena.",
-          "de": "haré: einfaches Futur: es würde sagen, dass ich das Abendessen noch nicht machen werde. Das passt hier nicht, weil «todavía no» (noch nicht) hier auf die Vergangenheit blickt: bis jetzt geschah es nicht. Richtig: Todavía no hice la cena."
+          "hu": "haré: egyszerű jövő (futuro simple): azt mondaná, hogy a vacsorát még nem fogom megcsinálni. Ide nem illik, mert a(z) «todavía no» (még nem) itt a múltra néz: eddig nem történt meg. Helyesen: Todavía no hice la cena y ya es tarde.",
+          "en": "haré: simple future (futuro simple): it would say that I will not make dinner yet. It does not fit here, because «todavía no» (not yet) looks at the past here: it has not happened so far. Correct: Todavía no hice la cena y ya es tarde.",
+          "es": "haré: futuro simple: diría que todavía no voy a hacer la cena. Aquí no encaja, porque «todavía no» mira aquí al pasado: hasta ahora no pasó. Correcto: Todavía no hice la cena y ya es tarde.",
+          "de": "haré: einfaches Futur: es würde sagen, dass ich das Abendessen noch nicht machen werde. Das passt hier nicht, weil «todavía no» (noch nicht) hier auf die Vergangenheit blickt: bis jetzt geschah es nicht. Richtig: Todavía no hice la cena y ya es tarde."
         },
         "hacía": {
-          "hu": "hacía: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «todavía no» (még nem) egy meg nem történt egyszeri eseményre néz, nem múltbeli szokásra vagy háttérre. Helyesen: Todavía no hice la cena.",
-          "en": "hacía: imperfect (imperfecto): it would describe a habit or a background. It does not fit here, because «todavía no» (not yet) looks at a one-time event that has not happened, not at a past habit or a background. Correct: Todavía no hice la cena.",
-          "es": "hacía: imperfecto: describiría una costumbre o un fondo. Aquí no encaja, porque «todavía no» mira un hecho puntual que no pasó, no una costumbre ni un fondo del pasado. Correcto: Todavía no hice la cena.",
-          "de": "hacía: Imperfekt: es würde eine Gewohnheit oder einen Hintergrund beschreiben. Das passt hier nicht, weil «todavía no» (noch nicht) auf ein einmaliges Ereignis blickt, das nicht geschah, nicht auf eine vergangene Gewohnheit oder einen Hintergrund. Richtig: Todavía no hice la cena."
+          "hu": "hacía: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «todavía no» (még nem) egy meg nem történt egyszeri eseményre néz, nem múltbeli szokásra vagy háttérre. Helyesen: Todavía no hice la cena y ya es tarde.",
+          "en": "hacía: imperfect (imperfecto): it would describe a habit or a background. It does not fit here, because «todavía no» (not yet) looks at a one-time event that has not happened, not at a past habit or a background. Correct: Todavía no hice la cena y ya es tarde.",
+          "es": "hacía: imperfecto: describiría una costumbre o un fondo. Aquí no encaja, porque «todavía no» mira un hecho puntual que no pasó, no una costumbre ni un fondo del pasado. Correcto: Todavía no hice la cena y ya es tarde.",
+          "de": "hacía: Imperfekt: es würde eine Gewohnheit oder einen Hintergrund beschreiben. Das passt hier nicht, weil «todavía no» (noch nicht) auf ein einmaliges Ereignis blickt, das nicht geschah, nicht auf eine vergangene Gewohnheit oder einen Hintergrund. Richtig: Todavía no hice la cena y ya es tarde."
         }
       },
       "examples": [
@@ -739,20 +739,20 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A(z) «hasta ahora» (eddig) a mostanig tartó helyzetre utal, ezért közelmúlt (perfecto) jön: ha viajado.",
+        "hu": "A(z) «hasta ahora» (eddig) a mostanáig tartó helyzetre utal, ezért közelmúlt (perfecto) jön: ha viajado.",
         "en": "«hasta ahora» (so far) points at the situation up to now, so the present perfect is used: ha viajado.",
         "es": "«hasta ahora» apunta a la situación hasta ahora, por eso va el perfecto: ha viajado.",
         "de": "«hasta ahora» (bis jetzt) verweist auf die Lage bis jetzt, deshalb steht das Perfekt: ha viajado."
       },
       "wrong": {
         "viajó": {
-          "hu": "viajó: befejezett múlt (indefinido): egy lezárt múltbeli dolgot mondana. Ide nem illik, mert a(z) «hasta ahora» (eddig) a mostanig tartó időre néz, az indefinido pedig lezárt időpontot jelölne. Helyesen: Hasta ahora mi hermana ha viajado mucho.",
+          "hu": "viajó: befejezett múlt (indefinido): egy lezárt múltbeli dolgot mondana. Ide nem illik, mert a(z) «hasta ahora» (eddig) a mostanáig tartó időre néz, az indefinido pedig lezárt időpontot jelölne. Helyesen: Hasta ahora mi hermana ha viajado mucho.",
           "en": "viajó: preterite (indefinido): it would state a closed event in the past. It does not fit here, because «hasta ahora» (so far) looks at the time up to now, while the indefinido would mark a closed moment. Correct: Hasta ahora mi hermana ha viajado mucho.",
           "es": "viajó: indefinido: diría algo cerrado en el pasado. Aquí no encaja, porque «hasta ahora» mira el tiempo hasta ahora, y el indefinido marcaría un momento cerrado. Correcto: Hasta ahora mi hermana ha viajado mucho.",
           "de": "viajó: Indefinido: es würde ein abgeschlossenes Ereignis der Vergangenheit sagen. Das passt hier nicht, weil «hasta ahora» (bis jetzt) blickt auf die Zeit bis jetzt, das Indefinido würde einen abgeschlossenen Zeitpunkt markieren. Richtig: Hasta ahora mi hermana ha viajado mucho."
         },
         "viajaba": {
-          "hu": "viajaba: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «hasta ahora» (eddig) a mostanig tartó időre néz, nem múltbeli szokásra vagy háttérre. Helyesen: Hasta ahora mi hermana ha viajado mucho.",
+          "hu": "viajaba: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «hasta ahora» (eddig) a mostanáig tartó időre néz, nem múltbeli szokásra vagy háttérre. Helyesen: Hasta ahora mi hermana ha viajado mucho.",
           "en": "viajaba: imperfect (imperfecto): it would describe a habit or a background. It does not fit here, because «hasta ahora» (so far) looks at the time up to now, not at a past habit or a background. Correct: Hasta ahora mi hermana ha viajado mucho.",
           "es": "viajaba: imperfecto: describiría una costumbre o un fondo. Aquí no encaja, porque «hasta ahora» mira el tiempo hasta ahora, no una costumbre ni un fondo del pasado. Correcto: Hasta ahora mi hermana ha viajado mucho.",
           "de": "viajaba: Imperfekt: es würde eine Gewohnheit oder einen Hintergrund beschreiben. Das passt hier nicht, weil «hasta ahora» (bis jetzt) blickt auf die Zeit bis jetzt, nicht auf eine vergangene Gewohnheit oder einen Hintergrund. Richtig: Hasta ahora mi hermana ha viajado mucho."
@@ -814,13 +814,13 @@
       },
       "wrong": {
         "comiste": {
-          "hu": "comiste: befejezett múlt (indefinido): egy lezárt múltbeli dolgot mondana. Ide nem illik, mert a(z) «últimamente» (mostanában) a mostanig tartó időre néz, az indefinido pedig lezárt időpontot jelölne. Helyesen: Últimamente has comido muy bien.",
+          "hu": "comiste: befejezett múlt (indefinido): egy lezárt múltbeli dolgot mondana. Ide nem illik, mert a(z) «últimamente» (mostanában) a mostanáig tartó időre néz, az indefinido pedig lezárt időpontot jelölne. Helyesen: Últimamente has comido muy bien.",
           "en": "comiste: preterite (indefinido): it would state a closed event in the past. It does not fit here, because «últimamente» (lately) looks at the time up to now, while the indefinido would mark a closed moment. Correct: Últimamente has comido muy bien.",
           "es": "comiste: indefinido: diría algo cerrado en el pasado. Aquí no encaja, porque «últimamente» mira el tiempo hasta ahora, y el indefinido marcaría un momento cerrado. Correcto: Últimamente has comido muy bien.",
           "de": "comiste: Indefinido: es würde ein abgeschlossenes Ereignis der Vergangenheit sagen. Das passt hier nicht, weil «últimamente» (in letzter Zeit) blickt auf die Zeit bis jetzt, das Indefinido würde einen abgeschlossenen Zeitpunkt markieren. Richtig: Últimamente has comido muy bien."
         },
         "comías": {
-          "hu": "comías: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «últimamente» (mostanában) a mostanig tartó időre néz, nem múltbeli szokásra vagy háttérre. Helyesen: Últimamente has comido muy bien.",
+          "hu": "comías: folyamatos múlt (imperfecto): szokást vagy hátteret mondana. Ide nem illik, mert a(z) «últimamente» (mostanában) a mostanáig tartó időre néz, nem múltbeli szokásra vagy háttérre. Helyesen: Últimamente has comido muy bien.",
           "en": "comías: imperfect (imperfecto): it would describe a habit or a background. It does not fit here, because «últimamente» (lately) looks at the time up to now, not at a past habit or a background. Correct: Últimamente has comido muy bien.",
           "es": "comías: imperfecto: describiría una costumbre o un fondo. Aquí no encaja, porque «últimamente» mira el tiempo hasta ahora, no una costumbre ni un fondo del pasado. Correcto: Últimamente has comido muy bien.",
           "de": "comías: Imperfekt: es würde eine Gewohnheit oder einen Hintergrund beschreiben. Das passt hier nicht, weil «últimamente» (in letzter Zeit) blickt auf die Zeit bis jetzt, nicht auf eine vergangene Gewohnheit oder einen Hintergrund. Richtig: Últimamente has comido muy bien."
@@ -1036,7 +1036,7 @@
             "de": "eine Gewohnheit oder ein Hintergrund in der Vergangenheit → Imperfekt"
           },
           "wrong": {
-            "hu": "ez múltbeli szokás vagy háttér lenne, de a(z) «hasta ahora» (eddig) a mostanig tartó időre néz",
+            "hu": "ez múltbeli szokás vagy háttér lenne, de a(z) «hasta ahora» (eddig) a mostanáig tartó időre néz",
             "en": "this would be a past habit or background, but «hasta ahora» (so far) looks at the time up to now",
             "es": "esto sería una costumbre o un fondo del pasado, pero «hasta ahora» mira el tiempo hasta ahora",
             "de": "das wäre eine vergangene Gewohnheit oder ein Hintergrund, aber «hasta ahora» (bis jetzt) blickt auf die Zeit bis jetzt"
@@ -1050,7 +1050,7 @@
             "de": "ein abgeschlossenes, einmaliges Ereignis in der Vergangenheit → Indefinido"
           },
           "wrong": {
-            "hu": "ez lezárt időpontot jelölne, de a(z) «hasta ahora» (eddig) a mostanig tartó időre néz",
+            "hu": "ez lezárt időpontot jelölne, de a(z) «hasta ahora» (eddig) a mostanáig tartó időre néz",
             "en": "this would mark a closed moment, but «hasta ahora» (so far) looks at the time up to now",
             "es": "esto marcaría un momento cerrado, pero «hasta ahora» mira el tiempo hasta ahora",
             "de": "das würde einen abgeschlossenen Zeitpunkt markieren, aber «hasta ahora» (bis jetzt) blickt auf die Zeit bis jetzt"
@@ -1283,7 +1283,7 @@
             "de": "ein abgeschlossenes, einmaliges Ereignis in der Vergangenheit → Indefinido"
           },
           "wrong": {
-            "hu": "ez lezárt időpontot jelölne, de a(z) «últimamente» (mostanában) a mostanig tartó időre néz",
+            "hu": "ez lezárt időpontot jelölne, de a(z) «últimamente» (mostanában) a mostanáig tartó időre néz",
             "en": "this would mark a closed moment, but «últimamente» (lately) looks at the time up to now",
             "es": "esto marcaría un momento cerrado, pero «últimamente» mira el tiempo hasta ahora",
             "de": "das würde einen abgeschlossenen Zeitpunkt markieren, aber «últimamente» (in letzter Zeit) blickt auf die Zeit bis jetzt"
@@ -1297,7 +1297,7 @@
             "de": "eine Gewohnheit oder ein Hintergrund in der Vergangenheit → Imperfekt"
           },
           "wrong": {
-            "hu": "ez múltbeli szokás vagy háttér lenne, de a(z) «últimamente» (mostanában) a mostanig tartó időre néz",
+            "hu": "ez múltbeli szokás vagy háttér lenne, de a(z) «últimamente» (mostanában) a mostanáig tartó időre néz",
             "en": "this would be a past habit or background, but «últimamente» (lately) looks at the time up to now",
             "es": "esto sería una costumbre o un fondo del pasado, pero «últimamente» mira el tiempo hasta ahora",
             "de": "das wäre eine vergangene Gewohnheit oder ein Hintergrund, aber «últimamente» (in letzter Zeit) blickt auf die Zeit bis jetzt"
@@ -1330,7 +1330,9 @@
       "answer": "Ayer comí en casa de mi madre.",
       "accept": [
         "Ayer yo comí en casa de mi madre.",
-        "Comí en casa de mi madre ayer."
+        "Comí en casa de mi madre ayer.",
+        "Yo ayer comí en casa de mi madre.",
+        "Yo comí en casa de mi madre ayer."
       ],
       "wordIds": [
         "25",
@@ -1361,7 +1363,9 @@
       "answer": "Hasta ahorita no has visto esa película.",
       "accept": [
         "Hasta ahorita tú no has visto esa película.",
-        "No has visto esa película hasta ahorita."
+        "No has visto esa película hasta ahorita.",
+        "Tú hasta ahorita no has visto esa película.",
+        "Tú no has visto esa película hasta ahorita."
       ],
       "wordIds": [
         "37",
@@ -1369,7 +1373,7 @@
         "1875"
       ],
       "why": {
-        "hu": "A(z) «hasta ahorita» (egészen mostanáig) a mostanig tartó helyzetre utal: perfecto. ver, tú: has visto.",
+        "hu": "A(z) «hasta ahorita» (egészen mostanáig) a mostanáig tartó helyzetre utal: perfecto. ver, tú: has visto.",
         "en": "«hasta ahorita» (up to right now) points at the situation up to now: perfecto. ver, tú: has visto.",
         "es": "«hasta ahorita» apunta a la situación hasta ahora: perfecto. ver, tú: has visto.",
         "de": "«hasta ahorita» (bis jetzt) verweist auf die Lage bis jetzt: Perfekt. ver, tú: has visto."
@@ -1391,7 +1395,9 @@
       "answer": "¿Comiste con tu familia el domingo?",
       "accept": [
         "¿El domingo comiste con tu familia?",
-        "¿Tú comiste con tu familia el domingo?"
+        "¿Tú comiste con tu familia el domingo?",
+        "¿El domingo tú comiste con tu familia?",
+        "¿Tú el domingo comiste con tu familia?"
       ],
       "wordIds": [
         "25",
@@ -1421,7 +1427,9 @@
       "answer": "¿Han visto a su abuelo últimamente?",
       "accept": [
         "¿Últimamente han visto a su abuelo?",
-        "¿Ellos han visto a su abuelo últimamente?"
+        "¿Ellos han visto a su abuelo últimamente?",
+        "¿Últimamente ellos han visto a su abuelo?",
+        "¿Ellos últimamente han visto a su abuelo?"
       ],
       "wordIds": [
         "37",
@@ -1451,7 +1459,9 @@
       "answer": "En julio no comimos pescado.",
       "accept": [
         "En julio nosotros no comimos pescado.",
-        "No comimos pescado en julio."
+        "No comimos pescado en julio.",
+        "Nosotros en julio no comimos pescado.",
+        "Nosotros no comimos pescado en julio."
       ],
       "wordIds": [
         "25",
@@ -1481,7 +1491,9 @@
       "answer": "Hasta el momento hemos visto tres películas.",
       "accept": [
         "Hasta el momento nosotros hemos visto tres películas.",
-        "Hemos visto tres películas hasta el momento."
+        "Hemos visto tres películas hasta el momento.",
+        "Nosotros hasta el momento hemos visto tres películas.",
+        "Nosotros hemos visto tres películas hasta el momento."
       ],
       "wordIds": [
         "37",
@@ -1490,7 +1502,7 @@
         "1977"
       ],
       "why": {
-        "hu": "A(z) «hasta el momento» (eddig) a mostanig tartó helyzetre utal: perfecto. ver, nosotros: hemos visto.",
+        "hu": "A(z) «hasta el momento» (eddig) a mostanáig tartó helyzetre utal: perfecto. ver, nosotros: hemos visto.",
         "en": "«hasta el momento» (so far) points at the situation up to now: perfecto. ver, nosotros: hemos visto.",
         "es": "«hasta el momento» apunta a la situación hasta ahora: perfecto. ver, nosotros: hemos visto.",
         "de": "«hasta el momento» (bis jetzt) verweist auf die Lage bis jetzt: Perfekt. ver, nosotros: hemos visto."
@@ -1512,7 +1524,9 @@
       "answer": "El lunes hiciste ejercicio.",
       "accept": [
         "El lunes tú hiciste ejercicio.",
-        "Hiciste ejercicio el lunes."
+        "Hiciste ejercicio el lunes.",
+        "Tú el lunes hiciste ejercicio.",
+        "Tú hiciste ejercicio el lunes."
       ],
       "wordIds": [
         "34",
@@ -1542,14 +1556,16 @@
       "answer": "Hasta ahorita no he estado en el campo.",
       "accept": [
         "Hasta ahorita yo no he estado en el campo.",
-        "No he estado en el campo hasta ahorita."
+        "No he estado en el campo hasta ahorita.",
+        "Yo hasta ahorita no he estado en el campo.",
+        "Yo no he estado en el campo hasta ahorita."
       ],
       "wordIds": [
         "3743",
         "1862"
       ],
       "why": {
-        "hu": "A(z) «hasta ahorita» (egészen mostanáig) a mostanig tartó helyzetre utal: perfecto. estar, yo: he estado.",
+        "hu": "A(z) «hasta ahorita» (egészen mostanáig) a mostanáig tartó helyzetre utal: perfecto. estar, yo: he estado.",
         "en": "«hasta ahorita» (up to right now) points at the situation up to now: perfecto. estar, yo: he estado.",
         "es": "«hasta ahorita» apunta a la situación hasta ahora: perfecto. estar, yo: he estado.",
         "de": "«hasta ahorita» (bis jetzt) verweist auf die Lage bis jetzt: Perfekt. estar, yo: he estado."
@@ -1571,7 +1587,9 @@
       "answer": "¿Hicieron un viaje largo en 2018?",
       "accept": [
         "¿En 2018 hicieron un viaje largo?",
-        "¿Ellos hicieron un viaje largo en 2018?"
+        "¿Ellos hicieron un viaje largo en 2018?",
+        "¿En 2018 ellos hicieron un viaje largo?",
+        "¿Ellos en 2018 hicieron un viaje largo?"
       ],
       "wordIds": [
         "34",
@@ -1601,7 +1619,9 @@
       "answer": "¿Has estado en casa todo este tiempo?",
       "accept": [
         "¿Todo este tiempo has estado en casa?",
-        "¿Tú has estado en casa todo este tiempo?"
+        "¿Tú has estado en casa todo este tiempo?",
+        "¿Todo este tiempo tú has estado en casa?",
+        "¿Tú todo este tiempo has estado en casa?"
       ],
       "wordIds": [
         "3743",
@@ -1631,7 +1651,9 @@
       "answer": "Hace dos días no hice la cena.",
       "accept": [
         "Hace dos días yo no hice la cena.",
-        "No hice la cena hace dos días."
+        "No hice la cena hace dos días.",
+        "Yo hace dos días no hice la cena.",
+        "Yo no hice la cena hace dos días."
       ],
       "wordIds": [
         "34",
@@ -1662,7 +1684,9 @@
       "answer": "Hasta ahora hemos estado bien.",
       "accept": [
         "Hasta ahora nosotros hemos estado bien.",
-        "Hemos estado bien hasta ahora."
+        "Hemos estado bien hasta ahora.",
+        "Nosotros hasta ahora hemos estado bien.",
+        "Nosotros hemos estado bien hasta ahora."
       ],
       "wordIds": [
         "3743",
@@ -1670,7 +1694,7 @@
         "12"
       ],
       "why": {
-        "hu": "A(z) «hasta ahora» (eddig) a mostanig tartó helyzetre utal: perfecto. estar, nosotros: hemos estado.",
+        "hu": "A(z) «hasta ahora» (eddig) a mostanáig tartó helyzetre utal: perfecto. estar, nosotros: hemos estado.",
         "en": "«hasta ahora» (so far) points at the situation up to now: perfecto. estar, nosotros: hemos estado.",
         "es": "«hasta ahora» apunta a la situación hasta ahora: perfecto. estar, nosotros: hemos estado.",
         "de": "«hasta ahora» (bis jetzt) verweist auf die Lage bis jetzt: Perfekt. estar, nosotros: hemos estado."
@@ -1692,7 +1716,9 @@
       "answer": "El sábado fuimos al parque con mis amigos.",
       "accept": [
         "El sábado nosotros fuimos al parque con mis amigos.",
-        "Fuimos al parque con mis amigos el sábado."
+        "Fuimos al parque con mis amigos el sábado.",
+        "Nosotros el sábado fuimos al parque con mis amigos.",
+        "Nosotros fuimos al parque con mis amigos el sábado."
       ],
       "wordIds": [
         "31",
@@ -1723,7 +1749,9 @@
       "answer": "No he viajado en avión en toda mi vida.",
       "accept": [
         "Yo no he viajado en avión en toda mi vida.",
-        "En toda mi vida no he viajado en avión."
+        "En toda mi vida no he viajado en avión.",
+        "En toda mi vida yo no he viajado en avión.",
+        "Yo en toda mi vida no he viajado en avión."
       ],
       "wordIds": [
         "1579",
@@ -1753,7 +1781,9 @@
       "answer": "¿Fue al hospital anoche?",
       "accept": [
         "¿Anoche fue al hospital?",
-        "¿Ella fue al hospital anoche?"
+        "¿Ella fue al hospital anoche?",
+        "¿Anoche ella fue al hospital?",
+        "¿Ella anoche fue al hospital?"
       ],
       "wordIds": [
         "31",
@@ -1783,7 +1813,9 @@
       "answer": "Siempre han viajado solos.",
       "accept": [
         "Ellos siempre han viajado solos.",
-        "Han viajado solos siempre."
+        "Han viajado solos siempre.",
+        "Siempre ellos han viajado solos.",
+        "Ellos han viajado solos siempre."
       ],
       "wordIds": [
         "1579",
@@ -1791,7 +1823,7 @@
         "57"
       ],
       "why": {
-        "hu": "A(z) «siempre» (mindig) a mostanig tartó helyzetre utal: perfecto. viajar, ellos: han viajado.",
+        "hu": "A(z) «siempre» (mindig) a mostanáig tartó helyzetre utal: perfecto. viajar, ellos: han viajado.",
         "en": "«siempre» (always) points at the situation up to now: perfecto. viajar, ellos: han viajado.",
         "es": "«siempre» apunta a la situación hasta ahora: perfecto. viajar, ellos: han viajado.",
         "de": "«siempre» (immer) verweist auf die Lage bis jetzt: Perfekt. viajar, ellos: han viajado."
@@ -1813,7 +1845,9 @@
       "answer": "Ayer fui al mercado con mi hermana.",
       "accept": [
         "Ayer yo fui al mercado con mi hermana.",
-        "Fui al mercado con mi hermana ayer."
+        "Fui al mercado con mi hermana ayer.",
+        "Yo ayer fui al mercado con mi hermana.",
+        "Yo fui al mercado con mi hermana ayer."
       ],
       "wordIds": [
         "31",
@@ -1844,7 +1878,9 @@
       "answer": "Desde hace dos días no has escrito el correo.",
       "accept": [
         "Desde hace dos días tú no has escrito el correo.",
-        "No has escrito el correo desde hace dos días."
+        "No has escrito el correo desde hace dos días.",
+        "Tú desde hace dos días no has escrito el correo.",
+        "Tú no has escrito el correo desde hace dos días."
       ],
       "wordIds": [
         "1412",
@@ -1853,7 +1889,7 @@
         "49"
       ],
       "why": {
-        "hu": "A(z) «desde hace dos días» (két napja) a mostanig tartó helyzetre utal: perfecto. escribir, tú: has escrito.",
+        "hu": "A(z) «desde hace dos días» (két napja) a mostanáig tartó helyzetre utal: perfecto. escribir, tú: has escrito.",
         "en": "«desde hace dos días» (for two days) points at the situation up to now: perfecto. escribir, tú: has escrito.",
         "es": "«desde hace dos días» apunta a la situación hasta ahora: perfecto. escribir, tú: has escrito.",
         "de": "«desde hace dos días» (seit zwei Tagen) verweist auf die Lage bis jetzt: Perfekt. escribir, tú: has escrito."
@@ -1875,7 +1911,9 @@
       "answer": "Anoche vimos una película en el cine.",
       "accept": [
         "Anoche nosotros vimos una película en el cine.",
-        "Vimos una película en el cine anoche."
+        "Vimos una película en el cine anoche.",
+        "Nosotros anoche vimos una película en el cine.",
+        "Nosotros vimos una película en el cine anoche."
       ],
       "wordIds": [
         "37",
@@ -1906,7 +1944,9 @@
       "answer": "Hasta el momento no ha escrito la carta.",
       "accept": [
         "Hasta el momento ella no ha escrito la carta.",
-        "No ha escrito la carta hasta el momento."
+        "No ha escrito la carta hasta el momento.",
+        "Ella hasta el momento no ha escrito la carta.",
+        "Ella no ha escrito la carta hasta el momento."
       ],
       "wordIds": [
         "1412",
@@ -1914,7 +1954,7 @@
         "1977"
       ],
       "why": {
-        "hu": "A(z) «hasta el momento» (eddig) a mostanig tartó helyzetre utal: perfecto. escribir, ella: ha escrito.",
+        "hu": "A(z) «hasta el momento» (eddig) a mostanáig tartó helyzetre utal: perfecto. escribir, ella: ha escrito.",
         "en": "«hasta el momento» (so far) points at the situation up to now: perfecto. escribir, ella: ha escrito.",
         "es": "«hasta el momento» apunta a la situación hasta ahora: perfecto. escribir, ella: ha escrito.",
         "de": "«hasta el momento» (bis jetzt) verweist auf die Lage bis jetzt: Perfekt. escribir, ella: ha escrito."
@@ -1936,7 +1976,9 @@
       "answer": "¿Viste a tu abuelo el miércoles?",
       "accept": [
         "¿El miércoles viste a tu abuelo?",
-        "¿Tú viste a tu abuelo el miércoles?"
+        "¿Tú viste a tu abuelo el miércoles?",
+        "¿El miércoles tú viste a tu abuelo?",
+        "¿Tú el miércoles viste a tu abuelo?"
       ],
       "wordIds": [
         "37",
@@ -1966,7 +2008,9 @@
       "answer": "Últimamente he escrito mucho.",
       "accept": [
         "Últimamente yo he escrito mucho.",
-        "He escrito mucho últimamente."
+        "He escrito mucho últimamente.",
+        "Yo últimamente he escrito mucho.",
+        "Yo he escrito mucho últimamente."
       ],
       "wordIds": [
         "1412",
@@ -1996,7 +2040,9 @@
       "answer": "Ayer estuve en la oficina hasta tarde.",
       "accept": [
         "Ayer yo estuve en la oficina hasta tarde.",
-        "Estuve en la oficina hasta tarde ayer."
+        "Estuve en la oficina hasta tarde ayer.",
+        "Yo ayer estuve en la oficina hasta tarde.",
+        "Yo estuve en la oficina hasta tarde ayer."
       ],
       "wordIds": [
         "3743",
@@ -2027,7 +2073,9 @@
       "answer": "Hasta ahora hemos trabajado en casa.",
       "accept": [
         "Hasta ahora nosotros hemos trabajado en casa.",
-        "Hemos trabajado en casa hasta ahora."
+        "Hemos trabajado en casa hasta ahora.",
+        "Nosotros hasta ahora hemos trabajado en casa.",
+        "Nosotros hemos trabajado en casa hasta ahora."
       ],
       "wordIds": [
         "1409",
@@ -2035,7 +2083,7 @@
         "12"
       ],
       "why": {
-        "hu": "A(z) «hasta ahora» (eddig) a mostanig tartó helyzetre utal: perfecto. trabajar, nosotros: hemos trabajado.",
+        "hu": "A(z) «hasta ahora» (eddig) a mostanáig tartó helyzetre utal: perfecto. trabajar, nosotros: hemos trabajado.",
         "en": "«hasta ahora» (so far) points at the situation up to now: perfecto. trabajar, nosotros: hemos trabajado.",
         "es": "«hasta ahora» apunta a la situación hasta ahora: perfecto. trabajar, nosotros: hemos trabajado.",
         "de": "«hasta ahora» (bis jetzt) verweist auf die Lage bis jetzt: Perfekt. trabajar, nosotros: hemos trabajado."
@@ -2057,7 +2105,9 @@
       "answer": "El viernes no estuvieron en casa.",
       "accept": [
         "El viernes ellos no estuvieron en casa.",
-        "No estuvieron en casa el viernes."
+        "No estuvieron en casa el viernes.",
+        "Ellos el viernes no estuvieron en casa.",
+        "Ellos no estuvieron en casa el viernes."
       ],
       "wordIds": [
         "3743",
@@ -2087,7 +2137,9 @@
       "answer": "Hasta ahora has trabajado bien.",
       "accept": [
         "Hasta ahora tú has trabajado bien.",
-        "Has trabajado bien hasta ahora."
+        "Has trabajado bien hasta ahora.",
+        "Tú hasta ahora has trabajado bien.",
+        "Tú has trabajado bien hasta ahora."
       ],
       "wordIds": [
         "1409",
@@ -2095,7 +2147,7 @@
         "12"
       ],
       "why": {
-        "hu": "A(z) «hasta ahora» (eddig) a mostanig tartó helyzetre utal: perfecto. trabajar, tú: has trabajado.",
+        "hu": "A(z) «hasta ahora» (eddig) a mostanáig tartó helyzetre utal: perfecto. trabajar, tú: has trabajado.",
         "en": "«hasta ahora» (so far) points at the situation up to now: perfecto. trabajar, tú: has trabajado.",
         "es": "«hasta ahora» apunta a la situación hasta ahora: perfecto. trabajar, tú: has trabajado.",
         "de": "«hasta ahora» (bis jetzt) verweist auf die Lage bis jetzt: Perfekt. trabajar, tú: has trabajado."
@@ -2117,7 +2169,9 @@
       "answer": "En mayo viajé a la playa con mi familia.",
       "accept": [
         "En mayo yo viajé a la playa con mi familia.",
-        "Viajé a la playa con mi familia en mayo."
+        "Viajé a la playa con mi familia en mayo.",
+        "Yo en mayo viajé a la playa con mi familia.",
+        "Yo viajé a la playa con mi familia en mayo."
       ],
       "wordIds": [
         "1579",
@@ -2148,7 +2202,9 @@
       "answer": "Siempre he trabajado en la oficina.",
       "accept": [
         "Yo siempre he trabajado en la oficina.",
-        "He trabajado en la oficina siempre."
+        "He trabajado en la oficina siempre.",
+        "Siempre yo he trabajado en la oficina.",
+        "Yo he trabajado en la oficina siempre."
       ],
       "wordIds": [
         "1409",
@@ -2156,7 +2212,7 @@
         "57"
       ],
       "why": {
-        "hu": "A(z) «siempre» (mindig) a mostanig tartó helyzetre utal: perfecto. trabajar, yo: he trabajado.",
+        "hu": "A(z) «siempre» (mindig) a mostanáig tartó helyzetre utal: perfecto. trabajar, yo: he trabajado.",
         "en": "«siempre» (always) points at the situation up to now: perfecto. trabajar, yo: he trabajado.",
         "es": "«siempre» apunta a la situación hasta ahora: perfecto. trabajar, yo: he trabajado.",
         "de": "«siempre» (immer) verweist auf die Lage bis jetzt: Perfekt. trabajar, yo: he trabajado."
@@ -2178,7 +2234,9 @@
       "answer": "¿Viajaron en tren el martes?",
       "accept": [
         "¿El martes viajaron en tren?",
-        "¿Ellos viajaron en tren el martes?"
+        "¿Ellos viajaron en tren el martes?",
+        "¿El martes ellos viajaron en tren?",
+        "¿Ellos el martes viajaron en tren?"
       ],
       "wordIds": [
         "1579",
@@ -2217,7 +2275,7 @@
         "57"
       ],
       "why": {
-        "hu": "A(z) «siempre» (mindig) a mostanig tartó helyzetre utal: perfecto. comprar, ella: ha comprado.",
+        "hu": "A(z) «siempre» (mindig) a mostanáig tartó helyzetre utal: perfecto. comprar, ella: ha comprado.",
         "en": "«siempre» (always) points at the situation up to now: perfecto. comprar, ella: ha comprado.",
         "es": "«siempre» apunta a la situación hasta ahora: perfecto. comprar, ella: ha comprado.",
         "de": "«siempre» (immer) verweist auf die Lage bis jetzt: Perfekt. comprar, ella: ha comprado."
@@ -2239,7 +2297,9 @@
       "answer": "En 2016 no viajaste solo.",
       "accept": [
         "En 2016 tú no viajaste solo.",
-        "No viajaste solo en 2016."
+        "No viajaste solo en 2016.",
+        "Tú en 2016 no viajaste solo.",
+        "Tú no viajaste solo en 2016."
       ],
       "wordIds": [
         "1579",
@@ -2268,7 +2328,9 @@
       "answer": "Últimamente hemos comprado ropa nueva.",
       "accept": [
         "Últimamente nosotros hemos comprado ropa nueva.",
-        "Hemos comprado ropa nueva últimamente."
+        "Hemos comprado ropa nueva últimamente.",
+        "Nosotros últimamente hemos comprado ropa nueva.",
+        "Nosotros hemos comprado ropa nueva últimamente."
       ],
       "wordIds": [
         "1394",
@@ -2299,7 +2361,9 @@
       "answer": "El jueves escribí un correo a mi jefe.",
       "accept": [
         "El jueves yo escribí un correo a mi jefe.",
-        "Escribí un correo a mi jefe el jueves."
+        "Escribí un correo a mi jefe el jueves.",
+        "Yo el jueves escribí un correo a mi jefe.",
+        "Yo escribí un correo a mi jefe el jueves."
       ],
       "wordIds": [
         "1412",
@@ -2330,7 +2394,9 @@
       "answer": "Desde hace un mes no he hablado con mi jefe.",
       "accept": [
         "Desde hace un mes yo no he hablado con mi jefe.",
-        "No he hablado con mi jefe desde hace un mes."
+        "No he hablado con mi jefe desde hace un mes.",
+        "Yo desde hace un mes no he hablado con mi jefe.",
+        "Yo no he hablado con mi jefe desde hace un mes."
       ],
       "wordIds": [
         "27",
@@ -2338,7 +2404,7 @@
         "1315"
       ],
       "why": {
-        "hu": "A(z) «desde hace un mes» (egy hónapja) a mostanig tartó helyzetre utal: perfecto. hablar, yo: he hablado.",
+        "hu": "A(z) «desde hace un mes» (egy hónapja) a mostanáig tartó helyzetre utal: perfecto. hablar, yo: he hablado.",
         "en": "«desde hace un mes» (for a month) points at the situation up to now: perfecto. hablar, yo: he hablado.",
         "es": "«desde hace un mes» apunta a la situación hasta ahora: perfecto. hablar, yo: he hablado.",
         "de": "«desde hace un mes» (seit einem Monat) verweist auf die Lage bis jetzt: Perfekt. hablar, yo: he hablado."
@@ -2360,7 +2426,9 @@
       "answer": "Anoche escribió una carta a su abuela.",
       "accept": [
         "Anoche ella escribió una carta a su abuela.",
-        "Escribió una carta a su abuela anoche."
+        "Escribió una carta a su abuela anoche.",
+        "Ella anoche escribió una carta a su abuela.",
+        "Ella escribió una carta a su abuela anoche."
       ],
       "wordIds": [
         "1412",
@@ -2391,7 +2459,9 @@
       "answer": "¿Has hablado con el médico últimamente?",
       "accept": [
         "¿Últimamente has hablado con el médico?",
-        "¿Tú has hablado con el médico últimamente?"
+        "¿Tú has hablado con el médico últimamente?",
+        "¿Últimamente tú has hablado con el médico?",
+        "¿Tú últimamente has hablado con el médico?"
       ],
       "wordIds": [
         "27",
@@ -2421,7 +2491,9 @@
       "answer": "En 2020 trabajaste con tu padre.",
       "accept": [
         "En 2020 tú trabajaste con tu padre.",
-        "Trabajaste con tu padre en 2020."
+        "Trabajaste con tu padre en 2020.",
+        "Tú en 2020 trabajaste con tu padre.",
+        "Tú trabajaste con tu padre en 2020."
       ],
       "wordIds": [
         "1409",
@@ -2450,14 +2522,16 @@
       "answer": "Hasta ahorita no ha hablado con su hermano.",
       "accept": [
         "Hasta ahorita él no ha hablado con su hermano.",
-        "No ha hablado con su hermano hasta ahorita."
+        "No ha hablado con su hermano hasta ahorita.",
+        "Él hasta ahorita no ha hablado con su hermano.",
+        "Él no ha hablado con su hermano hasta ahorita."
       ],
       "wordIds": [
         "27",
         "1358"
       ],
       "why": {
-        "hu": "A(z) «hasta ahorita» (egészen mostanáig) a mostanig tartó helyzetre utal: perfecto. hablar, él: ha hablado.",
+        "hu": "A(z) «hasta ahorita» (egészen mostanáig) a mostanáig tartó helyzetre utal: perfecto. hablar, él: ha hablado.",
         "en": "«hasta ahorita» (up to right now) points at the situation up to now: perfecto. hablar, él: ha hablado.",
         "es": "«hasta ahorita» apunta a la situación hasta ahora: perfecto. hablar, él: ha hablado.",
         "de": "«hasta ahorita» (bis jetzt) verweist auf die Lage bis jetzt: Perfekt. hablar, él: ha hablado."
@@ -2479,7 +2553,9 @@
       "answer": "¿Trabajaron mucho en marzo?",
       "accept": [
         "¿En marzo trabajaron mucho?",
-        "¿Ellos trabajaron mucho en marzo?"
+        "¿Ellos trabajaron mucho en marzo?",
+        "¿En marzo ellos trabajaron mucho?",
+        "¿Ellos en marzo trabajaron mucho?"
       ],
       "wordIds": [
         "1409",
@@ -2509,7 +2585,9 @@
       "answer": "Hasta el momento no hemos hecho ejercicio.",
       "accept": [
         "Hasta el momento nosotros no hemos hecho ejercicio.",
-        "No hemos hecho ejercicio hasta el momento."
+        "No hemos hecho ejercicio hasta el momento.",
+        "Nosotros hasta el momento no hemos hecho ejercicio.",
+        "Nosotros no hemos hecho ejercicio hasta el momento."
       ],
       "wordIds": [
         "34",
@@ -2517,7 +2595,7 @@
         "1977"
       ],
       "why": {
-        "hu": "A(z) «hasta el momento» (eddig) a mostanig tartó helyzetre utal: perfecto. hacer, nosotros: hemos hecho.",
+        "hu": "A(z) «hasta el momento» (eddig) a mostanáig tartó helyzetre utal: perfecto. hacer, nosotros: hemos hecho.",
         "en": "«hasta el momento» (so far) points at the situation up to now: perfecto. hacer, nosotros: hemos hecho.",
         "es": "«hasta el momento» apunta a la situación hasta ahora: perfecto. hacer, nosotros: hemos hecho.",
         "de": "«hasta el momento» (bis jetzt) verweist auf die Lage bis jetzt: Perfekt. hacer, nosotros: hemos hecho."
@@ -2539,7 +2617,9 @@
       "answer": "Hace dos días compré un regalo para mi padre.",
       "accept": [
         "Hace dos días yo compré un regalo para mi padre.",
-        "Compré un regalo para mi padre hace dos días."
+        "Compré un regalo para mi padre hace dos días.",
+        "Yo hace dos días compré un regalo para mi padre.",
+        "Yo compré un regalo para mi padre hace dos días."
       ],
       "wordIds": [
         "1394",
@@ -2571,7 +2651,9 @@
       "answer": "Toda la semana he hecho la comida.",
       "accept": [
         "Toda la semana yo he hecho la comida.",
-        "He hecho la comida toda la semana."
+        "He hecho la comida toda la semana.",
+        "Yo toda la semana he hecho la comida.",
+        "Yo he hecho la comida toda la semana."
       ],
       "wordIds": [
         "34",
@@ -2601,7 +2683,9 @@
       "answer": "En 2022 no compró coche.",
       "accept": [
         "En 2022 ella no compró coche.",
-        "No compró coche en 2022."
+        "No compró coche en 2022.",
+        "Ella en 2022 no compró coche.",
+        "Ella no compró coche en 2022."
       ],
       "wordIds": [
         "1394",
@@ -2630,7 +2714,9 @@
       "answer": "¿Has ido a la playa toda la semana?",
       "accept": [
         "¿Toda la semana has ido a la playa?",
-        "¿Tú has ido a la playa toda la semana?"
+        "¿Tú has ido a la playa toda la semana?",
+        "¿Toda la semana tú has ido a la playa?",
+        "¿Tú toda la semana has ido a la playa?"
       ],
       "wordIds": [
         "31",
@@ -2660,7 +2746,9 @@
       "answer": "En octubre compraste zapatos.",
       "accept": [
         "En octubre tú compraste zapatos.",
-        "Compraste zapatos en octubre."
+        "Compraste zapatos en octubre.",
+        "Tú en octubre compraste zapatos.",
+        "Tú compraste zapatos en octubre."
       ],
       "wordIds": [
         "1394",
@@ -2690,7 +2778,9 @@
       "answer": "Desde hace un mes no hemos ido al cine.",
       "accept": [
         "Desde hace un mes nosotros no hemos ido al cine.",
-        "No hemos ido al cine desde hace un mes."
+        "No hemos ido al cine desde hace un mes.",
+        "Nosotros desde hace un mes no hemos ido al cine.",
+        "Nosotros no hemos ido al cine desde hace un mes."
       ],
       "wordIds": [
         "31",
@@ -2698,7 +2788,7 @@
         "1315"
       ],
       "why": {
-        "hu": "A(z) «desde hace un mes» (egy hónapja) a mostanig tartó helyzetre utal: perfecto. ir, nosotros: hemos ido.",
+        "hu": "A(z) «desde hace un mes» (egy hónapja) a mostanáig tartó helyzetre utal: perfecto. ir, nosotros: hemos ido.",
         "en": "«desde hace un mes» (for a month) points at the situation up to now: perfecto. ir, nosotros: hemos ido.",
         "es": "«desde hace un mes» apunta a la situación hasta ahora: perfecto. ir, nosotros: hemos ido.",
         "de": "«desde hace un mes» (seit einem Monat) verweist auf die Lage bis jetzt: Perfekt. ir, nosotros: hemos ido."
@@ -2720,7 +2810,9 @@
       "answer": "El lunes hablé con mi abuelo por teléfono.",
       "accept": [
         "El lunes yo hablé con mi abuelo por teléfono.",
-        "Hablé con mi abuelo por teléfono el lunes."
+        "Hablé con mi abuelo por teléfono el lunes.",
+        "Yo el lunes hablé con mi abuelo por teléfono.",
+        "Yo hablé con mi abuelo por teléfono el lunes."
       ],
       "wordIds": [
         "27",
@@ -2751,7 +2843,9 @@
       "answer": "Últimamente has comido bien.",
       "accept": [
         "Últimamente tú has comido bien.",
-        "Has comido bien últimamente."
+        "Has comido bien últimamente.",
+        "Tú últimamente has comido bien.",
+        "Tú has comido bien últimamente."
       ],
       "wordIds": [
         "25",
@@ -2781,7 +2875,9 @@
       "answer": "¿Hablaste con tu vecino hace dos días?",
       "accept": [
         "¿Hace dos días hablaste con tu vecino?",
-        "¿Tú hablaste con tu vecino hace dos días?"
+        "¿Tú hablaste con tu vecino hace dos días?",
+        "¿Hace dos días tú hablaste con tu vecino?",
+        "¿Tú hace dos días hablaste con tu vecino?"
       ],
       "wordIds": [
         "27",

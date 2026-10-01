@@ -667,7 +667,7 @@
           "de": "Diese Struktur gibt es nicht: nach haber steht ein Partizip, keine Präsensform; richtig: Siempre he tenido mucho trabajo."
         },
         "has tenido": {
-          "hu": "Ezzel a mondat azt jelentené: \"te mindig sok munkát kaptál (2. személy), a (yo) viszont engem jelöl\", ami nem illik ide; helyesen: Siempre he tenido mucho trabajo.",
+          "hu": "Ezzel a mondat azt jelentené: \"neked mindig sok munkád volt (2. személy), a (yo) viszont engem jelöl\", ami nem illik ide; helyesen: Siempre he tenido mucho trabajo.",
           "en": "This would say: \"you have always had a lot of work (second person), but (yo) means I\", which does not fit here; correctly: Siempre he tenido mucho trabajo.",
           "es": "Esto diría: \"tú siempre has tenido mucho trabajo (segunda persona), pero (yo) indica que soy yo\", lo cual no encaja aquí; correctamente: Siempre he tenido mucho trabajo.",
           "de": "Das würde bedeuten: \"du hattest immer viel Arbeit (zweite Person), aber (yo) bedeutet ich\", was hier nicht passt; richtig: Siempre he tenido mucho trabajo."
@@ -1738,7 +1738,7 @@
       },
       "prompt": {
         "hu": "Egy hónapja keveset beszélünk.",
-        "en": "For a month now we talk little.",
+        "en": "We've been talking little for a month now.",
         "es": "Desde hace un mes hablamos poco.",
         "de": "Seit einem Monat reden wir wenig."
       },
@@ -1769,10 +1769,10 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Eddig nem beszélek vele.",
-        "en": "So far I do not talk to her.",
-        "es": "Hasta ahora no hablo con ella.",
-        "de": "Bisher spreche ich nicht mit ihr."
+        "hu": "Nem beszélek vele. (eddig)",
+        "en": "I don't talk to her. (so far)",
+        "es": "No hablo con ella. (hasta ahora)",
+        "de": "Ich spreche nicht mit ihr. (bisher)"
       },
       "answer": "Hasta ahora no he hablado con ella.",
       "accept": [
@@ -1865,10 +1865,10 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Egyelőre nem eszem húst.",
-        "en": "So far I do not eat meat.",
-        "es": "Hasta el momento no como carne.",
-        "de": "Bisher esse ich kein Fleisch."
+        "hu": "Nem eszem húst. (eddig)",
+        "en": "I don't eat meat. (so far)",
+        "es": "No como carne. (hasta el momento)",
+        "de": "Ich esse kein Fleisch. (bisher)"
       },
       "answer": "Hasta el momento no he comido carne.",
       "accept": [
@@ -2067,7 +2067,7 @@
       },
       "prompt": {
         "hu": "A szüleim januártól a fivéremmel laknak.",
-        "en": "My parents live with my brother since January.",
+        "en": "My parents have been living with my brother since January.",
         "es": "Mis padres viven con mi hermano desde enero.",
         "de": "Meine Eltern wohnen seit Januar bei meinem Bruder."
       },
@@ -2097,10 +2097,10 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Eddig nem lakunk szállodában.",
-        "en": "So far we do not live in a hotel.",
-        "es": "Hasta ahora no vivimos en un hotel.",
-        "de": "Bisher wohnen wir nicht in einem Hotel."
+        "hu": "Nem lakunk szállodában. (eddig)",
+        "en": "We don't live in a hotel. (so far)",
+        "es": "No vivimos en un hotel. (hasta ahora)",
+        "de": "Wir wohnen nicht in einem Hotel. (bisher)"
       },
       "answer": "Hasta ahora no hemos vivido en un hotel.",
       "accept": [
@@ -2130,7 +2130,7 @@
       },
       "prompt": {
         "hu": "Régóta a családjával lakik?",
-        "en": "Does she live with her family for some time now?",
+        "en": "Has she been living with her family for some time now?",
         "es": "¿Vive ella con su familia desde hace tiempo?",
         "de": "Wohnt sie schon seit Langem bei ihrer Familie?"
       },
@@ -2227,7 +2227,7 @@
       },
       "prompt": {
         "hu": "Hétfőtől egy ügyfélnek dolgozol.",
-        "en": "Since Monday you work for a client.",
+        "en": "You have been working for a client since Monday.",
         "es": "Desde el lunes trabajas para un cliente.",
         "de": "Seit Montag arbeitest du für einen Kunden."
       },
@@ -2258,10 +2258,10 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Egyelőre nem dolgozom a projekten.",
-        "en": "So far I do not work on the project.",
-        "es": "Hasta el momento no trabajo en el proyecto.",
-        "de": "Bisher arbeite ich nicht am Projekt."
+        "hu": "Nem dolgozom a projekten. (eddig)",
+        "en": "I don't work on the project. (so far)",
+        "es": "No trabajo en el proyecto. (hasta el momento)",
+        "de": "Ich arbeite nicht am Projekt. (bisher)"
       },
       "answer": "Hasta el momento no he trabajado en el proyecto.",
       "accept": [
@@ -2291,7 +2291,7 @@
       },
       "prompt": {
         "hu": "Hétfő óta otthon dolgozol?",
-        "en": "Do you work at home since Monday?",
+        "en": "Have you been working at home since Monday?",
         "es": "¿Trabajas en casa desde el lunes?",
         "de": "Arbeitest du seit Montag zu Hause?"
       },
@@ -2323,7 +2323,7 @@
       },
       "prompt": {
         "hu": "Januártól repülővel utazom.",
-        "en": "Since January I travel by plane.",
+        "en": "I have been traveling by plane since January.",
         "es": "Desde enero viajo en avión.",
         "de": "Seit Januar reise ich mit dem Flugzeug."
       },
@@ -2355,7 +2355,7 @@
       },
       "prompt": {
         "hu": "Sokszor a tengerpartra utazunk.",
-        "en": "Many times we travel to the beach.",
+        "en": "We often travel to the beach.",
         "es": "Muchas veces viajamos a la playa.",
         "de": "Oft reisen wir an den Strand."
       },
@@ -2388,7 +2388,7 @@
       },
       "prompt": {
         "hu": "Évek óta vonattal utazunk.",
-        "en": "For years we travel by train.",
+        "en": "We have been traveling by train for years.",
         "es": "Desde hace años viajamos en tren.",
         "de": "Seit Jahren reisen wir mit dem Zug."
       },
@@ -2419,10 +2419,10 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Eddig nem utazom busszal.",
-        "en": "So far I do not travel by bus.",
-        "es": "Hasta ahora no viajo en autobús.",
-        "de": "Bisher fahre ich nicht mit dem Bus."
+        "hu": "Nem utazom busszal. (eddig)",
+        "en": "I don't travel by bus. (so far)",
+        "es": "No viajo en autobús. (hasta ahora)",
+        "de": "Ich fahre nicht mit dem Bus. (bisher)"
       },
       "answer": "Hasta ahora no he viajado en autobús.",
       "accept": [
@@ -2452,7 +2452,7 @@
       },
       "prompt": {
         "hu": "Régóta a barátnőddel utazol?",
-        "en": "Do you travel with your girlfriend for some time now?",
+        "en": "Have you been traveling with your girlfriend for some time now?",
         "es": "¿Viajas con tu novia desde hace tiempo?",
         "de": "Reist du schon seit Langem mit deiner Freundin?"
       },
@@ -2484,7 +2484,7 @@
       },
       "prompt": {
         "hu": "Hétfőtől a vizsgára tanulok.",
-        "en": "Since Monday I study for the exam.",
+        "en": "I have been studying for the exam since Monday.",
         "es": "Desde el lunes estudio para el examen.",
         "de": "Seit Montag lerne ich für die Prüfung."
       },
@@ -2516,7 +2516,7 @@
       },
       "prompt": {
         "hu": "Tegnap óta zenével tanulok.",
-        "en": "Since yesterday I study with music.",
+        "en": "I have been studying with music since yesterday.",
         "es": "Desde ayer estudio con música.",
         "de": "Seit gestern lerne ich mit Musik."
       },
@@ -2581,10 +2581,10 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Egész héten nem tanulom a szavakat.",
-        "en": "All week I do not study the words.",
-        "es": "Toda la semana no estudio las palabras.",
-        "de": "Die ganze Woche lerne ich die Wörter nicht."
+        "hu": "Nem tanulom a szavakat. (egész héten)",
+        "en": "I don't study the words. (all week)",
+        "es": "No estudio las palabras. (toda la semana)",
+        "de": "Ich lerne die Wörter nicht. (die ganze Woche)"
       },
       "answer": "Toda la semana no he estudiado las palabras.",
       "accept": [
@@ -2615,7 +2615,7 @@
       },
       "prompt": {
         "hu": "Egy ideje a barátaiddal tanulsz?",
-        "en": "Do you study with your friends for a while now?",
+        "en": "Have you been studying with your friends for a while now?",
         "es": "¿Estudias con tus amigos desde hace rato?",
         "de": "Lernst du schon eine Weile mit deinen Freunden?"
       },
@@ -2647,7 +2647,7 @@
       },
       "prompt": {
         "hu": "Reggel óta kávét főzök mindenkinek.",
-        "en": "Since this morning I make coffee for everyone.",
+        "en": "I have been making coffee for everyone since this morning.",
         "es": "Desde la mañana hago café para todos.",
         "de": "Seit heute früh mache ich Kaffee für alle."
       },
@@ -2679,29 +2679,29 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Hét óta vacsorát készítünk a családomnak.",
-        "en": "Since seven we make dinner for my family.",
-        "es": "Desde las siete hacemos la cena para mi familia.",
-        "de": "Seit sieben Uhr machen wir das Abendessen für meine Familie."
+        "hu": "Csütörtöktől vacsorát készítünk a családomnak.",
+        "en": "We have been making dinner for my family since Thursday.",
+        "es": "Desde el jueves hacemos la cena para mi familia.",
+        "de": "Seit Donnerstag machen wir das Abendessen für meine Familie."
       },
-      "answer": "Desde las siete hemos hecho la cena para mi familia.",
+      "answer": "Desde el jueves hemos hecho la cena para mi familia.",
       "accept": [
-        "Nosotros desde las siete hemos hecho la cena para mi familia.",
-        "Desde las siete nosotros hemos hecho la cena para mi familia.",
-        "Hemos hecho la cena para mi familia desde las siete.",
-        "Nosotros hemos hecho la cena para mi familia desde las siete."
+        "Nosotros desde el jueves hemos hecho la cena para mi familia.",
+        "Desde el jueves nosotros hemos hecho la cena para mi familia.",
+        "Hemos hecho la cena para mi familia desde el jueves.",
+        "Nosotros hemos hecho la cena para mi familia desde el jueves."
       ],
       "wordIds": [
         "34",
-        "1007",
+        "1199",
         "1261",
         "1852"
       ],
       "why": {
-        "hu": "Valamikor kezdődött, és mostanáig tart (desde las siete): pretérito perfecto. A(z) hacer participiója rendhagyó: hecho, itt: hemos hecho.",
-        "en": "Something that began at some point and runs up to now (desde las siete): pretérito perfecto. The participle of hacer is irregular: hecho, here: hemos hecho.",
-        "es": "Algo que empezó en un momento y llega hasta ahora (desde las siete): pretérito perfecto. El participio de hacer es irregular: hecho, aquí: hemos hecho.",
-        "de": "Etwas, das irgendwann begann und bis jetzt läuft (desde las siete): pretérito perfecto. Das Partizip von hacer ist unregelmäßig: hecho, hier: hemos hecho."
+        "hu": "Valamikor kezdődött, és mostanáig tart (desde el jueves): pretérito perfecto. A(z) hacer participiója rendhagyó: hecho, itt: hemos hecho.",
+        "en": "Something that began at some point and runs up to now (desde el jueves): pretérito perfecto. The participle of hacer is irregular: hecho, here: hemos hecho.",
+        "es": "Algo que empezó en un momento y llega hasta ahora (desde el jueves): pretérito perfecto. El participio de hacer es irregular: hecho, aquí: hemos hecho.",
+        "de": "Etwas, das irgendwann begann und bis jetzt läuft (desde el jueves): pretérito perfecto. Das Partizip von hacer ist unregelmäßig: hecho, hier: hemos hecho."
       }
     },
     {
@@ -2712,10 +2712,10 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Mostanáig mindent megteszel a családodért.",
-        "en": "Up to today you do everything for your family.",
-        "es": "Hasta hoy haces todo por tu familia.",
-        "de": "Bis heute tust du alles für deine Familie."
+        "hu": "Mindent megteszel a családodért. (máig)",
+        "en": "You do everything for your family. (up to today)",
+        "es": "Haces todo por tu familia. (hasta hoy)",
+        "de": "Du tust alles für deine Familie. (bis heute)"
       },
       "answer": "Hasta hoy has hecho todo por tu familia.",
       "accept": [
@@ -2745,10 +2745,10 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Egyelőre nem teszünk semmit a projektért.",
-        "en": "So far we do nothing for the project.",
-        "es": "Hasta el momento no hacemos nada por el proyecto.",
-        "de": "Bisher tun wir nichts für das Projekt."
+        "hu": "Nem teszünk semmit a projektért. (eddig)",
+        "en": "We do nothing for the project. (so far)",
+        "es": "No hacemos nada por el proyecto. (hasta el momento)",
+        "de": "Wir tun nichts für das Projekt. (bisher)"
       },
       "answer": "Hasta el momento no hemos hecho nada por el proyecto.",
       "accept": [
@@ -2779,7 +2779,7 @@
       },
       "prompt": {
         "hu": "Önök péntek óta sportolnak?",
-        "en": "Do you exercise since Friday?",
+        "en": "Have you been exercising since Friday?",
         "es": "¿Hacen ustedes ejercicio desde el viernes?",
         "de": "Treiben Sie seit Freitag Sport?"
       },
@@ -2810,7 +2810,7 @@
       },
       "prompt": {
         "hu": "Sokszor reggel nézem a híreket.",
-        "en": "Many times I watch the news in the morning.",
+        "en": "I often watch the news in the morning.",
         "es": "Muchas veces veo las noticias en la mañana.",
         "de": "Oft sehe ich morgens die Nachrichten."
       },
@@ -2843,10 +2843,10 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Máig nem látom a szomszédomat.",
-        "en": "Up to today I do not see my neighbor.",
-        "es": "Hasta hoy no veo a mi vecino.",
-        "de": "Bis heute sehe ich meinen Nachbarn nicht."
+        "hu": "Nem látom a szomszédomat. (máig)",
+        "en": "I don't see my neighbor. (up to today)",
+        "es": "No veo a mi vecino. (hasta hoy)",
+        "de": "Ich sehe meinen Nachbarn nicht. (bis heute)"
       },
       "answer": "Hasta hoy no he visto a mi vecino.",
       "accept": [
@@ -2876,7 +2876,7 @@
       },
       "prompt": {
         "hu": "Márciustól angolul nézzük a filmeket.",
-        "en": "Since March we watch the movies in English.",
+        "en": "We have been watching movies in English since March.",
         "es": "Desde marzo vemos las películas en inglés.",
         "de": "Seit März sehen wir die Filme auf Englisch."
       },
@@ -2909,7 +2909,7 @@
       },
       "prompt": {
         "hu": "Régóta nem látjuk a barátaimat.",
-        "en": "For some time now we do not see my friends.",
+        "en": "We haven't seen my friends for some time now.",
         "es": "Desde hace tiempo no vemos a mis amigos.",
         "de": "Seit Langem sehen wir meine Freunde nicht."
       },
@@ -2940,10 +2940,10 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Január óta látod a fivéredet?",
-        "en": "Do you see your brother since January?",
-        "es": "¿Ves a tu hermano desde enero?",
-        "de": "Siehst du deinen Bruder seit Januar?"
+        "hu": "Látod a fivéredet? (január óta)",
+        "en": "Do you see your brother? (since January)",
+        "es": "¿Ves a tu hermano? (desde enero)",
+        "de": "Siehst du deinen Bruder? (seit Januar)"
       },
       "answer": "¿Has visto a tu hermano desde enero?",
       "accept": [
@@ -2973,7 +2973,7 @@
       },
       "prompt": {
         "hu": "Sokszor köszönök a szomszédomnak.",
-        "en": "Many times I say hello to my neighbor.",
+        "en": "I often say hello to my neighbor.",
         "es": "Muchas veces digo hola a mi vecino.",
         "de": "Oft sage ich meinem Nachbarn hallo."
       },
@@ -3007,7 +3007,7 @@
       },
       "prompt": {
         "hu": "Tegnap este óta furcsa dolgokat mondasz.",
-        "en": "Since last night you say strange things.",
+        "en": "You have been saying strange things since last night.",
         "es": "Desde anoche dices cosas raras.",
         "de": "Seit gestern Abend sagst du seltsame Dinge."
       },
@@ -3039,10 +3039,10 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Máig az orvos nem mond semmit.",
-        "en": "Up to today the doctor says nothing.",
-        "es": "Hasta hoy el médico no dice nada.",
-        "de": "Bis heute sagt der Arzt nichts."
+        "hu": "Az orvos nem mond semmit. (máig)",
+        "en": "The doctor says nothing. (up to today)",
+        "es": "El médico no dice nada. (hasta hoy)",
+        "de": "Der Arzt sagt nichts. (bis heute)"
       },
       "answer": "Hasta hoy el médico no ha dicho nada.",
       "accept": [
@@ -3071,7 +3071,7 @@
       },
       "prompt": {
         "hu": "Egy ideje nem mondunk semmit a tanárnak.",
-        "en": "For a while now we say nothing to the teacher.",
+        "en": "We haven't said anything to the teacher for a while now.",
         "es": "Desde hace rato no decimos nada al profesor.",
         "de": "Seit einer Weile sagen wir dem Lehrer nichts."
       },
@@ -3135,7 +3135,7 @@
       },
       "prompt": {
         "hu": "Keddtől e-maileket írok a főnökömnek.",
-        "en": "Since Tuesday I write emails to my boss.",
+        "en": "I have been writing emails to my boss since Tuesday.",
         "es": "Desde el martes escribo correos a mi jefe.",
         "de": "Seit Dienstag schreibe ich E-Mails an meinen Chef."
       },
@@ -3168,7 +3168,7 @@
       },
       "prompt": {
         "hu": "Júniustól leveleket írsz a barátodnak.",
-        "en": "Since June you write letters to your friend.",
+        "en": "You have been writing letters to your friend since June.",
         "es": "Desde junio escribes cartas a tu amigo.",
         "de": "Seit Juni schreibst du deinem Freund Briefe."
       },
@@ -3200,29 +3200,29 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Nyolc óra óta írjuk a jelentést az ügyféllel.",
-        "en": "Since eight we write the report with the client.",
-        "es": "Desde las ocho escribimos el informe con el cliente.",
-        "de": "Seit acht Uhr schreiben wir den Bericht mit dem Kunden."
+        "hu": "Áprilistól jelentéseket írunk az ügyféllel.",
+        "en": "We have been writing reports with the client since April.",
+        "es": "Desde abril escribimos informes con el cliente.",
+        "de": "Seit April schreiben wir Berichte mit dem Kunden."
       },
-      "answer": "Desde las ocho hemos escrito el informe con el cliente.",
+      "answer": "Desde abril hemos escrito informes con el cliente.",
       "accept": [
-        "Nosotros desde las ocho hemos escrito el informe con el cliente.",
-        "Desde las ocho nosotros hemos escrito el informe con el cliente.",
-        "Hemos escrito el informe con el cliente desde las ocho.",
-        "Nosotros hemos escrito el informe con el cliente desde las ocho."
+        "Nosotros desde abril hemos escrito informes con el cliente.",
+        "Desde abril nosotros hemos escrito informes con el cliente.",
+        "Hemos escrito informes con el cliente desde abril.",
+        "Nosotros hemos escrito informes con el cliente desde abril."
       ],
       "wordIds": [
         "1412",
-        "1008",
+        "1206",
         "3472",
         "1600"
       ],
       "why": {
-        "hu": "Valamikor kezdődött, és mostanáig tart (desde las ocho): pretérito perfecto. A(z) escribir participiója rendhagyó: escrito, itt: hemos escrito.",
-        "en": "Something that began at some point and runs up to now (desde las ocho): pretérito perfecto. The participle of escribir is irregular: escrito, here: hemos escrito.",
-        "es": "Algo que empezó en un momento y llega hasta ahora (desde las ocho): pretérito perfecto. El participio de escribir es irregular: escrito, aquí: hemos escrito.",
-        "de": "Etwas, das irgendwann begann und bis jetzt läuft (desde las ocho): pretérito perfecto. Das Partizip von escribir ist unregelmäßig: escrito, hier: hemos escrito."
+        "hu": "Valamikor kezdődött, és mostanáig tart (desde abril): pretérito perfecto. A(z) escribir participiója rendhagyó: escrito, itt: hemos escrito.",
+        "en": "Something that began at some point and runs up to now (desde abril): pretérito perfecto. The participle of escribir is irregular: escrito, here: hemos escrito.",
+        "es": "Algo que empezó en un momento y llega hasta ahora (desde abril): pretérito perfecto. El participio de escribir es irregular: escrito, aquí: hemos escrito.",
+        "de": "Etwas, das irgendwann begann und bis jetzt läuft (desde abril): pretérito perfecto. Das Partizip von escribir ist unregelmäßig: escrito, hier: hemos escrito."
       }
     },
     {
@@ -3233,10 +3233,10 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Tegnap este óta nem írom meg az üzenetet.",
-        "en": "Since last night I do not write the message.",
-        "es": "Desde anoche no escribo el mensaje.",
-        "de": "Seit gestern Abend schreibe ich die Nachricht nicht."
+        "hu": "Nem írom meg az üzenetet. (tegnap este óta)",
+        "en": "I don't write the message. (since last night)",
+        "es": "No escribo el mensaje. (desde anoche)",
+        "de": "Ich schreibe die Nachricht nicht. (seit gestern Abend)"
       },
       "answer": "Desde anoche no he escrito el mensaje.",
       "accept": [
@@ -3266,7 +3266,7 @@
       },
       "prompt": {
         "hu": "Önök egy hónapja írnak az ügyfélnek?",
-        "en": "Do you write to the client for a month now?",
+        "en": "Have you been writing to the client for a month now?",
         "es": "¿Escriben ustedes al cliente desde hace un mes?",
         "de": "Schreiben Sie seit einem Monat an den Kunden?"
       },
