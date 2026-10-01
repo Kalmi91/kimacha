@@ -73,11 +73,11 @@
               }
             },
             {
-              "es": "Las entradas ya han sido vendidas.",
+              "es": "Los boletos ya han sido vendidos.",
               "tr": {
                 "hu": "A jegyeket már eladták.",
                 "en": "The tickets have already been sold.",
-                "es": "Las entradas ya han sido vendidas.",
+                "es": "Los boletos ya han sido vendidos.",
                 "de": "Die Karten sind schon verkauft worden."
               }
             },
@@ -214,7 +214,7 @@
           "indefinido, masculino singular"
         ],
         [
-          "La carta ___ (escribir) por mi madre.",
+          "La carta ___ (escribir) el año pasado por mi madre.",
           "fue escrita",
           "indefinido, femenino singular"
         ],
@@ -224,27 +224,27 @@
           "indefinido, masculino plural"
         ],
         [
-          "Las cajas ___ (abrir) por la policía.",
+          "Las cajas ___ (abrir) ayer por la policía.",
           "fueron abiertas",
           "indefinido, femenino plural"
         ],
         [
-          "Esta película ___ (ver) por muchas personas.",
+          "Hasta ahora, esta película ___ (ver) por muchas personas.",
           "ha sido vista",
           "perfecto, femenino singular"
         ],
         [
-          "El problema ___ (resolver) mañana por el equipo.",
+          "futuro simple: El problema ___ (resolver) mañana por el equipo.",
           "será resuelto",
           "futuro, masculino singular"
         ],
         [
-          "Antes, los niños ___ (llevar) al colegio por su tío.",
+          "Antes, los niños ___ (llevar) a la escuela por su tío.",
           "eran llevados",
           "imperfecto, masculino plural"
         ],
         [
-          "La cena ___ (preparar) por mi padre cada domingo.",
+          "Ahora, la cena ___ (preparar) por mi padre cada domingo.",
           "es preparada",
           "presente, femenino singular"
         ],
@@ -254,12 +254,12 @@
           "infinitivo, femenino singular"
         ],
         [
-          "Las entradas ya ___ (vender), no quedan.",
-          "han sido vendidas",
-          "perfecto, femenino plural"
+          "perfecto: Los boletos ya ___ (vender), no quedan.",
+          "han sido vendidos",
+          "perfecto, masculino plural"
         ],
         [
-          "Las fotos ___ (enviar) mañana por el jefe.",
+          "futuro simple: Las fotos ___ (enviar) mañana por el jefe.",
           "serán enviadas",
           "futuro, femenino plural"
         ],
@@ -320,20 +320,20 @@
           },
           "examples": [
             {
-              "es": "Las entradas fueron vendidas por la empresa.",
+              "es": "Los boletos fueron vendidos por la empresa.",
               "tr": {
                 "hu": "A jegyeket a cég árulta.",
                 "en": "The tickets were sold by the company.",
-                "es": "Las entradas fueron vendidas por la empresa.",
+                "es": "Los boletos fueron vendidos por la empresa.",
                 "de": "Die Karten wurden von der Firma verkauft."
               }
             },
             {
-              "es": "Se venden entradas aquí.",
+              "es": "Se venden boletos aquí.",
               "tr": {
                 "hu": "Itt jegyeket árulnak.",
                 "en": "Tickets are sold here.",
-                "es": "Se venden entradas aquí.",
+                "es": "Se venden boletos aquí.",
                 "de": "Hier werden Karten verkauft."
               }
             }
@@ -526,10 +526,10 @@
           "de": "Fue ist die dritte Person Singular (la foto fue tomada); das Subjekt ist hier las fotos, Plural; richtig: Las fotos fueron tomadas por mi hermano."
         },
         "fuimos": {
-          "hu": "A fuimos azt jelentené, hogy mi vagyunk az alany (fuimos tomados = minket fényképeztek le); itt a fotók az alany; helyesen: Las fotos fueron tomadas por mi hermano.",
-          "en": "Fuimos would make us the subject (fuimos tomados = we were photographed); here the photos are the subject; correctly: Las fotos fueron tomadas por mi hermano.",
-          "es": "Fuimos haría de nosotros el sujeto (fuimos tomados = nos fotografiaron); aquí el sujeto son las fotos; correctamente: Las fotos fueron tomadas por mi hermano.",
-          "de": "Fuimos würde uns zum Subjekt machen (fuimos tomados = man hat uns fotografiert); hier sind die Fotos das Subjekt; richtig: Las fotos fueron tomadas por mi hermano."
+          "hu": "A fuimos első személy többes szám (nosotros fuimos invitados), az alany itt viszont las fotos, harmadik személy többes; helyesen: Las fotos fueron tomadas por mi hermano.",
+          "en": "Fuimos is first person plural (nosotros fuimos invitados), but the subject here is las fotos, third person plural; correctly: Las fotos fueron tomadas por mi hermano.",
+          "es": "Fuimos es primera persona del plural (nosotros fuimos invitados), pero aquí el sujeto son las fotos, tercera persona del plural; correctamente: Las fotos fueron tomadas por mi hermano.",
+          "de": "Fuimos ist die erste Person Plural (nosotros fuimos invitados), das Subjekt sind hier aber las fotos, dritte Person Plural; richtig: Las fotos fueron tomadas por mi hermano."
         }
       },
       "examples": [
@@ -636,7 +636,7 @@
       },
       "examples": [
         "La ciudad era visitada por pocos turistas.",
-        "Los niños eran llevados al colegio."
+        "Los niños eran llevados a la escuela."
       ]
     },
     {
@@ -738,7 +738,7 @@
       },
       "examples": [
         "Aquí se habla español.",
-        "Se alquilan dos pisos."
+        "Se alquilan dos departamentos."
       ]
     },
     {
@@ -817,7 +817,7 @@
       "id": "pas-form-02",
       "kind": "form",
       "verb": "forma",
-      "person": "La carta ___ (escribir) por mi madre.",
+      "person": "La carta ___ (escribir) el año pasado por mi madre.",
       "answer": "fue escrita",
       "table": "pasiva-forma"
     },
@@ -833,7 +833,7 @@
       "id": "pas-form-04",
       "kind": "form",
       "verb": "forma",
-      "person": "Las cajas ___ (abrir) por la policía.",
+      "person": "Las cajas ___ (abrir) ayer por la policía.",
       "answer": "fueron abiertas",
       "table": "pasiva-forma"
     },
@@ -841,7 +841,7 @@
       "id": "pas-form-05",
       "kind": "form",
       "verb": "forma",
-      "person": "Esta película ___ (ver) por muchas personas.",
+      "person": "Hasta ahora, esta película ___ (ver) por muchas personas.",
       "answer": "ha sido vista",
       "table": "pasiva-forma"
     },
@@ -849,7 +849,7 @@
       "id": "pas-form-06",
       "kind": "form",
       "verb": "forma",
-      "person": "El problema ___ (resolver) mañana por el equipo.",
+      "person": "futuro simple: El problema ___ (resolver) mañana por el equipo.",
       "answer": "será resuelto",
       "table": "pasiva-forma"
     },
@@ -857,7 +857,7 @@
       "id": "pas-form-07",
       "kind": "form",
       "verb": "forma",
-      "person": "Antes, los niños ___ (llevar) al colegio por su tío.",
+      "person": "Antes, los niños ___ (llevar) a la escuela por su tío.",
       "answer": "eran llevados",
       "table": "pasiva-forma"
     },
@@ -865,7 +865,7 @@
       "id": "pas-form-08",
       "kind": "form",
       "verb": "forma",
-      "person": "La cena ___ (preparar) por mi padre cada domingo.",
+      "person": "Ahora, la cena ___ (preparar) por mi padre cada domingo.",
       "answer": "es preparada",
       "table": "pasiva-forma"
     },
@@ -881,15 +881,15 @@
       "id": "pas-form-10",
       "kind": "form",
       "verb": "forma",
-      "person": "Las entradas ya ___ (vender), no quedan.",
-      "answer": "han sido vendidas",
+      "person": "perfecto: Los boletos ya ___ (vender), no quedan.",
+      "answer": "han sido vendidos",
       "table": "pasiva-forma"
     },
     {
       "id": "pas-form-11",
       "kind": "form",
       "verb": "forma",
-      "person": "Las fotos ___ (enviar) mañana por el jefe.",
+      "person": "futuro simple: Las fotos ___ (enviar) mañana por el jefe.",
       "answer": "serán enviadas",
       "table": "pasiva-forma"
     },

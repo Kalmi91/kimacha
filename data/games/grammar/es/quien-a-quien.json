@@ -137,10 +137,12 @@
       "rows": [
         ["yo", "amo", "me", "me"],
         ["tú", "amas", "te", "te"],
-        ["él/ella/usted", "ama", "lo", "le"],
+        ["él / usted (masculino)", "ama", "lo", "le"],
+        ["ella / usted (femenino)", "ama", "la", "le"],
         ["nosotros", "amamos", "nos", "nos"],
         ["vosotros", "amáis", "os", "os"],
-        ["ellos/ellas/ustedes", "aman", "los", "les"]
+        ["ellos / ustedes (masculino)", "aman", "los", "les"],
+        ["ellas / ustedes (femenino)", "aman", "las", "les"]
       ]
     },
     {
@@ -154,10 +156,10 @@
       "points": [
         {
           "text": {
-            "hu": "A névmás mindig a ragozott ige ELŐTT áll, sosem utána.",
-            "en": "The pronoun always goes BEFORE the conjugated verb, never after.",
-            "es": "El pronombre va SIEMPRE antes del verbo conjugado, nunca después.",
-            "de": "Das Pronomen steht IMMER VOR dem konjugierten Verb, nie danach."
+            "hu": "A névmás kijelentő és kérdő mondatban mindig a ragozott ige ELŐTT áll, sosem utána.",
+            "en": "In statements and questions the pronoun always goes BEFORE the conjugated verb, never after.",
+            "es": "En oraciones afirmativas e interrogativas el pronombre va SIEMPRE antes del verbo conjugado, nunca después.",
+            "de": "In Aussage- und Fragesätzen steht das Pronomen IMMER VOR dem konjugierten Verb, nie danach."
           },
           "examples": [
             {
@@ -202,7 +204,7 @@
             },
             {
               "es": "A mí me das agua.",
-              "tr": { "hu": "Nekem adsz vizet.", "en": "You give the water to ME.", "es": "A mí me das agua.", "de": "MIR gibst du Wasser." }
+              "tr": { "hu": "Nekem adsz vizet.", "en": "You give water to ME.", "es": "A mí me das agua.", "de": "MIR gibst du Wasser." }
             }
           ]
         },
@@ -288,10 +290,10 @@
     }
   ],
   "speak": {
-    "hu": "A magyar egyetlen szóba sűríti azt, hogy szeretlek, a spanyolnak viszont két külön jelzés kell: a végződés megmondja, ki cselekszik, a névmás pedig azt, hogy kit vagy kinek. Ha azt mondod, hogy szeretlek, a névmás a téged, ha pedig azt, hogy szeretsz, a névmás a engem. A névmás mindig a ragozott ige elé kerül. A célszemély hangsúlyozására a spanyol megkettőzi egy kis elöljáróval, ami a beszélt spanyolban teljesen természetes. Főnévi igenévvel a névmás a végéhez is kapcsolódhat, mindkét változat helyes.",
-    "en": "A language like Hungarian squeezes I-love-you into a single word, but Spanish needs two separate signals: the ending says who acts, and the pronoun says whom or to whom. When you say I love you, the pronoun is you, and when you say you love me, the pronoun is me. The pronoun always goes before the conjugated verb. To stress the target, Spanish doubles it with a small preposition, which is completely natural in spoken Spanish. With an infinitive the pronoun can also attach to the end, and both versions are correct.",
-    "es": "Un idioma como el húngaro comprime te quiero en una sola palabra, pero el español necesita dos señales separadas: la terminación dice quién actúa, y el pronombre dice a quién o para quién. Cuando dices te quiero, el pronombre es te, y cuando dices me quieres, el pronombre es me. El pronombre va siempre antes del verbo conjugado. Para destacar a la persona, el español la duplica con una preposición pequeña, algo completamente natural en el español hablado. Con un infinitivo el pronombre también puede unirse al final, y las dos versiones son correctas.",
-    "de": "Eine Sprache wie das Ungarische presst ich liebe dich in ein einziges Wort, das Spanische braucht aber zwei getrennte Signale: Die Endung sagt, wer handelt, und das Pronomen sagt, wen oder wem. Sagst du ich liebe dich, ist das Pronomen dich, sagst du du liebst mich, ist es mich. Das Pronomen steht immer vor dem konjugierten Verb. Um die Zielperson zu betonen, verdoppelt das Spanische sie mit einer kleinen Präposition, was in der gesprochenen Sprache völlig natürlich ist. Beim Infinitiv kann das Pronomen auch ans Ende treten, beide Versionen sind richtig."
+    "hu": "A magyar egyetlen szóba sűríti azt, hogy szeretlek, a spanyolnak viszont két külön jelzés kell: a végződés megmondja, ki cselekszik, a névmás pedig azt, hogy kit vagy kinek. Ha azt mondod, hogy szeretlek, a névmás a téged, ha pedig azt, hogy szeretsz, a névmás az engem. A névmás kijelentő és kérdő mondatban mindig a ragozott ige elé kerül. A célszemély hangsúlyozására a spanyol megkettőzi egy kis elöljáróval, ami a beszélt spanyolban teljesen természetes. Főnévi igenévvel a névmás a végéhez is kapcsolódhat, mindkét változat helyes.",
+    "en": "A language like Hungarian squeezes I-love-you into a single word, but Spanish needs two separate signals: the ending says who acts, and the pronoun says whom or to whom. When you say I love you, the pronoun is you, and when you say you love me, the pronoun is me. In statements and questions the pronoun always goes before the conjugated verb. To stress the target, Spanish doubles it with a small preposition, which is completely natural in spoken Spanish. With an infinitive the pronoun can also attach to the end, and both versions are correct.",
+    "es": "Un idioma como el húngaro comprime te quiero en una sola palabra, pero el español necesita dos señales separadas: la terminación dice quién actúa, y el pronombre dice a quién o para quién. Cuando dices te quiero, el pronombre es te, y cuando dices me quieres, el pronombre es me. En oraciones afirmativas e interrogativas el pronombre va siempre antes del verbo conjugado. Para destacar a la persona, el español la duplica con una preposición pequeña, algo completamente natural en el español hablado. Con un infinitivo el pronombre también puede unirse al final, y las dos versiones son correctas.",
+    "de": "Eine Sprache wie das Ungarische presst ich liebe dich in ein einziges Wort, das Spanische braucht aber zwei getrennte Signale: Die Endung sagt, wer handelt, und das Pronomen sagt, wen oder wem. Sagst du ich liebe dich, ist das Pronomen dich, sagst du du liebst mich, ist es mich. In Aussage- und Fragesätzen steht das Pronomen immer vor dem konjugierten Verb. Um die Zielperson zu betonen, verdoppelt das Spanische sie mit einer kleinen Präposition, was in der gesprochenen Sprache völlig natürlich ist. Beim Infinitiv kann das Pronomen auch ans Ende treten, beide Versionen sind richtig."
   },
   "glossary": [
     {
@@ -463,10 +465,10 @@
           "de": "Me hieße mich selbst, also würde me amo bedeuten, ich liebe mich selbst; hier bist du das Ziel, deshalb braucht es te."
         },
         "le": {
-          "hu": "A le egy harmadik személyt jelöl (neki), nem a beszélgetőpartneredet; le akkor lenne helyes, ha őróla lenne szó: A él le amo.",
-          "en": "Le marks a third person (to him/her), not the person you're talking to; le would be correct if it were about someone else: A él le amo.",
-          "es": "Le marca a una tercera persona (a él o a ella), no a la persona con la que hablas; le sería correcto si se tratara de otra persona: A él le amo.",
-          "de": "Le bezeichnet eine dritte Person (ihm oder ihr), nicht die Person, mit der du sprichst; le wäre korrekt, wenn es um jemand anderen ginge: A él le amo."
+          "hu": "A le egy harmadik személyt jelöl (neki), nem a beszélgetőpartneredet; ha őróla lenne szó, akkor is lo kellene (az amar tárgyas ige): A él lo amo.",
+          "en": "Le marks a third person (to him/her), not the person you're talking to; if it were about him, lo would be needed (amar takes a direct object): A él lo amo.",
+          "es": "Le marca a una tercera persona (a él o a ella), no a la persona con la que hablas; si se tratara de él, haría falta lo (amar lleva objeto directo): A él lo amo.",
+          "de": "Le bezeichnet eine dritte Person (ihm oder ihr), nicht die Person, mit der du sprichst; ginge es um ihn, bräuchte es lo (amar hat ein direktes Objekt): A él lo amo."
         }
       },
       "examples": ["A ti te amo.", "Te amo mucho."]
@@ -800,7 +802,7 @@
       "id": "qq-form-03",
       "kind": "form",
       "verb": "objeto directo",
-      "person": "él/ella/usted",
+      "person": "él / usted (masculino)",
       "answer": "lo",
       "table": "quien"
     },
@@ -824,7 +826,7 @@
       "id": "qq-form-06",
       "kind": "form",
       "verb": "objeto directo",
-      "person": "ellos/ellas/ustedes",
+      "person": "ellos / ustedes (masculino)",
       "answer": "los",
       "table": "quien"
     },
@@ -848,7 +850,7 @@
       "id": "qq-form-09",
       "kind": "form",
       "verb": "objeto indirecto",
-      "person": "él/ella/usted",
+      "person": "él / usted (masculino)",
       "answer": "le",
       "table": "quien"
     },
@@ -872,7 +874,7 @@
       "id": "qq-form-12",
       "kind": "form",
       "verb": "objeto indirecto",
-      "person": "ellos/ellas/ustedes",
+      "person": "ellos / ustedes (masculino)",
       "answer": "les",
       "table": "quien"
     },
@@ -925,9 +927,9 @@
     {
       "kind": "why",
       "id": "qq-why-02",
-      "es": "Vosotros ayudáis siempre.",
-      "target": "ayudáis",
-      "tr": { "hu": "Ti mindig segítetek.", "en": "You (plural) always help.", "es": "Vosotros ayudáis siempre.", "de": "Ihr helft immer." },
+      "es": "Ustedes ayudan siempre.",
+      "target": "ayudan",
+      "tr": { "hu": "Ti mindig segítetek.", "en": "You (plural) always help.", "es": "Ustedes ayudan siempre.", "de": "Ihr helft immer." },
       "options": [
         {
           "text": {
@@ -945,10 +947,10 @@
             "de": "das Pronomen zeigt das direkte Objekt (wen es betrifft)"
           },
           "wrong": {
-            "hu": "Itt sincs tárgy-névmás a mondatban; a -áis végződés mutatja, hogy ti vagytok az alany, nem egy névmás.",
-            "en": "There is no direct object pronoun here either; the -áis ending shows that you (plural) are the subject, not a pronoun.",
-            "es": "Tampoco aquí hay pronombre de objeto directo; la terminación -áis indica que vosotros sois el sujeto, no un pronombre.",
-            "de": "Auch hier gibt es kein direktes Objektpronomen; die Endung -áis zeigt, dass ihr das Subjekt seid, nicht ein Pronomen."
+            "hu": "Itt sincs tárgy-névmás a mondatban; az -an végződés mutatja, hogy ti vagytok az alany, nem egy névmás.",
+            "en": "There is no direct object pronoun here either; the -an ending shows that you (plural) are the subject, not a pronoun.",
+            "es": "Tampoco aquí hay pronombre de objeto directo; la terminación -an indica que ustedes son el sujeto, no un pronombre.",
+            "de": "Auch hier gibt es kein direktes Objektpronomen; die Endung -an zeigt, dass ihr das Subjekt seid, nicht ein Pronomen."
           }
         },
         {
@@ -959,10 +961,10 @@
             "de": "das Pronomen zeigt das indirekte Objekt (wem es gilt)"
           },
           "wrong": {
-            "hu": "Nincs címzett névmás sem, a mondat nem ad vagy mond át semmit senkinek; a -áis végződés önmagában mutatja az alanyt.",
-            "en": "There is no recipient pronoun either, the sentence does not give or tell anything to anyone; the -áis ending alone shows the subject.",
-            "es": "Tampoco hay pronombre de destinatario, la frase no le da ni dice nada a nadie; la terminación -áis por sí sola indica el sujeto.",
-            "de": "Es gibt auch kein Empfänger-Pronomen, der Satz gibt oder sagt niemandem etwas; die Endung -áis allein zeigt das Subjekt."
+            "hu": "Nincs címzett névmás sem, a mondat nem ad vagy mond át semmit senkinek; az -an végződés önmagában mutatja az alanyt.",
+            "en": "There is no recipient pronoun either, the sentence does not give or tell anything to anyone; the -an ending alone shows the subject.",
+            "es": "Tampoco hay pronombre de destinatario, la frase no le da ni dice nada a nadie; la terminación -an por sí sola indica el sujeto.",
+            "de": "Es gibt auch kein Empfänger-Pronomen, der Satz gibt oder sagt niemandem etwas; die Endung -an allein zeigt das Subjekt."
           }
         }
       ],

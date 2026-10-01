@@ -622,11 +622,11 @@
       }
     },
     {
-      "word": "animados",
+      "word": "caricaturas",
       "gloss": {
-        "hu": "dibujos animados = rajzfilm",
-        "en": "dibujos animados = cartoons",
-        "es": "dibujos animados",
+        "hu": "rajzfilmek",
+        "en": "cartoons",
+        "es": "las caricaturas",
         "de": "Zeichentrickfilme"
       }
     },
@@ -708,7 +708,7 @@
     },
     {
       "id": "im-02",
-      "sentence": "Todos los días ___ (nosotros) café en el mismo bar.",
+      "sentence": "Antes, todos los días ___ (nosotros) café en el mismo restaurante.",
       "options": [
         "tomábamos",
         "tomamos",
@@ -716,10 +716,10 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A todos los días ismétlődő szokás: imperfecto.",
-        "en": "Todos los días marks a repeated habit: the imperfect.",
-        "es": "Todos los días indica costumbre: imperfecto.",
-        "de": "Todos los días zeigt Gewohnheit: Imperfekt."
+        "hu": "Az antes és a todos los días múltbeli, ismétlődő szokás: imperfecto.",
+        "en": "Antes and todos los días mark a repeated habit in the past: the imperfect.",
+        "es": "Antes y todos los días indican una costumbre pasada: imperfecto.",
+        "de": "Antes und todos los días zeigen eine vergangene Gewohnheit: Imperfekt."
       },
       "wrong": {
         "tomamos": {
@@ -1002,7 +1002,7 @@
         }
       },
       "examples": [
-        "Veía dibujos animados cada tarde.",
+        "Veía caricaturas cada tarde.",
         "Veíamos películas los sábados."
       ],
       "tense": {
@@ -1071,7 +1071,7 @@
           "de": "\"Fui a\" ist das Indefinido von ir plus a: damit würde der Satz heißen, dass ich tatsächlich irgendwohin GING, um dich anzurufen, nicht dass ich es nur vorhatte, bevor mein Akku leer war."
         },
         "Voy a": {
-          "hu": "A \"Voy a\" jelen-jövő szándékot fejez ki: ezzel a mondat azt jelentené, hogy MOST fogsz hívni, nem azt, hogy régebben állt szándékodban, mielőtt lemerült a telefon.",
+          "hu": "A \"Voy a\" jelen-jövő szándékot fejez ki: ezzel a mondat azt jelentené, hogy MOST fogok felhívni, nem azt, hogy régebben állt szándékomban, mielőtt lemerült a telefonom.",
           "en": "\"Voy a\" expresses a present-future intention: with it the sentence would mean I am about to call you now, not that I intended to earlier, before the battery died.",
           "es": "\"Voy a\" expresa intención presente-futura: con él la frase diría que estoy a punto de llamarte ahora, no que tenía esa intención antes de quedarme sin batería.",
           "de": "\"Voy a\" drückt eine Gegenwart-Zukunft-Absicht aus: damit würde der Satz heißen, dass ich dich jetzt gleich anrufe, nicht dass ich es vorher vorhatte, bevor der Akku leer war."
@@ -1088,7 +1088,7 @@
     },
     {
       "id": "im-12",
-      "sentence": "Mi abuela siempre ___ pan los domingos.",
+      "sentence": "De niño, mi abuela siempre ___ pan los domingos.",
       "options": [
         "hacía",
         "hizo",
@@ -1761,7 +1761,8 @@
       },
       "answer": "No hablaba con nadie en clase.",
       "accept": [
-        "Ella no hablaba con nadie en clase."
+        "Ella no hablaba con nadie en clase.",
+        "Él no hablaba con nadie en clase."
       ],
       "wordIds": [
         "1",
@@ -1851,7 +1852,8 @@
       "answer": "Siempre comía en casa.",
       "accept": [
         "Yo siempre comía en casa.",
-        "Siempre yo comía en casa."
+        "Siempre yo comía en casa.",
+        "Comía siempre en casa."
       ],
       "wordIds": [
         "57",
@@ -1909,7 +1911,8 @@
       },
       "answer": "No comía carne.",
       "accept": [
-        "Él no comía carne."
+        "Él no comía carne.",
+        "Ella no comía carne."
       ],
       "wordIds": [
         "1",
@@ -2053,7 +2056,8 @@
       },
       "answer": "No vivía en la ciudad.",
       "accept": [
-        "Ella no vivía en la ciudad."
+        "Ella no vivía en la ciudad.",
+        "Él no vivía en la ciudad."
       ],
       "wordIds": [
         "1",
@@ -2197,7 +2201,8 @@
       },
       "answer": "No era feliz aquí.",
       "accept": [
-        "Ella no era feliz aquí."
+        "Ella no era feliz aquí.",
+        "Él no era feliz aquí."
       ],
       "wordIds": [
         "1",
@@ -2344,7 +2349,8 @@
       },
       "answer": "No iba a la escuela en coche.",
       "accept": [
-        "Él no iba a la escuela en coche."
+        "Él no iba a la escuela en coche.",
+        "Ella no iba a la escuela en coche."
       ],
       "wordIds": [
         "1",
@@ -2492,7 +2498,8 @@
       },
       "answer": "No veía a su familia.",
       "accept": [
-        "Ella no veía a su familia."
+        "Ella no veía a su familia.",
+        "Él no veía a su familia."
       ],
       "wordIds": [
         "1",
@@ -2638,7 +2645,8 @@
       },
       "answer": "No tenía coche.",
       "accept": [
-        "Él no tenía coche."
+        "Él no tenía coche.",
+        "Ella no tenía coche."
       ],
       "wordIds": [
         "1",
@@ -2924,7 +2932,8 @@
       },
       "answer": "No hacía la cama.",
       "accept": [
-        "Él no hacía la cama."
+        "Él no hacía la cama.",
+        "Ella no hacía la cama."
       ],
       "wordIds": [
         "1",
@@ -3039,7 +3048,8 @@
       },
       "answer": "Trabajabas de noche.",
       "accept": [
-        "Tú trabajabas de noche."
+        "Tú trabajabas de noche.",
+        "De noche trabajabas."
       ],
       "wordIds": [
         "1409",
@@ -3067,7 +3077,9 @@
       },
       "answer": "No trabajaba por la mañana.",
       "accept": [
-        "Ella no trabajaba por la mañana."
+        "Ella no trabajaba por la mañana.",
+        "Él no trabajaba por la mañana.",
+        "Por la mañana no trabajaba."
       ],
       "wordIds": [
         "1",

@@ -291,7 +291,7 @@
             "hu": "Alapfokú melléknév vagy határozószó elé muy kerül (muy bien), a hasonlító fok elé mucho (mucho mejor, mucho más): a „muy mejor” hiba.",
             "en": "Before a basic adjective or adverb comes muy (muy bien); before a comparative comes mucho (mucho mejor, mucho más): muy mejor is a mistake.",
             "es": "Ante un adjetivo o adverbio básico va muy (muy bien); ante un comparativo va mucho (mucho mejor, mucho más): muy mejor es un error.",
-            "de": "Vor einem Grundwort steht muy (muy bien); vor einem Komparativ steht mucho (mucho mejor, mucho más): muy mejor ist ein Fehler."
+            "de": "Vor einem Adjektiv oder Adverb in der Grundstufe steht muy (muy bien); vor einem Komparativ steht mucho (mucho mejor, mucho más): muy mejor ist ein Fehler."
           },
           "examples": [
             {
@@ -350,10 +350,10 @@
       },
       "wrong": {
         "mucho": {
-          "hu": "A mucho mennyiséget jelent főnév vagy ige mellett (mucho trabajo, trabaja mucho); melléknév elé nem kerülhet. Helyesen: muy cansado.",
-          "en": "Mucho expresses quantity with a noun or a verb (mucho trabajo, trabaja mucho); it cannot go before an adjective. Correct: muy cansado.",
-          "es": "Mucho expresa cantidad con un sustantivo o un verbo (mucho trabajo, trabaja mucho); no puede ir ante un adjetivo. Lo correcto es muy cansado.",
-          "de": "Mucho drückt Menge bei einem Nomen oder Verb aus (mucho trabajo, trabaja mucho); vor einem Adjektiv kann es nicht stehen. Richtig: muy cansado."
+          "hu": "A mucho mennyiséget jelent főnév vagy ige mellett (mucho trabajo, trabaja mucho); alapfokú melléknév elé nem kerülhet. Helyesen: muy cansado.",
+          "en": "Mucho expresses quantity with a noun or a verb (mucho trabajo, trabaja mucho); it cannot go before a basic adjective. Correct: muy cansado.",
+          "es": "Mucho expresa cantidad con un sustantivo o un verbo (mucho trabajo, trabaja mucho); no puede ir ante un adjetivo básico. Lo correcto es muy cansado.",
+          "de": "Mucho drückt Menge bei einem Nomen oder Verb aus (mucho trabajo, trabaja mucho); vor einem Adjektiv in der Grundstufe kann es nicht stehen. Richtig: muy cansado."
         },
         "mucha": {
           "hu": "A mucha csak nőnemű főnév előtt áll (mucha gente), a cansado viszont melléknév, nem főnév. Helyesen: muy cansado.",
@@ -519,10 +519,10 @@
       },
       "wrong": {
         "mucho": {
-          "hu": "A mucho határozószó elé nem kerülhet, csak főnév vagy ige mellé (mucho tiempo, trabaja mucho). Helyesen: muy cerca.",
-          "en": "Mucho cannot go before an adverb, only with a noun or a verb (mucho tiempo, trabaja mucho). Correct: muy cerca.",
-          "es": "Mucho no puede ir ante un adverbio, solo con un sustantivo o un verbo (mucho tiempo, trabaja mucho). Lo correcto es muy cerca.",
-          "de": "Mucho kann nicht vor einem Adverb stehen, nur bei einem Nomen oder Verb (mucho tiempo, trabaja mucho). Richtig: muy cerca."
+          "hu": "A mucho alapfokú határozószó elé nem kerülhet, csak főnév vagy ige mellé (mucho tiempo, trabaja mucho). Helyesen: muy cerca.",
+          "en": "Mucho cannot go before a basic adverb, only with a noun or a verb (mucho tiempo, trabaja mucho). Correct: muy cerca.",
+          "es": "Mucho no puede ir ante un adverbio básico, solo con un sustantivo o un verbo (mucho tiempo, trabaja mucho). Lo correcto es muy cerca.",
+          "de": "Mucho kann nicht vor einem Adverb in der Grundstufe stehen, nur bei einem Nomen oder Verb (mucho tiempo, trabaja mucho). Richtig: muy cerca."
         }
       },
       "examples": [
@@ -549,7 +549,7 @@
         "mucha": {
           "hu": "Ezzel azt mondanád, hogy sok zene (mucha música), de itt a mucho a gusta igét erősíti, és az nem változik. Helyesen: me gusta mucho la música.",
           "en": "That would say a lot of music (mucha música), but here mucho strengthens the verb gusta, and that never changes. Correct: me gusta mucho la música.",
-          "es": "Eso diría mucha música como cantidad, pero aquí mucho refuerza el verbo gusta, y eso no cambia. Lo correcto es me gusta mucho la música.",
+          "es": "Eso diría «mucha música» (una gran cantidad de música), pero aquí mucho refuerza el verbo gusta, y eso no cambia. Lo correcto es me gusta mucho la música.",
           "de": "Das würde viel Musik (mucha música) heißen, aber hier verstärkt mucho das Verb gusta, und das verändert sich nicht. Richtig: me gusta mucho la música."
         },
         "muy": {
@@ -617,14 +617,14 @@
         "muchos": {
           "hu": "Ezzel azt mondanád, hogy sok vizsga (muchos exámenes), de itt a difíciles melléknevet erősítjük, és a muy többesben sem változik. Helyesen: muy difíciles.",
           "en": "That would say many exams (muchos exámenes), but here we strengthen the adjective difíciles, and muy does not change even in the plural. Correct: muy difíciles.",
-          "es": "Eso diría muchos exámenes, pero aquí reforzamos el adjetivo difíciles, y muy no cambia ni en plural. Lo correcto es muy difíciles.",
+          "es": "Eso diría «muchos exámenes», pero aquí reforzamos el adjetivo difíciles, y muy no cambia ni en plural. Lo correcto es muy difíciles.",
           "de": "Das würde viele Prüfungen (muchos exámenes) heißen, aber hier verstärken wir das Adjektiv difíciles, und muy verändert sich auch im Plural nicht. Richtig: muy difíciles."
         },
         "mucho": {
-          "hu": "A mucho melléknév elé nem kerülhet, csak főnév vagy ige mellé. Helyesen: muy difíciles.",
-          "en": "Mucho cannot go before an adjective, only with a noun or a verb. Correct: muy difíciles.",
-          "es": "Mucho no puede ir ante un adjetivo, solo con un sustantivo o un verbo. Lo correcto es muy difíciles.",
-          "de": "Mucho kann nicht vor einem Adjektiv stehen, nur bei einem Nomen oder Verb. Richtig: muy difíciles."
+          "hu": "A mucho alapfokú melléknév elé nem kerülhet, csak főnév vagy ige mellé. Helyesen: muy difíciles.",
+          "en": "Mucho cannot go before a basic adjective, only with a noun or a verb. Correct: muy difíciles.",
+          "es": "Mucho no puede ir ante un adjetivo básico, solo con un sustantivo o un verbo. Lo correcto es muy difíciles.",
+          "de": "Mucho kann nicht vor einem Adjektiv in der Grundstufe stehen, nur bei einem Nomen oder Verb. Richtig: muy difíciles."
         }
       },
       "examples": [

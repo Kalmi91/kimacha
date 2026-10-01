@@ -210,11 +210,11 @@
           "conoce"
         ],
         [
-          "Nosotros no ___ (nosotros) la respuesta.",
+          "Nosotros no ___ (nosotros) qué hora es.",
           "sabemos"
         ],
         [
-          "Quiero ___ conducir, pero no tengo coche.",
+          "Quiero ___ manejar, pero no tengo coche.",
           "saber"
         ],
         [
@@ -450,7 +450,7 @@
       "options": [
         "sabes",
         "sé",
-        "conozco"
+        "sabo"
       ],
       "correct": 1,
       "why": {
@@ -466,11 +466,11 @@
           "es": "Sabes es la forma de tú; aquí yo no sé la respuesta, así que hace falta la forma de yo: sé.",
           "de": "Sabes ist die tú-Form; hier weiß ich die Antwort nicht, also braucht man die yo-Form: sé."
         },
-        "conozco": {
-          "hu": "A conozco (conocer) személyt vagy helyet jelöl; a válasz információ, és azt a saber igével mondjuk: sé.",
-          "en": "Conozco (conocer) points to a person or a place; an answer is a piece of information, and that is said with saber: sé.",
-          "es": "Conozco (conocer) es para una persona o un lugar; una respuesta es una información, y eso se dice con saber: sé.",
-          "de": "Conozco (conocer) steht für eine Person oder einen Ort; eine Antwort ist eine Information, und die sagt man mit saber: sé."
+        "sabo": {
+          "hu": "A sabo nem létező alak: a saber yo alakja rendhagyó: sé.",
+          "en": "Sabo does not exist: the yo form of saber is irregular: sé.",
+          "es": "Sabo no existe: la forma de yo de saber es irregular: sé.",
+          "de": "Sabo gibt es nicht: die yo-Form von saber ist unregelmäßig: sé."
         }
       },
       "examples": [
@@ -679,7 +679,7 @@
       },
       "examples": [
         "Mi madre sabe hablar inglés.",
-        "Yo no sé conducir."
+        "Yo no sé manejar."
       ]
     },
     {
@@ -816,7 +816,7 @@
       "id": "sc-form-05",
       "kind": "form",
       "verb": "forma verbal",
-      "person": "Nosotros no ___ (nosotros) la respuesta.",
+      "person": "Nosotros no ___ (nosotros) qué hora es.",
       "answer": "sabemos",
       "table": "saber-conocer-formas"
     },
@@ -824,7 +824,7 @@
       "id": "sc-form-06",
       "kind": "form",
       "verb": "forma verbal",
-      "person": "Quiero ___ conducir, pero no tengo coche.",
+      "person": "Quiero ___ manejar, pero no tengo coche.",
       "answer": "saber",
       "table": "saber-conocer-formas"
     },
