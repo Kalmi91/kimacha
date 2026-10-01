@@ -14,7 +14,7 @@ Indult: 2026-10-01 13:49. Becslés: kb. 5 óra, 8/10; ágakra bontva, párhuzamo
 ## Lépések
 
 - [x] 1. (13:49) Ág + worktree + ez a terv → kész, ha: a worktree áll
-- [~] 2. (C ág) Pontos leltár (csak olvasás) → kész, ha: a Leltár szakasz kitöltve: minden fogyasztó fájl:sor, mit használ, és mi a csere (words-open / angol track / törlés)
+- [x] 2. (14:00) (C ág) Pontos leltár (csak olvasás) → kész, ha: a Leltár szakasz kitöltve: minden fogyasztó fájl:sor, mit használ, és mi a csere (words-open / angol track / törlés)
 - [~] 3. (A ág) Helyesírás-gyakorló ki: `app/spelling.tsx`, a Beállítások sora, a tanulókártya „✎ Add to spelling" gombja, a hozzá tartozó lib/db/i18n/teszt → kész, ha: typecheck:ci, lint, test:ci zöld
 - [ ] 4. (B ág, az A után indul) Játékok kódja ki (a UI-ból már nem elérhető): `lib/games/**`, `components/games/**`, ami csak a játékoké → kész, ha: kapu zöld; ami a nyelvtan is használ (pl. GlossText), az átáll, nem törlődik
 - [ ] 5. (C ág) Nyelvtan + Kurzus fül + Beállítások + `lib/mixedSpeech` + `lib/pcicPos` átállítása a words-open spanyol szavaira → kész, ha: kapu zöld, és a Naplóban a lezáródó (szó hiányában nem nyitható) leckék listája
@@ -35,8 +35,85 @@ Indult: 2026-10-01 13:49. Becslés: kb. 5 óra, 8/10; ágakra bontva, párhuzamo
 
 ## Leltár
 
-(a 2. lépés tölti ki)
+Jelmagyarázat: csere = `words-open` (a spanyol szavak forrása), `angol track` (`data/words/en/**`, marad), `törlés (N. lépés)`, `marad` (nem szólista-keresés: típus, konstans vagy tiszta függvény). Keresés: `git grep` a `data/words`, `words.ts`, `data/pcic`, `pcicCorpus` mintákra (futásidejű kód, teszt, script, CI/doksi). Állás: 2026-10-01, `origin/main` 0adbeae. A régi szólista 4047 kártya, a words-open 601 (`order` 1-601, A1-B2, mező: order, level, pos, lemma, es, hu, en, de, sentence_*, sentence_lemmas, hint_en; nincs `id`, `gender`, `topic`).
+
+### A) Régi spanyol szólista: `data/words/{a0..c2}.json` + `data/words.ts` segédek
+
+Futásidejű kód:
+- data/words.ts:53-61, a 7 JSON importja és a `words` tömb, csere: törlés (7. lépés), a segédek közben words-openre állnak (5. lépés)
+- data/words.ts:69 `getWordsForLevel`, szint szerinti lista (hívói: games/content.ts, pcic.ts legacy ág, tesztek), csere: words-open (5. lépés), a régi törlés (7. lépés)
+- data/words.ts:75 `findWordById`, id szerinti keresés (egyetlen hívó: app/spelling.tsx), csere: törlés (3. lépés, A ág, a hívóval; a függvény 7. lépés)
+- data/words.ts:82,88 `getWordsForTopic`, `getWordTopic`, nincs nem-teszt hívó, csere: törlés (7. lépés)
+- data/words.ts:108 `genderOf`, nincs nem-teszt hívó, csere: törlés (7. lépés)
+- data/words.ts:137,180 `allWordsFor` + `findWordByText`, szöveg szerinti keresés `es/en/hu/de` mezőn (hívói: lib/games/gloss.ts, lib/mixedSpeech.ts), csere: words-open (5. lépés)
+- data/words.ts:1-3,31 `Level`, `LEVELS`, `WordEntry`; :133 `normalizeWordToken`, típus/konstans/tiszta függvény, csere: marad
+- data/pcic.ts:11,154-159, `getWordsForLevel` a `ES_WORD_SOURCE === 'legacy'` ágban (w<id> tételek), csere: törlés (6. lépés)
+- data/pcic.ts:11,88,96,178,191-193, `WordEntry` típus az es→en angol trackhez (`data/words/en`), csere: angol track (marad)
+- app/spelling.tsx:10,116, `findWordById(current.wordId)` a helyesírás-gyakorlóban, csere: törlés (3. lépés, A ág)
+- lib/games/content.ts:9,25-28, `LEVELS`, `getWordsForLevel` a `cumulativeCorpusWordIds`-ben (a nyelvtan-képernyők „ismert szó" halmaza), csere: words-open (5. lépés)
+- lib/games/gloss.ts:7,42, `findWordByText` a glosszához (nyelvtan-képernyők + játékok), csere: words-open (5. lépés, a `findWordByText`-en át)
+- lib/grammar/tenseGate.ts:18,99,105,142, `words`: az igék főnévi alakjai az alak-térképhez, a nem-igék a homográf-szűrőhöz, csere: words-open (5. lépés)
+- lib/mixedSpeech.ts:17,31, `findWordByText` a kevert nyelvű felolvasás szakaszolásához, csere: words-open (5. lépés)
+- lib/pcicPos.ts:14,36,58, `words` a lemma → szófaj/nem indexhez, `WordPos`/`WordGender` típus, csere: words-open (5. lépés)
+- app/(tabs)/course.tsx:10,79, `LEVELS`, `Level` (a Kurzus fül szintje), csere: marad (nincs szólista-keresés; az A0/C1/C2 szél a szint-clamp-pel)
+- app/(tabs)/settings.tsx:12,100, `Level` típus, csere: marad
+- app/grammar/[topic].tsx:10,157, `normalizeWordToken`, `Level`, csere: marad (a „known" halmaz a `cumulativeCorpusWordIds`-ből jön, 5. lépés)
+- app/grammar/deck/[topic].tsx:13, `Level` típus, csere: marad
+- components/grammar/GrammarDrill.tsx:7,1053, `normalizeWordToken`, csere: marad
+- components/games/GlossText.tsx:9,90, `normalizeWordToken` (a nyelvtan is használja), csere: marad
+- lib/grammar/lessonTypes.ts:13, lib/grammar/syllabus.ts:16, `Level` típus, csere: marad
+- lib/grammar/tableDeck.ts:21,305,326,365, `normalizeWordToken`, `Level` (a szó-pakli már `pcicItemsForLevel`-ből, azaz words-openből épül), csere: marad
+- lib/wordMerges.ts:8 (hívói: lib/db/migrations.ts:3, lib/database.web.ts:4), régi szó-id → id egyesítés a DB-migrációban, nem olvassa a korpuszt, csere: marad (régi haladás-sorok migrációja)
+
+Tesztek:
+- lib/__tests__/corpusIntegrity.test.ts:9,19-30,84-96, `words`, `getWordsForLevel`, `LEVELS`, WORD_MERGES-ellenőrzés a régi id-kra, en/hu JSON-olvasás, csere: a spanyol és hu részek és a WORD_MERGES-esetek törlése (7. lépés), az en-sáv esetei maradnak
+- lib/__tests__/germanGender.test.ts:7,9, `words`, `genderOf` a régi kártyák német névelőjén, csere: törlés (7. lépés)
+- lib/__tests__/wordPos.test.ts:14,22-35, `words` pos/gender-annotáció (A0..C1) + en/hu JSON-ok, csere: spanyol és hu rész törlése (7. lépés), en-sáv marad
+- lib/__tests__/svCorpus.test.ts:15,17, `LEVELS`, `words` az sv-sáv id-ütközéséhez (a `data/words/sv` nincs a repóban), csere: a régi korpuszra hivatkozó rész törlése (7. lépés)
+- lib/__tests__/wordLookup.test.ts:1, `words`, `findWordById`, `findWordByText`, `getWordsForLevel`, csere: `findWordByText` esetek words-openre (5. lépés), `findWordById`/`getWordsForLevel` esetek törlése (3./7. lépés)
+- lib/__tests__/gloss.test.ts:1, `getWordsForLevel` a `resolveGloss`/`buildGlossMap` teszthez, csere: words-open (5. lépés)
+- lib/__tests__/languages.test.ts:2,29, `getWordsForLevel('A1', target)` nem üres, csere: words-open (5. lépés)
+- lib/__tests__/mixedSpeech.test.ts:1, lib/grammar/__tests__/speakNoSpanish.test.ts:5, közvetve a `findWordByText`-en, csere: words-open szavak (5. lépés)
+- lib/__tests__/pcicPos.test.ts:1, pcicPosCoverage.test.ts:5, közvetve a `words`-ön (lemma-index), csere: words-open szavak (5. lépés)
+- lib/__tests__/tenseGate.test.ts:1, knownSentence.test.ts:9, sentenceCards.test.ts:2, közvetve a `words`-ön (igealak-térkép), csere: words-open igék (5. lépés)
+- lib/games/**/__tests__ (conjugate, grammarChoice stb.), nem importálnak szólistát, csere: nincs teendő
+
+Scriptek (nem futnak az appban, a 7. lépés dönt):
+- scripts/annotate-pos.mjs:24-29, a 6 régi JSON (pos/gender annotáció), csere: törlés (7. lépés)
+- scripts/append_level_words.mjs:33, append_words.py:46, generate_words.py:128, generate_words_hybrid.py:205, validate_words.py:116, `data/words` írása/validálása, csere: törlés (7. lépés)
+- scripts/audit-corpus.mjs:312-313, audit-games.mjs:266, audit-levels.mjs:27, audit-prompts.mjs:187, sentence-qa.mjs:82, sentence-specificity.mjs:46, a régi szint-JSON-ok olvasása, csere: törlés (7. lépés)
+- scripts/dedupe-words.mjs:32, filter_words.js:107, freq-order.mjs:124, merge_word_batches.js:20, a régi JSON-ok építése/rendezése (filter_words: SUBTLEX-ESP-ből válogat), csere: törlés (7. lépés)
+- scripts/pcic-check.mjs:134, pcic-level-fit.mjs:42, pcic-pos-gaps.mjs:24, pcic-sentences.mjs:38, a PCIC-scriptek a régi szólistát is olvassák, csere: törlés (6. lépés, a PCIC-scriptekkel)
+- scripts/add-articles.js:154, add-german.js:414, a `data/words.ts` forrásszövegét írják (a JSON-szétvágás előtti egyszeri scriptek), csere: törlés (7. lépés)
+
+Konfig/doksi:
+- .gitignore:49, .easignore:33 (`data/words/backup_*/`), .github/CODEOWNERS:7,14, .github/CONTRIBUTING.md:35-37, a `data/words/` útvonalak, csere: törlés/átírás (7. lépés)
+- CLAUDE.md:19-22 (repó-gyökér), docs/NORTH-STAR.md:49,63, data/LICENSE-WORDS.md, a régi szólista leírása és forrásmegjelölése (FrequencyWords/SUBTLEX), csere: átírás a words-openre (7. lépés)
+- data/topics/{a0..c1}.json, data/sublevels/{a0..c1}.json, a régi szavak `topic` mezőjének témakör-listái, nincs kód-fogyasztó (a `data/topics/en`, `data/sublevels/en` a syllabusEn.ts-ben él, marad), csere: törlés (7. lépés; ez nincs a Specben, a törlés előtt Kálmán jóváhagyása kell)
+
+### B) `data/words/hu/**` (magyar sáv)
+
+- Nincs futásidejű kód-fogyasztó (Play-vágás 7. lépés: az app csak az en-es párt tölti).
+- lib/__tests__/corpusIntegrity.test.ts:28-31,151,178, `HU_BRANCH_BY_LEVEL` (hu A0/A1), csere: törlés (7. lépés)
+- lib/__tests__/wordPos.test.ts:32-35, `huAnnotated` (hu A0/A1), csere: törlés (7. lépés)
+- scripts/annotate-pos.mjs:33-34, audit-corpus-hu.mjs:170, audit-prompts.mjs:195, merge-hu-batch.mjs:20,99, hu JSON írása/olvasása, csere: törlés (7. lépés)
+- data/topics/hu/*.json, data/sublevels/hu/*.json, a hu sáv témakör-listái, nincs kód-fogyasztó, csere: törlés (7. lépés, Kálmán jóváhagyásával)
+
+### C) `data/pcic/**` (PCIC-korpusz) és `data/pcicCorpus.ts`
+
+Az app élő pakli-modulja a `data/pcic.ts` (words-open + angol track): ez NEM a `data/pcic/**`, marad; csak a legacy ága törlődik (lásd A). A `data/pcic/**` fájlokat az élő app nem tölti be (`lib/__tests__/noPcicInBundle.test.ts` őrzi).
+- data/pcicCorpus.ts:14-25, a `data/pcic/{a1,a2,b1,b2}-{all,en,sentences}.json` és `a1-build.json` rejtett importja; hívói csak tesztek, csere: törlés (6. lépés)
+- data/pcic.ts:3 (megjegyzés), lib/pcicSenses.ts:7, lib/pcicChains.ts:46, megjegyzések a rejtett PCIC-adatra; a kód no-op (`sensesFor` → undefined, `BUILD_BY_LEVEL` = {}), csere: megjegyzés-tisztítás (6. lépés)
+- lib/pcicChains.ts, lib/pcicSenses.ts (+ hívóik app/(tabs)/index.tsx, components/learn/PcicRevealedAnswer.tsx), alvó PCIC-funkciók, nem olvasnak PCIC-adatot, csere: a 6. lépés dönt (a látható funkció nem változik, mert no-op)
+- lib/__tests__/noPcicInBundle.test.ts:20,40,66, a nyers PCIC-importokat tiltó teszt, csere: törlés (6. lépés)
+- lib/__tests__/pcicBrackets.test.ts:4-7, pcicChainCoverage.test.ts:7-9, pcicChains.test.ts:11,13, pcicDedupGuard.test.ts:11-12, pcicLevels.test.ts:18, pcicNotes.test.ts:11-12, pcicPlusLevel.test.ts:13,16, pcicPosCoverage.test.ts:7-10, a PCIC-json/`pcicCorpus` közvetlen olvasása, csere: törlés (6. lépés)
+- data/__tests__/pcic.test.ts:12, az ÉLŐ `data/pcic.ts`-t teszteli (words-open + angol track), csere: marad (a legacy-ra hivatkozó esetek igazítva, 6. lépés)
+- scripts/pcic-b1.mjs:43-44,379-380, pcic-check.mjs:26-34, pcic-dedup.mjs:52-55,188-219, pcic-level-fit.mjs:69-72,230-233, pcic-pos-gaps.mjs:71, pcic-sentences.mjs:59,81, PCIC-json olvasás/írás, csere: törlés (6. lépés)
+- package.json:53-54, `pcic:b1`, `pcic:check` npm-scriptek, csere: törlés (6. lépés)
+- docs/PCIC-WORKFLOW.md, docs/pcic-level-moves.md, PLAN-pcic.md, PCIC-doksik, csere: törlés/archiválás (6. lépés)
+- app/(tabs)/index.tsx:241,311, components/learn/PcicRevealedAnswer.tsx:57, csak megjegyzés a `data/pcic/senses.json`, `<szint>-sentences.json` fájlokra, csere: megjegyzés-tisztítás (6. lépés)
 
 ## Napló
 
 - 13:49 ág + worktree kész (`refactor/drop-legacy-words` origin/main 0adbeae-ről).
+- 14:00 2. lépés kész: leltár kitöltve (A/B/C csoport), a kód-fogyasztó switch-lista az 5. lépéshez: games/content.ts, games/gloss.ts, tenseGate.ts, mixedSpeech.ts, pcicPos.ts; Kurzus/Beállítások/nyelvtan-képernyők csak típust/normalizeWordToken-t használnak (marad). Megállapítás: a nyelvtan-lecke szó-alapú zárolása (NY2 lockState) nem létezik a kódban (ed12c1c eltávolította), a szókapu = knownSentence + tenseGate (mondatkártya-kapu), a lezáródó leckék listája az 5. lépésnél készül.
