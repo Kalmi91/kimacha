@@ -18,11 +18,13 @@ import ExamButton from './ExamButton';
 type Props = {
   prompt: string;
   answerTokens: string[];
+  /** Az eredeti mondat nagybetűvel és írásjellel; a hibás válasz után ezt mutatja (ha nincs, a csempék összefűzése). */
+  sentence?: string;
   distractors: string[];
   onDone: (correct: boolean) => void;
 };
 
-export default function ExamTilesCard({ prompt, answerTokens, distractors, onDone }: Props) {
+export default function ExamTilesCard({ prompt, answerTokens, sentence, distractors, onDone }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -83,7 +85,7 @@ export default function ExamTilesCard({ prompt, answerTokens, distractors, onDon
             <ResultBadge correct={false} label={s.games.wrongFeedback} />
             <Text style={[styles.revealLabel, { color: colors.textMuted }]}>{s.exam.correctAnswer}</Text>
             <Text testID="exam-correct-answer" style={[styles.revealText, { color: colors.success }]}>
-              {answerTokens.join(' ')}
+              {sentence ?? answerTokens.join(' ')}
             </Text>
           </View>
         )}

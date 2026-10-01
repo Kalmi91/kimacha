@@ -173,6 +173,7 @@ export function buildExam(input: ExamBuildInput): ExamItem[] {
       itemId: p.itemId,
       prompt: p.source,
       answerTokens,
+      sentence: p.target,
       distractors: nearMissDistractors(answerTokens, vocab, target),
     };
   });
