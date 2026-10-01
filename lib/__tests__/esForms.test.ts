@@ -46,6 +46,9 @@ describe('lib/esForms', () => {
     expect(formsOfCard('blanco', 'adj', deps)).toEqual(['blancos', 'blanca', 'blancas']);
     expect(formsOfCard('dormir', 'verb', deps)).toContain('duermo');
     expect(formsOfCard('un / una', 'det', deps)).toEqual([]);
+    expect(formsOfCard('levantarse', 'verb', deps)).toEqual(expect.arrayContaining(['levanto', 'levantó', 'levantaba', 'levantado']));
+    expect(formsOfCard('despertarse', 'verb', deps)).toEqual(expect.arrayContaining(['despierto', 'despiertan', 'despertamos']));
+    expect(formsOfCard('rentar / alquilar', 'verb', deps)).toEqual(expect.arrayContaining(['rento', 'alquilan']));
   });
 
   it('a vosotros jelen idejű alak az infinitívből, a rendhagyók táblából', () => {
