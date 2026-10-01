@@ -1,5 +1,5 @@
 import { isPairSupported, needsPairCorrection, FORCED_PAIR, speechLang, supportedPairs, languages } from '../languages';
-import { getWordsForLevel } from '@/data/words';
+import { getOpenWordsForLevel } from '@/data/openWords';
 
 describe('languages', () => {
   // Kimacha Play: single en-es pair (Kálmán, 2026-09-22).
@@ -26,7 +26,7 @@ describe('languages', () => {
       const backed = new Set(['en', 'es']);
       for (const [source, target] of supportedPairs) {
         expect(backed.has(target)).toBe(true);
-        expect(getWordsForLevel('A1', target).length).toBeGreaterThan(0);
+        expect(getOpenWordsForLevel('A1').length).toBeGreaterThan(0);
         expect(backed.has(source)).toBe(true);
       }
     });

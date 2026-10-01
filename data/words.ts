@@ -57,6 +57,7 @@ import b1 from './words/b1.json';
 import b2 from './words/b2.json';
 import c1 from './words/c1.json';
 import c2 from './words/c2.json';
+import { openWords } from './openWords';
 
 export const words: WordEntry[] = [...a0, ...a1, ...a2, ...b1, ...b2, ...c1, ...c2] as WordEntry[];
 
@@ -134,8 +135,10 @@ export function normalizeWordToken(raw: string): string {
   return raw.toLowerCase().replace(TOKEN_PUNCTUATION, '').replace(/\s+/g, ' ').trim();
 }
 
+// PLAN-regi-szavak-ki 5. lépés: a szöveg szerinti keresés (glossza, kevert felolvasás)
+// a words-open kártyáin fut (data/openWords.ts), nem a régi szólistán.
 function allWordsFor(lang: string): WordEntry[] {
-  return words;
+  return openWords;
 }
 
 // A headword field can carry several glosses ("the lorry / the truck"), and each
