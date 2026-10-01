@@ -191,6 +191,12 @@ describe('minden tétel-fajta vizsga-kártyává alakul', () => {
     const why = qs.filter((q) => q.kind === 'why');
     expect(why.length).toBeGreaterThan(0);
     expect(why.every((q) => q.view.card === 'choice' && !!q.review.why)).toBe(true);
+    // az eredmény-lapon a kérdés szövege is látszik (pl. "Why «Escriben»?"), nem csak a mondat
+    for (const q of why) {
+      if (q.view.card !== 'choice') continue;
+      expect(q.review.question).toBe(`${q.view.heading}\n${q.view.text}`);
+    }
+    expect(why.some((q) => /^Why «/.test(q.review.question))).toBe(true);
   });
 
   it('a "csak transform" leckéből is jön teszt (indefinido-10-verbos)', () => {

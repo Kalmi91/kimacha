@@ -28,7 +28,9 @@ jest.mock('expo-router', () => ({
 }));
 
 import { act, fireEvent, render, screen } from '@testing-library/react-native';
+import { StyleSheet } from 'react-native';
 
+import { PALETTE_FILLS } from '@/constants/GrammarPalettes';
 import { getDb } from '@/lib/database.web';
 import { GRAMMAR_PROGRESS_KEY, lessonFor, nextWrittenTopic, scoredKinds } from '@/lib/grammar/syllabus';
 import { kindBestKey } from '@/lib/grammar/lessonScore';
@@ -153,6 +155,18 @@ describe.each(['brand', 'classic'] as const)('lecke végi teszt (%s paletta)', (
     expect(screen.getByTestId('grammar-lessontest-note')).toHaveTextContent('10 questions, pass 80%');
   });
 
+  it('a done-lapon a teszt-gomb az egyetlen kitöltött gomb, a "Next topic" másodlagos (keretes)', async () => {
+    await seedBest(['match', 'form', 'why']);
+    await open();
+    await playChoiceRound();
+    const fill = (id: string) => StyleSheet.flatten(screen.getByTestId(id).props.style)?.backgroundColor;
+    const test = fill('grammar-start-lessontest');
+    expect(test).toBeTruthy();
+    expect(fill('grammar-next-topic')).not.toBe(test);
+    if (palette === 'brand') expect(test).toBe(PALETTE_FILLS.brand.a);
+    else expect(fill('grammar-next-topic')).toBeUndefined();
+  });
+
   it('B2 a + 80%: 10 kérdés, helyes után nincs visszajelzés; 10/10 átment, mentődik, "Next topic"', async () => {
     await seedBest(['match', 'form', 'why']);
     await open();
@@ -199,6 +213,19 @@ describe.each(['brand', 'classic'] as const)('lecke végi teszt (%s paletta)', (
     expect(screen.queryByTestId('lesson-test-next-topic')).toBeNull();
     await press('lesson-test-retry');
     expect(screen.getByTestId('lesson-test-counter').props.children).toBe('Question 1 / 10');
+  });
+
+  it('az elrontott "miért" tételnél az eredmény-lapon a kérdés szövege is látszik', async () => {
+    await seedBest(['match', 'form', 'why']);
+    await open();
+    await playChoiceRound();
+    await press('grammar-start-lessontest');
+    const qs = expectedQuestions();
+    await runTest(qs.map((_, i) => i)); // minden kérdés hibás
+    const why = qs.filter((q) => q.kind === 'why');
+    expect(why.length).toBeGreaterThan(0);
+    for (const q of why) expect(screen.getByText(q.review.question)).toBeTruthy();
+    expect(screen.getAllByText(/^Why «/).length).toBe(why.length);
   });
 
   it('8/10 átment (a határon)', async () => {

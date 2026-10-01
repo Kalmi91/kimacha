@@ -202,17 +202,13 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
       item.correctIndex,
       optionSeed(item.id)
     );
+    const heading = item.target ? s.games.grammarChoice.whyQuestion(item.target) : s.lessonTest.whyHeading;
     return {
       id: item.id,
       kind,
-      view: {
-        card: 'choice',
-        heading: item.target ? s.games.grammarChoice.whyQuestion(item.target) : s.lessonTest.whyHeading,
-        text: item.es,
-        options: sh.options,
-        correctIndex: sh.correctIndex,
-      },
-      review: { question: item.es, answer: sh.options[sh.correctIndex], why: pick(item.tr) },
+      view: { card: 'choice', heading, text: item.es, options: sh.options, correctIndex: sh.correctIndex },
+      // Az eredmény-lapon a kérdés szövege is látszik, nem csak a mondat.
+      review: { question: `${heading}\n${item.es}`, answer: sh.options[sh.correctIndex], why: pick(item.tr) },
     };
   }
   if (isTransformItem(item)) {
