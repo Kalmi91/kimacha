@@ -14,7 +14,7 @@
 
 import type { GrammarGapItem, GrammarItem, GrammarMarkItem, GrammarTopicData } from '../games/content';
 import { isLessonV2, isMatchItem, isTransformItem, isWhyItem } from '../games/content';
-import { isConjugationTable, isMeaningTable } from './tableShape';
+import { isConjugationTable, isMeaningTable, isPersonTable } from './tableShape';
 import { DEFAULT_AGAIN_DELAY_SEC } from '../pcicSession';
 import type { ExamplePair, Lang4, LessonV2 } from './lessonTypes';
 import { PCIC_LEVELS, pcicItemsForLevel, type PcicLevel } from '@/data/pcic';
@@ -99,7 +99,9 @@ export function tableCellsForLesson(lesson: GrammarTopicData | null | undefined)
   const seen = new Set<string>();
   for (const block of lesson.body) {
     if (block.kind !== 'table') continue;
-    if (isConjugationTable(block.header, block.rows)) {
+    // PLAN-fb1001 11. lépés: a személy-tábla (Persona -> ir a + infinitivo, Sujeto -> névmás)
+    // ugyanúgy cella-kártyákat ad, mint a ragozási; a "verb" itt az oszlop-fejléc.
+    if (isConjugationTable(block.header, block.rows) || isPersonTable(block.header, block.rows)) {
       const verbHeaders = block.header.slice(1);
       block.rows.forEach((row, ri) => {
         const person = row[0];

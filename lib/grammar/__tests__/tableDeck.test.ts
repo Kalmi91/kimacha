@@ -39,7 +39,9 @@ describe('tableCellsForLesson', () => {
   });
 
   it('a schema-1 (legacy) lesson has no body, so 0 cells', () => {
-    const lesson = lessonFor('es', 'posesivos')!;
+    // PLAN-fb1001 11. lépés: a posesivos már schema-2 és személy-táblás (kérdezhető), ezért
+    // a régi-séma esetet egy schema 1-re állított másolat fedi.
+    const lesson = { ...lessonFor('es', 'ser-estar')!, schema: 1 } as unknown as Parameters<typeof tableCellsForLesson>[0];
     expect(tableCellsForLesson(lesson)).toEqual([]);
   });
 
@@ -100,6 +102,30 @@ describe('tableCellsForLesson', () => {
     // No fake "infinitive" caption for a meaning cell (app/grammar/deck/[topic].tsx
     // only shows it when `verb` is non-empty).
     expect(cells.every((c) => c.verb === '')).toBe(true);
+  });
+
+  // PLAN-fb1001 11. lépés (FB437/FB438): a személy-táblák (minden sor címkéje személy-névmás,
+  // a fejléc nem csupa infinitivus) kérdezhetők, így a szó-pakli fallback ("felesleges szavak")
+  // nem lép be.
+  it('pronombres-oi: a Sujeto -> névmás tábla 5 cellát ad (vosotros kihagyva), nincs szó-pakli fallback', () => {
+    const lesson = lessonFor('es', 'pronombres-oi')!;
+    const cells = tableCellsForLesson(lesson);
+    expect(cells).toHaveLength(5);
+    expect(cells.find((c) => c.person === 'yo')?.answer).toBe('me');
+    expect(cells.find((c) => c.person === 'ellos/ellas/ustedes')?.answer).toBe('les');
+    expect(cells.some((c) => c.person.toLowerCase().includes('vosotros'))).toBe(false);
+  });
+
+  it('ir-a-infinitivo: a Persona -> "ir a" tábla 5 cellát ad', () => {
+    const lesson = lessonFor('es', 'ir-a-infinitivo')!;
+    const cells = tableCellsForLesson(lesson);
+    expect(cells).toHaveLength(5);
+    expect(cells.find((c) => c.person === 'nosotros')?.answer).toBe('vamos a');
+  });
+
+  it('egy tábla, amiben nem minden sor személy (pronombres-od: me, te, lo, la...), továbbra sem kérdezett', () => {
+    const lesson = lessonFor('es', 'pronombres-od')!;
+    expect(tableCellsForLesson(lesson)).toEqual([]);
   });
 
   it('a reference table with a different header (Person, Singular, ...) still falls back to 0 cells, not forced', () => {
