@@ -62,6 +62,7 @@ import grammarEsNegacion from '@/data/games/grammar/es/negacion.json';
 import grammarEsImperativoAfirmativo from '@/data/games/grammar/es/imperativo-afirmativo.json';
 import grammarEsImperativoNegativo from '@/data/games/grammar/es/imperativo-negativo.json';
 import grammarEsLlevarTraerIrVenir from '@/data/games/grammar/es/llevar-traer-ir-venir.json';
+import grammarEsPedirPreguntar from '@/data/games/grammar/es/pedir-preguntar.json';
 
 // K33 (play-vágás, 2026-09-22): a Játék/Átbeszélő fülek és a hozzájuk tartozó
 // data/games/{ccat,myths,chats,stories,confusables} mappák kikerültek. A
@@ -115,6 +116,7 @@ export const esContent: LanguageContentBundle = {
     grammarEsCombinacionPronombres,
     grammarEsVerbosReflexivos,
     grammarEsPorPara,
+    grammarEsPedirPreguntar,
     grammarEsLlevarTraerIrVenir,
     grammarEsSubjuntivoPresenteForma,
     grammarEsSubjuntivoDisparadores,
