@@ -63,6 +63,9 @@ describe('table-deck screen: enPrompt (FB378)', () => {
     const first = cells.find((c) => screen.queryByText(c.enPrompt!) !== null);
     expect(first).toBeTruthy();
     expect(screen.getByText('translate to Spanish')).toBeTruthy();
+    // PLAN-fb1001 13. lépés (FB440): az infinitivus alapból rejtett, a súgó-gomb mutatja.
+    expect(screen.queryByText(first!.verb)).toBeNull();
+    fireEvent.press(screen.getByTestId('tabledeck-hint'));
     expect(screen.getByText(first!.verb)).toBeTruthy();
     // The old bare caption/prompt style is not used for an enPrompt cell.
     expect(screen.queryByText('person · verb')).toBeNull();

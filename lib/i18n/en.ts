@@ -412,6 +412,8 @@ export default {
     wordPromptCaptionEn: 'How do you say it in English?',
     // FB378: caption for a cell with an English prompt (translate to Spanish).
     promptCaptionEn: 'translate to Spanish',
+    // PLAN-fb1001 13. lépés (FB440): a ragozó kártyán az infinitivus rejtett, a súgó-gomb mutatja.
+    showVerb: 'Show the verb',
     progress: (done: number, total: number) => `${done} / ${total} done`,
     completeTitle: (n: number) => `All ${n} cells done 🎉`,
     startAgain: 'Start again',
