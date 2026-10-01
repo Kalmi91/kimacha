@@ -42,6 +42,7 @@ import grammarEsPasivaSerParticipio from '@/data/games/grammar/es/pasiva-ser-par
 import grammarEsSubjuntivoImperfecto from '@/data/games/grammar/es/subjuntivo-imperfecto.json';
 import grammarEsSubjuntivoPerfecto from '@/data/games/grammar/es/subjuntivo-perfecto.json';
 import grammarEsConcesivas from '@/data/games/grammar/es/concesivas.json';
+import grammarEsFuturoCondicionalPerfecto from '@/data/games/grammar/es/futuro-condicional-perfecto.json';
 import grammarEsCondicionalesTipo23 from '@/data/games/grammar/es/condicionales-tipo2-3.json';
 import grammarEsEstiloIndirecto from '@/data/games/grammar/es/estilo-indirecto.json';
 import grammarEsComparativosSuperlativos from '@/data/games/grammar/es/comparativos-superlativos.json';
@@ -132,6 +133,7 @@ export const esContent: LanguageContentBundle = {
     grammarEsSubjuntivoImperfecto,
     grammarEsSubjuntivoPerfecto,
     grammarEsConcesivas,
+    grammarEsFuturoCondicionalPerfecto,
     grammarEsCondicionalesTipo23,
     grammarEsEstiloIndirecto,
     grammarEsComparativosSuperlativos,
