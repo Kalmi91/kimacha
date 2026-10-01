@@ -138,7 +138,10 @@ Párhuzamos agent: `feat/learn-words-open` (`C:\AI\kimacha-wt-learn-open`) a `da
   - minta (form): row[0] «En México ___ (hablar) español.» → se habla
 - …és a probe szerinti folytatás: D `ojala-quizas`, `gerundio-participio-construcciones`, `lo-neutro`, `pasiva-ser-participio`, `subjuntivo-perfecto`, `futuro-condicional-perfecto`, `leismo-laismo`, `probabilidad-con-tiempos`, `relativos-complejos`; E `indefinidos`, `perifrasis`, `pluscuamperfecto`, `relativos`, `concesivas`. Ezeket a B sáv viszi (`nyelvtan-b`, lásd ott a „## Sáv B” szakaszt).
 - T-sor (02:30-tól, az A sáv a queue után): igeidős leckék, amelyeknek van `tense`-jelvénye, de nincs 50 transformja (probe 02:15; a skill „Igeidős témánál … 50 transform”, NYELVTAN.md NY10):
-- [ ] T1. `imperfecto` (A2): +50 transform (presente → imperfecto) → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `feat(grammar): imperfecto 50 transform (nyelvtan)`
+- [x] T1. `imperfecto` (A2): +50 transform (presente → imperfecto) → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `feat(grammar): imperfecto 50 transform (nyelvtan)` · 02:35 · audit 0/0, jest 1670 ok, tsc 0, lint 0 err · 10 ige × 5 (hablar, comer, vivir, ser, ir, ver, tener, estar, hacer, trabajar), 30 kijelentő + 10 tagadó + 10 kérdő, yo/tú/él-ella/nosotros/ellos (vosotros nincs), `tense` presente → imperfecto, wordIds ige-lemma + tartalmas szavak (A0-A2), nem ige tartalmas szó max 3×, a meglévő itemekhez nem nyúltam · hash: a `feat(grammar): imperfecto 50 transform (nyelvtan)` commit
+  - minta (transform): «Hablo con mi abuela todos los días.» → Hablaba con mi abuela todos los días.
+  - minta (transform): «No va a la escuela en coche.» → No iba a la escuela en coche.
+  - minta (transform): «¿Ven el fútbol juntos?» → ¿Veían el fútbol juntos?
 - [ ] T2. `condicional-simple` (B1): +50 transform (presente → condicional) → kész, ha: ugyanaz, commit `feat(grammar): condicional-simple 50 transform (nyelvtan)`
 - [ ] T3. `indefinido-imperfecto` (A2): +50 transform, csak ha a transform-séma enged igeidő-jelölő súgót (pl. «ayer» / «de niño») → kész, ha: ugyanaz, vagy `[!]` + ok
 - Szándékosan kimarad: `indefinido-regular` / `-irregular` (az `indefinido-10-verbos` már 50 transformmal viszi, K2), `subjuntivo-disparadores` / `temporales-subjuntivo` (a `subjuntivo-presente-forma` 50 transformja ugyanez a fajta).
