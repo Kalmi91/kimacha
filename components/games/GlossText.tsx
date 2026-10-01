@@ -2,8 +2,6 @@ import { useState } from 'react';
 import { Modal, Pressable, StyleSheet, Text, View, type StyleProp, type TextStyle } from 'react-native';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
-import { t } from '@/lib/i18n';
-import { getDb } from '@/lib/database';
 import { speak } from '@/lib/speech';
 import { speechLang } from '@/lib/languages';
 import { normalizeWordToken } from '@/data/words';
@@ -51,17 +49,14 @@ export default function GlossText({
 }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
-  const s = t();
 
   const [active, setActive] = useState<GlossInfo | null>(null);
-  const [added, setAdded] = useState(false);
 
   const controlled = forceOpen !== undefined;
   const shown = controlled ? forceOpen : active;
 
   const open = (info: GlossInfo) => {
     setActive(info);
-    setAdded(false);
     onOpenGloss?.();
   };
 
@@ -72,12 +67,6 @@ export default function GlossText({
     }
     setActive(null);
     onCloseGloss?.();
-  };
-
-  const addToSpelling = () => {
-    if (!shown?.wordId) return;
-    getDb().addToSpellingList(shown.wordId).catch(() => {});
-    setAdded(true);
   };
 
   const parts = text.split(/(\s+)/);
@@ -119,15 +108,6 @@ export default function GlossText({
               >
                 <Text style={styles.iconBtnText}>🔊</Text>
               </Pressable>
-              {shown?.wordId ? (
-                <Pressable
-                  style={[styles.spellBtn, { backgroundColor: added ? colors.tint : colors.card, borderColor: colors.tint }]}
-                  onPress={addToSpelling}
-                  disabled={added}
-                >
-                  <Text style={{ color: added ? '#FFFFFF' : colors.tint }}>{added ? '✓' : s.buttons.spelling}</Text>
-                </Pressable>
-              ) : null}
             </View>
           </Pressable>
         </Pressable>
@@ -171,13 +151,5 @@ const styles = StyleSheet.create({
   },
   iconBtnText: {
     fontSize: 20,
-  },
-  spellBtn: {
-    paddingHorizontal: 16,
-    height: 48,
-    borderRadius: 24,
-    borderWidth: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });

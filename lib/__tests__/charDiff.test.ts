@@ -54,7 +54,7 @@ describe('charDiff', () => {
   });
 });
 
-// FB98: the spelling trainer grades with this, it is the only thing standing
+// FB98: the PCIC grader uses this, it is the only thing standing
 // between a byte-for-byte comparison and a full stop counting as a mistake.
 describe('stripTrailingPunct', () => {
   it('drops the closing punctuation', () => {

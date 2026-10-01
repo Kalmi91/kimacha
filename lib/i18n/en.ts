@@ -8,7 +8,7 @@ export default {
   // Play-vágás 7. lépés: the flashcard-review keys (word/sentence prompts,
   // typing, skip, borrowed-from-topic, new/review tags, spelling-tap hint)
   // are gone with the Learn tab (step 3); correct/wrong/check still label the
-  // PCIC and spelling screens' feedback.
+  // PCIC screen's feedback.
   card: {
     check: 'Check',
     correct: 'Correct!',
@@ -17,9 +17,6 @@ export default {
     typeSentence: 'Type the sentence',
     // PLAN-fb1001 K4: a válasz-beírómező szürke placeholdere, a célnyelv nevével.
     typeIn: (lang: string): string => (lang === 'es' ? 'Type in Spanish' : 'Type in English'),
-  },
-  buttons: {
-    spelling: 'Spelling',
   },
   done: {
     // K33 (play-vágás, 2026-09-22): the Learn tab (Done screen) is gone, this
@@ -171,7 +168,6 @@ export default {
     missingVoice: (langs: string) => `⚠️ No installed voice for: ${langs}. Download it in the phone's text-to-speech settings; until then the app stays silent in that language.`,
     dailyNewLimit: 'New words a day',
     dailyNewLimitWords: (n: string) => `${n} words / day`,
-    spellingPractice: (due: number, total: number) => `Spelling practice · ${due} due, ${total} on the list`,
     strictAccents: 'Accents count',
     strictAccentsHint: 'A missing accent (á, é, ñ) is a mistake when typing.',
     articlePicker: 'Article buttons',
@@ -180,7 +176,7 @@ export default {
     missedWordDelay: 'Missed word comes back after',
     missedWordDelaySeconds: (n: string) => `${n} s`,
     // PLAN-ketiranyu 4. lépés: a tanulási irány váltó sora + a hozzá tartozó
-    // lap (Settings, a Spelling practice sor fölött).
+    // lap (Settings, a Backup sor fölött).
     learningDirection: 'Learning direction',
     chooseDirection: 'Choose learning direction',
     directionEnEs: 'English → Spanish',
@@ -250,11 +246,6 @@ export default {
     openSubtitlesUrl: 'https://opus.nlpl.eu',
     licenseLabel: 'creativecommons.org/licenses/by-sa/4.0',
     licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0',
-  },
-  spelling: {
-    title: 'Spelling Practice',
-    empty: 'No words due',
-    totalInList: (n: number) => `${n} words in your list`,
   },
   feedback: {
     button: 'Feedback',
@@ -354,9 +345,6 @@ export default {
     resetConfirmLevel: (level: string) => `This clears all progress on the ${level} deck. Are you sure?`,
     undo: 'Undo',
     dontLearn: "Don't learn this",
-    // PLAN-play 12. lépés (s3): "Add to spelling" gomb Check után.
-    addToSpelling: '✎ Add to spelling',
-    inSpellingList: '✓ In spelling list',
     learningStep: (step: number, total: number) => `step ${step}/${total}`,
     newBadge: 'new',
     moreNew: (n: number) => `+${n} new words`,

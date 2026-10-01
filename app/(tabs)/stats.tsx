@@ -63,8 +63,7 @@ export default function StatsScreen() {
   // FB254: a napi oszlop 60 perc fölött órában áll, koppintásra percre vált.
   const [chartInMinutes, setChartInMinutes] = useState(false);
 
-  // Refresh every time the tab gains focus (mirrors the Settings tab's
-  // spellingDue pattern), so numbers stay current across app-wide activity.
+  // Refresh every time the tab gains focus so numbers stay current across app-wide activity.
   useFocusEffect(
     useCallback(() => {
       const db = getDb();

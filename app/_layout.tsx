@@ -120,7 +120,6 @@ function RootLayoutNav() {
         <Stack screenOptions={brutalHeaderOptions(g)}>
           <Stack.Screen name="onboarding" options={{ headerShown: false }} />
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="spelling" options={{ headerShown: false }} />
           <Stack.Screen name="credits" options={{ headerShown: false }} />
           <Stack.Screen name="grammar" options={{ headerShown: false }} />
           <Stack.Screen name="mistakes" options={{ headerShown: false }} />
