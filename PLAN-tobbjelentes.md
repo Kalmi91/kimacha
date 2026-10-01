@@ -48,7 +48,7 @@ Jóváhagyott minta: https://claude.ai/artifact/BW7QfMboUhRby7DyZNL6WQ (4. verzi
 - R2 lazítás: szintenként legalább 150 kártya; `order` egyedi és hézagmentes 1..N; az order-sáv = szint szabály csak az 1-600-ra él, 600 fölött a `level` mező dönt. A 13 kulcs sorrendje marad, a `hint_en` opcionális 14. kulcs a `de` után.
 - R3-R10: az „már tanult szó” halmaz egy 600 fölötti kártyánál azokból a kártyákból áll, amelyek szintje legfeljebb a kártya szintje (a meglévő logikát kell ehhez igazítani, a 600 alattiaknál a viselkedés nem változik).
 - R11: ha egy normalizált `en` kérdés legalább két kártyán szerepel, mindegyiknek kötelező a `hint_en`.
-- R12: a `hint_en`-ben pontosan egy `*…*` jelölés van, és a jelölt rész a kérdés egyik szavával kezdődik (to play → play / plays / played), legfeljebb 8 szó.
+- R12: a `hint_en`-ben pontosan egy `*…*` jelölés van, és a jelölt szó első 2 betűje (kisbetű, ékezet nélkül) egyezik a kérdés valamelyik szavának első 2 betűjével (play / plays / played, juego / jugar, llevo / llevar), legfeljebb 8 szó. (Lazítva 12:13, orkesztrátori döntés: a szó szerinti „kezdődik” a ragozott spanyol alakokat kizárta.)
 - R13: `hint_en` csak R11 szerinti kártyán.
 - R14: a perjeles `es`-ben minden alternatíva nem üres, nincs ismétlés, az elválasztó pontosan ` / `.
 
@@ -73,3 +73,4 @@ A kapu szabályonként kiírja a hibák számát és az első 5 példát, hibán
 
 - 12:02 ág + worktree kész (`feat/multi-meaning-words` origin/main 149460a-ról).
 - 12:09 2. lépés kész: words-open-check (R1/R2 lazítás, R4 szint-alapú „tanult" halmaz 600 fölött, R11-R14 a scripts/multi-meaning-rules.mjs-ben közösen) + validate-en-track R11-R14. Mostani adaton: words-open R11 4 hiba (there×2, when×2), R1-R10 ok; angol track R11 195 hiba, R12-R14 ok.
+- 12:13 R12 lazítva a scripts/multi-meaning-rules.mjs-ben (első 2 betű, ékezet nélkül); a Spec R12 sora frissítve.
