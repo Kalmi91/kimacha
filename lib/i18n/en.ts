@@ -449,6 +449,18 @@ export default {
     levelNotStarted: 'not started',
     levelRowIntroduced: (n: number, total: number) => `${n} / ${total} introduced`,
   },
+  // PLAN-vizsga B. szakasz (Kálmán, 2026-10-01): a nyelvtani lecke végi teszt feliratai.
+  lessonTest: {
+    take: 'Take the lesson test',
+    rules: (n: number, pct: number) => `${n} ${n === 1 ? 'question' : 'questions'}, pass ${pct}%`,
+    finishFirst: 'Finish all practice types first',
+    passedTag: 'Test passed',
+    passedBest: (best: number) => `Test passed · best ${best}%`,
+    verdictPassed: 'Lesson test passed',
+    leaveTitle: 'Leave the test',
+    missedTitle: 'Missed questions',
+    whyHeading: 'Why is the sentence like this?',
+  },
   // PLAN-vizsga A. szakasz 2. lépés (Kálmán, 2026-10-01): a szintvizsga feliratai (szintválasztó sor,
   // bevezető, kérdések, eredmény). A felület sehol nem írja ki a vizsga hivatalos nevét.
   exam: {
