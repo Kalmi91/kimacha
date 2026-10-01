@@ -124,17 +124,18 @@ export default function PcicRevealedAnswer({
       {/* Kálmán 2026-09-21: a régi (PR #27 előtti) Tudtam/Nem tudtam
           gombsor vissza, intervallum-előnézettel; a koppintás dönt és
           értékel, üres beküldés után is. */}
-      <View style={styles.gradesRow}>
+      <View style={[styles.gradesRow, g.brutal && styles.brutalGradesRow]}>
         {GRADES.map((gr) => {
           const isPre = nextGrade === gr;
           if (g.brutal) {
-            // NY19: doboz (good = a, again = b); a javasolt értékelés nagyobb árnyékkal.
+            // NY19: doboz (good = a, again = b). PLAN-learn-words-open 5a: a két gomb
+            // egyforma (azonos árnyék-eltolás, a sor a kártya teljes szélességén).
             return (
               <BrutalBox
                 key={gr}
                 testID={`pcic-grade-${gr}`}
                 fill={gr === 'good' ? 'a' : 'b'}
-                offset={isPre ? 5 : 3}
+                offset={2}
                 style={styles.brutalGrade}
                 boxStyle={styles.brutalGradeBox}
                 onPress={() => onGrade(gr)}
@@ -250,8 +251,9 @@ const styles = StyleSheet.create({
     gap: 8,
     marginTop: 24,
   },
+  brutalGradesRow: { alignSelf: 'stretch' },
   brutalGrade: { flex: 1 },
-  brutalGradeBox: { paddingVertical: 8, alignItems: 'center', justifyContent: 'center' },
+  brutalGradeBox: { flex: 1, paddingVertical: 8, alignItems: 'center', justifyContent: 'center' },
   gradeBtn: {
     flex: 1,
     borderRadius: 12,
@@ -262,11 +264,13 @@ const styles = StyleSheet.create({
   gradeLabel: {
     fontSize: 14,
     fontWeight: '700',
+    textAlign: 'center',
     color: '#FFFFFF',
   },
   gradePreview: {
     fontSize: 11,
     marginTop: 2,
+    textAlign: 'center',
     color: '#FFFFFF',
   },
 });
