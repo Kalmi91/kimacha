@@ -175,6 +175,12 @@ Párhuzamos agent: `feat/learn-words-open` (`C:\AI\kimacha-wt-learn-open`) a `da
   - minta (választós): «Cuando vio la cuenta, mi papá ___ furioso.» → se puso
   - minta (választós): «La pequeña tienda de mi papá ___ una empresa grande.» → se convirtió en
   - minta (form): «Hace diez años, mi socio y yo ___ dueños del restaurante. (hacerse)» → nos hicimos
+- F-sor 2. ötös (Kálmánnak listázva 04:30, utólag dobhatja):
+- [ ] F-6. `estar-participio` (B1, új téma) → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit
+- [ ] F-7. `imperativo-pronombres` (A2, új téma) → kész, ha: ugyanaz
+- [ ] F-8. `hace-desde-hace` (A2, új téma) → kész, ha: ugyanaz
+- [ ] F-9. `diminutivos` (A2, új téma) → kész, ha: ugyanaz
+- [ ] F-10. `oraciones-consecutivas` (B2, új téma) → kész, ha: ugyanaz
 
 ## BRIEF F-sor (2026-10-01, új téma a tantervbe, tételenként EGY agent)
 
@@ -188,6 +194,11 @@ A „BRIEF új lecke” érvényes 1:1, ezekkel a kiegészítésekkel (a skill F
   - F-3 `subjuntivo-relativo`: ismeretlen / nem létező előzmény → kötőmód («Busco un piso que tenga balcón», «No hay nadie que sepa»), ismert → kijelentő («Tengo un piso que tiene balcón»); a kész `relativos` (B sáv, `C:\AI\kimacha-wt-eget-nyelvtan-b\data\games\grammar\es\relativos.json`, csak olvasd) és `subjuntivo-disparadores` leckére épül.
   - F-4 `verbos-preposicion`: pensar en, soñar con, depender de, confiar en, acordarse de, casarse con, enamorarse de, tratar de, quedar en, insistir en; a form-tábla row[0] = ige + helyzet, cella = a gyártandó elöljáró + folytatás.
   - F-5 `verbos-de-cambio`: ponerse, volverse, hacerse, quedarse, convertirse en, llegar a ser; a különbség (hirtelen/átmeneti, tartós jellem, akarattal elért, végeredmény) a `why` itemekben.
+  - F-6 `estar-participio`: estar + participio mint eredmény-állapot (La puerta está abierta, La tienda está cerrada, Estoy cansado), egyeztetés nemben-számban; kontraszt a `pasiva-ser-participio` leckével (ser = cselekvés, estar = eredmény), arra épül, ne ismételd.
+  - F-7 `imperativo-pronombres`: névmás a felszólításhoz tapad igenlőben (dímelo, siéntate, cómpraselo, a hangsúlyjel a szótag-szám miatt), tagadóban elé kerül (no me lo digas, no te sientes); a kész `imperativo-afirmativo`, `imperativo-negativo`, `combinacion-pronombres` leckére épül. A form-tábla cellája a teljes alak a hangsúlyjellel.
+  - F-8 `hace-desde-hace`: hace + idő + que + jelen (Hace dos años que vivo aquí), desde hace (Vivo aquí desde hace dos años), desde + időpont (desde 2020, desde el lunes), llevar + idő + gerundio (Llevo dos años viviendo aquí), hace + idő + indefinido (Llegué hace dos años) kontrasztként; a kész `marcadores-temporales` és `perifrasis` leckét nézd meg.
+  - F-9 `diminutivos`: -ito / -ita, -cito / -cita, -ecito (casita, cafecito, panecito, ahorita, poquito, cerquita), a mexikói használat (udvariasság, kedvesség, ahorita jelentései) a body-ban; sáv valószínűleg `full`. Csak tanított tövekből (`wordIds` a tő kártyája), a kicsinyítő alak glossary-ba, ha nincs kártyája.
+  - F-10 `oraciones-consecutivas`: tan + mn./hat. + que, tanto/tanta/tantos + fn. + que, verbo + tanto que, así que, por eso, por lo tanto, de modo que; a kész `finales-causales` és `marcadores-discursivos` leckére épül, ne ismételd.
 
 ## BRIEF T-sor (2026-10-01, 50 transform meglévő leckébe, tételenként EGY agent)
 
