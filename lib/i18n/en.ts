@@ -186,6 +186,10 @@ export default {
     directionEnEs: 'English → Spanish',
     directionEsEn: 'Spanish → English',
     credits: 'Credits',
+    // PLAN-fb1001 7. lépés (FB431): a nyelvtan-haladás nullázó sora és megerősítése.
+    resetGrammar: '🗑️ Reset grammar progress',
+    resetGrammarTitle: 'Reset grammar progress',
+    resetGrammarMessage: 'This clears all grammar lesson and practice progress. Are you sure?',
   },
   backup: {
     backup: 'Backup',
@@ -347,6 +351,7 @@ export default {
     resetConfirmYes: 'Reset',
     // PLAN-fb1001 K1: a Beállítások sor, a nullázódó szint nevével.
     resetRow: (level: string) => `🗑️ Reset progress (${level})`,
+    resetConfirmLevel: (level: string) => `This clears all progress on the ${level} deck. Are you sure?`,
     undo: 'Undo',
     dontLearn: "Don't learn this",
     // PLAN-play 12. lépés (s3): "Add to spelling" gomb Check után.

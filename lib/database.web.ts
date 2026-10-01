@@ -55,6 +55,8 @@ export interface DB {
   // other per-pair setting/state in this interface.
   getGameProgress(gameId: string): Promise<{ itemId: string; state: string; data: unknown }[]>;
   setGameProgress(gameId: string, itemId: string, state: string, data?: unknown): Promise<void>;
+  // PLAN-fb1001 7. lépés (FB431): egy játék/kurzus (pl. a nyelvtan) teljes haladása az aktív párra.
+  resetGameProgress(gameId: string): Promise<void>;
   // PLAN-pcic 4. lépés: PCIC fül, SM-2, független a FSRS `cards`-tól
   getPcicCards(): Promise<Sm2Card[]>;
   upsertPcicCard(card: Sm2Card): Promise<void>;
@@ -337,6 +339,10 @@ class MemoryDB implements DB {
 
   async setGameProgress(gameId: string, itemId: string, state: string, data?: unknown) {
     this.gameProgressFor(gameId).set(itemId, { state, data });
+  }
+
+  async resetGameProgress(gameId: string) {
+    this.gameProgressMap.delete(this.gameKey(gameId));
   }
 
   // PLAN-pcic 4. lépés: PCIC fül, SM-2, független a FSRS `cards`-tól. Nem
