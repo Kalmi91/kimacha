@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { Text } from '@/components/KText';
 
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
@@ -35,7 +36,7 @@ export default function MoreBlocks({ more, contentLang, color }: Props) {
       {blocks.map((block, i) => {
         if (block.kind === 'heading') {
           return (
-            <Text key={i} style={[styles.heading, { color: colors.text }]}>
+            <Text key={i} variant="title" style={[styles.heading, { color: colors.text }]}>
               {block.text}
             </Text>
           );

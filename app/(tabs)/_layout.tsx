@@ -1,17 +1,22 @@
 import { View, type ColorValue } from 'react-native';
+import { Text } from '@/components/KText';
 import { Tabs } from 'expo-router';
 import { SymbolView, type SymbolViewProps } from 'expo-symbols';
 
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
+import { useSkin } from '@/lib/useSkin';
 import { brutalHeaderOptions } from '@/lib/brutalHeader';
+import { useSkinDecor } from '@/components/skins';
 import { t } from '@/lib/i18n';
 
 export default function TabLayout() {
   const { theme, grammarPalette } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
+  const { skin } = useSkin();
+  const { HeaderOrnament } = useSkinDecor();
   const s = t();
 
   // NY19: brutalista palettán az aktív ikon a kitöltésű, ink keretes négyzeten ül.
@@ -47,6 +52,8 @@ export default function TabLayout() {
         // kijelzőn a felirat 6 fülnél tördel a default méretnél.
         tabBarLabelStyle: {
           fontSize: 10,
+          // PLAN-temak 4C: a fül-címke a téma title-betűjét kapja.
+          ...(skin.fonts.title ? { fontFamily: skin.fonts.title } : null),
         },
         // Az Átbeszélő a 7. fül (Kálmán döntése, 2026-09-08). 7 feliratot már
         // nem lehet kiolvasni 360 dp-n, ezért a sáv innentől csak ikon. A
@@ -57,7 +64,26 @@ export default function TabLayout() {
         },
         headerTintColor: colors.text,
         // NY25: brutalista palettán ink vonalas, nagybetűs fejléc (classic: üres).
-        ...brutalHeaderOptions(g),
+        ...brutalHeaderOptions(g, skin),
+        // PLAN-temak 2A: dísz-fejléc (HeaderOrnament); dísz nélkül a natív cím marad.
+        ...(HeaderOrnament
+          ? {
+              headerTitle: ({ children }: { children: string }) => (
+                <HeaderOrnament>
+                  <Text
+                    variant="title"
+                    style={
+                      g.brutal
+                        ? { color: g.ink, fontSize: 17, fontWeight: '500', textTransform: 'uppercase' }
+                        : { color: colors.text, fontSize: 17, fontWeight: '600' }
+                    }
+                  >
+                    {children}
+                  </Text>
+                </HeaderOrnament>
+              ),
+            }
+          : null),
       }}>
       <Tabs.Screen
         name="index"

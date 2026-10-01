@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, Pressable } from 'react-native';
+import { StyleSheet, View, Pressable } from 'react-native';
+import { Text } from '@/components/KText';
 import { speak as speakIn, stop as stopSpeech } from '@/lib/speech';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
@@ -87,7 +88,7 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
             {placed.map((bankIdx, pos) => (
               g.brutal ? (
                 <BrutalBox key={`placed-${bankIdx}-${pos}`} fill="b" offset={2} boxStyle={styles.brutalChip} onPress={() => removeWord(pos)}>
-                  <Text style={[styles.chipText, { color: g.onFill }]}>{bank[bankIdx]}</Text>
+                  <Text style={[styles.chipText, { color: g.onB }]}>{bank[bankIdx]}</Text>
                 </BrutalBox>
               ) : (
               <Pressable key={`placed-${bankIdx}-${pos}`} style={[styles.wordChip, styles.placedChip]} onPress={() => removeWord(pos)}>

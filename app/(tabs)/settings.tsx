@@ -1,13 +1,15 @@
 import { useState, useCallback, type ReactNode } from 'react';
-import { StyleSheet, Text, View, Pressable, Alert, Platform, ScrollView, Modal } from 'react-native';
+import { StyleSheet, View, Pressable, Alert, Platform, ScrollView, Modal } from 'react-native';
+import { Text } from '@/components/KText';
 import { useRouter, useFocusEffect } from 'expo-router';
 import { File, Paths } from 'expo-file-system';
 import * as Sharing from 'expo-sharing';
 import * as DocumentPicker from 'expo-document-picker';
 import Colors from '@/constants/Colors';
-import { PALETTE_FILLS, type GrammarPaletteId } from '@/constants/GrammarPalettes';
+import { legibleOn } from '@/constants/Skins';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
+import { useSkin } from '@/lib/useSkin';
 import { t, setLanguage, notifyLanguageChange } from '@/lib/i18n';
 import { type Level } from '@/data/words';
 import { getDb } from '@/lib/database';
@@ -33,6 +35,8 @@ import {
 } from '@/lib/pcicSession';
 import FeedbackButton from '@/components/FeedbackModal';
 import { BrutalBox, BrutalSwitch } from '@/components/grammar/Brutal';
+import { SkinBackdrop } from '@/components/skins/Slots';
+import ThemeSwatch from '@/components/skins/ThemeSwatch';
 // FB82: version line in Settings, the same tag the feedback rows carry.
 import { appBuildTag } from '@/lib/appBuild';
 import { loadVoices, hasVoiceFor } from '@/lib/speech';
@@ -92,8 +96,15 @@ function StepBtn({ label, onPress }: { label: string; onPress: () => void }) {
 }
 
 export default function SettingsScreen() {
-  const { theme, override, setOverride, grammarPalette, setGrammarPalette } = useTheme();
+  const { theme } = useTheme();
+  // PLAN-temak 4D: az aktív téma a Témák-sorban (név + minta).
+  const { id: skinId, skin: activeSkin, mode } = useSkin();
+  // 7F/G2: a léptető sorokban a címke ennél keskenyebbre nem szorulhat, előbb a léptető törik a címke alá
+  // (egyedi test-betűs / nagyított / betűközös témán 112, a mai Neo-brutál és Klasszikus kinézetén 64: ott ez nem tör).
+  const wideText = !!activeSkin.fonts.body || activeSkin.fontScale > 1 || activeSkin.spacingScope === 'all';
+  const stepLabel = { minWidth: wideText ? 112 : 64 };
   const colors = Colors[theme];
+  const arrowColor = legibleOn(colors.tint, colors.card, 3);
   const g = useGrammarColors();
   const s = t();
   const router = useRouter();
@@ -223,30 +234,6 @@ export default function SettingsScreen() {
     await getDb().setAgainDelaySec(next);
   };
 
-  // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 3. pont): a
-  // korábban angolra égetett gombfeliratok a felület nyelvén.
-  // PLAN-fb1001 8. lépés (FB428): az ikon a felirat FÖLÉ kerül külön sorba, hogy a hosszú
-  // felirat ("Automático") 3 oszlopban se csússzon ki a gombból.
-  const themeOptions: { icon: string; label: string; value: 'system' | 'light' | 'dark' }[] = [
-    { icon: '🔄', label: s.settings.themeAuto, value: 'system' },
-    { icon: '☀️', label: s.settings.themeLight, value: 'light' },
-    { icon: '🌙', label: s.settings.themeDark, value: 'dark' },
-  ];
-
-  // NY12: color palettes, two dots (accent + second color) and the name.
-  const paletteOptions: { label: string; value: GrammarPaletteId }[] = [
-    { label: s.settings.paletteBrand, value: 'brand' },
-    { label: s.settings.paletteElectric, value: 'electric' },
-    { label: s.settings.paletteLime, value: 'lime' },
-    { label: s.settings.paletteCyan, value: 'cyan' },
-    { label: s.settings.paletteOrange, value: 'orange' },
-    { label: s.settings.paletteClassic, value: 'classic' },
-  ];
-  const paletteDots = (id: GrammarPaletteId): [string, string] =>
-    id === 'classic'
-      ? [Colors.light.tint, Colors.light.accent]
-      : [PALETTE_FILLS[id].a, PALETTE_FILLS[id].b];
-
   // RN-web Alert is a no-op, so web falls back to the browser dialogs.
   const notify = (title: string, message?: string) => {
     if (Platform.OS === 'web') window.alert(message ? `${title}\n${message}` : title);
@@ -366,104 +353,27 @@ export default function SettingsScreen() {
 
   return (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
+      <SkinBackdrop />
       {/* FB101: the page grew past one screen (the version line at its bottom was
           unreachable), so the settings list scrolls. The modal and the feedback
           FAB stay outside, pinned to the screen. */}
       <ScrollView contentContainerStyle={styles.container}>
       <Text style={[styles.sectionTitle, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.tabs.settings}</Text>
 
-      <View style={styles.optionGroup}>
-        {themeOptions.map(opt => g.brutal ? (
-          <BrutalBox
-            key={opt.value}
-            fill={override === opt.value ? 'a' : 'paper'}
-            style={styles.brutalOptionOuter}
-            boxStyle={styles.brutalOption}
-            onPress={() => setOverride(opt.value)}
-          >
-            <Text style={styles.themeIcon}>{opt.icon}</Text>
-            <Text
-              numberOfLines={1}
-              adjustsFontSizeToFit
-              minimumFontScale={0.8}
-              style={[styles.optionText, styles.brutalOptionText, styles.themeLabel, { color: override === opt.value ? g.onFill : g.ink }]}
-            >
-              {opt.label}
-            </Text>
-          </BrutalBox>
-        ) : (
-          <Pressable
-            key={opt.value}
-            style={[
-              styles.option,
-              { backgroundColor: override === opt.value ? colors.tint : colors.card },
-            ]}
-            onPress={() => setOverride(opt.value)}
-          >
-            <Text style={styles.themeIcon}>{opt.icon}</Text>
-            <Text
-              numberOfLines={1}
-              adjustsFontSizeToFit
-              minimumFontScale={0.8}
-              style={[styles.optionText, styles.themeLabel, { color: override === opt.value ? colors.onTint : colors.text }]}
-            >
-              {opt.label}
-            </Text>
-          </Pressable>
-        ))}
-      </View>
-
-      <Text style={[styles.sectionHint, { color: colors.textMuted, marginBottom: 8 }]}>{s.settings.paletteTitle}</Text>
-      <View style={[styles.optionGroup, styles.paletteGroup]}>
-        {paletteOptions.map(opt => {
-          const [dotA, dotB] = paletteDots(opt.value);
-          const selected = grammarPalette === opt.value;
-          if (g.brutal) {
-            return (
-              <BrutalBox
-                key={opt.value}
-                testID={`palette-${opt.value}`}
-                fill={selected ? 'a' : 'paper'}
-                style={styles.brutalPaletteOuter}
-                boxStyle={[styles.brutalOption, styles.brutalPalette]}
-                onPress={() => setGrammarPalette(opt.value)}
-              >
-                <View style={styles.paletteDots}>
-                  <View style={[styles.paletteDot, styles.brutalDot, { backgroundColor: dotA, borderColor: g.ink }]} />
-                  <View style={[styles.paletteDot, styles.brutalDot, { backgroundColor: dotB, borderColor: g.ink }]} />
-                </View>
-                <Text style={[styles.optionText, styles.brutalOptionText, { color: selected ? g.onFill : g.ink }]}>{opt.label}</Text>
-              </BrutalBox>
-            );
-          }
-          return (
-            <Pressable
-              key={opt.value}
-              testID={`palette-${opt.value}`}
-              style={[
-                styles.option,
-                styles.paletteOption,
-                { backgroundColor: colors.card, borderColor: selected ? colors.text : 'transparent' },
-              ]}
-              onPress={() => setGrammarPalette(opt.value)}
-            >
-              <View style={styles.paletteDots}>
-                <View style={[styles.paletteDot, { backgroundColor: dotA }]} />
-                <View style={[styles.paletteDot, { backgroundColor: dotB }]} />
-              </View>
-              <Text style={[styles.optionText, { color: colors.text }]}>
-                {opt.label}
-              </Text>
-            </Pressable>
-          );
-        })}
-      </View>
+      <Text style={[styles.sectionHint, { color: colors.textMuted, marginBottom: 8 }]}>{s.settings.themes.title}</Text>
+      <Row onPress={() => router.push('/themes')}>
+        <View testID="settings-theme-row" style={styles.themeRow}>
+          <ThemeSwatch skin={activeSkin} mode={mode} small />
+          <Text style={[styles.optionText, { color: g.ink }]}>{s.skins.names[skinId]}</Text>
+          <Text style={[styles.themeChevron, { color: g.ink }]}>›</Text>
+        </View>
+      </Row>
 
       {/* FB144: a course language with no installed voice, named so the fix
           (install it in the phone's text-to-speech settings) is obvious. */}
       {missingVoices.length > 0 && (
         <Row>
-          <Text style={[styles.missingVoiceText, { color: '#EAB308' }]}>
+          <Text style={[styles.missingVoiceText, { color: legibleOn('#EAB308', colors.card) }]}>
             {s.settings.missingVoice(missingVoices.map(voiceName).join(', '))}
           </Text>
         </Row>
@@ -473,7 +383,7 @@ export default function SettingsScreen() {
           the reached state stays as the green tag on the goal row below. */}
       {/* FB65: weekly study goal in whole hours, shown on the Stats tab. */}
       <Row>
-        <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.weeklyGoal}</Text>
+        <Text style={[styles.wordsOnlyLabel, { color: colors.text }, stepLabel]}>{s.settings.weeklyGoal}</Text>
         <View style={styles.goalStepper}>
           <StepBtn label="−" onPress={() => handleWeeklyGoalChange(-WEEKLY_GOAL_STEP_MINUTES)} />
           <Text style={[styles.goalValue, { color: goalReached ? '#22C55E' : colors.text }]}>
@@ -486,7 +396,7 @@ export default function SettingsScreen() {
 
       {/* FB77: how many brand-new words a day may enter the learning queue. */}
       <Row>
-        <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.dailyNewLimit}</Text>
+        <Text style={[styles.wordsOnlyLabel, { color: colors.text }, stepLabel]}>{s.settings.dailyNewLimit}</Text>
         <View style={styles.goalStepper}>
           <StepBtn label="−" onPress={() => handleDailyNewLimitChange(-DAILY_NEW_LIMIT_STEP)} />
           <Text style={[styles.goalValue, { color: colors.text }]}>
@@ -499,7 +409,7 @@ export default function SettingsScreen() {
       {/* FB364 (PLAN-fb0923 5. lépés/D2): a PCIC "again" kártya visszatérési
           ideje; ugyanezt olvassa a nyelvtani táblázat-pakli cooldownja is. */}
       <Row>
-        <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.missedWordDelay}</Text>
+        <Text style={[styles.wordsOnlyLabel, { color: colors.text }, stepLabel]}>{s.settings.missedWordDelay}</Text>
         <View style={styles.goalStepper}>
           <StepBtn label="−" onPress={() => handleAgainDelayChange(-AGAIN_DELAY_STEP_SEC)} />
           <Text style={[styles.goalValue, { color: colors.text }]}>
@@ -540,44 +450,44 @@ export default function SettingsScreen() {
             {direction[0] === 'en' ? s.settings.directionEnEs : s.settings.directionEsEn}
           </Text>
         </View>
-        <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
+        <Text style={[styles.rowArrow, { color: arrowColor }]}>→</Text>
       </Row>
 
       {/* Q0: backup (export + share) and restore (pick file + confirm + import). */}
       <Row onPress={handleBackup}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>💾 {s.backup.backup}</Text>
-        <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
+        <Text style={[styles.rowArrow, { color: arrowColor }]}>→</Text>
       </Row>
 
       <Row onPress={handleRestore}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>♻️ {s.backup.restore}</Text>
-        <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
+        <Text style={[styles.rowArrow, { color: arrowColor }]}>→</Text>
       </Row>
 
       {/* PLAN-hibaim.md 3. lépés: import a "Hibáim" kötegből (Drive JSON). */}
       <Row onPress={handleLoadMistakes}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.mistakes.load}</Text>
-        <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
+        <Text style={[styles.rowArrow, { color: arrowColor }]}>→</Text>
       </Row>
 
       {/* PLAN-fb1001 K1 + 7. lépés: haladás-nullázás megerősítéssel, paklinként és a nyelvtanra. */}
       {resetLevels.map((lvl) => (
         <Row key={lvl} onPress={() => handleResetDeck(lvl)}>
           <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.pcic.resetRow(lvl)}</Text>
-          <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
+          <Text style={[styles.rowArrow, { color: arrowColor }]}>→</Text>
         </Row>
       ))}
       {hasGrammarProgress && (
         <Row onPress={handleResetGrammar}>
           <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.resetGrammar}</Text>
-          <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
+          <Text style={[styles.rowArrow, { color: arrowColor }]}>→</Text>
         </Row>
       )}
 
       {/* PLAN-credits.md: word-data attribution screen entry point. */}
       <Row onPress={() => router.push('/credits')}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.credits}</Text>
-        <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
+        <Text style={[styles.rowArrow, { color: arrowColor }]}>→</Text>
       </Row>
 
       {/* FB82: app version, small and grey, so the user can tell which build runs. */}
@@ -686,7 +596,8 @@ const styles = StyleSheet.create({
   // NY19: brutalista formák.
   brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   brutalRowOuter: { marginTop: 12 },
-  brutalRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingVertical: 12, paddingHorizontal: 14 },
+  // 7F/G2: flexWrap + rowGap: ha a széles betűjű téma a léptetőt túl szélesre hizza, az a címke alá törik.
+  brutalRow: { flexDirection: 'row', flexWrap: 'wrap', rowGap: 8, alignItems: 'center', justifyContent: 'space-between', paddingVertical: 12, paddingHorizontal: 14 },
   brutalStepOuter: { width: 38 },
   brutalStep: { width: 34, height: 34, alignItems: 'center', justifyContent: 'center' },
   brutalOptionOuter: { flex: 1 },
@@ -694,9 +605,6 @@ const styles = StyleSheet.create({
   // szomszéd miatt nyújtott külső dobozt (különben az árnyék lelógott a doboz alól).
   brutalOption: { paddingVertical: 12, alignItems: 'center', justifyContent: 'center', flex: 1 },
   brutalOptionText: { fontWeight: '500', textTransform: 'uppercase' },
-  brutalDot: { borderRadius: 0, borderWidth: 2 },
-  brutalPaletteOuter: { flexBasis: '46%' },
-  brutalPalette: { flexDirection: 'row', justifyContent: 'center', gap: 8, paddingHorizontal: 8 },
   brutalSheet: { borderTopLeftRadius: 0, borderTopRightRadius: 0, borderTopWidth: 2.5 },
   brutalSheetOptionOuter: { marginBottom: 10 },
   brutalSheetOption: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingVertical: 12, paddingHorizontal: 16 },
@@ -705,55 +613,19 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     marginBottom: 20,
   },
-  optionGroup: {
-    flexDirection: 'row',
-    gap: 10,
-    marginBottom: 24,
-  },
-  option: {
-    flex: 1,
-    paddingVertical: 14,
-    borderRadius: 14,
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.08,
-    shadowRadius: 6,
-    elevation: 2,
-  },
   optionText: {
     fontSize: 15,
     fontWeight: '600',
   },
-  // PLAN-fb1001 8. lépés (FB428): téma-gomb (3 oszlop): ikon fent, kisebb egysoros felirat.
-  themeIcon: { fontSize: 16, marginBottom: 2 },
-  themeLabel: { fontSize: 11, textAlign: 'center' },
-  paletteGroup: {
-    flexWrap: 'wrap',
-  },
-  paletteOption: {
-    flexBasis: '47%',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    gap: 8,
-    paddingHorizontal: 8,
-    borderWidth: 2,
-  },
-  paletteDots: {
-    flexDirection: 'row',
-    gap: 3,
-  },
-  paletteDot: {
-    width: 12,
-    height: 12,
-    borderRadius: 6,
-    borderWidth: 1,
-    borderColor: '#111111',
-  },
+  // PLAN-temak 4D: a Témák-sor tartalma (minta + név + nyíl).
+  themeRow: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: 12 },
+  themeChevron: { marginLeft: 'auto', fontSize: 22, fontWeight: '700' },
   sectionHint: {
     fontSize: 12,
     fontWeight: '500',
     marginTop: 2,
+    // 7F/G2: a kapcsolótól / nyíltól a hint se érjen hozzá (a címke saját marginRight-ja a hintre nem vonatkozik).
+    marginRight: 12,
   },
   // The label inside already carries the right margin (see wordsOnlyLabel).
   difficultyLabelBox: {
@@ -761,6 +633,8 @@ const styles = StyleSheet.create({
   },
   wordsOnlyRow: {
     flexDirection: 'row',
+    flexWrap: 'wrap',
+    rowGap: 8,
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingVertical: 14,
@@ -789,6 +663,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 10,
     flexShrink: 0,
+    maxWidth: '100%',
+    marginLeft: 'auto',
   },
   goalBtn: {
     width: 34,
@@ -807,6 +683,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '600',
     minWidth: 96,
+    flexShrink: 1,
     textAlign: 'center',
   },
 });
