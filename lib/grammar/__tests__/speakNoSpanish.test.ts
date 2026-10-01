@@ -12,8 +12,8 @@ const lessons: { name: string; lesson: LessonV2 }[] = fs
   .map((f) => ({ name: f.replace('.json', ''), lesson: JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')) as LessonV2 }));
 
 describe('spanyol leckék felolvasása (FB414)', () => {
-  it('mind a 68 spanyol lecke megvan', () => {
-    expect(lessons).toHaveLength(68);
+  it('mind a 69 spanyol lecke megvan', () => {
+    expect(lessons).toHaveLength(69);
   });
 
   it.each(lessons.map((l) => [l.name, l.lesson] as const))('%s: nincs jelölt spanyol szakasz, mind a négy nyelven van szöveg', (_name, lesson) => {
