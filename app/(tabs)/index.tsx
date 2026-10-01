@@ -422,7 +422,7 @@ export default function PcicScreen() {
           </BrutalBox>
         ) : (
           <Pressable style={[styles.levelChip, { backgroundColor: colors.tint }]} onPress={() => setLevelSheetOpen(true)}>
-            <Text style={styles.levelChipText}>{levelChipLabel} ▾</Text>
+            <Text style={[styles.levelChipText, { color: colors.onTint }]}>{levelChipLabel} ▾</Text>
           </Pressable>
         )}
         <BadgeRow

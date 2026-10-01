@@ -16,6 +16,7 @@ import {
   contrastRatio,
   isSkinMix,
   legacySkinFor,
+  legibleOn,
   parseSkinMix,
   resolveMode,
   skinColorsFor,
@@ -29,18 +30,21 @@ import type { ThemeKey } from '@/lib/ThemeContext';
 
 const MIN = 4.5;
 
-// A mai classic sötét téma Colors.dark.tint (#3B82F6) fehér szöveggel 3,68: a mai kinézet pixelre
-// azonos marad (PLAN közös szabály), ezért ez az egy pár nem javítva; a teszt rögzíti, hogy a
-// kivétel ténylegesen bukó pár (ha javítják, a kivételt törölni kell).
-const KNOWN_EXEMPT = new Set(['classic/dark onA/a']);
+// Kivételek: olyan pár, ami ténylegesen bukik és ezért itt rögzített (a teszt ellenőrzi, hogy még
+// bukik; ha javítják, a kivételt törölni kell). PLAN-temak 7G után üres: a classic sötét onA / a
+// (fehér a #3B82F6-on 3,68) a fehér helyett a sötét alap-színt kapta (4,85).
+const KNOWN_EXEMPT = new Set<string>();
 
 function pairs(c: SkinColors): [string, string, string][] {
   const list: [string, string, string][] = [
     ['ink/bg', c.ink, c.bg],
     ['ink/paper', c.ink, c.paper],
     ['mu/bg', c.mu, c.bg],
+    // PLAN-temak 7G: a halvány szöveg a kártyán és a beviteli mezőben (placeholder) is olvasható
+    ['mu/paper', c.mu, c.paper],
     ['onA/a', c.onA, c.a],
   ];
+  if (c.extra?.field) list.push(['mu/field', c.mu, c.extra.field]);
   if (c.onB && c.b) list.push(['onB/b', c.onB, c.b]);
   return list;
 }
@@ -48,7 +52,7 @@ function pairs(c: SkinColors): [string, string, string][] {
 describe('kontraszt-kapu (PLAN-temak Téma-spec)', () => {
   for (const id of SKIN_IDS) {
     for (const mode of SKINS[id].modes) {
-      it(`${id} / ${mode}: ink/bg, ink/paper, mu/bg, onA/a, onB/b >= ${MIN}`, () => {
+      it(`${id} / ${mode}: ink/bg, ink/paper, mu/bg, mu/paper, mu/field, onA/a, onB/b >= ${MIN}`, () => {
         for (const [name, fg, bg] of pairs(skinColorsFor(SKINS[id], mode))) {
           const ratio = contrastRatio(fg, bg);
           if (KNOWN_EXEMPT.has(`${id}/${mode} ${name}`)) {
@@ -85,6 +89,17 @@ describe('kontraszt-kapu (PLAN-temak Téma-spec)', () => {
   it('bestOn a jobb kontrasztú jelöltet adja', () => {
     expect(bestOn('#B8FF5C', ['#B8FF5C', '#111111'])).toBe('#111111');
     expect(bestOn('#3FA08C', ['#F3E9D2', '#0E1A2B'])).toBe('#0E1A2B');
+  });
+
+  it('legibleOn: az átmenő szín változatlan, a bukó azonos árnyalaton sötétedik / világosodik', () => {
+    expect(legibleOn('#15803D', '#FFFFFF')).toBe('#15803D');
+    for (const [fg, bg] of [['#EAB308', '#FFFFFF'], ['#7C3AED', '#1E293B'], ['#38BDF8', '#FFFFFF'], ['#F472B6', '#FFFFFF']]) {
+      const out = legibleOn(fg, bg);
+      expect({ fg, bg, ok: contrastRatio(out, bg) >= MIN }).toEqual({ fg, bg, ok: true });
+    }
+    expect(legibleOn('#BFF0DC', '#FFF1EC', 3)).not.toBe('#BFF0DC');
+    expect(contrastRatio(legibleOn('#BFF0DC', '#FFF1EC', 3), '#FFF1EC')).toBeGreaterThanOrEqual(3);
+    expect(legibleOn('rgba(0,0,0,0.5)', '#FFFFFF')).toBe('rgba(0,0,0,0.5)');
   });
 });
 

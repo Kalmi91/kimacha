@@ -17,4 +17,7 @@ export type SkinDecor = {
   buttonVariant?: 'default' | 'stacked' | 'text' | 'bevel';
   // PLAN-temak 6E (senior): a hang-gomb mellett szöveges felirat ("Felolvas"); lásd SkinSpeakLabel.
   speakLabel?: boolean;
+  // PLAN-temak 7G (retro95): a dokkolt Check-sáv kitöltése `a` (a spec szerint sötétkék, fehér szöveg);
+  // alapból ink, mint a Neo-brutálon.
+  checkFill?: 'a';
 };

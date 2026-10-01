@@ -4,6 +4,7 @@ import { Text } from '@/components/KText';
 import { useFocusEffect, useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
+import { legibleOn } from '@/constants/Skins';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
@@ -329,7 +330,7 @@ export default function GrammarSyllabusScreen() {
                                     {s.grammar.corePlusTag}
                                   </Text>
                                 ) : getGrammarTier(topic.id) === 'core' ? (
-                                  <Text testID={`grammar-core-${topic.id}`} style={styles.coreTag}>
+                                  <Text testID={`grammar-core-${topic.id}`} style={[styles.coreTag, { color: legibleOn('#7C3AED', colors.card) }]}>
                                     {s.grammar.coreTag}
                                   </Text>
                                 ) : null}
