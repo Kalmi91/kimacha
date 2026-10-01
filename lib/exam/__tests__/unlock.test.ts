@@ -75,11 +75,12 @@ describe('examStatusFor (a valódi A1 words-open pakli + a kész leckék)', () =
   const a1 = () => pcicItemsForLevel('A1').map((i) => i.id);
   const row = (topic: string) => ({ itemId: topic, state: 'done', data: { correct: 1, total: 1 } });
 
-  it('a szint 150 kártyájának 80%-a (120) + egy A1 lecke nyitja, 119 nem', () => {
-    expect(a1()).toHaveLength(150);
-    const open = examStatusFor('A1', 'es', a1().slice(0, 120).map(review), [row('presente-regular')]);
+  it('a szint kártyáinak 80%-a + egy A1 lecke nyitja, eggyel kevesebb nem', () => {
+    const needed = Math.ceil(0.8 * a1().length);
+    expect(needed).toBeGreaterThan(1);
+    const open = examStatusFor('A1', 'es', a1().slice(0, needed).map(review), [row('presente-regular')]);
     expect(open.unlocked).toBe(true);
-    const closed = examStatusFor('A1', 'es', a1().slice(0, 119).map(review), [row('presente-regular')]);
+    const closed = examStatusFor('A1', 'es', a1().slice(0, needed - 1).map(review), [row('presente-regular')]);
     expect(closed).toMatchObject({ unlocked: false, missing: 1, lessonDone: true });
   });
 
