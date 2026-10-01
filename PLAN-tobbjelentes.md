@@ -10,7 +10,7 @@ Jóváhagyott minta: https://claude.ai/artifact/BW7QfMboUhRby7DyZNL6WQ (4. verzi
 - [x] 2. (12:09) Kapuk: `scripts/words-open-check.mjs` (R1/R2 lazítás, R11-R14) és `scripts/validate-en-track.mjs` (R11-R14) → kész, ha: mindkét kapu lefut és listázza a mostani sértéseket
 - [x] 3. (12:19) App: kis mondat (hint) a nagy szó alatt + „also:” sor a Check után + tesztek → kész, ha: `npm run typecheck:ci`, `npm run lint`, `npm run test:ci` zöld
 - [x] 4. (12:35) Átnézés A: a 600 words-open kártya (angol→spanyol) a Spec szerint → kész, ha: `node scripts/words-open-check.mjs` zöld
-- [ ] 5. Átnézés B: a 2 804 tételes angol track (spanyol→angol), adagokban → kész, ha: a `validate-en-track` R11-R14 hibája 0, és a régi hibák (id-blokk 1132, cross-level dup 11) száma nem nő
+- [x] 5. (13:11) Átnézés B: a 2 804 tételes angol track (spanyol→angol), adagokban → kész, ha: a `validate-en-track` R11-R14 hibája 0, és a régi hibák (id-blokk 1132, cross-level dup 11) száma nem nő
 - [ ] 6. Régi adat leltára (csak olvasás): ki használja a `data/words/{a0..c2}.json`, `data/words/hu/**` és `data/pcic/**` fájlokat → kész, ha: a lista megvan, az orkesztrátor döntött a törlési körről
 - [ ] 7. Régi adat kidobása + a ráépülő kód kivétele → kész, ha: a 3. lépés kapuja zöld
 - [ ] 8. Web-build képernyőkép mindkét irányban (néma felolvasással) → kész, ha: egyezik a mintával
@@ -391,3 +391,57 @@ A kapu szabályonként kiírja a hibák számát és az első 5 példát, hibán
   - Átnézés: az ~1401. sortól a ~2100. sorig (A2 `going_to`-tól a B1 `10141`-ig). S1 alakok: finally, change, ask for, shopping cart, carry-on, round trip, car rental, raise, custom, same, zone, review, takeout, shopping mall, everyone, permit, hallway, safety, capable, choose, enormous, application, motor, additional, defeat, masculine, take care of, incredible, neighborhood (mexikói `colonia`), answer. S4 / elírás: `la renta de carros` (a mondat már így volt), `el aparador` (mondat is), `la bocina`, `el ratón de la computadora` és `la bocina de la computadora` (a "dla" elírás javítva), `extrañar` (nem `echar de menos`), `reprobar` (nem `suspender`), `la calificación alta/final`, `el elevador`, `el video`. Duplikátum törölve: `8839 la lista de la compra` (Spanyol szó, hibás "shopping note", azonos a `5662`-vel). Hiányzó jelentés (új kártya, mindkét kártya hint_es-sel): receta recipe, sueño dream, peso (pénznem), historia story, buscar look for (a `10000` zárójeles kérdése puszta szó lett).
   - Kapu: validate-en-track R11-R14 = ok (0), id-blokk hiba 1108 → 1112 (5 új A2 kártya, 1 törölt), cross-level dup 3 → 3 (kártyák: 2740 → 2744); typecheck:ci, lint (0 hiba), test:ci (136 suite) zöld.
   - [?] marad: `el cajero` (cashier mellett ATM), `quedar` (csak "to fit" van), `el paquete` (parcel); a B1 vége (10142-től) a 6. adagban.
+- 13:11 5. lépés, 6. adag (átnézés ~2101. sortól a végéig): módosítva 65, hozzáadva 15, törölve 0 kártya; spanyol kérdés átírva 10.
+  - Új kártya:
+    - #10819 (B1 ideas) el valor → value, hint_es "El *valor* de la casa subió mucho."
+    - #10820 (B1 things_places) el polvo → dust, hint_es "Hay mucho *polvo* en los muebles."
+    - #10821 (B1 things_places) la tierra → earth, hint_es "La *Tierra* gira alrededor del sol."
+    - #10822 (B1 work_money) la conferencia → conference, hint_es "Voy a una *conferencia* en otra ciudad."
+    - #10823 (B1 ideas) el principio → beginning, hint_es "Al *principio* no entendía nada."
+    - #10824 (B1 work_money) el anuncio → ad / advertisement, hint_es "Vi un *anuncio* de carros en la tele."
+    - #10825 (B1 things_places) el espacio → space, hint_es "Necesito más *espacio* en mi cuarto."
+    - #10826 (B1 things_places) la muñeca → doll, hint_es "La niña juega con su *muñeca*."
+    - #10827 (B1 ideas) la fuente → source, hint_es "Esa noticia viene de una *fuente* confiable."
+    - #10828 (B1 work_money) el ahorro → savings, hint_es "Gasté mis *ahorros* en un viaje."
+    - #10829 (B1 law_society) el juicio → trial, hint_es "El *juicio* contra el ladrón es mañana."
+    - #10830 (B1 things_places) el fondo → bottom, hint_es "El anillo está en el *fondo* del vaso."
+    - #10831 (B1 actions) ganar → to win, hint_es "Mi equipo va a *ganar* el partido."
+    - #10832 (B1 work_money) ganar → to earn, hint_es "Quiero *ganar* más dinero este año."
+    - #10833 (B1 ideas) la oración → sentence, hint_es "Escribe una *oración* con esta palabra."
+  - Törölt id: nincs.
+  - Átírt spanyol kérdés:
+    - #10216: "el fondo (dinero)" → "el fondo"
+    - #10291: "ganar (adquirir)" → "ganar"
+    - #10425: "la oración (rezo)" → "la oración"
+    - #10458: "el juicio (opinión)" → "el juicio"
+    - #10505: "el valor (coraje)" → "el valor"
+    - #10534: "la tierra (suciedad)" → "la tierra"
+    - #10537: "la conferencia (clase magistral)" → "la conferencia"
+    - #10562: "el anuncio (aviso)" → "el anuncio"
+    - #10603: "el espacio (hueco)" → "el espacio"
+    - #10797: "el ahorro (conservación)" → "el ahorro"
+  - Minta, 20 véletlen módosítás (előtte → utána):
+    - #10171 en: "various" → "various / several"
+    - #10174 en: "to remove" → "to remove / to take off"
+    - #10187 en: "weird" → "weird / strange"
+    - #10211 en: "proof" → "proof / evidence"
+    - #10215 en: "highly" → "highly / extremely"
+    - #10219 en: "taste" → "taste / flavor"
+    - #10239 en: "complex" → "complex / complicated"
+    - #10264 en: "to assume" → "to assume / to take for granted"
+    - #10291 es: "ganar (adquirir)" → "ganar"; hint_es: (nincs) → "Quiero *ganar* más experiencia."
+    - #10307 en: "properly" → "properly / correctly"
+    - #10328 en: "shift" → "shift / turn"
+    - #10336 en: "capacity" → "capacity / ability"
+    - #10340 en: "capable" → "capable / competent"
+    - #10341 en: "nearby" → "nearby / close"
+    - #10342 en: "fake" → "fake / false"
+    - #10363 en: "massive" → "massive / immense"
+    - #10562 es: "el anuncio (aviso)" → "el anuncio"; hint_es: (nincs) → "Hubo un *anuncio* sobre el retraso."
+    - #10715 en: "occasionally" → "occasionally / from time to time"
+    - #10783 en: "trend" → "trend / tendency"
+    - #10794 en: "to grill" → "to grill / to roast"
+  - Átnézés: a ~2101. sortól a végéig (B1 `10138`-tól). S1 alakok (51 db): several, take off, strange, evidence, extremely, prize, flavor, complicated, form, transportation, uncommon, take for granted, crucial, choice, make sure, correctly, try, hurry, wish, turn, ability, competent, close, false, simple, immense, pity, catastrophe, annoy, electric, historic, allow, ride a bike, hardly, environment, precise, wide, sincerely, gross, transmit, get, port, enough, handbag, railroad, hardly ever, from time to time, usually, reporter, tendency, roast. Hiányzó jelentés (új B1 kártya, mindkét kártya hint_es-sel, a zárójeles kérdés puszta szó lett): valor value, polvo dust, tierra earth, conferencia conference, principio beginning, anuncio ad, espacio space, muñeca doll, fuente source, ahorro savings, juicio trial, fondo bottom, ganar win és earn, oración sentence. Az új kártyák hu-ja a corpusIntegrity prompt-policy miatt a szinten belül egyedi (pl. `szálló por`, `férőhely`, `bírósági per`).
+  - Kapu: validate-en-track R11-R14 = ok (0), id-blokk hiba 1112 → 1112 (az új kártyák B1-ben vannak, a B1 blokkon belül), cross-level dup 3 → 3 (kártyák: 2744 → 2759); typecheck:ci, lint (0 hiba), test:ci (136 suite), words-open-check zöld.
+  - [?] marad, nem nyúltam hozzá: `la agenda` (diary/planner), `la vela` (sail), `la demanda` (lawsuit), `la conciencia` (conscience), `el cajero` (ATM), `quedar` (to stay/remain), `el paquete` (parcel), `la ducha`/`el marido`/`el dormitorio` mexikói alakja (regadera, esposo, recámara), `conocer` (to meet), a `contracción` kártyák és az `su (de él/ella...)`, `vas a` típusú nyelvtani zárójeles kártyák.
+- 13:11 5. lépés kész, összesítés (1-6. adag): 422 kártya-módosítás, 36 új kártya (10798-10833), 81 törölt id, 117 átírt spanyol kérdés; kártyák 2804 → 2759. validate-en-track: R11-R14 = 0, id-blokk hiba 1132 → 1112, cross-level dup 11 → 3. typecheck:ci, lint (0 hiba), test:ci (136 suite) zöld; a lib/grammar/tableDeck.ts a perjeles `en` fő alakját használja (2 sor). Subagent nem futott, a munkát egy session végezte (adagonként patch + merge-script).
