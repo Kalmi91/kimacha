@@ -835,7 +835,7 @@
           "de": "Das Pronomen kann nicht allein direkt vor einem bloßen Infinitiv stehen; für diese Wortstellung müsste es vor dem konjugierten Verb (voy) stehen: Les voy a escribir un mensaje a mis papás."
         },
         "escribirlos": {
-          "hu": "A \"los\" tárgyeset névmás, ami hímnemű dolgokra vagy emberekre utalna mint közvetlen célpontra; itt viszont a levél CÍMZETTJEiről van szó, ami mindig részes eset: escribirles.",
+          "hu": "A \"los\" tárgyeset névmás, ami hímnemű dolgokra vagy emberekre utalna mint közvetlen célpontra; itt viszont az üzenet CÍMZETTJEIRŐL van szó, ami mindig részes eset: escribirles.",
           "en": "\"Los\" is a direct object pronoun, pointing to masculine things or people as the direct target; here it is about the letter's RECIPIENTS, which always takes the indirect object: escribirles.",
           "es": "\"Los\" es un pronombre de objeto directo, que señalaría a cosas o personas masculinas como blanco directo; aquí se trata de los DESTINATARIOS del mensaje, que siempre llevan objeto indirecto: escribirles.",
           "de": "\"Los\" ist ein direktes Objektpronomen, das auf maskuline Dinge oder Personen als direktes Ziel zeigen würde; hier geht es um die EMPFÄNGER der Nachricht, die immer das indirekte Objekt bekommen: escribirles."
@@ -919,10 +919,10 @@
       },
       "wrong": {
         "compro": {
-          "hu": "A puszta \"compro\" azt jelentené, hogy csak veszel valamit, anélkül hogy megneveznéd, KINEK; a spanyol a névmást akkor is kiteszi, ha a személy neve már ott áll a mondatban: A mi hermano le compro un regalo.",
-          "en": "A bare \"compro\" would mean you are just buying something, without saying TO WHOM; Spanish still adds the pronoun even when the person is already named in the sentence: A mi hermano le compro un regalo.",
-          "es": "Un simple \"compro\" significaría solo que compras algo, sin decir A QUIÉN; el español sigue poniendo el pronombre aunque la persona ya esté nombrada: A mi hermano le compro un regalo.",
-          "de": "Ein bloßes \"compro\" würde nur bedeuten, dass du etwas kaufst, ohne zu sagen, FÜR WEN; das Spanische setzt das Pronomen trotzdem, auch wenn die Person im Satz schon genannt wird: A mi hermano le compro un regalo."
+          "hu": "A névmás nélküli \"compro\" hibás: a spanyol a névmást akkor is kiteszi, ha a személy neve már ott áll a mondatban: A mi hermano le compro un regalo.",
+          "en": "\"Compro\" without the pronoun is wrong: Spanish still adds the pronoun even when the person is already named in the sentence: A mi hermano le compro un regalo.",
+          "es": "\"Compro\" sin el pronombre es incorrecto: el español sigue poniendo el pronombre aunque la persona ya esté nombrada: A mi hermano le compro un regalo.",
+          "de": "\"Compro\" ohne das Pronomen ist falsch: das Spanische setzt das Pronomen trotzdem, auch wenn die Person im Satz schon genannt wird: A mi hermano le compro un regalo."
         },
         "les compro": {
           "hu": "A \"les\" többes számú részes eset lenne, de \"mi hermano\" csak egy ember; egyes számban a névmás le: A mi hermano le compro un regalo.",
@@ -1028,7 +1028,7 @@
     },
     {
       "id": "oi-09",
-      "sentence": "Nuestros abuelos ___ cuentan historias.",
+      "sentence": "Nuestros abuelos ___ cuentan historias a mi hermano y a mí.",
       "options": ["nos", "les", "me"],
       "correct": 0,
       "why": {
@@ -1232,18 +1232,18 @@
       "options": [
         {
           "text": {
-            "hu": "me: hozzám",
+            "hu": "me: nekem",
             "en": "me: to me",
             "es": "me: a mí",
-            "de": "me: zu mir"
+            "de": "me: mir"
           }
         },
         {
           "text": {
-            "hu": "te: hozzád",
+            "hu": "te: neked",
             "en": "te: to you",
             "es": "te: a ti",
-            "de": "te: zu dir"
+            "de": "te: dir"
           },
           "wrong": {
             "hu": "A te a beszélgetőpartneremhez történő cselekvést jelölné (\"Te escribe todos los días\" = neked ír); itt viszont ÉN vagyok a címzett, ezért me.",
@@ -1254,10 +1254,10 @@
         },
         {
           "text": {
-            "hu": "nos: hozzánk",
+            "hu": "nos: nekünk",
             "en": "nos: to us",
             "es": "nos: a nosotros",
-            "de": "nos: zu uns"
+            "de": "nos: uns"
           },
           "wrong": {
             "hu": "A nos azt jelölné, hogy TÖBBEN kapjuk (mi); itt viszont csak ÉN vagyok a címzett, egyes szám, ezért me.",
@@ -1283,32 +1283,32 @@
       "options": [
         {
           "text": {
-            "hu": "me: hozzám",
+            "hu": "me: nekem",
             "en": "me: to me",
             "es": "me: a mí",
-            "de": "me: zu mir"
+            "de": "me: mir"
           },
           "wrong": {
             "hu": "A me azt jelölné, hogy ÉN kapom a kulcsokat (\"Me traes las llaves\" = te hozod nekem); itt viszont ÉN hozom NEKED, ezért te.",
             "en": "Me would mark that I receive the keys (\"Me traes las llaves\" = you bring them to me); here I bring them to YOU, so te.",
-            "es": "Me marcaría que YO recibo las llaves (\"Me traes las llaves\" = tú me las traes); aquí YO se las traigo a TI, por eso te.",
+            "es": "Me marcaría que YO recibo las llaves (\"Me traes las llaves\" = tú me las traes); aquí YO te las traigo a TI, por eso te.",
             "de": "Me würde bezeichnen, dass ICH die Schlüssel bekomme (\"Me traes las llaves\" = du bringst sie mir); hier bringe ICH sie DIR, deshalb te."
           }
         },
         {
           "text": {
-            "hu": "te: hozzád",
+            "hu": "te: neked",
             "en": "te: to you",
             "es": "te: a ti",
-            "de": "te: zu dir"
+            "de": "te: dir"
           }
         },
         {
           "text": {
-            "hu": "le: hozzá (ő/Ön)",
+            "hu": "le: neki (ő/Ön)",
             "en": "le: to him/her/usted",
             "es": "le: a él/ella/usted",
-            "de": "le: zu ihm/ihr/Ihnen"
+            "de": "le: ihm/ihr/Ihnen"
           },
           "wrong": {
             "hu": "A le egy HARMADIK személynek (ő/Ön) szólna (\"Le traigo las llaves\" = neki hozom); itt viszont a BESZÉLGETŐPARTNEREMNEK hozom, ezért te.",
@@ -1334,10 +1334,10 @@
       "options": [
         {
           "text": {
-            "hu": "te: hozzád",
+            "hu": "te: neked",
             "en": "te: to you",
             "es": "te: a ti",
-            "de": "te: zu dir"
+            "de": "te: dir"
           },
           "wrong": {
             "hu": "A te a beszélgetőpartneremnek szólna (\"Te doy el libro\" = neked adom); itt viszont egy HARMADIK személynek, Juannak adom, ezért le.",
@@ -1348,18 +1348,18 @@
         },
         {
           "text": {
-            "hu": "le: hozzá (ő/Ön)",
+            "hu": "le: neki (ő/Ön)",
             "en": "le: to him/her/usted",
             "es": "le: a él/ella/usted",
-            "de": "le: zu ihm/ihr/Ihnen"
+            "de": "le: ihm/ihr/Ihnen"
           }
         },
         {
           "text": {
-            "hu": "les: hozzájuk/Önökhöz",
+            "hu": "les: nekik/Önöknek",
             "en": "les: to them/you all",
             "es": "les: a ellos/ellas/ustedes",
-            "de": "les: zu ihnen/Ihnen"
+            "de": "les: ihnen/Ihnen"
           },
           "wrong": {
             "hu": "A les TÖBB harmadik személyre vonatkozna (ők/Önök); itt viszont EGY személy, Juan a címzett, egyes szám, ezért le.",
@@ -1385,10 +1385,10 @@
       "options": [
         {
           "text": {
-            "hu": "me: hozzám",
+            "hu": "me: nekem",
             "en": "me: to me",
             "es": "me: a mí",
-            "de": "me: zu mir"
+            "de": "me: mir"
           },
           "wrong": {
             "hu": "A me azt jelölné, hogy CSAK ÉN kapom az üzenetet; itt viszont TÖBBEN kapjuk (a beszélő és mások), ezért nos.",
@@ -1399,18 +1399,18 @@
         },
         {
           "text": {
-            "hu": "nos: hozzánk",
+            "hu": "nos: nekünk",
             "en": "nos: to us",
             "es": "nos: a nosotros",
-            "de": "nos: zu uns"
+            "de": "nos: uns"
           }
         },
         {
           "text": {
-            "hu": "les: hozzájuk/Önökhöz",
+            "hu": "les: nekik/Önöknek",
             "en": "les: to them/you all",
             "es": "les: a ellos/ellas/ustedes",
-            "de": "les: zu ihnen/Ihnen"
+            "de": "les: ihnen/Ihnen"
           },
           "wrong": {
             "hu": "A les TÖBBEKNEK szólna, de a beszélőt KIZÁRVA (ők/Önök); itt viszont a beszélő IS a címzettek közt van, ezért nos, nem les.",
@@ -1436,13 +1436,13 @@
       "options": [
         {
           "text": {
-            "hu": "te: hozzád",
+            "hu": "te: neked",
             "en": "te: to you",
             "es": "te: a ti",
-            "de": "te: zu dir"
+            "de": "te: dir"
           },
           "wrong": {
-            "hu": "A te EGY beszélgetőpartnernek szólna (\"Te escribo un mensaje\"); itt viszont TÖBB embernek írok Spanyolországi módon, ezért os.",
+            "hu": "A te EGY beszélgetőpartnernek szólna (\"Te escribo un mensaje\"); itt viszont TÖBB embernek írok spanyolországi módon, ezért os.",
             "en": "Te would be to ONE person I am talking to (\"Te escribo un mensaje\"); here I am writing to several people, the Spain way, so os.",
             "es": "Te sería para UN solo interlocutor (\"Te escribo un mensaje\"); aquí escribo a varias personas, a la manera de España, por eso os.",
             "de": "Te wäre für EINEN Gesprächspartner (\"Te escribo un mensaje\"); hier schreibe ich mehreren Personen, auf spanische Art, deshalb os."
@@ -1450,18 +1450,18 @@
         },
         {
           "text": {
-            "hu": "os: hozzátok (Spo.)",
+            "hu": "os: nektek (Spo.)",
             "en": "os: to you all (Spain)",
             "es": "os: a vosotros (España)",
-            "de": "os: zu euch (Spanien)"
+            "de": "os: euch (Spanien)"
           }
         },
         {
           "text": {
-            "hu": "les: hozzájuk/Önökhöz",
+            "hu": "les: nekik/Önöknek",
             "en": "les: to them/you all",
             "es": "les: a ellos/ellas/ustedes",
-            "de": "les: zu ihnen/Ihnen"
+            "de": "les: ihnen/Ihnen"
           },
           "wrong": {
             "hu": "A les Latin-Amerikában (Mexikóban) állna ugyanerre a jelentésre (ustedes); Spanyolországban viszont a vosotros-nak megfelelő névmás os.",
@@ -1487,10 +1487,10 @@
       "options": [
         {
           "text": {
-            "hu": "le: hozzá (ő/Ön)",
+            "hu": "le: neki (ő/Ön)",
             "en": "le: to him/her/usted",
             "es": "le: a él/ella/usted",
-            "de": "le: zu ihm/ihr/Ihnen"
+            "de": "le: ihm/ihr/Ihnen"
           },
           "wrong": {
             "hu": "A le EGY harmadik személynek szólna (\"Le mando un mensaje a mi papá\"); itt viszont TÖBB személynek, a szüleimnek küldöm, ezért les.",
@@ -1501,10 +1501,10 @@
         },
         {
           "text": {
-            "hu": "nos: hozzánk",
+            "hu": "nos: nekünk",
             "en": "nos: to us",
             "es": "nos: a nosotros",
-            "de": "nos: zu uns"
+            "de": "nos: uns"
           },
           "wrong": {
             "hu": "A nos azt jelölné, hogy a beszélő IS a címzettek közt van (mi kapjuk); itt viszont a szüleim kapják, a beszélő nélkül, ezért les.",
@@ -1515,10 +1515,10 @@
         },
         {
           "text": {
-            "hu": "les: hozzájuk/Önökhöz",
+            "hu": "les: nekik/Önöknek",
             "en": "les: to them/you all",
             "es": "les: a ellos/ellas/ustedes",
-            "de": "les: zu ihnen/Ihnen"
+            "de": "les: ihnen/Ihnen"
           }
         }
       ],
@@ -1538,18 +1538,18 @@
       "options": [
         {
           "text": {
-            "hu": "le: hozzá (ő/Ön)",
+            "hu": "le: neki (ő/Ön)",
             "en": "le: to him/her/usted",
             "es": "le: a él/ella/usted",
-            "de": "le: zu ihm/ihr/Ihnen"
+            "de": "le: ihm/ihr/Ihnen"
           }
         },
         {
           "text": {
-            "hu": "me: hozzám",
+            "hu": "me: nekem",
             "en": "me: to me",
             "es": "me: a mí",
-            "de": "me: zu mir"
+            "de": "me: mir"
           },
           "wrong": {
             "hu": "A me azt jelölné, hogy ÉN kapom a könyvet (\"Me da el libro\" = ő adja nekem); itt viszont ÉN adom Maríának, ezért le.",
@@ -1560,10 +1560,10 @@
         },
         {
           "text": {
-            "hu": "les: hozzájuk/Önökhöz",
+            "hu": "les: nekik/Önöknek",
             "en": "les: to them/you all",
             "es": "les: a ellos/ellas/ustedes",
-            "de": "les: zu ihnen/Ihnen"
+            "de": "les: ihnen/Ihnen"
           },
           "wrong": {
             "hu": "A les TÖBB harmadik személyre vonatkozna; itt viszont EGY személy, María a címzett, egyes szám, ezért le.",

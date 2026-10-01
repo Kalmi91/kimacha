@@ -355,10 +355,10 @@
           "a": "hablo",
           "b": "hablé",
           "note": {
-            "hu": "Az -AR igék yo-alakjában az ékezet dönti el, jelen vagy múlt időről van-e szó: hablo most, hablé korábban.",
-            "en": "For -AR verbs in the yo form, the accent decides present or past: hablo now, hablé earlier.",
-            "es": "En la forma de yo de los verbos -AR, la tilde decide si es presente o pasado: hablo ahora, hablé antes.",
-            "de": "Bei -AR-Verben in der yo-Form entscheidet der Akzent zwischen Präsens und Vergangenheit: hablo jetzt, hablé vorher."
+            "hu": "Az -AR igék yo-alakjában a végződés dönti el, jelen vagy múlt időről van-e szó: hablo (-o) most, hablé (-é) korábban.",
+            "en": "For -AR verbs in the yo form, the ending decides present or past: hablo (-o) now, hablé (-é) earlier.",
+            "es": "En la forma de yo de los verbos -AR, la terminación decide si es presente o pasado: hablo (-o) ahora, hablé (-é) antes.",
+            "de": "Bei -AR-Verben in der yo-Form entscheidet die Endung zwischen Präsens und Vergangenheit: hablo (-o) jetzt, hablé (-é) vorher."
           },
           "examples": [
             {
@@ -472,10 +472,10 @@
     }
   ],
   "speak": {
-    "hu": "A befejezett múlt olyan cselekvést fejez ki, amely megtörtént és véget ért. Az ar végű igéknél az én alak és a ő alak között csak az ékezet tesz különbséget. Az er és ir végű igék ugyanazokat a végződéseket kapják, ezért ugyanazt a mintát követik. Tipikus időhatározók vezetik be, például a tegnap vagy a tavaly. Ha események sorát meséled el, mindegyik ezt az igeidőt kapja. Mexikóban a többes szám tegező alak mindig a többes szám harmadik személy, sosem a Spanyolországban használt forma.",
-    "en": "The preterite expresses an action that happened and is now over. For verbs ending in ar, the form for I and the form for he or she are told apart only by the accent. Verbs ending in er and ir share the same endings, so they follow the same pattern. Typical time words introduce it, such as yesterday or last year. When you tell a sequence of events, each one takes this tense. In Mexico the plural you form is always the third person plural, never the form used in Spain.",
-    "es": "El pretérito indefinido expresa una acción que ocurrió y ya terminó. En los verbos en ar, la forma de yo y la de él o ella se distinguen solo por la tilde. Los verbos en er e ir comparten las mismas terminaciones, así que siguen el mismo patrón. Lo introducen palabras de tiempo típicas, como ayer o el año pasado. Cuando cuentas una secuencia de hechos, cada uno lleva este tiempo. En México la forma plural de tú es siempre la tercera persona del plural, nunca la que se usa en España.",
-    "de": "Das Präteritum drückt eine Handlung aus, die geschehen und jetzt vorbei ist. Bei Verben auf ar unterscheiden sich die Form für ich und die für er oder sie nur durch den Akzent. Verben auf er und ir teilen dieselben Endungen und folgen so demselben Muster. Typische Zeitwörter leiten es ein, etwa gestern oder letztes Jahr. Wenn du eine Reihe von Ereignissen erzählst, steht jedes in dieser Zeit. In Mexiko ist die Pluralform von du immer die dritte Person Plural, nie die in Spanien gebräuchliche."
+    "hu": "A befejezett múlt olyan cselekvést fejez ki, amely megtörtént és véget ért. Az ar végű igéknél az én alak jelen időben és a ő alak múlt időben csak az ékezettel különbözik. Az er és ir végű igék ugyanazokat a végződéseket kapják, ezért ugyanazt a mintát követik. Tipikus időhatározók vezetik be, például a tegnap vagy a tavaly. Ha események sorát meséled el, mindegyik ezt az igeidőt kapja. Mexikóban a többes szám tegező alak mindig a többes szám harmadik személy, sosem a Spanyolországban használt forma.",
+    "en": "The preterite expresses an action that happened and is now over. For verbs ending in ar, the form for I in the present and the form for he or she in the past differ only by the accent. Verbs ending in er and ir share the same endings, so they follow the same pattern. Typical time words introduce it, such as yesterday or last year. When you tell a sequence of events, each one takes this tense. In Mexico the plural you form is always the third person plural, never the form used in Spain.",
+    "es": "El pretérito indefinido expresa una acción que ocurrió y ya terminó. En los verbos en ar, la forma de yo en presente y la de él o ella en pasado se distinguen solo por la tilde. Los verbos en er e ir comparten las mismas terminaciones, así que siguen el mismo patrón. Lo introducen palabras de tiempo típicas, como ayer o el año pasado. Cuando cuentas una secuencia de hechos, cada uno lleva este tiempo. En México la forma plural de tú es siempre la tercera persona del plural, nunca la que se usa en España.",
+    "de": "Das Präteritum drückt eine Handlung aus, die geschehen und jetzt vorbei ist. Bei Verben auf ar unterscheiden sich die Form für ich im Präsens und die für er oder sie in der Vergangenheit nur durch den Akzent. Verben auf er und ir teilen dieselben Endungen und folgen so demselben Muster. Typische Zeitwörter leiten es ein, etwa gestern oder letztes Jahr. Wenn du eine Reihe von Ereignissen erzählst, steht jedes in dieser Zeit. In Mexiko ist die Pluralform von du immer die dritte Person Plural, nie die in Spanien gebräuchliche."
   },
   "glossary": [
     {
@@ -774,7 +774,7 @@
           "de": "'Llego' ist Präsens: damit würde der Satz behaupten, dass ich gerade jetzt im Laden ankomme, nicht dass ich vorhin dort ankam und Brot kaufte; richtig für die Gegenwart: Llego a la tienda ahora."
         },
         "llegé": {
-          "hu": "Ilyen alak nem létezik: a -gar végű igék yo-alakjában a g elé u kell az e előtt, hogy a hang kemény maradjon, ezért helyesen: llegué, nem llegé.",
+          "hu": "Ilyen alak nem létezik: a -gar végű igék yo-alakjában a g után u kell az e előtt, hogy a hang kemény maradjon, ezért helyesen: llegué, nem llegé.",
           "en": "That form does not exist: verbs ending in -gar need a u before the e in the yo form, so the sound stays hard, correctly: llegué, not llegé.",
           "es": "Esa forma no existe: los verbos en -gar necesitan una u antes de la e en la forma de yo para mantener el sonido duro, correctamente: llegué, no llegé.",
           "de": "Diese Form gibt es nicht: Verben auf -gar brauchen in der yo-Form ein u vor dem e, damit der Laut hart bleibt, richtig: llegué, nicht llegé."
@@ -806,10 +806,10 @@
       },
       "wrong": {
         "cerro": {
-          "hu": "Ékezet nélkül a 'cerro' egy dombot jelent, vagy azt, hogy ÉN zárom be most; egyik jelentés sem illik ide, helyesen a múlt idejű ő-alak ékezettel: cerró.",
-          "en": "Without the accent, 'cerro' means a hill, or that I close it right now; neither meaning fits here, correctly the accented third-person past: cerró.",
-          "es": "Sin tilde, 'cerro' significa un monte, o que YO cierro ahora; ninguno de los dos encaja aquí, correctamente la tercera persona del pasado con tilde: cerró.",
-          "de": "Ohne Akzent bedeutet 'cerro' ein Hügel, oder dass ICH gerade jetzt schließe; beides passt hier nicht, richtig die betonte dritte Person Vergangenheit: cerró."
+          "hu": "Ékezet nélkül a 'cerro' egy dombot jelent (igealakként nem létezik: az én alak cierro); ez itt nem illik, helyesen a múlt idejű ő-alak ékezettel: cerró.",
+          "en": "Without the accent, 'cerro' means a hill (it is not a verb form: the I form is cierro); that does not fit here, correctly the accented third-person past: cerró.",
+          "es": "Sin tilde, 'cerro' significa un monte (no es una forma verbal: la de yo es cierro); eso no encaja aquí, correctamente la tercera persona del pasado con tilde: cerró.",
+          "de": "Ohne Akzent bedeutet 'cerro' ein Hügel (keine Verbform: die ich-Form ist cierro); das passt hier nicht, richtig die betonte dritte Person Vergangenheit: cerró."
         },
         "cierra": {
           "hu": "A 'cierra' jelen idő: ezzel a mondat azt állítaná, hogy MOST csukja be az ablakot, nem azt, hogy korábban, mert hideg volt, becsukta; helyesen a jelenre: Ella cierra la ventana ahora.",
@@ -867,7 +867,7 @@
     },
     {
       "id": "ir-09",
-      "sentence": "En 2019 nosotros ___ a México.",
+      "sentence": "En 2019 nosotros ___ a México por primera vez.",
       "options": [
         "viajamos",
         "viajábamos",
@@ -1418,12 +1418,12 @@
     {
       "kind": "why",
       "id": "ir-why-05",
-      "es": "Comisteis en un restaurante nuevo.",
-      "target": "Comisteis",
+      "es": "Ustedes comieron en un restaurante nuevo.",
+      "target": "comieron",
       "tr": {
-        "hu": "Egy új étteremben ettetek.",
+        "hu": "Önök egy új étteremben ettek.",
         "en": "You all ate at a new restaurant.",
-        "es": "Comisteis en un restaurante nuevo.",
+        "es": "Ustedes comieron en un restaurante nuevo.",
         "de": "Ihr habt in einem neuen Restaurant gegessen."
       },
       "options": [
@@ -1435,18 +1435,18 @@
             "de": "wir (nosotros)"
           },
           "wrong": {
-            "hu": "Ha nosotros lenne, 'Comimos en un restaurante nuevo' állna, azaz MI ettünk ott, nem ti.",
+            "hu": "Ha nosotros lenne, 'Comimos en un restaurante nuevo' állna, azaz MI ettünk ott, nem önök.",
             "en": "If it were nosotros, it would say 'Comimos en un restaurante nuevo', meaning WE ate there, not you all.",
-            "es": "Si fuera nosotros, diría 'Comimos en un restaurante nuevo', o sea que NOSOTROS comimos ahí, no vosotros.",
+            "es": "Si fuera nosotros, diría 'Comimos en un restaurante nuevo', o sea que NOSOTROS comimos ahí, no ustedes.",
             "de": "Wäre es nosotros, hieße es 'Comimos en un restaurante nuevo', also haben WIR dort gegessen, nicht ihr."
           }
         },
         {
           "text": {
-            "hu": "ti (vosotros, Spo.)",
-            "en": "you all (vosotros, Spain)",
-            "es": "vosotros",
-            "de": "ihr (vosotros, Spanien)"
+            "hu": "ők / Önök",
+            "en": "they/you all (ustedes)",
+            "es": "ellos/ellas/ustedes",
+            "de": "sie/Sie (Plural)"
           }
         },
         {
@@ -1457,9 +1457,9 @@
             "de": "er/sie/Sie"
           },
           "wrong": {
-            "hu": "Ha él/ella lenne, 'Comió en un restaurante nuevo' állna, azaz Ő evett ott, egyedül, nem ti, többen.",
+            "hu": "Ha él/ella lenne, 'Comió en un restaurante nuevo' állna, azaz Ő evett ott, egyedül, nem önök, többen.",
             "en": "If it were él/ella, it would say 'Comió en un restaurante nuevo', meaning HE/SHE ate there, alone, not you all.",
-            "es": "Si fuera él/ella, diría 'Comió en un restaurante nuevo', o sea que ÉL/ELLA comió ahí, solo, no vosotros.",
+            "es": "Si fuera él/ella, diría 'Comió en un restaurante nuevo', o sea que ÉL/ELLA comió ahí, solo, no ustedes.",
             "de": "Wäre es él/ella, hieße es 'Comió en un restaurante nuevo', also hat ER/SIE allein dort gegessen, nicht ihr."
           }
         }

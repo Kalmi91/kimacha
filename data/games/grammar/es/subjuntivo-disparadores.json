@@ -329,7 +329,7 @@
     }
   ],
   "speak": {
-    "hu": "A kötőmód nem magától jelenik meg, a főmondat igéje váltja ki a mellékmondatban. Ha valamit akarsz, kötőmód kell. Ha érzést fejezel ki, jön a kötőmód. Ha kételkedsz egy véleményben, vagy tagadod, megint kötőmód következik. De ha tényként állítod, marad a kijelentő mód. Az remélem jelentésű szó után mindig kötőmód áll. Ha az alany ugyanaz marad, nincs kötőmód, csak főnévi igenév.",
+    "hu": "A kötőmód nem magától jelenik meg, a főmondat igéje váltja ki a mellékmondatban. Ha valamit akarsz, kötőmód kell. Ha érzést fejezel ki, jön a kötőmód. Ha kételkedsz egy véleményben, vagy tagadod, megint kötőmód következik. De ha tényként állítod, marad a kijelentő mód. A remélem jelentésű szó után mindig kötőmód áll. Ha az alany ugyanaz marad, nincs kötőmód, csak főnévi igenév.",
     "en": "The subjunctive doesn't appear on its own, the verb of the main clause triggers it in the subordinate clause. If you want something, you need the subjunctive. If you express a feeling, the subjunctive comes too. If you doubt or deny an opinion, the subjunctive follows again. But if you state it as fact, the indicative stays. After the word meaning I hope there's always the subjunctive. If the subject stays the same, there's no subjunctive, just the infinitive.",
     "es": "El subjuntivo no aparece solo, lo desencadena el verbo de la oración principal en la subordinada. Si quieres algo, necesitas el subjuntivo. Si expresas un sentimiento, también viene el subjuntivo. Si dudas de una opinión o la niegas, el subjuntivo sigue de nuevo. Pero si lo afirmas como un hecho, se queda el indicativo. Después de la palabra que significa ojalá siempre va el subjuntivo. Si el sujeto es el mismo, no hay subjuntivo, solo el infinitivo.",
     "de": "Der Konjunktiv erscheint nicht von allein, das Verb des Hauptsatzes löst ihn im Nebensatz aus. Wenn du etwas willst, brauchst du den Konjunktiv. Wenn du ein Gefühl ausdrückst, kommt der Konjunktiv auch. Wenn du eine Meinung anzweifelst oder verneinst, folgt wieder der Konjunktiv. Aber wenn du es als Tatsache darstellst, bleibt der Indikativ. Nach dem Wort für hoffentlich steht immer der Konjunktiv. Bleibt das Subjekt gleich, gibt es keinen Konjunktiv, nur den Infinitiv."
@@ -365,7 +365,7 @@
     },
     {
       "id": "sp-ch-02",
-      "sentence": "Te pido que ___ (usted) la tarea.",
+      "sentence": "Le pido que ___ (usted) la tarea.",
       "options": ["haga", "hace", "hizo"],
       "correct": 0,
       "why": {
@@ -376,16 +376,16 @@
       },
       "wrong": {
         "hace": {
-          "hu": "Ezzel a mondat azt jelentené: „kérem, és tényleg megcsinálja a feladatot”, ami nem illik a kérés után; helyesen: Te pido que haga la tarea.",
-          "en": "This would state a plain fact (“you do the task”) instead of the requested idea; correctly: Te pido que haga la tarea.",
-          "es": "Esto afirmaría un hecho (“hace la tarea”) en vez de lo pedido; correctamente: Te pido que haga la tarea.",
-          "de": "Das würde eine reine Tatsache aussagen (“Sie machen die Aufgabe”) statt der Bitte; richtig: Te pido que haga la tarea."
+          "hu": "Ezzel a mondat azt jelentené: „kérem, és tényleg megcsinálja a feladatot”, ami nem illik a kérés után; helyesen: Le pido que haga la tarea.",
+          "en": "This would state a plain fact (“you do the task”) instead of the requested idea; correctly: Le pido que haga la tarea.",
+          "es": "Esto afirmaría un hecho (“hace la tarea”) en vez de lo pedido; correctamente: Le pido que haga la tarea.",
+          "de": "Das würde eine reine Tatsache aussagen (“Sie machen die Aufgabe”) statt der Bitte; richtig: Le pido que haga la tarea."
         },
         "hizo": {
-          "hu": "Ezzel a mondat múlt időben állna: „megcsinálta a feladatot”, de a kérés jelen idejű kötőmódot kér; helyesen: Te pido que haga la tarea.",
-          "en": "This would put it in the past (“you did the task”), but the request needs the present subjunctive; correctly: Te pido que haga la tarea.",
-          "es": "Esto lo pondría en pasado (“hizo la tarea”), pero lo pedido pide subjuntivo presente; correctamente: Te pido que haga la tarea.",
-          "de": "Das würde es in die Vergangenheit setzen (“Sie machten die Aufgabe”), aber die Bitte verlangt den Subjuntivo Präsens; richtig: Te pido que haga la tarea."
+          "hu": "Ezzel a mondat múlt időben állna: „megcsinálta a feladatot”, de a kérés jelen idejű kötőmódot kér; helyesen: Le pido que haga la tarea.",
+          "en": "This would put it in the past (“you did the task”), but the request needs the present subjunctive; correctly: Le pido que haga la tarea.",
+          "es": "Esto lo pondría en pasado (“hizo la tarea”), pero lo pedido pide subjuntivo presente; correctamente: Le pido que haga la tarea.",
+          "de": "Das würde es in die Vergangenheit setzen (“Sie machten die Aufgabe”), aber die Bitte verlangt den Subjuntivo Präsens; richtig: Le pido que haga la tarea."
         }
       },
       "examples": ["Dudo que tenga razón.", "Quiero que trabajes conmigo."],
@@ -534,7 +534,7 @@
     {
       "id": "sp-ch-08",
       "sentence": "Creo que ___ (ella) razón.",
-      "options": ["tiene", "tenga", "tuvo"],
+      "options": ["tiene", "tenga", "tienes"],
       "correct": 0,
       "why": {
         "hu": "A creer (nem tagadva) tényként közli a véleményt, ezért kijelentő: tiene.",
@@ -549,11 +549,11 @@
           "es": "Esto expresaría duda (“no es seguro que tenga razón”), pero creo (afirmado) lo presenta como hecho; correctamente: Creo que tiene razón.",
           "de": "Das würde Zweifel ausdrücken (“es ist nicht sicher, dass sie recht hat”), aber creo (bejaht) stellt es als Tatsache dar; richtig: Creo que tiene razón."
         },
-        "tuvo": {
-          "hu": "Ezzel a mondat múlt időben állna: „igaza volt”, de itt jelen idejű kijelentő kell; helyesen: Creo que tiene razón.",
-          "en": "This would put it in the past (“she was right”), but this needs the present indicative; correctly: Creo que tiene razón.",
-          "es": "Esto lo pondría en pasado (“tuvo razón”), pero aquí hace falta indicativo presente; correctamente: Creo que tiene razón.",
-          "de": "Das würde es in die Vergangenheit setzen (“sie hatte recht”), aber hier braucht es den Indikativ Präsens; richtig: Creo que tiene razón."
+        "tienes": {
+          "hu": "Ezzel a mondat másik személyre („igazad van”) szólna, de itt az alany ella; helyesen: Creo que tiene razón.",
+          "en": "This would fit another person (“you are right”), but the subject here is ella; correctly: Creo que tiene razón.",
+          "es": "Esto correspondería a otra persona (“tienes razón”), pero aquí el sujeto es ella; correctamente: Creo que tiene razón.",
+          "de": "Das würde zu einer anderen Person passen (“du hast recht”), aber das Subjekt ist hier ella; richtig: Creo que tiene razón."
         }
       },
       "examples": ["Dudo que tenga razón.", "Quiero que trabajes conmigo."],
@@ -1094,7 +1094,7 @@
             "de": "gleiches Subjekt → Infinitiv"
           },
           "wrong": {
-            "hu": "Ez azonos alanyra utalna, de itt nincs két ige, csak egy tényközlés.",
+            "hu": "Ez azonos alanyra utalna, de itt a második igének nincs saját alanya, csak egy tényközlés.",
             "en": "This would refer to the same subject, but here there's no second verb with its own subject, just a statement of fact.",
             "es": "Esto se referiría al mismo sujeto, pero aquí no hay un segundo verbo con su propio sujeto, solo una afirmación.",
             "de": "Das würde sich auf dasselbe Subjekt beziehen, aber hier gibt es kein zweites Verb mit eigenem Subjekt, nur eine Tatsachenaussage."

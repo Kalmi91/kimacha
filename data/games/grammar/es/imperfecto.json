@@ -622,11 +622,11 @@
       }
     },
     {
-      "word": "animados",
+      "word": "caricaturas",
       "gloss": {
-        "hu": "dibujos animados = rajzfilm",
-        "en": "dibujos animados = cartoons",
-        "es": "dibujos animados",
+        "hu": "rajzfilmek",
+        "en": "cartoons",
+        "es": "las caricaturas",
         "de": "Zeichentrickfilme"
       }
     },
@@ -708,7 +708,7 @@
     },
     {
       "id": "im-02",
-      "sentence": "Todos los días ___ (nosotros) café en el mismo bar.",
+      "sentence": "Antes, todos los días ___ (nosotros) café en el mismo restaurante.",
       "options": [
         "tomábamos",
         "tomamos",
@@ -716,10 +716,10 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A todos los días ismétlődő szokás: imperfecto.",
-        "en": "Todos los días marks a repeated habit: the imperfect.",
-        "es": "Todos los días indica costumbre: imperfecto.",
-        "de": "Todos los días zeigt Gewohnheit: Imperfekt."
+        "hu": "Az antes és a todos los días múltbeli, ismétlődő szokás: imperfecto.",
+        "en": "Antes and todos los días mark a repeated habit in the past: the imperfect.",
+        "es": "Antes y todos los días indican una costumbre pasada: imperfecto.",
+        "de": "Antes und todos los días zeigen eine vergangene Gewohnheit: Imperfekt."
       },
       "wrong": {
         "tomamos": {
@@ -1002,7 +1002,7 @@
         }
       },
       "examples": [
-        "Veía dibujos animados cada tarde.",
+        "Veía caricaturas cada tarde.",
         "Veíamos películas los sábados."
       ],
       "tense": {
@@ -1071,7 +1071,7 @@
           "de": "\"Fui a\" ist das Indefinido von ir plus a: damit würde der Satz heißen, dass ich tatsächlich irgendwohin GING, um dich anzurufen, nicht dass ich es nur vorhatte, bevor mein Akku leer war."
         },
         "Voy a": {
-          "hu": "A \"Voy a\" jelen-jövő szándékot fejez ki: ezzel a mondat azt jelentené, hogy MOST fogsz hívni, nem azt, hogy régebben állt szándékodban, mielőtt lemerült a telefon.",
+          "hu": "A \"Voy a\" jelen-jövő szándékot fejez ki: ezzel a mondat azt jelentené, hogy MOST fogok felhívni, nem azt, hogy régebben állt szándékomban, mielőtt lemerült a telefonom.",
           "en": "\"Voy a\" expresses a present-future intention: with it the sentence would mean I am about to call you now, not that I intended to earlier, before the battery died.",
           "es": "\"Voy a\" expresa intención presente-futura: con él la frase diría que estoy a punto de llamarte ahora, no que tenía esa intención antes de quedarme sin batería.",
           "de": "\"Voy a\" drückt eine Gegenwart-Zukunft-Absicht aus: damit würde der Satz heißen, dass ich dich jetzt gleich anrufe, nicht dass ich es vorher vorhatte, bevor der Akku leer war."
@@ -1088,7 +1088,7 @@
     },
     {
       "id": "im-12",
-      "sentence": "Mi abuela siempre ___ pan los domingos.",
+      "sentence": "De niño, mi abuela siempre ___ pan los domingos.",
       "options": [
         "hacía",
         "hizo",
@@ -1685,6 +1685,1468 @@
       "tense": {
         "from": "presente",
         "to": "imperfecto"
+      }
+    },
+    {
+      "id": "im-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Minden nap beszélek a nagymamámmal.",
+        "en": "I talk to my grandmother every day.",
+        "es": "Hablo con mi abuela todos los días.",
+        "de": "Ich spreche jeden Tag mit meiner Großmutter."
+      },
+      "answer": "Hablaba con mi abuela todos los días.",
+      "accept": [
+        "Yo hablaba con mi abuela todos los días.",
+        "Todos los días hablaba con mi abuela."
+      ],
+      "wordIds": [
+        "27",
+        "1346",
+        "49"
+      ],
+      "why": {
+        "hu": "Régi szokás: imperfecto. A(z) hablar szabályos -ar ige, yo: hablaba.",
+        "en": "A past habit: imperfecto. Hablar is a regular -ar verb, yo: hablaba.",
+        "es": "Un hábito del pasado: imperfecto. hablar es un verbo regular en -ar, yo: hablaba.",
+        "de": "Eine Gewohnheit in der Vergangenheit: imperfecto. hablar ist ein regelmäßiges -ar-Verb, yo: hablaba."
+      }
+    },
+    {
+      "id": "im-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Nagyon gyorsan beszélsz.",
+        "en": "You speak very fast.",
+        "es": "Hablas muy rápido.",
+        "de": "Du sprichst sehr schnell."
+      },
+      "answer": "Hablabas muy rápido.",
+      "accept": [
+        "Tú hablabas muy rápido."
+      ],
+      "wordIds": [
+        "27",
+        "9",
+        "90"
+      ],
+      "why": {
+        "hu": "Múltbeli leírás: imperfecto. A(z) hablar szabályos -ar ige, tú: hablabas.",
+        "en": "A description of the past: imperfecto. Hablar is a regular -ar verb, tú: hablabas.",
+        "es": "Una descripción del pasado: imperfecto. hablar es un verbo regular en -ar, tú: hablabas.",
+        "de": "Eine Beschreibung der Vergangenheit: imperfecto. hablar ist ein regelmäßiges -ar-Verb, tú: hablabas."
+      }
+    },
+    {
+      "id": "im-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Nem beszél senkivel az órán.",
+        "en": "She does not talk to anyone in class.",
+        "es": "No habla con nadie en clase.",
+        "de": "Sie spricht im Unterricht mit niemandem."
+      },
+      "answer": "No hablaba con nadie en clase.",
+      "accept": [
+        "Ella no hablaba con nadie en clase.",
+        "Él no hablaba con nadie en clase."
+      ],
+      "wordIds": [
+        "1",
+        "27",
+        "1318",
+        "1858"
+      ],
+      "why": {
+        "hu": "Tagadás a múltban, a no az ige elé kerül: imperfecto. A(z) hablar szabályos -ar ige, ella: hablaba.",
+        "en": "Negation in the past, no goes before the verb: imperfecto. Hablar is a regular -ar verb, ella: hablaba.",
+        "es": "Negación en pasado, no va antes del verbo: imperfecto. hablar es un verbo regular en -ar, ella: hablaba.",
+        "de": "Verneinung in der Vergangenheit, no steht vor dem Verb: imperfecto. hablar ist ein regelmäßiges -ar-Verb, ella: hablaba."
+      }
+    },
+    {
+      "id": "im-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Vasárnaponként telefonon beszélünk.",
+        "en": "We talk on the phone on Sundays.",
+        "es": "Hablamos por teléfono los domingos.",
+        "de": "Sonntags telefonieren wir."
+      },
+      "answer": "Hablábamos por teléfono los domingos.",
+      "accept": [
+        "Nosotros hablábamos por teléfono los domingos.",
+        "Los domingos hablábamos por teléfono."
+      ],
+      "wordIds": [
+        "27",
+        "1255",
+        "1202"
+      ],
+      "why": {
+        "hu": "Régi szokás: imperfecto. A(z) hablar szabályos -ar ige, nosotros: hablábamos.",
+        "en": "A past habit: imperfecto. Hablar is a regular -ar verb, nosotros: hablábamos.",
+        "es": "Un hábito del pasado: imperfecto. hablar es un verbo regular en -ar, nosotros: hablábamos.",
+        "de": "Eine Gewohnheit in der Vergangenheit: imperfecto. hablar ist ein regelmäßiges -ar-Verb, nosotros: hablábamos."
+      }
+    },
+    {
+      "id": "im-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Angolul beszélnek az irodában?",
+        "en": "Do they speak English in the office?",
+        "es": "¿Hablan inglés en la oficina?",
+        "de": "Sprechen sie im Büro Englisch?"
+      },
+      "answer": "¿Hablaban inglés en la oficina?",
+      "accept": [
+        "¿Ellos hablaban inglés en la oficina?"
+      ],
+      "wordIds": [
+        "27",
+        "3607",
+        "1310"
+      ],
+      "why": {
+        "hu": "Kérdés egy múltbeli szokásról: imperfecto. A(z) hablar szabályos -ar ige, ellos: hablaban.",
+        "en": "A question about a past habit: imperfecto. Hablar is a regular -ar verb, ellos: hablaban.",
+        "es": "Una pregunta sobre un hábito del pasado: imperfecto. hablar es un verbo regular en -ar, ellos: hablaban.",
+        "de": "Eine Frage zu einer Gewohnheit in der Vergangenheit: imperfecto. hablar ist ein regelmäßiges -ar-Verb, ellos: hablaban."
+      }
+    },
+    {
+      "id": "im-tr-06",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Mindig otthon eszem.",
+        "en": "I always eat at home.",
+        "es": "Siempre como en casa.",
+        "de": "Ich esse immer zu Hause."
+      },
+      "answer": "Siempre comía en casa.",
+      "accept": [
+        "Yo siempre comía en casa.",
+        "Siempre yo comía en casa.",
+        "Comía siempre en casa."
+      ],
+      "wordIds": [
+        "57",
+        "25",
+        "14"
+      ],
+      "why": {
+        "hu": "Régi szokás: imperfecto. A(z) comer szabályos -er ige, yo: comía.",
+        "en": "A past habit: imperfecto. Comer is a regular -er verb, yo: comía.",
+        "es": "Un hábito del pasado: imperfecto. comer es un verbo regular en -er, yo: comía.",
+        "de": "Eine Gewohnheit in der Vergangenheit: imperfecto. comer ist ein regelmäßiges -er-Verb, yo: comía."
+      }
+    },
+    {
+      "id": "im-tr-07",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Sok gyümölcsöt eszel.",
+        "en": "You eat a lot of fruit.",
+        "es": "Comes mucha fruta.",
+        "de": "Du isst viel Obst."
+      },
+      "answer": "Comías mucha fruta.",
+      "accept": [
+        "Tú comías mucha fruta."
+      ],
+      "wordIds": [
+        "25",
+        "3752",
+        "1060"
+      ],
+      "why": {
+        "hu": "Régi szokás: imperfecto. A(z) comer szabályos -er ige, tú: comías.",
+        "en": "A past habit: imperfecto. Comer is a regular -er verb, tú: comías.",
+        "es": "Un hábito del pasado: imperfecto. comer es un verbo regular en -er, tú: comías.",
+        "de": "Eine Gewohnheit in der Vergangenheit: imperfecto. comer ist ein regelmäßiges -er-Verb, tú: comías."
+      }
+    },
+    {
+      "id": "im-tr-08",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Nem eszik húst.",
+        "en": "He does not eat meat.",
+        "es": "No come carne.",
+        "de": "Er isst kein Fleisch."
+      },
+      "answer": "No comía carne.",
+      "accept": [
+        "Él no comía carne.",
+        "Ella no comía carne."
+      ],
+      "wordIds": [
+        "1",
+        "25",
+        "1058"
+      ],
+      "why": {
+        "hu": "Tagadás a múltban, a no az ige elé kerül: imperfecto. A(z) comer szabályos -er ige, él: comía.",
+        "en": "Negation in the past, no goes before the verb: imperfecto. Comer is a regular -er verb, él: comía.",
+        "es": "Negación en pasado, no va antes del verbo: imperfecto. comer es un verbo regular en -er, él: comía.",
+        "de": "Verneinung in der Vergangenheit, no steht vor dem Verb: imperfecto. comer ist ein regelmäßiges -er-Verb, él: comía."
+      }
+    },
+    {
+      "id": "im-tr-09",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Vasárnaponként együtt eszünk.",
+        "en": "We eat together on Sundays.",
+        "es": "Comemos juntos los domingos.",
+        "de": "Sonntags essen wir zusammen."
+      },
+      "answer": "Comíamos juntos los domingos.",
+      "accept": [
+        "Nosotros comíamos juntos los domingos.",
+        "Los domingos comíamos juntos."
+      ],
+      "wordIds": [
+        "25",
+        "86",
+        "1202"
+      ],
+      "why": {
+        "hu": "Régi szokás: imperfecto. A(z) comer szabályos -er ige, nosotros: comíamos.",
+        "en": "A past habit: imperfecto. Comer is a regular -er verb, nosotros: comíamos.",
+        "es": "Un hábito del pasado: imperfecto. comer es un verbo regular en -er, nosotros: comíamos.",
+        "de": "Eine Gewohnheit in der Vergangenheit: imperfecto. comer ist ein regelmäßiges -er-Verb, nosotros: comíamos."
+      }
+    },
+    {
+      "id": "im-tr-10",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "A kertben esznek?",
+        "en": "Do they eat in the garden?",
+        "es": "¿Comen en el jardín?",
+        "de": "Essen sie im Garten?"
+      },
+      "answer": "¿Comían en el jardín?",
+      "accept": [
+        "¿Ellos comían en el jardín?"
+      ],
+      "wordIds": [
+        "25",
+        "1098"
+      ],
+      "why": {
+        "hu": "Kérdés egy múltbeli szokásról: imperfecto. A(z) comer szabályos -er ige, ellos: comían.",
+        "en": "A question about a past habit: imperfecto. Comer is a regular -er verb, ellos: comían.",
+        "es": "Una pregunta sobre un hábito del pasado: imperfecto. comer es un verbo regular en -er, ellos: comían.",
+        "de": "Eine Frage zu einer Gewohnheit in der Vergangenheit: imperfecto. comer ist ein regelmäßiges -er-Verb, ellos: comían."
+      }
+    },
+    {
+      "id": "im-tr-11",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "A tenger közelében lakom.",
+        "en": "I live near the sea.",
+        "es": "Vivo cerca del mar.",
+        "de": "Ich wohne in der Nähe des Meeres."
+      },
+      "answer": "Vivía cerca del mar.",
+      "accept": [
+        "Yo vivía cerca del mar."
+      ],
+      "wordIds": [
+        "82",
+        "2008",
+        "1583"
+      ],
+      "why": {
+        "hu": "Múltbeli leírás: imperfecto. A(z) vivir szabályos -ir ige, yo: vivía.",
+        "en": "A description of the past: imperfecto. Vivir is a regular -ir verb, yo: vivía.",
+        "es": "Una descripción del pasado: imperfecto. vivir es un verbo regular en -ir, yo: vivía.",
+        "de": "Eine Beschreibung der Vergangenheit: imperfecto. vivir ist ein regelmäßiges -ir-Verb, yo: vivía."
+      }
+    },
+    {
+      "id": "im-tr-12",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "A nagyszüleiddel laksz.",
+        "en": "You live with your grandparents.",
+        "es": "Vives con tus abuelos.",
+        "de": "Du wohnst bei deinen Großeltern."
+      },
+      "answer": "Vivías con tus abuelos.",
+      "accept": [
+        "Tú vivías con tus abuelos."
+      ],
+      "wordIds": [
+        "82",
+        "1345"
+      ],
+      "why": {
+        "hu": "Múltbeli leírás: imperfecto. A(z) vivir szabályos -ir ige, tú: vivías.",
+        "en": "A description of the past: imperfecto. Vivir is a regular -ir verb, tú: vivías.",
+        "es": "Una descripción del pasado: imperfecto. vivir es un verbo regular en -ir, tú: vivías.",
+        "de": "Eine Beschreibung der Vergangenheit: imperfecto. vivir ist ein regelmäßiges -ir-Verb, tú: vivías."
+      }
+    },
+    {
+      "id": "im-tr-13",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Nem a városban lakik.",
+        "en": "She does not live in the city.",
+        "es": "No vive en la ciudad.",
+        "de": "Sie wohnt nicht in der Stadt."
+      },
+      "answer": "No vivía en la ciudad.",
+      "accept": [
+        "Ella no vivía en la ciudad.",
+        "Él no vivía en la ciudad."
+      ],
+      "wordIds": [
+        "1",
+        "82",
+        "1851"
+      ],
+      "why": {
+        "hu": "Tagadás a múltban, a no az ige elé kerül: imperfecto. A(z) vivir szabályos -ir ige, ella: vivía.",
+        "en": "Negation in the past, no goes before the verb: imperfecto. Vivir is a regular -ir verb, ella: vivía.",
+        "es": "Negación en pasado, no va antes del verbo: imperfecto. vivir es un verbo regular en -ir, ella: vivía.",
+        "de": "Verneinung in der Vergangenheit, no steht vor dem Verb: imperfecto. vivir ist ein regelmäßiges -ir-Verb, ella: vivía."
+      }
+    },
+    {
+      "id": "im-tr-14",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Egy nagy házban lakunk.",
+        "en": "We live in a big house.",
+        "es": "Vivimos en una casa grande.",
+        "de": "Wir wohnen in einem großen Haus."
+      },
+      "answer": "Vivíamos en una casa grande.",
+      "accept": [
+        "Nosotros vivíamos en una casa grande."
+      ],
+      "wordIds": [
+        "82",
+        "14",
+        "20"
+      ],
+      "why": {
+        "hu": "Múltbeli leírás: imperfecto. A(z) vivir szabályos -ir ige, nosotros: vivíamos.",
+        "en": "A description of the past: imperfecto. Vivir is a regular -ir verb, nosotros: vivíamos.",
+        "es": "Una descripción del pasado: imperfecto. vivir es un verbo regular en -ir, nosotros: vivíamos.",
+        "de": "Eine Beschreibung der Vergangenheit: imperfecto. vivir ist ein regelmäßiges -ir-Verb, nosotros: vivíamos."
+      }
+    },
+    {
+      "id": "im-tr-15",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "A központban laknak?",
+        "en": "Do they live downtown?",
+        "es": "¿Viven en el centro?",
+        "de": "Wohnen sie im Zentrum?"
+      },
+      "answer": "¿Vivían en el centro?",
+      "accept": [
+        "¿Ellos vivían en el centro?"
+      ],
+      "wordIds": [
+        "82",
+        "1673"
+      ],
+      "why": {
+        "hu": "Kérdés egy múltbeli helyzetről: imperfecto. A(z) vivir szabályos -ir ige, ellos: vivían.",
+        "en": "A question about a past situation: imperfecto. Vivir is a regular -ir verb, ellos: vivían.",
+        "es": "Una pregunta sobre una situación del pasado: imperfecto. vivir es un verbo regular en -ir, ellos: vivían.",
+        "de": "Eine Frage zu einer Situation in der Vergangenheit: imperfecto. vivir ist ein regelmäßiges -ir-Verb, ellos: vivían."
+      }
+    },
+    {
+      "id": "im-tr-16",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Nagyon fiatal vagyok.",
+        "en": "I am very young.",
+        "es": "Soy muy joven.",
+        "de": "Ich bin sehr jung."
+      },
+      "answer": "Era muy joven.",
+      "accept": [
+        "Yo era muy joven."
+      ],
+      "wordIds": [
+        "3746",
+        "9",
+        "1420"
+      ],
+      "why": {
+        "hu": "Múltbeli leírás: imperfecto. A(z) ser rendhagyó, yo: era.",
+        "en": "A description of the past: imperfecto. Ser is irregular, yo: era.",
+        "es": "Una descripción del pasado: imperfecto. ser es irregular, yo: era.",
+        "de": "Eine Beschreibung der Vergangenheit: imperfecto. ser ist unregelmäßig, yo: era."
+      }
+    },
+    {
+      "id": "im-tr-17",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Nagyon kedves vagy.",
+        "en": "You are very nice.",
+        "es": "Eres muy simpático.",
+        "de": "Du bist sehr sympathisch."
+      },
+      "answer": "Eras muy simpático.",
+      "accept": [
+        "Tú eras muy simpático."
+      ],
+      "wordIds": [
+        "3746",
+        "9",
+        "1890"
+      ],
+      "why": {
+        "hu": "Múltbeli leírás: imperfecto. A(z) ser rendhagyó, tú: eras.",
+        "en": "A description of the past: imperfecto. Ser is irregular, tú: eras.",
+        "es": "Una descripción del pasado: imperfecto. ser es irregular, tú: eras.",
+        "de": "Eine Beschreibung der Vergangenheit: imperfecto. ser ist unregelmäßig, tú: eras."
+      }
+    },
+    {
+      "id": "im-tr-18",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Nem boldog itt.",
+        "en": "She is not happy here.",
+        "es": "No es feliz aquí.",
+        "de": "Sie ist hier nicht glücklich."
+      },
+      "answer": "No era feliz aquí.",
+      "accept": [
+        "Ella no era feliz aquí.",
+        "Él no era feliz aquí."
+      ],
+      "wordIds": [
+        "1",
+        "3746",
+        "71",
+        "8"
+      ],
+      "why": {
+        "hu": "Tagadás a múltban, a no az ige elé kerül: imperfecto. A(z) ser rendhagyó, ella: era.",
+        "en": "Negation in the past, no goes before the verb: imperfecto. Ser is irregular, ella: era.",
+        "es": "Negación en pasado, no va antes del verbo: imperfecto. ser es irregular, ella: era.",
+        "de": "Verneinung in der Vergangenheit, no steht vor dem Verb: imperfecto. ser ist unregelmäßig, ella: era."
+      }
+    },
+    {
+      "id": "im-tr-19",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Jó barátok vagyunk.",
+        "en": "We are good friends.",
+        "es": "Somos buenos amigos.",
+        "de": "Wir sind gute Freunde."
+      },
+      "answer": "Éramos buenos amigos.",
+      "accept": [
+        "Nosotros éramos buenos amigos."
+      ],
+      "wordIds": [
+        "3746",
+        "18",
+        "22"
+      ],
+      "why": {
+        "hu": "Múltbeli leírás: imperfecto. A(z) ser rendhagyó, nosotros: éramos.",
+        "en": "A description of the past: imperfecto. Ser is irregular, nosotros: éramos.",
+        "es": "Una descripción del pasado: imperfecto. ser es irregular, nosotros: éramos.",
+        "de": "Eine Beschreibung der Vergangenheit: imperfecto. ser ist unregelmäßig, nosotros: éramos."
+      }
+    },
+    {
+      "id": "im-tr-20",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Kedvesek a szomszédaid?",
+        "en": "Are your neighbors nice?",
+        "es": "¿Son simpáticos tus vecinos?",
+        "de": "Sind deine Nachbarn nett?"
+      },
+      "answer": "¿Eran simpáticos tus vecinos?",
+      "accept": [
+        "¿Tus vecinos eran simpáticos?"
+      ],
+      "wordIds": [
+        "3746",
+        "1890",
+        "211"
+      ],
+      "why": {
+        "hu": "Kérdés egy múltbeli helyzetről: imperfecto. A(z) ser rendhagyó, ellos: eran.",
+        "en": "A question about a past situation: imperfecto. Ser is irregular, ellos: eran.",
+        "es": "Una pregunta sobre una situación del pasado: imperfecto. ser es irregular, ellos: eran.",
+        "de": "Eine Frage zu einer Situation in der Vergangenheit: imperfecto. ser ist unregelmäßig, ellos: eran."
+      }
+    },
+    {
+      "id": "im-tr-21",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Nyáron a tengerpartra megyek.",
+        "en": "I go to the beach in the summer.",
+        "es": "Voy a la playa en verano.",
+        "de": "Im Sommer gehe ich an den Strand."
+      },
+      "answer": "Iba a la playa en verano.",
+      "accept": [
+        "Yo iba a la playa en verano.",
+        "En verano iba a la playa."
+      ],
+      "wordIds": [
+        "31",
+        "1869",
+        "1819"
+      ],
+      "why": {
+        "hu": "Régi szokás: imperfecto. A(z) ir rendhagyó, yo: iba.",
+        "en": "A past habit: imperfecto. Ir is irregular, yo: iba.",
+        "es": "Un hábito del pasado: imperfecto. ir es irregular, yo: iba.",
+        "de": "Eine Gewohnheit in der Vergangenheit: imperfecto. ir ist unregelmäßig, yo: iba."
+      }
+    },
+    {
+      "id": "im-tr-22",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "A testvéreddel jársz a parkba.",
+        "en": "You go to the park with your brother.",
+        "es": "Vas al parque con tu hermano.",
+        "de": "Du gehst mit deinem Bruder in den Park."
+      },
+      "answer": "Ibas al parque con tu hermano.",
+      "accept": [
+        "Tú ibas al parque con tu hermano."
+      ],
+      "wordIds": [
+        "31",
+        "1224",
+        "1358"
+      ],
+      "why": {
+        "hu": "Régi szokás: imperfecto. A(z) ir rendhagyó, tú: ibas.",
+        "en": "A past habit: imperfecto. Ir is irregular, tú: ibas.",
+        "es": "Un hábito del pasado: imperfecto. ir es irregular, tú: ibas.",
+        "de": "Eine Gewohnheit in der Vergangenheit: imperfecto. ir ist unregelmäßig, tú: ibas."
+      }
+    },
+    {
+      "id": "im-tr-23",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Nem autóval megy iskolába.",
+        "en": "He does not go to school by car.",
+        "es": "No va a la escuela en coche.",
+        "de": "Er fährt nicht mit dem Auto zur Schule."
+      },
+      "answer": "No iba a la escuela en coche.",
+      "accept": [
+        "Él no iba a la escuela en coche.",
+        "Ella no iba a la escuela en coche."
+      ],
+      "wordIds": [
+        "1",
+        "31",
+        "1175",
+        "1842"
+      ],
+      "why": {
+        "hu": "Tagadás a múltban, a no az ige elé kerül: imperfecto. A(z) ir rendhagyó, él: iba.",
+        "en": "Negation in the past, no goes before the verb: imperfecto. Ir is irregular, él: iba.",
+        "es": "Negación en pasado, no va antes del verbo: imperfecto. ir es irregular, él: iba.",
+        "de": "Verneinung in der Vergangenheit, no steht vor dem Verb: imperfecto. ir ist unregelmäßig, él: iba."
+      }
+    },
+    {
+      "id": "im-tr-24",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Szombatonként moziba megyünk.",
+        "en": "We go to the movies on Saturdays.",
+        "es": "Vamos al cine los sábados.",
+        "de": "Samstags gehen wir ins Kino."
+      },
+      "answer": "Íbamos al cine los sábados.",
+      "accept": [
+        "Nosotros íbamos al cine los sábados.",
+        "Los sábados íbamos al cine."
+      ],
+      "wordIds": [
+        "31",
+        "3587",
+        "1201"
+      ],
+      "why": {
+        "hu": "Régi szokás: imperfecto. A(z) ir rendhagyó, nosotros: íbamos.",
+        "en": "A past habit: imperfecto. Ir is irregular, nosotros: íbamos.",
+        "es": "Un hábito del pasado: imperfecto. ir es irregular, nosotros: íbamos.",
+        "de": "Eine Gewohnheit in der Vergangenheit: imperfecto. ir ist unregelmäßig, nosotros: íbamos."
+      }
+    },
+    {
+      "id": "im-tr-25",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Busszal mennek a piacra?",
+        "en": "Do they go to the market by bus?",
+        "es": "¿Van al mercado en autobús?",
+        "de": "Fahren sie mit dem Bus zum Markt?"
+      },
+      "answer": "¿Iban al mercado en autobús?",
+      "accept": [
+        "¿Ellos iban al mercado en autobús?"
+      ],
+      "wordIds": [
+        "31",
+        "1401",
+        "1297"
+      ],
+      "why": {
+        "hu": "Kérdés egy múltbeli szokásról: imperfecto. A(z) ir rendhagyó, ellos: iban.",
+        "en": "A question about a past habit: imperfecto. Ir is irregular, ellos: iban.",
+        "es": "Una pregunta sobre un hábito del pasado: imperfecto. ir es irregular, ellos: iban.",
+        "de": "Eine Frage zu einer Gewohnheit in der Vergangenheit: imperfecto. ir ist unregelmäßig, ellos: iban."
+      }
+    },
+    {
+      "id": "im-tr-26",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Este nézem a tévét.",
+        "en": "I watch TV at night.",
+        "es": "Veo la tele por la noche.",
+        "de": "Abends sehe ich fern."
+      },
+      "answer": "Veía la tele por la noche.",
+      "accept": [
+        "Yo veía la tele por la noche.",
+        "Por la noche veía la tele."
+      ],
+      "wordIds": [
+        "37",
+        "1837",
+        "50"
+      ],
+      "why": {
+        "hu": "Régi szokás: imperfecto. A(z) ver rendhagyó, megtartja a ve- tövet és -ía jön hozzá, yo: veía.",
+        "en": "A past habit: imperfecto. Ver is irregular, it keeps ve- and takes -ía, yo: veía.",
+        "es": "Un hábito del pasado: imperfecto. ver es irregular, mantiene ve- y toma -ía, yo: veía.",
+        "de": "Eine Gewohnheit in der Vergangenheit: imperfecto. ver ist unregelmäßig, es behält ve- und bekommt -ía, yo: veía."
+      }
+    },
+    {
+      "id": "im-tr-27",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Sok filmet nézel.",
+        "en": "You watch a lot of movies.",
+        "es": "Ves muchas películas.",
+        "de": "Du siehst viele Filme."
+      },
+      "answer": "Veías muchas películas.",
+      "accept": [
+        "Tú veías muchas películas."
+      ],
+      "wordIds": [
+        "37",
+        "3752",
+        "1875"
+      ],
+      "why": {
+        "hu": "Régi szokás: imperfecto. A(z) ver rendhagyó, megtartja a ve- tövet és -ía jön hozzá, tú: veías.",
+        "en": "A past habit: imperfecto. Ver is irregular, it keeps ve- and takes -ía, tú: veías.",
+        "es": "Un hábito del pasado: imperfecto. ver es irregular, mantiene ve- y toma -ía, tú: veías.",
+        "de": "Eine Gewohnheit in der Vergangenheit: imperfecto. ver ist unregelmäßig, es behält ve- und bekommt -ía, tú: veías."
+      }
+    },
+    {
+      "id": "im-tr-28",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Nem látja a családját.",
+        "en": "She does not see her family.",
+        "es": "No ve a su familia.",
+        "de": "Sie sieht ihre Familie nicht."
+      },
+      "answer": "No veía a su familia.",
+      "accept": [
+        "Ella no veía a su familia.",
+        "Él no veía a su familia."
+      ],
+      "wordIds": [
+        "1",
+        "37",
+        "1852"
+      ],
+      "why": {
+        "hu": "Tagadás a múltban, a no az ige elé kerül: imperfecto. A(z) ver rendhagyó, megtartja a ve- tövet és -ía jön hozzá, ella: veía.",
+        "en": "Negation in the past, no goes before the verb: imperfecto. Ver is irregular, it keeps ve- and takes -ía, ella: veía.",
+        "es": "Negación en pasado, no va antes del verbo: imperfecto. ver es irregular, mantiene ve- y toma -ía, ella: veía.",
+        "de": "Verneinung in der Vergangenheit, no steht vor dem Verb: imperfecto. ver ist unregelmäßig, es behält ve- und bekommt -ía, ella: veía."
+      }
+    },
+    {
+      "id": "im-tr-29",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Nyáron látjuk a nagyszüleinket.",
+        "en": "We see our grandparents in the summer.",
+        "es": "Vemos a los abuelos en verano.",
+        "de": "Wir sehen unsere Großeltern im Sommer."
+      },
+      "answer": "Veíamos a los abuelos en verano.",
+      "accept": [
+        "Nosotros veíamos a los abuelos en verano.",
+        "En verano veíamos a los abuelos."
+      ],
+      "wordIds": [
+        "37",
+        "1345",
+        "1819"
+      ],
+      "why": {
+        "hu": "Régi szokás: imperfecto. A(z) ver rendhagyó, megtartja a ve- tövet és -ía jön hozzá, nosotros: veíamos.",
+        "en": "A past habit: imperfecto. Ver is irregular, it keeps ve- and takes -ía, nosotros: veíamos.",
+        "es": "Un hábito del pasado: imperfecto. ver es irregular, mantiene ve- y toma -ía, nosotros: veíamos.",
+        "de": "Eine Gewohnheit in der Vergangenheit: imperfecto. ver ist unregelmäßig, es behält ve- und bekommt -ía, nosotros: veíamos."
+      }
+    },
+    {
+      "id": "im-tr-30",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Együtt nézik a focit?",
+        "en": "Do they watch soccer together?",
+        "es": "¿Ven el fútbol juntos?",
+        "de": "Sehen sie zusammen Fußball?"
+      },
+      "answer": "¿Veían el fútbol juntos?",
+      "accept": [
+        "¿Ellos veían el fútbol juntos?"
+      ],
+      "wordIds": [
+        "37",
+        "1554",
+        "86"
+      ],
+      "why": {
+        "hu": "Kérdés egy múltbeli szokásról: imperfecto. A(z) ver rendhagyó, megtartja a ve- tövet és -ía jön hozzá, ellos: veían.",
+        "en": "A question about a past habit: imperfecto. Ver is irregular, it keeps ve- and takes -ía, ellos: veían.",
+        "es": "Una pregunta sobre un hábito del pasado: imperfecto. ver es irregular, mantiene ve- y toma -ía, ellos: veían.",
+        "de": "Eine Frage zu einer Gewohnheit in der Vergangenheit: imperfecto. ver ist unregelmäßig, es behält ve- und bekommt -ía, ellos: veían."
+      }
+    },
+    {
+      "id": "im-tr-31",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Két testvérem van.",
+        "en": "I have two siblings.",
+        "es": "Tengo dos hermanos.",
+        "de": "Ich habe zwei Geschwister."
+      },
+      "answer": "Tenía dos hermanos.",
+      "accept": [
+        "Yo tenía dos hermanos."
+      ],
+      "wordIds": [
+        "33",
+        "1811",
+        "1358"
+      ],
+      "why": {
+        "hu": "Múltbeli leírás: imperfecto. A(z) tener az imperfectumban szabályos -er ige, yo: tenía.",
+        "en": "A description of the past: imperfecto. Tener is a regular -er verb in the imperfect, yo: tenía.",
+        "es": "Una descripción del pasado: imperfecto. tener es un verbo regular en -er en imperfecto, yo: tenía.",
+        "de": "Eine Beschreibung der Vergangenheit: imperfecto. tener ist im Imperfekt ein regelmäßiges -er-Verb, yo: tenía."
+      }
+    },
+    {
+      "id": "im-tr-32",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Van egy nagy kutyád.",
+        "en": "You have a big dog.",
+        "es": "Tienes un perro grande.",
+        "de": "Du hast einen großen Hund."
+      },
+      "answer": "Tenías un perro grande.",
+      "accept": [
+        "Tú tenías un perro grande."
+      ],
+      "wordIds": [
+        "33",
+        "1382",
+        "20"
+      ],
+      "why": {
+        "hu": "Múltbeli leírás: imperfecto. A(z) tener az imperfectumban szabályos -er ige, tú: tenías.",
+        "en": "A description of the past: imperfecto. Tener is a regular -er verb in the imperfect, tú: tenías.",
+        "es": "Una descripción del pasado: imperfecto. tener es un verbo regular en -er en imperfecto, tú: tenías.",
+        "de": "Eine Beschreibung der Vergangenheit: imperfecto. tener ist im Imperfekt ein regelmäßiges -er-Verb, tú: tenías."
+      }
+    },
+    {
+      "id": "im-tr-33",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Nincs autója.",
+        "en": "He does not have a car.",
+        "es": "No tiene coche.",
+        "de": "Er hat kein Auto."
+      },
+      "answer": "No tenía coche.",
+      "accept": [
+        "Él no tenía coche.",
+        "Ella no tenía coche."
+      ],
+      "wordIds": [
+        "1",
+        "33",
+        "1842"
+      ],
+      "why": {
+        "hu": "Tagadás a múltban, a no az ige elé kerül: imperfecto. A(z) tener az imperfectumban szabályos -er ige, él: tenía.",
+        "en": "Negation in the past, no goes before the verb: imperfecto. Tener is a regular -er verb in the imperfect, él: tenía.",
+        "es": "Negación en pasado, no va antes del verbo: imperfecto. tener es un verbo regular en -er en imperfecto, él: tenía.",
+        "de": "Verneinung in der Vergangenheit, no steht vor dem Verb: imperfecto. tener ist im Imperfekt ein regelmäßiges -er-Verb, él: tenía."
+      }
+    },
+    {
+      "id": "im-tr-34",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Reggel van óránk.",
+        "en": "We have class in the morning.",
+        "es": "Tenemos clase por la mañana.",
+        "de": "Wir haben morgens Unterricht."
+      },
+      "answer": "Teníamos clase por la mañana.",
+      "accept": [
+        "Nosotros teníamos clase por la mañana.",
+        "Por la mañana teníamos clase."
+      ],
+      "wordIds": [
+        "33",
+        "1858",
+        "1313"
+      ],
+      "why": {
+        "hu": "Régi szokás: imperfecto. A(z) tener az imperfectumban szabályos -er ige, nosotros: teníamos.",
+        "en": "A past habit: imperfecto. Tener is a regular -er verb in the imperfect, nosotros: teníamos.",
+        "es": "Un hábito del pasado: imperfecto. tener es un verbo regular en -er en imperfecto, nosotros: teníamos.",
+        "de": "Eine Gewohnheit in der Vergangenheit: imperfecto. tener ist im Imperfekt ein regelmäßiges -er-Verb, nosotros: teníamos."
+      }
+    },
+    {
+      "id": "im-tr-35",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Fáznak?",
+        "en": "Are they cold?",
+        "es": "¿Tienen frío?",
+        "de": "Frieren sie?"
+      },
+      "answer": "¿Tenían frío?",
+      "accept": [
+        "¿Ellos tenían frío?"
+      ],
+      "wordIds": [
+        "33",
+        "1429"
+      ],
+      "why": {
+        "hu": "Kérdés egy múltbeli helyzetről: imperfecto. A(z) tener az imperfectumban szabályos -er ige, ellos: tenían.",
+        "en": "A question about a past situation: imperfecto. Tener is a regular -er verb in the imperfect, ellos: tenían.",
+        "es": "Una pregunta sobre una situación del pasado: imperfecto. tener es un verbo regular en -er en imperfecto, ellos: tenían.",
+        "de": "Eine Frage zu einer Situation in der Vergangenheit: imperfecto. tener ist im Imperfekt ein regelmäßiges -er-Verb, ellos: tenían."
+      }
+    },
+    {
+      "id": "im-tr-36",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Fáradt vagyok.",
+        "en": "I am tired.",
+        "es": "Estoy cansado.",
+        "de": "Ich bin müde."
+      },
+      "answer": "Estaba cansado.",
+      "accept": [
+        "Yo estaba cansado."
+      ],
+      "wordIds": [
+        "3743",
+        "1364"
+      ],
+      "why": {
+        "hu": "Múltbeli leírás: imperfecto. A(z) estar szabályos -ar ige, yo: estaba.",
+        "en": "A description of the past: imperfecto. Estar is a regular -ar verb, yo: estaba.",
+        "es": "Una descripción del pasado: imperfecto. estar es un verbo regular en -ar, yo: estaba.",
+        "de": "Eine Beschreibung der Vergangenheit: imperfecto. estar ist ein regelmäßiges -ar-Verb, yo: estaba."
+      }
+    },
+    {
+      "id": "im-tr-37",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Szabadságon vagy.",
+        "en": "You are on vacation.",
+        "es": "Estás de vacaciones.",
+        "de": "Du bist im Urlaub."
+      },
+      "answer": "Estabas de vacaciones.",
+      "accept": [
+        "Tú estabas de vacaciones."
+      ],
+      "wordIds": [
+        "3743",
+        "1870"
+      ],
+      "why": {
+        "hu": "Múltbeli leírás: imperfecto. A(z) estar szabályos -ar ige, tú: estabas.",
+        "en": "A description of the past: imperfecto. Estar is a regular -ar verb, tú: estabas.",
+        "es": "Una descripción del pasado: imperfecto. estar es un verbo regular en -ar, tú: estabas.",
+        "de": "Eine Beschreibung der Vergangenheit: imperfecto. estar ist ein regelmäßiges -ar-Verb, tú: estabas."
+      }
+    },
+    {
+      "id": "im-tr-38",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Nem elégedett.",
+        "en": "She is not pleased.",
+        "es": "No está contenta.",
+        "de": "Sie ist nicht zufrieden."
+      },
+      "answer": "No estaba contenta.",
+      "accept": [
+        "Ella no estaba contenta."
+      ],
+      "wordIds": [
+        "1",
+        "3743",
+        "1360"
+      ],
+      "why": {
+        "hu": "Tagadás a múltban, a no az ige elé kerül: imperfecto. A(z) estar szabályos -ar ige, ella: estaba.",
+        "en": "Negation in the past, no goes before the verb: imperfecto. Estar is a regular -ar verb, ella: estaba.",
+        "es": "Negación en pasado, no va antes del verbo: imperfecto. estar es un verbo regular en -ar, ella: estaba.",
+        "de": "Verneinung in der Vergangenheit, no steht vor dem Verb: imperfecto. estar ist ein regelmäßiges -ar-Verb, ella: estaba."
+      }
+    },
+    {
+      "id": "im-tr-39",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Az irodában vagyunk.",
+        "en": "We are in the office.",
+        "es": "Estamos en la oficina.",
+        "de": "Wir sind im Büro."
+      },
+      "answer": "Estábamos en la oficina.",
+      "accept": [
+        "Nosotros estábamos en la oficina."
+      ],
+      "wordIds": [
+        "3743",
+        "1310"
+      ],
+      "why": {
+        "hu": "Múltbeli leírás: imperfecto. A(z) estar szabályos -ar ige, nosotros: estábamos.",
+        "en": "A description of the past: imperfecto. Estar is a regular -ar verb, nosotros: estábamos.",
+        "es": "Una descripción del pasado: imperfecto. estar es un verbo regular en -ar, nosotros: estábamos.",
+        "de": "Eine Beschreibung der Vergangenheit: imperfecto. estar ist ein regelmäßiges -ar-Verb, nosotros: estábamos."
+      }
+    },
+    {
+      "id": "im-tr-40",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Betegek?",
+        "en": "Are they sick?",
+        "es": "¿Están enfermos?",
+        "de": "Sind sie krank?"
+      },
+      "answer": "¿Estaban enfermos?",
+      "accept": [
+        "¿Ellos estaban enfermos?"
+      ],
+      "wordIds": [
+        "3743",
+        "1516"
+      ],
+      "why": {
+        "hu": "Kérdés egy múltbeli helyzetről: imperfecto. A(z) estar szabályos -ar ige, ellos: estaban.",
+        "en": "A question about a past situation: imperfecto. Estar is a regular -ar verb, ellos: estaban.",
+        "es": "Una pregunta sobre una situación del pasado: imperfecto. estar es un verbo regular en -ar, ellos: estaban.",
+        "de": "Eine Frage zu einer Situation in der Vergangenheit: imperfecto. estar ist ein regelmäßiges -ar-Verb, ellos: estaban."
+      }
+    },
+    {
+      "id": "im-tr-41",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Szombatonként sportolok.",
+        "en": "I play sports on Saturdays.",
+        "es": "Hago deporte los sábados.",
+        "de": "Samstags mache ich Sport."
+      },
+      "answer": "Hacía deporte los sábados.",
+      "accept": [
+        "Yo hacía deporte los sábados.",
+        "Los sábados hacía deporte."
+      ],
+      "wordIds": [
+        "34",
+        "1553",
+        "1201"
+      ],
+      "why": {
+        "hu": "Régi szokás: imperfecto. A(z) hacer az imperfectumban szabályos -er ige, yo: hacía.",
+        "en": "A past habit: imperfecto. Hacer is a regular -er verb in the imperfect, yo: hacía.",
+        "es": "Un hábito del pasado: imperfecto. hacer es un verbo regular en -er en imperfecto, yo: hacía.",
+        "de": "Eine Gewohnheit in der Vergangenheit: imperfecto. hacer ist im Imperfekt ein regelmäßiges -er-Verb, yo: hacía."
+      }
+    },
+    {
+      "id": "im-tr-42",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Te főzöd az ebédet.",
+        "en": "You cook the meal.",
+        "es": "Haces la comida.",
+        "de": "Du kochst das Essen."
+      },
+      "answer": "Hacías la comida.",
+      "accept": [
+        "Tú hacías la comida."
+      ],
+      "wordIds": [
+        "34",
+        "70"
+      ],
+      "why": {
+        "hu": "Régi szokás: imperfecto. A(z) hacer az imperfectumban szabályos -er ige, tú: hacías.",
+        "en": "A past habit: imperfecto. Hacer is a regular -er verb in the imperfect, tú: hacías.",
+        "es": "Un hábito del pasado: imperfecto. hacer es un verbo regular en -er en imperfecto, tú: hacías.",
+        "de": "Eine Gewohnheit in der Vergangenheit: imperfecto. hacer ist im Imperfekt ein regelmäßiges -er-Verb, tú: hacías."
+      }
+    },
+    {
+      "id": "im-tr-43",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Nem veti be az ágyat.",
+        "en": "He does not make the bed.",
+        "es": "No hace la cama.",
+        "de": "Er macht das Bett nicht."
+      },
+      "answer": "No hacía la cama.",
+      "accept": [
+        "Él no hacía la cama.",
+        "Ella no hacía la cama."
+      ],
+      "wordIds": [
+        "1",
+        "34",
+        "3896"
+      ],
+      "why": {
+        "hu": "Tagadás a múltban, a no az ige elé kerül: imperfecto. A(z) hacer az imperfectumban szabályos -er ige, él: hacía.",
+        "en": "Negation in the past, no goes before the verb: imperfecto. Hacer is a regular -er verb in the imperfect, él: hacía.",
+        "es": "Negación en pasado, no va antes del verbo: imperfecto. hacer es un verbo regular en -er en imperfecto, él: hacía.",
+        "de": "Verneinung in der Vergangenheit, no steht vor dem Verb: imperfecto. hacer ist im Imperfekt ein regelmäßiges -er-Verb, él: hacía."
+      }
+    },
+    {
+      "id": "im-tr-44",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Otthon sütünk kenyeret.",
+        "en": "We bake bread at home.",
+        "es": "Hacemos pan en casa.",
+        "de": "Wir backen zu Hause Brot."
+      },
+      "answer": "Hacíamos pan en casa.",
+      "accept": [
+        "Nosotros hacíamos pan en casa."
+      ],
+      "wordIds": [
+        "34",
+        "1062",
+        "14"
+      ],
+      "why": {
+        "hu": "Régi szokás: imperfecto. A(z) hacer az imperfectumban szabályos -er ige, nosotros: hacíamos.",
+        "en": "A past habit: imperfecto. Hacer is a regular -er verb in the imperfect, nosotros: hacíamos.",
+        "es": "Un hábito del pasado: imperfecto. hacer es un verbo regular en -er en imperfecto, nosotros: hacíamos.",
+        "de": "Eine Gewohnheit in der Vergangenheit: imperfecto. hacer ist im Imperfekt ein regelmäßiges -er-Verb, nosotros: hacíamos."
+      }
+    },
+    {
+      "id": "im-tr-45",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Sok zajt csinálnak?",
+        "en": "Do they make a lot of noise?",
+        "es": "¿Hacen mucho ruido?",
+        "de": "Machen sie viel Lärm?"
+      },
+      "answer": "¿Hacían mucho ruido?",
+      "accept": [
+        "¿Ellos hacían mucho ruido?"
+      ],
+      "wordIds": [
+        "34",
+        "3752",
+        "1845"
+      ],
+      "why": {
+        "hu": "Kérdés egy múltbeli szokásról: imperfecto. A(z) hacer az imperfectumban szabályos -er ige, ellos: hacían.",
+        "en": "A question about a past habit: imperfecto. Hacer is a regular -er verb in the imperfect, ellos: hacían.",
+        "es": "Una pregunta sobre un hábito del pasado: imperfecto. hacer es un verbo regular en -er en imperfecto, ellos: hacían.",
+        "de": "Eine Frage zu einer Gewohnheit in der Vergangenheit: imperfecto. hacer ist im Imperfekt ein regelmäßiges -er-Verb, ellos: hacían."
+      }
+    },
+    {
+      "id": "im-tr-46",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Egy bankban dolgozom.",
+        "en": "I work at a bank.",
+        "es": "Trabajo en un banco.",
+        "de": "Ich arbeite bei einer Bank."
+      },
+      "answer": "Trabajaba en un banco.",
+      "accept": [
+        "Yo trabajaba en un banco."
+      ],
+      "wordIds": [
+        "1409",
+        "1227"
+      ],
+      "why": {
+        "hu": "Múltbeli leírás: imperfecto. A(z) trabajar szabályos -ar ige, yo: trabajaba.",
+        "en": "A description of the past: imperfecto. Trabajar is a regular -ar verb, yo: trabajaba.",
+        "es": "Una descripción del pasado: imperfecto. trabajar es un verbo regular en -ar, yo: trabajaba.",
+        "de": "Eine Beschreibung der Vergangenheit: imperfecto. trabajar ist ein regelmäßiges -ar-Verb, yo: trabajaba."
+      }
+    },
+    {
+      "id": "im-tr-47",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Éjjel dolgozol.",
+        "en": "You work at night.",
+        "es": "Trabajas de noche.",
+        "de": "Du arbeitest nachts."
+      },
+      "answer": "Trabajabas de noche.",
+      "accept": [
+        "Tú trabajabas de noche.",
+        "De noche trabajabas."
+      ],
+      "wordIds": [
+        "1409",
+        "50"
+      ],
+      "why": {
+        "hu": "Régi szokás: imperfecto. A(z) trabajar szabályos -ar ige, tú: trabajabas.",
+        "en": "A past habit: imperfecto. Trabajar is a regular -ar verb, tú: trabajabas.",
+        "es": "Un hábito del pasado: imperfecto. trabajar es un verbo regular en -ar, tú: trabajabas.",
+        "de": "Eine Gewohnheit in der Vergangenheit: imperfecto. trabajar ist ein regelmäßiges -ar-Verb, tú: trabajabas."
+      }
+    },
+    {
+      "id": "im-tr-48",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Délelőtt nem dolgozik.",
+        "en": "She does not work in the morning.",
+        "es": "No trabaja por la mañana.",
+        "de": "Sie arbeitet morgens nicht."
+      },
+      "answer": "No trabajaba por la mañana.",
+      "accept": [
+        "Ella no trabajaba por la mañana.",
+        "Él no trabajaba por la mañana.",
+        "Por la mañana no trabajaba."
+      ],
+      "wordIds": [
+        "1",
+        "1409",
+        "1313"
+      ],
+      "why": {
+        "hu": "Tagadás a múltban, a no az ige elé kerül: imperfecto. A(z) trabajar szabályos -ar ige, ella: trabajaba.",
+        "en": "Negation in the past, no goes before the verb: imperfecto. Trabajar is a regular -ar verb, ella: trabajaba.",
+        "es": "Negación en pasado, no va antes del verbo: imperfecto. trabajar es un verbo regular en -ar, ella: trabajaba.",
+        "de": "Verneinung in der Vergangenheit, no steht vor dem Verb: imperfecto. trabajar ist ein regelmäßiges -ar-Verb, ella: trabajaba."
+      }
+    },
+    {
+      "id": "im-tr-49",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "Együtt dolgozunk.",
+        "en": "We work together.",
+        "es": "Trabajamos juntos.",
+        "de": "Wir arbeiten zusammen."
+      },
+      "answer": "Trabajábamos juntos.",
+      "accept": [
+        "Nosotros trabajábamos juntos."
+      ],
+      "wordIds": [
+        "1409",
+        "86"
+      ],
+      "why": {
+        "hu": "Múltbeli leírás: imperfecto. A(z) trabajar szabályos -ar ige, nosotros: trabajábamos.",
+        "en": "A description of the past: imperfecto. Trabajar is a regular -ar verb, nosotros: trabajábamos.",
+        "es": "Una descripción del pasado: imperfecto. trabajar es un verbo regular en -ar, nosotros: trabajábamos.",
+        "de": "Eine Beschreibung der Vergangenheit: imperfecto. trabajar ist ein regelmäßiges -ar-Verb, nosotros: trabajábamos."
+      }
+    },
+    {
+      "id": "im-tr-50",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "hu": "A piacon dolgoznak?",
+        "en": "Do they work at the market?",
+        "es": "¿Trabajan en el mercado?",
+        "de": "Arbeiten sie auf dem Markt?"
+      },
+      "answer": "¿Trabajaban en el mercado?",
+      "accept": [
+        "¿Ellos trabajaban en el mercado?"
+      ],
+      "wordIds": [
+        "1409",
+        "1401"
+      ],
+      "why": {
+        "hu": "Kérdés egy múltbeli helyzetről: imperfecto. A(z) trabajar szabályos -ar ige, ellos: trabajaban.",
+        "en": "A question about a past situation: imperfecto. Trabajar is a regular -ar verb, ellos: trabajaban.",
+        "es": "Una pregunta sobre una situación del pasado: imperfecto. trabajar es un verbo regular en -ar, ellos: trabajaban.",
+        "de": "Eine Frage zu einer Situation in der Vergangenheit: imperfecto. trabajar ist ein regelmäßiges -ar-Verb, ellos: trabajaban."
       }
     }
   ]

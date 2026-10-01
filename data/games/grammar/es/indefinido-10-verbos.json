@@ -530,10 +530,10 @@
     }
   ],
   "speak": {
-    "hu": "Ez a lecke a tíz leggyakoribb spanyol ige befejezett múltját gyakoroltatja. Közülük öt rendhagyó, a valahol lenni, a menni, a birtokolni, a tudni és a képesnek lenni, és az alakjaikon nincs ékezet. A másik öt, a nézni, az eltölteni, a várni, a szükségelni és a tetszeni, szabályos ar végű ige, a szokásos végződésekkel. Az én alak és a ő alak között gyakran csak az ékezet tesz különbséget. Minden mondatban a jelen idejű igét kell a megfelelő múlt idejű alakra átírni. Mexikóban a Spanyolországban használt ti alakot soha nem használják.",
-    "en": "This lesson drills the preterite forms of the ten most frequent Spanish verbs. Five of them are irregular, the ones meaning to be somewhere, to go, to have, to know and to be able, and their forms carry no accent mark. The other five, meaning to look, to spend, to wait, to need and to please, are regular verbs ending in ar and take the usual endings. The form for I and the form for he or she are often told apart only by the accent. In every sentence you rewrite the present-tense verb into its matching past form. In Mexico the form used in Spain for you all is never used.",
+    "hu": "Ez a lecke a tíz leggyakoribb spanyol ige befejezett múltját gyakoroltatja. Közülük öt rendhagyó, a valahol lenni, a menni, a birtokolni, a tudni és a képesnek lenni, és az alakjaikon nincs ékezet. A másik öt, a nézni, a benézni, a várni, a szükségelni és a tetszeni, szabályos ar végű ige, a szokásos végződésekkel. Az én alak és az ő alak között gyakran csak az ékezet tesz különbséget. Minden mondatban a jelen idejű igét kell a megfelelő múlt idejű alakra átírni. Mexikóban a Spanyolországban használt ti alakot soha nem használják.",
+    "en": "This lesson drills the preterite forms of the ten most frequent Spanish verbs. Five of them are irregular, the ones meaning to be somewhere, to go, to have, to know and to be able, and their forms carry no accent mark. The other five, meaning to look, to stop by, to wait, to need and to please, are regular verbs ending in ar and take the usual endings. The form for I and the form for he or she are often told apart only by the accent. In every sentence you rewrite the present-tense verb into its matching past form. In Mexico the form used in Spain for you all is never used.",
     "es": "Esta lección practica las formas del pretérito de los diez verbos más frecuentes del español. Cinco son irregulares, los que significan estar, ir, tener, saber y poder, y sus formas no llevan tilde. Los otros cinco, que significan mirar, pasar, esperar, necesitar y gustar, son verbos regulares en ar y toman las terminaciones habituales. La forma de yo y la de él o ella se distinguen muchas veces solo por la tilde. En cada oración reescribes el verbo de presente en su forma de pasado correspondiente. En México nunca se usa la forma para vosotros.",
-    "de": "Diese Lektion übt die Präteritumformen der zehn häufigsten spanischen Verben. Fünf davon sind unregelmäßig, die für sich befinden, gehen, haben, wissen und können, und ihre Formen tragen keinen Akzent. Die anderen fünf, die für schauen, verbringen, warten, brauchen und gefallen, sind regelmäßige Verben auf ar mit den üblichen Endungen. Die Form für ich und die für er oder sie unterscheiden sich oft nur durch den Akzent. In jedem Satz schreibst du das Verb im Präsens in die passende Vergangenheitsform um. In Mexiko wird die in Spanien übliche Form für ihr nie benutzt."
+    "de": "Diese Lektion übt die Präteritumformen der zehn häufigsten spanischen Verben. Fünf davon sind unregelmäßig, die für sich befinden, gehen, haben, wissen und können, und ihre Formen tragen keinen Akzent. Die anderen fünf, die für schauen, vorbeischauen, warten, brauchen und gefallen, sind regelmäßige Verben auf ar mit den üblichen Endungen. Die Form für ich und die für er oder sie unterscheiden sich oft nur durch den Akzent. In jedem Satz schreibst du das Verb im Präsens in die passende Vergangenheitsform um. In Mexiko wird die in Spanien übliche Form für ihr nie benutzt."
   },
   "items": [
     {
@@ -551,7 +551,10 @@
       },
       "answer": "Hoy estuve en la playa.",
       "accept": [
-        "Hoy yo estuve en la playa."
+        "Hoy yo estuve en la playa.",
+        "Yo hoy estuve en la playa.",
+        "Estuve en la playa hoy.",
+        "Yo estuve en la playa hoy."
       ],
       "wordIds": [
         "1312",
@@ -608,7 +611,9 @@
       },
       "answer": "Tuvo un problema.",
       "accept": [
-        "Él tuvo un problema."
+        "Él tuvo un problema.",
+        "Ella tuvo un problema.",
+        "Usted tuvo un problema."
       ],
       "wordIds": [
         "1073",
@@ -722,7 +727,9 @@
       },
       "answer": "Pasó por la tienda.",
       "accept": [
-        "Él pasó por la tienda."
+        "Él pasó por la tienda.",
+        "Ella pasó por la tienda.",
+        "Usted pasó por la tienda."
       ],
       "wordIds": [
         "1887",
@@ -750,7 +757,9 @@
       },
       "answer": "Esperaron en el parque.",
       "accept": [
-        "Ellos esperaron en el parque."
+        "Ellos esperaron en el parque.",
+        "Ellas esperaron en el parque.",
+        "Ustedes esperaron en el parque."
       ],
       "wordIds": [
         "80",
@@ -772,7 +781,7 @@
       },
       "prompt": {
         "es": "Necesitas dinero para el viaje.",
-        "hu": "Pénz kell az utazáshoz.",
+        "hu": "Pénzre van szükséged az utazáshoz.",
         "en": "You need money for the trip.",
         "de": "Du brauchst Geld für die Reise."
       },
@@ -814,10 +823,10 @@
         "1566"
       ],
       "why": {
-        "hu": "Egyszeri, lezárt tetszés-élmény: indefinido. Gustar személytelen ige, alanya „la música”, ezért egyes szám 3.: gustó.",
-        "en": "A single, finished moment of liking something: indefinido. Gustar is impersonal, its subject is 'la música', so third person singular: gustó.",
-        "es": "Un momento único y terminado de que algo gustó: perfecto simple. Gustar es impersonal, su sujeto es 'la música', tercera persona singular: gustó.",
-        "de": "Ein einzelner, abgeschlossener Moment des Gefallens: indefinido. Gustar ist unpersönlich, Subjekt ist 'la música', daher dritte Person Singular: gustó."
+        "hu": "Egyszeri, lezárt tetszés-élmény: indefinido. Gustar esetén az alany a tetszés tárgya („la música”), ezért egyes szám 3.: gustó.",
+        "en": "A single, finished moment of liking something: indefinido. With gustar the thing that pleases is the subject ('la música'), so third person singular: gustó.",
+        "es": "Un momento único y terminado de que algo gustó: perfecto simple. En gustar el sujeto es lo que gusta ('la música'), tercera persona singular: gustó.",
+        "de": "Ein einzelner, abgeschlossener Moment des Gefallens: indefinido. Bei gustar ist das, was gefällt, das Subjekt ('la música'), daher dritte Person Singular: gustó."
       }
     },
     {
@@ -835,7 +844,13 @@
       },
       "answer": "Estuvieron en la ciudad hoy.",
       "accept": [
-        "Ellos estuvieron en la ciudad hoy."
+        "Ellos estuvieron en la ciudad hoy.",
+        "Ellas estuvieron en la ciudad hoy.",
+        "Ustedes estuvieron en la ciudad hoy.",
+        "Hoy estuvieron en la ciudad.",
+        "Hoy ellos estuvieron en la ciudad.",
+        "Hoy ellas estuvieron en la ciudad.",
+        "Hoy ustedes estuvieron en la ciudad."
       ],
       "wordIds": [
         "1055",
@@ -920,7 +935,9 @@
       },
       "answer": "¿Estuvo en la ciudad?",
       "accept": [
-        "¿Él estuvo en la ciudad?"
+        "¿Él estuvo en la ciudad?",
+        "¿Ella estuvo en la ciudad?",
+        "¿Usted estuvo en la ciudad?"
       ],
       "wordIds": [
         "1851",
@@ -948,7 +965,9 @@
       },
       "answer": "Estuvimos en el examen hoy.",
       "accept": [
-        "Nosotros estuvimos en el examen hoy."
+        "Nosotros estuvimos en el examen hoy.",
+        "Hoy estuvimos en el examen.",
+        "Hoy nosotros estuvimos en el examen."
       ],
       "wordIds": [
         "1857",
@@ -1005,7 +1024,9 @@
       },
       "answer": "No fue al parque.",
       "accept": [
-        "Él no fue al parque."
+        "Él no fue al parque.",
+        "Ella no fue al parque.",
+        "Usted no fue al parque."
       ],
       "wordIds": [
         "31",
@@ -1061,7 +1082,9 @@
       },
       "answer": "Fueron a la tienda.",
       "accept": [
-        "Ellos fueron a la tienda."
+        "Ellos fueron a la tienda.",
+        "Ellas fueron a la tienda.",
+        "Ustedes fueron a la tienda."
       ],
       "wordIds": [
         "31",
@@ -1089,7 +1112,9 @@
       },
       "answer": "Tuve un examen hoy.",
       "accept": [
-        "Yo tuve un examen hoy."
+        "Yo tuve un examen hoy.",
+        "Hoy tuve un examen.",
+        "Hoy yo tuve un examen."
       ],
       "wordIds": [
         "1073",
@@ -1146,7 +1171,9 @@
       },
       "answer": "¿Tuvieron un problema?",
       "accept": [
-        "¿Ellos tuvieron un problema?"
+        "¿Ellos tuvieron un problema?",
+        "¿Ellas tuvieron un problema?",
+        "¿Ustedes tuvieron un problema?"
       ],
       "wordIds": [
         "1074",
@@ -1202,7 +1229,9 @@
       },
       "answer": "No supo la verdad.",
       "accept": [
-        "Él no supo la verdad."
+        "Él no supo la verdad.",
+        "Ella no supo la verdad.",
+        "Usted no supo la verdad."
       ],
       "wordIds": [
         "28",
@@ -1258,7 +1287,9 @@
       },
       "answer": "¿Supieron la verdad?",
       "accept": [
-        "¿Ellos supieron la verdad?"
+        "¿Ellos supieron la verdad?",
+        "¿Ellas supieron la verdad?",
+        "¿Ustedes supieron la verdad?"
       ],
       "wordIds": [
         "28",
@@ -1315,7 +1346,9 @@
       },
       "answer": "No pudo ir al parque.",
       "accept": [
-        "Él no pudo ir al parque."
+        "Él no pudo ir al parque.",
+        "Ella no pudo ir al parque.",
+        "Usted no pudo ir al parque."
       ],
       "wordIds": [
         "29",
@@ -1373,7 +1406,9 @@
       },
       "answer": "Pudieron mirar la película.",
       "accept": [
-        "Ellos pudieron mirar la película."
+        "Ellos pudieron mirar la película.",
+        "Ellas pudieron mirar la película.",
+        "Ustedes pudieron mirar la película."
       ],
       "wordIds": [
         "29",
@@ -1431,7 +1466,9 @@
       },
       "answer": "No miró la tienda.",
       "accept": [
-        "Él no miró la tienda."
+        "Él no miró la tienda.",
+        "Ella no miró la tienda.",
+        "Usted no miró la tienda."
       ],
       "wordIds": [
         "1880",
@@ -1459,7 +1496,9 @@
       },
       "answer": "¿Miraron la ciudad?",
       "accept": [
-        "¿Ellos miraron la ciudad?"
+        "¿Ellos miraron la ciudad?",
+        "¿Ellas miraron la ciudad?",
+        "¿Ustedes miraron la ciudad?"
       ],
       "wordIds": [
         "1880",
@@ -1573,7 +1612,9 @@
       },
       "answer": "¿Pasaron por el cine?",
       "accept": [
-        "¿Ellos pasaron por el cine?"
+        "¿Ellos pasaron por el cine?",
+        "¿Ellas pasaron por el cine?",
+        "¿Ustedes pasaron por el cine?"
       ],
       "wordIds": [
         "1887",
@@ -1682,11 +1723,13 @@
         "es": "¿Espera en el cine?",
         "hu": "A moziban vár?",
         "en": "Is he waiting at the movies?",
-        "de": "Wartet er beim Kino?"
+        "de": "Wartet er im Kino?"
       },
       "answer": "¿Esperó en el cine?",
       "accept": [
-        "¿Él esperó en el cine?"
+        "¿Él esperó en el cine?",
+        "¿Ella esperó en el cine?",
+        "¿Usted esperó en el cine?"
       ],
       "wordIds": [
         "80",
@@ -1743,7 +1786,9 @@
       },
       "answer": "Necesité el dinero hoy.",
       "accept": [
-        "Yo necesité el dinero hoy."
+        "Yo necesité el dinero hoy.",
+        "Hoy necesité el dinero.",
+        "Hoy yo necesité el dinero."
       ],
       "wordIds": [
         "85",
@@ -1772,7 +1817,9 @@
       },
       "answer": "No necesitó el examen.",
       "accept": [
-        "Él no necesitó el examen."
+        "Él no necesitó el examen.",
+        "Ella no necesitó el examen.",
+        "Usted no necesitó el examen."
       ],
       "wordIds": [
         "85",
@@ -1800,7 +1847,9 @@
       },
       "answer": "¿Necesitaron la música?",
       "accept": [
-        "¿Ellos necesitaron la música?"
+        "¿Ellos necesitaron la música?",
+        "¿Ellas necesitaron la música?",
+        "¿Ustedes necesitaron la música?"
       ],
       "wordIds": [
         "85",
@@ -1864,10 +1913,10 @@
         "1869"
       ],
       "why": {
-        "hu": "Kérdés egy lezárt tetszés-élményről: indefinido. Gustar személytelen ige, alanya „la playa”, egyes szám 3.: gustó.",
-        "en": "A question about a single, finished moment of liking something: indefinido. Gustar is impersonal, its subject is 'la playa', third person singular: gustó.",
-        "es": "Una pregunta sobre un momento único y terminado de que algo gustó: perfecto simple. Gustar es impersonal, su sujeto es 'la playa', tercera persona singular: gustó.",
-        "de": "Eine Frage zu einem einzelnen, abgeschlossenen Moment des Gefallens: indefinido. Gustar ist unpersönlich, Subjekt ist 'la playa', dritte Person Singular: gustó."
+        "hu": "Kérdés egy lezárt tetszés-élményről: indefinido. Gustar esetén az alany a tetszés tárgya („la playa”), egyes szám 3.: gustó.",
+        "en": "A question about a single, finished moment of liking something: indefinido. With gustar the thing that pleases is the subject ('la playa'), third person singular: gustó.",
+        "es": "Una pregunta sobre un momento único y terminado de que algo gustó: perfecto simple. En gustar el sujeto es lo que gusta ('la playa'), tercera persona singular: gustó.",
+        "de": "Eine Frage zu einem einzelnen, abgeschlossenen Moment des Gefallens: indefinido. Bei gustar ist das, was gefällt, das Subjekt ('la playa'), dritte Person Singular: gustó."
       }
     },
     {
@@ -1885,17 +1934,19 @@
       },
       "answer": "Le gustó el cine.",
       "accept": [
-        "A él le gustó el cine."
+        "A él le gustó el cine.",
+        "A ella le gustó el cine.",
+        "A usted le gustó el cine."
       ],
       "wordIds": [
         "1229",
         "3587"
       ],
       "why": {
-        "hu": "Egyszeri, lezárt tetszés-élmény: indefinido. Gustar személytelen ige, alanya „el cine”, egyes szám 3.: gustó.",
-        "en": "A single, finished moment of liking something: indefinido. Gustar is impersonal, its subject is 'el cine', third person singular: gustó.",
-        "es": "Un momento único y terminado de que algo gustó: perfecto simple. Gustar es impersonal, su sujeto es 'el cine', tercera persona singular: gustó.",
-        "de": "Ein einzelner, abgeschlossener Moment des Gefallens: indefinido. Gustar ist unpersönlich, Subjekt ist 'el cine', dritte Person Singular: gustó."
+        "hu": "Egyszeri, lezárt tetszés-élmény: indefinido. Gustar esetén az alany a tetszés tárgya („el cine”), egyes szám 3.: gustó.",
+        "en": "A single, finished moment of liking something: indefinido. With gustar the thing that pleases is the subject ('el cine'), third person singular: gustó.",
+        "es": "Un momento único y terminado de que algo gustó: perfecto simple. En gustar el sujeto es lo que gusta ('el cine'), tercera persona singular: gustó.",
+        "de": "Ein einzelner, abgeschlossener Moment des Gefallens: indefinido. Bei gustar ist das, was gefällt, das Subjekt ('el cine'), dritte Person Singular: gustó."
       }
     },
     {
@@ -1920,10 +1971,10 @@
         "1851"
       ],
       "why": {
-        "hu": "Tagadott, lezárt tetszés-élmény: indefinido. Gustar személytelen ige, alanya „la ciudad”, egyes szám 3.: gustó.",
-        "en": "A negated, finished moment of liking something: indefinido. Gustar is impersonal, its subject is 'la ciudad', third person singular: gustó.",
-        "es": "Un momento negado y terminado de que algo gustó: perfecto simple. Gustar es impersonal, su sujeto es 'la ciudad', tercera persona singular: gustó.",
-        "de": "Ein verneinter, abgeschlossener Moment des Gefallens: indefinido. Gustar ist unpersönlich, Subjekt ist 'la ciudad', dritte Person Singular: gustó."
+        "hu": "Tagadott, lezárt tetszés-élmény: indefinido. Gustar esetén az alany a tetszés tárgya („la ciudad”), egyes szám 3.: gustó.",
+        "en": "A negated, finished moment of liking something: indefinido. With gustar the thing that pleases is the subject ('la ciudad'), third person singular: gustó.",
+        "es": "Un momento negado y terminado de que algo gustó: perfecto simple. En gustar el sujeto es lo que gusta ('la ciudad'), tercera persona singular: gustó.",
+        "de": "Ein verneinter, abgeschlossener Moment des Gefallens: indefinido. Bei gustar ist das, was gefällt, das Subjekt ('la ciudad'), dritte Person Singular: gustó."
       }
     },
     {
@@ -1941,17 +1992,19 @@
       },
       "answer": "Les gustaron las películas.",
       "accept": [
-        "A ellos les gustaron las películas."
+        "A ellos les gustaron las películas.",
+        "A ellas les gustaron las películas.",
+        "A ustedes les gustaron las películas."
       ],
       "wordIds": [
         "1229",
         "1875"
       ],
       "why": {
-        "hu": "Egyszeri, lezárt tetszés-élmény, többes alany: indefinido. Gustar személytelen ige, alanya „las películas”, többes szám 3.: gustaron.",
-        "en": "A single, finished moment of liking something, plural subject: indefinido. Gustar is impersonal, its subject is 'las películas', third person plural: gustaron.",
-        "es": "Un momento único y terminado de que algo gustó, sujeto plural: perfecto simple. Gustar es impersonal, su sujeto es 'las películas', tercera persona plural: gustaron.",
-        "de": "Ein einzelner, abgeschlossener Moment des Gefallens, Plural-Subjekt: indefinido. Gustar ist unpersönlich, Subjekt ist 'las películas', dritte Person Plural: gustaron."
+        "hu": "Egyszeri, lezárt tetszés-élmény, többes alany: indefinido. Gustar esetén az alany a tetszés tárgya („las películas”), többes szám 3.: gustaron.",
+        "en": "A single, finished moment of liking something, plural subject: indefinido. With gustar the thing that pleases is the subject ('las películas'), third person plural: gustaron.",
+        "es": "Un momento único y terminado de que algo gustó, sujeto plural: perfecto simple. En gustar el sujeto es lo que gusta ('las películas'), tercera persona plural: gustaron.",
+        "de": "Ein einzelner, abgeschlossener Moment des Gefallens, Plural-Subjekt: indefinido. Bei gustar ist das, was gefällt, das Subjekt ('las películas'), dritte Person Plural: gustaron."
       }
     }
   ]

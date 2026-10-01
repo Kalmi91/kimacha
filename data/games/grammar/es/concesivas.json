@@ -1,0 +1,1233 @@
+{
+  "schema": 2,
+  "topic": "concesivas",
+  "level": "B2",
+  "title": {
+    "hu": "Megengedés: aunque, a pesar de",
+    "en": "Concession: aunque, a pesar de",
+    "es": "Concesivas: aunque, a pesar de",
+    "de": "Konzessivsätze: aunque, a pesar de"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A megengedő mondat azt mondja, hogy valami igaz vagy lehetséges, és mégsem akadályoz meg valami mást. Az aunque jelentése bár vagy még ha, és a mód dönti el a jelentést: kijelentő móddal tényt mondunk, kötőmóddal olyat, ami még nem biztos, vagy ami nem számít. Az a pesar de ugyanazt a tényt főnévvel vagy főnévi igenévvel fejezi ki. A por más que és a por mucho que azt jelenti, akármennyire, és kötőmódot kér.",
+        "en": "A concessive clause says that something is true or possible and still does not stop something else. Aunque means although or even if, and the mood decides the meaning: the indicative states a fact, the subjunctive marks something not yet certain or something that does not matter. A pesar de expresses the same fact with a noun or an infinitive. Por más que and por mucho que mean no matter how much, and they take the subjunctive.",
+        "es": "La oración concesiva dice que algo es verdad o posible y, aun así, no impide otra cosa. Aunque significa a pesar de que o incluso si, y el modo decide el significado: con indicativo damos un hecho, con subjuntivo algo que aún no es seguro o que no importa. A pesar de expresa el mismo hecho con un sustantivo o un infinitivo. Por más que y por mucho que significan sin importar cuánto, y llevan subjuntivo.",
+        "de": "Ein Konzessivsatz sagt, dass etwas wahr oder möglich ist und trotzdem etwas anderes nicht verhindert. Aunque bedeutet obwohl oder auch wenn, und der Modus entscheidet über die Bedeutung: Mit dem Indikativ nennen wir eine Tatsache, mit dem Subjuntivo etwas, das noch nicht sicher ist oder das keine Rolle spielt. A pesar de drückt dieselbe Tatsache mit einem Nomen oder einem Infinitiv aus. Por más que und por mucho que bedeuten egal wie sehr und verlangen den Subjuntivo."
+      }
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "hu": "A szabály pontjai",
+        "en": "The rules",
+        "es": "Los puntos de la regla",
+        "de": "Die Regelpunkte"
+      },
+      "points": [
+        {
+          "text": {
+            "hu": "Az aunque + kijelentő mód tényt mond: a beszélő tudja, hogy igaz, és közli. Jelentése: bár, noha. Jelen és múlt időben is áll: aunque llueve, aunque estaba cansada.",
+            "en": "Aunque + indicative states a fact: the speaker knows it is true and says so. It means although. It is used in the present and in the past: aunque llueve, aunque estaba cansada.",
+            "es": "Aunque + indicativo da un hecho: el hablante sabe que es verdad y lo comunica. Significa a pesar de que. Se usa en presente y en pasado: aunque llueve, aunque estaba cansada.",
+            "de": "Aunque + Indikativ nennt eine Tatsache: Der Sprecher weiß, dass sie stimmt, und teilt sie mit. Es bedeutet obwohl. Es steht im Präsens und in der Vergangenheit: aunque llueve, aunque estaba cansada."
+          },
+          "examples": [
+            {
+              "es": "Aunque llueve, salimos al parque.",
+              "tr": {
+                "hu": "Bár esik az eső, kimegyünk a parkba.",
+                "en": "Although it is raining, we go to the park.",
+                "es": "Aunque llueve, salimos al parque.",
+                "de": "Obwohl es regnet, gehen wir in den Park."
+              }
+            },
+            {
+              "es": "Aunque estaba cansada, Ana corrió mucho.",
+              "tr": {
+                "hu": "Bár fáradt volt, Ana sokat futott.",
+                "en": "Although she was tired, Ana ran a lot.",
+                "es": "Aunque estaba cansada, Ana corrió mucho.",
+                "de": "Obwohl sie müde war, ist Ana viel gelaufen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Az aunque + kötőmód olyat jelent, ami még nem biztos, vagy amiről nem tudjuk, igaz-e: még ha. A főmondat gyakran jövő idejű: aunque llueva, iremos al parque.",
+            "en": "Aunque + subjunctive means something that is not yet certain, or that we do not know to be true: even if. The main clause is often in the future: aunque llueva, iremos al parque.",
+            "es": "Aunque + subjuntivo expresa algo que aún no es seguro, o que no sabemos si es verdad: incluso si. La principal suele estar en futuro: aunque llueva, iremos al parque.",
+            "de": "Aunque + Subjuntivo drückt etwas aus, das noch nicht sicher ist oder von dem wir nicht wissen, ob es stimmt: auch wenn. Der Hauptsatz steht oft im Futur: aunque llueva, iremos al parque."
+          },
+          "examples": [
+            {
+              "es": "Aunque llueva mañana, iremos al parque.",
+              "tr": {
+                "hu": "Ha holnap esik is, kimegyünk a parkba.",
+                "en": "Even if it rains tomorrow, we will go to the park.",
+                "es": "Aunque llueva mañana, iremos al parque.",
+                "de": "Auch wenn es morgen regnet, gehen wir in den Park."
+              }
+            },
+            {
+              "es": "Aunque lleguemos tarde, el jefe nos esperará.",
+              "tr": {
+                "hu": "Ha későn érkezünk is, a főnök megvár minket.",
+                "en": "Even if we arrive late, the boss will wait for us.",
+                "es": "Aunque lleguemos tarde, el jefe nos esperará.",
+                "de": "Auch wenn wir spät ankommen, wartet der Chef auf uns."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A kötőmód akkor is áll, ha a tény ismert, de a beszélő nem fogadja el akadálynak vagy érvnek: aunque sea caro, lo compro (az ár nem számít). Ilyenkor a jelentés: akármilyen… is.",
+            "en": "The subjunctive is also used when the fact is known but the speaker does not accept it as an obstacle or an argument: aunque sea caro, lo compro (the price does not matter). The meaning is: however … it is.",
+            "es": "El subjuntivo también se usa cuando el hecho es conocido, pero el hablante no lo acepta como obstáculo ni como argumento: aunque sea caro, lo compro (el precio no importa). El sentido es: por muy … que sea.",
+            "de": "Der Subjuntivo steht auch, wenn die Tatsache bekannt ist, der Sprecher sie aber nicht als Hindernis oder Argument gelten lässt: aunque sea caro, lo compro (der Preis spielt keine Rolle). Die Bedeutung ist: wie … es auch ist."
+          },
+          "examples": [
+            {
+              "es": "Aunque sea caro, lo compro.",
+              "tr": {
+                "hu": "Akármilyen drága is, megveszem.",
+                "en": "However expensive it is, I will buy it.",
+                "es": "Aunque sea caro, lo compro.",
+                "de": "Egal wie teuer es ist, ich kaufe es."
+              }
+            },
+            {
+              "es": "Aunque seas mi hermano, no te lo digo.",
+              "tr": {
+                "hu": "Még ha a testvérem vagy is, nem mondom meg.",
+                "en": "Even if you are my brother, I will not tell you.",
+                "es": "Aunque seas mi hermano, no te lo digo.",
+                "de": "Auch wenn du mein Bruder bist, sage ich es dir nicht."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Ha az aunque után a kötőmód múlt alakja áll, és a főmondatban feltételes mód, a feltevés a jelenre vagy a jövőre valószínűtlen vagy lehetetlen: aunque tuviera tiempo, no iría. Részletek a subjuntivo-imperfecto és a condicionales-tipo2-3 leckében.",
+            "en": "With the past subjunctive after aunque and the conditional in the main clause, the supposition is unlikely or impossible for the present or the future: aunque tuviera tiempo, no iría. Details in the lessons subjuntivo-imperfecto and condicionales-tipo2-3.",
+            "es": "Con el subjuntivo imperfecto tras aunque y el condicional en la principal, la suposición es poco probable o imposible para el presente o el futuro: aunque tuviera tiempo, no iría. Los detalles están en las lecciones subjuntivo-imperfecto y condicionales-tipo2-3.",
+            "de": "Steht nach aunque der Subjuntivo der Vergangenheit und im Hauptsatz der Konditional, ist die Annahme für Gegenwart oder Zukunft unwahrscheinlich oder unmöglich: aunque tuviera tiempo, no iría. Einzelheiten in den Lektionen subjuntivo-imperfecto und condicionales-tipo2-3."
+          },
+          "examples": [
+            {
+              "es": "Aunque tuviera tiempo, no iría.",
+              "tr": {
+                "hu": "Még ha lenne időm, sem mennék.",
+                "en": "Even if I had time, I would not go.",
+                "es": "Aunque tuviera tiempo, no iría.",
+                "de": "Selbst wenn ich Zeit hätte, würde ich nicht gehen."
+              }
+            },
+            {
+              "es": "Aunque fuera rico, no viviría allí.",
+              "tr": {
+                "hu": "Még ha gazdag lennék is, nem laknék ott.",
+                "en": "Even if I were rich, I would not live there.",
+                "es": "Aunque fuera rico, no viviría allí.",
+                "de": "Selbst wenn ich reich wäre, würde ich dort nicht wohnen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Az a pesar de után főnév vagy főnévi igenév áll: a pesar del frío, a pesar de estar enfermo (a de + el = del). A főnévi igenév akkor jó, ha mindkét igének ugyanaz az alanya. Ha utána ragozott ige jön, a pesar de que kell, kijelentő móddal, mert tényt mond: a pesar de que llueve.",
+            "en": "A pesar de is followed by a noun or an infinitive: a pesar del frío, a pesar de estar enfermo (de + el = del). The infinitive works when both verbs have the same subject. If a conjugated verb follows, a pesar de que is needed, with the indicative because it states a fact: a pesar de que llueve.",
+            "es": "Tras a pesar de va un sustantivo o un infinitivo: a pesar del frío, a pesar de estar enfermo (de + el = del). El infinitivo vale cuando los dos verbos tienen el mismo sujeto. Si sigue un verbo conjugado, hace falta a pesar de que, con indicativo porque da un hecho: a pesar de que llueve.",
+            "de": "Nach a pesar de steht ein Nomen oder ein Infinitiv: a pesar del frío, a pesar de estar enfermo (de + el = del). Der Infinitiv passt, wenn beide Verben dasselbe Subjekt haben. Folgt ein konjugiertes Verb, braucht man a pesar de que, mit dem Indikativ, weil es eine Tatsache nennt: a pesar de que llueve."
+          },
+          "examples": [
+            {
+              "es": "A pesar del frío, salimos a correr.",
+              "tr": {
+                "hu": "A hideg ellenére kimegyünk futni.",
+                "en": "Despite the cold, we go out running.",
+                "es": "A pesar del frío, salimos a correr.",
+                "de": "Trotz der Kälte gehen wir laufen."
+              }
+            },
+            {
+              "es": "A pesar de estar enfermo, fue a trabajar.",
+              "tr": {
+                "hu": "Bár beteg volt, elment dolgozni.",
+                "en": "Despite being ill, he went to work.",
+                "es": "A pesar de estar enfermo, fue a trabajar.",
+                "de": "Obwohl er krank war, ging er zur Arbeit."
+              }
+            },
+            {
+              "es": "A pesar de que llueve, salimos.",
+              "tr": {
+                "hu": "Bár esik, kimegyünk.",
+                "en": "Although it is raining, we go out.",
+                "es": "A pesar de que llueve, salimos.",
+                "de": "Obwohl es regnet, gehen wir raus."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A por más que és a por mucho que + kötőmód azt jelenti: akármennyire, bármennyit is. A főmondat azt mondja, hogy az erőfeszítés hiábavaló: por más que corras, no llegarás a tiempo.",
+            "en": "Por más que and por mucho que + subjunctive mean no matter how much. The main clause says that the effort is useless: por más que corras, no llegarás a tiempo.",
+            "es": "Por más que y por mucho que + subjuntivo significan sin importar cuánto. La principal dice que el esfuerzo es inútil: por más que corras, no llegarás a tiempo.",
+            "de": "Por más que und por mucho que + Subjuntivo bedeuten egal wie sehr oder wie viel. Der Hauptsatz sagt, dass die Mühe nutzlos ist: por más que corras, no llegarás a tiempo."
+          },
+          "examples": [
+            {
+              "es": "Por más que corras, no llegarás a tiempo.",
+              "tr": {
+                "hu": "Akármennyit futsz, nem érsz oda időben.",
+                "en": "No matter how much you run, you will not arrive on time.",
+                "es": "Por más que corras, no llegarás a tiempo.",
+                "de": "Egal wie sehr du rennst, du kommst nicht rechtzeitig an."
+              }
+            },
+            {
+              "es": "Por mucho que estudie, no aprobará.",
+              "tr": {
+                "hu": "Akármennyit tanul, nem fog átmenni.",
+                "en": "No matter how much he studies, he will not pass.",
+                "es": "Por mucho que estudie, no aprobará.",
+                "de": "Egal wie viel er lernt, er wird nicht bestehen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "concesivas-forma",
+      "title": {
+        "hu": "Helyzet + alak",
+        "en": "Situation + form",
+        "es": "Situación + forma",
+        "de": "Situation + Form"
+      },
+      "header": [
+        {
+          "hu": "Mondat (a lyuk a szerkezet alakja)",
+          "en": "Sentence (the gap is the form)",
+          "es": "Frase (el hueco es la forma)",
+          "de": "Satz (die Lücke ist die Form)"
+        },
+        {
+          "hu": "Alak",
+          "en": "Form",
+          "es": "forma",
+          "de": "Form"
+        },
+        {
+          "hu": "Mikor",
+          "en": "When",
+          "es": "uso",
+          "de": "Wann"
+        }
+      ],
+      "rows": [
+        [
+          "Aunque ahora ___ (llover) mucho, salimos igual.",
+          "llueve",
+          "aunque + indicativo: un hecho que veo ahora"
+        ],
+        [
+          "Mañana, aunque ___ (llover) mucho, saldremos igual.",
+          "llueva",
+          "aunque + subjuntivo: algo que aún no es seguro"
+        ],
+        [
+          "Mira, aunque ya ___ (ser) las once, mi hijo no duerme.",
+          "son",
+          "aunque + indicativo: un hecho que ya se sabe"
+        ],
+        [
+          "Mañana, aunque ___ (llegar, nosotros) tarde, el jefe nos esperará.",
+          "lleguemos",
+          "aunque + subjuntivo: algo que puede pasar"
+        ],
+        [
+          "A pesar ___ frío, salimos a correr.",
+          "del",
+          "a pesar de + el + sustantivo: de + el = del"
+        ],
+        [
+          "A pesar ___ lluvia, jugamos al fútbol.",
+          "de la",
+          "a pesar de + la + sustantivo"
+        ],
+        [
+          "A pesar de ___ (estar) enfermo, mi padre trabaja.",
+          "estar",
+          "a pesar de + infinitivo: el mismo sujeto"
+        ],
+        [
+          "A pesar de que hoy ___ (hacer) mucho calor, salimos.",
+          "hace",
+          "a pesar de que + indicativo: un hecho"
+        ],
+        [
+          "Por más que ___ (trabajar, yo), no terminaré hoy.",
+          "trabaje",
+          "por más que + subjuntivo: no importa cuánto"
+        ],
+        [
+          "Por mucho que ___ (estudiar, él), no aprobará.",
+          "estudie",
+          "por mucho que + subjuntivo: no importa cuánto"
+        ],
+        [
+          "Mañana, aunque ___ (tener, yo) que esperar toda la noche, no me voy.",
+          "tenga",
+          "aunque + subjuntivo: aunque sea necesario"
+        ],
+        [
+          "Mira, aunque ___ (tener, ella) dos años, ya habla mucho.",
+          "tiene",
+          "aunque + indicativo: un dato seguro, la edad"
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Kijelentő vagy kötőmód, főnév vagy ige",
+        "en": "Indicative or subjunctive, noun or verb",
+        "es": "Indicativo o subjuntivo, sustantivo o verbo",
+        "de": "Indikativ oder Subjuntivo, Nomen oder Verb"
+      },
+      "pairs": [
+        {
+          "a": "aunque llueve",
+          "b": "aunque llueva",
+          "note": {
+            "hu": "Aunque llueve: az eső tény, tudom, hogy esik. Aunque llueva: még nem tudom, hogy esni fog-e, vagy nem számít.",
+            "en": "Aunque llueve: the rain is a fact, I know it is raining. Aunque llueva: I do not yet know whether it will rain, or it does not matter.",
+            "es": "Aunque llueve: la lluvia es un hecho, sé que llueve. Aunque llueva: aún no sé si lloverá, o no importa.",
+            "de": "Aunque llueve: Der Regen ist eine Tatsache, ich weiß, dass es regnet. Aunque llueva: Ich weiß noch nicht, ob es regnen wird, oder es spielt keine Rolle."
+          },
+          "examples": [
+            {
+              "es": "Aunque llueve, salimos.",
+              "tr": {
+                "hu": "Bár esik, kimegyünk.",
+                "en": "Although it is raining, we go out.",
+                "es": "Aunque llueve, salimos.",
+                "de": "Obwohl es regnet, gehen wir raus."
+              }
+            },
+            {
+              "es": "Aunque llueva, saldremos.",
+              "tr": {
+                "hu": "Ha esik is, kimegyünk.",
+                "en": "Even if it rains, we will go out.",
+                "es": "Aunque llueva, saldremos.",
+                "de": "Auch wenn es regnet, gehen wir raus."
+              }
+            }
+          ]
+        },
+        {
+          "a": "a pesar de la lluvia",
+          "b": "a pesar de que llueve",
+          "note": {
+            "hu": "Főnév előtt a pesar de áll, ragozott ige előtt a pesar de que. A jelentés ugyanaz, mindkettő tényt mond.",
+            "en": "Before a noun comes a pesar de, before a conjugated verb a pesar de que. The meaning is the same, both state a fact.",
+            "es": "Ante un sustantivo va a pesar de, ante un verbo conjugado a pesar de que. El significado es el mismo, los dos dan un hecho.",
+            "de": "Vor einem Nomen steht a pesar de, vor einem konjugierten Verb a pesar de que. Die Bedeutung ist dieselbe, beide nennen eine Tatsache."
+          },
+          "examples": [
+            {
+              "es": "A pesar de la lluvia, salimos.",
+              "tr": {
+                "hu": "Az eső ellenére kimegyünk.",
+                "en": "Despite the rain, we go out.",
+                "es": "A pesar de la lluvia, salimos.",
+                "de": "Trotz des Regens gehen wir raus."
+              }
+            },
+            {
+              "es": "A pesar de que llueve, salimos.",
+              "tr": {
+                "hu": "Bár esik, kimegyünk.",
+                "en": "Although it is raining, we go out.",
+                "es": "A pesar de que llueve, salimos.",
+                "de": "Obwohl es regnet, gehen wir raus."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Ökölszabály: ha a mellékmondat tartalmát tényként közlöd, aunque + kijelentő mód; ha még nem biztos, vagy nem fogadod el érvnek, aunque + kötőmód. Az a pesar de után főnév vagy főnévi igenév áll, az a pesar de que után ragozott ige kijelentő módban. A por más que kötőmódot kér.",
+        "en": "Rule of thumb: if you state the content of the subordinate clause as a fact, aunque + indicative; if it is not yet certain, or you do not accept it as an argument, aunque + subjunctive. After a pesar de comes a noun or an infinitive, after a pesar de que a conjugated verb in the indicative. Por más que takes the subjunctive.",
+        "es": "Regla práctica: si das el contenido de la subordinada como un hecho, aunque + indicativo; si aún no es seguro, o no lo aceptas como argumento, aunque + subjuntivo. Tras a pesar de va un sustantivo o un infinitivo, tras a pesar de que un verbo conjugado en indicativo. Por más que pide subjuntivo.",
+        "de": "Faustregel: Nennst du den Inhalt des Nebensatzes als Tatsache, aunque + Indikativ; ist er noch nicht sicher oder lässt du ihn nicht als Argument gelten, aunque + Subjuntivo. Nach a pesar de steht ein Nomen oder ein Infinitiv, nach a pesar de que ein konjugiertes Verb im Indikativ. Por más que verlangt den Subjuntivo."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A megengedő mondat azt mondja, hogy valami igaz vagy lehetséges, és mégsem akadályoz meg valami mást. Az aunque jelentése bár vagy még ha. Ha kijelentő módot teszel utána, tényt mondasz, amit biztosan tudsz. Ha kötőmódot, akkor olyasmit, ami még nem biztos, vagy amit érvként nem fogadsz el. Az a pesar de után főnév vagy főnévi igenév jön, az a pesar de que után pedig ragozott ige kijelentő módban. A por más que és a por mucho que azt jelenti, akármennyire, és kötőmódot kér.",
+    "en": "A concessive sentence says that something is true or possible and still does not stop something else. Aunque means although or even if. After it, the indicative states a fact you are sure about. The subjunctive marks something that is not yet certain, or an argument you do not accept. After a pesar de comes a noun or an infinitive, and after a pesar de que comes a conjugated verb in the indicative. Two more structures, both starting with the word por, mean no matter how much, and they take the subjunctive.",
+    "es": "La oración concesiva dice que algo es verdad o posible y, aun así, no impide otra cosa. Aunque significa a pesar de que o incluso si. Con indicativo damos un hecho seguro. Con subjuntivo hablamos de algo que todavía no es seguro, o de un argumento que no aceptamos. Tras a pesar de va un sustantivo o un infinitivo, y tras a pesar de que va un verbo conjugado en indicativo. Por más que y por mucho que significan sin importar cuánto, y piden subjuntivo.",
+    "de": "Ein Konzessivsatz sagt, dass etwas wahr oder möglich ist und trotzdem etwas anderes nicht verhindert. Aunque bedeutet obwohl oder auch wenn. Mit dem Indikativ nennst du eine sichere Tatsache. Mit dem Subjuntivo sprichst du über etwas, das noch nicht sicher ist, oder über ein Argument, das du nicht gelten lässt. Nach a pesar de steht ein Nomen oder ein Infinitiv, nach a pesar de que ein konjugiertes Verb im Indikativ. Por más que und por mucho que bedeuten egal wie sehr und verlangen den Subjuntivo."
+  },
+  "items": [
+    {
+      "id": "cnc-ch-01",
+      "sentence": "Aunque ___ muy cansada, Ana corrió mucho ayer.",
+      "options": [
+        "esté",
+        "estaba",
+        "estará"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az aunque + kijelentő mód tényt közöl, és ez egy tegnapi tény: Ana fáradt volt, és mégis futott. Múlt idejű tényhez a kijelentő mód múlt alakja kell: estaba.",
+        "en": "Aunque + indicative states a fact, and this is a fact from yesterday: Ana was tired and ran anyway. A past fact needs the past form of the indicative: estaba.",
+        "es": "Aunque + indicativo da un hecho, y este es un hecho de ayer: Ana estaba cansada y aun así corrió. Un hecho pasado pide la forma pasada del indicativo: estaba.",
+        "de": "Aunque + Indikativ nennt eine Tatsache, und das hier ist eine Tatsache von gestern: Ana war müde und ist trotzdem gelaufen. Eine vergangene Tatsache verlangt die Vergangenheitsform des Indikativs: estaba."
+      },
+      "wrong": {
+        "esté": {
+          "hu": "Az esté jelen idejű kötőmód: bizonytalan vagy jövőbeli dolgot jelölne, itt viszont egy tegnapi tényről van szó; helyesen: Aunque estaba muy cansada, Ana corrió mucho ayer.",
+          "en": "Esté is the present subjunctive: it would mark something uncertain or in the future, but here it is a fact from yesterday; correctly: Aunque estaba muy cansada, Ana corrió mucho ayer.",
+          "es": "Esté es el subjuntivo presente: marcaría algo incierto o futuro, pero aquí es un hecho de ayer; correctamente: Aunque estaba muy cansada, Ana corrió mucho ayer.",
+          "de": "Esté ist der Subjuntivo Präsens: Er würde etwas Unsicheres oder Zukünftiges markieren, hier geht es aber um eine Tatsache von gestern; richtig: Aunque estaba muy cansada, Ana corrió mucho ayer."
+        },
+        "estará": {
+          "hu": "Az estará jövő idő, de a mondat a múltról szól (corrió, ayer); helyesen: Aunque estaba muy cansada, Ana corrió mucho ayer.",
+          "en": "Estará is the future, but the sentence is about the past (corrió, ayer); correctly: Aunque estaba muy cansada, Ana corrió mucho ayer.",
+          "es": "Estará es futuro, pero la oración habla del pasado (corrió, ayer); correctamente: Aunque estaba muy cansada, Ana corrió mucho ayer.",
+          "de": "Estará ist das Futur, der Satz handelt aber von der Vergangenheit (corrió, ayer); richtig: Aunque estaba muy cansada, Ana corrió mucho ayer."
+        }
+      }
+    },
+    {
+      "id": "cnc-ch-02",
+      "sentence": "Aunque ___ tarde mañana, el jefe nos esperará.",
+      "options": [
+        "llegamos",
+        "llegábamos",
+        "lleguemos"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A főmondat jövő idejű (esperará), és a késés még nem biztos: ilyenkor az aunque + kötőmód áll, még ha: lleguemos.",
+        "en": "The main clause is in the future (esperará) and arriving late is not certain yet: in this case aunque + subjunctive is used, meaning even if: lleguemos.",
+        "es": "La principal está en futuro (esperará) y llegar tarde aún no es seguro: en ese caso va aunque + subjuntivo, con el sentido de incluso si: lleguemos.",
+        "de": "Der Hauptsatz steht im Futur (esperará) und das Zuspätkommen ist noch nicht sicher: Dann steht aunque + Subjuntivo, im Sinn von auch wenn: lleguemos."
+      },
+      "wrong": {
+        "llegamos": {
+          "hu": "Az llegamos kijelentő mód: tényként mondaná, hogy késve érkezünk, de ez még nem biztos (mañana); helyesen: Aunque lleguemos tarde mañana, el jefe nos esperará.",
+          "en": "Llegamos is the indicative: it would state as a fact that we arrive late, but that is not certain yet (mañana); correctly: Aunque lleguemos tarde mañana, el jefe nos esperará.",
+          "es": "Llegamos es indicativo: daría como un hecho que llegamos tarde, pero aún no es seguro (mañana); correctamente: Aunque lleguemos tarde mañana, el jefe nos esperará.",
+          "de": "Llegamos ist Indikativ: Es würde als Tatsache nennen, dass wir spät ankommen, das ist aber noch nicht sicher (mañana); richtig: Aunque lleguemos tarde mañana, el jefe nos esperará."
+        },
+        "llegábamos": {
+          "hu": "Az llegábamos folyamatos múlt, de a mondat a holnapról szól (mañana, esperará); helyesen: Aunque lleguemos tarde mañana, el jefe nos esperará.",
+          "en": "Llegábamos is the imperfect, but the sentence is about tomorrow (mañana, esperará); correctly: Aunque lleguemos tarde mañana, el jefe nos esperará.",
+          "es": "Llegábamos es imperfecto, pero la oración habla de mañana (mañana, esperará); correctamente: Aunque lleguemos tarde mañana, el jefe nos esperará.",
+          "de": "Llegábamos ist das Imperfecto, der Satz handelt aber von morgen (mañana, esperará); richtig: Aunque lleguemos tarde mañana, el jefe nos esperará."
+        }
+      }
+    },
+    {
+      "id": "cnc-ch-03",
+      "sentence": "Ayer, aunque la película ___ larga, nos gustó mucho.",
+      "options": [
+        "fue",
+        "es",
+        "será"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A film hosszú volt: ez múlt idejű tény, amit közlünk, ezért aunque + kijelentő mód áll: fue.",
+        "en": "The film was long: this is a past fact that we state, so aunque + indicative is used: fue.",
+        "es": "La película fue larga: es un hecho pasado que damos, así que va aunque + indicativo: fue.",
+        "de": "Der Film war lang: Das ist eine vergangene Tatsache, die wir nennen, also steht aunque + Indikativ: fue."
+      },
+      "wrong": {
+        "es": {
+          "hu": "Az es jelen idő, de a film már lement (nos gustó); helyesen: Aunque la película fue larga, nos gustó mucho.",
+          "en": "Es is the present, but the film is already over (nos gustó); correctly: Aunque la película fue larga, nos gustó mucho.",
+          "es": "Es es presente, pero la película ya terminó (nos gustó); correctamente: Aunque la película fue larga, nos gustó mucho.",
+          "de": "Es ist das Präsens, der Film ist aber schon vorbei (nos gustó); richtig: Aunque la película fue larga, nos gustó mucho."
+        },
+        "será": {
+          "hu": "A será jövő idő, de a film már lement (nos gustó); helyesen: Aunque la película fue larga, nos gustó mucho.",
+          "en": "Será is the future, but the film is already over (nos gustó); correctly: Aunque la película fue larga, nos gustó mucho.",
+          "es": "Será es futuro, pero la película ya terminó (nos gustó); correctamente: Aunque la película fue larga, nos gustó mucho.",
+          "de": "Será ist das Futur, der Film ist aber schon vorbei (nos gustó); richtig: Aunque la película fue larga, nos gustó mucho."
+        }
+      }
+    },
+    {
+      "id": "cnc-ch-04",
+      "sentence": "Aunque algún día ___ mucho dinero, viviré aquí siempre.",
+      "options": [
+        "tengo",
+        "tenga",
+        "tuve"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az algún día és a viviré jövőre és bizonytalan dologra utal: nem tudjuk, lesz-e sok pénzem. Ilyenkor aunque + kötőmód áll: tenga.",
+        "en": "Algún día and viviré point to the future and to something uncertain: we do not know whether I will have a lot of money. Aunque + subjunctive is used: tenga.",
+        "es": "Algún día y viviré apuntan al futuro y a algo incierto: no sabemos si tendré mucho dinero. Va aunque + subjuntivo: tenga.",
+        "de": "Algún día und viviré weisen auf die Zukunft und auf etwas Unsicheres hin: Wir wissen nicht, ob ich viel Geld haben werde. Es steht aunque + Subjuntivo: tenga."
+      },
+      "wrong": {
+        "tengo": {
+          "hu": "A tengo kijelentő mód jelen idő: tényként mondaná, hogy most sok pénzem van, de az algún día jövőbeli, bizonytalan dologról szól; helyesen: Aunque algún día tenga mucho dinero, viviré aquí siempre.",
+          "en": "Tengo is the present indicative: it would state as a fact that I have a lot of money now, but algún día is about something future and uncertain; correctly: Aunque algún día tenga mucho dinero, viviré aquí siempre.",
+          "es": "Tengo es indicativo presente: daría como un hecho que ahora tengo mucho dinero, pero algún día habla de algo futuro e incierto; correctamente: Aunque algún día tenga mucho dinero, viviré aquí siempre.",
+          "de": "Tengo ist der Indikativ Präsens: Es würde als Tatsache nennen, dass ich jetzt viel Geld habe, algún día meint aber etwas Zukünftiges und Unsicheres; richtig: Aunque algún día tenga mucho dinero, viviré aquí siempre."
+        },
+        "tuve": {
+          "hu": "A tuve befejezett múlt, de a mondat a jövőről szól (algún día, viviré); helyesen: Aunque algún día tenga mucho dinero, viviré aquí siempre.",
+          "en": "Tuve is the preterite, but the sentence is about the future (algún día, viviré); correctly: Aunque algún día tenga mucho dinero, viviré aquí siempre.",
+          "es": "Tuve es pretérito, pero la oración habla del futuro (algún día, viviré); correctamente: Aunque algún día tenga mucho dinero, viviré aquí siempre.",
+          "de": "Tuve ist das Pretérito, der Satz handelt aber von der Zukunft (algún día, viviré); richtig: Aunque algún día tenga mucho dinero, viviré aquí siempre."
+        }
+      }
+    },
+    {
+      "id": "cnc-ch-05",
+      "sentence": "Aunque ___ tarde, ayer llegamos a tiempo.",
+      "options": [
+        "salgamos",
+        "saldremos",
+        "salimos"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Az ayer egy már megtörtént tényre utal: tegnap későn indultunk, és mégis odaértünk. Tényhez aunque + kijelentő mód kell: salimos.",
+        "en": "Ayer points to something that already happened: we left late yesterday and still arrived on time. A fact needs aunque + indicative: salimos.",
+        "es": "Ayer apunta a algo que ya ocurrió: ayer salimos tarde y aun así llegamos a tiempo. Un hecho pide aunque + indicativo: salimos.",
+        "de": "Ayer weist auf etwas hin, das schon geschehen ist: Wir sind gestern spät losgegangen und trotzdem rechtzeitig angekommen. Eine Tatsache verlangt aunque + Indikativ: salimos."
+      },
+      "wrong": {
+        "salgamos": {
+          "hu": "A salgamos kötőmód: még nem biztos dolgot jelölne, de az ayer miatt a késői indulás már megtörtént; helyesen: Aunque salimos tarde, ayer llegamos a tiempo.",
+          "en": "Salgamos is the subjunctive: it would mark something not yet certain, but because of ayer the late departure has already happened; correctly: Aunque salimos tarde, ayer llegamos a tiempo.",
+          "es": "Salgamos es subjuntivo: marcaría algo aún no seguro, pero por ayer la salida tarde ya ocurrió; correctamente: Aunque salimos tarde, ayer llegamos a tiempo.",
+          "de": "Salgamos ist der Subjuntivo: Er würde etwas noch nicht Sicheres markieren, wegen ayer ist der späte Aufbruch aber schon geschehen; richtig: Aunque salimos tarde, ayer llegamos a tiempo."
+        },
+        "saldremos": {
+          "hu": "A saldremos jövő idő, de a mondat a tegnapról szól (ayer, llegamos); helyesen: Aunque salimos tarde, ayer llegamos a tiempo.",
+          "en": "Saldremos is the future, but the sentence is about yesterday (ayer, llegamos); correctly: Aunque salimos tarde, ayer llegamos a tiempo.",
+          "es": "Saldremos es futuro, pero la oración habla de ayer (ayer, llegamos); correctamente: Aunque salimos tarde, ayer llegamos a tiempo.",
+          "de": "Saldremos ist das Futur, der Satz handelt aber von gestern (ayer, llegamos); richtig: Aunque salimos tarde, ayer llegamos a tiempo."
+        }
+      }
+    },
+    {
+      "id": "cnc-ch-06",
+      "sentence": "A pesar ___ ruido, mi hija duerme muy bien.",
+      "options": [
+        "del",
+        "de el",
+        "de que"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az a pesar de után főnév áll (ruido), és a de + el összevonva del lesz: a pesar del ruido.",
+        "en": "A pesar de is followed by a noun (ruido), and de + el contracts to del: a pesar del ruido.",
+        "es": "Tras a pesar de va un sustantivo (ruido), y de + el se contrae en del: a pesar del ruido.",
+        "de": "Nach a pesar de steht ein Nomen (ruido), und de + el wird zu del zusammengezogen: a pesar del ruido."
+      },
+      "wrong": {
+        "de el": {
+          "hu": "A de el alak nem létezik: a de + el mindig del lesz; helyesen: A pesar del ruido, mi hija duerme muy bien.",
+          "en": "The form de el does not exist: de + el always contracts to del; correctly: A pesar del ruido, mi hija duerme muy bien.",
+          "es": "La forma de el no existe: de + el se contrae siempre en del; correctamente: A pesar del ruido, mi hija duerme muy bien.",
+          "de": "Die Form de el gibt es nicht: de + el wird immer zu del zusammengezogen; richtig: A pesar del ruido, mi hija duerme muy bien."
+        },
+        "de que": {
+          "hu": "Az a pesar de que után ragozott ige jönne, itt viszont főnév áll (ruido); helyesen: A pesar del ruido, mi hija duerme muy bien.",
+          "en": "A pesar de que would be followed by a conjugated verb, but here a noun follows (ruido); correctly: A pesar del ruido, mi hija duerme muy bien.",
+          "es": "Tras a pesar de que iría un verbo conjugado, pero aquí sigue un sustantivo (ruido); correctamente: A pesar del ruido, mi hija duerme muy bien.",
+          "de": "Nach a pesar de que käme ein konjugiertes Verb, hier folgt aber ein Nomen (ruido); richtig: A pesar del ruido, mi hija duerme muy bien."
+        }
+      }
+    },
+    {
+      "id": "cnc-ch-07",
+      "sentence": "A pesar de ___ enfermo, mi hijo va a la escuela.",
+      "options": [
+        "estando",
+        "estar",
+        "estaba"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az a pesar de után, ha mindkét igének ugyanaz az alanya, főnévi igenév áll: a pesar de estar enfermo.",
+        "en": "After a pesar de, an infinitive is used when both verbs have the same subject: a pesar de estar enfermo.",
+        "es": "Tras a pesar de se usa el infinitivo cuando los dos verbos tienen el mismo sujeto: a pesar de estar enfermo.",
+        "de": "Nach a pesar de steht ein Infinitiv, wenn beide Verben dasselbe Subjekt haben: a pesar de estar enfermo."
+      },
+      "wrong": {
+        "estando": {
+          "hu": "Az a pesar de után nem állhat határozói igenév (estando), főnévi igenév kell; helyesen: A pesar de estar enfermo, mi hijo va a la escuela.",
+          "en": "After a pesar de there is no gerund (estando), an infinitive is needed; correctly: A pesar de estar enfermo, mi hijo va a la escuela.",
+          "es": "Tras a pesar de no va gerundio (estando), hace falta el infinitivo; correctamente: A pesar de estar enfermo, mi hijo va a la escuela.",
+          "de": "Nach a pesar de steht kein Gerundio (estando), man braucht den Infinitiv; richtig: A pesar de estar enfermo, mi hijo va a la escuela."
+        },
+        "estaba": {
+          "hu": "Az a pesar de után ragozott ige csak que-vel állhat (a pesar de que estaba), que nélkül főnévi igenév kell; helyesen: A pesar de estar enfermo, mi hijo va a la escuela.",
+          "en": "After a pesar de a conjugated verb needs que (a pesar de que estaba), without que an infinitive is needed; correctly: A pesar de estar enfermo, mi hijo va a la escuela.",
+          "es": "Tras a pesar de un verbo conjugado necesita que (a pesar de que estaba), sin que hace falta el infinitivo; correctamente: A pesar de estar enfermo, mi hijo va a la escuela.",
+          "de": "Nach a pesar de braucht ein konjugiertes Verb que (a pesar de que estaba), ohne que braucht man den Infinitiv; richtig: A pesar de estar enfermo, mi hijo va a la escuela."
+        }
+      }
+    },
+    {
+      "id": "cnc-ch-08",
+      "sentence": "A pesar de que ayer ___ mucho frío, salimos a correr.",
+      "options": [
+        "haga",
+        "hacer",
+        "hizo"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Az a pesar de que után tényt közlünk, és ez egy tegnapi tény, ezért kijelentő mód kell: hizo.",
+        "en": "After a pesar de que we state a fact, and this is a fact from yesterday, so the indicative is needed: hizo.",
+        "es": "Tras a pesar de que damos un hecho, y este es un hecho de ayer, por eso hace falta el indicativo: hizo.",
+        "de": "Nach a pesar de que nennen wir eine Tatsache, und das ist eine Tatsache von gestern, deshalb braucht man den Indikativ: hizo."
+      },
+      "wrong": {
+        "haga": {
+          "hu": "A haga jelen idejű kötőmód, de a mondat a tegnapról szól (ayer): tényt közlünk, nem feltevést; helyesen: A pesar de que ayer hizo mucho frío, salimos a correr.",
+          "en": "Haga is the present subjunctive, but the sentence is about yesterday (ayer): we state a fact, not a supposition; correctly: A pesar de que ayer hizo mucho frío, salimos a correr.",
+          "es": "Haga es el subjuntivo presente, pero la oración habla de ayer (ayer): damos un hecho, no una suposición; correctamente: A pesar de que ayer hizo mucho frío, salimos a correr.",
+          "de": "Haga ist der Subjuntivo Präsens, der Satz handelt aber von gestern (ayer): Wir nennen eine Tatsache, keine Annahme; richtig: A pesar de que ayer hizo mucho frío, salimos a correr."
+        },
+        "hacer": {
+          "hu": "A que után ragozott ige jön, nem főnévi igenév; helyesen: A pesar de que ayer hizo mucho frío, salimos a correr.",
+          "en": "After que a conjugated verb is needed, not an infinitive; correctly: A pesar de que ayer hizo mucho frío, salimos a correr.",
+          "es": "Tras que hace falta un verbo conjugado, no un infinitivo; correctamente: A pesar de que ayer hizo mucho frío, salimos a correr.",
+          "de": "Nach que braucht man ein konjugiertes Verb, keinen Infinitiv; richtig: A pesar de que ayer hizo mucho frío, salimos a correr."
+        }
+      }
+    },
+    {
+      "id": "cnc-ch-09",
+      "sentence": "Por más que ___, no ganarás la carrera.",
+      "options": [
+        "corras",
+        "corres",
+        "corriste"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A por más que után kötőmód áll, és a főmondat jövő idejű (no ganarás): akármennyit futsz, nem nyered meg: corras.",
+        "en": "Por más que is followed by the subjunctive, and the main clause is in the future (no ganarás): no matter how much you run, you will not win: corras.",
+        "es": "Tras por más que va el subjuntivo, y la principal está en futuro (no ganarás): por mucho que corras, no ganarás: corras.",
+        "de": "Nach por más que steht der Subjuntivo, und der Hauptsatz steht im Futur (no ganarás): egal wie sehr du rennst, du gewinnst nicht: corras."
+      },
+      "wrong": {
+        "corres": {
+          "hu": "A corres kijelentő mód, de itt az erőfeszítés és a jövőbeli eredmény (no ganarás) kötőmódot kér; helyesen: Por más que corras, no ganarás la carrera.",
+          "en": "Corres is the indicative, but here the effort and the future result (no ganarás) ask for the subjunctive; correctly: Por más que corras, no ganarás la carrera.",
+          "es": "Corres es indicativo, pero aquí el esfuerzo y el resultado futuro (no ganarás) piden subjuntivo; correctamente: Por más que corras, no ganarás la carrera.",
+          "de": "Corres ist Indikativ, hier verlangen aber die Anstrengung und das künftige Ergebnis (no ganarás) den Subjuntivo; richtig: Por más que corras, no ganarás la carrera."
+        },
+        "corriste": {
+          "hu": "A corriste befejezett múlt, de a mondat a jövőről szól (no ganarás); helyesen: Por más que corras, no ganarás la carrera.",
+          "en": "Corriste is the preterite, but the sentence is about the future (no ganarás); correctly: Por más que corras, no ganarás la carrera.",
+          "es": "Corriste es pretérito, pero la oración habla del futuro (no ganarás); correctamente: Por más que corras, no ganarás la carrera.",
+          "de": "Corriste ist das Pretérito, der Satz handelt aber von der Zukunft (no ganarás); richtig: Por más que corras, no ganarás la carrera."
+        }
+      }
+    },
+    {
+      "id": "cnc-ch-10",
+      "sentence": "Por mucho que me ___, mañana no saldré de casa.",
+      "options": [
+        "llaman",
+        "llamen",
+        "llamaron"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A por mucho que után kötőmód áll: akármennyit hívnak is, holnap nem megyek ki a házból: llamen.",
+        "en": "After por mucho que the subjunctive is used: however much they call me, I will not leave the house tomorrow: llamen.",
+        "es": "Tras por mucho que va el subjuntivo: por mucho que me llamen, mañana no saldré de casa: llamen.",
+        "de": "Nach por mucho que steht der Subjuntivo: egal wie oft sie mich anrufen, ich gehe morgen nicht aus dem Haus: llamen."
+      },
+      "wrong": {
+        "llaman": {
+          "hu": "A llaman kijelentő mód: tényként mondaná, hogy már hívnak, itt viszont a mañana miatt feltételezett hívásokról van szó; helyesen: Por mucho que me llamen, mañana no saldré de casa.",
+          "en": "Llaman is the indicative: it would state as a fact that they are already calling, but because of mañana it is about supposed calls; correctly: Por mucho que me llamen, mañana no saldré de casa.",
+          "es": "Llaman es indicativo: daría como un hecho que ya llaman, pero por mañana se trata de llamadas supuestas; correctamente: Por mucho que me llamen, mañana no saldré de casa.",
+          "de": "Llaman ist Indikativ: Es würde als Tatsache nennen, dass sie schon anrufen, wegen mañana geht es aber um angenommene Anrufe; richtig: Por mucho que me llamen, mañana no saldré de casa."
+        },
+        "llamaron": {
+          "hu": "A llamaron befejezett múlt, de a mondat a holnapról szól (mañana, saldré); helyesen: Por mucho que me llamen, mañana no saldré de casa.",
+          "en": "Llamaron is the preterite, but the sentence is about tomorrow (mañana, saldré); correctly: Por mucho que me llamen, mañana no saldré de casa.",
+          "es": "Llamaron es pretérito, pero la oración habla de mañana (mañana, saldré); correctamente: Por mucho que me llamen, mañana no saldré de casa.",
+          "de": "Llamaron ist das Pretérito, der Satz handelt aber von morgen (mañana, saldré); richtig: Por mucho que me llamen, mañana no saldré de casa."
+        }
+      }
+    },
+    {
+      "id": "cnc-ch-11",
+      "sentence": "___ llueve, salimos al parque.",
+      "options": [
+        "A pesar de",
+        "Aunque que",
+        "Aunque"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Ragozott ige előtt (llueve) az aunque áll, további que nélkül: aunque llueve, bár esik.",
+        "en": "Before a conjugated verb (llueve) aunque is used, without an extra que: aunque llueve, although it is raining.",
+        "es": "Delante de un verbo conjugado (llueve) va aunque, sin que añadido: aunque llueve, aunque está lloviendo.",
+        "de": "Vor einem konjugierten Verb (llueve) steht aunque, ohne zusätzliches que: aunque llueve, obwohl es regnet."
+      },
+      "wrong": {
+        "A pesar de": {
+          "hu": "Az a pesar de után főnév vagy főnévi igenév áll, ragozott ige előtt a pesar de que kellene; helyesen: Aunque llueve, salimos al parque.",
+          "en": "A pesar de is followed by a noun or an infinitive, before a conjugated verb it would have to be a pesar de que; correctly: Aunque llueve, salimos al parque.",
+          "es": "Tras a pesar de va un sustantivo o un infinitivo, ante un verbo conjugado tendría que ser a pesar de que; correctamente: Aunque llueve, salimos al parque.",
+          "de": "Nach a pesar de steht ein Nomen oder ein Infinitiv, vor einem konjugierten Verb müsste es a pesar de que heißen; richtig: Aunque llueve, salimos al parque."
+        },
+        "Aunque que": {
+          "hu": "Az aunque után nincs que, az a pesar de que-vel ellentétben; helyesen: Aunque llueve, salimos al parque.",
+          "en": "There is no que after aunque, unlike with a pesar de que; correctly: Aunque llueve, salimos al parque.",
+          "es": "Tras aunque no va que, a diferencia de a pesar de que; correctamente: Aunque llueve, salimos al parque.",
+          "de": "Nach aunque steht kein que, anders als bei a pesar de que; richtig: Aunque llueve, salimos al parque."
+        }
+      }
+    },
+    {
+      "id": "cnc-ch-12",
+      "sentence": "___ la lluvia, salimos al parque.",
+      "options": [
+        "A pesar de",
+        "Aunque",
+        "A pesar de que"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Főnév előtt (la lluvia) az a pesar de áll: a pesar de la lluvia, az eső ellenére.",
+        "en": "Before a noun (la lluvia) a pesar de is used: a pesar de la lluvia, despite the rain.",
+        "es": "Delante de un sustantivo (la lluvia) va a pesar de: a pesar de la lluvia.",
+        "de": "Vor einem Nomen (la lluvia) steht a pesar de: a pesar de la lluvia, trotz des Regens."
+      },
+      "wrong": {
+        "Aunque": {
+          "hu": "Az aunque után ragozott ige jön, itt viszont főnév áll (la lluvia); helyesen: A pesar de la lluvia, salimos al parque.",
+          "en": "Aunque is followed by a conjugated verb, but here a noun follows (la lluvia); correctly: A pesar de la lluvia, salimos al parque.",
+          "es": "Tras aunque va un verbo conjugado, pero aquí sigue un sustantivo (la lluvia); correctamente: A pesar de la lluvia, salimos al parque.",
+          "de": "Nach aunque folgt ein konjugiertes Verb, hier folgt aber ein Nomen (la lluvia); richtig: A pesar de la lluvia, salimos al parque."
+        },
+        "A pesar de que": {
+          "hu": "Az a pesar de que után is ragozott ige kell, itt főnév áll (la lluvia); helyesen: A pesar de la lluvia, salimos al parque.",
+          "en": "A pesar de que also needs a conjugated verb, but here a noun follows (la lluvia); correctly: A pesar de la lluvia, salimos al parque.",
+          "es": "A pesar de que también pide un verbo conjugado, pero aquí sigue un sustantivo (la lluvia); correctamente: A pesar de la lluvia, salimos al parque.",
+          "de": "A pesar de que verlangt ebenfalls ein konjugiertes Verb, hier folgt aber ein Nomen (la lluvia); richtig: A pesar de la lluvia, salimos al parque."
+        }
+      }
+    },
+    {
+      "kind": "match",
+      "id": "cnc-match-01",
+      "pairs": [
+        {
+          "es": "aunque llueve",
+          "en": "although it is raining"
+        },
+        {
+          "es": "aunque llueva",
+          "en": "even if it rains"
+        },
+        {
+          "es": "a pesar del frío",
+          "en": "despite the cold"
+        },
+        {
+          "es": "a pesar de que hace frío",
+          "en": "even though it is cold"
+        },
+        {
+          "es": "por más que corras",
+          "en": "no matter how much you run"
+        },
+        {
+          "es": "aunque fuera caro",
+          "en": "even if it were expensive"
+        }
+      ]
+    },
+    {
+      "kind": "form",
+      "id": "cnc-form-01",
+      "verb": "forma",
+      "person": "Aunque ahora ___ (llover) mucho, salimos igual.",
+      "answer": "llueve",
+      "table": "concesivas-forma"
+    },
+    {
+      "kind": "form",
+      "id": "cnc-form-02",
+      "verb": "forma",
+      "person": "Mañana, aunque ___ (llover) mucho, saldremos igual.",
+      "answer": "llueva",
+      "table": "concesivas-forma"
+    },
+    {
+      "kind": "form",
+      "id": "cnc-form-03",
+      "verb": "forma",
+      "person": "Mira, aunque ya ___ (ser) las once, mi hijo no duerme.",
+      "answer": "son",
+      "table": "concesivas-forma"
+    },
+    {
+      "kind": "form",
+      "id": "cnc-form-04",
+      "verb": "forma",
+      "person": "Mañana, aunque ___ (llegar, nosotros) tarde, el jefe nos esperará.",
+      "answer": "lleguemos",
+      "table": "concesivas-forma"
+    },
+    {
+      "kind": "form",
+      "id": "cnc-form-05",
+      "verb": "forma",
+      "person": "A pesar ___ frío, salimos a correr.",
+      "answer": "del",
+      "table": "concesivas-forma"
+    },
+    {
+      "kind": "form",
+      "id": "cnc-form-06",
+      "verb": "forma",
+      "person": "A pesar ___ lluvia, jugamos al fútbol.",
+      "answer": "de la",
+      "table": "concesivas-forma"
+    },
+    {
+      "kind": "form",
+      "id": "cnc-form-07",
+      "verb": "forma",
+      "person": "A pesar de ___ (estar) enfermo, mi padre trabaja.",
+      "answer": "estar",
+      "table": "concesivas-forma"
+    },
+    {
+      "kind": "form",
+      "id": "cnc-form-08",
+      "verb": "forma",
+      "person": "A pesar de que hoy ___ (hacer) mucho calor, salimos.",
+      "answer": "hace",
+      "table": "concesivas-forma"
+    },
+    {
+      "kind": "form",
+      "id": "cnc-form-09",
+      "verb": "forma",
+      "person": "Por más que ___ (trabajar, yo), no terminaré hoy.",
+      "answer": "trabaje",
+      "table": "concesivas-forma"
+    },
+    {
+      "kind": "form",
+      "id": "cnc-form-10",
+      "verb": "forma",
+      "person": "Por mucho que ___ (estudiar, él), no aprobará.",
+      "answer": "estudie",
+      "table": "concesivas-forma"
+    },
+    {
+      "kind": "form",
+      "id": "cnc-form-11",
+      "verb": "forma",
+      "person": "Mañana, aunque ___ (tener, yo) que esperar toda la noche, no me voy.",
+      "answer": "tenga",
+      "table": "concesivas-forma"
+    },
+    {
+      "kind": "form",
+      "id": "cnc-form-12",
+      "verb": "forma",
+      "person": "Mira, aunque ___ (tener, ella) dos años, ya habla mucho.",
+      "answer": "tiene",
+      "table": "concesivas-forma"
+    },
+    {
+      "kind": "why",
+      "id": "cnc-why-01",
+      "es": "Aunque tiene sueño, estudia hasta tarde.",
+      "target": "Aunque tiene",
+      "tr": {
+        "hu": "Bár álmos, késő estig tanul.",
+        "en": "Although he is sleepy, he studies until late.",
+        "es": "Aunque tiene sueño, estudia hasta tarde.",
+        "de": "Obwohl er müde ist, lernt er bis spät."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "aunque + kijelentő mód: tény, amit közlök",
+            "en": "aunque + indicative: a fact I state",
+            "es": "aunque + indicativo: un hecho que doy",
+            "de": "aunque + Indikativ: eine Tatsache, die ich nenne"
+          }
+        },
+        {
+          "text": {
+            "hu": "aunque + kötőmód: még nem biztos, vagy nem számít",
+            "en": "aunque + subjunctive: not yet certain, or does not matter",
+            "es": "aunque + subjuntivo: aún no es seguro, o no importa",
+            "de": "aunque + Subjuntivo: noch nicht sicher, oder egal"
+          },
+          "wrong": {
+            "hu": "Az aunque + kötőmód bizonytalan vagy érvként elutasított dolgot jelölne (aunque tenga sueño); itt a tiene kijelentő mód, az álmosság tény.",
+            "en": "Aunque + subjunctive would mark something uncertain or an argument that is rejected (aunque tenga sueño); here tiene is the indicative, the sleepiness is a fact.",
+            "es": "Aunque + subjuntivo marcaría algo incierto o un argumento rechazado (aunque tenga sueño); aquí tiene es indicativo, el sueño es un hecho.",
+            "de": "Aunque + Subjuntivo würde etwas Unsicheres oder ein abgelehntes Argument markieren (aunque tenga sueño); hier ist tiene Indikativ, die Müdigkeit ist eine Tatsache."
+          }
+        },
+        {
+          "text": {
+            "hu": "a pesar de + főnév vagy főnévi igenév",
+            "en": "a pesar de + noun or infinitive",
+            "es": "a pesar de + sustantivo o infinitivo",
+            "de": "a pesar de + Nomen oder Infinitiv"
+          },
+          "wrong": {
+            "hu": "Az a pesar de + főnév vagy főnévi igenév szerkezet más szóval kezdődik; itt aunque áll ragozott igével (tiene).",
+            "en": "The structure a pesar de + noun or infinitive begins with other words; here aunque stands with a conjugated verb (tiene).",
+            "es": "La estructura a pesar de + sustantivo o infinitivo empieza con otras palabras; aquí aunque va con un verbo conjugado (tiene).",
+            "de": "Die Struktur a pesar de + Nomen oder Infinitiv beginnt mit anderen Wörtern; hier steht aunque mit einem konjugierten Verb (tiene)."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "cnc-why-02",
+      "es": "Aunque haga frío, saldremos a correr.",
+      "target": "Aunque haga",
+      "tr": {
+        "hu": "Ha hideg lesz is, kimegyünk futni.",
+        "en": "Even if it is cold, we will go out running.",
+        "es": "Aunque haga frío, saldremos a correr.",
+        "de": "Auch wenn es kalt ist, gehen wir laufen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "aunque + kijelentő mód: tény, amit közlök",
+            "en": "aunque + indicative: a fact I state",
+            "es": "aunque + indicativo: un hecho que doy",
+            "de": "aunque + Indikativ: eine Tatsache, die ich nenne"
+          },
+          "wrong": {
+            "hu": "Kijelentő móddal (aunque hace frío) tényként közölnénk a hideget; a haga és a jövő idejű saldremos mutatja, hogy ez még nem biztos.",
+            "en": "With the indicative (aunque hace frío) we would state the cold as a fact; haga and the future saldremos show that it is not certain yet.",
+            "es": "Con indicativo (aunque hace frío) daríamos el frío como un hecho; haga y el futuro saldremos muestran que aún no es seguro.",
+            "de": "Mit dem Indikativ (aunque hace frío) würden wir die Kälte als Tatsache nennen; haga und das Futur saldremos zeigen, dass es noch nicht sicher ist."
+          }
+        },
+        {
+          "text": {
+            "hu": "aunque + kötőmód: még nem biztos, vagy nem számít",
+            "en": "aunque + subjunctive: not yet certain, or does not matter",
+            "es": "aunque + subjuntivo: aún no es seguro, o no importa",
+            "de": "aunque + Subjuntivo: noch nicht sicher, oder egal"
+          }
+        },
+        {
+          "text": {
+            "hu": "por más que / por mucho que + kötőmód: akármennyire",
+            "en": "por más que / por mucho que + subjunctive: no matter how much",
+            "es": "por más que / por mucho que + subjuntivo: sin importar cuánto",
+            "de": "por más que / por mucho que + Subjuntivo: egal wie sehr"
+          },
+          "wrong": {
+            "hu": "A por más que az akármennyire jelentésű szerkezet; ebben a mondatban aunque áll, és a kötőmódot a jövőbeli bizonytalanság hozza.",
+            "en": "Por más que is the structure meaning no matter how much; this sentence has aunque, and the subjunctive comes from the future uncertainty.",
+            "es": "Por más que es la estructura con el sentido de sin importar cuánto; esta oración lleva aunque, y el subjuntivo viene de la incertidumbre futura.",
+            "de": "Por más que ist die Struktur mit der Bedeutung egal wie sehr; dieser Satz hat aunque, und der Subjuntivo kommt von der Unsicherheit über die Zukunft."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "cnc-why-03",
+      "es": "A pesar del calor, trabajamos todo el día.",
+      "target": "A pesar del calor",
+      "tr": {
+        "hu": "A meleg ellenére egész nap dolgozunk.",
+        "en": "Despite the heat, we work all day.",
+        "es": "A pesar del calor, trabajamos todo el día.",
+        "de": "Trotz der Hitze arbeiten wir den ganzen Tag."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a pesar de que + kijelentő mód: tény egész mondattal",
+            "en": "a pesar de que + indicative: a fact with a whole clause",
+            "es": "a pesar de que + indicativo: un hecho con una oración entera",
+            "de": "a pesar de que + Indikativ: eine Tatsache mit einem ganzen Satz"
+          },
+          "wrong": {
+            "hu": "Az a pesar de que után ragozott ige jön; itt a del calor főnév áll, ezért que nélküli a pesar de kell.",
+            "en": "A pesar de que is followed by a conjugated verb; here the noun del calor follows, so a pesar de without que is needed.",
+            "es": "Tras a pesar de que va un verbo conjugado; aquí sigue el sustantivo del calor, por eso hace falta a pesar de sin que.",
+            "de": "Nach a pesar de que folgt ein konjugiertes Verb; hier folgt das Nomen del calor, deshalb braucht man a pesar de ohne que."
+          }
+        },
+        {
+          "text": {
+            "hu": "a pesar de + főnév vagy főnévi igenév",
+            "en": "a pesar de + noun or infinitive",
+            "es": "a pesar de + sustantivo o infinitivo",
+            "de": "a pesar de + Nomen oder Infinitiv"
+          }
+        },
+        {
+          "text": {
+            "hu": "aunque + kijelentő mód: tény, amit közlök",
+            "en": "aunque + indicative: a fact I state",
+            "es": "aunque + indicativo: un hecho que doy",
+            "de": "aunque + Indikativ: eine Tatsache, die ich nenne"
+          },
+          "wrong": {
+            "hu": "Az aunque szó nincs a mondatban; a főnévvel álló a pesar de ugyanazt a tényt mondja.",
+            "en": "The word aunque is not in the sentence; a pesar de with a noun states the same fact.",
+            "es": "La palabra aunque no está en la oración; a pesar de con un sustantivo da el mismo hecho.",
+            "de": "Das Wort aunque steht nicht im Satz; a pesar de mit einem Nomen nennt dieselbe Tatsache."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "cnc-why-04",
+      "es": "A pesar de que está enfermo, trabaja.",
+      "target": "A pesar de que está",
+      "tr": {
+        "hu": "Bár beteg, dolgozik.",
+        "en": "Although he is ill, he works.",
+        "es": "A pesar de que está enfermo, trabaja.",
+        "de": "Obwohl er krank ist, arbeitet er."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a pesar de + főnév vagy főnévi igenév",
+            "en": "a pesar de + noun or infinitive",
+            "es": "a pesar de + sustantivo o infinitivo",
+            "de": "a pesar de + Nomen oder Infinitiv"
+          },
+          "wrong": {
+            "hu": "A que után ragozott ige áll (está), nem főnév vagy főnévi igenév; ilyenkor a pesar de que kell.",
+            "en": "After que comes a conjugated verb (está), not a noun or an infinitive; in that case a pesar de que is needed.",
+            "es": "Tras que va un verbo conjugado (está), no un sustantivo ni un infinitivo; en ese caso hace falta a pesar de que.",
+            "de": "Nach que steht ein konjugiertes Verb (está), kein Nomen und kein Infinitiv; dann braucht man a pesar de que."
+          }
+        },
+        {
+          "text": {
+            "hu": "aunque + kötőmód: még nem biztos, vagy nem számít",
+            "en": "aunque + subjunctive: not yet certain, or does not matter",
+            "es": "aunque + subjuntivo: aún no es seguro, o no importa",
+            "de": "aunque + Subjuntivo: noch nicht sicher, oder egal"
+          },
+          "wrong": {
+            "hu": "Az aunque + kötőmód szabálya nem ez; itt a pesar de que van, és tényről szól (está), ezért kijelentő mód áll.",
+            "en": "The rule of aunque + subjunctive is not this one; here a pesar de que is used and it is about a fact (está), so the indicative is used.",
+            "es": "La regla de aunque + subjuntivo no es esta; aquí va a pesar de que y se trata de un hecho (está), por eso se usa el indicativo.",
+            "de": "Die Regel aunque + Subjuntivo ist nicht diese; hier steht a pesar de que und es geht um eine Tatsache (está), deshalb steht der Indikativ."
+          }
+        },
+        {
+          "text": {
+            "hu": "a pesar de que + kijelentő mód: tény egész mondattal",
+            "en": "a pesar de que + indicative: a fact with a whole clause",
+            "es": "a pesar de que + indicativo: un hecho con una oración entera",
+            "de": "a pesar de que + Indikativ: eine Tatsache mit einem ganzen Satz"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "cnc-why-05",
+      "es": "Por más que insistas, no te lo daré.",
+      "target": "Por más que insistas",
+      "tr": {
+        "hu": "Akármennyire erősködsz, nem adom oda.",
+        "en": "No matter how much you insist, I will not give it to you.",
+        "es": "Por más que insistas, no te lo daré.",
+        "de": "Egal wie sehr du darauf bestehst, ich gebe es dir nicht."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "aunque + kijelentő mód: tény, amit közlök",
+            "en": "aunque + indicative: a fact I state",
+            "es": "aunque + indicativo: un hecho que doy",
+            "de": "aunque + Indikativ: eine Tatsache, die ich nenne"
+          },
+          "wrong": {
+            "hu": "Az aunque + kijelentő mód tényt mond, itt viszont por más que áll, és az insistas kötőmód.",
+            "en": "Aunque + indicative states a fact, but here por más que is used, and insistas is the subjunctive.",
+            "es": "Aunque + indicativo da un hecho, pero aquí va por más que, y insistas es subjuntivo.",
+            "de": "Aunque + Indikativ nennt eine Tatsache, hier steht aber por más que, und insistas ist Subjuntivo."
+          }
+        },
+        {
+          "text": {
+            "hu": "a pesar de que + kijelentő mód: tény egész mondattal",
+            "en": "a pesar de que + indicative: a fact with a whole clause",
+            "es": "a pesar de que + indicativo: un hecho con una oración entera",
+            "de": "a pesar de que + Indikativ: eine Tatsache mit einem ganzen Satz"
+          },
+          "wrong": {
+            "hu": "Az a pesar de que kijelentő módot kér, itt por más que áll kötőmóddal.",
+            "en": "A pesar de que takes the indicative, but here por más que stands with the subjunctive.",
+            "es": "A pesar de que pide indicativo, pero aquí por más que va con subjuntivo.",
+            "de": "A pesar de que verlangt den Indikativ, hier steht aber por más que mit dem Subjuntivo."
+          }
+        },
+        {
+          "text": {
+            "hu": "por más que / por mucho que + kötőmód: akármennyire",
+            "en": "por más que / por mucho que + subjunctive: no matter how much",
+            "es": "por más que / por mucho que + subjuntivo: sin importar cuánto",
+            "de": "por más que / por mucho que + Subjuntivo: egal wie sehr"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "cnc-why-06",
+      "es": "Aunque sea caro, lo compro.",
+      "target": "Aunque sea",
+      "tr": {
+        "hu": "Akármilyen drága is, megveszem.",
+        "en": "However expensive it is, I will buy it.",
+        "es": "Aunque sea caro, lo compro.",
+        "de": "Egal wie teuer es ist, ich kaufe es."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "aunque + kijelentő mód: tény, amit közlök",
+            "en": "aunque + indicative: a fact I state",
+            "es": "aunque + indicativo: un hecho que doy",
+            "de": "aunque + Indikativ: eine Tatsache, die ich nenne"
+          },
+          "wrong": {
+            "hu": "Kijelentő móddal (aunque es caro) tényként közölnéd az árat; a sea azt mutatja, hogy az ár nem számít, nem akadály.",
+            "en": "With the indicative (aunque es caro) you would state the price as a fact; sea shows that the price does not matter and is no obstacle.",
+            "es": "Con indicativo (aunque es caro) darías el precio como un hecho; sea muestra que el precio no importa y no es un obstáculo.",
+            "de": "Mit dem Indikativ (aunque es caro) würdest du den Preis als Tatsache nennen; sea zeigt, dass der Preis keine Rolle spielt und kein Hindernis ist."
+          }
+        },
+        {
+          "text": {
+            "hu": "por más que / por mucho que + kötőmód: akármennyire",
+            "en": "por más que / por mucho que + subjunctive: no matter how much",
+            "es": "por más que / por mucho que + subjuntivo: sin importar cuánto",
+            "de": "por más que / por mucho que + Subjuntivo: egal wie sehr"
+          },
+          "wrong": {
+            "hu": "A por más que szó nem szerepel a mondatban; itt aunque áll, és a kötőmód azt jelzi, hogy az ár nem érv.",
+            "en": "The words por más que are not in the sentence; here aunque is used, and the subjunctive shows that the price is no argument.",
+            "es": "Las palabras por más que no están en la oración; aquí va aunque, y el subjuntivo indica que el precio no es un argumento.",
+            "de": "Die Wörter por más que stehen nicht im Satz; hier steht aunque, und der Subjuntivo zeigt, dass der Preis kein Argument ist."
+          }
+        },
+        {
+          "text": {
+            "hu": "aunque + kötőmód: még nem biztos, vagy nem számít",
+            "en": "aunque + subjunctive: not yet certain, or does not matter",
+            "es": "aunque + subjuntivo: aún no es seguro, o no importa",
+            "de": "aunque + Subjuntivo: noch nicht sicher, oder egal"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "cnc-why-07",
+      "es": "Aunque era tarde, seguimos jugando en el parque.",
+      "target": "Aunque era",
+      "tr": {
+        "hu": "Bár késő volt, tovább játszottunk a parkban.",
+        "en": "Although it was late, we kept playing in the park.",
+        "es": "Aunque era tarde, seguimos jugando en el parque.",
+        "de": "Obwohl es spät war, haben wir im Park weitergespielt."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "aunque + kötőmód: még nem biztos, vagy nem számít",
+            "en": "aunque + subjunctive: not yet certain, or does not matter",
+            "es": "aunque + subjuntivo: aún no es seguro, o no importa",
+            "de": "aunque + Subjuntivo: noch nicht sicher, oder egal"
+          },
+          "wrong": {
+            "hu": "Kötőmóddal a késői időpont bizonytalan vagy érdektelen lenne, itt viszont múlt idejű tényt mondunk: era tarde.",
+            "en": "With the subjunctive the late hour would be uncertain or irrelevant, but here we state a past fact: era tarde.",
+            "es": "Con subjuntivo la hora tardía sería incierta o sin importancia, pero aquí damos un hecho pasado: era tarde.",
+            "de": "Mit dem Subjuntivo wäre die späte Stunde unsicher oder unwichtig, hier nennen wir aber eine vergangene Tatsache: era tarde."
+          }
+        },
+        {
+          "text": {
+            "hu": "aunque + kijelentő mód: tény, amit közlök",
+            "en": "aunque + indicative: a fact I state",
+            "es": "aunque + indicativo: un hecho que doy",
+            "de": "aunque + Indikativ: eine Tatsache, die ich nenne"
+          }
+        },
+        {
+          "text": {
+            "hu": "a pesar de que + kijelentő mód: tény egész mondattal",
+            "en": "a pesar de que + indicative: a fact with a whole clause",
+            "es": "a pesar de que + indicativo: un hecho con una oración entera",
+            "de": "a pesar de que + Indikativ: eine Tatsache mit einem ganzen Satz"
+          },
+          "wrong": {
+            "hu": "Az a pesar de que is tényt mond, de a mondat itt aunque-val kezdődik; az a pesar de que más szerkezet, ugyanezzel a móddal.",
+            "en": "A pesar de que also states a fact, but this sentence begins with aunque; a pesar de que is a different structure with the same mood.",
+            "es": "A pesar de que también da un hecho, pero esta oración empieza con aunque; a pesar de que es otra estructura con el mismo modo.",
+            "de": "A pesar de que nennt ebenfalls eine Tatsache, dieser Satz beginnt aber mit aunque; a pesar de que ist eine andere Struktur mit demselben Modus."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

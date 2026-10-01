@@ -1,0 +1,1199 @@
+{
+  "schema": 2,
+  "topic": "se-impersonal-pasiva",
+  "level": "B1",
+  "title": {
+    "hu": "Se: személytelen és passzív",
+    "en": "Se: impersonal and passive",
+    "es": "Se impersonal y pasiva refleja",
+    "de": "Se: unpersönlich und Passiv"
+  },
+  "glossary": [
+    {
+      "word": "celular",
+      "gloss": {
+        "hu": "celular: mobiltelefon (Mexikóban így mondják)",
+        "en": "celular: cell phone (the usual word in Mexico)",
+        "es": "celular: teléfono móvil (la palabra habitual en México)",
+        "de": "celular: Handy (das übliche Wort in Mexiko)"
+      }
+    }
+  ],
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A magyarban azt mondjuk: „itt jól élnek”, „házakat árulnak”, „tilos a dohányzás”, és nem nevezzük meg, ki csinálja. A spanyolban ehhez a se szócska kell az ige elé, mindig harmadik személyben. Két fajtája van, és azt, hogy melyikre van szükséged, a mondatban álló főnév dönti el. Ha nincs főnév, vagy személy áll az „a” elöljáróval, az ige egyes számban marad (személytelen se). Ha egy dolog áll mellette, az ige hozzá igazodik: egy dolognál egyes, több dolognál többes szám (szenvedő jelentésű se, pasiva refleja). Feliratokon, hirdetésekben, szabályokban és általános állításokban ez a szokásos szerkezet.",
+        "en": "In English you say “people eat late here”, “houses are sold” or “smoking is forbidden”, without naming who does it. Spanish does this with the little word se before the verb, always in the third person. It comes in two kinds, and the noun in the sentence decides which one you need. If there is no noun, or a person with the word a stands there, the verb stays singular (impersonal se). If a thing stands next to it, the verb agrees with that thing: singular for one, plural for several (passive se, pasiva refleja). You find this on signs, in ads, in rules and in general statements.",
+        "es": "En muchos idiomas se dice “aquí se vive bien” o “se venden casas” sin nombrar a quien lo hace. En español se usa la palabra se delante del verbo, siempre en tercera persona. Hay dos tipos, y el sustantivo de la frase decide cuál necesitas. Si no hay sustantivo, o hay una persona con la preposición a, el verbo va en singular (se impersonal). Si hay una cosa, el verbo concuerda con ella: singular para una, plural para varias (se pasivo, pasiva refleja). Es la estructura habitual en carteles, anuncios, normas y afirmaciones generales.",
+        "de": "Im Deutschen sagt man „hier lebt es sich gut“, „Häuser werden verkauft“ oder „Rauchen ist verboten“, ohne zu nennen, wer etwas tut. Das Spanische macht das mit dem Wörtchen se vor dem Verb, immer in der dritten Person. Es gibt zwei Arten, und das Nomen im Satz entscheidet, welche du brauchst. Steht kein Nomen da oder eine Person mit der Präposition a, bleibt das Verb im Singular (unpersönliches se). Steht eine Sache da, richtet sich das Verb nach ihr: Singular bei einer, Plural bei mehreren (Passiv-se, pasiva refleja). Du findest das auf Schildern, in Anzeigen, in Regeln und bei allgemeinen Aussagen."
+      }
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "hu": "A se használata",
+        "en": "How se is used",
+        "es": "Usos de se",
+        "de": "Verwendung von se"
+      },
+      "points": [
+        {
+          "text": {
+            "hu": "Személytelen se: ha nincs megnevezett alany, és általában „az emberek” csinálnak valamit, a se után az ige harmadik személy egyes számban áll. Nincs főnév, amelyhez igazodhatna.",
+            "en": "Impersonal se: when no subject is named and people in general do something, the verb after se is third person singular. There is no noun it could agree with.",
+            "es": "Se impersonal: cuando no se nombra ningún sujeto y la gente en general hace algo, el verbo después de se va en tercera persona del singular. No hay ningún sustantivo con el que pueda concordar.",
+            "de": "Unpersönliches se: Wird kein Subjekt genannt und tun die Leute im Allgemeinen etwas, steht das Verb nach se in der dritten Person Singular. Es gibt kein Nomen, nach dem es sich richten könnte."
+          },
+          "examples": [
+            {
+              "es": "En mi país se come muy tarde.",
+              "tr": {
+                "hu": "Az országomban nagyon későn esznek.",
+                "en": "In my country people eat very late.",
+                "es": "En mi país se come muy tarde.",
+                "de": "In meinem Land isst man sehr spät."
+              }
+            },
+            {
+              "es": "Aquí se vive muy bien.",
+              "tr": {
+                "hu": "Itt nagyon jól lehet élni.",
+                "en": "Life is very good here.",
+                "es": "Aquí se vive muy bien.",
+                "de": "Hier lebt es sich sehr gut."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Szenvedő jelentésű se: ha a mondatban egy dolog áll, ő a nyelvtani alany, és az ige hozzá igazodik: egy dolognál egyes szám, több dolognál többes szám. A dolog az ige előtt is állhat, az egyeztetés ugyanúgy marad.",
+            "en": "Passive se: when a thing stands in the sentence, it is the grammatical subject and the verb agrees with it: singular for one thing, plural for several. The thing may also come before the verb; the agreement stays the same.",
+            "es": "Se pasivo: cuando hay una cosa en la frase, esa cosa es el sujeto gramatical y el verbo concuerda con ella: singular para una cosa, plural para varias. La cosa puede ir también antes del verbo; la concordancia es la misma.",
+            "de": "Passiv-se: Steht eine Sache im Satz, ist sie das grammatische Subjekt und das Verb richtet sich nach ihr: Singular bei einer Sache, Plural bei mehreren. Die Sache kann auch vor dem Verb stehen; die Übereinstimmung bleibt dieselbe."
+          },
+          "examples": [
+            {
+              "es": "Se vende una casa bonita.",
+              "tr": {
+                "hu": "Egy szép ház eladó.",
+                "en": "A nice house is for sale.",
+                "es": "Se vende una casa bonita.",
+                "de": "Ein schönes Haus wird verkauft."
+              }
+            },
+            {
+              "es": "Se venden casas bonitas.",
+              "tr": {
+                "hu": "Szép házak eladók.",
+                "en": "Nice houses are for sale.",
+                "es": "Se venden casas bonitas.",
+                "de": "Schöne Häuser werden verkauft."
+              }
+            },
+            {
+              "es": "Las tiendas se abren a las diez.",
+              "tr": {
+                "hu": "A boltok tízkor nyitnak.",
+                "en": "The shops open at ten.",
+                "es": "Las tiendas se abren a las diez.",
+                "de": "Die Geschäfte öffnen um zehn Uhr."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Ha a se után személy áll tárgyként, elé „a” kerül, és az ige akkor is egyes számban marad, ha többen vannak. Itt nincs egyeztetés: ez a személytelen se.",
+            "en": "When a person follows se as the object, the word a goes before them and the verb stays singular even if there are several people. There is no agreement here: this is impersonal se.",
+            "es": "Cuando después de se hay una persona como complemento directo, lleva delante la preposición a y el verbo se queda en singular aunque sean varias personas. Aquí no hay concordancia: es el se impersonal.",
+            "de": "Steht nach se eine Person als Objekt, bekommt sie das Wörtchen a davor, und das Verb bleibt auch bei mehreren Personen im Singular. Hier gibt es keine Übereinstimmung: Das ist das unpersönliche se."
+          },
+          "examples": [
+            {
+              "es": "En esta escuela se ayuda a los estudiantes.",
+              "tr": {
+                "hu": "Ebben az iskolában segítik a diákokat.",
+                "en": "In this school the students are helped.",
+                "es": "En esta escuela se ayuda a los estudiantes.",
+                "de": "In dieser Schule hilft man den Schülern."
+              }
+            },
+            {
+              "es": "En la oficina se llama a los clientes.",
+              "tr": {
+                "hu": "Az irodában felhívják az ügyfeleket.",
+                "en": "In the office the customers are called.",
+                "es": "En la oficina se llama a los clientes.",
+                "de": "Im Büro ruft man die Kunden an."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Feliratokon, hirdetésekben és szabályokban a se + ige az általános forma. Tiltásnál az ige után főnévi igenév áll (se prohíbe fumar: egyes szám, mert a főnévi igenév nem többes számú), keresésnél és kínálatnál a keresett dolog dönt (se necesitan médicos).",
+            "en": "On signs, in ads and in rules, se + verb is the usual form. For a ban, the verb is followed by an infinitive (se prohíbe fumar: singular, because an infinitive is never plural); for things wanted or offered, the thing decides (se necesitan médicos).",
+            "es": "En carteles, anuncios y normas, se + verbo es la forma habitual. Para una prohibición, el verbo va seguido de un infinitivo (se prohíbe fumar: singular, porque un infinitivo nunca es plural); para lo que se busca o se ofrece, decide la cosa (se necesitan médicos).",
+            "de": "Auf Schildern, in Anzeigen und in Regeln ist se + Verb die übliche Form. Bei einem Verbot folgt auf das Verb ein Infinitiv (se prohíbe fumar: Singular, weil ein Infinitiv nie im Plural steht); bei Gesuchtem oder Angebotenem entscheidet die Sache (se necesitan médicos)."
+          },
+          "examples": [
+            {
+              "es": "En el museo se prohíbe comer.",
+              "tr": {
+                "hu": "A múzeumban tilos enni.",
+                "en": "Eating is forbidden in the museum.",
+                "es": "En el museo se prohíbe comer.",
+                "de": "Im Museum ist Essen verboten."
+              }
+            },
+            {
+              "es": "Se necesitan dos médicos.",
+              "tr": {
+                "hu": "Két orvost keresnek.",
+                "en": "Two doctors wanted.",
+                "es": "Se necesitan dos médicos.",
+                "de": "Zwei Ärzte gesucht."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A se puede + főnévi igenév azt fejezi ki, hogy „lehet, szabad”: ha az igenévnek nincs többes számú tárgya, az ige a se után egyes számban áll (többes tárgynál: se pueden comprar libros). A tagadó no a se ELÉ kerül: no se puede, no se usa.",
+            "en": "Se puede + infinitive says “one can” or “it is allowed”: when the infinitive has no plural object, the verb stays singular after se (with a plural object: se pueden comprar libros). The negative no goes BEFORE se: no se puede, no se usa.",
+            "es": "Se puede + infinitivo expresa “se permite” o “es posible”: si el infinitivo no tiene un complemento en plural, el verbo va en singular después de se (con un complemento en plural: se pueden comprar libros). El no negativo va ANTES de se: no se puede, no se usa.",
+            "de": "Se puede + Infinitiv bedeutet „man kann“ oder „es ist erlaubt“: Hat der Infinitiv kein Objekt im Plural, steht das Verb nach se im Singular (mit einem Objekt im Plural: se pueden comprar libros). Das Verneinungswort no steht VOR se: no se puede, no se usa."
+          },
+          "examples": [
+            {
+              "es": "Aquí se puede pagar con tarjeta.",
+              "tr": {
+                "hu": "Itt lehet kártyával fizetni.",
+                "en": "You can pay by card here.",
+                "es": "Aquí se puede pagar con tarjeta.",
+                "de": "Hier kann man mit Karte zahlen."
+              }
+            },
+            {
+              "es": "En clase no se usa el celular.",
+              "tr": {
+                "hu": "Órán nem használják a mobilt.",
+                "en": "Phones are not used in class.",
+                "es": "En clase no se usa el celular.",
+                "de": "Im Unterricht benutzt man das Handy nicht."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "se-impersonal-formas",
+      "title": {
+        "hu": "Mondatok se-vel",
+        "en": "Sentences with se",
+        "es": "Frases con se",
+        "de": "Sätze mit se"
+      },
+      "header": [
+        {
+          "hu": "helyzet",
+          "en": "situation",
+          "es": "situación",
+          "de": "Situation"
+        },
+        {
+          "hu": "se + igealak",
+          "en": "se + verb form",
+          "es": "se + verbo",
+          "de": "se + Verbform"
+        }
+      ],
+      "rows": [
+        [
+          "En México ___ (hablar) español.",
+          "se habla"
+        ],
+        [
+          "En esa tienda ___ (vender) libros viejos.",
+          "se venden"
+        ],
+        [
+          "En esta ciudad ___ (comer) muy bien.",
+          "se come"
+        ],
+        [
+          "Aquí ___ (prohibir) fumar.",
+          "se prohíbe"
+        ],
+        [
+          "En la escuela ___ (necesitar) tres profesores.",
+          "se necesitan"
+        ],
+        [
+          "En mi casa ___ (cocinar) mucho los domingos.",
+          "se cocina"
+        ],
+        [
+          "En este bar ___ (pagar) las bebidas al final.",
+          "se pagan"
+        ],
+        [
+          "Aquí no ___ (poder) pagar con tarjeta.",
+          "se puede"
+        ],
+        [
+          "Hoy ___ (abrir) las tiendas a las diez.",
+          "se abren"
+        ],
+        [
+          "En el cine ___ (ver) películas viejas.",
+          "se ven"
+        ],
+        [
+          "En este banco ___ (cambiar) dinero.",
+          "se cambia"
+        ],
+        [
+          "En este hotel ___ (tratar) bien a los clientes.",
+          "se trata"
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "hu": "Hasonló, mégis más",
+        "en": "Similar, yet different",
+        "es": "Parecido, pero distinto",
+        "de": "Ähnlich, aber anders"
+      },
+      "pairs": [
+        {
+          "a": "Se vende una casa",
+          "b": "Se venden casas",
+          "note": {
+            "hu": "Az ige a dologhoz igazodik: egy ház mellett egyes szám (se vende), több ház mellett többes szám (se venden). Gyakori hiba, hogy az ige többes főnév mellett is egyes számban marad.",
+            "en": "The verb agrees with the thing: singular next to one house (se vende), plural next to several houses (se venden). A common mistake is to leave the verb singular next to a plural noun.",
+            "es": "El verbo concuerda con la cosa: singular con una casa (se vende), plural con varias casas (se venden). Un error frecuente es dejar el verbo en singular con un sustantivo en plural.",
+            "de": "Das Verb richtet sich nach der Sache: Singular bei einem Haus (se vende), Plural bei mehreren Häusern (se venden). Ein häufiger Fehler ist, das Verb auch bei einem Nomen im Plural im Singular zu lassen."
+          },
+          "examples": [
+            {
+              "es": "Se vende una casa en esta calle.",
+              "tr": {
+                "hu": "Ebben az utcában egy ház eladó.",
+                "en": "A house is for sale in this street.",
+                "es": "Se vende una casa en esta calle.",
+                "de": "In dieser Straße wird ein Haus verkauft."
+              }
+            },
+            {
+              "es": "Se venden casas en esta calle.",
+              "tr": {
+                "hu": "Ebben az utcában házak eladók.",
+                "en": "Houses are for sale in this street.",
+                "es": "Se venden casas en esta calle.",
+                "de": "In dieser Straße werden Häuser verkauft."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Se necesitan estudiantes",
+          "b": "Se ayuda a los estudiantes",
+          "note": {
+            "hu": "Az „a” nélkül a főnév az alany, és az ige hozzá igazodik (se necesitan estudiantes). Ha ugyanaz a főnév személyként tárgy, elé „a” kerül, és az ige egyes számban marad (se ayuda a los estudiantes).",
+            "en": "Without a, the noun is the subject and the verb agrees with it (se necesitan estudiantes). When the same noun is a person as the object, a goes in front and the verb stays singular (se ayuda a los estudiantes).",
+            "es": "Sin a, el sustantivo es el sujeto y el verbo concuerda con él (se necesitan estudiantes). Cuando el mismo sustantivo es una persona como complemento directo, lleva a delante y el verbo se queda en singular (se ayuda a los estudiantes).",
+            "de": "Ohne a ist das Nomen das Subjekt, und das Verb richtet sich nach ihm (se necesitan estudiantes). Ist dasselbe Nomen als Person das Objekt, steht a davor und das Verb bleibt im Singular (se ayuda a los estudiantes)."
+          },
+          "examples": [
+            {
+              "es": "Se necesitan estudiantes en esta clase.",
+              "tr": {
+                "hu": "Ebbe az osztályba diákokat keresnek.",
+                "en": "Students are needed in this class.",
+                "es": "Se necesitan estudiantes en esta clase.",
+                "de": "In dieser Klasse werden Schüler gebraucht."
+              }
+            },
+            {
+              "es": "En esta clase se ayuda a los estudiantes.",
+              "tr": {
+                "hu": "Ebben az osztályban segítik a diákokat.",
+                "en": "In this class the students are helped.",
+                "es": "En esta clase se ayuda a los estudiantes.",
+                "de": "In dieser Klasse hilft man den Schülern."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Aquí no se puede fumar",
+          "b": "Mi padre no puede fumar",
+          "note": {
+            "hu": "A se az egész mondatot általánossá teszi: a szabály mindenkire vonatkozik. Se nélkül a mondatnak megnevezett alanya van, és csak róla szól.",
+            "en": "Se makes the sentence general: the rule applies to everyone. Without se, the sentence has a named subject and talks about him or her alone.",
+            "es": "Con se la frase se vuelve general: la regla vale para todos. Sin se, la frase tiene un sujeto nombrado y habla solo de él o de ella.",
+            "de": "Se macht den Satz allgemein: Die Regel gilt für alle. Ohne se hat der Satz ein genanntes Subjekt und spricht nur über ihn oder sie."
+          },
+          "examples": [
+            {
+              "es": "Aquí no se puede fumar.",
+              "tr": {
+                "hu": "Itt nem szabad dohányozni.",
+                "en": "Smoking is not allowed here.",
+                "es": "Aquí no se puede fumar.",
+                "de": "Hier darf man nicht rauchen."
+              }
+            },
+            {
+              "es": "Mi padre no puede fumar aquí.",
+              "tr": {
+                "hu": "Apám nem dohányozhat itt.",
+                "en": "My father cannot smoke here.",
+                "es": "Mi padre no puede fumar aquí.",
+                "de": "Mein Vater darf hier nicht rauchen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Kérdezd meg magadtól: van-e főnév a se után? Ha dolog áll ott, az ige hozzá igazodik (se vende una casa, se venden casas). Ha nincs főnév, vagy „a” + személy áll ott, az ige egyes számban marad (se vive bien, se ayuda a los estudiantes). Egy kérdés, két válasz.",
+        "en": "Ask yourself: is there a noun after se? If a thing stands there, the verb agrees with it (se vende una casa, se venden casas). If there is no noun, or a + a person stands there, the verb stays singular (se vive bien, se ayuda a los estudiantes). One question, two answers.",
+        "es": "Pregúntate: ¿hay un sustantivo después de se? Si hay una cosa, el verbo concuerda con ella (se vende una casa, se venden casas). Si no hay sustantivo, o hay a + una persona, el verbo se queda en singular (se vive bien, se ayuda a los estudiantes). Una pregunta, dos respuestas.",
+        "de": "Frag dich: Steht nach se ein Nomen? Steht dort eine Sache, richtet sich das Verb nach ihr (se vende una casa, se venden casas). Steht dort kein Nomen oder a + eine Person, bleibt das Verb im Singular (se vive bien, se ayuda a los estudiantes). Eine Frage, zwei Antworten."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A spanyolban egy kis szócska az ige előtt segít, ha nem akarod megnevezni, ki csinál valamit. Így mondod, hogy az emberek általában csinálnak valamit, vagy hogy valamit árulnak, keresnek, tiltanak. Ez a szócska után az ige mindig harmadik személyben áll, de hogy egyes vagy többes számban, az attól függ, mi áll mellette. Ha egy dolog áll ott, az ige hozzá igazodik: egy ház egyes számot kap, több ház többest. Ha nincs főnév, vagy egy személy áll a kis elöljáróval, az ige egyes számban marad. A tagadó szó a kis szócska elé kerül, nem utána. Hirdetésekben és feliratokon ezt olvasod a leggyakrabban.",
+    "en": "A small word in front of the verb helps when you do not want to name who is doing something. It lets you say that people in general do something, or that something is sold, wanted or forbidden. After this small word the verb is always in the third person, but whether it is singular or plural depends on what stands next to it. When a thing stands there, the verb agrees with it: one house takes the singular, several houses take the plural. When there is no noun, or a person comes with the small preposition, the verb stays singular. The word for no goes before the small word, not after it. You read this most often in ads and on signs.",
+    "es": "Una palabra pequeña delante del verbo ayuda cuando no quieres nombrar a quien hace algo. Con ella dices que la gente en general hace algo, o que algo se vende, se busca o se prohíbe. Después de esa palabra, el verbo va siempre en tercera persona, pero que sea singular o plural depende de lo que haya al lado. Si hay una cosa, el verbo concuerda con ella: una casa lleva el singular y varias casas llevan el plural. Si no hay sustantivo, o hay una persona con la preposición pequeña, el verbo se queda en singular. La palabra de la negación va antes de la palabra pequeña, no después. Esto se lee sobre todo en anuncios y carteles.",
+    "de": "Ein kleines Wort vor dem Verb hilft, wenn du nicht nennen willst, wer etwas tut. Damit sagst du, dass die Leute im Allgemeinen etwas tun oder dass etwas verkauft, gesucht oder verboten wird. Nach diesem Wort steht das Verb immer in der dritten Person, aber ob im Singular oder im Plural, hängt davon ab, was daneben steht. Steht eine Sache da, richtet sich das Verb nach ihr: Ein Haus bekommt den Singular, mehrere Häuser bekommen den Plural. Steht kein Nomen da oder eine Person mit der kleinen Präposition, bleibt das Verb im Singular. Das Verneinungswort steht vor dem kleinen Wort, nicht danach. Das liest du am häufigsten in Anzeigen und auf Schildern."
+  },
+  "items": [
+    {
+      "id": "sip-01",
+      "sentence": "En esta tienda ___ zapatos baratos.",
+      "options": [
+        "se venden",
+        "se vende"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A zapatos többes számú dolog, és ő a nyelvtani alany, ezért az ige is többes számba kerül: se venden.",
+        "en": "Zapatos is a plural thing and the grammatical subject, so the verb is plural too: se venden.",
+        "es": "Zapatos es una cosa en plural y es el sujeto gramatical, por eso el verbo también va en plural: se venden.",
+        "de": "Zapatos ist eine Sache im Plural und das grammatische Subjekt, deshalb steht auch das Verb im Plural: se venden."
+      },
+      "wrong": {
+        "se vende": {
+          "hu": "A se vende egyetlen dologhoz illene, például se vende un zapato. Itt több cipő áll, ezért az igének is többesnek kell lennie: se venden zapatos baratos.",
+          "en": "Se vende would fit a single thing, for example se vende un zapato. Here several shoes are named, so the verb has to be plural too: se venden zapatos baratos.",
+          "es": "Se vende iría con una sola cosa, por ejemplo se vende un zapato. Aquí hay varios zapatos, así que el verbo también debe ir en plural: se venden zapatos baratos.",
+          "de": "Se vende passt zu einer einzelnen Sache, zum Beispiel se vende un zapato. Hier stehen mehrere Schuhe, also muss auch das Verb im Plural stehen: se venden zapatos baratos."
+        }
+      },
+      "examples": [
+        "Aquí se venden libros viejos.",
+        "En esa tienda se venden camisas."
+      ]
+    },
+    {
+      "id": "sip-02",
+      "sentence": "En este bar ___ una sopa muy buena.",
+      "options": [
+        "se prepara",
+        "se preparan"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A sopa egyes számú dolog, ezért az ige is egyes számban áll: se prepara una sopa.",
+        "en": "Sopa is a single thing, so the verb is singular too: se prepara una sopa.",
+        "es": "Sopa es una sola cosa, por eso el verbo también va en singular: se prepara una sopa.",
+        "de": "Sopa ist eine einzelne Sache, deshalb steht auch das Verb im Singular: se prepara una sopa."
+      },
+      "wrong": {
+        "se preparan": {
+          "hu": "A se preparan többes számú dologhoz kellene, például se preparan sopas. Itt egyetlen leves áll (una sopa), ezért egyes szám kell: se prepara.",
+          "en": "Se preparan would need a plural thing, for example se preparan sopas. Here a single soup stands there (una sopa), so the singular is needed: se prepara.",
+          "es": "Se preparan necesitaría una cosa en plural, por ejemplo se preparan sopas. Aquí hay una sola sopa (una sopa), así que hace falta el singular: se prepara.",
+          "de": "Se preparan würde eine Sache im Plural verlangen, zum Beispiel se preparan sopas. Hier steht eine einzelne Suppe (una sopa), also braucht es den Singular: se prepara."
+        }
+      },
+      "examples": [
+        "En mi casa se prepara la cena a las nueve.",
+        "Aquí se prepara el desayuno muy temprano."
+      ]
+    },
+    {
+      "id": "sip-03",
+      "sentence": "En mi ciudad ___ muy bien.",
+      "options": [
+        "se viven",
+        "se vive"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Nincs főnév, amelyhez az ige igazodhatna, ezért a személytelen se egyes számú igét kap: se vive.",
+        "en": "There is no noun the verb could agree with, so impersonal se takes a singular verb: se vive.",
+        "es": "No hay ningún sustantivo con el que el verbo pueda concordar, por eso el se impersonal lleva el verbo en singular: se vive.",
+        "de": "Es gibt kein Nomen, nach dem sich das Verb richten könnte, deshalb steht beim unpersönlichen se das Verb im Singular: se vive."
+      },
+      "wrong": {
+        "se viven": {
+          "hu": "A többes szám csak akkor kellene, ha a se után több dolog állna, amelyhez az ige igazodik. Itt nincs ilyen főnév, ezért egyes szám: se vive muy bien.",
+          "en": "The plural would only be needed if several things stood after se for the verb to agree with. There is no such noun here, so the singular is needed: se vive muy bien.",
+          "es": "El plural solo haría falta si después de se hubiera varias cosas con las que el verbo concordara. Aquí no hay ese sustantivo, así que va el singular: se vive muy bien.",
+          "de": "Der Plural wäre nur nötig, wenn nach se mehrere Sachen stünden, nach denen sich das Verb richtet. Hier gibt es kein solches Nomen, also steht der Singular: se vive muy bien."
+        }
+      },
+      "examples": [
+        "Aquí se vive muy bien.",
+        "En el campo se vive tranquilo."
+      ]
+    },
+    {
+      "id": "sip-04",
+      "sentence": "Aquí ___ mucha agua en verano.",
+      "options": [
+        "se bebe",
+        "se beben"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az agua egyes számú főnév (mucha agua: sok víz), ezért az ige is egyes számban áll: se bebe.",
+        "en": "Agua is a singular noun (mucha agua: a lot of water), so the verb is singular too: se bebe.",
+        "es": "Agua es un sustantivo singular (mucha agua), por eso el verbo también va en singular: se bebe.",
+        "de": "Agua ist ein Nomen im Singular (mucha agua: viel Wasser), deshalb steht auch das Verb im Singular: se bebe."
+      },
+      "wrong": {
+        "se beben": {
+          "hu": "A mucha jelzi, hogy az agua egyes szám. Többes igéhez többes főnév kellene, például se beben muchas bebidas.",
+          "en": "Mucha shows that agua is singular. A plural verb would need a plural noun, for example se beben muchas bebidas.",
+          "es": "Mucha muestra que agua es singular. Un verbo en plural necesitaría un sustantivo en plural, por ejemplo se beben muchas bebidas.",
+          "de": "Mucha zeigt, dass agua im Singular steht. Ein Verb im Plural bräuchte ein Nomen im Plural, zum Beispiel se beben muchas bebidas."
+        }
+      },
+      "examples": [
+        "En verano se bebe mucha cerveza.",
+        "En mi casa se bebe poca leche."
+      ]
+    },
+    {
+      "id": "sip-05",
+      "sentence": "En esta escuela ___ a los estudiantes.",
+      "options": [
+        "se ayudan",
+        "se ayuda"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A személy tárgy előtt „a” áll, ezért a személytelen se egyes számú igét kap, akkor is, ha többen vannak: se ayuda a los estudiantes.",
+        "en": "The person as object has a before it, so impersonal se takes a singular verb even when there are several of them: se ayuda a los estudiantes.",
+        "es": "La persona como complemento directo lleva a delante, por eso el se impersonal lleva el verbo en singular aunque sean varias: se ayuda a los estudiantes.",
+        "de": "Die Person als Objekt hat a vor sich, deshalb steht beim unpersönlichen se das Verb im Singular, auch wenn es mehrere sind: se ayuda a los estudiantes."
+      },
+      "wrong": {
+        "se ayudan": {
+          "hu": "A többes szám a dolgokhoz igazodna, de a los estudiantes személy „a” elöljáróval: tárgy, nem alany, ezért az ige egyes számban marad: se ayuda a los estudiantes.",
+          "en": "The plural would follow things, but a los estudiantes is a person with a: an object, not a subject, so the verb stays singular: se ayuda a los estudiantes.",
+          "es": "El plural seguiría a las cosas, pero a los estudiantes es una persona con a: un complemento, no un sujeto, así que el verbo se queda en singular: se ayuda a los estudiantes.",
+          "de": "Der Plural würde sich nach Sachen richten, aber a los estudiantes ist eine Person mit a: ein Objekt, kein Subjekt, also bleibt das Verb im Singular: se ayuda a los estudiantes."
+        }
+      },
+      "examples": [
+        "Aquí se ayuda a la gente.",
+        "En el hotel se trata bien a los clientes."
+      ]
+    },
+    {
+      "id": "sip-06",
+      "sentence": "Aquí no ___ fumar.",
+      "options": [
+        "se pueden",
+        "se puede"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A se puede + főnévi igenév egyes számban áll: a fumar igenév, nem többes számú alany, ezért no se puede fumar.",
+        "en": "Se puede + infinitive stays singular: fumar is an infinitive, not a plural subject, so no se puede fumar.",
+        "es": "Se puede + infinitivo va en singular: fumar es un infinitivo, no un sujeto en plural, por eso no se puede fumar.",
+        "de": "Se puede + Infinitiv steht im Singular: fumar ist ein Infinitiv, kein Subjekt im Plural, deshalb no se puede fumar."
+      },
+      "wrong": {
+        "se pueden": {
+          "hu": "A pueden többes számú alanyt kérne, például se pueden comprar libros. A fumar főnévi igenév, nem többes főnév, ezért egyes szám kell: no se puede fumar.",
+          "en": "Pueden would ask for a plural subject, for example se pueden comprar libros. Fumar is an infinitive, not a plural noun, so the singular is needed: no se puede fumar.",
+          "es": "Pueden pediría un sujeto en plural, por ejemplo se pueden comprar libros. Fumar es un infinitivo, no un sustantivo en plural, así que hace falta el singular: no se puede fumar.",
+          "de": "Pueden würde ein Subjekt im Plural verlangen, zum Beispiel se pueden comprar libros. Fumar ist ein Infinitiv, kein Nomen im Plural, also braucht es den Singular: no se puede fumar."
+        }
+      },
+      "examples": [
+        "Aquí se puede pagar con tarjeta.",
+        "En el parque se puede jugar al fútbol."
+      ]
+    },
+    {
+      "id": "sip-07",
+      "sentence": "En clase ___ el celular.",
+      "options": [
+        "se no usa",
+        "no usa se",
+        "no se usa"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A tagadó no a se ELÉ kerül, a se pedig közvetlenül az ige előtt áll: no se usa. A celular egyes számú, ezért az ige is egyes.",
+        "en": "The negative no goes BEFORE se, and se stands right before the verb: no se usa. Celular is singular, so the verb is singular too.",
+        "es": "El no negativo va ANTES de se, y se va justo delante del verbo: no se usa. Celular es singular, por eso el verbo también lo es.",
+        "de": "Das Verneinungswort no steht VOR se, und se steht direkt vor dem Verb: no se usa. Celular ist Singular, deshalb steht auch das Verb im Singular."
+      },
+      "wrong": {
+        "se no usa": {
+          "hu": "A se és az ige együtt marad, a no pedig elöl áll: no se usa. A se no usa sorrend nem létezik a spanyolban.",
+          "en": "Se and the verb stay together and no comes first: no se usa. The order se no usa does not exist in Spanish.",
+          "es": "Se y el verbo se quedan juntos y no va primero: no se usa. El orden se no usa no existe en español.",
+          "de": "Se und das Verb bleiben zusammen und no steht vorn: no se usa. Die Reihenfolge se no usa gibt es im Spanischen nicht."
+        },
+        "no usa se": {
+          "hu": "Ebben a mondattípusban a se az ige ELŐTT áll, nem utána. Helyes: no se usa el celular.",
+          "en": "In this kind of sentence se stands BEFORE the verb, not after it. The correct form is: no se usa el celular.",
+          "es": "En este tipo de frase se va ANTES del verbo, no después. Lo correcto es: no se usa el celular.",
+          "de": "In dieser Art von Satz steht se VOR dem Verb, nicht danach. Richtig ist: no se usa el celular."
+        }
+      },
+      "examples": [
+        "En el hospital no se fuma.",
+        "Aquí no se vende alcohol."
+      ]
+    },
+    {
+      "id": "sip-08",
+      "sentence": "Ayer ___ la casa de mis tíos.",
+      "options": [
+        "se vendieron",
+        "se vendió"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A la casa egyes számú, ezért az ige is egyes számban áll: se vendió. Az ayer befejezett múltat kér, de az egyeztetés ugyanúgy működik.",
+        "en": "La casa is singular, so the verb is singular too: se vendió. Ayer asks for the preterite, but the agreement works the same way.",
+        "es": "La casa es singular, por eso el verbo también va en singular: se vendió. Ayer pide el pretérito, pero la concordancia funciona igual.",
+        "de": "La casa ist Singular, deshalb steht auch das Verb im Singular: se vendió. Ayer verlangt das Indefinido, aber die Übereinstimmung funktioniert genauso."
+      },
+      "wrong": {
+        "se vendieron": {
+          "hu": "A se vendieron több dologhoz kellene, például se vendieron las casas. Itt egyetlen ház áll, ezért egyes szám: se vendió.",
+          "en": "Se vendieron would need several things, for example se vendieron las casas. Here a single house stands there, so the singular is needed: se vendió.",
+          "es": "Se vendieron necesitaría varias cosas, por ejemplo se vendieron las casas. Aquí hay una sola casa, así que hace falta el singular: se vendió.",
+          "de": "Se vendieron würde mehrere Sachen verlangen, zum Beispiel se vendieron las casas. Hier steht ein einzelnes Haus, also braucht es den Singular: se vendió."
+        }
+      },
+      "examples": [
+        "Ayer se abrió la tienda a las diez.",
+        "Ayer se vendieron cinco coches."
+      ]
+    },
+    {
+      "id": "sip-09",
+      "sentence": "Las puertas ___ a las nueve.",
+      "options": [
+        "se abre",
+        "se abren"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A puertas az alany, még ha az ige előtt áll is, és többes számú, ezért az ige is többes: se abren.",
+        "en": "Las puertas is the subject even though it stands before the verb, and it is plural, so the verb is plural too: se abren.",
+        "es": "Las puertas es el sujeto aunque vaya antes del verbo, y es plural, por eso el verbo también va en plural: se abren.",
+        "de": "Las puertas ist das Subjekt, auch wenn es vor dem Verb steht, und es ist Plural, deshalb steht auch das Verb im Plural: se abren."
+      },
+      "wrong": {
+        "se abre": {
+          "hu": "A se abre egyes számú dologhoz illene (la puerta se abre). A mondat alanya las puertas, többes szám, ezért se abren.",
+          "en": "Se abre would fit a singular thing (la puerta se abre). The subject of the sentence is las puertas, which is plural, so se abren.",
+          "es": "Se abre iría con una cosa en singular (la puerta se abre). El sujeto de la frase es las puertas, que es plural, por eso se abren.",
+          "de": "Se abre würde zu einer Sache im Singular passen (la puerta se abre). Das Subjekt des Satzes ist las puertas, Plural, also se abren."
+        }
+      },
+      "examples": [
+        "La puerta se abre a las nueve.",
+        "Las tiendas se abren temprano."
+      ]
+    },
+    {
+      "id": "sip-10",
+      "sentence": "___ dos médicos en el hospital.",
+      "options": [
+        "Se necesita",
+        "Se necesitan"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A dos médicos többes számú, és a hirdetésben ő a keresett dolog, ezért az ige is többes: se necesitan.",
+        "en": "Dos médicos is plural, and in the ad it is the wanted thing, so the verb is plural too: se necesitan.",
+        "es": "Dos médicos es plural, y en el anuncio es lo que se busca, por eso el verbo también va en plural: se necesitan.",
+        "de": "Dos médicos ist Plural, und in der Anzeige ist es das Gesuchte, deshalb steht auch das Verb im Plural: se necesitan."
+      },
+      "wrong": {
+        "Se necesita": {
+          "hu": "Az egyes szám egyetlen orvoshoz kellene (se necesita un médico). Itt dos médicos áll, a hirdetésekben is az ige a keresett dologhoz igazodik.",
+          "en": "The singular would fit a single doctor (se necesita un médico). Here dos médicos stands there, and in ads too the verb agrees with the thing wanted.",
+          "es": "El singular iría con un solo médico (se necesita un médico). Aquí hay dos médicos, y también en los anuncios el verbo concuerda con lo que se busca.",
+          "de": "Der Singular würde zu einem einzelnen Arzt passen (se necesita un médico). Hier steht dos médicos, und auch in Anzeigen richtet sich das Verb nach dem Gesuchten."
+        }
+      },
+      "examples": [
+        "Se necesita un profesor de inglés.",
+        "Se buscan estudiantes para la clase."
+      ]
+    },
+    {
+      "id": "sip-11",
+      "sentence": "En el museo ___ comer.",
+      "options": [
+        "se prohíbe",
+        "se prohíben"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A prohibir után főnévi igenév áll, és az nem többes számú, ezért az ige egyes számban marad: se prohíbe comer.",
+        "en": "Prohibir is followed by an infinitive, and an infinitive is never plural, so the verb stays singular: se prohíbe comer.",
+        "es": "Después de prohibir va un infinitivo, y un infinitivo nunca es plural, por eso el verbo se queda en singular: se prohíbe comer.",
+        "de": "Nach prohibir steht ein Infinitiv, und ein Infinitiv steht nie im Plural, deshalb bleibt das Verb im Singular: se prohíbe comer."
+      },
+      "wrong": {
+        "se prohíben": {
+          "hu": "A se prohíben többes számú főnévhez kellene, például se prohíben los coches. A comer főnévi igenév, ezért egyes szám: se prohíbe comer.",
+          "en": "Se prohíben would need a plural noun, for example se prohíben los coches. Comer is an infinitive, so the singular is needed: se prohíbe comer.",
+          "es": "Se prohíben necesitaría un sustantivo en plural, por ejemplo se prohíben los coches. Comer es un infinitivo, así que hace falta el singular: se prohíbe comer.",
+          "de": "Se prohíben würde ein Nomen im Plural verlangen, zum Beispiel se prohíben los coches. Comer ist ein Infinitiv, also braucht es den Singular: se prohíbe comer."
+        }
+      },
+      "examples": [
+        "En el avión se prohíbe fumar.",
+        "En esta calle se prohíben los coches."
+      ]
+    },
+    {
+      "id": "sip-12",
+      "sentence": "En mi país ___ dos idiomas.",
+      "options": [
+        "se habla",
+        "se hablan"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A dos idiomas többes számú dolog, ezért az ige is többes: se hablan.",
+        "en": "Dos idiomas is a plural thing, so the verb is plural too: se hablan.",
+        "es": "Dos idiomas es una cosa en plural, por eso el verbo también va en plural: se hablan.",
+        "de": "Dos idiomas ist eine Sache im Plural, deshalb steht auch das Verb im Plural: se hablan."
+      },
+      "wrong": {
+        "se habla": {
+          "hu": "Az egyes számú se habla egy nyelvhez illene (se habla español). Itt dos idiomas áll, ezért többes szám kell: se hablan.",
+          "en": "The singular se habla would fit one language (se habla español). Here dos idiomas stands there, so the plural is needed: se hablan.",
+          "es": "El singular se habla iría con un solo idioma (se habla español). Aquí hay dos idiomas, así que hace falta el plural: se hablan.",
+          "de": "Der Singular se habla würde zu einer Sprache passen (se habla español). Hier steht dos idiomas, also braucht es den Plural: se hablan."
+        }
+      },
+      "examples": [
+        "En México se habla español.",
+        "En mi ciudad se hablan tres idiomas."
+      ]
+    },
+    {
+      "id": "sip-match-01",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "se vende",
+          "en": "for sale"
+        },
+        {
+          "es": "se habla español",
+          "en": "Spanish spoken here"
+        },
+        {
+          "es": "se prohíbe fumar",
+          "en": "smoking is forbidden"
+        },
+        {
+          "es": "se necesitan médicos",
+          "en": "doctors wanted"
+        },
+        {
+          "es": "no se puede",
+          "en": "it is not allowed"
+        },
+        {
+          "es": "se vive bien",
+          "en": "life is good there"
+        }
+      ]
+    },
+    {
+      "id": "sip-form-01",
+      "kind": "form",
+      "verb": "se + verbo",
+      "person": "En México ___ (hablar) español.",
+      "answer": "se habla",
+      "table": "se-impersonal-formas"
+    },
+    {
+      "id": "sip-form-02",
+      "kind": "form",
+      "verb": "se + verbo",
+      "person": "En esa tienda ___ (vender) libros viejos.",
+      "answer": "se venden",
+      "table": "se-impersonal-formas"
+    },
+    {
+      "id": "sip-form-03",
+      "kind": "form",
+      "verb": "se + verbo",
+      "person": "En esta ciudad ___ (comer) muy bien.",
+      "answer": "se come",
+      "table": "se-impersonal-formas"
+    },
+    {
+      "id": "sip-form-04",
+      "kind": "form",
+      "verb": "se + verbo",
+      "person": "Aquí ___ (prohibir) fumar.",
+      "answer": "se prohíbe",
+      "table": "se-impersonal-formas"
+    },
+    {
+      "id": "sip-form-05",
+      "kind": "form",
+      "verb": "se + verbo",
+      "person": "En la escuela ___ (necesitar) tres profesores.",
+      "answer": "se necesitan",
+      "table": "se-impersonal-formas"
+    },
+    {
+      "id": "sip-form-06",
+      "kind": "form",
+      "verb": "se + verbo",
+      "person": "En mi casa ___ (cocinar) mucho los domingos.",
+      "answer": "se cocina",
+      "table": "se-impersonal-formas"
+    },
+    {
+      "id": "sip-form-07",
+      "kind": "form",
+      "verb": "se + verbo",
+      "person": "En este bar ___ (pagar) las bebidas al final.",
+      "answer": "se pagan",
+      "table": "se-impersonal-formas"
+    },
+    {
+      "id": "sip-form-08",
+      "kind": "form",
+      "verb": "se + verbo",
+      "person": "Aquí no ___ (poder) pagar con tarjeta.",
+      "answer": "se puede",
+      "table": "se-impersonal-formas"
+    },
+    {
+      "id": "sip-form-09",
+      "kind": "form",
+      "verb": "se + verbo",
+      "person": "Hoy ___ (abrir) las tiendas a las diez.",
+      "answer": "se abren",
+      "table": "se-impersonal-formas"
+    },
+    {
+      "id": "sip-form-10",
+      "kind": "form",
+      "verb": "se + verbo",
+      "person": "En el cine ___ (ver) películas viejas.",
+      "answer": "se ven",
+      "table": "se-impersonal-formas"
+    },
+    {
+      "id": "sip-form-11",
+      "kind": "form",
+      "verb": "se + verbo",
+      "person": "En este banco ___ (cambiar) dinero.",
+      "answer": "se cambia",
+      "table": "se-impersonal-formas"
+    },
+    {
+      "id": "sip-form-12",
+      "kind": "form",
+      "verb": "se + verbo",
+      "person": "En este hotel ___ (tratar) bien a los clientes.",
+      "answer": "se trata",
+      "table": "se-impersonal-formas"
+    },
+    {
+      "id": "sip-why-01",
+      "kind": "why",
+      "es": "En el mercado se venden frutas y verduras.",
+      "target": "se venden",
+      "tr": {
+        "hu": "A piacon gyümölcsöt és zöldséget árulnak.",
+        "en": "Fruit and vegetables are sold at the market.",
+        "es": "En el mercado se venden frutas y verduras.",
+        "de": "Auf dem Markt wird Obst und Gemüse verkauft."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "személytelen se: nincs főnév, az ige egyes számban áll",
+            "en": "impersonal se: no noun, the verb stays singular",
+            "es": "se impersonal: no hay sustantivo, el verbo va en singular",
+            "de": "unpersönliches se: kein Nomen, das Verb steht im Singular"
+          },
+          "wrong": {
+            "hu": "Itt van főnév (frutas y verduras), és az ige többes számú: hozzá igazodik. A személytelen se egyes számú igét kapna.",
+            "en": "Here there is a noun (frutas y verduras) and the verb is plural: it agrees with it. Impersonal se would take a singular verb.",
+            "es": "Aquí hay un sustantivo (frutas y verduras) y el verbo va en plural: concuerda con él. El se impersonal llevaría el verbo en singular.",
+            "de": "Hier gibt es ein Nomen (frutas y verduras) und das Verb steht im Plural: Es richtet sich danach. Das unpersönliche se hätte das Verb im Singular."
+          }
+        },
+        {
+          "text": {
+            "hu": "szenvedő se: az ige a dologhoz igazodik",
+            "en": "passive se: the verb agrees with the thing",
+            "es": "se pasivo: el verbo concuerda con la cosa",
+            "de": "Passiv-se: das Verb richtet sich nach der Sache"
+          }
+        },
+        {
+          "text": {
+            "hu": "a + személy: az ige egyes számban marad",
+            "en": "a + person: the verb stays singular",
+            "es": "a + persona: el verbo se queda en singular",
+            "de": "a + Person: das Verb bleibt im Singular"
+          },
+          "wrong": {
+            "hu": "Nincs személy „a” elöljáróval: a frutas y verduras dolgok. Az ige ezért igazodik hozzájuk, és többes számú.",
+            "en": "There is no person with a here: frutas y verduras are things. The verb therefore agrees with them and is plural.",
+            "es": "Aquí no hay ninguna persona con a: frutas y verduras son cosas. Por eso el verbo concuerda con ellas y va en plural.",
+            "de": "Hier gibt es keine Person mit a: frutas y verduras sind Sachen. Das Verb richtet sich deshalb nach ihnen und steht im Plural."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "sip-why-02",
+      "kind": "why",
+      "es": "En verano se duerme poco.",
+      "target": "se duerme",
+      "tr": {
+        "hu": "Nyáron keveset alszanak.",
+        "en": "In summer people sleep little.",
+        "es": "En verano se duerme poco.",
+        "de": "Im Sommer schläft man wenig."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "személytelen se: nincs főnév, az ige egyes számban áll",
+            "en": "impersonal se: no noun, the verb stays singular",
+            "es": "se impersonal: no hay sustantivo, el verbo va en singular",
+            "de": "unpersönliches se: kein Nomen, das Verb steht im Singular"
+          }
+        },
+        {
+          "text": {
+            "hu": "szenvedő se: az ige a dologhoz igazodik",
+            "en": "passive se: the verb agrees with the thing",
+            "es": "se pasivo: el verbo concuerda con la cosa",
+            "de": "Passiv-se: das Verb richtet sich nach der Sache"
+          },
+          "wrong": {
+            "hu": "A se után nincs dolog (főnév), amelyhez az ige igazodhatna: a poco határozó. Szenvedő se-hez főnév kellene.",
+            "en": "There is no thing (noun) after se for the verb to agree with: poco is an adverb. Passive se needs a noun.",
+            "es": "Después de se no hay ninguna cosa (sustantivo) con la que el verbo pueda concordar: poco es un adverbio. El se pasivo necesita un sustantivo.",
+            "de": "Nach se steht keine Sache (Nomen), nach der sich das Verb richten könnte: poco ist ein Adverb. Das Passiv-se braucht ein Nomen."
+          }
+        },
+        {
+          "text": {
+            "hu": "se puede + főnévi igenév: az ige egyes számban áll",
+            "en": "se puede + infinitive: the verb stays singular",
+            "es": "se puede + infinitivo: el verbo va en singular",
+            "de": "se puede + Infinitiv: das Verb steht im Singular"
+          },
+          "wrong": {
+            "hu": "Nincs főnévi igenév a mondatban, és a duerme nem a puede mintájú segédige: maga a főige.",
+            "en": "There is no infinitive in the sentence, and duerme is not a helper like puede: it is the main verb itself.",
+            "es": "No hay ningún infinitivo en la frase, y duerme no es un auxiliar como puede: es el verbo principal.",
+            "de": "Im Satz steht kein Infinitiv, und duerme ist kein Hilfsverb wie puede: Es ist das Hauptverb selbst."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "sip-why-03",
+      "kind": "why",
+      "es": "En la oficina se llama a los clientes.",
+      "target": "se llama",
+      "tr": {
+        "hu": "Az irodában felhívják az ügyfeleket.",
+        "en": "In the office the customers are called.",
+        "es": "En la oficina se llama a los clientes.",
+        "de": "Im Büro ruft man die Kunden an."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "szenvedő se: az ige a dologhoz igazodik",
+            "en": "passive se: the verb agrees with the thing",
+            "es": "se pasivo: el verbo concuerda con la cosa",
+            "de": "Passiv-se: das Verb richtet sich nach der Sache"
+          },
+          "wrong": {
+            "hu": "A los clientes személy „a” elöljáróval: tárgy, nem alany, ezért az ige nem igazodik hozzájuk (nem se llaman).",
+            "en": "A los clientes is a person with a: an object, not a subject, so the verb does not agree with them (not se llaman).",
+            "es": "A los clientes es una persona con a: un complemento, no un sujeto, por eso el verbo no concuerda con ellos (no se llaman).",
+            "de": "A los clientes ist eine Person mit a: ein Objekt, kein Subjekt, deshalb richtet sich das Verb nicht nach ihnen (nicht se llaman)."
+          }
+        },
+        {
+          "text": {
+            "hu": "se puede + főnévi igenév: az ige egyes számban áll",
+            "en": "se puede + infinitive: the verb stays singular",
+            "es": "se puede + infinitivo: el verbo va en singular",
+            "de": "se puede + Infinitiv: das Verb steht im Singular"
+          },
+          "wrong": {
+            "hu": "Nincs főnévi igenév a mondatban: a llama maga a főige, nem a se puede-féle segédige.",
+            "en": "There is no infinitive in the sentence: llama is the main verb itself, not a helper like se puede.",
+            "es": "No hay ningún infinitivo en la frase: llama es el verbo principal, no un auxiliar como se puede.",
+            "de": "Im Satz steht kein Infinitiv: llama ist das Hauptverb selbst, kein Hilfsverb wie bei se puede."
+          }
+        },
+        {
+          "text": {
+            "hu": "a + személy: az ige egyes számban marad",
+            "en": "a + person: the verb stays singular",
+            "es": "a + persona: el verbo se queda en singular",
+            "de": "a + Person: das Verb bleibt im Singular"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "sip-why-04",
+      "kind": "why",
+      "es": "En el hospital no se puede fumar.",
+      "target": "se puede",
+      "tr": {
+        "hu": "A kórházban nem szabad dohányozni.",
+        "en": "Smoking is not allowed in the hospital.",
+        "es": "En el hospital no se puede fumar.",
+        "de": "Im Krankenhaus darf man nicht rauchen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a + személy: az ige egyes számban marad",
+            "en": "a + person: the verb stays singular",
+            "es": "a + persona: el verbo se queda en singular",
+            "de": "a + Person: das Verb bleibt im Singular"
+          },
+          "wrong": {
+            "hu": "Nincs személy „a” elöljáróval a mondatban, a se puede után pedig főnévi igenév áll.",
+            "en": "There is no person with a in the sentence, and an infinitive follows se puede.",
+            "es": "No hay ninguna persona con a en la frase, y después de se puede va un infinitivo.",
+            "de": "Im Satz steht keine Person mit a, und nach se puede folgt ein Infinitiv."
+          }
+        },
+        {
+          "text": {
+            "hu": "se puede + főnévi igenév: az ige egyes számban áll",
+            "en": "se puede + infinitive: the verb stays singular",
+            "es": "se puede + infinitivo: el verbo va en singular",
+            "de": "se puede + Infinitiv: das Verb steht im Singular"
+          }
+        },
+        {
+          "text": {
+            "hu": "szenvedő se: az ige a dologhoz igazodik",
+            "en": "passive se: the verb agrees with the thing",
+            "es": "se pasivo: el verbo concuerda con la cosa",
+            "de": "Passiv-se: das Verb richtet sich nach der Sache"
+          },
+          "wrong": {
+            "hu": "A fumar főnévi igenév, nem többes számú dolog, amelyhez az ige igazodna: ezért marad egyes számban a puede.",
+            "en": "Fumar is an infinitive, not a plural thing for the verb to agree with: that is why puede stays singular.",
+            "es": "Fumar es un infinitivo, no una cosa en plural con la que el verbo concuerde: por eso puede se queda en singular.",
+            "de": "Fumar ist ein Infinitiv, keine Sache im Plural, nach der sich das Verb richtet: Deshalb bleibt puede im Singular."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "sip-why-05",
+      "kind": "why",
+      "es": "Se busca una profesora de inglés.",
+      "target": "Se busca",
+      "tr": {
+        "hu": "Angoltanárnőt keresnek.",
+        "en": "An English teacher is wanted.",
+        "es": "Se busca una profesora de inglés.",
+        "de": "Eine Englischlehrerin wird gesucht."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a + személy: az ige egyes számban marad",
+            "en": "a + person: the verb stays singular",
+            "es": "a + persona: el verbo se queda en singular",
+            "de": "a + Person: das Verb bleibt im Singular"
+          },
+          "wrong": {
+            "hu": "Nincs „a” a személy előtt: a una profesora a keresett szerep, ő az alany, és az ige igazodik hozzá (se busca una profesora, se buscan profesoras).",
+            "en": "There is no a before the person: una profesora is the wanted role, it is the subject, and the verb agrees with it (se busca una profesora, se buscan profesoras).",
+            "es": "No hay a delante de la persona: una profesora es el puesto que se busca, es el sujeto, y el verbo concuerda con ella (se busca una profesora, se buscan profesoras).",
+            "de": "Vor der Person steht kein a: una profesora ist die gesuchte Stelle, sie ist das Subjekt, und das Verb richtet sich nach ihr (se busca una profesora, se buscan profesoras)."
+          }
+        },
+        {
+          "text": {
+            "hu": "személytelen se: nincs főnév, az ige egyes számban áll",
+            "en": "impersonal se: no noun, the verb stays singular",
+            "es": "se impersonal: no hay sustantivo, el verbo va en singular",
+            "de": "unpersönliches se: kein Nomen, das Verb steht im Singular"
+          },
+          "wrong": {
+            "hu": "Van főnév (una profesora), és az ige hozzá igazodik. A személytelen se-nél nincs főnév, amelyhez igazodni kellene.",
+            "en": "There is a noun (una profesora) and the verb agrees with it. With impersonal se there is no noun to agree with.",
+            "es": "Hay un sustantivo (una profesora) y el verbo concuerda con él. Con el se impersonal no hay ningún sustantivo con el que concordar.",
+            "de": "Es gibt ein Nomen (una profesora) und das Verb richtet sich danach. Beim unpersönlichen se gibt es kein Nomen, nach dem man sich richten müsste."
+          }
+        },
+        {
+          "text": {
+            "hu": "szenvedő se: az ige a dologhoz igazodik",
+            "en": "passive se: the verb agrees with the thing",
+            "es": "se pasivo: el verbo concuerda con la cosa",
+            "de": "Passiv-se: das Verb richtet sich nach der Sache"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "sip-why-06",
+      "kind": "why",
+      "es": "En la playa se come muy bien.",
+      "target": "se come",
+      "tr": {
+        "hu": "A tengerparton nagyon jól esznek.",
+        "en": "People eat very well at the beach.",
+        "es": "En la playa se come muy bien.",
+        "de": "Am Strand isst man sehr gut."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "szenvedő se: az ige a dologhoz igazodik",
+            "en": "passive se: the verb agrees with the thing",
+            "es": "se pasivo: el verbo concuerda con la cosa",
+            "de": "Passiv-se: das Verb richtet sich nach der Sache"
+          },
+          "wrong": {
+            "hu": "A se után nincs főnév, amelyhez az ige igazodhatna: a muy bien határozó. Szenvedő se-hez dolog kellene.",
+            "en": "There is no noun after se for the verb to agree with: muy bien is an adverb phrase. Passive se needs a thing.",
+            "es": "Después de se no hay ningún sustantivo con el que el verbo concuerde: muy bien es un adverbio. El se pasivo necesita una cosa.",
+            "de": "Nach se steht kein Nomen, nach dem sich das Verb richtet: muy bien ist eine adverbiale Angabe. Das Passiv-se braucht eine Sache."
+          }
+        },
+        {
+          "text": {
+            "hu": "se puede + főnévi igenév: az ige egyes számban áll",
+            "en": "se puede + infinitive: the verb stays singular",
+            "es": "se puede + infinitivo: el verbo va en singular",
+            "de": "se puede + Infinitiv: das Verb steht im Singular"
+          },
+          "wrong": {
+            "hu": "Nincs főnévi igenév a mondatban: a come maga a főige, nem a se puede-féle segédige.",
+            "en": "There is no infinitive in the sentence: come is the main verb itself, not a helper like se puede.",
+            "es": "No hay ningún infinitivo en la frase: come es el verbo principal, no un auxiliar como se puede.",
+            "de": "Im Satz steht kein Infinitiv: come ist das Hauptverb selbst, kein Hilfsverb wie bei se puede."
+          }
+        },
+        {
+          "text": {
+            "hu": "személytelen se: nincs főnév, az ige egyes számban áll",
+            "en": "impersonal se: no noun, the verb stays singular",
+            "es": "se impersonal: no hay sustantivo, el verbo va en singular",
+            "de": "unpersönliches se: kein Nomen, das Verb steht im Singular"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "sip-why-07",
+      "kind": "why",
+      "es": "En el parque se ve a los niños.",
+      "target": "se ve",
+      "tr": {
+        "hu": "A parkban látni a gyerekeket.",
+        "en": "In the park the children can be seen.",
+        "es": "En el parque se ve a los niños.",
+        "de": "Im Park sieht man die Kinder."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a + személy: az ige egyes számban marad",
+            "en": "a + person: the verb stays singular",
+            "es": "a + persona: el verbo se queda en singular",
+            "de": "a + Person: das Verb bleibt im Singular"
+          }
+        },
+        {
+          "text": {
+            "hu": "szenvedő se: az ige a dologhoz igazodik",
+            "en": "passive se: the verb agrees with the thing",
+            "es": "se pasivo: el verbo concuerda con la cosa",
+            "de": "Passiv-se: das Verb richtet sich nach der Sache"
+          },
+          "wrong": {
+            "hu": "A los niños személy „a” elöljáróval: tárgy, nem alany, ezért az ige nem igazodik hozzájuk (nem se ven).",
+            "en": "A los niños is a person with a: an object, not a subject, so the verb does not agree with them (not se ven).",
+            "es": "A los niños es una persona con a: un complemento, no un sujeto, por eso el verbo no concuerda con ellos (no se ven).",
+            "de": "A los niños ist eine Person mit a: ein Objekt, kein Subjekt, deshalb richtet sich das Verb nicht nach ihnen (nicht se ven)."
+          }
+        },
+        {
+          "text": {
+            "hu": "se puede + főnévi igenév: az ige egyes számban áll",
+            "en": "se puede + infinitive: the verb stays singular",
+            "es": "se puede + infinitivo: el verbo va en singular",
+            "de": "se puede + Infinitiv: das Verb steht im Singular"
+          },
+          "wrong": {
+            "hu": "Nincs főnévi igenév a mondatban: a ve maga a főige, nem a se puede-féle segédige.",
+            "en": "There is no infinitive in the sentence: ve is the main verb itself, not a helper like se puede.",
+            "es": "No hay ningún infinitivo en la frase: ve es el verbo principal, no un auxiliar como se puede.",
+            "de": "Im Satz steht kein Infinitiv: ve ist das Hauptverb selbst, kein Hilfsverb wie bei se puede."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

@@ -14,7 +14,7 @@
       "text": {
         "hu": "A gustar fordítva működik, mint a magyar „szeretem\": a mondat alanya az a DOLOG, ami tetszik, a személy pedig csak egy névmást kap. Ezért nem \"yo gusto el café\", hanem \"me gusta el café\", szó szerint: nekem tetszik a kávé.",
         "en": "Gustar works the other way round from \"I like\": the SUBJECT of the sentence is the thing that pleases, and the person only gets a pronoun. That is why it is not \"yo gusto el café\" but \"me gusta el café\", literally: coffee pleases me.",
-        "es": "Gustar funciona al revés que \"me gusta\" en otros idiomas: el SUJETO de la frase es la cosa que gusta, y la persona solo lleva un pronombre. Por eso no se dice \"yo gusto el café\", sino \"me gusta el café\".",
+        "es": "Gustar funciona al revés que \"I like\" o \"ich mag\": el SUJETO de la frase es la cosa que gusta, y la persona solo lleva un pronombre. Por eso no se dice \"yo gusto el café\", sino \"me gusta el café\".",
         "de": "Gustar funktioniert umgekehrt wie „ich mag\": das SUBJEKT des Satzes ist die Sache, die gefällt, und die Person bekommt nur ein Pronomen. Deshalb heißt es nicht \"yo gusto el café\", sondern \"me gusta el café\", wörtlich: mir gefällt der Kaffee."
       }
     },
@@ -29,10 +29,10 @@
       "items": [
         {
           "text": {
-            "hu": "Ha EGY dolog vagy egy tevékenység tetszik, egyes szám: gusta.",
-            "en": "If ONE thing or one activity pleases, use the singular: gusta.",
-            "es": "Si gusta UNA sola cosa o actividad, se usa el singular: gusta.",
-            "de": "Wenn EINE Sache oder eine Tätigkeit gefällt, steht der Singular: gusta."
+            "hu": "Ha EGY dolog tetszik, egyes szám: gusta.",
+            "en": "If ONE thing pleases, use the singular: gusta.",
+            "es": "Si gusta UNA sola cosa, se usa el singular: gusta.",
+            "de": "Wenn EINE Sache gefällt, steht der Singular: gusta."
           },
           "examples": [
             {
@@ -177,14 +177,14 @@
         },
         {
           "text": {
-            "hu": "Kérdésben ugyanez a szerkezet, csak kérdőjelek közt: ¿te gusta…?, ¿os gusta…?",
-            "en": "In a question it is the same structure, just between question marks: ¿te gusta…?, ¿os gusta…?",
-            "es": "En una pregunta es la misma estructura, solo entre signos de interrogación: ¿te gusta…?, ¿os gusta…?",
-            "de": "In einer Frage ist es dieselbe Struktur, nur zwischen Fragezeichen: ¿te gusta…?, ¿os gusta…?"
+            "hu": "Kérdésben ugyanez a szerkezet, csak kérdőjelek közt: ¿te gusta…?, ¿les gusta…?",
+            "en": "In a question it is the same structure, just between question marks: ¿te gusta…?, ¿les gusta…?",
+            "es": "En una pregunta es la misma estructura, solo entre signos de interrogación: ¿te gusta…?, ¿les gusta…?",
+            "de": "In einer Frage ist es dieselbe Struktur, nur zwischen Fragezeichen: ¿te gusta…?, ¿les gusta…?"
           },
           "examples": [
             { "es": "¿Te gusta el chocolate?", "tr": { "hu": "Szereted a csokit?", "en": "Do you like chocolate?", "es": "¿Te gusta el chocolate?", "de": "Magst du Schokolade?" } },
-            { "es": "¿Os gusta la playa?", "tr": { "hu": "Szeretitek a strandot?", "en": "Do you (plural) like the beach?", "es": "¿Os gusta la playa?", "de": "Mögt ihr den Strand?" } }
+            { "es": "¿Les gusta la playa?", "tr": { "hu": "Szeretitek a strandot?", "en": "Do you (plural) like the beach?", "es": "¿Les gusta la playa?", "de": "Mögt ihr den Strand?" } }
           ]
         },
         {
@@ -260,7 +260,7 @@
             "de": "Le zeigt, dass es EINER Person gefällt (ihm, ihr oder Ihnen), les zeigt MEHREREN Personen, unabhängig davon, ob die Sache selbst Singular oder Plural ist."
           },
           "examples": [
-            { "es": "A mi hermano le gusta el fútbol.", "tr": { "hu": "A bátyámnak tetszik a foci.", "en": "My brother likes soccer.", "es": "A mi hermano le gusta el fútbol.", "de": "Meinem Bruder gefällt Fußball." } },
+            { "es": "A mi hermano le gusta el fútbol.", "tr": { "hu": "A testvéremnek tetszik a foci.", "en": "My brother likes soccer.", "es": "A mi hermano le gusta el fútbol.", "de": "Meinem Bruder gefällt Fußball." } },
             { "es": "A mis hermanos les gusta el fútbol.", "tr": { "hu": "A testvéreimnek tetszik a foci.", "en": "My siblings like soccer.", "es": "A mis hermanos les gusta el fútbol.", "de": "Meinen Geschwistern gefällt Fußball." } }
           ]
         }
@@ -286,7 +286,7 @@
     }
   ],
   "speak": {
-    "hu": "A tetszik jelentésű ige éppen fordítva működik, mint gondolnád: nem te vagy az alany, hanem az, ami tetszik neked. Ha egy dolog tetszik, az ige egyes számú. Ha több dolog tetszik, többes számra vált. Ha egy cselekvés tetszik, az mindig egyes szám marad, még két cselekvésnél is. Azt, akinek tetszik, sosem alanyi névmás jelöli, hanem egy kis névmás az ige előtt. Harmadik személynél gyakran a nevet is hozzátesszük, hogy tudjuk, kire gondolunk. A szeretni valamit és az érdekelni ige pontosan ugyanígy működik.",
+    "hu": "A tetszik jelentésű ige éppen fordítva működik, mint gondolnád: nem te vagy az alany, hanem az, ami tetszik neked. Ha egy dolog tetszik, az ige egyes számú. Ha több dolog tetszik, többes számra vált. Ha egy cselekvés tetszik, az mindig egyes szám marad, még két cselekvésnél is. Azt, akinek tetszik, sosem alanyi névmás jelöli, hanem egy kis névmás az ige előtt. Harmadik személynél gyakran a nevet is hozzátesszük, hogy tudjuk, kire gondolunk. Az imádni és az érdekelni ige pontosan ugyanígy működik.",
     "en": "The verb for liking works the opposite way from what you might expect: you are not the subject, the thing that pleases you is. When one thing pleases you, the verb is singular. When several things please you, it switches to the plural. When an action pleases you, it always stays singular, even with two actions. The person who is pleased is never marked by a subject pronoun, but by a small pronoun before the verb. With the third person you often add the name too, so we know who you mean. The verbs for loving something and for being interested in something work in exactly the same way.",
     "es": "El verbo de gustar funciona al revés de lo que se espera: tú no eres el sujeto, lo es la cosa que te gusta. Cuando te gusta una cosa, el verbo va en singular. Cuando te gustan varias cosas, pasa al plural. Cuando te gusta una acción, siempre queda en singular, incluso con dos acciones. A la persona a quien le gusta no la marca un pronombre de sujeto, sino un pequeño pronombre delante del verbo. Con la tercera persona se suele añadir también el nombre, para saber a quién te refieres. Los verbos para encantar y para interesar funcionan exactamente igual.",
     "de": "Das Verb für gefallen funktioniert genau umgekehrt, als man erwartet: Nicht du bist das Subjekt, sondern das, was dir gefällt. Gefällt dir eine Sache, steht das Verb im Singular. Gefallen dir mehrere Sachen, wechselt es in den Plural. Gefällt dir eine Handlung, bleibt es immer im Singular, auch bei zwei Handlungen. Die Person, der etwas gefällt, wird nie durch ein Subjektpronomen markiert, sondern durch ein kleines Pronomen vor dem Verb. Bei der dritten Person setzt man oft zusätzlich den Namen, damit klar ist, wer gemeint ist. Die Verben für begeistern und für interessieren funktionieren genauso."
@@ -421,7 +421,7 @@
       },
       "wrong": {
         "Tú": {
-          "hu": "A \"Tú\" alanyi névmás, de itt nem te vagy az alany, hanem a csoki; \"Tú\" nélkül marad a mondat a szükséges névmás nélkül, ezért nem alkot helyes mondatot így.",
+          "hu": "A \"Tú\" alanyi névmás, de itt nem te vagy az alany, hanem a csoki; \"Tú\" mellett marad a mondat a szükséges névmás nélkül, ezért nem alkot helyes mondatot így.",
           "en": "\"Tú\" is a subject pronoun, but here the chocolate is the subject, not you; with \"Tú\" the sentence is left without the pronoun it needs, so it does not make a correct sentence this way.",
           "es": "\"Tú\" es pronombre de sujeto, pero aquí el sujeto es el chocolate, no tú; con \"Tú\" la frase se queda sin el pronombre que necesita, así que no es correcta así.",
           "de": "\"Tú\" ist Subjektpronomen, aber hier ist die Schokolade das Subjekt, nicht du; mit \"Tú\" fehlt dem Satz das nötige Pronomen, so ist er nicht korrekt."
@@ -470,7 +470,7 @@
       "why": {
         "hu": "A nosotroshoz a nos névmás tartozik.",
         "en": "Nosotros takes the pronoun nos.",
-        "es": "A nosotros le corresponde nos.",
+        "es": "Nosotros lleva el pronombre nos.",
         "de": "Zu nosotros gehört nos."
       },
       "wrong": {
@@ -603,10 +603,10 @@
       "options": ["leer", "leo", "leyendo"],
       "correct": 0,
       "why": {
-        "hu": "A gustar után főnévi igenév áll: me gusta leer.",
-        "en": "Gustar is followed by an infinitive: me gusta leer.",
-        "es": "Después de gustar va el infinitivo: me gusta leer.",
-        "de": "Nach gustar steht der Infinitiv: me gusta leer."
+        "hu": "Ha egy cselekvés tetszik, a gustar után főnévi igenév áll: me gusta leer.",
+        "en": "When an action pleases you, gustar is followed by an infinitive: me gusta leer.",
+        "es": "Cuando te gusta una acción, después de gustar va el infinitivo: me gusta leer.",
+        "de": "Gefällt eine Handlung, steht nach gustar der Infinitiv: me gusta leer."
       },
       "wrong": {
         "leo": {
@@ -649,7 +649,7 @@
           "de": "\"Se\" ist reflexiv und gehört zu einer anderen Struktur als gustar; \"se\" wäre bei einem reflexiven Verb korrekt: Él se lava las manos (er wäscht sich die Hände)."
         }
       },
-      "examples": ["A ella le gusta el arte.", "A mi hermano le gustan los coches."]
+      "examples": ["A ella le gusta el arte.", "A mi hermano le gustan los perros."]
     },
     {
       "id": "gu-12",
@@ -800,10 +800,10 @@
       "options": [
         {
           "text": {
-            "hu": "gusta: egy dolog/tevékenység",
-            "en": "gusta: one thing/activity",
-            "es": "gusta: una cosa/actividad",
-            "de": "gusta: eine Sache/Tätigkeit"
+            "hu": "gusta: egy dolog",
+            "en": "gusta: one thing",
+            "es": "gusta: una cosa",
+            "de": "gusta: eine Sache"
           }
         },
         {
@@ -851,10 +851,10 @@
       "options": [
         {
           "text": {
-            "hu": "gusta: egy dolog/tevékenység",
-            "en": "gusta: one thing/activity",
-            "es": "gusta: una cosa/actividad",
-            "de": "gusta: eine Sache/Tätigkeit"
+            "hu": "gusta: egy dolog",
+            "en": "gusta: one thing",
+            "es": "gusta: una cosa",
+            "de": "gusta: eine Sache"
           },
           "wrong": {
             "hu": "A gusta EGY dologra vonatkozna (\"Me gusta el libro\" = azt az egy könyvet szeretem); itt viszont TÖBB könyvről van szó, ezért többes szám: gustan.",
@@ -902,10 +902,10 @@
       "options": [
         {
           "text": {
-            "hu": "gusta: egy dolog/tevékenység",
-            "en": "gusta: one thing/activity",
-            "es": "gusta: una cosa/actividad",
-            "de": "gusta: eine Sache/Tätigkeit"
+            "hu": "gusta: egy dolog",
+            "en": "gusta: one thing",
+            "es": "gusta: una cosa",
+            "de": "gusta: eine Sache"
           },
           "wrong": {
             "hu": "Az \"egy dolog\" szabály olyan főnevekre vonatkozik, mint \"el café\"; itt viszont egy FŐNÉVI IGENÉV (leer) áll, aminek külön, saját szabálya van, bár a végeredmény ugyanaz: gusta.",
@@ -967,10 +967,10 @@
         },
         {
           "text": {
-            "hu": "gusta: egy dolog/tevékenység",
-            "en": "gusta: one thing/activity",
-            "es": "gusta: una cosa/actividad",
-            "de": "gusta: eine Sache/Tätigkeit"
+            "hu": "gusta: egy dolog",
+            "en": "gusta: one thing",
+            "es": "gusta: una cosa",
+            "de": "gusta: eine Sache"
           },
           "wrong": {
             "hu": "Az \"egy dolog\" szabály egyetlen FŐNÉVRE vonatkozik; itt viszont KÉT FŐNÉVI IGENÉV áll egymás mellett, amire külön szabály él: mindig egyes szám marad, bár a végeredmény ugyanaz.",
@@ -1004,16 +1004,16 @@
       "options": [
         {
           "text": {
-            "hu": "gusta: egy dolog/tevékenység",
-            "en": "gusta: one thing/activity",
-            "es": "gusta: una cosa/actividad",
-            "de": "gusta: eine Sache/Tätigkeit"
+            "hu": "gusta: egy dolog",
+            "en": "gusta: one thing",
+            "es": "gusta: una cosa",
+            "de": "gusta: eine Sache"
           },
           "wrong": {
-            "hu": "A gusta EGY dologra vonatkozna (\"Nos gusta la vacación\" = azt az egy vakációt szeretjük); itt viszont \"las vacaciones\" TÖBBES számú főnév, ezért gustan.",
-            "en": "Gusta would apply to ONE thing (\"Nos gusta la vacación\" = we like that one vacation); here \"las vacaciones\" is a PLURAL noun, so gustan.",
-            "es": "Gusta se aplicaría a UNA sola cosa (\"Nos gusta la vacación\" = nos gusta esa vacación); aquí \"las vacaciones\" es un sustantivo PLURAL, por eso gustan.",
-            "de": "Gusta würde für EINE Sache gelten (\"Nos gusta la vacación\" = wir mögen diesen einen Urlaub); hier ist \"las vacaciones\" ein PLURALES Substantiv, deshalb gustan."
+            "hu": "A gusta EGY dologra vonatkozna (\"Nos gusta el parque\" = azt az egy parkot szeretjük); itt viszont \"las vacaciones\" TÖBBES számú főnév, ezért gustan.",
+            "en": "Gusta would apply to ONE thing (\"Nos gusta el parque\" = we like that one park); here \"las vacaciones\" is a PLURAL noun, so gustan.",
+            "es": "Gusta se aplicaría a UNA sola cosa (\"Nos gusta el parque\" = nos gusta ese parque); aquí \"las vacaciones\" es un sustantivo PLURAL, por eso gustan.",
+            "de": "Gusta würde für EINE Sache gelten (\"Nos gusta el parque\" = wir mögen diesen einen Park); hier ist \"las vacaciones\" ein PLURALES Substantiv, deshalb gustan."
           }
         },
         {
@@ -1055,10 +1055,10 @@
       "options": [
         {
           "text": {
-            "hu": "gusta: egy dolog/tevékenység",
-            "en": "gusta: one thing/activity",
-            "es": "gusta: una cosa/actividad",
-            "de": "gusta: eine Sache/Tätigkeit"
+            "hu": "gusta: egy dolog",
+            "en": "gusta: one thing",
+            "es": "gusta: una cosa",
+            "de": "gusta: eine Sache"
           }
         },
         {
@@ -1106,10 +1106,10 @@
       "options": [
         {
           "text": {
-            "hu": "gusta: egy dolog/tevékenység",
-            "en": "gusta: one thing/activity",
-            "es": "gusta: una cosa/actividad",
-            "de": "gusta: eine Sache/Tätigkeit"
+            "hu": "gusta: egy dolog",
+            "en": "gusta: one thing",
+            "es": "gusta: una cosa",
+            "de": "gusta: eine Sache"
           },
           "wrong": {
             "hu": "A gusta EGY dologra vonatkozna (\"No nos gusta el lunes\" = azt az egy hétfőt nem szeretjük); itt viszont \"los lunes\" TÖBBES számú főnév, ezért gustan.",
