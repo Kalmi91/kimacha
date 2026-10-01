@@ -72,9 +72,10 @@ describe('Tanulófül: A1 vizsga-sor a szint-választó lapon', () => {
   });
   afterEach(() => jest.useRealTimers());
 
-  it('haladás nélkül zárva: 0 / 120 szó, és koppintásra nem indul vizsga', async () => {
+  it('haladás nélkül zárva: 0 / a szint 80%-a szó, és koppintásra nem indul vizsga', async () => {
+    const needed = Math.ceil(0.8 * pcicItemsForLevel('A1').length);
     const screen = await openSheet();
-    expect(screen.getByTestId('exam-row-words').props.children).toBe('0 / 120 words learned, 120 to go');
+    expect(screen.getByTestId('exam-row-words').props.children).toBe(`0 / ${needed} words learned, ${needed} to go`);
     expect(screen.getByText(/Finish one A1 grammar lesson/)).toBeTruthy();
 
     // "Practice words": a lap bezárul (az A1 pakli marad), vizsga nem indul.
@@ -85,15 +86,16 @@ describe('Tanulófül: A1 vizsga-sor a szint-választó lapon', () => {
     expect(mockPush).not.toHaveBeenCalled();
   });
 
-  it('79%-on (119 / 150) még zárva, 80%-on (120) és egy kész leckével nyitva', async () => {
+  it('80% alatt (eggyel) még zárva, 80%-on és egy kész leckével nyitva', async () => {
     const ids = pcicItemsForLevel('A1').map((i) => i.id);
-    for (const c of a1SeedCards(ids, '2026-10-01').slice(0, 119)) await getDb().upsertPcicCard(c);
+    const needed = Math.ceil(0.8 * ids.length);
+    for (const c of a1SeedCards(ids, '2026-10-01').slice(0, needed - 1)) await getDb().upsertPcicCard(c);
     await getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, 'presente-regular', 'done', { correct: 1, total: 1 });
     let screen = await openSheet();
-    expect(screen.getByTestId('exam-row-words').props.children).toBe('119 / 120 words learned, 1 to go');
+    expect(screen.getByTestId('exam-row-words').props.children).toBe(`${needed - 1} / ${needed} words learned, 1 to go`);
     screen.unmount();
 
-    for (const c of a1SeedCards(ids, '2026-10-01').slice(0, 120)) await getDb().upsertPcicCard(c);
+    for (const c of a1SeedCards(ids, '2026-10-01').slice(0, needed)) await getDb().upsertPcicCard(c);
     screen = await openSheet();
     expect(screen.queryByTestId('exam-row-words')).toBeNull();
     expect(screen.getByTestId('exam-row-ready')).toBeTruthy();
