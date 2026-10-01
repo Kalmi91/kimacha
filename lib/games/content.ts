@@ -6,7 +6,8 @@
 // statically import it in `lib/games/content/<lang>.ts`, push it into
 // `grammarTopics`. No code in the grammar screens should need to change.
 
-import { LEVELS, getWordsForLevel, type Level } from '@/data/words';
+import type { Level } from '@/data/words';
+import { getOpenWordsUpToLevel } from '@/data/openWords';
 import type { DictationItem, FormItem, LessonV2, MatchItem, OrderItem, SpotItem, TenseId, TransformItem, WhyItem } from '../grammar/lessonTypes';
 import { isVosotrosItem } from '../grammar/vosotros';
 
@@ -22,11 +23,9 @@ export function cumulativeCorpusWordIds(level: Level, lang: string): Set<number>
   const key = `${lang}:${level}`;
   const cached = cumulativeIdsCache.get(key);
   if (cached) return cached;
-  const idx = LEVELS.indexOf(level);
+  // PLAN-regi-szavak-ki 5. lépés: a words-open kártyái (id = order), A0 → A1, C1/C2 → B2.
   const ids = new Set<number>();
-  for (let i = 0; i <= idx; i++) {
-    for (const w of getWordsForLevel(LEVELS[i], lang)) ids.add(w.id);
-  }
+  for (const w of getOpenWordsUpToLevel(level)) ids.add(w.id);
   cumulativeIdsCache.set(key, ids);
   return ids;
 }

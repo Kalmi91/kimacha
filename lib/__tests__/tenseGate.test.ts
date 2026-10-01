@@ -20,9 +20,9 @@ describe('detectStructures', () => {
   });
 
   it('does not mistake a noun for a verb form it happens to share', () => {
-    // vino = bor ÉS venir múltja; entre = között ÉS entrar kötőmódja;
-    // viaje = utazás ÉS viajar kötőmódja.
-    expect(detectStructures('El vino es de España.').has('indefinido')).toBe(false);
+    // estudio = tanulmány ÉS estudiar jelen ideje; entre = között ÉS entrar kötőmódja;
+    // viaje = utazás ÉS viajar kötőmódja. (A words-openben nincs "vino".)
+    expect(detectStructures('El estudio de España.').has('presente')).toBe(false);
     expect(detectStructures('El gato está entre la mesa y la silla.').has('subjuntivo_presente')).toBe(false);
     expect(detectStructures('Estoy emocionado por el viaje.').has('subjuntivo_presente')).toBe(false);
     expect(detectStructures('Compro el billete en la agencia de viajes.').has('subjuntivo_presente')).toBe(false);
