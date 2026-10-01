@@ -193,7 +193,10 @@ A „BRIEF új lecke (2026-10-01 …)” érvényes, a munkahely helyett ez a wo
   - minta: `Aunque ___ tarde mañana, el jefe nos esperará.` → lleguemos (nem: llegamos)
   - minta: `A pesar ___ ruido, mi hija duerme muy bien.` → del (nem: de el)
   - minta: `Aunque ___ (tener, ella) dos años, ya habla mucho.` → tiene
-- [ ] B11. `futuro-condicional-perfecto` (C1 exam) új lecke → kész, ha: ugyanaz
+- [x] B11. `futuro-condicional-perfecto` (C1 exam) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `feat(grammar): futuro-condicional-perfecto lesson (nyelvtan)` (02:27; audit 0 P1/0 P2, jest 1696 passed/132 suite, tsc 0, lint 0 error; 12 választós + 1 match + 12 form (8 a habré-táblán, 4 a haber-aux referencia-táblán: condicional de haber) + 7 why, nincs `tense`/transform; glossary: habría, habríamos, habrían, leído, hubiera; a valószínűség (habrá llegado) csak egy szabálypontban érintve, a `probabilidad-con-tiempos`-é; egy ragozási tábla (habré + participio), mert két azonos igés tábla igeidő-jelzés nélkül félreérthető; TenseId-bővítés kell: futuro-condicional-perfecto, /kimacha_nyelvtan)
+  - minta: `Para el viernes ya ___ el informe.` → habré terminado
+  - minta: `Yo, en tu lugar, ___ el contrato antes de firmar.` → habría leído
+  - minta: `Para mañana ya ___ la tarea.` → habré hecho (nem: habré hacido)
 - [ ] B12. `leismo-laismo` (C1 exam) új lecke → kész, ha: ugyanaz
 - [ ] B13. `probabilidad-con-tiempos` (C1 exam) új lecke → kész, ha: ugyanaz
 - [ ] B14. `relativos-complejos` (C1 exam) új lecke → kész, ha: ugyanaz
