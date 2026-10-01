@@ -201,7 +201,10 @@ A „BRIEF új lecke (2026-10-01 …)” érvényes, a munkahely helyett ez a wo
   - minta: `A mi jefe ___ vi ayer en la calle.` → lo (a le: ibériai leísmo, a lecke a latin-amerikai normát kéri)
   - minta: `A mi hermana ___ dije la verdad.` → le (nem: la)
   - minta: `A mis tías ___ mandé un mensaje anoche.` → les (nem: las)
-- [ ] B13. `probabilidad-con-tiempos` (C1 exam) új lecke → kész, ha: ugyanaz
+- [x] B13. `probabilidad-con-tiempos` (C1 exam) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `feat(grammar): probabilidad-con-tiempos lesson (nyelvtan)` (02:54; audit 0 P1/0 P2, jest 1722 passed/132 suite, tsc 0, lint 0 error; 12 választós + 1 match + 12 form + 7 why, nincs `tense`/transform (a lecke funkció, nem egy igeidő: a négy alakból kettő nincs a TENSE_IDS-ben, és a presente→futuro átírás a tense-drillben sima jövőként olvasódna); glossary: habría, habrían, tendría, saldrían; egy tábla (12 mondat: 3 egyszerű jövő, 3 habrá + participio, 3 egyszerű feltételes, 3 habría + participio), a form-mondatokban „No sé,” jelzi a találgatást; TenseId-bővítés kell: futuro-condicional-perfecto, /kimacha_nyelvtan)
+  - minta: `Ya son las ocho: Ana ya ___ a casa.` → habrá llegado (nem: habría llegado)
+  - minta: `Cuando lo llamé, ___ en el cine, porque no contestó.` → estaría (nem: estaba)
+  - minta: `¿Cuánto costaba el boleto antes? No sé, ___ (costar) cinco pesos.` → costaría
 - [ ] B14. `relativos-complejos` (C1 exam) új lecke → kész, ha: ugyanaz
 
 ## BRIEF ir-a-infinitivo (1. lépés, NY6a)
