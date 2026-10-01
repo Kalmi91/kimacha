@@ -20,6 +20,7 @@ Indult: 2026-10-01 13:49. Becslés: kb. 5 óra, 8/10; ágakra bontva, párhuzamo
 - [x] 5. (14:11) (C ág) Nyelvtan + Kurzus fül + Beállítások + `lib/mixedSpeech` + `lib/pcicPos` átállítása a words-open spanyol szavaira → kész, ha: kapu zöld, és a Naplóban a lezáródó (szó hiányában nem nyitható) leckék listája
 - [x] 6. (14:24) (C ág) PCIC ki: `data/pcic/**`, az `ES_WORD_SOURCE` kapcsoló és a 'legacy' ág, a PCIC-hez kötött jegyzet/jelentés/mondat-fájlok és -kód, `scripts/pcic-*.mjs` → kész, ha: kapu zöld
 - [!] 7. (14:32, a kód kész, de a lessonQa kapu piros, lásd Napló) (C ág) Régi spanyol szólista ki: `data/words/{a0,a1,a2,b1,b2,c1,c2}.json`, `data/words/hu/**`, a csak ezeket kiszolgáló `data/words.ts`-részek és scriptek, CI-hivatkozások, a FrequencyWords/SUBTLEX forrásmegjelölés → kész, ha: kapu zöld, és `git grep` nem talál hivatkozást a törölt fájlokra
+- [~] 7b. A nyelvtanleckék hiányzó szavai a words-openbe (Kálmán 14:36: „a, mehet”, a bővítés első adagja, SZAVAK.md SZ9) → kész, ha: `node scripts/words-open-check.mjs` ZÖLD, `lib/__tests__/lessonQa.test.ts` zöld (0 P1), typecheck:ci, lint, test:ci zöld
 - [ ] 8. Web-build füstteszt néma felolvasással: tanulófül mindkét irányban, egy nyelvtanlecke megnyílik, Kurzus fül, Beállítások → kész, ha: nincs hiba a konzolon, képernyőkép a Naplóban leírva
 - [ ] 9. Kapu + push + PR → kész, ha: PR nyitva; merge Kálmán szavára
 
@@ -32,6 +33,14 @@ Indult: 2026-10-01 13:49. Becslés: kb. 5 óra, 8/10; ágakra bontva, párhuzamo
 - **Tesztek:** a törölt funkciók tesztjei törlődnek; a megmaradó funkciók tesztjei az új forráshoz igazodnak (a meglévő elvárásokat ne gyengítsd, csak a darabszámokat és a szavakat).
 - **Commit:** lépésenként egy (vagy adagonként) Conventional Commit, nevesített `git add`, AI-marker nélkül; push csak a 9. lépésben.
 - Ha egy fogyasztót nem lehet a fenti szabállyal átállítani, vagy egy törlés látható funkciót vinne el a fent felsoroltakon kívül: állj meg, írd a Naplóba `[!]` jellel, és jelents.
+
+### 7b. lépés: a leckék szavai a words-openbe
+
+- **Mi kell:** a 79 spanyol nyelvtan-lecke (`data/games/grammar/es/*.json`) minden olyan szava, amely a lemma-index (ragozott alak → words-open lemma, 36ed598) után sincs a words-openben (a 14:32-es mérés: 634 különböző szó). Először script listázza őket: szó, a feloldott lemma (igénél főnévi igenév, névszónál hímnem egyes szám), a legalacsonyabb lecke-szint, ahol előfordul, előfordulásszám. Kiszűrendő, ami nem szókártya: tulajdonnév, számjegy, a lecke nyelvtani címkéje. Ami csak ragozott alakja egy már meglévő lemmának, az nem új kártya, hanem az index hiánya (a ragozó motor javítása vagy a lemma-index bővítése).
+- **Új kártya:** words-open séma (13 kulcs, opcionális `hint_en`), `order` 602-től folyamatosan, `level` = a legalacsonyabb lecke-szint, ahol a szó kell (A1-B2; ha a lecke C1-es, B2). Minden mező kitöltve (hu, en, de, négy mondat, `sentence_lemmas`), a mondat csak már tanult szóból (R4: a kártya szintjénél nem magasabb szintű kártyák), mexikói norma (S4), az SZ8 szabályai (azonos jelentés = ` / `, más jelentés = külön kártya + `hint_en`). Forrás: az AI saját tudása, külső szólista nem (licenc-tisztaság).
+- **wordIds:** a leckék transform-`wordIds` mezőiben a régi szó-id-ket a words-open id-re (order) kell cserélni, script végzi, egyezés a lemmán át; ami nem oldható fel, az a Naplóba.
+- **Adagok:** szintenként, kb. 150 kártya adagonként; adag után kapu (`words-open-check`) és commit (`feat(words): a nyelvtanleckék szavai a words-openben, N. adag`), a Naplóba darabszám + 10 véletlen új kártya (en → es, mondat).
+- **Nem változik:** a meglévő 1-601 kártya, a leckék szövege (csak a `wordIds`).
 
 ## Leltár
 
