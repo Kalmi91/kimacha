@@ -98,6 +98,10 @@ export default function SettingsScreen() {
   const { theme } = useTheme();
   // PLAN-temak 4D: az aktív téma a Témák-sorban (név + minta).
   const { id: skinId, skin: activeSkin, mode } = useSkin();
+  // 7F/G2: a léptető sorokban a címke ennél keskenyebbre nem szorulhat, előbb a léptető törik a címke alá
+  // (egyedi test-betűs / nagyított / betűközös témán 112, a mai Neo-brutál és Klasszikus kinézetén 64: ott ez nem tör).
+  const wideText = !!activeSkin.fonts.body || activeSkin.fontScale > 1 || activeSkin.spacingScope === 'all';
+  const stepLabel = { minWidth: wideText ? 112 : 64 };
   const colors = Colors[theme];
   const g = useGrammarColors();
   const s = t();
@@ -377,7 +381,7 @@ export default function SettingsScreen() {
           the reached state stays as the green tag on the goal row below. */}
       {/* FB65: weekly study goal in whole hours, shown on the Stats tab. */}
       <Row>
-        <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.weeklyGoal}</Text>
+        <Text style={[styles.wordsOnlyLabel, { color: colors.text }, stepLabel]}>{s.settings.weeklyGoal}</Text>
         <View style={styles.goalStepper}>
           <StepBtn label="−" onPress={() => handleWeeklyGoalChange(-WEEKLY_GOAL_STEP_MINUTES)} />
           <Text style={[styles.goalValue, { color: goalReached ? '#22C55E' : colors.text }]}>
@@ -390,7 +394,7 @@ export default function SettingsScreen() {
 
       {/* FB77: how many brand-new words a day may enter the learning queue. */}
       <Row>
-        <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.dailyNewLimit}</Text>
+        <Text style={[styles.wordsOnlyLabel, { color: colors.text }, stepLabel]}>{s.settings.dailyNewLimit}</Text>
         <View style={styles.goalStepper}>
           <StepBtn label="−" onPress={() => handleDailyNewLimitChange(-DAILY_NEW_LIMIT_STEP)} />
           <Text style={[styles.goalValue, { color: colors.text }]}>
@@ -403,7 +407,7 @@ export default function SettingsScreen() {
       {/* FB364 (PLAN-fb0923 5. lépés/D2): a PCIC "again" kártya visszatérési
           ideje; ugyanezt olvassa a nyelvtani táblázat-pakli cooldownja is. */}
       <Row>
-        <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.missedWordDelay}</Text>
+        <Text style={[styles.wordsOnlyLabel, { color: colors.text }, stepLabel]}>{s.settings.missedWordDelay}</Text>
         <View style={styles.goalStepper}>
           <StepBtn label="−" onPress={() => handleAgainDelayChange(-AGAIN_DELAY_STEP_SEC)} />
           <Text style={[styles.goalValue, { color: colors.text }]}>
@@ -590,7 +594,8 @@ const styles = StyleSheet.create({
   // NY19: brutalista formák.
   brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   brutalRowOuter: { marginTop: 12 },
-  brutalRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingVertical: 12, paddingHorizontal: 14 },
+  // 7F/G2: flexWrap + rowGap: ha a széles betűjű téma a léptetőt túl szélesre hizza, az a címke alá törik.
+  brutalRow: { flexDirection: 'row', flexWrap: 'wrap', rowGap: 8, alignItems: 'center', justifyContent: 'space-between', paddingVertical: 12, paddingHorizontal: 14 },
   brutalStepOuter: { width: 38 },
   brutalStep: { width: 34, height: 34, alignItems: 'center', justifyContent: 'center' },
   brutalOptionOuter: { flex: 1 },
@@ -617,6 +622,8 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: '500',
     marginTop: 2,
+    // 7F/G2: a kapcsolótól / nyíltól a hint se érjen hozzá (a címke saját marginRight-ja a hintre nem vonatkozik).
+    marginRight: 12,
   },
   // The label inside already carries the right margin (see wordsOnlyLabel).
   difficultyLabelBox: {
@@ -624,6 +631,8 @@ const styles = StyleSheet.create({
   },
   wordsOnlyRow: {
     flexDirection: 'row',
+    flexWrap: 'wrap',
+    rowGap: 8,
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingVertical: 14,
@@ -652,6 +661,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 10,
     flexShrink: 0,
+    maxWidth: '100%',
+    marginLeft: 'auto',
   },
   goalBtn: {
     width: 34,
@@ -670,6 +681,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '600',
     minWidth: 96,
+    flexShrink: 1,
     textAlign: 'center',
   },
 });

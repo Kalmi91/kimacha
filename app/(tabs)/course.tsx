@@ -194,7 +194,8 @@ export default function GrammarSyllabusScreen() {
                         {hasTrial ? <TrialBadge testID={`trial-badge-${topic.id}`} /> : null}
                       </View>
                     ) : null}
-                    <Text style={[styles.brutalBlurb, { color: textColor }]} numberOfLines={2}>
+                    {/* 7F/G2: nincs numberOfLines-vágás: a széles / magas betűjű téma 3+ sorba tördeli, nem csonkítjuk. */}
+                    <Text style={[styles.brutalBlurb, { color: textColor }]}>
                       {topic.blurb[contentLang] ?? topic.blurb.en}
                     </Text>
                     {inProgress && badgePct !== null ? (

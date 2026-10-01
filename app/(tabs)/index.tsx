@@ -1062,15 +1062,17 @@ const styles = StyleSheet.create({
   dontLearn: {
     fontSize: 13,
     textAlign: 'right',
-    marginBottom: 8,
   },
   // PLAN-play 12. lépés (s3): a "Don't learn this" sora; a flex-end a régi
   // jobbra-igazított helyre teszi a dontLearn-t.
+  // 7F/G2: a korábbi marginBottom: 8 helyett marginTop: 10 (a doboz magassága ~ugyanaz), hogy a sor ne
+  // érjen a beviteli mezőhöz (szélesebb sormagasságú / elforgatott kártya-keretű témán átfedés volt).
   bottomRow: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
     alignItems: 'center',
     gap: 16,
+    marginTop: 10,
   },
   checkBtn: {
     alignSelf: 'stretch',
