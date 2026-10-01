@@ -44,7 +44,8 @@ describe('Beállítások fül, neo-brutalista (NY19)', () => {
     const view = render(<ThemeProvider><SettingsScreen /></ThemeProvider>);
     await flush();
     expect(view.queryAllByTestId('settings-row').length).toBe(0);
-    expect(view.queryByTestId('palette-classic')).toBeTruthy();
+    // PLAN-temak 4D: a paletta-chipek a Témák képernyőre költöztek; a Beállításokban a Témák-sor van.
+    expect(view.queryByTestId('settings-theme-row')).toBeTruthy();
     view.unmount();
   });
 });

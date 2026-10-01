@@ -8,6 +8,7 @@ jest.mock('expo-router', () => ({
 
 import { act, render } from '@testing-library/react-native';
 
+import { SKINS } from '@/constants/Skins';
 import { getDb } from '@/lib/database';
 import { grammarColorsFor } from '@/lib/grammarColors';
 import { brutalHeaderOptions, brutalHeaderRowStyle } from '@/lib/brutalHeader';
@@ -37,6 +38,22 @@ describe('Fejlécek, neo-brutalista (NY25)', () => {
     const g = grammarColorsFor('light');
     expect(brutalHeaderOptions(g)).toEqual({});
     expect(brutalHeaderRowStyle(g)).toBeNull();
+  });
+
+  // PLAN-temak 4C: a téma title-betűje a natív fejléc címére.
+  it('brutalHeaderOptions + téma: egyedi betű (fontWeight nélkül), betűköz, nagybetű; classic-on továbbra is üres', () => {
+    const g = grammarColorsFor('deco-dark');
+    const o = brutalHeaderOptions(g, SKINS.deco);
+    expect(o.headerTitleStyle).toMatchObject({ color: g.ink, fontFamily: 'PoiretOne', letterSpacing: 3, textTransform: 'uppercase' });
+    expect(o.headerTitleStyle).not.toHaveProperty('fontWeight');
+
+    const brutal = brutalHeaderOptions(grammarColorsFor('brand-light'), SKINS.brutal);
+    // PLAN-temak 6E (Kálmán 2a): a brutal title betűje null = a mai rendszer-betű, fontWeight-tel.
+    expect(brutal.headerTitleStyle).toMatchObject({ fontWeight: '500', textTransform: 'uppercase' });
+    expect(brutal.headerTitleStyle).not.toHaveProperty('fontFamily');
+    expect(brutal.headerStyle).toMatchObject({ borderBottomWidth: 2.5 });
+
+    expect(brutalHeaderOptions(grammarColorsFor('light'), SKINS.classic)).toEqual({});
   });
 
   it('Credits: brand palettán a vissza-nyíl BrutalBox, classic palettán nem', async () => {

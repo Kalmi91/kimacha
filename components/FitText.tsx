@@ -1,4 +1,5 @@
-import { Text, type TextProps, type TextStyle } from 'react-native';
+import { type TextStyle } from 'react-native';
+import { Text, type KTextProps } from '@/components/KText';
 
 import { useFitFontSize } from '@/lib/fitText';
 
@@ -7,7 +8,7 @@ import { useFitFontSize } from '@/lib/fitText';
 // sor-konténerben is összemegy (`flexShrink: 1`), nem lóg ki és nem vágódik le.
 // Csak sima szöveget vesz (children: string); kiemelt / beágyazott részeknél
 // a `useFitFontSize` hookot kell hívni közvetlenül.
-type Props = Omit<TextProps, 'children'> & {
+type Props = Omit<KTextProps, 'children'> & {
   children: string;
   /** A kívánt (legnagyobb) betűméret. */
   base: number;

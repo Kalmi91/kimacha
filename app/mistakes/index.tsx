@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
-import { ScrollView, StyleSheet, Text, View, Pressable, ActivityIndicator } from 'react-native';
+import { ScrollView, StyleSheet, View, Pressable, ActivityIndicator } from 'react-native';
+import { Text } from '@/components/KText';
 import { useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
@@ -65,7 +66,7 @@ export default function MistakesReportScreen() {
         <Text style={[styles.back, { color: colors.text }]}>←</Text>
       </Pressable>
       )}
-      <Text style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.mistakes.title}</Text>
+      <Text variant="title" style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.mistakes.title}</Text>
       <View style={styles.backSpacer} />
     </View>
   );
@@ -117,7 +118,7 @@ export default function MistakesReportScreen() {
 
               {batch.wrongWords.length > 0 && (
                 <View style={styles.section}>
-                  <Text style={[styles.sectionTitle, { color: colors.text }]}>{s.mistakes.wrongWordsTitle}</Text>
+                  <Text variant="title" style={[styles.sectionTitle, { color: colors.text }]}>{s.mistakes.wrongWordsTitle}</Text>
                   {batch.wrongWords.map((w, i) => (
                     <View key={i} style={styles.itemRow}>
                       <Text style={{ color: colors.text }}>
@@ -133,7 +134,7 @@ export default function MistakesReportScreen() {
 
               {batch.patterns.length > 0 && (
                 <View style={styles.section}>
-                  <Text style={[styles.sectionTitle, { color: colors.text }]}>{s.mistakes.reviewAgainTitle}</Text>
+                  <Text variant="title" style={[styles.sectionTitle, { color: colors.text }]}>{s.mistakes.reviewAgainTitle}</Text>
                   {batch.patterns.map((p) => (
                     <View key={p.id} style={styles.patternBlock}>
                       <Text style={[styles.patternTitle, { color: colors.text }]}>{p.title}</Text>
@@ -162,7 +163,7 @@ export default function MistakesReportScreen() {
 
               {doubtfulSentences.length > 0 && (
                 <View style={styles.section}>
-                  <Text style={[styles.sectionTitle, { color: colors.text }]}>⚠ {s.mistakes.doubtfulTitle}</Text>
+                  <Text variant="title" style={[styles.sectionTitle, { color: colors.text }]}>⚠ {s.mistakes.doubtfulTitle}</Text>
                   {doubtfulSentences.map((sn) => (
                     <View key={sn.id} style={styles.itemRow}>
                       <Text style={{ color: colors.text }}>

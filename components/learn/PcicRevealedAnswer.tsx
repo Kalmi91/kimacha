@@ -1,4 +1,5 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
+import { Text } from '@/components/KText';
 
 import Colors from '@/constants/Colors';
 import { speak } from '@/lib/speech';
@@ -10,7 +11,8 @@ import { pcicAlternatives, type PcicGrade } from '@/lib/pcicMatch';
 import { sm2PreviewDays, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
 import ResultBadge from '@/components/ResultBadge';
 import { useGrammarColors } from '@/lib/grammarColors';
-import { BrutalBox } from '@/components/grammar/Brutal';
+import { BrutalBox, actionTextColor, useButtonVariant } from '@/components/grammar/Brutal';
+import { SkinSpeakLabel } from '@/components/skins/Slots';
 
 // PLAN-play 14. lépés: a PCIC kártya felfedett-állapot blokkja
 // (app/(tabs)/index.tsx-ből kiemelve, felelősség szerinti szétvágás, nincs
@@ -48,6 +50,8 @@ export default function PcicRevealedAnswer({
   // A régi gombsor intervallum-előnézete grade-enként (lib/sm2.ts
   // sm2PreviewDays), i18n-nel formázva (FB350/5. commit: ne csak magyarul).
   const g = useGrammarColors();
+  const variant = useButtonVariant();
+  const stacked = variant === 'stacked';
   const previewDays = sm2PreviewDays(current, today);
   const previews = Object.fromEntries(
     GRADES.map((g) => [g, previewDays[g] === 0 ? s.pcic.intervalToday : s.pcic.intervalDays(previewDays[g])])
@@ -90,9 +94,10 @@ export default function PcicRevealedAnswer({
         </Text>
         )}
         <View style={styles.frontRow}>
-          <Text style={[styles.correctAnswer, { color: colors.tint }]}>{grade.best}</Text>
+          <Text variant="word" style={[styles.correctAnswer, { color: colors.tint }]}>{grade.best}</Text>
           <Pressable onPress={() => speak(grade.best, speechLang(target))} style={styles.speakBtn}>
             <Text style={styles.speakIcon}>🔊</Text>
+            <SkinSpeakLabel />
           </Pressable>
         </View>
         {alsoAlternatives.length > 0 && (
@@ -120,6 +125,7 @@ export default function PcicRevealedAnswer({
               <Text style={[styles.exampleEs, { color: colors.text }]}>{example}</Text>
               <Pressable onPress={() => speak(example, speechLang(target))} style={styles.speakBtn}>
                 <Text style={styles.speakIcon}>🔊</Text>
+                <SkinSpeakLabel />
               </Pressable>
             </View>
             <Text style={[styles.exampleEn, { color: colors.tabIconDefault }]}>{exampleGloss}</Text>
@@ -130,24 +136,37 @@ export default function PcicRevealedAnswer({
       {/* Kálmán 2026-09-21: a régi (PR #27 előtti) Tudtam/Nem tudtam
           gombsor vissza, intervallum-előnézettel; a koppintás dönt és
           értékel, üres beküldés után is. */}
-      <View style={[styles.gradesRow, g.brutal && styles.brutalGradesRow]}>
+      <View testID="pcic-grades" style={[styles.gradesRow, g.brutal && styles.brutalGradesRow, g.brutal && stacked && styles.gradesStacked]}>
         {GRADES.map((gr) => {
           const isPre = nextGrade === gr;
           if (g.brutal) {
             // NY19: doboz (good = a, again = b). PLAN-learn-words-open 5a: a két gomb
             // egyforma (azonos árnyék-eltolás, a sor a kártya teljes szélességén).
+            // PLAN-temak 6E: a téma gomb-változata: senior = egymás alatt + ikon, zen = csak szöveg,
+            // a "Tudom" aláhúzva.
+            const fill = gr === 'good' ? 'a' : 'b';
+            const labelColor = actionTextColor(g, fill, variant);
             return (
               <BrutalBox
                 key={gr}
                 testID={`pcic-grade-${gr}`}
-                fill={gr === 'good' ? 'a' : 'b'}
+                fill={fill}
                 offset={2}
-                style={styles.brutalGrade}
-                boxStyle={styles.brutalGradeBox}
+                action
+                style={stacked ? styles.brutalGradeStacked : styles.brutalGrade}
+                boxStyle={stacked ? styles.brutalGradeBoxStacked : styles.brutalGradeBox}
                 onPress={() => onGrade(gr)}
               >
-                <Text style={[styles.gradeLabel, { color: g.onFill, fontWeight: '500', textTransform: 'uppercase' }]}>{s.pcic[gr]}</Text>
-                <Text style={[styles.gradePreview, { color: g.onFill }]}>{previews[gr]}</Text>
+                <Text
+                  style={[
+                    styles.gradeLabel,
+                    { color: labelColor, fontWeight: '500', textTransform: 'uppercase' },
+                    variant === 'text' && gr === 'good' && styles.gradeUnderline,
+                  ]}
+                >
+                  {stacked ? `${gr === 'good' ? '✓' : '✗'}  ${s.pcic[gr]}` : s.pcic[gr]}
+                </Text>
+                <Text style={[styles.gradePreview, { color: labelColor }]}>{previews[gr]}</Text>
               </BrutalBox>
             );
           }
@@ -253,6 +272,11 @@ const styles = StyleSheet.create({
   brutalGradesRow: { alignSelf: 'stretch' },
   brutalGrade: { flex: 1 },
   brutalGradeBox: { flex: 1, paddingVertical: 8, alignItems: 'center', justifyContent: 'center' },
+  // PLAN-temak 6E (senior): a két gomb egymás alatt, teljes szélességben.
+  gradesStacked: { flexDirection: 'column' },
+  brutalGradeStacked: { alignSelf: 'stretch' },
+  brutalGradeBoxStacked: { paddingVertical: 10, alignItems: 'center', justifyContent: 'center' },
+  gradeUnderline: { textDecorationLine: 'underline' },
   gradeBtn: {
     flex: 1,
     borderRadius: 12,
