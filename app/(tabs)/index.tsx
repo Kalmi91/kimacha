@@ -525,6 +525,7 @@ export default function PcicScreen() {
               targetWords={sentenceCard.targetWords}
               trapWords={sentenceCard.trapWords}
               speechLocale={speechLang(target)}
+              sourceSpeechLocale={speechLang(sourceLang)}
               onResult={() => setSentenceCard(null)}
             />
           </ScrollView>
@@ -537,6 +538,7 @@ export default function PcicScreen() {
             targetSentence={sentenceCard.target}
             strictAccents={strictAccents}
             speechLocale={speechLang(target)}
+            sourceSpeechLocale={speechLang(sourceLang)}
             onResult={() => setSentenceCard(null)}
             dockLift={dockLift}
             dockH={dockH}
