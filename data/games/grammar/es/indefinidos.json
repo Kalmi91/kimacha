@@ -278,7 +278,7 @@
           "femenino + nombre"
         ],
         [
-          "¿Hay cafés cerca de aquí? Sí, hay ___.",
+          "masculino singular, empieza por «alg»: ¿Hay cafés cerca de aquí? Sí, hay ___.",
           "alguno",
           "sin nombre, masculino"
         ],
@@ -519,7 +519,7 @@
       "options": [
         "alguien",
         "algo",
-        "nadie"
+        "algún"
       ],
       "correct": 0,
       "why": {
@@ -535,11 +535,11 @@
           "es": "Algo se usa para cosas; después de la a viene una persona, y aquí se pregunta por alguien; correctamente: ¿Conoces a alguien en Oaxaca?",
           "de": "Algo steht für Sachen; nach dem a folgt eine Person, und hier fragt man nach jemandem; richtig: ¿Conoces a alguien en Oaxaca?"
         },
-        "nadie": {
-          "hu": "A nadie = senki, tagadó szó; a kérdés itt valakit keres, nem tagad; helyesen: ¿Conoces a alguien en Oaxaca?",
-          "en": "Nadie = no one, a negative word; the question looks for someone, it does not negate; correctly: ¿Conoces a alguien en Oaxaca?",
-          "es": "Nadie = ninguna persona, una palabra negativa; la pregunta busca a alguien, no niega; correctamente: ¿Conoces a alguien en Oaxaca?",
-          "de": "Nadie = niemand, ein verneinendes Wort; die Frage sucht jemanden, sie verneint nicht; richtig: ¿Conoces a alguien en Oaxaca?"
+        "algún": {
+          "hu": "Az algún főnév előtt áll (algún amigo); főnév nélkül, személyre alguien kell; helyesen: ¿Conoces a alguien en Oaxaca?",
+          "en": "Algún stands before a noun (algún amigo); for a person without a noun you need alguien; correctly: ¿Conoces a alguien en Oaxaca?",
+          "es": "Algún va delante de un nombre (algún amigo); para una persona sin nombre hace falta alguien; correctamente: ¿Conoces a alguien en Oaxaca?",
+          "de": "Algún steht vor einem Nomen (algún amigo); für eine Person ohne Nomen braucht man alguien; richtig: ¿Conoces a alguien en Oaxaca?"
         }
       },
       "examples": [
@@ -967,7 +967,7 @@
       "id": "indef-form-11",
       "kind": "form",
       "verb": "indefinido",
-      "person": "¿Hay cafés cerca de aquí? Sí, hay ___.",
+      "person": "masculino singular, empieza por «alg»: ¿Hay cafés cerca de aquí? Sí, hay ___.",
       "answer": "alguno",
       "table": "indefinidos"
     },
