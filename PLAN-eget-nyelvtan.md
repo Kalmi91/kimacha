@@ -223,6 +223,68 @@ Munkahely és tiltott fájlok: mint a javítás-briefben. A recept a skill „Eg
 
 ---
 
+## Sáv B (2026-10-01, párhuzamos második sáv, Kálmán 00:20: „ha kell indíts több subagentet, hogy párhuzamosan tudjanak dolgozni”)
+
+Munkahely `C:\AI\kimacha-wt-eget-nyelvtan-b`, ág `nyelvtan-b` (379a915-ről). Az A sáv (`nyelvtan`, `C:\AI\kimacha-wt-eget-nyelvtan`) a J1-F4 + 1-9. tételeken dolgozik; ez a sáv a queue végét viszi, hogy ne érjenek egymáshoz. Mindkét sáv a `lib/games/content/es.ts`-t és a darabszám-tesztet bővíti: ezt a reggeli összefésülés oldja meg (`nyelvtan-b` → `nyelvtan`), éjjel nincs rebase, nincs push ebből a sávból.
+A „BRIEF új lecke (2026-10-01 …)” érvényes, a munkahely helyett ez a worktree. A cap mindkét sávra: 09:00 CDMX (Kálmán 00:20: „a”).
+
+- [x] B1. `ojala-quizas` (B1 exam, SUBJ) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit 37ac449 (00:35; audit 0 P1/0 P2, jest 1566 passed/132 suite, tsc 0, lint 0 error; 12 választós + 1 match + 12 form + 7 why, `tense` mindenen, transform nélkül; glossary: quizás, tal vez, llueva, venga)
+  - minta: `Ojalá ___ mañana.` → llueva
+  - minta: `A lo mejor ___ (ella) hoy.` → viene
+  - minta: `Quizás ___ (ella), pero lo dudo mucho.` → venga
+- [x] B2. `relativos` (B1 full) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `feat(grammar): relativos lesson (nyelvtan)` (00:45; audit 0 P1/0 P2, jest 1579 passed/132 suite, tsc 0, lint 0 error; 12 választós + 1 match + 12 form + 7 why, nincs `tense`/transform (nem igeidős téma); glossary nincs)
+  - minta: `La película ___ vimos ayer fue muy buena.` → que
+  - minta: `El chico ___ conocí ayer es de Puebla.` → que (nem: que lo)
+  - minta: `La mujer con ___ hablé es mi tía.` → quien (nem: quién)
+- [x] B3. `perifrasis` (B1 full) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `feat(grammar): perifrasis lesson (nyelvtan)` (00:58; audit 0 P1/0 P2, jest 1592 passed/132 suite, tsc 0, lint 0 error; 12 választós + 1 match + 12 form + 7 why, nincs `tense`/transform (nem igeidős téma); glossary nincs; a 7 körülírás: empezar a, ponerse a, acabar de, volver a, dejar de, seguir + gerundio, llevar + gerundio, a tener que/poder/querer az A1 `perifrasis-modales`-é)
+  - minta: `Mi hermano ___ de beber café hace un año.` → dejó
+  - minta: `Nosotros ___ a trabajar a las ocho.` → empezamos (nem: empiezamos)
+  - minta: `Llegamos a casa y nos ___ a cocinar.` → ponemos
+- [x] B4. `pluscuamperfecto` (B1 full) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `feat(grammar): pluscuamperfecto lesson (nyelvtan)` (01:07; audit 0 P1/0 P2, jest 1605 passed/132 suite, tsc 0, lint 0 error; 12 választós + 1 match + 12 form + 7 why, nincs `tense`/transform; glossary nincs; TenseId-bővítés kell: pluscuamperfecto, /kimacha_nyelvtan)
+  - minta: `Cuando llegué, el tren ya ___.` → había salido
+  - minta: `Nosotros ya ___ cuando ellos llegaron.` → habíamos cenado
+  - minta: `hacer` + `vosotros` → habíais hecho
+- [x] B5. `indefinidos` (A2 full) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `feat(grammar): indefinidos lesson (nyelvtan)` (01:17; audit 0 P1/0 P2, jest 1618 passed/132 suite, tsc 0, lint 0 error; 12 választós + 1 match + 12 form + 7 why, nincs `tense`/transform (nem igeidős téma); glossary: alguno, alguna, ninguno, ninguna; megj.: a GRAMMAR_TIER szerint `indefinidos` = core, nem full, a kódhoz nem nyúltam)
+  - minta: `¿Quieres ___ de beber?` → algo
+  - minta: `No veo a ___ en la calle.` → nadie
+  - minta: `¿Hay mesas libres? No hay ___.` → ninguna (nem: ninguno)
+- [x] B6. `gerundio-participio-construcciones` (B2 exam) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `feat(grammar): gerundio-participio-construcciones lesson (nyelvtan)` (01:28; audit 0 P1/0 P2, jest 1631 passed/132 suite, tsc 0, lint 0 error; 12 választós + 1 match + 12 form + 7 why, nincs `tense`/transform (nem igeidős téma); glossary: siendo, leyendo, leídos)
+  - minta: `Una vez ___ las puertas, entramos.` → abiertas (nem: abiertos)
+  - minta: `Salió de casa y ___ a la oficina.` → llegó (nem: llegando)
+  - minta: `Llevo ___ (ver) tres películas.` → vistas
+- [x] B7. `lo-neutro` (B2 exam) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `feat(grammar): lo-neutro lesson (nyelvtan)` (01:38; audit 0 P1/0 P2, jest 1644 passed/132 suite, tsc 0, lint 0 error; 12 választós + 1 match + 12 form + 7 why, nincs `tense`/transform (nem igeidős téma); glossary nincs)
+  - minta: `Para mí, ___ más importante es la familia.` → lo (nem: el, la)
+  - minta: `Mira ___ que son tus hijos.` → lo grandes (nem: lo grande)
+  - minta: `No sabes ___ (bien) canta mi hermana.` → lo bien que
+- [x] B8. `pasiva-ser-participio` (B2 exam) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `feat(grammar): pasiva-ser-participio lesson (nyelvtan)` (01:50; audit 0 P1/0 P2, jest 1657 passed/132 suite, tsc 0, lint 0 error; 12 választós + 1 match + 12 form + 7 why, nincs `tense`/transform (nem igeidős téma); glossary nincs)
+  - minta: `La casa fue ___ por mi abuelo.` → construida (nem: construido)
+  - minta: `Las fotos ___ tomadas por mi hermano.` → fueron (nem: fue)
+  - minta: `Antes, los niños ___ (llevar) al colegio por su tío.` → eran llevados
+- [x] B9. `subjuntivo-perfecto` (B2 exam, SUBJ) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `feat(grammar): subjuntivo-perfecto lesson (nyelvtan)` (02:02; audit 0 P1/0 P2, jest 1670 passed/132 suite, tsc 0, lint 0 error; 12 választós + 1 match + 12 form + 7 why, nincs `tense`/transform; glossary: hubiera, hubieras, hubieran, hubiéramos, habría, habrás, llámame; egy tábla (haya + participio), a hubiera-alakok a törzsben, mert két azonos igés tábla a form-kérdésben igeidő-jelzés nélkül félreérthető; TenseId-bővítés kell: subjuntivo-perfecto, /kimacha_nyelvtan)
+  - minta: `No creo que Ana ya ___ llegado.` → haya (nem: ha)
+  - minta: `Ojalá ___ (yo) estudiado más antes del examen.` → hubiera (nem: haya)
+  - minta: `hacer` + `vosotros` → hayáis hecho
+- [x] B10. `concesivas` (B2 full) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `feat(grammar): concesivas lesson (nyelvtan)` (02:15; audit 0 P1/0 P2, jest 1683 passed/132 suite, tsc 0, lint 0 error; 12 választós + 1 match + 12 form + 7 why, nincs `tense`/transform (nem igeidős téma); glossary nincs; megj.: a GRAMMAR_TIER szerint `concesivas` = exam, nem full, a kódhoz nem nyúltam)
+  - minta: `Aunque ___ tarde mañana, el jefe nos esperará.` → lleguemos (nem: llegamos)
+  - minta: `A pesar ___ ruido, mi hija duerme muy bien.` → del (nem: de el)
+  - minta: `Aunque ___ (tener, ella) dos años, ya habla mucho.` → tiene
+- [x] B11. `futuro-condicional-perfecto` (C1 exam) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `feat(grammar): futuro-condicional-perfecto lesson (nyelvtan)` (02:27; audit 0 P1/0 P2, jest 1696 passed/132 suite, tsc 0, lint 0 error; 12 választós + 1 match + 12 form (8 a habré-táblán, 4 a haber-aux referencia-táblán: condicional de haber) + 7 why, nincs `tense`/transform; glossary: habría, habríamos, habrían, leído, hubiera; a valószínűség (habrá llegado) csak egy szabálypontban érintve, a `probabilidad-con-tiempos`-é; egy ragozási tábla (habré + participio), mert két azonos igés tábla igeidő-jelzés nélkül félreérthető; TenseId-bővítés kell: futuro-condicional-perfecto, /kimacha_nyelvtan)
+  - minta: `Para el viernes ya ___ el informe.` → habré terminado
+  - minta: `Yo, en tu lugar, ___ el contrato antes de firmar.` → habría leído
+  - minta: `Para mañana ya ___ la tarea.` → habré hecho (nem: habré hacido)
+- [x] B12. `leismo-laismo` (C1 exam) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `feat(grammar): leismo-laismo lesson (nyelvtan)` (02:40; audit 0 P1/0 P2, jest 1709 passed/132 suite, tsc 0, lint 0 error; 12 választós + 1 match + 12 form (egy tábla: 4 személy × ver/invitar/escribir/preguntar, a cella névmás + ige) + 7 why, nincs `tense`/transform (nem igeidős téma); glossary: conozco; a leísmo de persona (férfi, egyes szám, ibériai) csak a magyarázatban/`wrong`-ban, a lecke a latin-amerikai normát gyakoroltatja; a ch-01 és ch-12 `le` opciója ibériai leísmo, a `wrong` ezt kimondja)
+  - minta: `A mi jefe ___ vi ayer en la calle.` → lo (a le: ibériai leísmo, a lecke a latin-amerikai normát kéri)
+  - minta: `A mi hermana ___ dije la verdad.` → le (nem: la)
+  - minta: `A mis tías ___ mandé un mensaje anoche.` → les (nem: las)
+- [x] B13. `probabilidad-con-tiempos` (C1 exam) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `feat(grammar): probabilidad-con-tiempos lesson (nyelvtan)` (02:54; audit 0 P1/0 P2, jest 1722 passed/132 suite, tsc 0, lint 0 error; 12 választós + 1 match + 12 form + 7 why, nincs `tense`/transform (a lecke funkció, nem egy igeidő: a négy alakból kettő nincs a TENSE_IDS-ben, és a presente→futuro átírás a tense-drillben sima jövőként olvasódna); glossary: habría, habrían, tendría, saldrían; egy tábla (12 mondat: 3 egyszerű jövő, 3 habrá + participio, 3 egyszerű feltételes, 3 habría + participio), a form-mondatokban „No sé,” jelzi a találgatást; TenseId-bővítés kell: futuro-condicional-perfecto, /kimacha_nyelvtan)
+  - minta: `Ya son las ocho: Ana ya ___ a casa.` → habrá llegado (nem: habría llegado)
+  - minta: `Cuando lo llamé, ___ en el cine, porque no contestó.` → estaría (nem: estaba)
+  - minta: `¿Cuánto costaba el boleto antes? No sé, ___ (costar) cinco pesos.` → costaría
+- [x] B14. `relativos-complejos` (C1 exam) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `feat(grammar): relativos-complejos lesson (nyelvtan)` (03:10; audit 0 P1/0 P2, jest 1735 passed/132 suite, tsc 0, lint 0 error; 12 választós + 1 match + 12 form + 7 why, nincs `tense`/transform (nem igeidős téma); glossary: cuyo, cuya, cuyas; egy tábla (12 mondat: 4 cuyo-alak, 3 névelős szabad relatívum, 2 lo que, 3 elöljáró/névelő a que előtt), a form-lyukak egyértelmű válaszúak (el que/el cual csere nem fér a form-mondatokba, az a választós tételekben van))
+  - minta: `Ese es el autor ___ novelas leo siempre.` → cuyas (nem: cuyo)
+  - minta: `Llegó tarde a la reunión, ___ molestó mucho al jefe.` → lo cual (nem: la cual)
+  - minta: `Los amigos ___ los que cuento son pocos.` → con
+
 ## BRIEF ir-a-infinitivo (1. lépés, NY6a)
 
 Worktree gyökér: `/home/kalmi/ai/kimacha-wt-eget-nyelvtan`. Minden `node` / `npx` innen fut.

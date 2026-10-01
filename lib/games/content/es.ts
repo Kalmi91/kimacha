@@ -30,10 +30,24 @@ import grammarEsEstarGerundio from '@/data/games/grammar/es/estar-gerundio.json'
 import grammarEsVerbosReflexivos from '@/data/games/grammar/es/verbos-reflexivos.json';
 import grammarEsSubjuntivoPresenteForma from '@/data/games/grammar/es/subjuntivo-presente-forma.json';
 import grammarEsSubjuntivoDisparadores from '@/data/games/grammar/es/subjuntivo-disparadores.json';
+import grammarEsOjalaQuizas from '@/data/games/grammar/es/ojala-quizas.json';
 import grammarEsTemporalesSubjuntivo from '@/data/games/grammar/es/temporales-subjuntivo.json';
 import grammarEsCondicionalSimple from '@/data/games/grammar/es/condicional-simple.json';
 import grammarEsCondicionalesTipo1 from '@/data/games/grammar/es/condicionales-tipo1.json';
+import grammarEsRelativos from '@/data/games/grammar/es/relativos.json';
+import grammarEsPerifrasis from '@/data/games/grammar/es/perifrasis.json';
+import grammarEsPluscuamperfecto from '@/data/games/grammar/es/pluscuamperfecto.json';
+import grammarEsIndefinidos from '@/data/games/grammar/es/indefinidos.json';
+import grammarEsGerundioParticipio from '@/data/games/grammar/es/gerundio-participio-construcciones.json';
+import grammarEsLoNeutro from '@/data/games/grammar/es/lo-neutro.json';
+import grammarEsPasivaSerParticipio from '@/data/games/grammar/es/pasiva-ser-participio.json';
 import grammarEsSubjuntivoImperfecto from '@/data/games/grammar/es/subjuntivo-imperfecto.json';
+import grammarEsSubjuntivoPerfecto from '@/data/games/grammar/es/subjuntivo-perfecto.json';
+import grammarEsConcesivas from '@/data/games/grammar/es/concesivas.json';
+import grammarEsFuturoCondicionalPerfecto from '@/data/games/grammar/es/futuro-condicional-perfecto.json';
+import grammarEsLeismoLaismo from '@/data/games/grammar/es/leismo-laismo.json';
+import grammarEsProbabilidadConTiempos from '@/data/games/grammar/es/probabilidad-con-tiempos.json';
+import grammarEsRelativosComplejos from '@/data/games/grammar/es/relativos-complejos.json';
 import grammarEsCondicionalesTipo23 from '@/data/games/grammar/es/condicionales-tipo2-3.json';
 import grammarEsEstiloIndirecto from '@/data/games/grammar/es/estilo-indirecto.json';
 import grammarEsComparativosSuperlativos from '@/data/games/grammar/es/comparativos-superlativos.json';
@@ -126,12 +140,26 @@ export const esContent: LanguageContentBundle = {
     grammarEsLlevarTraerIrVenir,
     grammarEsSubjuntivoPresenteForma,
     grammarEsSubjuntivoDisparadores,
+    grammarEsOjalaQuizas,
     grammarEsTemporalesSubjuntivo,
     grammarEsCondicionalSimple,
     grammarEsCondicionalesTipo1,
+    grammarEsRelativos,
     grammarEsSeImpersonalPasiva,
+    grammarEsPerifrasis,
     grammarEsPorParaAvanzado,
+    grammarEsPluscuamperfecto,
+    grammarEsIndefinidos,
+    grammarEsGerundioParticipio,
+    grammarEsLoNeutro,
+    grammarEsPasivaSerParticipio,
     grammarEsSubjuntivoImperfecto,
+    grammarEsSubjuntivoPerfecto,
+    grammarEsConcesivas,
+    grammarEsFuturoCondicionalPerfecto,
+    grammarEsLeismoLaismo,
+    grammarEsProbabilidadConTiempos,
+    grammarEsRelativosComplejos,
     grammarEsCondicionalesTipo23,
     grammarEsEstiloIndirecto,
     grammarEsComparativosSuperlativos,
