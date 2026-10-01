@@ -111,6 +111,7 @@ export const GRAMMAR_TIER: Record<string, GrammarTier> = {
   'se-impersonal-pasiva': 'exam',
   perifrasis: 'exam',
   'por-para-avanzado': 'exam',
+  'verbos-preposicion': 'exam',
   // --- B2 ---
   'subjuntivo-imperfecto': 'core',
   'subjuntivo-perfecto': 'exam',
@@ -551,6 +552,13 @@ export const GRAMMAR_SYLLABUS: SyllabusTopic[] = [
     unit: 'b1-estructuras',
     title: { hu: 'Por és para: haladó esetek', en: 'Por and para: advanced uses', es: 'Por y para: usos avanzados', de: 'Por und para: fortgeschritten' },
     blurb: { hu: 'Állandósult kifejezések és a nehéz határesetek.', en: 'Set phrases and the genuinely hard cases.', es: 'Expresiones fijas y los casos difíciles.', de: 'Feste Wendungen und die harten Fälle.' },
+  },
+  {
+    id: 'verbos-preposicion',
+    level: 'B1',
+    unit: 'b1-estructuras',
+    title: { hu: 'Igék állandó elöljáróval', en: 'Verbs with fixed prepositions', es: 'Verbos con preposición', de: 'Verben mit fester Präposition' },
+    blurb: { hu: 'Pensar en, soñar con, depender de: az ige dönti el az elöljárót.', en: 'Pensar en, soñar con, depender de: the verb decides the preposition.', es: 'Pensar en, soñar con, depender de: el verbo decide la preposición.', de: 'Pensar en, soñar con, depender de: das Verb bestimmt die Präposition.' },
   },
   // ========================= B2 =========================
   {
