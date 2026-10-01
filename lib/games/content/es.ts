@@ -35,6 +35,7 @@ import grammarEsCondicionalesTipo1 from '@/data/games/grammar/es/condicionales-t
 import grammarEsRelativos from '@/data/games/grammar/es/relativos.json';
 import grammarEsPerifrasis from '@/data/games/grammar/es/perifrasis.json';
 import grammarEsPluscuamperfecto from '@/data/games/grammar/es/pluscuamperfecto.json';
+import grammarEsIndefinidos from '@/data/games/grammar/es/indefinidos.json';
 import grammarEsSubjuntivoImperfecto from '@/data/games/grammar/es/subjuntivo-imperfecto.json';
 import grammarEsCondicionalesTipo23 from '@/data/games/grammar/es/condicionales-tipo2-3.json';
 import grammarEsEstiloIndirecto from '@/data/games/grammar/es/estilo-indirecto.json';
@@ -119,6 +120,7 @@ export const esContent: LanguageContentBundle = {
     grammarEsRelativos,
     grammarEsPerifrasis,
     grammarEsPluscuamperfecto,
+    grammarEsIndefinidos,
     grammarEsSubjuntivoImperfecto,
     grammarEsCondicionalesTipo23,
     grammarEsEstiloIndirecto,
