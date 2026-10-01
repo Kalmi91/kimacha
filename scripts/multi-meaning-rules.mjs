@@ -1,12 +1,14 @@
 // Több jelentésű szavak kapuja (PLAN-tobbjelentes.md 2. lépés, R11-R14). Közös a két kapuban:
 // words-open-check.mjs (kérdés `en`, válasz `es`, hint `hint_en`) és validate-en-track.mjs (kérdés `es`, válasz `en`, hint `hint_es`).
 //   R11  ha egy normalizált kérdés legalább két kártyán szerepel, mindegyiknek kötelező a hint
-//   R12  a hintben pontosan egy *…* jelölés van, a jelölt rész a kérdés egyik szavával kezdődik, legfeljebb 8 szó
+//   R12  a hintben pontosan egy *…* jelölés van, a jelölt szó első 2 betűje (kisbetű, ékezet nélkül) egyezik a kérdés
+//        valamelyik szavának első 2 betűjével (juego/jugar, llevo/llevar, played/play), legfeljebb 8 szó
 //   R13  hint csak R11 szerinti kártyán van
 //   R14  a perjeles válaszban minden alternatíva nem üres, nincs ismétlés, az elválasztó pontosan " / "
 // A normalizálás: kisbetű, szóköz-összevonás, trim, vezető névelő nélkül (S3).
 
 const HINT_MAX_WORDS = 8;
+const fold = (w) => w.normalize('NFD').replace(/[̀-ͯ]/g, '');
 
 export function checkMultiMeaning({ cards, qKey, aKey, hintKey, articles, ignore = [], tag, fail }) {
   const norm = (q) => {
@@ -44,10 +46,10 @@ export function checkMultiMeaning({ cards, qKey, aKey, hintKey, articles, ignore
         } else {
           const words = h.replace(/\*/g, '').split(/\s+/).filter(Boolean).length;
           if (words > HINT_MAX_WORDS) fail('R12', `${tag(c)}: ${hintKey} ${words} szó (max ${HINT_MAX_WORDS}): "${h}"`);
-          const m = marked[1].trim().toLowerCase();
+          const m = fold(marked[1].trim().split(/\s+/)[0].toLowerCase()).slice(0, 2);
           const qWords = k.split(/[^\p{L}'’]+/u).filter((w) => w && !skip.has(w));
-          if (!qWords.some((w) => m.startsWith(w))) {
-            fail('R12', `${tag(c)}: a jelölt "${marked[1]}" nem a kérdés ("${k}") egyik szavával kezdődik: "${h}"`);
+          if (!qWords.some((w) => fold(w).slice(0, 2) === m)) {
+            fail('R12', `${tag(c)}: a jelölt "${marked[1]}" első 2 betűje nem egyezik a kérdés ("${k}") egyik szavával sem: "${h}"`);
           }
         }
       }
