@@ -16,6 +16,12 @@ import enA0 from '@/data/words/en/a0.json';
 import enA1 from '@/data/words/en/a1.json';
 import enA2 from '@/data/words/en/a2.json';
 import enB1 from '@/data/words/en/b1.json';
+// PLAN-learn-words-open (2026-10-01): az en→es pakli forrása az új, 600
+// kártyás data/words-open (o<order> id-tér, lásd itemsFromOpen).
+import openA1 from '@/data/words-open/a1.json';
+import openA2 from '@/data/words-open/a2.json';
+import openB1 from '@/data/words-open/b1.json';
+import openB2 from '@/data/words-open/b2.json';
 
 export type PcicKind = 'word' | 'phrase' | 'sentence' | 'pattern';
 export type PcicLevel = 'A1' | 'A2' | 'B1' | 'B2';
@@ -26,9 +32,11 @@ export const PCIC_LEVELS: PcicLevel[] = ['A1', 'A2', 'B1', 'B2'];
 // mindig false lent), ezért az "A1+"/"A2+" virtuális szint kiesik a
 // VÁLASZTHATÓ szintek közül. A `PcicViewLevel` típus marad A1+/A2+-szal
 // (LEVEL_LABELS, realLevelOfView visszakompatibilitás), csak a
-// PCIC_VIEW_LEVELS lista rövidült.
+// PCIC_VIEW_LEVELS lista rövidült. PLAN-learn-words-open 2. lépés: a B2 is
+// választható (en→es 150 tétel); az es→en iránynál B2 üres, ott a szint-
+// választók a "0 tétel = nem kínáljuk fel" szűrővel kihagyják.
 export type PcicViewLevel = PcicLevel | 'A1+' | 'A2+';
-export const PCIC_VIEW_LEVELS: PcicViewLevel[] = ['A1', 'A2', 'B1'];
+export const PCIC_VIEW_LEVELS: PcicViewLevel[] = ['A1', 'A2', 'B1', 'B2'];
 
 // s1 (anki-ui-terv.html): a négy szint felirata a szint-választó lapon.
 export const LEVEL_LABELS: Record<PcicViewLevel, string> = {
@@ -95,15 +103,61 @@ function itemsFromWords(entries: WordEntry[], idPrefix: 'w' | 'e' = 'w'): PcicIt
     }));
 }
 
-// A1 nézet = a0 + a1 (a1 fájl önmagában túl kevés lenne); A2 = a2; B1 = b1;
-// B2 az adatban marad (data/words/b2.json), csak a PCIC_VIEW_LEVELS nem
-// kínálja fel a szint-választón.
-const ITEMS_BY_LEVEL_ES: Record<PcicLevel, PcicItem[]> = {
-  A1: itemsFromWords([...getWordsForLevel('A0'), ...getWordsForLevel('A1')], 'w'),
-  A2: itemsFromWords(getWordsForLevel('A2'), 'w'),
-  B1: itemsFromWords(getWordsForLevel('B1'), 'w'),
-  B2: itemsFromWords(getWordsForLevel('B2'), 'w'),
+// PLAN-learn-words-open: a data/words-open kártyáiból (a1/a2/b1/b2.json, A1 =
+// csak a1.json, nincs külön A0). Id-tér: o<order> (a fájl `order` mezője,
+// 1-600), hogy ne ütközzön a régi w<id> és az es→en e<id> id-kkel. A words-open
+// pos-ából csak az app Pos-ába eső szófajok mennek át (det, interj nem).
+type OpenCard = { order: number; pos: string; es: string; en: string; sentence_es: string; sentence_en: string };
+
+const OPEN_POS_TO_PCIC: Partial<Record<string, Pos>> = {
+  noun: 'noun',
+  verb: 'verb',
+  adj: 'adj',
+  adv: 'adv',
+  pron: 'pron',
+  prep: 'prep',
+  num: 'num',
+  conj: 'conj',
 };
+
+function itemsFromOpen(cards: OpenCard[]): PcicItem[] {
+  return cards.map((c) => ({
+    id: `o${c.order}`,
+    es: c.es,
+    en: c.en,
+    kind: kindOfEs(c.es),
+    section: '',
+    order: c.order,
+    pos: OPEN_POS_TO_PCIC[c.pos],
+    exampleEs: c.sentence_es || undefined,
+    exampleEn: c.sentence_en || undefined,
+  }));
+}
+
+// Egysoros kapcsoló: 'legacy'-re állítva az en→es pakli újra a régi
+// data/words/**-ból épül (w<id>), a fájlokhoz nem nyúltunk.
+export const ES_WORD_SOURCE: 'open' | 'legacy' = 'open';
+
+// Legacy: A1 nézet = a0 + a1 (a1 fájl önmagában túl kevés lenne); A2 = a2; B1
+// = b1; B2 = b2 (data/words/*.json).
+function buildItemsByLevelEs(): Record<PcicLevel, PcicItem[]> {
+  if (ES_WORD_SOURCE === 'legacy') {
+    return {
+      A1: itemsFromWords([...getWordsForLevel('A0'), ...getWordsForLevel('A1')], 'w'),
+      A2: itemsFromWords(getWordsForLevel('A2'), 'w'),
+      B1: itemsFromWords(getWordsForLevel('B1'), 'w'),
+      B2: itemsFromWords(getWordsForLevel('B2'), 'w'),
+    };
+  }
+  return {
+    A1: itemsFromOpen(openA1 as OpenCard[]),
+    A2: itemsFromOpen(openA2 as OpenCard[]),
+    B1: itemsFromOpen(openB1 as OpenCard[]),
+    B2: itemsFromOpen(openB2 as OpenCard[]),
+  };
+}
+
+const ITEMS_BY_LEVEL_ES: Record<PcicLevel, PcicItem[]> = buildItemsByLevelEs();
 
 // PLAN-esen (2026-09-28): az es→en irány A1 paklija = data/words/en/a0.json +
 // a1.json (külön A0 nincs), A2 = a2.json (e<id> id-tér, a régi első 50 id-je

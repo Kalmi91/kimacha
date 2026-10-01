@@ -88,7 +88,7 @@ export default function StatsScreen() {
         // FB406: a kártya a tanult szavakat számolja (nem a 21 napos küszöböt elért kevés szót).
         setLevelKnown(countLearned(selCards));
         setLevelTotal(pcicItemsForViewLevel(lvl).length);
-        setOtherLevels(PCIC_VIEW_LEVELS.map(l => ({ level: l, known: countLearned(cardsForViewLevel(cards, l)) })));
+        setOtherLevels(PCIC_VIEW_LEVELS.filter(l => pcicItemsForViewLevel(l).length > 0).map(l => ({ level: l, known: countLearned(cardsForViewLevel(cards, l)) })));
         // FB100 minta, PCIC-dátumokra: a bare 'YYYY-MM-DD' due-t helyi éjfélre
         // egészíti ki, különben `new Date('YYYY-MM-DD')` UTC-éjfélt parseol, és
         // negatív UTC-eltolású zónában (pl. CDMX) egy nappal korábbra csúszna.
