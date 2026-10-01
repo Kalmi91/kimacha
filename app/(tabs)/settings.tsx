@@ -236,10 +236,12 @@ export default function SettingsScreen() {
 
   // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 3. pont): a
   // korábban angolra égetett gombfeliratok a felület nyelvén.
-  const themeOptions: { label: string; value: 'system' | 'light' | 'dark' }[] = [
-    { label: `🔄 ${s.settings.themeAuto}`, value: 'system' },
-    { label: `☀️ ${s.settings.themeLight}`, value: 'light' },
-    { label: `🌙 ${s.settings.themeDark}`, value: 'dark' },
+  // PLAN-fb1001 8. lépés (FB428): az ikon a felirat FÖLÉ kerül külön sorba, hogy a hosszú
+  // felirat ("Automático") 3 oszlopban se csússzon ki a gombból.
+  const themeOptions: { icon: string; label: string; value: 'system' | 'light' | 'dark' }[] = [
+    { icon: '🔄', label: s.settings.themeAuto, value: 'system' },
+    { icon: '☀️', label: s.settings.themeLight, value: 'light' },
+    { icon: '🌙', label: s.settings.themeDark, value: 'dark' },
   ];
 
   // NY12: color palettes, two dots (accent + second color) and the name.
@@ -390,7 +392,13 @@ export default function SettingsScreen() {
             boxStyle={styles.brutalOption}
             onPress={() => setOverride(opt.value)}
           >
-            <Text style={[styles.optionText, styles.brutalOptionText, { color: override === opt.value ? g.onFill : g.ink }]}>
+            <Text style={styles.themeIcon}>{opt.icon}</Text>
+            <Text
+              numberOfLines={1}
+              adjustsFontSizeToFit
+              minimumFontScale={0.8}
+              style={[styles.optionText, styles.brutalOptionText, styles.themeLabel, { color: override === opt.value ? g.onFill : g.ink }]}
+            >
               {opt.label}
             </Text>
           </BrutalBox>
@@ -403,7 +411,13 @@ export default function SettingsScreen() {
             ]}
             onPress={() => setOverride(opt.value)}
           >
-            <Text style={[styles.optionText, { color: override === opt.value ? colors.onTint : colors.text }]}>
+            <Text style={styles.themeIcon}>{opt.icon}</Text>
+            <Text
+              numberOfLines={1}
+              adjustsFontSizeToFit
+              minimumFontScale={0.8}
+              style={[styles.optionText, styles.themeLabel, { color: override === opt.value ? colors.onTint : colors.text }]}
+            >
               {opt.label}
             </Text>
           </Pressable>
@@ -537,50 +551,50 @@ export default function SettingsScreen() {
             {direction[0] === 'en' ? s.settings.directionEnEs : s.settings.directionEsEn}
           </Text>
         </View>
-        <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
+        <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
       </Row>
 
       {/* FB39: entry point into the spelling-practice trainer screen. */}
       <Row onPress={() => router.push('/spelling')}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.spellingPractice(spellingDue, spellingTotal)}</Text>
-        <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
+        <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
       </Row>
 
       {/* Q0: backup (export + share) and restore (pick file + confirm + import). */}
       <Row onPress={handleBackup}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>💾 {s.backup.backup}</Text>
-        <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
+        <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
       </Row>
 
       <Row onPress={handleRestore}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>♻️ {s.backup.restore}</Text>
-        <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
+        <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
       </Row>
 
       {/* PLAN-hibaim.md 3. lépés: import a "Hibáim" kötegből (Drive JSON). */}
       <Row onPress={handleLoadMistakes}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.mistakes.load}</Text>
-        <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
+        <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
       </Row>
 
       {/* PLAN-fb1001 K1 + 7. lépés: haladás-nullázás megerősítéssel, paklinként és a nyelvtanra. */}
       {resetLevels.map((lvl) => (
         <Row key={lvl} onPress={() => handleResetDeck(lvl)}>
           <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.pcic.resetRow(lvl)}</Text>
-          <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
+          <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
         </Row>
       ))}
       {hasGrammarProgress && (
         <Row onPress={handleResetGrammar}>
           <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.resetGrammar}</Text>
-          <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
+          <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
         </Row>
       )}
 
       {/* PLAN-credits.md: word-data attribution screen entry point. */}
       <Row onPress={() => router.push('/credits')}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.credits}</Text>
-        <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
+        <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
       </Row>
 
       {/* FB82: app version, small and grey, so the user can tell which build runs. */}
@@ -645,8 +659,9 @@ const styles = StyleSheet.create({
   container: {
     padding: 24,
     paddingTop: 40,
-    // room under the last row so the FAB never covers it
-    paddingBottom: 96,
+    // room under the last row so the FAB never covers it (PLAN-fb1001 8. lépés: 96 → 120,
+    // a hosszabb lista utolsó sora is a 💬 fölé görgethető)
+    paddingBottom: 120,
   },
   versionText: {
     marginTop: 12,
@@ -692,7 +707,9 @@ const styles = StyleSheet.create({
   brutalStepOuter: { width: 38 },
   brutalStep: { width: 34, height: 34, alignItems: 'center', justifyContent: 'center' },
   brutalOptionOuter: { flex: 1 },
-  brutalOption: { paddingVertical: 12, alignItems: 'center' },
+  // PLAN-fb1001 8. lépés (FB428): flex:1 + középre, hogy az előlap kitöltse a magasabb
+  // szomszéd miatt nyújtott külső dobozt (különben az árnyék lelógott a doboz alól).
+  brutalOption: { paddingVertical: 12, alignItems: 'center', justifyContent: 'center', flex: 1 },
   brutalOptionText: { fontWeight: '500', textTransform: 'uppercase' },
   brutalDot: { borderRadius: 0, borderWidth: 2 },
   brutalPaletteOuter: { flexBasis: '46%' },
@@ -725,6 +742,9 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '600',
   },
+  // PLAN-fb1001 8. lépés (FB428): téma-gomb (3 oszlop): ikon fent, kisebb egysoros felirat.
+  themeIcon: { fontSize: 16, marginBottom: 2 },
+  themeLabel: { fontSize: 11, textAlign: 'center' },
   paletteGroup: {
     flexWrap: 'wrap',
   },
@@ -772,6 +792,12 @@ const styles = StyleSheet.create({
     // push the switch/stepper out of the card, RN text does not shrink on its own.
     flex: 1,
     marginRight: 12,
+  },
+  // PLAN-fb1001 8. lépés: a "→" a sor jobb szélén ül, a szöveg kapja a maradék szélességet.
+  rowArrow: {
+    fontSize: 16,
+    fontWeight: '600',
+    flexShrink: 0,
   },
   // FB65: −/+ stepper for the weekly goal row.
   missingVoiceText: { fontSize: 13, lineHeight: 18, flex: 1 },
