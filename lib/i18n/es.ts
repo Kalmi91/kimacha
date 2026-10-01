@@ -162,6 +162,10 @@ const es: Strings = {
     directionEnEs: 'Inglés → Español',
     directionEsEn: 'Español → Inglés',
     credits: 'Créditos',
+    // PLAN-fb1001 7. lépés (FB431): a nyelvtan-haladás nullázó sora és megerősítése.
+    resetGrammar: '🗑️ Reiniciar progreso de gramática',
+    resetGrammarTitle: 'Reiniciar progreso de gramática',
+    resetGrammarMessage: 'Esto borra todo el progreso de lecciones y práctica de gramática. ¿Estás seguro?',
   },
   backup: {
     backup: 'Copia de seguridad',
@@ -318,6 +322,7 @@ const es: Strings = {
     resetConfirmYes: 'Reiniciar',
     // PLAN-fb1001 K1: a Beállítások sor, a nullázódó szint nevével.
     resetRow: (level: string) => `🗑️ Reiniciar progreso (${level})`,
+    resetConfirmLevel: (level: string) => `Esto borra todo el progreso del mazo ${level}. ¿Estás seguro?`,
     undo: 'Deshacer',
     dontLearn: 'No aprender esto',
     addToSpelling: '✎ Añadir a ortografía',

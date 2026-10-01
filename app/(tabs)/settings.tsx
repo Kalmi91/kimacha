@@ -11,7 +11,8 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { t, setLanguage, notifyLanguageChange } from '@/lib/i18n';
 import { type Level } from '@/data/words';
 import { getDb } from '@/lib/database';
-import { setPcicTarget, realLevelOfView, type PcicTarget, type PcicViewLevel } from '@/data/pcic';
+import { setPcicTarget, pcicItemsForLevel, PCIC_LEVELS, type PcicTarget, type PcicLevel } from '@/data/pcic';
+import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
 import { validateBackupPayload } from '@/lib/backup';
 import { validateMistakesPayload } from '@/lib/mistakes/format';
 import {
@@ -38,6 +39,20 @@ import { loadVoices, hasVoiceFor } from '@/lib/speech';
 import { languages } from '@/lib/languages';
 
 const appVersionLabel = appBuildTag();
+
+// PLAN-fb1001 7. lépés (FB431): a nullázható paklik (a szintek, amiken van
+// haladás) és az, hogy van-e nyelvtan-haladás. Az aktív irány szavai számítanak.
+async function loadResettable(): Promise<{ levels: PcicLevel[]; grammar: boolean }> {
+  const db = getDb();
+  const onboarding = await db.getOnboarding();
+  if (onboarding) setPcicTarget(onboarding.target as PcicTarget);
+  const [cards, grammarRows] = await Promise.all([db.getPcicCards(), db.getGameProgress(GRAMMAR_PROGRESS_KEY)]);
+  const ids = new Set(cards.map((c) => c.itemId));
+  return {
+    levels: PCIC_LEVELS.filter((lvl) => pcicItemsForLevel(lvl).some((i) => ids.has(i.id))),
+    grammar: grammarRows.length > 0,
+  };
+}
 
 // NY19: a beállítás-sor: brutalista palettán BrutalBox, classic palettán a mai kártya-sor.
 function Row({ onPress, children }: { onPress?: () => void; children: ReactNode }) {
@@ -115,9 +130,10 @@ export default function SettingsScreen() {
   // hint the learner only hears a wrong-language reading (or now, silence) and
   // has no idea it is a missing system voice, not the app.
   const [missingVoices, setMissingVoices] = useState<string[]>([]);
-  // PLAN-fb1001 K1: az aktív pár PCIC-szintje, a "Haladás nullázása" sor ennek a
-  // valódi szintjét nullázza (Learn-nézet: B1 az alap, mint a Learn fülön).
-  const [pcicLevel, setPcicLevel] = useState<PcicViewLevel>('B1');
+  // PLAN-fb1001 K1/7. lépés: a nullázó sorok: egy pakli-sor minden szintre, amin van
+  // haladás, és egy nyelvtan-sor, ha van nyelvtan-haladás.
+  const [resetLevels, setResetLevels] = useState<PcicLevel[]>([]);
+  const [hasGrammarProgress, setHasGrammarProgress] = useState(false);
 
   useFocusEffect(
     useCallback(() => {
@@ -139,7 +155,10 @@ export default function SettingsScreen() {
       Promise.all([db.getSpellingDueCount(), db.getPcicSpellingDueCount()]).then(([a, b]) => setSpellingDue(a + b));
       Promise.all([db.getSpellingListCount(), db.getPcicSpellingListCount()]).then(([a, b]) => setSpellingTotal(a + b));
       db.getArticlePicker().then(setArticlePicker);
-      db.getPcicLevel().then(setPcicLevel);
+      loadResettable().then(({ levels, grammar }) => {
+        setResetLevels(levels);
+        setHasGrammarProgress(grammar);
+      });
     }, [])
   );
 
@@ -303,22 +322,29 @@ export default function SettingsScreen() {
     }
   };
 
-  // PLAN-fb1001 K1: a Learn fejlécéből ide költözött haladás-nullázás. Csak az AKTÍV
-  // szint kártyáit üríti (a haladás szintenként külön él); "A1+"/"A2+" nézeten a
-  // mögöttes valódi szintet (PLAN-fb0924 8. lépés). A Learn fókuszra újratölt.
-  const handleResetProgress = () => {
-    const doReset = async () => {
-      await getDb().resetPcicCards(realLevelOfView(pcicLevel).toLowerCase());
+  // PLAN-fb1001 K1 + 7. lépés (FB431): a Learn fejlécéből ide költözött haladás-nullázás,
+  // paklinként (szintenként) és a nyelvtanra külön; mind megerősítéssel. A Learn és a
+  // Kurzus fül fókuszra újratölt, a sorok itt azonnal frissülnek.
+  const confirmReset = (title: string, message: string, doReset: () => Promise<void>) => {
+    const run = async () => {
+      await doReset();
+      const r = await loadResettable();
+      setResetLevels(r.levels);
+      setHasGrammarProgress(r.grammar);
     };
     if (Platform.OS === 'web') {
-      if (window.confirm(`${s.pcic.resetConfirmTitle}\n${s.pcic.resetConfirmMessage}`)) doReset();
+      if (window.confirm(`${title}\n${message}`)) run();
     } else {
-      Alert.alert(s.pcic.resetConfirmTitle, s.pcic.resetConfirmMessage, [
+      Alert.alert(title, message, [
         { text: s.feedback.cancel, style: 'cancel' },
-        { text: s.pcic.resetConfirmYes, style: 'destructive', onPress: doReset },
+        { text: s.pcic.resetConfirmYes, style: 'destructive', onPress: run },
       ]);
     }
   };
+  const handleResetDeck = (lvl: PcicLevel) =>
+    confirmReset(s.pcic.resetConfirmTitle, s.pcic.resetConfirmLevel(lvl), () => getDb().resetPcicCards(lvl.toLowerCase()));
+  const handleResetGrammar = () =>
+    confirmReset(s.settings.resetGrammarTitle, s.settings.resetGrammarMessage, () => getDb().resetGameProgress(GRAMMAR_PROGRESS_KEY));
 
   // PLAN-hibaim.md 3. lépés: pick a kimacha-hibaim JSON (the /hibaim skill's
   // output), validate it with the app's own rules (lib/mistakes/format.ts),
@@ -537,11 +563,19 @@ export default function SettingsScreen() {
         <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
       </Row>
 
-      {/* PLAN-fb1001 K1: haladás-nullázás (megerősítéssel), az aktív szintre. */}
-      <Row onPress={handleResetProgress}>
-        <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.pcic.resetRow(realLevelOfView(pcicLevel))}</Text>
-        <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
-      </Row>
+      {/* PLAN-fb1001 K1 + 7. lépés: haladás-nullázás megerősítéssel, paklinként és a nyelvtanra. */}
+      {resetLevels.map((lvl) => (
+        <Row key={lvl} onPress={() => handleResetDeck(lvl)}>
+          <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.pcic.resetRow(lvl)}</Text>
+          <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
+        </Row>
+      ))}
+      {hasGrammarProgress && (
+        <Row onPress={handleResetGrammar}>
+          <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.resetGrammar}</Text>
+          <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
+        </Row>
+      )}
 
       {/* PLAN-credits.md: word-data attribution screen entry point. */}
       <Row onPress={() => router.push('/credits')}>
