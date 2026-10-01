@@ -214,8 +214,7 @@ hirdetés. A haladásod nem hagyja el a készüléket, és fájlba magad is ment
 ```
 
 ### Kategória és címkék
-* App kategória: **Education** (alternatíva: Educational games, ha a Játék fül
-  miatt inkább játéknak akarod pozicionálni; Education a pontosabb).
+* App kategória: **Education**.
 * Címkék: Language learning, Education, Vocabulary, Flashcards, Spanish.
 * Kapcsolattartási e-mail: `edenysza01@gmail.com`.
 * Weboldal: nem kötelező, üresen hagyható.
@@ -405,6 +404,9 @@ Kész fájlok (`store/screenshots/`, mind 1080x1920 PNG):
 | `04-games.png` | 12 játék a Game fülön | 12 games, played with the words you know |
 | `05-stats.png` | statisztika + ütemezés | See what is scheduled and when |
 | `06-settings.png` | beállítások (napi új szó, heti cél, nehézség) | You set the pace, not the app |
+
+⚠ A Play-vágás (2026-09-23) óta a `02-topics.png` (témakör-fa) és a `04-games.png` (Game fül)
+olyan képernyőt mutat, ami már nincs az appban: feltöltés előtt újra kell fotózni.
 
 Megjegyzés: a `04-games.png` friss profilon készült, ezért a játékok többségénél
 „N more words needed" felirat látszik. Ha feloldott állapotban akarod mutatni,
