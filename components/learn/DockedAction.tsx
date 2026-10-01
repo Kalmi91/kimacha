@@ -38,6 +38,7 @@ export default function DockedAction({ label, onPress, tone, color, bottom, colo
   const checkFill = useSkinDecor().checkFill;
   return (
     <View
+      testID="learn-dock"
       style={[styles.dockedAction, { bottom, backgroundColor: colors.background }]}
       onLayout={onHeight ? (e: LayoutChangeEvent) => onHeight(e.nativeEvent.layout.height) : undefined}
     >

@@ -8,6 +8,7 @@ import CheckMark from '../CheckMark';
 import DoneBadge from '../DoneBadge';
 import ResultBadge from '../ResultBadge';
 import Colors from '@/constants/Colors';
+import { contrastRatio } from '@/constants/Skins';
 
 jest.mock('@/lib/ThemeContext', () => ({
   useTheme: () => ({ theme: 'brand-light' }),
@@ -32,6 +33,18 @@ describe('ResultBadge', () => {
     expect(st.borderStyle).toBe('dashed');
     expect(screen.getByText('✗')).toBeTruthy();
     expect(screen.getByText('Not quite!')).toBeTruthy();
+  });
+
+  it('a felirat és a jel olvasható a kitöltésen (WCAG 4,5), mindkét állapotban (PLAN-temak 7H)', () => {
+    const { unmount } = render(<ResultBadge correct testID="ok" />);
+    const okFill = Colors['brand-light'].successFill;
+    expect(contrastRatio(StyleSheet.flatten(screen.getByText('Correct!').props.style).color, okFill)).toBeGreaterThanOrEqual(4.5);
+    expect(contrastRatio(StyleSheet.flatten(screen.getByText('✓').props.style).color, okFill)).toBeGreaterThanOrEqual(4.5);
+    unmount();
+    render(<ResultBadge correct={false} testID="bad" />);
+    const badFill = Colors['brand-light'].danger;
+    expect(contrastRatio(StyleSheet.flatten(screen.getByText('Not quite!').props.style).color, badFill)).toBeGreaterThanOrEqual(4.5);
+    expect(contrastRatio(StyleSheet.flatten(screen.getByText('✗').props.style).color, badFill)).toBeGreaterThanOrEqual(4.5);
   });
 
   it('a két állapot színe ÉS alakja különbözik (nem csak a szín jelez)', () => {

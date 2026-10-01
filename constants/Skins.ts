@@ -528,6 +528,20 @@ export function bestOn(fill: string, candidates: string[]): string {
   return candidates.reduce((best, c) => (contrastRatio(c, fill) > contrastRatio(best, fill) ? c : best));
 }
 
+// PLAN-temak 7H: a WCAG-küszöb egy KText-szövegre. Nagy szövegnél (>= 24 px, vagy >= 18,66 px és
+// félkövér) 3, különben 4,5. A KText szabályai szerint: a méret a fontScale / displayScale (title
+// és word) / fontSizeOffset-tel skálázódik, egyedi betűnél (skin.fonts[variant]) a fontWeight
+// elmarad, vagyis ott nincs félkövér.
+export function textContrastMin(
+  skin: Pick<Skin, 'fonts' | 'fontScale' | 'displayScale' | 'fontSizeOffset'>,
+  variant: 'title' | 'word' | 'body',
+  size: number,
+  bold: boolean,
+): number {
+  const px = size * skin.fontScale * (variant === 'body' ? 1 : skin.displayScale ?? 1) + (skin.fontSizeOffset ?? 0);
+  return px >= 24 || (px >= 18.66 && bold && !skin.fonts[variant]) ? 3 : 4.5;
+}
+
 const HEX6 = /^#[0-9a-f]{6}$/i;
 
 // PLAN-temak 7G: olvasható szín egy háttéren. Ha az `fg` a `bg`-n átmegy a küszöbön (alap WCAG AA

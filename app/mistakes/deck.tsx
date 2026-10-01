@@ -23,6 +23,7 @@ import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
 import { BrutalBackButton, BrutalBox, BrutalButton, brutalInputStyle } from '@/components/grammar/Brutal';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
+import { useDiffStyles } from '@/lib/useDiffStyles';
 
 // PLAN-hibaim.md 4. lépés ("Pakli"): the PCIC card surface (CardShell,
 // DockedAction) over the cards lib/mistakes/deck.ts builds from every loaded
@@ -43,6 +44,7 @@ export default function MistakesDeckScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
+  const diff = useDiffStyles();
   const s = t();
   const router = useRouter();
   const { dockLift } = useDockLift();
@@ -180,7 +182,7 @@ export default function MistakesDeckScreen() {
             <View style={styles.resultSection}>
               <Text style={styles.diffLine}>
                 {charDiff(typed, currentCard.answer, { case: true, accents: false }).map((d, i) => (
-                  <Text key={i} style={d.missing ? styles.diffMissing : d.wrong ? styles.diffWrong : { color: colors.text }}>
+                  <Text key={i} style={d.missing ? diff.missing : d.wrong ? diff.wrong : { color: colors.text }}>
                     {d.ch}
                   </Text>
                 ))}
@@ -277,8 +279,6 @@ const styles = StyleSheet.create({
   input: { width: '100%', borderWidth: 2, borderRadius: 12, padding: 14, fontSize: 18, textAlign: 'center', marginTop: 12 },
   resultSection: { alignItems: 'center', marginTop: 16 },
   diffLine: { fontSize: 20, fontWeight: '700', textAlign: 'center', letterSpacing: 1, marginBottom: 6 },
-  diffWrong: { backgroundColor: '#EF4444', color: '#FFFFFF' },
-  diffMissing: { backgroundColor: '#EAB308', color: '#FFFFFF', textDecorationLine: 'underline' },
   frontRow: { flexDirection: 'row', alignItems: 'flex-start', gap: 8, marginTop: 8 },
   correctAnswer: { flex: 1, flexShrink: 1, fontSize: 22, fontWeight: '600', textAlign: 'center' },
   speakBtn: { padding: 4, flexShrink: 0 },
