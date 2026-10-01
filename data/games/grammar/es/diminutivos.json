@@ -103,10 +103,10 @@
         },
         {
           "text": {
-            "hu": "Az -n és -r végű szavak, valamint a hangsúlyos -é végű szavak -cito / -cita végződést kapnak: café → cafecito, camión → camioncito (a hangsúlyjel eltűnik), limón → limoncito, corazón → corazoncito. Az -e végű szavaknál mindkét végződés hallható (cochecito, de lechita), ezért a feladatokban a végződést zárójelben megadjuk.",
-            "en": "Words ending in -n or -r, and words ending in a stressed -é, take -cito / -cita: café → cafecito, camión → camioncito (the accent mark disappears), limón → limoncito, corazón → corazoncito. With words ending in -e both endings are heard (cochecito, but lechita), so in the exercises the ending is given in brackets.",
-            "es": "Las palabras que terminan en -n o -r, y las que terminan en -é acentuada, llevan -cito / -cita: café → cafecito, camión → camioncito (desaparece la tilde), limón → limoncito, corazón → corazoncito. Con palabras en -e se oyen las dos terminaciones (cochecito, pero lechita), por eso en los ejercicios la terminación va entre paréntesis.",
-            "de": "Wörter auf -n oder -r sowie Wörter auf betontes -é bekommen -cito / -cita: café → cafecito, camión → camioncito (der Akzent entfällt), limón → limoncito, corazón → corazoncito. Bei Wörtern auf -e hört man beide Endungen (cochecito, aber lechita), deshalb steht die Endung in den Übungen in Klammern."
+            "hu": "Az -n és -r végű szavak, valamint a hangsúlyos -é végű szavak -cito / -cita végződést kapnak: café → cafecito, camión → camioncito (a hangsúlyjel eltűnik), limón → limoncito, corazón → corazoncito. Az -e végű szavaknál mindkét végződés hallható (nubecita, de lechita), ezért a feladatokban a végződést zárójelben megadjuk.",
+            "en": "Words ending in -n or -r, and words ending in a stressed -é, take -cito / -cita: café → cafecito, camión → camioncito (the accent mark disappears), limón → limoncito, corazón → corazoncito. With words ending in -e both endings are heard (nubecita, but lechita), so in the exercises the ending is given in brackets.",
+            "es": "Las palabras que terminan en -n o -r, y las que terminan en -é acentuada, llevan -cito / -cita: café → cafecito, camión → camioncito (desaparece la tilde), limón → limoncito, corazón → corazoncito. Con palabras en -e se oyen las dos terminaciones (nubecita, pero lechita), por eso en los ejercicios la terminación va entre paréntesis.",
+            "de": "Wörter auf -n oder -r sowie Wörter auf betontes -é bekommen -cito / -cita: café → cafecito, camión → camioncito (der Akzent entfällt), limón → limoncito, corazón → corazoncito. Bei Wörtern auf -e hört man beide Endungen (nubecita, aber lechita), deshalb steht die Endung in den Übungen in Klammern."
           },
           "examples": [
             {
@@ -214,7 +214,7 @@
             {
               "es": "Ahorita llegó mi hermano.",
               "tr": {
-                "hu": "Az imént érkezett meg a bátyám.",
+                "hu": "Az imént érkezett meg a fivérem.",
                 "en": "My brother just arrived.",
                 "es": "Ahorita llegó mi hermano.",
                 "de": "Mein Bruder ist gerade angekommen."
@@ -356,7 +356,7 @@
             {
               "es": "Ahorita llegó mi hermano.",
               "tr": {
-                "hu": "Az imént érkezett meg a bátyám.",
+                "hu": "Az imént érkezett meg a fivérem.",
                 "en": "My brother just arrived.",
                 "es": "Ahorita llegó mi hermano.",
                 "de": "Mein Bruder ist gerade angekommen."
@@ -1561,7 +1561,7 @@
       "es": "Ahorita llegó mi hermano.",
       "target": "Ahorita",
       "tr": {
-        "hu": "Az imént érkezett meg a bátyám.",
+        "hu": "Az imént érkezett meg a fivérem.",
         "en": "My brother just arrived.",
         "es": "Ahorita llegó mi hermano.",
         "de": "Mein Bruder ist gerade angekommen."
@@ -1575,7 +1575,7 @@
             "de": "ahorita + ein laufendes Verb: gerade jetzt"
           },
           "wrong": {
-            "hu": "Az „éppen most” folyamatban lévő igével áll (Ahorita estoy comiendo). Itt a llegó múlt idő: a bátyád már megérkezett.",
+            "hu": "Az „éppen most” folyamatban lévő igével áll (Ahorita estoy comiendo). Itt a llegó múlt idő: a fivéred már megérkezett.",
             "en": "Right now goes with a verb in progress (Ahorita estoy comiendo). Here llegó is past tense: your brother has already arrived.",
             "es": "Ahora mismo va con un verbo en curso (Ahorita estoy comiendo). Aquí llegó es pasado: tu hermano ya llegó.",
             "de": "Gerade jetzt steht mit einem laufenden Verb (Ahorita estoy comiendo). Hier ist llegó Vergangenheit: Dein Bruder ist schon angekommen."
@@ -1591,16 +1591,16 @@
         },
         {
           "text": {
-            "hu": "ahorita + jelen vagy jövő jellegű ige: mindjárt",
-            "en": "ahorita + a present or future-like verb: in a moment",
-            "es": "ahorita + verbo de presente o futuro: dentro de un momento",
-            "de": "ahorita + ein Verb in Gegenwart oder Zukunft: gleich"
+            "hu": "ahorita + jövőre utaló ige: mindjárt",
+            "en": "ahorita + a verb pointing to the future: in a moment",
+            "es": "ahorita + verbo que apunta al futuro: dentro de un momento",
+            "de": "ahorita + ein Verb mit Zukunftsbezug: gleich"
           },
           "wrong": {
-            "hu": "A „mindjárt” jelen vagy jövő jellegű igével áll (Ahorita voy). A llegó múlt idő: ami megtörtént, az már megtörtént.",
-            "en": "In a moment goes with a present or future-like verb (Ahorita voy). Llegó is past tense: it has already happened.",
-            "es": "Dentro de un momento va con un verbo de presente o futuro (Ahorita voy). Llegó es pasado: ya ocurrió.",
-            "de": "Gleich steht mit einem Verb in Gegenwart oder Zukunft (Ahorita voy). Llegó ist Vergangenheit: Es ist schon passiert."
+            "hu": "A „mindjárt” jövőre utaló igével áll (Ahorita voy). A llegó múlt idő: ami megtörtént, az már megtörtént.",
+            "en": "In a moment goes with a verb pointing to the future (Ahorita voy). Llegó is past tense: it has already happened.",
+            "es": "Dentro de un momento va con un verbo que apunta al futuro (Ahorita voy). Llegó es pasado: ya ocurrió.",
+            "de": "Gleich steht mit einem Verb mit Zukunftsbezug (Ahorita voy). Llegó ist Vergangenheit: Es ist schon passiert."
           }
         }
       ],
@@ -1620,10 +1620,10 @@
       "options": [
         {
           "text": {
-            "hu": "ahorita + jelen vagy jövő jellegű ige: mindjárt",
-            "en": "ahorita + a present or future-like verb: in a moment",
-            "es": "ahorita + verbo de presente o futuro: dentro de un momento",
-            "de": "ahorita + ein Verb in Gegenwart oder Zukunft: gleich"
+            "hu": "ahorita + jövőre utaló ige: mindjárt",
+            "en": "ahorita + a verb pointing to the future: in a moment",
+            "es": "ahorita + verbo que apunta al futuro: dentro de un momento",
+            "de": "ahorita + ein Verb mit Zukunftsbezug: gleich"
           },
           "wrong": {
             "hu": "A mondat nem azt mondja, hogy később tudsz beszélni: az estoy manejando éppen zajlik, ezért az ahorita itt éppen most.",

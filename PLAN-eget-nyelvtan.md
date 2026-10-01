@@ -201,7 +201,7 @@ Párhuzamos agent: `feat/learn-words-open` (`C:\AI\kimacha-wt-learn-open`) a `da
   - minta (form): «Tiene ___ dinero que no necesita trabajar. (tanto)» → tanto
   - minta (form): «Perdimos el camión, así que ___ a pie. (ir, nosotros, indefinido)» → fuimos
 - R-sor az A sávon (05:55-től; a B sáv R1-R16-ot viszi, a brief: `C:\AI\kimacha-wt-eget-nyelvtan-b\PLAN-eget-nyelvtan.md` „## BRIEF átnézés (R-sor, …)”; a két sáv más-más JSON-hoz nyúl):
-- [ ] R17. `diminutivos`, `oraciones-consecutivas`, `indefinido-irregular`, `indefinido-10-verbos` → kész, ha: átnézve, javítva, kapu zöld, commit
+- [x] R17. `diminutivos`, `oraciones-consecutivas`, `indefinido-irregular`, `indefinido-10-verbos` → kész, ha: átnézve, javítva, kapu zöld, commit `fix(grammar): átnézés R17 (nyelvtan)` (06:09; javítás: diminutivos 4, oraciones-consecutivas 4, indefinido-irregular 11, indefinido-10-verbos 32)
 - [ ] R18. `condicionales-tipo1`, `condicionales-tipo2-3`, `estilo-indirecto`, `finales-causales` → ugyanaz
 - [ ] R19. `subjuntivo-presente-forma`, `subjuntivo-disparadores`, `temporales-subjuntivo`, `subjuntivo-imperfecto` → ugyanaz
 
