@@ -55,8 +55,11 @@ function expandSlashes(s: string): string[] {
   return variants.map((v) => v.join(' '));
 }
 
+// PLAN-tobbjelentes 3. lépés (S1): a " / " (szóköz-per-szóköz) elválasztó teljes
+// alternatívákat választ el ("el carro / el coche / el auto"); a szóközmentes
+// "a/b" a fenti szó-pozíción belüli felbontásként marad, ahogy volt.
 export function pcicAlternatives(answer: string): string[] {
-  const withParens = expandParens(answer);
+  const withParens = answer.split(' / ').flatMap(expandParens);
   const all = withParens.flatMap(expandSlashes).map((v) => v.trim());
   return Array.from(new Set(all));
 }

@@ -1264,7 +1264,7 @@
     "level": "B2",
     "pos": "noun",
     "lemma": "salario",
-    "es": "el salario",
+    "es": "el salario / el sueldo",
     "hu": "fizetés",
     "en": "salary, wage",
     "de": "Gehalt, Lohn",
@@ -1478,11 +1478,11 @@
     "hu": "modell, minta",
     "en": "model",
     "de": "Modell, Vorbild",
-    "sentence_es": "Este modelo de coche es nuevo.",
+    "sentence_es": "Este modelo de carro es nuevo.",
     "sentence_hu": "Ez az autómodell új.",
     "sentence_en": "This car model is new.",
     "sentence_de": "Dieses Automodell ist neu.",
-    "sentence_lemmas": ["este", "modelo", "de", "coche", "ser", "nuevo"]
+    "sentence_lemmas": ["este", "modelo", "de", "carro", "ser", "nuevo"]
   },
   {
     "order": 550,
@@ -1838,11 +1838,11 @@
     "hu": "elég, elegendő",
     "en": "enough, sufficient",
     "de": "genug, ausreichend",
-    "sentence_es": "No tengo suficiente dinero para comprar este coche.",
+    "sentence_es": "No tengo suficiente dinero para comprar este carro.",
     "sentence_hu": "Nincs elég pénzem, hogy megvegyem ezt az autót.",
     "sentence_en": "I do not have enough money to buy this car.",
     "sentence_de": "Ich habe nicht genug Geld, um dieses Auto zu kaufen.",
-    "sentence_lemmas": ["no", "tener", "suficiente", "dinero", "para", "comprar", "este", "coche"]
+    "sentence_lemmas": ["no", "tener", "suficiente", "dinero", "para", "comprar", "este", "carro"]
   },
   {
     "order": 574,
