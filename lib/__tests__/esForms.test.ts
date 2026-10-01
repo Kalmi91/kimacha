@@ -47,6 +47,8 @@ describe('lib/esForms', () => {
     expect(formsOfCard('dormir', 'verb', deps)).toContain('duermo');
     expect(formsOfCard('un / una', 'det', deps)).toEqual([]);
     expect(formsOfCard('levantarse', 'verb', deps)).toEqual(expect.arrayContaining(['levanto', 'levantó', 'levantaba', 'levantado']));
+    expect(formsOfCard('acordarse', 'verb', deps)).toEqual(expect.arrayContaining(['acuerdo', 'acuerdas', 'acordamos']));
+    expect(formsOfCard('caber', 'verb', deps)).toEqual(expect.arrayContaining(['cabe', 'caben']));
     expect(formsOfCard('despertarse', 'verb', deps)).toEqual(expect.arrayContaining(['despierto', 'despiertan', 'despertamos']));
     expect(formsOfCard('rentar / alquilar', 'verb', deps)).toEqual(expect.arrayContaining(['rento', 'alquilan']));
   });
