@@ -28,10 +28,12 @@ import grammarEsNumerosHoraFecha from '@/data/games/grammar/es/numeros-hora-fech
 import grammarEsPreposicionesBasicas from '@/data/games/grammar/es/preposiciones-basicas.json';
 import grammarEsEstarGerundio from '@/data/games/grammar/es/estar-gerundio.json';
 import grammarEsVerbosReflexivos from '@/data/games/grammar/es/verbos-reflexivos.json';
+import grammarEsVerbosComoGustar from '@/data/games/grammar/es/verbos-como-gustar.json';
 import grammarEsSubjuntivoPresenteForma from '@/data/games/grammar/es/subjuntivo-presente-forma.json';
 import grammarEsSubjuntivoDisparadores from '@/data/games/grammar/es/subjuntivo-disparadores.json';
 import grammarEsOjalaQuizas from '@/data/games/grammar/es/ojala-quizas.json';
 import grammarEsTemporalesSubjuntivo from '@/data/games/grammar/es/temporales-subjuntivo.json';
+import grammarEsSubjuntivoRelativo from '@/data/games/grammar/es/subjuntivo-relativo.json';
 import grammarEsCondicionalSimple from '@/data/games/grammar/es/condicional-simple.json';
 import grammarEsCondicionalesTipo1 from '@/data/games/grammar/es/condicionales-tipo1.json';
 import grammarEsRelativos from '@/data/games/grammar/es/relativos.json';
@@ -80,6 +82,10 @@ import grammarEsLlevarTraerIrVenir from '@/data/games/grammar/es/llevar-traer-ir
 import grammarEsPedirPreguntar from '@/data/games/grammar/es/pedir-preguntar.json';
 import grammarEsSaberConocer from '@/data/games/grammar/es/saber-conocer.json';
 import grammarEsPorParaAvanzado from '@/data/games/grammar/es/por-para-avanzado.json';
+import grammarEsVerbosPreposicion from '@/data/games/grammar/es/verbos-preposicion.json';
+import grammarEsVerbosDeCambio from '@/data/games/grammar/es/verbos-de-cambio.json';
+import grammarEsEstarParticipio from '@/data/games/grammar/es/estar-participio.json';
+import grammarEsImperativoPronombres from '@/data/games/grammar/es/imperativo-pronombres.json';
 import grammarEsSeImpersonalPasiva from '@/data/games/grammar/es/se-impersonal-pasiva.json';
 
 // K33 (play-vágás, 2026-09-22): a Játék/Átbeszélő fülek és a hozzájuk tartozó
@@ -134,6 +140,7 @@ export const esContent: LanguageContentBundle = {
     grammarEsImperativoNegativo,
     grammarEsCombinacionPronombres,
     grammarEsVerbosReflexivos,
+    grammarEsVerbosComoGustar,
     grammarEsPorPara,
     grammarEsSaberConocer,
     grammarEsPedirPreguntar,
@@ -142,12 +149,17 @@ export const esContent: LanguageContentBundle = {
     grammarEsSubjuntivoDisparadores,
     grammarEsOjalaQuizas,
     grammarEsTemporalesSubjuntivo,
+    grammarEsSubjuntivoRelativo,
     grammarEsCondicionalSimple,
     grammarEsCondicionalesTipo1,
     grammarEsRelativos,
     grammarEsSeImpersonalPasiva,
     grammarEsPerifrasis,
     grammarEsPorParaAvanzado,
+    grammarEsVerbosPreposicion,
+    grammarEsVerbosDeCambio,
+    grammarEsEstarParticipio,
+    grammarEsImperativoPronombres,
     grammarEsPluscuamperfecto,
     grammarEsIndefinidos,
     grammarEsGerundioParticipio,

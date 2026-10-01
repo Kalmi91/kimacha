@@ -91,6 +91,8 @@ export const GRAMMAR_TIER: Record<string, GrammarTier> = {
   'imperativo-negativo': 'exam',
   'combinacion-pronombres': 'exam',
   'verbos-reflexivos': 'core-plus',
+  'verbos-como-gustar': 'exam',
+  'imperativo-pronombres': 'exam',
   'comparativos-superlativos': 'core',
   indefinidos: 'core',
   'por-para': 'core',
@@ -102,6 +104,7 @@ export const GRAMMAR_TIER: Record<string, GrammarTier> = {
   'subjuntivo-disparadores': 'core',
   'ojala-quizas': 'exam',
   'temporales-subjuntivo': 'core',
+  'subjuntivo-relativo': 'exam',
   'condicional-simple': 'core-plus',
   'condicionales-tipo1': 'core',
   pluscuamperfecto: 'exam',
@@ -109,6 +112,8 @@ export const GRAMMAR_TIER: Record<string, GrammarTier> = {
   'se-impersonal-pasiva': 'exam',
   perifrasis: 'exam',
   'por-para-avanzado': 'exam',
+  'verbos-preposicion': 'exam',
+  'estar-participio': 'exam',
   // --- B2 ---
   'subjuntivo-imperfecto': 'core',
   'subjuntivo-perfecto': 'exam',
@@ -119,6 +124,7 @@ export const GRAMMAR_TIER: Record<string, GrammarTier> = {
   'finales-causales': 'core',
   'lo-neutro': 'exam',
   'gerundio-participio-construcciones': 'exam',
+  'verbos-de-cambio': 'exam',
   // --- C1 ---
   'futuro-condicional-perfecto': 'exam',
   'probabilidad-con-tiempos': 'exam',
@@ -417,6 +423,20 @@ export const GRAMMAR_SYLLABUS: SyllabusTopic[] = [
     blurb: { hu: 'Me levanto, se llama: a névmás a cselekvőre mutat vissza.', en: 'Me levanto, se llama: the pronoun points back at the doer.', es: 'Me levanto, se llama: el pronombre vuelve al sujeto.', de: 'Me levanto, se llama: das Pronomen zeigt zurück.' },
   },
   {
+    id: 'verbos-como-gustar',
+    level: 'A2',
+    unit: 'a2-pronombres',
+    title: { hu: 'Gustar-szerű igék: encantar, doler, faltar', en: 'Verbs like gustar: encantar, doler, faltar', es: 'Verbos como gustar: encantar, doler, faltar', de: 'Verben wie gustar: encantar, doler, faltar' },
+    blurb: { hu: 'Me encanta, me duele, me falta: a dolog az alany, a személy a névmás.', en: 'Me encanta, me duele, me falta: the thing is the subject, the person is the pronoun.', es: 'Me encanta, me duele, me falta: la cosa es el sujeto, la persona es el pronombre.', de: 'Me encanta, me duele, me falta: die Sache ist das Subjekt, die Person das Pronomen.' },
+  },
+  {
+    id: 'imperativo-pronombres',
+    level: 'A2',
+    unit: 'a2-pronombres',
+    title: { hu: 'Felszólítás névmással: dímelo, no me lo digas', en: 'Imperative with pronouns: dímelo, no me lo digas', es: 'Imperativo con pronombres: dímelo, no me lo digas', de: 'Imperativ mit Pronomen: dímelo, no me lo digas' },
+    blurb: { hu: 'Dímelo, siéntate: igenlőben a névmás tapad, tagadóban elé kerül.', en: 'Dímelo, siéntate: in the affirmative the pronoun attaches, in the negative it goes before.', es: 'Dímelo, siéntate: en afirmativo el pronombre se pega, en negativo va delante.', de: 'Dímelo, siéntate: bejaht hängt das Pronomen an, verneint steht es davor.' },
+  },
+  {
     id: 'comparativos-superlativos',
     level: 'A2',
     unit: 'a2-comparar',
@@ -488,6 +508,13 @@ export const GRAMMAR_SYLLABUS: SyllabusTopic[] = [
     blurb: { hu: 'Jövőbeli időhatározó: cuando llegues, no llegas.', en: 'Future time clauses: cuando llegues, not llegas.', es: 'Temporales de futuro: cuando llegues.', de: 'Zukünftige Temporalsätze: cuando llegues.' },
   },
   {
+    id: 'subjuntivo-relativo',
+    level: 'B1',
+    unit: 'b1-subjuntivo',
+    title: { hu: 'Kötőmód a vonatkozó mondatban', en: 'Subjunctive in relative clauses', es: 'Subjuntivo en oraciones de relativo', de: 'Subjuntivo im Relativsatz' },
+    blurb: { hu: 'Busco un departamento que tenga balcón: ismeretlen előzmény, kötőmód.', en: 'Busco un departamento que tenga balcón: unknown antecedent, subjunctive.', es: 'Busco un departamento que tenga balcón: antecedente desconocido, subjuntivo.', de: 'Busco un departamento que tenga balcón: unbekanntes Bezugswort, Subjuntivo.' },
+  },
+  {
     id: 'condicional-simple',
     level: 'B1',
     unit: 'b1-condicional',
@@ -535,6 +562,20 @@ export const GRAMMAR_SYLLABUS: SyllabusTopic[] = [
     unit: 'b1-estructuras',
     title: { hu: 'Por és para: haladó esetek', en: 'Por and para: advanced uses', es: 'Por y para: usos avanzados', de: 'Por und para: fortgeschritten' },
     blurb: { hu: 'Állandósult kifejezések és a nehéz határesetek.', en: 'Set phrases and the genuinely hard cases.', es: 'Expresiones fijas y los casos difíciles.', de: 'Feste Wendungen und die harten Fälle.' },
+  },
+  {
+    id: 'verbos-preposicion',
+    level: 'B1',
+    unit: 'b1-estructuras',
+    title: { hu: 'Igék állandó elöljáróval', en: 'Verbs with fixed prepositions', es: 'Verbos con preposición', de: 'Verben mit fester Präposition' },
+    blurb: { hu: 'Pensar en, soñar con, depender de: az ige dönti el az elöljárót.', en: 'Pensar en, soñar con, depender de: the verb decides the preposition.', es: 'Pensar en, soñar con, depender de: el verbo decide la preposición.', de: 'Pensar en, soñar con, depender de: das Verb bestimmt die Präposition.' },
+  },
+  {
+    id: 'estar-participio',
+    level: 'B1',
+    unit: 'b1-estructuras',
+    title: { hu: 'Estar + participio: az eredmény állapota', en: 'Estar + participle: the resulting state', es: 'Estar + participio: el estado como resultado', de: 'Estar + Partizip: der Zustand als Ergebnis' },
+    blurb: { hu: 'La puerta está abierta: az eredmény állapota, a participio egyezik az alannyal.', en: 'La puerta está abierta: the resulting state, with the participle agreeing with the subject.', es: 'La puerta está abierta: el estado como resultado, con el participio concordando con el sujeto.', de: 'La puerta está abierta: der Zustand als Ergebnis, das Partizip passt sich dem Subjekt an.' },
   },
   // ========================= B2 =========================
   {
@@ -599,6 +640,13 @@ export const GRAMMAR_SYLLABUS: SyllabusTopic[] = [
     unit: 'b2-oraciones',
     title: { hu: 'Gerundio és participio szerkezetek', en: 'Gerund and participle constructions', es: 'Construcciones de gerundio y participio', de: 'Gerundium- und Partizipkonstruktionen' },
     blurb: { hu: 'Siendo, hecho esto, llevar + gerundio.', en: 'Siendo, hecho esto, llevar + gerund.', es: 'Siendo, hecho esto, llevar + gerundio.', de: 'Siendo, hecho esto, llevar + Gerundium.' },
+  },
+  {
+    id: 'verbos-de-cambio',
+    level: 'B2',
+    unit: 'b2-oraciones',
+    title: { hu: 'Változás-igék', en: 'Verbs of change', es: 'Verbos de cambio', de: 'Verben der Veränderung' },
+    blurb: { hu: 'Ponerse, volverse, hacerse, quedarse, llegar a ser: hogyan lesz valami valamivé.', en: 'Ponerse, volverse, hacerse, quedarse, llegar a ser: how something becomes something else.', es: 'Ponerse, volverse, hacerse, quedarse, llegar a ser: cómo algo pasa a ser otra cosa.', de: 'Ponerse, volverse, hacerse, quedarse, llegar a ser: wie etwas zu etwas anderem wird.' },
   },
   // ========================= C1 =========================
   {
