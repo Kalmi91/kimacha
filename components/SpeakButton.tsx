@@ -11,6 +11,8 @@ type Props = {
   onPress: () => void;
   /** ⏹ a 🔊 helyett (a lecke-felolvasás play<->stop gombja). */
   speaking?: boolean;
+  /** PLAN-fb1001 13. lépés (FB440): más ikon (pl. 💡 a súgó-gombon), ugyanabban a játék-stílusban. */
+  icon?: string;
   /** Ikon melletti felirat (a "Read aloud" sorok); nélküle csak ikon. */
   label?: string;
   testID?: string;
@@ -30,6 +32,7 @@ type Props = {
 export default function SpeakButton({
   onPress,
   speaking = false,
+  icon: iconProp,
   label,
   testID,
   accessibilityLabel,
@@ -40,7 +43,7 @@ export default function SpeakButton({
   hitSlop,
 }: Props) {
   const g = useGrammarColors();
-  const icon = speaking ? '⏹' : '🔊';
+  const icon = iconProp ?? (speaking ? '⏹' : '🔊');
   if (g.brutal) {
     return (
       <BrutalBox

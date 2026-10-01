@@ -87,8 +87,35 @@ describe('table-deck screen: ser-estar playthrough', () => {
 
     expect(screen.getByText('person · verb')).toBeTruthy();
     expect(screen.getByText('TABLE')).toBeTruthy();
-    expect(screen.getByText(`${cellAt(0).person} · ${cellAt(0).verb}`)).toBeTruthy();
+    expect(screen.getByText(cellAt(0).person)).toBeTruthy();
     expect(screen.getByText('0 / 10 done')).toBeTruthy();
+
+    view.unmount();
+  });
+
+  // PLAN-fb1001 13. lépés (FB440): a ragozó kártyán az infinitivus ("ser") alapból rejtett,
+  // a súgó-gomb mutatja; Check után magától látszik.
+  it('the infinitive is hidden by default, the hint button shows it', async () => {
+    const view = render(<TableDeckScreen />);
+    await flush();
+
+    expect(screen.queryByText(cellAt(0).verb)).toBeNull();
+    fireEvent.press(screen.getByTestId('tabledeck-hint'));
+    expect(screen.getByText(cellAt(0).verb)).toBeTruthy();
+    expect(screen.queryByTestId('tabledeck-hint')).toBeNull();
+
+    view.unmount();
+  });
+
+  it('after Check the infinitive shows without pressing the hint', async () => {
+    const view = render(<TableDeckScreen />);
+    await flush();
+
+    fireEvent.changeText(screen.getByTestId('tabledeck-input'), 'nope');
+    fireEvent.press(screen.getByText('✓ Check'));
+    await flush();
+    expect(screen.getByText(cellAt(0).verb)).toBeTruthy();
+    expect(screen.queryByTestId('tabledeck-hint')).toBeNull();
 
     view.unmount();
   });
@@ -111,7 +138,7 @@ describe('table-deck screen: ser-estar playthrough', () => {
     await flush();
 
     // Cooldown: the next cell shown is the deck's second cell, not the first again.
-    expect(screen.getByText(`${cellAt(1).person} · ${cellAt(1).verb}`)).toBeTruthy();
+    expect(screen.getByText(cellAt(1).person)).toBeTruthy();
 
     // Correct on that second cell: green "✓ <answer>", progress advances to 1/10.
     fireEvent.changeText(screen.getByTestId('tabledeck-input'), cellAt(1).answer);
@@ -130,7 +157,7 @@ describe('table-deck screen: ser-estar playthrough', () => {
     const view2 = render(<TableDeckScreen />);
     await flush();
     expect(screen.getByText('1 / 10 done')).toBeTruthy();
-    expect(screen.getByText(`${cellAt(2).person} · ${cellAt(2).verb}`)).toBeTruthy();
+    expect(screen.getByText(cellAt(2).person)).toBeTruthy();
     view2.unmount();
   });
 
@@ -147,13 +174,13 @@ describe('table-deck screen: ser-estar playthrough', () => {
     await flush();
 
     for (let i = 1; i < tableOrder.length; i++) {
-      expect(screen.getByText(`${cellAt(i).person} · ${cellAt(i).verb}`)).toBeTruthy();
+      expect(screen.getByText(cellAt(i).person)).toBeTruthy();
       await answerCurrent(cellAt(i).answer);
     }
 
     // Only the first deck cell is left; shown despite its cooldown because
     // nothing else remains, and answering it correctly finishes the deck.
-    expect(screen.getByText(`${cellAt(0).person} · ${cellAt(0).verb}`)).toBeTruthy();
+    expect(screen.getByText(cellAt(0).person)).toBeTruthy();
     await answerCurrent(cellAt(0).answer);
 
     expect(screen.getByText('All 10 cells done 🎉')).toBeTruthy();
@@ -173,7 +200,7 @@ describe('table-deck screen: ser-estar playthrough', () => {
     // FB389: "Start again" is the plain, in-order restart, so the very same
     // first cell as the initial pass comes back, not a new shuffle.
     expect(screen.getByText('0 / 10 done')).toBeTruthy();
-    expect(screen.getByText(`${cellAt(0).person} · ${cellAt(0).verb}`)).toBeTruthy();
+    expect(screen.getByText(cellAt(0).person)).toBeTruthy();
   });
 
   it('"Harder: shuffled" restarts all cells in a seeded shuffle, not the table order', async () => {
@@ -191,7 +218,7 @@ describe('table-deck screen: ser-estar playthrough', () => {
     const shuffled = shuffleArray(cells.map((c) => c.id).sort(), hashString('ser-estar:1'));
     const first = cells.find((c) => c.id === shuffled[0])!;
     expect(screen.getByText('0 / 10 done')).toBeTruthy();
-    expect(screen.getByText(`${first.person} · ${first.verb}`)).toBeTruthy();
+    expect(screen.getByText(first.person)).toBeTruthy();
     expect(shuffled).not.toEqual(tableOrder);
   });
 });
