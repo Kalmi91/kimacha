@@ -32,8 +32,8 @@ generates most of the review comments.
 
 - Every Spanish token in authored content is either taught by that level's
   cumulative vocabulary, or carries a gloss (`newWords`, `glossary`).
-  `node scripts/audit-games.mjs` and `node scripts/audit-corpus.mjs` check it,
-  and CI runs them.
+  `node scripts/audit-games.mjs` checks it against the open deck
+  (`data/words-open`); CI does not run it.
 - A sentence also stays inside the **grammar** its level teaches. A perfect
   tense in an A1 example sentence is a bug even when every word is known:
   `lib/grammar/tenseGate.ts` detects the structures, a test scans the corpus,
@@ -60,8 +60,8 @@ Levels follow XLex-style cumulative bands (A1 around 1200 words, C1 around
   not the same list as en to hu. Above A0 a track's words are the ones its exams
   ask for.
 - **Language tracks do not touch each other's files.** A track owns
-  `data/**/<lang>/` and `lib/i18n/<lang>.ts`. `data/words/{a0..c2}.json` is the
-  Spanish track's set, still at the path it had before the other tracks existed.
+  `data/**/<lang>/` and `lib/i18n/<lang>.ts`. `data/words-open/` is the Spanish
+  set; `data/words/<lang>/` is a track's own.
   Shared *code* branches on lookup tables keyed by language code, so adding a
   language is a table entry rather than an edit inside a function someone else
   also edits.

@@ -25,12 +25,6 @@ export default function CreditsScreen() {
   const s = t();
   const router = useRouter();
 
-  const links = [
-    { label: s.credits.frequencyWordsLabel, url: s.credits.frequencyWordsUrl },
-    { label: s.credits.openSubtitlesLabel, url: s.credits.openSubtitlesUrl },
-    { label: s.credits.licenseLabel, url: s.credits.licenseUrl },
-  ];
-
   return (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
       <View style={[styles.headerRow, brutalHeaderRowStyle(g)]}>
@@ -49,15 +43,7 @@ export default function CreditsScreen() {
 
       <ScrollView contentContainerStyle={styles.container}>
         <Wrap>
-        <Text style={[styles.body, { color: colors.text }]}>{s.credits.body}</Text>
-
-        {links.map((link) => (
-          <Pressable key={link.url} onPress={() => Linking.openURL(link.url)}>
-            <Text style={[styles.link, { color: linkColor }, g.brutal && styles.brutalLink]}>{link.label}</Text>
-          </Pressable>
-        ))}
-
-        <Text style={[styles.body, styles.bodySpaced, { color: colors.text }]}>{s.credits.cefrjBody}</Text>
+        <Text style={[styles.body, { color: colors.text }]}>{s.credits.cefrjBody}</Text>
         <Pressable onPress={() => Linking.openURL(s.credits.cefrjUrl)}>
           <Text style={[styles.link, { color: linkColor }, g.brutal && styles.brutalLink]}>{s.credits.cefrjLabel}</Text>
         </Pressable>
@@ -102,9 +88,6 @@ const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 22,
     marginBottom: 20,
-  },
-  bodySpaced: {
-    marginTop: 8,
   },
   brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   brutalLink: { fontWeight: '500', textDecorationLine: 'underline' },

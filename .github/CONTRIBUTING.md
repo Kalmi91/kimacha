@@ -32,9 +32,8 @@ CI runs the same three on every push to `main` and on every pull request.
 `.github/CODEOWNERS` routes review by path. Each direction has its own word set:
 there is no corpus shared between tracks, and even A0 is the target language's
 own hundred most useful words, because what a beginner needs differs by language
-and even by direction (hu to en is not en to hu). `data/words/{a0..c2}.json` is
-the Spanish track's set, still at the path it had before the other tracks
-existed; `data/words/<lang>/` is a track's own. A track writes under its own
+and even by direction (hu to en is not en to hu). `data/words-open/` is the
+Spanish track's set; `data/words/<lang>/` is a track's own. A track writes under its own
 directories only (`data/**/<lang>/`, `lib/i18n/<lang>.ts`).
 
 Nobody regenerates a word corpus wholesale: word data cannot be reviewed by eye,

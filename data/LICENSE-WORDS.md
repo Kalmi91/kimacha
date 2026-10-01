@@ -1,5 +1,7 @@
 # Word data license
 
-Word frequency data: FrequencyWords by Hermit Dave (github.com/hermitdave/FrequencyWords),
-CC BY-SA 4.0, derived from the OpenSubtitles 2018 corpus (opus.nlpl.eu). The word lists in this
-app are an adapted work and are shared under CC BY-SA 4.0 (creativecommons.org/licenses/by-sa/4.0).
+Spanish word list (`data/words-open/`): AI-generated cards, no third-party word list.
+
+English word list (`data/words/en/`): AI-generated cards. The B1 list follows The CEFR-J Wordlist
+Version 1.5, compiled by Yukio Tono, Tokyo University of Foreign Studies (cefr-j.org), used under its
+terms for research and commercial use with attribution (github.com/openlanguageprofiles/olp-en-cefrj).

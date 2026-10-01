@@ -1440,7 +1440,7 @@
       },
       "answer": "Voy a comer aquí.",
       "accept": ["Yo voy a comer aquí."],
-      "wordIds": ["31", "25", "8"],
+      "wordIds": ["33", "25", "9"],
       "why": {
         "hu": "Eldöntött terv: ir a + főnévi igenév fejezi ki a jövőt. Ir rendhagyó, yo: voy.",
         "en": "A decided plan: ir a + infinitive expresses the future. Ir is irregular, yo: voy.",
@@ -1460,7 +1460,7 @@
       },
       "answer": "Vamos a comer juntos.",
       "accept": ["Nosotros vamos a comer juntos."],
-      "wordIds": ["31", "25", "86"],
+      "wordIds": ["33", "25", "624"],
       "why": {
         "hu": "Terv többes számban: ir a + főnévi igenév. Ir rendhagyó, nosotros: vamos.",
         "en": "A plan in the plural: ir a + infinitive. Ir is irregular, nosotros: vamos.",
@@ -1480,7 +1480,7 @@
       },
       "answer": "Van a comer temprano.",
       "accept": ["Ellos van a comer temprano.", "Ellas van a comer temprano.", "Ustedes van a comer temprano."],
-      "wordIds": ["31", "25", "1239"],
+      "wordIds": ["33", "25", "176"],
       "why": {
         "hu": "Terv ellos-ra: ir a + főnévi igenév. Ir rendhagyó, ellos: van.",
         "en": "A plan for ellos: ir a + infinitive. Ir is irregular, ellos: van.",
@@ -1500,7 +1500,7 @@
       },
       "answer": "No vas a comer nada.",
       "accept": ["Tú no vas a comer nada."],
-      "wordIds": ["31", "25", "11", "1"],
+      "wordIds": ["33", "25", "98", "5"],
       "why": {
         "hu": "Tagadás: a no az ir elé kerül, nem a főnévi igenév elé. Ir rendhagyó, tú: vas.",
         "en": "Negation: no goes before ir, not before the infinitive. Ir is irregular, tú: vas.",
@@ -1520,7 +1520,7 @@
       },
       "answer": "¿Va a comer mañana?",
       "accept": ["¿Mañana va a comer?", "¿Él va a comer mañana?", "¿Mañana él va a comer?", "¿Ella va a comer mañana?", "¿Mañana ella va a comer?", "¿Usted va a comer mañana?", "¿Mañana usted va a comer?"],
-      "wordIds": ["31", "25", "56"],
+      "wordIds": ["33", "25", "173"],
       "why": {
         "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, él: va.",
         "en": "A question about a planned action: ir a + infinitive. Ir is irregular, él: va.",
@@ -1540,7 +1540,7 @@
       },
       "answer": "Van a ir juntos.",
       "accept": ["Ellos van a ir juntos.", "Ellas van a ir juntos.", "Ustedes van a ir juntos."],
-      "wordIds": ["31", "86"],
+      "wordIds": ["33", "624"],
       "why": {
         "hu": "Eldöntött terv, itt a második ige maga az ir: ir a + ir. Ir rendhagyó, ellos: van.",
         "en": "A decided plan, here the second verb is ir itself: ir a + ir. Ir is irregular, ellos: van.",
@@ -1560,7 +1560,7 @@
       },
       "answer": "Voy a ir solo.",
       "accept": ["Yo voy a ir solo."],
-      "wordIds": ["31", "87"],
+      "wordIds": ["33", "141"],
       "why": {
         "hu": "Eldöntött terv, itt a második ige maga az ir: ir a + ir. Ir rendhagyó, yo: voy.",
         "en": "A decided plan, here the second verb is ir itself: ir a + ir. Ir is irregular, yo: voy.",
@@ -1580,7 +1580,7 @@
       },
       "answer": "Vamos a ir temprano.",
       "accept": ["Nosotros vamos a ir temprano."],
-      "wordIds": ["31", "1239"],
+      "wordIds": ["33", "176"],
       "why": {
         "hu": "Terv többes számban, itt a második ige maga az ir: ir a + ir. Ir rendhagyó, nosotros: vamos.",
         "en": "A plan in the plural, here the second verb is ir itself: ir a + ir. Ir is irregular, nosotros: vamos.",
@@ -1600,7 +1600,7 @@
       },
       "answer": "No vas a ir temprano.",
       "accept": ["Tú no vas a ir temprano."],
-      "wordIds": ["31", "1239", "1"],
+      "wordIds": ["33", "176", "5"],
       "why": {
         "hu": "Tagadás, itt a második ige maga az ir: a no az ir elé kerül. Ir rendhagyó, tú: vas.",
         "en": "Negation, here the second verb is ir itself: no goes before ir. Ir is irregular, tú: vas.",
@@ -1620,7 +1620,7 @@
       },
       "answer": "¿Ustedes van a ir el domingo?",
       "accept": ["¿Van a ir el domingo?", "¿El domingo van a ir?", "¿El domingo ustedes van a ir?"],
-      "wordIds": ["31", "1202"],
+      "wordIds": ["33", "636"],
       "why": {
         "hu": "Kérdés, itt a második ige maga az ir: ir a + ir. Ir rendhagyó, ustedes: van.",
         "en": "A question, here the second verb is ir itself: ir a + ir. Ir is irregular, ustedes: van.",
@@ -1640,7 +1640,7 @@
       },
       "answer": "Voy a hacer esto.",
       "accept": ["Yo voy a hacer esto."],
-      "wordIds": ["31", "34", "101"],
+      "wordIds": ["33", "76", "157"],
       "why": {
         "hu": "Eldöntött terv: ir a + főnévi igenév. Ir rendhagyó, yo: voy.",
         "en": "A decided plan: ir a + infinitive. Ir is irregular, yo: voy.",
@@ -1660,7 +1660,7 @@
       },
       "answer": "También va a hacer esto.",
       "accept": ["Va a hacer esto también.", "También él va a hacer esto.", "Él va a hacer esto también.", "Él también va a hacer esto.", "También ella va a hacer esto.", "Ella va a hacer esto también.", "Ella también va a hacer esto.", "También usted va a hacer esto.", "Usted va a hacer esto también.", "Usted también va a hacer esto."],
-      "wordIds": ["31", "34", "101", "59"],
+      "wordIds": ["33", "76", "157", "73"],
       "why": {
         "hu": "Terv ella-ra: ir a + főnévi igenév. Ir rendhagyó, ella: va.",
         "en": "A plan for ella: ir a + infinitive. Ir is irregular, ella: va.",
@@ -1680,7 +1680,7 @@
       },
       "answer": "Van a hacer esto juntos.",
       "accept": ["Ellos van a hacer esto juntos.", "Ellas van a hacer esto juntos.", "Ustedes van a hacer esto juntos."],
-      "wordIds": ["31", "34", "101", "86"],
+      "wordIds": ["33", "76", "157", "624"],
       "why": {
         "hu": "Terv ellos-ra: ir a + főnévi igenév. Ir rendhagyó, ellos: van.",
         "en": "A plan for ellos: ir a + infinitive. Ir is irregular, ellos: van.",
@@ -1700,7 +1700,7 @@
       },
       "answer": "No vas a hacer nada.",
       "accept": ["Tú no vas a hacer nada."],
-      "wordIds": ["31", "34", "11", "1"],
+      "wordIds": ["33", "76", "98", "5"],
       "why": {
         "hu": "Tagadás: a no az ir elé kerül. Ir rendhagyó, tú: vas.",
         "en": "Negation: no goes before ir. Ir is irregular, tú: vas.",
@@ -1720,7 +1720,7 @@
       },
       "answer": "¿Van a hacer eso mañana?",
       "accept": ["¿Mañana van a hacer eso?", "¿Ellos van a hacer eso mañana?", "¿Mañana ellos van a hacer eso?", "¿Ellas van a hacer eso mañana?", "¿Mañana ellas van a hacer eso?", "¿Ustedes van a hacer eso mañana?", "¿Mañana ustedes van a hacer eso?"],
-      "wordIds": ["31", "34", "102", "56"],
+      "wordIds": ["33", "76", "158", "173"],
       "why": {
         "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, ellas: van.",
         "en": "A question about a planned action: ir a + infinitive. Ir is irregular, ellas: van.",
@@ -1740,7 +1740,7 @@
       },
       "answer": "Voy a ver eso.",
       "accept": ["Yo voy a ver eso."],
-      "wordIds": ["31", "37", "102"],
+      "wordIds": ["33", "78", "158"],
       "why": {
         "hu": "Eldöntött terv: ir a + főnévi igenév. Ir rendhagyó, yo: voy.",
         "en": "A decided plan: ir a + infinitive. Ir is irregular, yo: voy.",
@@ -1760,7 +1760,7 @@
       },
       "answer": "Vamos a ver eso también.",
       "accept": ["También vamos a ver eso.", "Nosotros vamos a ver eso también.", "También nosotros vamos a ver eso.", "Nosotros también vamos a ver eso."],
-      "wordIds": ["31", "37", "102", "59"],
+      "wordIds": ["33", "78", "158", "73"],
       "why": {
         "hu": "Terv többes számban: ir a + főnévi igenév. Ir rendhagyó, nosotros: vamos.",
         "en": "A plan in the plural: ir a + infinitive. Ir is irregular, nosotros: vamos.",
@@ -1780,7 +1780,7 @@
       },
       "answer": "Va a ver la tele.",
       "accept": ["Él va a ver la tele.", "Ella va a ver la tele.", "Usted va a ver la tele."],
-      "wordIds": ["31", "37", "1837"],
+      "wordIds": ["33", "78", "729"],
       "why": {
         "hu": "Terv él-re: ir a + főnévi igenév. Ir rendhagyó, él: va.",
         "en": "A plan for él: ir a + infinitive. Ir is irregular, él: va.",
@@ -1800,7 +1800,7 @@
       },
       "answer": "No vas a ver nada.",
       "accept": ["Tú no vas a ver nada."],
-      "wordIds": ["31", "37", "11", "1"],
+      "wordIds": ["33", "78", "98", "5"],
       "why": {
         "hu": "Tagadás: a no az ir elé kerül. Ir rendhagyó, tú: vas.",
         "en": "Negation: no goes before ir. Ir is irregular, tú: vas.",
@@ -1820,7 +1820,7 @@
       },
       "answer": "¿Ustedes van a ver la tele el domingo?",
       "accept": ["¿Van a ver la tele el domingo?", "¿El domingo van a ver la tele?", "¿El domingo ustedes van a ver la tele?"],
-      "wordIds": ["31", "37", "1837", "1202"],
+      "wordIds": ["33", "78", "729", "636"],
       "why": {
         "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, ustedes: van.",
         "en": "A question about a planned action: ir a + infinitive. Ir is irregular, ustedes: van.",
@@ -1840,7 +1840,7 @@
       },
       "answer": "Voy a estudiar bien.",
       "accept": ["Yo voy a estudiar bien."],
-      "wordIds": ["31", "1410", "6"],
+      "wordIds": ["33", "212", "3"],
       "why": {
         "hu": "Eldöntött terv: ir a + főnévi igenév. Ir rendhagyó, yo: voy.",
         "en": "A decided plan: ir a + infinitive. Ir is irregular, yo: voy.",
@@ -1860,7 +1860,7 @@
       },
       "answer": "Vas a estudiar rápido.",
       "accept": ["Tú vas a estudiar rápido."],
-      "wordIds": ["31", "1410", "90"],
+      "wordIds": ["33", "212", "287"],
       "why": {
         "hu": "Terv tú-ra: ir a + főnévi igenév. Ir rendhagyó, tú: vas.",
         "en": "A plan for tú: ir a + infinitive. Ir is irregular, tú: vas.",
@@ -1880,7 +1880,7 @@
       },
       "answer": "Vamos a estudiar dentro.",
       "accept": ["Nosotros vamos a estudiar dentro."],
-      "wordIds": ["31", "1410", "65"],
+      "wordIds": ["33", "212", "749"],
       "why": {
         "hu": "Terv többes számban: ir a + főnévi igenév. Ir rendhagyó, nosotros: vamos.",
         "en": "A plan in the plural: ir a + infinitive. Ir is irregular, nosotros: vamos.",
@@ -1900,7 +1900,7 @@
       },
       "answer": "No va a estudiar tampoco.",
       "accept": ["Tampoco va a estudiar.", "Él no va a estudiar tampoco.", "Él tampoco va a estudiar.", "Ella no va a estudiar tampoco.", "Ella tampoco va a estudiar.", "Usted no va a estudiar tampoco.", "Usted tampoco va a estudiar."],
-      "wordIds": ["31", "1410", "1317", "1"],
+      "wordIds": ["33", "212", "440", "5"],
       "why": {
         "hu": "Tagadás: a no az ir elé kerül. Ir rendhagyó, ella: va.",
         "en": "Negation: no goes before ir. Ir is irregular, ella: va.",
@@ -1920,7 +1920,7 @@
       },
       "answer": "¿Van a estudiar antes?",
       "accept": ["¿Antes van a estudiar?", "¿Ellos van a estudiar antes?", "¿Antes ellos van a estudiar?", "¿Ellas van a estudiar antes?", "¿Antes ellas van a estudiar?", "¿Ustedes van a estudiar antes?", "¿Antes ustedes van a estudiar?"],
-      "wordIds": ["31", "1410", "63"],
+      "wordIds": ["33", "212", "171"],
       "why": {
         "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, ellos: van.",
         "en": "A question about a planned action: ir a + infinitive. Ir is irregular, ellos: van.",
@@ -1940,7 +1940,7 @@
       },
       "answer": "Voy a trabajar fuera.",
       "accept": ["Yo voy a trabajar fuera."],
-      "wordIds": ["31", "1409", "64"],
+      "wordIds": ["33", "49", "870"],
       "why": {
         "hu": "Eldöntött terv: ir a + főnévi igenév. Ir rendhagyó, yo: voy.",
         "en": "A decided plan: ir a + infinitive. Ir is irregular, yo: voy.",
@@ -1960,7 +1960,7 @@
       },
       "answer": "Va a trabajar lento.",
       "accept": ["Él va a trabajar lento.", "Ella va a trabajar lento.", "Usted va a trabajar lento."],
-      "wordIds": ["31", "1409", "91"],
+      "wordIds": ["33", "49", "871"],
       "why": {
         "hu": "Terv él-re: ir a + főnévi igenév. Ir rendhagyó, él: va.",
         "en": "A plan for él: ir a + infinitive. Ir is irregular, él: va.",
@@ -1980,7 +1980,7 @@
       },
       "answer": "Vamos a trabajar después.",
       "accept": ["Después vamos a trabajar.", "Nosotros vamos a trabajar después.", "Después nosotros vamos a trabajar."],
-      "wordIds": ["31", "1409", "62"],
+      "wordIds": ["33", "49", "170"],
       "why": {
         "hu": "Terv többes számban: ir a + főnévi igenév. Ir rendhagyó, nosotros: vamos.",
         "en": "A plan in the plural: ir a + infinitive. Ir is irregular, nosotros: vamos.",
@@ -2000,7 +2000,7 @@
       },
       "answer": "No vas a trabajar mañana.",
       "accept": ["Mañana no vas a trabajar.", "Tú no vas a trabajar mañana.", "Mañana tú no vas a trabajar."],
-      "wordIds": ["31", "1409", "56", "1"],
+      "wordIds": ["33", "49", "173", "5"],
       "why": {
         "hu": "Tagadás: a no az ir elé kerül. Ir rendhagyó, tú: vas.",
         "en": "Negation: no goes before ir. Ir is irregular, tú: vas.",
@@ -2020,7 +2020,7 @@
       },
       "answer": "¿Van a trabajar el domingo?",
       "accept": ["¿El domingo van a trabajar?", "¿Ellos van a trabajar el domingo?", "¿El domingo ellos van a trabajar?", "¿Ellas van a trabajar el domingo?", "¿El domingo ellas van a trabajar?", "¿Ustedes van a trabajar el domingo?", "¿El domingo ustedes van a trabajar?"],
-      "wordIds": ["31", "1409", "1202"],
+      "wordIds": ["33", "49", "636"],
       "why": {
         "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, ustedes: van.",
         "en": "A question about a planned action: ir a + infinitive. Ir is irregular, ustedes: van.",
@@ -2040,7 +2040,7 @@
       },
       "answer": "Voy a comprar pan.",
       "accept": ["Yo voy a comprar pan."],
-      "wordIds": ["31", "1394", "1062"],
+      "wordIds": ["33", "144", "27"],
       "why": {
         "hu": "Eldöntött terv: ir a + főnévi igenév. Ir rendhagyó, yo: voy.",
         "en": "A decided plan: ir a + infinitive. Ir is irregular, yo: voy.",
@@ -2060,7 +2060,7 @@
       },
       "answer": "Vas a comprar rápido.",
       "accept": ["Tú vas a comprar rápido."],
-      "wordIds": ["31", "1394", "90"],
+      "wordIds": ["33", "144", "287"],
       "why": {
         "hu": "Terv tú-ra: ir a + főnévi igenév. Ir rendhagyó, tú: vas.",
         "en": "A plan for tú: ir a + infinitive. Ir is irregular, tú: vas.",
@@ -2080,7 +2080,7 @@
       },
       "answer": "Va a comprar aquí.",
       "accept": ["Él va a comprar aquí.", "Ella va a comprar aquí.", "Usted va a comprar aquí."],
-      "wordIds": ["31", "1394", "8"],
+      "wordIds": ["33", "144", "9"],
       "why": {
         "hu": "Terv ella-ra: ir a + főnévi igenév. Ir rendhagyó, ella: va.",
         "en": "A plan for ella: ir a + infinitive. Ir is irregular, ella: va.",
@@ -2100,7 +2100,7 @@
       },
       "answer": "No vamos a comprar tarde.",
       "accept": ["Nosotros no vamos a comprar tarde."],
-      "wordIds": ["31", "1394", "1240", "1"],
+      "wordIds": ["33", "144", "174", "5"],
       "why": {
         "hu": "Tagadás: a no az ir elé kerül. Ir rendhagyó, nosotros: vamos.",
         "en": "Negation: no goes before ir. Ir is irregular, nosotros: vamos.",
@@ -2120,7 +2120,7 @@
       },
       "answer": "¿Van a comprar también?",
       "accept": ["¿También van a comprar?", "¿Ellos van a comprar también?", "¿También ellos van a comprar?", "¿Ellos también van a comprar?", "¿Ellas van a comprar también?", "¿También ellas van a comprar?", "¿Ellas también van a comprar?", "¿Ustedes van a comprar también?", "¿También ustedes van a comprar?", "¿Ustedes también van a comprar?"],
-      "wordIds": ["31", "1394", "59"],
+      "wordIds": ["33", "144", "73"],
       "why": {
         "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, ellos: van.",
         "en": "A question about a planned action: ir a + infinitive. Ir is irregular, ellos: van.",
@@ -2140,7 +2140,7 @@
       },
       "answer": "Voy a hablar bien.",
       "accept": ["Yo voy a hablar bien."],
-      "wordIds": ["31", "27", "6"],
+      "wordIds": ["33", "47", "3"],
       "why": {
         "hu": "Eldöntött terv: ir a + főnévi igenév. Ir rendhagyó, yo: voy.",
         "en": "A decided plan: ir a + infinitive. Ir is irregular, yo: voy.",
@@ -2160,7 +2160,7 @@
       },
       "answer": "Vas a hablar rápido.",
       "accept": ["Tú vas a hablar rápido."],
-      "wordIds": ["31", "27", "90"],
+      "wordIds": ["33", "47", "287"],
       "why": {
         "hu": "Terv tú-ra: ir a + főnévi igenév. Ir rendhagyó, tú: vas.",
         "en": "A plan for tú: ir a + infinitive. Ir is irregular, tú: vas.",
@@ -2180,7 +2180,7 @@
       },
       "answer": "Vamos a hablar después.",
       "accept": ["Después vamos a hablar.", "Nosotros vamos a hablar después.", "Después nosotros vamos a hablar."],
-      "wordIds": ["31", "27", "62"],
+      "wordIds": ["33", "47", "170"],
       "why": {
         "hu": "Terv többes számban: ir a + főnévi igenév. Ir rendhagyó, nosotros: vamos.",
         "en": "A plan in the plural: ir a + infinitive. Ir is irregular, nosotros: vamos.",
@@ -2200,7 +2200,7 @@
       },
       "answer": "No va a hablar tampoco.",
       "accept": ["Tampoco va a hablar.", "Él no va a hablar tampoco.", "Él tampoco va a hablar.", "Ella no va a hablar tampoco.", "Ella tampoco va a hablar.", "Usted no va a hablar tampoco.", "Usted tampoco va a hablar."],
-      "wordIds": ["31", "27", "1317", "1"],
+      "wordIds": ["33", "47", "440", "5"],
       "why": {
         "hu": "Tagadás: a no az ir elé kerül. Ir rendhagyó, él: va.",
         "en": "Negation: no goes before ir. Ir is irregular, él: va.",
@@ -2220,7 +2220,7 @@
       },
       "answer": "¿Ustedes van a hablar dentro?",
       "accept": ["¿Van a hablar dentro?"],
-      "wordIds": ["31", "27", "65"],
+      "wordIds": ["33", "47", "749"],
       "why": {
         "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, ustedes: van.",
         "en": "A question about a planned action: ir a + infinitive. Ir is irregular, ustedes: van.",
@@ -2240,7 +2240,7 @@
       },
       "answer": "Voy a vivir solo.",
       "accept": ["Yo voy a vivir solo."],
-      "wordIds": ["31", "82", "87"],
+      "wordIds": ["33", "48", "141"],
       "why": {
         "hu": "Eldöntött terv: ir a + főnévi igenév. Ir rendhagyó, yo: voy.",
         "en": "A decided plan: ir a + infinitive. Ir is irregular, yo: voy.",
@@ -2260,7 +2260,7 @@
       },
       "answer": "Va a vivir aquí.",
       "accept": ["Él va a vivir aquí.", "Ella va a vivir aquí.", "Usted va a vivir aquí."],
-      "wordIds": ["31", "82", "8"],
+      "wordIds": ["33", "48", "9"],
       "why": {
         "hu": "Terv ella-ra: ir a + főnévi igenév. Ir rendhagyó, ella: va.",
         "en": "A plan for ella: ir a + infinitive. Ir is irregular, ella: va.",
@@ -2280,7 +2280,7 @@
       },
       "answer": "Vamos a vivir fuera.",
       "accept": ["Nosotros vamos a vivir fuera."],
-      "wordIds": ["31", "82", "64"],
+      "wordIds": ["33", "48", "870"],
       "why": {
         "hu": "Terv többes számban: ir a + főnévi igenév. Ir rendhagyó, nosotros: vamos.",
         "en": "A plan in the plural: ir a + infinitive. Ir is irregular, nosotros: vamos.",
@@ -2300,7 +2300,7 @@
       },
       "answer": "No vas a vivir tranquilo.",
       "accept": ["Tú no vas a vivir tranquilo."],
-      "wordIds": ["31", "82", "1367", "1"],
+      "wordIds": ["33", "48", "421", "5"],
       "why": {
         "hu": "Tagadás: a no az ir elé kerül. Ir rendhagyó, tú: vas.",
         "en": "Negation: no goes before ir. Ir is irregular, tú: vas.",
@@ -2320,7 +2320,7 @@
       },
       "answer": "¿Van a vivir contentos?",
       "accept": ["¿Ellos van a vivir contentos?", "¿Ellas van a vivir contentos?", "¿Ustedes van a vivir contentos?"],
-      "wordIds": ["31", "82", "1360"],
+      "wordIds": ["33", "48", "10"],
       "why": {
         "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, ellos: van.",
         "en": "A question about a planned action: ir a + infinitive. Ir is irregular, ellos: van.",
@@ -2340,7 +2340,7 @@
       },
       "answer": "Voy a leer antes.",
       "accept": ["Antes voy a leer.", "Yo voy a leer antes.", "Antes yo voy a leer."],
-      "wordIds": ["31", "1411", "63"],
+      "wordIds": ["33", "145", "171"],
       "why": {
         "hu": "Eldöntött terv: ir a + főnévi igenév. Ir rendhagyó, yo: voy.",
         "en": "A decided plan: ir a + infinitive. Ir is irregular, yo: voy.",
@@ -2360,7 +2360,7 @@
       },
       "answer": "Vas a leer después.",
       "accept": ["Después vas a leer.", "Tú vas a leer después.", "Después tú vas a leer."],
-      "wordIds": ["31", "1411", "62"],
+      "wordIds": ["33", "145", "170"],
       "why": {
         "hu": "Terv tú-ra: ir a + főnévi igenév. Ir rendhagyó, tú: vas.",
         "en": "A plan for tú: ir a + infinitive. Ir is irregular, tú: vas.",
@@ -2380,7 +2380,7 @@
       },
       "answer": "Vamos a leer dentro.",
       "accept": ["Nosotros vamos a leer dentro."],
-      "wordIds": ["31", "1411", "65"],
+      "wordIds": ["33", "145", "749"],
       "why": {
         "hu": "Terv többes számban: ir a + főnévi igenév. Ir rendhagyó, nosotros: vamos.",
         "en": "A plan in the plural: ir a + infinitive. Ir is irregular, nosotros: vamos.",
@@ -2400,7 +2400,7 @@
       },
       "answer": "No va a leer tampoco.",
       "accept": ["Tampoco va a leer.", "Él no va a leer tampoco.", "Él tampoco va a leer.", "Ella no va a leer tampoco.", "Ella tampoco va a leer.", "Usted no va a leer tampoco.", "Usted tampoco va a leer."],
-      "wordIds": ["31", "1411", "1317", "1"],
+      "wordIds": ["33", "145", "440", "5"],
       "why": {
         "hu": "Tagadás: a no az ir elé kerül. Ir rendhagyó, ella: va.",
         "en": "Negation: no goes before ir. Ir is irregular, ella: va.",
@@ -2420,7 +2420,7 @@
       },
       "answer": "¿Van a leer fuera?",
       "accept": ["¿Ellos van a leer fuera?", "¿Ellas van a leer fuera?", "¿Ustedes van a leer fuera?"],
-      "wordIds": ["31", "1411", "64"],
+      "wordIds": ["33", "145", "870"],
       "why": {
         "hu": "Kérdés egy tervezett cselekvésről: ir a + főnévi igenév. Ir rendhagyó, ellos: van.",
         "en": "A question about a planned action: ir a + infinitive. Ir is irregular, ellos: van.",
