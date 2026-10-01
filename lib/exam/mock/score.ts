@@ -7,8 +7,12 @@
 // vagyis hallás x2, és az eredmény "provisional" jelzést kap.
 //
 // Írás-rész: nincs önértékelés, a régi kulcsszavas tartalmi pontozás marad (egy tartalmi
-// pont egy jegy, plusz egy jegy a szószám eléréséért); a szóbeli régi önértékelése itt nincs.
+// pont egy jegy, plusz egy jegy a szószám eléréséért), de csak értelmes szövegre: a bemásolt
+// feladat-szöveg, az értelmetlen vagy ismételt szó és a túl rövid szöveg nem kap pontot, az űrlap
+// mezői pedig a fajtájuknak megfelelő értéket kérik (lib/exam/mock/writing.ts). A szóbeli régi
+// önértékelése itt nincs.
 
+import { assessMessage, checkField, countWords, fold } from './writing';
 import { mockTaskItemCount, type MockAnswers, type MockExam, type MockSkill, type MockTask, type MockTaskAnswer } from './types';
 
 export interface MockItemResult {
@@ -58,20 +62,11 @@ export interface MockResult {
   totalMax: number;
 }
 
-/** Kis/nagybetű és ékezet nélküli összevetés a kulcsszavakhoz. */
-export function fold(text: string): string {
-  return text
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[‘’]/g, "'")
-    .replace(/\s+/g, ' ')
-    .trim();
-}
+export { countWords, fold };
 
-export function countWords(text: string): number {
-  const trimmed = text.trim();
-  return trimmed ? trimmed.split(/\s+/).length : 0;
+/** A pontozás környezete: a célnyelvi szótár az írás értelmességének ellenőrzéséhez (nélküle ez a lépés kimarad). */
+export interface MockScoreContext {
+  lexicon?: ReadonlySet<string>;
 }
 
 function choiceItem(label: string, options: string[], correct: number, given: unknown): MockItemResult {
@@ -83,7 +78,7 @@ function choiceItem(label: string, options: string[], correct: number, given: un
   };
 }
 
-export function scoreMockTask(task: MockTask, answer: MockTaskAnswer = {}): MockTaskResult {
+export function scoreMockTask(task: MockTask, answer: MockTaskAnswer = {}, ctx: MockScoreContext = {}): MockTaskResult {
   const items: MockItemResult[] = [];
   switch (task.kind) {
     case 'match':
@@ -116,30 +111,35 @@ export function scoreMockTask(task: MockTask, answer: MockTaskAnswer = {}): Mock
       });
       break;
     case 'form_fill':
-      // Az űrlap a tanuló saját adata, igazságra nem pontozható: kitöltve és a megfelelő fajtájú (szám, ahol szám kell).
+      // Az űrlap a tanuló saját adata, igazságra nem pontozható: kitöltve és a mező fajtájának megfelelő,
+      // értelmes érték kell (szám a számnál, e-mail cím a címnél, két szavas név a névnél, nem betűhalmaz).
       for (const f of task.fields) {
         const raw = String(answer[f.id] ?? '').trim();
-        items.push({ label: f.label, given: raw, expected: f.type === 'number' ? '123' : '…', ok: raw.length > 0 && (f.type !== 'number' || /\d/.test(raw)) });
+        items.push({ label: f.label, given: raw, expected: f.type === 'number' ? '123' : '…', ok: checkField(f, raw) });
       }
       break;
     case 'short_message': {
       const text = String(answer.text ?? '');
-      const folded = fold(text);
+      // A bemásolt feladat-szöveg nem számít: az utasítás és a feladat-szöveg a hivatkozás.
+      const a = assessMessage(text, [task.instruction, task.prompt], ctx.lexicon);
+      // Tartalmi pont csak értelmes és legalább a fele minimum-szószámú szövegre jár (két szóba zsúfolt kulcsszó nem).
+      const enough = a.valid && a.words >= Math.ceil(task.minWords / 2);
+      const raw = fold(text);
       for (const p of task.points) {
-        const ok = p.keywords.some((kw) => folded.includes(fold(kw)));
+        // A csak írásjelből álló kulcsszó (kérdőjel) a nyers szövegen fut, mert a szavakból az írásjel kiesik.
+        const ok = enough && p.keywords.some((kw) => (/[a-z0-9]/.test(fold(kw)) ? a.text : raw).includes(fold(kw)));
         items.push({ label: p.label, given: ok ? '✓' : '✗', expected: p.keywords[0], ok });
       }
-      const words = countWords(text);
-      items.push({ label: `≥ ${task.minWords}`, given: String(words), expected: String(task.minWords), ok: words >= task.minWords });
+      items.push({ label: `≥ ${task.minWords}`, given: String(a.valid ? a.words : 0), expected: String(task.minWords), ok: a.valid && a.words >= task.minWords });
       break;
     }
   }
   return { taskId: task.id, correct: items.filter((i) => i.ok).length, total: mockTaskItemCount(task), items };
 }
 
-export function scoreMockExam(exam: MockExam, answers: MockAnswers): MockResult {
+export function scoreMockExam(exam: MockExam, answers: MockAnswers, ctx: MockScoreContext = {}): MockResult {
   const papers: MockPaperResult[] = exam.papers.map((paper) => {
-    const tasks = paper.tasks.map((task) => scoreMockTask(task, answers[task.id]));
+    const tasks = paper.tasks.map((task) => scoreMockTask(task, answers[task.id], ctx));
     const correct = tasks.reduce((n, t) => n + t.correct, 0);
     const total = tasks.reduce((n, t) => n + t.total, 0);
     const included = !paper.placeholder;

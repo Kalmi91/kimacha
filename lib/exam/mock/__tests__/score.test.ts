@@ -13,6 +13,10 @@ afterAll(() => setPcicTarget('es'));
 
 const BP = getMockBlueprint('es', 'A1');
 
+// Jó űrlap-értékek mezőfajtánként, és különböző szavak a szószám-jegyhez (a szó-ismétlés nem szöveg).
+const GOOD_FORM = { fullname: 'Ana Kovács', word: 'húngara', address: 'Calle Ficticia 123', age: '30', phone: '5500000000', email: 'ana@example.com', level: 'A1' };
+const DISTINCT_WORDS = 'casa perro gato libro mesa silla agua pan leche café trabajo escuela amigo familia ciudad calle parque tienda mercado cocina ventana puerta coche tren playa montaña verano invierno música deporte comida fiesta viaje cama sol luna cielo flor árbol río'.split(' ');
+
 // Egy papír egyetlen feladatból áll, 25 tétellel: a találat = a pont, így a küszöbök pontosan vizsgálhatók.
 function task25(skill: 'reading' | 'writing' | 'listening'): MockTask {
   if (skill === 'reading') return { id: 'r', kind: 'read_mc', instruction: '', passages: Array.from({ length: 25 }, (_, i) => ({ text: `t${i}`, options: ['a', 'b'], correct: 0 })) };
@@ -38,7 +42,7 @@ const synthetic = (): MockExam => ({
 function answers(reading: number, writing: number, listening: number): MockAnswers {
   const out: MockAnswers = { r: {}, w: {}, l: {} };
   for (let i = 0; i < reading; i++) out.r[String(i)] = 0;
-  for (let i = 0; i < writing; i++) out.w[`f${i}`] = 'x';
+  for (let i = 0; i < writing; i++) out.w[`f${i}`] = 'húngara';
   for (let i = 0; i < listening; i++) out.l[String(i)] = 0;
   return out;
 }
@@ -105,8 +109,8 @@ describe('scoreMockExam: papír-pontok és csoport-szabály', () => {
         if (t.kind === 'listen_mc' || t.kind === 'listen_dialogue') t.questions.forEach((x, i) => (a[String(i)] = x.correct));
         if (t.kind === 'true_false') t.statements.forEach((x, i) => (a[String(i)] = x.answer));
         if (t.kind === 'match' || t.kind === 'listen_match') Object.assign(a, t.answer);
-        if (t.kind === 'form_fill') for (const f of t.fields) a[f.id] = f.type === 'number' ? '5551234' : 'x';
-        if (t.kind === 'short_message') a.text = `${t.points.map((x) => x.keywords[0]).join(' ')} ${'palabra '.repeat(t.minWords)}`;
+        if (t.kind === 'form_fill') for (const f of t.fields) a[f.id] = GOOD_FORM[f.check ?? 'word'];
+        if (t.kind === 'short_message') a.text = `${t.points.map((x) => x.keywords[0]).join(' ')} ${DISTINCT_WORDS.slice(0, t.minWords).join(' ')}`;
         all[t.id] = a;
       }
     }
