@@ -1,0 +1,57 @@
+// PLAN-fb1001 K1: a 🗑️ (haladás-nullázás) kikerült a Learn fejlécéből, a
+// Beállításokba költözött (settingsReset.test.tsx). Mock-minta: pcicFocus.test.tsx.
+
+jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
+jest.mock('@/lib/speech', () => ({
+  speak: jest.fn(),
+  speakSequence: jest.fn(),
+  stopSpeaking: jest.fn(),
+}));
+
+jest.mock('expo-router', () => ({
+  useFocusEffect: (cb: () => void) => {
+    const { useEffect } = require('react');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    useEffect(cb, []);
+  },
+}));
+
+jest.mock('react-native-safe-area-context', () => ({
+  useSafeAreaInsets: () => ({ top: 0, left: 0, right: 0, bottom: 0 }),
+}));
+
+const FIXTURE_ITEM = { id: 'b1-x1', es: 'vida', en: 'life', kind: 'word' as const, section: 'Test', order: 0 };
+jest.mock('@/data/pcic', () => ({
+  PCIC_LEVELS: ['B1'],
+  PCIC_VIEW_LEVELS: ['B1'],
+  LEVEL_LABELS: { B1: 'Intermediate' },
+  pcicItemsForLevel: () => [FIXTURE_ITEM],
+  pcicItemsForViewLevel: () => [FIXTURE_ITEM],
+  findPcicItem: (id: string) => (id === 'b1-x1' ? FIXTURE_ITEM : undefined),
+  isPlusSentence: () => false,
+  realLevelOfView: (level: string) => level,
+  setPcicTarget: () => {},
+}));
+
+import { act, render } from '@testing-library/react-native';
+
+import { getDb } from '@/lib/database';
+import PcicScreen from '../index';
+
+const flush = async (times = 4) => {
+  for (let i = 0; i < times; i++) {
+    await act(async () => {
+      await Promise.resolve();
+    });
+  }
+};
+
+describe('PCIC fül: nincs 🗑️ a fejlécben (PLAN-fb1001 K1)', () => {
+  it('a Learn fejléc nem mutat nullázó gombot', async () => {
+    await getDb().resetPcicCards();
+    const { queryByText } = render(<PcicScreen />);
+    await flush();
+
+    expect(queryByText('🗑️')).toBeNull();
+  });
+});

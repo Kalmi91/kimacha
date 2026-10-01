@@ -11,7 +11,7 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { t, setLanguage, notifyLanguageChange } from '@/lib/i18n';
 import { type Level } from '@/data/words';
 import { getDb } from '@/lib/database';
-import { setPcicTarget, type PcicTarget } from '@/data/pcic';
+import { setPcicTarget, realLevelOfView, type PcicTarget, type PcicViewLevel } from '@/data/pcic';
 import { validateBackupPayload } from '@/lib/backup';
 import { validateMistakesPayload } from '@/lib/mistakes/format';
 import {
@@ -115,6 +115,9 @@ export default function SettingsScreen() {
   // hint the learner only hears a wrong-language reading (or now, silence) and
   // has no idea it is a missing system voice, not the app.
   const [missingVoices, setMissingVoices] = useState<string[]>([]);
+  // PLAN-fb1001 K1: az aktív pár PCIC-szintje, a "Haladás nullázása" sor ennek a
+  // valódi szintjét nullázza (Learn-nézet: B1 az alap, mint a Learn fülön).
+  const [pcicLevel, setPcicLevel] = useState<PcicViewLevel>('B1');
 
   useFocusEffect(
     useCallback(() => {
@@ -136,6 +139,7 @@ export default function SettingsScreen() {
       Promise.all([db.getSpellingDueCount(), db.getPcicSpellingDueCount()]).then(([a, b]) => setSpellingDue(a + b));
       Promise.all([db.getSpellingListCount(), db.getPcicSpellingListCount()]).then(([a, b]) => setSpellingTotal(a + b));
       db.getArticlePicker().then(setArticlePicker);
+      db.getPcicLevel().then(setPcicLevel);
     }, [])
   );
 
@@ -296,6 +300,23 @@ export default function SettingsScreen() {
       }
     } catch {
       notify(s.backup.errorTitle, s.backup.importError);
+    }
+  };
+
+  // PLAN-fb1001 K1: a Learn fejlécéből ide költözött haladás-nullázás. Csak az AKTÍV
+  // szint kártyáit üríti (a haladás szintenként külön él); "A1+"/"A2+" nézeten a
+  // mögöttes valódi szintet (PLAN-fb0924 8. lépés). A Learn fókuszra újratölt.
+  const handleResetProgress = () => {
+    const doReset = async () => {
+      await getDb().resetPcicCards(realLevelOfView(pcicLevel).toLowerCase());
+    };
+    if (Platform.OS === 'web') {
+      if (window.confirm(`${s.pcic.resetConfirmTitle}\n${s.pcic.resetConfirmMessage}`)) doReset();
+    } else {
+      Alert.alert(s.pcic.resetConfirmTitle, s.pcic.resetConfirmMessage, [
+        { text: s.feedback.cancel, style: 'cancel' },
+        { text: s.pcic.resetConfirmYes, style: 'destructive', onPress: doReset },
+      ]);
     }
   };
 
@@ -513,6 +534,12 @@ export default function SettingsScreen() {
       {/* PLAN-hibaim.md 3. lépés: import a "Hibáim" kötegből (Drive JSON). */}
       <Row onPress={handleLoadMistakes}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.mistakes.load}</Text>
+        <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
+      </Row>
+
+      {/* PLAN-fb1001 K1: haladás-nullázás (megerősítéssel), az aktív szintre. */}
+      <Row onPress={handleResetProgress}>
+        <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.pcic.resetRow(realLevelOfView(pcicLevel))}</Text>
         <Text style={[styles.wordsOnlyLabel, { color: colors.tint }]}>→</Text>
       </Row>
 

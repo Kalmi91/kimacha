@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { StyleSheet, Text, View, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform, ActivityIndicator, Keyboard, Alert } from 'react-native';
+import { StyleSheet, Text, View, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform, ActivityIndicator, Keyboard } from 'react-native';
 import { useFocusEffect } from 'expo-router';
 import { speak, speakSequence, stopSpeaking } from '@/lib/speech';
 
@@ -408,24 +408,7 @@ export default function PcicScreen() {
     setCardSeq((n) => n + 1);
   };
 
-  const handleReset = () => {
-    const doReset = async () => {
-      // Csak az AKTÍV szint kártyáit üríti (a haladás szintenként külön él);
-      // "A1+"/"A2+" nézeten a mögöttes valódi szintet (a lánc/mondat ugyanaz
-      // a fájl/haladás, mint a szó-pakli, PLAN-fb0924 8. lépés).
-      await getDb().resetPcicCards(realLevelOfView(level).toLowerCase());
-      setLoading(true);
-      await load();
-    };
-    if (Platform.OS === 'web') {
-      if (window.confirm(`${s.pcic.resetConfirmTitle}\n${s.pcic.resetConfirmMessage}`)) doReset();
-    } else {
-      Alert.alert(s.pcic.resetConfirmTitle, s.pcic.resetConfirmMessage, [
-        { text: s.feedback.cancel, style: 'cancel' },
-        { text: s.pcic.resetConfirmYes, style: 'destructive', onPress: doReset },
-      ]);
-    }
-  };
+  // PLAN-fb1001 K1: a haladás-nullázás (a régi 🗑️) a Beállítások fülre költözött.
 
   // FB314/385/386: nincs több esedékes/új lap, de a témakörben van még be
   // nem vezetett tétel; ez a napi keretet bővíti +10-zel (perzisztálva,
@@ -487,9 +470,6 @@ export default function PcicScreen() {
             <Text style={styles.resetIcon}>↶</Text>
           </Pressable>
         )}
-        <Pressable onPress={handleReset} hitSlop={12} style={styles.resetBtn}>
-          <Text style={styles.resetIcon}>🗑️</Text>
-        </Pressable>
       </View>
     </View>
     {/* FB387/395 javítás: a régi ötödik BadgeRow-chip (miből áll a mai bevezetés

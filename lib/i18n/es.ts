@@ -314,6 +314,8 @@ const es: Strings = {
     resetConfirmTitle: 'Reiniciar progreso',
     resetConfirmMessage: 'Esto borra todo el progreso de PCIC. ¿Estás seguro?',
     resetConfirmYes: 'Reiniciar',
+    // PLAN-fb1001 K1: a Beállítások sor, a nullázódó szint nevével.
+    resetRow: (level: string) => `🗑️ Reiniciar progreso (${level})`,
     undo: 'Deshacer',
     dontLearn: 'No aprender esto',
     addToSpelling: '✎ Añadir a ortografía',
