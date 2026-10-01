@@ -21,7 +21,32 @@ describe('data/pcic.ts: irány-tudatos korpusz (PLAN-ketiranyu 4. lépés)', () 
     expect(getPcicTarget()).toBe('es');
     const a1 = pcicItemsForLevel('A1');
     expect(a1.length).toBeGreaterThan(0);
-    expect(a1.every((item) => item.id.startsWith('w'))).toBe(true);
+    // PLAN-learn-words-open: az en→es pakli id-tere o<order> (data/words-open).
+    expect(a1.every((item) => item.id.startsWith('o'))).toBe(true);
+  });
+
+  // PLAN-learn-words-open 1-2. lépés: a 4 szint 150-150 kártya a words-open
+  // a1/a2/b1/b2.json-ból, order = a fájl order mezője (1-600), id = o<order>.
+  it('en→es: A1/A2/B1/B2 = 150-150 words-open kártya, o<order> id, egyedi id', () => {
+    const levels = (['A1', 'A2', 'B1', 'B2'] as const).map((l) => pcicItemsForLevel(l));
+    expect(levels.map((items) => items.length)).toEqual([150, 150, 150, 150]);
+    const all = levels.flat();
+    expect(new Set(all.map((item) => item.id)).size).toBe(600);
+    expect(all.every((item) => item.id === `o${item.order}`)).toBe(true);
+    expect(levels[0][0]).toMatchObject({ id: 'o1', es: 'yo', en: 'I', kind: 'word', pos: 'pron', exampleEs: undefined, exampleEn: undefined });
+    expect(levelOfItem('o150')).toBe('A1');
+    expect(levelOfItem('o151')).toBe('A2');
+    expect(levelOfItem('o451')).toBe('B2');
+    expect(levelOfItem('o600')).toBe('B2');
+    // A régi w<id> id-tér nincs a betöltött korpuszban (a DB-sorok megmaradnak, csak nem jelennek meg).
+    expect(findPcicItem('w1')).toBeUndefined();
+  });
+
+  it('en→es: példamondat a sentence_es/en-ből, pos-leképezés (det/interj nem képezhető le)', () => {
+    expect(findPcicItem('o3')).toMatchObject({ pos: 'adv', exampleEs: 'Yo estoy bien.', exampleEn: 'I am fine.' });
+    expect(findPcicItem('o15')?.pos).toBe('conj');
+    expect(findPcicItem('o20')?.pos).toBeUndefined(); // det
+    expect(findPcicItem('o7')?.pos).toBeUndefined(); // interj
   });
 
   // PLAN-ketiranyu 5. lépés (D-A döntés a): az A1 az data/words/en/a0.json
