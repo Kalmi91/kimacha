@@ -92,7 +92,7 @@ Becslés: javítás-tétel ≈ 50-100K, új lecke ≈ 150-300K Sonnet-token; a m
 Párhuzamos agent: `feat/learn-words-open` (`C:\AI\kimacha-wt-learn-open`) a `data/pcic.ts`, `app/onboarding.tsx`, `app/(tabs)/stats.tsx`, `lib/grammar/__tests__/tableDeckEn.test.ts` fájlokon dolgozik. Ez a menet ezekhez NEM nyúl; csak `data/games/grammar/es/*.json`, `lib/games/content/es.ts`, `lib/grammar/syllabus.ts` (új témánál) és a lecke-darabszámot állító teszt. Push előtt `git fetch` + rebase `origin/main`-re.
 Éjszakai sáv (RULES.md 9.3): csak tartalom; app-kódot igénylő tétel `[!]`, napközbenre.
 
-- [ ] J1. `interrogativos`: 12 form item spanyol gyártásra (tábla átfordítva: row[0] = válasz/kontextus, pl. «En Narvarte.», oszlop = kérdőszó, cella = a kérdőszó) → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `fix(grammar): interrogativos form items (nyelvtan)`
+- [x] J1. `interrogativos`: 12 form item spanyol gyártásra (tábla átfordítva: row[0] = válasz/kontextus, pl. «En Narvarte.», oszlop = kérdőszó, cella = a kérdőszó) → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `fix(grammar): interrogativos form items (nyelvtan)` · 00:26 · audit 0/0, jest 1553 ok, tsc 0, lint 0 err · új `interrogativos-respuestas` tábla (a meglévő meaning-tábla a tabledeck FB390 miatt érintetlen) · hash: HASH-J1
 - [ ] J2. `marcadores-discursivos`: ugyanez a hiba, 12 form item mondat-gyártásra (row[0] = helyzet, cella = a gyártandó kötőelem) → kész, ha: ugyanaz, commit `fix(grammar): marcadores-discursivos form items (nyelvtan)`
 - [ ] F1. FB435 `ser-estar`: az 5 `spot` (hibakereső) item ki → kész, ha: ugyanaz
 - [ ] F2. FB436 `demostrativos`: `dem-12` („tap the noun”, mark) ki → kész, ha: ugyanaz

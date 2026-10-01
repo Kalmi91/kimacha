@@ -217,6 +217,35 @@
       ]
     },
     {
+      "kind": "table",
+      "id": "interrogativos-respuestas",
+      "title": {
+        "hu": "A válaszból a kérdőszóra",
+        "en": "From the answer to the question word",
+        "es": "De la respuesta al interrogativo",
+        "de": "Von der Antwort zum Fragewort"
+      },
+      "header": [
+        { "hu": "Válasz", "en": "Answer", "es": "Respuesta", "de": "Antwort" },
+        { "hu": "Kérdőszó", "en": "Question word", "es": "Interrogativo", "de": "Fragewort" },
+        { "hu": "Példa-kérdés", "en": "Example question", "es": "Pregunta de ejemplo", "de": "Beispielfrage" }
+      ],
+      "rows": [
+        ["Estudio español.", "qué", "¿Qué haces?"],
+        ["Es mi profesor.", "quién", "¿Quién es él?"],
+        ["En Narvarte.", "dónde", "¿Dónde vives?"],
+        ["A la tienda.", "adónde", "¿Adónde vas?"],
+        ["Mañana.", "cuándo", "¿Cuándo llegas?"],
+        ["Bien, gracias.", "cómo", "¿Cómo estás?"],
+        ["Cuesta veinte pesos.", "cuánto", "¿Cuánto cuesta?"],
+        ["Con mi hermana.", "con quién", "¿Con quién vas?"],
+        ["Tengo treinta años.", "cuántos", "¿Cuántos años tienes?"],
+        ["El azul.", "cuál", "¿Cuál prefieres?"],
+        ["Porque estoy cansado.", "por qué", "¿Por qué no vienes?"],
+        ["Soy de Hungría.", "de dónde", "¿De dónde eres?"]
+      ]
+    },
+    {
       "kind": "contrast",
       "title": {
         "hu": "Hasonló, mégis más",
@@ -633,97 +662,97 @@
       "id": "int-form-01",
       "kind": "form",
       "verb": "Interrogativo",
-      "person": "what",
+      "person": "Estudio español.",
       "answer": "qué",
-      "table": "interrogativos"
+      "table": "interrogativos-respuestas"
     },
     {
       "id": "int-form-02",
       "kind": "form",
       "verb": "Interrogativo",
-      "person": "who",
+      "person": "Es mi profesor.",
       "answer": "quién",
-      "table": "interrogativos"
+      "table": "interrogativos-respuestas"
     },
     {
       "id": "int-form-03",
       "kind": "form",
       "verb": "Interrogativo",
-      "person": "where",
+      "person": "En Narvarte.",
       "answer": "dónde",
-      "table": "interrogativos"
+      "table": "interrogativos-respuestas"
     },
     {
       "id": "int-form-04",
       "kind": "form",
       "verb": "Interrogativo",
-      "person": "where to",
+      "person": "A la tienda.",
       "answer": "adónde",
-      "table": "interrogativos"
+      "table": "interrogativos-respuestas"
     },
     {
       "id": "int-form-05",
       "kind": "form",
       "verb": "Interrogativo",
-      "person": "when",
+      "person": "Mañana.",
       "answer": "cuándo",
-      "table": "interrogativos"
+      "table": "interrogativos-respuestas"
     },
     {
       "id": "int-form-06",
       "kind": "form",
       "verb": "Interrogativo",
-      "person": "how",
+      "person": "Bien, gracias.",
       "answer": "cómo",
-      "table": "interrogativos"
+      "table": "interrogativos-respuestas"
     },
     {
       "id": "int-form-07",
       "kind": "form",
       "verb": "Interrogativo",
-      "person": "how much",
+      "person": "Cuesta veinte pesos.",
       "answer": "cuánto",
-      "table": "interrogativos"
+      "table": "interrogativos-respuestas"
     },
     {
       "id": "int-form-08",
       "kind": "form",
       "verb": "Interrogativo",
-      "person": "how much (fem.)",
-      "answer": "cuánta",
-      "table": "interrogativos"
+      "person": "Con mi hermana.",
+      "answer": "con quién",
+      "table": "interrogativos-respuestas"
     },
     {
       "id": "int-form-09",
       "kind": "form",
       "verb": "Interrogativo",
-      "person": "how many",
+      "person": "Tengo treinta años.",
       "answer": "cuántos",
-      "table": "interrogativos"
+      "table": "interrogativos-respuestas"
     },
     {
       "id": "int-form-10",
       "kind": "form",
       "verb": "Interrogativo",
-      "person": "which",
+      "person": "El azul.",
       "answer": "cuál",
-      "table": "interrogativos"
+      "table": "interrogativos-respuestas"
     },
     {
       "id": "int-form-11",
       "kind": "form",
       "verb": "Interrogativo",
-      "person": "why",
+      "person": "Porque estoy cansado.",
       "answer": "por qué",
-      "table": "interrogativos"
+      "table": "interrogativos-respuestas"
     },
     {
       "id": "int-form-12",
       "kind": "form",
       "verb": "Interrogativo",
-      "person": "where from",
+      "person": "Soy de Hungría.",
       "answer": "de dónde",
-      "table": "interrogativos"
+      "table": "interrogativos-respuestas"
     },
     {
       "id": "int-why-01",
