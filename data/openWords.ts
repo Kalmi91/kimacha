@@ -7,6 +7,7 @@
 // B2-re esnek (lásd openLevelOf, ugyanaz a szabály, mint a tableDeck PCIC_LEVEL_CEILING-je).
 
 import type { Level, WordEntry, WordGender, WordPos } from '@/data/words';
+import { encliticBases, formsOfCard } from '@/lib/esForms';
 import { esFeminine, esPlural } from '@/lib/esInflect';
 import { conjugate, TENSES } from '@/lib/games/conjugate';
 import openA1 from '@/data/words-open/a1.json';
@@ -100,45 +101,45 @@ export function getOpenWordsUpToLevel(level: Level): OpenWord[] {
 
 // Ragozott alak -> words-open lemma (glossza-lefedettség, a PLAN-regi-szavak-ki 5. lépése
 // utáni javítás): a régi lista a ragozott alakokat is hordozta, a words-open csak a
-// tőalakot. Az index kizárólag words-open kártyából épül: igéknél a ragozó motor
-// (lib/games/conjugate) alakjai, főnév/melléknévnél a többes és a nemi alak
-// (lib/esInflect). Amit a motor bizonytalannak tart (conjugate -> null), kimarad.
-const ES_INFINITIVE = /^[a-záéíóúñü]*(ar|er|ir)$/;
+// tőalakot. Az index kizárólag words-open kártyából épül (lib/esForms: igéknél a ragozó
+// motor alakjai, a motor által nem ragozott igéknél a bő tőváltozat-készlet, igenevek,
+// főnévnél/melléknévnél a többes és a nemi alak). Az igéhez írt névmás (verlo, ayúdame)
+// a keresésnél válik le.
 const FORM_ARTICLE = /^(el|la|los|las|un|una|unos|unas)\s+/;
+const FORM_DEPS = { conjugate, TENSES, esPlural, esFeminine };
 
 let formIndex: Map<string, OpenWord> | null = null;
+let foldedIndex: Map<string, OpenWord> | null = null;
+
+const foldAccents = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '');
 
 function buildFormIndex(): Map<string, OpenWord> {
   const index = new Map<string, OpenWord>();
+  const folded = new Map<string, OpenWord>();
   const add = (form: string | null, card: OpenWord) => {
     const key = form?.trim().toLowerCase();
     // Az első kártya nyer, így az alacsonyabb szint birtokol egy többkártyás alakot.
     if (key && !index.has(key)) index.set(key, card);
+    if (key && !folded.has(foldAccents(key))) folded.set(foldAccents(key), card);
   };
   for (const card of openWords) {
-    for (const alt of card.es.split(' / ')) {
-      const head = alt.trim().toLowerCase();
-      if (!head) continue;
-      if (card.openPos === 'verb') {
-        if (!ES_INFINITIVE.test(head)) continue;
-        for (const tense of TENSES) for (const f of conjugate(head, tense) ?? []) add(f.form, card);
-      } else if (card.openPos === 'noun' || card.openPos === 'adj') {
-        const bare = head.replace(FORM_ARTICLE, '');
-        if (!bare || bare.includes(' ') || /^(los|las)\s/.test(head)) continue;
-        add(esPlural(bare), card);
-        if (card.openPos === 'adj') {
-          const fem = esFeminine(bare);
-          add(fem, card);
-          if (fem) add(esPlural(fem), card);
-        }
-      }
-    }
+    for (const f of formsOfCard(card.es, card.openPos, FORM_DEPS)) add(f, card);
+    // az igéhez írt névmás levágása az infinitívre is kell (verlo): a fejszó is bekerül az ékezetmentes indexbe
+    if (card.openPos === 'verb') for (const alt of card.es.split(' / ')) add(alt, card);
   }
+  foldedIndex = folded;
   return index;
 }
 
 /** A ragozott, többes vagy nemi alak words-open kártyája (a tőalakot a hívó már megkereste); csak spanyolra. */
 export function findOpenWordByForm(norm: string): OpenWord | undefined {
   if (!formIndex) formIndex = buildFormIndex();
-  return formIndex.get(norm) ?? formIndex.get(norm.replace(FORM_ARTICLE, ''));
+  const direct = formIndex.get(norm) ?? formIndex.get(norm.replace(FORM_ARTICLE, ''));
+  if (direct) return direct;
+  // verlo, ayúdame, repetirlo: a névmás nélküli tő ige-alak (ékezet nélkül keresve)
+  for (const base of encliticBases(norm)) {
+    const hit = foldedIndex?.get(foldAccents(base));
+    if (hit && hit.openPos === 'verb') return hit;
+  }
+  return undefined;
 }
