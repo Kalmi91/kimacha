@@ -288,6 +288,33 @@ A „BRIEF új lecke (2026-10-01 …)” érvényes, a munkahely helyett ez a wo
   - minta: `Llegó tarde a la reunión, ___ molestó mucho al jefe.` → lo cual (nem: la cual)
   - minta: `Los amigos ___ los que cuento son pocos.` → con
 
+## Sáv B, 2. kör: független átnézés (2026-10-01 03:40-től, ág `nyelvtan-b`, a `nyelvtan` 4bb665e-ről fast-forward)
+
+Ok: a 24 új lecke és a 3×50 transform mind szerző-agenttől jön, kapu zöld, de a kapu nem lát nyelvi hibát (két helyes opció, nem természetes mondat, rossz fordítás). Minta: a `words-open` független átnézése (PR #59). Az A sáv közben az F-sort írja új fájlokba, ezért ez a kör csak a lent felsorolt, már kész JSON-okhoz nyúl.
+
+- [ ] R1. `marcadores-temporales`, `muy-mucho`, `combinacion-pronombres`, `imperativo-negativo` → kész, ha: átnézve, javítva, kapu zöld, commit `fix(grammar): átnézés R1 (nyelvtan)`
+- [ ] R2. `llevar-traer-ir-venir`, `pedir-preguntar`, `saber-conocer`, `por-para-avanzado` → ugyanaz
+- [ ] R3. `se-impersonal-pasiva`, `ojala-quizas`, `relativos`, `perifrasis` → ugyanaz
+- [ ] R4. `pluscuamperfecto`, `indefinidos`, `gerundio-participio-construcciones`, `lo-neutro` → ugyanaz
+- [ ] R5. `pasiva-ser-participio`, `subjuntivo-perfecto`, `concesivas`, `futuro-condicional-perfecto` → ugyanaz
+- [ ] R6. `leismo-laismo`, `probabilidad-con-tiempos`, `relativos-complejos`, `perfecto-vs-indefinido` → ugyanaz
+- [ ] R7. a 3×50 transform (`imperfecto`, `condicional-simple`, `indefinido-imperfecto`) + az `interrogativos` és `marcadores-discursivos` új form-táblája → ugyanaz
+
+## BRIEF átnézés (R-sor, tételenként EGY agent, nem a szerző)
+
+Munkahely kizárólag `C:\AI\kimacha-wt-eget-nyelvtan-b` (ág `nyelvtan-b`); csak a tétel JSON-jaihoz nyúlsz (`data/games/grammar/es/<téma>.json`), kódhoz, teszthez, más leckéhez nem. `git stash` tilos, push és rebase nincs. Olvasd: `lib/grammar/lessonTypes.ts`, `scripts/audit-games.mjs` fejléce, `C:\AI\ai-workspace\kimacha\LECKE-SEMA.md`.
+Leckénként minden itemet ellenőrzöl, a mérce az anyanyelvi mexikói beszélő (Kálmán Mexikóvárosban él; a spanyolországi változat csak magyarázatban):
+1. Választós: pontosan EGY opció helyes az adott mondatban; ha egy rossz opció is nyelvtanilag elfogadható (pl. el que / el cual elöljáró után, por / para mindkét értelmezéssel, perfecto / indefinido hoy mellett), a rossz opciót cseréld egyértelműen rosszra, vagy a mondatot tedd egyértelművé. A `correct` index a jó opcióra mutat.
+2. Form: a `answer` az egyetlen helyes alak a row[0] alapján; ha van másik helyes, kerüljön az `accept`-be (ha a séma ismeri), vagy tedd a row[0]-t egyértelművé.
+3. Transform: a válasz helyes és természetes; az `accept` lefedi a kitett névmásos és a szórendi (jelölő eleje/vége) változatot.
+4. A mondat természetes, mexikói anyanyelvű így mondja; nem szabály-illusztráció; max 12 szó.
+5. Fordítások (`tr` / Lang4 hu, en, es, de): helyesek, természetesek, a magyar magyarul hangzik; üres nincs.
+6. A `wrong` magyarázat igaz (miért rossz, mi lenne, ha), és nem állít olyat, ami mexikói használatban nem igaz.
+7. A `why` itemek szabály-neve egyezik a body szabálypontjaival.
+Javítás a lehető legkisebb: csak a hibás mezőt írod át, a jó itemhez nem nyúlsz. Új szóhoz a `wordIds` és a glossary szabálya él (probe `--cards <SZINT> <kimeneti-fájl>`, a kimeneti fájl a worktree-n kívül: `C:\Users\kalma\AppData\Local\Temp\claude\cards-r<n>.txt`).
+Kapu: `node scripts/audit-games.mjs` 0 P1 / 0 P2; `npx jest --maxWorkers=2` (előtérben); `npx tsc --noEmit`; `npx expo lint` 0 error. Commit `fix(grammar): átnézés R<n> (nyelvtan)`, AI-marker nélkül; a PLAN R-sora `[x]` + `date '+%H:%M'` + leckénként a javítások száma, ugyanabban a commitban.
+Jelentés max 10 sor: leckénként javítás-szám + a 3 legsúlyosabb javítás (előtte → utána), kapu utolsó sorai, hash.
+
 ## BRIEF ir-a-infinitivo (1. lépés, NY6a)
 
 Worktree gyökér: `/home/kalmi/ai/kimacha-wt-eget-nyelvtan`. Minden `node` / `npx` innen fut.
