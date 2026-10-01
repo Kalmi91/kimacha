@@ -8,6 +8,17 @@
     "es": "Se impersonal y pasiva refleja",
     "de": "Se: unpersönlich und Passiv"
   },
+  "glossary": [
+    {
+      "word": "celular",
+      "gloss": {
+        "hu": "celular: mobiltelefon (Mexikóban így mondják)",
+        "en": "celular: cell phone (the usual word in Mexico)",
+        "es": "celular: teléfono móvil (la palabra habitual en México)",
+        "de": "celular: Handy (das übliche Wort in Mexiko)"
+      }
+    }
+  ],
   "body": [
     {
       "kind": "text",
@@ -101,11 +112,11 @@
           },
           "examples": [
             {
-              "es": "En este colegio se ayuda a los estudiantes.",
+              "es": "En esta escuela se ayuda a los estudiantes.",
               "tr": {
                 "hu": "Ebben az iskolában segítik a diákokat.",
                 "en": "In this school the students are helped.",
-                "es": "En este colegio se ayuda a los estudiantes.",
+                "es": "En esta escuela se ayuda a los estudiantes.",
                 "de": "In dieser Schule hilft man den Schülern."
               }
             },
@@ -150,10 +161,10 @@
         },
         {
           "text": {
-            "hu": "A se puede + főnévi igenév azt fejezi ki, hogy „lehet, szabad”: az ige a se után egyes számban áll. A tagadó no a se ELÉ kerül: no se puede, no se usa.",
-            "en": "Se puede + infinitive says “one can” or “it is allowed”: the verb stays singular after se. The negative no goes BEFORE se: no se puede, no se usa.",
-            "es": "Se puede + infinitivo expresa “se permite” o “es posible”: el verbo va en singular después de se. El no negativo va ANTES de se: no se puede, no se usa.",
-            "de": "Se puede + Infinitiv bedeutet „man kann“ oder „es ist erlaubt“: Das Verb steht nach se im Singular. Das Verneinungswort no steht VOR se: no se puede, no se usa."
+            "hu": "A se puede + főnévi igenév azt fejezi ki, hogy „lehet, szabad”: ha az igenévnek nincs többes számú tárgya, az ige a se után egyes számban áll (többes tárgynál: se pueden comprar libros). A tagadó no a se ELÉ kerül: no se puede, no se usa.",
+            "en": "Se puede + infinitive says “one can” or “it is allowed”: when the infinitive has no plural object, the verb stays singular after se (with a plural object: se pueden comprar libros). The negative no goes BEFORE se: no se puede, no se usa.",
+            "es": "Se puede + infinitivo expresa “se permite” o “es posible”: si el infinitivo no tiene un complemento en plural, el verbo va en singular después de se (con un complemento en plural: se pueden comprar libros). El no negativo va ANTES de se: no se puede, no se usa.",
+            "de": "Se puede + Infinitiv bedeutet „man kann“ oder „es ist erlaubt“: Hat der Infinitiv kein Objekt im Plural, steht das Verb nach se im Singular (mit einem Objekt im Plural: se pueden comprar libros). Das Verneinungswort no steht VOR se: no se puede, no se usa."
           },
           "examples": [
             {
@@ -166,11 +177,11 @@
               }
             },
             {
-              "es": "En clase no se usa el móvil.",
+              "es": "En clase no se usa el celular.",
               "tr": {
                 "hu": "Órán nem használják a mobilt.",
                 "en": "Phones are not used in class.",
-                "es": "En clase no se usa el móvil.",
+                "es": "En clase no se usa el celular.",
                 "de": "Im Unterricht benutzt man das Handy nicht."
               }
             }
@@ -219,7 +230,7 @@
           "se prohíbe"
         ],
         [
-          "En el colegio ___ (necesitar) tres profesores.",
+          "En la escuela ___ (necesitar) tres profesores.",
           "se necesitan"
         ],
         [
@@ -327,7 +338,7 @@
           "note": {
             "hu": "A se az egész mondatot általánossá teszi: a szabály mindenkire vonatkozik. Se nélkül a mondatnak megnevezett alanya van, és csak róla szól.",
             "en": "Se makes the sentence general: the rule applies to everyone. Without se, the sentence has a named subject and talks about him or her alone.",
-            "es": "Se vuelve general la frase: la regla vale para todos. Sin se, la frase tiene un sujeto nombrado y habla solo de él o de ella.",
+            "es": "Con se la frase se vuelve general: la regla vale para todos. Sin se, la frase tiene un sujeto nombrado y habla solo de él o de ella.",
             "de": "Se macht den Satz allgemein: Die Regel gilt für alle. Ohne se hat der Satz ein genanntes Subjekt und spricht nur über ihn oder sie."
           },
           "examples": [
@@ -480,7 +491,7 @@
     },
     {
       "id": "sip-05",
-      "sentence": "En este colegio ___ a los estudiantes.",
+      "sentence": "En esta escuela ___ a los estudiantes.",
       "options": [
         "se ayudan",
         "se ayuda"
@@ -534,7 +545,7 @@
     },
     {
       "id": "sip-07",
-      "sentence": "En clase ___ el móvil.",
+      "sentence": "En clase ___ el celular.",
       "options": [
         "se no usa",
         "no usa se",
@@ -542,10 +553,10 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A tagadó no a se ELÉ kerül, a se pedig közvetlenül az ige előtt áll: no se usa. A móvil egyes számú, ezért az ige is egyes.",
-        "en": "The negative no goes BEFORE se, and se stands right before the verb: no se usa. Móvil is singular, so the verb is singular too.",
-        "es": "El no negativo va ANTES de se, y se va justo delante del verbo: no se usa. Móvil es singular, por eso el verbo también lo es.",
-        "de": "Das Verneinungswort no steht VOR se, und se steht direkt vor dem Verb: no se usa. Móvil ist Singular, deshalb steht auch das Verb im Singular."
+        "hu": "A tagadó no a se ELÉ kerül, a se pedig közvetlenül az ige előtt áll: no se usa. A celular egyes számú, ezért az ige is egyes.",
+        "en": "The negative no goes BEFORE se, and se stands right before the verb: no se usa. Celular is singular, so the verb is singular too.",
+        "es": "El no negativo va ANTES de se, y se va justo delante del verbo: no se usa. Celular es singular, por eso el verbo también lo es.",
+        "de": "Das Verneinungswort no steht VOR se, und se steht direkt vor dem Verb: no se usa. Celular ist Singular, deshalb steht auch das Verb im Singular."
       },
       "wrong": {
         "se no usa": {
@@ -555,10 +566,10 @@
           "de": "Se und das Verb bleiben zusammen und no steht vorn: no se usa. Die Reihenfolge se no usa gibt es im Spanischen nicht."
         },
         "no usa se": {
-          "hu": "Ebben a mondattípusban a se az ige ELŐTT áll, nem utána. Helyes: no se usa el móvil.",
-          "en": "In this kind of sentence se stands BEFORE the verb, not after it. The correct form is: no se usa el móvil.",
-          "es": "En este tipo de frase se va ANTES del verbo, no después. Lo correcto es: no se usa el móvil.",
-          "de": "In dieser Art von Satz steht se VOR dem Verb, nicht danach. Richtig ist: no se usa el móvil."
+          "hu": "Ebben a mondattípusban a se az ige ELŐTT áll, nem utána. Helyes: no se usa el celular.",
+          "en": "In this kind of sentence se stands BEFORE the verb, not after it. The correct form is: no se usa el celular.",
+          "es": "En este tipo de frase se va ANTES del verbo, no después. Lo correcto es: no se usa el celular.",
+          "de": "In dieser Art von Satz steht se VOR dem Verb, nicht danach. Richtig ist: no se usa el celular."
         }
       },
       "examples": [
@@ -767,7 +778,7 @@
       "id": "sip-form-05",
       "kind": "form",
       "verb": "se + verbo",
-      "person": "En el colegio ___ (necesitar) tres profesores.",
+      "person": "En la escuela ___ (necesitar) tres profesores.",
       "answer": "se necesitan",
       "table": "se-impersonal-formas"
     },
