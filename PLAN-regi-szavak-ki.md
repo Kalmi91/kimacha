@@ -173,3 +173,15 @@ Az app élő pakli-modulja a `data/pcic.ts` (words-open + angol track): ez NEM a
     - #809 alcohol → el alcohol | Mi padre no toma alcohol.
     - #811 to forbid → prohibir | La escuela prohíbe el teléfono.
     - #817 to doubt → dudar | Dudo que mi hijo llegue temprano.
+- 15:35 7b. lépés, 4. adag (B2, a C1 lecke-szintű szavak is ide, mert a words-open felső szintje B2): +51 kártya, order 819-869 (b2.json vége): words-open-check ZÖLD (869 kártya); lecke-kapu P1 1876 → 1786 (a wordIds 1409 még nincs átállítva, a szó-hiány P1 377 mind olyan szó, amelynek kártyája megvan, de magasabb szinten). A lib/esForms a motor-lista rendhagyó tévedései (acordar, caber szabályosnak ismert) miatt minden igéhez a bő tőváltozat-készletet is hozzáadja. Idióma: az "embargo / sin embargo" kártya pos conj, a főalak egy szó (R2).
+  - Minta, 10 véletlen új kártya (en → es | mondat):
+    - #822 round → redondo | La mesa de mi casa es redonda.
+    - #829 box → la caja | Hay una caja grande en el balcón.
+    - #831 to fit → caber | Mi ropa no cabe en esta maleta.
+    - #838 to hand in → entregar | El cliente entrega el documento en la oficina.
+    - #843 selfish → egoísta | Mi hermano no es egoísta.
+    - #844 to turn into → convertir | Mi tío convierte la casa en un hotel.
+    - #855 to obey → obedecer | Mi perro obedece a mi hermano.
+    - #857 budget → el presupuesto | Mi familia tiene un presupuesto pequeño.
+    - #860 self-employed → autónomo | Mi hermano trabaja como autónomo.
+    - #861 watch → el reloj | Mi reloj es nuevo y muy caro.

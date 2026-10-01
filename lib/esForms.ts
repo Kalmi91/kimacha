@@ -143,8 +143,7 @@ export function participleForms(infinitive: string): string[] {
 
 /**
  * Egy words-open kártya (`es` + `pos`) ragozott/többes/nemi alakjai a tőalakon (a fejszó) KÍVÜL.
- * Igénél a motor alakjai, a motor által nem ragozott igénél a bő készlet, mindkettőnél az
- * igenevek és a kötőmód múlt; főnévnél és melléknévnél a többes, melléknévnél a nemi alak.
+ * Igénél a motor alakjai és a bő tőváltozat-készlet, az igenevek és a kötőmód múlt; főnévnél és melléknévnél a többes, melléknévnél a nemi alak.
  */
 export function formsOfCard(es: string, pos: string, deps: FormDeps): string[] {
   const { conjugate, TENSES, esPlural, esFeminine } = deps;
@@ -167,8 +166,10 @@ export function formsOfCard(es: string, pos: string, deps: FormDeps): string[] {
           if (third) out.push(...subjuntivoImperfecto(third.form));
         }
       }
-      if (!any) out.push(...looseVerbForms(head));
-      else out.push(`${head.slice(0, -2)}${head.endsWith('ar') ? 'ando' : /[aeo]er$|[aeo]ir$/.test(head) ? 'yendo' : 'iendo'}`);
+      if (any) out.push(`${head.slice(0, -2)}${head.endsWith('ar') ? 'ando' : /[aeo]er$|[aeo]ir$/.test(head) ? 'yendo' : 'iendo'}`);
+      // a motor-lista a régi korpuszra szabott: a tőhangváltó igék egy része (acordar, caber) benne szabályosként
+      // szerepel, ezért a bő készlet minden igéhez hozzájön, nem csak a motor által elutasítottakhoz
+      out.push(...looseVerbForms(head));
       out.push(...participleForms(head), ...vosotrosPresente(head));
     } else if (pos === 'noun' || pos === 'adj') {
       const bare = head.replace(FORM_ARTICLE, '');
