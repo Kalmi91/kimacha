@@ -18,6 +18,7 @@ import ExamButton from '@/components/exam/ExamButton';
 import ExamChoiceCard from '@/components/exam/ExamChoiceCard';
 import ExamMatchCard from '@/components/exam/ExamMatchCard';
 import ExamSkillRow from '@/components/exam/ExamSkillRow';
+import ExamSpeakCard from '@/components/exam/ExamSpeakCard';
 import ExamTilesCard from '@/components/exam/ExamTilesCard';
 import ExamTypeCard from '@/components/exam/ExamTypeCard';
 import { buildExam } from '@/lib/exam/builder';
@@ -78,6 +79,17 @@ function ExamItemView({ item, source, onDone }: { item: ExamItem; source: Source
       return <ExamChoiceCard heading={s.exam.chooseGap} text={item.sentence} options={item.options} correctIndex={item.correctIndex} onDone={onDone} />;
     case 'reading_mc':
       return <ExamChoiceCard heading={s.exam.readText} text={item.text} options={item.options} correctIndex={item.correctIndex} onDone={onDone} />;
+    case 'speak':
+      return (
+        <ExamSpeakCard
+          prompt={item.prompt}
+          expected={item.expected}
+          mode={item.mode}
+          targetLang={source.target}
+          strictAccents={source.strictAccents}
+          onDone={onDone}
+        />
+      );
   }
 }
 
@@ -229,6 +241,7 @@ export default function ExamScreen() {
           {counts('words') > 0 && <Text style={[styles.line, { color: colors.text }]}>{s.exam.introWords(counts('words'))}</Text>}
           {counts('grammar') > 0 && <Text style={[styles.line, { color: colors.text }]}>{s.exam.introGrammar(counts('grammar'))}</Text>}
           {counts('reading') > 0 && <Text style={[styles.line, { color: colors.text }]}>{s.exam.introReading(counts('reading'))}</Text>}
+          {counts('speaking') > 0 && <Text style={[styles.line, { color: colors.text }]}>{s.exam.introSpeaking(counts('speaking'))}</Text>}
           <Text style={[styles.line, { color: colors.textMuted }]}>{s.exam.introRules}</Text>
           <Text style={[styles.line, { color: colors.text }]}>{s.exam.introPass(EXAM_PASS_PCT)}</Text>
         </Card>
@@ -245,7 +258,12 @@ export default function ExamScreen() {
     const isWeak = (skill: ExamItem['skill']) => skills.some((r) => r.skill === skill && r.weak);
     const contentLang = source?.target === 'en' ? 'es' : 'en';
     const lessonLinks = isWeak('grammar') ? weakLessons(results) : [];
-    const skillLabels: Record<ExamItem['skill'], string> = { words: s.exam.skillWords, grammar: s.exam.skillGrammar, reading: s.exam.skillReading };
+    const skillLabels: Record<ExamItem['skill'], string> = {
+      words: s.exam.skillWords,
+      grammar: s.exam.skillGrammar,
+      reading: s.exam.skillReading,
+      speaking: s.exam.skillSpeaking,
+    };
     return shell(
       <ScrollView contentContainerStyle={styles.body}>
         <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>

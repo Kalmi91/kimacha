@@ -511,6 +511,14 @@ export default {
     skillReviewLesson: (title: string) => `Review lesson: ${title}`,
     skillReviewWords: 'Review these words',
     skillPracticeSentences: 'Practice sentences',
+    // 13. lépés (D1 b, D3): szóbeli tétel a billentyűzet mikrofonjával diktálva.
+    introSpeaking: (n: number) => `Speaking: ${n} ${n === 1 ? 'question' : 'questions'}`,
+    skillSpeaking: 'Speaking',
+    speakTranslate: (lang: string): string => (lang === 'es' ? 'Say it in Spanish' : 'Say it in English'),
+    speakRepeat: 'Read it aloud',
+    speakHint: 'Tap the microphone on your keyboard and say the sentence. Your words appear in the box.',
+    speakPlaceholder: 'Your spoken words appear here',
+    speakYouSaid: 'You said',
   },
   // PLAN-vizsga C. szakasz (Kálmán, 2026-10-01): az adaptív szintfelmérő feliratai
   // (belépő a szintválasztón, kérdések, eredmény).
