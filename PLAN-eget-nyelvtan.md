@@ -102,7 +102,10 @@ Párhuzamos agent: `feat/learn-words-open` (`C:\AI\kimacha-wt-learn-open`) a `da
   - minta (választós): «Mientras yo ___ (cocinar), mi hermano estudiaba.» → cocinaba / cociné / he cocinado
   - minta (választós): «Dentro de dos días ___ (yo) a mis padres.» → voy a visitar / visité / visitaba
   - minta (form): row[0] «Todavía no ___ (ver, yo) esa película.» → he visto
-- [ ] 2. `muy-mucho` (A1 exam) új lecke → kész, ha: ugyanaz
+- [x] 2. `muy-mucho` (A1 exam) új lecke → kész, ha: ugyanaz · 01:00 · audit 0/0, jest 1579 ok, tsc 0, lint 0 err · 12 választós + 1 match (6 pár) + 12 form (tábla `muy-mucho-formas`, row[0] = lyukas mondat, cella = muy/mucho/mucha/muchos/muchas) + 7 why; syllabus-sor és sáv már megvolt (nem nyúltam hozzá), nincs glossary, nincs transform (nem igeidős téma); teszt: speakNoSpanish 44→45 · hash: a `feat(grammar): muy-mucho lesson (nyelvtan)` commit
+  - minta (választós): «Mi madre trabaja ___.» → mucho / muy / mucha
+  - minta (választós): «Hoy hace ___ calor.» → mucho / muy / mucha
+  - minta (form): row[0] «Tengo ___ hambre.» → mucha
 - [ ] 3. `combinacion-pronombres` (A2 exam) új lecke → kész, ha: ugyanaz
 - [ ] 4. `imperativo-negativo` (A2 exam) új lecke → kész, ha: ugyanaz
 - [ ] 5. `llevar-traer-ir-venir` (A2 exam) új lecke → kész, ha: ugyanaz
