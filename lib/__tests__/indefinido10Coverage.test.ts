@@ -14,10 +14,12 @@ const lesson: LessonV2 = JSON.parse(fs.readFileSync(FILE, 'utf8'));
 const transformItems = lesson.items.filter(isTransformItem);
 
 // A lecke pontosan ezt a 28 szót taníthatja (TASK-9, Kálmán szava): sem több,
-// sem kevesebb wordId nem szerepelhet az itemeken.
+// sem kevesebb wordId nem szerepelhet az itemeken. A wordId a words-open `order`-e
+// (PLAN-regi-szavak-ki 7b): a 28 régi szó lemma szerint 25 words-open kártya (estoy/están
+// = estar, ir/vas = ir, tiene/tenemos = tener).
 const ALLOWED_WORD_IDS = [
-  '1051', '1087', '31', '1073', '1074', '28', '29', '1880', '1887', '80', '85', '1229', '1055',
-  '1312', '1869', '3587', '76', '74', '218', '1875', '1240', '1400', '1224', '21', '202', '1566', '1851', '1857',
+  '119', '123', '129', '143', '150', '16', '174', '2', '208', '220', '254', '259', '283', '284', '285', '286',
+  '33', '391', '51', '52', '610', '632', '74', '77', '88',
 ];
 
 // 10 ige x 6 alak; az answer szövegéből dönti el a személyt (szóhatáros
@@ -69,7 +71,7 @@ describe('indefinido-10-verbos, FB316 coverage', () => {
     expect(transformItems.length).toBe(50);
   });
 
-  it('wordIds union is exactly the 28 taught ids, no more, no less', () => {
+  it('wordIds union is exactly the 25 taught card ids (28 words), no more, no less', () => {
     const used = new Set<string>();
     for (const item of transformItems) {
       for (const id of item.wordIds) used.add(id);
