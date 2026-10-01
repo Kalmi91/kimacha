@@ -117,3 +117,45 @@ A kapu szabályonként kiírja a hibák számát és az első 5 példát, hibán
     - #325 sentence_es: "¿Puedes mover tu coche?" → "¿Puedes mover tu carro?"; sentence_lemmas: [poder,mover,tu,coche] → [poder,mover,tu,carro]
     - #549 sentence_es: "Este modelo de coche es nuevo." → "Este modelo de carro es nuevo."; sentence_lemmas: [este,modelo,de,coche,ser,nuevo] → [este,modelo,de,carro,ser,nuevo]
     - #573 sentence_es: "No tengo suficiente dinero para comprar este coche." → "No tengo suficiente dinero para comprar este carro."; sentence_lemmas: [no,tener,suficiente,dinero,para,comprar,este,coche] → [no,tener,suficiente,dinero,para,comprar,este,carro]
+- 12:47 5. lépés, 1. adag (R11, 195 kettős kérdés → 0): módosítva 114, hozzáadva 1, törölve 50 kártya; spanyol kérdés átírva 11.
+  - Új kártya:
+    - #10798 (A1 house) la caja → box, hint_es "Guardo mis libros en una *caja*."
+  - Törölt id (→ a megtartott id, ahová az alak átkerült; az `en` mezőben ` / ` alternatíva vagy a másik kártya azonos tartalmú):
+    5807 adiós → bye (→ 5806); 5055 la manzana → apple (→ 5019); 5057 el huevo → egg (→ 5217); 5072 el brazo → arm (→ 5218); 5105 la casa → house (→ 5220); 5113 la mesa → table (→ 5221); 5123 el perro → dog (→ 5018); 5146 el ingeniero → engineer (→ 5219); 7721 la hora → hour (→ 5216); 7744 la flor → flower (→ 7910); 7810 encima de → on top of (→ 5122); 7902 está bien → it is fine (→ 5819); 7911 un amigo → a friend (→ 5839); 7933 está durmiendo → is sleeping now (→ 5374); 7959 la habitación → room (hotel) (→ 5107); 8001 el pescado → fish (food) (→ 5059); 8002 el pollo → chicken meat (→ 5262); 8004 el cuchillo → knife (→ 8152); 8012 el cerdo → pig (animal) (→ 5325); 8048 el trabajo → work (→ 5837); 8148 ¿de dónde eres? → where are you from (→ 5360); 8150 ¿por qué no? → why not now (→ 5362); 8357 ¿cómo estás? → how are you today (→ 5821); 8424 está trabajando → is working now (→ 5375); 8427 está leyendo → is reading now (→ 5191); 8526 la cabeza → head (part) (→ 5071); 8650 la farmacia → drugstore (→ 5896); 5430 el viaje → journey (→ 8230); 5489 enfermo → sick (→ 8046); 5653 la caja → checkout (→ 8222); 5684 el descanso → rest (→ 5563); 5714 más difícil (adjetivo largo) → more difficult (→ 5713); 5727 el más difícil (adjetivo largo) → most difficult (→ 5726); 8826 el horario → schedule (transport) (→ 5564); 8867 el título → diploma (→ 5539); 8904 la carpeta → folder (digital) (→ 5764); 8908 la impresora → printer (device) (→ 5762); 8923 el informe → report (document) (→ 5560); 9022 el vuelo → flight (trip) (→ 5427); 9027 el país → country (nation) (→ 5832); 9244 el descanso → break (rest) (→ 5563); 9331 el azúcar → sugar (health) (→ 5062); 10137 la enfermedad → disease (→ 8047); 10206 preocupado → concerned (→ 5498); 10330 el objetivo → aim (→ 9119); 10385 seguramente → surely (→ 5645); 10466 la mayoría → majority (→ 9017); 10472 por supuesto → naturally (→ 5817); 10679 avergonzado → ashamed (→ 5506); 10787 la garantía → warranty (→ 8835).
+  - Átírt spanyol kérdés:
+    - #5100: "hay (plural)" → "hay"
+    - #5101: "no hay (plural)" → "no hay"
+    - #5102: "¿hay...? (plural)" → "¿hay...?"
+    - #5300: "¿no hay...? (plural)" → "¿no hay...?"
+    - #8053: "el frío" → "el clima frío"
+    - #8344: "caliente" → "tibio"
+    - #5708: "más alto (no persona)" → "más alto"
+    - #5709: "más bajo (no persona)" → "más bajo"
+    - #5722: "el más alto (no persona)" → "el más alto"
+    - #5723: "el más bajo (no persona)" → "el más bajo"
+    - #8832: "la cola" → "la fila"
+  - Minta, 20 véletlen módosítás (előtte → utána):
+    - #5028 hint_es: (nincs) → "Mis zapatos son de color *café*."
+    - #5299 hint_es: (nincs) → "¿*No hay* una farmacia aquí?"
+    - #5506 en: "embarrassed" → "embarrassed / ashamed"
+    - #5514 hint_es: (nincs) → "Los hoteles son *más caros* en verano."
+    - #5515 hint_es: (nincs) → "El tren es *más barato* que el avión."
+    - #5517 hint_es: (nincs) → "Ella es *más baja* que su hermana."
+    - #5518 hint_es: (nincs) → "Hoy el viento está *más fuerte* que ayer."
+    - #5521 hint_es: (nincs) → "Es el *mejor* día de mi vida."
+    - #5522 hint_es: (nincs) → "Fue el *peor* día de mi semana."
+    - #5526 hint_es: (nincs) → "Es el cuarto *más pequeño* de la casa."
+    - #5563 en: "break" → "break / rest"
+    - #5564 en: "schedule" → "schedule / timetable"
+    - #5718 hint_es: (nincs) → "Hoy está *más frío* que ayer."
+    - #5729 hint_es: (nincs) → "Es el que *menos* come de todos."
+    - #5819 en: "okay" → "okay / it is fine"
+    - #5837 en: "job" → "job / work"
+    - #5846 hint_es: (nincs) → "Quiero *decir* hola a todos."
+    - #5896 en: "pharmacy" → "pharmacy / drugstore"
+    - #8007 hint_es: (nincs) → "Hago tres *comidas* al día."
+    - #8230 en: "trip" → "trip / journey"
+  - Döntések (R11): azonos jelentés = összevonás (S6): a megtartott kártya `en` mezője ` / ` alakot kap, a másik id törlődik (a megtartott az alacsonyabb szintű / a korábbi). Névelős pár (`un perro` + `el perro`, a névelőt a kapu leveszi): a nyelvtani `articles` kártya marad ("a dog"), a szótémás duplikátum törölve (kivétel `amigo`: az A0 `el amigo` marad, az A1 `un amigo` törölve). Valódi többjelentés (S2): külön kártya + hint_es (decir say/tell, comida food/meal, mañana, café, sol, vino, departamento, desde, recuerdo, turismo, personal, humor, nuestro our/ours, eso es it/that, hay/no hay mondat+kérdés+egyes+többes, középfok/felsőfok párok, más alto/bajo 4-4 kártya). Pontatlan kérdés: `caliente`→`tibio` (warm), `el frío`→`el clima frío` (cold weather), `la cola`→`la fila` (line, mexikói norma). Zárójeles pár (`(plural)`, `(no persona)`) → puszta szó + hint_es.
+  - Kód (a data miatt kellett): lib/grammar/tableDeck.ts `enWordIndex` és `wordCellsForEnglishLesson` a perjeles `en` fő alakját (az első) használja, különben a szó-pakli elvesztette volna a perjeles kártyákat és a kártya a teljes "a / b" szöveget kérte volna.
+  - Kapu: validate-en-track R11-R14 = ok (0), id-blokk hiba 1132 → 1105, cross-level dup 11 → 8 (a kártyák száma 2804 → 2755); typecheck:ci, lint (0 hiba), test:ci (136 suite) zöld.
+  - [?] marad, nem nyúltam hozzá: a `desde` (7816 "from") mondata `de`-t használ, nem `desde`-t (a kártya valószínűleg `de` lett volna); `la caja` új "box" kártya A1 `house`, id 10798 az A1 blokkon kívül van (+1 régi típusú id-blokk hiba, a törlések így is csökkentették a számot).
