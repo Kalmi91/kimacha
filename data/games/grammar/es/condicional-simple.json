@@ -1910,7 +1910,8 @@
       },
       "answer": "No comerías tanto por la noche.",
       "accept": [
-        "Tú no comerías tanto por la noche."
+        "Tú no comerías tanto por la noche.",
+        "Por la noche no comerías tanto."
       ],
       "wordIds": [
         "1",
@@ -2430,7 +2431,8 @@
       },
       "answer": "Podrían llamar después.",
       "accept": [
-        "Ellos podrían llamar después."
+        "Ellos podrían llamar después.",
+        "Después podrían llamar."
       ],
       "wordIds": [
         "29",
@@ -2723,7 +2725,10 @@
         "en": "A hypothetical situation (what would happen): condicional. Decir is an irregular-stem verb (dir-), ellos: dirían.",
         "es": "Una situación hipotética (lo que pasaría): condicional. decir es un verbo de raíz irregular (dir-), ellos: dirían.",
         "de": "Eine hypothetische Situation (was passieren würde): condicional. decir ist ein Verb mit unregelmäßigem Stamm (dir-), ellos: dirían."
-      }
+      },
+      "accept": [
+        "Dirían otra cosa."
+      ]
     },
     {
       "id": "cd-tr-36",
@@ -2907,7 +2912,7 @@
       },
       "prompt": {
         "hu": "Nem szabad ennyit költenem.",
-        "en": "I shouldn't spend so much.",
+        "en": "I must not spend so much.",
         "es": "No debo gastar tanto.",
         "de": "Ich darf nicht so viel ausgeben."
       },
@@ -2943,7 +2948,8 @@
       },
       "answer": "Debería llamar a su madre.",
       "accept": [
-        "Él debería llamar a su madre."
+        "Él debería llamar a su madre.",
+        "Ella debería llamar a su madre."
       ],
       "wordIds": [
         "3747",
@@ -3113,7 +3119,8 @@
       },
       "answer": "Vendríamos más tarde.",
       "accept": [
-        "Nosotros vendríamos más tarde."
+        "Nosotros vendríamos más tarde.",
+        "Más tarde vendríamos."
       ],
       "wordIds": [
         "32",
