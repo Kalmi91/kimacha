@@ -87,8 +87,8 @@ describe('grammar lesson screen: table-deck button', () => {
   });
   // PLAN-fb1001 16. lépés (FB437/FB438, Kálmán "b" döntése): a szó-pakli csak a tábla szavaiból
   // épül; ahol így küszöb alatt marad, nincs pakli-belépő (és nincs crash).
-  it('clases-de-palabras (a tábla szavai a küszöb alatt) nem kap szó-pakli belépőt', async () => {
-    mockTopicId = 'clases-de-palabras';
+  it('articulos-genero (a tábla szavai a küszöb alatt) nem kap szó-pakli belépőt', async () => {
+    mockTopicId = 'articulos-genero';
     const view = render(<GrammarLessonScreen />);
     await flush();
 
