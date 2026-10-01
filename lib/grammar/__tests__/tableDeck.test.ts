@@ -7,6 +7,7 @@ import { lessonFor } from '../syllabus';
 import { isLessonV2 } from '../../games/content';
 import type { LessonV2 } from '../lessonTypes';
 import { hashString, shuffleArray } from '../../shuffle';
+import { normalizeWordToken } from '@/data/words';
 import {
   answerCell,
   doneCount,
@@ -302,30 +303,83 @@ describe('mergeDeckState', () => {
 });
 
 // FB375 (PLAN-fb0923 6. lépés, D5/a): "itt is legyen egy nyelvtanulós kártya
-// csomag a szavakból" - a word-deck a tábla nélküli leckéknek.
-describe('wordCellsForLesson', () => {
-  it('clases-de-palabras (no conjugation table): a non-empty deck with no function word', () => {
-    const lesson = lessonFor('es', 'clases-de-palabras')!;
-    expect(tableCellsForLesson(lesson)).toEqual([]); // ez a lecke pontosan azért kap szó-paklit
+// csomag a szavakból" - a word-deck a tábla nélküli (nem kérdezhető táblás) leckéknek.
+// PLAN-fb1001 16. lépés (FB437/FB438, Kálmán "b" döntése): a pakli CSAK a lecke
+// táblázatainak szavaiból épül, a szószedet és a példamondatok szavai nem számítanak.
+const LANG4 = { hu: 'x', en: 'x', es: 'x', de: 'x' };
+const tableFixture = (rows: string[][], over: Partial<LessonV2> = {}): LessonV2 => ({
+  schema: 2,
+  topic: 'zz-table-fixture',
+  level: 'A1',
+  title: LANG4,
+  body: [
+    { kind: 'table', id: 't1', title: LANG4, header: [LANG4, LANG4], rows },
+    { kind: 'text', text: { ...LANG4, es: 'Mi hermano tiene un perro y una ciudad.' } },
+  ],
+  speak: { hu: '', en: '', de: '', es: '' },
+  items: [],
+  ...over,
+});
+// A lecke táblázat-celláinak tokenjei (a tableWordKeys elvárt működése, függetlenül írva).
+const tableTokens = (lesson: LessonV2): Set<string> => {
+  const out = new Set<string>();
+  for (const b of lesson.body) {
+    if (b.kind !== 'table') continue;
+    for (const row of b.rows) for (const cell of row) for (const t of cell.split(/[\s/+()]+/)) if (normalizeWordToken(t)) out.add(normalizeWordToken(t));
+  }
+  return out;
+};
+
+describe('wordCellsForLesson (csak a tábla szavai)', () => {
+  it('a táblás lecke paklija csak tábla-szó: a szószedet- és mondat-szavak kimaradnak', () => {
+    const lesson = tableFixture([['comer', 'el hablar'], ['tener', 'la comer']], {
+      glossary: [
+        { word: 'comer', gloss: { ...LANG4, en: 'to eat (glossary)' } },
+        { word: 'zapato', gloss: { ...LANG4, en: 'shoe' } },
+      ],
+    });
     const cards = wordCellsForLesson(lesson);
-    expect(cards.length).toBeGreaterThan(0);
-    const functionWords = ['el', 'la', 'los', 'las', 'un', 'una', 'y', 'o', 'pero', 'que', 'de', 'en', 'a', 'con', 'sin', 'yo', 'tú', 'me', 'te', 'se', 'su', 'este', 'esta'];
-    for (const w of functionWords) {
-      expect(cards.some((c) => c.es.toLowerCase() === w)).toBe(false);
+    const es = cards.map((c) => c.es.toLowerCase());
+    // tábla-szavak: comer (szószedet-glosszával), hablar, tener; a "zapato" (csak szószedet) és a
+    // mondat szavai (hermano, perro, ciudad) nincsenek benne, a névelők sem.
+    expect(es.sort()).toEqual(['comer', 'hablar', 'tener']);
+    expect(cards.find((c) => c.es === 'comer')?.en).toBe('to eat (glossary)');
+  });
+
+  it('tábla nélküli lecke: 0 kártya, akkor is, ha van szószedete és példamondata (nincs pakli-belépő)', () => {
+    const lesson = tableFixture([], {
+      body: [{ kind: 'text', text: { ...LANG4, es: 'Mi hermano quiere comer, hablar y tener una ciudad.' } }],
+      glossary: [{ word: 'comer', gloss: { ...LANG4, en: 'to eat' } }],
+    });
+    expect(wordCellsForLesson(lesson)).toEqual([]);
+  });
+
+  it('egy tábla, amiben nincs ismert szó (csak ragozott alakok): 0 kártya, nincs crash', () => {
+    const lesson = tableFixture([['soy', 'eres'], ['somos', 'son']]);
+    expect(wordCellsForLesson(lesson)).toEqual([]);
+  });
+
+  it('valódi leckék: minden kártya tábla-szó, és a nem-táblás szavakból nincs kártya', () => {
+    for (const id of ['marcadores-temporales', 'marcadores-discursivos', 'subjuntivo-relativo']) {
+      const lesson = lessonFor('es', id)!;
+      const tokens = tableTokens(lesson as LessonV2);
+      const cards = wordCellsForLesson(lesson);
+      expect(cards.length).toBeGreaterThanOrEqual(WORD_DECK_MIN_CARDS);
+      for (const c of cards) {
+        expect(tokens.has(normalizeWordToken(c.es))).toBe(true);
+      }
     }
   });
 
-  it('a sparse table-less lesson stays under the button threshold (D5, 3. lépés)', () => {
-    const tiny: LessonV2 = {
-      schema: 2,
-      topic: 'zz-tiny-fixture',
-      level: 'A1',
-      title: { hu: 't', en: 't', es: 't', de: 't' },
-      body: [{ kind: 'text', text: { hu: '', en: '', de: '', es: 'Hola. Adiós.' } }],
-      speak: { hu: '', en: '', de: '', es: '' },
-      items: [],
-    };
-    expect(wordCellsForLesson(tiny).length).toBeLessThan(WORD_DECK_MIN_CARDS);
+  it('clases-de-palabras és társai (20 lecke) elvesztették a paklit: a küszöb alatt maradnak, nincs belépő', () => {
+    for (const id of ['clases-de-palabras', 'articulos-genero', 'sustantivo-numero', 'hay-estar', 'pronombres-od']) {
+      expect(wordCellsForLesson(lessonFor('es', id)).length).toBeLessThan(WORD_DECK_MIN_CARDS);
+    }
+  });
+
+  it('nincs szó-pakli rossz bemenetre sem', () => {
+    expect(wordCellsForLesson(null)).toEqual([]);
+    expect(wordCellsForLesson(undefined)).toEqual([]);
   });
 });
 
@@ -334,7 +388,6 @@ describe('wordCellsForLesson: nem létező alakok kihagyása', () => {
   it('a sustantivo-numero szó-paklija nem tartalmaz "not a real form" kártyát', () => {
     const { lessonFor } = require('../syllabus');
     const cells = wordCellsForLesson(lessonFor('es', 'sustantivo-numero'));
-    expect(cells.length).toBeGreaterThan(8);
     expect(cells.some((c: { en: string }) => /real form/i.test(c.en))).toBe(false);
     expect(cells.some((c: { es: string }) => c.es === 'lápizes' || c.es === 'vezes')).toBe(false);
   });

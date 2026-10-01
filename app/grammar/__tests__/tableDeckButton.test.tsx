@@ -85,4 +85,26 @@ describe('grammar lesson screen: table-deck button', () => {
 
     view.unmount();
   });
+  // PLAN-fb1001 16. lépés (FB437/FB438, Kálmán "b" döntése): a szó-pakli csak a tábla szavaiból
+  // épül; ahol így küszöb alatt marad, nincs pakli-belépő (és nincs crash).
+  it('clases-de-palabras (a tábla szavai a küszöb alatt) nem kap szó-pakli belépőt', async () => {
+    mockTopicId = 'clases-de-palabras';
+    const view = render(<GrammarLessonScreen />);
+    await flush();
+
+    expect(screen.queryByTestId('grammar-start-worddeck')).toBeFalsy();
+    expect(screen.queryByTestId('grammar-start-tabledeck')).toBeFalsy();
+
+    view.unmount();
+  });
+
+  it('marcadores-temporales (elég tábla-szó) megtartja a szó-pakli belépőt', async () => {
+    mockTopicId = 'marcadores-temporales';
+    const view = render(<GrammarLessonScreen />);
+    await flush();
+
+    expect(screen.getByTestId('grammar-start-worddeck')).toBeTruthy();
+
+    view.unmount();
+  });
 });
