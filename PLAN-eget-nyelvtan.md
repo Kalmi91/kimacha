@@ -222,7 +222,7 @@ Párhuzamos agent: `feat/learn-words-open` (`C:\AI\kimacha-wt-learn-open`) a `da
   - minta: `Hoy es el primero de mayo; mañana es el ___.` → dos (nem: segundo)
   - minta (form): `Mi amigo vive en el ___ piso. (tercero)` → tercer
   - minta (form): `Mi amiga vive en el piso ___. (12, número normal)` → doce
-- [ ] R21. független átnézés: F-11, F-12, F-13 (brief: a `nyelvtan-b` PLAN „## BRIEF átnézés”, itt a `nyelvtan` ágon) → kész, ha: átnézve, javítva, kapu zöld, commit
+- [x] R21. független átnézés: F-11, F-12, F-13 (brief: a `nyelvtan-b` PLAN „## BRIEF átnézés”, itt a `nyelvtan` ágon) → kész, ha: átnézve, javítva, kapu zöld, commit (08:12; javítás: pronombres-preposicion 7, se-accidental 1, numerales-ordinales 0)
 
 ## BRIEF F-sor (2026-10-01, új téma a tantervbe, tételenként EGY agent)
 
@@ -270,6 +270,7 @@ Napközbenre (kód vagy nem nyelvtan, Feedback sheet 2026-10-01 00:20, üres F o
 - [!] Telefonon nézendő: a `subjuntivo-perfecto` és a `futuro-condicional-perfecto` form-sorai («hablar · yo») nem mondják ki, hogy haya / hubiera ill. habré / habría kell-e; ha a drill képernyője a tábla címét mutatja, rendben van.
 
 Szakasz vége: 2026-10-01T13:24:34Z; kész: 33 új lecke (a tanterv 76/76 V2), 3×50 transform, J1-J2 + FB435/FB436, független átnézés R1-R20 az összes nyelvtani leckén (kb. 700 javítás: két helyes opció, hamis `wrong`, nem mexikói szó, rossz fordítás); hátra: a Napközbenre lista.
+Ráadás vége: 2026-10-01T14:12:43Z; +3 új lecke (se-accidental, pronombres-preposicion, numerales-ordinales), átnézve; a tanterv 79/79 V2.
 Önellenőrzés (MODEL.md): kb. 60 Sonnet-agent (1 lecke / 1 átnézés-adag = 1 agent, + 4 összefésülés), két párhuzamos sáv Kálmán kérésére; az orkesztrátor nem olvasott lecke-JSON-t. Az F-1 (`perfecto-vs-indefinido`) 3 kört kért kód-változással: a brief nem mondta ki elég pontosan a mexikói normát (hoy / este mes / este año + indefinido), ez a brief hibája volt. Az átnézés leckénként átlag kb. 10 valódi hibát talált a zöld kapu mögött: a szerző-agent kapuja nem lát nyelvi hibát, ezért új leckét ezentúl íráskor egy független átnézés zár.
 
 ## BRIEF J1-J2 + F1-F4 (2026-10-01, javítások, EGY agent, sorban)
