@@ -1,0 +1,76 @@
+// PLAN-vizsga E. szakasz: a próbavizsga szerzői szövegei célnyelven, mint egy valódi papíron.
+// A feladat-utasítások rövid, szint-hű mondatok; az írás-feladatokat a régi (4afeb8c^)
+// data/exams/mock/{es/a1,es/a2,en/a2}.json hivatalos felépítést követő, kézzel írt írás-részéből
+// emeltük át (a tartalmi pontok kulcsszavai változatlanok). Az olvasás és a hallás tartalma
+// nem innen jön: azt lib/exam/mock/build.ts építi a szint szavaiból.
+
+import type { MockFormFillTask, MockShortMessageTask, MockTarget } from './types';
+
+export type MockInstructionKind =
+  | 'read_mc'
+  | 'match'
+  | 'true_false'
+  | 'gap_mc'
+  | 'listen_mc'
+  | 'listen_match'
+  | 'listen_dialogue';
+
+const INSTRUCTIONS: Record<MockTarget, Record<MockInstructionKind, string>> = {
+  es: {
+    read_mc: 'Lea los textos y marque la opción correcta.',
+    match: 'Lea las frases y relacione cada una con su significado. Hay más significados que frases.',
+    true_false: 'Lea el texto y marque si las frases son verdaderas (✓) o falsas (✗).',
+    gap_mc: 'Complete las frases. Elija la opción correcta para cada hueco.',
+    listen_mc: 'Va a escuchar unas frases. Se escuchan dos veces. Marque la opción correcta.',
+    listen_match: 'Va a escuchar unas frases. Relacione cada una con su significado. Hay más significados que frases.',
+    listen_dialogue: 'Va a escuchar una conversación. Se escucha dos veces. Conteste a las preguntas.',
+  },
+  en: {
+    read_mc: 'Read the texts and choose the correct option.',
+    match: 'Read the sentences and match each one with its meaning. There are more meanings than sentences.',
+    true_false: 'Read the text. Are the sentences right (✓) or wrong (✗)?',
+    gap_mc: 'Complete the sentences. Choose the correct word for each gap.',
+    listen_mc: 'You will hear some sentences. You hear them twice. Choose the correct option.',
+    listen_match: 'You will hear some sentences. Match each one with its meaning. There are more meanings than sentences.',
+    listen_dialogue: 'You will hear a conversation. You hear it twice. Answer the questions.',
+  },
+};
+
+/** A feladat sorszáma a papíron: spanyolul "TAREA 2.", angolul "PART 2.". */
+export function mockInstruction(target: MockTarget, kind: MockInstructionKind, taskNumber: number): string {
+  return `${target === 'es' ? 'TAREA' : 'PART'} ${taskNumber}. ${INSTRUCTIONS[target][kind]}`;
+}
+
+type WritingTask = Omit<MockFormFillTask, 'id'> | Omit<MockShortMessageTask, 'id'>;
+
+/** Az írás-papír feladatai (kulcs: `<irány>:<szint>`). */
+export const MOCK_WRITING: Record<string, WritingTask[]> = {
+  'es:A1': [
+    {
+      kind: 'form_fill',
+      instruction: 'TAREA 1. Complete el formulario con sus datos.',
+      context: 'Usted quiere apuntarse a un curso de español en una escuela de la Ciudad de México. Complete la ficha de inscripción.',
+      fields: [
+        { id: 'nombre', label: 'Nombre y apellidos', type: 'text' },
+        { id: 'edad', label: 'Edad', type: 'number' },
+        { id: 'nacionalidad', label: 'Nacionalidad', type: 'text' },
+        { id: 'direccion', label: 'Dirección (calle y número)', type: 'text' },
+        { id: 'telefono', label: 'Teléfono', type: 'number' },
+        { id: 'correo', label: 'Correo electrónico', type: 'text' },
+        { id: 'nivel', label: '¿Qué nivel estudia? (A1, A2...)', type: 'text' },
+      ],
+    },
+    {
+      kind: 'short_message',
+      instruction: 'TAREA 2. Escriba un texto de 30 a 40 palabras.',
+      prompt: 'Un amigo mexicano quiere conocerlo. Escríbale un mensaje y diga: cómo se llama y de dónde es; dónde vive ahora; qué hace los fines de semana; y pregúntele algo a él.',
+      minWords: 30,
+      points: [
+        { id: 'name', label: 'Dice su nombre o de dónde es', keywords: ['me llamo', 'soy de', 'mi nombre'] },
+        { id: 'live', label: 'Dice dónde vive', keywords: ['vivo', 'vivo en'] },
+        { id: 'weekend', label: 'Habla del fin de semana', keywords: ['fin de semana', 'sábado', 'domingo'] },
+        { id: 'question', label: 'Hace una pregunta', keywords: ['?', '¿'] },
+      ],
+    },
+  ],
+};
