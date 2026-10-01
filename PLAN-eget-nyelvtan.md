@@ -161,7 +161,10 @@ A „BRIEF új lecke (2026-10-01 …)” érvényes, a munkahely helyett ez a wo
   - minta: `La película ___ vimos ayer fue muy buena.` → que
   - minta: `El chico ___ conocí ayer es de Puebla.` → que (nem: que lo)
   - minta: `La mujer con ___ hablé es mi tía.` → quien (nem: quién)
-- [ ] B3. `perifrasis` (B1 full) új lecke → kész, ha: ugyanaz
+- [x] B3. `perifrasis` (B1 full) új lecke → kész, ha: audit 0/0 + jest + tsc + lint zöld, commit `feat(grammar): perifrasis lesson (nyelvtan)` (00:58; audit 0 P1/0 P2, jest 1592 passed/132 suite, tsc 0, lint 0 error; 12 választós + 1 match + 12 form + 7 why, nincs `tense`/transform (nem igeidős téma); glossary nincs; a 7 körülírás: empezar a, ponerse a, acabar de, volver a, dejar de, seguir + gerundio, llevar + gerundio, a tener que/poder/querer az A1 `perifrasis-modales`-é)
+  - minta: `Mi hermano ___ de beber café hace un año.` → dejó
+  - minta: `Nosotros ___ a trabajar a las ocho.` → empezamos (nem: empiezamos)
+  - minta: `Llegamos a casa y nos ___ a cocinar.` → ponemos
 - [ ] B4. `pluscuamperfecto` (B1 full) új lecke → kész, ha: ugyanaz
 - [ ] B5. `indefinidos` (A2 full) új lecke → kész, ha: ugyanaz
 - [ ] B6. `gerundio-participio-construcciones` (B2 exam) új lecke → kész, ha: ugyanaz
