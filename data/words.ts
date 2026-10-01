@@ -57,7 +57,7 @@ import b1 from './words/b1.json';
 import b2 from './words/b2.json';
 import c1 from './words/c1.json';
 import c2 from './words/c2.json';
-import { openWords } from './openWords';
+import { findOpenWordByForm, openWords } from './openWords';
 
 export const words: WordEntry[] = [...a0, ...a1, ...a2, ...b1, ...b2, ...c1, ...c2] as WordEntry[];
 
@@ -191,5 +191,7 @@ export function findWordByText(token: string, field: string, lang: string = 'es'
   for (const [key, entry] of map) {
     if (key.endsWith(` ${norm}`)) return entry;
   }
+  // A ragozott/többes/nemi alak a words-open tőalakú kártyájához tartozik (csak spanyol).
+  if (field === 'es') return findOpenWordByForm(norm);
   return undefined;
 }

@@ -7,6 +7,8 @@
 // B2-re esnek (lásd openLevelOf, ugyanaz a szabály, mint a tableDeck PCIC_LEVEL_CEILING-je).
 
 import type { Level, WordEntry, WordGender, WordPos } from '@/data/words';
+import { esFeminine, esPlural } from '@/lib/esInflect';
+import { conjugate, TENSES } from '@/lib/games/conjugate';
 import openA1 from '@/data/words-open/a1.json';
 import openA2 from '@/data/words-open/a2.json';
 import openB1 from '@/data/words-open/b1.json';
@@ -94,4 +96,49 @@ export function getOpenWordsUpToLevel(level: Level): OpenWord[] {
   const idx = OPEN_LEVELS.indexOf(openLevelOf(level));
   const allowed = new Set(OPEN_LEVELS.slice(0, idx + 1));
   return openWords.filter((w) => allowed.has(w.level));
+}
+
+// Ragozott alak -> words-open lemma (glossza-lefedettség, a PLAN-regi-szavak-ki 5. lépése
+// utáni javítás): a régi lista a ragozott alakokat is hordozta, a words-open csak a
+// tőalakot. Az index kizárólag words-open kártyából épül: igéknél a ragozó motor
+// (lib/games/conjugate) alakjai, főnév/melléknévnél a többes és a nemi alak
+// (lib/esInflect). Amit a motor bizonytalannak tart (conjugate -> null), kimarad.
+const ES_INFINITIVE = /^[a-záéíóúñü]*(ar|er|ir)$/;
+const FORM_ARTICLE = /^(el|la|los|las|un|una|unos|unas)\s+/;
+
+let formIndex: Map<string, OpenWord> | null = null;
+
+function buildFormIndex(): Map<string, OpenWord> {
+  const index = new Map<string, OpenWord>();
+  const add = (form: string | null, card: OpenWord) => {
+    const key = form?.trim().toLowerCase();
+    // Az első kártya nyer, így az alacsonyabb szint birtokol egy többkártyás alakot.
+    if (key && !index.has(key)) index.set(key, card);
+  };
+  for (const card of openWords) {
+    for (const alt of card.es.split(' / ')) {
+      const head = alt.trim().toLowerCase();
+      if (!head) continue;
+      if (card.openPos === 'verb') {
+        if (!ES_INFINITIVE.test(head)) continue;
+        for (const tense of TENSES) for (const f of conjugate(head, tense) ?? []) add(f.form, card);
+      } else if (card.openPos === 'noun' || card.openPos === 'adj') {
+        const bare = head.replace(FORM_ARTICLE, '');
+        if (!bare || bare.includes(' ') || /^(los|las)\s/.test(head)) continue;
+        add(esPlural(bare), card);
+        if (card.openPos === 'adj') {
+          const fem = esFeminine(bare);
+          add(fem, card);
+          if (fem) add(esPlural(fem), card);
+        }
+      }
+    }
+  }
+  return index;
+}
+
+/** A ragozott, többes vagy nemi alak words-open kártyája (a tőalakot a hívó már megkereste); csak spanyolra. */
+export function findOpenWordByForm(norm: string): OpenWord | undefined {
+  if (!formIndex) formIndex = buildFormIndex();
+  return formIndex.get(norm) ?? formIndex.get(norm.replace(FORM_ARTICLE, ''));
 }
