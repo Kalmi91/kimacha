@@ -463,7 +463,7 @@
     },
     {
       "id": "pp-04",
-      "sentence": "Quiero ___ un favor a mi jefe.",
+      "sentence": "Tengo un problema y quiero ___ un favor a mi jefe.",
       "options": [
         "preguntar",
         "pedir",
@@ -569,7 +569,7 @@
       "options": [
         "preguntamos",
         "pedimos",
-        "vemos"
+        "hacemos"
       ],
       "correct": 0,
       "why": {
@@ -585,11 +585,11 @@
           "es": "\"Pedimos si hay mesa\" no funciona: pedir lleva una cosa (pedimos una mesa). Hace falta: preguntamos.",
           "de": "\"Pedimos si hay mesa\" funktioniert nicht: pedir braucht eine Sache (pedimos una mesa = wir bitten um einen Tisch). Richtig ist: preguntamos."
         },
-        "vemos": {
-          "hu": "A \"vemos si hay mesa\" azt jelentené, hogy mi magunk nézzük meg, van-e asztal; itt viszont valakitől kérdezzük. Ide ez illik: preguntamos.",
-          "en": "\"Vemos si hay mesa\" would mean we look and check for ourselves whether there is a table; here we ask someone. It needs: preguntamos.",
-          "es": "\"Vemos si hay mesa\" significaría que miramos nosotros mismos si hay mesa; aquí se lo preguntamos a alguien. Hace falta: preguntamos.",
-          "de": "\"Vemos si hay mesa\" würde bedeuten, dass wir selbst nachsehen, ob ein Tisch frei ist; hier fragen wir jemanden. Richtig ist: preguntamos."
+        "hacemos": {
+          "hu": "A \"hacemos si hay mesa\" nem értelmes: a hacer mellé főnév jön (hacemos una pregunta = kérdést teszünk fel), si-s mellékmondat nem. Ide ez illik: preguntamos.",
+          "en": "\"Hacemos si hay mesa\" makes no sense: hacer takes a noun (hacemos una pregunta = we ask a question), not a clause with si. It needs: preguntamos.",
+          "es": "\"Hacemos si hay mesa\" no tiene sentido: hacer lleva un sustantivo (hacemos una pregunta), no una oración con si. Hace falta: preguntamos.",
+          "de": "\"Hacemos si hay mesa\" ergibt keinen Sinn: hacer braucht ein Nomen (hacemos una pregunta = wir stellen eine Frage), keinen si-Satz. Richtig ist: preguntamos."
         }
       },
       "examples": [
@@ -633,7 +633,7 @@
     },
     {
       "id": "pp-09",
-      "sentence": "En la tienda ___ el precio antes de comprar.",
+      "sentence": "En la tienda le ___ el precio al vendedor.",
       "options": [
         "veo",
         "pido",
@@ -648,10 +648,10 @@
       },
       "wrong": {
         "veo": {
-          "hu": "A \"veo el precio\" azt jelentené, hogy látom az árat (például a cédulán); itt viszont valakitől kérdezem meg. Ide ez illik: pregunto.",
-          "en": "\"Veo el precio\" would mean I see the price (for example on the label); here I ask someone. It needs: pregunto.",
-          "es": "\"Veo el precio\" significaría que veo el precio (por ejemplo en la etiqueta); aquí se lo pregunto a alguien. Hace falta: pregunto.",
-          "de": "\"Veo el precio\" würde bedeuten, dass ich den Preis sehe (zum Beispiel auf dem Schild); hier frage ich jemanden. Richtig ist: pregunto."
+          "hu": "A \"le veo el precio al vendedor\" nem értelmes: a ver azt jelentené, hogy látom az árat (például a cédulán), a vendedor-tól viszont kérdezni lehet. Ide ez illik: pregunto.",
+          "en": "\"Le veo el precio al vendedor\" does not work: ver would mean I see the price (for example on the label), but you ask the seller. It needs: pregunto.",
+          "es": "\"Le veo el precio al vendedor\" no funciona: ver significaría que veo el precio (por ejemplo en la etiqueta), pero al vendedor se le pregunta. Hace falta: pregunto.",
+          "de": "\"Le veo el precio al vendedor\" geht nicht: ver würde bedeuten, dass ich den Preis sehe (zum Beispiel auf dem Schild), den Verkäufer aber fragt man. Richtig ist: pregunto."
         },
         "pido": {
           "hu": "A \"pido el precio\" azt jelentené, hogy egy árat kérek, mintha termék volna; az ár viszont csak adat. Ide ez illik: pregunto.",
@@ -701,7 +701,7 @@
     },
     {
       "id": "pp-11",
-      "sentence": "Mis hijos ___ siempre qué hay de comer.",
+      "sentence": "Mis hijos siempre le ___ a su mamá qué hay de comer.",
       "options": [
         "ven",
         "piden",
@@ -716,10 +716,10 @@
       },
       "wrong": {
         "ven": {
-          "hu": "A \"ven qué hay de comer\" azt jelentené, hogy ők maguk nézik meg, mi van enni; itt viszont valakitől kérdezik meg. Ide ez illik: preguntan.",
-          "en": "\"Ven qué hay de comer\" would mean they look and see for themselves what there is to eat; here they ask someone. It needs: preguntan.",
-          "es": "\"Ven qué hay de comer\" significaría que miran ellos mismos qué hay de comer; aquí se lo preguntan a alguien. Hace falta: preguntan.",
-          "de": "\"Ven qué hay de comer\" würde bedeuten, dass sie selbst nachsehen, was es zu essen gibt; hier fragen sie jemanden. Richtig ist: preguntan."
+          "hu": "A \"le ven a su mamá qué hay de comer\" nem értelmes: a ver azt jelentené, hogy ők maguk nézik meg, mi van enni, anyától viszont kérdezni lehet. Ide ez illik: preguntan.",
+          "en": "\"Le ven a su mamá qué hay de comer\" does not work: ver would mean they look and see for themselves what there is to eat, but you ask your mother. It needs: preguntan.",
+          "es": "\"Le ven a su mamá qué hay de comer\" no funciona: ver significaría que miran ellos mismos qué hay de comer, pero a la mamá se le pregunta. Hace falta: preguntan.",
+          "de": "\"Le ven a su mamá qué hay de comer\" geht nicht: ver würde bedeuten, dass sie selbst nachsehen, was es zu essen gibt, die Mutter aber fragt man. Richtig ist: preguntan."
         },
         "piden": {
           "hu": "A \"piden qué hay de comer\" nem működik: a pedir után dolog jön (piden pizza = pizzát kérnek), kérdés nem. Ide ez illik: preguntan.",

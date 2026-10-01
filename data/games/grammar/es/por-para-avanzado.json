@@ -349,7 +349,7 @@
           "por si acaso"
         ],
         [
-          "No tengo mucho dinero, pero ___ tengo un trabajo.",
+          "Necesito ___ dos horas para terminar el trabajo.",
           "por lo menos"
         ],
         [
@@ -369,7 +369,7 @@
           "por desgracia"
         ],
         [
-          "Vi a mi profesora en el mercado ___.",
+          "Sin buscarla, vi a mi profesora en el mercado ___.",
           "por casualidad"
         ],
         [
@@ -744,10 +744,10 @@
       },
       "wrong": {
         "por": {
-          "hu": "A voy por tu casa azt jelentené: a házad környékén megyek át, vagy ott keresek valamit. Az úti célt a para jelöli. Helyes: voy para tu casa.",
-          "en": "Voy por tu casa would mean I am passing around your house, or going to fetch something there. A destination takes para. The correct form is: voy para tu casa.",
-          "es": "Voy por tu casa significaría que paso por los alrededores de tu casa, o que voy a buscar algo allí. El destino lleva para. Lo correcto es: voy para tu casa.",
-          "de": "Voy por tu casa würde bedeuten, dass ich in der Gegend deines Hauses vorbeikomme oder dort etwas abhole. Ein Ziel steht mit para. Richtig ist: voy para tu casa."
+          "hu": "A voy por tu casa azt jelentené: a házad környékén megyek át. Az úti célt a para jelöli. Helyes: voy para tu casa.",
+          "en": "Voy por tu casa would mean I am passing around your house. A destination takes para. The correct form is: voy para tu casa.",
+          "es": "Voy por tu casa significaría que paso por los alrededores de tu casa. El destino lleva para. Lo correcto es: voy para tu casa.",
+          "de": "Voy por tu casa würde bedeuten, dass ich in der Gegend deines Hauses vorbeikomme. Ein Ziel steht mit para. Richtig ist: voy para tu casa."
         }
       },
       "examples": [
@@ -878,7 +878,7 @@
       "id": "ppa-form-02",
       "kind": "form",
       "verb": "expresión",
-      "person": "No tengo mucho dinero, pero ___ tengo un trabajo.",
+      "person": "Necesito ___ dos horas para terminar el trabajo.",
       "answer": "por lo menos",
       "table": "por-para-avanzado-expresiones"
     },
@@ -918,7 +918,7 @@
       "id": "ppa-form-07",
       "kind": "form",
       "verb": "expresión",
-      "person": "Vi a mi profesora en el mercado ___.",
+      "person": "Sin buscarla, vi a mi profesora en el mercado ___.",
       "answer": "por casualidad",
       "table": "por-para-avanzado-expresiones"
     },
