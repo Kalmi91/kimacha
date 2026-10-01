@@ -76,6 +76,9 @@ function ThemeSampleRow({ id, selected, onPress }: { id: SkinId; selected: boole
   if (skin.uppercaseWord) wordStyle.textTransform = 'uppercase';
   const knowStyle: TextStyle = { color: c.onA, fontSize: 14 };
   if (fonts.body) knowStyle.fontFamily = fonts.body;
+  // PLAN-temak 7F: a téma neve kicsiben a minta-szó alatt.
+  const nameStyle: TextStyle = { color: c.mu, fontSize: 11 };
+  if (fonts.body) nameStyle.fontFamily = fonts.body;
   return (
     <Pressable
       testID={`onboarding-theme-${id}`}
@@ -103,7 +106,12 @@ function ThemeSampleRow({ id, selected, onPress }: { id: SkinId; selected: boole
             },
           ]}
         >
-          <RNText style={wordStyle}>{o.sampleWord}</RNText>
+          <View style={styles.sampleText}>
+            <RNText style={wordStyle}>{o.sampleWord}</RNText>
+            <RNText testID={`onboarding-theme-name-${id}`} style={nameStyle}>
+              {t().skins.names[id]}
+            </RNText>
+          </View>
           <View style={[styles.know, { backgroundColor: c.a, ...radiusStyle(shape.buttonRadius) }]}>
             <RNText style={knowStyle}>{o.know}</RNText>
           </View>
@@ -148,6 +156,7 @@ const styles = StyleSheet.create({
   closing: { fontSize: 14, textAlign: 'center', marginTop: 4, marginBottom: 12 },
   ring: { alignSelf: 'stretch', borderWidth: 3, padding: 3 },
   sample: { minHeight: 64, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 12, paddingHorizontal: 16, paddingVertical: 10 },
+  sampleText: { flexShrink: 1 },
   know: { paddingHorizontal: 14, paddingVertical: 8 },
   later: { fontSize: 14, textAlign: 'center', marginTop: 4, marginBottom: 12 },
 });

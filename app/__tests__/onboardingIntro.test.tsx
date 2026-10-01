@@ -11,7 +11,7 @@ import * as RN from 'react-native';
 
 import { ONBOARDING_SKINS } from '@/constants/Skins';
 import { getDb } from '@/lib/database';
-import { setLanguage } from '@/lib/i18n';
+import { setLanguage, t } from '@/lib/i18n';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import OnboardingScreen from '../onboarding';
 
@@ -92,6 +92,14 @@ describe('Onboarding: bevezető + témás lépés (PLAN-temak 4C)', () => {
     expect(screen.queryByTestId('onboarding-theme-kawaii')).toBeNull();
     expect(screen.getAllByText('el carro')).toHaveLength(5);
     expect(screen.getAllByText('I know')).toHaveLength(5);
+  });
+
+  it('7F: minden téma-sorban a téma neve is látszik a minta-szó alatt', async () => {
+    await toIntro();
+    fireEvent.press(screen.getByText("Let's start"));
+    for (const id of ONBOARDING_SKINS) {
+      expect(screen.getByTestId(`onboarding-theme-name-${id}`).props.children).toBe(t().skins.names[id]);
+    }
   });
 
   it('spanyol felületen a minta-szó "the car", a pirula "Lo sé"', async () => {

@@ -321,7 +321,7 @@ function pageAnalyze() {
   const SKIP = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT', 'TITLE', 'META', 'LINK', 'HEAD']);
   const visible = (el) => el.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true });
   // díszek + a szándékosan a tartalom fölé rajzolt lebegő elemek (UsageToast, 💬 gomb)
-  const IGNORE = '[data-testid^="decor-"], [data-testid="usage-toast"], [data-testid="feedback-fab"]';
+  const IGNORE = '[data-testid^="decor-"], [data-testid^="usage-toast"], [data-testid="feedback-fab"]';
   const inDecor = (el) => !!el.closest(IGNORE) || (el.innerText ?? '').trim() === '💬';
   const desc = (el) => {
     const r = el.getBoundingClientRect();
@@ -329,6 +329,7 @@ function pageAnalyze() {
     return `${el.tagName.toLowerCase()}${id ? `[${id}]` : ''}@${Math.round(r.left)},${Math.round(r.top)},${Math.round(r.width)}x${Math.round(r.height)}`;
   };
   const clips = (v) => v === 'hidden' || v === 'clip';
+  const scrolls = (v) => v === 'auto' || v === 'scroll';
 
   // A levágó (overflow nem visible) ősök a body alatt; hard = hidden / clip (a görgetős nem).
   // A téglalap a padding-box (a szegély és a görgetősáv nélkül).
@@ -342,7 +343,7 @@ function pageAnalyze() {
       const r = a.getBoundingClientRect();
       const l = r.left + a.clientLeft;
       const t = r.top + a.clientTop;
-      out.push({ el: a, hard: clips(cs.overflowX) || clips(cs.overflowY), x, y, l, t, r: l + a.clientWidth, b: t + a.clientHeight });
+      out.push({ el: a, hard: clips(cs.overflowX) || clips(cs.overflowY), hx: clips(cs.overflowX), hy: clips(cs.overflowY), sx: scrolls(cs.overflowX), sy: scrolls(cs.overflowY), x, y, l, t, r: l + a.clientWidth, b: t + a.clientHeight });
     }
     return out;
   };
@@ -440,16 +441,28 @@ function pageAnalyze() {
       (el.scrollWidth > el.clientWidth + 1 || el.scrollHeight > el.clientHeight + 1);
     let cut = own;
     if (!cut) {
-      // ős vágja részben (egészben kívül eső: pager / rejtett oldal, nem hiba)
-      cut = it.cl
-        .filter((a) => a.hard && a.el !== el)
-        .some((a) =>
+      // ős vágja részben (egészben kívül eső: pager / rejtett oldal, nem hiba); tengelyenként csak
+      // a hidden / clip számít, és csak ha nincs köztük görgetős (auto / scroll) ős, ami a vágó ős
+      // élén belül van: a görgetés szélén félbevágott sor görgetéssel látható, nem levágott
+      const scrolled = (i, axis) =>
+        it.cl.slice(0, i).some((s) =>
+          axis === 'x'
+            ? s.sx && s.l >= it.cl[i].l - 1 && s.r <= it.cl[i].r + 1
+            : s.sy && s.t >= it.cl[i].t - 1 && s.b <= it.cl[i].b + 1,
+        );
+      cut = it.cl.some(
+        (a, i) =>
+          a.hard &&
+          a.el !== el &&
           it.raw.some((r) => {
             const inter = r.l < a.r && r.r > a.l && r.t < a.b && r.b > a.t;
             if (!inter) return false;
-            return (a.x && (r.l < a.l - 1 || r.r > a.r + 1)) || (a.y && (r.t < a.t - 1 || r.b > a.b + 1));
+            return (
+              (a.hx && !scrolled(i, 'x') && (r.l < a.l - 1 || r.r > a.r + 1)) ||
+              (a.hy && !scrolled(i, 'y') && (r.t < a.t - 1 || r.b > a.b + 1))
+            );
           }),
-        );
+      );
     }
     if (cut) issues.push({ type: 'clip', text: it.label, at: desc(it.el) });
   }
@@ -613,6 +626,8 @@ async function main() {
         await loaded;
         // az app kirajzolása (a betűk betöltéséig üres)
         if (!(await poll('document.body.innerText.trim().length > 0', 30000))) throw new Error('nem renderelt semmit');
+        // a betűk betöltése átrendezi az oldalt: a kattintás előtt megvárjuk (különben mellé kattint)
+        if (def.steps?.length) await settle();
         for (const step of def.steps ?? []) {
           const spec = JSON.stringify(step);
           const pos = await poll(`(${pageFindTarget})(${spec})`, 15000);

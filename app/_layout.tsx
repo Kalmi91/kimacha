@@ -134,7 +134,7 @@ function RootLayoutNav() {
           <Stack.Screen name="grammar" options={{ headerShown: false }} />
           <Stack.Screen name="mistakes" options={{ headerShown: false }} />
         </Stack>
-        <UsageToast />
+        <UsageToast hidden={(segments as string[])[0] === 'onboarding'} />
       </View>
     </NavThemeProvider>
   );
