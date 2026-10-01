@@ -292,7 +292,7 @@ const es: Strings = {
     scheduleNext: (when: string) => `Próxima repetición: ${when}`,
     scheduleNextToday: (time: string) => `hoy ${time}`,
     scheduleNextTomorrow: (time: string) => `mañana ${time}`,
-    scheduleNextDays: (days: number) => `en ${days} días`,
+    scheduleNextDays: (days: number) => `en ${days} ${days === 1 ? 'día' : 'días'}`,
     scheduleEmpty: '¡Todavía no hay nada guardado, aprende algunas palabras!',
   },
   pcic: {
@@ -326,7 +326,7 @@ const es: Strings = {
     tileAgain: 'Falladas',
     introduced: (n: number, total: number) => `${n} / ${total} palabras presentadas`,
     intervalToday: '<1 día',
-    intervalDays: (n: number) => `${n} días`,
+    intervalDays: (n: number) => `${n} ${n === 1 ? 'día' : 'días'}`,
     chooseLevel: 'Elige el nivel',
     next: (label: string) => `Siguiente → ${label}`,
     accentForgiven: 'Falta el acento, se cuenta como correcto',
