@@ -1196,388 +1196,320 @@
       }
     },
     {
-      "kind": "why",
-      "id": "ir-why-01",
-      "es": "Comí a las dos.",
-      "target": "Comí",
-      "tr": {
-        "hu": "Kettőkor ettem.",
-        "en": "I ate at two.",
-        "es": "Comí a las dos.",
-        "de": "Ich habe um zwei gegessen."
-      },
-      "options": [
-        {
-          "text": {
-            "hu": "yo (én)",
-            "en": "yo (I)",
-            "es": "yo",
-            "de": "yo (ich)"
-          }
-        },
-        {
-          "text": {
-            "hu": "tú (te)",
-            "en": "tú (you)",
-            "es": "tú",
-            "de": "tú (du)"
-          },
-          "wrong": {
-            "hu": "Ha tú lenne, 'Comiste a las dos' állna, azaz TE ettél kettőkor, nem én.",
-            "en": "If it were tú, it would say 'Comiste a las dos', meaning YOU ate at two, not me.",
-            "es": "Si fuera tú, diría 'Comiste a las dos', o sea que TÚ comiste, no yo.",
-            "de": "Wäre es tú, hieße es 'Comiste a las dos', also hast DU um zwei gegessen, nicht ich."
-          }
-        },
-        {
-          "text": {
-            "hu": "ő / Ön",
-            "en": "he/she/you (usted)",
-            "es": "él/ella/usted",
-            "de": "er/sie/Sie"
-          },
-          "wrong": {
-            "hu": "Ha él/ella lenne, 'Comió a las dos' állna, azaz Ő evett kettőkor, nem én.",
-            "en": "If it were él/ella, it would say 'Comió a las dos', meaning HE/SHE ate at two, not me.",
-            "es": "Si fuera él/ella, diría 'Comió a las dos', o sea que ÉL/ELLA comió, no yo.",
-            "de": "Wäre es él/ella, hieße es 'Comió a las dos', also hat ER/SIE um zwei gegessen, nicht ich."
-          }
-        }
-      ],
-      "correctIndex": 0,
+      "id": "ir-tr-01",
+      "kind": "transform",
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "prompt": {
+        "es": "Hoy hablo con mi madre.",
+        "hu": "Ma beszélek az anyámmal.",
+        "en": "Today I talk to my mother.",
+        "de": "Heute spreche ich mit meiner Mutter."
+      },
+      "answer": "Hoy hablé con mi madre.",
+      "accept": [
+        "Hoy yo hablé con mi madre.",
+        "Yo hoy hablé con mi madre.",
+        "Hablé con mi madre hoy.",
+        "Yo hablé con mi madre hoy."
+      ],
+      "wordIds": [
+        "1312",
+        "27",
+        "42"
+      ],
+      "why": {
+        "hu": "Lezárt múltbeli cselekvés: indefinido. A hoy megmarad, mert a nap még nem telt el. -AR ige, yo: hablo → hablé.",
+        "en": "A finished past action: indefinido. Hoy still works because the day isn't over yet. -AR verb, yo: hablo → hablé.",
+        "es": "Una acción pasada y terminada: perfecto simple. Hoy sigue funcionando porque el día no ha terminado. Verbo en -AR, yo: hablo → hablé.",
+        "de": "Eine abgeschlossene Handlung in der Vergangenheit: indefinido. Hoy passt noch, weil der Tag nicht vorbei ist. -AR-Verb, yo: hablo → hablé."
       }
     },
     {
-      "kind": "why",
-      "id": "ir-why-02",
-      "es": "Hablaste con tu madre ayer.",
-      "target": "Hablaste",
-      "tr": {
-        "hu": "Tegnap beszéltél anyáddal.",
-        "en": "You talked to your mother yesterday.",
-        "es": "Hablaste con tu madre ayer.",
-        "de": "Du hast gestern mit deiner Mutter gesprochen."
-      },
-      "options": [
-        {
-          "text": {
-            "hu": "yo (én)",
-            "en": "yo (I)",
-            "es": "yo",
-            "de": "yo (ich)"
-          },
-          "wrong": {
-            "hu": "Ha yo lenne, 'Hablé con mi madre ayer' állna, azaz ÉN beszéltem anyámmal, nem te.",
-            "en": "If it were yo, it would say 'Hablé con mi madre ayer', meaning I talked to my mother, not you.",
-            "es": "Si fuera yo, diría 'Hablé con mi madre ayer', o sea que YO hablé con mi madre, no tú.",
-            "de": "Wäre es yo, hieße es 'Hablé con mi madre ayer', also habe ICH mit meiner Mutter gesprochen, nicht du."
-          }
-        },
-        {
-          "text": {
-            "hu": "tú (te)",
-            "en": "tú (you)",
-            "es": "tú",
-            "de": "tú (du)"
-          }
-        },
-        {
-          "text": {
-            "hu": "ti (vosotros, Spo.)",
-            "en": "you all (vosotros, Spain)",
-            "es": "vosotros",
-            "de": "ihr (vosotros, Spanien)"
-          },
-          "wrong": {
-            "hu": "Ha vosotros lenne, 'Hablasteis con vuestra madre ayer' állna, azaz TI beszéltetek, nem te egyedül.",
-            "en": "If it were vosotros, it would say 'Hablasteis con vuestra madre ayer', meaning YOU ALL talked, not just you.",
-            "es": "Si fuera vosotros, diría 'Hablasteis con vuestra madre ayer', o sea que VOSOTROS hablasteis, no solo tú.",
-            "de": "Wäre es vosotros, hieße es 'Hablasteis con vuestra madre ayer', also habt IHR gesprochen, nicht nur du."
-          }
-        }
-      ],
-      "correctIndex": 1,
+      "id": "ir-tr-02",
+      "kind": "transform",
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "prompt": {
+        "es": "Hoy comes en casa.",
+        "hu": "Ma otthon eszel.",
+        "en": "Today you eat at home.",
+        "de": "Heute isst du zu Hause."
+      },
+      "answer": "Hoy comiste en casa.",
+      "accept": [
+        "Hoy tú comiste en casa.",
+        "Tú hoy comiste en casa.",
+        "Comiste en casa hoy.",
+        "Tú comiste en casa hoy."
+      ],
+      "wordIds": [
+        "1312",
+        "25",
+        "14"
+      ],
+      "why": {
+        "hu": "Lezárt múltbeli cselekvés: indefinido. A hoy megmarad, mert a nap még nem telt el. -ER ige, tú: comes → comiste.",
+        "en": "A finished past action: indefinido. Hoy still works because the day isn't over yet. -ER verb, tú: comes → comiste.",
+        "es": "Una acción pasada y terminada: perfecto simple. Hoy sigue funcionando porque el día no ha terminado. Verbo en -ER, tú: comes → comiste.",
+        "de": "Eine abgeschlossene Handlung in der Vergangenheit: indefinido. Hoy passt noch, weil der Tag nicht vorbei ist. -ER-Verb, tú: comes → comiste."
       }
     },
     {
-      "kind": "why",
-      "id": "ir-why-03",
-      "es": "Vivió en Puebla.",
-      "target": "Vivió",
-      "tr": {
-        "hu": "Pueblában élt.",
-        "en": "He/She lived in Puebla.",
-        "es": "Vivió en Puebla.",
-        "de": "Er/sie hat in Puebla gelebt."
-      },
-      "options": [
-        {
-          "text": {
-            "hu": "ők / Önök",
-            "en": "they/you all (ustedes)",
-            "es": "ellos/ellas/ustedes",
-            "de": "sie/Sie (Plural)"
-          },
-          "wrong": {
-            "hu": "Ha ellos lenne, 'Vivieron en Puebla' állna, azaz ŐK éltek Pueblában, nem csak ő.",
-            "en": "If it were ellos, it would say 'Vivieron en Puebla', meaning THEY lived in Puebla, not just him/her.",
-            "es": "Si fuera ellos, diría 'Vivieron en Puebla', o sea que ELLOS vivieron ahí, no solo él/ella.",
-            "de": "Wäre es ellos, hieße es 'Vivieron en Puebla', also haben SIE dort gelebt, nicht nur er/sie."
-          }
-        },
-        {
-          "text": {
-            "hu": "ő / Ön",
-            "en": "he/she/you (usted)",
-            "es": "él/ella/usted",
-            "de": "er/sie/Sie"
-          }
-        },
-        {
-          "text": {
-            "hu": "mi (nosotros)",
-            "en": "we (nosotros)",
-            "es": "nosotros",
-            "de": "wir (nosotros)"
-          },
-          "wrong": {
-            "hu": "Ha nosotros lenne, 'Vivimos en Puebla' állna, azaz MI éltünk Pueblában, nem ő.",
-            "en": "If it were nosotros, it would say 'Vivimos en Puebla', meaning WE lived in Puebla, not him/her.",
-            "es": "Si fuera nosotros, diría 'Vivimos en Puebla', o sea que NOSOTROS vivimos ahí, no él/ella.",
-            "de": "Wäre es nosotros, hieße es 'Vivimos en Puebla', also haben WIR dort gelebt, nicht er/sie."
-          }
-        }
-      ],
-      "correctIndex": 1,
+      "id": "ir-tr-03",
+      "kind": "transform",
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "prompt": {
+        "es": "Hoy escribe una carta.",
+        "hu": "Ma levelet ír.",
+        "en": "Today she writes a letter.",
+        "de": "Heute schreibt sie einen Brief."
+      },
+      "answer": "Hoy escribió una carta.",
+      "accept": [
+        "Hoy ella escribió una carta.",
+        "Hoy él escribió una carta.",
+        "Hoy usted escribió una carta.",
+        "Escribió una carta hoy.",
+        "Ella escribió una carta hoy."
+      ],
+      "wordIds": [
+        "1312",
+        "1412",
+        "1290"
+      ],
+      "why": {
+        "hu": "Lezárt múltbeli cselekvés: indefinido. A hoy megmarad, mert a nap még nem telt el. -IR ige, él/ella: escribe → escribió.",
+        "en": "A finished past action: indefinido. Hoy still works because the day isn't over yet. -IR verb, él/ella: escribe → escribió.",
+        "es": "Una acción pasada y terminada: perfecto simple. Hoy sigue funcionando porque el día no ha terminado. Verbo en -IR, él/ella: escribe → escribió.",
+        "de": "Eine abgeschlossene Handlung in der Vergangenheit: indefinido. Hoy passt noch, weil der Tag nicht vorbei ist. -IR-Verb, él/ella: escribe → escribió."
       }
     },
     {
-      "kind": "why",
-      "id": "ir-why-04",
-      "es": "Hablamos toda la tarde.",
-      "target": "Hablamos",
-      "tr": {
-        "hu": "Egész délután beszéltünk.",
-        "en": "We talked all afternoon.",
-        "es": "Hablamos toda la tarde.",
-        "de": "Wir haben den ganzen Nachmittag geredet."
-      },
-      "options": [
-        {
-          "text": {
-            "hu": "yo (én)",
-            "en": "yo (I)",
-            "es": "yo",
-            "de": "yo (ich)"
-          },
-          "wrong": {
-            "hu": "Ha yo lenne, 'Hablé toda la tarde' állna, azaz ÉN beszéltem egész délután, nem mi.",
-            "en": "If it were yo, it would say 'Hablé toda la tarde', meaning I talked all afternoon, not us.",
-            "es": "Si fuera yo, diría 'Hablé toda la tarde', o sea que YO hablé toda la tarde, no nosotros.",
-            "de": "Wäre es yo, hieße es 'Hablé toda la tarde', also habe ICH den ganzen Nachmittag geredet, nicht wir."
-          }
-        },
-        {
-          "text": {
-            "hu": "mi (nosotros)",
-            "en": "we (nosotros)",
-            "es": "nosotros",
-            "de": "wir (nosotros)"
-          }
-        },
-        {
-          "text": {
-            "hu": "ők / Önök",
-            "en": "they/you all (ustedes)",
-            "es": "ellos/ellas/ustedes",
-            "de": "sie/Sie (Plural)"
-          },
-          "wrong": {
-            "hu": "Ha ellos lenne, 'Hablaron toda la tarde' állna, azaz ŐK beszéltek egész délután, nem mi.",
-            "en": "If it were ellos, it would say 'Hablaron toda la tarde', meaning THEY talked all afternoon, not us.",
-            "es": "Si fuera ellos, diría 'Hablaron toda la tarde', o sea que ELLOS hablaron, no nosotros.",
-            "de": "Wäre es ellos, hieße es 'Hablaron toda la tarde', also haben SIE geredet, nicht wir."
-          }
-        }
-      ],
-      "correctIndex": 1,
+      "id": "ir-tr-04",
+      "kind": "transform",
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "prompt": {
+        "es": "Hoy comemos en un restaurante.",
+        "hu": "Ma egy étteremben eszünk.",
+        "en": "Today we eat at a restaurant.",
+        "de": "Heute essen wir in einem Restaurant."
+      },
+      "answer": "Hoy comimos en un restaurante.",
+      "accept": [
+        "Hoy nosotros comimos en un restaurante.",
+        "Nosotros hoy comimos en un restaurante.",
+        "Comimos en un restaurante hoy.",
+        "Nosotros comimos en un restaurante hoy."
+      ],
+      "wordIds": [
+        "1312",
+        "25",
+        "1841"
+      ],
+      "why": {
+        "hu": "Lezárt múltbeli cselekvés: indefinido. A hoy megmarad, mert a nap még nem telt el. -ER ige, nosotros: comemos → comimos.",
+        "en": "A finished past action: indefinido. Hoy still works because the day isn't over yet. -ER verb, nosotros: comemos → comimos.",
+        "es": "Una acción pasada y terminada: perfecto simple. Hoy sigue funcionando porque el día no ha terminado. Verbo en -ER, nosotros: comemos → comimos.",
+        "de": "Eine abgeschlossene Handlung in der Vergangenheit: indefinido. Hoy passt noch, weil der Tag nicht vorbei ist. -ER-Verb, nosotros: comemos → comimos."
       }
     },
     {
-      "kind": "why",
-      "id": "ir-why-05",
-      "es": "Ustedes comieron en un restaurante nuevo.",
-      "target": "comieron",
-      "tr": {
-        "hu": "Önök egy új étteremben ettek.",
-        "en": "You all ate at a new restaurant.",
-        "es": "Ustedes comieron en un restaurante nuevo.",
-        "de": "Ihr habt in einem neuen Restaurant gegessen."
-      },
-      "options": [
-        {
-          "text": {
-            "hu": "mi (nosotros)",
-            "en": "we (nosotros)",
-            "es": "nosotros",
-            "de": "wir (nosotros)"
-          },
-          "wrong": {
-            "hu": "Ha nosotros lenne, 'Comimos en un restaurante nuevo' állna, azaz MI ettünk ott, nem önök.",
-            "en": "If it were nosotros, it would say 'Comimos en un restaurante nuevo', meaning WE ate there, not you all.",
-            "es": "Si fuera nosotros, diría 'Comimos en un restaurante nuevo', o sea que NOSOTROS comimos ahí, no ustedes.",
-            "de": "Wäre es nosotros, hieße es 'Comimos en un restaurante nuevo', also haben WIR dort gegessen, nicht ihr."
-          }
-        },
-        {
-          "text": {
-            "hu": "ők / Önök",
-            "en": "they/you all (ustedes)",
-            "es": "ellos/ellas/ustedes",
-            "de": "sie/Sie (Plural)"
-          }
-        },
-        {
-          "text": {
-            "hu": "ő / Ön",
-            "en": "he/she/you (usted)",
-            "es": "él/ella/usted",
-            "de": "er/sie/Sie"
-          },
-          "wrong": {
-            "hu": "Ha él/ella lenne, 'Comió en un restaurante nuevo' állna, azaz Ő evett ott, egyedül, nem önök, többen.",
-            "en": "If it were él/ella, it would say 'Comió en un restaurante nuevo', meaning HE/SHE ate there, alone, not you all.",
-            "es": "Si fuera él/ella, diría 'Comió en un restaurante nuevo', o sea que ÉL/ELLA comió ahí, solo, no ustedes.",
-            "de": "Wäre es él/ella, hieße es 'Comió en un restaurante nuevo', also hat ER/SIE allein dort gegessen, nicht ihr."
-          }
-        }
-      ],
-      "correctIndex": 1,
+      "id": "ir-tr-05",
+      "kind": "transform",
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "prompt": {
+        "es": "Ustedes escriben un correo.",
+        "hu": "Önök e-mailt írnak.",
+        "en": "You all write an email.",
+        "de": "Sie schreiben eine E-Mail."
+      },
+      "answer": "Ustedes escribieron un correo.",
+      "accept": [
+        "Escribieron un correo."
+      ],
+      "wordIds": [
+        "1412",
+        "1042"
+      ],
+      "why": {
+        "hu": "Lezárt múltbeli cselekvés: indefinido. -IR ige, ustedes: escriben → escribieron.",
+        "en": "A finished past action: indefinido. -IR verb, ustedes: escriben → escribieron.",
+        "es": "Una acción pasada y terminada: perfecto simple. Verbo en -IR, ustedes: escriben → escribieron.",
+        "de": "Eine abgeschlossene Handlung in der Vergangenheit: indefinido. -IR-Verb, ustedes: escriben → escribieron."
       }
     },
     {
-      "kind": "why",
-      "id": "ir-why-06",
-      "es": "Vivieron en Puebla.",
-      "target": "Vivieron",
-      "tr": {
-        "hu": "Pueblában éltek.",
-        "en": "They lived in Puebla.",
-        "es": "Vivieron en Puebla.",
-        "de": "Sie haben in Puebla gelebt."
-      },
-      "options": [
-        {
-          "text": {
-            "hu": "tú (te)",
-            "en": "tú (you)",
-            "es": "tú",
-            "de": "tú (du)"
-          },
-          "wrong": {
-            "hu": "Ha tú lenne, 'Viviste en Puebla' állna, azaz TE éltél Pueblában, nem ők.",
-            "en": "If it were tú, it would say 'Viviste en Puebla', meaning YOU lived in Puebla, not them.",
-            "es": "Si fuera tú, diría 'Viviste en Puebla', o sea que TÚ viviste ahí, no ellos.",
-            "de": "Wäre es tú, hieße es 'Viviste en Puebla', also hast DU dort gelebt, nicht sie."
-          }
-        },
-        {
-          "text": {
-            "hu": "mi (nosotros)",
-            "en": "we (nosotros)",
-            "es": "nosotros",
-            "de": "wir (nosotros)"
-          },
-          "wrong": {
-            "hu": "Ha nosotros lenne, 'Vivimos en Puebla' állna, azaz MI éltünk Pueblában, nem ők.",
-            "en": "If it were nosotros, it would say 'Vivimos en Puebla', meaning WE lived in Puebla, not them.",
-            "es": "Si fuera nosotros, diría 'Vivimos en Puebla', o sea que NOSOTROS vivimos ahí, no ellos.",
-            "de": "Wäre es nosotros, hieße es 'Vivimos en Puebla', also haben WIR dort gelebt, nicht sie."
-          }
-        },
-        {
-          "text": {
-            "hu": "ők / Önök",
-            "en": "they/you all (ustedes)",
-            "es": "ellos/ellas/ustedes",
-            "de": "sie/Sie (Plural)"
-          }
-        }
-      ],
-      "correctIndex": 2,
+      "id": "ir-tr-06",
+      "kind": "transform",
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "prompt": {
+        "es": "Hoy trabajan en la oficina.",
+        "hu": "Ma az irodában dolgoznak.",
+        "en": "Today they work in the office.",
+        "de": "Heute arbeiten sie im Büro."
+      },
+      "answer": "Hoy trabajaron en la oficina.",
+      "accept": [
+        "Hoy ellos trabajaron en la oficina.",
+        "Hoy ellas trabajaron en la oficina.",
+        "Hoy ustedes trabajaron en la oficina.",
+        "Trabajaron en la oficina hoy."
+      ],
+      "wordIds": [
+        "1312",
+        "1409",
+        "1310"
+      ],
+      "why": {
+        "hu": "Lezárt múltbeli cselekvés: indefinido. A hoy megmarad, mert a nap még nem telt el. -AR ige, ellos/ellas/ustedes: trabajan → trabajaron.",
+        "en": "A finished past action: indefinido. Hoy still works because the day isn't over yet. -AR verb, ellos/ellas/ustedes: trabajan → trabajaron.",
+        "es": "Una acción pasada y terminada: perfecto simple. Hoy sigue funcionando porque el día no ha terminado. Verbo en -AR, ellos/ellas/ustedes: trabajan → trabajaron.",
+        "de": "Eine abgeschlossene Handlung in der Vergangenheit: indefinido. Hoy passt noch, weil der Tag nicht vorbei ist. -AR-Verb, ellos/ellas/ustedes: trabajan → trabajaron."
       }
     },
     {
-      "kind": "why",
-      "id": "ir-why-07",
-      "es": "Viví en México dos años.",
-      "target": "Viví",
-      "tr": {
-        "hu": "Két évig Mexikóban éltem.",
-        "en": "I lived in Mexico for two years.",
-        "es": "Viví en México dos años.",
-        "de": "Ich habe zwei Jahre in Mexiko gelebt."
-      },
-      "options": [
-        {
-          "text": {
-            "hu": "yo (én)",
-            "en": "yo (I)",
-            "es": "yo",
-            "de": "yo (ich)"
-          }
-        },
-        {
-          "text": {
-            "hu": "tú (te)",
-            "en": "tú (you)",
-            "es": "tú",
-            "de": "tú (du)"
-          },
-          "wrong": {
-            "hu": "Ha tú lenne, 'Viviste en México dos años' állna, azaz TE éltél két évig Mexikóban, nem én.",
-            "en": "If it were tú, it would say 'Viviste en México dos años', meaning YOU lived in Mexico for two years, not me.",
-            "es": "Si fuera tú, diría 'Viviste en México dos años', o sea que TÚ viviste ahí, no yo.",
-            "de": "Wäre es tú, hieße es 'Viviste en México dos años', also hast DU dort gelebt, nicht ich."
-          }
-        },
-        {
-          "text": {
-            "hu": "mi (nosotros)",
-            "en": "we (nosotros)",
-            "es": "nosotros",
-            "de": "wir (nosotros)"
-          },
-          "wrong": {
-            "hu": "Ha nosotros lenne, 'Vivimos en México dos años' állna, azaz MI éltünk ott, nem csak én.",
-            "en": "If it were nosotros, it would say 'Vivimos en México dos años', meaning WE lived there, not just me.",
-            "es": "Si fuera nosotros, diría 'Vivimos en México dos años', o sea que NOSOTROS vivimos ahí, no solo yo.",
-            "de": "Wäre es nosotros, hieße es 'Vivimos en México dos años', also haben WIR dort gelebt, nicht nur ich."
-          }
-        }
-      ],
-      "correctIndex": 0,
+      "id": "ir-tr-07",
+      "kind": "transform",
       "tense": {
         "from": "presente",
         "to": "indefinido"
+      },
+      "prompt": {
+        "es": "Hoy llego temprano.",
+        "hu": "Ma korán érkezem.",
+        "en": "Today I arrive early.",
+        "de": "Heute komme ich früh an."
+      },
+      "answer": "Hoy llegué temprano.",
+      "accept": [
+        "Hoy yo llegué temprano.",
+        "Yo hoy llegué temprano.",
+        "Llegué temprano hoy.",
+        "Yo llegué temprano hoy."
+      ],
+      "wordIds": [
+        "1312",
+        "2096",
+        "1239"
+      ],
+      "why": {
+        "hu": "Lezárt múltbeli cselekvés: indefinido. A hoy megmarad, mert a nap még nem telt el. llegar, yo: llego → llegué (a g gu-ra változik az é előtt).",
+        "en": "A finished past action: indefinido. Hoy still works because the day isn't over yet. llegar, yo: llego → llegué (g becomes gu before é).",
+        "es": "Una acción pasada y terminada: perfecto simple. Hoy sigue funcionando porque el día no ha terminado. llegar, yo: llego → llegué (la g cambia a gu delante de é).",
+        "de": "Eine abgeschlossene Handlung in der Vergangenheit: indefinido. Hoy passt noch, weil der Tag nicht vorbei ist. llegar, yo: llego → llegué (g wird vor é zu gu)."
+      }
+    },
+    {
+      "id": "ir-tr-08",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "es": "Hoy busco mis llaves.",
+        "hu": "Ma a kulcsaimat keresem.",
+        "en": "Today I look for my keys.",
+        "de": "Heute suche ich meine Schlüssel."
+      },
+      "answer": "Hoy busqué mis llaves.",
+      "accept": [
+        "Hoy yo busqué mis llaves.",
+        "Yo hoy busqué mis llaves.",
+        "Busqué mis llaves hoy.",
+        "Yo busqué mis llaves hoy."
+      ],
+      "wordIds": [
+        "1312",
+        "3693",
+        "1279"
+      ],
+      "why": {
+        "hu": "Lezárt múltbeli cselekvés: indefinido. A hoy megmarad, mert a nap még nem telt el. buscar, yo: busco → busqué (a c qu-ra változik az é előtt).",
+        "en": "A finished past action: indefinido. Hoy still works because the day isn't over yet. buscar, yo: busco → busqué (c becomes qu before é).",
+        "es": "Una acción pasada y terminada: perfecto simple. Hoy sigue funcionando porque el día no ha terminado. buscar, yo: busco → busqué (la c cambia a qu delante de é).",
+        "de": "Eine abgeschlossene Handlung in der Vergangenheit: indefinido. Hoy passt noch, weil der Tag nicht vorbei ist. buscar, yo: busco → busqué (c wird vor é zu qu)."
+      }
+    },
+    {
+      "id": "ir-tr-09",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "es": "Hoy empiezo a trabajar.",
+        "hu": "Ma elkezdek dolgozni.",
+        "en": "Today I start to work.",
+        "de": "Heute fange ich an zu arbeiten."
+      },
+      "answer": "Hoy empecé a trabajar.",
+      "accept": [
+        "Hoy yo empecé a trabajar.",
+        "Yo hoy empecé a trabajar.",
+        "Empecé a trabajar hoy.",
+        "Yo empecé a trabajar hoy."
+      ],
+      "wordIds": [
+        "1312",
+        "1884",
+        "1409"
+      ],
+      "why": {
+        "hu": "Lezárt múltbeli cselekvés: indefinido. A hoy megmarad, mert a nap még nem telt el. empezar, yo: empiezo → empecé (a tőhangváltás megszűnik, a z c-re változik az é előtt).",
+        "en": "A finished past action: indefinido. Hoy still works because the day isn't over yet. empezar, yo: empiezo → empecé (the stem change disappears, z becomes c before é).",
+        "es": "Una acción pasada y terminada: perfecto simple. Hoy sigue funcionando porque el día no ha terminado. empezar, yo: empiezo → empecé (desaparece el cambio de raíz y la z cambia a c delante de é).",
+        "de": "Eine abgeschlossene Handlung in der Vergangenheit: indefinido. Hoy passt noch, weil der Tag nicht vorbei ist. empezar, yo: empiezo → empecé (der Stammwechsel entfällt, z wird vor é zu c)."
+      }
+    },
+    {
+      "id": "ir-tr-10",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "es": "Hoy cenas con tu amigo.",
+        "hu": "Ma a barátoddal vacsorázol.",
+        "en": "Today you have dinner with your friend.",
+        "de": "Heute isst du mit deinem Freund zu Abend."
+      },
+      "answer": "Hoy cenaste con tu amigo.",
+      "accept": [
+        "Hoy tú cenaste con tu amigo.",
+        "Tú hoy cenaste con tu amigo.",
+        "Cenaste con tu amigo hoy.",
+        "Tú cenaste con tu amigo hoy."
+      ],
+      "wordIds": [
+        "1312",
+        "1406",
+        "22"
+      ],
+      "why": {
+        "hu": "Lezárt múltbeli cselekvés: indefinido. A hoy megmarad, mert a nap még nem telt el. -AR ige, tú: cenas → cenaste.",
+        "en": "A finished past action: indefinido. Hoy still works because the day isn't over yet. -AR verb, tú: cenas → cenaste.",
+        "es": "Una acción pasada y terminada: perfecto simple. Hoy sigue funcionando porque el día no ha terminado. Verbo en -AR, tú: cenas → cenaste.",
+        "de": "Eine abgeschlossene Handlung in der Vergangenheit: indefinido. Hoy passt noch, weil der Tag nicht vorbei ist. -AR-Verb, tú: cenas → cenaste."
       }
     }
   ]
