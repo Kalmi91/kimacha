@@ -92,6 +92,7 @@ export const GRAMMAR_TIER: Record<string, GrammarTier> = {
   'combinacion-pronombres': 'exam',
   'verbos-reflexivos': 'core-plus',
   'verbos-como-gustar': 'exam',
+  'imperativo-pronombres': 'exam',
   'comparativos-superlativos': 'core',
   indefinidos: 'core',
   'por-para': 'core',
@@ -427,6 +428,13 @@ export const GRAMMAR_SYLLABUS: SyllabusTopic[] = [
     unit: 'a2-pronombres',
     title: { hu: 'Gustar-szerű igék: encantar, doler, faltar', en: 'Verbs like gustar: encantar, doler, faltar', es: 'Verbos como gustar: encantar, doler, faltar', de: 'Verben wie gustar: encantar, doler, faltar' },
     blurb: { hu: 'Me encanta, me duele, me falta: a dolog az alany, a személy a névmás.', en: 'Me encanta, me duele, me falta: the thing is the subject, the person is the pronoun.', es: 'Me encanta, me duele, me falta: la cosa es el sujeto, la persona es el pronombre.', de: 'Me encanta, me duele, me falta: die Sache ist das Subjekt, die Person das Pronomen.' },
+  },
+  {
+    id: 'imperativo-pronombres',
+    level: 'A2',
+    unit: 'a2-pronombres',
+    title: { hu: 'Felszólítás névmással: dímelo, no me lo digas', en: 'Imperative with pronouns: dímelo, no me lo digas', es: 'Imperativo con pronombres: dímelo, no me lo digas', de: 'Imperativ mit Pronomen: dímelo, no me lo digas' },
+    blurb: { hu: 'Dímelo, siéntate: igenlőben a névmás tapad, tagadóban elé kerül.', en: 'Dímelo, siéntate: in the affirmative the pronoun attaches, in the negative it goes before.', es: 'Dímelo, siéntate: en afirmativo el pronombre se pega, en negativo va delante.', de: 'Dímelo, siéntate: bejaht hängt das Pronomen an, verneint steht es davor.' },
   },
   {
     id: 'comparativos-superlativos',
