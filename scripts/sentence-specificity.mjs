@@ -11,10 +11,10 @@
 // teach. That is checkable without understanding the sentence: blank the target
 // word out and see whether the remaining frame is shared with other cards.
 //
-// Usage:  node scripts/sentence-specificity.mjs [level ...] [--branch=es|en|hu]
+// Usage:  node scripts/sentence-specificity.mjs [level ...] [--branch=es|en]
 //   default levels: a0 a1 a2      (the range a learner actually reaches today)
-//   --branch picks the word set: es = the shared Spanish corpus (default),
-//   en/hu = the dedicated target-language branches under data/words/<branch>/.
+//   --branch picks the word set: es = the open Spanish deck, data/words-open (default),
+//   en = the English-target track under data/words/en/.
 //
 // Every class is a HEURISTIC: a hit means "look at this card", not "this is
 // wrong". Exit code is non-zero when there are findings, so it works as a gate.
@@ -43,7 +43,7 @@ const ARTICLES = /^(el|la|los|las|un|una|unos|unas|the|a|an|to|az|egy)\s+/;
 
 function loadLevel(level) {
   const path = branch === 'es'
-    ? join(ROOT, 'data', 'words', `${level}.json`)
+    ? join(ROOT, 'data', 'words-open', `${level}.json`)
     : join(ROOT, 'data', 'words', branch, `${level}.json`);
   try {
     return JSON.parse(readFileSync(path, 'utf8'));

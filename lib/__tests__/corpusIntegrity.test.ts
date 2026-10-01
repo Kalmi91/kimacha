@@ -6,15 +6,20 @@
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
-import { LEVELS, getWordsForLevel, words, type Level, type WordEntry } from '@/data/words';
-import { WORD_MERGES } from '../wordMerges';
+import { LEVELS, type Level, type WordEntry } from '@/data/words';
+import { openWords } from '@/data/openWords';
 import { pickSurvivor } from '../cardMerge';
-import { findPromptOverlaps, headwordLeaks, type PromptLang } from '../promptOverlap';
+import { findPromptOverlaps, type PromptLang } from '../promptOverlap';
 
-// Play-vágás 7. lépés (2026-09-23): the en/hu word-branch loader path
-// (getWordsForLevel(level, 'en'|'hu')) is gone, so the cases below that guard
-// the actual en/hu corpus content read these JSON files straight off disk
+// Play-vágás 7. lépés (2026-09-23): the en word-branch loader path
+// (getWordsForLevel(level, 'en')) is gone, so the cases below that guard
+// the actual en corpus content read these JSON files straight off disk
 // instead, the same way `svCorpus.test.ts` reads the Swedish track.
+// PLAN-regi-szavak-ki 7. lépés: a spanyol szólista (a0..c2.json) és a hu sáv kikerült, a
+// spanyol oldal forrása a data/openWords.ts (words-open), a hu sáv őrei törölve. A words-open
+// teljességét és prompt-szabályait (hint-es többjelentés, mondat nélküli névmás/névelő kártyák)
+// a scripts/words-open-check.mjs kapu őrzi, ezért a spanyol sáv teljesség-, prompt- és
+// headword-szivárgás esetei itt nem futnak.
 function branchLevel(lang: string, level: string): WordEntry[] {
   return JSON.parse(readFileSync(join(__dirname, '..', '..', 'data', 'words', lang, `${level}.json`), 'utf8'));
 }
@@ -24,10 +29,6 @@ const EN_BRANCH_BY_LEVEL: Partial<Record<Level, WordEntry[]>> = {
   A1: branchLevel('en', 'a1'),
   A2: branchLevel('en', 'a2'),
   B1: branchLevel('en', 'b1'),
-};
-const HU_BRANCH_BY_LEVEL: Partial<Record<Level, WordEntry[]>> = {
-  A0: branchLevel('hu', 'a0'),
-  A1: branchLevel('hu', 'a1'),
 };
 
 const LEVEL_ORDER = ['A0', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
@@ -55,11 +56,11 @@ const sharesMeaning = (a: any, b: any): boolean =>
     return false;
   });
 
-describe('Spanish word corpus', () => {
+describe('Spanish word corpus (words-open)', () => {
   it('gives every word a globally unique id', () => {
     const seen = new Map<number, string>();
     const collisions: string[] = [];
-    for (const word of words) {
+    for (const word of openWords) {
       const owner = seen.get(word.id);
       if (owner) collisions.push(`${word.id}: ${owner} vs ${word.level} ${word.es}`);
       else seen.set(word.id, `${word.level} ${word.es}`);
@@ -70,7 +71,7 @@ describe('Spanish word corpus', () => {
   it('teaches a headword+meaning on one level only', () => {
     const first = new Map<string, any>();
     const duplicates: string[] = [];
-    for (const word of [...words].sort((a, b) => LEVEL_ORDER.indexOf(a.level) - LEVEL_ORDER.indexOf(b.level))) {
+    for (const word of [...openWords].sort((a, b) => LEVEL_ORDER.indexOf(a.level) - LEVEL_ORDER.indexOf(b.level))) {
       const earlier = first.get(word.es);
       if (!earlier) first.set(word.es, word);
       else if (sharesMeaning(earlier, word)) {
@@ -78,22 +79,6 @@ describe('Spanish word corpus', () => {
       }
     }
     expect(duplicates).toEqual([]);
-  });
-});
-
-describe('WORD_MERGES', () => {
-  const ids = new Set(words.map((w) => w.id));
-
-  it('only maps ids that are really gone', () => {
-    expect(Object.keys(WORD_MERGES).filter((id) => ids.has(Number(id)))).toEqual([]);
-  });
-
-  it('always points at a word that still exists', () => {
-    expect(Object.values(WORD_MERGES).filter((id) => !ids.has(id))).toEqual([]);
-  });
-
-  it('resolves in one hop, no chains', () => {
-    expect(Object.values(WORD_MERGES).filter((id) => id in WORD_MERGES)).toEqual([]);
   });
 });
 
@@ -126,7 +111,7 @@ describe('article agreement between the two sides of a card', () => {
   const EN_ARTICLE = /^(the|a|an)\s/i;
 
   it('never shows an English article for a Spanish form that has none', () => {
-    const offenders = words
+    const offenders = openWords
       .filter((w) => w.pos !== 'verb')
       .filter((w) => EN_ARTICLE.test(w.en ?? '') && !ES_ARTICLE.test(w.es ?? ''))
       // `un/una` maga a névelő-kártya, ott a prompt "a / an" a helyes tartalom.
@@ -140,15 +125,13 @@ describe('article agreement between the two sides of a card', () => {
 // sentence_* fields as required, but every word file is cast with
 // `as WordEntry[]`. A Swedish entry missing es/hu type-checks and then breaks at
 // runtime." A cast nem szüntethető meg, ezért a típus ígéretét itt tartjuk meg.
-// A mai három korpusz (közös spanyol, en-ág, hu-ág) mind teljesíti; egy új
+// A mai korpusz (en-ág) teljesíti; egy új
 // nyelvi sáv ugyanezt vállalja, vagy ez a teszt megmondja, hogy nem.
 describe('word entry completeness', () => {
   const SURFACE_LANGS = ['es', 'hu', 'en', 'de'] as const;
 
   const corpora: [string, WordEntry[]][] = [
-    ['shared', words],
     ['en branch', Object.values(EN_BRANCH_BY_LEVEL).flat()],
-    ['hu branch', Object.values(HU_BRANCH_BY_LEVEL).flat()],
   ];
 
   it.each(corpora)('every %s entry carries all four languages and sentences', (_label, entries) => {
@@ -169,13 +152,11 @@ describe('word entry completeness', () => {
 // korpusz-menet (2026-09-14/15) után ez az őr ÉLES: új szó nem hozhatja
 // vissza a hibát. A fürt-logika a lib/promptOverlap.ts-ben él, ugyanaz fut
 // itt és a scripts/audit-prompts.mjs-ben (ott duplikálva, mert az .mjs nem
-// importál TS-t). A hu/en sáv (Play-vágás 7. lépés óta a JSON-ból, nem a
+// importál TS-t). Az en sáv (Play-vágás 7. lépés óta a JSON-ból, nem a
 // betöltőből) csak azokra a szintekre ad szavakat, amik tényleg léteznek;
 // a hiányzó szintre üres lista jön, amin a fürt-keresés triviálisan üres.
 describe('prompt policy (PROMPT-POLICY 1)', () => {
   const BANDS: { label: string; wordsByLevel: (level: Level) => WordEntry[]; headword: PromptLang; prompt: PromptLang }[] = [
-    { label: 'es', wordsByLevel: (level) => getWordsForLevel(level, 'es'), headword: 'es', prompt: 'en' },
-    { label: 'hu', wordsByLevel: (level) => HU_BRANCH_BY_LEVEL[level] ?? [], headword: 'hu', prompt: 'en' },
     { label: 'en', wordsByLevel: (level) => EN_BRANCH_BY_LEVEL[level] ?? [], headword: 'en', prompt: 'hu' },
   ];
 
@@ -191,23 +172,6 @@ describe('prompt policy (PROMPT-POLICY 1)', () => {
         const ids = cluster.words.map((w) => `${w.id}:${w.prompt}`).join(', ');
         offenders.push(`${level} [${cluster.kind}${cluster.sense ? `: ${cluster.sense}` : ''}] ${ids}`);
       }
-    }
-    expect(offenders).toEqual([]);
-  });
-
-  // PROMPT-POLICY 12: az angol prompt sosem tartalmazhatja a spanyol
-  // címszót, mert elárulja a választ. A fürt-logikától független őr, csak
-  // az es-sávra értelmes (headword = es, prompt = en); a headwordLeaks()
-  // maga dönti el, mi számít cognate-nak (PROMPT-POLICY 11/6), nem itt.
-  it('never leaks the Spanish headword into an English prompt (PROMPT-POLICY 12)', () => {
-    const offenders: string[] = [];
-    for (const level of LEVELS) {
-      const levelWords = getWordsForLevel(level, 'es');
-      const leaks = headwordLeaks(
-        levelWords.map((w) => ({ id: w.id, headword: String(w.es ?? ''), prompt: String(w.en ?? '') })),
-        'en'
-      );
-      for (const leak of leaks) offenders.push(`${level} ${leak.id}: ${leak.headword} in "${leak.prompt}"`);
     }
     expect(offenders).toEqual([]);
   });

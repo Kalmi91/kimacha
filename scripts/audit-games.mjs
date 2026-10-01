@@ -2,12 +2,12 @@
 /**
  * audit-games.mjs, GAMES.md 3.6, the mechanical guard for the Game tab's
  * content-driven games (grammar-choice, confusables, and future kinds: story,
- * chat, myth). Modeled on scripts/audit-corpus.mjs but scoped to
- * data/games/**.json instead of the main word corpus.
+ * chat, myth), scoped to data/games/**.json. PLAN-regi-szavak-ki 7. lépés: the
+ * Spanish taught vocabulary is the open deck (data/words-open, A1-B2).
  *
  * Guarantee (GAMES.md 0. szekció, the user's kőbe vésett kritérium): every
  * content word is EITHER already taught (in the target level's cumulative
- * Spanish vocabulary, built the same way audit-corpus.mjs builds it: the `es`
+ * Spanish vocabulary, built from the open deck: the `es`
  * field of every word card from A0 up to and including the content's own
  * `level`) OR carries an explicit gloss in the content JSON itself (a
  * confusables `members[].word`, or a `glossary[]` entry on the topic/set).
@@ -259,11 +259,11 @@ function matches(token, taughtSet) {
 }
 
 // ---------------------------------------------------------------------------
-// Cumulative taught-token sets, built once from the shared Spanish corpus.
+// Cumulative taught-token sets, built once from the open Spanish deck (data/words-open).
 // ---------------------------------------------------------------------------
 
 function loadLevelWords(level) {
-  const p = join(ROOT, `data/words/${level.toLowerCase()}.json`);
+  const p = join(ROOT, `data/words-open/${level.toLowerCase()}.json`);
   if (!existsSync(p)) return [];
   return JSON.parse(readFileSync(p, 'utf8'));
 }
