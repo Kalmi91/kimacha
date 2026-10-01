@@ -32,6 +32,7 @@ import grammarEsOjalaQuizas from '@/data/games/grammar/es/ojala-quizas.json';
 import grammarEsTemporalesSubjuntivo from '@/data/games/grammar/es/temporales-subjuntivo.json';
 import grammarEsCondicionalSimple from '@/data/games/grammar/es/condicional-simple.json';
 import grammarEsCondicionalesTipo1 from '@/data/games/grammar/es/condicionales-tipo1.json';
+import grammarEsRelativos from '@/data/games/grammar/es/relativos.json';
 import grammarEsSubjuntivoImperfecto from '@/data/games/grammar/es/subjuntivo-imperfecto.json';
 import grammarEsCondicionalesTipo23 from '@/data/games/grammar/es/condicionales-tipo2-3.json';
 import grammarEsEstiloIndirecto from '@/data/games/grammar/es/estilo-indirecto.json';
@@ -113,6 +114,7 @@ export const esContent: LanguageContentBundle = {
     grammarEsTemporalesSubjuntivo,
     grammarEsCondicionalSimple,
     grammarEsCondicionalesTipo1,
+    grammarEsRelativos,
     grammarEsSubjuntivoImperfecto,
     grammarEsCondicionalesTipo23,
     grammarEsEstiloIndirecto,
