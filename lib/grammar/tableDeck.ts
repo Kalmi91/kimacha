@@ -299,10 +299,12 @@ function pcicWordIndex(level: Level): Map<string, { es: string; en: string }> {
   const index = new Map<string, { es: string; en: string }>();
   for (let i = 0; i <= ceiling; i++) {
     for (const item of pcicItemsForLevel(PCIC_LEVELS[i])) {
-      if (item.kind === 'sentence' || item.es.includes(' ')) continue;
-      const key = normalizeWordToken(item.es);
+      if (item.kind === 'sentence') continue;
+      const main = item.es.split(' / ')[0]; // perjeles válasznál (S1) a fő alak a szótári szó
+      if (main.includes(' ')) continue;
+      const key = normalizeWordToken(main);
       if (!key || index.has(key)) continue;
-      index.set(key, { es: item.es, en: item.en });
+      index.set(key, { es: main, en: item.en });
     }
   }
   pcicIndexCache.set(level, index);
