@@ -53,6 +53,19 @@ describe('lib/i18n: es.ts teljes lefedettsége + t()/setLanguage() (PLAN-ketiran
     expect(stringsFor('en').usage.dailyGreeting).toBe(en.usage.dailyGreeting);
   });
 
+  // PLAN-learn-words-open 5a: "1 days" helyett egyes szám (1 day / 1 día); a többi szám marad többes.
+  it('a nap-feliratok egyes/többes száma: intervalDays és scheduleNextDays (en, es)', () => {
+    expect(en.pcic.intervalDays(1)).toBe('1 day');
+    expect(en.pcic.intervalDays(2)).toBe('2 days');
+    expect(en.pcic.intervalDays(21)).toBe('21 days');
+    expect(es.pcic.intervalDays(1)).toBe('1 día');
+    expect(es.pcic.intervalDays(3)).toBe('3 días');
+    expect(en.stats.scheduleNextDays(1)).toBe('in 1 day');
+    expect(en.stats.scheduleNextDays(4)).toBe('in 4 days');
+    expect(es.stats.scheduleNextDays(1)).toBe('en 1 día');
+    expect(es.stats.scheduleNextDays(4)).toBe('en 4 días');
+  });
+
   // 2026-09-28 review, 1. pont: az elírás-javításkor a mondatszám kiesett a
   // spanyol "hoy: ... palabras · oraciones / 10" sorból.
   it('a spanyol badgeIntroducedToday kiírja a mondatszámot (1 oración, 2 oraciones)', () => {

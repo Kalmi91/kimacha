@@ -130,15 +130,19 @@ describe('wordCellsForLesson spanyol irány (en→es, hu→es) változatlan', ()
     }
   });
 
+  // PLAN-learn-words-open (2026-10-01): a PCIC-szószedet az en→es pakli forrását
+  // követi (data/words-open, 600 kártya a korábbi nagy korpusz helyett), ezért a
+  // darabszámok kisebbek (44/35/33 helyett 30/30/26); a szószedet-kártyák és a
+  // sorrend változatlan.
   it('a ser-estar pakli első kártyái bájtra a korábbiak (rögzített minta a változtatás előttről)', () => {
     const cards = wordCellsForLesson(lessonFor('es', 'ser-estar'));
-    expect(cards).toHaveLength(44);
+    expect(cards).toHaveLength(30);
     expect(cards.slice(0, 3)).toEqual([
       { id: 'glossary::boda', es: 'boda', en: 'wedding' },
       { id: 'glossary::fiesta', es: 'fiesta', en: 'party' },
       { id: 'glossary::fuego', es: 'fuego', en: 'fire' },
     ]);
-    expect(wordCellsForLesson(lessonFor('es', 'gustar'))).toHaveLength(35);
-    expect(wordCellsForLesson(lessonFor('es', 'clases-de-palabras'))).toHaveLength(33);
+    expect(wordCellsForLesson(lessonFor('es', 'gustar'))).toHaveLength(30);
+    expect(wordCellsForLesson(lessonFor('es', 'clases-de-palabras'))).toHaveLength(26);
   });
 });

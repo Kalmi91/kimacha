@@ -20,6 +20,9 @@ interface Props {
   // FB173: extra room under the button, for screens that dock something along the
   // bottom edge (the learn card's Check bar) which the button would otherwise cover.
   bottomOffset?: number;
+  // PLAN-learn-words-open 5a: abszolút `bottom` (px), ha a gomb a dokkolt sáv MELLETT
+  // ül (a Learn kártya: nem takarja a kártyát); felülírja a bottomOffset-es számítást.
+  bottom?: number;
 }
 
 // NY19: a modal doboza brutalista palettán BrutalBox, classic palettán a mai kártya.
@@ -35,7 +38,7 @@ function ModalBox({ children }: { children: ReactNode }) {
   return <View style={[styles.modal, { backgroundColor: g.paper }]}>{children}</View>;
 }
 
-export default function FeedbackButton({ level, languagePair, currentCard, draggable = false, bottomOffset = 0 }: Props) {
+export default function FeedbackButton({ level, languagePair, currentCard, draggable = false, bottomOffset = 0, bottom }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -118,6 +121,7 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
           g.brutal && styles.brutalFab,
           draggable && (side === 'left' ? styles.fabLeft : styles.fabRight),
           bottomOffset > 0 && { bottom: 24 + bottomOffset },
+          bottom !== undefined && { bottom },
         ]}
         onPress={() => setVisible(true)}
         {...(draggable ? panResponder.panHandlers : {})}

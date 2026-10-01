@@ -37,7 +37,8 @@ jest.mock('@/data/pcic', () => ({
   setPcicTarget: () => {},
 }));
 
-import { act, render } from '@testing-library/react-native';
+import { StyleSheet } from 'react-native';
+import { act, fireEvent, render } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database';
 import { ThemeProvider } from '@/lib/ThemeContext';
@@ -66,6 +67,31 @@ describe('Tanulás fül, neo-brutalista (NY19)', () => {
     expect(view.queryByTestId('learn-level-chip')).toBeTruthy();
     expect(view.queryByTestId('learn-docked-action')).toBeTruthy();
     expect(view.queryByTestId('learn-progress')).toBeTruthy();
+    view.unmount();
+  });
+
+  // PLAN-learn-words-open 5a: a "Didn't know" / "Knew it" gomb egyforma: azonos
+  // árnyék-eltolás (a külső burkoló margója), a doboz kitölti a sort (flex: 1),
+  // a felirat középre igazított, és a sor a kártya teljes szélességén fut.
+  it('brand palettán a két értékelő gomb egyforma: azonos eltolás, kitöltő doboz, középre igazított felirat', async () => {
+    await getDb().setGrammarPalette('brand');
+    const view = render(<ThemeProvider><PcicScreen /></ThemeProvider>);
+    await flush();
+    fireEvent.press(view.getByText('✓ Check'));
+    await flush();
+
+    const outerOf = (testID: string) => {
+      let node = view.getByTestId(testID).parent;
+      while (node && StyleSheet.flatten(node.props.style)?.marginRight === undefined) node = node.parent;
+      return StyleSheet.flatten(node!.props.style);
+    };
+    const good = StyleSheet.flatten(view.getByTestId('pcic-grade-good').props.style);
+    const again = StyleSheet.flatten(view.getByTestId('pcic-grade-again').props.style);
+    expect(good.flex).toBe(1);
+    expect(again.flex).toBe(1);
+    expect(outerOf('pcic-grade-good').marginRight).toBe(outerOf('pcic-grade-again').marginRight);
+    expect(outerOf('pcic-grade-good').marginBottom).toBe(outerOf('pcic-grade-again').marginBottom);
+    expect(StyleSheet.flatten(view.getByText("Didn't know").props.style).textAlign).toBe('center');
     view.unmount();
   });
 
