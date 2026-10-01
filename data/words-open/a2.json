@@ -1169,11 +1169,11 @@
     "en": "to play",
     "de": "spielen (Instrument)",
     "hint_en": "She *plays* the piano very well.",
-    "sentence_es": "Mi hermano toca música en la fiesta.",
-    "sentence_hu": "A fivérem zenét játszik a bulin.",
-    "sentence_en": "My brother plays music at the party.",
-    "sentence_de": "Mein Bruder spielt auf der Party Musik.",
-    "sentence_lemmas": ["mi", "hermano", "tocar", "música", "en", "el", "fiesta"]
+    "sentence_es": "Mi hermano toca en el concierto.",
+    "sentence_hu": "A fivérem játszik a koncerten.",
+    "sentence_en": "My brother plays at the concert.",
+    "sentence_de": "Mein Bruder spielt beim Konzert.",
+    "sentence_lemmas": ["mi", "hermano", "tocar", "en", "el", "concierto"]
   },
   {
     "order": 228,
@@ -2970,11 +2970,11 @@
     "hu": "harmadik",
     "en": "third",
     "de": "dritter",
-    "sentence_es": "Mi tío vive en el tercer piso.",
-    "sentence_hu": "A nagybátyám a harmadik emeleten lakik.",
-    "sentence_en": "My uncle lives on the third floor.",
-    "sentence_de": "Mein Onkel wohnt im dritten Stock.",
-    "sentence_lemmas": ["mi", "tío", "vivir", "en", "el", "tercero", "piso"]
+    "sentence_es": "Mi tío vive en la tercera casa.",
+    "sentence_hu": "A nagybátyám a harmadik házban lakik.",
+    "sentence_en": "My uncle lives in the third house.",
+    "sentence_de": "Mein Onkel wohnt im dritten Haus.",
+    "sentence_lemmas": ["mi", "tío", "vivir", "en", "el", "tercero", "casa"]
   },
   {
     "order": 741,
