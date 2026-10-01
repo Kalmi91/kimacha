@@ -20,8 +20,10 @@ import grammarEsPorPara from '@/data/games/grammar/es/por-para.json';
 import grammarEsPerifrasisModales from '@/data/games/grammar/es/perifrasis-modales.json';
 import grammarEsPronombresOd from '@/data/games/grammar/es/pronombres-od.json';
 import grammarEsPronombresOi from '@/data/games/grammar/es/pronombres-oi.json';
+import grammarEsCombinacionPronombres from '@/data/games/grammar/es/combinacion-pronombres.json';
 import grammarEsQuienAQuien from '@/data/games/grammar/es/quien-a-quien.json';
 import grammarEsIrAInfinitivo from '@/data/games/grammar/es/ir-a-infinitivo.json';
+import grammarEsMuyMucho from '@/data/games/grammar/es/muy-mucho.json';
 import grammarEsNumerosHoraFecha from '@/data/games/grammar/es/numeros-hora-fecha.json';
 import grammarEsPreposicionesBasicas from '@/data/games/grammar/es/preposiciones-basicas.json';
 import grammarEsEstarGerundio from '@/data/games/grammar/es/estar-gerundio.json';
@@ -67,10 +69,17 @@ import grammarEsImperfecto from '@/data/games/grammar/es/imperfecto.json';
 import grammarEsIndefinidoImperfecto from '@/data/games/grammar/es/indefinido-imperfecto.json';
 import grammarEsPerfecto from '@/data/games/grammar/es/perfecto.json';
 import grammarEsFuturoSimple from '@/data/games/grammar/es/futuro-simple.json';
+import grammarEsMarcadoresTemporales from '@/data/games/grammar/es/marcadores-temporales.json';
 import grammarEsDemostrativos from '@/data/games/grammar/es/demostrativos.json';
 import grammarEsInterrogativos from '@/data/games/grammar/es/interrogativos.json';
 import grammarEsNegacion from '@/data/games/grammar/es/negacion.json';
 import grammarEsImperativoAfirmativo from '@/data/games/grammar/es/imperativo-afirmativo.json';
+import grammarEsImperativoNegativo from '@/data/games/grammar/es/imperativo-negativo.json';
+import grammarEsLlevarTraerIrVenir from '@/data/games/grammar/es/llevar-traer-ir-venir.json';
+import grammarEsPedirPreguntar from '@/data/games/grammar/es/pedir-preguntar.json';
+import grammarEsSaberConocer from '@/data/games/grammar/es/saber-conocer.json';
+import grammarEsPorParaAvanzado from '@/data/games/grammar/es/por-para-avanzado.json';
+import grammarEsSeImpersonalPasiva from '@/data/games/grammar/es/se-impersonal-pasiva.json';
 
 // K33 (play-vágás, 2026-09-22): a Játék/Átbeszélő fülek és a hozzájuk tartozó
 // data/games/{ccat,myths,chats,stories,confusables} mappák kikerültek. A
@@ -107,6 +116,7 @@ export const esContent: LanguageContentBundle = {
     grammarEsNegacion,
     grammarEsGustar,
     grammarEsIrAInfinitivo,
+    grammarEsMuyMucho,
     grammarEsNumerosHoraFecha,
     grammarEsPreposicionesBasicas,
     grammarEsIndefinidoRegular,
@@ -117,9 +127,15 @@ export const esContent: LanguageContentBundle = {
     grammarEsPerfecto,
     grammarEsEstarGerundio,
     grammarEsFuturoSimple,
+    grammarEsMarcadoresTemporales,
     grammarEsImperativoAfirmativo,
+    grammarEsImperativoNegativo,
+    grammarEsCombinacionPronombres,
     grammarEsVerbosReflexivos,
     grammarEsPorPara,
+    grammarEsSaberConocer,
+    grammarEsPedirPreguntar,
+    grammarEsLlevarTraerIrVenir,
     grammarEsSubjuntivoPresenteForma,
     grammarEsSubjuntivoDisparadores,
     grammarEsOjalaQuizas,
@@ -127,7 +143,9 @@ export const esContent: LanguageContentBundle = {
     grammarEsCondicionalSimple,
     grammarEsCondicionalesTipo1,
     grammarEsRelativos,
+    grammarEsSeImpersonalPasiva,
     grammarEsPerifrasis,
+    grammarEsPorParaAvanzado,
     grammarEsPluscuamperfecto,
     grammarEsIndefinidos,
     grammarEsGerundioParticipio,

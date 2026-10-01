@@ -348,6 +348,80 @@
       ]
     },
     {
+      "kind": "table",
+      "id": "marcadores-situaciones",
+      "title": {
+        "hu": "Helyzetből kötőelem",
+        "en": "From the situation to the connector",
+        "es": "De la situación al nexo",
+        "de": "Von der Situation zum Konnektor"
+      },
+      "header": [
+        {
+          "hu": "helyzet",
+          "en": "situation",
+          "es": "situación",
+          "de": "Situation"
+        },
+        {
+          "hu": "kötőelem",
+          "en": "connector",
+          "es": "conector",
+          "de": "Konnektor"
+        }
+      ],
+      "rows": [
+        [
+          "contraste (empieza por «s»): Es un libro corto; ___, es muy difícil.",
+          "sin embargo"
+        ],
+        [
+          "contraste entre dos personas (empieza por «e»): Ana vive en Madrid; su hermano, ___, en Lima.",
+          "en cambio"
+        ],
+        [
+          "contraste a pesar de todo (empieza por «au»): No tenía dinero; ___, hizo el viaje.",
+          "aun así"
+        ],
+        [
+          "consecuencia + subjuntivo (empieza por «d»): Llovía mucho, ___ cancelaran el partido.",
+          "de ahí que"
+        ],
+        [
+          "consecuencia, hablado, sin pausa (empieza por «a»): No tenía trabajo, ___ buscó otro.",
+          "así que"
+        ],
+        [
+          "adición neutra (empieza por «ad»): El piso es grande; ___, está bien ubicado.",
+          "además"
+        ],
+        [
+          "adición más fuerte (empieza por «es»): No contestó el correo; ___, ni lo abrió.",
+          "es más"
+        ],
+        [
+          "orden, abre la lista (empieza por «en»): ___, hay que revisar el presupuesto; en segundo lugar, el plazo.",
+          "en primer lugar"
+        ],
+        [
+          "orden, cierra la lista (empieza por «por»): En primer lugar, el precio; en segundo, el plazo; ___, la calidad.",
+          "por último"
+        ],
+        [
+          "tema nuevo (empieza por «en»): ___ los precios, subieron este año.",
+          "en cuanto a"
+        ],
+        [
+          "explicación, formal, escrito (empieza por «es»): Trabaja por su cuenta, ___, es autónomo.",
+          "es decir"
+        ],
+        [
+          "explicación, hablado (empieza por «o»): Llegamos a las nueve, ___, media hora tarde.",
+          "o sea"
+        ]
+      ]
+    },
+    {
       "kind": "contrast",
       "title": {
         "hu": "Megszorítás vs szembeállítás, írott vs beszélt",
@@ -914,98 +988,98 @@
     {
       "id": "md-form-01",
       "kind": "form",
-      "verb": "función",
-      "person": "sin embargo",
-      "answer": "contraste",
-      "table": "marcadores"
+      "verb": "conector",
+      "person": "contraste (empieza por «s»): Es un libro corto; ___, es muy difícil.",
+      "answer": "sin embargo",
+      "table": "marcadores-situaciones"
     },
     {
       "id": "md-form-02",
       "kind": "form",
-      "verb": "función",
-      "person": "no obstante",
-      "answer": "contraste",
-      "table": "marcadores"
+      "verb": "conector",
+      "person": "contraste entre dos personas (empieza por «e»): Ana vive en Madrid; su hermano, ___, en Lima.",
+      "answer": "en cambio",
+      "table": "marcadores-situaciones"
     },
     {
       "id": "md-form-03",
       "kind": "form",
-      "verb": "registro",
-      "person": "en cambio",
-      "answer": "ambos",
-      "table": "marcadores"
+      "verb": "conector",
+      "person": "contraste a pesar de todo (empieza por «au»): No tenía dinero; ___, hizo el viaje.",
+      "answer": "aun así",
+      "table": "marcadores-situaciones"
     },
     {
       "id": "md-form-04",
       "kind": "form",
-      "verb": "función",
-      "person": "aun así",
-      "answer": "contraste",
-      "table": "marcadores"
+      "verb": "conector",
+      "person": "consecuencia + subjuntivo (empieza por «d»): Llovía mucho, ___ cancelaran el partido.",
+      "answer": "de ahí que",
+      "table": "marcadores-situaciones"
     },
     {
       "id": "md-form-05",
       "kind": "form",
-      "verb": "función",
-      "person": "por lo tanto",
-      "answer": "consecuencia",
-      "table": "marcadores"
+      "verb": "conector",
+      "person": "consecuencia, hablado, sin pausa (empieza por «a»): No tenía trabajo, ___ buscó otro.",
+      "answer": "así que",
+      "table": "marcadores-situaciones"
     },
     {
       "id": "md-form-06",
       "kind": "form",
-      "verb": "registro",
-      "person": "por consiguiente",
-      "answer": "escrito",
-      "table": "marcadores"
+      "verb": "conector",
+      "person": "adición neutra (empieza por «ad»): El piso es grande; ___, está bien ubicado.",
+      "answer": "además",
+      "table": "marcadores-situaciones"
     },
     {
       "id": "md-form-07",
       "kind": "form",
-      "verb": "registro",
-      "person": "así que",
-      "answer": "hablado",
-      "table": "marcadores"
+      "verb": "conector",
+      "person": "adición más fuerte (empieza por «es»): No contestó el correo; ___, ni lo abrió.",
+      "answer": "es más",
+      "table": "marcadores-situaciones"
     },
     {
       "id": "md-form-08",
       "kind": "form",
-      "verb": "función",
-      "person": "además",
-      "answer": "adición",
-      "table": "marcadores"
+      "verb": "conector",
+      "person": "orden, abre la lista (empieza por «en»): ___, hay que revisar el presupuesto; en segundo lugar, el plazo.",
+      "answer": "en primer lugar",
+      "table": "marcadores-situaciones"
     },
     {
       "id": "md-form-09",
       "kind": "form",
-      "verb": "función",
-      "person": "es más",
-      "answer": "adición",
-      "table": "marcadores"
+      "verb": "conector",
+      "person": "orden, cierra la lista (empieza por «por»): En primer lugar, el precio; en segundo, el plazo; ___, la calidad.",
+      "answer": "por último",
+      "table": "marcadores-situaciones"
     },
     {
       "id": "md-form-10",
       "kind": "form",
-      "verb": "función",
-      "person": "en primer lugar",
-      "answer": "orden",
-      "table": "marcadores"
+      "verb": "conector",
+      "person": "tema nuevo (empieza por «en»): ___ los precios, subieron este año.",
+      "answer": "en cuanto a",
+      "table": "marcadores-situaciones"
     },
     {
       "id": "md-form-11",
       "kind": "form",
-      "verb": "registro",
-      "person": "por último",
-      "answer": "ambos",
-      "table": "marcadores"
+      "verb": "conector",
+      "person": "explicación, formal, escrito (empieza por «es»): Trabaja por su cuenta, ___, es autónomo.",
+      "answer": "es decir",
+      "table": "marcadores-situaciones"
     },
     {
       "id": "md-form-12",
       "kind": "form",
-      "verb": "función",
-      "person": "en cuanto a",
-      "answer": "tema",
-      "table": "marcadores"
+      "verb": "conector",
+      "person": "explicación, hablado (empieza por «o»): Llegamos a las nueve, ___, media hora tarde.",
+      "answer": "o sea",
+      "table": "marcadores-situaciones"
     },
     {
       "kind": "why",

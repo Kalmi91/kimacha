@@ -9,9 +9,9 @@ const serEstar = lessonFor('es', 'ser-estar') as LessonV2;
 const negacion = lessonFor('es', 'negacion') as LessonV2;
 
 describe('új feladat-fajták a két próba-leckében', () => {
-  it('ser-estar: hibakereső 5 + diktálás 5, szórend nincs', () => {
+  it('ser-estar: hibakereső nincs (FB435), diktálás 5, szórend nincs', () => {
     const c = grammarKindCounts(serEstar);
-    expect(c.spot).toBe(5);
+    expect(c.spot).toBe(0);
     expect(c.dictation).toBe(5);
     expect(c.order).toBe(0);
   });
@@ -26,7 +26,7 @@ describe('új feladat-fajták a két próba-leckében', () => {
   it('minden új tétel trial jelölésű, és csak ebben a két leckében van új fajta', () => {
     for (const lesson of [serEstar, negacion]) {
       const fresh = lesson.items.filter((i) => ['spot', 'order', 'dictation'].includes(i.kind ?? ''));
-      expect(fresh.length).toBe(10);
+      expect(fresh.length).toBe(lesson === serEstar ? 5 : 10);
       expect(fresh.every((i) => isTrialItem(i))).toBe(true);
       expect(lessonHasTrial(lesson)).toBe(true);
     }
