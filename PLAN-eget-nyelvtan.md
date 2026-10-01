@@ -157,7 +157,11 @@ Párhuzamos agent: `feat/learn-words-open` (`C:\AI\kimacha-wt-learn-open`) a `da
   - minta (transform): «Como en casa de mi madre. (ayer)» → Ayer comí en casa de mi madre.
   - minta (transform): «No ves esa película. (nunca)» → Nunca has visto esa película.
   - minta (transform): «¿Vas a la playa? (alguna vez)» → ¿Has ido a la playa alguna vez?
-- [ ] F-2. `verbos-como-gustar` (A2, új téma) → kész, ha: ugyanaz
+- [x] F-2. `verbos-como-gustar` (A2, új téma) → kész, ha: ugyanaz · 03:47 · audit 0/0, jest 1891 ok, tsc 0, lint 0 err · sáv `exam`: a `gustar` (core-plus) viszi a szerkezetet, a nyolc igére nem épül későbbi téma, és a `me encanta` kártya már A1-en megvan, vizsga-igényt külön nem ellenőriztem · 12 választós + 1 match (6 pár: me encanta / me duele …) + 12 form (tábla `verbos-como-gustar-formas`, row[0] = «A + személy ___ (ige) …» mondat, cella = névmás + ige) + 7 why (6 szabály-név: dolog-egyeztetés, személy-névmás, testrész-névelő, a + személy, no a névmás előtt, parecer-vélemény), transform és `tense` nincs (a téma szerkezet, nem igeidő; a `gustar` és a `verbos-reflexivos` sem kap); unit `a2-pronombres`, syllabus-sor a `verbos-reflexivos` után; a body a mexikói használatot adja alapnak (ustedes → les, os nincs: vcg-11 + body szöveg + speak); glossary: `duele`, `duelen` (a `doler` kártya A1, a tőváltós alak nincs); tesztek: speakNoSpanish 67→68, syllabusEn 67→68 + ujjlenyomat · hash: a `feat(grammar): verbos-como-gustar lesson (nyelvtan)` commit
+  - minta (választós): «Me ___ los helados de fresa.» → encantan
+  - minta (form): «A Ana ___ (doler) la cabeza.» → le duele
+  - minta (form): «A mí ___ (quedar) grandes estos zapatos.» → me quedan
+  - kártya-kérés: faltar A2 (csak a `la falta` főnév-kártya van), duele A1, duelen A1 (a `doler` ragozott alakjai)
 - [ ] F-3. `subjuntivo-relativo` (B1, új téma) → kész, ha: ugyanaz
 - [ ] F-4. `verbos-preposicion` (B1, új téma) → kész, ha: ugyanaz
 - [ ] F-5. `verbos-de-cambio` (B2, új téma) → kész, ha: ugyanaz

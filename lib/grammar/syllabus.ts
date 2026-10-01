@@ -91,6 +91,7 @@ export const GRAMMAR_TIER: Record<string, GrammarTier> = {
   'imperativo-negativo': 'exam',
   'combinacion-pronombres': 'exam',
   'verbos-reflexivos': 'core-plus',
+  'verbos-como-gustar': 'exam',
   'comparativos-superlativos': 'core',
   indefinidos: 'core',
   'por-para': 'core',
@@ -415,6 +416,13 @@ export const GRAMMAR_SYLLABUS: SyllabusTopic[] = [
     unit: 'a2-pronombres',
     title: { hu: 'Visszaható igék', en: 'Reflexive verbs', es: 'Verbos reflexivos', de: 'Reflexive Verben' },
     blurb: { hu: 'Me levanto, se llama: a névmás a cselekvőre mutat vissza.', en: 'Me levanto, se llama: the pronoun points back at the doer.', es: 'Me levanto, se llama: el pronombre vuelve al sujeto.', de: 'Me levanto, se llama: das Pronomen zeigt zurück.' },
+  },
+  {
+    id: 'verbos-como-gustar',
+    level: 'A2',
+    unit: 'a2-pronombres',
+    title: { hu: 'Gustar-szerű igék: encantar, doler, faltar', en: 'Verbs like gustar: encantar, doler, faltar', es: 'Verbos como gustar: encantar, doler, faltar', de: 'Verben wie gustar: encantar, doler, faltar' },
+    blurb: { hu: 'Me encanta, me duele, me falta: a dolog az alany, a személy a névmás.', en: 'Me encanta, me duele, me falta: the thing is the subject, the person is the pronoun.', es: 'Me encanta, me duele, me falta: la cosa es el sujeto, la persona es el pronombre.', de: 'Me encanta, me duele, me falta: die Sache ist das Subjekt, die Person das Pronomen.' },
   },
   {
     id: 'comparativos-superlativos',
