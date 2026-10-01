@@ -10,8 +10,6 @@ type ColorScheme = (typeof Colors)['light'];
 // ülő egyetlen Check/→ sáv. A `dockedAction`/`inlineCheckBtn` stílusértékek
 // változatlanok, csak ide költöztek, hogy a PCIC is használhassa.
 export const DOCK_RESERVE = 76;
-// A 💬 gomb (55 px + 12 px rés) helye a sáv jobb szélén, ahol a Learn kártya mellé teszi (endInset).
-export const FEEDBACK_INSET = 67;
 
 type Tone = 'check' | 'next';
 
@@ -27,18 +25,16 @@ type Props = {
   /** A hívó ezzel felülírhatja a tone alapszínét (a Learn a saját, bejósolt-eltalálástól függő logikáját adja ide). */
   color?: string;
   bottom: number;
-  /** Extra jobb oldali hely (px), hogy a sáv mellett egy lebegő gomb (a 💬) elférjen, a sávot nem takarva. */
-  endInset?: number;
   colors: ColorScheme;
   /** A tényleges kirajzolt magasság, hogy a hívó beállíthassa a görgető alsó paddingjét és a 💬 bottomOffsetjét. */
   onHeight?: (h: number) => void;
 };
 
-export default function DockedAction({ label, onPress, tone, color, bottom, endInset, colors, onHeight }: Props) {
+export default function DockedAction({ label, onPress, tone, color, bottom, colors, onHeight }: Props) {
   const g = useGrammarColors();
   return (
     <View
-      style={[styles.dockedAction, { bottom, backgroundColor: colors.background }, endInset ? { paddingRight: 20 + endInset } : null]}
+      style={[styles.dockedAction, { bottom, backgroundColor: colors.background }]}
       onLayout={onHeight ? (e: LayoutChangeEvent) => onHeight(e.nativeEvent.layout.height) : undefined}
     >
       {g.brutal ? (
