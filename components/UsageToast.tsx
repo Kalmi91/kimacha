@@ -25,7 +25,8 @@ const MILESTONE_VISIBLE_MS = 4000;
 const ROLLOVER_VISIBLE_MS = 8000;
 const ANIM_MS = 250;
 
-export default function UsageToast() {
+// PLAN-temak 7F: `hidden` (az onboarding alatt) nem rajzol semmit, hogy ne takarja el a címet.
+export default function UsageToast({ hidden = false }: { hidden?: boolean }) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -118,7 +119,7 @@ export default function UsageToast() {
     // because show() animates them.
   }, [greeting, opacity, translateY]);
 
-  if (!visible) return null;
+  if (!visible || hidden) return null;
 
   // NY25: brutalista palettán BrutalBox (sarok 0, tömör árnyék), nem pirula.
   if (g.brutal) {
@@ -135,6 +136,7 @@ export default function UsageToast() {
   return (
     <Animated.View
       pointerEvents="none"
+      testID="usage-toast-pill"
       style={[
         styles.pill,
         { backgroundColor: isMilestone ? '#22C55E' : colors.tint, opacity, transform: [{ translateY }] },

@@ -54,10 +54,10 @@ export default function ThemesScreen() {
   const { skin: chosen, setSkin, override, setOverride, grammarPalette, setGrammarPalette } = useTheme();
   const { mode, modeLocked } = useSkin();
 
-  const modeOptions: { label: string; value: 'system' | 'light' | 'dark' }[] = [
-    { label: `🔄 ${s.settings.themeAuto}`, value: 'system' },
-    { label: `☀️ ${s.settings.themeLight}`, value: 'light' },
-    { label: `🌙 ${s.settings.themeDark}`, value: 'dark' },
+  const modeOptions: { icon: string; label: string; value: 'system' | 'light' | 'dark' }[] = [
+    { icon: '🔄', label: s.settings.themeAuto, value: 'system' },
+    { icon: '☀️', label: s.settings.themeLight, value: 'light' },
+    { icon: '🌙', label: s.settings.themeDark, value: 'dark' },
   ];
   const paletteLabels: Record<FillPaletteId, string> = {
     brand: s.settings.paletteBrand,
@@ -110,6 +110,8 @@ export default function ThemesScreen() {
                 selected={override === opt.value}
                 onPress={() => setOverride(opt.value)}
                 label={opt.label}
+                leading={<Text style={styles.modeIcon}>{opt.icon}</Text>}
+                stacked
                 style={styles.flex1}
               />
             ))}
@@ -182,6 +184,8 @@ const styles = StyleSheet.create({
   chevron: { fontSize: 22, fontWeight: '700' },
   modeRow: { flexDirection: 'row', gap: 10, marginBottom: 16 },
   flex1: { flex: 1 },
+  // PLAN-temak 7F (FB428): mód-gomb (3 oszlop): ikon fent (16), kisebb egysoros felirat (11).
+  modeIcon: { fontSize: 16 },
   oneLook: { fontSize: 13, marginBottom: 16 },
   groupTitle: { fontSize: 12, fontWeight: '600', textTransform: 'uppercase', letterSpacing: 1, marginTop: 8, marginBottom: 8 },
   grid: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, rowGap: 12, marginBottom: 12 },
