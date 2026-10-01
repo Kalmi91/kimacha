@@ -387,6 +387,7 @@ export default function GrammarLessonScreen() {
     // FB328: a lecke MINDEN eddigi köréből számolt kumulált arány, nem csak
     // ennek a körnek a pontszáma (ami fentebb, `pct`).
     const cumulativePct = lessonScoreOf(progressRows);
+    // A teszt-gomb az egyetlen kitöltött (kiemelt) gomb a lapon, a többi másodlagos (keretes).
     // PLAN-vizsga B1 b: a "Lesson test" gomb a done-lapon; csak akkor él, ha a lecke minden
     // feladat-fajtájából volt már kör, addig szürke, alatta a teendő. A gomb alatti sor a szabály.
     const testSize = lessonTestSize(lesson, learnedLang, contentLang);
@@ -492,12 +493,11 @@ export default function GrammarLessonScreen() {
             {next ? (
               <BrutalBox
                 testID="grammar-next-topic"
-                fill="a"
                 style={styles.brutalBtnWrap}
                 boxStyle={styles.brutalBtn}
                 onPress={() => router.replace(`/grammar/${next.id}` as never)}
               >
-                <Text style={[styles.brutalBtnText, { color: g.onFill }]}>{s.grammar.nextTopic} →</Text>
+                <Text style={[styles.brutalBtnText, { color: g.ink }]}>{s.grammar.nextTopic} →</Text>
               </BrutalBox>
             ) : null}
             <BrutalBox style={styles.brutalBtnWrap} boxStyle={styles.brutalBtn} onPress={() => setPhase('lesson')}>
@@ -554,28 +554,23 @@ export default function GrammarLessonScreen() {
           {next ? (
             <Pressable
               testID="grammar-next-topic"
-              style={[
-                styles.btn,
-                pct >= 80 ? { backgroundColor: colors.tint } : { borderWidth: 1.5, borderColor: colors.tint },
-              ]}
+              style={[styles.btn, { borderWidth: 1.5, borderColor: colors.tint }]}
               onPress={() => router.replace(`/grammar/${next.id}` as never)}
             >
-              <Text style={[styles.btnText, pct >= 80 ? styles.btnTextOnTint : { color: colors.tint }]}>
-                {s.grammar.nextTopic}
-              </Text>
+              <Text style={[styles.btnText, { color: colors.tint }]}>{s.grammar.nextTopic}</Text>
             </Pressable>
           ) : null}
           <Pressable
             style={[
               styles.btn,
-              pct >= 80 && next ? { borderWidth: 1.5, borderColor: colors.tint } : { backgroundColor: colors.tint },
+              (pct >= 80 && next) || testSize > 0 ? { borderWidth: 1.5, borderColor: colors.tint } : { backgroundColor: colors.tint },
             ]}
             onPress={() => setPhase('lesson')}
           >
             <Text
               style={[
                 styles.btnText,
-                pct >= 80 && next ? { color: colors.tint } : styles.btnTextOnTint,
+                (pct >= 80 && next) || testSize > 0 ? { color: colors.tint } : styles.btnTextOnTint,
               ]}
             >
               {s.grammar.backToRule}
