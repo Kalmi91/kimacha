@@ -13,6 +13,9 @@ import ResultBadge from '@/components/ResultBadge';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalBox, actionTextColor, useButtonVariant } from '@/components/grammar/Brutal';
 import { SkinSpeakLabel } from '@/components/skins/Slots';
+import { legibleOn, textContrastMin } from '@/constants/Skins';
+import { useDiffStyles } from '@/lib/useDiffStyles';
+import { useSkin } from '@/lib/useSkin';
 
 // PLAN-play 14. lépés: a PCIC kártya felfedett-állapot blokkja
 // (app/(tabs)/index.tsx-ből kiemelve, felelősség szerinti szétvágás, nincs
@@ -50,6 +53,8 @@ export default function PcicRevealedAnswer({
   // A régi gombsor intervallum-előnézete grade-enként (lib/sm2.ts
   // sm2PreviewDays), i18n-nel formázva (FB350/5. commit: ne csak magyarul).
   const g = useGrammarColors();
+  const { skin } = useSkin();
+  const diff = useDiffStyles();
   const variant = useButtonVariant();
   const stacked = variant === 'stacked';
   const previewDays = sm2PreviewDays(current, today);
@@ -82,9 +87,9 @@ export default function PcicRevealedAnswer({
               key={i}
               style={
                 d.missing
-                  ? styles.diffMissing
+                  ? diff.missing
                   : d.wrong
-                    ? styles.diffWrong
+                    ? diff.wrong
                     : { color: nextGrade === 'good' ? '#22C55E' : colors.text }
               }
             >
@@ -94,7 +99,7 @@ export default function PcicRevealedAnswer({
         </Text>
         )}
         <View style={styles.frontRow}>
-          <Text variant="word" style={[styles.correctAnswer, { color: colors.tint }]}>{grade.best}</Text>
+          <Text testID="pcic-correct-answer" variant="word" style={[styles.correctAnswer, { color: legibleOn(colors.tint, colors.card, textContrastMin(skin, 'word', 22, true)) }]}>{grade.best}</Text>
           <Pressable onPress={() => speak(grade.best, speechLang(target))} style={styles.speakBtn}>
             <Text style={styles.speakIcon}>🔊</Text>
             <SkinSpeakLabel />
@@ -176,7 +181,7 @@ export default function PcicRevealedAnswer({
               style={({ pressed }) => [
                 styles.gradeBtn,
                 {
-                  backgroundColor: pressed ? (gr === 'good' ? '#22C55E' : '#EF4444') : gr === 'good' ? '#38BDF8' : '#1D4ED8',
+                  backgroundColor: legibleOn(pressed ? (gr === 'good' ? '#22C55E' : '#EF4444') : gr === 'good' ? '#38BDF8' : '#1D4ED8', '#FFFFFF'),
                   borderColor: pressed ? (gr === 'good' ? '#22C55E' : '#EF4444') : isPre ? colors.text : 'transparent',
                   borderWidth: isPre ? 3 : 1,
                 },
@@ -204,15 +209,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     letterSpacing: 1,
     marginBottom: 6,
-  },
-  diffWrong: {
-    backgroundColor: '#EF4444',
-    color: '#FFFFFF',
-  },
-  diffMissing: {
-    backgroundColor: '#EAB308',
-    color: '#FFFFFF',
-    textDecorationLine: 'underline',
   },
   correctAnswer: {
     flex: 1,

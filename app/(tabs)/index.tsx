@@ -1067,11 +1067,15 @@ const styles = StyleSheet.create({
   // jobbra-igazított helyre teszi a dontLearn-t.
   // 7F/G2: a korábbi marginBottom: 8 helyett marginTop: 10 (a doboz magassága ~ugyanaz), hogy a sor ne
   // érjen a beviteli mezőhöz (szélesebb sormagasságú / elforgatott kártya-keretű témán átfedés volt).
+  // PLAN-temak 7H: ha a két felirat nem fér el egy sorban (széles betű: diszlexia), a második új sorba
+  // tör, nem lóg ki balra a kártyából (a flex-end miatt a kitöltött sor eleje esett le).
   bottomRow: {
     flexDirection: 'row',
+    flexWrap: 'wrap',
     justifyContent: 'flex-end',
     alignItems: 'center',
     gap: 16,
+    rowGap: 4,
     marginTop: 10,
   },
   checkBtn: {
