@@ -106,6 +106,8 @@ export interface FormItem {
   verb: string;
   person: string;
   answer: string;
+  /** További elfogadott gépelt alakok (rövidített alak, szinonim); az `answer` a fő alak. */
+  accept?: string[];
   table: string; // a body egyik `table` blokkjának id-ja
   tense?: { from: TenseId; to: TenseId };
 }
