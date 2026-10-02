@@ -735,6 +735,10 @@ const TENSE_IDS = [
   'ir-a',
   'condicional',
   'subjuntivo-presente',
+  'imperativo-negativo',
+  'pluscuamperfecto',
+  'subjuntivo-perfecto',
+  'futuro-condicional-perfecto',
 ];
 
 // Kártya-azonosító (a words-open `order`-e, string) -> szint, a words-open fájlokból egyszer felépítve, a
