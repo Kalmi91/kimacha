@@ -43,6 +43,16 @@ describe('schema 2 lessons', () => {
 
 // NY1 (NYELVTAN.md "Adatformátum"): a jelvény-név minden igeidőre, mind a 4
 // nyelven, hogy a TENSE_NAMES ne legyen csendben hiányos.
+describe('TENSE_IDS', () => {
+  it('matches the copy in scripts/audit-games.mjs (the script cannot import the TS file)', () => {
+    const src = fs.readFileSync(path.join(__dirname, '..', '..', 'scripts', 'audit-games.mjs'), 'utf8');
+    const m = src.match(/const TENSE_IDS = \[([\s\S]*?)\];/);
+    expect(m).toBeTruthy();
+    const ids = [...m![1].matchAll(/'([^']+)'/g)].map((x) => x[1]);
+    expect(ids).toEqual([...TENSE_IDS]);
+  });
+});
+
 describe('TENSE_NAMES', () => {
   it('gives all 4 non-empty languages for every tense', () => {
     for (const tense of TENSE_IDS) {
