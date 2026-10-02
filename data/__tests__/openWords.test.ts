@@ -2,12 +2,12 @@
 import { getOpenWordsForLevel, getOpenWordsUpToLevel, openLevelOf, openWords } from '../openWords';
 
 describe('data/openWords.ts', () => {
-  it('2382 kártya, egyedi id (= order), A1-B2 780-649-462-491', () => {
-    expect(openWords).toHaveLength(2382);
-    expect(new Set(openWords.map((w) => w.id)).size).toBe(2382);
+  it('2532 kártya, egyedi id (= order), A1-B2 780-649-612-491', () => {
+    expect(openWords).toHaveLength(2532);
+    expect(new Set(openWords.map((w) => w.id)).size).toBe(2532);
     expect(getOpenWordsForLevel('A1')).toHaveLength(780);
     expect(getOpenWordsForLevel('A2')).toHaveLength(649);
-    expect(getOpenWordsForLevel('B1')).toHaveLength(462);
+    expect(getOpenWordsForLevel('B1')).toHaveLength(612);
     expect(getOpenWordsForLevel('B2')).toHaveLength(491);
     expect(getOpenWordsForLevel('A0')).toEqual([]);
   });
@@ -34,6 +34,6 @@ describe('data/openWords.ts', () => {
     expect(openLevelOf('B1')).toBe('B1');
     expect(getOpenWordsUpToLevel('A0')).toHaveLength(780);
     expect(getOpenWordsUpToLevel('A2')).toHaveLength(1429);
-    expect(getOpenWordsUpToLevel('C2')).toHaveLength(2382);
+    expect(getOpenWordsUpToLevel('C2')).toHaveLength(2532);
   });
 });
