@@ -23,8 +23,8 @@ const NO_CHIP_IDS = new Set(OPEN_CARDS.filter((c) => c.pos === 'det' || c.pos ==
 describe('posOf lefedettseg (FB361-362)', () => {
   beforeAll(() => setPcicTarget('es'));
 
-  it('a det/interj kivetel pontosan 24 szo', () => {
-    expect(NO_CHIP_IDS.size).toBe(24);
+  it('a det/interj kivetel pontosan 26 szo', () => {
+    expect(NO_CHIP_IDS.size).toBe(26);
   });
 
   for (const level of PCIC_LEVELS) {
