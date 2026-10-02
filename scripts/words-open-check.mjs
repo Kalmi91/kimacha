@@ -1,6 +1,6 @@
 // Kapu a szabad szókészlethez (data/words-open/{a1,a2,b1,b2}.json), PLAN-words-open.md R1-R8.
 // Futtatás: node scripts/words-open-check.mjs [--level a1|a2|b1|b2] [--list-only]
-//   --list-only  csak R1-R2 és R11-R14 (a lista kész, a mondatok még nincsenek)
+//   --list-only  csak R1-R2 és R11-R15 (a lista kész, a mondatok még nincsenek)
 //   --level X    az R3-R10 csak az X szint kártyáin fut (a keresésekhez mindig mind a 600 kártya betöltődik)
 //   --to N       az R3-R10 csak az order <= N kártyákon fut (félkész szint ellenőrzése)
 // Szabályonként kiírja a hibák számát és az első 5 példát, hibánál exit 1.
@@ -139,9 +139,27 @@ for (const c of cards) {
 // ---------------------------------------------------------------- R11-R14 több jelentésű szavak (hint, perjeles válasz)
 // R11 bővítve: az `en` vessző/pontosvessző szerinti alternatívái, a zárójeles minősítő elhagyásával is ütköznek (PLAN-words-open-2); a 882 régi kártya egymás
 // közti ütközése 50 fölött figyelmeztetés, nem hiba.
+// R15 (PLAN-fb1002d, FB459): összetéveszthető csoportok (scripts/words-open-confusable.json): a tagok kártyáin akkor is kötelező a hint_en, ha a kérdésük
+// nem azonos (while/when: mientras, cuando, cuándo); az R13 az ilyen kártyán megengedi a hintet. Minden tag létezik, egy halmaz legalább 2 tag, egy kártya egy halmazban.
+const confusableSets = JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts', 'words-open-confusable.json'), 'utf8')).sets;
+const byOrder = new Map(cards.map((c) => [c.order, c]));
+const confusable = new Set();
+for (const set of confusableSets) {
+  if (!Array.isArray(set.orders) || set.orders.length < 2) fail('R15', `"${set.name}": legalább 2 order kell`);
+  for (const o of set.orders ?? []) {
+    const c = byOrder.get(o);
+    if (!c) {
+      fail('R15', `"${set.name}": #${o} nincs a korpuszban`);
+      continue;
+    }
+    if (confusable.has(o)) fail('R15', `"${set.name}": #${o} több halmazban szerepel`);
+    confusable.add(o);
+    if (typeof c.hint_en !== 'string' || c.hint_en.trim() === '') fail('R15', `"${set.name}": ${tag(c)} összetéveszthető csoport tagja, de nincs hint_en`);
+  }
+}
 checkMultiMeaning({
   cards, qKey: 'en', aKey: 'es', hintKey: 'hint_en', articles: ['a', 'an', 'the'], ignore: ['to'], tag, fail,
-  splitAlternatives: true, stripQualifiers: true, legacyMaxOrder: 882, legacyWarnLimit: 50, warn,
+  splitAlternatives: true, stripQualifiers: true, legacyMaxOrder: 882, legacyWarnLimit: 50, warn, confusable,
 });
 
 // ---------------------------------------------------------------- R3-R9 (csak ha nem --list-only)
@@ -430,8 +448,8 @@ if (!listOnly) {
 
 // ---------------------------------------------------------------- jelentés
 const ruleList = listOnly
-  ? ['R1', 'R2', 'R11', 'R12', 'R13', 'R14']
-  : ['R1', 'R2', 'R3', 'R4', 'R5', 'R6', 'R7', 'R8', 'R9', 'R10', 'R11', 'R12', 'R13', 'R14'];
+  ? ['R1', 'R2', 'R11', 'R12', 'R13', 'R14', 'R15']
+  : ['R1', 'R2', 'R3', 'R4', 'R5', 'R6', 'R7', 'R8', 'R9', 'R10', 'R11', 'R12', 'R13', 'R14', 'R15'];
 let bad = 0;
 for (const r of ruleList) {
   const errs = RULES[r] || [];
