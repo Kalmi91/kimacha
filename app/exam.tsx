@@ -21,6 +21,7 @@ import ExamSkillRow from '@/components/exam/ExamSkillRow';
 import ExamSpeakCard from '@/components/exam/ExamSpeakCard';
 import ExamTilesCard from '@/components/exam/ExamTilesCard';
 import ExamTypeCard from '@/components/exam/ExamTypeCard';
+import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
 import { buildExam } from '@/lib/exam/builder';
 import { gapSourcesForLevel, type GapSource } from '@/lib/exam/grammarItems';
 import { requeueWrongWords } from '@/lib/exam/requeue';
@@ -98,6 +99,8 @@ export default function ExamScreen() {
   const colors = Colors[theme];
   const g = useGrammarColors();
   const s = t();
+  // FB461/FB464: a beírós kérdés Check / Next sávja a billentyűzet fölé dokkol (components/learn/DockSlot.tsx).
+  const dock = useDockSlot(colors);
   const router = useRouter();
   const params = useLocalSearchParams<{ level?: string }>();
   const level: PcicLevel = EXAM_LEVELS.find((l) => l === params.level) ?? EXAM_LEVELS[0];
@@ -337,7 +340,10 @@ export default function ExamScreen() {
           <View style={[styles.fill, { backgroundColor: colors.tint, width: `${pct}%` }]} />
         </View>
       )}
-      {source && exam[index] && <ExamItemView key={index} item={exam[index]} source={source} onDone={answered} />}
+      <DockSlotProvider host={dock}>
+        {source && exam[index] && <ExamItemView key={index} item={exam[index]} source={source} onDone={answered} />}
+      </DockSlotProvider>
+      {dock.node}
     </KeyboardAvoidingView>,
   );
 }

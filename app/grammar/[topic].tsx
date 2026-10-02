@@ -40,6 +40,7 @@ import FitText from '@/components/FitText';
 import SpeakButton from '@/components/SpeakButton';
 import TrialBadge from '@/components/TrialBadge';
 import { BrutalBox, Card, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
+import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
 
 // One grammar lesson: the rule first, then the practice.
@@ -75,6 +76,8 @@ export default function GrammarLessonScreen() {
   const [drillKind, setDrillKind] = useState<GrammarKind>('choice');
   // FB340-342/345/356: a látható drill-item id-ja, a feedback-kontextusba.
   const [drillItemId, setDrillItemId] = useState<string | undefined>(undefined);
+  // FB461/FB462/FB464: a drill beírós tételeinek Check / Next sávja a billentyűzet fölé dokkol (components/learn/DockSlot.tsx).
+  const dock = useDockSlot(colors);
   // FB327: a lecke-body ScrollView fázisváltáskor újra-mountol, a pozíciót a
   // lib/grammar/scrollMemory.ts tartja topicId szerint, hogy visszaállítható legyen.
   const scrollRef = useRef<ScrollView>(null);
@@ -351,30 +354,34 @@ export default function GrammarLessonScreen() {
   if (phase === 'drill') {
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
-        {/* NY22: brutalista palettán a drill saját fejléce (X + szegmentált sáv + combo) váltja. */}
-        {g.brutal ? null : header}
-        {/* LECKE-SEMA 2/6.3/D3: a lecke-drill a `drillKind` fajtáját viszi végig
-            (a gombok fajtánként külön indítanak), a Game fül grammar-choice-a
-            a `kinds` prop híján változatlanul csak a gap/mark körét kapja. */}
-        <GrammarDrill
-          topic={lesson}
-          learnedLang={learnedLang}
-          contentLang={contentLang}
-          onFinish={finish}
-          kinds={[drillKind]}
-          transformSeen={transformSeen}
-          onItemChange={setDrillItemId}
-          onRoundStats={setRoundStats}
-          onClose={() => setPhase('lesson')}
-          // FB421: a félbehagyott kör onnan folytatódik, ahol abbamaradt; minden
-          // megválaszolt tétel után elmentődik.
-          resume={kindProgressFromRows(progressRows, String(topicId), drillKind).run ?? undefined}
-          onProgress={(p) => saveRow(kindRunKey(String(topicId), drillKind), 'run', p satisfies KindRun)}
-        />
+        <DockSlotProvider host={dock}>
+          {/* NY22: brutalista palettán a drill saját fejléce (X + szegmentált sáv + combo) váltja. */}
+          {g.brutal ? null : header}
+          {/* LECKE-SEMA 2/6.3/D3: a lecke-drill a `drillKind` fajtáját viszi végig
+              (a gombok fajtánként külön indítanak), a Game fül grammar-choice-a
+              a `kinds` prop híján változatlanul csak a gap/mark körét kapja. */}
+          <GrammarDrill
+            topic={lesson}
+            learnedLang={learnedLang}
+            contentLang={contentLang}
+            onFinish={finish}
+            kinds={[drillKind]}
+            transformSeen={transformSeen}
+            onItemChange={setDrillItemId}
+            onRoundStats={setRoundStats}
+            onClose={() => setPhase('lesson')}
+            // FB421: a félbehagyott kör onnan folytatódik, ahol abbamaradt; minden
+            // megválaszolt tétel után elmentődik.
+            resume={kindProgressFromRows(progressRows, String(topicId), drillKind).run ?? undefined}
+            onProgress={(p) => saveRow(kindRunKey(String(topicId), drillKind), 'run', p satisfies KindRun)}
+          />
+        </DockSlotProvider>
+        {dock.node}
         <FeedbackButton
           level={level}
           languagePair={`${contentLang}→${learnedLang}`}
           currentCard={`grammar:${topicId}:drill${drillItemId ? `:${drillItemId}` : ''}`}
+          bottomOffset={dock.bottomOffset}
         />
       </View>
     );
