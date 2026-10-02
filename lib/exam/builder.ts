@@ -19,8 +19,13 @@ import type { GapSource } from './grammarItems';
 import type { ExamItem } from './types';
 import { isExamLearned } from './unlock';
 
-/** Tételszám fajtánként (a képernyő-leírás mintaszámai: 12 szó, 12 nyelvtan, 6 olvasás). */
-export const EXAM_BLUEPRINT = { wordType: 6, match: 2, sentOrder: 2, sentType: 2, gap: 12, reading: 6 } as const;
+/**
+ * Szóbeli tétel a vizsgában (13. lépés). DÖNTÉS KELL: hány legyen a 30-ból, Kálmán nem döntötte el; az
+ * alapérték 4. A szóbeli a szó (-2) és a nyelvtan (-2) rovására kerül a 30-ba, hogy az összes tétel ne nőjön.
+ */
+export const EXAM_SPEAK_COUNT = 4;
+/** Tételszám fajtánként: 10 szó, 10 nyelvtan, 6 olvasás, EXAM_SPEAK_COUNT szóbeli = 30. */
+export const EXAM_BLUEPRINT = { wordType: 5, match: 2, sentOrder: 2, sentType: 1, speak: EXAM_SPEAK_COUNT, gap: 10, reading: 6 } as const;
 export const MATCH_PAIRS = 4;
 const MIN_SENTENCE_WORDS = 3;
 const MAX_SENTENCE_WORDS = 9;
@@ -95,6 +100,7 @@ export function buildExam(input: ExamBuildInput): ExamItem[] {
   const vocab = learned.map((it) => answerOf(it).split(' / ')[0]);
   const ordered = takeSentences(EXAM_BLUEPRINT.sentOrder);
   const typed = takeSentences(EXAM_BLUEPRINT.sentType);
+  const spoken = takeSentences(EXAM_BLUEPRINT.speak);
 
   // Olvasás (A7 b): két tanult mondatból álló célnyelvi szöveg; a jó válasz a két mondat kiinduló
   // nyelvű fordítása, a rossz válaszokban az egyik fele más tanult mondat fordítása.
@@ -202,5 +208,8 @@ export function buildExam(input: ExamBuildInput): ExamItem[] {
     }
   }
 
-  return [...wordsBlock, ...grammarBlock, ...readingBlock];
+  // Szóbeli (13. lépés): ugyanazon a mondat-kapun átment tanult mondat, a kiinduló nyelvről kell elmondani.
+  const speakBlock: ExamItem[] = spoken.map((p) => ({ kind: 'speak', skill: 'speaking', itemId: p.itemId, prompt: p.source, expected: p.target, mode: 'translate' }));
+
+  return [...wordsBlock, ...grammarBlock, ...readingBlock, ...speakBlock];
 }
