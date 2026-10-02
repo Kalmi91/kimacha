@@ -203,6 +203,8 @@ const es: Strings = {
     resetGrammar: '🗑️ Reiniciar progreso de gramática',
     resetGrammarTitle: 'Reiniciar progreso de gramática',
     resetGrammarMessage: 'Esto borra todo el progreso de lecciones y práctica de gramática. ¿Estás seguro?',
+    // PLAN-fb1002 5. lépés (FB446): az újrakezdő sorok egy lenyíló szekcióban.
+    resetSection: '🗑️ Reiniciar progreso',
     // PLAN-vizsga A. szakasz 2. lépés: a __DEV__-only vizsga-vezérlő (csak fejlesztői buildben látszik).
     devSeedExamA1: 'DEV: preparar el estado del examen (A1-B2)',
     devSeedExamA1Done: 'DEV: estado del examen listo (A1-B2), abre la hoja de niveles',
