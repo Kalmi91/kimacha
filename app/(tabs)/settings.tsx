@@ -140,6 +140,8 @@ export default function SettingsScreen() {
   // haladás, és egy nyelvtan-sor, ha van nyelvtan-haladás.
   const [resetLevels, setResetLevels] = useState<PcicLevel[]>([]);
   const [hasGrammarProgress, setHasGrammarProgress] = useState(false);
+  // PLAN-fb1002 5. lépés (FB446): a nullázó sorok egy lenyíló szekcióban, alapból zárva.
+  const [resetOpen, setResetOpen] = useState(false);
   // PLAN-vizsga A. szakasz 2. lépés: a __DEV__-only vizsga-vezérlő állapota (lásd lent).
   const [examSeeded, setExamSeeded] = useState(false);
 
@@ -486,17 +488,27 @@ export default function SettingsScreen() {
       </Row>
 
       {/* PLAN-fb1001 K1 + 7. lépés: haladás-nullázás megerősítéssel, paklinként és a nyelvtanra. */}
-      {resetLevels.map((lvl) => (
-        <Row key={lvl} onPress={() => handleResetDeck(lvl)}>
-          <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.pcic.resetRow(lvl)}</Text>
-          <Text style={[styles.rowArrow, { color: arrowColor }]}>→</Text>
+      {(resetLevels.length > 0 || hasGrammarProgress) && (
+        <Row onPress={() => setResetOpen((o) => !o)}>
+          <Text testID="settings-reset-section" style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.resetSection}</Text>
+          <Text style={[styles.rowArrow, { color: arrowColor }]}>{resetOpen ? '▾' : '▸'}</Text>
         </Row>
-      ))}
-      {hasGrammarProgress && (
-        <Row onPress={handleResetGrammar}>
-          <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.resetGrammar}</Text>
-          <Text style={[styles.rowArrow, { color: arrowColor }]}>→</Text>
-        </Row>
+      )}
+      {resetOpen && (
+        <>
+          {resetLevels.map((lvl) => (
+            <Row key={lvl} onPress={() => handleResetDeck(lvl)}>
+              <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.pcic.resetRow(lvl)}</Text>
+              <Text style={[styles.rowArrow, { color: arrowColor }]}>→</Text>
+            </Row>
+          ))}
+          {hasGrammarProgress && (
+            <Row onPress={handleResetGrammar}>
+              <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.resetGrammar}</Text>
+              <Text style={[styles.rowArrow, { color: arrowColor }]}>→</Text>
+            </Row>
+          )}
+        </>
       )}
 
       {/* PLAN-credits.md: word-data attribution screen entry point. */}
