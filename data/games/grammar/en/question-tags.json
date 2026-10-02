@@ -22,10 +22,10 @@
       "kind": "table",
       "id": "qt-forms",
       "title": {
-        "hu": "Állítás és kérdőfarok",
-        "en": "Statement and tag",
-        "es": "Oración y tag",
-        "de": "Aussage und Tag"
+        "hu": "Melyik segédige kerül a tagbe?",
+        "en": "Which helper verb goes in the tag?",
+        "es": "¿Qué auxiliar va en el tag?",
+        "de": "Welches Hilfsverb steht im Tag?"
       },
       "header": [
         {
@@ -35,36 +35,36 @@
           "de": "Satz"
         },
         {
-          "hu": "tag",
-          "en": "tag",
-          "es": "tag",
-          "de": "Tag"
+          "hu": "auxiliar",
+          "en": "helper verb",
+          "es": "auxiliar",
+          "de": "Hilfsverb"
         }
       ],
       "rows": [
         [
           "It is cold",
-          "isn't it?"
+          "is"
         ],
         [
           "You like coffee",
-          "don't you?"
+          "do"
         ],
         [
           "She can swim",
-          "can't she?"
+          "can"
         ],
         [
           "They went home",
-          "didn't they?"
+          "did"
         ],
         [
-          "You aren't tired",
-          "are you?"
+          "We have finished",
+          "have"
         ],
         [
-          "I am late",
-          "aren't I?"
+          "Let us go",
+          "shall"
         ]
       ]
     },
@@ -886,49 +886,49 @@
     {
       "id": "qt-18",
       "kind": "form",
-      "verb": "tag",
+      "verb": "auxiliar",
       "person": "It is cold",
-      "answer": "isn't it?",
+      "answer": "is",
       "table": "qt-forms"
     },
     {
       "id": "qt-19",
       "kind": "form",
-      "verb": "tag",
+      "verb": "auxiliar",
       "person": "You like coffee",
-      "answer": "don't you?",
+      "answer": "do",
       "table": "qt-forms"
     },
     {
       "id": "qt-20",
       "kind": "form",
-      "verb": "tag",
+      "verb": "auxiliar",
       "person": "She can swim",
-      "answer": "can't she?",
+      "answer": "can",
       "table": "qt-forms"
     },
     {
       "id": "qt-21",
       "kind": "form",
-      "verb": "tag",
+      "verb": "auxiliar",
       "person": "They went home",
-      "answer": "didn't they?",
+      "answer": "did",
       "table": "qt-forms"
     },
     {
       "id": "qt-22",
       "kind": "form",
-      "verb": "tag",
-      "person": "You aren't tired",
-      "answer": "are you?",
+      "verb": "auxiliar",
+      "person": "We have finished",
+      "answer": "have",
       "table": "qt-forms"
     },
     {
       "id": "qt-23",
       "kind": "form",
-      "verb": "tag",
-      "person": "I am late",
-      "answer": "aren't I?",
+      "verb": "auxiliar",
+      "person": "Let us go",
+      "answer": "shall",
       "table": "qt-forms"
     },
     {
