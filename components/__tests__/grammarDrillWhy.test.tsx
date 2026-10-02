@@ -1,7 +1,7 @@
 // TASK-8 (D4, FB288): "Miért ez a mondat?" feladat-fajta a lecke-drillben. A
 // `kinds={['why']}` mintáját a grammarDrillMatchForm.test.tsx match/form
 // tesztjei adják (D3, FB290).
-import { fireEvent, render, screen } from '@testing-library/react-native';
+import { fireEvent, render, screen, within } from '@testing-library/react-native';
 
 import GrammarDrill from '../grammar/GrammarDrill';
 import type { LessonV2 } from '@/lib/grammar/lessonTypes';
@@ -88,5 +88,34 @@ describe('GrammarDrill: why item translation (FB379)', () => {
     render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={jest.fn()} kinds={['why']} />);
     fireEvent.press(screen.getByText('foglalkozás'));
     expect(screen.queryByText('Tanár vagyok.')).toBeTruthy();
+  });
+});
+
+// R21 (PLAN-eget-nyelvtan): ha a helyes opció a szerzői sorrendben mindig az első, a drillben
+// akkor is különböző helyre kerül (seedelt keverés az item id-jából), a jó válasz továbbra is jó.
+describe('GrammarDrill: why option order (R21)', () => {
+  const withId = (id: string): LessonV2 => ({ ...lesson, items: [{ ...(lesson.items[0] as object), id } as LessonV2['items'][number]] });
+
+  it('the correct option is not always the first one on screen', () => {
+    const positions = new Set<number>();
+    for (let k = 0; k < 12; k++) {
+      const view = render(<GrammarDrill topic={withId(`why-r21-${k}`)} learnedLang="es" contentLang="hu" onFinish={jest.fn()} kinds={['why']} />);
+      const opts = screen.getAllByTestId('grammar-option');
+      positions.add(opts.findIndex((o) => within(o).queryByText('foglalkozás') !== null));
+      view.unmount();
+    }
+    expect(positions.size).toBeGreaterThan(1);
+  });
+
+  it('the same item keeps its order, and the correct pick is still correct', () => {
+    const onFinish = jest.fn();
+    const topic = withId('why-r21-3');
+    const a = render(<GrammarDrill topic={topic} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['why']} />);
+    const first = screen.getAllByTestId('grammar-option').findIndex((o) => within(o).queryByText('foglalkozás') !== null);
+    a.unmount();
+    render(<GrammarDrill topic={topic} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['why']} />);
+    expect(screen.getAllByTestId('grammar-option').findIndex((o) => within(o).queryByText('foglalkozás') !== null)).toBe(first);
+    fireEvent.press(screen.getByText('foglalkozás'));
+    expect(screen.queryByText('Correct!')).toBeTruthy();
   });
 });
