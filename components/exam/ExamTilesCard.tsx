@@ -3,6 +3,7 @@ import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, radius, spacing, tapTarget } from '@/constants/Theme';
+import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import { Card } from '@/components/grammar/Brutal';
 import ResultBadge from '@/components/ResultBadge';
 import { sentenceBuildMatch } from '@/lib/answerMatch';
@@ -100,7 +101,7 @@ export default function ExamTilesCard({ prompt, answerTokens, sentence, distract
 }
 
 const styles = StyleSheet.create({
-  scroll: { padding: spacing.lg, gap: spacing.md },
+  scroll: { padding: spacing.lg, paddingBottom: FAB_CLEARANCE, gap: spacing.md },
   card: { borderRadius: radius.lg, padding: spacing.lg, gap: spacing.md },
   brutalCard: { padding: spacing.lg, gap: spacing.md },
   label: { fontSize: fontSize.sm, textAlign: 'center' },
