@@ -42,7 +42,9 @@ export default function DoneBadge({ testID = 'done-badge' }: { testID?: string }
 }
 
 const styles = StyleSheet.create({
-  wrap: { width: 240, height: 170, alignSelf: 'center' },
+  // FB449: a magasság a konfetti tényleges kiterjedéséhez igazítva (a legalsó 132 + 14 px), hogy a +5/+10/+15 sor
+  // a 💬 gomb fölé férjen.
+  wrap: { width: 240, height: 146, alignSelf: 'center' },
   center: { position: 'absolute', top: 18, left: 56 },
   box: { width: 112, height: 112, alignItems: 'center', justifyContent: 'center', borderWidth: 3 },
   confetti: { position: 'absolute', borderWidth: 2 },

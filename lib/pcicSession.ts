@@ -89,6 +89,8 @@ export function countDoneToday(cards: Sm2Card[], today: string): number {
 }
 
 export const PCIC_NEW_BONUS_STEP = 10;
+// FB449/FB451: a "kész mára" képernyő +5 / +10 / +15 új szó gombjai.
+export const PCIC_NEW_BONUS_STEPS = [5, 10, 15] as const;
 
 export interface PcicNewBudgetInput {
   limit: number; // a Beállítások napi új-szó kerete (daily_new_limit)
