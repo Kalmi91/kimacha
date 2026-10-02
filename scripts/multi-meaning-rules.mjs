@@ -4,7 +4,7 @@
 //   R12  a hintben pontosan egy *…* jelölés van, a jelölt szó első 2 betűje (kisbetű, ékezet nélkül) egyezik a kérdés
 //        valamelyik szavának első 2 betűjével (juego/jugar, llevo/llevar, played/play), legfeljebb 8 szó; az angol
 //        rendhagyó igealak is jó (be: am/is/are/was/were, have: has/had, do: does/did, go: goes/went)
-//   R13  hint csak R11 szerinti kártyán van
+//   R13  hint csak R11 szerinti kártyán van, vagy olyan kártyán, amelynek order-e a `confusable` halmazban van (összetéveszthető csoport: scripts/words-open-confusable.json, PLAN-fb1002d, FB459)
 //        splitAlternatives: a kérdést vesszőnél/pontosvesszőnél alternatívákra bontja; ha két kártya azonos alternatívát ad
 //        ("to try, to taste" és "to try, to attempt"), mindkettőn kötelező a hint (vagy összevonás). A régi kártyák (order <=
 //        legacyMaxOrder) egymás közti ütközéseit legfeljebb legacyWarnLimit darabig hibának, fölötte figyelmeztetésnek vesszük.
@@ -24,7 +24,7 @@ const IRREGULAR = {
 
 export function checkMultiMeaning({
   cards, qKey, aKey, hintKey, articles, ignore = [], tag, fail,
-  splitAlternatives = false, stripQualifiers = false, legacyMaxOrder = 0, legacyWarnLimit = 50, warn = () => {},
+  splitAlternatives = false, stripQualifiers = false, legacyMaxOrder = 0, legacyWarnLimit = 50, warn = () => {}, confusable = new Set(),
 }) {
   const norm = (q) => {
     const s = String(q ?? '').toLowerCase().replace(/[¿?¡!.]/g, '').replace(/\s+/g, ' ').trim();
@@ -77,7 +77,7 @@ export function checkMultiMeaning({
     if (count.get(k) >= 2 && !hasHintText(c)) {
       fail('R11', `${tag(c)}: "${k}" ${count.get(k)} kártyán szerepel, de nincs ${hintKey}`);
     }
-    if (hasHint && !multi) fail('R13', `${tag(c)}: ${hintKey} olyan kártyán, ahol a kérdés ("${k}") nem több jelentésű`);
+    if (hasHint && !multi && !confusable.has(c.order)) fail('R13', `${tag(c)}: ${hintKey} olyan kártyán, ahol a kérdés ("${k}") nem több jelentésű`);
 
     // R12
     if (hasHint) {
