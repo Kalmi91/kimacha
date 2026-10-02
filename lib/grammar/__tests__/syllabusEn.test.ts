@@ -18,7 +18,7 @@ import {
 } from '../syllabus';
 
 // The B1 and B2 lessons written so far, in syllabus order (B2 grows lesson by lesson).
-const B2_WRITTEN: string[] = ['past_perfect_continuous', 'future_continuous_perfect', 'ability_past', 'third_conditional', 'wish_if_only', 'conditional_connectors', 'passive_advanced'];
+const B2_WRITTEN: string[] = ['past_perfect_continuous', 'future_continuous_perfect', 'ability_past', 'third_conditional', 'wish_if_only', 'conditional_connectors', 'passive_advanced', 'causative_have'];
 const B1_WRITTEN: string[] = ['present_perfect_vs_past', 'present_perfect_continuous', 'past_continuous', 'past_perfect', 'used_to', 'will_vs_going_to', 'first_conditional', 'second_conditional', 'modals_obligation_advice', 'modals_deduction', 'passive_voice', 'defining_relative_clauses', 'reported_speech', 'gerund_vs_infinitive', 'question_tags'];
 
 describe('English grammar syllabus (lang = en)', () => {
