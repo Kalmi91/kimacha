@@ -1,0 +1,1351 @@
+{
+  "schema": 2,
+  "topic": "conditional_connectors",
+  "level": "B2",
+  "title": {
+    "hu": "Feltételes kötőszavak (unless / as long as / in case / otherwise)",
+    "en": "Conditional Connectors (unless / as long as / in case / otherwise)",
+    "es": "Conectores condicionales (unless / as long as / in case / otherwise)",
+    "de": "Konditionale Konnektoren (unless / as long as / in case / otherwise)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "Az if mellett több szó fejez ki feltételt. Unless = if … not („Unless you hurry, you will miss the train.”). As long as és provided (that) = csak akkor, ha („You can go as long as you finish.”). In case = arra az esetre, ha, megelőzésként („Take an umbrella in case it rains.”). Otherwise = különben („Hurry up. Otherwise, you will miss the train.”). Even if = akkor is, ha („I will go even if it rains.”). A spanyol megfelelők: a menos que, siempre que, por si, de lo contrario, aunque.",
+        "en": "Besides if, several words express a condition. Unless = if … not (“Unless you hurry, you will miss the train.”). As long as and provided (that) = only if (“You can go as long as you finish.”). In case = to be ready for something that might happen (“Take an umbrella in case it rains.”). Otherwise = if not (“Hurry up. Otherwise, you will miss the train.”). Even if = no matter if (“I will go even if it rains.”). The Spanish equivalents are a menos que, siempre que, por si, de lo contrario, aunque.",
+        "es": "Además de if, varias palabras expresan una condición. Unless = if … not («Unless you hurry, you will miss the train.»). As long as y provided (that) = solo si («You can go as long as you finish.»). In case = para estar listo ante algo que podría pasar («Take an umbrella in case it rains.»). Otherwise = si no («Hurry up. Otherwise, you will miss the train.»). Even if = sin importar si («I will go even if it rains.»). Los equivalentes en español son a menos que, siempre que, por si, de lo contrario, aunque.",
+        "de": "Neben if drücken mehrere Wörter eine Bedingung aus. Unless = if … not („Unless you hurry, you will miss the train.“). As long as und provided (that) = nur wenn („You can go as long as you finish.“). In case = für den Fall, dass etwas passieren könnte („Take an umbrella in case it rains.“). Otherwise = sonst („Hurry up. Otherwise, you will miss the train.“). Even if = selbst wenn („I will go even if it rains.“). Die spanischen Entsprechungen sind a menos que, siempre que, por si, de lo contrario, aunque."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "ccn-forms",
+      "title": {
+        "hu": "Melyik szó?",
+        "en": "Which word?",
+        "es": "¿Qué palabra uso?",
+        "de": "Welches Wort?"
+      },
+      "header": [
+        {
+          "hu": "Jelentés",
+          "en": "Meaning",
+          "es": "Significado",
+          "de": "Bedeutung"
+        },
+        {
+          "hu": "forma",
+          "en": "form",
+          "es": "forma",
+          "de": "Form"
+        }
+      ],
+      "rows": [
+        [
+          "a menos que",
+          "unless"
+        ],
+        [
+          "siempre que (condición)",
+          "as long as"
+        ],
+        [
+          "por si (acaso)",
+          "in case"
+        ],
+        [
+          "de lo contrario",
+          "otherwise"
+        ],
+        [
+          "aunque (incluso si)",
+          "even if"
+        ],
+        [
+          "la forma verbal tras unless para el futuro",
+          "present simple"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Unless = if … not",
+        "en": "Unless = if … not",
+        "es": "Unless = if … not",
+        "de": "Unless = if … not"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Az unless után az ige állító alakban áll, nem tagadóban: „Unless you hurry”, nem „Unless you don’t hurry”. A jövőt egyszerű jelen fejezi ki.",
+            "en": "After unless the verb is affirmative, not negative: “Unless you hurry”, not “Unless you don’t hurry”. The future is expressed by the simple present.",
+            "es": "Después de unless el verbo va en afirmativo, no en negativo: «Unless you hurry», no «Unless you don’t hurry». El futuro se expresa con el presente simple.",
+            "de": "Nach unless steht das Verb bejaht, nicht verneint: „Unless you hurry“, nicht „Unless you don’t hurry“. Die Zukunft wird durch das Present Simple ausgedrückt."
+          },
+          "examples": [
+            {
+              "es": "Unless you hurry, you will miss the train.",
+              "tr": {
+                "hu": "Ha nem sietsz, lekésed a vonatot.",
+                "en": "Unless you hurry, you will miss the train.",
+                "es": "A menos que te apures, perderás el tren.",
+                "de": "Wenn du dich nicht beeilst, verpasst du den Zug."
+              }
+            },
+            {
+              "es": "I won't go unless you come with me.",
+              "tr": {
+                "hu": "Nem megyek el, hacsak nem jössz velem.",
+                "en": "I won't go unless you come with me.",
+                "es": "No voy a ir a menos que vengas conmigo.",
+                "de": "Ich gehe nicht, außer du kommst mit."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "As long as, provided (that), providing (that)",
+        "en": "As long as, provided (that), providing (that)",
+        "es": "As long as, provided (that), providing (that)",
+        "de": "As long as, provided (that), providing (that)"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Csak akkor, ha teljesül a feltétel. A provided és providing formálisabb. Utánuk is egyszerű jelen áll.",
+            "en": "Only if the condition is met. Provided and providing are more formal. They are also followed by the simple present.",
+            "es": "Solo si se cumple la condición. Provided y providing son más formales. También van seguidos del presente simple.",
+            "de": "Nur wenn die Bedingung erfüllt ist. Provided und providing sind formeller. Auch nach ihnen steht das Present Simple."
+          },
+          "examples": [
+            {
+              "es": "You can borrow my car as long as you drive carefully.",
+              "tr": {
+                "hu": "Kölcsönveheted az autómat, ha óvatosan vezetsz.",
+                "en": "You can borrow my car as long as you drive carefully.",
+                "es": "Puedes pedir prestado mi carro siempre que manejes con cuidado.",
+                "de": "Du kannst mein Auto leihen, solange du vorsichtig fährst."
+              }
+            },
+            {
+              "es": "Provided that you pay on time, there is no problem.",
+              "tr": {
+                "hu": "Ha időben fizetsz, nincs probléma.",
+                "en": "Provided that you pay on time, there is no problem.",
+                "es": "Con tal de que pagues a tiempo, no hay problema.",
+                "de": "Vorausgesetzt, du zahlst pünktlich, gibt es kein Problem."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "In case: megelőzés, nem feltétel",
+        "en": "In case: prevention, not a condition",
+        "es": "In case: prevención, no condición",
+        "de": "In case: Vorsorge, keine Bedingung"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Az in case azt mondja meg, miért teszel valamit: mert megtörténhet. Az if azt mondja meg, mikor teszed. Utána egyszerű jelen (múltban past simple) áll.",
+            "en": "In case says why you do something: because it might happen. If says when you do it. It is followed by the simple present (the past simple in the past).",
+            "es": "In case dice por qué haces algo: porque podría pasar. If dice cuándo lo haces. Va seguido del presente simple (del pasado simple en el pasado).",
+            "de": "In case sagt, warum man etwas tut: weil es passieren könnte. If sagt, wann man es tut. Danach steht das Present Simple (in der Vergangenheit das Past Simple)."
+          },
+          "examples": [
+            {
+              "es": "Take an umbrella in case it rains.",
+              "tr": {
+                "hu": "Vigyél esernyőt arra az esetre, ha esne.",
+                "en": "Take an umbrella in case it rains.",
+                "es": "Lleva un paraguas por si llueve.",
+                "de": "Nimm einen Regenschirm mit, falls es regnet."
+              }
+            },
+            {
+              "es": "I took a sweater in case it got cold.",
+              "tr": {
+                "hu": "Vittem egy pulóvert arra az esetre, ha lehűl.",
+                "en": "I took a sweater in case it got cold.",
+                "es": "Llevé un suéter por si hacía frío.",
+                "de": "Ich habe einen Pullover mitgenommen, falls es kalt wird."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Otherwise, even if, whether or not",
+        "en": "Otherwise, even if, whether or not",
+        "es": "Otherwise, even if, whether or not",
+        "de": "Otherwise, even if, whether or not"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Az otherwise önálló mondat elején vagy közepén áll, és a következményt mondja meg: „Hurry up. Otherwise, you will miss the train.” Az even if azt jelenti, hogy a feltétel nem változtat a terven. A whether … or not: a feltétel mindegy.",
+            "en": "Otherwise stands at the start or middle of a separate sentence and gives the consequence: “Hurry up. Otherwise, you will miss the train.” Even if means the condition does not change the plan. Whether … or not: the condition does not matter.",
+            "es": "Otherwise va al inicio o en medio de una oración aparte y da la consecuencia: «Hurry up. Otherwise, you will miss the train.» Even if significa que la condición no cambia el plan. Whether … or not: la condición no importa.",
+            "de": "Otherwise steht am Anfang oder in der Mitte eines eigenen Satzes und nennt die Folge: „Hurry up. Otherwise, you will miss the train.“ Even if heißt, dass die Bedingung den Plan nicht ändert. Whether … or not: die Bedingung ist egal."
+          },
+          "examples": [
+            {
+              "es": "Hurry up. Otherwise, you will miss the train.",
+              "tr": {
+                "hu": "Siess. Különben lekésed a vonatot.",
+                "en": "Hurry up. Otherwise, you will miss the train.",
+                "es": "Apúrate. De lo contrario, perderás el tren.",
+                "de": "Beeil dich. Sonst verpasst du den Zug."
+              }
+            },
+            {
+              "es": "I will go even if it rains.",
+              "tr": {
+                "hu": "Akkor is megyek, ha esik.",
+                "en": "I will go even if it rains.",
+                "es": "Voy a ir aunque llueva.",
+                "de": "Ich gehe, auch wenn es regnet."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Ezek után nem áll will: nem „as long as you will pay”, hanem „as long as you pay”. A will csak a főmondatba kerül.",
+        "en": "After these words there is no will: not “as long as you will pay”, but “as long as you pay”. Will goes only in the main clause.",
+        "es": "Después de estas palabras no va will: no «as long as you will pay», sino «as long as you pay». Will va solo en la oración principal.",
+        "de": "Nach diesen Wörtern steht kein will: nicht „as long as you will pay“, sondern „as long as you pay“. Will steht nur im Hauptsatz."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A spanyol „por si” nem if, hanem in case: „Lleva un paraguas por si llueve” = „Take an umbrella in case it rains”. Az „if it rains, take an umbrella” azt jelenti, hogy csak esőben vigyél.",
+        "en": "The Spanish “por si” is not if but in case: “Lleva un paraguas por si llueve” = “Take an umbrella in case it rains”. “If it rains, take an umbrella” means take one only when it rains.",
+        "es": "El «por si» del español no es if sino in case: «Lleva un paraguas por si llueve» = «Take an umbrella in case it rains». «If it rains, take an umbrella» significa que lo lleves solo cuando llueva.",
+        "de": "Das spanische „por si“ ist nicht if, sondern in case: „Lleva un paraguas por si llueve“ = „Take an umbrella in case it rains“. „If it rains, take an umbrella“ heißt, dass man einen nur bei Regen mitnimmt."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "Az «if» mellett több szó fejez ki feltételt. «Unless» jelentése «if not», és utána az ige állító alakban áll: «Unless you hurry, you will miss the train». «As long as» és «provided that» jelentése: csak akkor, ha. «In case» megelőzést fejez ki: «Take an umbrella in case it rains». «Otherwise» jelentése: különben. «Even if» jelentése: akkor is, ha. Ezek után nem áll «will», hanem egyszerű jelen.",
+    "en": "Besides «if», several words express a condition. «Unless» means «if not», and the verb after it is affirmative: «Unless you hurry, you will miss the train». «As long as» and «provided that» mean only if. «In case» expresses prevention: «Take an umbrella in case it rains». «Otherwise» means if not. «Even if» means no matter if. After these words comes the simple present, not «will».",
+    "es": "Además de «if», varias palabras expresan una condición. «Unless» significa «if not», y el verbo después va en afirmativo: «Unless you hurry, you will miss the train». «As long as» y «provided that» significan solo si. «In case» expresa prevención: «Take an umbrella in case it rains». «Otherwise» significa si no. «Even if» significa sin importar si. Después de estas palabras va el presente simple, no «will».",
+    "de": "Neben «if» drücken mehrere Wörter eine Bedingung aus. «Unless» heißt «if not», und das Verb danach steht bejaht: «Unless you hurry, you will miss the train». «As long as» und «provided that» heißen nur wenn. «In case» drückt Vorsorge aus: «Take an umbrella in case it rains». «Otherwise» heißt sonst. «Even if» heißt selbst wenn. Nach diesen Wörtern steht das Present Simple, nicht «will»."
+  },
+  "glossary": [
+    {
+      "word": "borrow",
+      "gloss": {
+        "hu": "kölcsönvesz",
+        "en": "to borrow",
+        "es": "pedir prestado",
+        "de": "ausleihen"
+      }
+    },
+    {
+      "word": "bring",
+      "gloss": {
+        "hu": "hoz, visz",
+        "en": "to bring",
+        "es": "traer, llevar",
+        "de": "mitbringen"
+      }
+    },
+    {
+      "word": "careful",
+      "gloss": {
+        "hu": "óvatos",
+        "en": "careful",
+        "es": "cuidadoso",
+        "de": "vorsichtig"
+      }
+    },
+    {
+      "word": "carefully",
+      "gloss": {
+        "hu": "óvatosan",
+        "en": "in a careful way",
+        "es": "con cuidado",
+        "de": "vorsichtig"
+      }
+    },
+    {
+      "word": "case",
+      "gloss": {
+        "hu": "eset (in case)",
+        "en": "a situation (in case)",
+        "es": "caso (in case)",
+        "de": "Fall (in case)"
+      }
+    },
+    {
+      "word": "drive",
+      "gloss": {
+        "hu": "vezet (autót)",
+        "en": "to drive",
+        "es": "manejar",
+        "de": "fahren"
+      }
+    },
+    {
+      "word": "even",
+      "gloss": {
+        "hu": "még, akár",
+        "en": "even",
+        "es": "incluso",
+        "de": "sogar"
+      }
+    },
+    {
+      "word": "i'll",
+      "gloss": {
+        "hu": "én ...-ok majd (I will)",
+        "en": "I will",
+        "es": "yo voy a (I will)",
+        "de": "ich werde (I will)"
+      }
+    },
+    {
+      "word": "lend",
+      "gloss": {
+        "hu": "kölcsönad",
+        "en": "to lend",
+        "es": "prestar",
+        "de": "verleihen"
+      }
+    },
+    {
+      "word": "picnic",
+      "gloss": {
+        "hu": "piknik",
+        "en": "a meal outside",
+        "es": "día de campo, picnic",
+        "de": "Picknick"
+      }
+    },
+    {
+      "word": "provided",
+      "gloss": {
+        "hu": "feltéve, hogy (provided that)",
+        "en": "if, only if (provided that)",
+        "es": "con tal de que (provided that)",
+        "de": "vorausgesetzt (provided that)"
+      }
+    },
+    {
+      "word": "stay",
+      "gloss": {
+        "hu": "marad",
+        "en": "to stay",
+        "es": "quedarse",
+        "de": "bleiben"
+      }
+    },
+    {
+      "word": "stays",
+      "gloss": {
+        "hu": "marad (he/she/it)",
+        "en": "he/she/it stays",
+        "es": "se queda (he/she/it)",
+        "de": "bleibt (he/she/it)"
+      }
+    },
+    {
+      "word": "unless",
+      "gloss": {
+        "hu": "hacsak nem (if ... not)",
+        "en": "if ... not",
+        "es": "a menos que (if ... not)",
+        "de": "außer wenn (if ... not)"
+      }
+    },
+    {
+      "word": "whether",
+      "gloss": {
+        "hu": "akár ... akár (whether ... or not)",
+        "en": "whether ... or not",
+        "es": "sea que ... o no (whether ... or not)",
+        "de": "ob (whether ... or not)"
+      }
+    },
+    {
+      "word": "would",
+      "gloss": {
+        "hu": "lenne, volna (feltételes)",
+        "en": "conditional or past of will",
+        "es": "condicional o pasado de will",
+        "de": "würde (Konditional)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "ccn-01",
+      "sentence": "I will go to the party ___ it rains.",
+      "options": [
+        "otherwise",
+        "unless",
+        "if not"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az unless jelentése if … not: csak akkor nem megyek, ha esik.",
+        "en": "Unless means if … not: I go, except if it rains.",
+        "es": "Unless significa if … not: voy, salvo que llueva.",
+        "de": "Unless heißt if … not: ich gehe, außer es regnet."
+      },
+      "wrong": {
+        "otherwise": {
+          "hu": "Az otherwise nem köt össze két tagmondatot; önálló mondatban áll (…. Otherwise, …).",
+          "en": "Otherwise does not join two clauses; it stands in a separate sentence (…. Otherwise, …).",
+          "es": "Otherwise no une dos cláusulas; va en una oración aparte (…. Otherwise, …).",
+          "de": "Otherwise verbindet keine zwei Teilsätze; es steht in einem eigenen Satz (…. Otherwise, …)."
+        },
+        "if not": {
+          "hu": "Az if not it rains nem helyes; az if not helyett unless áll az igével állító alakban.",
+          "en": "“If not it rains” is not correct; in place of if not use unless with an affirmative verb.",
+          "es": "«If not it rains» no es correcto; en lugar de if not se usa unless con el verbo en afirmativo.",
+          "de": "„If not it rains“ ist nicht korrekt; statt if not steht unless mit bejahtem Verb."
+        }
+      },
+      "examples": [
+        "I will stay unless he calls.",
+        "We won't go unless it is sunny."
+      ]
+    },
+    {
+      "id": "ccn-02",
+      "sentence": "Take an umbrella ___ it rains.",
+      "options": [
+        "otherwise",
+        "if not",
+        "in case"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Megelőzés: arra az esetre, ha esik (por si llueve): in case.",
+        "en": "Prevention: for the case that it rains (por si llueve): in case.",
+        "es": "Prevención: para el caso de que llueva (por si llueve): in case.",
+        "de": "Vorsorge: für den Fall, dass es regnet (por si llueve): in case."
+      },
+      "wrong": {
+        "otherwise": {
+          "hu": "Az otherwise önálló mondatban áll, nem köt össze két tagmondatot.",
+          "en": "Otherwise stands in a separate sentence and does not join two clauses.",
+          "es": "Otherwise va en una oración aparte y no une dos cláusulas.",
+          "de": "Otherwise steht in einem eigenen Satz und verbindet keine zwei Teilsätze."
+        },
+        "if not": {
+          "hu": "Az if not it rains nem helyes mondat; megelőzéshez in case kell.",
+          "en": "“If not it rains” is not a correct sentence; prevention needs in case.",
+          "es": "«If not it rains» no es una oración correcta; la prevención necesita in case.",
+          "de": "„If not it rains“ ist kein korrekter Satz; Vorsorge braucht in case."
+        }
+      },
+      "examples": [
+        "Take a coat in case it is cold.",
+        "Bring water in case you are thirsty."
+      ]
+    },
+    {
+      "id": "ccn-03",
+      "sentence": "You can borrow my car ___ you drive carefully.",
+      "options": [
+        "as long as",
+        "otherwise",
+        "even"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Csak akkor, ha teljesül a feltétel: as long as.",
+        "en": "Only if the condition is met: as long as.",
+        "es": "Solo si se cumple la condición: as long as.",
+        "de": "Nur wenn die Bedingung erfüllt ist: as long as."
+      },
+      "wrong": {
+        "otherwise": {
+          "hu": "Az otherwise önálló mondatban áll, nem köt össze két tagmondatot.",
+          "en": "Otherwise stands in a separate sentence and does not join two clauses.",
+          "es": "Otherwise va en una oración aparte y no une dos cláusulas.",
+          "de": "Otherwise steht in einem eigenen Satz und verbindet keine zwei Teilsätze."
+        },
+        "even": {
+          "hu": "Az even önmagában nem köt össze tagmondatokat; even if vagy even though kell.",
+          "en": "Even alone does not join clauses; you need even if or even though.",
+          "es": "Even solo no une cláusulas; hace falta even if o even though.",
+          "de": "Even allein verbindet keine Teilsätze; man braucht even if oder even though."
+        }
+      },
+      "examples": [
+        "You can go as long as you ask.",
+        "I will help as long as you listen."
+      ]
+    },
+    {
+      "id": "ccn-04",
+      "sentence": "Hurry up. ___, you will miss the train.",
+      "options": [
+        "Unless",
+        "Otherwise",
+        "In case"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A következmény új mondatban: Otherwise, …",
+        "en": "The consequence in a new sentence: Otherwise, …",
+        "es": "La consecuencia en una oración nueva: Otherwise, …",
+        "de": "Die Folge in einem neuen Satz: Otherwise, …"
+      },
+      "wrong": {
+        "Unless": {
+          "hu": "Az unless után tagmondat kell (Unless you hurry,…), vessző után nem állhat.",
+          "en": "Unless needs a clause after it (Unless you hurry,…) and cannot stand before a comma alone.",
+          "es": "Unless necesita una cláusula después (Unless you hurry,…) y no puede ir solo antes de una coma.",
+          "de": "Unless braucht danach einen Teilsatz (Unless you hurry,…) und kann nicht allein vor einem Komma stehen."
+        },
+        "In case": {
+          "hu": "Az in case után tagmondat kell (In case you are late,…), vessző után nem állhat.",
+          "en": "In case needs a clause after it (In case you are late,…) and cannot stand before a comma alone.",
+          "es": "In case necesita una cláusula después (In case you are late,…) y no puede ir solo antes de una coma.",
+          "de": "In case braucht danach einen Teilsatz (In case you are late,…) und kann nicht allein vor einem Komma stehen."
+        }
+      },
+      "examples": [
+        "Study. Otherwise, you will fail.",
+        "Go now. Otherwise, you will be late."
+      ]
+    },
+    {
+      "id": "ccn-05",
+      "sentence": "___ you hurry, you will miss the train.",
+      "options": [
+        "Otherwise",
+        "Even",
+        "Unless"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Az unless jelentése if … not: ha nem sietsz.",
+        "en": "Unless means if … not: if you do not hurry.",
+        "es": "Unless significa if … not: si no te apuras.",
+        "de": "Unless heißt if … not: wenn du dich nicht beeilst."
+      },
+      "wrong": {
+        "Otherwise": {
+          "hu": "Az otherwise önálló mondat elején áll, tagmondat nem követi ilyen módon.",
+          "en": "Otherwise stands at the start of a separate sentence and is not followed by a clause like this.",
+          "es": "Otherwise va al inicio de una oración aparte y no va seguido de una cláusula así.",
+          "de": "Otherwise steht am Anfang eines eigenen Satzes und wird nicht so von einem Teilsatz gefolgt."
+        },
+        "Even": {
+          "hu": "Az Even önmagában nem kötőszó; even if kell.",
+          "en": "Even alone is not a connector; you need even if.",
+          "es": "Even solo no es un conector; hace falta even if.",
+          "de": "Even allein ist kein Konnektor; man braucht even if."
+        }
+      },
+      "examples": [
+        "Unless it rains, we will go.",
+        "Unless she calls, I will leave."
+      ]
+    },
+    {
+      "id": "ccn-06",
+      "sentence": "I will not call you ___ it is an emergency.",
+      "options": [
+        "unless",
+        "otherwise",
+        "even"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Csak vészhelyzetben hívom: unless it is an emergency.",
+        "en": "I call only in an emergency: unless it is an emergency.",
+        "es": "Llamo solo en una emergencia: unless it is an emergency.",
+        "de": "Ich rufe nur im Notfall an: unless it is an emergency."
+      },
+      "wrong": {
+        "otherwise": {
+          "hu": "Az otherwise önálló mondatban áll, nem köt össze két tagmondatot.",
+          "en": "Otherwise stands in a separate sentence and does not join two clauses.",
+          "es": "Otherwise va en una oración aparte y no une dos cláusulas.",
+          "de": "Otherwise steht in einem eigenen Satz und verbindet keine zwei Teilsätze."
+        },
+        "even": {
+          "hu": "Az even önmagában nem köt össze tagmondatokat; even if kell.",
+          "en": "Even alone does not join clauses; you need even if.",
+          "es": "Even solo no une cláusulas; hace falta even if.",
+          "de": "Even allein verbindet keine Teilsätze; man braucht even if."
+        }
+      },
+      "examples": [
+        "I won't tell unless you ask.",
+        "She won't come unless he calls."
+      ]
+    },
+    {
+      "id": "ccn-07",
+      "sentence": "We will have the picnic ___ it rains.",
+      "options": [
+        "otherwise",
+        "even if",
+        "as long"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A terv akkor is marad, ha esik: even if.",
+        "en": "The plan stays even if it rains: even if.",
+        "es": "El plan sigue aunque llueva: even if.",
+        "de": "Der Plan bleibt auch wenn es regnet: even if."
+      },
+      "wrong": {
+        "otherwise": {
+          "hu": "Az otherwise önálló mondatban áll, nem köt össze két tagmondatot.",
+          "en": "Otherwise stands in a separate sentence and does not join two clauses.",
+          "es": "Otherwise va en una oración aparte y no une dos cláusulas.",
+          "de": "Otherwise steht in einem eigenen Satz und verbindet keine zwei Teilsätze."
+        },
+        "as long": {
+          "hu": "Az as long nem teljes kötőszó; as long as kell.",
+          "en": "“As long” is not a full connector; you need as long as.",
+          "es": "«As long» no es un conector completo; hace falta as long as.",
+          "de": "„As long“ ist kein vollständiger Konnektor; man braucht as long as."
+        }
+      },
+      "examples": [
+        "I will go even if it is late.",
+        "She will come even if he is there."
+      ]
+    },
+    {
+      "id": "ccn-08",
+      "sentence": "I took a sweater ___ it got cold.",
+      "options": [
+        "otherwise",
+        "if not",
+        "in case"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Megelőzés múltban: in case + past simple.",
+        "en": "Prevention in the past: in case + past simple.",
+        "es": "Prevención en el pasado: in case + pasado simple.",
+        "de": "Vorsorge in der Vergangenheit: in case + Past Simple."
+      },
+      "wrong": {
+        "otherwise": {
+          "hu": "Az otherwise önálló mondatban áll, nem köt össze két tagmondatot.",
+          "en": "Otherwise stands in a separate sentence and does not join two clauses.",
+          "es": "Otherwise va en una oración aparte y no une dos cláusulas.",
+          "de": "Otherwise steht in einem eigenen Satz und verbindet keine zwei Teilsätze."
+        },
+        "if not": {
+          "hu": "Az if not it got cold nem helyes mondat; megelőzéshez in case kell.",
+          "en": "“If not it got cold” is not a correct sentence; prevention needs in case.",
+          "es": "«If not it got cold» no es una oración correcta; la prevención necesita in case.",
+          "de": "„If not it got cold“ ist kein korrekter Satz; Vorsorge braucht in case."
+        }
+      },
+      "examples": [
+        "She took a key in case nobody was home.",
+        "I brought food in case we were hungry."
+      ]
+    },
+    {
+      "id": "ccn-09",
+      "sentence": "Unless you ___ now, you will be late.",
+      "options": [
+        "leave",
+        "don't leave",
+        "will leave"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az unless után az ige állító alakban áll: Unless you leave.",
+        "en": "After unless the verb is affirmative: Unless you leave.",
+        "es": "Después de unless el verbo va en afirmativo: Unless you leave.",
+        "de": "Nach unless steht das Verb bejaht: Unless you leave."
+      },
+      "wrong": {
+        "don't leave": {
+          "hu": "Az unless már magában hordozza a tagadást (if … not); kettős tagadás hibás.",
+          "en": "Unless already contains the negation (if … not); a double negative is wrong.",
+          "es": "Unless ya contiene la negación (if … not); la doble negación es incorrecta.",
+          "de": "Unless enthält schon die Verneinung (if … not); eine doppelte Verneinung ist falsch."
+        },
+        "will leave": {
+          "hu": "Az unless után nem áll will; a jövőt egyszerű jelen fejezi ki.",
+          "en": "After unless there is no will; the future is expressed by the simple present.",
+          "es": "Después de unless no va will; el futuro se expresa con el presente simple.",
+          "de": "Nach unless steht kein will; die Zukunft wird durch das Present Simple ausgedrückt."
+        }
+      },
+      "examples": [
+        "Unless you stop, I will leave.",
+        "Unless he calls, we go."
+      ]
+    },
+    {
+      "id": "ccn-10",
+      "sentence": "I'll lend you money as long as you ___ it back.",
+      "options": [
+        "will pay",
+        "pay",
+        "would pay"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az as long as után egyszerű jelen áll: as long as you pay.",
+        "en": "After as long as comes the simple present: as long as you pay.",
+        "es": "Después de as long as va el presente simple: as long as you pay.",
+        "de": "Nach as long as steht das Present Simple: as long as you pay."
+      },
+      "wrong": {
+        "will pay": {
+          "hu": "Az as long as után nem áll will; a will a főmondatban van.",
+          "en": "After as long as there is no will; the will is in the main clause.",
+          "es": "Después de as long as no va will; el will está en la oración principal.",
+          "de": "Nach as long as steht kein will; das will steht im Hauptsatz."
+        },
+        "would pay": {
+          "hu": "A would pay feltételes alak; a jövőt itt egyszerű jelen fejezi ki.",
+          "en": "Would pay is a conditional form; here the future is expressed by the simple present.",
+          "es": "Would pay es una forma condicional; aquí el futuro se expresa con el presente simple.",
+          "de": "Would pay ist eine Konditionalform; hier wird die Zukunft durch das Present Simple ausgedrückt."
+        }
+      },
+      "examples": [
+        "I will help as long as you ask.",
+        "She stays as long as you stay."
+      ]
+    },
+    {
+      "id": "ccn-11",
+      "sentence": "Take your phone in case she ___.",
+      "options": [
+        "will call",
+        "would call",
+        "calls"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Az in case után egyszerű jelen áll: in case she calls.",
+        "en": "After in case comes the simple present: in case she calls.",
+        "es": "Después de in case va el presente simple: in case she calls.",
+        "de": "Nach in case steht das Present Simple: in case she calls."
+      },
+      "wrong": {
+        "will call": {
+          "hu": "Az in case után nem áll will; egyszerű jelen kell.",
+          "en": "After in case there is no will; you need the simple present.",
+          "es": "Después de in case no va will; hace falta el presente simple.",
+          "de": "Nach in case steht kein will; man braucht das Present Simple."
+        },
+        "would call": {
+          "hu": "A would call feltételes alak; az in case után jelen idejű mondatban egyszerű jelen áll.",
+          "en": "Would call is a conditional form; after in case in a present sentence the simple present is used.",
+          "es": "Would call es una forma condicional; después de in case en una oración de presente se usa el presente simple.",
+          "de": "Would call ist eine Konditionalform; nach in case in einem Präsenssatz steht das Present Simple."
+        }
+      },
+      "examples": [
+        "Take a key in case he comes.",
+        "Bring money in case we need it."
+      ]
+    },
+    {
+      "id": "ccn-12",
+      "sentence": "___ that you pay on time, there is no problem.",
+      "options": [
+        "Provided",
+        "Unless",
+        "Otherwise"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Formális feltétel: Provided that + egyszerű jelen.",
+        "en": "A formal condition: Provided that + simple present.",
+        "es": "Una condición formal: Provided that + presente simple.",
+        "de": "Eine formelle Bedingung: Provided that + Present Simple."
+      },
+      "wrong": {
+        "Unless": {
+          "hu": "Az unless that nem létezik; az unless után nem áll that.",
+          "en": "“Unless that” does not exist; unless is not followed by that.",
+          "es": "«Unless that» no existe; unless no va seguido de that.",
+          "de": "„Unless that“ gibt es nicht; nach unless steht kein that."
+        },
+        "Otherwise": {
+          "hu": "Az otherwise that nem létezik; a that a provided mellett állhat.",
+          "en": "“Otherwise that” does not exist; that goes with provided.",
+          "es": "«Otherwise that» no existe; that va con provided.",
+          "de": "„Otherwise that“ gibt es nicht; that gehört zu provided."
+        }
+      },
+      "examples": [
+        "Provided that you ask, we help.",
+        "Provided that it is cheap, I buy it."
+      ]
+    },
+    {
+      "id": "ccn-13",
+      "sentence": "You must wear a seat belt. ___, you may get a fine.",
+      "options": [
+        "Unless",
+        "Otherwise",
+        "As long as"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A következmény új mondatban: Otherwise, …",
+        "en": "The consequence in a new sentence: Otherwise, …",
+        "es": "La consecuencia en una oración nueva: Otherwise, …",
+        "de": "Die Folge in einem neuen Satz: Otherwise, …"
+      },
+      "wrong": {
+        "Unless": {
+          "hu": "Az unless után tagmondat kell, vessző után nem állhat egyedül.",
+          "en": "Unless needs a clause after it and cannot stand alone before a comma.",
+          "es": "Unless necesita una cláusula después y no puede ir solo antes de una coma.",
+          "de": "Unless braucht danach einen Teilsatz und kann nicht allein vor einem Komma stehen."
+        },
+        "As long as": {
+          "hu": "Az as long as után tagmondat kell, vessző után nem állhat egyedül.",
+          "en": "As long as needs a clause after it and cannot stand alone before a comma.",
+          "es": "As long as necesita una cláusula después y no puede ir solo antes de una coma.",
+          "de": "As long as braucht danach einen Teilsatz und kann nicht allein vor einem Komma stehen."
+        }
+      },
+      "examples": [
+        "Leave now. Otherwise, you will be late.",
+        "Pay. Otherwise, they will call."
+      ]
+    },
+    {
+      "id": "ccn-14",
+      "sentence": "I won't go ___ you come with me.",
+      "options": [
+        "otherwise",
+        "if not",
+        "unless"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Az unless jelentése if … not: csak akkor megyek, ha te is jössz.",
+        "en": "Unless means if … not: I go only if you come too.",
+        "es": "Unless significa if … not: voy solo si tú vienes también.",
+        "de": "Unless heißt if … not: ich gehe nur, wenn du mitkommst."
+      },
+      "wrong": {
+        "otherwise": {
+          "hu": "Az otherwise önálló mondatban áll, nem köt össze két tagmondatot.",
+          "en": "Otherwise stands in a separate sentence and does not join two clauses.",
+          "es": "Otherwise va en una oración aparte y no une dos cláusulas.",
+          "de": "Otherwise steht in einem eigenen Satz und verbindet keine zwei Teilsätze."
+        },
+        "if not": {
+          "hu": "Az if not you come nem helyes; az unless állító igével áll.",
+          "en": "“If not you come” is not correct; unless takes an affirmative verb.",
+          "es": "«If not you come» no es correcto; unless lleva el verbo en afirmativo.",
+          "de": "„If not you come“ ist nicht korrekt; unless nimmt ein bejahtes Verb."
+        }
+      },
+      "examples": [
+        "She won't stay unless he asks.",
+        "We won't eat unless you cook."
+      ]
+    },
+    {
+      "id": "ccn-15",
+      "sentence": "You can use my laptop as long as you ___ careful.",
+      "options": [
+        "are",
+        "will be",
+        "would be"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az as long as után egyszerű jelen áll: as long as you are.",
+        "en": "After as long as comes the simple present: as long as you are.",
+        "es": "Después de as long as va el presente simple: as long as you are.",
+        "de": "Nach as long as steht das Present Simple: as long as you are."
+      },
+      "wrong": {
+        "will be": {
+          "hu": "Az as long as után nem áll will.",
+          "en": "After as long as there is no will.",
+          "es": "Después de as long as no va will.",
+          "de": "Nach as long as steht kein will."
+        },
+        "would be": {
+          "hu": "A would be feltételes alak; itt egyszerű jelen kell.",
+          "en": "Would be is a conditional form; here you need the simple present.",
+          "es": "Would be es una forma condicional; aquí hace falta el presente simple.",
+          "de": "Would be ist eine Konditionalform; hier braucht man das Present Simple."
+        }
+      },
+      "examples": [
+        "You can stay as long as you are quiet.",
+        "I help as long as you are here."
+      ]
+    },
+    {
+      "id": "ccn-16",
+      "sentence": "We will cancel the trip unless the weather ___ better.",
+      "options": [
+        "will get",
+        "gets",
+        "got"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az unless után egyszerű jelen áll: unless the weather gets better.",
+        "en": "After unless comes the simple present: unless the weather gets better.",
+        "es": "Después de unless va el presente simple: unless the weather gets better.",
+        "de": "Nach unless steht das Present Simple: unless the weather gets better."
+      },
+      "wrong": {
+        "will get": {
+          "hu": "Az unless után nem áll will.",
+          "en": "After unless there is no will.",
+          "es": "Después de unless no va will.",
+          "de": "Nach unless steht kein will."
+        },
+        "got": {
+          "hu": "A got múlt idő; a will cancel jövőre vonatkozik, ezért egyszerű jelen kell.",
+          "en": "Got is past; will cancel is about the future, so you need the simple present.",
+          "es": "Got es pasado; will cancel trata del futuro, por eso hace falta el presente simple.",
+          "de": "Got ist Vergangenheit; will cancel betrifft die Zukunft, deshalb braucht man das Present Simple."
+        }
+      },
+      "examples": [
+        "We stay unless it rains.",
+        "I go unless she comes."
+      ]
+    },
+    {
+      "id": "ccn-17",
+      "sentence": "We are going to the beach ___ it rains or not.",
+      "options": [
+        "unless",
+        "otherwise",
+        "whether"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A feltétel mindegy: whether … or not.",
+        "en": "The condition does not matter: whether … or not.",
+        "es": "La condición no importa: whether … or not.",
+        "de": "Die Bedingung ist egal: whether … or not."
+      },
+      "wrong": {
+        "unless": {
+          "hu": "Az unless it rains or not nem helyes; az unless után nincs or not.",
+          "en": "“Unless it rains or not” is not correct; unless is not followed by or not.",
+          "es": "«Unless it rains or not» no es correcto; unless no va seguido de or not.",
+          "de": "„Unless it rains or not“ ist nicht korrekt; nach unless steht kein or not."
+        },
+        "otherwise": {
+          "hu": "Az otherwise önálló mondatban áll, nem köt össze két tagmondatot.",
+          "en": "Otherwise stands in a separate sentence and does not join two clauses.",
+          "es": "Otherwise va en una oración aparte y no une dos cláusulas.",
+          "de": "Otherwise steht in einem eigenen Satz und verbindet keine zwei Teilsätze."
+        }
+      },
+      "examples": [
+        "I will go whether you come or not.",
+        "She wins whether he plays or not."
+      ]
+    },
+    {
+      "id": "ccn-18",
+      "kind": "form",
+      "verb": "forma",
+      "person": "a menos que",
+      "answer": "unless",
+      "table": "ccn-forms"
+    },
+    {
+      "id": "ccn-19",
+      "kind": "form",
+      "verb": "forma",
+      "person": "siempre que (condición)",
+      "answer": "as long as",
+      "accept": [
+        "provided that",
+        "providing that",
+        "provided",
+        "providing"
+      ],
+      "table": "ccn-forms"
+    },
+    {
+      "id": "ccn-20",
+      "kind": "form",
+      "verb": "forma",
+      "person": "por si (acaso)",
+      "answer": "in case",
+      "table": "ccn-forms"
+    },
+    {
+      "id": "ccn-21",
+      "kind": "form",
+      "verb": "forma",
+      "person": "de lo contrario",
+      "answer": "otherwise",
+      "table": "ccn-forms"
+    },
+    {
+      "id": "ccn-22",
+      "kind": "form",
+      "verb": "forma",
+      "person": "aunque (incluso si)",
+      "answer": "even if",
+      "table": "ccn-forms"
+    },
+    {
+      "id": "ccn-23",
+      "kind": "form",
+      "verb": "forma",
+      "person": "la forma verbal tras unless para el futuro",
+      "answer": "present simple",
+      "accept": [
+        "simple present",
+        "the present simple"
+      ],
+      "table": "ccn-forms"
+    },
+    {
+      "kind": "why",
+      "id": "ccn-24",
+      "es": "Unless you hurry, you will miss the train.",
+      "target": "Unless",
+      "tr": {
+        "hu": "Ha nem sietsz, lekésed a vonatot.",
+        "en": "Unless you hurry, you will miss the train.",
+        "es": "A menos que te apures, perderás el tren.",
+        "de": "Wenn du dich nicht beeilst, verpasst du den Zug."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "mert sietsz",
+            "en": "because you hurry",
+            "es": "porque te apuras",
+            "de": "weil du dich beeilst"
+          },
+          "wrong": {
+            "hu": "Az unless nem okot ad meg, hanem feltételt: if you do not hurry.",
+            "en": "Unless does not give a reason but a condition: if you do not hurry.",
+            "es": "Unless no da una razón sino una condición: if you do not hurry.",
+            "de": "Unless nennt keinen Grund, sondern eine Bedingung: if you do not hurry."
+          }
+        },
+        {
+          "text": {
+            "hu": "if you do not hurry: tagadó feltétel",
+            "en": "if you do not hurry: a negative condition",
+            "es": "if you do not hurry: una condición negativa",
+            "de": "if you do not hurry: eine negative Bedingung"
+          }
+        },
+        {
+          "text": {
+            "hu": "arra az esetre, ha sietsz",
+            "en": "in case you hurry",
+            "es": "por si te apuras",
+            "de": "für den Fall, dass du dich beeilst"
+          },
+          "wrong": {
+            "hu": "Az in case megelőzést fejez ki; az unless jelentése if … not.",
+            "en": "In case expresses prevention; unless means if … not.",
+            "es": "In case expresa prevención; unless significa if … not.",
+            "de": "In case drückt Vorsorge aus; unless heißt if … not."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ccn-25",
+      "es": "Take an umbrella in case it rains.",
+      "target": "in case",
+      "tr": {
+        "hu": "Vigyél esernyőt arra az esetre, ha esik.",
+        "en": "Take an umbrella in case it rains.",
+        "es": "Lleva un paraguas por si llueve.",
+        "de": "Nimm einen Regenschirm mit, falls es regnet."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "csak akkor viszed, ha esik",
+            "en": "you take it only if it rains",
+            "es": "lo llevas solo si llueve",
+            "de": "man nimmt ihn nur mit, wenn es regnet"
+          },
+          "wrong": {
+            "hu": "Ez az if jelentése; az in case azt mondja, hogy előre viszed, mert eshet.",
+            "en": "That is the meaning of if; in case says you take it beforehand because it might rain.",
+            "es": "Ese es el sentido de if; in case dice que lo llevas de antemano porque podría llover.",
+            "de": "Das ist die Bedeutung von if; in case sagt, dass man ihn vorher mitnimmt, weil es regnen könnte."
+          }
+        },
+        {
+          "text": {
+            "hu": "megelőzés: viszed, mert eshet",
+            "en": "prevention: you take it because it might rain",
+            "es": "prevención: lo llevas porque podría llover",
+            "de": "Vorsorge: man nimmt ihn mit, weil es regnen könnte"
+          }
+        },
+        {
+          "text": {
+            "hu": "ellentét: bár esik",
+            "en": "contrast: although it rains",
+            "es": "contraste: aunque llueve",
+            "de": "Gegensatz: obwohl es regnet"
+          },
+          "wrong": {
+            "hu": "Az ellentétet az even though fejezi ki; az in case megelőzés.",
+            "en": "Contrast is expressed by even though; in case is prevention.",
+            "es": "El contraste lo expresa even though; in case es prevención.",
+            "de": "Den Gegensatz drückt even though aus; in case ist Vorsorge."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ccn-26",
+      "es": "You can go as long as you finish your homework.",
+      "target": "as long as",
+      "tr": {
+        "hu": "Elmehetsz, ha befejezed a leckét.",
+        "en": "You can go as long as you finish your homework.",
+        "es": "Puedes ir siempre que termines tu tarea.",
+        "de": "Du kannst gehen, solange du deine Hausaufgaben beendest."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "megelőzés",
+            "en": "prevention",
+            "es": "prevención",
+            "de": "Vorsorge"
+          },
+          "wrong": {
+            "hu": "A megelőzést az in case fejezi ki; az as long as feltételt ad.",
+            "en": "Prevention is expressed by in case; as long as gives a condition.",
+            "es": "La prevención la expresa in case; as long as da una condición.",
+            "de": "Vorsorge drückt in case aus; as long as nennt eine Bedingung."
+          }
+        },
+        {
+          "text": {
+            "hu": "csak akkor, ha teljesül a feltétel",
+            "en": "only if the condition is met",
+            "es": "solo si se cumple la condición",
+            "de": "nur wenn die Bedingung erfüllt ist"
+          }
+        },
+        {
+          "text": {
+            "hu": "ellentét",
+            "en": "contrast",
+            "es": "contraste",
+            "de": "Gegensatz"
+          },
+          "wrong": {
+            "hu": "Az ellentétet az although vagy even though fejezi ki; az as long as feltételt ad.",
+            "en": "Contrast is expressed by although or even though; as long as gives a condition.",
+            "es": "El contraste lo expresan although o even though; as long as da una condición.",
+            "de": "Den Gegensatz drücken although oder even though aus; as long as nennt eine Bedingung."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ccn-27",
+      "es": "Hurry up. Otherwise, you will miss the train.",
+      "target": "Otherwise",
+      "tr": {
+        "hu": "Siess. Különben lekésed a vonatot.",
+        "en": "Hurry up. Otherwise, you will miss the train.",
+        "es": "Apúrate. De lo contrario, perderás el tren.",
+        "de": "Beeil dich. Sonst verpasst du den Zug."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "hozzáadás: ráadásul",
+            "en": "addition: besides",
+            "es": "adición: además",
+            "de": "Ergänzung: außerdem"
+          },
+          "wrong": {
+            "hu": "A hozzáadást az in addition vagy besides fejezi ki; az otherwise a következményt adja.",
+            "en": "Addition is expressed by in addition or besides; otherwise gives the consequence.",
+            "es": "La adición la expresan in addition o besides; otherwise da la consecuencia.",
+            "de": "Die Ergänzung drücken in addition oder besides aus; otherwise nennt die Folge."
+          }
+        },
+        {
+          "text": {
+            "hu": "ok: mert",
+            "en": "reason: because",
+            "es": "razón: porque",
+            "de": "Grund: weil"
+          },
+          "wrong": {
+            "hu": "Az okot a because fejezi ki; az otherwise a következmény, ha nem teszed meg.",
+            "en": "Reason is expressed by because; otherwise is the consequence if you do not do it.",
+            "es": "La razón la expresa because; otherwise es la consecuencia si no lo haces.",
+            "de": "Den Grund drückt because aus; otherwise ist die Folge, wenn man es nicht tut."
+          }
+        },
+        {
+          "text": {
+            "hu": "a következmény, ha nem sietsz: if not",
+            "en": "the consequence if you do not hurry: if not",
+            "es": "la consecuencia si no te apuras: if not",
+            "de": "die Folge, wenn du dich nicht beeilst: if not"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "ccn-28",
+      "es": "I will go even if it rains.",
+      "target": "even if",
+      "tr": {
+        "hu": "Akkor is megyek, ha esik.",
+        "en": "I will go even if it rains.",
+        "es": "Voy a ir aunque llueva.",
+        "de": "Ich gehe, auch wenn es regnet."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "csak akkor megyek, ha esik",
+            "en": "I go only if it rains",
+            "es": "voy solo si llueve",
+            "de": "ich gehe nur, wenn es regnet"
+          },
+          "wrong": {
+            "hu": "Ez fordítva van: az even if azt mondja, hogy az eső nem változtat a terven.",
+            "en": "That is reversed: even if says the rain does not change the plan.",
+            "es": "Eso está al revés: even if dice que la lluvia no cambia el plan.",
+            "de": "Das ist umgekehrt: even if sagt, dass der Regen den Plan nicht ändert."
+          }
+        },
+        {
+          "text": {
+            "hu": "mert esik",
+            "en": "because it rains",
+            "es": "porque llueve",
+            "de": "weil es regnet"
+          },
+          "wrong": {
+            "hu": "Az even if nem okot ad meg, hanem azt, hogy a feltétel nem számít.",
+            "en": "Even if does not give a reason but says the condition does not matter.",
+            "es": "Even if no da una razón sino que dice que la condición no importa.",
+            "de": "Even if nennt keinen Grund, sondern sagt, dass die Bedingung nicht zählt."
+          }
+        },
+        {
+          "text": {
+            "hu": "az eső nem változtat a terven",
+            "en": "the rain does not change the plan",
+            "es": "la lluvia no cambia el plan",
+            "de": "der Regen ändert den Plan nicht"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "ccn-29",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "Voy a ir a menos que llueva.",
+          "en": "I'll go unless it rains."
+        },
+        {
+          "es": "Lleva un paraguas por si llueve.",
+          "en": "Take an umbrella in case it rains."
+        },
+        {
+          "es": "Puedes ir siempre que termines la tarea.",
+          "en": "You can go as long as you finish your homework."
+        },
+        {
+          "es": "Apúrate; de lo contrario, perderás el tren.",
+          "en": "Hurry up; otherwise, you will miss the train."
+        },
+        {
+          "es": "Voy a ir aunque llueva.",
+          "en": "I will go even if it rains."
+        },
+        {
+          "es": "Vamos a la playa llueva o no.",
+          "en": "We are going to the beach whether it rains or not."
+        }
+      ]
+    },
+    {
+      "id": "ccn-30",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "a menos que",
+          "en": "unless"
+        },
+        {
+          "es": "por si acaso",
+          "en": "in case"
+        },
+        {
+          "es": "siempre que",
+          "en": "as long as"
+        },
+        {
+          "es": "con tal de que",
+          "en": "provided that"
+        },
+        {
+          "es": "de lo contrario",
+          "en": "otherwise"
+        },
+        {
+          "es": "aunque (incluso si)",
+          "en": "even if"
+        }
+      ]
+    }
+  ]
+}
