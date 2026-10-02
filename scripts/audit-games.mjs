@@ -441,6 +441,16 @@ function checkLangs(obj, path) {
   }
 }
 
+// FB464: a kitöltött mondat összehasonlítható alakja (egy szóköz, nincs szóköz a záró írásjel előtt / a nyitó után);
+// ugyanez a szabály van a scripts/grammar-translate.py norm_space() függvényében.
+function normFilled(str) {
+  return String(str ?? '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/\s+([.,;:!?»”)])/g, '$1')
+    .replace(/([¿¡(«“])\s+/g, '$1');
+}
+
 function wordCount(str) {
   return normalize(str).split(/\s+/).filter(Boolean).length;
 }
@@ -971,6 +981,16 @@ function auditGrammarTopic(topic, filePath, lang = 'es') {
       checkLength(ex, topic.level, itemPath);
     }
     checkLength(item.sentence ?? '', topic.level, itemPath);
+
+    // FB464: a mondat fordítása (opcionális, scripts/grammar-translate.py írja): négy nyelven, és a tanult
+    // nyelvi oldal a kitöltött mondat maga (mint a why-tételnél tr.es === es).
+    if (item.tr !== undefined) {
+      checkLangs(item.tr, `${itemPath} tr`);
+      const filled = isMark ? item.sentence : (item.sentence ?? '').replace('___', item.options?.[item.correct] ?? '');
+      if (normFilled(filled) !== normFilled(item.tr?.[lang])) {
+        p1.push({ path: itemPath, issue: `tr.${lang} must equal the (filled) sentence` });
+      }
+    }
   }
 }
 

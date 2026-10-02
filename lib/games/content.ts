@@ -8,7 +8,7 @@
 
 import type { Level } from '@/data/words';
 import { getOpenWordsUpToLevel } from '@/data/openWords';
-import type { DictationItem, FormItem, LessonV2, MatchItem, OrderItem, SpotItem, TenseId, TransformItem, WhyItem } from '../grammar/lessonTypes';
+import type { DictationItem, FormItem, Lang4, LessonV2, MatchItem, OrderItem, SpotItem, TenseId, TransformItem, WhyItem } from '../grammar/lessonTypes';
 import { isVosotrosItem } from '../grammar/vosotros';
 
 // Cumulative corpus word ids up to and including `level` (A0..level), used by
@@ -91,6 +91,11 @@ interface GrammarItemBase {
   why: Record<string, string>; // one-sentence "why correct", per native lang
   wrong: GrammarWrongExplanation; // wrong[optionText][lang] = why that option is wrong here
   examples: string[]; // 2 target-language example sentences illustrating the same rule
+  /**
+   * FB464: a mondat fordítása négy nyelven (a tanult nyelvi oldal a kitöltött mondat maga); a drill az F-gombbal
+   * mutatja, mint az átírás-tételnél. Opcionális: scripts/grammar-translate.py tölti, ami még nincs, ott nincs gomb.
+   */
+  tr?: Lang4;
 }
 
 /** A klasszikus „melyik illik a lyukba" feladat. */

@@ -124,6 +124,51 @@ function BrutalInkButton({ g, testID, label, onPress }: { g: GrammarColors; test
   );
 }
 
+// FB464 (PLAN-fb1002b 12. lépés), Kálmán: „ide is tegyél egy mondat fordítást": a választós (gap / mark) tétel
+// mondatának fordítása ugyanúgy az F-gomb mögött van, mint az átírás-tételnél (transform-f). Csak akkor
+// rajzolódik ki, ha a tételnek van `tr`-je (scripts/grammar-translate.py tölti), különben nincs gomb.
+function ChoiceTranslation({
+  text,
+  show,
+  onToggle,
+  g,
+  colors,
+  label,
+}: {
+  text: string;
+  show: boolean;
+  onToggle: () => void;
+  g: GrammarColors;
+  colors: (typeof Colors)['light'];
+  label: string;
+}) {
+  return (
+    <View style={styles.choiceTrRow}>
+      {show ? (
+        <Text testID="choice-translation" style={[styles.transformTranslation, styles.choiceTrText, { color: g.brutal ? g.mu : colors.tabIconDefault }]}>
+          {text}
+        </Text>
+      ) : (
+        <View style={styles.choiceTrText} />
+      )}
+      {g.brutal ? (
+        <BrutalBox testID="choice-f" accessibilityLabel={label} fill={show ? 'b' : 'paper'} offset={2} boxStyle={styles.brutalF} onPress={onToggle}>
+          <Text style={[styles.fButtonText, { color: show ? g.onB : g.ink }]}>F</Text>
+        </BrutalBox>
+      ) : (
+        <Pressable
+          testID="choice-f"
+          accessibilityLabel={label}
+          onPress={onToggle}
+          style={[styles.fButton, { borderColor: colors.tint, backgroundColor: show ? colors.tint : 'transparent' }]}
+        >
+          <Text style={[styles.fButtonText, { color: show ? '#FFFFFF' : colors.tint }]}>F</Text>
+        </Pressable>
+      )}
+    </View>
+  );
+}
+
 function findFormTable(topic: GrammarTopicData, tableId: string): Extract<LessonBlock, { kind: 'table' }> | undefined {
   if (!isLessonV2(topic)) return undefined;
   return topic.body.find((b): b is Extract<LessonBlock, { kind: 'table' }> => b.kind === 'table' && b.id === tableId);
@@ -897,6 +942,8 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   const [selected, setSelected] = useState<number | null>(null);
   const [correctCount, setCorrectCount] = useState(resumeOk ? resume.correct : 0);
   const [showMore, setShowMore] = useState(false);
+  // FB464: a választós tétel mondat-fordítása (F-gomb) nyitva van-e; új tételnél újra zárt.
+  const [showTr, setShowTr] = useState(false);
   // NY22: egymás utáni helyes válaszok a körön belül, csak memóriában (nincs
   // DB-írás); hibánál nullázódik, "x2"-től látszik a combo-matrica.
   const [combo, setCombo] = useState(0);
@@ -936,6 +983,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
       setIndex((i) => i + 1);
       setSelected(null);
       setShowMore(false);
+      setShowTr(false);
       return;
     }
     // FB316 (NY10): a kör item-id-jei csak a körös adagolásnál kellenek (a
@@ -1109,6 +1157,8 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   // NY3: a jelvény csak a gap-ágon (choice) jelenik meg, a jelölős tételnek
   // nincs `tense` mezője (lessonTypes.ts).
   const badgeTense = !marking && !isMarkItem(current.item) ? current.item.tense : undefined;
+  // FB464: a mondat fordítása a felület nyelvén (ha a tételnek van `tr`-je).
+  const choiceTr = current.item.tr ? (current.item.tr[contentLang as 'hu' | 'en' | 'es' | 'de'] ?? current.item.tr.en) : undefined;
 
   // NY22 (neo-brutalista, NYELVTAN.md "Neo-brutalista stílus" 2. képernyő): a
   // mondat dobozban, a hiány b kitöltésű blokk, a válaszok 2x2 rácsban, a
@@ -1166,6 +1216,9 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             </Text>
           )}
         </BrutalBox>
+        {choiceTr ? (
+          <ChoiceTranslation text={choiceTr} show={showTr} onToggle={() => setShowTr((v) => !v)} g={g} colors={colors} label={s.grammar.showTranslation} />
+        ) : null}
 
         <View style={marking ? styles.hiddenOptions : styles.brutalOptions}>
           {(marking ? [] : current.options).map((opt, i) => {
@@ -1286,6 +1339,9 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
           </Text>
         </View>
       )}
+      {choiceTr ? (
+        <ChoiceTranslation text={choiceTr} show={showTr} onToggle={() => setShowTr((v) => !v)} g={g} colors={colors} label={s.grammar.showTranslation} />
+      ) : null}
 
       <View style={marking ? styles.hiddenOptions : styles.options}>
         {(marking ? [] : current.options).map((opt, i) => {
@@ -1442,6 +1498,8 @@ const styles = StyleSheet.create({
   fButton: { width: 44, height: 44, borderRadius: 12, borderWidth: 2, alignItems: 'center', justifyContent: 'center' },
   fButtonText: { fontSize: 20, fontWeight: '700' },
   transformTranslation: { fontSize: 15, fontStyle: 'italic' },
+  choiceTrRow: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+  choiceTrText: { flex: 1 },
   transformLabel: { fontSize: 14, fontWeight: '700' },
   transformInput: { borderWidth: 1.5, borderRadius: 12, paddingVertical: 12, paddingHorizontal: 14, fontSize: 17 },
   transformResultBox: { borderRadius: 14, borderWidth: 1, padding: 16, gap: 8 },
