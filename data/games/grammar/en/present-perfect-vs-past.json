@@ -1,0 +1,1301 @@
+{
+  "schema": 2,
+  "topic": "present_perfect_vs_past",
+  "level": "B1",
+  "title": {
+    "hu": "Befejezett jelen vagy egyszerű múlt? (I saw / I have seen)",
+    "en": "Present Perfect or Past Simple? (I saw / I have seen)",
+    "es": "¿Presente perfecto o pasado simple? (I saw / I have seen)",
+    "de": "Present Perfect oder Past Simple? (I saw / I have seen)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A mexikói spanyol sok helyen egyszerű múltat használ ott, ahol az angol present perfectet: „Ya comí”, „Hoy fui al banco”. Az angol két dolgot külön választ: ha van lezárt időpont (yesterday, last year, in 2015, two days ago), egyszerű múlt kell: „I saw him yesterday”. Ha nincs időpont, vagy az idő egészen mostanáig tart, és a dolognak köze van a jelenhez, present perfect kell: „I have seen that movie”, „I have lived here since 2020”.",
+        "en": "Mexican Spanish often uses the simple past where English uses the present perfect: “Ya comí”, “Hoy fui al banco”. English separates two things: when there is a finished time (yesterday, last year, in 2015, two days ago) you need the past simple: “I saw him yesterday”. When there is no time, or the time lasts up to now and the thing is connected to the present, you need the present perfect: “I have seen that movie”, “I have lived here since 2020”.",
+        "es": "El español de México usa muchas veces el pretérito donde el inglés usa el presente perfecto: «Ya comí», «Hoy fui al banco». El inglés separa dos cosas: si hay un momento terminado (yesterday, last year, in 2015, two days ago) hace falta el pasado simple: «I saw him yesterday». Si no hay un momento, o el tiempo llega hasta ahora y el hecho tiene relación con el presente, hace falta el presente perfecto: «I have seen that movie», «I have lived here since 2020».",
+        "de": "Das mexikanische Spanisch benutzt oft die einfache Vergangenheit, wo das Englische das Present Perfect benutzt: „Ya comí“, „Hoy fui al banco“. Das Englische trennt zwei Dinge: Gibt es einen abgeschlossenen Zeitpunkt (yesterday, last year, in 2015, two days ago), braucht man das Past Simple: „I saw him yesterday“. Gibt es keinen Zeitpunkt, oder reicht die Zeit bis jetzt und hat die Sache mit der Gegenwart zu tun, braucht man das Present Perfect: „I have seen that movie“, „I have lived here since 2020“."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "ppvp-forms",
+      "title": {
+        "hu": "Rendhagyó igék: past simple és past participle",
+        "en": "Irregular verbs: past simple and past participle",
+        "es": "Verbos irregulares: pasado simple y participio",
+        "de": "Unregelmäßige Verben: Past Simple und Partizip"
+      },
+      "header": [
+        {
+          "hu": "Ige",
+          "en": "Verb",
+          "es": "Verbo",
+          "de": "Verb"
+        },
+        {
+          "hu": "past simple",
+          "en": "past simple",
+          "es": "past simple",
+          "de": "past simple"
+        },
+        {
+          "hu": "past participle",
+          "en": "past participle",
+          "es": "past participle",
+          "de": "past participle"
+        }
+      ],
+      "rows": [
+        [
+          "begin",
+          "began",
+          "begun"
+        ],
+        [
+          "break",
+          "broke",
+          "broken"
+        ],
+        [
+          "choose",
+          "chose",
+          "chosen"
+        ],
+        [
+          "drive",
+          "drove",
+          "driven"
+        ],
+        [
+          "fly",
+          "flew",
+          "flown"
+        ],
+        [
+          "forget",
+          "forgot",
+          "forgotten"
+        ],
+        [
+          "give",
+          "gave",
+          "given"
+        ],
+        [
+          "know",
+          "knew",
+          "known"
+        ],
+        [
+          "speak",
+          "spoke",
+          "spoken"
+        ],
+        [
+          "swim",
+          "swam",
+          "swum"
+        ],
+        [
+          "wear",
+          "wore",
+          "worn"
+        ],
+        [
+          "win",
+          "won",
+          "won"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Egyszerű múlt: lezárt idő",
+        "en": "Past simple: a finished time",
+        "es": "Pasado simple: un tiempo terminado",
+        "de": "Past Simple: eine abgeschlossene Zeit"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Lezárt időpont: yesterday, last week, in 2015, two days ago, when I was ten. Az időpont ott van a mondatban vagy a beszélgetésben, ezért nem present perfect.",
+            "en": "A finished time: yesterday, last week, in 2015, two days ago, when I was ten. The time is in the sentence or in the conversation, so it is not the present perfect.",
+            "es": "Un momento terminado: yesterday, last week, in 2015, two days ago, when I was ten. El momento está en la oración o en la conversación, por eso no es presente perfecto.",
+            "de": "Ein abgeschlossener Zeitpunkt: yesterday, last week, in 2015, two days ago, when I was ten. Der Zeitpunkt steht im Satz oder im Gespräch, deshalb kein Present Perfect."
+          },
+          "examples": [
+            {
+              "es": "I saw him yesterday.",
+              "tr": {
+                "hu": "Tegnap láttam őt.",
+                "en": "I saw him yesterday.",
+                "es": "Lo vi ayer.",
+                "de": "Ich habe ihn gestern gesehen."
+              }
+            },
+            {
+              "es": "We went to Mexico last year.",
+              "tr": {
+                "hu": "Tavaly Mexikóban voltunk.",
+                "en": "We went to Mexico last year.",
+                "es": "Fuimos a México el año pasado.",
+                "de": "Wir waren letztes Jahr in Mexiko."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Kérdés egy lezárt pillanatról: When…? What time…? Where were you…? Ezekkel a kérdésekkel egyszerű múlt áll (did + alapige, vagy was / were), present perfect soha.",
+            "en": "A question about a finished moment: When…? What time…? Where were you…? These questions take the past simple (did + base verb, or was / were), never the present perfect.",
+            "es": "Pregunta sobre un momento terminado: When…? What time…? Where were you…? Estas preguntas llevan pasado simple (did + verbo base, o was / were), nunca presente perfecto.",
+            "de": "Eine Frage nach einem abgeschlossenen Moment: When…? What time…? Where were you…? Diese Fragen stehen im Past Simple (did + Grundform oder was / were), nie im Present Perfect."
+          },
+          "examples": [
+            {
+              "es": "When did you arrive?",
+              "tr": {
+                "hu": "Mikor érkeztél?",
+                "en": "When did you arrive?",
+                "es": "¿Cuándo llegaste?",
+                "de": "Wann bist du angekommen?"
+              }
+            },
+            {
+              "es": "What time did the movie start?",
+              "tr": {
+                "hu": "Hánykor kezdődött a film?",
+                "en": "What time did the movie start?",
+                "es": "¿A qué hora empezó la película?",
+                "de": "Um wie viel Uhr hat der Film angefangen?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Lezárult időszak: valami régen volt, és már nem tart. A hangsúly a múlton van, a jelennel nincs kapcsolat.",
+            "en": "A period that is over: something happened long ago and it does not continue. The focus is on the past, with no link to the present.",
+            "es": "Un periodo terminado: algo pasó hace tiempo y ya no continúa. El foco está en el pasado, sin relación con el presente.",
+            "de": "Ein abgeschlossener Zeitraum: Etwas war früher und dauert nicht mehr an. Der Schwerpunkt liegt auf der Vergangenheit, ohne Bezug zur Gegenwart."
+          },
+          "examples": [
+            {
+              "es": "My brother lived in Spain for two years.",
+              "tr": {
+                "hu": "A bátyám két évig Spanyolországban élt.",
+                "en": "My brother lived in Spain for two years.",
+                "es": "Mi hermano vivió dos años en España.",
+                "de": "Mein Bruder hat zwei Jahre in Spanien gelebt."
+              }
+            },
+            {
+              "es": "She worked there until last year.",
+              "tr": {
+                "hu": "Tavalyig ott dolgozott.",
+                "en": "She worked there until last year.",
+                "es": "Trabajó allí hasta el año pasado.",
+                "de": "Sie hat bis letztes Jahr dort gearbeitet."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Present perfect: kapcsolat a jelennel",
+        "en": "Present perfect: a link to now",
+        "es": "Presente perfecto: una conexión con ahora",
+        "de": "Present Perfect: eine Verbindung zur Gegenwart"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Tapasztalat, időpont nélkül: ever (kérdésben), never, before. Az érdekel, hogy megtörtént-e valaha, nem az, hogy mikor.",
+            "en": "Experience with no time: ever (in questions), never, before. What matters is whether it ever happened, not when.",
+            "es": "Experiencia sin decir cuándo: ever (en preguntas), never, before. Importa si pasó alguna vez, no cuándo.",
+            "de": "Erfahrung ohne Zeitangabe: ever (in Fragen), never, before. Wichtig ist, ob es je passiert ist, nicht wann."
+          },
+          "examples": [
+            {
+              "es": "Have you ever been to Oaxaca?",
+              "tr": {
+                "hu": "Jártál valaha Oaxacában?",
+                "en": "Have you ever been to Oaxaca?",
+                "es": "¿Has estado alguna vez en Oaxaca?",
+                "de": "Warst du schon einmal in Oaxaca?"
+              }
+            },
+            {
+              "es": "I have never been to Peru.",
+              "tr": {
+                "hu": "Soha nem jártam Peruban.",
+                "en": "I have never been to Peru.",
+                "es": "Nunca he estado en Perú.",
+                "de": "Ich war noch nie in Peru."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Mostanáig tartó idő: for + időtartam (for five years), since + kezdőpont (since 2020), How long…? Az időszak még nem zárult le.",
+            "en": "Time up to now: for + a duration (for five years), since + a starting point (since 2020), How long…? The period is not over yet.",
+            "es": "Tiempo hasta ahora: for + una duración (for five years), since + un punto de inicio (since 2020), How long…? El periodo todavía no termina.",
+            "de": "Zeit bis jetzt: for + Dauer (for five years), since + Anfangspunkt (since 2020), How long…? Der Zeitraum ist noch nicht vorbei."
+          },
+          "examples": [
+            {
+              "es": "I have lived here for five years.",
+              "tr": {
+                "hu": "Öt éve élek itt.",
+                "en": "I have lived here for five years.",
+                "es": "Vivo aquí desde hace cinco años.",
+                "de": "Ich wohne seit fünf Jahren hier."
+              }
+            },
+            {
+              "es": "How long have you studied English?",
+              "tr": {
+                "hu": "Mióta tanulsz angolul?",
+                "en": "How long have you studied English?",
+                "es": "¿Desde cuándo estudias inglés?",
+                "de": "Wie lange lernst du schon Englisch?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Friss hír vagy eredmény: just, already, yet, so far. A cselekvés most is számít. Az amerikai köznyelvben itt gyakran egyszerű múltat is hallani, de írásban és vizsgán present perfectet használj.",
+            "en": "Recent news or a result: just, already, yet, so far. The action still matters now. In casual American speech you also hear the past simple here, but in writing and on exams use the present perfect.",
+            "es": "Noticia reciente o resultado: just, already, yet, so far. La acción todavía importa ahora. En el habla informal de Estados Unidos aquí también se oye el pasado simple, pero por escrito y en exámenes usa el presente perfecto.",
+            "de": "Frische Nachricht oder Ergebnis: just, already, yet, so far. Die Handlung ist jetzt noch wichtig. In der amerikanischen Umgangssprache hört man hier auch das Past Simple, aber schriftlich und in Prüfungen nimm das Present Perfect."
+          },
+          "examples": [
+            {
+              "es": "I have just finished my homework.",
+              "tr": {
+                "hu": "Épp most fejeztem be a leckémet.",
+                "en": "I have just finished my homework.",
+                "es": "Acabo de terminar mi tarea.",
+                "de": "Ich habe gerade meine Hausaufgaben fertig gemacht."
+              }
+            },
+            {
+              "es": "Have you eaten yet?",
+              "tr": {
+                "hu": "Ettél már?",
+                "en": "Have you eaten yet?",
+                "es": "¿Ya comiste?",
+                "de": "Hast du schon gegessen?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Ne a spanyol mondat igeidejét fordítsd le. Kérdezd meg magadtól: van lezárt időpont (tegnap, tavaly, két napja)? Akkor egyszerű múlt. Nincs időpont, vagy az idő mostanáig tart? Akkor present perfect.",
+        "en": "Don’t translate the tense of your Spanish sentence. Ask yourself: is there a finished time (yesterday, last year, two days ago)? Then use the past simple. No time, or time that lasts up to now? Then use the present perfect.",
+        "es": "No traduzcas el tiempo de tu oración en español. Pregúntate: ¿hay un momento terminado (ayer, el año pasado, hace dos días)? Entonces pasado simple. ¿No hay momento, o el tiempo llega hasta ahora? Entonces presente perfecto.",
+        "de": "Übersetze nicht die Zeitform deines spanischen Satzes. Frag dich: Gibt es einen abgeschlossenen Zeitpunkt (gestern, letztes Jahr, vor zwei Tagen)? Dann Past Simple. Keinen Zeitpunkt, oder reicht die Zeit bis jetzt? Dann Present Perfect."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A „vivo aquí desde 2020” angolul nem „I live here since 2020”, hanem „I have lived here since 2020”. A for és a since előtt a mostanáig tartó időhöz present perfect kell.",
+        "en": "“Vivo aquí desde 2020” is not “I live here since 2020” in English, it is “I have lived here since 2020”. For time that lasts up to now, for and since go with the present perfect.",
+        "es": "«Vivo aquí desde 2020» no es «I live here since 2020» en inglés, sino «I have lived here since 2020». Para el tiempo que llega hasta ahora, for y since van con el presente perfecto.",
+        "de": "„Vivo aquí desde 2020“ heißt auf Englisch nicht „I live here since 2020“, sondern „I have lived here since 2020“. Für Zeit bis jetzt gehören for und since zum Present Perfect."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A When…? kérdés lezárt időpontra kérdez, ezért nincs mellette present perfect. Nem „When have you arrived?”, hanem „When did you arrive?”.",
+        "en": "A When…? question asks about a finished time, so it does not take the present perfect. Not “When have you arrived?” but “When did you arrive?”.",
+        "es": "Una pregunta con When…? pide un momento terminado, por eso no lleva presente perfecto. No «When have you arrived?», sino «When did you arrive?».",
+        "de": "Eine When…?-Frage fragt nach einem abgeschlossenen Zeitpunkt, deshalb steht dort kein Present Perfect. Nicht „When have you arrived?“, sondern „When did you arrive?“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Két különböző igenév: „She has gone to the market” (elment, és még ott van), „She has been to the market” (elment, és már visszajött). A have után soha nem a past simple alak áll: nem „I have went”, hanem „I have gone”.",
+        "en": "Two different participles: “She has gone to the market” (she went and is still there), “She has been to the market” (she went and came back). After have the past simple form never appears: not “I have went”, but “I have gone”.",
+        "es": "Dos participios distintos: «She has gone to the market» (se fue y sigue allí), «She has been to the market» (fue y ya volvió). Después de have nunca va la forma del pasado simple: no «I have went», sino «I have gone».",
+        "de": "Zwei verschiedene Partizipien: „She has gone to the market“ (sie ist hingegangen und noch dort), „She has been to the market“ (sie war dort und ist zurück). Nach have steht nie die Past-Simple-Form: nicht „I have went“, sondern „I have gone“."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "Ha van lezárt időpont, például «yesterday», «last week» vagy «two days ago», egyszerű múlt kell: «I saw him yesterday». Ha nincs időpont, vagy az idő egészen mostanáig tart, present perfect kell: «I have seen that movie», «I have lived here since May». A «for» mellé időtartam kerül, a «since» mellé kezdőpont. A «when» kérdés lezárt időpontra kérdez, ezért: «When did you arrive?». Vigyázat: nem «I have seen him yesterday», és nem «I live here since May». A «gone» és a «been» más: «She has gone to the market» azt jelenti, hogy még ott van.",
+    "en": "When there is a finished time, such as «yesterday», «last week» or «two days ago», you need the past simple: «I saw him yesterday». When there is no time, or the time lasts up to now, you need the present perfect: «I have seen that movie», «I have lived here since May». After «for» comes a duration, after «since» a starting point. A «when» question asks about a finished time, so: «When did you arrive?». Careful: not «I have seen him yesterday», and not «I live here since May». «Gone» and «been» are different: «She has gone to the market» means she is still there.",
+    "es": "Si hay un momento terminado, por ejemplo «yesterday», «last week» o «two days ago», hace falta el pasado simple: «I saw him yesterday». Si no hay un momento, o el tiempo llega hasta ahora, hace falta el presente perfecto: «I have seen that movie», «I have lived here since May». Con «for» va una duración y con «since» un punto de inicio. Una pregunta con «when» pide un momento terminado, entonces: «When did you arrive?». Cuidado: no «I have seen him yesterday», y no «I live here since May». «Gone» y «been» son distintos: «She has gone to the market» significa que sigue allí.",
+    "de": "Gibt es einen abgeschlossenen Zeitpunkt, zum Beispiel «yesterday», «last week» oder «two days ago», braucht man das Past Simple: «I saw him yesterday». Gibt es keinen Zeitpunkt, oder reicht die Zeit bis jetzt, braucht man das Present Perfect: «I have seen that movie», «I have lived here since May». Nach «for» steht eine Dauer, nach «since» ein Anfangspunkt. Eine «when»-Frage fragt nach einem abgeschlossenen Zeitpunkt, also: «When did you arrive?». Vorsicht: nicht «I have seen him yesterday» und nicht «I live here since May». «Gone» und «been» sind verschieden: «She has gone to the market» heißt, sie ist noch dort."
+  },
+  "glossary": [
+    {
+      "word": "ago",
+      "gloss": {
+        "hu": "ennyivel ezelőtt",
+        "en": "back in time",
+        "es": "hace",
+        "de": "vor (zeitlich)"
+      }
+    },
+    {
+      "word": "broke",
+      "gloss": {
+        "hu": "eltörte (a break múlt alakja)",
+        "en": "past form of break",
+        "es": "rompió (pasado de break)",
+        "de": "zerbrach (Past von break)"
+      }
+    },
+    {
+      "word": "gone",
+      "gloss": {
+        "hu": "elment (a go igenéve)",
+        "en": "participle of go",
+        "es": "ido (participio de go)",
+        "de": "gegangen, weg (Partizip von go)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "ppvp-01",
+      "sentence": "We ___ a good movie last night.",
+      "options": [
+        "have seen",
+        "saw",
+        "see"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A „last night” lezárt időpont, ezért egyszerű múlt kell: We saw a good movie last night.",
+        "en": "“Last night” is a finished time, so you need the past simple: We saw a good movie last night.",
+        "es": "«Last night» es un momento terminado, así que hace falta el pasado simple: We saw a good movie last night.",
+        "de": "„Last night“ ist ein abgeschlossener Zeitpunkt, deshalb braucht man das Past Simple: We saw a good movie last night."
+      },
+      "wrong": {
+        "have seen": {
+          "hu": "Lezárt időponttal („last night”) nem használunk present perfectet; egyszerű múlt kell (saw).",
+          "en": "You don’t use the present perfect with a finished time (“last night”); you need the past simple (saw).",
+          "es": "Con un momento terminado («last night») no se usa el presente perfecto; hace falta el pasado simple (saw).",
+          "de": "Mit einem abgeschlossenen Zeitpunkt („last night“) benutzt man kein Present Perfect; man braucht das Past Simple (saw)."
+        },
+        "see": {
+          "hu": "A „see” jelen idő, de a „last night” a múltra utal; egyszerű múlt kell: saw.",
+          "en": "“See” is present, but “last night” points to the past; you need the past simple: saw.",
+          "es": "«See» es presente, pero «last night» habla del pasado; hace falta el pasado simple: saw.",
+          "de": "„See“ ist Präsens, aber „last night“ verweist auf die Vergangenheit; man braucht das Past Simple: saw."
+        }
+      },
+      "examples": [
+        "I saw a good movie.",
+        "She saw her friend yesterday."
+      ]
+    },
+    {
+      "id": "ppvp-02",
+      "sentence": "My sister ___ in Guadalajara in 2015.",
+      "options": [
+        "has lived",
+        "lives",
+        "lived"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Az „in 2015” lezárt időpont, ezért egyszerű múlt kell: lived.",
+        "en": "“In 2015” is a finished time, so you need the past simple: lived.",
+        "es": "«In 2015» es un momento terminado, así que hace falta el pasado simple: lived.",
+        "de": "„In 2015“ ist ein abgeschlossener Zeitpunkt, deshalb braucht man das Past Simple: lived."
+      },
+      "wrong": {
+        "has lived": {
+          "hu": "A present perfect nem fér össze egy lezárt évszámmal („in 2015”); egyszerű múlt kell.",
+          "en": "The present perfect does not go with a finished year (“in 2015”); you need the past simple.",
+          "es": "El presente perfecto no va con un año terminado («in 2015»); hace falta el pasado simple.",
+          "de": "Das Present Perfect passt nicht zu einer abgeschlossenen Jahreszahl („in 2015“); man braucht das Past Simple."
+        },
+        "lives": {
+          "hu": "A „lives” jelen idő, de a 2015-ös évszám a múltra utal; egyszerű múlt kell: lived.",
+          "en": "“Lives” is present, but the year 2015 points to the past; you need the past simple: lived.",
+          "es": "«Lives» es presente, pero el año 2015 habla del pasado; hace falta el pasado simple: lived.",
+          "de": "„Lives“ ist Präsens, aber die Jahreszahl 2015 verweist auf die Vergangenheit; man braucht das Past Simple: lived."
+        }
+      },
+      "examples": [
+        "My uncle lived there in 2010.",
+        "She lived here last year."
+      ]
+    },
+    {
+      "id": "ppvp-03",
+      "sentence": "You live in Mexico now. When ___ you arrive here?",
+      "options": [
+        "did",
+        "do",
+        "have"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A When kérdés lezárt időpontra kérdez, ezért egyszerű múlt kell: did + alapige (When did you arrive?).",
+        "en": "A When question asks about a finished time, so you need the past simple: did + base verb (When did you arrive?).",
+        "es": "Una pregunta con When pide un momento terminado, así que hace falta el pasado simple: did + verbo base (When did you arrive?).",
+        "de": "Eine When-Frage fragt nach einem abgeschlossenen Zeitpunkt, deshalb braucht man das Past Simple: did + Grundform (When did you arrive?)."
+      },
+      "wrong": {
+        "do": {
+          "hu": "A „do” jelen idejű kérdést csinál, de az érkezés már megtörtént; a múlthoz did kell.",
+          "en": "“Do” makes a present question, but the arrival already happened; the past needs did.",
+          "es": "«Do» forma una pregunta en presente, pero la llegada ya pasó; para el pasado hace falta did.",
+          "de": "„Do“ bildet eine Frage im Präsens, aber die Ankunft ist schon passiert; für die Vergangenheit braucht man did."
+        },
+        "have": {
+          "hu": "A When kérdéssel nem használunk present perfectet (nem „When have you arrived?”); did kell.",
+          "en": "You don’t use the present perfect with a When question (not “When have you arrived?”); you need did.",
+          "es": "Con una pregunta con When no se usa el presente perfecto (no «When have you arrived?»); hace falta did.",
+          "de": "Mit einer When-Frage benutzt man kein Present Perfect (nicht „When have you arrived?“); man braucht did."
+        }
+      },
+      "examples": [
+        "When did you call her?",
+        "When did they leave?"
+      ]
+    },
+    {
+      "id": "ppvp-04",
+      "sentence": "She has studied English ___ three years.",
+      "options": [
+        "ago",
+        "for",
+        "since"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A három év időtartam, és a present perfect mellett az időtartam elé for kerül: for three years.",
+        "en": "Three years is a duration, and with the present perfect a duration takes for: for three years.",
+        "es": "Tres años es una duración, y con el presente perfecto una duración lleva for: for three years.",
+        "de": "Drei Jahre sind eine Dauer, und beim Present Perfect steht vor einer Dauer for: for three years."
+      },
+      "wrong": {
+        "ago": {
+          "hu": "Az „ago” egy múltbeli időpontot ad meg egyszerű múlttal (three years ago), nem időtartamot a has studied mellett.",
+          "en": "“Ago” gives a past point in time with the past simple (three years ago), not a duration after has studied.",
+          "es": "«Ago» da un punto en el pasado con el pasado simple (three years ago), no una duración después de has studied.",
+          "de": "„Ago“ nennt einen vergangenen Zeitpunkt mit dem Past Simple (three years ago), keine Dauer nach has studied."
+        },
+        "since": {
+          "hu": "A since kezdőpontot kér (since 2021), nem időtartamot; a „three years” időtartam, ezért for kell.",
+          "en": "Since needs a starting point (since 2021), not a duration; “three years” is a duration, so you need for.",
+          "es": "Since pide un punto de inicio (since 2021), no una duración; «three years» es una duración, por eso hace falta for.",
+          "de": "Since braucht einen Anfangspunkt (since 2021), keine Dauer; „three years“ ist eine Dauer, deshalb braucht man for."
+        }
+      },
+      "examples": [
+        "I have worked here for two years.",
+        "He has lived here for ten years."
+      ]
+    },
+    {
+      "id": "ppvp-05",
+      "sentence": "I haven't seen him ___ Monday.",
+      "options": [
+        "for",
+        "ago",
+        "since"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A „Monday” kezdőpont, ezért since kell: since Monday.",
+        "en": "“Monday” is a starting point, so you need since: since Monday.",
+        "es": "«Monday» es un punto de inicio, así que hace falta since: since Monday.",
+        "de": "„Monday“ ist ein Anfangspunkt, deshalb braucht man since: since Monday."
+      },
+      "wrong": {
+        "for": {
+          "hu": "A for időtartam elé kerül (for three days); a „Monday” nem időtartam, hanem kezdőpont.",
+          "en": "For goes before a duration (for three days); “Monday” is not a duration but a starting point.",
+          "es": "For va antes de una duración (for three days); «Monday» no es una duración sino un punto de inicio.",
+          "de": "For steht vor einer Dauer (for three days); „Monday“ ist keine Dauer, sondern ein Anfangspunkt."
+        },
+        "ago": {
+          "hu": "Az „ago” egy időtartam után áll (three days ago), és egyszerű múlttal jár; itt present perfect van.",
+          "en": "“Ago” follows a duration (three days ago) and goes with the past simple; here the verb is in the present perfect.",
+          "es": "«Ago» va después de una duración (three days ago) y con el pasado simple; aquí el verbo está en presente perfecto.",
+          "de": "„Ago“ steht nach einer Dauer (three days ago) und gehört zum Past Simple; hier steht das Verb im Present Perfect."
+        }
+      },
+      "examples": [
+        "She has lived here since May.",
+        "They have been here since last week."
+      ]
+    },
+    {
+      "id": "ppvp-06",
+      "sentence": "Have you finished the project ___?",
+      "options": [
+        "yet",
+        "yesterday",
+        "ago"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Kérdésben a „már” szó angolul yet: Have you finished the project yet?",
+        "en": "In a question, the word for “already” is yet: Have you finished the project yet?",
+        "es": "En una pregunta, la palabra para «ya» es yet: Have you finished the project yet?",
+        "de": "In einer Frage heißt „schon“ yet: Have you finished the project yet?"
+      },
+      "wrong": {
+        "yesterday": {
+          "hu": "A „yesterday” lezárt időpont, mellette egyszerű múlt kell (Did you finish…?), nem present perfect.",
+          "en": "“Yesterday” is a finished time and needs the past simple (Did you finish…?), not the present perfect.",
+          "es": "«Yesterday» es un momento terminado y pide el pasado simple (Did you finish…?), no el presente perfecto.",
+          "de": "„Yesterday“ ist ein abgeschlossener Zeitpunkt und braucht das Past Simple (Did you finish…?), kein Present Perfect."
+        },
+        "ago": {
+          "hu": "Az „ago” múltbeli időpontot ad meg egyszerű múlttal; a Have you finished… kérdés mellé nem illik.",
+          "en": "“Ago” gives a past point in time with the past simple; it does not fit a Have you finished… question.",
+          "es": "«Ago» da un punto en el pasado con el pasado simple; no encaja con una pregunta Have you finished….",
+          "de": "„Ago“ nennt einen vergangenen Zeitpunkt mit dem Past Simple; es passt nicht zu einer Have-you-finished-Frage."
+        }
+      },
+      "examples": [
+        "Have you eaten yet?",
+        "Has she called yet?"
+      ]
+    },
+    {
+      "id": "ppvp-07",
+      "sentence": "___ you ever been to Oaxaca?",
+      "options": [
+        "Did",
+        "Have",
+        "Were"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Időpont nélküli tapasztalat: Have you ever been…? (have + been, present perfect).",
+        "en": "An experience with no time: Have you ever been…? (have + been, the present perfect).",
+        "es": "Una experiencia sin decir cuándo: Have you ever been…? (have + been, presente perfecto).",
+        "de": "Eine Erfahrung ohne Zeitangabe: Have you ever been…? (have + been, Present Perfect)."
+      },
+      "wrong": {
+        "Did": {
+          "hu": "A did mellett alapige kell (Did you ever go…?), a „been” igenév, ezért a did nem illik hozzá.",
+          "en": "After did you need the base verb (Did you ever go…?); “been” is a participle, so did does not fit.",
+          "es": "Después de did hace falta el verbo base (Did you ever go…?); «been» es un participio, por eso did no encaja.",
+          "de": "Nach did braucht man die Grundform (Did you ever go…?); „been“ ist ein Partizip, deshalb passt did nicht."
+        },
+        "Were": {
+          "hu": "A „were been” nem létező alak; a „been” a have után áll: Have you ever been…?",
+          "en": "“Were been” is not a possible form; “been” comes after have: Have you ever been…?",
+          "es": "«Were been» no es una forma posible; «been» va después de have: Have you ever been…?",
+          "de": "„Were been“ ist keine mögliche Form; „been“ steht nach have: Have you ever been…?"
+        }
+      },
+      "examples": [
+        "Have you ever seen this movie?",
+        "Have you ever met him?"
+      ]
+    },
+    {
+      "id": "ppvp-08",
+      "sentence": "How long ___ you lived in Mexico?",
+      "options": [
+        "did",
+        "do",
+        "have"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A „mióta” kérdés az idő mostanáig tartó szakaszára kérdez: How long have you lived…? (present perfect).",
+        "en": "A “how long” question asks about a period that lasts up to now: How long have you lived…? (present perfect).",
+        "es": "Una pregunta «how long» pregunta por un periodo que llega hasta ahora: How long have you lived…? (presente perfecto).",
+        "de": "Eine How-long-Frage fragt nach einem Zeitraum bis jetzt: How long have you lived…? (Present Perfect)."
+      },
+      "wrong": {
+        "did": {
+          "hu": "A „lived” már igenév/múlt alak; a did mellé alapige kellene (How long did you live…?), de itt a mostanáig tartó idő present perfectet kér.",
+          "en": "“Lived” is already a past form; after did you would need the base verb (How long did you live…?), but time up to now asks for the present perfect.",
+          "es": "«Lived» ya es una forma de pasado; después de did haría falta el verbo base (How long did you live…?), pero el tiempo hasta ahora pide presente perfecto.",
+          "de": "„Lived“ ist schon eine Vergangenheitsform; nach did bräuchte man die Grundform (How long did you live…?), aber Zeit bis jetzt verlangt das Present Perfect."
+        },
+        "do": {
+          "hu": "A do után alapige kell, a „lived” viszont múlt alak; a mondat így nem helyes. A have lived a jó szerkezet.",
+          "en": "After do you need the base verb, but “lived” is a past form; the sentence would be wrong. Have lived is the right structure.",
+          "es": "Después de do hace falta el verbo base, pero «lived» es una forma de pasado; la oración sería incorrecta. Have lived es la estructura correcta.",
+          "de": "Nach do braucht man die Grundform, „lived“ ist aber eine Vergangenheitsform; der Satz wäre falsch. Have lived ist die richtige Struktur."
+        }
+      },
+      "examples": [
+        "How long have you worked here?",
+        "How long has she lived here?"
+      ]
+    },
+    {
+      "id": "ppvp-09",
+      "sentence": "He ___ his leg when he was ten.",
+      "options": [
+        "broke",
+        "has broken",
+        "breaks"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „when he was ten” lezárt időpont, ezért egyszerű múlt kell: broke.",
+        "en": "“When he was ten” is a finished time, so you need the past simple: broke.",
+        "es": "«When he was ten» es un momento terminado, así que hace falta el pasado simple: broke.",
+        "de": "„When he was ten“ ist ein abgeschlossener Zeitpunkt, deshalb braucht man das Past Simple: broke."
+      },
+      "wrong": {
+        "has broken": {
+          "hu": "A present perfect nem használható, ha a mondat megmondja, mikor történt („when he was ten”).",
+          "en": "The present perfect cannot be used when the sentence says when it happened (“when he was ten”).",
+          "es": "El presente perfecto no se puede usar cuando la oración dice cuándo pasó («when he was ten»).",
+          "de": "Das Present Perfect kann nicht stehen, wenn der Satz sagt, wann es passiert ist („when he was ten“)."
+        },
+        "breaks": {
+          "hu": "A „breaks” jelen idő; a törés régen történt, ezért egyszerű múlt kell: broke.",
+          "en": "“Breaks” is present; the break happened long ago, so you need the past simple: broke.",
+          "es": "«Breaks» es presente; la fractura pasó hace tiempo, así que hace falta el pasado simple: broke.",
+          "de": "„Breaks“ ist Präsens; der Bruch ist lange her, deshalb braucht man das Past Simple: broke."
+        }
+      },
+      "examples": [
+        "She broke her phone last week.",
+        "He broke a glass."
+      ]
+    },
+    {
+      "id": "ppvp-10",
+      "sentence": "Ana has ___ to the market. She will be back soon.",
+      "options": [
+        "been",
+        "gone",
+        "went"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Ana elment, és még nincs itt (mindjárt visszajön): has gone. A has been azt jelentené, hogy már visszajött.",
+        "en": "Ana went and is not back yet (she will be back soon): has gone. Has been would mean she already came back.",
+        "es": "Ana se fue y todavía no regresa (volverá pronto): has gone. Has been significaría que ya volvió.",
+        "de": "Ana ist hingegangen und noch nicht zurück (sie kommt bald wieder): has gone. Has been würde heißen, dass sie schon zurück ist."
+      },
+      "wrong": {
+        "been": {
+          "hu": "A has been azt jelenti, hogy odament és már visszajött; Ana viszont még nincs itt, ezért gone kell.",
+          "en": "Has been means she went and came back; Ana is still away, so you need gone.",
+          "es": "Has been significa que fue y ya volvió; Ana todavía no está aquí, por eso hace falta gone.",
+          "de": "Has been heißt, dass sie hingegangen und zurückgekommen ist; Ana ist aber noch weg, deshalb braucht man gone."
+        },
+        "went": {
+          "hu": "A has után az igenév áll, nem az egyszerű múlt alak (nem „has went”).",
+          "en": "After has comes the participle, not the past simple form (not “has went”).",
+          "es": "Después de has va el participio, no la forma del pasado simple (no «has went»).",
+          "de": "Nach has steht das Partizip, nicht die Past-Simple-Form (nicht „has went“)."
+        }
+      },
+      "examples": [
+        "He has gone to work.",
+        "They have gone home."
+      ]
+    },
+    {
+      "id": "ppvp-11",
+      "sentence": "Look at the window! Someone has ___ it.",
+      "options": [
+        "broke",
+        "break",
+        "broken"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A has után igenév kell: has broken.",
+        "en": "After has you need the participle: has broken.",
+        "es": "Después de has hace falta el participio: has broken.",
+        "de": "Nach has braucht man das Partizip: has broken."
+      },
+      "wrong": {
+        "broke": {
+          "hu": "A broke az egyszerű múlt alakja; a has/have után az igenév (broken) áll.",
+          "en": "“Broke” is the past simple form; after has/have comes the participle (broken).",
+          "es": "«Broke» es la forma del pasado simple; después de has/have va el participio (broken).",
+          "de": "„Broke“ ist die Past-Simple-Form; nach has/have steht das Partizip (broken)."
+        },
+        "break": {
+          "hu": "A „break” alapige; a has után az igenév kell (broken), nem az alapige.",
+          "en": "“Break” is the base verb; after has you need the participle (broken), not the base verb.",
+          "es": "«Break» es el verbo base; después de has hace falta el participio (broken), no el verbo base.",
+          "de": "„Break“ ist die Grundform; nach has braucht man das Partizip (broken), nicht die Grundform."
+        }
+      },
+      "examples": [
+        "Someone has opened the door.",
+        "She has worked all night."
+      ]
+    },
+    {
+      "id": "ppvp-12",
+      "sentence": "I have never ___ to Peru.",
+      "options": [
+        "been",
+        "went",
+        "go"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A have never után az igenév kell: I have never been to Peru.",
+        "en": "After have never you need the participle: I have never been to Peru.",
+        "es": "Después de have never hace falta el participio: I have never been to Peru.",
+        "de": "Nach have never braucht man das Partizip: I have never been to Peru."
+      },
+      "wrong": {
+        "went": {
+          "hu": "A went az egyszerű múlt; a have után az igenév (been) áll. Nem „I have never went”.",
+          "en": "“Went” is the past simple; after have comes the participle (been). Not “I have never went”.",
+          "es": "«Went» es el pasado simple; después de have va el participio (been). No «I have never went».",
+          "de": "„Went“ ist das Past Simple; nach have steht das Partizip (been). Nicht „I have never went“."
+        },
+        "go": {
+          "hu": "A „go” alapige; a have után igenév kell. A „been to” a „már voltam ott” jelentésű alak.",
+          "en": "“Go” is the base verb; after have you need a participle. “Been to” is the form that means “I have visited”.",
+          "es": "«Go» es el verbo base; después de have hace falta un participio. «Been to» es la forma que significa «he estado allí».",
+          "de": "„Go“ ist die Grundform; nach have braucht man ein Partizip. „Been to“ ist die Form für „ich war schon dort“."
+        }
+      },
+      "examples": [
+        "She has never been to Madrid.",
+        "We have never been here."
+      ]
+    },
+    {
+      "id": "ppvp-13",
+      "sentence": "Did you see Carlos at the party? Yes, I ___ him there.",
+      "options": [
+        "have seen",
+        "saw",
+        "see"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A kérdés egy lezárt eseményről szól (a buli), ezért a válasz is egyszerű múlt: I saw him there.",
+        "en": "The question is about a finished event (the party), so the answer is also the past simple: I saw him there.",
+        "es": "La pregunta es sobre un evento terminado (la fiesta), por eso la respuesta también va en pasado simple: I saw him there.",
+        "de": "Die Frage betrifft ein abgeschlossenes Ereignis (die Party), deshalb steht auch die Antwort im Past Simple: I saw him there."
+      },
+      "wrong": {
+        "have seen": {
+          "hu": "A kérdés egyszerű múltban van (Did you see…?), és a buli lezárt esemény; a válasz is egyszerű múlt.",
+          "en": "The question is in the past simple (Did you see…?) and the party is a finished event; the answer is also the past simple.",
+          "es": "La pregunta está en pasado simple (Did you see…?) y la fiesta es un evento terminado; la respuesta también va en pasado simple.",
+          "de": "Die Frage steht im Past Simple (Did you see…?) und die Party ist ein abgeschlossenes Ereignis; die Antwort steht ebenfalls im Past Simple."
+        },
+        "see": {
+          "hu": "A „see” jelen idő, de a buli már megtörtént; egyszerű múlt kell: saw.",
+          "en": "“See” is present, but the party already happened; you need the past simple: saw.",
+          "es": "«See» es presente, pero la fiesta ya pasó; hace falta el pasado simple: saw.",
+          "de": "„See“ ist Präsens, aber die Party ist schon vorbei; man braucht das Past Simple: saw."
+        }
+      },
+      "examples": [
+        "Yes, I saw her there.",
+        "Yes, I met him there."
+      ]
+    },
+    {
+      "id": "ppvp-14",
+      "sentence": "Ana ___ in Madrid for two years, but now she lives here.",
+      "options": [
+        "has lived",
+        "lives",
+        "lived"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A madridi évek lezárultak (most már itt él), ezért egyszerű múlt kell: lived.",
+        "en": "The years in Madrid are over (now she lives here), so you need the past simple: lived.",
+        "es": "Los años en Madrid terminaron (ahora vive aquí), así que hace falta el pasado simple: lived.",
+        "de": "Die Jahre in Madrid sind vorbei (jetzt lebt sie hier), deshalb braucht man das Past Simple: lived."
+      },
+      "wrong": {
+        "has lived": {
+          "hu": "A has lived azt jelentené, hogy még mindig ott él; a mondat második fele (now she lives here) ellentmond ennek.",
+          "en": "Has lived would mean she still lives there; the second half (now she lives here) says the opposite.",
+          "es": "Has lived significaría que todavía vive allí; la segunda parte (now she lives here) dice lo contrario.",
+          "de": "Has lived würde heißen, dass sie noch dort lebt; die zweite Satzhälfte (now she lives here) sagt das Gegenteil."
+        },
+        "lives": {
+          "hu": "A „lives” jelen idő, de a madridi évek már a múlthoz tartoznak; egyszerű múlt kell.",
+          "en": "“Lives” is present, but the years in Madrid belong to the past; you need the past simple.",
+          "es": "«Lives» es presente, pero los años en Madrid son del pasado; hace falta el pasado simple.",
+          "de": "„Lives“ ist Präsens, aber die Jahre in Madrid gehören zur Vergangenheit; man braucht das Past Simple."
+        }
+      },
+      "examples": [
+        "She worked there for a year.",
+        "They lived there for six months."
+      ]
+    },
+    {
+      "id": "ppvp-15",
+      "sentence": "Ana has lived in Puebla ___ she was a child.",
+      "options": [
+        "since",
+        "for",
+        "ago"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „she was a child” kezdőpont, nem időtartam, ezért since kell: since she was a child.",
+        "en": "“She was a child” is a starting point, not a duration, so you need since: since she was a child.",
+        "es": "«She was a child» es un punto de inicio, no una duración, así que hace falta since: since she was a child.",
+        "de": "„She was a child“ ist ein Anfangspunkt, keine Dauer, deshalb braucht man since: since she was a child."
+      },
+      "wrong": {
+        "for": {
+          "hu": "A for időtartamot kér (for ten years); a „she was a child” egy kezdőpontot ad meg.",
+          "en": "For needs a duration (for ten years); “she was a child” gives a starting point.",
+          "es": "For pide una duración (for ten years); «she was a child» da un punto de inicio.",
+          "de": "For verlangt eine Dauer (for ten years); „she was a child“ nennt einen Anfangspunkt."
+        },
+        "ago": {
+          "hu": "Az „ago” egy időtartam után áll és egyszerű múlttal jár (ten years ago); itt nem illik a mondatba.",
+          "en": "“Ago” follows a duration and goes with the past simple (ten years ago); it does not fit this sentence.",
+          "es": "«Ago» va después de una duración y con el pasado simple (ten years ago); no encaja en esta oración.",
+          "de": "„Ago“ steht nach einer Dauer und gehört zum Past Simple (ten years ago); es passt nicht in diesen Satz."
+        }
+      },
+      "examples": [
+        "We have been friends since school.",
+        "I have been here since May."
+      ]
+    },
+    {
+      "id": "ppvp-16",
+      "sentence": "This is the best food I have ever ___.",
+      "options": [
+        "ate",
+        "eaten",
+        "eat"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A have ever után igenév kell: I have ever eaten. A felsőfok + ever mindig present perfectet kér.",
+        "en": "After have ever you need the participle: I have ever eaten. A superlative with ever takes the present perfect.",
+        "es": "Después de have ever hace falta el participio: I have ever eaten. Un superlativo con ever lleva presente perfecto.",
+        "de": "Nach have ever braucht man das Partizip: I have ever eaten. Ein Superlativ mit ever verlangt das Present Perfect."
+      },
+      "wrong": {
+        "ate": {
+          "hu": "Az ate egyszerű múlt; a have ever után az igenév (eaten) áll.",
+          "en": "“Ate” is the past simple; after have ever comes the participle (eaten).",
+          "es": "«Ate» es el pasado simple; después de have ever va el participio (eaten).",
+          "de": "„Ate“ ist das Past Simple; nach have ever steht das Partizip (eaten)."
+        },
+        "eat": {
+          "hu": "Az „eat” alapige; a have után igenév kell (eaten).",
+          "en": "“Eat” is the base verb; after have you need the participle (eaten).",
+          "es": "«Eat» es el verbo base; después de have hace falta el participio (eaten).",
+          "de": "„Eat“ ist die Grundform; nach have braucht man das Partizip (eaten)."
+        }
+      },
+      "examples": [
+        "This is the best movie I have ever seen.",
+        "He is the best friend I have ever had."
+      ]
+    },
+    {
+      "id": "ppvp-17",
+      "sentence": "They moved to Puebla two years ___.",
+      "options": [
+        "since",
+        "for",
+        "ago"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Az időtartam + ago múltbeli időpontot ad meg egyszerű múlttal: two years ago.",
+        "en": "A duration + ago gives a past point in time with the past simple: two years ago.",
+        "es": "Una duración + ago da un punto en el pasado con el pasado simple: two years ago.",
+        "de": "Dauer + ago nennt einen vergangenen Zeitpunkt mit dem Past Simple: two years ago."
+      },
+      "wrong": {
+        "since": {
+          "hu": "A since kezdőpont elé kerül (since 2023), és present perfecttel jár; itt a „moved” egyszerű múlt.",
+          "en": "Since goes before a starting point (since 2023) and takes the present perfect; here “moved” is the past simple.",
+          "es": "Since va antes de un punto de inicio (since 2023) y lleva presente perfecto; aquí «moved» es pasado simple.",
+          "de": "Since steht vor einem Anfangspunkt (since 2023) und gehört zum Present Perfect; hier ist „moved“ das Past Simple."
+        },
+        "for": {
+          "hu": "A for az időtartam előtt áll, és present perfecttel jár (for two years). Itt az időtartam után van a hely, oda az ago illik.",
+          "en": "For goes before a duration and takes the present perfect (for two years). Here the blank comes after the duration, and that is where ago fits.",
+          "es": "For va antes de una duración y lleva presente perfecto (for two years). Aquí el hueco va después de la duración, y ahí encaja ago.",
+          "de": "For steht vor einer Dauer und gehört zum Present Perfect (for two years). Hier steht die Lücke nach der Dauer, und dort passt ago."
+        }
+      },
+      "examples": [
+        "She left three days ago.",
+        "We met a month ago."
+      ]
+    },
+    {
+      "id": "ppvp-18",
+      "sentence": "It's only Wednesday. I ___ four meetings this week so far.",
+      "options": [
+        "have had",
+        "had",
+        "was having"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „so far” azt jelzi, hogy a hét még tart, ezért present perfect kell: have had.",
+        "en": "“So far” shows that the week is still going, so you need the present perfect: have had.",
+        "es": "«So far» indica que la semana todavía sigue, así que hace falta el presente perfecto: have had.",
+        "de": "„So far“ zeigt, dass die Woche noch läuft, deshalb braucht man das Present Perfect: have had."
+      },
+      "wrong": {
+        "had": {
+          "hu": "Az egyszerű múlt lezárt időt jelez; a „so far” szerint a hét még nem ért véget, ezért present perfect kell.",
+          "en": "The past simple points to a finished time; “so far” says the week is not over, so you need the present perfect.",
+          "es": "El pasado simple apunta a un tiempo terminado; «so far» dice que la semana no ha terminado, por eso hace falta el presente perfecto.",
+          "de": "Das Past Simple verweist auf eine abgeschlossene Zeit; „so far“ sagt, dass die Woche nicht vorbei ist, deshalb braucht man das Present Perfect."
+        },
+        "was having": {
+          "hu": "A „was having” egy múltbeli folyamatot ír le; a „so far” a mostanáig összeszámolt eredményt kéri (have had).",
+          "en": "“Was having” describes a process in the past; “so far” asks for a total up to now (have had).",
+          "es": "«Was having» describe un proceso en el pasado; «so far» pide un total hasta ahora (have had).",
+          "de": "„Was having“ beschreibt einen Vorgang in der Vergangenheit; „so far“ verlangt eine Zwischenbilanz bis jetzt (have had)."
+        }
+      },
+      "examples": [
+        "I have read two books this month.",
+        "She has called me three times today."
+      ]
+    },
+    {
+      "id": "ppvp-19",
+      "kind": "form",
+      "verb": "past participle",
+      "person": "break",
+      "answer": "broken",
+      "table": "ppvp-forms"
+    },
+    {
+      "id": "ppvp-20",
+      "kind": "form",
+      "verb": "past simple",
+      "person": "fly",
+      "answer": "flew",
+      "table": "ppvp-forms"
+    },
+    {
+      "id": "ppvp-21",
+      "kind": "form",
+      "verb": "past participle",
+      "person": "know",
+      "answer": "known",
+      "table": "ppvp-forms"
+    },
+    {
+      "id": "ppvp-22",
+      "kind": "form",
+      "verb": "past simple",
+      "person": "drive",
+      "answer": "drove",
+      "table": "ppvp-forms"
+    },
+    {
+      "id": "ppvp-23",
+      "kind": "form",
+      "verb": "past participle",
+      "person": "swim",
+      "answer": "swum",
+      "table": "ppvp-forms"
+    },
+    {
+      "id": "ppvp-24",
+      "kind": "form",
+      "verb": "past simple",
+      "person": "speak",
+      "answer": "spoke",
+      "table": "ppvp-forms"
+    },
+    {
+      "kind": "why",
+      "id": "ppvp-25",
+      "es": "I have never eaten fish.",
+      "target": "have",
+      "tr": {
+        "hu": "Soha nem ettem halat.",
+        "en": "I have never eaten fish.",
+        "es": "Nunca he comido pescado.",
+        "de": "Ich habe noch nie Fisch gegessen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "egyszerű múlt: lezárt időponttal",
+            "en": "past simple: with a finished time",
+            "es": "pasado simple: con un tiempo terminado",
+            "de": "Past Simple: mit abgeschlossener Zeit"
+          },
+          "wrong": {
+            "hu": "A mondatban nincs lezárt időpont (yesterday, last year); a „never” az egész életre szóló tapasztalat, ezért present perfect.",
+            "en": "The sentence has no finished time (yesterday, last year); “never” is an experience of a whole life, so the present perfect is used.",
+            "es": "La oración no tiene un momento terminado (yesterday, last year); «never» es una experiencia de toda la vida, por eso se usa el presente perfecto.",
+            "de": "Der Satz hat keinen abgeschlossenen Zeitpunkt (yesterday, last year); „never“ ist eine Lebenserfahrung, deshalb steht das Present Perfect."
+          }
+        },
+        {
+          "text": {
+            "hu": "egyszerű jelen: szokás",
+            "en": "present simple: a habit",
+            "es": "presente simple: un hábito",
+            "de": "Present Simple: eine Gewohnheit"
+          },
+          "wrong": {
+            "hu": "Egy szokás így hangzana: „I never eat fish”. A „have eaten” igenéves alak, tehát nem egyszerű jelen.",
+            "en": "A habit would be “I never eat fish”. “Have eaten” uses a participle, so this is not the present simple.",
+            "es": "Un hábito sería «I never eat fish». «Have eaten» lleva participio, así que no es presente simple.",
+            "de": "Eine Gewohnheit wäre „I never eat fish“. „Have eaten“ hat ein Partizip, also ist das kein Present Simple."
+          }
+        },
+        {
+          "text": {
+            "hu": "present perfect: tapasztalat, időpont nélkül",
+            "en": "present perfect: an experience with no time given",
+            "es": "presente perfecto: una experiencia sin decir cuándo",
+            "de": "Present Perfect: eine Erfahrung ohne Zeitangabe"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "ppvp-26",
+      "es": "She moved to Mexico in 2019.",
+      "target": "moved",
+      "tr": {
+        "hu": "Ő 2019-ben költözött Mexikóba.",
+        "en": "She moved to Mexico in 2019.",
+        "es": "Ella se mudó a México en 2019.",
+        "de": "Sie ist 2019 nach Mexiko gezogen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "egyszerű múlt: lezárt időpont (in 2019)",
+            "en": "past simple: a finished time (in 2019)",
+            "es": "pasado simple: un tiempo terminado (en 2019)",
+            "de": "Past Simple: ein abgeschlossener Zeitpunkt (in 2019)"
+          }
+        },
+        {
+          "text": {
+            "hu": "present perfect: tapasztalat",
+            "en": "present perfect: an experience",
+            "es": "presente perfecto: una experiencia",
+            "de": "Present Perfect: eine Erfahrung"
+          },
+          "wrong": {
+            "hu": "Az „in 2019” megmondja, mikor történt, ezért nem present perfect, hanem egyszerű múlt.",
+            "en": "“In 2019” says when it happened, so it is not the present perfect but the past simple.",
+            "es": "«In 2019» dice cuándo pasó, por eso no es presente perfecto sino pasado simple.",
+            "de": "„In 2019“ sagt, wann es passiert ist, deshalb steht kein Present Perfect, sondern das Past Simple."
+          }
+        },
+        {
+          "text": {
+            "hu": "egyszerű jelen: mostani helyzet",
+            "en": "present simple: a situation now",
+            "es": "presente simple: una situación ahora",
+            "de": "Present Simple: eine Situation jetzt"
+          },
+          "wrong": {
+            "hu": "A „moved” múlt alak, és az „in 2019” múltra utal; ez nem a mostani helyzet leírása.",
+            "en": "“Moved” is a past form, and “in 2019” points to the past; this does not describe a situation now.",
+            "es": "«Moved» es una forma de pasado y «in 2019» habla del pasado; esto no describe una situación ahora.",
+            "de": "„Moved“ ist eine Vergangenheitsform und „in 2019“ verweist auf die Vergangenheit; das beschreibt keine Situation jetzt."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ppvp-27",
+      "es": "We have lived here for five years.",
+      "target": "for",
+      "tr": {
+        "hu": "Öt éve élünk itt.",
+        "en": "We have lived here for five years.",
+        "es": "Vivimos aquí desde hace cinco años.",
+        "de": "Wir wohnen seit fünf Jahren hier."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "egyszerű múlt: lezárult időszak",
+            "en": "past simple: a period that is over",
+            "es": "pasado simple: un periodo terminado",
+            "de": "Past Simple: ein abgeschlossener Zeitraum"
+          },
+          "wrong": {
+            "hu": "Az egyszerű múlt azt jelentené, hogy már nem laknak ott; a have lived és a for szerint az időszak most is tart.",
+            "en": "The past simple would mean they no longer live there; have lived and for show that the period still lasts.",
+            "es": "El pasado simple significaría que ya no viven allí; have lived y for muestran que el periodo todavía continúa.",
+            "de": "Das Past Simple würde heißen, dass sie nicht mehr dort wohnen; have lived und for zeigen, dass der Zeitraum noch andauert."
+          }
+        },
+        {
+          "text": {
+            "hu": "egyszerű jelen: mostani helyzet",
+            "en": "present simple: a situation now",
+            "es": "presente simple: una situación ahora",
+            "de": "Present Simple: eine Situation jetzt"
+          },
+          "wrong": {
+            "hu": "Spanyolul jelen idő áll („vivimos desde hace cinco años”), de angolul a for + időtartam mellé present perfect kell.",
+            "en": "Spanish uses the present (“vivimos desde hace cinco años”), but in English for + a duration needs the present perfect.",
+            "es": "El español usa el presente («vivimos desde hace cinco años»), pero en inglés for + una duración necesita presente perfecto.",
+            "de": "Das Spanische benutzt das Präsens („vivimos desde hace cinco años“), aber im Englischen braucht for + Dauer das Present Perfect."
+          }
+        },
+        {
+          "text": {
+            "hu": "present perfect: a mostanáig tartó idő",
+            "en": "present perfect: time up to now",
+            "es": "presente perfecto: el tiempo hasta ahora",
+            "de": "Present Perfect: die Zeit bis jetzt"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "ppvp-28",
+      "es": "When did you buy this car?",
+      "target": "did",
+      "tr": {
+        "hu": "Mikor vetted ezt az autót?",
+        "en": "When did you buy this car?",
+        "es": "¿Cuándo compraste este carro?",
+        "de": "Wann hast du dieses Auto gekauft?"
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "present perfect: have + igenév",
+            "en": "present perfect: have + participle",
+            "es": "presente perfecto: have + participio",
+            "de": "Present Perfect: have + Partizip"
+          },
+          "wrong": {
+            "hu": "A When kérdés lezárt időpontra kérdez, ezért nem „When have you bought…?”, hanem did + alapige.",
+            "en": "A When question asks about a finished time, so not “When have you bought…?” but did + base verb.",
+            "es": "Una pregunta con When pide un momento terminado, por eso no «When have you bought…?» sino did + verbo base.",
+            "de": "Eine When-Frage fragt nach einem abgeschlossenen Zeitpunkt, deshalb nicht „When have you bought…?“, sondern did + Grundform."
+          }
+        },
+        {
+          "text": {
+            "hu": "egyszerű múlt: a When lezárt időpontra kérdez",
+            "en": "past simple: When asks about a finished time",
+            "es": "pasado simple: When pide un momento terminado",
+            "de": "Past Simple: When fragt nach einem abgeschlossenen Zeitpunkt"
+          }
+        },
+        {
+          "text": {
+            "hu": "egyszerű jelen: szokás",
+            "en": "present simple: a habit",
+            "es": "presente simple: un hábito",
+            "de": "Present Simple: eine Gewohnheit"
+          },
+          "wrong": {
+            "hu": "A did a múlt idő segédigéje; a vásárlás egyszer történt, nem szokás.",
+            "en": "Did is the helper verb of the past tense; the purchase happened once, it is not a habit.",
+            "es": "Did es el verbo auxiliar del pasado; la compra pasó una vez, no es un hábito.",
+            "de": "Did ist das Hilfsverb der Vergangenheit; der Kauf ist einmal passiert, es ist keine Gewohnheit."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "ppvp-29",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "Viví en Monterrey en 2010.",
+          "en": "I lived in Monterrey in 2010."
+        },
+        {
+          "es": "Ya terminé el proyecto.",
+          "en": "I have already finished the project."
+        },
+        {
+          "es": "Nunca he comido mole.",
+          "en": "I have never eaten mole."
+        },
+        {
+          "es": "¿Cuándo llegaste?",
+          "en": "When did you arrive?"
+        },
+        {
+          "es": "Vivo aquí desde 2020.",
+          "en": "I have lived here since 2020."
+        },
+        {
+          "es": "Hace dos días llamé a mi mamá.",
+          "en": "I called my mom two days ago."
+        }
+      ]
+    },
+    {
+      "id": "ppvp-30",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "ayer",
+          "en": "yesterday"
+        },
+        {
+          "es": "hace tres años",
+          "en": "three years ago"
+        },
+        {
+          "es": "desde (un punto de inicio)",
+          "en": "since"
+        },
+        {
+          "es": "durante (una duración)",
+          "en": "for"
+        },
+        {
+          "es": "todavía / ya (en preguntas)",
+          "en": "yet"
+        },
+        {
+          "es": "alguna vez",
+          "en": "ever"
+        }
+      ]
+    }
+  ]
+}

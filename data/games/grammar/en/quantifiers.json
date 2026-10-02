@@ -1,0 +1,1417 @@
+{
+  "schema": 2,
+  "topic": "quantifiers",
+  "level": "B2",
+  "title": {
+    "hu": "Mennyiségjelzők (few / a few, little / a little, a number of)",
+    "en": "Quantifiers (few / a few, little / a little, a number of)",
+    "es": "Los cuantificadores (few / a few, little / a little, a number of)",
+    "de": "Mengenangaben (few / a few, little / a little, a number of)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A mennyiségjelző két dolgot dönt el: megszámlálható-e a főnév, és kedvező vagy kedvezőtlen-e a hangsúly. Megszámlálhatónál few (alig, kevés) és a few (néhány), megszámlálhatatlannál little (alig) és a little (egy kevés). A spanyol „pocos” és „unos pocos”, „poco” és „un poco” páros pontosan ezt a különbséget hordozza. Az enough, too much/many, a number of és the majority of hasonló pontosságot kér.",
+        "en": "A quantifier decides two things: whether the noun is countable, and whether the feeling is positive or negative. With countable nouns: few (almost none) and a few (some); with uncountable nouns: little (almost none) and a little (some). The Spanish pairs “pocos” and “unos pocos”, “poco” and “un poco” carry exactly this difference. Enough, too much/many, a number of and the majority of need similar care.",
+        "es": "Un cuantificador decide dos cosas: si el sustantivo es contable y si el sentimiento es positivo o negativo. Con contables: few (casi ninguno) y a few (algunos); con incontables: little (casi nada) y a little (algo). Los pares «pocos» y «unos pocos», «poco» y «un poco» del español llevan justo esta diferencia. Enough, too much/many, a number of y the majority of piden un cuidado parecido.",
+        "de": "Eine Mengenangabe entscheidet zwei Dinge: ob das Nomen zählbar ist und ob das Gefühl positiv oder negativ ist. Bei zählbaren Nomen: few (kaum welche) und a few (einige); bei unzählbaren: little (kaum etwas) und a little (etwas). Die spanischen Paare „pocos“ und „unos pocos“, „poco“ und „un poco“ tragen genau diesen Unterschied. Enough, too much/many, a number of und the majority of verlangen ähnliche Sorgfalt."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "qua-forms",
+      "title": {
+        "hu": "Melyik szó?",
+        "en": "Which word?",
+        "es": "¿Qué palabra uso?",
+        "de": "Welches Wort?"
+      },
+      "header": [
+        {
+          "hu": "Jelentés",
+          "en": "Meaning",
+          "es": "Significado",
+          "de": "Bedeutung"
+        },
+        {
+          "hu": "forma",
+          "en": "form",
+          "es": "forma",
+          "de": "Form"
+        }
+      ],
+      "rows": [
+        [
+          "poco, casi nada (incontable)",
+          "little"
+        ],
+        [
+          "un poco, algo (incontable)",
+          "a little"
+        ],
+        [
+          "pocos, casi ninguno (contable)",
+          "few"
+        ],
+        [
+          "unos pocos (contable)",
+          "a few"
+        ],
+        [
+          "suficiente",
+          "enough"
+        ],
+        [
+          "ninguno de los dos",
+          "neither"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Few / a few és little / a little",
+        "en": "Few / a few and little / a little",
+        "es": "Few / a few y little / a little",
+        "de": "Few / a few und little / a little"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A few és a little pozitív (van valami, elég), a few és a little nélkül negatív (alig van). Megszámlálható: few. Megszámlálhatatlan: little.",
+            "en": "A few and a little are positive (there is something, enough); few and little without a are negative (hardly any). Countable: few. Uncountable: little.",
+            "es": "A few y a little son positivos (hay algo, alcanza); few y little sin a son negativos (casi no hay). Contable: few. Incontable: little.",
+            "de": "A few und a little sind positiv (es gibt etwas, genug); few und little ohne a sind negativ (kaum etwas). Zählbar: few. Unzählbar: little."
+          },
+          "examples": [
+            {
+              "es": "I have few friends here, so I feel lonely.",
+              "tr": {
+                "hu": "Alig van barátom itt, ezért magányos vagyok.",
+                "en": "I have few friends here, so I feel lonely.",
+                "es": "Tengo pocos amigos aquí, por eso me siento solo.",
+                "de": "Ich habe hier kaum Freunde, deshalb fühle ich mich einsam."
+              }
+            },
+            {
+              "es": "She speaks a little English, so she can order food.",
+              "tr": {
+                "hu": "Egy kicsit beszél angolul, ezért tud ételt rendelni.",
+                "en": "She speaks a little English, so she can order food.",
+                "es": "Habla un poco de inglés, así que puede pedir comida.",
+                "de": "Sie spricht ein bisschen Englisch, deshalb kann sie Essen bestellen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Fewer / less és hardly any",
+        "en": "Fewer / less and hardly any",
+        "es": "Fewer / less y hardly any",
+        "de": "Fewer / less und hardly any"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Megszámlálható főnévvel fewer (kevesebb), megszámlálhatatlannal less: „fewer people”, „less traffic”. A hardly any azt jelenti, hogy majdnem semennyi: „hardly any milk”. Köznyelvben hallani a „less people”-t is, de a standard a fewer.",
+            "en": "Fewer goes with countable nouns, less with uncountable ones: “fewer people”, “less traffic”. Hardly any means almost none: “hardly any milk”. In casual speech you also hear “less people”, but the standard is fewer.",
+            "es": "Fewer va con sustantivos contables, less con incontables: «fewer people», «less traffic». Hardly any significa casi nada: «hardly any milk». En el habla informal también se oye «less people», pero el estándar es fewer.",
+            "de": "Fewer steht bei zählbaren Nomen, less bei unzählbaren: „fewer people“, „less traffic“. Hardly any heißt fast nichts: „hardly any milk“. Umgangssprachlich hört man auch „less people“, aber der Standard ist fewer."
+          },
+          "examples": [
+            {
+              "es": "There are fewer people here than yesterday.",
+              "tr": {
+                "hu": "Kevesebb ember van itt, mint tegnap.",
+                "en": "There are fewer people here than yesterday.",
+                "es": "Hay menos gente aquí que ayer.",
+                "de": "Hier sind weniger Leute als gestern."
+              }
+            },
+            {
+              "es": "There is hardly any milk left.",
+              "tr": {
+                "hu": "Alig maradt tej.",
+                "en": "There is hardly any milk left.",
+                "es": "Casi no queda leche.",
+                "de": "Es ist kaum noch Milch übrig."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Much, many, a lot of, too, enough",
+        "en": "Much, many, a lot of, too, enough",
+        "es": "Much, many, a lot of, too, enough",
+        "de": "Much, many, a lot of, too, enough"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Much megszámlálhatatlannál, many megszámlálhatónál; kérdésben és tagadásban használatosak, állításban inkább a lot of. A too túl sok: too much, too many. Az enough főnév előtt áll, melléknév után: old enough.",
+            "en": "Much with uncountable nouns, many with countable ones; they are used in questions and negatives, and in statements a lot of is more common. Too means more than needed: too much, too many. Enough goes before a noun and after an adjective: old enough.",
+            "es": "Much con incontables, many con contables; se usan en preguntas y negaciones, y en afirmativas es más común a lot of. Too significa más de lo necesario: too much, too many. Enough va antes de un sustantivo y después de un adjetivo: old enough.",
+            "de": "Much bei unzählbaren Nomen, many bei zählbaren; sie stehen in Fragen und Verneinungen, in Aussagen ist a lot of üblicher. Too heißt mehr als nötig: too much, too many. Enough steht vor einem Nomen und nach einem Adjektiv: old enough."
+          },
+          "examples": [
+            {
+              "es": "How much money do you have?",
+              "tr": {
+                "hu": "Mennyi pénzed van?",
+                "en": "How much money do you have?",
+                "es": "¿Cuánto dinero tienes?",
+                "de": "Wie viel Geld hast du?"
+              }
+            },
+            {
+              "es": "She is old enough to drive.",
+              "tr": {
+                "hu": "Elég idős ahhoz, hogy vezessen.",
+                "en": "She is old enough to drive.",
+                "es": "Ya tiene edad suficiente para manejar.",
+                "de": "Sie ist alt genug, um zu fahren."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Each, every, both, either, neither, none",
+        "en": "Each, every, both, either, neither, none",
+        "es": "Each, every, both, either, neither, none",
+        "de": "Each, every, both, either, neither, none"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Every + egyes számú főnév és ige: „Every student has a laptop.” Két dologról both, either (az egyik vagy másik), neither (egyik sem). Kettőnél több dolognál none of. Az each az egyedeket külön-külön veszi (each of the students), az every az egészet együtt.",
+            "en": "Every + a singular noun and verb: “Every student has a laptop.” For two things: both, either (one or the other), neither (not one). For more than two: none of. Each takes the members one by one (each of the students), every takes the whole together.",
+            "es": "Every + sustantivo y verbo en singular: «Every student has a laptop.» Para dos cosas: both, either (uno u otro), neither (ninguno). Para más de dos: none of. Each toma a los miembros uno por uno (each of the students), every toma el conjunto.",
+            "de": "Every + Nomen und Verb im Singular: „Every student has a laptop.“ Für zwei Dinge: both, either (das eine oder das andere), neither (keines). Für mehr als zwei: none of. Each nimmt die Mitglieder einzeln (each of the students), every nimmt das Ganze zusammen."
+          },
+          "examples": [
+            {
+              "es": "Every student has a laptop.",
+              "tr": {
+                "hu": "Minden diáknak van laptopja.",
+                "en": "Every student has a laptop.",
+                "es": "Cada estudiante tiene una laptop.",
+                "de": "Jeder Schüler hat einen Laptop."
+              }
+            },
+            {
+              "es": "Neither of the two books is cheap.",
+              "tr": {
+                "hu": "A két könyv közül egyik sem olcsó.",
+                "en": "Neither of the two books is cheap.",
+                "es": "Ninguno de los dos libros es barato.",
+                "de": "Keines der beiden Bücher ist billig."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "A number of, the number of, the majority of",
+        "en": "A number of, the number of, the majority of",
+        "es": "A number of, the number of, the majority of",
+        "de": "A number of, the number of, the majority of"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A number of = néhány, több: többes számú ige követi. The number of = a darabszám maga: egyes számú ige követi.",
+            "en": "A number of = several, many: a plural verb follows. The number of = the count itself: a singular verb follows.",
+            "es": "A number of = varios, muchos: lo sigue un verbo en plural. The number of = la cifra misma: lo sigue un verbo en singular.",
+            "de": "A number of = einige, mehrere: ein Verb im Plural folgt. The number of = die Zahl selbst: ein Verb im Singular folgt."
+          },
+          "examples": [
+            {
+              "es": "A number of students are absent today.",
+              "tr": {
+                "hu": "Több diák hiányzik ma.",
+                "en": "A number of students are absent today.",
+                "es": "Varios estudiantes faltaron hoy.",
+                "de": "Mehrere Schüler fehlen heute."
+              }
+            },
+            {
+              "es": "The number of students is growing every year.",
+              "tr": {
+                "hu": "A diákok száma évről évre nő.",
+                "en": "The number of students is growing every year.",
+                "es": "El número de estudiantes crece cada año.",
+                "de": "Die Zahl der Schüler wächst jedes Jahr."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A hivatalosabb mennyiségek: plenty of (bőven), a great deal of (megszámlálhatatlan), a great many (megszámlálható), the majority of (a többség).",
+            "en": "More formal quantities: plenty of (a lot), a great deal of (uncountable), a great many (countable), the majority of (most).",
+            "es": "Cantidades más formales: plenty of (mucho), a great deal of (incontable), a great many (contable), the majority of (la mayoría).",
+            "de": "Formellere Mengen: plenty of (reichlich), a great deal of (unzählbar), a great many (zählbar), the majority of (die Mehrheit)."
+          },
+          "examples": [
+            {
+              "es": "She has plenty of time to finish.",
+              "tr": {
+                "hu": "Bőven van ideje befejezni.",
+                "en": "She has plenty of time to finish.",
+                "es": "Tiene de sobra tiempo para terminar.",
+                "de": "Sie hat reichlich Zeit, um fertig zu werden."
+              }
+            },
+            {
+              "es": "He has a great deal of experience.",
+              "tr": {
+                "hu": "Nagyon sok tapasztalata van.",
+                "en": "He has a great deal of experience.",
+                "es": "Tiene muchísima experiencia.",
+                "de": "Er hat sehr viel Erfahrung."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Tagadó mondatban az any áll, nem a some: nem „I don't have some money”, hanem „I don't have any money”. Kérdésben is any: „Do you have any questions?”",
+        "en": "In a negative sentence any is used, not some: not “I don't have some money”, but “I don't have any money”. In a question too: “Do you have any questions?”",
+        "es": "En una oración negativa se usa any, no some: no «I don't have some money», sino «I don't have any money». En una pregunta también: «Do you have any questions?»",
+        "de": "In einem verneinten Satz steht any, nicht some: nicht „I don't have some money“, sondern „I don't have any money“. Auch in Fragen: „Do you have any questions?“"
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A spanyol „mucho” mindkét esetre áll, az angol különbséget tesz: much (megszámlálhatatlan) és many (megszámlálható). Ugyanígy a „poco”: little és few.",
+        "en": "The Spanish “mucho” serves both cases, English makes a difference: much (uncountable) and many (countable). The same for “poco”: little and few.",
+        "es": "El «mucho» del español sirve para ambos casos, el inglés distingue: much (incontable) y many (contable). Igual con «poco»: little y few.",
+        "de": "Das spanische „mucho“ gilt für beide Fälle, das Englische unterscheidet: much (unzählbar) und many (zählbar). Genauso bei „poco“: little und few."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A mennyiségjelző két dolgot dönt el: megszámlálható-e a főnév, és kedvező vagy kedvezőtlen-e a hangsúly. Megszámlálhatónál «few», azaz alig, és «a few», azaz néhány. Megszámlálhatatlannál «little», azaz alig, és «a little», azaz egy kevés. Az «enough» főnév előtt áll, melléknév után: «old enough». A «a number of» mellé többes számú ige jön: «A number of students are absent». A «the number of» mellé egyes számú ige jön: «The number of students is growing».",
+    "en": "A quantifier decides two things: whether the noun is countable, and whether the feeling is positive or negative. With countable nouns: «few», meaning almost none, and «a few», meaning some. With uncountable nouns: «little», meaning almost none, and «a little», meaning some. «Enough» goes before a noun and after an adjective: «old enough». «A number of» takes a plural verb: «A number of students are absent». «The number of» takes a singular verb: «The number of students is growing».",
+    "es": "Un cuantificador decide dos cosas: si el sustantivo es contable y si el sentimiento es positivo o negativo. Con contables: «few», casi ninguno, y «a few», algunos. Con incontables: «little», casi nada, y «a little», algo. «Enough» va antes de un sustantivo y después de un adjetivo: «old enough». «A number of» lleva un verbo en plural: «A number of students are absent». «The number of» lleva un verbo en singular: «The number of students is growing».",
+    "de": "Eine Mengenangabe entscheidet zwei Dinge: ob das Nomen zählbar ist und ob das Gefühl positiv oder negativ ist. Bei zählbaren Nomen: «few», also kaum welche, und «a few», also einige. Bei unzählbaren: «little», also kaum etwas, und «a little», also etwas. «Enough» steht vor einem Nomen und nach einem Adjektiv: «old enough». «A number of» nimmt ein Verb im Plural: «A number of students are absent». «The number of» nimmt ein Verb im Singular: «The number of students is growing»."
+  },
+  "glossary": [
+    {
+      "word": "absent",
+      "gloss": {
+        "hu": "hiányzik, távol van",
+        "en": "not present",
+        "es": "ausente",
+        "de": "abwesend"
+      }
+    },
+    {
+      "word": "concert",
+      "gloss": {
+        "hu": "koncert",
+        "en": "a music show",
+        "es": "concierto",
+        "de": "Konzert"
+      }
+    },
+    {
+      "word": "fans",
+      "gloss": {
+        "hu": "rajongók",
+        "en": "people who like something",
+        "es": "aficionados, fans",
+        "de": "Fans"
+      }
+    },
+    {
+      "word": "fewer",
+      "gloss": {
+        "hu": "kevesebb (megszámlálható)",
+        "en": "a smaller number of",
+        "es": "menos (contables)",
+        "de": "weniger (zählbar)"
+      }
+    },
+    {
+      "word": "lesser",
+      "gloss": {
+        "hu": "kisebb (kevésbé fontos)",
+        "en": "smaller in importance",
+        "es": "menor",
+        "de": "geringer"
+      }
+    },
+    {
+      "word": "littler",
+      "gloss": {
+        "hu": "kisebb (nem mennyiségjelző)",
+        "en": "more little (not a quantifier)",
+        "es": "más pequeño (no es cuantificador)",
+        "de": "kleiner (keine Mengenangabe)"
+      }
+    },
+    {
+      "word": "sold",
+      "gloss": {
+        "hu": "eladott (a sell múltja)",
+        "en": "past form of sell",
+        "es": "vendió (pasado de sell)",
+        "de": "verkaufte (Past von sell)"
+      }
+    },
+    {
+      "word": "any",
+      "gloss": {
+        "hu": "bármennyi, semennyi (tagadásban)",
+        "en": "some, in negatives and questions",
+        "es": "algún, ningún (en negativo y preguntas)",
+        "de": "irgendein, kein (verneint und Fragen)"
+      }
+    },
+    {
+      "word": "both",
+      "gloss": {
+        "hu": "mindkettő",
+        "en": "the two together",
+        "es": "ambos",
+        "de": "beide"
+      }
+    },
+    {
+      "word": "drive",
+      "gloss": {
+        "hu": "vezet (autót)",
+        "en": "to drive",
+        "es": "manejar",
+        "de": "fahren"
+      }
+    },
+    {
+      "word": "french",
+      "gloss": {
+        "hu": "francia (nyelv)",
+        "en": "the French language",
+        "es": "francés (idioma)",
+        "de": "Französisch"
+      }
+    },
+    {
+      "word": "great",
+      "gloss": {
+        "hu": "nagyszerű",
+        "en": "very good",
+        "es": "genial",
+        "de": "großartig"
+      }
+    },
+    {
+      "word": "growing",
+      "gloss": {
+        "hu": "nő (ige-ing alak)",
+        "en": "-ing form of grow",
+        "es": "creciendo (forma -ing de grow)",
+        "de": "wachsen (-ing-Form von grow)"
+      }
+    },
+    {
+      "word": "ideas",
+      "gloss": {
+        "hu": "ötletek",
+        "en": "thoughts, plans",
+        "es": "ideas",
+        "de": "Ideen"
+      }
+    },
+    {
+      "word": "neither",
+      "gloss": {
+        "hu": "egyik sem (a kettő közül)",
+        "en": "not one and not the other",
+        "es": "ninguno de los dos",
+        "de": "keines von beiden"
+      }
+    },
+    {
+      "word": "noise",
+      "gloss": {
+        "hu": "zaj",
+        "en": "loud sound",
+        "es": "ruido",
+        "de": "Lärm"
+      }
+    },
+    {
+      "word": "plenty",
+      "gloss": {
+        "hu": "bőven, rengeteg (plenty of)",
+        "en": "a lot (plenty of)",
+        "es": "de sobra, mucho (plenty of)",
+        "de": "reichlich (plenty of)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "qua-01",
+      "sentence": "There is ___ milk left in the fridge.",
+      "options": [
+        "few",
+        "little",
+        "many"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A tej megszámlálhatatlan, alig van: little.",
+        "en": "Milk is uncountable, and there is almost none: little.",
+        "es": "La leche es incontable, y casi no hay: little.",
+        "de": "Milch ist unzählbar, und es ist kaum welche da: little."
+      },
+      "wrong": {
+        "few": {
+          "hu": "A few megszámlálható főnévvel áll; a milk megszámlálhatatlan.",
+          "en": "Few goes with countable nouns; milk is uncountable.",
+          "es": "Few va con sustantivos contables; milk es incontable.",
+          "de": "Few steht bei zählbaren Nomen; milk ist unzählbar."
+        },
+        "many": {
+          "hu": "A many megszámlálható főnévvel áll; a milk megszámlálhatatlan.",
+          "en": "Many goes with countable nouns; milk is uncountable.",
+          "es": "Many va con sustantivos contables; milk es incontable.",
+          "de": "Many steht bei zählbaren Nomen; milk ist unzählbar."
+        }
+      },
+      "examples": [
+        "We have little time.",
+        "There is little water."
+      ]
+    },
+    {
+      "id": "qua-02",
+      "sentence": "I have ___ friends here, so I feel lonely.",
+      "options": [
+        "a lot of",
+        "plenty of",
+        "few"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Alig van barát, megszámlálható: few.",
+        "en": "Hardly any friends, countable: few.",
+        "es": "Casi no hay amigos, contable: few.",
+        "de": "Kaum Freunde, zählbar: few."
+      },
+      "wrong": {
+        "a lot of": {
+          "hu": "A lot of sok barátot jelentene, de a mondat magányról szól.",
+          "en": "A lot of would mean many friends, but the sentence is about loneliness.",
+          "es": "A lot of significaría muchos amigos, pero la oración trata de la soledad.",
+          "de": "A lot of würde viele Freunde bedeuten, aber der Satz handelt von Einsamkeit."
+        },
+        "plenty of": {
+          "hu": "Plenty of bőséget jelent, de a mondat magányról szól.",
+          "en": "Plenty of means a lot, but the sentence is about loneliness.",
+          "es": "Plenty of significa mucho, pero la oración trata de la soledad.",
+          "de": "Plenty of bedeutet reichlich, aber der Satz handelt von Einsamkeit."
+        }
+      },
+      "examples": [
+        "Few people came.",
+        "She has few books."
+      ]
+    },
+    {
+      "id": "qua-03",
+      "sentence": "She speaks ___ English, so she can order food.",
+      "options": [
+        "a little",
+        "few",
+        "many"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Kevés, de elég, megszámlálhatatlan: a little.",
+        "en": "A little but enough, uncountable: a little.",
+        "es": "Poco pero suficiente, incontable: a little.",
+        "de": "Wenig, aber genug, unzählbar: a little."
+      },
+      "wrong": {
+        "few": {
+          "hu": "A few megszámlálható főnévvel áll; az English megszámlálhatatlan.",
+          "en": "Few goes with countable nouns; English is uncountable.",
+          "es": "Few va con sustantivos contables; English es incontable.",
+          "de": "Few steht bei zählbaren Nomen; English ist unzählbar."
+        },
+        "many": {
+          "hu": "A many megszámlálható főnévvel áll; az English megszámlálhatatlan.",
+          "en": "Many goes with countable nouns; English is uncountable.",
+          "es": "Many va con sustantivos contables; English es incontable.",
+          "de": "Many steht bei zählbaren Nomen; English ist unzählbar."
+        }
+      },
+      "examples": [
+        "He knows a little French.",
+        "I need a little help."
+      ]
+    },
+    {
+      "id": "qua-04",
+      "sentence": "Only ___ students passed the exam, so the teacher was upset.",
+      "options": [
+        "a little",
+        "a few",
+        "much"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Megszámlálható főnév, kevesen: a few.",
+        "en": "A countable noun, only some: a few.",
+        "es": "Un sustantivo contable, solo algunos: a few.",
+        "de": "Ein zählbares Nomen, nur einige: a few."
+      },
+      "wrong": {
+        "a little": {
+          "hu": "Az a little megszámlálhatatlan főnévvel áll; a students megszámlálható.",
+          "en": "A little goes with uncountable nouns; students is countable.",
+          "es": "A little va con sustantivos incontables; students es contable.",
+          "de": "A little steht bei unzählbaren Nomen; students ist zählbar."
+        },
+        "much": {
+          "hu": "A much megszámlálhatatlan főnévvel áll; a students megszámlálható.",
+          "en": "Much goes with uncountable nouns; students is countable.",
+          "es": "Much va con sustantivos incontables; students es contable.",
+          "de": "Much steht bei unzählbaren Nomen; students ist zählbar."
+        }
+      },
+      "examples": [
+        "A few people left.",
+        "I have a few ideas."
+      ]
+    },
+    {
+      "id": "qua-05",
+      "sentence": "There are ___ people here than yesterday.",
+      "options": [
+        "less",
+        "littler",
+        "fewer"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Megszámlálható főnévvel a középfok: fewer.",
+        "en": "The comparative with a countable noun: fewer.",
+        "es": "El comparativo con un sustantivo contable: fewer.",
+        "de": "Der Komparativ mit einem zählbaren Nomen: fewer."
+      },
+      "wrong": {
+        "less": {
+          "hu": "A less megszámlálhatatlan főnévvel áll; az emberek megszámlálhatók, ezért fewer kell. Köznyelvben hallani a less people-t is, de a standard fewer.",
+          "en": "Less goes with uncountable nouns; people are countable, so you need fewer. In casual speech you also hear less people, but the standard is fewer.",
+          "es": "Less va con sustantivos incontables; las personas son contables, por eso hace falta fewer. En el habla informal también se oye less people, pero el estándar es fewer.",
+          "de": "Less steht bei unzählbaren Nomen; Menschen sind zählbar, deshalb braucht man fewer. Umgangssprachlich hört man auch less people, aber der Standard ist fewer."
+        },
+        "littler": {
+          "hu": "A littler nem használatos mennyiségjelzőként; fewer kell.",
+          "en": "Littler is not used as a quantifier; you need fewer.",
+          "es": "Littler no se usa como cuantificador; hace falta fewer.",
+          "de": "Littler wird nicht als Mengenangabe benutzt; man braucht fewer."
+        }
+      },
+      "examples": [
+        "We have fewer books.",
+        "Fewer students came."
+      ]
+    },
+    {
+      "id": "qua-06",
+      "sentence": "There is ___ traffic today than yesterday.",
+      "options": [
+        "less",
+        "fewer",
+        "lesser"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Megszámlálhatatlan főnévvel a középfok: less.",
+        "en": "The comparative with an uncountable noun: less.",
+        "es": "El comparativo con un sustantivo incontable: less.",
+        "de": "Der Komparativ mit einem unzählbaren Nomen: less."
+      },
+      "wrong": {
+        "fewer": {
+          "hu": "A fewer megszámlálható főnévvel áll; a traffic megszámlálhatatlan, ezért less kell.",
+          "en": "Fewer goes with countable nouns; traffic is uncountable, so you need less.",
+          "es": "Fewer va con sustantivos contables; traffic es incontable, por eso hace falta less.",
+          "de": "Fewer steht bei zählbaren Nomen; traffic ist unzählbar, deshalb braucht man less."
+        },
+        "lesser": {
+          "hu": "A lesser nem a less helyettesítője mennyiségnél; less kell.",
+          "en": "Lesser does not replace less for quantity; you need less.",
+          "es": "Lesser no reemplaza a less para cantidad; hace falta less.",
+          "de": "Lesser ersetzt less bei Mengen nicht; man braucht less."
+        }
+      },
+      "examples": [
+        "We have less time.",
+        "There is less noise."
+      ]
+    },
+    {
+      "id": "qua-07",
+      "sentence": "There is hardly ___ milk left.",
+      "options": [
+        "some",
+        "any",
+        "a"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A hardly után any áll: hardly any.",
+        "en": "After hardly comes any: hardly any.",
+        "es": "Después de hardly va any: hardly any.",
+        "de": "Nach hardly steht any: hardly any."
+      },
+      "wrong": {
+        "some": {
+          "hu": "A hardly some nem helyes; a hardly tagadó értelmű, ezért any kell.",
+          "en": "“Hardly some” is not correct; hardly has a negative sense, so you need any.",
+          "es": "«Hardly some» no es correcto; hardly tiene sentido negativo, por eso hace falta any.",
+          "de": "„Hardly some“ ist nicht korrekt; hardly hat negative Bedeutung, deshalb braucht man any."
+        },
+        "a": {
+          "hu": "A hardly a milk nem helyes; a milk megszámlálhatatlan.",
+          "en": "“Hardly a milk” is not correct; milk is uncountable.",
+          "es": "«Hardly a milk» no es correcto; milk es incontable.",
+          "de": "„Hardly a milk“ ist nicht korrekt; milk ist unzählbar."
+        }
+      },
+      "examples": [
+        "There is hardly any time.",
+        "We have hardly any food."
+      ]
+    },
+    {
+      "id": "qua-08",
+      "sentence": "A great many ___ came to the concert.",
+      "options": [
+        "money",
+        "time",
+        "people"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A great many megszámlálható többes számú főnévvel áll: people.",
+        "en": "A great many goes with a countable plural noun: people.",
+        "es": "A great many va con un sustantivo contable en plural: people.",
+        "de": "A great many steht bei einem zählbaren Nomen im Plural: people."
+      },
+      "wrong": {
+        "money": {
+          "hu": "A great many nem áll megszámlálhatatlan főnévvel; a money megszámlálhatatlan.",
+          "en": "A great many does not go with uncountable nouns; money is uncountable.",
+          "es": "A great many no va con sustantivos incontables; money es incontable.",
+          "de": "A great many steht nicht bei unzählbaren Nomen; money ist unzählbar."
+        },
+        "time": {
+          "hu": "A great many nem áll megszámlálhatatlan főnévvel; a time itt megszámlálhatatlan.",
+          "en": "A great many does not go with uncountable nouns; time is uncountable here.",
+          "es": "A great many no va con sustantivos incontables; time es incontable aquí.",
+          "de": "A great many steht nicht bei unzählbaren Nomen; time ist hier unzählbar."
+        }
+      },
+      "examples": [
+        "A great many books were sold.",
+        "A great many fans came."
+      ]
+    },
+    {
+      "id": "qua-09",
+      "sentence": "Do we have ___ chairs for everyone?",
+      "options": [
+        "enough",
+        "too",
+        "very"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az enough főnév előtt áll: enough chairs.",
+        "en": "Enough goes before a noun: enough chairs.",
+        "es": "Enough va antes de un sustantivo: enough chairs.",
+        "de": "Enough steht vor einem Nomen: enough chairs."
+      },
+      "wrong": {
+        "too": {
+          "hu": "A too chairs nem helyes; a too után melléknév vagy many/much kell.",
+          "en": "“Too chairs” is not correct; after too you need an adjective or many/much.",
+          "es": "«Too chairs» no es correcto; después de too hace falta un adjetivo o many/much.",
+          "de": "„Too chairs“ ist nicht korrekt; nach too braucht man ein Adjektiv oder many/much."
+        },
+        "very": {
+          "hu": "A very chairs nem helyes; a very melléknév előtt áll.",
+          "en": "“Very chairs” is not correct; very goes before an adjective.",
+          "es": "«Very chairs» no es correcto; very va antes de un adjetivo.",
+          "de": "„Very chairs“ ist nicht korrekt; very steht vor einem Adjektiv."
+        }
+      },
+      "examples": [
+        "We have enough food.",
+        "Is there enough water?"
+      ]
+    },
+    {
+      "id": "qua-10",
+      "sentence": "She is not old ___ to drive.",
+      "options": [
+        "too",
+        "enough",
+        "very"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Melléknév után az enough áll: old enough.",
+        "en": "After an adjective comes enough: old enough.",
+        "es": "Después de un adjetivo va enough: old enough.",
+        "de": "Nach einem Adjektiv steht enough: old enough."
+      },
+      "wrong": {
+        "too": {
+          "hu": "A too a melléknév előtt áll (too old); itt a melléknév után kell enough.",
+          "en": "Too goes before the adjective (too old); here after the adjective you need enough.",
+          "es": "Too va antes del adjetivo (too old); aquí después del adjetivo hace falta enough.",
+          "de": "Too steht vor dem Adjektiv (too old); hier braucht man nach dem Adjektiv enough."
+        },
+        "very": {
+          "hu": "A very a melléknév előtt áll, és a to drive mellett nem illik.",
+          "en": "Very goes before the adjective and does not fit with to drive.",
+          "es": "Very va antes del adjetivo y no encaja con to drive.",
+          "de": "Very steht vor dem Adjektiv und passt nicht zu to drive."
+        }
+      },
+      "examples": [
+        "He is tall enough.",
+        "It is warm enough."
+      ]
+    },
+    {
+      "id": "qua-11",
+      "sentence": "___ student in the class has a laptop.",
+      "options": [
+        "All",
+        "Both",
+        "Every"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Egyes számú főnév előtt every áll: every student.",
+        "en": "Every goes before a singular noun: every student.",
+        "es": "Every va antes de un sustantivo singular: every student.",
+        "de": "Every steht vor einem Singular-Nomen: every student."
+      },
+      "wrong": {
+        "All": {
+          "hu": "Az all után többes szám kell (all students), itt egyes szám áll.",
+          "en": "After all you need a plural (all students); here a singular follows.",
+          "es": "Después de all hace falta un plural (all students); aquí viene un singular.",
+          "de": "Nach all braucht man den Plural (all students); hier folgt der Singular."
+        },
+        "Both": {
+          "hu": "A both két dologra vonatkozik és többes számmal áll.",
+          "en": "Both refers to two things and takes a plural.",
+          "es": "Both se refiere a dos cosas y lleva plural.",
+          "de": "Both bezieht sich auf zwei Dinge und steht im Plural."
+        }
+      },
+      "examples": [
+        "Every day is new.",
+        "Every child needs love."
+      ]
+    },
+    {
+      "id": "qua-12",
+      "sentence": "___ of the two books is cheap.",
+      "options": [
+        "Neither",
+        "Every",
+        "All"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Két dologról: neither of the two (egyik sem).",
+        "en": "About two things: neither of the two (not one).",
+        "es": "De dos cosas: neither of the two (ninguno).",
+        "de": "Über zwei Dinge: neither of the two (keines)."
+      },
+      "wrong": {
+        "Every": {
+          "hu": "Az every of nem helyes; az every után közvetlenül főnév áll.",
+          "en": "“Every of” is not correct; after every a noun comes directly.",
+          "es": "«Every of» no es correcto; después de every viene directamente un sustantivo.",
+          "de": "„Every of“ ist nicht korrekt; nach every folgt direkt ein Nomen."
+        },
+        "All": {
+          "hu": "Az all of the two books nem helyes; két dologra both vagy neither illik.",
+          "en": "“All of the two books” is not correct; for two things both or neither fit.",
+          "es": "«All of the two books» no es correcto; para dos cosas encajan both o neither.",
+          "de": "„All of the two books“ ist nicht korrekt; für zwei Dinge passen both oder neither."
+        }
+      },
+      "examples": [
+        "Neither of them knows.",
+        "Neither of us won."
+      ]
+    },
+    {
+      "id": "qua-13",
+      "sentence": "A number of students ___ absent today.",
+      "options": [
+        "is",
+        "are",
+        "be"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A number of után többes számú ige áll: are.",
+        "en": "After a number of comes a plural verb: are.",
+        "es": "Después de a number of va un verbo en plural: are.",
+        "de": "Nach a number of steht ein Verb im Plural: are."
+      },
+      "wrong": {
+        "is": {
+          "hu": "Az is egyes számú; a number of után a students miatt többes szám kell.",
+          "en": "Is is singular; after a number of the students need a plural.",
+          "es": "Is es singular; después de a number of los students necesitan plural.",
+          "de": "Is ist Singular; nach a number of braucht man wegen students den Plural."
+        },
+        "be": {
+          "hu": "A students be absent today nem helyes mondat; ragozott ige kell.",
+          "en": "“Students be absent today” is not a correct sentence; you need a conjugated verb.",
+          "es": "«Students be absent today» no es una oración correcta; hace falta un verbo conjugado.",
+          "de": "„Students be absent today“ ist kein korrekter Satz; man braucht ein konjugiertes Verb."
+        }
+      },
+      "examples": [
+        "A number of people are here.",
+        "A number of cars are old."
+      ]
+    },
+    {
+      "id": "qua-14",
+      "sentence": "The number of students ___ growing every year.",
+      "options": [
+        "are",
+        "have",
+        "is"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A the number of után egyes számú ige áll: is.",
+        "en": "After the number of comes a singular verb: is.",
+        "es": "Después de the number of va un verbo en singular: is.",
+        "de": "Nach the number of steht ein Verb im Singular: is."
+      },
+      "wrong": {
+        "are": {
+          "hu": "Az are többes szám; a the number of a számot jelöli, ezért egyes szám kell.",
+          "en": "Are is plural; the number of means the figure, so a singular is needed.",
+          "es": "Are es plural; the number of significa la cifra, por eso hace falta singular.",
+          "de": "Are ist Plural; the number of meint die Zahl, deshalb braucht man den Singular."
+        },
+        "have": {
+          "hu": "A have growing nem helyes; a have után igenév (grown) jönne, itt is growing kell.",
+          "en": "“Have growing” is not correct; after have comes a participle (grown), here you need is growing.",
+          "es": "«Have growing» no es correcto; después de have viene un participio (grown), aquí hace falta is growing.",
+          "de": "„Have growing“ ist nicht korrekt; nach have folgt ein Partizip (grown), hier braucht man is growing."
+        }
+      },
+      "examples": [
+        "The number of cars is high.",
+        "The number of people is low."
+      ]
+    },
+    {
+      "id": "qua-15",
+      "sentence": "She has plenty ___ time to finish.",
+      "options": [
+        "of",
+        "for",
+        "from"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A plenty után of áll: plenty of.",
+        "en": "After plenty comes of: plenty of.",
+        "es": "Después de plenty va of: plenty of.",
+        "de": "Nach plenty steht of: plenty of."
+      },
+      "wrong": {
+        "for": {
+          "hu": "A plenty for nem helyes; plenty of kell.",
+          "en": "“Plenty for” is not correct; you need plenty of.",
+          "es": "«Plenty for» no es correcto; hace falta plenty of.",
+          "de": "„Plenty for“ ist nicht korrekt; man braucht plenty of."
+        },
+        "from": {
+          "hu": "A plenty from nem helyes; plenty of kell.",
+          "en": "“Plenty from” is not correct; you need plenty of.",
+          "es": "«Plenty from» no es correcto; hace falta plenty of.",
+          "de": "„Plenty from“ ist nicht korrekt; man braucht plenty of."
+        }
+      },
+      "examples": [
+        "We have plenty of food.",
+        "He has plenty of money."
+      ]
+    },
+    {
+      "id": "qua-16",
+      "sentence": "I don't have ___ money.",
+      "options": [
+        "some",
+        "any",
+        "many"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Tagadó mondatban any áll.",
+        "en": "In a negative sentence any is used.",
+        "es": "En una oración negativa se usa any.",
+        "de": "In einem verneinten Satz steht any."
+      },
+      "wrong": {
+        "some": {
+          "hu": "Tagadásban nem áll some; any kell.",
+          "en": "In a negative there is no some; you need any.",
+          "es": "En una negación no va some; hace falta any.",
+          "de": "In einer Verneinung steht kein some; man braucht any."
+        },
+        "many": {
+          "hu": "A many megszámlálható főnévvel áll; a money megszámlálhatatlan.",
+          "en": "Many goes with countable nouns; money is uncountable.",
+          "es": "Many va con sustantivos contables; money es incontable.",
+          "de": "Many steht bei zählbaren Nomen; money ist unzählbar."
+        }
+      },
+      "examples": [
+        "She doesn't have any time.",
+        "We don't have any food."
+      ]
+    },
+    {
+      "id": "qua-17",
+      "sentence": "He has a great ___ of experience.",
+      "options": [
+        "number",
+        "many",
+        "deal"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Megszámlálhatatlan főnév előtt a great deal of.",
+        "en": "Before an uncountable noun, a great deal of.",
+        "es": "Antes de un sustantivo incontable, a great deal of.",
+        "de": "Vor einem unzählbaren Nomen, a great deal of."
+      },
+      "wrong": {
+        "number": {
+          "hu": "A great number of megszámlálható főnévvel áll; az experience megszámlálhatatlan.",
+          "en": "A great number of goes with countable nouns; experience is uncountable.",
+          "es": "A great number of va con sustantivos contables; experience es incontable.",
+          "de": "A great number of steht bei zählbaren Nomen; experience ist unzählbar."
+        },
+        "many": {
+          "hu": "A great many megszámlálható főnévvel áll, of nélkül.",
+          "en": "A great many goes with countable nouns, without of.",
+          "es": "A great many va con sustantivos contables, sin of.",
+          "de": "A great many steht bei zählbaren Nomen, ohne of."
+        }
+      },
+      "examples": [
+        "She has a great deal of money.",
+        "We need a great deal of help."
+      ]
+    },
+    {
+      "id": "qua-18",
+      "kind": "form",
+      "verb": "forma",
+      "person": "poco, casi nada (incontable)",
+      "answer": "little",
+      "table": "qua-forms"
+    },
+    {
+      "id": "qua-19",
+      "kind": "form",
+      "verb": "forma",
+      "person": "un poco, algo (incontable)",
+      "answer": "a little",
+      "table": "qua-forms"
+    },
+    {
+      "id": "qua-20",
+      "kind": "form",
+      "verb": "forma",
+      "person": "pocos, casi ninguno (contable)",
+      "answer": "few",
+      "table": "qua-forms"
+    },
+    {
+      "id": "qua-21",
+      "kind": "form",
+      "verb": "forma",
+      "person": "unos pocos (contable)",
+      "answer": "a few",
+      "table": "qua-forms"
+    },
+    {
+      "id": "qua-22",
+      "kind": "form",
+      "verb": "forma",
+      "person": "suficiente",
+      "answer": "enough",
+      "table": "qua-forms"
+    },
+    {
+      "id": "qua-23",
+      "kind": "form",
+      "verb": "forma",
+      "person": "ninguno de los dos",
+      "answer": "neither",
+      "table": "qua-forms"
+    },
+    {
+      "kind": "why",
+      "id": "qua-24",
+      "es": "I have few friends here.",
+      "target": "few",
+      "tr": {
+        "hu": "Alig van barátom itt.",
+        "en": "I have few friends here.",
+        "es": "Tengo pocos amigos aquí.",
+        "de": "Ich habe hier kaum Freunde."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a few: néhány, pozitív",
+            "en": "a few: some, positive",
+            "es": "a few: algunos, positivo",
+            "de": "a few: einige, positiv"
+          },
+          "wrong": {
+            "hu": "A few a nélkül negatív: few = alig; a few = néhány.",
+            "en": "Few without a is negative: few = hardly any; a few = some.",
+            "es": "Few sin a es negativo: few = casi ninguno; a few = algunos.",
+            "de": "Few ohne a ist negativ: few = kaum welche; a few = einige."
+          }
+        },
+        {
+          "text": {
+            "hu": "few: alig, negatív hangsúly",
+            "en": "few: hardly any, a negative feeling",
+            "es": "few: casi ninguno, sentimiento negativo",
+            "de": "few: kaum welche, ein negatives Gefühl"
+          }
+        },
+        {
+          "text": {
+            "hu": "megszámlálhatatlan főnévhez való",
+            "en": "it is for uncountable nouns",
+            "es": "es para sustantivos incontables",
+            "de": "es gilt für unzählbare Nomen"
+          },
+          "wrong": {
+            "hu": "A few megszámlálható főnévvel áll; megszámlálhatatlanhoz little kell.",
+            "en": "Few goes with countable nouns; uncountable nouns need little.",
+            "es": "Few va con sustantivos contables; los incontables necesitan little.",
+            "de": "Few steht bei zählbaren Nomen; unzählbare brauchen little."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "qua-25",
+      "es": "I have a little time.",
+      "target": "a little",
+      "tr": {
+        "hu": "Van egy kis időm.",
+        "en": "I have a little time.",
+        "es": "Tengo un poco de tiempo.",
+        "de": "Ich habe ein bisschen Zeit."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a little + megszámlálható főnév",
+            "en": "a little + a countable noun",
+            "es": "a little + un sustantivo contable",
+            "de": "a little + ein zählbares Nomen"
+          },
+          "wrong": {
+            "hu": "A little megszámlálhatatlan főnévvel áll; a time megszámlálhatatlan.",
+            "en": "A little goes with uncountable nouns; time is uncountable.",
+            "es": "A little va con sustantivos incontables; time es incontable.",
+            "de": "A little steht bei unzählbaren Nomen; time ist unzählbar."
+          }
+        },
+        {
+          "text": {
+            "hu": "a little: van valamennyi, elég, megszámlálhatatlannál",
+            "en": "a little: there is some, enough, with uncountable nouns",
+            "es": "a little: hay algo, alcanza, con incontables",
+            "de": "a little: es gibt etwas, genug, bei unzählbaren Nomen"
+          }
+        },
+        {
+          "text": {
+            "hu": "alig van",
+            "en": "hardly any",
+            "es": "casi nada",
+            "de": "kaum etwas"
+          },
+          "wrong": {
+            "hu": "Az alig van little a nélkül; az a little pozitív.",
+            "en": "Hardly any is little without a; a little is positive.",
+            "es": "Casi nada es little sin a; a little es positivo.",
+            "de": "Kaum etwas ist little ohne a; a little ist positiv."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "qua-26",
+      "es": "A number of students are absent.",
+      "target": "A number of",
+      "tr": {
+        "hu": "Több diák hiányzik.",
+        "en": "A number of students are absent.",
+        "es": "Varios estudiantes faltaron.",
+        "de": "Mehrere Schüler fehlen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "egyes számú ige követi",
+            "en": "a singular verb follows",
+            "es": "lo sigue un verbo en singular",
+            "de": "ein Verb im Singular folgt"
+          },
+          "wrong": {
+            "hu": "A a number of után többes számú ige áll, mert a diákok a lényeg.",
+            "en": "After a number of comes a plural verb, because the students are the point.",
+            "es": "Después de a number of va un verbo en plural, porque los estudiantes son lo importante.",
+            "de": "Nach a number of steht ein Verb im Plural, weil die Schüler im Mittelpunkt stehen."
+          }
+        },
+        {
+          "text": {
+            "hu": "a darabszám maga",
+            "en": "the figure itself",
+            "es": "la cifra misma",
+            "de": "die Zahl selbst"
+          },
+          "wrong": {
+            "hu": "A darabszám maga the number of lenne, egyes számú igével.",
+            "en": "The figure itself would be the number of, with a singular verb.",
+            "es": "La cifra misma sería the number of, con verbo en singular.",
+            "de": "Die Zahl selbst wäre the number of, mit Verb im Singular."
+          }
+        },
+        {
+          "text": {
+            "hu": "néhány, több; többes számú ige követi",
+            "en": "several, many; a plural verb follows",
+            "es": "varios, muchos; lo sigue un verbo en plural",
+            "de": "einige, mehrere; ein Verb im Plural folgt"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "qua-27",
+      "es": "The number of students is growing.",
+      "target": "The number of",
+      "tr": {
+        "hu": "A diákok száma nő.",
+        "en": "The number of students is growing.",
+        "es": "El número de estudiantes crece.",
+        "de": "Die Zahl der Schüler wächst."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a darabszám maga; egyes számú ige követi",
+            "en": "the figure itself; a singular verb follows",
+            "es": "la cifra misma; lo sigue un verbo en singular",
+            "de": "die Zahl selbst; ein Verb im Singular folgt"
+          }
+        },
+        {
+          "text": {
+            "hu": "néhány; többes számú ige követi",
+            "en": "several; a plural verb follows",
+            "es": "varios; lo sigue un verbo en plural",
+            "de": "einige; ein Verb im Plural folgt"
+          },
+          "wrong": {
+            "hu": "A néhányat a number of fejezi ki; a the number of a számot jelöli.",
+            "en": "Several is expressed by a number of; the number of means the figure.",
+            "es": "Varios lo expresa a number of; the number of significa la cifra.",
+            "de": "Einige drückt a number of aus; the number of meint die Zahl."
+          }
+        },
+        {
+          "text": {
+            "hu": "a diákok többsége",
+            "en": "most of the students",
+            "es": "la mayoría de los estudiantes",
+            "de": "die meisten Schüler"
+          },
+          "wrong": {
+            "hu": "A többség the majority of, nem the number of.",
+            "en": "The majority is the majority of, not the number of.",
+            "es": "La mayoría es the majority of, no the number of.",
+            "de": "Die Mehrheit ist the majority of, nicht the number of."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "qua-28",
+      "es": "She is old enough to drive.",
+      "target": "enough",
+      "tr": {
+        "hu": "Elég idős ahhoz, hogy vezessen.",
+        "en": "She is old enough to drive.",
+        "es": "Ya tiene edad suficiente para manejar.",
+        "de": "Sie ist alt genug, um zu fahren."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "az enough a melléknév előtt áll",
+            "en": "enough goes before the adjective",
+            "es": "enough va antes del adjetivo",
+            "de": "enough steht vor dem Adjektiv"
+          },
+          "wrong": {
+            "hu": "Az enough melléknévnél a melléknév után áll: old enough, nem enough old.",
+            "en": "With an adjective enough goes after it: old enough, not enough old.",
+            "es": "Con un adjetivo enough va después: old enough, no enough old.",
+            "de": "Bei einem Adjektiv steht enough danach: old enough, nicht enough old."
+          }
+        },
+        {
+          "text": {
+            "hu": "az enough a melléknév után áll",
+            "en": "enough goes after the adjective",
+            "es": "enough va después del adjetivo",
+            "de": "enough steht nach dem Adjektiv"
+          }
+        },
+        {
+          "text": {
+            "hu": "az enough jelentése: túl",
+            "en": "enough means too",
+            "es": "enough significa too",
+            "de": "enough bedeutet too"
+          },
+          "wrong": {
+            "hu": "Az enough elégséges mértéket jelent; a too túl sokat.",
+            "en": "Enough means a sufficient amount; too means more than needed.",
+            "es": "Enough significa una cantidad suficiente; too significa más de lo necesario.",
+            "de": "Enough bedeutet ein ausreichendes Maß; too bedeutet mehr als nötig."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "qua-29",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "Hay poca leche.",
+          "en": "There is little milk."
+        },
+        {
+          "es": "Tengo un poco de tiempo.",
+          "en": "I have a little time."
+        },
+        {
+          "es": "Tengo pocos amigos aquí.",
+          "en": "I have few friends here."
+        },
+        {
+          "es": "Tengo unos cuantos amigos aquí.",
+          "en": "I have a few friends here."
+        },
+        {
+          "es": "Hay demasiados carros.",
+          "en": "There are too many cars."
+        },
+        {
+          "es": "Ninguno de los dos libros es barato.",
+          "en": "Neither of the two books is cheap."
+        }
+      ]
+    },
+    {
+      "id": "qua-30",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "mucho (incontable)",
+          "en": "much"
+        },
+        {
+          "es": "muchos (contable)",
+          "en": "many"
+        },
+        {
+          "es": "suficiente",
+          "en": "enough"
+        },
+        {
+          "es": "cada uno",
+          "en": "each"
+        },
+        {
+          "es": "un buen número de",
+          "en": "a number of"
+        },
+        {
+          "es": "la mayoría de",
+          "en": "the majority of"
+        }
+      ]
+    }
+  ]
+}

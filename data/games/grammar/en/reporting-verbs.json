@@ -1,0 +1,1477 @@
+{
+  "schema": 2,
+  "topic": "reporting_verbs",
+  "level": "B2",
+  "title": {
+    "hu": "Közlő igék (promise to, deny -ing, accuse of)",
+    "en": "Reporting Verbs (promise to, deny -ing, accuse of)",
+    "es": "Los verbos de comunicación (promise to, deny -ing, accuse of)",
+    "de": "Berichtsverben (promise to, deny -ing, accuse of)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A say és a tell mellett sok közlő ige van, és mindegyiknek megvan a maga szerkezete. Három fő minta: ige + to-infinitív („He promised to call.”), ige + -ing („He denied taking the money.”), ige + személy + to-infinitív („She advised me to wait.”). Néhány ige elöljárót is kér: accuse sb of, apologize for, insist on. A spanyolban ezeket gyakran „prometió llamar”, „negó haberlo tomado”, „me aconsejó esperar” mondja.",
+        "en": "Besides say and tell there are many reporting verbs, and each has its own pattern. Three main patterns: verb + to-infinitive (“He promised to call.”), verb + -ing (“He denied taking the money.”), verb + person + to-infinitive (“She advised me to wait.”). Some verbs also need a preposition: accuse sb of, apologize for, insist on. Spanish often says these as “prometió llamar”, “negó haberlo tomado”, “me aconsejó esperar”.",
+        "es": "Además de say y tell hay muchos verbos de comunicación, y cada uno tiene su propio patrón. Tres patrones principales: verbo + to-infinitivo («He promised to call.»), verbo + -ing («He denied taking the money.»), verbo + persona + to-infinitivo («She advised me to wait.»). Algunos verbos piden además una preposición: accuse sb of, apologize for, insist on. El español suele decir esto como «prometió llamar», «negó haberlo tomado», «me aconsejó esperar».",
+        "de": "Neben say und tell gibt es viele Berichtsverben, und jedes hat sein eigenes Muster. Drei Hauptmuster: Verb + to-Infinitiv („He promised to call.“), Verb + -ing („He denied taking the money.“), Verb + Person + to-Infinitiv („She advised me to wait.“). Einige Verben brauchen außerdem eine Präposition: accuse sb of, apologize for, insist on. Das Spanische sagt das oft als „prometió llamar“, „negó haberlo tomado“, „me aconsejó esperar“."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "rep-forms",
+      "title": {
+        "hu": "Melyik minta?",
+        "en": "Which pattern?",
+        "es": "¿Qué patrón uso?",
+        "de": "Welches Muster?"
+      },
+      "header": [
+        {
+          "hu": "Helyzet",
+          "en": "Situation",
+          "es": "Situación",
+          "de": "Situation"
+        },
+        {
+          "hu": "forma",
+          "en": "form",
+          "es": "forma",
+          "de": "Form"
+        }
+      ],
+      "rows": [
+        [
+          "prometer, ofrecer, negarse: verbo + ...",
+          "to-infinitive"
+        ],
+        [
+          "negar, admitir, sugerir: verbo + ...",
+          "-ing"
+        ],
+        [
+          "aconsejar, advertir, recordar: verbo + persona + ...",
+          "object + to-infinitive"
+        ],
+        [
+          "acusar a alguien de (accuse sb ...)",
+          "of"
+        ],
+        [
+          "disculparse por (apologize ...)",
+          "for"
+        ],
+        [
+          "insistir en (insist ...)",
+          "on"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Ige + to-infinitív: promise, refuse, claim, pretend, threaten",
+        "en": "Verb + to-infinitive: promise, refuse, claim, pretend, threaten",
+        "es": "Verbo + to-infinitivo: promise, refuse, claim, pretend, threaten",
+        "de": "Verb + to-Infinitiv: promise, refuse, claim, pretend, threaten"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Ezek az igék közvetlenül a to + alapige szerkezetet kérik, tárgy nélkül. Tagadás: not to. Ide tartozik a claim (állít), a pretend (színlel) és a threaten (fenyeget) is.",
+            "en": "These verbs take to + base verb directly, with no object. Negative: not to. Claim, pretend and threaten also belong here.",
+            "es": "Estos verbos piden directamente to + verbo base, sin objeto. Negación: not to. Aquí también entran claim, pretend y threaten.",
+            "de": "Diese Verben nehmen direkt to + Grundform, ohne Objekt. Verneinung: not to. Auch claim, pretend und threaten gehören hierher."
+          },
+          "examples": [
+            {
+              "es": "He promised to call me tomorrow.",
+              "tr": {
+                "hu": "Megígérte, hogy holnap felhív.",
+                "en": "He promised to call me tomorrow.",
+                "es": "Prometió llamarme mañana.",
+                "de": "Er versprach, mich morgen anzurufen."
+              }
+            },
+            {
+              "es": "She refused to sign the contract.",
+              "tr": {
+                "hu": "Nem volt hajlandó aláírni a szerződést.",
+                "en": "She refused to sign the contract.",
+                "es": "Se negó a firmar el contrato.",
+                "de": "Sie weigerte sich, den Vertrag zu unterschreiben."
+              }
+            },
+            {
+              "es": "He claimed to be the winner.",
+              "tr": {
+                "hu": "Azt állította, hogy ő a nyertes.",
+                "en": "He claimed to be the winner.",
+                "es": "Afirmó ser el ganador.",
+                "de": "Er behauptete, der Sieger zu sein."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Ige + -ing: deny, admit, suggest, recommend",
+        "en": "Verb + -ing: deny, admit, suggest, recommend",
+        "es": "Verbo + -ing: deny, admit, suggest, recommend",
+        "de": "Verb + -ing: deny, admit, suggest, recommend"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Ezek után -ing alak áll. A suggest után nem áll „to + ige”: nem „suggested to go”, hanem „suggested going” vagy „suggested that we go”.",
+            "en": "These take the -ing form. After suggest there is no “to + verb”: not “suggested to go”, but “suggested going” or “suggested that we go”.",
+            "es": "Después de estos va la forma -ing. Después de suggest no va «to + verbo»: no «suggested to go», sino «suggested going» o «suggested that we go».",
+            "de": "Nach diesen steht die -ing-Form. Nach suggest steht kein „to + Verb“: nicht „suggested to go“, sondern „suggested going“ oder „suggested that we go“."
+          },
+          "examples": [
+            {
+              "es": "He denied taking the money.",
+              "tr": {
+                "hu": "Tagadta, hogy elvette a pénzt.",
+                "en": "He denied taking the money.",
+                "es": "Negó haber tomado el dinero.",
+                "de": "Er bestritt, das Geld genommen zu haben."
+              }
+            },
+            {
+              "es": "She suggested going to the beach.",
+              "tr": {
+                "hu": "Azt javasolta, menjünk a tengerpartra.",
+                "en": "She suggested going to the beach.",
+                "es": "Sugirió ir a la playa.",
+                "de": "Sie schlug vor, an den Strand zu gehen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Ige + személy + to-infinitív: advise, warn, remind, invite",
+        "en": "Verb + person + to-infinitive: advise, warn, remind, invite",
+        "es": "Verbo + persona + to-infinitivo: advise, warn, remind, invite",
+        "de": "Verb + Person + to-Infinitiv: advise, warn, remind, invite"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A személy közvetlenül az ige után áll, utána to + alapige. Tagadás: not to + alapige. Ide tartozik az ask, tell, order, persuade, encourage, urge és convince is.",
+            "en": "The person comes right after the verb, then to + base verb. Negative: not to + base verb. Ask, tell, order, persuade, encourage, urge and convince also belong here.",
+            "es": "La persona va justo después del verbo, luego to + verbo base. Negación: not to + verbo base. Aquí también entran ask, tell, order, persuade, encourage, urge y convince.",
+            "de": "Die Person steht direkt nach dem Verb, dann to + Grundform. Verneinung: not to + Grundform. Auch ask, tell, order, persuade, encourage, urge und convince gehören hierher."
+          },
+          "examples": [
+            {
+              "es": "The doctor advised me to drink more water.",
+              "tr": {
+                "hu": "Az orvos azt tanácsolta, igyak több vizet.",
+                "en": "The doctor advised me to drink more water.",
+                "es": "El doctor me aconsejó tomar más agua.",
+                "de": "Der Arzt riet mir, mehr Wasser zu trinken."
+              }
+            },
+            {
+              "es": "He warned us not to cross the river.",
+              "tr": {
+                "hu": "Figyelmeztetett, hogy ne keljünk át a folyón.",
+                "en": "He warned us not to cross the river.",
+                "es": "Nos advirtió que no cruzáramos el río.",
+                "de": "Er warnte uns, den Fluss nicht zu überqueren."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Ige + elöljáró + -ing: accuse of, apologize for, insist on",
+        "en": "Verb + preposition + -ing: accuse of, apologize for, insist on",
+        "es": "Verbo + preposición + -ing: accuse of, apologize for, insist on",
+        "de": "Verb + Präposition + -ing: accuse of, apologize for, insist on"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Ezek az igék meghatározott elöljárót kérnek, és az elöljáró után -ing alak áll: accuse sb of, blame sb for, thank sb for, congratulate sb on.",
+            "en": "These verbs need a fixed preposition, and after the preposition comes the -ing form: accuse sb of, blame sb for, thank sb for, congratulate sb on.",
+            "es": "Estos verbos piden una preposición fija, y después de la preposición va la forma -ing: accuse sb of, blame sb for, thank sb for, congratulate sb on.",
+            "de": "Diese Verben brauchen eine feste Präposition, und nach der Präposition steht die -ing-Form: accuse sb of, blame sb for, thank sb for, congratulate sb on."
+          },
+          "examples": [
+            {
+              "es": "He accused me of lying.",
+              "tr": {
+                "hu": "Hazugsággal vádolt.",
+                "en": "He accused me of lying.",
+                "es": "Me acusó de mentir.",
+                "de": "Er beschuldigte mich zu lügen."
+              }
+            },
+            {
+              "es": "She apologized for being late.",
+              "tr": {
+                "hu": "Bocsánatot kért a késésért.",
+                "en": "She apologized for being late.",
+                "es": "Se disculpó por llegar tarde.",
+                "de": "Sie entschuldigte sich für die Verspätung."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Spanyolul az „insistir en” és a „disculparse por” elöljáróval mondjuk, angolul is: insist on, apologize for. De a „de” nem mindig of: a blame sb for, nem blame sb of.",
+        "en": "The Spanish “insistir en” and “disculparse por” also take a preposition in English: insist on, apologize for. But the Spanish “de” is not always of: blame sb for, not blame sb of.",
+        "es": "El «insistir en» y el «disculparse por» del español también llevan preposición en inglés: insist on, apologize for. Pero el «de» del español no siempre es of: blame sb for, no blame sb of.",
+        "de": "Das spanische „insistir en“ und „disculparse por“ nehmen auch im Englischen eine Präposition: insist on, apologize for. Aber das spanische „de“ ist nicht immer of: blame sb for, nicht blame sb of."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A say nem kér tárgyat, a tell igen: „She said that she was tired”, de „She told me that she was tired”. Az explain után sem jön személy közvetlenül: „She explained to me that…”.",
+        "en": "Say takes no object, tell does: “She said that she was tired”, but “She told me that she was tired”. After explain a person does not come directly either: “She explained to me that…”.",
+        "es": "Say no lleva objeto, tell sí: «She said that she was tired», pero «She told me that she was tired». Después de explain tampoco viene la persona directamente: «She explained to me that…».",
+        "de": "Say nimmt kein Objekt, tell schon: „She said that she was tired“, aber „She told me that she was tired“. Nach explain folgt die Person auch nicht direkt: „She explained to me that…“."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A «say» és a «tell» mellett sok közlő ige van, és mindegyiknek megvan a maga szerkezete. Ige plusz to-infinitív: «He promised to call». Ige plusz -ing: «He denied taking the money». Ige plusz személy plusz to-infinitív: «She advised me to wait». Néhány ige elöljárót kér, és utána -ing alak áll: «He accused me of lying», «She apologized for being late». A «suggest» után nem áll to-infinitív, hanem «suggested going».",
+    "en": "Besides «say» and «tell» there are many reporting verbs, and each has its own pattern. Verb plus to-infinitive: «He promised to call». Verb plus -ing: «He denied taking the money». Verb plus person plus to-infinitive: «She advised me to wait». Some verbs need a preposition, followed by the -ing form: «He accused me of lying», «She apologized for being late». After «suggest» there is no to-infinitive, but «suggested going».",
+    "es": "Además de «say» y «tell» hay muchos verbos de comunicación, y cada uno tiene su propio patrón. Verbo más to-infinitivo: «He promised to call». Verbo más -ing: «He denied taking the money». Verbo más persona más to-infinitivo: «She advised me to wait». Algunos verbos piden una preposición, seguida de la forma -ing: «He accused me of lying», «She apologized for being late». Después de «suggest» no va to-infinitivo, sino «suggested going».",
+    "de": "Neben «say» und «tell» gibt es viele Berichtsverben, und jedes hat sein eigenes Muster. Verb plus to-Infinitiv: «He promised to call». Verb plus -ing: «He denied taking the money». Verb plus Person plus to-Infinitiv: «She advised me to wait». Einige Verben brauchen eine Präposition, gefolgt von der -ing-Form: «He accused me of lying», «She apologized for being late». Nach «suggest» steht kein to-Infinitiv, sondern «suggested going»."
+  },
+  "glossary": [
+    {
+      "word": "asleep",
+      "gloss": {
+        "hu": "alszik, álomban",
+        "en": "sleeping",
+        "es": "dormido",
+        "de": "eingeschlafen"
+      }
+    },
+    {
+      "word": "pretended",
+      "gloss": {
+        "hu": "színlelt (a pretend múltja)",
+        "en": "past form of pretend",
+        "es": "fingió (pasado de pretend)",
+        "de": "tat so als ob (Past von pretend)"
+      }
+    },
+    {
+      "word": "quit",
+      "gloss": {
+        "hu": "abbahagy, felmond",
+        "en": "to stop or leave a job",
+        "es": "dejar, renunciar",
+        "de": "aufhören, kündigen"
+      }
+    },
+    {
+      "word": "reject",
+      "gloss": {
+        "hu": "elutasít",
+        "en": "to say no to",
+        "es": "rechazar",
+        "de": "ablehnen"
+      }
+    },
+    {
+      "word": "rejecting",
+      "gloss": {
+        "hu": "elutasít (ige-ing alak)",
+        "en": "-ing form of reject",
+        "es": "rechazando (forma -ing de reject)",
+        "de": "ablehnen (-ing-Form von reject)"
+      }
+    },
+    {
+      "word": "rich",
+      "gloss": {
+        "hu": "gazdag",
+        "en": "with a lot of money",
+        "es": "rico",
+        "de": "reich"
+      }
+    },
+    {
+      "word": "threatened",
+      "gloss": {
+        "hu": "megfenyegetett (a threaten múltja)",
+        "en": "past form of threaten",
+        "es": "amenazó (pasado de threaten)",
+        "de": "drohte (Past von threaten)"
+      }
+    },
+    {
+      "word": "urged",
+      "gloss": {
+        "hu": "sürgetett (az urge múltja)",
+        "en": "past form of urge",
+        "es": "instó (pasado de urge)",
+        "de": "drängte (Past von urge)"
+      }
+    },
+    {
+      "word": "winner",
+      "gloss": {
+        "hu": "nyertes",
+        "en": "a person who wins",
+        "es": "ganador",
+        "de": "Sieger"
+      }
+    },
+    {
+      "word": "accident",
+      "gloss": {
+        "hu": "baleset",
+        "en": "a bad event, often with cars",
+        "es": "accidente",
+        "de": "Unfall"
+      }
+    },
+    {
+      "word": "accused",
+      "gloss": {
+        "hu": "megvádolt (az accuse múltja)",
+        "en": "past form of accuse",
+        "es": "acusó (pasado de accuse)",
+        "de": "beschuldigte (Past von accuse)"
+      }
+    },
+    {
+      "word": "admitted",
+      "gloss": {
+        "hu": "beismert (az admit múltja)",
+        "en": "past form of admit",
+        "es": "admitió (pasado de admit)",
+        "de": "gab zu (Past von admit)"
+      }
+    },
+    {
+      "word": "advised",
+      "gloss": {
+        "hu": "tanácsolt (az advise múltja)",
+        "en": "past form of advise",
+        "es": "aconsejó (pasado de advise)",
+        "de": "riet (Past von advise)"
+      }
+    },
+    {
+      "word": "apologized",
+      "gloss": {
+        "hu": "bocsánatot kért (az apologize múltja)",
+        "en": "past form of apologize",
+        "es": "se disculpó (pasado de apologize)",
+        "de": "entschuldigte sich (Past von apologize)"
+      }
+    },
+    {
+      "word": "canceled",
+      "gloss": {
+        "hu": "lemondták, törölték",
+        "en": "past form of cancel",
+        "es": "cancelado, canceló",
+        "de": "abgesagt, sagte ab"
+      }
+    },
+    {
+      "word": "cheating",
+      "gloss": {
+        "hu": "csal (ige-ing alak)",
+        "en": "-ing form of cheat",
+        "es": "haciendo trampa (forma -ing de cheat)",
+        "de": "schummeln (-ing-Form von cheat)"
+      }
+    },
+    {
+      "word": "cross",
+      "gloss": {
+        "hu": "átkel, keresztez",
+        "en": "to go across",
+        "es": "cruzar",
+        "de": "überqueren"
+      }
+    },
+    {
+      "word": "crossing",
+      "gloss": {
+        "hu": "átkel (ige-ing alak)",
+        "en": "-ing form of cross",
+        "es": "cruzando (forma -ing de cross)",
+        "de": "überqueren (-ing-Form von cross)"
+      }
+    },
+    {
+      "word": "crying",
+      "gloss": {
+        "hu": "sír (ige-ing alak)",
+        "en": "-ing form of cry",
+        "es": "llorando (forma -ing de cry)",
+        "de": "weinen (-ing-Form von cry)"
+      }
+    },
+    {
+      "word": "denied",
+      "gloss": {
+        "hu": "tagadott (a deny múltja)",
+        "en": "past form of deny",
+        "es": "negó (pasado de deny)",
+        "de": "bestritt (Past von deny)"
+      }
+    },
+    {
+      "word": "driving",
+      "gloss": {
+        "hu": "vezet (ige-ing alak)",
+        "en": "-ing form of drive",
+        "es": "manejando (forma -ing de drive)",
+        "de": "fahren (-ing-Form von drive)"
+      }
+    },
+    {
+      "word": "losing",
+      "gloss": {
+        "hu": "veszít (ige-ing alak)",
+        "en": "-ing form of lose",
+        "es": "perdiendo (forma -ing de lose)",
+        "de": "verlieren (-ing-Form von lose)"
+      }
+    },
+    {
+      "word": "lying",
+      "gloss": {
+        "hu": "hazudik (ige-ing alak)",
+        "en": "telling a lie",
+        "es": "mintiendo",
+        "de": "lügen"
+      }
+    },
+    {
+      "word": "reminded",
+      "gloss": {
+        "hu": "emlékeztetett (a remind múltja)",
+        "en": "past form of remind",
+        "es": "recordó (pasado de remind)",
+        "de": "erinnerte (Past von remind)"
+      }
+    },
+    {
+      "word": "stay",
+      "gloss": {
+        "hu": "marad",
+        "en": "to stay",
+        "es": "quedarse",
+        "de": "bleiben"
+      }
+    },
+    {
+      "word": "staying",
+      "gloss": {
+        "hu": "marad (ige-ing alak)",
+        "en": "-ing form of stay",
+        "es": "quedándose (forma -ing de stay)",
+        "de": "bleiben (-ing-Form von stay)"
+      }
+    },
+    {
+      "word": "stealing",
+      "gloss": {
+        "hu": "lop (ige-ing alak)",
+        "en": "-ing form of steal",
+        "es": "robando (forma -ing de steal)",
+        "de": "stehlen (-ing-Form von steal)"
+      }
+    },
+    {
+      "word": "suggested",
+      "gloss": {
+        "hu": "javasolt (a suggest múltja)",
+        "en": "past form of suggest",
+        "es": "sugirió (pasado de suggest)",
+        "de": "schlug vor (Past von suggest)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "rep-01",
+      "sentence": "He claimed ___ the winner, but he was not.",
+      "options": [
+        "being",
+        "to be",
+        "that be"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A claim után to + alapige áll: claimed to be.",
+        "en": "After claim comes to + base verb: claimed to be.",
+        "es": "Después de claim va to + verbo base: claimed to be.",
+        "de": "Nach claim steht to + Grundform: claimed to be."
+      },
+      "wrong": {
+        "being": {
+          "hu": "A claim után nem áll -ing alak; to + alapige kell.",
+          "en": "After claim there is no -ing form; you need to + base verb.",
+          "es": "Después de claim no va forma -ing; hace falta to + verbo base.",
+          "de": "Nach claim steht keine -ing-Form; man braucht to + Grundform."
+        },
+        "that be": {
+          "hu": "A that be nem helyes; a that után alany és ragozott ige kell.",
+          "en": "“That be” is not correct; after that you need a subject and a conjugated verb.",
+          "es": "«That be» no es correcto; después de that hace falta un sujeto y un verbo conjugado.",
+          "de": "„That be“ ist nicht korrekt; nach that braucht man ein Subjekt und ein konjugiertes Verb."
+        }
+      },
+      "examples": [
+        "She claimed to know him.",
+        "He claims to be rich."
+      ]
+    },
+    {
+      "id": "rep-02",
+      "sentence": "He denied ___ the money.",
+      "options": [
+        "to take",
+        "take",
+        "taking"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A deny után -ing alak áll.",
+        "en": "After deny comes the -ing form.",
+        "es": "Después de deny va la forma -ing.",
+        "de": "Nach deny steht die -ing-Form."
+      },
+      "wrong": {
+        "to take": {
+          "hu": "A deny után nem áll to-infinitív; -ing alak kell.",
+          "en": "After deny there is no to-infinitive; you need the -ing form.",
+          "es": "Después de deny no va to-infinitivo; hace falta la forma -ing.",
+          "de": "Nach deny steht kein to-Infinitiv; man braucht die -ing-Form."
+        },
+        "take": {
+          "hu": "A deny után nem áll alapige; -ing alak kell.",
+          "en": "After deny the base verb does not stand; you need the -ing form.",
+          "es": "Después de deny el verbo base no va; hace falta la forma -ing.",
+          "de": "Nach deny steht die Grundform nicht; man braucht die -ing-Form."
+        }
+      },
+      "examples": [
+        "She denied seeing him.",
+        "They denied knowing it."
+      ]
+    },
+    {
+      "id": "rep-03",
+      "sentence": "The doctor advised me ___ more water.",
+      "options": [
+        "to drink",
+        "drinking",
+        "drink"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az advise + személy után to + alapige áll.",
+        "en": "After advise + person comes to + base verb.",
+        "es": "Después de advise + persona va to + verbo base.",
+        "de": "Nach advise + Person steht to + Grundform."
+      },
+      "wrong": {
+        "drinking": {
+          "hu": "Az advise + személy után nem áll -ing alak; to + alapige kell.",
+          "en": "After advise + person there is no -ing form; you need to + base verb.",
+          "es": "Después de advise + persona no va forma -ing; hace falta to + verbo base.",
+          "de": "Nach advise + Person steht keine -ing-Form; man braucht to + Grundform."
+        },
+        "drink": {
+          "hu": "Az advise + személy után a to elmaradhatatlan.",
+          "en": "After advise + person the to is required.",
+          "es": "Después de advise + persona el to es obligatorio.",
+          "de": "Nach advise + Person ist das to Pflicht."
+        }
+      },
+      "examples": [
+        "She advised him to wait.",
+        "They advised us to leave."
+      ]
+    },
+    {
+      "id": "rep-04",
+      "sentence": "She suggested ___ to the beach.",
+      "options": [
+        "to go",
+        "going",
+        "go"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A suggest után -ing alak áll.",
+        "en": "After suggest comes the -ing form.",
+        "es": "Después de suggest va la forma -ing.",
+        "de": "Nach suggest steht die -ing-Form."
+      },
+      "wrong": {
+        "to go": {
+          "hu": "A suggest után nem áll to-infinitív; -ing alak kell.",
+          "en": "After suggest there is no to-infinitive; you need the -ing form.",
+          "es": "Después de suggest no va to-infinitivo; hace falta la forma -ing.",
+          "de": "Nach suggest steht kein to-Infinitiv; man braucht die -ing-Form."
+        },
+        "go": {
+          "hu": "A suggested go ebben a szerkezetben nem helyes; suggested going kell.",
+          "en": "“Suggested go” is not correct in this structure; you need suggested going.",
+          "es": "«Suggested go» no es correcto en esta estructura; hace falta suggested going.",
+          "de": "„Suggested go“ ist in dieser Struktur nicht korrekt; man braucht suggested going."
+        }
+      },
+      "examples": [
+        "He suggested leaving.",
+        "They suggested waiting."
+      ]
+    },
+    {
+      "id": "rep-05",
+      "sentence": "They accused him ___ lying.",
+      "options": [
+        "for",
+        "on",
+        "of"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Az accuse sb után of áll.",
+        "en": "After accuse sb comes of.",
+        "es": "Después de accuse sb va of.",
+        "de": "Nach accuse sb steht of."
+      },
+      "wrong": {
+        "for": {
+          "hu": "A for az accuse után nem helyes; accuse sb of kell.",
+          "en": "For is not correct after accuse; you need accuse sb of.",
+          "es": "For no es correcto después de accuse; hace falta accuse sb of.",
+          "de": "For ist nach accuse nicht korrekt; man braucht accuse sb of."
+        },
+        "on": {
+          "hu": "Az on az accuse után nem helyes; accuse sb of kell.",
+          "en": "On is not correct after accuse; you need accuse sb of.",
+          "es": "On no es correcto después de accuse; hace falta accuse sb of.",
+          "de": "On ist nach accuse nicht korrekt; man braucht accuse sb of."
+        }
+      },
+      "examples": [
+        "She accused me of stealing.",
+        "He accused her of cheating."
+      ]
+    },
+    {
+      "id": "rep-06",
+      "sentence": "He apologized ___ being late.",
+      "options": [
+        "for",
+        "of",
+        "to"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az apologize után for áll.",
+        "en": "After apologize comes for.",
+        "es": "Después de apologize va for.",
+        "de": "Nach apologize steht for."
+      },
+      "wrong": {
+        "of": {
+          "hu": "Az of az apologize után nem helyes; apologize for kell.",
+          "en": "Of is not correct after apologize; you need apologize for.",
+          "es": "Of no es correcto después de apologize; hace falta apologize for.",
+          "de": "Of ist nach apologize nicht korrekt; man braucht apologize for."
+        },
+        "to": {
+          "hu": "A to be late-hez nem illik; az apologize után for + -ing áll.",
+          "en": "To does not fit before being late; after apologize comes for + -ing.",
+          "es": "To no encaja antes de being late; después de apologize va for + -ing.",
+          "de": "To passt nicht vor being late; nach apologize steht for + -ing."
+        }
+      },
+      "examples": [
+        "She apologized for crying.",
+        "They apologized for waiting."
+      ]
+    },
+    {
+      "id": "rep-07",
+      "sentence": "She insisted ___ paying for dinner.",
+      "options": [
+        "in",
+        "on",
+        "about"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az insist után on áll.",
+        "en": "After insist comes on.",
+        "es": "Después de insist va on.",
+        "de": "Nach insist steht on."
+      },
+      "wrong": {
+        "in": {
+          "hu": "Az in az insist után nem helyes; insist on kell.",
+          "en": "In is not correct after insist; you need insist on.",
+          "es": "In no es correcto después de insist; hace falta insist on.",
+          "de": "In ist nach insist nicht korrekt; man braucht insist on."
+        },
+        "about": {
+          "hu": "Az about az insist után nem helyes; insist on kell.",
+          "en": "About is not correct after insist; you need insist on.",
+          "es": "About no es correcto después de insist; hace falta insist on.",
+          "de": "About ist nach insist nicht korrekt; man braucht insist on."
+        }
+      },
+      "examples": [
+        "He insisted on driving.",
+        "They insisted on staying."
+      ]
+    },
+    {
+      "id": "rep-08",
+      "sentence": "He admitted ___ the window.",
+      "options": [
+        "to break",
+        "break",
+        "breaking"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Az admit után -ing alak áll.",
+        "en": "After admit comes the -ing form.",
+        "es": "Después de admit va la forma -ing.",
+        "de": "Nach admit steht die -ing-Form."
+      },
+      "wrong": {
+        "to break": {
+          "hu": "Az admit után nem áll to-infinitív; -ing alak kell.",
+          "en": "After admit there is no to-infinitive; you need the -ing form.",
+          "es": "Después de admit no va to-infinitivo; hace falta la forma -ing.",
+          "de": "Nach admit steht kein to-Infinitiv; man braucht die -ing-Form."
+        },
+        "break": {
+          "hu": "Az admit után nem áll alapige; -ing alak kell.",
+          "en": "After admit the base verb does not stand; you need the -ing form.",
+          "es": "Después de admit el verbo base no va; hace falta la forma -ing.",
+          "de": "Nach admit steht die Grundform nicht; man braucht die -ing-Form."
+        }
+      },
+      "examples": [
+        "She admitted losing it.",
+        "He admitted knowing her."
+      ]
+    },
+    {
+      "id": "rep-09",
+      "sentence": "They urged the mayor ___ the plan.",
+      "options": [
+        "to reject",
+        "rejecting",
+        "reject"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az urge + személy után to + alapige áll.",
+        "en": "After urge + person comes to + base verb.",
+        "es": "Después de urge + persona va to + verbo base.",
+        "de": "Nach urge + Person steht to + Grundform."
+      },
+      "wrong": {
+        "rejecting": {
+          "hu": "Az urge + személy után nem áll -ing alak; to + alapige kell.",
+          "en": "After urge + person there is no -ing form; you need to + base verb.",
+          "es": "Después de urge + persona no va forma -ing; hace falta to + verbo base.",
+          "de": "Nach urge + Person steht keine -ing-Form; man braucht to + Grundform."
+        },
+        "reject": {
+          "hu": "Az urge + személy után a to elmaradhatatlan.",
+          "en": "After urge + person the to is required.",
+          "es": "Después de urge + persona el to es obligatorio.",
+          "de": "Nach urge + Person ist das to Pflicht."
+        }
+      },
+      "examples": [
+        "She urged him to wait.",
+        "They urged us to vote."
+      ]
+    },
+    {
+      "id": "rep-10",
+      "sentence": "He threatened ___ the police if we did not leave.",
+      "options": [
+        "calling",
+        "to call",
+        "call"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A threaten után to + alapige áll.",
+        "en": "After threaten comes to + base verb.",
+        "es": "Después de threaten va to + verbo base.",
+        "de": "Nach threaten steht to + Grundform."
+      },
+      "wrong": {
+        "calling": {
+          "hu": "A threaten után nem áll -ing alak; to + alapige kell.",
+          "en": "After threaten there is no -ing form; you need to + base verb.",
+          "es": "Después de threaten no va forma -ing; hace falta to + verbo base.",
+          "de": "Nach threaten steht keine -ing-Form; man braucht to + Grundform."
+        },
+        "call": {
+          "hu": "A threaten után a to elmaradhatatlan.",
+          "en": "After threaten the to is required.",
+          "es": "Después de threaten el to es obligatorio.",
+          "de": "Nach threaten ist das to Pflicht."
+        }
+      },
+      "examples": [
+        "She threatened to leave.",
+        "He threatened to quit."
+      ]
+    },
+    {
+      "id": "rep-11",
+      "sentence": "He warned us ___ the river.",
+      "options": [
+        "don't cross",
+        "not crossing",
+        "not to cross"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A warn + személy után not to + alapige áll.",
+        "en": "After warn + person comes not to + base verb.",
+        "es": "Después de warn + persona va not to + verbo base.",
+        "de": "Nach warn + Person steht not to + Grundform."
+      },
+      "wrong": {
+        "don't cross": {
+          "hu": "A warned us don’t cross nem helyes közlés; not to cross kell.",
+          "en": "“Warned us don’t cross” is not a correct report; you need not to cross.",
+          "es": "«Warned us don’t cross» no es un reporte correcto; hace falta not to cross.",
+          "de": "„Warned us don’t cross“ ist kein korrekter Bericht; man braucht not to cross."
+        },
+        "not crossing": {
+          "hu": "A warn + személy után nem áll -ing alak; not to + alapige kell.",
+          "en": "After warn + person there is no -ing form; you need not to + base verb.",
+          "es": "Después de warn + persona no va forma -ing; hace falta not to + verbo base.",
+          "de": "Nach warn + Person steht keine -ing-Form; man braucht not to + Grundform."
+        }
+      },
+      "examples": [
+        "She warned me not to touch it.",
+        "He warned them not to wait."
+      ]
+    },
+    {
+      "id": "rep-12",
+      "sentence": "She reminded me ___ the tickets.",
+      "options": [
+        "to buy",
+        "buying",
+        "buy"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A remind + személy után to + alapige áll.",
+        "en": "After remind + person comes to + base verb.",
+        "es": "Después de remind + persona va to + verbo base.",
+        "de": "Nach remind + Person steht to + Grundform."
+      },
+      "wrong": {
+        "buying": {
+          "hu": "A remind + személy után nem áll -ing alak; to + alapige kell.",
+          "en": "After remind + person there is no -ing form; you need to + base verb.",
+          "es": "Después de remind + persona no va forma -ing; hace falta to + verbo base.",
+          "de": "Nach remind + Person steht keine -ing-Form; man braucht to + Grundform."
+        },
+        "buy": {
+          "hu": "A remind + személy után a to elmaradhatatlan.",
+          "en": "After remind + person the to is required.",
+          "es": "Después de remind + persona el to es obligatorio.",
+          "de": "Nach remind + Person ist das to Pflicht."
+        }
+      },
+      "examples": [
+        "He reminded us to call.",
+        "I reminded her to wait."
+      ]
+    },
+    {
+      "id": "rep-13",
+      "sentence": "She pretended ___ asleep when he came in.",
+      "options": [
+        "being",
+        "to be",
+        "be"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A pretend után to + alapige áll: pretended to be.",
+        "en": "After pretend comes to + base verb: pretended to be.",
+        "es": "Después de pretend va to + verbo base: pretended to be.",
+        "de": "Nach pretend steht to + Grundform: pretended to be."
+      },
+      "wrong": {
+        "being": {
+          "hu": "A pretend után nem áll -ing alak; to + alapige kell.",
+          "en": "After pretend there is no -ing form; you need to + base verb.",
+          "es": "Después de pretend no va forma -ing; hace falta to + verbo base.",
+          "de": "Nach pretend steht keine -ing-Form; man braucht to + Grundform."
+        },
+        "be": {
+          "hu": "A pretend után a be előtt to kell.",
+          "en": "After pretend the verb be needs to before it.",
+          "es": "Después de pretend el verbo be necesita to delante.",
+          "de": "Nach pretend braucht be ein to davor."
+        }
+      },
+      "examples": [
+        "He pretended to sleep.",
+        "She pretended to know."
+      ]
+    },
+    {
+      "id": "rep-14",
+      "sentence": "He blamed the driver ___ the accident.",
+      "options": [
+        "of",
+        "to",
+        "for"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A blame sb után for áll.",
+        "en": "After blame sb comes for.",
+        "es": "Después de blame sb va for.",
+        "de": "Nach blame sb steht for."
+      },
+      "wrong": {
+        "of": {
+          "hu": "Az of a blame után nem helyes; blame sb for kell.",
+          "en": "Of is not correct after blame; you need blame sb for.",
+          "es": "Of no es correcto después de blame; hace falta blame sb for.",
+          "de": "Of ist nach blame nicht korrekt; man braucht blame sb for."
+        },
+        "to": {
+          "hu": "A to a blame után nem helyes; blame sb for kell.",
+          "en": "To is not correct after blame; you need blame sb for.",
+          "es": "To no es correcto después de blame; hace falta blame sb for.",
+          "de": "To ist nach blame nicht korrekt; man braucht blame sb for."
+        }
+      },
+      "examples": [
+        "She blamed him for the mess.",
+        "They blamed me for it."
+      ]
+    },
+    {
+      "id": "rep-15",
+      "sentence": "He explained ___ the flight was canceled.",
+      "options": [
+        "that",
+        "to",
+        "of"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az explain után that-tagmondat áll.",
+        "en": "After explain comes a that-clause.",
+        "es": "Después de explain va una cláusula con that.",
+        "de": "Nach explain steht ein that-Satz."
+      },
+      "wrong": {
+        "to": {
+          "hu": "A to explained után személy kell (explained to me that…), tagmondat nem követheti.",
+          "en": "To needs a person after it (explained to me that…); a clause cannot follow it directly.",
+          "es": "To necesita una persona después (explained to me that…); una cláusula no puede seguirle directamente.",
+          "de": "To braucht danach eine Person (explained to me that…); ein Teilsatz kann nicht direkt folgen."
+        },
+        "of": {
+          "hu": "Az of az explain után nem helyes; that-tagmondat kell.",
+          "en": "Of is not correct after explain; you need a that-clause.",
+          "es": "Of no es correcto después de explain; hace falta una cláusula con that.",
+          "de": "Of ist nach explain nicht korrekt; man braucht einen that-Satz."
+        }
+      },
+      "examples": [
+        "She explained that she was ill.",
+        "He mentioned that he was late."
+      ]
+    },
+    {
+      "id": "rep-16",
+      "sentence": "She invited us ___ come in.",
+      "options": [
+        "for",
+        "to",
+        "that"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az invite + személy után to + alapige áll.",
+        "en": "After invite + person comes to + base verb.",
+        "es": "Después de invite + persona va to + verbo base.",
+        "de": "Nach invite + Person steht to + Grundform."
+      },
+      "wrong": {
+        "for": {
+          "hu": "A for come nem helyes; az invite + személy után to + alapige áll.",
+          "en": "“For come” is not correct; after invite + person comes to + base verb.",
+          "es": "«For come» no es correcto; después de invite + persona va to + verbo base.",
+          "de": "„For come“ ist nicht korrekt; nach invite + Person steht to + Grundform."
+        },
+        "that": {
+          "hu": "A that come nem helyes; az invite után nem áll that-tagmondat ebben a szerkezetben.",
+          "en": "“That come” is not correct; invite does not take a that-clause in this structure.",
+          "es": "«That come» no es correcto; invite no lleva una cláusula con that en esta estructura.",
+          "de": "„That come“ ist nicht korrekt; invite nimmt in dieser Struktur keinen that-Satz."
+        }
+      },
+      "examples": [
+        "He invited me to stay.",
+        "They invited us to eat."
+      ]
+    },
+    {
+      "id": "rep-17",
+      "sentence": "My boss ordered ___ to leave.",
+      "options": [
+        "I",
+        "my",
+        "me"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Az order után tárgyeset áll: ordered me to leave.",
+        "en": "After order comes the object form: ordered me to leave.",
+        "es": "Después de order va la forma de objeto: ordered me to leave.",
+        "de": "Nach order steht die Objektform: ordered me to leave."
+      },
+      "wrong": {
+        "I": {
+          "hu": "Az I alanyeset; az order után tárgyeset kell (me).",
+          "en": "I is the subject form; after order you need the object form (me).",
+          "es": "I es la forma de sujeto; después de order hace falta la forma de objeto (me).",
+          "de": "I ist die Subjektform; nach order braucht man die Objektform (me)."
+        },
+        "my": {
+          "hu": "A my birtokos névmás; személy névmás kell (me).",
+          "en": "My is a possessive; you need a personal pronoun (me).",
+          "es": "My es un posesivo; hace falta un pronombre personal (me).",
+          "de": "My ist ein Possessivpronomen; man braucht ein Personalpronomen (me)."
+        }
+      },
+      "examples": [
+        "She ordered him to stop.",
+        "They ordered us to wait."
+      ]
+    },
+    {
+      "id": "rep-18",
+      "kind": "form",
+      "verb": "forma",
+      "person": "prometer, ofrecer, negarse: verbo + ...",
+      "answer": "to-infinitive",
+      "accept": [
+        "to infinitive",
+        "infinitive with to"
+      ],
+      "table": "rep-forms"
+    },
+    {
+      "id": "rep-19",
+      "kind": "form",
+      "verb": "forma",
+      "person": "negar, admitir, sugerir: verbo + ...",
+      "answer": "-ing",
+      "accept": [
+        "ing",
+        "gerund",
+        "ing form",
+        "-ing form",
+        "verb + ing",
+        "verb + -ing"
+      ],
+      "table": "rep-forms"
+    },
+    {
+      "id": "rep-20",
+      "kind": "form",
+      "verb": "forma",
+      "person": "aconsejar, advertir, recordar: verbo + persona + ...",
+      "answer": "object + to-infinitive",
+      "accept": [
+        "person + to-infinitive",
+        "object + to infinitive",
+        "object+to-infinitive",
+        "person + to infinitive",
+        "someone + to-infinitive"
+      ],
+      "table": "rep-forms"
+    },
+    {
+      "id": "rep-21",
+      "kind": "form",
+      "verb": "forma",
+      "person": "acusar a alguien de (accuse sb ...)",
+      "answer": "of",
+      "table": "rep-forms"
+    },
+    {
+      "id": "rep-22",
+      "kind": "form",
+      "verb": "forma",
+      "person": "disculparse por (apologize ...)",
+      "answer": "for",
+      "table": "rep-forms"
+    },
+    {
+      "id": "rep-23",
+      "kind": "form",
+      "verb": "forma",
+      "person": "insistir en (insist ...)",
+      "answer": "on",
+      "table": "rep-forms"
+    },
+    {
+      "kind": "why",
+      "id": "rep-24",
+      "es": "She promised to call me.",
+      "target": "promised to call",
+      "tr": {
+        "hu": "Megígérte, hogy felhív.",
+        "en": "She promised to call me.",
+        "es": "Prometió llamarme.",
+        "de": "Sie versprach, mich anzurufen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "promise + -ing",
+            "en": "promise + -ing",
+            "es": "promise + -ing",
+            "de": "promise + -ing"
+          },
+          "wrong": {
+            "hu": "A promise után nem -ing alak áll, hanem to + alapige.",
+            "en": "After promise comes not an -ing form but to + base verb.",
+            "es": "Después de promise no va una forma -ing sino to + verbo base.",
+            "de": "Nach promise steht keine -ing-Form, sondern to + Grundform."
+          }
+        },
+        {
+          "text": {
+            "hu": "promise + alapige, to nélkül",
+            "en": "promise + base verb, without to",
+            "es": "promise + verbo base, sin to",
+            "de": "promise + Grundform, ohne to"
+          },
+          "wrong": {
+            "hu": "A promise után a to nem hagyható el.",
+            "en": "After promise the to cannot be dropped.",
+            "es": "Después de promise el to no se puede omitir.",
+            "de": "Nach promise kann das to nicht wegfallen."
+          }
+        },
+        {
+          "text": {
+            "hu": "promise + to + alapige",
+            "en": "promise + to + base verb",
+            "es": "promise + to + verbo base",
+            "de": "promise + to + Grundform"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "rep-25",
+      "es": "He denied taking the money.",
+      "target": "denied taking",
+      "tr": {
+        "hu": "Tagadta, hogy elvette a pénzt.",
+        "en": "He denied taking the money.",
+        "es": "Negó haber tomado el dinero.",
+        "de": "Er bestritt, das Geld genommen zu haben."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "deny + -ing",
+            "en": "deny + -ing",
+            "es": "deny + -ing",
+            "de": "deny + -ing"
+          }
+        },
+        {
+          "text": {
+            "hu": "deny + to + alapige",
+            "en": "deny + to + base verb",
+            "es": "deny + to + verbo base",
+            "de": "deny + to + Grundform"
+          },
+          "wrong": {
+            "hu": "A deny után nem to + alapige áll, hanem -ing alak.",
+            "en": "After deny comes not to + base verb but the -ing form.",
+            "es": "Después de deny no va to + verbo base sino la forma -ing.",
+            "de": "Nach deny steht nicht to + Grundform, sondern die -ing-Form."
+          }
+        },
+        {
+          "text": {
+            "hu": "deny + személy + to + alapige",
+            "en": "deny + person + to + base verb",
+            "es": "deny + persona + to + verbo base",
+            "de": "deny + Person + to + Grundform"
+          },
+          "wrong": {
+            "hu": "A deny nem kér személyt és to-infinitívet.",
+            "en": "Deny takes neither a person nor a to-infinitive.",
+            "es": "Deny no lleva persona ni to-infinitivo.",
+            "de": "Deny nimmt weder eine Person noch einen to-Infinitiv."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "rep-26",
+      "es": "She advised me to wait.",
+      "target": "advised me to wait",
+      "tr": {
+        "hu": "Azt tanácsolta, várjak.",
+        "en": "She advised me to wait.",
+        "es": "Me aconsejó esperar.",
+        "de": "Sie riet mir zu warten."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "advise + személy + -ing",
+            "en": "advise + person + -ing",
+            "es": "advise + persona + -ing",
+            "de": "advise + Person + -ing"
+          },
+          "wrong": {
+            "hu": "Az advise + személy után nem -ing alak áll, hanem to + alapige.",
+            "en": "After advise + person comes not an -ing form but to + base verb.",
+            "es": "Después de advise + persona no va una forma -ing sino to + verbo base.",
+            "de": "Nach advise + Person steht keine -ing-Form, sondern to + Grundform."
+          }
+        },
+        {
+          "text": {
+            "hu": "advise + személy + alapige (to nélkül)",
+            "en": "advise + person + base verb (without to)",
+            "es": "advise + persona + verbo base (sin to)",
+            "de": "advise + Person + Grundform (ohne to)"
+          },
+          "wrong": {
+            "hu": "Az advise után a to nem hagyható el.",
+            "en": "After advise the to cannot be dropped.",
+            "es": "Después de advise el to no se puede omitir.",
+            "de": "Nach advise kann das to nicht wegfallen."
+          }
+        },
+        {
+          "text": {
+            "hu": "advise + személy + to + alapige",
+            "en": "advise + person + to + base verb",
+            "es": "advise + persona + to + verbo base",
+            "de": "advise + Person + to + Grundform"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "rep-27",
+      "es": "He accused me of lying.",
+      "target": "accused me of lying",
+      "tr": {
+        "hu": "Hazugsággal vádolt.",
+        "en": "He accused me of lying.",
+        "es": "Me acusó de mentir.",
+        "de": "Er beschuldigte mich zu lügen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "accuse + személy + of + -ing",
+            "en": "accuse + person + of + -ing",
+            "es": "accuse + persona + of + -ing",
+            "de": "accuse + Person + of + -ing"
+          }
+        },
+        {
+          "text": {
+            "hu": "accuse + személy + to + alapige",
+            "en": "accuse + person + to + base verb",
+            "es": "accuse + persona + to + verbo base",
+            "de": "accuse + Person + to + Grundform"
+          },
+          "wrong": {
+            "hu": "Az accuse után nem to + alapige áll, hanem of + -ing.",
+            "en": "After accuse comes not to + base verb but of + -ing.",
+            "es": "Después de accuse no va to + verbo base sino of + -ing.",
+            "de": "Nach accuse steht nicht to + Grundform, sondern of + -ing."
+          }
+        },
+        {
+          "text": {
+            "hu": "accuse + that-tagmondat",
+            "en": "accuse + a that-clause",
+            "es": "accuse + una cláusula con that",
+            "de": "accuse + ein that-Satz"
+          },
+          "wrong": {
+            "hu": "Az accuse nem kér that-tagmondatot; of + -ing áll.",
+            "en": "Accuse does not take a that-clause; of + -ing is used.",
+            "es": "Accuse no lleva una cláusula con that; se usa of + -ing.",
+            "de": "Accuse nimmt keinen that-Satz; es steht of + -ing."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "rep-28",
+      "es": "She apologized for being late.",
+      "target": "apologized for being",
+      "tr": {
+        "hu": "Bocsánatot kért a késésért.",
+        "en": "She apologized for being late.",
+        "es": "Se disculpó por llegar tarde.",
+        "de": "Sie entschuldigte sich für die Verspätung."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "apologize + to + alapige",
+            "en": "apologize + to + base verb",
+            "es": "apologize + to + verbo base",
+            "de": "apologize + to + Grundform"
+          },
+          "wrong": {
+            "hu": "Az apologize után nem to + alapige áll, hanem for + -ing.",
+            "en": "After apologize comes not to + base verb but for + -ing.",
+            "es": "Después de apologize no va to + verbo base sino for + -ing.",
+            "de": "Nach apologize steht nicht to + Grundform, sondern for + -ing."
+          }
+        },
+        {
+          "text": {
+            "hu": "apologize + of + -ing",
+            "en": "apologize + of + -ing",
+            "es": "apologize + of + -ing",
+            "de": "apologize + of + -ing"
+          },
+          "wrong": {
+            "hu": "Az apologize után nem of áll, hanem for.",
+            "en": "After apologize comes not of but for.",
+            "es": "Después de apologize no va of sino for.",
+            "de": "Nach apologize steht nicht of, sondern for."
+          }
+        },
+        {
+          "text": {
+            "hu": "apologize + for + -ing",
+            "en": "apologize + for + -ing",
+            "es": "apologize + for + -ing",
+            "de": "apologize + for + -ing"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "rep-29",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "Prometió llamarme.",
+          "en": "He promised to call me."
+        },
+        {
+          "es": "Negó haber tomado el dinero.",
+          "en": "He denied taking the money."
+        },
+        {
+          "es": "Me aconsejó esperar.",
+          "en": "She advised me to wait."
+        },
+        {
+          "es": "Me acusó de mentir.",
+          "en": "He accused me of lying."
+        },
+        {
+          "es": "Se disculpó por llegar tarde.",
+          "en": "She apologized for being late."
+        },
+        {
+          "es": "Insistieron en pagar.",
+          "en": "They insisted on paying."
+        }
+      ]
+    },
+    {
+      "id": "rep-30",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "se negó a firmar",
+          "en": "refused to sign"
+        },
+        {
+          "es": "sugirió ir",
+          "en": "suggested going"
+        },
+        {
+          "es": "nos advirtió que no cruzáramos",
+          "en": "warned us not to cross"
+        },
+        {
+          "es": "me recordó comprar",
+          "en": "reminded me to buy"
+        },
+        {
+          "es": "admitió haber roto",
+          "en": "admitted breaking"
+        },
+        {
+          "es": "le dio las gracias por ayudar",
+          "en": "thanked him for helping"
+        }
+      ]
+    }
+  ]
+}
