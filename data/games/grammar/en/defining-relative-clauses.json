@@ -1,0 +1,1154 @@
+{
+  "schema": 2,
+  "topic": "defining_relative_clauses",
+  "level": "B1",
+  "title": {
+    "hu": "Vonatkozói mellékmondatok (who, which, that, where, whose)",
+    "en": "Defining Relative Clauses (who, which, that, where, whose)",
+    "es": "Oraciones de relativo (who, which, that, where, whose)",
+    "de": "Relativsätze (who, which, that, where, whose)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A vonatkozói mellékmondat megmondja, melyik személyről, dologról vagy helyről beszélünk: „The woman who lives next door is a doctor.” A spanyol „que” helyett az angolban több szó van: who (személy), which (dolog), that (személy vagy dolog), where (hely), whose (kié, a spanyol „cuyo”). Nem szabad a „what” szót használni: nem „the book what I read”, hanem „the book that I read”.",
+        "en": "A relative clause tells us which person, thing or place we mean: “The woman who lives next door is a doctor.” Where Spanish has “que”, English has several words: who (a person), which (a thing), that (a person or a thing), where (a place), whose (belonging to, the Spanish “cuyo”). You must not use “what”: not “the book what I read”, but “the book that I read”.",
+        "es": "Una oración de relativo dice de qué persona, cosa o lugar hablamos: «The woman who lives next door is a doctor.» Donde el español tiene «que», el inglés tiene varias palabras: who (una persona), which (una cosa), that (una persona o una cosa), where (un lugar), whose (de quién, el «cuyo» del español). No se debe usar «what»: no «the book what I read», sino «the book that I read».",
+        "de": "Ein Relativsatz sagt uns, welche Person, welche Sache oder welchen Ort wir meinen: „The woman who lives next door is a doctor.“ Wo das Spanische „que“ hat, hat das Englische mehrere Wörter: who (eine Person), which (eine Sache), that (eine Person oder eine Sache), where (ein Ort), whose (wessen, das spanische „cuyo“). „What“ darf man nicht benutzen: nicht „the book what I read“, sondern „the book that I read“."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "rc-forms",
+      "title": {
+        "hu": "Melyik szót használjam?",
+        "en": "Which word do I use?",
+        "es": "¿Qué palabra uso?",
+        "de": "Welches Wort nehme ich?"
+      },
+      "header": [
+        {
+          "hu": "Mire utal",
+          "en": "It refers to",
+          "es": "A qué se refiere",
+          "de": "Worauf es sich bezieht"
+        },
+        {
+          "hu": "szó",
+          "en": "word",
+          "es": "palabra",
+          "de": "Wort"
+        }
+      ],
+      "rows": [
+        [
+          "una persona",
+          "who"
+        ],
+        [
+          "una cosa",
+          "which"
+        ],
+        [
+          "una persona o una cosa",
+          "that"
+        ],
+        [
+          "un lugar",
+          "where"
+        ],
+        [
+          "posesión (cuyo, cuya)",
+          "whose"
+        ],
+        [
+          "un tiempo (el día cuando)",
+          "when"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Személy, dolog, hely",
+        "en": "Person, thing, place",
+        "es": "Persona, cosa, lugar",
+        "de": "Person, Sache, Ort"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Személyre who vagy that, dologra which vagy that. A főnév után közvetlenül jön a vonatkozó szó.",
+            "en": "For a person use who or that, for a thing which or that. The relative word comes straight after the noun.",
+            "es": "Para una persona who o that, para una cosa which o that. La palabra de relativo va justo después del sustantivo.",
+            "de": "Für eine Person who oder that, für eine Sache which oder that. Das Relativwort steht direkt nach dem Nomen."
+          },
+          "examples": [
+            {
+              "es": "The woman who lives next door is a doctor.",
+              "tr": {
+                "hu": "A szomszédban lakó nő orvos.",
+                "en": "The woman who lives next door is a doctor.",
+                "es": "La mujer que vive al lado es doctora.",
+                "de": "Die Frau, die nebenan wohnt, ist Ärztin."
+              }
+            },
+            {
+              "es": "This is the book that I read last week.",
+              "tr": {
+                "hu": "Ez az a könyv, amit múlt héten olvastam.",
+                "en": "This is the book that I read last week.",
+                "es": "Este es el libro que leí la semana pasada.",
+                "de": "Das ist das Buch, das ich letzte Woche gelesen habe."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Helyre where, birtoklásra whose. A whose után közvetlenül a főnév jön: „the man whose car was stolen.”",
+            "en": "For a place use where, for possession whose. After whose comes the noun directly: “the man whose car was stolen.”",
+            "es": "Para un lugar where, para posesión whose. Después de whose va directamente el sustantivo: «the man whose car was stolen.»",
+            "de": "Für einen Ort where, für Besitz whose. Nach whose steht direkt das Nomen: „the man whose car was stolen.“"
+          },
+          "examples": [
+            {
+              "es": "The restaurant where we had dinner was great.",
+              "tr": {
+                "hu": "Az étterem, ahol vacsoráztunk, nagyszerű volt.",
+                "en": "The restaurant where we had dinner was great.",
+                "es": "El restaurante donde cenamos estuvo genial.",
+                "de": "Das Restaurant, in dem wir zu Abend gegessen haben, war toll."
+              }
+            },
+            {
+              "es": "That is the man whose car was stolen.",
+              "tr": {
+                "hu": "Ő az a férfi, akinek ellopták az autóját.",
+                "en": "That is the man whose car was stolen.",
+                "es": "Ese es el hombre cuyo carro fue robado.",
+                "de": "Das ist der Mann, dessen Auto gestohlen wurde."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Amikor a vonatkozó szó elhagyható",
+        "en": "When the relative word can be left out",
+        "es": "Cuándo se puede omitir la palabra de relativo",
+        "de": "Wann man das Relativwort weglassen kann"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Ha a vonatkozó szó a mellékmondat tárgya (utána új alany jön), elhagyható: „The movie we saw was good.” Ha a mellékmondat alanya, nem hagyható el: „The woman who lives here…”",
+            "en": "When the relative word is the object of the clause (a new subject follows), it can be left out: “The movie we saw was good.” When it is the subject of the clause, it cannot be left out: “The woman who lives here…”",
+            "es": "Cuando la palabra de relativo es el objeto de la oración (sigue un sujeto nuevo), se puede omitir: «The movie we saw was good.» Cuando es el sujeto de la oración, no se puede omitir: «The woman who lives here…»",
+            "de": "Wenn das Relativwort das Objekt des Satzes ist (danach folgt ein neues Subjekt), kann man es weglassen: „The movie we saw was good.“ Wenn es das Subjekt des Satzes ist, kann man es nicht weglassen: „The woman who lives here…“"
+          },
+          "examples": [
+            {
+              "es": "The movie we saw was good.",
+              "tr": {
+                "hu": "A film, amit láttunk, jó volt.",
+                "en": "The movie we saw was good.",
+                "es": "La película que vimos estuvo buena.",
+                "de": "Der Film, den wir gesehen haben, war gut."
+              }
+            },
+            {
+              "es": "The keys I lost were in my bag.",
+              "tr": {
+                "hu": "A kulcsok, amiket elvesztettem, a táskámban voltak.",
+                "en": "The keys I lost were in my bag.",
+                "es": "Las llaves que perdí estaban en mi bolsa.",
+                "de": "Die Schlüssel, die ich verloren hatte, waren in meiner Tasche."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A spanyol „que” angolul soha nem „what”: nem „the man what lives here”, hanem „the man who lives here”. A what kérdő szó vagy „amit” jelentésű, nem vonatkozó szó.",
+        "en": "The Spanish “que” is never “what” in English: not “the man what lives here”, but “the man who lives here”. What is a question word or means “the thing that”, not a relative word.",
+        "es": "El «que» español nunca es «what» en inglés: no «the man what lives here», sino «the man who lives here». What es una palabra interrogativa o significa «lo que», no es una palabra de relativo.",
+        "de": "Das spanische „que“ ist im Englischen nie „what“: nicht „the man what lives here“, sondern „the man who lives here“. What ist ein Fragewort oder bedeutet „das, was“, kein Relativwort."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Ne ismételd meg a főnevet vagy az alanyt: nem „the man who he lives here”, hanem „the man who lives here”. A who maga az alany.",
+        "en": "Don’t repeat the noun or the subject: not “the man who he lives here”, but “the man who lives here”. Who is the subject itself.",
+        "es": "No repitas el sustantivo ni el sujeto: no «the man who he lives here», sino «the man who lives here». Who es el sujeto mismo.",
+        "de": "Wiederhole das Nomen oder das Subjekt nicht: nicht „the man who he lives here“, sondern „the man who lives here“. Who ist selbst das Subjekt."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A meghatározó mellékmondat előtt nincs vessző: „The girl who is talking to Ana is my sister.” Vesszővel a nem meghatározó mellékmondat jár, de az már magasabb szint.",
+        "en": "There is no comma before a defining relative clause: “The girl who is talking to Ana is my sister.” Commas go with non-defining clauses, but that is a higher level.",
+        "es": "No hay coma antes de una oración de relativo especificativa: «The girl who is talking to Ana is my sister.» Las comas van con las oraciones no especificativas, pero eso es de un nivel más alto.",
+        "de": "Vor einem bestimmenden Relativsatz steht kein Komma: „The girl who is talking to Ana is my sister.“ Kommas gehören zu nicht bestimmenden Sätzen, aber das ist ein höheres Niveau."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A vonatkozói mellékmondat megmondja, melyik személyről, dologról vagy helyről beszélünk. Személyre «who» vagy «that» áll: «The woman who lives next door is a doctor». Dologra «which» vagy «that»: «This is the book that I read». Helyre «where»: «The restaurant where we had dinner was great». Birtoklásra «whose»: «That is the man whose car was stolen». A spanyol «que» angolul soha nem «what». Ha a vonatkozó szó a mellékmondat tárgya, el is hagyható: «The movie we saw was good».",
+    "en": "A relative clause tells us which person, thing or place we mean. For a person use «who» or «that»: «The woman who lives next door is a doctor». For a thing «which» or «that»: «This is the book that I read». For a place «where»: «The restaurant where we had dinner was great». For possession «whose»: «That is the man whose car was stolen». The Spanish «que» is never «what» in English. When the relative word is the object of the clause, it can also be left out: «The movie we saw was good».",
+    "es": "Una oración de relativo dice de qué persona, cosa o lugar hablamos. Para una persona se usa «who» o «that»: «The woman who lives next door is a doctor». Para una cosa «which» o «that»: «This is the book that I read». Para un lugar «where»: «The restaurant where we had dinner was great». Para posesión «whose»: «That is the man whose car was stolen». El «que» español nunca es «what» en inglés. Cuando la palabra de relativo es el objeto de la oración, también se puede omitir: «The movie we saw was good».",
+    "de": "Ein Relativsatz sagt uns, welche Person, Sache oder welchen Ort wir meinen. Für eine Person nimmt man «who» oder «that»: «The woman who lives next door is a doctor». Für eine Sache «which» oder «that»: «This is the book that I read». Für einen Ort «where»: «The restaurant where we had dinner was great». Für Besitz «whose»: «That is the man whose car was stolen». Das spanische «que» ist im Englischen nie «what». Wenn das Relativwort das Objekt des Satzes ist, kann man es auch weglassen: «The movie we saw was good»."
+  },
+  "items": [
+    {
+      "id": "rc-01",
+      "sentence": "The woman ___ lives next door is a doctor.",
+      "options": [
+        "which",
+        "who",
+        "where"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Személyre who áll: the woman who lives next door.",
+        "en": "For a person use who: the woman who lives next door.",
+        "es": "Para una persona se usa who: the woman who lives next door.",
+        "de": "Für eine Person nimmt man who: the woman who lives next door."
+      },
+      "wrong": {
+        "which": {
+          "hu": "A which dologra való; a nő személy, ezért who vagy that kell.",
+          "en": "Which is for things; the woman is a person, so you need who or that.",
+          "es": "Which es para cosas; la mujer es una persona, por eso hace falta who o that.",
+          "de": "Which ist für Sachen; die Frau ist eine Person, deshalb braucht man who oder that."
+        },
+        "where": {
+          "hu": "A where helyre való; itt nem hely, hanem személy a főnév.",
+          "en": "Where is for places; here the noun is a person, not a place.",
+          "es": "Where es para lugares; aquí el sustantivo es una persona, no un lugar.",
+          "de": "Where ist für Orte; hier ist das Nomen eine Person, kein Ort."
+        }
+      },
+      "examples": [
+        "I know a man who speaks English.",
+        "The boy who called is my cousin."
+      ]
+    },
+    {
+      "id": "rc-02",
+      "sentence": "This is the book ___ I read last week.",
+      "options": [
+        "who",
+        "where",
+        "which"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Dologra which (vagy that) áll: the book which I read.",
+        "en": "For a thing use which (or that): the book which I read.",
+        "es": "Para una cosa se usa which (o that): the book which I read.",
+        "de": "Für eine Sache nimmt man which (oder that): the book which I read."
+      },
+      "wrong": {
+        "who": {
+          "hu": "A who személyre való; a könyv dolog, ezért which vagy that.",
+          "en": "Who is for people; the book is a thing, so which or that.",
+          "es": "Who es para personas; el libro es una cosa, por eso which o that.",
+          "de": "Who ist für Personen; das Buch ist eine Sache, deshalb which oder that."
+        },
+        "where": {
+          "hu": "A where helyre való; a könyv nem hely.",
+          "en": "Where is for places; a book is not a place.",
+          "es": "Where es para lugares; un libro no es un lugar.",
+          "de": "Where ist für Orte; ein Buch ist kein Ort."
+        }
+      },
+      "examples": [
+        "The phone which is on the table is mine.",
+        "She has a car which is very fast."
+      ]
+    },
+    {
+      "id": "rc-03",
+      "sentence": "The restaurant ___ we had dinner was good.",
+      "options": [
+        "where",
+        "who",
+        "whose"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Helyre where áll: the restaurant where we had dinner.",
+        "en": "For a place use where: the restaurant where we had dinner.",
+        "es": "Para un lugar se usa where: the restaurant where we had dinner.",
+        "de": "Für einen Ort nimmt man where: the restaurant where we had dinner."
+      },
+      "wrong": {
+        "who": {
+          "hu": "A who személyre való; az étterem hely, ezért where.",
+          "en": "Who is for people; the restaurant is a place, so where.",
+          "es": "Who es para personas; el restaurante es un lugar, por eso where.",
+          "de": "Who ist für Personen; das Restaurant ist ein Ort, deshalb where."
+        },
+        "whose": {
+          "hu": "A whose birtoklást jelent (kié), és főnév követi; itt a helyet kell megnevezni.",
+          "en": "Whose means belonging (whose it is) and is followed by a noun; here a place must be named.",
+          "es": "Whose significa pertenencia (de quién) y lo sigue un sustantivo; aquí hay que nombrar un lugar.",
+          "de": "Whose bedeutet Besitz (wessen) und wird von einem Nomen gefolgt; hier muss ein Ort benannt werden."
+        }
+      },
+      "examples": [
+        "I know a place where you can eat.",
+        "This is the house where I live."
+      ]
+    },
+    {
+      "id": "rc-04",
+      "sentence": "That is the man ___ car is red.",
+      "options": [
+        "who",
+        "whose",
+        "which"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Birtoklás: kié az autó? Whose car (a spanyol „cuyo carro”).",
+        "en": "Possession: whose car is it? Whose car (the Spanish “cuyo carro”).",
+        "es": "Posesión: ¿de quién es el carro? Whose car (el «cuyo carro» español).",
+        "de": "Besitz: wessen Auto? Whose car (das spanische „cuyo carro“)."
+      },
+      "wrong": {
+        "who": {
+          "hu": "A who maga az alany, utána ige jön (who lives); itt főnév (car) jön, ezért whose.",
+          "en": "Who is the subject itself and a verb follows it (who lives); here a noun (car) follows, so whose.",
+          "es": "Who es el sujeto mismo y lo sigue un verbo (who lives); aquí sigue un sustantivo (car), por eso whose.",
+          "de": "Who ist selbst das Subjekt und ein Verb folgt (who lives); hier folgt ein Nomen (car), deshalb whose."
+        },
+        "which": {
+          "hu": "A which dologra való, és nem fejez ki birtoklást; a férfi autójához whose kell.",
+          "en": "Which is for things and does not express possession; the man’s car needs whose.",
+          "es": "Which es para cosas y no expresa posesión; el carro del hombre necesita whose.",
+          "de": "Which ist für Sachen und drückt keinen Besitz aus; das Auto des Mannes braucht whose."
+        }
+      },
+      "examples": [
+        "She is the girl whose bag I found.",
+        "I know a man whose son is a doctor."
+      ]
+    },
+    {
+      "id": "rc-05",
+      "sentence": "The phone ___ is on the table is mine.",
+      "options": [
+        "who",
+        "whose",
+        "which"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Dologra which áll: the phone which is on the table.",
+        "en": "For a thing use which: the phone which is on the table.",
+        "es": "Para una cosa se usa which: the phone which is on the table.",
+        "de": "Für eine Sache nimmt man which: the phone which is on the table."
+      },
+      "wrong": {
+        "who": {
+          "hu": "A who személyre való; a telefon dolog.",
+          "en": "Who is for people; the phone is a thing.",
+          "es": "Who es para personas; el celular es una cosa.",
+          "de": "Who ist für Personen; das Handy ist eine Sache."
+        },
+        "whose": {
+          "hu": "A whose után főnév jön, nem ige (is); itt a which a megfelelő alany.",
+          "en": "After whose a noun follows, not a verb (is); here which is the right subject.",
+          "es": "Después de whose sigue un sustantivo, no un verbo (is); aquí which es el sujeto correcto.",
+          "de": "Nach whose folgt ein Nomen, nicht ein Verb (is); hier ist which das richtige Subjekt."
+        }
+      },
+      "examples": [
+        "The cat which is sleeping is mine.",
+        "The bus which is late is ours."
+      ]
+    },
+    {
+      "id": "rc-06",
+      "sentence": "I know a place ___ you can buy fresh bread.",
+      "options": [
+        "where",
+        "which",
+        "whose"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Helyre where áll: a place where you can buy bread.",
+        "en": "For a place use where: a place where you can buy bread.",
+        "es": "Para un lugar se usa where: a place where you can buy bread.",
+        "de": "Für einen Ort nimmt man where: a place where you can buy bread."
+      },
+      "wrong": {
+        "which": {
+          "hu": "A which után a mellékmondat hiányos alanyt vagy tárgyat kér; itt teljes mondat jön (you can buy), ezért where.",
+          "en": "After which the clause needs a missing subject or object; here a full clause follows (you can buy), so where.",
+          "es": "Después de which la cláusula necesita un sujeto u objeto que falta; aquí sigue una cláusula completa (you can buy), por eso where.",
+          "de": "Nach which braucht der Satzteil ein fehlendes Subjekt oder Objekt; hier folgt ein vollständiger Satz (you can buy), deshalb where."
+        },
+        "whose": {
+          "hu": "A whose birtoklást jelent, és főnév követi; itt a helyre kell utalni.",
+          "en": "Whose means possession and is followed by a noun; here you must refer to a place.",
+          "es": "Whose significa posesión y lo sigue un sustantivo; aquí hay que referirse a un lugar.",
+          "de": "Whose bedeutet Besitz und wird von einem Nomen gefolgt; hier muss man sich auf einen Ort beziehen."
+        }
+      },
+      "examples": [
+        "This is the shop where I bought it.",
+        "Is there a park where we can play?"
+      ]
+    },
+    {
+      "id": "rc-07",
+      "sentence": "She is the teacher ___ helped me.",
+      "options": [
+        "which",
+        "that",
+        "where"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Személyre that is jó: the teacher that helped me.",
+        "en": "That also works for a person: the teacher that helped me.",
+        "es": "That también sirve para una persona: the teacher that helped me.",
+        "de": "That passt auch für eine Person: the teacher that helped me."
+      },
+      "wrong": {
+        "which": {
+          "hu": "A which dologra való; a tanár személy.",
+          "en": "Which is for things; the teacher is a person.",
+          "es": "Which es para cosas; el maestro es una persona.",
+          "de": "Which ist für Sachen; der Lehrer ist eine Person."
+        },
+        "where": {
+          "hu": "A where helyre való; a tanár nem hely.",
+          "en": "Where is for places; a teacher is not a place.",
+          "es": "Where es para lugares; un maestro no es un lugar.",
+          "de": "Where ist für Orte; ein Lehrer ist kein Ort."
+        }
+      },
+      "examples": [
+        "The man that called is here.",
+        "The girl that sings is my cousin."
+      ]
+    },
+    {
+      "id": "rc-08",
+      "sentence": "The book ___ I bought yesterday is good.",
+      "options": [
+        "what",
+        "whose",
+        "that"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A „que” angolul that: the book that I bought. (Az is elhagyható.)",
+        "en": "The Spanish “que” is that in English: the book that I bought. (It can also be left out.)",
+        "es": "El «que» español es that en inglés: the book that I bought. (También se puede omitir.)",
+        "de": "Das spanische „que“ ist im Englischen that: the book that I bought. (Man kann es auch weglassen.)"
+      },
+      "wrong": {
+        "what": {
+          "hu": "A what nem vonatkozó szó: a „the book what I bought” helytelen.",
+          "en": "What is not a relative word: “the book what I bought” is incorrect.",
+          "es": "What no es una palabra de relativo: «the book what I bought» es incorrecto.",
+          "de": "What ist kein Relativwort: „the book what I bought“ ist falsch."
+        },
+        "whose": {
+          "hu": "A whose birtoklást jelent (kié); itt a könyvet jelöli ki a mondat, nem a tulajdonosát.",
+          "en": "Whose means possession (whose); here the sentence points to the book, not to its owner.",
+          "es": "Whose significa posesión (de quién); aquí la oración señala el libro, no a su dueño.",
+          "de": "Whose bedeutet Besitz (wessen); hier bezeichnet der Satz das Buch, nicht seinen Besitzer."
+        }
+      },
+      "examples": [
+        "The film that I like is old.",
+        "The keys that I lost are here."
+      ]
+    },
+    {
+      "id": "rc-09",
+      "sentence": "The man ___ lives here is my uncle.",
+      "options": [
+        "who",
+        "who he",
+        "which"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A who maga az alany, nem kell mellé he: the man who lives here.",
+        "en": "Who is the subject itself, so you don’t add he: the man who lives here.",
+        "es": "Who es el sujeto mismo, no hace falta agregar he: the man who lives here.",
+        "de": "Who ist selbst das Subjekt, man setzt kein he dazu: the man who lives here."
+      },
+      "wrong": {
+        "who he": {
+          "hu": "A „who he lives” az alanyt kétszer mondja; a who már az alany.",
+          "en": "“Who he lives” says the subject twice; who is already the subject.",
+          "es": "«Who he lives» dice el sujeto dos veces; who ya es el sujeto.",
+          "de": "„Who he lives“ nennt das Subjekt zweimal; who ist schon das Subjekt."
+        },
+        "which": {
+          "hu": "A which dologra való; a férfi személy.",
+          "en": "Which is for things; the man is a person.",
+          "es": "Which es para cosas; el hombre es una persona.",
+          "de": "Which ist für Sachen; der Mann ist eine Person."
+        }
+      },
+      "examples": [
+        "The girl who sings is my sister.",
+        "The man who works here is nice."
+      ]
+    },
+    {
+      "id": "rc-10",
+      "sentence": "The car ___ I bought is red.",
+      "options": [
+        "which it",
+        "which",
+        "who"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A which itt tárgy; nem kell mellé it: the car which I bought.",
+        "en": "Which is the object here; you don’t add it: the car which I bought.",
+        "es": "Which es el objeto aquí; no hace falta agregar it: the car which I bought.",
+        "de": "Which ist hier das Objekt; man setzt kein it dazu: the car which I bought."
+      },
+      "wrong": {
+        "which it": {
+          "hu": "A „which it” a tárgyat kétszer mondja; a which már a tárgy szerepét tölti be.",
+          "en": "“Which it” says the object twice; which already plays the role of the object.",
+          "es": "«Which it» dice el objeto dos veces; which ya cumple la función del objeto.",
+          "de": "„Which it“ nennt das Objekt zweimal; which übernimmt schon die Rolle des Objekts."
+        },
+        "who": {
+          "hu": "A who személyre való; az autó dolog.",
+          "en": "Who is for people; the car is a thing.",
+          "es": "Who es para personas; el carro es una cosa.",
+          "de": "Who ist für Personen; das Auto ist eine Sache."
+        }
+      },
+      "examples": [
+        "The house which I like is old.",
+        "The bag which I found is here."
+      ]
+    },
+    {
+      "id": "rc-11",
+      "sentence": "People ___ work hard usually win.",
+      "options": [
+        "which",
+        "where",
+        "who"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Személyekre (people) who áll: people who work hard.",
+        "en": "For people use who: people who work hard.",
+        "es": "Para personas se usa who: people who work hard.",
+        "de": "Für Personen nimmt man who: people who work hard."
+      },
+      "wrong": {
+        "which": {
+          "hu": "A which dologra való; a people személyeket jelent.",
+          "en": "Which is for things; people means persons.",
+          "es": "Which es para cosas; people significa personas.",
+          "de": "Which ist für Sachen; people bedeutet Personen."
+        },
+        "where": {
+          "hu": "A where helyre való; a people nem hely.",
+          "en": "Where is for places; people is not a place.",
+          "es": "Where es para lugares; people no es un lugar.",
+          "de": "Where ist für Orte; people ist kein Ort."
+        }
+      },
+      "examples": [
+        "Students who study pass.",
+        "Children who play are happy."
+      ]
+    },
+    {
+      "id": "rc-12",
+      "sentence": "The house ___ door is red is mine.",
+      "options": [
+        "whose",
+        "which",
+        "who"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Birtoklás: kié az ajtó? The house whose door is red.",
+        "en": "Possession: whose door is it? The house whose door is red.",
+        "es": "Posesión: ¿de quién es la puerta? The house whose door is red.",
+        "de": "Besitz: wessen Tür? The house whose door is red."
+      },
+      "wrong": {
+        "which": {
+          "hu": "A which után nem jön főnév (door); a birtoklást a whose fejezi ki.",
+          "en": "After which no noun (door) follows; possession is expressed by whose.",
+          "es": "Después de which no sigue un sustantivo (door); la posesión la expresa whose.",
+          "de": "Nach which folgt kein Nomen (door); den Besitz drückt whose aus."
+        },
+        "who": {
+          "hu": "A who személyre való; a ház dolog, és itt birtoklásról van szó (whose).",
+          "en": "Who is for people; the house is a thing, and this is about possession (whose).",
+          "es": "Who es para personas; la casa es una cosa, y aquí se trata de posesión (whose).",
+          "de": "Who ist für Personen; das Haus ist eine Sache, und hier geht es um Besitz (whose)."
+        }
+      },
+      "examples": [
+        "The woman whose phone is here is Ana.",
+        "The boy whose bag is red is my cousin."
+      ]
+    },
+    {
+      "id": "rc-13",
+      "sentence": "A dentist is a person ___ takes care of your teeth.",
+      "options": [
+        "which",
+        "who",
+        "whose"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Személyre who áll: a person who takes care.",
+        "en": "For a person use who: a person who takes care.",
+        "es": "Para una persona se usa who: a person who takes care.",
+        "de": "Für eine Person nimmt man who: a person who takes care."
+      },
+      "wrong": {
+        "which": {
+          "hu": "A which dologra való; a dentist személy.",
+          "en": "Which is for things; a dentist is a person.",
+          "es": "Which es para cosas; un dentista es una persona.",
+          "de": "Which ist für Sachen; ein Zahnarzt ist eine Person."
+        },
+        "whose": {
+          "hu": "A whose után főnév jön; itt ige (takes) jön, ezért who kell.",
+          "en": "After whose a noun follows; here a verb (takes) follows, so you need who.",
+          "es": "Después de whose sigue un sustantivo; aquí sigue un verbo (takes), por eso hace falta who.",
+          "de": "Nach whose folgt ein Nomen; hier folgt ein Verb (takes), deshalb braucht man who."
+        }
+      },
+      "examples": [
+        "A teacher is a person who helps.",
+        "A friend is a person who listens."
+      ]
+    },
+    {
+      "id": "rc-14",
+      "sentence": "A kitchen is a room ___ you cook food.",
+      "options": [
+        "which",
+        "who",
+        "where"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Helyre where áll: a room where you cook food.",
+        "en": "For a place use where: a room where you cook food.",
+        "es": "Para un lugar se usa where: a room where you cook food.",
+        "de": "Für einen Ort nimmt man where: a room where you cook food."
+      },
+      "wrong": {
+        "which": {
+          "hu": "A „a room which you cook” helytelen: hiányzik a hely (in which), ezért where kell.",
+          "en": "“A room which you cook” is incorrect: the place is missing (in which), so you need where.",
+          "es": "«A room which you cook» es incorrecto: falta el lugar (in which), por eso hace falta where.",
+          "de": "„A room which you cook“ ist falsch: der Ort fehlt (in which), deshalb braucht man where."
+        },
+        "who": {
+          "hu": "A who személyre való; a konyha hely.",
+          "en": "Who is for people; a kitchen is a place.",
+          "es": "Who es para personas; una cocina es un lugar.",
+          "de": "Who ist für Personen; eine Küche ist ein Ort."
+        }
+      },
+      "examples": [
+        "A school is a place where we learn.",
+        "A shop is a place where you buy food."
+      ]
+    },
+    {
+      "id": "rc-15",
+      "sentence": "The girl ___ is talking to Ana is my sister.",
+      "options": [
+        "who",
+        "which",
+        "whose"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Személyre who áll, és közvetlenül ige jön utána: who is talking.",
+        "en": "For a person use who, and a verb follows directly: who is talking.",
+        "es": "Para una persona se usa who, y le sigue directamente un verbo: who is talking.",
+        "de": "Für eine Person nimmt man who, und direkt danach folgt ein Verb: who is talking."
+      },
+      "wrong": {
+        "which": {
+          "hu": "A which dologra való; a lány személy.",
+          "en": "Which is for things; the girl is a person.",
+          "es": "Which es para cosas; la muchacha es una persona.",
+          "de": "Which ist für Sachen; das Mädchen ist eine Person."
+        },
+        "whose": {
+          "hu": "A whose után főnév jön, nem ige (is talking).",
+          "en": "After whose a noun follows, not a verb (is talking).",
+          "es": "Después de whose sigue un sustantivo, no un verbo (is talking).",
+          "de": "Nach whose folgt ein Nomen, kein Verb (is talking)."
+        }
+      },
+      "examples": [
+        "The man who is waiting is my uncle.",
+        "The woman who is singing is Ana."
+      ]
+    },
+    {
+      "id": "rc-16",
+      "sentence": "These are the keys ___ I lost.",
+      "options": [
+        "who",
+        "that",
+        "where"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Dologra that áll: the keys that I lost (a that el is hagyható).",
+        "en": "For a thing that works: the keys that I lost (that can also be left out).",
+        "es": "Para una cosa sirve that: the keys that I lost (that también se puede omitir).",
+        "de": "Für eine Sache passt that: the keys that I lost (that kann man auch weglassen)."
+      },
+      "wrong": {
+        "who": {
+          "hu": "A who személyre való; a kulcsok dolgok.",
+          "en": "Who is for people; the keys are things.",
+          "es": "Who es para personas; las llaves son cosas.",
+          "de": "Who ist für Personen; die Schlüssel sind Sachen."
+        },
+        "where": {
+          "hu": "A where helyre való; a kulcsok nem hely.",
+          "en": "Where is for places; keys are not a place.",
+          "es": "Where es para lugares; las llaves no son un lugar.",
+          "de": "Where ist für Orte; Schlüssel sind kein Ort."
+        }
+      },
+      "examples": [
+        "The book that I read is old.",
+        "The bag that I found is red."
+      ]
+    },
+    {
+      "id": "rc-17",
+      "sentence": "I know a doctor ___ speaks English.",
+      "options": [
+        "whose",
+        "where",
+        "who"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Személyre who áll: a doctor who speaks English.",
+        "en": "For a person use who: a doctor who speaks English.",
+        "es": "Para una persona se usa who: a doctor who speaks English.",
+        "de": "Für eine Person nimmt man who: a doctor who speaks English."
+      },
+      "wrong": {
+        "whose": {
+          "hu": "A whose után főnév jön, nem ige (speaks).",
+          "en": "After whose a noun follows, not a verb (speaks).",
+          "es": "Después de whose sigue un sustantivo, no un verbo (speaks).",
+          "de": "Nach whose folgt ein Nomen, kein Verb (speaks)."
+        },
+        "where": {
+          "hu": "A where helyre való; az orvos személy.",
+          "en": "Where is for places; a doctor is a person.",
+          "es": "Where es para lugares; un doctor es una persona.",
+          "de": "Where ist für Orte; ein Arzt ist eine Person."
+        }
+      },
+      "examples": [
+        "I have a friend who sings.",
+        "She is a nurse who works here."
+      ]
+    },
+    {
+      "id": "rc-18",
+      "kind": "form",
+      "verb": "palabra",
+      "person": "una persona",
+      "answer": "who",
+      "table": "rc-forms"
+    },
+    {
+      "id": "rc-19",
+      "kind": "form",
+      "verb": "palabra",
+      "person": "una cosa",
+      "answer": "which",
+      "table": "rc-forms"
+    },
+    {
+      "id": "rc-20",
+      "kind": "form",
+      "verb": "palabra",
+      "person": "una persona o una cosa",
+      "answer": "that",
+      "table": "rc-forms"
+    },
+    {
+      "id": "rc-21",
+      "kind": "form",
+      "verb": "palabra",
+      "person": "un lugar",
+      "answer": "where",
+      "table": "rc-forms"
+    },
+    {
+      "id": "rc-22",
+      "kind": "form",
+      "verb": "palabra",
+      "person": "posesión (cuyo, cuya)",
+      "answer": "whose",
+      "table": "rc-forms"
+    },
+    {
+      "id": "rc-23",
+      "kind": "form",
+      "verb": "palabra",
+      "person": "un tiempo (el día cuando)",
+      "answer": "when",
+      "table": "rc-forms"
+    },
+    {
+      "kind": "why",
+      "id": "rc-24",
+      "es": "The woman who lives next door is a doctor.",
+      "target": "who",
+      "tr": {
+        "hu": "A szomszédban lakó nő orvos.",
+        "en": "The woman who lives next door is a doctor.",
+        "es": "La mujer que vive al lado es doctora.",
+        "de": "Die Frau, die nebenan wohnt, ist Ärztin."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "kérdőszó: kérdez valakit",
+            "en": "a question word: asking about someone",
+            "es": "una palabra interrogativa: preguntar por alguien",
+            "de": "ein Fragewort: nach jemandem fragen"
+          },
+          "wrong": {
+            "hu": "Itt a who nem kérdez, hanem összeköti a nőt a mellékmondattal; ez vonatkozó szó.",
+            "en": "Here who does not ask but links the woman to the clause; it is a relative word.",
+            "es": "Aquí who no pregunta sino que une a la mujer con la cláusula; es una palabra de relativo.",
+            "de": "Hier fragt who nicht, sondern verbindet die Frau mit dem Satzteil; es ist ein Relativwort."
+          }
+        },
+        {
+          "text": {
+            "hu": "vonatkozó szó személyre: megmondja, melyik nőről van szó",
+            "en": "a relative word for a person: it says which woman",
+            "es": "una palabra de relativo para una persona: dice de qué mujer se trata",
+            "de": "ein Relativwort für eine Person: es sagt, welche Frau gemeint ist"
+          }
+        },
+        {
+          "text": {
+            "hu": "vonatkozó szó dologra",
+            "en": "a relative word for a thing",
+            "es": "una palabra de relativo para una cosa",
+            "de": "ein Relativwort für eine Sache"
+          },
+          "wrong": {
+            "hu": "A nő személy, a dolgokra which vagy that való; személyre who áll.",
+            "en": "The woman is a person; which or that is for things; for a person it is who.",
+            "es": "La mujer es una persona; which o that son para cosas; para una persona es who.",
+            "de": "Die Frau ist eine Person; which oder that sind für Sachen; für eine Person steht who."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "rc-25",
+      "es": "This is the book that I read.",
+      "target": "that",
+      "tr": {
+        "hu": "Ez az a könyv, amit olvastam.",
+        "en": "This is the book that I read.",
+        "es": "Este es el libro que leí.",
+        "de": "Das ist das Buch, das ich gelesen habe."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "that: vonatkozó szó dologra (a which helyett is)",
+            "en": "that: a relative word for a thing (also instead of which)",
+            "es": "that: una palabra de relativo para una cosa (también en vez de which)",
+            "de": "that: ein Relativwort für eine Sache (auch statt which)"
+          }
+        },
+        {
+          "text": {
+            "hu": "that: mutatószó (az a)",
+            "en": "that: a demonstrative (that one)",
+            "es": "that: un demostrativo (ese)",
+            "de": "that: ein Demonstrativpronomen (jener)"
+          },
+          "wrong": {
+            "hu": "Itt a that nem mutat semmire; összeköti a könyvet a mellékmondattal, ezért vonatkozó szó.",
+            "en": "Here that does not point at anything; it links the book to the clause, so it is a relative word.",
+            "es": "Aquí that no señala nada; une el libro con la cláusula, por eso es una palabra de relativo.",
+            "de": "Hier zeigt that auf nichts; es verbindet das Buch mit dem Satzteil, deshalb ist es ein Relativwort."
+          }
+        },
+        {
+          "text": {
+            "hu": "kötőszó: azt, hogy",
+            "en": "a conjunction: that (as in “I think that”)",
+            "es": "una conjunción: que (como en «creo que»)",
+            "de": "eine Konjunktion: dass"
+          },
+          "wrong": {
+            "hu": "A that itt a book főnevet jellemzi, nem egész mondatot vezet be; ez vonatkozó szó.",
+            "en": "Here that describes the noun book and does not introduce a whole sentence; it is a relative word.",
+            "es": "Aquí that describe el sustantivo book y no introduce una oración completa; es una palabra de relativo.",
+            "de": "Hier beschreibt that das Nomen book und leitet keinen ganzen Satz ein; es ist ein Relativwort."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "rc-26",
+      "es": "The movie we saw was good.",
+      "target": "movie",
+      "tr": {
+        "hu": "A film, amit láttunk, jó volt.",
+        "en": "The movie we saw was good.",
+        "es": "La película que vimos estuvo buena.",
+        "de": "Der Film, den wir gesehen haben, war gut."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "hibás mondat: hiányzik a vonatkozó szó",
+            "en": "a wrong sentence: the relative word is missing",
+            "es": "una oración incorrecta: falta la palabra de relativo",
+            "de": "ein falscher Satz: das Relativwort fehlt"
+          },
+          "wrong": {
+            "hu": "A vonatkozó szó itt a mellékmondat tárgya (we saw it), ezért el szabad hagyni; a mondat helyes.",
+            "en": "The relative word here is the object of the clause (we saw it), so it may be left out; the sentence is correct.",
+            "es": "La palabra de relativo aquí es el objeto de la cláusula (we saw it), por eso se puede omitir; la oración es correcta.",
+            "de": "Das Relativwort ist hier das Objekt des Satzteils (we saw it), deshalb darf man es weglassen; der Satz ist richtig."
+          }
+        },
+        {
+          "text": {
+            "hu": "a vonatkozó szó elhagyva: a mellékmondat tárgya",
+            "en": "the relative word left out: the object of the clause",
+            "es": "la palabra de relativo omitida: el objeto de la cláusula",
+            "de": "das Relativwort weggelassen: das Objekt des Satzteils"
+          }
+        },
+        {
+          "text": {
+            "hu": "kérdés fordított szórenddel",
+            "en": "a question with inverted word order",
+            "es": "una pregunta con orden invertido",
+            "de": "eine Frage mit umgekehrter Wortstellung"
+          },
+          "wrong": {
+            "hu": "A mondat kijelentő, nincs fordított szórend; a „we saw” a film leírása.",
+            "en": "The sentence is a statement, with no inverted word order; “we saw” describes the movie.",
+            "es": "La oración es una afirmación, sin orden invertido; «we saw» describe la película.",
+            "de": "Der Satz ist eine Aussage ohne umgekehrte Wortstellung; „we saw“ beschreibt den Film."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "rc-27",
+      "es": "That is the man whose car was stolen.",
+      "target": "whose",
+      "tr": {
+        "hu": "Ő az a férfi, akinek ellopták az autóját.",
+        "en": "That is the man whose car was stolen.",
+        "es": "Ese es el hombre cuyo carro fue robado.",
+        "de": "Das ist der Mann, dessen Auto gestohlen wurde."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "who is: ki az",
+            "en": "who is: who it is",
+            "es": "who is: quién es",
+            "de": "who is: wer ist"
+          },
+          "wrong": {
+            "hu": "A whose nem „who is” rövidítése, hanem birtoklást jelent; utána főnév (car) jön.",
+            "en": "Whose is not a short form of “who is” but means possession; a noun (car) follows it.",
+            "es": "Whose no es una forma corta de «who is» sino que significa posesión; le sigue un sustantivo (car).",
+            "de": "Whose ist keine Kurzform von „who is“, sondern bedeutet Besitz; danach folgt ein Nomen (car)."
+          }
+        },
+        {
+          "text": {
+            "hu": "hely: hol történt",
+            "en": "place: where it happened",
+            "es": "lugar: dónde pasó",
+            "de": "Ort: wo es passiert ist"
+          },
+          "wrong": {
+            "hu": "A hely jelölésére where való; a whose azt mondja meg, kié az autó.",
+            "en": "Where is for places; whose tells whose car it is.",
+            "es": "Where es para lugares; whose dice de quién es el carro.",
+            "de": "Where ist für Orte; whose sagt, wessen Auto es ist."
+          }
+        },
+        {
+          "text": {
+            "hu": "birtoklást jelző vonatkozó szó: kié az autó",
+            "en": "a relative word of possession: whose car",
+            "es": "una palabra de relativo de posesión: de quién es el carro",
+            "de": "ein Relativwort des Besitzes: wessen Auto"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "rc-28",
+      "es": "The restaurant where we had dinner was great.",
+      "target": "where",
+      "tr": {
+        "hu": "Az étterem, ahol vacsoráztunk, nagyszerű volt.",
+        "en": "The restaurant where we had dinner was great.",
+        "es": "El restaurante donde cenamos estuvo genial.",
+        "de": "Das Restaurant, in dem wir zu Abend gegessen haben, war toll."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "helyre vonatkozó szó: az étterem, ahol",
+            "en": "a relative word for a place: the restaurant where",
+            "es": "una palabra de relativo para un lugar: el restaurante donde",
+            "de": "ein Relativwort für einen Ort: das Restaurant, in dem"
+          }
+        },
+        {
+          "text": {
+            "hu": "kérdőszó: hol van",
+            "en": "a question word: where is it",
+            "es": "una palabra interrogativa: dónde está",
+            "de": "ein Fragewort: wo ist es"
+          },
+          "wrong": {
+            "hu": "Itt a where nem kérdez, hanem az éttermet köti össze a mellékmondattal.",
+            "en": "Here where does not ask but links the restaurant to the clause.",
+            "es": "Aquí where no pregunta sino que une el restaurante con la cláusula.",
+            "de": "Hier fragt where nicht, sondern verbindet das Restaurant mit dem Satzteil."
+          }
+        },
+        {
+          "text": {
+            "hu": "idő: mikor történt",
+            "en": "time: when it happened",
+            "es": "tiempo: cuándo pasó",
+            "de": "Zeit: wann es passiert ist"
+          },
+          "wrong": {
+            "hu": "Az időre when való; a where helyet jelöl.",
+            "en": "When is for time; where marks a place.",
+            "es": "When es para el tiempo; where marca un lugar.",
+            "de": "When ist für die Zeit; where kennzeichnet einen Ort."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "rc-29",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "La mujer que vive al lado es doctora.",
+          "en": "The woman who lives next door is a doctor."
+        },
+        {
+          "es": "Este es el libro que leí.",
+          "en": "This is the book that I read."
+        },
+        {
+          "es": "El restaurante donde cenamos estuvo genial.",
+          "en": "The restaurant where we had dinner was great."
+        },
+        {
+          "es": "Ese es el hombre cuyo carro fue robado.",
+          "en": "That is the man whose car was stolen."
+        },
+        {
+          "es": "Conozco a un doctor que habla inglés.",
+          "en": "I know a doctor who speaks English."
+        },
+        {
+          "es": "La película que vimos estuvo buena.",
+          "en": "The movie we saw was good."
+        }
+      ]
+    },
+    {
+      "id": "rc-30",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "que (persona)",
+          "en": "who"
+        },
+        {
+          "es": "que (cosa)",
+          "en": "which"
+        },
+        {
+          "es": "donde",
+          "en": "where"
+        },
+        {
+          "es": "cuyo, cuya",
+          "en": "whose"
+        },
+        {
+          "es": "que (persona o cosa)",
+          "en": "that"
+        },
+        {
+          "es": "el lugar donde",
+          "en": "the place where"
+        }
+      ]
+    }
+  ]
+}
