@@ -45,6 +45,7 @@ jest.mock('@/data/pcic', () => ({
   setPcicTarget: () => {},
 }));
 
+import { StyleSheet } from 'react-native';
 import { act, fireEvent, render } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database';
@@ -93,5 +94,19 @@ describe('PCIC fül: +5 / +10 / +15 új szó a "kész mára" képernyőn (FB449,
     await flush();
     expect(getByText(`new ${n}`)).toBeTruthy();
     expect(await getDb().getPcicNewBonus(today)).toBe(n);
+  });
+
+  // FB456 ("nyomtam egy +15 szót és bebugosodott a csík"): a haladás-csík a +N után az ÚJ adagot méri,
+  // az első új kártyánál üres (régen a nap eddigi 10 kész kártyájától 42%-ról indult).
+  it.each([
+    ['learn-more-new-5', 5],
+    ['learn-more-new', 10],
+    ['learn-more-new-15', 15],
+  ])('%s: a haladás-csík 0%%-ról indul az új adagnál (FB456)', async (testID) => {
+    const { getByTestId } = render(<PcicScreen />);
+    await flush();
+    fireEvent.press(getByTestId(testID));
+    await flush();
+    expect(StyleSheet.flatten(getByTestId('learn-progress-fill').props.style).width).toBe('0%');
   });
 });
