@@ -24,6 +24,7 @@ import {
 } from '@/lib/grammar/lessonScore';
 import { tableCellsForLesson, wordCellsForLesson, WORD_DECK_MIN_CARDS } from '@/lib/grammar/tableDeck';
 import { TRANSFORM_ROUND_SIZE } from '@/lib/grammar/transformRounds';
+import { ARTICLE_LESSON_ID, ARTICLE_ROUND_SIZE } from '@/lib/grammar/nounArticles';
 import { LESSON_TEST_PASS_PCT, lessonTestFromRows, lessonTestKey, lessonTestSize, lessonTestUnlocked } from '@/lib/grammar/lessonTest';
 import { getScrollY, setScrollY } from '@/lib/grammar/scrollMemory';
 import { speak, speakSequence, stopSpeaking } from '@/lib/speech';
@@ -715,7 +716,7 @@ export default function GrammarLessonScreen() {
                 kind === 'choice'
                     ? s.grammar.startChoice(kindCounts.choice)
                     : kind === 'article'
-                      ? s.grammar.startArticle(kindCounts.article)
+                      ? s.grammar.startArticle(topicId === ARTICLE_LESSON_ID ? Math.min(kindCounts.article, ARTICLE_ROUND_SIZE) : kindCounts.article)
                     : kind === 'match'
                       ? s.grammar.startMatch(kindCounts.match)
                       : kind === 'form'

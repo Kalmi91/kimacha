@@ -20,6 +20,7 @@ import type { ExamplePair, LessonV2 } from './lessonTypes';
 import { PCIC_LEVELS, pcicItemsForLevel, type PcicLevel } from '@/data/pcic';
 import { normalizeWordToken, type Level } from '@/data/words';
 import { hashString, shuffleArray } from '../shuffle';
+import { ARTICLE_LESSON_ID, articleNounDeckCards } from './nounArticles';
 import enA0 from '@/data/words/en/a0.json';
 import enA1 from '@/data/words/en/a1.json';
 import enA2 from '@/data/words/en/a2.json';
@@ -356,6 +357,8 @@ export function wordCellsForLesson(
   if (!lesson || !isLessonV2(lesson)) return [];
   // PLAN-fb0929 10. lépés (Kálmán 2026-09-30): es→en irányban a pakli az angol szókészletből épül.
   if (learnedLang === 'en') return wordCellsForEnglishLesson(lesson);
+  // PLAN-fb1002 13. lépés (FB448): az articulos-genero pakli az app összes főneve (névelővel), nem a tábla szavai.
+  if (lesson.topic === ARTICLE_LESSON_ID) return articleNounDeckCards();
   const cards: WordDeckCard[] = [];
   const seen = new Set<string>();
   const tableKeys = tableWordKeys(lesson);
