@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 import { StyleSheet, View, ScrollView, Pressable } from 'react-native';
 import { Text } from '@/components/KText';
-import { useFocusEffect } from 'expo-router';
+import { useFocusEffect, useRouter } from 'expo-router';
 import Colors from '@/constants/Colors';
 import { legibleOn } from '@/constants/Skins';
 import { useTheme } from '@/lib/ThemeContext';
@@ -28,6 +28,10 @@ import { countDoneToday } from '@/lib/pcicSession';
 import FeedbackButton from '@/components/FeedbackModal';
 import { Card, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
 import { SkinBackdrop } from '@/components/skins/Slots';
+import MockExamCard from '@/components/exam/MockExamCard';
+import { MOCK_LEVELS } from '@/lib/exam/mock/blueprint';
+import { readMockOverview, type MockOverview } from '@/lib/exam/mock/session';
+import type { MockLevel, MockTarget } from '@/lib/exam/mock/types';
 
 const EMPTY_SCHEDULE: SchedulePreview = { dueNow: 0, buckets: [], scheduled: 0, nextDue: null };
 
@@ -45,6 +49,7 @@ export default function StatsScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
+  const router = useRouter();
   const [usage, setUsage] = useState<UsageStats>(EMPTY_STATS);
   const [streak, setStreak] = useState(0);
   // PLAN-play 12. lépés (s5): "known" = interval >= 21 nap, globálisan (a 4
@@ -63,6 +68,10 @@ export default function StatsScreen() {
   const [otherLevels, setOtherLevels] = useState<{ level: PcicViewLevel; known: number }[]>([]);
   const [targetLang, setTargetLang] = useState('es');
   const [sourceLang, setSourceLang] = useState('en');
+  // PLAN-vizsga E1 a: a próbavizsga kártya szintjei (irányfüggő) és a mentett eredmények.
+  const [mockLevels, setMockLevels] = useState<readonly MockLevel[]>(MOCK_LEVELS.es);
+  const [mockOverview, setMockOverview] = useState<MockOverview>({});
+  const [mockOfficial, setMockOfficial] = useState(true);
   // FB254: a napi oszlop 60 perc fölött órában áll, koppintásra percre vált.
   const [chartInMinutes, setChartInMinutes] = useState(false);
 
@@ -76,6 +85,10 @@ export default function StatsScreen() {
       db.getOnboarding().then(ob => {
         setTargetLang(ob?.target ?? 'es');
         setSourceLang(ob?.source ?? 'en');
+        const mockTarget: MockTarget = ob?.target === 'en' ? 'en' : 'es';
+        setMockLevels(MOCK_LEVELS[mockTarget]);
+        setMockOfficial(mockTarget === 'es');
+        readMockOverview(db, mockTarget, MOCK_LEVELS[mockTarget]).then(setMockOverview);
       });
       // PLAN-play 12. lépés (s5): minden PCIC-számítás egyetlen getPcicCards()
       // hívásból (mint a PCIC fülön), a szűrés/összegzés tiszta függvényekben.
@@ -175,6 +188,13 @@ export default function StatsScreen() {
           {otherLevels.map(r => s.stats.knownAtLevel(r.level, r.known)).join('  ·  ')}
         </Text>
       </Card>
+
+      <MockExamCard
+        levels={mockLevels}
+        overview={mockOverview}
+        official={mockOfficial}
+        onStart={level => router.push({ pathname: '/mock-exam', params: { level } })}
+      />
 
       <View style={styles.tileRow}>
         <Card style={styles.tile} classicStyle={styles.tileClassic} boxStyle={styles.tileBox}>
