@@ -1,0 +1,1467 @@
+{
+  "schema": 2,
+  "topic": "participle_clauses",
+  "level": "C1",
+  "title": {
+    "hu": "Igenévi mellékmondatok (Walking home, … Having finished, … Exhausted by the trip, …)",
+    "en": "Participle Clauses (Walking home, … Having finished, … Exhausted by the trip, …)",
+    "es": "Las cláusulas de participio (Walking home, … Having finished, … Exhausted by the trip, …)",
+    "de": "Partizipialsätze (Walking home, … Having finished, … Exhausted by the trip, …)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "Az igenévi mellékmondat egy teljes mellékmondatot rövidít le: „While I was walking home, I met a friend” helyett „Walking home, I met a friend.” Három fő alakja van: az -ing alak (egyidejű vagy ok), a having + igenév (korábbi cselekvés), a múlt idejű igenév (szenvedő jelentés): „Exhausted by the trip, he fell asleep.” A spanyol gerundio („Caminando por la calle…”) ennek megfelel, de az angolban az igenév alanya mindig a főmondat alanya kell hogy legyen.",
+        "en": "A participle clause shortens a whole clause: instead of “While I was walking home, I met a friend” you say “Walking home, I met a friend.” It has three main forms: the -ing form (simultaneous or a reason), having + participle (an earlier action), and the past participle (a passive meaning): “Exhausted by the trip, he fell asleep.” The Spanish gerundio (“Caminando por la calle…”) matches it, but in English the subject of the participle must always be the subject of the main clause.",
+        "es": "Una cláusula de participio acorta una cláusula completa: en lugar de «While I was walking home, I met a friend» se dice «Walking home, I met a friend.» Tiene tres formas principales: la forma -ing (simultánea o una razón), having + participio (una acción anterior) y el participio pasado (sentido pasivo): «Exhausted by the trip, he fell asleep.» El gerundio del español («Caminando por la calle…») le corresponde, pero en inglés el sujeto del participio debe ser siempre el sujeto de la oración principal.",
+        "de": "Ein Partizipialsatz kürzt einen ganzen Nebensatz: statt „While I was walking home, I met a friend“ sagt man „Walking home, I met a friend.“ Er hat drei Hauptformen: die -ing-Form (gleichzeitig oder ein Grund), having + Partizip (eine frühere Handlung) und das Partizip Perfekt (passive Bedeutung): „Exhausted by the trip, he fell asleep.“ Das spanische Gerundio („Caminando por la calle…“) entspricht ihm, aber im Englischen muss das Subjekt des Partizips immer das Subjekt des Hauptsatzes sein."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "ptc-forms",
+      "title": {
+        "hu": "Melyik alak?",
+        "en": "Which form?",
+        "es": "¿Qué forma uso?",
+        "de": "Welche Form?"
+      },
+      "header": [
+        {
+          "hu": "Jelentés",
+          "en": "Meaning",
+          "es": "Significado",
+          "de": "Bedeutung"
+        },
+        {
+          "hu": "forma",
+          "en": "form",
+          "es": "forma",
+          "de": "Form"
+        }
+      ],
+      "rows": [
+        [
+          "mientras caminaba (___ down the street)",
+          "walking"
+        ],
+        [
+          "habiendo terminado (___ finished)",
+          "having"
+        ],
+        [
+          "escrito hace tiempo (___ long ago)",
+          "written"
+        ],
+        [
+          "sin saber (___ knowing)",
+          "not"
+        ],
+        [
+          "al llegar (On ___)",
+          "arriving"
+        ],
+        [
+          "por ser médica (___ a doctor)",
+          "being"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Az -ing alak: egyidejűség vagy ok",
+        "en": "The -ing form: simultaneous action or a reason",
+        "es": "La forma -ing: acción simultánea o razón",
+        "de": "Die -ing-Form: Gleichzeitigkeit oder Grund"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Az -ing alak a „mialatt” vagy az „mivel” helyett áll. A két cselekvés alanya ugyanaz: „Feeling tired, she went to bed early.”",
+            "en": "The -ing form replaces “while” or “because”. Both actions have the same subject: “Feeling tired, she went to bed early.”",
+            "es": "La forma -ing reemplaza a «while» o «because». Las dos acciones tienen el mismo sujeto: «Feeling tired, she went to bed early.»",
+            "de": "Die -ing-Form ersetzt «while» oder «because». Beide Handlungen haben dasselbe Subjekt: «Feeling tired, she went to bed early.»"
+          },
+          "examples": [
+            {
+              "es": "Walking down the street, I met an old friend.",
+              "tr": {
+                "hu": "Az utcán sétálva találkoztam egy régi baráttal.",
+                "en": "Walking down the street, I met an old friend.",
+                "es": "Caminando por la calle, me encontré a un viejo amigo.",
+                "de": "Auf der Straße spazierend traf ich einen alten Freund."
+              }
+            },
+            {
+              "es": "Feeling tired, she went to bed early.",
+              "tr": {
+                "hu": "Fáradtnak érezve magát, korán lefeküdt.",
+                "en": "Feeling tired, she went to bed early.",
+                "es": "Sintiéndose cansada, se fue a dormir temprano.",
+                "de": "Sie fühlte sich müde und ging früh ins Bett."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Having + igenév: korábbi cselekvés",
+        "en": "Having + participle: an earlier action",
+        "es": "Having + participio: una acción anterior",
+        "de": "Having + Partizip: eine frühere Handlung"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Ha az első cselekvés a másodikat megelőzi, having + igenév áll. Tagadás: not having + igenév. Szenvedőben: having been + igenév.",
+            "en": "If the first action comes before the second, having + participle is used. Negative: not having + participle. Passive: having been + participle.",
+            "es": "Si la primera acción ocurre antes de la segunda, se usa having + participio. Negación: not having + participio. Pasiva: having been + participio.",
+            "de": "Kommt die erste Handlung vor der zweiten, steht having + Partizip. Verneinung: not having + Partizip. Passiv: having been + Partizip."
+          },
+          "examples": [
+            {
+              "es": "Having finished the report, he went home.",
+              "tr": {
+                "hu": "Miután befejezte a jelentést, hazament.",
+                "en": "Having finished the report, he went home.",
+                "es": "Habiendo terminado el reporte, se fue a casa.",
+                "de": "Nachdem er den Bericht beendet hatte, ging er nach Hause."
+              }
+            },
+            {
+              "es": "Having been told the news, she began to cry.",
+              "tr": {
+                "hu": "Miután megtudta a hírt, sírni kezdett.",
+                "en": "Having been told the news, she began to cry.",
+                "es": "Al enterarse de la noticia, empezó a llorar.",
+                "de": "Nachdem sie die Nachricht erfahren hatte, begann sie zu weinen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Múlt idejű igenév: szenvedő jelentés",
+        "en": "The past participle: a passive meaning",
+        "es": "El participio pasado: sentido pasivo",
+        "de": "Das Partizip Perfekt: passive Bedeutung"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A múlt idejű igenév a „mivel valamit megtettek vele” jelentést adja: „Written in simple English, the book is easy to read.” „Frightened by the noise, the baby cried.”",
+            "en": "The past participle gives the meaning “because something was done to it”: “Written in simple English, the book is easy to read.” “Frightened by the noise, the baby cried.”",
+            "es": "El participio pasado da el sentido «porque algo se le hizo»: «Written in simple English, the book is easy to read.» «Frightened by the noise, the baby cried.»",
+            "de": "Das Partizip Perfekt gibt die Bedeutung „weil etwas mit ihm geschah“: «Written in simple English, the book is easy to read.» «Frightened by the noise, the baby cried.»"
+          },
+          "examples": [
+            {
+              "es": "Written in simple English, the book is easy to read.",
+              "tr": {
+                "hu": "Egyszerű angolsággal írva a könyv könnyen olvasható.",
+                "en": "Written in simple English, the book is easy to read.",
+                "es": "Escrito en inglés sencillo, el libro es fácil de leer.",
+                "de": "In einfachem Englisch geschrieben, ist das Buch leicht zu lesen."
+              }
+            },
+            {
+              "es": "Frightened by the noise, the baby started to cry.",
+              "tr": {
+                "hu": "A zajtól megijedve a baba sírni kezdett.",
+                "en": "Frightened by the noise, the baby started to cry.",
+                "es": "Asustado por el ruido, el bebé empezó a llorar.",
+                "de": "Vom Lärm erschreckt, begann das Baby zu weinen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Tagadás, kötőszó és az alany szabálya",
+        "en": "Negative, conjunction and the subject rule",
+        "es": "Negación, conjunción y la regla del sujeto",
+        "de": "Verneinung, Konjunktion und die Subjektregel"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A tagadás a not az igenév előtt: „Not knowing the way, we asked a stranger.” Kötőszóval: after leaving, while waiting, on arriving, before going. Az igenév alanya a főmondat alanya: „Walking down the street, I saw an accident.”",
+            "en": "The negative is not before the participle: “Not knowing the way, we asked a stranger.” With a conjunction: after leaving, while waiting, on arriving, before going. The subject of the participle is the subject of the main clause: “Walking down the street, I saw an accident.”",
+            "es": "La negación es not antes del participio: «Not knowing the way, we asked a stranger.» Con una conjunción: after leaving, while waiting, on arriving, before going. El sujeto del participio es el sujeto de la oración principal: «Walking down the street, I saw an accident.»",
+            "de": "Die Verneinung ist not vor dem Partizip: «Not knowing the way, we asked a stranger.» Mit Konjunktion: after leaving, while waiting, on arriving, before going. Das Subjekt des Partizips ist das Subjekt des Hauptsatzes: «Walking down the street, I saw an accident.»"
+          },
+          "examples": [
+            {
+              "es": "Not knowing the way, we asked a stranger.",
+              "tr": {
+                "hu": "Mivel nem ismertük az utat, megkérdeztünk egy idegent.",
+                "en": "Not knowing the way, we asked a stranger.",
+                "es": "Sin saber el camino, le preguntamos a un desconocido.",
+                "de": "Da wir den Weg nicht kannten, fragten wir einen Fremden."
+              }
+            },
+            {
+              "es": "After leaving school, she worked in a bank.",
+              "tr": {
+                "hu": "Az iskola elhagyása után bankban dolgozott.",
+                "en": "After leaving school, she worked in a bank.",
+                "es": "Después de salir de la escuela, trabajó en un banco.",
+                "de": "Nach dem Verlassen der Schule arbeitete sie in einer Bank."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Az igenévi szerkezet alanya mindig a főmondat alanya: „Walking down the street, I saw an accident” (én sétáltam). Ha a főmondat alanya más, külön mellékmondatot kell használni.",
+        "en": "The subject of a participle clause is always the subject of the main clause: “Walking down the street, I saw an accident” (I was walking). If the main clause has a different subject, a separate clause must be used.",
+        "es": "El sujeto de una cláusula de participio es siempre el sujeto de la oración principal: «Walking down the street, I saw an accident» (yo caminaba). Si la oración principal tiene otro sujeto, hay que usar una cláusula aparte.",
+        "de": "Das Subjekt eines Partizipialsatzes ist immer das Subjekt des Hauptsatzes: «Walking down the street, I saw an accident» (ich ging). Hat der Hauptsatz ein anderes Subjekt, muss man einen eigenen Nebensatz benutzen."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Spanyol hatás: a „sin saber” angolul not knowing, nem „without knowing” mellékmondatban sem kötelező. A „al llegar” angolul on arriving, a „por ser médica” being a doctor.",
+        "en": "Spanish influence: the Spanish “sin saber” can be not knowing in English; it does not have to be “without knowing”. The Spanish “al llegar” is on arriving, and “por ser médica” is being a doctor.",
+        "es": "Influencia del español: el «sin saber» del español puede ser not knowing en inglés; no tiene que ser «without knowing». El «al llegar» es on arriving, y «por ser médica» es being a doctor.",
+        "de": "Einfluss des Spanischen: das spanische „sin saber“ kann im Englischen not knowing sein; es muss nicht „without knowing“ heißen. Das spanische „al llegar“ ist on arriving, und „por ser médica“ ist being a doctor."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "Az igenévi mellékmondat egy teljes mellékmondatot rövidít le: «Walking down the street, I met an old friend». Az -ing alak egyidejű cselekvést vagy okot fejez ki: «Feeling tired, she went to bed early». A «having» plusz igenév korábbi cselekvést jelöl: «Having finished the report, he went home». A múlt idejű igenév szenvedő jelentésű: «Written in simple English, the book is easy to read». Tagadásnál a «not» az igenév előtt áll: «Not knowing the way, we asked a stranger». Az igenév alanya a főmondat alanya.",
+    "en": "A participle clause shortens a whole clause: «Walking down the street, I met an old friend». The -ing form expresses a simultaneous action or a reason: «Feeling tired, she went to bed early». «Having» plus the participle marks an earlier action: «Having finished the report, he went home». The past participle has a passive meaning: «Written in simple English, the book is easy to read». In the negative «not» comes before the participle: «Not knowing the way, we asked a stranger». The subject of the participle is the subject of the main clause.",
+    "es": "Una cláusula de participio acorta una cláusula completa: «Walking down the street, I met an old friend». La forma -ing expresa una acción simultánea o una razón: «Feeling tired, she went to bed early». «Having» más participio marca una acción anterior: «Having finished the report, he went home». El participio pasado tiene sentido pasivo: «Written in simple English, the book is easy to read». En negativo «not» va antes del participio: «Not knowing the way, we asked a stranger». El sujeto del participio es el sujeto de la oración principal.",
+    "de": "Ein Partizipialsatz kürzt einen ganzen Nebensatz: «Walking down the street, I met an old friend». Die -ing-Form drückt eine gleichzeitige Handlung oder einen Grund aus: «Feeling tired, she went to bed early». «Having» plus Partizip markiert eine frühere Handlung: «Having finished the report, he went home». Das Partizip Perfekt hat passive Bedeutung: «Written in simple English, the book is easy to read». In der Verneinung steht «not» vor dem Partizip: «Not knowing the way, we asked a stranger». Das Subjekt des Partizips ist das Subjekt des Hauptsatzes."
+  },
+  "glossary": [
+    {
+      "word": "accident",
+      "gloss": {
+        "hu": "baleset",
+        "en": "a bad event, often with cars",
+        "es": "accidente",
+        "de": "Unfall"
+      }
+    },
+    {
+      "word": "asleep",
+      "gloss": {
+        "hu": "alszik, álomban",
+        "en": "sleeping",
+        "es": "dormido",
+        "de": "eingeschlafen"
+      }
+    },
+    {
+      "word": "began",
+      "gloss": {
+        "hu": "elkezdődött (a begin múltja)",
+        "en": "past form of begin",
+        "es": "empezó (pasado de begin)",
+        "de": "begann (Past von begin)"
+      }
+    },
+    {
+      "word": "built",
+      "gloss": {
+        "hu": "épített (a build múltja)",
+        "en": "past form of build",
+        "es": "construyó (pasado de build)",
+        "de": "baute (Past von build)"
+      }
+    },
+    {
+      "word": "climb",
+      "gloss": {
+        "hu": "mászik",
+        "en": "to go up",
+        "es": "trepar, subir",
+        "de": "klettern"
+      }
+    },
+    {
+      "word": "cried",
+      "gloss": {
+        "hu": "sírt (a cry múltja)",
+        "en": "past form of cry",
+        "es": "lloró (pasado de cry)",
+        "de": "weinte (Past von cry)"
+      }
+    },
+    {
+      "word": "cry",
+      "gloss": {
+        "hu": "sír",
+        "en": "to make tears",
+        "es": "llorar",
+        "de": "weinen"
+      }
+    },
+    {
+      "word": "driving",
+      "gloss": {
+        "hu": "vezet (ige-ing alak)",
+        "en": "-ing form of drive",
+        "es": "manejando (forma -ing de drive)",
+        "de": "fahren (-ing-Form von drive)"
+      }
+    },
+    {
+      "word": "exhaust",
+      "gloss": {
+        "hu": "kimerít",
+        "en": "to make very tired",
+        "es": "agotar",
+        "de": "erschöpfen"
+      }
+    },
+    {
+      "word": "exhausted",
+      "gloss": {
+        "hu": "kimerült",
+        "en": "very tired",
+        "es": "agotado",
+        "de": "erschöpft"
+      }
+    },
+    {
+      "word": "exhausting",
+      "gloss": {
+        "hu": "kimerítő",
+        "en": "making you very tired",
+        "es": "agotador",
+        "de": "erschöpfend"
+      }
+    },
+    {
+      "word": "fell",
+      "gloss": {
+        "hu": "esett (a fall múltja)",
+        "en": "past form of fall",
+        "es": "cayó (pasado de fall)",
+        "de": "fiel (Past von fall)"
+      }
+    },
+    {
+      "word": "fired",
+      "gloss": {
+        "hu": "elbocsátott",
+        "en": "told to leave a job",
+        "es": "despedido",
+        "de": "entlassen"
+      }
+    },
+    {
+      "word": "frighten",
+      "gloss": {
+        "hu": "megijeszt",
+        "en": "to make afraid",
+        "es": "asustar",
+        "de": "erschrecken"
+      }
+    },
+    {
+      "word": "frightened",
+      "gloss": {
+        "hu": "megijedt",
+        "en": "afraid",
+        "es": "asustado",
+        "de": "erschrocken"
+      }
+    },
+    {
+      "word": "frightening",
+      "gloss": {
+        "hu": "ijesztő",
+        "en": "making you afraid",
+        "es": "aterrador",
+        "de": "beängstigend"
+      }
+    },
+    {
+      "word": "heard",
+      "gloss": {
+        "hu": "hallott (a hear múltja)",
+        "en": "past form of hear",
+        "es": "oyó (pasado de hear)",
+        "de": "hörte (Past von hear)"
+      }
+    },
+    {
+      "word": "hearing",
+      "gloss": {
+        "hu": "hall (ige-ing alak)",
+        "en": "-ing form of hear",
+        "es": "oyendo (forma -ing de hear)",
+        "de": "hören (-ing-Form von hear)"
+      }
+    },
+    {
+      "word": "knew",
+      "gloss": {
+        "hu": "tudta (a know múltja)",
+        "en": "past form of know",
+        "es": "sabía (pasado de know)",
+        "de": "wusste (Past von know)"
+      }
+    },
+    {
+      "word": "known",
+      "gloss": {
+        "hu": "ismert, tudott (a know igenéve)",
+        "en": "participle of know",
+        "es": "sabido (participio de know)",
+        "de": "gewusst (Partizip von know)"
+      }
+    },
+    {
+      "word": "noise",
+      "gloss": {
+        "hu": "zaj",
+        "en": "loud sound",
+        "es": "ruido",
+        "de": "Lärm"
+      }
+    },
+    {
+      "word": "once",
+      "gloss": {
+        "hu": "egyszer, azonnal (at once)",
+        "en": "one time, immediately (at once)",
+        "es": "una vez, de inmediato (at once)",
+        "de": "einmal, sofort (at once)"
+      }
+    },
+    {
+      "word": "sang",
+      "gloss": {
+        "hu": "énekelt (az sing múltja)",
+        "en": "past form of sing",
+        "es": "cantó (pasado de sing)",
+        "de": "sang (Past von sing)"
+      }
+    },
+    {
+      "word": "stopped",
+      "gloss": {
+        "hu": "megállt (a stop múltja)",
+        "en": "past form of stop",
+        "es": "se detuvo (pasado de stop)",
+        "de": "hörte auf (Past von stop)"
+      }
+    },
+    {
+      "word": "stranger",
+      "gloss": {
+        "hu": "idegen",
+        "en": "a person you do not know",
+        "es": "desconocido",
+        "de": "Fremder"
+      }
+    },
+    {
+      "word": "tried",
+      "gloss": {
+        "hu": "megpróbálta (a try múltja)",
+        "en": "past form of try",
+        "es": "intentó (pasado de try)",
+        "de": "versuchte (Past von try)"
+      }
+    },
+    {
+      "word": "way",
+      "gloss": {
+        "hu": "út, mód",
+        "en": "a road or a method",
+        "es": "camino, manera",
+        "de": "Weg"
+      }
+    },
+    {
+      "word": "while",
+      "gloss": {
+        "hu": "miközben",
+        "en": "at the same time as",
+        "es": "mientras",
+        "de": "während"
+      }
+    },
+    {
+      "word": "wood",
+      "gloss": {
+        "hu": "fa (anyag)",
+        "en": "what trees are made of",
+        "es": "madera",
+        "de": "Holz"
+      }
+    },
+    {
+      "word": "yawned",
+      "gloss": {
+        "hu": "ásított (a yawn múltja)",
+        "en": "past form of yawn",
+        "es": "bostezó (pasado de yawn)",
+        "de": "gähnte (Past von yawn)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "ptc-01",
+      "sentence": "___ down the street, I met an old friend.",
+      "options": [
+        "Walked",
+        "Walking",
+        "To walk"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Egyidejű cselekvés, azonos alany: Walking down the street, I…",
+        "en": "A simultaneous action, the same subject: Walking down the street, I…",
+        "es": "Una acción simultánea, el mismo sujeto: Walking down the street, I…",
+        "de": "Eine gleichzeitige Handlung, dasselbe Subjekt: Walking down the street, I…"
+      },
+      "wrong": {
+        "Walked": {
+          "hu": "A Walked down the street, I nem helyes; -ing alak kell.",
+          "en": "“Walked down the street, I” is not correct; you need the -ing form.",
+          "es": "«Walked down the street, I» no es correcto; hace falta la forma -ing.",
+          "de": "„Walked down the street, I“ ist nicht korrekt; man braucht die -ing-Form."
+        },
+        "To walk": {
+          "hu": "A To walk down a cél kifejezése lenne, nem egyidejűség.",
+          "en": "“To walk down” would express a purpose, not a simultaneous action.",
+          "es": "«To walk down» expresaría una finalidad, no una acción simultánea.",
+          "de": "„To walk down“ würde einen Zweck ausdrücken, keine gleichzeitige Handlung."
+        }
+      },
+      "examples": [
+        "Driving home, I heard the news.",
+        "Reading a book, she waited."
+      ]
+    },
+    {
+      "id": "ptc-02",
+      "sentence": "___ tired, she went to bed early.",
+      "options": [
+        "Felt",
+        "Feel",
+        "Feeling"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Ok, azonos alany: Feeling tired, she went…",
+        "en": "A reason, the same subject: Feeling tired, she went…",
+        "es": "Una razón, el mismo sujeto: Feeling tired, she went…",
+        "de": "Ein Grund, dasselbe Subjekt: Feeling tired, she went…"
+      },
+      "wrong": {
+        "Felt": {
+          "hu": "A Felt tired, she nem helyes igenévi szerkezet; -ing alak kell.",
+          "en": "“Felt tired, she” is not a correct participle clause; you need the -ing form.",
+          "es": "«Felt tired, she» no es una cláusula de participio correcta; hace falta la forma -ing.",
+          "de": "„Felt tired, she“ ist kein korrekter Partizipialsatz; man braucht die -ing-Form."
+        },
+        "Feel": {
+          "hu": "A Feel tired, she nem helyes; -ing alak kell.",
+          "en": "“Feel tired, she” is not correct; you need the -ing form.",
+          "es": "«Feel tired, she» no es correcto; hace falta la forma -ing.",
+          "de": "„Feel tired, she“ ist nicht korrekt; man braucht die -ing-Form."
+        }
+      },
+      "examples": [
+        "Feeling ill, he stayed.",
+        "Feeling sad, she left."
+      ]
+    },
+    {
+      "id": "ptc-03",
+      "sentence": "___ finished the report, he went home.",
+      "options": [
+        "Having",
+        "Have",
+        "Had"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Korábbi cselekvés: Having finished…",
+        "en": "An earlier action: Having finished…",
+        "es": "Una acción anterior: Having finished…",
+        "de": "Eine frühere Handlung: Having finished…"
+      },
+      "wrong": {
+        "Have": {
+          "hu": "A Have finished the report, he nem helyes; -ing alak kell (Having).",
+          "en": "“Have finished the report, he” is not correct; you need the -ing form (Having).",
+          "es": "«Have finished the report, he» no es correcto; hace falta la forma -ing (Having).",
+          "de": "„Have finished the report, he“ ist nicht korrekt; man braucht die -ing-Form (Having)."
+        },
+        "Had": {
+          "hu": "A Had finished the report, he nem helyes igenévi szerkezet; Having kell.",
+          "en": "“Had finished the report, he” is not a correct participle clause; you need Having.",
+          "es": "«Had finished the report, he» no es una cláusula de participio correcta; hace falta Having.",
+          "de": "„Had finished the report, he“ ist kein korrekter Partizipialsatz; man braucht Having."
+        }
+      },
+      "examples": [
+        "Having eaten, we left.",
+        "Having read it, she knew."
+      ]
+    },
+    {
+      "id": "ptc-04",
+      "sentence": "___ the way, we asked a stranger.",
+      "options": [
+        "Knowing not",
+        "Not knowing",
+        "Not known"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Tagadás: a not az igenév előtt áll.",
+        "en": "The negative: not comes before the participle.",
+        "es": "La negación: not va antes del participio.",
+        "de": "Die Verneinung: not steht vor dem Partizip."
+      },
+      "wrong": {
+        "Knowing not": {
+          "hu": "A Knowing not the way régies; a mai forma Not knowing.",
+          "en": "“Knowing not the way” is old-fashioned; today you say Not knowing.",
+          "es": "«Knowing not the way» es anticuado; hoy se dice Not knowing.",
+          "de": "„Knowing not the way“ ist altmodisch; heute sagt man Not knowing."
+        },
+        "Not known": {
+          "hu": "A Not known the way nem helyes; a know itt tevő igenév (knowing).",
+          "en": "“Not known the way” is not correct; know here needs the active -ing form (knowing).",
+          "es": "«Not known the way» no es correcto; know aquí necesita la forma -ing activa (knowing).",
+          "de": "„Not known the way“ ist nicht korrekt; know braucht hier die aktive -ing-Form (knowing)."
+        }
+      },
+      "examples": [
+        "Not wanting to wait, he left.",
+        "Not having a key, she knocked."
+      ]
+    },
+    {
+      "id": "ptc-05",
+      "sentence": "___ in simple English, the book is easy to read.",
+      "options": [
+        "Writing",
+        "Wrote",
+        "Written"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Szenvedő jelentés: múlt idejű igenév, Written.",
+        "en": "A passive meaning: the past participle, Written.",
+        "es": "Un sentido pasivo: el participio pasado, Written.",
+        "de": "Eine passive Bedeutung: das Partizip Perfekt, Written."
+      },
+      "wrong": {
+        "Writing": {
+          "hu": "A Writing azt jelentené, hogy a könyv ír; itt szenvedő kell.",
+          "en": "“Writing” would mean the book writes; here you need a passive.",
+          "es": "«Writing» significaría que el libro escribe; aquí hace falta una pasiva.",
+          "de": "„Writing“ würde heißen, dass das Buch schreibt; hier braucht man ein Passiv."
+        },
+        "Wrote": {
+          "hu": "A Wrote egyszerű múlt, nem igenév; Written kell.",
+          "en": "Wrote is the simple past, not a participle; you need Written.",
+          "es": "Wrote es el pasado simple, no un participio; hace falta Written.",
+          "de": "Wrote ist das Past Simple, kein Partizip; man braucht Written."
+        }
+      },
+      "examples": [
+        "Built in a day, it fell.",
+        "Made of wood, it burns."
+      ]
+    },
+    {
+      "id": "ptc-06",
+      "sentence": "___ by the noise, the baby started to cry.",
+      "options": [
+        "Frightened",
+        "Frightening",
+        "Frighten"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Szenvedő jelentés: Frightened by the noise.",
+        "en": "A passive meaning: Frightened by the noise.",
+        "es": "Un sentido pasivo: Frightened by the noise.",
+        "de": "Eine passive Bedeutung: Frightened by the noise."
+      },
+      "wrong": {
+        "Frightening": {
+          "hu": "A Frightening azt jelentené, hogy a baba ijeszt; itt szenvedő kell.",
+          "en": "“Frightening” would mean the baby frightens; here you need a passive.",
+          "es": "«Frightening» significaría que el bebé asusta; aquí hace falta una pasiva.",
+          "de": "„Frightening“ würde heißen, dass das Baby erschreckt; hier braucht man ein Passiv."
+        },
+        "Frighten": {
+          "hu": "A Frighten alapige, nem igenévi szerkezet; Frightened kell.",
+          "en": "Frighten is the base verb, not a participle clause; you need Frightened.",
+          "es": "Frighten es el verbo base, no una cláusula de participio; hace falta Frightened.",
+          "de": "Frighten ist die Grundform, kein Partizipialsatz; man braucht Frightened."
+        }
+      },
+      "examples": [
+        "Shocked by the news, he sat.",
+        "Tired by the trip, she slept."
+      ]
+    },
+    {
+      "id": "ptc-07",
+      "sentence": "After ___ school, she worked in a bank.",
+      "options": [
+        "leave",
+        "leaving",
+        "left"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Kötőszó + -ing: After leaving.",
+        "en": "A conjunction + -ing: After leaving.",
+        "es": "Una conjunción + -ing: After leaving.",
+        "de": "Konjunktion + -ing: After leaving."
+      },
+      "wrong": {
+        "leave": {
+          "hu": "Az After leave nem helyes; az after után -ing kell.",
+          "en": "“After leave” is not correct; after after you need -ing.",
+          "es": "«After leave» no es correcto; después de after hace falta -ing.",
+          "de": "„After leave“ ist nicht korrekt; nach after braucht man -ing."
+        },
+        "left": {
+          "hu": "Az After left school nem helyes; az after után -ing vagy alany + ige kell.",
+          "en": "“After left school” is not correct; after after you need -ing or a subject + verb.",
+          "es": "«After left school» no es correcto; después de after hace falta -ing o sujeto + verbo.",
+          "de": "„After left school“ ist nicht korrekt; nach after braucht man -ing oder Subjekt + Verb."
+        }
+      },
+      "examples": [
+        "Before going, call me.",
+        "After eating, rest."
+      ]
+    },
+    {
+      "id": "ptc-08",
+      "sentence": "While ___ for the bus, I read the news.",
+      "options": [
+        "waited",
+        "wait",
+        "waiting"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Kötőszó + -ing: While waiting.",
+        "en": "A conjunction + -ing: While waiting.",
+        "es": "Una conjunción + -ing: While waiting.",
+        "de": "Konjunktion + -ing: While waiting."
+      },
+      "wrong": {
+        "waited": {
+          "hu": "A While waited nem helyes; a while után -ing kell.",
+          "en": "“While waited” is not correct; after while you need -ing.",
+          "es": "«While waited» no es correcto; después de while hace falta -ing.",
+          "de": "„While waited“ ist nicht korrekt; nach while braucht man -ing."
+        },
+        "wait": {
+          "hu": "A While wait nem helyes; a while után -ing kell.",
+          "en": "“While wait” is not correct; after while you need -ing.",
+          "es": "«While wait» no es correcto; después de while hace falta -ing.",
+          "de": "„While wait“ ist nicht korrekt; nach while braucht man -ing."
+        }
+      },
+      "examples": [
+        "While eating, he read.",
+        "While walking, she sang."
+      ]
+    },
+    {
+      "id": "ptc-09",
+      "sentence": "On ___ home, he found the door open.",
+      "options": [
+        "arriving",
+        "arrive",
+        "arrived"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A on + -ing jelentése: amint megérkezett.",
+        "en": "On + -ing means: as soon as he arrived.",
+        "es": "On + -ing significa: en cuanto llegó.",
+        "de": "On + -ing bedeutet: sobald er ankam."
+      },
+      "wrong": {
+        "arrive": {
+          "hu": "Az On arrive nem helyes; az on után -ing kell.",
+          "en": "“On arrive” is not correct; after on you need -ing.",
+          "es": "«On arrive» no es correcto; después de on hace falta -ing.",
+          "de": "„On arrive“ ist nicht korrekt; nach on braucht man -ing."
+        },
+        "arrived": {
+          "hu": "Az On arrived nem helyes; az on után -ing kell.",
+          "en": "“On arrived” is not correct; after on you need -ing.",
+          "es": "«On arrived» no es correcto; después de on hace falta -ing.",
+          "de": "„On arrived“ ist nicht korrekt; nach on braucht man -ing."
+        }
+      },
+      "examples": [
+        "On seeing him, she smiled.",
+        "On hearing it, he ran."
+      ]
+    },
+    {
+      "id": "ptc-10",
+      "sentence": "___ a doctor, she knows how to help.",
+      "options": [
+        "Been",
+        "Being",
+        "Be"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Ok: Being a doctor, she knows…",
+        "en": "A reason: Being a doctor, she knows…",
+        "es": "Una razón: Being a doctor, she knows…",
+        "de": "Ein Grund: Being a doctor, she knows…"
+      },
+      "wrong": {
+        "Been": {
+          "hu": "A Been a doctor, she nem helyes; -ing alak kell (Being).",
+          "en": "“Been a doctor, she” is not correct; you need the -ing form (Being).",
+          "es": "«Been a doctor, she» no es correcto; hace falta la forma -ing (Being).",
+          "de": "„Been a doctor, she“ ist nicht korrekt; man braucht die -ing-Form (Being)."
+        },
+        "Be": {
+          "hu": "A Be a doctor, she felszólításnak hangzik; -ing alak kell (Being).",
+          "en": "“Be a doctor, she” sounds like an imperative; you need the -ing form (Being).",
+          "es": "«Be a doctor, she» suena a imperativo; hace falta la forma -ing (Being).",
+          "de": "„Be a doctor, she“ klingt wie ein Imperativ; man braucht die -ing-Form (Being)."
+        }
+      },
+      "examples": [
+        "Being late, he ran.",
+        "Being tall, she reached."
+      ]
+    },
+    {
+      "id": "ptc-11",
+      "sentence": "Walking down the street, ___ saw an accident.",
+      "options": [
+        "a car",
+        "the accident",
+        "I"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Az igenév alanya a főmondat alanya: aki sétált, az látott.",
+        "en": "The participle’s subject is the main subject: the one who walked is the one who saw.",
+        "es": "El sujeto del participio es el sujeto principal: quien caminaba es quien vio.",
+        "de": "Das Subjekt des Partizips ist das Hauptsubjekt: wer ging, sah."
+      },
+      "wrong": {
+        "a car": {
+          "hu": "Az autó nem sétált; az igenév alanya nem egyezne.",
+          "en": "The car did not walk; the subject of the participle would not match.",
+          "es": "El carro no caminaba; el sujeto del participio no coincidiría.",
+          "de": "Das Auto ging nicht; das Subjekt des Partizips würde nicht passen."
+        },
+        "the accident": {
+          "hu": "A baleset nem sétált; az igenév alanya nem egyezne.",
+          "en": "The accident did not walk; the subject of the participle would not match.",
+          "es": "El accidente no caminaba; el sujeto del participio no coincidiría.",
+          "de": "Der Unfall ging nicht; das Subjekt des Partizips würde nicht passen."
+        }
+      },
+      "examples": [
+        "Opening the door, she smiled.",
+        "Turning round, he saw her."
+      ]
+    },
+    {
+      "id": "ptc-12",
+      "sentence": "___ having eaten all day, he was very hungry.",
+      "options": [
+        "Not",
+        "No",
+        "Don't"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Tagadás: Not having eaten.",
+        "en": "The negative: Not having eaten.",
+        "es": "La negación: Not having eaten.",
+        "de": "Die Verneinung: Not having eaten."
+      },
+      "wrong": {
+        "No": {
+          "hu": "A No having eaten nem helyes; a tagadás not.",
+          "en": "“No having eaten” is not correct; the negative is not.",
+          "es": "«No having eaten» no es correcto; la negación es not.",
+          "de": "„No having eaten“ ist nicht korrekt; die Verneinung ist not."
+        },
+        "Don't": {
+          "hu": "A Don’t having eaten nem helyes; a tagadás not.",
+          "en": "“Don’t having eaten” is not correct; the negative is not.",
+          "es": "«Don’t having eaten» no es correcto; la negación es not.",
+          "de": "„Don’t having eaten“ ist nicht korrekt; die Verneinung ist not."
+        }
+      },
+      "examples": [
+        "Not having slept, she yawned.",
+        "Not having a car, he walked."
+      ]
+    },
+    {
+      "id": "ptc-13",
+      "sentence": "Having ___ told the news, she began to cry.",
+      "options": [
+        "be",
+        "been",
+        "being"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Szenvedő, korábbi cselekvés: Having been told.",
+        "en": "A passive, an earlier action: Having been told.",
+        "es": "Una pasiva, una acción anterior: Having been told.",
+        "de": "Ein Passiv, eine frühere Handlung: Having been told."
+      },
+      "wrong": {
+        "be": {
+          "hu": "A Having be told nem helyes; a having után igenév (been) kell.",
+          "en": "“Having be told” is not correct; after having you need a participle (been).",
+          "es": "«Having be told» no es correcto; después de having hace falta un participio (been).",
+          "de": "„Having be told“ ist nicht korrekt; nach having braucht man ein Partizip (been)."
+        },
+        "being": {
+          "hu": "A Having being told nem helyes; a having után igenév (been) kell.",
+          "en": "“Having being told” is not correct; after having you need a participle (been).",
+          "es": "«Having being told» no es correcto; después de having hace falta un participio (been).",
+          "de": "„Having being told“ ist nicht korrekt; nach having braucht man ein Partizip (been)."
+        }
+      },
+      "examples": [
+        "Having been warned, he left.",
+        "Having been fired, she cried."
+      ]
+    },
+    {
+      "id": "ptc-14",
+      "sentence": "___ by the trip, he fell asleep at once.",
+      "options": [
+        "Exhausting",
+        "Exhaust",
+        "Exhausted"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Szenvedő jelentés: Exhausted by the trip.",
+        "en": "A passive meaning: Exhausted by the trip.",
+        "es": "Un sentido pasivo: Exhausted by the trip.",
+        "de": "Eine passive Bedeutung: Exhausted by the trip."
+      },
+      "wrong": {
+        "Exhausting": {
+          "hu": "Az Exhausting azt jelentené, hogy ő fáraszt másokat; szenvedő kell.",
+          "en": "“Exhausting” would mean he tires others; you need a passive.",
+          "es": "«Exhausting» significaría que él cansa a otros; hace falta una pasiva.",
+          "de": "„Exhausting“ würde heißen, dass er andere erschöpft; man braucht ein Passiv."
+        },
+        "Exhaust": {
+          "hu": "Az Exhaust alapige; igenévi szerkezetben Exhausted kell.",
+          "en": "Exhaust is the base verb; in a participle clause you need Exhausted.",
+          "es": "Exhaust es el verbo base; en una cláusula de participio hace falta Exhausted.",
+          "de": "Exhaust ist die Grundform; im Partizipialsatz braucht man Exhausted."
+        }
+      },
+      "examples": [
+        "Shocked by it, she stopped.",
+        "Bored by it, he left."
+      ]
+    },
+    {
+      "id": "ptc-15",
+      "sentence": "Not ___ what to say, she kept quiet.",
+      "options": [
+        "knowing",
+        "known",
+        "know"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Tagadás + -ing: Not knowing.",
+        "en": "A negative + -ing: Not knowing.",
+        "es": "Una negación + -ing: Not knowing.",
+        "de": "Verneinung + -ing: Not knowing."
+      },
+      "wrong": {
+        "known": {
+          "hu": "A Not known what to say nem helyes; a know itt tevő -ing alak (knowing).",
+          "en": "“Not known what to say” is not correct; know here needs the active -ing form (knowing).",
+          "es": "«Not known what to say» no es correcto; know aquí necesita la forma -ing activa (knowing).",
+          "de": "„Not known what to say“ ist nicht korrekt; know braucht hier die aktive -ing-Form (knowing)."
+        },
+        "know": {
+          "hu": "A Not know what to say nem helyes igenévi szerkezet; -ing alak kell.",
+          "en": "“Not know what to say” is not a correct participle clause; you need the -ing form.",
+          "es": "«Not know what to say» no es una cláusula de participio correcta; hace falta la forma -ing.",
+          "de": "„Not know what to say“ ist kein korrekter Partizipialsatz; man braucht die -ing-Form."
+        }
+      },
+      "examples": [
+        "Not wanting to wait, he left.",
+        "Not seeing it, she asked."
+      ]
+    },
+    {
+      "id": "ptc-16",
+      "sentence": "Having lost his keys, ___ had to climb in through the window.",
+      "options": [
+        "the keys",
+        "he",
+        "the window"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az igenév alanya a főmondat alanya: aki elvesztette, az mászott be.",
+        "en": "The participle’s subject is the main subject: the one who lost them is the one who climbed in.",
+        "es": "El sujeto del participio es el sujeto principal: quien las perdió es quien trepó.",
+        "de": "Das Subjekt des Partizips ist das Hauptsubjekt: wer sie verlor, kletterte hinein."
+      },
+      "wrong": {
+        "the keys": {
+          "hu": "A kulcsok nem veszítettek el semmit; az igenév alanya nem egyezne.",
+          "en": "The keys did not lose anything; the subject of the participle would not match.",
+          "es": "Las llaves no perdieron nada; el sujeto del participio no coincidiría.",
+          "de": "Die Schlüssel verloren nichts; das Subjekt des Partizips würde nicht passen."
+        },
+        "the window": {
+          "hu": "Az ablak nem veszített el semmit; az igenév alanya nem egyezne.",
+          "en": "The window did not lose anything; the subject of the participle would not match.",
+          "es": "La ventana no perdió nada; el sujeto del participio no coincidiría.",
+          "de": "Das Fenster verlor nichts; das Subjekt des Partizips würde nicht passen."
+        }
+      },
+      "examples": [
+        "Having seen him, she smiled.",
+        "Having failed, he tried again."
+      ]
+    },
+    {
+      "id": "ptc-17",
+      "sentence": "Judging by the sky, it ___ rain soon.",
+      "options": [
+        "is",
+        "does",
+        "will"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A „judging by” után a főmondatban a várható jövő áll: it will rain.",
+        "en": "After “judging by” the main clause gives the expected future: it will rain.",
+        "es": "Después de «judging by» la oración principal da el futuro esperado: it will rain.",
+        "de": "Nach «judging by» gibt der Hauptsatz die erwartete Zukunft an: it will rain."
+      },
+      "wrong": {
+        "is": {
+          "hu": "Az it is rain nem helyes; a rain alapige módbeli igét kér.",
+          "en": "“It is rain” is not correct; the base verb rain asks for a modal.",
+          "es": "«It is rain» no es correcto; el verbo base rain pide un modal.",
+          "de": "„It is rain“ ist nicht korrekt; die Grundform rain verlangt ein Modalverb."
+        },
+        "does": {
+          "hu": "Az it does rain soon nem helyes jóslat; will kell.",
+          "en": "“It does rain soon” is not a correct prediction; you need will.",
+          "es": "«It does rain soon» no es una predicción correcta; hace falta will.",
+          "de": "„It does rain soon“ ist keine korrekte Vorhersage; man braucht will."
+        }
+      },
+      "examples": [
+        "Judging by his face, he is ill.",
+        "Judging by the news, it will end."
+      ]
+    },
+    {
+      "id": "ptc-18",
+      "kind": "form",
+      "verb": "forma",
+      "person": "mientras caminaba (___ down the street)",
+      "answer": "walking",
+      "table": "ptc-forms"
+    },
+    {
+      "id": "ptc-19",
+      "kind": "form",
+      "verb": "forma",
+      "person": "habiendo terminado (___ finished)",
+      "answer": "having",
+      "table": "ptc-forms"
+    },
+    {
+      "id": "ptc-20",
+      "kind": "form",
+      "verb": "forma",
+      "person": "escrito hace tiempo (___ long ago)",
+      "answer": "written",
+      "table": "ptc-forms"
+    },
+    {
+      "id": "ptc-21",
+      "kind": "form",
+      "verb": "forma",
+      "person": "sin saber (___ knowing)",
+      "answer": "not",
+      "table": "ptc-forms"
+    },
+    {
+      "id": "ptc-22",
+      "kind": "form",
+      "verb": "forma",
+      "person": "al llegar (On ___)",
+      "answer": "arriving",
+      "table": "ptc-forms"
+    },
+    {
+      "id": "ptc-23",
+      "kind": "form",
+      "verb": "forma",
+      "person": "por ser médica (___ a doctor)",
+      "answer": "being",
+      "table": "ptc-forms"
+    },
+    {
+      "kind": "why",
+      "id": "ptc-24",
+      "es": "Walking down the street, I met a friend.",
+      "target": "Walking down the street",
+      "tr": {
+        "hu": "Az utcán sétálva találkoztam egy baráttal.",
+        "en": "Walking down the street, I met a friend.",
+        "es": "Caminando por la calle, me encontré a un amigo.",
+        "de": "Auf der Straße gehend traf ich einen Freund."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "új alany a főmondatban",
+            "en": "a new subject in the main clause",
+            "es": "un sujeto nuevo en la oración principal",
+            "de": "ein neues Subjekt im Hauptsatz"
+          },
+          "wrong": {
+            "hu": "Az igenévi mondat alanya ugyanaz, mint a főmondaté (I).",
+            "en": "The subject of the participle clause is the same as the main clause (I).",
+            "es": "El sujeto de la cláusula de participio es el mismo que el de la principal (I).",
+            "de": "Das Subjekt des Partizipialsatzes ist dasselbe wie im Hauptsatz (I)."
+          }
+        },
+        {
+          "text": {
+            "hu": "rövidített mellékmondat: while I was walking, azonos alannyal",
+            "en": "a shortened clause: while I was walking, with the same subject",
+            "es": "una cláusula acortada: while I was walking, con el mismo sujeto",
+            "de": "ein verkürzter Nebensatz: while I was walking, mit demselben Subjekt"
+          }
+        },
+        {
+          "text": {
+            "hu": "cél: azért sétáltam, hogy",
+            "en": "a purpose: I walked in order to",
+            "es": "una finalidad: caminé para",
+            "de": "ein Zweck: ich ging, um"
+          },
+          "wrong": {
+            "hu": "Az -ing alak itt egyidejűséget jelöl, nem célt.",
+            "en": "The -ing form here marks simultaneity, not a purpose.",
+            "es": "La forma -ing aquí marca simultaneidad, no una finalidad.",
+            "de": "Die -ing-Form markiert hier Gleichzeitigkeit, keinen Zweck."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ptc-25",
+      "es": "Having finished the report, he went home.",
+      "target": "Having finished",
+      "tr": {
+        "hu": "Miután befejezte a jelentést, hazament.",
+        "en": "Having finished the report, he went home.",
+        "es": "Habiendo terminado el reporte, se fue a casa.",
+        "de": "Nachdem er den Bericht beendet hatte, ging er nach Hause."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "egyidejű cselekvés",
+            "en": "a simultaneous action",
+            "es": "una acción simultánea",
+            "de": "eine gleichzeitige Handlung"
+          },
+          "wrong": {
+            "hu": "A having + igenév korábbi cselekvést jelöl, nem egyidejűt.",
+            "en": "Having + participle marks an earlier action, not a simultaneous one.",
+            "es": "Having + participio marca una acción anterior, no simultánea.",
+            "de": "Having + Partizip markiert eine frühere Handlung, keine gleichzeitige."
+          }
+        },
+        {
+          "text": {
+            "hu": "korábbi cselekvés: előbb befejezte, utána ment haza",
+            "en": "an earlier action: he finished first, then went home",
+            "es": "una acción anterior: primero terminó, luego se fue a casa",
+            "de": "eine frühere Handlung: erst beendete er, dann ging er nach Hause"
+          }
+        },
+        {
+          "text": {
+            "hu": "jövőbeli terv",
+            "en": "a future plan",
+            "es": "un plan futuro",
+            "de": "ein Zukunftsplan"
+          },
+          "wrong": {
+            "hu": "A having finished múltbeli, befejezett cselekvést jelöl.",
+            "en": "Having finished marks a finished action in the past.",
+            "es": "Having finished marca una acción terminada en el pasado.",
+            "de": "Having finished markiert eine abgeschlossene Handlung in der Vergangenheit."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ptc-26",
+      "es": "Written in simple English, the book is easy to read.",
+      "target": "Written",
+      "tr": {
+        "hu": "Egyszerű angolsággal írva a könyv könnyen olvasható.",
+        "en": "Written in simple English, the book is easy to read.",
+        "es": "Escrito en inglés sencillo, el libro es fácil de leer.",
+        "de": "In einfachem Englisch geschrieben, ist das Buch leicht zu lesen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "tevő jelentés: a könyv ír",
+            "en": "an active meaning: the book writes",
+            "es": "un sentido activo: el libro escribe",
+            "de": "eine aktive Bedeutung: das Buch schreibt"
+          },
+          "wrong": {
+            "hu": "A written szenvedő: a könyvet írták, nem a könyv ír.",
+            "en": "Written is passive: the book was written, it does not write.",
+            "es": "Written es pasivo: el libro fue escrito, no escribe.",
+            "de": "Written ist passiv: das Buch wurde geschrieben, es schreibt nicht."
+          }
+        },
+        {
+          "text": {
+            "hu": "múlt idejű igenév: szenvedő jelentés",
+            "en": "the past participle: a passive meaning",
+            "es": "el participio pasado: un sentido pasivo",
+            "de": "das Partizip Perfekt: eine passive Bedeutung"
+          }
+        },
+        {
+          "text": {
+            "hu": "felszólítás",
+            "en": "a command",
+            "es": "una orden",
+            "de": "ein Befehl"
+          },
+          "wrong": {
+            "hu": "Ez nem felszólítás; az igenévi szerkezet leírja a könyvet.",
+            "en": "This is not a command; the participle clause describes the book.",
+            "es": "Esto no es una orden; la cláusula de participio describe el libro.",
+            "de": "Das ist kein Befehl; der Partizipialsatz beschreibt das Buch."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ptc-27",
+      "es": "Not knowing the way, we asked a stranger.",
+      "target": "Not knowing",
+      "tr": {
+        "hu": "Mivel nem ismertük az utat, megkérdeztünk egy idegent.",
+        "en": "Not knowing the way, we asked a stranger.",
+        "es": "Sin saber el camino, le preguntamos a un desconocido.",
+        "de": "Da wir den Weg nicht kannten, fragten wir einen Fremden."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a not az igenév után áll",
+            "en": "not comes after the participle",
+            "es": "not va después del participio",
+            "de": "not steht nach dem Partizip"
+          },
+          "wrong": {
+            "hu": "A not az igenév elé kerül: not knowing.",
+            "en": "The not goes before the participle: not knowing.",
+            "es": "El not va antes del participio: not knowing.",
+            "de": "Das not steht vor dem Partizip: not knowing."
+          }
+        },
+        {
+          "text": {
+            "hu": "a not az igenév előtt áll: a tagadás ok",
+            "en": "not comes before the participle: a negative reason",
+            "es": "not va antes del participio: una razón negativa",
+            "de": "not steht vor dem Partizip: ein verneinter Grund"
+          }
+        },
+        {
+          "text": {
+            "hu": "kérdés",
+            "en": "a question",
+            "es": "una pregunta",
+            "de": "eine Frage"
+          },
+          "wrong": {
+            "hu": "Ez kijelentés; a not knowing az okot adja.",
+            "en": "This is a statement; not knowing gives the reason.",
+            "es": "Esto es una afirmación; not knowing da la razón.",
+            "de": "Das ist eine Aussage; not knowing nennt den Grund."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ptc-28",
+      "es": "While walking down the street, I saw an accident.",
+      "target": "While walking",
+      "tr": {
+        "hu": "Az utcán sétálva láttam egy balesetet.",
+        "en": "While walking down the street, I saw an accident.",
+        "es": "Mientras caminaba por la calle, vi un accidente.",
+        "de": "Beim Gehen auf der Straße sah ich einen Unfall."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "while + alapige",
+            "en": "while + base verb",
+            "es": "while + verbo base",
+            "de": "while + Grundform"
+          },
+          "wrong": {
+            "hu": "A while után -ing alak áll, nem alapige.",
+            "en": "After while comes the -ing form, not the base verb.",
+            "es": "Después de while va la forma -ing, no el verbo base.",
+            "de": "Nach while steht die -ing-Form, nicht die Grundform."
+          }
+        },
+        {
+          "text": {
+            "hu": "while + -ing: kötőszóval tisztább az idői viszony",
+            "en": "while + -ing: the conjunction makes the time relation clearer",
+            "es": "while + -ing: la conjunción aclara la relación de tiempo",
+            "de": "while + -ing: die Konjunktion macht die Zeitbeziehung klarer"
+          }
+        },
+        {
+          "text": {
+            "hu": "while + múlt idő igenév",
+            "en": "while + past participle",
+            "es": "while + participio pasado",
+            "de": "while + Partizip Perfekt"
+          },
+          "wrong": {
+            "hu": "Itt tevő jelentés van (én sétáltam), ezért -ing kell.",
+            "en": "Here the meaning is active (I walked), so you need -ing.",
+            "es": "Aquí el sentido es activo (yo caminaba), por eso hace falta -ing.",
+            "de": "Hier ist die Bedeutung aktiv (ich ging), deshalb braucht man -ing."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "ptc-29",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "Caminando por la calle, me encontré a un viejo amigo.",
+          "en": "Walking down the street, I met an old friend."
+        },
+        {
+          "es": "Sintiéndose cansada, se fue a dormir temprano.",
+          "en": "Feeling tired, she went to bed early."
+        },
+        {
+          "es": "Habiendo terminado el reporte, se fue a casa.",
+          "en": "Having finished the report, he went home."
+        },
+        {
+          "es": "Sin saber el camino, le preguntamos a un desconocido.",
+          "en": "Not knowing the way, we asked a stranger."
+        },
+        {
+          "es": "Escrito en inglés sencillo, el libro es fácil de leer.",
+          "en": "Written in simple English, the book is easy to read."
+        },
+        {
+          "es": "Asustado por el ruido, el bebé empezó a llorar.",
+          "en": "Frightened by the noise, the baby started to cry."
+        }
+      ]
+    },
+    {
+      "id": "ptc-30",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "mientras esperaba",
+          "en": "while waiting"
+        },
+        {
+          "es": "al llegar",
+          "en": "on arriving"
+        },
+        {
+          "es": "después de salir",
+          "en": "after leaving"
+        },
+        {
+          "es": "por ser médica",
+          "en": "being a doctor"
+        },
+        {
+          "es": "habiendo sido informada",
+          "en": "having been told"
+        },
+        {
+          "es": "sin haber comido",
+          "en": "not having eaten"
+        }
+      ]
+    }
+  ]
+}
