@@ -1,0 +1,1665 @@
+{
+  "schema": 2,
+  "topic": "nominalization",
+  "level": "C1",
+  "title": {
+    "hu": "Főnevesítés a formális stílusban (decide → the decision, rise sharply → a sharp rise)",
+    "en": "Nominalization in Formal Style (decide → the decision, rise sharply → a sharp rise)",
+    "es": "La nominalización en el estilo formal (decide → the decision, rise sharply → a sharp rise)",
+    "de": "Nominalisierung im formellen Stil (decide → the decision, rise sharply → a sharp rise)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A formális írott angolban az igék és melléknevek gyakran főnévvé alakulnak: „The government decided to cut taxes” helyett „The government’s decision to cut taxes surprised many.” Az igeként használt cselekvés így főnévi csoporttá válik, amely a mondat alanya lehet. A határozószóból melléknév lesz: „Prices rose sharply” → „There was a sharp rise in prices.” A spanyolban ez természetes („la implementación de la política”), az angol főneveknek viszont megvan a maguk elöljárója: increase in, demand for, solution to, effect on.",
+        "en": "In formal written English, verbs and adjectives are often turned into nouns: instead of “The government decided to cut taxes” you write “The government’s decision to cut taxes surprised many.” The action that was a verb becomes a noun phrase that can be the subject. An adverb becomes an adjective: “Prices rose sharply” → “There was a sharp rise in prices.” In Spanish this feels natural (“la implementación de la política”), but English nouns have their own prepositions: increase in, demand for, solution to, effect on.",
+        "es": "En el inglés escrito formal, los verbos y adjetivos se convierten a menudo en sustantivos: en lugar de «The government decided to cut taxes» se escribe «The government’s decision to cut taxes surprised many.» La acción que era un verbo pasa a ser un grupo nominal que puede ser el sujeto. Un adverbio se vuelve adjetivo: «Prices rose sharply» → «There was a sharp rise in prices.» En español esto resulta natural («la implementación de la política»), pero los sustantivos del inglés tienen sus propias preposiciones: increase in, demand for, solution to, effect on.",
+        "de": "Im formellen geschriebenen Englisch werden Verben und Adjektive oft zu Nomen: statt «The government decided to cut taxes» schreibt man «The government’s decision to cut taxes surprised many.» Die Handlung, die ein Verb war, wird zu einer Nominalgruppe, die Subjekt sein kann. Ein Adverb wird zum Adjektiv: «Prices rose sharply» → «There was a sharp rise in prices.» Im Spanischen wirkt das natürlich («la implementación de la política»), aber englische Nomen haben ihre eigenen Präpositionen: increase in, demand for, solution to, effect on."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "nmz-forms",
+      "title": {
+        "hu": "Melyik főnév?",
+        "en": "Which noun?",
+        "es": "¿Qué sustantivo uso?",
+        "de": "Welches Nomen?"
+      },
+      "header": [
+        {
+          "hu": "Jelentés",
+          "en": "Meaning",
+          "es": "Significado",
+          "de": "Bedeutung"
+        },
+        {
+          "hu": "forma",
+          "en": "form",
+          "es": "forma",
+          "de": "Form"
+        }
+      ],
+      "rows": [
+        [
+          "verbo «decidir» → sustantivo",
+          "decision"
+        ],
+        [
+          "verbo «implementar» → sustantivo",
+          "implementation"
+        ],
+        [
+          "adjetivo «difícil» → sustantivo",
+          "difficulty"
+        ],
+        [
+          "verbo «aumentar» → sustantivo",
+          "increase"
+        ],
+        [
+          "adjetivo «importante» → sustantivo",
+          "importance"
+        ],
+        [
+          "verbo «fallar» → sustantivo",
+          "failure"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Miért: a főnévi csoport mint alany",
+        "en": "Why: the noun phrase as the subject",
+        "es": "Por qué: el grupo nominal como sujeto",
+        "de": "Warum: die Nominalgruppe als Subjekt"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A főnevesítés tömörít, és a hangsúlyt a cselekvésről az eredményre teszi. A formális hírek, jelentések és tudományos szövegek gyakran használják.",
+            "en": "Nominalization condenses and moves the focus from the action to the result. Formal news, reports and academic texts use it often.",
+            "es": "La nominalización condensa y pasa el foco de la acción al resultado. Las noticias formales, los informes y los textos académicos la usan a menudo.",
+            "de": "Die Nominalisierung verdichtet und verlagert den Fokus von der Handlung auf das Ergebnis. Formelle Nachrichten, Berichte und wissenschaftliche Texte nutzen sie oft."
+          },
+          "examples": [
+            {
+              "es": "The government's decision to cut taxes surprised many.",
+              "tr": {
+                "hu": "A kormány adócsökkentési döntése sokakat meglepett.",
+                "en": "The government's decision to cut taxes surprised many.",
+                "es": "La decisión del gobierno de bajar los impuestos sorprendió a muchos.",
+                "de": "Die Entscheidung der Regierung, die Steuern zu senken, überraschte viele."
+              }
+            },
+            {
+              "es": "The implementation of the new policy led to protests.",
+              "tr": {
+                "hu": "Az új szabályozás bevezetése tiltakozásokhoz vezetett.",
+                "en": "The implementation of the new policy led to protests.",
+                "es": "La implementación de la nueva política provocó protestas.",
+                "de": "Die Einführung der neuen Regelung führte zu Protesten."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Képzők: -tion, -ment, -ance, -ity, -ness, -ure, -th",
+        "en": "Suffixes: -tion, -ment, -ance, -ity, -ness, -ure, -th",
+        "es": "Sufijos: -tion, -ment, -ance, -ity, -ness, -ure, -th",
+        "de": "Endungen: -tion, -ment, -ance, -ity, -ness, -ure, -th"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "decide → decision, implement → implementation, develop → development, perform → performance, able → ability, happy → happiness, fail → failure, grow → growth. A szóalak változik, ezért szavanként kell tanulni.",
+            "en": "decide → decision, implement → implementation, develop → development, perform → performance, able → ability, happy → happiness, fail → failure, grow → growth. The word form changes, so learn them word by word.",
+            "es": "decide → decision, implement → implementation, develop → development, perform → performance, able → ability, happy → happiness, fail → failure, grow → growth. La forma cambia, por eso hay que aprenderlas palabra por palabra.",
+            "de": "decide → decision, implement → implementation, develop → development, perform → performance, able → ability, happy → happiness, fail → failure, grow → growth. Die Wortform ändert sich, deshalb lernt man sie Wort für Wort."
+          },
+          "examples": [
+            {
+              "es": "Her ability to speak English impressed me.",
+              "tr": {
+                "hu": "Az angolbeszéd-képessége lenyűgözött.",
+                "en": "Her ability to speak English impressed me.",
+                "es": "Su capacidad de hablar inglés me impresionó.",
+                "de": "Ihre Fähigkeit, Englisch zu sprechen, beeindruckte mich."
+              }
+            },
+            {
+              "es": "The rapid growth of the company created new jobs.",
+              "tr": {
+                "hu": "A cég gyors növekedése új munkahelyeket teremtett.",
+                "en": "The rapid growth of the company created new jobs.",
+                "es": "El rápido crecimiento de la empresa creó empleos nuevos.",
+                "de": "Das schnelle Wachstum der Firma schuf neue Arbeitsplätze."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "A főnév saját elöljárója",
+        "en": "The noun’s own preposition",
+        "es": "La preposición propia del sustantivo",
+        "de": "Die eigene Präposition des Nomens"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Increase / rise / fall in, demand / need / reason for, solution / answer / access to, effect / impact on, cause / lack of, attitude towards. A spanyol „de” itt gyakran nem of.",
+            "en": "Increase / rise / fall in, demand / need / reason for, solution / answer / access to, effect / impact on, cause / lack of, attitude towards. The Spanish “de” here is often not of.",
+            "es": "Increase / rise / fall in, demand / need / reason for, solution / answer / access to, effect / impact on, cause / lack of, attitude towards. El «de» del español aquí a menudo no es of.",
+            "de": "Increase / rise / fall in, demand / need / reason for, solution / answer / access to, effect / impact on, cause / lack of, attitude towards. Das spanische «de» ist hier oft nicht of."
+          },
+          "examples": [
+            {
+              "es": "There was a sharp rise in prices.",
+              "tr": {
+                "hu": "Az árak élesen emelkedtek.",
+                "en": "There was a sharp rise in prices.",
+                "es": "Hubo un aumento brusco de los precios.",
+                "de": "Es gab einen starken Preisanstieg."
+              }
+            },
+            {
+              "es": "There is a growing demand for affordable housing.",
+              "tr": {
+                "hu": "Egyre nő a kereslet a megfizethető lakások iránt.",
+                "en": "There is a growing demand for affordable housing.",
+                "es": "Hay una demanda creciente de vivienda asequible.",
+                "de": "Es gibt eine wachsende Nachfrage nach bezahlbarem Wohnraum."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Határozószó → melléknév a főnév előtt",
+        "en": "Adverb → adjective before the noun",
+        "es": "Adverbio → adjetivo antes del sustantivo",
+        "de": "Adverb → Adjektiv vor dem Nomen"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Ha az igéből főnév lesz, a határozószó melléknévvé válik: „increased sharply” → „a sharp increase”, „developed rapidly” → „rapid development”.",
+            "en": "When the verb becomes a noun, the adverb becomes an adjective: “increased sharply” → “a sharp increase”, “developed rapidly” → “rapid development”.",
+            "es": "Cuando el verbo se vuelve sustantivo, el adverbio se vuelve adjetivo: «increased sharply» → «a sharp increase», «developed rapidly» → «rapid development».",
+            "de": "Wird aus dem Verb ein Nomen, wird das Adverb zum Adjektiv: «increased sharply» → «a sharp increase», «developed rapidly» → «rapid development»."
+          },
+          "examples": [
+            {
+              "es": "Prices rose sharply. There was a sharp rise in prices.",
+              "tr": {
+                "hu": "Az árak élesen emelkedtek. Éles áremelkedés volt.",
+                "en": "Prices rose sharply. There was a sharp rise in prices.",
+                "es": "Los precios subieron bruscamente. Hubo una subida brusca de los precios.",
+                "de": "Die Preise stiegen stark. Es gab einen starken Preisanstieg."
+              }
+            },
+            {
+              "es": "Smoking has a serious effect on health.",
+              "tr": {
+                "hu": "A dohányzás súlyos hatással van az egészségre.",
+                "en": "Smoking has a serious effect on health.",
+                "es": "Fumar tiene un efecto grave sobre la salud.",
+                "de": "Rauchen hat eine ernste Wirkung auf die Gesundheit."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Nem „an increase of prices”, hanem „an increase in prices”. Az „of” a mennyiség előtt áll: „an increase of ten percent”.",
+        "en": "Not “an increase of prices”, but “an increase in prices”. The “of” goes before the amount: “an increase of ten percent”.",
+        "es": "No «an increase of prices», sino «an increase in prices». El «of» va antes de la cantidad: «an increase of ten percent».",
+        "de": "Nicht «an increase of prices», sondern «an increase in prices». Das «of» steht vor der Menge: «an increase of ten percent»."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A főnevesítést mértékkel használd: beszédben a „We decided to cut taxes” természetesebb, mint a „The taxes’ cut decision”. Írásban a tömör főnévi szerkezet formálisabb.",
+        "en": "Use nominalization in moderation: in speech “We decided to cut taxes” sounds more natural than a long noun phrase. In writing the compact noun structure is more formal.",
+        "es": "Usa la nominalización con moderación: al hablar «We decided to cut taxes» suena más natural que un largo grupo nominal. Por escrito la estructura nominal compacta es más formal.",
+        "de": "Nutze die Nominalisierung maßvoll: im Gespräch klingt «We decided to cut taxes» natürlicher als eine lange Nominalgruppe. Schriftlich ist die kompakte Nominalstruktur formeller."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A formális írott angolban az igék és melléknevek gyakran főnévvé alakulnak: «The government's decision to cut taxes surprised many». Az ige főnévvé alakulásakor a határozószó melléknév lesz: «Prices rose sharply» helyett «There was a sharp rise in prices». A főneveknek megvan a maguk elöljárója: «increase in», «demand for», «solution to», «effect on». Képzők: «decision», «implementation», «development», «ability», «failure», «growth».",
+    "en": "In formal written English, verbs and adjectives are often turned into nouns: «The government's decision to cut taxes surprised many». When a verb becomes a noun, the adverb becomes an adjective: instead of «Prices rose sharply», «There was a sharp rise in prices». Nouns have their own prepositions: «increase in», «demand for», «solution to», «effect on». Suffixes: «decision», «implementation», «development», «ability», «failure», «growth».",
+    "es": "En el inglés escrito formal, los verbos y adjetivos se convierten a menudo en sustantivos: «The government's decision to cut taxes surprised many». Cuando un verbo se vuelve sustantivo, el adverbio se vuelve adjetivo: en lugar de «Prices rose sharply», «There was a sharp rise in prices». Los sustantivos tienen sus propias preposiciones: «increase in», «demand for», «solution to», «effect on». Sufijos: «decision», «implementation», «development», «ability», «failure», «growth».",
+    "de": "Im formellen geschriebenen Englisch werden Verben und Adjektive oft zu Nomen: «The government's decision to cut taxes surprised many». Wird ein Verb zum Nomen, wird das Adverb zum Adjektiv: statt «Prices rose sharply» «There was a sharp rise in prices». Nomen haben ihre eigenen Präpositionen: «increase in», «demand for», «solution to», «effect on». Endungen: «decision», «implementation», «development», «ability», «failure», «growth»."
+  },
+  "glossary": [
+    {
+      "word": "ably",
+      "gloss": {
+        "hu": "ügyesen",
+        "en": "in a skilled way",
+        "es": "hábilmente",
+        "de": "geschickt"
+      }
+    },
+    {
+      "word": "accuracy",
+      "gloss": {
+        "hu": "pontosság",
+        "en": "being exact",
+        "es": "exactitud",
+        "de": "Genauigkeit"
+      }
+    },
+    {
+      "word": "accurately",
+      "gloss": {
+        "hu": "pontosan",
+        "en": "in an exact way",
+        "es": "con exactitud",
+        "de": "genau"
+      }
+    },
+    {
+      "word": "affordable",
+      "gloss": {
+        "hu": "megfizethető",
+        "en": "not too expensive",
+        "es": "asequible",
+        "de": "bezahlbar"
+      }
+    },
+    {
+      "word": "attitude",
+      "gloss": {
+        "hu": "hozzáállás",
+        "en": "how you think and feel",
+        "es": "actitud",
+        "de": "Einstellung"
+      }
+    },
+    {
+      "word": "basic",
+      "gloss": {
+        "hu": "alapvető",
+        "en": "most important",
+        "es": "básico",
+        "de": "grundlegend"
+      }
+    },
+    {
+      "word": "beauty",
+      "gloss": {
+        "hu": "szépség",
+        "en": "being beautiful",
+        "es": "belleza",
+        "de": "Schönheit"
+      }
+    },
+    {
+      "word": "cause",
+      "gloss": {
+        "hu": "ok, okoz",
+        "en": "the reason something happens",
+        "es": "causa, causar",
+        "de": "Ursache, verursachen"
+      }
+    },
+    {
+      "word": "caused",
+      "gloss": {
+        "hu": "okozott (az cause múltja)",
+        "en": "past form of cause",
+        "es": "causó (pasado de cause)",
+        "de": "verursachte (Past von cause)"
+      }
+    },
+    {
+      "word": "committee",
+      "gloss": {
+        "hu": "bizottság",
+        "en": "a group that decides",
+        "es": "comité",
+        "de": "Ausschuss"
+      }
+    },
+    {
+      "word": "company's",
+      "gloss": {
+        "hu": "a cég ... (birtokos)",
+        "en": "of the company",
+        "es": "de la empresa",
+        "de": "der Firma (Besitz)"
+      }
+    },
+    {
+      "word": "completion",
+      "gloss": {
+        "hu": "befejezés",
+        "en": "the end of a task",
+        "es": "finalización",
+        "de": "Fertigstellung"
+      }
+    },
+    {
+      "word": "concentration",
+      "gloss": {
+        "hu": "koncentráció",
+        "en": "careful attention",
+        "es": "concentración",
+        "de": "Konzentration"
+      }
+    },
+    {
+      "word": "created",
+      "gloss": {
+        "hu": "létrehozott (a create múltja)",
+        "en": "past form of create",
+        "es": "creó (pasado de create)",
+        "de": "schuf (Past von create)"
+      }
+    },
+    {
+      "word": "drop",
+      "gloss": {
+        "hu": "csökkenés, esés",
+        "en": "a fall",
+        "es": "caída, descenso",
+        "de": "Rückgang"
+      }
+    },
+    {
+      "word": "effect",
+      "gloss": {
+        "hu": "hatás",
+        "en": "a result",
+        "es": "efecto",
+        "de": "Wirkung"
+      }
+    },
+    {
+      "word": "enthusiasm",
+      "gloss": {
+        "hu": "lelkesedés",
+        "en": "strong interest",
+        "es": "entusiasmo",
+        "de": "Begeisterung"
+      }
+    },
+    {
+      "word": "enthusiastic",
+      "gloss": {
+        "hu": "lelkes",
+        "en": "full of interest",
+        "es": "entusiasta",
+        "de": "begeistert"
+      }
+    },
+    {
+      "word": "enthusiastically",
+      "gloss": {
+        "hu": "lelkesen",
+        "en": "with great interest",
+        "es": "con entusiasmo",
+        "de": "begeistert"
+      }
+    },
+    {
+      "word": "event",
+      "gloss": {
+        "hu": "esemény",
+        "en": "something that happens",
+        "es": "evento",
+        "de": "Veranstaltung"
+      }
+    },
+    {
+      "word": "fault",
+      "gloss": {
+        "hu": "hiba",
+        "en": "a mistake in a machine",
+        "es": "falla, error",
+        "de": "Fehler"
+      }
+    },
+    {
+      "word": "fell",
+      "gloss": {
+        "hu": "esett (a fall múltja)",
+        "en": "past form of fall",
+        "es": "cayó (pasado de fall)",
+        "de": "fiel (Past von fall)"
+      }
+    },
+    {
+      "word": "fire",
+      "gloss": {
+        "hu": "tűz",
+        "en": "burning",
+        "es": "fuego, incendio",
+        "de": "Feuer"
+      }
+    },
+    {
+      "word": "fluently",
+      "gloss": {
+        "hu": "folyékonyan",
+        "en": "without stopping",
+        "es": "con fluidez",
+        "de": "fließend"
+      }
+    },
+    {
+      "word": "great",
+      "gloss": {
+        "hu": "nagyszerű",
+        "en": "very good",
+        "es": "genial",
+        "de": "großartig"
+      }
+    },
+    {
+      "word": "grew",
+      "gloss": {
+        "hu": "nőtt (a grow múltja)",
+        "en": "past form of grow",
+        "es": "creció (pasado de grow)",
+        "de": "wuchs (Past von grow)"
+      }
+    },
+    {
+      "word": "grow",
+      "gloss": {
+        "hu": "nő",
+        "en": "to get bigger",
+        "es": "crecer",
+        "de": "wachsen"
+      }
+    },
+    {
+      "word": "growing",
+      "gloss": {
+        "hu": "nő (ige-ing alak)",
+        "en": "-ing form of grow",
+        "es": "creciendo (forma -ing de grow)",
+        "de": "wachsen (-ing-Form von grow)"
+      }
+    },
+    {
+      "word": "honesty",
+      "gloss": {
+        "hu": "őszinteség",
+        "en": "telling the truth",
+        "es": "honestidad",
+        "de": "Ehrlichkeit"
+      }
+    },
+    {
+      "word": "impact",
+      "gloss": {
+        "hu": "hatás, becsapódás",
+        "en": "a strong effect",
+        "es": "impacto",
+        "de": "Auswirkung"
+      }
+    },
+    {
+      "word": "implement",
+      "gloss": {
+        "hu": "végrehajt",
+        "en": "to put a plan into action",
+        "es": "implementar",
+        "de": "umsetzen"
+      }
+    },
+    {
+      "word": "implementation",
+      "gloss": {
+        "hu": "végrehajtás",
+        "en": "putting a plan into action",
+        "es": "implementación",
+        "de": "Umsetzung"
+      }
+    },
+    {
+      "word": "implemented",
+      "gloss": {
+        "hu": "végrehajtott",
+        "en": "put into action",
+        "es": "implementado",
+        "de": "umgesetzt"
+      }
+    },
+    {
+      "word": "impressed",
+      "gloss": {
+        "hu": "lenyűgözött",
+        "en": "made someone admire",
+        "es": "impresionó",
+        "de": "beeindruckte"
+      }
+    },
+    {
+      "word": "kindness",
+      "gloss": {
+        "hu": "kedvesség",
+        "en": "being kind",
+        "es": "amabilidad",
+        "de": "Freundlichkeit"
+      }
+    },
+    {
+      "word": "known",
+      "gloss": {
+        "hu": "ismert, tudott (a know igenéve)",
+        "en": "participle of know",
+        "es": "sabido (participio de know)",
+        "de": "gewusst (Partizip von know)"
+      }
+    },
+    {
+      "word": "lack",
+      "gloss": {
+        "hu": "hiány",
+        "en": "not having enough",
+        "es": "falta",
+        "de": "Mangel"
+      }
+    },
+    {
+      "word": "led",
+      "gloss": {
+        "hu": "vezetett (a lead múltja)",
+        "en": "past form of lead",
+        "es": "llevó (pasado de lead)",
+        "de": "führte (Past von lead)"
+      }
+    },
+    {
+      "word": "likely",
+      "gloss": {
+        "hu": "valószínű",
+        "en": "probable",
+        "es": "probable",
+        "de": "wahrscheinlich"
+      }
+    },
+    {
+      "word": "planned",
+      "gloss": {
+        "hu": "tervezett",
+        "en": "decided before",
+        "es": "planeado",
+        "de": "geplant"
+      }
+    },
+    {
+      "word": "postpone",
+      "gloss": {
+        "hu": "elhalaszt",
+        "en": "to move to a later time",
+        "es": "posponer",
+        "de": "verschieben"
+      }
+    },
+    {
+      "word": "reason",
+      "gloss": {
+        "hu": "ok",
+        "en": "why something happens",
+        "es": "razón",
+        "de": "Grund"
+      }
+    },
+    {
+      "word": "reasons",
+      "gloss": {
+        "hu": "okok",
+        "en": "why things happen",
+        "es": "razones",
+        "de": "Gründe"
+      }
+    },
+    {
+      "word": "rent",
+      "gloss": {
+        "hu": "bérleti díj",
+        "en": "money for a home",
+        "es": "renta",
+        "de": "Miete"
+      }
+    },
+    {
+      "word": "riddle",
+      "gloss": {
+        "hu": "találós kérdés",
+        "en": "a puzzle question",
+        "es": "adivinanza",
+        "de": "Rätsel"
+      }
+    },
+    {
+      "word": "solution",
+      "gloss": {
+        "hu": "megoldás",
+        "en": "an answer to a problem",
+        "es": "solución",
+        "de": "Lösung"
+      }
+    },
+    {
+      "word": "stay",
+      "gloss": {
+        "hu": "marad",
+        "en": "to stay",
+        "es": "quedarse",
+        "de": "bleiben"
+      }
+    },
+    {
+      "word": "towards",
+      "gloss": {
+        "hu": "felé",
+        "en": "in the direction of",
+        "es": "hacia",
+        "de": "gegenüber"
+      }
+    },
+    {
+      "word": "unemployment",
+      "gloss": {
+        "hu": "munkanélküliség",
+        "en": "having no job",
+        "es": "desempleo",
+        "de": "Arbeitslosigkeit"
+      }
+    },
+    {
+      "word": "unknown",
+      "gloss": {
+        "hu": "ismeretlen",
+        "en": "not known",
+        "es": "desconocido",
+        "de": "unbekannt"
+      }
+    },
+    {
+      "word": "vital",
+      "gloss": {
+        "hu": "létfontosságú",
+        "en": "very important",
+        "es": "vital",
+        "de": "lebenswichtig"
+      }
+    },
+    {
+      "word": "willingness",
+      "gloss": {
+        "hu": "hajlandóság",
+        "en": "being ready to do",
+        "es": "disposición",
+        "de": "Bereitschaft"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "nmz-01",
+      "sentence": "The ___ to postpone the event was made by the committee.",
+      "options": [
+        "decide",
+        "decision",
+        "decided"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Főnév kell a the után: the decision to postpone.",
+        "en": "A noun is needed after the: the decision to postpone.",
+        "es": "Después de the hace falta un sustantivo: the decision to postpone.",
+        "de": "Nach the braucht man ein Nomen: the decision to postpone."
+      },
+      "wrong": {
+        "decide": {
+          "hu": "A the decide to postpone nem helyes; főnév kell (decision).",
+          "en": "“The decide to postpone” is not correct; you need a noun (decision).",
+          "es": "«The decide to postpone» no es correcto; hace falta un sustantivo (decision).",
+          "de": "„The decide to postpone“ ist nicht korrekt; man braucht ein Nomen (decision)."
+        },
+        "decided": {
+          "hu": "A the decided to postpone nem helyes; főnév kell (decision).",
+          "en": "“The decided to postpone” is not correct; you need a noun (decision).",
+          "es": "«The decided to postpone» no es correcto; hace falta un sustantivo (decision).",
+          "de": "„The decided to postpone“ ist nicht korrekt; man braucht ein Nomen (decision)."
+        }
+      },
+      "examples": [
+        "The decision to leave was hard.",
+        "His decision to stay helped."
+      ]
+    },
+    {
+      "id": "nmz-02",
+      "sentence": "There has been a sharp rise ___ prices.",
+      "options": [
+        "of",
+        "on",
+        "in"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A rise után in áll, ha a dolog változik: a rise in prices.",
+        "en": "After rise comes in when the thing changes: a rise in prices.",
+        "es": "Después de rise va in cuando cambia la cosa: a rise in prices.",
+        "de": "Nach rise steht in, wenn sich die Sache ändert: a rise in prices."
+      },
+      "wrong": {
+        "of": {
+          "hu": "Az of a mennyiség előtt áll (a rise of ten percent), a változó dolog előtt in kell.",
+          "en": "Of goes before the amount (a rise of ten percent); before the thing that changes you need in.",
+          "es": "Of va antes de la cantidad (a rise of ten percent); antes de lo que cambia hace falta in.",
+          "de": "Of steht vor der Menge (a rise of ten percent); vor der Sache, die sich ändert, braucht man in."
+        },
+        "on": {
+          "hu": "A rise on prices nem helyes; in kell.",
+          "en": "“A rise on prices” is not correct; you need in.",
+          "es": "«A rise on prices» no es correcto; hace falta in.",
+          "de": "„A rise on prices“ ist nicht korrekt; man braucht in."
+        }
+      },
+      "examples": [
+        "A fall in sales hurt us.",
+        "An increase in demand is likely."
+      ]
+    },
+    {
+      "id": "nmz-03",
+      "sentence": "There is a growing demand ___ affordable housing.",
+      "options": [
+        "for",
+        "of",
+        "to"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A demand után for áll: demand for.",
+        "en": "After demand comes for: demand for.",
+        "es": "Después de demand va for: demand for.",
+        "de": "Nach demand steht for: demand for."
+      },
+      "wrong": {
+        "of": {
+          "hu": "A demand of nem helyes ebben a jelentésben; for kell.",
+          "en": "“Demand of” is not correct in this meaning; you need for.",
+          "es": "«Demand of» no es correcto en este sentido; hace falta for.",
+          "de": "„Demand of“ ist in dieser Bedeutung nicht korrekt; man braucht for."
+        },
+        "to": {
+          "hu": "A demand to nem helyes ebben a jelentésben; for kell.",
+          "en": "“Demand to” is not correct in this meaning; you need for.",
+          "es": "«Demand to» no es correcto en este sentido; hace falta for.",
+          "de": "„Demand to“ ist in dieser Bedeutung nicht korrekt; man braucht for."
+        }
+      },
+      "examples": [
+        "There is a need for change.",
+        "The reason for it is clear."
+      ]
+    },
+    {
+      "id": "nmz-04",
+      "sentence": "We need a solution ___ this problem.",
+      "options": [
+        "at",
+        "to",
+        "by"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A solution után to áll: a solution to the problem.",
+        "en": "After solution comes to: a solution to the problem.",
+        "es": "Después de solution va to: a solution to the problem.",
+        "de": "Nach solution steht to: a solution to the problem."
+      },
+      "wrong": {
+        "at": {
+          "hu": "A solution at nem helyes; to kell.",
+          "en": "“Solution at” is not correct; you need to.",
+          "es": "«Solution at» no es correcto; hace falta to.",
+          "de": "„Solution at“ ist nicht korrekt; man braucht to."
+        },
+        "by": {
+          "hu": "A solution by nem helyes; to kell.",
+          "en": "“Solution by” is not correct; you need to.",
+          "es": "«Solution by» no es correcto; hace falta to.",
+          "de": "„Solution by“ ist nicht korrekt; man braucht to."
+        }
+      },
+      "examples": [
+        "The answer to the riddle is simple.",
+        "Access to water is vital."
+      ]
+    },
+    {
+      "id": "nmz-05",
+      "sentence": "Smoking has a serious effect ___ health.",
+      "options": [
+        "in",
+        "to",
+        "on"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Az effect után on áll: effect on.",
+        "en": "After effect comes on: effect on.",
+        "es": "Después de effect va on: effect on.",
+        "de": "Nach effect steht on: effect on."
+      },
+      "wrong": {
+        "in": {
+          "hu": "Az effect in nem helyes ebben a jelentésben; on kell.",
+          "en": "“Effect in” is not correct in this meaning; you need on.",
+          "es": "«Effect in» no es correcto en este sentido; hace falta on.",
+          "de": "„Effect in“ ist in dieser Bedeutung nicht korrekt; man braucht on."
+        },
+        "to": {
+          "hu": "Az effect to nem helyes; on kell.",
+          "en": "“Effect to” is not correct; you need on.",
+          "es": "«Effect to» no es correcto; hace falta on.",
+          "de": "„Effect to“ ist nicht korrekt; man braucht on."
+        }
+      },
+      "examples": [
+        "The impact on sales was big.",
+        "It has an effect on me."
+      ]
+    },
+    {
+      "id": "nmz-06",
+      "sentence": "The ___ of the new policy led to protests.",
+      "options": [
+        "implementation",
+        "implement",
+        "implemented"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Főnév kell a the után: the implementation of the policy.",
+        "en": "A noun is needed after the: the implementation of the policy.",
+        "es": "Después de the hace falta un sustantivo: the implementation of the policy.",
+        "de": "Nach the braucht man ein Nomen: the implementation of the policy."
+      },
+      "wrong": {
+        "implement": {
+          "hu": "A the implement of nem helyes; főnév kell (implementation).",
+          "en": "“The implement of” is not correct; you need a noun (implementation).",
+          "es": "«The implement of» no es correcto; hace falta un sustantivo (implementation).",
+          "de": "„The implement of“ ist nicht korrekt; man braucht ein Nomen (implementation)."
+        },
+        "implemented": {
+          "hu": "A the implemented of nem helyes; főnév kell (implementation).",
+          "en": "“The implemented of” is not correct; you need a noun (implementation).",
+          "es": "«The implemented of» no es correcto; hace falta un sustantivo (implementation).",
+          "de": "„The implemented of“ ist nicht korrekt; man braucht ein Nomen (implementation)."
+        }
+      },
+      "examples": [
+        "The introduction of the rule helped.",
+        "The completion of the work is near."
+      ]
+    },
+    {
+      "id": "nmz-07",
+      "sentence": "Lack ___ sleep affects concentration.",
+      "options": [
+        "in",
+        "of",
+        "for"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A lack után of áll: lack of.",
+        "en": "After lack comes of: lack of.",
+        "es": "Después de lack va of: lack of.",
+        "de": "Nach lack steht of: lack of."
+      },
+      "wrong": {
+        "in": {
+          "hu": "A lack in sleep nem helyes; of kell.",
+          "en": "“Lack in sleep” is not correct; you need of.",
+          "es": "«Lack in sleep» no es correcto; hace falta of.",
+          "de": "„Lack in sleep“ ist nicht korrekt; man braucht of."
+        },
+        "for": {
+          "hu": "A lack for sleep nem helyes; of kell.",
+          "en": "“Lack for sleep” is not correct; you need of.",
+          "es": "«Lack for sleep» no es correcto; hace falta of.",
+          "de": "„Lack for sleep“ ist nicht korrekt; man braucht of."
+        }
+      },
+      "examples": [
+        "Lack of money is a problem.",
+        "The cause of the fire is unknown."
+      ]
+    },
+    {
+      "id": "nmz-08",
+      "sentence": "Her ___ to the company was impressive.",
+      "options": [
+        "contribute",
+        "contributing",
+        "contribution"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Főnév a birtokos után: her contribution to the company.",
+        "en": "A noun after the possessive: her contribution to the company.",
+        "es": "Un sustantivo después del posesivo: her contribution to the company.",
+        "de": "Ein Nomen nach dem Possessivpronomen: her contribution to the company."
+      },
+      "wrong": {
+        "contribute": {
+          "hu": "A her contribute to nem helyes; főnév kell (contribution).",
+          "en": "“Her contribute to” is not correct; you need a noun (contribution).",
+          "es": "«Her contribute to» no es correcto; hace falta un sustantivo (contribution).",
+          "de": "„Her contribute to“ ist nicht korrekt; man braucht ein Nomen (contribution)."
+        },
+        "contributing": {
+          "hu": "A her contributing to a mondatban más jelentésű lenne; főnév kell (contribution).",
+          "en": "“Her contributing to” would mean something else in this sentence; you need a noun (contribution).",
+          "es": "«Her contributing to» significaría otra cosa en esta oración; hace falta un sustantivo (contribution).",
+          "de": "„Her contributing to“ hätte in diesem Satz eine andere Bedeutung; man braucht ein Nomen (contribution)."
+        }
+      },
+      "examples": [
+        "His contribution to the team grew.",
+        "Her attitude towards work is good."
+      ]
+    },
+    {
+      "id": "nmz-09",
+      "sentence": "The company's rapid ___ created new jobs.",
+      "options": [
+        "growth",
+        "grow",
+        "grew"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Főnév kell a melléknév után: rapid growth.",
+        "en": "A noun is needed after the adjective: rapid growth.",
+        "es": "Después del adjetivo hace falta un sustantivo: rapid growth.",
+        "de": "Nach dem Adjektiv braucht man ein Nomen: rapid growth."
+      },
+      "wrong": {
+        "grow": {
+          "hu": "A rapid grow nem helyes; főnév kell (growth).",
+          "en": "“Rapid grow” is not correct; you need a noun (growth).",
+          "es": "«Rapid grow» no es correcto; hace falta un sustantivo (growth).",
+          "de": "„Rapid grow“ ist nicht korrekt; man braucht ein Nomen (growth)."
+        },
+        "grew": {
+          "hu": "A rapid grew nem helyes; főnév kell (growth).",
+          "en": "“Rapid grew” is not correct; you need a noun (growth).",
+          "es": "«Rapid grew» no es correcto; hace falta un sustantivo (growth).",
+          "de": "„Rapid grew“ ist nicht korrekt; man braucht ein Nomen (growth)."
+        }
+      },
+      "examples": [
+        "Economic growth slowed.",
+        "The growth of cities is fast."
+      ]
+    },
+    {
+      "id": "nmz-10",
+      "sentence": "We were surprised by the ___ of the results.",
+      "options": [
+        "accurate",
+        "accuracy",
+        "accurately"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Főnév kell a the után: the accuracy of the results.",
+        "en": "A noun is needed after the: the accuracy of the results.",
+        "es": "Después de the hace falta un sustantivo: the accuracy of the results.",
+        "de": "Nach the braucht man ein Nomen: the accuracy of the results."
+      },
+      "wrong": {
+        "accurate": {
+          "hu": "Az accurate melléknév; a the után főnév kell (accuracy).",
+          "en": "Accurate is an adjective; after the you need a noun (accuracy).",
+          "es": "Accurate es un adjetivo; después de the hace falta un sustantivo (accuracy).",
+          "de": "Accurate ist ein Adjektiv; nach the braucht man ein Nomen (accuracy)."
+        },
+        "accurately": {
+          "hu": "Az accurately határozószó; a the után főnév kell (accuracy).",
+          "en": "Accurately is an adverb; after the you need a noun (accuracy).",
+          "es": "Accurately es un adverbio; después de the hace falta un sustantivo (accuracy).",
+          "de": "Accurately ist ein Adverb; nach the braucht man ein Nomen (accuracy)."
+        }
+      },
+      "examples": [
+        "The accuracy of it is high.",
+        "The beauty of the view is great."
+      ]
+    },
+    {
+      "id": "nmz-11",
+      "sentence": "His ___ to speak English fluently impressed me.",
+      "options": [
+        "able",
+        "ably",
+        "ability"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Főnév kell a birtokos után: his ability to speak.",
+        "en": "A noun is needed after the possessive: his ability to speak.",
+        "es": "Después del posesivo hace falta un sustantivo: his ability to speak.",
+        "de": "Nach dem Possessivpronomen braucht man ein Nomen: his ability to speak."
+      },
+      "wrong": {
+        "able": {
+          "hu": "Az able melléknév; a his után főnév kell (ability).",
+          "en": "Able is an adjective; after his you need a noun (ability).",
+          "es": "Able es un adjetivo; después de his hace falta un sustantivo (ability).",
+          "de": "Able ist ein Adjektiv; nach his braucht man ein Nomen (ability)."
+        },
+        "ably": {
+          "hu": "Az ably határozószó; a his után főnév kell (ability).",
+          "en": "Ably is an adverb; after his you need a noun (ability).",
+          "es": "Ably es un adverbio; después de his hace falta un sustantivo (ability).",
+          "de": "Ably ist ein Adverb; nach his braucht man ein Nomen (ability)."
+        }
+      },
+      "examples": [
+        "Her ability to learn is great.",
+        "His willingness to help was clear."
+      ]
+    },
+    {
+      "id": "nmz-12",
+      "sentence": "The ___ of the manager to reply caused the delay.",
+      "options": [
+        "failure",
+        "fail",
+        "failed"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Főnév kell a the után: the failure of the manager to reply.",
+        "en": "A noun is needed after the: the failure of the manager to reply.",
+        "es": "Después de the hace falta un sustantivo: the failure of the manager to reply.",
+        "de": "Nach the braucht man ein Nomen: the failure of the manager to reply."
+      },
+      "wrong": {
+        "fail": {
+          "hu": "A the fail of nem helyes; főnév kell (failure).",
+          "en": "“The fail of” is not correct; you need a noun (failure).",
+          "es": "«The fail of» no es correcto; hace falta un sustantivo (failure).",
+          "de": "„The fail of“ ist nicht korrekt; man braucht ein Nomen (failure)."
+        },
+        "failed": {
+          "hu": "A the failed of nem helyes; főnév kell (failure).",
+          "en": "“The failed of” is not correct; you need a noun (failure).",
+          "es": "«The failed of» no es correcto; hace falta un sustantivo (failure).",
+          "de": "„The failed of“ ist nicht korrekt; man braucht ein Nomen (failure)."
+        }
+      },
+      "examples": [
+        "The failure of the plan hurt us.",
+        "His failure to call worried her."
+      ]
+    },
+    {
+      "id": "nmz-13",
+      "sentence": "There was a sharp ___ in unemployment.",
+      "options": [
+        "fell",
+        "fall",
+        "falling"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Főnév kell a melléknév után: a sharp fall in unemployment.",
+        "en": "A noun is needed after the adjective: a sharp fall in unemployment.",
+        "es": "Después del adjetivo hace falta un sustantivo: a sharp fall in unemployment.",
+        "de": "Nach dem Adjektiv braucht man ein Nomen: a sharp fall in unemployment."
+      },
+      "wrong": {
+        "fell": {
+          "hu": "A sharp fell nem helyes; főnév kell (fall).",
+          "en": "“Sharp fell” is not correct; you need a noun (fall).",
+          "es": "«Sharp fell» no es correcto; hace falta un sustantivo (fall).",
+          "de": "„Sharp fell“ ist nicht korrekt; man braucht ein Nomen (fall)."
+        },
+        "falling": {
+          "hu": "A sharp falling in nem a szokásos főnév; fall kell.",
+          "en": "“Sharp falling in” is not the usual noun; you need fall.",
+          "es": "«Sharp falling in» no es el sustantivo habitual; hace falta fall.",
+          "de": "„Sharp falling in“ ist nicht das übliche Nomen; man braucht fall."
+        }
+      },
+      "examples": [
+        "A fall in prices helped us.",
+        "A drop in sales worried him."
+      ]
+    },
+    {
+      "id": "nmz-14",
+      "sentence": "There was a sharp ___ in prices.",
+      "options": [
+        "increased",
+        "increasing",
+        "increase"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Főnév kell a melléknév után: a sharp increase in prices.",
+        "en": "A noun is needed after the adjective: a sharp increase in prices.",
+        "es": "Después del adjetivo hace falta un sustantivo: a sharp increase in prices.",
+        "de": "Nach dem Adjektiv braucht man ein Nomen: a sharp increase in prices."
+      },
+      "wrong": {
+        "increased": {
+          "hu": "A sharp increased nem helyes; főnév kell (increase).",
+          "en": "“Sharp increased” is not correct; you need a noun (increase).",
+          "es": "«Sharp increased» no es correcto; hace falta un sustantivo (increase).",
+          "de": "„Sharp increased“ ist nicht korrekt; man braucht ein Nomen (increase)."
+        },
+        "increasing": {
+          "hu": "A sharp increasing in prices nem a szokásos főnév; increase kell.",
+          "en": "“Sharp increasing in prices” is not the usual noun; you need increase.",
+          "es": "«Sharp increasing in prices» no es el sustantivo habitual; hace falta increase.",
+          "de": "„Sharp increasing in prices“ ist nicht das übliche Nomen; man braucht increase."
+        }
+      },
+      "examples": [
+        "A sharp increase in rent hurt us.",
+        "An increase in tax is planned."
+      ]
+    },
+    {
+      "id": "nmz-15",
+      "sentence": "Access ___ clean water is a basic right.",
+      "options": [
+        "to",
+        "of",
+        "for"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az access után to áll: access to.",
+        "en": "After access comes to: access to.",
+        "es": "Después de access va to: access to.",
+        "de": "Nach access steht to: access to."
+      },
+      "wrong": {
+        "of": {
+          "hu": "Az access of nem helyes; to kell.",
+          "en": "“Access of” is not correct; you need to.",
+          "es": "«Access of» no es correcto; hace falta to.",
+          "de": "„Access of“ ist nicht korrekt; man braucht to."
+        },
+        "for": {
+          "hu": "Az access for clean water nem a szokásos minta; to kell.",
+          "en": "“Access for clean water” is not the usual pattern; you need to.",
+          "es": "«Access for clean water» no es el patrón habitual; hace falta to.",
+          "de": "„Access for clean water“ ist nicht das übliche Muster; man braucht to."
+        }
+      },
+      "examples": [
+        "Access to the file is free.",
+        "Access to books helps."
+      ]
+    },
+    {
+      "id": "nmz-16",
+      "sentence": "The ___ for the delay was a technical fault.",
+      "options": [
+        "reasons",
+        "reason",
+        "reasonable"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Egyes számú főnév: the reason for the delay.",
+        "en": "A singular noun: the reason for the delay.",
+        "es": "Un sustantivo singular: the reason for the delay.",
+        "de": "Ein Singular-Nomen: the reason for the delay."
+      },
+      "wrong": {
+        "reasons": {
+          "hu": "A reasons többes szám; a was egyes számú alanyt kér.",
+          "en": "Reasons is plural; was asks for a singular subject.",
+          "es": "Reasons es plural; was pide un sujeto singular.",
+          "de": "Reasons ist Plural; was verlangt ein Singular-Subjekt."
+        },
+        "reasonable": {
+          "hu": "A reasonable melléknév; a the után főnév kell (reason).",
+          "en": "Reasonable is an adjective; after the you need a noun (reason).",
+          "es": "Reasonable es un adjetivo; después de the hace falta un sustantivo (reason).",
+          "de": "Reasonable ist ein Adjektiv; nach the braucht man ein Nomen (reason)."
+        }
+      },
+      "examples": [
+        "The reason for it is simple.",
+        "The cause of it is known."
+      ]
+    },
+    {
+      "id": "nmz-17",
+      "sentence": "Her ___ about the project was clear.",
+      "options": [
+        "enthusiastic",
+        "enthusiastically",
+        "enthusiasm"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Főnév kell a birtokos után: her enthusiasm.",
+        "en": "A noun is needed after the possessive: her enthusiasm.",
+        "es": "Después del posesivo hace falta un sustantivo: her enthusiasm.",
+        "de": "Nach dem Possessivpronomen braucht man ein Nomen: her enthusiasm."
+      },
+      "wrong": {
+        "enthusiastic": {
+          "hu": "Az enthusiastic melléknév; a her után főnév kell (enthusiasm).",
+          "en": "Enthusiastic is an adjective; after her you need a noun (enthusiasm).",
+          "es": "Enthusiastic es un adjetivo; después de her hace falta un sustantivo (enthusiasm).",
+          "de": "Enthusiastic ist ein Adjektiv; nach her braucht man ein Nomen (enthusiasm)."
+        },
+        "enthusiastically": {
+          "hu": "Az enthusiastically határozószó; a her után főnév kell (enthusiasm).",
+          "en": "Enthusiastically is an adverb; after her you need a noun (enthusiasm).",
+          "es": "Enthusiastically es un adverbio; después de her hace falta un sustantivo (enthusiasm).",
+          "de": "Enthusiastically ist ein Adverb; nach her braucht man ein Nomen (enthusiasm)."
+        }
+      },
+      "examples": [
+        "Her kindness helped us.",
+        "His honesty was clear."
+      ]
+    },
+    {
+      "id": "nmz-18",
+      "kind": "form",
+      "verb": "forma",
+      "person": "verbo «decidir» → sustantivo",
+      "answer": "decision",
+      "table": "nmz-forms"
+    },
+    {
+      "id": "nmz-19",
+      "kind": "form",
+      "verb": "forma",
+      "person": "verbo «implementar» → sustantivo",
+      "answer": "implementation",
+      "table": "nmz-forms"
+    },
+    {
+      "id": "nmz-20",
+      "kind": "form",
+      "verb": "forma",
+      "person": "adjetivo «difícil» → sustantivo",
+      "answer": "difficulty",
+      "table": "nmz-forms"
+    },
+    {
+      "id": "nmz-21",
+      "kind": "form",
+      "verb": "forma",
+      "person": "verbo «aumentar» → sustantivo",
+      "answer": "increase",
+      "table": "nmz-forms"
+    },
+    {
+      "id": "nmz-22",
+      "kind": "form",
+      "verb": "forma",
+      "person": "adjetivo «importante» → sustantivo",
+      "answer": "importance",
+      "table": "nmz-forms"
+    },
+    {
+      "id": "nmz-23",
+      "kind": "form",
+      "verb": "forma",
+      "person": "verbo «fallar» → sustantivo",
+      "answer": "failure",
+      "table": "nmz-forms"
+    },
+    {
+      "kind": "why",
+      "id": "nmz-24",
+      "es": "The government's decision to cut taxes surprised many.",
+      "target": "The government's decision to cut taxes",
+      "tr": {
+        "hu": "A kormány adócsökkentési döntése sokakat meglepett.",
+        "en": "The government's decision to cut taxes surprised many.",
+        "es": "La decisión del gobierno de bajar los impuestos sorprendió a muchos.",
+        "de": "Die Entscheidung der Regierung, die Steuern zu senken, überraschte viele."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ige a mondat alanyaként",
+            "en": "a verb as the subject",
+            "es": "un verbo como sujeto",
+            "de": "ein Verb als Subjekt"
+          },
+          "wrong": {
+            "hu": "A decision főnév, a decide ige főnévi alakja.",
+            "en": "Decision is a noun, the noun form of the verb decide.",
+            "es": "Decision es un sustantivo, la forma nominal del verbo decide.",
+            "de": "Decision ist ein Nomen, die Nomenform des Verbs decide."
+          }
+        },
+        {
+          "text": {
+            "hu": "főnevesítés: a decide ige decision főnév lett, főnévi csoport az alany",
+            "en": "nominalization: the verb decide became the noun decision, a noun phrase is the subject",
+            "es": "nominalización: el verbo decide se volvió el sustantivo decision, un grupo nominal es el sujeto",
+            "de": "Nominalisierung: das Verb decide wurde zum Nomen decision, eine Nominalgruppe ist das Subjekt"
+          }
+        },
+        {
+          "text": {
+            "hu": "kérdés",
+            "en": "a question",
+            "es": "una pregunta",
+            "de": "eine Frage"
+          },
+          "wrong": {
+            "hu": "Ez kijelentő mondat; a főnévi csoport csak tömörít.",
+            "en": "This is a statement; the noun phrase only condenses.",
+            "es": "Esto es una afirmación; el grupo nominal solo condensa.",
+            "de": "Das ist eine Aussage; die Nominalgruppe verdichtet nur."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "nmz-25",
+      "es": "There was a sharp increase in prices.",
+      "target": "a sharp increase",
+      "tr": {
+        "hu": "Az árak élesen emelkedtek.",
+        "en": "There was a sharp increase in prices.",
+        "es": "Hubo un aumento brusco de los precios.",
+        "de": "Es gab einen starken Preisanstieg."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a határozószó marad: a sharply increase",
+            "en": "the adverb stays: a sharply increase",
+            "es": "el adverbio se queda: a sharply increase",
+            "de": "das Adverb bleibt: a sharply increase"
+          },
+          "wrong": {
+            "hu": "Főnév előtt melléknév áll: sharp, nem sharply.",
+            "en": "Before a noun comes an adjective: sharp, not sharply.",
+            "es": "Antes de un sustantivo va un adjetivo: sharp, no sharply.",
+            "de": "Vor einem Nomen steht ein Adjektiv: sharp, nicht sharply."
+          }
+        },
+        {
+          "text": {
+            "hu": "szenvedő szerkezet",
+            "en": "a passive",
+            "es": "una pasiva",
+            "de": "ein Passiv"
+          },
+          "wrong": {
+            "hu": "Nincs szenvedő; a increase főnév, a there was szerkezet pedig a létezést jelzi.",
+            "en": "There is no passive; increase is a noun and there was marks existence.",
+            "es": "No hay pasiva; increase es un sustantivo y there was marca existencia.",
+            "de": "Es gibt kein Passiv; increase ist ein Nomen und there was markiert Existenz."
+          }
+        },
+        {
+          "text": {
+            "hu": "a sharply melléknévvé válik: a sharp increase",
+            "en": "sharply becomes an adjective: a sharp increase",
+            "es": "sharply se vuelve adjetivo: a sharp increase",
+            "de": "sharply wird zum Adjektiv: a sharp increase"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "nmz-26",
+      "es": "There was a rise in prices.",
+      "target": "rise in prices",
+      "tr": {
+        "hu": "Emelkedtek az árak.",
+        "en": "There was a rise in prices.",
+        "es": "Hubo una subida de precios.",
+        "de": "Die Preise stiegen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "rise of prices",
+            "en": "rise of prices",
+            "es": "rise of prices",
+            "de": "rise of prices"
+          },
+          "wrong": {
+            "hu": "A változó dolog előtt in áll (rise in), az of a mennyiség előtt.",
+            "en": "Before the changing thing comes in (rise in); of goes before the amount.",
+            "es": "Antes de lo que cambia va in (rise in); of va antes de la cantidad.",
+            "de": "Vor der sich ändernden Sache steht in (rise in); of steht vor der Menge."
+          }
+        },
+        {
+          "text": {
+            "hu": "rise in prices: az in a változó dolgot vezeti be",
+            "en": "rise in prices: in introduces the thing that changes",
+            "es": "rise in prices: in introduce lo que cambia",
+            "de": "rise in prices: in führt die sich ändernde Sache ein"
+          }
+        },
+        {
+          "text": {
+            "hu": "rise on prices",
+            "en": "rise on prices",
+            "es": "rise on prices",
+            "de": "rise on prices"
+          },
+          "wrong": {
+            "hu": "A rise on nem létezik ebben a jelentésben; in kell.",
+            "en": "“Rise on” does not exist in this meaning; you need in.",
+            "es": "«Rise on» no existe en este sentido; hace falta in.",
+            "de": "„Rise on“ gibt es in dieser Bedeutung nicht; man braucht in."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "nmz-27",
+      "es": "There is a growing demand for housing.",
+      "target": "demand for",
+      "tr": {
+        "hu": "Egyre nő a kereslet a lakások iránt.",
+        "en": "There is a growing demand for housing.",
+        "es": "Hay una demanda creciente de vivienda.",
+        "de": "Es gibt eine wachsende Nachfrage nach Wohnraum."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "demand of: a spanyol „de” szó szerinti másolata",
+            "en": "demand of: a word-for-word copy of the Spanish “de”",
+            "es": "demand of: una copia palabra por palabra del «de» español",
+            "de": "demand of: eine wörtliche Kopie des spanischen «de»"
+          },
+          "wrong": {
+            "hu": "A demand főnév mellett for áll, nem of.",
+            "en": "The noun demand takes for, not of.",
+            "es": "El sustantivo demand lleva for, no of.",
+            "de": "Das Nomen demand nimmt for, nicht of."
+          }
+        },
+        {
+          "text": {
+            "hu": "demand to",
+            "en": "demand to",
+            "es": "demand to",
+            "de": "demand to"
+          },
+          "wrong": {
+            "hu": "A demand to ige + to-infinitív lenne; a főnév mellett for áll.",
+            "en": "Demand to would be a verb + to-infinitive; the noun takes for.",
+            "es": "Demand to sería un verbo + to-infinitivo; el sustantivo lleva for.",
+            "de": "Demand to wäre ein Verb + to-Infinitiv; das Nomen nimmt for."
+          }
+        },
+        {
+          "text": {
+            "hu": "demand for: a főnévnek saját elöljárója van",
+            "en": "demand for: the noun has its own preposition",
+            "es": "demand for: el sustantivo tiene su propia preposición",
+            "de": "demand for: das Nomen hat seine eigene Präposition"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "nmz-28",
+      "es": "The implementation of the plan led to delays.",
+      "target": "The implementation of the plan",
+      "tr": {
+        "hu": "A terv végrehajtása késésekhez vezetett.",
+        "en": "The implementation of the plan led to delays.",
+        "es": "La implementación del plan provocó retrasos.",
+        "de": "Die Umsetzung des Plans führte zu Verzögerungen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "szenvedő ige",
+            "en": "a passive verb",
+            "es": "un verbo pasivo",
+            "de": "ein Passivverb"
+          },
+          "wrong": {
+            "hu": "Az implementation főnév; nem igealak.",
+            "en": "Implementation is a noun, not a verb form.",
+            "es": "Implementation es un sustantivo, no una forma verbal.",
+            "de": "Implementation ist ein Nomen, keine Verbform."
+          }
+        },
+        {
+          "text": {
+            "hu": "főnév + of + tárgy: ez helyettesíti a they implemented the plan mondatot",
+            "en": "noun + of + object: this replaces they implemented the plan",
+            "es": "sustantivo + of + objeto: esto reemplaza a they implemented the plan",
+            "de": "Nomen + of + Objekt: das ersetzt they implemented the plan"
+          }
+        },
+        {
+          "text": {
+            "hu": "to-infinitív",
+            "en": "a to-infinitive",
+            "es": "un to-infinitivo",
+            "de": "ein to-Infinitiv"
+          },
+          "wrong": {
+            "hu": "Nincs to-infinitív; az of a tárgyat csatolja a főnévhez.",
+            "en": "There is no to-infinitive; of joins the object to the noun.",
+            "es": "No hay to-infinitivo; of une el objeto al sustantivo.",
+            "de": "Es gibt keinen to-Infinitiv; of verbindet das Objekt mit dem Nomen."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "nmz-29",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "La decisión de subir los impuestos sorprendió a todos.",
+          "en": "The decision to raise taxes surprised everyone."
+        },
+        {
+          "es": "Hubo un aumento brusco de los precios.",
+          "en": "There was a sharp increase in prices."
+        },
+        {
+          "es": "Hay una demanda creciente de vivienda.",
+          "en": "There is a growing demand for housing."
+        },
+        {
+          "es": "Necesitamos una solución a este problema.",
+          "en": "We need a solution to this problem."
+        },
+        {
+          "es": "Fumar tiene un efecto grave sobre la salud.",
+          "en": "Smoking has a serious effect on health."
+        },
+        {
+          "es": "La implementación de la nueva política causó protestas.",
+          "en": "The implementation of the new policy caused protests."
+        }
+      ]
+    },
+    {
+      "id": "nmz-30",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "falta de",
+          "en": "lack of"
+        },
+        {
+          "es": "acceso a",
+          "en": "access to"
+        },
+        {
+          "es": "razón de",
+          "en": "reason for"
+        },
+        {
+          "es": "causa de",
+          "en": "cause of"
+        },
+        {
+          "es": "necesidad de",
+          "en": "need for"
+        },
+        {
+          "es": "actitud hacia",
+          "en": "attitude towards"
+        }
+      ]
+    }
+  ]
+}
