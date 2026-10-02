@@ -1,0 +1,1630 @@
+{
+  "schema": 2,
+  "topic": "discourse_markers",
+  "level": "C1",
+  "title": {
+    "hu": "Diskurzusjelölők (furthermore, albeit, owing to, in other words)",
+    "en": "Discourse Markers (furthermore, albeit, owing to, in other words)",
+    "es": "Los marcadores del discurso (furthermore, albeit, owing to, in other words)",
+    "de": "Diskursmarker (furthermore, albeit, owing to, in other words)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A diskurzusjelölők kötik össze a gondolatokat egy hosszabb szövegben: hozzátesznek (furthermore), ellentmondanak vagy engednek (albeit, admittedly), okot mondanak (owing to), pontosítanak (in other words) és lezárnak (in conclusion). C1 szinten nem elég a but, and és because: a választékos szöveg pontosabb jelölőket használ. A spanyol „además”, „es decir”, „debido a”, „en conclusión” felel meg nekik, de az angol jelölők helye és írásjele (vessző) kötött.",
+        "en": "Discourse markers link ideas in a longer text: they add (furthermore), concede (albeit, admittedly), give a cause (owing to), clarify (in other words) and close (in conclusion). At C1 level but, and and because are not enough: polished text uses more exact markers. The Spanish “además”, “es decir”, “debido a” and “en conclusión” match them, but the English markers have a fixed place and punctuation (a comma).",
+        "es": "Los marcadores del discurso unen ideas en un texto más largo: añaden (furthermore), conceden (albeit, admittedly), dan una causa (owing to), aclaran (in other words) y cierran (in conclusion). En el nivel C1 no bastan but, and y because: un texto cuidado usa marcadores más exactos. El «además», el «es decir», el «debido a» y el «en conclusión» del español les corresponden, pero los marcadores del inglés tienen un lugar y una puntuación fijos (una coma).",
+        "de": "Diskursmarker verbinden Gedanken in einem längeren Text: sie fügen hinzu (furthermore), räumen ein (albeit, admittedly), nennen einen Grund (owing to), erklären (in other words) und schließen ab (in conclusion). Auf C1-Niveau genügen but, and und because nicht: ein gepflegter Text benutzt genauere Marker. Das spanische «además», «es decir», «debido a» und «en conclusión» entsprechen ihnen, aber die englischen Marker haben einen festen Platz und eine feste Zeichensetzung (ein Komma)."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "dmk-forms",
+      "title": {
+        "hu": "Melyik jelölő?",
+        "en": "Which marker?",
+        "es": "¿Qué marcador uso?",
+        "de": "Welcher Marker?"
+      },
+      "header": [
+        {
+          "hu": "Jelentés",
+          "en": "Meaning",
+          "es": "Significado",
+          "de": "Bedeutung"
+        },
+        {
+          "hu": "forma",
+          "en": "form",
+          "es": "forma",
+          "de": "Form"
+        }
+      ],
+      "rows": [
+        [
+          "además (formal, adición)",
+          "furthermore"
+        ],
+        [
+          "a pesar de (muy formal, + sustantivo)",
+          "notwithstanding"
+        ],
+        [
+          "aunque (+ adjetivo o frase breve)",
+          "albeit"
+        ],
+        [
+          "es decir",
+          "in other words"
+        ],
+        [
+          "debido a (+ sustantivo)",
+          "owing to"
+        ],
+        [
+          "en conclusión",
+          "in conclusion"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Hozzátevés: furthermore, moreover, in addition",
+        "en": "Addition: furthermore, moreover, in addition",
+        "es": "Adición: furthermore, moreover, in addition",
+        "de": "Hinzufügung: furthermore, moreover, in addition"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Ezek új érvet fűznek az előzőhöz. Új mondat elején állnak, vesszővel: „The plan is cheap. Furthermore, it is easy to carry out.” Az in addition to után főnév vagy -ing alak áll.",
+            "en": "These add a new point to the previous one. They stand at the start of a new sentence, with a comma: “The plan is cheap. Furthermore, it is easy to carry out.” After in addition to comes a noun or an -ing form.",
+            "es": "Estos añaden un argumento nuevo al anterior. Van al inicio de una oración nueva, con coma: «The plan is cheap. Furthermore, it is easy to carry out.» Después de in addition to va un sustantivo o una forma -ing.",
+            "de": "Diese fügen dem vorigen ein neues Argument hinzu. Sie stehen am Anfang eines neuen Satzes, mit Komma: «The plan is cheap. Furthermore, it is easy to carry out.» Nach in addition to steht ein Nomen oder eine -ing-Form."
+          },
+          "examples": [
+            {
+              "es": "The plan is cheap. Furthermore, it is easy to carry out.",
+              "tr": {
+                "hu": "A terv olcsó. Ráadásul könnyű megvalósítani.",
+                "en": "The plan is cheap. Furthermore, it is easy to carry out.",
+                "es": "El plan es barato. Además, es fácil de ejecutar.",
+                "de": "Der Plan ist billig. Außerdem ist er leicht umzusetzen."
+              }
+            },
+            {
+              "es": "In addition, the service is excellent.",
+              "tr": {
+                "hu": "Emellett a kiszolgálás kiváló.",
+                "en": "In addition, the service is excellent.",
+                "es": "Además, el servicio es excelente.",
+                "de": "Außerdem ist der Service ausgezeichnet."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Engedmény: admittedly, albeit, notwithstanding",
+        "en": "Concession: admittedly, albeit, notwithstanding",
+        "es": "Concesión: admittedly, albeit, notwithstanding",
+        "de": "Zugeständnis: admittedly, albeit, notwithstanding"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Az admittedly elismer egy gyengeséget. Az albeit rövid, formális „bár”: melléknév vagy rövid kifejezés követi, nem teljes mondat. A notwithstanding + főnév nagyon formális „ellenére”.",
+            "en": "Admittedly admits a weakness. Albeit is a short, formal “although”: an adjective or a short phrase follows, not a full clause. Notwithstanding + noun is a very formal “despite”.",
+            "es": "Admittedly reconoce una debilidad. Albeit es un «aunque» corto y formal: le sigue un adjetivo o una frase corta, no una oración completa. Notwithstanding + sustantivo es un «a pesar de» muy formal.",
+            "de": "Admittedly räumt eine Schwäche ein. Albeit ist ein kurzes, formelles «obwohl»: ein Adjektiv oder eine kurze Wendung folgt, kein ganzer Satz. Notwithstanding + Nomen ist ein sehr formelles «trotz»."
+          },
+          "examples": [
+            {
+              "es": "The test was successful, albeit limited.",
+              "tr": {
+                "hu": "A teszt sikeres volt, bár korlátozott.",
+                "en": "The test was successful, albeit limited.",
+                "es": "La prueba fue exitosa, aunque limitada.",
+                "de": "Der Test war erfolgreich, wenn auch begrenzt."
+              }
+            },
+            {
+              "es": "Notwithstanding the rain, the match went ahead.",
+              "tr": {
+                "hu": "Az eső ellenére a meccset megtartották.",
+                "en": "Notwithstanding the rain, the match went ahead.",
+                "es": "A pesar de la lluvia, el partido se llevó a cabo.",
+                "de": "Trotz des Regens fand das Spiel statt."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Ok főnévvel: owing to, due to, in view of, on account of",
+        "en": "Cause with a noun: owing to, due to, in view of, on account of",
+        "es": "Causa con sustantivo: owing to, due to, in view of, on account of",
+        "de": "Grund mit Nomen: owing to, due to, in view of, on account of"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Ezek után főnévi csoport áll, nem mondat: „Owing to the traffic, we arrived late.” Mondat előtt because, since vagy as kell.",
+            "en": "A noun phrase follows these, not a clause: “Owing to the traffic, we arrived late.” Before a clause you need because, since or as.",
+            "es": "Después de estos va un grupo nominal, no una oración: «Owing to the traffic, we arrived late.» Antes de una oración hace falta because, since o as.",
+            "de": "Darauf folgt eine Nominalgruppe, kein Satz: «Owing to the traffic, we arrived late.» Vor einem Satz braucht man because, since oder as."
+          },
+          "examples": [
+            {
+              "es": "Owing to the traffic, we arrived late.",
+              "tr": {
+                "hu": "A forgalom miatt későn érkeztünk.",
+                "en": "Owing to the traffic, we arrived late.",
+                "es": "Debido al tráfico, llegamos tarde.",
+                "de": "Wegen des Verkehrs kamen wir zu spät an."
+              }
+            },
+            {
+              "es": "We canceled the trip in view of the weather.",
+              "tr": {
+                "hu": "Az időjárásra való tekintettel lemondtuk az utat.",
+                "en": "We canceled the trip in view of the weather.",
+                "es": "Cancelamos el viaje en vista del clima.",
+                "de": "Wir haben die Reise angesichts des Wetters abgesagt."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Pontosítás és példa: in other words, namely, such as",
+        "en": "Clarifying and examples: in other words, namely, such as",
+        "es": "Aclarar y ejemplificar: in other words, namely, such as",
+        "de": "Klären und Beispiele: in other words, namely, such as"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Az in other words és a that is to say másképp mondja ugyanazt. A namely név szerint felsorol. A such as példát hoz, a for instance mondat elején áll.",
+            "en": "In other words and that is to say say the same thing differently. Namely lists by name. Such as gives an example, and for instance stands at the start of a sentence.",
+            "es": "In other words y that is to say dicen lo mismo de otra manera. Namely enumera por nombre. Such as da un ejemplo, y for instance va al inicio de una oración.",
+            "de": "In other words und that is to say sagen dasselbe anders. Namely zählt namentlich auf. Such as nennt ein Beispiel, und for instance steht am Satzanfang."
+          },
+          "examples": [
+            {
+              "es": "The results were inconclusive. In other words, we need more data.",
+              "tr": {
+                "hu": "Az eredmények nem voltak meggyőzőek. Vagyis több adat kell.",
+                "en": "The results were inconclusive. In other words, we need more data.",
+                "es": "Los resultados no fueron concluyentes. Es decir, necesitamos más datos.",
+                "de": "Die Ergebnisse waren nicht eindeutig. Mit anderen Worten: Wir brauchen mehr Daten."
+              }
+            },
+            {
+              "es": "Some animals, such as elephants, live in groups.",
+              "tr": {
+                "hu": "Egyes állatok, például az elefántok, csoportban élnek.",
+                "en": "Some animals, such as elephants, live in groups.",
+                "es": "Algunos animales, como los elefantes, viven en grupos.",
+                "de": "Manche Tiere, wie Elefanten, leben in Gruppen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Sorrend és lezárás: firstly, subsequently, in conclusion",
+        "en": "Order and closing: firstly, subsequently, in conclusion",
+        "es": "Orden y cierre: firstly, subsequently, in conclusion",
+        "de": "Reihenfolge und Abschluss: firstly, subsequently, in conclusion"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Firstly, secondly, subsequently, finally jelöli a sorrendet. A lezáráshoz: in conclusion, to sum up, overall, above all (különösen).",
+            "en": "Firstly, secondly, subsequently, finally mark the order. For closing: in conclusion, to sum up, overall, above all (especially).",
+            "es": "Firstly, secondly, subsequently, finally marcan el orden. Para cerrar: in conclusion, to sum up, overall, above all (sobre todo).",
+            "de": "Firstly, secondly, subsequently, finally markieren die Reihenfolge. Zum Abschluss: in conclusion, to sum up, overall, above all (vor allem)."
+          },
+          "examples": [
+            {
+              "es": "In conclusion, the results were positive.",
+              "tr": {
+                "hu": "Összegezve az eredmények pozitívak voltak.",
+                "en": "In conclusion, the results were positive.",
+                "es": "En conclusión, los resultados fueron positivos.",
+                "de": "Zusammenfassend waren die Ergebnisse positiv."
+              }
+            },
+            {
+              "es": "Above all, the project was a success.",
+              "tr": {
+                "hu": "Mindenekelőtt a projekt sikeres volt.",
+                "en": "Above all, the project was a success.",
+                "es": "Sobre todo, el proyecto fue un éxito.",
+                "de": "Vor allem war das Projekt ein Erfolg."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A jelölő után vessző áll: „Furthermore, it is cheap.” Az albeit után nem áll teljes mondat (alany és ige), csak melléknév vagy rövid kifejezés. Teljes mondat előtt although kell.",
+        "en": "A comma follows the marker: “Furthermore, it is cheap.” After albeit there is no full clause (subject and verb), only an adjective or a short phrase. Before a full clause you need although.",
+        "es": "Después del marcador va una coma: «Furthermore, it is cheap.» Después de albeit no va una oración completa (sujeto y verbo), solo un adjetivo o una frase corta. Antes de una oración completa hace falta although.",
+        "de": "Nach dem Marker steht ein Komma: «Furthermore, it is cheap.» Nach albeit steht kein ganzer Satz (Subjekt und Verb), nur ein Adjektiv oder eine kurze Wendung. Vor einem ganzen Satz braucht man although."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Az owing to és a due to után főnév áll, nem mondat: nem „owing to we were late”, hanem „owing to the traffic” vagy „because we were late”.",
+        "en": "After owing to and due to comes a noun, not a clause: not “owing to we were late”, but “owing to the traffic” or “because we were late”.",
+        "es": "Después de owing to y due to va un sustantivo, no una oración: no «owing to we were late», sino «owing to the traffic» o «because we were late».",
+        "de": "Nach owing to und due to steht ein Nomen, kein Satz: nicht «owing to we were late», sondern «owing to the traffic» oder «because we were late»."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A diskurzusjelölők kötik össze a gondolatokat egy hosszabb szövegben. Hozzátesz a «furthermore», a «moreover» és az «in addition». Engedményt fejez ki az «admittedly», az «albeit» és a «notwithstanding»: «The test was successful, albeit limited». Okot főnévvel az «owing to» és az «in view of» mond: «Owing to the traffic, we arrived late». Pontosít az «in other words» és a «namely». Lezár az «in conclusion» és a «to sum up». A jelölő után vessző áll.",
+    "en": "Discourse markers link ideas in a longer text. «Furthermore», «moreover» and «in addition» add. «Admittedly», «albeit» and «notwithstanding» express a concession: «The test was successful, albeit limited». A cause with a noun is given by «owing to» and «in view of»: «Owing to the traffic, we arrived late». «In other words» and «namely» clarify. «In conclusion» and «to sum up» close. A comma follows the marker.",
+    "es": "Los marcadores del discurso unen ideas en un texto más largo. «Furthermore», «moreover» e «in addition» añaden. «Admittedly», «albeit» y «notwithstanding» expresan una concesión: «The test was successful, albeit limited». Una causa con sustantivo la dan «owing to» e «in view of»: «Owing to the traffic, we arrived late». «In other words» y «namely» aclaran. «In conclusion» y «to sum up» cierran. Después del marcador va una coma.",
+    "de": "Diskursmarker verbinden Gedanken in einem längeren Text. «Furthermore», «moreover» und «in addition» fügen hinzu. «Admittedly», «albeit» und «notwithstanding» drücken ein Zugeständnis aus: «The test was successful, albeit limited». Einen Grund mit Nomen geben «owing to» und «in view of»: «Owing to the traffic, we arrived late». «In other words» und «namely» klären. «In conclusion» und «to sum up» schließen ab. Nach dem Marker steht ein Komma."
+  },
+  "glossary": [
+    {
+      "word": "addition",
+      "gloss": {
+        "hu": "hozzátétel",
+        "en": "something added",
+        "es": "adición",
+        "de": "Hinzufügung"
+      }
+    },
+    {
+      "word": "admitted",
+      "gloss": {
+        "hu": "elismert (az admit múltja)",
+        "en": "past form of admit",
+        "es": "admitió (pasado de admit)",
+        "de": "gab zu (Past von admit)"
+      }
+    },
+    {
+      "word": "admittedly",
+      "gloss": {
+        "hu": "elismerem, hogy",
+        "en": "it is true that",
+        "es": "hay que admitir que",
+        "de": "zugegeben"
+      }
+    },
+    {
+      "word": "admitting",
+      "gloss": {
+        "hu": "elismer (ige-ing alak)",
+        "en": "-ing form of admit",
+        "es": "admitiendo (forma -ing de admit)",
+        "de": "zugeben (-ing-Form von admit)"
+      }
+    },
+    {
+      "word": "advantages",
+      "gloss": {
+        "hu": "előnyök",
+        "en": "good points",
+        "es": "ventajas",
+        "de": "Vorteile"
+      }
+    },
+    {
+      "word": "albeit",
+      "gloss": {
+        "hu": "bár (rövid, formális)",
+        "en": "although (short, formal)",
+        "es": "aunque (corto, formal)",
+        "de": "wenn auch"
+      }
+    },
+    {
+      "word": "although",
+      "gloss": {
+        "hu": "bár, habár",
+        "en": "but, in spite of the fact",
+        "es": "aunque",
+        "de": "obwohl"
+      }
+    },
+    {
+      "word": "budget",
+      "gloss": {
+        "hu": "költségvetés",
+        "en": "the money plan",
+        "es": "presupuesto",
+        "de": "Budget"
+      }
+    },
+    {
+      "word": "check",
+      "gloss": {
+        "hu": "ellenőriz",
+        "en": "to look at carefully",
+        "es": "revisar",
+        "de": "prüfen"
+      }
+    },
+    {
+      "word": "concluded",
+      "gloss": {
+        "hu": "lezárt, következtetett",
+        "en": "past form of conclude",
+        "es": "concluyó (pasado de conclude)",
+        "de": "schloss (Past von conclude)"
+      }
+    },
+    {
+      "word": "concluding",
+      "gloss": {
+        "hu": "lezár (ige-ing alak)",
+        "en": "-ing form of conclude",
+        "es": "concluyendo (forma -ing de conclude)",
+        "de": "abschließen (-ing-Form von conclude)"
+      }
+    },
+    {
+      "word": "data",
+      "gloss": {
+        "hu": "adatok",
+        "en": "facts and numbers",
+        "es": "datos",
+        "de": "Daten"
+      }
+    },
+    {
+      "word": "despite",
+      "gloss": {
+        "hu": "ellenére",
+        "en": "in spite of",
+        "es": "a pesar de",
+        "de": "trotz"
+      }
+    },
+    {
+      "word": "excellent",
+      "gloss": {
+        "hu": "kiváló",
+        "en": "very good",
+        "es": "excelente",
+        "de": "ausgezeichnet"
+      }
+    },
+    {
+      "word": "facts",
+      "gloss": {
+        "hu": "tények",
+        "en": "things that are true",
+        "es": "hechos",
+        "de": "Tatsachen"
+      }
+    },
+    {
+      "word": "fell",
+      "gloss": {
+        "hu": "esett (a fall múltja)",
+        "en": "past form of fall",
+        "es": "cayó (pasado de fall)",
+        "de": "fiel (Past von fall)"
+      }
+    },
+    {
+      "word": "firstly",
+      "gloss": {
+        "hu": "először",
+        "en": "as the first point",
+        "es": "en primer lugar",
+        "de": "erstens"
+      }
+    },
+    {
+      "word": "france",
+      "gloss": {
+        "hu": "Franciaország",
+        "en": "France (country)",
+        "es": "Francia",
+        "de": "Frankreich"
+      }
+    },
+    {
+      "word": "funny",
+      "gloss": {
+        "hu": "vicces",
+        "en": "making you laugh",
+        "es": "gracioso",
+        "de": "lustig"
+      }
+    },
+    {
+      "word": "furthermore",
+      "gloss": {
+        "hu": "ráadásul",
+        "en": "in addition",
+        "es": "además",
+        "de": "außerdem"
+      }
+    },
+    {
+      "word": "inconclusive",
+      "gloss": {
+        "hu": "nem meggyőző",
+        "en": "not clear",
+        "es": "no concluyente",
+        "de": "nicht eindeutig"
+      }
+    },
+    {
+      "word": "joined",
+      "gloss": {
+        "hu": "csatlakozott (a join múltja)",
+        "en": "past form of join",
+        "es": "se unió (pasado de join)",
+        "de": "trat bei (Past von join)"
+      }
+    },
+    {
+      "word": "lima",
+      "gloss": {
+        "hu": "Lima (város)",
+        "en": "Lima (city)",
+        "es": "Lima (ciudad)",
+        "de": "Lima (Stadt)"
+      }
+    },
+    {
+      "word": "moreover",
+      "gloss": {
+        "hu": "ráadásul",
+        "en": "in addition",
+        "es": "además",
+        "de": "überdies"
+      }
+    },
+    {
+      "word": "nameable",
+      "gloss": {
+        "hu": "megnevezhető",
+        "en": "able to be named",
+        "es": "que se puede nombrar",
+        "de": "benennbar"
+      }
+    },
+    {
+      "word": "namely",
+      "gloss": {
+        "hu": "nevezetesen",
+        "en": "that is to say",
+        "es": "a saber",
+        "de": "nämlich"
+      }
+    },
+    {
+      "word": "notwithstanding",
+      "gloss": {
+        "hu": "ellenére (nagyon formális)",
+        "en": "despite (very formal)",
+        "es": "a pesar de (muy formal)",
+        "de": "trotz (sehr formell)"
+      }
+    },
+    {
+      "word": "other",
+      "gloss": {
+        "hu": "másik",
+        "en": "another one",
+        "es": "otro",
+        "de": "andere"
+      }
+    },
+    {
+      "word": "paris",
+      "gloss": {
+        "hu": "Párizs",
+        "en": "Paris (city)",
+        "es": "París (ciudad)",
+        "de": "Paris (Stadt)"
+      }
+    },
+    {
+      "word": "rome",
+      "gloss": {
+        "hu": "Róma",
+        "en": "Rome (city)",
+        "es": "Roma",
+        "de": "Rom"
+      }
+    },
+    {
+      "word": "sam",
+      "gloss": {
+        "hu": "Sam (férfinév)",
+        "en": "Sam (male first name)",
+        "es": "Sam (nombre de hombre)",
+        "de": "Sam (Männername)"
+      }
+    },
+    {
+      "word": "smart",
+      "gloss": {
+        "hu": "okos",
+        "en": "clever",
+        "es": "listo",
+        "de": "klug"
+      }
+    },
+    {
+      "word": "spain",
+      "gloss": {
+        "hu": "Spanyolország",
+        "en": "Spain (country)",
+        "es": "España",
+        "de": "Spanien"
+      }
+    },
+    {
+      "word": "stay",
+      "gloss": {
+        "hu": "marad",
+        "en": "to stay",
+        "es": "quedarse",
+        "de": "bleiben"
+      }
+    },
+    {
+      "word": "subsequently",
+      "gloss": {
+        "hu": "ezt követően",
+        "en": "afterwards",
+        "es": "posteriormente",
+        "de": "anschließend"
+      }
+    },
+    {
+      "word": "success",
+      "gloss": {
+        "hu": "siker",
+        "en": "doing well",
+        "es": "éxito",
+        "de": "Erfolg"
+      }
+    },
+    {
+      "word": "successful",
+      "gloss": {
+        "hu": "sikeres",
+        "en": "having success",
+        "es": "exitoso",
+        "de": "erfolgreich"
+      }
+    },
+    {
+      "word": "such",
+      "gloss": {
+        "hu": "olyan, ilyen",
+        "en": "so, of this kind",
+        "es": "tal, tan",
+        "de": "so ein"
+      }
+    },
+    {
+      "word": "sum",
+      "gloss": {
+        "hu": "összeg, összegez",
+        "en": "a total (sum up = summarize)",
+        "es": "suma (sum up = resumir)",
+        "de": "Summe (sum up = zusammenfassen)"
+      }
+    },
+    {
+      "word": "tom",
+      "gloss": {
+        "hu": "Tom (férfinév)",
+        "en": "Tom (male first name)",
+        "es": "Tom (nombre de hombre)",
+        "de": "Tom (Männername)"
+      }
+    },
+    {
+      "word": "tried",
+      "gloss": {
+        "hu": "megpróbálta (a try múltja)",
+        "en": "past form of try",
+        "es": "intentó (pasado de try)",
+        "de": "versuchte (Past von try)"
+      }
+    },
+    {
+      "word": "whereas",
+      "gloss": {
+        "hu": "míg, ezzel szemben",
+        "en": "while, in contrast",
+        "es": "mientras que",
+        "de": "während"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "dmk-01",
+      "sentence": "The plan is cheap. ___, it is easy to carry out.",
+      "options": [
+        "Although",
+        "Furthermore",
+        "Despite"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Új érv hozzátétele: Furthermore,",
+        "en": "Adding a new point: Furthermore,",
+        "es": "Añadir un argumento nuevo: Furthermore,",
+        "de": "Ein neues Argument hinzufügen: Furthermore,"
+      },
+      "wrong": {
+        "Although": {
+          "hu": "Az although ellentétet jelez, és tagmondatot vezet be, vessző nélkül.",
+          "en": "Although marks a contrast and introduces a clause, with no comma after it.",
+          "es": "Although marca un contraste e introduce una cláusula, sin coma después.",
+          "de": "Although markiert einen Gegensatz und leitet einen Teilsatz ein, ohne Komma danach."
+        },
+        "Despite": {
+          "hu": "A despite után főnév vagy -ing alak áll, nem vessző.",
+          "en": "After despite comes a noun or an -ing form, not a comma.",
+          "es": "Después de despite va un sustantivo o una forma -ing, no una coma.",
+          "de": "Nach despite steht ein Nomen oder eine -ing-Form, kein Komma."
+        }
+      },
+      "examples": [
+        "It is cheap. Furthermore, it is fast.",
+        "She is kind. Furthermore, she is funny."
+      ]
+    },
+    {
+      "id": "dmk-02",
+      "sentence": "The hotel is clean and, ___, very cheap.",
+      "options": [
+        "otherwise",
+        "whereas",
+        "moreover"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Hozzátétel mondaton belül: and, moreover, very cheap.",
+        "en": "An addition inside a sentence: and, moreover, very cheap.",
+        "es": "Una adición dentro de la oración: and, moreover, very cheap.",
+        "de": "Eine Hinzufügung im Satz: and, moreover, very cheap."
+      },
+      "wrong": {
+        "otherwise": {
+          "hu": "Az otherwise következményt vagy „különben”-t jelent; itt hozzátétel kell.",
+          "en": "Otherwise means a consequence or “if not”; here an addition is needed.",
+          "es": "Otherwise significa una consecuencia o «si no»; aquí hace falta una adición.",
+          "de": "Otherwise bedeutet eine Folge oder «sonst»; hier braucht man eine Hinzufügung."
+        },
+        "whereas": {
+          "hu": "A whereas két tény szembeállítása; itt hozzátétel kell.",
+          "en": "Whereas sets two facts against each other; here an addition is needed.",
+          "es": "Whereas contrapone dos hechos; aquí hace falta una adición.",
+          "de": "Whereas stellt zwei Tatsachen gegenüber; hier braucht man eine Hinzufügung."
+        }
+      },
+      "examples": [
+        "It is good and, moreover, cheap.",
+        "He is smart and, moreover, kind."
+      ]
+    },
+    {
+      "id": "dmk-03",
+      "sentence": "___ the rain, the match went ahead.",
+      "options": [
+        "Notwithstanding",
+        "Although",
+        "Because"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Nagyon formális „ellenére” főnév előtt: Notwithstanding the rain.",
+        "en": "A very formal “despite” before a noun: Notwithstanding the rain.",
+        "es": "Un «a pesar de» muy formal antes de un sustantivo: Notwithstanding the rain.",
+        "de": "Ein sehr formelles «trotz» vor einem Nomen: Notwithstanding the rain."
+      },
+      "wrong": {
+        "Although": {
+          "hu": "Az Although után tagmondat kell (although it rained), nem főnév.",
+          "en": "After Although you need a clause (although it rained), not a noun.",
+          "es": "Después de Although hace falta una cláusula (although it rained), no un sustantivo.",
+          "de": "Nach Although braucht man einen Teilsatz (although it rained), kein Nomen."
+        },
+        "Because": {
+          "hu": "A Because után tagmondat kell, és okot jelöl, nem ellentétet.",
+          "en": "After Because you need a clause, and it marks a cause, not a contrast.",
+          "es": "Después de Because hace falta una cláusula, y marca una causa, no un contraste.",
+          "de": "Nach Because braucht man einen Teilsatz, und es markiert einen Grund, keinen Gegensatz."
+        }
+      },
+      "examples": [
+        "Notwithstanding the cost, we bought it.",
+        "Notwithstanding the delay, it worked."
+      ]
+    },
+    {
+      "id": "dmk-04",
+      "sentence": "The test was successful, ___ limited.",
+      "options": [
+        "despite",
+        "albeit",
+        "whereas"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Rövid formális „bár” melléknév előtt: albeit limited.",
+        "en": "A short formal “although” before an adjective: albeit limited.",
+        "es": "Un «aunque» corto y formal antes de un adjetivo: albeit limited.",
+        "de": "Ein kurzes, formelles «obwohl» vor einem Adjektiv: albeit limited."
+      },
+      "wrong": {
+        "despite": {
+          "hu": "A despite után főnév kell, nem melléknév (limited).",
+          "en": "After despite you need a noun, not an adjective (limited).",
+          "es": "Después de despite hace falta un sustantivo, no un adjetivo (limited).",
+          "de": "Nach despite braucht man ein Nomen, kein Adjektiv (limited)."
+        },
+        "whereas": {
+          "hu": "A whereas után tagmondat kell, nem melléknév.",
+          "en": "After whereas you need a clause, not an adjective.",
+          "es": "Después de whereas hace falta una cláusula, no un adjetivo.",
+          "de": "Nach whereas braucht man einen Teilsatz, kein Adjektiv."
+        }
+      },
+      "examples": [
+        "A good, albeit slow, result.",
+        "He came, albeit late."
+      ]
+    },
+    {
+      "id": "dmk-05",
+      "sentence": "___ to the heavy traffic, we arrived late.",
+      "options": [
+        "Owed",
+        "Own",
+        "Owing"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Ok főnévvel: Owing to + főnévi csoport.",
+        "en": "A cause with a noun: Owing to + noun phrase.",
+        "es": "Una causa con sustantivo: Owing to + grupo nominal.",
+        "de": "Ein Grund mit Nomen: Owing to + Nominalgruppe."
+      },
+      "wrong": {
+        "Owed": {
+          "hu": "Az Owed to a „tartozik” jelentésű ige igenéve; Owing kell.",
+          "en": "Owed to is the participle of the verb “owe”; you need Owing.",
+          "es": "Owed to es el participio del verbo «deber»; hace falta Owing.",
+          "de": "Owed to ist das Partizip des Verbs «schulden»; man braucht Owing."
+        },
+        "Own": {
+          "hu": "Az Own to nem létezik ebben a jelentésben; Owing to kell.",
+          "en": "“Own to” does not exist in this meaning; you need Owing to.",
+          "es": "«Own to» no existe en este sentido; hace falta Owing to.",
+          "de": "„Own to“ gibt es in dieser Bedeutung nicht; man braucht Owing to."
+        }
+      },
+      "examples": [
+        "Owing to illness, he stayed.",
+        "Owing to the rain, we left."
+      ]
+    },
+    {
+      "id": "dmk-06",
+      "sentence": "We canceled the trip ___ view of the weather.",
+      "options": [
+        "in",
+        "on",
+        "at"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Állandó kifejezés: in view of.",
+        "en": "A fixed phrase: in view of.",
+        "es": "Una expresión fija: in view of.",
+        "de": "Eine feste Wendung: in view of."
+      },
+      "wrong": {
+        "on": {
+          "hu": "Az on view of nem létezik; in view of kell.",
+          "en": "“On view of” does not exist; you need in view of.",
+          "es": "«On view of» no existe; hace falta in view of.",
+          "de": "„On view of“ gibt es nicht; man braucht in view of."
+        },
+        "at": {
+          "hu": "Az at view of nem létezik; in view of kell.",
+          "en": "“At view of” does not exist; you need in view of.",
+          "es": "«At view of» no existe; hace falta in view of.",
+          "de": "„At view of“ gibt es nicht; man braucht in view of."
+        }
+      },
+      "examples": [
+        "In view of the facts, we agree.",
+        "In view of this, we stop."
+      ]
+    },
+    {
+      "id": "dmk-07",
+      "sentence": "___, the service was slow, but the food was excellent.",
+      "options": [
+        "Admitted",
+        "Admittedly",
+        "Admitting"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Egy gyengeség elismerése: Admittedly,",
+        "en": "Admitting a weakness: Admittedly,",
+        "es": "Reconocer una debilidad: Admittedly,",
+        "de": "Eine Schwäche einräumen: Admittedly,"
+      },
+      "wrong": {
+        "Admitted": {
+          "hu": "Az Admitted igenév; a mondatkezdő határozószó Admittedly.",
+          "en": "Admitted is a participle; the sentence-opening adverb is Admittedly.",
+          "es": "Admitted es un participio; el adverbio al inicio de la oración es Admittedly.",
+          "de": "Admitted ist ein Partizip; das Adverb am Satzanfang ist Admittedly."
+        },
+        "Admitting": {
+          "hu": "Az Admitting -ing alak; a mondatkezdő határozószó Admittedly.",
+          "en": "Admitting is an -ing form; the sentence-opening adverb is Admittedly.",
+          "es": "Admitting es una forma -ing; el adverbio al inicio de la oración es Admittedly.",
+          "de": "Admitting ist eine -ing-Form; das Adverb am Satzanfang ist Admittedly."
+        }
+      },
+      "examples": [
+        "Admittedly, it was hard.",
+        "Admittedly, he tried."
+      ]
+    },
+    {
+      "id": "dmk-08",
+      "sentence": "The service is excellent. ___, the prices are reasonable.",
+      "options": [
+        "In addition to",
+        "Addition",
+        "In addition"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Hozzátétel mondat elején: In addition,",
+        "en": "An addition at the start of a sentence: In addition,",
+        "es": "Una adición al inicio de la oración: In addition,",
+        "de": "Eine Hinzufügung am Satzanfang: In addition,"
+      },
+      "wrong": {
+        "In addition to": {
+          "hu": "Az in addition to után főnév kell, nem vessző.",
+          "en": "After in addition to you need a noun, not a comma.",
+          "es": "Después de in addition to hace falta un sustantivo, no una coma.",
+          "de": "Nach in addition to braucht man ein Nomen, kein Komma."
+        },
+        "Addition": {
+          "hu": "Az Addition egyedül nem jelölő; In addition kell.",
+          "en": "Addition alone is not a marker; you need In addition.",
+          "es": "Addition solo no es un marcador; hace falta In addition.",
+          "de": "Addition allein ist kein Marker; man braucht In addition."
+        }
+      },
+      "examples": [
+        "In addition, it is fast.",
+        "In addition, she paid."
+      ]
+    },
+    {
+      "id": "dmk-09",
+      "sentence": "The results were inconclusive. ___, we need more data.",
+      "options": [
+        "In other words",
+        "Other words",
+        "On other words"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Pontosítás: In other words,",
+        "en": "A clarification: In other words,",
+        "es": "Una aclaración: In other words,",
+        "de": "Eine Klärung: In other words,"
+      },
+      "wrong": {
+        "Other words": {
+          "hu": "Az Other words önmagában nem jelölő; In other words kell.",
+          "en": "Other words alone is not a marker; you need In other words.",
+          "es": "Other words solo no es un marcador; hace falta In other words.",
+          "de": "Other words allein ist kein Marker; man braucht In other words."
+        },
+        "On other words": {
+          "hu": "Az On other words nem létezik; In other words kell.",
+          "en": "“On other words” does not exist; you need In other words.",
+          "es": "«On other words» no existe; hace falta In other words.",
+          "de": "„On other words“ gibt es nicht; man braucht In other words."
+        }
+      },
+      "examples": [
+        "In other words, he failed.",
+        "In other words, no."
+      ]
+    },
+    {
+      "id": "dmk-10",
+      "sentence": "Several countries, ___ France and Spain, joined the plan.",
+      "options": [
+        "nameable",
+        "namely",
+        "names"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Név szerinti felsorolás: namely.",
+        "en": "Listing by name: namely.",
+        "es": "Enumeración por nombre: namely.",
+        "de": "Aufzählung namentlich: namely."
+      },
+      "wrong": {
+        "nameable": {
+          "hu": "A nameable melléknév („megnevezhető”); namely kell.",
+          "en": "Nameable is an adjective (“able to be named”); you need namely.",
+          "es": "Nameable es un adjetivo («que se puede nombrar»); hace falta namely.",
+          "de": "Nameable ist ein Adjektiv („benennbar“); man braucht namely."
+        },
+        "names": {
+          "hu": "A names főnév vagy ige; namely kell.",
+          "en": "Names is a noun or a verb; you need namely.",
+          "es": "Names es un sustantivo o un verbo; hace falta namely.",
+          "de": "Names ist ein Nomen oder Verb; man braucht namely."
+        }
+      },
+      "examples": [
+        "Two men, namely Tom and Sam, left.",
+        "Three cities, namely Rome, Paris and Lima."
+      ]
+    },
+    {
+      "id": "dmk-11",
+      "sentence": "Some animals, ___ elephants, live in groups.",
+      "options": [
+        "as such",
+        "such like",
+        "such as"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Példa: such as elephants.",
+        "en": "An example: such as elephants.",
+        "es": "Un ejemplo: such as elephants.",
+        "de": "Ein Beispiel: such as elephants."
+      },
+      "wrong": {
+        "as such": {
+          "hu": "Az as such azt jelenti: önmagában; példához such as kell.",
+          "en": "As such means “in itself”; for an example you need such as.",
+          "es": "As such significa «en sí mismo»; para un ejemplo hace falta such as.",
+          "de": "As such bedeutet «an sich»; für ein Beispiel braucht man such as."
+        },
+        "such like": {
+          "hu": "A such like nem a szokásos példa-kifejezés; such as kell.",
+          "en": "“Such like” is not the usual example phrase; you need such as.",
+          "es": "«Such like» no es la expresión habitual de ejemplo; hace falta such as.",
+          "de": "„Such like“ ist nicht die übliche Beispielwendung; man braucht such as."
+        }
+      },
+      "examples": [
+        "Fruits, such as apples, are cheap.",
+        "Cities such as Rome are old."
+      ]
+    },
+    {
+      "id": "dmk-12",
+      "sentence": "___ all, the project was a success.",
+      "options": [
+        "Above",
+        "Over",
+        "On"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Állandó kifejezés: above all (mindenekelőtt).",
+        "en": "A fixed phrase: above all (most of all).",
+        "es": "Una expresión fija: above all (sobre todo).",
+        "de": "Eine feste Wendung: above all (vor allem)."
+      },
+      "wrong": {
+        "Over": {
+          "hu": "Az Over all nem a szokásos kifejezés; Above all vagy Overall kell.",
+          "en": "“Over all” is not the usual phrase; you need Above all or Overall.",
+          "es": "«Over all» no es la expresión habitual; hace falta Above all u Overall.",
+          "de": "„Over all“ ist nicht die übliche Wendung; man braucht Above all oder Overall."
+        },
+        "On": {
+          "hu": "Az On all nem létezik ebben a jelentésben; Above all kell.",
+          "en": "“On all” does not exist in this meaning; you need Above all.",
+          "es": "«On all» no existe en este sentido; hace falta Above all.",
+          "de": "„On all“ gibt es in dieser Bedeutung nicht; man braucht Above all."
+        }
+      },
+      "examples": [
+        "Above all, be kind.",
+        "Above all, stay calm."
+      ]
+    },
+    {
+      "id": "dmk-13",
+      "sentence": "___ sum up, the plan has three main advantages.",
+      "options": [
+        "For",
+        "To",
+        "In"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Összegzés: To sum up.",
+        "en": "A summary: To sum up.",
+        "es": "Un resumen: To sum up.",
+        "de": "Eine Zusammenfassung: To sum up."
+      },
+      "wrong": {
+        "For": {
+          "hu": "A For sum up nem létezik; To sum up kell.",
+          "en": "“For sum up” does not exist; you need To sum up.",
+          "es": "«For sum up» no existe; hace falta To sum up.",
+          "de": "„For sum up“ gibt es nicht; man braucht To sum up."
+        },
+        "In": {
+          "hu": "Az In sum up nem létezik; To sum up vagy In sum kell.",
+          "en": "“In sum up” does not exist; you need To sum up or In sum.",
+          "es": "«In sum up» no existe; hace falta To sum up o In sum.",
+          "de": "„In sum up“ gibt es nicht; man braucht To sum up oder In sum."
+        }
+      },
+      "examples": [
+        "To sum up, we agree.",
+        "To sum up, it works."
+      ]
+    },
+    {
+      "id": "dmk-14",
+      "sentence": "In ___, the results were positive.",
+      "options": [
+        "concluding",
+        "concluded",
+        "conclusion"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Lezárás: In conclusion,",
+        "en": "Closing: In conclusion,",
+        "es": "Cierre: In conclusion,",
+        "de": "Abschluss: In conclusion,"
+      },
+      "wrong": {
+        "concluding": {
+          "hu": "Az In concluding nem a szokásos jelölő; In conclusion kell.",
+          "en": "“In concluding” is not the usual marker; you need In conclusion.",
+          "es": "«In concluding» no es el marcador habitual; hace falta In conclusion.",
+          "de": "„In concluding“ ist nicht der übliche Marker; man braucht In conclusion."
+        },
+        "concluded": {
+          "hu": "Az In concluded nem helyes; főnév kell (conclusion).",
+          "en": "“In concluded” is not correct; you need a noun (conclusion).",
+          "es": "«In concluded» no es correcto; hace falta un sustantivo (conclusion).",
+          "de": "„In concluded“ ist nicht korrekt; man braucht ein Nomen (conclusion)."
+        }
+      },
+      "examples": [
+        "In conclusion, we win.",
+        "In conclusion, it works."
+      ]
+    },
+    {
+      "id": "dmk-15",
+      "sentence": "___, we will review the budget; subsequently, we will decide.",
+      "options": [
+        "Firstly",
+        "First of",
+        "Firstly of"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Sorrend: Firstly,",
+        "en": "Order: Firstly,",
+        "es": "Orden: Firstly,",
+        "de": "Reihenfolge: Firstly,"
+      },
+      "wrong": {
+        "First of": {
+          "hu": "A First of önmagában hiányos; First of all kellene.",
+          "en": "“First of” alone is incomplete; it would need First of all.",
+          "es": "«First of» solo está incompleto; necesitaría First of all.",
+          "de": "„First of“ allein ist unvollständig; es bräuchte First of all."
+        },
+        "Firstly of": {
+          "hu": "A Firstly of nem létezik; Firstly vagy First of all kell.",
+          "en": "“Firstly of” does not exist; you need Firstly or First of all.",
+          "es": "«Firstly of» no existe; hace falta Firstly o First of all.",
+          "de": "„Firstly of“ gibt es nicht; man braucht Firstly oder First of all."
+        }
+      },
+      "examples": [
+        "Firstly, we plan.",
+        "Firstly, check it."
+      ]
+    },
+    {
+      "id": "dmk-16",
+      "sentence": "She missed the meeting ___ a result of illness.",
+      "options": [
+        "in",
+        "as",
+        "by"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Ok főnévvel: as a result of.",
+        "en": "A cause with a noun: as a result of.",
+        "es": "Una causa con sustantivo: as a result of.",
+        "de": "Ein Grund mit Nomen: as a result of."
+      },
+      "wrong": {
+        "in": {
+          "hu": "Az in a result of nem létezik; as a result of kell.",
+          "en": "“In a result of” does not exist; you need as a result of.",
+          "es": "«In a result of» no existe; hace falta as a result of.",
+          "de": "„In a result of“ gibt es nicht; man braucht as a result of."
+        },
+        "by": {
+          "hu": "A by a result of nem létezik; as a result of kell.",
+          "en": "“By a result of” does not exist; you need as a result of.",
+          "es": "«By a result of» no existe; hace falta as a result of.",
+          "de": "„By a result of“ gibt es nicht; man braucht as a result of."
+        }
+      },
+      "examples": [
+        "As a result of the storm, we left.",
+        "He fell as a result of ice."
+      ]
+    },
+    {
+      "id": "dmk-17",
+      "sentence": "The decision was made ___ account of the cost.",
+      "options": [
+        "in",
+        "for",
+        "on"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Formális ok: on account of + főnév.",
+        "en": "A formal cause: on account of + noun.",
+        "es": "Una causa formal: on account of + sustantivo.",
+        "de": "Ein formeller Grund: on account of + Nomen."
+      },
+      "wrong": {
+        "in": {
+          "hu": "Az in account of nem létezik ebben a jelentésben; on account of kell.",
+          "en": "“In account of” does not exist in this meaning; you need on account of.",
+          "es": "«In account of» no existe en este sentido; hace falta on account of.",
+          "de": "„In account of“ gibt es in dieser Bedeutung nicht; man braucht on account of."
+        },
+        "for": {
+          "hu": "A for account of nem létezik; on account of kell.",
+          "en": "“For account of” does not exist; you need on account of.",
+          "es": "«For account of» no existe; hace falta on account of.",
+          "de": "„For account of“ gibt es nicht; man braucht on account of."
+        }
+      },
+      "examples": [
+        "On account of illness, he left.",
+        "On account of the cost, no."
+      ]
+    },
+    {
+      "id": "dmk-18",
+      "kind": "form",
+      "verb": "forma",
+      "person": "además (formal, adición)",
+      "answer": "furthermore",
+      "accept": [
+        "moreover",
+        "in addition"
+      ],
+      "table": "dmk-forms"
+    },
+    {
+      "id": "dmk-19",
+      "kind": "form",
+      "verb": "forma",
+      "person": "a pesar de (muy formal, + sustantivo)",
+      "answer": "notwithstanding",
+      "table": "dmk-forms"
+    },
+    {
+      "id": "dmk-20",
+      "kind": "form",
+      "verb": "forma",
+      "person": "aunque (+ adjetivo o frase breve)",
+      "answer": "albeit",
+      "table": "dmk-forms"
+    },
+    {
+      "id": "dmk-21",
+      "kind": "form",
+      "verb": "forma",
+      "person": "es decir",
+      "answer": "in other words",
+      "accept": [
+        "that is to say"
+      ],
+      "table": "dmk-forms"
+    },
+    {
+      "id": "dmk-22",
+      "kind": "form",
+      "verb": "forma",
+      "person": "debido a (+ sustantivo)",
+      "answer": "owing to",
+      "accept": [
+        "due to",
+        "because of",
+        "on account of"
+      ],
+      "table": "dmk-forms"
+    },
+    {
+      "id": "dmk-23",
+      "kind": "form",
+      "verb": "forma",
+      "person": "en conclusión",
+      "answer": "in conclusion",
+      "accept": [
+        "to conclude",
+        "to sum up"
+      ],
+      "table": "dmk-forms"
+    },
+    {
+      "kind": "why",
+      "id": "dmk-24",
+      "es": "The plan is cheap. Furthermore, it is easy to carry out.",
+      "target": "Furthermore",
+      "tr": {
+        "hu": "A terv olcsó. Ráadásul könnyű megvalósítani.",
+        "en": "The plan is cheap. Furthermore, it is easy to carry out.",
+        "es": "El plan es barato. Además, es fácil de ejecutar.",
+        "de": "Der Plan ist billig. Außerdem ist er leicht umzusetzen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ellentét",
+            "en": "a contrast",
+            "es": "un contraste",
+            "de": "ein Gegensatz"
+          },
+          "wrong": {
+            "hu": "A furthermore nem ellentétet, hanem új érvet fűz hozzá.",
+            "en": "Furthermore does not mark a contrast but adds a new point.",
+            "es": "Furthermore no marca un contraste sino que añade un argumento nuevo.",
+            "de": "Furthermore markiert keinen Gegensatz, sondern fügt ein neues Argument hinzu."
+          }
+        },
+        {
+          "text": {
+            "hu": "hozzátétel: új érv",
+            "en": "an addition: a new point",
+            "es": "una adición: un argumento nuevo",
+            "de": "eine Hinzufügung: ein neues Argument"
+          }
+        },
+        {
+          "text": {
+            "hu": "következmény",
+            "en": "a result",
+            "es": "un resultado",
+            "de": "eine Folge"
+          },
+          "wrong": {
+            "hu": "A furthermore nem következményt, hanem további érvet jelöl.",
+            "en": "Furthermore does not mark a result but a further point.",
+            "es": "Furthermore no marca un resultado sino un argumento adicional.",
+            "de": "Furthermore markiert keine Folge, sondern ein weiteres Argument."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "dmk-25",
+      "es": "The test was successful, albeit limited.",
+      "target": "albeit",
+      "tr": {
+        "hu": "A teszt sikeres volt, bár korlátozott.",
+        "en": "The test was successful, albeit limited.",
+        "es": "La prueba fue exitosa, aunque limitada.",
+        "de": "Der Test war erfolgreich, wenn auch begrenzt."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "albeit + teljes mondat",
+            "en": "albeit + a full clause",
+            "es": "albeit + una oración completa",
+            "de": "albeit + ein ganzer Satz"
+          },
+          "wrong": {
+            "hu": "Az albeit után melléknév vagy rövid kifejezés áll, nem alany és ige.",
+            "en": "After albeit comes an adjective or a short phrase, not a subject and verb.",
+            "es": "Después de albeit va un adjetivo o una frase corta, no sujeto y verbo.",
+            "de": "Nach albeit steht ein Adjektiv oder eine kurze Wendung, nicht Subjekt und Verb."
+          }
+        },
+        {
+          "text": {
+            "hu": "ok: mert",
+            "en": "a reason: because",
+            "es": "una razón: porque",
+            "de": "ein Grund: weil"
+          },
+          "wrong": {
+            "hu": "Az albeit engedményt jelez, nem okot.",
+            "en": "Albeit marks a concession, not a reason.",
+            "es": "Albeit marca una concesión, no una razón.",
+            "de": "Albeit markiert ein Zugeständnis, keinen Grund."
+          }
+        },
+        {
+          "text": {
+            "hu": "rövid formális „bár”: melléknév vagy rövid kifejezés követi",
+            "en": "a short formal “although”: an adjective or short phrase follows",
+            "es": "un «aunque» corto y formal: le sigue un adjetivo o frase corta",
+            "de": "ein kurzes, formelles «obwohl»: ein Adjektiv oder eine kurze Wendung folgt"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "dmk-26",
+      "es": "Owing to the traffic, we arrived late.",
+      "target": "Owing to",
+      "tr": {
+        "hu": "A forgalom miatt későn érkeztünk.",
+        "en": "Owing to the traffic, we arrived late.",
+        "es": "Debido al tráfico, llegamos tarde.",
+        "de": "Wegen des Verkehrs kamen wir zu spät an."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ok mondattal: owing to we were late",
+            "en": "a cause with a clause: owing to we were late",
+            "es": "una causa con oración: owing to we were late",
+            "de": "ein Grund mit Satz: owing to we were late"
+          },
+          "wrong": {
+            "hu": "Az owing to után főnévi csoport áll; mondat előtt because kell.",
+            "en": "After owing to comes a noun phrase; before a clause you need because.",
+            "es": "Después de owing to va un grupo nominal; antes de una oración hace falta because.",
+            "de": "Nach owing to steht eine Nominalgruppe; vor einem Satz braucht man because."
+          }
+        },
+        {
+          "text": {
+            "hu": "cél",
+            "en": "a purpose",
+            "es": "una finalidad",
+            "de": "ein Zweck"
+          },
+          "wrong": {
+            "hu": "Az owing to okot jelöl, nem célt.",
+            "en": "Owing to marks a cause, not a purpose.",
+            "es": "Owing to marca una causa, no una finalidad.",
+            "de": "Owing to markiert eine Ursache, keinen Zweck."
+          }
+        },
+        {
+          "text": {
+            "hu": "formális ok főnévi csoporttal",
+            "en": "a formal cause with a noun phrase",
+            "es": "una causa formal con un grupo nominal",
+            "de": "ein formeller Grund mit einer Nominalgruppe"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "dmk-27",
+      "es": "In other words, we need more data.",
+      "target": "In other words",
+      "tr": {
+        "hu": "Vagyis több adat kell.",
+        "en": "In other words, we need more data.",
+        "es": "Es decir, necesitamos más datos.",
+        "de": "Mit anderen Worten: Wir brauchen mehr Daten."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ellentét",
+            "en": "a contrast",
+            "es": "un contraste",
+            "de": "ein Gegensatz"
+          },
+          "wrong": {
+            "hu": "Az in other words nem ellentét, hanem ugyanazt mondja másképp.",
+            "en": "In other words is not a contrast but says the same thing differently.",
+            "es": "In other words no es un contraste sino que dice lo mismo de otra manera.",
+            "de": "In other words ist kein Gegensatz, sondern sagt dasselbe anders."
+          }
+        },
+        {
+          "text": {
+            "hu": "sorrend: első, második",
+            "en": "order: first, second",
+            "es": "orden: primero, segundo",
+            "de": "Reihenfolge: erstens, zweitens"
+          },
+          "wrong": {
+            "hu": "Nem sorrendet jelöl; pontosít.",
+            "en": "It does not mark order; it clarifies.",
+            "es": "No marca orden; aclara.",
+            "de": "Es markiert keine Reihenfolge; es klärt."
+          }
+        },
+        {
+          "text": {
+            "hu": "pontosítás: ugyanazt másképp mondja",
+            "en": "a clarification: the same idea said differently",
+            "es": "una aclaración: la misma idea dicha de otra manera",
+            "de": "eine Klärung: dieselbe Idee anders gesagt"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "dmk-28",
+      "es": "Notwithstanding the rain, the match went ahead.",
+      "target": "Notwithstanding",
+      "tr": {
+        "hu": "Az eső ellenére a meccset megtartották.",
+        "en": "Notwithstanding the rain, the match went ahead.",
+        "es": "A pesar de la lluvia, el partido se llevó a cabo.",
+        "de": "Trotz des Regens fand das Spiel statt."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ok: az eső miatt",
+            "en": "a cause: because of the rain",
+            "es": "una causa: por la lluvia",
+            "de": "ein Grund: wegen des Regens"
+          },
+          "wrong": {
+            "hu": "A notwithstanding ellenére jelent, nem okot.",
+            "en": "Notwithstanding means despite, not a cause.",
+            "es": "Notwithstanding significa a pesar de, no una causa.",
+            "de": "Notwithstanding bedeutet trotz, keinen Grund."
+          }
+        },
+        {
+          "text": {
+            "hu": "nagyon formális „ellenére” főnévvel",
+            "en": "a very formal “despite” with a noun",
+            "es": "un «a pesar de» muy formal con un sustantivo",
+            "de": "ein sehr formelles «trotz» mit einem Nomen"
+          }
+        },
+        {
+          "text": {
+            "hu": "ige",
+            "en": "a verb",
+            "es": "un verbo",
+            "de": "ein Verb"
+          },
+          "wrong": {
+            "hu": "A notwithstanding itt elöljárószerű jelölő, nem ige.",
+            "en": "Notwithstanding here is a preposition-like marker, not a verb.",
+            "es": "Notwithstanding aquí es un marcador como una preposición, no un verbo.",
+            "de": "Notwithstanding ist hier ein präpositionsartiger Marker, kein Verb."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "dmk-29",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "El plan es barato. Además, es fácil de ejecutar.",
+          "en": "The plan is cheap. Furthermore, it is easy to carry out."
+        },
+        {
+          "es": "La prueba fue exitosa, aunque limitada.",
+          "en": "The test was successful, albeit limited."
+        },
+        {
+          "es": "Debido al tráfico, llegamos tarde.",
+          "en": "Owing to the traffic, we arrived late."
+        },
+        {
+          "es": "Es decir, necesitamos más datos.",
+          "en": "In other words, we need more data."
+        },
+        {
+          "es": "Cancelamos el viaje en vista del clima.",
+          "en": "We canceled the trip in view of the weather."
+        },
+        {
+          "es": "En conclusión, los resultados fueron positivos.",
+          "en": "In conclusion, the results were positive."
+        }
+      ]
+    },
+    {
+      "id": "dmk-30",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "además",
+          "en": "moreover"
+        },
+        {
+          "es": "a pesar de (formal)",
+          "en": "notwithstanding"
+        },
+        {
+          "es": "es cierto que",
+          "en": "admittedly"
+        },
+        {
+          "es": "a saber",
+          "en": "namely"
+        },
+        {
+          "es": "sobre todo",
+          "en": "above all"
+        },
+        {
+          "es": "en resumen",
+          "en": "to sum up"
+        }
+      ]
+    }
+  ]
+}
