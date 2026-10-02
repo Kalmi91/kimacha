@@ -14,6 +14,7 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { localDateString } from '@/lib/usageStats';
 import { Card, SegmentBar, segmentsFilled } from '@/components/grammar/Brutal';
 import ResultBadge from '@/components/ResultBadge';
+import FeedbackButton from '@/components/FeedbackModal';
 import ExamButton from '@/components/exam/ExamButton';
 import ExamChoiceCard from '@/components/exam/ExamChoiceCard';
 import ExamMatchCard from '@/components/exam/ExamMatchCard';
@@ -21,6 +22,7 @@ import ExamSkillRow from '@/components/exam/ExamSkillRow';
 import ExamSpeakCard from '@/components/exam/ExamSpeakCard';
 import ExamTilesCard from '@/components/exam/ExamTilesCard';
 import ExamTypeCard from '@/components/exam/ExamTypeCard';
+import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
 import { buildExam } from '@/lib/exam/builder';
 import { gapSourcesForLevel, type GapSource } from '@/lib/exam/grammarItems';
@@ -216,8 +218,14 @@ export default function ExamScreen() {
     router.back();
   };
 
-  const shell = (children: ReactNode) => (
-    <View style={[styles.screen, { backgroundColor: colors.background }]}>{children}</View>
+  // FB447: a szintvizsga minden részén ott a 💬; a `part` mondja meg a Feedback sheetben, pontosan
+  // melyik részről van szó (exam:<szint>:<rész>). Beírós kérdésnél a 💬 a dokkolt sáv fölé kerül.
+  const pair = `${source?.target === 'en' ? 'es' : 'en'}→${source?.target ?? 'es'}`;
+  const shell = (children: ReactNode, part?: string, bottomOffset?: number) => (
+    <View style={[styles.screen, { backgroundColor: colors.background }]}>
+      {children}
+      {part ? <FeedbackButton level={level} languagePair={pair} currentCard={`exam:${level}:${part}`} bottomOffset={bottomOffset} /> : null}
+    </View>
   );
 
   if (phase === 'loading') {
@@ -233,6 +241,7 @@ export default function ExamScreen() {
         </Card>
         <ExamButton testID="exam-back" label={s.exam.back} onPress={() => router.back()} />
       </View>,
+      phase,
     );
   }
 
@@ -251,6 +260,7 @@ export default function ExamScreen() {
         <ExamButton testID="exam-start" label={s.exam.start} onPress={start} />
         <ExamButton testID="exam-not-now" secondary label={s.exam.notNow} onPress={() => router.back()} />
       </View>,
+      'intro',
     );
   }
 
@@ -305,6 +315,7 @@ export default function ExamScreen() {
         {!score.passed && <ExamButton testID="exam-retry" label={s.exam.tryAgain} onPress={retry} />}
         <ExamButton testID="exam-exit" secondary label={s.exam.exit} onPress={() => router.back()} />
       </ScrollView>,
+      'result',
     );
   }
 
@@ -318,6 +329,7 @@ export default function ExamScreen() {
         <ExamButton testID="exam-leave" label={s.exam.leave} onPress={() => router.back()} />
         <ExamButton testID="exam-keep-going" secondary label={s.exam.keepGoing} onPress={() => setLeaving(false)} />
       </View>,
+      'leave',
     );
   }
 
@@ -345,6 +357,8 @@ export default function ExamScreen() {
       </DockSlotProvider>
       {dock.node}
     </KeyboardAvoidingView>,
+    exam[index] ? `q${index + 1}:${exam[index].kind}` : undefined,
+    dock.bottomOffset,
   );
 }
 
@@ -352,7 +366,7 @@ const styles = StyleSheet.create({
   screen: { flex: 1, paddingTop: spacing.xl },
   flex: { flex: 1 },
   centered: { flex: 1 },
-  body: { padding: spacing.lg, gap: spacing.md },
+  body: { padding: spacing.lg, paddingBottom: FAB_CLEARANCE, gap: spacing.md },
   card: { borderRadius: radius.lg, padding: spacing.lg, gap: spacing.md },
   brutalCard: { padding: spacing.lg, gap: spacing.md },
   title: { fontSize: fontSize.xl, fontWeight: fontWeight.bold, textAlign: 'center' },
