@@ -15,8 +15,8 @@ import type { GrammarGapItem, GrammarMarkItem } from '../games/content';
 
 export type Lang4 = Record<'hu' | 'en' | 'es' | 'de', string>;
 
-// NY1 (NYELVTAN.md "Adatformátum"): az igeidő-drill 8 igeideje. A sorrend
-// itt a TENSE_IDS forrása, ne cseréld fel.
+// NY1 (NYELVTAN.md "Adatformátum"): az igeidő-drill igeidői (8 + a PLAN-fb1002 10. lépésében
+// hozzáadott 4). A sorrend itt a TENSE_IDS forrása, ne cseréld fel.
 export type TenseId =
   | 'presente'
   | 'indefinido'
@@ -25,7 +25,11 @@ export type TenseId =
   | 'futuro-simple'
   | 'ir-a'
   | 'condicional'
-  | 'subjuntivo-presente';
+  | 'subjuntivo-presente'
+  | 'imperativo-negativo'
+  | 'pluscuamperfecto'
+  | 'subjuntivo-perfecto'
+  | 'futuro-condicional-perfecto';
 
 export const TENSE_IDS: readonly TenseId[] = [
   'presente',
@@ -36,6 +40,10 @@ export const TENSE_IDS: readonly TenseId[] = [
   'ir-a',
   'condicional',
   'subjuntivo-presente',
+  'imperativo-negativo',
+  'pluscuamperfecto',
+  'subjuntivo-perfecto',
+  'futuro-condicional-perfecto',
 ];
 
 // A jelvényen mutatott igeidő-név; `es` a spanyol nyelvtani terminus, a többi
@@ -53,6 +61,20 @@ export const TENSE_NAMES: Record<TenseId, Lang4> = {
     en: 'present subjunctive',
     es: 'Presente de subjuntivo',
     de: 'Subjuntivo Präsens',
+  },
+  'imperativo-negativo': { hu: 'tiltó felszólító mód', en: 'negative imperative', es: 'Imperativo negativo', de: 'Verneinter Imperativ' },
+  pluscuamperfecto: { hu: 'régmúlt', en: 'past perfect', es: 'Pretérito pluscuamperfecto', de: 'Plusquamperfekt' },
+  'subjuntivo-perfecto': {
+    hu: 'kötőmód befejezett',
+    en: 'present perfect subjunctive',
+    es: 'Pretérito perfecto de subjuntivo',
+    de: 'Subjuntivo Perfekt',
+  },
+  'futuro-condicional-perfecto': {
+    hu: 'befejezett jövő és feltételes',
+    en: 'future perfect and conditional perfect',
+    es: 'Futuro perfecto y condicional perfecto',
+    de: 'Futur II und Konditional II',
   },
 };
 
