@@ -192,7 +192,7 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
     return {
       id: item.id,
       kind,
-      view: { card: 'type', prompt, hint: s.grammar.formHint, answer: item.answer, sentence: false },
+      view: { card: 'type', prompt, hint: s.grammar.formHint, answer: item.answer, accept: item.accept, sentence: false },
       review: { question: prompt, answer: item.answer },
     };
   }
