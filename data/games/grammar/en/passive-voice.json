@@ -368,7 +368,7 @@
     },
     {
       "id": "pv-03",
-      "sentence": "The window ___ yesterday.",
+      "sentence": "The window ___ by my brother yesterday.",
       "options": [
         "was broken",
         "broke",
@@ -376,17 +376,17 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A yesterday múltat jelez, és az ablakot valaki betörte: was broken.",
-        "en": "Yesterday points to the past, and someone broke the window: was broken.",
-        "es": "Yesterday indica pasado, y alguien rompió la ventana: was broken.",
-        "de": "Yesterday verweist auf die Vergangenheit, und jemand hat das Fenster zerbrochen: was broken."
+        "hu": "A by my brother megmondja, ki törte be, a yesterday pedig múltat jelez: was broken.",
+        "en": "By my brother names who broke it, and yesterday points to the past: was broken.",
+        "es": "By my brother dice quién la rompió, y yesterday indica pasado: was broken.",
+        "de": "By my brother nennt, wer es zerbrochen hat, und yesterday verweist auf die Vergangenheit: was broken."
       },
       "wrong": {
         "broke": {
-          "hu": "A „broke” cselekvő alak: azt jelenti, hogy az alany tört be valamit; itt az ablakot törték be, ezért szenvedő kell (was broken).",
-          "en": "“Broke” is active; the passive shows that someone did it to the window.",
-          "es": "«Broke» es activo; la pasiva muestra que alguien lo hizo a la ventana.",
-          "de": "„Broke“ ist aktiv; das Passiv zeigt, dass jemand es dem Fenster angetan hat."
+          "hu": "A „broke” cselekvő alak: azt jelentené, hogy az ablak tört be valamit; a by my brother miatt szenvedő kell (was broken).",
+          "en": "“Broke” is active: it would mean the window broke something; because of by my brother you need the passive (was broken).",
+          "es": "«Broke» es activo: significaría que la ventana rompió algo; por by my brother hace falta la pasiva (was broken).",
+          "de": "„Broke“ ist aktiv: das würde heißen, dass das Fenster etwas zerbrochen hat; wegen by my brother braucht man das Passiv (was broken)."
         },
         "is broken": {
           "hu": "Az „is broken” jelen idejű; a yesterday miatt múlt idejű szenvedő kell.",
