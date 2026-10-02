@@ -7,6 +7,7 @@ import ResultBadge from '@/components/ResultBadge';
 import TrialBadge from '@/components/TrialBadge';
 import AnswerCompare from '@/components/grammar/AnswerCompare';
 import { BrutalBox, inkButtonText } from '@/components/grammar/Brutal';
+import { useDockedAction } from '@/components/learn/DockSlot';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { answerInputProps } from '@/lib/inputProps';
@@ -223,6 +224,13 @@ export function DictationDrillItem({
     speak(item.es, locale); // FB412: a helyes mondat a válasz után is elhangzik
   };
 
+  // FB461/FB464: a Check (és utána a Next) a billentyűzet fölé dokkolt sáv, ahogy a szókártyán (DockSlot).
+  const { docked, padBottom } = useDockedAction(
+    result
+      ? { label: s.grammar.nextArrow, tone: 'next', testID: 'grammar-next', onPress: () => onDone(result.correct) }
+      : { label: `✓ ${s.grammar.check}`, tone: 'check', testID: 'dictation-check', onPress: check }
+  );
+
   return (
     <View style={styles.body} testID="dictation-item">
       <ItemHead trial={item.trial} title={s.grammar.dictationHint} />
@@ -254,15 +262,18 @@ export function DictationDrillItem({
             {!result.correct ? <AnswerCompare typed={typed} correct={item.es} g={g} onFill /> : <Text style={[styles.fixedLine, { color: g.onB }]}>{item.es}</Text>}
             <Text style={[styles.translation, { color: g.onB }]}>{item.tr[contentLang] ?? item.tr.en}</Text>
           </BrutalBox>
-          <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(result.correct)}>
-            <Text style={[styles.nextText, { color: inkButtonText(g) }]}>{s.grammar.nextArrow}</Text>
-          </BrutalBox>
+          {docked ? null : (
+            <BrutalBox testID="grammar-next" fill="ink" boxStyle={styles.next} onPress={() => onDone(result.correct)}>
+              <Text style={[styles.nextText, { color: inkButtonText(g) }]}>{s.grammar.nextArrow}</Text>
+            </BrutalBox>
+          )}
         </>
-      ) : (
+      ) : docked ? null : (
         <BrutalBox testID="dictation-check" fill="ink" boxStyle={styles.next} onPress={check}>
           <Text style={[styles.nextText, { color: inkButtonText(g) }]}>{s.grammar.check}</Text>
         </BrutalBox>
       )}
+      {docked ? <View style={{ height: padBottom }} /> : null}
     </View>
   );
 }

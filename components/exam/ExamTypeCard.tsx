@@ -6,6 +6,7 @@ import { fontSize, fontWeight, radius, spacing } from '@/constants/Theme';
 import { Card, brutalInputStyle } from '@/components/grammar/Brutal';
 import ResultBadge from '@/components/ResultBadge';
 import { answerInputProps } from '@/lib/inputProps';
+import { useDockedAction } from '@/components/learn/DockSlot';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { gradePcicAnswer, gradeSentenceAnswer, suggestedGrade } from '@/lib/pcicMatch';
@@ -48,6 +49,13 @@ export default function ExamTypeCard({ prompt, hint, answer, accept, sentence, t
     if (ok) onDone(true);
     else setMissed(true);
   };
+
+  // FB461/FB464: a Check (és hibás válasz után a Next) a billentyűzet fölé dokkolt sáv, ahogy a szókártyán (DockSlot).
+  const { docked, padBottom } = useDockedAction(
+    missed
+      ? { label: `${s.card.next} →`, tone: 'next', testID: 'exam-next', onPress: () => onDone(false) }
+      : { label: `✓ ${s.card.check}`, tone: 'check', testID: 'exam-check', disabled: typed.trim().length === 0, onPress: check }
+  );
 
   return (
     <ScrollView contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled">
@@ -93,13 +101,14 @@ export default function ExamTypeCard({ prompt, hint, answer, accept, sentence, t
         )}
       </Card>
       {missed ? (
-        <ExamButton testID="exam-next" label={`${s.card.next} →`} onPress={() => onDone(false)} />
+        docked ? null : <ExamButton testID="exam-next" label={`${s.card.next} →`} onPress={() => onDone(false)} />
       ) : (
         <>
-          <ExamButton testID="exam-check" label={s.card.check} onPress={check} disabled={typed.trim().length === 0} />
+          {docked ? null : <ExamButton testID="exam-check" label={s.card.check} onPress={check} disabled={typed.trim().length === 0} />}
           <ExamButton testID="exam-dont-know" secondary label={s.exam.dontKnow} onPress={() => setMissed(true)} />
         </>
       )}
+      {docked ? <View style={{ height: padBottom }} /> : null}
     </ScrollView>
   );
 }
