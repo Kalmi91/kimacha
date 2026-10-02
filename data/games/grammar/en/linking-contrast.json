@@ -118,7 +118,7 @@
               "tr": {
                 "hu": "Jó film volt. Bár nem volt tökéletes.",
                 "en": "It was a good film. It wasn't perfect, though.",
-                "es": "Fue una buena película. Aunque no fue perfecta.",
+                "es": "Fue una buena película. No fue perfecta, eso sí.",
                 "de": "Es war ein guter Film. Perfekt war er allerdings nicht."
               }
             },
@@ -1068,7 +1068,8 @@
       "person": "sin embargo (inicio de oración)",
       "answer": "however",
       "accept": [
-        "nevertheless"
+        "nevertheless",
+        "nonetheless"
       ],
       "table": "lnk-forms"
     },
@@ -1090,7 +1091,8 @@
       "person": "no obstante",
       "answer": "nevertheless",
       "accept": [
-        "however"
+        "however",
+        "nonetheless"
       ],
       "table": "lnk-forms"
     },
@@ -1314,7 +1316,7 @@
       "tr": {
         "hu": "Bár nem volt tökéletes.",
         "en": "It wasn't perfect, though.",
-        "es": "Aunque no fue perfecta.",
+        "es": "No fue perfecta, eso sí.",
         "de": "Perfekt war es allerdings nicht."
       },
       "options": [

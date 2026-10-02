@@ -687,10 +687,10 @@
           "de": "Nach get mit einer Person braucht man to; die Grundform ohne to gehört zu have."
         },
         "checking": {
-          "hu": "A get után a személy mellett to + alapige áll, nem -ing alak.",
-          "en": "After get with a person comes to + base verb, not an -ing form.",
-          "es": "Después de get con una persona va to + verbo base, no una forma -ing.",
-          "de": "Nach get mit einer Person steht to + Grundform, nicht eine -ing-Form."
+          "hu": "Itt to + alapige kell (a get + személy + -ing létezik, de elindítást jelent: get him talking).",
+          "en": "Here you need to + base verb (get + person + -ing exists, but it means to set something going: get him talking).",
+          "es": "Aquí hace falta to + verbo base (get + persona + -ing existe, pero significa poner en marcha: get him talking).",
+          "de": "Hier braucht man to + Grundform (get + Person + -ing gibt es, aber es heißt etwas in Gang bringen: get him talking)."
         }
       },
       "examples": [
@@ -1065,7 +1065,10 @@
       "answer": "base verb",
       "accept": [
         "bare infinitive",
-        "infinitive without to"
+        "infinitive without to",
+        "base form",
+        "infinitive",
+        "verb"
       ],
       "table": "cau-forms"
     },
@@ -1087,6 +1090,9 @@
       "verb": "forma",
       "person": "un mal suceso (me robaron el celular)",
       "answer": "had",
+      "accept": [
+        "got"
+      ],
       "table": "cau-forms"
     },
     {

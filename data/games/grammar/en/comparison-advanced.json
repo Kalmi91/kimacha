@@ -102,6 +102,15 @@
                 "es": "Cuanto antes salgas, más temprano llegas.",
                 "de": "Je früher du losgehst, desto früher kommst du an."
               }
+            },
+            {
+              "es": "The less you worry, the better you sleep.",
+              "tr": {
+                "hu": "Minél kevésbé aggódsz, annál jobban alszol.",
+                "en": "The less you worry, the better you sleep.",
+                "es": "Cuanto menos te preocupas, mejor duermes.",
+                "de": "Je weniger du dir Sorgen machst, desto besser schläfst du."
+              }
             }
           ]
         }
@@ -224,10 +233,10 @@
       "items": [
         {
           "text": {
-            "hu": "By far a nagy különbséget emeli ki: by far the best. A sorszám: the second largest. A kevésre the least + melléknév: the least expensive. One of the után többes szám áll.",
-            "en": "By far stresses a big gap: by far the best. An ordinal: the second largest. For little the least + adjective: the least expensive. After one of the comes a plural.",
-            "es": "By far resalta una gran diferencia: by far the best. Un ordinal: the second largest. Para lo menos the least + adjetivo: the least expensive. Después de one of the va un plural.",
-            "de": "By far betont einen großen Abstand: by far the best. Eine Ordnungszahl: the second largest. Für das Wenigste the least + Adjektiv: the least expensive. Nach one of the steht der Plural."
+            "hu": "By far a nagy különbséget emeli ki: by far the best. A sorszám: the second largest. A kevésre the least + melléknév: the least expensive. One of the után többes szám áll. Az easily is erősít: easily the best.",
+            "en": "By far stresses a big gap: by far the best. An ordinal: the second largest. For little the least + adjective: the least expensive. After one of the comes a plural. Easily also stresses: easily the best.",
+            "es": "By far resalta una gran diferencia: by far the best. Un ordinal: the second largest. Para lo menos the least + adjetivo: the least expensive. Después de one of the va un plural. Easily también refuerza: easily the best.",
+            "de": "By far betont einen großen Abstand: by far the best. Eine Ordnungszahl: the second largest. Für das Wenigste the least + Adjektiv: the least expensive. Nach one of the steht der Plural. Easily verstärkt ebenfalls: easily the best."
           },
           "examples": [
             {
@@ -318,6 +327,24 @@
   },
   "glossary": [
     {
+      "word": "ease",
+      "gloss": {
+        "hu": "könnyedség, könnyedén csinál",
+        "en": "no difficulty",
+        "es": "facilidad",
+        "de": "Leichtigkeit"
+      }
+    },
+    {
+      "word": "easily",
+      "gloss": {
+        "hu": "könnyedén, simán",
+        "en": "with no difficulty",
+        "es": "fácilmente, sin duda",
+        "de": "leicht, mit Abstand"
+      }
+    },
+    {
       "word": "careful",
       "gloss": {
         "hu": "óvatos",
@@ -372,15 +399,6 @@
       }
     },
     {
-      "word": "larger",
-      "gloss": {
-        "hu": "nagyobb",
-        "en": "bigger",
-        "es": "más grande",
-        "de": "größer"
-      }
-    },
-    {
       "word": "largest",
       "gloss": {
         "hu": "legnagyobb",
@@ -390,21 +408,21 @@
       }
     },
     {
+      "word": "lesser",
+      "gloss": {
+        "hu": "kisebb (kevésbé fontos)",
+        "en": "smaller in importance",
+        "es": "menor",
+        "de": "geringer"
+      }
+    },
+    {
       "word": "nearly",
       "gloss": {
         "hu": "majdnem",
         "en": "almost",
         "es": "casi",
         "de": "fast"
-      }
-    },
-    {
-      "word": "oldest",
-      "gloss": {
-        "hu": "legidősebb",
-        "en": "the most old",
-        "es": "el más viejo",
-        "de": "ältester"
       }
     },
     {
@@ -816,36 +834,36 @@
     },
     {
       "id": "cmp-10",
-      "sentence": "He is much ___ than I thought.",
+      "sentence": "It is ___ the best restaurant in town.",
       "options": [
-        "more old",
-        "older",
-        "oldest"
+        "easy",
+        "easily",
+        "ease"
       ],
       "correct": 1,
       "why": {
-        "hu": "Rövid melléknév középfoka: older than.",
-        "en": "The comparative of a short adjective: older than.",
-        "es": "El comparativo de un adjetivo corto: older than.",
-        "de": "Der Komparativ eines kurzen Adjektivs: older than."
+        "hu": "A felsőfok erősítése határozószóval: easily the best.",
+        "en": "Strengthening a superlative with an adverb: easily the best.",
+        "es": "Reforzar un superlativo con un adverbio: easily the best.",
+        "de": "Verstärkung eines Superlativs mit einem Adverb: easily the best."
       },
       "wrong": {
-        "more old": {
-          "hu": "Az old rövid melléknév, ezért -er kell: older, nem more old.",
-          "en": "Old is a short adjective, so it takes -er: older, not more old.",
-          "es": "Old es un adjetivo corto, por eso lleva -er: older, no more old.",
-          "de": "Old ist ein kurzes Adjektiv, deshalb nimmt es -er: older, nicht more old."
+        "easy": {
+          "hu": "Az easy melléknév; a felsőfok előtt határozószó kell (easily).",
+          "en": "Easy is an adjective; before a superlative you need an adverb (easily).",
+          "es": "Easy es un adjetivo; antes de un superlativo hace falta un adverbio (easily).",
+          "de": "Easy ist ein Adjektiv; vor einem Superlativ braucht man ein Adverb (easily)."
         },
-        "oldest": {
-          "hu": "Az oldest felsőfok; a than középfokot kér.",
-          "en": "Oldest is a superlative; than asks for a comparative.",
-          "es": "Oldest es un superlativo; than pide un comparativo.",
-          "de": "Oldest ist ein Superlativ; than verlangt einen Komparativ."
+        "ease": {
+          "hu": "Az ease főnév vagy ige; a felsőfok előtt határozószó kell (easily).",
+          "en": "Ease is a noun or a verb; before a superlative you need an adverb (easily).",
+          "es": "Ease es un sustantivo o un verbo; antes de un superlativo hace falta un adverbio (easily).",
+          "de": "Ease ist ein Nomen oder ein Verb; vor einem Superlativ braucht man ein Adverb (easily)."
         }
       },
       "examples": [
-        "She is much younger than me.",
-        "It is much bigger than I thought."
+        "She is easily the fastest.",
+        "This is easily the worst."
       ]
     },
     {
@@ -986,36 +1004,36 @@
     },
     {
       "id": "cmp-15",
-      "sentence": "This is the second ___ city in the country.",
+      "sentence": "The ___ you worry, the better you sleep.",
       "options": [
-        "largest",
-        "larger",
-        "large"
+        "less",
+        "least",
+        "lesser"
       ],
       "correct": 0,
       "why": {
-        "hu": "A sorszám után felsőfok áll: the second largest.",
-        "en": "After an ordinal comes a superlative: the second largest.",
-        "es": "Después de un ordinal va un superlativo: the second largest.",
-        "de": "Nach einer Ordnungszahl steht ein Superlativ: the second largest."
+        "hu": "A the … the szerkezetben középfok áll: the less.",
+        "en": "The “the … the” structure takes a comparative: the less.",
+        "es": "La estructura «the … the» lleva un comparativo: the less.",
+        "de": "Die Struktur „the … the“ nimmt einen Komparativ: the less."
       },
       "wrong": {
-        "larger": {
-          "hu": "A larger középfok; a the second után felsőfok kell.",
-          "en": "Larger is a comparative; after the second you need a superlative.",
-          "es": "Larger es un comparativo; después de the second hace falta un superlativo.",
-          "de": "Larger ist ein Komparativ; nach the second braucht man einen Superlativ."
+        "least": {
+          "hu": "A least felsőfok; a the … the szerkezetben középfok kell (less).",
+          "en": "Least is a superlative; the “the … the” structure needs a comparative (less).",
+          "es": "Least es un superlativo; la estructura «the … the» pide un comparativo (less).",
+          "de": "Least ist ein Superlativ; die Struktur „the … the“ verlangt einen Komparativ (less)."
         },
-        "large": {
-          "hu": "A large alapfok; a the second után felsőfok kell.",
-          "en": "Large is the base form; after the second you need a superlative.",
-          "es": "Large es el grado base; después de the second hace falta un superlativo.",
-          "de": "Large ist die Grundform; nach the second braucht man einen Superlativ."
+        "lesser": {
+          "hu": "A lesser nem a less helyettesítője mennyiségnél; less kell.",
+          "en": "Lesser does not replace less for quantity; you need less.",
+          "es": "Lesser no reemplaza a less para cantidad; hace falta less.",
+          "de": "Lesser ersetzt less bei Mengen nicht; man braucht less."
         }
       },
       "examples": [
-        "It is the third biggest.",
-        "He is the second tallest."
+        "The less you spend, the more you save.",
+        "The less he talks, the better."
       ]
     },
     {

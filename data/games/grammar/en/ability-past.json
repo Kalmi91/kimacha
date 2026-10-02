@@ -466,10 +466,10 @@
       },
       "wrong": {
         "could": {
-          "hu": "A could általános képességet jelöl; itt egyetlen sikeres alkalomról van szó.",
-          "en": "Could marks a general ability; here it is one successful occasion.",
-          "es": "Could marca una habilidad general; aquí se trata de una sola ocasión lograda.",
-          "de": "Could markiert eine allgemeine Fähigkeit; hier geht es um eine einzelne gelungene Gelegenheit."
+          "hu": "A could általános képességet jelöl; itt egyetlen sikeres alkalomról van szó. Köznyelvben hallani a could-ot, de konkrét sikerre a standard a was able to / managed to.",
+          "en": "Could marks a general ability; here it is one successful occasion. In casual speech you hear could, but for one concrete success the standard is was able to / managed to.",
+          "es": "Could marca una habilidad general; aquí se trata de una sola ocasión lograda. En el habla informal se oye could, pero para un logro concreto el estándar pide was able to / managed to.",
+          "de": "Could markiert eine allgemeine Fähigkeit; hier geht es um eine einzelne gelungene Gelegenheit. In der Umgangssprache hört man could, aber für einen konkreten Erfolg ist was able to / managed to der Standard."
         },
         "can": {
           "hu": "A can jelen idejű; a mondat múltra (was locked) vonatkozik.",
@@ -500,10 +500,10 @@
       },
       "wrong": {
         "could": {
-          "hu": "A could általános képességet jelöl; a yesterday egy konkrét alkalmat jelez.",
-          "en": "Could marks a general ability; yesterday points to one specific occasion.",
-          "es": "Could marca una habilidad general; yesterday señala una ocasión concreta.",
-          "de": "Could markiert eine allgemeine Fähigkeit; yesterday weist auf eine bestimmte Gelegenheit."
+          "hu": "A could általános képességet jelöl; a yesterday egy konkrét alkalmat jelez. Köznyelvben hallani a could-ot, de konkrét sikerre a standard a was able to / managed to.",
+          "en": "Could marks a general ability; yesterday points to one specific occasion. In casual speech you hear could, but for one concrete success the standard is was able to / managed to.",
+          "es": "Could marca una habilidad general; yesterday señala una ocasión concreta. En el habla informal se oye could, pero para un logro concreto el estándar pide was able to / managed to.",
+          "de": "Could markiert eine allgemeine Fähigkeit; yesterday weist auf eine bestimmte Gelegenheit. In der Umgangssprache hört man could, aber für einen konkreten Erfolg ist was able to / managed to der Standard."
         },
         "can": {
           "hu": "A can jelen idejű; a yesterday múltat jelez.",
@@ -806,10 +806,10 @@
       },
       "wrong": {
         "could": {
-          "hu": "A could általános képességet jelöl; itt egyetlen sikeres alkalom van (in the end).",
-          "en": "Could marks a general ability; here it is one successful occasion (in the end).",
-          "es": "Could marca una habilidad general; aquí es una sola ocasión lograda (in the end).",
-          "de": "Could markiert eine allgemeine Fähigkeit; hier ist es eine einzelne gelungene Gelegenheit (in the end)."
+          "hu": "A could általános képességet jelöl; itt egyetlen sikeres alkalom van (in the end). Köznyelvben hallani a could-ot, de konkrét sikerre a standard a was able to / managed to.",
+          "en": "Could marks a general ability; here it is one successful occasion (in the end). In casual speech you hear could, but for one concrete success the standard is was able to / managed to.",
+          "es": "Could marca una habilidad general; aquí es una sola ocasión lograda (in the end). En el habla informal se oye could, pero para un logro concreto el estándar pide was able to / managed to.",
+          "de": "Could markiert eine allgemeine Fähigkeit; hier ist es eine einzelne gelungene Gelegenheit (in the end). In der Umgangssprache hört man could, aber für einen konkreten Erfolg ist was able to / managed to der Standard."
         },
         "can": {
           "hu": "A can jelen idejű; a mondat múltra vonatkozik.",
@@ -1009,7 +1009,8 @@
       "answer": "was able to",
       "accept": [
         "were able to",
-        "managed to"
+        "managed to",
+        "succeeded in"
       ],
       "table": "abp-forms"
     },
@@ -1021,7 +1022,8 @@
       "answer": "managed to",
       "accept": [
         "was able to",
-        "were able to"
+        "were able to",
+        "succeeded in"
       ],
       "table": "abp-forms"
     },
@@ -1033,7 +1035,16 @@
       "answer": "could not",
       "accept": [
         "couldn't",
-        "couldn’t"
+        "was not able to",
+        "wasn't able to",
+        "were not able to",
+        "weren't able to",
+        "did not manage to",
+        "didn't manage to",
+        "couldn’t",
+        "wasn’t able to",
+        "weren’t able to",
+        "didn’t manage to"
       ],
       "table": "abp-forms"
     },
@@ -1043,6 +1054,10 @@
       "verb": "forma",
       "person": "oportunidad perdida (podría haber)",
       "answer": "could have",
+      "accept": [
+        "could've",
+        "could’ve"
+      ],
       "table": "abp-forms"
     },
     {
@@ -1053,7 +1068,10 @@
       "answer": "could not have",
       "accept": [
         "couldn't have",
-        "couldn’t have"
+        "cannot have",
+        "can't have",
+        "couldn’t have",
+        "can’t have"
       ],
       "table": "abp-forms"
     },
