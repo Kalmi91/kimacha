@@ -244,7 +244,7 @@
               "tr": {
                 "hu": "Azon gondolkodtam, tudnál-e segíteni.",
                 "en": "I was wondering if you could help me.",
-                "es": "Estaba pensando si podrías ayudarme.",
+                "es": "Me preguntaba si podrías ayudarme.",
                 "de": "Ich habe mich gefragt, ob du mir helfen könntest."
               }
             }
@@ -1282,6 +1282,9 @@
       "verb": "forma",
       "person": "en cierta medida (to ___ extent)",
       "answer": "some",
+      "accept": [
+        "a certain"
+      ],
       "table": "hdg-forms"
     },
     {
@@ -1515,7 +1518,7 @@
       "tr": {
         "hu": "Azon gondolkodtam, tudnál-e segíteni.",
         "en": "I was wondering if you could help me.",
-        "es": "Estaba pensando si podrías ayudarme.",
+        "es": "Me preguntaba si podrías ayudarme.",
         "de": "Ich habe mich gefragt, ob du mir helfen könntest."
       },
       "options": [
@@ -1583,7 +1586,7 @@
           "en": "It is likely that the economy will recover."
         },
         {
-          "es": "Estaba pensando si podrías ayudarme.",
+          "es": "Me preguntaba si podrías ayudarme.",
           "en": "I was wondering if you could help me."
         }
       ]
