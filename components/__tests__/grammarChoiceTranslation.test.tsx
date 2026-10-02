@@ -1,0 +1,129 @@
+// FB464 (PLAN-fb1002b 12. lépés), Kálmán: „ide is tegyél egy mondat fordítást": a választós (gap) és a jelölős
+// (mark) tétel mondatának fordítása az F-gomb mögött van, ugyanúgy, mint az átírás-tételnél; ha a tételnek
+// nincs `tr`-je (scripts/grammar-translate.py még nem futott), nincs gomb. Kézzel írt `tr`-es fixture.
+jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
+
+import { act, fireEvent, render, screen } from '@testing-library/react-native';
+
+import GrammarDrill from '../grammar/GrammarDrill';
+import type { GrammarTopicData } from '@/lib/games/content';
+import { getDb } from '@/lib/database';
+import { ThemeProvider } from '@/lib/ThemeContext';
+
+const four = (s: string) => ({ hu: s, en: s, es: s, de: s });
+
+const gap = (id: string, tr?: { hu: string; en: string; es: string; de: string }) => ({
+  id,
+  sentence: 'De niño, mi abuela siempre ___ pan los domingos.',
+  options: ['hacía', 'hizo', 'hará'],
+  correct: 0,
+  why: four('why'),
+  wrong: { hizo: four('x'), hará: four('x') },
+  examples: ['Siempre me contaba historias.'],
+  ...(tr ? { tr } : {}),
+});
+
+const TR = {
+  hu: 'Gyerekként a nagyim mindig kenyeret sütött vasárnaponként.',
+  en: 'As a child, my grandmother always baked bread on Sundays.',
+  es: 'De niño, mi abuela siempre hacía pan los domingos.',
+  de: 'Als Kind backte meine Großmutter sonntags immer Brot.',
+};
+
+const withTr: GrammarTopicData = {
+  topic: 'test-tr',
+  level: 'A2',
+  title: four('t'),
+  rule: four('r'),
+  items: [gap('g1', TR)],
+};
+
+const withoutTr: GrammarTopicData = { ...withTr, topic: 'test-no-tr', items: [gap('g2')] };
+
+const markWithTr: GrammarTopicData = {
+  ...withTr,
+  topic: 'test-mark-tr',
+  items: [
+    {
+      id: 'm1',
+      kind: 'mark',
+      sentence: 'Mi hermana come una manzana.',
+      target: 'verb',
+      answer: 'come',
+      why: four('why'),
+      wrong: { hermana: four('x') },
+      examples: ['El niño lee un libro.'],
+      tr: { hu: 'A húgom almát eszik.', en: 'My sister eats an apple.', es: 'Mi hermana come una manzana.', de: 'Meine Schwester isst einen Apfel.' },
+    },
+  ],
+};
+
+const flush = async () => {
+  for (let i = 0; i < 3; i++) {
+    await act(async () => {
+      await Promise.resolve();
+    });
+  }
+};
+
+const drill = (topic: GrammarTopicData, contentLang = 'en') => (
+  <ThemeProvider>
+    <GrammarDrill topic={topic} learnedLang="es" contentLang={contentLang} onFinish={jest.fn()} kinds={['choice']} />
+  </ThemeProvider>
+);
+
+describe.each([
+  ['classic', 'classic'],
+  ['brutal', 'brand'],
+])('választós tétel mondat-fordítása (FB464), %s paletta', (_name, palette) => {
+  beforeEach(async () => {
+    await getDb().setGrammarPalette(palette as 'classic' | 'brand');
+  });
+
+  it('van tr: az F-gomb ott van, a fordítás alapból rejtett, az F-re a felület nyelvén megjelenik, újra F-re eltűnik', async () => {
+    render(drill(withTr, 'hu'));
+    await flush();
+
+    expect(screen.queryByTestId('choice-translation')).toBeNull();
+    fireEvent.press(screen.getByTestId('choice-f'));
+    expect(screen.getByTestId('choice-translation')).toHaveTextContent(TR.hu);
+    fireEvent.press(screen.getByTestId('choice-f'));
+    expect(screen.queryByTestId('choice-translation')).toBeNull();
+  });
+
+  it('a felület nyelvén kívüli nyelvnél az angol fordítás a tartalék', async () => {
+    render(drill(withTr, 'xx'));
+    await flush();
+    fireEvent.press(screen.getByTestId('choice-f'));
+    expect(screen.getByTestId('choice-translation')).toHaveTextContent(TR.en);
+  });
+
+  it('nincs tr: nincs F-gomb és nincs fordítás', async () => {
+    render(drill(withoutTr));
+    await flush();
+    expect(screen.queryByTestId('choice-f')).toBeNull();
+    expect(screen.queryByTestId('choice-translation')).toBeNull();
+  });
+
+  it('a jelölős (mark) tételnél is ugyanígy', async () => {
+    render(drill(markWithTr, 'de'));
+    await flush();
+    fireEvent.press(screen.getByTestId('choice-f'));
+    expect(screen.getByTestId('choice-translation')).toHaveTextContent('Meine Schwester isst einen Apfel.');
+  });
+
+  it('a fordítás válasz után is ott marad, és a következő tételnél újra zárt', async () => {
+    const topic: GrammarTopicData = { ...withTr, items: [gap('g1', TR), gap('g3', TR)] };
+    render(drill(topic, 'en'));
+    await flush();
+
+    fireEvent.press(screen.getByTestId('choice-f'));
+    fireEvent.press(screen.getAllByTestId('grammar-option')[0]);
+    expect(screen.getByTestId('choice-translation')).toHaveTextContent(TR.en);
+
+    fireEvent.press(screen.getByTestId('grammar-next'));
+    await flush();
+    expect(screen.queryByTestId('choice-translation')).toBeNull();
+    expect(screen.getByTestId('choice-f')).toBeTruthy();
+  });
+});
