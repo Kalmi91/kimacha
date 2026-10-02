@@ -25,6 +25,7 @@ import {
   unitsForLevel,
 } from '@/lib/grammar/syllabus';
 import { lessonBadgePercent, lessonScoresByTopic } from '@/lib/grammar/lessonScore';
+import { lessonTestPassedTopics } from '@/lib/grammar/lessonTest';
 import TrialBadge from '@/components/TrialBadge';
 import { DEFAULT_WEEKLY_GOAL_MINUTES } from '@/lib/usageStats';
 import FeedbackButton from '@/components/FeedbackModal';
@@ -61,6 +62,8 @@ export default function GrammarSyllabusScreen() {
   const [progress, setProgress] = useState<Map<string, TopicProgress>>(new Map());
   // FB328: leckénkénti kumulált helyes-arány, a sor jobb szélén lévő NN% jelvényhez.
   const [percents, setPercents] = useState<Map<string, number>>(new Map());
+  // PLAN-vizsga B. szakasz: a lecke végi teszten átment leckék ("Test passed" jel).
+  const [testPassed, setTestPassed] = useState<Set<string>>(new Set());
   // NY21: streak-matrica + heti cél doboz (a meglévő getStreak / heti cél / használat értékeiből).
   const [streak, setStreak] = useState(0);
   const [weeklyGoal, setWeeklyGoal] = useState(DEFAULT_WEEKLY_GOAL_MINUTES);
@@ -88,6 +91,7 @@ export default function GrammarSyllabusScreen() {
     // FB328: ugyanabból a lekérésből, külön DB-hívás nélkül.
     // FB415: a lecke %-a az összes fajta átlaga (a meg nem csinált 0), nem a kumulált jó-arány.
     setPercents(lessonScoresByTopic(rows, (id) => lessonKinds(target, id)));
+    setTestPassed(lessonTestPassedTopics(rows));
     setStreak((await db.getStreak())?.current_count ?? 0);
     setWeeklyGoal(await db.getWeeklyGoalMinutes());
     setWeekMinutes((await db.getUsageStats()).thisWeek);
@@ -183,7 +187,7 @@ export default function GrammarSyllabusScreen() {
                         {topic.title[contentLang] ?? topic.title.en}
                       </Text>
                     </View>
-                    {tier || isDone || hasTrial ? (
+                    {tier || isDone || hasTrial || testPassed.has(topic.id) ? (
                       <View style={styles.brutalStickers}>
                         {tier === 'core-plus' ? (
                           <Sticker testID={`grammar-core-plus-${topic.id}`} label={s.grammar.corePlusTag} fill="paper" rotate={-4} />
@@ -191,6 +195,9 @@ export default function GrammarSyllabusScreen() {
                           <Sticker testID={`grammar-core-${topic.id}`} label={s.grammar.coreTag} fill="paper" rotate={-4} />
                         ) : null}
                         {isDone ? <Sticker label={s.grammar.doneTag} fill="a" rotate={5} /> : null}
+                        {testPassed.has(topic.id) ? (
+                          <Sticker testID={`grammar-test-passed-${topic.id}`} label={s.lessonTest.passedTag} fill="b" rotate={-3} />
+                        ) : null}
                         {/* PLAN-fb0929 7. lépés (D1): az új feladat-fajtás két lecke jelvénye. */}
                         {hasTrial ? <TrialBadge testID={`trial-badge-${topic.id}`} /> : null}
                       </View>
@@ -346,6 +353,11 @@ export default function GrammarSyllabusScreen() {
                               >
                                 {badge}
                               </Text>
+                              {testPassed.has(topic.id) ? (
+                                <Text testID={`grammar-test-passed-${topic.id}`} style={[styles.topicBadge, { color: colors.success }]}>
+                                  ✓ {s.lessonTest.passedTag}
+                                </Text>
+                              ) : null}
                             </View>
                           </Pressable>
                         );

@@ -21,6 +21,8 @@ type Props = {
   /** Több jelentésű szó kis mondata; a `*jelölt*` rész kiemelve (PLAN-tobbjelentes). */
   hint?: string;
   answer: string;
+  /** További elfogadott válaszok (pl. a nyelvtani teszt mondat-átírásánál); a hibás után az `answer` látszik. */
+  accept?: string[];
   sentence: boolean;
   /** A tanult nyelv kódja, a placeholder feliratához. */
   targetLang: string;
@@ -28,7 +30,7 @@ type Props = {
   onDone: (correct: boolean) => void;
 };
 
-export default function ExamTypeCard({ prompt, hint, answer, sentence, targetLang, strictAccents, onDone }: Props) {
+export default function ExamTypeCard({ prompt, hint, answer, accept, sentence, targetLang, strictAccents, onDone }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -37,10 +39,13 @@ export default function ExamTypeCard({ prompt, hint, answer, sentence, targetLan
   const [missed, setMissed] = useState(false);
 
   const check = () => {
-    const grade = sentence
-      ? gradeSentenceAnswer(stripSentencePunct(typed), stripSentencePunct(answer), strictAccents)
-      : gradePcicAnswer(typed, answer, strictAccents);
-    if (suggestedGrade(grade) === 'good') onDone(true);
+    const ok = [answer, ...(accept ?? [])].some((target) => {
+      const grade = sentence
+        ? gradeSentenceAnswer(stripSentencePunct(typed), stripSentencePunct(target), strictAccents)
+        : gradePcicAnswer(typed, target, strictAccents);
+      return suggestedGrade(grade) === 'good';
+    });
+    if (ok) onDone(true);
     else setMissed(true);
   };
 
