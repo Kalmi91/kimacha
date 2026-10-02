@@ -104,19 +104,28 @@ describe('GrammarDrill: form item', () => {
     fireEvent.press(screen.getByTestId('grammar-next'));
     expect(onFinish).toHaveBeenCalledWith(1, 1);
   });
+});
 
-  it('accepts an alternative from the accept list, with a typographic apostrophe too', () => {
+// PLAN-fb1002 10. lépés: a form item `accept` mezője működik (két helyes alak).
+describe('GrammarDrill: form item accept', () => {
+  const withAccept: LessonV2 = { ...lesson, items: [{ ...(lesson.items[1] as object), accept: ['somos también'] } as LessonV2['items'][number]] };
+
+  it('accepts an alternative form from accept, and still rejects other answers', () => {
     const onFinish = jest.fn();
-    const formItem = { ...(lesson.items[1] as Extract<LessonV2['items'][number], { kind: 'form' }>), answer: 'are not', accept: ["aren't"] };
-    const topic: LessonV2 = { ...lesson, items: [formItem] };
-    render(
-      <GrammarDrill topic={topic} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['choice', 'match', 'form']} />
-    );
-
-    fireEvent.changeText(screen.getByTestId('formInput'), 'Aren’t');
+    render(<GrammarDrill topic={withAccept} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['form']} />);
+    fireEvent.changeText(screen.getByTestId('formInput'), 'Somos también');
     fireEvent.press(screen.getByTestId('formCheck'));
     fireEvent.press(screen.getByTestId('grammar-next'));
     expect(onFinish).toHaveBeenCalledWith(1, 1);
+  });
+
+  it('a wrong answer is still wrong when accept exists', () => {
+    const onFinish = jest.fn();
+    render(<GrammarDrill topic={withAccept} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['form']} />);
+    fireEvent.changeText(screen.getByTestId('formInput'), 'son');
+    fireEvent.press(screen.getByTestId('formCheck'));
+    fireEvent.press(screen.getByTestId('grammar-next'));
+    expect(onFinish).toHaveBeenCalledWith(0, 1);
   });
 });
 

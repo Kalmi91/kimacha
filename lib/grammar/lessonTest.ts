@@ -25,7 +25,6 @@ import {
 import { buildGrammarRound, grammarRoundItemKind, isChoiceRoundItem, type GrammarRoundItem } from '@/lib/games/grammarChoice';
 import { scoredKinds } from '@/lib/grammar/syllabus';
 import { kindProgressFromRows } from '@/lib/grammar/lessonScore';
-import { formAnswerForCard } from '@/lib/grammar/formAnswer';
 import { TENSE_NAMES } from '@/lib/grammar/lessonTypes';
 import { t } from '@/lib/i18n';
 import { tileWords } from '@/lib/sentenceCards';
@@ -193,8 +192,8 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
     return {
       id: item.id,
       kind,
-      view: { card: 'type', prompt, hint: s.grammar.formHint, answer: formAnswerForCard(item), sentence: false },
-      review: { question: prompt, answer: formAnswerForCard(item) },
+      view: { card: 'type', prompt, hint: s.grammar.formHint, answer: item.answer, accept: item.accept, sentence: false },
+      review: { question: prompt, answer: item.answer },
     };
   }
   if (isWhyItem(item)) {
