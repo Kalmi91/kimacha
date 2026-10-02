@@ -1,7 +1,8 @@
 // PLAN-vizsga A. szakasz 2. lépés (Kálmán, 2026-10-01, A1 a): a szintválasztó lap A1 sora
 // alatt a vizsga-sor: zárva mennyi hiányzik, nyitva "Ready" + a mentett eredmény.
 
-import { fireEvent, render } from '@testing-library/react-native';
+import { ScrollView } from 'react-native';
+import { fireEvent, render, within } from '@testing-library/react-native';
 
 import Colors from '@/constants/Colors';
 import { setPcicTarget } from '@/data/pcic';
@@ -108,6 +109,43 @@ describe('LevelPickerSheet: vizsga-sor (A1)', () => {
     expect(getAllByTestId('exam-row-A1')).toHaveLength(1);
     expect(queryByTestId('exam-row-A2')).toBeNull();
     expect(queryByTestId('exam-row-B1')).toBeNull();
+  });
+
+  it('4. lépés: A1-B2 mindegyik szint alatt van vizsga-sor, és mindegyik a saját szintjével indul', () => {
+    const levels = ['A1', 'A2', 'B1', 'B2'] as const;
+    const rows = levels.map((level) => ({
+      status: { ...base, level, learned: 120, missing: 0, unlocked: true },
+      onStart: jest.fn(),
+      onPractice: jest.fn(),
+      onGrammar: jest.fn(),
+    }));
+    const { getByTestId, getAllByText } = render(
+      <LevelPickerSheet visible active="A1" cards={[]} colors={Colors.light} title="Level" target="es" exam={rows} onSelect={jest.fn()} onClose={jest.fn()} />,
+    );
+    expect(getAllByText(/Start exam/)).toHaveLength(4);
+    levels.forEach((level, i) => {
+      fireEvent.press(getByTestId(`exam-row-${level}`));
+      expect(rows[i].onStart).toHaveBeenCalledTimes(1);
+      rows.forEach((row, j) => j !== i && expect(row.onStart).not.toHaveBeenCalledTimes(2));
+    });
+    rows.forEach((row) => expect(row.onStart).toHaveBeenCalledTimes(1));
+  });
+
+  it('4. lépés: a szint- és vizsga-sorok görgethető listában vannak, hogy rövid telefonon se vágódjon le az A1 sor', () => {
+    const rows = (['A1', 'A2', 'B1', 'B2'] as const).map((level) => ({
+      status: { ...base, level, learned: 120, missing: 0, unlocked: true },
+      onStart: jest.fn(),
+      onPractice: jest.fn(),
+      onGrammar: jest.fn(),
+    }));
+    const { UNSAFE_getByType, getByText } = render(
+      <LevelPickerSheet visible active="A1" cards={[]} colors={Colors.light} title="Level" target="es" exam={rows} onSelect={jest.fn()} onClose={jest.fn()} />,
+    );
+    const list = within(UNSAFE_getByType(ScrollView));
+    for (const level of ['A1', 'A2', 'B1', 'B2']) expect(list.getByTestId(`exam-row-${level}`)).toBeTruthy();
+    // A cím a görgetett listán kívül marad.
+    expect(getByText('Level')).toBeTruthy();
+    expect(list.queryByText('Level')).toBeNull();
   });
 
   it('a felület sehol nem írja ki a DELE nevet', () => {

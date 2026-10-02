@@ -6,8 +6,8 @@
 
 import type { PcicLevel } from '@/data/pcic';
 
-/** A szintek, amiknek van vizsgájuk. Az első szelet (2-3. lépés) csak A1; a 4. lépés bővíti. */
-export const EXAM_LEVELS: readonly PcicLevel[] = ['A1'];
+/** A szintek, amiknek van vizsgájuk (4. lépés: A1-B2, mind ugyanazzal a szabállyal). */
+export const EXAM_LEVELS: readonly PcicLevel[] = ['A1', 'A2', 'B1', 'B2'];
 
 /** Az eredmény-lap készségei (A4); a tétel `skill`-je dönti el, melyikbe számít. */
 export type ExamSkill = 'words' | 'grammar' | 'reading';

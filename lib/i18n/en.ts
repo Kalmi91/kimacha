@@ -230,8 +230,8 @@ export default {
     resetGrammarTitle: 'Reset grammar progress',
     resetGrammarMessage: 'This clears all grammar lesson and practice progress. Are you sure?',
     // PLAN-vizsga A. szakasz 2. lépés: a __DEV__-only vizsga-vezérlő (csak fejlesztői buildben látszik).
-    devSeedExamA1: 'DEV: set up the A1 exam state',
-    devSeedExamA1Done: 'DEV: A1 exam state is set, open the level sheet',
+    devSeedExamA1: 'DEV: set up the exam state (A1-B2)',
+    devSeedExamA1Done: 'DEV: exam state is set (A1-B2), open the level sheet',
   },
   // PLAN-temak 2A: theme (skin) names and group names for the Settings theme grid.
   skins: {
@@ -502,6 +502,15 @@ export default {
     lockedBody: 'Learn more words and finish a grammar lesson first.',
     emptyBody: 'There is not enough material for the exam yet.',
     back: 'Back',
+    // 6. lépés (2c): az eredmény készségenként; a gyenge pontoknál link a leckére / a szavakra.
+    skillWords: 'Words',
+    skillGrammar: 'Grammar',
+    skillReading: 'Reading',
+    skillStrong: 'Strong',
+    skillWeak: 'Weak',
+    skillReviewLesson: (title: string) => `Review lesson: ${title}`,
+    skillReviewWords: 'Review these words',
+    skillPracticeSentences: 'Practice sentences',
   },
   // PLAN-vizsga C. szakasz (Kálmán, 2026-10-01): az adaptív szintfelmérő feliratai
   // (belépő a szintválasztón, kérdések, eredmény).

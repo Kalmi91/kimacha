@@ -4,7 +4,7 @@
 // nélkül; a hívó adja a kártyákat és a lecke-sorokat.
 
 import { pcicItemsForLevel, type PcicLevel, type PcicTarget } from '@/data/pcic';
-import { doneGrammarTopicProgress, syllabusTopic } from '@/lib/grammar/syllabus';
+import { doneGrammarTopicProgress, hasLesson, syllabusForLevel, syllabusTopic } from '@/lib/grammar/syllabus';
 import type { Sm2Card } from '@/lib/sm2';
 import type { ExamResult } from './types';
 
@@ -48,6 +48,14 @@ export function examUnlock(level: PcicLevel, levelItemIds: string[], cards: Sm2C
 /** A kész leckék közül azok, amik a megadott szint tantervében vannak. */
 export function doneLessonsOfLevel(level: PcicLevel, lang: string, doneTopicIds: Iterable<string>): string[] {
   return [...doneTopicIds].filter((id) => syllabusTopic(id, lang)?.level === level);
+}
+
+/**
+ * Van-e a szinten megírt lecke az adott irányban. Ha nincs (pl. es→en B1), a vizsga sosem nyílhatna
+ * (A4 b: kell egy kész lecke), ezért a szintválasztó nem is kínál ott vizsga-sort.
+ */
+export function levelHasLesson(level: PcicLevel, lang: string): boolean {
+  return syllabusForLevel(level, lang).some((topic) => hasLesson(lang, topic.id));
 }
 
 export type ExamLevelStatus = ExamUnlock & { result?: ExamResult };

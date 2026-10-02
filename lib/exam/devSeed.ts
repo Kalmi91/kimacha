@@ -7,6 +7,7 @@
 import { pcicItemsForLevel, type PcicTarget } from '@/data/pcic';
 import { GRAMMAR_PROGRESS_KEY, hasLesson, syllabusForLevel } from '@/lib/grammar/syllabus';
 import { addDays, sm2NewCard, type Sm2Card } from '@/lib/sm2';
+import { EXAM_LEVELS } from './types';
 
 /** A feloldási küszöb (80%) fölött, hogy a vezérlő által beállított állapot biztosan nyitott legyen. */
 export const DEV_SEED_PERCENT = 85;
@@ -47,4 +48,21 @@ export async function seedA1ExamState(store: SeedStore, target: PcicTarget, toda
   const lesson = a1SeedLesson(target);
   // Az `itemId === topicId` sor minden feladat-fajtát késznek jelent (lib/grammar/syllabus.ts doneGrammarTopicProgress).
   if (lesson) await store.setGameProgress(GRAMMAR_PROGRESS_KEY, lesson, 'done', { correct: 1, total: 1 });
+}
+
+/**
+ * 4. lépés: MINDEN vizsga-szint állapota egyszerre (A1-B2): a szint kártyáinak DEV_SEED_PERCENT%-a
+ * graduált, és az irány minden megírt leckéje kész (egy A2+ vizsga-mondat a korábbi szintek
+ * igeidőit és szavait is használja, ezért a feloldott igeidők a valós útnak megfelelően halmozódnak).
+ * Újrafuttatva ugyanazt állítja be. A hívó előtte `setPcicTarget`-et hív.
+ */
+export async function seedExamState(store: SeedStore, target: PcicTarget, today: string): Promise<void> {
+  for (const level of EXAM_LEVELS) {
+    for (const card of a1SeedCards(pcicItemsForLevel(level).map((i) => i.id), today)) {
+      await store.upsertPcicCard(card);
+    }
+    for (const topic of syllabusForLevel(level, target)) {
+      if (hasLesson(target, topic.id)) await store.setGameProgress(GRAMMAR_PROGRESS_KEY, topic.id, 'done', { correct: 1, total: 1 });
+    }
+  }
 }
