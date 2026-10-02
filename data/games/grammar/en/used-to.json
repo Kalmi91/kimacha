@@ -1,0 +1,1184 @@
+{
+  "schema": 2,
+  "topic": "used_to",
+  "level": "B1",
+  "title": {
+    "hu": "Régi szokások (used to)",
+    "en": "Past Habits (used to)",
+    "es": "Hábitos del pasado (used to)",
+    "de": "Frühere Gewohnheiten (used to)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A used to + alapige olyan múltbeli szokást vagy állapotot ír le, ami ma már nem igaz: „I used to live in Puebla” (régen ott laktam, ma már nem). Hasonlít a spanyol „solía vivir” és az imperfecto „vivía” alakra. Vigyázat: a „be used to” + -ing teljesen mást jelent: hozzászokott (hozzászoktam a hideghez). A used to csak múltban létezik, jelen idejű alakja nincs.",
+        "en": "Used to + base verb describes a habit or state in the past that is no longer true: “I used to live in Puebla” (I lived there before, I don’t now). It is like the Spanish “solía vivir” and the imperfecto “vivía”. Careful: “be used to” + -ing means something completely different: to be accustomed (I’m used to the cold). Used to exists only in the past; it has no present form.",
+        "es": "Used to + verbo base describe un hábito o un estado del pasado que ya no es verdad: «I used to live in Puebla» (antes vivía allí, ya no). Se parece a «solía vivir» y al imperfecto «vivía». Cuidado: «be used to» + -ing significa algo muy distinto: estar acostumbrado (I’m used to the cold). Used to solo existe en pasado; no tiene forma de presente.",
+        "de": "Used to + Grundform beschreibt eine Gewohnheit oder einen Zustand in der Vergangenheit, der heute nicht mehr stimmt: „I used to live in Puebla“ (früher habe ich dort gewohnt, heute nicht mehr). Es ist wie das spanische „solía vivir“ und das Imperfecto „vivía“. Vorsicht: „be used to“ + -ing bedeutet etwas ganz anderes: gewöhnt sein (I’m used to the cold). Used to gibt es nur in der Vergangenheit; eine Präsensform gibt es nicht."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "ut-aux",
+      "title": {
+        "hu": "Melyiket használjam?",
+        "en": "Which one do I use?",
+        "es": "¿Cuál uso?",
+        "de": "Welche nehme ich?"
+      },
+      "header": [
+        {
+          "hu": "Helyzet",
+          "en": "Situation",
+          "es": "Situación",
+          "de": "Situation"
+        },
+        {
+          "hu": "forma",
+          "en": "form",
+          "es": "forma",
+          "de": "Form"
+        }
+      ],
+      "rows": [
+        [
+          "un hábito del pasado, ya no es verdad",
+          "used to"
+        ],
+        [
+          "estar acostumbrado ahora",
+          "be used to"
+        ],
+        [
+          "acostumbrarse (el proceso)",
+          "get used to"
+        ],
+        [
+          "la negación en el pasado",
+          "did not use to"
+        ],
+        [
+          "una acción repetida en el pasado",
+          "would"
+        ],
+        [
+          "un hábito de hoy",
+          "usually"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Alak",
+        "en": "Form",
+        "es": "Forma",
+        "de": "Form"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Állító: used to + alapige, minden személyben ugyanúgy. Tagadás és kérdés a did segítségével: didn’t use to, Did … use to…? Ilyenkor a „used” d-je elmarad.",
+            "en": "Affirmative: used to + base verb, the same for every person. Negative and question with did: didn’t use to, Did … use to…? Then the d of “used” disappears.",
+            "es": "Afirmativa: used to + verbo base, igual para todas las personas. Negación y pregunta con did: didn’t use to, Did … use to…? Entonces desaparece la d de «used».",
+            "de": "Bejahend: used to + Grundform, für alle Personen gleich. Verneinung und Frage mit did: didn’t use to, Did … use to…? Dann fällt das d von „used“ weg."
+          },
+          "examples": [
+            {
+              "es": "I used to play in the street.",
+              "tr": {
+                "hu": "Régen az utcán játszottam.",
+                "en": "I used to play in the street.",
+                "es": "Antes jugaba en la calle.",
+                "de": "Früher habe ich auf der Straße gespielt."
+              }
+            },
+            {
+              "es": "We didn't use to have a car.",
+              "tr": {
+                "hu": "Régen nem volt autónk.",
+                "en": "We didn't use to have a car.",
+                "es": "Antes no teníamos carro.",
+                "de": "Früher hatten wir kein Auto."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A would is kifejezhet ismétlődő múltbeli cselekvést („Every summer we would go to the beach”), de állapotra nem: nem „I would have a dog”, hanem „I used to have a dog”.",
+            "en": "Would can also express a repeated action in the past (“Every summer we would go to the beach”), but not a state: not “I would have a dog”, but “I used to have a dog”.",
+            "es": "Would también puede expresar una acción repetida en el pasado («Every summer we would go to the beach»), pero no un estado: no «I would have a dog», sino «I used to have a dog».",
+            "de": "Would kann auch eine wiederholte Handlung in der Vergangenheit ausdrücken („Every summer we would go to the beach“), aber keinen Zustand: nicht „I would have a dog“, sondern „I used to have a dog“."
+          },
+          "examples": [
+            {
+              "es": "Every summer we would go to the beach.",
+              "tr": {
+                "hu": "Minden nyáron a tengerpartra jártunk.",
+                "en": "Every summer we would go to the beach.",
+                "es": "Cada verano íbamos a la playa.",
+                "de": "Jeden Sommer sind wir an den Strand gefahren."
+              }
+            },
+            {
+              "es": "We used to have a dog.",
+              "tr": {
+                "hu": "Régen volt egy kutyánk.",
+                "en": "We used to have a dog.",
+                "es": "Antes teníamos un perro.",
+                "de": "Früher hatten wir einen Hund."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Hasonlónak látszó szerkezet: be / get used to",
+        "en": "A look-alike structure: be / get used to",
+        "es": "Una estructura parecida: be / get used to",
+        "de": "Eine ähnlich aussehende Struktur: be / get used to"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Be used to + főnév vagy -ing: hozzászokott állapot, ma is igaz. Get used to + főnév vagy -ing: hozzászokik, a folyamat.",
+            "en": "Be used to + noun or -ing: the state of being accustomed, true now. Get used to + noun or -ing: the process of becoming accustomed.",
+            "es": "Be used to + sustantivo o -ing: el estado de estar acostumbrado, verdad ahora. Get used to + sustantivo o -ing: el proceso de acostumbrarse.",
+            "de": "Be used to + Nomen oder -ing: der Zustand, gewöhnt zu sein, gilt jetzt. Get used to + Nomen oder -ing: der Vorgang, sich zu gewöhnen."
+          },
+          "examples": [
+            {
+              "es": "I'm used to getting up early.",
+              "tr": {
+                "hu": "Hozzászoktam a korai keléshez.",
+                "en": "I'm used to getting up early.",
+                "es": "Estoy acostumbrado a levantarme temprano.",
+                "de": "Ich bin es gewohnt, früh aufzustehen."
+              }
+            },
+            {
+              "es": "She got used to living in a big city.",
+              "tr": {
+                "hu": "Megszokta, hogy nagyvárosban él.",
+                "en": "She got used to living in a big city.",
+                "es": "Se acostumbró a vivir en una ciudad grande.",
+                "de": "Sie hat sich daran gewöhnt, in einer Großstadt zu leben."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A spanyol „suelo levantarme temprano” (jelen idejű szokás) angolul nem „I use to get up early”. Jelenre usually / normally áll: „I usually get up early.” A used to csak a múltra való.",
+        "en": "The Spanish “suelo levantarme temprano” (a present habit) is not “I use to get up early” in English. For the present use usually / normally: “I usually get up early.” Used to is only for the past.",
+        "es": "El «suelo levantarme temprano» del español (un hábito presente) no es «I use to get up early» en inglés. Para el presente se usa usually / normally: «I usually get up early.» Used to es solo para el pasado.",
+        "de": "Das spanische „suelo levantarme temprano“ (eine Gewohnheit in der Gegenwart) heißt auf Englisch nicht „I use to get up early“. Für die Gegenwart nimmt man usually / normally: „I usually get up early.“ Used to gilt nur für die Vergangenheit."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A did után a d elmarad: „Did you use to live here?”, „I didn’t use to like fish.” Ez a leggyakoribb hiba: ne írj „didn’t used to”-t.",
+        "en": "After did the d disappears: “Did you use to live here?”, “I didn’t use to like fish.” This is the most common mistake: don’t write “didn’t used to”.",
+        "es": "Después de did desaparece la d: «Did you use to live here?», «I didn’t use to like fish.» Este es el error más común: no escribas «didn’t used to».",
+        "de": "Nach did fällt das d weg: „Did you use to live here?“, „I didn’t use to like fish.“ Das ist der häufigste Fehler: schreibe nicht „didn’t used to“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A be used to / get used to után -ing alak vagy főnév áll, nem alapige: „I’m used to living here”, nem „I’m used to live here”. A used to után ezzel szemben alapige jön: „I used to live here”.",
+        "en": "After be used to / get used to comes an -ing form or a noun, not the base verb: “I’m used to living here”, not “I’m used to live here”. After used to, in contrast, comes the base verb: “I used to live here”.",
+        "es": "Después de be used to / get used to va una forma -ing o un sustantivo, no el verbo base: «I’m used to living here», no «I’m used to live here». Después de used to, en cambio, va el verbo base: «I used to live here».",
+        "de": "Nach be used to / get used to steht eine -ing-Form oder ein Nomen, nicht die Grundform: „I’m used to living here“, nicht „I’m used to live here“. Nach used to dagegen steht die Grundform: „I used to live here“."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A «used to» plusz alapige olyan múltbeli szokást vagy állapotot ír le, ami ma már nem igaz: «I used to live in Puebla». Tagadásban és kérdésben a «d» elmarad: «I didn't use to like fish», «Did you use to live here?». Ismétlődő múltbeli cselekvésre a «would» is jó: «Every summer we would go to the beach», de állapotra nem. A «be used to» plusz «ing» alak mást jelent, hozzászokottat: «I'm used to getting up early». Vigyázat: a jelen idejű szokásra nem «I use to get up early», hanem «I usually get up early».",
+    "en": "«Used to» plus the base verb describes a habit or state in the past that is no longer true: «I used to live in Puebla». In negatives and questions the «d» disappears: «I didn't use to like fish», «Did you use to live here?». For a repeated action in the past «would» also works: «Every summer we would go to the beach», but not for a state. «Be used to» plus an «ing» form means something else, being accustomed: «I'm used to getting up early». Careful: for a present habit it is not «I use to get up early», but «I usually get up early».",
+    "es": "«Used to» más el verbo base describe un hábito o un estado del pasado que ya no es verdad: «I used to live in Puebla». En negaciones y preguntas desaparece la «d»: «I didn't use to like fish», «Did you use to live here?». Para una acción repetida en el pasado también sirve «would»: «Every summer we would go to the beach», pero no para un estado. «Be used to» más una forma «ing» significa otra cosa, estar acostumbrado: «I'm used to getting up early». Cuidado: para un hábito presente no se dice «I use to get up early», sino «I usually get up early».",
+    "de": "«Used to» plus Grundform beschreibt eine Gewohnheit oder einen Zustand in der Vergangenheit, der heute nicht mehr stimmt: «I used to live in Puebla». In Verneinung und Frage fällt das «d» weg: «I didn't use to like fish», «Did you use to live here?». Für eine wiederholte Handlung in der Vergangenheit geht auch «would»: «Every summer we would go to the beach», aber nicht für einen Zustand. «Be used to» plus eine «ing»-Form bedeutet etwas anderes, gewöhnt sein: «I'm used to getting up early». Vorsicht: für eine Gewohnheit in der Gegenwart heißt es nicht «I use to get up early», sondern «I usually get up early»."
+  },
+  "glossary": [
+    {
+      "word": "would",
+      "gloss": {
+        "hu": "régen szokott (múltbeli szokás)",
+        "en": "used for repeated past actions",
+        "es": "solía (acción repetida en el pasado)",
+        "de": "pflegte (wiederholte Handlung in der Vergangenheit)"
+      }
+    },
+    {
+      "word": "getting",
+      "gloss": {
+        "hu": "a get igéből (felkel: get up)",
+        "en": "from the verb get (get up)",
+        "es": "del verbo get (levantarse: get up)",
+        "de": "vom Verb get (aufstehen: get up)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "ut-01",
+      "sentence": "When I was a child, I ___ play in the street every day.",
+      "options": [
+        "use to",
+        "used to",
+        "was used to"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Régi, ma már nem igaz szokás: I used to play.",
+        "en": "A past habit that is no longer true: I used to play.",
+        "es": "Un hábito del pasado que ya no es verdad: I used to play.",
+        "de": "Eine frühere Gewohnheit, die nicht mehr stimmt: I used to play."
+      },
+      "wrong": {
+        "use to": {
+          "hu": "Az állító mondatban a „used to” d-vel áll; a „use to” csak did után jön (didn’t use to).",
+          "en": "In an affirmative sentence it is “used to” with the d; “use to” only comes after did (didn’t use to).",
+          "es": "En una oración afirmativa es «used to» con la d; «use to» solo aparece después de did (didn’t use to).",
+          "de": "Im Aussagesatz heißt es „used to“ mit d; „use to“ steht nur nach did (didn’t use to)."
+        },
+        "was used to": {
+          "hu": "A „was used to” hozzászokottságot jelent, és -ing vagy főnév áll utána; a régi szokáshoz used to + alapige kell.",
+          "en": "“Was used to” means being accustomed and takes -ing or a noun; for a past habit you need used to + base verb.",
+          "es": "«Was used to» significa estar acostumbrado y lleva -ing o un sustantivo; para un hábito del pasado hace falta used to + verbo base.",
+          "de": "„Was used to“ bedeutet gewöhnt sein und steht mit -ing oder Nomen; für eine frühere Gewohnheit braucht man used to + Grundform."
+        }
+      },
+      "examples": [
+        "I used to walk to school.",
+        "She used to live near here."
+      ]
+    },
+    {
+      "id": "ut-02",
+      "sentence": "She ___ live in Puebla, but now she lives in Mexico City.",
+      "options": [
+        "uses to",
+        "is used to",
+        "used to"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Ma már nem igaz állapot: she used to live in Puebla.",
+        "en": "A state that is no longer true: she used to live in Puebla.",
+        "es": "Un estado que ya no es verdad: she used to live in Puebla.",
+        "de": "Ein Zustand, der nicht mehr stimmt: she used to live in Puebla."
+      },
+      "wrong": {
+        "uses to": {
+          "hu": "A used to nem ragozódik jelen időben; „uses to” nem létezik.",
+          "en": "Used to has no present form; “uses to” does not exist.",
+          "es": "Used to no tiene forma de presente; «uses to» no existe.",
+          "de": "Used to hat keine Präsensform; „uses to“ gibt es nicht."
+        },
+        "is used to": {
+          "hu": "Az „is used to” hozzászokottságot jelent és -ing vagy főnév áll utána, nem alapige (live).",
+          "en": "“Is used to” means being accustomed and takes -ing or a noun, not the base verb (live).",
+          "es": "«Is used to» significa estar acostumbrado y lleva -ing o un sustantivo, no el verbo base (live).",
+          "de": "„Is used to“ bedeutet gewöhnt sein und steht mit -ing oder Nomen, nicht mit der Grundform (live)."
+        }
+      },
+      "examples": [
+        "He used to work here.",
+        "They used to be friends."
+      ]
+    },
+    {
+      "id": "ut-03",
+      "sentence": "Did you ___ live here?",
+      "options": [
+        "use to",
+        "used to",
+        "used"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A did után a d elmarad: Did you use to live here?",
+        "en": "After did the d disappears: Did you use to live here?",
+        "es": "Después de did desaparece la d: Did you use to live here?",
+        "de": "Nach did fällt das d weg: Did you use to live here?"
+      },
+      "wrong": {
+        "used to": {
+          "hu": "A did már kifejezi a múltat, ezért a „used” d-je elmarad: Did you use to… (nem „Did you used to…”).",
+          "en": "Did already shows the past, so the d of “used” goes away: Did you use to… (not “Did you used to…”).",
+          "es": "Did ya expresa el pasado, por eso se pierde la d de «used»: Did you use to… (no «Did you used to…»).",
+          "de": "Did zeigt die Vergangenheit schon, deshalb fällt das d von „used“ weg: Did you use to… (nicht „Did you used to…“)."
+        },
+        "used": {
+          "hu": "A „used” egyedül nem elég; a szerkezet use to, és utána jön az alapige (live).",
+          "en": "“Used” alone is not enough; the structure is use to, followed by the base verb (live).",
+          "es": "«Used» solo no basta; la estructura es use to, seguida del verbo base (live).",
+          "de": "„Used“ allein reicht nicht; die Struktur ist use to, danach folgt die Grundform (live)."
+        }
+      },
+      "examples": [
+        "Did she use to work here?",
+        "Did they use to live there?"
+      ]
+    },
+    {
+      "id": "ut-04",
+      "sentence": "I didn't ___ like fish, but now I love it.",
+      "options": [
+        "used to",
+        "use to",
+        "using to"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A didn’t után a d elmarad: I didn’t use to like fish.",
+        "en": "After didn’t the d disappears: I didn’t use to like fish.",
+        "es": "Después de didn’t desaparece la d: I didn’t use to like fish.",
+        "de": "Nach didn’t fällt das d weg: I didn’t use to like fish."
+      },
+      "wrong": {
+        "used to": {
+          "hu": "A didn’t már kifejezi a múltat, ezért a „used” d-je elmarad: didn’t use to.",
+          "en": "Didn’t already shows the past, so the d of “used” goes away: didn’t use to.",
+          "es": "Didn’t ya expresa el pasado, por eso se pierde la d de «used»: didn’t use to.",
+          "de": "Didn’t zeigt die Vergangenheit schon, deshalb fällt das d von „used“ weg: didn’t use to."
+        },
+        "using to": {
+          "hu": "A „using to” nem létező szerkezet; a használt alak use to.",
+          "en": "“Using to” is not an existing structure; the form is use to.",
+          "es": "«Using to» no es una estructura que exista; la forma es use to.",
+          "de": "„Using to“ ist keine existierende Struktur; die Form ist use to."
+        }
+      },
+      "examples": [
+        "She didn't use to drink coffee.",
+        "We didn't use to have a TV."
+      ]
+    },
+    {
+      "id": "ut-05",
+      "sentence": "We ___ have a dog when I was young.",
+      "options": [
+        "would",
+        "are used to",
+        "used to"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A have itt birtoklás, vagyis állapot; állapothoz used to kell, a would nem jó.",
+        "en": "Have here means owning, that is a state; a state takes used to, not would.",
+        "es": "Have aquí significa tener, es decir un estado; un estado lleva used to, no would.",
+        "de": "Have bedeutet hier besitzen, also einen Zustand; ein Zustand verlangt used to, nicht would."
+      },
+      "wrong": {
+        "would": {
+          "hu": "A would ismétlődő cselekvésre jó, állapotra nem; a „would have a dog” hibás.",
+          "en": "Would works for repeated actions, not for states; “would have a dog” is wrong.",
+          "es": "Would sirve para acciones repetidas, no para estados; «would have a dog» es incorrecto.",
+          "de": "Would passt zu wiederholten Handlungen, nicht zu Zuständen; „would have a dog“ ist falsch."
+        },
+        "are used to": {
+          "hu": "Az „are used to” hozzászokottságot jelent, és -ing vagy főnév áll utána; ez nem régi állapot.",
+          "en": "“Are used to” means being accustomed and takes -ing or a noun; it is not an old state.",
+          "es": "«Are used to» significa estar acostumbrado y lleva -ing o un sustantivo; no es un estado antiguo.",
+          "de": "„Are used to“ bedeutet gewöhnt sein und steht mit -ing oder Nomen; das ist kein früherer Zustand."
+        }
+      },
+      "examples": [
+        "We used to have a big house.",
+        "She used to have long hair."
+      ]
+    },
+    {
+      "id": "ut-06",
+      "sentence": "Every summer we ___ go to the beach.",
+      "options": [
+        "would",
+        "were used to",
+        "are used to"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Ismétlődő múltbeli cselekvés: we would go (a used to is megfelelne, de a felsorolt opciók közül a would illik).",
+        "en": "A repeated action in the past: we would go (used to would also work, but of these options would fits).",
+        "es": "Una acción repetida en el pasado: we would go (used to también serviría, pero de estas opciones encaja would).",
+        "de": "Eine wiederholte Handlung in der Vergangenheit: we would go (used to ginge auch, aber von diesen Optionen passt would)."
+      },
+      "wrong": {
+        "were used to": {
+          "hu": "A „were used to” hozzászokottságot jelent, és -ing vagy főnév kell utána (were used to going).",
+          "en": "“Were used to” means being accustomed and needs -ing or a noun after it (were used to going).",
+          "es": "«Were used to» significa estar acostumbrado y necesita -ing o un sustantivo después (were used to going).",
+          "de": "„Were used to“ bedeutet gewöhnt sein und braucht danach -ing oder ein Nomen (were used to going)."
+        },
+        "are used to": {
+          "hu": "Az „are used to” jelen idejű hozzászokottság; a mondat múltbeli szokásról szól.",
+          "en": "“Are used to” is a present state of being accustomed; the sentence is about a past habit.",
+          "es": "«Are used to» es un estado presente de estar acostumbrado; la oración trata de un hábito del pasado.",
+          "de": "„Are used to“ ist ein gegenwärtiger Zustand des Gewöhntseins; der Satz handelt von einer Gewohnheit in der Vergangenheit."
+        }
+      },
+      "examples": [
+        "Every day we would walk to school.",
+        "On Sundays she would cook."
+      ]
+    },
+    {
+      "id": "ut-07",
+      "sentence": "These days, I ___ get up at six.",
+      "options": [
+        "use to",
+        "usually",
+        "used to"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A „these days” mai szokásra utal, jelen idejű szokásra usually való: I usually get up at six. A used to csak múltra jó.",
+        "en": "For a present habit (“these days”) use usually: I usually get up at six. Used to is only for the past.",
+        "es": "Para un hábito presente («these days») se usa usually: I usually get up at six. Used to es solo para el pasado.",
+        "de": "Für eine Gewohnheit in der Gegenwart („these days“) nimmt man usually: I usually get up at six. Used to gilt nur für die Vergangenheit."
+      },
+      "wrong": {
+        "use to": {
+          "hu": "A „use to” jelen idejű alak nem létezik (a spanyol „suelo” nem így fordítandó).",
+          "en": "A present form “use to” does not exist (the Spanish “suelo” is not translated this way).",
+          "es": "Una forma de presente «use to» no existe (el «suelo» español no se traduce así).",
+          "de": "Eine Präsensform „use to“ existiert nicht (das spanische „suelo“ wird nicht so übersetzt)."
+        },
+        "used to": {
+          "hu": "A used to múltbeli, ma már nem igaz szokást jelent; a mondat mai szokásról szól (these days).",
+          "en": "Used to means a past habit that is no longer true; the sentence is about a habit today (these days).",
+          "es": "Used to significa un hábito del pasado que ya no es verdad; la oración trata de un hábito de hoy (these days).",
+          "de": "Used to bedeutet eine frühere Gewohnheit, die nicht mehr stimmt; der Satz handelt von einer heutigen Gewohnheit (these days)."
+        }
+      },
+      "examples": [
+        "I usually eat at home.",
+        "She usually works late."
+      ]
+    },
+    {
+      "id": "ut-08",
+      "sentence": "I'm used to ___ up early.",
+      "options": [
+        "get",
+        "got",
+        "getting"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A be used to után -ing alak áll: I’m used to getting up early.",
+        "en": "After be used to comes an -ing form: I’m used to getting up early.",
+        "es": "Después de be used to va una forma -ing: I’m used to getting up early.",
+        "de": "Nach be used to steht eine -ing-Form: I’m used to getting up early."
+      },
+      "wrong": {
+        "get": {
+          "hu": "A be used to után nem alapige jön; az alapige a used to (régi szokás) után áll.",
+          "en": "After be used to the base verb does not follow; the base verb comes after used to (a past habit).",
+          "es": "Después de be used to no va el verbo base; el verbo base va después de used to (un hábito del pasado).",
+          "de": "Nach be used to folgt nicht die Grundform; die Grundform steht nach used to (eine frühere Gewohnheit)."
+        },
+        "got": {
+          "hu": "A got múlt alak, de a be used to után -ing alak kell (getting).",
+          "en": "“Got” is a past form, but after be used to you need the -ing form (getting).",
+          "es": "«Got» es una forma de pasado, pero después de be used to hace falta la forma -ing (getting).",
+          "de": "„Got“ ist eine Vergangenheitsform, aber nach be used to braucht man die -ing-Form (getting)."
+        }
+      },
+      "examples": [
+        "I'm used to working late.",
+        "She's used to living alone."
+      ]
+    },
+    {
+      "id": "ut-09",
+      "sentence": "I'm not used ___ the cold weather.",
+      "options": [
+        "to",
+        "for",
+        "with"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A be used to szerkezetben a to elöljáró áll, és utána főnév jön: I’m not used to the cold weather.",
+        "en": "In be used to the word is the preposition to, followed by a noun: I’m not used to the cold weather.",
+        "es": "En be used to la palabra es la preposición to, seguida de un sustantivo: I’m not used to the cold weather.",
+        "de": "Bei be used to steht die Präposition to, danach ein Nomen: I’m not used to the cold weather."
+      },
+      "wrong": {
+        "for": {
+          "hu": "A be used for más jelentésű (valamire használják); a hozzászokás to-val megy: used to.",
+          "en": "Be used for has a different meaning (something is used for something); getting accustomed takes to: used to.",
+          "es": "Be used for tiene otro significado (algo se usa para algo); acostumbrarse lleva to: used to.",
+          "de": "Be used for hat eine andere Bedeutung (etwas wird für etwas benutzt); das Gewöhnen verlangt to: used to."
+        },
+        "with": {
+          "hu": "A „used with” nem a hozzászokás kifejezése; a helyes szerkezet be used to.",
+          "en": "“Used with” does not express getting accustomed; the correct structure is be used to.",
+          "es": "«Used with» no expresa acostumbrarse; la estructura correcta es be used to.",
+          "de": "„Used with“ drückt das Gewöhnen nicht aus; die korrekte Struktur ist be used to."
+        }
+      },
+      "examples": [
+        "I'm used to the heat.",
+        "She's used to the cold."
+      ]
+    },
+    {
+      "id": "ut-10",
+      "sentence": "She ___ be shy, but now she is very confident.",
+      "options": [
+        "is used to",
+        "used to",
+        "uses to"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Régi állapot, ami már nem igaz: she used to be shy.",
+        "en": "An old state that is no longer true: she used to be shy.",
+        "es": "Un estado antiguo que ya no es verdad: she used to be shy.",
+        "de": "Ein früherer Zustand, der nicht mehr stimmt: she used to be shy."
+      },
+      "wrong": {
+        "is used to": {
+          "hu": "Az „is used to” után -ing vagy főnév kell; a „be” alapige a régi állapothoz used to mellé illik.",
+          "en": "After “is used to” you need -ing or a noun; the base verb “be” goes with used to for an old state.",
+          "es": "Después de «is used to» hace falta -ing o un sustantivo; el verbo base «be» va con used to para un estado antiguo.",
+          "de": "Nach „is used to“ braucht man -ing oder ein Nomen; die Grundform „be“ gehört zu used to für einen früheren Zustand."
+        },
+        "uses to": {
+          "hu": "A used to nem kap jelen idejű -s végződést; az „uses to” nem létezik.",
+          "en": "Used to takes no present -s ending; “uses to” does not exist.",
+          "es": "Used to no lleva la -s del presente; «uses to» no existe.",
+          "de": "Used to bekommt kein -s im Präsens; „uses to“ existiert nicht."
+        }
+      },
+      "examples": [
+        "He used to be a teacher.",
+        "It used to be cheap."
+      ]
+    },
+    {
+      "id": "ut-11",
+      "sentence": "I could not sleep here, but now I’m ___ the heat.",
+      "options": [
+        "use to",
+        "used",
+        "used to"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Mostani hozzászokottság főnévvel: I’m used to the heat.",
+        "en": "A present state of being accustomed, with a noun: I’m used to the heat.",
+        "es": "Un estado presente de estar acostumbrado, con un sustantivo: I’m used to the heat.",
+        "de": "Ein gegenwärtiger Zustand des Gewöhntseins, mit einem Nomen: I’m used to the heat."
+      },
+      "wrong": {
+        "use to": {
+          "hu": "A be mellett a used áll d-vel (I’m used to); a „use to” csak did után jön.",
+          "en": "After be comes used with the d (I’m used to); “use to” only comes after did.",
+          "es": "Después de be va used con la d (I’m used to); «use to» solo aparece después de did.",
+          "de": "Nach be steht used mit d (I’m used to); „use to“ steht nur nach did."
+        },
+        "used": {
+          "hu": "A „used” egyedül kevés; a hozzászokáshoz a to is kell: I’m used to the heat.",
+          "en": "“Used” alone is not enough; to be accustomed you also need to: I’m used to the heat.",
+          "es": "«Used» solo no basta; para acostumbrarse hace falta también to: I’m used to the heat.",
+          "de": "„Used“ allein reicht nicht; fürs Gewöhnen braucht man auch to: I’m used to the heat."
+        }
+      },
+      "examples": [
+        "I'm used to the cold.",
+        "We're used to this city."
+      ]
+    },
+    {
+      "id": "ut-12",
+      "sentence": "We ___ have a car when I was small.",
+      "options": [
+        "didn't use to",
+        "don't use to",
+        "didn't used to"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Múltbeli tagadás: didn’t use to, a d elmarad.",
+        "en": "A negative in the past: didn’t use to, the d disappears.",
+        "es": "Una negación en pasado: didn’t use to, la d desaparece.",
+        "de": "Eine Verneinung in der Vergangenheit: didn’t use to, das d fällt weg."
+      },
+      "wrong": {
+        "don't use to": {
+          "hu": "A don’t jelen idejű; a mondat múltról szól (when I was small), és a use to csak múltban létezik.",
+          "en": "“Don’t” is present; the sentence is about the past (when I was small), and use to only exists in the past.",
+          "es": "«Don’t» es presente; la oración habla del pasado (when I was small), y use to solo existe en pasado.",
+          "de": "„Don’t“ ist Präsens; der Satz handelt von der Vergangenheit (when I was small), und use to gibt es nur in der Vergangenheit."
+        },
+        "didn't used to": {
+          "hu": "A didn’t már kifejezi a múltat, ezért a „used” d-je elmarad; a „didn’t used to” gyakori hiba.",
+          "en": "Didn’t already shows the past, so the d of “used” goes away; “didn’t used to” is a common mistake.",
+          "es": "Didn’t ya expresa el pasado, por eso se pierde la d de «used»; «didn’t used to» es un error común.",
+          "de": "Didn’t zeigt die Vergangenheit schon, deshalb fällt das d von „used“ weg; „didn’t used to“ ist ein häufiger Fehler."
+        }
+      },
+      "examples": [
+        "She didn't use to cook.",
+        "They didn't use to live here."
+      ]
+    },
+    {
+      "id": "ut-13",
+      "sentence": "After a month, she got used to ___ in the new city.",
+      "options": [
+        "live",
+        "living",
+        "lived"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A get used to után -ing alak áll: got used to living.",
+        "en": "After get used to comes an -ing form: got used to living.",
+        "es": "Después de get used to va una forma -ing: got used to living.",
+        "de": "Nach get used to steht eine -ing-Form: got used to living."
+      },
+      "wrong": {
+        "live": {
+          "hu": "A get used to után nem alapige jön, hanem -ing alak (living).",
+          "en": "After get used to comes not the base verb but an -ing form (living).",
+          "es": "Después de get used to no va el verbo base sino una forma -ing (living).",
+          "de": "Nach get used to kommt nicht die Grundform, sondern eine -ing-Form (living)."
+        },
+        "lived": {
+          "hu": "A lived múlt alak; a get used to után az -ing alak kell (living).",
+          "en": "“Lived” is a past form; after get used to you need the -ing form (living).",
+          "es": "«Lived» es una forma de pasado; después de get used to hace falta la forma -ing (living).",
+          "de": "„Lived“ ist eine Vergangenheitsform; nach get used to braucht man die -ing-Form (living)."
+        }
+      },
+      "examples": [
+        "He got used to working at night.",
+        "I got used to waking up early."
+      ]
+    },
+    {
+      "id": "ut-14",
+      "sentence": "He ___ eat meat, but now he doesn't.",
+      "options": [
+        "is used to",
+        "uses to",
+        "used to"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Régi szokás, ami ma már nem igaz: he used to eat meat.",
+        "en": "A past habit that is no longer true: he used to eat meat.",
+        "es": "Un hábito del pasado que ya no es verdad: he used to eat meat.",
+        "de": "Eine frühere Gewohnheit, die nicht mehr stimmt: he used to eat meat."
+      },
+      "wrong": {
+        "is used to": {
+          "hu": "Az „is used to” után -ing vagy főnév kell, és hozzászokottságot jelent; itt régi szokásról van szó.",
+          "en": "After “is used to” you need -ing or a noun, and it means being accustomed; here it is an old habit.",
+          "es": "Después de «is used to» hace falta -ing o un sustantivo, y significa estar acostumbrado; aquí se trata de un hábito antiguo.",
+          "de": "Nach „is used to“ braucht man -ing oder ein Nomen, und es bedeutet gewöhnt sein; hier geht es um eine frühere Gewohnheit."
+        },
+        "uses to": {
+          "hu": "A used to nem kap -s végződést; az „uses to” nem létezik.",
+          "en": "Used to takes no -s ending; “uses to” does not exist.",
+          "es": "Used to no lleva -s; «uses to» no existe.",
+          "de": "Used to bekommt kein -s; „uses to“ existiert nicht."
+        }
+      },
+      "examples": [
+        "She used to smoke.",
+        "They used to travel a lot."
+      ]
+    },
+    {
+      "id": "ut-15",
+      "sentence": "I ___ living alone now. It was strange at first.",
+      "options": [
+        "am used to",
+        "used to",
+        "use to"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Mostani hozzászokottság: I am used to living alone (be used to + -ing).",
+        "en": "A present state of being accustomed: I am used to living alone (be used to + -ing).",
+        "es": "Un estado presente de estar acostumbrado: I am used to living alone (be used to + -ing).",
+        "de": "Ein gegenwärtiger Zustand des Gewöhntseins: I am used to living alone (be used to + -ing)."
+      },
+      "wrong": {
+        "used to": {
+          "hu": "Az egyedül „used to living” hibás; a used to után alapige jön, a hozzászokottsághoz am used to kell.",
+          "en": "The bare “used to living” is wrong; after used to comes the base verb, and being accustomed needs am used to.",
+          "es": "El «used to living» solo es incorrecto; después de used to va el verbo base, y estar acostumbrado necesita am used to.",
+          "de": "Das alleinstehende „used to living“ ist falsch; nach used to kommt die Grundform, und fürs Gewöhntsein braucht man am used to."
+        },
+        "use to": {
+          "hu": "A „use to” csak did után jön, és alapige követi; itt a living -ing alak, tehát am used to kell.",
+          "en": "“Use to” only comes after did and is followed by the base verb; here living is an -ing form, so you need am used to.",
+          "es": "«Use to» solo aparece después de did y lo sigue el verbo base; aquí living es una forma -ing, por eso hace falta am used to.",
+          "de": "„Use to“ steht nur nach did und wird von der Grundform gefolgt; hier ist living eine -ing-Form, deshalb braucht man am used to."
+        }
+      },
+      "examples": [
+        "I'm used to getting up early.",
+        "She's used to the cold."
+      ]
+    },
+    {
+      "id": "ut-16",
+      "sentence": "My grandfather ___ tell us stories every night.",
+      "options": [
+        "was used to",
+        "would",
+        "is used to"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Ismétlődő múltbeli cselekvés: my grandfather would tell us stories.",
+        "en": "A repeated action in the past: my grandfather would tell us stories.",
+        "es": "Una acción repetida en el pasado: my grandfather would tell us stories.",
+        "de": "Eine wiederholte Handlung in der Vergangenheit: my grandfather would tell us stories."
+      },
+      "wrong": {
+        "was used to": {
+          "hu": "A „was used to” után -ing vagy főnév kell (was used to telling); alapige (tell) nem állhat utána.",
+          "en": "After “was used to” you need -ing or a noun (was used to telling); the base verb (tell) cannot follow.",
+          "es": "Después de «was used to» hace falta -ing o un sustantivo (was used to telling); no puede seguir el verbo base (tell).",
+          "de": "Nach „was used to“ braucht man -ing oder ein Nomen (was used to telling); die Grundform (tell) kann nicht folgen."
+        },
+        "is used to": {
+          "hu": "Az „is used to” jelen idejű; a mondat múltbeli szokásról szól.",
+          "en": "“Is used to” is present; the sentence is about a past habit.",
+          "es": "«Is used to» es presente; la oración trata de un hábito del pasado.",
+          "de": "„Is used to“ ist Präsens; der Satz handelt von einer Gewohnheit in der Vergangenheit."
+        }
+      },
+      "examples": [
+        "On Sundays we would visit her.",
+        "He would always say hello."
+      ]
+    },
+    {
+      "id": "ut-17",
+      "sentence": "I ___ to drink coffee, but now I love it.",
+      "options": [
+        "didn't used",
+        "don't use",
+        "didn't use"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Múltbeli tagadás: didn’t use to drink, a d elmarad.",
+        "en": "A negative in the past: didn’t use to drink, the d disappears.",
+        "es": "Una negación en pasado: didn’t use to drink, la d desaparece.",
+        "de": "Eine Verneinung in der Vergangenheit: didn’t use to drink, das d fällt weg."
+      },
+      "wrong": {
+        "didn't used": {
+          "hu": "A didn’t már kifejezi a múltat, ezért a „used” d-je elmarad: didn’t use to.",
+          "en": "Didn’t already shows the past, so the d of “used” goes away: didn’t use to.",
+          "es": "Didn’t ya expresa el pasado, por eso se pierde la d de «used»: didn’t use to.",
+          "de": "Didn’t zeigt die Vergangenheit schon, deshalb fällt das d von „used“ weg: didn’t use to."
+        },
+        "don't use": {
+          "hu": "A don’t jelen idejű; a mondat a múltról szól (but now I love it), ezért didn’t kell.",
+          "en": "“Don’t” is present; the sentence is about the past (but now I love it), so you need didn’t.",
+          "es": "«Don’t» es presente; la oración habla del pasado (but now I love it), por eso hace falta didn’t.",
+          "de": "„Don’t“ ist Präsens; der Satz handelt von der Vergangenheit (but now I love it), deshalb braucht man didn’t."
+        }
+      },
+      "examples": [
+        "I didn't use to sleep well.",
+        "He didn't use to eat fish."
+      ]
+    },
+    {
+      "id": "ut-18",
+      "kind": "form",
+      "verb": "forma",
+      "person": "un hábito del pasado, ya no es verdad",
+      "answer": "used to",
+      "table": "ut-aux"
+    },
+    {
+      "id": "ut-19",
+      "kind": "form",
+      "verb": "forma",
+      "person": "estar acostumbrado ahora",
+      "answer": "be used to",
+      "table": "ut-aux"
+    },
+    {
+      "id": "ut-20",
+      "kind": "form",
+      "verb": "forma",
+      "person": "acostumbrarse (el proceso)",
+      "answer": "get used to",
+      "table": "ut-aux"
+    },
+    {
+      "id": "ut-21",
+      "kind": "form",
+      "verb": "forma",
+      "person": "la negación en el pasado",
+      "answer": "did not use to",
+      "accept": [
+        "didn't use to",
+        "didn’t use to"
+      ],
+      "table": "ut-aux"
+    },
+    {
+      "id": "ut-22",
+      "kind": "form",
+      "verb": "forma",
+      "person": "una acción repetida en el pasado",
+      "answer": "would",
+      "accept": [
+        "used to"
+      ],
+      "table": "ut-aux"
+    },
+    {
+      "id": "ut-23",
+      "kind": "form",
+      "verb": "forma",
+      "person": "un hábito de hoy",
+      "answer": "usually",
+      "accept": [
+        "normally"
+      ],
+      "table": "ut-aux"
+    },
+    {
+      "kind": "why",
+      "id": "ut-24",
+      "es": "I used to play soccer every day.",
+      "target": "used",
+      "tr": {
+        "hu": "Régen minden nap fociztam.",
+        "en": "I used to play soccer every day.",
+        "es": "Antes jugaba fútbol todos los días.",
+        "de": "Früher habe ich jeden Tag Fußball gespielt."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "present perfect: mostanáig tartó szokás",
+            "en": "present perfect: a habit up to now",
+            "es": "presente perfecto: un hábito hasta ahora",
+            "de": "Present Perfect: eine Gewohnheit bis jetzt"
+          },
+          "wrong": {
+            "hu": "A used to azt jelenti, hogy ez a szokás ma már nem igaz; a present perfect mostanáig tartó időt jelölne.",
+            "en": "Used to means this habit is no longer true; the present perfect would show time up to now.",
+            "es": "Used to significa que este hábito ya no es verdad; el presente perfecto indicaría tiempo hasta ahora.",
+            "de": "Used to bedeutet, dass diese Gewohnheit nicht mehr stimmt; das Present Perfect würde Zeit bis jetzt zeigen."
+          }
+        },
+        {
+          "text": {
+            "hu": "folyamatos múlt: egy adott pillanatban zajló cselekvés",
+            "en": "past continuous: an action in progress at a given moment",
+            "es": "pasado continuo: una acción en marcha en un momento dado",
+            "de": "Past Continuous: eine Handlung in einem bestimmten Moment"
+          },
+          "wrong": {
+            "hu": "A mondat ismétlődő szokásról szól (every day), nem egy adott pillanatban zajló cselekvésről.",
+            "en": "The sentence is about a repeated habit (every day), not an action in progress at a given moment.",
+            "es": "La oración trata de un hábito repetido (every day), no de una acción en marcha en un momento dado.",
+            "de": "Der Satz handelt von einer wiederholten Gewohnheit (every day), nicht von einer Handlung in einem bestimmten Moment."
+          }
+        },
+        {
+          "text": {
+            "hu": "used to: múltbeli szokás, ma már nem igaz",
+            "en": "used to: a past habit that is no longer true",
+            "es": "used to: un hábito del pasado que ya no es verdad",
+            "de": "used to: eine frühere Gewohnheit, die nicht mehr stimmt"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "ut-25",
+      "es": "I'm used to getting up early.",
+      "target": "used",
+      "tr": {
+        "hu": "Hozzászoktam a korai keléshez.",
+        "en": "I'm used to getting up early.",
+        "es": "Estoy acostumbrado a levantarme temprano.",
+        "de": "Ich bin es gewohnt, früh aufzustehen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "be used to + -ing: hozzászokott állapot, ma is igaz",
+            "en": "be used to + -ing: being accustomed, true now",
+            "es": "be used to + -ing: estar acostumbrado, verdad ahora",
+            "de": "be used to + -ing: gewöhnt sein, gilt jetzt"
+          }
+        },
+        {
+          "text": {
+            "hu": "used to + alapige: múltbeli szokás",
+            "en": "used to + base verb: a past habit",
+            "es": "used to + verbo base: un hábito del pasado",
+            "de": "used to + Grundform: eine frühere Gewohnheit"
+          },
+          "wrong": {
+            "hu": "A used to + alapige régi szokást jelent; itt az am és az -ing (getting) hozzászokottságot mutat, ami most igaz.",
+            "en": "Used to + base verb means an old habit; here am and the -ing form (getting) show being accustomed, which is true now.",
+            "es": "Used to + verbo base significa un hábito antiguo; aquí am y la forma -ing (getting) muestran estar acostumbrado, que es verdad ahora.",
+            "de": "Used to + Grundform bedeutet eine frühere Gewohnheit; hier zeigen am und die -ing-Form (getting) das Gewöhntsein, das jetzt gilt."
+          }
+        },
+        {
+          "text": {
+            "hu": "egyszerű jelen: gyakoriság",
+            "en": "present simple: frequency",
+            "es": "presente simple: frecuencia",
+            "de": "Present Simple: Häufigkeit"
+          },
+          "wrong": {
+            "hu": "A mondat nem azt mondja, milyen gyakran kel fel, hanem azt, hogy hozzászokott; ezt a be used to fejezi ki.",
+            "en": "The sentence does not say how often I get up but that I am accustomed to it; be used to expresses that.",
+            "es": "La oración no dice con qué frecuencia me levanto sino que estoy acostumbrado; be used to expresa eso.",
+            "de": "Der Satz sagt nicht, wie oft ich aufstehe, sondern dass ich daran gewöhnt bin; das drückt be used to aus."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ut-26",
+      "es": "I usually get up at six.",
+      "target": "usually",
+      "tr": {
+        "hu": "Általában hatkor kelek.",
+        "en": "I usually get up at six.",
+        "es": "Normalmente me levanto a las seis.",
+        "de": "Normalerweise stehe ich um sechs auf."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "used to: múltbeli szokás",
+            "en": "used to: a past habit",
+            "es": "used to: un hábito del pasado",
+            "de": "used to: eine frühere Gewohnheit"
+          },
+          "wrong": {
+            "hu": "A mondat a mai szokásról szól; a used to csak a ma már nem igaz múltbeli szokásra jó.",
+            "en": "The sentence is about a habit today; used to is only for a past habit that is no longer true.",
+            "es": "La oración trata de un hábito de hoy; used to solo sirve para un hábito del pasado que ya no es verdad.",
+            "de": "Der Satz handelt von einer heutigen Gewohnheit; used to gilt nur für eine frühere Gewohnheit, die nicht mehr stimmt."
+          }
+        },
+        {
+          "text": {
+            "hu": "egyszerű jelen + usually: mai szokás",
+            "en": "present simple + usually: a habit today",
+            "es": "presente simple + usually: un hábito de hoy",
+            "de": "Present Simple + usually: eine Gewohnheit heute"
+          }
+        },
+        {
+          "text": {
+            "hu": "folyamatos jelen: éppen most történik",
+            "en": "present continuous: happening right now",
+            "es": "presente continuo: pasa ahora mismo",
+            "de": "Present Continuous: passiert gerade jetzt"
+          },
+          "wrong": {
+            "hu": "A mondat ismétlődő szokásról szól (usually), nem a pillanatnyi cselekvésről.",
+            "en": "The sentence is about a repeated habit (usually), not an action at this moment.",
+            "es": "La oración trata de un hábito repetido (usually), no de una acción en este momento.",
+            "de": "Der Satz handelt von einer wiederholten Gewohnheit (usually), nicht von einer Handlung in diesem Moment."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ut-27",
+      "es": "We would go to the beach every summer.",
+      "target": "would",
+      "tr": {
+        "hu": "Minden nyáron a tengerpartra jártunk.",
+        "en": "We would go to the beach every summer.",
+        "es": "Cada verano íbamos a la playa.",
+        "de": "Jeden Sommer sind wir an den Strand gefahren."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "feltételes mód: elképzelt helyzet",
+            "en": "conditional: an imagined situation",
+            "es": "condicional: una situación imaginada",
+            "de": "Konditional: eine vorgestellte Situation"
+          },
+          "wrong": {
+            "hu": "Itt nincs feltétel (if); a would a every summer miatt ismétlődő múltbeli cselekvést jelöl.",
+            "en": "There is no condition (if) here; because of every summer, would marks a repeated action in the past.",
+            "es": "Aquí no hay condición (if); por every summer, would marca una acción repetida en el pasado.",
+            "de": "Hier gibt es keine Bedingung (if); wegen every summer kennzeichnet would eine wiederholte Handlung in der Vergangenheit."
+          }
+        },
+        {
+          "text": {
+            "hu": "jövő idő: terv",
+            "en": "future: a plan",
+            "es": "futuro: un plan",
+            "de": "Zukunft: ein Plan"
+          },
+          "wrong": {
+            "hu": "A would itt múltra utal (every summer régen), nem jövőbeli tervre.",
+            "en": "Would here points to the past (every summer long ago), not to a future plan.",
+            "es": "Would aquí apunta al pasado (every summer, hace tiempo), no a un plan futuro.",
+            "de": "Would verweist hier auf die Vergangenheit (every summer früher), nicht auf einen Plan für die Zukunft."
+          }
+        },
+        {
+          "text": {
+            "hu": "would: ismétlődő múltbeli cselekvés",
+            "en": "would: a repeated action in the past",
+            "es": "would: una acción repetida en el pasado",
+            "de": "would: eine wiederholte Handlung in der Vergangenheit"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "ut-28",
+      "es": "Did you use to live here?",
+      "target": "use",
+      "tr": {
+        "hu": "Régen itt laktál?",
+        "en": "Did you use to live here?",
+        "es": "¿Antes vivías aquí?",
+        "de": "Hast du früher hier gewohnt?"
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "did + use to: a did után a d elmarad",
+            "en": "did + use to: the d goes away after did",
+            "es": "did + use to: después de did desaparece la d",
+            "de": "did + use to: nach did fällt das d weg"
+          }
+        },
+        {
+          "text": {
+            "hu": "used to: a d mindig marad",
+            "en": "used to: the d always stays",
+            "es": "used to: la d siempre se queda",
+            "de": "used to: das d bleibt immer"
+          },
+          "wrong": {
+            "hu": "Kérdésben és tagadásban a did viszi a múlt időt, ezért a „use” d nélkül áll.",
+            "en": "In questions and negatives did carries the past tense, so “use” has no d.",
+            "es": "En preguntas y negaciones did lleva el tiempo pasado, por eso «use» no tiene d.",
+            "de": "In Fragen und Verneinungen trägt did die Vergangenheit, deshalb steht „use“ ohne d."
+          }
+        },
+        {
+          "text": {
+            "hu": "be used to: hozzászokott állapot",
+            "en": "be used to: being accustomed",
+            "es": "be used to: estar acostumbrado",
+            "de": "be used to: gewöhnt sein"
+          },
+          "wrong": {
+            "hu": "A be used to be-t kér (Are you used to…?); a Did you use to… régi állapotra kérdez.",
+            "en": "Be used to needs be (Are you used to…?); Did you use to… asks about an old state.",
+            "es": "Be used to necesita be (Are you used to…?); Did you use to… pregunta por un estado antiguo.",
+            "de": "Be used to braucht be (Are you used to…?); Did you use to… fragt nach einem früheren Zustand."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "ut-29",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "Antes vivía en Puebla.",
+          "en": "I used to live in Puebla."
+        },
+        {
+          "es": "Cuando era niño, solíamos ir a la playa.",
+          "en": "When I was a child, we used to go to the beach."
+        },
+        {
+          "es": "No estoy acostumbrado al frío.",
+          "en": "I'm not used to the cold."
+        },
+        {
+          "es": "Me acostumbré a vivir aquí.",
+          "en": "I got used to living here."
+        },
+        {
+          "es": "¿Antes vivías aquí?",
+          "en": "Did you use to live here?"
+        },
+        {
+          "es": "Antes no me gustaba el pescado.",
+          "en": "I didn't use to like fish."
+        }
+      ]
+    },
+    {
+      "id": "ut-30",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "solía (hacer algo)",
+          "en": "used to"
+        },
+        {
+          "es": "estoy acostumbrado a",
+          "en": "I am used to"
+        },
+        {
+          "es": "me acostumbré a",
+          "en": "I got used to"
+        },
+        {
+          "es": "normalmente",
+          "en": "usually"
+        },
+        {
+          "es": "ya no",
+          "en": "not anymore"
+        },
+        {
+          "es": "cada verano",
+          "en": "every summer"
+        }
+      ]
+    }
+  ]
+}

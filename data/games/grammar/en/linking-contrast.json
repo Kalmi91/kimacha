@@ -1,0 +1,1423 @@
+{
+  "schema": 2,
+  "topic": "linking_contrast",
+  "level": "B2",
+  "title": {
+    "hu": "Ellentétes kötőszavak (although / despite / however / whereas)",
+    "en": "Linking Contrast (although / despite / however / whereas)",
+    "es": "Conectores de contraste (although / despite / however / whereas)",
+    "de": "Gegensatz-Konnektoren (although / despite / however / whereas)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "Az ellentétet több szóval lehet kifejezni, és mindegyik mást követ. Az although/even though/though után tagmondat áll („Although it was raining, we went out.”). A despite/in spite of után főnév vagy -ing alak áll („Despite the rain, we went out.”). A however/nevertheless önálló mondat elején áll, vesszővel. A whereas/while két tény szembeállítására való. A spanyol „aunque”, „a pesar de”, „sin embargo”, „mientras que” felel meg nekik.",
+        "en": "Contrast can be expressed with several words, and each is followed by something different. After although/even though/though comes a clause (“Although it was raining, we went out.”). After despite/in spite of comes a noun or an -ing form (“Despite the rain, we went out.”). However/nevertheless stands at the start of a separate sentence, with a comma. Whereas/while sets two facts against each other. The Spanish “aunque”, “a pesar de”, “sin embargo”, “mientras que” match them.",
+        "es": "El contraste se puede expresar con varias palabras, y cada una va seguida de algo distinto. Después de although/even though/though va una cláusula («Although it was raining, we went out.»). Después de despite/in spite of va un sustantivo o una forma -ing («Despite the rain, we went out.»). However/nevertheless va al inicio de una oración aparte, con coma. Whereas/while contrapone dos hechos. El «aunque», el «a pesar de», el «sin embargo» y el «mientras que» del español les corresponden.",
+        "de": "Der Gegensatz lässt sich mit mehreren Wörtern ausdrücken, und auf jedes folgt etwas anderes. Nach although/even though/though steht ein Teilsatz („Although it was raining, we went out.“). Nach despite/in spite of steht ein Nomen oder eine -ing-Form („Despite the rain, we went out.“). However/nevertheless steht am Anfang eines eigenen Satzes, mit Komma. Whereas/while stellt zwei Tatsachen gegenüber. Das spanische „aunque“, „a pesar de“, „sin embargo“, „mientras que“ entsprechen ihnen."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "lnk-forms",
+      "title": {
+        "hu": "Melyik szó?",
+        "en": "Which word?",
+        "es": "¿Qué palabra uso?",
+        "de": "Welches Wort?"
+      },
+      "header": [
+        {
+          "hu": "Jelentés",
+          "en": "Meaning",
+          "es": "Significado",
+          "de": "Bedeutung"
+        },
+        {
+          "hu": "forma",
+          "en": "form",
+          "es": "forma",
+          "de": "Form"
+        }
+      ],
+      "rows": [
+        [
+          "aunque (+ cláusula)",
+          "although"
+        ],
+        [
+          "a pesar de (+ sustantivo o -ing)",
+          "despite"
+        ],
+        [
+          "sin embargo (inicio de oración)",
+          "however"
+        ],
+        [
+          "mientras que (contrasta dos hechos)",
+          "whereas"
+        ],
+        [
+          "no obstante",
+          "nevertheless"
+        ],
+        [
+          "por otro lado",
+          "on the other hand"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Although, even though, though + tagmondat",
+        "en": "Although, even though, though + a clause",
+        "es": "Although, even though, though + cláusula",
+        "de": "Although, even though, though + Teilsatz"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Az although után alany és ige áll. Az even though erősebb. A „although … but” hibás: egy mondatban csak az egyik áll.",
+            "en": "After although comes a subject and a verb. Even though is stronger. “Although … but” is wrong: only one of them stands in a sentence.",
+            "es": "Después de although va un sujeto y un verbo. Even though es más fuerte. «Although … but» es incorrecto: solo uno de ellos va en la oración.",
+            "de": "Nach although stehen Subjekt und Verb. Even though ist stärker. „Although … but“ ist falsch: In einem Satz steht nur eines von beiden."
+          },
+          "examples": [
+            {
+              "es": "Although it was raining, we went out.",
+              "tr": {
+                "hu": "Bár esett, kimentünk.",
+                "en": "Although it was raining, we went out.",
+                "es": "Aunque llovía, salimos.",
+                "de": "Obwohl es regnete, gingen wir hinaus."
+              }
+            },
+            {
+              "es": "She worked all day, even though she was ill.",
+              "tr": {
+                "hu": "Egész nap dolgozott, pedig beteg volt.",
+                "en": "She worked all day, even though she was ill.",
+                "es": "Trabajó todo el día, aunque estaba enferma.",
+                "de": "Sie arbeitete den ganzen Tag, obwohl sie krank war."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A though a mondat végén lágyabb ellentét: „It wasn’t perfect, though.”",
+            "en": "Though at the end of a sentence is a softer contrast: “It wasn’t perfect, though.”",
+            "es": "Though al final de la oración es un contraste más suave: «It wasn’t perfect, though.»",
+            "de": "Though am Satzende ist ein sanfterer Gegensatz: „It wasn’t perfect, though.“"
+          },
+          "examples": [
+            {
+              "es": "It was a good film. It wasn't perfect, though.",
+              "tr": {
+                "hu": "Jó film volt. Bár nem volt tökéletes.",
+                "en": "It was a good film. It wasn't perfect, though.",
+                "es": "Fue una buena película. No fue perfecta, eso sí.",
+                "de": "Es war ein guter Film. Perfekt war er allerdings nicht."
+              }
+            },
+            {
+              "es": "It was good, though it was not perfect.",
+              "tr": {
+                "hu": "Jó volt, bár nem volt tökéletes.",
+                "en": "It was good, though it was not perfect.",
+                "es": "Estuvo bien, aunque no fue perfecta.",
+                "de": "Es war gut, auch wenn es nicht perfekt war."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Despite, in spite of + főnév vagy -ing",
+        "en": "Despite, in spite of + a noun or -ing",
+        "es": "Despite, in spite of + sustantivo o -ing",
+        "de": "Despite, in spite of + Nomen oder -ing"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A despite és az in spite of után nem áll alany és ige. Nem létezik „despite of”. Tagmondathoz a despite the fact that szükséges.",
+            "en": "After despite and in spite of there is no subject and verb. There is no “despite of”. For a clause you need despite the fact that.",
+            "es": "Después de despite y in spite of no va sujeto y verbo. No existe «despite of». Para una cláusula hace falta despite the fact that.",
+            "de": "Nach despite und in spite of stehen weder Subjekt noch Verb. „Despite of“ gibt es nicht. Für einen Teilsatz braucht man despite the fact that."
+          },
+          "examples": [
+            {
+              "es": "Despite the rain, we went out.",
+              "tr": {
+                "hu": "Az eső ellenére kimentünk.",
+                "en": "Despite the rain, we went out.",
+                "es": "A pesar de la lluvia, salimos.",
+                "de": "Trotz des Regens gingen wir hinaus."
+              }
+            },
+            {
+              "es": "Despite being ill, she worked all day.",
+              "tr": {
+                "hu": "Betegsége ellenére egész nap dolgozott.",
+                "en": "Despite being ill, she worked all day.",
+                "es": "A pesar de estar enferma, trabajó todo el día.",
+                "de": "Obwohl sie krank war, arbeitete sie den ganzen Tag."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "However, nevertheless, on the other hand",
+        "en": "However, nevertheless, on the other hand",
+        "es": "However, nevertheless, on the other hand",
+        "de": "However, nevertheless, on the other hand"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Ezek határozószók: új mondat elején állnak, vessző követi őket, vagy pontosvessző előtte. Két tagmondatot vesszővel nem köthetnek össze.",
+            "en": "These are adverbs: they stand at the start of a new sentence, followed by a comma, or after a semicolon. They cannot join two clauses with only a comma.",
+            "es": "Son adverbios: van al inicio de una oración nueva, seguidos de coma, o después de un punto y coma. No pueden unir dos cláusulas solo con una coma.",
+            "de": "Das sind Adverbien: Sie stehen am Anfang eines neuen Satzes, gefolgt von einem Komma, oder nach einem Semikolon. Sie können zwei Teilsätze nicht nur mit einem Komma verbinden."
+          },
+          "examples": [
+            {
+              "es": "It was cheap. However, it wasn't very good.",
+              "tr": {
+                "hu": "Olcsó volt. Azonban nem volt túl jó.",
+                "en": "It was cheap. However, it wasn't very good.",
+                "es": "Era barato. Sin embargo, no era muy bueno.",
+                "de": "Es war billig. Es war jedoch nicht sehr gut."
+              }
+            },
+            {
+              "es": "Prices went up. Nevertheless, people kept buying.",
+              "tr": {
+                "hu": "Az árak emelkedtek. Ennek ellenére az emberek vásároltak.",
+                "en": "Prices went up. Nevertheless, people kept buying.",
+                "es": "Los precios subieron. No obstante, la gente siguió comprando.",
+                "de": "Die Preise stiegen. Trotzdem kauften die Leute weiter."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Whereas, while, yet",
+        "en": "Whereas, while, yet",
+        "es": "Whereas, while, yet",
+        "de": "Whereas, while, yet"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A whereas és a while két tény szembeállítását fejezi ki: „My brother is tall, whereas I am short.” A yet olyan ellentétet jelez, amit nem várnánk: „He is rich, yet unhappy.”",
+            "en": "Whereas and while set two facts against each other: “My brother is tall, whereas I am short.” Yet marks a contrast we would not expect: “He is rich, yet unhappy.”",
+            "es": "Whereas y while contraponen dos hechos: «My brother is tall, whereas I am short.» Yet marca un contraste que no esperaríamos: «He is rich, yet unhappy.»",
+            "de": "Whereas und while stellen zwei Tatsachen gegenüber: „My brother is tall, whereas I am short.“ Yet markiert einen Gegensatz, den man nicht erwarten würde: „He is rich, yet unhappy.“"
+          },
+          "examples": [
+            {
+              "es": "My brother is tall, whereas I am short.",
+              "tr": {
+                "hu": "A fivérem magas, én viszont alacsony vagyok.",
+                "en": "My brother is tall, whereas I am short.",
+                "es": "Mi hermano es alto, mientras que yo soy bajo.",
+                "de": "Mein Bruder ist groß, ich dagegen bin klein."
+              }
+            },
+            {
+              "es": "He is rich, yet unhappy.",
+              "tr": {
+                "hu": "Gazdag, mégis boldogtalan.",
+                "en": "He is rich, yet unhappy.",
+                "es": "Es rico, y sin embargo infeliz.",
+                "de": "Er ist reich und doch unglücklich."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Spanyol hatás: nem „Although it was cold, but we went out”. Az although és a but együtt nem állhat: „Although it was cold, we went out” vagy „It was cold, but we went out”.",
+        "en": "Spanish influence: not “Although it was cold, but we went out”. Although and but cannot stand together: “Although it was cold, we went out” or “It was cold, but we went out”.",
+        "es": "Influencia del español: no «Although it was cold, but we went out». Although y but no pueden ir juntos: «Although it was cold, we went out» o «It was cold, but we went out».",
+        "de": "Einfluss des Spanischen: nicht „Although it was cold, but we went out“. Although und but können nicht zusammen stehen: „Although it was cold, we went out“ oder „It was cold, but we went out“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A despite-hez nem kell of: „Despite the rain”, de „In spite of the rain”. Az in spite után viszont of kell.",
+        "en": "Despite takes no of: “Despite the rain”, but “In spite of the rain”. After in spite, however, of is required.",
+        "es": "Despite no lleva of: «Despite the rain», pero «In spite of the rain». Después de in spite, en cambio, of es obligatorio.",
+        "de": "Despite braucht kein of: „Despite the rain“, aber „In spite of the rain“. Nach in spite ist of dagegen Pflicht."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "Az ellentétet több szóval lehet kifejezni, és mindegyik mást követ. Az «although» és az «even though» után tagmondat áll: «Although it was raining, we went out». A «despite» és az «in spite of» után főnév vagy -ing alak áll: «Despite the rain, we went out». A «however» és a «nevertheless» új mondat elején áll, vesszővel: «It was cheap. However, it wasn't good». A «whereas» két tényt állít szembe: «My brother is tall, whereas I am short». Nem létezik «despite of».",
+    "en": "Contrast can be expressed with several words, and each is followed by something different. After «although» and «even though» comes a clause: «Although it was raining, we went out». After «despite» and «in spite of» comes a noun or an -ing form: «Despite the rain, we went out». «However» and «nevertheless» stand at the start of a new sentence, with a comma: «It was cheap. However, it wasn't good». «Whereas» sets two facts against each other: «My brother is tall, whereas I am short». There is no «despite of».",
+    "es": "El contraste se puede expresar con varias palabras, y cada una va seguida de algo distinto. Después de «although» y «even though» va una cláusula: «Although it was raining, we went out». Después de «despite» y «in spite of» va un sustantivo o una forma -ing: «Despite the rain, we went out». «However» y «nevertheless» van al inicio de una oración nueva, con coma: «It was cheap. However, it wasn't good». «Whereas» contrapone dos hechos: «My brother is tall, whereas I am short». No existe «despite of».",
+    "de": "Der Gegensatz lässt sich mit mehreren Wörtern ausdrücken, und auf jedes folgt etwas anderes. Nach «although» und «even though» steht ein Teilsatz: «Although it was raining, we went out». Nach «despite» und «in spite of» steht ein Nomen oder eine -ing-Form: «Despite the rain, we went out». «However» und «nevertheless» stehen am Anfang eines neuen Satzes, mit Komma: «It was cheap. However, it wasn't good». «Whereas» stellt zwei Tatsachen gegenüber: «My brother is tall, whereas I am short». «Despite of» gibt es nicht."
+  },
+  "glossary": [
+    {
+      "word": "although",
+      "gloss": {
+        "hu": "bár, habár",
+        "en": "but, in spite of the fact",
+        "es": "aunque",
+        "de": "obwohl"
+      }
+    },
+    {
+      "word": "despite",
+      "gloss": {
+        "hu": "ellenére",
+        "en": "in spite of",
+        "es": "a pesar de",
+        "de": "trotz"
+      }
+    },
+    {
+      "word": "even",
+      "gloss": {
+        "hu": "még, akár",
+        "en": "even",
+        "es": "incluso",
+        "de": "sogar"
+      }
+    },
+    {
+      "word": "fact",
+      "gloss": {
+        "hu": "tény",
+        "en": "something true",
+        "es": "hecho",
+        "de": "Tatsache"
+      }
+    },
+    {
+      "word": "however",
+      "gloss": {
+        "hu": "azonban, viszont",
+        "en": "but, in contrast",
+        "es": "sin embargo",
+        "de": "jedoch"
+      }
+    },
+    {
+      "word": "keeps",
+      "gloss": {
+        "hu": "folytatja (he/she/it)",
+        "en": "he/she/it continues",
+        "es": "sigue (he/she/it)",
+        "de": "macht weiter (er/sie/es)"
+      }
+    },
+    {
+      "word": "lack",
+      "gloss": {
+        "hu": "hiány",
+        "en": "not having enough",
+        "es": "falta",
+        "de": "Mangel"
+      }
+    },
+    {
+      "word": "nevertheless",
+      "gloss": {
+        "hu": "mindazonáltal, ennek ellenére",
+        "en": "in spite of that",
+        "es": "no obstante",
+        "de": "trotzdem"
+      }
+    },
+    {
+      "word": "noise",
+      "gloss": {
+        "hu": "zaj",
+        "en": "loud sound",
+        "es": "ruido",
+        "de": "Lärm"
+      }
+    },
+    {
+      "word": "other",
+      "gloss": {
+        "hu": "másik",
+        "en": "another one",
+        "es": "otro",
+        "de": "andere"
+      }
+    },
+    {
+      "word": "perfect",
+      "gloss": {
+        "hu": "tökéletes",
+        "en": "with no mistakes",
+        "es": "perfecto",
+        "de": "perfekt"
+      }
+    },
+    {
+      "word": "poor",
+      "gloss": {
+        "hu": "szegény",
+        "en": "with little money",
+        "es": "pobre",
+        "de": "arm"
+      }
+    },
+    {
+      "word": "rich",
+      "gloss": {
+        "hu": "gazdag",
+        "en": "with a lot of money",
+        "es": "rico",
+        "de": "reich"
+      }
+    },
+    {
+      "word": "spite",
+      "gloss": {
+        "hu": "rosszindulat (in spite of)",
+        "en": "in spite of",
+        "es": "a pesar (in spite of)",
+        "de": "Trotz (in spite of)"
+      }
+    },
+    {
+      "word": "succeeded",
+      "gloss": {
+        "hu": "sikerült (a succeed múltja)",
+        "en": "past form of succeed",
+        "es": "consiguió (pasado de succeed)",
+        "de": "gelang (Past von succeed)"
+      }
+    },
+    {
+      "word": "though",
+      "gloss": {
+        "hu": "bár, mégis",
+        "en": "although",
+        "es": "aunque",
+        "de": "obwohl"
+      }
+    },
+    {
+      "word": "tried",
+      "gloss": {
+        "hu": "megpróbálta (a try múltja)",
+        "en": "past form of try",
+        "es": "intentó (pasado de try)",
+        "de": "versuchte (Past von try)"
+      }
+    },
+    {
+      "word": "unhappy",
+      "gloss": {
+        "hu": "boldogtalan",
+        "en": "not happy",
+        "es": "infeliz",
+        "de": "unglücklich"
+      }
+    },
+    {
+      "word": "whereas",
+      "gloss": {
+        "hu": "míg, ezzel szemben",
+        "en": "while, in contrast",
+        "es": "mientras que",
+        "de": "während"
+      }
+    },
+    {
+      "word": "wise",
+      "gloss": {
+        "hu": "bölcs",
+        "en": "with good judgment",
+        "es": "sabio",
+        "de": "weise"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "lnk-01",
+      "sentence": "___ it was raining, we went out.",
+      "options": [
+        "Despite",
+        "Although",
+        "However"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az ellentét után tagmondat áll (it was raining): although.",
+        "en": "A clause follows (it was raining): although.",
+        "es": "Le sigue una cláusula (it was raining): although.",
+        "de": "Es folgt ein Teilsatz (it was raining): although."
+      },
+      "wrong": {
+        "Despite": {
+          "hu": "A despite után nem áll alany és ige, csak főnév vagy -ing alak.",
+          "en": "After despite there is no subject and verb, only a noun or an -ing form.",
+          "es": "Después de despite no va sujeto y verbo, solo un sustantivo o una forma -ing.",
+          "de": "Nach despite stehen weder Subjekt noch Verb, nur ein Nomen oder eine -ing-Form."
+        },
+        "However": {
+          "hu": "A however új mondat elején áll; nem vezet be tagmondatot ugyanabban a mondatban.",
+          "en": "However starts a new sentence; it does not introduce a clause in the same sentence.",
+          "es": "However inicia una oración nueva; no introduce una cláusula en la misma oración.",
+          "de": "However beginnt einen neuen Satz; es leitet keinen Teilsatz im selben Satz ein."
+        }
+      },
+      "examples": [
+        "Although she was tired, she stayed.",
+        "Although it was late, we ate."
+      ]
+    },
+    {
+      "id": "lnk-02",
+      "sentence": "___ the rain, we went out.",
+      "options": [
+        "Although",
+        "However",
+        "Despite"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Főnév előtt despite áll: despite the rain.",
+        "en": "Before a noun despite is used: despite the rain.",
+        "es": "Antes de un sustantivo se usa despite: despite the rain.",
+        "de": "Vor einem Nomen steht despite: despite the rain."
+      },
+      "wrong": {
+        "Although": {
+          "hu": "Az although után tagmondat kell; a the rain csak főnév.",
+          "en": "Although needs a clause; the rain is only a noun.",
+          "es": "Although necesita una cláusula; the rain es solo un sustantivo.",
+          "de": "Although braucht einen Teilsatz; the rain ist nur ein Nomen."
+        },
+        "However": {
+          "hu": "A however új mondat elején áll, és nem főnév előtt.",
+          "en": "However starts a new sentence and does not stand before a noun like this.",
+          "es": "However inicia una oración nueva y no va antes de un sustantivo así.",
+          "de": "However beginnt einen neuen Satz und steht nicht so vor einem Nomen."
+        }
+      },
+      "examples": [
+        "Despite the noise, he slept.",
+        "Despite the cost, we bought it."
+      ]
+    },
+    {
+      "id": "lnk-03",
+      "sentence": "She worked all day, ___ she was ill.",
+      "options": [
+        "even though",
+        "despite",
+        "however"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az even though után tagmondat áll: even though she was ill.",
+        "en": "After even though comes a clause: even though she was ill.",
+        "es": "Después de even though va una cláusula: even though she was ill.",
+        "de": "Nach even though steht ein Teilsatz: even though she was ill."
+      },
+      "wrong": {
+        "despite": {
+          "hu": "A despite után nem áll alany és ige.",
+          "en": "After despite there is no subject and verb.",
+          "es": "Después de despite no va sujeto y verbo.",
+          "de": "Nach despite stehen weder Subjekt noch Verb."
+        },
+        "however": {
+          "hu": "A however nem köthet össze két tagmondatot csak vesszővel.",
+          "en": "However cannot join two clauses with only a comma.",
+          "es": "However no puede unir dos cláusulas solo con una coma.",
+          "de": "However kann zwei Teilsätze nicht nur mit einem Komma verbinden."
+        }
+      },
+      "examples": [
+        "He left, even though it was early.",
+        "She came, even though she was ill."
+      ]
+    },
+    {
+      "id": "lnk-04",
+      "sentence": "She worked all day ___ being ill.",
+      "options": [
+        "however",
+        "despite",
+        "whereas"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az -ing alak előtt despite áll: despite being ill.",
+        "en": "Before an -ing form despite is used: despite being ill.",
+        "es": "Antes de una forma -ing se usa despite: despite being ill.",
+        "de": "Vor einer -ing-Form steht despite: despite being ill."
+      },
+      "wrong": {
+        "however": {
+          "hu": "A however új mondat elején áll, és nem -ing alak előtt.",
+          "en": "However starts a new sentence and does not stand before an -ing form.",
+          "es": "However inicia una oración nueva y no va antes de una forma -ing.",
+          "de": "However beginnt einen neuen Satz und steht nicht vor einer -ing-Form."
+        },
+        "whereas": {
+          "hu": "A whereas után tagmondat kell, nem -ing alak.",
+          "en": "Whereas needs a clause, not an -ing form.",
+          "es": "Whereas necesita una cláusula, no una forma -ing.",
+          "de": "Whereas braucht einen Teilsatz, keine -ing-Form."
+        }
+      },
+      "examples": [
+        "Despite being tired, he ran.",
+        "Despite feeling ill, she went."
+      ]
+    },
+    {
+      "id": "lnk-05",
+      "sentence": "It was cheap. ___, it wasn't very good.",
+      "options": [
+        "Although",
+        "Despite",
+        "However"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Új mondat elején, vesszővel: However,",
+        "en": "At the start of a new sentence, with a comma: However,",
+        "es": "Al inicio de una oración nueva, con coma: However,",
+        "de": "Am Anfang eines neuen Satzes, mit Komma: However,"
+      },
+      "wrong": {
+        "Although": {
+          "hu": "Az although után nem áll vessző; tagmondatot vezet be.",
+          "en": "Although is not followed by a comma; it introduces a clause.",
+          "es": "Although no va seguido de coma; introduce una cláusula.",
+          "de": "Auf although folgt kein Komma; es leitet einen Teilsatz ein."
+        },
+        "Despite": {
+          "hu": "A despite után főnév vagy -ing alak áll, nem vessző.",
+          "en": "After despite comes a noun or an -ing form, not a comma.",
+          "es": "Después de despite va un sustantivo o una forma -ing, no una coma.",
+          "de": "Nach despite steht ein Nomen oder eine -ing-Form, kein Komma."
+        }
+      },
+      "examples": [
+        "It was late. However, we stayed.",
+        "He tried. However, he failed."
+      ]
+    },
+    {
+      "id": "lnk-06",
+      "sentence": "My brother is tall, ___ I am short.",
+      "options": [
+        "whereas",
+        "despite",
+        "however"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Két tény szembeállítása: whereas.",
+        "en": "Setting two facts against each other: whereas.",
+        "es": "Contraponer dos hechos: whereas.",
+        "de": "Gegenüberstellung zweier Tatsachen: whereas."
+      },
+      "wrong": {
+        "despite": {
+          "hu": "A despite után nem áll alany és ige (I am short).",
+          "en": "After despite there is no subject and verb (I am short).",
+          "es": "Después de despite no va sujeto y verbo (I am short).",
+          "de": "Nach despite stehen weder Subjekt noch Verb (I am short)."
+        },
+        "however": {
+          "hu": "A however nem köthet össze két tagmondatot csak vesszővel.",
+          "en": "However cannot join two clauses with only a comma.",
+          "es": "However no puede unir dos cláusulas solo con una coma.",
+          "de": "However kann zwei Teilsätze nicht nur mit einem Komma verbinden."
+        }
+      },
+      "examples": [
+        "She likes tea, whereas he likes coffee.",
+        "I work, whereas she rests."
+      ]
+    },
+    {
+      "id": "lnk-07",
+      "sentence": "He lives in a small apartment. ___ the other hand, it is cheap.",
+      "options": [
+        "At",
+        "On",
+        "In"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Fix kifejezés: on the other hand.",
+        "en": "A fixed phrase: on the other hand.",
+        "es": "Una expresión fija: on the other hand.",
+        "de": "Eine feste Wendung: on the other hand."
+      },
+      "wrong": {
+        "At": {
+          "hu": "Az at the other hand nem létezik; a kifejezés on the other hand.",
+          "en": "“At the other hand” does not exist; the phrase is on the other hand.",
+          "es": "«At the other hand» no existe; la expresión es on the other hand.",
+          "de": "„At the other hand“ gibt es nicht; die Wendung ist on the other hand."
+        },
+        "In": {
+          "hu": "Az in the other hand nem létezik; a kifejezés on the other hand.",
+          "en": "“In the other hand” does not exist; the phrase is on the other hand.",
+          "es": "«In the other hand» no existe; la expresión es on the other hand.",
+          "de": "„In the other hand“ gibt es nicht; die Wendung ist on the other hand."
+        }
+      },
+      "examples": [
+        "On the other hand, it is big.",
+        "On the other hand, he agrees."
+      ]
+    },
+    {
+      "id": "lnk-08",
+      "sentence": "___ the fact that it was late, we stayed.",
+      "options": [
+        "Although",
+        "However",
+        "Despite"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Tagmondathoz a despite the fact that szükséges.",
+        "en": "For a clause you need despite the fact that.",
+        "es": "Para una cláusula hace falta despite the fact that.",
+        "de": "Für einen Teilsatz braucht man despite the fact that."
+      },
+      "wrong": {
+        "Although": {
+          "hu": "Az although the fact that nem helyes; az although után nincs the fact that.",
+          "en": "“Although the fact that” is not correct; although is not followed by the fact that.",
+          "es": "«Although the fact that» no es correcto; although no va seguido de the fact that.",
+          "de": "„Although the fact that“ ist nicht korrekt; auf although folgt nicht the fact that."
+        },
+        "However": {
+          "hu": "A however új mondat elején áll, és nem a the fact that előtt.",
+          "en": "However starts a new sentence and does not stand before the fact that.",
+          "es": "However inicia una oración nueva y no va antes de the fact that.",
+          "de": "However beginnt einen neuen Satz und steht nicht vor the fact that."
+        }
+      },
+      "examples": [
+        "Despite the fact that he tried, he lost.",
+        "Despite the fact that it rained, we went."
+      ]
+    },
+    {
+      "id": "lnk-09",
+      "sentence": "I like the house; ___, it is too expensive.",
+      "options": [
+        "however",
+        "although",
+        "despite"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Pontosvessző után: however, vesszővel.",
+        "en": "After a semicolon: however, with a comma.",
+        "es": "Después de un punto y coma: however, con coma.",
+        "de": "Nach einem Semikolon: however, mit Komma."
+      },
+      "wrong": {
+        "although": {
+          "hu": "Az although után nem áll vessző; tagmondatot vezet be.",
+          "en": "Although is not followed by a comma; it introduces a clause.",
+          "es": "Although no va seguido de coma; introduce una cláusula.",
+          "de": "Auf although folgt kein Komma; es leitet einen Teilsatz ein."
+        },
+        "despite": {
+          "hu": "A despite után főnév vagy -ing alak áll, nem vessző.",
+          "en": "After despite comes a noun or an -ing form, not a comma.",
+          "es": "Después de despite va un sustantivo o una forma -ing, no una coma.",
+          "de": "Nach despite steht ein Nomen oder eine -ing-Form, kein Komma."
+        }
+      },
+      "examples": [
+        "She is nice; however, she is late.",
+        "It is old; however, it works."
+      ]
+    },
+    {
+      "id": "lnk-10",
+      "sentence": "She is tired, ___ she keeps working.",
+      "options": [
+        "despite",
+        "yet",
+        "however"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Váratlan ellentét: yet.",
+        "en": "An unexpected contrast: yet.",
+        "es": "Un contraste inesperado: yet.",
+        "de": "Ein unerwarteter Gegensatz: yet."
+      },
+      "wrong": {
+        "despite": {
+          "hu": "A despite után nem áll alany és ige.",
+          "en": "After despite there is no subject and verb.",
+          "es": "Después de despite no va sujeto y verbo.",
+          "de": "Nach despite stehen weder Subjekt noch Verb."
+        },
+        "however": {
+          "hu": "A however nem köthet össze két tagmondatot csak vesszővel.",
+          "en": "However cannot join two clauses with only a comma.",
+          "es": "However no puede unir dos cláusulas solo con una coma.",
+          "de": "However kann zwei Teilsätze nicht nur mit einem Komma verbinden."
+        }
+      },
+      "examples": [
+        "He is poor, yet he is kind.",
+        "It is small, yet it is warm."
+      ]
+    },
+    {
+      "id": "lnk-11",
+      "sentence": "It was a good film. It wasn't perfect, ___.",
+      "options": [
+        "despite",
+        "whereas",
+        "though"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A mondat végén lágyabb ellentét: though.",
+        "en": "A softer contrast at the end of a sentence: though.",
+        "es": "Un contraste más suave al final de la oración: though.",
+        "de": "Ein sanfterer Gegensatz am Satzende: though."
+      },
+      "wrong": {
+        "despite": {
+          "hu": "A despite nem állhat a mondat végén.",
+          "en": "Despite cannot stand at the end of a sentence.",
+          "es": "Despite no puede ir al final de la oración.",
+          "de": "Despite kann nicht am Satzende stehen."
+        },
+        "whereas": {
+          "hu": "A whereas nem állhat a mondat végén.",
+          "en": "Whereas cannot stand at the end of a sentence.",
+          "es": "Whereas no puede ir al final de la oración.",
+          "de": "Whereas kann nicht am Satzende stehen."
+        }
+      },
+      "examples": [
+        "It was cheap. It wasn't good, though.",
+        "I like it. It's old, though."
+      ]
+    },
+    {
+      "id": "lnk-12",
+      "sentence": "Although it was cold, ___ went for a walk.",
+      "options": [
+        "we",
+        "but we",
+        "so we"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az although mellett nincs but: Although it was cold, we went.",
+        "en": "There is no but with although: Although it was cold, we went.",
+        "es": "Con although no va but: Although it was cold, we went.",
+        "de": "Mit although steht kein but: Although it was cold, we went."
+      },
+      "wrong": {
+        "but we": {
+          "hu": "Az although és a but együtt nem állhat (spanyol hatás).",
+          "en": "Although and but cannot stand together (Spanish influence).",
+          "es": "Although y but no pueden ir juntos (influencia del español).",
+          "de": "Although und but können nicht zusammen stehen (Einfluss des Spanischen)."
+        },
+        "so we": {
+          "hu": "A so az okozatot jelöli, nem ellentétet; az although mellett nem áll.",
+          "en": "So marks a result, not a contrast; it does not stand with although.",
+          "es": "So marca un resultado, no un contraste; no va con although.",
+          "de": "So markiert ein Ergebnis, keinen Gegensatz; es steht nicht mit although."
+        }
+      },
+      "examples": [
+        "Although she was ill, she came.",
+        "Although he tried, he lost."
+      ]
+    },
+    {
+      "id": "lnk-13",
+      "sentence": "She succeeded ___ her lack of experience.",
+      "options": [
+        "although",
+        "despite",
+        "however"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Főnévi csoport előtt despite áll: despite her lack of experience.",
+        "en": "Before a noun phrase despite is used: despite her lack of experience.",
+        "es": "Antes de un grupo nominal se usa despite: despite her lack of experience.",
+        "de": "Vor einer Nominalgruppe steht despite: despite her lack of experience."
+      },
+      "wrong": {
+        "although": {
+          "hu": "Az although után tagmondat kell; a her lack of experience főnévi csoport.",
+          "en": "Although needs a clause; her lack of experience is a noun phrase.",
+          "es": "Although necesita una cláusula; her lack of experience es un grupo nominal.",
+          "de": "Although braucht einen Teilsatz; her lack of experience ist eine Nominalgruppe."
+        },
+        "however": {
+          "hu": "A however új mondat elején áll, és nem főnévi csoport előtt.",
+          "en": "However starts a new sentence and does not stand before a noun phrase.",
+          "es": "However inicia una oración nueva y no va antes de un grupo nominal.",
+          "de": "However beginnt einen neuen Satz und steht nicht vor einer Nominalgruppe."
+        }
+      },
+      "examples": [
+        "She won despite her age.",
+        "He came despite the rain."
+      ]
+    },
+    {
+      "id": "lnk-14",
+      "sentence": "___ of the bad weather, the game was played.",
+      "options": [
+        "Despite",
+        "Although",
+        "In spite"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Az in spite után of áll: in spite of.",
+        "en": "After in spite comes of: in spite of.",
+        "es": "Después de in spite va of: in spite of.",
+        "de": "Nach in spite steht of: in spite of."
+      },
+      "wrong": {
+        "Despite": {
+          "hu": "A despite of nem létezik; a despite után nincs of.",
+          "en": "“Despite of” does not exist; despite is not followed by of.",
+          "es": "«Despite of» no existe; despite no va seguido de of.",
+          "de": "„Despite of“ gibt es nicht; auf despite folgt kein of."
+        },
+        "Although": {
+          "hu": "Az although of nem létezik; az of in spite-hoz tartozik.",
+          "en": "“Although of” does not exist; the of belongs to in spite.",
+          "es": "«Although of» no existe; el of pertenece a in spite.",
+          "de": "„Although of“ gibt es nicht; das of gehört zu in spite."
+        }
+      },
+      "examples": [
+        "In spite of the cost, we went.",
+        "In spite of her age, she ran."
+      ]
+    },
+    {
+      "id": "lnk-15",
+      "sentence": "Prices went up. ___, people kept buying.",
+      "options": [
+        "Nevertheless",
+        "Although",
+        "Despite"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Új mondat elején, vesszővel: Nevertheless,",
+        "en": "At the start of a new sentence, with a comma: Nevertheless,",
+        "es": "Al inicio de una oración nueva, con coma: Nevertheless,",
+        "de": "Am Anfang eines neuen Satzes, mit Komma: Nevertheless,"
+      },
+      "wrong": {
+        "Although": {
+          "hu": "Az although után nem áll vessző; tagmondatot vezet be.",
+          "en": "Although is not followed by a comma; it introduces a clause.",
+          "es": "Although no va seguido de coma; introduce una cláusula.",
+          "de": "Auf although folgt kein Komma; es leitet einen Teilsatz ein."
+        },
+        "Despite": {
+          "hu": "A despite után főnév vagy -ing alak áll, nem vessző.",
+          "en": "After despite comes a noun or an -ing form, not a comma.",
+          "es": "Después de despite va un sustantivo o una forma -ing, no una coma.",
+          "de": "Nach despite steht ein Nomen oder eine -ing-Form, kein Komma."
+        }
+      },
+      "examples": [
+        "It failed. Nevertheless, they tried.",
+        "It rained. Nevertheless, we went."
+      ]
+    },
+    {
+      "id": "lnk-16",
+      "sentence": "The first hotel was cheap, ___ the second was expensive.",
+      "options": [
+        "despite",
+        "whereas",
+        "nevertheless"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Két tény szembeállítása: whereas.",
+        "en": "Setting two facts against each other: whereas.",
+        "es": "Contraponer dos hechos: whereas.",
+        "de": "Gegenüberstellung zweier Tatsachen: whereas."
+      },
+      "wrong": {
+        "despite": {
+          "hu": "A despite után nem áll alany és ige.",
+          "en": "After despite there is no subject and verb.",
+          "es": "Después de despite no va sujeto y verbo.",
+          "de": "Nach despite stehen weder Subjekt noch Verb."
+        },
+        "nevertheless": {
+          "hu": "A nevertheless nem köthet össze két tagmondatot csak vesszővel.",
+          "en": "Nevertheless cannot join two clauses with only a comma.",
+          "es": "Nevertheless no puede unir dos cláusulas solo con una coma.",
+          "de": "Nevertheless kann zwei Teilsätze nicht nur mit einem Komma verbinden."
+        }
+      },
+      "examples": [
+        "Tea is hot, whereas ice is cold.",
+        "He works, whereas she plays."
+      ]
+    },
+    {
+      "id": "lnk-17",
+      "sentence": "He is rich, ___ unhappy.",
+      "options": [
+        "despite",
+        "whereas",
+        "yet"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Váratlan ellentét melléknév előtt: yet.",
+        "en": "An unexpected contrast before an adjective: yet.",
+        "es": "Un contraste inesperado antes de un adjetivo: yet.",
+        "de": "Ein unerwarteter Gegensatz vor einem Adjektiv: yet."
+      },
+      "wrong": {
+        "despite": {
+          "hu": "A despite után főnév vagy -ing alak áll, nem melléknév.",
+          "en": "After despite comes a noun or an -ing form, not an adjective.",
+          "es": "Después de despite va un sustantivo o una forma -ing, no un adjetivo.",
+          "de": "Nach despite steht ein Nomen oder eine -ing-Form, kein Adjektiv."
+        },
+        "whereas": {
+          "hu": "A whereas után tagmondat kell, nem melléknév.",
+          "en": "Whereas needs a clause, not an adjective.",
+          "es": "Whereas necesita una cláusula, no un adjetivo.",
+          "de": "Whereas braucht einen Teilsatz, kein Adjektiv."
+        }
+      },
+      "examples": [
+        "It is cheap, yet good.",
+        "She is young, yet wise."
+      ]
+    },
+    {
+      "id": "lnk-18",
+      "kind": "form",
+      "verb": "forma",
+      "person": "aunque (+ cláusula)",
+      "answer": "although",
+      "accept": [
+        "though",
+        "even though"
+      ],
+      "table": "lnk-forms"
+    },
+    {
+      "id": "lnk-19",
+      "kind": "form",
+      "verb": "forma",
+      "person": "a pesar de (+ sustantivo o -ing)",
+      "answer": "despite",
+      "accept": [
+        "in spite of"
+      ],
+      "table": "lnk-forms"
+    },
+    {
+      "id": "lnk-20",
+      "kind": "form",
+      "verb": "forma",
+      "person": "sin embargo (inicio de oración)",
+      "answer": "however",
+      "accept": [
+        "nevertheless",
+        "nonetheless"
+      ],
+      "table": "lnk-forms"
+    },
+    {
+      "id": "lnk-21",
+      "kind": "form",
+      "verb": "forma",
+      "person": "mientras que (contrasta dos hechos)",
+      "answer": "whereas",
+      "accept": [
+        "while"
+      ],
+      "table": "lnk-forms"
+    },
+    {
+      "id": "lnk-22",
+      "kind": "form",
+      "verb": "forma",
+      "person": "no obstante",
+      "answer": "nevertheless",
+      "accept": [
+        "however",
+        "nonetheless"
+      ],
+      "table": "lnk-forms"
+    },
+    {
+      "id": "lnk-23",
+      "kind": "form",
+      "verb": "forma",
+      "person": "por otro lado",
+      "answer": "on the other hand",
+      "table": "lnk-forms"
+    },
+    {
+      "kind": "why",
+      "id": "lnk-24",
+      "es": "Although it was raining, we went out.",
+      "target": "Although",
+      "tr": {
+        "hu": "Bár esett, kimentünk.",
+        "en": "Although it was raining, we went out.",
+        "es": "Aunque llovía, salimos.",
+        "de": "Obwohl es regnete, gingen wir hinaus."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "although + főnév",
+            "en": "although + a noun",
+            "es": "although + un sustantivo",
+            "de": "although + ein Nomen"
+          },
+          "wrong": {
+            "hu": "Az although után tagmondat áll (alany és ige), nem csupán főnév.",
+            "en": "After although comes a clause (subject and verb), not just a noun.",
+            "es": "Después de although va una cláusula (sujeto y verbo), no solo un sustantivo.",
+            "de": "Nach although steht ein Teilsatz (Subjekt und Verb), nicht nur ein Nomen."
+          }
+        },
+        {
+          "text": {
+            "hu": "although + tagmondat: ellentét",
+            "en": "although + a clause: a contrast",
+            "es": "although + una cláusula: un contraste",
+            "de": "although + ein Teilsatz: ein Gegensatz"
+          }
+        },
+        {
+          "text": {
+            "hu": "az although jelentése: mert",
+            "en": "although means because",
+            "es": "although significa porque",
+            "de": "although bedeutet weil"
+          },
+          "wrong": {
+            "hu": "Az although ellentétet jelez, nem okot; az okot because fejezi ki.",
+            "en": "Although marks a contrast, not a reason; a reason is expressed by because.",
+            "es": "Although marca un contraste, no una razón; la razón la expresa because.",
+            "de": "Although markiert einen Gegensatz, keinen Grund; den Grund drückt because aus."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "lnk-25",
+      "es": "Despite the rain, we went out.",
+      "target": "Despite",
+      "tr": {
+        "hu": "Az eső ellenére kimentünk.",
+        "en": "Despite the rain, we went out.",
+        "es": "A pesar de la lluvia, salimos.",
+        "de": "Trotz des Regens gingen wir hinaus."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "despite + alany és ige",
+            "en": "despite + subject and verb",
+            "es": "despite + sujeto y verbo",
+            "de": "despite + Subjekt und Verb"
+          },
+          "wrong": {
+            "hu": "A despite után főnév vagy -ing alak áll; alany és ige csak despite the fact that után.",
+            "en": "After despite comes a noun or an -ing form; a subject and verb only after despite the fact that.",
+            "es": "Después de despite va un sustantivo o una forma -ing; sujeto y verbo solo después de despite the fact that.",
+            "de": "Nach despite steht ein Nomen oder eine -ing-Form; Subjekt und Verb nur nach despite the fact that."
+          }
+        },
+        {
+          "text": {
+            "hu": "despite of + főnév",
+            "en": "despite of + a noun",
+            "es": "despite of + un sustantivo",
+            "de": "despite of + ein Nomen"
+          },
+          "wrong": {
+            "hu": "A despite of nem létezik; a despite után nincs of.",
+            "en": "“Despite of” does not exist; despite is not followed by of.",
+            "es": "«Despite of» no existe; despite no va seguido de of.",
+            "de": "„Despite of“ gibt es nicht; auf despite folgt kein of."
+          }
+        },
+        {
+          "text": {
+            "hu": "despite + főnév: ellentét",
+            "en": "despite + a noun: a contrast",
+            "es": "despite + un sustantivo: un contraste",
+            "de": "despite + ein Nomen: ein Gegensatz"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "lnk-26",
+      "es": "It was cheap. However, it wasn't good.",
+      "target": "However",
+      "tr": {
+        "hu": "Olcsó volt. Azonban nem volt jó.",
+        "en": "It was cheap. However, it wasn't good.",
+        "es": "Era barato. Sin embargo, no era bueno.",
+        "de": "Es war billig. Es war jedoch nicht gut."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "határozószó új mondat elején, vesszővel",
+            "en": "an adverb at the start of a new sentence, with a comma",
+            "es": "un adverbio al inicio de una oración nueva, con coma",
+            "de": "ein Adverb am Anfang eines neuen Satzes, mit Komma"
+          }
+        },
+        {
+          "text": {
+            "hu": "két tagmondatot köt össze írásjel nélkül",
+            "en": "it joins two clauses with no punctuation",
+            "es": "une dos cláusulas sin puntuación",
+            "de": "es verbindet zwei Teilsätze ohne Satzzeichen"
+          },
+          "wrong": {
+            "hu": "A however írásjel nélkül nem köt össze tagmondatokat; vessző vagy pont kell.",
+            "en": "However does not join clauses without punctuation; it needs a comma or a full stop.",
+            "es": "However no une cláusulas sin puntuación; necesita coma o punto.",
+            "de": "However verbindet keine Teilsätze ohne Satzzeichen; es braucht Komma oder Punkt."
+          }
+        },
+        {
+          "text": {
+            "hu": "a however jelentése: mert",
+            "en": "however means because",
+            "es": "however significa porque",
+            "de": "however bedeutet weil"
+          },
+          "wrong": {
+            "hu": "A however ellentétet jelez, nem okot.",
+            "en": "However marks a contrast, not a reason.",
+            "es": "However marca un contraste, no una razón.",
+            "de": "However markiert einen Gegensatz, keinen Grund."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "lnk-27",
+      "es": "My brother is tall, whereas I am short.",
+      "target": "whereas",
+      "tr": {
+        "hu": "A fivérem magas, én viszont alacsony vagyok.",
+        "en": "My brother is tall, whereas I am short.",
+        "es": "Mi hermano es alto, mientras que yo soy bajo.",
+        "de": "Mein Bruder ist groß, ich dagegen bin klein."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "ok",
+            "en": "a reason",
+            "es": "una razón",
+            "de": "ein Grund"
+          },
+          "wrong": {
+            "hu": "A whereas nem okot jelez, hanem két tényt állít szembe.",
+            "en": "Whereas does not mark a reason but sets two facts against each other.",
+            "es": "Whereas no marca una razón sino que contrapone dos hechos.",
+            "de": "Whereas markiert keinen Grund, sondern stellt zwei Tatsachen gegenüber."
+          }
+        },
+        {
+          "text": {
+            "hu": "két tény szembeállítása",
+            "en": "two facts set against each other",
+            "es": "dos hechos contrapuestos",
+            "de": "zwei gegenübergestellte Tatsachen"
+          }
+        },
+        {
+          "text": {
+            "hu": "idő",
+            "en": "a time",
+            "es": "un tiempo",
+            "de": "eine Zeit"
+          },
+          "wrong": {
+            "hu": "A whereas nem időt jelez; a while időt is jelezhet, de itt ellentétet.",
+            "en": "Whereas does not mark a time; while can mark a time, but here it is a contrast.",
+            "es": "Whereas no marca un tiempo; while puede marcar un tiempo, pero aquí es un contraste.",
+            "de": "Whereas markiert keine Zeit; while kann eine Zeit markieren, aber hier ist es ein Gegensatz."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "lnk-28",
+      "es": "It wasn't perfect, though.",
+      "target": "though",
+      "tr": {
+        "hu": "Bár nem volt tökéletes.",
+        "en": "It wasn't perfect, though.",
+        "es": "No fue perfecta, eso sí.",
+        "de": "Perfekt war es allerdings nicht."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "mondatvégi though: lágyabb ellentét",
+            "en": "though at the end: a softer contrast",
+            "es": "though al final: un contraste más suave",
+            "de": "though am Ende: ein sanfterer Gegensatz"
+          }
+        },
+        {
+          "text": {
+            "hu": "a though itt azt jelenti: ezért",
+            "en": "though here means therefore",
+            "es": "though aquí significa por lo tanto",
+            "de": "though bedeutet hier deshalb"
+          },
+          "wrong": {
+            "hu": "A though ellentétet jelez, nem következményt.",
+            "en": "Though marks a contrast, not a result.",
+            "es": "Though marca un contraste, no una consecuencia.",
+            "de": "Though markiert einen Gegensatz, keine Folge."
+          }
+        },
+        {
+          "text": {
+            "hu": "a though mindig a mondat elején áll",
+            "en": "though always stands at the start",
+            "es": "though siempre va al inicio",
+            "de": "though steht immer am Anfang"
+          },
+          "wrong": {
+            "hu": "A though a mondat végén is állhat, ez lágyabb ellentét.",
+            "en": "Though can also stand at the end; this is a softer contrast.",
+            "es": "Though también puede ir al final; es un contraste más suave.",
+            "de": "Though kann auch am Ende stehen; das ist ein sanfterer Gegensatz."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "lnk-29",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "Aunque llovía, salimos.",
+          "en": "Although it was raining, we went out."
+        },
+        {
+          "es": "A pesar de la lluvia, salimos.",
+          "en": "Despite the rain, we went out."
+        },
+        {
+          "es": "Era barato. Sin embargo, no era bueno.",
+          "en": "It was cheap. However, it wasn't good."
+        },
+        {
+          "es": "Mi hermano es alto, mientras que yo soy bajo.",
+          "en": "My brother is tall, whereas I am short."
+        },
+        {
+          "es": "A pesar de estar enferma, trabajó todo el día.",
+          "en": "Despite being ill, she worked all day."
+        },
+        {
+          "es": "Estuvo bien, aunque no fue perfecta.",
+          "en": "It was good, though it was not perfect."
+        }
+      ]
+    },
+    {
+      "id": "lnk-30",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "aunque",
+          "en": "although"
+        },
+        {
+          "es": "a pesar de",
+          "en": "despite"
+        },
+        {
+          "es": "sin embargo",
+          "en": "however"
+        },
+        {
+          "es": "mientras que",
+          "en": "whereas"
+        },
+        {
+          "es": "no obstante",
+          "en": "nevertheless"
+        },
+        {
+          "es": "por otro lado",
+          "en": "on the other hand"
+        }
+      ]
+    }
+  ]
+}
