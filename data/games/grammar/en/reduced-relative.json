@@ -1,0 +1,1493 @@
+{
+  "schema": 2,
+  "topic": "reduced_relative",
+  "level": "C1",
+  "title": {
+    "hu": "Rövidített vonatkozó mondatok (the man sitting there, the book written by …, the first to arrive)",
+    "en": "Reduced Relative Clauses (the man sitting there, the book written by …, the first to arrive)",
+    "es": "Las oraciones de relativo reducidas (the man sitting there, the book written by …, the first to arrive)",
+    "de": "Verkürzte Relativsätze (the man sitting there, the book written by …, the first to arrive)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A vonatkozó mellékmondat rövidíthető: a „who/which + be” elhagyható, és az ige -ing alakban vagy múlt idejű igenévben marad. „The man who is sitting there” helyett „the man sitting there”, „the book which was written by Orwell” helyett „the book written by Orwell”. Az „első, utolsó, egyetlen” után to-infinitív áll: „the first person to arrive”. A spanyol hosszú „el hombre que está sentado ahí” szerkezetet az angol rövid névutós igenévvel mondja.",
+        "en": "A relative clause can be shortened: “who/which + be” can be dropped and the verb stays in the -ing form or as a past participle. Instead of “the man who is sitting there” you say “the man sitting there”, instead of “the book which was written by Orwell” you say “the book written by Orwell”. After “first, last, only” comes a to-infinitive: “the first person to arrive”. The long Spanish “el hombre que está sentado ahí” is said in English with a short participle.",
+        "es": "Una oración de relativo se puede acortar: «who/which + be» se puede omitir y el verbo queda en forma -ing o como participio pasado. En lugar de «the man who is sitting there» se dice «the man sitting there», en lugar de «the book which was written by Orwell» se dice «the book written by Orwell». Después de «first, last, only» va un to-infinitivo: «the first person to arrive». El largo «el hombre que está sentado ahí» del español se dice en inglés con un participio corto.",
+        "de": "Ein Relativsatz lässt sich verkürzen: «who/which + be» kann wegfallen, und das Verb bleibt in der -ing-Form oder als Partizip Perfekt. Statt «the man who is sitting there» sagt man «the man sitting there», statt «the book which was written by Orwell» sagt man «the book written by Orwell». Nach «first, last, only» steht ein to-Infinitiv: «the first person to arrive». Das lange spanische «el hombre que está sentado ahí» sagt man im Englischen mit einem kurzen Partizip."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "rrc-forms",
+      "title": {
+        "hu": "Melyik alak?",
+        "en": "Which form?",
+        "es": "¿Qué forma uso?",
+        "de": "Welche Form?"
+      },
+      "header": [
+        {
+          "hu": "Jelentés",
+          "en": "Meaning",
+          "es": "Significado",
+          "de": "Bedeutung"
+        },
+        {
+          "hu": "forma",
+          "en": "form",
+          "es": "forma",
+          "de": "Form"
+        }
+      ],
+      "rows": [
+        [
+          "el hombre sentado ahí (the man ___ there)",
+          "sitting"
+        ],
+        [
+          "el libro escrito por Orwell (the book ___ by Orwell)",
+          "written"
+        ],
+        [
+          "la primera en llegar (the first person ___ arrive)",
+          "to"
+        ],
+        [
+          "los carros hechos en México (cars ___ in Mexico)",
+          "made"
+        ],
+        [
+          "cualquiera que quiera (anyone ___ to join)",
+          "wanting"
+        ],
+        [
+          "la persona que vive al lado (the person ___ next door)",
+          "living"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Az -ing alak: tevő jelentés",
+        "en": "The -ing form: an active meaning",
+        "es": "La forma -ing: sentido activo",
+        "de": "Die -ing-Form: aktive Bedeutung"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A who + be + -ing vagy a who + jelen idejű ige helyett áll: „The girl sitting next to me” = the girl who is sitting next to me; „people living in cities” = people who live in cities.",
+            "en": "It replaces who + be + -ing or who + a present verb: “The girl sitting next to me” = the girl who is sitting next to me; “people living in cities” = people who live in cities.",
+            "es": "Reemplaza a who + be + -ing o who + un verbo en presente: «The girl sitting next to me» = the girl who is sitting next to me; «people living in cities» = people who live in cities.",
+            "de": "Es ersetzt who + be + -ing oder who + ein Präsensverb: «The girl sitting next to me» = the girl who is sitting next to me; «people living in cities» = people who live in cities."
+          },
+          "examples": [
+            {
+              "es": "The man sitting there is my boss.",
+              "tr": {
+                "hu": "Az ott ülő férfi a főnököm.",
+                "en": "The man sitting there is my boss.",
+                "es": "El hombre sentado ahí es mi jefe.",
+                "de": "Der Mann, der dort sitzt, ist mein Chef."
+              }
+            },
+            {
+              "es": "People living in big cities often feel lonely.",
+              "tr": {
+                "hu": "A nagyvárosokban élők gyakran magányosak.",
+                "en": "People living in big cities often feel lonely.",
+                "es": "La gente que vive en las grandes ciudades suele sentirse sola.",
+                "de": "Menschen, die in Großstädten leben, fühlen sich oft einsam."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "A múlt idejű igenév: szenvedő jelentés",
+        "en": "The past participle: a passive meaning",
+        "es": "El participio pasado: sentido pasivo",
+        "de": "Das Partizip Perfekt: passive Bedeutung"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A which/that + be + igenév helyett áll: „The book written by Orwell” = the book which was written by Orwell; „cars made in Mexico” = cars which are made in Mexico.",
+            "en": "It replaces which/that + be + participle: “The book written by Orwell” = the book which was written by Orwell; “cars made in Mexico” = cars which are made in Mexico.",
+            "es": "Reemplaza a which/that + be + participio: «The book written by Orwell» = the book which was written by Orwell; «cars made in Mexico» = cars which are made in Mexico.",
+            "de": "Es ersetzt which/that + be + Partizip: «The book written by Orwell» = the book which was written by Orwell; «cars made in Mexico» = cars which are made in Mexico."
+          },
+          "examples": [
+            {
+              "es": "The book written by Orwell is a classic.",
+              "tr": {
+                "hu": "Az Orwell által írt könyv klasszikus.",
+                "en": "The book written by Orwell is a classic.",
+                "es": "El libro escrito por Orwell es un clásico.",
+                "de": "Das von Orwell geschriebene Buch ist ein Klassiker."
+              }
+            },
+            {
+              "es": "Cars made in Mexico are sold abroad.",
+              "tr": {
+                "hu": "A Mexikóban gyártott autókat külföldön adják el.",
+                "en": "Cars made in Mexico are sold abroad.",
+                "es": "Los carros hechos en México se venden en el extranjero.",
+                "de": "In Mexiko hergestellte Autos werden im Ausland verkauft."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "A to-infinitív: first, last, only, felsőfok",
+        "en": "The to-infinitive: first, last, only, superlatives",
+        "es": "El to-infinitivo: first, last, only, superlativos",
+        "de": "Der to-Infinitiv: first, last, only, Superlative"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A the first / the last / the only / the next / felsőfok után to-infinitív áll: „the first person to arrive”, „the only one to know”, „the best way to learn”. Hasznos még: „something to eat”, „a place to stay”.",
+            "en": "After the first / the last / the only / the next / a superlative comes a to-infinitive: “the first person to arrive”, “the only one to know”, “the best way to learn”. Also useful: “something to eat”, “a place to stay”.",
+            "es": "Después de the first / the last / the only / the next / un superlativo va un to-infinitivo: «the first person to arrive», «the only one to know», «the best way to learn». También útil: «something to eat», «a place to stay».",
+            "de": "Nach the first / the last / the only / the next / einem Superlativ steht ein to-Infinitiv: «the first person to arrive», «the only one to know», «the best way to learn». Nützlich auch: «something to eat», «a place to stay»."
+          },
+          "examples": [
+            {
+              "es": "The first person to arrive gets a prize.",
+              "tr": {
+                "hu": "Aki először érkezik, díjat kap.",
+                "en": "The first person to arrive gets a prize.",
+                "es": "La primera persona en llegar recibe un premio.",
+                "de": "Wer als Erster ankommt, bekommt einen Preis."
+              }
+            },
+            {
+              "es": "She is the only student to pass the exam.",
+              "tr": {
+                "hu": "Ő az egyetlen diák, aki átment a vizsgán.",
+                "en": "She is the only student to pass the exam.",
+                "es": "Ella es la única estudiante que aprobó el examen.",
+                "de": "Sie ist die einzige Schülerin, die die Prüfung bestanden hat."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Formális használat és korlátok",
+        "en": "Formal use and limits",
+        "es": "Uso formal y límites",
+        "de": "Formeller Gebrauch und Grenzen"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Hivatalos szövegben gyakori: „Anyone wishing to apply should contact the office.” „All passengers traveling to Madrid…” A rövidítés nem használható minden esetben: egy befejezett múltbeli esemény nem -ing alakkal áll („the man who called yesterday”, nem „the man calling yesterday”).",
+            "en": "Common in official texts: “Anyone wishing to apply should contact the office.” “All passengers traveling to Madrid…” The shortening does not work in every case: a finished past event does not take -ing (“the man who called yesterday”, not “the man calling yesterday”).",
+            "es": "Es común en textos oficiales: «Anyone wishing to apply should contact the office.» «All passengers traveling to Madrid…» El acortamiento no sirve en todos los casos: un hecho pasado terminado no lleva -ing («the man who called yesterday», no «the man calling yesterday»).",
+            "de": "In amtlichen Texten üblich: «Anyone wishing to apply should contact the office.» «All passengers traveling to Madrid…» Die Verkürzung geht nicht in jedem Fall: ein abgeschlossenes vergangenes Ereignis steht nicht mit -ing («the man who called yesterday», nicht «the man calling yesterday»)."
+          },
+          "examples": [
+            {
+              "es": "Anyone wishing to apply should contact the office.",
+              "tr": {
+                "hu": "Aki jelentkezni szeretne, forduljon az irodához.",
+                "en": "Anyone wishing to apply should contact the office.",
+                "es": "Quien desee postularse debe comunicarse con la oficina.",
+                "de": "Wer sich bewerben möchte, wende sich an das Büro."
+              }
+            },
+            {
+              "es": "The letter sent yesterday has not arrived.",
+              "tr": {
+                "hu": "A tegnap elküldött levél még nem érkezett meg.",
+                "en": "The letter sent yesterday has not arrived.",
+                "es": "La carta enviada ayer todavía no llega.",
+                "de": "Der gestern gesendete Brief ist noch nicht angekommen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Nem „the man sit there”, hanem „the man sitting there”. A rövidítésnél nincs ragozott ige: sem „the man sits there is”, sem „the book was written by Orwell is”.",
+        "en": "Not “the man sit there”, but “the man sitting there”. In the shortened form there is no finite verb: neither “the man sits there is” nor “the book was written by Orwell is”.",
+        "es": "No «the man sit there», sino «the man sitting there». En la forma acortada no hay un verbo conjugado: ni «the man sits there is» ni «the book was written by Orwell is».",
+        "de": "Nicht «the man sit there», sondern «the man sitting there». In der verkürzten Form gibt es kein finites Verb: weder «the man sits there is» noch «the book was written by Orwell is»."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Az -ing alak egyidejűséget vagy általános igazságot jelöl; a múlt idejű igenév szenvedő. Aki tegnap hívott: „the man who called yesterday”, nem „the man calling yesterday”.",
+        "en": "The -ing form marks something happening at the same time or a general truth; the past participle is passive. The man who called yesterday: “the man who called yesterday”, not “the man calling yesterday”.",
+        "es": "La forma -ing marca algo simultáneo o una verdad general; el participio pasado es pasivo. El hombre que llamó ayer: «the man who called yesterday», no «the man calling yesterday».",
+        "de": "Die -ing-Form markiert etwas Gleichzeitiges oder eine allgemeine Wahrheit; das Partizip Perfekt ist passiv. Der Mann, der gestern anrief: «the man who called yesterday», nicht «the man calling yesterday»."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A vonatkozó mellékmondat rövidíthető. Az -ing alak tevő jelentésű: «The man sitting there is my boss». A múlt idejű igenév szenvedő jelentésű: «The book written by Orwell is a classic». Az «első, utolsó, egyetlen» és a felsőfok után to-infinitív áll: «The first person to arrive gets a prize». Hivatalos szövegben gyakori: «Anyone wishing to apply should contact the office». Egy befejezett múltbeli eseményt nem lehet -ing alakkal rövidíteni.",
+    "en": "A relative clause can be shortened. The -ing form has an active meaning: «The man sitting there is my boss». The past participle has a passive meaning: «The book written by Orwell is a classic». After «first, last, only» and a superlative comes a to-infinitive: «The first person to arrive gets a prize». Common in official texts: «Anyone wishing to apply should contact the office». A finished past event cannot be shortened with -ing.",
+    "es": "Una oración de relativo se puede acortar. La forma -ing tiene sentido activo: «The man sitting there is my boss». El participio pasado tiene sentido pasivo: «The book written by Orwell is a classic». Después de «first, last, only» y de un superlativo va un to-infinitivo: «The first person to arrive gets a prize». Es común en textos oficiales: «Anyone wishing to apply should contact the office». Un hecho pasado terminado no se puede acortar con -ing.",
+    "de": "Ein Relativsatz lässt sich verkürzen. Die -ing-Form hat aktive Bedeutung: «The man sitting there is my boss». Das Partizip Perfekt hat passive Bedeutung: «The book written by Orwell is a classic». Nach «first, last, only» und einem Superlativ steht ein to-Infinitiv: «The first person to arrive gets a prize». In amtlichen Texten üblich: «Anyone wishing to apply should contact the office». Ein abgeschlossenes vergangenes Ereignis lässt sich nicht mit -ing verkürzen."
+  },
+  "glossary": [
+    {
+      "word": "ann",
+      "gloss": {
+        "hu": "Ann (női név)",
+        "en": "Ann (female first name)",
+        "es": "Ann (nombre de mujer)",
+        "de": "Ann (Frauenname)"
+      }
+    },
+    {
+      "word": "anyone",
+      "gloss": {
+        "hu": "bárki",
+        "en": "any person",
+        "es": "cualquiera, alguien",
+        "de": "irgendjemand"
+      }
+    },
+    {
+      "word": "away",
+      "gloss": {
+        "hu": "távol, el",
+        "en": "not here",
+        "es": "lejos, fuera",
+        "de": "weg"
+      }
+    },
+    {
+      "word": "belongs",
+      "gloss": {
+        "hu": "tartozik, valakié",
+        "en": "it is owned by",
+        "es": "pertenece",
+        "de": "gehört"
+      }
+    },
+    {
+      "word": "built",
+      "gloss": {
+        "hu": "épített (a build múltja)",
+        "en": "past form of build",
+        "es": "construyó (pasado de build)",
+        "de": "baute (Past von build)"
+      }
+    },
+    {
+      "word": "classic",
+      "gloss": {
+        "hu": "klasszikus",
+        "en": "a very good old work",
+        "es": "clásico",
+        "de": "Klassiker"
+      }
+    },
+    {
+      "word": "directions",
+      "gloss": {
+        "hu": "útmutatás",
+        "en": "how to get somewhere",
+        "es": "indicaciones",
+        "de": "Wegbeschreibung"
+      }
+    },
+    {
+      "word": "drive",
+      "gloss": {
+        "hu": "vezet (autót)",
+        "en": "to drive",
+        "es": "manejar",
+        "de": "fahren"
+      }
+    },
+    {
+      "word": "eva",
+      "gloss": {
+        "hu": "Eva (női név)",
+        "en": "Eva (female first name)",
+        "es": "Eva (nombre de mujer)",
+        "de": "Eva (Frauenname)"
+      }
+    },
+    {
+      "word": "gone",
+      "gloss": {
+        "hu": "elment (a go igenéve)",
+        "en": "participle of go",
+        "es": "ido (participio de go)",
+        "de": "gegangen (Partizip von go)"
+      }
+    },
+    {
+      "word": "growing",
+      "gloss": {
+        "hu": "nő (ige-ing alak)",
+        "en": "-ing form of grow",
+        "es": "creciendo (forma -ing de grow)",
+        "de": "wachsen (-ing-Form von grow)"
+      }
+    },
+    {
+      "word": "guests",
+      "gloss": {
+        "hu": "vendégek",
+        "en": "people invited",
+        "es": "invitados",
+        "de": "Gäste"
+      }
+    },
+    {
+      "word": "join",
+      "gloss": {
+        "hu": "csatlakozik",
+        "en": "to become a member",
+        "es": "unirse",
+        "de": "beitreten"
+      }
+    },
+    {
+      "word": "lying",
+      "gloss": {
+        "hu": "hazudik (ige-ing alak)",
+        "en": "telling a lie",
+        "es": "mintiendo",
+        "de": "lügen"
+      }
+    },
+    {
+      "word": "orwell",
+      "gloss": {
+        "hu": "Orwell (író)",
+        "en": "Orwell (a writer)",
+        "es": "Orwell (escritor)",
+        "de": "Orwell (Schriftsteller)"
+      }
+    },
+    {
+      "word": "passengers",
+      "gloss": {
+        "hu": "utasok",
+        "en": "people who travel",
+        "es": "pasajeros",
+        "de": "Passagiere"
+      }
+    },
+    {
+      "word": "polite",
+      "gloss": {
+        "hu": "udvarias",
+        "en": "with good manners",
+        "es": "cortés, amable",
+        "de": "höflich"
+      }
+    },
+    {
+      "word": "sit",
+      "gloss": {
+        "hu": "ül",
+        "en": "to be on a chair",
+        "es": "sentarse",
+        "de": "sitzen"
+      }
+    },
+    {
+      "word": "sitting",
+      "gloss": {
+        "hu": "ül (ige-ing alak)",
+        "en": "-ing form of sit",
+        "es": "sentado (forma -ing de sit)",
+        "de": "sitzen (-ing-Form von sit)"
+      }
+    },
+    {
+      "word": "sold",
+      "gloss": {
+        "hu": "eladott (a sell múltja)",
+        "en": "past form of sell",
+        "es": "vendió (pasado de sell)",
+        "de": "verkaufte (Past von sell)"
+      }
+    },
+    {
+      "word": "something",
+      "gloss": {
+        "hu": "valami",
+        "en": "a thing",
+        "es": "algo",
+        "de": "etwas"
+      }
+    },
+    {
+      "word": "song",
+      "gloss": {
+        "hu": "dal",
+        "en": "a short piece of music with words",
+        "es": "canción",
+        "de": "Lied"
+      }
+    },
+    {
+      "word": "standing",
+      "gloss": {
+        "hu": "áll (ige-ing alak)",
+        "en": "-ing form of stand",
+        "es": "de pie (forma -ing de stand)",
+        "de": "stehen (-ing-Form von stand)"
+      }
+    },
+    {
+      "word": "stands",
+      "gloss": {
+        "hu": "áll (he/she/it)",
+        "en": "it is on its feet",
+        "es": "está de pie, se encuentra",
+        "de": "steht"
+      }
+    },
+    {
+      "word": "staying",
+      "gloss": {
+        "hu": "marad (ige-ing alak)",
+        "en": "-ing form of stay",
+        "es": "quedándose (forma -ing de stay)",
+        "de": "bleiben (-ing-Form von stay)"
+      }
+    },
+    {
+      "word": "sung",
+      "gloss": {
+        "hu": "énekelt (az sing igenéve)",
+        "en": "participle of sing",
+        "es": "cantado (participio de sing)",
+        "de": "gesungen (Partizip von sing)"
+      }
+    },
+    {
+      "word": "tom",
+      "gloss": {
+        "hu": "Tom (férfinév)",
+        "en": "Tom (male first name)",
+        "es": "Tom (nombre de hombre)",
+        "de": "Tom (Männername)"
+      }
+    },
+    {
+      "word": "visitors",
+      "gloss": {
+        "hu": "látogatók",
+        "en": "people who come to see",
+        "es": "visitantes",
+        "de": "Besucher"
+      }
+    },
+    {
+      "word": "way",
+      "gloss": {
+        "hu": "út, mód",
+        "en": "a road or a method",
+        "es": "camino, manera",
+        "de": "Weg"
+      }
+    },
+    {
+      "word": "workers",
+      "gloss": {
+        "hu": "dolgozók",
+        "en": "people who work",
+        "es": "trabajadores",
+        "de": "Arbeiter"
+      }
+    },
+    {
+      "word": "receive",
+      "gloss": {
+        "hu": "kap, megkap",
+        "en": "to get something",
+        "es": "recibir",
+        "de": "erhalten"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "rrc-01",
+      "sentence": "The girl ___ next to me is my cousin.",
+      "options": [
+        "sit",
+        "sitting",
+        "to sit"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Tevő jelentés: the girl sitting next to me.",
+        "en": "An active meaning: the girl sitting next to me.",
+        "es": "Un sentido activo: the girl sitting next to me.",
+        "de": "Eine aktive Bedeutung: the girl sitting next to me."
+      },
+      "wrong": {
+        "sit": {
+          "hu": "A the girl sit next to me nem helyes; -ing alak kell.",
+          "en": "“The girl sit next to me” is not correct; you need the -ing form.",
+          "es": "«The girl sit next to me» no es correcto; hace falta la forma -ing.",
+          "de": "„The girl sit next to me“ ist nicht korrekt; man braucht die -ing-Form."
+        },
+        "to sit": {
+          "hu": "A to sit célt vagy előírást jelölne; itt egy már ülő lány van.",
+          "en": "“To sit” would express a purpose or a rule; here the girl is already sitting.",
+          "es": "«To sit» expresaría una finalidad o una regla; aquí la chica ya está sentada.",
+          "de": "„To sit“ würde einen Zweck oder eine Regel ausdrücken; hier sitzt das Mädchen schon."
+        }
+      },
+      "examples": [
+        "The boy standing there is Tom.",
+        "The man reading is my uncle."
+      ]
+    },
+    {
+      "id": "rrc-02",
+      "sentence": "The book ___ by Orwell is a classic.",
+      "options": [
+        "writing",
+        "wrote",
+        "written"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Szenvedő jelentés: the book written by Orwell.",
+        "en": "A passive meaning: the book written by Orwell.",
+        "es": "Un sentido pasivo: the book written by Orwell.",
+        "de": "Eine passive Bedeutung: the book written by Orwell."
+      },
+      "wrong": {
+        "writing": {
+          "hu": "A writing azt jelentené, hogy a könyv ír; szenvedő kell.",
+          "en": "“Writing” would mean the book writes; you need a passive.",
+          "es": "«Writing» significaría que el libro escribe; hace falta una pasiva.",
+          "de": "„Writing“ würde heißen, dass das Buch schreibt; man braucht ein Passiv."
+        },
+        "wrote": {
+          "hu": "A wrote by Orwell nem helyes; igenév kell (written).",
+          "en": "“Wrote by Orwell” is not correct; you need the participle (written).",
+          "es": "«Wrote by Orwell» no es correcto; hace falta el participio (written).",
+          "de": "„Wrote by Orwell“ ist nicht korrekt; man braucht das Partizip (written)."
+        }
+      },
+      "examples": [
+        "The song sung by her is old.",
+        "The house built by him is big."
+      ]
+    },
+    {
+      "id": "rrc-03",
+      "sentence": "The first person ___ arrive gets a prize.",
+      "options": [
+        "to",
+        "who",
+        "for"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A the first után to-infinitív áll: the first person to arrive.",
+        "en": "After the first comes a to-infinitive: the first person to arrive.",
+        "es": "Después de the first va un to-infinitivo: the first person to arrive.",
+        "de": "Nach the first steht ein to-Infinitiv: the first person to arrive."
+      },
+      "wrong": {
+        "who": {
+          "hu": "A who arrive nem helyes; a who után ragozott ige (arrives) kellene.",
+          "en": "“Who arrive” is not correct; after who you would need a finite verb (arrives).",
+          "es": "«Who arrive» no es correcto; después de who haría falta un verbo conjugado (arrives).",
+          "de": "„Who arrive“ ist nicht korrekt; nach who bräuchte man ein finites Verb (arrives)."
+        },
+        "for": {
+          "hu": "A for arrive nem helyes; to kell.",
+          "en": "“For arrive” is not correct; you need to.",
+          "es": "«For arrive» no es correcto; hace falta to.",
+          "de": "„For arrive“ ist nicht korrekt; man braucht to."
+        }
+      },
+      "examples": [
+        "The last man to leave was Tom.",
+        "The next train to arrive is late."
+      ]
+    },
+    {
+      "id": "rrc-04",
+      "sentence": "Cars ___ in Mexico are sold abroad.",
+      "options": [
+        "making",
+        "made",
+        "make"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Szenvedő jelentés: cars made in Mexico.",
+        "en": "A passive meaning: cars made in Mexico.",
+        "es": "Un sentido pasivo: cars made in Mexico.",
+        "de": "Eine passive Bedeutung: cars made in Mexico."
+      },
+      "wrong": {
+        "making": {
+          "hu": "A making azt jelentené, hogy az autók gyártanak valamit; szenvedő kell.",
+          "en": "“Making” would mean the cars make something; you need a passive.",
+          "es": "«Making» significaría que los carros fabrican algo; hace falta una pasiva.",
+          "de": "„Making“ würde heißen, dass die Autos etwas herstellen; man braucht ein Passiv."
+        },
+        "make": {
+          "hu": "A cars make in Mexico nem helyes; igenév kell (made).",
+          "en": "“Cars make in Mexico” is not correct; you need the participle (made).",
+          "es": "«Cars make in Mexico» no es correcto; hace falta el participio (made).",
+          "de": "„Cars make in Mexico“ ist nicht korrekt; man braucht das Partizip (made)."
+        }
+      },
+      "examples": [
+        "Food cooked at home is cheap.",
+        "Goods sold here are new."
+      ]
+    },
+    {
+      "id": "rrc-05",
+      "sentence": "Anyone ___ to join should call us.",
+      "options": [
+        "wants",
+        "want",
+        "wanting"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Formális rövidítés: anyone wanting to join.",
+        "en": "A formal shortening: anyone wanting to join.",
+        "es": "Un acortamiento formal: anyone wanting to join.",
+        "de": "Eine formelle Verkürzung: anyone wanting to join."
+      },
+      "wrong": {
+        "wants": {
+          "hu": "A wants két ragozott igét tenne egymás mellé (wants … should call); -ing alak kell.",
+          "en": "“Wants” would put two finite verbs together (wants … should call); you need the -ing form.",
+          "es": "«Wants» pondría dos verbos conjugados juntos (wants … should call); hace falta la forma -ing.",
+          "de": "„Wants“ würde zwei finite Verben zusammenstellen (wants … should call); man braucht die -ing-Form."
+        },
+        "want": {
+          "hu": "A want két ragozott igét tenne egymás mellé; -ing alak kell.",
+          "en": "“Want” would put two finite verbs together; you need the -ing form.",
+          "es": "«Want» pondría dos verbos conjugados juntos; hace falta la forma -ing.",
+          "de": "„Want“ würde zwei finite Verben zusammenstellen; man braucht die -ing-Form."
+        }
+      },
+      "examples": [
+        "Anyone wishing to leave may go.",
+        "Anyone needing help can ask."
+      ]
+    },
+    {
+      "id": "rrc-06",
+      "sentence": "The woman ___ next door is a teacher.",
+      "options": [
+        "living",
+        "lived",
+        "lives"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Tevő jelentés: the woman living next door.",
+        "en": "An active meaning: the woman living next door.",
+        "es": "Un sentido activo: the woman living next door.",
+        "de": "Eine aktive Bedeutung: the woman living next door."
+      },
+      "wrong": {
+        "lived": {
+          "hu": "A the woman lived next door is nem helyes; két ragozott ige kerülne egymás mellé.",
+          "en": "“The woman lived next door is” is not correct; two finite verbs would stand together.",
+          "es": "«The woman lived next door is» no es correcto; irían juntos dos verbos conjugados.",
+          "de": "„The woman lived next door is“ ist nicht korrekt; zwei finite Verben würden zusammenstehen."
+        },
+        "lives": {
+          "hu": "A the woman lives next door is nem helyes; két ragozott ige kerülne egymás mellé.",
+          "en": "“The woman lives next door is” is not correct; two finite verbs would stand together.",
+          "es": "«The woman lives next door is» no es correcto; irían juntos dos verbos conjugados.",
+          "de": "„The woman lives next door is“ ist nicht korrekt; zwei finite Verben würden zusammenstehen."
+        }
+      },
+      "examples": [
+        "The man working here is kind.",
+        "The girl waiting outside is Eva."
+      ]
+    },
+    {
+      "id": "rrc-07",
+      "sentence": "The letter ___ yesterday has not arrived.",
+      "options": [
+        "sending",
+        "sent",
+        "sends"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Befejezett, szenvedő jelentés: the letter sent yesterday.",
+        "en": "A finished, passive meaning: the letter sent yesterday.",
+        "es": "Un sentido terminado y pasivo: the letter sent yesterday.",
+        "de": "Eine abgeschlossene, passive Bedeutung: the letter sent yesterday."
+      },
+      "wrong": {
+        "sending": {
+          "hu": "A sending azt jelentené, hogy a levél küld; szenvedő kell.",
+          "en": "“Sending” would mean the letter sends; you need a passive.",
+          "es": "«Sending» significaría que la carta envía; hace falta una pasiva.",
+          "de": "„Sending“ würde heißen, dass der Brief sendet; man braucht ein Passiv."
+        },
+        "sends": {
+          "hu": "A sends két ragozott igét tenne egymás mellé; igenév kell.",
+          "en": "“Sends” would put two finite verbs together; you need a participle.",
+          "es": "«Sends» pondría dos verbos conjugados juntos; hace falta un participio.",
+          "de": "„Sends“ würde zwei finite Verben zusammenstellen; man braucht ein Partizip."
+        }
+      },
+      "examples": [
+        "The money paid last week is gone.",
+        "The report written today is long."
+      ]
+    },
+    {
+      "id": "rrc-08",
+      "sentence": "She is the only student ___ the exam.",
+      "options": [
+        "pass",
+        "passes",
+        "to pass"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A the only után to-infinitív áll.",
+        "en": "After the only comes a to-infinitive.",
+        "es": "Después de the only va un to-infinitivo.",
+        "de": "Nach the only steht ein to-Infinitiv."
+      },
+      "wrong": {
+        "pass": {
+          "hu": "A the only student pass nem helyes; a to nem hagyható el.",
+          "en": "“The only student pass” is not correct; the to cannot be dropped.",
+          "es": "«The only student pass» no es correcto; el to no se puede omitir.",
+          "de": "„The only student pass“ ist nicht korrekt; das to kann nicht wegfallen."
+        },
+        "passes": {
+          "hu": "A passes két ragozott igét tenne egymás mellé (is … passes); to-infinitív kell.",
+          "en": "“Passes” would put two finite verbs together (is … passes); you need the to-infinitive.",
+          "es": "«Passes» pondría dos verbos conjugados juntos (is … passes); hace falta el to-infinitivo.",
+          "de": "„Passes“ würde zwei finite Verben zusammenstellen (is … passes); man braucht den to-Infinitiv."
+        }
+      },
+      "examples": [
+        "He is the only one to know.",
+        "She was the first to win."
+      ]
+    },
+    {
+      "id": "rrc-09",
+      "sentence": "The best way ___ learn a language is daily practice.",
+      "options": [
+        "to",
+        "for",
+        "of"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A the best way után to-infinitív áll.",
+        "en": "After the best way comes a to-infinitive.",
+        "es": "Después de the best way va un to-infinitivo.",
+        "de": "Nach the best way steht ein to-Infinitiv."
+      },
+      "wrong": {
+        "for": {
+          "hu": "A best way for learn nem helyes; to kell (for + ige nem áll).",
+          "en": "“Best way for learn” is not correct; you need to (for + verb does not stand).",
+          "es": "«Best way for learn» no es correcto; hace falta to (for + verbo no va).",
+          "de": "„Best way for learn“ ist nicht korrekt; man braucht to (for + Verb steht nicht)."
+        },
+        "of": {
+          "hu": "A best way of learn nem helyes; of után -ing kell, itt to + alapige a szokásos.",
+          "en": "“Best way of learn” is not correct; after of you need -ing, here to + base verb is usual.",
+          "es": "«Best way of learn» no es correcto; después de of hace falta -ing, aquí lo habitual es to + verbo base.",
+          "de": "„Best way of learn“ ist nicht korrekt; nach of braucht man -ing, hier ist to + Grundform üblich."
+        }
+      },
+      "examples": [
+        "The best time to go is now.",
+        "The easiest way to start is here."
+      ]
+    },
+    {
+      "id": "rrc-10",
+      "sentence": "People ___ in big cities often feel lonely.",
+      "options": [
+        "lived",
+        "living",
+        "live"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Általános igazság, tevő jelentés: people living in big cities.",
+        "en": "A general truth, an active meaning: people living in big cities.",
+        "es": "Una verdad general, un sentido activo: people living in big cities.",
+        "de": "Eine allgemeine Wahrheit, aktive Bedeutung: people living in big cities."
+      },
+      "wrong": {
+        "lived": {
+          "hu": "A people lived in big cities often feel nem helyes; két ragozott ige kerülne egymás mellé.",
+          "en": "“People lived in big cities often feel” is not correct; two finite verbs would stand together.",
+          "es": "«People lived in big cities often feel» no es correcto; irían juntos dos verbos conjugados.",
+          "de": "„People lived in big cities often feel“ ist nicht korrekt; zwei finite Verben würden zusammenstehen."
+        },
+        "live": {
+          "hu": "A people live in big cities often feel nem helyes; két ragozott ige kerülne egymás mellé.",
+          "en": "“People live in big cities often feel” is not correct; two finite verbs would stand together.",
+          "es": "«People live in big cities often feel» no es correcto; irían juntos dos verbos conjugados.",
+          "de": "„People live in big cities often feel“ ist nicht korrekt; zwei finite Verben würden zusammenstehen."
+        }
+      },
+      "examples": [
+        "Students studying here are happy.",
+        "Workers living far away drive."
+      ]
+    },
+    {
+      "id": "rrc-11",
+      "sentence": "The documents ___ on the desk are mine.",
+      "options": [
+        "lie",
+        "lies",
+        "lying"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Tevő jelentés: the documents lying on the desk.",
+        "en": "An active meaning: the documents lying on the desk.",
+        "es": "Un sentido activo: the documents lying on the desk.",
+        "de": "Eine aktive Bedeutung: the documents lying on the desk."
+      },
+      "wrong": {
+        "lie": {
+          "hu": "A the documents lie on the desk are nem helyes; -ing alak kell.",
+          "en": "“The documents lie on the desk are” is not correct; you need the -ing form.",
+          "es": "«The documents lie on the desk are» no es correcto; hace falta la forma -ing.",
+          "de": "„The documents lie on the desk are“ ist nicht korrekt; man braucht die -ing-Form."
+        },
+        "lies": {
+          "hu": "A lies két ragozott igét tenne egymás mellé; -ing alak kell.",
+          "en": "“Lies” would put two finite verbs together; you need the -ing form.",
+          "es": "«Lies» pondría dos verbos conjugados juntos; hace falta la forma -ing.",
+          "de": "„Lies“ würde zwei finite Verben zusammenstellen; man braucht die -ing-Form."
+        }
+      },
+      "examples": [
+        "The cat sleeping there is mine.",
+        "The keys lying here are his."
+      ]
+    },
+    {
+      "id": "rrc-12",
+      "sentence": "Passengers ___ to Madrid should go to gate five.",
+      "options": [
+        "traveling",
+        "traveled",
+        "travel"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Hivatalos, tevő rövidítés: passengers traveling to Madrid.",
+        "en": "An official, active shortening: passengers traveling to Madrid.",
+        "es": "Un acortamiento oficial y activo: passengers traveling to Madrid.",
+        "de": "Eine amtliche, aktive Verkürzung: passengers traveling to Madrid."
+      },
+      "wrong": {
+        "traveled": {
+          "hu": "A passengers traveled to Madrid should nem helyes; -ing alak kell.",
+          "en": "“Passengers traveled to Madrid should” is not correct; you need the -ing form.",
+          "es": "«Passengers traveled to Madrid should» no es correcto; hace falta la forma -ing.",
+          "de": "„Passengers traveled to Madrid should“ ist nicht korrekt; man braucht die -ing-Form."
+        },
+        "travel": {
+          "hu": "A passengers travel to Madrid should nem helyes; -ing alak kell.",
+          "en": "“Passengers travel to Madrid should” is not correct; you need the -ing form.",
+          "es": "«Passengers travel to Madrid should» no es correcto; hace falta la forma -ing.",
+          "de": "„Passengers travel to Madrid should“ ist nicht korrekt; man braucht die -ing-Form."
+        }
+      },
+      "examples": [
+        "Visitors arriving late must call.",
+        "Guests staying here pay less."
+      ]
+    },
+    {
+      "id": "rrc-13",
+      "sentence": "He was the last man ___ the building.",
+      "options": [
+        "leave",
+        "to leave",
+        "leaves"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A the last után to-infinitív áll.",
+        "en": "After the last comes a to-infinitive.",
+        "es": "Después de the last va un to-infinitivo.",
+        "de": "Nach the last steht ein to-Infinitiv."
+      },
+      "wrong": {
+        "leave": {
+          "hu": "A the last man leave nem helyes; a to nem hagyható el.",
+          "en": "“The last man leave” is not correct; the to cannot be dropped.",
+          "es": "«The last man leave» no es correcto; el to no se puede omitir.",
+          "de": "„The last man leave“ ist nicht korrekt; das to kann nicht wegfallen."
+        },
+        "leaves": {
+          "hu": "A leaves két ragozott igét tenne egymás mellé (was … leaves); to-infinitív kell.",
+          "en": "“Leaves” would put two finite verbs together (was … leaves); you need the to-infinitive.",
+          "es": "«Leaves» pondría dos verbos conjugados juntos (was … leaves); hace falta el to-infinitivo.",
+          "de": "„Leaves“ würde zwei finite Verben zusammenstellen (was … leaves); man braucht den to-Infinitiv."
+        }
+      },
+      "examples": [
+        "She was the last to speak.",
+        "He was the first to go."
+      ]
+    },
+    {
+      "id": "rrc-14",
+      "sentence": "We need someone ___ the website.",
+      "options": [
+        "update",
+        "updates",
+        "to update"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Szükséges személy: someone to + alapige.",
+        "en": "A needed person: someone to + base verb.",
+        "es": "Una persona necesaria: someone to + verbo base.",
+        "de": "Eine gebrauchte Person: someone to + Grundform."
+      },
+      "wrong": {
+        "update": {
+          "hu": "A someone update nem helyes; a to nem hagyható el.",
+          "en": "“Someone update” is not correct; the to cannot be dropped.",
+          "es": "«Someone update» no es correcto; el to no se puede omitir.",
+          "de": "„Someone update“ ist nicht korrekt; das to kann nicht wegfallen."
+        },
+        "updates": {
+          "hu": "A someone updates két ragozott igét tenne egymás mellé; to-infinitív kell.",
+          "en": "“Someone updates” would put two finite verbs together; you need the to-infinitive.",
+          "es": "«Someone updates» pondría dos verbos conjugados juntos; hace falta el to-infinitivo.",
+          "de": "„Someone updates“ würde zwei finite Verben zusammenstellen; man braucht den to-Infinitiv."
+        }
+      },
+      "examples": [
+        "We need someone to help.",
+        "I want something to eat."
+      ]
+    },
+    {
+      "id": "rrc-15",
+      "sentence": "The man ___ me directions at the moment is very polite.",
+      "options": [
+        "giving",
+        "gave",
+        "to give"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Egyidejű, tevő jelentés: the man giving me directions.",
+        "en": "A simultaneous, active meaning: the man giving me directions.",
+        "es": "Un sentido simultáneo y activo: the man giving me directions.",
+        "de": "Eine gleichzeitige, aktive Bedeutung: the man giving me directions."
+      },
+      "wrong": {
+        "gave": {
+          "hu": "A the man gave me directions at the moment is két ragozott igét tenne egymás mellé; -ing alak kell.",
+          "en": "“The man gave me directions at the moment is” would put two finite verbs together; you need the -ing form.",
+          "es": "«The man gave me directions at the moment is» pondría dos verbos conjugados juntos; hace falta la forma -ing.",
+          "de": "„The man gave me directions at the moment is“ würde zwei finite Verben zusammenstellen; man braucht die -ing-Form."
+        },
+        "to give": {
+          "hu": "A the man to give me nem helyes ebben a jelentésben; -ing alak kell.",
+          "en": "“The man to give me” is not correct in this meaning; you need the -ing form.",
+          "es": "«The man to give me» no es correcto en este sentido; hace falta la forma -ing.",
+          "de": "„The man to give me“ ist in dieser Bedeutung nicht korrekt; man braucht die -ing-Form."
+        }
+      },
+      "examples": [
+        "The woman telling the story is Ann.",
+        "The boy helping me is Tom."
+      ]
+    },
+    {
+      "id": "rrc-16",
+      "sentence": "All the students ___ the exam today will receive a certificate.",
+      "options": [
+        "passed",
+        "passing",
+        "pass"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Tevő jelentés: all the students passing the exam.",
+        "en": "An active meaning: all the students passing the exam.",
+        "es": "Un sentido activo: all the students passing the exam.",
+        "de": "Eine aktive Bedeutung: all the students passing the exam."
+      },
+      "wrong": {
+        "passed": {
+          "hu": "A passed the exam today will receive két ragozott igét tenne egymás mellé; -ing alak kell.",
+          "en": "“Passed the exam today will receive” would put two finite verbs together; you need the -ing form.",
+          "es": "«Passed the exam today will receive» pondría dos verbos conjugados juntos; hace falta la forma -ing.",
+          "de": "„Passed the exam today will receive“ würde zwei finite Verben zusammenstellen; man braucht die -ing-Form."
+        },
+        "pass": {
+          "hu": "A pass the exam today will receive két ragozott igét tenne egymás mellé; -ing alak kell.",
+          "en": "“Pass the exam today will receive” would put two finite verbs together; you need the -ing form.",
+          "es": "«Pass the exam today will receive» pondría dos verbos conjugados juntos; hace falta la forma -ing.",
+          "de": "„Pass the exam today will receive“ würde zwei finite Verben zusammenstellen; man braucht die -ing-Form."
+        }
+      },
+      "examples": [
+        "All guests attending get a gift.",
+        "Everyone making it wins."
+      ]
+    },
+    {
+      "id": "rrc-17",
+      "sentence": "The house ___ at the end of the street belongs to my uncle.",
+      "options": [
+        "stood",
+        "stands",
+        "standing"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Tevő jelentés: the house standing at the end.",
+        "en": "An active meaning: the house standing at the end.",
+        "es": "Un sentido activo: the house standing at the end.",
+        "de": "Eine aktive Bedeutung: the house standing at the end."
+      },
+      "wrong": {
+        "stood": {
+          "hu": "A the house stood at the end belongs két ragozott igét tenne egymás mellé; -ing alak kell.",
+          "en": "“The house stood at the end belongs” would put two finite verbs together; you need the -ing form.",
+          "es": "«The house stood at the end belongs» pondría dos verbos conjugados juntos; hace falta la forma -ing.",
+          "de": "„The house stood at the end belongs“ würde zwei finite Verben zusammenstellen; man braucht die -ing-Form."
+        },
+        "stands": {
+          "hu": "A stands két ragozott igét tenne egymás mellé; -ing alak kell.",
+          "en": "“Stands” would put two finite verbs together; you need the -ing form.",
+          "es": "«Stands» pondría dos verbos conjugados juntos; hace falta la forma -ing.",
+          "de": "„Stands“ würde zwei finite Verben zusammenstellen; man braucht die -ing-Form."
+        }
+      },
+      "examples": [
+        "The tree growing here is old.",
+        "The shop standing there is mine."
+      ]
+    },
+    {
+      "id": "rrc-18",
+      "kind": "form",
+      "verb": "forma",
+      "person": "el hombre sentado ahí (the man ___ there)",
+      "answer": "sitting",
+      "accept": [
+        "seated"
+      ],
+      "table": "rrc-forms"
+    },
+    {
+      "id": "rrc-19",
+      "kind": "form",
+      "verb": "forma",
+      "person": "el libro escrito por Orwell (the book ___ by Orwell)",
+      "answer": "written",
+      "table": "rrc-forms"
+    },
+    {
+      "id": "rrc-20",
+      "kind": "form",
+      "verb": "forma",
+      "person": "la primera en llegar (the first person ___ arrive)",
+      "answer": "to",
+      "table": "rrc-forms"
+    },
+    {
+      "id": "rrc-21",
+      "kind": "form",
+      "verb": "forma",
+      "person": "los carros hechos en México (cars ___ in Mexico)",
+      "answer": "made",
+      "accept": [
+        "manufactured",
+        "built",
+        "produced",
+        "assembled"
+      ],
+      "table": "rrc-forms"
+    },
+    {
+      "id": "rrc-22",
+      "kind": "form",
+      "verb": "forma",
+      "person": "cualquiera que quiera (anyone ___ to join)",
+      "answer": "wanting",
+      "accept": [
+        "wishing",
+        "hoping",
+        "looking"
+      ],
+      "table": "rrc-forms"
+    },
+    {
+      "id": "rrc-23",
+      "kind": "form",
+      "verb": "forma",
+      "person": "la persona que vive al lado (the person ___ next door)",
+      "answer": "living",
+      "accept": [
+        "residing"
+      ],
+      "table": "rrc-forms"
+    },
+    {
+      "kind": "why",
+      "id": "rrc-24",
+      "es": "The man sitting there is my boss.",
+      "target": "sitting there",
+      "tr": {
+        "hu": "Az ott ülő férfi a főnököm.",
+        "en": "The man sitting there is my boss.",
+        "es": "El hombre sentado ahí es mi jefe.",
+        "de": "Der Mann, der dort sitzt, ist mein Chef."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "rövidített tevő vonatkozó mondat: who is sitting",
+            "en": "a reduced active relative clause: who is sitting",
+            "es": "una oración de relativo reducida y activa: who is sitting",
+            "de": "ein verkürzter aktiver Relativsatz: who is sitting"
+          }
+        },
+        {
+          "text": {
+            "hu": "szenvedő szerkezet",
+            "en": "a passive",
+            "es": "una pasiva",
+            "de": "ein Passiv"
+          },
+          "wrong": {
+            "hu": "Az -ing alak tevő jelentésű; a szenvedő múlt idejű igenévvel állna.",
+            "en": "The -ing form is active; a passive would use the past participle.",
+            "es": "La forma -ing es activa; una pasiva usaría el participio pasado.",
+            "de": "Die -ing-Form ist aktiv; ein Passiv würde das Partizip Perfekt benutzen."
+          }
+        },
+        {
+          "text": {
+            "hu": "cél: azért ül, hogy",
+            "en": "a purpose: he sits in order to",
+            "es": "una finalidad: se sienta para",
+            "de": "ein Zweck: er sitzt, um"
+          },
+          "wrong": {
+            "hu": "A sitting there nem célt, hanem azonosítást jelent: melyik férfi.",
+            "en": "Sitting there does not express a purpose but identifies which man.",
+            "es": "Sitting there no expresa una finalidad sino que identifica cuál hombre.",
+            "de": "Sitting there drückt keinen Zweck aus, sondern identifiziert, welcher Mann."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "rrc-25",
+      "es": "The book written by Orwell is a classic.",
+      "target": "written by Orwell",
+      "tr": {
+        "hu": "Az Orwell által írt könyv klasszikus.",
+        "en": "The book written by Orwell is a classic.",
+        "es": "El libro escrito por Orwell es un clásico.",
+        "de": "Das von Orwell geschriebene Buch ist ein Klassiker."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "tevő jelentés: a könyv ír",
+            "en": "an active meaning: the book writes",
+            "es": "un sentido activo: el libro escribe",
+            "de": "eine aktive Bedeutung: das Buch schreibt"
+          },
+          "wrong": {
+            "hu": "A written szenvedő: a könyvet írták.",
+            "en": "Written is passive: the book was written.",
+            "es": "Written es pasivo: el libro fue escrito.",
+            "de": "Written ist passiv: das Buch wurde geschrieben."
+          }
+        },
+        {
+          "text": {
+            "hu": "rövidített szenvedő vonatkozó mondat: which was written",
+            "en": "a reduced passive relative clause: which was written",
+            "es": "una oración de relativo reducida y pasiva: which was written",
+            "de": "ein verkürzter passiver Relativsatz: which was written"
+          }
+        },
+        {
+          "text": {
+            "hu": "jövőbeli esemény",
+            "en": "a future event",
+            "es": "un hecho futuro",
+            "de": "ein künftiges Ereignis"
+          },
+          "wrong": {
+            "hu": "A written by Orwell múltbeli, befejezett cselekvés eredménye.",
+            "en": "Written by Orwell is the result of a finished past action.",
+            "es": "Written by Orwell es el resultado de una acción pasada terminada.",
+            "de": "Written by Orwell ist das Ergebnis einer abgeschlossenen vergangenen Handlung."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "rrc-26",
+      "es": "The first person to arrive gets a prize.",
+      "target": "to arrive",
+      "tr": {
+        "hu": "Aki először érkezik, díjat kap.",
+        "en": "The first person to arrive gets a prize.",
+        "es": "La primera persona en llegar recibe un premio.",
+        "de": "Wer als Erster ankommt, bekommt einen Preis."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "cél: azért érkezik, hogy",
+            "en": "a purpose: arrives in order to",
+            "es": "una finalidad: llega para",
+            "de": "ein Zweck: kommt an, um"
+          },
+          "wrong": {
+            "hu": "A the first után a to-infinitív a vonatkozó mondat helyett áll, nem célt jelöl.",
+            "en": "After the first the to-infinitive replaces a relative clause, it does not mark a purpose.",
+            "es": "Después de the first el to-infinitivo reemplaza a una oración de relativo, no marca una finalidad.",
+            "de": "Nach the first ersetzt der to-Infinitiv einen Relativsatz, er markiert keinen Zweck."
+          }
+        },
+        {
+          "text": {
+            "hu": "a first / last / only után a to-infinitív a who + ige helyett áll",
+            "en": "after first / last / only the to-infinitive replaces who + verb",
+            "es": "después de first / last / only el to-infinitivo reemplaza a who + verbo",
+            "de": "nach first / last / only ersetzt der to-Infinitiv who + Verb"
+          }
+        },
+        {
+          "text": {
+            "hu": "kötelezettség",
+            "en": "an obligation",
+            "es": "una obligación",
+            "de": "eine Pflicht"
+          },
+          "wrong": {
+            "hu": "A to arrive nem kötelezettség; azonosítja, melyik személy.",
+            "en": "To arrive is not an obligation; it identifies which person.",
+            "es": "To arrive no es una obligación; identifica cuál persona.",
+            "de": "To arrive ist keine Pflicht; es identifiziert, welche Person."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "rrc-27",
+      "es": "Anyone wishing to apply should contact the office.",
+      "target": "wishing",
+      "tr": {
+        "hu": "Aki jelentkezni szeretne, forduljon az irodához.",
+        "en": "Anyone wishing to apply should contact the office.",
+        "es": "Quien desee postularse debe comunicarse con la oficina.",
+        "de": "Wer sich bewerben möchte, wende sich an das Büro."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "folyamatos igeidő",
+            "en": "a continuous tense",
+            "es": "un tiempo continuo",
+            "de": "eine Verlaufsform"
+          },
+          "wrong": {
+            "hu": "A wishing nem igeidő, hanem rövidített who wishes.",
+            "en": "Wishing is not a tense but a shortened who wishes.",
+            "es": "Wishing no es un tiempo verbal sino un who wishes acortado.",
+            "de": "Wishing ist keine Zeitform, sondern ein verkürztes who wishes."
+          }
+        },
+        {
+          "text": {
+            "hu": "formális rövidítés: anyone who wishes",
+            "en": "a formal shortening: anyone who wishes",
+            "es": "un acortamiento formal: anyone who wishes",
+            "de": "eine formelle Verkürzung: anyone who wishes"
+          }
+        },
+        {
+          "text": {
+            "hu": "kérdés",
+            "en": "a question",
+            "es": "una pregunta",
+            "de": "eine Frage"
+          },
+          "wrong": {
+            "hu": "Ez kijelentés, hivatalos utasítás.",
+            "en": "This is a statement, an official instruction.",
+            "es": "Esto es una afirmación, una instrucción oficial.",
+            "de": "Das ist eine Aussage, eine amtliche Anweisung."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "rrc-28",
+      "es": "Cars made in Mexico are sold abroad.",
+      "target": "made",
+      "tr": {
+        "hu": "A Mexikóban gyártott autókat külföldön adják el.",
+        "en": "Cars made in Mexico are sold abroad.",
+        "es": "Los carros hechos en México se venden en el extranjero.",
+        "de": "In Mexiko hergestellte Autos werden im Ausland verkauft."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "az autók gyártanak valamit",
+            "en": "the cars make something",
+            "es": "los carros fabrican algo",
+            "de": "die Autos stellen etwas her"
+          },
+          "wrong": {
+            "hu": "A made szenvedő: az autókat gyártják.",
+            "en": "Made is passive: the cars are made.",
+            "es": "Made es pasivo: los carros son hechos.",
+            "de": "Made ist passiv: die Autos werden hergestellt."
+          }
+        },
+        {
+          "text": {
+            "hu": "múlt idejű igenév: szenvedő, cars which are made",
+            "en": "the past participle: a passive, cars which are made",
+            "es": "el participio pasado: una pasiva, cars which are made",
+            "de": "das Partizip Perfekt: ein Passiv, cars which are made"
+          }
+        },
+        {
+          "text": {
+            "hu": "múltbeli esemény",
+            "en": "a past event",
+            "es": "un hecho pasado",
+            "de": "ein vergangenes Ereignis"
+          },
+          "wrong": {
+            "hu": "A made itt szenvedő jelentésű, nem egy múltbeli esemény elbeszélése.",
+            "en": "Made here has a passive meaning, not the telling of a past event.",
+            "es": "Made aquí tiene sentido pasivo, no cuenta un hecho pasado.",
+            "de": "Made hat hier passive Bedeutung, erzählt kein vergangenes Ereignis."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "rrc-29",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "El hombre sentado ahí es mi jefe.",
+          "en": "The man sitting there is my boss."
+        },
+        {
+          "es": "El libro escrito por Orwell es un clásico.",
+          "en": "The book written by Orwell is a classic."
+        },
+        {
+          "es": "La primera persona en llegar recibe un premio.",
+          "en": "The first person to arrive gets a prize."
+        },
+        {
+          "es": "Cualquiera que quiera unirse debe llamarnos.",
+          "en": "Anyone wanting to join should call us."
+        },
+        {
+          "es": "Los carros hechos en México se venden en el extranjero.",
+          "en": "Cars made in Mexico are sold abroad."
+        },
+        {
+          "es": "La mujer que vive al lado es maestra.",
+          "en": "The woman living next door is a teacher."
+        }
+      ]
+    },
+    {
+      "id": "rrc-30",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "la casa que está al final",
+          "en": "the house standing at the end"
+        },
+        {
+          "es": "los documentos que están en el escritorio",
+          "en": "the documents lying on the desk"
+        },
+        {
+          "es": "el único en aprobar",
+          "en": "the only one to pass"
+        },
+        {
+          "es": "el último en irse",
+          "en": "the last to leave"
+        },
+        {
+          "es": "alguien que actualice",
+          "en": "someone to update"
+        },
+        {
+          "es": "una carta enviada ayer",
+          "en": "a letter sent yesterday"
+        }
+      ]
+    }
+  ]
+}

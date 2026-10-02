@@ -1,0 +1,1449 @@
+{
+  "schema": 2,
+  "topic": "conditional_inversion",
+  "level": "C1",
+  "title": {
+    "hu": "Feltételes fordított szórend (Should you need …, Were he to …, Had it not been for …)",
+    "en": "Conditional Inversion (Should you need …, Were he to …, Had it not been for …)",
+    "es": "La inversión condicional (Should you need …, Were he to …, Had it not been for …)",
+    "de": "Konditionale Inversion (Should you need …, Were he to …, Had it not been for …)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "Formális nyelvben az if elhagyható, ha a segédige az alany elé kerül: „Should you need help, call me.” (Ha segítségre lenne szükséged, hívj.) „Were he to resign, the company would collapse.” (Ha lemondana, a cég összeomolna.) „Had it not been for your help, I would have failed.” (Ha nem lett volna a segítséged, megbuktam volna.) A spanyol „de haberlo sabido”, „en caso de que necesite”, „si no fuera por” szerkezeteknek felelnek meg. Ez a forma írásban és hivatalos beszédben gyakori.",
+        "en": "In formal language the if can be dropped when the auxiliary goes before the subject: “Should you need help, call me.” “Were he to resign, the company would collapse.” “Had it not been for your help, I would have failed.” The Spanish “de haberlo sabido”, “en caso de que necesite” and “si no fuera por” match these. This form is common in writing and in official speech.",
+        "es": "En el lenguaje formal se puede omitir el if cuando el auxiliar va antes del sujeto: «Should you need help, call me.» «Were he to resign, the company would collapse.» «Had it not been for your help, I would have failed.» El «de haberlo sabido», el «en caso de que necesite» y el «si no fuera por» del español les corresponden. Esta forma es común por escrito y en discursos oficiales.",
+        "de": "In formeller Sprache kann das if wegfallen, wenn das Hilfsverb vor das Subjekt rückt: „Should you need help, call me.“ „Were he to resign, the company would collapse.“ „Had it not been for your help, I would have failed.“ Das spanische „de haberlo sabido“, „en caso de que necesite“ und „si no fuera por“ entsprechen ihnen. Diese Form ist in Schrift und offizieller Rede üblich."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "cin-forms",
+      "title": {
+        "hu": "Melyik szó?",
+        "en": "Which word?",
+        "es": "¿Qué palabra uso?",
+        "de": "Welches Wort?"
+      },
+      "header": [
+        {
+          "hu": "Jelentés",
+          "en": "Meaning",
+          "es": "Significado",
+          "de": "Bedeutung"
+        },
+        {
+          "hu": "forma",
+          "en": "form",
+          "es": "forma",
+          "de": "Form"
+        }
+      ],
+      "rows": [
+        [
+          "de no haber ayudado (___ she not helped)",
+          "had"
+        ],
+        [
+          "en caso de que necesite (___ you need)",
+          "should"
+        ],
+        [
+          "si llegara a renunciar (Were he ___ resign)",
+          "to"
+        ],
+        [
+          "si no fuera por (___ it not for)",
+          "were"
+        ],
+        [
+          "si no hubiera sido por (Had it not ___ for)",
+          "been"
+        ],
+        [
+          "sin tu ayuda (si no hubiera sido por + sustantivo)",
+          "but for"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Had + alany + igenév (múltbeli feltétel)",
+        "en": "Had + subject + participle (a past condition)",
+        "es": "Had + sujeto + participio (una condición pasada)",
+        "de": "Had + Subjekt + Partizip (eine vergangene Bedingung)"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A „had not” tagadásánál a not az alany után áll: „Had she not helped us, we would have lost.” Összevonás nincs.",
+            "en": "In the negative the not comes after the subject: “Had she not helped us, we would have lost.” There is no contraction.",
+            "es": "En negativo el not va después del sujeto: «Had she not helped us, we would have lost.» No hay contracción.",
+            "de": "In der Verneinung steht das not nach dem Subjekt: „Had she not helped us, we would have lost.“ Eine Kontraktion gibt es nicht."
+          },
+          "examples": [
+            {
+              "es": "Had she not helped us, we would have lost.",
+              "tr": {
+                "hu": "Ha nem segít nekünk, veszítettünk volna.",
+                "en": "Had she not helped us, we would have lost.",
+                "es": "De no habernos ayudado, habríamos perdido.",
+                "de": "Hätte sie uns nicht geholfen, hätten wir verloren."
+              }
+            },
+            {
+              "es": "Had it rained, the match would have stopped.",
+              "tr": {
+                "hu": "Ha esett volna, megszakadt volna a meccs.",
+                "en": "Had it rained, the match would have stopped.",
+                "es": "De haber llovido, se habría suspendido el partido.",
+                "de": "Hätte es geregnet, wäre das Spiel abgebrochen worden."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Should + alany + alapige (kevéssé valószínű jövő)",
+        "en": "Should + subject + base verb (an unlikely future)",
+        "es": "Should + sujeto + verbo base (un futuro poco probable)",
+        "de": "Should + Subjekt + Grundform (eine unwahrscheinliche Zukunft)"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Udvarias, formális feltétel. Az eredményben gyakran felszólítás vagy will áll. Az alany után alapige jön: „Should the price fall, we will buy it.”",
+            "en": "A polite, formal condition. The result is often an imperative or will. After the subject comes the base verb: “Should the price fall, we will buy it.”",
+            "es": "Una condición cortés y formal. El resultado suele ser un imperativo o will. Después del sujeto va el verbo base: «Should the price fall, we will buy it.»",
+            "de": "Eine höfliche, formelle Bedingung. Das Ergebnis ist oft ein Imperativ oder will. Nach dem Subjekt steht die Grundform: „Should the price fall, we will buy it.“"
+          },
+          "examples": [
+            {
+              "es": "Should you need any help, please call me.",
+              "tr": {
+                "hu": "Ha bármi segítségre lenne szükséged, kérlek, hívj.",
+                "en": "Should you need any help, please call me.",
+                "es": "En caso de que necesite ayuda, por favor llámeme.",
+                "de": "Falls du Hilfe brauchst, ruf mich bitte an."
+              }
+            },
+            {
+              "es": "Should anything go wrong, call me immediately.",
+              "tr": {
+                "hu": "Ha bármi baj lenne, azonnal hívj.",
+                "en": "Should anything go wrong, call me immediately.",
+                "es": "Si algo saliera mal, llámeme de inmediato.",
+                "de": "Sollte etwas schiefgehen, ruf mich sofort an."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Were + alany + to + alapige (elképzelt jövő)",
+        "en": "Were + subject + to + base verb (an imagined future)",
+        "es": "Were + sujeto + to + verbo base (un futuro imaginado)",
+        "de": "Were + Subjekt + to + Grundform (eine vorgestellte Zukunft)"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Az „if he were to resign” rövidítése: „Were he to resign…” Az eredményben would áll. Állapotnál a were egyedül is áll: „Were I you, I would accept.”",
+            "en": "The short form of “if he were to resign”: “Were he to resign…” The result takes would. With a state the were stands alone: “Were I you, I would accept.”",
+            "es": "La forma corta de «if he were to resign»: «Were he to resign…» El resultado lleva would. Con un estado were va solo: «Were I you, I would accept.»",
+            "de": "Die Kurzform von „if he were to resign“: „Were he to resign…“ Das Ergebnis nimmt would. Bei einem Zustand steht were allein: „Were I you, I would accept.“"
+          },
+          "examples": [
+            {
+              "es": "Were he to resign, the company would collapse.",
+              "tr": {
+                "hu": "Ha lemondana, a cég összeomolna.",
+                "en": "Were he to resign, the company would collapse.",
+                "es": "Si llegara a renunciar, la empresa colapsaría.",
+                "de": "Sollte er zurücktreten, würde die Firma zusammenbrechen."
+              }
+            },
+            {
+              "es": "Were I you, I would accept the offer.",
+              "tr": {
+                "hu": "A helyedben elfogadnám az ajánlatot.",
+                "en": "Were I you, I would accept the offer.",
+                "es": "Yo en tu lugar aceptaría la oferta.",
+                "de": "An deiner Stelle würde ich das Angebot annehmen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Were it not for, had it not been for, but for",
+        "en": "Were it not for, had it not been for, but for",
+        "es": "Were it not for, had it not been for, but for",
+        "de": "Were it not for, had it not been for, but for"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A were it not for a jelenre vagy általános helyzetre, a had it not been for a múltra vonatkozik. A but for + főnév ugyanezt jelenti röviden.",
+            "en": "Were it not for refers to the present or a general situation, had it not been for to the past. But for + noun means the same in short.",
+            "es": "Were it not for se refiere al presente o a una situación general, had it not been for al pasado. But for + sustantivo significa lo mismo en corto.",
+            "de": "Were it not for bezieht sich auf die Gegenwart oder eine allgemeine Lage, had it not been for auf die Vergangenheit. But for + Nomen bedeutet kurz dasselbe."
+          },
+          "examples": [
+            {
+              "es": "Were it not for the rain, we would go to the beach.",
+              "tr": {
+                "hu": "Ha nem lenne az eső, a tengerpartra mennénk.",
+                "en": "Were it not for the rain, we would go to the beach.",
+                "es": "Si no fuera por la lluvia, iríamos a la playa.",
+                "de": "Gäbe es den Regen nicht, würden wir an den Strand gehen."
+              }
+            },
+            {
+              "es": "Had it not been for your help, I would have failed.",
+              "tr": {
+                "hu": "Ha nem lett volna a segítséged, megbuktam volna.",
+                "en": "Had it not been for your help, I would have failed.",
+                "es": "Si no hubiera sido por tu ayuda, habría fracasado.",
+                "de": "Ohne deine Hilfe wäre ich durchgefallen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Az inverzió helyettesíti az if-et, nem egészíti ki: nem „If had I known”, hanem „Had I known” vagy „If I had known”. Ez a forma főleg írott és formális nyelvben áll.",
+        "en": "The inversion replaces if, it does not add to it: not “If had I known”, but “Had I known” or “If I had known”. This form is mainly used in writing and formal speech.",
+        "es": "La inversión reemplaza al if, no se suma: no «If had I known», sino «Had I known» o «If I had known». Esta forma se usa sobre todo por escrito y en discursos formales.",
+        "de": "Die Inversion ersetzt das if, sie kommt nicht dazu: nicht „If had I known“, sondern „Had I known“ oder „If I had known“. Diese Form steht vor allem in der Schrift und in formeller Rede."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A should itt nem kötelességet jelent, hanem azt, hogy „ha véletlenül”. Az alany után a should-hoz alapige jön, ragozott alak (needs) nem: „Should it need…”.",
+        "en": "Should here does not mean obligation, but “if by chance”. After the subject should takes the base verb, not an inflected form (needs): “Should it need…”.",
+        "es": "Should aquí no significa obligación, sino «si por casualidad». Después del sujeto should lleva el verbo base, no una forma conjugada (needs): «Should it need…».",
+        "de": "Should bedeutet hier keine Pflicht, sondern „falls zufällig“. Nach dem Subjekt nimmt should die Grundform, keine gebeugte Form (needs): „Should it need…“."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "Formális nyelvben az if elhagyható, ha a segédige az alany elé kerül. A múltbeli feltétel: «Had she not helped us, we would have lost». A kevéssé valószínű jövő: «Should you need help, call me». Az elképzelt jövő: «Were he to resign, the company would collapse». A «were it not for» a jelenre, a «had it not been for» a múltra vonatkozik, a «but for» ugyanezt jelenti röviden. Az inverzió az if helyett áll, nem mellette.",
+    "en": "In formal language the if can be dropped when the auxiliary goes before the subject. A past condition: «Had she not helped us, we would have lost». An unlikely future: «Should you need help, call me». An imagined future: «Were he to resign, the company would collapse». «Were it not for» refers to the present, «had it not been for» to the past, and «but for» means the same in short. The inversion replaces the if, it does not stand next to it.",
+    "es": "En el lenguaje formal se puede omitir el if cuando el auxiliar va antes del sujeto. Una condición pasada: «Had she not helped us, we would have lost». Un futuro poco probable: «Should you need help, call me». Un futuro imaginado: «Were he to resign, the company would collapse». «Were it not for» se refiere al presente, «had it not been for» al pasado, y «but for» significa lo mismo en corto. La inversión reemplaza al if, no va junto a él.",
+    "de": "In formeller Sprache kann das if wegfallen, wenn das Hilfsverb vor das Subjekt rückt. Eine vergangene Bedingung: «Had she not helped us, we would have lost». Eine unwahrscheinliche Zukunft: «Should you need help, call me». Eine vorgestellte Zukunft: «Were he to resign, the company would collapse». «Were it not for» bezieht sich auf die Gegenwart, «had it not been for» auf die Vergangenheit, und «but for» bedeutet kurz dasselbe. Die Inversion ersetzt das if, sie steht nicht daneben."
+  },
+  "glossary": [
+    {
+      "word": "accept",
+      "gloss": {
+        "hu": "elfogad",
+        "en": "to say yes",
+        "es": "aceptar",
+        "de": "annehmen"
+      }
+    },
+    {
+      "word": "any",
+      "gloss": {
+        "hu": "bármennyi, semennyi (tagadásban)",
+        "en": "some, in negatives and questions",
+        "es": "algún, ningún (en negativo y preguntas)",
+        "de": "irgendein, kein (verneint und Fragen)"
+      }
+    },
+    {
+      "word": "anything",
+      "gloss": {
+        "hu": "bármi",
+        "en": "any thing",
+        "es": "cualquier cosa, algo",
+        "de": "irgendetwas"
+      }
+    },
+    {
+      "word": "cheer",
+      "gloss": {
+        "hu": "éljenez, szurkol",
+        "en": "to shout for happiness",
+        "es": "animar, aplaudir",
+        "de": "jubeln"
+      }
+    },
+    {
+      "word": "cope",
+      "gloss": {
+        "hu": "megbirkózik",
+        "en": "to manage a hard situation",
+        "es": "arreglárselas",
+        "de": "zurechtkommen"
+      }
+    },
+    {
+      "word": "doubt",
+      "gloss": {
+        "hu": "kétel",
+        "en": "to not be sure",
+        "es": "dudar",
+        "de": "zweifeln"
+      }
+    },
+    {
+      "word": "drive",
+      "gloss": {
+        "hu": "vezet (autót)",
+        "en": "to drive",
+        "es": "manejar",
+        "de": "fahren"
+      }
+    },
+    {
+      "word": "fell",
+      "gloss": {
+        "hu": "esett (a fall múltja)",
+        "en": "past form of fall",
+        "es": "cayó (pasado de fall)",
+        "de": "fiel (Past von fall)"
+      }
+    },
+    {
+      "word": "gone",
+      "gloss": {
+        "hu": "elment (a go igenéve)",
+        "en": "participle of go",
+        "es": "ido (participio de go)",
+        "de": "gegangen (Partizip von go)"
+      }
+    },
+    {
+      "word": "happen",
+      "gloss": {
+        "hu": "történik",
+        "en": "to take place",
+        "es": "ocurrir, pasar",
+        "de": "geschehen"
+      }
+    },
+    {
+      "word": "happened",
+      "gloss": {
+        "hu": "történt (a happen múltja)",
+        "en": "past form of happen",
+        "es": "ocurrió (pasado de happen)",
+        "de": "geschah (Past von happen)"
+      }
+    },
+    {
+      "word": "happening",
+      "gloss": {
+        "hu": "történik (ige-ing alak)",
+        "en": "-ing form of happen",
+        "es": "ocurriendo (forma -ing de happen)",
+        "de": "geschehen (-ing-Form von happen)"
+      }
+    },
+    {
+      "word": "let",
+      "gloss": {
+        "hu": "enged",
+        "en": "to allow",
+        "es": "dejar, permitir",
+        "de": "erlauben"
+      }
+    },
+    {
+      "word": "lose",
+      "gloss": {
+        "hu": "veszít",
+        "en": "to not win",
+        "es": "perder",
+        "de": "verlieren"
+      }
+    },
+    {
+      "word": "manage",
+      "gloss": {
+        "hu": "boldogul, sikerül",
+        "en": "to deal with",
+        "es": "arreglárselas",
+        "de": "schaffen"
+      }
+    },
+    {
+      "word": "quit",
+      "gloss": {
+        "hu": "abbahagy, felmond",
+        "en": "to stop or leave a job",
+        "es": "dejar, renunciar",
+        "de": "aufhören, kündigen"
+      }
+    },
+    {
+      "word": "resign",
+      "gloss": {
+        "hu": "lemond",
+        "en": "to leave a job",
+        "es": "renunciar",
+        "de": "zurücktreten"
+      }
+    },
+    {
+      "word": "rich",
+      "gloss": {
+        "hu": "gazdag",
+        "en": "with a lot of money",
+        "es": "rico",
+        "de": "reich"
+      }
+    },
+    {
+      "word": "stay",
+      "gloss": {
+        "hu": "marad",
+        "en": "to stay",
+        "es": "quedarse",
+        "de": "bleiben"
+      }
+    },
+    {
+      "word": "thousands",
+      "gloss": {
+        "hu": "ezrek",
+        "en": "many thousand",
+        "es": "miles",
+        "de": "Tausende"
+      }
+    },
+    {
+      "word": "would",
+      "gloss": {
+        "hu": "lenne, volna (feltételes)",
+        "en": "conditional or past of will",
+        "es": "condicional o pasado de will",
+        "de": "würde (Konditional)"
+      }
+    },
+    {
+      "word": "wrong",
+      "gloss": {
+        "hu": "rossz, hibás",
+        "en": "not right",
+        "es": "mal, incorrecto",
+        "de": "falsch"
+      }
+    },
+    {
+      "word": "earlier",
+      "gloss": {
+        "hu": "korábban",
+        "en": "before, sooner",
+        "es": "antes, más temprano",
+        "de": "früher"
+      }
+    },
+    {
+      "word": "law",
+      "gloss": {
+        "hu": "törvény",
+        "en": "a rule made by a government",
+        "es": "ley",
+        "de": "Gesetz"
+      }
+    },
+    {
+      "word": "receive",
+      "gloss": {
+        "hu": "kap, megkap",
+        "en": "to get something",
+        "es": "recibir",
+        "de": "erhalten"
+      }
+    },
+    {
+      "word": "received",
+      "gloss": {
+        "hu": "kapott (a receive múltja)",
+        "en": "past form of receive",
+        "es": "recibió (pasado de receive)",
+        "de": "erhielt (Past von receive)"
+      }
+    },
+    {
+      "word": "receives",
+      "gloss": {
+        "hu": "megkap (egyes szám 3. személy)",
+        "en": "receives (he/she/it form)",
+        "es": "recibe (él/ella)",
+        "de": "erhält (er/sie/es)"
+      }
+    },
+    {
+      "word": "taken",
+      "gloss": {
+        "hu": "elvállalt, vett (a take igenéve)",
+        "en": "participle of take",
+        "es": "tomado (participio de take)",
+        "de": "genommen (Partizip von take)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "cin-01",
+      "sentence": "Had she taken the job, she ___ in Madrid now.",
+      "options": [
+        "would have been",
+        "would be",
+        "will be"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Vegyes feltétel: múltbeli feltétel (Had she taken), jelenbeli eredmény (would be … now).",
+        "en": "A mixed conditional: a past condition (Had she taken), a present result (would be … now).",
+        "es": "Un condicional mixto: condición pasada (Had she taken), resultado presente (would be … now).",
+        "de": "Ein gemischter Konditionalsatz: vergangene Bedingung (Had she taken), gegenwärtiges Ergebnis (would be … now)."
+      },
+      "wrong": {
+        "would have been": {
+          "hu": "A would have been múltbeli eredményt jelöl; a now jelenre utal.",
+          "en": "Would have been marks a past result; now points to the present.",
+          "es": "Would have been marca un resultado pasado; now señala el presente.",
+          "de": "Would have been markiert ein vergangenes Ergebnis; now weist auf die Gegenwart."
+        },
+        "will be": {
+          "hu": "A will be nem illik a had she taken mellé; would kell.",
+          "en": "Will be does not fit with had she taken; you need would.",
+          "es": "Will be no encaja con had she taken; hace falta would.",
+          "de": "Will be passt nicht zu had she taken; man braucht would."
+        }
+      },
+      "examples": [
+        "Had I studied law, I would be a judge now.",
+        "Had he left earlier, he would be home now."
+      ]
+    },
+    {
+      "id": "cin-02",
+      "sentence": "___ you need any help, please call me.",
+      "options": [
+        "Would",
+        "Did",
+        "Should"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Formális, kevéssé valószínű feltétel: Should you need.",
+        "en": "A formal, unlikely condition: Should you need.",
+        "es": "Una condición formal y poco probable: Should you need.",
+        "de": "Eine formelle, unwahrscheinliche Bedingung: Should you need."
+      },
+      "wrong": {
+        "Would": {
+          "hu": "A would you need nem feltételt vezet be; a should kell.",
+          "en": "“Would you need” does not introduce a condition; you need should.",
+          "es": "«Would you need» no introduce una condición; hace falta should.",
+          "de": "„Would you need“ leitet keine Bedingung ein; man braucht should."
+        },
+        "Did": {
+          "hu": "A did you need múlt idejű; a mondat jövőbeli lehetőségre vonatkozik.",
+          "en": "“Did you need” is past; the sentence is about a future possibility.",
+          "es": "«Did you need» es pasado; la oración trata de una posibilidad futura.",
+          "de": "„Did you need“ ist Vergangenheit; der Satz betrifft eine künftige Möglichkeit."
+        }
+      },
+      "examples": [
+        "Should you wish to stay, tell us.",
+        "Should he call, say I left."
+      ]
+    },
+    {
+      "id": "cin-03",
+      "sentence": "Were he ___ resign, the company would collapse.",
+      "options": [
+        "to",
+        "will",
+        "going"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Elképzelt jövő: Were he to + alapige.",
+        "en": "An imagined future: Were he to + base verb.",
+        "es": "Un futuro imaginado: Were he to + verbo base.",
+        "de": "Eine vorgestellte Zukunft: Were he to + Grundform."
+      },
+      "wrong": {
+        "will": {
+          "hu": "A were he will resign nem helyes; a were után to kell.",
+          "en": "“Were he will resign” is not correct; after were you need to.",
+          "es": "«Were he will resign» no es correcto; después de were hace falta to.",
+          "de": "„Were he will resign“ ist nicht korrekt; nach were braucht man to."
+        },
+        "going": {
+          "hu": "A were he going resign nem helyes; going to kellene, de ez a forma were … to.",
+          "en": "“Were he going resign” is not correct; the pattern is were … to.",
+          "es": "«Were he going resign» no es correcto; la estructura es were … to.",
+          "de": "„Were he going resign“ ist nicht korrekt; das Muster ist were … to."
+        }
+      },
+      "examples": [
+        "Were she to leave, we would cope.",
+        "Were they to win, we would cheer."
+      ]
+    },
+    {
+      "id": "cin-04",
+      "sentence": "___ it not for the rain, we would go to the beach.",
+      "options": [
+        "Had",
+        "Were",
+        "Should"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Jelenre vonatkozó „ha nem lenne”: Were it not for.",
+        "en": "A present “if it were not for”: Were it not for.",
+        "es": "Un «si no fuera por» del presente: Were it not for.",
+        "de": "Ein gegenwärtiges „wenn es nicht wäre“: Were it not for."
+      },
+      "wrong": {
+        "Had": {
+          "hu": "A had it not for nem helyes; a múltra had it not been for kell.",
+          "en": "“Had it not for” is not correct; for the past you need had it not been for.",
+          "es": "«Had it not for» no es correcto; para el pasado hace falta had it not been for.",
+          "de": "„Had it not for“ ist nicht korrekt; für die Vergangenheit braucht man had it not been for."
+        },
+        "Should": {
+          "hu": "A should it not for nem helyes; a were it not for az állandó forma.",
+          "en": "“Should it not for” is not correct; were it not for is the fixed form.",
+          "es": "«Should it not for» no es correcto; were it not for es la forma fija.",
+          "de": "„Should it not for“ ist nicht korrekt; were it not for ist die feste Form."
+        }
+      },
+      "examples": [
+        "Were it not for you, I would quit.",
+        "Were it not for money, he would stay."
+      ]
+    },
+    {
+      "id": "cin-05",
+      "sentence": "Had it not ___ for your help, I would have failed.",
+      "options": [
+        "be",
+        "being",
+        "been"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Múltbeli „ha nem lett volna”: Had it not been for.",
+        "en": "A past “if it had not been for”: Had it not been for.",
+        "es": "Un «si no hubiera sido por» del pasado: Had it not been for.",
+        "de": "Ein vergangenes „wenn es nicht gewesen wäre“: Had it not been for."
+      },
+      "wrong": {
+        "be": {
+          "hu": "A had it not be nem helyes; a had után igenév (been) kell.",
+          "en": "“Had it not be” is not correct; after had you need a participle (been).",
+          "es": "«Had it not be» no es correcto; después de had hace falta un participio (been).",
+          "de": "„Had it not be“ ist nicht korrekt; nach had braucht man ein Partizip (been)."
+        },
+        "being": {
+          "hu": "A had it not being nem helyes; a had után igenév (been) kell.",
+          "en": "“Had it not being” is not correct; after had you need a participle (been).",
+          "es": "«Had it not being» no es correcto; después de had hace falta un participio (been).",
+          "de": "„Had it not being“ ist nicht korrekt; nach had braucht man ein Partizip (been)."
+        }
+      },
+      "examples": [
+        "Had it not been for him, we would lose.",
+        "Had it not been for rain, we would go."
+      ]
+    },
+    {
+      "id": "cin-06",
+      "sentence": "___ for the traffic, we would have arrived on time.",
+      "options": [
+        "But",
+        "Not",
+        "Only"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A but for + főnév jelentése: ha nem lett volna.",
+        "en": "But for + noun means: if it had not been for.",
+        "es": "But for + sustantivo significa: si no hubiera sido por.",
+        "de": "But for + Nomen bedeutet: wenn es nicht gewesen wäre."
+      },
+      "wrong": {
+        "Not": {
+          "hu": "A not for the traffic nem tölti be ezt a szerepet; but for kell.",
+          "en": "“Not for the traffic” does not fill this role; you need but for.",
+          "es": "«Not for the traffic» no cumple este papel; hace falta but for.",
+          "de": "„Not for the traffic“ erfüllt diese Rolle nicht; man braucht but for."
+        },
+        "Only": {
+          "hu": "Az only for a forgalom más jelentésű (csak a forgalom miatt); but for kell.",
+          "en": "“Only for the traffic” has another meaning (only because of the traffic); you need but for.",
+          "es": "«Only for the traffic» tiene otro significado (solo por el tráfico); hace falta but for.",
+          "de": "„Only for the traffic“ hat eine andere Bedeutung (nur wegen des Verkehrs); man braucht but for."
+        }
+      },
+      "examples": [
+        "But for you, I would be lost.",
+        "But for rain, we would have gone."
+      ]
+    },
+    {
+      "id": "cin-07",
+      "sentence": "Should anything go wrong, ___ me immediately.",
+      "options": [
+        "calls",
+        "call",
+        "calling"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A should-feltétel eredménye felszólítás: call me.",
+        "en": "The result of a should-condition is an imperative: call me.",
+        "es": "El resultado de una condición con should es un imperativo: call me.",
+        "de": "Das Ergebnis einer should-Bedingung ist ein Imperativ: call me."
+      },
+      "wrong": {
+        "calls": {
+          "hu": "A calls egyes szám harmadik személy; felszólításban alapige kell.",
+          "en": "Calls is third person singular; an imperative needs the base verb.",
+          "es": "Calls es tercera persona del singular; un imperativo necesita el verbo base.",
+          "de": "Calls ist dritte Person Singular; ein Imperativ braucht die Grundform."
+        },
+        "calling": {
+          "hu": "A calling nem felszólítás; alapige kell.",
+          "en": "Calling is not an imperative; you need the base verb.",
+          "es": "Calling no es un imperativo; hace falta el verbo base.",
+          "de": "Calling ist kein Imperativ; man braucht die Grundform."
+        }
+      },
+      "examples": [
+        "Should it rain, stay home.",
+        "Should you doubt it, ask me."
+      ]
+    },
+    {
+      "id": "cin-08",
+      "sentence": "Were I ___, I would accept the offer.",
+      "options": [
+        "to you",
+        "of you",
+        "you"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Állapot a were után: Were I you.",
+        "en": "A state after were: Were I you.",
+        "es": "Un estado después de were: Were I you.",
+        "de": "Ein Zustand nach were: Were I you."
+      },
+      "wrong": {
+        "to you": {
+          "hu": "A were I to you nem helyes; a were I you állandó kifejezés.",
+          "en": "“Were I to you” is not correct; were I you is the fixed phrase.",
+          "es": "«Were I to you» no es correcto; were I you es la expresión fija.",
+          "de": "„Were I to you“ ist nicht korrekt; were I you ist die feste Wendung."
+        },
+        "of you": {
+          "hu": "A were I of you nem helyes; a were I you állandó kifejezés.",
+          "en": "“Were I of you” is not correct; were I you is the fixed phrase.",
+          "es": "«Were I of you» no es correcto; were I you es la expresión fija.",
+          "de": "„Were I of you“ ist nicht korrekt; were I you ist die feste Wendung."
+        }
+      },
+      "examples": [
+        "Were I him, I would go.",
+        "Were I rich, I would help."
+      ]
+    },
+    {
+      "id": "cin-09",
+      "sentence": "Should the price ___, we will buy it.",
+      "options": [
+        "fall",
+        "falls",
+        "fell"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A should után alany és alapige áll: Should the price fall.",
+        "en": "After should come the subject and the base verb: Should the price fall.",
+        "es": "Después de should van el sujeto y el verbo base: Should the price fall.",
+        "de": "Nach should stehen das Subjekt und die Grundform: Should the price fall."
+      },
+      "wrong": {
+        "falls": {
+          "hu": "A falls ragozott alak; a should után alapige kell.",
+          "en": "Falls is an inflected form; after should you need the base verb.",
+          "es": "Falls es una forma conjugada; después de should hace falta el verbo base.",
+          "de": "Falls ist eine gebeugte Form; nach should braucht man die Grundform."
+        },
+        "fell": {
+          "hu": "A fell múlt idő; a should után alapige kell.",
+          "en": "Fell is past; after should you need the base verb.",
+          "es": "Fell es pasado; después de should hace falta el verbo base.",
+          "de": "Fell ist Vergangenheit; nach should braucht man die Grundform."
+        }
+      },
+      "examples": [
+        "Should it rain, we stay.",
+        "Should he come, we eat."
+      ]
+    },
+    {
+      "id": "cin-10",
+      "sentence": "Should you not ___ the form, we will call you.",
+      "options": [
+        "receives",
+        "receive",
+        "received"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Should + alany + not + alapige: ha nem kapod meg.",
+        "en": "Should + subject + not + base verb: if you do not receive.",
+        "es": "Should + sujeto + not + verbo base: si no recibes.",
+        "de": "Should + Subjekt + not + Grundform: falls du nicht erhältst."
+      },
+      "wrong": {
+        "receives": {
+          "hu": "A should you not receives nem helyes; a should után alapige áll.",
+          "en": "“Should you not receives” is not correct; after should comes the base verb.",
+          "es": "«Should you not receives» no es correcto; después de should va el verbo base.",
+          "de": "„Should you not receives“ ist nicht korrekt; nach should kommt die Grundform."
+        },
+        "received": {
+          "hu": "A should you not received nem helyes; a should után alapige áll.",
+          "en": "“Should you not received” is not correct; after should comes the base verb.",
+          "es": "«Should you not received» no es correcto; después de should va el verbo base.",
+          "de": "„Should you not received“ ist nicht korrekt; nach should kommt die Grundform."
+        }
+      },
+      "examples": [
+        "Should you not agree, tell me.",
+        "Should it not work, call us."
+      ]
+    },
+    {
+      "id": "cin-11",
+      "sentence": "Were it not for his help, I ___ in trouble now.",
+      "options": [
+        "would have been",
+        "will be",
+        "would be"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Jelenbeli eredmény: would + alapige.",
+        "en": "A present result: would + base verb.",
+        "es": "Un resultado presente: would + verbo base.",
+        "de": "Ein gegenwärtiges Ergebnis: would + Grundform."
+      },
+      "wrong": {
+        "would have been": {
+          "hu": "A would have been múltbeli eredményt jelöl; a now jelenre utal.",
+          "en": "Would have been marks a past result; now points to the present.",
+          "es": "Would have been marca un resultado pasado; now señala el presente.",
+          "de": "Would have been markiert ein vergangenes Ergebnis; now weist auf die Gegenwart."
+        },
+        "will be": {
+          "hu": "A will be nem illik a were it not for mellé; would kell.",
+          "en": "Will be does not fit with were it not for; you need would.",
+          "es": "Will be no encaja con were it not for; hace falta would.",
+          "de": "Will be passt nicht zu were it not for; man braucht would."
+        }
+      },
+      "examples": [
+        "Were it not for you, I would be alone.",
+        "Were it not for him, it would be hard."
+      ]
+    },
+    {
+      "id": "cin-12",
+      "sentence": "Had it not been for his help yesterday, I ___ the deadline.",
+      "options": [
+        "would have missed",
+        "would miss",
+        "will miss"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Múltbeli eredmény: would have + igenév.",
+        "en": "A past result: would have + participle.",
+        "es": "Un resultado pasado: would have + participio.",
+        "de": "Ein vergangenes Ergebnis: would have + Partizip."
+      },
+      "wrong": {
+        "would miss": {
+          "hu": "A would miss jelenre vagy jövőre vonatkozik; a yesterday múltat jelez.",
+          "en": "Would miss refers to the present or future; yesterday points to the past.",
+          "es": "Would miss se refiere al presente o al futuro; yesterday señala el pasado.",
+          "de": "Would miss bezieht sich auf Gegenwart oder Zukunft; yesterday weist auf die Vergangenheit."
+        },
+        "will miss": {
+          "hu": "A will miss jövőre vonatkozik; a mondat múltbeli.",
+          "en": "Will miss refers to the future; the sentence is in the past.",
+          "es": "Will miss se refiere al futuro; la oración está en pasado.",
+          "de": "Will miss bezieht sich auf die Zukunft; der Satz steht in der Vergangenheit."
+        }
+      },
+      "examples": [
+        "Had it not been for you, I would have lost.",
+        "Had it not been for him, we would have failed."
+      ]
+    },
+    {
+      "id": "cin-13",
+      "sentence": "Should you ___ to change your mind, let us know.",
+      "options": [
+        "happening",
+        "happen",
+        "happened"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Should you happen to + alapige: „ha véletlenül”.",
+        "en": "Should you happen to + base verb: “if by chance”.",
+        "es": "Should you happen to + verbo base: «si por casualidad».",
+        "de": "Should you happen to + Grundform: „falls zufällig“."
+      },
+      "wrong": {
+        "happening": {
+          "hu": "A should you happening nem helyes; a should után alapige kell.",
+          "en": "“Should you happening” is not correct; after should you need the base verb.",
+          "es": "«Should you happening» no es correcto; después de should hace falta el verbo base.",
+          "de": "„Should you happening“ ist nicht korrekt; nach should braucht man die Grundform."
+        },
+        "happened": {
+          "hu": "A should you happened nem helyes; a should után alapige kell.",
+          "en": "“Should you happened” is not correct; after should you need the base verb.",
+          "es": "«Should you happened» no es correcto; después de should hace falta el verbo base.",
+          "de": "„Should you happened“ ist nicht korrekt; nach should braucht man die Grundform."
+        }
+      },
+      "examples": [
+        "Should you happen to see him, tell him.",
+        "Should it happen to rain, stay in."
+      ]
+    },
+    {
+      "id": "cin-14",
+      "sentence": "Were the company ___ close, thousands would lose their jobs.",
+      "options": [
+        "for",
+        "that",
+        "to"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Elképzelt jövő: Were the company to close.",
+        "en": "An imagined future: Were the company to close.",
+        "es": "Un futuro imaginado: Were the company to close.",
+        "de": "Eine vorgestellte Zukunft: Were the company to close."
+      },
+      "wrong": {
+        "for": {
+          "hu": "A were the company for close nem helyes; were … to kell.",
+          "en": "“Were the company for close” is not correct; you need were … to.",
+          "es": "«Were the company for close» no es correcto; hace falta were … to.",
+          "de": "„Were the company for close“ ist nicht korrekt; man braucht were … to."
+        },
+        "that": {
+          "hu": "A were the company that close nem helyes; were … to kell.",
+          "en": "“Were the company that close” is not correct; you need were … to.",
+          "es": "«Were the company that close» no es correcto; hace falta were … to.",
+          "de": "„Were the company that close“ ist nicht korrekt; man braucht were … to."
+        }
+      },
+      "examples": [
+        "Were the bank to fail, we would lose.",
+        "Were prices to rise, we would stop."
+      ]
+    },
+    {
+      "id": "cin-15",
+      "sentence": "___ you to see him, tell him I called.",
+      "options": [
+        "Were",
+        "Had",
+        "Did"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Elképzelt jövő: Were you to see him.",
+        "en": "An imagined future: Were you to see him.",
+        "es": "Un futuro imaginado: Were you to see him.",
+        "de": "Eine vorgestellte Zukunft: Were you to see him."
+      },
+      "wrong": {
+        "Had": {
+          "hu": "A had you to see nem helyes ebben a szerkezetben; were … to kell.",
+          "en": "“Had you to see” is not correct in this structure; you need were … to.",
+          "es": "«Had you to see» no es correcto en esta estructura; hace falta were … to.",
+          "de": "„Had you to see“ ist in dieser Struktur nicht korrekt; man braucht were … to."
+        },
+        "Did": {
+          "hu": "A did you to see nem helyes; were … to kell.",
+          "en": "“Did you to see” is not correct; you need were … to.",
+          "es": "«Did you to see» no es correcto; hace falta were … to.",
+          "de": "„Did you to see“ ist nicht korrekt; man braucht were … to."
+        }
+      },
+      "examples": [
+        "Were you to ask, I would help.",
+        "Were she to call, tell me."
+      ]
+    },
+    {
+      "id": "cin-16",
+      "sentence": "Were I to accept, I ___ move to Madrid.",
+      "options": [
+        "will",
+        "would",
+        "did"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A were … to feltétel eredménye would: I would move.",
+        "en": "The result of a were … to condition is would: I would move.",
+        "es": "El resultado de una condición con were … to es would: I would move.",
+        "de": "Das Ergebnis einer were … to-Bedingung ist would: I would move."
+      },
+      "wrong": {
+        "will": {
+          "hu": "A will nem illik a were … to szerkezethez; would kell.",
+          "en": "Will does not fit the were … to structure; you need would.",
+          "es": "Will no encaja con la estructura were … to; hace falta would.",
+          "de": "Will passt nicht zur Struktur were … to; man braucht would."
+        },
+        "did": {
+          "hu": "A did move nem helyes eredmény; would kell.",
+          "en": "“Did move” is not a correct result; you need would.",
+          "es": "«Did move» no es un resultado correcto; hace falta would.",
+          "de": "„Did move“ ist kein korrektes Ergebnis; man braucht would."
+        }
+      },
+      "examples": [
+        "Were I to go, I would drive.",
+        "Were he to ask, I would say yes."
+      ]
+    },
+    {
+      "id": "cin-17",
+      "sentence": "___ she to leave, we would manage.",
+      "options": [
+        "Had",
+        "Should",
+        "Were"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Elképzelt jövő: Were she to leave.",
+        "en": "An imagined future: Were she to leave.",
+        "es": "Un futuro imaginado: Were she to leave.",
+        "de": "Eine vorgestellte Zukunft: Were she to leave."
+      },
+      "wrong": {
+        "Had": {
+          "hu": "A had she to leave nem helyes ebben a szerkezetben; were … to kell.",
+          "en": "“Had she to leave” is not correct in this structure; you need were … to.",
+          "es": "«Had she to leave» no es correcto en esta estructura; hace falta were … to.",
+          "de": "„Had she to leave“ ist in dieser Struktur nicht korrekt; man braucht were … to."
+        },
+        "Should": {
+          "hu": "A should she to leave nem helyes; a should után alapige jön to nélkül.",
+          "en": "“Should she to leave” is not correct; after should comes the base verb without to.",
+          "es": "«Should she to leave» no es correcto; después de should va el verbo base sin to.",
+          "de": "„Should she to leave“ ist nicht korrekt; nach should kommt die Grundform ohne to."
+        }
+      },
+      "examples": [
+        "Were he to stay, I would go.",
+        "Were we to win, we would sing."
+      ]
+    },
+    {
+      "id": "cin-18",
+      "kind": "form",
+      "verb": "forma",
+      "person": "de no haber ayudado (___ she not helped)",
+      "answer": "had",
+      "table": "cin-forms"
+    },
+    {
+      "id": "cin-19",
+      "kind": "form",
+      "verb": "forma",
+      "person": "en caso de que necesite (___ you need)",
+      "answer": "should",
+      "table": "cin-forms"
+    },
+    {
+      "id": "cin-20",
+      "kind": "form",
+      "verb": "forma",
+      "person": "si llegara a renunciar (Were he ___ resign)",
+      "answer": "to",
+      "table": "cin-forms"
+    },
+    {
+      "id": "cin-21",
+      "kind": "form",
+      "verb": "forma",
+      "person": "si no fuera por (___ it not for)",
+      "answer": "were",
+      "table": "cin-forms"
+    },
+    {
+      "id": "cin-22",
+      "kind": "form",
+      "verb": "forma",
+      "person": "si no hubiera sido por (Had it not ___ for)",
+      "answer": "been",
+      "table": "cin-forms"
+    },
+    {
+      "id": "cin-23",
+      "kind": "form",
+      "verb": "forma",
+      "person": "sin tu ayuda (si no hubiera sido por + sustantivo)",
+      "answer": "but for",
+      "table": "cin-forms"
+    },
+    {
+      "kind": "why",
+      "id": "cin-24",
+      "es": "Had she not helped us, we would have lost.",
+      "target": "Had she not helped",
+      "tr": {
+        "hu": "Ha nem segít nekünk, veszítettünk volna.",
+        "en": "Had she not helped us, we would have lost.",
+        "es": "De no habernos ayudado, habríamos perdido.",
+        "de": "Hätte sie uns nicht geholfen, hätten wir verloren."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "kérdés",
+            "en": "a question",
+            "es": "una pregunta",
+            "de": "eine Frage"
+          },
+          "wrong": {
+            "hu": "Ez kijelentő mondat; a had az if helyett áll.",
+            "en": "This is a statement; had stands in place of if.",
+            "es": "Esto es una afirmación; had está en lugar de if.",
+            "de": "Das ist eine Aussage; had steht anstelle von if."
+          }
+        },
+        {
+          "text": {
+            "hu": "present perfect",
+            "en": "present perfect",
+            "es": "presente perfecto",
+            "de": "Present Perfect"
+          },
+          "wrong": {
+            "hu": "Itt a had múltbeli feltétel, nem jelenre kiható cselekvés.",
+            "en": "Here had is a past condition, not an action with a result for now.",
+            "es": "Aquí had es una condición pasada, no una acción con resultado para ahora.",
+            "de": "Hier ist had eine vergangene Bedingung, keine Handlung mit Ergebnis für jetzt."
+          }
+        },
+        {
+          "text": {
+            "hu": "az if helyett áll: if she had not helped us",
+            "en": "it stands in place of if: if she had not helped us",
+            "es": "está en lugar de if: if she had not helped us",
+            "de": "es steht anstelle von if: if she had not helped us"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "cin-25",
+      "es": "Should you need help, call me.",
+      "target": "Should you need",
+      "tr": {
+        "hu": "Ha segítségre lenne szükséged, hívj.",
+        "en": "Should you need help, call me.",
+        "es": "En caso de que necesite ayuda, llámeme.",
+        "de": "Falls du Hilfe brauchst, ruf mich an."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "kötelesség: neked kell segítség",
+            "en": "obligation: you must need help",
+            "es": "obligación: debes necesitar ayuda",
+            "de": "Pflicht: du musst Hilfe brauchen"
+          },
+          "wrong": {
+            "hu": "A should itt nem kötelesség; if you should need rövidítése.",
+            "en": "Should here is not an obligation; it is short for if you should need.",
+            "es": "Should aquí no es obligación; es la forma corta de if you should need.",
+            "de": "Should ist hier keine Pflicht; es ist die Kurzform von if you should need."
+          }
+        },
+        {
+          "text": {
+            "hu": "múltbeli feltétel",
+            "en": "a past condition",
+            "es": "una condición pasada",
+            "de": "eine vergangene Bedingung"
+          },
+          "wrong": {
+            "hu": "A should + alapige jövőbeli, kevéssé valószínű feltétel.",
+            "en": "Should + base verb is a future, unlikely condition.",
+            "es": "Should + verbo base es una condición futura y poco probable.",
+            "de": "Should + Grundform ist eine künftige, unwahrscheinliche Bedingung."
+          }
+        },
+        {
+          "text": {
+            "hu": "formális, kevéssé valószínű feltétel: if you should need",
+            "en": "a formal, unlikely condition: if you should need",
+            "es": "una condición formal y poco probable: if you should need",
+            "de": "eine formelle, unwahrscheinliche Bedingung: if you should need"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "cin-26",
+      "es": "Were he to resign, the company would collapse.",
+      "target": "Were he to resign",
+      "tr": {
+        "hu": "Ha lemondana, a cég összeomolna.",
+        "en": "Were he to resign, the company would collapse.",
+        "es": "Si llegara a renunciar, la empresa colapsaría.",
+        "de": "Sollte er zurücktreten, würde die Firma zusammenbrechen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "múltbeli tény",
+            "en": "a past fact",
+            "es": "un hecho pasado",
+            "de": "eine vergangene Tatsache"
+          },
+          "wrong": {
+            "hu": "A were … to elképzelt jövőbeli helyzet, nem múltbeli tény.",
+            "en": "Were … to is an imagined future situation, not a past fact.",
+            "es": "Were … to es una situación futura imaginada, no un hecho pasado.",
+            "de": "Were … to ist eine vorgestellte künftige Lage, keine vergangene Tatsache."
+          }
+        },
+        {
+          "text": {
+            "hu": "valós, biztos tény",
+            "en": "a real, certain fact",
+            "es": "un hecho real y seguro",
+            "de": "eine reale, sichere Tatsache"
+          },
+          "wrong": {
+            "hu": "A were … to nem biztos tényt, hanem elképzelt esetet jelöl.",
+            "en": "Were … to does not mark a certain fact but an imagined case.",
+            "es": "Were … to no marca un hecho seguro sino un caso imaginado.",
+            "de": "Were … to markiert keine sichere Tatsache, sondern einen vorgestellten Fall."
+          }
+        },
+        {
+          "text": {
+            "hu": "elképzelt jövő: if he were to resign",
+            "en": "an imagined future: if he were to resign",
+            "es": "un futuro imaginado: if he were to resign",
+            "de": "eine vorgestellte Zukunft: if he were to resign"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "cin-27",
+      "es": "Were it not for the rain, we would go.",
+      "target": "Were it not for",
+      "tr": {
+        "hu": "Ha nem lenne az eső, mennénk.",
+        "en": "Were it not for the rain, we would go.",
+        "es": "Si no fuera por la lluvia, iríamos.",
+        "de": "Gäbe es den Regen nicht, würden wir gehen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "múltra vonatkozó „ha nem lett volna”",
+            "en": "a past “if it had not been for”",
+            "es": "un «si no hubiera sido por» del pasado",
+            "de": "ein vergangenes „wenn es nicht gewesen wäre“"
+          },
+          "wrong": {
+            "hu": "A múltra had it not been for áll; a were it not for a jelenre vonatkozik.",
+            "en": "For the past it is had it not been for; were it not for is for the present.",
+            "es": "Para el pasado es had it not been for; were it not for es para el presente.",
+            "de": "Für die Vergangenheit steht had it not been for; were it not for gilt für die Gegenwart."
+          }
+        },
+        {
+          "text": {
+            "hu": "if it were not for: jelenre vagy általános helyzetre",
+            "en": "if it were not for: the present or a general situation",
+            "es": "if it were not for: el presente o una situación general",
+            "de": "if it were not for: die Gegenwart oder eine allgemeine Lage"
+          }
+        },
+        {
+          "text": {
+            "hu": "kivétel: kivéve az esőt",
+            "en": "an exception: except for the rain",
+            "es": "una excepción: excepto la lluvia",
+            "de": "eine Ausnahme: außer dem Regen"
+          },
+          "wrong": {
+            "hu": "A were it not for nem kivételt, hanem hiányt jelöl: ha az eső nem lenne.",
+            "en": "Were it not for does not mark an exception but an absence: if the rain were not there.",
+            "es": "Were it not for no marca una excepción sino una ausencia: si la lluvia no estuviera.",
+            "de": "Were it not for markiert keine Ausnahme, sondern eine Abwesenheit: wenn der Regen nicht wäre."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "cin-28",
+      "es": "But for your help, I would have failed.",
+      "target": "But for",
+      "tr": {
+        "hu": "A segítséged nélkül megbuktam volna.",
+        "en": "But for your help, I would have failed.",
+        "es": "Sin tu ayuda, habría fracasado.",
+        "de": "Ohne deine Hilfe wäre ich durchgefallen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a but itt azt jelenti: azonban",
+            "en": "but here means however",
+            "es": "but aquí significa sin embargo",
+            "de": "but bedeutet hier jedoch"
+          },
+          "wrong": {
+            "hu": "A but for együtt egy kifejezés: ha nem lett volna, nélkül.",
+            "en": "But for is one phrase together: if it had not been for, without.",
+            "es": "But for es una sola expresión: si no hubiera sido por, sin.",
+            "de": "But for ist zusammen eine Wendung: wenn es nicht gewesen wäre, ohne."
+          }
+        },
+        {
+          "text": {
+            "hu": "but for + főnév: ha nem lett volna, nélkül",
+            "en": "but for + noun: if it had not been for, without",
+            "es": "but for + sustantivo: si no hubiera sido por, sin",
+            "de": "but for + Nomen: wenn es nicht gewesen wäre, ohne"
+          }
+        },
+        {
+          "text": {
+            "hu": "kivétel: kivéve a segítséget",
+            "en": "an exception: except for the help",
+            "es": "una excepción: excepto la ayuda",
+            "de": "eine Ausnahme: außer der Hilfe"
+          },
+          "wrong": {
+            "hu": "A but for nem kivételt jelöl, hanem feltételt.",
+            "en": "But for does not mark an exception but a condition.",
+            "es": "But for no marca una excepción sino una condición.",
+            "de": "But for markiert keine Ausnahme, sondern eine Bedingung."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "cin-29",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "De no habernos ayudado, habríamos perdido.",
+          "en": "Had she not helped us, we would have lost."
+        },
+        {
+          "es": "En caso de que necesite ayuda, llámeme.",
+          "en": "Should you need help, call me."
+        },
+        {
+          "es": "Si llegara a renunciar, la empresa colapsaría.",
+          "en": "Were he to resign, the company would collapse."
+        },
+        {
+          "es": "Si no fuera por la lluvia, iríamos.",
+          "en": "Were it not for the rain, we would go."
+        },
+        {
+          "es": "Si no hubiera sido por tu ayuda, habría fracasado.",
+          "en": "Had it not been for your help, I would have failed."
+        },
+        {
+          "es": "Sin tu ayuda, habría fracasado.",
+          "en": "But for your help, I would have failed."
+        }
+      ]
+    },
+    {
+      "id": "cin-30",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "en caso de que",
+          "en": "should you"
+        },
+        {
+          "es": "si llegara a",
+          "en": "were to"
+        },
+        {
+          "es": "si no fuera por",
+          "en": "were it not for"
+        },
+        {
+          "es": "si no hubiera sido por",
+          "en": "had it not been for"
+        },
+        {
+          "es": "en caso de que no recibas",
+          "en": "should you not receive"
+        },
+        {
+          "es": "sin tu ayuda",
+          "en": "but for your help"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1269 @@
+{
+  "schema": 2,
+  "topic": "reported_speech",
+  "level": "B1",
+  "title": {
+    "hu": "Függő beszéd (She said that she was tired)",
+    "en": "Reported Speech (She said that she was tired)",
+    "es": "El estilo indirecto (She said that she was tired)",
+    "de": "Die indirekte Rede (She said that she was tired)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A függő beszédben nem idézzük szó szerint, amit valaki mondott, hanem továbbadjuk: „I am tired” → „She said that she was tired.” Az igeidő általában egy lépést hátrébb megy (backshift): a jelen múlt lesz, a múlt pedig past perfect. A spanyolban is van hasonló („dijo que estaba cansada”), ezért a logika ismerős, de az angolnak vannak saját szabályai: said / told, a kérdéseknél nincs fordított szórend, és a hely- és időhatározók változnak.",
+        "en": "In reported speech we don’t quote exactly what someone said, we pass it on: “I am tired” → “She said that she was tired.” The tense usually goes one step back (backshift): the present becomes the past, and the past becomes the past perfect. Spanish has something similar (“dijo que estaba cansada”), so the logic is familiar, but English has its own rules: said / told, no inverted word order in questions, and the words for place and time change.",
+        "es": "En el estilo indirecto no citamos exactamente lo que alguien dijo, sino que lo transmitimos: «I am tired» → «She said that she was tired.» El tiempo verbal suele retroceder un paso (backshift): el presente pasa a pasado, y el pasado pasa a pasado perfecto. El español tiene algo parecido («dijo que estaba cansada»), por eso la lógica es conocida, pero el inglés tiene sus propias reglas: said / told, sin orden invertido en las preguntas, y las palabras de lugar y tiempo cambian.",
+        "de": "In der indirekten Rede zitieren wir nicht genau, was jemand gesagt hat, sondern geben es weiter: „I am tired“ → „She said that she was tired.“ Die Zeitform rückt meist einen Schritt zurück (Backshift): Das Präsens wird zur Vergangenheit, die Vergangenheit zum Past Perfect. Das Spanische hat etwas Ähnliches („dijo que estaba cansada“), die Logik ist also vertraut, aber das Englische hat eigene Regeln: said / told, keine umgekehrte Wortstellung in Fragen, und die Orts- und Zeitwörter ändern sich."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "rs-forms",
+      "title": {
+        "hu": "Mi lesz a közvetlen alakból?",
+        "en": "What does the direct form become?",
+        "es": "¿En qué se convierte la forma directa?",
+        "de": "Was wird aus der direkten Form?"
+      },
+      "header": [
+        {
+          "hu": "Közvetlen",
+          "en": "Direct",
+          "es": "Directo",
+          "de": "Direkt"
+        },
+        {
+          "hu": "közvetett",
+          "en": "reported",
+          "es": "indirecto",
+          "de": "indirekt"
+        }
+      ],
+      "rows": [
+        [
+          "presente simple",
+          "past simple"
+        ],
+        [
+          "presente continuo",
+          "past continuous"
+        ],
+        [
+          "pasado simple",
+          "past perfect"
+        ],
+        [
+          "presente perfecto",
+          "past perfect"
+        ],
+        [
+          "will",
+          "would"
+        ],
+        [
+          "can",
+          "could"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Állítások: az igeidő egy lépést hátrébb megy",
+        "en": "Statements: the tense goes one step back",
+        "es": "Afirmaciones: el tiempo retrocede un paso",
+        "de": "Aussagen: die Zeitform rückt einen Schritt zurück"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Said + (that) + mondat. A névmások is változnak: „I love my job” → „He said he loved his job.” A that elhagyható.",
+            "en": "Said + (that) + clause. The pronouns change too: “I love my job” → “He said he loved his job.” That can be left out.",
+            "es": "Said + (that) + oración. Los pronombres también cambian: «I love my job» → «He said he loved his job.» That se puede omitir.",
+            "de": "Said + (that) + Satz. Auch die Pronomen ändern sich: „I love my job“ → „He said he loved his job.“ That kann man weglassen."
+          },
+          "examples": [
+            {
+              "es": "She said she lived in Puebla.",
+              "tr": {
+                "hu": "Azt mondta, hogy Pueblában lakik.",
+                "en": "She said she lived in Puebla.",
+                "es": "Dijo que vivía en Puebla.",
+                "de": "Sie sagte, dass sie in Puebla wohne."
+              }
+            },
+            {
+              "es": "He said he loved his job.",
+              "tr": {
+                "hu": "Azt mondta, hogy szereti a munkáját.",
+                "en": "He said he loved his job.",
+                "es": "Dijo que le encantaba su trabajo.",
+                "de": "Er sagte, dass er seine Arbeit liebe."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Will → would, can → could, a múlt → past perfect: „We will help you” → „They said they would help me.”, „I saw him” → „He said he had seen him.”",
+            "en": "Will → would, can → could, the past → past perfect: “We will help you” → “They said they would help me.”, “I saw him” → “He said he had seen him.”",
+            "es": "Will → would, can → could, el pasado → pasado perfecto: «We will help you» → «They said they would help me.», «I saw him» → «He said he had seen him.»",
+            "de": "Will → would, can → could, die Vergangenheit → Past Perfect: „We will help you“ → „They said they would help me.“, „I saw him“ → „He said he had seen him.“"
+          },
+          "examples": [
+            {
+              "es": "They said they would help me.",
+              "tr": {
+                "hu": "Azt mondták, hogy segítenek nekem.",
+                "en": "They said they would help me.",
+                "es": "Dijeron que me ayudarían.",
+                "de": "Sie sagten, sie würden mir helfen."
+              }
+            },
+            {
+              "es": "He said he had seen him.",
+              "tr": {
+                "hu": "Azt mondta, hogy látta őt.",
+                "en": "He said he had seen him.",
+                "es": "Dijo que lo había visto.",
+                "de": "Er sagte, er habe ihn gesehen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Said és told: a said mellé nem jön személy (said that…), a told mellé igen (told me that…). Nem „said me”, és nem „told that”.",
+            "en": "Said and told: said takes no person (said that…), told does (told me that…). Not “said me”, and not “told that”.",
+            "es": "Said y told: said no lleva persona (said that…), told sí (told me that…). No «said me», y no «told that».",
+            "de": "Said und told: Nach said steht keine Person (said that…), nach told schon (told me that…). Nicht „said me“ und nicht „told that“."
+          },
+          "examples": [
+            {
+              "es": "She told me that she was tired.",
+              "tr": {
+                "hu": "Azt mondta nekem, hogy fáradt.",
+                "en": "She told me that she was tired.",
+                "es": "Me dijo que estaba cansada.",
+                "de": "Sie sagte mir, dass sie müde sei."
+              }
+            },
+            {
+              "es": "He said that he was busy.",
+              "tr": {
+                "hu": "Azt mondta, hogy elfoglalt.",
+                "en": "He said that he was busy.",
+                "es": "Dijo que estaba ocupado.",
+                "de": "Er sagte, dass er beschäftigt sei."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Kérdések és felszólítások",
+        "en": "Questions and commands",
+        "es": "Preguntas y órdenes",
+        "de": "Fragen und Aufforderungen"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Kérdésnél asked (+ személy) és kijelentő szórend, do nélkül. Igen / nem kérdésnél if vagy whether: „Are you tired?” → „She asked me if I was tired.”",
+            "en": "For questions use asked (+ person) and statement word order, with no do. For yes / no questions use if or whether: “Are you tired?” → “She asked me if I was tired.”",
+            "es": "Para preguntas se usa asked (+ persona) y el orden de una afirmación, sin do. En preguntas de sí / no se usa if o whether: «Are you tired?» → «She asked me if I was tired.»",
+            "de": "Bei Fragen nimmt man asked (+ Person) und die Wortstellung einer Aussage, ohne do. Bei Ja-/Nein-Fragen nimmt man if oder whether: „Are you tired?“ → „She asked me if I was tired.“"
+          },
+          "examples": [
+            {
+              "es": "She asked me where I lived.",
+              "tr": {
+                "hu": "Megkérdezte, hol lakom.",
+                "en": "She asked me where I lived.",
+                "es": "Me preguntó dónde vivía.",
+                "de": "Sie fragte mich, wo ich wohne."
+              }
+            },
+            {
+              "es": "She asked me if I was tired.",
+              "tr": {
+                "hu": "Megkérdezte, hogy fáradt vagyok-e.",
+                "en": "She asked me if I was tired.",
+                "es": "Me preguntó si estaba cansado.",
+                "de": "Sie fragte mich, ob ich müde sei."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Felszólítás: told + személy + to + alapige. Tagadva: told + személy + not to + alapige. „Close the door” → „She told me to close the door.”",
+            "en": "Commands: told + person + to + base verb. Negative: told + person + not to + base verb. “Close the door” → “She told me to close the door.”",
+            "es": "Órdenes: told + persona + to + verbo base. Negativo: told + persona + not to + verbo base. «Close the door» → «She told me to close the door.»",
+            "de": "Aufforderungen: told + Person + to + Grundform. Verneint: told + Person + not to + Grundform. „Close the door“ → „She told me to close the door.“"
+          },
+          "examples": [
+            {
+              "es": "She told me to close the door.",
+              "tr": {
+                "hu": "Azt mondta, csukjam be az ajtót.",
+                "en": "She told me to close the door.",
+                "es": "Me dijo que cerrara la puerta.",
+                "de": "Sie sagte mir, ich solle die Tür schließen."
+              }
+            },
+            {
+              "es": "He told me not to be late.",
+              "tr": {
+                "hu": "Azt mondta, ne késsek el.",
+                "en": "He told me not to be late.",
+                "es": "Me dijo que no llegara tarde.",
+                "de": "Er sagte mir, ich solle nicht zu spät kommen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Az idő- és helyhatározók változnak",
+        "en": "Time and place words change",
+        "es": "Las palabras de tiempo y lugar cambian",
+        "de": "Zeit- und Ortswörter ändern sich"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Today → that day, tomorrow → the next day, yesterday → the day before, now → then, here → there, this → that.",
+            "en": "Today → that day, tomorrow → the next day, yesterday → the day before, now → then, here → there, this → that.",
+            "es": "Today → that day, tomorrow → the next day, yesterday → the day before, now → then, here → there, this → that.",
+            "de": "Today → that day, tomorrow → the next day, yesterday → the day before, now → then, here → there, this → that."
+          },
+          "examples": [
+            {
+              "es": "She said she would call me the next day.",
+              "tr": {
+                "hu": "Azt mondta, másnap felhív.",
+                "en": "She said she would call me the next day.",
+                "es": "Dijo que me llamaría al día siguiente.",
+                "de": "Sie sagte, sie würde mich am nächsten Tag anrufen."
+              }
+            },
+            {
+              "es": "He said he liked it there.",
+              "tr": {
+                "hu": "Azt mondta, hogy ott tetszik neki.",
+                "en": "He said he liked it there.",
+                "es": "Dijo que le gustaba allí.",
+                "de": "Er sagte, dass es ihm dort gefalle."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A „dijo me” és a „told that” hibás: a said után nincs személy (said that, said to me that), a told után van (told me that). A kérdésnél asked me, nem „said me”.",
+        "en": "“Said me” and “told that” are wrong: after said there is no person (said that, said to me that), after told there is (told me that). For questions use asked me, not “said me”.",
+        "es": "«Said me» y «told that» son incorrectos: después de said no hay persona (said that, said to me that), después de told sí (told me that). Para preguntas se usa asked me, no «said me».",
+        "de": "„Said me“ und „told that“ sind falsch: Nach said steht keine Person (said that, said to me that), nach told schon (told me that). Für Fragen nimmt man asked me, nicht „said me“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Kérdésnél nincs fordított szórend és nincs do: nem „She asked me where did I live”, hanem „She asked me where I lived”. A spanyol „me preguntó dónde vivía” szórendje helyes minta.",
+        "en": "In a reported question there is no inversion and no do: not “She asked me where did I live”, but “She asked me where I lived”. The word order of the Spanish “me preguntó dónde vivía” is a good model.",
+        "es": "En una pregunta indirecta no hay inversión ni do: no «She asked me where did I live», sino «She asked me where I lived». El orden del «me preguntó dónde vivía» español es un buen modelo.",
+        "de": "In einer indirekten Frage gibt es keine Inversion und kein do: nicht „She asked me where did I live“, sondern „She asked me where I lived“. Die Wortstellung des spanischen „me preguntó dónde vivía“ ist ein gutes Vorbild."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Ha a közölt dolog ma is igaz, a backshift elmaradhat: „She said she lives in Puebla” (és most is ott lakik). A tanulásnál viszont gyakorold a hátralépést, mert teszteken ezt várják.",
+        "en": "If what was said is still true, the backshift can be left out: “She said she lives in Puebla” (and she still lives there). When learning, though, practice the step back, because tests expect it.",
+        "es": "Si lo que se dijo sigue siendo verdad, el backshift se puede omitir: «She said she lives in Puebla» (y todavía vive allí). Al aprender, sin embargo, practica el paso atrás, porque los exámenes lo esperan.",
+        "de": "Wenn das Gesagte immer noch stimmt, kann der Backshift wegfallen: „She said she lives in Puebla“ (und sie wohnt noch dort). Beim Lernen übe aber den Schritt zurück, weil Tests ihn erwarten."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A függő beszédben továbbadjuk, amit valaki mondott: «She said that she was tired». Az igeidő általában egy lépést hátrébb megy: a jelen múlt lesz, a «will» «would» lesz, a «can» «could» lesz, a múlt pedig past perfect. A «said» mellé nem jön személy, a «told» mellé igen: «She told me that she was tired». Kérdésnél nincs fordított szórend: «She asked me where I lived». Igen-nem kérdésnél «if» áll: «She asked me if I was tired». Felszólításnál «to» és alapige: «She told me to close the door».",
+    "en": "In reported speech we pass on what someone said: «She said that she was tired». The tense usually goes one step back: the present becomes the past, «will» becomes «would», «can» becomes «could», and the past becomes the past perfect. After «said» there is no person, after «told» there is: «She told me that she was tired». In questions there is no inversion: «She asked me where I lived». For yes-no questions «if» is used: «She asked me if I was tired». For commands «to» and the base verb: «She told me to close the door».",
+    "es": "En el estilo indirecto transmitimos lo que alguien dijo: «She said that she was tired». El tiempo verbal suele retroceder un paso: el presente pasa a pasado, «will» pasa a «would», «can» pasa a «could», y el pasado pasa a pasado perfecto. Después de «said» no hay persona, después de «told» sí: «She told me that she was tired». En las preguntas no hay inversión: «She asked me where I lived». En las preguntas de sí o no se usa «if»: «She asked me if I was tired». Para las órdenes se usa «to» y el verbo base: «She told me to close the door».",
+    "de": "In der indirekten Rede geben wir weiter, was jemand gesagt hat: «She said that she was tired». Die Zeitform rückt meist einen Schritt zurück: Das Präsens wird zur Vergangenheit, «will» wird zu «would», «can» wird zu «could», und die Vergangenheit wird zum Past Perfect. Nach «said» steht keine Person, nach «told» schon: «She told me that she was tired». In Fragen gibt es keine Inversion: «She asked me where I lived». Bei Ja-Nein-Fragen steht «if»: «She asked me if I was tired». Bei Aufforderungen steht «to» und die Grundform: «She told me to close the door»."
+  },
+  "glossary": [
+    {
+      "word": "wouldn't",
+      "gloss": {
+        "hu": "nem tenne (would not)",
+        "en": "would not",
+        "es": "no haría (would not)",
+        "de": "würde nicht (would not)"
+      }
+    },
+    {
+      "word": "would",
+      "gloss": {
+        "hu": "lenne, tenne (a will múlt alakja)",
+        "en": "past form of will",
+        "es": "condicional / pasado de will",
+        "de": "würde (Past von will)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "rs-01",
+      "sentence": "\"I live in Puebla.\" She said that she ___ in Puebla.",
+      "options": [
+        "has lived",
+        "lived",
+        "will live"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A said után a jelen egy lépést hátra megy: live → lived.",
+        "en": "After said the present goes one step back: live → lived.",
+        "es": "Después de said el presente retrocede un paso: live → lived.",
+        "de": "Nach said rückt das Präsens einen Schritt zurück: live → lived."
+      },
+      "wrong": {
+        "has lived": {
+          "hu": "A has lived present perfect lenne; a jelen egyszerű múltra megy hátra, nem present perfectre.",
+          "en": "Has lived would be the present perfect; the present goes back to the past simple, not to the present perfect.",
+          "es": "Has lived sería el presente perfecto; el presente retrocede al pasado simple, no al presente perfecto.",
+          "de": "Has lived wäre das Present Perfect; das Präsens rückt zum Past Simple zurück, nicht zum Present Perfect."
+        },
+        "will live": {
+          "hu": "A will live jövőt jelent; az idézet jelen idejű (I live), ezért a jelen múltra megy hátra (lived).",
+          "en": "Will live means the future; the quote is in the present (I live), so the present goes back to the past (lived).",
+          "es": "Will live significa futuro; la cita está en presente (I live), por eso el presente retrocede al pasado (lived).",
+          "de": "Will live bedeutet Zukunft; das Zitat steht im Präsens (I live), deshalb rückt das Präsens in die Vergangenheit (lived)."
+        }
+      },
+      "examples": [
+        "He said he worked here.",
+        "She said she liked it."
+      ]
+    },
+    {
+      "id": "rs-02",
+      "sentence": "\"I am tired.\" He said he ___ tired.",
+      "options": [
+        "has been",
+        "will be",
+        "was"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Az am / is / are múltra megy hátra: was tired.",
+        "en": "Am / is / are goes back to the past: was tired.",
+        "es": "Am / is / are retrocede al pasado: was tired.",
+        "de": "Am / is / are rückt in die Vergangenheit zurück: was tired."
+      },
+      "wrong": {
+        "has been": {
+          "hu": "A has been present perfect lenne; az „am” egyszerű múltra megy hátra (was).",
+          "en": "Has been would be the present perfect; “am” goes back to the past simple (was).",
+          "es": "Has been sería el presente perfecto; «am» retrocede al pasado simple (was).",
+          "de": "Has been wäre das Present Perfect; „am“ rückt zum Past Simple zurück (was)."
+        },
+        "will be": {
+          "hu": "A will be jövőt jelent; az „am” jelen idejű, és egyszerű múltra megy hátra (was).",
+          "en": "Will be means the future; “am” is present and goes back to the past simple (was).",
+          "es": "Will be significa futuro; «am» es presente y retrocede al pasado simple (was).",
+          "de": "Will be bedeutet Zukunft; „am“ ist Präsens und rückt zum Past Simple zurück (was)."
+        }
+      },
+      "examples": [
+        "She said she was busy.",
+        "They said they were happy."
+      ]
+    },
+    {
+      "id": "rs-03",
+      "sentence": "\"We will help you.\" They said they ___ help me.",
+      "options": [
+        "would",
+        "wills",
+        "had"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A will függő beszédben would lesz: would help.",
+        "en": "In reported speech will becomes would: would help.",
+        "es": "En el estilo indirecto will pasa a would: would help.",
+        "de": "In der indirekten Rede wird will zu would: would help."
+      },
+      "wrong": {
+        "wills": {
+          "hu": "A „wills” nem létező alak; a módbeli igék nem kapnak -s végződést.",
+          "en": "“Wills” is not an existing form; modal verbs take no -s ending.",
+          "es": "«Wills» no es una forma que exista; los verbos modales no llevan -s.",
+          "de": "„Wills“ ist keine existierende Form; Modalverben bekommen kein -s."
+        },
+        "had": {
+          "hu": "A had után igenév kell (had helped); a will egy lépéssel hátrébb would lesz.",
+          "en": "After had you need a participle (had helped); will goes one step back to would.",
+          "es": "Después de had hace falta un participio (had helped); will retrocede un paso a would.",
+          "de": "Nach had braucht man ein Partizip (had helped); will rückt einen Schritt zurück zu would."
+        }
+      },
+      "examples": [
+        "He said he would come.",
+        "She said she would call."
+      ]
+    },
+    {
+      "id": "rs-04",
+      "sentence": "\"I can swim.\" She said she ___ swim.",
+      "options": [
+        "cans",
+        "could",
+        "would"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A can függő beszédben could lesz: could swim.",
+        "en": "In reported speech can becomes could: could swim.",
+        "es": "En el estilo indirecto can pasa a could: could swim.",
+        "de": "In der indirekten Rede wird can zu could: could swim."
+      },
+      "wrong": {
+        "cans": {
+          "hu": "A „cans” nem létező alak; a módbeli igék nem kapnak -s végződést.",
+          "en": "“Cans” is not an existing form; modal verbs take no -s ending.",
+          "es": "«Cans» no es una forma que exista; los verbos modales no llevan -s.",
+          "de": "„Cans“ ist keine existierende Form; Modalverben bekommen kein -s."
+        },
+        "would": {
+          "hu": "A would jövőbeli vagy feltételes jelentésű; a can képességet fejez ki, ami could-ra megy hátra.",
+          "en": "Would has a future or conditional meaning; can expresses ability, which goes back to could.",
+          "es": "Would tiene sentido de futuro o condicional; can expresa capacidad, que retrocede a could.",
+          "de": "Would hat zukünftige oder konditionale Bedeutung; can drückt Fähigkeit aus, die zu could zurückrückt."
+        }
+      },
+      "examples": [
+        "He said he could swim.",
+        "They said they could help."
+      ]
+    },
+    {
+      "id": "rs-05",
+      "sentence": "\"I saw him.\" He said he ___ him.",
+      "options": [
+        "has seen",
+        "was seeing",
+        "had seen"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Az egyszerű múlt past perfectre megy hátra: had seen.",
+        "en": "The past simple goes back to the past perfect: had seen.",
+        "es": "El pasado simple retrocede al pasado perfecto: had seen.",
+        "de": "Das Past Simple rückt zum Past Perfect zurück: had seen."
+      },
+      "wrong": {
+        "has seen": {
+          "hu": "A has seen present perfect; a függő beszéd múltba teszi a mondatot, ezért had seen.",
+          "en": "Has seen is the present perfect; reported speech puts the sentence in the past, so had seen.",
+          "es": "Has seen es el presente perfecto; el estilo indirecto pone la oración en pasado, por eso had seen.",
+          "de": "Has seen ist das Present Perfect; die indirekte Rede setzt den Satz in die Vergangenheit, deshalb had seen."
+        },
+        "was seeing": {
+          "hu": "A was seeing folyamatos múlt lenne; az egyszerű múlt past perfectre megy hátra (had seen).",
+          "en": "Was seeing would be the past continuous; the past simple goes back to the past perfect (had seen).",
+          "es": "Was seeing sería el pasado continuo; el pasado simple retrocede al pasado perfecto (had seen).",
+          "de": "Was seeing wäre das Past Continuous; das Past Simple rückt zum Past Perfect zurück (had seen)."
+        }
+      },
+      "examples": [
+        "She said she had left.",
+        "He said he had eaten."
+      ]
+    },
+    {
+      "id": "rs-06",
+      "sentence": "\"I am working.\" She said she ___ working.",
+      "options": [
+        "was",
+        "were",
+        "has been"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A folyamatos jelen folyamatos múltra megy hátra: was working.",
+        "en": "The present continuous goes back to the past continuous: was working.",
+        "es": "El presente continuo retrocede al pasado continuo: was working.",
+        "de": "Das Present Continuous rückt zum Past Continuous zurück: was working."
+      },
+      "wrong": {
+        "were": {
+          "hu": "A were a you, we, they mellé jön; a she mellé was áll.",
+          "en": "Were goes with you, we, they; with she use was.",
+          "es": "Were va con you, we, they; con she se usa was.",
+          "de": "Were steht bei you, we, they; bei she benutzt man was."
+        },
+        "has been": {
+          "hu": "A has been working present perfect continuous lenne; a folyamatos jelen was working-ra megy hátra.",
+          "en": "Has been working would be the present perfect continuous; the present continuous goes back to was working.",
+          "es": "Has been working sería el presente perfecto continuo; el presente continuo retrocede a was working.",
+          "de": "Has been working wäre das Present Perfect Continuous; das Present Continuous rückt zu was working zurück."
+        }
+      },
+      "examples": [
+        "He said he was sleeping.",
+        "They said they were eating."
+      ]
+    },
+    {
+      "id": "rs-07",
+      "sentence": "She ___ me that she was tired.",
+      "options": [
+        "said",
+        "told",
+        "spoke"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A me (személy) elé told kell: she told me that…",
+        "en": "Before me (a person) you need told: she told me that…",
+        "es": "Antes de me (una persona) hace falta told: she told me that…",
+        "de": "Vor me (einer Person) braucht man told: she told me that…"
+      },
+      "wrong": {
+        "said": {
+          "hu": "A said mellé nem jön személy közvetlenül (nem „said me”); személy mellé told való.",
+          "en": "Said takes no person directly (not “said me”); with a person use told.",
+          "es": "Said no lleva persona directamente (no «said me»); con una persona se usa told.",
+          "de": "Said nimmt keine Person direkt (nicht „said me“); mit einer Person nimmt man told."
+        },
+        "spoke": {
+          "hu": "A spoke nyelvről vagy beszélgetésről szól; mondat továbbadására said / told való.",
+          "en": "Spoke is about languages or conversations; to pass on a statement use said / told.",
+          "es": "Spoke es para idiomas o conversaciones; para transmitir una frase se usa said / told.",
+          "de": "Spoke ist für Sprachen oder Gespräche; um einen Satz weiterzugeben nimmt man said / told."
+        }
+      },
+      "examples": [
+        "He told me that he was busy.",
+        "They told us that it was late."
+      ]
+    },
+    {
+      "id": "rs-08",
+      "sentence": "He ___ that he was busy.",
+      "options": [
+        "told",
+        "asked",
+        "said"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Személy nélkül said áll: he said that he was busy.",
+        "en": "Without a person said is used: he said that he was busy.",
+        "es": "Sin persona se usa said: he said that he was busy.",
+        "de": "Ohne Person steht said: he said that he was busy."
+      },
+      "wrong": {
+        "told": {
+          "hu": "A told mellé személy kell (told me that…); a „told that” helytelen.",
+          "en": "Told needs a person (told me that…); “told that” is incorrect.",
+          "es": "Told necesita una persona (told me that…); «told that» es incorrecto.",
+          "de": "Told braucht eine Person (told me that…); „told that“ ist falsch."
+        },
+        "asked": {
+          "hu": "Az asked kérdést ad tovább; itt állítást, ezért said.",
+          "en": "Asked passes on a question; here a statement is passed on, so said.",
+          "es": "Asked transmite una pregunta; aquí se transmite una afirmación, por eso said.",
+          "de": "Asked gibt eine Frage weiter; hier wird eine Aussage weitergegeben, deshalb said."
+        }
+      },
+      "examples": [
+        "She said that she was ready.",
+        "They said that it was late."
+      ]
+    },
+    {
+      "id": "rs-09",
+      "sentence": "\"I will call you tomorrow.\" She said she would call me ___.",
+      "options": [
+        "the next day",
+        "the day before",
+        "last week"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A tomorrow függő beszédben the next day lesz.",
+        "en": "In reported speech tomorrow becomes the next day.",
+        "es": "En el estilo indirecto tomorrow pasa a the next day.",
+        "de": "In der indirekten Rede wird tomorrow zu the next day."
+      },
+      "wrong": {
+        "the day before": {
+          "hu": "A the day before a mondás előtti napot jelentené; a hívás a mondás utáni napon lesz (the next day).",
+          "en": "The day before would be the day before speaking; the call comes the day after (the next day).",
+          "es": "The day before sería el día anterior a hablar; la llamada es el día después (the next day).",
+          "de": "The day before wäre der Tag vor dem Sprechen; der Anruf kommt am Tag danach (the next day)."
+        },
+        "last week": {
+          "hu": "A last week múltat jelent; a hívás a jövőben lesz (would call).",
+          "en": "Last week means the past; the call is in the future (would call).",
+          "es": "Last week significa pasado; la llamada es en el futuro (would call).",
+          "de": "Last week bedeutet Vergangenheit; der Anruf liegt in der Zukunft (would call)."
+        }
+      },
+      "examples": [
+        "He said he would come the next day.",
+        "She said she would leave the next day."
+      ]
+    },
+    {
+      "id": "rs-10",
+      "sentence": "\"I love my job.\" He said he loved ___ job.",
+      "options": [
+        "my",
+        "his",
+        "your"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A névmás is változik: az én (my) ő (his) lesz, mert a beszélő férfi.",
+        "en": "The pronoun changes too: my becomes his, because the speaker is a man.",
+        "es": "El pronombre también cambia: my pasa a his, porque el que habla es un hombre.",
+        "de": "Auch das Pronomen ändert sich: my wird zu his, weil der Sprecher ein Mann ist."
+      },
+      "wrong": {
+        "my": {
+          "hu": "A „my job” az idézet névmása; a továbbadónál a beszélőre (he) utal: his.",
+          "en": "“My job” is the pronoun of the quote; in the report it refers to the speaker (he): his.",
+          "es": "«My job» es el pronombre de la cita; en el reporte se refiere al que habló (he): his.",
+          "de": "„My job“ ist das Pronomen des Zitats; in der Wiedergabe bezieht es sich auf den Sprecher (he): his."
+        },
+        "your": {
+          "hu": "A „your” a hallgatóra utalna; itt a beszélő saját munkájáról van szó (his).",
+          "en": "“Your” would refer to the listener; here it is about the speaker’s own job (his).",
+          "es": "«Your» se referiría al oyente; aquí se trata del trabajo del propio hablante (his).",
+          "de": "„Your“ würde sich auf den Zuhörer beziehen; hier geht es um die eigene Arbeit des Sprechers (his)."
+        }
+      },
+      "examples": [
+        "She said she liked her work.",
+        "He said he lost his keys."
+      ]
+    },
+    {
+      "id": "rs-11",
+      "sentence": "\"Where do you live?\" She asked me where I ___.",
+      "options": [
+        "do live",
+        "was living",
+        "lived"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Függő kérdésben kijelentő szórend, do nélkül, hátralépéssel: where I lived.",
+        "en": "In a reported question use statement word order, no do, with the step back: where I lived.",
+        "es": "En una pregunta indirecta se usa el orden de una afirmación, sin do, con el paso atrás: where I lived.",
+        "de": "In einer indirekten Frage steht die Wortstellung einer Aussage, ohne do, mit Schritt zurück: where I lived."
+      },
+      "wrong": {
+        "do live": {
+          "hu": "A függő kérdésben nincs do; a „where I do live” helytelen.",
+          "en": "A reported question has no do; “where I do live” is incorrect.",
+          "es": "Una pregunta indirecta no lleva do; «where I do live» es incorrecto.",
+          "de": "Eine indirekte Frage hat kein do; „where I do live“ ist falsch."
+        },
+        "was living": {
+          "hu": "A „was living” folyamatos múlt lenne; az egyszerű jelen egyszerű múltra megy hátra (lived).",
+          "en": "“Was living” would be the past continuous; the simple present goes back to the simple past (lived).",
+          "es": "«Was living» sería el pasado continuo; el presente simple retrocede al pasado simple (lived).",
+          "de": "„Was living“ wäre das Past Continuous; das Present Simple rückt zum Past Simple zurück (lived)."
+        }
+      },
+      "examples": [
+        "He asked me where I worked.",
+        "She asked me what I wanted."
+      ]
+    },
+    {
+      "id": "rs-12",
+      "sentence": "\"Are you tired?\" She asked me ___ I was tired.",
+      "options": [
+        "if",
+        "that",
+        "what"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Igen / nem kérdést if vezeti be: she asked me if I was tired.",
+        "en": "A yes / no question is introduced by if: she asked me if I was tired.",
+        "es": "Una pregunta de sí / no se introduce con if: she asked me if I was tired.",
+        "de": "Eine Ja-/Nein-Frage wird mit if eingeleitet: she asked me if I was tired."
+      },
+      "wrong": {
+        "that": {
+          "hu": "A that állítást vezet be (said that…); kérdésnél if vagy whether kell.",
+          "en": "That introduces a statement (said that…); for a question you need if or whether.",
+          "es": "That introduce una afirmación (said that…); para una pregunta hace falta if o whether.",
+          "de": "That leitet eine Aussage ein (said that…); für eine Frage braucht man if oder whether."
+        },
+        "what": {
+          "hu": "A what kérdőszó (mit); az igen / nem kérdéshez if kell.",
+          "en": "What is a question word (what); a yes / no question needs if.",
+          "es": "What es una palabra interrogativa (qué); una pregunta de sí / no necesita if.",
+          "de": "What ist ein Fragewort (was); eine Ja-/Nein-Frage braucht if."
+        }
+      },
+      "examples": [
+        "He asked me if I was ready.",
+        "She asked me if I liked it."
+      ]
+    },
+    {
+      "id": "rs-13",
+      "sentence": "\"Close the door.\" She told me ___ the door.",
+      "options": [
+        "close",
+        "to close",
+        "closing"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Felszólításnál told + személy + to + alapige: to close.",
+        "en": "For commands told + person + to + base verb: to close.",
+        "es": "Para órdenes told + persona + to + verbo base: to close.",
+        "de": "Bei Aufforderungen told + Person + to + Grundform: to close."
+      },
+      "wrong": {
+        "close": {
+          "hu": "A told + személy után to kell: nem „told me close”, hanem told me to close.",
+          "en": "After told + person you need to: not “told me close”, but told me to close.",
+          "es": "Después de told + persona hace falta to: no «told me close», sino told me to close.",
+          "de": "Nach told + Person braucht man to: nicht „told me close“, sondern told me to close."
+        },
+        "closing": {
+          "hu": "A told + személy után to + alapige jön, nem -ing alak.",
+          "en": "After told + person comes to + base verb, not an -ing form.",
+          "es": "Después de told + persona va to + verbo base, no una forma -ing.",
+          "de": "Nach told + Person kommt to + Grundform, nicht eine -ing-Form."
+        }
+      },
+      "examples": [
+        "He told me to wait.",
+        "She told us to stop."
+      ]
+    },
+    {
+      "id": "rs-14",
+      "sentence": "\"Do not be late.\" He told me ___ late.",
+      "options": [
+        "don't be",
+        "to not be",
+        "not to be"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Tiltó felszólításnál told + személy + not to + alapige: not to be late.",
+        "en": "For a negative command told + person + not to + base verb: not to be late.",
+        "es": "Para una orden negativa told + persona + not to + verbo base: not to be late.",
+        "de": "Bei einer verneinten Aufforderung told + Person + not to + Grundform: not to be late."
+      },
+      "wrong": {
+        "don't be": {
+          "hu": "A don’t be az idézet alakja; a függő beszédben told me not to be kell.",
+          "en": "Don’t be is the form of the quote; in reported speech you need told me not to be.",
+          "es": "Don’t be es la forma de la cita; en el estilo indirecto hace falta told me not to be.",
+          "de": "Don’t be ist die Form des Zitats; in der indirekten Rede braucht man told me not to be."
+        },
+        "to not be": {
+          "hu": "A „to not be” ma is hallható, de a vizsgán és írásban a not to be az elvárt alak.",
+          "en": "“To not be” is also heard today, but in exams and writing not to be is the expected form.",
+          "es": "«To not be» también se oye hoy, pero en exámenes y por escrito se espera not to be.",
+          "de": "„To not be“ hört man heute auch, aber in Prüfungen und schriftlich wird not to be erwartet."
+        }
+      },
+      "examples": [
+        "She told me not to go.",
+        "He told us not to wait."
+      ]
+    },
+    {
+      "id": "rs-15",
+      "sentence": "\"I do not know.\" He said he ___ know.",
+      "options": [
+        "didn't",
+        "wouldn't",
+        "hasn't"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A don’t egyszerű múltra megy hátra: didn’t know.",
+        "en": "Don’t goes back to the past simple: didn’t know.",
+        "es": "Don’t retrocede al pasado simple: didn’t know.",
+        "de": "Don’t rückt zum Past Simple zurück: didn’t know."
+      },
+      "wrong": {
+        "wouldn't": {
+          "hu": "A wouldn’t a would tagadása; a „do not” egyszerű múltra megy hátra (didn’t).",
+          "en": "Wouldn’t is the negative of would; “do not” goes back to the past simple (didn’t).",
+          "es": "Wouldn’t es la negación de would; «do not» retrocede al pasado simple (didn’t).",
+          "de": "Wouldn’t ist die Verneinung von would; „do not“ rückt zum Past Simple zurück (didn’t)."
+        },
+        "hasn't": {
+          "hu": "A hasn’t present perfect tagadása; a don’t egyszerű múltra megy hátra (didn’t).",
+          "en": "Hasn’t is the present perfect negative; don’t goes back to the past simple (didn’t).",
+          "es": "Hasn’t es la negación del presente perfecto; don’t retrocede al pasado simple (didn’t).",
+          "de": "Hasn’t ist die Verneinung des Present Perfect; don’t rückt zum Past Simple zurück (didn’t)."
+        }
+      },
+      "examples": [
+        "She said she didn't like it.",
+        "They said they didn't have time."
+      ]
+    },
+    {
+      "id": "rs-16",
+      "sentence": "\"I am going to leave.\" She said she ___ going to leave.",
+      "options": [
+        "were",
+        "was",
+        "will be"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az „I am” she said she was lesz: was going to leave.",
+        "en": "“I am” becomes she said she was: was going to leave.",
+        "es": "«I am» pasa a she said she was: was going to leave.",
+        "de": "„I am“ wird zu she said she was: was going to leave."
+      },
+      "wrong": {
+        "were": {
+          "hu": "A were a you, we, they mellé jön; a she mellé was áll.",
+          "en": "Were goes with you, we, they; with she use was.",
+          "es": "Were va con you, we, they; con she se usa was.",
+          "de": "Were steht bei you, we, they; bei she benutzt man was."
+        },
+        "will be": {
+          "hu": "A will be going to jövőbeli alakot ad; az „I am going to” a was going to-ra megy hátra.",
+          "en": "Will be going to makes a future form; “I am going to” goes back to was going to.",
+          "es": "Will be going to forma un futuro; «I am going to» retrocede a was going to.",
+          "de": "Will be going to bildet eine Zukunftsform; „I am going to“ rückt zu was going to zurück."
+        }
+      },
+      "examples": [
+        "He said he was going to call.",
+        "They said they were going to come."
+      ]
+    },
+    {
+      "id": "rs-17",
+      "sentence": "\"I like it here.\" He said he liked it ___.",
+      "options": [
+        "where",
+        "their",
+        "there"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A here függő beszédben there lesz: he liked it there.",
+        "en": "In reported speech here becomes there: he liked it there.",
+        "es": "En el estilo indirecto here pasa a there: he liked it there.",
+        "de": "In der indirekten Rede wird here zu there: he liked it there."
+      },
+      "wrong": {
+        "where": {
+          "hu": "A where kérdő- vagy vonatkozó szó, a mondat végén nem áll így; a here helyett there kell.",
+          "en": "Where is a question or relative word and does not fit at the end of this sentence; here becomes there.",
+          "es": "Where es una palabra interrogativa o de relativo y no encaja al final de esta oración; here pasa a there.",
+          "de": "Where ist ein Frage- oder Relativwort und passt nicht ans Ende dieses Satzes; here wird zu there."
+        },
+        "their": {
+          "hu": "A their birtokos névmás (az övék); a hely there.",
+          "en": "Their is a possessive (belonging to them); the place word is there.",
+          "es": "Their es un posesivo (de ellos); la palabra de lugar es there.",
+          "de": "Their ist ein Possessivpronomen (ihr); das Ortswort ist there."
+        }
+      },
+      "examples": [
+        "She said she was happy there.",
+        "He said he lived there."
+      ]
+    },
+    {
+      "id": "rs-18",
+      "kind": "form",
+      "verb": "indirecto",
+      "person": "presente simple",
+      "answer": "past simple",
+      "table": "rs-forms"
+    },
+    {
+      "id": "rs-19",
+      "kind": "form",
+      "verb": "indirecto",
+      "person": "presente continuo",
+      "answer": "past continuous",
+      "table": "rs-forms"
+    },
+    {
+      "id": "rs-20",
+      "kind": "form",
+      "verb": "indirecto",
+      "person": "pasado simple",
+      "answer": "past perfect",
+      "table": "rs-forms"
+    },
+    {
+      "id": "rs-21",
+      "kind": "form",
+      "verb": "indirecto",
+      "person": "presente perfecto",
+      "answer": "past perfect",
+      "table": "rs-forms"
+    },
+    {
+      "id": "rs-22",
+      "kind": "form",
+      "verb": "indirecto",
+      "person": "will",
+      "answer": "would",
+      "table": "rs-forms"
+    },
+    {
+      "id": "rs-23",
+      "kind": "form",
+      "verb": "indirecto",
+      "person": "can",
+      "answer": "could",
+      "table": "rs-forms"
+    },
+    {
+      "kind": "why",
+      "id": "rs-24",
+      "es": "She said she lived in Puebla.",
+      "target": "lived",
+      "tr": {
+        "hu": "Azt mondta, hogy Pueblában lakik.",
+        "en": "She said she lived in Puebla.",
+        "es": "Dijo que vivía en Puebla.",
+        "de": "Sie sagte, dass sie in Puebla wohne."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "present perfect: mostanáig tartó idő",
+            "en": "present perfect: time up to now",
+            "es": "presente perfecto: tiempo hasta ahora",
+            "de": "Present Perfect: Zeit bis jetzt"
+          },
+          "wrong": {
+            "hu": "Nincs have + igenév; a lived itt a jelen idő hátralépése a függő beszédben.",
+            "en": "There is no have + participle; lived here is the step back of the present in reported speech.",
+            "es": "No hay have + participio; lived aquí es el paso atrás del presente en el estilo indirecto.",
+            "de": "Es gibt kein have + Partizip; lived ist hier der Schritt zurück des Präsens in der indirekten Rede."
+          }
+        },
+        {
+          "text": {
+            "hu": "lezárt múlt: már nem lakik ott",
+            "en": "a finished past: she no longer lives there",
+            "es": "un pasado terminado: ya no vive allí",
+            "de": "eine abgeschlossene Vergangenheit: sie wohnt dort nicht mehr"
+          },
+          "wrong": {
+            "hu": "A lived itt nem jelenti, hogy már nem lakik ott; a függő beszédben ez a jelen idő múlt alakja.",
+            "en": "Lived here does not mean she no longer lives there; in reported speech it is the past form of the present.",
+            "es": "Lived aquí no significa que ya no viva allí; en el estilo indirecto es la forma de pasado del presente.",
+            "de": "Lived bedeutet hier nicht, dass sie dort nicht mehr wohnt; in der indirekten Rede ist es die Vergangenheitsform des Präsens."
+          }
+        },
+        {
+          "text": {
+            "hu": "hátralépés: a jelen egyszerű múlt lesz",
+            "en": "backshift: the present becomes the past simple",
+            "es": "backshift: el presente pasa al pasado simple",
+            "de": "Backshift: das Präsens wird zum Past Simple"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "rs-25",
+      "es": "He said he had seen him.",
+      "target": "had",
+      "tr": {
+        "hu": "Azt mondta, hogy látta őt.",
+        "en": "He said he had seen him.",
+        "es": "Dijo que lo había visto.",
+        "de": "Er sagte, er habe ihn gesehen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "past perfect: az egyszerű múlt hátralépése",
+            "en": "past perfect: the step back of the past simple",
+            "es": "pasado perfecto: el paso atrás del pasado simple",
+            "de": "Past Perfect: der Schritt zurück des Past Simple"
+          }
+        },
+        {
+          "text": {
+            "hu": "present perfect: friss hír",
+            "en": "present perfect: recent news",
+            "es": "presente perfecto: una noticia reciente",
+            "de": "Present Perfect: eine frische Nachricht"
+          },
+          "wrong": {
+            "hu": "A had múlt idejű, nem have / has; a függő beszédben a múlt past perfectre megy hátra.",
+            "en": "Had is past, not have / has; in reported speech the past goes back to the past perfect.",
+            "es": "Had es pasado, no have / has; en el estilo indirecto el pasado retrocede al pasado perfecto.",
+            "de": "Had ist Vergangenheit, nicht have / has; in der indirekten Rede rückt die Vergangenheit zum Past Perfect zurück."
+          }
+        },
+        {
+          "text": {
+            "hu": "múltbeli kötelesség: had to",
+            "en": "a past obligation: had to",
+            "es": "una obligación en el pasado: had to",
+            "de": "eine Pflicht in der Vergangenheit: had to"
+          },
+          "wrong": {
+            "hu": "Itt nincs to, hanem had + igenév (seen); ez past perfect, nem kötelesség.",
+            "en": "There is no to here but had + participle (seen); this is the past perfect, not an obligation.",
+            "es": "Aquí no hay to sino had + participio (seen); esto es pasado perfecto, no una obligación.",
+            "de": "Hier gibt es kein to, sondern had + Partizip (seen); das ist das Past Perfect, keine Pflicht."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "rs-26",
+      "es": "She told me she was tired.",
+      "target": "told",
+      "tr": {
+        "hu": "Azt mondta nekem, hogy fáradt.",
+        "en": "She told me she was tired.",
+        "es": "Me dijo que estaba cansada.",
+        "de": "Sie sagte mir, dass sie müde sei."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "said: személy nélkül",
+            "en": "said: without a person",
+            "es": "said: sin persona",
+            "de": "said: ohne Person"
+          },
+          "wrong": {
+            "hu": "A mondatban a me személy szerepel, ezért told kell; a said személy nélkül áll.",
+            "en": "The sentence has the person me, so you need told; said stands without a person.",
+            "es": "La oración tiene la persona me, por eso hace falta told; said va sin persona.",
+            "de": "Der Satz hat die Person me, deshalb braucht man told; said steht ohne Person."
+          }
+        },
+        {
+          "text": {
+            "hu": "told: személy mellett (told me)",
+            "en": "told: with a person (told me)",
+            "es": "told: con una persona (told me)",
+            "de": "told: mit einer Person (told me)"
+          }
+        },
+        {
+          "text": {
+            "hu": "asked: kérdés továbbadása",
+            "en": "asked: passing on a question",
+            "es": "asked: transmitir una pregunta",
+            "de": "asked: eine Frage weitergeben"
+          },
+          "wrong": {
+            "hu": "Itt állítás van (she was tired), nem kérdés; kérdésnél asked állna.",
+            "en": "Here it is a statement (she was tired), not a question; a question would take asked.",
+            "es": "Aquí hay una afirmación (she was tired), no una pregunta; una pregunta llevaría asked.",
+            "de": "Hier ist es eine Aussage (she was tired), keine Frage; eine Frage würde asked nehmen."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "rs-27",
+      "es": "She asked me where I lived.",
+      "target": "where",
+      "tr": {
+        "hu": "Megkérdezte, hol lakom.",
+        "en": "She asked me where I lived.",
+        "es": "Me preguntó dónde vivía.",
+        "de": "Sie fragte mich, wo ich wohne."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "fordított szórend: where did I live",
+            "en": "inverted word order: where did I live",
+            "es": "orden invertido: where did I live",
+            "de": "umgekehrte Wortstellung: where did I live"
+          },
+          "wrong": {
+            "hu": "Függő kérdésben nincs fordított szórend és nincs do; itt „where I lived” áll.",
+            "en": "A reported question has no inversion and no do; here it is “where I lived”.",
+            "es": "Una pregunta indirecta no tiene inversión ni do; aquí es «where I lived».",
+            "de": "Eine indirekte Frage hat keine Inversion und kein do; hier steht „where I lived“."
+          }
+        },
+        {
+          "text": {
+            "hu": "kijelentő szórend: a függő kérdés nem kérdés alakú",
+            "en": "statement word order: a reported question is not in question form",
+            "es": "orden de afirmación: una pregunta indirecta no tiene forma de pregunta",
+            "de": "Wortstellung einer Aussage: eine indirekte Frage hat keine Fragenform"
+          }
+        },
+        {
+          "text": {
+            "hu": "felszólítás: told me to",
+            "en": "a command: told me to",
+            "es": "una orden: told me to",
+            "de": "eine Aufforderung: told me to"
+          },
+          "wrong": {
+            "hu": "A mondat kérdést ad tovább (asked, where), nem felszólítást.",
+            "en": "The sentence passes on a question (asked, where), not a command.",
+            "es": "La oración transmite una pregunta (asked, where), no una orden.",
+            "de": "Der Satz gibt eine Frage weiter (asked, where), keine Aufforderung."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "rs-28",
+      "es": "She told me to close the door.",
+      "target": "to",
+      "tr": {
+        "hu": "Azt mondta, csukjam be az ajtót.",
+        "en": "She told me to close the door.",
+        "es": "Me dijo que cerrara la puerta.",
+        "de": "Sie sagte mir, ich solle die Tür schließen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "that-mondat: told me that",
+            "en": "a that-clause: told me that",
+            "es": "una oración con that: told me that",
+            "de": "ein that-Satz: told me that"
+          },
+          "wrong": {
+            "hu": "Felszólításnál nem that + mondat áll, hanem told + személy + to + alapige.",
+            "en": "A command is not that + clause but told + person + to + base verb.",
+            "es": "Una orden no es that + oración sino told + persona + to + verbo base.",
+            "de": "Eine Aufforderung ist nicht that + Satz, sondern told + Person + to + Grundform."
+          }
+        },
+        {
+          "text": {
+            "hu": "felszólítás: told + személy + to + alapige",
+            "en": "a command: told + person + to + base verb",
+            "es": "una orden: told + persona + to + verbo base",
+            "de": "eine Aufforderung: told + Person + to + Grundform"
+          }
+        },
+        {
+          "text": {
+            "hu": "kérdés: asked if",
+            "en": "a question: asked if",
+            "es": "una pregunta: asked if",
+            "de": "eine Frage: asked if"
+          },
+          "wrong": {
+            "hu": "A mondatban nincs kérdés; a to close felszólítást ad tovább.",
+            "en": "There is no question in the sentence; to close passes on a command.",
+            "es": "No hay una pregunta en la oración; to close transmite una orden.",
+            "de": "Im Satz gibt es keine Frage; to close gibt eine Aufforderung weiter."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "rs-29",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "Dijo que vivía en Puebla.",
+          "en": "She said that she lived in Puebla."
+        },
+        {
+          "es": "Me dijo que estaba cansada.",
+          "en": "She told me that she was tired."
+        },
+        {
+          "es": "Dijeron que me ayudarían.",
+          "en": "They said they would help me."
+        },
+        {
+          "es": "Me preguntó dónde vivía.",
+          "en": "She asked me where I lived."
+        },
+        {
+          "es": "Me preguntó si estaba cansado.",
+          "en": "She asked me if I was tired."
+        },
+        {
+          "es": "Me dijo que cerrara la puerta.",
+          "en": "She told me to close the door."
+        }
+      ]
+    },
+    {
+      "id": "rs-30",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "dijo que",
+          "en": "said that"
+        },
+        {
+          "es": "me dijo que",
+          "en": "told me that"
+        },
+        {
+          "es": "preguntó si",
+          "en": "asked if"
+        },
+        {
+          "es": "al día siguiente",
+          "en": "the next day"
+        },
+        {
+          "es": "ese día",
+          "en": "that day"
+        },
+        {
+          "es": "allí",
+          "en": "there"
+        }
+      ]
+    }
+  ]
+}

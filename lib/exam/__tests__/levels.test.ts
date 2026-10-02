@@ -30,9 +30,10 @@ describe('a szintvizsga szintjei', () => {
     expect(EXAM_LEVELS).toEqual(LEVELS);
   });
 
-  it('levelHasLesson: spanyol célnyelven minden szinten van lecke, es→en B1-en nincs (ott nincs vizsga-sor)', () => {
+  it('levelHasLesson: spanyol célnyelven minden szinten van lecke, es→en B1-en és B2-n is van (az angol B1 és B2 leckék óta)', () => {
     for (const level of LEVELS) expect(levelHasLesson(level, 'es')).toBe(true);
-    expect(levelHasLesson('B1', 'en')).toBe(false);
+    expect(levelHasLesson('B1', 'en')).toBe(true);
+    expect(levelHasLesson('B2', 'en')).toBe(true);
   });
 });
 

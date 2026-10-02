@@ -1,0 +1,1306 @@
+{
+  "schema": 2,
+  "topic": "gerund_vs_infinitive",
+  "level": "B1",
+  "title": {
+    "hu": "-ing vagy to + ige (I enjoy swimming / I want to swim)",
+    "en": "Gerund or Infinitive (I enjoy swimming / I want to swim)",
+    "es": "Gerundio o infinitivo (I enjoy swimming / I want to swim)",
+    "de": "Gerundium oder Infinitiv (I enjoy swimming / I want to swim)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "Ha két ige követi egymást, a másodiknak az angolban két alakja lehet: -ing (gerund) vagy to + alapige (infinitive). Az első ige dönti el, melyik: az „enjoy” után -ing jön („I enjoy swimming”), a „want” után to + ige („I want to swim”). A spanyol itt nem segít: a spanyol mindig főnévi igenevet használ („me encanta nadar”, „quiero nadar”), ezért ezt az angolban igénként kell megtanulni.",
+        "en": "When two verbs follow each other, the second can have two forms in English: -ing (gerund) or to + base verb (infinitive). The first verb decides which one: after “enjoy” comes -ing (“I enjoy swimming”), after “want” comes to + verb (“I want to swim”). Spanish does not help here: it always uses the infinitive (“me encanta nadar”, “quiero nadar”), so you have to learn this verb by verb in English.",
+        "es": "Cuando dos verbos van seguidos, el segundo puede tener dos formas en inglés: -ing (gerundio) o to + verbo base (infinitivo). El primer verbo decide cuál: después de «enjoy» va -ing («I enjoy swimming»), después de «want» va to + verbo («I want to swim»). El español no ayuda aquí: siempre usa el infinitivo («me encanta nadar», «quiero nadar»), por eso hay que aprenderlo verbo por verbo en inglés.",
+        "de": "Wenn zwei Verben aufeinander folgen, kann das zweite im Englischen zwei Formen haben: -ing (Gerundium) oder to + Grundform (Infinitiv). Das erste Verb entscheidet, welche: Nach „enjoy“ kommt -ing („I enjoy swimming“), nach „want“ kommt to + Verb („I want to swim“). Das Spanische hilft hier nicht: Es benutzt immer den Infinitiv („me encanta nadar“, „quiero nadar“), deshalb muss man das im Englischen Verb für Verb lernen."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "gi-forms",
+      "title": {
+        "hu": "Melyik alak jön utána?",
+        "en": "Which form follows?",
+        "es": "¿Qué forma sigue?",
+        "de": "Welche Form folgt?"
+      },
+      "header": [
+        {
+          "hu": "Ige vagy helyzet",
+          "en": "Verb or situation",
+          "es": "Verbo o situación",
+          "de": "Verb oder Situation"
+        },
+        {
+          "hu": "forma",
+          "en": "form",
+          "es": "forma",
+          "de": "Form"
+        }
+      ],
+      "rows": [
+        [
+          "enjoy",
+          "gerund"
+        ],
+        [
+          "want",
+          "infinitive"
+        ],
+        [
+          "finish",
+          "gerund"
+        ],
+        [
+          "decide",
+          "infinitive"
+        ],
+        [
+          "después de una preposición",
+          "gerund"
+        ],
+        [
+          "para (el propósito)",
+          "infinitive"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "-ing alak",
+        "en": "The -ing form",
+        "es": "La forma -ing",
+        "de": "Die -ing-Form"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Néhány ige után mindig -ing jön: enjoy, finish, avoid, keep, mind, practice, suggest, give up.",
+            "en": "After some verbs there is always -ing: enjoy, finish, avoid, keep, mind, practice, suggest, give up.",
+            "es": "Después de algunos verbos siempre va -ing: enjoy, finish, avoid, keep, mind, practice, suggest, give up.",
+            "de": "Nach einigen Verben steht immer -ing: enjoy, finish, avoid, keep, mind, practice, suggest, give up."
+          },
+          "examples": [
+            {
+              "es": "I enjoy listening to music.",
+              "tr": {
+                "hu": "Szeretek zenét hallgatni.",
+                "en": "I enjoy listening to music.",
+                "es": "Me encanta escuchar música.",
+                "de": "Ich höre gern Musik."
+              }
+            },
+            {
+              "es": "He finished doing his homework.",
+              "tr": {
+                "hu": "Befejezte a házi feladatát.",
+                "en": "He finished doing his homework.",
+                "es": "Terminó de hacer su tarea.",
+                "de": "Er hat seine Hausaufgaben beendet."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Elöljáró után mindig -ing áll, a spanyol főnévi igenév helyett: before leaving, thanks for coming, interested in learning, good at cooking.",
+            "en": "After a preposition there is always -ing, where Spanish uses the infinitive: before leaving, thanks for coming, interested in learning, good at cooking.",
+            "es": "Después de una preposición siempre va -ing, donde el español usa el infinitivo: before leaving, thanks for coming, interested in learning, good at cooking.",
+            "de": "Nach einer Präposition steht immer -ing, wo das Spanische den Infinitiv benutzt: before leaving, thanks for coming, interested in learning, good at cooking."
+          },
+          "examples": [
+            {
+              "es": "I'm interested in learning English.",
+              "tr": {
+                "hu": "Érdekel az angol tanulása.",
+                "en": "I'm interested in learning English.",
+                "es": "Estoy interesado en aprender inglés.",
+                "de": "Ich interessiere mich dafür, Englisch zu lernen."
+              }
+            },
+            {
+              "es": "Before leaving, he locked the door.",
+              "tr": {
+                "hu": "Mielőtt elment, bezárta az ajtót.",
+                "en": "Before leaving, he locked the door.",
+                "es": "Antes de salir, cerró la puerta.",
+                "de": "Bevor er ging, schloss er die Tür ab."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Az -ing alak mondat alanya is lehet: „Swimming is fun.” Az angolban az infinitive ilyenkor ritkább.",
+            "en": "The -ing form can also be the subject of a sentence: “Swimming is fun.” In English the infinitive is rarer here.",
+            "es": "La forma -ing también puede ser el sujeto de una oración: «Swimming is fun.» En inglés el infinitivo es menos frecuente aquí.",
+            "de": "Die -ing-Form kann auch das Subjekt eines Satzes sein: „Swimming is fun.“ Der Infinitiv ist hier im Englischen seltener."
+          },
+          "examples": [
+            {
+              "es": "Walking every day is good for your health.",
+              "tr": {
+                "hu": "A mindennapi séta jót tesz az egészségnek.",
+                "en": "Walking every day is good for your health.",
+                "es": "Caminar todos los días es bueno para la salud.",
+                "de": "Jeden Tag zu gehen ist gut für die Gesundheit."
+              }
+            },
+            {
+              "es": "Swimming is fun.",
+              "tr": {
+                "hu": "Az úszás jó móka.",
+                "en": "Swimming is fun.",
+                "es": "Nadar es divertido.",
+                "de": "Schwimmen macht Spaß."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "to + alapige",
+        "en": "To + base verb",
+        "es": "To + verbo base",
+        "de": "To + Grundform"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Más igék után to + alapige jön: want, need, decide, hope, plan, learn, promise, would like, can’t afford, refuse.",
+            "en": "After other verbs there is to + base verb: want, need, decide, hope, plan, learn, promise, would like, can’t afford, refuse.",
+            "es": "Después de otros verbos va to + verbo base: want, need, decide, hope, plan, learn, promise, would like, can’t afford, refuse.",
+            "de": "Nach anderen Verben steht to + Grundform: want, need, decide, hope, plan, learn, promise, would like, can’t afford, refuse."
+          },
+          "examples": [
+            {
+              "es": "She wants to be a doctor.",
+              "tr": {
+                "hu": "Orvos akar lenni.",
+                "en": "She wants to be a doctor.",
+                "es": "Ella quiere ser doctora.",
+                "de": "Sie will Ärztin werden."
+              }
+            },
+            {
+              "es": "We decided to leave early.",
+              "tr": {
+                "hu": "Úgy döntöttünk, korán indulunk.",
+                "en": "We decided to leave early.",
+                "es": "Decidimos salir temprano.",
+                "de": "Wir haben beschlossen, früh zu gehen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A cél kifejezése: to + alapige („hogy…”). A spanyol „para + infinitivo” angolul to, nem „for”: „I went to the market to buy fruit.”",
+            "en": "Expressing a purpose: to + base verb (“in order to…”). The Spanish “para + infinitivo” is to in English, not “for”: “I went to the market to buy fruit.”",
+            "es": "Expresar un propósito: to + verbo base («para…»). El «para + infinitivo» español es to en inglés, no «for»: «I went to the market to buy fruit.»",
+            "de": "Einen Zweck ausdrücken: to + Grundform („um zu…“). Das spanische „para + infinitivo“ ist im Englischen to, nicht „for“: „I went to the market to buy fruit.“"
+          },
+          "examples": [
+            {
+              "es": "I went to the market to buy fruit.",
+              "tr": {
+                "hu": "A piacra mentem gyümölcsöt venni.",
+                "en": "I went to the market to buy fruit.",
+                "es": "Fui al mercado a comprar fruta.",
+                "de": "Ich bin zum Markt gegangen, um Obst zu kaufen."
+              }
+            },
+            {
+              "es": "We can't afford to buy a new car.",
+              "tr": {
+                "hu": "Nem engedhetjük meg magunknak egy új autó vételét.",
+                "en": "We can't afford to buy a new car.",
+                "es": "No podemos permitirnos comprar un carro nuevo.",
+                "de": "Wir können es uns nicht leisten, ein neues Auto zu kaufen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Ugyanaz az ige, más jelentés",
+        "en": "The same verb, a different meaning",
+        "es": "El mismo verbo, otro significado",
+        "de": "Dasselbe Verb, andere Bedeutung"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Stop + -ing: abbahagy valamit. Stop + to + alapige: megáll, hogy valamit megtegyen.",
+            "en": "Stop + -ing: to quit doing something. Stop + to + base verb: to pause in order to do something.",
+            "es": "Stop + -ing: dejar de hacer algo. Stop + to + verbo base: detenerse para hacer algo.",
+            "de": "Stop + -ing: aufhören, etwas zu tun. Stop + to + Grundform: anhalten, um etwas zu tun."
+          },
+          "examples": [
+            {
+              "es": "We stopped talking when the teacher came in.",
+              "tr": {
+                "hu": "Abbahagytuk a beszélgetést, amikor a tanár bejött.",
+                "en": "We stopped talking when the teacher came in.",
+                "es": "Dejamos de hablar cuando entró el maestro.",
+                "de": "Wir hörten auf zu reden, als der Lehrer hereinkam."
+              }
+            },
+            {
+              "es": "She stopped to buy a coffee.",
+              "tr": {
+                "hu": "Megállt, hogy vegyen egy kávét.",
+                "en": "She stopped to buy a coffee.",
+                "es": "Se detuvo para comprar un café.",
+                "de": "Sie hielt an, um einen Kaffee zu kaufen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Remember + -ing: emlékszik valamire, ami megtörtént. Remember + to + alapige: nem felejti el megtenni.",
+            "en": "Remember + -ing: to recall something that happened. Remember + to + base verb: not to forget to do it.",
+            "es": "Remember + -ing: recordar algo que pasó. Remember + to + verbo base: no olvidar hacerlo.",
+            "de": "Remember + -ing: sich an etwas erinnern, das passiert ist. Remember + to + Grundform: nicht vergessen, es zu tun."
+          },
+          "examples": [
+            {
+              "es": "I remember meeting him last year.",
+              "tr": {
+                "hu": "Emlékszem, hogy tavaly találkoztam vele.",
+                "en": "I remember meeting him last year.",
+                "es": "Recuerdo haberlo conocido el año pasado.",
+                "de": "Ich erinnere mich, ihn letztes Jahr getroffen zu haben."
+              }
+            },
+            {
+              "es": "Remember to close the door!",
+              "tr": {
+                "hu": "Ne felejtsd el becsukni az ajtót!",
+                "en": "Remember to close the door!",
+                "es": "¡Acuérdate de cerrar la puerta!",
+                "de": "Vergiss nicht, die Tür zu schließen!"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A spanyol „me encanta nadar” angolul nem „I enjoy to swim”, hanem „I enjoy swimming”. Az enjoy, finish, avoid, mind után mindig -ing áll.",
+        "en": "The Spanish “me encanta nadar” is not “I enjoy to swim” in English, but “I enjoy swimming”. After enjoy, finish, avoid, mind there is always -ing.",
+        "es": "El «me encanta nadar» español no es «I enjoy to swim» en inglés, sino «I enjoy swimming». Después de enjoy, finish, avoid, mind siempre va -ing.",
+        "de": "Das spanische „me encanta nadar“ heißt auf Englisch nicht „I enjoy to swim“, sondern „I enjoy swimming“. Nach enjoy, finish, avoid, mind steht immer -ing."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Elöljáró után -ing, nem főnévi igenév: nem „thanks for to help”, hanem „thanks for helping”; nem „interested in to learn”, hanem „interested in learning”. A to-s alak csak akkor jön, ha a to az ige része (want to).",
+        "en": "After a preposition use -ing, not the infinitive: not “thanks for to help”, but “thanks for helping”; not “interested in to learn”, but “interested in learning”. The to form only comes when to belongs to the verb (want to).",
+        "es": "Después de una preposición usa -ing, no el infinitivo: no «thanks for to help», sino «thanks for helping»; no «interested in to learn», sino «interested in learning». La forma con to solo aparece cuando to forma parte del verbo (want to).",
+        "de": "Nach einer Präposition nimm -ing, nicht den Infinitiv: nicht „thanks for to help“, sondern „thanks for helping“; nicht „interested in to learn“, sondern „interested in learning“. Die to-Form steht nur, wenn to zum Verb gehört (want to)."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A cél „para + infinitivo” angolul to + alapige, nem „for + ige”: nem „I went there for buy”, hanem „I went there to buy”. A for után főnév vagy -ing jön („for shopping”).",
+        "en": "A purpose “para + infinitivo” is to + base verb in English, not “for + verb”: not “I went there for buy”, but “I went there to buy”. After for comes a noun or -ing (“for shopping”).",
+        "es": "El propósito «para + infinitivo» es to + verbo base en inglés, no «for + verbo»: no «I went there for buy», sino «I went there to buy». Después de for va un sustantivo o -ing («for shopping»).",
+        "de": "Ein Zweck „para + infinitivo“ ist im Englischen to + Grundform, nicht „for + Verb“: nicht „I went there for buy“, sondern „I went there to buy“. Nach for steht ein Nomen oder -ing („for shopping“)."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "Ha két ige követi egymást, a másodiknak az angolban két alakja lehet: «ing» vagy «to» plusz alapige. Az első ige dönti el, melyik. Az «enjoy», «finish», «avoid» után «ing» jön: «I enjoy swimming». A «want», «decide», «hope» után «to» plusz ige: «I want to swim». Elöljáró után mindig «ing» áll: «I'm interested in learning English». A cél kifejezése «to» plusz ige: «I went to the market to buy fruit». A «stop» két jelentése: «We stopped talking» és «She stopped to buy a coffee».",
+    "en": "When two verbs follow each other, the second one can have two forms in English: «ing» or «to» plus the base verb. The first verb decides which one. After «enjoy», «finish», «avoid» comes «ing»: «I enjoy swimming». After «want», «decide», «hope» comes «to» plus a verb: «I want to swim». After a preposition there is always «ing»: «I'm interested in learning English». A purpose is «to» plus a verb: «I went to the market to buy fruit». «Stop» has two meanings: «We stopped talking» and «She stopped to buy a coffee».",
+    "es": "Cuando dos verbos van seguidos, el segundo puede tener dos formas en inglés: «ing» o «to» más verbo base. El primer verbo decide cuál. Después de «enjoy», «finish», «avoid» va «ing»: «I enjoy swimming». Después de «want», «decide», «hope» va «to» más verbo: «I want to swim». Después de una preposición siempre va «ing»: «I'm interested in learning English». Un propósito es «to» más verbo: «I went to the market to buy fruit». «Stop» tiene dos significados: «We stopped talking» y «She stopped to buy a coffee».",
+    "de": "Wenn zwei Verben aufeinander folgen, kann das zweite im Englischen zwei Formen haben: «ing» oder «to» plus Grundform. Das erste Verb entscheidet, welche. Nach «enjoy», «finish», «avoid» kommt «ing»: «I enjoy swimming». Nach «want», «decide», «hope» kommt «to» plus Verb: «I want to swim». Nach einer Präposition steht immer «ing»: «I'm interested in learning English». Ein Zweck ist «to» plus Verb: «I went to the market to buy fruit». «Stop» hat zwei Bedeutungen: «We stopped talking» und «She stopped to buy a coffee»."
+  },
+  "glossary": [
+    {
+      "word": "enjoy",
+      "gloss": {
+        "hu": "élvez, szeret (csinálni)",
+        "en": "to like doing something",
+        "es": "disfrutar",
+        "de": "genießen, gern tun"
+      }
+    },
+    {
+      "word": "avoid",
+      "gloss": {
+        "hu": "kerül, elkerül",
+        "en": "to stay away from",
+        "es": "evitar",
+        "de": "vermeiden"
+      }
+    },
+    {
+      "word": "stopped",
+      "gloss": {
+        "hu": "abbahagyta, megállt (a stop múltja)",
+        "en": "past form of stop",
+        "es": "dejó de, se detuvo (pasado de stop)",
+        "de": "hörte auf, hielt an (Past von stop)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "gi-01",
+      "sentence": "I enjoy ___ to music.",
+      "options": [
+        "listen",
+        "listening",
+        "to listen"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az enjoy után -ing jön: enjoy listening.",
+        "en": "After enjoy comes -ing: enjoy listening.",
+        "es": "Después de enjoy va -ing: enjoy listening.",
+        "de": "Nach enjoy steht -ing: enjoy listening."
+      },
+      "wrong": {
+        "listen": {
+          "hu": "Az alapige az enjoy után hibás; -ing alak kell (listening).",
+          "en": "The base verb after enjoy is incorrect; you need the -ing form (listening).",
+          "es": "El verbo base después de enjoy es incorrecto; hace falta la forma -ing (listening).",
+          "de": "Die Grundform nach enjoy ist falsch; man braucht die -ing-Form (listening)."
+        },
+        "to listen": {
+          "hu": "A spanyol „me encanta escuchar” hatására jön a to-s alak, de az enjoy után -ing áll.",
+          "en": "The Spanish “me encanta escuchar” tempts you to use to, but after enjoy comes -ing.",
+          "es": "El «me encanta escuchar» español tienta a usar to, pero después de enjoy va -ing.",
+          "de": "Das spanische „me encanta escuchar“ verleitet zu to, aber nach enjoy steht -ing."
+        }
+      },
+      "examples": [
+        "I enjoy cooking.",
+        "We enjoy walking."
+      ]
+    },
+    {
+      "id": "gi-02",
+      "sentence": "She wants ___ a doctor.",
+      "options": [
+        "being",
+        "be",
+        "to be"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A want után to + alapige jön: want to be.",
+        "en": "After want comes to + base verb: want to be.",
+        "es": "Después de want va to + verbo base: want to be.",
+        "de": "Nach want steht to + Grundform: want to be."
+      },
+      "wrong": {
+        "being": {
+          "hu": "A want után nem -ing alak jön; to + alapige kell (to be).",
+          "en": "After want comes not an -ing form; you need to + base verb (to be).",
+          "es": "Después de want no va una forma -ing; hace falta to + verbo base (to be).",
+          "de": "Nach want kommt keine -ing-Form; man braucht to + Grundform (to be)."
+        },
+        "be": {
+          "hu": "A want után a to nem hagyható el; nem „wants be”, hanem wants to be.",
+          "en": "After want the to cannot be left out; not “wants be” but wants to be.",
+          "es": "Después de want no se puede omitir to; no «wants be» sino wants to be.",
+          "de": "Nach want darf man to nicht weglassen; nicht „wants be“, sondern wants to be."
+        }
+      },
+      "examples": [
+        "He wants to go.",
+        "I want to learn."
+      ]
+    },
+    {
+      "id": "gi-03",
+      "sentence": "He finished ___ his homework.",
+      "options": [
+        "doing",
+        "do",
+        "to do"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A finish után -ing jön: finished doing.",
+        "en": "After finish comes -ing: finished doing.",
+        "es": "Después de finish va -ing: finished doing.",
+        "de": "Nach finish steht -ing: finished doing."
+      },
+      "wrong": {
+        "do": {
+          "hu": "A finish után az alapige hibás; -ing alak kell (doing).",
+          "en": "The base verb after finish is incorrect; you need the -ing form (doing).",
+          "es": "El verbo base después de finish es incorrecto; hace falta la forma -ing (doing).",
+          "de": "Die Grundform nach finish ist falsch; man braucht die -ing-Form (doing)."
+        },
+        "to do": {
+          "hu": "A spanyol „terminó de hacer” miatt jön a to, de a finish után -ing áll.",
+          "en": "The Spanish “terminó de hacer” tempts you to use to, but after finish comes -ing.",
+          "es": "El «terminó de hacer» español tienta a usar to, pero después de finish va -ing.",
+          "de": "Das spanische „terminó de hacer“ verleitet zu to, aber nach finish steht -ing."
+        }
+      },
+      "examples": [
+        "She finished reading.",
+        "They finished eating."
+      ]
+    },
+    {
+      "id": "gi-04",
+      "sentence": "We decided ___ early.",
+      "options": [
+        "leaving",
+        "to leave",
+        "leave"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A decide után to + alapige jön: decided to leave.",
+        "en": "After decide comes to + base verb: decided to leave.",
+        "es": "Después de decide va to + verbo base: decided to leave.",
+        "de": "Nach decide steht to + Grundform: decided to leave."
+      },
+      "wrong": {
+        "leaving": {
+          "hu": "A decide után nem -ing alak jön; to + alapige kell (to leave).",
+          "en": "After decide comes not an -ing form; you need to + base verb (to leave).",
+          "es": "Después de decide no va una forma -ing; hace falta to + verbo base (to leave).",
+          "de": "Nach decide kommt keine -ing-Form; man braucht to + Grundform (to leave)."
+        },
+        "leave": {
+          "hu": "A decide után a to nem hagyható el; nem „decided leave”, hanem decided to leave.",
+          "en": "After decide the to cannot be left out; not “decided leave” but decided to leave.",
+          "es": "Después de decide no se puede omitir to; no «decided leave» sino decided to leave.",
+          "de": "Nach decide darf man to nicht weglassen; nicht „decided leave“, sondern decided to leave."
+        }
+      },
+      "examples": [
+        "They decided to go.",
+        "I decided to wait."
+      ]
+    },
+    {
+      "id": "gi-05",
+      "sentence": "I'm interested in ___ English.",
+      "options": [
+        "learn",
+        "to learn",
+        "learning"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Elöljáró (in) után -ing áll: interested in learning.",
+        "en": "After a preposition (in) comes -ing: interested in learning.",
+        "es": "Después de una preposición (in) va -ing: interested in learning.",
+        "de": "Nach einer Präposition (in) steht -ing: interested in learning."
+      },
+      "wrong": {
+        "learn": {
+          "hu": "Elöljáró után az alapige hibás; -ing alak kell (learning).",
+          "en": "The base verb after a preposition is incorrect; you need the -ing form (learning).",
+          "es": "El verbo base después de una preposición es incorrecto; hace falta la forma -ing (learning).",
+          "de": "Die Grundform nach einer Präposition ist falsch; man braucht die -ing-Form (learning)."
+        },
+        "to learn": {
+          "hu": "A spanyol „interesado en aprender” hatására jön a to, de elöljáró után -ing áll.",
+          "en": "The Spanish “interesado en aprender” tempts you to use to, but after a preposition comes -ing.",
+          "es": "El «interesado en aprender» español tienta a usar to, pero después de una preposición va -ing.",
+          "de": "Das spanische „interesado en aprender“ verleitet zu to, aber nach einer Präposition steht -ing."
+        }
+      },
+      "examples": [
+        "She's good at singing.",
+        "I'm tired of waiting."
+      ]
+    },
+    {
+      "id": "gi-06",
+      "sentence": "Thank you for ___ me.",
+      "options": [
+        "helping",
+        "help",
+        "to help"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A for elöljáró után -ing áll: for helping.",
+        "en": "After the preposition for comes -ing: for helping.",
+        "es": "Después de la preposición for va -ing: for helping.",
+        "de": "Nach der Präposition for steht -ing: for helping."
+      },
+      "wrong": {
+        "help": {
+          "hu": "A for után az alapige hibás; -ing alak kell (helping).",
+          "en": "The base verb after for is incorrect; you need the -ing form (helping).",
+          "es": "El verbo base después de for es incorrecto; hace falta la forma -ing (helping).",
+          "de": "Die Grundform nach for ist falsch; man braucht die -ing-Form (helping)."
+        },
+        "to help": {
+          "hu": "A for után nem jön to; a for elöljáró, és elöljáró után -ing áll.",
+          "en": "After for there is no to; for is a preposition, and after a preposition comes -ing.",
+          "es": "Después de for no va to; for es una preposición, y después de una preposición va -ing.",
+          "de": "Nach for steht kein to; for ist eine Präposition, und nach einer Präposition steht -ing."
+        }
+      },
+      "examples": [
+        "Thanks for coming.",
+        "Thanks for calling."
+      ]
+    },
+    {
+      "id": "gi-07",
+      "sentence": "Before ___ the house, he locked the door.",
+      "options": [
+        "leave",
+        "leaving",
+        "to leave"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A before elöljáró után -ing áll: before leaving.",
+        "en": "After the preposition before comes -ing: before leaving.",
+        "es": "Después de la preposición before va -ing: before leaving.",
+        "de": "Nach der Präposition before steht -ing: before leaving."
+      },
+      "wrong": {
+        "leave": {
+          "hu": "A before után az alapige hibás; -ing alak kell (leaving).",
+          "en": "The base verb after before is incorrect; you need the -ing form (leaving).",
+          "es": "El verbo base después de before es incorrecto; hace falta la forma -ing (leaving).",
+          "de": "Die Grundform nach before ist falsch; man braucht die -ing-Form (leaving)."
+        },
+        "to leave": {
+          "hu": "A spanyol „antes de salir” hatására jön a to, de a before után -ing áll.",
+          "en": "The Spanish “antes de salir” tempts you to use to, but after before comes -ing.",
+          "es": "El «antes de salir» español tienta a usar to, pero después de before va -ing.",
+          "de": "Das spanische „antes de salir“ verleitet zu to, aber nach before steht -ing."
+        }
+      },
+      "examples": [
+        "After eating, we left.",
+        "Before going, call me."
+      ]
+    },
+    {
+      "id": "gi-08",
+      "sentence": "I went to the market ___ some fruit.",
+      "options": [
+        "for buy",
+        "buying",
+        "to buy"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A cél kifejezése: to + alapige: to buy.",
+        "en": "Expressing a purpose: to + base verb: to buy.",
+        "es": "Para expresar un propósito: to + verbo base: to buy.",
+        "de": "Einen Zweck ausdrücken: to + Grundform: to buy."
+      },
+      "wrong": {
+        "for buy": {
+          "hu": "A „for buy” helytelen; a cél angolul to + alapige, nem for + ige.",
+          "en": "“For buy” is incorrect; in English a purpose is to + base verb, not for + verb.",
+          "es": "«For buy» es incorrecto; en inglés un propósito es to + verbo base, no for + verbo.",
+          "de": "„For buy“ ist falsch; im Englischen ist ein Zweck to + Grundform, nicht for + Verb."
+        },
+        "buying": {
+          "hu": "A cél kifejezésére nem -ing, hanem to + alapige áll (to buy).",
+          "en": "To express a purpose use not -ing but to + base verb (to buy).",
+          "es": "Para expresar un propósito se usa no -ing sino to + verbo base (to buy).",
+          "de": "Um einen Zweck auszudrücken, nimmt man nicht -ing, sondern to + Grundform (to buy)."
+        }
+      },
+      "examples": [
+        "She went there to work.",
+        "I called to ask."
+      ]
+    },
+    {
+      "id": "gi-09",
+      "sentence": "___ every day is good for your health.",
+      "options": [
+        "Walking",
+        "Walk",
+        "To walking"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Alanyként -ing alak áll: Walking every day is good.",
+        "en": "As a subject the -ing form is used: Walking every day is good.",
+        "es": "Como sujeto se usa la forma -ing: Walking every day is good.",
+        "de": "Als Subjekt steht die -ing-Form: Walking every day is good."
+      },
+      "wrong": {
+        "Walk": {
+          "hu": "Az alapige alanyként nem áll mondat elején; -ing alak kell (Walking).",
+          "en": "The base verb does not stand as a subject at the start; you need the -ing form (Walking).",
+          "es": "El verbo base no va como sujeto al principio; hace falta la forma -ing (Walking).",
+          "de": "Die Grundform steht nicht als Subjekt am Satzanfang; man braucht die -ing-Form (Walking)."
+        },
+        "To walking": {
+          "hu": "A „To walking” hibás keverék: vagy To walk, vagy Walking; alanyként a Walking a megszokott.",
+          "en": "“To walking” is an incorrect mix: either To walk or Walking; as a subject Walking is the usual form.",
+          "es": "«To walking» es una mezcla incorrecta: o To walk o Walking; como sujeto lo habitual es Walking.",
+          "de": "„To walking“ ist eine falsche Mischung: entweder To walk oder Walking; als Subjekt ist Walking üblich."
+        }
+      },
+      "examples": [
+        "Reading is good.",
+        "Swimming is good for you."
+      ]
+    },
+    {
+      "id": "gi-10",
+      "sentence": "I avoid ___ meat.",
+      "options": [
+        "to eat",
+        "eating",
+        "eat"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az avoid után -ing jön: avoid eating.",
+        "en": "After avoid comes -ing: avoid eating.",
+        "es": "Después de avoid va -ing: avoid eating.",
+        "de": "Nach avoid steht -ing: avoid eating."
+      },
+      "wrong": {
+        "to eat": {
+          "hu": "Az avoid után nem to + alapige jön, hanem -ing alak (eating).",
+          "en": "After avoid comes not to + base verb but an -ing form (eating).",
+          "es": "Después de avoid no va to + verbo base sino una forma -ing (eating).",
+          "de": "Nach avoid kommt nicht to + Grundform, sondern eine -ing-Form (eating)."
+        },
+        "eat": {
+          "hu": "Az avoid után az alapige hibás; -ing alak kell (eating).",
+          "en": "The base verb after avoid is incorrect; you need the -ing form (eating).",
+          "es": "El verbo base después de avoid es incorrecto; hace falta la forma -ing (eating).",
+          "de": "Die Grundform nach avoid ist falsch; man braucht die -ing-Form (eating)."
+        }
+      },
+      "examples": [
+        "I avoid waiting.",
+        "We avoid walking."
+      ]
+    },
+    {
+      "id": "gi-11",
+      "sentence": "I hope ___ you soon.",
+      "options": [
+        "seeing",
+        "see",
+        "to see"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A hope után to + alapige jön: hope to see.",
+        "en": "After hope comes to + base verb: hope to see.",
+        "es": "Después de hope va to + verbo base: hope to see.",
+        "de": "Nach hope steht to + Grundform: hope to see."
+      },
+      "wrong": {
+        "seeing": {
+          "hu": "A hope után nem -ing alak jön; to + alapige kell (to see).",
+          "en": "After hope comes not an -ing form; you need to + base verb (to see).",
+          "es": "Después de hope no va una forma -ing; hace falta to + verbo base (to see).",
+          "de": "Nach hope kommt keine -ing-Form; man braucht to + Grundform (to see)."
+        },
+        "see": {
+          "hu": "A hope után a to nem hagyható el; nem „hope see”, hanem hope to see.",
+          "en": "After hope the to cannot be left out; not “hope see” but hope to see.",
+          "es": "Después de hope no se puede omitir to; no «hope see» sino hope to see.",
+          "de": "Nach hope darf man to nicht weglassen; nicht „hope see“, sondern hope to see."
+        }
+      },
+      "examples": [
+        "I hope to go.",
+        "We hope to win."
+      ]
+    },
+    {
+      "id": "gi-12",
+      "sentence": "The teacher came in, so we stopped ___.",
+      "options": [
+        "talking",
+        "to talk",
+        "talk"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Abbahagytuk a beszélgetést: stop + -ing, stopped talking.",
+        "en": "We quit talking: stop + -ing, stopped talking.",
+        "es": "Dejamos de hablar: stop + -ing, stopped talking.",
+        "de": "Wir hörten auf zu reden: stop + -ing, stopped talking."
+      },
+      "wrong": {
+        "to talk": {
+          "hu": "A stopped to talk azt jelentené, hogy megálltunk, hogy beszéljünk; itt abbahagytuk a beszélgetést.",
+          "en": "Stopped to talk would mean we paused in order to talk; here we quit talking.",
+          "es": "Stopped to talk significaría que nos detuvimos para hablar; aquí dejamos de hablar.",
+          "de": "Stopped to talk würde heißen, dass wir anhielten, um zu reden; hier haben wir aufgehört zu reden."
+        },
+        "talk": {
+          "hu": "A stopped után az alapige hibás; vagy -ing, vagy to + alapige kell.",
+          "en": "The base verb after stopped is incorrect; you need either -ing or to + base verb.",
+          "es": "El verbo base después de stopped es incorrecto; hace falta -ing o to + verbo base.",
+          "de": "Die Grundform nach stopped ist falsch; man braucht entweder -ing oder to + Grundform."
+        }
+      },
+      "examples": [
+        "He stopped talking.",
+        "She stopped working."
+      ]
+    },
+    {
+      "id": "gi-13",
+      "sentence": "She stopped ___ a coffee at the shop.",
+      "options": [
+        "buying",
+        "to buy",
+        "buy"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Megállt, hogy vegyen egy kávét: stop + to + alapige, stopped to buy.",
+        "en": "She paused in order to buy a coffee: stop + to + base verb, stopped to buy.",
+        "es": "Se detuvo para comprar un café: stop + to + verbo base, stopped to buy.",
+        "de": "Sie hielt an, um einen Kaffee zu kaufen: stop + to + Grundform, stopped to buy."
+      },
+      "wrong": {
+        "buying": {
+          "hu": "A stopped buying azt jelentené, hogy abbahagyta a vásárlást; itt megállt, hogy vegyen valamit.",
+          "en": "Stopped buying would mean she quit buying; here she paused in order to buy something.",
+          "es": "Stopped buying significaría que dejó de comprar; aquí se detuvo para comprar algo.",
+          "de": "Stopped buying würde heißen, dass sie aufhörte zu kaufen; hier hielt sie an, um etwas zu kaufen."
+        },
+        "buy": {
+          "hu": "A stopped után az alapige hibás; vagy -ing, vagy to + alapige kell.",
+          "en": "The base verb after stopped is incorrect; you need either -ing or to + base verb.",
+          "es": "El verbo base después de stopped es incorrecto; hace falta -ing o to + verbo base.",
+          "de": "Die Grundform nach stopped ist falsch; man braucht entweder -ing oder to + Grundform."
+        }
+      },
+      "examples": [
+        "He stopped to rest.",
+        "We stopped to eat."
+      ]
+    },
+    {
+      "id": "gi-14",
+      "sentence": "I remember ___ him last year.",
+      "options": [
+        "to meet",
+        "meet",
+        "meeting"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Emlékszem rá, hogy találkoztam vele: remember + -ing, remember meeting.",
+        "en": "I recall that I met him: remember + -ing, remember meeting.",
+        "es": "Recuerdo haberlo conocido: remember + -ing, remember meeting.",
+        "de": "Ich erinnere mich daran, ihn getroffen zu haben: remember + -ing, remember meeting."
+      },
+      "wrong": {
+        "to meet": {
+          "hu": "A remember to meet azt jelentené, hogy nem felejtem el megtenni; itt a múltbeli emlékről van szó.",
+          "en": "Remember to meet would mean not to forget to do it; here it is about a memory of the past.",
+          "es": "Remember to meet significaría no olvidar hacerlo; aquí se trata de un recuerdo del pasado.",
+          "de": "Remember to meet würde heißen, es nicht zu vergessen; hier geht es um eine Erinnerung an die Vergangenheit."
+        },
+        "meet": {
+          "hu": "A remember után az alapige hibás; vagy -ing, vagy to + alapige kell.",
+          "en": "The base verb after remember is incorrect; you need either -ing or to + base verb.",
+          "es": "El verbo base después de remember es incorrecto; hace falta -ing o to + verbo base.",
+          "de": "Die Grundform nach remember ist falsch; man braucht entweder -ing oder to + Grundform."
+        }
+      },
+      "examples": [
+        "I remember seeing her.",
+        "She remembers going there."
+      ]
+    },
+    {
+      "id": "gi-15",
+      "sentence": "Remember ___ the door!",
+      "options": [
+        "to close",
+        "closing",
+        "close"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Ne felejtsd el megtenni: remember + to + alapige, remember to close.",
+        "en": "Do not forget to do it: remember + to + base verb, remember to close.",
+        "es": "No olvides hacerlo: remember + to + verbo base, remember to close.",
+        "de": "Vergiss nicht, es zu tun: remember + to + Grundform, remember to close."
+      },
+      "wrong": {
+        "closing": {
+          "hu": "A remember closing a múltbeli emlékre utal; a felszólítás („ne felejtsd el”) to + alapige.",
+          "en": "Remember closing refers to a memory of the past; the reminder (“don’t forget”) is to + base verb.",
+          "es": "Remember closing se refiere a un recuerdo del pasado; el recordatorio («no olvides») es to + verbo base.",
+          "de": "Remember closing bezieht sich auf eine Erinnerung an die Vergangenheit; die Erinnerung („vergiss nicht“) ist to + Grundform."
+        },
+        "close": {
+          "hu": "A remember után az alapige hibás; vagy -ing, vagy to + alapige kell.",
+          "en": "The base verb after remember is incorrect; you need either -ing or to + base verb.",
+          "es": "El verbo base después de remember es incorrecto; hace falta -ing o to + verbo base.",
+          "de": "Die Grundform nach remember ist falsch; man braucht entweder -ing oder to + Grundform."
+        }
+      },
+      "examples": [
+        "Remember to call me.",
+        "Remember to lock it."
+      ]
+    },
+    {
+      "id": "gi-16",
+      "sentence": "She is good at ___ English.",
+      "options": [
+        "speak",
+        "speaking",
+        "to speak"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A good at után -ing áll: good at speaking.",
+        "en": "After good at comes -ing: good at speaking.",
+        "es": "Después de good at va -ing: good at speaking.",
+        "de": "Nach good at steht -ing: good at speaking."
+      },
+      "wrong": {
+        "speak": {
+          "hu": "Az at elöljáró után az alapige hibás; -ing alak kell (speaking).",
+          "en": "The base verb after the preposition at is incorrect; you need the -ing form (speaking).",
+          "es": "El verbo base después de la preposición at es incorrecto; hace falta la forma -ing (speaking).",
+          "de": "Die Grundform nach der Präposition at ist falsch; man braucht die -ing-Form (speaking)."
+        },
+        "to speak": {
+          "hu": "Az at elöljáró; elöljáró után nem jön to + alapige, hanem -ing.",
+          "en": "At is a preposition; after a preposition comes not to + base verb but -ing.",
+          "es": "At es una preposición; después de una preposición no va to + verbo base sino -ing.",
+          "de": "At ist eine Präposition; nach einer Präposition kommt nicht to + Grundform, sondern -ing."
+        }
+      },
+      "examples": [
+        "He's good at cooking.",
+        "I'm bad at cooking."
+      ]
+    },
+    {
+      "id": "gi-17",
+      "sentence": "We can't afford ___ a new car.",
+      "options": [
+        "buying",
+        "buy",
+        "to buy"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Az afford után to + alapige jön: afford to buy.",
+        "en": "After afford comes to + base verb: afford to buy.",
+        "es": "Después de afford va to + verbo base: afford to buy.",
+        "de": "Nach afford steht to + Grundform: afford to buy."
+      },
+      "wrong": {
+        "buying": {
+          "hu": "Az afford után nem -ing alak jön; to + alapige kell (to buy).",
+          "en": "After afford comes not an -ing form; you need to + base verb (to buy).",
+          "es": "Después de afford no va una forma -ing; hace falta to + verbo base (to buy).",
+          "de": "Nach afford kommt keine -ing-Form; man braucht to + Grundform (to buy)."
+        },
+        "buy": {
+          "hu": "Az afford után a to nem hagyható el; nem „afford buy”, hanem afford to buy.",
+          "en": "After afford the to cannot be left out; not “afford buy” but afford to buy.",
+          "es": "Después de afford no se puede omitir to; no «afford buy» sino afford to buy.",
+          "de": "Nach afford darf man to nicht weglassen; nicht „afford buy“, sondern afford to buy."
+        }
+      },
+      "examples": [
+        "I can't afford to pay.",
+        "She can afford to go."
+      ]
+    },
+    {
+      "id": "gi-18",
+      "kind": "form",
+      "verb": "forma",
+      "person": "enjoy",
+      "answer": "gerund",
+      "table": "gi-forms"
+    },
+    {
+      "id": "gi-19",
+      "kind": "form",
+      "verb": "forma",
+      "person": "want",
+      "answer": "infinitive",
+      "table": "gi-forms"
+    },
+    {
+      "id": "gi-20",
+      "kind": "form",
+      "verb": "forma",
+      "person": "finish",
+      "answer": "gerund",
+      "table": "gi-forms"
+    },
+    {
+      "id": "gi-21",
+      "kind": "form",
+      "verb": "forma",
+      "person": "decide",
+      "answer": "infinitive",
+      "table": "gi-forms"
+    },
+    {
+      "id": "gi-22",
+      "kind": "form",
+      "verb": "forma",
+      "person": "después de una preposición",
+      "answer": "gerund",
+      "table": "gi-forms"
+    },
+    {
+      "id": "gi-23",
+      "kind": "form",
+      "verb": "forma",
+      "person": "para (el propósito)",
+      "answer": "infinitive",
+      "table": "gi-forms"
+    },
+    {
+      "kind": "why",
+      "id": "gi-24",
+      "es": "I enjoy swimming.",
+      "target": "swimming",
+      "tr": {
+        "hu": "Szeretek úszni.",
+        "en": "I enjoy swimming.",
+        "es": "Me encanta nadar.",
+        "de": "Ich schwimme gern."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "folyamatos jelen: éppen most úszom",
+            "en": "present continuous: I am swimming right now",
+            "es": "presente continuo: estoy nadando ahora mismo",
+            "de": "Present Continuous: ich schwimme gerade jetzt"
+          },
+          "wrong": {
+            "hu": "A swimming itt nem folyamatos jelen: nincs mellette be ige; az enjoy után -ing (gerund) áll.",
+            "en": "Swimming here is not the present continuous: there is no be verb; after enjoy comes the -ing form (gerund).",
+            "es": "Swimming aquí no es presente continuo: no hay verbo be; después de enjoy va la forma -ing (gerundio).",
+            "de": "Swimming ist hier nicht das Present Continuous: es gibt kein Verb be; nach enjoy steht die -ing-Form (Gerundium)."
+          }
+        },
+        {
+          "text": {
+            "hu": "gerund: az enjoy után -ing jön",
+            "en": "gerund: after enjoy comes -ing",
+            "es": "gerundio: después de enjoy va -ing",
+            "de": "Gerundium: nach enjoy steht -ing"
+          }
+        },
+        {
+          "text": {
+            "hu": "infinitive: to + alapige",
+            "en": "infinitive: to + base verb",
+            "es": "infinitivo: to + verbo base",
+            "de": "Infinitiv: to + Grundform"
+          },
+          "wrong": {
+            "hu": "Az enjoy után nem to + alapige áll; nem „enjoy to swim”.",
+            "en": "After enjoy there is no to + base verb; not “enjoy to swim”.",
+            "es": "Después de enjoy no va to + verbo base; no «enjoy to swim».",
+            "de": "Nach enjoy steht kein to + Grundform; nicht „enjoy to swim“."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "gi-25",
+      "es": "She wants to be a doctor.",
+      "target": "to",
+      "tr": {
+        "hu": "Orvos akar lenni.",
+        "en": "She wants to be a doctor.",
+        "es": "Ella quiere ser doctora.",
+        "de": "Sie will Ärztin werden."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "elöljáró: irányt jelöl (hova)",
+            "en": "a preposition: marks a direction (where to)",
+            "es": "una preposición: marca una dirección (hacia dónde)",
+            "de": "eine Präposition: bezeichnet eine Richtung (wohin)"
+          },
+          "wrong": {
+            "hu": "Itt a to az ige része (to be), nem irányt jelöl; a want után to + alapige áll.",
+            "en": "Here to is part of the verb (to be), it does not mark a direction; after want comes to + base verb.",
+            "es": "Aquí to es parte del verbo (to be), no marca una dirección; después de want va to + verbo base.",
+            "de": "Hier gehört to zum Verb (to be), es bezeichnet keine Richtung; nach want steht to + Grundform."
+          }
+        },
+        {
+          "text": {
+            "hu": "infinitive: a want után to + alapige jön",
+            "en": "infinitive: after want comes to + base verb",
+            "es": "infinitivo: después de want va to + verbo base",
+            "de": "Infinitiv: nach want steht to + Grundform"
+          }
+        },
+        {
+          "text": {
+            "hu": "cél kifejezése: azért, hogy",
+            "en": "a purpose: in order to",
+            "es": "un propósito: para",
+            "de": "ein Zweck: um zu"
+          },
+          "wrong": {
+            "hu": "Itt nem célról van szó; a want mindig to + alapigét kér.",
+            "en": "This is not about a purpose; want always takes to + base verb.",
+            "es": "Aquí no se trata de un propósito; want siempre lleva to + verbo base.",
+            "de": "Hier geht es nicht um einen Zweck; want verlangt immer to + Grundform."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "gi-26",
+      "es": "I'm interested in learning English.",
+      "target": "learning",
+      "tr": {
+        "hu": "Érdekel az angol tanulása.",
+        "en": "I'm interested in learning English.",
+        "es": "Estoy interesado en aprender inglés.",
+        "de": "Ich interessiere mich dafür, Englisch zu lernen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "infinitive: to + alapige",
+            "en": "infinitive: to + base verb",
+            "es": "infinitivo: to + verbo base",
+            "de": "Infinitiv: to + Grundform"
+          },
+          "wrong": {
+            "hu": "Elöljáró (in) után nem az infinitive jön, hanem az -ing alak.",
+            "en": "After a preposition (in) comes not the infinitive but the -ing form.",
+            "es": "Después de una preposición (in) no va el infinitivo sino la forma -ing.",
+            "de": "Nach einer Präposition (in) kommt nicht der Infinitiv, sondern die -ing-Form."
+          }
+        },
+        {
+          "text": {
+            "hu": "gerund: elöljáró után mindig -ing áll",
+            "en": "gerund: after a preposition there is always -ing",
+            "es": "gerundio: después de una preposición siempre va -ing",
+            "de": "Gerundium: nach einer Präposition steht immer -ing"
+          }
+        },
+        {
+          "text": {
+            "hu": "folyamatos jelen: zajló cselekvés",
+            "en": "present continuous: an action in progress",
+            "es": "presente continuo: una acción en marcha",
+            "de": "Present Continuous: eine laufende Handlung"
+          },
+          "wrong": {
+            "hu": "Nincs be + ige-ing; az -ing alak itt az elöljáró (in) után áll, ezért gerund.",
+            "en": "There is no be + verb-ing; the -ing form here follows the preposition (in), so it is a gerund.",
+            "es": "No hay be + verbo-ing; la forma -ing aquí sigue a la preposición (in), por eso es un gerundio.",
+            "de": "Es gibt kein be + Verb-ing; die -ing-Form folgt hier der Präposition (in), deshalb ist sie ein Gerundium."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "gi-27",
+      "es": "I went to the market to buy fruit.",
+      "target": "buy",
+      "tr": {
+        "hu": "A piacra mentem gyümölcsöt venni.",
+        "en": "I went to the market to buy fruit.",
+        "es": "Fui al mercado a comprar fruta.",
+        "de": "Ich bin zum Markt gegangen, um Obst zu kaufen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "cél kifejezése: to + alapige",
+            "en": "a purpose: to + base verb",
+            "es": "un propósito: to + verbo base",
+            "de": "ein Zweck: to + Grundform"
+          }
+        },
+        {
+          "text": {
+            "hu": "elöljáró: irány",
+            "en": "a preposition: direction",
+            "es": "una preposición: dirección",
+            "de": "eine Präposition: Richtung"
+          },
+          "wrong": {
+            "hu": "A második to nem irányt jelöl (az az első to a piachoz), hanem célt, és alapige követi.",
+            "en": "The second to does not mark a direction (the first to does, to the market) but a purpose, and a base verb follows it.",
+            "es": "El segundo to no marca una dirección (el primero sí, hacia el mercado) sino un propósito, y le sigue un verbo base.",
+            "de": "Das zweite to bezeichnet keine Richtung (das erste schon, zum Markt), sondern einen Zweck, und es folgt eine Grundform."
+          }
+        },
+        {
+          "text": {
+            "hu": "gerund: elöljáró után -ing",
+            "en": "gerund: -ing after a preposition",
+            "es": "gerundio: -ing después de una preposición",
+            "de": "Gerundium: -ing nach einer Präposition"
+          },
+          "wrong": {
+            "hu": "Itt a to nem elöljáró, hanem a cél jele, ezért alapige követi, nem -ing.",
+            "en": "Here to is not a preposition but the sign of a purpose, so a base verb follows, not -ing.",
+            "es": "Aquí to no es una preposición sino la señal de un propósito, por eso le sigue un verbo base, no -ing.",
+            "de": "Hier ist to keine Präposition, sondern das Zeichen eines Zwecks, deshalb folgt eine Grundform, nicht -ing."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "gi-28",
+      "es": "She stopped to buy a coffee.",
+      "target": "stopped",
+      "tr": {
+        "hu": "Megállt, hogy vegyen egy kávét.",
+        "en": "She stopped to buy a coffee.",
+        "es": "Se detuvo para comprar un café.",
+        "de": "Sie hielt an, um einen Kaffee zu kaufen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "abbahagyta a vásárlást",
+            "en": "she quit buying",
+            "es": "dejó de comprar",
+            "de": "sie hörte auf zu kaufen"
+          },
+          "wrong": {
+            "hu": "Ez a stopped buying jelentése lenne; a stopped to buy azt jelenti, hogy megállt valamit megvenni.",
+            "en": "That would be the meaning of stopped buying; stopped to buy means she paused in order to buy.",
+            "es": "Ese sería el significado de stopped buying; stopped to buy significa que se detuvo para comprar.",
+            "de": "Das wäre die Bedeutung von stopped buying; stopped to buy bedeutet, dass sie anhielt, um zu kaufen."
+          }
+        },
+        {
+          "text": {
+            "hu": "megállt, azért, hogy megvegye",
+            "en": "she paused in order to buy",
+            "es": "se detuvo para comprar",
+            "de": "sie hielt an, um zu kaufen"
+          }
+        },
+        {
+          "text": {
+            "hu": "múltbeli szokás",
+            "en": "a past habit",
+            "es": "un hábito del pasado",
+            "de": "eine frühere Gewohnheit"
+          },
+          "wrong": {
+            "hu": "Egy konkrét megállásról van szó, nem szokásról; a szokásra used to való.",
+            "en": "This is about one particular stop, not a habit; used to is for a habit.",
+            "es": "Se trata de una parada concreta, no de un hábito; used to es para un hábito.",
+            "de": "Es geht um einen bestimmten Halt, nicht um eine Gewohnheit; für eine Gewohnheit nimmt man used to."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "gi-29",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "Quiero ser doctora.",
+          "en": "I want to be a doctor."
+        },
+        {
+          "es": "Terminé de hacer la tarea.",
+          "en": "I finished doing my homework."
+        },
+        {
+          "es": "Decidimos salir temprano.",
+          "en": "We decided to leave early."
+        },
+        {
+          "es": "Estoy interesado en aprender inglés.",
+          "en": "I'm interested in learning English."
+        },
+        {
+          "es": "Antes de salir, cerró la puerta.",
+          "en": "Before leaving, he locked the door."
+        },
+        {
+          "es": "Fui al mercado a comprar fruta.",
+          "en": "I went to the market to buy fruit."
+        }
+      ]
+    },
+    {
+      "id": "gi-30",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "terminar de (hacer)",
+          "en": "finish + -ing"
+        },
+        {
+          "es": "querer (hacer)",
+          "en": "want + to"
+        },
+        {
+          "es": "decidir (hacer)",
+          "en": "decide + to"
+        },
+        {
+          "es": "evitar (hacer)",
+          "en": "avoid + -ing"
+        },
+        {
+          "es": "después de (hacer)",
+          "en": "after + -ing"
+        },
+        {
+          "es": "para (hacer)",
+          "en": "to + verb"
+        }
+      ]
+    }
+  ]
+}
