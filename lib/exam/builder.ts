@@ -35,6 +35,11 @@ export interface ExamBuildInput {
   tenses: ReadonlySet<ResolvedTense>;
   /** A szint kész leckéinek gap tételei (lib/exam/grammarItems.ts). */
   gapSources: GapSource[];
+  /**
+   * Tétel az azonosítóból. A mondat-kapu szókincse MINDEN tanult szóból épül, a korábbi szintekéből is
+   * (egy A2 mondatban ott az A1 szó): ha nincs megadva, a szint tételei számítanak (A1-nél ez ugyanaz).
+   */
+  lookup?: (id: string) => PcicItem | undefined;
   seed: number;
 }
 
@@ -62,7 +67,7 @@ export function buildExam(input: ExamBuildInput): ExamItem[] {
 
   // Mondat-készlet: csak olyan példamondat, aminek minden szava tanult vagy szabad.
   const ctx = {
-    learned: learnedEntries(learnedCards, target, (id) => byId.get(id)),
+    learned: learnedEntries(cards.filter(isExamLearned), target, input.lookup ?? ((id) => byId.get(id))),
     tenses: target === 'es' ? input.tenses : undefined,
   };
   const pool: SentencePair[] = [];

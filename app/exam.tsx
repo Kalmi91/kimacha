@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useState, type ReactNode } from 'react';
-import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, radius, spacing } from '@/constants/Theme';
 import { getDb } from '@/lib/database';
-import { PCIC_LEVELS, pcicItemsForLevel, setPcicTarget, type PcicLevel, type PcicTarget } from '@/data/pcic';
-import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress } from '@/lib/grammar/syllabus';
+import { PCIC_LEVELS, findPcicItem, pcicItemsForLevel, setPcicTarget, type PcicLevel, type PcicTarget } from '@/data/pcic';
+import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress, syllabusTopic } from '@/lib/grammar/syllabus';
 import { resolvedTensesFromLessons, type ResolvedTense } from '@/lib/knownSentence';
 import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
@@ -17,11 +17,14 @@ import ResultBadge from '@/components/ResultBadge';
 import ExamButton from '@/components/exam/ExamButton';
 import ExamChoiceCard from '@/components/exam/ExamChoiceCard';
 import ExamMatchCard from '@/components/exam/ExamMatchCard';
+import ExamSkillRow from '@/components/exam/ExamSkillRow';
 import ExamTilesCard from '@/components/exam/ExamTilesCard';
 import ExamTypeCard from '@/components/exam/ExamTypeCard';
 import { buildExam } from '@/lib/exam/builder';
 import { gapSourcesForLevel, type GapSource } from '@/lib/exam/grammarItems';
+import { requeueWrongWords } from '@/lib/exam/requeue';
 import { EXAM_PASS_PCT, scoreExam, type ExamScore } from '@/lib/exam/score';
+import { skillResults, weakLessons } from '@/lib/exam/skills';
 import { EXAM_LEVELS, type ExamItem, type ExamItemResult } from '@/lib/exam/types';
 import { examStatusFor } from '@/lib/exam/unlock';
 import type { Sm2Card } from '@/lib/sm2';
@@ -103,6 +106,7 @@ export default function ExamScreen() {
         cards: src.cards,
         tenses: src.tenses,
         gapSources: src.gapSources,
+        lookup: findPcicItem,
         seed: Date.now(),
       }),
     [level],
@@ -158,7 +162,18 @@ export default function ExamScreen() {
 
   const finish = async (all: ExamItemResult[]) => {
     const sc = scoreExam(all);
-    await getDb().saveExamResult(level, sc.pct, sc.passed, localDateString());
+    const db = getDb();
+    const today = localDateString();
+    await db.saveExamResult(level, sc.pct, sc.passed, today);
+    // 5. lépés (2b): az elrontott szó-tétel kártyája `again`-nel visszamegy az SM-2 ismétlésbe
+    // (a nyelvtani hibának nincs kártyája, annak az eredmény-lap a lecke-linkje a visszacsatolás).
+    // A friss kártyák a memóriában is frissülnek, hogy az újrapróba ne húzza újra a most elrontott szót.
+    const back = source ? requeueWrongWords(source.cards, all, today) : [];
+    for (const card of back) await db.upsertPcicCard(card);
+    if (source && back.length > 0) {
+      const fresh = new Map(back.map((c) => [c.itemId, c]));
+      setSource({ ...source, cards: source.cards.map((c) => fresh.get(c.itemId) ?? c) });
+    }
     setScore(sc);
     setPhase('result');
   };
@@ -179,6 +194,12 @@ export default function ExamScreen() {
   };
 
   const counts = (skill: ExamItem['skill']) => exam.filter((i) => i.skill === skill).length;
+
+  // 6. lépés (2c): a gyenge szó- (vagy olvasás-)pontnál a tanulófülre vissza, az aktuális szint paklijára.
+  const practiceWords = async () => {
+    await getDb().setPcicLevel(level);
+    router.back();
+  };
 
   const shell = (children: ReactNode) => (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>{children}</View>
@@ -218,8 +239,15 @@ export default function ExamScreen() {
   }
 
   if (phase === 'result' && score) {
+    // 6. lépés (2c): készségenként pont és %, a gyenge pontoknál link (nyelvtan: a leggyakrabban elrontott
+    // leckék; szó, olvasás: vissza a tanulófülre ezen a szinten).
+    const skills = skillResults(score);
+    const isWeak = (skill: ExamItem['skill']) => skills.some((r) => r.skill === skill && r.weak);
+    const contentLang = source?.target === 'en' ? 'es' : 'en';
+    const lessonLinks = isWeak('grammar') ? weakLessons(results) : [];
+    const skillLabels: Record<ExamItem['skill'], string> = { words: s.exam.skillWords, grammar: s.exam.skillGrammar, reading: s.exam.skillReading };
     return shell(
-      <View style={styles.body}>
+      <ScrollView contentContainerStyle={styles.body}>
         <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
           <ResultBadge testID="exam-verdict" correct={score.passed} label={score.passed ? s.exam.passedTitle(level) : s.exam.notYet} />
           <Text testID="exam-score" style={[styles.title, { color: colors.text }]}>
@@ -227,12 +255,35 @@ export default function ExamScreen() {
           </Text>
           {!score.passed && <Text style={[styles.line, { color: colors.textMuted }]}>{s.exam.needPass(EXAM_PASS_PCT)}</Text>}
         </Card>
+        {skills.length > 0 && (
+          <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
+            {skills.map((r) => (
+              <ExamSkillRow key={r.skill} result={r} label={skillLabels[r.skill]} colors={colors} />
+            ))}
+          </Card>
+        )}
+        {lessonLinks.map((l) => {
+          const topic = syllabusTopic(l.topicId, source?.target ?? 'es');
+          return (
+            <ExamButton
+              key={l.topicId}
+              testID={`exam-lesson-${l.topicId}`}
+              secondary
+              label={s.exam.skillReviewLesson(topic?.title[contentLang] ?? topic?.title.en ?? l.topicId)}
+              onPress={() => router.push(`/grammar/${l.topicId}` as never)}
+            />
+          );
+        })}
+        {isWeak('words') && <ExamButton testID="exam-review-words" secondary label={s.exam.skillReviewWords} onPress={practiceWords} />}
+        {!isWeak('words') && isWeak('reading') && (
+          <ExamButton testID="exam-practice-sentences" secondary label={s.exam.skillPracticeSentences} onPress={practiceWords} />
+        )}
         {score.passed && nextLevel && pcicItemsForLevel(nextLevel).length > 0 && (
           <ExamButton testID="exam-continue" label={s.exam.continueTo(nextLevel)} onPress={goNext} />
         )}
         {!score.passed && <ExamButton testID="exam-retry" label={s.exam.tryAgain} onPress={retry} />}
         <ExamButton testID="exam-exit" secondary label={s.exam.exit} onPress={() => router.back()} />
-      </View>,
+      </ScrollView>,
     );
   }
 

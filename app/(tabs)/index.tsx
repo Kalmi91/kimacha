@@ -44,7 +44,8 @@ import TypedSentenceCard from '@/components/TypedSentenceCard';
 import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress } from '@/lib/grammar/syllabus';
 import { resolvedTensesFromLessons, type ResolvedTense } from '@/lib/knownSentence';
 import { INITIAL_CADENCE, nextSentenceStep, type CadenceState, type SentenceCardData } from '@/lib/sentenceCards';
-import { examStatusFor, type ExamLevelStatus } from '@/lib/exam/unlock';
+import { EXAM_LEVELS } from '@/lib/exam/types';
+import { examStatusFor, levelHasLesson, type ExamLevelStatus } from '@/lib/exam/unlock';
 
 // A szint-választó lap bezáródásának ideje (a RN-web Modal 250 ms-os kilépő animációja, ami kb. 100 ms késéssel indul, + tartalék).
 const SHEET_CLOSE_MS = 500;
@@ -92,8 +93,8 @@ export default function PcicScreen() {
   // haladáshoz MIND a négy szint kártyája kell, nem csak az aktívé.
   const [levelSheetOpen, setLevelSheetOpen] = useState(false);
   const [allLevelCards, setAllLevelCards] = useState<Sm2Card[]>([]);
-  // PLAN-vizsga A. szakasz 2. lépés (A1 a): az A1 szintvizsga sora a szint-választó lapon.
-  const [examA1, setExamA1] = useState<ExamLevelStatus | null>(null);
+  // PLAN-vizsga A. szakasz 2. és 4. lépés (A1 a): a szintvizsga-sorok (A1-B2) a szint-választó lapon.
+  const [examLevels, setExamLevels] = useState<ExamLevelStatus[]>([]);
   // s2 (anki-ui-terv.html): a Beállítások ékezet-szigor kapcsolója a PCIC
   // gépelésén is dönt (gradePcicAnswer strictAccents paramja).
   const [strictAccents, setStrictAccents] = useState(false);
@@ -181,7 +182,11 @@ export default function PcicScreen() {
     setLevel(lvl);
     setAllLevelCards(rawCards);
     const examGrammarRows = dir === 'es' ? grammarRows : await db.getGameProgress(GRAMMAR_PROGRESS_KEY);
-    setExamA1(examStatusFor('A1', dir, rawCards, examGrammarRows, (await db.getExamResults()).A1));
+    // Csak olyan szintnek van sora, amin van megírt lecke (különben a vizsga sosem nyílhatna: A4 b).
+    const examResults = await db.getExamResults();
+    setExamLevels(
+      EXAM_LEVELS.filter((l) => levelHasLesson(l, dir)).map((l) => examStatusFor(l, dir, rawCards, examGrammarRows, examResults[l])),
+    );
     setStrictAccents(strict);
     setDailyNewLimit(newLimit);
     setAgainDelaySec(delaySec);
@@ -231,14 +236,12 @@ export default function PcicScreen() {
   };
   // PLAN-vizsga C. szakasz (C1 a): a szintválasztó lap halk belépője az adaptív szintfelméréshez.
   const openPlacement = () => closeSheetThen(() => router.push('/placement'));
-  const examRow = examA1
-    ? {
-        status: examA1,
-        onStart: () => closeSheetThen(() => router.push({ pathname: '/exam', params: { level: examA1.level } })),
-        onPractice: () => handleSelectLevel(examA1.level),
-        onGrammar: () => closeSheetThen(() => router.push('/(tabs)/course')),
-      }
-    : undefined;
+  const examRow = examLevels.map((status) => ({
+    status,
+    onStart: () => closeSheetThen(() => router.push({ pathname: '/exam', params: { level: status.level } })),
+    onPractice: () => handleSelectLevel(status.level),
+    onGrammar: () => closeSheetThen(() => router.push('/(tabs)/course')),
+  }));
 
   const newOrder = useMemo(() => pcicItemsForViewLevel(level).map((i) => i.id), [level]);
   const current = queue[0];
