@@ -49,6 +49,9 @@ const cells = tableCellsForLesson(lessonFor('es', 'ser-estar')!);
 const tableOrder = cells.map((c) => c.id);
 const cellAt = (i: number) => cells.find((c) => c.id === tableOrder[i])!;
 
+// FB463: a ser-estar táblának van angol promptja, ez látszik a puszta személy helyett.
+const promptOf = (c: { enPrompt?: string; person: string }) => c.enPrompt ?? c.person;
+
 const answerCurrent = async (typed: string) => {
   fireEvent.changeText(screen.getByTestId('tabledeck-input'), typed);
   fireEvent.press(screen.getByText('✓ Check'));
@@ -81,13 +84,13 @@ describe('table-deck screen: ser-estar playthrough', () => {
     expect(cells[0]).toMatchObject({ person: 'yo', verb: 'ser', answer: 'soy' });
   });
 
-  it('shows the first cell in the table order, its "person · verb" caption, and the TABLE chip', async () => {
+  it('shows the first cell in the table order, its prompt caption, and the TABLE chip', async () => {
     const view = render(<TableDeckScreen />);
     await flush();
 
-    expect(screen.getByText('person · verb')).toBeTruthy();
+    expect(screen.getByText('translate to Spanish')).toBeTruthy();
     expect(screen.getByText('TABLE')).toBeTruthy();
-    expect(screen.getByText(cellAt(0).person)).toBeTruthy();
+    expect(screen.getByText(promptOf(cellAt(0)))).toBeTruthy();
     expect(screen.getByText('0 / 10 done')).toBeTruthy();
 
     view.unmount();
@@ -138,7 +141,7 @@ describe('table-deck screen: ser-estar playthrough', () => {
     await flush();
 
     // Cooldown: the next cell shown is the deck's second cell, not the first again.
-    expect(screen.getByText(cellAt(1).person)).toBeTruthy();
+    expect(screen.getByText(promptOf(cellAt(1)))).toBeTruthy();
 
     // Correct on that second cell: green "✓ <answer>", progress advances to 1/10.
     fireEvent.changeText(screen.getByTestId('tabledeck-input'), cellAt(1).answer);
@@ -157,7 +160,7 @@ describe('table-deck screen: ser-estar playthrough', () => {
     const view2 = render(<TableDeckScreen />);
     await flush();
     expect(screen.getByText('1 / 10 done')).toBeTruthy();
-    expect(screen.getByText(cellAt(2).person)).toBeTruthy();
+    expect(screen.getByText(promptOf(cellAt(2)))).toBeTruthy();
     view2.unmount();
   });
 
@@ -174,13 +177,13 @@ describe('table-deck screen: ser-estar playthrough', () => {
     await flush();
 
     for (let i = 1; i < tableOrder.length; i++) {
-      expect(screen.getByText(cellAt(i).person)).toBeTruthy();
+      expect(screen.getByText(promptOf(cellAt(i)))).toBeTruthy();
       await answerCurrent(cellAt(i).answer);
     }
 
     // Only the first deck cell is left; shown despite its cooldown because
     // nothing else remains, and answering it correctly finishes the deck.
-    expect(screen.getByText(cellAt(0).person)).toBeTruthy();
+    expect(screen.getByText(promptOf(cellAt(0)))).toBeTruthy();
     await answerCurrent(cellAt(0).answer);
 
     expect(screen.getByText('All 10 cells done 🎉')).toBeTruthy();
@@ -200,7 +203,7 @@ describe('table-deck screen: ser-estar playthrough', () => {
     // FB389: "Start again" is the plain, in-order restart, so the very same
     // first cell as the initial pass comes back, not a new shuffle.
     expect(screen.getByText('0 / 10 done')).toBeTruthy();
-    expect(screen.getByText(cellAt(0).person)).toBeTruthy();
+    expect(screen.getByText(promptOf(cellAt(0)))).toBeTruthy();
   });
 
   it('"Harder: shuffled" restarts all cells in a seeded shuffle, not the table order', async () => {
@@ -218,7 +221,7 @@ describe('table-deck screen: ser-estar playthrough', () => {
     const shuffled = shuffleArray(cells.map((c) => c.id).sort(), hashString('ser-estar:1'));
     const first = cells.find((c) => c.id === shuffled[0])!;
     expect(screen.getByText('0 / 10 done')).toBeTruthy();
-    expect(screen.getByText(first.person)).toBeTruthy();
+    expect(screen.getByText(promptOf(first))).toBeTruthy();
     expect(shuffled).not.toEqual(tableOrder);
   });
 });

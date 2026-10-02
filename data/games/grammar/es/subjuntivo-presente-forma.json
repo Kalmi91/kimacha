@@ -340,6 +340,13 @@
           "puedan",
           "pidan"
         ]
+      ],
+      "enPrompt": [
+        ["that I speak", "that I eat", "that I live", "that I have", "that I do", "that I be", "that I go", "that I know", "that I can", "that I ask for"],
+        ["that you speak", "that you eat", "that you live", "that you have", "that you do", "that you be", "that you go", "that you know", "that you can", "that you ask for"],
+        ["that she speak", "that he eat", "that she live", "that he have", "that she do", "that he be", "that she go", "that he know", "that she can", "that he ask for"],
+        ["that we speak", "that we eat", "that we live", "that we have", "that we do", "that we be", "that we go", "that we know", "that we can", "that we ask for"],
+        ["that you all speak", "that you all eat", "that you all live", "that you all have", "that you all do", "that you all be", "that you all go", "that you all know", "that you all can", "that you all ask for"]
       ]
     },
     {

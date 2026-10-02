@@ -185,6 +185,14 @@
           "comían",
           "vivían"
         ]
+      ],
+      "enPrompt": [
+        ["I used to speak", "I used to eat", "I used to live"],
+        ["you used to speak", "you used to eat", "you used to live"],
+        ["she used to speak", "he used to eat", "she used to live"],
+        ["we used to speak", "we used to eat", "we used to live"],
+        ["you all used to speak", "you all used to eat", "you all used to live"],
+        ["they used to speak", "they used to eat", "they used to live"]
       ]
     },
     {
@@ -259,6 +267,14 @@
           "iban",
           "veían"
         ]
+      ],
+      "enPrompt": [
+        ["I used to be", "I used to go", "I used to see"],
+        ["you used to be", "you used to go", "you used to see"],
+        ["she used to be", "he used to go", "she used to see"],
+        ["we used to be", "we used to go", "we used to see"],
+        ["you all used to be", "you all used to go", "you all used to see"],
+        ["they used to be", "they used to go", "they used to see"]
       ]
     },
     {

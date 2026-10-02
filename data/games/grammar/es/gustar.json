@@ -140,6 +140,14 @@
         ["nosotros", "nos gusta", "nos gustan"],
         ["vosotros", "os gusta", "os gustan"],
         ["ellos/ellas/ustedes", "les gusta", "les gustan"]
+      ],
+      "enPrompt": [
+        ["I like it", "I like them"],
+        ["you like it", "you like them"],
+        ["she likes it", "he likes them"],
+        ["we like it", "we like them"],
+        ["you all like it", "you all like them"],
+        ["they like it", "they like them"]
       ]
     },
     {

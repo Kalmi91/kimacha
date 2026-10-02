@@ -329,6 +329,14 @@
           "habrán escrito",
           "habrán vuelto"
         ]
+      ],
+      "enPrompt": [
+        ["I will have spoken", "I will have eaten", "I will have lived", "I will have done", "I will have seen", "I will have said", "I will have written", "I will have returned"],
+        ["you will have spoken", "you will have eaten", "you will have lived", "you will have done", "you will have seen", "you will have said", "you will have written", "you will have returned"],
+        ["she will have spoken", "he will have eaten", "she will have lived", "he will have done", "she will have seen", "he will have said", "she will have written", "he will have returned"],
+        ["we will have spoken", "we will have eaten", "we will have lived", "we will have done", "we will have seen", "we will have said", "we will have written", "we will have returned"],
+        ["you all will have spoken", "you all will have eaten", "you all will have lived", "you all will have done", "you all will have seen", "you all will have said", "you all will have written", "you all will have returned"],
+        ["they will have spoken", "they will have eaten", "they will have lived", "they will have done", "they will have seen", "they will have said", "they will have written", "they will have returned"]
       ]
     },
     {
@@ -391,6 +399,14 @@
           "habrán",
           "habrían"
         ]
+      ],
+      "enPrompt": [
+        ["I will have", "I would have"],
+        ["you will have", "you would have"],
+        ["she will have", "she would have"],
+        ["we will have", "we would have"],
+        ["you all will have", "you all would have"],
+        ["they will have", "they would have"]
       ]
     },
     {

@@ -424,6 +424,14 @@
           "ellos/ellas/ustedes",
           "son"
         ]
+      ],
+      "enPrompt": [
+        ["I am (identity)"],
+        ["you are (identity)"],
+        ["she is (identity)"],
+        ["we are (identity)"],
+        ["you all are (identity)"],
+        ["they are (identity)"]
       ]
     },
     {
@@ -474,6 +482,14 @@
           "ellos/ellas/ustedes",
           "están"
         ]
+      ],
+      "enPrompt": [
+        ["I am (state/location)"],
+        ["you are (state/location)"],
+        ["she is (state/location)"],
+        ["we are (state/location)"],
+        ["you all are (state/location)"],
+        ["they are (state/location)"]
       ]
     },
     {

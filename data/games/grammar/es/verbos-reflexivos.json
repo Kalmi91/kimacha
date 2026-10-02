@@ -183,6 +183,14 @@
         ["nosotros", "nos levantamos", "nos duchamos", "nos acostamos"],
         ["vosotros", "os levantáis", "os ducháis", "os acostáis"],
         ["ellos/ellas/ustedes", "se levantan", "se duchan", "se acuestan"]
+      ],
+      "enPrompt": [
+        ["I get up", "I take a shower", "I go to bed"],
+        ["you get up", "you take a shower", "you go to bed"],
+        ["she gets up", "he takes a shower", "she goes to bed"],
+        ["we get up", "we take a shower", "we go to bed"],
+        ["you all get up", "you all take a shower", "you all go to bed"],
+        ["they get up", "they take a shower", "they go to bed"]
       ]
     },
     {

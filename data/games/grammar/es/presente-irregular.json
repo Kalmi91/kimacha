@@ -269,6 +269,14 @@
           "ponen",
           "salen"
         ]
+      ],
+      "enPrompt": [
+        ["I do", "I put", "I go out"],
+        ["you do", "you put", "you go out"],
+        ["she does", "he puts", "she goes out"],
+        ["we do", "we put", "we go out"],
+        ["you all do", "you all put", "you all go out"],
+        ["they do", "they put", "they go out"]
       ]
     },
     {
@@ -343,6 +351,14 @@
           "vienen",
           "dicen"
         ]
+      ],
+      "enPrompt": [
+        ["I have", "I come", "I say"],
+        ["you have", "you come", "you say"],
+        ["she has", "he comes", "she says"],
+        ["we have", "we come", "we say"],
+        ["you all have", "you all come", "you all say"],
+        ["they have", "they come", "they say"]
       ]
     },
     {
@@ -405,6 +421,14 @@
           "son",
           "van"
         ]
+      ],
+      "enPrompt": [
+        ["I am (identity)", "I go"],
+        ["you are (identity)", "you go"],
+        ["she is (identity)", "he goes"],
+        ["we are (identity)", "we go"],
+        ["you all are (identity)", "you all go"],
+        ["they are (identity)", "they go"]
       ]
     },
     {
@@ -479,6 +503,14 @@
           "parecen",
           "conducen"
         ]
+      ],
+      "enPrompt": [
+        ["I know (a person/place)", "I seem", "I drive"],
+        ["you know (a person/place)", "you seem", "you drive"],
+        ["she knows (a person/place)", "he seems", "she drives"],
+        ["we know (a person/place)", "we seem", "we drive"],
+        ["you all know (a person/place)", "you all seem", "you all drive"],
+        ["they know (a person/place)", "they seem", "they drive"]
       ]
     },
     {
@@ -553,6 +585,14 @@
           "caen",
           "oyen"
         ]
+      ],
+      "enPrompt": [
+        ["I bring", "I fall", "I hear"],
+        ["you bring", "you fall", "you hear"],
+        ["she brings", "he falls", "she hears"],
+        ["we bring", "we fall", "we hear"],
+        ["you all bring", "you all fall", "you all hear"],
+        ["they bring", "they fall", "they hear"]
       ]
     },
     {
@@ -627,6 +667,14 @@
           "ven",
           "saben"
         ]
+      ],
+      "enPrompt": [
+        ["I give", "I see", "I know (a fact)"],
+        ["you give", "you see", "you know (a fact)"],
+        ["she gives", "he sees", "she knows (a fact)"],
+        ["we give", "we see", "we know (a fact)"],
+        ["you all give", "you all see", "you all know (a fact)"],
+        ["they give", "they see", "they know (a fact)"]
       ]
     },
     {
@@ -701,6 +749,14 @@
           "pueden",
           "quieren"
         ]
+      ],
+      "enPrompt": [
+        ["I am (state/location)", "I can", "I want"],
+        ["you are (state/location)", "you can", "you want"],
+        ["she is (state/location)", "he can", "she wants"],
+        ["we are (state/location)", "we can", "we want"],
+        ["you all are (state/location)", "you all can", "you all want"],
+        ["they are (state/location)", "they can", "they want"]
       ]
     },
     {
@@ -763,6 +819,14 @@
           "siguen",
           "valen"
         ]
+      ],
+      "enPrompt": [
+        ["I follow", "I am worth"],
+        ["you follow", "you are worth"],
+        ["she follows", "he is worth"],
+        ["we follow", "we are worth"],
+        ["you all follow", "you all are worth"],
+        ["they follow", "they are worth"]
       ]
     },
     {

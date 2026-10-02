@@ -164,6 +164,11 @@
         ["tú", "habla", "come", "escribe", "di", "haz", "ve", "pon", "sal", "sé", "ten", "ven"],
         ["usted", "hable", "coma", "escriba", "diga", "haga", "vaya", "ponga", "salga", "sea", "tenga", "venga"],
         ["ustedes", "hablen", "coman", "escriban", "digan", "hagan", "vayan", "pongan", "salgan", "sean", "tengan", "vengan"]
+      ],
+      "enPrompt": [
+        ["speak! (informal)", "eat! (informal)", "write! (informal)", "say! (informal)", "do! (informal)", "go! (informal)", "put! (informal)", "go out! (informal)", "be! (informal)", "have! (informal)", "come! (informal)"],
+        ["speak! (formal)", "eat! (formal)", "write! (formal)", "say! (formal)", "do! (formal)", "go! (formal)", "put! (formal)", "go out! (formal)", "be! (formal)", "have! (formal)", "come! (formal)"],
+        ["speak! (you all)", "eat! (you all)", "write! (you all)", "say! (you all)", "do! (you all)", "go! (you all)", "put! (you all)", "go out! (you all)", "be! (you all)", "have! (you all)", "come! (you all)"]
       ]
     },
     {

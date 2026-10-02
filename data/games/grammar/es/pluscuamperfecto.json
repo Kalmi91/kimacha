@@ -301,6 +301,14 @@
           "habían escrito",
           "habían vuelto"
         ]
+      ],
+      "enPrompt": [
+        ["I had spoken", "I had eaten", "I had lived", "I had done", "I had seen", "I had said", "I had written", "I had returned"],
+        ["you had spoken", "you had eaten", "you had lived", "you had done", "you had seen", "you had said", "you had written", "you had returned"],
+        ["she had spoken", "he had eaten", "she had lived", "he had done", "she had seen", "he had said", "she had written", "he had returned"],
+        ["we had spoken", "we had eaten", "we had lived", "we had done", "we had seen", "we had said", "we had written", "we had returned"],
+        ["you all had spoken", "you all had eaten", "you all had lived", "you all had done", "you all had seen", "you all had said", "you all had written", "you all had returned"],
+        ["they had spoken", "they had eaten", "they had lived", "they had done", "they had seen", "they had said", "they had written", "they had returned"]
       ]
     },
     {

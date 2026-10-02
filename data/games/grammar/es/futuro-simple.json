@@ -213,6 +213,14 @@
           "comerán",
           "vivirán"
         ]
+      ],
+      "enPrompt": [
+        ["I will speak", "I will eat", "I will live"],
+        ["you will speak", "you will eat", "you will live"],
+        ["she will speak", "he will eat", "she will live"],
+        ["we will speak", "we will eat", "we will live"],
+        ["you all will speak", "you all will eat", "you all will live"],
+        ["they will speak", "they will eat", "they will live"]
       ]
     },
     {
@@ -311,6 +319,14 @@
           "saldrán",
           "dirán"
         ]
+      ],
+      "enPrompt": [
+        ["I will have", "I will be able to", "I will do", "I will go out", "I will say"],
+        ["you will have", "you will be able to", "you will do", "you will go out", "you will say"],
+        ["she will have", "he will be able to", "she will do", "he will go out", "she will say"],
+        ["we will have", "we will be able to", "we will do", "we will go out", "we will say"],
+        ["you all will have", "you all will be able to", "you all will do", "you all will go out", "you all will say"],
+        ["they will have", "they will be able to", "they will do", "they will go out", "they will say"]
       ]
     },
     {
