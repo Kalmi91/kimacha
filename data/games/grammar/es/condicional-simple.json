@@ -185,6 +185,14 @@
           "comerían",
           "vivirían"
         ]
+      ],
+      "enPrompt": [
+        ["I would speak", "I would eat", "I would live"],
+        ["you would speak", "you would eat", "you would live"],
+        ["she would speak", "he would eat", "she would live"],
+        ["we would speak", "we would eat", "we would live"],
+        ["you all would speak", "you all would eat", "you all would live"],
+        ["they would speak", "they would eat", "they would live"]
       ]
     },
     {
@@ -271,6 +279,14 @@
           "harían",
           "dirían"
         ]
+      ],
+      "enPrompt": [
+        ["I would have", "I could", "I would do", "I would say"],
+        ["you would have", "you could", "you would do", "you would say"],
+        ["she would have", "he could", "she would do", "he would say"],
+        ["we would have", "we could", "we would do", "we would say"],
+        ["you all would have", "you all could", "you all would do", "you all would say"],
+        ["they would have", "they could", "they would do", "they would say"]
       ]
     },
     {
