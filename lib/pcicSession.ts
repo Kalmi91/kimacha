@@ -251,6 +251,15 @@ export function countFinishedToday(cards: Sm2Card[], queue: Sm2Card[], today: st
   return cards.filter((c) => c.lastReview === today && !inQueue.has(c.itemId)).length;
 }
 
+// FB456 ("+15 szó, bebugosodott a csík"): a "+N új szó" bővítés új adagot indít, de a
+// `countFinishedToday` az egész nap kész kártyáit számolja, így a csík +N után nem 0-ról,
+// hanem pl. 78%-ról indult (a nap eddigi kész kártyái az új adagon is "készek" voltak).
+// A bővítéskor a hívó eltárolja a már kész kártyák számát (batchBase), a csík ehhez képest
+// az ÚJ adag haladását méri: az első új kártyánál üres, az utolsónál tele.
+export function finishedInBatch(finishedToday: number, batchBase: number): number {
+  return Math.max(0, finishedToday - batchBase);
+}
+
 export function dayProgressPercent(finished: number, remaining: number): number {
   const total = finished + remaining;
   if (total <= 1) return remaining === 0 && finished > 0 ? 100 : 0;
