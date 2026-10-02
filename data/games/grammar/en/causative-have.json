@@ -1,0 +1,1416 @@
+{
+  "schema": 2,
+  "topic": "causative_have",
+  "level": "B2",
+  "title": {
+    "hu": "Műveltető szerkezet (have / get something done)",
+    "en": "The Causative (have / get something done)",
+    "es": "La estructura causativa (have / get something done)",
+    "de": "Die Kausativ-Konstruktion (have / get something done)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A műveltető szerkezet azt mondja el, hogy valaki mást csináltat velünk valamit, vagy hogy velünk történik valami. Szerkezete: have/get + tárgy + igenév („I had my car repaired.”). A spanyolban erre „mandé arreglar mi carro” vagy a visszaható „me arreglaron el carro” szerkezet áll. Az angol „I repaired my car” viszont azt jelenti, hogy magam javítottam meg.",
+        "en": "The causative says that someone else does something for us, or that something happens to us. The structure is have/get + object + participle (“I had my car repaired.”). Spanish uses “mandé arreglar mi carro” or “me arreglaron el carro” for this. The English “I repaired my car”, however, means I fixed it myself.",
+        "es": "La estructura causativa dice que otra persona hace algo por nosotros, o que algo nos sucede. Su estructura es have/get + objeto + participio («I had my car repaired.»). El español usa para esto «mandé arreglar mi carro» o «me arreglaron el carro». En cambio, el inglés «I repaired my car» significa que lo arreglé yo mismo.",
+        "de": "Die Kausativ-Konstruktion sagt, dass jemand anderes etwas für uns tut oder dass uns etwas widerfährt. Die Struktur ist have/get + Objekt + Partizip („I had my car repaired.“). Das Spanische nutzt dafür „mandé arreglar mi carro“ oder „me arreglaron el carro“. Das englische „I repaired my car“ heißt dagegen, dass ich es selbst repariert habe."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "cau-forms",
+      "title": {
+        "hu": "Melyik alak?",
+        "en": "Which form?",
+        "es": "¿Qué forma uso?",
+        "de": "Welche Form?"
+      },
+      "header": [
+        {
+          "hu": "Helyzet",
+          "en": "Situation",
+          "es": "Situación",
+          "de": "Situation"
+        },
+        {
+          "hu": "forma",
+          "en": "form",
+          "es": "forma",
+          "de": "Form"
+        }
+      ],
+      "rows": [
+        [
+          "mandar hacer algo: have + objeto + ...",
+          "past participle"
+        ],
+        [
+          "la palabra informal parecida a have",
+          "get"
+        ],
+        [
+          "have + persona + ...",
+          "base verb"
+        ],
+        [
+          "get + persona + ...",
+          "to-infinitive"
+        ],
+        [
+          "un mal suceso (me robaron el celular)",
+          "had"
+        ],
+        [
+          "quien hace el trabajo, si se menciona",
+          "by"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Szolgáltatás: have/get + tárgy + igenév",
+        "en": "A service: have/get + object + participle",
+        "es": "Un servicio: have/get + objeto + participio",
+        "de": "Eine Dienstleistung: have/get + Objekt + Partizip"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Az igenév a tárgy állapotát mondja: a tárgyat megjavítják, levágják, lefestik. A get hétköznapibb, mint a have.",
+            "en": "The participle says what happens to the object: it gets repaired, cut, painted. Get is more casual than have.",
+            "es": "El participio dice lo que le pasa al objeto: lo arreglan, lo cortan, lo pintan. Get es más informal que have.",
+            "de": "Das Partizip sagt, was mit dem Objekt geschieht: es wird repariert, geschnitten, gestrichen. Get ist umgangssprachlicher als have."
+          },
+          "examples": [
+            {
+              "es": "I had my car repaired last week.",
+              "tr": {
+                "hu": "A múlt héten megjavíttattam az autómat.",
+                "en": "I had my car repaired last week.",
+                "es": "La semana pasada mandé arreglar mi carro.",
+                "de": "Letzte Woche habe ich mein Auto reparieren lassen."
+              }
+            },
+            {
+              "es": "She is getting her hair cut tomorrow.",
+              "tr": {
+                "hu": "Holnap levágatja a haját.",
+                "en": "She is getting her hair cut tomorrow.",
+                "es": "Mañana le van a cortar el pelo.",
+                "de": "Morgen lässt sie sich die Haare schneiden."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Saját kezű munkát az egyszerű igével mondunk: „I cut my hair” (én vágtam le), „I had my hair cut” (levágatták).",
+            "en": "Work done by yourself uses the simple verb: “I cut my hair” (I cut it), “I had my hair cut” (someone cut it).",
+            "es": "El trabajo hecho por uno mismo usa el verbo simple: «I cut my hair» (yo me lo corté), «I had my hair cut» (me lo cortaron).",
+            "de": "Selbst gemachte Arbeit nimmt das einfache Verb: „I cut my hair“ (ich habe sie geschnitten), „I had my hair cut“ (jemand hat sie geschnitten)."
+          },
+          "examples": [
+            {
+              "es": "I cut my hair myself.",
+              "tr": {
+                "hu": "Magam vágtam le a hajam.",
+                "en": "I cut my hair myself.",
+                "es": "Yo mismo me corté el pelo.",
+                "de": "Ich habe mir die Haare selbst geschnitten."
+              }
+            },
+            {
+              "es": "I had my hair cut at the salon.",
+              "tr": {
+                "hu": "A fodrásznál levágattam a hajam.",
+                "en": "I had my hair cut at the salon.",
+                "es": "Me cortaron el pelo en la peluquería.",
+                "de": "Ich habe mir die Haare beim Friseur schneiden lassen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Kellemetlen esemény: have + tárgy + igenév",
+        "en": "An unpleasant event: have + object + participle",
+        "es": "Un suceso desagradable: have + objeto + participio",
+        "de": "Ein unangenehmes Ereignis: have + Objekt + Partizip"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Ugyanez a szerkezet azt is kifejezi, hogy velünk történt valami rossz. Ilyenkor nem kértük, nem akartuk.",
+            "en": "The same structure also says that something bad happened to us. We did not ask for it or want it.",
+            "es": "La misma estructura también dice que nos pasó algo malo. No lo pedimos ni lo quisimos.",
+            "de": "Dieselbe Struktur sagt auch, dass uns etwas Schlechtes passiert ist. Wir haben es weder gewollt noch veranlasst."
+          },
+          "examples": [
+            {
+              "es": "He had his wallet stolen on the bus.",
+              "tr": {
+                "hu": "Ellopták a pénztárcáját a buszon.",
+                "en": "He had his wallet stolen on the bus.",
+                "es": "Le robaron la cartera en el camión.",
+                "de": "Ihm wurde im Bus die Geldbörse gestohlen."
+              }
+            },
+            {
+              "es": "They had their car damaged in the storm.",
+              "tr": {
+                "hu": "A viharban megrongálódott az autójuk.",
+                "en": "They had their car damaged in the storm.",
+                "es": "Su carro se dañó en la tormenta.",
+                "de": "Ihr Auto wurde im Sturm beschädigt."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Személy a tárgy: have + személy + alapige, get + személy + to",
+        "en": "A person as object: have + person + base verb, get + person + to",
+        "es": "Una persona como objeto: have + persona + verbo base, get + persona + to",
+        "de": "Eine Person als Objekt: have + Person + Grundform, get + Person + to"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Ha megnevezed, ki végzi el, a have után alapige áll (to nélkül), a get után to + alapige.",
+            "en": "If you name who does it, have takes the base verb (without to), and get takes to + base verb.",
+            "es": "Si nombras quién lo hace, have lleva el verbo base (sin to) y get lleva to + verbo base.",
+            "de": "Wenn man nennt, wer es tut, steht nach have die Grundform (ohne to) und nach get to + Grundform."
+          },
+          "examples": [
+            {
+              "es": "I had the mechanic check the brakes.",
+              "tr": {
+                "hu": "Megkértem a szerelőt, nézze meg a féket.",
+                "en": "I had the mechanic check the brakes.",
+                "es": "Le pedí al mecánico que revisara los frenos.",
+                "de": "Ich habe den Mechaniker die Bremsen prüfen lassen."
+              }
+            },
+            {
+              "es": "I got the mechanic to check the brakes.",
+              "tr": {
+                "hu": "Rávettem a szerelőt, hogy nézze meg a féket.",
+                "en": "I got the mechanic to check the brakes.",
+                "es": "Convencí al mecánico de revisar los frenos.",
+                "de": "Ich habe den Mechaniker dazu gebracht, die Bremsen zu prüfen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Igeidők és kérdések",
+        "en": "Tenses and questions",
+        "es": "Tiempos y preguntas",
+        "de": "Zeiten und Fragen"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A have/get minden igeidőben változik, az igenév marad: „I’m having my kitchen painted”, „I’ve had my eyes tested”, „Where do you get your hair cut?”",
+            "en": "Have/get changes with every tense, and the participle stays: “I’m having my kitchen painted”, “I’ve had my eyes tested”, “Where do you get your hair cut?”",
+            "es": "Have/get cambia con cada tiempo, y el participio se queda: «I’m having my kitchen painted», «I’ve had my eyes tested», «Where do you get your hair cut?»",
+            "de": "Have/get ändert sich mit jeder Zeit, das Partizip bleibt: „I’m having my kitchen painted“, „I’ve had my eyes tested“, „Where do you get your hair cut?“"
+          },
+          "examples": [
+            {
+              "es": "I'm having my kitchen painted at the moment.",
+              "tr": {
+                "hu": "Épp most festik a konyhámat.",
+                "en": "I'm having my kitchen painted at the moment.",
+                "es": "Ahorita me están pintando la cocina.",
+                "de": "Gerade lasse ich meine Küche streichen."
+              }
+            },
+            {
+              "es": "Where do you get your hair cut?",
+              "tr": {
+                "hu": "Hol vágatod a hajadat?",
+                "en": "Where do you get your hair cut?",
+                "es": "¿Dónde te cortas el pelo?",
+                "de": "Wo lässt du dir die Haare schneiden?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Az igenév a tárgy után áll, nem előtte: nem „I had repaired my car”, hanem „I had my car repaired”. A „had repaired” past perfect volna: én magam javítottam meg.",
+        "en": "The participle comes after the object, not before it: not “I had repaired my car”, but “I had my car repaired”. “Had repaired” would be the past perfect: I fixed it myself.",
+        "es": "El participio va después del objeto, no antes: no «I had repaired my car», sino «I had my car repaired». «Had repaired» sería el past perfect: yo mismo lo arreglé.",
+        "de": "Das Partizip steht nach dem Objekt, nicht davor: nicht „I had repaired my car“, sondern „I had my car repaired“. „Had repaired“ wäre das Past Perfect: ich habe es selbst repariert."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A make és a let is műveltető ige: „The teacher made us stay” (kötelezte), „She let me use her phone” (megengedte). Utánuk mindig alapige áll, to nélkül.",
+        "en": "Make and let are causative verbs too: “The teacher made us stay” (forced us), “She let me use her phone” (allowed it). After them there is always the base verb, without to.",
+        "es": "Make y let también son verbos causativos: «The teacher made us stay» (nos obligó), «She let me use her phone» (lo permitió). Después de ellos siempre va el verbo base, sin to.",
+        "de": "Make und let sind ebenfalls Kausativ-Verben: „The teacher made us stay“ (zwang uns), „She let me use her phone“ (erlaubte es). Danach steht immer die Grundform, ohne to."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A műveltető szerkezet azt mondja el, hogy valaki más csinál valamit helyettünk. Szerkezete: «have» vagy «get», majd a tárgy, majd az igenév: «I had my car repaired». Ha magad csináltad, egyszerű igét használsz: «I repaired my car». Kellemetlen eseményre ugyanez a szerkezet áll: «He had his wallet stolen». Ha megnevezed, ki végzi el: «I had the mechanic check the brakes» és «I got the mechanic to check the brakes». A «make» és a «let» után is alapige áll.",
+    "en": "The causative says that someone else does something for us. The structure is «have» or «get», then the object, then the participle: «I had my car repaired». If you did it yourself, you use the simple verb: «I repaired my car». For an unpleasant event the same structure is used: «He had his wallet stolen». If you name who does it: «I had the mechanic check the brakes» and «I got the mechanic to check the brakes». After «make» and «let» there is also the base verb.",
+    "es": "La estructura causativa dice que otra persona hace algo por nosotros. Su estructura es «have» o «get», luego el objeto y luego el participio: «I had my car repaired». Si lo hiciste tú mismo, usas el verbo simple: «I repaired my car». Para un suceso desagradable se usa la misma estructura: «He had his wallet stolen». Si nombras quién lo hace: «I had the mechanic check the brakes» y «I got the mechanic to check the brakes». Después de «make» y «let» también va el verbo base.",
+    "de": "Die Kausativ-Konstruktion sagt, dass jemand anderes etwas für uns tut. Die Struktur ist «have» oder «get», dann das Objekt, dann das Partizip: «I had my car repaired». Wenn man es selbst getan hat, nimmt man das einfache Verb: «I repaired my car». Für ein unangenehmes Ereignis steht dieselbe Struktur: «He had his wallet stolen». Wenn man nennt, wer es tut: «I had the mechanic check the brakes» und «I got the mechanic to check the brakes». Nach «make» und «let» steht ebenfalls die Grundform."
+  },
+  "glossary": [
+    {
+      "word": "anna",
+      "gloss": {
+        "hu": "Anna (női név)",
+        "en": "Anna (female first name)",
+        "es": "Anna (nombre de mujer)",
+        "de": "Anna (Frauenname)"
+      }
+    },
+    {
+      "word": "brakes",
+      "gloss": {
+        "hu": "fék",
+        "en": "the part that stops a car",
+        "es": "frenos",
+        "de": "Bremse"
+      }
+    },
+    {
+      "word": "check",
+      "gloss": {
+        "hu": "ellenőriz, megnéz",
+        "en": "to check",
+        "es": "revisar",
+        "de": "prüfen"
+      }
+    },
+    {
+      "word": "checked",
+      "gloss": {
+        "hu": "ellenőrzött (a check múltja)",
+        "en": "past form of check",
+        "es": "revisó (pasado de check)",
+        "de": "prüfte (Past von check)"
+      }
+    },
+    {
+      "word": "checking",
+      "gloss": {
+        "hu": "ellenőriz (ige-ing alak)",
+        "en": "-ing form of check",
+        "es": "revisando (forma -ing de check)",
+        "de": "prüfen (-ing-Form von check)"
+      }
+    },
+    {
+      "word": "cutting",
+      "gloss": {
+        "hu": "vág (ige-ing alak)",
+        "en": "-ing form of cut",
+        "es": "cortando (forma -ing de cut)",
+        "de": "schneiden (-ing-Form von cut)"
+      }
+    },
+    {
+      "word": "getting",
+      "gloss": {
+        "hu": "kap, csináltat (ige-ing alak)",
+        "en": "-ing form of get",
+        "es": "consiguiendo (forma -ing de get)",
+        "de": "bekommen (-ing-Form von get)"
+      }
+    },
+    {
+      "word": "i'll",
+      "gloss": {
+        "hu": "én ...-ok majd (I will)",
+        "en": "I will",
+        "es": "yo voy a (I will)",
+        "de": "ich werde (I will)"
+      }
+    },
+    {
+      "word": "let",
+      "gloss": {
+        "hu": "enged",
+        "en": "to allow",
+        "es": "dejar, permitir",
+        "de": "erlauben"
+      }
+    },
+    {
+      "word": "paint",
+      "gloss": {
+        "hu": "fest, festék",
+        "en": "to paint",
+        "es": "pintar",
+        "de": "streichen"
+      }
+    },
+    {
+      "word": "painted",
+      "gloss": {
+        "hu": "lefestett (a paint múltja)",
+        "en": "past form of paint",
+        "es": "pintado (pasado de paint)",
+        "de": "gestrichen (Past von paint)"
+      }
+    },
+    {
+      "word": "painting",
+      "gloss": {
+        "hu": "fest (ige-ing alak)",
+        "en": "-ing form of paint",
+        "es": "pintando (forma -ing de paint)",
+        "de": "streichen (-ing-Form von paint)"
+      }
+    },
+    {
+      "word": "roof",
+      "gloss": {
+        "hu": "tető",
+        "en": "the top of a house",
+        "es": "techo",
+        "de": "Dach"
+      }
+    },
+    {
+      "word": "salon",
+      "gloss": {
+        "hu": "fodrászat, szalon",
+        "en": "a place for hair",
+        "es": "peluquería, salón",
+        "de": "Salon"
+      }
+    },
+    {
+      "word": "she'll",
+      "gloss": {
+        "hu": "ő majd (she will)",
+        "en": "she will",
+        "es": "ella va a (she will)",
+        "de": "sie wird (she will)"
+      }
+    },
+    {
+      "word": "stay",
+      "gloss": {
+        "hu": "marad",
+        "en": "to stay",
+        "es": "quedarse",
+        "de": "bleiben"
+      }
+    },
+    {
+      "word": "steal",
+      "gloss": {
+        "hu": "lop",
+        "en": "to steal",
+        "es": "robar",
+        "de": "stehlen"
+      }
+    },
+    {
+      "word": "stole",
+      "gloss": {
+        "hu": "ellopott (a steal múltja)",
+        "en": "past form of steal",
+        "es": "robó (pasado de steal)",
+        "de": "stahl (Past von steal)"
+      }
+    },
+    {
+      "word": "stolen",
+      "gloss": {
+        "hu": "ellopott (a steal igenéve)",
+        "en": "participle of steal",
+        "es": "robado (participio de steal)",
+        "de": "gestohlen (Partizip von steal)"
+      }
+    },
+    {
+      "word": "weekly",
+      "gloss": {
+        "hu": "hetente",
+        "en": "every week",
+        "es": "cada semana",
+        "de": "wöchentlich"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "cau-01",
+      "sentence": "I ___ my car repaired last week.",
+      "options": [
+        "did",
+        "had",
+        "made"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Szolgáltatás múlt időben: had + tárgy + igenév.",
+        "en": "A service in the past: had + object + participle.",
+        "es": "Un servicio en el pasado: had + objeto + participio.",
+        "de": "Eine Dienstleistung in der Vergangenheit: had + Objekt + Partizip."
+      },
+      "wrong": {
+        "did": {
+          "hu": "A did my car repaired nem létezik; a műveltető szerkezet have vagy get igével áll.",
+          "en": "“Did my car repaired” does not exist; the causative uses have or get.",
+          "es": "«Did my car repaired» no existe; la estructura causativa usa have o get.",
+          "de": "„Did my car repaired“ gibt es nicht; die Kausativ-Konstruktion nimmt have oder get."
+        },
+        "made": {
+          "hu": "A made my car repaired nem létezik; a make után alapige jönne.",
+          "en": "“Made my car repaired” does not exist; make would take a base verb.",
+          "es": "«Made my car repaired» no existe; make llevaría un verbo base.",
+          "de": "„Made my car repaired“ gibt es nicht; make würde die Grundform nehmen."
+        }
+      },
+      "examples": [
+        "She had her phone fixed.",
+        "We had the house painted."
+      ]
+    },
+    {
+      "id": "cau-02",
+      "sentence": "She is getting her hair ___ tomorrow.",
+      "options": [
+        "to cut",
+        "cutting",
+        "cut"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A get + tárgy után igenév áll: cut (az igenév alakja megegyezik az alapigével).",
+        "en": "After get + object comes the participle: cut (its form equals the base verb).",
+        "es": "Después de get + objeto va el participio: cut (su forma es igual al verbo base).",
+        "de": "Nach get + Objekt steht das Partizip: cut (seine Form entspricht der Grundform)."
+      },
+      "wrong": {
+        "to cut": {
+          "hu": "A get + tárgy + to cut azt jelentené, hogy a haj vág; igenév kell.",
+          "en": "Get + object + to cut would mean the hair cuts; you need the participle.",
+          "es": "Get + objeto + to cut significaría que el pelo corta; hace falta el participio.",
+          "de": "Get + Objekt + to cut würde heißen, dass das Haar schneidet; man braucht das Partizip."
+        },
+        "cutting": {
+          "hu": "A cutting azt jelentené, hogy a haj vág; igenév kell.",
+          "en": "Cutting would mean the hair is cutting; you need the participle.",
+          "es": "Cutting significaría que el pelo está cortando; hace falta el participio.",
+          "de": "Cutting würde heißen, dass das Haar schneidet; man braucht das Partizip."
+        }
+      },
+      "examples": [
+        "He got his shoes cleaned.",
+        "I got my watch fixed."
+      ]
+    },
+    {
+      "id": "cau-03",
+      "sentence": "We're having the kitchen ___ at the moment.",
+      "options": [
+        "painted",
+        "paint",
+        "painting"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Folyamatos szolgáltatás: having + tárgy + igenév.",
+        "en": "A service in progress: having + object + participle.",
+        "es": "Un servicio en marcha: having + objeto + participio.",
+        "de": "Eine laufende Dienstleistung: having + Objekt + Partizip."
+      },
+      "wrong": {
+        "paint": {
+          "hu": "A having the kitchen paint nem helyes; a konyhát festik, ezért igenév kell.",
+          "en": "“Having the kitchen paint” is not correct; the kitchen is painted, so you need the participle.",
+          "es": "«Having the kitchen paint» no es correcto; la cocina es pintada, por eso hace falta el participio.",
+          "de": "„Having the kitchen paint“ ist nicht korrekt; die Küche wird gestrichen, deshalb braucht man das Partizip."
+        },
+        "painting": {
+          "hu": "A having the kitchen painting azt jelentené, hogy a konyha fest; igenév kell.",
+          "en": "Having the kitchen painting would mean the kitchen paints; you need the participle.",
+          "es": "Having the kitchen painting significaría que la cocina pinta; hace falta el participio.",
+          "de": "Having the kitchen painting würde heißen, dass die Küche streicht; man braucht das Partizip."
+        }
+      },
+      "examples": [
+        "I am having my hair cut.",
+        "He is having his car washed."
+      ]
+    },
+    {
+      "id": "cau-04",
+      "sentence": "He had his wallet ___ on the bus.",
+      "options": [
+        "stole",
+        "stolen",
+        "steal"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Kellemetlen esemény: had + tárgy + igenév (stolen).",
+        "en": "An unpleasant event: had + object + participle (stolen).",
+        "es": "Un suceso desagradable: had + objeto + participio (stolen).",
+        "de": "Ein unangenehmes Ereignis: had + Objekt + Partizip (stolen)."
+      },
+      "wrong": {
+        "stole": {
+          "hu": "A stole egyszerű múlt, nem igenév; a had his wallet után igenév kell (stolen).",
+          "en": "Stole is the simple past, not the participle; after had his wallet you need the participle (stolen).",
+          "es": "Stole es el pasado simple, no el participio; después de had his wallet hace falta el participio (stolen).",
+          "de": "Stole ist das Past Simple, nicht das Partizip; nach had his wallet braucht man das Partizip (stolen)."
+        },
+        "steal": {
+          "hu": "A steal alapige; ha a személy nem maga cselekszik, igenév kell (stolen).",
+          "en": "Steal is the base verb; if the person does not act, you need the participle (stolen).",
+          "es": "Steal es el verbo base; si la persona no actúa, hace falta el participio (stolen).",
+          "de": "Steal ist die Grundform; wenn die Person nicht handelt, braucht man das Partizip (stolen)."
+        }
+      },
+      "examples": [
+        "She had her bag stolen.",
+        "They had their car broken into."
+      ]
+    },
+    {
+      "id": "cau-05",
+      "sentence": "I need to ___ my eyes tested.",
+      "options": [
+        "make",
+        "do",
+        "have"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Szolgáltatás: have + tárgy + igenév.",
+        "en": "A service: have + object + participle.",
+        "es": "Un servicio: have + objeto + participio.",
+        "de": "Eine Dienstleistung: have + Objekt + Partizip."
+      },
+      "wrong": {
+        "make": {
+          "hu": "A make my eyes tested nem helyes; a make után alapige jönne.",
+          "en": "“Make my eyes tested” is not correct; make would take a base verb.",
+          "es": "«Make my eyes tested» no es correcto; make llevaría un verbo base.",
+          "de": "„Make my eyes tested“ ist nicht korrekt; make würde die Grundform nehmen."
+        },
+        "do": {
+          "hu": "A do my eyes tested nem létezik; a szolgáltatáshoz have vagy get kell.",
+          "en": "“Do my eyes tested” does not exist; a service needs have or get.",
+          "es": "«Do my eyes tested» no existe; un servicio necesita have o get.",
+          "de": "„Do my eyes tested“ gibt es nicht; eine Dienstleistung braucht have oder get."
+        }
+      },
+      "examples": [
+        "You should have it checked.",
+        "I want to have it fixed."
+      ]
+    },
+    {
+      "id": "cau-06",
+      "sentence": "I had the mechanic ___ the brakes.",
+      "options": [
+        "check",
+        "to check",
+        "checked"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A have + személy után alapige áll, to nélkül: had the mechanic check.",
+        "en": "After have + person comes the base verb, without to: had the mechanic check.",
+        "es": "Después de have + persona va el verbo base, sin to: had the mechanic check.",
+        "de": "Nach have + Person steht die Grundform ohne to: had the mechanic check."
+      },
+      "wrong": {
+        "to check": {
+          "hu": "A have után nem áll to; a to a get mellett áll (got the mechanic to check).",
+          "en": "After have there is no to; to goes with get (got the mechanic to check).",
+          "es": "Después de have no va to; to va con get (got the mechanic to check).",
+          "de": "Nach have steht kein to; to gehört zu get (got the mechanic to check)."
+        },
+        "checked": {
+          "hu": "A had the mechanic checked past perfect volna; személy után alapige kell.",
+          "en": "Had the mechanic checked would be the past perfect; after a person you need the base verb.",
+          "es": "Had the mechanic checked sería el past perfect; después de una persona hace falta el verbo base.",
+          "de": "Had the mechanic checked wäre das Past Perfect; nach einer Person braucht man die Grundform."
+        }
+      },
+      "examples": [
+        "I had him call me.",
+        "She had them wait."
+      ]
+    },
+    {
+      "id": "cau-07",
+      "sentence": "I got the mechanic ___ the brakes.",
+      "options": [
+        "check",
+        "to check",
+        "checking"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A get + személy után to + alapige áll: got the mechanic to check.",
+        "en": "After get + person comes to + base verb: got the mechanic to check.",
+        "es": "Después de get + persona va to + verbo base: got the mechanic to check.",
+        "de": "Nach get + Person steht to + Grundform: got the mechanic to check."
+      },
+      "wrong": {
+        "check": {
+          "hu": "A get után a személy mellett to kell; to nélküli alapige a have mellett áll.",
+          "en": "After get with a person you need to; the base verb without to goes with have.",
+          "es": "Después de get con una persona hace falta to; el verbo base sin to va con have.",
+          "de": "Nach get mit einer Person braucht man to; die Grundform ohne to gehört zu have."
+        },
+        "checking": {
+          "hu": "A get után a személy mellett to + alapige áll, nem -ing alak.",
+          "en": "After get with a person comes to + base verb, not an -ing form.",
+          "es": "Después de get con una persona va to + verbo base, no una forma -ing.",
+          "de": "Nach get mit einer Person steht to + Grundform, nicht eine -ing-Form."
+        }
+      },
+      "examples": [
+        "I got him to call.",
+        "She got them to wait."
+      ]
+    },
+    {
+      "id": "cau-08",
+      "sentence": "Where do you ___ your hair cut?",
+      "options": [
+        "make",
+        "do",
+        "get"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Szolgáltatás kérdésben: get + tárgy + igenév.",
+        "en": "A service in a question: get + object + participle.",
+        "es": "Un servicio en una pregunta: get + objeto + participio.",
+        "de": "Eine Dienstleistung in einer Frage: get + Objekt + Partizip."
+      },
+      "wrong": {
+        "make": {
+          "hu": "A make your hair cut nem helyes; a make után alapige jönne.",
+          "en": "“Make your hair cut” is not correct; make would take a base verb.",
+          "es": "«Make your hair cut» no es correcto; make llevaría un verbo base.",
+          "de": "„Make your hair cut“ ist nicht korrekt; make würde die Grundform nehmen."
+        },
+        "do": {
+          "hu": "A do your hair cut nem létezik; a szolgáltatáshoz have vagy get kell.",
+          "en": "“Do your hair cut” does not exist; a service needs have or get.",
+          "es": "«Do your hair cut» no existe; un servicio necesita have o get.",
+          "de": "„Do your hair cut“ gibt es nicht; eine Dienstleistung braucht have oder get."
+        }
+      },
+      "examples": [
+        "Where do you get your car washed?",
+        "Where did she get it fixed?"
+      ]
+    },
+    {
+      "id": "cau-09",
+      "sentence": "Did you cut your hair? No, I ___ it cut.",
+      "options": [
+        "had",
+        "did",
+        "was"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Más vágta le: had + tárgy + igenév.",
+        "en": "Someone else cut it: had + object + participle.",
+        "es": "Otra persona lo cortó: had + objeto + participio.",
+        "de": "Jemand anderes hat sie geschnitten: had + Objekt + Partizip."
+      },
+      "wrong": {
+        "did": {
+          "hu": "A did it cut nem létezik; a műveltető szerkezetben have vagy get áll.",
+          "en": "“Did it cut” does not exist; the causative uses have or get.",
+          "es": "«Did it cut» no existe; la estructura causativa usa have o get.",
+          "de": "„Did it cut“ gibt es nicht; die Kausativ-Konstruktion nimmt have oder get."
+        },
+        "was": {
+          "hu": "A was it cut nem helyes sorrend; a had it cut szerkezet kell.",
+          "en": "“Was it cut” is not the right order here; you need the structure had it cut.",
+          "es": "«Was it cut» no es el orden correcto aquí; hace falta la estructura had it cut.",
+          "de": "„Was it cut“ ist hier nicht die richtige Reihenfolge; man braucht die Struktur had it cut."
+        }
+      },
+      "examples": [
+        "I had it fixed.",
+        "She had it painted."
+      ]
+    },
+    {
+      "id": "cau-10",
+      "sentence": "He had his car ___ in the storm.",
+      "options": [
+        "damage",
+        "damaged",
+        "to damage"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Kellemetlen esemény: had + tárgy + igenév (damaged).",
+        "en": "An unpleasant event: had + object + participle (damaged).",
+        "es": "Un suceso desagradable: had + objeto + participio (damaged).",
+        "de": "Ein unangenehmes Ereignis: had + Objekt + Partizip (damaged)."
+      },
+      "wrong": {
+        "damage": {
+          "hu": "A damage alapige; a tárgy után igenév kell (damaged).",
+          "en": "Damage is the base verb; after the object you need the participle (damaged).",
+          "es": "Damage es el verbo base; después del objeto hace falta el participio (damaged).",
+          "de": "Damage ist die Grundform; nach dem Objekt braucht man das Partizip (damaged)."
+        },
+        "to damage": {
+          "hu": "A had után nem áll to + ige; igenév kell (damaged).",
+          "en": "After had there is no to + verb; you need the participle (damaged).",
+          "es": "Después de had no va to + verbo; hace falta el participio (damaged).",
+          "de": "Nach had steht kein to + Verb; man braucht das Partizip (damaged)."
+        }
+      },
+      "examples": [
+        "She had her bike damaged.",
+        "They had a window broken."
+      ]
+    },
+    {
+      "id": "cau-11",
+      "sentence": "I'll have the documents ___ to you tomorrow.",
+      "options": [
+        "send",
+        "sending",
+        "sent"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Tárgy + igenév: a dokumentumokat elküldik.",
+        "en": "Object + participle: the documents will be sent.",
+        "es": "Objeto + participio: los documentos serán enviados.",
+        "de": "Objekt + Partizip: die Dokumente werden geschickt."
+      },
+      "wrong": {
+        "send": {
+          "hu": "A have the documents send azt jelentené, hogy a dokumentumok küldenek; igenév kell.",
+          "en": "Have the documents send would mean the documents send; you need the participle.",
+          "es": "Have the documents send significaría que los documentos envían; hace falta el participio.",
+          "de": "Have the documents send würde heißen, dass die Dokumente senden; man braucht das Partizip."
+        },
+        "sending": {
+          "hu": "A have the documents sending azt jelentené, hogy a dokumentumok küldenek; igenév kell.",
+          "en": "Have the documents sending would mean the documents are sending; you need the participle.",
+          "es": "Have the documents sending significaría que los documentos están enviando; hace falta el participio.",
+          "de": "Have the documents sending würde heißen, dass die Dokumente senden; man braucht das Partizip."
+        }
+      },
+      "examples": [
+        "I'll have it delivered.",
+        "She'll have it checked."
+      ]
+    },
+    {
+      "id": "cau-12",
+      "sentence": "He got his brother ___ him with the move.",
+      "options": [
+        "to help",
+        "help",
+        "helped"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A get + személy után to + alapige áll: got his brother to help.",
+        "en": "After get + person comes to + base verb: got his brother to help.",
+        "es": "Después de get + persona va to + verbo base: got his brother to help.",
+        "de": "Nach get + Person steht to + Grundform: got his brother to help."
+      },
+      "wrong": {
+        "help": {
+          "hu": "A get után a személy mellett to kell.",
+          "en": "After get with a person you need to.",
+          "es": "Después de get con una persona hace falta to.",
+          "de": "Nach get mit einer Person braucht man to."
+        },
+        "helped": {
+          "hu": "A got his brother helped azt jelentené, hogy a testvérét megsegítették; személy után to + alapige kell.",
+          "en": "Got his brother helped would mean his brother was helped; after a person you need to + base verb.",
+          "es": "Got his brother helped significaría que ayudaron a su hermano; después de una persona hace falta to + verbo base.",
+          "de": "Got his brother helped würde heißen, dass seinem Bruder geholfen wurde; nach einer Person braucht man to + Grundform."
+        }
+      },
+      "examples": [
+        "I got her to come.",
+        "She got him to stay."
+      ]
+    },
+    {
+      "id": "cau-13",
+      "sentence": "Have you ever ___ your eyes tested?",
+      "options": [
+        "have",
+        "had",
+        "making"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Present perfect szolgáltatás: have you had + tárgy + igenév.",
+        "en": "A service in the present perfect: have you had + object + participle.",
+        "es": "Un servicio en presente perfecto: have you had + objeto + participio.",
+        "de": "Eine Dienstleistung im Present Perfect: have you had + Objekt + Partizip."
+      },
+      "wrong": {
+        "have": {
+          "hu": "A have you ever have nem helyes; a present perfect után a have igenéve (had) kell.",
+          "en": "“Have you ever have” is not correct; after the present perfect you need the participle of have (had).",
+          "es": "«Have you ever have» no es correcto; después del presente perfecto hace falta el participio de have (had).",
+          "de": "„Have you ever have“ ist nicht korrekt; nach dem Present Perfect braucht man das Partizip von have (had)."
+        },
+        "making": {
+          "hu": "A have you ever making nem helyes; had kell.",
+          "en": "“Have you ever making” is not correct; you need had.",
+          "es": "«Have you ever making» no es correcto; hace falta had.",
+          "de": "„Have you ever making“ ist nicht korrekt; man braucht had."
+        }
+      },
+      "examples": [
+        "I have had it repaired.",
+        "She has had it cut."
+      ]
+    },
+    {
+      "id": "cau-14",
+      "sentence": "The boss had everyone ___ the form.",
+      "options": [
+        "to sign",
+        "signed",
+        "sign"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A have + személy után alapige áll, to nélkül: had everyone sign.",
+        "en": "After have + person comes the base verb, without to: had everyone sign.",
+        "es": "Después de have + persona va el verbo base, sin to: had everyone sign.",
+        "de": "Nach have + Person steht die Grundform ohne to: had everyone sign."
+      },
+      "wrong": {
+        "to sign": {
+          "hu": "A have után nem áll to; a to a get mellett áll.",
+          "en": "After have there is no to; to goes with get.",
+          "es": "Después de have no va to; to va con get.",
+          "de": "Nach have steht kein to; to gehört zu get."
+        },
+        "signed": {
+          "hu": "A had everyone signed past perfect volna; személy után alapige kell.",
+          "en": "Had everyone signed would be the past perfect; after a person you need the base verb.",
+          "es": "Had everyone signed sería el past perfect; después de una persona hace falta el verbo base.",
+          "de": "Had everyone signed wäre das Past Perfect; nach einer Person braucht man die Grundform."
+        }
+      },
+      "examples": [
+        "I had him wait.",
+        "She had them leave."
+      ]
+    },
+    {
+      "id": "cau-15",
+      "sentence": "She got her son ___ his room.",
+      "options": [
+        "to clean",
+        "clean",
+        "cleaning"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A get + személy után to + alapige áll: got her son to clean.",
+        "en": "After get + person comes to + base verb: got her son to clean.",
+        "es": "Después de get + persona va to + verbo base: got her son to clean.",
+        "de": "Nach get + Person steht to + Grundform: got her son to clean."
+      },
+      "wrong": {
+        "clean": {
+          "hu": "A get után a személy mellett to kell.",
+          "en": "After get with a person you need to.",
+          "es": "Después de get con una persona hace falta to.",
+          "de": "Nach get mit einer Person braucht man to."
+        },
+        "cleaning": {
+          "hu": "A get után a személy mellett to + alapige áll, nem -ing alak.",
+          "en": "After get with a person comes to + base verb, not an -ing form.",
+          "es": "Después de get con una persona va to + verbo base, no una forma -ing.",
+          "de": "Nach get mit einer Person steht to + Grundform, nicht eine -ing-Form."
+        }
+      },
+      "examples": [
+        "He got her to sing.",
+        "I got them to leave."
+      ]
+    },
+    {
+      "id": "cau-16",
+      "sentence": "I'm going to ___ a new roof put on the house.",
+      "options": [
+        "do",
+        "have",
+        "let"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Szolgáltatás: have + tárgy + igenév (put).",
+        "en": "A service: have + object + participle (put).",
+        "es": "Un servicio: have + objeto + participio (put).",
+        "de": "Eine Dienstleistung: have + Objekt + Partizip (put)."
+      },
+      "wrong": {
+        "do": {
+          "hu": "A do a new roof put nem létezik; a szolgáltatáshoz have vagy get kell.",
+          "en": "“Do a new roof put” does not exist; a service needs have or get.",
+          "es": "«Do a new roof put» no existe; un servicio necesita have o get.",
+          "de": "„Do a new roof put“ gibt es nicht; eine Dienstleistung braucht have oder get."
+        },
+        "let": {
+          "hu": "A let után alapige jönne; itt a tető igenévvel kapcsolódik, ezért have kell.",
+          "en": "Let would take a base verb; here the roof goes with a participle, so you need have.",
+          "es": "Let llevaría un verbo base; aquí el techo va con un participio, por eso hace falta have.",
+          "de": "Let würde die Grundform nehmen; hier steht das Dach mit einem Partizip, deshalb braucht man have."
+        }
+      },
+      "examples": [
+        "I want to have it painted.",
+        "We will have it fixed."
+      ]
+    },
+    {
+      "id": "cau-17",
+      "sentence": "Anna ___ her hair cut every month at the same salon.",
+      "options": [
+        "makes",
+        "does",
+        "has"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Szokásos szolgáltatás: has + tárgy + igenév.",
+        "en": "A regular service: has + object + participle.",
+        "es": "Un servicio habitual: has + objeto + participio.",
+        "de": "Eine regelmäßige Dienstleistung: has + Objekt + Partizip."
+      },
+      "wrong": {
+        "makes": {
+          "hu": "A makes her hair cut nem helyes; a make után alapige jönne.",
+          "en": "“Makes her hair cut” is not correct; make would take a base verb.",
+          "es": "«Makes her hair cut» no es correcto; make llevaría un verbo base.",
+          "de": "„Makes her hair cut“ ist nicht korrekt; make würde die Grundform nehmen."
+        },
+        "does": {
+          "hu": "A does her hair cut nem létezik; a szolgáltatáshoz has vagy gets kell.",
+          "en": "“Does her hair cut” does not exist; a service needs has or gets.",
+          "es": "«Does her hair cut» no existe; un servicio necesita has o gets.",
+          "de": "„Does her hair cut“ gibt es nicht; eine Dienstleistung braucht has oder gets."
+        }
+      },
+      "examples": [
+        "He has his car washed.",
+        "She has it done weekly."
+      ]
+    },
+    {
+      "id": "cau-18",
+      "kind": "form",
+      "verb": "forma",
+      "person": "mandar hacer algo: have + objeto + ...",
+      "answer": "past participle",
+      "accept": [
+        "participle"
+      ],
+      "table": "cau-forms"
+    },
+    {
+      "id": "cau-19",
+      "kind": "form",
+      "verb": "forma",
+      "person": "la palabra informal parecida a have",
+      "answer": "get",
+      "table": "cau-forms"
+    },
+    {
+      "id": "cau-20",
+      "kind": "form",
+      "verb": "forma",
+      "person": "have + persona + ...",
+      "answer": "base verb",
+      "accept": [
+        "bare infinitive",
+        "infinitive without to"
+      ],
+      "table": "cau-forms"
+    },
+    {
+      "id": "cau-21",
+      "kind": "form",
+      "verb": "forma",
+      "person": "get + persona + ...",
+      "answer": "to-infinitive",
+      "accept": [
+        "to infinitive",
+        "infinitive with to"
+      ],
+      "table": "cau-forms"
+    },
+    {
+      "id": "cau-22",
+      "kind": "form",
+      "verb": "forma",
+      "person": "un mal suceso (me robaron el celular)",
+      "answer": "had",
+      "table": "cau-forms"
+    },
+    {
+      "id": "cau-23",
+      "kind": "form",
+      "verb": "forma",
+      "person": "quien hace el trabajo, si se menciona",
+      "answer": "by",
+      "table": "cau-forms"
+    },
+    {
+      "kind": "why",
+      "id": "cau-24",
+      "es": "I had my car repaired.",
+      "target": "had my car repaired",
+      "tr": {
+        "hu": "Megjavíttattam az autómat.",
+        "en": "I had my car repaired.",
+        "es": "Mandé arreglar mi carro.",
+        "de": "Ich habe mein Auto reparieren lassen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "magam javítottam meg",
+            "en": "I repaired it myself",
+            "es": "yo mismo lo arreglé",
+            "de": "ich habe es selbst repariert"
+          },
+          "wrong": {
+            "hu": "Ha magad csináltad, egyszerű igét használsz: I repaired my car.",
+            "en": "If you did it yourself, you use the simple verb: I repaired my car.",
+            "es": "Si lo hiciste tú mismo, usas el verbo simple: I repaired my car.",
+            "de": "Wenn man es selbst getan hat, nimmt man das einfache Verb: I repaired my car."
+          }
+        },
+        {
+          "text": {
+            "hu": "valaki más javította meg nekem: szolgáltatás",
+            "en": "someone else repaired it for me: a service",
+            "es": "otra persona lo arregló por mí: un servicio",
+            "de": "jemand anderes hat es für mich repariert: eine Dienstleistung"
+          }
+        },
+        {
+          "text": {
+            "hu": "az autó magától megjavult",
+            "en": "the car repaired itself",
+            "es": "el carro se arregló solo",
+            "de": "das Auto hat sich selbst repariert"
+          },
+          "wrong": {
+            "hu": "A had my car repaired nem mondja, hogy magától javult meg; valaki más végezte el.",
+            "en": "Had my car repaired does not say it repaired itself; someone else did it.",
+            "es": "Had my car repaired no dice que se arregló solo; otra persona lo hizo.",
+            "de": "Had my car repaired sagt nicht, dass es sich selbst repariert hat; jemand anderes tat es."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "cau-25",
+      "es": "He had his wallet stolen.",
+      "target": "had his wallet stolen",
+      "tr": {
+        "hu": "Ellopták a pénztárcáját.",
+        "en": "He had his wallet stolen.",
+        "es": "Le robaron la cartera.",
+        "de": "Ihm wurde die Geldbörse gestohlen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "megkért valakit, hogy lopja el",
+            "en": "he asked someone to steal it",
+            "es": "le pidió a alguien que la robara",
+            "de": "er bat jemanden, sie zu stehlen"
+          },
+          "wrong": {
+            "hu": "Itt nem kérés van; a szerkezet kellemetlen eseményt fejez ki, ami vele történt.",
+            "en": "There is no request here; the structure expresses an unpleasant event that happened to him.",
+            "es": "Aquí no hay petición; la estructura expresa un suceso desagradable que le pasó.",
+            "de": "Hier gibt es keine Bitte; die Struktur drückt ein unangenehmes Ereignis aus, das ihm geschah."
+          }
+        },
+        {
+          "text": {
+            "hu": "kellemetlen esemény, ami vele történt",
+            "en": "an unpleasant event that happened to him",
+            "es": "un suceso desagradable que le pasó",
+            "de": "ein unangenehmes Ereignis, das ihm geschah"
+          }
+        },
+        {
+          "text": {
+            "hu": "ő lopta el",
+            "en": "he stole it",
+            "es": "él la robó",
+            "de": "er hat sie gestohlen"
+          },
+          "wrong": {
+            "hu": "A had his wallet stolen nem azt jelenti, hogy ő lopott; őt lopták meg.",
+            "en": "Had his wallet stolen does not mean he stole; he was robbed.",
+            "es": "Had his wallet stolen no significa que él robó; a él le robaron.",
+            "de": "Had his wallet stolen heißt nicht, dass er gestohlen hat; er wurde bestohlen."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "cau-26",
+      "es": "I had the mechanic check the brakes.",
+      "target": "check",
+      "tr": {
+        "hu": "Megnéztettem a szerelővel a féket.",
+        "en": "I had the mechanic check the brakes.",
+        "es": "Le pedí al mecánico que revisara los frenos.",
+        "de": "Ich habe den Mechaniker die Bremsen prüfen lassen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "have + személy + to + alapige",
+            "en": "have + person + to + base verb",
+            "es": "have + persona + to + verbo base",
+            "de": "have + Person + to + Grundform"
+          },
+          "wrong": {
+            "hu": "A have után nem áll to; a to a get mellett áll.",
+            "en": "After have there is no to; to goes with get.",
+            "es": "Después de have no va to; to va con get.",
+            "de": "Nach have steht kein to; to gehört zu get."
+          }
+        },
+        {
+          "text": {
+            "hu": "have + személy + alapige, to nélkül",
+            "en": "have + person + base verb, without to",
+            "es": "have + persona + verbo base, sin to",
+            "de": "have + Person + Grundform, ohne to"
+          }
+        },
+        {
+          "text": {
+            "hu": "have + személy + -ing",
+            "en": "have + person + -ing",
+            "es": "have + persona + -ing",
+            "de": "have + Person + -ing"
+          },
+          "wrong": {
+            "hu": "A mechanic mellé nem -ing alak áll, hanem alapige.",
+            "en": "After the mechanic there is no -ing form but the base verb.",
+            "es": "Después de the mechanic no va una forma -ing sino el verbo base.",
+            "de": "Nach the mechanic steht keine -ing-Form, sondern die Grundform."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "cau-27",
+      "es": "I got the mechanic to check the brakes.",
+      "target": "to check",
+      "tr": {
+        "hu": "Rávettem a szerelőt, hogy nézze meg a féket.",
+        "en": "I got the mechanic to check the brakes.",
+        "es": "Convencí al mecánico de revisar los frenos.",
+        "de": "Ich habe den Mechaniker dazu gebracht, die Bremsen zu prüfen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "get + személy + alapige",
+            "en": "get + person + base verb",
+            "es": "get + persona + verbo base",
+            "de": "get + Person + Grundform"
+          },
+          "wrong": {
+            "hu": "A get után a személy mellett to kell; a to nélküli alapige a have mellett áll.",
+            "en": "After get with a person you need to; the base verb without to goes with have.",
+            "es": "Después de get con una persona hace falta to; el verbo base sin to va con have.",
+            "de": "Nach get mit einer Person braucht man to; die Grundform ohne to gehört zu have."
+          }
+        },
+        {
+          "text": {
+            "hu": "get + személy + igenév",
+            "en": "get + person + participle",
+            "es": "get + persona + participio",
+            "de": "get + Person + Partizip"
+          },
+          "wrong": {
+            "hu": "Személy után to + alapige áll; az igenév a tárgy dolgokhoz tartozik.",
+            "en": "After a person comes to + base verb; the participle goes with things.",
+            "es": "Después de una persona va to + verbo base; el participio va con cosas.",
+            "de": "Nach einer Person steht to + Grundform; das Partizip gehört zu Sachen."
+          }
+        },
+        {
+          "text": {
+            "hu": "get + személy + to + alapige",
+            "en": "get + person + to + base verb",
+            "es": "get + persona + to + verbo base",
+            "de": "get + Person + to + Grundform"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "cau-28",
+      "es": "I'm having my kitchen painted.",
+      "target": "having",
+      "tr": {
+        "hu": "Épp most festik a konyhámat.",
+        "en": "I'm having my kitchen painted.",
+        "es": "Me están pintando la cocina.",
+        "de": "Ich lasse gerade meine Küche streichen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "magam festem a konyhát",
+            "en": "I am painting the kitchen myself",
+            "es": "yo estoy pintando la cocina",
+            "de": "ich streiche die Küche selbst"
+          },
+          "wrong": {
+            "hu": "Ha magad festenél, I’m painting my kitchen lenne.",
+            "en": "If you were painting it yourself, it would be I’m painting my kitchen.",
+            "es": "Si la pintaras tú mismo, sería I’m painting my kitchen.",
+            "de": "Wenn man selbst streicht, wäre es I’m painting my kitchen."
+          }
+        },
+        {
+          "text": {
+            "hu": "folyamatos szolgáltatás: most festik valaki mással",
+            "en": "a service in progress: someone else is painting it now",
+            "es": "un servicio en marcha: otra persona la está pintando ahora",
+            "de": "eine laufende Dienstleistung: jemand anderes streicht sie gerade"
+          }
+        },
+        {
+          "text": {
+            "hu": "múltbeli szokás",
+            "en": "a habit in the past",
+            "es": "un hábito en el pasado",
+            "de": "eine Gewohnheit in der Vergangenheit"
+          },
+          "wrong": {
+            "hu": "Az I’m having jelen folyamatos; nem múltbeli szokás.",
+            "en": "I’m having is the present continuous; it is not a past habit.",
+            "es": "I’m having es el presente continuo; no es un hábito pasado.",
+            "de": "I’m having ist das Present Continuous; keine vergangene Gewohnheit."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "cau-29",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "Mandé arreglar mi carro.",
+          "en": "I had my car repaired."
+        },
+        {
+          "es": "Le cortaron el pelo en la peluquería.",
+          "en": "She got her hair cut at the salon."
+        },
+        {
+          "es": "Le robaron la cartera en el camión.",
+          "en": "He had his wallet stolen on the bus."
+        },
+        {
+          "es": "Le pedí al mecánico que revisara los frenos.",
+          "en": "I had the mechanic check the brakes."
+        },
+        {
+          "es": "Convencí al mecánico de revisar los frenos.",
+          "en": "I got the mechanic to check the brakes."
+        },
+        {
+          "es": "Me están pintando la cocina.",
+          "en": "I'm having my kitchen painted."
+        }
+      ]
+    },
+    {
+      "id": "cau-30",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "mandar hacer algo",
+          "en": "have something done"
+        },
+        {
+          "es": "conseguir que alguien lo haga",
+          "en": "get someone to do it"
+        },
+        {
+          "es": "me robaron el celular",
+          "en": "I had my phone stolen"
+        },
+        {
+          "es": "me cortaron el pelo",
+          "en": "I had my hair cut"
+        },
+        {
+          "es": "me están pintando la casa",
+          "en": "I am having my house painted"
+        },
+        {
+          "es": "¿dónde te cortan el pelo?",
+          "en": "Where do you get your hair cut?"
+        }
+      ]
+    }
+  ]
+}
