@@ -137,11 +137,11 @@ for (const c of cards) {
 }
 
 // ---------------------------------------------------------------- R11-R14 több jelentésű szavak (hint, perjeles válasz)
-// R11 bővítve: az `en` vessző/pontosvessző szerinti alternatívái is ütköznek (PLAN-words-open-2 3. kör); a 882 régi kártya egymás
+// R11 bővítve: az `en` vessző/pontosvessző szerinti alternatívái, a zárójeles minősítő elhagyásával is ütköznek (PLAN-words-open-2); a 882 régi kártya egymás
 // közti ütközése 50 fölött figyelmeztetés, nem hiba.
 checkMultiMeaning({
   cards, qKey: 'en', aKey: 'es', hintKey: 'hint_en', articles: ['a', 'an', 'the'], ignore: ['to'], tag, fail,
-  splitAlternatives: true, legacyMaxOrder: 882, legacyWarnLimit: 50, warn,
+  splitAlternatives: true, stripQualifiers: true, legacyMaxOrder: 882, legacyWarnLimit: 50, warn,
 });
 
 // ---------------------------------------------------------------- R3-R9 (csak ha nem --list-only)

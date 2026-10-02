@@ -8,6 +8,8 @@
 //        splitAlternatives: a kérdést vesszőnél/pontosvesszőnél alternatívákra bontja; ha két kártya azonos alternatívát ad
 //        ("to try, to taste" és "to try, to attempt"), mindkettőn kötelező a hint (vagy összevonás). A régi kártyák (order <=
 //        legacyMaxOrder) egymás közti ütközéseit legfeljebb legacyWarnLimit darabig hibának, fölötte figyelmeztetésnek vesszük.
+//        stripQualifiers: az alternatívák összevetésekor a zárójeles minősítőt ("door lock (MX)" > "door lock") elhagyja, hogy
+//        a minősítő ne kerülje ki a kaput; az azonos alapszavú kártyáknak hint_en vagy összevonás kell.
 //   R14  a perjeles válaszban minden alternatíva nem üres, nincs ismétlés, az elválasztó pontosan " / "
 // A normalizálás: kisbetű, szóköz-összevonás, trim, vezető névelő nélkül (S3).
 
@@ -22,7 +24,7 @@ const IRREGULAR = {
 
 export function checkMultiMeaning({
   cards, qKey, aKey, hintKey, articles, ignore = [], tag, fail,
-  splitAlternatives = false, legacyMaxOrder = 0, legacyWarnLimit = 50, warn = () => {},
+  splitAlternatives = false, stripQualifiers = false, legacyMaxOrder = 0, legacyWarnLimit = 50, warn = () => {},
 }) {
   const norm = (q) => {
     const s = String(q ?? '').toLowerCase().replace(/[¿?¡!.]/g, '').replace(/\s+/g, ' ').trim();
@@ -38,7 +40,8 @@ export function checkMultiMeaning({
 
   // alternatíva-szintű átfedés (splitAlternatives): alt -> kártyák
   const altCards = new Map();
-  const altsOf = (c) => (splitAlternatives ? String(c[qKey] ?? '').split(/[,;]/).map(norm).filter(Boolean) : []);
+  const unqual = (s) => (stripQualifiers ? s.replace(/\([^)]*\)/g, ' ') : s);
+  const altsOf = (c) => (splitAlternatives ? unqual(String(c[qKey] ?? '')).split(/[,;]/).map(norm).filter(Boolean) : []);
   if (splitAlternatives) {
     for (const c of cards) for (const a of new Set(altsOf(c))) altCards.set(a, [...(altCards.get(a) || []), c]);
   }
