@@ -253,6 +253,14 @@
           "tienen que",
           "deben"
         ]
+      ],
+      "enPrompt": [
+        ["I can", "I want to", "I have to", "I must"],
+        ["you can", "you want to", "you have to", "you must"],
+        ["she can", "she wants to", "she has to", "she must"],
+        ["we can", "we want to", "we have to", "we must"],
+        ["you all can", "you all want to", "you all have to", "you all must"],
+        ["they can", "they want to", "they have to", "they must"]
       ]
     },
     {

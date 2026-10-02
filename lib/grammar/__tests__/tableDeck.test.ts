@@ -77,9 +77,11 @@ describe('tableCellsForLesson', () => {
     expect(cells.find((c) => c.person === 'nosotros' && c.verb === 'escribir')?.enPrompt).toBe('we wrote');
   });
 
-  it('a table without enPrompt leaves the cell field undefined (ser-estar)', () => {
-    const lesson = lessonFor('es', 'ser-estar')!;
+  // FB463: ser-estar has an enPrompt now; posesivos (a reference table) is the one without.
+  it('a table without enPrompt leaves the cell field undefined (posesivos)', () => {
+    const lesson = lessonFor('es', 'posesivos')!;
     const cells = tableCellsForLesson(lesson);
+    expect(cells.length).toBeGreaterThan(0);
     expect(cells.every((c) => c.enPrompt === undefined)).toBe(true);
   });
 
