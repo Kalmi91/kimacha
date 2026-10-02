@@ -27,6 +27,7 @@ import {
 import { TENSE_NAMES, type FormItem, type LessonBlock, type MatchItem, type TenseId, type TransformItem, type WhyItem } from '@/lib/grammar/lessonTypes';
 import { markTokens } from '@/lib/games/grammarMark';
 import { speak } from '@/lib/speech';
+import SpeakButton from '@/components/SpeakButton';
 import { speechLang } from '@/lib/languages';
 import { buildGrammarRound, grammarRoundItemKind, isChoiceRoundItem, wrongExplanation } from '@/lib/games/grammarChoice';
 import { pickTransformRound, TRANSFORM_ROUND_SIZE } from '@/lib/grammar/transformRounds';
@@ -337,6 +338,9 @@ function FormDrillItem({
     const ok = [item.answer, ...(item.accept ?? [])].some((c) => value.trim().toLowerCase() === c.trim().toLowerCase());
     setCorrect(ok);
     setChecked(true);
+    // FB462 (PLAN-fb1002b 4. lépés): a helyes alak a Check után elhangzik, jó és rossz válasz után is, mint a
+    // szókártyán (FB412), a 🔊 ugyanaz a SpeakButton, mint ott; az átírás-tétel eddig is így tett.
+    speak(item.answer, speechLang(learnedLang));
   };
 
   // FB461/FB464: a Check (és utána a Next) a billentyűzet fölé dokkolt sáv, ahogy a szókártyán (DockSlot).
@@ -389,6 +393,7 @@ function FormDrillItem({
             <BrutalFeedback g={g} correct={correct} title={correct ? s.games.correctFeedback : s.games.wrongFeedback}>
               {!correct ? <AnswerCompare typed={value} correct={item.answer} g={g} onFill /> : null}
             </BrutalFeedback>
+            <SpeakButton testID="form-speak" onPress={() => speak(item.answer, speechLang(learnedLang))} brutalStyle={styles.formSpeakBrutal} />
             {docked ? null : <BrutalInkButton g={g} testID="grammar-next" label={s.grammar.nextArrow} onPress={() => onDone(correct)} />}
           </>
         )}
@@ -436,6 +441,7 @@ function FormDrillItem({
         <View style={[styles.explainCard, { backgroundColor: colors.card }]}>
           <ResultBadge correct={correct} label={correct ? s.games.correctFeedback : s.games.wrongFeedback} />
           {!correct ? <AnswerCompare typed={value} correct={item.answer} g={g} /> : null}
+          <SpeakButton testID="form-speak" onPress={() => speak(item.answer, speechLang(learnedLang))} style={styles.formSpeak} iconStyle={styles.formSpeakIcon} />
           {docked ? null : (
             <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(correct)}>
               <Text style={styles.btnText}>{s.games.understood}</Text>
@@ -1396,6 +1402,9 @@ const styles = StyleSheet.create({
   option: { borderWidth: 1.5, borderRadius: 14, paddingVertical: 14, alignItems: 'center' },
   optionText: { fontSize: 17, fontWeight: '600' },
   explainCard: { borderRadius: 16, padding: 16, gap: 8 },
+  formSpeak: { alignSelf: 'center', padding: 4 },
+  formSpeakIcon: { fontSize: 22 },
+  formSpeakBrutal: { alignSelf: 'center' },
   explainHeader: { fontSize: 16, fontWeight: '800' },
   explainText: { fontSize: 14, lineHeight: 20 },
   example: { fontSize: 14, fontStyle: 'italic', lineHeight: 20 },

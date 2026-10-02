@@ -32,6 +32,9 @@ import { DeviceEventEmitter, StyleSheet } from 'react-native';
 import { act, fireEvent, render, screen, within } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database.web';
+import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
+import { speechLang } from '@/lib/languages';
+import { speak } from '@/lib/speech';
 import GrammarLessonScreen from '../[topic]';
 
 const flush = async (times = 3) => {
@@ -47,6 +50,12 @@ async function openKind(topic: string, kind: string) {
   const db = getDb();
   await db.setOnboarding('en', 'es');
   (db as any).__setLevelForTest('A1');
+  // tiszta lap: a félbehagyott kör elmentődik (FB421), a web DB pedig memóriában él a tesztek között
+  for (const k of ['choice', 'match', 'form', 'why', 'transform']) {
+    for (const suffix of ['best', 'run', 'answered', 'correct']) {
+      await db.setGameProgress(GRAMMAR_PROGRESS_KEY, `${topic}:${k}:${suffix}`, 'cleared', null);
+    }
+  }
   render(<GrammarLessonScreen />);
   await flush(4);
   fireEvent.press(screen.getByTestId(`grammar-start-${kind}`));
@@ -104,5 +113,33 @@ describe('nyelvtani drill: a Check gomb a billentyűzet fölé dokkol (FB461, FB
       DeviceEventEmitter.emit('keyboardDidHide', {});
     });
     expect(dockBottom()).toBe(0);
+  });
+});
+
+// FB462 (PLAN-fb1002b 4. lépés), Kálmán: „itt is ejtse ki a szavakat": a ragozás-drill a szókártyával azonos
+// módon kiejti a helyes alakot a Check után (jó és rossz válasz után is), és ugyanazzal a 🔊 gombbal újra elmondható.
+describe('nyelvtani drill: a ragozás helyes alakja elhangzik (FB462)', () => {
+  beforeEach(() => (speak as jest.Mock).mockClear());
+
+  it('rossz válasz után a helyes alak (soy) elhangzik, a 🔊 gomb újra elmondja', async () => {
+    await openKind('ser-estar', 'form');
+    expect(speak).not.toHaveBeenCalled(); // Check előtt nem árulja el a választ
+
+    fireEvent.changeText(screen.getByTestId('formInput'), 'xxx');
+    fireEvent.press(screen.getByTestId('formCheck'));
+    await flush(1);
+    expect(speak).toHaveBeenCalledWith('soy', speechLang('es'));
+
+    (speak as jest.Mock).mockClear();
+    fireEvent.press(screen.getByTestId('form-speak'));
+    expect(speak).toHaveBeenCalledWith('soy', speechLang('es'));
+  });
+
+  it('jó válasz után is elhangzik', async () => {
+    await openKind('ser-estar', 'form');
+    fireEvent.changeText(screen.getByTestId('formInput'), 'soy');
+    fireEvent.press(screen.getByTestId('formCheck'));
+    await flush(1);
+    expect(speak).toHaveBeenCalledWith('soy', speechLang('es'));
   });
 });
