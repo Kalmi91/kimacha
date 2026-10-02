@@ -110,18 +110,18 @@
     {
       "kind": "list",
       "title": {
-        "hu": "As long as, provided (that), providing (that)",
-        "en": "As long as, provided (that), providing (that)",
-        "es": "As long as, provided (that), providing (that)",
-        "de": "As long as, provided (that), providing (that)"
+        "hu": "As long as, so long as, provided (that), on condition that, supposing",
+        "en": "As long as, so long as, provided (that), on condition that, supposing",
+        "es": "As long as, so long as, provided (that), on condition that, supposing",
+        "de": "As long as, so long as, provided (that), on condition that, supposing"
       },
       "items": [
         {
           "text": {
-            "hu": "Csak akkor, ha teljesül a feltétel. A provided és providing formálisabb. Utánuk is egyszerű jelen áll.",
-            "en": "Only if the condition is met. Provided and providing are more formal. They are also followed by the simple present.",
-            "es": "Solo si se cumple la condición. Provided y providing son más formales. También van seguidos del presente simple.",
-            "de": "Nur wenn die Bedingung erfüllt ist. Provided und providing sind formeller. Auch nach ihnen steht das Present Simple."
+            "hu": "Csak akkor, ha teljesül a feltétel. A provided és providing formálisabb. Utánuk is egyszerű jelen áll. A so long as ugyanaz, mint az as long as; az on condition that a legformálisabb. A supposing (suppose) elképzelt helyzetet vezet be: „Supposing you won the lottery, what would you do?”",
+            "en": "Only if the condition is met. Provided and providing are more formal. They are also followed by the simple present. So long as means the same as as long as; on condition that is the most formal. Supposing (suppose) introduces an imagined situation: “Supposing you won the lottery, what would you do?”",
+            "es": "Solo si se cumple la condición. Provided y providing son más formales. También van seguidos del presente simple. So long as significa lo mismo que as long as; on condition that es lo más formal. Supposing (suppose) introduce una situación imaginada: «Supposing you won the lottery, what would you do?»",
+            "de": "Nur wenn die Bedingung erfüllt ist. Provided und providing sind formeller. Auch nach ihnen steht das Present Simple. So long as bedeutet dasselbe wie as long as; on condition that ist am formellsten. Supposing (suppose) leitet eine vorgestellte Situation ein: „Supposing you won the lottery, what would you do?“"
           },
           "examples": [
             {
@@ -140,6 +140,15 @@
                 "en": "Provided that you pay on time, there is no problem.",
                 "es": "Con tal de que pagues a tiempo, no hay problema.",
                 "de": "Vorausgesetzt, du zahlst pünktlich, gibt es kein Problem."
+              }
+            },
+            {
+              "es": "Supposing you won the lottery, what would you do?",
+              "tr": {
+                "hu": "Tegyük fel, hogy nyersz a lottón, mit csinálnál?",
+                "en": "Supposing you won the lottery, what would you do?",
+                "es": "Supón que ganaras la lotería, ¿qué harías?",
+                "de": "Angenommen, du gewännst im Lotto, was würdest du tun?"
               }
             }
           ]
@@ -250,6 +259,51 @@
     "de": "Neben «if» drücken mehrere Wörter eine Bedingung aus. «Unless» heißt «if not», und das Verb danach steht bejaht: «Unless you hurry, you will miss the train». «As long as» und «provided that» heißen nur wenn. «In case» drückt Vorsorge aus: «Take an umbrella in case it rains». «Otherwise» heißt sonst. «Even if» heißt selbst wenn. Nach diesen Wörtern steht das Present Simple, nicht «will»."
   },
   "glossary": [
+    {
+      "word": "condition",
+      "gloss": {
+        "hu": "feltétel",
+        "en": "something that must happen first",
+        "es": "condición",
+        "de": "Bedingung"
+      }
+    },
+    {
+      "word": "lottery",
+      "gloss": {
+        "hu": "lottó",
+        "en": "a game where you win money by chance",
+        "es": "lotería",
+        "de": "Lotterie"
+      }
+    },
+    {
+      "word": "noise",
+      "gloss": {
+        "hu": "zaj",
+        "en": "loud sound",
+        "es": "ruido",
+        "de": "Lärm"
+      }
+    },
+    {
+      "word": "providing",
+      "gloss": {
+        "hu": "feltéve, hogy (providing that)",
+        "en": "if, only if (providing that)",
+        "es": "con tal de que (providing that)",
+        "de": "vorausgesetzt (providing that)"
+      }
+    },
+    {
+      "word": "then",
+      "gloss": {
+        "hu": "akkor, addigra (by then)",
+        "en": "at that time (by then)",
+        "es": "entonces, para entonces (by then)",
+        "de": "dann, bis dahin (by then)"
+      }
+    },
     {
       "word": "borrow",
       "gloss": {
@@ -398,36 +452,36 @@
   "items": [
     {
       "id": "ccn-01",
-      "sentence": "I will go to the party ___ it rains.",
+      "sentence": "I will lend you the car ___ condition that you drive carefully.",
       "options": [
-        "otherwise",
-        "unless",
-        "if not"
+        "in",
+        "on",
+        "under"
       ],
       "correct": 1,
       "why": {
-        "hu": "Az unless jelentése if … not: csak akkor nem megyek, ha esik.",
-        "en": "Unless means if … not: I go, except if it rains.",
-        "es": "Unless significa if … not: voy, salvo que llueva.",
-        "de": "Unless heißt if … not: ich gehe, außer es regnet."
+        "hu": "Formális feltétel: on condition that + tagmondat.",
+        "en": "A formal condition: on condition that + clause.",
+        "es": "Una condición formal: on condition that + cláusula.",
+        "de": "Eine formelle Bedingung: on condition that + Teilsatz."
       },
       "wrong": {
-        "otherwise": {
-          "hu": "Az otherwise nem köt össze két tagmondatot; önálló mondatban áll (…. Otherwise, …).",
-          "en": "Otherwise does not join two clauses; it stands in a separate sentence (…. Otherwise, …).",
-          "es": "Otherwise no une dos cláusulas; va en una oración aparte (…. Otherwise, …).",
-          "de": "Otherwise verbindet keine zwei Teilsätze; es steht in einem eigenen Satz (…. Otherwise, …)."
+        "in": {
+          "hu": "Az in condition that nem létezik; on condition that kell.",
+          "en": "“In condition that” does not exist; you need on condition that.",
+          "es": "«In condition that» no existe; hace falta on condition that.",
+          "de": "„In condition that“ gibt es nicht; man braucht on condition that."
         },
-        "if not": {
-          "hu": "Az if not it rains nem helyes; az if not helyett unless áll az igével állító alakban.",
-          "en": "“If not it rains” is not correct; in place of if not use unless with an affirmative verb.",
-          "es": "«If not it rains» no es correcto; en lugar de if not se usa unless con el verbo en afirmativo.",
-          "de": "„If not it rains“ ist nicht korrekt; statt if not steht unless mit bejahtem Verb."
+        "under": {
+          "hu": "Az under condition that nem helyes így; on condition that kell.",
+          "en": "“Under condition that” is not correct like this; you need on condition that.",
+          "es": "«Under condition that» no es correcto así; hace falta on condition that.",
+          "de": "„Under condition that“ ist so nicht korrekt; man braucht on condition that."
         }
       },
       "examples": [
-        "I will stay unless he calls.",
-        "We won't go unless it is sunny."
+        "You can go on condition that you call.",
+        "We stay on condition that she agrees."
       ]
     },
     {
@@ -534,52 +588,52 @@
     },
     {
       "id": "ccn-05",
-      "sentence": "___ you hurry, you will miss the train.",
+      "sentence": "___ you won the lottery, what would you do?",
       "options": [
+        "Unless",
         "Otherwise",
-        "Even",
-        "Unless"
+        "Supposing"
       ],
       "correct": 2,
       "why": {
-        "hu": "Az unless jelentése if … not: ha nem sietsz.",
-        "en": "Unless means if … not: if you do not hurry.",
-        "es": "Unless significa if … not: si no te apuras.",
-        "de": "Unless heißt if … not: wenn du dich nicht beeilst."
+        "hu": "Elképzelt helyzet kérdéssel: Supposing…",
+        "en": "An imagined situation with a question: Supposing…",
+        "es": "Una situación imaginada con una pregunta: Supposing…",
+        "de": "Eine vorgestellte Situation mit einer Frage: Supposing…"
       },
       "wrong": {
-        "Otherwise": {
-          "hu": "Az otherwise önálló mondat elején áll, tagmondat nem követi ilyen módon.",
-          "en": "Otherwise stands at the start of a separate sentence and is not followed by a clause like this.",
-          "es": "Otherwise va al inicio de una oración aparte y no va seguido de una cláusula así.",
-          "de": "Otherwise steht am Anfang eines eigenen Satzes und wird nicht so von einem Teilsatz gefolgt."
+        "Unless": {
+          "hu": "Az unless tagadó feltétel (if … not); itt elképzelt helyzetet vezet be a supposing.",
+          "en": "Unless is a negative condition (if … not); here supposing introduces an imagined situation.",
+          "es": "Unless es una condición negativa (if … not); aquí supposing introduce una situación imaginada.",
+          "de": "Unless ist eine negative Bedingung (if … not); hier leitet supposing eine vorgestellte Situation ein."
         },
-        "Even": {
-          "hu": "Az Even önmagában nem kötőszó; even if kell.",
-          "en": "Even alone is not a connector; you need even if.",
-          "es": "Even solo no es un conector; hace falta even if.",
-          "de": "Even allein ist kein Konnektor; man braucht even if."
+        "Otherwise": {
+          "hu": "Az otherwise önálló mondatban áll, nem köt össze két tagmondatot.",
+          "en": "Otherwise stands in a separate sentence and does not join two clauses.",
+          "es": "Otherwise va en una oración aparte y no une dos cláusulas.",
+          "de": "Otherwise steht in einem eigenen Satz und verbindet keine zwei Teilsätze."
         }
       },
       "examples": [
-        "Unless it rains, we will go.",
-        "Unless she calls, I will leave."
+        "Supposing it rains, what then?",
+        "Supposing he calls, what will you say?"
       ]
     },
     {
       "id": "ccn-06",
-      "sentence": "I will not call you ___ it is an emergency.",
+      "sentence": "You may borrow the book ___ you return it on Monday.",
       "options": [
-        "unless",
+        "providing",
         "otherwise",
         "even"
       ],
       "correct": 0,
       "why": {
-        "hu": "Csak vészhelyzetben hívom: unless it is an emergency.",
-        "en": "I call only in an emergency: unless it is an emergency.",
-        "es": "Llamo solo en una emergencia: unless it is an emergency.",
-        "de": "Ich rufe nur im Notfall an: unless it is an emergency."
+        "hu": "Feltétel: providing (that) + egyszerű jelen.",
+        "en": "A condition: providing (that) + simple present.",
+        "es": "Una condición: providing (that) + presente simple.",
+        "de": "Eine Bedingung: providing (that) + Present Simple."
       },
       "wrong": {
         "otherwise": {
@@ -596,8 +650,8 @@
         }
       },
       "examples": [
-        "I won't tell unless you ask.",
-        "She won't come unless he calls."
+        "You can stay, providing you pay.",
+        "Providing it is cheap, I will buy it."
       ]
     },
     {
@@ -840,36 +894,36 @@
     },
     {
       "id": "ccn-14",
-      "sentence": "I won't go ___ you come with me.",
+      "sentence": "I don't mind the noise, so ___ as it stops by ten.",
       "options": [
-        "otherwise",
-        "if not",
-        "unless"
+        "longer",
+        "length",
+        "long"
       ],
       "correct": 2,
       "why": {
-        "hu": "Az unless jelentése if … not: csak akkor megyek, ha te is jössz.",
-        "en": "Unless means if … not: I go only if you come too.",
-        "es": "Unless significa if … not: voy solo si tú vienes también.",
-        "de": "Unless heißt if … not: ich gehe nur, wenn du mitkommst."
+        "hu": "A so long as jelentése: csak akkor, ha (as long as).",
+        "en": "So long as means only if (as long as).",
+        "es": "So long as significa solo si (as long as).",
+        "de": "So long as bedeutet nur wenn (as long as)."
       },
       "wrong": {
-        "otherwise": {
-          "hu": "Az otherwise önálló mondatban áll, nem köt össze két tagmondatot.",
-          "en": "Otherwise stands in a separate sentence and does not join two clauses.",
-          "es": "Otherwise va en una oración aparte y no une dos cláusulas.",
-          "de": "Otherwise steht in einem eigenen Satz und verbindet keine zwei Teilsätze."
+        "longer": {
+          "hu": "A so longer as nem létezik; so long as kell.",
+          "en": "“So longer as” does not exist; you need so long as.",
+          "es": "«So longer as» no existe; hace falta so long as.",
+          "de": "„So longer as“ gibt es nicht; man braucht so long as."
         },
-        "if not": {
-          "hu": "Az if not you come nem helyes; az unless állító igével áll.",
-          "en": "“If not you come” is not correct; unless takes an affirmative verb.",
-          "es": "«If not you come» no es correcto; unless lleva el verbo en afirmativo.",
-          "de": "„If not you come“ ist nicht korrekt; unless nimmt ein bejahtes Verb."
+        "length": {
+          "hu": "A so length as nem létezik; so long as kell.",
+          "en": "“So length as” does not exist; you need so long as.",
+          "es": "«So length as» no existe; hace falta so long as.",
+          "de": "„So length as“ gibt es nicht; man braucht so long as."
         }
       },
       "examples": [
-        "She won't stay unless he asks.",
-        "We won't eat unless you cook."
+        "You can stay so long as you are quiet.",
+        "So long as it is cheap, I will buy it."
       ]
     },
     {
@@ -989,6 +1043,7 @@
       "person": "siempre que (condición)",
       "answer": "as long as",
       "accept": [
+        "so long as",
         "provided that",
         "providing that",
         "provided",
@@ -1334,8 +1389,8 @@
           "en": "as long as"
         },
         {
-          "es": "con tal de que",
-          "en": "provided that"
+          "es": "llueva o no",
+          "en": "whether or not"
         },
         {
           "es": "de lo contrario",

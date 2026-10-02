@@ -936,6 +936,9 @@
       "verb": "forma",
       "person": "una acción terminada antes de un momento del futuro",
       "answer": "future perfect",
+      "accept": [
+        "future perfect simple"
+      ],
       "table": "fcp-forms"
     },
     {
@@ -971,6 +974,9 @@
       "verb": "forma",
       "person": "la palabra límite (para el viernes)",
       "answer": "by",
+      "accept": [
+        "before"
+      ],
       "table": "fcp-forms"
     },
     {
@@ -1154,10 +1160,10 @@
             "de": "Passiv: be + Partizip"
           },
           "wrong": {
-            "hu": "A „using” -ing alak, nem igenév; a be + ige-ing a future continuous, nem a szenvedő.",
-            "en": "“Using” is an -ing form, not a participle; be + verb-ing is the future continuous, not the passive.",
-            "es": "«Using» es una forma -ing, no un participio; be + verbo-ing es el futuro continuo, no la pasiva.",
-            "de": "„Using“ ist eine -ing-Form, kein Partizip; be + Verb-ing ist das Future Continuous, nicht das Passiv."
+            "hu": "A „using” -ing alak (jelen idejű igenév), a szenvedőhöz múlt idejű igenév kell; a be + ige-ing a future continuous, nem a szenvedő.",
+            "en": "“Using” is an -ing form (present participle); the passive needs a past participle; be + verb-ing is the future continuous, not the passive.",
+            "es": "«Using» es una forma -ing (participio presente); la pasiva necesita un participio pasado (hecho, escrito); be + verbo-ing es el futuro continuo, no la pasiva.",
+            "de": "„Using“ ist eine -ing-Form (Partizip Präsens); das Passiv braucht ein Partizip Perfekt; be + Verb-ing ist das Future Continuous, nicht das Passiv."
           }
         },
         {
@@ -1271,8 +1277,8 @@
           "en": "I will have finished"
         },
         {
-          "es": "llevaré trabajando",
-          "en": "I will have been working"
+          "es": "llevaré diez años trabajando",
+          "en": "I will have been working for ten years"
         },
         {
           "es": "para cuando (llegues)",

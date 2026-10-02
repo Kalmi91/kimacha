@@ -51,7 +51,7 @@
           "put off"
         ],
         [
-          "inventar, ocurrírsele algo",
+          "ocurrírsele (una idea, un plan)",
           "come up with"
         ],
         [
@@ -257,15 +257,6 @@
         "en": "some, in negatives and questions",
         "es": "algún, ningún (en negativo y preguntas)",
         "de": "irgendein, kein (verneint und Fragen)"
-      }
-    },
-    {
-      "word": "blanks",
-      "gloss": {
-        "hu": "üres helyek (kitölteni)",
-        "en": "empty spaces to fill",
-        "es": "espacios en blanco",
-        "de": "Lücken"
       }
     },
     {
@@ -835,32 +826,32 @@
       "options": [
         "on",
         "at",
-        "in"
+        "out"
       ],
       "correct": 2,
       "why": {
-        "hu": "A fill in jelentése: kitölteni.",
-        "en": "Fill in means to complete a form.",
-        "es": "Fill in significa llenar un formulario.",
-        "de": "Fill in bedeutet ein Formular ausfüllen."
+        "hu": "A fill out jelentése: kitölteni (amerikai angolban ez a szokásos).",
+        "en": "Fill out means to complete a form (the usual American form).",
+        "es": "Fill out significa llenar un formulario (la forma habitual en inglés americano).",
+        "de": "Fill out bedeutet ein Formular ausfüllen (die übliche amerikanische Form)."
       },
       "wrong": {
         "on": {
-          "hu": "A fill on nem létezik ebben a jelentésben; fill in kell.",
-          "en": "“Fill on” does not exist in this meaning; you need fill in.",
-          "es": "«Fill on» no existe en este sentido; hace falta fill in.",
-          "de": "„Fill on“ gibt es in dieser Bedeutung nicht; man braucht fill in."
+          "hu": "A fill on nem létezik ebben a jelentésben; fill out kell.",
+          "en": "“Fill on” does not exist in this meaning; you need fill out.",
+          "es": "«Fill on» no existe en este sentido; hace falta fill out.",
+          "de": "„Fill on“ gibt es in dieser Bedeutung nicht; man braucht fill out."
         },
         "at": {
-          "hu": "A fill at nem létezik ebben a jelentésben; fill in kell.",
-          "en": "“Fill at” does not exist in this meaning; you need fill in.",
-          "es": "«Fill at» no existe en este sentido; hace falta fill in.",
-          "de": "„Fill at“ gibt es in dieser Bedeutung nicht; man braucht fill in."
+          "hu": "A fill at nem létezik ebben a jelentésben; fill out kell.",
+          "en": "“Fill at” does not exist in this meaning; you need fill out.",
+          "es": "«Fill at» no existe en este sentido; hace falta fill out.",
+          "de": "„Fill at“ gibt es in dieser Bedeutung nicht; man braucht fill out."
         }
       },
       "examples": [
-        "Fill in the blanks.",
-        "She filled in the form."
+        "Fill out the form.",
+        "She filled out the form."
       ]
     },
     {
@@ -979,13 +970,16 @@
       "verb": "forma",
       "person": "posponer",
       "answer": "put off",
+      "accept": [
+        "push back"
+      ],
       "table": "phv-forms"
     },
     {
       "id": "phv-20",
       "kind": "form",
       "verb": "forma",
-      "person": "inventar, ocurrírsele algo",
+      "person": "ocurrírsele (una idea, un plan)",
       "answer": "come up with",
       "table": "phv-forms"
     },

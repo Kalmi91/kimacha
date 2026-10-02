@@ -153,11 +153,11 @@
           },
           "examples": [
             {
-              "es": "We had been living there since 2015 when we moved.",
+              "es": "We had been living there since 2015 when we moved away.",
               "tr": {
                 "hu": "2015 óta ott éltünk, amikor elköltöztünk.",
-                "en": "We had been living there since 2015 when we moved.",
-                "es": "Vivíamos allí desde 2015 cuando nos mudamos.",
+                "en": "We had been living there since 2015 when we moved away.",
+                "es": "Vivíamos allí desde 2015 cuando nos mudamos a otro lugar.",
                 "de": "Wir hatten seit 2015 dort gelebt, als wir umzogen."
               }
             },
@@ -237,6 +237,24 @@
     "de": "Das Past Perfect Continuous besteht aus «had been» plus der -ing-Form des Verbs: «I had been waiting». Es beschreibt eine Handlung, die vor einem Moment der Vergangenheit begann und bis dahin dauerte: «I had been waiting for two hours when the bus arrived». Vor einer Dauer steht «for», vor einem Anfangspunkt «since». Nennt man eine Zahl oder ein fertiges Ergebnis, braucht man das einfache Past Perfect: «By noon, she had written three reports». Zustandsverben bekommen keine -ing-Form: «I had known her for years»."
   },
   "glossary": [
+    {
+      "word": "sore",
+      "gloss": {
+        "hu": "fájó",
+        "en": "painful",
+        "es": "adolorido",
+        "de": "wund"
+      }
+    },
+    {
+      "word": "away",
+      "gloss": {
+        "hu": "el, messze",
+        "en": "not here",
+        "es": "lejos",
+        "de": "weg"
+      }
+    },
     {
       "word": "hadn't",
       "gloss": {
@@ -533,7 +551,7 @@
     },
     {
       "id": "ppc-08",
-      "sentence": "We had been living there ___ 2015 when we moved.",
+      "sentence": "We had been living there ___ 2015 when we moved away.",
       "options": [
         "for",
         "ago",
@@ -805,11 +823,11 @@
     },
     {
       "id": "ppc-16",
-      "sentence": "She told me she ___ for the job for months.",
+      "sentence": "Last year she told me she ___ for a job for months.",
       "options": [
         "is looking",
         "had been looking",
-        "has been looking"
+        "will be looking"
       ],
       "correct": 1,
       "why": {
@@ -820,16 +838,16 @@
       },
       "wrong": {
         "is looking": {
-          "hu": "Az is looking jelen idejű; a told után a múltba tolódik (had been looking).",
-          "en": "Is looking is present; after told it moves back (had been looking).",
-          "es": "Is looking es presente; después de told retrocede (had been looking).",
-          "de": "Is looking ist Präsens; nach told rückt es zurück (had been looking)."
+          "hu": "Az is looking jelen idejű; a last year és a told múltat jelez (had been looking).",
+          "en": "Is looking is present; last year and told point to the past (had been looking).",
+          "es": "Is looking es presente; last year y told señalan el pasado (had been looking).",
+          "de": "Is looking ist Präsens; last year und told weisen auf die Vergangenheit (had been looking)."
         },
-        "has been looking": {
-          "hu": "A has been looking jelen idejű; a told után a múltba tolódik (had been looking).",
-          "en": "Has been looking is present; after told it moves back (had been looking).",
-          "es": "Has been looking es presente; después de told retrocede (had been looking).",
-          "de": "Has been looking ist Präsens; nach told rückt es zurück (had been looking)."
+        "will be looking": {
+          "hu": "A will be looking jövőre vonatkozik; a mondat múltbeli közlés (told).",
+          "en": "Will be looking refers to the future; the sentence is a past report (told).",
+          "es": "Will be looking se refiere al futuro; la oración es un reporte pasado (told).",
+          "de": "Will be looking bezieht sich auf die Zukunft; der Satz ist ein vergangener Bericht (told)."
         }
       },
       "examples": [
@@ -839,7 +857,7 @@
     },
     {
       "id": "ppc-17",
-      "sentence": "Her eyes hurt because she ___ at the screen since morning.",
+      "sentence": "Her eyes were sore because she ___ at the screen since morning.",
       "options": [
         "looked",
         "was looking",
@@ -848,7 +866,7 @@
       "correct": 2,
       "why": {
         "hu": "A since morning a fájás előtti kezdőpont: had been looking.",
-        "en": "“Since morning” is a starting point before the hurting: had been looking.",
+        "en": "“Since morning” is a starting point before the soreness: had been looking.",
         "es": "«Since morning» es un punto de inicio antes del dolor: had been looking.",
         "de": "„Since morning“ ist ein Anfangspunkt vor dem Schmerz: had been looking."
       },
@@ -899,6 +917,9 @@
       "verb": "forma",
       "person": "un resultado terminado antes de un momento del pasado",
       "answer": "past perfect",
+      "accept": [
+        "past perfect simple"
+      ],
       "table": "ppc-forms"
     },
     {
@@ -1200,8 +1221,8 @@
           "en": "How long had you been driving when the car stopped?"
         },
         {
-          "es": "Vivíamos allí desde 2015 cuando nos mudamos.",
-          "en": "We had been living there since 2015 when we moved."
+          "es": "Vivíamos allí desde 2015 cuando nos mudamos a otro lugar.",
+          "en": "We had been living there since 2015 when we moved away."
         },
         {
           "es": "No llevaba mucho tiempo trabajando cuando llegó el jefe.",
@@ -1234,8 +1255,8 @@
           "en": "how long had you been"
         },
         {
-          "es": "no llevaba trabajando",
-          "en": "I hadn't been working"
+          "es": "no llevaba mucho trabajando",
+          "en": "I hadn't been working long"
         },
         {
           "es": "para el mediodía había escrito",
