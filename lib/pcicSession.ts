@@ -89,6 +89,8 @@ export function countDoneToday(cards: Sm2Card[], today: string): number {
 }
 
 export const PCIC_NEW_BONUS_STEP = 10;
+// FB449/FB451: a "kész mára" képernyő +5 / +10 / +15 új szó gombjai.
+export const PCIC_NEW_BONUS_STEPS = [5, 10, 15] as const;
 
 export interface PcicNewBudgetInput {
   limit: number; // a Beállítások napi új-szó kerete (daily_new_limit)
@@ -122,6 +124,31 @@ export function nextPcicNewBonus(
  */
 export function pcicNewBudget({ limit, bonus, introducedToday }: PcicNewBudgetInput): number {
   return Math.max(introducedToday, limit + bonus);
+}
+
+/**
+ * FB452 ("new 42?"): a napi új-szó keret és a +N bónusz NAPI érték (egy sor a
+ * learn_settings-ben), de a ma bevezetett kártyákat a hívó a nézet szintjén
+ * számolta. Ha a tanuló az A1-en háromszor kért "+10"-et, majd átváltott A2-re,
+ * ott a szint 0 mai szava mellett a teljes bónuszos keret (limit + bónusz) új
+ * szóként jött vissza. A pickSm2Session newLimit paramétere: a napi keret a
+ * MINDEN szinten ma bevezetettekkel csökkentve; a nézet szintjén bevezetetteket a
+ * pickSm2Session maga vonja le, ezért azokat itt visszaadjuk. Egy szintnél
+ * (all === this) ugyanaz, mint a pcicNewBudget.
+ */
+export function pcicSessionNewLimit({
+  limit,
+  bonus,
+  introducedAllLevels,
+  introducedThisLevel,
+}: {
+  limit: number;
+  bonus: number;
+  introducedAllLevels: number;
+  introducedThisLevel: number;
+}): number {
+  const budget = pcicNewBudget({ limit, bonus, introducedToday: introducedAllLevels });
+  return budget - (introducedAllLevels - introducedThisLevel);
 }
 
 // FB387/395 (PLAN-fb0924 1b. lépés, D2 = b): a napi keret MINDEN kártyát számol

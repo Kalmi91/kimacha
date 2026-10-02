@@ -22,7 +22,7 @@ import {
   type ArticlePick,
 } from '@/lib/articlePicker';
 import { sm2Review, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
-import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC, nextPcicNewBonus, pcicNewBudget, thinSentences, dropOrphanCards, countFinishedToday, dayProgressPercent } from '@/lib/pcicSession';
+import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC, nextPcicNewBonus, pcicSessionNewLimit, PCIC_NEW_BONUS_STEP, PCIC_NEW_BONUS_STEPS, thinSentences, dropOrphanCards, countFinishedToday, dayProgressPercent } from '@/lib/pcicSession';
 import { cardsForViewLevel } from '@/lib/pcicLevels';
 import { posOf } from '@/lib/pcicPos';
 import FeedbackButton from '@/components/FeedbackModal';
@@ -178,6 +178,8 @@ export default function PcicScreen() {
     // (csak spanyol célnyelven van igeidő-kapu).
     const grammarRows = dir === 'es' ? await db.getGameProgress(GRAMMAR_PROGRESS_KEY) : [];
     const introducedToday = cards.filter((c) => c.introducedAt === day).length;
+    // FB452: a napi keret NAPI, a ma bevezetetteket minden szintről számoljuk (lib/pcicSession.ts pcicSessionNewLimit).
+    const introducedAllLevels = dropOrphanCards(rawCards, (id) => findPcicItem(id) !== undefined).filter((c) => c.introducedAt === day).length;
     setTenses(resolvedTensesFromLessons(doneGrammarTopicProgress(dir, grammarRows).keys()));
     setLevel(lvl);
     setAllLevelCards(rawCards);
@@ -192,7 +194,7 @@ export default function PcicScreen() {
     setAgainDelaySec(delaySec);
     setToday(day);
     setAllCards(new Map(cards.map((c) => [c.itemId, c])));
-    setQueue(pickSm2Session(cards, pcicIntroOrder(newOrder, lvl), day, pcicNewBudget({ limit: newLimit, bonus, introducedToday })));
+    setQueue(pickSm2Session(cards, pcicIntroOrder(newOrder, lvl), day, pcicSessionNewLimit({ limit: newLimit, bonus, introducedAllLevels, introducedThisLevel: introducedToday })));
     setTypedAnswer('');
     setGrade(null);
     setSessionAnswered(0);
@@ -283,7 +285,10 @@ export default function PcicScreen() {
   const doneToday = countDoneToday([...allCards.values()], today);
   // FB387/395 (PLAN-fb0924 1b. lépés): a fejléc mutassa, MIBŐL áll a mai
   // bevezetés (szó vs. mondat), plusz a mai teljes keret (limit + bónusz).
-  const introducedTodayByKind = countIntroducedTodayByKind([...allCards.values()], today, (id) => findPcicItem(id)?.kind);
+  // FB452: a napi keret NAPI, ezért a "ma bevezetett" minden szintről számol: a nézet szintjén az élő állapot
+  // (allCards, minden értékelés frissíti), a többi szinten a betöltéskori (allLevelCards).
+  const cardsAllLevels = [...allCards.values(), ...allLevelCards.filter((c) => !allCards.has(c.itemId) && findPcicItem(c.itemId) !== undefined)];
+  const introducedTodayByKind = countIntroducedTodayByKind(cardsAllLevels, today, (id) => findPcicItem(id)?.kind);
   const todayNewBudget = dailyNewLimit + pcicBonus;
 
   // SZ2 (SZAVAK.md): a DB-írás + számlálók itt, a queue-léptetés (advance) a
@@ -415,10 +420,11 @@ export default function PcicScreen() {
   // FB314/385/386: nincs több esedékes/új lap, de a témakörben van még be
   // nem vezetett tétel; ez a napi keretet bővíti +10-zel (perzisztálva,
   // a naptári nappal lejár) és újraépíti a sort.
-  const handleMoreNew = () => {
+  const handleMoreNew = (step: number = PCIC_NEW_BONUS_STEP) => {
     const activeCards = [...allCards.values()];
     const introducedToday = activeCards.filter((c) => c.introducedAt === today).length;
-    const next = nextPcicNewBonus({ limit: dailyNewLimit, bonus: pcicBonus, introducedToday });
+    const introducedAllLevels = cardsAllLevels.filter((c) => c.introducedAt === today).length;
+    const next = nextPcicNewBonus({ limit: dailyNewLimit, bonus: pcicBonus, introducedToday: introducedAllLevels }, step);
     setPcicBonus(next);
     getDb().setPcicNewBonus(next, today).catch(() => {});
     setQueue(
@@ -426,7 +432,7 @@ export default function PcicScreen() {
         activeCards,
         pcicIntroOrder(newOrder, level),
         today,
-        pcicNewBudget({ limit: dailyNewLimit, bonus: next, introducedToday })
+        pcicSessionNewLimit({ limit: dailyNewLimit, bonus: next, introducedAllLevels, introducedThisLevel: introducedToday })
       )
     );
   };
@@ -623,13 +629,22 @@ export default function PcicScreen() {
           )}
         </View>
         {newOrder.some((id) => !allCards.has(id) || allCards.get(id)!.state === 'new') && (
-          g.brutal ? (
-            <BrutalButton testID="learn-more-new" label={s.pcic.moreNew(10)} onPress={handleMoreNew} style={styles.brutalMoreNew} />
-          ) : (
-          <Pressable style={[styles.checkBtn, { backgroundColor: '#38BDF8' }]} onPress={handleMoreNew}>
-            <Text style={styles.checkBtnText}>{s.pcic.moreNew(10)}</Text>
-          </Pressable>
-          )
+          // FB449/FB451: +5 / +10 / +15 új szó, egy sorban (a +10 testID-ja változatlan: learn-more-new).
+          <View style={styles.moreNewBlock}>
+            <Text style={[styles.moreNewHint, { color: colors.tabIconDefault }]}>{s.pcic.moreNewHint}</Text>
+            <View style={styles.moreNewRow}>
+              {PCIC_NEW_BONUS_STEPS.map((n) => {
+                const testID = n === PCIC_NEW_BONUS_STEP ? 'learn-more-new' : `learn-more-new-${n}`;
+                return g.brutal ? (
+                  <BrutalButton key={n} testID={testID} accessibilityLabel={s.pcic.moreNew(n)} label={s.pcic.moreNewShort(n)} onPress={() => handleMoreNew(n)} style={styles.moreNewBtn} />
+                ) : (
+                  <Pressable key={n} testID={testID} accessibilityRole="button" accessibilityLabel={s.pcic.moreNew(n)} style={[styles.checkBtn, styles.moreNewBtn, { backgroundColor: '#38BDF8' }]} onPress={() => handleMoreNew(n)}>
+                    <Text style={styles.checkBtnText}>{s.pcic.moreNewShort(n)}</Text>
+                  </Pressable>
+                );
+              })}
+            </View>
+          </View>
         )}
         <FeedbackButton level={level} languagePair={languagePair} currentCard="pcic" />
       </View>
@@ -918,7 +933,11 @@ const styles = StyleSheet.create({
   brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   brutalTile: { flex: 1 },
   brutalTileBox: { paddingVertical: 12, alignItems: 'center' },
-  brutalMoreNew: { marginTop: 24 },
+  // FB449/FB451: a három "+N új szó" gomb egy sorban.
+  moreNewBlock: { gap: 4 },
+  moreNewHint: { fontSize: 13, textAlign: 'center' },
+  moreNewRow: { flexDirection: 'row', gap: 10 },
+  moreNewBtn: { flex: 1, width: 'auto', marginTop: 0 },
   brutalProgress: { marginBottom: 16 },
   brutalArticle: { minWidth: 48, paddingVertical: 6, paddingHorizontal: 10, alignItems: 'center' },
   brutalDim: { opacity: 0.6 },

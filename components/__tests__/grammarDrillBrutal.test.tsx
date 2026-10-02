@@ -12,7 +12,7 @@ import lessonJson from '@/data/games/grammar/es/presente-irregular.json';
 import type { LessonV2 } from '@/lib/grammar/lessonTypes';
 import { buildGrammarRound, isChoiceRoundItem } from '@/lib/games/grammarChoice';
 import { getDb } from '@/lib/database';
-import { hashString, shuffleArray } from '@/lib/shuffle';
+import { hashString, shuffleNoFixedPoints } from '@/lib/shuffle';
 import { ThemeProvider } from '@/lib/ThemeContext';
 
 const lesson = lessonJson as unknown as LessonV2;
@@ -104,7 +104,7 @@ describe('GrammarDrill, neo-brutalista (NY22)', () => {
       id: string;
       pairs: { en: string; es: string }[];
     };
-    const rightOrder = shuffleArray(match.pairs.map((_, i) => i), hashString(match.id));
+    const rightOrder = shuffleNoFixedPoints(match.pairs.length, hashString(match.id));
     // hibás pár: az 1. bal a 0. jobb (ha az nem az övé)
     const wrongPos = rightOrder.findIndex((p) => p !== 0);
     fireEvent.press(screen.getByTestId('match-left-0'));
@@ -123,7 +123,7 @@ describe('GrammarDrill, neo-brutalista (NY22)', () => {
       id: string;
       pairs: { en: string; es: string }[];
     };
-    const secondOrder = shuffleArray(second.pairs.map((_, i) => i), hashString(second.id));
+    const secondOrder = shuffleNoFixedPoints(second.pairs.length, hashString(second.id));
     second.pairs.forEach((_, li) => {
       fireEvent.press(screen.getByTestId(`match-left-${li}`));
       fireEvent.press(screen.getByTestId(`match-right-${secondOrder.indexOf(li)}`));

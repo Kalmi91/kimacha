@@ -8,6 +8,7 @@ import {
   reorderForReturn,
   nextPcicNewBonus,
   pcicNewBudget,
+  pcicSessionNewLimit,
   pickStrongerSm2Card,
   thinSentences,
   type QueuedSm2Card,
@@ -410,5 +411,46 @@ describe('countFinishedToday (FB430)', () => {
     const c = card('c', '2026-09-30'); // tegnapi
     const d = card('d', null); // új
     expect(countFinishedToday([a, b, c, d], [b, d], '2026-10-01')).toBe(1);
+  });
+});
+
+// FB452 ("new 42?"): a napi keret NAPI; a más szinten vett "+10"-ek nem jöhetnek vissza új szóként a másik szinten.
+describe('pcicSessionNewLimit (FB452)', () => {
+  const introduced = (prefix: string, n: number) =>
+    Array.from({ length: n }, (_, i) => sm2Review(sm2NewCard(`${prefix}-${i}`), 'good', TODAY));
+  const fresh = (prefix: string, n: number) => Array.from({ length: n }, (_, i) => `${prefix}-new-${i}`);
+  const newCount = (cards: Sm2Card[], order: string[], newLimit: number) =>
+    pickSm2Session(cards, order, TODAY, newLimit).filter((c) => c.state === 'new').length;
+
+  it('reprodukálja az esetet: A1-en 40 szó bevezetve (limit 10, bónusz 32), az A2-n nem jön 42 új szó', () => {
+    const a1 = introduced('a1', 40);
+    const old = pcicNewBudget({ limit: 10, bonus: 32, introducedToday: 0 }); // a régi: a szint 0 szava mellett a teljes keret
+    expect(newCount([], fresh('a2', 100), old)).toBe(42);
+
+    const limit = pcicSessionNewLimit({ limit: 10, bonus: 32, introducedAllLevels: a1.length, introducedThisLevel: 0 });
+    expect(newCount([], fresh('a2', 100), limit)).toBe(2); // 10 + 32 - 40: a napi keretből ennyi maradt
+  });
+
+  it('egy szintnél (all === this) pontosan a régi pcicNewBudget', () => {
+    for (const [limit, bonus, n] of [[10, 0, 0], [10, 0, 10], [10, 18, 18], [10, 20, 5]] as const) {
+      expect(pcicSessionNewLimit({ limit, bonus, introducedAllLevels: n, introducedThisLevel: n })).toBe(
+        pcicNewBudget({ limit, bonus, introducedToday: n })
+      );
+    }
+  });
+
+  it('a nézet szintjén bevezetettet a pickSm2Session vonja le, a másik szint szavait a keret', () => {
+    const thisLevel = introduced('a2', 3);
+    // más szinten ma 4 szó volt bevezetve; limit 10, bónusz 0: összesen 7 bevezetve, 3 új maradt
+    const limit = pcicSessionNewLimit({ limit: 10, bonus: 0, introducedAllLevels: 7, introducedThisLevel: 3 });
+    expect(newCount(thisLevel, fresh('a2', 100), limit)).toBe(3);
+  });
+
+  it('a "+10" a másik szintről örökölt bónusszal: a megmaradt 2 + az új 10 szó', () => {
+    // A1-en 40 bevezetve, bónusz 32; A2-n "+10": a bónusz 42 lesz, a keret 52 - 40 = 12 új szó (2 megmaradt + 10)
+    const next = nextPcicNewBonus({ limit: 10, bonus: 32, introducedToday: 40 });
+    expect(next).toBe(42);
+    const limit = pcicSessionNewLimit({ limit: 10, bonus: next, introducedAllLevels: 40, introducedThisLevel: 0 });
+    expect(newCount([], fresh('a2', 100), limit)).toBe(12);
   });
 });

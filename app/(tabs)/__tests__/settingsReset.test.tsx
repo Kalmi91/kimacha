@@ -35,6 +35,9 @@ const flush = async () => {
   }
 };
 
+// PLAN-fb1002 5. lépés (FB446): a nullázó sorok egy lenyíló szekcióban vannak, előbb ki kell nyitni.
+const openReset = (r: { getByText: (t: string) => unknown }) => fireEvent.press(r.getByText('🗑️ Restart progress') as never);
+
 // A megerősítő Alert destruktív gombját nyomja meg (natív ág).
 const confirmAlert = async (alertSpy: jest.SpyInstance) => {
   const buttons = alertSpy.mock.calls[alertSpy.mock.calls.length - 1][2] ?? [];
@@ -64,15 +67,20 @@ describe('Beállítások: haladás nullázása (PLAN-fb1001 K1 + FB431)', () => 
 
     expect(queryByText(/Reset progress/)).toBeNull();
     expect(queryByText(/Reset grammar progress/)).toBeNull();
+    expect(queryByText('🗑️ Restart progress')).toBeNull();
   });
 
   it('csak a haladásos pakli kap sort, megerősítés után a saját szintjét nullázza', async () => {
     await seedCard('A1');
     await seedCard('B1');
     const alertSpy = jest.spyOn(Alert, 'alert').mockImplementation(() => {});
-    const { getByText, queryByText } = render(<ThemeProvider><SettingsScreen /></ThemeProvider>);
+    const r = render(<ThemeProvider><SettingsScreen /></ThemeProvider>);
+    const { getByText, queryByText } = r;
     await flush();
 
+    // FB446: zárva a sorok nem látszanak, a szekció-fejléc igen.
+    expect(queryByText('🗑️ Reset progress (B1)')).toBeNull();
+    openReset(r);
     expect(queryByText('🗑️ Reset progress (A2)')).toBeNull();
     expect(getByText('🗑️ Reset progress (B1)')).toBeTruthy();
     fireEvent.press(getByText('🗑️ Reset progress (A1)'));
@@ -89,9 +97,11 @@ describe('Beállítások: haladás nullázása (PLAN-fb1001 K1 + FB431)', () => 
   it('megerősítés nélkül (Cancel) semmi nem törlődik', async () => {
     await seedCard('B1');
     const alertSpy = jest.spyOn(Alert, 'alert').mockImplementation(() => {});
-    const { getByText } = render(<ThemeProvider><SettingsScreen /></ThemeProvider>);
+    const r = render(<ThemeProvider><SettingsScreen /></ThemeProvider>);
+    const { getByText } = r;
     await flush();
 
+    openReset(r);
     fireEvent.press(getByText('🗑️ Reset progress (B1)'));
     expect(alertSpy).toHaveBeenCalledTimes(1);
     expect((await getDb().getPcicCards()).length).toBe(1);
@@ -101,9 +111,11 @@ describe('Beállítások: haladás nullázása (PLAN-fb1001 K1 + FB431)', () => 
     await seedCard('B1');
     await getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, 'presente-regular:form', 'done', { correct: 3, total: 3 });
     const alertSpy = jest.spyOn(Alert, 'alert').mockImplementation(() => {});
-    const { getByText, queryByText } = render(<ThemeProvider><SettingsScreen /></ThemeProvider>);
+    const r = render(<ThemeProvider><SettingsScreen /></ThemeProvider>);
+    const { getByText, queryByText } = r;
     await flush();
 
+    openReset(r);
     fireEvent.press(getByText('🗑️ Reset grammar progress'));
     await confirmAlert(alertSpy);
 

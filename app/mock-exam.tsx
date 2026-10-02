@@ -13,6 +13,8 @@ import { useTheme } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
 import { Card } from '@/components/grammar/Brutal';
 import ExamButton from '@/components/exam/ExamButton';
+import FeedbackButton from '@/components/FeedbackModal';
+import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import MockTaskCard from '@/components/exam/MockTaskCard';
 import { MockResultView, MockReviewView } from '@/components/exam/MockResultView';
 import { mockAvailable, MOCK_LEVELS } from '@/lib/exam/mock/blueprint';
@@ -225,7 +227,15 @@ export default function MockExamScreen() {
     setPhase('intro');
   };
 
-  const shell = (children: ReactNode) => <View style={[styles.screen, { backgroundColor: colors.background }]}>{children}</View>;
+  // PLAN-fb1002 6. lépés (FB447): a próbavizsga minden részén ott a 💬; a `part` mondja meg a Feedback sheetben,
+  // pontosan melyik részről van szó (mock-exam:<szint>:<rész>).
+  const pair = `${target === 'es' ? 'en' : 'es'}→${target}`;
+  const shell = (children: ReactNode, part?: string) => (
+    <View style={[styles.screen, { backgroundColor: colors.background }]}>
+      {children}
+      {part ? <FeedbackButton level={level} languagePair={pair} currentCard={`mock-exam:${level}:${part}`} /> : null}
+    </View>
+  );
   const card = (children: ReactNode) => (
     <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
       {children}
@@ -240,6 +250,7 @@ export default function MockExamScreen() {
         {card(<Text style={[styles.line, { color: colors.textMuted }]}>{phase === 'empty' ? s.emptyBody : s.unavailableBody}</Text>)}
         <ExamButton testID="mock-back" label={s.exit} onPress={() => router.back()} />
       </View>,
+      phase === 'empty' ? 'empty' : 'unavailable',
     );
   }
 
@@ -270,6 +281,7 @@ export default function MockExamScreen() {
         )}
         <ExamButton testID="mock-exit" secondary label={s.exit} onPress={() => router.back()} />
       </ScrollView>,
+      'intro',
     );
   }
 
@@ -289,6 +301,7 @@ export default function MockExamScreen() {
         )}
         <ExamButton testID="mock-start-paper" label={s.startPaper} onPress={startPaper} />
       </ScrollView>,
+      `${paper.id}:intro`,
     );
   }
 
@@ -305,15 +318,16 @@ export default function MockExamScreen() {
         )}
         <ExamButton testID="mock-speaking-continue" label={s.continue} onPress={() => void closePaper(false)} />
       </ScrollView>,
+      'speaking',
     );
   }
 
   if (phase === 'result' && result) {
-    return shell(<MockResultView result={result} timedOut={timedOut} onReview={() => setPhase('review')} onRetry={retry} onExit={() => router.back()} />);
+    return shell(<MockResultView result={result} timedOut={timedOut} onReview={() => setPhase('review')} onRetry={retry} onExit={() => router.back()} />, 'result');
   }
 
   if (phase === 'review' && result) {
-    return shell(<MockReviewView result={result} onBack={() => setPhase('result')} />);
+    return shell(<MockReviewView result={result} onBack={() => setPhase('result')} />, 'review');
   }
 
   if (leaving) {
@@ -328,6 +342,7 @@ export default function MockExamScreen() {
         <ExamButton testID="mock-leave" label={s.leave} onPress={() => router.back()} />
         <ExamButton testID="mock-keep-going" secondary label={s.keepGoing} onPress={() => setLeaving(false)} />
       </View>,
+      'leave',
     );
   }
 
@@ -362,6 +377,7 @@ export default function MockExamScreen() {
           <ExamButton testID="mock-next-task" label={last ? s.finishPaper : s.nextTask} onPress={nextTask} />
         </ScrollView>
       </KeyboardAvoidingView>,
+      `${paper.id}:${task.id}`,
     );
   }
 
@@ -372,7 +388,7 @@ const styles = StyleSheet.create({
   screen: { flex: 1, paddingTop: spacing.xl },
   flex: { flex: 1 },
   centered: { flex: 1 },
-  body: { padding: spacing.lg, gap: spacing.md },
+  body: { padding: spacing.lg, paddingBottom: FAB_CLEARANCE, gap: spacing.md },
   card: { borderRadius: radius.lg, padding: spacing.lg, gap: spacing.md },
   brutalCard: { padding: spacing.lg, gap: spacing.md },
   title: { fontSize: fontSize.xl, fontWeight: fontWeight.bold, textAlign: 'center' },

@@ -664,6 +664,10 @@ function auditFormItem(item, itemPath, topic, tableIds) {
   }
   if (!item.verb) p1.push({ path: itemPath, issue: 'form item missing verb' });
   if (!item.answer) p1.push({ path: itemPath, issue: 'form item missing answer' });
+  if (item.accept !== undefined) {
+    if (!Array.isArray(item.accept)) p1.push({ path: itemPath, issue: 'form accept must be an array' });
+    else for (const alt of item.accept) if (alt === item.answer) p1.push({ path: itemPath, issue: `form accept entry equals answer: "${alt}"` });
+  }
   if (!item.table || !tableIds.has(item.table)) {
     p1.push({ path: itemPath, issue: `form item references unknown table "${item.table}"` });
     return;
@@ -731,6 +735,10 @@ const TENSE_IDS = [
   'ir-a',
   'condicional',
   'subjuntivo-presente',
+  'imperativo-negativo',
+  'pluscuamperfecto',
+  'subjuntivo-perfecto',
+  'futuro-condicional-perfecto',
 ];
 
 // Kártya-azonosító (a words-open `order`-e, string) -> szint, a words-open fájlokból egyszer felépítve, a
