@@ -9,6 +9,8 @@ import { DEFAULT_AGAIN_DELAY_SEC } from './pcicSession';
 import type { MistakeBatchRow } from './mistakes/deck';
 import { DEFAULT_GRAMMAR_PALETTE, isGrammarPaletteId, type GrammarPaletteId } from '@/constants/GrammarPalettes';
 import { isSkinSelection, parseSkinMix, type SkinMix, type SkinSelection } from '@/constants/Skins';
+import { readExamResults, writeExamResult } from './exam/result';
+import type { ExamResult, ExamResults } from './exam/types';
 
 export interface DB {
   getStreak(): Promise<{ current_count: number; last_date: string | null; longest_count: number }>;
@@ -52,6 +54,10 @@ export interface DB {
   setGameProgress(gameId: string, itemId: string, state: string, data?: unknown): Promise<void>;
   // PLAN-fb1001 7. lépés (FB431): egy játék/kurzus (pl. a nyelvtan) teljes haladása az aktív párra.
   resetGameProgress(gameId: string): Promise<void>;
+  // PLAN-vizsga A. szakasz 2. lépés (A6 a): a szintvizsga eredménye szintenként (átment-e, legjobb pontszám),
+  // a `level-exam` game_progress sorokban (lib/exam/result.ts); `save` a korábbival összevonva ment.
+  getExamResults(): Promise<ExamResults>;
+  saveExamResult(level: string, pct: number, passed: boolean, date: string): Promise<ExamResult>;
   // PLAN-pcic 4. lépés: PCIC fül, SM-2, független a FSRS `cards`-tól
   getPcicCards(): Promise<Sm2Card[]>;
   upsertPcicCard(card: Sm2Card): Promise<void>;
@@ -289,6 +295,15 @@ class MemoryDB implements DB {
 
   async resetGameProgress(gameId: string) {
     this.gameProgressMap.delete(this.gameKey(gameId));
+  }
+
+  // PLAN-vizsga A. szakasz 2. lépés (A6 a): a szintvizsga eredménye, lásd lib/exam/result.ts.
+  async getExamResults(): Promise<ExamResults> {
+    return readExamResults(this);
+  }
+
+  async saveExamResult(level: string, pct: number, passed: boolean, date: string): Promise<ExamResult> {
+    return writeExamResult(this, level, pct, passed, date);
   }
 
   // PLAN-pcic 4. lépés: PCIC fül, SM-2, független a FSRS `cards`-tól. Nem

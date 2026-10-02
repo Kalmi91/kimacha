@@ -10,6 +10,8 @@ import { runMigrations, applyWordMerges } from './db/migrations';
 import { DEFAULT_AGAIN_DELAY_SEC } from './pcicSession';
 import { DEFAULT_GRAMMAR_PALETTE, isGrammarPaletteId, type GrammarPaletteId } from '@/constants/GrammarPalettes';
 import { isSkinSelection, parseSkinMix, type SkinMix, type SkinSelection } from '@/constants/Skins';
+import { readExamResults, writeExamResult } from './exam/result';
+import type { ExamResult, ExamResults } from './exam/types';
 
 // PLAN-play 10. lépés: egy meglévő telepítésen a haladás ma "b1-..." id-kkel
 // forog, ezért az oszlop hiánya (régi DB) B1-re esik vissza, nem A1-re.
@@ -65,6 +67,10 @@ export interface DB {
   setGameProgress(gameId: string, itemId: string, state: string, data?: unknown): Promise<void>;
   // PLAN-fb1001 7. lépés (FB431): egy játék/kurzus (pl. a nyelvtan) teljes haladása az aktív párra.
   resetGameProgress(gameId: string): Promise<void>;
+  // PLAN-vizsga A. szakasz 2. lépés (A6 a): a szintvizsga eredménye szintenként (átment-e, legjobb pontszám),
+  // a `level-exam` game_progress sorokban (lib/exam/result.ts); `save` a korábbival összevonva ment.
+  getExamResults(): Promise<ExamResults>;
+  saveExamResult(level: string, pct: number, passed: boolean, date: string): Promise<ExamResult>;
   // PLAN-pcic 4. lépés: PCIC fül, SM-2, független a FSRS `cards`-tól
   getPcicCards(): Promise<Sm2Card[]>;
   upsertPcicCard(card: Sm2Card): Promise<void>;
@@ -419,6 +425,15 @@ class SQLiteDB implements DB {
   async resetGameProgress(gameId: string) {
     const db = await this.open();
     await db.runAsync('DELETE FROM game_progress WHERE pair = ? AND game_id = ?', [this.activePair, gameId]);
+  }
+
+  // PLAN-vizsga A. szakasz 2. lépés (A6 a): a szintvizsga eredménye, lásd lib/exam/result.ts.
+  async getExamResults(): Promise<ExamResults> {
+    return readExamResults(this);
+  }
+
+  async saveExamResult(level: string, pct: number, passed: boolean, date: string): Promise<ExamResult> {
+    return writeExamResult(this, level, pct, passed, date);
   }
 
   // PLAN-pcic 4. lépés: PCIC fül, SM-2, független a FSRS `cards`-tól. Nem
