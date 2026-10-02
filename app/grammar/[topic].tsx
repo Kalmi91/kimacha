@@ -24,6 +24,7 @@ import {
 } from '@/lib/grammar/lessonScore';
 import { tableCellsForLesson, wordCellsForLesson, WORD_DECK_MIN_CARDS } from '@/lib/grammar/tableDeck';
 import { TRANSFORM_ROUND_SIZE } from '@/lib/grammar/transformRounds';
+import { LESSON_TEST_PASS_PCT, lessonTestFromRows, lessonTestKey, lessonTestSize, lessonTestUnlocked } from '@/lib/grammar/lessonTest';
 import { getScrollY, setScrollY } from '@/lib/grammar/scrollMemory';
 import { speak, speakSequence, stopSpeaking } from '@/lib/speech';
 import { splitByLanguage, splitByMarkers } from '@/lib/mixedSpeech';
@@ -31,6 +32,7 @@ import { speechLang } from '@/lib/languages';
 import GlossText from '@/components/games/GlossText';
 import GrammarDrill, { type RoundStats } from '@/components/grammar/GrammarDrill';
 import LessonBody from '@/components/grammar/LessonBody';
+import LessonTest from '@/components/grammar/LessonTest';
 import MoreBlocks from '@/components/grammar/MoreBlocks';
 import FeedbackButton from '@/components/FeedbackModal';
 import FitText from '@/components/FitText';
@@ -46,7 +48,7 @@ import { useLoadOnMount } from '@/lib/useLoadOnMount';
 // grammar-choice already covers "drill first, explanation after" and the point
 // of the course is the other order: understand, then check.
 
-type Phase = 'lesson' | 'drill' | 'done';
+type Phase = 'lesson' | 'drill' | 'done' | 'test';
 type ProgressRow = { itemId: string; state: string; data: unknown };
 
 // D3 (FB290, 2026-09-17): a gombok ebben a sorrendben jelennek meg, csak azok
@@ -171,6 +173,8 @@ export default function GrammarLessonScreen() {
   // never alongside the table-deck button (D5: "ne legyen két gomb").
   // PLAN-fb0929 10. lépés: es→en irányban az angol szókészletből épül; ha nincs elég szó, nincs gomb.
   const wordDeckCells = tableDeckCells.length === 0 ? wordCellsForLesson(lesson, learnedLang) : [];
+  // PLAN-vizsga B. szakasz (8. lépés): a lecke végi teszt külön sora, nem része a lecke %-ának (B3 a).
+  const lessonTestResult = lessonTestFromRows(progressRows, String(topicId));
 
   // Two worked examples from the first items, so the lesson SHOWS the rule
   // before it asks anything.
@@ -320,6 +324,29 @@ export default function GrammarLessonScreen() {
       </Pressable>
     );
 
+  if (phase === 'test') {
+    return (
+      <View style={[styles.container, { backgroundColor: colors.background }]}>
+        <LessonTest
+          lesson={lesson}
+          topicId={String(topicId)}
+          learnedLang={learnedLang}
+          contentLang={contentLang}
+          previous={lessonTestResult}
+          hasNextTopic={!!nextWrittenTopic(learnedLang, String(topicId))}
+          onSave={(r) => saveRow(lessonTestKey(String(topicId)), r.passed ? 'passed' : 'failed', r)}
+          onNextTopic={() => {
+            const nextTopic = nextWrittenTopic(learnedLang, String(topicId));
+            if (nextTopic) router.replace(`/grammar/${nextTopic.id}` as never);
+          }}
+          onBackToRule={() => setPhase('lesson')}
+          onBackToSyllabus={() => router.back()}
+          onLeave={() => setPhase('lesson')}
+        />
+      </View>
+    );
+  }
+
   if (phase === 'drill') {
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
@@ -360,6 +387,49 @@ export default function GrammarLessonScreen() {
     // FB328: a lecke MINDEN eddigi köréből számolt kumulált arány, nem csak
     // ennek a körnek a pontszáma (ami fentebb, `pct`).
     const cumulativePct = lessonScoreOf(progressRows);
+    // A teszt-gomb az egyetlen kitöltött (kiemelt) gomb a lapon, a többi másodlagos (keretes).
+    // PLAN-vizsga B1 b: a "Lesson test" gomb a done-lapon; csak akkor él, ha a lecke minden
+    // feladat-fajtájából volt már kör, addig szürke, alatta a teendő. A gomb alatti sor a szabály.
+    const testSize = lessonTestSize(lesson, learnedLang, contentLang);
+    const testReady = lessonTestUnlocked(lesson, progressRows, String(topicId));
+    const startTest = () => setPhase('test');
+    const lessonTestCta =
+      testSize > 0 ? (
+        <>
+          {g.brutal ? (
+            <BrutalBox
+              testID="grammar-start-lessontest"
+              fill={testReady ? 'a' : 'paper'}
+              dashed={!testReady}
+              disabled={!testReady}
+              style={styles.brutalBtnWrap}
+              boxStyle={styles.brutalBtn}
+              onPress={startTest}
+            >
+              <Text style={[styles.brutalBtnText, { color: testReady ? g.onFill : g.mu }]}>{s.lessonTest.take}</Text>
+            </BrutalBox>
+          ) : (
+            <Pressable
+              testID="grammar-start-lessontest"
+              disabled={!testReady}
+              style={[
+                styles.btn,
+                testReady ? { backgroundColor: colors.tint } : { borderWidth: 1.5, borderColor: colors.tabIconDefault, opacity: 0.5 },
+              ]}
+              onPress={startTest}
+            >
+              <Text style={[styles.btnText, testReady ? styles.btnTextOnTint : { color: colors.tabIconDefault }]}>{s.lessonTest.take}</Text>
+            </Pressable>
+          )}
+          <Text testID="grammar-lessontest-note" style={[styles.lessonTestNote, { color: g.brutal ? g.mu : colors.tabIconDefault }]}>
+            {!testReady
+              ? s.lessonTest.finishFirst
+              : lessonTestResult?.passed
+                ? s.lessonTest.passedBest(lessonTestResult.best)
+                : s.lessonTest.rules(testSize, LESSON_TEST_PASS_PCT)}
+          </Text>
+        </>
+      ) : null;
     // NY24 (neo-brutalista, NYELVTAN.md "Neo-brutalista stílus" 3. képernyő): nagy
     // helyes-arány a kitöltött dobozban + combo-matrica, 3 kis doboz, "practice
     // this" a rontott mondattal, téma-progress szegmensekben, gombok.
@@ -419,15 +489,15 @@ export default function GrammarLessonScreen() {
               </BrutalBox>
             ) : null}
 
+            {lessonTestCta}
             {next ? (
               <BrutalBox
                 testID="grammar-next-topic"
-                fill="a"
                 style={styles.brutalBtnWrap}
                 boxStyle={styles.brutalBtn}
                 onPress={() => router.replace(`/grammar/${next.id}` as never)}
               >
-                <Text style={[styles.brutalBtnText, { color: g.onFill }]}>{s.grammar.nextTopic} →</Text>
+                <Text style={[styles.brutalBtnText, { color: g.ink }]}>{s.grammar.nextTopic} →</Text>
               </BrutalBox>
             ) : null}
             <BrutalBox style={styles.brutalBtnWrap} boxStyle={styles.brutalBtn} onPress={() => setPhase('lesson')}>
@@ -480,31 +550,27 @@ export default function GrammarLessonScreen() {
               {s.grammar.lessonPercent(cumulativePct)}
             </Text>
           ) : null}
+          {lessonTestCta}
           {next ? (
             <Pressable
               testID="grammar-next-topic"
-              style={[
-                styles.btn,
-                pct >= 80 ? { backgroundColor: colors.tint } : { borderWidth: 1.5, borderColor: colors.tint },
-              ]}
+              style={[styles.btn, { borderWidth: 1.5, borderColor: colors.tint }]}
               onPress={() => router.replace(`/grammar/${next.id}` as never)}
             >
-              <Text style={[styles.btnText, pct >= 80 ? styles.btnTextOnTint : { color: colors.tint }]}>
-                {s.grammar.nextTopic}
-              </Text>
+              <Text style={[styles.btnText, { color: colors.tint }]}>{s.grammar.nextTopic}</Text>
             </Pressable>
           ) : null}
           <Pressable
             style={[
               styles.btn,
-              pct >= 80 && next ? { borderWidth: 1.5, borderColor: colors.tint } : { backgroundColor: colors.tint },
+              (pct >= 80 && next) || testSize > 0 ? { borderWidth: 1.5, borderColor: colors.tint } : { backgroundColor: colors.tint },
             ]}
             onPress={() => setPhase('lesson')}
           >
             <Text
               style={[
                 styles.btnText,
-                pct >= 80 && next ? { color: colors.tint } : styles.btnTextOnTint,
+                (pct >= 80 && next) || testSize > 0 ? { color: colors.tint } : styles.btnTextOnTint,
               ]}
             >
               {s.grammar.backToRule}
@@ -631,6 +697,11 @@ export default function GrammarLessonScreen() {
             mondatok / párosítás / ragozás, ne egyszerre az egész lecke.
             FB380: a gomb alatt a fajta SAJÁT %-a, ugyanazzal a lessonPercent
             logikával, ami a Kész-képernyő kinti számát adja. */}
+        {lessonTestResult?.passed ? (
+          <Text testID="grammar-test-passed" style={[styles.testPassedNote, { color: g.brutal ? g.ink : colors.success }]}>
+            ✓ {s.lessonTest.passedBest(lessonTestResult.best)}
+          </Text>
+        ) : null}
         {availableKinds.map((kind, i) => {
           // FB421 (D4): félbehagyott körnél "3/10 · 30%" (a meg nem válaszolt tétel 0), egyébként a
           // fajta legjobb köre; a jobb eredmény felülírja a régit (lib/grammar/lessonScore.ts).
@@ -784,4 +855,7 @@ const styles = StyleSheet.create({
   // FB380: ugyanaz a sor-stílus, fajtánként a saját gombja alatt.
   kindPercentNote: { fontSize: 12, textAlign: 'center', marginTop: 2 },
   trialRow: { alignItems: 'center', marginTop: 6 },
+  // PLAN-vizsga B. szakasz: a lecke-teszt gombja alatti sor, és a lecke-oldal "Test passed" jele.
+  lessonTestNote: { fontSize: 12, textAlign: 'center', marginTop: 4 },
+  testPassedNote: { fontSize: 14, fontWeight: '700', marginTop: 10 },
 });
