@@ -29,7 +29,7 @@ jest.mock('expo-router', () => ({
 import { act, fireEvent, render, screen } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database.web';
-import { hashString, shuffleArray } from '@/lib/shuffle';
+import { hashString, shuffleNoFixedPoints } from '@/lib/shuffle';
 import { GRAMMAR_PROGRESS_KEY, lessonKinds } from '@/lib/grammar/syllabus';
 import GrammarLessonScreen from '../[topic]';
 
@@ -42,9 +42,9 @@ const flush = async (times = 3) => {
 };
 
 // ser-estar's se-match-01 has 6 pairs; the right column order is a seeded
-// shuffle of the pair indices, keyed by the item's own id (GrammarDrill.tsx
+// shuffle (no pair in its own row) of the pair indices, keyed by the item's own id (GrammarDrill.tsx
 // MatchDrillItem), so it is exactly reproducible here.
-const RIGHT_ORDER = shuffleArray([0, 1, 2, 3, 4, 5], hashString('se-match-01'));
+const RIGHT_ORDER = shuffleNoFixedPoints(6, hashString('se-match-01'));
 
 // ser-estar's 12 form items minus the 2 vosotros ones (se-form-09/10,
 // FB357), in authored order, buildGrammarRound does not shuffle form items.

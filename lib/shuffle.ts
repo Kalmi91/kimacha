@@ -64,3 +64,19 @@ export function shuffleArray<T>(items: T[], seed: number): T[] {
   }
   return out;
 }
+
+/**
+ * Seeded shuffle of 0..n-1 where no index stays in its own slot (FB442: in a
+ * matching task the answer must never sit right next to its question). The
+ * first seed that gives a derangement wins, so layouts that already had no
+ * fixed point keep their order; n < 2 cannot be deranged and is returned as is.
+ */
+export function shuffleNoFixedPoints(n: number, seed: number): number[] {
+  const base = Array.from({ length: n }, (_, i) => i);
+  if (n < 2) return base;
+  for (let k = 0; k < 64; k++) {
+    const order = shuffleArray(base, seed + k);
+    if (order.every((p, i) => p !== i)) return order;
+  }
+  return base.map((_, i) => (i + 1) % n);
+}

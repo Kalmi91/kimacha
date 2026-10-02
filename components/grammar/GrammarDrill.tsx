@@ -33,7 +33,7 @@ import { pickTransformRound, TRANSFORM_ROUND_SIZE } from '@/lib/grammar/transfor
 import { findWholeWord } from '@/lib/grammar/whyTarget';
 import { optionHint } from '@/lib/grammar/optionHints';
 import { buildGlossMap } from '@/lib/games/gloss';
-import { hashString, shuffleArray } from '@/lib/shuffle';
+import { hashString, shuffleNoFixedPoints } from '@/lib/shuffle';
 import GlossText from '@/components/games/GlossText';
 import LessonBody from '@/components/grammar/LessonBody';
 import MoreBlocks from '@/components/grammar/MoreBlocks';
@@ -144,7 +144,7 @@ function MatchDrillItem({
   // FB420: a második argumentum a jó párok száma (egy hiba = egy pár elveszik).
   onDone: (correct: boolean, correctUnits?: number) => void;
 }) {
-  const [rightOrder] = useState(() => shuffleArray(item.pairs.map((_, i) => i), hashString(item.id)));
+  const [rightOrder] = useState(() => shuffleNoFixedPoints(item.pairs.length, hashString(item.id)));
   const [selectedLeft, setSelectedLeft] = useState<number | null>(null);
   const [matched, setMatched] = useState<Set<number>>(new Set());
   const [wrongPair, setWrongPair] = useState<{ left: number; right: number } | null>(null);
