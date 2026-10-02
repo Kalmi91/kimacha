@@ -145,6 +145,14 @@
         ["nosotros", "estamos"],
         ["vosotros", "estáis"],
         ["ellos/ellas/ustedes", "están"]
+      ],
+      "enPrompt": [
+        ["I am"],
+        ["you are"],
+        ["she is"],
+        ["we are"],
+        ["you all are"],
+        ["they are"]
       ]
     },
     {

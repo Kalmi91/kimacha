@@ -171,6 +171,14 @@
         ["nosotros", "vamos a"],
         ["vosotros", "vais a"],
         ["ellos/ellas/ustedes", "van a"]
+      ],
+      "enPrompt": [
+        ["I am going to"],
+        ["you are going to"],
+        ["she is going to"],
+        ["we are going to"],
+        ["you all are going to"],
+        ["they are going to"]
       ]
     },
     {

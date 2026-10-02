@@ -225,6 +225,14 @@
           "piden",
           "juegan"
         ]
+      ],
+      "enPrompt": [
+        ["I want", "I can", "I ask for", "I play"],
+        ["you want", "you can", "you ask for", "you play"],
+        ["she wants", "he can", "she asks for", "he plays"],
+        ["we want", "we can", "we ask for", "we play"],
+        ["you all want", "you all can", "you all ask for", "you all play"],
+        ["they want", "they can", "they ask for", "they play"]
       ]
     },
     {

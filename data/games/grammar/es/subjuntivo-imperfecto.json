@@ -254,6 +254,13 @@
         ["él/ella", "hablara", "comiera", "viviera", "tuviera", "hiciera", "fuera", "fuera", "pudiera", "supiera", "quisiera", "dijera"],
         ["nosotros", "habláramos", "comiéramos", "viviéramos", "tuviéramos", "hiciéramos", "fuéramos", "fuéramos", "pudiéramos", "supiéramos", "quisiéramos", "dijéramos"],
         ["ustedes", "hablaran", "comieran", "vivieran", "tuvieran", "hicieran", "fueran", "fueran", "pudieran", "supieran", "quisieran", "dijeran"]
+      ],
+      "enPrompt": [
+        ["that I spoke", "that I ate", "that I lived", "that I had", "that I did", "that I were", "that I went", "that I could", "that I knew", "that I wanted", "that I said"],
+        ["that you spoke", "that you ate", "that you lived", "that you had", "that you did", "that you were", "that you went", "that you could", "that you knew", "that you wanted", "that you said"],
+        ["that she spoke", "that he ate", "that she lived", "that he had", "that she did", "that he were", "that she went", "that he could", "that she knew", "that he wanted", "that she said"],
+        ["that we spoke", "that we ate", "that we lived", "that we had", "that we did", "that we were", "that we went", "that we could", "that we knew", "that we wanted", "that we said"],
+        ["that you all spoke", "that you all ate", "that you all lived", "that you all had", "that you all did", "that you all were", "that you all went", "that you all could", "that you all knew", "that you all wanted", "that you all said"]
       ]
     },
     {
