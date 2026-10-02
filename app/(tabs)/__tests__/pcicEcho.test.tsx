@@ -36,7 +36,7 @@ jest.mock('@/data/pcic', () => ({
 }));
 
 import { act, fireEvent, render } from '@testing-library/react-native';
-import { TextInput } from 'react-native';
+import { StyleSheet, TextInput } from 'react-native';
 
 import { getDb } from '@/lib/database';
 import { ThemeProvider } from '@/lib/ThemeContext';
@@ -86,6 +86,14 @@ describe('PCIC felfedés: a helyes válasz csak egyszer látszik (5a)', () => {
     const view = await revealWith('xyz');
     expect(view.getByTestId('pcic-diff-line')).toBeTruthy();
     expect(view.getAllByText('está')).toHaveLength(1);
+    view.unmount();
+  });
+
+  // FB460 ("Not quite!" és a rontott szó közé kis hely): a jelvény alatt a beírt szó sora nem ér hozzá.
+  it('rossz válasz: a "Not quite!" jelvény és a beírt (rontott) szó között rés van (FB460)', async () => {
+    const view = await revealWith('xyz');
+    const gap = StyleSheet.flatten(view.getByTestId('pcic-diff-line').props.style).marginTop ?? 0;
+    expect(gap).toBeGreaterThanOrEqual(8);
     view.unmount();
   });
 });
