@@ -151,6 +151,7 @@ describe('grammar course', () => {
     expect(screen.queryByTestId('grammar-level-A2')).toBeTruthy();
     expect(screen.queryByTestId('grammar-level-B1')).toBeTruthy();
     expect(screen.queryByTestId('grammar-level-B2')).toBeTruthy();
+    expect(screen.queryByTestId('grammar-level-C1')).toBeTruthy();
     expect(screen.queryByTestId('grammar-topic-presente-regular')).toBeNull();
     expect(screen.queryByTestId('grammar-topic-to_be')).toBeTruthy();
     // az A0-A2 21 angol témához van lecke: egyik sem „próximamente”.
