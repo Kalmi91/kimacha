@@ -1,0 +1,1318 @@
+{
+  "schema": 2,
+  "topic": "ellipsis_substitution",
+  "level": "C1",
+  "title": {
+    "hu": "Kihagyás és helyettesítés (So do I, Neither can he, the red one, I think so)",
+    "en": "Ellipsis and Substitution (So do I, Neither can he, the red one, I think so)",
+    "es": "Elipsis y sustitución (So do I, Neither can he, the red one, I think so)",
+    "de": "Ellipse und Ersetzung (So do I, Neither can he, the red one, I think so)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A természetes angol nem ismétel meg mindent: kihagyja, amit a beszélgetőtárs már tudja (kihagyás), vagy rövid szóval pótolja (helyettesítés). „I love jazz., So do I.” (Én is.) „I don’t., Neither do I.” (Én sem.) „Which bag?, The red one.” „Will it rain?, I think so.” A spanyol „yo también”, „yo tampoco”, „el rojo”, „creo que sí” ennek felel meg, de az angolban a segédige és a szórend kötött, és a „think yes” hibás.",
+        "en": "Natural English does not repeat everything: it leaves out what the other person already knows (ellipsis) or replaces it with a short word (substitution). “I love jazz., So do I.” “I don’t., Neither do I.” “Which bag?, The red one.” “Will it rain?, I think so.” The Spanish “yo también”, “yo tampoco”, “el rojo” and “creo que sí” match this, but in English the auxiliary and the word order are fixed, and “think yes” is wrong.",
+        "es": "El inglés natural no repite todo: omite lo que la otra persona ya sabe (elipsis) o lo reemplaza con una palabra corta (sustitución). «I love jazz., So do I.» «I don’t., Neither do I.» «Which bag?, The red one.» «Will it rain?, I think so.» El «yo también», el «yo tampoco», el «el rojo» y el «creo que sí» del español les corresponden, pero en inglés el auxiliar y el orden de las palabras son fijos, y «think yes» es incorrecto.",
+        "de": "Natürliches Englisch wiederholt nicht alles: es lässt weg, was der andere schon weiß (Ellipse), oder ersetzt es durch ein kurzes Wort (Ersetzung). «I love jazz., So do I.» «I don’t., Neither do I.» «Which bag?, The red one.» «Will it rain?, I think so.» Das spanische «yo también», «yo tampoco», «el rojo» und «creo que sí» entsprechen dem, aber im Englischen sind Hilfsverb und Wortstellung fest, und «think yes» ist falsch."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "ell-forms",
+      "title": {
+        "hu": "Melyik szó?",
+        "en": "Which word?",
+        "es": "¿Qué palabra uso?",
+        "de": "Welches Wort?"
+      },
+      "header": [
+        {
+          "hu": "Jelentés",
+          "en": "Meaning",
+          "es": "Significado",
+          "de": "Bedeutung"
+        },
+        {
+          "hu": "forma",
+          "en": "form",
+          "es": "forma",
+          "de": "Form"
+        }
+      ],
+      "rows": [
+        [
+          "yo también (___ do I)",
+          "so"
+        ],
+        [
+          "yo tampoco (___ do I)",
+          "neither"
+        ],
+        [
+          "espero que no (I hope ___)",
+          "not"
+        ],
+        [
+          "el rojo (the red ___)",
+          "one"
+        ],
+        [
+          "los rojos (the red ___)",
+          "ones"
+        ],
+        [
+          "puedes venir si quieres (if you want ___)",
+          "to"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Egyetértés: so és neither + segédige + alany",
+        "en": "Agreeing: so and neither + auxiliary + subject",
+        "es": "Estar de acuerdo: so y neither + auxiliar + sujeto",
+        "de": "Zustimmung: so und neither + Hilfsverb + Subjekt"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Állító mondatra so, tagadóra neither (vagy nor). A segédige az első mondat igeidejét követi: „I’ve seen it., So have I.” „She can swim., So can he.” Ha nincs segédige, do/does/did áll.",
+            "en": "For a positive sentence use so, for a negative one neither (or nor). The auxiliary follows the tense of the first sentence: “I’ve seen it., So have I.” “She can swim., So can he.” If there is no auxiliary, do/does/did is used.",
+            "es": "Para una oración afirmativa se usa so, para una negativa neither (o nor). El auxiliar sigue el tiempo de la primera oración: «I’ve seen it., So have I.» «She can swim., So can he.» Si no hay auxiliar, se usa do/does/did.",
+            "de": "Für einen bejahten Satz steht so, für einen verneinten neither (oder nor). Das Hilfsverb folgt der Zeit des ersten Satzes: «I’ve seen it., So have I.» «She can swim., So can he.» Gibt es kein Hilfsverb, steht do/does/did."
+          },
+          "examples": [
+            {
+              "es": "I love jazz., So do I.",
+              "tr": {
+                "hu": "Szeretem a jazzt., Én is.",
+                "en": "I love jazz., So do I.",
+                "es": "Me encanta el jazz., A mí también.",
+                "de": "Ich liebe Jazz., Ich auch."
+              }
+            },
+            {
+              "es": "I don't like it., Neither do I.",
+              "tr": {
+                "hu": "Nem szeretem., Én sem.",
+                "en": "I don't like it., Neither do I.",
+                "es": "No me gusta., A mí tampoco.",
+                "de": "Ich mag es nicht., Ich auch nicht."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Másik forma: I do too / I don’t either. A neither után nem áll másik tagadás: nem „neither don’t I”.",
+            "en": "Another form: I do too / I don’t either. After neither there is no second negative: not “neither don’t I”.",
+            "es": "Otra forma: I do too / I don’t either. Después de neither no va una segunda negación: no «neither don’t I».",
+            "de": "Eine andere Form: I do too / I don’t either. Nach neither steht keine zweite Verneinung: nicht «neither don’t I»."
+          },
+          "examples": [
+            {
+              "es": "I love jazz., I do too.",
+              "tr": {
+                "hu": "Szeretem a jazzt., Én is.",
+                "en": "I love jazz., I do too.",
+                "es": "Me encanta el jazz., A mí también.",
+                "de": "Ich liebe Jazz., Ich auch."
+              }
+            },
+            {
+              "es": "I don't like it., I don't either.",
+              "tr": {
+                "hu": "Nem szeretem., Én sem.",
+                "en": "I don't like it., I don't either.",
+                "es": "No me gusta., A mí tampoco.",
+                "de": "Ich mag es nicht., Ich auch nicht."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "One és ones: megszámlálható főnév pótlása",
+        "en": "One and ones: replacing a countable noun",
+        "es": "One y ones: reemplazar un sustantivo contable",
+        "de": "One und ones: ein zählbares Nomen ersetzen"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A one egyes számú, a ones többes számú megszámlálható főnevet pótol: „Which bag?, The red one.” „I prefer the green ones.” Megszámlálhatatlan főnévre nem használható.",
+            "en": "One replaces a singular countable noun, ones a plural countable noun: “Which bag?, The red one.” “I prefer the green ones.” It cannot replace an uncountable noun.",
+            "es": "One reemplaza a un sustantivo contable singular, ones a uno contable plural: «Which bag?, The red one.» «I prefer the green ones.» No puede reemplazar a un sustantivo incontable.",
+            "de": "One ersetzt ein zählbares Nomen im Singular, ones eines im Plural: «Which bag?, The red one.» «I prefer the green ones.» Es kann kein unzählbares Nomen ersetzen."
+          },
+          "examples": [
+            {
+              "es": "Which bag is yours?, The red one.",
+              "tr": {
+                "hu": "Melyik a táskád?, A piros.",
+                "en": "Which bag is yours?, The red one.",
+                "es": "¿Cuál bolsa es la tuya?, La roja.",
+                "de": "Welche Tasche ist deine?, Die rote."
+              }
+            },
+            {
+              "es": "I prefer the green ones to the blue ones.",
+              "tr": {
+                "hu": "A zöldeket jobban szeretem, mint a kékeket.",
+                "en": "I prefer the green ones to the blue ones.",
+                "es": "Prefiero los verdes a los azules.",
+                "de": "Ich mag die grünen lieber als die blauen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "So és not a gondolkodás igék után",
+        "en": "So and not after verbs of thinking",
+        "es": "So y not después de verbos de pensamiento",
+        "de": "So und not nach Verben des Denkens"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A think, hope, suppose, believe, be afraid után a so az egész mondatot pótolja, tagadásban not vagy don’t think so: „I think so.” „I hope not.” „I don’t think so.” Nem „I think yes”.",
+            "en": "After think, hope, suppose, believe, be afraid, so replaces the whole clause, and in the negative not or don’t think so: “I think so.” “I hope not.” “I don’t think so.” Not “I think yes”.",
+            "es": "Después de think, hope, suppose, believe, be afraid, so reemplaza toda la cláusula, y en negativo not o don’t think so: «I think so.» «I hope not.» «I don’t think so.» No «I think yes».",
+            "de": "Nach think, hope, suppose, believe, be afraid ersetzt so den ganzen Satz, und in der Verneinung not oder don’t think so: «I think so.» «I hope not.» «I don’t think so.» Nicht «I think yes»."
+          },
+          "examples": [
+            {
+              "es": "Will it rain tomorrow?, I hope not.",
+              "tr": {
+                "hu": "Esni fog holnap?, Remélem, nem.",
+                "en": "Will it rain tomorrow?, I hope not.",
+                "es": "¿Va a llover mañana?, Espero que no.",
+                "de": "Wird es morgen regnen?, Hoffentlich nicht."
+              }
+            },
+            {
+              "es": "Is she coming?, I think so.",
+              "tr": {
+                "hu": "Jön?, Azt hiszem.",
+                "en": "Is she coming?, I think so.",
+                "es": "¿Viene ella?, Creo que sí.",
+                "de": "Kommt sie?, Ich glaube schon."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Kihagyás segédige után és az infinitív to-ja",
+        "en": "Ellipsis after an auxiliary and the to of the infinitive",
+        "es": "Elipsis después de un auxiliar y el to del infinitivo",
+        "de": "Ellipse nach einem Hilfsverb und das to des Infinitivs"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A segédige után a megismételt ige elmarad: „I haven’t finished, but my sister has.” Az infinitívnél a to megmarad: „You can stay if you want to.” „I’d love to.”",
+            "en": "After an auxiliary the repeated verb is dropped: “I haven’t finished, but my sister has.” With an infinitive the to stays: “You can stay if you want to.” “I’d love to.”",
+            "es": "Después de un auxiliar el verbo repetido se omite: «I haven’t finished, but my sister has.» Con un infinitivo el to se queda: «You can stay if you want to.» «I’d love to.»",
+            "de": "Nach einem Hilfsverb entfällt das wiederholte Verb: «I haven’t finished, but my sister has.» Beim Infinitiv bleibt das to: «You can stay if you want to.» «I’d love to.»"
+          },
+          "examples": [
+            {
+              "es": "I haven't finished, but my sister has.",
+              "tr": {
+                "hu": "Én nem fejeztem be, de a húgom igen.",
+                "en": "I haven't finished, but my sister has.",
+                "es": "Yo no he terminado, pero mi hermana sí.",
+                "de": "Ich bin nicht fertig, aber meine Schwester schon."
+              }
+            },
+            {
+              "es": "You can stay if you want to.",
+              "tr": {
+                "hu": "Maradhatsz, ha akarsz.",
+                "en": "You can stay if you want to.",
+                "es": "Puedes quedarte si quieres.",
+                "de": "Du kannst bleiben, wenn du willst."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Spanyol hatás: a „yo también” nem „I too do”, hanem „so do I” vagy „I do too”; a „creo que sí” nem „I think yes”, hanem „I think so”. A segédigének egyeznie kell az első mondattal.",
+        "en": "Spanish influence: the Spanish “yo también” is not “I too do” but “so do I” or “I do too”; “creo que sí” is not “I think yes” but “I think so”. The auxiliary must match the first sentence.",
+        "es": "Influencia del español: el «yo también» no es «I too do» sino «so do I» o «I do too»; «creo que sí» no es «I think yes» sino «I think so». El auxiliar debe coincidir con la primera oración.",
+        "de": "Einfluss des Spanischen: das spanische «yo también» ist nicht «I too do», sondern «so do I» oder «I do too»; «creo que sí» ist nicht «I think yes», sondern «I think so». Das Hilfsverb muss zum ersten Satz passen."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A „do so” formális és írott: „He asked me to leave, and I did so.” Beszédben inkább „I did.” vagy „I did it.” hangzik természetesen.",
+        "en": "“Do so” is formal and written: “He asked me to leave, and I did so.” In speech “I did.” or “I did it.” sounds more natural.",
+        "es": "«Do so» es formal y escrito: «He asked me to leave, and I did so.» Al hablar suena más natural «I did.» o «I did it.»",
+        "de": "«Do so» ist formell und schriftlich: «He asked me to leave, and I did so.» Im Gespräch klingt «I did.» oder «I did it.» natürlicher."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A természetes angol nem ismétel meg mindent. Egyetértés állító mondatra: «I love jazz. So do I». Tagadó mondatra: «I don't like it. Neither do I». A segédige az első mondat igeidejét követi: «I've seen it. So have I». A «one» és a «ones» megszámlálható főnevet pótol: «Which bag? The red one». A gondolkodás igék után a «so» az egész mondatot pótolja: «I think so», «I hope not». Nem «I think yes».",
+    "en": "Natural English does not repeat everything. Agreeing with a positive sentence: «I love jazz. So do I». With a negative sentence: «I don't like it. Neither do I». The auxiliary follows the tense of the first sentence: «I've seen it. So have I». «One» and «ones» replace a countable noun: «Which bag? The red one». After verbs of thinking «so» replaces the whole clause: «I think so», «I hope not». Not «I think yes».",
+    "es": "El inglés natural no repite todo. Estar de acuerdo con una oración afirmativa: «I love jazz. So do I». Con una negativa: «I don't like it. Neither do I». El auxiliar sigue el tiempo de la primera oración: «I've seen it. So have I». «One» y «ones» reemplazan a un sustantivo contable: «Which bag? The red one». Después de verbos de pensamiento «so» reemplaza toda la cláusula: «I think so», «I hope not». No «I think yes».",
+    "de": "Natürliches Englisch wiederholt nicht alles. Zustimmung zu einem bejahten Satz: «I love jazz. So do I». Zu einem verneinten: «I don't like it. Neither do I». Das Hilfsverb folgt der Zeit des ersten Satzes: «I've seen it. So have I». «One» und «ones» ersetzen ein zählbares Nomen: «Which bag? The red one». Nach Verben des Denkens ersetzt «so» den ganzen Satz: «I think so», «I hope not». Nicht «I think yes»."
+  },
+  "glossary": [
+    {
+      "word": "drive",
+      "gloss": {
+        "hu": "vezet (autót)",
+        "en": "to drive",
+        "es": "manejar",
+        "de": "fahren"
+      }
+    },
+    {
+      "word": "she'll",
+      "gloss": {
+        "hu": "ő majd (she will)",
+        "en": "she will",
+        "es": "ella va a (she will)",
+        "de": "sie wird (she will)"
+      }
+    },
+    {
+      "word": "either",
+      "gloss": {
+        "hu": "sem (tagadásban), vagy",
+        "en": "also, in a negative sentence",
+        "es": "tampoco (en negativo)",
+        "de": "auch nicht (verneint)"
+      }
+    },
+    {
+      "word": "i'd",
+      "gloss": {
+        "hu": "én ...-nék (I would)",
+        "en": "I would",
+        "es": "yo (condicional) (I would)",
+        "de": "ich würde (I would)"
+      }
+    },
+    {
+      "word": "i've",
+      "gloss": {
+        "hu": "én ...-tam, ...-tem (I have)",
+        "en": "I have",
+        "es": "yo he (I have)",
+        "de": "ich habe (I have)"
+      }
+    },
+    {
+      "word": "neither",
+      "gloss": {
+        "hu": "egyik sem (a kettő közül)",
+        "en": "not one and not the other",
+        "es": "ninguno de los dos",
+        "de": "keines von beiden"
+      }
+    },
+    {
+      "word": "nor",
+      "gloss": {
+        "hu": "sem (és ... sem)",
+        "en": "and not",
+        "es": "ni, tampoco",
+        "de": "noch"
+      }
+    },
+    {
+      "word": "stay",
+      "gloss": {
+        "hu": "marad",
+        "en": "to stay",
+        "es": "quedarse",
+        "de": "bleiben"
+      }
+    },
+    {
+      "word": "such",
+      "gloss": {
+        "hu": "olyan, ilyen",
+        "en": "so, of this kind",
+        "es": "tal, tan",
+        "de": "so ein"
+      }
+    },
+    {
+      "word": "true",
+      "gloss": {
+        "hu": "igaz",
+        "en": "not false",
+        "es": "verdadero",
+        "de": "wahr"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "ell-01",
+      "sentence": "I love jazz., So ___ I.",
+      "options": [
+        "am",
+        "do",
+        "love"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Egyetértés állító mondatra: so do I.",
+        "en": "Agreeing with a positive sentence: so do I.",
+        "es": "Estar de acuerdo con una oración afirmativa: so do I.",
+        "de": "Zustimmung zu einem bejahten Satz: so do I."
+      },
+      "wrong": {
+        "am": {
+          "hu": "Az am a be igéhez tartozik; a love ige do-t kér.",
+          "en": "Am belongs to the verb be; the verb love asks for do.",
+          "es": "Am pertenece al verbo be; el verbo love pide do.",
+          "de": "Am gehört zum Verb be; das Verb love verlangt do."
+        },
+        "love": {
+          "hu": "A So love I régies szórend; a mai forma So do I.",
+          "en": "“So love I” is an old word order; the modern form is So do I.",
+          "es": "«So love I» es un orden antiguo; la forma actual es So do I.",
+          "de": "„So love I“ ist eine alte Wortstellung; die heutige Form ist So do I."
+        }
+      },
+      "examples": [
+        "I like tea., So do I.",
+        "I run., So do I."
+      ]
+    },
+    {
+      "id": "ell-02",
+      "sentence": "I don't like coffee., Neither ___ I.",
+      "options": [
+        "don't",
+        "like",
+        "do"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Egyetértés tagadó mondatra: neither do I.",
+        "en": "Agreeing with a negative sentence: neither do I.",
+        "es": "Estar de acuerdo con una oración negativa: neither do I.",
+        "de": "Zustimmung zu einem verneinten Satz: neither do I."
+      },
+      "wrong": {
+        "don't": {
+          "hu": "A neither után nem áll második tagadás (don’t).",
+          "en": "After neither there is no second negative (don’t).",
+          "es": "Después de neither no va una segunda negación (don’t).",
+          "de": "Nach neither steht keine zweite Verneinung (don’t)."
+        },
+        "like": {
+          "hu": "A Neither like I régies; a mai forma Neither do I.",
+          "en": "“Neither like I” is old; the modern form is Neither do I.",
+          "es": "«Neither like I» es antiguo; la forma actual es Neither do I.",
+          "de": "„Neither like I“ ist altmodisch; die heutige Form ist Neither do I."
+        }
+      },
+      "examples": [
+        "I don't smoke., Neither do I.",
+        "I don't know., Neither do I."
+      ]
+    },
+    {
+      "id": "ell-03",
+      "sentence": "I've seen that film., So ___ I.",
+      "options": [
+        "have",
+        "do",
+        "am"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A segédige az első mondat igeidejét követi: so have I.",
+        "en": "The auxiliary follows the tense of the first sentence: so have I.",
+        "es": "El auxiliar sigue el tiempo de la primera oración: so have I.",
+        "de": "Das Hilfsverb folgt der Zeit des ersten Satzes: so have I."
+      },
+      "wrong": {
+        "do": {
+          "hu": "A so do I jelen egyszerűre válaszol; itt present perfect van, have kell.",
+          "en": "So do I answers the present simple; here it is the present perfect, so you need have.",
+          "es": "So do I responde al presente simple; aquí es presente perfecto, por eso hace falta have.",
+          "de": "So do I antwortet auf das Present Simple; hier ist es das Present Perfect, deshalb braucht man have."
+        },
+        "am": {
+          "hu": "Az am a be igéhez tartozik; present perfectre have kell.",
+          "en": "Am belongs to the verb be; for the present perfect you need have.",
+          "es": "Am pertenece al verbo be; para el presente perfecto hace falta have.",
+          "de": "Am gehört zum Verb be; für das Present Perfect braucht man have."
+        }
+      },
+      "examples": [
+        "I've been there., So have I.",
+        "I've finished., So have I."
+      ]
+    },
+    {
+      "id": "ell-04",
+      "sentence": "She'll win., So ___ her brother.",
+      "options": [
+        "does",
+        "will",
+        "is"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A módbeli ige megismétlődik: so will her brother.",
+        "en": "The modal verb is repeated: so will her brother.",
+        "es": "El verbo modal se repite: so will her brother.",
+        "de": "Das Modalverb wiederholt sich: so will her brother."
+      },
+      "wrong": {
+        "does": {
+          "hu": "A does nem ismétli a will-t; a módbeli igét kell megismételni.",
+          "en": "Does does not repeat will; the modal verb must be repeated.",
+          "es": "Does no repite will; hay que repetir el verbo modal.",
+          "de": "Does wiederholt will nicht; das Modalverb muss wiederholt werden."
+        },
+        "is": {
+          "hu": "Az is a be igéhez tartozik; a will módbeli ige will-t kér.",
+          "en": "Is belongs to the verb be; the modal will asks for will.",
+          "es": "Is pertenece al verbo be; el modal will pide will.",
+          "de": "Is gehört zum Verb be; das Modalverb will verlangt will."
+        }
+      },
+      "examples": [
+        "I can cook., So can I.",
+        "He can drive., So can she."
+      ]
+    },
+    {
+      "id": "ell-05",
+      "sentence": "I'm tired., So ___ I.",
+      "options": [
+        "do",
+        "have",
+        "am"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A be ige megismétlődik: so am I.",
+        "en": "The verb be is repeated: so am I.",
+        "es": "El verbo be se repite: so am I.",
+        "de": "Das Verb be wiederholt sich: so am I."
+      },
+      "wrong": {
+        "do": {
+          "hu": "A do a be igére nem válaszol; am kell.",
+          "en": "Do does not answer the verb be; you need am.",
+          "es": "Do no responde al verbo be; hace falta am.",
+          "de": "Do antwortet nicht auf das Verb be; man braucht am."
+        },
+        "have": {
+          "hu": "A have a present perfectre válaszol; itt a be ige van, am kell.",
+          "en": "Have answers the present perfect; here the verb be is used, so you need am.",
+          "es": "Have responde al presente perfecto; aquí se usa el verbo be, por eso hace falta am.",
+          "de": "Have antwortet auf das Present Perfect; hier steht das Verb be, deshalb braucht man am."
+        }
+      },
+      "examples": [
+        "I'm hungry., So am I.",
+        "She's late., So am I."
+      ]
+    },
+    {
+      "id": "ell-06",
+      "sentence": "I didn't go., Neither ___ I.",
+      "options": [
+        "did",
+        "didn't",
+        "do"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Múlt idejű tagadás: neither did I.",
+        "en": "A past negative: neither did I.",
+        "es": "Un negativo en pasado: neither did I.",
+        "de": "Eine Verneinung in der Vergangenheit: neither did I."
+      },
+      "wrong": {
+        "didn't": {
+          "hu": "A neither után nem áll második tagadás (didn’t).",
+          "en": "After neither there is no second negative (didn’t).",
+          "es": "Después de neither no va una segunda negación (didn’t).",
+          "de": "Nach neither steht keine zweite Verneinung (didn’t)."
+        },
+        "do": {
+          "hu": "A do jelen idejű; az első mondat múlt idejű, did kell.",
+          "en": "Do is present; the first sentence is past, so you need did.",
+          "es": "Do es presente; la primera oración es pasada, por eso hace falta did.",
+          "de": "Do ist Präsens; der erste Satz steht in der Vergangenheit, deshalb braucht man did."
+        }
+      },
+      "examples": [
+        "I didn't see it., Neither did I.",
+        "I didn't ask., Neither did I."
+      ]
+    },
+    {
+      "id": "ell-07",
+      "sentence": "I love jazz., I do ___.",
+      "options": [
+        "either",
+        "too",
+        "so"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Egyetértés állító mondatra: I do too.",
+        "en": "Agreeing with a positive sentence: I do too.",
+        "es": "Estar de acuerdo con una oración afirmativa: I do too.",
+        "de": "Zustimmung zu einem bejahten Satz: I do too."
+      },
+      "wrong": {
+        "either": {
+          "hu": "Az either tagadó mondatban áll (I don’t either).",
+          "en": "Either goes in negative sentences (I don’t either).",
+          "es": "Either va en oraciones negativas (I don’t either).",
+          "de": "Either steht in verneinten Sätzen (I don’t either)."
+        },
+        "so": {
+          "hu": "Az I do so más jelentésű (formális „megtettem”); egyetértésnél too kell.",
+          "en": "“I do so” has another meaning (formal “I did that”); for agreement you need too.",
+          "es": "«I do so» tiene otro significado (formal «lo hice»); para estar de acuerdo hace falta too.",
+          "de": "„I do so“ hat eine andere Bedeutung (formell „ich tat es“); für Zustimmung braucht man too."
+        }
+      },
+      "examples": [
+        "I like it., I do too.",
+        "I know., I do too."
+      ]
+    },
+    {
+      "id": "ell-08",
+      "sentence": "I don't like it., I don't ___.",
+      "options": [
+        "too",
+        "neither",
+        "either"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Egyetértés tagadó mondatra: I don’t either.",
+        "en": "Agreeing with a negative sentence: I don’t either.",
+        "es": "Estar de acuerdo con una oración negativa: I don’t either.",
+        "de": "Zustimmung zu einem verneinten Satz: I don’t either."
+      },
+      "wrong": {
+        "too": {
+          "hu": "A too állító mondatban áll (I do too); tagadásban either kell.",
+          "en": "Too goes in positive sentences (I do too); in the negative you need either.",
+          "es": "Too va en oraciones afirmativas (I do too); en negativo hace falta either.",
+          "de": "Too steht in bejahten Sätzen (I do too); in der Verneinung braucht man either."
+        },
+        "neither": {
+          "hu": "Az I don’t neither kettős tagadás; either kell.",
+          "en": "“I don’t neither” is a double negative; you need either.",
+          "es": "«I don’t neither» es una doble negación; hace falta either.",
+          "de": "„I don’t neither“ ist eine doppelte Verneinung; man braucht either."
+        }
+      },
+      "examples": [
+        "I can't swim., I can't either.",
+        "I don't know., I don't either."
+      ]
+    },
+    {
+      "id": "ell-09",
+      "sentence": "Which bag is yours?, The red ___.",
+      "options": [
+        "one",
+        "ones",
+        "it"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Egyes számú főnév pótlása: the red one.",
+        "en": "Replacing a singular noun: the red one.",
+        "es": "Reemplazar un sustantivo singular: the red one.",
+        "de": "Ersatz eines Singular-Nomens: the red one."
+      },
+      "wrong": {
+        "ones": {
+          "hu": "A ones többes szám; a bag egyes szám.",
+          "en": "Ones is plural; bag is singular.",
+          "es": "Ones es plural; bag es singular.",
+          "de": "Ones ist Plural; bag ist Singular."
+        },
+        "it": {
+          "hu": "A the red it nem helyes; a melléknév után one kell.",
+          "en": "“The red it” is not correct; after the adjective you need one.",
+          "es": "«The red it» no es correcto; después del adjetivo hace falta one.",
+          "de": "„The red it“ ist nicht korrekt; nach dem Adjektiv braucht man one."
+        }
+      },
+      "examples": [
+        "Which shirt?, The blue one.",
+        "Which car?, The old one."
+      ]
+    },
+    {
+      "id": "ell-10",
+      "sentence": "These shoes are old; I want new ___.",
+      "options": [
+        "one",
+        "ones",
+        "its"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Többes számú főnév pótlása: new ones.",
+        "en": "Replacing a plural noun: new ones.",
+        "es": "Reemplazar un sustantivo plural: new ones.",
+        "de": "Ersatz eines Plural-Nomens: new ones."
+      },
+      "wrong": {
+        "one": {
+          "hu": "A one egyes szám; a shoes többes szám.",
+          "en": "One is singular; shoes is plural.",
+          "es": "One es singular; shoes es plural.",
+          "de": "One ist Singular; shoes ist Plural."
+        },
+        "its": {
+          "hu": "Az its birtokos névmás; itt pótló szó kell (ones).",
+          "en": "Its is a possessive; here a substitute word is needed (ones).",
+          "es": "Its es un posesivo; aquí hace falta una palabra sustituta (ones).",
+          "de": "Its ist ein Possessivpronomen; hier braucht man ein Ersatzwort (ones)."
+        }
+      },
+      "examples": [
+        "I like the red ones.",
+        "Show me the big ones."
+      ]
+    },
+    {
+      "id": "ell-11",
+      "sentence": "Will it rain tomorrow?, I hope ___.",
+      "options": [
+        "no",
+        "don't",
+        "not"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Tagadó válasz a hope után: I hope not.",
+        "en": "A negative answer after hope: I hope not.",
+        "es": "Una respuesta negativa después de hope: I hope not.",
+        "de": "Eine verneinte Antwort nach hope: I hope not."
+      },
+      "wrong": {
+        "no": {
+          "hu": "Az I hope no nem helyes (spanyol „espero que no”); not kell.",
+          "en": "“I hope no” is not correct (Spanish “espero que no”); you need not.",
+          "es": "«I hope no» no es correcto («espero que no» del español); hace falta not.",
+          "de": "„I hope no“ ist nicht korrekt (spanisches „espero que no“); man braucht not."
+        },
+        "don't": {
+          "hu": "Az I hope don’t nem helyes; not kell.",
+          "en": "“I hope don’t” is not correct; you need not.",
+          "es": "«I hope don’t» no es correcto; hace falta not.",
+          "de": "„I hope don’t“ ist nicht korrekt; man braucht not."
+        }
+      },
+      "examples": [
+        "Is he angry?, I hope not.",
+        "Is it far?, I hope not."
+      ]
+    },
+    {
+      "id": "ell-12",
+      "sentence": "Is she coming?, I think ___.",
+      "options": [
+        "so",
+        "it",
+        "yes"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A so az egész mondatot pótolja: I think so.",
+        "en": "So replaces the whole clause: I think so.",
+        "es": "So reemplaza toda la cláusula: I think so.",
+        "de": "So ersetzt den ganzen Satz: I think so."
+      },
+      "wrong": {
+        "it": {
+          "hu": "Az I think it nem helyes; a mondat pótlására so kell.",
+          "en": "“I think it” is not correct; to replace the clause you need so.",
+          "es": "«I think it» no es correcto; para reemplazar la cláusula hace falta so.",
+          "de": "„I think it“ ist nicht korrekt; um den Satz zu ersetzen, braucht man so."
+        },
+        "yes": {
+          "hu": "Az I think yes spanyol hatás („creo que sí”); so kell.",
+          "en": "“I think yes” is Spanish influence (“creo que sí”); you need so.",
+          "es": "«I think yes» es influencia del español («creo que sí»); hace falta so.",
+          "de": "„I think yes“ ist ein Einfluss des Spanischen („creo que sí“); man braucht so."
+        }
+      },
+      "examples": [
+        "Is it true?, I think so.",
+        "Will he win?, I hope so."
+      ]
+    },
+    {
+      "id": "ell-13",
+      "sentence": "I haven't finished, but my sister ___.",
+      "options": [
+        "does",
+        "has",
+        "is"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A segédige után a ige elmarad: my sister has.",
+        "en": "After the auxiliary the verb is dropped: my sister has.",
+        "es": "Después del auxiliar el verbo se omite: my sister has.",
+        "de": "Nach dem Hilfsverb entfällt das Verb: my sister has."
+      },
+      "wrong": {
+        "does": {
+          "hu": "A does nem a present perfect segédigéje; has kell.",
+          "en": "Does is not the auxiliary of the present perfect; you need has.",
+          "es": "Does no es el auxiliar del presente perfecto; hace falta has.",
+          "de": "Does ist nicht das Hilfsverb des Present Perfect; man braucht has."
+        },
+        "is": {
+          "hu": "Az is a be igéhez tartozik; a present perfecthez has kell.",
+          "en": "Is belongs to the verb be; the present perfect needs has.",
+          "es": "Is pertenece al verbo be; el presente perfecto necesita has.",
+          "de": "Is gehört zum Verb be; das Present Perfect braucht has."
+        }
+      },
+      "examples": [
+        "I can't swim, but he can.",
+        "She didn't go, but I did."
+      ]
+    },
+    {
+      "id": "ell-14",
+      "sentence": "You can stay if you want ___.",
+      "options": [
+        "it",
+        "so",
+        "to"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Az infinitív to-ja megmarad: if you want to.",
+        "en": "The to of the infinitive stays: if you want to.",
+        "es": "El to del infinitivo se queda: if you want to.",
+        "de": "Das to des Infinitivs bleibt: if you want to."
+      },
+      "wrong": {
+        "it": {
+          "hu": "Az if you want it más jelentésű („ha kell neked”); a to elhagyott igét jelöl.",
+          "en": "“If you want it” has another meaning (“if you need it”); to stands for a dropped verb.",
+          "es": "«If you want it» tiene otro significado («si lo quieres»); to representa un verbo omitido.",
+          "de": "„If you want it“ hat eine andere Bedeutung („wenn du es willst“); to steht für ein weggelassenes Verb."
+        },
+        "so": {
+          "hu": "Az if you want so nem helyes; to kell.",
+          "en": "“If you want so” is not correct; you need to.",
+          "es": "«If you want so» no es correcto; hace falta to.",
+          "de": "„If you want so“ ist nicht korrekt; man braucht to."
+        }
+      },
+      "examples": [
+        "Come if you like to.",
+        "I will if you want me to."
+      ]
+    },
+    {
+      "id": "ell-15",
+      "sentence": "He asked me to leave, and I did ___.",
+      "options": [
+        "so",
+        "such",
+        "as"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Formális pótlás: I did so.",
+        "en": "A formal substitute: I did so.",
+        "es": "Un sustituto formal: I did so.",
+        "de": "Ein formeller Ersatz: I did so."
+      },
+      "wrong": {
+        "such": {
+          "hu": "Az I did such nem helyes; so kell.",
+          "en": "“I did such” is not correct; you need so.",
+          "es": "«I did such» no es correcto; hace falta so.",
+          "de": "„I did such“ ist nicht korrekt; man braucht so."
+        },
+        "as": {
+          "hu": "Az I did as nem helyes ebben a szerkezetben; so kell.",
+          "en": "“I did as” is not correct in this structure; you need so.",
+          "es": "«I did as» no es correcto en esta estructura; hace falta so.",
+          "de": "„I did as“ ist in dieser Struktur nicht korrekt; man braucht so."
+        }
+      },
+      "examples": [
+        "She asked me to stay, and I did so.",
+        "They told him to go, and he did so."
+      ]
+    },
+    {
+      "id": "ell-16",
+      "sentence": "'Are you coming?' 'I'd love ___, but I'm busy.'",
+      "options": [
+        "so",
+        "to",
+        "too"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az infinitív to-ja megmarad: I’d love to.",
+        "en": "The to of the infinitive stays: I’d love to.",
+        "es": "El to del infinitivo se queda: I’d love to.",
+        "de": "Das to des Infinitivs bleibt: I’d love to."
+      },
+      "wrong": {
+        "so": {
+          "hu": "Az I’d love so nem helyes; to kell.",
+          "en": "“I’d love so” is not correct; you need to.",
+          "es": "«I’d love so» no es correcto; hace falta to.",
+          "de": "„I’d love so“ ist nicht korrekt; man braucht to."
+        },
+        "too": {
+          "hu": "Az I’d love too nem helyes; to kell (a too más szó).",
+          "en": "“I’d love too” is not correct; you need to (too is another word).",
+          "es": "«I’d love too» no es correcto; hace falta to (too es otra palabra).",
+          "de": "„I’d love too“ ist nicht korrekt; man braucht to (too ist ein anderes Wort)."
+        }
+      },
+      "examples": [
+        "I'd like to.",
+        "I'd love to."
+      ]
+    },
+    {
+      "id": "ell-17",
+      "sentence": "He doesn't smoke, nor ___ she.",
+      "options": [
+        "do",
+        "is",
+        "does"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A nor után segédige + alany: nor does she.",
+        "en": "After nor comes an auxiliary + subject: nor does she.",
+        "es": "Después de nor va un auxiliar + sujeto: nor does she.",
+        "de": "Nach nor steht ein Hilfsverb + Subjekt: nor does she."
+      },
+      "wrong": {
+        "do": {
+          "hu": "A do többes szám; a she egyes szám, does kell.",
+          "en": "Do is plural; she is singular, so you need does.",
+          "es": "Do es plural; she es singular, por eso hace falta does.",
+          "de": "Do ist Plural; she ist Singular, deshalb braucht man does."
+        },
+        "is": {
+          "hu": "Az is a be igéhez tartozik; a smoke ige does-t kér.",
+          "en": "Is belongs to the verb be; the verb smoke asks for does.",
+          "es": "Is pertenece al verbo be; el verbo smoke pide does.",
+          "de": "Is gehört zum Verb be; das Verb smoke verlangt does."
+        }
+      },
+      "examples": [
+        "I don't swim, nor does he.",
+        "She can't drive, nor can he."
+      ]
+    },
+    {
+      "id": "ell-18",
+      "kind": "form",
+      "verb": "forma",
+      "person": "yo también (___ do I)",
+      "answer": "so",
+      "table": "ell-forms"
+    },
+    {
+      "id": "ell-19",
+      "kind": "form",
+      "verb": "forma",
+      "person": "yo tampoco (___ do I)",
+      "answer": "neither",
+      "accept": [
+        "nor"
+      ],
+      "table": "ell-forms"
+    },
+    {
+      "id": "ell-20",
+      "kind": "form",
+      "verb": "forma",
+      "person": "espero que no (I hope ___)",
+      "answer": "not",
+      "table": "ell-forms"
+    },
+    {
+      "id": "ell-21",
+      "kind": "form",
+      "verb": "forma",
+      "person": "el rojo (the red ___)",
+      "answer": "one",
+      "table": "ell-forms"
+    },
+    {
+      "id": "ell-22",
+      "kind": "form",
+      "verb": "forma",
+      "person": "los rojos (the red ___)",
+      "answer": "ones",
+      "table": "ell-forms"
+    },
+    {
+      "id": "ell-23",
+      "kind": "form",
+      "verb": "forma",
+      "person": "puedes venir si quieres (if you want ___)",
+      "answer": "to",
+      "table": "ell-forms"
+    },
+    {
+      "kind": "why",
+      "id": "ell-24",
+      "es": "I love jazz., So do I.",
+      "target": "So do I",
+      "tr": {
+        "hu": "Szeretem a jazzt., Én is.",
+        "en": "I love jazz., So do I.",
+        "es": "Me encanta el jazz., A mí también.",
+        "de": "Ich liebe Jazz., Ich auch."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "kérdés: szeretem én a jazzt?",
+            "en": "a question: do I love jazz?",
+            "es": "una pregunta: ¿me encanta el jazz?",
+            "de": "eine Frage: liebe ich Jazz?"
+          },
+          "wrong": {
+            "hu": "Ez nem kérdés; az egyetértést jelzi (én is).",
+            "en": "This is not a question; it expresses agreement (me too).",
+            "es": "Esto no es una pregunta; expresa acuerdo (yo también).",
+            "de": "Das ist keine Frage; es drückt Zustimmung aus (ich auch)."
+          }
+        },
+        {
+          "text": {
+            "hu": "egyetértés állító mondatra: so + segédige + alany",
+            "en": "agreement with a positive: so + auxiliary + subject",
+            "es": "acuerdo con una afirmativa: so + auxiliar + sujeto",
+            "de": "Zustimmung zu einem bejahten Satz: so + Hilfsverb + Subjekt"
+          }
+        },
+        {
+          "text": {
+            "hu": "egyet nem értés",
+            "en": "disagreement",
+            "es": "desacuerdo",
+            "de": "Widerspruch"
+          },
+          "wrong": {
+            "hu": "A so do I egyetértést fejez ki, nem ellenvetést.",
+            "en": "So do I expresses agreement, not an objection.",
+            "es": "So do I expresa acuerdo, no una objeción.",
+            "de": "So do I drückt Zustimmung aus, keinen Einwand."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ell-25",
+      "es": "I don't like it., Neither do I.",
+      "target": "Neither do I",
+      "tr": {
+        "hu": "Nem szeretem., Én sem.",
+        "en": "I don't like it., Neither do I.",
+        "es": "No me gusta., A mí tampoco.",
+        "de": "Ich mag es nicht., Ich auch nicht."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "egyetértés tagadó mondatra: neither + segédige + alany, második tagadás nélkül",
+            "en": "agreement with a negative: neither + auxiliary + subject, with no second negative",
+            "es": "acuerdo con una negativa: neither + auxiliar + sujeto, sin segunda negación",
+            "de": "Zustimmung zu einem verneinten Satz: neither + Hilfsverb + Subjekt, ohne zweite Verneinung"
+          }
+        },
+        {
+          "text": {
+            "hu": "neither + don’t",
+            "en": "neither + don’t",
+            "es": "neither + don’t",
+            "de": "neither + don’t"
+          },
+          "wrong": {
+            "hu": "A neither már tagadás, ezért nincs mellette második tagadás.",
+            "en": "Neither is already a negative, so there is no second negative next to it.",
+            "es": "Neither ya es una negación, por eso no hay una segunda negación a su lado.",
+            "de": "Neither ist schon eine Verneinung, deshalb steht daneben keine zweite."
+          }
+        },
+        {
+          "text": {
+            "hu": "egyetértés állító mondatra",
+            "en": "agreement with a positive",
+            "es": "acuerdo con una afirmativa",
+            "de": "Zustimmung zu einem bejahten Satz"
+          },
+          "wrong": {
+            "hu": "Az állító mondatra so válaszol; a neither tagadásra.",
+            "en": "A positive sentence is answered with so; neither is for a negative.",
+            "es": "Una oración afirmativa se responde con so; neither es para una negativa.",
+            "de": "Auf einen bejahten Satz antwortet so; neither gilt für eine Verneinung."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ell-26",
+      "es": "Which bag is yours?, The red one.",
+      "target": "one",
+      "tr": {
+        "hu": "Melyik a táskád?, A piros.",
+        "en": "Which bag is yours?, The red one.",
+        "es": "¿Cuál bolsa es la tuya?, La roja.",
+        "de": "Welche Tasche ist deine?, Die rote."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a one itt azt jelenti: egy",
+            "en": "one here means the number one",
+            "es": "one aquí significa el número uno",
+            "de": "one bedeutet hier die Zahl eins"
+          },
+          "wrong": {
+            "hu": "Itt a one pótló szó, nem számnév.",
+            "en": "Here one is a substitute word, not a number.",
+            "es": "Aquí one es una palabra sustituta, no un número.",
+            "de": "Hier ist one ein Ersatzwort, kein Zahlwort."
+          }
+        },
+        {
+          "text": {
+            "hu": "a one megszámlálhatatlan főnevet pótol",
+            "en": "one replaces an uncountable noun",
+            "es": "one reemplaza a un sustantivo incontable",
+            "de": "one ersetzt ein unzählbares Nomen"
+          },
+          "wrong": {
+            "hu": "A one csak megszámlálható főnevet pótol (bag).",
+            "en": "One replaces only a countable noun (bag).",
+            "es": "One reemplaza solo a un sustantivo contable (bag).",
+            "de": "One ersetzt nur ein zählbares Nomen (bag)."
+          }
+        },
+        {
+          "text": {
+            "hu": "a one egyes számú megszámlálható főnevet (bag) pótol",
+            "en": "one replaces a singular countable noun (bag)",
+            "es": "one reemplaza a un sustantivo contable singular (bag)",
+            "de": "one ersetzt ein zählbares Nomen im Singular (bag)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "ell-27",
+      "es": "Is she coming?, I think so.",
+      "target": "think so",
+      "tr": {
+        "hu": "Jön?, Azt hiszem.",
+        "en": "Is she coming?, I think so.",
+        "es": "¿Viene ella?, Creo que sí.",
+        "de": "Kommt sie?, Ich glaube schon."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a so azt jelenti: is",
+            "en": "so means also",
+            "es": "so significa también",
+            "de": "so bedeutet auch"
+          },
+          "wrong": {
+            "hu": "Itt a so nem „is”, hanem az egész mondatot pótolja.",
+            "en": "Here so does not mean “also” but replaces the whole clause.",
+            "es": "Aquí so no significa «también» sino que reemplaza toda la cláusula.",
+            "de": "Hier bedeutet so nicht „auch“, sondern ersetzt den ganzen Satz."
+          }
+        },
+        {
+          "text": {
+            "hu": "a so az egész mondatot pótolja; a „think yes” hibás",
+            "en": "so replaces the whole clause; “think yes” is wrong",
+            "es": "so reemplaza toda la cláusula; «think yes» es incorrecto",
+            "de": "so ersetzt den ganzen Satz; „think yes“ ist falsch"
+          }
+        },
+        {
+          "text": {
+            "hu": "a so azt jelenti: ezért",
+            "en": "so means therefore",
+            "es": "so significa por lo tanto",
+            "de": "so bedeutet deshalb"
+          },
+          "wrong": {
+            "hu": "Itt a so nem következményt jelöl.",
+            "en": "Here so does not mark a result.",
+            "es": "Aquí so no marca un resultado.",
+            "de": "Hier markiert so keine Folge."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ell-28",
+      "es": "I haven't finished, but she has.",
+      "target": "she has",
+      "tr": {
+        "hu": "Én nem fejeztem be, de ő igen.",
+        "en": "I haven't finished, but she has.",
+        "es": "Yo no he terminado, pero ella sí.",
+        "de": "Ich bin nicht fertig, aber sie schon."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "hiba: a mondat hiányos",
+            "en": "a mistake: the sentence is incomplete",
+            "es": "un error: la oración está incompleta",
+            "de": "ein Fehler: der Satz ist unvollständig"
+          },
+          "wrong": {
+            "hu": "Nem hiba; a segédige után a megismételt ige elhagyható (finished).",
+            "en": "It is not a mistake; after the auxiliary the repeated verb can be left out (finished).",
+            "es": "No es un error; después del auxiliar se puede omitir el verbo repetido (finished).",
+            "de": "Es ist kein Fehler; nach dem Hilfsverb kann das wiederholte Verb weggelassen werden (finished)."
+          }
+        },
+        {
+          "text": {
+            "hu": "kihagyás: a megismételt ige elmarad a segédige után",
+            "en": "ellipsis: the repeated verb is left out after the auxiliary",
+            "es": "elipsis: el verbo repetido se omite después del auxiliar",
+            "de": "Ellipse: das wiederholte Verb entfällt nach dem Hilfsverb"
+          }
+        },
+        {
+          "text": {
+            "hu": "új mondat",
+            "en": "a new sentence",
+            "es": "una oración nueva",
+            "de": "ein neuer Satz"
+          },
+          "wrong": {
+            "hu": "Ez egy összetett mondat; a she has a második tagmondat rövidítése.",
+            "en": "This is a compound sentence; she has is the shortened second clause.",
+            "es": "Esta es una oración compuesta; she has es la segunda cláusula acortada.",
+            "de": "Das ist ein zusammengesetzter Satz; she has ist der verkürzte zweite Teilsatz."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "ell-29",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "Me encanta el jazz., A mí también.",
+          "en": "I love jazz., So do I."
+        },
+        {
+          "es": "No me gusta., A mí tampoco.",
+          "en": "I don't like it., Neither do I."
+        },
+        {
+          "es": "Lo he visto., Yo también.",
+          "en": "I've seen it., So have I."
+        },
+        {
+          "es": "¿Cuál bolsa?, La roja.",
+          "en": "Which bag?, The red one."
+        },
+        {
+          "es": "¿Va a llover?, Creo que sí.",
+          "en": "Will it rain?, I think so."
+        },
+        {
+          "es": "¿Va a llover?, Espero que no.",
+          "en": "Will it rain?, I hope not."
+        }
+      ]
+    },
+    {
+      "id": "ell-30",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "yo también (soy)",
+          "en": "so am I"
+        },
+        {
+          "es": "yo tampoco (puedo)",
+          "en": "neither can I"
+        },
+        {
+          "es": "los azules",
+          "en": "the blue ones"
+        },
+        {
+          "es": "espero que sí",
+          "en": "I hope so"
+        },
+        {
+          "es": "lo haría con gusto",
+          "en": "I'd love to"
+        },
+        {
+          "es": "ella tampoco fuma",
+          "en": "nor does she"
+        }
+      ]
+    }
+  ]
+}
