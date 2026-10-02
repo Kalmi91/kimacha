@@ -3,17 +3,21 @@
 // topic list, order and names live in one place (data/topics/en/*.json,
 // data/sublevels/en/*.json) and nothing is copied into code.
 //
-// Levels are A1 and A2 only. The A0 `basic_verbs` topic is the very first
+// Levels are A1, A2 and B1. The A0 `basic_verbs` topic is the very first
 // topic of A1 (unit A1.1); the A0 sublevels themselves are not units here.
-// Units are the sublevels (A1.1-A1.6, A2.1-A2.5). The topic tree carries no
-// one-line blurb, so `blurb` is empty and the screen shows no second line.
+// Units are the sublevels (A1.1-A1.6, A2.1-A2.5, B1.5-B1.8). The B1 sublevels
+// B1.1-B1.4 hold vocabulary topics only, so they are not grammar units. The
+// topic tree carries no one-line blurb, so `blurb` is empty and the screen
+// shows no second line.
 
 import type { SyllabusTopic, SyllabusUnit } from './syllabus';
 import a0Topics from '@/data/topics/en/a0.json';
 import a1Topics from '@/data/topics/en/a1.json';
 import a2Topics from '@/data/topics/en/a2.json';
+import b1Topics from '@/data/topics/en/b1.json';
 import a1Sublevels from '@/data/sublevels/en/a1.json';
 import a2Sublevels from '@/data/sublevels/en/a2.json';
+import b1Sublevels from '@/data/sublevels/en/b1.json';
 
 interface TreeTopic {
   id: string;
@@ -45,13 +49,13 @@ const names = (n: { name_hu: string; name_en: string; name_es: string; name_de: 
 const grammarOf = (topics: unknown): TreeTopic[] =>
   (topics as TreeTopic[]).filter((t) => t.type === 'grammar').sort((a, b) => a.order - b.order);
 
-const unitsOf = (level: 'A1' | 'A2', sublevels: unknown): SyllabusUnit[] =>
+const unitsOf = (level: 'A1' | 'A2' | 'B1', sublevels: unknown): SyllabusUnit[] =>
   (sublevels as TreeSublevel[])
     .slice()
     .sort((a, b) => a.order - b.order)
     .map((s) => ({ id: s.id, level, title: names(s) }));
 
-const topicOf = (t: TreeTopic, level: 'A1' | 'A2', unit: string): SyllabusTopic => ({
+const topicOf = (t: TreeTopic, level: 'A1' | 'A2' | 'B1', unit: string): SyllabusTopic => ({
   id: t.id,
   level,
   unit,
@@ -59,11 +63,18 @@ const topicOf = (t: TreeTopic, level: 'A1' | 'A2', unit: string): SyllabusTopic 
   blurb: {},
 });
 
-export const EN_UNITS: SyllabusUnit[] = [...unitsOf('A1', a1Sublevels), ...unitsOf('A2', a2Sublevels)];
+const b1GrammarTopics = grammarOf(b1Topics);
+
+export const EN_UNITS: SyllabusUnit[] = [
+  ...unitsOf('A1', a1Sublevels),
+  ...unitsOf('A2', a2Sublevels),
+  ...unitsOf('B1', b1Sublevels).filter((u) => b1GrammarTopics.some((t) => t.subLevel === u.id)),
+];
 
 export const EN_SYLLABUS: SyllabusTopic[] = [
   // A0 basic_verbs opens A1, in the first unit.
   ...grammarOf(a0Topics).map((t) => topicOf(t, 'A1', 'A1.1')),
   ...grammarOf(a1Topics).map((t) => topicOf(t, 'A1', t.subLevel)),
   ...grammarOf(a2Topics).map((t) => topicOf(t, 'A2', t.subLevel)),
+  ...b1GrammarTopics.map((t) => topicOf(t, 'B1', t.subLevel)),
 ];
