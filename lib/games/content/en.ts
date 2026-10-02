@@ -30,7 +30,8 @@ import grammarEnBasicVerbs from '@/data/games/grammar/en/basic-verbs.json';
 import grammarEnPresentPerfectVsPast from '@/data/games/grammar/en/present-perfect-vs-past.json';
 import grammarEnPresentPerfectContinuous from '@/data/games/grammar/en/present-perfect-continuous.json';
 import grammarEnPastContinuous from '@/data/games/grammar/en/past-continuous.json';
+import grammarEnPastPerfect from '@/data/games/grammar/en/past-perfect.json';
 
 export const enContent: LanguageContentBundle = {
-  grammarTopics: [grammarEnToBe, grammarEnArticles, grammarEnPresentSimple, grammarEnPlurals, grammarEnThisThat, grammarEnPossessives, grammarEnThereIsAre, grammarEnPrepositions, grammarEnHaveGot, grammarEnCanAbility, grammarEnQuestionWords, grammarEnPresentContinuous, grammarEnPastSimpleRegular, grammarEnPastSimpleIrregular, grammarEnGoingTo, grammarEnWill, grammarEnPresentPerfect, grammarEnComparatives, grammarEnSuperlatives, grammarEnMustHaveTo, grammarEnBasicVerbs, grammarEnPresentPerfectVsPast, grammarEnPresentPerfectContinuous, grammarEnPastContinuous] as unknown as GrammarTopicData[],
+  grammarTopics: [grammarEnToBe, grammarEnArticles, grammarEnPresentSimple, grammarEnPlurals, grammarEnThisThat, grammarEnPossessives, grammarEnThereIsAre, grammarEnPrepositions, grammarEnHaveGot, grammarEnCanAbility, grammarEnQuestionWords, grammarEnPresentContinuous, grammarEnPastSimpleRegular, grammarEnPastSimpleIrregular, grammarEnGoingTo, grammarEnWill, grammarEnPresentPerfect, grammarEnComparatives, grammarEnSuperlatives, grammarEnMustHaveTo, grammarEnBasicVerbs, grammarEnPresentPerfectVsPast, grammarEnPresentPerfectContinuous, grammarEnPastContinuous, grammarEnPastPerfect] as unknown as GrammarTopicData[],
 };
