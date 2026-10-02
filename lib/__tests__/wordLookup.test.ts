@@ -50,9 +50,9 @@ describe('word lookup by text', () => {
   });
 
   it('does not gloss a form of a word that is not in the list', () => {
-    expect(openWords.some(w => w.lemma === 'nadar')).toBe(false);
-    expect(findWordByText('nadaba', 'es', 'es')).toBeUndefined();
-    expect(findWordByText('nadamos', 'es', 'es')).toBeUndefined();
+    expect(openWords.some(w => w.lemma === 'patinar')).toBe(false);
+    expect(findWordByText('patinaba', 'es', 'es')).toBeUndefined();
+    expect(findWordByText('patinamos', 'es', 'es')).toBeUndefined();
   });
 
   it('normalizes a token the same way the tap markers do', () => {
