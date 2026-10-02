@@ -249,10 +249,10 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Az állapotot kifejező igéknek (know, like, love, want, have = birtokol, understand) nincs folyamatos alakja. Nem „I have been knowing her”, hanem „I have known her for ten years”.",
-        "en": "State verbs (know, like, love, want, have meaning own, understand) have no continuous form. Not “I have been knowing her”, but “I have known her for ten years”.",
-        "es": "Los verbos de estado (know, like, love, want, have con el sentido de tener, understand) no tienen forma continua. No «I have been knowing her», sino «I have known her for ten years».",
-        "de": "Zustandsverben (know, like, love, want, have im Sinn von besitzen, understand) haben keine Verlaufsform. Nicht „I have been knowing her“, sondern „I have known her for ten years“."
+        "hu": "Az állapotot kifejező igéknek (know, like, love, want, have = birtokol, understand) szinte soha nincs folyamatos alakja. Nem „I have been knowing her”, hanem „I have known her for ten years”.",
+        "en": "State verbs (know, like, love, want, have meaning own, understand) almost never have a continuous form. Not “I have been knowing her”, but “I have known her for ten years”.",
+        "es": "Los verbos de estado (know, like, love, want, have con el sentido de tener, understand) casi nunca tienen forma continua. No «I have been knowing her», sino «I have known her for ten years».",
+        "de": "Zustandsverben (know, like, love, want, have im Sinn von besitzen, understand) haben fast nie eine Verlaufsform. Nicht „I have been knowing her“, sondern „I have known her for ten years“."
       }
     },
     {
@@ -903,6 +903,9 @@
       "verb": "negación",
       "person": "he / she / it",
       "answer": "has not been",
+      "accept": [
+        "hasn't been"
+      ],
       "table": "pfc-aux"
     },
     {
@@ -927,6 +930,9 @@
       "verb": "negación",
       "person": "I",
       "answer": "have not been",
+      "accept": [
+        "haven't been"
+      ],
       "table": "pfc-aux"
     },
     {
@@ -935,6 +941,9 @@
       "verb": "negación",
       "person": "they",
       "answer": "have not been",
+      "accept": [
+        "haven't been"
+      ],
       "table": "pfc-aux"
     },
     {
