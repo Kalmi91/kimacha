@@ -22,67 +22,49 @@
       "kind": "table",
       "id": "ut-aux",
       "title": {
-        "hu": "Állító, tagadó, kérdő",
-        "en": "Affirmative, negative, question",
-        "es": "Afirmativa, negativa, pregunta",
-        "de": "Bejahend, verneinend, Frage"
+        "hu": "Melyiket használjam?",
+        "en": "Which one do I use?",
+        "es": "¿Cuál uso?",
+        "de": "Welche nehme ich?"
       },
       "header": [
         {
-          "hu": "Személy",
-          "en": "Person",
-          "es": "Persona",
-          "de": "Person"
+          "hu": "Helyzet",
+          "en": "Situation",
+          "es": "Situación",
+          "de": "Situation"
         },
         {
-          "hu": "állító",
-          "en": "affirmative",
-          "es": "afirmativa",
-          "de": "bejahend"
-        },
-        {
-          "hu": "tagadás",
-          "en": "negative",
-          "es": "negación",
-          "de": "Verneinung"
-        },
-        {
-          "hu": "kérdés",
-          "en": "question",
-          "es": "pregunta",
-          "de": "Frage"
+          "hu": "forma",
+          "en": "form",
+          "es": "forma",
+          "de": "Form"
         }
       ],
       "rows": [
         [
-          "I",
-          "I used to play",
-          "I didn't use to play",
-          "Did I use to play?"
+          "un hábito del pasado, ya no es verdad",
+          "used to"
         ],
         [
-          "you",
-          "you used to play",
-          "you didn't use to play",
-          "Did you use to play?"
+          "estar acostumbrado ahora",
+          "be used to"
         ],
         [
-          "he / she / it",
-          "she used to play",
-          "she didn't use to play",
-          "Did she use to play?"
+          "acostumbrarse (el proceso)",
+          "get used to"
         ],
         [
-          "we",
-          "we used to play",
-          "we didn't use to play",
-          "Did we use to play?"
+          "la negación en el pasado",
+          "did not use to"
         ],
         [
-          "they",
-          "they used to play",
-          "they didn't use to play",
-          "Did they use to play?"
+          "una acción repetida en el pasado",
+          "would"
+        ],
+        [
+          "un hábito de hoy",
+          "usually"
         ]
       ]
     },
@@ -828,49 +810,49 @@
     {
       "id": "ut-18",
       "kind": "form",
-      "verb": "negación",
-      "person": "we",
-      "answer": "we didn't use to play",
+      "verb": "forma",
+      "person": "un hábito del pasado, ya no es verdad",
+      "answer": "used to",
       "table": "ut-aux"
     },
     {
       "id": "ut-19",
       "kind": "form",
-      "verb": "pregunta",
-      "person": "they",
-      "answer": "Did they use to play?",
+      "verb": "forma",
+      "person": "estar acostumbrado ahora",
+      "answer": "be used to",
       "table": "ut-aux"
     },
     {
       "id": "ut-20",
       "kind": "form",
-      "verb": "afirmativa",
-      "person": "you",
-      "answer": "you used to play",
+      "verb": "forma",
+      "person": "acostumbrarse (el proceso)",
+      "answer": "get used to",
       "table": "ut-aux"
     },
     {
       "id": "ut-21",
       "kind": "form",
-      "verb": "negación",
-      "person": "he / she / it",
-      "answer": "she didn't use to play",
+      "verb": "forma",
+      "person": "la negación en el pasado",
+      "answer": "did not use to",
       "table": "ut-aux"
     },
     {
       "id": "ut-22",
       "kind": "form",
-      "verb": "pregunta",
-      "person": "I",
-      "answer": "Did I use to play?",
+      "verb": "forma",
+      "person": "una acción repetida en el pasado",
+      "answer": "would",
       "table": "ut-aux"
     },
     {
       "id": "ut-23",
       "kind": "form",
-      "verb": "afirmativa",
-      "person": "they",
-      "answer": "they used to play",
+      "verb": "forma",
+      "person": "un hábito de hoy",
+      "answer": "usually",
       "table": "ut-aux"
     },
     {

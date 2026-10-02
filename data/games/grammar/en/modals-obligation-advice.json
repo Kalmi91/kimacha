@@ -52,15 +52,15 @@
         ],
         [
           "una obligación",
-          "must / have to"
+          "must"
         ],
         [
           "una prohibición",
-          "mustn't"
+          "must not"
         ],
         [
           "no es necesario",
-          "don't have to"
+          "do not have to"
         ],
         [
           "una obligación en el pasado",
@@ -68,7 +68,7 @@
         ],
         [
           "un permiso",
-          "can / may"
+          "can"
         ]
       ]
     },
@@ -880,7 +880,7 @@
       "kind": "form",
       "verb": "forma",
       "person": "una prohibición",
-      "answer": "mustn't",
+      "answer": "must not",
       "table": "mo-forms"
     },
     {
@@ -888,7 +888,7 @@
       "kind": "form",
       "verb": "forma",
       "person": "no es necesario",
-      "answer": "don't have to",
+      "answer": "do not have to",
       "table": "mo-forms"
     },
     {
@@ -912,7 +912,7 @@
       "kind": "form",
       "verb": "forma",
       "person": "un permiso",
-      "answer": "can / may",
+      "answer": "can",
       "table": "mo-forms"
     },
     {

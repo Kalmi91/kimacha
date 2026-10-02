@@ -48,11 +48,11 @@
         ],
         [
           "estoy seguro de que no es verdad",
-          "can't"
+          "cannot"
         ],
         [
           "es posible, pero no seguro",
-          "might / may / could"
+          "might"
         ],
         [
           "es posible que no sea verdad",
@@ -60,11 +60,11 @@
         ],
         [
           "deducción sobre el pasado",
-          "must have + participle"
+          "must have"
         ],
         [
           "seguro de que no pasó",
-          "can't have + participle"
+          "cannot have"
         ]
       ]
     },
@@ -866,7 +866,7 @@
       "kind": "form",
       "verb": "forma",
       "person": "estoy seguro de que no es verdad",
-      "answer": "can't",
+      "answer": "cannot",
       "table": "md-forms"
     },
     {
@@ -874,7 +874,7 @@
       "kind": "form",
       "verb": "forma",
       "person": "es posible, pero no seguro",
-      "answer": "might / may / could",
+      "answer": "might",
       "table": "md-forms"
     },
     {
@@ -890,7 +890,7 @@
       "kind": "form",
       "verb": "forma",
       "person": "deducción sobre el pasado",
-      "answer": "must have + participle",
+      "answer": "must have",
       "table": "md-forms"
     },
     {
@@ -898,7 +898,7 @@
       "kind": "form",
       "verb": "forma",
       "person": "seguro de que no pasó",
-      "answer": "can't have + participle",
+      "answer": "cannot have",
       "table": "md-forms"
     },
     {
