@@ -33,7 +33,7 @@ import { pickTransformRound, TRANSFORM_ROUND_SIZE } from '@/lib/grammar/transfor
 import { findWholeWord } from '@/lib/grammar/whyTarget';
 import { optionHint } from '@/lib/grammar/optionHints';
 import { buildGlossMap } from '@/lib/games/gloss';
-import { hashString, shuffleNoFixedPoints } from '@/lib/shuffle';
+import { hashString, shuffleNoFixedPoints, shuffleOptions } from '@/lib/shuffle';
 import GlossText from '@/components/games/GlossText';
 import LessonBody from '@/components/grammar/LessonBody';
 import MoreBlocks from '@/components/grammar/MoreBlocks';
@@ -455,8 +455,10 @@ function WhyDrillItem({
 }) {
   const [selected, setSelected] = useState<number | null>(null);
   const [showTr, setShowTr] = useState(false);
+  // R21 (PLAN-eget-nyelvtan): a helyes opció ne legyen mindig az első; seedelt keverés az item id-jából.
+  const [shown] = useState(() => shuffleOptions(item.options, item.correctIndex, hashString(item.id)));
   const answered = selected !== null;
-  const isCorrect = answered && selected === item.correctIndex;
+  const isCorrect = answered && selected === shown.correctIndex;
   const g = useGrammarColors();
 
   const select = (i: number) => {
@@ -507,9 +509,9 @@ function WhyDrillItem({
         ) : null}
 
         <View style={styles.brutalWhyOptions}>
-          {item.options.map((opt, i) => {
+          {shown.options.map((opt, i) => {
             const isPicked = selected === i;
-            const isRightAnswer = i === item.correctIndex;
+            const isRightAnswer = i === shown.correctIndex;
             const hit = answered && isRightAnswer;
             const miss = answered && isPicked && !isRightAnswer;
             return (
@@ -541,7 +543,7 @@ function WhyDrillItem({
             <BrutalFeedback g={g} correct={isCorrect} title={isCorrect ? s.games.correctFeedback : s.games.wrongFeedback}>
               {!isCorrect ? (
                 <Text style={[styles.explainText, { color: g.onB }]}>
-                  {item.options[selected].wrong?.[contentLang] ?? item.options[selected].wrong?.en ?? ''}
+                  {shown.options[selected].wrong?.[contentLang] ?? shown.options[selected].wrong?.en ?? ''}
                 </Text>
               ) : null}
             </BrutalFeedback>
@@ -591,9 +593,9 @@ function WhyDrillItem({
       ) : null}
 
       <View style={styles.options}>
-        {item.options.map((opt, i) => {
+        {shown.options.map((opt, i) => {
           const isPicked = selected === i;
-          const isRightAnswer = i === item.correctIndex;
+          const isRightAnswer = i === shown.correctIndex;
           let bg = colors.card;
           let border = colors.tabIconDefault;
           if (answered && isRightAnswer) {
@@ -627,7 +629,7 @@ function WhyDrillItem({
           <ResultBadge correct={isCorrect} label={isCorrect ? s.games.correctFeedback : s.games.wrongFeedback} />
           {!isCorrect ? (
             <Text style={[styles.explainText, { color: colors.text }]}>
-              {item.options[selected].wrong?.[contentLang] ?? item.options[selected].wrong?.en ?? ''}
+              {shown.options[selected].wrong?.[contentLang] ?? shown.options[selected].wrong?.en ?? ''}
             </Text>
           ) : null}
           <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(isCorrect)}>
