@@ -1,0 +1,1332 @@
+{
+  "schema": 2,
+  "topic": "phrasal_verbs",
+  "level": "B2",
+  "title": {
+    "hu": "Frázisigék (give up, put off, come up with, look forward to)",
+    "en": "Phrasal Verbs (give up, put off, come up with, look forward to)",
+    "es": "Los phrasal verbs (give up, put off, come up with, look forward to)",
+    "de": "Phrasal Verbs (give up, put off, come up with, look forward to)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A frázisige egy ige és egy határozószó vagy elöljáró együttese, aminek jelentése nem a szavak összege: give up = feladni, put off = elhalasztani. A spanyolban megvan az egyszavas ige (rendirse, posponer), az angolban viszont a hétköznapi nyelv a frázisigét kedveli. Három fontos kérdés: szétválasztható-e („turn it off”), tárgy nélkül áll-e, és három szavas-e („run out of”).",
+        "en": "A phrasal verb is a verb plus an adverb or preposition whose meaning is not the sum of the words: give up = stop trying, put off = postpone. Spanish has a one-word verb (rendirse, posponer), but everyday English prefers the phrasal verb. Three important questions: is it separable (“turn it off”), does it take an object, and does it have three words (“run out of”).",
+        "es": "Un phrasal verb es un verbo más un adverbio o preposición cuyo significado no es la suma de las palabras: give up = rendirse, put off = posponer. El español tiene un verbo de una palabra (rendirse, posponer), pero el inglés cotidiano prefiere el phrasal verb. Tres preguntas importantes: ¿se puede separar («turn it off»)?, ¿lleva objeto? y ¿tiene tres palabras («run out of»)?",
+        "de": "Ein Phrasal Verb ist ein Verb plus Adverb oder Präposition, dessen Bedeutung nicht die Summe der Wörter ist: give up = aufgeben, put off = verschieben. Das Spanische hat ein einzelnes Verb (rendirse, posponer), aber das alltägliche Englisch bevorzugt das Phrasal Verb. Drei wichtige Fragen: Ist es trennbar („turn it off“), hat es ein Objekt, und hat es drei Wörter („run out of“)."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "phv-forms",
+      "title": {
+        "hu": "Melyik frázisige?",
+        "en": "Which phrasal verb?",
+        "es": "¿Qué phrasal verb uso?",
+        "de": "Welches Phrasal Verb?"
+      },
+      "header": [
+        {
+          "hu": "Jelentés",
+          "en": "Meaning",
+          "es": "Significado",
+          "de": "Bedeutung"
+        },
+        {
+          "hu": "forma",
+          "en": "form",
+          "es": "forma",
+          "de": "Form"
+        }
+      ],
+      "rows": [
+        [
+          "rendirse, dejar de intentar",
+          "give up"
+        ],
+        [
+          "posponer",
+          "put off"
+        ],
+        [
+          "inventar, ocurrírsele algo",
+          "come up with"
+        ],
+        [
+          "quedarse sin",
+          "run out of"
+        ],
+        [
+          "rechazar una oferta",
+          "turn down"
+        ],
+        [
+          "cancelar (un evento)",
+          "call off"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Szétválasztható frázisigék",
+        "en": "Separable phrasal verbs",
+        "es": "Phrasal verbs separables",
+        "de": "Trennbare Phrasal Verbs"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A főnévi tárgy a két rész között és után is állhat: turn off the light, turn the light off. A névmás mindig a két rész közé kerül: turn it off, nem „turn off it”.",
+            "en": "A noun object can go between the two parts or after them: turn off the light, turn the light off. A pronoun always goes between the two parts: turn it off, not “turn off it”.",
+            "es": "El objeto nominal puede ir entre las dos partes o después: turn off the light, turn the light off. El pronombre siempre va entre las dos partes: turn it off, no «turn off it».",
+            "de": "Ein Nomen-Objekt kann zwischen den beiden Teilen oder danach stehen: turn off the light, turn the light off. Ein Pronomen steht immer zwischen den beiden Teilen: turn it off, nicht „turn off it“."
+          },
+          "examples": [
+            {
+              "es": "Please turn off the light. Please turn it off.",
+              "tr": {
+                "hu": "Kérlek, kapcsold le a villanyt. Kapcsold le.",
+                "en": "Please turn off the light. Please turn it off.",
+                "es": "Por favor, apaga la luz. Apágala.",
+                "de": "Bitte mach das Licht aus. Mach es aus."
+              }
+            },
+            {
+              "es": "They put off the meeting. They put it off.",
+              "tr": {
+                "hu": "Elhalasztották a megbeszélést. Elhalasztották.",
+                "en": "They put off the meeting. They put it off.",
+                "es": "Pospusieron la reunión. La pospusieron.",
+                "de": "Sie verschoben das Treffen. Sie verschoben es."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Nem szétválasztható frázisigék",
+        "en": "Inseparable phrasal verbs",
+        "es": "Phrasal verbs no separables",
+        "de": "Nicht trennbare Phrasal Verbs"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A tárgy mindig az egész ige után áll: look after the kids, look after them. Ilyen még a get over, run into, look into.",
+            "en": "The object always follows the whole verb: look after the kids, look after them. Others like this are get over, run into, look into.",
+            "es": "El objeto siempre va después de todo el verbo: look after the kids, look after them. Otros así son get over, run into, look into.",
+            "de": "Das Objekt steht immer nach dem ganzen Verb: look after the kids, look after them. Ähnlich sind get over, run into, look into."
+          },
+          "examples": [
+            {
+              "es": "She looks after her little brother.",
+              "tr": {
+                "hu": "Vigyáz a kisöccsére.",
+                "en": "She looks after her little brother.",
+                "es": "Ella cuida a su hermanito.",
+                "de": "Sie passt auf ihren kleinen Bruder auf."
+              }
+            },
+            {
+              "es": "He finally got over his cold.",
+              "tr": {
+                "hu": "Végre kigyógyult a megfázásból.",
+                "en": "He finally got over his cold.",
+                "es": "Por fin se recuperó de su resfriado.",
+                "de": "Er hat seine Erkältung endlich überstanden."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Háromszavas frázisigék",
+        "en": "Three-word phrasal verbs",
+        "es": "Phrasal verbs de tres palabras",
+        "de": "Phrasal Verbs mit drei Wörtern"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Ige + határozószó + elöljáró, nem szétválasztható: run out of, put up with, come up with, get along with, look forward to. A look forward to után -ing alak áll, mert a to elöljáró.",
+            "en": "Verb + adverb + preposition, inseparable: run out of, put up with, come up with, get along with, look forward to. After look forward to comes the -ing form, because to is a preposition.",
+            "es": "Verbo + adverbio + preposición, no separable: run out of, put up with, come up with, get along with, look forward to. Después de look forward to va la forma -ing, porque to es una preposición.",
+            "de": "Verb + Adverb + Präposition, nicht trennbar: run out of, put up with, come up with, get along with, look forward to. Nach look forward to steht die -ing-Form, weil to eine Präposition ist."
+          },
+          "examples": [
+            {
+              "es": "We have run out of milk.",
+              "tr": {
+                "hu": "Elfogyott a tejünk.",
+                "en": "We have run out of milk.",
+                "es": "Se nos acabó la leche.",
+                "de": "Uns ist die Milch ausgegangen."
+              }
+            },
+            {
+              "es": "I'm looking forward to seeing you.",
+              "tr": {
+                "hu": "Várom, hogy láthassalak.",
+                "en": "I'm looking forward to seeing you.",
+                "es": "Tengo muchas ganas de verte.",
+                "de": "Ich freue mich darauf, dich zu sehen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Gyakori jelentések",
+        "en": "Common meanings",
+        "es": "Significados frecuentes",
+        "de": "Häufige Bedeutungen"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Egy rész gyakran változtat jelentést: give up (feladni), put off (elhalasztani), call off (lemondani), turn down (elutasítani), carry on (folytatni), break down (elromlani).",
+            "en": "The particle often changes the meaning: give up (stop trying), put off (postpone), call off (cancel), turn down (refuse), carry on (continue), break down (stop working).",
+            "es": "La partícula suele cambiar el significado: give up (rendirse), put off (posponer), call off (cancelar), turn down (rechazar), carry on (continuar), break down (descomponerse).",
+            "de": "Das Partikel ändert oft die Bedeutung: give up (aufgeben), put off (verschieben), call off (absagen), turn down (ablehnen), carry on (weitermachen), break down (kaputtgehen)."
+          },
+          "examples": [
+            {
+              "es": "He turned down the job offer.",
+              "tr": {
+                "hu": "Elutasította az állásajánlatot.",
+                "en": "He turned down the job offer.",
+                "es": "Rechazó la oferta de trabajo.",
+                "de": "Er lehnte das Jobangebot ab."
+              }
+            },
+            {
+              "es": "My car broke down on the way to work.",
+              "tr": {
+                "hu": "Munkába menet elromlott az autóm.",
+                "en": "My car broke down on the way to work.",
+                "es": "Mi carro se descompuso camino al trabajo.",
+                "de": "Mein Auto ging auf dem Weg zur Arbeit kaputt."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A névmás nem állhat a határozószó után: nem „turn off it”, hanem „turn it off”. Három szavas igénél viszont a névmás a végére kerül: „look forward to it”.",
+        "en": "A pronoun cannot follow the adverb: not “turn off it”, but “turn it off”. With a three-word verb, however, the pronoun goes at the end: “look forward to it”.",
+        "es": "El pronombre no puede ir después del adverbio: no «turn off it», sino «turn it off». Con un verbo de tres palabras, en cambio, el pronombre va al final: «look forward to it».",
+        "de": "Das Pronomen kann nicht nach dem Adverb stehen: nicht „turn off it“, sondern „turn it off“. Bei einem dreiteiligen Verb steht das Pronomen dagegen am Ende: „look forward to it“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A frázisigét a jelentésével együtt tanuld meg, ne szó szerint: a „give up” nem „adni fel”, a „put off” nem „betenni”. A spanyolban gyakran egy igének felel meg: posponer, rendirse.",
+        "en": "Learn a phrasal verb together with its meaning, not word for word: “give up” is not “give upward”, and “put off” is not “put away”. In Spanish it often matches one verb: posponer, rendirse.",
+        "es": "Aprende un phrasal verb junto con su significado, no palabra por palabra: «give up» no es «dar arriba», y «put off» no es «poner fuera». En español suele corresponder a un solo verbo: posponer, rendirse.",
+        "de": "Lerne ein Phrasal Verb zusammen mit seiner Bedeutung, nicht Wort für Wort: „give up“ heißt nicht „nach oben geben“, und „put off“ nicht „wegstellen“. Im Spanischen entspricht es oft einem einzigen Verb: posponer, rendirse."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A frázisige egy ige és egy határozószó vagy elöljáró együttese, aminek jelentése nem a szavak összege: «give up» annyi, mint feladni, «put off» annyi, mint elhalasztani. A szétválasztható frázisigénél a névmás a két rész közé kerül: «turn it off», nem «turn off it». A nem szétválasztható igénél a tárgy az egész ige után áll: «look after them». Háromszavas ige például a «run out of» és a «look forward to». A «look forward to» után -ing alak áll.",
+    "en": "A phrasal verb is a verb plus an adverb or preposition whose meaning is not the sum of the words: «give up» means stop trying, «put off» means postpone. With a separable phrasal verb the pronoun goes between the two parts: «turn it off», not «turn off it». With an inseparable one the object follows the whole verb: «look after them». Three-word verbs are for example «run out of» and «look forward to». After «look forward to» comes the -ing form.",
+    "es": "Un phrasal verb es un verbo más un adverbio o preposición cuyo significado no es la suma de las palabras: «give up» significa rendirse, «put off» significa posponer. Con un phrasal verb separable el pronombre va entre las dos partes: «turn it off», no «turn off it». Con uno no separable el objeto va después de todo el verbo: «look after them». Verbos de tres palabras son por ejemplo «run out of» y «look forward to». Después de «look forward to» va la forma -ing.",
+    "de": "Ein Phrasal Verb ist ein Verb plus Adverb oder Präposition, dessen Bedeutung nicht die Summe der Wörter ist: «give up» heißt aufgeben, «put off» heißt verschieben. Bei einem trennbaren Phrasal Verb steht das Pronomen zwischen den beiden Teilen: «turn it off», nicht «turn off it». Bei einem nicht trennbaren steht das Objekt nach dem ganzen Verb: «look after them». Dreiteilige Verben sind zum Beispiel «run out of» und «look forward to». Nach «look forward to» steht die -ing-Form."
+  },
+  "glossary": [
+    {
+      "word": "any",
+      "gloss": {
+        "hu": "bármennyi, semennyi (tagadásban)",
+        "en": "some, in negatives and questions",
+        "es": "algún, ningún (en negativo y preguntas)",
+        "de": "irgendein, kein (verneint und Fragen)"
+      }
+    },
+    {
+      "word": "blanks",
+      "gloss": {
+        "hu": "üres helyek (kitölteni)",
+        "en": "empty spaces to fill",
+        "es": "espacios en blanco",
+        "de": "Lücken"
+      }
+    },
+    {
+      "word": "broke",
+      "gloss": {
+        "hu": "eltört, elromlott (a break múltja)",
+        "en": "past form of break",
+        "es": "se rompió (pasado de break)",
+        "de": "brach (Past von break)"
+      }
+    },
+    {
+      "word": "carried",
+      "gloss": {
+        "hu": "vitt (a carry múltja)",
+        "en": "past form of carry",
+        "es": "llevó (pasado de carry)",
+        "de": "trug (Past von carry)"
+      }
+    },
+    {
+      "word": "fill",
+      "gloss": {
+        "hu": "kitölt",
+        "en": "to fill",
+        "es": "llenar",
+        "de": "füllen"
+      }
+    },
+    {
+      "word": "filled",
+      "gloss": {
+        "hu": "kitöltött (a fill múltja)",
+        "en": "past form of fill",
+        "es": "llenó (pasado de fill)",
+        "de": "füllte (Past von fill)"
+      }
+    },
+    {
+      "word": "forward",
+      "gloss": {
+        "hu": "előre",
+        "en": "to the front",
+        "es": "adelante",
+        "de": "vorwärts"
+      }
+    },
+    {
+      "word": "great",
+      "gloss": {
+        "hu": "nagyszerű",
+        "en": "very good",
+        "es": "genial",
+        "de": "großartig"
+      }
+    },
+    {
+      "word": "grew",
+      "gloss": {
+        "hu": "nőtt (a grow múltja)",
+        "en": "past form of grow",
+        "es": "creció (pasado de grow)",
+        "de": "wuchs (Past von grow)"
+      }
+    },
+    {
+      "word": "hearing",
+      "gloss": {
+        "hu": "hall (ige-ing alak)",
+        "en": "-ing form of hear",
+        "es": "oyendo (forma -ing de hear)",
+        "de": "hören (-ing-Form von hear)"
+      }
+    },
+    {
+      "word": "idea",
+      "gloss": {
+        "hu": "ötlet",
+        "en": "a thought, a plan",
+        "es": "idea",
+        "de": "Idee"
+      }
+    },
+    {
+      "word": "keep",
+      "gloss": {
+        "hu": "folytat, tart",
+        "en": "to continue",
+        "es": "seguir, mantener",
+        "de": "weitermachen, halten"
+      }
+    },
+    {
+      "word": "noise",
+      "gloss": {
+        "hu": "zaj",
+        "en": "loud sound",
+        "es": "ruido",
+        "de": "Lärm"
+      }
+    },
+    {
+      "word": "way",
+      "gloss": {
+        "hu": "út, mód",
+        "en": "a road or a method",
+        "es": "camino, manera",
+        "de": "Weg"
+      }
+    },
+    {
+      "word": "while",
+      "gloss": {
+        "hu": "miközben",
+        "en": "at the same time as",
+        "es": "mientras",
+        "de": "während"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "phv-01",
+      "sentence": "Don't ___ up! Keep trying.",
+      "options": [
+        "make",
+        "give",
+        "take"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A give up jelentése: feladni, abbahagyni a próbálkozást.",
+        "en": "Give up means to stop trying.",
+        "es": "Give up significa dejar de intentar.",
+        "de": "Give up bedeutet, nicht mehr zu versuchen."
+      },
+      "wrong": {
+        "make": {
+          "hu": "A make up más jelentésű (kitalálni, kibékülni); a „keep trying” a give up-ot kéri.",
+          "en": "Make up has a different meaning (invent, reconcile); “keep trying” asks for give up.",
+          "es": "Make up tiene otro significado (inventar, reconciliarse); «keep trying» pide give up.",
+          "de": "Make up hat eine andere Bedeutung (erfinden, sich versöhnen); „keep trying“ verlangt give up."
+        },
+        "take": {
+          "hu": "A take up más jelentésű (elkezdeni egy hobbit); a „keep trying” a give up-ot kéri.",
+          "en": "Take up has a different meaning (start a hobby); “keep trying” asks for give up.",
+          "es": "Take up tiene otro significado (empezar un pasatiempo); «keep trying» pide give up.",
+          "de": "Take up hat eine andere Bedeutung (ein Hobby beginnen); „keep trying“ verlangt give up."
+        }
+      },
+      "examples": [
+        "She gave up smoking.",
+        "He never gives up."
+      ]
+    },
+    {
+      "id": "phv-02",
+      "sentence": "We had to ___ off the meeting until Monday.",
+      "options": [
+        "take",
+        "get",
+        "put"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A put off jelentése: elhalasztani.",
+        "en": "Put off means to postpone.",
+        "es": "Put off significa posponer.",
+        "de": "Put off bedeutet verschieben."
+      },
+      "wrong": {
+        "take": {
+          "hu": "A take off the meeting nem fejez ki halasztást; a put off igen.",
+          "en": "“Take off the meeting” does not express postponing; put off does.",
+          "es": "«Take off the meeting» no expresa posponer; put off sí.",
+          "de": "„Take off the meeting“ drückt kein Verschieben aus; put off schon."
+        },
+        "get": {
+          "hu": "A get off the meeting nem fejez ki halasztást; a put off igen.",
+          "en": "“Get off the meeting” does not express postponing; put off does.",
+          "es": "«Get off the meeting» no expresa posponer; put off sí.",
+          "de": "„Get off the meeting“ drückt kein Verschieben aus; put off schon."
+        }
+      },
+      "examples": [
+        "They put off the trip.",
+        "Do not put it off."
+      ]
+    },
+    {
+      "id": "phv-03",
+      "sentence": "She ___ up with a great idea.",
+      "options": [
+        "came",
+        "went",
+        "got"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A come up with jelentése: kitalálni.",
+        "en": "Come up with means to think of.",
+        "es": "Come up with significa ocurrírsele a alguien.",
+        "de": "Come up with bedeutet sich etwas ausdenken."
+      },
+      "wrong": {
+        "went": {
+          "hu": "A go up with nem jelent kitalálást; a come up with igen.",
+          "en": "“Go up with” does not mean thinking of; come up with does.",
+          "es": "«Go up with» no significa ocurrirse; come up with sí.",
+          "de": "„Go up with“ bedeutet nicht ausdenken; come up with schon."
+        },
+        "got": {
+          "hu": "A get up with nem létező frázisige ebben a jelentésben; come up with kell.",
+          "en": "“Get up with” is not a phrasal verb in this meaning; you need come up with.",
+          "es": "«Get up with» no es un phrasal verb en este sentido; hace falta come up with.",
+          "de": "„Get up with“ ist in dieser Bedeutung kein Phrasal Verb; man braucht come up with."
+        }
+      },
+      "examples": [
+        "He came up with a plan.",
+        "Can you come up with one?"
+      ]
+    },
+    {
+      "id": "phv-04",
+      "sentence": "We have run ___ of milk.",
+      "options": [
+        "up",
+        "out",
+        "off"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A run out of jelentése: kifogyni valamiből.",
+        "en": "Run out of means to have none left.",
+        "es": "Run out of significa quedarse sin.",
+        "de": "Run out of bedeutet, dass nichts mehr da ist."
+      },
+      "wrong": {
+        "up": {
+          "hu": "A run up of nem létezik ebben a jelentésben; run out of kell.",
+          "en": "“Run up of” does not exist in this meaning; you need run out of.",
+          "es": "«Run up of» no existe en este sentido; hace falta run out of.",
+          "de": "„Run up of“ gibt es in dieser Bedeutung nicht; man braucht run out of."
+        },
+        "off": {
+          "hu": "A run off of nem fejezi ki a kifogyást; run out of kell.",
+          "en": "“Run off of” does not express running low; you need run out of.",
+          "es": "«Run off of» no expresa quedarse sin; hace falta run out of.",
+          "de": "„Run off of“ drückt das Ausgehen nicht aus; man braucht run out of."
+        }
+      },
+      "examples": [
+        "We ran out of time.",
+        "She ran out of money."
+      ]
+    },
+    {
+      "id": "phv-05",
+      "sentence": "He turned ___ the job offer.",
+      "options": [
+        "on",
+        "at",
+        "down"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A turn down jelentése: elutasítani.",
+        "en": "Turn down means to refuse.",
+        "es": "Turn down significa rechazar.",
+        "de": "Turn down bedeutet ablehnen."
+      },
+      "wrong": {
+        "on": {
+          "hu": "A turn on bekapcsolást jelent; ajánlat elutasítására turn down kell.",
+          "en": "Turn on means to switch on; refusing an offer needs turn down.",
+          "es": "Turn on significa encender; rechazar una oferta necesita turn down.",
+          "de": "Turn on heißt einschalten; eine Ablehnung braucht turn down."
+        },
+        "at": {
+          "hu": "A turn at nem létezik ebben a jelentésben; turn down kell.",
+          "en": "“Turn at” does not exist in this meaning; you need turn down.",
+          "es": "«Turn at» no existe en este sentido; hace falta turn down.",
+          "de": "„Turn at“ gibt es in dieser Bedeutung nicht; man braucht turn down."
+        }
+      },
+      "examples": [
+        "She turned down the offer.",
+        "They turned him down."
+      ]
+    },
+    {
+      "id": "phv-06",
+      "sentence": "They ___ off the match because of the rain.",
+      "options": [
+        "called",
+        "looked",
+        "turned"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A call off jelentése: lemondani, törölni.",
+        "en": "Call off means to cancel.",
+        "es": "Call off significa cancelar.",
+        "de": "Call off bedeutet absagen."
+      },
+      "wrong": {
+        "looked": {
+          "hu": "A look off the match nem fejez ki lemondást; call off kell.",
+          "en": "“Look off the match” does not express cancelling; you need call off.",
+          "es": "«Look off the match» no expresa cancelar; hace falta call off.",
+          "de": "„Look off the match“ drückt keine Absage aus; man braucht call off."
+        },
+        "turned": {
+          "hu": "A turn off a match nem fejez ki lemondást; call off kell.",
+          "en": "“Turn off the match” does not express cancelling; you need call off.",
+          "es": "«Turn off the match» no expresa cancelar; hace falta call off.",
+          "de": "„Turn off the match“ drückt keine Absage aus; man braucht call off."
+        }
+      },
+      "examples": [
+        "They called off the trip.",
+        "He called it off."
+      ]
+    },
+    {
+      "id": "phv-07",
+      "sentence": "Please turn the light ___.",
+      "options": [
+        "of",
+        "off",
+        "to"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A turn off jelentése: lekapcsolni; a tárgy a két rész között is állhat.",
+        "en": "Turn off means to switch off; the object can go between the two parts.",
+        "es": "Turn off significa apagar; el objeto puede ir entre las dos partes.",
+        "de": "Turn off bedeutet ausschalten; das Objekt kann zwischen den beiden Teilen stehen."
+      },
+      "wrong": {
+        "of": {
+          "hu": "Az of elöljáró, nem a frázisige része; off kell.",
+          "en": "Of is a preposition, not the particle of the phrasal verb; you need off.",
+          "es": "Of es una preposición, no la partícula del phrasal verb; hace falta off.",
+          "de": "Of ist eine Präposition, nicht das Partikel des Phrasal Verbs; man braucht off."
+        },
+        "to": {
+          "hu": "A turn the light to nem jelent lekapcsolást; off kell.",
+          "en": "“Turn the light to” does not mean switching off; you need off.",
+          "es": "«Turn the light to» no significa apagar; hace falta off.",
+          "de": "„Turn the light to“ bedeutet kein Ausschalten; man braucht off."
+        }
+      },
+      "examples": [
+        "Please turn it off.",
+        "He turned the TV off."
+      ]
+    },
+    {
+      "id": "phv-08",
+      "sentence": "The lights are on. Please turn ___ off.",
+      "options": [
+        "they",
+        "their",
+        "them"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A névmás a két rész közé kerül, tárgyesetben: turn them off.",
+        "en": "The pronoun goes between the two parts, in the object form: turn them off.",
+        "es": "El pronombre va entre las dos partes, en forma de objeto: turn them off.",
+        "de": "Das Pronomen steht zwischen den beiden Teilen, in der Objektform: turn them off."
+      },
+      "wrong": {
+        "they": {
+          "hu": "A they alanyeset; a turn … off között tárgyeset (them) kell.",
+          "en": "They is the subject form; between turn … off you need the object form (them).",
+          "es": "They es la forma de sujeto; entre turn … off hace falta la forma de objeto (them).",
+          "de": "They ist die Subjektform; zwischen turn … off braucht man die Objektform (them)."
+        },
+        "their": {
+          "hu": "A their birtokos névmás; itt személyes névmás kell (them).",
+          "en": "Their is a possessive; here you need a personal pronoun (them).",
+          "es": "Their es un posesivo; aquí hace falta un pronombre personal (them).",
+          "de": "Their ist ein Possessivpronomen; hier braucht man ein Personalpronomen (them)."
+        }
+      },
+      "examples": [
+        "Please turn it off.",
+        "Put them on."
+      ]
+    },
+    {
+      "id": "phv-09",
+      "sentence": "She looks ___ her little brother while their parents work.",
+      "options": [
+        "after",
+        "at",
+        "over"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A look after jelentése: vigyázni valakire.",
+        "en": "Look after means to take care of.",
+        "es": "Look after significa cuidar a alguien.",
+        "de": "Look after bedeutet auf jemanden aufpassen."
+      },
+      "wrong": {
+        "at": {
+          "hu": "A look at nézést jelent, nem gondoskodást.",
+          "en": "Look at means to watch, not to take care of.",
+          "es": "Look at significa mirar, no cuidar.",
+          "de": "Look at heißt anschauen, nicht sich kümmern."
+        },
+        "over": {
+          "hu": "A look over átnézést, ellenőrzést jelent, nem gondoskodást.",
+          "en": "Look over means to check through, not to take care of.",
+          "es": "Look over significa revisar, no cuidar.",
+          "de": "Look over heißt durchsehen, nicht sich kümmern."
+        }
+      },
+      "examples": [
+        "He looks after the dog.",
+        "I look after them."
+      ]
+    },
+    {
+      "id": "phv-10",
+      "sentence": "I'm looking forward ___ seeing you.",
+      "options": [
+        "for",
+        "to",
+        "at"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A look forward után to áll, és -ing alak követi.",
+        "en": "After look forward comes to, followed by the -ing form.",
+        "es": "Después de look forward va to, seguido de la forma -ing.",
+        "de": "Nach look forward steht to, gefolgt von der -ing-Form."
+      },
+      "wrong": {
+        "for": {
+          "hu": "A look forward for nem létezik; look forward to kell.",
+          "en": "“Look forward for” does not exist; you need look forward to.",
+          "es": "«Look forward for» no existe; hace falta look forward to.",
+          "de": "„Look forward for“ gibt es nicht; man braucht look forward to."
+        },
+        "at": {
+          "hu": "A look forward at nem létezik; look forward to kell.",
+          "en": "“Look forward at” does not exist; you need look forward to.",
+          "es": "«Look forward at» no existe; hace falta look forward to.",
+          "de": "„Look forward at“ gibt es nicht; man braucht look forward to."
+        }
+      },
+      "examples": [
+        "She looks forward to meeting you.",
+        "We look forward to hearing."
+      ]
+    },
+    {
+      "id": "phv-11",
+      "sentence": "I can't put up ___ the noise any longer.",
+      "options": [
+        "to",
+        "for",
+        "with"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A put up with jelentése: eltűrni, elviselni.",
+        "en": "Put up with means to tolerate.",
+        "es": "Put up with significa aguantar.",
+        "de": "Put up with bedeutet ertragen."
+      },
+      "wrong": {
+        "to": {
+          "hu": "A put up to nem jelent elviselést; put up with kell.",
+          "en": "“Put up to” does not mean tolerate; you need put up with.",
+          "es": "«Put up to» no significa aguantar; hace falta put up with.",
+          "de": "„Put up to“ bedeutet nicht ertragen; man braucht put up with."
+        },
+        "for": {
+          "hu": "A put up for nem jelent elviselést; put up with kell.",
+          "en": "“Put up for” does not mean tolerate; you need put up with.",
+          "es": "«Put up for» no significa aguantar; hace falta put up with.",
+          "de": "„Put up for“ bedeutet nicht ertragen; man braucht put up with."
+        }
+      },
+      "examples": [
+        "I put up with it.",
+        "She puts up with him."
+      ]
+    },
+    {
+      "id": "phv-12",
+      "sentence": "He finally got ___ his cold.",
+      "options": [
+        "over",
+        "up",
+        "out"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A get over jelentése: kilábalni valamiből.",
+        "en": "Get over means to recover from.",
+        "es": "Get over significa recuperarse de.",
+        "de": "Get over bedeutet sich von etwas erholen."
+      },
+      "wrong": {
+        "up": {
+          "hu": "A get up felkelést jelent; a betegségből való felépüléshez get over kell.",
+          "en": "Get up means to rise; recovering from an illness needs get over.",
+          "es": "Get up significa levantarse; recuperarse de una enfermedad necesita get over.",
+          "de": "Get up heißt aufstehen; die Erholung von einer Krankheit braucht get over."
+        },
+        "out": {
+          "hu": "A get out kijutást jelent; a felépüléshez get over kell.",
+          "en": "Get out means to leave; recovering needs get over.",
+          "es": "Get out significa salir; recuperarse necesita get over.",
+          "de": "Get out heißt hinausgehen; die Erholung braucht get over."
+        }
+      },
+      "examples": [
+        "She got over the flu.",
+        "It took time to get over it."
+      ]
+    },
+    {
+      "id": "phv-13",
+      "sentence": "My car broke ___ on the way to work.",
+      "options": [
+        "off",
+        "down",
+        "over"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A break down jelentése: elromlani.",
+        "en": "Break down means to stop working.",
+        "es": "Break down significa descomponerse.",
+        "de": "Break down bedeutet kaputtgehen."
+      },
+      "wrong": {
+        "off": {
+          "hu": "A break off letörést vagy megszakítást jelent, nem elromlást.",
+          "en": "Break off means to snap or stop, not to stop working.",
+          "es": "Break off significa romperse o interrumpirse, no descomponerse.",
+          "de": "Break off heißt abbrechen oder unterbrechen, nicht kaputtgehen."
+        },
+        "over": {
+          "hu": "A break over nem létezik ebben a jelentésben; break down kell.",
+          "en": "“Break over” does not exist in this meaning; you need break down.",
+          "es": "«Break over» no existe en este sentido; hace falta break down.",
+          "de": "„Break over“ gibt es in dieser Bedeutung nicht; man braucht break down."
+        }
+      },
+      "examples": [
+        "The bus broke down.",
+        "My phone broke down."
+      ]
+    },
+    {
+      "id": "phv-14",
+      "sentence": "Please fill ___ this form.",
+      "options": [
+        "on",
+        "at",
+        "in"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A fill in jelentése: kitölteni.",
+        "en": "Fill in means to complete a form.",
+        "es": "Fill in significa llenar un formulario.",
+        "de": "Fill in bedeutet ein Formular ausfüllen."
+      },
+      "wrong": {
+        "on": {
+          "hu": "A fill on nem létezik ebben a jelentésben; fill in kell.",
+          "en": "“Fill on” does not exist in this meaning; you need fill in.",
+          "es": "«Fill on» no existe en este sentido; hace falta fill in.",
+          "de": "„Fill on“ gibt es in dieser Bedeutung nicht; man braucht fill in."
+        },
+        "at": {
+          "hu": "A fill at nem létezik ebben a jelentésben; fill in kell.",
+          "en": "“Fill at” does not exist in this meaning; you need fill in.",
+          "es": "«Fill at» no existe en este sentido; hace falta fill in.",
+          "de": "„Fill at“ gibt es in dieser Bedeutung nicht; man braucht fill in."
+        }
+      },
+      "examples": [
+        "Fill in the blanks.",
+        "She filled in the form."
+      ]
+    },
+    {
+      "id": "phv-15",
+      "sentence": "We ran ___ an old friend at the airport.",
+      "options": [
+        "into",
+        "up",
+        "off"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A run into jelentése: véletlenül találkozni valakivel.",
+        "en": "Run into means to meet by chance.",
+        "es": "Run into significa encontrarse por casualidad.",
+        "de": "Run into bedeutet zufällig treffen."
+      },
+      "wrong": {
+        "up": {
+          "hu": "A run up valaki(t) nem jelent találkozást; run into kell.",
+          "en": "“Run up” someone does not mean meeting; you need run into.",
+          "es": "«Run up» a alguien no significa encontrarse; hace falta run into.",
+          "de": "„Run up“ bedeutet bei einer Person kein Treffen; man braucht run into."
+        },
+        "off": {
+          "hu": "A run off elszaladást jelent, nem találkozást.",
+          "en": "Run off means to run away, not to meet.",
+          "es": "Run off significa salir corriendo, no encontrarse.",
+          "de": "Run off heißt weglaufen, nicht treffen."
+        }
+      },
+      "examples": [
+        "I ran into him.",
+        "She ran into her boss."
+      ]
+    },
+    {
+      "id": "phv-16",
+      "sentence": "She grew ___ in a small town.",
+      "options": [
+        "down",
+        "up",
+        "off"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A grow up jelentése: felnőni.",
+        "en": "Grow up means to become an adult.",
+        "es": "Grow up significa crecer.",
+        "de": "Grow up bedeutet aufwachsen."
+      },
+      "wrong": {
+        "down": {
+          "hu": "A grow down nem létezik; grow up kell.",
+          "en": "“Grow down” does not exist; you need grow up.",
+          "es": "«Grow down» no existe; hace falta grow up.",
+          "de": "„Grow down“ gibt es nicht; man braucht grow up."
+        },
+        "off": {
+          "hu": "A grow off nem létezik ebben a jelentésben; grow up kell.",
+          "en": "“Grow off” does not exist in this meaning; you need grow up.",
+          "es": "«Grow off» no existe en este sentido; hace falta grow up.",
+          "de": "„Grow off“ gibt es in dieser Bedeutung nicht; man braucht grow up."
+        }
+      },
+      "examples": [
+        "He grew up here.",
+        "They grew up together."
+      ]
+    },
+    {
+      "id": "phv-17",
+      "sentence": "I need to carry ___ with my work.",
+      "options": [
+        "in",
+        "at",
+        "on"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A carry on jelentése: folytatni.",
+        "en": "Carry on means to continue.",
+        "es": "Carry on significa continuar.",
+        "de": "Carry on bedeutet weitermachen."
+      },
+      "wrong": {
+        "in": {
+          "hu": "A carry in with nem létezik; carry on kell.",
+          "en": "“Carry in with” does not exist; you need carry on.",
+          "es": "«Carry in with» no existe; hace falta carry on.",
+          "de": "„Carry in with“ gibt es nicht; man braucht carry on."
+        },
+        "at": {
+          "hu": "A carry at with nem létezik; carry on kell.",
+          "en": "“Carry at with” does not exist; you need carry on.",
+          "es": "«Carry at with» no existe; hace falta carry on.",
+          "de": "„Carry at with“ gibt es nicht; man braucht carry on."
+        }
+      },
+      "examples": [
+        "Carry on, please.",
+        "He carried on working."
+      ]
+    },
+    {
+      "id": "phv-18",
+      "kind": "form",
+      "verb": "forma",
+      "person": "rendirse, dejar de intentar",
+      "answer": "give up",
+      "table": "phv-forms"
+    },
+    {
+      "id": "phv-19",
+      "kind": "form",
+      "verb": "forma",
+      "person": "posponer",
+      "answer": "put off",
+      "table": "phv-forms"
+    },
+    {
+      "id": "phv-20",
+      "kind": "form",
+      "verb": "forma",
+      "person": "inventar, ocurrírsele algo",
+      "answer": "come up with",
+      "table": "phv-forms"
+    },
+    {
+      "id": "phv-21",
+      "kind": "form",
+      "verb": "forma",
+      "person": "quedarse sin",
+      "answer": "run out of",
+      "table": "phv-forms"
+    },
+    {
+      "id": "phv-22",
+      "kind": "form",
+      "verb": "forma",
+      "person": "rechazar una oferta",
+      "answer": "turn down",
+      "table": "phv-forms"
+    },
+    {
+      "id": "phv-23",
+      "kind": "form",
+      "verb": "forma",
+      "person": "cancelar (un evento)",
+      "answer": "call off",
+      "table": "phv-forms"
+    },
+    {
+      "kind": "why",
+      "id": "phv-24",
+      "es": "Don't give up.",
+      "target": "give up",
+      "tr": {
+        "hu": "Ne add fel.",
+        "en": "Don't give up.",
+        "es": "No te rindas.",
+        "de": "Gib nicht auf."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "szó szerint: adni valamit felfelé",
+            "en": "literal: giving something upward",
+            "es": "literal: dar algo hacia arriba",
+            "de": "wörtlich: etwas nach oben geben"
+          },
+          "wrong": {
+            "hu": "A give up jelentése nem a szavak összege: feladni, abbahagyni a próbálkozást.",
+            "en": "The meaning of give up is not the sum of the words: stop trying.",
+            "es": "El significado de give up no es la suma de las palabras: dejar de intentar.",
+            "de": "Die Bedeutung von give up ist nicht die Summe der Wörter: nicht mehr versuchen."
+          }
+        },
+        {
+          "text": {
+            "hu": "frázisige: a jelentése más, mint a szavaké (feladni)",
+            "en": "a phrasal verb: its meaning differs from the words (stop trying)",
+            "es": "un phrasal verb: su significado difiere de las palabras (dejar de intentar)",
+            "de": "ein Phrasal Verb: seine Bedeutung weicht von den Wörtern ab (nicht mehr versuchen)"
+          }
+        },
+        {
+          "text": {
+            "hu": "csak elöljárós ige, tárgy nélkül",
+            "en": "only a prepositional verb with no meaning change",
+            "es": "solo un verbo con preposición sin cambio de significado",
+            "de": "nur ein Präpositionalverb ohne Bedeutungswechsel"
+          },
+          "wrong": {
+            "hu": "A give up jelentése megváltozik a határozószótól: ez frázisige.",
+            "en": "The meaning of give up changes because of the particle: it is a phrasal verb.",
+            "es": "El significado de give up cambia por la partícula: es un phrasal verb.",
+            "de": "Die Bedeutung von give up ändert sich durch das Partikel: es ist ein Phrasal Verb."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "phv-25",
+      "es": "Please turn it off.",
+      "target": "it",
+      "tr": {
+        "hu": "Kérlek, kapcsold le.",
+        "en": "Please turn it off.",
+        "es": "Apágalo, por favor.",
+        "de": "Bitte mach es aus."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a névmás a határozószó után áll: turn off it",
+            "en": "the pronoun goes after the particle: turn off it",
+            "es": "el pronombre va después de la partícula: turn off it",
+            "de": "das Pronomen steht nach dem Partikel: turn off it"
+          },
+          "wrong": {
+            "hu": "A névmás nem állhat a határozószó után; a két rész közé kerül.",
+            "en": "A pronoun cannot follow the particle; it goes between the two parts.",
+            "es": "El pronombre no puede ir después de la partícula; va entre las dos partes.",
+            "de": "Ein Pronomen kann nicht nach dem Partikel stehen; es steht zwischen den beiden Teilen."
+          }
+        },
+        {
+          "text": {
+            "hu": "a névmás a két rész között áll, mert az ige szétválasztható",
+            "en": "the pronoun goes between the two parts, because the verb is separable",
+            "es": "el pronombre va entre las dos partes, porque el verbo es separable",
+            "de": "das Pronomen steht zwischen den beiden Teilen, weil das Verb trennbar ist"
+          }
+        },
+        {
+          "text": {
+            "hu": "névmás nem használható",
+            "en": "a pronoun cannot be used",
+            "es": "no se puede usar un pronombre",
+            "de": "ein Pronomen kann nicht benutzt werden"
+          },
+          "wrong": {
+            "hu": "Névmás használható; a szétválasztható igénél sőt a közepén áll.",
+            "en": "A pronoun can be used; with a separable verb it even goes in the middle.",
+            "es": "Se puede usar un pronombre; con un verbo separable incluso va en medio.",
+            "de": "Ein Pronomen kann benutzt werden; bei einem trennbaren Verb steht es sogar in der Mitte."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "phv-26",
+      "es": "She looks after her brother.",
+      "target": "looks after",
+      "tr": {
+        "hu": "Vigyáz a testvérére.",
+        "en": "She looks after her brother.",
+        "es": "Ella cuida a su hermano.",
+        "de": "Sie passt auf ihren Bruder auf."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "szétválasztható: look him after",
+            "en": "separable: look him after",
+            "es": "separable: look him after",
+            "de": "trennbar: look him after"
+          },
+          "wrong": {
+            "hu": "A look after nem szétválasztható; a tárgy a teljes ige után áll (look after him).",
+            "en": "Look after is not separable; the object follows the whole verb (look after him).",
+            "es": "Look after no es separable; el objeto va después de todo el verbo (look after him).",
+            "de": "Look after ist nicht trennbar; das Objekt steht nach dem ganzen Verb (look after him)."
+          }
+        },
+        {
+          "text": {
+            "hu": "nem szétválasztható: a tárgy az egész ige után áll",
+            "en": "inseparable: the object follows the whole verb",
+            "es": "no separable: el objeto va después de todo el verbo",
+            "de": "nicht trennbar: das Objekt steht nach dem ganzen Verb"
+          }
+        },
+        {
+          "text": {
+            "hu": "tárgy nélkül áll",
+            "en": "it takes no object",
+            "es": "no lleva objeto",
+            "de": "es hat kein Objekt"
+          },
+          "wrong": {
+            "hu": "A look after tárgyat kér: valakire vigyáz.",
+            "en": "Look after takes an object: you look after someone.",
+            "es": "Look after lleva objeto: se cuida a alguien.",
+            "de": "Look after verlangt ein Objekt: man passt auf jemanden auf."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "phv-27",
+      "es": "I'm looking forward to seeing you.",
+      "target": "to seeing",
+      "tr": {
+        "hu": "Várom, hogy láthassalak.",
+        "en": "I'm looking forward to seeing you.",
+        "es": "Tengo muchas ganas de verte.",
+        "de": "Ich freue mich darauf, dich zu sehen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "a to az infinitívusz jele",
+            "en": "to is the infinitive marker",
+            "es": "to es la marca del infinitivo",
+            "de": "to ist die Infinitivmarkierung"
+          },
+          "wrong": {
+            "hu": "Itt a to elöljáró, ezért -ing alak követi.",
+            "en": "Here to is a preposition, so the -ing form follows.",
+            "es": "Aquí to es una preposición, por eso le sigue la forma -ing.",
+            "de": "Hier ist to eine Präposition, deshalb folgt die -ing-Form."
+          }
+        },
+        {
+          "text": {
+            "hu": "a to elöljáró, ezért -ing alak követi",
+            "en": "to is a preposition, so the -ing form follows",
+            "es": "to es una preposición, por eso le sigue la forma -ing",
+            "de": "to ist eine Präposition, deshalb folgt die -ing-Form"
+          }
+        },
+        {
+          "text": {
+            "hu": "a to elhagyható",
+            "en": "to can be dropped",
+            "es": "to se puede omitir",
+            "de": "to kann wegfallen"
+          },
+          "wrong": {
+            "hu": "A to a look forward to része, nem hagyható el.",
+            "en": "To is part of look forward to and cannot be dropped.",
+            "es": "To forma parte de look forward to y no se puede omitir.",
+            "de": "To gehört zu look forward to und kann nicht wegfallen."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "phv-28",
+      "es": "We ran out of milk.",
+      "target": "ran out of",
+      "tr": {
+        "hu": "Elfogyott a tejünk.",
+        "en": "We ran out of milk.",
+        "es": "Se nos acabó la leche.",
+        "de": "Uns ist die Milch ausgegangen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "kétszavas frázisige",
+            "en": "a two-word phrasal verb",
+            "es": "un phrasal verb de dos palabras",
+            "de": "ein Phrasal Verb mit zwei Wörtern"
+          },
+          "wrong": {
+            "hu": "A run out of három szavas: ige + határozószó + elöljáró.",
+            "en": "Run out of has three words: verb + adverb + preposition.",
+            "es": "Run out of tiene tres palabras: verbo + adverbio + preposición.",
+            "de": "Run out of hat drei Wörter: Verb + Adverb + Präposition."
+          }
+        },
+        {
+          "text": {
+            "hu": "háromszavas frázisige: ige + határozószó + elöljáró",
+            "en": "a three-word phrasal verb: verb + adverb + preposition",
+            "es": "un phrasal verb de tres palabras: verbo + adverbio + preposición",
+            "de": "ein Phrasal Verb mit drei Wörtern: Verb + Adverb + Präposition"
+          }
+        },
+        {
+          "text": {
+            "hu": "szétválasztható frázisige",
+            "en": "a separable phrasal verb",
+            "es": "un phrasal verb separable",
+            "de": "ein trennbares Phrasal Verb"
+          },
+          "wrong": {
+            "hu": "A háromszavas frázisigék nem szétválaszthatók.",
+            "en": "Three-word phrasal verbs are not separable.",
+            "es": "Los phrasal verbs de tres palabras no son separables.",
+            "de": "Dreiteilige Phrasal Verbs sind nicht trennbar."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "phv-29",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "No te rindas.",
+          "en": "Don't give up."
+        },
+        {
+          "es": "Pospusieron la reunión.",
+          "en": "They put off the meeting."
+        },
+        {
+          "es": "Se nos acabó la leche.",
+          "en": "We ran out of milk."
+        },
+        {
+          "es": "Rechazó la oferta.",
+          "en": "He turned down the offer."
+        },
+        {
+          "es": "Cancelaron el partido.",
+          "en": "They called off the match."
+        },
+        {
+          "es": "Se nos ocurrió una idea.",
+          "en": "We came up with an idea."
+        }
+      ]
+    },
+    {
+      "id": "phv-30",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "cuidar a alguien",
+          "en": "look after"
+        },
+        {
+          "es": "esperar con ganas",
+          "en": "look forward to"
+        },
+        {
+          "es": "aguantar",
+          "en": "put up with"
+        },
+        {
+          "es": "recuperarse de",
+          "en": "get over"
+        },
+        {
+          "es": "descomponerse (un carro)",
+          "en": "break down"
+        },
+        {
+          "es": "seguir adelante",
+          "en": "carry on"
+        }
+      ]
+    }
+  ]
+}
