@@ -35,7 +35,8 @@ import grammarEnUsedTo from '@/data/games/grammar/en/used-to.json';
 import grammarEnWillVsGoingTo from '@/data/games/grammar/en/will-vs-going-to.json';
 import grammarEnFirstConditional from '@/data/games/grammar/en/first-conditional.json';
 import grammarEnSecondConditional from '@/data/games/grammar/en/second-conditional.json';
+import grammarEnModalsObligationAdvice from '@/data/games/grammar/en/modals-obligation-advice.json';
 
 export const enContent: LanguageContentBundle = {
-  grammarTopics: [grammarEnToBe, grammarEnArticles, grammarEnPresentSimple, grammarEnPlurals, grammarEnThisThat, grammarEnPossessives, grammarEnThereIsAre, grammarEnPrepositions, grammarEnHaveGot, grammarEnCanAbility, grammarEnQuestionWords, grammarEnPresentContinuous, grammarEnPastSimpleRegular, grammarEnPastSimpleIrregular, grammarEnGoingTo, grammarEnWill, grammarEnPresentPerfect, grammarEnComparatives, grammarEnSuperlatives, grammarEnMustHaveTo, grammarEnBasicVerbs, grammarEnPresentPerfectVsPast, grammarEnPresentPerfectContinuous, grammarEnPastContinuous, grammarEnPastPerfect, grammarEnUsedTo, grammarEnWillVsGoingTo, grammarEnFirstConditional, grammarEnSecondConditional] as unknown as GrammarTopicData[],
+  grammarTopics: [grammarEnToBe, grammarEnArticles, grammarEnPresentSimple, grammarEnPlurals, grammarEnThisThat, grammarEnPossessives, grammarEnThereIsAre, grammarEnPrepositions, grammarEnHaveGot, grammarEnCanAbility, grammarEnQuestionWords, grammarEnPresentContinuous, grammarEnPastSimpleRegular, grammarEnPastSimpleIrregular, grammarEnGoingTo, grammarEnWill, grammarEnPresentPerfect, grammarEnComparatives, grammarEnSuperlatives, grammarEnMustHaveTo, grammarEnBasicVerbs, grammarEnPresentPerfectVsPast, grammarEnPresentPerfectContinuous, grammarEnPastContinuous, grammarEnPastPerfect, grammarEnUsedTo, grammarEnWillVsGoingTo, grammarEnFirstConditional, grammarEnSecondConditional, grammarEnModalsObligationAdvice] as unknown as GrammarTopicData[],
 };
