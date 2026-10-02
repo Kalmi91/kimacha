@@ -540,6 +540,7 @@ export default function PcicScreen() {
               speechLocale={speechLang(target)}
               sourceSpeechLocale={speechLang(sourceLang)}
               onResult={() => setSentenceCard(null)}
+              gradeButtons
             />
           </ScrollView>
         ) : (
@@ -556,6 +557,7 @@ export default function PcicScreen() {
             dockLift={dockLift}
             dockH={dockH}
             onDockHeight={setDockH}
+            gradeButtons
           />
         )}
         <FeedbackButton
