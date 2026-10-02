@@ -404,15 +404,6 @@
       }
     },
     {
-      "word": "received",
-      "gloss": {
-        "hu": "kapott (a receive múltja)",
-        "en": "past form of receive",
-        "es": "recibió (pasado de receive)",
-        "de": "erhielt (Past von receive)"
-      }
-    },
-    {
       "word": "sit",
       "gloss": {
         "hu": "ül",
@@ -527,6 +518,15 @@
         "en": "people who work",
         "es": "trabajadores",
         "de": "Arbeiter"
+      }
+    },
+    {
+      "word": "receive",
+      "gloss": {
+        "hu": "kap, megkap",
+        "en": "to get something",
+        "es": "recibir",
+        "de": "erhalten"
       }
     }
   ],
@@ -1009,7 +1009,7 @@
     },
     {
       "id": "rrc-15",
-      "sentence": "The man ___ me the directions was very polite.",
+      "sentence": "The man ___ me directions at the moment is very polite.",
       "options": [
         "giving",
         "gave",
@@ -1017,17 +1017,17 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Egyidejű, tevő jelentés: the man giving me the directions.",
-        "en": "A simultaneous, active meaning: the man giving me the directions.",
-        "es": "Un sentido simultáneo y activo: the man giving me the directions.",
-        "de": "Eine gleichzeitige, aktive Bedeutung: the man giving me the directions."
+        "hu": "Egyidejű, tevő jelentés: the man giving me directions.",
+        "en": "A simultaneous, active meaning: the man giving me directions.",
+        "es": "Un sentido simultáneo y activo: the man giving me directions.",
+        "de": "Eine gleichzeitige, aktive Bedeutung: the man giving me directions."
       },
       "wrong": {
         "gave": {
-          "hu": "A the man gave me the directions was két ragozott igét tenne egymás mellé; -ing alak kell.",
-          "en": "“The man gave me the directions was” would put two finite verbs together; you need the -ing form.",
-          "es": "«The man gave me the directions was» pondría dos verbos conjugados juntos; hace falta la forma -ing.",
-          "de": "„The man gave me the directions was“ würde zwei finite Verben zusammenstellen; man braucht die -ing-Form."
+          "hu": "A the man gave me directions at the moment is két ragozott igét tenne egymás mellé; -ing alak kell.",
+          "en": "“The man gave me directions at the moment is” would put two finite verbs together; you need the -ing form.",
+          "es": "«The man gave me directions at the moment is» pondría dos verbos conjugados juntos; hace falta la forma -ing.",
+          "de": "„The man gave me directions at the moment is“ würde zwei finite Verben zusammenstellen; man braucht die -ing-Form."
         },
         "to give": {
           "hu": "A the man to give me nem helyes ebben a jelentésben; -ing alak kell.",
@@ -1043,7 +1043,7 @@
     },
     {
       "id": "rrc-16",
-      "sentence": "All the students ___ the exam received a certificate.",
+      "sentence": "All the students ___ the exam today will receive a certificate.",
       "options": [
         "passed",
         "passing",
@@ -1058,16 +1058,16 @@
       },
       "wrong": {
         "passed": {
-          "hu": "A passed the exam received két ragozott igét tenne egymás mellé; -ing alak kell.",
-          "en": "“Passed the exam received” would put two finite verbs together; you need the -ing form.",
-          "es": "«Passed the exam received» pondría dos verbos conjugados juntos; hace falta la forma -ing.",
-          "de": "„Passed the exam received“ würde zwei finite Verben zusammenstellen; man braucht die -ing-Form."
+          "hu": "A passed the exam today will receive két ragozott igét tenne egymás mellé; -ing alak kell.",
+          "en": "“Passed the exam today will receive” would put two finite verbs together; you need the -ing form.",
+          "es": "«Passed the exam today will receive» pondría dos verbos conjugados juntos; hace falta la forma -ing.",
+          "de": "„Passed the exam today will receive“ würde zwei finite Verben zusammenstellen; man braucht die -ing-Form."
         },
         "pass": {
-          "hu": "A pass the exam received két ragozott igét tenne egymás mellé; -ing alak kell.",
-          "en": "“Pass the exam received” would put two finite verbs together; you need the -ing form.",
-          "es": "«Pass the exam received» pondría dos verbos conjugados juntos; hace falta la forma -ing.",
-          "de": "„Pass the exam received“ würde zwei finite Verben zusammenstellen; man braucht die -ing-Form."
+          "hu": "A pass the exam today will receive két ragozott igét tenne egymás mellé; -ing alak kell.",
+          "en": "“Pass the exam today will receive” would put two finite verbs together; you need the -ing form.",
+          "es": "«Pass the exam today will receive» pondría dos verbos conjugados juntos; hace falta la forma -ing.",
+          "de": "„Pass the exam today will receive“ würde zwei finite Verben zusammenstellen; man braucht die -ing-Form."
         }
       },
       "examples": [
@@ -1115,6 +1115,9 @@
       "verb": "forma",
       "person": "el hombre sentado ahí (the man ___ there)",
       "answer": "sitting",
+      "accept": [
+        "seated"
+      ],
       "table": "rrc-forms"
     },
     {
@@ -1139,6 +1142,12 @@
       "verb": "forma",
       "person": "los carros hechos en México (cars ___ in Mexico)",
       "answer": "made",
+      "accept": [
+        "manufactured",
+        "built",
+        "produced",
+        "assembled"
+      ],
       "table": "rrc-forms"
     },
     {
@@ -1147,6 +1156,11 @@
       "verb": "forma",
       "person": "cualquiera que quiera (anyone ___ to join)",
       "answer": "wanting",
+      "accept": [
+        "wishing",
+        "hoping",
+        "looking"
+      ],
       "table": "rrc-forms"
     },
     {
@@ -1155,6 +1169,9 @@
       "verb": "forma",
       "person": "la persona que vive al lado (the person ___ next door)",
       "answer": "living",
+      "accept": [
+        "residing"
+      ],
       "table": "rrc-forms"
     },
     {
@@ -1447,7 +1464,7 @@
       "kind": "match",
       "pairs": [
         {
-          "es": "la casa ubicada al final",
+          "es": "la casa que está al final",
           "en": "the house standing at the end"
         },
         {

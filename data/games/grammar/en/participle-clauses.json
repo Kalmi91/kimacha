@@ -227,10 +227,10 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Az igenévi szerkezet alanya mindig a főmondat alanya: „Walking down the street, I saw an accident” (én sétáltam). Ha a főmondat alanya más, külön mellékmondatot kell használni.",
-        "en": "The subject of a participle clause is always the subject of the main clause: “Walking down the street, I saw an accident” (I was walking). If the main clause has a different subject, a separate clause must be used.",
-        "es": "El sujeto de una cláusula de participio es siempre el sujeto de la oración principal: «Walking down the street, I saw an accident» (yo caminaba). Si la oración principal tiene otro sujeto, hay que usar una cláusula aparte.",
-        "de": "Das Subjekt eines Partizipialsatzes ist immer das Subjekt des Hauptsatzes: «Walking down the street, I saw an accident» (ich ging). Hat der Hauptsatz ein anderes Subjekt, muss man einen eigenen Nebensatz benutzen."
+        "hu": "Az igenévi szerkezet alanya általában a főmondat alanya: „Walking down the street, I saw an accident” (én sétáltam). Ha a főmondat alanya más, külön mellékmondatot kell használni. Rögzített kivételek: judging by, generally speaking, considering, given, weather permitting.",
+        "en": "The subject of a participle clause is normally the subject of the main clause: “Walking down the street, I saw an accident” (I was walking). If the main clause has a different subject, a separate clause must be used. Fixed exceptions: judging by, generally speaking, considering, given, weather permitting.",
+        "es": "El sujeto de una cláusula de participio es normalmente el sujeto de la oración principal: «Walking down the street, I saw an accident» (yo caminaba). Si la oración principal tiene otro sujeto, hay que usar una cláusula aparte. Excepciones fijas: judging by, generally speaking, considering, given, weather permitting.",
+        "de": "Das Subjekt eines Partizipialsatzes ist normalerweise das Subjekt des Hauptsatzes: «Walking down the street, I saw an accident» (ich ging). Hat der Hauptsatz ein anderes Subjekt, muss man einen eigenen Nebensatz benutzen. Feste Ausnahmen: judging by, generally speaking, considering, given, weather permitting."
       }
     },
     {
@@ -1130,6 +1130,9 @@
       "verb": "forma",
       "person": "sin saber (___ knowing)",
       "answer": "not",
+      "accept": [
+        "without"
+      ],
       "table": "ptc-forms"
     },
     {
@@ -1458,8 +1461,8 @@
           "en": "having been told"
         },
         {
-          "es": "sin haber comido",
-          "en": "not having eaten"
+          "es": "habiendo comido ya",
+          "en": "having already eaten"
         }
       ]
     }

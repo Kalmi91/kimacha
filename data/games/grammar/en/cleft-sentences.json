@@ -79,10 +79,10 @@
       "items": [
         {
           "text": {
-            "hu": "Kiemelhető az alany, a tárgy és a határozó, az ige nem. Személyre who, dologra, helyre és időre that.",
-            "en": "You can stress the subject, the object and an adverbial, not the verb. Who for people, that for things, places and times.",
-            "es": "Se puede enfatizar el sujeto, el objeto y un adverbial, no el verbo. Who para personas, that para cosas, lugares y tiempos.",
-            "de": "Man kann Subjekt, Objekt und Adverbial hervorheben, nicht das Verb. Who für Personen, that für Dinge, Orte und Zeiten."
+            "hu": "Kiemelhető az alany, a tárgy és a határozó, az ige nem. Személyre who (vagy that), dologra, helyre és időre that.",
+            "en": "You can stress the subject, the object and an adverbial, not the verb. Who (or that) for people, that for things, places and times.",
+            "es": "Se puede enfatizar el sujeto, el objeto y un adverbial, no el verbo. Who (o that) para personas, that para cosas, lugares y tiempos.",
+            "de": "Man kann Subjekt, Objekt und Adverbial hervorheben, nicht das Verb. Who (oder that) für Personen, that für Dinge, Orte und Zeiten."
           },
           "examples": [
             {
@@ -233,10 +233,10 @@
     }
   ],
   "speak": {
-    "hu": "A kiemelő szerkezet egy mondatot két részre bont, hogy a fontos információ külön álljon. Az it-kiemelés: «It was Maria who called the police». Személyre «who», dologra, helyre és időre «that». A wh-kiemelés: «What I need is a long vacation». A «what … do» után a «be» után alapige áll: «What she did was call the police». A «what» helyett állhat «all» és «the reason why»: «All I want is a quiet life». Az angolban kell az «it» mint alany.",
-    "en": "A cleft sentence splits one sentence into two parts so that the important information stands apart. The it-cleft: «It was Maria who called the police». Who for people, that for things, places and times. The wh-cleft: «What I need is a long vacation». After «what … do», «be» is followed by the base verb: «What she did was call the police». Instead of «what» you can use «all» and «the reason why»: «All I want is a quiet life». English needs «it» as the subject.",
-    "es": "Una oración enfática divide una oración en dos partes para que la información importante quede aparte. La it-cleft: «It was Maria who called the police». Who para personas, that para cosas, lugares y tiempos. La wh-cleft: «What I need is a long vacation». Después de «what … do», «be» va seguido del verbo base: «What she did was call the police». En lugar de «what» se puede usar «all» y «the reason why»: «All I want is a quiet life». El inglés necesita «it» como sujeto.",
-    "de": "Ein Spaltsatz teilt einen Satz in zwei Teile, damit die wichtige Information für sich steht. Der it-Spaltsatz: «It was Maria who called the police». Who für Personen, that für Dinge, Orte und Zeiten. Der wh-Spaltsatz: «What I need is a long vacation». Nach «what … do» folgt auf «be» die Grundform: «What she did was call the police». Statt «what» kann «all» und «the reason why» stehen: «All I want is a quiet life». Das Englische braucht «it» als Subjekt."
+    "hu": "A kiemelő szerkezet egy mondatot két részre bont, hogy a fontos információ külön álljon. Az it-kiemelés: «It was Maria who called the police». Személyre «who» vagy «that», dologra, helyre és időre «that». A wh-kiemelés: «What I need is a long vacation». A «what … do» után a «be» után alapige áll: «What she did was call the police». A «what» helyett állhat «all» és «the reason why»: «All I want is a quiet life». Az angolban kell az «it» mint alany.",
+    "en": "A cleft sentence splits one sentence into two parts so that the important information stands apart. The it-cleft: «It was Maria who called the police». Who, or that, for people, that for things, places and times. The wh-cleft: «What I need is a long vacation». After «what … do», «be» is followed by the base verb: «What she did was call the police». Instead of «what» you can use «all» and «the reason why»: «All I want is a quiet life». English needs «it» as the subject.",
+    "es": "Una oración enfática divide una oración en dos partes para que la información importante quede aparte. La it-cleft: «It was Maria who called the police». Who, o that, para personas, that para cosas, lugares y tiempos. La wh-cleft: «What I need is a long vacation». Después de «what … do», «be» va seguido del verbo base: «What she did was call the police». En lugar de «what» se puede usar «all» y «the reason why»: «All I want is a quiet life». El inglés necesita «it» como sujeto.",
+    "de": "Ein Spaltsatz teilt einen Satz in zwei Teile, damit die wichtige Information für sich steht. Der it-Spaltsatz: «It was Maria who called the police». Who, oder that, für Personen, that für Dinge, Orte und Zeiten. Der wh-Spaltsatz: «What I need is a long vacation». Nach «what … do» folgt auf «be» die Grundform: «What she did was call the police». Statt «what» kann «all» und «the reason why» stehen: «All I want is a quiet life». Das Englische braucht «it» als Subjekt."
   },
   "glossary": [
     {
@@ -1005,6 +1005,9 @@
       "verb": "forma",
       "person": "fue Juan quien lo rompió (persona)",
       "answer": "who",
+      "accept": [
+        "that"
+      ],
       "table": "clf-forms"
     },
     {
