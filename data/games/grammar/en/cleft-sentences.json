@@ -1,0 +1,1376 @@
+{
+  "schema": 2,
+  "topic": "cleft_sentences",
+  "level": "C1",
+  "title": {
+    "hu": "Kiemelő szerkezetek (It was Maria who …, What I need is …)",
+    "en": "Cleft Sentences (It was Maria who …, What I need is …)",
+    "es": "Las oraciones enfáticas (It was Maria who …, What I need is …)",
+    "de": "Spaltsätze (It was Maria who …, What I need is …)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A kiemelő szerkezet egy mondatot két részre bont, hogy a fontos információ külön álljon. Két fő típusa van. Az it-kiemelés: „It was Maria who called the police.” (Mária volt az, aki felhívta a rendőrséget.) A wh-kiemelés: „What I need is a long vacation.” (Amire szükségem van, az egy hosszú szabadság.) A spanyol „Fue María quien llamó” és „Lo que necesito es…” szerkezetek megfelelnek ezeknek, de az angolban kell az „it” mint formális alany.",
+        "en": "A cleft sentence splits one sentence into two parts so that the important information stands apart. There are two main types. The it-cleft: “It was Maria who called the police.” The wh-cleft: “What I need is a long vacation.” The Spanish “Fue María quien llamó” and “Lo que necesito es…” match them, but English needs “it” as a dummy subject.",
+        "es": "Una oración enfática divide una oración en dos partes para que la información importante quede aparte. Hay dos tipos principales. La it-cleft: «It was Maria who called the police.» La wh-cleft: «What I need is a long vacation.» El «Fue María quien llamó» y el «Lo que necesito es…» del español les corresponden, pero el inglés necesita «it» como sujeto formal.",
+        "de": "Ein Spaltsatz teilt einen Satz in zwei Teile, damit die wichtige Information für sich steht. Es gibt zwei Haupttypen. Der it-Spaltsatz: „It was Maria who called the police.“ Der wh-Spaltsatz: „What I need is a long vacation.“ Das spanische „Fue María quien llamó“ und „Lo que necesito es…“ entsprechen ihnen, aber das Englische braucht „it“ als formales Subjekt."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "clf-forms",
+      "title": {
+        "hu": "Melyik szó?",
+        "en": "Which word?",
+        "es": "¿Qué palabra uso?",
+        "de": "Welches Wort?"
+      },
+      "header": [
+        {
+          "hu": "Jelentés",
+          "en": "Meaning",
+          "es": "Significado",
+          "de": "Bedeutung"
+        },
+        {
+          "hu": "forma",
+          "en": "form",
+          "es": "forma",
+          "de": "Form"
+        }
+      ],
+      "rows": [
+        [
+          "fue Juan quien lo rompió (persona)",
+          "who"
+        ],
+        [
+          "fue ayer cuando ocurrió (cosa, lugar o tiempo)",
+          "that"
+        ],
+        [
+          "lo que necesito es...",
+          "what"
+        ],
+        [
+          "todo lo que quiero es...",
+          "all"
+        ],
+        [
+          "la razón por la que... es que",
+          "the reason why"
+        ],
+        [
+          "lo que pasó fue que...",
+          "what happened"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "It-kiemelés: It + be + kiemelt rész + that / who",
+        "en": "It-cleft: It + be + focus + that / who",
+        "es": "It-cleft: It + be + foco + that / who",
+        "de": "It-Spaltsatz: It + be + Fokus + that / who"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Kiemelhető az alany, a tárgy és a határozó, az ige nem. Személyre who (vagy that), dologra, helyre és időre that.",
+            "en": "You can stress the subject, the object and an adverbial, not the verb. Who (or that) for people, that for things, places and times.",
+            "es": "Se puede enfatizar el sujeto, el objeto y un adverbial, no el verbo. Who (o that) para personas, that para cosas, lugares y tiempos.",
+            "de": "Man kann Subjekt, Objekt und Adverbial hervorheben, nicht das Verb. Who (oder that) für Personen, that für Dinge, Orte und Zeiten."
+          },
+          "examples": [
+            {
+              "es": "It was Maria who called the police.",
+              "tr": {
+                "hu": "Mária volt az, aki felhívta a rendőrséget.",
+                "en": "It was Maria who called the police.",
+                "es": "Fue María quien llamó a la policía.",
+                "de": "Es war Maria, die die Polizei rief."
+              }
+            },
+            {
+              "es": "It was in Paris that we first met.",
+              "tr": {
+                "hu": "Párizsban találkoztunk először.",
+                "en": "It was in Paris that we first met.",
+                "es": "Fue en París donde nos conocimos.",
+                "de": "In Paris haben wir uns zum ersten Mal getroffen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Tagadás és ellentét: „It wasn’t the money that mattered.” „It was Tom, not Anna, who broke the vase.”",
+            "en": "Negative and contrast: “It wasn’t the money that mattered.” “It was Tom, not Anna, who broke the vase.”",
+            "es": "Negación y contraste: «It wasn’t the money that mattered.» «It was Tom, not Anna, who broke the vase.»",
+            "de": "Verneinung und Gegensatz: „It wasn’t the money that mattered.“ „It was Tom, not Anna, who broke the vase.“"
+          },
+          "examples": [
+            {
+              "es": "It wasn't the money that mattered to her.",
+              "tr": {
+                "hu": "Nem a pénz számított neki.",
+                "en": "It wasn't the money that mattered to her.",
+                "es": "No era el dinero lo que le importaba.",
+                "de": "Nicht das Geld war ihr wichtig."
+              }
+            },
+            {
+              "es": "It was Tom, not Anna, who broke the vase.",
+              "tr": {
+                "hu": "Tom törte el a vázát, nem Anna.",
+                "en": "It was Tom, not Anna, who broke the vase.",
+                "es": "Fue Tom, no Anna, quien rompió el florero.",
+                "de": "Tom hat die Vase zerbrochen, nicht Anna."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Wh-kiemelés: What + mondat + be + kiemelt rész",
+        "en": "Wh-cleft: What + clause + be + focus",
+        "es": "Wh-cleft: What + cláusula + be + foco",
+        "de": "Wh-Spaltsatz: What + Teilsatz + be + Fokus"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A kiemelt rész a mondat végére kerül: „What I need is a long vacation.” Az ige a was/is, amely a kiemelt részhez igazodik. A what … do után a be után alapige áll: „What she did was call the police.”",
+            "en": "The focus goes to the end of the sentence: “What I need is a long vacation.” The verb is was/is. After what … do, be is followed by the base verb: “What she did was call the police.”",
+            "es": "El foco va al final de la oración: «What I need is a long vacation.» El verbo es was/is. Después de what … do, be va seguido del verbo base: «What she did was call the police.»",
+            "de": "Der Fokus steht am Ende des Satzes: „What I need is a long vacation.“ Das Verb ist was/is. Nach what … do folgt auf be die Grundform: „What she did was call the police.“"
+          },
+          "examples": [
+            {
+              "es": "What I need is a long vacation.",
+              "tr": {
+                "hu": "Amire szükségem van, az egy hosszú szabadság.",
+                "en": "What I need is a long vacation.",
+                "es": "Lo que necesito son unas vacaciones largas.",
+                "de": "Was ich brauche, ist ein langer Urlaub."
+              }
+            },
+            {
+              "es": "What happened was that the car broke down.",
+              "tr": {
+                "hu": "Az történt, hogy elromlott az autó.",
+                "en": "What happened was that the car broke down.",
+                "es": "Lo que pasó fue que el carro se descompuso.",
+                "de": "Was passiert ist: Das Auto ist kaputtgegangen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "All, the thing, the reason és a fordított változat",
+        "en": "All, the thing, the reason and the reverse form",
+        "es": "All, the thing, the reason y la forma inversa",
+        "de": "All, the thing, the reason und die umgekehrte Form"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A what helyett állhat all, the thing (that), the reason (why): „All I want is a quiet life.” „The reason why I left is that the pay was low.” Fordítva: „A quiet life is what I want.”",
+            "en": "Instead of what you can use all, the thing (that), the reason (why): “All I want is a quiet life.” “The reason why I left is that the pay was low.” Reversed: “A quiet life is what I want.”",
+            "es": "En lugar de what se puede usar all, the thing (that), the reason (why): «All I want is a quiet life.» «The reason why I left is that the pay was low.» A la inversa: «A quiet life is what I want.»",
+            "de": "Statt what kann all, the thing (that), the reason (why) stehen: „All I want is a quiet life.“ „The reason why I left is that the pay was low.“ Umgekehrt: „A quiet life is what I want.“"
+          },
+          "examples": [
+            {
+              "es": "All I want is a quiet life.",
+              "tr": {
+                "hu": "Csak egy nyugodt életet szeretnék.",
+                "en": "All I want is a quiet life.",
+                "es": "Todo lo que quiero es una vida tranquila.",
+                "de": "Alles, was ich will, ist ein ruhiges Leben."
+              }
+            },
+            {
+              "es": "A quiet life is what I want.",
+              "tr": {
+                "hu": "Egy nyugodt élet az, amit szeretnék.",
+                "en": "A quiet life is what I want.",
+                "es": "Una vida tranquila es lo que quiero.",
+                "de": "Ein ruhiges Leben ist, was ich will."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Az angolban kell az „it” mint alany: nem „Was Maria who called”, hanem „It was Maria who called”. A spanyol „fue María quien” szó szerinti fordítása nem működik „it” nélkül.",
+        "en": "English needs “it” as the subject: not “Was Maria who called”, but “It was Maria who called”. A word-for-word copy of the Spanish “fue María quien” does not work without “it”.",
+        "es": "El inglés necesita «it» como sujeto: no «Was Maria who called», sino «It was Maria who called». Una copia palabra por palabra del «fue María quien» no funciona sin «it».",
+        "de": "Das Englische braucht „it“ als Subjekt: nicht „Was Maria who called“, sondern „It was Maria who called“. Eine wörtliche Übernahme des spanischen „fue María quien“ funktioniert nicht ohne „it“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A wh-kiemelésben a „what” nem „that”: nem „That I need is”, hanem „What I need is”. A kiemelt rész elé a was vagy is kerül, a múlt idejű események után a was.",
+        "en": "In a wh-cleft it is “what”, not “that”: not “That I need is”, but “What I need is”. Was or is goes before the focus, and was after past events.",
+        "es": "En la wh-cleft es «what», no «that»: no «That I need is», sino «What I need is». Antes del foco va was o is, y was después de hechos pasados.",
+        "de": "Im wh-Spaltsatz steht „what“, nicht „that“: nicht „That I need is“, sondern „What I need is“. Vor dem Fokus steht was oder is, nach vergangenen Ereignissen was."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A kiemelő szerkezet egy mondatot két részre bont, hogy a fontos információ külön álljon. Az it-kiemelés: «It was Maria who called the police». Személyre «who» vagy «that», dologra, helyre és időre «that». A wh-kiemelés: «What I need is a long vacation». A «what … do» után a «be» után alapige áll: «What she did was call the police». A «what» helyett állhat «all» és «the reason why»: «All I want is a quiet life». Az angolban kell az «it» mint alany.",
+    "en": "A cleft sentence splits one sentence into two parts so that the important information stands apart. The it-cleft: «It was Maria who called the police». Who, or that, for people, that for things, places and times. The wh-cleft: «What I need is a long vacation». After «what … do», «be» is followed by the base verb: «What she did was call the police». Instead of «what» you can use «all» and «the reason why»: «All I want is a quiet life». English needs «it» as the subject.",
+    "es": "Una oración enfática divide una oración en dos partes para que la información importante quede aparte. La it-cleft: «It was Maria who called the police». Who, o that, para personas, that para cosas, lugares y tiempos. La wh-cleft: «What I need is a long vacation». Después de «what … do», «be» va seguido del verbo base: «What she did was call the police». En lugar de «what» se puede usar «all» y «the reason why»: «All I want is a quiet life». El inglés necesita «it» como sujeto.",
+    "de": "Ein Spaltsatz teilt einen Satz in zwei Teile, damit die wichtige Information für sich steht. Der it-Spaltsatz: «It was Maria who called the police». Who, oder that, für Personen, that für Dinge, Orte und Zeiten. Der wh-Spaltsatz: «What I need is a long vacation». Nach «what … do» folgt auf «be» die Grundform: «What she did was call the police». Statt «what» kann «all» und «the reason why» stehen: «All I want is a quiet life». Das Englische braucht «it» als Subjekt."
+  },
+  "glossary": [
+    {
+      "word": "anna",
+      "gloss": {
+        "hu": "Anna (női név)",
+        "en": "Anna (female first name)",
+        "es": "Anna (nombre de mujer)",
+        "de": "Anna (Frauenname)"
+      }
+    },
+    {
+      "word": "broke",
+      "gloss": {
+        "hu": "eltört, elromlott (a break múltja)",
+        "en": "past form of break",
+        "es": "se rompió (pasado de break)",
+        "de": "brach (Past von break)"
+      }
+    },
+    {
+      "word": "cried",
+      "gloss": {
+        "hu": "sírt (a cry múltja)",
+        "en": "past form of cry",
+        "es": "lloró (pasado de cry)",
+        "de": "weinte (Past von cry)"
+      }
+    },
+    {
+      "word": "enjoyed",
+      "gloss": {
+        "hu": "élvezett (az enjoy múltja)",
+        "en": "past form of enjoy",
+        "es": "disfrutó (pasado de enjoy)",
+        "de": "genoss (Past von enjoy)"
+      }
+    },
+    {
+      "word": "eva",
+      "gloss": {
+        "hu": "Eva (női név)",
+        "en": "Eva (female first name)",
+        "es": "Eva (nombre de mujer)",
+        "de": "Eva (Frauenname)"
+      }
+    },
+    {
+      "word": "happened",
+      "gloss": {
+        "hu": "történt (a happen múltja)",
+        "en": "past form of happen",
+        "es": "ocurrió (pasado de happen)",
+        "de": "geschah (Past von happen)"
+      }
+    },
+    {
+      "word": "life",
+      "gloss": {
+        "hu": "élet",
+        "en": "being alive",
+        "es": "vida",
+        "de": "Leben"
+      }
+    },
+    {
+      "word": "mattered",
+      "gloss": {
+        "hu": "számított (a matter múltja)",
+        "en": "past form of matter",
+        "es": "importó (pasado de matter)",
+        "de": "war wichtig (Past von matter)"
+      }
+    },
+    {
+      "word": "matters",
+      "gloss": {
+        "hu": "számít (a matter jelen)",
+        "en": "it is important",
+        "es": "importa",
+        "de": "ist wichtig"
+      }
+    },
+    {
+      "word": "noise",
+      "gloss": {
+        "hu": "zaj",
+        "en": "loud sound",
+        "es": "ruido",
+        "de": "Lärm"
+      }
+    },
+    {
+      "word": "paris",
+      "gloss": {
+        "hu": "Párizs",
+        "en": "Paris (city)",
+        "es": "París (ciudad)",
+        "de": "Paris (Stadt)"
+      }
+    },
+    {
+      "word": "peace",
+      "gloss": {
+        "hu": "béke, nyugalom",
+        "en": "no noise or war",
+        "es": "paz, tranquilidad",
+        "de": "Frieden, Ruhe"
+      }
+    },
+    {
+      "word": "really",
+      "gloss": {
+        "hu": "tényleg",
+        "en": "very much",
+        "es": "de verdad",
+        "de": "wirklich"
+      }
+    },
+    {
+      "word": "reason",
+      "gloss": {
+        "hu": "ok",
+        "en": "why something happens",
+        "es": "razón",
+        "de": "Grund"
+      }
+    },
+    {
+      "word": "sam",
+      "gloss": {
+        "hu": "Sam (férfinév)",
+        "en": "Sam (male first name)",
+        "es": "Sam (nombre de hombre)",
+        "de": "Sam (Männername)"
+      }
+    },
+    {
+      "word": "stopped",
+      "gloss": {
+        "hu": "megállt (a stop múltja)",
+        "en": "past form of stop",
+        "es": "se detuvo (pasado de stop)",
+        "de": "hörte auf (Past von stop)"
+      }
+    },
+    {
+      "word": "tom",
+      "gloss": {
+        "hu": "Tom (férfinév)",
+        "en": "Tom (male first name)",
+        "es": "Tom (nombre de hombre)",
+        "de": "Tom (Männername)"
+      }
+    },
+    {
+      "word": "vase",
+      "gloss": {
+        "hu": "váza",
+        "en": "a pot for flowers",
+        "es": "florero",
+        "de": "Vase"
+      }
+    },
+    {
+      "word": "whom",
+      "gloss": {
+        "hu": "kit, akit (tárgyeset)",
+        "en": "who as an object",
+        "es": "a quien (objeto)",
+        "de": "wen, dem (Objekt)"
+      }
+    },
+    {
+      "word": "woke",
+      "gloss": {
+        "hu": "felébredt (a wake múltja)",
+        "en": "past form of wake",
+        "es": "despertó (pasado de wake)",
+        "de": "weckte (Past von wake)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "clf-01",
+      "sentence": "It was Maria ___ called the police.",
+      "options": [
+        "what",
+        "who",
+        "whom"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Személyre, alanyi szerepben: It was Maria who called.",
+        "en": "For a person in the subject role: It was Maria who called.",
+        "es": "Para una persona como sujeto: It was Maria who called.",
+        "de": "Für eine Person als Subjekt: It was Maria who called."
+      },
+      "wrong": {
+        "what": {
+          "hu": "A what nem vonatkozó névmás személyre.",
+          "en": "What is not a relative pronoun for a person.",
+          "es": "What no es un pronombre relativo para una persona.",
+          "de": "What ist kein Relativpronomen für eine Person."
+        },
+        "whom": {
+          "hu": "A whom tárgyi szerepű; itt Maria az alany (ő hívott).",
+          "en": "Whom is for an object; here Maria is the subject (she called).",
+          "es": "Whom es para un objeto; aquí Maria es el sujeto (ella llamó).",
+          "de": "Whom steht für ein Objekt; hier ist Maria das Subjekt (sie rief an)."
+        }
+      },
+      "examples": [
+        "It was Tom who left.",
+        "It was she who won."
+      ]
+    },
+    {
+      "id": "clf-02",
+      "sentence": "It was in Paris ___ we first met.",
+      "options": [
+        "who",
+        "what",
+        "that"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Helyre: It was in Paris that we met.",
+        "en": "For a place: It was in Paris that we met.",
+        "es": "Para un lugar: It was in Paris that we met.",
+        "de": "Für einen Ort: It was in Paris that we met."
+      },
+      "wrong": {
+        "who": {
+          "hu": "A who személyre vonatkozik; Párizs hely.",
+          "en": "Who refers to people; Paris is a place.",
+          "es": "Who se refiere a personas; Paris es un lugar.",
+          "de": "Who bezieht sich auf Personen; Paris ist ein Ort."
+        },
+        "what": {
+          "hu": "A what nem vonatkozó névmás az it-kiemelésben.",
+          "en": "What is not a relative pronoun in the it-cleft.",
+          "es": "What no es un pronombre relativo en la it-cleft.",
+          "de": "What ist im it-Spaltsatz kein Relativpronomen."
+        }
+      },
+      "examples": [
+        "It was here that it happened.",
+        "It was at home that we ate."
+      ]
+    },
+    {
+      "id": "clf-03",
+      "sentence": "It was the noise ___ woke me up.",
+      "options": [
+        "that",
+        "who",
+        "what"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Dologra, alanyi szerepben: It was the noise that woke me.",
+        "en": "For a thing in the subject role: It was the noise that woke me.",
+        "es": "Para una cosa como sujeto: It was the noise that woke me.",
+        "de": "Für eine Sache als Subjekt: It was the noise that woke me."
+      },
+      "wrong": {
+        "who": {
+          "hu": "A who személyre vonatkozik; a zaj dolog.",
+          "en": "Who refers to people; noise is a thing.",
+          "es": "Who se refiere a personas; el ruido es una cosa.",
+          "de": "Who bezieht sich auf Personen; Lärm ist eine Sache."
+        },
+        "what": {
+          "hu": "A what nem vonatkozó névmás az it-kiemelésben.",
+          "en": "What is not a relative pronoun in the it-cleft.",
+          "es": "What no es un pronombre relativo en la it-cleft.",
+          "de": "What ist im it-Spaltsatz kein Relativpronomen."
+        }
+      },
+      "examples": [
+        "It was the rain that stopped us.",
+        "It was the heat that tired him."
+      ]
+    },
+    {
+      "id": "clf-04",
+      "sentence": "___ I need is a long vacation.",
+      "options": [
+        "That",
+        "What",
+        "Which"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Wh-kiemelés: What I need is…",
+        "en": "The wh-cleft: What I need is…",
+        "es": "La wh-cleft: What I need is…",
+        "de": "Der wh-Spaltsatz: What I need is…"
+      },
+      "wrong": {
+        "That": {
+          "hu": "A That I need is nem helyes; a wh-kiemelés what-tal kezdődik.",
+          "en": "“That I need is” is not correct; the wh-cleft starts with what.",
+          "es": "«That I need is» no es correcto; la wh-cleft empieza con what.",
+          "de": "„That I need is“ ist nicht korrekt; der wh-Spaltsatz beginnt mit what."
+        },
+        "Which": {
+          "hu": "A Which I need is nem helyes; a wh-kiemelés what-tal kezdődik.",
+          "en": "“Which I need is” is not correct; the wh-cleft starts with what.",
+          "es": "«Which I need is» no es correcto; la wh-cleft empieza con what.",
+          "de": "„Which I need is“ ist nicht korrekt; der wh-Spaltsatz beginnt mit what."
+        }
+      },
+      "examples": [
+        "What I want is peace.",
+        "What she needs is time."
+      ]
+    },
+    {
+      "id": "clf-05",
+      "sentence": "What happened ___ that the car broke down.",
+      "options": [
+        "were",
+        "has",
+        "was"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Múlt idejű esemény: What happened was that…",
+        "en": "A past event: What happened was that…",
+        "es": "Un hecho pasado: What happened was that…",
+        "de": "Ein vergangenes Ereignis: What happened was that…"
+      },
+      "wrong": {
+        "were": {
+          "hu": "A were többes szám; a what happened egyes számú.",
+          "en": "Were is plural; what happened is singular.",
+          "es": "Were es plural; what happened es singular.",
+          "de": "Were ist Plural; what happened ist Singular."
+        },
+        "has": {
+          "hu": "A has that nem helyes; a kiemelésben a be ige kell (was).",
+          "en": "“Has that” is not correct; the cleft needs the verb be (was).",
+          "es": "«Has that» no es correcto; la cleft necesita el verbo be (was).",
+          "de": "„Has that“ ist nicht korrekt; der Spaltsatz braucht das Verb be (was)."
+        }
+      },
+      "examples": [
+        "What happened was simple.",
+        "What happened was that he left."
+      ]
+    },
+    {
+      "id": "clf-06",
+      "sentence": "All I want ___ a quiet life.",
+      "options": [
+        "is",
+        "are",
+        "do"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az all egyes számú kiemelésben is: All I want is…",
+        "en": "All takes is in the cleft: All I want is…",
+        "es": "All lleva is en la cleft: All I want is…",
+        "de": "All nimmt im Spaltsatz is: All I want is…"
+      },
+      "wrong": {
+        "are": {
+          "hu": "Az are többes szám; az all I want egyes számú.",
+          "en": "Are is plural; all I want is singular.",
+          "es": "Are es plural; all I want es singular.",
+          "de": "Are ist Plural; all I want ist Singular."
+        },
+        "do": {
+          "hu": "A do a quiet life nem helyes; a kiemelésben a be ige kell.",
+          "en": "“Do a quiet life” is not correct; the cleft needs the verb be.",
+          "es": "«Do a quiet life» no es correcto; la cleft necesita el verbo be.",
+          "de": "„Do a quiet life“ ist nicht korrekt; der Spaltsatz braucht das Verb be."
+        }
+      },
+      "examples": [
+        "All I need is time.",
+        "All she wants is rest."
+      ]
+    },
+    {
+      "id": "clf-07",
+      "sentence": "What she did ___ call the police.",
+      "options": [
+        "has",
+        "was",
+        "did"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A what … did után a be ige jön: What she did was call.",
+        "en": "After what … did comes the verb be: What she did was call.",
+        "es": "Después de what … did viene el verbo be: What she did was call.",
+        "de": "Nach what … did kommt das Verb be: What she did was call."
+      },
+      "wrong": {
+        "has": {
+          "hu": "A has call nem helyes; a has után igenév kellene.",
+          "en": "“Has call” is not correct; after has a participle would be needed.",
+          "es": "«Has call» no es correcto; después de has haría falta un participio.",
+          "de": "„Has call“ ist nicht korrekt; nach has bräuchte man ein Partizip."
+        },
+        "did": {
+          "hu": "A did call hangsúlyozó alak lenne, de a kiemelésben a be kell.",
+          "en": "“Did call” would be an emphatic form, but the cleft needs be.",
+          "es": "«Did call» sería una forma enfática, pero la cleft necesita be.",
+          "de": "„Did call“ wäre eine Betonungsform, aber der Spaltsatz braucht be."
+        }
+      },
+      "examples": [
+        "What he did was leave.",
+        "What they did was wait."
+      ]
+    },
+    {
+      "id": "clf-08",
+      "sentence": "The reason ___ I left is that the pay was low.",
+      "options": [
+        "what",
+        "who",
+        "why"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Az ok kiemelése: The reason why…",
+        "en": "Stressing the reason: The reason why…",
+        "es": "Destacar la razón: The reason why…",
+        "de": "Hervorhebung des Grundes: The reason why…"
+      },
+      "wrong": {
+        "what": {
+          "hu": "A The reason what nem helyes; why kell.",
+          "en": "“The reason what” is not correct; you need why.",
+          "es": "«The reason what» no es correcto; hace falta why.",
+          "de": "„The reason what“ ist nicht korrekt; man braucht why."
+        },
+        "who": {
+          "hu": "A who személyre vonatkozik; az ok nem személy.",
+          "en": "Who refers to people; a reason is not a person.",
+          "es": "Who se refiere a personas; una razón no es una persona.",
+          "de": "Who bezieht sich auf Personen; ein Grund ist keine Person."
+        }
+      },
+      "examples": [
+        "The reason why he came is simple.",
+        "The reason why she cried is clear."
+      ]
+    },
+    {
+      "id": "clf-09",
+      "sentence": "It wasn't the money ___ mattered to her.",
+      "options": [
+        "that",
+        "who",
+        "why"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Tagadott kiemelés dologgal: It wasn’t the money that mattered.",
+        "en": "A negative cleft with a thing: It wasn’t the money that mattered.",
+        "es": "Una cleft negativa con una cosa: It wasn’t the money that mattered.",
+        "de": "Ein verneinter Spaltsatz mit einer Sache: It wasn’t the money that mattered."
+      },
+      "wrong": {
+        "who": {
+          "hu": "A who személyre vonatkozik; a pénz dolog.",
+          "en": "Who refers to people; money is a thing.",
+          "es": "Who se refiere a personas; el dinero es una cosa.",
+          "de": "Who bezieht sich auf Personen; Geld ist eine Sache."
+        },
+        "why": {
+          "hu": "A why okot kér; itt a pénz az alany (az számított).",
+          "en": "Why asks for a reason; here the money is the subject (it mattered).",
+          "es": "Why pide una razón; aquí el dinero es el sujeto (importaba).",
+          "de": "Why verlangt einen Grund; hier ist das Geld das Subjekt (es war wichtig)."
+        }
+      },
+      "examples": [
+        "It wasn't the price that worried me.",
+        "It wasn't the rain that stopped us."
+      ]
+    },
+    {
+      "id": "clf-10",
+      "sentence": "A quiet life is ___ I want.",
+      "options": [
+        "that",
+        "what",
+        "which"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Fordított wh-kiemelés: A quiet life is what I want.",
+        "en": "The reversed wh-cleft: A quiet life is what I want.",
+        "es": "La wh-cleft invertida: A quiet life is what I want.",
+        "de": "Der umgekehrte wh-Spaltsatz: A quiet life is what I want."
+      },
+      "wrong": {
+        "that": {
+          "hu": "Az is that I want nem helyes; a fordított kiemelés what-tal áll.",
+          "en": "“Is that I want” is not correct; the reversed cleft takes what.",
+          "es": "«Is that I want» no es correcto; la cleft invertida lleva what.",
+          "de": "„Is that I want“ ist nicht korrekt; der umgekehrte Spaltsatz nimmt what."
+        },
+        "which": {
+          "hu": "Az is which I want nem helyes; a fordított kiemelés what-tal áll.",
+          "en": "“Is which I want” is not correct; the reversed cleft takes what.",
+          "es": "«Is which I want» no es correcto; la cleft invertida lleva what.",
+          "de": "„Is which I want“ ist nicht korrekt; der umgekehrte Spaltsatz nimmt what."
+        }
+      },
+      "examples": [
+        "Peace is what we need.",
+        "Time is what she wants."
+      ]
+    },
+    {
+      "id": "clf-11",
+      "sentence": "It is the cost ___ worries me.",
+      "options": [
+        "what",
+        "who",
+        "that"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Dologra, alanyi szerepben: It is the cost that worries me.",
+        "en": "For a thing in the subject role: It is the cost that worries me.",
+        "es": "Para una cosa como sujeto: It is the cost that worries me.",
+        "de": "Für eine Sache als Subjekt: It is the cost that worries me."
+      },
+      "wrong": {
+        "what": {
+          "hu": "A what nem vonatkozó névmás az it-kiemelésben.",
+          "en": "What is not a relative pronoun in the it-cleft.",
+          "es": "What no es un pronombre relativo en la it-cleft.",
+          "de": "What ist im it-Spaltsatz kein Relativpronomen."
+        },
+        "who": {
+          "hu": "A who személyre vonatkozik; a költség dolog.",
+          "en": "Who refers to people; cost is a thing.",
+          "es": "Who se refiere a personas; el costo es una cosa.",
+          "de": "Who bezieht sich auf Personen; Kosten sind eine Sache."
+        }
+      },
+      "examples": [
+        "It is the time that matters.",
+        "It is the noise that bothers me."
+      ]
+    },
+    {
+      "id": "clf-12",
+      "sentence": "What we need ___ more time.",
+      "options": [
+        "is",
+        "are",
+        "have"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Megszámlálhatatlan kiemelt rész: What we need is more time.",
+        "en": "An uncountable focus: What we need is more time.",
+        "es": "Un foco incontable: What we need is more time.",
+        "de": "Ein unzählbarer Fokus: What we need is more time."
+      },
+      "wrong": {
+        "are": {
+          "hu": "Az are többes szám; a more time egyes számú.",
+          "en": "Are is plural; more time is singular.",
+          "es": "Are es plural; more time es singular.",
+          "de": "Are ist Plural; more time ist Singular."
+        },
+        "have": {
+          "hu": "A have more time nem helyes; a kiemelésben a be ige kell.",
+          "en": "“Have more time” is not correct; the cleft needs the verb be.",
+          "es": "«Have more time» no es correcto; la cleft necesita el verbo be.",
+          "de": "„Have more time“ ist nicht korrekt; der Spaltsatz braucht das Verb be."
+        }
+      },
+      "examples": [
+        "What we need is help.",
+        "What I miss is sleep."
+      ]
+    },
+    {
+      "id": "clf-13",
+      "sentence": "It was yesterday ___ we got the news.",
+      "options": [
+        "who",
+        "that",
+        "what"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Időre: It was yesterday that we got the news.",
+        "en": "For a time: It was yesterday that we got the news.",
+        "es": "Para un tiempo: It was yesterday that we got the news.",
+        "de": "Für eine Zeit: It was yesterday that we got the news."
+      },
+      "wrong": {
+        "who": {
+          "hu": "A who személyre vonatkozik; a tegnap idő.",
+          "en": "Who refers to people; yesterday is a time.",
+          "es": "Who se refiere a personas; yesterday es un tiempo.",
+          "de": "Who bezieht sich auf Personen; yesterday ist eine Zeit."
+        },
+        "what": {
+          "hu": "A what nem vonatkozó névmás az it-kiemelésben.",
+          "en": "What is not a relative pronoun in the it-cleft.",
+          "es": "What no es un pronombre relativo en la it-cleft.",
+          "de": "What ist im it-Spaltsatz kein Relativpronomen."
+        }
+      },
+      "examples": [
+        "It was Monday that he left.",
+        "It was last year that it happened."
+      ]
+    },
+    {
+      "id": "clf-14",
+      "sentence": "It was Tom, not Anna, ___ broke the vase.",
+      "options": [
+        "whom",
+        "which",
+        "who"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Személyre, alanyi szerepben: who.",
+        "en": "For a person in the subject role: who.",
+        "es": "Para una persona como sujeto: who.",
+        "de": "Für eine Person als Subjekt: who."
+      },
+      "wrong": {
+        "whom": {
+          "hu": "A whom tárgyi szerepű; Tom az alany (ő törte el).",
+          "en": "Whom is for an object; Tom is the subject (he broke it).",
+          "es": "Whom es para un objeto; Tom es el sujeto (él la rompió).",
+          "de": "Whom steht für ein Objekt; Tom ist das Subjekt (er zerbrach sie)."
+        },
+        "which": {
+          "hu": "A which dologra vonatkozik; Tom személy.",
+          "en": "Which refers to things; Tom is a person.",
+          "es": "Which se refiere a cosas; Tom es una persona.",
+          "de": "Which bezieht sich auf Dinge; Tom ist eine Person."
+        }
+      },
+      "examples": [
+        "It was Eva, not Sam, who called.",
+        "It was he who asked."
+      ]
+    },
+    {
+      "id": "clf-15",
+      "sentence": "What I really enjoyed ___ the food.",
+      "options": [
+        "was",
+        "were",
+        "did"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A kiemelés be igéje a múltban: What I enjoyed was the food.",
+        "en": "The cleft verb in the past: What I enjoyed was the food.",
+        "es": "El verbo de la cleft en pasado: What I enjoyed was the food.",
+        "de": "Das Verb des Spaltsatzes in der Vergangenheit: What I enjoyed was the food."
+      },
+      "wrong": {
+        "were": {
+          "hu": "A were többes szám; a food egyes számú.",
+          "en": "Were is plural; food is singular.",
+          "es": "Were es plural; food es singular.",
+          "de": "Were ist Plural; food ist Singular."
+        },
+        "did": {
+          "hu": "A did the food nem helyes; a kiemelésben a be ige kell.",
+          "en": "“Did the food” is not correct; the cleft needs the verb be.",
+          "es": "«Did the food» no es correcto; la cleft necesita el verbo be.",
+          "de": "„Did the food“ ist nicht korrekt; der Spaltsatz braucht das Verb be."
+        }
+      },
+      "examples": [
+        "What I liked was the view.",
+        "What I loved was the music."
+      ]
+    },
+    {
+      "id": "clf-16",
+      "sentence": "The thing ___ annoys me is the noise.",
+      "options": [
+        "who",
+        "that",
+        "what"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "The thing után that áll: The thing that annoys me.",
+        "en": "After the thing comes that: The thing that annoys me.",
+        "es": "Después de the thing va that: The thing that annoys me.",
+        "de": "Nach the thing steht that: The thing that annoys me."
+      },
+      "wrong": {
+        "who": {
+          "hu": "A who személyre vonatkozik; a thing dolog.",
+          "en": "Who refers to people; a thing is not a person.",
+          "es": "Who se refiere a personas; una cosa no es una persona.",
+          "de": "Who bezieht sich auf Personen; eine Sache ist keine Person."
+        },
+        "what": {
+          "hu": "A the thing what nem helyes; that kell.",
+          "en": "“The thing what” is not correct; you need that.",
+          "es": "«The thing what» no es correcto; hace falta that.",
+          "de": "„The thing what“ ist nicht korrekt; man braucht that."
+        }
+      },
+      "examples": [
+        "The thing that worries me is time.",
+        "The thing that helps is rest."
+      ]
+    },
+    {
+      "id": "clf-17",
+      "sentence": "What he did was ___ the window.",
+      "options": [
+        "broke",
+        "broken",
+        "break"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A what … did után a be után alapige áll: What he did was break.",
+        "en": "After what … did, be is followed by the base verb: What he did was break.",
+        "es": "Después de what … did, be va seguido del verbo base: What he did was break.",
+        "de": "Nach what … did folgt auf be die Grundform: What he did was break."
+      },
+      "wrong": {
+        "broke": {
+          "hu": "A was broke nem helyes; a was után itt alapige áll.",
+          "en": "“Was broke” is not correct; after was comes the base verb here.",
+          "es": "«Was broke» no es correcto; después de was va el verbo base aquí.",
+          "de": "„Was broke“ ist nicht korrekt; nach was steht hier die Grundform."
+        },
+        "broken": {
+          "hu": "A was broken szenvedő lenne; itt a tevő ige alapalakja kell.",
+          "en": "“Was broken” would be a passive; here you need the base form of the active verb.",
+          "es": "«Was broken» sería una pasiva; aquí hace falta la forma base del verbo activo.",
+          "de": "„Was broken“ wäre ein Passiv; hier braucht man die Grundform des aktiven Verbs."
+        }
+      },
+      "examples": [
+        "What he did was leave.",
+        "What she did was run."
+      ]
+    },
+    {
+      "id": "clf-18",
+      "kind": "form",
+      "verb": "forma",
+      "person": "fue Juan quien lo rompió (persona)",
+      "answer": "who",
+      "accept": [
+        "that"
+      ],
+      "table": "clf-forms"
+    },
+    {
+      "id": "clf-19",
+      "kind": "form",
+      "verb": "forma",
+      "person": "fue ayer cuando ocurrió (cosa, lugar o tiempo)",
+      "answer": "that",
+      "accept": [
+        "when",
+        "where"
+      ],
+      "table": "clf-forms"
+    },
+    {
+      "id": "clf-20",
+      "kind": "form",
+      "verb": "forma",
+      "person": "lo que necesito es...",
+      "answer": "what",
+      "table": "clf-forms"
+    },
+    {
+      "id": "clf-21",
+      "kind": "form",
+      "verb": "forma",
+      "person": "todo lo que quiero es...",
+      "answer": "all",
+      "table": "clf-forms"
+    },
+    {
+      "id": "clf-22",
+      "kind": "form",
+      "verb": "forma",
+      "person": "la razón por la que... es que",
+      "answer": "the reason why",
+      "accept": [
+        "the reason that"
+      ],
+      "table": "clf-forms"
+    },
+    {
+      "id": "clf-23",
+      "kind": "form",
+      "verb": "forma",
+      "person": "lo que pasó fue que...",
+      "answer": "what happened",
+      "table": "clf-forms"
+    },
+    {
+      "kind": "why",
+      "id": "clf-24",
+      "es": "It was Maria who called the police.",
+      "target": "It was Maria who",
+      "tr": {
+        "hu": "Mária volt az, aki felhívta a rendőrséget.",
+        "en": "It was Maria who called the police.",
+        "es": "Fue María quien llamó a la policía.",
+        "de": "Es war Maria, die die Polizei rief."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "szenvedő szerkezet",
+            "en": "a passive",
+            "es": "una pasiva",
+            "de": "ein Passiv"
+          },
+          "wrong": {
+            "hu": "Az ige tevő (called); az it was … who a kiemelés, nem szenvedő.",
+            "en": "The verb is active (called); it was … who is a cleft, not a passive.",
+            "es": "El verbo es activo (called); it was … who es una cleft, no una pasiva.",
+            "de": "Das Verb ist aktiv (called); it was … who ist ein Spaltsatz, kein Passiv."
+          }
+        },
+        {
+          "text": {
+            "hu": "it-kiemelés: Maria kiemelve",
+            "en": "an it-cleft: Maria is stressed",
+            "es": "una it-cleft: Maria queda enfatizada",
+            "de": "ein it-Spaltsatz: Maria wird hervorgehoben"
+          }
+        },
+        {
+          "text": {
+            "hu": "kérdés",
+            "en": "a question",
+            "es": "una pregunta",
+            "de": "eine Frage"
+          },
+          "wrong": {
+            "hu": "Ez kijelentés; a who itt vonatkozó névmás.",
+            "en": "This is a statement; who is a relative pronoun here.",
+            "es": "Esto es una afirmación; who es aquí un pronombre relativo.",
+            "de": "Das ist eine Aussage; who ist hier ein Relativpronomen."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "clf-25",
+      "es": "What I need is a long vacation.",
+      "target": "What I need is",
+      "tr": {
+        "hu": "Amire szükségem van, az egy hosszú szabadság.",
+        "en": "What I need is a long vacation.",
+        "es": "Lo que necesito son unas vacaciones largas.",
+        "de": "Was ich brauche, ist ein langer Urlaub."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "wh-kiemelés: a fontos rész a végén áll",
+            "en": "a wh-cleft: the important part comes at the end",
+            "es": "una wh-cleft: la parte importante va al final",
+            "de": "ein wh-Spaltsatz: der wichtige Teil steht am Ende"
+          }
+        },
+        {
+          "text": {
+            "hu": "kérdő mondat",
+            "en": "an interrogative sentence",
+            "es": "una oración interrogativa",
+            "de": "ein Fragesatz"
+          },
+          "wrong": {
+            "hu": "Ez kijelentés; a what nem kérdőszó, hanem a kiemelés része.",
+            "en": "This is a statement; what is not a question word but part of the cleft.",
+            "es": "Esto es una afirmación; what no es una palabra interrogativa sino parte de la cleft.",
+            "de": "Das ist eine Aussage; what ist kein Fragewort, sondern Teil des Spaltsatzes."
+          }
+        },
+        {
+          "text": {
+            "hu": "feltételes mondat",
+            "en": "a conditional sentence",
+            "es": "una oración condicional",
+            "de": "ein Konditionalsatz"
+          },
+          "wrong": {
+            "hu": "Nincs benne feltétel; a mondat a vacation-t emeli ki.",
+            "en": "There is no condition; the sentence stresses the vacation.",
+            "es": "No hay condición; la oración enfatiza la vacation.",
+            "de": "Es gibt keine Bedingung; der Satz hebt den Urlaub hervor."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "clf-26",
+      "es": "What she did was call the police.",
+      "target": "was call",
+      "tr": {
+        "hu": "Azt tette, hogy felhívta a rendőrséget.",
+        "en": "What she did was call the police.",
+        "es": "Lo que hizo fue llamar a la policía.",
+        "de": "Sie hat die Polizei gerufen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "was called: szenvedő",
+            "en": "was called: a passive",
+            "es": "was called: una pasiva",
+            "de": "was called: ein Passiv"
+          },
+          "wrong": {
+            "hu": "Itt a was után alapige áll (call), nem igenév; a mondat tevő.",
+            "en": "Here after was comes the base verb (call), not a participle; the sentence is active.",
+            "es": "Aquí después de was va el verbo base (call), no un participio; la oración es activa.",
+            "de": "Hier steht nach was die Grundform (call), kein Partizip; der Satz ist aktiv."
+          }
+        },
+        {
+          "text": {
+            "hu": "was calling: folyamatos",
+            "en": "was calling: continuous",
+            "es": "was calling: continuo",
+            "de": "was calling: Verlaufsform"
+          },
+          "wrong": {
+            "hu": "A what … did után alapige áll, nem -ing alak.",
+            "en": "After what … did comes the base verb, not an -ing form.",
+            "es": "Después de what … did va el verbo base, no una forma -ing.",
+            "de": "Nach what … did steht die Grundform, keine -ing-Form."
+          }
+        },
+        {
+          "text": {
+            "hu": "a what … did után be + alapige áll",
+            "en": "after what … did comes be + the base verb",
+            "es": "después de what … did viene be + el verbo base",
+            "de": "nach what … did folgt be + die Grundform"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "clf-27",
+      "es": "A quiet life is what I want.",
+      "target": "is what I want",
+      "tr": {
+        "hu": "Egy nyugodt élet az, amit szeretnék.",
+        "en": "A quiet life is what I want.",
+        "es": "Una vida tranquila es lo que quiero.",
+        "de": "Ein ruhiges Leben ist, was ich will."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "fordított wh-kiemelés: a kiemelt rész elöl áll",
+            "en": "a reversed wh-cleft: the focus comes first",
+            "es": "una wh-cleft invertida: el foco va primero",
+            "de": "ein umgekehrter wh-Spaltsatz: der Fokus steht vorn"
+          }
+        },
+        {
+          "text": {
+            "hu": "szenvedő szerkezet",
+            "en": "a passive",
+            "es": "una pasiva",
+            "de": "ein Passiv"
+          },
+          "wrong": {
+            "hu": "Nincs benne igenév; az is what I want kiemelés.",
+            "en": "There is no participle; is what I want is a cleft.",
+            "es": "No hay participio; is what I want es una cleft.",
+            "de": "Es gibt kein Partizip; is what I want ist ein Spaltsatz."
+          }
+        },
+        {
+          "text": {
+            "hu": "feltételes mondat",
+            "en": "a conditional sentence",
+            "es": "una oración condicional",
+            "de": "ein Konditionalsatz"
+          },
+          "wrong": {
+            "hu": "Nincs benne feltétel; a quiet life a kiemelt rész.",
+            "en": "There is no condition; a quiet life is the focus.",
+            "es": "No hay condición; a quiet life es el foco.",
+            "de": "Es gibt keine Bedingung; a quiet life ist der Fokus."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "clf-28",
+      "es": "All I want is a quiet life.",
+      "target": "All I want is",
+      "tr": {
+        "hu": "Csak egy nyugodt életet szeretnék.",
+        "en": "All I want is a quiet life.",
+        "es": "Todo lo que quiero es una vida tranquila.",
+        "de": "Alles, was ich will, ist ein ruhiges Leben."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "az all itt azt jelenti: mindenki",
+            "en": "all here means everyone",
+            "es": "all aquí significa todos",
+            "de": "all bedeutet hier alle"
+          },
+          "wrong": {
+            "hu": "Az all I want itt azt jelenti: az egyetlen dolog, amit akarok.",
+            "en": "All I want here means the only thing I want.",
+            "es": "All I want aquí significa lo único que quiero.",
+            "de": "All I want bedeutet hier das Einzige, was ich will."
+          }
+        },
+        {
+          "text": {
+            "hu": "az all itt azt jelenti: az egyetlen dolog; egyes számú is",
+            "en": "all here means the only thing; it takes singular is",
+            "es": "all aquí significa lo único; lleva is en singular",
+            "de": "all bedeutet hier das Einzige; es nimmt is im Singular"
+          }
+        },
+        {
+          "text": {
+            "hu": "az all itt többes számú are-t kér",
+            "en": "all here needs plural are",
+            "es": "all aquí pide are en plural",
+            "de": "all verlangt hier are im Plural"
+          },
+          "wrong": {
+            "hu": "Az all I want egyes számú, ezért is kell.",
+            "en": "All I want is singular, so you need is.",
+            "es": "All I want es singular, por eso hace falta is.",
+            "de": "All I want ist Singular, deshalb braucht man is."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "clf-29",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "Fue María quien llamó a la policía.",
+          "en": "It was Maria who called the police."
+        },
+        {
+          "es": "Fue en París donde nos conocimos.",
+          "en": "It was in Paris that we first met."
+        },
+        {
+          "es": "Lo que necesito son unas vacaciones largas.",
+          "en": "What I need is a long vacation."
+        },
+        {
+          "es": "Todo lo que quiero es una vida tranquila.",
+          "en": "All I want is a quiet life."
+        },
+        {
+          "es": "Lo que hizo fue llamar a la policía.",
+          "en": "What she did was call the police."
+        },
+        {
+          "es": "Lo que pasó fue que el carro se descompuso.",
+          "en": "What happened was that the car broke down."
+        }
+      ]
+    },
+    {
+      "id": "clf-30",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "fue ... quien",
+          "en": "it was ... who"
+        },
+        {
+          "es": "fue ... donde o cuando",
+          "en": "it was ... that"
+        },
+        {
+          "es": "lo que necesito es",
+          "en": "what I need is"
+        },
+        {
+          "es": "todo lo que quiero es",
+          "en": "all I want is"
+        },
+        {
+          "es": "la razón por la que",
+          "en": "the reason why"
+        },
+        {
+          "es": "una vida tranquila es lo que quiero",
+          "en": "a quiet life is what I want"
+        }
+      ]
+    }
+  ]
+}

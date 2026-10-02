@@ -140,7 +140,7 @@ describe('grammar course', () => {
   });
 
   // PLAN-nyelvtan-en 3-4. lépés: es→en irányban az angol tanterv jelenik meg
-  // (A1, A2), a témák lecke nélkül „pronto” jelvénnyel, a spanyol témák nélkül.
+  // (A1, A2, B1, B2), a témák lecke nélkül „pronto” jelvénnyel, a spanyol témák nélkül.
   it('es→en irányban az angol tantervet mutatja, spanyol téma nélkül', async () => {
     await getDb().setOnboarding('es', 'en');
     setLanguage('es');
@@ -149,10 +149,12 @@ describe('grammar course', () => {
 
     expect(screen.queryByTestId('grammar-level-A1')).toBeTruthy();
     expect(screen.queryByTestId('grammar-level-A2')).toBeTruthy();
-    expect(screen.queryByTestId('grammar-level-B1')).toBeNull();
+    expect(screen.queryByTestId('grammar-level-B1')).toBeTruthy();
+    expect(screen.queryByTestId('grammar-level-B2')).toBeTruthy();
+    expect(screen.queryByTestId('grammar-level-C1')).toBeTruthy();
     expect(screen.queryByTestId('grammar-topic-presente-regular')).toBeNull();
     expect(screen.queryByTestId('grammar-topic-to_be')).toBeTruthy();
-    // mind a 21 angol témához van lecke: egyik sem „próximamente”.
+    // az A0-A2 21 angol témához van lecke: egyik sem „próximamente”.
     expect(screen.getByTestId('grammar-percent-basic_verbs').props.children).not.toBe('próximamente');
     expect(screen.getByTestId('grammar-percent-to_be').props.children).not.toBe('próximamente');
 

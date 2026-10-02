@@ -7,6 +7,7 @@
 
 import { shuffleArray, shuffleOptions, hashString } from '../shuffle';
 import {
+  isArticleSetItem,
   isDictationItem,
   isFormItem,
   isMarkItem,
@@ -24,6 +25,7 @@ import {
 import type { DictationItem, FormItem, MatchItem, OrderItem, SpotItem, TransformItem, WhyItem } from '../grammar/lessonTypes';
 import { markAnswerIndex, markTokens } from './grammarMark';
 import { filterVosotros, filterVosotrosPairs } from '../grammar/vosotros';
+import { ARTICLE_LESSON_ID, ARTICLE_ROUND_SIZE } from '../grammar/nounArticles';
 
 // A gap/mark tétel mindig kap opció-listát (gap: a felkínált válaszok kevert
 // sorrendben; mark: a mondat szavai, sorrendben) és egy helyes indexet;
@@ -96,7 +98,7 @@ export function buildGrammarRound(topic: GrammarTopicData, seed: number): Gramma
   // mielőtt a predikátum leszűkít. FB357: a vosotros-tételek itt esnek ki a
   // körből, EGY helyen minden lecke-item-fajtára (lib/grammar/vosotros.ts).
   const allItems = filterVosotros(topic.items as GrammarItem[]);
-  const choiceItems = allItems.filter(
+  const allChoiceItems = allItems.filter(
     (item): item is GrammarGapItem | GrammarMarkItem =>
       !isMatchItem(item) &&
       !isFormItem(item) &&
@@ -106,6 +108,16 @@ export function buildGrammarRound(topic: GrammarTopicData, seed: number): Gramma
       !isOrderItem(item) &&
       !isDictationItem(item)
   );
+  // PLAN-fb1002 13. lépés (FB448): az articulos-genero el / la készlete az app összes főneve, ez hosszabb, mint egy
+  // menet; egy futás ARTICLE_ROUND_SIZE tételt kap belőle (seedelt minta). Más leckét nem érint.
+  let choiceItems = allChoiceItems;
+  if (topic.topic === ARTICLE_LESSON_ID) {
+    const articleItems = allChoiceItems.filter((item) => isArticleSetItem(item));
+    if (articleItems.length > ARTICLE_ROUND_SIZE) {
+      const keep = new Set(shuffleArray(articleItems, seed).slice(0, ARTICLE_ROUND_SIZE).map((item) => item.id));
+      choiceItems = allChoiceItems.filter((item) => !isArticleSetItem(item) || keep.has(item.id));
+    }
+  }
   const orderedChoice: GrammarChoiceRoundItem[] = shuffleArray(choiceItems, seed).map((item) => {
     // FB219: a jelölős feladatnál a sorrend maga a mondat, tehát nincs mit
     // keverni; az „opciók" a mondat szavai, a helyes index a keresett szóé.
