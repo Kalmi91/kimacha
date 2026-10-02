@@ -426,6 +426,8 @@ export default {
     learningStep: (step: number, total: number) => `step ${step}/${total}`,
     newBadge: 'new',
     moreNew: (n: number) => `+${n} new words`,
+    moreNewShort: (n: number) => `+${n}`,
+    moreNewHint: 'More new words today?',
     tileAnswered: 'Answered',
     tileNew: 'New',
     tileAgain: 'Again',

@@ -395,6 +395,8 @@ const es: Strings = {
     learningStep: (step: number, total: number) => `paso ${step}/${total}`,
     newBadge: 'nueva',
     moreNew: (n: number) => `+${n} palabras nuevas`,
+    moreNewShort: (n: number) => `+${n}`,
+    moreNewHint: '¿Más palabras nuevas hoy?',
     tileAnswered: 'Respondidas',
     tileNew: 'Nuevas',
     tileAgain: 'Falladas',
