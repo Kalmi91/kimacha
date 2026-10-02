@@ -17,7 +17,8 @@ export const DOCK_RESERVE = 76;
 // fölött: a gomb alsó távolsága (styles.fab.bottom 24) + magassága (styles.brutalFab.height 55) + 12 px rés.
 export const FAB_CLEARANCE = 24 + 55 + 12;
 
-type Tone = 'check' | 'next';
+export type DockedActionTone = 'check' | 'next';
+type Tone = DockedActionTone;
 
 const TONE_COLOR: Record<Tone, string> = {
   check: '#38BDF8',
@@ -34,9 +35,13 @@ type Props = {
   colors: ColorScheme;
   /** A tényleges kirajzolt magasság, hogy a hívó beállíthassa a görgető alsó paddingjét és a 💬 bottomOffsetjét. */
   onHeight?: (h: number) => void;
+  /** A gomb azonosítója (alap: `learn-docked-action`); a nyelvtani drillben a régi inline gomb azonosítóját viszi tovább. */
+  testID?: string;
+  /** Letiltott gomb (a vizsga beírós kártyáján üres válasznál). */
+  disabled?: boolean;
 };
 
-export default function DockedAction({ label, onPress, tone, color, bottom, colors, onHeight }: Props) {
+export default function DockedAction({ label, onPress, tone, color, bottom, colors, onHeight, testID, disabled }: Props) {
   const g = useGrammarColors();
   const checkFill = useSkinDecor().checkFill;
   return (
@@ -47,9 +52,14 @@ export default function DockedAction({ label, onPress, tone, color, bottom, colo
     >
       {g.brutal ? (
         // NY19: Check = ink kitöltés, Next = a kitöltés.
-        <BrutalButton testID="learn-docked-action" label={label} fill={tone === 'next' ? 'a' : checkFill ?? 'ink'} icon={tone === 'next' ? '→' : '✓'} onPress={onPress} />
+        <BrutalButton testID={testID ?? 'learn-docked-action'} label={label} fill={tone === 'next' ? 'a' : checkFill ?? 'ink'} icon={tone === 'next' ? '→' : '✓'} disabled={disabled} onPress={onPress} />
       ) : (
-        <Pressable style={[styles.inlineCheckBtn, { backgroundColor: legibleOn(color ?? TONE_COLOR[tone], '#FFFFFF') }]} onPress={onPress}>
+        <Pressable
+          testID={testID}
+          disabled={disabled}
+          style={[styles.inlineCheckBtn, { backgroundColor: legibleOn(color ?? TONE_COLOR[tone], '#FFFFFF') }, disabled && styles.disabled]}
+          onPress={onPress}
+        >
           <Text style={styles.inlineCheckText}>{label}</Text>
         </Pressable>
       )}
@@ -77,6 +87,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  disabled: { opacity: 0.4 },
   inlineCheckText: {
     color: '#fff',
     fontSize: 18,

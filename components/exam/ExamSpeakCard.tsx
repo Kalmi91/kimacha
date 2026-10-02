@@ -5,6 +5,7 @@ import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, radius, spacing } from '@/constants/Theme';
 import { Card, brutalInputStyle } from '@/components/grammar/Brutal';
 import ResultBadge from '@/components/ResultBadge';
+import { useDockedAction } from '@/components/learn/DockSlot';
 import { compareDictation, type DictationResult, type DictationWord } from '@/lib/exam/dictation';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
@@ -59,6 +60,13 @@ export default function ExamSpeakCard({ prompt, expected, mode, targetLang, stri
   };
   const missed = result !== null;
 
+  // FB461/FB464: a Check (és hibás válasz után a Next) a billentyűzet fölé dokkolt sáv, ahogy a szókártyán (DockSlot).
+  const { docked, padBottom } = useDockedAction(
+    missed
+      ? { label: `${s.card.next} →`, tone: 'next', testID: 'exam-next', onPress: () => onDone(false) }
+      : { label: `✓ ${s.card.check}`, tone: 'check', testID: 'exam-check', disabled: typed.trim().length === 0, onPress: check }
+  );
+
   return (
     <ScrollView contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled">
       <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
@@ -101,13 +109,14 @@ export default function ExamSpeakCard({ prompt, expected, mode, targetLang, stri
         )}
       </Card>
       {missed ? (
-        <ExamButton testID="exam-next" label={`${s.card.next} →`} onPress={() => onDone(false)} />
+        docked ? null : <ExamButton testID="exam-next" label={`${s.card.next} →`} onPress={() => onDone(false)} />
       ) : (
         <>
-          <ExamButton testID="exam-check" label={s.card.check} onPress={check} disabled={typed.trim().length === 0} />
+          {docked ? null : <ExamButton testID="exam-check" label={s.card.check} onPress={check} disabled={typed.trim().length === 0} />}
           <ExamButton testID="exam-dont-know" secondary label={s.exam.dontKnow} onPress={() => setResult(compareDictation('', expected, { strictAccents, subjectDrop: false }))} />
         </>
       )}
+      {docked ? <View style={{ height: padBottom }} /> : null}
     </ScrollView>
   );
 }
