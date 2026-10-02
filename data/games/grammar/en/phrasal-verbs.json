@@ -559,7 +559,7 @@
     },
     {
       "id": "phv-06",
-      "sentence": "They ___ off the match because of the rain.",
+      "sentence": "They ___ off the game because of the rain.",
       "options": [
         "called",
         "looked",
@@ -574,16 +574,16 @@
       },
       "wrong": {
         "looked": {
-          "hu": "A look off the match nem fejez ki lemondást; call off kell.",
-          "en": "“Look off the match” does not express cancelling; you need call off.",
-          "es": "«Look off the match» no expresa cancelar; hace falta call off.",
-          "de": "„Look off the match“ drückt keine Absage aus; man braucht call off."
+          "hu": "A look off the game nem fejez ki lemondást; call off kell.",
+          "en": "“Look off the game” does not express cancelling; you need call off.",
+          "es": "«Look off the game» no expresa cancelar; hace falta call off.",
+          "de": "„Look off the game“ drückt keine Absage aus; man braucht call off."
         },
         "turned": {
-          "hu": "A turn off a match nem fejez ki lemondást; call off kell.",
-          "en": "“Turn off the match” does not express cancelling; you need call off.",
-          "es": "«Turn off the match» no expresa cancelar; hace falta call off.",
-          "de": "„Turn off the match“ drückt keine Absage aus; man braucht call off."
+          "hu": "A turn off a game nem fejez ki lemondást; call off kell.",
+          "en": "“Turn off the game” does not express cancelling; you need call off.",
+          "es": "«Turn off the game» no expresa cancelar; hace falta call off.",
+          "de": "„Turn off the game“ drückt keine Absage aus; man braucht call off."
         }
       },
       "examples": [
@@ -1290,7 +1290,7 @@
         },
         {
           "es": "Cancelaron el partido.",
-          "en": "They called off the match."
+          "en": "They called off the game."
         },
         {
           "es": "Se nos ocurrió una idea.",

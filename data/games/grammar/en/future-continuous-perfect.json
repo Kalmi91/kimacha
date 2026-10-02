@@ -549,9 +549,9 @@
       "id": "fcp-07",
       "sentence": "Don't call me at eight. We ___ dinner.",
       "options": [
-        "would have",
+        "will be have",
         "will be having",
-        "had"
+        "will have having"
       ],
       "correct": 1,
       "why": {
@@ -561,17 +561,17 @@
         "de": "Um acht sind wir mitten beim Abendessen: will be having."
       },
       "wrong": {
-        "would have": {
-          "hu": "A would have múlt vagy feltételes jelentésű; a figyelmeztetés a jövőre szól.",
-          "en": "Would have has a past or conditional meaning; the warning is about the future.",
-          "es": "Would have tiene sentido de pasado o condicional; la advertencia es sobre el futuro.",
-          "de": "Would have hat vergangene oder konditionale Bedeutung; die Warnung betrifft die Zukunft."
+        "will be have": {
+          "hu": "A will be után ige-ing alak áll (having), nem alapige.",
+          "en": "After will be comes the -ing form (having), not the base verb.",
+          "es": "Después de will be va la forma -ing (having), no el verbo base.",
+          "de": "Nach will be steht die -ing-Form (having), nicht die Grundform."
         },
-        "had": {
-          "hu": "A had múlt idő; a mondat a holnapi nyolc órára vonatkozik.",
-          "en": "Had is past; the sentence is about eight o’clock in the future.",
-          "es": "Had es pasado; la oración trata de las ocho en el futuro.",
-          "de": "Had ist Vergangenheit; der Satz betrifft acht Uhr in der Zukunft."
+        "will have having": {
+          "hu": "A will have után igenév jönne (had), nem -ing alak; a folyamatos jövőhöz will be having kell.",
+          "en": "After will have comes a participle (had), not an -ing form; the continuous future needs will be having.",
+          "es": "Después de will have viene un participio (had), no una forma -ing; el futuro continuo necesita will be having.",
+          "de": "Nach will have folgt ein Partizip (had), keine -ing-Form; das Future Continuous braucht will be having."
         }
       },
       "examples": [
