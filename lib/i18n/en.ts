@@ -229,6 +229,8 @@ export default {
     resetGrammar: '🗑️ Reset grammar progress',
     resetGrammarTitle: 'Reset grammar progress',
     resetGrammarMessage: 'This clears all grammar lesson and practice progress. Are you sure?',
+    // PLAN-fb1002 5. lépés (FB446): az újrakezdő sorok egy lenyíló szekcióban.
+    resetSection: '🗑️ Restart progress',
     // PLAN-vizsga A. szakasz 2. lépés: a __DEV__-only vizsga-vezérlő (csak fejlesztői buildben látszik).
     devSeedExamA1: 'DEV: set up the exam state (A1-B2)',
     devSeedExamA1Done: 'DEV: exam state is set (A1-B2), open the level sheet',
@@ -424,6 +426,8 @@ export default {
     learningStep: (step: number, total: number) => `step ${step}/${total}`,
     newBadge: 'new',
     moreNew: (n: number) => `+${n} new words`,
+    moreNewShort: (n: number) => `+${n}`,
+    moreNewHint: 'More new words today?',
     tileAnswered: 'Answered',
     tileNew: 'New',
     tileAgain: 'Again',
