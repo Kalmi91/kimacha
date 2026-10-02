@@ -18,7 +18,7 @@ import {
 } from '../syllabus';
 
 // The B1 lessons written so far, in syllabus order (grows lesson by lesson).
-const B1_WRITTEN: string[] = ['present_perfect_vs_past', 'present_perfect_continuous', 'past_continuous', 'past_perfect', 'used_to', 'will_vs_going_to', 'first_conditional', 'second_conditional', 'modals_obligation_advice', 'modals_deduction'];
+const B1_WRITTEN: string[] = ['present_perfect_vs_past', 'present_perfect_continuous', 'past_continuous', 'past_perfect', 'used_to', 'will_vs_going_to', 'first_conditional', 'second_conditional', 'modals_obligation_advice', 'modals_deduction', 'passive_voice'];
 
 describe('English grammar syllabus (lang = en)', () => {
   it('has the 36 grammar topics of the English topic tree, levels A1, A2 and B1', () => {

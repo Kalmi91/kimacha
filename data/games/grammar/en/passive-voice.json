@@ -1,0 +1,1239 @@
+{
+  "schema": 2,
+  "topic": "passive_voice",
+  "level": "B1",
+  "title": {
+    "hu": "Szenvedő szerkezet (is made, was made)",
+    "en": "The Passive (is made, was made)",
+    "es": "La voz pasiva (is made, was made)",
+    "de": "Das Passiv (is made, was made)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A szenvedő szerkezetben a cselekvés érdekes, nem az, aki csinálja: „English is spoken here.” Szerkezete: a be ige megfelelő alakja + past participle. A spanyol „se habla inglés”, „se vende casa” (a „se” szenvedő) pontosan a szenvedő szerkezetnek felel meg, de angolul nincs „se”: „English speaks here” helytelen, „English is spoken here” helyes.",
+        "en": "In the passive the action matters, not who does it: “English is spoken here.” The structure is the right form of be + the past participle. The Spanish “se habla inglés”, “se vende casa” (the passive “se”) matches the passive exactly, but English has no “se”: “English speaks here” is wrong, “English is spoken here” is right.",
+        "es": "En la pasiva importa la acción, no quién la hace: «English is spoken here.» La estructura es la forma adecuada de be + el participio. El «se habla inglés», «se vende casa» (el «se» de pasiva) del español corresponde exactamente a la pasiva, pero el inglés no tiene «se»: «English speaks here» es incorrecto, «English is spoken here» es correcto.",
+        "de": "Im Passiv zählt die Handlung, nicht wer sie ausführt: „English is spoken here.“ Die Struktur ist die passende Form von be + das Partizip. Das spanische „se habla inglés“, „se vende casa“ (das passivische „se“) entspricht genau dem Passiv, aber das Englische hat kein „se“: „English speaks here“ ist falsch, „English is spoken here“ ist richtig."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "pv-forms",
+      "title": {
+        "hu": "A szenvedő szerkezet alakjai",
+        "en": "Forms of the passive",
+        "es": "Formas de la pasiva",
+        "de": "Formen des Passivs"
+      },
+      "header": [
+        {
+          "hu": "Idő",
+          "en": "Tense",
+          "es": "Tiempo",
+          "de": "Zeit"
+        },
+        {
+          "hu": "forma",
+          "en": "form",
+          "es": "forma",
+          "de": "Form"
+        }
+      ],
+      "rows": [
+        [
+          "presente simple",
+          "am / is / are + participle"
+        ],
+        [
+          "pasado simple",
+          "was / were + participle"
+        ],
+        [
+          "futuro con will",
+          "will be + participle"
+        ],
+        [
+          "presente perfecto",
+          "has / have been + participle"
+        ],
+        [
+          "con un verbo modal",
+          "can / must be + participle"
+        ],
+        [
+          "quién lo hace (el agente)",
+          "by"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Alak",
+        "en": "Form",
+        "es": "Forma",
+        "de": "Form"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Egyszerű jelen és egyszerű múlt: am / is / are + igenév, was / were + igenév. A tárgyból lesz az alany.",
+            "en": "Simple present and simple past: am / is / are + participle, was / were + participle. The object becomes the subject.",
+            "es": "Presente simple y pasado simple: am / is / are + participio, was / were + participio. El objeto pasa a ser el sujeto.",
+            "de": "Present Simple und Past Simple: am / is / are + Partizip, was / were + Partizip. Das Objekt wird zum Subjekt."
+          },
+          "examples": [
+            {
+              "es": "These cars are made in Puebla.",
+              "tr": {
+                "hu": "Ezeket az autókat Pueblában gyártják.",
+                "en": "These cars are made in Puebla.",
+                "es": "Estos carros se hacen en Puebla.",
+                "de": "Diese Autos werden in Puebla hergestellt."
+              }
+            },
+            {
+              "es": "The window was broken yesterday.",
+              "tr": {
+                "hu": "Az ablakot tegnap törték be.",
+                "en": "The window was broken yesterday.",
+                "es": "La ventana se rompió ayer.",
+                "de": "Das Fenster wurde gestern zerbrochen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Jövő és present perfect: will be + igenév, has / have been + igenév. Módbeli igével: can / must be + igenév.",
+            "en": "Future and present perfect: will be + participle, has / have been + participle. With a modal verb: can / must be + participle.",
+            "es": "Futuro y presente perfecto: will be + participio, has / have been + participio. Con un verbo modal: can / must be + participio.",
+            "de": "Futur und Present Perfect: will be + Partizip, has / have been + Partizip. Mit einem Modalverb: can / must be + Partizip."
+          },
+          "examples": [
+            {
+              "es": "The report will be finished tomorrow.",
+              "tr": {
+                "hu": "A jelentés holnapra elkészül.",
+                "en": "The report will be finished tomorrow.",
+                "es": "El reporte se va a terminar mañana.",
+                "de": "Der Bericht wird morgen fertig."
+              }
+            },
+            {
+              "es": "The work has been finished.",
+              "tr": {
+                "hu": "A munka el lett végezve.",
+                "en": "The work has been finished.",
+                "es": "El trabajo ya fue terminado.",
+                "de": "Die Arbeit ist beendet worden."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Kérdés és tagadás a be igével: Was the window broken? The door wasn’t opened.",
+            "en": "Questions and negatives use the verb be: Was the window broken? The door wasn’t opened.",
+            "es": "Preguntas y negaciones usan el verbo be: Was the window broken? The door wasn’t opened.",
+            "de": "Fragen und Verneinungen benutzen das Verb be: Was the window broken? The door wasn’t opened."
+          },
+          "examples": [
+            {
+              "es": "When was the museum opened?",
+              "tr": {
+                "hu": "Mikor nyitották meg a múzeumot?",
+                "en": "When was the museum opened?",
+                "es": "¿Cuándo se abrió el museo?",
+                "de": "Wann wurde das Museum eröffnet?"
+              }
+            },
+            {
+              "es": "The door wasn't opened.",
+              "tr": {
+                "hu": "Az ajtót nem nyitották ki.",
+                "en": "The door wasn't opened.",
+                "es": "La puerta no fue abierta.",
+                "de": "Die Tür wurde nicht geöffnet."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Mikor használjuk",
+        "en": "When do we use it",
+        "es": "Cuándo se usa",
+        "de": "Wann benutzen wir es"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Ha nem tudjuk, ki csinálta, vagy nem fontos, vagy nyilvánvaló: „My keys were lost.” Ilyenkor nincs by-os rész.",
+            "en": "When we don’t know who did it, or it is not important, or it is obvious: “My keys were lost.” Then there is no by part.",
+            "es": "Cuando no sabemos quién lo hizo, o no importa, o es obvio: «My keys were lost.» Entonces no hay parte con by.",
+            "de": "Wenn wir nicht wissen, wer es getan hat, oder es nicht wichtig oder offensichtlich ist: „My keys were lost.“ Dann gibt es keinen by-Teil."
+          },
+          "examples": [
+            {
+              "es": "My keys were lost.",
+              "tr": {
+                "hu": "Elvesztek a kulcsaim.",
+                "en": "My keys were lost.",
+                "es": "Se perdieron mis llaves.",
+                "de": "Meine Schlüssel gingen verloren."
+              }
+            },
+            {
+              "es": "English is spoken in many countries.",
+              "tr": {
+                "hu": "Angolul sok országban beszélnek.",
+                "en": "English is spoken in many countries.",
+                "es": "El inglés se habla en muchos países.",
+                "de": "Englisch wird in vielen Ländern gesprochen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Ha fontos, ki csinálta, a by után megnevezzük: „The song was written by my brother.”",
+            "en": "When it matters who did it, we name them after by: “The song was written by my brother.”",
+            "es": "Cuando importa quién lo hizo, lo nombramos después de by: «The song was written by my brother.»",
+            "de": "Wenn es wichtig ist, wer es getan hat, nennen wir ihn nach by: „The song was written by my brother.“"
+          },
+          "examples": [
+            {
+              "es": "The song was written by my brother.",
+              "tr": {
+                "hu": "A dalt a bátyám írta.",
+                "en": "The song was written by my brother.",
+                "es": "La canción fue escrita por mi hermano.",
+                "de": "Das Lied wurde von meinem Bruder geschrieben."
+              }
+            },
+            {
+              "es": "The film was made by a famous director.",
+              "tr": {
+                "hu": "A filmet egy híres rendező készítette.",
+                "en": "The film was made by a famous director.",
+                "es": "La película fue hecha por un director famoso.",
+                "de": "Der Film wurde von einem berühmten Regisseur gemacht."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A spanyol „se” szenvedő angolul nem létezik: a „se habla inglés” = „English is spoken”, a „se vende” = „is sold”. Ne tegyél be „it” vagy „one” alanyt.",
+        "en": "The Spanish passive “se” does not exist in English: “se habla inglés” = “English is spoken”, “se vende” = “is sold”. Don’t add “it” or “one” as the subject.",
+        "es": "El «se» de pasiva del español no existe en inglés: «se habla inglés» = «English is spoken», «se vende» = «is sold». No agregues «it» ni «one» como sujeto.",
+        "de": "Das passivische „se“ des Spanischen gibt es im Englischen nicht: „se habla inglés“ = „English is spoken“, „se vende“ = „is sold“. Setze nicht „it“ oder „one“ als Subjekt dazu."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A szenvedő szerkezet past participle-t kér: a rendhagyó igéknél ez külön alak (written, broken, made). Nem „was wrote”, hanem „was written”.",
+        "en": "The passive needs the past participle: for irregular verbs this is a separate form (written, broken, made). Not “was wrote”, but “was written”.",
+        "es": "La pasiva necesita el participio: en los verbos irregulares es una forma aparte (written, broken, made). No «was wrote», sino «was written».",
+        "de": "Das Passiv braucht das Partizip: Bei unregelmäßigen Verben ist es eine eigene Form (written, broken, made). Nicht „was wrote“, sondern „was written“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Csak tárgyas igéből lesz szenvedő szerkezet. Az „happen”, „arrive”, „go” nem tárgyas: nem „It was happened”, hanem „It happened”.",
+        "en": "Only verbs with an object have a passive. “Happen”, “arrive”, “go” have no object: not “It was happened”, but “It happened”.",
+        "es": "Solo los verbos con objeto tienen pasiva. «Happen», «arrive», «go» no tienen objeto: no «It was happened», sino «It happened».",
+        "de": "Nur Verben mit Objekt haben ein Passiv. „Happen“, „arrive“, „go“ haben kein Objekt: nicht „It was happened“, sondern „It happened“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A by-os rész csak akkor kell, ha fontos, ki csinálta. „My keys were stolen by a thief” helyett elég: „My keys were stolen.”",
+        "en": "The by part is only needed if it matters who did it. Instead of “My keys were stolen by a thief”, “My keys were stolen” is enough.",
+        "es": "La parte con by solo hace falta si importa quién lo hizo. En vez de «My keys were stolen by a thief», basta con «My keys were stolen.»",
+        "de": "Der by-Teil ist nur nötig, wenn es wichtig ist, wer es getan hat. Statt „My keys were stolen by a thief“ genügt „My keys were stolen.“"
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A szenvedő szerkezetben a cselekvés a fontos, nem az, aki csinálja: «English is spoken here». Szerkezete: a «be» ige megfelelő alakja plusz az igenév. Egyszerű jelenben «is made», múltban «was made», jövőben «will be made», present perfectben «has been made». Ha fontos, ki csinálta, a «by» után megnevezzük: «The song was written by my brother». A spanyol «se habla inglés» angolul nem «English speaks here», hanem «English is spoken here». Vigyázat: a rendhagyó igéknél az igenevet kell használni: nem «was wrote», hanem «was written».",
+    "en": "In the passive the action matters, not who does it: «English is spoken here». The structure is the right form of «be» plus the participle. In the simple present it is «is made», in the past «was made», in the future «will be made», in the present perfect «has been made». When it matters who did it, we name them after «by»: «The song was written by my brother». The Spanish «se habla inglés» is not «English speaks here» in English, but «English is spoken here». Careful: with irregular verbs you must use the participle: not «was wrote», but «was written».",
+    "es": "En la pasiva importa la acción, no quién la hace: «English is spoken here». La estructura es la forma adecuada de «be» más el participio. En presente simple es «is made», en pasado «was made», en futuro «will be made», en presente perfecto «has been made». Cuando importa quién lo hizo, lo nombramos después de «by»: «The song was written by my brother». El «se habla inglés» español no es «English speaks here» en inglés, sino «English is spoken here». Cuidado: con los verbos irregulares hay que usar el participio: no «was wrote», sino «was written».",
+    "de": "Im Passiv zählt die Handlung, nicht wer sie ausführt: «English is spoken here». Die Struktur ist die passende Form von «be» plus das Partizip. Im Present Simple heißt es «is made», in der Vergangenheit «was made», in der Zukunft «will be made», im Present Perfect «has been made». Wenn es wichtig ist, wer es getan hat, nennen wir ihn nach «by»: «The song was written by my brother». Das spanische «se habla inglés» ist im Englischen nicht «English speaks here», sondern «English is spoken here». Vorsicht: Bei unregelmäßigen Verben muss man das Partizip benutzen: nicht «was wrote», sondern «was written»."
+  },
+  "glossary": [
+    {
+      "word": "spoken",
+      "gloss": {
+        "hu": "beszélt (a speak igenéve)",
+        "en": "participle of speak",
+        "es": "hablado (participio de speak)",
+        "de": "gesprochen (Partizip von speak)"
+      }
+    },
+    {
+      "word": "broke",
+      "gloss": {
+        "hu": "eltörte (a break múlt alakja)",
+        "en": "past form of break",
+        "es": "rompió (pasado de break)",
+        "de": "zerbrach (Past von break)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "pv-01",
+      "sentence": "English ___ in many countries.",
+      "options": [
+        "speaks",
+        "is spoken",
+        "is speaking"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Szenvedő szerkezet: nem az érdekes, ki beszéli, hanem az, hol beszélik: English is spoken.",
+        "en": "Passive: what matters is not who speaks it but where it is spoken: English is spoken.",
+        "es": "Pasiva: lo que importa no es quién lo habla sino dónde se habla: English is spoken.",
+        "de": "Passiv: wichtig ist nicht, wer es spricht, sondern wo es gesprochen wird: English is spoken."
+      },
+      "wrong": {
+        "speaks": {
+          "hu": "A „speaks” cselekvő alak: az angol nyelv nem „beszél”, hanem beszélik; ehhez szenvedő szerkezet kell.",
+          "en": "“Speaks” is active: the English language does not “speak”, it is spoken; that needs the passive.",
+          "es": "«Speaks» es activo: el idioma inglés no «habla», sino que se habla; eso necesita la pasiva.",
+          "de": "„Speaks“ ist aktiv: die englische Sprache „spricht“ nicht, sie wird gesprochen; das braucht das Passiv."
+        },
+        "is speaking": {
+          "hu": "Az „is speaking” folyamatos cselekvő alak; itt nincs alany, aki beszélne, ezért szenvedő kell.",
+          "en": "“Is speaking” is an active continuous form; there is no subject speaking here, so the passive is needed.",
+          "es": "«Is speaking» es una forma continua activa; aquí no hay un sujeto que hable, por eso hace falta la pasiva.",
+          "de": "„Is speaking“ ist eine aktive Verlaufsform; hier gibt es kein sprechendes Subjekt, deshalb braucht man das Passiv."
+        }
+      },
+      "examples": [
+        "English is spoken in Mexico.",
+        "Coffee is made here."
+      ]
+    },
+    {
+      "id": "pv-02",
+      "sentence": "These cars ___ in Puebla.",
+      "options": [
+        "make",
+        "is made",
+        "are made"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A these cars többes szám, ezért are made: These cars are made.",
+        "en": "These cars is plural, so are made: These cars are made.",
+        "es": "These cars es plural, así que are made: These cars are made.",
+        "de": "These cars ist Plural, deshalb are made: These cars are made."
+      },
+      "wrong": {
+        "make": {
+          "hu": "A „make” cselekvő alak; az autókat gyártják (valaki gyártja), ezért szenvedő kell.",
+          "en": "“Make” is active; the cars are made (by someone), so the passive is needed.",
+          "es": "«Make» es activo; los carros son hechos (por alguien), por eso hace falta la pasiva.",
+          "de": "„Make“ ist aktiv; die Autos werden hergestellt (von jemandem), deshalb braucht man das Passiv."
+        },
+        "is made": {
+          "hu": "Az „is made” egyes számhoz kell; a these cars többes szám, ezért are made.",
+          "en": "“Is made” goes with the singular; these cars is plural, so are made.",
+          "es": "«Is made» va con el singular; these cars es plural, por eso are made.",
+          "de": "„Is made“ steht beim Singular; these cars ist Plural, deshalb are made."
+        }
+      },
+      "examples": [
+        "This bag is made in Mexico.",
+        "Shoes are made here."
+      ]
+    },
+    {
+      "id": "pv-03",
+      "sentence": "The window ___ yesterday.",
+      "options": [
+        "was broken",
+        "broke",
+        "is broken"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A yesterday múltat jelez, és az ablakot valaki betörte: was broken.",
+        "en": "Yesterday points to the past, and someone broke the window: was broken.",
+        "es": "Yesterday indica pasado, y alguien rompió la ventana: was broken.",
+        "de": "Yesterday verweist auf die Vergangenheit, und jemand hat das Fenster zerbrochen: was broken."
+      },
+      "wrong": {
+        "broke": {
+          "hu": "A „broke” cselekvő alak: azt jelenti, hogy az alany tört be valamit; itt az ablakot törték be, ezért szenvedő kell (was broken).",
+          "en": "“Broke” is active; the passive shows that someone did it to the window.",
+          "es": "«Broke» es activo; la pasiva muestra que alguien lo hizo a la ventana.",
+          "de": "„Broke“ ist aktiv; das Passiv zeigt, dass jemand es dem Fenster angetan hat."
+        },
+        "is broken": {
+          "hu": "Az „is broken” jelen idejű; a yesterday miatt múlt idejű szenvedő kell.",
+          "en": "“Is broken” is present; because of yesterday you need the past passive.",
+          "es": "«Is broken» es presente; por yesterday hace falta la pasiva en pasado.",
+          "de": "„Is broken“ ist Präsens; wegen yesterday braucht man das Passiv in der Vergangenheit."
+        }
+      },
+      "examples": [
+        "The door was closed.",
+        "My bag was lost."
+      ]
+    },
+    {
+      "id": "pv-04",
+      "sentence": "The letter ___ by my boss.",
+      "options": [
+        "wrote",
+        "was written",
+        "is writing"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A levelet valaki írta (a főnököm): was written + by.",
+        "en": "Someone wrote the letter (my boss): was written + by.",
+        "es": "Alguien escribió la carta (mi jefe): was written + by.",
+        "de": "Jemand hat den Brief geschrieben (mein Chef): was written + by."
+      },
+      "wrong": {
+        "wrote": {
+          "hu": "A „wrote” cselekvő alak, tárgy nélkül: a levél nem ír; a by-os rész szenvedő szerkezetet kér.",
+          "en": "“Wrote” is active and has no object here: a letter does not write; the by part asks for the passive.",
+          "es": "«Wrote» es activo y aquí no tiene objeto: una carta no escribe; la parte con by pide la pasiva.",
+          "de": "„Wrote“ ist aktiv und hat hier kein Objekt: ein Brief schreibt nicht; der by-Teil verlangt das Passiv."
+        },
+        "is writing": {
+          "hu": "Az „is writing” folyamatos cselekvő alak; a főnököm által megírt levélhez was written kell.",
+          "en": "“Is writing” is an active continuous form; a letter written by the boss needs was written.",
+          "es": "«Is writing» es una forma continua activa; una carta escrita por el jefe necesita was written.",
+          "de": "„Is writing“ ist eine aktive Verlaufsform; ein vom Chef geschriebener Brief braucht was written."
+        }
+      },
+      "examples": [
+        "The book was written by her.",
+        "The letter was written by him."
+      ]
+    },
+    {
+      "id": "pv-05",
+      "sentence": "The room ___ every day.",
+      "options": [
+        "cleans",
+        "cleaned",
+        "is cleaned"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Rendszeres tevékenység, a szoba az, ami tisztul: is cleaned.",
+        "en": "A regular activity, and the room is what gets cleaned: is cleaned.",
+        "es": "Una actividad regular, y la habitación es lo que se limpia: is cleaned.",
+        "de": "Eine regelmäßige Tätigkeit, und das Zimmer ist das, was gereinigt wird: is cleaned."
+      },
+      "wrong": {
+        "cleans": {
+          "hu": "A „cleans” cselekvő alak; a szoba nem takarít, hanem takarítják.",
+          "en": "“Cleans” is active; the room does not clean, it is cleaned.",
+          "es": "«Cleans» es activo; la habitación no limpia, la limpian.",
+          "de": "„Cleans“ ist aktiv; das Zimmer putzt nicht, es wird geputzt."
+        },
+        "cleaned": {
+          "hu": "A „cleaned” cselekvő múlt idő vagy igenév be nélkül; a szenvedő is cleaned.",
+          "en": "“Cleaned” is an active past form or a participle without be; the passive is is cleaned.",
+          "es": "«Cleaned» es un pasado activo o un participio sin be; la pasiva es is cleaned.",
+          "de": "„Cleaned“ ist eine aktive Vergangenheitsform oder ein Partizip ohne be; das Passiv ist is cleaned."
+        }
+      },
+      "examples": [
+        "The house is cleaned on Fridays.",
+        "The shop is opened at nine."
+      ]
+    },
+    {
+      "id": "pv-06",
+      "sentence": "My keys ___ in the taxi.",
+      "options": [
+        "were lost",
+        "lost",
+        "are lost"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A kulcsokat elvesztettem, múlt: were lost (a keys többes szám).",
+        "en": "The keys were lost, past: were lost (keys is plural).",
+        "es": "Las llaves se perdieron, pasado: were lost (keys es plural).",
+        "de": "Die Schlüssel gingen verloren, Vergangenheit: were lost (keys ist Plural)."
+      },
+      "wrong": {
+        "lost": {
+          "hu": "A „lost” cselekvő múlt alak lenne tárgy nélkül; a kulcsok maguk nem vesztenek, elvesznek: szenvedő kell.",
+          "en": "“Lost” would be an active past form with no object; the keys do not lose, they get lost: the passive is needed.",
+          "es": "«Lost» sería un pasado activo sin objeto; las llaves no pierden, se pierden: hace falta la pasiva.",
+          "de": "„Lost“ wäre eine aktive Vergangenheitsform ohne Objekt; die Schlüssel verlieren nicht, sie gehen verloren: man braucht das Passiv."
+        },
+        "are lost": {
+          "hu": "Az „are lost” jelen idejű; a taxiban történt eset múlt, ezért were lost.",
+          "en": "“Are lost” is present; what happened in the taxi is past, so were lost.",
+          "es": "«Are lost» es presente; lo que pasó en el taxi es pasado, por eso were lost.",
+          "de": "„Are lost“ ist Präsens; was im Taxi passiert ist, liegt in der Vergangenheit, deshalb were lost."
+        }
+      },
+      "examples": [
+        "My bag was lost.",
+        "The tickets were lost."
+      ]
+    },
+    {
+      "id": "pv-07",
+      "sentence": "The report ___ tomorrow.",
+      "options": [
+        "will finish",
+        "will be finished",
+        "finished"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Jövőbeli szenvedő szerkezet: will be + igenév: will be finished.",
+        "en": "The future passive: will be + participle: will be finished.",
+        "es": "La pasiva en futuro: will be + participio: will be finished.",
+        "de": "Das Passiv im Futur: will be + Partizip: will be finished."
+      },
+      "wrong": {
+        "will finish": {
+          "hu": "A „will finish” cselekvő alak; a jelentés nem fejezi be önmagát, valaki befejezi.",
+          "en": "“Will finish” is active; the report does not finish itself, someone finishes it.",
+          "es": "«Will finish» es activo; el reporte no se termina solo, alguien lo termina.",
+          "de": "„Will finish“ ist aktiv; der Bericht beendet sich nicht von selbst, jemand beendet ihn."
+        },
+        "finished": {
+          "hu": "A „finished” múlt idő; a tomorrow jövőre utal, ezért will be finished.",
+          "en": "“Finished” is past; tomorrow points to the future, so will be finished.",
+          "es": "«Finished» es pasado; tomorrow apunta al futuro, por eso will be finished.",
+          "de": "„Finished“ ist Vergangenheit; tomorrow verweist auf die Zukunft, deshalb will be finished."
+        }
+      },
+      "examples": [
+        "The work will be done soon.",
+        "The letter will be sent."
+      ]
+    },
+    {
+      "id": "pv-08",
+      "sentence": "The film ___ in Mexico.",
+      "options": [
+        "made",
+        "is making",
+        "was made"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A filmet valaki készítette, múlt idő: was made.",
+        "en": "Someone made the film, past tense: was made.",
+        "es": "Alguien hizo la película, tiempo pasado: was made.",
+        "de": "Jemand hat den Film gemacht, Vergangenheit: was made."
+      },
+      "wrong": {
+        "made": {
+          "hu": "A „made” cselekvő múlt idő lenne tárgy nélkül; a film nem csinál semmit, őt csinálják: szenvedő kell (was made).",
+          "en": "“Made” would be the active past with no object; the film does not make anything, it is made: the passive is needed (was made).",
+          "es": "«Made» sería el pasado activo sin objeto; la película no hace nada, la hacen: hace falta la pasiva (was made).",
+          "de": "„Made“ wäre die aktive Vergangenheit ohne Objekt; der Film macht nichts, er wird gemacht: man braucht das Passiv (was made)."
+        },
+        "is making": {
+          "hu": "Az „is making” folyamatos cselekvő alak; a film nem csinál semmit, őt csinálják.",
+          "en": "“Is making” is an active continuous form; the film does not make anything, it is made.",
+          "es": "«Is making» es una forma continua activa; la película no hace nada, la hacen.",
+          "de": "„Is making“ ist eine aktive Verlaufsform; der Film macht nichts, er wird gemacht."
+        }
+      },
+      "examples": [
+        "The book was made by him.",
+        "The cake was made by my sister."
+      ]
+    },
+    {
+      "id": "pv-09",
+      "sentence": "When ___ the museum opened?",
+      "options": [
+        "was",
+        "did",
+        "is"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Múltbeli szenvedő kérdés: When was the museum opened?",
+        "en": "A past passive question: When was the museum opened?",
+        "es": "Una pregunta en pasiva pasada: When was the museum opened?",
+        "de": "Eine Frage im Passiv der Vergangenheit: When was the museum opened?"
+      },
+      "wrong": {
+        "did": {
+          "hu": "A did után alapige kell (When did they open…?); az „opened” igenévvel a be ige kell (was).",
+          "en": "After did you need the base verb (When did they open…?); with the participle “opened” you need the verb be (was).",
+          "es": "Después de did hace falta el verbo base (When did they open…?); con el participio «opened» hace falta el verbo be (was).",
+          "de": "Nach did braucht man die Grundform (When did they open…?); mit dem Partizip „opened“ braucht man das Verb be (was)."
+        },
+        "is": {
+          "hu": "Az „is” jelen idejű; a kérdés a múltbeli megnyitásra vonatkozik, ezért was.",
+          "en": "“Is” is present; the question is about the opening in the past, so was.",
+          "es": "«Is» es presente; la pregunta es sobre la apertura en el pasado, por eso was.",
+          "de": "„Is“ ist Präsens; die Frage betrifft die Eröffnung in der Vergangenheit, deshalb was."
+        }
+      },
+      "examples": [
+        "When was it made?",
+        "When was it opened?"
+      ]
+    },
+    {
+      "id": "pv-10",
+      "sentence": "The door ___ opened last night.",
+      "options": [
+        "didn't",
+        "wasn't",
+        "isn't"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Múltbeli szenvedő tagadás: wasn’t opened.",
+        "en": "A negative in the past passive: wasn’t opened.",
+        "es": "Una negación en pasiva pasada: wasn’t opened.",
+        "de": "Eine Verneinung im Passiv der Vergangenheit: wasn’t opened."
+      },
+      "wrong": {
+        "didn't": {
+          "hu": "A didn’t után alapige kell (didn’t open); az „opened” igenévhez a be ige kell.",
+          "en": "After didn’t you need the base verb (didn’t open); the participle “opened” needs the verb be.",
+          "es": "Después de didn’t hace falta el verbo base (didn’t open); el participio «opened» necesita el verbo be.",
+          "de": "Nach didn’t braucht man die Grundform (didn’t open); das Partizip „opened“ braucht das Verb be."
+        },
+        "isn't": {
+          "hu": "Az „isn’t” jelen idejű; a last night múltat jelez, ezért wasn’t.",
+          "en": "“Isn’t” is present; last night shows the past, so wasn’t.",
+          "es": "«Isn’t» es presente; last night indica el pasado, por eso wasn’t.",
+          "de": "„Isn’t“ ist Präsens; last night zeigt die Vergangenheit, deshalb wasn’t."
+        }
+      },
+      "examples": [
+        "The shop wasn't closed.",
+        "The letter wasn't sent."
+      ]
+    },
+    {
+      "id": "pv-11",
+      "sentence": "The window was ___ by the wind.",
+      "options": [
+        "break",
+        "broke",
+        "broken"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A was után past participle áll: was broken.",
+        "en": "After was comes the past participle: was broken.",
+        "es": "Después de was va el participio: was broken.",
+        "de": "Nach was steht das Partizip: was broken."
+      },
+      "wrong": {
+        "break": {
+          "hu": "A „break” alapige; a was után az igenév kell (broken).",
+          "en": "“Break” is the base verb; after was you need the participle (broken).",
+          "es": "«Break» es el verbo base; después de was hace falta el participio (broken).",
+          "de": "„Break“ ist die Grundform; nach was braucht man das Partizip (broken)."
+        },
+        "broke": {
+          "hu": "A „broke” az egyszerű múlt; a szenvedő szerkezetben az igenév (broken) áll.",
+          "en": "“Broke” is the past simple; in the passive the participle (broken) is used.",
+          "es": "«Broke» es el pasado simple; en la pasiva se usa el participio (broken).",
+          "de": "„Broke“ ist das Past Simple; im Passiv steht das Partizip (broken)."
+        }
+      },
+      "examples": [
+        "The cup was broken.",
+        "The glass was broken by the cat."
+      ]
+    },
+    {
+      "id": "pv-12",
+      "sentence": "The book was written ___ my brother.",
+      "options": [
+        "by",
+        "from",
+        "with"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A szenvedő szerkezetben a csinálót a by után nevezzük meg: by my brother.",
+        "en": "In the passive the doer is named after by: by my brother.",
+        "es": "En la pasiva el que lo hace se nombra después de by: by my brother.",
+        "de": "Im Passiv wird der Ausführende nach by genannt: by my brother."
+      },
+      "wrong": {
+        "from": {
+          "hu": "A from eredetet jelent (from Mexico); a szenvedő szerkezet cselekvőjét by-jal vezetjük be.",
+          "en": "From means origin (from Mexico); the doer in the passive is introduced with by.",
+          "es": "From significa origen (from Mexico); el que hace la acción en la pasiva se introduce con by.",
+          "de": "From bedeutet Herkunft (from Mexico); der Ausführende im Passiv wird mit by eingeleitet."
+        },
+        "with": {
+          "hu": "A with eszközt jelent (with a pen); a személy, aki csinálta, by után áll.",
+          "en": "With means a tool (with a pen); the person who did it comes after by.",
+          "es": "With significa un instrumento (with a pen); la persona que lo hizo va después de by.",
+          "de": "With bedeutet ein Werkzeug (with a pen); die Person, die es getan hat, steht nach by."
+        }
+      },
+      "examples": [
+        "The cake was made by my sister.",
+        "The book was read by many people."
+      ]
+    },
+    {
+      "id": "pv-13",
+      "sentence": "The homework must ___ by Friday.",
+      "options": [
+        "do",
+        "be done",
+        "is done"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Módbeli igével: must be + igenév: must be done.",
+        "en": "With a modal verb: must be + participle: must be done.",
+        "es": "Con un verbo modal: must be + participio: must be done.",
+        "de": "Mit einem Modalverb: must be + Partizip: must be done."
+      },
+      "wrong": {
+        "do": {
+          "hu": "A „must do” cselekvő alak: a házi feladat nem csinál semmit, hanem megcsinálják; ehhez be done kell.",
+          "en": "“Must do” is active: the homework does nothing, it is done by someone; that needs be done.",
+          "es": "«Must do» es activo: la tarea no hace nada, alguien la hace; eso necesita be done.",
+          "de": "„Must do“ ist aktiv: die Hausaufgabe tut nichts, sie wird gemacht; das braucht be done."
+        },
+        "is done": {
+          "hu": "A must után alapige jön (be), nem ragozott alak; a „must is done” helytelen.",
+          "en": "After must comes the base verb (be), not a conjugated form; “must is done” is incorrect.",
+          "es": "Después de must viene el verbo base (be), no una forma conjugada; «must is done» es incorrecto.",
+          "de": "Nach must kommt die Grundform (be), nicht eine konjugierte Form; „must is done“ ist falsch."
+        }
+      },
+      "examples": [
+        "It can be done.",
+        "The door must be closed."
+      ]
+    },
+    {
+      "id": "pv-14",
+      "sentence": "The work has ___ finished.",
+      "options": [
+        "be",
+        "being",
+        "been"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A present perfect szenvedő alakja: has been + igenév: has been finished.",
+        "en": "The present perfect passive: has been + participle: has been finished.",
+        "es": "La pasiva del presente perfecto: has been + participio: has been finished.",
+        "de": "Das Passiv im Present Perfect: has been + Partizip: has been finished."
+      },
+      "wrong": {
+        "be": {
+          "hu": "A has után az igenév kell, nem az alapige: has been (a be igenéve).",
+          "en": "After has you need the participle, not the base verb: has been (the participle of be).",
+          "es": "Después de has hace falta el participio, no el verbo base: has been (el participio de be).",
+          "de": "Nach has braucht man das Partizip, nicht die Grundform: has been (das Partizip von be)."
+        },
+        "being": {
+          "hu": "A „has being” helytelen; a has után az igenév (been) áll, nem az -ing alak.",
+          "en": "“Has being” is incorrect; after has comes the participle (been), not the -ing form.",
+          "es": "«Has being» es incorrecto; después de has va el participio (been), no la forma -ing.",
+          "de": "„Has being“ ist falsch; nach has steht das Partizip (been), nicht die -ing-Form."
+        }
+      },
+      "examples": [
+        "The door has been opened.",
+        "The cake has been eaten."
+      ]
+    },
+    {
+      "id": "pv-15",
+      "sentence": "Many people ___ to the party.",
+      "options": [
+        "were invited",
+        "invited",
+        "have invited"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az emberek meghívást kaptak, nem ők hívtak: were invited.",
+        "en": "The people received an invitation, they did not invite: were invited.",
+        "es": "La gente recibió una invitación, no invitó: were invited.",
+        "de": "Die Leute wurden eingeladen, sie haben nicht eingeladen: were invited."
+      },
+      "wrong": {
+        "invited": {
+          "hu": "Az „invited” cselekvő múlt idő lenne: az emberek hívtak volna valakit; ehhez tárgy kellene.",
+          "en": "“Invited” would be the active past: the people invited someone; that would need an object.",
+          "es": "«Invited» sería el pasado activo: la gente invitó a alguien; eso necesitaría un objeto.",
+          "de": "„Invited“ wäre die aktive Vergangenheit: die Leute luden jemanden ein; das bräuchte ein Objekt."
+        },
+        "have invited": {
+          "hu": "A „have invited” cselekvő present perfect, tárgy nélkül; a meghívottakra were invited való.",
+          "en": "“Have invited” is an active present perfect with no object; for the invited people it is were invited.",
+          "es": "«Have invited» es un presente perfecto activo sin objeto; para las personas invitadas es were invited.",
+          "de": "„Have invited“ ist ein aktives Present Perfect ohne Objekt; für die eingeladenen Leute passt were invited."
+        }
+      },
+      "examples": [
+        "We were invited.",
+        "She was invited to dinner."
+      ]
+    },
+    {
+      "id": "pv-16",
+      "sentence": "My phone ___ in the street yesterday.",
+      "options": [
+        "found",
+        "was found",
+        "is found"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A telefonomat megtalálták, múltban: was found.",
+        "en": "My phone was found, in the past: was found.",
+        "es": "Mi celular fue encontrado, en el pasado: was found.",
+        "de": "Mein Handy wurde gefunden, in der Vergangenheit: was found."
+      },
+      "wrong": {
+        "found": {
+          "hu": "A „found” cselekvő múlt idő; a telefon nem talál, hanem megtalálják.",
+          "en": "“Found” is the active past; the phone does not find, it is found.",
+          "es": "«Found» es el pasado activo; el celular no encuentra, lo encuentran.",
+          "de": "„Found“ ist die aktive Vergangenheit; das Handy findet nicht, es wird gefunden."
+        },
+        "is found": {
+          "hu": "Az „is found” jelen idejű; a yesterday miatt múlt idejű szenvedő kell.",
+          "en": "“Is found” is present; because of yesterday you need the past passive.",
+          "es": "«Is found» es presente; por yesterday hace falta la pasiva en pasado.",
+          "de": "„Is found“ ist Präsens; wegen yesterday braucht man das Passiv in der Vergangenheit."
+        }
+      },
+      "examples": [
+        "The bag was found.",
+        "The keys were found."
+      ]
+    },
+    {
+      "id": "pv-17",
+      "sentence": "The bus ___ late yesterday.",
+      "options": [
+        "was arrived",
+        "is arrived",
+        "arrived"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Az arrive nem tárgyas ige, nincs szenvedő alakja: the bus arrived.",
+        "en": "Arrive has no object, so it has no passive: the bus arrived.",
+        "es": "Arrive no tiene objeto, así que no tiene pasiva: the bus arrived.",
+        "de": "Arrive hat kein Objekt, also kein Passiv: the bus arrived."
+      },
+      "wrong": {
+        "was arrived": {
+          "hu": "Az arrive nem tárgyas ige, nincs szenvedő alakja; a „was arrived” helytelen.",
+          "en": "Arrive has no object, so it has no passive; “was arrived” is incorrect.",
+          "es": "Arrive no tiene objeto, así que no tiene pasiva; «was arrived» es incorrecto.",
+          "de": "Arrive hat kein Objekt, also kein Passiv; „was arrived“ ist falsch."
+        },
+        "is arrived": {
+          "hu": "Az „is arrived” helytelen: az arrive nem tárgyas ige, ezért nincs szenvedő alakja, és a yesterday múltat jelez.",
+          "en": "“Is arrived” is incorrect: arrive has no object, so it has no passive, and yesterday shows the past.",
+          "es": "«Is arrived» es incorrecto: arrive no tiene objeto, así que no tiene pasiva, y yesterday indica el pasado.",
+          "de": "„Is arrived“ ist falsch: arrive hat kein Objekt, also kein Passiv, und yesterday zeigt die Vergangenheit."
+        }
+      },
+      "examples": [
+        "The train arrived late.",
+        "She arrived at six."
+      ]
+    },
+    {
+      "id": "pv-18",
+      "kind": "form",
+      "verb": "forma",
+      "person": "presente simple",
+      "answer": "am / is / are + participle",
+      "table": "pv-forms"
+    },
+    {
+      "id": "pv-19",
+      "kind": "form",
+      "verb": "forma",
+      "person": "pasado simple",
+      "answer": "was / were + participle",
+      "table": "pv-forms"
+    },
+    {
+      "id": "pv-20",
+      "kind": "form",
+      "verb": "forma",
+      "person": "futuro con will",
+      "answer": "will be + participle",
+      "table": "pv-forms"
+    },
+    {
+      "id": "pv-21",
+      "kind": "form",
+      "verb": "forma",
+      "person": "presente perfecto",
+      "answer": "has / have been + participle",
+      "table": "pv-forms"
+    },
+    {
+      "id": "pv-22",
+      "kind": "form",
+      "verb": "forma",
+      "person": "con un verbo modal",
+      "answer": "can / must be + participle",
+      "table": "pv-forms"
+    },
+    {
+      "id": "pv-23",
+      "kind": "form",
+      "verb": "forma",
+      "person": "quién lo hace (el agente)",
+      "answer": "by",
+      "table": "pv-forms"
+    },
+    {
+      "kind": "why",
+      "id": "pv-24",
+      "es": "English is spoken in many countries.",
+      "target": "spoken",
+      "tr": {
+        "hu": "Angolul sok országban beszélnek.",
+        "en": "English is spoken in many countries.",
+        "es": "El inglés se habla en muchos países.",
+        "de": "Englisch wird in vielen Ländern gesprochen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "szenvedő szerkezet: a cselekvés a fontos, nem a csináló",
+            "en": "passive: the action matters, not the doer",
+            "es": "pasiva: importa la acción, no quien la hace",
+            "de": "Passiv: die Handlung zählt, nicht der Ausführende"
+          }
+        },
+        {
+          "text": {
+            "hu": "present perfect: mostanáig tartó idő",
+            "en": "present perfect: time up to now",
+            "es": "presente perfecto: tiempo hasta ahora",
+            "de": "Present Perfect: Zeit bis jetzt"
+          },
+          "wrong": {
+            "hu": "A present perfectben have / has áll; itt is áll a be ige előtt, tehát egyszerű jelen szenvedő.",
+            "en": "The present perfect has have / has; here the verb is is before the participle, so it is the simple present passive.",
+            "es": "El presente perfecto lleva have / has; aquí el verbo es is antes del participio, así que es la pasiva en presente simple.",
+            "de": "Das Present Perfect hat have / has; hier steht is vor dem Partizip, also ist es das Passiv im Present Simple."
+          }
+        },
+        {
+          "text": {
+            "hu": "cselekvő jelen: az angol beszél",
+            "en": "active present: English speaks",
+            "es": "presente activo: el inglés habla",
+            "de": "aktives Präsens: Englisch spricht"
+          },
+          "wrong": {
+            "hu": "Az angol nyelv nem „beszél”; az „is spoken” azt mondja, hogy beszélik, vagyis szenvedő szerkezet.",
+            "en": "The English language does not “speak”; “is spoken” says that it is spoken, which is the passive.",
+            "es": "El idioma inglés no «habla»; «is spoken» dice que se habla, es decir la pasiva.",
+            "de": "Die englische Sprache „spricht“ nicht; „is spoken“ sagt, dass sie gesprochen wird, also das Passiv."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "pv-25",
+      "es": "The window was broken yesterday.",
+      "target": "was",
+      "tr": {
+        "hu": "Az ablakot tegnap törték be.",
+        "en": "The window was broken yesterday.",
+        "es": "La ventana se rompió ayer.",
+        "de": "Das Fenster wurde gestern zerbrochen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "folyamatos múlt: zajló cselekvés",
+            "en": "past continuous: an action in progress",
+            "es": "pasado continuo: una acción en marcha",
+            "de": "Past Continuous: eine laufende Handlung"
+          },
+          "wrong": {
+            "hu": "A folyamatos múltban was + ige-ing áll (was breaking); itt was + igenév (broken) van, vagyis szenvedő.",
+            "en": "The past continuous has was + verb-ing (was breaking); here it is was + participle (broken), which is the passive.",
+            "es": "El pasado continuo lleva was + verbo-ing (was breaking); aquí es was + participio (broken), es decir la pasiva.",
+            "de": "Das Past Continuous hat was + Verb-ing (was breaking); hier steht was + Partizip (broken), also das Passiv."
+          }
+        },
+        {
+          "text": {
+            "hu": "past perfect: korábbi esemény",
+            "en": "past perfect: an earlier event",
+            "es": "pasado perfecto: un hecho anterior",
+            "de": "Past Perfect: ein früheres Ereignis"
+          },
+          "wrong": {
+            "hu": "A past perfectben had áll (had broken); itt was áll, ezért ez a múlt idejű szenvedő.",
+            "en": "The past perfect has had (had broken); here it is was, so this is the past passive.",
+            "es": "El pasado perfecto lleva had (had broken); aquí es was, por eso esta es la pasiva en pasado.",
+            "de": "Das Past Perfect hat had (had broken); hier steht was, deshalb ist das das Passiv in der Vergangenheit."
+          }
+        },
+        {
+          "text": {
+            "hu": "múlt idejű szenvedő: was + igenév",
+            "en": "past passive: was + participle",
+            "es": "pasiva en pasado: was + participio",
+            "de": "Passiv in der Vergangenheit: was + Partizip"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "pv-26",
+      "es": "The song was written by my brother.",
+      "target": "by",
+      "tr": {
+        "hu": "A dalt a bátyám írta.",
+        "en": "The song was written by my brother.",
+        "es": "La canción fue escrita por mi hermano.",
+        "de": "Das Lied wurde von meinem Bruder geschrieben."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "eszköz: mivel csinálták",
+            "en": "a tool: what it was done with",
+            "es": "un instrumento: con qué se hizo",
+            "de": "ein Werkzeug: womit es gemacht wurde"
+          },
+          "wrong": {
+            "hu": "A bátyám személy, nem eszköz; a személyt, aki csinálta, a szenvedő szerkezetben by vezeti be.",
+            "en": "My brother is a person, not a tool; the person who did it is introduced by by in the passive.",
+            "es": "Mi hermano es una persona, no un instrumento; a la persona que lo hizo la introduce by en la pasiva.",
+            "de": "Mein Bruder ist eine Person, kein Werkzeug; die Person, die es getan hat, wird im Passiv mit by eingeleitet."
+          }
+        },
+        {
+          "text": {
+            "hu": "by: ki csinálta (az agens)",
+            "en": "by: who did it (the agent)",
+            "es": "by: quién lo hizo (el agente)",
+            "de": "by: wer es getan hat (der Agens)"
+          }
+        },
+        {
+          "text": {
+            "hu": "hely: hol történt",
+            "en": "place: where it happened",
+            "es": "lugar: dónde pasó",
+            "de": "Ort: wo es passiert ist"
+          },
+          "wrong": {
+            "hu": "A by itt nem helyet jelöl (nem „mellett”), hanem azt, hogy ki írta a dalt.",
+            "en": "By here does not mark a place (not “next to”) but who wrote the song.",
+            "es": "By aquí no marca un lugar (no «junto a») sino quién escribió la canción.",
+            "de": "By bezeichnet hier keinen Ort (nicht „neben“), sondern wer das Lied geschrieben hat."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "pv-27",
+      "es": "The report will be finished tomorrow.",
+      "target": "be",
+      "tr": {
+        "hu": "A jelentés holnapra elkészül.",
+        "en": "The report will be finished tomorrow.",
+        "es": "El reporte se va a terminar mañana.",
+        "de": "Der Bericht wird morgen fertig."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "jövő idejű szenvedő: will be + igenév",
+            "en": "future passive: will be + participle",
+            "es": "pasiva en futuro: will be + participio",
+            "de": "Passiv im Futur: will be + Partizip"
+          }
+        },
+        {
+          "text": {
+            "hu": "present perfect szenvedő: has been + igenév",
+            "en": "present perfect passive: has been + participle",
+            "es": "pasiva del presente perfecto: has been + participio",
+            "de": "Passiv im Present Perfect: has been + Partizip"
+          },
+          "wrong": {
+            "hu": "A will a jövőt jelöli; a has been a mostanáig tartó időt jelölné.",
+            "en": "Will marks the future; has been would mark time up to now.",
+            "es": "Will marca el futuro; has been marcaría el tiempo hasta ahora.",
+            "de": "Will kennzeichnet die Zukunft; has been würde Zeit bis jetzt kennzeichnen."
+          }
+        },
+        {
+          "text": {
+            "hu": "cselekvő jövő: a jelentés fejezi be",
+            "en": "active future: the report finishes",
+            "es": "futuro activo: el reporte termina",
+            "de": "aktives Futur: der Bericht beendet"
+          },
+          "wrong": {
+            "hu": "A be + igenév (finished) szenvedő szerkezet: valaki befejezi a jelentést, az nem fejezi be magát.",
+            "en": "Be + participle (finished) is the passive: someone finishes the report, it doesn’t finish itself.",
+            "es": "Be + participio (finished) es la pasiva: alguien termina el reporte, no se termina solo.",
+            "de": "Be + Partizip (finished) ist das Passiv: jemand beendet den Bericht, er beendet sich nicht selbst."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "pv-28",
+      "es": "My brother broke the window.",
+      "target": "broke",
+      "tr": {
+        "hu": "A bátyám betörte az ablakot.",
+        "en": "My brother broke the window.",
+        "es": "Mi hermano rompió la ventana.",
+        "de": "Mein Bruder hat das Fenster zerbrochen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "szenvedő szerkezet: az ablak az alany",
+            "en": "passive: the window is the subject",
+            "es": "pasiva: la ventana es el sujeto",
+            "de": "Passiv: das Fenster ist das Subjekt"
+          },
+          "wrong": {
+            "hu": "Itt a bátyám az alany, és ő csinál valamit; ez cselekvő szerkezet. A szenvedőben az ablak lenne az alany.",
+            "en": "Here my brother is the subject and does something; this is the active. In the passive the window would be the subject.",
+            "es": "Aquí mi hermano es el sujeto y hace algo; esto es la activa. En la pasiva la ventana sería el sujeto.",
+            "de": "Hier ist mein Bruder das Subjekt und tut etwas; das ist das Aktiv. Im Passiv wäre das Fenster das Subjekt."
+          }
+        },
+        {
+          "text": {
+            "hu": "cselekvő szerkezet: az alany csinálja a cselekvést",
+            "en": "active: the subject does the action",
+            "es": "activa: el sujeto hace la acción",
+            "de": "Aktiv: das Subjekt führt die Handlung aus"
+          }
+        },
+        {
+          "text": {
+            "hu": "present perfect: friss eredmény",
+            "en": "present perfect: a recent result",
+            "es": "presente perfecto: un resultado reciente",
+            "de": "Present Perfect: ein frisches Ergebnis"
+          },
+          "wrong": {
+            "hu": "A „broke” egyszerű múlt, nincs have + igenév; nem present perfect.",
+            "en": "“Broke” is the past simple, there is no have + participle; it is not the present perfect.",
+            "es": "«Broke» es el pasado simple, no hay have + participio; no es presente perfecto.",
+            "de": "„Broke“ ist das Past Simple, es gibt kein have + Partizip; es ist kein Present Perfect."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "pv-29",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "Se habla inglés aquí.",
+          "en": "English is spoken here."
+        },
+        {
+          "es": "La ventana fue rota ayer.",
+          "en": "The window was broken yesterday."
+        },
+        {
+          "es": "La canción fue escrita por mi hermano.",
+          "en": "The song was written by my brother."
+        },
+        {
+          "es": "El reporte se va a terminar mañana.",
+          "en": "The report will be finished tomorrow."
+        },
+        {
+          "es": "Estos carros se hacen en Puebla.",
+          "en": "These cars are made in Puebla."
+        },
+        {
+          "es": "El trabajo ya fue terminado.",
+          "en": "The work has been finished."
+        }
+      ]
+    },
+    {
+      "id": "pv-30",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "se habla",
+          "en": "is spoken"
+        },
+        {
+          "es": "fue hecho",
+          "en": "was made"
+        },
+        {
+          "es": "será enviado",
+          "en": "will be sent"
+        },
+        {
+          "es": "ha sido abierto",
+          "en": "has been opened"
+        },
+        {
+          "es": "por (el autor)",
+          "en": "by"
+        },
+        {
+          "es": "se vende",
+          "en": "is sold"
+        }
+      ]
+    }
+  ]
+}
