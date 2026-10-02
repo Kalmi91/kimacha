@@ -1,0 +1,1239 @@
+{
+  "schema": 2,
+  "topic": "first_conditional",
+  "level": "B1",
+  "title": {
+    "hu": "Első feltételes mód (If it rains, we will stay)",
+    "en": "The First Conditional (If it rains, we will stay)",
+    "es": "El primer condicional (If it rains, we will stay)",
+    "de": "Der erste Konditional (If it rains, we will stay)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "Az első feltételes mód egy lehetséges, valós jövőbeli helyzetről és annak következményéről szól: If + egyszerű jelen, will + alapige. „If it rains tomorrow, we will stay at home.” A spanyolban ugyanez a szerkezet (si llueve, nos quedamos / nos quedaremos), ezért ez könnyű: a lényeg az, hogy az if után soha nem áll will.",
+        "en": "The first conditional is about a possible, real situation in the future and its result: If + simple present, will + base verb. “If it rains tomorrow, we will stay at home.” Spanish has the same structure (si llueve, nos quedamos / nos quedaremos), so this one is easy: the key is that after if there is never a will.",
+        "es": "El primer condicional trata de una situación posible y real en el futuro y su resultado: If + presente simple, will + verbo base. «If it rains tomorrow, we will stay at home.» El español tiene la misma estructura (si llueve, nos quedamos / nos quedaremos), por eso esto es fácil: lo clave es que después de if nunca va will.",
+        "de": "Der erste Konditional handelt von einer möglichen, realen Situation in der Zukunft und ihrem Ergebnis: If + Present Simple, will + Grundform. „If it rains tomorrow, we will stay at home.“ Das Spanische hat dieselbe Struktur (si llueve, nos quedamos / nos quedaremos), deshalb ist das leicht: Wichtig ist, dass nach if nie ein will steht."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "fc-forms",
+      "title": {
+        "hu": "A szerkezet elemei",
+        "en": "The parts of the structure",
+        "es": "Las partes de la estructura",
+        "de": "Die Teile der Struktur"
+      },
+      "header": [
+        {
+          "hu": "Elem",
+          "en": "Part",
+          "es": "Elemento",
+          "de": "Teil"
+        },
+        {
+          "hu": "forma",
+          "en": "form",
+          "es": "forma",
+          "de": "Form"
+        }
+      ],
+      "rows": [
+        [
+          "la parte con if",
+          "present simple"
+        ],
+        [
+          "el resultado",
+          "will + base verb"
+        ],
+        [
+          "si no (if not)",
+          "unless"
+        ],
+        [
+          "en cuanto",
+          "as soon as"
+        ],
+        [
+          "una orden",
+          "imperative"
+        ],
+        [
+          "una posibilidad",
+          "can / may"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Alak",
+        "en": "Form",
+        "es": "Forma",
+        "de": "Form"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "If + egyszerű jelen (a feltétel), will + alapige (a következmény). Tagadás: don’t / doesn’t az if-ben, won’t a főmondatban.",
+            "en": "If + simple present (the condition), will + base verb (the result). Negative: don’t / doesn’t in the if part, won’t in the main clause.",
+            "es": "If + presente simple (la condición), will + verbo base (el resultado). Negación: don’t / doesn’t en la parte con if, won’t en la oración principal.",
+            "de": "If + Present Simple (die Bedingung), will + Grundform (das Ergebnis). Verneinung: don’t / doesn’t im if-Teil, won’t im Hauptsatz."
+          },
+          "examples": [
+            {
+              "es": "If you study, you will pass the exam.",
+              "tr": {
+                "hu": "Ha tanulsz, átmész a vizsgán.",
+                "en": "If you study, you will pass the exam.",
+                "es": "Si estudias, vas a pasar el examen.",
+                "de": "Wenn du lernst, bestehst du die Prüfung."
+              }
+            },
+            {
+              "es": "If you don't hurry, you will miss the bus.",
+              "tr": {
+                "hu": "Ha nem sietsz, lekésed a buszt.",
+                "en": "If you don't hurry, you will miss the bus.",
+                "es": "Si no te apuras, vas a perder el camión.",
+                "de": "Wenn du dich nicht beeilst, verpasst du den Bus."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A mondat két sorrendben állhat. Ha az if-es rész elöl van, vessző kell; ha hátul, nem kell: „If I have time, I will call you.” / „I will call you if I have time.”",
+            "en": "The sentence can have two orders. If the if part comes first, you need a comma; if it comes last, no comma: “If I have time, I will call you.” / “I will call you if I have time.”",
+            "es": "La oración puede tener dos órdenes. Si la parte con if va primero, lleva coma; si va al final, no: «If I have time, I will call you.» / «I will call you if I have time.»",
+            "de": "Der Satz kann zwei Reihenfolgen haben. Steht der if-Teil vorn, braucht man ein Komma; steht er hinten, keins: „If I have time, I will call you.“ / „I will call you if I have time.“"
+          },
+          "examples": [
+            {
+              "es": "If I have time, I will call you.",
+              "tr": {
+                "hu": "Ha lesz időm, felhívlak.",
+                "en": "If I have time, I will call you.",
+                "es": "Si tengo tiempo, te llamo.",
+                "de": "Wenn ich Zeit habe, rufe ich dich an."
+              }
+            },
+            {
+              "es": "I will call you if I have time.",
+              "tr": {
+                "hu": "Felhívlak, ha lesz időm.",
+                "en": "I will call you if I have time.",
+                "es": "Te llamo si tengo tiempo.",
+                "de": "Ich rufe dich an, wenn ich Zeit habe."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Mire használjuk, és mi változhat",
+        "en": "What we use it for, and what can change",
+        "es": "Para qué se usa y qué puede cambiar",
+        "de": "Wofür wir es benutzen und was sich ändern kann"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Valós, lehetséges jövőbeli helyzet és következménye: a feltétel megtörténhet, vagy nem.",
+            "en": "A real, possible future situation and its result: the condition may or may not happen.",
+            "es": "Una situación futura real y posible y su resultado: la condición puede ocurrir o no.",
+            "de": "Eine reale, mögliche Situation in der Zukunft und ihr Ergebnis: Die Bedingung kann eintreten oder nicht."
+          },
+          "examples": [
+            {
+              "es": "If it rains tomorrow, we will stay at home.",
+              "tr": {
+                "hu": "Ha holnap esik, otthon maradunk.",
+                "en": "If it rains tomorrow, we will stay at home.",
+                "es": "Si llueve mañana, nos quedamos en casa.",
+                "de": "Wenn es morgen regnet, bleiben wir zu Hause."
+              }
+            },
+            {
+              "es": "What will you do if you miss the train?",
+              "tr": {
+                "hu": "Mit fogsz csinálni, ha lekésed a vonatot?",
+                "en": "What will you do if you miss the train?",
+                "es": "¿Qué vas a hacer si pierdes el tren?",
+                "de": "Was wirst du tun, wenn du den Zug verpasst?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A főmondatban will helyett állhat felszólító mód (If you see Ana, tell her), vagy can / may (you can go home early).",
+            "en": "In the main clause, instead of will you can have an imperative (If you see Ana, tell her) or can / may (you can go home early).",
+            "es": "En la oración principal, en vez de will puede ir un imperativo (If you see Ana, tell her) o can / may (you can go home early).",
+            "de": "Im Hauptsatz kann statt will ein Imperativ stehen (If you see Ana, tell her) oder can / may (you can go home early)."
+          },
+          "examples": [
+            {
+              "es": "If you see Ana, tell her I said hello.",
+              "tr": {
+                "hu": "Ha látod Anát, mondd meg neki, hogy üdvözlöm.",
+                "en": "If you see Ana, tell her I said hello.",
+                "es": "Si ves a Ana, dile que le mando saludos.",
+                "de": "Wenn du Ana siehst, sag ihr schöne Grüße."
+              }
+            },
+            {
+              "es": "If you are tired, you can go home early.",
+              "tr": {
+                "hu": "Ha fáradt vagy, hamarabb hazamehetsz.",
+                "en": "If you are tired, you can go home early.",
+                "es": "Si estás cansado, puedes irte temprano a casa.",
+                "de": "Wenn du müde bist, kannst du früher nach Hause gehen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Unless = if not („hacsak nem”). When / as soon as időpontra mutat, és utána is egyszerű jelen áll.",
+            "en": "Unless = if not. When / as soon as point to a time, and after them too the simple present is used.",
+            "es": "Unless = if not («a menos que»). When / as soon as señalan un momento, y después de ellos también se usa el presente simple.",
+            "de": "Unless = if not („es sei denn“). When / as soon as zeigen auf einen Zeitpunkt, und auch danach steht das Present Simple."
+          },
+          "examples": [
+            {
+              "es": "I won't go unless you come with me.",
+              "tr": {
+                "hu": "Nem megyek, hacsak nem jössz velem.",
+                "en": "I won't go unless you come with me.",
+                "es": "No voy a ir a menos que vengas conmigo.",
+                "de": "Ich gehe nicht, es sei denn, du kommst mit."
+              }
+            },
+            {
+              "es": "I will tell you as soon as I know.",
+              "tr": {
+                "hu": "Megmondom, amint megtudom.",
+                "en": "I will tell you as soon as I know.",
+                "es": "Te aviso en cuanto sepa.",
+                "de": "Ich sage es dir, sobald ich es weiß."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Az if után soha nem áll will: nem „If it will rain”, hanem „If it rains”. A will csak a főmondatba kerül.",
+        "en": "After if there is never a will: not “If it will rain”, but “If it rains”. Will goes only in the main clause.",
+        "es": "Después de if nunca va will: no «If it will rain», sino «If it rains». Will va solo en la oración principal.",
+        "de": "Nach if steht nie will: nicht „If it will rain“, sondern „If it rains“. Will steht nur im Hauptsatz."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A spanyol „cuando llegue” (kötőmód) angolul „when I arrive”: a when, as soon as, before, after után a jövőt egyszerű jelen fejezi ki. Nem „when I will arrive”.",
+        "en": "The Spanish “cuando llegue” (subjunctive) is “when I arrive” in English: after when, as soon as, before, after the future is expressed by the simple present. Not “when I will arrive”.",
+        "es": "El «cuando llegue» (subjuntivo) del español es «when I arrive» en inglés: después de when, as soon as, before, after el futuro se expresa con el presente simple. No «when I will arrive».",
+        "de": "Das spanische „cuando llegue“ (Subjuntivo) heißt auf Englisch „when I arrive“: Nach when, as soon as, before, after wird die Zukunft durch das Present Simple ausgedrückt. Nicht „when I will arrive“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Ne keverd az első és a „zero” feltételes módot. Ami mindig igaz, abban mindkét rész egyszerű jelen: „If you heat ice, it melts.” Az első feltételes mód konkrét jövőbeli lehetőségről szól.",
+        "en": "Don’t mix the first and the “zero” conditional. For something that is always true, both parts are in the simple present: “If you heat ice, it melts.” The first conditional is about a concrete possibility in the future.",
+        "es": "No mezcles el primer condicional con el condicional «cero». Para algo que siempre es verdad, las dos partes van en presente simple: «If you heat ice, it melts.» El primer condicional trata de una posibilidad concreta en el futuro.",
+        "de": "Vermische den ersten Konditional nicht mit dem „Zero“-Konditional. Bei etwas, das immer stimmt, stehen beide Teile im Present Simple: „If you heat ice, it melts.“ Der erste Konditional handelt von einer konkreten Möglichkeit in der Zukunft."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "Az első feltételes mód valós, lehetséges jövőbeli helyzetről szól: «if» plusz egyszerű jelen, utána «will» plusz alapige. «If it rains tomorrow, we will stay at home». Az «if» után soha nem áll «will»: nem «If it will rain», hanem «If it rains». A főmondatban «will» helyett állhat felszólító mód is: «If you see Ana, tell her hello». A «unless» jelentése «if not»: «I won't go unless you come with me». A «when» és az «as soon as» után szintén egyszerű jelen áll: «I'll tell you as soon as I know».",
+    "en": "The first conditional is about a real, possible situation in the future: «if» plus the simple present, then «will» plus the base verb. «If it rains tomorrow, we will stay at home». After «if» there is never a «will»: not «If it will rain», but «If it rains». In the main clause an imperative can also replace «will»: «If you see Ana, tell her hello». «Unless» means «if not»: «I won't go unless you come with me». After «when» and «as soon as» the simple present is also used: «I'll tell you as soon as I know».",
+    "es": "El primer condicional trata de una situación real y posible en el futuro: «if» más presente simple, luego «will» más verbo base. «If it rains tomorrow, we will stay at home». Después de «if» nunca va «will»: no «If it will rain», sino «If it rains». En la oración principal también puede ir un imperativo en vez de «will»: «If you see Ana, tell her hello». «Unless» significa «if not»: «I won't go unless you come with me». Después de «when» y «as soon as» también se usa el presente simple: «I'll tell you as soon as I know».",
+    "de": "Der erste Konditional handelt von einer realen, möglichen Situation in der Zukunft: «if» plus Present Simple, dann «will» plus Grundform. «If it rains tomorrow, we will stay at home». Nach «if» steht nie «will»: nicht «If it will rain», sondern «If it rains». Im Hauptsatz kann statt «will» auch ein Imperativ stehen: «If you see Ana, tell her hello». «Unless» bedeutet «if not»: «I won't go unless you come with me». Nach «when» und «as soon as» steht ebenfalls das Present Simple: «I'll tell you as soon as I know»."
+  },
+  "glossary": [
+    {
+      "word": "stay",
+      "gloss": {
+        "hu": "marad",
+        "en": "to remain in a place",
+        "es": "quedarse",
+        "de": "bleiben"
+      }
+    },
+    {
+      "word": "unless",
+      "gloss": {
+        "hu": "hacsak nem (if not)",
+        "en": "if not",
+        "es": "a menos que (if not)",
+        "de": "es sei denn (if not)"
+      }
+    },
+    {
+      "word": "would",
+      "gloss": {
+        "hu": "lenne (elképzelt helyzet)",
+        "en": "used for imagined situations",
+        "es": "condicional (situación imaginada)",
+        "de": "würde (vorgestellte Situation)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "fc-01",
+      "sentence": "If it rains tomorrow, we ___ stay at home.",
+      "options": [
+        "stay",
+        "will stay",
+        "would stay"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az első feltételes mód főmondata will + alapige: we will stay.",
+        "en": "The main clause of the first conditional is will + base verb: we will stay.",
+        "es": "La oración principal del primer condicional es will + verbo base: we will stay.",
+        "de": "Der Hauptsatz des ersten Konditionals ist will + Grundform: we will stay."
+      },
+      "wrong": {
+        "stay": {
+          "hu": "Az egyszerű jelen egyedül nem fejez ki következményt a jövőre; a főmondatba will kell.",
+          "en": "The simple present alone does not express a result in the future; the main clause needs will.",
+          "es": "El presente simple solo no expresa un resultado en el futuro; la oración principal necesita will.",
+          "de": "Das Present Simple allein drückt kein Ergebnis in der Zukunft aus; der Hauptsatz braucht will."
+        },
+        "would stay": {
+          "hu": "A would stay a második feltételes módhoz való (elképzelt helyzet); itt valós lehetőség van, ezért will.",
+          "en": "Would stay belongs to the second conditional (an imagined situation); here there is a real possibility, so will.",
+          "es": "Would stay pertenece al segundo condicional (una situación imaginada); aquí hay una posibilidad real, por eso will.",
+          "de": "Would stay gehört zum zweiten Konditional (eine vorgestellte Situation); hier gibt es eine reale Möglichkeit, deshalb will."
+        }
+      },
+      "examples": [
+        "If it rains, I will take a taxi.",
+        "If it is cold, we will stay in."
+      ]
+    },
+    {
+      "id": "fc-02",
+      "sentence": "If you ___ hard, you will pass the exam.",
+      "options": [
+        "will study",
+        "studied",
+        "study"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Az if után egyszerű jelen áll: If you study.",
+        "en": "After if the simple present is used: If you study.",
+        "es": "Después de if se usa el presente simple: If you study.",
+        "de": "Nach if steht das Present Simple: If you study."
+      },
+      "wrong": {
+        "will study": {
+          "hu": "Az if után soha nem áll will; a feltétel egyszerű jelenben van.",
+          "en": "After if there is never a will; the condition is in the simple present.",
+          "es": "Después de if nunca va will; la condición va en presente simple.",
+          "de": "Nach if steht nie will; die Bedingung steht im Present Simple."
+        },
+        "studied": {
+          "hu": "A „studied” múlt idő; a feltétel jövőbeli lehetőség, ezért egyszerű jelen kell.",
+          "en": "“Studied” is past; the condition is a future possibility, so you need the simple present.",
+          "es": "«Studied» es pasado; la condición es una posibilidad futura, por eso hace falta el presente simple.",
+          "de": "„Studied“ ist Vergangenheit; die Bedingung ist eine Möglichkeit in der Zukunft, deshalb braucht man das Present Simple."
+        }
+      },
+      "examples": [
+        "If you work hard, you will win.",
+        "If she studies, she will pass."
+      ]
+    },
+    {
+      "id": "fc-03",
+      "sentence": "I will call you if I ___ time.",
+      "options": [
+        "have",
+        "will have",
+        "had"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az if utáni feltétel egyszerű jelen: if I have time.",
+        "en": "The condition after if is in the simple present: if I have time.",
+        "es": "La condición después de if va en presente simple: if I have time.",
+        "de": "Die Bedingung nach if steht im Present Simple: if I have time."
+      },
+      "wrong": {
+        "will have": {
+          "hu": "Az if után nem áll will; a feltételt egyszerű jelen fejezi ki (have).",
+          "en": "After if there is no will; the condition is expressed by the simple present (have).",
+          "es": "Después de if no va will; la condición se expresa con el presente simple (have).",
+          "de": "Nach if steht kein will; die Bedingung wird durch das Present Simple ausgedrückt (have)."
+        },
+        "had": {
+          "hu": "A „had” múlt idő, az elképzelt helyzetekhez (második feltételes mód) való; itt valós jövőbeli lehetőség van.",
+          "en": "“Had” is past, for imagined situations (the second conditional); here there is a real future possibility.",
+          "es": "«Had» es pasado, para situaciones imaginadas (segundo condicional); aquí hay una posibilidad real en el futuro.",
+          "de": "„Had“ ist Vergangenheit, für vorgestellte Situationen (zweiter Konditional); hier gibt es eine reale Möglichkeit in der Zukunft."
+        }
+      },
+      "examples": [
+        "I will help you if you ask.",
+        "She will come if she can."
+      ]
+    },
+    {
+      "id": "fc-04",
+      "sentence": "If she ___ late, we will start without her.",
+      "options": [
+        "will be",
+        "is",
+        "was"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az if utáni feltétel egyszerű jelen: if she is late.",
+        "en": "The condition after if is in the simple present: if she is late.",
+        "es": "La condición después de if va en presente simple: if she is late.",
+        "de": "Die Bedingung nach if steht im Present Simple: if she is late."
+      },
+      "wrong": {
+        "will be": {
+          "hu": "Az if után nem áll will; a „she is late” az egyszerű jelen alakja.",
+          "en": "After if there is no will; “she is late” is the simple present form.",
+          "es": "Después de if no va will; «she is late» es la forma del presente simple.",
+          "de": "Nach if steht kein will; „she is late“ ist die Form im Present Simple."
+        },
+        "was": {
+          "hu": "A „was” múlt idő; a feltétel jövőbeli lehetőség, ezért egyszerű jelen (is) kell.",
+          "en": "“Was” is past; the condition is a future possibility, so you need the simple present (is).",
+          "es": "«Was» es pasado; la condición es una posibilidad futura, por eso hace falta el presente simple (is).",
+          "de": "„Was“ ist Vergangenheit; die Bedingung ist eine Möglichkeit in der Zukunft, deshalb braucht man das Present Simple (is)."
+        }
+      },
+      "examples": [
+        "If he is ready, we will go.",
+        "If it is late, we will take a taxi."
+      ]
+    },
+    {
+      "id": "fc-05",
+      "sentence": "We won't go to the beach if it ___ sunny.",
+      "options": [
+        "will not be",
+        "wasn't",
+        "isn't"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Tagadó feltétel is egyszerű jelenben áll: if it isn’t sunny.",
+        "en": "A negative condition is also in the simple present: if it isn’t sunny.",
+        "es": "Una condición negativa también va en presente simple: if it isn’t sunny.",
+        "de": "Eine verneinte Bedingung steht ebenfalls im Present Simple: if it isn’t sunny."
+      },
+      "wrong": {
+        "will not be": {
+          "hu": "Az if után nem áll will, tagadásban sem; a feltétel: if it isn’t sunny.",
+          "en": "After if there is no will, not even in the negative; the condition is: if it isn’t sunny.",
+          "es": "Después de if no va will, ni siquiera en negativo; la condición es: if it isn’t sunny.",
+          "de": "Nach if steht kein will, auch nicht in der Verneinung; die Bedingung lautet: if it isn’t sunny."
+        },
+        "wasn't": {
+          "hu": "A „wasn’t” múlt idő; a feltétel jövőbeli lehetőség, ezért egyszerű jelen (isn’t) kell.",
+          "en": "“Wasn’t” is past; the condition is a future possibility, so you need the simple present (isn’t).",
+          "es": "«Wasn’t» es pasado; la condición es una posibilidad futura, por eso hace falta el presente simple (isn’t).",
+          "de": "„Wasn’t“ ist Vergangenheit; die Bedingung ist eine Möglichkeit in der Zukunft, deshalb braucht man das Present Simple (isn’t)."
+        }
+      },
+      "examples": [
+        "We won't go if it rains.",
+        "She won't come if she is tired."
+      ]
+    },
+    {
+      "id": "fc-06",
+      "sentence": "I won't go ___ you come with me.",
+      "options": [
+        "unless",
+        "if",
+        "because"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az unless jelentése „if not”: nem megyek, hacsak nem jössz velem.",
+        "en": "Unless means “if not”: I won’t go if you don’t come with me.",
+        "es": "Unless significa «if not»: no voy a ir a menos que vengas conmigo.",
+        "de": "Unless bedeutet „if not“: Ich gehe nicht, es sei denn, du kommst mit."
+      },
+      "wrong": {
+        "if": {
+          "hu": "Az „if” itt éppen az ellenkezőjét jelentené: nem megyek, ha eljössz velem.",
+          "en": "“If” here would mean the opposite: I won’t go if you come with me.",
+          "es": "«If» aquí significaría lo contrario: no voy a ir si vienes conmigo.",
+          "de": "„If“ würde hier das Gegenteil bedeuten: Ich gehe nicht, wenn du mitkommst."
+        },
+        "because": {
+          "hu": "A because okot ad meg, nem feltételt (nem megyek, mert eljössz velem); itt feltétel kell.",
+          "en": "Because gives a reason, not a condition (I won’t go because you come with me); here you need a condition.",
+          "es": "Because da una razón, no una condición (no voy a ir porque vienes conmigo); aquí hace falta una condición.",
+          "de": "Because nennt einen Grund, keine Bedingung (ich gehe nicht, weil du mitkommst); hier braucht man eine Bedingung."
+        }
+      },
+      "examples": [
+        "We won't win unless we try.",
+        "I won't call unless it is important."
+      ]
+    },
+    {
+      "id": "fc-07",
+      "sentence": "If you see Ana, ___ her I said hello.",
+      "options": [
+        "telling",
+        "tell",
+        "told"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A főmondatban felszólító mód is állhat: If you see Ana, tell her…",
+        "en": "The main clause can also be an imperative: If you see Ana, tell her…",
+        "es": "La oración principal también puede ser un imperativo: If you see Ana, tell her…",
+        "de": "Der Hauptsatz kann auch ein Imperativ sein: If you see Ana, tell her…"
+      },
+      "wrong": {
+        "telling": {
+          "hu": "A felszólításhoz alapige kell (tell), nem -ing alak.",
+          "en": "An instruction needs the base verb (tell), not an -ing form.",
+          "es": "Una instrucción necesita el verbo base (tell), no una forma -ing.",
+          "de": "Eine Anweisung braucht die Grundform (tell), keine -ing-Form."
+        },
+        "told": {
+          "hu": "A „told” múlt idő; a felszólítás alapigével készül (tell).",
+          "en": "“Told” is a past form; the imperative is made with the base verb (tell).",
+          "es": "«Told» es una forma de pasado; el imperativo se hace con el verbo base (tell).",
+          "de": "„Told“ ist eine Vergangenheitsform; der Imperativ wird mit der Grundform gebildet (tell)."
+        }
+      },
+      "examples": [
+        "If you are hungry, eat now.",
+        "If you need help, call me."
+      ]
+    },
+    {
+      "id": "fc-08",
+      "sentence": "If I ___ him, I will tell him.",
+      "options": [
+        "will see",
+        "saw",
+        "see"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Az if utáni feltétel egyszerű jelen: if I see him.",
+        "en": "The condition after if is in the simple present: if I see him.",
+        "es": "La condición después de if va en presente simple: if I see him.",
+        "de": "Die Bedingung nach if steht im Present Simple: if I see him."
+      },
+      "wrong": {
+        "will see": {
+          "hu": "Az if után nem áll will; a feltétel egyszerű jelen (see).",
+          "en": "After if there is no will; the condition is in the simple present (see).",
+          "es": "Después de if no va will; la condición va en presente simple (see).",
+          "de": "Nach if steht kein will; die Bedingung steht im Present Simple (see)."
+        },
+        "saw": {
+          "hu": "A „saw” múlt idő; a feltétel jövőbeli lehetőség, ezért egyszerű jelen (see) kell.",
+          "en": "“Saw” is past; the condition is a future possibility, so you need the simple present (see).",
+          "es": "«Saw» es pasado; la condición es una posibilidad futura, por eso hace falta el presente simple (see).",
+          "de": "„Saw“ ist Vergangenheit; die Bedingung ist eine Möglichkeit in der Zukunft, deshalb braucht man das Present Simple (see)."
+        }
+      },
+      "examples": [
+        "If I see her, I will say hello.",
+        "If we meet, we will talk."
+      ]
+    },
+    {
+      "id": "fc-09",
+      "sentence": "If you don't hurry, you ___ miss the bus.",
+      "options": [
+        "will",
+        "would",
+        "won't"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A következmény will + alapige: you will miss the bus.",
+        "en": "The result is will + base verb: you will miss the bus.",
+        "es": "El resultado es will + verbo base: you will miss the bus.",
+        "de": "Das Ergebnis ist will + Grundform: you will miss the bus."
+      },
+      "wrong": {
+        "would": {
+          "hu": "A would a második feltételes módhoz való; itt valós lehetőség van, ezért will.",
+          "en": "Would belongs to the second conditional; here there is a real possibility, so will.",
+          "es": "Would pertenece al segundo condicional; aquí hay una posibilidad real, por eso will.",
+          "de": "Would gehört zum zweiten Konditional; hier gibt es eine reale Möglichkeit, deshalb will."
+        },
+        "won't": {
+          "hu": "A won’t tagadás volna, de a mondat a lemaradást jósolja (you will miss), nem a ki nem maradást.",
+          "en": "Won’t would be a negative, but the sentence predicts missing the bus (you will miss), not the opposite.",
+          "es": "Won’t sería una negación, pero la oración predice que pierdes el camión (you will miss), no lo contrario.",
+          "de": "Won’t wäre eine Verneinung, aber der Satz sagt voraus, dass du den Bus verpasst (you will miss), nicht das Gegenteil."
+        }
+      },
+      "examples": [
+        "If you don't study, you will fail.",
+        "If we don't leave now, we will be late."
+      ]
+    },
+    {
+      "id": "fc-10",
+      "sentence": "What will you do if it ___ tomorrow?",
+      "options": [
+        "will rain",
+        "rains",
+        "rained"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az if utáni feltétel itt is egyszerű jelen: if it rains.",
+        "en": "The condition after if is again in the simple present: if it rains.",
+        "es": "La condición después de if va también en presente simple: if it rains.",
+        "de": "Die Bedingung nach if steht auch hier im Present Simple: if it rains."
+      },
+      "wrong": {
+        "will rain": {
+          "hu": "Az if után nem áll will, kérdésben sem; a feltétel: if it rains.",
+          "en": "After if there is no will, not even in a question; the condition is: if it rains.",
+          "es": "Después de if no va will, ni siquiera en una pregunta; la condición es: if it rains.",
+          "de": "Nach if steht kein will, auch nicht in einer Frage; die Bedingung lautet: if it rains."
+        },
+        "rained": {
+          "hu": "A „rained” múlt idő; a tomorrow jövőre utal, ezért egyszerű jelen kell.",
+          "en": "“Rained” is past; tomorrow points to the future, so you need the simple present.",
+          "es": "«Rained» es pasado; tomorrow apunta al futuro, por eso hace falta el presente simple.",
+          "de": "„Rained“ ist Vergangenheit; tomorrow verweist auf die Zukunft, deshalb braucht man das Present Simple."
+        }
+      },
+      "examples": [
+        "What will you do if she calls?",
+        "What will we do if it snows?"
+      ]
+    },
+    {
+      "id": "fc-11",
+      "sentence": "I will help you if you ___ me.",
+      "options": [
+        "will ask",
+        "asked",
+        "ask"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Az if utáni feltétel egyszerű jelen: if you ask me.",
+        "en": "The condition after if is in the simple present: if you ask me.",
+        "es": "La condición después de if va en presente simple: if you ask me.",
+        "de": "Die Bedingung nach if steht im Present Simple: if you ask me."
+      },
+      "wrong": {
+        "will ask": {
+          "hu": "Az if után nem áll will; a feltétel egyszerű jelen (ask).",
+          "en": "After if there is no will; the condition is in the simple present (ask).",
+          "es": "Después de if no va will; la condición va en presente simple (ask).",
+          "de": "Nach if steht kein will; die Bedingung steht im Present Simple (ask)."
+        },
+        "asked": {
+          "hu": "Az „asked” múlt idő; a feltétel jövőbeli lehetőség, ezért egyszerű jelen (ask) kell.",
+          "en": "“Asked” is past; the condition is a future possibility, so you need the simple present (ask).",
+          "es": "«Asked» es pasado; la condición es una posibilidad futura, por eso hace falta el presente simple (ask).",
+          "de": "„Asked“ ist Vergangenheit; die Bedingung ist eine Möglichkeit in der Zukunft, deshalb braucht man das Present Simple (ask)."
+        }
+      },
+      "examples": [
+        "I will go if you go.",
+        "She will wait if you call."
+      ]
+    },
+    {
+      "id": "fc-12",
+      "sentence": "If we ___ now, we will arrive on time.",
+      "options": [
+        "leave",
+        "will leave",
+        "left"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az if utáni feltétel egyszerű jelen: if we leave now.",
+        "en": "The condition after if is in the simple present: if we leave now.",
+        "es": "La condición después de if va en presente simple: if we leave now.",
+        "de": "Die Bedingung nach if steht im Present Simple: if we leave now."
+      },
+      "wrong": {
+        "will leave": {
+          "hu": "Az if után nem áll will; a feltétel egyszerű jelen (leave).",
+          "en": "After if there is no will; the condition is in the simple present (leave).",
+          "es": "Después de if no va will; la condición va en presente simple (leave).",
+          "de": "Nach if steht kein will; die Bedingung steht im Present Simple (leave)."
+        },
+        "left": {
+          "hu": "A „left” múlt idő; a feltétel jövőbeli lehetőség, ezért egyszerű jelen (leave) kell.",
+          "en": "“Left” is past; the condition is a future possibility, so you need the simple present (leave).",
+          "es": "«Left» es pasado; la condición es una posibilidad futura, por eso hace falta el presente simple (leave).",
+          "de": "„Left“ ist Vergangenheit; die Bedingung ist eine Möglichkeit in der Zukunft, deshalb braucht man das Present Simple (leave)."
+        }
+      },
+      "examples": [
+        "If we run, we will be on time.",
+        "If we go now, we will be early."
+      ]
+    },
+    {
+      "id": "fc-13",
+      "sentence": "She will be angry if you ___ her birthday.",
+      "options": [
+        "will forget",
+        "forget",
+        "forgot"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az if utáni feltétel egyszerű jelen: if you forget.",
+        "en": "The condition after if is in the simple present: if you forget.",
+        "es": "La condición después de if va en presente simple: if you forget.",
+        "de": "Die Bedingung nach if steht im Present Simple: if you forget."
+      },
+      "wrong": {
+        "will forget": {
+          "hu": "Az if után nem áll will; a feltétel egyszerű jelen (forget).",
+          "en": "After if there is no will; the condition is in the simple present (forget).",
+          "es": "Después de if no va will; la condición va en presente simple (forget).",
+          "de": "Nach if steht kein will; die Bedingung steht im Present Simple (forget)."
+        },
+        "forgot": {
+          "hu": "A „forgot” múlt idő; a feltétel jövőbeli lehetőség, ezért egyszerű jelen (forget) kell.",
+          "en": "“Forgot” is past; the condition is a future possibility, so you need the simple present (forget).",
+          "es": "«Forgot» es pasado; la condición es una posibilidad futura, por eso hace falta el presente simple (forget).",
+          "de": "„Forgot“ ist Vergangenheit; die Bedingung ist eine Möglichkeit in der Zukunft, deshalb braucht man das Present Simple (forget)."
+        }
+      },
+      "examples": [
+        "He will be sad if you leave.",
+        "They will be happy if you come."
+      ]
+    },
+    {
+      "id": "fc-14",
+      "sentence": "If you don't study, you ___ the exam.",
+      "options": [
+        "fail",
+        "would fail",
+        "will fail"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A következmény will + alapige: you will fail the exam.",
+        "en": "The result is will + base verb: you will fail the exam.",
+        "es": "El resultado es will + verbo base: you will fail the exam.",
+        "de": "Das Ergebnis ist will + Grundform: you will fail the exam."
+      },
+      "wrong": {
+        "fail": {
+          "hu": "Az alapige egyedül nem fejez ki jövőbeli következményt; a főmondatba will kell.",
+          "en": "The base verb alone does not express a future result; the main clause needs will.",
+          "es": "El verbo base solo no expresa un resultado futuro; la oración principal necesita will.",
+          "de": "Die Grundform allein drückt kein zukünftiges Ergebnis aus; der Hauptsatz braucht will."
+        },
+        "would fail": {
+          "hu": "A would fail a második feltételes módhoz való; itt valós lehetőség van, ezért will.",
+          "en": "Would fail belongs to the second conditional; here there is a real possibility, so will.",
+          "es": "Would fail pertenece al segundo condicional; aquí hay una posibilidad real, por eso will.",
+          "de": "Would fail gehört zum zweiten Konditional; hier gibt es eine reale Möglichkeit, deshalb will."
+        }
+      },
+      "examples": [
+        "You will be late.",
+        "We will miss the movie."
+      ]
+    },
+    {
+      "id": "fc-15",
+      "sentence": "We ___ go to the beach if the weather is good.",
+      "options": [
+        "will",
+        "did",
+        "was"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A főmondat will + alapige: we will go.",
+        "en": "The main clause is will + base verb: we will go.",
+        "es": "La oración principal es will + verbo base: we will go.",
+        "de": "Der Hauptsatz ist will + Grundform: we will go."
+      },
+      "wrong": {
+        "did": {
+          "hu": "A did után alapige jön, de a did múltat jelöl; itt jövőbeli következmény kell (will go).",
+          "en": "Did is followed by the base verb, but did marks the past; here you need a future result (will go).",
+          "es": "Did va seguido del verbo base, pero did marca el pasado; aquí hace falta un resultado futuro (will go).",
+          "de": "Auf did folgt die Grundform, aber did kennzeichnet die Vergangenheit; hier braucht man ein zukünftiges Ergebnis (will go)."
+        },
+        "was": {
+          "hu": "A „was go” nem létező szerkezet; a jövőbeli következményhez will + alapige kell.",
+          "en": "“Was go” is not a possible structure; a future result needs will + base verb.",
+          "es": "«Was go» no es una estructura posible; un resultado futuro necesita will + verbo base.",
+          "de": "„Was go“ ist keine mögliche Struktur; ein zukünftiges Ergebnis braucht will + Grundform."
+        }
+      },
+      "examples": [
+        "We will walk if it is sunny.",
+        "They will come if you call."
+      ]
+    },
+    {
+      "id": "fc-16",
+      "sentence": "We will go to the park ___ it rains.",
+      "options": [
+        "if",
+        "unless",
+        "because"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Az unless = if not: elmegyünk a parkba, hacsak nem esik.",
+        "en": "Unless = if not: we will go to the park unless it rains.",
+        "es": "Unless = if not: iremos al parque a menos que llueva.",
+        "de": "Unless = if not: Wir gehen in den Park, es sei denn, es regnet."
+      },
+      "wrong": {
+        "if": {
+          "hu": "Az „if it rains” azt jelentené, hogy esőben megyünk a parkba; az unless adja az ellenkezőjét.",
+          "en": "“If it rains” would mean we go to the park when it rains; unless gives the opposite.",
+          "es": "«If it rains» significaría que vamos al parque cuando llueve; unless da lo contrario.",
+          "de": "„If it rains“ würde heißen, dass wir bei Regen in den Park gehen; unless gibt das Gegenteil."
+        },
+        "because": {
+          "hu": "A because okot ad meg, nem feltételt (azért megyünk, mert esik); itt feltétel kell.",
+          "en": "Because gives a reason, not a condition (we go because it rains); here you need a condition.",
+          "es": "Because da una razón, no una condición (vamos porque llueve); aquí hace falta una condición.",
+          "de": "Because nennt einen Grund, keine Bedingung (wir gehen, weil es regnet); hier braucht man eine Bedingung."
+        }
+      },
+      "examples": [
+        "I will stay unless you need me.",
+        "She will pass unless she is sick."
+      ]
+    },
+    {
+      "id": "fc-17",
+      "sentence": "If it ___ cold tonight, I will wear a jacket.",
+      "options": [
+        "will be",
+        "was",
+        "is"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Az if utáni feltétel egyszerű jelen: if it is colder.",
+        "en": "The condition after if is in the simple present: if it is colder.",
+        "es": "La condición después de if va en presente simple: if it is colder.",
+        "de": "Die Bedingung nach if steht im Present Simple: if it is colder."
+      },
+      "wrong": {
+        "will be": {
+          "hu": "Az if után nem áll will; a feltétel egyszerű jelen (is).",
+          "en": "After if there is no will; the condition is in the simple present (is).",
+          "es": "Después de if no va will; la condición va en presente simple (is).",
+          "de": "Nach if steht kein will; die Bedingung steht im Present Simple (is)."
+        },
+        "was": {
+          "hu": "A „was” múlt idő; a feltétel jövőbeli lehetőség, ezért egyszerű jelen (is) kell.",
+          "en": "“Was” is past; the condition is a future possibility, so you need the simple present (is).",
+          "es": "«Was» es pasado; la condición es una posibilidad futura, por eso hace falta el presente simple (is).",
+          "de": "„Was“ ist Vergangenheit; die Bedingung ist eine Möglichkeit in der Zukunft, deshalb braucht man das Present Simple (is)."
+        }
+      },
+      "examples": [
+        "If it is hot, I will go swimming.",
+        "If it is late, I will call."
+      ]
+    },
+    {
+      "id": "fc-18",
+      "kind": "form",
+      "verb": "forma",
+      "person": "la parte con if",
+      "answer": "present simple",
+      "table": "fc-forms"
+    },
+    {
+      "id": "fc-19",
+      "kind": "form",
+      "verb": "forma",
+      "person": "el resultado",
+      "answer": "will + base verb",
+      "table": "fc-forms"
+    },
+    {
+      "id": "fc-20",
+      "kind": "form",
+      "verb": "forma",
+      "person": "si no (if not)",
+      "answer": "unless",
+      "table": "fc-forms"
+    },
+    {
+      "id": "fc-21",
+      "kind": "form",
+      "verb": "forma",
+      "person": "en cuanto",
+      "answer": "as soon as",
+      "table": "fc-forms"
+    },
+    {
+      "id": "fc-22",
+      "kind": "form",
+      "verb": "forma",
+      "person": "una orden",
+      "answer": "imperative",
+      "table": "fc-forms"
+    },
+    {
+      "id": "fc-23",
+      "kind": "form",
+      "verb": "forma",
+      "person": "una posibilidad",
+      "answer": "can / may",
+      "table": "fc-forms"
+    },
+    {
+      "kind": "why",
+      "id": "fc-24",
+      "es": "If it rains, we will stay home.",
+      "target": "rains",
+      "tr": {
+        "hu": "Ha esik, otthon maradunk.",
+        "en": "If it rains, we will stay home.",
+        "es": "Si llueve, nos quedamos en casa.",
+        "de": "Wenn es regnet, bleiben wir zu Hause."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "egyszerű jövő: will az if után",
+            "en": "future: will after if",
+            "es": "futuro: will después de if",
+            "de": "Zukunft: will nach if"
+          },
+          "wrong": {
+            "hu": "Az if után soha nem áll will; a feltétel egyszerű jelenben van, a will a főmondatban.",
+            "en": "After if there is never a will; the condition is in the simple present, will is in the main clause.",
+            "es": "Después de if nunca va will; la condición va en presente simple, will va en la oración principal.",
+            "de": "Nach if steht nie will; die Bedingung steht im Present Simple, will im Hauptsatz."
+          }
+        },
+        {
+          "text": {
+            "hu": "egyszerű múlt: lezárt esemény",
+            "en": "past simple: a finished event",
+            "es": "pasado simple: un hecho terminado",
+            "de": "Past Simple: ein abgeschlossenes Ereignis"
+          },
+          "wrong": {
+            "hu": "A „rains” nem múlt idő; ez jelen idejű alak, ami a jövőbeli feltételt fejezi ki.",
+            "en": "“Rains” is not past; it is a present form that expresses the future condition.",
+            "es": "«Rains» no es pasado; es una forma de presente que expresa la condición futura.",
+            "de": "„Rains“ ist keine Vergangenheit; es ist eine Präsensform, die die zukünftige Bedingung ausdrückt."
+          }
+        },
+        {
+          "text": {
+            "hu": "egyszerű jelen az if után: a feltétel jövőbeli lehetőség",
+            "en": "simple present after if: a future possibility",
+            "es": "presente simple después de if: una posibilidad futura",
+            "de": "Present Simple nach if: eine Möglichkeit in der Zukunft"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "fc-25",
+      "es": "I will call you if I have time.",
+      "target": "will",
+      "tr": {
+        "hu": "Felhívlak, ha lesz időm.",
+        "en": "I will call you if I have time.",
+        "es": "Te llamo si tengo tiempo.",
+        "de": "Ich rufe dich an, wenn ich Zeit habe."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "will + alapige: a feltétel következménye",
+            "en": "will + base verb: the result of the condition",
+            "es": "will + verbo base: el resultado de la condición",
+            "de": "will + Grundform: das Ergebnis der Bedingung"
+          }
+        },
+        {
+          "text": {
+            "hu": "would + alapige: elképzelt következmény",
+            "en": "would + base verb: an imagined result",
+            "es": "would + verbo base: un resultado imaginado",
+            "de": "would + Grundform: ein vorgestelltes Ergebnis"
+          },
+          "wrong": {
+            "hu": "A would elképzelt helyzetekhez való; itt a lehetőség valós, ezért will áll.",
+            "en": "Would is for imagined situations; here the possibility is real, so will is used.",
+            "es": "Would es para situaciones imaginadas; aquí la posibilidad es real, por eso se usa will.",
+            "de": "Would ist für vorgestellte Situationen; hier ist die Möglichkeit real, deshalb steht will."
+          }
+        },
+        {
+          "text": {
+            "hu": "present perfect: kész eredmény",
+            "en": "present perfect: a finished result",
+            "es": "presente perfecto: un resultado terminado",
+            "de": "Present Perfect: ein fertiges Ergebnis"
+          },
+          "wrong": {
+            "hu": "A „will call” jövőt jelöl; nincs have + igenév, tehát nem present perfect.",
+            "en": "“Will call” marks the future; there is no have + participle, so it is not the present perfect.",
+            "es": "«Will call» marca el futuro; no hay have + participio, así que no es presente perfecto.",
+            "de": "„Will call“ kennzeichnet die Zukunft; es gibt kein have + Partizip, also ist es kein Present Perfect."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "fc-26",
+      "es": "I won't go unless you come with me.",
+      "target": "unless",
+      "tr": {
+        "hu": "Nem megyek, hacsak nem jössz velem.",
+        "en": "I won't go unless you come with me.",
+        "es": "No voy a ir a menos que vengas conmigo.",
+        "de": "Ich gehe nicht, es sei denn, du kommst mit."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "if: ugyanaz, mint az unless",
+            "en": "if: the same as unless",
+            "es": "if: lo mismo que unless",
+            "de": "if: dasselbe wie unless"
+          },
+          "wrong": {
+            "hu": "Az if és az unless ellentétes jelentésű: az unless azt jelenti, hogy if not.",
+            "en": "If and unless have opposite meanings: unless means if not.",
+            "es": "If y unless tienen significados opuestos: unless significa if not.",
+            "de": "If und unless haben entgegengesetzte Bedeutungen: unless bedeutet if not."
+          }
+        },
+        {
+          "text": {
+            "hu": "unless = if not: kivétel feltétele",
+            "en": "unless = if not: the condition of an exception",
+            "es": "unless = if not: la condición de una excepción",
+            "de": "unless = if not: die Bedingung einer Ausnahme"
+          }
+        },
+        {
+          "text": {
+            "hu": "because: ok",
+            "en": "because: a reason",
+            "es": "because: una razón",
+            "de": "because: ein Grund"
+          },
+          "wrong": {
+            "hu": "Az unless nem okot ad meg, hanem feltételt: ha nem jössz, nem megyek.",
+            "en": "Unless does not give a reason but a condition: if you don’t come, I don’t go.",
+            "es": "Unless no da una razón sino una condición: si no vienes, no voy.",
+            "de": "Unless nennt keinen Grund, sondern eine Bedingung: Wenn du nicht kommst, gehe ich nicht."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "fc-27",
+      "es": "If you see Ana, tell her hello.",
+      "target": "tell",
+      "tr": {
+        "hu": "Ha látod Anát, köszöntsd őt.",
+        "en": "If you see Ana, tell her hello.",
+        "es": "Si ves a Ana, dile hola.",
+        "de": "Wenn du Ana siehst, sag ihr hallo."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "egyszerű jövő: will + alapige",
+            "en": "future: will + base verb",
+            "es": "futuro: will + verbo base",
+            "de": "Zukunft: will + Grundform"
+          },
+          "wrong": {
+            "hu": "A főmondatban nincs will, hanem felszólítás áll; ez is lehetséges az első feltételes módban.",
+            "en": "There is no will in the main clause but an imperative; this is also possible in the first conditional.",
+            "es": "No hay will en la oración principal sino un imperativo; esto también es posible en el primer condicional.",
+            "de": "Im Hauptsatz steht kein will, sondern ein Imperativ; das ist im ersten Konditional auch möglich."
+          }
+        },
+        {
+          "text": {
+            "hu": "felszólító mód a főmondatban",
+            "en": "an imperative in the main clause",
+            "es": "un imperativo en la oración principal",
+            "de": "ein Imperativ im Hauptsatz"
+          }
+        },
+        {
+          "text": {
+            "hu": "egyszerű múlt: lezárt esemény",
+            "en": "past simple: a finished event",
+            "es": "pasado simple: un hecho terminado",
+            "de": "Past Simple: ein abgeschlossenes Ereignis"
+          },
+          "wrong": {
+            "hu": "A „tell” alapige, nem múlt alak (told); a mondat felszólítás a jövőbeli helyzetre.",
+            "en": "“Tell” is the base verb, not a past form (told); the sentence is an instruction for a future situation.",
+            "es": "«Tell» es el verbo base, no una forma de pasado (told); la oración es una instrucción para una situación futura.",
+            "de": "„Tell“ ist die Grundform, keine Vergangenheitsform (told); der Satz ist eine Anweisung für eine zukünftige Situation."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "fc-28",
+      "es": "If you heat ice, it melts.",
+      "target": "melts",
+      "tr": {
+        "hu": "Ha megmelegíted a jeget, megolvad.",
+        "en": "If you heat ice, it melts.",
+        "es": "Si calientas el hielo, se derrite.",
+        "de": "Wenn man Eis erhitzt, schmilzt es."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "első feltételes mód: konkrét jövőbeli lehetőség",
+            "en": "first conditional: a concrete future possibility",
+            "es": "primer condicional: una posibilidad futura concreta",
+            "de": "erster Konditional: eine konkrete Möglichkeit in der Zukunft"
+          },
+          "wrong": {
+            "hu": "A mondat nem konkrét jövőbeli esetről szól, hanem mindig igaz tényről; ezért mindkét rész egyszerű jelen.",
+            "en": "The sentence is not about a concrete future case but about a fact that is always true; that is why both parts are in the simple present.",
+            "es": "La oración no trata de un caso futuro concreto sino de un hecho siempre verdadero; por eso las dos partes van en presente simple.",
+            "de": "Der Satz handelt nicht von einem konkreten Fall in der Zukunft, sondern von einer immer wahren Tatsache; deshalb stehen beide Teile im Present Simple."
+          }
+        },
+        {
+          "text": {
+            "hu": "zero feltételes mód: mindig igaz tény",
+            "en": "zero conditional: a fact that is always true",
+            "es": "condicional cero: un hecho siempre verdadero",
+            "de": "Zero-Konditional: eine immer wahre Tatsache"
+          }
+        },
+        {
+          "text": {
+            "hu": "egyszerű múlt: lezárt esemény",
+            "en": "past simple: a finished event",
+            "es": "pasado simple: un hecho terminado",
+            "de": "Past Simple: ein abgeschlossenes Ereignis"
+          },
+          "wrong": {
+            "hu": "A „melts” jelen idejű alak, nem múlt; az olvadás mindig igaz, nem egy lezárt esemény.",
+            "en": "“Melts” is a present form, not a past one; melting is always true, not a finished event.",
+            "es": "«Melts» es una forma de presente, no de pasado; derretirse es siempre verdad, no un hecho terminado.",
+            "de": "„Melts“ ist eine Präsensform, keine Vergangenheitsform; das Schmelzen gilt immer, es ist kein abgeschlossenes Ereignis."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "fc-29",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "Si llueve mañana, nos quedamos en casa.",
+          "en": "If it rains tomorrow, we will stay at home."
+        },
+        {
+          "es": "Si estudias, vas a aprobar.",
+          "en": "If you study, you will pass."
+        },
+        {
+          "es": "Te llamo si tengo tiempo.",
+          "en": "I will call you if I have time."
+        },
+        {
+          "es": "No voy a ir a menos que vengas.",
+          "en": "I won't go unless you come."
+        },
+        {
+          "es": "Si ves a Ana, dile hola.",
+          "en": "If you see Ana, say hello."
+        },
+        {
+          "es": "¿Qué vas a hacer si pierdes el tren?",
+          "en": "What will you do if you miss the train?"
+        }
+      ]
+    },
+    {
+      "id": "fc-30",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "si",
+          "en": "if"
+        },
+        {
+          "es": "a menos que",
+          "en": "unless"
+        },
+        {
+          "es": "en cuanto",
+          "en": "as soon as"
+        },
+        {
+          "es": "cuando",
+          "en": "when"
+        },
+        {
+          "es": "no iré",
+          "en": "I won't go"
+        },
+        {
+          "es": "ella se quedará",
+          "en": "she will stay"
+        }
+      ]
+    }
+  ]
+}
