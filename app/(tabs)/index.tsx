@@ -22,7 +22,7 @@ import {
   type ArticlePick,
 } from '@/lib/articlePicker';
 import { sm2Review, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
-import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC, nextPcicNewBonus, pcicNewBudget, thinSentences, dropOrphanCards, countFinishedToday, dayProgressPercent } from '@/lib/pcicSession';
+import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC, nextPcicNewBonus, pcicSessionNewLimit, thinSentences, dropOrphanCards, countFinishedToday, dayProgressPercent } from '@/lib/pcicSession';
 import { cardsForViewLevel } from '@/lib/pcicLevels';
 import { posOf } from '@/lib/pcicPos';
 import FeedbackButton from '@/components/FeedbackModal';
@@ -178,6 +178,8 @@ export default function PcicScreen() {
     // (csak spanyol célnyelven van igeidő-kapu).
     const grammarRows = dir === 'es' ? await db.getGameProgress(GRAMMAR_PROGRESS_KEY) : [];
     const introducedToday = cards.filter((c) => c.introducedAt === day).length;
+    // FB452: a napi keret NAPI, a ma bevezetetteket minden szintről számoljuk (lib/pcicSession.ts pcicSessionNewLimit).
+    const introducedAllLevels = dropOrphanCards(rawCards, (id) => findPcicItem(id) !== undefined).filter((c) => c.introducedAt === day).length;
     setTenses(resolvedTensesFromLessons(doneGrammarTopicProgress(dir, grammarRows).keys()));
     setLevel(lvl);
     setAllLevelCards(rawCards);
@@ -192,7 +194,7 @@ export default function PcicScreen() {
     setAgainDelaySec(delaySec);
     setToday(day);
     setAllCards(new Map(cards.map((c) => [c.itemId, c])));
-    setQueue(pickSm2Session(cards, pcicIntroOrder(newOrder, lvl), day, pcicNewBudget({ limit: newLimit, bonus, introducedToday })));
+    setQueue(pickSm2Session(cards, pcicIntroOrder(newOrder, lvl), day, pcicSessionNewLimit({ limit: newLimit, bonus, introducedAllLevels, introducedThisLevel: introducedToday })));
     setTypedAnswer('');
     setGrade(null);
     setSessionAnswered(0);
@@ -283,7 +285,10 @@ export default function PcicScreen() {
   const doneToday = countDoneToday([...allCards.values()], today);
   // FB387/395 (PLAN-fb0924 1b. lépés): a fejléc mutassa, MIBŐL áll a mai
   // bevezetés (szó vs. mondat), plusz a mai teljes keret (limit + bónusz).
-  const introducedTodayByKind = countIntroducedTodayByKind([...allCards.values()], today, (id) => findPcicItem(id)?.kind);
+  // FB452: a napi keret NAPI, ezért a "ma bevezetett" minden szintről számol: a nézet szintjén az élő állapot
+  // (allCards, minden értékelés frissíti), a többi szinten a betöltéskori (allLevelCards).
+  const cardsAllLevels = [...allCards.values(), ...allLevelCards.filter((c) => !allCards.has(c.itemId) && findPcicItem(c.itemId) !== undefined)];
+  const introducedTodayByKind = countIntroducedTodayByKind(cardsAllLevels, today, (id) => findPcicItem(id)?.kind);
   const todayNewBudget = dailyNewLimit + pcicBonus;
 
   // SZ2 (SZAVAK.md): a DB-írás + számlálók itt, a queue-léptetés (advance) a
@@ -418,7 +423,8 @@ export default function PcicScreen() {
   const handleMoreNew = () => {
     const activeCards = [...allCards.values()];
     const introducedToday = activeCards.filter((c) => c.introducedAt === today).length;
-    const next = nextPcicNewBonus({ limit: dailyNewLimit, bonus: pcicBonus, introducedToday });
+    const introducedAllLevels = cardsAllLevels.filter((c) => c.introducedAt === today).length;
+    const next = nextPcicNewBonus({ limit: dailyNewLimit, bonus: pcicBonus, introducedToday: introducedAllLevels });
     setPcicBonus(next);
     getDb().setPcicNewBonus(next, today).catch(() => {});
     setQueue(
@@ -426,7 +432,7 @@ export default function PcicScreen() {
         activeCards,
         pcicIntroOrder(newOrder, level),
         today,
-        pcicNewBudget({ limit: dailyNewLimit, bonus: next, introducedToday })
+        pcicSessionNewLimit({ limit: dailyNewLimit, bonus: next, introducedAllLevels, introducedThisLevel: introducedToday })
       )
     );
   };
