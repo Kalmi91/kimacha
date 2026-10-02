@@ -18,17 +18,19 @@ import {
 } from '../syllabus';
 
 // The B1 and B2 lessons written so far, in syllabus order (B2 grows lesson by lesson).
+const C1_WRITTEN: string[] = [];
 const B2_WRITTEN: string[] = ['past_perfect_continuous', 'future_continuous_perfect', 'ability_past', 'third_conditional', 'wish_if_only', 'conditional_connectors', 'passive_advanced', 'causative_have', 'reporting_verbs', 'non_defining_relative', 'quantifiers', 'comparison_advanced', 'linking_contrast', 'purpose_result', 'phrasal_verbs'];
 const B1_WRITTEN: string[] = ['present_perfect_vs_past', 'present_perfect_continuous', 'past_continuous', 'past_perfect', 'used_to', 'will_vs_going_to', 'first_conditional', 'second_conditional', 'modals_obligation_advice', 'modals_deduction', 'passive_voice', 'defining_relative_clauses', 'reported_speech', 'gerund_vs_infinitive', 'question_tags'];
 
 describe('English grammar syllabus (lang = en)', () => {
-  it('has the 51 grammar topics of the English topic tree, levels A1, A2, B1 and B2', () => {
-    expect(syllabusLevels('en')).toEqual(['A1', 'A2', 'B1', 'B2']);
+  it('has the 63 grammar topics of the English topic tree, levels A1, A2, B1, B2 and C1', () => {
+    expect(syllabusLevels('en')).toEqual(['A1', 'A2', 'B1', 'B2', 'C1']);
     expect(syllabusForLevel('A1', 'en')).toHaveLength(13);
     expect(syllabusForLevel('A2', 'en')).toHaveLength(8);
     expect(syllabusForLevel('B1', 'en')).toHaveLength(15);
     expect(syllabusForLevel('B2', 'en')).toHaveLength(15);
-    expect(lessonCoverage('en').planned).toBe(51);
+    expect(syllabusForLevel('C1', 'en')).toHaveLength(12);
+    expect(lessonCoverage('en').planned).toBe(63);
   });
 
   it('opens A1 with basic_verbs, then the A1 topics in tree order', () => {
@@ -44,6 +46,7 @@ describe('English grammar syllabus (lang = en)', () => {
     // B1.1-B1.4 are vocabulary sublevels, only the grammar ones are units.
     expect(unitsForLevel('B1', 'en').map((u) => u.id)).toEqual(['B1.5', 'B1.6', 'B1.7', 'B1.8']);
     expect(unitsForLevel('B2', 'en').map((u) => u.id)).toEqual(['B2.1', 'B2.2', 'B2.3', 'B2.4']);
+    expect(unitsForLevel('C1', 'en').map((u) => u.id)).toEqual(['C1.1', 'C1.2', 'C1.3', 'C1.4']);
     for (const lvl of syllabusLevels('en')) {
       for (const unit of unitsForLevel(lvl, 'en')) {
         expect(topicsForUnit(unit.id, 'en').length).toBeGreaterThan(0);
@@ -56,7 +59,7 @@ describe('English grammar syllabus (lang = en)', () => {
   });
 
   it('has only the lessons written so far, and nothing is orphaned', () => {
-    expect(lessonCoverage('en').written).toBe(21 + B1_WRITTEN.length + B2_WRITTEN.length);
+    expect(lessonCoverage('en').written).toBe(21 + B1_WRITTEN.length + B2_WRITTEN.length + C1_WRITTEN.length);
     expect(hasLesson('en', 'to_be')).toBe(true);
     expect(hasLesson('en', 'articles')).toBe(true);
     expect(hasLesson('en', 'present_simple')).toBe(true);
@@ -98,8 +101,8 @@ describe('English grammar syllabus (lang = en)', () => {
     expect(nextWrittenTopic('en', 'present_perfect')?.id).toBe('comparatives');
     expect(nextWrittenTopic('en', 'comparatives')?.id).toBe('superlatives');
     expect(nextWrittenTopic('en', 'superlatives')?.id).toBe('must_have_to');
-    for (const id of [...B1_WRITTEN, ...B2_WRITTEN]) expect(hasLesson('en', id)).toBe(true);
-    const chain = ['must_have_to', ...B1_WRITTEN, ...B2_WRITTEN];
+    for (const id of [...B1_WRITTEN, ...B2_WRITTEN, ...C1_WRITTEN]) expect(hasLesson('en', id)).toBe(true);
+    const chain = ['must_have_to', ...B1_WRITTEN, ...B2_WRITTEN, ...C1_WRITTEN];
     chain.forEach((id, i) => expect(nextWrittenTopic('en', id)?.id).toBe(chain[i + 1]));
     expect(orphanLessons('en')).toEqual([]);
   });
