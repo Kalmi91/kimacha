@@ -35,10 +35,10 @@
           "de": "Satz"
         },
         {
-          "hu": "auxiliar",
-          "en": "helper verb",
-          "es": "auxiliar",
-          "de": "Hilfsverb"
+          "hu": "a tag segédigéje",
+          "en": "the helper verb of the tag",
+          "es": "auxiliar del tag",
+          "de": "Hilfsverb des Tags"
         }
       ],
       "rows": [
@@ -63,7 +63,7 @@
           "have"
         ],
         [
-          "Let us go",
+          "Let's go",
           "shall"
         ]
       ]
@@ -886,7 +886,7 @@
     {
       "id": "qt-18",
       "kind": "form",
-      "verb": "auxiliar",
+      "verb": "auxiliar del tag",
       "person": "It is cold",
       "answer": "is",
       "table": "qt-forms"
@@ -894,7 +894,7 @@
     {
       "id": "qt-19",
       "kind": "form",
-      "verb": "auxiliar",
+      "verb": "auxiliar del tag",
       "person": "You like coffee",
       "answer": "do",
       "table": "qt-forms"
@@ -902,7 +902,7 @@
     {
       "id": "qt-20",
       "kind": "form",
-      "verb": "auxiliar",
+      "verb": "auxiliar del tag",
       "person": "She can swim",
       "answer": "can",
       "table": "qt-forms"
@@ -910,7 +910,7 @@
     {
       "id": "qt-21",
       "kind": "form",
-      "verb": "auxiliar",
+      "verb": "auxiliar del tag",
       "person": "They went home",
       "answer": "did",
       "table": "qt-forms"
@@ -918,7 +918,7 @@
     {
       "id": "qt-22",
       "kind": "form",
-      "verb": "auxiliar",
+      "verb": "auxiliar del tag",
       "person": "We have finished",
       "answer": "have",
       "table": "qt-forms"
@@ -926,8 +926,8 @@
     {
       "id": "qt-23",
       "kind": "form",
-      "verb": "auxiliar",
-      "person": "Let us go",
+      "verb": "auxiliar del tag",
+      "person": "Let's go",
       "answer": "shall",
       "table": "qt-forms"
     },
@@ -1018,16 +1018,16 @@
         },
         {
           "text": {
-            "hu": "segédige: do a jelen idejű kérdéshez",
-            "en": "helper verb: do for a present question",
-            "es": "auxiliar: do para una pregunta en presente",
-            "de": "Hilfsverb: do für eine Frage im Präsens"
+            "hu": "do, mert a mondat múlt idejű",
+            "en": "do, because the sentence is in the past",
+            "es": "do, porque la oración está en pasado",
+            "de": "do, weil der Satz in der Vergangenheit steht"
           },
           "wrong": {
-            "hu": "Ez igaz, de nem a lényeg: a tag szabálya, hogy tagadó mondat után állító tag jön.",
-            "en": "That is true, but it is not the point: the rule of the tag is that a negative sentence takes a positive tag.",
-            "es": "Eso es cierto, pero no es lo esencial: la regla del tag es que después de una oración negativa va un tag afirmativo.",
-            "de": "Das stimmt, ist aber nicht der Kern: Die Regel des Tags ist, dass nach einem verneinten Satz ein bejahter Tag folgt."
+            "hu": "Nem múlt idő: a „don’t like” jelen idejű, a do a jelen idejű mondat segédigéje.",
+            "en": "The sentence is not in the past: “don’t like” is present, and do is the helper of a present sentence.",
+            "es": "La oración no está en pasado: «don’t like» es presente, y do es el auxiliar de una oración en presente.",
+            "de": "Der Satz steht nicht in der Vergangenheit: „don’t like“ ist Präsens, und do ist das Hilfsverb eines Satzes im Präsens."
           }
         }
       ],
@@ -1233,7 +1233,7 @@
           "en": "do you?"
         },
         {
-          "es": "¿no puede? (con can)",
+          "es": "sabe nadar, ¿no? (con can)",
           "en": "can't she?"
         },
         {

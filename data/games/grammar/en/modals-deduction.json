@@ -48,7 +48,7 @@
         ],
         [
           "estoy seguro de que no es verdad",
-          "cannot"
+          "can't"
         ],
         [
           "es posible, pero no seguro",
@@ -64,7 +64,7 @@
         ],
         [
           "seguro de que no pasó",
-          "cannot have"
+          "can't have"
         ]
       ]
     },
@@ -768,15 +768,15 @@
       },
       "wrong": {
         "can't": {
-          "hu": "A can’t azt jelentené, hogy biztosan nem alszanak; a mondat csak a válasz hiányát látja.",
-          "en": "Can’t would mean they are surely not busy; the sentence only sees that nobody answers.",
-          "es": "Can’t significaría que seguro no están dormidos; la oración solo ve que nadie contesta.",
+          "hu": "A can’t azt jelentené, hogy biztosan nem alszanak; a mondat csak a válasz hiányát látja (lehet, hogy elfoglaltak).",
+          "en": "Can’t would mean they are surely not busy; the sentence only sees that nobody answers (they might be busy).",
+          "es": "Can’t significaría que seguro no están ocupados; la oración solo ve que nadie contesta.",
           "de": "Can’t würde heißen, dass sie sicher nicht schlafen; der Satz sieht nur, dass niemand antwortet."
         },
         "mustn't": {
           "hu": "A mustn’t tilalmat jelentene (nem szabad aludniuk), nem lehetőséget.",
           "en": "Mustn’t would be a prohibition (they must not be busy), not a possibility.",
-          "es": "Mustn’t sería una prohibición (no deben estar dormidos), no una posibilidad.",
+          "es": "Mustn’t sería una prohibición (no deben estar ocupados), no una posibilidad.",
           "de": "Mustn’t wäre ein Verbot (sie dürfen nicht schlafen), keine Möglichkeit."
         }
       },
@@ -866,7 +866,11 @@
       "kind": "form",
       "verb": "forma",
       "person": "estoy seguro de que no es verdad",
-      "answer": "cannot",
+      "answer": "can't",
+      "accept": [
+        "cannot",
+        "can not"
+      ],
       "table": "md-forms"
     },
     {
@@ -875,6 +879,10 @@
       "verb": "forma",
       "person": "es posible, pero no seguro",
       "answer": "might",
+      "accept": [
+        "may",
+        "could"
+      ],
       "table": "md-forms"
     },
     {
@@ -883,6 +891,9 @@
       "verb": "forma",
       "person": "es posible que no sea verdad",
       "answer": "might not",
+      "accept": [
+        "may not"
+      ],
       "table": "md-forms"
     },
     {
@@ -898,7 +909,11 @@
       "kind": "form",
       "verb": "forma",
       "person": "seguro de que no pasó",
-      "answer": "cannot have",
+      "answer": "can't have",
+      "accept": [
+        "cannot have",
+        "can not have"
+      ],
       "table": "md-forms"
     },
     {
@@ -1203,16 +1218,16 @@
           "en": "might"
         },
         {
-          "es": "a lo mejor",
-          "en": "may"
-        },
-        {
-          "es": "es posible que",
-          "en": "could"
-        },
-        {
           "es": "debió de",
           "en": "must have"
+        },
+        {
+          "es": "no pudo haber",
+          "en": "can't have"
+        },
+        {
+          "es": "tal vez no",
+          "en": "might not"
         }
       ]
     }

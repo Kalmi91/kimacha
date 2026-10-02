@@ -435,7 +435,7 @@
     },
     {
       "id": "ut-07",
-      "sentence": "I ___ get up at six every day.",
+      "sentence": "These days, I ___ get up at six.",
       "options": [
         "use to",
         "usually",
@@ -443,10 +443,10 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Jelen idejű szokásra usually való: I usually get up at six. A used to csak múltra jó.",
-        "en": "For a present habit use usually: I usually get up at six. Used to is only for the past.",
-        "es": "Para un hábito presente se usa usually: I usually get up at six. Used to es solo para el pasado.",
-        "de": "Für eine Gewohnheit in der Gegenwart nimmt man usually: I usually get up at six. Used to gilt nur für die Vergangenheit."
+        "hu": "A „these days” mai szokásra utal, jelen idejű szokásra usually való: I usually get up at six. A used to csak múltra jó.",
+        "en": "For a present habit (“these days”) use usually: I usually get up at six. Used to is only for the past.",
+        "es": "Para un hábito presente («these days») se usa usually: I usually get up at six. Used to es solo para el pasado.",
+        "de": "Für eine Gewohnheit in der Gegenwart („these days“) nimmt man usually: I usually get up at six. Used to gilt nur für die Vergangenheit."
       },
       "wrong": {
         "use to": {
@@ -456,10 +456,10 @@
           "de": "Eine Präsensform „use to“ existiert nicht (das spanische „suelo“ wird nicht so übersetzt)."
         },
         "used to": {
-          "hu": "A used to múltbeli, ma már nem igaz szokást jelent; a mondat mai szokásról szól (every day).",
-          "en": "Used to means a past habit that is no longer true; the sentence is about a habit today (every day).",
-          "es": "Used to significa un hábito del pasado que ya no es verdad; la oración trata de un hábito de hoy (every day).",
-          "de": "Used to bedeutet eine frühere Gewohnheit, die nicht mehr stimmt; der Satz handelt von einer heutigen Gewohnheit (every day)."
+          "hu": "A used to múltbeli, ma már nem igaz szokást jelent; a mondat mai szokásról szól (these days).",
+          "en": "Used to means a past habit that is no longer true; the sentence is about a habit today (these days).",
+          "es": "Used to significa un hábito del pasado que ya no es verdad; la oración trata de un hábito de hoy (these days).",
+          "de": "Used to bedeutet eine frühere Gewohnheit, die nicht mehr stimmt; der Satz handelt von einer heutigen Gewohnheit (these days)."
         }
       },
       "examples": [
@@ -837,6 +837,9 @@
       "verb": "forma",
       "person": "la negación en el pasado",
       "answer": "did not use to",
+      "accept": [
+        "didn't use to"
+      ],
       "table": "ut-aux"
     },
     {
@@ -845,6 +848,9 @@
       "verb": "forma",
       "person": "una acción repetida en el pasado",
       "answer": "would",
+      "accept": [
+        "used to"
+      ],
       "table": "ut-aux"
     },
     {
@@ -853,16 +859,19 @@
       "verb": "forma",
       "person": "un hábito de hoy",
       "answer": "usually",
+      "accept": [
+        "normally"
+      ],
       "table": "ut-aux"
     },
     {
       "kind": "why",
       "id": "ut-24",
-      "es": "I used to play football every day.",
+      "es": "I used to play soccer every day.",
       "target": "used",
       "tr": {
         "hu": "Régen minden nap fociztam.",
-        "en": "I used to play football every day.",
+        "en": "I used to play soccer every day.",
         "es": "Antes jugaba fútbol todos los días.",
         "de": "Früher habe ich jeden Tag Fußball gespielt."
       },
@@ -1162,7 +1171,7 @@
         },
         {
           "es": "ya no",
-          "en": "not any more"
+          "en": "not anymore"
         },
         {
           "es": "cada verano",

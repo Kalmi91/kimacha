@@ -266,10 +266,10 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Kérés és ígéret: a will az udvarias kérésnél is jó („Will you help me?”). Mindkettőnek van tagadó alakja: won’t (will not) és isn’t / aren’t going to: „I won’t tell anyone”, „She isn’t going to come.”",
-        "en": "A request and a promise: will also works for a polite request (“Will you help me?”). Both have a negative: won’t (will not) and isn’t / aren’t going to: “I won’t tell anyone”, “She isn’t going to come.”",
-        "es": "Una petición y una promesa: will también sirve para una petición cortés («Will you help me?»). Los dos tienen forma negativa: won’t (will not) y isn’t / aren’t going to: «I won’t tell anyone», «She isn’t going to come.»",
-        "de": "Eine Bitte und ein Versprechen: will passt auch für eine höfliche Bitte („Will you help me?“). Beide haben eine Verneinung: won’t (will not) und isn’t / aren’t going to: „I won’t tell anyone“, „She isn’t going to come.“"
+        "hu": "Kérés és tagadás: a will az udvarias kérésnél is jó („Will you help me?”). A tagadó alakok: won’t (will not) és isn’t / aren’t going to: „I won’t tell anyone”, „She isn’t going to come.”",
+        "en": "Requests and negatives: will also works for a polite request (“Will you help me?”). The negatives: won’t (will not) and isn’t / aren’t going to: “I won’t tell anyone”, “She isn’t going to come.”",
+        "es": "Peticiones y negaciones: will también sirve para una petición cortés («Will you help me?»). Las formas negativas: won’t (will not) y isn’t / aren’t going to: «I won’t tell anyone», «She isn’t going to come.»",
+        "de": "Bitten und Verneinungen: will passt auch für eine höfliche Bitte („Will you help me?“). Die Verneinungen: won’t (will not) und isn’t / aren’t going to: „I won’t tell anyone“, „She isn’t going to come.“"
       }
     }
   ],
@@ -308,10 +308,10 @@
       },
       "wrong": {
         "will": {
-          "hu": "A will véleményt vagy spontán döntést fejez ki; itt látható bizonyíték van, ezért going to jobb.",
-          "en": "Will expresses an opinion or a spontaneous decision; here there is visible evidence, so going to is better.",
-          "es": "Will expresa una opinión o una decisión espontánea; aquí hay una evidencia visible, por eso es mejor going to.",
-          "de": "Will drückt eine Meinung oder eine spontane Entscheidung aus; hier gibt es sichtbare Beweise, deshalb ist going to besser."
+          "hu": "A will véleményt vagy spontán döntést fejez ki; itt látható bizonyíték van, ezért going to jobb. (A will is hallható, de itt going to-t várunk.)",
+          "en": "Will expresses an opinion or a spontaneous decision; here there is visible evidence, so going to is better. (Will is also heard, but here going to is expected.)",
+          "es": "Will expresa una opinión o una decisión espontánea; aquí hay una evidencia visible, por eso es mejor going to. (Will también se oye, pero aquí se espera going to.)",
+          "de": "Will drückt eine Meinung oder eine spontane Entscheidung aus; hier gibt es sichtbare Beweise, deshalb ist going to besser. (Will hört man auch, aber hier wird going to erwartet.)"
         },
         "rains": {
           "hu": "A „rains” egyszerű jelen, szokásra való; előrejelzéshez going to kell.",
@@ -376,10 +376,10 @@
       },
       "wrong": {
         "will": {
-          "hu": "A will pillanatnyi döntésre vagy véleményre jó; a már megvett jegyek előre eldöntött tervet mutatnak.",
-          "en": "Will suits a decision made now or an opinion; the tickets already bought show a plan decided in advance.",
-          "es": "Will sirve para una decisión de ahora o una opinión; los boletos ya comprados muestran un plan decidido de antemano.",
-          "de": "Will passt zu einer Entscheidung jetzt oder einer Meinung; die schon gekauften Tickets zeigen einen im Voraus beschlossenen Plan."
+          "hu": "A will pillanatnyi döntésre vagy véleményre jó; a már megvett jegyek előre eldöntött tervet mutatnak. (A will is hallható, de itt going to-t várunk.)",
+          "en": "Will suits a decision made now or an opinion; the tickets already bought show a plan decided in advance. (Will is also heard, but here going to is expected.)",
+          "es": "Will sirve para una decisión de ahora o una opinión; los boletos ya comprados muestran un plan decidido de antemano. (Will también se oye, pero aquí se espera going to.)",
+          "de": "Will passt zu einer Entscheidung jetzt oder einer Meinung; die schon gekauften Tickets zeigen einen im Voraus beschlossenen Plan. (Will hört man auch, aber hier wird going to erwartet.)"
         },
         "visit": {
           "hu": "A „we visit” egyszerű jelen, menetrendre vagy szokásra való; az előre eldöntött tervhez going to kell.",
@@ -395,18 +395,18 @@
     },
     {
       "id": "wg-04",
-      "sentence": "I promise I ___ call you tomorrow.",
+      "sentence": "I promise I ___ never forget you.",
       "options": [
         "am going to",
         "will",
-        "call"
+        "forget"
       ],
       "correct": 1,
       "why": {
-        "hu": "Az ígéretnél will áll: I promise I will call you.",
-        "en": "A promise takes will: I promise I will call you.",
-        "es": "Una promesa lleva will: I promise I will call you.",
-        "de": "Ein Versprechen steht mit will: I promise I will call you."
+        "hu": "Az ígéretnél will áll: I promise I will never forget you.",
+        "en": "A promise takes will: I promise I will never forget you.",
+        "es": "Una promesa lleva will: I promise I will never forget you.",
+        "de": "Ein Versprechen steht mit will: I promise I will never forget you."
       },
       "wrong": {
         "am going to": {
@@ -415,11 +415,11 @@
           "es": "Going to es un plan, no una promesa; la palabra «promise» va con will.",
           "de": "Going to ist ein Plan, kein Versprechen; das Wort „promise“ gehört zu will."
         },
-        "call": {
-          "hu": "Az alapige egyedül nem fejez ki jövőt; ígérethez will kell: I will call.",
-          "en": "The base verb alone does not express the future; a promise needs will: I will call.",
-          "es": "El verbo base solo no expresa futuro; una promesa necesita will: I will call.",
-          "de": "Die Grundform allein drückt keine Zukunft aus; ein Versprechen braucht will: I will call."
+        "forget": {
+          "hu": "Az alapige egyedül nem fejez ki ígéretet; ígérethez will kell: I will never forget you.",
+          "en": "The base verb alone does not express a promise; a promise needs will: I will never forget you.",
+          "es": "El verbo base solo no expresa una promesa; una promesa necesita will: I will never forget you.",
+          "de": "Die Grundform allein drückt kein Versprechen aus; ein Versprechen braucht will: I will never forget you."
         }
       },
       "examples": [
@@ -682,10 +682,10 @@
       },
       "wrong": {
         "will": {
-          "hu": "A will spontán döntést jelezne; a vizsgára tanulás előre eldöntött terv, ezért going to.",
-          "en": "Will would show a spontaneous decision; studying for an exam is a plan decided in advance, so going to.",
-          "es": "Will mostraría una decisión espontánea; estudiar para un examen es un plan decidido de antemano, por eso going to.",
-          "de": "Will würde eine spontane Entscheidung zeigen; das Lernen für eine Prüfung ist ein im Voraus beschlossener Plan, deshalb going to."
+          "hu": "A will spontán döntést jelezne; a vizsgára tanulás előre eldöntött terv, ezért going to. (A will is hallható, de itt going to-t várunk.)",
+          "en": "Will would show a spontaneous decision; studying for an exam is a plan decided in advance, so going to. (Will is also heard, but here going to is expected.)",
+          "es": "Will mostraría una decisión espontánea; estudiar para un examen es un plan decidido de antemano, por eso going to. (Will también se oye, pero aquí se espera going to.)",
+          "de": "Will würde eine spontane Entscheidung zeigen; das Lernen für eine Prüfung ist ein im Voraus beschlossener Plan, deshalb going to. (Will hört man auch, aber hier wird going to erwartet.)"
         },
         "study": {
           "hu": "A „study” egyszerű jelen, szokásra való; a tervhez going to kell.",
@@ -705,7 +705,7 @@
       "options": [
         "do",
         "am",
-        "will"
+        "have"
       ],
       "correct": 1,
       "why": {
@@ -721,11 +721,11 @@
           "es": "«Do» responde a preguntas que empiezan con Do; la respuesta corta a Are you going to…? es el verbo be.",
           "de": "„Do“ antwortet auf Fragen mit Do; die Kurzantwort auf Are you going to…? ist das Verb be."
         },
-        "will": {
-          "hu": "A will a Will you…? kérdésre válaszolna; az Are you going to…? kérdésre am / are a rövid válasz.",
-          "en": "Will answers Will you…?; the short answer to Are you going to…? is am / are.",
-          "es": "Will responde a Will you…?; la respuesta corta a Are you going to…? es am / are.",
-          "de": "Will antwortet auf Will you…?; die Kurzantwort auf Are you going to…? ist am / are."
+        "have": {
+          "hu": "A have a present perfect segédigéje; az Are you going to…? kérdésre a be ige (am / are) a rövid válasz.",
+          "en": "Have is the helper of the present perfect; the short answer to Are you going to…? is the verb be (am / are).",
+          "es": "Have es el auxiliar del presente perfecto; la respuesta corta a Are you going to…? es el verbo be (am / are).",
+          "de": "Have ist das Hilfsverb des Present Perfect; die Kurzantwort auf Are you going to…? ist das Verb be (am / are)."
         }
       },
       "examples": [
@@ -907,6 +907,9 @@
       "verb": "forma",
       "person": "un arreglo ya fijado con alguien",
       "answer": "present continuous",
+      "accept": [
+        "going to"
+      ],
       "table": "wg-uses"
     },
     {
@@ -1215,8 +1218,8 @@
           "en": "I'll help you"
         },
         {
-          "es": "no lo voy a decir",
-          "en": "I won't tell"
+          "es": "no se lo voy a decir a nadie (promesa)",
+          "en": "I won't tell anyone"
         },
         {
           "es": "¿qué vas a hacer?",
