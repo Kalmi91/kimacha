@@ -8,6 +8,7 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { Card, brutalInputStyle } from '@/components/grammar/Brutal';
 import ResultBadge from '@/components/ResultBadge';
 import DockedAction, { DOCK_RESERVE, FAB_CLEARANCE } from '@/components/learn/DockedAction';
+import SentenceGradeRow from '@/components/learn/SentenceGradeRow';
 import { t } from '@/lib/i18n';
 import { gradeSentenceAnswer, suggestedGrade } from '@/lib/pcicMatch';
 import { stripSentencePunct } from '@/lib/sentenceCards';
@@ -31,6 +32,8 @@ interface Props {
   dockLift?: number;
   dockH?: number;
   onDockHeight?: (h: number) => void;
+  // FB455: a szókártya "Didn't know" / "Knew it" gombsora Check után (felülbírálja a kijelzett értékelést).
+  gradeButtons?: boolean;
 }
 
 export default function TypedSentenceCard({
@@ -43,6 +46,7 @@ export default function TypedSentenceCard({
   dockLift = 0,
   dockH = DOCK_RESERVE,
   onDockHeight,
+  gradeButtons = false,
 }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
@@ -51,6 +55,8 @@ export default function TypedSentenceCard({
 
   const [typed, setTyped] = useState('');
   const [result, setResult] = useState<'correct' | 'wrong' | null>(null);
+  // FB455: a Check rossz válaszra ítélt; a helyes mondat felülbírálás ("Knew it") után is látszik.
+  const [missed, setMissed] = useState(false);
 
   useEffect(() => {
     if (sourceSpeechLocale) speak(sourceSentence, sourceSpeechLocale);
@@ -65,6 +71,7 @@ export default function TypedSentenceCard({
     const grade = gradeSentenceAnswer(stripSentencePunct(typed), stripSentencePunct(targetSentence), strictAccents);
     const isCorrect = suggestedGrade(grade) === 'good';
     setResult(isCorrect ? 'correct' : 'wrong');
+    setMissed(!isCorrect);
     // FB412 (PLAN-fb0929 5. lépés): a helyes mondat MINDIG elhangzik, jó és rossz válasz után is.
     if (speechLocale) {
       stopSpeech();
@@ -108,10 +115,12 @@ export default function TypedSentenceCard({
             {...answerInputProps}
           />
 
-          {result === 'wrong' && <Text style={[styles.correctLine, { color: colors.success }]}>{targetSentence}</Text>}
+          {result && (result === 'wrong' || missed) && <Text style={[styles.correctLine, { color: colors.success }]}>{targetSentence}</Text>}
 
           {/* FB403: minden kártyán ugyanaz a jó / rossz jelzés (szín + alak + ✓/✗ + szöveg). */}
           {result && <ResultBadge correct={result === 'correct'} label={result === 'correct' ? s.card.correct : s.card.wrong} />}
+
+          {result && gradeButtons && <SentenceGradeRow colors={colors} result={result} onOverride={(ok) => setResult(ok ? 'correct' : 'wrong')} />}
         </Card>
       </ScrollView>
 

@@ -124,6 +124,85 @@ describe('TypedSentenceCard (begépelős)', () => {
   });
 });
 
+// FB455: a szókártya Check utáni "Didn't know" / "Knew it" gombsora a mondatkártyákon is; a
+// koppintás a kijelzett értékelést írja át, a Next ezt adja tovább (a mondatkártya nem ír SRS-t).
+describe('FB455: Didn\'t know / Knew it a mondatkártyákon', () => {
+  const easy = {
+    sourceSentence: 'The book and the table.',
+    targetWords: ['el', 'libro', 'y', 'la', 'mesa'],
+    trapWords: ['los'],
+  };
+  const typed = { sourceSentence: 'The book and the table.', targetSentence: 'El libro y la mesa.' };
+
+  it('összerakós: Check előtt nincsenek, rossz építés után megjelennek, a "Knew it" jóra írja át', () => {
+    const onResult = jest.fn();
+    const r = render(<EasySentenceCard {...easy} onResult={onResult} gradeButtons />);
+    expect(r.queryByTestId('sentence-grades')).toBeNull();
+    fireEvent.press(r.getAllByText('mesa')[0]);
+    fireEvent.press(r.getByText('Check'));
+    expect(r.getByText('Wrong')).toBeTruthy();
+    expect(r.getByText("Didn't know")).toBeTruthy();
+    fireEvent.press(r.getByText('Knew it'));
+    expect(r.getByText('Correct!')).toBeTruthy();
+    expect(r.queryByText('Wrong')).toBeNull();
+    // a helyes mondat a felülbírálás után is látszik
+    expect(r.getByText('el libro y la mesa')).toBeTruthy();
+    fireEvent.press(r.getByText(/Next/));
+    expect(onResult).toHaveBeenCalledWith(true);
+  });
+
+  it('összerakós: jó építés után a "Didn\'t know" rosszra írja át', () => {
+    const onResult = jest.fn();
+    const r = render(<EasySentenceCard {...easy} onResult={onResult} gradeButtons />);
+    for (const w of easy.targetWords) fireEvent.press(r.getAllByText(w)[0]);
+    fireEvent.press(r.getByText('Check'));
+    expect(r.getByText('Correct!')).toBeTruthy();
+    fireEvent.press(r.getByText("Didn't know"));
+    expect(r.getByText('Wrong')).toBeTruthy();
+    fireEvent.press(r.getByText(/Next/));
+    expect(onResult).toHaveBeenCalledWith(false);
+  });
+
+  it('begépelős: rossz válasz után megjelennek, a "Knew it" jóra írja át, a Next ezt adja tovább', () => {
+    const onResult = jest.fn();
+    const r = render(<TypedSentenceCard {...typed} onResult={onResult} gradeButtons />);
+    expect(r.queryByTestId('sentence-grades')).toBeNull();
+    fireEvent.changeText(r.getByPlaceholderText('Type the sentence'), 'el gato');
+    fireEvent.press(r.getByText('✓ Check'));
+    expect(r.getByText('Wrong')).toBeTruthy();
+    expect(r.getByText("Didn't know")).toBeTruthy();
+    fireEvent.press(r.getByText('Knew it'));
+    expect(r.getByText('Correct!')).toBeTruthy();
+    expect(r.queryByText('Wrong')).toBeNull();
+    expect(r.getByText('El libro y la mesa.')).toBeTruthy();
+    fireEvent.press(r.getByText(/Next/));
+    expect(onResult).toHaveBeenCalledWith(true);
+  });
+
+  it('begépelős: jó válasz után a "Didn\'t know" rosszra írja át', () => {
+    const onResult = jest.fn();
+    const r = render(<TypedSentenceCard {...typed} onResult={onResult} gradeButtons />);
+    fireEvent.changeText(r.getByPlaceholderText('Type the sentence'), 'el libro y la mesa');
+    fireEvent.press(r.getByText('✓ Check'));
+    expect(r.getByText('Correct!')).toBeTruthy();
+    fireEvent.press(r.getByText("Didn't know"));
+    expect(r.getByText('Wrong')).toBeTruthy();
+    fireEvent.press(r.getByText(/Next/));
+    expect(onResult).toHaveBeenCalledWith(false);
+  });
+
+  it('a gombok opt-in: prop nélkül (pl. a nyelvtani rendező feladat) nincsenek', () => {
+    const r = render(<TypedSentenceCard {...typed} onResult={jest.fn()} />);
+    fireEvent.changeText(r.getByPlaceholderText('Type the sentence'), 'el gato');
+    fireEvent.press(r.getByText('✓ Check'));
+    expect(r.queryByTestId('sentence-grades')).toBeNull();
+    const e = render(<EasySentenceCard {...easy} onResult={jest.fn()} />);
+    fireEvent.press(e.getAllByText('mesa')[0]);
+    fireEvent.press(e.getByText('Check'));
+    expect(e.queryByTestId('sentence-grades')).toBeNull();
+  });
+});
+
 // PLAN-fb1001 10. lépés (FB434): a feladat-mondat a kártya megnyitásakor elhangzik (a
 // kiinduló nyelven), mint a szókártya promptja; locale nélkül nem szól semmi.
 describe('a feladat-mondat felolvasása megnyitáskor (FB434)', () => {
