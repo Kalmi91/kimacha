@@ -154,25 +154,25 @@ describe('angol A1 szabály: összpont 50 / 100, a készségek kompenzálnak, a 
 describe('angol A2 szabály: a készségek százalékos átlaga, közelítő küszöb, részenkénti minimum nélkül', () => {
   it('az átlag a küszöb fölött átmegy, alatta nem; a szóbeli (helyőrző) kimarad az átlagból, provisional', () => {
     const e = synthetic(AVERAGE);
-    const ok = scoreMockExam(e, answers(13, 13, 12));
-    expect(ok.rule).toMatchObject({ kind: 'average', pct: 51, passPct: AVERAGE_PASS_PCT, approximate: true, passed: true, provisional: true });
-    const no = scoreMockExam(e, answers(13, 12, 12));
-    expect(no.rule).toMatchObject({ pct: 49, passed: false });
+    const ok = scoreMockExam(e, answers(18, 18, 18));
+    expect(ok.rule).toMatchObject({ kind: 'average', pct: 72, passPct: AVERAGE_PASS_PCT, approximate: true, passed: true, provisional: true });
+    const no = scoreMockExam(e, answers(17, 17, 17));
+    expect(no.rule).toMatchObject({ pct: 68, passed: false });
     expect(no.passed).toBe(false);
   });
 
-  it('kompenzálás: egy 0 készség mellett két teljes átlaga 67%, átmegy', () => {
-    const r = scoreMockExam(synthetic(AVERAGE), answers(25, 0, 25));
-    expect(r.rule).toMatchObject({ pct: 67, passed: true });
+  it('kompenzálás: egy gyenge készség (40%) mellett két teljes átlaga 80%, átmegy', () => {
+    const r = scoreMockExam(synthetic(AVERAGE), answers(25, 10, 25));
+    expect(r.rule).toMatchObject({ pct: 80, passed: true });
   });
 
   it('mind a négy készséggel az átlag mind a négyből jön', () => {
     const r = scoreMockExam(synthetic(AVERAGE, true), answers(25, 25, 0, 0));
-    expect(r.rule).toMatchObject({ pct: 50, passed: true, provisional: false });
+    expect(r.rule).toMatchObject({ pct: 50, passed: false, provisional: false });
   });
 
-  it('a küszöb egyetlen konstans (közelítő érték)', () => {
-    expect(AVERAGE_PASS_PCT).toBe(50);
+  it('a küszöb egyetlen konstans (közelítő érték, Kálmán 2026-10-01: 70%)', () => {
+    expect(AVERAGE_PASS_PCT).toBe(70);
   });
 });
 

@@ -24,7 +24,7 @@ import type { MockLevel, MockRule, MockSkill, MockTarget } from './types';
  * pass-mark-ot (a kutatás: nyers-pont küszöb a 120-as skálaponthoz ⚠ nem ellenőrzött), ezért ez egy
  * közelítő alapérték, a felületen "approximate" jelzéssel. Egy helyen állítható.
  */
-export const AVERAGE_PASS_PCT = 50;
+export const AVERAGE_PASS_PCT = 70;
 
 /** Az angol A1 összpont-küszöbe 100-ból (a kutatás szerint a hivatalos: 50). */
 export const TOTAL_PASS_POINTS = 50;
