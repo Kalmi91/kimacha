@@ -745,7 +745,7 @@ export const GRAMMAR_PROGRESS_KEY = 'grammar-course';
 
 // Nyelv-kulcs: 'es' (alap) = a spanyol tanterv fent, bájtra változatlan;
 // 'en' = az angol tanterv az angol témafából (lib/grammar/syllabusEn.ts).
-const EN_SYLLABUS_LEVELS: Level[] = ['A1', 'A2', 'B1'];
+const EN_SYLLABUS_LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2'];
 
 function syllabusOf(lang: string): SyllabusTopic[] {
   return lang === 'en' ? EN_SYLLABUS : GRAMMAR_SYLLABUS;
