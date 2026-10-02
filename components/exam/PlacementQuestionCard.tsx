@@ -2,6 +2,7 @@ import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, lineHeight, radius, spacing, tapTarget } from '@/constants/Theme';
+import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import { Card } from '@/components/grammar/Brutal';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
@@ -58,7 +59,7 @@ export default function PlacementQuestionCard({ heading, text, options, correctI
 }
 
 const styles = StyleSheet.create({
-  scroll: { padding: spacing.lg, gap: spacing.md },
+  scroll: { padding: spacing.lg, paddingBottom: FAB_CLEARANCE, gap: spacing.md },
   card: { borderRadius: radius.lg, padding: spacing.lg, gap: spacing.md },
   brutalCard: { padding: spacing.lg, gap: spacing.md },
   heading: { fontSize: fontSize.sm, textAlign: 'center' },

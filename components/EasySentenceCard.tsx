@@ -7,6 +7,7 @@ import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalBox, BrutalButton, Card } from '@/components/grammar/Brutal';
 import ResultBadge from '@/components/ResultBadge';
+import SentenceGradeRow from '@/components/learn/SentenceGradeRow';
 import { t } from '@/lib/i18n';
 import { sentenceBuildMatch } from '@/lib/answerMatch';
 
@@ -20,9 +21,11 @@ interface Props {
   // PLAN-fb1001 10. lépés (FB434): a feladat-mondat (a kiinduló nyelven) a kártya megnyitásakor
   // elhangzik, mint a szókártya promptja (FB319).
   sourceSpeechLocale?: string;
+  // FB455: a szókártya "Didn't know" / "Knew it" gombsora Check után (felülbírálja a kijelzett értékelést).
+  gradeButtons?: boolean;
 }
 
-export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult, speechLocale, sourceSpeechLocale }: Props) {
+export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult, speechLocale, sourceSpeechLocale, gradeButtons = false }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -36,6 +39,8 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
   // placed = bank indices, in the order the user tapped them.
   const [placed, setPlaced] = useState<number[]>([]);
   const [result, setResult] = useState<'correct' | 'wrong' | null>(null);
+  // FB455: a Check rossz építésre ítélt; a helyes mondat felülbírálás ("Knew it") után is látszik.
+  const [missed, setMissed] = useState(false);
   const targetSentence = targetWords.join(' ');
 
   useEffect(() => {
@@ -66,6 +71,7 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
     // FB137: tile for tile, no character tolerance, see sentenceBuildMatch.
     const isCorrect = sentenceBuildMatch(placed.map(i => bank[i]), targetWords);
     setResult(isCorrect ? 'correct' : 'wrong');
+    setMissed(!isCorrect);
     // FB412 (PLAN-fb0929 5. lépés): a helyes mondat MINDIG elhangzik, jó és rossz építés
     // után is (a rossz építésnél ráadásul látszik is).
     if (speechLocale) {
@@ -100,7 +106,7 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
         )}
       </View>
 
-      {result === 'wrong' && (
+      {result && (result === 'wrong' || missed) && (
         <Text style={[styles.correctLine, { color: colors.success }]}>{targetSentence}</Text>
       )}
 
@@ -127,6 +133,8 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
 
       {/* FB403: minden kártyán ugyanaz a jó / rossz jelzés (szín + alak + ✓/✗ + szöveg). */}
       {result && <ResultBadge correct={result === 'correct'} label={result === 'correct' ? s.card.correct : s.card.wrong} />}
+
+      {result && gradeButtons && <SentenceGradeRow colors={colors} result={result} onOverride={(ok) => setResult(ok ? 'correct' : 'wrong')} />}
 
       {g.brutal ? (
         !result ? (
