@@ -13,6 +13,8 @@ import { levelProgressView } from '@/lib/pcicLevels';
 import type { Sm2Card } from '@/lib/sm2';
 import { Card } from '@/components/grammar/Brutal';
 import LevelRow from '@/components/LevelRow';
+import FeedbackButton from '@/components/FeedbackModal';
+import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import ExamButton from '@/components/exam/ExamButton';
 import PlacementQuestionCard from '@/components/exam/PlacementQuestionCard';
 import { placementAnswer, placementBreakdown, placementFinish, placementStart, type PlacementState } from '@/lib/exam/placement';
@@ -135,7 +137,16 @@ export default function PlacementScreen() {
     router.back();
   };
 
-  const shell = (children: ReactNode) => <View style={[styles.screen, { backgroundColor: colors.background }]}>{children}</View>;
+  // FB447: a szintfelmérő minden részén ott a 💬; a `part` mondja meg a Feedback sheetben, pontosan
+  // melyik részről van szó (placement:<rész>).
+  const fbTarget = run?.target ?? getPcicTarget();
+  const pair = `${fbTarget === 'es' ? 'en' : 'es'}→${fbTarget}`;
+  const shell = (children: ReactNode, part: string) => (
+    <View style={[styles.screen, { backgroundColor: colors.background }]}>
+      {children}
+      <FeedbackButton level={run?.placement.current ?? 'A1'} languagePair={pair} currentCard={`placement:${part}`} />
+    </View>
+  );
 
   if (run === null) {
     return shell(
@@ -145,6 +156,7 @@ export default function PlacementScreen() {
         </Card>
         <ExamButton testID="placement-back" label={s.exam.back} onPress={() => router.back()} />
       </View>,
+      'empty',
     );
   }
 
@@ -192,6 +204,7 @@ export default function PlacementScreen() {
           })}
         <ExamButton testID="placement-again" secondary label={s.placement.again} onPress={again} />
       </ScrollView>,
+      'result',
     );
   }
 
@@ -205,6 +218,7 @@ export default function PlacementScreen() {
         <ExamButton testID="placement-leave" label={s.exam.leave} onPress={() => router.back()} />
         <ExamButton testID="placement-keep-going" secondary label={s.exam.keepGoing} onPress={() => setLeaving(false)} />
       </View>,
+      'leave',
     );
   }
 
@@ -232,6 +246,7 @@ export default function PlacementScreen() {
         />
       )}
     </View>,
+    q ? `q${placement.asked + 1}:${q.kind}` : `q${placement.asked + 1}`,
   );
 }
 
@@ -239,7 +254,7 @@ const styles = StyleSheet.create({
   screen: { flex: 1, paddingTop: spacing.xl },
   flex: { flex: 1 },
   centered: { flex: 1 },
-  body: { padding: spacing.lg, gap: spacing.md },
+  body: { padding: spacing.lg, paddingBottom: FAB_CLEARANCE, gap: spacing.md },
   card: { borderRadius: radius.lg, padding: spacing.lg, gap: spacing.md },
   brutalCard: { padding: spacing.lg, gap: spacing.md },
   title: { fontSize: fontSize.xl, fontWeight: fontWeight.bold, textAlign: 'center' },
