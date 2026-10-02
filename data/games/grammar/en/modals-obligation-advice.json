@@ -1,0 +1,1234 @@
+{
+  "schema": 2,
+  "topic": "modals_obligation_advice",
+  "level": "B1",
+  "title": {
+    "hu": "Kötelesség, tanács, tiltás (should, must, have to)",
+    "en": "Obligation, Advice and Prohibition (should, must, have to)",
+    "es": "Obligación, consejo y prohibición (should, must, have to)",
+    "de": "Pflicht, Rat und Verbot (should, must, have to)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A módbeli igék után mindig alapige jön, to nélkül (kivéve az ought to-t). Három fő kérdés: mit tanácsolok (should, ought to, had better), mi kötelező (must, have to), mi tilos (mustn’t), és mi nem szükséges (don’t have to). A legnagyobb csapda: a „no tienes que” angolul don’t have to (nem kell), de a „no debes” mustn’t (tilos), és ez a kettő teljesen mást jelent.",
+        "en": "Modal verbs are always followed by the base verb, without to (except ought to). There are three main questions: what do I advise (should, ought to, had better), what is required (must, have to), what is forbidden (mustn’t), and what is not necessary (don’t have to). The biggest trap: the Spanish “no tienes que” is don’t have to (it is not necessary), but “no debes” is mustn’t (it is forbidden), and the two mean completely different things.",
+        "es": "Después de los verbos modales siempre va el verbo base, sin to (excepto ought to). Hay cuatro preguntas principales: qué aconsejo (should, ought to, had better), qué es obligatorio (must, have to), qué está prohibido (mustn’t) y qué no es necesario (don’t have to). La trampa más grande: «no tienes que» es don’t have to (no hace falta), pero «no debes» es mustn’t (está prohibido), y las dos significan cosas totalmente distintas.",
+        "de": "Nach Modalverben steht immer die Grundform, ohne to (außer bei ought to). Es gibt vier Hauptfragen: Was rate ich (should, ought to, had better), was ist Pflicht (must, have to), was ist verboten (mustn’t) und was ist nicht nötig (don’t have to). Die größte Falle: Das spanische „no tienes que“ ist don’t have to (es ist nicht nötig), aber „no debes“ ist mustn’t (es ist verboten), und die beiden bedeuten etwas völlig anderes."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "mo-forms",
+      "title": {
+        "hu": "Melyiket használjam?",
+        "en": "Which one do I use?",
+        "es": "¿Cuál uso?",
+        "de": "Welche nehme ich?"
+      },
+      "header": [
+        {
+          "hu": "Helyzet",
+          "en": "Situation",
+          "es": "Situación",
+          "de": "Situation"
+        },
+        {
+          "hu": "forma",
+          "en": "form",
+          "es": "forma",
+          "de": "Form"
+        }
+      ],
+      "rows": [
+        [
+          "un consejo",
+          "should"
+        ],
+        [
+          "una advertencia fuerte",
+          "had better"
+        ],
+        [
+          "una obligación",
+          "must / have to"
+        ],
+        [
+          "una prohibición",
+          "mustn't"
+        ],
+        [
+          "no es necesario",
+          "don't have to"
+        ],
+        [
+          "una obligación en el pasado",
+          "had to"
+        ],
+        [
+          "un permiso",
+          "can / may"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Tanács és figyelmeztetés",
+        "en": "Advice and warning",
+        "es": "Consejo y advertencia",
+        "de": "Rat und Warnung"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Should + alapige: tanács, vélemény. Tagadás: shouldn’t. Az ought to hasonló, de formálisabb: „You ought to see a doctor.”",
+            "en": "Should + base verb: advice, opinion. Negative: shouldn’t. Ought to is similar but more formal: “You ought to see a doctor.”",
+            "es": "Should + verbo base: consejo, opinión. Negación: shouldn’t. Ought to es parecido pero más formal: «You ought to see a doctor.»",
+            "de": "Should + Grundform: Rat, Meinung. Verneinung: shouldn’t. Ought to ist ähnlich, aber formeller: „You ought to see a doctor.“"
+          },
+          "examples": [
+            {
+              "es": "You look tired. You should go to bed early.",
+              "tr": {
+                "hu": "Fáradtnak nézel ki. Korán kéne lefeküdnöd.",
+                "en": "You look tired. You should go to bed early.",
+                "es": "Te ves cansado. Deberías acostarte temprano.",
+                "de": "Du siehst müde aus. Du solltest früh ins Bett gehen."
+              }
+            },
+            {
+              "es": "You shouldn't eat so much sugar.",
+              "tr": {
+                "hu": "Nem kéne annyi cukrot enned.",
+                "en": "You shouldn't eat so much sugar.",
+                "es": "No deberías comer tanta azúcar.",
+                "de": "Du solltest nicht so viel Zucker essen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Had better + alapige: erős tanács vagy figyelmeztetés, ha nem teszed meg, baj lesz. Múlt alakú, de jelenre vagy jövőre vonatkozik. Tagadás: had better not.",
+            "en": "Had better + base verb: strong advice or a warning; if you don’t, there will be a problem. It looks past but refers to the present or future. Negative: had better not.",
+            "es": "Had better + verbo base: consejo fuerte o advertencia; si no lo haces, habrá un problema. Parece pasado pero se refiere al presente o al futuro. Negación: had better not.",
+            "de": "Had better + Grundform: starker Rat oder Warnung; wenn du es nicht tust, gibt es ein Problem. Es sieht aus wie Vergangenheit, bezieht sich aber auf Gegenwart oder Zukunft. Verneinung: had better not."
+          },
+          "examples": [
+            {
+              "es": "You had better hurry, or you will miss the bus.",
+              "tr": {
+                "hu": "Jobb, ha sietsz, különben lekésed a buszt.",
+                "en": "You had better hurry, or you will miss the bus.",
+                "es": "Más vale que te apures, o vas a perder el camión.",
+                "de": "Du beeilst dich besser, sonst verpasst du den Bus."
+              }
+            },
+            {
+              "es": "You'd better not be late.",
+              "tr": {
+                "hu": "Jobb, ha nem késel el.",
+                "en": "You'd better not be late.",
+                "es": "Más vale que no llegues tarde.",
+                "de": "Komm besser nicht zu spät."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Kötelesség, tiltás, nem szükséges",
+        "en": "Obligation, prohibition, not necessary",
+        "es": "Obligación, prohibición, no necesario",
+        "de": "Pflicht, Verbot, nicht nötig"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Must vagy have to + alapige: kötelező. A have to ragozódik (he has to), kérdésben és tagadásban do kell: Does she have to wear glasses?",
+            "en": "Must or have to + base verb: required. Have to is conjugated (he has to), and questions and negatives need do: Does she have to wear glasses?",
+            "es": "Must o have to + verbo base: obligatorio. Have to se conjuga (he has to), y las preguntas y negaciones necesitan do: Does she have to wear glasses?",
+            "de": "Must oder have to + Grundform: Pflicht. Have to wird konjugiert (he has to), und Fragen und Verneinungen brauchen do: Does she have to wear glasses?"
+          },
+          "examples": [
+            {
+              "es": "I have to get up early tomorrow.",
+              "tr": {
+                "hu": "Holnap korán kell kelnem.",
+                "en": "I have to get up early tomorrow.",
+                "es": "Mañana tengo que levantarme temprano.",
+                "de": "Morgen muss ich früh aufstehen."
+              }
+            },
+            {
+              "es": "Does she have to wear glasses?",
+              "tr": {
+                "hu": "Szemüveget kell viselnie?",
+                "en": "Does she have to wear glasses?",
+                "es": "¿Tiene que usar lentes?",
+                "de": "Muss sie eine Brille tragen?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Mustn’t = tilos. Don’t have to = nem szükséges, nem kötelező, de megteheted. A kettő nem cserélhető fel.",
+            "en": "Mustn’t = forbidden. Don’t have to = not necessary, not required, but you may. The two cannot be swapped.",
+            "es": "Mustn’t = prohibido. Don’t have to = no es necesario, no es obligatorio, pero puedes. Los dos no se pueden cambiar.",
+            "de": "Mustn’t = verboten. Don’t have to = nicht nötig, nicht Pflicht, aber du darfst. Die beiden sind nicht austauschbar."
+          },
+          "examples": [
+            {
+              "es": "You mustn't use your phone during the exam.",
+              "tr": {
+                "hu": "A vizsga alatt nem használhatod a telefonodat.",
+                "en": "You mustn't use your phone during the exam.",
+                "es": "No debes usar tu celular durante el examen.",
+                "de": "Du darfst während der Prüfung dein Handy nicht benutzen."
+              }
+            },
+            {
+              "es": "You don't have to wear a uniform.",
+              "tr": {
+                "hu": "Nem kell egyenruhát viselned.",
+                "en": "You don't have to wear a uniform.",
+                "es": "No tienes que usar uniforme.",
+                "de": "Du musst keine Uniform tragen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Múlt: a must-nak nincs múlt alakja, helyette had to: „Yesterday I had to work late.” Kérdés és tagadás did-del: Did you have to…? I didn’t have to…",
+            "en": "Past: must has no past form, so use had to: “Yesterday I had to work late.” Questions and negatives with did: Did you have to…? I didn’t have to…",
+            "es": "Pasado: must no tiene forma de pasado, así que se usa had to: «Yesterday I had to work late.» Preguntas y negaciones con did: Did you have to…? I didn’t have to…",
+            "de": "Vergangenheit: must hat keine Vergangenheitsform, deshalb nimmt man had to: „Yesterday I had to work late.“ Fragen und Verneinungen mit did: Did you have to…? I didn’t have to…"
+          },
+          "examples": [
+            {
+              "es": "Yesterday I had to work late.",
+              "tr": {
+                "hu": "Tegnap későig kellett dolgoznom.",
+                "en": "Yesterday I had to work late.",
+                "es": "Ayer tuve que trabajar hasta tarde.",
+                "de": "Gestern musste ich lange arbeiten."
+              }
+            },
+            {
+              "es": "We didn't have to pay.",
+              "tr": {
+                "hu": "Nem kellett fizetnünk.",
+                "en": "We didn't have to pay.",
+                "es": "No tuvimos que pagar.",
+                "de": "Wir mussten nicht bezahlen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A „no tienes que venir” angolul „You don’t have to come” (nem kell eljönnöd), nem „You mustn’t come” (tilos eljönnöd). A mustn’t tiltást fejez ki, a don’t have to csak azt, hogy nem szükséges.",
+        "en": "The Spanish “no tienes que venir” is “You don’t have to come” (you don’t need to), not “You mustn’t come” (you are forbidden). Mustn’t expresses a prohibition, don’t have to only says it is not necessary.",
+        "es": "El «no tienes que venir» del español es «You don’t have to come» (no hace falta), no «You mustn’t come» (está prohibido). Mustn’t expresa una prohibición, don’t have to solo dice que no es necesario.",
+        "de": "Das spanische „no tienes que venir“ heißt „You don’t have to come“ (du musst nicht kommen), nicht „You mustn’t come“ (du darfst nicht kommen). Mustn’t drückt ein Verbot aus, don’t have to sagt nur, dass es nicht nötig ist."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A módbeli ige után nincs to és nincs -s: nem „You should to go” és nem „She musts go”, hanem „You should go”, „She must go”. Kérdésben a módbeli ige kerül előre: Should I wear a tie?",
+        "en": "After a modal verb there is no to and no -s: not “You should to go” and not “She musts go”, but “You should go”, “She must go”. In questions the modal verb goes first: Should I wear a tie?",
+        "es": "Después de un verbo modal no hay to ni -s: no «You should to go» ni «She musts go», sino «You should go», «She must go». En las preguntas el verbo modal va primero: Should I wear a tie?",
+        "de": "Nach einem Modalverb steht kein to und kein -s: nicht „You should to go“ und nicht „She musts go“, sondern „You should go“, „She must go“. In Fragen steht das Modalverb vorn: Should I wear a tie?"
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A had better múlt alakú, de nem múltat jelent: „You had better hurry” = most siess. Múltra a had to való: „I had to hurry.”",
+        "en": "Had better looks past but does not mean the past: “You had better hurry” = hurry now. For the past use had to: “I had to hurry.”",
+        "es": "Had better parece pasado pero no significa pasado: «You had better hurry» = apúrate ahora. Para el pasado se usa had to: «I had to hurry.»",
+        "de": "Had better sieht aus wie Vergangenheit, bedeutet aber nicht Vergangenheit: „You had better hurry“ = beeil dich jetzt. Für die Vergangenheit nimmt man had to: „I had to hurry.“"
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A módbeli igék után mindig alapige jön, «to» nélkül. A «should» tanácsot ad: «You should see a doctor». A «had better» erős figyelmeztetés: «You had better hurry». A «must» és a «have to» kötelezőt jelent: «I have to get up early». A «mustn't» tilalmat jelent: «You mustn't park here». A «don't have to» viszont azt jelenti, hogy nem szükséges: «You don't have to come». Ez a kettő nem ugyanaz. A «must»-nak nincs múlt alakja, helyette «had to» áll: «Yesterday I had to work late».",
+    "en": "After modal verbs the base verb always follows, without «to». «Should» gives advice: «You should see a doctor». «Had better» is a strong warning: «You had better hurry». «Must» and «have to» mean required: «I have to get up early». «Mustn't» means forbidden: «You mustn't park here». «Don't have to», in contrast, means not necessary: «You don't have to come». These two are not the same. «Must» has no past form, so «had to» is used: «Yesterday I had to work late».",
+    "es": "Después de los verbos modales siempre va el verbo base, sin «to». «Should» da un consejo: «You should see a doctor». «Had better» es una advertencia fuerte: «You had better hurry». «Must» y «have to» significan obligatorio: «I have to get up early». «Mustn't» significa prohibido: «You mustn't park here». «Don't have to», en cambio, significa que no es necesario: «You don't have to come». Estos dos no son lo mismo. «Must» no tiene forma de pasado, así que se usa «had to»: «Yesterday I had to work late».",
+    "de": "Nach Modalverben folgt immer die Grundform, ohne «to». «Should» gibt einen Rat: «You should see a doctor». «Had better» ist eine starke Warnung: «You had better hurry». «Must» und «have to» bedeuten Pflicht: «I have to get up early». «Mustn't» bedeutet verboten: «You mustn't park here». «Don't have to» bedeutet dagegen nicht nötig: «You don't have to come». Diese beiden sind nicht dasselbe. «Must» hat keine Vergangenheitsform, deshalb nimmt man «had to»: «Yesterday I had to work late»."
+  },
+  "glossary": [
+    {
+      "word": "ought",
+      "gloss": {
+        "hu": "kellene (ought to: tanács)",
+        "en": "ought to: advice",
+        "es": "debería (ought to: consejo)",
+        "de": "sollte (ought to: Rat)"
+      }
+    },
+    {
+      "word": "would",
+      "gloss": {
+        "hu": "lenne, tenne (would rather)",
+        "en": "used in would rather",
+        "es": "condicional (would rather)",
+        "de": "würde (would rather)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "moa-01",
+      "sentence": "You look tired. You ___ go to bed early.",
+      "options": [
+        "must to",
+        "should",
+        "are should"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Tanács: should + alapige. A fáradtság látszik, ezért jó tanács a korai lefekvés.",
+        "en": "Advice: should + base verb. The tiredness is visible, so going to bed early is good advice.",
+        "es": "Consejo: should + verbo base. El cansancio se nota, por eso acostarse temprano es un buen consejo.",
+        "de": "Rat: should + Grundform. Die Müdigkeit ist sichtbar, deshalb ist frühes Schlafengehen ein guter Rat."
+      },
+      "wrong": {
+        "must to": {
+          "hu": "A must után nincs to; a „must to” helytelen alak.",
+          "en": "After must there is no to; “must to” is an incorrect form.",
+          "es": "Después de must no hay to; «must to» es una forma incorrecta.",
+          "de": "Nach must steht kein to; „must to“ ist eine falsche Form."
+        },
+        "are should": {
+          "hu": "A should önmagában áll, a be ige nélkül; az „are should” nem létezik.",
+          "en": "Should stands alone, without the verb be; “are should” does not exist.",
+          "es": "Should va solo, sin el verbo be; «are should» no existe.",
+          "de": "Should steht allein, ohne das Verb be; „are should“ gibt es nicht."
+        }
+      },
+      "examples": [
+        "You should rest.",
+        "She should call her mother."
+      ]
+    },
+    {
+      "id": "moa-02",
+      "sentence": "You ___ use your phone during the exam.",
+      "options": [
+        "don't have to",
+        "needn't to",
+        "mustn't"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Tiltás: mustn’t + alapige. A vizsga alatt tilos a telefon.",
+        "en": "Prohibition: mustn’t + base verb. The phone is forbidden during the exam.",
+        "es": "Prohibición: mustn’t + verbo base. El celular está prohibido durante el examen.",
+        "de": "Verbot: mustn’t + Grundform. Das Handy ist während der Prüfung verboten."
+      },
+      "wrong": {
+        "don't have to": {
+          "hu": "A don’t have to azt jelentené, hogy nem szükséges, de megteheted; a vizsgán a telefon tilos.",
+          "en": "Don’t have to would mean it is not necessary but you may; during the exam the phone is forbidden.",
+          "es": "Don’t have to significaría que no es necesario pero puedes; durante el examen el celular está prohibido.",
+          "de": "Don’t have to würde heißen, dass es nicht nötig ist, du aber darfst; während der Prüfung ist das Handy verboten."
+        },
+        "needn't to": {
+          "hu": "A „needn’t to” helytelen, és nem tiltást jelent; a tiltásra mustn’t való.",
+          "en": "“Needn’t to” is incorrect and does not express a prohibition; mustn’t is for prohibition.",
+          "es": "«Needn’t to» es incorrecto y no expresa una prohibición; mustn’t es para la prohibición.",
+          "de": "„Needn’t to“ ist falsch und drückt kein Verbot aus; für das Verbot nimmt man mustn’t."
+        }
+      },
+      "examples": [
+        "You mustn't park here.",
+        "We mustn't be late."
+      ]
+    },
+    {
+      "id": "moa-03",
+      "sentence": "You ___ wear a uniform. Casual clothes are fine.",
+      "options": [
+        "don't have to",
+        "mustn't",
+        "have to"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Nem kötelező, de megteheted: don’t have to + alapige.",
+        "en": "It is not required, but you may: don’t have to + base verb.",
+        "es": "No es obligatorio, pero puedes: don’t have to + verbo base.",
+        "de": "Es ist nicht Pflicht, aber du darfst: don’t have to + Grundform."
+      },
+      "wrong": {
+        "mustn't": {
+          "hu": "A mustn’t tilalmat jelentene (tilos egyenruhát viselni); a mondat szerint azonban a hétköznapi ruha is jó.",
+          "en": "Mustn’t would mean a prohibition (wearing a uniform is forbidden); but the sentence says casual clothes are also fine.",
+          "es": "Mustn’t significaría una prohibición (está prohibido usar uniforme); pero la oración dice que la ropa casual también está bien.",
+          "de": "Mustn’t würde ein Verbot bedeuten (eine Uniform zu tragen ist verboten); der Satz sagt aber, dass auch Freizeitkleidung in Ordnung ist."
+        },
+        "have to": {
+          "hu": "A have to kötelezőt jelent; a mondat éppen az ellenkezőjét mondja (casual clothes are fine).",
+          "en": "Have to means required; the sentence says the opposite (casual clothes are fine).",
+          "es": "Have to significa obligatorio; la oración dice justo lo contrario (casual clothes are fine).",
+          "de": "Have to bedeutet Pflicht; der Satz sagt genau das Gegenteil (casual clothes are fine)."
+        }
+      },
+      "examples": [
+        "You don't have to pay.",
+        "She doesn't have to come."
+      ]
+    },
+    {
+      "id": "moa-04",
+      "sentence": "I ___ get up early tomorrow. My train is at six.",
+      "options": [
+        "don't have to",
+        "have to",
+        "mustn't"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Kötelező: I have to get up early. A vonat hatkor indul.",
+        "en": "It is required: I have to get up early. The train leaves at six.",
+        "es": "Es obligatorio: I have to get up early. El tren sale a las seis.",
+        "de": "Es ist Pflicht: I have to get up early. Der Zug fährt um sechs."
+      },
+      "wrong": {
+        "don't have to": {
+          "hu": "A don’t have to azt jelentené, hogy nem kell korán kelni; a vonat hatkor megy, ezért kell.",
+          "en": "Don’t have to would mean I don’t need to get up early; the train is at six, so I do need to.",
+          "es": "Don’t have to significaría que no necesito levantarme temprano; el tren es a las seis, por eso sí necesito.",
+          "de": "Don’t have to würde heißen, dass ich nicht früh aufstehen muss; der Zug fährt um sechs, deshalb muss ich."
+        },
+        "mustn't": {
+          "hu": "A mustn’t tilalmat jelentene (tilos korán kelni); ez itt értelmetlen.",
+          "en": "Mustn’t would be a prohibition (it is forbidden to get up early); that makes no sense here.",
+          "es": "Mustn’t sería una prohibición (está prohibido levantarse temprano); eso no tiene sentido aquí.",
+          "de": "Mustn’t wäre ein Verbot (es ist verboten, früh aufzustehen); das ergibt hier keinen Sinn."
+        }
+      },
+      "examples": [
+        "I have to work today.",
+        "We have to leave now."
+      ]
+    },
+    {
+      "id": "moa-05",
+      "sentence": "Yesterday I ___ work late.",
+      "options": [
+        "must",
+        "have to",
+        "had to"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A múltbeli kötelességre had to kell, mert a must-nak nincs múlt alakja.",
+        "en": "A past obligation needs had to, because must has no past form.",
+        "es": "Una obligación en el pasado necesita had to, porque must no tiene forma de pasado.",
+        "de": "Eine Pflicht in der Vergangenheit braucht had to, weil must keine Vergangenheitsform hat."
+      },
+      "wrong": {
+        "must": {
+          "hu": "A must nem fejez ki múltat; a yesterday miatt had to kell.",
+          "en": "Must does not express the past; because of yesterday you need had to.",
+          "es": "Must no expresa el pasado; por yesterday hace falta had to.",
+          "de": "Must drückt keine Vergangenheit aus; wegen yesterday braucht man had to."
+        },
+        "have to": {
+          "hu": "A have to jelen idejű; a yesterday múltat jelez, ezért had to.",
+          "en": "Have to is present; yesterday shows the past, so had to.",
+          "es": "Have to es presente; yesterday indica el pasado, por eso had to.",
+          "de": "Have to ist Präsens; yesterday zeigt die Vergangenheit, deshalb had to."
+        }
+      },
+      "examples": [
+        "Last week we had to wait.",
+        "She had to leave early."
+      ]
+    },
+    {
+      "id": "moa-06",
+      "sentence": "You ought ___ see a doctor.",
+      "options": [
+        "to",
+        "for",
+        "that"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Az ought után to áll: ought to + alapige.",
+        "en": "After ought comes to: ought to + base verb.",
+        "es": "Después de ought va to: ought to + verbo base.",
+        "de": "Nach ought steht to: ought to + Grundform."
+      },
+      "wrong": {
+        "for": {
+          "hu": "Az „ought for” nem létezik; az ought mindig to-val áll.",
+          "en": "“Ought for” does not exist; ought always goes with to.",
+          "es": "«Ought for» no existe; ought siempre va con to.",
+          "de": "„Ought for“ gibt es nicht; ought steht immer mit to."
+        },
+        "that": {
+          "hu": "Az „ought that” nem létezik; a tanács szerkezete ought to + alapige.",
+          "en": "“Ought that” does not exist; the structure for advice is ought to + base verb.",
+          "es": "«Ought that» no existe; la estructura del consejo es ought to + verbo base.",
+          "de": "„Ought that“ gibt es nicht; die Struktur für den Rat ist ought to + Grundform."
+        }
+      },
+      "examples": [
+        "You ought to rest.",
+        "We ought to go."
+      ]
+    },
+    {
+      "id": "moa-07",
+      "sentence": "You ___ better hurry or you will miss the bus.",
+      "options": [
+        "have",
+        "had",
+        "would"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Erős tanács, figyelmeztetés: had better + alapige.",
+        "en": "Strong advice, a warning: had better + base verb.",
+        "es": "Consejo fuerte, advertencia: had better + verbo base.",
+        "de": "Starker Rat, Warnung: had better + Grundform."
+      },
+      "wrong": {
+        "have": {
+          "hu": "A „have better” nem létező szerkezet; a figyelmeztetéshez had better kell.",
+          "en": "“Have better” is not an existing structure; a warning needs had better.",
+          "es": "«Have better» no es una estructura que exista; una advertencia necesita had better.",
+          "de": "„Have better“ ist keine existierende Struktur; eine Warnung braucht had better."
+        },
+        "would": {
+          "hu": "A „would better” nem létező szerkezet; a helyes had better, vagy would rather más jelentéssel.",
+          "en": "“Would better” is not an existing structure; the correct one is had better, or would rather with a different meaning.",
+          "es": "«Would better» no es una estructura que exista; la correcta es had better, o would rather con otro significado.",
+          "de": "„Would better“ ist keine existierende Struktur; richtig ist had better, oder would rather mit anderer Bedeutung."
+        }
+      },
+      "examples": [
+        "You had better call her.",
+        "We had better leave."
+      ]
+    },
+    {
+      "id": "moa-08",
+      "sentence": "You should ___ more water.",
+      "options": [
+        "to drink",
+        "drinking",
+        "drink"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A should után alapige áll, to nélkül: should drink.",
+        "en": "After should comes the base verb, without to: should drink.",
+        "es": "Después de should va el verbo base, sin to: should drink.",
+        "de": "Nach should steht die Grundform, ohne to: should drink."
+      },
+      "wrong": {
+        "to drink": {
+          "hu": "A should után nincs to; a „should to drink” helytelen.",
+          "en": "After should there is no to; “should to drink” is incorrect.",
+          "es": "Después de should no hay to; «should to drink» es incorrecto.",
+          "de": "Nach should steht kein to; „should to drink“ ist falsch."
+        },
+        "drinking": {
+          "hu": "A should után alapige jön, nem -ing alak.",
+          "en": "After should comes the base verb, not an -ing form.",
+          "es": "Después de should viene el verbo base, no una forma -ing.",
+          "de": "Nach should kommt die Grundform, nicht eine -ing-Form."
+        }
+      },
+      "examples": [
+        "You should eat more fruit.",
+        "He should sleep more."
+      ]
+    },
+    {
+      "id": "moa-09",
+      "sentence": "___ I wear a tie to the interview?",
+      "options": [
+        "Should",
+        "Do should",
+        "Am"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Kérdésben a módbeli ige kerül előre: Should I wear a tie…?",
+        "en": "In a question the modal verb goes first: Should I wear a tie…?",
+        "es": "En una pregunta el verbo modal va primero: Should I wear a tie…?",
+        "de": "In einer Frage steht das Modalverb vorn: Should I wear a tie…?"
+      },
+      "wrong": {
+        "Do should": {
+          "hu": "A módbeli igék nem kérnek do-t; a „Do should I” helytelen.",
+          "en": "Modal verbs do not take do; “Do should I” is incorrect.",
+          "es": "Los verbos modales no llevan do; «Do should I» es incorrecto.",
+          "de": "Modalverben nehmen kein do; „Do should I“ ist falsch."
+        },
+        "Am": {
+          "hu": "Az „Am I wear” helytelen; az Am után -ing jönne (Am I wearing…?), ami mást jelent.",
+          "en": "“Am I wear” is incorrect; after Am an -ing form would follow (Am I wearing…?), which means something else.",
+          "es": "«Am I wear» es incorrecto; después de Am iría una forma -ing (Am I wearing…?), que significa otra cosa.",
+          "de": "„Am I wear“ ist falsch; nach Am käme eine -ing-Form (Am I wearing…?), was etwas anderes bedeutet."
+        }
+      },
+      "examples": [
+        "Should we go now?",
+        "Should she call him?"
+      ]
+    },
+    {
+      "id": "moa-10",
+      "sentence": "Does she ___ wear glasses?",
+      "options": [
+        "has to",
+        "have to",
+        "must to"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A Does után alapige áll: Does she have to wear glasses?",
+        "en": "After Does comes the base verb: Does she have to wear glasses?",
+        "es": "Después de Does va el verbo base: Does she have to wear glasses?",
+        "de": "Nach Does steht die Grundform: Does she have to wear glasses?"
+      },
+      "wrong": {
+        "has to": {
+          "hu": "A Does már kifejezi a harmadik személyt, ezért a has to helyett have to áll.",
+          "en": "Does already shows the third person, so have to is used instead of has to.",
+          "es": "Does ya expresa la tercera persona, por eso se usa have to en lugar de has to.",
+          "de": "Does zeigt die dritte Person schon, deshalb steht have to statt has to."
+        },
+        "must to": {
+          "hu": "A „must to” helytelen alak; a must után nincs to.",
+          "en": "“Must to” is an incorrect form; after must there is no to.",
+          "es": "«Must to» es una forma incorrecta; después de must no hay to.",
+          "de": "„Must to“ ist eine falsche Form; nach must steht kein to."
+        }
+      },
+      "examples": [
+        "Do I have to go?",
+        "Do they have to pay?"
+      ]
+    },
+    {
+      "id": "moa-11",
+      "sentence": "He ___ finish his homework before he goes out.",
+      "options": [
+        "have to",
+        "haves to",
+        "has to"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A he mellé has to kell: he has to finish.",
+        "en": "With he you need has to: he has to finish.",
+        "es": "Con he hace falta has to: he has to finish.",
+        "de": "Bei he braucht man has to: he has to finish."
+      },
+      "wrong": {
+        "have to": {
+          "hu": "A have to az I, you, we, they mellé kerül; a he mellé has to áll.",
+          "en": "Have to goes with I, you, we, they; with he you use has to.",
+          "es": "Have to va con I, you, we, they; con he se usa has to.",
+          "de": "Have to steht bei I, you, we, they; bei he benutzt man has to."
+        },
+        "haves to": {
+          "hu": "A „haves to” nem létezik; a have harmadik személyű alakja has.",
+          "en": "“Haves to” does not exist; the third person form of have is has.",
+          "es": "«Haves to» no existe; la forma de tercera persona de have es has.",
+          "de": "„Haves to“ gibt es nicht; die Form von have in der dritten Person ist has."
+        }
+      },
+      "examples": [
+        "She has to work.",
+        "My brother has to study."
+      ]
+    },
+    {
+      "id": "moa-12",
+      "sentence": "You should ___ eat so much sugar.",
+      "options": [
+        "not",
+        "don't",
+        "no"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A should tagadása should not (shouldn’t): you should not eat.",
+        "en": "The negative of should is should not (shouldn’t): you should not eat.",
+        "es": "La negación de should es should not (shouldn’t): you should not eat.",
+        "de": "Die Verneinung von should ist should not (shouldn’t): you should not eat."
+      },
+      "wrong": {
+        "don't": {
+          "hu": "A módbeli igék nem kérnek do-t; a „should don’t” helytelen.",
+          "en": "Modal verbs do not take do; “should don’t” is incorrect.",
+          "es": "Los verbos modales no llevan do; «should don’t» es incorrecto.",
+          "de": "Modalverben nehmen kein do; „should don’t“ ist falsch."
+        },
+        "no": {
+          "hu": "A „should no eat” a spanyol „no deberías comer” tükörfordítása; angolul not kell.",
+          "en": "“Should no eat” is a word-for-word copy of the Spanish “no deberías comer”; in English you need not.",
+          "es": "«Should no eat» es una copia palabra por palabra del «no deberías comer»; en inglés hace falta not.",
+          "de": "„Should no eat“ ist eine Wort-für-Wort-Kopie des spanischen „no deberías comer“; im Englischen braucht man not."
+        }
+      },
+      "examples": [
+        "You should not wait.",
+        "We should not go."
+      ]
+    },
+    {
+      "id": "moa-13",
+      "sentence": "People ___ to take photos in the museum.",
+      "options": [
+        "don't allow",
+        "aren't allowed",
+        "not allowed"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Szabály: aren’t allowed to + alapige (nem engedélyezett).",
+        "en": "A rule: aren’t allowed to + base verb (not permitted).",
+        "es": "Una regla: aren’t allowed to + verbo base (no permitido).",
+        "de": "Eine Regel: aren’t allowed to + Grundform (nicht erlaubt)."
+      },
+      "wrong": {
+        "don't allow": {
+          "hu": "A „don’t allow” cselekvő szerkezet (valaki nem enged); a szabályhoz szenvedő alak kell: aren’t allowed.",
+          "en": "“Don’t allow” is active (someone doesn’t permit); the rule needs the passive form: aren’t allowed.",
+          "es": "«Don’t allow» es activo (alguien no permite); la regla necesita la forma pasiva: aren’t allowed.",
+          "de": "„Don’t allow“ ist aktiv (jemand erlaubt nicht); die Regel braucht die Passivform: aren’t allowed."
+        },
+        "not allowed": {
+          "hu": "A „not allowed” a be ige nélkül hiányos; a mondatba az aren’t kell.",
+          "en": "“Not allowed” without the verb be is incomplete; the sentence needs aren’t.",
+          "es": "«Not allowed» sin el verbo be está incompleto; la oración necesita aren’t.",
+          "de": "„Not allowed“ ohne das Verb be ist unvollständig; der Satz braucht aren’t."
+        }
+      },
+      "examples": [
+        "You are not allowed to park here.",
+        "We are allowed to leave."
+      ]
+    },
+    {
+      "id": "moa-14",
+      "sentence": "You ___ tell me. I already know.",
+      "options": [
+        "mustn’t",
+        "should",
+        "don't have to"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Nem szükséges, mert már tudom: don’t have to.",
+        "en": "It is not necessary because I already know: don’t have to.",
+        "es": "No es necesario porque ya lo sé: don’t have to.",
+        "de": "Es ist nicht nötig, weil ich es schon weiß: don’t have to."
+      },
+      "wrong": {
+        "mustn’t": {
+          "hu": "A mustn’t tilalmat jelentene (nem szabad elmondanod); itt csak annyi a helyzet, hogy nem kell.",
+          "en": "Mustn’t would be a prohibition (you must not tell me); here it only means there is no need.",
+          "es": "Mustn’t sería una prohibición (no debes decírmelo); aquí solo significa que no hace falta.",
+          "de": "Mustn’t wäre ein Verbot (du darfst es mir nicht sagen); hier heißt es nur, dass es nicht nötig ist."
+        },
+        "should": {
+          "hu": "A should tanács lenne (el kéne mondanod); a már ismert információnál ez ellentmond a mondatnak.",
+          "en": "Should would be advice (you ought to tell me); with already known information that contradicts the sentence.",
+          "es": "Should sería un consejo (deberías decírmelo); con información ya conocida eso contradice la oración.",
+          "de": "Should wäre ein Rat (du solltest es mir sagen); bei schon bekannter Information widerspricht das dem Satz."
+        }
+      },
+      "examples": [
+        "You don't have to wait.",
+        "She doesn't have to know."
+      ]
+    },
+    {
+      "id": "moa-15",
+      "sentence": "Drivers ___ stop at a red light.",
+      "options": [
+        "must",
+        "may",
+        "can"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Törvényi kötelesség: must + alapige.",
+        "en": "A legal duty: must + base verb.",
+        "es": "Un deber legal: must + verbo base.",
+        "de": "Eine gesetzliche Pflicht: must + Grundform."
+      },
+      "wrong": {
+        "may": {
+          "hu": "A may engedélyt vagy lehetőséget fejez ki; a piros lámpánál megállás kötelező.",
+          "en": "May expresses permission or possibility; stopping at a red light is required.",
+          "es": "May expresa permiso o posibilidad; detenerse en un semáforo en rojo es obligatorio.",
+          "de": "May drückt Erlaubnis oder Möglichkeit aus; an einer roten Ampel anzuhalten ist Pflicht."
+        },
+        "can": {
+          "hu": "A can lehetőséget vagy képességet jelent; itt szabály van, ezért must.",
+          "en": "Can means possibility or ability; here there is a rule, so must.",
+          "es": "Can significa posibilidad o capacidad; aquí hay una regla, por eso must.",
+          "de": "Can bedeutet Möglichkeit oder Fähigkeit; hier gibt es eine Regel, deshalb must."
+        }
+      },
+      "examples": [
+        "Students must arrive on time.",
+        "You must have a ticket."
+      ]
+    },
+    {
+      "id": "moa-16",
+      "sentence": "You ___ be 18 to vote.",
+      "options": [
+        "should to",
+        "must",
+        "are"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Szabály, feltétel: you must be 18.",
+        "en": "A rule, a requirement: you must be 18.",
+        "es": "Una regla, un requisito: you must be 18.",
+        "de": "Eine Regel, eine Voraussetzung: you must be 18."
+      },
+      "wrong": {
+        "should to": {
+          "hu": "A should után nincs to; a „should to be” helytelen.",
+          "en": "After should there is no to; “should to be” is incorrect.",
+          "es": "Después de should no hay to; «should to be» es incorrecto.",
+          "de": "Nach should steht kein to; „should to be“ ist falsch."
+        },
+        "are": {
+          "hu": "Az „are be” két ige egymás után, ami helytelen; a kötelezettséghez must kell.",
+          "en": "“Are be” has two verbs in a row, which is incorrect; a requirement needs must.",
+          "es": "«Are be» tiene dos verbos seguidos, lo cual es incorrecto; un requisito necesita must.",
+          "de": "„Are be“ hat zwei Verben hintereinander, was falsch ist; eine Voraussetzung braucht must."
+        }
+      },
+      "examples": [
+        "You must be quiet.",
+        "You must have a key."
+      ]
+    },
+    {
+      "id": "moa-17",
+      "sentence": "You ___ better not be late again.",
+      "options": [
+        "have",
+        "would",
+        "had"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Negatív figyelmeztetés: had better not + alapige.",
+        "en": "A negative warning: had better not + base verb.",
+        "es": "Una advertencia en negativo: had better not + verbo base.",
+        "de": "Eine verneinte Warnung: had better not + Grundform."
+      },
+      "wrong": {
+        "have": {
+          "hu": "A „have better not” nem létezik; a figyelmeztetés alakja had better not.",
+          "en": "“Have better not” does not exist; the form of the warning is had better not.",
+          "es": "«Have better not» no existe; la forma de la advertencia es had better not.",
+          "de": "„Have better not“ gibt es nicht; die Form der Warnung ist had better not."
+        },
+        "would": {
+          "hu": "A „would better not” nem létező szerkezet; had better not kell.",
+          "en": "“Would better not” is not an existing structure; you need had better not.",
+          "es": "«Would better not» no es una estructura que exista; hace falta had better not.",
+          "de": "„Would better not“ ist keine existierende Struktur; man braucht had better not."
+        }
+      },
+      "examples": [
+        "You had better not forget.",
+        "We had better not wait."
+      ]
+    },
+    {
+      "id": "moa-18",
+      "kind": "form",
+      "verb": "forma",
+      "person": "un consejo",
+      "answer": "should",
+      "table": "mo-forms"
+    },
+    {
+      "id": "moa-19",
+      "kind": "form",
+      "verb": "forma",
+      "person": "una prohibición",
+      "answer": "mustn't",
+      "table": "mo-forms"
+    },
+    {
+      "id": "moa-20",
+      "kind": "form",
+      "verb": "forma",
+      "person": "no es necesario",
+      "answer": "don't have to",
+      "table": "mo-forms"
+    },
+    {
+      "id": "moa-21",
+      "kind": "form",
+      "verb": "forma",
+      "person": "una obligación en el pasado",
+      "answer": "had to",
+      "table": "mo-forms"
+    },
+    {
+      "id": "moa-22",
+      "kind": "form",
+      "verb": "forma",
+      "person": "una advertencia fuerte",
+      "answer": "had better",
+      "table": "mo-forms"
+    },
+    {
+      "id": "moa-23",
+      "kind": "form",
+      "verb": "forma",
+      "person": "un permiso",
+      "answer": "can / may",
+      "table": "mo-forms"
+    },
+    {
+      "kind": "why",
+      "id": "moa-24",
+      "es": "You should see a doctor.",
+      "target": "should",
+      "tr": {
+        "hu": "El kéne menned orvoshoz.",
+        "en": "You should see a doctor.",
+        "es": "Deberías ir al doctor.",
+        "de": "Du solltest zum Arzt gehen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "kötelesség: nincs más választás",
+            "en": "obligation: there is no choice",
+            "es": "obligación: no hay otra opción",
+            "de": "Pflicht: es gibt keine andere Wahl"
+          },
+          "wrong": {
+            "hu": "A should nem kötelezőt, hanem tanácsot fejez ki; a kötelezőre must vagy have to való.",
+            "en": "Should does not express an obligation but advice; for an obligation use must or have to.",
+            "es": "Should no expresa una obligación sino un consejo; para una obligación se usa must o have to.",
+            "de": "Should drückt keine Pflicht aus, sondern einen Rat; für eine Pflicht nimmt man must oder have to."
+          }
+        },
+        {
+          "text": {
+            "hu": "tanács, vélemény",
+            "en": "advice, an opinion",
+            "es": "consejo, una opinión",
+            "de": "Rat, eine Meinung"
+          }
+        },
+        {
+          "text": {
+            "hu": "tiltás: nem szabad",
+            "en": "prohibition: not allowed",
+            "es": "prohibición: no se permite",
+            "de": "Verbot: nicht erlaubt"
+          },
+          "wrong": {
+            "hu": "A should nem tilt semmit; a tiltásra mustn’t való.",
+            "en": "Should does not forbid anything; mustn’t is for a prohibition.",
+            "es": "Should no prohíbe nada; mustn’t es para la prohibición.",
+            "de": "Should verbietet nichts; für das Verbot nimmt man mustn’t."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "moa-25",
+      "es": "You mustn't park here.",
+      "target": "mustn't",
+      "tr": {
+        "hu": "Itt nem parkolhatsz.",
+        "en": "You mustn't park here.",
+        "es": "No debes estacionarte aquí.",
+        "de": "Du darfst hier nicht parken."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "nem szükséges: megteheted, de nem kell",
+            "en": "not necessary: you may, but you don’t have to",
+            "es": "no es necesario: puedes, pero no tienes que",
+            "de": "nicht nötig: du darfst, musst aber nicht"
+          },
+          "wrong": {
+            "hu": "Ez a don’t have to jelentése; a mustn’t ennél erősebb: tilos.",
+            "en": "That is the meaning of don’t have to; mustn’t is stronger: it is forbidden.",
+            "es": "Ese es el significado de don’t have to; mustn’t es más fuerte: está prohibido.",
+            "de": "Das ist die Bedeutung von don’t have to; mustn’t ist stärker: es ist verboten."
+          }
+        },
+        {
+          "text": {
+            "hu": "tiltás: tilos",
+            "en": "prohibition: forbidden",
+            "es": "prohibición: prohibido",
+            "de": "Verbot: verboten"
+          }
+        },
+        {
+          "text": {
+            "hu": "tanács: jobb lenne nem",
+            "en": "advice: it would be better not to",
+            "es": "consejo: sería mejor no hacerlo",
+            "de": "Rat: es wäre besser, es nicht zu tun"
+          },
+          "wrong": {
+            "hu": "A tanácsra shouldn’t való; a mustn’t szabály vagy tiltás.",
+            "en": "Shouldn’t is for advice; mustn’t is a rule or prohibition.",
+            "es": "Shouldn’t es para el consejo; mustn’t es una regla o prohibición.",
+            "de": "Shouldn’t ist für den Rat; mustn’t ist eine Regel oder ein Verbot."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "moa-26",
+      "es": "You don't have to come.",
+      "target": "don't",
+      "tr": {
+        "hu": "Nem kell eljönnöd.",
+        "en": "You don't have to come.",
+        "es": "No tienes que venir.",
+        "de": "Du musst nicht kommen."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "tiltás: tilos eljönni",
+            "en": "prohibition: coming is forbidden",
+            "es": "prohibición: venir está prohibido",
+            "de": "Verbot: kommen ist verboten"
+          },
+          "wrong": {
+            "hu": "A don’t have to nem tilt; csak azt mondja, hogy nem kötelező. A tiltás mustn’t lenne.",
+            "en": "Don’t have to does not forbid; it only says it is not required. A prohibition would be mustn’t.",
+            "es": "Don’t have to no prohíbe; solo dice que no es obligatorio. Una prohibición sería mustn’t.",
+            "de": "Don’t have to verbietet nichts; es sagt nur, dass es nicht Pflicht ist. Ein Verbot wäre mustn’t."
+          }
+        },
+        {
+          "text": {
+            "hu": "tanács: el kéne jönnöd",
+            "en": "advice: you ought to come",
+            "es": "consejo: deberías venir",
+            "de": "Rat: du solltest kommen"
+          },
+          "wrong": {
+            "hu": "A tanácsra should való; a don’t have to azt mondja, hogy nem szükséges.",
+            "en": "Should is for advice; don’t have to says it is not necessary.",
+            "es": "Should es para el consejo; don’t have to dice que no es necesario.",
+            "de": "Should ist für den Rat; don’t have to sagt, dass es nicht nötig ist."
+          }
+        },
+        {
+          "text": {
+            "hu": "nem szükséges: nem kötelező",
+            "en": "not necessary: not required",
+            "es": "no es necesario: no es obligatorio",
+            "de": "nicht nötig: keine Pflicht"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "moa-27",
+      "es": "I had to work late yesterday.",
+      "target": "had",
+      "tr": {
+        "hu": "Tegnap későig kellett dolgoznom.",
+        "en": "I had to work late yesterday.",
+        "es": "Ayer tuve que trabajar hasta tarde.",
+        "de": "Gestern musste ich lange arbeiten."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "múltbeli kötelesség: a must-nak nincs múlt alakja",
+            "en": "a past obligation: must has no past form",
+            "es": "una obligación en el pasado: must no tiene forma de pasado",
+            "de": "eine Pflicht in der Vergangenheit: must hat keine Vergangenheitsform"
+          }
+        },
+        {
+          "text": {
+            "hu": "past perfect: korábbi esemény",
+            "en": "past perfect: an earlier event",
+            "es": "pasado perfecto: un hecho anterior",
+            "de": "Past Perfect: ein früheres Ereignis"
+          },
+          "wrong": {
+            "hu": "A past perfectben had + igenév áll (had worked); itt had to + alapige van, ami kötelességet jelent.",
+            "en": "The past perfect has had + participle (had worked); here it is had to + base verb, which means an obligation.",
+            "es": "El pasado perfecto lleva had + participio (had worked); aquí es had to + verbo base, que significa una obligación.",
+            "de": "Das Past Perfect hat had + Partizip (had worked); hier steht had to + Grundform, was eine Pflicht bedeutet."
+          }
+        },
+        {
+          "text": {
+            "hu": "múltbeli szokás: used to",
+            "en": "a past habit: used to",
+            "es": "un hábito del pasado: used to",
+            "de": "eine frühere Gewohnheit: used to"
+          },
+          "wrong": {
+            "hu": "A had to nem szokást, hanem kötelességet jelent; a szokáshoz used to kell.",
+            "en": "Had to does not mean a habit but an obligation; a habit needs used to.",
+            "es": "Had to no significa un hábito sino una obligación; un hábito necesita used to.",
+            "de": "Had to bedeutet keine Gewohnheit, sondern eine Pflicht; für eine Gewohnheit braucht man used to."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "moa-28",
+      "es": "You had better hurry.",
+      "target": "had",
+      "tr": {
+        "hu": "Jobb lesz, ha sietsz.",
+        "en": "You had better hurry.",
+        "es": "Más vale que te apures.",
+        "de": "Du beeilst dich besser."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "past perfect: korábbi esemény",
+            "en": "past perfect: an earlier event",
+            "es": "pasado perfecto: un hecho anterior",
+            "de": "Past Perfect: ein früheres Ereignis"
+          },
+          "wrong": {
+            "hu": "A had better után alapige áll (hurry), nem igenév; a mondat jelenre vonatkozó figyelmeztetés.",
+            "en": "After had better comes the base verb (hurry), not a participle; the sentence is a warning about now.",
+            "es": "Después de had better va el verbo base (hurry), no un participio; la oración es una advertencia sobre ahora.",
+            "de": "Nach had better steht die Grundform (hurry), nicht ein Partizip; der Satz ist eine Warnung für jetzt."
+          }
+        },
+        {
+          "text": {
+            "hu": "múltbeli kötelesség: had to",
+            "en": "a past obligation: had to",
+            "es": "una obligación en el pasado: had to",
+            "de": "eine Pflicht in der Vergangenheit: had to"
+          },
+          "wrong": {
+            "hu": "A had to múltbeli kötelesség, a had better jelenre vagy jövőre szóló erős tanács.",
+            "en": "Had to is a past obligation, had better is strong advice about the present or future.",
+            "es": "Had to es una obligación en el pasado, had better es un consejo fuerte sobre el presente o el futuro.",
+            "de": "Had to ist eine Pflicht in der Vergangenheit, had better ist ein starker Rat für Gegenwart oder Zukunft."
+          }
+        },
+        {
+          "text": {
+            "hu": "erős tanács, figyelmeztetés: had better",
+            "en": "strong advice, a warning: had better",
+            "es": "consejo fuerte, advertencia: had better",
+            "de": "starker Rat, Warnung: had better"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "moa-29",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "Deberías ir al doctor.",
+          "en": "You should see a doctor."
+        },
+        {
+          "es": "No debes estacionarte aquí.",
+          "en": "You mustn't park here."
+        },
+        {
+          "es": "No tienes que venir.",
+          "en": "You don't have to come."
+        },
+        {
+          "es": "Ayer tuve que trabajar hasta tarde.",
+          "en": "Yesterday I had to work late."
+        },
+        {
+          "es": "Más vale que te apures.",
+          "en": "You had better hurry."
+        },
+        {
+          "es": "¿Tengo que llevar corbata?",
+          "en": "Do I have to wear a tie?"
+        }
+      ]
+    },
+    {
+      "id": "moa-30",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "debería",
+          "en": "should"
+        },
+        {
+          "es": "está prohibido",
+          "en": "mustn't"
+        },
+        {
+          "es": "no es necesario",
+          "en": "don't have to"
+        },
+        {
+          "es": "tuve que",
+          "en": "I had to"
+        },
+        {
+          "es": "más vale que",
+          "en": "had better"
+        },
+        {
+          "es": "se permite",
+          "en": "be allowed to"
+        }
+      ]
+    }
+  ]
+}
