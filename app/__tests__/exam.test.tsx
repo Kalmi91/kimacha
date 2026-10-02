@@ -440,3 +440,90 @@ describe('szintvizsga: eredmény készségenként, gyenge pontnál link (2c)', (
     expect(screen.getByTestId('exam-skill-grammar-verdict').props.children).toBe('Strong');
   });
 });
+
+describe('szintvizsga: szóbeli tétel a billentyűzet mikrofonjával (13. lépés)', () => {
+  const speak = { kind: 'speak', skill: 'speaking', itemId: 'o1', prompt: 'I eat at home.', expected: 'Yo como en casa.', mode: 'translate' };
+  const gap = { kind: 'gap_mc', skill: 'grammar', topicId: 'presente-regular', sentence: 'Yo ___ español.', options: ['hablo', 'hablas', 'habla'], correctIndex: 0 };
+
+  beforeEach(async () => {
+    mockBack.mockClear();
+    mockPush.mockClear();
+    mockBuildExam.mockClear();
+    mockLevel = 'A1';
+    setPcicTarget('es');
+    await getDb().resetPcicCards();
+    await getDb().resetGameProgress(GRAMMAR_PROGRESS_KEY);
+    await getDb().resetGameProgress(EXAM_PROGRESS_KEY);
+    await getDb().setPcicLevel('A1');
+    await seed();
+  });
+
+  const dictate = async (screen: Screen, text: string) => {
+    fireEvent.changeText(screen.getByTestId('exam-speak-input'), text);
+    await press(screen, 'exam-check');
+  };
+
+  it('a bevezető külön sorban mondja a szóbeli tételek számát, a tétel szövegmező a billentyűzet mikrofonjához', async () => {
+    mockBuildExam.mockReturnValueOnce([speak, gap] as never);
+    const screen = render(<ExamScreen />);
+    await flush();
+    expect(screen.getByText('Speaking: 1 question')).toBeTruthy();
+    await press(screen, 'exam-start');
+    expect(screen.getByTestId('exam-speak-mode').props.children).toBe('Say it in Spanish');
+    expect(screen.getByTestId('exam-speak-prompt').props.children).toBe('I eat at home.');
+    expect(screen.getByTestId('exam-speak-input')).toBeTruthy();
+  });
+
+  it('helyes diktálás után nincs visszajelzés, az eredményen a szóbeli készség külön sorban látszik', async () => {
+    mockBuildExam.mockReturnValueOnce([speak, gap] as never);
+    const screen = render(<ExamScreen />);
+    await flush();
+    await press(screen, 'exam-start');
+    await dictate(screen, 'yo como en casa');
+    expect(screen.getByTestId('exam-counter').props.children).toBe('Question 2 / 2');
+    expect(screen.queryByText('Not quite!')).toBeNull();
+    await solve.choice(screen, true);
+
+    expect(screen.getByTestId('exam-score').props.children).toBe('2 / 2 · 100%');
+    expect(screen.getByTestId('exam-skill-speaking-score').props.children).toBe('1 / 1 · 100%');
+    expect(screen.getByTestId('exam-skill-speaking-verdict').props.children).toBe('Strong');
+    expect(screen.getByText('Speaking')).toBeTruthy();
+  });
+
+  it('hibás diktálás: az eltérő szavak ki vannak emelve, a szóbeli gyenge, és nincs SM-2 változás', async () => {
+    const before = await getDb().getPcicCards();
+    mockBuildExam.mockReturnValueOnce([speak, gap] as never);
+    const screen = render(<ExamScreen />);
+    await flush();
+    await press(screen, 'exam-start');
+    await dictate(screen, 'yo bebo en casa');
+    expect(screen.getAllByTestId('exam-speak-missing').map((n) => n.props.children.join(''))).toEqual([' como']);
+    expect(screen.getAllByTestId('exam-speak-extra').map((n) => n.props.children.join(''))).toEqual([' bebo']);
+    await press(screen, 'exam-next');
+    await solve.choice(screen, true);
+
+    expect(screen.getByTestId('exam-skill-speaking-score').props.children).toBe('0 / 1 · 0%');
+    expect(screen.getByTestId('exam-skill-speaking-verdict').props.children).toBe('Weak');
+    expect(await getDb().getPcicCards()).toEqual(before);
+  });
+
+  it('az ékezet a mentett "Accents count" beállítást követi', async () => {
+    const accent = { ...speak, prompt: 'She is here.', expected: 'Ella está aquí.' };
+    await getDb().setStrictAccents(true);
+    mockBuildExam.mockReturnValueOnce([accent, gap] as never);
+    const strict = render(<ExamScreen />);
+    await flush();
+    await press(strict, 'exam-start');
+    await dictate(strict, 'ella esta aqui');
+    expect(strict.getAllByTestId('exam-speak-missing')).toHaveLength(2);
+    strict.unmount();
+
+    await getDb().setStrictAccents(false);
+    mockBuildExam.mockReturnValueOnce([accent, gap] as never);
+    const loose = render(<ExamScreen />);
+    await flush();
+    await press(loose, 'exam-start');
+    await dictate(loose, 'ella esta aqui');
+    expect(loose.getByTestId('exam-counter').props.children).toBe('Question 2 / 2');
+  });
+});
