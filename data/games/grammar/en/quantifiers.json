@@ -288,6 +288,60 @@
       }
     },
     {
+      "word": "concert",
+      "gloss": {
+        "hu": "koncert",
+        "en": "a music show",
+        "es": "concierto",
+        "de": "Konzert"
+      }
+    },
+    {
+      "word": "fans",
+      "gloss": {
+        "hu": "rajongók",
+        "en": "people who like something",
+        "es": "aficionados, fans",
+        "de": "Fans"
+      }
+    },
+    {
+      "word": "fewer",
+      "gloss": {
+        "hu": "kevesebb (megszámlálható)",
+        "en": "a smaller number of",
+        "es": "menos (contables)",
+        "de": "weniger (zählbar)"
+      }
+    },
+    {
+      "word": "lesser",
+      "gloss": {
+        "hu": "kisebb (kevésbé fontos)",
+        "en": "smaller in importance",
+        "es": "menor",
+        "de": "geringer"
+      }
+    },
+    {
+      "word": "littler",
+      "gloss": {
+        "hu": "kisebb (nem mennyiségjelző)",
+        "en": "more little (not a quantifier)",
+        "es": "más pequeño (no es cuantificador)",
+        "de": "kleiner (keine Mengenangabe)"
+      }
+    },
+    {
+      "word": "sold",
+      "gloss": {
+        "hu": "eladott (a sell múltja)",
+        "en": "past form of sell",
+        "es": "vendió (pasado de sell)",
+        "de": "verkaufte (Past von sell)"
+      }
+    },
+    {
       "word": "any",
       "gloss": {
         "hu": "bármennyi, semennyi (tagadásban)",
@@ -375,15 +429,6 @@
         "en": "a lot (plenty of)",
         "es": "de sobra, mucho (plenty of)",
         "de": "reichlich (plenty of)"
-      }
-    },
-    {
-      "word": "road",
-      "gloss": {
-        "hu": "út, országút",
-        "en": "a way for cars",
-        "es": "camino",
-        "de": "Straße"
       }
     }
   ],
@@ -526,138 +571,138 @@
     },
     {
       "id": "qua-05",
-      "sentence": "How ___ money do you have?",
+      "sentence": "There are ___ people here than yesterday.",
       "options": [
-        "many",
-        "few",
-        "much"
+        "less",
+        "littler",
+        "fewer"
       ],
       "correct": 2,
       "why": {
-        "hu": "A pénz megszámlálhatatlan: how much.",
-        "en": "Money is uncountable: how much.",
-        "es": "El dinero es incontable: how much.",
-        "de": "Geld ist unzählbar: how much."
+        "hu": "Megszámlálható főnévvel a középfok: fewer.",
+        "en": "The comparative with a countable noun: fewer.",
+        "es": "El comparativo con un sustantivo contable: fewer.",
+        "de": "Der Komparativ mit einem zählbaren Nomen: fewer."
       },
       "wrong": {
-        "many": {
-          "hu": "A many megszámlálható főnévvel áll; a money megszámlálhatatlan.",
-          "en": "Many goes with countable nouns; money is uncountable.",
-          "es": "Many va con sustantivos contables; money es incontable.",
-          "de": "Many steht bei zählbaren Nomen; money ist unzählbar."
+        "less": {
+          "hu": "A less megszámlálhatatlan főnévvel áll; az emberek megszámlálhatók, ezért fewer kell.",
+          "en": "Less goes with uncountable nouns; people are countable, so you need fewer.",
+          "es": "Less va con sustantivos incontables; las personas son contables, por eso hace falta fewer.",
+          "de": "Less steht bei unzählbaren Nomen; Menschen sind zählbar, deshalb braucht man fewer."
         },
-        "few": {
-          "hu": "A few megszámlálható főnévvel áll, és a how után nem áll.",
-          "en": "Few goes with countable nouns, and it does not follow how here.",
-          "es": "Few va con sustantivos contables, y aquí no va después de how.",
-          "de": "Few steht bei zählbaren Nomen und folgt hier nicht auf how."
+        "littler": {
+          "hu": "A littler nem használatos mennyiségjelzőként; fewer kell.",
+          "en": "Littler is not used as a quantifier; you need fewer.",
+          "es": "Littler no se usa como cuantificador; hace falta fewer.",
+          "de": "Littler wird nicht als Mengenangabe benutzt; man braucht fewer."
         }
       },
       "examples": [
-        "How much time do we have?",
-        "How much is it?"
+        "We have fewer books.",
+        "Fewer students came."
       ]
     },
     {
       "id": "qua-06",
-      "sentence": "How ___ people came to the party?",
+      "sentence": "There is ___ traffic today than yesterday.",
       "options": [
-        "many",
-        "much",
-        "little"
+        "less",
+        "fewer",
+        "lesser"
       ],
       "correct": 0,
       "why": {
-        "hu": "Az emberek megszámlálhatóak: how many.",
-        "en": "People are countable: how many.",
-        "es": "Las personas son contables: how many.",
-        "de": "Menschen sind zählbar: how many."
+        "hu": "Megszámlálhatatlan főnévvel a középfok: less.",
+        "en": "The comparative with an uncountable noun: less.",
+        "es": "El comparativo con un sustantivo incontable: less.",
+        "de": "Der Komparativ mit einem unzählbaren Nomen: less."
       },
       "wrong": {
-        "much": {
-          "hu": "A much megszámlálhatatlan főnévvel áll; a people megszámlálható.",
-          "en": "Much goes with uncountable nouns; people is countable.",
-          "es": "Much va con sustantivos incontables; people es contable.",
-          "de": "Much steht bei unzählbaren Nomen; people ist zählbar."
+        "fewer": {
+          "hu": "A fewer megszámlálható főnévvel áll; a traffic megszámlálhatatlan, ezért less kell.",
+          "en": "Fewer goes with countable nouns; traffic is uncountable, so you need less.",
+          "es": "Fewer va con sustantivos contables; traffic es incontable, por eso hace falta less.",
+          "de": "Fewer steht bei zählbaren Nomen; traffic ist unzählbar, deshalb braucht man less."
         },
-        "little": {
-          "hu": "A little megszámlálhatatlan főnévvel áll, és a how után nem áll.",
-          "en": "Little goes with uncountable nouns, and it does not follow how here.",
-          "es": "Little va con sustantivos incontables, y aquí no va después de how.",
-          "de": "Little steht bei unzählbaren Nomen und folgt hier nicht auf how."
+        "lesser": {
+          "hu": "A lesser nem a less helyettesítője mennyiségnél; less kell.",
+          "en": "Lesser does not replace less for quantity; you need less.",
+          "es": "Lesser no reemplaza a less para cantidad; hace falta less.",
+          "de": "Lesser ersetzt less bei Mengen nicht; man braucht less."
         }
       },
       "examples": [
-        "How many books do you have?",
-        "How many days are left?"
+        "We have less time.",
+        "There is less noise."
       ]
     },
     {
       "id": "qua-07",
-      "sentence": "There are too ___ cars in this city.",
+      "sentence": "There is hardly ___ milk left.",
       "options": [
-        "much",
-        "many",
-        "enough"
+        "some",
+        "any",
+        "a"
       ],
       "correct": 1,
       "why": {
-        "hu": "Megszámlálható főnév, túl sok: too many.",
-        "en": "A countable noun, too much: too many.",
-        "es": "Un sustantivo contable, demasiado: too many.",
-        "de": "Ein zählbares Nomen, zu viel: too many."
+        "hu": "A hardly után any áll: hardly any.",
+        "en": "After hardly comes any: hardly any.",
+        "es": "Después de hardly va any: hardly any.",
+        "de": "Nach hardly steht any: hardly any."
       },
       "wrong": {
-        "much": {
-          "hu": "A too much megszámlálhatatlan főnévvel áll; a cars megszámlálható.",
-          "en": "Too much goes with uncountable nouns; cars is countable.",
-          "es": "Too much va con sustantivos incontables; cars es contable.",
-          "de": "Too much steht bei unzählbaren Nomen; cars ist zählbar."
+        "some": {
+          "hu": "A hardly some nem helyes; a hardly tagadó értelmű, ezért any kell.",
+          "en": "“Hardly some” is not correct; hardly has a negative sense, so you need any.",
+          "es": "«Hardly some» no es correcto; hardly tiene sentido negativo, por eso hace falta any.",
+          "de": "„Hardly some“ ist nicht korrekt; hardly hat negative Bedeutung, deshalb braucht man any."
         },
-        "enough": {
-          "hu": "A too enough nem létezik; az enough és a too nem állnak együtt így.",
-          "en": "“Too enough” does not exist; enough and too do not go together like this.",
-          "es": "«Too enough» no existe; enough y too no van juntos así.",
-          "de": "„Too enough“ gibt es nicht; enough und too stehen so nicht zusammen."
+        "a": {
+          "hu": "A hardly a milk nem helyes; a milk megszámlálhatatlan.",
+          "en": "“Hardly a milk” is not correct; milk is uncountable.",
+          "es": "«Hardly a milk» no es correcto; milk es incontable.",
+          "de": "„Hardly a milk“ ist nicht korrekt; milk ist unzählbar."
         }
       },
       "examples": [
-        "There are too many people.",
-        "We have too many bags."
+        "There is hardly any time.",
+        "We have hardly any food."
       ]
     },
     {
       "id": "qua-08",
-      "sentence": "There is too ___ traffic on this road.",
+      "sentence": "A great many ___ came to the concert.",
       "options": [
-        "many",
-        "few",
-        "much"
+        "money",
+        "time",
+        "people"
       ],
       "correct": 2,
       "why": {
-        "hu": "A forgalom megszámlálhatatlan: too much.",
-        "en": "Traffic is uncountable: too much.",
-        "es": "El tráfico es incontable: too much.",
-        "de": "Verkehr ist unzählbar: too much."
+        "hu": "A great many megszámlálható többes számú főnévvel áll: people.",
+        "en": "A great many goes with a countable plural noun: people.",
+        "es": "A great many va con un sustantivo contable en plural: people.",
+        "de": "A great many steht bei einem zählbaren Nomen im Plural: people."
       },
       "wrong": {
-        "many": {
-          "hu": "A too many megszámlálható főnévvel áll; a traffic megszámlálhatatlan.",
-          "en": "Too many goes with countable nouns; traffic is uncountable.",
-          "es": "Too many va con sustantivos contables; traffic es incontable.",
-          "de": "Too many steht bei zählbaren Nomen; traffic ist unzählbar."
+        "money": {
+          "hu": "A great many nem áll megszámlálhatatlan főnévvel; a money megszámlálhatatlan.",
+          "en": "A great many does not go with uncountable nouns; money is uncountable.",
+          "es": "A great many no va con sustantivos incontables; money es incontable.",
+          "de": "A great many steht nicht bei unzählbaren Nomen; money ist unzählbar."
         },
-        "few": {
-          "hu": "A too few megszámlálható főnévvel áll; a traffic megszámlálhatatlan.",
-          "en": "Too few goes with countable nouns; traffic is uncountable.",
-          "es": "Too few va con sustantivos contables; traffic es incontable.",
-          "de": "Too few steht bei zählbaren Nomen; traffic ist unzählbar."
+        "time": {
+          "hu": "A great many nem áll megszámlálhatatlan főnévvel; a time itt megszámlálhatatlan.",
+          "en": "A great many does not go with uncountable nouns; time is uncountable here.",
+          "es": "A great many no va con sustantivos incontables; time es incontable aquí.",
+          "de": "A great many steht nicht bei unzählbaren Nomen; time ist hier unzählbar."
         }
       },
       "examples": [
-        "There is too much noise.",
-        "We have too much work."
+        "A great many books were sold.",
+        "A great many fans came."
       ]
     },
     {

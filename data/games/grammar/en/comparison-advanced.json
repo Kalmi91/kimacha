@@ -327,6 +327,15 @@
       }
     },
     {
+      "word": "fewest",
+      "gloss": {
+        "hu": "legkevesebb (megszámlálható)",
+        "en": "the smallest number",
+        "es": "los menos (contables)",
+        "de": "die wenigsten"
+      }
+    },
+    {
       "word": "darker",
       "gloss": {
         "hu": "sötétebb",
@@ -378,15 +387,6 @@
         "en": "the biggest",
         "es": "el más grande",
         "de": "größte"
-      }
-    },
-    {
-      "word": "lesser",
-      "gloss": {
-        "hu": "kisebb (kevésbé fontos)",
-        "en": "smaller in importance",
-        "es": "menor",
-        "de": "geringer"
       }
     },
     {
@@ -716,9 +716,9 @@
       "id": "cmp-07",
       "sentence": "This is the ___ expensive hotel in town.",
       "options": [
-        "less",
+        "little",
         "least",
-        "lesser"
+        "fewest"
       ],
       "correct": 1,
       "why": {
@@ -728,17 +728,17 @@
         "de": "Ein Superlativ für das Wenigste: the least + Adjektiv."
       },
       "wrong": {
-        "less": {
-          "hu": "A less középfok; a the után felsőfok (least) kell.",
-          "en": "Less is a comparative; after the you need a superlative (least).",
-          "es": "Less es un comparativo; después de the hace falta un superlativo (least).",
-          "de": "Less ist ein Komparativ; nach the braucht man einen Superlativ (least)."
+        "little": {
+          "hu": "A little nem felsőfok; a the után the least kell.",
+          "en": "Little is not a superlative; after the you need the least.",
+          "es": "Little no es un superlativo; después de the hace falta the least.",
+          "de": "Little ist kein Superlativ; nach the braucht man the least."
         },
-        "lesser": {
-          "hu": "A lesser nem jelent „kevésbé”; a felsőfok the least.",
-          "en": "Lesser does not mean “less”; the superlative is the least.",
-          "es": "Lesser no significa «menos»; el superlativo es the least.",
-          "de": "Lesser heißt nicht „weniger“; der Superlativ ist the least."
+        "fewest": {
+          "hu": "A fewest megszámlálható főnévvel áll; a melléknév elé the least kell.",
+          "en": "Fewest goes with countable nouns; before an adjective you need the least.",
+          "es": "Fewest va con sustantivos contables; antes de un adjetivo hace falta the least.",
+          "de": "Fewest steht bei zählbaren Nomen; vor einem Adjektiv braucht man the least."
         }
       },
       "examples": [

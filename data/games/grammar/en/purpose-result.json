@@ -192,10 +192,10 @@
           },
           "examples": [
             {
-              "es": "It rained all day. As a result, the match was canceled.",
+              "es": "It rained all day. As a result, the game was canceled.",
               "tr": {
                 "hu": "Egész nap esett. Ennek következtében elmaradt a meccs.",
-                "en": "It rained all day. As a result, the match was canceled.",
+                "en": "It rained all day. As a result, the game was canceled.",
                 "es": "Llovió todo el día. Como resultado, se canceló el partido.",
                 "de": "Es regnete den ganzen Tag. Deshalb fiel das Spiel aus."
               }
@@ -603,7 +603,7 @@
       "id": "prs-05",
       "sentence": "She left early so that she ___ be late.",
       "options": [
-        "won't",
+        "didn't",
         "doesn't",
         "wouldn't"
       ],
@@ -615,11 +615,11 @@
         "de": "Ein Zweck in der Vergangenheit: so that + wouldn’t."
       },
       "wrong": {
-        "won't": {
-          "hu": "A won’t jövőre vonatkozik; a left múltat jelez, ezért wouldn’t kell.",
-          "en": "Won’t refers to the future; left points to the past, so you need wouldn’t.",
-          "es": "Won’t se refiere al futuro; left señala el pasado, por eso hace falta wouldn’t.",
-          "de": "Won’t bezieht sich auf die Zukunft; left weist auf die Vergangenheit, deshalb braucht man wouldn’t."
+        "didn't": {
+          "hu": "A didn’t be late nem helyes; a so that után modális ige kell (wouldn’t).",
+          "en": "“Didn’t be late” is not correct; after so that a modal verb is needed (wouldn’t).",
+          "es": "«Didn’t be late» no es correcto; después de so that hace falta un verbo modal (wouldn’t).",
+          "de": "„Didn’t be late“ ist nicht korrekt; nach so that braucht man ein Modalverb (wouldn’t)."
         },
         "doesn't": {
           "hu": "A doesn’t jelen idejű, és a so that után modális ige kell.",
@@ -703,7 +703,7 @@
     },
     {
       "id": "prs-08",
-      "sentence": "It rained all day. ___, the match was canceled.",
+      "sentence": "It rained all day. ___, the game was canceled.",
       "options": [
         "Because",
         "In order",
@@ -1365,7 +1365,7 @@
         },
         {
           "es": "Llovió todo el día. Como resultado, se canceló el partido.",
-          "en": "It rained all day. As a result, the match was canceled."
+          "en": "It rained all day. As a result, the game was canceled."
         },
         {
           "es": "Hacía tanto frío que nos quedamos adentro.",

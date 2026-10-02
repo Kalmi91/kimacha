@@ -344,7 +344,7 @@
     {
       "word": "sold",
       "gloss": {
-        "hu": "eladta (a sell múltja)",
+        "hu": "eladott (a sell múltja)",
         "en": "past form of sell",
         "es": "vendió (pasado de sell)",
         "de": "verkaufte (Past von sell)"
@@ -972,6 +972,9 @@
       "verb": "forma",
       "person": "lamento sobre el presente (ojalá tuviera)",
       "answer": "past simple",
+      "accept": [
+        "simple past"
+      ],
       "table": "wsh-forms"
     },
     {
