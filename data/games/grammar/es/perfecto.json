@@ -150,6 +150,14 @@
           "han escrito",
           "han vuelto"
         ]
+      ],
+      "enPrompt": [
+        ["I have spoken", "I have eaten", "I have lived", "I have done", "I have seen", "I have said", "I have written", "I have returned"],
+        ["you have spoken", "you have eaten", "you have lived", "you have done", "you have seen", "you have said", "you have written", "you have returned"],
+        ["she has spoken", "he has eaten", "she has lived", "he has done", "she has seen", "he has said", "she has written", "he has returned"],
+        ["we have spoken", "we have eaten", "we have lived", "we have done", "we have seen", "we have said", "we have written", "we have returned"],
+        ["you all have spoken", "you all have eaten", "you all have lived", "you all have done", "you all have seen", "you all have said", "you all have written", "you all have returned"],
+        ["they have spoken", "they have eaten", "they have lived", "they have done", "they have seen", "they have said", "they have written", "they have returned"]
       ]
     },
     {

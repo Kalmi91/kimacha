@@ -357,6 +357,14 @@
           "hayan escrito",
           "hayan vuelto"
         ]
+      ],
+      "enPrompt": [
+        ["that I have spoken", "that I have eaten", "that I have lived", "that I have done", "that I have seen", "that I have said", "that I have written", "that I have returned"],
+        ["that you have spoken", "that you have eaten", "that you have lived", "that you have done", "that you have seen", "that you have said", "that you have written", "that you have returned"],
+        ["that she have spoken", "that he have eaten", "that she have lived", "that he have done", "that she have seen", "that he have said", "that she have written", "that he have returned"],
+        ["that we have spoken", "that we have eaten", "that we have lived", "that we have done", "that we have seen", "that we have said", "that we have written", "that we have returned"],
+        ["that you all have spoken", "that you all have eaten", "that you all have lived", "that you all have done", "that you all have seen", "that you all have said", "that you all have written", "that you all have returned"],
+        ["that they have spoken", "that they have eaten", "that they have lived", "that they have done", "that they have seen", "that they have said", "that they have written", "that they have returned"]
       ]
     },
     {
