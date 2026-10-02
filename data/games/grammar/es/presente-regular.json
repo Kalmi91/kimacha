@@ -185,6 +185,14 @@
           "comen",
           "viven"
         ]
+      ],
+      "enPrompt": [
+        ["I speak", "I eat", "I live"],
+        ["you speak", "you eat", "you live"],
+        ["she speaks", "he eats", "she lives"],
+        ["we speak", "we eat", "we live"],
+        ["you all speak", "you all eat", "you all live"],
+        ["they speak", "they eat", "they live"]
       ]
     },
     {
