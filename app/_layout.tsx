@@ -135,6 +135,7 @@ function RootLayoutNav() {
           <Stack.Screen name="mistakes" options={{ headerShown: false }} />
           <Stack.Screen name="exam" options={{ headerShown: false }} />
           <Stack.Screen name="placement" options={{ headerShown: false }} />
+          <Stack.Screen name="mock-exam" options={{ headerShown: false }} />
         </Stack>
         <UsageToast hidden={(segments as string[])[0] === 'onboarding'} />
       </View>
