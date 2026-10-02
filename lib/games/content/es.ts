@@ -16,6 +16,8 @@ import type {
 
 import grammarEsSerEstar from '@/data/games/grammar/es/ser-estar.json';
 import grammarEsArticulosGenero from '@/data/games/grammar/es/articulos-genero.json';
+import { withArticleNouns } from '@/lib/grammar/nounArticles';
+import type { LessonV2 } from '@/lib/grammar/lessonTypes';
 import grammarEsPorPara from '@/data/games/grammar/es/por-para.json';
 import grammarEsPerifrasisModales from '@/data/games/grammar/es/perifrasis-modales.json';
 import grammarEsPronombresOd from '@/data/games/grammar/es/pronombres-od.json';
@@ -112,7 +114,8 @@ export const esContent: LanguageContentBundle = {
     // beszéd-mag) témái ebben a sorban jönnek, A1-től B1-ig.
     grammarEsClasesDePalabras,
     grammarEsSustantivoNumero,
-    grammarEsArticulosGenero,
+    // FB448: az app összes főneve el / la feladatként is (lib/grammar/nounArticles.ts).
+    withArticleNouns(grammarEsArticulosGenero as unknown as LessonV2),
     grammarEsAdjetivoConcordancia,
     grammarEsPresenteRegular,
     grammarEsPresenteIrregular,
