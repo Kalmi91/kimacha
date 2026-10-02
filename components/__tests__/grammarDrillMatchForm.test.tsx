@@ -104,6 +104,20 @@ describe('GrammarDrill: form item', () => {
     fireEvent.press(screen.getByTestId('grammar-next'));
     expect(onFinish).toHaveBeenCalledWith(1, 1);
   });
+
+  it('accepts an alternative from the accept list, with a typographic apostrophe too', () => {
+    const onFinish = jest.fn();
+    const formItem = { ...(lesson.items[1] as Extract<LessonV2['items'][number], { kind: 'form' }>), answer: 'are not', accept: ["aren't"] };
+    const topic: LessonV2 = { ...lesson, items: [formItem] };
+    render(
+      <GrammarDrill topic={topic} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['choice', 'match', 'form']} />
+    );
+
+    fireEvent.changeText(screen.getByTestId('formInput'), 'Aren’t');
+    fireEvent.press(screen.getByTestId('formCheck'));
+    fireEvent.press(screen.getByTestId('grammar-next'));
+    expect(onFinish).toHaveBeenCalledWith(1, 1);
+  });
 });
 
 // D3 (FB290, 2026-09-17): a `kinds` prop szűri a kört a kért fajtákra.

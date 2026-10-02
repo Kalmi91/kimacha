@@ -31,6 +31,7 @@ import { speechLang } from '@/lib/languages';
 import { buildGrammarRound, grammarRoundItemKind, isChoiceRoundItem, wrongExplanation } from '@/lib/games/grammarChoice';
 import { pickTransformRound, TRANSFORM_ROUND_SIZE } from '@/lib/grammar/transformRounds';
 import { findWholeWord } from '@/lib/grammar/whyTarget';
+import { isFormAnswerCorrect } from '@/lib/grammar/formAnswer';
 import { optionHint } from '@/lib/grammar/optionHints';
 import { buildGlossMap } from '@/lib/games/gloss';
 import { hashString, shuffleArray } from '@/lib/shuffle';
@@ -333,7 +334,7 @@ function FormDrillItem({
   const g = useGrammarColors();
 
   const check = () => {
-    const ok = value.trim().toLowerCase() === item.answer.trim().toLowerCase();
+    const ok = isFormAnswerCorrect(value, item);
     setCorrect(ok);
     setChecked(true);
   };

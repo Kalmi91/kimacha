@@ -664,6 +664,20 @@ function auditFormItem(item, itemPath, topic, tableIds) {
   }
   if (!item.verb) p1.push({ path: itemPath, issue: 'form item missing verb' });
   if (!item.answer) p1.push({ path: itemPath, issue: 'form item missing answer' });
+  // accept: további elfogadott gépelt alakok (lib/grammar/formAnswer.ts); nem üres, egyedi, nem egyezik az answer-rel.
+  if (item.accept !== undefined) {
+    if (!Array.isArray(item.accept) || item.accept.length === 0) {
+      p1.push({ path: itemPath, issue: 'form item accept must be a non-empty array' });
+    } else {
+      const seenAccept = new Set([String(item.answer ?? '').trim().toLowerCase()]);
+      for (const alt of item.accept) {
+        const key = typeof alt === 'string' ? alt.trim().toLowerCase() : '';
+        if (!key) p1.push({ path: itemPath, issue: 'form item accept entry is empty or not a string' });
+        else if (seenAccept.has(key)) p1.push({ path: itemPath, issue: `form item accept entry "${alt}" repeats the answer or another accept entry` });
+        seenAccept.add(key);
+      }
+    }
+  }
   if (!item.table || !tableIds.has(item.table)) {
     p1.push({ path: itemPath, issue: `form item references unknown table "${item.table}"` });
     return;
