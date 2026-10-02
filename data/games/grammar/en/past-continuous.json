@@ -240,10 +240,10 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Vigyázat az imperfecto csapdával: a spanyol „de niño iba a la escuela en autobús” (szokás) angolul nem past continuous. A múltbeli szokás egyszerű múlt vagy used to: „When I was a child, I went to school by bus.”",
-        "en": "Watch out for the imperfecto trap: the Spanish “de niño iba a la escuela en autobús” (a habit) is not the past continuous in English. A habit in the past is the past simple or used to: “When I was a child, I went to school by bus.”",
-        "es": "Cuidado con la trampa del imperfecto: «de niño iba a la escuela en autobús» (un hábito) no es pasado continuo en inglés. Un hábito del pasado es pasado simple o used to: «When I was a child, I went to school by bus.»",
-        "de": "Vorsicht vor der Imperfecto-Falle: das spanische „de niño iba a la escuela en autobús“ (eine Gewohnheit) ist im Englischen nicht das Past Continuous. Eine Gewohnheit in der Vergangenheit steht im Past Simple oder mit used to: „When I was a child, I went to school by bus.“"
+        "hu": "Vigyázat az imperfecto csapdával: a spanyol „de niño iba a la escuela en camión” (szokás) angolul nem past continuous. A múltbeli szokás egyszerű múlt vagy used to: „When I was a child, I went to school by bus.”",
+        "en": "Watch out for the imperfecto trap: the Spanish “de niño iba a la escuela en camión” (a habit) is not the past continuous in English. A habit in the past is the past simple or used to: “When I was a child, I went to school by bus.”",
+        "es": "Cuidado con la trampa del imperfecto: «de niño iba a la escuela en camión» (un hábito) no es pasado continuo en inglés. Un hábito del pasado es pasado simple o used to: «When I was a child, I went to school by bus.»",
+        "de": "Vorsicht vor der Imperfecto-Falle: das spanische „de niño iba a la escuela en camión“ (eine Gewohnheit) ist im Englischen nicht das Past Continuous. Eine Gewohnheit in der Vergangenheit steht im Past Simple oder mit used to: „When I was a child, I went to school by bus.“"
       }
     },
     {
@@ -559,31 +559,31 @@
     },
     {
       "id": "pco-08",
-      "sentence": "While Ana was cooking, Luis ___ the dishes.",
+      "sentence": "While Ana was cooking, Luis was ___ the dishes.",
       "options": [
+        "wash",
         "washed",
-        "is washing",
-        "was washing"
+        "washing"
       ],
       "correct": 2,
       "why": {
-        "hu": "Két párhuzamos cselekvés, a while-os mondat mellett mindkettő past continuous: was washing.",
-        "en": "Two parallel actions; with a while sentence both are in the past continuous: was washing.",
-        "es": "Dos acciones en paralelo; con una oración con while las dos van en pasado continuo: was washing.",
-        "de": "Zwei parallele Handlungen; bei einem while-Satz stehen beide im Past Continuous: was washing."
+        "hu": "A was után ige-ing áll: was washing. A while-os mondatban mindkét cselekvés egyszerre zajlik.",
+        "en": "After was comes verb-ing: was washing. In a while sentence both actions go on at the same time.",
+        "es": "Después de was va verbo-ing: was washing. En una oración con while las dos acciones ocurren a la vez.",
+        "de": "Nach was steht Verb-ing: was washing. In einem while-Satz laufen beide Handlungen gleichzeitig."
       },
       "wrong": {
-        "washed": {
-          "hu": "A washed kész eseménynek mutatná a mosogatást; a Ana főzésével egy időben zajlott, ezért was washing.",
-          "en": "“Washed” would present the washing as a finished event; it went on at the same time as Ana’s cooking, so you need was washing.",
-          "es": "«Washed» presentaría el lavado como un hecho terminado; ocurría a la vez que cocinaba Ana, por eso was washing.",
-          "de": "„Washed“ würde das Spülen als abgeschlossenes Ereignis zeigen; es lief gleichzeitig mit Anas Kochen, deshalb was washing."
+        "wash": {
+          "hu": "A was után az alapige hibás; -ing alak kell (washing).",
+          "en": "The base verb after was is incorrect; you need the -ing form (washing).",
+          "es": "El verbo base después de was es incorrecto; hace falta la forma -ing (washing).",
+          "de": "Die Grundform nach was ist falsch; man braucht die -ing-Form (washing)."
         },
-        "is washing": {
-          "hu": "Az „is washing” jelen idő, de a mondat múltban van (was cooking).",
-          "en": "“Is washing” is present, but the sentence is in the past (was cooking).",
-          "es": "«Is washing» es presente, pero la oración está en pasado (was cooking).",
-          "de": "„Is washing“ ist Präsens, aber der Satz steht in der Vergangenheit (was cooking)."
+        "washed": {
+          "hu": "A washed múlt alak; a was után az -ing alak áll (was washing).",
+          "en": "“Washed” is a past form; after was comes the -ing form (was washing).",
+          "es": "«Washed» es una forma de pasado; después de was va la forma -ing (was washing).",
+          "de": "„Washed“ ist eine Vergangenheitsform; nach was steht die -ing-Form (was washing)."
         }
       },
       "examples": [
@@ -903,6 +903,9 @@
       "verb": "negación",
       "person": "you",
       "answer": "were not",
+      "accept": [
+        "weren't"
+      ],
       "table": "pco-aux"
     },
     {
@@ -927,6 +930,9 @@
       "verb": "negación",
       "person": "he / she / it",
       "answer": "was not",
+      "accept": [
+        "wasn't"
+      ],
       "table": "pco-aux"
     },
     {
@@ -935,6 +941,9 @@
       "verb": "negación",
       "person": "we",
       "answer": "were not",
+      "accept": [
+        "weren't"
+      ],
       "table": "pco-aux"
     },
     {
@@ -1157,7 +1166,7 @@
       "tr": {
         "hu": "Gyerekkoromban busszal jártam iskolába.",
         "en": "When I was a child, I went to school by bus.",
-        "es": "Cuando era niño, iba a la escuela en autobús.",
+        "es": "Cuando era niño, iba a la escuela en camión.",
         "de": "Als Kind bin ich mit dem Bus zur Schule gefahren."
       },
       "options": [

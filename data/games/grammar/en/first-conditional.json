@@ -14,7 +14,7 @@
       "text": {
         "hu": "Az első feltételes mód egy lehetséges, valós jövőbeli helyzetről és annak következményéről szól: If + egyszerű jelen, will + alapige. „If it rains tomorrow, we will stay at home.” A spanyolban ugyanez a szerkezet (si llueve, nos quedamos / nos quedaremos), ezért ez könnyű: a lényeg az, hogy az if után soha nem áll will.",
         "en": "The first conditional is about a possible, real situation in the future and its result: If + simple present, will + base verb. “If it rains tomorrow, we will stay at home.” Spanish has the same structure (si llueve, nos quedamos / nos quedaremos), so this one is easy: the key is that after if there is never a will.",
-        "es": "El primer condicional trata de una situación posible y real en el futuro y su resultado: If + presente simple, will + verbo base. «If it rains tomorrow, we will stay at home.» El español tiene la misma estructura (si llueve, nos quedamos / nos quedaremos), por eso esto es fácil: lo clave es que después de if nunca va will.",
+        "es": "El primer condicional trata de una situación posible y real en el futuro y su resultado: If + presente simple, will + verbo base. «If it rains tomorrow, we will stay at home.» El español tiene la misma estructura (si llueve, nos quedamos / nos quedaremos), por eso esto es fácil: lo importante es que después de if nunca va will.",
         "de": "Der erste Konditional handelt von einer möglichen, realen Situation in der Zukunft und ihrem Ergebnis: If + Present Simple, will + Grundform. „If it rains tomorrow, we will stay at home.“ Das Spanische hat dieselbe Struktur (si llueve, nos quedamos / nos quedaremos), deshalb ist das leicht: Wichtig ist, dass nach if nie ein will steht."
       }
     },
@@ -738,7 +738,7 @@
     },
     {
       "id": "fc-14",
-      "sentence": "If you don't study, you ___ the exam.",
+      "sentence": "If you don't study today, you ___ the exam tomorrow.",
       "options": [
         "fail",
         "would fail",
@@ -848,10 +848,10 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Az if utáni feltétel egyszerű jelen: if it is colder.",
-        "en": "The condition after if is in the simple present: if it is colder.",
-        "es": "La condición después de if va en presente simple: if it is colder.",
-        "de": "Die Bedingung nach if steht im Present Simple: if it is colder."
+        "hu": "Az if utáni feltétel egyszerű jelen: if it is cold.",
+        "en": "The condition after if is in the simple present: if it is cold.",
+        "es": "La condición después de if va en presente simple: if it is cold.",
+        "de": "Die Bedingung nach if steht im Present Simple: if it is cold."
       },
       "wrong": {
         "will be": {
@@ -918,6 +918,9 @@
       "verb": "forma",
       "person": "una posibilidad",
       "answer": "can",
+      "accept": [
+        "may"
+      ],
       "table": "fc-forms"
     },
     {

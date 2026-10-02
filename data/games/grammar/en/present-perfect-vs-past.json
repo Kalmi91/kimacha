@@ -149,10 +149,10 @@
         },
         {
           "text": {
-            "hu": "Kérdés egy lezárt pillanatról: When…? What time…? Where were you…? Ezekkel a kérdésekkel egyszerű múlt áll (did + alapige), present perfect soha.",
-            "en": "A question about a finished moment: When…? What time…? Where were you…? These questions take the past simple (did + base verb), never the present perfect.",
-            "es": "Pregunta sobre un momento terminado: When…? What time…? Where were you…? Estas preguntas llevan pasado simple (did + verbo base), nunca presente perfecto.",
-            "de": "Eine Frage nach einem abgeschlossenen Moment: When…? What time…? Where were you…? Diese Fragen stehen im Past Simple (did + Grundform), nie im Present Perfect."
+            "hu": "Kérdés egy lezárt pillanatról: When…? What time…? Where were you…? Ezekkel a kérdésekkel egyszerű múlt áll (did + alapige, vagy was / were), present perfect soha.",
+            "en": "A question about a finished moment: When…? What time…? Where were you…? These questions take the past simple (did + base verb, or was / were), never the present perfect.",
+            "es": "Pregunta sobre un momento terminado: When…? What time…? Where were you…? Estas preguntas llevan pasado simple (did + verbo base, o was / were), nunca presente perfecto.",
+            "de": "Eine Frage nach einem abgeschlossenen Moment: When…? What time…? Where were you…? Diese Fragen stehen im Past Simple (did + Grundform oder was / were), nie im Present Perfect."
           },
           "examples": [
             {
@@ -443,7 +443,7 @@
     },
     {
       "id": "ppvp-03",
-      "sentence": "When ___ you arrive in Mexico?",
+      "sentence": "You live in Mexico now. When ___ you arrive here?",
       "options": [
         "did",
         "do",
@@ -1163,10 +1163,10 @@
         },
         {
           "text": {
-            "hu": "egyszerű jelen: for + időtartam",
-            "en": "present simple: for + a duration",
-            "es": "presente simple: for + una duración",
-            "de": "Present Simple: for + Dauer"
+            "hu": "egyszerű jelen: mostani helyzet",
+            "en": "present simple: a situation now",
+            "es": "presente simple: una situación ahora",
+            "de": "Present Simple: eine Situation jetzt"
           },
           "wrong": {
             "hu": "Spanyolul jelen idő áll („vivimos desde hace cinco años”), de angolul a for + időtartam mellé present perfect kell.",

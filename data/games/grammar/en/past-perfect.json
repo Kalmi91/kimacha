@@ -338,7 +338,7 @@
     },
     {
       "id": "ppf-02",
-      "sentence": "By the time we arrived, the shop ___ closed.",
+      "sentence": "By the time we arrived, the shop ___ closed its doors.",
       "options": [
         "has",
         "was",
@@ -346,10 +346,10 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A „by the time” (mire) mellett a korábbi eseményhez had kell: the shop had closed.",
-        "en": "With “by the time” the earlier event needs had: the shop had closed.",
-        "es": "Con «by the time» el hecho anterior necesita had: the shop had closed.",
-        "de": "Bei „by the time“ braucht das frühere Ereignis had: the shop had closed."
+        "hu": "A „by the time” (mire) mellett a korábbi eseményhez had kell: the shop had closed its doors.",
+        "en": "With “by the time” the earlier event needs had: the shop had closed its doors.",
+        "es": "Con «by the time» el hecho anterior necesita had: the shop had closed its doors.",
+        "de": "Bei „by the time“ braucht das frühere Ereignis had: the shop had closed its doors."
       },
       "wrong": {
         "has": {
@@ -359,10 +359,10 @@
           "de": "„Has“ ist Present Perfect; „by the time we arrived“ nennt einen Moment der Vergangenheit, deshalb braucht man had."
         },
         "was": {
-          "hu": "A „was closed” állapotot jelentene, de itt az a lényeg, hogy a bezárás korábban történt (had closed).",
-          "en": "“Was closed” would describe a state, but the point here is that the closing happened earlier (had closed).",
-          "es": "«Was closed» describiría un estado, pero aquí lo importante es que el cierre pasó antes (had closed).",
-          "de": "„Was closed“ würde einen Zustand beschreiben, aber hier ist wichtig, dass das Schließen früher passiert ist (had closed)."
+          "hu": "A „was closed its doors” nem lehetséges: a was után nem állhat tárgy; a korábbi bezáráshoz had closed kell.",
+          "en": "“Was closed its doors” is not possible: after was there can be no object; the earlier closing needs had closed.",
+          "es": "«Was closed its doors» no es posible: después de was no puede ir un objeto; el cierre anterior necesita had closed.",
+          "de": "„Was closed its doors“ ist nicht möglich: nach was kann kein Objekt stehen; das frühere Schließen braucht had closed."
         }
       },
       "examples": [
@@ -678,7 +678,7 @@
     },
     {
       "id": "ppf-12",
-      "sentence": "I did not recognize him. He ___ changed a lot.",
+      "sentence": "I did not recognize him because he ___ changed a lot.",
       "options": [
         "had",
         "has",
@@ -714,9 +714,9 @@
       "id": "ppf-13",
       "sentence": "She told me she ___ the book already.",
       "options": [
-        "has read",
+        "reads",
         "had read",
-        "reads"
+        "was reading"
       ],
       "correct": 1,
       "why": {
@@ -726,17 +726,17 @@
         "de": "„Told“ ist ein Moment in der Vergangenheit; was sie sagte, betrifft ein früheres Ereignis: had read."
       },
       "wrong": {
-        "has read": {
-          "hu": "A has read present perfect, de a told múltba teszi a mondatot; a korábbi eseményhez had read kell.",
-          "en": "“Has read” is the present perfect, but told puts the sentence in the past; the earlier event needs had read.",
-          "es": "«Has read» es presente perfecto, pero told pone la oración en pasado; el hecho anterior necesita had read.",
-          "de": "„Has read“ ist Present Perfect, aber told setzt den Satz in die Vergangenheit; das frühere Ereignis braucht had read."
-        },
         "reads": {
           "hu": "A „reads” egyszerű jelen; a told múlt, és az olvasás még korábbi volt.",
           "en": "“Reads” is the simple present; told is past, and the reading came even earlier.",
           "es": "«Reads» es el presente simple; told es pasado, y la lectura fue aún anterior.",
           "de": "„Reads“ ist das Present Simple; told ist Vergangenheit, und das Lesen lag noch früher."
+        },
+        "was reading": {
+          "hu": "A was reading folyamatos múlt lenne; az „already” kész eseményt kér, ezért had read.",
+          "en": "Was reading would be the past continuous; “already” asks for a finished event, so had read.",
+          "es": "Was reading sería el pasado continuo; «already» pide un hecho terminado, por eso had read.",
+          "de": "Was reading wäre das Past Continuous; „already“ verlangt ein abgeschlossenes Ereignis, deshalb had read."
         }
       },
       "examples": [

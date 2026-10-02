@@ -305,6 +305,15 @@
   },
   "glossary": [
     {
+      "word": "wouldn't",
+      "gloss": {
+        "hu": "nem tenne (would not)",
+        "en": "would not",
+        "es": "no haría (would not)",
+        "de": "würde nicht (would not)"
+      }
+    },
+    {
       "word": "would",
       "gloss": {
         "hu": "lenne, tenne (a will múlt alakja)",
@@ -319,9 +328,9 @@
       "id": "rs-01",
       "sentence": "\"I live in Puebla.\" She said that she ___ in Puebla.",
       "options": [
-        "live",
+        "has lived",
         "lived",
-        "has lived"
+        "will live"
       ],
       "correct": 1,
       "why": {
@@ -331,17 +340,17 @@
         "de": "Nach said rückt das Präsens einen Schritt zurück: live → lived."
       },
       "wrong": {
-        "live": {
-          "hu": "Az egyszerű jelen (live) hátralépés nélkül maradna; a függő beszédben múlt idő kell (lived).",
-          "en": "The simple present (live) would stay without the step back; reported speech needs the past (lived).",
-          "es": "El presente simple (live) se quedaría sin el paso atrás; el estilo indirecto necesita el pasado (lived).",
-          "de": "Das Present Simple (live) bliebe ohne den Schritt zurück; die indirekte Rede braucht die Vergangenheit (lived)."
-        },
         "has lived": {
           "hu": "A has lived present perfect lenne; a jelen egyszerű múltra megy hátra, nem present perfectre.",
           "en": "Has lived would be the present perfect; the present goes back to the past simple, not to the present perfect.",
           "es": "Has lived sería el presente perfecto; el presente retrocede al pasado simple, no al presente perfecto.",
           "de": "Has lived wäre das Present Perfect; das Präsens rückt zum Past Simple zurück, nicht zum Present Perfect."
+        },
+        "will live": {
+          "hu": "A will live jövőt jelent; az idézet jelen idejű (I live), ezért a jelen múltra megy hátra (lived).",
+          "en": "Will live means the future; the quote is in the present (I live), so the present goes back to the past (lived).",
+          "es": "Will live significa futuro; la cita está en presente (I live), por eso el presente retrocede al pasado (lived).",
+          "de": "Will live bedeutet Zukunft; das Zitat steht im Präsens (I live), deshalb rückt das Präsens in die Vergangenheit (lived)."
         }
       },
       "examples": [
@@ -353,8 +362,8 @@
       "id": "rs-02",
       "sentence": "\"I am tired.\" He said he ___ tired.",
       "options": [
-        "is",
         "has been",
+        "will be",
         "was"
       ],
       "correct": 2,
@@ -365,17 +374,17 @@
         "de": "Am / is / are rückt in die Vergangenheit zurück: was tired."
       },
       "wrong": {
-        "is": {
-          "hu": "Az „is” hátralépés nélkül maradna; a függő beszédben was kell.",
-          "en": "“Is” would stay without the step back; reported speech needs was.",
-          "es": "«Is» se quedaría sin el paso atrás; el estilo indirecto necesita was.",
-          "de": "„Is“ bliebe ohne den Schritt zurück; die indirekte Rede braucht was."
-        },
         "has been": {
           "hu": "A has been present perfect lenne; az „am” egyszerű múltra megy hátra (was).",
           "en": "Has been would be the present perfect; “am” goes back to the past simple (was).",
           "es": "Has been sería el presente perfecto; «am» retrocede al pasado simple (was).",
           "de": "Has been wäre das Present Perfect; „am“ rückt zum Past Simple zurück (was)."
+        },
+        "will be": {
+          "hu": "A will be jövőt jelent; az „am” jelen idejű, és egyszerű múltra megy hátra (was).",
+          "en": "Will be means the future; “am” is present and goes back to the past simple (was).",
+          "es": "Will be significa futuro; «am» es presente y retrocede al pasado simple (was).",
+          "de": "Will be bedeutet Zukunft; „am“ ist Präsens und rückt zum Past Simple zurück (was)."
         }
       },
       "examples": [
@@ -388,8 +397,8 @@
       "sentence": "\"We will help you.\" They said they ___ help me.",
       "options": [
         "would",
-        "will",
-        "wills"
+        "wills",
+        "had"
       ],
       "correct": 0,
       "why": {
@@ -399,17 +408,17 @@
         "de": "In der indirekten Rede wird will zu would: would help."
       },
       "wrong": {
-        "will": {
-          "hu": "A will hátralépés nélkül maradna; a függő beszédben would kell.",
-          "en": "Will would stay without the step back; reported speech needs would.",
-          "es": "Will se quedaría sin el paso atrás; el estilo indirecto necesita would.",
-          "de": "Will bliebe ohne den Schritt zurück; die indirekte Rede braucht would."
-        },
         "wills": {
           "hu": "A „wills” nem létező alak; a módbeli igék nem kapnak -s végződést.",
           "en": "“Wills” is not an existing form; modal verbs take no -s ending.",
           "es": "«Wills» no es una forma que exista; los verbos modales no llevan -s.",
           "de": "„Wills“ ist keine existierende Form; Modalverben bekommen kein -s."
+        },
+        "had": {
+          "hu": "A had után igenév kell (had helped); a will egy lépéssel hátrébb would lesz.",
+          "en": "After had you need a participle (had helped); will goes one step back to would.",
+          "es": "Después de had hace falta un participio (had helped); will retrocede un paso a would.",
+          "de": "Nach had braucht man ein Partizip (had helped); will rückt einen Schritt zurück zu would."
         }
       },
       "examples": [
@@ -421,9 +430,9 @@
       "id": "rs-04",
       "sentence": "\"I can swim.\" She said she ___ swim.",
       "options": [
-        "can",
+        "cans",
         "could",
-        "cans"
+        "would"
       ],
       "correct": 1,
       "why": {
@@ -433,17 +442,17 @@
         "de": "In der indirekten Rede wird can zu could: could swim."
       },
       "wrong": {
-        "can": {
-          "hu": "A can hátralépés nélkül maradna; a függő beszédben could kell.",
-          "en": "Can would stay without the step back; reported speech needs could.",
-          "es": "Can se quedaría sin el paso atrás; el estilo indirecto necesita could.",
-          "de": "Can bliebe ohne den Schritt zurück; die indirekte Rede braucht could."
-        },
         "cans": {
           "hu": "A „cans” nem létező alak; a módbeli igék nem kapnak -s végződést.",
           "en": "“Cans” is not an existing form; modal verbs take no -s ending.",
           "es": "«Cans» no es una forma que exista; los verbos modales no llevan -s.",
           "de": "„Cans“ ist keine existierende Form; Modalverben bekommen kein -s."
+        },
+        "would": {
+          "hu": "A would jövőbeli vagy feltételes jelentésű; a can képességet fejez ki, ami could-ra megy hátra.",
+          "en": "Would has a future or conditional meaning; can expresses ability, which goes back to could.",
+          "es": "Would tiene sentido de futuro o condicional; can expresa capacidad, que retrocede a could.",
+          "de": "Would hat zukünftige oder konditionale Bedeutung; can drückt Fähigkeit aus, die zu could zurückrückt."
         }
       },
       "examples": [
@@ -455,8 +464,8 @@
       "id": "rs-05",
       "sentence": "\"I saw him.\" He said he ___ him.",
       "options": [
-        "saw",
         "has seen",
+        "was seeing",
         "had seen"
       ],
       "correct": 2,
@@ -467,17 +476,17 @@
         "de": "Das Past Simple rückt zum Past Perfect zurück: had seen."
       },
       "wrong": {
-        "saw": {
-          "hu": "A saw hátralépés nélkül maradna; a függő beszédben had seen kell.",
-          "en": "Saw would stay without the step back; reported speech needs had seen.",
-          "es": "Saw se quedaría sin el paso atrás; el estilo indirecto necesita had seen.",
-          "de": "Saw bliebe ohne den Schritt zurück; die indirekte Rede braucht had seen."
-        },
         "has seen": {
           "hu": "A has seen present perfect; a függő beszéd múltba teszi a mondatot, ezért had seen.",
           "en": "Has seen is the present perfect; reported speech puts the sentence in the past, so had seen.",
           "es": "Has seen es el presente perfecto; el estilo indirecto pone la oración en pasado, por eso had seen.",
           "de": "Has seen ist das Present Perfect; die indirekte Rede setzt den Satz in die Vergangenheit, deshalb had seen."
+        },
+        "was seeing": {
+          "hu": "A was seeing folyamatos múlt lenne; az egyszerű múlt past perfectre megy hátra (had seen).",
+          "en": "Was seeing would be the past continuous; the past simple goes back to the past perfect (had seen).",
+          "es": "Was seeing sería el pasado continuo; el pasado simple retrocede al pasado perfecto (had seen).",
+          "de": "Was seeing wäre das Past Continuous; das Past Simple rückt zum Past Perfect zurück (had seen)."
         }
       },
       "examples": [
@@ -490,7 +499,7 @@
       "sentence": "\"I am working.\" She said she ___ working.",
       "options": [
         "was",
-        "is",
+        "were",
         "has been"
       ],
       "correct": 0,
@@ -501,11 +510,11 @@
         "de": "Das Present Continuous rückt zum Past Continuous zurück: was working."
       },
       "wrong": {
-        "is": {
-          "hu": "Az „is working” hátralépés nélkül maradna; a függő beszédben was working kell.",
-          "en": "“Is working” would stay without the step back; reported speech needs was working.",
-          "es": "«Is working» se quedaría sin el paso atrás; el estilo indirecto necesita was working.",
-          "de": "„Is working“ bliebe ohne den Schritt zurück; die indirekte Rede braucht was working."
+        "were": {
+          "hu": "A were a you, we, they mellé jön; a she mellé was áll.",
+          "en": "Were goes with you, we, they; with she use was.",
+          "es": "Were va con you, we, they; con she se usa was.",
+          "de": "Were steht bei you, we, they; bei she benutzt man was."
         },
         "has been": {
           "hu": "A has been working present perfect continuous lenne; a folyamatos jelen was working-ra megy hátra.",
@@ -592,8 +601,8 @@
       "sentence": "\"I will call you tomorrow.\" She said she would call me ___.",
       "options": [
         "the next day",
-        "tomorrow",
-        "yesterday"
+        "the day before",
+        "last week"
       ],
       "correct": 0,
       "why": {
@@ -603,17 +612,17 @@
         "de": "In der indirekten Rede wird tomorrow zu the next day."
       },
       "wrong": {
-        "tomorrow": {
-          "hu": "A tomorrow a mondás napjára vonatkozik; a függő beszédben másnapról van szó (the next day).",
-          "en": "Tomorrow relates to the day of speaking; in reported speech it is about the following day (the next day).",
-          "es": "Tomorrow se refiere al día en que se habla; en el estilo indirecto se trata del día siguiente (the next day).",
-          "de": "Tomorrow bezieht sich auf den Tag des Sprechens; in der indirekten Rede geht es um den folgenden Tag (the next day)."
+        "the day before": {
+          "hu": "A the day before a mondás előtti napot jelentené; a hívás a mondás utáni napon lesz (the next day).",
+          "en": "The day before would be the day before speaking; the call comes the day after (the next day).",
+          "es": "The day before sería el día anterior a hablar; la llamada es el día después (the next day).",
+          "de": "The day before wäre der Tag vor dem Sprechen; der Anruf kommt am Tag danach (the next day)."
         },
-        "yesterday": {
-          "hu": "A yesterday múltat jelent; a hívás a mondás utáni napon lesz, ezért the next day.",
-          "en": "Yesterday means the past; the call will be the day after speaking, so the next day.",
-          "es": "Yesterday significa el pasado; la llamada será el día después de hablar, por eso the next day.",
-          "de": "Yesterday bedeutet Vergangenheit; der Anruf findet am Tag nach dem Sprechen statt, deshalb the next day."
+        "last week": {
+          "hu": "A last week múltat jelent; a hívás a jövőben lesz (would call).",
+          "en": "Last week means the past; the call is in the future (would call).",
+          "es": "Last week significa pasado; la llamada es en el futuro (would call).",
+          "de": "Last week bedeutet Vergangenheit; der Anruf liegt in der Zukunft (would call)."
         }
       },
       "examples": [
@@ -780,10 +789,10 @@
           "de": "Don’t be ist die Form des Zitats; in der indirekten Rede braucht man told me not to be."
         },
         "to not be": {
-          "hu": "A „to not be” a köznyelvben előfordul, de a megszokott, helyes alak a not to be.",
-          "en": "“To not be” occurs in casual speech, but the usual correct form is not to be.",
-          "es": "«To not be» aparece en el habla informal, pero la forma correcta habitual es not to be.",
-          "de": "„To not be“ kommt in der Umgangssprache vor, aber die übliche richtige Form ist not to be."
+          "hu": "A „to not be” ma is hallható, de a vizsgán és írásban a not to be az elvárt alak.",
+          "en": "“To not be” is also heard today, but in exams and writing not to be is the expected form.",
+          "es": "«To not be» también se oye hoy, pero en exámenes y por escrito se espera not to be.",
+          "de": "„To not be“ hört man heute auch, aber in Prüfungen und schriftlich wird not to be erwartet."
         }
       },
       "examples": [
@@ -796,7 +805,7 @@
       "sentence": "\"I do not know.\" He said he ___ know.",
       "options": [
         "didn't",
-        "doesn't",
+        "wouldn't",
         "hasn't"
       ],
       "correct": 0,
@@ -807,11 +816,11 @@
         "de": "Don’t rückt zum Past Simple zurück: didn’t know."
       },
       "wrong": {
-        "doesn't": {
-          "hu": "A doesn’t hátralépés nélkül maradna (jelen idő); a függő beszédben didn’t kell.",
-          "en": "Doesn’t would stay without the step back (present); reported speech needs didn’t.",
-          "es": "Doesn’t se quedaría sin el paso atrás (presente); el estilo indirecto necesita didn’t.",
-          "de": "Doesn’t bliebe ohne den Schritt zurück (Präsens); die indirekte Rede braucht didn’t."
+        "wouldn't": {
+          "hu": "A wouldn’t a would tagadása; a „do not” egyszerű múltra megy hátra (didn’t).",
+          "en": "Wouldn’t is the negative of would; “do not” goes back to the past simple (didn’t).",
+          "es": "Wouldn’t es la negación de would; «do not» retrocede al pasado simple (didn’t).",
+          "de": "Wouldn’t ist die Verneinung von would; „do not“ rückt zum Past Simple zurück (didn’t)."
         },
         "hasn't": {
           "hu": "A hasn’t present perfect tagadása; a don’t egyszerű múltra megy hátra (didn’t).",
@@ -829,9 +838,9 @@
       "id": "rs-16",
       "sentence": "\"I am going to leave.\" She said she ___ going to leave.",
       "options": [
-        "is",
+        "were",
         "was",
-        "were"
+        "will be"
       ],
       "correct": 1,
       "why": {
@@ -841,17 +850,17 @@
         "de": "„I am“ wird zu she said she was: was going to leave."
       },
       "wrong": {
-        "is": {
-          "hu": "Az „is” hátralépés nélkül maradna; a függő beszédben was kell.",
-          "en": "“Is” would stay without the step back; reported speech needs was.",
-          "es": "«Is» se quedaría sin el paso atrás; el estilo indirecto necesita was.",
-          "de": "„Is“ bliebe ohne den Schritt zurück; die indirekte Rede braucht was."
-        },
         "were": {
           "hu": "A were a you, we, they mellé jön; a she mellé was áll.",
           "en": "Were goes with you, we, they; with she use was.",
           "es": "Were va con you, we, they; con she se usa was.",
           "de": "Were steht bei you, we, they; bei she benutzt man was."
+        },
+        "will be": {
+          "hu": "A will be going to jövőbeli alakot ad; az „I am going to” a was going to-ra megy hátra.",
+          "en": "Will be going to makes a future form; “I am going to” goes back to was going to.",
+          "es": "Will be going to forma un futuro; «I am going to» retrocede a was going to.",
+          "de": "Will be going to bildet eine Zukunftsform; „I am going to“ rückt zu was going to zurück."
         }
       },
       "examples": [
@@ -863,8 +872,8 @@
       "id": "rs-17",
       "sentence": "\"I like it here.\" He said he liked it ___.",
       "options": [
-        "here",
-        "now",
+        "where",
+        "their",
         "there"
       ],
       "correct": 2,
@@ -875,17 +884,17 @@
         "de": "In der indirekten Rede wird here zu there: he liked it there."
       },
       "wrong": {
-        "here": {
-          "hu": "A here azt a helyet jelölné, ahol a továbbadó van; a függő beszédben there kell.",
-          "en": "Here would mark the place where the reporter is; reported speech needs there.",
-          "es": "Here marcaría el lugar donde está el que transmite; el estilo indirecto necesita there.",
-          "de": "Here würde den Ort bezeichnen, an dem der Berichtende ist; die indirekte Rede braucht there."
+        "where": {
+          "hu": "A where kérdő- vagy vonatkozó szó, a mondat végén nem áll így; a here helyett there kell.",
+          "en": "Where is a question or relative word and does not fit at the end of this sentence; here becomes there.",
+          "es": "Where es una palabra interrogativa o de relativo y no encaja al final de esta oración; here pasa a there.",
+          "de": "Where ist ein Frage- oder Relativwort und passt nicht ans Ende dieses Satzes; here wird zu there."
         },
-        "now": {
-          "hu": "A now időt jelöl, nem helyet; a here helyet vált there-re.",
-          "en": "Now marks time, not place; here changes to there.",
-          "es": "Now marca el tiempo, no el lugar; here cambia a there.",
-          "de": "Now bezeichnet die Zeit, nicht den Ort; here wird zu there."
+        "their": {
+          "hu": "A their birtokos névmás (az övék); a hely there.",
+          "en": "Their is a possessive (belonging to them); the place word is there.",
+          "es": "Their es un posesivo (de ellos); la palabra de lugar es there.",
+          "de": "Their ist ein Possessivpronomen (ihr); das Ortswort ist there."
         }
       },
       "examples": [

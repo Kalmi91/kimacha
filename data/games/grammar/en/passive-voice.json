@@ -12,10 +12,10 @@
     {
       "kind": "text",
       "text": {
-        "hu": "A szenvedő szerkezetben a cselekvés érdekes, nem az, aki csinálja: „English is spoken here.” Szerkezete: a be ige megfelelő alakja + past participle. A spanyol „se habla inglés”, „se vende casa” (a „se” szenvedő) pontosan a szenvedő szerkezetnek felel meg, de angolul nincs „se”: „English speaks here” helytelen, „English is spoken here” helyes.",
-        "en": "In the passive the action matters, not who does it: “English is spoken here.” The structure is the right form of be + the past participle. The Spanish “se habla inglés”, “se vende casa” (the passive “se”) matches the passive exactly, but English has no “se”: “English speaks here” is wrong, “English is spoken here” is right.",
-        "es": "En la pasiva importa la acción, no quién la hace: «English is spoken here.» La estructura es la forma adecuada de be + el participio. El «se habla inglés», «se vende casa» (el «se» de pasiva) del español corresponde exactamente a la pasiva, pero el inglés no tiene «se»: «English speaks here» es incorrecto, «English is spoken here» es correcto.",
-        "de": "Im Passiv zählt die Handlung, nicht wer sie ausführt: „English is spoken here.“ Die Struktur ist die passende Form von be + das Partizip. Das spanische „se habla inglés“, „se vende casa“ (das passivische „se“) entspricht genau dem Passiv, aber das Englische hat kein „se“: „English speaks here“ ist falsch, „English is spoken here“ ist richtig."
+        "hu": "A szenvedő szerkezetben a cselekvés érdekes, nem az, aki csinálja: „English is spoken here.” Szerkezete: a be ige megfelelő alakja + past participle. A spanyol „se habla inglés”, „se vende casa” (a „se” szenvedő) a szenvedő szerkezetnek felel meg, de angolul nincs „se”: „English speaks here” helytelen, „English is spoken here” helyes.",
+        "en": "In the passive the action matters, not who does it: “English is spoken here.” The structure is the right form of be + the past participle. The Spanish “se habla inglés”, “se vende casa” (the passive “se”) matches the passive, but English has no “se”: “English speaks here” is wrong, “English is spoken here” is right.",
+        "es": "En la pasiva importa la acción, no quién la hace: «English is spoken here.» La estructura es la forma adecuada de be + el participio. El «se habla inglés», «se vende casa» (el «se» de pasiva) del español corresponde a la pasiva, pero el inglés no tiene «se»: «English speaks here» es incorrecto, «English is spoken here» es correcto.",
+        "de": "Im Passiv zählt die Handlung, nicht wer sie ausführt: „English is spoken here.“ Die Struktur ist die passende Form von be + das Partizip. Das spanische „se habla inglés“, „se vende casa“ (das passivische „se“) entspricht dem Passiv, aber das Englische hat kein „se“: „English speaks here“ ist falsch, „English is spoken here“ ist richtig."
       }
     },
     {
@@ -566,13 +566,13 @@
         }
       },
       "examples": [
-        "The book was made by him.",
+        "The cake was made by him.",
         "The cake was made by my sister."
       ]
     },
     {
       "id": "pv-09",
-      "sentence": "When ___ the museum opened?",
+      "sentence": "When ___ the museum first opened?",
       "options": [
         "was",
         "did",
@@ -1188,7 +1188,7 @@
           "en": "English is spoken here."
         },
         {
-          "es": "La ventana fue rota ayer.",
+          "es": "La ventana se rompió ayer.",
           "en": "The window was broken yesterday."
         },
         {

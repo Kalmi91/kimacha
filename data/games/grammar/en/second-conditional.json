@@ -739,10 +739,10 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Az if utáni elképzelt feltétel egyszerű múlt: if she left earlier.",
-        "en": "The imagined condition after if is the past simple: if she left earlier.",
-        "es": "La condición imaginada después de if es el pasado simple: if she left earlier.",
-        "de": "Die vorgestellte Bedingung nach if ist das Past Simple: if she left earlier."
+        "hu": "Az if utáni elképzelt feltétel egyszerű múlt: if she left at six.",
+        "en": "The imagined condition after if is the past simple: if she left at six.",
+        "es": "La condición imaginada después de if es el pasado simple: if she left at six.",
+        "de": "Die vorgestellte Bedingung nach if ist das Past Simple: if she left at six."
       },
       "wrong": {
         "leave": {
@@ -929,6 +929,9 @@
       "verb": "forma",
       "person": "la negación del resultado",
       "answer": "would not",
+      "accept": [
+        "wouldn't"
+      ],
       "table": "sc-forms"
     },
     {

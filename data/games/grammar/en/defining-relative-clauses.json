@@ -107,10 +107,10 @@
         },
         {
           "text": {
-            "hu": "Helyre where, birtoklásra whose. A whose után közvetlenül a főnév jön: „the man whose car was stolen.”",
-            "en": "For a place use where, for possession whose. After whose comes the noun directly: “the man whose car was stolen.”",
-            "es": "Para un lugar where, para posesión whose. Después de whose va directamente el sustantivo: «the man whose car was stolen.»",
-            "de": "Für einen Ort where, für Besitz whose. Nach whose steht direkt das Nomen: „the man whose car was stolen.“"
+            "hu": "Helyre where, időre when (the day when I met her), birtoklásra whose. A whose után közvetlenül a főnév jön: „the man whose car was stolen.”",
+            "en": "For a place use where, for time when (the day when I met her), for possession whose. After whose comes the noun directly: “the man whose car was stolen.”",
+            "es": "Para un lugar where, para el tiempo when (the day when I met her), para posesión whose. Después de whose va directamente el sustantivo: «the man whose car was stolen.»",
+            "de": "Für einen Ort where, für die Zeit when (the day when I met her), für Besitz whose. Nach whose steht direkt das Nomen: „the man whose car was stolen.“"
           },
           "examples": [
             {
@@ -793,6 +793,9 @@
       "verb": "palabra",
       "person": "una persona",
       "answer": "who",
+      "accept": [
+        "that"
+      ],
       "table": "rc-forms"
     },
     {
@@ -801,6 +804,9 @@
       "verb": "palabra",
       "person": "una cosa",
       "answer": "which",
+      "accept": [
+        "that"
+      ],
       "table": "rc-forms"
     },
     {
@@ -877,10 +883,10 @@
             "de": "ein Relativwort für eine Sache"
           },
           "wrong": {
-            "hu": "A nő személy, a dolgokra which vagy that való; személyre who áll.",
-            "en": "The woman is a person; which or that is for things; for a person it is who.",
-            "es": "La mujer es una persona; which o that son para cosas; para una persona es who.",
-            "de": "Die Frau ist eine Person; which oder that sind für Sachen; für eine Person steht who."
+            "hu": "A nő személy; a which dolgokra való, személyre who (vagy that) áll.",
+            "en": "The woman is a person; which is for things, for a person it is who (or that).",
+            "es": "La mujer es una persona; which es para cosas; para una persona se usa who (o that).",
+            "de": "Die Frau ist eine Person; which ist für Sachen, für eine Person steht who (oder that)."
           }
         }
       ],
