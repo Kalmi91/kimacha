@@ -7,9 +7,11 @@
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 const mockBack = jest.fn();
+const mockPush = jest.fn();
+let mockLevel = 'A1';
 jest.mock('expo-router', () => ({
-  useLocalSearchParams: () => ({ level: 'A1' }),
-  useRouter: () => ({ back: mockBack, push: jest.fn(), replace: jest.fn() }),
+  useLocalSearchParams: () => ({ level: mockLevel }),
+  useRouter: () => ({ back: mockBack, push: (...args: unknown[]) => mockPush(...args), replace: jest.fn() }),
 }));
 
 // Egy tétel minden fajtából: 5 / 6 jó = 83% (átment), 4 / 6 = 66% (bukik).
@@ -43,10 +45,12 @@ jest.mock('@/lib/exam/builder', () => ({ buildExam: (...args: unknown[]) => mock
 
 import { act, fireEvent, render } from '@testing-library/react-native';
 
+import { pcicItemsForLevel, setPcicTarget } from '@/data/pcic';
 import { getDb } from '@/lib/database';
-import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
+import { GRAMMAR_PROGRESS_KEY, syllabusTopic } from '@/lib/grammar/syllabus';
 import { EXAM_PROGRESS_KEY } from '@/lib/exam/result';
-import { seedA1ExamState } from '@/lib/exam/devSeed';
+import { seedA1ExamState, seedExamState } from '@/lib/exam/devSeed';
+import { localDateString } from '@/lib/usageStats';
 import ExamScreen from '../exam';
 
 jest.setTimeout(30000);
@@ -116,7 +120,9 @@ const seed = async () => {
 describe('szintvizsga képernyő (A1)', () => {
   beforeEach(async () => {
     mockBack.mockClear();
+    mockPush.mockClear();
     mockBuildExam.mockClear();
+    mockLevel = 'A1';
     await getDb().resetPcicCards();
     await getDb().resetGameProgress(GRAMMAR_PROGRESS_KEY);
     await getDb().resetGameProgress(EXAM_PROGRESS_KEY);
@@ -252,5 +258,185 @@ describe('szintvizsga képernyő (A1)', () => {
     await press(screen, 'exam-leave');
     expect(mockBack).toHaveBeenCalledTimes(1);
     expect(await getDb().getExamResults()).toEqual({});
+  });
+});
+
+describe.each([
+  ['A2', 'B1'],
+  ['B1', 'B2'],
+  ['B2', undefined],
+] as const)('szintvizsga képernyő (%s)', (level, next) => {
+  beforeEach(async () => {
+    mockBack.mockClear();
+    mockBuildExam.mockClear();
+    mockLevel = level;
+    setPcicTarget('es');
+    await getDb().setOnboarding('en', 'es');
+    await getDb().resetPcicCards();
+    await getDb().resetGameProgress(GRAMMAR_PROGRESS_KEY);
+    await getDb().resetGameProgress(EXAM_PROGRESS_KEY);
+    await getDb().setPcicLevel(level);
+  });
+  afterAll(() => {
+    mockLevel = 'A1';
+  });
+
+  it('zárva, amíg a szint szavai és egy lecke nincs meg (az A1 készen sem nyitja)', async () => {
+    await seedA1ExamState(getDb(), 'es', '2026-10-01');
+    const screen = render(<ExamScreen />);
+    await flush();
+    expect(screen.getByText('Level exam locked')).toBeTruthy();
+    expect(mockBuildExam).not.toHaveBeenCalled();
+  });
+
+  it('feloldva a bevezető a szint nevét mutatja; minden tétel helyes: átment, mentődik, ajánlja a következő szintet (B2 után nincs)', async () => {
+    await seedExamState(getDb(), 'es', '2026-10-01');
+    const screen = render(<ExamScreen />);
+    await flush();
+    expect(screen.getByText(`${level} level exam`)).toBeTruthy();
+    await press(screen, 'exam-start');
+    await runExam(screen);
+
+    expect(screen.getByText(`${level} passed`)).toBeTruthy();
+    expect(await getDb().getExamResults()).toMatchObject({ [level]: { passed: true, best: 100 } });
+    if (next) {
+      await press(screen, 'exam-continue');
+      expect(await getDb().getPcicLevel()).toBe(next);
+    } else {
+      expect(screen.queryByTestId('exam-continue')).toBeNull();
+    }
+  });
+
+  it('80% alatt nem megy át, nincs következő-szint gomb', async () => {
+    await seedExamState(getDb(), 'es', '2026-10-01');
+    const screen = render(<ExamScreen />);
+    await flush();
+    await press(screen, 'exam-start');
+    await runExam(screen, [0, 4, 5]);
+    expect(screen.getByText('Not yet')).toBeTruthy();
+    expect(screen.queryByTestId('exam-continue')).toBeNull();
+    expect(await getDb().getExamResults()).toMatchObject({ [level]: { passed: false, best: 50 } });
+  });
+});
+
+describe('szintvizsga: elrontott szó vissza az SM-2-be (2b, A8 a)', () => {
+  const realExam = (wordId: string) => [
+    { kind: 'word_type', skill: 'words', itemId: wordId, prompt: 'the window', answer: 'la ventana' },
+    { kind: 'gap_mc', skill: 'grammar', topicId: 'presente-regular', sentence: 'Yo ___ español.', options: ['hablo', 'hablas', 'habla'], correctIndex: 0 },
+  ];
+
+  beforeEach(async () => {
+    mockBack.mockClear();
+    mockBuildExam.mockClear();
+    mockLevel = 'A1';
+    setPcicTarget('es');
+    await getDb().resetPcicCards();
+    await getDb().resetGameProgress(GRAMMAR_PROGRESS_KEY);
+    await getDb().resetGameProgress(EXAM_PROGRESS_KEY);
+    await getDb().setPcicLevel('A1');
+    await seed();
+  });
+
+  it('a hibás szó kártyája `again`-t kap és ma esedékes; a nyelvtani hiba után a többi kártya érintetlen', async () => {
+    const [wordId, otherId] = pcicItemsForLevel('A1').map((i) => i.id);
+    const before = await getDb().getPcicCards();
+    expect(before.find((c) => c.itemId === wordId)).toMatchObject({ state: 'review', lapses: 0 });
+
+    mockBuildExam.mockReturnValueOnce(realExam(wordId) as never);
+    const screen = render(<ExamScreen />);
+    await flush();
+    await press(screen, 'exam-start');
+    await solve.word(screen, false);
+    await press(screen, 'exam-next');
+    await solve.choice(screen, false);
+    await press(screen, 'exam-next');
+
+    expect(screen.getByTestId('exam-score').props.children).toBe('0 / 2 · 0%');
+    const after = await getDb().getPcicCards();
+    expect(after).toHaveLength(before.length);
+    expect(after.find((c) => c.itemId === wordId)).toMatchObject({ state: 'learning', due: localDateString(), lapses: 1, lastReview: localDateString() });
+    // Minden más kártya (a nyelvtani hiba nem kap SM-2 változást) változatlan.
+    expect(after.filter((c) => c.itemId !== wordId)).toEqual(before.filter((c) => c.itemId !== wordId));
+    expect(after.find((c) => c.itemId === otherId)).toEqual(before.find((c) => c.itemId === otherId));
+  });
+
+  it('a helyes szó és a csak nyelvtani hiba nem változtat egy kártyát sem', async () => {
+    const [wordId] = pcicItemsForLevel('A1').map((i) => i.id);
+    const before = await getDb().getPcicCards();
+    mockBuildExam.mockReturnValueOnce(realExam(wordId) as never);
+    const screen = render(<ExamScreen />);
+    await flush();
+    await press(screen, 'exam-start');
+    await solve.word(screen, true);
+    await solve.choice(screen, false);
+    await press(screen, 'exam-next');
+    expect(await getDb().getPcicCards()).toEqual(before);
+  });
+});
+
+describe('szintvizsga: eredmény készségenként, gyenge pontnál link (2c)', () => {
+  beforeEach(async () => {
+    mockBack.mockClear();
+    mockPush.mockClear();
+    mockBuildExam.mockClear();
+    mockLevel = 'A1';
+    await getDb().resetPcicCards();
+    await getDb().resetGameProgress(GRAMMAR_PROGRESS_KEY);
+    await getDb().resetGameProgress(EXAM_PROGRESS_KEY);
+    await getDb().setPcicLevel('A1');
+    await seed();
+  });
+
+  const finish = async (wrong: number[]) => {
+    const screen = render(<ExamScreen />);
+    await flush();
+    await press(screen, 'exam-start');
+    await runExam(screen, wrong);
+    return screen;
+  };
+
+  it('szó, nyelvtan, olvasás: pont, % és Strong / Weak; a gyenge nyelvtanhoz a lecke linkje, ami a leckére visz', async () => {
+    const screen = await finish([4]);
+    expect(screen.getByTestId('exam-skill-words-score').props.children).toBe('4 / 4 · 100%');
+    expect(screen.getByTestId('exam-skill-words-verdict').props.children).toBe('Strong');
+    expect(screen.getByTestId('exam-skill-grammar-score').props.children).toBe('0 / 1 · 0%');
+    expect(screen.getByTestId('exam-skill-grammar-verdict').props.children).toBe('Weak');
+    expect(screen.getByTestId('exam-skill-reading-score').props.children).toBe('1 / 1 · 100%');
+    expect(screen.getByTestId('exam-skill-reading-verdict').props.children).toBe('Strong');
+
+    const title = syllabusTopic('presente-regular', 'es')?.title.en as string;
+    const link = screen.getByTestId('exam-lesson-presente-regular');
+    expect(screen.getByText(`Review lesson: ${title}`)).toBeTruthy();
+    expect(screen.queryByTestId('exam-review-words')).toBeNull();
+    fireEvent.press(link);
+    expect(mockPush).toHaveBeenCalledWith('/grammar/presente-regular');
+  });
+
+  it('gyenge szó: a "Review these words" a tanulófülre (a vizsga szintjére) visz, lecke-link nélkül', async () => {
+    await getDb().setPcicLevel('A2');
+    const screen = await finish([0, 1]);
+    expect(screen.getByTestId('exam-skill-words-score').props.children).toBe('2 / 4 · 50%');
+    expect(screen.getByTestId('exam-skill-words-verdict').props.children).toBe('Weak');
+    expect(screen.queryByTestId('exam-lesson-presente-regular')).toBeNull();
+
+    await press(screen, 'exam-review-words');
+    expect(await getDb().getPcicLevel()).toBe('A1');
+    expect(mockBack).toHaveBeenCalledTimes(1);
+  });
+
+  it('gyenge olvasás (szó erős): "Practice sentences" a tanulófülre', async () => {
+    const screen = await finish([5]);
+    expect(screen.getByTestId('exam-skill-reading-verdict').props.children).toBe('Weak');
+    expect(screen.queryByTestId('exam-review-words')).toBeNull();
+    await press(screen, 'exam-practice-sentences');
+    expect(mockBack).toHaveBeenCalledTimes(1);
+  });
+
+  it('minden készség erős: nincs gyenge-pont gomb', async () => {
+    const screen = await finish([]);
+    expect(screen.queryByTestId('exam-review-words')).toBeNull();
+    expect(screen.queryByTestId('exam-practice-sentences')).toBeNull();
+    expect(screen.queryByTestId('exam-lesson-presente-regular')).toBeNull();
+    expect(screen.getByTestId('exam-skill-grammar-verdict').props.children).toBe('Strong');
   });
 });
