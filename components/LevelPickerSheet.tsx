@@ -9,6 +9,7 @@ import { levelProgressView } from '@/lib/pcicLevels';
 import type { Sm2Card } from '@/lib/sm2';
 import LevelRow from './LevelRow';
 import ExamLevelRow from './exam/ExamLevelRow';
+import PlacementEntry from './exam/PlacementEntry';
 import { EXAM_LEVELS } from '@/lib/exam/types';
 import type { ExamLevelStatus } from '@/lib/exam/unlock';
 
@@ -30,11 +31,13 @@ type Props = {
   // PLAN-vizsga A. szakasz 2. lépés (A1 a): a szint alatti vizsga-sor; csak azoknak a
   // szinteknek van, amiknek van vizsgájuk (lib/exam/types.ts EXAM_LEVELS, ma csak A1).
   exam?: { status: ExamLevelStatus; onStart: () => void; onPractice: () => void; onGrammar: () => void };
+  // PLAN-vizsga C. szakasz (C1 a): a szint-sorok alatti halk belépő az adaptív szintfelméréshez.
+  onPlacement?: () => void;
   onSelect: (level: PcicViewLevel) => void;
   onClose: () => void;
 };
 
-export default function LevelPickerSheet({ visible, active, cards, colors, title, target, exam, onSelect, onClose }: Props) {
+export default function LevelPickerSheet({ visible, active, cards, colors, title, target, exam, onPlacement, onSelect, onClose }: Props) {
   const s = t();
   const g = useGrammarColors();
   const levelLabels: Partial<Record<PcicViewLevel, string>> = {
@@ -85,6 +88,7 @@ export default function LevelPickerSheet({ visible, active, cards, colors, title
               </View>
             );
           })}
+          {onPlacement && <PlacementEntry onPress={onPlacement} />}
         </Pressable>
       </Pressable>
     </Modal>
