@@ -1,0 +1,1244 @@
+{
+  "schema": 2,
+  "topic": "past_perfect_continuous",
+  "level": "B2",
+  "title": {
+    "hu": "Folyamatos régmúlt (I had been waiting)",
+    "en": "The Past Perfect Continuous (I had been waiting)",
+    "es": "El pasado perfecto continuo (I had been waiting)",
+    "de": "Das Past Perfect Continuous (I had been waiting)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "A past perfect continuous szerkezete: had been + ige-ing: „I had been waiting”. Olyan cselekvést ír le, ami egy múltbeli pillanat előtt kezdődött, és egészen addig a pillanatig tartott: „I had been waiting for two hours when the bus arrived.” A spanyol „llevaba + gerundio” megfelelője: „Llevaba dos horas esperando cuando llegó el camión.” Mindig két múltbeli pont van: a másik esemény (egyszerű múlt) és a hosszabb cselekvés, ami előtte tartott.",
+        "en": "The past perfect continuous is formed with had been + verb-ing: “I had been waiting”. It describes an action that began before a moment in the past and lasted up to that moment: “I had been waiting for two hours when the bus arrived.” It matches the Spanish “llevaba + gerundio”: “Llevaba dos horas esperando cuando llegó el camión.” There are always two points in the past: the other event (past simple) and the longer action that went on before it.",
+        "es": "El pasado perfecto continuo se forma con had been + verbo-ing: «I had been waiting». Describe una acción que empezó antes de un momento del pasado y duró hasta ese momento: «I had been waiting for two hours when the bus arrived.» Equivale al «llevaba + gerundio» del español: «Llevaba dos horas esperando cuando llegó el camión.» Siempre hay dos puntos en el pasado: el otro hecho (pasado simple) y la acción más larga que duró antes.",
+        "de": "Das Past Perfect Continuous wird mit had been + Verb-ing gebildet: „I had been waiting“. Es beschreibt eine Handlung, die vor einem Moment der Vergangenheit begann und bis zu diesem Moment dauerte: „I had been waiting for two hours when the bus arrived.“ Es entspricht dem spanischen „llevaba + gerundio“: „Llevaba dos horas esperando cuando llegó el camión.“ Es gibt immer zwei Punkte in der Vergangenheit: das andere Ereignis (Past Simple) und die längere Handlung, die davor lief."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "ppc-forms",
+      "title": {
+        "hu": "Melyik igeidő?",
+        "en": "Which tense?",
+        "es": "¿Qué tiempo uso?",
+        "de": "Welche Zeitform?"
+      },
+      "header": [
+        {
+          "hu": "Helyzet",
+          "en": "Situation",
+          "es": "Situación",
+          "de": "Situation"
+        },
+        {
+          "hu": "forma",
+          "en": "form",
+          "es": "forma",
+          "de": "Form"
+        }
+      ],
+      "rows": [
+        [
+          "una acción larga hasta un momento del pasado",
+          "past perfect continuous"
+        ],
+        [
+          "una acción en marcha en un momento del pasado",
+          "past continuous"
+        ],
+        [
+          "un resultado terminado antes de un momento del pasado",
+          "past perfect"
+        ],
+        [
+          "un hecho terminado en un momento del pasado",
+          "past simple"
+        ],
+        [
+          "la duración (dos horas)",
+          "for"
+        ],
+        [
+          "el punto de inicio (desde las seis)",
+          "since"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Alak",
+        "en": "Form",
+        "es": "Forma",
+        "de": "Form"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Állító: had been + ige-ing, minden személyben ugyanúgy. Tagadás: hadn’t been + ige-ing. Rövid alak: I’d been waiting.",
+            "en": "Affirmative: had been + verb-ing, the same for every person. Negative: hadn’t been + verb-ing. Short form: I’d been waiting.",
+            "es": "Afirmativa: had been + verbo-ing, igual para todas las personas. Negación: hadn’t been + verbo-ing. Forma corta: I’d been waiting.",
+            "de": "Bejahend: had been + Verb-ing, für alle Personen gleich. Verneinung: hadn’t been + Verb-ing. Kurzform: I’d been waiting."
+          },
+          "examples": [
+            {
+              "es": "She had been working there for ten years.",
+              "tr": {
+                "hu": "Tíz éve dolgozott ott.",
+                "en": "She had been working there for ten years.",
+                "es": "Llevaba diez años trabajando allí.",
+                "de": "Sie hatte dort seit zehn Jahren gearbeitet."
+              }
+            },
+            {
+              "es": "He hadn't been working long when the boss arrived.",
+              "tr": {
+                "hu": "Nem dolgozott sokáig, amikor a főnök megérkezett.",
+                "en": "He hadn't been working long when the boss arrived.",
+                "es": "No llevaba mucho tiempo trabajando cuando llegó el jefe.",
+                "de": "Er hatte noch nicht lange gearbeitet, als der Chef ankam."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "Kérdés: Had + alany + been + ige-ing. A hosszra a How long…? kérdez: „How long had you been driving when the car stopped?”",
+            "en": "Question: Had + subject + been + verb-ing. How long…? asks about the length: “How long had you been driving when the car stopped?”",
+            "es": "Pregunta: Had + sujeto + been + verbo-ing. How long…? pregunta por la duración: «How long had you been driving when the car stopped?»",
+            "de": "Frage: Had + Subjekt + been + Verb-ing. How long…? fragt nach der Dauer: „How long had you been driving when the car stopped?“"
+          },
+          "examples": [
+            {
+              "es": "How long had you been driving when the car stopped?",
+              "tr": {
+                "hu": "Mióta vezettél, amikor megállt az autó?",
+                "en": "How long had you been driving when the car stopped?",
+                "es": "¿Cuánto tiempo llevabas manejando cuando se paró el carro?",
+                "de": "Wie lange warst du schon gefahren, als das Auto stehen blieb?"
+              }
+            },
+            {
+              "es": "Had they been playing long when it started to rain?",
+              "tr": {
+                "hu": "Régóta játszottak, amikor esni kezdett?",
+                "en": "Had they been playing long when it started to rain?",
+                "es": "¿Llevaban mucho tiempo jugando cuando empezó a llover?",
+                "de": "Hatten sie schon lange gespielt, als es zu regnen anfing?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Mire használjuk",
+        "en": "What we use it for",
+        "es": "Para qué se usa",
+        "de": "Wofür wir es benutzen"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Egy múltbeli pontig tartó cselekvés, időtartammal vagy kezdőponttal: for + időtartam, since + kezdőpont.",
+            "en": "An action lasting up to a point in the past, with a duration or a starting point: for + duration, since + starting point.",
+            "es": "Una acción que duró hasta un punto del pasado, con una duración o un punto de inicio: for + duración, since + punto de inicio.",
+            "de": "Eine Handlung, die bis zu einem Punkt in der Vergangenheit dauerte, mit Dauer oder Anfangspunkt: for + Dauer, since + Anfangspunkt."
+          },
+          "examples": [
+            {
+              "es": "We had been living there since 2015 when we moved.",
+              "tr": {
+                "hu": "2015 óta ott éltünk, amikor elköltöztünk.",
+                "en": "We had been living there since 2015 when we moved.",
+                "es": "Vivíamos allí desde 2015 cuando nos mudamos.",
+                "de": "Wir hatten seit 2015 dort gelebt, als wir umzogen."
+              }
+            },
+            {
+              "es": "They had been living in Puebla for ten years when she got the job.",
+              "tr": {
+                "hu": "Tíz éve Pueblában éltek, amikor ő megkapta az állást.",
+                "en": "They had been living in Puebla for ten years when she got the job.",
+                "es": "Llevaban diez años viviendo en Puebla cuando ella consiguió el trabajo.",
+                "de": "Sie hatten zehn Jahre in Puebla gelebt, als sie die Stelle bekam."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A folyamat a lényeg, a darabszám nem. Ha számot vagy kész eredményt mondunk, egyszerű past perfect kell: „By noon, she had written three reports.”",
+            "en": "The process matters, not the number. When you give a number or a finished result, you need the simple past perfect: “By noon, she had written three reports.”",
+            "es": "Importa el proceso, no el número. Si das un número o un resultado terminado, hace falta el pasado perfecto simple: «By noon, she had written three reports.»",
+            "de": "Der Vorgang zählt, nicht die Anzahl. Nennt man eine Zahl oder ein fertiges Ergebnis, braucht man das einfache Past Perfect: „By noon, she had written three reports.“"
+          },
+          "examples": [
+            {
+              "es": "She had been writing reports all morning.",
+              "tr": {
+                "hu": "Egész délelőtt jelentéseket írt.",
+                "en": "She had been writing reports all morning.",
+                "es": "Llevaba toda la mañana escribiendo reportes.",
+                "de": "Sie hatte den ganzen Vormittag Berichte geschrieben."
+              }
+            },
+            {
+              "es": "By noon, she had written three reports.",
+              "tr": {
+                "hu": "Délre három jelentést írt meg.",
+                "en": "By noon, she had written three reports.",
+                "es": "Para el mediodía, había escrito tres reportes.",
+                "de": "Bis Mittag hatte sie drei Berichte geschrieben."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "A „estaba esperando desde ayer” angolul nem „I was waiting since yesterday”. A since és a for mellé a mondat másik, múltbeli pontjáig tartó időhöz past perfect continuous kell: „I had been waiting since yesterday when you called.”",
+        "en": "The Spanish “estaba esperando desde ayer” is not “I was waiting since yesterday” in English. With since and for, time that lasts up to another point in the past needs the past perfect continuous: “I had been waiting since yesterday when you called.”",
+        "es": "El «estaba esperando desde ayer» español no es «I was waiting since yesterday» en inglés. Con since y for, el tiempo que dura hasta otro punto del pasado necesita el pasado perfecto continuo: «I had been waiting since yesterday when you called.»",
+        "de": "Das spanische „estaba esperando desde ayer“ heißt auf Englisch nicht „I was waiting since yesterday“. Bei since und for braucht Zeit, die bis zu einem anderen Punkt in der Vergangenheit dauert, das Past Perfect Continuous: „I had been waiting since yesterday when you called.“"
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Az állapotot kifejező igék (know, like, love, want, have = birtokol) itt sem kapnak -ing alakot: nem „I had been knowing her”, hanem „I had known her for years”.",
+        "en": "State verbs (know, like, love, want, have meaning own) take no -ing form here either: not “I had been knowing her”, but “I had known her for years”.",
+        "es": "Los verbos de estado (know, like, love, want, have con el sentido de tener) tampoco llevan -ing aquí: no «I had been knowing her», sino «I had known her for years».",
+        "de": "Zustandsverben (know, like, love, want, have im Sinn von besitzen) bekommen auch hier keine -ing-Form: nicht „I had been knowing her“, sondern „I had known her for years“."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "hu": "Ha a mondat egyetlen pillanatban zajló cselekvést ír le, időtartam nélkül, a past continuous elég: „I was watching TV when you called.” A hosszú, a pillanatig tartó folyamat jele a for / since.",
+        "en": "If the sentence describes an action going on at a single moment with no duration, the past continuous is enough: “I was watching TV when you called.” The sign of a long process up to that moment is for / since.",
+        "es": "Si la oración describe una acción en marcha en un solo momento, sin duración, basta el pasado continuo: «I was watching TV when you called.» La señal de un proceso largo hasta ese momento es for / since.",
+        "de": "Wenn der Satz eine Handlung in einem einzigen Moment ohne Dauer beschreibt, genügt das Past Continuous: „I was watching TV when you called.“ Das Zeichen für einen langen Vorgang bis zu diesem Moment ist for / since."
+      }
+    }
+  ],
+  "speak": {
+    "hu": "A past perfect continuous szerkezete: «had been» plusz az ige -ing alakja: «I had been waiting». Olyan cselekvést ír le, ami egy múltbeli pillanat előtt kezdődött, és egészen addig tartott: «I had been waiting for two hours when the bus arrived». Az időtartam elé «for», a kezdőpont elé «since» kerül. Ha számot vagy kész eredményt mondunk, egyszerű past perfect kell: «By noon, she had written three reports». Az állapotot kifejező igék nem kapnak -ing alakot: «I had known her for years».",
+    "en": "The past perfect continuous is «had been» plus the -ing form of the verb: «I had been waiting». It describes an action that began before a moment in the past and lasted up to it: «I had been waiting for two hours when the bus arrived». Before a duration comes «for», before a starting point «since». When you give a number or a finished result you need the simple past perfect: «By noon, she had written three reports». State verbs take no -ing form: «I had known her for years».",
+    "es": "El pasado perfecto continuo es «had been» más la forma -ing del verbo: «I had been waiting». Describe una acción que empezó antes de un momento del pasado y duró hasta él: «I had been waiting for two hours when the bus arrived». Antes de una duración va «for», antes de un punto de inicio «since». Si das un número o un resultado terminado, hace falta el pasado perfecto simple: «By noon, she had written three reports». Los verbos de estado no llevan -ing: «I had known her for years».",
+    "de": "Das Past Perfect Continuous besteht aus «had been» plus der -ing-Form des Verbs: «I had been waiting». Es beschreibt eine Handlung, die vor einem Moment der Vergangenheit begann und bis dahin dauerte: «I had been waiting for two hours when the bus arrived». Vor einer Dauer steht «for», vor einem Anfangspunkt «since». Nennt man eine Zahl oder ein fertiges Ergebnis, braucht man das einfache Past Perfect: «By noon, she had written three reports». Zustandsverben bekommen keine -ing-Form: «I had known her for years»."
+  },
+  "glossary": [
+    {
+      "word": "hadn't",
+      "gloss": {
+        "hu": "nem volt (had not)",
+        "en": "had not",
+        "es": "no había (had not)",
+        "de": "hatte nicht (had not)"
+      }
+    },
+    {
+      "word": "known",
+      "gloss": {
+        "hu": "ismert (a know igenéve)",
+        "en": "participle of know",
+        "es": "conocido (participio de know)",
+        "de": "gekannt (Partizip von know)"
+      }
+    },
+    {
+      "word": "ago",
+      "gloss": {
+        "hu": "ennyivel ezelőtt",
+        "en": "back in time",
+        "es": "hace",
+        "de": "vor (zeitlich)"
+      }
+    },
+    {
+      "word": "rang",
+      "gloss": {
+        "hu": "megszólalt (a ring múlt alakja)",
+        "en": "past form of ring",
+        "es": "sonó (pasado de ring)",
+        "de": "klingelte (Past von ring)"
+      }
+    },
+    {
+      "word": "stopped",
+      "gloss": {
+        "hu": "megállt (a stop múltja)",
+        "en": "past form of stop",
+        "es": "se detuvo (pasado de stop)",
+        "de": "hielt an (Past von stop)"
+      }
+    },
+    {
+      "word": "driving",
+      "gloss": {
+        "hu": "vezet (a drive igéből)",
+        "en": "from the verb drive",
+        "es": "manejando (del verbo drive)",
+        "de": "fahren (vom Verb drive)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "ppc-01",
+      "sentence": "When the bus finally arrived, we ___ for two hours.",
+      "options": [
+        "were waiting",
+        "had been waiting",
+        "have been waiting"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A „for two hours” a busz érkezése előtti időtartam: had been waiting.",
+        "en": "“For two hours” is the time before the bus arrived: had been waiting.",
+        "es": "«For two hours» es el tiempo antes de que llegara el camión: had been waiting.",
+        "de": "„For two hours“ ist die Zeit vor der Ankunft des Busses: had been waiting."
+      },
+      "wrong": {
+        "were waiting": {
+          "hu": "A „were waiting” egy pillanatban zajló cselekvés; a két órás időtartam a megérkezésig past perfect continuous-t kér.",
+          "en": "“Were waiting” is an action at one moment; a two-hour duration up to the arrival asks for the past perfect continuous.",
+          "es": "«Were waiting» es una acción en un solo momento; una duración de dos horas hasta la llegada pide el pasado perfecto continuo.",
+          "de": "„Were waiting“ ist eine Handlung in einem Moment; eine Dauer von zwei Stunden bis zur Ankunft verlangt das Past Perfect Continuous."
+        },
+        "have been waiting": {
+          "hu": "A have been waiting present perfect continuous: a mostanáig tartó időhöz való, de a mondat múltbeli pontra (arrived) vonatkozik.",
+          "en": "Have been waiting is the present perfect continuous, for time up to now, but the sentence refers to a point in the past (arrived).",
+          "es": "Have been waiting es el presente perfecto continuo, para el tiempo hasta ahora, pero la oración se refiere a un punto del pasado (arrived).",
+          "de": "Have been waiting ist das Present Perfect Continuous für Zeit bis jetzt, der Satz bezieht sich aber auf einen Punkt in der Vergangenheit (arrived)."
+        }
+      },
+      "examples": [
+        "She had been waiting for an hour.",
+        "We had been waiting for a long time."
+      ]
+    },
+    {
+      "id": "ppc-02",
+      "sentence": "By the time he called, I ___ since six o'clock.",
+      "options": [
+        "was working",
+        "have been working",
+        "had been working"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A „since six o’clock” a hívás előtti kezdőpont: had been working.",
+        "en": "“Since six o’clock” is a starting point before the call: had been working.",
+        "es": "«Since six o’clock» es un punto de inicio antes de la llamada: had been working.",
+        "de": "„Since six o’clock“ ist ein Anfangspunkt vor dem Anruf: had been working."
+      },
+      "wrong": {
+        "was working": {
+          "hu": "A since mellé nem áll past continuous (nem „was working since”); a hívásig tartó időhöz had been working kell.",
+          "en": "Since does not go with the past continuous (not “was working since”); time lasting up to the call needs had been working.",
+          "es": "Since no va con el pasado continuo (no «was working since»); el tiempo que dura hasta la llamada necesita had been working.",
+          "de": "Since steht nicht mit dem Past Continuous (nicht „was working since“); Zeit bis zum Anruf braucht had been working."
+        },
+        "have been working": {
+          "hu": "A have been working a jelenhez tartozik; a mondat a hívás múltbeli pillanatára néz vissza.",
+          "en": "Have been working belongs to the present; the sentence looks back from the moment of the call in the past.",
+          "es": "Have been working pertenece al presente; la oración mira atrás desde el momento de la llamada en el pasado.",
+          "de": "Have been working gehört zur Gegenwart; der Satz blickt vom Moment des Anrufs in der Vergangenheit zurück."
+        }
+      },
+      "examples": [
+        "He had been sleeping since noon.",
+        "They had been walking since morning."
+      ]
+    },
+    {
+      "id": "ppc-03",
+      "sentence": "She ___ for two hours when I got there.",
+      "options": [
+        "had been waiting",
+        "has been waiting",
+        "is waiting"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „when I got there” múltbeli pont, előtte két órán át várt: had been waiting.",
+        "en": "“When I got there” is a point in the past, and before it she waited for two hours: had been waiting.",
+        "es": "«When I got there» es un punto del pasado, y antes esperó dos horas: had been waiting.",
+        "de": "„When I got there“ ist ein Punkt in der Vergangenheit, davor wartete sie zwei Stunden: had been waiting."
+      },
+      "wrong": {
+        "has been waiting": {
+          "hu": "A has been waiting a jelenre vonatkozik; a „when I got there” múltbeli pillanat.",
+          "en": "Has been waiting refers to the present; “when I got there” is a moment in the past.",
+          "es": "Has been waiting se refiere al presente; «when I got there» es un momento del pasado.",
+          "de": "Has been waiting bezieht sich auf die Gegenwart; „when I got there“ ist ein Moment der Vergangenheit."
+        },
+        "is waiting": {
+          "hu": "Az „is waiting” jelen idejű; a mondat múltban van (got).",
+          "en": "“Is waiting” is present; the sentence is in the past (got).",
+          "es": "«Is waiting» es presente; la oración está en pasado (got).",
+          "de": "„Is waiting“ ist Präsens; der Satz steht in der Vergangenheit (got)."
+        }
+      },
+      "examples": [
+        "He had been working for hours.",
+        "We had been talking for a long time."
+      ]
+    },
+    {
+      "id": "ppc-04",
+      "sentence": "How long ___ you been driving when the car stopped?",
+      "options": [
+        "have",
+        "had",
+        "did"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "Egy múltbeli pontig tartó időtartamra a How long had you been…? kérdés való.",
+        "en": "For a duration up to a point in the past the question is How long had you been…?",
+        "es": "Para una duración hasta un punto del pasado la pregunta es How long had you been…?",
+        "de": "Für eine Dauer bis zu einem Punkt in der Vergangenheit lautet die Frage How long had you been…?"
+      },
+      "wrong": {
+        "have": {
+          "hu": "A have you been a mostanáig tartó időt kérdezné; a mondat múltbeli pontra (stopped) vonatkozik.",
+          "en": "Have you been would ask about time up to now; the sentence refers to a point in the past (stopped).",
+          "es": "Have you been preguntaría por el tiempo hasta ahora; la oración se refiere a un punto del pasado (stopped).",
+          "de": "Have you been würde nach der Zeit bis jetzt fragen; der Satz bezieht sich auf einen Punkt in der Vergangenheit (stopped)."
+        },
+        "did": {
+          "hu": "A did után alapige kell (How long did you drive…?); a „been driving” szerkezethez had kell.",
+          "en": "After did you need the base verb (How long did you drive…?); the structure “been driving” needs had.",
+          "es": "Después de did hace falta el verbo base (How long did you drive…?); la estructura «been driving» necesita had.",
+          "de": "Nach did braucht man die Grundform (How long did you drive…?); die Struktur „been driving“ braucht had."
+        }
+      },
+      "examples": [
+        "How long had she been waiting?",
+        "How long had they been living there?"
+      ]
+    },
+    {
+      "id": "ppc-05",
+      "sentence": "___ they been playing long when it started to rain?",
+      "options": [
+        "Have",
+        "Did",
+        "Had"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "Kérdés past perfect continuous-szal: Had they been playing…?",
+        "en": "A question in the past perfect continuous: Had they been playing…?",
+        "es": "Una pregunta en pasado perfecto continuo: Had they been playing…?",
+        "de": "Eine Frage im Past Perfect Continuous: Had they been playing…?"
+      },
+      "wrong": {
+        "Have": {
+          "hu": "A Have they been present perfect continuous kérdés; a mondat múlt (started).",
+          "en": "Have they been is a present perfect continuous question; the sentence is in the past (started).",
+          "es": "Have they been es una pregunta en presente perfecto continuo; la oración está en pasado (started).",
+          "de": "Have they been ist eine Frage im Present Perfect Continuous; der Satz steht in der Vergangenheit (started)."
+        },
+        "Did": {
+          "hu": "A Did után alapige kell (Did they play…?); a „been playing” had-et kér.",
+          "en": "After Did you need the base verb (Did they play…?); “been playing” asks for had.",
+          "es": "Después de Did hace falta el verbo base (Did they play…?); «been playing» pide had.",
+          "de": "Nach Did braucht man die Grundform (Did they play…?); „been playing“ verlangt had."
+        }
+      },
+      "examples": [
+        "Had he been sleeping?",
+        "Had you been waiting long?"
+      ]
+    },
+    {
+      "id": "ppc-06",
+      "sentence": "By noon, she ___ three reports.",
+      "options": [
+        "had written",
+        "had been writing",
+        "was writing"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "Darabszám (három jelentés), kész eredmény: egyszerű past perfect, had written.",
+        "en": "A number (three reports), a finished result: the simple past perfect, had written.",
+        "es": "Un número (tres reportes), un resultado terminado: pasado perfecto simple, had written.",
+        "de": "Eine Anzahl (drei Berichte), ein fertiges Ergebnis: einfaches Past Perfect, had written."
+      },
+      "wrong": {
+        "had been writing": {
+          "hu": "A folyamatos alak a folyamatot emeli ki; ha számot mondunk (three reports), egyszerű alak kell.",
+          "en": "The continuous form stresses the process; when you give a number (three reports), you need the simple form.",
+          "es": "La forma continua destaca el proceso; cuando das un número (three reports), hace falta la forma simple.",
+          "de": "Die Verlaufsform betont den Vorgang; wenn man eine Anzahl nennt (three reports), braucht man die einfache Form."
+        },
+        "was writing": {
+          "hu": "A „was writing” egy pillanatban zajló cselekvés; a „by noon” a délig elkészült eredményt kéri.",
+          "en": "“Was writing” is an action at one moment; “by noon” asks for the result finished by then.",
+          "es": "«Was writing» es una acción en un solo momento; «by noon» pide el resultado terminado para entonces.",
+          "de": "„Was writing“ ist eine Handlung in einem Moment; „by noon“ verlangt das bis dahin fertige Ergebnis."
+        }
+      },
+      "examples": [
+        "By six, he had finished two books.",
+        "By May, they had opened the shop."
+      ]
+    },
+    {
+      "id": "ppc-07",
+      "sentence": "He had been ___ for hours when the phone rang.",
+      "options": [
+        "slept",
+        "sleeping",
+        "sleep"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A had been után ige-ing áll: had been sleeping.",
+        "en": "After had been comes verb-ing: had been sleeping.",
+        "es": "Después de had been va verbo-ing: had been sleeping.",
+        "de": "Nach had been steht Verb-ing: had been sleeping."
+      },
+      "wrong": {
+        "slept": {
+          "hu": "A slept múlt alak; a had been után az -ing alak áll (sleeping).",
+          "en": "“Slept” is a past form; after had been comes the -ing form (sleeping).",
+          "es": "«Slept» es una forma de pasado; después de had been va la forma -ing (sleeping).",
+          "de": "„Slept“ ist eine Vergangenheitsform; nach had been steht die -ing-Form (sleeping)."
+        },
+        "sleep": {
+          "hu": "A had been után az alapige hibás; -ing alak kell (sleeping).",
+          "en": "The base verb after had been is incorrect; you need the -ing form (sleeping).",
+          "es": "El verbo base después de had been es incorrecto; hace falta la forma -ing (sleeping).",
+          "de": "Die Grundform nach had been ist falsch; man braucht die -ing-Form (sleeping)."
+        }
+      },
+      "examples": [
+        "She had been reading for an hour.",
+        "We had been eating for ten minutes."
+      ]
+    },
+    {
+      "id": "ppc-08",
+      "sentence": "We had been living there ___ 2015 when we moved.",
+      "options": [
+        "for",
+        "ago",
+        "since"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A 2015 kezdőpont, ezért since kell: since 2015.",
+        "en": "2015 is a starting point, so you need since: since 2015.",
+        "es": "2015 es un punto de inicio, por eso hace falta since: since 2015.",
+        "de": "2015 ist ein Anfangspunkt, deshalb braucht man since: since 2015."
+      },
+      "wrong": {
+        "for": {
+          "hu": "A for időtartam elé kerül (for ten years); a 2015 kezdőpont.",
+          "en": "For goes before a duration (for ten years); 2015 is a starting point.",
+          "es": "For va antes de una duración (for ten years); 2015 es un punto de inicio.",
+          "de": "For steht vor einer Dauer (for ten years); 2015 ist ein Anfangspunkt."
+        },
+        "ago": {
+          "hu": "Az ago egyszerű múlttal jár, és időtartam után áll (ten years ago); itt past perfect continuous van.",
+          "en": "Ago goes with the past simple and follows a duration (ten years ago); here the verb is in the past perfect continuous.",
+          "es": "Ago va con el pasado simple y sigue a una duración (ten years ago); aquí el verbo está en pasado perfecto continuo.",
+          "de": "Ago gehört zum Past Simple und steht nach einer Dauer (ten years ago); hier steht das Verb im Past Perfect Continuous."
+        }
+      },
+      "examples": [
+        "She had been working here since May.",
+        "They had been waiting since noon."
+      ]
+    },
+    {
+      "id": "ppc-09",
+      "sentence": "They had been living here ___ ten years when she left.",
+      "options": [
+        "for",
+        "since",
+        "ago"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A tíz év időtartam, ezért for kell: for ten years.",
+        "en": "Ten years is a duration, so you need for: for ten years.",
+        "es": "Diez años es una duración, por eso hace falta for: for ten years.",
+        "de": "Zehn Jahre sind eine Dauer, deshalb braucht man for: for ten years."
+      },
+      "wrong": {
+        "since": {
+          "hu": "A since kezdőpontot kér (since 2010), nem időtartamot.",
+          "en": "Since needs a starting point (since 2010), not a duration.",
+          "es": "Since pide un punto de inicio (since 2010), no una duración.",
+          "de": "Since verlangt einen Anfangspunkt (since 2010), keine Dauer."
+        },
+        "ago": {
+          "hu": "Az ago egyszerű múlttal jár (ten years ago); itt had been living van.",
+          "en": "Ago goes with the past simple (ten years ago); here it is had been living.",
+          "es": "Ago va con el pasado simple (ten years ago); aquí es had been living.",
+          "de": "Ago gehört zum Past Simple (ten years ago); hier steht had been living."
+        }
+      },
+      "examples": [
+        "He had been teaching for five years.",
+        "We had been married for a year."
+      ]
+    },
+    {
+      "id": "ppc-10",
+      "sentence": "I had ___ her for years, so I said hello.",
+      "options": [
+        "been knowing",
+        "known",
+        "knowing"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A know állapotot kifejező ige, nincs folyamatos alakja: had known.",
+        "en": "Know is a state verb with no continuous form: had known.",
+        "es": "Know es un verbo de estado sin forma continua: had known.",
+        "de": "Know ist ein Zustandsverb ohne Verlaufsform: had known."
+      },
+      "wrong": {
+        "been knowing": {
+          "hu": "A know nem kap -ing alakot, ezért a „had been knowing” helytelen.",
+          "en": "Know takes no -ing form, so “had been knowing” is incorrect.",
+          "es": "Know no lleva -ing, por eso «had been knowing» es incorrecto.",
+          "de": "Know bekommt keine -ing-Form, deshalb ist „had been knowing“ falsch."
+        },
+        "knowing": {
+          "hu": "A had után igenév kell (known), nem az -ing alak.",
+          "en": "After had you need the participle (known), not the -ing form.",
+          "es": "Después de had hace falta el participio (known), no la forma -ing.",
+          "de": "Nach had braucht man das Partizip (known), nicht die -ing-Form."
+        }
+      },
+      "examples": [
+        "I had known him for years.",
+        "She had had that car for ten years."
+      ]
+    },
+    {
+      "id": "ppc-11",
+      "sentence": "I ___ there since morning when you called.",
+      "options": [
+        "was waiting",
+        "have been waiting",
+        "had been waiting"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A since morning a hívás előtti kezdőpont: had been waiting.",
+        "en": "“Since morning” is a starting point before the call: had been waiting.",
+        "es": "«Since morning» es un punto de inicio antes de la llamada: had been waiting.",
+        "de": "„Since morning“ ist ein Anfangspunkt vor dem Anruf: had been waiting."
+      },
+      "wrong": {
+        "was waiting": {
+          "hu": "A „was waiting since” a spanyol „estaba esperando desde” tükörfordítása; angolul a since past perfect continuous-t kér.",
+          "en": "“Was waiting since” is a word-for-word copy of the Spanish “estaba esperando desde”; in English since asks for the past perfect continuous.",
+          "es": "«Was waiting since» es una copia palabra por palabra del «estaba esperando desde»; en inglés since pide el pasado perfecto continuo.",
+          "de": "„Was waiting since“ ist eine Wort-für-Wort-Kopie des spanischen „estaba esperando desde“; im Englischen verlangt since das Past Perfect Continuous."
+        },
+        "have been waiting": {
+          "hu": "A have been waiting a jelenre vonatkozik; a mondat múltbeli pillanatra (called) néz vissza.",
+          "en": "Have been waiting refers to the present; the sentence looks back from a moment in the past (called).",
+          "es": "Have been waiting se refiere al presente; la oración mira atrás desde un momento del pasado (called).",
+          "de": "Have been waiting bezieht sich auf die Gegenwart; der Satz blickt von einem Moment der Vergangenheit (called) zurück."
+        }
+      },
+      "examples": [
+        "She had been sleeping since noon.",
+        "We had been working since six."
+      ]
+    },
+    {
+      "id": "ppc-12",
+      "sentence": "She hadn't ___ well, so she saw a doctor.",
+      "options": [
+        "been feeling",
+        "feeling",
+        "been felt"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A hadn’t után been + ige-ing áll: hadn’t been feeling.",
+        "en": "After hadn’t comes been + verb-ing: hadn’t been feeling.",
+        "es": "Después de hadn’t va been + verbo-ing: hadn’t been feeling.",
+        "de": "Nach hadn’t steht been + Verb-ing: hadn’t been feeling."
+      },
+      "wrong": {
+        "feeling": {
+          "hu": "A hadn’t feeling hiányos: a hadn’t után a been is kell.",
+          "en": "“Hadn’t feeling” is incomplete: after hadn’t you also need been.",
+          "es": "«Hadn’t feeling» está incompleto: después de hadn’t también hace falta been.",
+          "de": "„Hadn’t feeling“ ist unvollständig: nach hadn’t braucht man auch been."
+        },
+        "been felt": {
+          "hu": "A „been felt” szenvedő alak lenne (megérezték); itt az -ing alak kell (been feeling).",
+          "en": "“Been felt” would be a passive (it was felt); here you need the -ing form (been feeling).",
+          "es": "«Been felt» sería una pasiva (fue sentido); aquí hace falta la forma -ing (been feeling).",
+          "de": "„Been felt“ wäre ein Passiv (es wurde gefühlt); hier braucht man die -ing-Form (been feeling)."
+        }
+      },
+      "examples": [
+        "He hadn't been sleeping well.",
+        "They hadn't been working."
+      ]
+    },
+    {
+      "id": "ppc-13",
+      "sentence": "He was angry because he ___ for an hour.",
+      "options": [
+        "was waiting",
+        "had been waiting",
+        "has been waiting"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A düh oka a korábbi, egy órán át tartó várakozás: had been waiting.",
+        "en": "The reason for his anger is the earlier waiting for an hour: had been waiting.",
+        "es": "La razón de su enojo es la espera anterior de una hora: had been waiting.",
+        "de": "Der Grund für seinen Ärger ist das frühere Warten über eine Stunde: had been waiting."
+      },
+      "wrong": {
+        "was waiting": {
+          "hu": "A „was waiting for an hour” egy pillanatnyi folyamatot és egy órás időtartamot kever; a megelőző időtartamhoz had been waiting kell.",
+          "en": "“Was waiting for an hour” mixes a moment-in-progress with a one-hour duration; the earlier duration needs had been waiting.",
+          "es": "«Was waiting for an hour» mezcla un proceso en un momento con una duración de una hora; la duración anterior necesita had been waiting.",
+          "de": "„Was waiting for an hour“ vermischt einen Vorgang in einem Moment mit einer Dauer von einer Stunde; die frühere Dauer braucht had been waiting."
+        },
+        "has been waiting": {
+          "hu": "A has been waiting a jelenre vonatkozik; a mondat múltban van (was angry).",
+          "en": "Has been waiting refers to the present; the sentence is in the past (was angry).",
+          "es": "Has been waiting se refiere al presente; la oración está en pasado (was angry).",
+          "de": "Has been waiting bezieht sich auf die Gegenwart; der Satz steht in der Vergangenheit (was angry)."
+        }
+      },
+      "examples": [
+        "She was tired because she had been working.",
+        "They were wet because they had been walking."
+      ]
+    },
+    {
+      "id": "ppc-14",
+      "sentence": "The kids were tired when we got home. They ___ outside since lunch.",
+      "options": [
+        "were playing",
+        "have been playing",
+        "had been playing"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A since lunch a hazaérkezés előtti kezdőpont: had been playing.",
+        "en": "“Since lunch” is a starting point before we got home: had been playing.",
+        "es": "«Since lunch» es un punto de inicio antes de llegar a casa: had been playing.",
+        "de": "„Since lunch“ ist ein Anfangspunkt vor unserer Heimkehr: had been playing."
+      },
+      "wrong": {
+        "were playing": {
+          "hu": "A since mellé nem áll past continuous; a hazaérkezésig tartó időhöz had been playing kell.",
+          "en": "Since does not go with the past continuous; time lasting up to getting home needs had been playing.",
+          "es": "Since no va con el pasado continuo; el tiempo que dura hasta llegar a casa necesita had been playing.",
+          "de": "Since steht nicht mit dem Past Continuous; Zeit bis zur Heimkehr braucht had been playing."
+        },
+        "have been playing": {
+          "hu": "A have been playing a jelenre vonatkozik; a mondat múltban van (were tired).",
+          "en": "Have been playing refers to the present; the sentence is in the past (were tired).",
+          "es": "Have been playing se refiere al presente; la oración está en pasado (were tired).",
+          "de": "Have been playing bezieht sich auf die Gegenwart; der Satz steht in der Vergangenheit (were tired)."
+        }
+      },
+      "examples": [
+        "He had been walking since six.",
+        "We had been talking since lunch."
+      ]
+    },
+    {
+      "id": "ppc-15",
+      "sentence": "He ___ for long when the boss arrived.",
+      "options": [
+        "hadn't been working",
+        "wasn't working",
+        "hasn't been working"
+      ],
+      "correct": 0,
+      "why": {
+        "hu": "A „nem sokáig” tartó cselekvés a megérkezésig: hadn’t been working.",
+        "en": "An action that had not lasted long up to the arrival: hadn’t been working.",
+        "es": "Una acción que no había durado mucho hasta la llegada: hadn’t been working.",
+        "de": "Eine Handlung, die bis zur Ankunft noch nicht lange gedauert hatte: hadn’t been working."
+      },
+      "wrong": {
+        "wasn't working": {
+          "hu": "A wasn’t working egy pillanatban nem zajló cselekvést írna le; a „for long” időtartamot jelez, ami had been-et kér.",
+          "en": "Wasn’t working would describe an action not in progress at a moment; “for long” marks a duration, which asks for had been.",
+          "es": "Wasn’t working describiría una acción que no estaba en marcha en un momento; «for long» marca una duración, que pide had been.",
+          "de": "Wasn’t working würde eine Handlung beschreiben, die in einem Moment nicht lief; „for long“ markiert eine Dauer, die had been verlangt."
+        },
+        "hasn't been working": {
+          "hu": "A hasn’t been working a jelenre vonatkozik; a mondat múltban van (arrived).",
+          "en": "Hasn’t been working refers to the present; the sentence is in the past (arrived).",
+          "es": "Hasn’t been working se refiere al presente; la oración está en pasado (arrived).",
+          "de": "Hasn’t been working bezieht sich auf die Gegenwart; der Satz steht in der Vergangenheit (arrived)."
+        }
+      },
+      "examples": [
+        "She hadn't been sleeping long.",
+        "We hadn't been waiting long."
+      ]
+    },
+    {
+      "id": "ppc-16",
+      "sentence": "She told me she ___ for the job for months.",
+      "options": [
+        "was looking",
+        "had been looking",
+        "has been looking"
+      ],
+      "correct": 1,
+      "why": {
+        "hu": "A told múltba teszi a mondatot, a keresés a mondás előtt hónapokig tartott: had been looking.",
+        "en": "Told puts the sentence in the past, and the looking lasted for months before the telling: had been looking.",
+        "es": "Told pone la oración en pasado, y la búsqueda duró meses antes de decirlo: had been looking.",
+        "de": "Told setzt den Satz in die Vergangenheit, und das Suchen dauerte vor dem Sagen Monate: had been looking."
+      },
+      "wrong": {
+        "was looking": {
+          "hu": "A „was looking for months” nem fejezi ki, hogy a keresés a mondás előtt tartott; ehhez had been looking kell.",
+          "en": "“Was looking for months” does not show that the looking lasted up to the telling; that needs had been looking.",
+          "es": "«Was looking for months» no muestra que la búsqueda duró hasta el momento de decirlo; eso necesita had been looking.",
+          "de": "„Was looking for months“ zeigt nicht, dass das Suchen bis zum Sagen dauerte; das braucht had been looking."
+        },
+        "has been looking": {
+          "hu": "A has been looking jelen idejű; a told után a múltba tolódik (had been looking).",
+          "en": "Has been looking is present; after told it moves back (had been looking).",
+          "es": "Has been looking es presente; después de told retrocede (had been looking).",
+          "de": "Has been looking ist Präsens; nach told rückt es zurück (had been looking)."
+        }
+      },
+      "examples": [
+        "He said he had been waiting.",
+        "They said they had been working."
+      ]
+    },
+    {
+      "id": "ppc-17",
+      "sentence": "My eyes hurt. I ___ at the screen since morning.",
+      "options": [
+        "looked",
+        "was looking",
+        "had been looking"
+      ],
+      "correct": 2,
+      "why": {
+        "hu": "A since morning a fájás előtti kezdőpont: had been looking.",
+        "en": "“Since morning” is a starting point before the hurting: had been looking.",
+        "es": "«Since morning» es un punto de inicio antes del dolor: had been looking.",
+        "de": "„Since morning“ ist ein Anfangspunkt vor dem Schmerz: had been looking."
+      },
+      "wrong": {
+        "looked": {
+          "hu": "A „looked since morning” helytelen; a since mellé folyamatos perfekt alak kell.",
+          "en": "“Looked since morning” is incorrect; since needs a continuous perfect form.",
+          "es": "«Looked since morning» es incorrecto; since necesita una forma perfecta continua.",
+          "de": "„Looked since morning“ ist falsch; since braucht eine Perfektform im Verlauf."
+        },
+        "was looking": {
+          "hu": "A since mellé nem áll past continuous; had been looking kell.",
+          "en": "Since does not go with the past continuous; you need had been looking.",
+          "es": "Since no va con el pasado continuo; hace falta had been looking.",
+          "de": "Since steht nicht mit dem Past Continuous; man braucht had been looking."
+        }
+      },
+      "examples": [
+        "She had been reading since lunch.",
+        "He had been working since six."
+      ]
+    },
+    {
+      "id": "ppc-18",
+      "kind": "form",
+      "verb": "forma",
+      "person": "una acción larga hasta un momento del pasado",
+      "answer": "past perfect continuous",
+      "accept": [
+        "past perfect progressive"
+      ],
+      "table": "ppc-forms"
+    },
+    {
+      "id": "ppc-19",
+      "kind": "form",
+      "verb": "forma",
+      "person": "una acción en marcha en un momento del pasado",
+      "answer": "past continuous",
+      "accept": [
+        "past progressive"
+      ],
+      "table": "ppc-forms"
+    },
+    {
+      "id": "ppc-20",
+      "kind": "form",
+      "verb": "forma",
+      "person": "un resultado terminado antes de un momento del pasado",
+      "answer": "past perfect",
+      "table": "ppc-forms"
+    },
+    {
+      "id": "ppc-21",
+      "kind": "form",
+      "verb": "forma",
+      "person": "un hecho terminado en un momento del pasado",
+      "answer": "past simple",
+      "table": "ppc-forms"
+    },
+    {
+      "id": "ppc-22",
+      "kind": "form",
+      "verb": "forma",
+      "person": "la duración (dos horas)",
+      "answer": "for",
+      "table": "ppc-forms"
+    },
+    {
+      "id": "ppc-23",
+      "kind": "form",
+      "verb": "forma",
+      "person": "el punto de inicio (desde las seis)",
+      "answer": "since",
+      "table": "ppc-forms"
+    },
+    {
+      "kind": "why",
+      "id": "ppc-24",
+      "es": "She had been waiting for two hours when I arrived.",
+      "target": "been",
+      "tr": {
+        "hu": "Két órája várt, amikor megérkeztem.",
+        "en": "She had been waiting for two hours when I arrived.",
+        "es": "Llevaba dos horas esperando cuando llegué.",
+        "de": "Sie hatte zwei Stunden gewartet, als ich ankam."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "past perfect: kész eredmény",
+            "en": "past perfect: a finished result",
+            "es": "pasado perfecto: un resultado terminado",
+            "de": "Past Perfect: ein fertiges Ergebnis"
+          },
+          "wrong": {
+            "hu": "A „been waiting” folyamatot és időtartamot ír le (for two hours), nem kész eredményt.",
+            "en": "“Been waiting” describes a process and a duration (for two hours), not a finished result.",
+            "es": "«Been waiting» describe un proceso y una duración (for two hours), no un resultado terminado.",
+            "de": "„Been waiting“ beschreibt einen Vorgang und eine Dauer (for two hours), kein fertiges Ergebnis."
+          }
+        },
+        {
+          "text": {
+            "hu": "past perfect continuous: a múltbeli pontig tartó folyamat",
+            "en": "past perfect continuous: a process lasting up to a point in the past",
+            "es": "pasado perfecto continuo: un proceso que dura hasta un punto del pasado",
+            "de": "Past Perfect Continuous: ein Vorgang bis zu einem Punkt in der Vergangenheit"
+          }
+        },
+        {
+          "text": {
+            "hu": "past continuous: egy pillanatban zajló cselekvés",
+            "en": "past continuous: an action at one moment",
+            "es": "pasado continuo: una acción en un solo momento",
+            "de": "Past Continuous: eine Handlung in einem Moment"
+          },
+          "wrong": {
+            "hu": "A for two hours időtartam a megérkezésig; egy pillanatnyi cselekvéshez nem kell időtartam.",
+            "en": "For two hours is a duration up to the arrival; an action at one moment needs no duration.",
+            "es": "For two hours es una duración hasta la llegada; una acción en un solo momento no necesita duración.",
+            "de": "For two hours ist eine Dauer bis zur Ankunft; eine Handlung in einem Moment braucht keine Dauer."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ppc-25",
+      "es": "By noon, she had written three reports.",
+      "target": "written",
+      "tr": {
+        "hu": "Délre három jelentést írt meg.",
+        "en": "By noon, she had written three reports.",
+        "es": "Para el mediodía, había escrito tres reportes.",
+        "de": "Bis Mittag hatte sie drei Berichte geschrieben."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "past perfect continuous: a folyamat hossza",
+            "en": "past perfect continuous: the length of the process",
+            "es": "pasado perfecto continuo: la duración del proceso",
+            "de": "Past Perfect Continuous: die Länge des Vorgangs"
+          },
+          "wrong": {
+            "hu": "Itt számot mondunk (three reports), ezért a kész eredmény egyszerű past perfecttel megy.",
+            "en": "Here a number is given (three reports), so the finished result takes the simple past perfect.",
+            "es": "Aquí se da un número (three reports), por eso el resultado terminado va con el pasado perfecto simple.",
+            "de": "Hier wird eine Anzahl genannt (three reports), deshalb steht das fertige Ergebnis im einfachen Past Perfect."
+          }
+        },
+        {
+          "text": {
+            "hu": "past perfect: darabszám, kész eredmény",
+            "en": "past perfect: a number, a finished result",
+            "es": "pasado perfecto: un número, un resultado terminado",
+            "de": "Past Perfect: eine Anzahl, ein fertiges Ergebnis"
+          }
+        },
+        {
+          "text": {
+            "hu": "egyszerű múlt: lezárt esemény",
+            "en": "past simple: a finished event",
+            "es": "pasado simple: un hecho terminado",
+            "de": "Past Simple: ein abgeschlossenes Ereignis"
+          },
+          "wrong": {
+            "hu": "A „by noon” a délig elkészült eredményt jelzi, ami korábbi, mint egy másik múltbeli pont; ezért had written.",
+            "en": "“By noon” shows a result finished before another point in the past; that is why had written.",
+            "es": "«By noon» muestra un resultado terminado antes de otro punto del pasado; por eso had written.",
+            "de": "„By noon“ zeigt ein Ergebnis, das vor einem anderen Punkt in der Vergangenheit fertig war; deshalb had written."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ppc-26",
+      "es": "I had known her for years.",
+      "target": "known",
+      "tr": {
+        "hu": "Évek óta ismertem őt.",
+        "en": "I had known her for years.",
+        "es": "La conocía desde hacía años.",
+        "de": "Ich kannte sie schon seit Jahren."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "past perfect continuous: időtartam",
+            "en": "past perfect continuous: a duration",
+            "es": "pasado perfecto continuo: una duración",
+            "de": "Past Perfect Continuous: eine Dauer"
+          },
+          "wrong": {
+            "hu": "A know állapotot kifejező ige, nincs folyamatos alakja, bár időtartam (for years) van.",
+            "en": "Know is a state verb with no continuous form even though there is a duration (for years).",
+            "es": "Know es un verbo de estado sin forma continua aunque haya una duración (for years).",
+            "de": "Know ist ein Zustandsverb ohne Verlaufsform, auch wenn es eine Dauer gibt (for years)."
+          }
+        },
+        {
+          "text": {
+            "hu": "past perfect: a know állapotot kifejező ige",
+            "en": "past perfect: know is a state verb",
+            "es": "pasado perfecto: know es un verbo de estado",
+            "de": "Past Perfect: know ist ein Zustandsverb"
+          }
+        },
+        {
+          "text": {
+            "hu": "egyszerű múlt: lezárt időszak",
+            "en": "past simple: a finished period",
+            "es": "pasado simple: un periodo terminado",
+            "de": "Past Simple: ein abgeschlossener Zeitraum"
+          },
+          "wrong": {
+            "hu": "A had known egy korábbi, múltbeli pontig tartó állapotot ír le; az egyszerű múlt nem mutatja a másik pontot.",
+            "en": "Had known describes a state up to an earlier point in the past; the past simple does not show the other point.",
+            "es": "Had known describe un estado hasta un punto anterior del pasado; el pasado simple no muestra el otro punto.",
+            "de": "Had known beschreibt einen Zustand bis zu einem früheren Punkt in der Vergangenheit; das Past Simple zeigt den anderen Punkt nicht."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ppc-27",
+      "es": "How long had you been driving when the car stopped?",
+      "target": "long",
+      "tr": {
+        "hu": "Mióta vezettél, amikor megállt az autó?",
+        "en": "How long had you been driving when the car stopped?",
+        "es": "¿Cuánto tiempo llevabas manejando cuando se paró el carro?",
+        "de": "Wie lange warst du schon gefahren, als das Auto stehen blieb?"
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "present perfect continuous: a mostanáig tartó idő",
+            "en": "present perfect continuous: time up to now",
+            "es": "presente perfecto continuo: tiempo hasta ahora",
+            "de": "Present Perfect Continuous: Zeit bis jetzt"
+          },
+          "wrong": {
+            "hu": "A kérdés múltbeli pontra (stopped) néz vissza, nem a jelenre; ezért had been.",
+            "en": "The question looks back from a point in the past (stopped), not from now; that is why had been.",
+            "es": "La pregunta mira atrás desde un punto del pasado (stopped), no desde ahora; por eso had been.",
+            "de": "Die Frage blickt von einem Punkt in der Vergangenheit (stopped) zurück, nicht von jetzt; deshalb had been."
+          }
+        },
+        {
+          "text": {
+            "hu": "past perfect continuous: a hosszra kérdez egy múltbeli pontig",
+            "en": "past perfect continuous: asks about the length up to a point in the past",
+            "es": "pasado perfecto continuo: pregunta por la duración hasta un punto del pasado",
+            "de": "Past Perfect Continuous: fragt nach der Dauer bis zu einem Punkt in der Vergangenheit"
+          }
+        },
+        {
+          "text": {
+            "hu": "egyszerű múlt: lezárt időpont",
+            "en": "past simple: a finished time",
+            "es": "pasado simple: un tiempo terminado",
+            "de": "Past Simple: ein abgeschlossener Zeitpunkt"
+          },
+          "wrong": {
+            "hu": "A „How long did you drive?” a vezetés teljes hosszát kérdezné; a had been driving a megállásig tartó időre kérdez.",
+            "en": "“How long did you drive?” would ask about the whole length of the drive; had been driving asks about the time up to the stop.",
+            "es": "«How long did you drive?» preguntaría por toda la duración del viaje; had been driving pregunta por el tiempo hasta la parada.",
+            "de": "„How long did you drive?“ würde nach der ganzen Dauer der Fahrt fragen; had been driving fragt nach der Zeit bis zum Stehenbleiben."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ppc-28",
+      "es": "They had been living in Puebla for ten years.",
+      "target": "for",
+      "tr": {
+        "hu": "Tíz éve Pueblában éltek.",
+        "en": "They had been living in Puebla for ten years.",
+        "es": "Llevaban diez años viviendo en Puebla.",
+        "de": "Sie hatten zehn Jahre in Puebla gelebt."
+      },
+      "options": [
+        {
+          "text": {
+            "hu": "since + kezdőpont",
+            "en": "since + a starting point",
+            "es": "since + un punto de inicio",
+            "de": "since + Anfangspunkt"
+          },
+          "wrong": {
+            "hu": "A „ten years” időtartam, nem kezdőpont; időtartam elé for kerül.",
+            "en": "“Ten years” is a duration, not a starting point; a duration takes for.",
+            "es": "«Ten years» es una duración, no un punto de inicio; una duración lleva for.",
+            "de": "„Ten years“ ist eine Dauer, kein Anfangspunkt; eine Dauer verlangt for."
+          }
+        },
+        {
+          "text": {
+            "hu": "for + időtartam",
+            "en": "for + a duration",
+            "es": "for + una duración",
+            "de": "for + Dauer"
+          }
+        },
+        {
+          "text": {
+            "hu": "ago: időtartam után",
+            "en": "ago: after a duration",
+            "es": "ago: después de una duración",
+            "de": "ago: nach einer Dauer"
+          },
+          "wrong": {
+            "hu": "Az ago egyszerű múlttal jár és az időtartam után áll (ten years ago); itt had been living van.",
+            "en": "Ago goes with the past simple and follows the duration (ten years ago); here it is had been living.",
+            "es": "Ago va con el pasado simple y sigue a la duración (ten years ago); aquí es had been living.",
+            "de": "Ago gehört zum Past Simple und steht nach der Dauer (ten years ago); hier steht had been living."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "ppc-29",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "Llevaba dos horas esperando cuando llegó el camión.",
+          "en": "I had been waiting for two hours when the bus arrived."
+        },
+        {
+          "es": "Estaba cansada porque llevaba todo el día trabajando.",
+          "en": "She was tired because she had been working all day."
+        },
+        {
+          "es": "¿Cuánto tiempo llevabas manejando cuando se paró el carro?",
+          "en": "How long had you been driving when the car stopped?"
+        },
+        {
+          "es": "Vivíamos allí desde 2015 cuando nos mudamos.",
+          "en": "We had been living there since 2015 when we moved."
+        },
+        {
+          "es": "No llevaba mucho tiempo trabajando cuando llegó el jefe.",
+          "en": "He hadn't been working long when the boss arrived."
+        },
+        {
+          "es": "La conocía desde hacía años.",
+          "en": "I had known her for years."
+        }
+      ]
+    },
+    {
+      "id": "ppc-30",
+      "kind": "match",
+      "pairs": [
+        {
+          "es": "llevaba esperando",
+          "en": "I had been waiting"
+        },
+        {
+          "es": "desde (un punto de inicio)",
+          "en": "since"
+        },
+        {
+          "es": "durante (una duración)",
+          "en": "for"
+        },
+        {
+          "es": "¿cuánto tiempo llevabas?",
+          "en": "how long had you been"
+        },
+        {
+          "es": "no llevaba trabajando",
+          "en": "I hadn't been working"
+        },
+        {
+          "es": "para el mediodía había escrito",
+          "en": "by noon I had written"
+        }
+      ]
+    }
+  ]
+}
