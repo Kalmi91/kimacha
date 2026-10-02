@@ -1,4 +1,5 @@
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { useState } from 'react';
+import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { Text } from '@/components/KText';
 
 import Colors, { isDarkTheme } from '@/constants/Colors';
@@ -9,6 +10,7 @@ import { speak } from '@/lib/speech';
 import { speechLang } from '@/lib/languages';
 import type { ExamplePair, Lang4, LessonBlock } from '@/lib/grammar/lessonTypes';
 import { isConjugationTable, personGloss, splitStemEnding, verbClassOf, verbColumnColor } from '@/lib/grammar/tableShape';
+import { groupTableRuns, type TableBlock } from '@/lib/grammar/tableGroups';
 
 // FB381-383: a jelmagyarázat alatti rövid magyarázó sor, minden ragozási
 // táblán (nem lecke-adat, ezért itt lakik, nem egy JSON body-blokkban).
@@ -167,6 +169,90 @@ function GridTable({ header, rows, contentLang, colors, scroll }: {
   return scroll ? <ScrollView horizontal>{grid}</ScrollView> : grid;
 }
 
+// FB443/FB445: egy igés ragozási tábla tömören: két oszlop (bal: egyes szám, jobb:
+// többes szám), cellánként a személy kicsiben és alatta a vastag alak.
+function CompactVerbTable({ header, rows, colors, isDark }: {
+  header: Lang4[];
+  rows: string[][];
+  colors: (typeof Colors)['light'];
+  isDark: boolean;
+}) {
+  const g = useGrammarColors();
+  const verb = header[1].es;
+  const color = verbColumnColor(0, isDark);
+  const isRegularTable = rows.every((row) => splitStemEnding(row[1], verb) !== null);
+  const half = Math.ceil(rows.length / 2);
+  const cell = (row: string[], ri: number) => {
+    const split = isRegularTable ? splitStemEnding(row[1], verb) : null;
+    return (
+      <View
+        key={ri}
+        testID={`compact-cell-${ri}`}
+        style={[
+          styles.compactCell,
+          { backgroundColor: colors.card, borderColor: colors.tabIconDefault + '55' },
+          g.brutal && { borderRadius: 0, borderWidth: 2, borderColor: g.ink },
+        ]}
+      >
+        <Text style={[styles.compactPerson, { color: colors.tabIconDefault }]} numberOfLines={1}>{row[0]}</Text>
+        <Text style={styles.compactForm}>
+          {split ? <Text style={{ color: colors.tabIconDefault }}>{split.stem}</Text> : null}
+          <Text style={{ color, fontWeight: '700' }}>{split ? split.ending : row[1]}</Text>
+        </Text>
+      </View>
+    );
+  };
+  return (
+    <View style={styles.compactGrid}>
+      <View style={styles.compactCol}>{rows.slice(0, half).map((row, ri) => cell(row, ri))}</View>
+      <View style={styles.compactCol}>{rows.slice(half).map((row, ri) => cell(row, half + ri))}</View>
+    </View>
+  );
+}
+
+// FB443/FB445: az egymás utáni egy-igés ragozási táblák (lib/grammar/tableGroups.ts)
+// egy füles csoport: az igék chipek, egyszerre egy tábla látszik, tömören.
+function TableTabs({ tables, contentLang, colors, isDark, titleColor }: {
+  tables: TableBlock[];
+  contentLang: Props['contentLang'];
+  colors: (typeof Colors)['light'];
+  isDark: boolean;
+  titleColor: string;
+}) {
+  const g = useGrammarColors();
+  const [sel, setSel] = useState(0);
+  const cur = tables[sel] ?? tables[0];
+  return (
+    <View style={styles.section} testID={`tables-${tables[0].id}`}>
+      <View style={styles.tabRow}>
+        {tables.map((tb, ti) => {
+          const on = ti === sel;
+          return (
+            <Pressable
+              key={tb.id}
+              testID={`table-tab-${tb.id}`}
+              accessibilityRole="button"
+              accessibilityState={{ selected: on }}
+              onPress={() => setSel(ti)}
+              style={[
+                styles.tab,
+                { backgroundColor: on ? g.a : colors.card, borderColor: colors.tabIconDefault + '55' },
+                g.brutal && { borderRadius: 0, borderWidth: 2, borderColor: g.ink },
+              ]}
+            >
+              <Text style={[styles.tabText, { color: on ? g.onA : colors.text }]}>{tb.header[1].es}</Text>
+            </Pressable>
+          );
+        })}
+      </View>
+      <View style={styles.section} testID={`table-${cur.id}`}>
+        <Text variant="title" style={[styles.sectionTitle, { color: titleColor }]}>{cur.title[contentLang] ?? cur.title.en}</Text>
+        <CompactVerbTable header={cur.header} rows={cur.rows} colors={colors} isDark={isDark} />
+      </View>
+    </View>
+  );
+}
+
 export default function LessonBody({ blocks, contentLang, learnedLang }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
@@ -178,7 +264,21 @@ export default function LessonBody({ blocks, contentLang, learnedLang }: Props) 
 
   return (
     <View style={styles.body}>
-      {blocks.map((block, i) => {
+      {groupTableRuns(blocks).map((entry) => {
+        if (entry.kind === 'tabs') {
+          return (
+            <TableTabs
+              key={entry.index}
+              tables={entry.tables}
+              contentLang={contentLang}
+              colors={colors}
+              isDark={isDark}
+              titleColor={titleColor}
+            />
+          );
+        }
+        const block = entry.block;
+        const i = entry.index;
         if (block.kind === 'text') {
           return (
             <Text key={i} style={[styles.text, { color: colors.text }]}>
@@ -321,6 +421,15 @@ const styles = StyleSheet.create({
   },
   chipStem: { fontSize: 16 },
   chipEnding: { fontSize: 16, fontWeight: '700' },
+  // FB443/FB445: füles csoport + tömör (2 oszlopos) egy-igés tábla.
+  tabRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 6 },
+  tab: { paddingVertical: 6, paddingHorizontal: 10, borderRadius: 999, borderWidth: StyleSheet.hairlineWidth },
+  tabText: { fontSize: 14, fontWeight: '700' },
+  compactGrid: { flexDirection: 'row', gap: 6 },
+  compactCol: { flex: 1, gap: 6 },
+  compactCell: { borderRadius: 10, paddingVertical: 6, paddingHorizontal: 10, borderWidth: StyleSheet.hairlineWidth },
+  compactPerson: { fontSize: 11.5, fontStyle: 'italic' },
+  compactForm: { fontSize: 17 },
   legend: { flexDirection: 'row', flexWrap: 'wrap', gap: 12 },
   legendItem: { fontSize: 13.5 },
   legendCaption: { fontSize: 12, fontStyle: 'italic' },

@@ -3,6 +3,7 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, lineHeight, radius, spacing } from '@/constants/Theme';
 import { Card } from '@/components/grammar/Brutal';
+import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import ResultBadge from '@/components/ResultBadge';
 import type { MockResult } from '@/lib/exam/mock/score';
 import { t } from '@/lib/i18n';
@@ -105,7 +106,7 @@ export function MockReviewView({ result, onBack }: { result: MockResult; onBack:
 }
 
 const styles = StyleSheet.create({
-  body: { padding: spacing.lg, gap: spacing.md },
+  body: { padding: spacing.lg, paddingBottom: FAB_CLEARANCE, gap: spacing.md },
   card: { borderRadius: radius.lg, padding: spacing.lg, gap: spacing.md },
   brutalCard: { padding: spacing.lg, gap: spacing.md },
   title: { fontSize: fontSize.xl, fontWeight: fontWeight.bold, textAlign: 'center' },
