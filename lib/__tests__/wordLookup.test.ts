@@ -50,9 +50,9 @@ describe('word lookup by text', () => {
   });
 
   it('does not gloss a form of a word that is not in the list', () => {
-    expect(openWords.some(w => w.lemma === 'bucear')).toBe(false);
-    expect(findWordByText('buceaba', 'es', 'es')).toBeUndefined();
-    expect(findWordByText('buceamos', 'es', 'es')).toBeUndefined();
+    expect(openWords.some(w => w.lemma === 'zarpar')).toBe(false);
+    expect(findWordByText('zarpaba', 'es', 'es')).toBeUndefined();
+    expect(findWordByText('zarpamos', 'es', 'es')).toBeUndefined();
   });
 
   it('normalizes a token the same way the tap markers do', () => {
