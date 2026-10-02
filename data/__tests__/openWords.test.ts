@@ -2,13 +2,13 @@
 import { getOpenWordsForLevel, getOpenWordsUpToLevel, openLevelOf, openWords } from '../openWords';
 
 describe('data/openWords.ts', () => {
-  it('3282 kártya, egyedi id (= order), A1-B2 643-965-884-790', () => {
+  it('3282 kártya, egyedi id (= order), A1-B2 643-965-885-789', () => {
     expect(openWords).toHaveLength(3282);
     expect(new Set(openWords.map((w) => w.id)).size).toBe(3282);
     expect(getOpenWordsForLevel('A1')).toHaveLength(643);
     expect(getOpenWordsForLevel('A2')).toHaveLength(965);
-    expect(getOpenWordsForLevel('B1')).toHaveLength(884);
-    expect(getOpenWordsForLevel('B2')).toHaveLength(790);
+    expect(getOpenWordsForLevel('B1')).toHaveLength(885);
+    expect(getOpenWordsForLevel('B2')).toHaveLength(789);
     expect(getOpenWordsForLevel('A0')).toEqual([]);
   });
 

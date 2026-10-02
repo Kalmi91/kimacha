@@ -11172,8 +11172,9 @@
     "lemma": "lanzar",
     "es": "lanzar",
     "hu": "elhajít, elindít",
-    "en": "to hurl, to launch",
+    "en": "to throw (hard), to launch",
     "de": "werfen, starten",
+    "hint_en": "The pitcher *throws* very hard.",
     "sentence_es": "El jugador lanza la pelota con fuerza.",
     "sentence_hu": "A játékos erősen elhajítja a labdát.",
     "sentence_en": "The player hurls the ball hard.",
@@ -13311,6 +13312,21 @@
     "sentence_en": "This region has many mountains.",
     "sentence_de": "Diese Region hat viele Berge.",
     "sentence_lemmas": ["este", "región", "tener", "mucho", "montaña"]
+  },
+  {
+    "order": 3187,
+    "level": "B1",
+    "pos": "verb",
+    "lemma": "extender",
+    "es": "extender",
+    "hu": "kinyújt, kiterjeszt",
+    "en": "to extend, to stretch out",
+    "de": "ausstrecken, ausdehnen",
+    "sentence_es": "Extiendo la mano para saludar.",
+    "sentence_hu": "Kinyújtom a kezem, hogy köszöntsek.",
+    "sentence_en": "I stretch out my hand to greet.",
+    "sentence_de": "Ich strecke die Hand zum Gruß aus.",
+    "sentence_lemmas": ["extender", "el", "mano", "para", "saludar"]
   },
   {
     "order": 3217,
