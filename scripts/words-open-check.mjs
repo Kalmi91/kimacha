@@ -5,6 +5,8 @@
 //   --to N       az R3-R10 csak az order <= N kártyákon fut (félkész szint ellenőrzése)
 // Szabályonként kiírja a hibák számát és az első 5 példát, hibánál exit 1.
 // PLAN-tobbjelentes.md 2. lépés: R1/R2 lazítás (több jelentés, 600 fölötti kártyák), R11-R14 (scripts/multi-meaning-rules.mjs).
+// R11 kibővítve (PLAN-words-open-2 3. kör): az `en` vessző/pontosvessző szerinti alternatívái is ütköznek; két kártya azonos alternatívája mindkettőn hint_en-t kér
+// (vagy összevonást); a régi 882 kártya egymás közti ütközése 50 fölött figyelmeztetés, nem hiba.
 //
 // R6 (szint-nyelvtan): a lib/grammar/tenseGate.ts NEM használható újra, mert az alak-térképét a régi
 // data/words korpusz igéiből építi (a szabad készlet így tőle függene) és TS-alias-importot használ.
@@ -49,8 +51,12 @@ if (li !== -1) {
 // ---------------------------------------------------------------- szabály-gyűjtő
 const RULES = {};
 const R10_STATS = [];
+const WARNINGS = [];
 function fail(rule, msg) {
   (RULES[rule] ||= []).push(msg);
+}
+function warn(rule, msg) {
+  WARNINGS.push(`${rule}: ${msg}`);
 }
 const tag = (c) => `#${c.order} ${c.lemma}`;
 
@@ -131,8 +137,11 @@ for (const c of cards) {
 }
 
 // ---------------------------------------------------------------- R11-R14 több jelentésű szavak (hint, perjeles válasz)
+// R11 bővítve: az `en` vessző/pontosvessző szerinti alternatívái is ütköznek (PLAN-words-open-2 3. kör); a 882 régi kártya egymás
+// közti ütközése 50 fölött figyelmeztetés, nem hiba.
 checkMultiMeaning({
   cards, qKey: 'en', aKey: 'es', hintKey: 'hint_en', articles: ['a', 'an', 'the'], ignore: ['to'], tag, fail,
+  splitAlternatives: true, legacyMaxOrder: 882, legacyWarnLimit: 50, warn,
 });
 
 // ---------------------------------------------------------------- R3-R9 (csak ha nem --list-only)
@@ -414,6 +423,10 @@ for (const r of ruleList) {
   bad += errs.length;
   console.log(`${r}: ${errs.length ? `${errs.length} hiba` : 'ok'}${r === 'R10' && R10_STATS.length ? ` (${R10_STATS.join('; ')})` : ''}`);
   errs.slice(0, 5).forEach((e) => console.log(`   ${e}`));
+}
+if (WARNINGS.length) {
+  console.log(`figyelmeztetés: ${WARNINGS.length} (a régi kártyák egymás közti R11-átfedése, nem hiba)`);
+  WARNINGS.slice(0, 5).forEach((w) => console.log(`   ${w}`));
 }
 const scope = listOnly ? 'lista' : onlyLevel ? onlyLevel.toUpperCase() : 'mind';
 console.log(bad ? `words-open-check: PIROS (${bad} hiba, ${scope})` : `words-open-check: ZÖLD (${scope}, ${cards.length} kártya)`);
