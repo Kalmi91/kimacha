@@ -377,11 +377,11 @@
       "id": "ppvp-01",
       "sentence": "We ___ a good movie last night.",
       "options": [
-        "saw",
         "have seen",
+        "saw",
         "see"
       ],
-      "correct": 0,
+      "correct": 1,
       "why": {
         "hu": "A „last night” lezárt időpont, ezért egyszerű múlt kell: We saw a good movie last night.",
         "en": "“Last night” is a finished time, so you need the past simple: We saw a good movie last night.",
@@ -445,11 +445,11 @@
       "id": "ppvp-03",
       "sentence": "When ___ you arrive in Mexico?",
       "options": [
-        "do",
         "did",
+        "do",
         "have"
       ],
-      "correct": 1,
+      "correct": 0,
       "why": {
         "hu": "A When kérdés lezárt időpontra kérdez, ezért egyszerű múlt kell: did + alapige (When did you arrive?).",
         "en": "A When question asks about a finished time, so you need the past simple: did + base verb (When did you arrive?).",
@@ -547,11 +547,11 @@
       "id": "ppvp-06",
       "sentence": "Have you finished the project ___?",
       "options": [
+        "yet",
         "yesterday",
-        "ago",
-        "yet"
+        "ago"
       ],
-      "correct": 2,
+      "correct": 0,
       "why": {
         "hu": "Kérdésben a „már” szó angolul yet: Have you finished the project yet?",
         "en": "In a question, the word for “already” is yet: Have you finished the project yet?",
@@ -581,11 +581,11 @@
       "id": "ppvp-07",
       "sentence": "___ you ever been to Oaxaca?",
       "options": [
-        "Have",
         "Did",
+        "Have",
         "Were"
       ],
-      "correct": 0,
+      "correct": 1,
       "why": {
         "hu": "Időpont nélküli tapasztalat: Have you ever been…? (have + been, present perfect).",
         "en": "An experience with no time: Have you ever been…? (have + been, the present perfect).",
@@ -649,11 +649,11 @@
       "id": "ppvp-09",
       "sentence": "He ___ his leg when he was ten.",
       "options": [
-        "has broken",
         "broke",
+        "has broken",
         "breaks"
       ],
-      "correct": 1,
+      "correct": 0,
       "why": {
         "hu": "A „when he was ten” lezárt időpont, ezért egyszerű múlt kell: broke.",
         "en": "“When he was ten” is a finished time, so you need the past simple: broke.",
@@ -681,7 +681,7 @@
     },
     {
       "id": "ppvp-10",
-      "sentence": "Ana is not here. She has ___ to the market.",
+      "sentence": "Ana has ___ to the market. She will be back soon.",
       "options": [
         "been",
         "gone",
@@ -689,10 +689,10 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Ana elment és még ott van: has gone. A has been azt jelentené, hogy már visszajött.",
-        "en": "Ana went and is still there: has gone. Has been would mean she already came back.",
-        "es": "Ana se fue y sigue allí: has gone. Has been significaría que ya volvió.",
-        "de": "Ana ist hingegangen und noch dort: has gone. Has been würde heißen, dass sie schon zurück ist."
+        "hu": "Ana elment, és még nincs itt (mindjárt visszajön): has gone. A has been azt jelentené, hogy már visszajött.",
+        "en": "Ana went and is not back yet (she will be back soon): has gone. Has been would mean she already came back.",
+        "es": "Ana se fue y todavía no regresa (volverá pronto): has gone. Has been significaría que ya volvió.",
+        "de": "Ana ist hingegangen und noch nicht zurück (sie kommt bald wieder): has gone. Has been würde heißen, dass sie schon zurück ist."
       },
       "wrong": {
         "been": {
@@ -785,11 +785,11 @@
       "id": "ppvp-13",
       "sentence": "Did you see Carlos at the party? Yes, I ___ him there.",
       "options": [
-        "saw",
         "have seen",
+        "saw",
         "see"
       ],
-      "correct": 0,
+      "correct": 1,
       "why": {
         "hu": "A kérdés egy lezárt eseményről szól (a buli), ezért a válasz is egyszerű múlt: I saw him there.",
         "en": "The question is about a finished event (the party), so the answer is also the past simple: I saw him there.",
@@ -819,11 +819,11 @@
       "id": "ppvp-14",
       "sentence": "Ana ___ in Madrid for two years, but now she lives here.",
       "options": [
-        "lived",
         "has lived",
-        "lives"
+        "lives",
+        "lived"
       ],
-      "correct": 0,
+      "correct": 2,
       "why": {
         "hu": "A madridi évek lezárultak (most már itt él), ezért egyszerű múlt kell: lived.",
         "en": "The years in Madrid are over (now she lives here), so you need the past simple: lived.",
@@ -853,11 +853,11 @@
       "id": "ppvp-15",
       "sentence": "Ana has lived in Puebla ___ she was a child.",
       "options": [
-        "for",
         "since",
+        "for",
         "ago"
       ],
-      "correct": 1,
+      "correct": 0,
       "why": {
         "hu": "A „she was a child” kezdőpont, nem időtartam, ezért since kell: since she was a child.",
         "en": "“She was a child” is a starting point, not a duration, so you need since: since she was a child.",
@@ -888,10 +888,10 @@
       "sentence": "This is the best food I have ever ___.",
       "options": [
         "ate",
-        "eat",
-        "eaten"
+        "eaten",
+        "eat"
       ],
-      "correct": 2,
+      "correct": 1,
       "why": {
         "hu": "A have ever után igenév kell: I have ever eaten. A felsőfok + ever mindig present perfectet kér.",
         "en": "After have ever you need the participle: I have ever eaten. A superlative with ever takes the present perfect.",
@@ -921,11 +921,11 @@
       "id": "ppvp-17",
       "sentence": "They moved to Puebla two years ___.",
       "options": [
-        "ago",
         "since",
-        "for"
+        "for",
+        "ago"
       ],
-      "correct": 0,
+      "correct": 2,
       "why": {
         "hu": "Az időtartam + ago múltbeli időpontot ad meg egyszerű múlttal: two years ago.",
         "en": "A duration + ago gives a past point in time with the past simple: two years ago.",
@@ -955,11 +955,11 @@
       "id": "ppvp-18",
       "sentence": "It's only Wednesday. I ___ four meetings this week so far.",
       "options": [
+        "have had",
         "had",
-        "was having",
-        "have had"
+        "was having"
       ],
-      "correct": 2,
+      "correct": 0,
       "why": {
         "hu": "A „so far” azt jelzi, hogy a hét még tart, ezért present perfect kell: have had.",
         "en": "“So far” shows that the week is still going, so you need the present perfect: have had.",
