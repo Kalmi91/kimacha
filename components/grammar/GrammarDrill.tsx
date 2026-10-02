@@ -27,6 +27,7 @@ import {
 import { TENSE_NAMES, type FormItem, type LessonBlock, type MatchItem, type TenseId, type TransformItem, type WhyItem } from '@/lib/grammar/lessonTypes';
 import { markTokens } from '@/lib/games/grammarMark';
 import { speak } from '@/lib/speech';
+import SpeakButton from '@/components/SpeakButton';
 import { speechLang } from '@/lib/languages';
 import { buildGrammarRound, grammarRoundItemKind, isChoiceRoundItem, wrongExplanation } from '@/lib/games/grammarChoice';
 import { pickTransformRound, TRANSFORM_ROUND_SIZE } from '@/lib/grammar/transformRounds';
@@ -35,6 +36,7 @@ import { optionHint } from '@/lib/grammar/optionHints';
 import { buildGlossMap } from '@/lib/games/gloss';
 import { hashString, shuffleNoFixedPoints, shuffleOptions } from '@/lib/shuffle';
 import GlossText from '@/components/games/GlossText';
+import { useDockedAction } from '@/components/learn/DockSlot';
 import LessonBody from '@/components/grammar/LessonBody';
 import MoreBlocks from '@/components/grammar/MoreBlocks';
 import { BrutalBox, SegmentBar, Sticker, inkButtonText, segmentsFilled, textOnFill } from '@/components/grammar/Brutal';
@@ -336,7 +338,17 @@ function FormDrillItem({
     const ok = [item.answer, ...(item.accept ?? [])].some((c) => value.trim().toLowerCase() === c.trim().toLowerCase());
     setCorrect(ok);
     setChecked(true);
+    // FB462 (PLAN-fb1002b 4. lépés): a helyes alak a Check után elhangzik, jó és rossz válasz után is, mint a
+    // szókártyán (FB412), a 🔊 ugyanaz a SpeakButton, mint ott; az átírás-tétel eddig is így tett.
+    speak(item.answer, speechLang(learnedLang));
   };
+
+  // FB461/FB464: a Check (és utána a Next) a billentyűzet fölé dokkolt sáv, ahogy a szókártyán (DockSlot).
+  const { docked, padBottom } = useDockedAction(
+    checked
+      ? { label: g.brutal ? s.grammar.nextArrow : s.games.understood, tone: 'next', testID: 'grammar-next', onPress: () => onDone(correct) }
+      : { label: `✓ ${s.grammar.check}`, tone: 'check', testID: 'formCheck', onPress: check }
+  );
 
   // NY22: brutalista ragozás-drill: a prompt dobozban, a beviteli mező 2,5 px ink
   // keretű, sarok 0; hibás válasz után szaggatott keret; b kitöltésű visszajelző.
@@ -375,15 +387,17 @@ function FormDrillItem({
           />
         </BrutalBox>
         {!checked ? (
-          <BrutalInkButton g={g} testID="formCheck" label={s.grammar.check} onPress={check} />
+          docked ? null : <BrutalInkButton g={g} testID="formCheck" label={s.grammar.check} onPress={check} />
         ) : (
           <>
             <BrutalFeedback g={g} correct={correct} title={correct ? s.games.correctFeedback : s.games.wrongFeedback}>
               {!correct ? <AnswerCompare typed={value} correct={item.answer} g={g} onFill /> : null}
             </BrutalFeedback>
-            <BrutalInkButton g={g} testID="grammar-next" label={s.grammar.nextArrow} onPress={() => onDone(correct)} />
+            <SpeakButton testID="form-speak" onPress={() => speak(item.answer, speechLang(learnedLang))} brutalStyle={styles.formSpeakBrutal} />
+            {docked ? null : <BrutalInkButton g={g} testID="grammar-next" label={s.grammar.nextArrow} onPress={() => onDone(correct)} />}
           </>
         )}
+        {docked ? <View style={{ height: padBottom }} /> : null}
       </View>
     );
   }
@@ -418,18 +432,24 @@ function FormDrillItem({
         autoCorrect={false}
       />
       {!checked ? (
-        <Pressable testID="formCheck" style={[styles.btn, { backgroundColor: colors.tint }]} onPress={check}>
-          <Text style={styles.btnText}>{s.grammar.check}</Text>
-        </Pressable>
+        docked ? null : (
+          <Pressable testID="formCheck" style={[styles.btn, { backgroundColor: colors.tint }]} onPress={check}>
+            <Text style={styles.btnText}>{s.grammar.check}</Text>
+          </Pressable>
+        )
       ) : (
         <View style={[styles.explainCard, { backgroundColor: colors.card }]}>
           <ResultBadge correct={correct} label={correct ? s.games.correctFeedback : s.games.wrongFeedback} />
           {!correct ? <AnswerCompare typed={value} correct={item.answer} g={g} /> : null}
-          <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(correct)}>
-            <Text style={styles.btnText}>{s.games.understood}</Text>
-          </Pressable>
+          <SpeakButton testID="form-speak" onPress={() => speak(item.answer, speechLang(learnedLang))} style={styles.formSpeak} iconStyle={styles.formSpeakIcon} />
+          {docked ? null : (
+            <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={() => onDone(correct)}>
+              <Text style={styles.btnText}>{s.games.understood}</Text>
+            </Pressable>
+          )}
         </View>
       )}
+      {docked ? <View style={{ height: padBottom }} /> : null}
     </View>
   );
 }
@@ -690,6 +710,13 @@ function TransformDrillItem({
 
   const inputBorder = result === 'ok' ? '#22C55E' : result === 'bad' ? '#EF4444' : colors.tabIconDefault;
 
+  // FB461/FB464: a Check (és utána a Next) a billentyűzet fölé dokkolt sáv, ahogy a szókártyán (DockSlot).
+  const { docked, padBottom } = useDockedAction(
+    result === null
+      ? { label: `✓ ${s.grammar.check}`, tone: 'check', testID: 'transform-check', onPress: check }
+      : { label: s.grammar.next, tone: 'next', testID: 'transform-next', onPress: () => onDone(result === 'ok') }
+  );
+
   // NY22: brutalista mondat-átírás: a mondat dobozban, az F gomb kis doboz, a
   // beviteli mező 2,5 px ink keretű (hibás után szaggatott), b kitöltésű visszajelző.
   if (g.brutal) {
@@ -733,7 +760,7 @@ function TransformDrillItem({
         </BrutalBox>
 
         {result === null ? (
-          <BrutalInkButton g={g} testID="transform-check" label={s.grammar.check} onPress={check} />
+          docked ? null : <BrutalInkButton g={g} testID="transform-check" label={s.grammar.check} onPress={check} />
         ) : (
           <>
             <BrutalFeedback g={g} correct={result === 'ok'} title={result === 'ok' ? s.grammar.correct : s.grammar.correctAnswer}>
@@ -742,11 +769,12 @@ function TransformDrillItem({
               ) : null}
               <Text style={[styles.explainText, { color: g.onB }]}>{item.why[contentLang] ?? item.why.en}</Text>
             </BrutalFeedback>
-            <BrutalInkButton g={g} testID="transform-next" label={s.grammar.next} onPress={() => onDone(result === 'ok')} />
+            {docked ? null : <BrutalInkButton g={g} testID="transform-next" label={s.grammar.next} onPress={() => onDone(result === 'ok')} />}
           </>
         )}
 
         {!strictAccents ? <Text style={[styles.accentHint, { color: g.mu }]}>{s.grammar.accentHint}</Text> : null}
+        {docked ? <View style={{ height: padBottom }} /> : null}
       </View>
     );
   }
@@ -789,9 +817,11 @@ function TransformDrillItem({
       />
 
       {result === null ? (
-        <Pressable testID="transform-check" style={[styles.btn, { backgroundColor: colors.tint }]} onPress={check}>
-          <Text style={styles.btnText}>{s.grammar.check}</Text>
-        </Pressable>
+        docked ? null : (
+          <Pressable testID="transform-check" style={[styles.btn, { backgroundColor: colors.tint }]} onPress={check}>
+            <Text style={styles.btnText}>{s.grammar.check}</Text>
+          </Pressable>
+        )
       ) : (
         <View
           style={[
@@ -816,7 +846,7 @@ function TransformDrillItem({
         </View>
       )}
 
-      {result !== null ? (
+      {result !== null && !docked ? (
         <Pressable testID="transform-next" style={[styles.btn, { backgroundColor: colors.text }]} onPress={() => onDone(result === 'ok')}>
           <Text style={styles.btnText}>{s.grammar.next}</Text>
         </Pressable>
@@ -825,6 +855,7 @@ function TransformDrillItem({
       {!strictAccents ? (
         <Text style={[styles.accentHint, { color: colors.tabIconDefault }]}>{s.grammar.accentHint}</Text>
       ) : null}
+      {docked ? <View style={{ height: padBottom }} /> : null}
     </View>
   );
 }
@@ -1371,6 +1402,9 @@ const styles = StyleSheet.create({
   option: { borderWidth: 1.5, borderRadius: 14, paddingVertical: 14, alignItems: 'center' },
   optionText: { fontSize: 17, fontWeight: '600' },
   explainCard: { borderRadius: 16, padding: 16, gap: 8 },
+  formSpeak: { alignSelf: 'center', padding: 4 },
+  formSpeakIcon: { fontSize: 22 },
+  formSpeakBrutal: { alignSelf: 'center' },
   explainHeader: { fontSize: 16, fontWeight: '800' },
   explainText: { fontSize: 14, lineHeight: 20 },
   example: { fontSize: 14, fontStyle: 'italic', lineHeight: 20 },

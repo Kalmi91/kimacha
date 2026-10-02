@@ -24,6 +24,7 @@ import ExamChoiceCard from '@/components/exam/ExamChoiceCard';
 import ExamMatchCard from '@/components/exam/ExamMatchCard';
 import ExamTilesCard from '@/components/exam/ExamTilesCard';
 import ExamTypeCard from '@/components/exam/ExamTypeCard';
+import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
 
 // PLAN-vizsga B. szakasz (8. lépés): a nyelvtani lecke végi teszt képernyője. Nincs bevezető
 // (a lecke done-lapjának gombja alatt áll "10 questions, pass 80%"): kérdések (nincs élet; a
@@ -110,6 +111,8 @@ export default function LessonTest({
   const colors = Colors[theme];
   const g = useGrammarColors();
   const s = t();
+  // FB461/FB464: a beírós kérdés Check / Next sávja a billentyűzet fölé dokkol (components/learn/DockSlot.tsx).
+  const dock = useDockSlot(colors);
 
   // A kiosztás: a kérdések, az eddig feltett tételek (újrapróba: új tételek előre) és az utolsó
   // próba elrontottjai (a következő próba ezeket húzza előre).
@@ -259,9 +262,12 @@ export default function LessonTest({
           <View style={[styles.fill, { backgroundColor: colors.tint, width: `${pct}%` }]} />
         </View>
       )}
-      {questions[index] && (
-        <QuestionView key={`${topicId}:${index}:${questions[index].id}`} q={questions[index]} learnedLang={learnedLang} strictAccents={strictAccents} onDone={answered} />
-      )}
+      <DockSlotProvider host={dock}>
+        {questions[index] && (
+          <QuestionView key={`${topicId}:${index}:${questions[index].id}`} q={questions[index]} learnedLang={learnedLang} strictAccents={strictAccents} onDone={answered} />
+        )}
+      </DockSlotProvider>
+      {dock.node}
     </KeyboardAvoidingView>
   );
 }
