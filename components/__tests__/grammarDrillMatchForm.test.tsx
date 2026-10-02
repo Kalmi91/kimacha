@@ -106,6 +106,29 @@ describe('GrammarDrill: form item', () => {
   });
 });
 
+// PLAN-fb1002 10. lépés: a form item `accept` mezője működik (két helyes alak).
+describe('GrammarDrill: form item accept', () => {
+  const withAccept: LessonV2 = { ...lesson, items: [{ ...(lesson.items[1] as object), accept: ['somos también'] } as LessonV2['items'][number]] };
+
+  it('accepts an alternative form from accept, and still rejects other answers', () => {
+    const onFinish = jest.fn();
+    render(<GrammarDrill topic={withAccept} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['form']} />);
+    fireEvent.changeText(screen.getByTestId('formInput'), 'Somos también');
+    fireEvent.press(screen.getByTestId('formCheck'));
+    fireEvent.press(screen.getByTestId('grammar-next'));
+    expect(onFinish).toHaveBeenCalledWith(1, 1);
+  });
+
+  it('a wrong answer is still wrong when accept exists', () => {
+    const onFinish = jest.fn();
+    render(<GrammarDrill topic={withAccept} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['form']} />);
+    fireEvent.changeText(screen.getByTestId('formInput'), 'son');
+    fireEvent.press(screen.getByTestId('formCheck'));
+    fireEvent.press(screen.getByTestId('grammar-next'));
+    expect(onFinish).toHaveBeenCalledWith(0, 1);
+  });
+});
+
 // D3 (FB290, 2026-09-17): a `kinds` prop szűri a kört a kért fajtákra.
 describe('GrammarDrill: kinds filter', () => {
   const mixedLesson: LessonV2 = {
