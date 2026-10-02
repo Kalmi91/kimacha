@@ -75,6 +75,8 @@ describe('OnboardingScreen: nyelv- és szint-lépés (PLAN-ketiranyu 4. lépés)
     const { getByText, getByTestId } = render(<OnboardingScreen />);
     fireEvent.press(getByText('English'));
     fireEvent.press(getByText('Get Started'));
+    fireEvent.press(getByText("Let's start"));
+    fireEvent.press(getByText('Continue'));
 
     expect(getByText('Elementary')).toBeTruthy();
     expect(getByText('Not sure? Take the 3 minute placement test')).toBeTruthy();
