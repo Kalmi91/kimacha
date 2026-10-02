@@ -22,10 +22,10 @@
       "kind": "table",
       "id": "pco-aux",
       "title": {
-        "hu": "Állító, tagadó, kérdő",
-        "en": "Affirmative, negative, question",
-        "es": "Afirmativa, negativa, pregunta",
-        "de": "Bejahend, verneinend, Frage"
+        "hu": "A segédige alakjai",
+        "en": "The helper verb forms",
+        "es": "Las formas del auxiliar",
+        "de": "Die Formen des Hilfsverbs"
       },
       "header": [
         {
@@ -45,44 +45,33 @@
           "en": "negative",
           "es": "negación",
           "de": "Verneinung"
-        },
-        {
-          "hu": "kérdés",
-          "en": "question",
-          "es": "pregunta",
-          "de": "Frage"
         }
       ],
       "rows": [
         [
           "I",
-          "I was working",
-          "I wasn't working",
-          "Was I working?"
+          "was",
+          "was not"
         ],
         [
           "you",
-          "you were working",
-          "you weren't working",
-          "Were you working?"
+          "were",
+          "were not"
         ],
         [
           "he / she / it",
-          "she was working",
-          "she wasn't working",
-          "Was she working?"
+          "was",
+          "was not"
         ],
         [
           "we",
-          "we were working",
-          "we weren't working",
-          "Were we working?"
+          "were",
+          "were not"
         ],
         [
           "they",
-          "they were working",
-          "they weren't working",
-          "Were they working?"
+          "were",
+          "were not"
         ]
       ]
     },
@@ -913,15 +902,15 @@
       "kind": "form",
       "verb": "negación",
       "person": "you",
-      "answer": "you weren't working",
+      "answer": "were not",
       "table": "pco-aux"
     },
     {
       "id": "pco-19",
       "kind": "form",
-      "verb": "pregunta",
+      "verb": "afirmativa",
       "person": "I",
-      "answer": "Was I working?",
+      "answer": "was",
       "table": "pco-aux"
     },
     {
@@ -929,7 +918,7 @@
       "kind": "form",
       "verb": "afirmativa",
       "person": "they",
-      "answer": "they were working",
+      "answer": "were",
       "table": "pco-aux"
     },
     {
@@ -937,15 +926,15 @@
       "kind": "form",
       "verb": "negación",
       "person": "he / she / it",
-      "answer": "she wasn't working",
+      "answer": "was not",
       "table": "pco-aux"
     },
     {
       "id": "pco-22",
       "kind": "form",
-      "verb": "pregunta",
+      "verb": "negación",
       "person": "we",
-      "answer": "Were we working?",
+      "answer": "were not",
       "table": "pco-aux"
     },
     {
@@ -953,7 +942,7 @@
       "kind": "form",
       "verb": "afirmativa",
       "person": "you",
-      "answer": "you were working",
+      "answer": "were",
       "table": "pco-aux"
     },
     {

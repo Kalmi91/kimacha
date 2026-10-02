@@ -22,10 +22,10 @@
       "kind": "table",
       "id": "pfc-aux",
       "title": {
-        "hu": "Állító, tagadó, kérdő",
-        "en": "Affirmative, negative, question",
-        "es": "Afirmativa, negativa, pregunta",
-        "de": "Bejahend, verneinend, Frage"
+        "hu": "A segédige alakjai",
+        "en": "The helper verb forms",
+        "es": "Las formas del auxiliar",
+        "de": "Die Formen des Hilfsverbs"
       },
       "header": [
         {
@@ -45,44 +45,33 @@
           "en": "negative",
           "es": "negación",
           "de": "Verneinung"
-        },
-        {
-          "hu": "kérdés",
-          "en": "question",
-          "es": "pregunta",
-          "de": "Frage"
         }
       ],
       "rows": [
         [
           "I",
-          "I have been working",
-          "I haven't been working",
-          "Have I been working?"
+          "have been",
+          "have not been"
         ],
         [
           "you",
-          "you have been working",
-          "you haven't been working",
-          "Have you been working?"
+          "have been",
+          "have not been"
         ],
         [
           "he / she / it",
-          "she has been working",
-          "she hasn't been working",
-          "Has she been working?"
+          "has been",
+          "has not been"
         ],
         [
           "we",
-          "we have been working",
-          "we haven't been working",
-          "Have we been working?"
+          "have been",
+          "have not been"
         ],
         [
           "they",
-          "they have been working",
-          "they haven't been working",
-          "Have they been working?"
+          "have been",
+          "have not been"
         ]
       ]
     },
@@ -913,31 +902,31 @@
       "kind": "form",
       "verb": "negación",
       "person": "he / she / it",
-      "answer": "she hasn't been working",
+      "answer": "has not been",
       "table": "pfc-aux"
     },
     {
       "id": "pfc-19",
       "kind": "form",
-      "verb": "pregunta",
+      "verb": "afirmativa",
       "person": "you",
-      "answer": "Have you been working?",
+      "answer": "have been",
       "table": "pfc-aux"
     },
     {
       "id": "pfc-20",
       "kind": "form",
       "verb": "afirmativa",
-      "person": "we",
-      "answer": "we have been working",
+      "person": "he / she / it",
+      "answer": "has been",
       "table": "pfc-aux"
     },
     {
       "id": "pfc-21",
       "kind": "form",
-      "verb": "pregunta",
-      "person": "he / she / it",
-      "answer": "Has she been working?",
+      "verb": "negación",
+      "person": "I",
+      "answer": "have not been",
       "table": "pfc-aux"
     },
     {
@@ -945,15 +934,15 @@
       "kind": "form",
       "verb": "negación",
       "person": "they",
-      "answer": "they haven't been working",
+      "answer": "have not been",
       "table": "pfc-aux"
     },
     {
       "id": "pfc-23",
       "kind": "form",
       "verb": "afirmativa",
-      "person": "I",
-      "answer": "I have been working",
+      "person": "we",
+      "answer": "have been",
       "table": "pfc-aux"
     },
     {

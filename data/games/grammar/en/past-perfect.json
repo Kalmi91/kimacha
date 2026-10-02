@@ -22,67 +22,57 @@
       "kind": "table",
       "id": "ppf-aux",
       "title": {
-        "hu": "Állító, tagadó, kérdő",
-        "en": "Affirmative, negative, question",
-        "es": "Afirmativa, negativa, pregunta",
-        "de": "Bejahend, verneinend, Frage"
+        "hu": "A rendhagyó igék igenevei",
+        "en": "Participles of irregular verbs",
+        "es": "Participios de verbos irregulares",
+        "de": "Partizipien unregelmäßiger Verben"
       },
       "header": [
         {
-          "hu": "Személy",
-          "en": "Person",
-          "es": "Persona",
-          "de": "Person"
+          "hu": "Ige",
+          "en": "Verb",
+          "es": "Verbo",
+          "de": "Verb"
         },
         {
-          "hu": "állító",
-          "en": "affirmative",
-          "es": "afirmativa",
-          "de": "bejahend"
-        },
-        {
-          "hu": "tagadás",
-          "en": "negative",
-          "es": "negación",
-          "de": "Verneinung"
-        },
-        {
-          "hu": "kérdés",
-          "en": "question",
-          "es": "pregunta",
-          "de": "Frage"
+          "hu": "past participle",
+          "en": "past participle",
+          "es": "past participle",
+          "de": "past participle"
         }
       ],
       "rows": [
         [
-          "I",
-          "I had finished",
-          "I hadn't finished",
-          "Had I finished?"
+          "eat",
+          "eaten"
         ],
         [
-          "you",
-          "you had finished",
-          "you hadn't finished",
-          "Had you finished?"
+          "go",
+          "gone"
         ],
         [
-          "he / she / it",
-          "she had finished",
-          "she hadn't finished",
-          "Had she finished?"
+          "write",
+          "written"
         ],
         [
-          "we",
-          "we had finished",
-          "we hadn't finished",
-          "Had we finished?"
+          "take",
+          "taken"
         ],
         [
-          "they",
-          "they had finished",
-          "they hadn't finished",
-          "Had they finished?"
+          "give",
+          "given"
+        ],
+        [
+          "see",
+          "seen"
+        ],
+        [
+          "buy",
+          "bought"
+        ],
+        [
+          "leave",
+          "left"
         ]
       ]
     },
@@ -893,49 +883,49 @@
     {
       "id": "ppf-18",
       "kind": "form",
-      "verb": "negación",
-      "person": "you",
-      "answer": "you hadn't finished",
+      "verb": "past participle",
+      "person": "eat",
+      "answer": "eaten",
       "table": "ppf-aux"
     },
     {
       "id": "ppf-19",
       "kind": "form",
-      "verb": "pregunta",
-      "person": "I",
-      "answer": "Had I finished?",
+      "verb": "past participle",
+      "person": "go",
+      "answer": "gone",
       "table": "ppf-aux"
     },
     {
       "id": "ppf-20",
       "kind": "form",
-      "verb": "afirmativa",
-      "person": "they",
-      "answer": "they had finished",
+      "verb": "past participle",
+      "person": "write",
+      "answer": "written",
       "table": "ppf-aux"
     },
     {
       "id": "ppf-21",
       "kind": "form",
-      "verb": "negación",
-      "person": "he / she / it",
-      "answer": "she hadn't finished",
+      "verb": "past participle",
+      "person": "take",
+      "answer": "taken",
       "table": "ppf-aux"
     },
     {
       "id": "ppf-22",
       "kind": "form",
-      "verb": "pregunta",
-      "person": "we",
-      "answer": "Had we finished?",
+      "verb": "past participle",
+      "person": "give",
+      "answer": "given",
       "table": "ppf-aux"
     },
     {
       "id": "ppf-23",
       "kind": "form",
-      "verb": "afirmativa",
-      "person": "he / she / it",
-      "answer": "she had finished",
+      "verb": "past participle",
+      "person": "buy",
+      "answer": "bought",
       "table": "ppf-aux"
     },
     {

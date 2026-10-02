@@ -22,10 +22,10 @@
       "kind": "table",
       "id": "pv-forms",
       "title": {
-        "hu": "A szenvedő szerkezet alakjai",
-        "en": "Forms of the passive",
-        "es": "Formas de la pasiva",
-        "de": "Formen des Passivs"
+        "hu": "A segédige alakjai",
+        "en": "The helper verb forms",
+        "es": "Las formas del auxiliar",
+        "de": "Die Formen des Hilfsverbs"
       },
       "header": [
         {
@@ -43,24 +43,28 @@
       ],
       "rows": [
         [
-          "presente simple",
-          "am / is / are + participle"
+          "presente simple (it)",
+          "is"
         ],
         [
-          "pasado simple",
-          "was / were + participle"
+          "presente simple (they)",
+          "are"
+        ],
+        [
+          "pasado simple (it)",
+          "was"
+        ],
+        [
+          "pasado simple (they)",
+          "were"
         ],
         [
           "futuro con will",
-          "will be + participle"
+          "will be"
         ],
         [
-          "presente perfecto",
-          "has / have been + participle"
-        ],
-        [
-          "con un verbo modal",
-          "can / must be + participle"
+          "presente perfecto (it)",
+          "has been"
         ],
         [
           "quién lo hace (el agente)",
@@ -876,16 +880,16 @@
       "id": "pv-18",
       "kind": "form",
       "verb": "forma",
-      "person": "presente simple",
-      "answer": "am / is / are + participle",
+      "person": "presente simple (it)",
+      "answer": "is",
       "table": "pv-forms"
     },
     {
       "id": "pv-19",
       "kind": "form",
       "verb": "forma",
-      "person": "pasado simple",
-      "answer": "was / were + participle",
+      "person": "pasado simple (they)",
+      "answer": "were",
       "table": "pv-forms"
     },
     {
@@ -893,23 +897,23 @@
       "kind": "form",
       "verb": "forma",
       "person": "futuro con will",
-      "answer": "will be + participle",
+      "answer": "will be",
       "table": "pv-forms"
     },
     {
       "id": "pv-21",
       "kind": "form",
       "verb": "forma",
-      "person": "presente perfecto",
-      "answer": "has / have been + participle",
+      "person": "presente perfecto (it)",
+      "answer": "has been",
       "table": "pv-forms"
     },
     {
       "id": "pv-22",
       "kind": "form",
       "verb": "forma",
-      "person": "con un verbo modal",
-      "answer": "can / must be + participle",
+      "person": "presente simple (they)",
+      "answer": "are",
       "table": "pv-forms"
     },
     {
