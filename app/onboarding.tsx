@@ -10,6 +10,7 @@ import { getDb } from '@/lib/database';
 import { t, setLanguage } from '@/lib/i18n';
 import { PCIC_VIEW_LEVELS, pcicItemsForLevel, pcicItemsForViewLevel, realLevelOfView, setPcicTarget, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import LevelRow from '@/components/LevelRow';
+import PlacementEntry from '@/components/exam/PlacementEntry';
 import { BrutalButton } from '@/components/grammar/Brutal';
 import { OnboardingIntro, OnboardingThemeStep } from '@/components/OnboardingSteps';
 
@@ -126,6 +127,8 @@ export default function OnboardingScreen() {
             </View>
           );
         })}
+        {/* PLAN-vizsga C. szakasz (C1 a): a szint-sorok alatt halk belépő a szintfelméréshez. */}
+        <PlacementEntry onPress={() => router.push('/placement')} />
       </View>
     );
   }
