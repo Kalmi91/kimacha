@@ -333,7 +333,7 @@ function FormDrillItem({
   const g = useGrammarColors();
 
   const check = () => {
-    const ok = value.trim().toLowerCase() === item.answer.trim().toLowerCase();
+    const ok = [item.answer, ...(item.accept ?? [])].some((c) => value.trim().toLowerCase() === c.trim().toLowerCase());
     setCorrect(ok);
     setChecked(true);
   };

@@ -106,6 +106,8 @@ export interface FormItem {
   verb: string;
   person: string;
   answer: string;
+  // PLAN-fb1002 10. lépés: további elfogadott alakok (ahol két alak is helyes: hablara / hablase).
+  accept?: string[];
   table: string; // a body egyik `table` blokkjának id-ja
   tense?: { from: TenseId; to: TenseId };
 }
