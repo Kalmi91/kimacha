@@ -51,7 +51,7 @@
           "notwithstanding"
         ],
         [
-          "aunque (+ adjetivo o frase breve)",
+          "aunque (+ adjetivo o frase breve, formal)",
           "albeit"
         ],
         [
@@ -536,7 +536,7 @@
       "word": "other",
       "gloss": {
         "hu": "másik",
-        "en": "another one",
+        "en": "different",
         "es": "otro",
         "de": "andere"
       }
@@ -1271,8 +1271,12 @@
       "id": "dmk-20",
       "kind": "form",
       "verb": "forma",
-      "person": "aunque (+ adjetivo o frase breve)",
+      "person": "aunque (+ adjetivo o frase breve, formal)",
       "answer": "albeit",
+      "accept": [
+        "though",
+        "although"
+      ],
       "table": "dmk-forms"
     },
     {
@@ -1601,8 +1605,8 @@
       "kind": "match",
       "pairs": [
         {
-          "es": "además",
-          "en": "moreover"
+          "es": "además (formal)",
+          "en": "furthermore"
         },
         {
           "es": "a pesar de (formal)",

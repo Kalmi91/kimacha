@@ -63,7 +63,7 @@
           "been"
         ],
         [
-          "sin (por), sin verbo",
+          "sin tu ayuda (si no hubiera sido por + sustantivo)",
           "but for"
         ]
       ]
@@ -447,41 +447,95 @@
         "es": "mal, incorrecto",
         "de": "falsch"
       }
+    },
+    {
+      "word": "earlier",
+      "gloss": {
+        "hu": "korábban",
+        "en": "before, sooner",
+        "es": "antes, más temprano",
+        "de": "früher"
+      }
+    },
+    {
+      "word": "law",
+      "gloss": {
+        "hu": "törvény",
+        "en": "a rule made by a government",
+        "es": "ley",
+        "de": "Gesetz"
+      }
+    },
+    {
+      "word": "receive",
+      "gloss": {
+        "hu": "kap, megkap",
+        "en": "to get something",
+        "es": "recibir",
+        "de": "erhalten"
+      }
+    },
+    {
+      "word": "received",
+      "gloss": {
+        "hu": "kapott (a receive múltja)",
+        "en": "past form of receive",
+        "es": "recibió (pasado de receive)",
+        "de": "erhielt (Past von receive)"
+      }
+    },
+    {
+      "word": "receives",
+      "gloss": {
+        "hu": "megkap (egyes szám 3. személy)",
+        "en": "receives (he/she/it form)",
+        "es": "recibe (él/ella)",
+        "de": "erhält (er/sie/es)"
+      }
+    },
+    {
+      "word": "taken",
+      "gloss": {
+        "hu": "elvállalt, vett (a take igenéve)",
+        "en": "participle of take",
+        "es": "tomado (participio de take)",
+        "de": "genommen (Partizip von take)"
+      }
     }
   ],
   "items": [
     {
       "id": "cin-01",
-      "sentence": "___ she not helped us, we would have lost.",
+      "sentence": "Had she taken the job, she ___ in Madrid now.",
       "options": [
-        "Did",
-        "Had",
-        "Was"
+        "would have been",
+        "would be",
+        "will be"
       ],
       "correct": 1,
       "why": {
-        "hu": "Múltbeli feltétel fordított szórenddel: Had she not helped.",
-        "en": "A past condition with inversion: Had she not helped.",
-        "es": "Una condición pasada con inversión: Had she not helped.",
-        "de": "Eine vergangene Bedingung mit Inversion: Had she not helped."
+        "hu": "Vegyes feltétel: múltbeli feltétel (Had she taken), jelenbeli eredmény (would be … now).",
+        "en": "A mixed conditional: a past condition (Had she taken), a present result (would be … now).",
+        "es": "Un condicional mixto: condición pasada (Had she taken), resultado presente (would be … now).",
+        "de": "Ein gemischter Konditionalsatz: vergangene Bedingung (Had she taken), gegenwärtiges Ergebnis (would be … now)."
       },
       "wrong": {
-        "Did": {
-          "hu": "A did she not helped nem helyes; a did után alapige jönne (help).",
-          "en": "“Did she not helped” is not correct; after did comes the base verb (help).",
-          "es": "«Did she not helped» no es correcto; después de did va el verbo base (help).",
-          "de": "„Did she not helped“ ist nicht korrekt; nach did kommt die Grundform (help)."
+        "would have been": {
+          "hu": "A would have been múltbeli eredményt jelöl; a now jelenre utal.",
+          "en": "Would have been marks a past result; now points to the present.",
+          "es": "Would have been marca un resultado pasado; now señala el presente.",
+          "de": "Would have been markiert ein vergangenes Ergebnis; now weist auf die Gegenwart."
         },
-        "Was": {
-          "hu": "A was she not helped szenvedő lenne, más jelentéssel.",
-          "en": "“Was she not helped” would be a passive, with a different meaning.",
-          "es": "«Was she not helped» sería una pasiva, con otro significado.",
-          "de": "„Was she not helped“ wäre ein Passiv mit anderer Bedeutung."
+        "will be": {
+          "hu": "A will be nem illik a had she taken mellé; would kell.",
+          "en": "Will be does not fit with had she taken; you need would.",
+          "es": "Will be no encaja con had she taken; hace falta would.",
+          "de": "Will be passt nicht zu had she taken; man braucht would."
         }
       },
       "examples": [
-        "Had he not left, it would be fine.",
-        "Had they not lied, we would trust them."
+        "Had I studied law, I would be a judge now.",
+        "Had he left earlier, he would be home now."
       ]
     },
     {
@@ -758,36 +812,36 @@
     },
     {
       "id": "cin-10",
-      "sentence": "___ it not been for her, the project would have failed.",
+      "sentence": "Should you not ___ the form, we will call you.",
       "options": [
-        "Were",
-        "Had",
-        "Should"
+        "receives",
+        "receive",
+        "received"
       ],
       "correct": 1,
       "why": {
-        "hu": "Múltbeli „ha nem lett volna”: Had it not been for.",
-        "en": "A past “if it had not been for”: Had it not been for.",
-        "es": "Un «si no hubiera sido por» del pasado: Had it not been for.",
-        "de": "Ein vergangenes „wenn es nicht gewesen wäre“: Had it not been for."
+        "hu": "Should + alany + not + alapige: ha nem kapod meg.",
+        "en": "Should + subject + not + base verb: if you do not receive.",
+        "es": "Should + sujeto + not + verbo base: si no recibes.",
+        "de": "Should + Subjekt + not + Grundform: falls du nicht erhältst."
       },
       "wrong": {
-        "Were": {
-          "hu": "A were it not been nem helyes; a been igenév mellé had kell.",
-          "en": "“Were it not been” is not correct; the participle been needs had.",
-          "es": "«Were it not been» no es correcto; el participio been necesita had.",
-          "de": "„Were it not been“ ist nicht korrekt; das Partizip been braucht had."
+        "receives": {
+          "hu": "A should you not receives nem helyes; a should után alapige áll.",
+          "en": "“Should you not receives” is not correct; after should comes the base verb.",
+          "es": "«Should you not receives» no es correcto; después de should va el verbo base.",
+          "de": "„Should you not receives“ ist nicht korrekt; nach should kommt die Grundform."
         },
-        "Should": {
-          "hu": "A should it not been nem helyes; a been igenév mellé had kell.",
-          "en": "“Should it not been” is not correct; the participle been needs had.",
-          "es": "«Should it not been» no es correcto; el participio been necesita had.",
-          "de": "„Should it not been“ ist nicht korrekt; das Partizip been braucht had."
+        "received": {
+          "hu": "A should you not received nem helyes; a should után alapige áll.",
+          "en": "“Should you not received” is not correct; after should comes the base verb.",
+          "es": "«Should you not received» no es correcto; después de should va el verbo base.",
+          "de": "„Should you not received“ ist nicht korrekt; nach should kommt die Grundform."
         }
       },
       "examples": [
-        "Had it not been for him, we lost.",
-        "Had it not been for you, I fell."
+        "Should you not agree, tell me.",
+        "Should it not work, call us."
       ]
     },
     {
@@ -1072,7 +1126,7 @@
       "id": "cin-23",
       "kind": "form",
       "verb": "forma",
-      "person": "sin (por), sin verbo",
+      "person": "sin tu ayuda (si no hubiera sido por + sustantivo)",
       "answer": "but for",
       "table": "cin-forms"
     },
@@ -1382,12 +1436,12 @@
           "en": "had it not been for"
         },
         {
-          "es": "de haberlo sabido",
-          "en": "had I known"
+          "es": "en caso de que no recibas",
+          "en": "should you not receive"
         },
         {
-          "es": "sin (por)",
-          "en": "but for"
+          "es": "sin tu ayuda",
+          "en": "but for your help"
         }
       ]
     }

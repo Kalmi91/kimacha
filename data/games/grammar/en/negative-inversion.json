@@ -51,7 +51,7 @@
           "hardly"
         ],
         [
-          "no bien ... que",
+          "en cuanto ... (justo después)",
           "no sooner"
         ],
         [
@@ -166,7 +166,7 @@
               "tr": {
                 "hu": "Alig ment el, megszólalt a telefon.",
                 "en": "No sooner had she left than the phone rang.",
-                "es": "No bien se fue, sonó el teléfono.",
+                "es": "En cuanto se fue, sonó el teléfono.",
                 "de": "Kaum war sie gegangen, klingelte das Telefon."
               }
             }
@@ -1035,7 +1035,8 @@
       "person": "apenas ... cuando",
       "answer": "hardly",
       "accept": [
-        "scarcely"
+        "scarcely",
+        "no sooner"
       ],
       "table": "neg-forms"
     },
@@ -1043,8 +1044,12 @@
       "id": "neg-20",
       "kind": "form",
       "verb": "forma",
-      "person": "no bien ... que",
+      "person": "en cuanto ... (justo después)",
       "answer": "no sooner",
+      "accept": [
+        "hardly",
+        "scarcely"
+      ],
       "table": "neg-forms"
     },
     {
@@ -1184,7 +1189,7 @@
       "tr": {
         "hu": "Alig ment el, megszólalt a telefon.",
         "en": "No sooner had she left than the phone rang.",
-        "es": "No bien se fue, sonó el teléfono.",
+        "es": "En cuanto se fue, sonó el teléfono.",
         "de": "Kaum war sie gegangen, klingelte das Telefon."
       },
       "options": [
@@ -1346,7 +1351,7 @@
           "en": "Hardly had we arrived when it started to rain."
         },
         {
-          "es": "No bien se fue, sonó el teléfono.",
+          "es": "En cuanto se fue, sonó el teléfono.",
           "en": "No sooner had she left than the phone rang."
         },
         {
@@ -1376,7 +1381,7 @@
           "en": "hardly ... when"
         },
         {
-          "es": "no bien ... que",
+          "es": "en cuanto ... (justo después)",
           "en": "no sooner ... than"
         },
         {

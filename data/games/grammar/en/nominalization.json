@@ -717,6 +717,15 @@
         "es": "disposición",
         "de": "Bereitschaft"
       }
+    },
+    {
+      "word": "contributor",
+      "gloss": {
+        "hu": "közreműködő, hozzájáruló személy",
+        "en": "a person who contributes",
+        "es": "colaborador, persona que contribuye",
+        "de": "Beitragende(r)"
+      }
     }
   ],
   "items": [
@@ -963,7 +972,7 @@
       "sentence": "Her ___ to the company was impressive.",
       "options": [
         "contribute",
-        "contributing",
+        "contributor",
         "contribution"
       ],
       "correct": 2,
@@ -980,11 +989,11 @@
           "es": "«Her contribute to» no es correcto; hace falta un sustantivo (contribution).",
           "de": "„Her contribute to“ ist nicht korrekt; man braucht ein Nomen (contribution)."
         },
-        "contributing": {
-          "hu": "A her contributing to a mondatban más jelentésű lenne; főnév kell (contribution).",
-          "en": "“Her contributing to” would mean something else in this sentence; you need a noun (contribution).",
-          "es": "«Her contributing to» significaría otra cosa en esta oración; hace falta un sustantivo (contribution).",
-          "de": "„Her contributing to“ hätte in diesem Satz eine andere Bedeutung; man braucht ein Nomen (contribution)."
+        "contributor": {
+          "hu": "A her contributor to nem helyes; a contributor személy (közreműködő), a hozzájárulás neve contribution.",
+          "en": "“Her contributor to” is not correct; a contributor is a person, the noun for the act is contribution.",
+          "es": "«Her contributor to» no es correcto; un contributor es una persona, el sustantivo de la acción es contribution.",
+          "de": "„Her contributor to“ ist nicht korrekt; ein contributor ist eine Person, das Nomen für die Handlung ist contribution."
         }
       },
       "examples": [
@@ -1328,6 +1337,10 @@
       "verb": "forma",
       "person": "verbo «aumentar» → sustantivo",
       "answer": "increase",
+      "accept": [
+        "rise",
+        "raise"
+      ],
       "table": "nmz-forms"
     },
     {

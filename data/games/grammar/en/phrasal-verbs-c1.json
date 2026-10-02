@@ -43,27 +43,27 @@
       ],
       "rows": [
         [
-          "provocar, causar",
+          "provocar, causar (phrasal verb)",
           "bring about"
         ],
         [
-          "investigar (un asunto)",
+          "investigar un asunto (phrasal verb)",
           "look into"
         ],
         [
-          "encontrar por casualidad",
+          "encontrar por casualidad (phrasal verb)",
           "come across"
         ],
         [
-          "salirse con la suya, sin castigo",
+          "salirse con la suya, sin castigo (phrasal verb)",
           "get away with"
         ],
         [
-          "compensar",
+          "compensar (phrasal verb)",
           "make up for"
         ],
         [
-          "estar a la altura de",
+          "estar a la altura de (phrasal verb)",
           "live up to"
         ]
       ]
@@ -216,36 +216,64 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Egyéb hasznos igék: take on, back up, hold back, cut down on",
-        "en": "Other useful verbs: take on, back up, hold back, cut down on",
-        "es": "Otros verbos útiles: take on, back up, hold back, cut down on",
-        "de": "Weitere nützliche Verben: take on, back up, hold back, cut down on"
+        "hu": "További C1 frázisigék: come down with, fall back on, get around to, stand up for",
+        "en": "More C1 phrasal verbs: come down with, fall back on, get around to, stand up for",
+        "es": "Más phrasal verbs de C1: come down with, fall back on, get around to, stand up for",
+        "de": "Weitere Phrasal Verbs auf C1: come down with, fall back on, get around to, stand up for"
       },
       "items": [
         {
           "text": {
-            "hu": "A take on: felvesz (munkást) vagy vállal (feladatot). A back up: biztonsági mentést készít vagy támogat. A hold back: visszatart. A cut down on: csökkenti a fogyasztást.",
-            "en": "Take on: hire (a worker) or accept (a task). Back up: make a backup or support. Hold back: keep back. Cut down on: reduce consumption.",
-            "es": "Take on: contratar (a un trabajador) o asumir (una tarea). Back up: hacer una copia de seguridad o apoyar. Hold back: contener. Cut down on: reducir el consumo.",
-            "de": "Take on: einstellen (einen Arbeiter) oder übernehmen (eine Aufgabe). Back up: eine Sicherung machen oder unterstützen. Hold back: zurückhalten. Cut down on: den Verbrauch senken."
+            "hu": "A come down with: megbetegszik valamitől. A fall back on: ráhagyatkozik valamire, ha más nem működik. A get around to: végre sort kerít valamire. A stand up for: kiáll valakiért vagy valamiért. Mindegyik után tárgy áll, és nem szétválasztható.",
+            "en": "Come down with: to catch an illness. Fall back on: to rely on something when nothing else works. Get around to: to finally find time to do something. Stand up for: to defend someone or something. All of them take an object and cannot be separated.",
+            "es": "Come down with: enfermarse de algo. Fall back on: recurrir a algo cuando nada más funciona. Get around to: encontrar por fin el tiempo para hacer algo. Stand up for: defender a alguien o algo. Todos llevan objeto y no se separan.",
+            "de": "Come down with: an etwas erkranken. Fall back on: auf etwas zurückgreifen, wenn nichts anderes hilft. Get around to: endlich dazu kommen, etwas zu tun. Stand up for: für jemanden oder etwas eintreten. Alle haben ein Objekt und lassen sich nicht trennen."
           },
           "examples": [
             {
-              "es": "We need to cut down on sugar.",
+              "es": "He came down with the flu last week.",
               "tr": {
-                "hu": "Csökkentenünk kell a cukorfogyasztást.",
-                "en": "We need to cut down on sugar.",
-                "es": "Tenemos que reducir el consumo de azúcar.",
-                "de": "Wir müssen den Zuckerkonsum senken."
+                "hu": "Múlt héten elkapta az influenzát.",
+                "en": "He came down with the flu last week.",
+                "es": "La semana pasada se enfermó de gripe.",
+                "de": "Letzte Woche hat er die Grippe bekommen."
               }
             },
             {
-              "es": "Make sure to back up your files.",
+              "es": "We can always fall back on our savings.",
               "tr": {
-                "hu": "Készíts biztonsági mentést a fájljaidról.",
-                "en": "Make sure to back up your files.",
-                "es": "Asegúrate de hacer una copia de seguridad de tus archivos.",
-                "de": "Mach unbedingt eine Sicherung deiner Dateien."
+                "hu": "Mindig támaszkodhatunk a megtakarításainkra.",
+                "en": "We can always fall back on our savings.",
+                "es": "Siempre podemos recurrir a nuestros ahorros.",
+                "de": "Wir können immer auf unsere Ersparnisse zurückgreifen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "hu": "A play down: lekicsinyel. A buy into: elhisz, elfogad (egy ötletet). A clamp down on: keményen fellép valami ellen. A rule out: kizár. A hold back: visszatart.",
+            "en": "Play down: to make something seem less important. Buy into: to believe or accept an idea. Clamp down on: to act strictly against something. Rule out: to exclude a possibility. Hold back: to keep back.",
+            "es": "Play down: restarle importancia a algo. Buy into: creerse o aceptar una idea. Clamp down on: actuar con severidad contra algo. Rule out: descartar una posibilidad. Hold back: contener.",
+            "de": "Play down: etwas herunterspielen. Buy into: eine Idee glauben oder übernehmen. Clamp down on: hart gegen etwas vorgehen. Rule out: eine Möglichkeit ausschließen. Hold back: zurückhalten."
+          },
+          "examples": [
+            {
+              "es": "The minister tried to play down the scandal.",
+              "tr": {
+                "hu": "A miniszter igyekezett lekicsinyelni a botrányt.",
+                "en": "The minister tried to play down the scandal.",
+                "es": "El ministro trató de restarle importancia al escándalo.",
+                "de": "Der Minister versuchte, den Skandal herunterzuspielen."
+              }
+            },
+            {
+              "es": "The doctors cannot rule out a serious illness.",
+              "tr": {
+                "hu": "Az orvosok nem zárhatnak ki súlyos betegséget.",
+                "en": "The doctors cannot rule out a serious illness.",
+                "es": "Los médicos no pueden descartar una enfermedad grave.",
+                "de": "Die Ärzte können eine schwere Krankheit nicht ausschließen."
               }
             }
           ]
@@ -306,15 +334,6 @@
       }
     },
     {
-      "word": "carried",
-      "gloss": {
-        "hu": "vitt (a carry múltja)",
-        "en": "past form of carry",
-        "es": "llevó (pasado de carry)",
-        "de": "trug (Past von carry)"
-      }
-    },
-    {
       "word": "case",
       "gloss": {
         "hu": "eset (in case)",
@@ -330,15 +349,6 @@
         "en": "past form of cheat",
         "es": "hizo trampa (pasado de cheat)",
         "de": "schummelte (Past von cheat)"
-      }
-    },
-    {
-      "word": "data",
-      "gloss": {
-        "hu": "adatok",
-        "en": "facts and numbers",
-        "es": "datos",
-        "de": "Daten"
       }
     },
     {
@@ -414,15 +424,6 @@
       }
     },
     {
-      "word": "keep",
-      "gloss": {
-        "hu": "folytat, tart",
-        "en": "to continue",
-        "es": "seguir, mantener",
-        "de": "weitermachen, halten"
-      }
-    },
-    {
       "word": "lack",
       "gloss": {
         "hu": "hiány",
@@ -459,15 +460,6 @@
       }
     },
     {
-      "word": "scientists",
-      "gloss": {
-        "hu": "tudósok",
-        "en": "people who study science",
-        "es": "científicos",
-        "de": "Wissenschaftler"
-      }
-    },
-    {
       "word": "sit",
       "gloss": {
         "hu": "ül",
@@ -483,15 +475,6 @@
         "en": "quick and unexpected",
         "es": "repentino",
         "de": "plötzlich"
-      }
-    },
-    {
-      "word": "survey",
-      "gloss": {
-        "hu": "felmérés",
-        "en": "a set of questions for many people",
-        "es": "encuesta",
-        "de": "Umfrage"
       }
     },
     {
@@ -531,21 +514,111 @@
       }
     },
     {
-      "word": "workers",
-      "gloss": {
-        "hu": "dolgozók",
-        "en": "people who work",
-        "es": "trabajadores",
-        "de": "Arbeiter"
-      }
-    },
-    {
       "word": "wrong",
       "gloss": {
         "hu": "rossz, hibás",
         "en": "not right",
         "es": "mal, incorrecto",
         "de": "falsch"
+      }
+    },
+    {
+      "word": "along",
+      "gloss": {
+        "hu": "mentén, együtt",
+        "en": "forward, together with",
+        "es": "a lo largo de, junto con",
+        "de": "entlang, mit"
+      }
+    },
+    {
+      "word": "cheating",
+      "gloss": {
+        "hu": "csal (ige-ing alak)",
+        "en": "-ing form of cheat",
+        "es": "haciendo trampa (forma -ing de cheat)",
+        "de": "schummeln (-ing-Form von cheat)"
+      }
+    },
+    {
+      "word": "clamp",
+      "gloss": {
+        "hu": "satu; szorít",
+        "en": "to grip tightly",
+        "es": "sujetar con fuerza",
+        "de": "festklemmen"
+      }
+    },
+    {
+      "word": "clamped",
+      "gloss": {
+        "hu": "megszorította (a clamp múltja)",
+        "en": "past form of clamp",
+        "es": "sujetó (pasado de clamp)",
+        "de": "klemmte fest (Past von clamp)"
+      }
+    },
+    {
+      "word": "crime",
+      "gloss": {
+        "hu": "bűncselekmény",
+        "en": "an illegal act",
+        "es": "delito",
+        "de": "Verbrechen"
+      }
+    },
+    {
+      "word": "idea",
+      "gloss": {
+        "hu": "ötlet",
+        "en": "a thought, a plan",
+        "es": "idea",
+        "de": "Idee"
+      }
+    },
+    {
+      "word": "minister",
+      "gloss": {
+        "hu": "miniszter",
+        "en": "a government leader",
+        "es": "ministro",
+        "de": "Minister"
+      }
+    },
+    {
+      "word": "noise",
+      "gloss": {
+        "hu": "zaj",
+        "en": "loud sound",
+        "es": "ruido",
+        "de": "Lärm"
+      }
+    },
+    {
+      "word": "scandal",
+      "gloss": {
+        "hu": "botrány",
+        "en": "a public shock or outrage",
+        "es": "escándalo",
+        "de": "Skandal"
+      }
+    },
+    {
+      "word": "stand",
+      "gloss": {
+        "hu": "áll",
+        "en": "to be on your feet",
+        "es": "estar de pie",
+        "de": "stehen"
+      }
+    },
+    {
+      "word": "success",
+      "gloss": {
+        "hu": "siker",
+        "en": "doing well",
+        "es": "éxito",
+        "de": "Erfolg"
       }
     }
   ],
@@ -586,36 +659,36 @@
     },
     {
       "id": "pc1-02",
-      "sentence": "Scientists will ___ out more experiments next year.",
+      "sentence": "He came ___ with the flu last week.",
       "options": [
-        "keep",
-        "hold",
-        "carry"
+        "up",
+        "out",
+        "down"
       ],
       "correct": 2,
       "why": {
-        "hu": "A carry out jelentése: végrehajt.",
-        "en": "Carry out means to perform.",
-        "es": "Carry out significa llevar a cabo.",
-        "de": "Carry out bedeutet durchführen."
+        "hu": "A come down with jelentése: megbetegszik valamitől.",
+        "en": "Come down with means to catch an illness.",
+        "es": "Come down with significa enfermarse de algo.",
+        "de": "Come down with bedeutet an etwas erkranken."
       },
       "wrong": {
-        "keep": {
-          "hu": "A keep out azt jelenti: kint tart; kísérlet mellé carry out kell.",
-          "en": "Keep out means to stay outside; with experiments you need carry out.",
-          "es": "Keep out significa mantener fuera; con experimentos hace falta carry out.",
-          "de": "Keep out heißt draußen halten; bei Experimenten braucht man carry out."
+        "up": {
+          "hu": "A come up with más jelentésű (kitalál); betegségnél come down with kell.",
+          "en": "Come up with means to think of an idea; for an illness you need come down with.",
+          "es": "Come up with significa idear algo; para una enfermedad hace falta come down with.",
+          "de": "Come up with heißt sich etwas ausdenken; bei einer Krankheit braucht man come down with."
         },
-        "hold": {
-          "hu": "A hold out más jelentésű (kitart); carry out kell.",
-          "en": "Hold out has another meaning (to last); you need carry out.",
-          "es": "Hold out tiene otro significado (resistir); hace falta carry out.",
-          "de": "Hold out hat eine andere Bedeutung (durchhalten); man braucht carry out."
+        "out": {
+          "hu": "A come out with más jelentésű (hirtelen kimond); betegségnél come down with kell.",
+          "en": "Come out with means to say something suddenly; for an illness you need come down with.",
+          "es": "Come out with significa soltar algo de pronto; para una enfermedad hace falta come down with.",
+          "de": "Come out with heißt etwas plötzlich sagen; bei einer Krankheit braucht man come down with."
         }
       },
       "examples": [
-        "They carried out a survey.",
-        "We will carry out the plan."
+        "She came down with a cold.",
+        "He came down with a fever."
       ]
     },
     {
@@ -654,36 +727,36 @@
     },
     {
       "id": "pc1-04",
-      "sentence": "The police will ___ into the case.",
+      "sentence": "We can always fall ___ on our savings.",
       "options": [
-        "see",
-        "look",
-        "watch"
+        "down",
+        "back",
+        "out"
       ],
       "correct": 1,
       "why": {
-        "hu": "A look into jelentése: kivizsgál.",
-        "en": "Look into means to investigate.",
-        "es": "Look into significa investigar.",
-        "de": "Look into bedeutet untersuchen."
+        "hu": "A fall back on jelentése: ráhagyatkozik valamire.",
+        "en": "Fall back on means to rely on something.",
+        "es": "Fall back on significa recurrir a algo.",
+        "de": "Fall back on bedeutet auf etwas zurückgreifen."
       },
       "wrong": {
-        "see": {
-          "hu": "A see into nem ezt jelenti; look into kell.",
-          "en": "“See into” does not mean this; you need look into.",
-          "es": "«See into» no significa esto; hace falta look into.",
-          "de": "„See into“ bedeutet das nicht; man braucht look into."
+        "down": {
+          "hu": "A fall down on más jelentésű (kudarcot vall valamiben); támaszkodáshoz fall back on kell.",
+          "en": "Fall down on has another meaning (to fail at something); to rely on something you need fall back on.",
+          "es": "Fall down on tiene otro significado (fallar en algo); para recurrir a algo hace falta fall back on.",
+          "de": "Fall down on hat eine andere Bedeutung (bei etwas versagen); zum Zurückgreifen braucht man fall back on."
         },
-        "watch": {
-          "hu": "A watch into nem létezik ebben a jelentésben; look into kell.",
-          "en": "“Watch into” does not exist in this meaning; you need look into.",
-          "es": "«Watch into» no existe en este sentido; hace falta look into.",
-          "de": "„Watch into“ gibt es in dieser Bedeutung nicht; man braucht look into."
+        "out": {
+          "hu": "A fall out on nem helyes ebben a jelentésben; fall back on kell.",
+          "en": "“Fall out on” is not correct in this meaning; you need fall back on.",
+          "es": "«Fall out on» no es correcto en este sentido; hace falta fall back on.",
+          "de": "„Fall out on“ ist in dieser Bedeutung nicht korrekt; man braucht fall back on."
         }
       },
       "examples": [
-        "We will look into it.",
-        "They looked into the claim."
+        "She fell back on her savings.",
+        "We have a plan to fall back on."
       ]
     },
     {
@@ -790,36 +863,36 @@
     },
     {
       "id": "pc1-08",
-      "sentence": "We need to ___ down on sugar.",
+      "sentence": "I never got ___ to answering that email.",
       "options": [
-        "put",
-        "take",
-        "cut"
+        "across",
+        "along",
+        "around"
       ],
       "correct": 2,
       "why": {
-        "hu": "A cut down on jelentése: csökkent.",
-        "en": "Cut down on means to reduce.",
-        "es": "Cut down on significa reducir.",
-        "de": "Cut down on bedeutet verringern."
+        "hu": "A get around to jelentése: végre sort kerít valamire.",
+        "en": "Get around to means to finally find time for something.",
+        "es": "Get around to significa encontrar por fin el tiempo para algo.",
+        "de": "Get around to bedeutet endlich dazu kommen, etwas zu tun."
       },
       "wrong": {
-        "put": {
-          "hu": "A put down on nem ezt jelenti; cut down on kell.",
-          "en": "“Put down on” does not mean this; you need cut down on.",
-          "es": "«Put down on» no significa esto; hace falta cut down on.",
-          "de": "„Put down on“ bedeutet das nicht; man braucht cut down on."
+        "across": {
+          "hu": "A got across to nem helyes ebben a jelentésben; get around to kell.",
+          "en": "“Got across to” is not correct in this meaning; you need get around to.",
+          "es": "«Got across to» no es correcto en este sentido; hace falta get around to.",
+          "de": "„Got across to“ ist in dieser Bedeutung nicht korrekt; man braucht get around to."
         },
-        "take": {
-          "hu": "A take down on nem létezik; cut down on kell.",
-          "en": "“Take down on” does not exist; you need cut down on.",
-          "es": "«Take down on» no existe; hace falta cut down on.",
-          "de": "„Take down on“ gibt es nicht; man braucht cut down on."
+        "along": {
+          "hu": "A got along to nem helyes; a get along with mást jelent (kijön valakivel).",
+          "en": "“Got along to” is not correct; get along with means something else (to be on good terms).",
+          "es": "«Got along to» no es correcto; get along with significa otra cosa (llevarse bien).",
+          "de": "„Got along to“ ist nicht korrekt; get along with bedeutet etwas anderes (sich verstehen)."
         }
       },
       "examples": [
-        "Cut down on salt.",
-        "She cut down on coffee."
+        "I will get around to it soon.",
+        "He never got around to calling."
       ]
     },
     {
@@ -858,104 +931,104 @@
     },
     {
       "id": "pc1-10",
-      "sentence": "It ___ out to be a mistake.",
+      "sentence": "She will always stand ___ for her friends.",
       "options": [
-        "turn",
-        "turned",
-        "turning"
+        "out",
+        "up",
+        "by"
       ],
       "correct": 1,
       "why": {
-        "hu": "A turn out múltban: turned out to be.",
-        "en": "Turn out in the past: turned out to be.",
-        "es": "Turn out en pasado: turned out to be.",
-        "de": "Turn out in der Vergangenheit: turned out to be."
+        "hu": "A stand up for jelentése: kiáll valakiért.",
+        "en": "Stand up for means to defend someone.",
+        "es": "Stand up for significa defender a alguien.",
+        "de": "Stand up for bedeutet für jemanden eintreten."
       },
       "wrong": {
-        "turn": {
-          "hu": "A turn múlt idejű mondatban nem helyes; turned kell.",
-          "en": "Turn is not correct in a past sentence; you need turned.",
-          "es": "Turn no es correcto en una oración pasada; hace falta turned.",
-          "de": "Turn ist in einem Satz in der Vergangenheit nicht korrekt; man braucht turned."
+        "out": {
+          "hu": "A stand out más jelentésű (kitűnik); védelemhez stand up for kell.",
+          "en": "Stand out has another meaning (to be noticeable); to defend someone you need stand up for.",
+          "es": "Stand out tiene otro significado (destacar); para defender a alguien hace falta stand up for.",
+          "de": "Stand out hat eine andere Bedeutung (auffallen); zum Eintreten für jemanden braucht man stand up for."
         },
-        "turning": {
-          "hu": "A turning nem ragozott ige; ragozott alak kell (turned).",
-          "en": "Turning is not a finite verb; you need a finite form (turned).",
-          "es": "Turning no es un verbo conjugado; hace falta una forma conjugada (turned).",
-          "de": "Turning ist kein finites Verb; man braucht eine finite Form (turned)."
+        "by": {
+          "hu": "A stand by for nem helyes; a kiálláshoz stand up for kell.",
+          "en": "“Stand by for” is not correct here; to defend someone you need stand up for.",
+          "es": "«Stand by for» no es correcto aquí; para defender a alguien hace falta stand up for.",
+          "de": "„Stand by for“ ist hier nicht korrekt; zum Eintreten für jemanden braucht man stand up for."
         }
       },
       "examples": [
-        "It turned out well.",
-        "He turned out to be right."
+        "Stand up for your rights.",
+        "He stood up for his friend."
       ]
     },
     {
       "id": "pc1-11",
-      "sentence": "Can you ___ out the problem?",
+      "sentence": "The minister tried to ___ down the scandal.",
       "options": [
-        "do",
-        "go",
-        "work"
+        "put",
+        "turn",
+        "play"
       ],
       "correct": 2,
       "why": {
-        "hu": "A work out jelentése: kitalál, megold.",
-        "en": "Work out means to solve.",
-        "es": "Work out significa resolver.",
-        "de": "Work out bedeutet lösen."
+        "hu": "A play down jelentése: lekicsinyel.",
+        "en": "Play down means to make something seem less important.",
+        "es": "Play down significa restarle importancia a algo.",
+        "de": "Play down bedeutet etwas herunterspielen."
       },
       "wrong": {
-        "do": {
-          "hu": "A do out nem létezik ebben a jelentésben; work out kell.",
-          "en": "“Do out” does not exist in this meaning; you need work out.",
-          "es": "«Do out» no existe en este sentido; hace falta work out.",
-          "de": "„Do out“ gibt es in dieser Bedeutung nicht; man braucht work out."
+        "put": {
+          "hu": "A put down a botrányra nem illik; lekicsinyléshez play down kell.",
+          "en": "“Put down” does not fit a scandal; to make it seem smaller you need play down.",
+          "es": "«Put down» no encaja con un escándalo; para restarle importancia hace falta play down.",
+          "de": "„Put down“ passt nicht zu einem Skandal; zum Herunterspielen braucht man play down."
         },
-        "go": {
-          "hu": "A go out kimenést jelent; work out kell.",
-          "en": "Go out means to leave; you need work out.",
-          "es": "Go out significa salir; hace falta work out.",
-          "de": "Go out bedeutet ausgehen; man braucht work out."
+        "turn": {
+          "hu": "A turn down elutasítást jelent; a botránynál play down kell.",
+          "en": "Turn down means to refuse; for a scandal you need play down.",
+          "es": "Turn down significa rechazar; con un escándalo hace falta play down.",
+          "de": "Turn down heißt ablehnen; bei einem Skandal braucht man play down."
         }
       },
       "examples": [
-        "I worked it out.",
-        "We will work out a plan."
+        "Do not play down the risk.",
+        "She played down her success."
       ]
     },
     {
       "id": "pc1-12",
-      "sentence": "She ___ out that the date was wrong.",
+      "sentence": "I do not buy ___ his explanation.",
       "options": [
-        "pointed",
-        "pointed to",
-        "pointed at"
+        "into",
+        "out",
+        "up"
       ],
       "correct": 0,
       "why": {
-        "hu": "A point out + that: rámutat.",
-        "en": "Point out + that: to draw attention.",
-        "es": "Point out + that: señalar.",
-        "de": "Point out + that: hinweisen."
+        "hu": "A buy into jelentése: elhisz, elfogad egy ötletet.",
+        "en": "Buy into means to believe or accept an idea.",
+        "es": "Buy into significa creerse o aceptar una idea.",
+        "de": "Buy into bedeutet eine Idee glauben oder übernehmen."
       },
       "wrong": {
-        "pointed to": {
-          "hu": "A pointed to kézzel mutatást jelent; a that-mondat elé pointed out kell.",
-          "en": "Pointed to means pointing with a hand; before a that-clause you need pointed out.",
-          "es": "Pointed to significa señalar con la mano; antes de una cláusula con that hace falta pointed out.",
-          "de": "Pointed to heißt mit der Hand zeigen; vor einem that-Satz braucht man pointed out."
+        "out": {
+          "hu": "A buy out más jelentésű (felvásárol); ötletnél buy into kell.",
+          "en": "Buy out has another meaning (to purchase a share); for an idea you need buy into.",
+          "es": "Buy out tiene otro significado (comprar una parte); para una idea hace falta buy into.",
+          "de": "Buy out hat eine andere Bedeutung (Anteile aufkaufen); bei einer Idee braucht man buy into."
         },
-        "pointed at": {
-          "hu": "A pointed at kézzel mutatást jelent; a that-mondat elé pointed out kell.",
-          "en": "Pointed at means pointing with a hand; before a that-clause you need pointed out.",
-          "es": "Pointed at significa señalar con la mano; antes de una cláusula con that hace falta pointed out.",
-          "de": "Pointed at heißt mit der Hand zeigen; vor einem that-Satz braucht man pointed out."
+        "up": {
+          "hu": "A buy up más jelentésű (felvásárol); ötletnél buy into kell.",
+          "en": "Buy up has another meaning (to purchase all of something); for an idea you need buy into.",
+          "es": "Buy up tiene otro significado (comprar todo); para una idea hace falta buy into.",
+          "de": "Buy up hat eine andere Bedeutung (alles aufkaufen); bei einer Idee braucht man buy into."
         }
       },
       "examples": [
-        "He pointed out the error.",
-        "They pointed out that it failed."
+        "Few people buy into this idea.",
+        "I do not buy into the hype."
       ]
     },
     {
@@ -994,70 +1067,70 @@
     },
     {
       "id": "pc1-14",
-      "sentence": "The company will ___ on many new workers.",
+      "sentence": "The police plan to clamp ___ on street crime.",
       "options": [
-        "get",
-        "put",
-        "take"
+        "up",
+        "out",
+        "down"
       ],
       "correct": 2,
       "why": {
-        "hu": "A take on jelentése: felvesz (munkást).",
-        "en": "Take on means to hire (workers).",
-        "es": "Take on significa contratar (trabajadores).",
-        "de": "Take on bedeutet einstellen (Arbeiter)."
+        "hu": "A clamp down on jelentése: keményen fellép valami ellen.",
+        "en": "Clamp down on means to act strictly against something.",
+        "es": "Clamp down on significa actuar con severidad contra algo.",
+        "de": "Clamp down on bedeutet hart gegen etwas vorgehen."
       },
       "wrong": {
-        "get": {
-          "hu": "A get on más jelentésű (felszáll); take on kell.",
-          "en": "Get on has another meaning (to board); you need take on.",
-          "es": "Get on tiene otro significado (subir); hace falta take on.",
-          "de": "Get on hat eine andere Bedeutung (einsteigen); man braucht take on."
+        "up": {
+          "hu": "A clamp up on nem helyes; clamp down on kell.",
+          "en": "“Clamp up on” is not correct; you need clamp down on.",
+          "es": "«Clamp up on» no es correcto; hace falta clamp down on.",
+          "de": "„Clamp up on“ ist nicht korrekt; man braucht clamp down on."
         },
-        "put": {
-          "hu": "A put on felvételt jelent ruhára; munkásra take on kell.",
-          "en": "Put on means to wear clothes; for workers you need take on.",
-          "es": "Put on significa ponerse ropa; para trabajadores hace falta take on.",
-          "de": "Put on heißt Kleidung anziehen; für Arbeiter braucht man take on."
+        "out": {
+          "hu": "A clamp out on nem helyes; clamp down on kell.",
+          "en": "“Clamp out on” is not correct; you need clamp down on.",
+          "es": "«Clamp out on» no es correcto; hace falta clamp down on.",
+          "de": "„Clamp out on“ ist nicht korrekt; man braucht clamp down on."
         }
       },
       "examples": [
-        "They took on a new cook.",
-        "She took on the job."
+        "They clamped down on cheating.",
+        "The city will clamp down on noise."
       ]
     },
     {
       "id": "pc1-15",
-      "sentence": "Make sure to ___ up your files.",
+      "sentence": "The doctors cannot rule ___ a serious illness.",
       "options": [
-        "back",
-        "bring",
-        "hold"
+        "out",
+        "off",
+        "away"
       ],
       "correct": 0,
       "why": {
-        "hu": "A back up jelentése: biztonsági mentést készít.",
-        "en": "Back up means to make a backup.",
-        "es": "Back up significa hacer una copia de seguridad.",
-        "de": "Back up bedeutet eine Sicherung machen."
+        "hu": "A rule out jelentése: kizár.",
+        "en": "Rule out means to exclude a possibility.",
+        "es": "Rule out significa descartar una posibilidad.",
+        "de": "Rule out bedeutet eine Möglichkeit ausschließen."
       },
       "wrong": {
-        "bring": {
-          "hu": "A bring up más jelentésű (felvet); back up kell.",
-          "en": "Bring up has another meaning (to raise a topic); you need back up.",
-          "es": "Bring up tiene otro significado (sacar un tema); hace falta back up.",
-          "de": "Bring up hat eine andere Bedeutung (ein Thema ansprechen); man braucht back up."
+        "off": {
+          "hu": "A rule off más jelentésű (vonalat húz); kizáráshoz rule out kell.",
+          "en": "Rule off has another meaning (to draw a line); to exclude something you need rule out.",
+          "es": "Rule off tiene otro significado (trazar una línea); para descartar algo hace falta rule out.",
+          "de": "Rule off hat eine andere Bedeutung (eine Linie ziehen); zum Ausschließen braucht man rule out."
         },
-        "hold": {
-          "hu": "A hold up késleltetést jelent; back up kell.",
-          "en": "Hold up means a delay; you need back up.",
-          "es": "Hold up significa un retraso; hace falta back up.",
-          "de": "Hold up bedeutet eine Verzögerung; man braucht back up."
+        "away": {
+          "hu": "A rule away nem helyes; rule out kell.",
+          "en": "“Rule away” is not correct; you need rule out.",
+          "es": "«Rule away» no es correcto; hace falta rule out.",
+          "de": "„Rule away“ ist nicht korrekt; man braucht rule out."
         }
       },
       "examples": [
-        "Back up the data.",
-        "She backed up her files."
+        "We cannot rule out rain.",
+        "They ruled out a mistake."
       ]
     },
     {
@@ -1132,31 +1205,46 @@
       "id": "pc1-18",
       "kind": "form",
       "verb": "forma",
-      "person": "provocar, causar",
+      "person": "provocar, causar (phrasal verb)",
       "answer": "bring about",
+      "accept": [
+        "lead to",
+        "set off"
+      ],
       "table": "pc1-forms"
     },
     {
       "id": "pc1-19",
       "kind": "form",
       "verb": "forma",
-      "person": "investigar (un asunto)",
+      "person": "investigar un asunto (phrasal verb)",
       "answer": "look into",
+      "accept": [
+        "check into",
+        "dig into",
+        "go into"
+      ],
       "table": "pc1-forms"
     },
     {
       "id": "pc1-20",
       "kind": "form",
       "verb": "forma",
-      "person": "encontrar por casualidad",
+      "person": "encontrar por casualidad (phrasal verb)",
       "answer": "come across",
+      "accept": [
+        "run across",
+        "stumble across",
+        "stumble upon",
+        "run into"
+      ],
       "table": "pc1-forms"
     },
     {
       "id": "pc1-21",
       "kind": "form",
       "verb": "forma",
-      "person": "salirse con la suya, sin castigo",
+      "person": "salirse con la suya, sin castigo (phrasal verb)",
       "answer": "get away with",
       "table": "pc1-forms"
     },
@@ -1164,16 +1252,22 @@
       "id": "pc1-22",
       "kind": "form",
       "verb": "forma",
-      "person": "compensar",
+      "person": "compensar (phrasal verb)",
       "answer": "make up for",
+      "accept": [
+        "compensate for"
+      ],
       "table": "pc1-forms"
     },
     {
       "id": "pc1-23",
       "kind": "form",
       "verb": "forma",
-      "person": "estar a la altura de",
+      "person": "estar a la altura de (phrasal verb)",
       "answer": "live up to",
+      "accept": [
+        "measure up to"
+      ],
       "table": "pc1-forms"
     },
     {
@@ -1474,20 +1568,20 @@
           "en": "live up to"
         },
         {
-          "es": "reducir el consumo de",
-          "en": "cut down on"
+          "es": "enfermarse de",
+          "en": "come down with"
         },
         {
-          "es": "hacer una copia de seguridad",
-          "en": "back up"
+          "es": "recurrir a",
+          "en": "fall back on"
         },
         {
-          "es": "contratar personal",
-          "en": "take on"
+          "es": "restarle importancia a",
+          "en": "play down"
         },
         {
-          "es": "llevar a cabo",
-          "en": "carry out"
+          "es": "descartar",
+          "en": "rule out"
         }
       ]
     }

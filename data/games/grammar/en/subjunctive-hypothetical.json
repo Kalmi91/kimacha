@@ -51,7 +51,7 @@
           "be"
         ],
         [
-          "ya es hora de que nos fuéramos (it is time we ___)",
+          "ya es hora de que nos vayamos (it is time we ___)",
           "left"
         ],
         [
@@ -157,7 +157,7 @@
               "tr": {
                 "hu": "Ideje, hogy induljunk.",
                 "en": "It's time we left.",
-                "es": "Ya es hora de que nos fuéramos.",
+                "es": "Ya es hora de que nos vayamos.",
                 "de": "Es ist Zeit, dass wir gehen."
               }
             },
@@ -166,7 +166,7 @@
               "tr": {
                 "hu": "Legfőbb ideje, hogy munkát keress.",
                 "en": "It's high time you started looking for a job.",
-                "es": "Ya es más que hora de que empezaras a buscar trabajo.",
+                "es": "Ya es más que hora de que empieces a buscar trabajo.",
                 "de": "Es ist höchste Zeit, dass du anfängst, einen Job zu suchen."
               }
             }
@@ -1017,6 +1017,10 @@
       "verb": "forma",
       "person": "exijo que él salga (demand that he ___)",
       "answer": "leave",
+      "accept": [
+        "go",
+        "should leave"
+      ],
       "table": "sjv-forms"
     },
     {
@@ -1025,14 +1029,20 @@
       "verb": "forma",
       "person": "es esencial que ella esté (essential that she ___)",
       "answer": "be",
+      "accept": [
+        "should be"
+      ],
       "table": "sjv-forms"
     },
     {
       "id": "sjv-20",
       "kind": "form",
       "verb": "forma",
-      "person": "ya es hora de que nos fuéramos (it is time we ___)",
+      "person": "ya es hora de que nos vayamos (it is time we ___)",
       "answer": "left",
+      "accept": [
+        "went"
+      ],
       "table": "sjv-forms"
     },
     {
@@ -1041,6 +1051,9 @@
       "verb": "forma",
       "person": "preferiría que te quedaras (I would rather you ___)",
       "answer": "stayed",
+      "accept": [
+        "remained"
+      ],
       "table": "sjv-forms"
     },
     {
@@ -1121,7 +1134,7 @@
       "tr": {
         "hu": "Ideje, hogy induljunk.",
         "en": "It's time we left.",
-        "es": "Ya es hora de que nos fuéramos.",
+        "es": "Ya es hora de que nos vayamos.",
         "de": "Es ist Zeit, dass wir gehen."
       },
       "options": [
@@ -1330,7 +1343,7 @@
           "en": "It is essential that everyone be present."
         },
         {
-          "es": "Ya es hora de que nos fuéramos.",
+          "es": "Ya es hora de que nos vayamos.",
           "en": "It's time we left."
         },
         {
