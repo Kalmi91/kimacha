@@ -183,6 +183,7 @@ if (!listOnly) {
     costar: 'cuesta cuestan',
     sentir: 'siento sientes siente sienten sintió',
     sentar: 'siento sientas sienta sientan',
+    sembrar: 'siembro siembras siembra siembran',
     seguir: 'sigo sigues sigue siguen siguió siguiendo',
     servir: 'sirvo sirves sirve sirven',
     morir: 'muero mueres muere mueren murió muerto',
