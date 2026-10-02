@@ -190,6 +190,7 @@ if (!listOnly) {
     moler: 'muelo mueles muele muelen',
     tostar: 'tuesto tuestas tuesta tuestan',
     sonar: 'suena suenan suenas',
+    doler: 'duele duelen duelo',
     negar: 'niego niegas niega niegan',
     negarse: 'niego niegas niega niegan',
     seguir: 'sigo sigues sigue siguen siguió siguiendo',
