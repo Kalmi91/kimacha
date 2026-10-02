@@ -370,7 +370,21 @@ describe('thinSentences (PLAN-fb0924 8. lépés, FB394/396)', () => {
 });
 
 // PLAN-fb1001 9. lépés (FB430, D1): a haladás-sáv a MAI adag hátralévőjét mutatja.
-import { countFinishedToday, dayProgressPercent } from '../pcicSession';
+import { countFinishedToday, dayProgressPercent, finishedInBatch } from '../pcicSession';
+
+// FB456: a "+N új szó" bővítés után a csík az új adagot méri (a bővítéskor kész kártyák számához képest).
+describe('finishedInBatch (FB456)', () => {
+  it('+15 után az első új kártyánál 0%, az utolsónál 100%', () => {
+    const base = 10; // a bővítéskor 10 kártya volt kész ma
+    expect(dayProgressPercent(finishedInBatch(10, base), 15)).toBe(0);
+    expect(dayProgressPercent(finishedInBatch(17, base), 8)).toBeGreaterThan(dayProgressPercent(finishedInBatch(16, base), 9));
+    expect(dayProgressPercent(finishedInBatch(25, base), 0)).toBe(100);
+  });
+
+  it('visszavonás után sem megy 0 alá', () => {
+    expect(finishedInBatch(9, 10)).toBe(0);
+  });
+});
 
 describe('dayProgressPercent (FB430)', () => {
   it('az első kártyánál üres', () => {

@@ -203,11 +203,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 16,
   },
+  // FB460: a "Not quite!" jelvény és a beírt (rontott) szó közt látható rés kell (régen 0 px volt, a két elem összeért).
   diffLine: {
     fontSize: 20,
     fontWeight: '700',
     textAlign: 'center',
     letterSpacing: 1,
+    marginTop: 12,
     marginBottom: 6,
   },
   correctAnswer: {
