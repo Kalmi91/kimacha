@@ -55,7 +55,7 @@
           "few"
         ],
         [
-          "unos pocos, algunos (contable)",
+          "unos pocos (contable)",
           "a few"
         ],
         [
@@ -101,6 +101,45 @@
                 "en": "She speaks a little English, so she can order food.",
                 "es": "Habla un poco de inglés, así que puede pedir comida.",
                 "de": "Sie spricht ein bisschen Englisch, deshalb kann sie Essen bestellen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "hu": "Fewer / less és hardly any",
+        "en": "Fewer / less and hardly any",
+        "es": "Fewer / less y hardly any",
+        "de": "Fewer / less und hardly any"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "Megszámlálható főnévvel fewer (kevesebb), megszámlálhatatlannal less: „fewer people”, „less traffic”. A hardly any azt jelenti, hogy majdnem semennyi: „hardly any milk”. Köznyelvben hallani a „less people”-t is, de a standard a fewer.",
+            "en": "Fewer goes with countable nouns, less with uncountable ones: “fewer people”, “less traffic”. Hardly any means almost none: “hardly any milk”. In casual speech you also hear “less people”, but the standard is fewer.",
+            "es": "Fewer va con sustantivos contables, less con incontables: «fewer people», «less traffic». Hardly any significa casi nada: «hardly any milk». En el habla informal también se oye «less people», pero el estándar es fewer.",
+            "de": "Fewer steht bei zählbaren Nomen, less bei unzählbaren: „fewer people“, „less traffic“. Hardly any heißt fast nichts: „hardly any milk“. Umgangssprachlich hört man auch „less people“, aber der Standard ist fewer."
+          },
+          "examples": [
+            {
+              "es": "There are fewer people here than yesterday.",
+              "tr": {
+                "hu": "Kevesebb ember van itt, mint tegnap.",
+                "en": "There are fewer people here than yesterday.",
+                "es": "Hay menos gente aquí que ayer.",
+                "de": "Hier sind weniger Leute als gestern."
+              }
+            },
+            {
+              "es": "There is hardly any milk left.",
+              "tr": {
+                "hu": "Alig maradt tej.",
+                "en": "There is hardly any milk left.",
+                "es": "Casi no queda leche.",
+                "de": "Es ist kaum noch Milch übrig."
               }
             }
           ]
@@ -157,10 +196,10 @@
       "items": [
         {
           "text": {
-            "hu": "Every + egyes számú főnév és ige: „Every student has a laptop.” Két dologról both, either (az egyik vagy másik), neither (egyik sem). Kettőnél több dolognál none of.",
-            "en": "Every + a singular noun and verb: “Every student has a laptop.” For two things: both, either (one or the other), neither (not one). For more than two: none of.",
-            "es": "Every + sustantivo y verbo en singular: «Every student has a laptop.» Para dos cosas: both, either (uno u otro), neither (ninguno). Para más de dos: none of.",
-            "de": "Every + Nomen und Verb im Singular: „Every student has a laptop.“ Für zwei Dinge: both, either (das eine oder das andere), neither (keines). Für mehr als zwei: none of."
+            "hu": "Every + egyes számú főnév és ige: „Every student has a laptop.” Két dologról both, either (az egyik vagy másik), neither (egyik sem). Kettőnél több dolognál none of. Az each az egyedeket külön-külön veszi (each of the students), az every az egészet együtt.",
+            "en": "Every + a singular noun and verb: “Every student has a laptop.” For two things: both, either (one or the other), neither (not one). For more than two: none of. Each takes the members one by one (each of the students), every takes the whole together.",
+            "es": "Every + sustantivo y verbo en singular: «Every student has a laptop.» Para dos cosas: both, either (uno u otro), neither (ninguno). Para más de dos: none of. Each toma a los miembros uno por uno (each of the students), every toma el conjunto.",
+            "de": "Every + Nomen und Verb im Singular: „Every student has a laptop.“ Für zwei Dinge: both, either (das eine oder das andere), neither (keines). Für mehr als zwei: none of. Each nimmt die Mitglieder einzeln (each of the students), every nimmt das Ganze zusammen."
           },
           "examples": [
             {
@@ -586,10 +625,10 @@
       },
       "wrong": {
         "less": {
-          "hu": "A less megszámlálhatatlan főnévvel áll; az emberek megszámlálhatók, ezért fewer kell.",
-          "en": "Less goes with uncountable nouns; people are countable, so you need fewer.",
-          "es": "Less va con sustantivos incontables; las personas son contables, por eso hace falta fewer.",
-          "de": "Less steht bei unzählbaren Nomen; Menschen sind zählbar, deshalb braucht man fewer."
+          "hu": "A less megszámlálhatatlan főnévvel áll; az emberek megszámlálhatók, ezért fewer kell. Köznyelvben hallani a less people-t is, de a standard fewer.",
+          "en": "Less goes with uncountable nouns; people are countable, so you need fewer. In casual speech you also hear less people, but the standard is fewer.",
+          "es": "Less va con sustantivos incontables; las personas son contables, por eso hace falta fewer. En el habla informal también se oye less people, pero el estándar es fewer.",
+          "de": "Less steht bei unzählbaren Nomen; Menschen sind zählbar, deshalb braucht man fewer. Umgangssprachlich hört man auch less people, aber der Standard ist fewer."
         },
         "littler": {
           "hu": "A littler nem használatos mennyiségjelzőként; fewer kell.",
@@ -1039,7 +1078,7 @@
       "id": "qua-21",
       "kind": "form",
       "verb": "forma",
-      "person": "unos pocos, algunos (contable)",
+      "person": "unos pocos (contable)",
       "answer": "a few",
       "table": "qua-forms"
     },

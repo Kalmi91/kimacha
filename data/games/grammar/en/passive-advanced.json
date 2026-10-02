@@ -264,6 +264,45 @@
       ]
     },
     {
+      "kind": "list",
+      "title": {
+        "hu": "Get-szenvedő és szenvedő perfekt infinitívusz",
+        "en": "The get-passive and the perfect passive infinitive",
+        "es": "La pasiva con get y el infinitivo pasivo perfecto",
+        "de": "Das get-Passiv und der Passiv-Infinitiv im Perfekt"
+      },
+      "items": [
+        {
+          "text": {
+            "hu": "A get + igenév informális szenvedő, főleg eseményeknél: „She got fined.”, „He got promoted.” Múltbeli eseményről szóló közvetett szenvedőben to have been + igenév áll: „The painting is believed to have been stolen.”",
+            "en": "Get + participle is an informal passive, mostly for events: “She got fined.”, “He got promoted.” In a reporting passive about a past event comes to have been + participle: “The painting is believed to have been stolen.”",
+            "es": "Get + participio es una pasiva informal, sobre todo para sucesos: «She got fined.», «He got promoted.» En una pasiva de opinión sobre un suceso pasado va to have been + participio: «The painting is believed to have been stolen.»",
+            "de": "Get + Partizip ist ein umgangssprachliches Passiv, vor allem für Ereignisse: „She got fined.“, „He got promoted.“ In einem berichtenden Passiv über ein vergangenes Ereignis steht to have been + Partizip: „The painting is believed to have been stolen.“"
+          },
+          "examples": [
+            {
+              "es": "She got fined for speeding.",
+              "tr": {
+                "hu": "Megbüntették gyorshajtásért.",
+                "en": "She got fined for speeding.",
+                "es": "Le pusieron una multa por exceso de velocidad.",
+                "de": "Sie bekam einen Strafzettel fürs Rasen."
+              }
+            },
+            {
+              "es": "The painting is believed to have been stolen.",
+              "tr": {
+                "hu": "A festményt állítólag ellopták.",
+                "en": "The painting is believed to have been stolen.",
+                "es": "Se cree que el cuadro fue robado.",
+                "de": "Das Gemälde soll gestohlen worden sein."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "kind": "tip",
       "text": {
         "hu": "A szenvedő igeidejét mindig a be igén jelölöd, a főige igenév marad: nem „is building”, hanem „is being built”. A spanyolban a „se” szerkezet nincs meg angolul: se construye = is built.",
@@ -289,6 +328,24 @@
     "de": "Die Basis des Passivs ist immer «be» plus Partizip, und «be» nimmt die Zeit oder das Modalverb. Passiv im Verlauf: «The bridge is being built». Passiv im Perfekt: «The report has been finished». Mit Modalverb: «This must be done today», in der Vergangenheit «should have been done». Mit dem Infinitiv: «to be chosen», mit der -ing-Form: «being invited». Eine berichtende Form für die allgemeine Meinung: «He is said to be rich»."
   },
   "glossary": [
+    {
+      "word": "caught",
+      "gloss": {
+        "hu": "elkapott (a catch múltja)",
+        "en": "past form of catch",
+        "es": "atrapó (pasado de catch)",
+        "de": "fing (Past von catch)"
+      }
+    },
+    {
+      "word": "thief",
+      "gloss": {
+        "hu": "tolvaj",
+        "en": "a person who steals",
+        "es": "ladrón",
+        "de": "Dieb"
+      }
+    },
     {
       "word": "avoids",
       "gloss": {
@@ -389,15 +446,6 @@
       }
     },
     {
-      "word": "heard",
-      "gloss": {
-        "hu": "hallott (a hear múltja)",
-        "en": "past form of hear",
-        "es": "oyó (pasado de hear)",
-        "de": "hörte (Past von hear)"
-      }
-    },
-    {
       "word": "known",
       "gloss": {
         "hu": "ismert, tudott (a know igenéve)",
@@ -422,15 +470,6 @@
         "en": "maybe (modal)",
         "es": "quizá (modal)",
         "de": "könnte (Modal)"
-      }
-    },
-    {
-      "word": "millions",
-      "gloss": {
-        "hu": "milliók",
-        "en": "many millions",
-        "es": "millones",
-        "de": "Millionen"
       }
     },
     {
@@ -488,24 +527,6 @@
       }
     },
     {
-      "word": "solved",
-      "gloss": {
-        "hu": "megoldotta (a solve múltja)",
-        "en": "past form of solve",
-        "es": "resolvió (pasado de solve)",
-        "de": "löste (Past von solve)"
-      }
-    },
-    {
-      "word": "song",
-      "gloss": {
-        "hu": "dal",
-        "en": "a short piece of music with words",
-        "es": "canción",
-        "de": "Lied"
-      }
-    },
-    {
       "word": "stolen",
       "gloss": {
         "hu": "ellopott (a steal igenéve)",
@@ -521,6 +542,15 @@
         "en": "people who steal",
         "es": "ladrones",
         "de": "Diebe"
+      }
+    },
+    {
+      "word": "painting",
+      "gloss": {
+        "hu": "festmény",
+        "en": "a picture made with paint",
+        "es": "cuadro",
+        "de": "Gemälde"
       }
     }
   ],
@@ -595,70 +625,70 @@
     },
     {
       "id": "pas-03",
-      "sentence": "The documents ___ signed yet.",
+      "sentence": "She got ___ for speeding last week.",
       "options": [
-        "haven't been",
-        "haven't be",
-        "haven't being"
+        "fined",
+        "fine",
+        "fining"
       ],
       "correct": 0,
       "why": {
-        "hu": "Jelenre kiható tagadott szenvedő: haven’t been + igenév.",
-        "en": "A negative passive with a result for now: haven’t been + participle.",
-        "es": "Una pasiva negativa con resultado para ahora: haven’t been + participio.",
-        "de": "Ein verneintes Passiv mit Ergebnis für jetzt: haven’t been + Partizip."
+        "hu": "A get-szenvedő: got + igenév (informális, esemény).",
+        "en": "The get-passive: got + participle (informal, an event).",
+        "es": "La pasiva con get: got + participio (informal, un suceso).",
+        "de": "Das get-Passiv: got + Partizip (umgangssprachlich, ein Ereignis)."
       },
       "wrong": {
-        "haven't be": {
-          "hu": "A have után igenév kell: been, nem be.",
-          "en": "After have you need a participle: been, not be.",
-          "es": "Después de have hace falta un participio: been, no be.",
-          "de": "Nach have braucht man ein Partizip: been, nicht be."
+        "fine": {
+          "hu": "A got fine nem szenvedő; igenév kell (fined).",
+          "en": "“Got fine” is not a passive; you need the participle (fined).",
+          "es": "«Got fine» no es una pasiva; hace falta el participio (fined).",
+          "de": "„Got fine“ ist kein Passiv; man braucht das Partizip (fined)."
         },
-        "haven't being": {
-          "hu": "A have után igenév kell (been), a being a folyamatos alakhoz tartozik.",
-          "en": "After have you need a participle (been); being belongs to the continuous form.",
-          "es": "Después de have hace falta un participio (been); being pertenece a la forma continua.",
-          "de": "Nach have braucht man ein Partizip (been); being gehört zur Verlaufsform."
+        "fining": {
+          "hu": "A got fining azt jelentené, hogy ő bírságol; a get-szenvedőhöz igenév kell (fined).",
+          "en": "“Got fining” would mean she fines someone; the get-passive needs the participle (fined).",
+          "es": "«Got fining» significaría que ella multa a alguien; la pasiva con get necesita el participio (fined).",
+          "de": "„Got fining“ würde heißen, dass sie jemanden bestraft; das get-Passiv braucht das Partizip (fined)."
         }
       },
       "examples": [
-        "The work hasn't been finished.",
-        "The cars haven't been sold."
+        "He got hurt.",
+        "They got married last year."
       ]
     },
     {
       "id": "pas-04",
-      "sentence": "This problem ___ solved before the deadline.",
+      "sentence": "The painting is believed to ___ stolen last year.",
       "options": [
-        "must been",
-        "must be",
-        "must being"
+        "be",
+        "have been",
+        "being"
       ],
       "correct": 1,
       "why": {
-        "hu": "Módbeli szenvedő: must be + igenév.",
-        "en": "A modal passive: must be + participle.",
-        "es": "Una pasiva con modal: must be + participio.",
-        "de": "Ein Modalpassiv: must be + Partizip."
+        "hu": "Múltbeli esemény szenvedő perfekt infinitívusszal: to have been + igenév.",
+        "en": "A past event with the perfect passive infinitive: to have been + participle.",
+        "es": "Un suceso pasado con el infinitivo pasivo perfecto: to have been + participio.",
+        "de": "Ein vergangenes Ereignis mit dem Passiv-Infinitiv im Perfekt: to have been + Partizip."
       },
       "wrong": {
-        "must been": {
-          "hu": "A must után alapige áll (be), nem igenév (been).",
-          "en": "After must comes the base verb (be), not a participle (been).",
-          "es": "Después de must va el verbo base (be), no un participio (been).",
-          "de": "Nach must kommt die Grundform (be), nicht ein Partizip (been)."
+        "be": {
+          "hu": "A to be stolen jelenre vagy jövőre vonatkozik; a last year múltat jelez.",
+          "en": "To be stolen refers to the present or the future; last year points to the past.",
+          "es": "To be stolen se refiere al presente o al futuro; last year señala el pasado.",
+          "de": "To be stolen bezieht sich auf Gegenwart oder Zukunft; last year weist auf die Vergangenheit."
         },
-        "must being": {
-          "hu": "A must után alapige áll (be), nem -ing alak.",
-          "en": "After must comes the base verb (be), not an -ing form.",
-          "es": "Después de must va el verbo base (be), no una forma -ing.",
-          "de": "Nach must kommt die Grundform (be), nicht eine -ing-Form."
+        "being": {
+          "hu": "A to being nem létezik; to have been kell.",
+          "en": "“To being” does not exist; you need to have been.",
+          "es": "«To being» no existe; hace falta to have been.",
+          "de": "„To being“ gibt es nicht; man braucht to have been."
         }
       },
       "examples": [
-        "The door must be closed.",
-        "It can be done."
+        "The thief is said to have been caught.",
+        "It is thought to have been lost."
       ]
     },
     {
@@ -1037,7 +1067,7 @@
     },
     {
       "id": "pas-16",
-      "sentence": "The window ___ broken when I got home.",
+      "sentence": "The window ___ broken by the time I got home.",
       "options": [
         "has been",
         "had been",
@@ -1045,23 +1075,23 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Egy múltbeli pont előtti esemény: had been + igenév.",
-        "en": "An event before a past point: had been + participle.",
-        "es": "Un hecho antes de un punto pasado: had been + participio.",
-        "de": "Ein Ereignis vor einem vergangenen Punkt: had been + Partizip."
+        "hu": "Egy múltbeli pont előtti kész eredmény: had been + igenév.",
+        "en": "A finished result before a past point: had been + participle.",
+        "es": "Un resultado terminado antes de un punto pasado: had been + participio.",
+        "de": "Ein fertiges Ergebnis vor einem vergangenen Punkt: had been + Partizip."
       },
       "wrong": {
         "has been": {
-          "hu": "A has been jelenre kihat; a when I got home múltat jelez.",
-          "en": "Has been has a result for now; when I got home points to the past.",
-          "es": "Has been tiene un resultado para ahora; when I got home señala el pasado.",
-          "de": "Has been hat ein Ergebnis für jetzt; when I got home weist auf die Vergangenheit."
+          "hu": "A has been jelenre kihat; a by the time I got home múltat jelez.",
+          "en": "Has been has a result for now; by the time I got home points to the past.",
+          "es": "Has been tiene un resultado para ahora; by the time I got home señala el pasado.",
+          "de": "Has been hat ein Ergebnis für jetzt; by the time I got home weist auf die Vergangenheit."
         },
         "was being": {
-          "hu": "A was being folyamatot jelöl; az ablak már el volt törve, mire hazaértem.",
-          "en": "Was being marks a process; the window was already broken by the time I got home.",
-          "es": "Was being marca un proceso; la ventana ya estaba rota cuando llegué a casa.",
-          "de": "Was being markiert einen Vorgang; das Fenster war schon kaputt, als ich nach Hause kam."
+          "hu": "A was being folyamatot jelöl; a by the time I got home addigra kész eredményt kér.",
+          "en": "Was being marks a process; by the time I got home asks for a result finished by then.",
+          "es": "Was being marca un proceso; by the time I got home pide un resultado terminado para entonces.",
+          "de": "Was being markiert einen Vorgang; by the time I got home verlangt ein bis dahin fertiges Ergebnis."
         }
       },
       "examples": [
@@ -1071,36 +1101,36 @@
     },
     {
       "id": "pas-17",
-      "sentence": "This film ___ seen by millions of people.",
+      "sentence": "He got ___ at work last month.",
       "options": [
-        "has be",
-        "have been",
-        "has been"
+        "promote",
+        "promoting",
+        "promoted"
       ],
       "correct": 2,
       "why": {
-        "hu": "Jelenre kiható szenvedő, egyes szám: has been + igenév.",
-        "en": "A passive with a result for now, singular: has been + participle.",
-        "es": "Una pasiva con resultado para ahora, singular: has been + participio.",
-        "de": "Ein Passiv mit Ergebnis für jetzt, Singular: has been + Partizip."
+        "hu": "A get-szenvedő: got + igenév (promoted).",
+        "en": "The get-passive: got + participle (promoted).",
+        "es": "La pasiva con get: got + participio (promoted).",
+        "de": "Das get-Passiv: got + Partizip (promoted)."
       },
       "wrong": {
-        "has be": {
-          "hu": "A has után igenév kell: been, nem be.",
-          "en": "After has you need a participle: been, not be.",
-          "es": "Después de has hace falta un participio: been, no be.",
-          "de": "Nach has braucht man ein Partizip: been, nicht be."
+        "promote": {
+          "hu": "A got promote nem szenvedő; igenév kell (promoted).",
+          "en": "“Got promote” is not a passive; you need the participle (promoted).",
+          "es": "«Got promote» no es una pasiva; hace falta el participio (promoted).",
+          "de": "„Got promote“ ist kein Passiv; man braucht das Partizip (promoted)."
         },
-        "have been": {
-          "hu": "A film egyes szám, ezért has, nem have.",
-          "en": "Film is singular, so has, not have.",
-          "es": "Film es singular, por eso has, no have.",
-          "de": "Film ist Singular, deshalb has, nicht have."
+        "promoting": {
+          "hu": "A got promoting azt jelentené, hogy ő léptet elő valakit; igenév kell (promoted).",
+          "en": "“Got promoting” would mean he promotes someone; you need the participle (promoted).",
+          "es": "«Got promoting» significaría que él asciende a alguien; hace falta el participio (promoted).",
+          "de": "„Got promoting“ würde heißen, dass er jemanden befördert; man braucht das Partizip (promoted)."
         }
       },
       "examples": [
-        "This book has been read by many.",
-        "The song has been heard by all."
+        "She got promoted.",
+        "We got invited."
       ]
     },
     {
@@ -1151,6 +1181,10 @@
       "verb": "forma",
       "person": "pasivo con modal en pasado (debería haberse hecho)",
       "answer": "should have been",
+      "accept": [
+        "should've been",
+        "should’ve been"
+      ],
       "table": "pas-forms"
     },
     {

@@ -71,18 +71,18 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Ige + to-infinitív: promise, offer, refuse, agree",
-        "en": "Verb + to-infinitive: promise, offer, refuse, agree",
-        "es": "Verbo + to-infinitivo: promise, offer, refuse, agree",
-        "de": "Verb + to-Infinitiv: promise, offer, refuse, agree"
+        "hu": "Ige + to-infinitív: promise, refuse, claim, pretend, threaten",
+        "en": "Verb + to-infinitive: promise, refuse, claim, pretend, threaten",
+        "es": "Verbo + to-infinitivo: promise, refuse, claim, pretend, threaten",
+        "de": "Verb + to-Infinitiv: promise, refuse, claim, pretend, threaten"
       },
       "items": [
         {
           "text": {
-            "hu": "Ezek az igék közvetlenül a to + alapige szerkezetet kérik, tárgy nélkül. Tagadás: not to.",
-            "en": "These verbs take to + base verb directly, with no object. Negative: not to.",
-            "es": "Estos verbos piden directamente to + verbo base, sin objeto. Negación: not to.",
-            "de": "Diese Verben nehmen direkt to + Grundform, ohne Objekt. Verneinung: not to."
+            "hu": "Ezek az igék közvetlenül a to + alapige szerkezetet kérik, tárgy nélkül. Tagadás: not to. Ide tartozik a claim (állít), a pretend (színlel) és a threaten (fenyeget) is.",
+            "en": "These verbs take to + base verb directly, with no object. Negative: not to. Claim, pretend and threaten also belong here.",
+            "es": "Estos verbos piden directamente to + verbo base, sin objeto. Negación: not to. Aquí también entran claim, pretend y threaten.",
+            "de": "Diese Verben nehmen direkt to + Grundform, ohne Objekt. Verneinung: not to. Auch claim, pretend und threaten gehören hierher."
           },
           "examples": [
             {
@@ -101,6 +101,15 @@
                 "en": "She refused to sign the contract.",
                 "es": "Se negó a firmar el contrato.",
                 "de": "Sie weigerte sich, den Vertrag zu unterschreiben."
+              }
+            },
+            {
+              "es": "He claimed to be the winner.",
+              "tr": {
+                "hu": "Azt állította, hogy ő a nyertes.",
+                "en": "He claimed to be the winner.",
+                "es": "Afirmó ser el ganador.",
+                "de": "Er behauptete, der Sieger zu sein."
               }
             }
           ]
@@ -157,10 +166,10 @@
       "items": [
         {
           "text": {
-            "hu": "A személy közvetlenül az ige után áll, utána to + alapige. Tagadás: not to + alapige. Ide tartozik az ask, tell, order, persuade, encourage is.",
-            "en": "The person comes right after the verb, then to + base verb. Negative: not to + base verb. Ask, tell, order, persuade and encourage also belong here.",
-            "es": "La persona va justo después del verbo, luego to + verbo base. Negación: not to + verbo base. Aquí también entran ask, tell, order, persuade y encourage.",
-            "de": "Die Person steht direkt nach dem Verb, dann to + Grundform. Verneinung: not to + Grundform. Auch ask, tell, order, persuade und encourage gehören hierher."
+            "hu": "A személy közvetlenül az ige után áll, utána to + alapige. Tagadás: not to + alapige. Ide tartozik az ask, tell, order, persuade, encourage, urge és convince is.",
+            "en": "The person comes right after the verb, then to + base verb. Negative: not to + base verb. Ask, tell, order, persuade, encourage, urge and convince also belong here.",
+            "es": "La persona va justo después del verbo, luego to + verbo base. Negación: not to + verbo base. Aquí también entran ask, tell, order, persuade, encourage, urge y convince.",
+            "de": "Die Person steht direkt nach dem Verb, dann to + Grundform. Verneinung: not to + Grundform. Auch ask, tell, order, persuade, encourage, urge und convince gehören hierher."
           },
           "examples": [
             {
@@ -250,6 +259,87 @@
     "de": "Neben «say» und «tell» gibt es viele Berichtsverben, und jedes hat sein eigenes Muster. Verb plus to-Infinitiv: «He promised to call». Verb plus -ing: «He denied taking the money». Verb plus Person plus to-Infinitiv: «She advised me to wait». Einige Verben brauchen eine Präposition, gefolgt von der -ing-Form: «He accused me of lying», «She apologized for being late». Nach «suggest» steht kein to-Infinitiv, sondern «suggested going»."
   },
   "glossary": [
+    {
+      "word": "asleep",
+      "gloss": {
+        "hu": "alszik, álomban",
+        "en": "sleeping",
+        "es": "dormido",
+        "de": "eingeschlafen"
+      }
+    },
+    {
+      "word": "pretended",
+      "gloss": {
+        "hu": "színlelt (a pretend múltja)",
+        "en": "past form of pretend",
+        "es": "fingió (pasado de pretend)",
+        "de": "tat so als ob (Past von pretend)"
+      }
+    },
+    {
+      "word": "quit",
+      "gloss": {
+        "hu": "abbahagy, felmond",
+        "en": "to stop or leave a job",
+        "es": "dejar, renunciar",
+        "de": "aufhören, kündigen"
+      }
+    },
+    {
+      "word": "reject",
+      "gloss": {
+        "hu": "elutasít",
+        "en": "to say no to",
+        "es": "rechazar",
+        "de": "ablehnen"
+      }
+    },
+    {
+      "word": "rejecting",
+      "gloss": {
+        "hu": "elutasít (ige-ing alak)",
+        "en": "-ing form of reject",
+        "es": "rechazando (forma -ing de reject)",
+        "de": "ablehnen (-ing-Form von reject)"
+      }
+    },
+    {
+      "word": "rich",
+      "gloss": {
+        "hu": "gazdag",
+        "en": "with a lot of money",
+        "es": "rico",
+        "de": "reich"
+      }
+    },
+    {
+      "word": "threatened",
+      "gloss": {
+        "hu": "megfenyegetett (a threaten múltja)",
+        "en": "past form of threaten",
+        "es": "amenazó (pasado de threaten)",
+        "de": "drohte (Past von threaten)"
+      }
+    },
+    {
+      "word": "urged",
+      "gloss": {
+        "hu": "sürgetett (az urge múltja)",
+        "en": "past form of urge",
+        "es": "instó (pasado de urge)",
+        "de": "drängte (Past von urge)"
+      }
+    },
+    {
+      "word": "winner",
+      "gloss": {
+        "hu": "nyertes",
+        "en": "a person who wins",
+        "es": "ganador",
+        "de": "Sieger"
+      }
+    },
     {
       "word": "accident",
       "gloss": {
@@ -425,36 +515,36 @@
   "items": [
     {
       "id": "rep-01",
-      "sentence": "She promised ___ me tomorrow.",
+      "sentence": "He claimed ___ the winner, but he was not.",
       "options": [
-        "calling",
-        "to call",
-        "that call"
+        "being",
+        "to be",
+        "that be"
       ],
       "correct": 1,
       "why": {
-        "hu": "A promise után to + alapige áll.",
-        "en": "After promise comes to + base verb.",
-        "es": "Después de promise va to + verbo base.",
-        "de": "Nach promise steht to + Grundform."
+        "hu": "A claim után to + alapige áll: claimed to be.",
+        "en": "After claim comes to + base verb: claimed to be.",
+        "es": "Después de claim va to + verbo base: claimed to be.",
+        "de": "Nach claim steht to + Grundform: claimed to be."
       },
       "wrong": {
-        "calling": {
-          "hu": "A promise után nem áll -ing alak; to + alapige kell.",
-          "en": "After promise there is no -ing form; you need to + base verb.",
-          "es": "Después de promise no va forma -ing; hace falta to + verbo base.",
-          "de": "Nach promise steht keine -ing-Form; man braucht to + Grundform."
+        "being": {
+          "hu": "A claim után nem áll -ing alak; to + alapige kell.",
+          "en": "After claim there is no -ing form; you need to + base verb.",
+          "es": "Después de claim no va forma -ing; hace falta to + verbo base.",
+          "de": "Nach claim steht keine -ing-Form; man braucht to + Grundform."
         },
-        "that call": {
-          "hu": "A that call nem helyes; a that után alany is kell (that she would call).",
-          "en": "“That call” is not correct; after that a subject is needed (that she would call).",
-          "es": "«That call» no es correcto; después de that hace falta un sujeto (that she would call).",
-          "de": "„That call“ ist nicht korrekt; nach that braucht man ein Subjekt (that she would call)."
+        "that be": {
+          "hu": "A that be nem helyes; a that után alany és ragozott ige kell.",
+          "en": "“That be” is not correct; after that you need a subject and a conjugated verb.",
+          "es": "«That be» no es correcto; después de that hace falta un sujeto y un verbo conjugado.",
+          "de": "„That be“ ist nicht korrekt; nach that braucht man ein Subjekt und ein konjugiertes Verb."
         }
       },
       "examples": [
-        "He promised to help.",
-        "They promised to come."
+        "She claimed to know him.",
+        "He claims to be rich."
       ]
     },
     {
@@ -697,70 +787,70 @@
     },
     {
       "id": "rep-09",
-      "sentence": "The teacher told the students ___ talk.",
+      "sentence": "They urged the mayor ___ the plan.",
       "options": [
-        "not to",
-        "don't",
-        "not"
+        "to reject",
+        "rejecting",
+        "reject"
       ],
       "correct": 0,
       "why": {
-        "hu": "Tagadott felszólítás közlése: told + személy + not to + alapige.",
-        "en": "A reported negative command: told + person + not to + base verb.",
-        "es": "Una orden negativa en estilo indirecto: told + persona + not to + verbo base.",
-        "de": "Ein berichteter negativer Befehl: told + Person + not to + Grundform."
+        "hu": "Az urge + személy után to + alapige áll.",
+        "en": "After urge + person comes to + base verb.",
+        "es": "Después de urge + persona va to + verbo base.",
+        "de": "Nach urge + Person steht to + Grundform."
       },
       "wrong": {
-        "don't": {
-          "hu": "A told the students don’t talk nem helyes közlés; not to kell.",
-          "en": "“Told the students don’t talk” is not a correct report; you need not to.",
-          "es": "«Told the students don’t talk» no es un reporte correcto; hace falta not to.",
-          "de": "„Told the students don’t talk“ ist kein korrekter Bericht; man braucht not to."
+        "rejecting": {
+          "hu": "Az urge + személy után nem áll -ing alak; to + alapige kell.",
+          "en": "After urge + person there is no -ing form; you need to + base verb.",
+          "es": "Después de urge + persona no va forma -ing; hace falta to + verbo base.",
+          "de": "Nach urge + Person steht keine -ing-Form; man braucht to + Grundform."
         },
-        "not": {
-          "hu": "A not önmagában kevés; not to + alapige kell.",
-          "en": "Not alone is not enough; you need not to + base verb.",
-          "es": "Not solo no basta; hace falta not to + verbo base.",
-          "de": "Not allein genügt nicht; man braucht not to + Grundform."
+        "reject": {
+          "hu": "Az urge + személy után a to elmaradhatatlan.",
+          "en": "After urge + person the to is required.",
+          "es": "Después de urge + persona el to es obligatorio.",
+          "de": "Nach urge + Person ist das to Pflicht."
         }
       },
       "examples": [
-        "He told us not to run.",
-        "She told him not to go."
+        "She urged him to wait.",
+        "They urged us to vote."
       ]
     },
     {
       "id": "rep-10",
-      "sentence": "She refused ___ the contract.",
+      "sentence": "He threatened ___ the police if we did not leave.",
       "options": [
-        "signing",
-        "to sign",
-        "sign"
+        "calling",
+        "to call",
+        "call"
       ],
       "correct": 1,
       "why": {
-        "hu": "A refuse után to + alapige áll.",
-        "en": "After refuse comes to + base verb.",
-        "es": "Después de refuse va to + verbo base.",
-        "de": "Nach refuse steht to + Grundform."
+        "hu": "A threaten után to + alapige áll.",
+        "en": "After threaten comes to + base verb.",
+        "es": "Después de threaten va to + verbo base.",
+        "de": "Nach threaten steht to + Grundform."
       },
       "wrong": {
-        "signing": {
-          "hu": "A refuse után nem áll -ing alak; to + alapige kell.",
-          "en": "After refuse there is no -ing form; you need to + base verb.",
-          "es": "Después de refuse no va forma -ing; hace falta to + verbo base.",
-          "de": "Nach refuse steht keine -ing-Form; man braucht to + Grundform."
+        "calling": {
+          "hu": "A threaten után nem áll -ing alak; to + alapige kell.",
+          "en": "After threaten there is no -ing form; you need to + base verb.",
+          "es": "Después de threaten no va forma -ing; hace falta to + verbo base.",
+          "de": "Nach threaten steht keine -ing-Form; man braucht to + Grundform."
         },
-        "sign": {
-          "hu": "A refuse után a to elmaradhatatlan.",
-          "en": "After refuse the to is required.",
-          "es": "Después de refuse el to es obligatorio.",
-          "de": "Nach refuse ist das to Pflicht."
+        "call": {
+          "hu": "A threaten után a to elmaradhatatlan.",
+          "en": "After threaten the to is required.",
+          "es": "Después de threaten el to es obligatorio.",
+          "de": "Nach threaten ist das to Pflicht."
         }
       },
       "examples": [
-        "He refused to pay.",
-        "They refused to leave."
+        "She threatened to leave.",
+        "He threatened to quit."
       ]
     },
     {
@@ -833,36 +923,36 @@
     },
     {
       "id": "rep-13",
-      "sentence": "She thanked him ___ helping her.",
+      "sentence": "She pretended ___ asleep when he came in.",
       "options": [
-        "on",
-        "for",
-        "of"
+        "being",
+        "to be",
+        "be"
       ],
       "correct": 1,
       "why": {
-        "hu": "A thank sb után for áll.",
-        "en": "After thank sb comes for.",
-        "es": "Después de thank sb va for.",
-        "de": "Nach thank sb steht for."
+        "hu": "A pretend után to + alapige áll: pretended to be.",
+        "en": "After pretend comes to + base verb: pretended to be.",
+        "es": "Después de pretend va to + verbo base: pretended to be.",
+        "de": "Nach pretend steht to + Grundform: pretended to be."
       },
       "wrong": {
-        "on": {
-          "hu": "Az on a thank után nem helyes; thank sb for kell.",
-          "en": "On is not correct after thank; you need thank sb for.",
-          "es": "On no es correcto después de thank; hace falta thank sb for.",
-          "de": "On ist nach thank nicht korrekt; man braucht thank sb for."
+        "being": {
+          "hu": "A pretend után nem áll -ing alak; to + alapige kell.",
+          "en": "After pretend there is no -ing form; you need to + base verb.",
+          "es": "Después de pretend no va forma -ing; hace falta to + verbo base.",
+          "de": "Nach pretend steht keine -ing-Form; man braucht to + Grundform."
         },
-        "of": {
-          "hu": "Az of a thank után nem helyes; thank sb for kell.",
-          "en": "Of is not correct after thank; you need thank sb for.",
-          "es": "Of no es correcto después de thank; hace falta thank sb for.",
-          "de": "Of ist nach thank nicht korrekt; man braucht thank sb for."
+        "be": {
+          "hu": "A pretend után a be előtt to kell.",
+          "en": "After pretend the verb be needs to before it.",
+          "es": "Después de pretend el verbo be necesita to delante.",
+          "de": "Nach pretend braucht be ein to davor."
         }
       },
       "examples": [
-        "He thanked me for coming.",
-        "They thanked us for waiting."
+        "He pretended to sleep.",
+        "She pretended to know."
       ]
     },
     {
@@ -1022,7 +1112,10 @@
       "accept": [
         "ing",
         "gerund",
-        "ing form"
+        "ing form",
+        "-ing form",
+        "verb + ing",
+        "verb + -ing"
       ],
       "table": "rep-forms"
     },
@@ -1034,7 +1127,10 @@
       "answer": "object + to-infinitive",
       "accept": [
         "person + to-infinitive",
-        "object + to infinitive"
+        "object + to infinitive",
+        "object+to-infinitive",
+        "person + to infinitive",
+        "someone + to-infinitive"
       ],
       "table": "rep-forms"
     },
