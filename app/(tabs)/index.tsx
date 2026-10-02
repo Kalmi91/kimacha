@@ -22,7 +22,7 @@ import {
   type ArticlePick,
 } from '@/lib/articlePicker';
 import { sm2Review, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
-import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC, nextPcicNewBonus, pcicSessionNewLimit, PCIC_NEW_BONUS_STEP, PCIC_NEW_BONUS_STEPS, thinSentences, dropOrphanCards, countFinishedToday, dayProgressPercent } from '@/lib/pcicSession';
+import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC, nextPcicNewBonus, pcicSessionNewLimit, PCIC_NEW_BONUS_STEP, PCIC_NEW_BONUS_STEPS, thinSentences, dropOrphanCards, countFinishedToday, dayProgressPercent, finishedInBatch } from '@/lib/pcicSession';
 import { cardsForViewLevel } from '@/lib/pcicLevels';
 import { posOf } from '@/lib/pcicPos';
 import FeedbackButton from '@/components/FeedbackModal';
@@ -103,6 +103,8 @@ export default function PcicScreen() {
   const [againDelaySec, setAgainDelaySec] = useState(DEFAULT_AGAIN_DELAY_SEC);
   const [allCards, setAllCards] = useState<Map<string, Sm2Card>>(new Map());
   const [queue, setQueue] = useState<Sm2Card[]>([]);
+  // FB456: a "+N új szó" bővítéskor a ma már kész kártyák száma; a csík az új adagot méri ehhez képest.
+  const [batchBase, setBatchBase] = useState<{ day: string; n: number }>({ day: '', n: 0 });
   const [typedAnswer, setTypedAnswer] = useState('');
   const [articlePick, setArticlePick] = useState<ArticlePick>('');
   const [grade, setGrade] = useState<PcicGrade | null>(null);
@@ -426,6 +428,7 @@ export default function PcicScreen() {
     const introducedAllLevels = cardsAllLevels.filter((c) => c.introducedAt === today).length;
     const next = nextPcicNewBonus({ limit: dailyNewLimit, bonus: pcicBonus, introducedToday: introducedAllLevels }, step);
     setPcicBonus(next);
+    setBatchBase({ day: today, n: countFinishedToday(activeCards, queue, today) });
     getDb().setPcicNewBonus(next, today).catch(() => {});
     setQueue(
       pickSm2Session(
@@ -658,7 +661,11 @@ export default function PcicScreen() {
   // PLAN-fb1001 9. lépés (FB430, D1): a sáv a MAI adag hátralévőjét mutatja (az első
   // kártyánál üres, az utolsónál tele, adag közben nem indul újra; lib/pcicSession.ts
   // dayProgressPercent). Az FB401-es 10-es szettes mérés minden 10. kártyánál újraindult.
-  const barPct = dayProgressPercent(countFinishedToday([...allCards.values()], queue, today), queue.length);
+  // FB456: +N után az új adag haladását mutatja (finishedInBatch), nem a nap összesét.
+  const barPct = dayProgressPercent(
+    finishedInBatch(countFinishedToday([...allCards.values()], queue, today), batchBase.day === today ? batchBase.n : 0),
+    queue.length
+  );
 
   // 5b: a lap tetejére kerülő lap/lépés-jelvény (CardShell chip propja),
   // a korábbi sectionRow-beli stepBadge szövegek helyén.
@@ -709,7 +716,7 @@ export default function PcicScreen() {
         <SegmentBar testID="learn-progress" filled={segmentsFilled(barPct, 8)} segments={8} style={styles.brutalProgress} />
       ) : (
         <View style={[styles.progressTrack, { backgroundColor: colors.card }]}>
-          <View style={[styles.progressFill, { backgroundColor: colors.tint, width: `${barPct}%` }]} />
+          <View testID="learn-progress-fill" style={[styles.progressFill, { backgroundColor: colors.tint, width: `${barPct}%` }]} />
         </View>
       )}
 
