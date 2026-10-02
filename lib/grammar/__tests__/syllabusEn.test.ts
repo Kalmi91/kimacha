@@ -18,7 +18,7 @@ import {
 } from '../syllabus';
 
 // The B1 lessons written so far, in syllabus order (grows lesson by lesson).
-const B1_WRITTEN: string[] = [];
+const B1_WRITTEN: string[] = ['present_perfect_vs_past'];
 
 describe('English grammar syllabus (lang = en)', () => {
   it('has the 36 grammar topics of the English topic tree, levels A1, A2 and B1', () => {
