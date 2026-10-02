@@ -297,9 +297,9 @@
       "id": "ppc-01",
       "sentence": "When the bus finally arrived, we ___ for two hours.",
       "options": [
-        "were waiting",
+        "have been waiting",
         "had been waiting",
-        "have been waiting"
+        "will have been waiting"
       ],
       "correct": 1,
       "why": {
@@ -309,17 +309,17 @@
         "de": "„For two hours“ ist die Zeit vor der Ankunft des Busses: had been waiting."
       },
       "wrong": {
-        "were waiting": {
-          "hu": "A „were waiting” egy pillanatban zajló cselekvés; a két órás időtartam a megérkezésig past perfect continuous-t kér.",
-          "en": "“Were waiting” is an action at one moment; a two-hour duration up to the arrival asks for the past perfect continuous.",
-          "es": "«Were waiting» es una acción en un solo momento; una duración de dos horas hasta la llegada pide el pasado perfecto continuo.",
-          "de": "„Were waiting“ ist eine Handlung in einem Moment; eine Dauer von zwei Stunden bis zur Ankunft verlangt das Past Perfect Continuous."
-        },
         "have been waiting": {
           "hu": "A have been waiting present perfect continuous: a mostanáig tartó időhöz való, de a mondat múltbeli pontra (arrived) vonatkozik.",
           "en": "Have been waiting is the present perfect continuous, for time up to now, but the sentence refers to a point in the past (arrived).",
           "es": "Have been waiting es el presente perfecto continuo, para el tiempo hasta ahora, pero la oración se refiere a un punto del pasado (arrived).",
           "de": "Have been waiting ist das Present Perfect Continuous für Zeit bis jetzt, der Satz bezieht sich aber auf einen Punkt in der Vergangenheit (arrived)."
+        },
+        "will have been waiting": {
+          "hu": "A will have been waiting jövőbeli pontig tartó időt jelöl; a mondat múltbeli (arrived).",
+          "en": "Will have been waiting marks time up to a future point; the sentence is in the past (arrived).",
+          "es": "Will have been waiting marca el tiempo hasta un punto futuro; la oración está en pasado (arrived).",
+          "de": "Will have been waiting markiert die Zeit bis zu einem künftigen Punkt; der Satz steht in der Vergangenheit (arrived)."
         }
       },
       "examples": [
@@ -468,8 +468,8 @@
       "sentence": "By noon, she ___ three reports.",
       "options": [
         "had written",
-        "had been writing",
-        "was writing"
+        "was writing",
+        "writes"
       ],
       "correct": 0,
       "why": {
@@ -479,17 +479,17 @@
         "de": "Eine Anzahl (drei Berichte), ein fertiges Ergebnis: einfaches Past Perfect, had written."
       },
       "wrong": {
-        "had been writing": {
-          "hu": "A folyamatos alak a folyamatot emeli ki; ha számot mondunk (three reports), egyszerű alak kell.",
-          "en": "The continuous form stresses the process; when you give a number (three reports), you need the simple form.",
-          "es": "La forma continua destaca el proceso; cuando das un número (three reports), hace falta la forma simple.",
-          "de": "Die Verlaufsform betont den Vorgang; wenn man eine Anzahl nennt (three reports), braucht man die einfache Form."
-        },
         "was writing": {
           "hu": "A „was writing” egy pillanatban zajló cselekvés; a „by noon” a délig elkészült eredményt kéri.",
           "en": "“Was writing” is an action at one moment; “by noon” asks for the result finished by then.",
           "es": "«Was writing» es una acción en un solo momento; «by noon» pide el resultado terminado para entonces.",
           "de": "„Was writing“ ist eine Handlung in einem Moment; „by noon“ verlangt das bis dahin fertige Ergebnis."
+        },
+        "writes": {
+          "hu": "A writes jelen idejű, szokást jelöl; a by noon kész eredményt kér.",
+          "en": "Writes is present and marks a habit; by noon asks for a finished result.",
+          "es": "Writes es presente y marca un hábito; by noon pide un resultado terminado.",
+          "de": "Writes ist Präsens und markiert eine Gewohnheit; by noon verlangt ein fertiges Ergebnis."
         }
       },
       "examples": [
@@ -705,9 +705,9 @@
       "id": "ppc-13",
       "sentence": "He was angry because he ___ for an hour.",
       "options": [
-        "was waiting",
+        "has been waiting",
         "had been waiting",
-        "has been waiting"
+        "waits"
       ],
       "correct": 1,
       "why": {
@@ -717,17 +717,17 @@
         "de": "Der Grund für seinen Ärger ist das frühere Warten über eine Stunde: had been waiting."
       },
       "wrong": {
-        "was waiting": {
-          "hu": "A „was waiting for an hour” egy pillanatnyi folyamatot és egy órás időtartamot kever; a megelőző időtartamhoz had been waiting kell.",
-          "en": "“Was waiting for an hour” mixes a moment-in-progress with a one-hour duration; the earlier duration needs had been waiting.",
-          "es": "«Was waiting for an hour» mezcla un proceso en un momento con una duración de una hora; la duración anterior necesita had been waiting.",
-          "de": "„Was waiting for an hour“ vermischt einen Vorgang in einem Moment mit einer Dauer von einer Stunde; die frühere Dauer braucht had been waiting."
-        },
         "has been waiting": {
           "hu": "A has been waiting a jelenre vonatkozik; a mondat múltban van (was angry).",
           "en": "Has been waiting refers to the present; the sentence is in the past (was angry).",
           "es": "Has been waiting se refiere al presente; la oración está en pasado (was angry).",
           "de": "Has been waiting bezieht sich auf die Gegenwart; der Satz steht in der Vergangenheit (was angry)."
+        },
+        "waits": {
+          "hu": "A waits jelen idejű, szokás; a mondat múltban van (was angry).",
+          "en": "Waits is present and a habit; the sentence is in the past (was angry).",
+          "es": "Waits es presente y un hábito; la oración está en pasado (was angry).",
+          "de": "Waits ist Präsens und eine Gewohnheit; der Satz steht in der Vergangenheit (was angry)."
         }
       },
       "examples": [
@@ -774,7 +774,7 @@
       "sentence": "He ___ for long when the boss arrived.",
       "options": [
         "hadn't been working",
-        "wasn't working",
+        "doesn't work",
         "hasn't been working"
       ],
       "correct": 0,
@@ -785,11 +785,11 @@
         "de": "Eine Handlung, die bis zur Ankunft noch nicht lange gedauert hatte: hadn’t been working."
       },
       "wrong": {
-        "wasn't working": {
-          "hu": "A wasn’t working egy pillanatban nem zajló cselekvést írna le; a „for long” időtartamot jelez, ami had been-et kér.",
-          "en": "Wasn’t working would describe an action not in progress at a moment; “for long” marks a duration, which asks for had been.",
-          "es": "Wasn’t working describiría una acción que no estaba en marcha en un momento; «for long» marca una duración, que pide had been.",
-          "de": "Wasn’t working würde eine Handlung beschreiben, die in einem Moment nicht lief; „for long“ markiert eine Dauer, die had been verlangt."
+        "doesn't work": {
+          "hu": "A doesn’t work jelen idejű; a mondat múltbeli pontra (arrived) néz vissza.",
+          "en": "Doesn’t work is present; the sentence looks back to a past point (arrived).",
+          "es": "Doesn’t work es presente; la oración mira atrás a un punto del pasado (arrived).",
+          "de": "Doesn’t work ist Präsens; der Satz blickt auf einen vergangenen Punkt (arrived) zurück."
         },
         "hasn't been working": {
           "hu": "A hasn’t been working a jelenre vonatkozik; a mondat múltban van (arrived).",
@@ -807,7 +807,7 @@
       "id": "ppc-16",
       "sentence": "She told me she ___ for the job for months.",
       "options": [
-        "was looking",
+        "is looking",
         "had been looking",
         "has been looking"
       ],
@@ -819,11 +819,11 @@
         "de": "Told setzt den Satz in die Vergangenheit, und das Suchen dauerte vor dem Sagen Monate: had been looking."
       },
       "wrong": {
-        "was looking": {
-          "hu": "A „was looking for months” nem fejezi ki, hogy a keresés a mondás előtt tartott; ehhez had been looking kell.",
-          "en": "“Was looking for months” does not show that the looking lasted up to the telling; that needs had been looking.",
-          "es": "«Was looking for months» no muestra que la búsqueda duró hasta el momento de decirlo; eso necesita had been looking.",
-          "de": "„Was looking for months“ zeigt nicht, dass das Suchen bis zum Sagen dauerte; das braucht had been looking."
+        "is looking": {
+          "hu": "Az is looking jelen idejű; a told után a múltba tolódik (had been looking).",
+          "en": "Is looking is present; after told it moves back (had been looking).",
+          "es": "Is looking es presente; después de told retrocede (had been looking).",
+          "de": "Is looking ist Präsens; nach told rückt es zurück (had been looking)."
         },
         "has been looking": {
           "hu": "A has been looking jelen idejű; a told után a múltba tolódik (had been looking).",
@@ -839,7 +839,7 @@
     },
     {
       "id": "ppc-17",
-      "sentence": "My eyes hurt. I ___ at the screen since morning.",
+      "sentence": "Her eyes hurt because she ___ at the screen since morning.",
       "options": [
         "looked",
         "was looking",
@@ -907,6 +907,9 @@
       "verb": "forma",
       "person": "un hecho terminado en un momento del pasado",
       "answer": "past simple",
+      "accept": [
+        "simple past"
+      ],
       "table": "ppc-forms"
     },
     {
