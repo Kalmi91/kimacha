@@ -320,7 +320,8 @@
           "de": "Das würde El come es grande ergeben, aber come ist ein Verb, kein Nomen, und nach einem Artikel steht ein Nomen; richtig: El perro es grande."
         }
       },
-      "examples": ["El gato es pequeño.", "La casa es blanca."]
+      "examples": ["El gato es pequeño.", "La casa es blanca."],
+      "tr": { "hu": "A kutya nagy.", "en": "The dog is big.", "es": "El perro es grande.", "de": "Der Hund ist groß." }
     },
     {
       "id": "cp-02",
@@ -341,7 +342,8 @@
           "de": "Das würde Yo estudiante español ergeben, aber estudiante ist ein Nomen, kein Verb, und hier braucht es das Verb für die Handlung; richtig: Yo estudio español."
         }
       },
-      "examples": ["Yo trabajo mucho.", "Yo soy estudiante."]
+      "examples": ["Yo trabajo mucho.", "Yo soy estudiante."],
+      "tr": { "hu": "Minden nap tanulok spanyolul.", "en": "I study Spanish every day.", "es": "Yo estudio español todos los días.", "de": "Ich lerne jeden Tag Spanisch." }
     },
     {
       "id": "cp-03",
@@ -362,7 +364,8 @@
           "de": "Das würde La casa es corre ergeben, aber corre ist ein Verb, und nach ser braucht es eine Eigenschaft (ein Adjektiv), keine Handlung; richtig: La casa es blanca."
         }
       },
-      "examples": ["El libro es rojo.", "Mi madre es alta."]
+      "examples": ["El libro es rojo.", "Mi madre es alta."],
+      "tr": { "hu": "A ház fehér.", "en": "The house is white.", "es": "La casa es blanca.", "de": "Das Haus ist weiß." }
     },
     {
       "id": "cp-04",
@@ -383,7 +386,8 @@
           "de": "Das würde Ella canta buena ergeben, aber buena ist ein Adjektiv, das ein Nomen beschreibt (una buena madre), während die Art des Singens ein Adverb braucht; richtig: Ella canta bien."
         }
       },
-      "examples": ["Ella canta bien.", "Ella es una buena madre."]
+      "examples": ["Ella canta bien.", "Ella es una buena madre."],
+      "tr": { "hu": "Ő jól énekel.", "en": "She sings well.", "es": "Ella canta bien.", "de": "Sie singt gut." }
     },
     {
       "id": "cp-05",
@@ -404,7 +408,8 @@
           "de": "Das würde Mi comer es vieja ergeben, aber comer ist ein Infinitiv, eine Verbform, während nach dem Possessiv (mi) ein Nomen steht; richtig: Mi mesa es vieja."
         }
       },
-      "examples": ["Mi casa es grande.", "Mi libro es nuevo."]
+      "examples": ["Mi casa es grande.", "Mi libro es nuevo."],
+      "tr": { "hu": "Az asztalom régi.", "en": "My table is old.", "es": "Mi mesa es vieja.", "de": "Mein Tisch ist alt." }
     },
     {
       "id": "cp-06",
@@ -425,7 +430,8 @@
           "de": "Das würde Nosotros grande en la ciudad ergeben, aber grande ist ein Adjektiv, es konjugiert nicht nach der Person, und hier braucht es ein konjugiertes Verb; richtig: Nosotros vivimos en la ciudad."
         }
       },
-      "examples": ["Nosotros comemos aquí.", "Ellos trabajan hoy."]
+      "examples": ["Nosotros comemos aquí.", "Ellos trabajan hoy."],
+      "tr": { "hu": "Mi a városban élünk.", "en": "We live in the city.", "es": "Nosotros vivimos en la ciudad.", "de": "Wir wohnen in der Stadt." }
     },
     {
       "id": "cp-07",
@@ -446,7 +452,8 @@
           "de": "Das würde El café está fríamente ergeben, aber das Wort auf -mente, fríamente, ist ein Adverb und gehört zu einem Verb (wie etwas getan wird), während die Beschaffenheit des Kaffees ein Adjektiv braucht; richtig: El café está frío."
         }
       },
-      "examples": ["El agua está fría.", "La sopa está caliente."]
+      "examples": ["El agua está fría.", "La sopa está caliente."],
+      "tr": { "hu": "A kávé hideg.", "en": "The coffee is cold.", "es": "El café está frío.", "de": "Der Kaffee ist kalt." }
     },
     {
       "id": "cp-08",
@@ -467,7 +474,8 @@
           "de": "Das würde Día leo un libro ergeben, aber día ist ein Nomen, es kann hier nicht allein ohne Artikel oder Präposition stehen, während der Zeitpunkt durch ein Adverb ausgedrückt wird; richtig: Hoy leo un libro."
         }
       },
-      "examples": ["Hoy trabajo en casa.", "Cada día leo un libro."]
+      "examples": ["Hoy trabajo en casa.", "Cada día leo un libro."],
+      "tr": { "hu": "Ma olvasok egy könyvet.", "en": "Today I am reading a book.", "es": "Hoy leo un libro.", "de": "Heute lese ich ein Buch." }
     },
     {
       "id": "cp-09",
@@ -488,7 +496,8 @@
           "de": "Das würde Tengo un gato siempre ergeben, aber siempre ist ein Adverb, es gehört zum Verb, während die Beschaffenheit der Katze ein Adjektiv beschreibt; richtig: Tengo un gato pequeño."
         }
       },
-      "examples": ["Tengo un libro nuevo.", "Es una casa blanca."]
+      "examples": ["Tengo un libro nuevo.", "Es una casa blanca."],
+      "tr": { "hu": "Van egy kis macskám.", "en": "I have a small cat.", "es": "Tengo un gato pequeño.", "de": "Ich habe eine kleine Katze." }
     },
     {
       "id": "cp-10",
@@ -509,7 +518,8 @@
           "de": "Das würde Quiero bebo agua ergeben, aber bebo ist schon konjugiert, nach quiero steht kein zweites konjugiertes Verb, das zweite bleibt im Infinitiv; richtig: Quiero beber agua."
         }
       },
-      "examples": ["Quiero comer.", "Necesito trabajar."]
+      "examples": ["Quiero comer.", "Necesito trabajar."],
+      "tr": { "hu": "Vizet akarok inni.", "en": "I want to drink water.", "es": "Quiero beber agua.", "de": "Ich möchte Wasser trinken." }
     },
     {
       "id": "cp-11",
@@ -530,7 +540,8 @@
           "de": "Das würde Mi madre trabaja grande ergeben, aber grande ist ein Adjektiv, es würde die Eigenschaft eines Nomens beschreiben, während das Ausmaß des Verbs ein Adverb angibt; richtig: Mi madre trabaja mucho."
         }
       },
-      "examples": ["Ella habla mucho.", "Yo como poco."]
+      "examples": ["Ella habla mucho.", "Yo como poco."],
+      "tr": { "hu": "Az anyám sokat dolgozik.", "en": "My mother works a lot.", "es": "Mi madre trabaja mucho.", "de": "Meine Mutter arbeitet viel." }
     },
     {
       "id": "cp-12",
@@ -551,7 +562,8 @@
           "de": "Das würde La vive blanca es mía ergeben, aber vive ist ein Verb, es kann nicht zwischen Artikel und Adjektiv stehen, dort steht ein Nomen; richtig: La casa blanca es mía."
         }
       },
-      "examples": ["La mesa nueva es grande.", "El gato negro es mío."]
+      "examples": ["La mesa nueva es grande.", "El gato negro es mío."],
+      "tr": { "hu": "A fehér ház az enyém.", "en": "The white house is mine.", "es": "La casa blanca es mía.", "de": "Das weiße Haus gehört mir." }
     },
     {
       "id": "cp-13",
@@ -579,7 +591,8 @@
           "de": "Tippst du hier, markierst du manzana, aber das ist ein NOMEN, die Sache, die gegessen wird; das gesuchte VERB ist die Handlung selbst: come."
         }
       },
-      "examples": ["Mi padre bebe agua.", "El niño lee un libro."]
+      "examples": ["Mi padre bebe agua.", "El niño lee un libro."],
+      "tr": { "hu": "A nővérem almát eszik.", "en": "My sister eats an apple.", "es": "Mi hermana come una manzana.", "de": "Meine Schwester isst einen Apfel." }
     },
     {
       "id": "cp-14",
@@ -607,7 +620,8 @@
           "de": "Tippst du hier, markierst du perro, aber das ist ein NOMEN, die Sache selbst; das gesuchte ADJEKTIV beschreibt sie: grande."
         }
       },
-      "examples": ["La casa blanca es mía.", "Tengo un gato pequeño."]
+      "examples": ["La casa blanca es mía.", "Tengo un gato pequeño."],
+      "tr": { "hu": "A nagy kutya fut a parkban.", "en": "The big dog runs in the park.", "es": "El perro grande corre en el parque.", "de": "Der große Hund rennt im Park." }
     },
     {
       "id": "cp-15",
@@ -635,7 +649,8 @@
           "de": "Tippst du hier, markierst du padre, aber das ist ein NOMEN, die Person, die arbeitet; das gesuchte ADVERB gehört zum Verb: mucho."
         }
       },
-      "examples": ["Ella canta bien.", "Nosotros hablamos poco."]
+      "examples": ["Ella canta bien.", "Nosotros hablamos poco."],
+      "tr": { "hu": "Az apám sokat dolgozik.", "en": "My father works a lot.", "es": "Mi padre trabaja mucho.", "de": "Mein Vater arbeitet viel." }
     },
     {
       "id": "cp-16",
@@ -657,7 +672,8 @@
           "de": "Tippst du hier, markierst du niños, aber das ist das NOMEN; der gesuchte ARTIKEL ist das kurze Wort davor, das Geschlecht und Zahl zeigt: los."
         }
       },
-      "examples": ["La casa es grande.", "El perro come."]
+      "examples": ["La casa es grande.", "El perro come."],
+      "tr": { "hu": "A gyerekek kenyeret esznek.", "en": "The children eat bread.", "es": "Los niños comen pan.", "de": "Die Kinder essen Brot." }
     },
     {
       "id": "cp-match-01",

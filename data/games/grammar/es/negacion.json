@@ -329,7 +329,8 @@
           "de": "Das würde Yo nada hablo español ergeben, aber nada ist das negative Wort für eine Sache (nichts), nicht das Wort, das das Verb verneint; vor dem Verb braucht es no; richtig: Yo no hablo español."
         }
       },
-      "examples": ["No trabajo hoy.", "No vivo aquí."]
+      "examples": ["No trabajo hoy.", "No vivo aquí."],
+      "tr": { "hu": "Nem beszélek spanyolul.", "en": "I don't speak Spanish.", "es": "Yo no hablo español.", "de": "Ich spreche kein Spanisch." }
     },
     {
       "id": "neg-02",
@@ -350,7 +351,8 @@
           "de": "Das würde No veo nadie ergeben, aber nadie gilt für eine PERSON und bräuchte das persönliche a: No veo a nadie, während es hier darum geht, nichts zu sehen, eine Sache; richtig: No veo nada."
         }
       },
-      "examples": ["No tengo nada.", "No come nada."]
+      "examples": ["No tengo nada.", "No come nada."],
+      "tr": { "hu": "Semmit sem látok.", "en": "I don't see anything.", "es": "No veo nada.", "de": "Ich sehe nichts." }
     },
     {
       "id": "neg-03",
@@ -371,7 +373,8 @@
           "de": "Das würde No nadie viene hoy ergeben, aber vor dem Verb verneint nadie allein, und das no ist überflüssig; richtig: Nadie viene hoy."
         }
       },
-      "examples": ["Nadie habla aquí.", "Nadie come pan."]
+      "examples": ["Nadie habla aquí.", "Nadie come pan."],
+      "tr": { "hu": "Ma senki sem jön.", "en": "Nobody is coming today.", "es": "Nadie viene hoy.", "de": "Heute kommt niemand." }
     },
     {
       "id": "neg-04",
@@ -392,7 +395,8 @@
           "de": "Das würde No como nadie en ese restaurante ergeben, aber nadie gilt für eine PERSON und bräuchte als Objekt das persönliche a; hier geht es darum, WIE OFT er dort isst; richtig: No como nunca en ese restaurante."
         }
       },
-      "examples": ["No voy nunca al cine.", "Nunca bebo café."]
+      "examples": ["No voy nunca al cine.", "Nunca bebo café."],
+      "tr": { "hu": "Soha nem eszem abban az étteremben.", "en": "I never eat in that restaurant.", "es": "No como nunca en ese restaurante.", "de": "Ich esse nie in diesem Restaurant." }
     },
     {
       "id": "neg-05",
@@ -413,7 +417,8 @@
           "de": "Das würde Nada tengo ningún libro aquí ergeben, aber nada kann hier nicht als das verbverneinende Wort stehen; die erste Hälfte der doppelten Verneinung ist hier no; richtig: No tengo ningún libro aquí."
         }
       },
-      "examples": ["No tengo ningún problema.", "No hay ningún hombre aquí."]
+      "examples": ["No tengo ningún problema.", "No hay ningún hombre aquí."],
+      "tr": { "hu": "Nincs itt egy könyvem sem.", "en": "I don't have any book here.", "es": "No tengo ningún libro aquí.", "de": "Ich habe kein Buch hier." }
     },
     {
       "id": "neg-06",
@@ -434,7 +439,8 @@
           "de": "Das würde No me gusta el pescado y a ti también te gusta ergeben, also dir gefällt es AUCH, eine bejahende Parallele, aber die erste Hälfte ist verneint, also braucht es eine verneinende Parallele (dir auch nicht); richtig: No me gusta el pescado y a ti tampoco te gusta."
         }
       },
-      "examples": ["A mí tampoco me gusta.", "A mí también me gusta."]
+      "examples": ["A mí tampoco me gusta.", "A mí también me gusta."],
+      "tr": { "hu": "Én nem szeretem a halat, és te sem szereted.", "en": "I don't like fish and you don't like it either.", "es": "No me gusta el pescado y a ti tampoco te gusta.", "de": "Ich mag keinen Fisch und du magst ihn auch nicht." }
     },
     {
       "id": "neg-07",
@@ -455,7 +461,8 @@
           "de": "Das würde Nunca trabajo hoy, estoy en casa ergeben, also er arbeitet nie, eine Häufigkeit, aber der Satz spricht von einer einmaligen Tatsache: heute arbeitet er nicht; richtig: No trabajo hoy, estoy en casa."
         }
       },
-      "examples": ["No leo mucho.", "No vivo aquí."]
+      "examples": ["No leo mucho.", "No vivo aquí."],
+      "tr": { "hu": "Ma nem dolgozom, otthon vagyok.", "en": "I am not working today, I am at home.", "es": "No trabajo hoy, estoy en casa.", "de": "Heute arbeite ich nicht, ich bin zu Hause." }
     },
     {
       "id": "neg-08",
@@ -476,7 +483,8 @@
           "de": "Das würde No tengo tiempo y dinero ergeben, wobei y nur verbindet, nicht verneint; nach einer Verneinung braucht das zweite Element ni; richtig: No tengo tiempo ni dinero."
         }
       },
-      "examples": ["No como carne ni pescado.", "No tengo casa ni carro."]
+      "examples": ["No como carne ni pescado.", "No tengo casa ni carro."],
+      "tr": { "hu": "Nincs se időm, se pénzem.", "en": "I have neither time nor money.", "es": "No tengo tiempo ni dinero.", "de": "Ich habe weder Zeit noch Geld." }
     },
     {
       "id": "neg-09",
@@ -497,7 +505,8 @@
           "de": "Das würde ¿Comes carne? Nada, no como carne ergeben, aber nada ist kein Antwortwort, es heißt nichts; eine Ja-Nein-Frage beantwortet man mit no; richtig: ¿Comes carne? No, no como carne."
         }
       },
-      "examples": ["No, no trabajo hoy.", "No, no vivo aquí."]
+      "examples": ["No, no trabajo hoy.", "No, no vivo aquí."],
+      "tr": { "hu": "Eszel húst? Nem, nem eszem húst.", "en": "Do you eat meat? No, I don't eat meat.", "es": "¿Comes carne? No, no como carne.", "de": "Isst du Fleisch? Nein, ich esse kein Fleisch." }
     },
     {
       "id": "neg-10",
@@ -518,7 +527,8 @@
           "de": "Das würde No nunca como aquí ergeben, aber no und nunca stehen nur zusammen, wenn nunca NACH dem Verb steht; vor dem Verb verneint nunca allein; richtig: Nunca como aquí."
         }
       },
-      "examples": ["Nunca bebo café.", "No bebo nunca café."]
+      "examples": ["Nunca bebo café.", "No bebo nunca café."],
+      "tr": { "hu": "Soha nem eszem itt.", "en": "I never eat here.", "es": "Nunca como aquí.", "de": "Ich esse nie hier." }
     },
     {
       "id": "neg-11",
@@ -546,7 +556,8 @@
           "de": "Tippst du hier, markierst du nada, aber das ist ein negatives PRONOMEN (nichts), das Gesehene, nicht die Handlung; das gesuchte VERB ist: veo."
         }
       },
-      "examples": ["No como pan.", "No bebo café."]
+      "examples": ["No como pan.", "No bebo café."],
+      "tr": { "hu": "Semmit sem látok az utcán.", "en": "I don't see anything on the street.", "es": "No veo nada en la calle.", "de": "Ich sehe nichts auf der Straße." }
     },
     {
       "id": "neg-12",
@@ -574,7 +585,8 @@
           "de": "Tippst du hier, markierst du come, aber das ist das VERB, die Handlung selbst; das gesuchte NOMEN ist das Gegessene: pan."
         }
       },
-      "examples": ["Nadie bebe agua aquí.", "No como carne."]
+      "examples": ["Nadie bebe agua aquí.", "No como carne."],
+      "tr": { "hu": "Itt senki sem eszik kenyeret.", "en": "Nobody eats bread here.", "es": "Nadie come pan aquí.", "de": "Niemand isst hier Brot." }
     },
     {
       "id": "neg-match-01",

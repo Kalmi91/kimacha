@@ -264,7 +264,8 @@
           "de": "\"Dijiste\" ist Vergangenheit (du hast gesagt), kein Befehl; würde man es hier verwenden, würde der Satz aussagen, dass Ana die Wahrheit BEREITS gesagt hat, nicht dass wir sie jetzt darum bitten."
         }
       },
-      "examples": ["Di la verdad siempre.", "Carlos, di algo."]
+      "examples": ["Di la verdad siempre.", "Carlos, di algo."],
+      "tr": { "hu": "Ana, mondd az igazat, kérlek.", "en": "Ana, tell the truth, please.", "es": "Ana, di la verdad, por favor.", "de": "Ana, sag bitte die Wahrheit." }
     },
     {
       "id": "ia-02",
@@ -291,7 +292,8 @@
           "de": "\"Fuiste\" ist Vergangenheit (du bist gegangen), kein Befehl; würde man es hier verwenden, würde der Satz aussagen, dass Diego BEREITS gegangen ist, nicht dass er jetzt gehen soll."
         }
       },
-      "examples": ["Ve a la tienda, por favor.", "Ve con Laura."]
+      "examples": ["Ve a la tienda, por favor.", "Ve con Laura."],
+      "tr": { "hu": "Diego, menj most az iskolába.", "en": "Diego, go to school now.", "es": "Diego, ve a la escuela ahora.", "de": "Diego, geh jetzt zur Schule." }
     },
     {
       "id": "ia-03",
@@ -318,7 +320,8 @@
           "de": "\"Es\" ist die er/sie/usted-Form; würde man sie hier verwenden, hieße es, dass ER/SIE/usted nett ist, kein Befehl an Rosa."
         }
       },
-      "examples": ["Sé paciente conmigo.", "Sé feliz hoy."]
+      "examples": ["Sé paciente conmigo.", "Sé feliz hoy."],
+      "tr": { "hu": "Rosa, légy kedves a fiútestvéredhez, kérlek.", "en": "Rosa, be nice to your brother, please.", "es": "Rosa, sé amable con tu hermano, por favor.", "de": "Rosa, sei bitte nett zu deinem Bruder." }
     },
     {
       "id": "ia-04",
@@ -345,7 +348,8 @@
           "de": "\"Viene\" ist die er/sie/usted-Form; würde man sie hier verwenden, hieße es, dass ER/SIE/usted kommt, kein Befehl an Javier."
         }
       },
-      "examples": ["Ven a mi casa mañana.", "Ven temprano, por favor."]
+      "examples": ["Ven a mi casa mañana.", "Ven temprano, por favor."],
+      "tr": { "hu": "Javier, gyere ide velem most, kérlek.", "en": "Javier, come here with me now, please.", "es": "Javier, ven aquí conmigo ahora, por favor.", "de": "Javier, komm bitte jetzt mit mir hierher." }
     },
     {
       "id": "ia-05",
@@ -372,7 +376,8 @@
           "de": "\"Hablas\" ist Indikativ, tú-Form (du sprichst); es ist weder ein Befehl noch usted, keines passt hier."
         }
       },
-      "examples": ["Hable con la doctora.", "Hable despacio, por favor."]
+      "examples": ["Hable con la doctora.", "Hable despacio, por favor."],
+      "tr": { "hu": "Doktor úr, beszéljen lassabban, kérem.", "en": "Doctor, please speak more slowly.", "es": "Doctor, hable más despacio, por favor.", "de": "Herr Doktor, sprechen Sie bitte langsamer." }
     },
     {
       "id": "ia-06",
@@ -399,7 +404,8 @@
           "de": "\"Comes\" ist Indikativ, tú-Form; es ist weder ein Befehl noch usted, keines passt hier."
         }
       },
-      "examples": ["Coma con nosotros hoy.", "Coma más despacio, por favor."]
+      "examples": ["Coma con nosotros hoy.", "Coma más despacio, por favor."],
+      "tr": { "hu": "Uram, egyen lassan, forró az étel.", "en": "Sir, eat slowly, the food is hot.", "es": "Señor, coma despacio, la comida está caliente.", "de": "Mein Herr, essen Sie langsam, das Essen ist heiß." }
     },
     {
       "id": "ia-07",
@@ -426,7 +432,8 @@
           "de": "\"Tienes\" ist die tú-Form; bei einer formellen usted-Anrede wäre das eine informelle Ansprache, die hier nicht passt."
         }
       },
-      "examples": ["Tenga cuidado con el perro.", "Tenga cuidado en la calle."]
+      "examples": ["Tenga cuidado con el perro.", "Tenga cuidado en la calle."],
+      "tr": { "hu": "Doktornő, vigyázzon az ajtóval, kérem.", "en": "Doctor, please be careful with the door.", "es": "Doctora, tenga cuidado con la puerta, por favor.", "de": "Frau Doktor, passen Sie bitte auf die Tür auf." }
     },
     {
       "id": "ia-08",
@@ -453,7 +460,8 @@
           "de": "\"Sales\" ist die tú-Form; bei einer formellen usted-Anrede wäre das informell und passt hier nicht."
         }
       },
-      "examples": ["Salga por aquí, por favor.", "Salga con cuidado."]
+      "examples": ["Salga por aquí, por favor.", "Salga con cuidado."],
+      "tr": { "hu": "Uram, az ajtón menjen ki, kérem.", "en": "Sir, please exit through the door.", "es": "Señor, salga por la puerta, por favor.", "de": "Mein Herr, gehen Sie bitte durch die Tür hinaus." }
     },
     {
       "id": "ia-09",
@@ -480,7 +488,8 @@
           "de": "\"Escribe\" ist eine singuläre tú/usted-Form; würde man sie hier verwenden, würde sie sich nur an ein Kind richten, nicht an alle."
         }
       },
-      "examples": ["Escriban su nombre aquí.", "Escriban despacio, por favor."]
+      "examples": ["Escriban su nombre aquí.", "Escriban despacio, por favor."],
+      "tr": { "hu": "Gyerekek, írjátok be a nevet a könyvbe, kérlek.", "en": "Children, please write the name in the book.", "es": "Niños, escriban el nombre en el libro, por favor.", "de": "Kinder, schreibt bitte den Namen in das Buch." }
     },
     {
       "id": "ia-10",
@@ -507,7 +516,8 @@
           "de": "\"Hace\" ist eine Singularform; würde man sie hier verwenden, würde sie sich nur an ein Kind richten, nicht an alle."
         }
       },
-      "examples": ["Hagan silencio, por favor.", "Hagan la comida juntos."]
+      "examples": ["Hagan silencio, por favor.", "Hagan la comida juntos."],
+      "tr": { "hu": "Gyerekek, csendesedjetek el, kérlek.", "en": "Children, please be quiet.", "es": "Niños, hagan silencio, por favor.", "de": "Kinder, seid bitte leise." }
     },
     {
       "id": "ia-11",
@@ -534,7 +544,8 @@
           "de": "\"Va\" ist eine Singularform; würde man sie hier verwenden, würde sie sich nur an ein Kind richten, nicht an alle."
         }
       },
-      "examples": ["Vayan con cuidado.", "Vayan a la tienda juntos."]
+      "examples": ["Vayan con cuidado.", "Vayan a la tienda juntos."],
+      "tr": { "hu": "Gyerekek, menjetek együtt az iskolába, kérlek.", "en": "Children, please go to school together.", "es": "Niños, vayan a la escuela juntos, por favor.", "de": "Kinder, geht bitte zusammen zur Schule." }
     },
     {
       "id": "ia-12",
@@ -561,7 +572,8 @@
           "de": "\"Come\" ist eine Singularform; würde man sie hier verwenden, würde sie sich nur an ein Kind richten, nicht an alle."
         }
       },
-      "examples": ["Coman la fruta, niños.", "Coman despacio, por favor."]
+      "examples": ["Coman la fruta, niños.", "Coman despacio, por favor."],
+      "tr": { "hu": "Gyerekek, egyetek lassan, kérlek.", "en": "Children, please eat slowly.", "es": "Niños, coman despacio, por favor.", "de": "Kinder, esst bitte langsam." }
     },
     {
       "id": "ia-match-01",
