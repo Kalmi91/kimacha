@@ -424,7 +424,8 @@
           "de": "Una steht vor einem femininen Nomen (una hermana); hermano ist maskulin, deshalb ist das nicht richtig."
         }
       },
-      "examples": ["Tengo una hermana mayor.", "Compro un libro nuevo."]
+      "examples": ["Tengo una hermana mayor.", "Compro un libro nuevo."],
+      "tr": { "hu": "Van egy bátyám.", "en": "I have an older brother.", "es": "Tengo un hermano mayor.", "de": "Ich habe einen älteren Bruder." }
     },
     {
       "id": "nh-02",
@@ -445,7 +446,8 @@
           "de": "Diez y seis ist eine altmodische, dreiteilige Schreibweise; heute ist dieciséis die anerkannte Form."
         }
       },
-      "examples": ["Mi hermana tiene diecisiete años.", "Tenemos dieciocho años."]
+      "examples": ["Mi hermana tiene diecisiete años.", "Tenemos dieciocho años."],
+      "tr": { "hu": "A bátyám tizenhat éves.", "en": "My brother is sixteen years old.", "es": "Mi hermano tiene dieciséis años.", "de": "Mein Bruder ist sechzehn Jahre alt." }
     },
     {
       "id": "nh-03",
@@ -466,7 +468,8 @@
           "de": "Das 'y' fehlt; über dreißig braucht man immer das 'y' zwischen Zehner und Einer."
         }
       },
-      "examples": ["Hay cuarenta y cinco personas.", "Compramos sesenta y ocho libros."]
+      "examples": ["Hay cuarenta y cinco personas.", "Compramos sesenta y ocho libros."],
+      "tr": { "hu": "Harminckét diákunk van az osztályban.", "en": "We have thirty-two students in the class.", "es": "Tenemos treinta y dos estudiantes en la clase.", "de": "Wir haben zweiunddreißig Schüler in der Klasse." }
     },
     {
       "id": "nh-04",
@@ -487,7 +490,8 @@
           "de": "Ciento wird nur verwendet, wenn eine weitere Zahl folgt (ciento cinco), nicht direkt vor einem Nomen."
         }
       },
-      "examples": ["Cien personas esperan el tren.", "Tenemos ciento diez libros."]
+      "examples": ["Cien personas esperan el tren.", "Tenemos ciento diez libros."],
+      "tr": { "hu": "Száz diák van az osztályban.", "en": "There are one hundred students in the class.", "es": "Hay cien estudiantes en la clase.", "de": "Es sind hundert Schüler in der Klasse." }
     },
     {
       "id": "nh-05",
@@ -508,7 +512,8 @@
           "de": "Son ist für die Stunden im Plural (son las dos); la una ist Singular, deshalb ist das nicht richtig."
         }
       },
-      "examples": ["Es la una y media.", "Son las dos de la tarde."]
+      "examples": ["Es la una y media.", "Son las dos de la tarde."],
+      "tr": { "hu": "Délután egy óra van.", "en": "It is one o'clock in the afternoon.", "es": "Es la una de la tarde.", "de": "Es ist ein Uhr nachmittags." }
     },
     {
       "id": "nh-06",
@@ -529,7 +534,8 @@
           "de": "En wird in dieser Konstruktion nicht verwendet, um eine genaue Uhrzeit auszudrücken, nur a las."
         }
       },
-      "examples": ["Salimos a las nueve.", "La clase empieza a las diez."]
+      "examples": ["Salimos a las nueve.", "La clase empieza a las diez."],
+      "tr": { "hu": "A vonat nyolckor indul.", "en": "The train leaves at eight.", "es": "El tren sale a las ocho.", "de": "Der Zug fährt um acht Uhr ab." }
     },
     {
       "id": "nh-07",
@@ -550,7 +556,8 @@
           "de": "Es steht nur bei dem singularen la una; las tres ist Plural, deshalb braucht es son."
         }
       },
-      "examples": ["Son las cuatro y media.", "Son las nueve y media de la mañana."]
+      "examples": ["Son las cuatro y media.", "Son las nueve y media de la mañana."],
+      "tr": { "hu": "Délután fél négy van.", "en": "It is half past three in the afternoon.", "es": "Son las tres y media de la tarde.", "de": "Es ist halb vier Uhr nachmittags." }
     },
     {
       "id": "nh-08",
@@ -571,7 +578,8 @@
           "de": "Media steht nur mit y (las tres y media); nach menos braucht die Viertelstunde cuarto: las tres menos cuarto."
         }
       },
-      "examples": ["Salimos a las ocho menos cuarto.", "La clase empieza a las dos menos cuarto."]
+      "examples": ["Salimos a las ocho menos cuarto.", "La clase empieza a las dos menos cuarto."],
+      "tr": { "hu": "Háromnegyed háromkor érkezünk meg.", "en": "We arrive at a quarter to three.", "es": "Llegamos a las tres menos cuarto.", "de": "Wir kommen um Viertel vor drei an." }
     },
     {
       "id": "nh-09",
@@ -592,7 +600,8 @@
           "de": "En steht nicht zwischen der Tageszahl und dem Monatsnamen; dort braucht man immer de."
         }
       },
-      "examples": ["El examen es el nueve de octubre.", "Llegamos el veinte de julio."]
+      "examples": ["El examen es el nueve de octubre.", "Llegamos el veinte de julio."],
+      "tr": { "hu": "Ma május ötödike van.", "en": "Today is the fifth of May.", "es": "Hoy es el cinco de mayo.", "de": "Heute ist der fünfte Mai." }
     },
     {
       "id": "nh-10",
@@ -613,7 +622,8 @@
           "de": "Un steht nur direkt vor einem Nomen (un libro); in einem Datum wird es nicht benutzt: el primero de enero."
         }
       },
-      "examples": ["Mañana es el primero de marzo.", "El examen es el primero de agosto."]
+      "examples": ["Mañana es el primero de marzo.", "El examen es el primero de agosto."],
+      "tr": { "hu": "Ma január elseje van.", "en": "Today is the first of January.", "es": "Hoy es el primero de enero.", "de": "Heute ist der erste Januar." }
     },
     {
       "id": "nh-11",
@@ -634,7 +644,8 @@
           "de": "Año ist Singular; ab einundzwanzig braucht man immer ein Nomen im Plural, deshalb ist veintiún años richtig."
         }
       },
-      "examples": ["Mi hermana tiene veintiún años.", "Ella tiene veintiún años también."]
+      "examples": ["Mi hermana tiene veintiún años.", "Ella tiene veintiún años también."],
+      "tr": { "hu": "Huszonegy éves vagyok.", "en": "I am twenty-one years old.", "es": "Tengo veintiún años.", "de": "Ich bin einundzwanzig Jahre alt." }
     },
     {
       "id": "nh-12",
@@ -655,7 +666,8 @@
           "de": "Tiene kommt von tener und drückt das Alter aus (tiene veinte años), nicht den Preis; für den Preis braucht man costar: el café cuesta treinta pesos."
         }
       },
-      "examples": ["El libro cuesta cien pesos.", "La comida cuesta treinta pesos."]
+      "examples": ["El libro cuesta cien pesos.", "La comida cuesta treinta pesos."],
+      "tr": { "hu": "A kávé harminc pesóba kerül.", "en": "The coffee costs thirty pesos.", "es": "El café cuesta treinta pesos.", "de": "Der Kaffee kostet dreißig Pesos." }
     },
     {
       "id": "nh-match-01",
