@@ -223,7 +223,8 @@
           "de": "En würde bedeuten, dass ich schon dort bin (estoy en la escuela); wenn ich dorthin unterwegs bin, braucht man a: voy a la escuela."
         }
       },
-      "examples": ["Vamos a la playa.", "Voy a casa."]
+      "examples": ["Vamos a la playa.", "Voy a casa."],
+      "tr": { "hu": "Iskolába megyek.", "en": "I am going to school.", "es": "Voy a la escuela.", "de": "Ich gehe zur Schule." }
     },
     {
       "id": "pb-02",
@@ -244,7 +245,8 @@
           "de": "En wird nicht verwendet, um eine genaue Uhrzeit auszudrücken, nur a las: llega a las tres."
         }
       },
-      "examples": ["Llegamos a las dos.", "El autobús llega a las cinco."]
+      "examples": ["Llegamos a las dos.", "El autobús llega a las cinco."],
+      "tr": { "hu": "A vonat háromkor érkezik.", "en": "The train arrives at three o'clock.", "es": "El tren llega a las tres.", "de": "Der Zug kommt um drei Uhr an." }
     },
     {
       "id": "pb-03",
@@ -265,7 +267,8 @@
           "de": "De würde Besitz oder Herkunft markieren (el amigo de mi hermano); hier ist eine Person das Objekt, das ich sehe, dafür braucht man a: veo a mi amigo."
         }
       },
-      "examples": ["Veo a mi madre los domingos.", "Veo a mi hermano en el parque."]
+      "examples": ["Veo a mi madre los domingos.", "Veo a mi hermano en el parque."],
+      "tr": { "hu": "Látom a barátomat az utcán.", "en": "I see my friend on the street.", "es": "Veo a mi amigo en la calle.", "de": "Ich sehe meinen Freund auf der Straße." }
     },
     {
       "id": "pb-04",
@@ -286,7 +289,8 @@
           "de": "A würde Richtung oder einen Zeitpunkt markieren, nicht Besitz; für Besitz braucht man de: el libro de Ana."
         }
       },
-      "examples": ["Es la casa de mi amigo.", "Es el carro de mi hermano."]
+      "examples": ["Es la casa de mi amigo.", "Es el carro de mi hermano."],
+      "tr": { "hu": "Ez Ana könyve.", "en": "It is Ana's book.", "es": "Es el libro de Ana.", "de": "Es ist Anas Buch." }
     },
     {
       "id": "pb-05",
@@ -307,7 +311,8 @@
           "de": "En würde einen Ort markieren, kein Material; für das Material braucht man de: la mesa es de madera."
         }
       },
-      "examples": ["Esta silla es de madera.", "La mesa es de madera."]
+      "examples": ["Esta silla es de madera.", "La mesa es de madera."],
+      "tr": { "hu": "Az asztal fából van.", "en": "The table is made of wood.", "es": "La mesa es de madera.", "de": "Der Tisch ist aus Holz." }
     },
     {
       "id": "pb-06",
@@ -328,7 +333,8 @@
           "de": "Con würde bedeuten, mit wem man spricht (hablamos con mi amigo), nicht worüber; das Thema braucht de: hablamos de la comida."
         }
       },
-      "examples": ["Hablamos de la familia.", "Hablamos de mi trabajo."]
+      "examples": ["Hablamos de la familia.", "Hablamos de mi trabajo."],
+      "tr": { "hu": "Az ételről beszélünk.", "en": "We are talking about the food.", "es": "Hablamos de la comida.", "de": "Wir sprechen über das Essen." }
     },
     {
       "id": "pb-07",
@@ -349,7 +355,8 @@
           "de": "A würde bedeuten, wohin ich gehe (voy a casa), nicht wo ich bin; für den Ort braucht man en: estoy en casa."
         }
       },
-      "examples": ["Estoy en la escuela.", "Estamos en el metro."]
+      "examples": ["Estoy en la escuela.", "Estamos en el metro."],
+      "tr": { "hu": "Otthon vagyok.", "en": "I am at home.", "es": "Estoy en casa.", "de": "Ich bin zu Hause." }
     },
     {
       "id": "pb-08",
@@ -370,7 +377,8 @@
           "de": "De würde Besitz oder Herkunft markieren, keinen Monat; für den Monat braucht man en: hace calor en mayo."
         }
       },
-      "examples": ["Vamos a España en mayo.", "Mi examen es en mayo."]
+      "examples": ["Vamos a España en mayo.", "Mi examen es en mayo."],
+      "tr": { "hu": "Májusban meleg van.", "en": "It is hot in May.", "es": "Hace calor en mayo.", "de": "Im Mai ist es heiß." }
     },
     {
       "id": "pb-09",
@@ -391,7 +399,8 @@
           "de": "Con würde Begleitung markieren (vamos con mi amigo), nicht das Verkehrsmittel; dafür braucht man en: vamos en metro."
         }
       },
-      "examples": ["Vamos en carro.", "Vamos en autobús."]
+      "examples": ["Vamos en carro.", "Vamos en autobús."],
+      "tr": { "hu": "Metróval megyünk.", "en": "We are going by subway.", "es": "Vamos en metro.", "de": "Wir fahren mit der U-Bahn." }
     },
     {
       "id": "pb-10",
@@ -412,7 +421,8 @@
           "de": "De würde Besitz oder Material markieren, nicht was zusammen ist; für Kaffee mit Milch braucht man con: café con leche."
         }
       },
-      "examples": ["Voy al cine con mi amigo.", "Hablo con mi madre."]
+      "examples": ["Voy al cine con mi amigo.", "Hablo con mi madre."],
+      "tr": { "hu": "Tejeskávét iszom.", "en": "I drink coffee with milk.", "es": "Tomo café con leche.", "de": "Ich trinke Milchkaffee." }
     },
     {
       "id": "pb-11",
@@ -433,7 +443,8 @@
           "de": "De würde Besitz oder Herkunft markieren, keinen Grund; für den Dankesgrund braucht man por: gracias por la ayuda."
         }
       },
-      "examples": ["Gracias por todo.", "Gracias por la comida."]
+      "examples": ["Gracias por todo.", "Gracias por la comida."],
+      "tr": { "hu": "Köszönöm a segítséget.", "en": "Thank you for the help.", "es": "Gracias por la ayuda.", "de": "Danke für die Hilfe." }
     },
     {
       "id": "pb-12",
@@ -454,7 +465,8 @@
           "de": "A el wird nie getrennt geschrieben; a und el werden immer zu al: voy al cine."
         }
       },
-      "examples": ["Voy al parque.", "Vamos al cine."]
+      "examples": ["Voy al parque.", "Vamos al cine."],
+      "tr": { "hu": "Moziba megyek a barátommal.", "en": "I am going to the cinema with my friend.", "es": "Voy al cine con mi amigo.", "de": "Ich gehe mit meinem Freund ins Kino." }
     },
     {
       "id": "pb-match-01",
