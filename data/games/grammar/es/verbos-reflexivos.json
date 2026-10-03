@@ -492,7 +492,8 @@
           "de": "'Te' gehört zum Subjekt tú: 'Tú te levantas a las siete' würde heißen, dass DU um sieben aufstehst, nicht ich; richtig mit yo: me levanto."
         }
       },
-      "examples": ["Me levanto temprano.", "¿A qué hora te levantas tú?"]
+      "examples": ["Me levanto temprano.", "¿A qué hora te levantas tú?"],
+      "tr": { "hu": "Hétkor kelek.", "en": "I get up at seven.", "es": "Yo me levanto a las siete.", "de": "Ich stehe um sieben Uhr auf." }
     },
     {
       "id": "rf-02",
@@ -519,7 +520,8 @@
           "de": "'Me' würde von mir selbst sprechen: '¿Cómo me llamo?' würde nach meinem Namen fragen, nicht nach deinem; zur anderen Person gehört te: ¿cómo te llamas?"
         }
       },
-      "examples": ["Me llamo Carlos.", "Se llama Ana."]
+      "examples": ["Me llamo Carlos.", "Se llama Ana."],
+      "tr": { "hu": "Hogy hívnak?", "en": "What is your name?", "es": "¿Cómo te llamas?", "de": "Wie heißt du?" }
     },
     {
       "id": "rf-03",
@@ -546,7 +548,8 @@
           "de": "'Me' würde von mir sprechen: 'Yo me ducho por la mañana' würde heißen, dass ich dusche, nicht Ana; zu ihr gehört se: Ana se ducha."
         }
       },
-      "examples": ["Ana se ducha rápido.", "Mi hermana se ducha por la noche."]
+      "examples": ["Ana se ducha rápido.", "Mi hermana se ducha por la noche."],
+      "tr": { "hu": "Ana reggelente zuhanyzik.", "en": "Ana showers in the morning.", "es": "Ana se ducha por la mañana.", "de": "Ana duscht morgens." }
     },
     {
       "id": "rf-04",
@@ -573,7 +576,8 @@
           "de": "'Me' würde sich nur auf eine Person beziehen, yo: 'Me acuesto tarde' würde heißen, dass ich spät ins Bett gehe, nicht wir; zu nosotros gehört nos: nos acostamos."
         }
       },
-      "examples": ["Nos acostamos a las once.", "Mis padres se acuestan temprano."]
+      "examples": ["Nos acostamos a las once.", "Mis padres se acuestan temprano."],
+      "tr": { "hu": "Későn fekszünk le.", "en": "We go to bed late.", "es": "Nosotros nos acostamos tarde.", "de": "Wir gehen spät ins Bett." }
     },
     {
       "id": "rf-05",
@@ -600,7 +604,8 @@
           "de": "'Te' gehört zu tú: 'Tú te despiertas a las seis' würde dich ansprechen, nicht von meinen Eltern sprechen; sie sind dritte Person Plural, dazu gehört se: se despiertan."
         }
       },
-      "examples": ["Se despiertan temprano los lunes.", "¿A qué hora te despiertas?"]
+      "examples": ["Se despiertan temprano los lunes.", "¿A qué hora te despiertas?"],
+      "tr": { "hu": "A szüleim hatkor ébrednek.", "en": "My parents wake up at six.", "es": "Mis padres se despiertan a las seis.", "de": "Meine Eltern wachen um sechs Uhr auf." }
     },
     {
       "id": "rf-06",
@@ -627,7 +632,8 @@
           "de": "'Se' ist für die dritte Person: 'Él se siente cansado' würde heißen, dass er sich müde fühlt, nicht ich; zu yo gehört me: me siento cansado."
         }
       },
-      "examples": ["Me siento bien ahora.", "¿Cómo te sientes hoy?"]
+      "examples": ["Me siento bien ahora.", "¿Cómo te sientes hoy?"],
+      "tr": { "hu": "Ma fáradtnak érzem magam.", "en": "I feel tired today.", "es": "Yo me siento cansado hoy.", "de": "Ich fühle mich heute müde." }
     },
     {
       "id": "rf-07",
@@ -654,7 +660,8 @@
           "de": "'Se' gehört zum höflichen usted: '¿Se acuerda usted de mí?' würde das höfliche Sie fragen, nicht das vertraute tú; zu tú gehört te: ¿te acuerdas de mí?"
         }
       },
-      "examples": ["Me acuerdo de ti siempre.", "No se acuerda de mi nombre."]
+      "examples": ["Me acuerdo de ti siempre.", "No se acuerda de mi nombre."],
+      "tr": { "hu": "Emlékszel rám?", "en": "Do you remember me?", "es": "¿Te acuerdas de mí?", "de": "Erinnerst du dich an mich?" }
     },
     {
       "id": "rf-08",
@@ -681,7 +688,8 @@
           "de": "'Nos' würde sich auf uns beziehen, nosotros: 'Nos vamos temprano del trabajo' würde heißen, dass wir früh gehen, nicht eine einzelne Person, Ella; zu ihr gehört se: Ella se va."
         }
       },
-      "examples": ["Ella se va a las cinco.", "Me voy ahora, hasta luego."]
+      "examples": ["Ella se va a las cinco.", "Me voy ahora, hasta luego."],
+      "tr": { "hu": "Korán elmegy a munkából.", "en": "She leaves work early.", "es": "Ella se va temprano del trabajo.", "de": "Sie geht früher von der Arbeit weg." }
     },
     {
       "id": "rf-09",
@@ -708,7 +716,8 @@
           "de": "'Te' gehört zu tú: 'Tú te duermes rápido' würde dich ansprechen, nicht von den Kindern sprechen; sie sind dritte Person Plural, dazu gehört se: se duermen."
         }
       },
-      "examples": ["Los niños se duermen a las ocho.", "Me duermo viendo la tele."]
+      "examples": ["Los niños se duermen a las ocho.", "Me duermo viendo la tele."],
+      "tr": { "hu": "A gyerekek gyorsan elalszanak.", "en": "The children fall asleep quickly.", "es": "Los niños se duermen rápido.", "de": "Die Kinder schlafen schnell ein." }
     },
     {
       "id": "rf-10",
@@ -735,7 +744,8 @@
           "de": "'Le' ist kein reflexives Pronomen, es gehört zu einer anderen Struktur, wie gustar; nosotros braucht das reflexive nos: no nos lavamos las manos."
         }
       },
-      "examples": ["Nos lavamos las manos antes de comer.", "¿Te lavas los dientes?"]
+      "examples": ["Nos lavamos las manos antes de comer.", "¿Te lavas los dientes?"],
+      "tr": { "hu": "Nem mossuk meg a kezünket.", "en": "We do not wash our hands.", "es": "Nosotros no nos lavamos las manos.", "de": "Wir waschen uns nicht die Hände." }
     },
     {
       "id": "rf-11",
@@ -762,7 +772,8 @@
           "de": "'Me' würde von mir sprechen: 'Yo me visto muy elegante' würde heißen, dass ich mich elegant kleide, nicht von der Person, mit der ich spreche; zu usted gehört se: usted se viste."
         }
       },
-      "examples": ["Usted se viste muy bien.", "Ella se viste rápido por la mañana."]
+      "examples": ["Usted se viste muy bien.", "Ella se viste rápido por la mañana."],
+      "tr": { "hu": "Ön nagyon elegánsan öltözik ma.", "en": "You are dressing very elegantly today.", "es": "Usted se viste muy elegante hoy.", "de": "Sie kleiden sich heute sehr elegant." }
     },
     {
       "id": "rf-12",
@@ -789,7 +800,8 @@
           "de": "'Nos' würde sich auf mehrere beziehen, nosotros: 'Nunca nos acostamos tarde' würde heißen, dass wir nie spät ins Bett gehen, nicht nur ich; zu yo gehört me: nunca me acuesto tarde."
         }
       },
-      "examples": ["Nunca me acuesto tarde.", "Entre semana nos acostamos temprano."]
+      "examples": ["Nunca me acuesto tarde.", "Entre semana nos acostamos temprano."],
+      "tr": { "hu": "Hétköznap sosem fekszem le későn.", "en": "I never go to bed late during the week.", "es": "Yo nunca me acuesto tarde entre semana.", "de": "Unter der Woche gehe ich nie spät ins Bett." }
     },
     {
       "id": "rf-match-01",
