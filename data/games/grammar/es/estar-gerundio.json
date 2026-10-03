@@ -426,7 +426,8 @@
           "de": "\"Está\" ist die er/sie/Sie-Form, sie passt nicht zum Subjekt yo; richtig: Yo estoy trabajando ahora."
         }
       },
-      "examples": ["Estoy trabajando en casa.", "Ahora mismo estoy trabajando."]
+      "examples": ["Estoy trabajando en casa.", "Ahora mismo estoy trabajando."],
+      "tr": { "hu": "Éppen dolgozom.", "en": "I am working right now.", "es": "Yo estoy trabajando ahora.", "de": "Ich arbeite gerade." }
     },
     {
       "id": "eg-02",
@@ -453,7 +454,8 @@
           "de": "\"Están\" ist eine Pluralform, hier ist das Subjekt ella aber Singular; richtig: Ella está comiendo un taco."
         }
       },
-      "examples": ["Ella está comiendo ahora.", "Mi hermana está comiendo tacos."]
+      "examples": ["Ella está comiendo ahora.", "Mi hermana está comiendo tacos."],
+      "tr": { "hu": "Épp egy tacót eszik.", "en": "She is eating a taco.", "es": "Ella está comiendo un taco.", "de": "Sie isst gerade einen Taco." }
     },
     {
       "id": "eg-03",
@@ -480,7 +482,8 @@
           "de": "\"Estás\" ist die tú-Form, für eine Person, nicht für das Plural-Subjekt nosotros; richtig: Nosotros estamos estudiando español."
         }
       },
-      "examples": ["Estamos estudiando para el examen.", "Nosotros estamos estudiando juntos."]
+      "examples": ["Estamos estudiando para el examen.", "Nosotros estamos estudiando juntos."],
+      "tr": { "hu": "Spanyolul tanulunk.", "en": "We are studying Spanish.", "es": "Nosotros estamos estudiando español.", "de": "Wir lernen gerade Spanisch." }
     },
     {
       "id": "eg-04",
@@ -507,7 +510,8 @@
           "de": "\"Estoy\" würde fragen, was ich mache, der Satz fragt aber, was DU machst; richtig: ¿Qué estás haciendo tú?"
         }
       },
-      "examples": ["¿Qué estás haciendo?", "Estoy haciendo la tarea."]
+      "examples": ["¿Qué estás haciendo?", "Estoy haciendo la tarea."],
+      "tr": { "hu": "Mit csinálsz most?", "en": "What are you doing?", "es": "¿Qué estás haciendo tú?", "de": "Was machst du gerade?" }
     },
     {
       "id": "eg-05",
@@ -534,7 +538,8 @@
           "de": "\"Estamos\" ist die Form von nosotros, nicht von ellos; richtig: Ellos están jugando fútbol."
         }
       },
-      "examples": ["Están jugando en el parque.", "Los niños están jugando ahora."]
+      "examples": ["Están jugando en el parque.", "Los niños están jugando ahora."],
+      "tr": { "hu": "Fociznak.", "en": "They are playing soccer.", "es": "Ellos están jugando fútbol.", "de": "Sie spielen gerade Fußball." }
     },
     {
       "id": "eg-06",
@@ -561,7 +566,8 @@
           "de": "Auch diese Form gibt es nicht, ihr fehlt das y; richtig: Estoy leyendo un libro interesante."
         }
       },
-      "examples": ["Estoy leyendo una novela.", "Ella está leyendo el periódico."]
+      "examples": ["Estoy leyendo una novela.", "Ella está leyendo el periódico."],
+      "tr": { "hu": "Egy érdekes könyvet olvasok.", "en": "I am reading an interesting book.", "es": "Estoy leyendo un libro interesante.", "de": "Ich lese gerade ein interessantes Buch." }
     },
     {
       "id": "eg-07",
@@ -588,7 +594,8 @@
           "de": "Auch diese Form gibt es nicht, ihr fehlt das i; richtig: Los niños están durmiendo en su cuarto."
         }
       },
-      "examples": ["Los niños están durmiendo ahora.", "El gato está durmiendo en el sofá."]
+      "examples": ["Los niños están durmiendo ahora.", "El gato está durmiendo en el sofá."],
+      "tr": { "hu": "A gyerekek a szobájukban alszanak.", "en": "The children are sleeping in their room.", "es": "Los niños están durmiendo en su cuarto.", "de": "Die Kinder schlafen in ihrem Zimmer." }
     },
     {
       "id": "eg-08",
@@ -615,7 +622,8 @@
           "de": "Auch diese Form gibt es nicht, ihr fehlt das i; richtig: Ella está pidiendo un café."
         }
       },
-      "examples": ["Está pidiendo un café con leche.", "Estoy pidiendo la cuenta."]
+      "examples": ["Está pidiendo un café con leche.", "Estoy pidiendo la cuenta."],
+      "tr": { "hu": "Épp egy kávét rendel.", "en": "She is ordering a coffee.", "es": "Ella está pidiendo un café.", "de": "Sie bestellt gerade einen Kaffee." }
     },
     {
       "id": "eg-09",
@@ -642,7 +650,8 @@
           "de": "Auch diese Form gibt es nicht, ihr fehlt das i; richtig: ¿Qué está diciendo el profesor?"
         }
       },
-      "examples": ["El profesor está diciendo la verdad.", "¿Qué estás diciendo?"]
+      "examples": ["El profesor está diciendo la verdad.", "¿Qué estás diciendo?"],
+      "tr": { "hu": "Mit mond a tanár?", "en": "What is the teacher saying?", "es": "¿Qué está diciendo el profesor?", "de": "Was sagt der Lehrer gerade?" }
     },
     {
       "id": "eg-10",
@@ -669,7 +678,8 @@
           "de": "\"Iba\" ist eine Vergangenheitsform (Imperfekt), sie passt nicht zu \"mañana\", das auf die Zukunft zeigt; richtig: Mañana voy al cine con Ana."
         }
       },
-      "examples": ["Mañana voy al cine.", "El sábado voy a la fiesta de Ana."]
+      "examples": ["Mañana voy al cine.", "El sábado voy a la fiesta de Ana."],
+      "tr": { "hu": "Holnap moziba megyek Anával.", "en": "Tomorrow I am going to the movies with Ana.", "es": "Mañana voy al cine con Ana.", "de": "Morgen gehe ich mit Ana ins Kino." }
     },
     {
       "id": "eg-11",
@@ -696,7 +706,8 @@
           "de": "\"Estoy\" würde sich nur auf eine Person (yo) beziehen, hier seid ihr aber zu zweit das Subjekt; richtig: Tú y yo estamos terminando la tarea."
         }
       },
-      "examples": ["Estamos terminando ahora.", "Tú y yo estamos aprendiendo mucho."]
+      "examples": ["Estamos terminando ahora.", "Tú y yo estamos aprendiendo mucho."],
+      "tr": { "hu": "Te és én éppen fejezzük be a házi feladatot.", "en": "You and I are finishing the homework.", "es": "Tú y yo estamos terminando la tarea.", "de": "Du und ich machen gerade die Hausaufgaben fertig." }
     },
     {
       "id": "eg-12",
@@ -723,7 +734,8 @@
           "de": "\"Está\" ist die Form der dritten Person, sie passt nicht zum Subjekt yo; richtig: Yo no estoy durmiendo, sino despierto."
         }
       },
-      "examples": ["No estoy durmiendo.", "Estoy despierto todavía."]
+      "examples": ["No estoy durmiendo.", "Estoy despierto todavía."],
+      "tr": { "hu": "Nem alszom, hanem ébren vagyok.", "en": "I am not sleeping, but awake.", "es": "Yo no estoy durmiendo, sino despierto.", "de": "Ich schlafe nicht, sondern bin wach." }
     },
     {
       "id": "eg-match-01",

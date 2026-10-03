@@ -535,7 +535,8 @@
           "de": "Das würde Míos hermanos viven en Puebla ergeben, aber míos steht NACH dem Nomen (los hermanos míos / son míos), nicht davor; richtig: Mis hermanos viven en Puebla."
         }
       },
-      "examples": ["Mis padres trabajan mucho.", "Mis llaves están en la mesa."]
+      "examples": ["Mis padres trabajan mucho.", "Mis llaves están en la mesa."],
+      "tr": { "hu": "A testvéreim Pueblában laknak.", "en": "My siblings live in Puebla.", "es": "Mis hermanos viven en Puebla.", "de": "Meine Geschwister wohnen in Puebla." }
     },
     {
       "id": "po-02",
@@ -562,7 +563,8 @@
           "de": "Das würde ¿Dónde está tus casa? ergeben, aber tus steht bei mehreren Sachen, während casa hier Singular ist; richtig: ¿Dónde está tu casa?"
         }
       },
-      "examples": ["Tu carro es nuevo.", "¿Es tu teléfono?"]
+      "examples": ["Tu carro es nuevo.", "¿Es tu teléfono?"],
+      "tr": { "hu": "Hol van a házad?", "en": "Where is your house?", "es": "¿Dónde está tu casa?", "de": "Wo ist dein Haus?" }
     },
     {
       "id": "po-03",
@@ -589,7 +591,8 @@
           "de": "Das würde Nuestras casa es muy grande ergeben, aber nuestras ist Plural, während casa hier Singular ist; richtig: Nuestra casa es muy grande."
         }
       },
-      "examples": ["Nuestro perro es pequeño.", "Nuestras hijas estudian aquí."]
+      "examples": ["Nuestro perro es pequeño.", "Nuestras hijas estudian aquí."],
+      "tr": { "hu": "A mi házunk nagyon nagy.", "en": "Our house is very big.", "es": "Nuestra casa es muy grande. (de nosotros)", "de": "Unser Haus ist sehr groß." }
     },
     {
       "id": "po-04",
@@ -616,7 +619,8 @@
           "de": "Das würde Ana busca suyas llaves ergeben, aber suyas steht NACH dem Nomen (las llaves suyas / son suyas), nicht davor; richtig: Ana busca sus llaves."
         }
       },
-      "examples": ["Sus hijos van a la escuela.", "Su casa está cerca."]
+      "examples": ["Sus hijos van a la escuela.", "Su casa está cerca."],
+      "tr": { "hu": "Ana a kulcsait keresi.", "en": "Ana is looking for her keys.", "es": "Ana busca sus llaves.", "de": "Ana sucht ihre Schlüssel." }
     },
     {
       "id": "po-05",
@@ -643,7 +647,8 @@
           "de": "Das würde Me duele una cabeza ergeben, aber una ist unbestimmt, hier geht es aber um deinen eigenen, bestimmten Kopf; richtig: Me duele la cabeza."
         }
       },
-      "examples": ["Me duele la espalda.", "Me pongo el abrigo."]
+      "examples": ["Me duele la espalda.", "Me pongo el abrigo."],
+      "tr": { "hu": "Fáj a fejem.", "en": "My head hurts.", "es": "Me duele la cabeza.", "de": "Ich habe Kopfschmerzen." }
     },
     {
       "id": "po-06",
@@ -670,7 +675,8 @@
           "de": "Das würde Es me ergeben, aber me ist ein Pronomen, kein Possessiv; richtig: Es mío."
         }
       },
-      "examples": ["Esta casa es nuestra.", "Estos zapatos son tuyos."]
+      "examples": ["Esta casa es nuestra.", "Estos zapatos son tuyos."],
+      "tr": { "hu": "Kié ez a könyv? Az enyém.", "en": "Whose book is this? It's mine.", "es": "¿De quién es este libro? Es mío.", "de": "Wessen Buch ist das? Es ist meins." }
     },
     {
       "id": "po-07",
@@ -697,7 +703,8 @@
           "de": "Das würde Vuestro hijo trabaja en un banco ergeben, aber vuestro gehört zu vosotros und wird in Lateinamerika nicht benutzt; richtig: Su hijo trabaja en un banco."
         }
       },
-      "examples": ["Su nombre, por favor.", "Su dirección está aquí."]
+      "examples": ["Su nombre, por favor.", "Su dirección está aquí."],
+      "tr": { "hu": "Az Ön fia egy bankban dolgozik.", "en": "Your son works in a bank.", "es": "Su hijo trabaja en un banco. (de usted)", "de": "Ihr Sohn arbeitet in einer Bank." }
     },
     {
       "id": "po-08",
@@ -724,7 +731,8 @@
           "de": "Das würde Nosotros vendemos nuestros carro ergeben, aber nuestros ist Plural, während carro hier Singular ist; richtig: Nosotros vendemos nuestro carro."
         }
       },
-      "examples": ["Nuestro barrio es tranquilo.", "Nuestros amigos llegan mañana."]
+      "examples": ["Nuestro barrio es tranquilo.", "Nuestros amigos llegan mañana."],
+      "tr": { "hu": "Eladjuk az autónkat.", "en": "We are selling our car.", "es": "Nosotros vendemos nuestro carro.", "de": "Wir verkaufen unser Auto." }
     },
     {
       "id": "po-09",
@@ -751,7 +759,8 @@
           "de": "Das würde Los niños tienen suyas mochilas ergeben, aber suyas steht NACH dem Nomen (las mochilas suyas), nicht davor; richtig: Los niños tienen sus mochilas."
         }
       },
-      "examples": ["Sus zapatos están sucios.", "Sus padres viven en México."]
+      "examples": ["Sus zapatos están sucios.", "Sus padres viven en México."],
+      "tr": { "hu": "A gyerekeknél ott van a hátizsákjuk.", "en": "The children have their backpacks.", "es": "Los niños tienen sus mochilas.", "de": "Die Kinder haben ihre Rucksäcke." }
     },
     {
       "id": "po-10",
@@ -778,7 +787,8 @@
           "de": "Das würde Me perro se llama Max, y el tuyo, ¿cómo se llama? ergeben, aber me ist kein Possessiv, sondern ein Pronomen; richtig: Mi perro se llama Max, y el tuyo, ¿cómo se llama?"
         }
       },
-      "examples": ["Mi gato duerme mucho.", "Mi trabajo empieza a las nueve."]
+      "examples": ["Mi gato duerme mucho.", "Mi trabajo empieza a las nueve."],
+      "tr": { "hu": "A kutyámat Maxnak hívják, és a tiédet hogy hívják?", "en": "My dog's name is Max, and what is yours called?", "es": "Mi perro se llama Max, y el tuyo, ¿cómo se llama?", "de": "Mein Hund heißt Max, und wie heißt deiner?" }
     },
     {
       "id": "po-11",
@@ -805,7 +815,8 @@
           "de": "Das würde ¿Es sus el carro rojo? ergeben, aber sus ist für mehrere Sachen und steht ebenfalls vor einem Nomen, nicht allein; richtig: ¿Es suyo el carro rojo?"
         }
       },
-      "examples": ["Este libro es suyo.", "La casa es nuestra."]
+      "examples": ["Este libro es suyo.", "La casa es nuestra."],
+      "tr": { "hu": "Az övék a piros autó?", "en": "Is the red car theirs?", "es": "¿Es suyo el carro rojo? (de ellos)", "de": "Ist das rote Auto ihres?" }
     },
     {
       "id": "po-12",
@@ -832,7 +843,8 @@
           "de": "Das würde Voy a casa de mía abuela ergeben, aber mía steht NACH dem Nomen (la abuela mía), nicht davor; richtig: Voy a casa de mi abuela."
         }
       },
-      "examples": ["Voy a casa de mi hermano.", "Es el carro de mi padre."]
+      "examples": ["Voy a casa de mi hermano.", "Es el carro de mi padre."],
+      "tr": { "hu": "A nagymamámhoz megyek.", "en": "I am going to my grandmother's house.", "es": "Voy a casa de mi abuela.", "de": "Ich gehe zu meiner Oma." }
     },
     {
       "id": "pos-match-01",
