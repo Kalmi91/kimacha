@@ -2,7 +2,7 @@
   "expo": {
     "name": "Kimacha",
     "slug": "kimacha",
-    "version": "4.1.8",
+    "version": "4.1.9",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "kimacha",
@@ -12,7 +12,7 @@
     },
     "android": {
       "package": "com.kimachaapp.kimacha.app",
-      "versionCode": 85,
+      "versionCode": 86,
       "softwareKeyboardLayoutMode": "pan",
       "adaptiveIcon": {
         "backgroundColor": "#0F172A",
