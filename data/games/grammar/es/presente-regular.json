@@ -525,7 +525,7 @@
       "sentence": "Nosotros ___ en la Ciudad de México.",
       "options": [
         "vivimos",
-        "vivís",
+        "vivo",
         "viven"
       ],
       "correct": 0,
@@ -536,11 +536,11 @@
         "de": "Die wir-Form der -ir-Verben ist -imos: vivimos."
       },
       "wrong": {
-        "vivís": {
-          "hu": "A 'vivís' a vosotros alakja: 'Vosotros vivís en la Ciudad de México' azt jelentené, hogy TI laktok ott, ráadásul Mexikóban ezt az alakot nem is használják.",
-          "en": "'Vivís' belongs to vosotros: 'Vosotros vivís en la Ciudad de México' would mean YOU ALL live there, and this form is not even used in Mexico.",
-          "es": "'Vivís' es la forma de vosotros: 'Vosotros vivís en la Ciudad de México' significaría que VOSOTROS vivís ahí, y esa forma ni siquiera se usa en México.",
-          "de": "'Vivís' gehört zu vosotros: 'Vosotros vivís en la Ciudad de México' würde heißen, dass IHR dort lebt, und diese Form wird in Mexiko gar nicht benutzt."
+        "vivo": {
+          "hu": "A 'vivo' az egyes szám első személy (yo) alakja; a nosotros alanyhoz a 'vivimos' tartozik.",
+          "en": "'Vivo' is the first person singular (yo) form; the correct form for nosotros is 'vivimos'.",
+          "es": "'Vivo' es la forma de primera persona del singular (yo); para nosotros la forma correcta es 'vivimos'.",
+          "de": "'Vivo' ist die Form der 1. Person Singular (yo); zu nosotros gehört 'vivimos'."
         },
         "viven": {
           "hu": "A 'viven' az ellos/ellas/ustedes alakja: 'Ellos viven en la Ciudad de México' azt jelentené, hogy ŐK laknak ott, nem mi.",
@@ -553,7 +553,12 @@
         "Nosotros comemos a las dos.",
         "Nosotros trabajamos juntos."
       ],
-      "tr": { "hu": "Mexikóvárosban élünk.", "en": "We live in Mexico City.", "es": "Nosotros vivimos en la Ciudad de México.", "de": "Wir leben in Mexiko-Stadt." }
+      "tr": {
+        "hu": "Mexikóvárosban élünk.",
+        "en": "We live in Mexico City.",
+        "es": "Nosotros vivimos en la Ciudad de México.",
+        "de": "Wir leben in Mexiko-Stadt."
+      }
     },
     {
       "id": "pr-04",
@@ -630,7 +635,7 @@
       "sentence": "Ustedes ___ muy rápido.",
       "options": [
         "hablan",
-        "habláis",
+        "habla",
         "hablamos"
       ],
       "correct": 0,
@@ -641,11 +646,11 @@
         "de": "Ustedes steht immer mit der 3. Person Plural: hablan."
       },
       "wrong": {
-        "habláis": {
-          "hu": "A 'habláis' a vosotros alakja (Spanyolország), az ustedes mellett sosem áll: 'Vosotros habláis muy rápido' TI-t jelentene, nem önöket.",
-          "en": "'Habláis' is the vosotros form (Spain), it never goes with ustedes: 'Vosotros habláis muy rápido' would mean YOU ALL (informal), not ustedes.",
-          "es": "'Habláis' es la forma de vosotros (España), nunca va con ustedes: 'Vosotros habláis muy rápido' significaría VOSOTROS, no ustedes.",
-          "de": "'Habláis' ist die vosotros-Form (Spanien), sie steht nie bei ustedes: 'Vosotros habláis muy rápido' würde IHR bedeuten, nicht ustedes."
+        "habla": {
+          "hu": "A 'habla' egyes szám harmadik személyű alak (él/ella/usted); az ustedes alanyhoz többes számú 'hablan' szükséges.",
+          "en": "'Habla' is the third person singular form (él/ella/usted); ustedes requires the plural form 'hablan'.",
+          "es": "'Habla' es la forma de tercera persona del singular (él/ella/usted); con ustedes se necesita el plural 'hablan'.",
+          "de": "'Habla' ist die Form der 3. Person Singular (él/ella/usted); zu ustedes gehört der Plural 'hablan'."
         },
         "hablamos": {
           "hu": "A 'hablamos' a nosotros alakja: 'Nosotros hablamos muy rápido' azt jelentené, hogy MI beszélünk gyorsan, nem önök.",
@@ -658,7 +663,12 @@
         "Ustedes viven cerca.",
         "Ustedes comen temprano."
       ],
-      "tr": { "hu": "Önök nagyon gyorsan beszélnek.", "en": "You speak very fast.", "es": "Ustedes hablan muy rápido.", "de": "Sie sprechen sehr schnell." }
+      "tr": {
+        "hu": "Önök nagyon gyorsan beszélnek.",
+        "en": "You speak very fast.",
+        "es": "Ustedes hablan muy rápido.",
+        "de": "Sie sprechen sehr schnell."
+      }
     },
     {
       "id": "pr-07",
@@ -1126,16 +1136,16 @@
         },
         {
           "text": {
-            "hu": "ti (vosotros, Spo.)",
-            "en": "you all (vosotros, Spain)",
-            "es": "vosotros",
-            "de": "ihr (vosotros, Spanien)"
+            "hu": "ők / Önök (ellos/ellas/ustedes)",
+            "en": "they / you all (ellos/ellas/ustedes)",
+            "es": "ellos/ellas/ustedes",
+            "de": "sie / Sie (Plural)"
           },
           "wrong": {
-            "hu": "Ha vosotros lenne, 'Vivís en Puebla' állna, azaz TI éltek Pueblában, és ezt az alakot Mexikóban nem is használják.",
-            "en": "If it were vosotros, it would say 'Vivís en Puebla', meaning YOU ALL live in Puebla, and this form is not even used in Mexico.",
-            "es": "Si fuera vosotros, diría 'Vivís en Puebla', o sea que VOSOTROS vivís en Puebla, y esa forma ni se usa en México.",
-            "de": "Wäre es vosotros, hieße es 'Vivís en Puebla', also lebt IHR in Puebla, und diese Form wird in Mexiko gar nicht benutzt."
+            "hu": "Többes számban 'Viven en Puebla' állna, azaz ŐK vagy ÖNÖK élnek Pueblában, nem egyetlen személy.",
+            "en": "In the plural it would say 'Viven en Puebla', meaning THEY or YOU ALL live in Puebla, not just one person.",
+            "es": "En plural diría 'Viven en Puebla', o sea que ELLOS o USTEDES viven en Puebla, no una sola persona.",
+            "de": "Im Plural hieße es 'Viven en Puebla', also leben SIE in Puebla, nicht eine einzelne Person."
           }
         }
       ],
@@ -1265,16 +1275,16 @@
         },
         {
           "text": {
-            "hu": "ti (vosotros, Spo.)",
-            "en": "you all (vosotros, Spain)",
-            "es": "vosotros",
-            "de": "ihr (vosotros, Spanien)"
+            "hu": "ők / ti / Önök (ellos/ustedes)",
+            "en": "they / you all (ellos/ustedes)",
+            "es": "ellos/ustedes",
+            "de": "sie / Sie / ihr (ellos/ustedes)"
           },
           "wrong": {
-            "hu": "Ha vosotros lenne, 'Coméis temprano los domingos' állna, azaz TI esztek korán, nem mi.",
-            "en": "If it were vosotros, it would say 'Coméis temprano los domingos', meaning YOU ALL eat early, not us.",
-            "es": "Si fuera vosotros, diría 'Coméis temprano los domingos', o sea que VOSOTROS coméis temprano, no nosotros.",
-            "de": "Wäre es vosotros, hieße es 'Coméis temprano los domingos', also esst IHR früh, nicht wir."
+            "hu": "Ha ellos vagy ustedes lenne az alany, 'Comen temprano los domingos' állna, nem a többes szám első személyű comemos.",
+            "en": "If the subject were ellos or ustedes, it would say 'Comen temprano los domingos', not the first-person plural comemos.",
+            "es": "Si el sujeto fuera ellos o ustedes, diría 'Comen temprano los domingos', no la primera persona plural comemos.",
+            "de": "Wäre das Subjekt ellos oder ustedes, hieße es 'Comen temprano los domingos' und nicht die 1. Person Plural comemos."
           }
         },
         {
