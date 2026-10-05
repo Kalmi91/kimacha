@@ -1157,28 +1157,28 @@
       "kind": "match",
       "pairs": [
         {
-          "es": "cuando era niño",
-          "en": "when I was a child"
+          "es": "era",
+          "en": "I was"
         },
         {
-          "es": "vivíamos en Puebla",
-          "en": "we used to live in Puebla"
+          "es": "vivíamos",
+          "en": "we used to live"
         },
         {
-          "es": "hacía frío",
-          "en": "it was cold"
+          "es": "hacía",
+          "en": "she used to do"
         },
         {
-          "es": "veíamos la tele",
-          "en": "we used to watch TV"
+          "es": "veíamos",
+          "en": "we used to watch"
         },
         {
-          "es": "eran las tres",
-          "en": "it was three o'clock"
+          "es": "eran",
+          "en": "they were"
         },
         {
-          "es": "iba a la escuela",
-          "en": "I used to go to school"
+          "es": "iba",
+          "en": "I used to go"
         }
       ],
       "tense": {
@@ -1250,8 +1250,8 @@
       "id": "im-form-06",
       "kind": "form",
       "verb": "ver",
-      "person": "vosotros",
-      "answer": "veíais",
+      "person": "ellos/ellas/ustedes",
+      "answer": "veían",
       "table": "imperfecto-irregular",
       "tense": {
         "from": "presente",
@@ -1322,8 +1322,8 @@
       "id": "im-form-12",
       "kind": "form",
       "verb": "vivir",
-      "person": "vosotros",
-      "answer": "vivíais",
+      "person": "ellos/ellas/ustedes",
+      "answer": "vivían",
       "table": "imperfecto-regular",
       "tense": {
         "from": "presente",
@@ -1541,61 +1541,6 @@
             "en": "If it were ellos, it would say 'Hablaban todos los días', meaning THEY used to talk every day, not us.",
             "es": "Si fuera ellos, diría 'Hablaban todos los días', o sea que ELLOS hablaban, no nosotros.",
             "de": "Wäre es ellos, hieße es 'Hablaban todos los días', also sprachen SIE jeden Tag, nicht wir."
-          }
-        }
-      ],
-      "correctIndex": 1,
-      "tense": {
-        "from": "presente",
-        "to": "imperfecto"
-      }
-    },
-    {
-      "kind": "why",
-      "id": "im-why-05",
-      "es": "Vivíais en Puebla.",
-      "target": "Vivíais",
-      "tr": {
-        "hu": "Pueblában éltetek.",
-        "en": "You all used to live in Puebla.",
-        "es": "Vivíais en Puebla.",
-        "de": "Ihr habt in Puebla gelebt."
-      },
-      "options": [
-        {
-          "text": {
-            "hu": "mi (nosotros)",
-            "en": "we (nosotros)",
-            "es": "nosotros",
-            "de": "wir (nosotros)"
-          },
-          "wrong": {
-            "hu": "Ha nosotros lenne, 'Vivíamos en Puebla' állna, azaz MI éltünk Pueblában, nem ti.",
-            "en": "If it were nosotros, it would say 'Vivíamos en Puebla', meaning WE used to live in Puebla, not you all.",
-            "es": "Si fuera nosotros, diría 'Vivíamos en Puebla', o sea que NOSOTROS vivíamos ahí, no vosotros.",
-            "de": "Wäre es nosotros, hieße es 'Vivíamos en Puebla', also haben WIR dort gelebt, nicht ihr."
-          }
-        },
-        {
-          "text": {
-            "hu": "ti (vosotros, Spo.)",
-            "en": "you all (vosotros, Spain)",
-            "es": "vosotros",
-            "de": "ihr (vosotros, Spanien)"
-          }
-        },
-        {
-          "text": {
-            "hu": "ő / Ön",
-            "en": "he/she/you (usted)",
-            "es": "él/ella/usted",
-            "de": "er/sie/Sie"
-          },
-          "wrong": {
-            "hu": "Ha él/ella lenne, 'Vivía en Puebla' állna, azaz Ő élt Pueblában, egyedül, nem ti, többen.",
-            "en": "If it were él/ella, it would say 'Vivía en Puebla', meaning HE/SHE used to live in Puebla, alone, not you all.",
-            "es": "Si fuera él/ella, diría 'Vivía en Puebla', o sea que ÉL/ELLA vivía ahí, solo, no vosotros.",
-            "de": "Wäre es él/ella, hieße es 'Vivía en Puebla', also hat ER/SIE allein dort gelebt, nicht ihr."
           }
         }
       ],

@@ -1168,57 +1168,6 @@
     },
     {
       "kind": "why",
-      "id": "vr-why-06",
-      "es": "Ustedes se levantan temprano.",
-      "target": "se",
-      "tr": {
-        "hu": "Korán keltek.",
-        "en": "You all get up early.",
-        "es": "Ustedes se levantan temprano.",
-        "de": "Ihr steht früh auf."
-      },
-      "options": [
-        {
-          "text": {
-            "hu": "nos (nosotros)",
-            "en": "nos (nosotros)",
-            "es": "nos (nosotros)",
-            "de": "nos (wir)"
-          },
-          "wrong": {
-            "hu": "Ha nos lenne, 'Nos levantamos temprano' állna, azaz MI kelünk korán, a beszélővel együtt, nem ti.",
-            "en": "If it were nos, it would say 'Nos levantamos temprano', meaning WE get up early, including the speaker, not you all.",
-            "es": "Si fuera nos, diría 'Nos levantamos temprano', o sea que NOSOTROS nos levantamos, con el hablante, no vosotros.",
-            "de": "Wäre es nos, hieße es 'Nos levantamos temprano', also stehen WIR früh auf, mit dem Sprecher, nicht ihr."
-          }
-        },
-        {
-          "text": {
-            "hu": "os (vosotros)",
-            "en": "os (vosotros)",
-            "es": "os (vosotros)",
-            "de": "os (ihr)"
-          },
-          "wrong": {
-            "hu": "Az os a spanyolországi vosotros névmása ('Os levantáis temprano'); Mexikóban az ustedes mellett se áll: ustedes se levantan.",
-            "en": "Os is the Spain pronoun for vosotros ('Os levantáis temprano'); in Mexico ustedes takes se: ustedes se levantan.",
-            "es": "Os es el pronombre de vosotros en España ('Os levantáis temprano'); en México a ustedes le corresponde se: ustedes se levantan.",
-            "de": "Os ist das spanische Pronomen für vosotros ('Os levantáis temprano'); in Mexiko gehört zu ustedes se: ustedes se levantan."
-          }
-        },
-        {
-          "text": {
-            "hu": "se (ellos/ellas/ustedes)",
-            "en": "se (ellos/ellas/ustedes)",
-            "es": "se (ellos/ellas/ustedes)",
-            "de": "se (sie/Sie)"
-          }
-        }
-      ],
-      "correctIndex": 2
-    },
-    {
-      "kind": "why",
       "id": "vr-why-07",
       "es": "Me quedo en casa esta noche.",
       "target": "Me",
