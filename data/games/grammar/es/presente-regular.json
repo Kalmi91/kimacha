@@ -949,14 +949,6 @@
       "table": "presente-regular"
     },
     {
-      "id": "pr-form-07",
-      "kind": "form",
-      "verb": "comer",
-      "person": "vosotros",
-      "answer": "coméis",
-      "table": "presente-regular"
-    },
-    {
       "id": "pr-form-08",
       "kind": "form",
       "verb": "comer",
@@ -992,8 +984,8 @@
       "id": "pr-form-12",
       "kind": "form",
       "verb": "vivir",
-      "person": "vosotros",
-      "answer": "vivís",
+      "person": "ellos/ellas/ustedes",
+      "answer": "viven",
       "table": "presente-regular"
     },
     {
@@ -1195,57 +1187,6 @@
             "en": "If it were ellos, it would say 'Trabajan los sábados', meaning THEY work on Saturdays, not us.",
             "es": "Si fuera ellos, diría 'Trabajan los sábados', o sea que ELLOS trabajan los sábados, no nosotros.",
             "de": "Wäre es ellos, hieße es 'Trabajan los sábados', also arbeiten SIE samstags, nicht wir."
-          }
-        }
-      ],
-      "correctIndex": 1
-    },
-    {
-      "kind": "why",
-      "id": "pr-why-05",
-      "es": "Coméis temprano.",
-      "target": "Coméis",
-      "tr": {
-        "hu": "Korán esztek.",
-        "en": "You all eat early.",
-        "es": "Coméis temprano.",
-        "de": "Ihr esst früh."
-      },
-      "options": [
-        {
-          "text": {
-            "hu": "mi (nosotros)",
-            "en": "we (nosotros)",
-            "es": "nosotros",
-            "de": "wir (nosotros)"
-          },
-          "wrong": {
-            "hu": "Ha nosotros lenne, 'Comemos temprano' állna, azaz MI eszünk korán, nem ti.",
-            "en": "If it were nosotros, it would say 'Comemos temprano', meaning WE eat early, not you all.",
-            "es": "Si fuera nosotros, diría 'Comemos temprano', o sea que NOSOTROS comemos temprano, no vosotros.",
-            "de": "Wäre es nosotros, hieße es 'Comemos temprano', also essen WIR früh, nicht ihr."
-          }
-        },
-        {
-          "text": {
-            "hu": "ti (vosotros, Spo.)",
-            "en": "you all (vosotros, Spain)",
-            "es": "vosotros",
-            "de": "ihr (vosotros, Spanien)"
-          }
-        },
-        {
-          "text": {
-            "hu": "ő / Ön",
-            "en": "he/she/you (usted)",
-            "es": "él/ella/usted",
-            "de": "er/sie/Sie"
-          },
-          "wrong": {
-            "hu": "Ha él/ella lenne, 'Come temprano' állna, azaz Ő eszik korán, egyedül, nem ti, többen.",
-            "en": "If it were él/ella, it would say 'Come temprano', meaning HE/SHE eats early, alone, not you all.",
-            "es": "Si fuera él/ella, diría 'Come temprano', o sea que ÉL/ELLA come temprano, solo, no vosotros.",
-            "de": "Wäre es él/ella, hieße es 'Come temprano', also isst ER/SIE allein früh, nicht ihr, mehrere."
           }
         }
       ],

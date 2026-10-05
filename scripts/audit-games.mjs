@@ -23,6 +23,8 @@
  *     non-correct options
  *   - an es-track match pair longer than 3 (es) / 4 (en) words (FB465; the
  *     legacy items are listed in audit-games-match-debt.json, P2, shrink-only)
+ *   - an es-track drill item that names vosotros (pronoun, vuestro, a vosotros
+ *     verb form; FB466; legacy items in audit-games-vosotros-debt.json, same rule)
  *   - a confusables drill whose `correct` is not one of the set's own
  *     `members[].word`, or a 'gap'/'listening' drill with no `sentence`
  *   - a myth item missing an id/level/track/claim/verdict, or a `source`
@@ -667,6 +669,40 @@ function auditMatchLength(item, itemPath, lang, debtKey) {
   });
 }
 
+// FB466: mexikói norma, `vosotros` (névmás, birtokos, ragozott alak) nincs a spanyol sáv gyakorló
+// feladataiban (a lecke magyarázó táblázatai kivétel, azok a `body`-ban vannak, nem az `items`-ben).
+// A korábbi, még vosotros-t említő tételek az `audit-games-vosotros-debt.json` listán vannak (P2, a
+// lista csak fogyhat); ami nincs a listán, az P1. Ha egy listás tétel már tiszta, P1: ki kell venni.
+const VOSOTROS_WORD =
+  /(?<![\p{L}\p{M}/])os(?![\p{L}\p{M}/])|(?<![\p{L}\p{M}])(?:vosotr[oa]s|vuestr[oa]s?|sois|vais|veis|dais|vivís|escribís|abrís|decís|salís|pedís|sentís|dormís|ofrecís|recibís|partís|hablad|comed|vivid|decid|haced|poned|venid|salid|tened|ved|estad|cantad|escuchad|abrid|escribid|mirad|tomad|bebed|leed|volved|pedid|seguid|(?!dieciséis|veintiséis)\p{L}+(?:áis|éis|abais|íais|asteis|isteis|arais|ierais|ríais|aseis|ieseis|areis|iereis))(?![\p{L}\p{M}])/iu;
+const VOSOTROS_DEBT = new Set(JSON.parse(readFileSync(join(ROOT, 'scripts/audit-games-vosotros-debt.json'), 'utf8')));
+let vosotrosDebtSeen = 0;
+
+function firstVosotros(v) {
+  if (typeof v === 'string') return VOSOTROS_WORD.exec(v)?.[0] ?? null;
+  if (Array.isArray(v)) {
+    for (const x of v) { const m = firstVosotros(x); if (m) return m; }
+  } else if (v && typeof v === 'object') {
+    for (const x of Object.values(v)) { const m = firstVosotros(x); if (m) return m; }
+  }
+  return null;
+}
+
+function auditVosotros(item, itemPath, lang, debtKey) {
+  if (lang !== 'es') return;
+  const hit = firstVosotros(item);
+  const inDebt = VOSOTROS_DEBT.has(debtKey);
+  if (!hit) {
+    if (inDebt) p1.push({ path: itemPath, issue: `no vosotros left, remove "${debtKey}" from scripts/audit-games-vosotros-debt.json` });
+    return;
+  }
+  if (inDebt) {
+    vosotrosDebtSeen += 1;
+    return;
+  }
+  p1.push({ path: itemPath, issue: `vosotros in a drill item ("${hit}"): Mexican norm, write it with ustedes or drop the item` });
+}
+
 function auditMatchItem(item, itemPath, lang = 'es', debtKey = '') {
   const pairs = item.pairs;
   if (!Array.isArray(pairs) || pairs.length < 5 || pairs.length > 6) {
@@ -915,6 +951,7 @@ function auditGrammarTopic(topic, filePath, lang = 'es') {
     // NY1: a `tense` mező choice/form/why itemen is megjelenhet (a jelvényhez);
     // ahol van, ugyanaz a from/to ellenőrzés fut, mint a transform itemen.
     if (item.kind !== 'transform' && item.tense) auditTenseField(item.tense, itemPath);
+    auditVosotros(item, itemPath, lang, `${filePath}#${item.id}`);
 
     // LECKE-SEMA 2: match/form saját ellenőrzőt kap, a gap/mark-os ág alatta
     // változatlan (a "mint eddig" spec-ígéret).
@@ -1048,6 +1085,9 @@ function runGrammar() {
 }
 
 runGrammar();
+if (vosotrosDebtSeen > 0) {
+  p2.push({ path: 'grammar/es', issue: `${vosotrosDebtSeen} legacy drill items still name vosotros (scripts/audit-games-vosotros-debt.json)` });
+}
 if (matchDebtSeen > 0) {
   p2.push({ path: 'grammar/es', issue: `${matchDebtSeen} legacy match items still pair whole sentences (scripts/audit-games-match-debt.json)` });
 }
