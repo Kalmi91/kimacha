@@ -11,4 +11,12 @@ describe('data/words-open kártya-javítások (FB1005d)', () => {
     expect(item?.exampleEs).toBe('La tienda está adelante, no muy lejos.');
     expect(item?.exampleEn).toBe('The store is up ahead, not very far.');
   });
+
+  it('FB474: a ser kártya (o11) mondata csak a serrel jó, nincs benne ser/estar-kétértelmű melléknév', () => {
+    const ex = findPcicItem('o11')?.exampleEs ?? '';
+    expect(ex).not.toBe('');
+    expect(ex).not.toMatch(/\b(feliz|contento|triste|aburrid[oa]|list[oa]|buen[oa]|mal[oa]|cansad[oa]|nervios[oa])\b/i);
+    expect(ex).toMatch(/\b(soy|eres|es|somos|son)\b/i);
+    expect(ex).not.toMatch(/\b(estoy|estás|está|estamos|están)\b/i);
+  });
 });
