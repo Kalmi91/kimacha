@@ -35,6 +35,13 @@ describe('data/words-open kártya-javítások (FB1005d)', () => {
     }
   });
 
+  it('FB484: a todavía (o178) kérdés alatti mondata és a felfedett példamondata ugyanazt a jelentést (still) hordozza', () => {
+    const item = findPcicItem('o178');
+    expect(item?.hint).toMatch(/\*still\*/i);
+    expect(item?.exampleEn).toMatch(/\bstill\b/i);
+    expect(item?.exampleEn).not.toMatch(/\byet\b/i);
+  });
+
   it('FB475-478: a lo / le / se kártyán (o84-86) kis angol mondat áll a kérdés alatt, mint a te (o83) kártyán', () => {
     expect(findPcicItem('o83')?.hint).toBeTruthy();
     for (const id of ['o84', 'o85', 'o86']) {
