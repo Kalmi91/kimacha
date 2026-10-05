@@ -957,7 +957,7 @@
       "sentence": "¿A ustedes ___ interesa el cine?",
       "options": [
         "les",
-        "os",
+        "nos",
         "le"
       ],
       "correct": 0,
@@ -968,11 +968,11 @@
         "de": "«ustedes» sind mehrere Personen, und in Mexiko ist die Mehrzahl von «du» ustedes: das Pronomen ist les."
       },
       "wrong": {
-        "os": {
-          "hu": "os: a vosotros névmása. Ide nem illik, mert Mexikóban nem használják: a többes szám második személy ustedes, vagyis les. Helyesen: ¿A ustedes les interesa el cine?",
-          "en": "os: the pronoun of vosotros. It does not fit here, because it is not used in Mexico: the plural «you» is ustedes, so les. Correct: ¿A ustedes les interesa el cine?",
-          "es": "os: pronombre de vosotros. Aquí no encaja, porque en México no se usa: el plural de «tú» es ustedes, por eso les. Correcto: ¿A ustedes les interesa el cine?",
-          "de": "os: das Pronomen von vosotros. Das passt hier nicht, weil es in Mexiko nicht verwendet wird: die Mehrzahl von «du» ist ustedes, also les. Richtig: ¿A ustedes les interesa el cine?"
+        "nos": {
+          "hu": "nos: a többes szám első személy (mi / nosotros) névmása. Mivel a mondat alanya «a ustedes», a helyes névmás les: ¿A ustedes les interesa el cine?",
+          "en": "nos: the first-person plural pronoun (we / nosotros). Since the phrase specifies «a ustedes», the correct pronoun is les: ¿A ustedes les interesa el cine?",
+          "es": "nos: pronombre de primera persona plural (nosotros). Como la frase dice «a ustedes», el pronombre correcto es les: ¿A ustedes les interesa el cine?",
+          "de": "nos: das Pronomen der 1. Person Plural (wir / nosotros). Da der Satz «a ustedes» vorgibt, ist das passende Pronomen les: ¿A ustedes les interesa el cine?"
         },
         "le": {
           "hu": "le: egy személy névmása. Ide nem illik, mert az «ustedes» több személy, tehát les kell. Helyesen: ¿A ustedes les interesa el cine?",
@@ -985,7 +985,12 @@
         "¿A ustedes les gusta el café?",
         "A ustedes les encanta bailar."
       ],
-      "tr": { "hu": "Érdekli önöket a mozi?", "en": "Are you all interested in cinema?", "es": "¿A ustedes les interesa el cine?", "de": "Interessieren Sie sich für das Kino?" }
+      "tr": {
+        "hu": "Érdekli önöket a mozi?",
+        "en": "Are you all interested in cinema?",
+        "es": "¿A ustedes les interesa el cine?",
+        "de": "Interessieren Sie sich für das Kino?"
+      }
     },
     {
       "id": "vcg-12",

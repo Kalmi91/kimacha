@@ -1476,16 +1476,16 @@
         },
         {
           "text": {
-            "hu": "ti (vosotros, Spo.)",
-            "en": "you all (vosotros, Spain)",
-            "es": "vosotros",
-            "de": "ihr (vosotros, Spanien)"
+            "hu": "ők / Önök",
+            "en": "they / you all (ellos/ustedes)",
+            "es": "ellos/ellas/ustedes",
+            "de": "sie / Sie (Plural)"
           },
           "wrong": {
-            "hu": "Ha vosotros lenne, 'Vivíais en Puebla' állna, azaz TI éltetek Pueblában, nem csak ő.",
-            "en": "If it were vosotros, it would say 'Vivíais en Puebla', meaning YOU ALL used to live in Puebla, not just him/her.",
-            "es": "Si fuera vosotros, diría 'Vivíais en Puebla', o sea que VOSOTROS vivíais ahí, no solo él/ella.",
-            "de": "Wäre es vosotros, hieße es 'Vivíais en Puebla', also habt IHR dort gelebt, nicht nur er/sie."
+            "hu": "Ha ellos vagy ustedes lenne, 'Vivían en Puebla' állna többes számban.",
+            "en": "If it were ellos or ustedes, it would say 'Vivían en Puebla' in the plural.",
+            "es": "Si fuera ellos o ustedes, diría 'Vivían en Puebla' en plural.",
+            "de": "Wäre es ellos oder ustedes, hieße es im Plural 'Vivían en Puebla'."
           }
         }
       ],

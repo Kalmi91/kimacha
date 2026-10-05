@@ -681,7 +681,7 @@
     {
       "id": "po-07",
       "sentence": "___ hijo trabaja en un banco. (de usted)",
-      "options": ["Su", "Tu", "Vuestro"],
+      "options": ["Su", "Tu", "Nuestro"],
       "correct": 0,
       "why": {
         "hu": "Az usted birtokosa su, akkor is, ha magyarul „az Ön fia\".",
@@ -696,15 +696,20 @@
           "es": "Esto daría Tu hijo trabaja en un banco, pero tu es informal y no combina con usted; correctamente: Su hijo trabaja en un banco.",
           "de": "Das würde Tu hijo trabaja en un banco ergeben, aber tu ist informell und passt nicht zu usted; richtig: Su hijo trabaja en un banco."
         },
-        "Vuestro": {
-          "hu": "Ezzel a mondat azt jelentené, hogy Vuestro hijo trabaja en un banco, de a vuestro a vosotrosé, és Latin-Amerikában nem használatos; helyesen: Su hijo trabaja en un banco.",
-          "en": "This would give Vuestro hijo trabaja en un banco, but vuestro belongs to vosotros and is not used in Latin America; correctly: Su hijo trabaja en un banco.",
-          "es": "Esto daría Vuestro hijo trabaja en un banco, pero vuestro es de vosotros y no se usa en Latinoamérica; correctamente: Su hijo trabaja en un banco.",
-          "de": "Das würde Vuestro hijo trabaja en un banco ergeben, aber vuestro gehört zu vosotros und wird in Lateinamerika nicht benutzt; richtig: Su hijo trabaja en un banco."
+        "Nuestro": {
+          "hu": "Ezzel a mondat azt jelentené, hogy Nuestro hijo trabaja en un banco, azaz 'A mi fiunk dolgozik egy bankban', nem pedig az Öné; helyesen: Su hijo trabaja en un banco.",
+          "en": "This would mean 'Our son works in a bank' instead of referring to usted's son; correctly: Su hijo trabaja en un banco.",
+          "es": "Esto significaría 'Nuestro hijo trabaja en un banco', refiriéndose a nosotros y no a usted; correctamente: Su hijo trabaja en un banco.",
+          "de": "Das würde 'Unser Sohn arbeitet in einer Bank' bedeuten, statt sich auf usted zu beziehen; richtig: Su hijo trabaja en un banco."
         }
       },
       "examples": ["Su nombre, por favor.", "Su dirección está aquí."],
-      "tr": { "hu": "Az Ön fia egy bankban dolgozik.", "en": "Your son works in a bank.", "es": "Su hijo trabaja en un banco. (de usted)", "de": "Ihr Sohn arbeitet in einer Bank." }
+      "tr": {
+        "hu": "Az Ön fia egy bankban dolgozik.",
+        "en": "Your son works in a bank.",
+        "es": "Su hijo trabaja en un banco. (de usted)",
+        "de": "Ihr Sohn arbeitet in einer Bank."
+      }
     },
     {
       "id": "po-08",

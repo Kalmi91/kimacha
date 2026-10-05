@@ -604,13 +604,28 @@
       "id": "ia-why-01",
       "es": "Ven aquí, por favor.",
       "target": "Ven",
-      "tr": { "hu": "Gyere ide, kérlek.", "en": "Come here, please.", "es": "Ven aquí, por favor.", "de": "Komm her, bitte." },
+      "tr": {
+        "hu": "Gyere ide, kérlek.",
+        "en": "Come here, please.",
+        "es": "Ven aquí, por favor.",
+        "de": "Komm her, bitte."
+      },
       "options": [
         {
-          "text": { "hu": "tú, rendhagyó egy szótagos alak", "en": "tú, an irregular one-syllable form", "es": "tú, forma irregular de una sílaba", "de": "tú, unregelmäßige einsilbige Form" }
+          "text": {
+            "hu": "tú, rendhagyó egy szótagos alak",
+            "en": "tú, an irregular one-syllable form",
+            "es": "tú, forma irregular de una sílaba",
+            "de": "tú, unregelmäßige einsilbige Form"
+          }
         },
         {
-          "text": { "hu": "usted, subjuntivóból jövő alak", "en": "usted, a form from the subjunctive", "es": "usted, forma del subjuntivo", "de": "usted, eine Form vom Subjuntivo" },
+          "text": {
+            "hu": "usted, subjuntivóból jövő alak",
+            "en": "usted, a form from the subjunctive",
+            "es": "usted, forma del subjuntivo",
+            "de": "usted, eine Form vom Subjuntivo"
+          },
           "wrong": {
             "hu": "Nincs subjuntivo-alak a mondatban, hanem a venir rendhagyó tú-alakja: ven.",
             "en": "There is no subjunctive form in the sentence, but venir's irregular tú form: ven.",
@@ -619,12 +634,17 @@
           }
         },
         {
-          "text": { "hu": "vosotros, spanyolországi alak", "en": "vosotros, a Spain-only form", "es": "vosotros, forma solo de España", "de": "vosotros, eine nur in Spanien gebräuchliche Form" },
+          "text": {
+            "hu": "nosotros, felszólító alak",
+            "en": "nosotros, imperative form",
+            "es": "nosotros, forma de imperativo",
+            "de": "nosotros, Imperativform"
+          },
           "wrong": {
-            "hu": "Nincs vosotros-alak a mondatban, a \"ven\" a tú rendhagyó formája, nem -d végű.",
-            "en": "There is no vosotros form in the sentence, \"ven\" is tú's irregular form, it does not end in -d.",
-            "es": "No hay una forma de vosotros en la frase, \"ven\" es la forma irregular de tú, no termina en -d.",
-            "de": "Es gibt keine vosotros-Form im Satz, \"ven\" ist die unregelmäßige tú-Form, sie endet nicht auf -d."
+            "hu": "A mondatban nem nós-alak szerepel; a nosotros-forma a \"vengamos\" lenne, míg a \"ven\" egyes szám második személyű.",
+            "en": "There is no nosotros form in the sentence; the nosotros form would be \"vengamos\", whereas \"ven\" is for tú.",
+            "es": "No hay una forma de nosotros en la frase; la forma correspondiente sería \"vengamos\", mientras que \"ven\" se dirige a tú.",
+            "de": "Es steht keine nosotros-Form im Satz; für nosotros hieße es \"vengamos\", während \"ven\" an tú gerichtet ist."
           }
         }
       ],
@@ -666,13 +686,28 @@
       "id": "ia-why-03",
       "es": "Hagan la tarea juntos.",
       "target": "Hagan",
-      "tr": { "hu": "Csináljátok meg együtt a házi feladatot.", "en": "Do the homework together.", "es": "Hagan la tarea juntos.", "de": "Macht die Hausaufgabe zusammen." },
+      "tr": {
+        "hu": "Csináljátok meg együtt a házi feladatot.",
+        "en": "Do the homework together.",
+        "es": "Hagan la tarea juntos.",
+        "de": "Macht die Hausaufgabe zusammen."
+      },
       "options": [
         {
-          "text": { "hu": "ustedes, subjuntivóból jövő rendhagyó alak, többes szám", "en": "ustedes, an irregular subjunctive form, plural", "es": "ustedes, forma irregular del subjuntivo, plural", "de": "ustedes, eine unregelmäßige Subjuntivo-Form, Plural" }
+          "text": {
+            "hu": "ustedes, subjuntivóból jövő rendhagyó alak, többes szám",
+            "en": "ustedes, an irregular subjunctive form, plural",
+            "es": "ustedes, forma irregular del subjuntivo, plural",
+            "de": "ustedes, eine unregelmäßige Subjuntivo-Form, Plural"
+          }
         },
         {
-          "text": { "hu": "tú, rendhagyó egy szótagos alak", "en": "tú, an irregular one-syllable form", "es": "tú, forma irregular de una sílaba", "de": "tú, unregelmäßige einsilbige Form" },
+          "text": {
+            "hu": "tú, rendhagyó egy szótagos alak",
+            "en": "tú, an irregular one-syllable form",
+            "es": "tú, forma irregular de una sílaba",
+            "de": "tú, unregelmäßige einsilbige Form"
+          },
           "wrong": {
             "hu": "Nincs tú-alak a mondatban, a \"hagan\" többeknek szól, nem egy embernek.",
             "en": "There is no tú form in the sentence, \"hagan\" addresses several people, not one.",
@@ -681,12 +716,17 @@
           }
         },
         {
-          "text": { "hu": "vosotros, spanyolországi alak", "en": "vosotros, a Spain-only form", "es": "vosotros, forma solo de España", "de": "vosotros, eine nur in Spanien gebräuchliche Form" },
+          "text": {
+            "hu": "nosotros, felszólító többes számú alak",
+            "en": "nosotros, plural imperative form",
+            "es": "nosotros, forma plural del imperativo",
+            "de": "nosotros, Pluralform des Imperativs"
+          },
           "wrong": {
-            "hu": "Nincs vosotros-alak a mondatban, Mexikóban az ustedes helyettesíti a vosotrost, a \"hagan\" nem -d végű.",
-            "en": "There is no vosotros form in the sentence, in Mexico ustedes replaces vosotros, \"hagan\" does not end in -d.",
-            "es": "No hay una forma de vosotros en la frase, en México ustedes reemplaza a vosotros, \"hagan\" no termina en -d.",
-            "de": "Es gibt keine vosotros-Form im Satz, in Mexiko ersetzt ustedes das vosotros, \"hagan\" endet nicht auf -d."
+            "hu": "A mondatban nem nosotros-alak szerepel, hanem ustedes; nosotros esetében az alak \"hagamos\" lenne.",
+            "en": "There is no nosotros form in the sentence, but ustedes; the nosotros form would be \"hagamos\".",
+            "es": "No hay una forma de nosotros en la frase, sino de ustedes; para nosotros la forma sería \"hagamos\".",
+            "de": "Im Satz steht keine nosotros-Form, sondern ustedes; für nosotros würde die Form \"hagamos\" lauten."
           }
         }
       ],
@@ -728,22 +768,42 @@
       "id": "ia-why-05",
       "es": "Hablen más alto, por favor.",
       "target": "Hablen",
-      "tr": { "hu": "Beszéljetek hangosabban, kérlek.", "en": "Speak louder, please.", "es": "Hablen más alto, por favor.", "de": "Sprecht lauter, bitte." },
+      "tr": {
+        "hu": "Beszéljetek hangosabban, kérlek.",
+        "en": "Speak louder, please.",
+        "es": "Hablen más alto, por favor.",
+        "de": "Sprecht lauter, bitte."
+      },
       "options": [
         {
-          "text": { "hu": "vosotros, spanyolországi alak (-r → -d)", "en": "vosotros, a Spain-only form (-r → -d)", "es": "vosotros, forma solo de España (-r → -d)", "de": "vosotros, eine nur in Spanien gebräuchliche Form (-r → -d)" },
+          "text": {
+            "hu": "usted, egyes számú subjuntivo-alak",
+            "en": "usted, singular subjunctive form",
+            "es": "usted, forma singular del subjuntivo",
+            "de": "usted, Singularform des Subjuntivo"
+          },
           "wrong": {
-            "hu": "Nincs vosotros-alak a mondatban, a \"hablen\" nem -d végű; a vosotros-alak (\"hablad\") csak Spanyolországban él.",
-            "en": "There is no vosotros form in the sentence, \"hablen\" does not end in -d; the vosotros form (\"hablad\") only lives on in Spain.",
-            "es": "No hay una forma de vosotros en la frase, \"hablen\" no termina en -d; la forma de vosotros (\"hablad\") solo se usa en España.",
-            "de": "Es gibt keine vosotros-Form im Satz, \"hablen\" endet nicht auf -d; die vosotros-Form (\"hablad\") gibt es nur in Spanien."
+            "hu": "A mondatban nem az egyes számú usted áll, hanem többes számú ustedes; usted esetén az alak \"hable\" lenne.",
+            "en": "The sentence does not use singular usted, but plural ustedes; with usted the form would be \"hable\".",
+            "es": "La frase no usa el singular usted, sino el plural ustedes; con usted la forma sería \"hable\".",
+            "de": "Im Satz steht nicht der Singular usted, sondern der Plural ustedes; für usted würde die Form \"hable\" lauten."
           }
         },
         {
-          "text": { "hu": "ustedes, subjuntivóból jövő alak", "en": "ustedes, a form from the subjunctive", "es": "ustedes, forma del subjuntivo", "de": "ustedes, eine Form vom Subjuntivo" }
+          "text": {
+            "hu": "ustedes, subjuntivóból jövő alak",
+            "en": "ustedes, a form from the subjunctive",
+            "es": "ustedes, forma del subjuntivo",
+            "de": "ustedes, eine Form vom Subjuntivo"
+          }
         },
         {
-          "text": { "hu": "tú, szabályos alak", "en": "tú, regular form", "es": "tú, forma regular", "de": "tú, regelmäßige Form" },
+          "text": {
+            "hu": "tú, szabályos alak",
+            "en": "tú, regular form",
+            "es": "tú, forma regular",
+            "de": "tú, regelmäßige Form"
+          },
           "wrong": {
             "hu": "Nincs tú-alak a mondatban, a tú-alak \"habla\" lenne, nem \"hablen\".",
             "en": "There is no tú form in the sentence, the tú form would be \"habla\", not \"hablen\".",
@@ -790,13 +850,28 @@
       "id": "ia-why-07",
       "es": "Dímelo ahora, por favor.",
       "target": "Dímelo",
-      "tr": { "hu": "Mondd el nekem most, kérlek.", "en": "Tell it to me now, please.", "es": "Dímelo ahora, por favor.", "de": "Sag es mir jetzt, bitte." },
+      "tr": {
+        "hu": "Mondd el nekem most, kérlek.",
+        "en": "Tell it to me now, please.",
+        "es": "Dímelo ahora, por favor.",
+        "de": "Sag es mir jetzt, bitte."
+      },
       "options": [
         {
-          "text": { "hu": "tú rendhagyó alak, a névmások a végén, egybeírva", "en": "irregular tú form, pronouns at the end, one word", "es": "tú irregular, los pronombres al final, en una palabra", "de": "unregelmäßige tú-Form, Pronomen am Ende, ein Wort" }
+          "text": {
+            "hu": "tú rendhagyó alak, a névmások a végén, egybeírva",
+            "en": "irregular tú form, pronouns at the end, one word",
+            "es": "tú irregular, los pronombres al final, en una palabra",
+            "de": "unregelmäßige tú-Form, Pronomen am Ende, ein Wort"
+          }
         },
         {
-          "text": { "hu": "ustedes, subjuntivóból jövő alak", "en": "ustedes, a form from the subjunctive", "es": "ustedes, forma del subjuntivo", "de": "ustedes, eine Form vom Subjuntivo" },
+          "text": {
+            "hu": "ustedes, subjuntivóból jövő alak",
+            "en": "ustedes, a form from the subjunctive",
+            "es": "ustedes, forma del subjuntivo",
+            "de": "ustedes, eine Form vom Subjuntivo"
+          },
           "wrong": {
             "hu": "Nincs ustedes-alak a mondatban, a \"dímelo\" egy embernek szól, a decir tú-alakja.",
             "en": "There is no ustedes form in the sentence, \"dímelo\" addresses one person, decir's tú form.",
@@ -805,12 +880,17 @@
           }
         },
         {
-          "text": { "hu": "vosotros, spanyolországi alak", "en": "vosotros, a Spain-only form", "es": "vosotros, forma solo de España", "de": "vosotros, eine nur in Spanien gebräuchliche Form" },
+          "text": {
+            "hu": "usted udvarias felszólító alak",
+            "en": "usted formal imperative form",
+            "es": "usted, forma formal de imperativo",
+            "de": "usted, höfliche Imperativform"
+          },
           "wrong": {
-            "hu": "Nincs vosotros-alak a mondatban, a \"dímelo\" nem -d végű forma.",
-            "en": "There is no vosotros form in the sentence, \"dímelo\" does not end in -d.",
-            "es": "No hay una forma de vosotros en la frase, \"dímelo\" no termina en -d.",
-            "de": "Es gibt keine vosotros-Form im Satz, \"dímelo\" endet nicht auf -d."
+            "hu": "Az ustedhez tartozó felszólító alak a \"Dígamelo\" lenne, a \"Dímelo\" a tegező forma.",
+            "en": "The imperative form for usted would be \"Dígamelo\", whereas \"Dímelo\" is the informal tú form.",
+            "es": "La forma de imperativo para usted sería \"Dígamelo\", mientras que \"Dímelo\" corresponde a tú.",
+            "de": "Die Imperativform für usted wäre \"Dígamelo\", wohingegen \"Dímelo\" die tú-Form ist."
           }
         }
       ],
