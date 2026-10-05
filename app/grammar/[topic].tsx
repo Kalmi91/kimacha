@@ -153,6 +153,8 @@ export default function GrammarLessonScreen() {
           <View style={{ width: 24 }} />
         </View>
         <Text style={[styles.empty, { color: colors.tabIconDefault }]}>{s.grammar.soonLong}</Text>
+        {/* FB467: a még meg nem írt lecke lapján is ott a 💬. */}
+        <FeedbackButton level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard={`grammar:${topicId}:soon`} />
       </View>
     );
   }
@@ -336,6 +338,7 @@ export default function GrammarLessonScreen() {
           topicId={String(topicId)}
           learnedLang={learnedLang}
           contentLang={contentLang}
+          level={level}
           previous={lessonTestResult}
           hasNextTopic={!!nextWrittenTopic(learnedLang, String(topicId))}
           onSave={(r) => saveRow(lessonTestKey(String(topicId)), r.passed ? 'passed' : 'failed', r)}
@@ -539,6 +542,8 @@ export default function GrammarLessonScreen() {
               <Text style={[styles.ghostBtnText, { color: g.mu }]}>{s.grammar.backToSyllabus}</Text>
             </Pressable>
           </ScrollView>
+          {/* FB467: a feladat vége / eredmény-lapon is ott a 💬. */}
+          <FeedbackButton level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard={`grammar:${topicId}:done`} />
         </View>
       );
     }
@@ -613,6 +618,7 @@ export default function GrammarLessonScreen() {
             <Text style={[styles.ghostBtnText, { color: colors.tabIconDefault }]}>{s.grammar.backToSyllabus}</Text>
           </Pressable>
         </View>
+        <FeedbackButton level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard={`grammar:${topicId}:done`} />
       </View>
     );
   }
@@ -838,7 +844,7 @@ const styles = StyleSheet.create({
   brutalBtnWrap: { marginTop: 10, alignSelf: 'stretch' },
   brutalBtn: { paddingVertical: 14, alignItems: 'center' },
   brutalBtnText: { fontSize: 16, fontWeight: '500', textTransform: 'uppercase', textAlign: 'center' },
-  brutalDoneBody: { padding: 16, paddingBottom: 60, gap: 12 },
+  brutalDoneBody: { padding: 16, paddingBottom: 130, gap: 12 },
   brutalScoreBox: { padding: 24, alignItems: 'center', gap: 6 },
   brutalScore: { fontSize: 56, fontWeight: '500' },
   brutalNote: { fontSize: 13, fontWeight: '500', textAlign: 'center' },
