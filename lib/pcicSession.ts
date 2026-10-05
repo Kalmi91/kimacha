@@ -151,6 +151,28 @@ export function pcicSessionNewLimit({
   return budget - (introducedAllLevels - introducedThisLevel);
 }
 
+/**
+ * FB499 ("azt írja, hogy van még 40 szó, miért nem dobja fel?"): a szint-választó vizsga-sora kiírja, mennyi
+ * szó hiányzik a feloldáshoz ("N to go"), a "Practice words" gomb viszont a napi keret kimerülése után semmit
+ * nem adott. Ha a mai keret (limit + bónusz) már elfogyott, a gomb a hiányzóból ad új szót, legfeljebb a
+ * legnagyobb +N lépésnyit, hogy egy szintre ne zúduljon rá az egész hiány; ha még van keret, nem bővít (a
+ * szokásos napi adag jön). A visszaadott érték a kért bónusz-lépés (0 = nincs bővítés).
+ */
+export function practiceTopUpStep({
+  limit,
+  bonus,
+  introducedAllLevels,
+  missing,
+}: {
+  limit: number;
+  bonus: number;
+  introducedAllLevels: number;
+  missing: number;
+}): number {
+  if (missing <= 0 || limit + bonus > introducedAllLevels) return 0;
+  return Math.min(missing, Math.max(...PCIC_NEW_BONUS_STEPS));
+}
+
 // FB387/395 (PLAN-fb0924 1b. lépés, D2 = b): a napi keret MINDEN kártyát számol
 // (szó, kifejezés, mondat, lánc-tag), ahogy eddig - ez nem változik. Ami hiányzott:
 // a fejléc nem mutatta meg, MIBŐL áll a mai bevezetés, ezért egy 10-es keretnél a
