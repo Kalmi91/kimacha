@@ -21,8 +21,9 @@
  *     `sentence` has no "___" blank
  *   - a grammar item missing a `wrong[...]` explanation for one of its
  *     non-correct options
- *   - an es-track match pair longer than 3 (es) / 4 (en) words (FB465; the
- *     legacy items are listed in audit-games-match-debt.json, P2, shrink-only)
+ *   - a match pair longer than 3 (es) / 4 (en) words in the es track, 4 / 4 in
+ *     the en track (FB465; the legacy items are listed in
+ *     audit-games-match-debt.json and audit-games-match-debt-en.json, P2, shrink-only)
  *   - an es-track drill item that names vosotros (pronoun, vuestro, a vosotros
  *     verb form; FB466; legacy items in audit-games-vosotros-debt.json, same rule)
  *   - a confusables drill whose `correct` is not one of the set's own
@@ -640,32 +641,36 @@ function auditLessonSpeak(topic, path, dirLang = 'es') {
   }
 }
 
-// FB465: a párosító a különböző szavakat párosítja (tuve ~ I had), nem teljes mondatot. Spanyol
-// sávban egy pár oldala max 3 (es) / 4 (en, a "used to" miatt) szó. A korábbi, még hosszú
-// tételek az `audit-games-match-debt.json` listán vannak (P2, a lista csak fogyhat); ami nincs
+// FB465: a párosító a különböző szavakat párosítja (tuve ~ I had), nem teljes mondatot. Egy pár
+// oldala max 3 (es) / 4 (en, a "used to" miatt) szó a spanyol sávban; az angol sávban (es→en,
+// Kálmán 2026-10-05) mindkét oldal max 4 szó (angol: "she used to live", spanyol: "no había
+// podido"). A korábbi, még hosszú tételek az `audit-games-match-debt.json` (es sáv) és az
+// `audit-games-match-debt-en.json` (en sáv) listán vannak (P2, a listák csak fogyhatnak); ami nincs
 // a listán, az P1. Ha egy listás tétel már megfelel, P1: ki kell venni a listáról.
-const MATCH_MAX_WORDS = { es: 3, en: 4 };
-const MATCH_DEBT = new Set(JSON.parse(readFileSync(join(ROOT, 'scripts/audit-games-match-debt.json'), 'utf8')));
-let matchDebtSeen = 0;
+const MATCH_MAX_WORDS = { es: { es: 3, en: 4 }, en: { es: 4, en: 4 } };
+const MATCH_DEBT_FILES = { es: 'scripts/audit-games-match-debt.json', en: 'scripts/audit-games-match-debt-en.json' };
+const MATCH_DEBT = new Set(
+  Object.values(MATCH_DEBT_FILES).flatMap((f) => JSON.parse(readFileSync(join(ROOT, f), 'utf8'))),
+);
+const matchDebtSeen = { es: 0, en: 0 };
 const shortWordCount = (s) => String(s ?? '').trim().split(/\s+/).filter(Boolean).length;
 
 function auditMatchLength(item, itemPath, lang, debtKey) {
-  if (lang !== 'es') return;
-  const long = (item.pairs ?? []).filter(
-    (p) => shortWordCount(p?.es) > MATCH_MAX_WORDS.es || shortWordCount(p?.en) > MATCH_MAX_WORDS.en,
-  );
+  const max = MATCH_MAX_WORDS[lang];
+  if (!max) return;
+  const long = (item.pairs ?? []).filter((p) => shortWordCount(p?.es) > max.es || shortWordCount(p?.en) > max.en);
   const inDebt = MATCH_DEBT.has(debtKey);
   if (long.length === 0) {
-    if (inDebt) p1.push({ path: itemPath, issue: `match item is short now, remove "${debtKey}" from scripts/audit-games-match-debt.json` });
+    if (inDebt) p1.push({ path: itemPath, issue: `match item is short now, remove "${debtKey}" from ${MATCH_DEBT_FILES[lang]}` });
     return;
   }
   if (inDebt) {
-    matchDebtSeen += 1;
+    matchDebtSeen[lang] += 1;
     return;
   }
   p1.push({
     path: itemPath,
-    issue: `match pair longer than ${MATCH_MAX_WORDS.es} (es) / ${MATCH_MAX_WORDS.en} (en) words, pair the differing word only: "${long[0].es}"`,
+    issue: `match pair longer than ${max.es} (es) / ${max.en} (en) words, pair the differing word only: "${long[0].es}"`,
   });
 }
 
@@ -1088,8 +1093,10 @@ runGrammar();
 if (vosotrosDebtSeen > 0) {
   p2.push({ path: 'grammar/es', issue: `${vosotrosDebtSeen} legacy drill items still name vosotros (scripts/audit-games-vosotros-debt.json)` });
 }
-if (matchDebtSeen > 0) {
-  p2.push({ path: 'grammar/es', issue: `${matchDebtSeen} legacy match items still pair whole sentences (scripts/audit-games-match-debt.json)` });
+for (const track of ['es', 'en']) {
+  if (matchDebtSeen[track] > 0) {
+    p2.push({ path: `grammar/${track}`, issue: `${matchDebtSeen[track]} legacy match items still pair whole sentences (${MATCH_DEBT_FILES[track]})` });
+  }
 }
 
 // ---------------------------------------------------------------------------
