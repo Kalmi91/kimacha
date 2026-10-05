@@ -364,7 +364,9 @@ export default function MockExamScreen() {
         <Text testID="mock-task-counter" style={[styles.counter, { color: colors.textMuted }]}>
           {s.taskOf(taskIdx + 1, paper.tasks.length)}
         </Text>
-        <ScrollView contentContainerStyle={styles.body} keyboardShouldPersistTaps="handled" keyboardDismissMode="on-drag">
+        {/* FB491: a görgető is feladatonként újramountol (key), különben az új feladat az előző görgetési
+            helyzetében nyílik: az eleje kicsúszik, a "Next task" gomb pedig ugyanott marad az ujj alatt. */}
+        <ScrollView key={task.id} contentContainerStyle={styles.body} keyboardShouldPersistTaps="handled" keyboardDismissMode="on-drag">
           <MockTaskCard
             key={task.id}
             task={task}
