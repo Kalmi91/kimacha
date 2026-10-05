@@ -9,6 +9,7 @@ import {
   nextPcicNewBonus,
   pcicNewBudget,
   pcicSessionNewLimit,
+  practiceTopUpStep,
   pickStrongerSm2Card,
   thinSentences,
   type QueuedSm2Card,
@@ -466,5 +467,32 @@ describe('pcicSessionNewLimit (FB452)', () => {
     expect(next).toBe(42);
     const limit = pcicSessionNewLimit({ limit: 10, bonus: next, introducedAllLevels: 40, introducedThisLevel: 0 });
     expect(newCount([], fresh('a2', 100), limit)).toBe(12);
+  });
+});
+
+// FB499 ("van még 40 szó, miért nem dobja fel?"): a "Practice words" gomb a hiányzóból ad, ha a keret elfogyott.
+describe('practiceTopUpStep (FB499)', () => {
+  it('kimerült keret: a hiányzó szavakból ad, legfeljebb a legnagyobb +N lépésnyit', () => {
+    expect(practiceTopUpStep({ limit: 10, bonus: 0, introducedAllLevels: 10, missing: 40 })).toBe(15);
+    expect(practiceTopUpStep({ limit: 10, bonus: 0, introducedAllLevels: 10, missing: 3 })).toBe(3);
+    expect(practiceTopUpStep({ limit: 10, bonus: 15, introducedAllLevels: 25, missing: 304 })).toBe(15);
+  });
+
+  it('van még napi keret: nem bővít', () => {
+    expect(practiceTopUpStep({ limit: 10, bonus: 0, introducedAllLevels: 0, missing: 40 })).toBe(0);
+    expect(practiceTopUpStep({ limit: 10, bonus: 15, introducedAllLevels: 24, missing: 40 })).toBe(0);
+  });
+
+  it('nincs hiányzó szó: nem bővít', () => {
+    expect(practiceTopUpStep({ limit: 10, bonus: 0, introducedAllLevels: 10, missing: 0 })).toBe(0);
+  });
+
+  it('a lépés a kért darabszámot adja a kerethez: a keret kimerült, majd pontosan annyi új szó jön', () => {
+    const step = practiceTopUpStep({ limit: 10, bonus: 0, introducedAllLevels: 10, missing: 40 });
+    const next = nextPcicNewBonus({ limit: 10, bonus: 0, introducedToday: 10 }, step);
+    const limit = pcicSessionNewLimit({ limit: 10, bonus: next, introducedAllLevels: 10, introducedThisLevel: 10 });
+    const done = Array.from({ length: 10 }, (_, i) => sm2Review(sm2NewCard(`a1-${i}`), 'good', TODAY));
+    const order = Array.from({ length: 60 }, (_, i) => `a1-new-${i}`);
+    expect(pickSm2Session(done, order, TODAY, limit).filter((c) => c.state === 'new')).toHaveLength(15);
   });
 });
