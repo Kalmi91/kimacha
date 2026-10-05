@@ -22,6 +22,8 @@ import openB2 from '@/data/words-open/b2.json';
 // FB481/495/496/498 (PLAN-fb1005e): kézzel írt (i) magyarázat egyes kártyákra, `o<order>` kulccsal,
 // angol szöveggel; a Learn-kártya kis (i) gombja nyitja (PcicItem.note).
 import openNotes from '@/data/words-open/notes.json';
+// FB498/500 (PLAN-fb1005i): kép egyes kártyákhoz (Wikimedia Commons), az (i) alatt a magyarázat mellett.
+import { wordImageFor, type WordImage } from '@/data/wordImages';
 
 export type PcicKind = 'word' | 'phrase' | 'sentence' | 'pattern';
 export type PcicLevel = 'A1' | 'A2' | 'B1' | 'B2';
@@ -68,6 +70,8 @@ export interface PcicItem {
   hint?: string;
   // FB481/495/496/498: (i) magyarázat (angol, rövid), csak a kézzel jegyzetelt kártyákon van.
   note?: string;
+  // FB498/500: a kártya képe (szerzővel és licenccel), csak a képpel ellátott kártyákon van.
+  image?: WordImage;
 }
 
 const LEADING_ARTICLE_RE = /^(el|la|los|las|un|una)\s+/i;
@@ -140,6 +144,7 @@ function itemsFromOpen(cards: OpenCard[]): PcicItem[] {
     exampleEn: c.sentence_en || undefined,
     hint: c.hint_en || undefined,
     note: (openNotes as Record<string, string>)[`o${c.order}`],
+    image: wordImageFor(`o${c.order}`),
   }));
 }
 
