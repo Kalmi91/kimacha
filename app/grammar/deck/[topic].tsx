@@ -295,6 +295,8 @@ export default function TableDeckScreen() {
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         {header}
+        {/* FB467: az üres pakli lapján is ott a 💬. */}
+        <FeedbackButton level={level} languagePair={deckPair} currentCard={`grammar:${topicId}:tabledeck:empty`} />
       </View>
     );
   }
