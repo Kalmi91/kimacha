@@ -220,6 +220,1272 @@
       ]
     },
     {
+      "kind": "table",
+      "id": "ind-reg-salir",
+      "title": {
+        "hu": "salir (indefinido)",
+        "en": "salir (preterite)",
+        "es": "salir (perfecto simple)",
+        "de": "salir (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "salir",
+          "en": "salir",
+          "es": "salir",
+          "de": "salir"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "salí"
+        ],
+        [
+          "tú",
+          "saliste"
+        ],
+        [
+          "él/ella/usted",
+          "salió"
+        ],
+        [
+          "nosotros",
+          "salimos"
+        ],
+        [
+          "vosotros",
+          "salisteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "salieron"
+        ]
+      ],
+      "enPrompt": [
+        ["I left"],
+        ["you left"],
+        ["she left"],
+        ["we left"],
+        ["you all left"],
+        ["they left"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind-reg-llegar",
+      "title": {
+        "hu": "llegar (indefinido)",
+        "en": "llegar (preterite)",
+        "es": "llegar (perfecto simple)",
+        "de": "llegar (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "llegar",
+          "en": "llegar",
+          "es": "llegar",
+          "de": "llegar"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "llegué"
+        ],
+        [
+          "tú",
+          "llegaste"
+        ],
+        [
+          "él/ella/usted",
+          "llegó"
+        ],
+        [
+          "nosotros",
+          "llegamos"
+        ],
+        [
+          "vosotros",
+          "llegasteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "llegaron"
+        ]
+      ],
+      "enPrompt": [
+        ["I arrived"],
+        ["you arrived"],
+        ["she arrived"],
+        ["we arrived"],
+        ["you all arrived"],
+        ["they arrived"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind-reg-empezar",
+      "title": {
+        "hu": "empezar (indefinido)",
+        "en": "empezar (preterite)",
+        "es": "empezar (perfecto simple)",
+        "de": "empezar (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "empezar",
+          "en": "empezar",
+          "es": "empezar",
+          "de": "empezar"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "empecé"
+        ],
+        [
+          "tú",
+          "empezaste"
+        ],
+        [
+          "él/ella/usted",
+          "empezó"
+        ],
+        [
+          "nosotros",
+          "empezamos"
+        ],
+        [
+          "vosotros",
+          "empezasteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "empezaron"
+        ]
+      ],
+      "enPrompt": [
+        ["I started"],
+        ["you started"],
+        ["she started"],
+        ["we started"],
+        ["you all started"],
+        ["they started"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind-reg-cenar",
+      "title": {
+        "hu": "cenar (indefinido)",
+        "en": "cenar (preterite)",
+        "es": "cenar (perfecto simple)",
+        "de": "cenar (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "cenar",
+          "en": "cenar",
+          "es": "cenar",
+          "de": "cenar"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "cené"
+        ],
+        [
+          "tú",
+          "cenaste"
+        ],
+        [
+          "él/ella/usted",
+          "cenó"
+        ],
+        [
+          "nosotros",
+          "cenamos"
+        ],
+        [
+          "vosotros",
+          "cenasteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "cenaron"
+        ]
+      ],
+      "enPrompt": [
+        ["I had dinner"],
+        ["you had dinner"],
+        ["she had dinner"],
+        ["we had dinner"],
+        ["you all had dinner"],
+        ["they had dinner"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind-reg-comprar",
+      "title": {
+        "hu": "comprar (indefinido)",
+        "en": "comprar (preterite)",
+        "es": "comprar (perfecto simple)",
+        "de": "comprar (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "comprar",
+          "en": "comprar",
+          "es": "comprar",
+          "de": "comprar"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "compré"
+        ],
+        [
+          "tú",
+          "compraste"
+        ],
+        [
+          "él/ella/usted",
+          "compró"
+        ],
+        [
+          "nosotros",
+          "compramos"
+        ],
+        [
+          "vosotros",
+          "comprasteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "compraron"
+        ]
+      ],
+      "enPrompt": [
+        ["I bought"],
+        ["you bought"],
+        ["she bought"],
+        ["we bought"],
+        ["you all bought"],
+        ["they bought"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind-reg-buscar",
+      "title": {
+        "hu": "buscar (indefinido)",
+        "en": "buscar (preterite)",
+        "es": "buscar (perfecto simple)",
+        "de": "buscar (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "buscar",
+          "en": "buscar",
+          "es": "buscar",
+          "de": "buscar"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "busqué"
+        ],
+        [
+          "tú",
+          "buscaste"
+        ],
+        [
+          "él/ella/usted",
+          "buscó"
+        ],
+        [
+          "nosotros",
+          "buscamos"
+        ],
+        [
+          "vosotros",
+          "buscasteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "buscaron"
+        ]
+      ],
+      "enPrompt": [
+        ["I looked for"],
+        ["you looked for"],
+        ["she looked for"],
+        ["we looked for"],
+        ["you all looked for"],
+        ["they looked for"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind-reg-recibir",
+      "title": {
+        "hu": "recibir (indefinido)",
+        "en": "recibir (preterite)",
+        "es": "recibir (perfecto simple)",
+        "de": "recibir (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "recibir",
+          "en": "recibir",
+          "es": "recibir",
+          "de": "recibir"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "recibí"
+        ],
+        [
+          "tú",
+          "recibiste"
+        ],
+        [
+          "él/ella/usted",
+          "recibió"
+        ],
+        [
+          "nosotros",
+          "recibimos"
+        ],
+        [
+          "vosotros",
+          "recibisteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "recibieron"
+        ]
+      ],
+      "enPrompt": [
+        ["I received"],
+        ["you received"],
+        ["she received"],
+        ["we received"],
+        ["you all received"],
+        ["they received"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind-reg-cambiar",
+      "title": {
+        "hu": "cambiar (indefinido)",
+        "en": "cambiar (preterite)",
+        "es": "cambiar (perfecto simple)",
+        "de": "cambiar (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "cambiar",
+          "en": "cambiar",
+          "es": "cambiar",
+          "de": "cambiar"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "cambié"
+        ],
+        [
+          "tú",
+          "cambiaste"
+        ],
+        [
+          "él/ella/usted",
+          "cambió"
+        ],
+        [
+          "nosotros",
+          "cambiamos"
+        ],
+        [
+          "vosotros",
+          "cambiasteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "cambiaron"
+        ]
+      ],
+      "enPrompt": [
+        ["I changed"],
+        ["you changed"],
+        ["she changed"],
+        ["we changed"],
+        ["you all changed"],
+        ["they changed"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind-reg-terminar",
+      "title": {
+        "hu": "terminar (indefinido)",
+        "en": "terminar (preterite)",
+        "es": "terminar (perfecto simple)",
+        "de": "terminar (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "terminar",
+          "en": "terminar",
+          "es": "terminar",
+          "de": "terminar"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "terminé"
+        ],
+        [
+          "tú",
+          "terminaste"
+        ],
+        [
+          "él/ella/usted",
+          "terminó"
+        ],
+        [
+          "nosotros",
+          "terminamos"
+        ],
+        [
+          "vosotros",
+          "terminasteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "terminaron"
+        ]
+      ],
+      "enPrompt": [
+        ["I finished"],
+        ["you finished"],
+        ["she finished"],
+        ["we finished"],
+        ["you all finished"],
+        ["they finished"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind-reg-vender",
+      "title": {
+        "hu": "vender (indefinido)",
+        "en": "vender (preterite)",
+        "es": "vender (perfecto simple)",
+        "de": "vender (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "vender",
+          "en": "vender",
+          "es": "vender",
+          "de": "vender"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "vendí"
+        ],
+        [
+          "tú",
+          "vendiste"
+        ],
+        [
+          "él/ella/usted",
+          "vendió"
+        ],
+        [
+          "nosotros",
+          "vendimos"
+        ],
+        [
+          "vosotros",
+          "vendisteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "vendieron"
+        ]
+      ],
+      "enPrompt": [
+        ["I sold"],
+        ["you sold"],
+        ["she sold"],
+        ["we sold"],
+        ["you all sold"],
+        ["they sold"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind-reg-beber",
+      "title": {
+        "hu": "beber (indefinido)",
+        "en": "beber (preterite)",
+        "es": "beber (perfecto simple)",
+        "de": "beber (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "beber",
+          "en": "beber",
+          "es": "beber",
+          "de": "beber"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "bebí"
+        ],
+        [
+          "tú",
+          "bebiste"
+        ],
+        [
+          "él/ella/usted",
+          "bebió"
+        ],
+        [
+          "nosotros",
+          "bebimos"
+        ],
+        [
+          "vosotros",
+          "bebisteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "bebieron"
+        ]
+      ],
+      "enPrompt": [
+        ["I drank"],
+        ["you drank"],
+        ["she drank"],
+        ["we drank"],
+        ["you all drank"],
+        ["they drank"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind-reg-ver",
+      "title": {
+        "hu": "ver (indefinido)",
+        "en": "ver (preterite)",
+        "es": "ver (perfecto simple)",
+        "de": "ver (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "ver",
+          "en": "ver",
+          "es": "ver",
+          "de": "ver"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "vi"
+        ],
+        [
+          "tú",
+          "viste"
+        ],
+        [
+          "él/ella/usted",
+          "vio"
+        ],
+        [
+          "nosotros",
+          "vimos"
+        ],
+        [
+          "vosotros",
+          "visteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "vieron"
+        ]
+      ],
+      "enPrompt": [
+        ["I saw"],
+        ["you saw"],
+        ["she saw"],
+        ["we saw"],
+        ["you all saw"],
+        ["they saw"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind-reg-cerrar",
+      "title": {
+        "hu": "cerrar (indefinido)",
+        "en": "cerrar (preterite)",
+        "es": "cerrar (perfecto simple)",
+        "de": "cerrar (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "cerrar",
+          "en": "cerrar",
+          "es": "cerrar",
+          "de": "cerrar"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "cerré"
+        ],
+        [
+          "tú",
+          "cerraste"
+        ],
+        [
+          "él/ella/usted",
+          "cerró"
+        ],
+        [
+          "nosotros",
+          "cerramos"
+        ],
+        [
+          "vosotros",
+          "cerrasteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "cerraron"
+        ]
+      ],
+      "enPrompt": [
+        ["I closed"],
+        ["you closed"],
+        ["she closed"],
+        ["we closed"],
+        ["you all closed"],
+        ["they closed"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind-reg-romper",
+      "title": {
+        "hu": "romper (indefinido)",
+        "en": "romper (preterite)",
+        "es": "romper (perfecto simple)",
+        "de": "romper (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "romper",
+          "en": "romper",
+          "es": "romper",
+          "de": "romper"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "rompí"
+        ],
+        [
+          "tú",
+          "rompiste"
+        ],
+        [
+          "él/ella/usted",
+          "rompió"
+        ],
+        [
+          "nosotros",
+          "rompimos"
+        ],
+        [
+          "vosotros",
+          "rompisteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "rompieron"
+        ]
+      ],
+      "enPrompt": [
+        ["I broke"],
+        ["you broke"],
+        ["she broke"],
+        ["we broke"],
+        ["you all broke"],
+        ["they broke"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind-reg-explicar",
+      "title": {
+        "hu": "explicar (indefinido)",
+        "en": "explicar (preterite)",
+        "es": "explicar (perfecto simple)",
+        "de": "explicar (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "explicar",
+          "en": "explicar",
+          "es": "explicar",
+          "de": "explicar"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "expliqué"
+        ],
+        [
+          "tú",
+          "explicaste"
+        ],
+        [
+          "él/ella/usted",
+          "explicó"
+        ],
+        [
+          "nosotros",
+          "explicamos"
+        ],
+        [
+          "vosotros",
+          "explicasteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "explicaron"
+        ]
+      ],
+      "enPrompt": [
+        ["I explained"],
+        ["you explained"],
+        ["she explained"],
+        ["we explained"],
+        ["you all explained"],
+        ["they explained"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind-reg-mandar",
+      "title": {
+        "hu": "mandar (indefinido)",
+        "en": "mandar (preterite)",
+        "es": "mandar (perfecto simple)",
+        "de": "mandar (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "mandar",
+          "en": "mandar",
+          "es": "mandar",
+          "de": "mandar"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "mandé"
+        ],
+        [
+          "tú",
+          "mandaste"
+        ],
+        [
+          "él/ella/usted",
+          "mandó"
+        ],
+        [
+          "nosotros",
+          "mandamos"
+        ],
+        [
+          "vosotros",
+          "mandasteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "mandaron"
+        ]
+      ],
+      "enPrompt": [
+        ["I sent"],
+        ["you sent"],
+        ["she sent"],
+        ["we sent"],
+        ["you all sent"],
+        ["they sent"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind-reg-viajar",
+      "title": {
+        "hu": "viajar (indefinido)",
+        "en": "viajar (preterite)",
+        "es": "viajar (perfecto simple)",
+        "de": "viajar (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "viajar",
+          "en": "viajar",
+          "es": "viajar",
+          "de": "viajar"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "viajé"
+        ],
+        [
+          "tú",
+          "viajaste"
+        ],
+        [
+          "él/ella/usted",
+          "viajó"
+        ],
+        [
+          "nosotros",
+          "viajamos"
+        ],
+        [
+          "vosotros",
+          "viajasteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "viajaron"
+        ]
+      ],
+      "enPrompt": [
+        ["I traveled"],
+        ["you traveled"],
+        ["she traveled"],
+        ["we traveled"],
+        ["you all traveled"],
+        ["they traveled"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind-reg-abrir",
+      "title": {
+        "hu": "abrir (indefinido)",
+        "en": "abrir (preterite)",
+        "es": "abrir (perfecto simple)",
+        "de": "abrir (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "abrir",
+          "en": "abrir",
+          "es": "abrir",
+          "de": "abrir"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "abrí"
+        ],
+        [
+          "tú",
+          "abriste"
+        ],
+        [
+          "él/ella/usted",
+          "abrió"
+        ],
+        [
+          "nosotros",
+          "abrimos"
+        ],
+        [
+          "vosotros",
+          "abristeis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "abrieron"
+        ]
+      ],
+      "enPrompt": [
+        ["I opened"],
+        ["you opened"],
+        ["she opened"],
+        ["we opened"],
+        ["you all opened"],
+        ["they opened"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind-reg-esperar",
+      "title": {
+        "hu": "esperar (indefinido)",
+        "en": "esperar (preterite)",
+        "es": "esperar (perfecto simple)",
+        "de": "esperar (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "esperar",
+          "en": "esperar",
+          "es": "esperar",
+          "de": "esperar"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "esperé"
+        ],
+        [
+          "tú",
+          "esperaste"
+        ],
+        [
+          "él/ella/usted",
+          "esperó"
+        ],
+        [
+          "nosotros",
+          "esperamos"
+        ],
+        [
+          "vosotros",
+          "esperasteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "esperaron"
+        ]
+      ],
+      "enPrompt": [
+        ["I waited"],
+        ["you waited"],
+        ["she waited"],
+        ["we waited"],
+        ["you all waited"],
+        ["they waited"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind-reg-visitar",
+      "title": {
+        "hu": "visitar (indefinido)",
+        "en": "visitar (preterite)",
+        "es": "visitar (perfecto simple)",
+        "de": "visitar (Indefinido)"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "visitar",
+          "en": "visitar",
+          "es": "visitar",
+          "de": "visitar"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "visité"
+        ],
+        [
+          "tú",
+          "visitaste"
+        ],
+        [
+          "él/ella/usted",
+          "visitó"
+        ],
+        [
+          "nosotros",
+          "visitamos"
+        ],
+        [
+          "vosotros",
+          "visitasteis"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "visitaron"
+        ]
+      ],
+      "enPrompt": [
+        ["I visited"],
+        ["you visited"],
+        ["she visited"],
+        ["we visited"],
+        ["you all visited"],
+        ["they visited"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "indefinido-regular-words",
+      "title": {
+        "hu": "Szavak a feladatokból",
+        "en": "Words from the exercises",
+        "es": "Palabras de los ejercicios",
+        "de": "Wörter aus den Übungen"
+      },
+      "header": [
+        {
+          "hu": "Jelentés",
+          "en": "Meaning",
+          "es": "Significado",
+          "de": "Bedeutung"
+        },
+        {
+          "hu": "Spanyolul",
+          "en": "Spanish",
+          "es": "En español",
+          "de": "Spanisch"
+        }
+      ],
+      "rows": [
+        [
+          "today",
+          "hoy"
+        ],
+        [
+          "house, home",
+          "la casa"
+        ],
+        [
+          "yesterday",
+          "ayer"
+        ],
+        [
+          "mother",
+          "la madre"
+        ],
+        [
+          "early",
+          "temprano"
+        ],
+        [
+          "friend",
+          "el amigo"
+        ],
+        [
+          "work, job",
+          "el trabajo"
+        ],
+        [
+          "year",
+          "el año"
+        ],
+        [
+          "restaurant",
+          "el restaurante"
+        ],
+        [
+          "key",
+          "la llave"
+        ],
+        [
+          "letter",
+          "la carta"
+        ],
+        [
+          "bread",
+          "el pan"
+        ],
+        [
+          "child, boy",
+          "el niño"
+        ],
+        [
+          "shop, store",
+          "la tienda"
+        ],
+        [
+          "late",
+          "tarde"
+        ],
+        [
+          "office",
+          "la oficina"
+        ],
+        [
+          "dinner, supper",
+          "la cena"
+        ],
+        [
+          "message",
+          "el mensaje"
+        ],
+        [
+          "month",
+          "el mes"
+        ],
+        [
+          "mail",
+          "el correo"
+        ]
+      ]
+    },
+    {
       "kind": "usage",
       "title": {
         "hu": "Mikor használjuk a befejezett múltat?",
