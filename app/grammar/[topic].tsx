@@ -42,6 +42,8 @@ import TrialBadge from '@/components/TrialBadge';
 import { BrutalBox, Card, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
 import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
+import { clearDrillResume, drillToResume, loadDrillResume, saveDrillResume } from '@/lib/drillResume';
+import { localDateString } from '@/lib/usageStats';
 
 // One grammar lesson: the rule first, then the practice.
 //
@@ -76,6 +78,8 @@ export default function GrammarLessonScreen() {
   const [drillKind, setDrillKind] = useState<GrammarKind>('choice');
   // FB340-342/345/356: a látható drill-item id-ja, a feedback-kontextusba.
   const [drillItemId, setDrillItemId] = useState<string | undefined>(undefined);
+  // FB470 (kártya-szintű folytatás): true, amint a mentett gyakorlat visszaolvasása lefutott (előtte nem mentünk).
+  const [drillResumeReady, setDrillResumeReady] = useState(false);
   // FB461/FB462/FB464: a drill beírós tételeinek Check / Next sávja a billentyűzet fölé dokkol (components/learn/DockSlot.tsx).
   const dock = useDockSlot(colors);
   // FB327: a lecke-body ScrollView fázisváltáskor újra-mountol, a pozíciót a
@@ -119,13 +123,36 @@ export default function GrammarLessonScreen() {
       setTransformSeen((seenRow?.data as Record<string, number>) ?? {});
       // FB415/FB421: ugyanabból a lekérésből a fajták best/run/régi sorai.
       setProgressRows(progressRows);
+      // FB470: ha az app ebben a gyakorlatban záródott be, ugyanabban nyílik meg (a kör a mentett futásból folytatódik, FB421).
+      const counts = grammarKindCounts(loadedLesson);
+      const resumeKind = drillToResume(await loadDrillResume(db), String(topicId), localDateString(), KIND_ORDER.filter((k) => counts[k] > 0));
+      if (resumeKind) {
+        setDrillKind(resumeKind);
+        setPhase('drill');
+      }
     } else {
       setTransformSeen({});
       setProgressRows([]);
     }
+    setDrillResumeReady(true);
   }, [topicId]);
 
   useLoadOnMount(load);
+
+  // FB470: a drillben állva menti a gyakorlatot, a leckéből kilépve (lecke-fázis, kész, unmount) törli.
+  useEffect(() => {
+    if (!drillResumeReady) return;
+    const db = getDb();
+    if (phase === 'drill') void saveDrillResume(db, { topicId: String(topicId), kind: drillKind, day: localDateString() });
+    else void clearDrillResume(db);
+  }, [drillResumeReady, phase, drillKind, topicId]);
+  useEffect(
+    () => () => {
+      const db = getDb();
+      void loadDrillResume(db).then((r) => (r?.topicId === String(topicId) ? clearDrillResume(db) : undefined));
+    },
+    [topicId]
+  );
 
   // LECKE-SEMA 3.3: felolvasás-leállítás fázisváltáskor és unmountkor is,
   // nem csak a gomb megnyomására. Hook-szabály miatt a `lesson`-null korai

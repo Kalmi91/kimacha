@@ -56,6 +56,7 @@ import { act, fireEvent, render } from '@testing-library/react-native';
 import { TextInput } from 'react-native';
 
 import { getDb } from '@/lib/database';
+import { RESUME_GAME_ID } from '@/lib/resumeRoute';
 import { speak } from '@/lib/speech';
 import PcicScreen from '../index';
 
@@ -83,6 +84,7 @@ const ANSWERS: Record<string, string> = {
 describe('PCIC fül: mondatkártya (PLAN-ketiranyu 7. lépés)', () => {
   beforeEach(async () => {
     await getDb().resetPcicCards();
+    await getDb().resetGameProgress(RESUME_GAME_ID);
     await getDb().setOnboarding('en', 'es');
     await getDb().setPcicLevel('A1');
     mockSpeak.mockClear();

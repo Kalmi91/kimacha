@@ -44,6 +44,7 @@ import { act, fireEvent, render, within } from '@testing-library/react-native';
 import { StyleSheet, TextInput } from 'react-native';
 
 import { getDb } from '@/lib/database';
+import { RESUME_GAME_ID } from '@/lib/resumeRoute';
 import PcicScreen from '../index';
 
 const flush = async (times = 4) => {
@@ -71,6 +72,7 @@ async function typeAndCheck(utils: ReturnType<typeof render>, answer: string) {
 describe('PCIC fül: hint és „also” sor (PLAN-tobbjelentes 3. lépés)', () => {
   beforeEach(async () => {
     await getDb().resetPcicCards();
+    await getDb().resetGameProgress(RESUME_GAME_ID);
     jest.spyOn(TextInput.prototype, 'focus').mockImplementation(() => {});
   });
 

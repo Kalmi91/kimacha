@@ -11,7 +11,7 @@ import { getDb } from '@/lib/database';
 import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
 import { localDateString, DEFAULT_DAILY_NEW_LIMIT } from '@/lib/usageStats';
-import { pcicItemsForViewLevel, findPcicItem, setPcicTarget, type PcicViewLevel, type PcicTarget } from '@/data/pcic';
+import { pcicItemsForLevel, pcicItemsForViewLevel, findPcicItem, setPcicTarget, type PcicViewLevel, type PcicTarget } from '@/data/pcic';
 import { gradePcicAnswer, gradeSentenceAnswer, suggestedGrade, type PcicGrade } from '@/lib/pcicMatch';
 import {
   ARTICLE_OPTIONS,
@@ -24,6 +24,7 @@ import {
 import { sm2Review, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
 import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC, nextPcicNewBonus, pcicSessionNewLimit, practiceTopUpStep, PCIC_NEW_BONUS_STEP, PCIC_NEW_BONUS_STEPS, thinSentences, dropOrphanCards, countFinishedToday, dayProgressPercent, finishedInBatch } from '@/lib/pcicSession';
 import { cardsForViewLevel } from '@/lib/pcicLevels';
+import { applyLearnResume, buildLearnResume, isLearnResumeFor, loadLearnResume, saveLearnResume } from '@/lib/learnResume';
 import { posOf } from '@/lib/pcicPos';
 import FeedbackButton from '@/components/FeedbackModal';
 import SpeakButton from '@/components/SpeakButton';
@@ -45,7 +46,7 @@ import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress } from '@/lib/grammar/sy
 import { resolvedTensesFromLessons, type ResolvedTense } from '@/lib/knownSentence';
 import { INITIAL_CADENCE, nextSentenceStep, type CadenceState, type SentenceCardData } from '@/lib/sentenceCards';
 import { EXAM_LEVELS } from '@/lib/exam/types';
-import { examStatusFor, levelHasLesson, type ExamLevelStatus } from '@/lib/exam/unlock';
+import { examStatusFor, examUnlock, levelHasLesson, type ExamLevelStatus } from '@/lib/exam/unlock';
 
 // A szint-választó lap bezáródásának ideje (a RN-web Modal 250 ms-os kilépő animációja, ami kb. 100 ms késéssel indul, + tartalék).
 const SHEET_CLOSE_MS = 500;
@@ -201,7 +202,10 @@ export default function PcicScreen() {
     setAgainDelaySec(delaySec);
     setToday(day);
     setAllCards(new Map(cards.map((c) => [c.itemId, c])));
-    setQueue(pickSm2Session(cards, pcicIntroOrder(newOrder, lvl), day, pcicSessionNewLimit({ limit: newLimit, bonus, introducedAllLevels, introducedThisLevel: introducedToday })));
+    // FB470 (kártya-szintű folytatás): az újraépült sorra rákerül a mentett sorrend és az "again" időzítők (napváltáskor / szintváltáskor érvénytelen).
+    const resume = await loadLearnResume(db);
+    setQueue(applyLearnResume(pickSm2Session(cards, pcicIntroOrder(newOrder, lvl), day, pcicSessionNewLimit({ limit: newLimit, bonus, introducedAllLevels, introducedThisLevel: introducedToday })), resume, day, lvl));
+    if (isLearnResumeFor(resume, day, lvl) && resume.base !== null) setBatchBase({ day, level: lvl, n: resume.base });
     setTypedAnswer('');
     setGrade(null);
     setSessionAnswered(0);
@@ -245,12 +249,6 @@ export default function PcicScreen() {
   };
   // PLAN-vizsga C. szakasz (C1 a): a szintválasztó lap halk belépője az adaptív szintfelméréshez.
   const openPlacement = () => closeSheetThen(() => router.push('/placement'));
-  const examRow = examLevels.map((status) => ({
-    status,
-    onStart: () => closeSheetThen(() => router.push({ pathname: '/exam', params: { level: status.level } })),
-    onPractice: () => handlePractice(status.level, status.missing),
-    onGrammar: () => closeSheetThen(() => router.push('/(tabs)/course')),
-  }));
 
   const newOrder = useMemo(() => pcicItemsForViewLevel(level).map((i) => i.id), [level]);
   const current = queue[0];
@@ -287,6 +285,13 @@ export default function PcicScreen() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [current?.itemId, loading, sentenceOpen]);
 
+  // FB470 (kártya-szintű folytatás): minden sor- / adag-változás után elmenti a pillanatképet (lib/learnResume.ts).
+  useEffect(() => {
+    if (loading || !today) return;
+    const base = batchBase.day === today && batchBase.level === level ? batchBase.n : null;
+    void saveLearnResume(getDb(), buildLearnResume(queue, today, level, base));
+  }, [loading, queue, today, level, batchBase]);
+
   const dueRemaining = queue.filter((c) => c.state !== 'new').length;
   const newRemaining = queue.filter((c) => c.state === 'new').length;
   const doneToday = countDoneToday([...allCards.values()], today);
@@ -295,6 +300,20 @@ export default function PcicScreen() {
   // FB452: a napi keret NAPI, ezért a "ma bevezetett" minden szintről számol: a nézet szintjén az élő állapot
   // (allCards, minden értékelés frissíti), a többi szinten a betöltéskori (allLevelCards).
   const cardsAllLevels = [...allCards.values(), ...allLevelCards.filter((c) => !allCards.has(c.itemId) && findPcicItem(c.itemId) !== undefined)];
+  // FB499: a vizsga-sor számai az ÉLŐ kártyákból számolnak (a betöltéskori állapot a menet közben tanult szavakat nem
+  // tartalmazta), hogy a "N to go" és a "Practice words" ugyanazt a számot jelentse.
+  const examRow = examLevels.map((loaded) => {
+    const status: ExamLevelStatus = {
+      ...loaded,
+      ...examUnlock(loaded.level, pcicItemsForLevel(loaded.level).map((i) => i.id), cardsAllLevels, loaded.lessonDone),
+    };
+    return {
+      status,
+      onStart: () => closeSheetThen(() => router.push({ pathname: '/exam', params: { level: status.level } })),
+      onPractice: () => handlePractice(status.level, status.missing),
+      onGrammar: () => closeSheetThen(() => router.push('/(tabs)/course')),
+    };
+  });
   const introducedTodayByKind = countIntroducedTodayByKind(cardsAllLevels, today, (id) => findPcicItem(id)?.kind);
   const todayNewBudget = dailyNewLimit + pcicBonus;
 
