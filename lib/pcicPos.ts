@@ -20,7 +20,8 @@ import type { WordGender, WordPos } from '@/data/words';
 // csak a PCIC oldalon létezik (kötőszó, illetve képző-tétel, pl. "-ísimo"),
 // a korpusz WordPos típusát ez nem bővíti, azt kézzel írt PCIC `pos` mező
 // adja; a lemma-index (korpuszból) csak a `conj`-ot adja (a words-open kötőszavai).
-export type Pos = WordPos | 'conj' | 'prefix' | 'suffix';
+// FB482: a words-open `det` (determináns) és `interj` (indulatszó) szófaja is chipet kap.
+export type Pos = WordPos | 'conj' | 'det' | 'interj' | 'prefix' | 'suffix';
 
 export interface PosInfo {
   pos: Pos;
@@ -35,7 +36,7 @@ const VERB_ENDING = /^[a-záéíóúñü]+(ar|er|ir|arse|erse|irse)$/i;
 
 // FB361-362: a Pos lefedi a teljes WordPos-készletet, ezért minden
 // korpusz-szófaj átjön a lemma-indexbe (korábban csak noun/verb/phrase).
-// A words-open nyers szófajából (OpenWord.openPos); a det és interj nem képezhető le.
+// A words-open nyers szófajából (OpenWord.openPos).
 const CORPUS_POS_TO_PCIC: Partial<Record<string, Pos>> = {
   noun: 'noun',
   verb: 'verb',
@@ -45,6 +46,8 @@ const CORPUS_POS_TO_PCIC: Partial<Record<string, Pos>> = {
   prep: 'prep',
   num: 'num',
   conj: 'conj',
+  det: 'det',
+  interj: 'interj',
 };
 
 function normalizeLemma(es: string): string {

@@ -562,6 +562,8 @@ export default {
     num: 'number',
     phrase: 'phrase',
     conj: 'conjunction',
+    det: 'determiner',
+    interj: 'interjection',
     prefix: 'prefix',
     suffix: 'suffix',
   },
