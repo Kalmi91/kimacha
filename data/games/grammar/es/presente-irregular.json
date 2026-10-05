@@ -1466,7 +1466,7 @@
       "options": [
         "vamos",
         "vayamos",
-        "vais"
+        "van"
       ],
       "correct": 0,
       "why": {
@@ -1482,18 +1482,23 @@
           "es": "\"Vayamos\" es subjuntivo/exhortación (\"¡vamos!\"); si se usara aquí, la frase se convertiría en una sugerencia, no en una afirmación: ¡Vayamos a la escuela!",
           "de": "\"Vayamos\" ist Subjuntivo/Aufforderung (\"gehen wir!\"); würde man es hier einsetzen, würde der Satz zu einem Vorschlag statt zu einer Feststellung: ¡Vayamos a la escuela!"
         },
-        "vais": {
-          "hu": "A \"vais\" a vosotros alakja (Spanyolország); ha ide kerülne, a mondat titeket jelentene, nem minket: Vosotros vais a la escuela en autobús.",
-          "en": "\"Vais\" is the vosotros form (Spain); if used here the sentence would mean \"you all go\", not \"we go\": Vosotros vais a la escuela en autobús.",
-          "es": "\"Vais\" es la forma de vosotros (España); si se usara aquí, la frase significaría \"vosotros vais\", no \"nosotros vamos\": Vosotros vais a la escuela en autobús.",
-          "de": "\"Vais\" ist die vosotros-Form (Spanien); würde man sie hier einsetzen, würde der Satz \"ihr geht\" bedeuten, nicht \"wir gehen\": Vosotros vais a la escuela en autobús."
+        "van": {
+          "hu": "A \"van\" az ellos/ellas/ustedes alakja; a nosotros alanyhoz a \"vamos\" tartozik: Ellos van a la escuela en autobús.",
+          "en": "\"Van\" is the form for ellos/ellas/ustedes; the correct form for nosotros is \"vamos\": Ellos van a la escuela en autobús.",
+          "es": "\"Van\" es la forma de ellos/ellas/ustedes; con el sujeto nosotros corresponde \"vamos\": Ellos van a la escuela en autobús.",
+          "de": "\"Van\" ist die Form für ellos/ellas/ustedes; zum Subjekt nosotros gehört \"vamos\": Ellos van a la escuela en autobús."
         }
       },
       "examples": [
         "Yo voy al mercado.",
         "Ellos van al cine."
       ],
-      "tr": { "hu": "Busszal megyünk iskolába.", "en": "We go to school by bus.", "es": "Nosotros vamos a la escuela en autobús.", "de": "Wir fahren mit dem Bus zur Schule." }
+      "tr": {
+        "hu": "Busszal megyünk iskolába.",
+        "en": "We go to school by bus.",
+        "es": "Nosotros vamos a la escuela en autobús.",
+        "de": "Wir fahren mit dem Bus zur Schule."
+      }
     },
     {
       "id": "pi-04",
