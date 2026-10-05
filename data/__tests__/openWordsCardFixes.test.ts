@@ -1,6 +1,6 @@
 // PLAN-fb1005d: a Learn (PCIC) kártyák adat-javításai Kálmán 2026-10-03/05 visszajelzései nyomán
 // (FB473-479, 482-484, 486, 497). Minden tétel egy-egy teszt, hogy a javítás ne csússzon vissza.
-import { findPcicItem, setPcicTarget } from '../pcic';
+import { findPcicItem, levelOfItem, setPcicTarget } from '../pcic';
 
 describe('data/words-open kártya-javítások (FB1005d)', () => {
   beforeEach(() => setPcicTarget('es'));
@@ -25,6 +25,14 @@ describe('data/words-open kártya-javítások (FB1005d)', () => {
     expect(item?.es).toBe('el ropero / el armario');
     expect(item?.exampleEs).toMatch(/\bropero\b/);
     expect(item?.exampleEs).not.toMatch(/\barmario\b/);
+  });
+
+  it('FB483: minden kérdőszó A1-en van (cómo, dónde, qué, quién, cuál, cuándo, cuánto, adónde)', () => {
+    const orders = { cómo: 90, dónde: 91, qué: 92, quién: 93, cuál: 160, cuándo: 161, cuánto: 162, adónde: 737 };
+    for (const [word, order] of Object.entries(orders)) {
+      expect({ word, level: levelOfItem(`o${order}`) }).toEqual({ word, level: 'A1' });
+      expect(findPcicItem(`o${order}`)?.es).toBe(word);
+    }
   });
 
   it('FB475-478: a lo / le / se kártyán (o84-86) kis angol mondat áll a kérdés alatt, mint a te (o83) kártyán', () => {
