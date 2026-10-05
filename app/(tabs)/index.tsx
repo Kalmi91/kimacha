@@ -108,6 +108,10 @@ export default function PcicScreen() {
   const [typedAnswer, setTypedAnswer] = useState('');
   const [articlePick, setArticlePick] = useState<ArticlePick>('');
   const [grade, setGrade] = useState<PcicGrade | null>(null);
+  // FB481/495/496/498 (PLAN-fb1005e): az (i) magyarázat ki/be nyitása. Az itemId-t tárolja (nem
+  // boolean-t), hogy kártyaváltáskor a becsukódás LEVEZETETT állapot legyen, effekt nélkül
+  // (react-hooks/set-state-in-effect).
+  const [noteOpenFor, setNoteOpenFor] = useState<string | null>(null);
   const [sessionAnswered, setSessionAnswered] = useState(0);
   const [sessionNew, setSessionNew] = useState(0);
   const [sessionAgain, setSessionAgain] = useState(0);
@@ -689,6 +693,7 @@ export default function PcicScreen() {
     ? `${currentItem.region.toLowerCase() === 'méxico' ? '🇲🇽' : '🌎'} ${currentItem.region}`
     : undefined;
   const mxChipLabel = currentItem.mx ? `🇲🇽 ${currentItem.mx}` : undefined;
+  const noteOpen = !!currentItem.note && noteOpenFor === currentItem.id;
 
   // T1 (anki-ui-terv.html): a dokkolt Check sáv felfedés után "Next"-re vált,
   // ugyanazzal a hellyel/mérettel, a javasolt értékeléssel a feliratban.
@@ -788,7 +793,32 @@ export default function PcicScreen() {
               </View>
             )}
             <Text style={[styles.sectionText, { color: colors.tabIconDefault }]}>{currentItem.section}</Text>
+            {/* FB481/495/496/498: (i) csak magyarázatos kártyán; koppintásra ki/be nyitja a
+                kártya `note`-ját a chip-sor alatt (a Check-sávot és a 💬-t nem takarja). */}
+            {currentItem.note &&
+              (g.brutal ? (
+                <BrutalBox testID="learn-info" accessibilityLabel={s.pcic.noteLabel} fill={noteOpen ? 'b' : 'paper'} offset={2} boxStyle={styles.infoBtn} onPress={() => setNoteOpenFor(noteOpen ? null : currentItem.id)}>
+                  <Text style={[styles.infoBtnText, { color: noteOpen ? g.onB : g.ink }]}>i</Text>
+                </BrutalBox>
+              ) : (
+                <Pressable
+                  testID="learn-info"
+                  accessibilityRole="button"
+                  accessibilityLabel={s.pcic.noteLabel}
+                  accessibilityState={{ expanded: noteOpen }}
+                  hitSlop={8}
+                  onPress={() => setNoteOpenFor(noteOpen ? null : currentItem.id)}
+                  style={[styles.infoBtn, { borderColor: colors.tint, backgroundColor: noteOpen ? colors.tint : 'transparent' }]}
+                >
+                  <Text style={[styles.infoBtnText, { color: noteOpen ? colors.background : colors.tint }]}>i</Text>
+                </Pressable>
+              ))}
           </View>
+          {noteOpen && (
+            <Text testID="learn-note" style={[styles.noteText, { color: colors.text }]}>
+              {currentItem.note}
+            </Text>
+          )}
 
           {/* SZ7 (SZAVAK.md): FB188 névelő-gombsor a Learn fülről, ⊘ az alapállás.
               FB214 kiegészítés: a PCIC-en a chip már mutatja, ha nem főnév, a
@@ -1081,6 +1111,26 @@ const styles = StyleSheet.create({
     fontSize: 12,
     textAlign: 'center',
     flexShrink: 1,
+  },
+  // FB481/495/496/498: az (i) gomb a chip-sorban, és a kártya magyarázata alatta.
+  infoBtn: {
+    minWidth: 24,
+    minHeight: 24,
+    borderWidth: 1,
+    borderRadius: 999,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  infoBtnText: {
+    fontSize: 14,
+    fontWeight: '700',
+    fontStyle: 'italic',
+  },
+  noteText: {
+    fontSize: 14,
+    lineHeight: 20,
+    textAlign: 'center',
+    marginBottom: 16,
   },
   // 5c: szófaj-chip (noun/verb/phrase) a szekció-szöveg mellett.
   posChip: {
