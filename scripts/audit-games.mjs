@@ -21,6 +21,8 @@
  *     `sentence` has no "___" blank
  *   - a grammar item missing a `wrong[...]` explanation for one of its
  *     non-correct options
+ *   - an es-track match pair longer than 3 (es) / 4 (en) words (FB465; the
+ *     legacy items are listed in audit-games-match-debt.json, P2, shrink-only)
  *   - a confusables drill whose `correct` is not one of the set's own
  *     `members[].word`, or a 'gap'/'listening' drill with no `sentence`
  *   - a myth item missing an id/level/track/claim/verdict, or a `source`
@@ -636,12 +638,42 @@ function auditLessonSpeak(topic, path, dirLang = 'es') {
   }
 }
 
-function auditMatchItem(item, itemPath) {
+// FB465: a párosító a különböző szavakat párosítja (tuve ~ I had), nem teljes mondatot. Spanyol
+// sávban egy pár oldala max 3 (es) / 4 (en, a "used to" miatt) szó. A korábbi, még hosszú
+// tételek az `audit-games-match-debt.json` listán vannak (P2, a lista csak fogyhat); ami nincs
+// a listán, az P1. Ha egy listás tétel már megfelel, P1: ki kell venni a listáról.
+const MATCH_MAX_WORDS = { es: 3, en: 4 };
+const MATCH_DEBT = new Set(JSON.parse(readFileSync(join(ROOT, 'scripts/audit-games-match-debt.json'), 'utf8')));
+let matchDebtSeen = 0;
+const shortWordCount = (s) => String(s ?? '').trim().split(/\s+/).filter(Boolean).length;
+
+function auditMatchLength(item, itemPath, lang, debtKey) {
+  if (lang !== 'es') return;
+  const long = (item.pairs ?? []).filter(
+    (p) => shortWordCount(p?.es) > MATCH_MAX_WORDS.es || shortWordCount(p?.en) > MATCH_MAX_WORDS.en,
+  );
+  const inDebt = MATCH_DEBT.has(debtKey);
+  if (long.length === 0) {
+    if (inDebt) p1.push({ path: itemPath, issue: `match item is short now, remove "${debtKey}" from scripts/audit-games-match-debt.json` });
+    return;
+  }
+  if (inDebt) {
+    matchDebtSeen += 1;
+    return;
+  }
+  p1.push({
+    path: itemPath,
+    issue: `match pair longer than ${MATCH_MAX_WORDS.es} (es) / ${MATCH_MAX_WORDS.en} (en) words, pair the differing word only: "${long[0].es}"`,
+  });
+}
+
+function auditMatchItem(item, itemPath, lang = 'es', debtKey = '') {
   const pairs = item.pairs;
   if (!Array.isArray(pairs) || pairs.length < 5 || pairs.length > 6) {
     p1.push({ path: itemPath, issue: `match item needs 5-6 pairs, has ${pairs?.length ?? 0}` });
     return;
   }
+  auditMatchLength(item, itemPath, lang, debtKey);
   const esSeen = new Set();
   const enSeen = new Set();
   for (const pair of pairs) {
@@ -887,7 +919,7 @@ function auditGrammarTopic(topic, filePath, lang = 'es') {
     // LECKE-SEMA 2: match/form saját ellenőrzőt kap, a gap/mark-os ág alatta
     // változatlan (a "mint eddig" spec-ígéret).
     if (item.kind === 'match') {
-      auditMatchItem(item, itemPath);
+      auditMatchItem(item, itemPath, lang, `${filePath}#${item.id}`);
       continue;
     }
     if (item.kind === 'form') {
@@ -1016,6 +1048,9 @@ function runGrammar() {
 }
 
 runGrammar();
+if (matchDebtSeen > 0) {
+  p2.push({ path: 'grammar/es', issue: `${matchDebtSeen} legacy match items still pair whole sentences (scripts/audit-games-match-debt.json)` });
+}
 
 // ---------------------------------------------------------------------------
 // Report
