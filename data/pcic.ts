@@ -111,7 +111,7 @@ function itemsFromWords(entries: WordEntry[], idPrefix: 'w' | 'e' = 'w'): PcicIt
 // PLAN-learn-words-open: a data/words-open kártyáiból (a1/a2/b1/b2.json, A1 =
 // csak a1.json, nincs külön A0). Id-tér: o<order> (a fájl `order` mezője,
 // 1-600), hogy ne ütközzön a régi w<id> és az es→en e<id> id-kkel. A words-open
-// pos-ából csak az app Pos-ába eső szófajok mennek át (det, interj nem).
+// pos-ából minden szófaj átmegy az app Pos-ába (FB482: a det és interj is chipet kap).
 type OpenCard = { order: number; pos: string; es: string; en: string; sentence_es: string; sentence_en: string; hint_en?: string };
 
 const OPEN_POS_TO_PCIC: Partial<Record<string, Pos>> = {
@@ -123,6 +123,8 @@ const OPEN_POS_TO_PCIC: Partial<Record<string, Pos>> = {
   prep: 'prep',
   num: 'num',
   conj: 'conj',
+  det: 'det',
+  interj: 'interj',
 };
 
 function itemsFromOpen(cards: OpenCard[]): PcicItem[] {

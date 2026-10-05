@@ -514,6 +514,8 @@ const es: Strings = {
     num: 'número',
     phrase: 'frase',
     conj: 'conjunción',
+    det: 'determinante',
+    interj: 'interjección',
     prefix: 'prefijo',
     suffix: 'sufijo',
   },

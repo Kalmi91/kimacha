@@ -42,11 +42,12 @@ describe('data/pcic.ts: irány-tudatos korpusz (PLAN-ketiranyu 4. lépés)', () 
     expect(findPcicItem('w1')).toBeUndefined();
   });
 
-  it('en→es: példamondat a sentence_es/en-ből, pos-leképezés (det/interj nem képezhető le)', () => {
+  it('en→es: példamondat a sentence_es/en-ből, pos-leképezés (det és interj is, FB482)', () => {
     expect(findPcicItem('o3')).toMatchObject({ pos: 'adv', exampleEs: 'Yo estoy bien.', exampleEn: 'I am fine.' });
     expect(findPcicItem('o15')?.pos).toBe('conj');
-    expect(findPcicItem('o20')?.pos).toBeUndefined(); // det
-    expect(findPcicItem('o7')?.pos).toBeUndefined(); // interj
+    expect(findPcicItem('o20')?.pos).toBe('det');
+    expect(findPcicItem('o7')?.pos).toBe('interj');
+    expect(findPcicItem('o883')?.pos).toBe('interj');
   });
 
   // PLAN-ketiranyu 5. lépés (D-A döntés a): az A1 az data/words/en/a0.json
