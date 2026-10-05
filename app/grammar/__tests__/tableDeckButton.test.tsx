@@ -87,14 +87,14 @@ describe('grammar lesson screen: table-deck button', () => {
   });
   // PLAN-fb1001 16. lépés (FB437/FB438, Kálmán "b" döntése): a szó-pakli csak a tábla szavaiból
   // épül; ahol így küszöb alatt marad, nincs pakli-belépő (és nincs crash).
-  // PLAN-fb1002 13. lépés (FB448) felülírja ezt az articulos-genero-ra: Kálmán kifejezetten az app összes
-  // főnevéből kért paklit ebbe a leckébe (lib/grammar/nounArticles.ts), tehát van szó-pakli belépő.
-  it('articulos-genero (FB448: az app összes főnevéből) kap szó-pakli belépőt', async () => {
+  // PLAN-fb1005b 2. lépés (FB493) visszaállítja ezt az articulos-genero-ra: a FB448-as, az app összes főnevéből
+  // épített pakli megszűnt, a főnevek csak az el / la feladatban vannak, a pakli ismét a lecke saját szavai.
+  it('articulos-genero (a tábla szavai a küszöb alatt) nem kap szó-pakli belépőt', async () => {
     mockTopicId = 'articulos-genero';
     const view = render(<GrammarLessonScreen />);
     await flush();
 
-    expect(screen.queryByTestId('grammar-start-worddeck')).toBeTruthy();
+    expect(screen.queryByTestId('grammar-start-worddeck')).toBeFalsy();
     expect(screen.queryByTestId('grammar-start-tabledeck')).toBeFalsy();
 
     view.unmount();
