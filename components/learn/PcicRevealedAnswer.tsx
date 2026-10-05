@@ -74,6 +74,10 @@ export default function PcicRevealedAnswer({
   const alsoAlternatives = pcicAlternatives(target === 'es' ? currentItem.es : currentItem.en).filter(
     (alt) => alt !== grade.best
   );
+  // FB480 (PLAN-fb1005e): üres / rossz válasznál a mutatott alak mellett a többi elfogadott alak is
+  // ugyanolyan sorban látszik (nem csak egy kis „also” sorban); helyes válasznál marad az „also” sor.
+  const answerColor = legibleOn(colors.tint, colors.card, textContrastMin(skin, 'word', 22, true));
+  const showAllAccepted = nextGrade !== 'good';
 
   return (
     <>
@@ -99,13 +103,22 @@ export default function PcicRevealedAnswer({
         </Text>
         )}
         <View style={styles.frontRow}>
-          <Text testID="pcic-correct-answer" variant="word" style={[styles.correctAnswer, { color: legibleOn(colors.tint, colors.card, textContrastMin(skin, 'word', 22, true)) }]}>{grade.best}</Text>
+          <Text testID="pcic-correct-answer" variant="word" style={[styles.correctAnswer, { color: answerColor }]}>{grade.best}</Text>
           <Pressable onPress={() => speak(grade.best, speechLang(target))} style={styles.speakBtn}>
             <Text style={styles.speakIcon}>🔊</Text>
             <SkinSpeakLabel />
           </Pressable>
         </View>
-        {alsoAlternatives.length > 0 && (
+        {showAllAccepted && alsoAlternatives.map((alt, i) => (
+          <View key={alt} style={styles.frontRow}>
+            <Text testID={`pcic-correct-answer-${i + 2}`} variant="word" style={[styles.correctAnswer, { color: answerColor }]}>{alt}</Text>
+            <Pressable onPress={() => speak(alt, speechLang(target))} style={styles.speakBtn}>
+              <Text style={styles.speakIcon}>🔊</Text>
+              <SkinSpeakLabel />
+            </Pressable>
+          </View>
+        ))}
+        {!showAllAccepted && alsoAlternatives.length > 0 && (
           <Text testID="learn-also" style={[styles.alsoLine, { color: colors.tabIconDefault }]}>
             {s.pcic.alsoLabel}:{' '}
             {alsoAlternatives.map((alt, i) => (
