@@ -43,6 +43,7 @@ import ThemeSwatch from '@/components/skins/ThemeSwatch';
 import { appBuildTag } from '@/lib/appBuild';
 import { loadVoices, hasVoiceFor } from '@/lib/speech';
 import { languages } from '@/lib/languages';
+import { clearLearnResume } from '@/lib/learnResume';
 
 const appVersionLabel = appBuildTag();
 
@@ -326,7 +327,11 @@ export default function SettingsScreen() {
     }
   };
   const handleResetDeck = (lvl: PcicLevel) =>
-    confirmReset(s.pcic.resetConfirmTitle, s.pcic.resetConfirmLevel(lvl), () => getDb().resetPcicCards(lvl.toLowerCase()));
+    confirmReset(s.pcic.resetConfirmTitle, s.pcic.resetConfirmLevel(lvl), async () => {
+      await getDb().resetPcicCards(lvl.toLowerCase());
+      // FB470: a mentett Learn-kör pillanatképe a nullázott haladásra már nem érvényes.
+      await clearLearnResume(getDb());
+    });
   const handleResetGrammar = () =>
     confirmReset(s.settings.resetGrammarTitle, s.settings.resetGrammarMessage, () => getDb().resetGameProgress(GRAMMAR_PROGRESS_KEY));
 
