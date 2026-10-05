@@ -373,9 +373,9 @@ describe('wordCellsForLesson (csak a tábla szavai)', () => {
     }
   });
 
-  // (az articulos-genero az FB448 óta kivétel: az app összes főnevéből áll a paklija, lásd nounArticles.test.ts)
-  it('a sustantivo-numero és társai elvesztették a paklit: a küszöb alatt maradnak, nincs belépő (a clases-de-palabras a lecke szintjére került szavakkal visszanyerte)', () => {
-    for (const id of ['sustantivo-numero', 'hay-estar', 'pronombres-od']) {
+  // (FB493: az articulos-genero ismét a lecke saját szavaiból áll, mint a FB448 előtt; a főnevek csak az el / la feladatban vannak)
+  it('articulos-genero és társai elvesztették a paklit: a küszöb alatt maradnak, nincs belépő (a clases-de-palabras a lecke szintjére került szavakkal visszanyerte)', () => {
+    for (const id of ['articulos-genero', 'sustantivo-numero', 'hay-estar', 'pronombres-od']) {
       expect(wordCellsForLesson(lessonFor('es', id)).length).toBeLessThan(WORD_DECK_MIN_CARDS);
     }
     expect(wordCellsForLesson(lessonFor('es', 'clases-de-palabras')).length).toBeGreaterThanOrEqual(WORD_DECK_MIN_CARDS);

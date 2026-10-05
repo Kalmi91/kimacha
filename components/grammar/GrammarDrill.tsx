@@ -13,6 +13,7 @@ import {
   cumulativeCorpusWordIds,
   isDictationItem,
   isFormItem,
+  isArticleSetItem,
   isLessonV2,
   isMarkItem,
   isMatchItem,
@@ -1137,6 +1138,8 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   const selectOption = (optIdx: number) => {
     if (answered) return;
     setSelected(optIdx);
+    // FB493: az el / la tételnél a főnév jelentése (tr) a válasz után magától kinyílik; az F-gomb ettől még kapcsol.
+    if (isArticleSetItem(current.item)) setShowTr(true);
     if (optIdx === current.correctIndex) setCorrectCount((c) => c + 1);
     // FB412 (PLAN-fb0929 5. lépés): a helyes, kitöltött mondat elhangzik, jó és rossz válasz után is.
     speak(

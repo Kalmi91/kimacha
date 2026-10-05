@@ -9,7 +9,6 @@ import openB1 from '@/data/words-open/b1.json';
 import openB2 from '@/data/words-open/b2.json';
 import type { GrammarGapItem } from '@/lib/games/content';
 import type { LessonV2 } from '@/lib/grammar/lessonTypes';
-import type { WordDeckCard } from '@/lib/grammar/tableDeck';
 
 interface OpenWord {
   order: number;
@@ -17,7 +16,9 @@ interface OpenWord {
   pos: string;
   lemma: string;
   es: string;
+  hu?: string;
   en: string;
+  de?: string;
   sentence_es?: string;
 }
 
@@ -32,6 +33,8 @@ export interface ArticleNoun {
   article: 'el' | 'la';
   es: string; // a kártya teljes spanyol oldala: "el agua" (vagy "el carro / el coche / el auto")
   en: string;
+  /** FB493: a főnév jelentése a felület nyelvén (words-open hu / en / de; es-nél az angol); a válasz után látszik. */
+  tr: Lang4;
   sentence?: string;
 }
 
@@ -54,7 +57,7 @@ export function articleNouns(): ArticleNoun[] {
       const noun = m[2];
       if (seen.has(noun)) continue;
       seen.add(noun);
-      out.push({ id: `${w.level.toLowerCase()}-${w.order}`, noun, article: m[1] as 'el' | 'la', es: w.es, en: w.en, sentence: w.sentence_es });
+      out.push({ id: `${w.level.toLowerCase()}-${w.order}`, noun, article: m[1] as 'el' | 'la', es: w.es, en: w.en, tr: { hu: w.hu ?? w.en, en: w.en, es: w.en, de: w.de ?? w.en }, sentence: w.sentence_es });
     }
   }
   cache = out;
@@ -136,13 +139,9 @@ export function articleNounItems(): GrammarGapItem[] {
       why: whyText(n),
       wrong: { [wrong]: wrongText(n, wrong) },
       examples: n.sentence ? [n.sentence] : [],
+      tr: n.tr,
     };
   });
-}
-
-/** A szó-pakli kártyái: angol jelentés -> spanyol szó NÉVELŐVEL (a névelő gépelése tanítja a nemet). */
-export function articleNounDeckCards(): WordDeckCard[] {
-  return articleNouns().map((n) => ({ id: `noun::${n.id}`, en: n.en, es: n.es }));
 }
 
 /** Az articulos-genero leckéhez hozzáadja az app összes főnevét el / la feladatként; más leckét nem érint. */

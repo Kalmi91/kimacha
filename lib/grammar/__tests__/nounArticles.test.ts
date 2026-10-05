@@ -1,4 +1,5 @@
-// FB448: az articulos-genero lecke el / la feladata és szó-paklija az app összes főneve.
+// FB448: az articulos-genero lecke el / la feladata az app összes főneve. FB493: a feladat a főnév jelentését (tr) is
+// hordozza, a szó-pakli pedig megszűnt (a pakli ismét a lecke saját szavai).
 import { buildGrammarRound, grammarRoundItemKind } from '@/lib/games/grammarChoice';
 import { isArticleSetItem } from '@/lib/games/content';
 import { lessonFor, lessonKinds } from '@/lib/grammar/syllabus';
@@ -6,7 +7,6 @@ import { tableCellsForLesson, wordCellsForLesson, WORD_DECK_MIN_CARDS } from '@/
 import {
   ARTICLE_LESSON_ID,
   ARTICLE_ROUND_SIZE,
-  articleNounDeckCards,
   articleNounItems,
   articleNouns,
 } from '@/lib/grammar/nounArticles';
@@ -55,6 +55,16 @@ describe('articleNounItems (FB448)', () => {
     }
   });
 
+  // FB493: a főnév jelentése a words-open-ből (hu / en / de, es-nél az angol), a válasz után látszik.
+  it('minden tételnek van jelentése (tr) mind a 4 nyelven, az angol a words-open en mezője', () => {
+    for (const it of items) {
+      for (const lang of LANGS) expect(it.tr?.[lang]?.trim()).toBeTruthy();
+    }
+    const agua = items.find((i) => i.sentence === '___ agua')!;
+    expect(agua.tr?.en).toBe('water');
+    expect(agua.tr?.es).toBe('water');
+  });
+
   it('az agua magyarázata kimondja a kivételt', () => {
     const agua = items.find((i) => i.sentence === '___ agua')!;
     expect(agua.why.en).toMatch(/feminine/);
@@ -87,11 +97,10 @@ describe('az articulos-genero lecke (FB448)', () => {
     expect(round).toHaveLength(sn.items.filter((i) => isArticleSetItem(i as never)).length);
   });
 
-  it('a szó-pakli az összes főnév névelővel, tábla-pakli híján szó-pakli módban', () => {
+  it('FB493: nincs főnév-pakli, a lecke paklija a lecke saját szavai (küszöb alatt), és nincs tábla-pakli sem', () => {
     const cards = wordCellsForLesson(lesson, 'es');
-    expect(cards).toEqual(articleNounDeckCards());
-    expect(cards.length).toBeGreaterThanOrEqual(WORD_DECK_MIN_CARDS);
-    expect(cards.find((c) => c.es === 'el agua')?.en).toBe('water');
+    expect(cards.length).toBeLessThan(WORD_DECK_MIN_CARDS);
+    expect(cards.some((c) => c.id.startsWith('noun::'))).toBe(false);
     expect(tableCellsForLesson(lesson)).toHaveLength(0);
   });
 });
