@@ -407,6 +407,8 @@ const es: Strings = {
     next: (label: string) => `Siguiente → ${label}`,
     accentForgiven: 'Falta el acento, se cuenta como correcto',
     alsoLabel: 'también',
+    // FB481/495/496/498: az (i) magyarázat-gomb kisegítő felirata.
+    noteLabel: 'Más información',
     levelBeginner: 'Principiante',
     levelElementary: 'Elemental',
     levelIntermediate: 'Intermedio',
