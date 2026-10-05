@@ -1082,10 +1082,10 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Mexikóban a vosotros helyett ustedes-t használnak, ehhez a tienen tartozik.",
-        "en": "In Mexico ustedes replaces vosotros, and it takes tienen.",
-        "es": "En México se usa ustedes en vez de vosotros, y le corresponde tienen.",
-        "de": "In Mexiko wird ustedes statt vosotros verwendet, dazu gehört tienen."
+        "hu": "Az ustedes mindig többes szám harmadik személyt kap, ehhez a tienen tartozik.",
+        "en": "Ustedes always takes the third person plural, and it takes tienen.",
+        "es": "Ustedes siempre lleva la tercera persona del plural, y le corresponde tienen.",
+        "de": "Ustedes steht immer mit der 3. Person Plural, dazu gehört tienen."
       },
       "wrong": {
         "tiene": {
@@ -1229,14 +1229,6 @@
       "table": "modales-presente"
     },
     {
-      "id": "pm-form-08",
-      "kind": "form",
-      "verb": "querer",
-      "person": "vosotros",
-      "answer": "queréis",
-      "table": "modales-presente"
-    },
-    {
       "id": "pm-form-09",
       "kind": "form",
       "verb": "querer",
@@ -1250,14 +1242,6 @@
       "verb": "deber",
       "person": "nosotros",
       "answer": "debemos",
-      "table": "modales-presente"
-    },
-    {
-      "id": "pm-form-11",
-      "kind": "form",
-      "verb": "deber",
-      "person": "vosotros",
-      "answer": "debéis",
       "table": "modales-presente"
     },
     {

@@ -201,7 +201,7 @@ describe('minden tétel-fajta vizsga-kártyává alakul', () => {
 
   it('a "csak transform" leckéből is jön teszt (indefinido-10-verbos)', () => {
     const qs = all('indefinido-10-verbos');
-    expect(qs.length).toBe(46);
+    expect(qs.length).toBe(50);
     expect(buildLessonTest(lessonFor('es', 'indefinido-10-verbos')!, opts()).length).toBe(LESSON_TEST_SIZE);
   });
 });

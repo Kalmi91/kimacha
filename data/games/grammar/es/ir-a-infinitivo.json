@@ -1067,15 +1067,6 @@
       "tense": { "from": "presente", "to": "ir-a" }
     },
     {
-      "id": "ir-form-05",
-      "kind": "form",
-      "verb": "ir a + infinitivo",
-      "person": "vosotros",
-      "answer": "vais a",
-      "table": "ir-a-presente",
-      "tense": { "from": "presente", "to": "ir-a" }
-    },
-    {
       "id": "ir-form-06",
       "kind": "form",
       "verb": "ir a + infinitivo",
@@ -1182,58 +1173,6 @@
             "en": "If it were ellos, it would say 'Van a terminar la tarea', meaning THEY are going to finish it, not just you.",
             "es": "Si fuera ellos, diría 'Van a terminar la tarea', o sea que ELLOS van a terminarla, no solo tú.",
             "de": "Wäre es ellos, hieße es 'Van a terminar la tarea', also werden SIE sie beenden, nicht nur du."
-          }
-        }
-      ],
-      "correctIndex": 1,
-      "tense": { "from": "presente", "to": "ir-a" }
-    },
-    {
-      "kind": "why",
-      "id": "iai-why-03",
-      "es": "Va a trabajar mañana.",
-      "target": "Va",
-      "tr": {
-        "hu": "Holnap fog dolgozni.",
-        "en": "He is going to work tomorrow.",
-        "es": "Va a trabajar mañana.",
-        "de": "Er wird morgen arbeiten."
-      },
-      "options": [
-        {
-          "text": {
-            "hu": "yo (én)",
-            "en": "yo (I)",
-            "es": "yo",
-            "de": "yo (ich)"
-          },
-          "wrong": {
-            "hu": "Ha yo lenne, 'Voy a trabajar mañana' állna, azaz ÉN fogok dolgozni holnap, nem ő.",
-            "en": "If it were yo, it would say 'Voy a trabajar mañana', meaning I am going to work tomorrow, not him.",
-            "es": "Si fuera yo, diría 'Voy a trabajar mañana', o sea que YO voy a trabajar, no él.",
-            "de": "Wäre es yo, hieße es 'Voy a trabajar mañana', also werde ICH morgen arbeiten, nicht er."
-          }
-        },
-        {
-          "text": {
-            "hu": "ő / Ön",
-            "en": "he/she/you (usted)",
-            "es": "él/ella/usted",
-            "de": "er/sie/Sie"
-          }
-        },
-        {
-          "text": {
-            "hu": "ti (vosotros, Spo.)",
-            "en": "you all (vosotros, Spain)",
-            "es": "vosotros",
-            "de": "ihr (vosotros, Spanien)"
-          },
-          "wrong": {
-            "hu": "Ha vosotros lenne, 'Vais a trabajar mañana' állna, azaz TI fogtok dolgozni, és ezt az alakot Mexikóban nem is használják.",
-            "en": "If it were vosotros, it would say 'Vais a trabajar mañana', meaning YOU ALL are going to work, and this form is not even used in Mexico.",
-            "es": "Si fuera vosotros, diría 'Vais a trabajar mañana', o sea que VOSOTROS vais a trabajar, y esa forma ni se usa en México.",
-            "de": "Wäre es vosotros, hieße es 'Vais a trabajar mañana', also werdet IHR arbeiten, und diese Form wird in Mexiko gar nicht benutzt."
           }
         }
       ],
