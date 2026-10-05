@@ -76,22 +76,6 @@
     "sentence_lemmas": ["nuestro", "casa", "ser", "pequeño"]
   },
   {
-    "order": 162,
-    "level": "A2",
-    "pos": "det",
-    "lemma": "cuánto",
-    "es": "cuánto",
-    "hu": "mennyi, hány",
-    "en": "how much, how many",
-    "de": "wie viel, wie viele",
-    "hint_en": "*How much* does it cost?",
-    "sentence_es": "¿Cuánto dinero tienes?",
-    "sentence_hu": "Mennyi pénzed van?",
-    "sentence_en": "How much money do you have?",
-    "sentence_de": "Wie viel Geld hast du?",
-    "sentence_lemmas": ["cuánto", "dinero", "tener"]
-  },
-  {
     "order": 163,
     "level": "A2",
     "pos": "pron",
@@ -1718,21 +1702,6 @@
     "sentence_en": "My father listens to the radio in the morning.",
     "sentence_de": "Mein Vater hört morgens Radio.",
     "sentence_lemmas": ["mi", "padre", "escuchar", "el", "radio", "por", "el", "mañana"]
-  },
-  {
-    "order": 737,
-    "level": "A2",
-    "pos": "adv",
-    "lemma": "adónde",
-    "es": "adónde",
-    "hu": "hova",
-    "en": "where to",
-    "de": "wohin",
-    "sentence_es": "¿Adónde vas hoy?",
-    "sentence_hu": "Hova mész ma?",
-    "sentence_en": "Where are you going today?",
-    "sentence_de": "Wohin gehst du heute?",
-    "sentence_lemmas": ["adónde", "ir", "hoy"]
   },
   {
     "order": 738,
