@@ -1297,8 +1297,8 @@
       "id": "fu-form-05",
       "kind": "form",
       "verb": "comer",
-      "person": "vosotros",
-      "answer": "comeréis",
+      "person": "ellos/ellas/ustedes",
+      "answer": "comerán",
       "table": "futuro-simple-regular",
       "tense": {
         "from": "presente",
@@ -1369,8 +1369,8 @@
       "id": "fu-form-11",
       "kind": "form",
       "verb": "decir",
-      "person": "vosotros",
-      "answer": "diréis",
+      "person": "ellos/ellas/ustedes",
+      "answer": "dirán",
       "table": "futuro-simple-irregular",
       "tense": {
         "from": "presente",
@@ -2045,24 +2045,24 @@
         "to": "futuro-simple"
       },
       "prompt": {
-        "hu": "Hamarosan esztek?",
+        "hu": "Hamarosan esznek?",
         "en": "Are you all eating soon?",
-        "es": "¿Coméis pronto?",
-        "de": "Esst ihr bald?"
+        "es": "¿Comen pronto?",
+        "de": "Essen Sie bald?"
       },
-      "answer": "¿Comeréis pronto?",
+      "answer": "¿Comerán pronto?",
       "accept": [
-        "¿Vosotros comeréis pronto?"
+        "¿Ustedes comerán pronto?"
       ],
       "wordIds": [
         "25",
         "175"
       ],
       "why": {
-        "hu": "Kérdés egy jövőbeli cselekvésről: futuro simple. A(z) comer szabályos -er ige, vosotros: comeréis.",
-        "en": "A question about a future action: futuro simple. Comer is a regular -er verb, vosotros: comeréis.",
-        "es": "Una pregunta sobre una acción futura: futuro simple. comer es un verbo regular en -er, vosotros: comeréis.",
-        "de": "Eine Frage zu einer zukünftigen Handlung: futuro simple. comer ist ein regelmäßiges -er-Verb, vosotros: comeréis."
+        "hu": "Kérdés egy jövőbeli cselekvésről: futuro simple. A(z) comer szabályos -er ige, ustedes: comerán.",
+        "en": "A question about a future action: futuro simple. Comer is a regular -er verb, ustedes: comerán.",
+        "es": "Una pregunta sobre una acción futura: futuro simple. comer es un verbo regular en -er, ustedes: comerán.",
+        "de": "Eine Frage zu einer zukünftigen Handlung: futuro simple. comer ist ein regelmäßiges -er-Verb, ustedes: comerán."
       }
     },
     {
