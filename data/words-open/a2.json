@@ -76,22 +76,6 @@
     "sentence_lemmas": ["nuestro", "casa", "ser", "pequeño"]
   },
   {
-    "order": 162,
-    "level": "A2",
-    "pos": "det",
-    "lemma": "cuánto",
-    "es": "cuánto",
-    "hu": "mennyi, hány",
-    "en": "how much, how many",
-    "de": "wie viel, wie viele",
-    "hint_en": "*How much* does it cost?",
-    "sentence_es": "¿Cuánto dinero tienes?",
-    "sentence_hu": "Mennyi pénzed van?",
-    "sentence_en": "How much money do you have?",
-    "sentence_de": "Wie viel Geld hast du?",
-    "sentence_lemmas": ["cuánto", "dinero", "tener"]
-  },
-  {
     "order": 163,
     "level": "A2",
     "pos": "pron",
@@ -256,11 +240,11 @@
     "en": "still, yet",
     "de": "noch",
     "hint_en": "She is *still* sleeping.",
-    "sentence_es": "Todavía no he comido.",
-    "sentence_hu": "Még nem ettem.",
-    "sentence_en": "I have not eaten yet.",
-    "sentence_de": "Ich habe noch nicht gegessen.",
-    "sentence_lemmas": ["todavía", "no", "haber", "comer"]
+    "sentence_es": "Todavía estoy en casa.",
+    "sentence_hu": "Még mindig otthon vagyok.",
+    "sentence_en": "I am still at home.",
+    "sentence_de": "Ich bin noch zu Hause.",
+    "sentence_lemmas": ["todavía", "estar", "en", "casa"]
   },
   {
     "order": 179,
@@ -1720,21 +1704,6 @@
     "sentence_lemmas": ["mi", "padre", "escuchar", "el", "radio", "por", "el", "mañana"]
   },
   {
-    "order": 737,
-    "level": "A2",
-    "pos": "adv",
-    "lemma": "adónde",
-    "es": "adónde",
-    "hu": "hova",
-    "en": "where to",
-    "de": "wohin",
-    "sentence_es": "¿Adónde vas hoy?",
-    "sentence_hu": "Hova mész ma?",
-    "sentence_en": "Where are you going today?",
-    "sentence_de": "Wohin gehst du heute?",
-    "sentence_lemmas": ["adónde", "ir", "hoy"]
-  },
-  {
     "order": 738,
     "level": "A2",
     "pos": "adj",
@@ -2768,11 +2737,11 @@
     "hu": "előre, elöl",
     "en": "forward, onward",
     "de": "vorwärts, vorne",
-    "sentence_es": "Mi padre maneja y mi madre va adelante.",
-    "sentence_hu": "Apám vezet, anyám pedig elöl ül.",
-    "sentence_en": "My father drives and my mother rides in front.",
-    "sentence_de": "Mein Vater fährt und meine Mutter sitzt vorne.",
-    "sentence_lemmas": ["mi", "padre", "manejar", "y", "mi", "madre", "ir", "adelante"]
+    "sentence_es": "La tienda está adelante, no muy lejos.",
+    "sentence_hu": "A bolt előrébb van, nem nagyon messze.",
+    "sentence_en": "The store is up ahead, not very far.",
+    "sentence_de": "Der Laden ist weiter vorne, nicht sehr weit.",
+    "sentence_lemmas": ["el", "tienda", "estar", "adelante", "no", "muy", "lejos"]
   },
   {
     "order": 903,
@@ -2929,16 +2898,16 @@
     "order": 940,
     "level": "A2",
     "pos": "noun",
-    "lemma": "jitomate",
-    "es": "el jitomate",
+    "lemma": "tomate",
+    "es": "el tomate / el jitomate",
     "hu": "paradicsom",
     "en": "tomato",
     "de": "Tomate",
-    "sentence_es": "Me gusta el jitomate en la sopa.",
+    "sentence_es": "Me gusta el tomate en la sopa.",
     "sentence_hu": "Szeretem a paradicsomot a levesben.",
     "sentence_en": "I like tomato in soup.",
     "sentence_de": "Ich mag Tomate in der Suppe.",
-    "sentence_lemmas": ["me", "gustar", "el", "jitomate", "en", "el", "sopa"]
+    "sentence_lemmas": ["me", "gustar", "el", "tomate", "en", "el", "sopa"]
   },
   {
     "order": 946,
@@ -3677,11 +3646,11 @@
     "en": "to put away, to store",
     "de": "aufbewahren, wegräumen",
     "hint_en": "I *store* the old books here.",
-    "sentence_es": "Guardo mis zapatos en el armario.",
+    "sentence_es": "Guardo mis zapatos en el ropero.",
     "sentence_hu": "A cipőimet a szekrényben tartom.",
     "sentence_en": "I keep my shoes in the closet.",
     "sentence_de": "Ich bewahre meine Schuhe im Schrank auf.",
-    "sentence_lemmas": ["guardar", "mi", "zapato", "en", "el", "armario"]
+    "sentence_lemmas": ["guardar", "mi", "zapato", "en", "el", "ropero"]
   },
   {
     "order": 1046,
@@ -4390,11 +4359,11 @@
     "hu": "tészta",
     "en": "pasta, noodles",
     "de": "Nudeln, Pasta",
-    "sentence_es": "Cenamos pasta con jitomate y queso.",
+    "sentence_es": "Cenamos pasta con tomate y queso.",
     "sentence_hu": "Paradicsomos, sajtos tésztát vacsorázunk.",
     "sentence_en": "We have pasta with tomato and cheese for dinner.",
     "sentence_de": "Wir essen Nudeln mit Tomate und Käse zu Abend.",
-    "sentence_lemmas": ["cenar", "pasta", "con", "jitomate", "y", "queso"]
+    "sentence_lemmas": ["cenar", "pasta", "con", "tomate", "y", "queso"]
   },
   {
     "order": 1093,
@@ -5641,11 +5610,11 @@
     "hu": "fölött, tetején",
     "en": "on top, over",
     "de": "oben drauf, darüber",
-    "sentence_es": "El gato está encima del armario.",
+    "sentence_es": "El gato está encima del ropero.",
     "sentence_hu": "A macska a szekrény tetején van.",
     "sentence_en": "The cat is on top of the closet.",
     "sentence_de": "Die Katze sitzt oben auf dem Schrank.",
-    "sentence_lemmas": ["el", "gato", "estar", "encima", "de", "armario"]
+    "sentence_lemmas": ["el", "gato", "estar", "encima", "de", "ropero"]
   },
   {
     "order": 1176,
@@ -8306,11 +8275,11 @@
     "hu": "fejes saláta",
     "en": "lettuce",
     "de": "Kopfsalat",
-    "sentence_es": "La ensalada lleva lechuga y jitomate.",
+    "sentence_es": "La ensalada lleva lechuga y tomate.",
     "sentence_hu": "A salátában fejes saláta és paradicsom van.",
     "sentence_en": "The salad has lettuce and tomato.",
     "sentence_de": "Der Salat enthält Kopfsalat und Tomate.",
-    "sentence_lemmas": ["el", "ensalada", "llevar", "lechuga", "y", "jitomate"]
+    "sentence_lemmas": ["el", "ensalada", "llevar", "lechuga", "y", "tomate"]
   },
   {
     "order": 1679,

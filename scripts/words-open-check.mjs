@@ -99,14 +99,22 @@ for (const lv of LEVELS) {
   const n = cards.filter((c) => c.__file === lv).length;
   if (!fileProblems.some((m) => m.startsWith(lv)) && n < 150) fail('R2', `${lv}.json ${n} kártya (kell: legalább 150)`);
 }
-// order egyedi és hézagmentes 1..N (a tömbbeli hely nem számít: a 601-től új kártya a testvére mellé kerül)
+// order egyedi és hézagmentes 1..N (a tömbbeli hely nem számít: a 601-től új kártya a testvére mellé kerül);
+// a kikerült kártyák orderei (scripts/words-open-retired.json) a hézagból kivételek, és nem használhatók újra
+const retiredOrders = new Set(
+  JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts', 'words-open-retired.json'), 'utf8')).retired.map((r) => r.order),
+);
 const sortedOrders = cards.map((c) => c.order).sort((a, b) => a - b);
+let expectedOrder = 1;
 for (let i = 0; i < sortedOrders.length; i++) {
-  if (sortedOrders[i] !== i + 1) {
-    fail('R2', `order hézag/ismétlődés: a rendezett lista ${i + 1}. helyén ${sortedOrders[i]} áll`);
+  while (retiredOrders.has(expectedOrder)) expectedOrder++;
+  if (sortedOrders[i] !== expectedOrder) {
+    fail('R2', `order hézag/ismétlődés: a rendezett lista ${i + 1}. helyén ${sortedOrders[i]} áll (várt: ${expectedOrder})`);
     break;
   }
+  expectedOrder++;
 }
+for (const o of sortedOrders) if (retiredOrders.has(o)) fail('R2', `order ${o} kikerült kártya (scripts/words-open-retired.json), nem használható újra`);
 for (const c of cards) {
   if (!Number.isInteger(c.order)) {
     fail('R2', `${c.__file}.json[${c.__idx}] order nem egész`);

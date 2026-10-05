@@ -1,0 +1,6 @@
+{
+  "_comment": "Kikerült (törölt) words-open kártyák: az order sosem használható újra (a haladás o<order> kulcson van, az árva SRS-sort az app kihagyja: lib/pcicSession.ts dropOrphanCards). A words-open-check R2 hézag-ellenőrzése ezeket kihagyja.",
+  "retired": [
+    { "order": 2705, "es": "la taquería", "en": "taco restaurant", "reason": "FB497: Kálmán kérésére kikerült" }
+  ]
+}
