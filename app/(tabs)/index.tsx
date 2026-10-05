@@ -104,7 +104,8 @@ export default function PcicScreen() {
   const [allCards, setAllCards] = useState<Map<string, Sm2Card>>(new Map());
   const [queue, setQueue] = useState<Sm2Card[]>([]);
   // FB456: a "+N új szó" bővítéskor a ma már kész kártyák száma; a csík az új adagot méri ehhez képest.
-  const [batchBase, setBatchBase] = useState<{ day: string; n: number }>({ day: '', n: 0 });
+  // FB485: az alap egy SZINTRE vonatkozik (a kész kártyákat a nézet szintjén számoljuk), másik szinten nem érvényes.
+  const [batchBase, setBatchBase] = useState<{ day: string; level: string; n: number }>({ day: '', level: '', n: 0 });
   const [typedAnswer, setTypedAnswer] = useState('');
   const [articlePick, setArticlePick] = useState<ArticlePick>('');
   const [grade, setGrade] = useState<PcicGrade | null>(null);
@@ -432,7 +433,7 @@ export default function PcicScreen() {
     const introducedAllLevels = cardsAllLevels.filter((c) => c.introducedAt === today).length;
     const next = nextPcicNewBonus({ limit: dailyNewLimit, bonus: pcicBonus, introducedToday: introducedAllLevels }, step);
     setPcicBonus(next);
-    setBatchBase({ day: today, n: countFinishedToday(activeCards, queue, today) });
+    setBatchBase({ day: today, level, n: countFinishedToday(activeCards, queue, today) });
     getDb().setPcicNewBonus(next, today).catch(() => {});
     setQueue(
       pickSm2Session(
@@ -669,7 +670,7 @@ export default function PcicScreen() {
   // dayProgressPercent). Az FB401-es 10-es szettes mérés minden 10. kártyánál újraindult.
   // FB456: +N után az új adag haladását mutatja (finishedInBatch), nem a nap összesét.
   const barPct = dayProgressPercent(
-    finishedInBatch(countFinishedToday([...allCards.values()], queue, today), batchBase.day === today ? batchBase.n : 0),
+    finishedInBatch(countFinishedToday([...allCards.values()], queue, today), batchBase.day === today && batchBase.level === level ? batchBase.n : 0),
     queue.length
   );
 
