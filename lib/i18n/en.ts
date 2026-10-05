@@ -444,6 +444,8 @@ export default {
     alsoLabel: 'also',
     // FB481/495/496/498: az (i) magyarázat-gomb kisegítő felirata.
     noteLabel: 'More info',
+    // FB498/500: a kártya képének forrássora (Wikimedia Commons).
+    photoCredit: (author: string, license: string) => `Photo: ${author}, ${license}, Wikimedia Commons`,
     // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 3. pont):
     // a szint-választó lap feliratai és sorai (korábban data/pcic.ts
     // LEVEL_LABELS-ben és components/LevelRow.tsx-ben angolra égetve).
