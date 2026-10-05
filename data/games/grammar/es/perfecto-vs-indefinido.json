@@ -2,6 +2,7 @@
   "schema": 2,
   "topic": "perfecto-vs-indefinido",
   "level": "A2",
+  "noWordDeck": true,
   "title": {
     "hu": "Perfecto vagy indefinido?",
     "en": "Present perfect or preterite?",
@@ -842,36 +843,6 @@
         "Últimamente hemos hablado mucho."
       ],
       "tr": { "hu": "Mostanában nagyon jól étkeztél.", "en": "Lately you have eaten very well.", "es": "Últimamente has comido (tú) muy bien.", "de": "In letzter Zeit hast du sehr gut gegessen." }
-    },
-    {
-      "id": "pvi-match-01",
-      "kind": "match",
-      "pairs": [
-        {
-          "es": "fui",
-          "en": "I went"
-        },
-        {
-          "es": "he ido",
-          "en": "I have gone"
-        },
-        {
-          "es": "escribí",
-          "en": "I wrote"
-        },
-        {
-          "es": "he escrito",
-          "en": "I have written"
-        },
-        {
-          "es": "vi",
-          "en": "I saw"
-        },
-        {
-          "es": "he visto",
-          "en": "I have seen"
-        }
-      ]
     },
     {
       "id": "pvi-form-01",

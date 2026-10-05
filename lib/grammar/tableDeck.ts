@@ -355,6 +355,8 @@ export function wordCellsForLesson(
   learnedLang: string = 'es'
 ): WordDeckCard[] {
   if (!lesson || !isLessonV2(lesson)) return [];
+  // FB471: a lecke maga kéri, hogy ne legyen szó-pakli (lecke-szintű kikapcsolás).
+  if (lesson.noWordDeck) return [];
   // PLAN-fb0929 10. lépés (Kálmán 2026-09-30): es→en irányban a pakli az angol szókészletből épül.
   if (learnedLang === 'en') return wordCellsForEnglishLesson(lesson);
   // PLAN-fb1002 13. lépés (FB448): az articulos-genero pakli az app összes főneve (névelővel), nem a tábla szavai.
