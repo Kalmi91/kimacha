@@ -1167,7 +1167,7 @@
         { "es": "me traes un café", "en": "you bring me a coffee" },
         { "es": "te compro un regalo", "en": "I buy you a gift" },
         { "es": "nos cuenta historias", "en": "he/she tells us stories" },
-        { "es": "os escribo pronto", "en": "I'll write to you all soon" }
+        { "es": "les escribo pronto", "en": "I'll write to them soon" }
       ]
     },
     {
@@ -1212,14 +1212,6 @@
       "verb": "pronombre de objeto indirecto",
       "person": "nosotros",
       "answer": "nos",
-      "table": "pronombres-oi"
-    },
-    {
-      "id": "oi-form-05",
-      "kind": "form",
-      "verb": "pronombre de objeto indirecto",
-      "person": "vosotros",
-      "answer": "os",
       "table": "pronombres-oi"
     },
     {
@@ -1429,57 +1421,6 @@
             "en": "Les would be to several people but EXCLUDING the speaker (they/you all); here the speaker IS among the recipients, so nos, not les.",
             "es": "Les sería para varias personas pero EXCLUYENDO a quien habla (ellos/ustedes); aquí quien habla SÍ está entre los destinatarios, por eso nos, no les.",
             "de": "Les wäre für mehrere Personen, aber OHNE den Sprecher (sie/Sie); hier gehört der Sprecher ZU den Empfängern, deshalb nos, nicht les."
-          }
-        }
-      ],
-      "correctIndex": 1
-    },
-    {
-      "kind": "why",
-      "id": "poi-why-05",
-      "es": "Os escribo un mensaje.",
-      "target": "Os",
-      "tr": {
-        "hu": "Írok nektek egy üzenetet.",
-        "en": "I am writing you all a message.",
-        "es": "Os escribo un mensaje.",
-        "de": "Ich schreibe euch eine Nachricht."
-      },
-      "options": [
-        {
-          "text": {
-            "hu": "te: neked",
-            "en": "te: to you",
-            "es": "te: a ti",
-            "de": "te: dir"
-          },
-          "wrong": {
-            "hu": "A te EGY beszélgetőpartnernek szólna (\"Te escribo un mensaje\"); itt viszont TÖBB embernek írok spanyolországi módon, ezért os.",
-            "en": "Te would be to ONE person I am talking to (\"Te escribo un mensaje\"); here I am writing to several people, the Spain way, so os.",
-            "es": "Te sería para UN solo interlocutor (\"Te escribo un mensaje\"); aquí escribo a varias personas, a la manera de España, por eso os.",
-            "de": "Te wäre für EINEN Gesprächspartner (\"Te escribo un mensaje\"); hier schreibe ich mehreren Personen, auf spanische Art, deshalb os."
-          }
-        },
-        {
-          "text": {
-            "hu": "os: nektek (Spo.)",
-            "en": "os: to you all (Spain)",
-            "es": "os: a vosotros (España)",
-            "de": "os: euch (Spanien)"
-          }
-        },
-        {
-          "text": {
-            "hu": "les: nekik/Önöknek",
-            "en": "les: to them/you all",
-            "es": "les: a ellos/ellas/ustedes",
-            "de": "les: ihnen/Ihnen"
-          },
-          "wrong": {
-            "hu": "A les Latin-Amerikában (Mexikóban) állna ugyanerre a jelentésre (ustedes); Spanyolországban viszont a vosotros-nak megfelelő névmás os.",
-            "en": "Les would be used in Latin America (Mexico) for this same meaning (ustedes); in Spain the pronoun matching vosotros is os.",
-            "es": "Les se usaría en Latinoamérica (México) para este mismo sentido (ustedes); en España el pronombre correspondiente a vosotros es os.",
-            "de": "Les würde in Lateinamerika (Mexiko) für denselben Sinn stehen (ustedes); in Spanien ist das zu vosotros passende Pronomen os."
           }
         }
       ],

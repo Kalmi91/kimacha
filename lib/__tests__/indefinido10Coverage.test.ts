@@ -39,9 +39,9 @@ const VERB_FORMS: Record<string, Record<string, string>> = {
 
 // Nyelvi tény: a szabályos -ar igéknél a nosotros alak azonos jelen időben és
 // indefinidóban (miramos/miramos), tehát ott a transform prompt==answer lenne
-// (audit P1 hiba). Ez a négy ige ezért a nosotros helyett vosotros itemet
-// kapott (a brief "vosotros legfeljebb 1 item igénként" pontja pont erre ad
-// módot), így náluk ez az 5. kötelező személy a nosotros helyett.
+// (audit P1 hiba). Ez a négy ige ezért a nosotros helyett kapott egy 5. itemet;
+// FB466 óta ez ustedes-item (miraron...), nem vosotros, ezért náluk a kötelező
+// személyek: yo, tú, él, ellos (a második ellos/ustedes-item az 5.).
 const NOSOTROS_REPLACED_BY_VOSOTROS = new Set(['mirar', 'pasar', 'esperar', 'necesitar']);
 
 function wordsOf(answer: string): string[] {
@@ -105,7 +105,7 @@ describe('indefinido-10-verbos, FB316 coverage', () => {
     }
     for (const verb of Object.keys(VERB_FORMS)) {
       const required = NOSOTROS_REPLACED_BY_VOSOTROS.has(verb)
-        ? ['yo', 'tu', 'el', 'ellos', 'vosotros']
+        ? ['yo', 'tu', 'el', 'ellos']
         : ['yo', 'tu', 'el', 'nosotros', 'ellos'];
       for (const person of required) {
         expect(personsByVerb[verb]?.has(person)).toBe(true);

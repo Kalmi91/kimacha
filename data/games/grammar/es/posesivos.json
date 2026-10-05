@@ -853,7 +853,7 @@
         { "es": "mi", "en": "my, before one thing" },
         { "es": "sus", "en": "his/her/your (formal)/their, before several things" },
         { "es": "nuestra", "en": "our, feminine singular" },
-        { "es": "vuestros", "en": "your (vosotros), masculine plural" },
+        { "es": "nuestros", "en": "our, masculine plural" },
         { "es": "mío", "en": "mine, after the noun" },
         { "es": "tuyas", "en": "yours, feminine plural, after the noun" }
       ]
@@ -910,8 +910,8 @@
       "id": "pos-form-07",
       "kind": "form",
       "verb": "Masculino plural",
-      "person": "vosotros",
-      "answer": "vuestros",
+      "person": "ellos/ellas/ustedes",
+      "answer": "sus",
       "table": "posesivos"
     },
     {
@@ -950,8 +950,8 @@
       "id": "pos-form-12",
       "kind": "form",
       "verb": "Femenino singular",
-      "person": "vosotros",
-      "answer": "vuestra",
+      "person": "ellos/ellas/ustedes",
+      "answer": "suya",
       "table": "posesivos-tonicos"
     },
     {
@@ -976,16 +976,16 @@
         },
         {
           "text": {
-            "hu": "nuestro/vuestro nemben is egyezik a birtokkal",
-            "en": "nuestro/vuestro also agrees in GENDER with the thing owned",
-            "es": "nuestro/vuestro concuerda también en GÉNERO con lo poseído",
-            "de": "nuestro/vuestro richtet sich auch nach dem GESCHLECHT des Besitzes"
+            "hu": "nuestro nemben is egyezik a birtokkal",
+            "en": "nuestro also agrees in GENDER with the thing owned",
+            "es": "nuestro concuerda también en GÉNERO con lo poseído",
+            "de": "nuestro richtet sich auch nach dem GESCHLECHT des Besitzes"
           },
           "wrong": {
-            "hu": "Itt nem nuestro/vuestro áll, hanem mis; a hermanos szám szerinti egyeztetése dönt, nem a nem.",
-            "en": "Here it is not nuestro/vuestro but mis; it is the number agreement with hermanos that decides, not gender.",
-            "es": "Aquí no va nuestro/vuestro, sino mis; decide la concordancia en número con hermanos, no el género.",
-            "de": "Hier steht nicht nuestro/vuestro, sondern mis; die Zahlenübereinstimmung mit hermanos entscheidet, nicht das Geschlecht."
+            "hu": "Itt nem nuestro áll, hanem mis; a hermanos szám szerinti egyeztetése dönt, nem a nem.",
+            "en": "Here it is not nuestro but mis; it is the number agreement with hermanos that decides, not gender.",
+            "es": "Aquí no va nuestro, sino mis; decide la concordancia en número con hermanos, no el género.",
+            "de": "Hier steht nicht nuestro, sondern mis; die Zahlenübereinstimmung mit hermanos entscheidet, nicht das Geschlecht."
           }
         },
         {
@@ -1033,10 +1033,10 @@
         },
         {
           "text": {
-            "hu": "nuestro/vuestro nemben is egyezik a birtokkal",
-            "en": "nuestro/vuestro also agrees in GENDER with the thing owned",
-            "es": "nuestro/vuestro concuerda también en GÉNERO con lo poseído",
-            "de": "nuestro/vuestro richtet sich auch nach dem GESCHLECHT des Besitzes"
+            "hu": "nuestro nemben is egyezik a birtokkal",
+            "en": "nuestro also agrees in GENDER with the thing owned",
+            "es": "nuestro concuerda también en GÉNERO con lo poseído",
+            "de": "nuestro richtet sich auch nach dem GESCHLECHT des Besitzes"
           }
         },
         {
@@ -1084,16 +1084,16 @@
         },
         {
           "text": {
-            "hu": "nuestro/vuestro nemben is egyezik a birtokkal",
-            "en": "nuestro/vuestro also agrees in GENDER with the thing owned",
-            "es": "nuestro/vuestro concuerda también en GÉNERO con lo poseído",
-            "de": "nuestro/vuestro richtet sich auch nach dem GESCHLECHT des Besitzes"
+            "hu": "nuestro nemben is egyezik a birtokkal",
+            "en": "nuestro also agrees in GENDER with the thing owned",
+            "es": "nuestro concuerda también en GÉNERO con lo poseído",
+            "de": "nuestro richtet sich auch nach dem GESCHLECHT des Besitzes"
           },
           "wrong": {
-            "hu": "Itt nem nuestro/vuestro áll: a birtokos usted, nem nosotros vagy vosotros.",
-            "en": "Here it is not nuestro/vuestro: the possessor is usted, not nosotros or vosotros.",
-            "es": "Aquí no va nuestro/vuestro: el poseedor es usted, no nosotros ni vosotros.",
-            "de": "Hier steht nicht nuestro/vuestro: Besitzer ist usted, nicht nosotros oder vosotros."
+            "hu": "Itt nem nuestro áll: a birtokos usted, nem nosotros.",
+            "en": "Here it is not nuestro: the possessor is usted, not nosotros.",
+            "es": "Aquí no va nuestro: el poseedor es usted, no nosotros.",
+            "de": "Hier steht nicht nuestro: Besitzer ist usted, nicht nosotros."
           }
         },
         {
@@ -1135,10 +1135,10 @@
         },
         {
           "text": {
-            "hu": "nuestro/vuestro nemben is egyezik a birtokkal",
-            "en": "nuestro/vuestro also agrees in GENDER with the thing owned",
-            "es": "nuestro/vuestro concuerda también en GÉNERO con lo poseído",
-            "de": "nuestro/vuestro richtet sich auch nach dem GESCHLECHT des Besitzes"
+            "hu": "nuestro nemben is egyezik a birtokkal",
+            "en": "nuestro also agrees in GENDER with the thing owned",
+            "es": "nuestro concuerda también en GÉNERO con lo poseído",
+            "de": "nuestro richtet sich auch nach dem GESCHLECHT des Besitzes"
           }
         },
         {
@@ -1180,16 +1180,16 @@
         },
         {
           "text": {
-            "hu": "nuestro/vuestro nemben is egyezik a birtokkal",
-            "en": "nuestro/vuestro also agrees in GENDER with the thing owned",
-            "es": "nuestro/vuestro concuerda también en GÉNERO con lo poseído",
-            "de": "nuestro/vuestro richtet sich auch nach dem GESCHLECHT des Besitzes"
+            "hu": "nuestro nemben is egyezik a birtokkal",
+            "en": "nuestro also agrees in GENDER with the thing owned",
+            "es": "nuestro concuerda también en GÉNERO con lo poseído",
+            "de": "nuestro richtet sich auch nach dem GESCHLECHT des Besitzes"
           },
           "wrong": {
-            "hu": "Itt nem nuestro/vuestro áll: a birtokos nem nosotros vagy vosotros.",
-            "en": "Here it is not nuestro/vuestro: the possessor is not nosotros or vosotros.",
-            "es": "Aquí no va nuestro/vuestro: el poseedor no es nosotros ni vosotros.",
-            "de": "Hier steht nicht nuestro/vuestro: Besitzer ist nicht nosotros oder vosotros."
+            "hu": "Itt nem nuestro áll: a birtokos nem nosotros.",
+            "en": "Here it is not nuestro: the possessor is not nosotros.",
+            "es": "Aquí no va nuestro: el poseedor no es nosotros.",
+            "de": "Hier steht nicht nuestro: Besitzer ist nicht nosotros."
           }
         },
         {
@@ -1237,10 +1237,10 @@
         },
         {
           "text": {
-            "hu": "nuestro/vuestro nemben is egyezik a birtokkal",
-            "en": "nuestro/vuestro also agrees in GENDER with the thing owned",
-            "es": "nuestro/vuestro concuerda también en GÉNERO con lo poseído",
-            "de": "nuestro/vuestro richtet sich auch nach dem GESCHLECHT des Besitzes"
+            "hu": "nuestro nemben is egyezik a birtokkal",
+            "en": "nuestro also agrees in GENDER with the thing owned",
+            "es": "nuestro concuerda también en GÉNERO con lo poseído",
+            "de": "nuestro richtet sich auch nach dem GESCHLECHT des Besitzes"
           }
         },
         {
@@ -1288,16 +1288,16 @@
         },
         {
           "text": {
-            "hu": "nuestro/vuestro nemben is egyezik a birtokkal",
-            "en": "nuestro/vuestro also agrees in GENDER with the thing owned",
-            "es": "nuestro/vuestro concuerda también en GÉNERO con lo poseído",
-            "de": "nuestro/vuestro richtet sich auch nach dem GESCHLECHT des Besitzes"
+            "hu": "nuestro nemben is egyezik a birtokkal",
+            "en": "nuestro also agrees in GENDER with the thing owned",
+            "es": "nuestro concuerda también en GÉNERO con lo poseído",
+            "de": "nuestro richtet sich auch nach dem GESCHLECHT des Besitzes"
           },
           "wrong": {
-            "hu": "Itt nem nuestro/vuestro áll: a birtokos nem nosotros vagy vosotros.",
-            "en": "Here it is not nuestro/vuestro: the possessor is not nosotros or vosotros.",
-            "es": "Aquí no va nuestro/vuestro: el poseedor no es nosotros ni vosotros.",
-            "de": "Hier steht nicht nuestro/vuestro: Besitzer ist nicht nosotros oder vosotros."
+            "hu": "Itt nem nuestro áll: a birtokos nem nosotros.",
+            "en": "Here it is not nuestro: the possessor is not nosotros.",
+            "es": "Aquí no va nuestro: el poseedor no es nosotros.",
+            "de": "Hier steht nicht nuestro: Besitzer ist nicht nosotros."
           }
         },
         {

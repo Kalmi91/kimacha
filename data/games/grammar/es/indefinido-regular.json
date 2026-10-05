@@ -1136,18 +1136,6 @@
       }
     },
     {
-      "id": "ir-form-07",
-      "kind": "form",
-      "verb": "comer",
-      "person": "vosotros",
-      "answer": "comisteis",
-      "table": "indefinido-regular",
-      "tense": {
-        "from": "presente",
-        "to": "indefinido"
-      }
-    },
-    {
       "id": "ir-form-08",
       "kind": "form",
       "verb": "comer",
@@ -1199,8 +1187,8 @@
       "id": "ir-form-12",
       "kind": "form",
       "verb": "vivir",
-      "person": "vosotros",
-      "answer": "vivisteis",
+      "person": "ellos/ellas/ustedes",
+      "answer": "vivieron",
       "table": "indefinido-regular",
       "tense": {
         "from": "presente",

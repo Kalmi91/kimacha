@@ -1599,14 +1599,13 @@
         "to": "indefinido"
       },
       "prompt": {
-        "es": "Miráis la película tarde.",
-        "hu": "Későn nézitek a filmet.",
+        "es": "Miran la película tarde.",
+        "hu": "Későn nézik a filmet.",
         "en": "You (all) watch the movie late.",
-        "de": "Ihr schaut euch den Film spät an."
+        "de": "Sie schauen sich den Film spät an."
       },
-      "answer": "Mirasteis la película tarde.",
+      "answer": "Miraron la película tarde.",
       "accept": [
-        "Vosotros mirasteis la película tarde.",
         "Ustedes miraron la película tarde."
       ],
       "wordIds": [
@@ -1615,10 +1614,10 @@
         "174"
       ],
       "why": {
-        "hu": "Lezárt cselekvés: indefinido. Mirar szabályos -ar ige, vosotros: mirasteis.",
-        "en": "A finished action: indefinido. Mirar is a regular -ar verb, vosotros: mirasteis.",
-        "es": "Una acción terminada: perfecto simple. Mirar es un verbo regular en -ar, vosotros: mirasteis.",
-        "de": "Eine abgeschlossene Handlung: indefinido. Mirar ist ein regelmäßiges -ar-Verb, vosotros: mirasteis."
+        "hu": "Lezárt cselekvés: indefinido. Mirar szabályos -ar ige, ustedes: miraron.",
+        "en": "A finished action: indefinido. Mirar is a regular -ar verb, ustedes: miraron.",
+        "es": "Una acción terminada: perfecto simple. Mirar es un verbo regular en -ar, ustedes: miraron.",
+        "de": "Eine abgeschlossene Handlung: indefinido. Mirar ist ein regelmäßiges -ar-Verb, ustedes: miraron."
       }
     },
     {
@@ -1715,14 +1714,13 @@
         "to": "indefinido"
       },
       "prompt": {
-        "es": "Pasáis por la playa.",
-        "hu": "Benéztek a strandra.",
+        "es": "Pasan por la playa.",
+        "hu": "Benéznek a strandra.",
         "en": "You (all) stop by the beach.",
-        "de": "Ihr schaut am Strand vorbei."
+        "de": "Sie schauen am Strand vorbei."
       },
-      "answer": "Pasasteis por la playa.",
+      "answer": "Pasaron por la playa.",
       "accept": [
-        "Vosotros pasasteis por la playa.",
         "Ustedes pasaron por la playa."
       ],
       "wordIds": [
@@ -1730,10 +1728,10 @@
         "391"
       ],
       "why": {
-        "hu": "Lezárt esemény: indefinido. Pasar szabályos -ar ige, vosotros: pasasteis.",
-        "en": "A finished event: indefinido. Pasar is a regular -ar verb, vosotros: pasasteis.",
-        "es": "Un hecho terminado: perfecto simple. Pasar es un verbo regular en -ar, vosotros: pasasteis.",
-        "de": "Ein abgeschlossenes Ereignis: indefinido. Pasar ist ein regelmäßiges -ar-Verb, vosotros: pasasteis."
+        "hu": "Lezárt esemény: indefinido. Pasar szabályos -ar ige, ustedes: pasaron.",
+        "en": "A finished event: indefinido. Pasar is a regular -ar verb, ustedes: pasaron.",
+        "es": "Un hecho terminado: perfecto simple. Pasar es un verbo regular en -ar, ustedes: pasaron.",
+        "de": "Ein abgeschlossenes Ereignis: indefinido. Pasar ist ein regelmäßiges -ar-Verb, ustedes: pasaron."
       }
     },
     {
@@ -1830,14 +1828,13 @@
         "to": "indefinido"
       },
       "prompt": {
-        "es": "Esperáis la fiesta.",
-        "hu": "Várjátok a bulit.",
+        "es": "Esperan la fiesta.",
+        "hu": "Várják a bulit.",
         "en": "You (all) are waiting for the party.",
-        "de": "Ihr wartet auf die Party."
+        "de": "Sie warten auf die Party."
       },
-      "answer": "Esperasteis la fiesta.",
+      "answer": "Esperaron la fiesta.",
       "accept": [
-        "Vosotros esperasteis la fiesta.",
         "Ustedes esperaron la fiesta."
       ],
       "wordIds": [
@@ -1845,10 +1842,10 @@
         "285"
       ],
       "why": {
-        "hu": "Lezárt várakozás: indefinido. Esperar szabályos -ar ige, vosotros: esperasteis.",
-        "en": "A finished waiting: indefinido. Esperar is a regular -ar verb, vosotros: esperasteis.",
-        "es": "Una espera terminada: perfecto simple. Esperar es un verbo regular en -ar, vosotros: esperasteis.",
-        "de": "Ein abgeschlossenes Warten: indefinido. Esperar ist ein regelmäßiges -ar-Verb, vosotros: esperasteis."
+        "hu": "Lezárt várakozás: indefinido. Esperar szabályos -ar ige, ustedes: esperaron.",
+        "en": "A finished waiting: indefinido. Esperar is a regular -ar verb, ustedes: esperaron.",
+        "es": "Una espera terminada: perfecto simple. Esperar es un verbo regular en -ar, ustedes: esperaron.",
+        "de": "Ein abgeschlossenes Warten: indefinido. Esperar ist ein regelmäßiges -ar-Verb, ustedes: esperaron."
       }
     },
     {
@@ -1950,14 +1947,13 @@
         "to": "indefinido"
       },
       "prompt": {
-        "es": "Necesitáis el viaje.",
-        "hu": "Szükségetek van az utazásra.",
+        "es": "Necesitan el viaje.",
+        "hu": "Szükségük van az utazásra.",
         "en": "You (all) need the trip.",
-        "de": "Ihr braucht die Reise."
+        "de": "Sie brauchen die Reise."
       },
-      "answer": "Necesitasteis el viaje.",
+      "answer": "Necesitaron el viaje.",
       "accept": [
-        "Vosotros necesitasteis el viaje.",
         "Ustedes necesitaron el viaje."
       ],
       "wordIds": [
@@ -1965,10 +1961,10 @@
         "259"
       ],
       "why": {
-        "hu": "Lezárt szükséglet: indefinido. Necesitar szabályos -ar ige, vosotros: necesitasteis.",
-        "en": "A finished need: indefinido. Necesitar is a regular -ar verb, vosotros: necesitasteis.",
-        "es": "Una necesidad terminada: perfecto simple. Necesitar es un verbo regular en -ar, vosotros: necesitasteis.",
-        "de": "Ein abgeschlossenes Bedürfnis: indefinido. Necesitar ist ein regelmäßiges -ar-Verb, vosotros: necesitasteis."
+        "hu": "Lezárt szükséglet: indefinido. Necesitar szabályos -ar ige, ustedes: necesitaron.",
+        "en": "A finished need: indefinido. Necesitar is a regular -ar verb, ustedes: necesitaron.",
+        "es": "Una necesidad terminada: perfecto simple. Necesitar es un verbo regular en -ar, ustedes: necesitaron.",
+        "de": "Ein abgeschlossenes Bedürfnis: indefinido. Necesitar ist ein regelmäßiges -ar-Verb, ustedes: necesitaron."
       }
     },
     {
