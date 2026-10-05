@@ -24,6 +24,7 @@ import {
 import { sm2Review, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
 import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC, nextPcicNewBonus, pcicSessionNewLimit, practiceTopUpStep, PCIC_NEW_BONUS_STEP, PCIC_NEW_BONUS_STEPS, thinSentences, dropOrphanCards, countFinishedToday, dayProgressPercent, finishedInBatch } from '@/lib/pcicSession';
 import { cardsForViewLevel } from '@/lib/pcicLevels';
+import { applyLearnResume, buildLearnResume, isLearnResumeFor, loadLearnResume, saveLearnResume } from '@/lib/learnResume';
 import { posOf } from '@/lib/pcicPos';
 import FeedbackButton from '@/components/FeedbackModal';
 import SpeakButton from '@/components/SpeakButton';
@@ -201,7 +202,10 @@ export default function PcicScreen() {
     setAgainDelaySec(delaySec);
     setToday(day);
     setAllCards(new Map(cards.map((c) => [c.itemId, c])));
-    setQueue(pickSm2Session(cards, pcicIntroOrder(newOrder, lvl), day, pcicSessionNewLimit({ limit: newLimit, bonus, introducedAllLevels, introducedThisLevel: introducedToday })));
+    // FB470 (kártya-szintű folytatás): az újraépült sorra rákerül a mentett sorrend és az "again" időzítők (napváltáskor / szintváltáskor érvénytelen).
+    const resume = await loadLearnResume(db);
+    setQueue(applyLearnResume(pickSm2Session(cards, pcicIntroOrder(newOrder, lvl), day, pcicSessionNewLimit({ limit: newLimit, bonus, introducedAllLevels, introducedThisLevel: introducedToday })), resume, day, lvl));
+    if (isLearnResumeFor(resume, day, lvl) && resume.base !== null) setBatchBase({ day, level: lvl, n: resume.base });
     setTypedAnswer('');
     setGrade(null);
     setSessionAnswered(0);
@@ -280,6 +284,13 @@ export default function PcicScreen() {
     return () => stopSpeaking();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [current?.itemId, loading, sentenceOpen]);
+
+  // FB470 (kártya-szintű folytatás): minden sor- / adag-változás után elmenti a pillanatképet (lib/learnResume.ts).
+  useEffect(() => {
+    if (loading || !today) return;
+    const base = batchBase.day === today && batchBase.level === level ? batchBase.n : null;
+    void saveLearnResume(getDb(), buildLearnResume(queue, today, level, base));
+  }, [loading, queue, today, level, batchBase]);
 
   const dueRemaining = queue.filter((c) => c.state !== 'new').length;
   const newRemaining = queue.filter((c) => c.state === 'new').length;
