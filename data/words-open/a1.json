@@ -162,11 +162,11 @@
     "en": "to be",
     "de": "sein (Identität, Eigenschaft)",
     "hint_en": "I *am* a student.",
-    "sentence_es": "Sí, soy feliz.",
-    "sentence_hu": "Igen, boldog vagyok.",
-    "sentence_en": "Yes, I am happy.",
-    "sentence_de": "Ja, ich bin glücklich.",
-    "sentence_lemmas": ["sí", "ser", "feliz"]
+    "sentence_es": "Hola, soy yo.",
+    "sentence_hu": "Szia, én vagyok.",
+    "sentence_en": "Hi, it is me.",
+    "sentence_de": "Hallo, ich bin es.",
+    "sentence_lemmas": ["hola", "ser", "yo"]
   },
   {
     "order": 12,
@@ -1277,6 +1277,7 @@
     "hu": "őt, azt (tárgy)",
     "en": "him, it (direct object)",
     "de": "ihn, es",
+    "hint_en": "I see *him* there.",
     "sentence_es": "Lo veo en la casa.",
     "sentence_hu": "Látom a házban.",
     "sentence_en": "I see him in the house.",
@@ -1292,6 +1293,7 @@
     "hu": "neki",
     "en": "to him, to her",
     "de": "ihm, ihr",
+    "hint_en": "I give *him* water.",
     "sentence_es": "Le doy agua.",
     "sentence_hu": "Vizet adok neki.",
     "sentence_en": "I give him water.",
@@ -1307,6 +1309,7 @@
     "hu": "magát, magukat (visszaható)",
     "en": "himself, herself, themselves",
     "de": "sich",
+    "hint_en": "She sees *herself* in the mirror.",
     "sentence_es": "Ella se ve bien.",
     "sentence_hu": "Jól néz ki.",
     "sentence_en": "She looks good.",
@@ -3387,16 +3390,16 @@
     "order": 675,
     "level": "A1",
     "pos": "noun",
-    "lemma": "armario",
-    "es": "el armario / el ropero",
+    "lemma": "ropero",
+    "es": "el ropero / el armario",
     "hu": "szekrény",
     "en": "wardrobe, cabinet",
     "de": "Schrank",
-    "sentence_es": "El armario es muy viejo.",
+    "sentence_es": "El ropero es muy viejo.",
     "sentence_hu": "A szekrény nagyon régi.",
     "sentence_en": "The wardrobe is very old.",
     "sentence_de": "Der Schrank ist sehr alt.",
-    "sentence_lemmas": ["el", "armario", "ser", "muy", "viejo"]
+    "sentence_lemmas": ["el", "ropero", "ser", "muy", "viejo"]
   },
   {
     "order": 676,
@@ -5865,11 +5868,11 @@
     "hu": "zokni",
     "en": "sock",
     "de": "Socke",
-    "sentence_es": "Los calcetines están en el armario.",
+    "sentence_es": "Los calcetines están en el ropero.",
     "sentence_hu": "A zoknik a szekrényben vannak.",
     "sentence_en": "The socks are in the closet.",
     "sentence_de": "Die Socken sind im Schrank.",
-    "sentence_lemmas": ["el", "calcetín", "estar", "en", "el", "armario"]
+    "sentence_lemmas": ["el", "calcetín", "estar", "en", "el", "ropero"]
   },
   {
     "order": 966,
@@ -6773,21 +6776,6 @@
     "sentence_lemmas": ["el", "salón", "de", "clase", "ser", "grande"]
   },
   {
-    "order": 2705,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "taquería",
-    "es": "la taquería",
-    "hu": "tacózó",
-    "en": "taco restaurant",
-    "de": "Taco-Lokal",
-    "sentence_es": "Comemos tacos en la taquería.",
-    "sentence_hu": "Tacót eszünk a tacózóban.",
-    "sentence_en": "We eat tacos at the taco restaurant.",
-    "sentence_de": "Wir essen Tacos in der Taquería.",
-    "sentence_lemmas": ["comer", "taco", "en", "el", "taquería"]
-  },
-  {
     "order": 2771,
     "level": "A1",
     "pos": "noun",
@@ -7418,5 +7406,36 @@
     "sentence_en": "Which one is your book?",
     "sentence_de": "Welches ist dein Buch?",
     "sentence_lemmas": ["cuál", "ser", "tu", "libro"]
+  },
+  {
+    "order": 162,
+    "level": "A1",
+    "pos": "det",
+    "lemma": "cuánto",
+    "es": "cuánto",
+    "hu": "mennyi, hány",
+    "en": "how much, how many",
+    "de": "wie viel, wie viele",
+    "hint_en": "*How much* does it cost?",
+    "sentence_es": "¿Cuánto dinero tienes?",
+    "sentence_hu": "Mennyi pénzed van?",
+    "sentence_en": "How much money do you have?",
+    "sentence_de": "Wie viel Geld hast du?",
+    "sentence_lemmas": ["cuánto", "dinero", "tener"]
+  },
+  {
+    "order": 737,
+    "level": "A1",
+    "pos": "adv",
+    "lemma": "adónde",
+    "es": "adónde",
+    "hu": "hova",
+    "en": "where to",
+    "de": "wohin",
+    "sentence_es": "¿Adónde vas hoy?",
+    "sentence_hu": "Hova mész ma?",
+    "sentence_en": "Where are you going today?",
+    "sentence_de": "Wohin gehst du heute?",
+    "sentence_lemmas": ["adónde", "ir", "hoy"]
   }
 ]
