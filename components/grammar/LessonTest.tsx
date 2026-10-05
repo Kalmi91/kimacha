@@ -25,6 +25,8 @@ import ExamMatchCard from '@/components/exam/ExamMatchCard';
 import ExamTilesCard from '@/components/exam/ExamTilesCard';
 import ExamTypeCard from '@/components/exam/ExamTypeCard';
 import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
+import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
+import FeedbackButton from '@/components/FeedbackModal';
 
 // PLAN-vizsga B. szakasz (8. lépés): a nyelvtani lecke végi teszt képernyője. Nincs bevezető
 // (a lecke done-lapjának gombja alatt áll "10 questions, pass 80%"): kérdések (nincs élet; a
@@ -48,6 +50,8 @@ interface Props {
   topicId: string;
   learnedLang: string;
   contentLang: string;
+  /** A felhasználó szintje: a 💬 (FeedbackModal) a Feedback sheetbe ezt írja. */
+  level: string;
   /** A korábbi mentett eredmény (az elrontott tételek előre kerülnek, a legjobb pont megmarad). */
   previous: LessonTestResult | null;
   hasNextTopic: boolean;
@@ -99,6 +103,7 @@ export default function LessonTest({
   topicId,
   learnedLang,
   contentLang,
+  level,
   previous,
   hasNextTopic,
   onSave,
@@ -178,7 +183,21 @@ export default function LessonTest({
     setPhase('running');
   };
 
-  const shell = (children: ReactNode) => <View style={[styles.screen, { backgroundColor: colors.background }]}>{children}</View>;
+  // FB467: a lecke-teszt minden részén ott a 💬; a `part` mondja meg a Feedback sheetben, pontosan melyik
+  // részről van szó (grammar:<lecke>:lessontest:<rész>). Beírós kérdésnél a 💬 a dokkolt sáv fölé kerül.
+  const shell = (children: ReactNode, part?: string, bottomOffset?: number) => (
+    <View style={[styles.screen, { backgroundColor: colors.background }]}>
+      {children}
+      {part ? (
+        <FeedbackButton
+          level={level}
+          languagePair={`${contentLang}→${learnedLang}`}
+          currentCard={`grammar:${topicId}:lessontest:${part}`}
+          bottomOffset={bottomOffset}
+        />
+      ) : null}
+    </View>
+  );
 
   if (phase === 'result' && summary) {
     return shell(
@@ -222,7 +241,8 @@ export default function LessonTest({
             <ExamButton testID="lesson-test-retry" secondary label={s.exam.tryAgain} onPress={retry} />
           </>
         )}
-      </ScrollView>
+      </ScrollView>,
+      'result'
     );
   }
 
@@ -235,7 +255,8 @@ export default function LessonTest({
         </Card>
         <ExamButton testID="lesson-test-leave" label={s.exam.leave} onPress={onLeave} />
         <ExamButton testID="lesson-test-keep-going" secondary label={s.exam.keepGoing} onPress={() => setPhase('running')} />
-      </View>
+      </View>,
+      'leave'
     );
   }
 
@@ -268,7 +289,9 @@ export default function LessonTest({
         )}
       </DockSlotProvider>
       {dock.node}
-    </KeyboardAvoidingView>
+    </KeyboardAvoidingView>,
+    `q${index + 1}:${questions[index]?.id ?? ''}`,
+    dock.bottomOffset
   );
 }
 
@@ -276,7 +299,7 @@ const styles = StyleSheet.create({
   screen: { flex: 1, paddingTop: spacing.xl },
   flex: { flex: 1 },
   centered: { flex: 1 },
-  body: { padding: spacing.lg, gap: spacing.md },
+  body: { padding: spacing.lg, paddingBottom: FAB_CLEARANCE, gap: spacing.md },
   card: { borderRadius: radius.lg, padding: spacing.lg, gap: spacing.md },
   brutalCard: { padding: spacing.lg, gap: spacing.md },
   title: { fontSize: fontSize.xl, fontWeight: fontWeight.bold, textAlign: 'center' },
