@@ -19,4 +19,11 @@ describe('data/words-open kártya-javítások (FB1005d)', () => {
     expect(ex).toMatch(/\b(soy|eres|es|somos|son)\b/i);
     expect(ex).not.toMatch(/\b(estoy|estás|está|estamos|están)\b/i);
   });
+
+  it('FB475-478: a lo / le / se kártyán (o84-86) kis angol mondat áll a kérdés alatt, mint a te (o83) kártyán', () => {
+    expect(findPcicItem('o83')?.hint).toBeTruthy();
+    for (const id of ['o84', 'o85', 'o86']) {
+      expect(findPcicItem(id)?.hint).toMatch(/^[^*]*\*[^*]+\*[^*]*$/);
+    }
+  });
 });
