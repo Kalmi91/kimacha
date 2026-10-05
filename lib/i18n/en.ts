@@ -442,6 +442,8 @@ export default {
     accentForgiven: 'Missing accent, counted as correct',
     // PLAN-tobbjelentes 3. lépés: a Check utáni „also: b · c” sor felirata (perjeles válasz).
     alsoLabel: 'also',
+    // FB481/495/496/498: az (i) magyarázat-gomb kisegítő felirata.
+    noteLabel: 'More info',
     // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 3. pont):
     // a szint-választó lap feliratai és sorai (korábban data/pcic.ts
     // LEVEL_LABELS-ben és components/LevelRow.tsx-ben angolra égetve).
