@@ -1,6 +1,9 @@
 // PLAN-fb1005d: a Learn (PCIC) kártyák adat-javításai Kálmán 2026-10-03/05 visszajelzései nyomán
 // (FB473-479, 482-484, 486, 497). Minden tétel egy-egy teszt, hogy a javítás ne csússzon vissza.
 import { gradePcicAnswer } from '@/lib/pcicMatch';
+import { dropOrphanCards } from '@/lib/pcicSession';
+import type { Sm2Card } from '@/lib/sm2';
+import retired from '../../scripts/words-open-retired.json';
 import { findPcicItem, levelOfItem, pcicItemsForLevel, setPcicTarget } from '../pcic';
 
 describe('data/words-open kártya-javítások (FB1005d)', () => {
@@ -51,6 +54,20 @@ describe('data/words-open kártya-javítások (FB1005d)', () => {
     expect(gradePcicAnswer('el tomate', item!.es)).toMatchObject({ match: 'exact', best: 'el tomate' });
     const all = (['A1', 'A2', 'B1', 'B2'] as const).flatMap((l) => pcicItemsForLevel(l));
     expect(all.filter((i) => i.es.split(' / ')[0].replace(/^el /, '') === 'jitomate')).toEqual([]);
+  });
+
+  it('FB497: a taquería (o2705) kikerült a Learn-ből, az order nem használható újra, a többi order nem csúszott, az árva SRS-sort az app kihagyja', () => {
+    expect(findPcicItem('o2705')).toBeUndefined();
+    expect(retired.retired.map((r) => r.order)).toContain(2705);
+    const all = (['A1', 'A2', 'B1', 'B2'] as const).flatMap((l) => pcicItemsForLevel(l));
+    const orders = new Set(all.map((i) => i.order));
+    for (const r of retired.retired) expect(orders.has(r.order)).toBe(false);
+    // a szomszédos orderek ugyanazok a kártyák maradtak
+    expect(findPcicItem('o2704')?.order).toBe(2704);
+    expect(findPcicItem('o2706')?.order).toBe(2706);
+    // az eltűnt kártya haladás-sora árva: a session kihagyja
+    const orphan = { itemId: 'o2705', state: 'review' } as Sm2Card;
+    expect(dropOrphanCards([orphan], (id) => findPcicItem(id) !== undefined)).toEqual([]);
   });
 
   it('FB475-478: a lo / le / se kártyán (o84-86) kis angol mondat áll a kérdés alatt, mint a te (o83) kártyán', () => {
