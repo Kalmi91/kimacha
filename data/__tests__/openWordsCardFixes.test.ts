@@ -20,6 +20,13 @@ describe('data/words-open kártya-javítások (FB1005d)', () => {
     expect(ex).not.toMatch(/\b(estoy|estás|está|estamos|están)\b/i);
   });
 
+  it('FB479: a ropero kártya (o675) mondata az első jó választ (ropero) használja, nem az armariót', () => {
+    const item = findPcicItem('o675');
+    expect(item?.es).toBe('el ropero / el armario');
+    expect(item?.exampleEs).toMatch(/\bropero\b/);
+    expect(item?.exampleEs).not.toMatch(/\barmario\b/);
+  });
+
   it('FB475-478: a lo / le / se kártyán (o84-86) kis angol mondat áll a kérdés alatt, mint a te (o83) kártyán', () => {
     expect(findPcicItem('o83')?.hint).toBeTruthy();
     for (const id of ['o84', 'o85', 'o86']) {

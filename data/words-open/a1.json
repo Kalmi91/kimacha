@@ -3390,16 +3390,16 @@
     "order": 675,
     "level": "A1",
     "pos": "noun",
-    "lemma": "armario",
-    "es": "el armario / el ropero",
+    "lemma": "ropero",
+    "es": "el ropero / el armario",
     "hu": "szekrény",
     "en": "wardrobe, cabinet",
     "de": "Schrank",
-    "sentence_es": "El armario es muy viejo.",
+    "sentence_es": "El ropero es muy viejo.",
     "sentence_hu": "A szekrény nagyon régi.",
     "sentence_en": "The wardrobe is very old.",
     "sentence_de": "Der Schrank ist sehr alt.",
-    "sentence_lemmas": ["el", "armario", "ser", "muy", "viejo"]
+    "sentence_lemmas": ["el", "ropero", "ser", "muy", "viejo"]
   },
   {
     "order": 676,
@@ -5868,11 +5868,11 @@
     "hu": "zokni",
     "en": "sock",
     "de": "Socke",
-    "sentence_es": "Los calcetines están en el armario.",
+    "sentence_es": "Los calcetines están en el ropero.",
     "sentence_hu": "A zoknik a szekrényben vannak.",
     "sentence_en": "The socks are in the closet.",
     "sentence_de": "Die Socken sind im Schrank.",
-    "sentence_lemmas": ["el", "calcetín", "estar", "en", "el", "armario"]
+    "sentence_lemmas": ["el", "calcetín", "estar", "en", "el", "ropero"]
   },
   {
     "order": 966,
