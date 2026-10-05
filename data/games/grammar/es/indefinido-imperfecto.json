@@ -335,6 +335,356 @@
       ]
     },
     {
+      "kind": "table",
+      "id": "ind-imp-comer",
+      "title": {
+        "hu": "Comer, indefinido és imperfecto",
+        "en": "Comer, preterite and imperfect",
+        "es": "Comer, perfecto simple e imperfecto",
+        "de": "Comer, Indefinido und Imperfekt"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "comer (indefinido)",
+          "en": "comer (indefinido)",
+          "es": "comer (perfecto simple)",
+          "de": "comer (indefinido)"
+        },
+        {
+          "hu": "comer (imperfecto)",
+          "en": "comer (imperfecto)",
+          "es": "comer (imperfecto)",
+          "de": "comer (imperfecto)"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "comí",
+          "comía"
+        ],
+        [
+          "tú",
+          "comiste",
+          "comías"
+        ],
+        [
+          "él/ella/usted",
+          "comió",
+          "comía"
+        ],
+        [
+          "nosotros",
+          "comimos",
+          "comíamos"
+        ],
+        [
+          "vosotros",
+          "comisteis",
+          "comíais"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "comieron",
+          "comían"
+        ]
+      ],
+      "enPrompt": [
+            ["I ate", "I used to eat"],
+            ["you ate", "you used to eat"],
+            ["she ate", "she used to eat"],
+            ["we ate", "we used to eat"],
+            ["you all ate", "you all used to eat"],
+            ["they ate", "they used to eat"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind-imp-ser",
+      "title": {
+        "hu": "Ser, indefinido és imperfecto",
+        "en": "Ser, preterite and imperfect",
+        "es": "Ser, perfecto simple e imperfecto",
+        "de": "Ser, Indefinido und Imperfekt"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "ser (indefinido)",
+          "en": "ser (indefinido)",
+          "es": "ser (perfecto simple)",
+          "de": "ser (indefinido)"
+        },
+        {
+          "hu": "ser (imperfecto)",
+          "en": "ser (imperfecto)",
+          "es": "ser (imperfecto)",
+          "de": "ser (imperfecto)"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "fui",
+          "era"
+        ],
+        [
+          "tú",
+          "fuiste",
+          "eras"
+        ],
+        [
+          "él/ella/usted",
+          "fue",
+          "era"
+        ],
+        [
+          "nosotros",
+          "fuimos",
+          "éramos"
+        ],
+        [
+          "vosotros",
+          "fuisteis",
+          "erais"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "fueron",
+          "eran"
+        ]
+      ],
+      "enPrompt": [
+            ["I was", "I used to be"],
+            ["you were", "you used to be"],
+            ["she was", "she used to be"],
+            ["we were", "we used to be"],
+            ["you all were", "you all used to be"],
+            ["they were", "they used to be"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind-imp-ir",
+      "title": {
+        "hu": "Ir, indefinido és imperfecto",
+        "en": "Ir, preterite and imperfect",
+        "es": "Ir, perfecto simple e imperfecto",
+        "de": "Ir, Indefinido und Imperfekt"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "ir (indefinido)",
+          "en": "ir (indefinido)",
+          "es": "ir (perfecto simple)",
+          "de": "ir (indefinido)"
+        },
+        {
+          "hu": "ir (imperfecto)",
+          "en": "ir (imperfecto)",
+          "es": "ir (imperfecto)",
+          "de": "ir (imperfecto)"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "fui",
+          "iba"
+        ],
+        [
+          "tú",
+          "fuiste",
+          "ibas"
+        ],
+        [
+          "él/ella/usted",
+          "fue",
+          "iba"
+        ],
+        [
+          "nosotros",
+          "fuimos",
+          "íbamos"
+        ],
+        [
+          "vosotros",
+          "fuisteis",
+          "ibais"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "fueron",
+          "iban"
+        ]
+      ],
+      "enPrompt": [
+            ["I went", "I used to go"],
+            ["you went", "you used to go"],
+            ["she went", "she used to go"],
+            ["we went", "we used to go"],
+            ["you all went", "you all used to go"],
+            ["they went", "they used to go"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind-imp-tener",
+      "title": {
+        "hu": "Tener, indefinido és imperfecto",
+        "en": "Tener, preterite and imperfect",
+        "es": "Tener, perfecto simple e imperfecto",
+        "de": "Tener, Indefinido und Imperfekt"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "tener (indefinido)",
+          "en": "tener (indefinido)",
+          "es": "tener (perfecto simple)",
+          "de": "tener (indefinido)"
+        },
+        {
+          "hu": "tener (imperfecto)",
+          "en": "tener (imperfecto)",
+          "es": "tener (imperfecto)",
+          "de": "tener (imperfecto)"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "tuve",
+          "tenía"
+        ],
+        [
+          "tú",
+          "tuviste",
+          "tenías"
+        ],
+        [
+          "él/ella/usted",
+          "tuvo",
+          "tenía"
+        ],
+        [
+          "nosotros",
+          "tuvimos",
+          "teníamos"
+        ],
+        [
+          "vosotros",
+          "tuvisteis",
+          "teníais"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "tuvieron",
+          "tenían"
+        ]
+      ],
+      "enPrompt": [
+            ["I had", "I used to have"],
+            ["you had", "you used to have"],
+            ["she had", "she used to have"],
+            ["we had", "we used to have"],
+            ["you all had", "you all used to have"],
+            ["they had", "they used to have"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ind-imp-hacer",
+      "title": {
+        "hu": "Hacer, indefinido és imperfecto",
+        "en": "Hacer, preterite and imperfect",
+        "es": "Hacer, perfecto simple e imperfecto",
+        "de": "Hacer, Indefinido und Imperfekt"
+      },
+      "header": [
+        {
+          "hu": "Személy",
+          "en": "Person",
+          "es": "Persona",
+          "de": "Person"
+        },
+        {
+          "hu": "hacer (indefinido)",
+          "en": "hacer (indefinido)",
+          "es": "hacer (perfecto simple)",
+          "de": "hacer (indefinido)"
+        },
+        {
+          "hu": "hacer (imperfecto)",
+          "en": "hacer (imperfecto)",
+          "es": "hacer (imperfecto)",
+          "de": "hacer (imperfecto)"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "hice",
+          "hacía"
+        ],
+        [
+          "tú",
+          "hiciste",
+          "hacías"
+        ],
+        [
+          "él/ella/usted",
+          "hizo",
+          "hacía"
+        ],
+        [
+          "nosotros",
+          "hicimos",
+          "hacíamos"
+        ],
+        [
+          "vosotros",
+          "hicisteis",
+          "hacíais"
+        ],
+        [
+          "ellos/ellas/ustedes",
+          "hicieron",
+          "hacían"
+        ]
+      ],
+      "enPrompt": [
+            ["I did", "I used to do"],
+            ["you did", "you used to do"],
+            ["she did", "she used to do"],
+            ["we did", "we used to do"],
+            ["you all did", "you all used to do"],
+            ["they did", "they used to do"]
+      ]
+    },
+    {
       "kind": "usage",
       "title": {
         "hu": "Melyik igeidő melyik feladatra?",
