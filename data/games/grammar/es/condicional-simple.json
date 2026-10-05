@@ -1354,8 +1354,8 @@
       "id": "cd-form-10",
       "kind": "form",
       "verb": "hacer",
-      "person": "vosotros",
-      "answer": "haríais",
+      "person": "ellos/ellas/ustedes",
+      "answer": "harían",
       "table": "condicional-irregular",
       "tense": {
         "from": "presente",
@@ -1597,61 +1597,6 @@
             "en": "If it were ellos, it would say 'Vivirían más cerca del centro', meaning THEY would live closer, not us.",
             "es": "Si fuera ellos, diría 'Vivirían más cerca del centro', o sea que ELLOS vivirían, no nosotros.",
             "de": "Wäre es ellos, hieße es 'Vivirían más cerca del centro', also würden SIE näher wohnen, nicht wir."
-          }
-        }
-      ],
-      "correctIndex": 1,
-      "tense": {
-        "from": "presente",
-        "to": "condicional"
-      }
-    },
-    {
-      "kind": "why",
-      "id": "cs-why-05",
-      "es": "Saldríais más con más dinero.",
-      "target": "Saldríais",
-      "tr": {
-        "hu": "Több pénzzel gyakrabban mennétek szórakozni.",
-        "en": "With more money, you all would go out more.",
-        "es": "Saldríais más con más dinero.",
-        "de": "Mit mehr Geld würdet ihr öfter ausgehen."
-      },
-      "options": [
-        {
-          "text": {
-            "hu": "mi (nosotros)",
-            "en": "we (nosotros)",
-            "es": "nosotros",
-            "de": "wir (nosotros)"
-          },
-          "wrong": {
-            "hu": "Ha nosotros lenne, 'Saldríamos más con más dinero' állna, azaz MI mennénk gyakrabban szórakozni, nem ti.",
-            "en": "If it were nosotros, it would say 'Saldríamos más con más dinero', meaning WE would go out more, not you all.",
-            "es": "Si fuera nosotros, diría 'Saldríamos más con más dinero', o sea que NOSOTROS saldríamos más, no vosotros.",
-            "de": "Wäre es nosotros, hieße es 'Saldríamos más con más dinero', also würden WIR öfter ausgehen, nicht ihr."
-          }
-        },
-        {
-          "text": {
-            "hu": "ti (vosotros, Spo.)",
-            "en": "you all (vosotros, Spain)",
-            "es": "vosotros",
-            "de": "ihr (vosotros, Spanien)"
-          }
-        },
-        {
-          "text": {
-            "hu": "ők / Önök",
-            "en": "they/you all (ustedes)",
-            "es": "ellos/ellas/ustedes",
-            "de": "sie/Sie (Plural)"
-          },
-          "wrong": {
-            "hu": "Ha ellos lenne, 'Saldrían más con más dinero' állna, és ez az alak Mexikóban az ustedes-szel is állna; itt viszont a spanyolországi vosotros-alak van: saldríais.",
-            "en": "If it were ellos, it would say 'Saldrían más con más dinero', the form also used with ustedes in Mexico; here it is the Spain vosotros form: saldríais.",
-            "es": "Si fuera ellos, diría 'Saldrían más con más dinero', la forma que en México también iría con ustedes; aquí está la forma de España: saldríais.",
-            "de": "Wäre es ellos, hieße es 'Saldrían más con más dinero', die Form, die in Mexiko auch mit ustedes stünde; hier steht die spanische vosotros-Form: saldríais."
           }
         }
       ],

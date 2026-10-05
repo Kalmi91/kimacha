@@ -1239,14 +1239,6 @@
       "table": "presente-diptongo"
     },
     {
-      "id": "vd-form-05",
-      "kind": "form",
-      "verb": "poder",
-      "person": "vosotros",
-      "answer": "podéis",
-      "table": "presente-diptongo"
-    },
-    {
       "id": "vd-form-06",
       "kind": "form",
       "verb": "poder",
@@ -1284,14 +1276,6 @@
       "verb": "jugar",
       "person": "él/ella/usted",
       "answer": "juega",
-      "table": "presente-diptongo"
-    },
-    {
-      "id": "vd-form-11",
-      "kind": "form",
-      "verb": "jugar",
-      "person": "vosotros",
-      "answer": "jugáis",
       "table": "presente-diptongo"
     },
     {
@@ -1389,16 +1373,16 @@
         },
         {
           "text": {
-            "hu": "nosotros/vosotros: nincs tőváltás",
-            "en": "nosotros/vosotros: no stem change",
-            "es": "nosotros/vosotros: sin cambio",
-            "de": "nosotros/vosotros: kein Wechsel"
+            "hu": "nosotros: nincs tőváltás",
+            "en": "nosotros: no stem change",
+            "es": "nosotros: sin cambio",
+            "de": "nosotros: kein Wechsel"
           },
           "wrong": {
-            "hu": "Ez a szabály a nosotros/vosotros alakra vonatkozik (podemos); itt viszont a yo-alak áll, ami hangsúlyos, tehát tőt vált: puedo.",
-            "en": "This rule is about the nosotros/vosotros form (podemos); here it is the yo form, which is stressed, so it changes stem: puedo.",
-            "es": "Esta regla es sobre la forma de nosotros/vosotros (podemos); aquí está la forma de yo, que es tónica, así que cambia de raíz: puedo.",
-            "de": "Diese Regel betrifft die nosotros/vosotros-Form (podemos); hier steht aber die yo-Form, die betont ist, also wechselt der Stamm: puedo."
+            "hu": "Ez a szabály a nosotros alakra vonatkozik (podemos); itt viszont a yo-alak áll, ami hangsúlyos, tehát tőt vált: puedo.",
+            "en": "This rule is about the nosotros form (podemos); here it is the yo form, which is stressed, so it changes stem: puedo.",
+            "es": "Esta regla es sobre la forma de nosotros (podemos); aquí está la forma de yo, que es tónica, así que cambia de raíz: puedo.",
+            "de": "Diese Regel betrifft die nosotros-Form (podemos); hier steht aber die yo-Form, die betont ist, also wechselt der Stamm: puedo."
           }
         }
       ],
@@ -1548,10 +1532,10 @@
         },
         {
           "text": {
-            "hu": "nosotros/vosotros: nincs tőváltás",
-            "en": "nosotros/vosotros: no stem change",
-            "es": "nosotros/vosotros: sin cambio",
-            "de": "nosotros/vosotros: kein Wechsel"
+            "hu": "nosotros: nincs tőváltás",
+            "en": "nosotros: no stem change",
+            "es": "nosotros: sin cambio",
+            "de": "nosotros: kein Wechsel"
           }
         }
       ],
@@ -1571,16 +1555,16 @@
       "options": [
         {
           "text": {
-            "hu": "nosotros/vosotros: nincs tőváltás",
-            "en": "nosotros/vosotros: no stem change",
-            "es": "nosotros/vosotros: sin cambio",
-            "de": "nosotros/vosotros: kein Wechsel"
+            "hu": "nosotros: nincs tőváltás",
+            "en": "nosotros: no stem change",
+            "es": "nosotros: sin cambio",
+            "de": "nosotros: kein Wechsel"
           },
           "wrong": {
-            "hu": "Ez a szabály a nosotros/vosotros alakra vonatkozik (pedimos, pedís); az ellos-alak hangsúlyos, tehát tőt vált: piden.",
-            "en": "This rule is about the nosotros/vosotros form (pedimos, pedís); the ellos form is stressed, so it changes stem: piden.",
-            "es": "Esta regla es sobre la forma de nosotros/vosotros (pedimos, pedís); la forma de ellos es tónica, así que cambia de raíz: piden.",
-            "de": "Diese Regel betrifft die nosotros/vosotros-Form (pedimos, pedís); die ellos-Form ist betont, also wechselt der Stamm: piden."
+            "hu": "Ez a szabály a nosotros alakra vonatkozik (pedimos); az ellos-alak hangsúlyos, tehát tőt vált: piden.",
+            "en": "This rule is about the nosotros form (pedimos); the ellos form is stressed, so it changes stem: piden.",
+            "es": "Esta regla es sobre la forma de nosotros (pedimos); la forma de ellos es tónica, así que cambia de raíz: piden.",
+            "de": "Diese Regel betrifft die nosotros-Form (pedimos); die ellos-Form ist betont, also wechselt der Stamm: piden."
           }
         },
         {
@@ -1644,16 +1628,16 @@
         },
         {
           "text": {
-            "hu": "nosotros/vosotros: nincs tőváltás",
-            "en": "nosotros/vosotros: no stem change",
-            "es": "nosotros/vosotros: sin cambio",
-            "de": "nosotros/vosotros: kein Wechsel"
+            "hu": "nosotros: nincs tőváltás",
+            "en": "nosotros: no stem change",
+            "es": "nosotros: sin cambio",
+            "de": "nosotros: kein Wechsel"
           },
           "wrong": {
-            "hu": "Ez a szabály a nosotros/vosotros alakra vonatkozik (volvemos); az él/ella-alak hangsúlyos, tehát tőt vált: vuelve.",
-            "en": "This rule is about the nosotros/vosotros form (volvemos); the él/ella form is stressed, so it changes stem: vuelve.",
-            "es": "Esta regla es sobre la forma de nosotros/vosotros (volvemos); la forma de él/ella es tónica, así que cambia de raíz: vuelve.",
-            "de": "Diese Regel betrifft die nosotros/vosotros-Form (volvemos); die él/ella-Form ist betont, also wechselt der Stamm: vuelve."
+            "hu": "Ez a szabály a nosotros alakra vonatkozik (volvemos); az él/ella-alak hangsúlyos, tehát tőt vált: vuelve.",
+            "en": "This rule is about the nosotros form (volvemos); the él/ella form is stressed, so it changes stem: vuelve.",
+            "es": "Esta regla es sobre la forma de nosotros (volvemos); la forma de él/ella es tónica, así que cambia de raíz: vuelve.",
+            "de": "Diese Regel betrifft die nosotros-Form (volvemos); die él/ella-Form ist betont, also wechselt der Stamm: vuelve."
           }
         }
       ],
