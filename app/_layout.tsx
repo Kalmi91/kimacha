@@ -20,6 +20,7 @@ import { brutalHeaderOptions } from '@/lib/brutalHeader';
 import { startUsageTimer, stopUsageTimer, noteInteraction } from '@/lib/usageTimer';
 import { watchAppStateForSpeech } from '@/lib/speech';
 import { applyWebTestParams, getWebTestParams } from '@/lib/webTestHooks';
+import { useAppResume } from '@/lib/useAppResume';
 import UsageToast from '@/components/UsageToast';
 import StatusBarStrip from '@/components/StatusBarStrip';
 
@@ -45,6 +46,9 @@ export default function RootLayout() {
   }, [error]);
 
   useEffect(() => subscribeLanguage(() => setLangVersion((v) => v + 1)), []);
+
+  // FB470: hidegindításkor az utoljára használt fülre / leckére lép vissza (lib/useAppResume.ts).
+  useAppResume(onboardingDone);
 
   useEffect(() => {
     async function check() {

@@ -22,7 +22,7 @@ import {
   type ArticlePick,
 } from '@/lib/articlePicker';
 import { sm2Review, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
-import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC, nextPcicNewBonus, pcicSessionNewLimit, PCIC_NEW_BONUS_STEP, PCIC_NEW_BONUS_STEPS, thinSentences, dropOrphanCards, countFinishedToday, dayProgressPercent, finishedInBatch } from '@/lib/pcicSession';
+import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC, nextPcicNewBonus, pcicSessionNewLimit, practiceTopUpStep, PCIC_NEW_BONUS_STEP, PCIC_NEW_BONUS_STEPS, thinSentences, dropOrphanCards, countFinishedToday, dayProgressPercent, finishedInBatch } from '@/lib/pcicSession';
 import { cardsForViewLevel } from '@/lib/pcicLevels';
 import { posOf } from '@/lib/pcicPos';
 import FeedbackButton from '@/components/FeedbackModal';
@@ -104,7 +104,8 @@ export default function PcicScreen() {
   const [allCards, setAllCards] = useState<Map<string, Sm2Card>>(new Map());
   const [queue, setQueue] = useState<Sm2Card[]>([]);
   // FB456: a "+N új szó" bővítéskor a ma már kész kártyák száma; a csík az új adagot méri ehhez képest.
-  const [batchBase, setBatchBase] = useState<{ day: string; n: number }>({ day: '', n: 0 });
+  // FB485: az alap egy SZINTRE vonatkozik (a kész kártyákat a nézet szintjén számoljuk), másik szinten nem érvényes.
+  const [batchBase, setBatchBase] = useState<{ day: string; level: string; n: number }>({ day: '', level: '', n: 0 });
   const [typedAnswer, setTypedAnswer] = useState('');
   const [articlePick, setArticlePick] = useState<ArticlePick>('');
   const [grade, setGrade] = useState<PcicGrade | null>(null);
@@ -247,7 +248,7 @@ export default function PcicScreen() {
   const examRow = examLevels.map((status) => ({
     status,
     onStart: () => closeSheetThen(() => router.push({ pathname: '/exam', params: { level: status.level } })),
-    onPractice: () => handleSelectLevel(status.level),
+    onPractice: () => handlePractice(status.level, status.missing),
     onGrammar: () => closeSheetThen(() => router.push('/(tabs)/course')),
   }));
 
@@ -432,7 +433,7 @@ export default function PcicScreen() {
     const introducedAllLevels = cardsAllLevels.filter((c) => c.introducedAt === today).length;
     const next = nextPcicNewBonus({ limit: dailyNewLimit, bonus: pcicBonus, introducedToday: introducedAllLevels }, step);
     setPcicBonus(next);
-    setBatchBase({ day: today, n: countFinishedToday(activeCards, queue, today) });
+    setBatchBase({ day: today, level, n: countFinishedToday(activeCards, queue, today) });
     getDb().setPcicNewBonus(next, today).catch(() => {});
     setQueue(
       pickSm2Session(
@@ -442,6 +443,23 @@ export default function PcicScreen() {
         pcicSessionNewLimit({ limit: dailyNewLimit, bonus: next, introducedAllLevels, introducedThisLevel: introducedToday })
       )
     );
+  };
+
+  // FB499: a vizsga-sor "Practice words" gombja. Ha a mai keret elfogyott, a sorban kiírt hiányzó
+  // szavakból bővíti (lib/pcicSession.ts practiceTopUpStep), és az új adag haladás-csíkja 0%-ról indul;
+  // különben csak a szintre vált, mint eddig.
+  const handlePractice = async (lvl: PcicViewLevel, missing: number) => {
+    const introducedAllLevels = cardsAllLevels.filter((c) => c.introducedAt === today).length;
+    const step = practiceTopUpStep({ limit: dailyNewLimit, bonus: pcicBonus, introducedAllLevels, missing });
+    if (step === 0) return handleSelectLevel(lvl);
+    setLevelSheetOpen(false);
+    const db = getDb();
+    await db.setPcicNewBonus(nextPcicNewBonus({ limit: dailyNewLimit, bonus: pcicBonus, introducedToday: introducedAllLevels }, step), today);
+    if (lvl !== level) await db.setPcicLevel(lvl);
+    const levelCards = lvl === level ? [...allCards.values()] : cardsForViewLevel(allLevelCards, lvl);
+    setLoading(true);
+    await load(lvl);
+    setBatchBase({ day: today, level: lvl, n: countDoneToday(levelCards, today) });
   };
 
   // s1 (anki-ui-terv.html): a fejléc ELSŐ chipje a kiválasztott szint,
@@ -669,7 +687,7 @@ export default function PcicScreen() {
   // dayProgressPercent). Az FB401-es 10-es szettes mérés minden 10. kártyánál újraindult.
   // FB456: +N után az új adag haladását mutatja (finishedInBatch), nem a nap összesét.
   const barPct = dayProgressPercent(
-    finishedInBatch(countFinishedToday([...allCards.values()], queue, today), batchBase.day === today ? batchBase.n : 0),
+    finishedInBatch(countFinishedToday([...allCards.values()], queue, today), batchBase.day === today && batchBase.level === level ? batchBase.n : 0),
     queue.length
   );
 
