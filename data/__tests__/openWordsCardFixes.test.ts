@@ -1,6 +1,7 @@
 // PLAN-fb1005d: a Learn (PCIC) kártyák adat-javításai Kálmán 2026-10-03/05 visszajelzései nyomán
 // (FB473-479, 482-484, 486, 497). Minden tétel egy-egy teszt, hogy a javítás ne csússzon vissza.
-import { findPcicItem, levelOfItem, setPcicTarget } from '../pcic';
+import { gradePcicAnswer } from '@/lib/pcicMatch';
+import { findPcicItem, levelOfItem, pcicItemsForLevel, setPcicTarget } from '../pcic';
 
 describe('data/words-open kártya-javítások (FB1005d)', () => {
   beforeEach(() => setPcicTarget('es'));
@@ -40,6 +41,16 @@ describe('data/words-open kártya-javítások (FB1005d)', () => {
     expect(item?.hint).toMatch(/\*still\*/i);
     expect(item?.exampleEn).toMatch(/\bstill\b/i);
     expect(item?.exampleEn).not.toMatch(/\byet\b/i);
+  });
+
+  it('FB486: nincs külön jitomate-kártya, a tomate (o940) kártyán a jitomate is elfogadott válasz', () => {
+    const item = findPcicItem('o940');
+    expect(item?.es).toBe('el tomate / el jitomate');
+    expect(item?.en).toBe('tomato');
+    expect(gradePcicAnswer('el jitomate', item!.es)).toMatchObject({ match: 'exact', best: 'el jitomate' });
+    expect(gradePcicAnswer('el tomate', item!.es)).toMatchObject({ match: 'exact', best: 'el tomate' });
+    const all = (['A1', 'A2', 'B1', 'B2'] as const).flatMap((l) => pcicItemsForLevel(l));
+    expect(all.filter((i) => i.es.split(' / ')[0].replace(/^el /, '') === 'jitomate')).toEqual([]);
   });
 
   it('FB475-478: a lo / le / se kártyán (o84-86) kis angol mondat áll a kérdés alatt, mint a te (o83) kártyán', () => {
