@@ -1,8 +1,8 @@
 // FB499 ("azt írja a játék, hogy van még 40 szó, miért nem dobja fel?"): a szint-választó lap vizsga-sora
 // kiírja, mennyi szó hiányzik ("N / M words learned, K to go"), a "Practice words" koppintás viszont a
 // napi keret kimerülése után nem adott egy szót sem (az aktív szintnél a lap csak bezárult, a "kész mára"
-// képernyő maradt). Most a hiányzóból ad új szót (legfeljebb a legnagyobb +N lépésnyit), és a felirat
-// mondja, mennyit. A valódi words-open korpusszal fut. Mock-minta: pcicExamRow.test.tsx.
+// képernyő maradt). Most az összes hiányzó új szót adja egy koppintásra ("mindet egyszerre", Kálmán
+// 2026-10-05). A valódi words-open korpusszal fut. Mock-minta: pcicExamRow.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -74,11 +74,11 @@ describe('Tanulófül: a vizsga-sor "Practice words" gombja a hiányzó szavakb�
     fireEvent.press(screen.getByTestId('exam-row-A1'));
     await flush();
     expect(screen.queryByText('Done for today')).toBeNull();
-    expect(screen.getByText('new 15')).toBeTruthy();
-    expect(await getDb().getPcicNewBonus(today)).toBe(15);
+    expect(screen.getByText(`new ${needed - 10}`)).toBeTruthy();
+    expect(await getDb().getPcicNewBonus(today)).toBe(needed - 10);
   });
 
-  it('kevés hiányzó szó: csak annyit ad, amennyi hiányzik (a 15 helyett 3)', async () => {
+  it('kevés hiányzó szó: pontosan annyit ad, amennyi hiányzik (3)', async () => {
     const ids = pcicItemsForLevel('A1').map((i) => i.id);
     const needed = Math.ceil(0.8 * ids.length);
     // 80% - 3 tanult szó (a korábbi napokon bevezetve, holnapra esedékes), ma bevezetve 10 (a keret kimerült).
@@ -95,6 +95,20 @@ describe('Tanulófül: a vizsga-sor "Practice words" gombja a hiányzó szavakb�
     fireEvent.press(screen.getByTestId('exam-row-A1'));
     await flush();
     expect(screen.getByText('new 3')).toBeTruthy();
+  });
+
+  it('a lap vizsga-sora a menet közben tanult szavakat is számolja (nem a betöltéskori állapotot)', async () => {
+    await getDb().resetPcicCards();
+    const needed = Math.ceil(0.8 * pcicItemsForLevel('A1').length);
+    const screen = render(<PcicScreen />);
+    await flush();
+    fireEvent.press(screen.getByText("Don't learn this"));
+    await flush();
+    fireEvent.press(screen.getByText('A1 ▾'));
+    await flush();
+    expect(within(screen.getByTestId('exam-row-A1')).getByTestId('exam-row-words').props.children).toBe(
+      `1 / ${needed} words learned, ${needed - 1} to go`,
+    );
   });
 
   it('van még napi keret: a koppintás nem bővíti a keretet (a szint a szokásos napi adagot adja)', async () => {

@@ -472,10 +472,10 @@ describe('pcicSessionNewLimit (FB452)', () => {
 
 // FB499 ("van még 40 szó, miért nem dobja fel?"): a "Practice words" gomb a hiányzóból ad, ha a keret elfogyott.
 describe('practiceTopUpStep (FB499)', () => {
-  it('kimerült keret: a hiányzó szavakból ad, legfeljebb a legnagyobb +N lépésnyit', () => {
-    expect(practiceTopUpStep({ limit: 10, bonus: 0, introducedAllLevels: 10, missing: 40 })).toBe(15);
+  it('kimerült keret: az összes hiányzó szót adja egy koppintásra', () => {
+    expect(practiceTopUpStep({ limit: 10, bonus: 0, introducedAllLevels: 10, missing: 40 })).toBe(40);
     expect(practiceTopUpStep({ limit: 10, bonus: 0, introducedAllLevels: 10, missing: 3 })).toBe(3);
-    expect(practiceTopUpStep({ limit: 10, bonus: 15, introducedAllLevels: 25, missing: 304 })).toBe(15);
+    expect(practiceTopUpStep({ limit: 10, bonus: 15, introducedAllLevels: 25, missing: 304 })).toBe(304);
   });
 
   it('van még napi keret: nem bővít', () => {
@@ -493,6 +493,6 @@ describe('practiceTopUpStep (FB499)', () => {
     const limit = pcicSessionNewLimit({ limit: 10, bonus: next, introducedAllLevels: 10, introducedThisLevel: 10 });
     const done = Array.from({ length: 10 }, (_, i) => sm2Review(sm2NewCard(`a1-${i}`), 'good', TODAY));
     const order = Array.from({ length: 60 }, (_, i) => `a1-new-${i}`);
-    expect(pickSm2Session(done, order, TODAY, limit).filter((c) => c.state === 'new')).toHaveLength(15);
+    expect(pickSm2Session(done, order, TODAY, limit).filter((c) => c.state === 'new')).toHaveLength(40);
   });
 });
