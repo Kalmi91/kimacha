@@ -21,6 +21,7 @@ import { act, fireEvent, render } from '@testing-library/react-native';
 import { pcicItemsForLevel, setPcicTarget } from '@/data/pcic';
 import { getDb } from '@/lib/database';
 import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
+import { buildLearnResume, loadLearnResume, saveLearnResume } from '@/lib/learnResume';
 import { sm2NewCard } from '@/lib/sm2';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import SettingsScreen from '../settings';
@@ -92,6 +93,19 @@ describe('Beállítások: haladás nullázása (PLAN-fb1001 K1 + FB431)', () => 
     expect(left).toEqual([pcicItemsForLevel('B1')[0].id]);
     expect(queryByText('🗑️ Reset progress (A1)')).toBeNull();
     expect(getByText('🗑️ Reset progress (B1)')).toBeTruthy();
+  });
+
+  // FB470: a mentett Learn-kör pillanatképe a nullázott haladásra már nem érvényes.
+  it('a pakli nullázása a mentett Learn-kör pillanatképét is eldobja', async () => {
+    await seedCard('A1');
+    await saveLearnResume(getDb(), buildLearnResume([sm2NewCard(pcicItemsForLevel('A1')[0].id)], '2026-10-05', 'A1', null));
+    const alertSpy = jest.spyOn(Alert, 'alert').mockImplementation(() => {});
+    const r = render(<ThemeProvider><SettingsScreen /></ThemeProvider>);
+    await flush();
+    openReset(r);
+    fireEvent.press(r.getByText('🗑️ Reset progress (A1)'));
+    await confirmAlert(alertSpy);
+    expect(await loadLearnResume(getDb())).toBeNull();
   });
 
   it('megerősítés nélkül (Cancel) semmi nem törlődik', async () => {
