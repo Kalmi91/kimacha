@@ -7462,11 +7462,11 @@
     "hu": "huszonegy",
     "en": "twenty-one",
     "de": "einundzwanzig",
-    "sentence_es": "Mi hermano tiene veintiún años.",
-    "sentence_hu": "A testvérem huszonegy éves.",
-    "sentence_en": "My brother is twenty-one years old.",
-    "sentence_de": "Mein Bruder ist einundzwanzig Jahre alt.",
-    "sentence_lemmas": ["mi", "hermano", "tener", "veintiuno", "año"]
+    "sentence_es": "En mi clase somos veintiuno.",
+    "sentence_hu": "Az osztályomban huszonegyen vagyunk.",
+    "sentence_en": "There are twenty-one of us in my class.",
+    "sentence_de": "In meiner Klasse sind wir einundzwanzig.",
+    "sentence_lemmas": ["en", "mi", "clase", "ser", "veintiuno"]
   },
   {
     "order": 3841,
@@ -7589,21 +7589,6 @@
     "sentence_lemmas": ["el", "niño", "aprender", "a", "restar", "en", "el", "escuela"]
   },
   {
-    "order": 3849,
-    "level": "A1",
-    "pos": "adj",
-    "lemma": "festivo",
-    "es": "festivo",
-    "hu": "ünnepi",
-    "en": "festive, holiday",
-    "de": "festlich, Feiertags-",
-    "sentence_es": "El lunes es día festivo.",
-    "sentence_hu": "A hétfő ünnepnap.",
-    "sentence_en": "Monday is a holiday.",
-    "sentence_de": "Montag ist ein Feiertag.",
-    "sentence_lemmas": ["el", "lunes", "ser", "día", "festivo"]
-  },
-  {
     "order": 3850,
     "level": "A1",
     "pos": "verb",
@@ -7617,21 +7602,6 @@
     "sentence_en": "In winter it gets dark early.",
     "sentence_de": "Im Winter wird es früh dunkel.",
     "sentence_lemmas": ["en", "invierno", "anochecer", "temprano"]
-  },
-  {
-    "order": 3851,
-    "level": "A1",
-    "pos": "adj",
-    "lemma": "marrón",
-    "es": "marrón",
-    "hu": "barna",
-    "en": "brown",
-    "de": "braun",
-    "sentence_es": "El perro es marrón y blanco.",
-    "sentence_hu": "A kutya barna és fehér.",
-    "sentence_en": "The dog is brown and white.",
-    "sentence_de": "Der Hund ist braun und weiß.",
-    "sentence_lemmas": ["el", "perro", "ser", "marrón", "y", "blanco"]
   },
   {
     "order": 3852,
@@ -7707,21 +7677,6 @@
     "sentence_en": "My mother takes the trolleybus downtown.",
     "sentence_de": "Meine Mutter nimmt im Zentrum den Oberleitungsbus.",
     "sentence_lemmas": ["mi", "madre", "tomar", "el", "trolebús", "en", "el", "centro"]
-  },
-  {
-    "order": 3857,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "lancha",
-    "es": "la lancha",
-    "hu": "motorcsónak",
-    "en": "motorboat",
-    "de": "Motorboot",
-    "sentence_es": "La lancha blanca está en el mar.",
-    "sentence_hu": "A fehér motorcsónak a tengeren van.",
-    "sentence_en": "The white boat is on the sea.",
-    "sentence_de": "Das weiße Motorboot ist auf dem Meer.",
-    "sentence_lemmas": ["el", "lancha", "blanco", "estar", "en", "el", "mar"]
   },
   {
     "order": 3858,
@@ -8459,21 +8414,6 @@
     "sentence_lemmas": ["el", "concha", "ser", "pan", "dulce"]
   },
   {
-    "order": 3907,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "bizcocho",
-    "es": "el bizcocho",
-    "hu": "piskóta",
-    "en": "sponge cake",
-    "de": "Biskuit",
-    "sentence_es": "La abuela cocina un bizcocho.",
-    "sentence_hu": "A nagymama piskótát süt.",
-    "sentence_en": "The grandmother bakes a sponge cake.",
-    "sentence_de": "Die Großmutter backt einen Biskuit.",
-    "sentence_lemmas": ["el", "abuela", "cocinar", "un", "bizcocho"]
-  },
-  {
     "order": 3908,
     "level": "A1",
     "pos": "noun",
@@ -8712,21 +8652,6 @@
     "sentence_en": "The habanero is small and orange.",
     "sentence_de": "Die Habanero ist klein und orange.",
     "sentence_lemmas": ["el", "habanero", "ser", "pequeño", "y", "anaranjado"]
-  },
-  {
-    "order": 3924,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "tomatillo",
-    "es": "el tomatillo",
-    "hu": "tomatillo (zöld lampiontermés)",
-    "en": "tomatillo",
-    "de": "Tomatillo (grüne Hülsentomate)",
-    "sentence_es": "El tomatillo es verde y pequeño.",
-    "sentence_hu": "A tomatillo zöld és kicsi.",
-    "sentence_en": "The tomatillo is green and small.",
-    "sentence_de": "Die Tomatillo ist grün und klein.",
-    "sentence_lemmas": ["el", "tomatillo", "ser", "verde", "y", "pequeño"]
   },
   {
     "order": 3925,
@@ -9434,21 +9359,6 @@
     "sentence_lemmas": ["el", "guisado", "de", "pollo", "ser", "caliente"]
   },
   {
-    "order": 3972,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "asado",
-    "es": "el asado",
-    "hu": "sült hús, grillsütés",
-    "en": "roast, barbecue",
-    "de": "Braten, Grillfest",
-    "sentence_es": "Hay un asado en el jardín hoy.",
-    "sentence_hu": "Ma grillsütés van a kertben.",
-    "sentence_en": "There is a barbecue in the garden today.",
-    "sentence_de": "Heute gibt es ein Grillfest im Garten.",
-    "sentence_lemmas": ["haber", "un", "asado", "en", "el", "jardín", "hoy"]
-  },
-  {
     "order": 3973,
     "level": "A1",
     "pos": "noun",
@@ -9959,21 +9869,6 @@
     "sentence_lemmas": ["el", "tapete", "estar", "en", "el", "puerta"]
   },
   {
-    "order": 4007,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "secador",
-    "es": "el secador",
-    "hu": "hajszárító",
-    "en": "hair dryer",
-    "de": "Haartrockner",
-    "sentence_es": "El secador está en el baño.",
-    "sentence_hu": "A hajszárító a fürdőszobában van.",
-    "sentence_en": "The hair dryer is in the bathroom.",
-    "sentence_de": "Der Haartrockner ist im Bad.",
-    "sentence_lemmas": ["el", "secador", "estar", "en", "el", "baño"]
-  },
-  {
     "order": 4008,
     "level": "A1",
     "pos": "noun",
@@ -10002,21 +9897,6 @@
     "sentence_en": "The cleaning cloth is for the table.",
     "sentence_de": "Der Putzlappen ist für den Tisch.",
     "sentence_lemmas": ["el", "franela", "ser", "para", "el", "mesa"]
-  },
-  {
-    "order": 4010,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "navaja",
-    "es": "la navaja",
-    "hu": "bicska, borotva",
-    "en": "pocket knife, straight razor",
-    "de": "Taschenmesser, Rasiermesser",
-    "sentence_es": "Mi padre tiene una navaja en la mochila.",
-    "sentence_hu": "Apámnak van egy bicskája a hátizsákjában.",
-    "sentence_en": "My father has a pocket knife in the backpack.",
-    "sentence_de": "Mein Vater hat ein Taschenmesser im Rucksack.",
-    "sentence_lemmas": ["mi", "padre", "tener", "un", "navaja", "en", "el", "mochila"]
   },
   {
     "order": 4011,
@@ -10154,21 +10034,6 @@
     "sentence_lemmas": ["el", "cajonera", "ser", "blanco", "y", "grande"]
   },
   {
-    "order": 4020,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "rodillo",
-    "es": "el rodillo",
-    "hu": "festőhenger",
-    "en": "paint roller",
-    "de": "Farbroller",
-    "sentence_es": "El rodillo es para la pared.",
-    "sentence_hu": "A festőhenger a falhoz való.",
-    "sentence_en": "The paint roller is for the wall.",
-    "sentence_de": "Die Farbrolle ist für die Wand.",
-    "sentence_lemmas": ["el", "rodillo", "ser", "para", "el", "pared"]
-  },
-  {
     "order": 4021,
     "level": "A1",
     "pos": "noun",
@@ -10182,21 +10047,6 @@
     "sentence_en": "Where is the restroom?",
     "sentence_de": "Wo ist die Toilette?",
     "sentence_lemmas": ["dónde", "estar", "el", "sanitario"]
-  },
-  {
-    "order": 4022,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "grifo",
-    "es": "el grifo",
-    "hu": "csap",
-    "en": "faucet",
-    "de": "Wasserhahn",
-    "sentence_es": "El grifo del baño es nuevo.",
-    "sentence_hu": "A fürdőszobai csap új.",
-    "sentence_en": "The bathroom faucet is new.",
-    "sentence_de": "Der Wasserhahn im Bad ist neu.",
-    "sentence_lemmas": ["el", "grifo", "de", "baño", "ser", "nuevo"]
   },
   {
     "order": 4023,
@@ -10227,36 +10077,6 @@
     "sentence_en": "The disposable razor costs five pesos.",
     "sentence_de": "Der Einwegrasierer kostet fünf Pesos.",
     "sentence_lemmas": ["el", "rastrillo", "costar", "cinco", "peso"]
-  },
-  {
-    "order": 4025,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "dentífrico",
-    "es": "el dentífrico",
-    "hu": "fogkrém",
-    "en": "toothpaste",
-    "de": "Zahnpasta",
-    "sentence_es": "El dentífrico es blanco y azul.",
-    "sentence_hu": "A fogkrém fehér és kék.",
-    "sentence_en": "The toothpaste is white and blue.",
-    "sentence_de": "Die Zahnpasta ist weiß und blau.",
-    "sentence_lemmas": ["el", "dentífrico", "ser", "blanco", "y", "azul"]
-  },
-  {
-    "order": 4026,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "enjuague",
-    "es": "el enjuague",
-    "hu": "szájvíz",
-    "en": "mouthwash",
-    "de": "Mundspülung",
-    "sentence_es": "El enjuague es verde.",
-    "sentence_hu": "A szájvíz zöld.",
-    "sentence_en": "The mouthwash is green.",
-    "sentence_de": "Die Mundspülung ist grün.",
-    "sentence_lemmas": ["el", "enjuague", "ser", "verde"]
   },
   {
     "order": 4027,
@@ -10304,21 +10124,6 @@
     "sentence_lemmas": ["haber", "mucho", "ropa", "en", "el", "cesto"]
   },
   {
-    "order": 4030,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "cobertor",
-    "es": "el cobertor",
-    "hu": "ágytakaró",
-    "en": "bedcover",
-    "de": "Bettdecke",
-    "sentence_es": "El cobertor es grande y azul.",
-    "sentence_hu": "Az ágytakaró nagy és kék.",
-    "sentence_en": "The bedcover is big and blue.",
-    "sentence_de": "Die Bettdecke ist groß und blau.",
-    "sentence_lemmas": ["el", "cobertor", "ser", "grande", "y", "azul"]
-  },
-  {
     "order": 4031,
     "level": "A1",
     "pos": "noun",
@@ -10347,21 +10152,6 @@
     "sentence_en": "The pillowcase is white and clean.",
     "sentence_de": "Der Kissenbezug ist weiß und sauber.",
     "sentence_lemmas": ["el", "funda", "ser", "blanco", "y", "limpio"]
-  },
-  {
-    "order": 4033,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "portero",
-    "es": "el portero",
-    "hu": "portás, kapus",
-    "en": "doorman, goalkeeper",
-    "de": "Pförtner, Torwart",
-    "sentence_es": "El portero del edificio es amable.",
-    "sentence_hu": "Az épület portása kedves.",
-    "sentence_en": "The building's doorman is friendly.",
-    "sentence_de": "Der Pförtner des Gebäudes ist freundlich.",
-    "sentence_lemmas": ["el", "portero", "de", "edificio", "ser", "amable"]
   },
   {
     "order": 4034,
@@ -10617,36 +10407,6 @@
     "sentence_en": "In the park my grandfather plays dominoes.",
     "sentence_de": "Im Park spielt mein Großvater Domino.",
     "sentence_lemmas": ["en", "el", "parque", "mi", "abuelo", "jugar", "dominó"]
-  },
-  {
-    "order": 4051,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "lotería",
-    "es": "la lotería",
-    "hu": "lottó, Lotería (kártyajáték)",
-    "en": "lottery, bingo-style card game",
-    "de": "Lotterie, Lotería (Kartenspiel)",
-    "sentence_es": "La lotería es un juego de cartas.",
-    "sentence_hu": "A Lotería egy kártyajáték.",
-    "sentence_en": "Lotería is a card game.",
-    "sentence_de": "Lotería ist ein Kartenspiel.",
-    "sentence_lemmas": ["el", "lotería", "ser", "un", "juego", "de", "carta"]
-  },
-  {
-    "order": 4052,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "dado",
-    "es": "el dado",
-    "hu": "kocka (játék)",
-    "en": "die, dice",
-    "de": "Würfel",
-    "sentence_es": "El dado tiene seis lados.",
-    "sentence_hu": "A kockának hat oldala van.",
-    "sentence_en": "The die has six sides.",
-    "sentence_de": "Der Würfel hat sechs Seiten.",
-    "sentence_lemmas": ["el", "dado", "tener", "seis", "lado"]
   },
   {
     "order": 4053,
@@ -11069,21 +10829,6 @@
     "sentence_lemmas": ["el", "episodio", "de", "hoy", "ser", "muy", "bueno"]
   },
   {
-    "order": 4081,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "aplauso",
-    "es": "el aplauso",
-    "hu": "taps",
-    "en": "applause",
-    "de": "Applaus, Beifall",
-    "sentence_es": "Hay mucho aplauso en el concierto.",
-    "sentence_hu": "Sok taps van a koncerten.",
-    "sentence_en": "There is a lot of applause at the concert.",
-    "sentence_de": "Beim Konzert gibt es viel Applaus.",
-    "sentence_lemmas": ["haber", "mucho", "aplauso", "en", "el", "concierto"]
-  },
-  {
     "order": 4082,
     "level": "A1",
     "pos": "noun",
@@ -11337,21 +11082,6 @@
     "sentence_en": "The boutique sells expensive clothes.",
     "sentence_de": "Die Boutique verkauft teure Kleidung.",
     "sentence_lemmas": ["el", "boutique", "vender", "ropa", "caro"]
-  },
-  {
-    "order": 4099,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "escaparate",
-    "es": "el escaparate",
-    "hu": "kirakat",
-    "en": "shop window",
-    "de": "Schaufenster",
-    "sentence_es": "El vestido rojo está en el escaparate.",
-    "sentence_hu": "A piros ruha a kirakatban van.",
-    "sentence_en": "The red dress is in the shop window.",
-    "sentence_de": "Das rote Kleid ist im Schaufenster.",
-    "sentence_lemmas": ["el", "vestido", "rojo", "estar", "en", "el", "escaparate"]
   },
   {
     "order": 4100,
@@ -12059,21 +11789,6 @@
     "sentence_lemmas": ["en", "el", "tienda", "me", "probarse", "un", "vestido"]
   },
   {
-    "order": 4147,
-    "level": "A1",
-    "pos": "verb",
-    "lemma": "quitarse",
-    "es": "quitarse",
-    "hu": "levetkőzik, leveszi magáról",
-    "en": "to undress, to take one's clothes off",
-    "de": "ausziehen, sich ausziehen",
-    "sentence_es": "Me quito el abrigo en casa.",
-    "sentence_hu": "Otthon leveszem a kabátomat.",
-    "sentence_en": "I take off my coat at home.",
-    "sentence_de": "Zu Hause ziehe ich meinen Mantel aus.",
-    "sentence_lemmas": ["me", "quitarse", "el", "abrigo", "en", "casa"]
-  },
-  {
     "order": 4148,
     "level": "A1",
     "pos": "verb",
@@ -12299,21 +12014,6 @@
     "sentence_lemmas": ["el", "botín", "negro", "ser", "muy", "caro"]
   },
   {
-    "order": 4163,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "mocasín",
-    "es": "el mocasín",
-    "hu": "mokaszin",
-    "en": "loafer",
-    "de": "Mokassin",
-    "sentence_es": "El mocasín marrón es de mi tío.",
-    "sentence_hu": "A barna mokaszin a nagybátyámé.",
-    "sentence_en": "The brown loafer is my uncle's.",
-    "sentence_de": "Der braune Mokassin gehört meinem Onkel.",
-    "sentence_lemmas": ["el", "mocasín", "marrón", "ser", "de", "mi", "tío"]
-  },
-  {
     "order": 4164,
     "level": "A1",
     "pos": "noun",
@@ -12417,36 +12117,6 @@
     "sentence_en": "Today I have a cold.",
     "sentence_de": "Heute habe ich Schnupfen.",
     "sentence_lemmas": ["hoy", "tener", "catarro"]
-  },
-  {
-    "order": 4171,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "mareo",
-    "es": "el mareo",
-    "hu": "szédülés",
-    "en": "dizziness",
-    "de": "Schwindel",
-    "sentence_es": "Tengo mareo en el autobús.",
-    "sentence_hu": "A buszon szédülök.",
-    "sentence_en": "I feel dizzy on the bus.",
-    "sentence_de": "Im Bus wird mir schwindelig.",
-    "sentence_lemmas": ["tener", "mareo", "en", "el", "autobús"]
-  },
-  {
-    "order": 4172,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "náusea",
-    "es": "la náusea",
-    "hu": "hányinger",
-    "en": "nausea",
-    "de": "Übelkeit",
-    "sentence_es": "El médico dice que tengo náusea.",
-    "sentence_hu": "Az orvos azt mondja, hányingerem van.",
-    "sentence_en": "The doctor says I have nausea.",
-    "sentence_de": "Der Arzt sagt, dass ich Übelkeit habe.",
-    "sentence_lemmas": ["el", "médico", "decir", "que", "tener", "náusea"]
   },
   {
     "order": 4173,
@@ -12584,21 +12254,6 @@
     "sentence_lemmas": ["el", "león", "tener", "un", "melena", "grande"]
   },
   {
-    "order": 4182,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "flequillo",
-    "es": "el flequillo",
-    "hu": "frufru",
-    "en": "bangs",
-    "de": "Pony (Haare)",
-    "sentence_es": "El niño tiene un flequillo largo.",
-    "sentence_hu": "A kisfiúnak hosszú frufruja van.",
-    "sentence_en": "The boy has long bangs.",
-    "sentence_de": "Der Junge hat einen langen Pony.",
-    "sentence_lemmas": ["el", "niño", "tener", "un", "flequillo", "largo"]
-  },
-  {
     "order": 4183,
     "level": "A1",
     "pos": "noun",
@@ -12612,21 +12267,6 @@
     "sentence_en": "The braid is long and black.",
     "sentence_de": "Der Zopf ist lang und schwarz.",
     "sentence_lemmas": ["el", "trenza", "ser", "largo", "y", "negro"]
-  },
-  {
-    "order": 4184,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "coleta",
-    "es": "la coleta",
-    "hu": "lófarok (haj)",
-    "en": "ponytail",
-    "de": "Pferdeschwanz",
-    "sentence_es": "La coleta es alta y bonita.",
-    "sentence_hu": "A lófarok magas és szép.",
-    "sentence_en": "The ponytail is high and pretty.",
-    "sentence_de": "Der Pferdeschwanz ist hoch und schön.",
-    "sentence_lemmas": ["el", "coleta", "ser", "alto", "y", "bonito"]
   },
   {
     "order": 4185,
@@ -12644,36 +12284,6 @@
     "sentence_lemmas": ["el", "peluca", "ser", "rosa", "y", "largo"]
   },
   {
-    "order": 4186,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "calva",
-    "es": "la calva",
-    "hu": "kopasz fej",
-    "en": "bald head",
-    "de": "Glatze",
-    "sentence_es": "El abuelo tiene una calva pequeña.",
-    "sentence_hu": "A nagyapának kis kopasz foltja van.",
-    "sentence_en": "The grandfather has a small bald spot.",
-    "sentence_de": "Der Großvater hat eine kleine Glatze.",
-    "sentence_lemmas": ["el", "abuelo", "tener", "un", "calva", "pequeño"]
-  },
-  {
-    "order": 4187,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "encía",
-    "es": "la encía",
-    "hu": "íny",
-    "en": "gums",
-    "de": "Zahnfleisch",
-    "sentence_es": "La encía es rosa.",
-    "sentence_hu": "Az íny rózsaszín.",
-    "sentence_en": "The gums are pink.",
-    "sentence_de": "Das Zahnfleisch ist rosa.",
-    "sentence_lemmas": ["el", "encía", "ser", "rosa"]
-  },
-  {
     "order": 4188,
     "level": "A1",
     "pos": "noun",
@@ -12687,21 +12297,6 @@
     "sentence_en": "The palate is in the mouth.",
     "sentence_de": "Der Gaumen ist im Mund.",
     "sentence_lemmas": ["el", "paladar", "estar", "en", "el", "boca"]
-  },
-  {
-    "order": 4189,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "oído",
-    "es": "el oído",
-    "hu": "hallás, belső fül",
-    "en": "hearing, inner ear",
-    "de": "Gehör, Innenohr",
-    "sentence_es": "El oído está dentro de la cabeza.",
-    "sentence_hu": "A belső fül a fejben van.",
-    "sentence_en": "The inner ear is inside the head.",
-    "sentence_de": "Das Innenohr ist im Kopf.",
-    "sentence_lemmas": ["el", "oído", "estar", "dentro", "de", "el", "cabeza"]
   },
   {
     "order": 4190,
@@ -13094,21 +12689,6 @@
     "sentence_lemmas": ["el", "secretario", "trabajar", "en", "el", "oficina"]
   },
   {
-    "order": 4216,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "azafata",
-    "es": "la azafata",
-    "hu": "légiutas-kísérő",
-    "en": "flight attendant",
-    "de": "Flugbegleiterin",
-    "sentence_es": "La azafata es amable y bonita.",
-    "sentence_hu": "A légiutas-kísérő kedves és szép.",
-    "sentence_en": "The flight attendant is kind and pretty.",
-    "sentence_de": "Die Flugbegleiterin ist freundlich und hübsch.",
-    "sentence_lemmas": ["el", "azafata", "ser", "amable", "y", "bonito"]
-  },
-  {
     "order": 4217,
     "level": "A1",
     "pos": "noun",
@@ -13167,21 +12747,6 @@
     "sentence_en": "The seamstress works at her house.",
     "sentence_de": "Die Näherin arbeitet in ihrem Haus.",
     "sentence_lemmas": ["el", "costurera", "trabajar", "en", "su", "casa"]
-  },
-  {
-    "order": 4221,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "zapatero",
-    "es": "el zapatero",
-    "hu": "cipész",
-    "en": "shoemaker",
-    "de": "Schuhmacher",
-    "sentence_es": "El zapatero vende zapatos en el mercado.",
-    "sentence_hu": "A cipész cipőket árul a piacon.",
-    "sentence_en": "The shoemaker sells shoes at the market.",
-    "sentence_de": "Der Schuhmacher verkauft Schuhe auf dem Markt.",
-    "sentence_lemmas": ["el", "zapatero", "vender", "zapato", "en", "el", "mercado"]
   },
   {
     "order": 4222,
@@ -13904,21 +13469,6 @@
     "sentence_lemmas": ["el", "brillo", "de", "teléfono", "ser", "alto"]
   },
   {
-    "order": 4270,
-    "level": "A1",
-    "pos": "adj",
-    "lemma": "bloqueado",
-    "es": "bloqueado",
-    "hu": "zárolt, blokkolt",
-    "en": "blocked",
-    "de": "gesperrt, blockiert",
-    "sentence_es": "El teléfono está bloqueado.",
-    "sentence_hu": "A telefon zárolva van.",
-    "sentence_en": "The phone is blocked.",
-    "sentence_de": "Das Telefon ist gesperrt.",
-    "sentence_lemmas": ["el", "teléfono", "estar", "bloqueado"]
-  },
-  {
     "order": 4271,
     "level": "A1",
     "pos": "noun",
@@ -14114,21 +13664,6 @@
     "sentence_lemmas": ["el", "actualización", "de", "teléfono", "llegar", "hoy"]
   },
   {
-    "order": 4284,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "pantallazo",
-    "es": "el pantallazo",
-    "hu": "képernyőkép",
-    "en": "screenshot",
-    "de": "Screenshot",
-    "sentence_es": "Tengo un pantallazo en mi teléfono.",
-    "sentence_hu": "Van egy képernyőképem a telefonomon.",
-    "sentence_en": "I have a screenshot on my phone.",
-    "sentence_de": "Ich habe einen Screenshot auf meinem Telefon.",
-    "sentence_lemmas": ["tener", "un", "pantallazo", "en", "mi", "teléfono"]
-  },
-  {
     "order": 4285,
     "level": "A1",
     "pos": "noun",
@@ -14187,36 +13722,6 @@
     "sentence_en": "The goose is white and big.",
     "sentence_de": "Die Gans ist weiß und groß.",
     "sentence_lemmas": ["el", "ganso", "ser", "blanco", "y", "grande"]
-  },
-  {
-    "order": 4289,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "lechuza",
-    "es": "la lechuza",
-    "hu": "gyöngybagoly, bagoly",
-    "en": "barn owl",
-    "de": "Schleiereule, Eule",
-    "sentence_es": "La lechuza duerme en el día.",
-    "sentence_hu": "A bagoly nappal alszik.",
-    "sentence_en": "The owl sleeps during the day.",
-    "sentence_de": "Die Eule schläft am Tag.",
-    "sentence_lemmas": ["el", "lechuza", "dormir", "en", "el", "día"]
-  },
-  {
-    "order": 4290,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "halcón",
-    "es": "el halcón",
-    "hu": "sólyom",
-    "en": "hawk, falcon",
-    "de": "Falke",
-    "sentence_es": "El halcón es un pájaro grande.",
-    "sentence_hu": "A sólyom egy nagy madár.",
-    "sentence_en": "The falcon is a big bird.",
-    "sentence_de": "Der Falke ist ein großer Vogel.",
-    "sentence_lemmas": ["el", "halcón", "ser", "un", "pájaro", "grande"]
   },
   {
     "order": 4291,
@@ -14877,21 +14382,6 @@
     "sentence_en": "There is a spider web on the window.",
     "sentence_de": "Am Fenster ist ein Spinnennetz.",
     "sentence_lemmas": ["haber", "un", "telaraña", "en", "el", "ventana"]
-  },
-  {
-    "order": 4335,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "capullo",
-    "es": "el capullo",
-    "hu": "báb, rügy",
-    "en": "cocoon, bud",
-    "de": "Kokon, Knospe",
-    "sentence_es": "El capullo es pequeño y blanco.",
-    "sentence_hu": "A báb kicsi és fehér.",
-    "sentence_en": "The cocoon is small and white.",
-    "sentence_de": "Der Kokon ist klein und weiß.",
-    "sentence_lemmas": ["el", "capullo", "ser", "pequeño", "y", "blanco"]
   },
   {
     "order": 4336,
@@ -15629,36 +15119,6 @@
     "sentence_lemmas": ["el", "profesora", "hablar", "en", "el", "clase"]
   },
   {
-    "order": 4385,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "nene",
-    "es": "el nene",
-    "hu": "kisfiú, bébi (becéző)",
-    "en": "baby boy, little kid",
-    "de": "Kleiner (Junge)",
-    "sentence_es": "El nene duerme en la cama.",
-    "sentence_hu": "A kisfiú az ágyban alszik.",
-    "sentence_en": "The little boy sleeps in the bed.",
-    "sentence_de": "Der Kleine schläft im Bett.",
-    "sentence_lemmas": ["el", "nene", "dormir", "en", "el", "cama"]
-  },
-  {
-    "order": 4386,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "nena",
-    "es": "la nena",
-    "hu": "kislány (becéző)",
-    "en": "little girl",
-    "de": "Kleine (Mädchen)",
-    "sentence_es": "La nena juega con el gato.",
-    "sentence_hu": "A kislány a macskával játszik.",
-    "sentence_en": "The little girl plays with the cat.",
-    "sentence_de": "Das kleine Mädchen spielt mit der Katze.",
-    "sentence_lemmas": ["el", "nena", "jugar", "con", "el", "gato"]
-  },
-  {
     "order": 4387,
     "level": "A1",
     "pos": "noun",
@@ -16049,21 +15509,6 @@
     "sentence_lemmas": ["nos", "verse", "mañana", "en", "el", "escuela"]
   },
   {
-    "order": 4413,
-    "level": "A1",
-    "pos": "verb",
-    "lemma": "conocerse",
-    "es": "conocerse",
-    "hu": "megismerkedik",
-    "en": "to get to know each other",
-    "de": "sich kennenlernen",
-    "sentence_es": "Nos conocemos en la escuela.",
-    "sentence_hu": "Az iskolában ismerkedünk meg.",
-    "sentence_en": "We get to know each other at school.",
-    "sentence_de": "Wir lernen uns in der Schule kennen.",
-    "sentence_lemmas": ["nos", "conocerse", "en", "el", "escuela"]
-  },
-  {
     "order": 4414,
     "level": "A1",
     "pos": "verb",
@@ -16152,21 +15597,6 @@
     "sentence_en": "The boy wants to stand up.",
     "sentence_de": "Der Junge will aufstehen.",
     "sentence_lemmas": ["el", "niño", "querer", "pararse"]
-  },
-  {
-    "order": 4420,
-    "level": "A1",
-    "pos": "verb",
-    "lemma": "inclinarse",
-    "es": "inclinarse",
-    "hu": "lehajol",
-    "en": "to bend over",
-    "de": "sich bücken",
-    "sentence_es": "Me inclino para el zapato.",
-    "sentence_hu": "Lehajolok a cipőmért.",
-    "sentence_en": "I bend over for the shoe.",
-    "sentence_de": "Ich bücke mich nach dem Schuh.",
-    "sentence_lemmas": ["me", "inclinarse", "para", "el", "zapato"]
   },
   {
     "order": 4421,
@@ -16274,21 +15704,6 @@
     "sentence_lemmas": ["el", "herrero", "ser", "fuerte", "y", "trabajar", "mucho"]
   },
   {
-    "order": 4428,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "pastelero",
-    "es": "el pastelero",
-    "hu": "cukrász",
-    "en": "pastry chef",
-    "de": "Konditor",
-    "sentence_es": "El pastelero cocina un bizcocho.",
-    "sentence_hu": "A cukrász piskótát süt.",
-    "sentence_en": "The pastry chef bakes a sponge cake.",
-    "sentence_de": "Der Konditor backt einen Biskuit.",
-    "sentence_lemmas": ["el", "pastelero", "cocinar", "un", "bizcocho"]
-  },
-  {
     "order": 4429,
     "level": "A1",
     "pos": "noun",
@@ -16347,36 +15762,6 @@
     "sentence_en": "The pin is small and gray.",
     "sentence_de": "Die Stecknadel ist klein und grau.",
     "sentence_lemmas": ["el", "alfiler", "ser", "pequeño", "y", "gris"]
-  },
-  {
-    "order": 4433,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "lazo",
-    "es": "el lazo",
-    "hu": "masni, hurok",
-    "en": "ribbon bow, lasso",
-    "de": "Schleife, Lasso",
-    "sentence_es": "El lazo del vestido es rojo.",
-    "sentence_hu": "A ruha masnija piros.",
-    "sentence_en": "The bow of the dress is red.",
-    "sentence_de": "Die Schleife des Kleides ist rot.",
-    "sentence_lemmas": ["el", "lazo", "de", "vestido", "ser", "rojo"]
-  },
-  {
-    "order": 4434,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "bostezo",
-    "es": "el bostezo",
-    "hu": "ásítás",
-    "en": "yawn",
-    "de": "Gähnen",
-    "sentence_es": "El bebé tiene un bostezo grande.",
-    "sentence_hu": "A babának nagy ásítása van.",
-    "sentence_en": "The baby has a big yawn.",
-    "sentence_de": "Das Baby hat ein großes Gähnen.",
-    "sentence_lemmas": ["el", "bebé", "tener", "un", "bostezo", "grande"]
   },
   {
     "order": 4435,
