@@ -30,6 +30,7 @@ import FeedbackButton from '@/components/FeedbackModal';
 import SpeakButton from '@/components/SpeakButton';
 import BadgeRow from '@/components/learn/BadgeRow';
 import CardShell from '@/components/learn/CardShell';
+import CardNote from '@/components/learn/CardNote';
 import { SkinBackdrop, SkinHeader, SkinSpeakLabel, SkinWord } from '@/components/skins/Slots';
 import DockedAction, { DOCK_RESERVE, FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
@@ -730,7 +731,8 @@ export default function PcicScreen() {
     ? `${currentItem.region.toLowerCase() === 'méxico' ? '🇲🇽' : '🌎'} ${currentItem.region}`
     : undefined;
   const mxChipLabel = currentItem.mx ? `🇲🇽 ${currentItem.mx}` : undefined;
-  const noteOpen = !!currentItem.note && noteOpenFor === currentItem.id;
+  const hasNote = !!currentItem.note || !!currentItem.image;
+  const noteOpen = hasNote && noteOpenFor === currentItem.id;
 
   // T1 (anki-ui-terv.html): a dokkolt Check sáv felfedés után "Next"-re vált,
   // ugyanazzal a hellyel/mérettel, a javasolt értékeléssel a feliratban.
@@ -832,7 +834,7 @@ export default function PcicScreen() {
             <Text style={[styles.sectionText, { color: colors.tabIconDefault }]}>{currentItem.section}</Text>
             {/* FB481/495/496/498: (i) csak magyarázatos kártyán; koppintásra ki/be nyitja a
                 kártya `note`-ját a chip-sor alatt (a Check-sávot és a 💬-t nem takarja). */}
-            {currentItem.note &&
+            {hasNote &&
               (g.brutal ? (
                 <BrutalBox testID="learn-info" accessibilityLabel={s.pcic.noteLabel} fill={noteOpen ? 'b' : 'paper'} offset={2} boxStyle={styles.infoBtn} onPress={() => setNoteOpenFor(noteOpen ? null : currentItem.id)}>
                   <Text style={[styles.infoBtnText, { color: noteOpen ? g.onB : g.ink }]}>i</Text>
@@ -851,11 +853,7 @@ export default function PcicScreen() {
                 </Pressable>
               ))}
           </View>
-          {noteOpen && (
-            <Text testID="learn-note" style={[styles.noteText, { color: colors.text }]}>
-              {currentItem.note}
-            </Text>
-          )}
+          {noteOpen && <CardNote note={currentItem.note} image={currentItem.image} colors={colors} />}
 
           {/* SZ7 (SZAVAK.md): FB188 névelő-gombsor a Learn fülről, ⊘ az alapállás.
               FB214 kiegészítés: a PCIC-en a chip már mutatja, ha nem főnév, a
@@ -1162,12 +1160,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '700',
     fontStyle: 'italic',
-  },
-  noteText: {
-    fontSize: 14,
-    lineHeight: 20,
-    textAlign: 'center',
-    marginBottom: 16,
   },
   // 5c: szófaj-chip (noun/verb/phrase) a szekció-szöveg mellett.
   posChip: {
