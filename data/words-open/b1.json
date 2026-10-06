@@ -18369,11 +18369,11 @@
     "hu": "türkiz",
     "en": "turquoise",
     "de": "türkis",
-    "sentence_es": "El mar es azul turquesa.",
-    "sentence_hu": "A tenger türkizkék.",
-    "sentence_en": "The sea is turquoise blue.",
-    "sentence_de": "Das Meer ist türkisblau.",
-    "sentence_lemmas": ["el", "mar", "ser", "azul", "turquesa"]
+    "sentence_es": "Con el sol el mar de la playa se ve turquesa.",
+    "sentence_hu": "A napsütésben a tenger a parton türkizkéknek látszik.",
+    "sentence_en": "In the sun, the sea at the beach looks turquoise.",
+    "sentence_de": "In der Sonne sieht das Meer am Strand türkis aus.",
+    "sentence_lemmas": ["con", "el", "sol", "el", "mar", "de", "el", "playa", "se", "ver", "turquesa"]
   },
   {
     "order": 3854,
@@ -18384,11 +18384,11 @@
     "hu": "bézs",
     "en": "beige",
     "de": "beige",
-    "sentence_es": "El sofá es beige.",
-    "sentence_hu": "A kanapé bézs.",
-    "sentence_en": "The sofa is beige.",
-    "sentence_de": "Das Sofa ist beige.",
-    "sentence_lemmas": ["el", "sofá", "ser", "beige"]
+    "sentence_es": "Elegimos un sofá beige para la sala nueva.",
+    "sentence_hu": "Bézs kanapét választottunk az új nappalinkba.",
+    "sentence_en": "We chose a beige sofa for the new living room.",
+    "sentence_de": "Wir haben ein beiges Sofa für das neue Wohnzimmer gewählt.",
+    "sentence_lemmas": ["elegir", "un", "sofá", "beige", "para", "el", "sala", "nuevo"]
   },
   {
     "order": 3857,
@@ -18474,11 +18474,11 @@
     "hu": "roller (lábbal hajtott)",
     "en": "kick scooter",
     "de": "Tretroller",
-    "sentence_es": "Los niños andan en monopatín por la plaza.",
-    "sentence_hu": "A gyerekek rolleren járnak a téren.",
-    "sentence_en": "The kids ride their scooters around the square.",
-    "sentence_de": "Die Kinder fahren auf dem Platz mit dem Roller.",
-    "sentence_lemmas": ["el", "niño", "andar", "en", "monopatín", "por", "el", "plaza"]
+    "sentence_es": "Los niños andan en monopatín y se agarran del manubrio.",
+    "sentence_hu": "A gyerekek rolleren járnak, és a kormányba kapaszkodnak.",
+    "sentence_en": "The kids ride kick scooters and hold onto the handlebars.",
+    "sentence_de": "Die Kinder fahren Tretroller und halten sich am Lenker fest.",
+    "sentence_lemmas": ["el", "niño", "andar", "en", "monopatín", "y", "se", "agarrar", "de", "manubrio"]
   },
   {
     "order": 3870,
@@ -20139,11 +20139,11 @@
     "hu": "Lotería (kártyajáték)",
     "en": "bingo-style card game",
     "de": "Lotería (Kartenspiel)",
-    "sentence_es": "La lotería es un juego de cartas.",
-    "sentence_hu": "A Lotería egy kártyajáték.",
-    "sentence_en": "Lotería is a card game.",
-    "sentence_de": "Lotería ist ein Kartenspiel.",
-    "sentence_lemmas": ["el", "lotería", "ser", "un", "juego", "de", "carta"]
+    "sentence_es": "En la fiesta jugamos lotería y cantamos las cartas.",
+    "sentence_hu": "A bulin lotériát játszunk, és kiáltjuk a lapokat.",
+    "sentence_en": "At the party we play a bingo-style card game and call out the cards.",
+    "sentence_de": "Auf der Party spielen wir ein Bingo-Kartenspiel und rufen die Karten aus.",
+    "sentence_lemmas": ["en", "el", "fiesta", "jugar", "lotería", "y", "cantar", "el", "carta"]
   },
   {
     "order": 4052,
@@ -20334,11 +20334,11 @@
     "hu": "eredményjelző",
     "en": "scoreboard, score",
     "de": "Anzeigetafel, Spielstand",
-    "sentence_es": "El marcador es dos a uno.",
-    "sentence_hu": "Az állás kettő-egy.",
-    "sentence_en": "The score is two to one.",
-    "sentence_de": "Der Spielstand ist zwei zu eins.",
-    "sentence_lemmas": ["el", "marcador", "ser", "dos", "a", "uno"]
+    "sentence_es": "El marcador del partido quedó dos a uno.",
+    "sentence_hu": "A meccs eredménye kettő-egy lett.",
+    "sentence_en": "The match score ended up two to one.",
+    "sentence_de": "Der Spielstand des Spiels lautete am Ende zwei zu eins.",
+    "sentence_lemmas": ["el", "marcador", "de", "partido", "quedar", "dos", "a", "uno"]
   },
   {
     "order": 4085,
@@ -20634,11 +20634,11 @@
     "hu": "kedvező vétel",
     "en": "bargain",
     "de": "Schnäppchen",
-    "sentence_es": "El vestido es una ganga.",
-    "sentence_hu": "A ruha igazi kedvező vétel.",
-    "sentence_en": "The dress is a bargain.",
-    "sentence_de": "Das Kleid ist ein Schnäppchen.",
-    "sentence_lemmas": ["el", "vestido", "ser", "un", "ganga"]
+    "sentence_es": "Este vestido costó muy poco: ¡qué ganga!",
+    "sentence_hu": "Ez a ruha nagyon olcsó volt: micsoda kedvező vétel!",
+    "sentence_en": "This dress cost very little: what a bargain!",
+    "sentence_de": "Dieses Kleid hat sehr wenig gekostet: was für ein Schnäppchen!",
+    "sentence_lemmas": ["este", "vestido", "costar", "muy", "poco", "qué", "ganga"]
   },
   {
     "order": 4120,
@@ -21069,11 +21069,11 @@
     "hu": "hasmenés",
     "en": "diarrhea",
     "de": "Durchfall",
-    "sentence_es": "La diarrea es mala para el bebé.",
-    "sentence_hu": "A hasmenés rossz a babának.",
-    "sentence_en": "Diarrhea is bad for the baby.",
-    "sentence_de": "Durchfall ist schlecht für das Baby.",
-    "sentence_lemmas": ["el", "diarrea", "ser", "malo", "para", "el", "bebé"]
+    "sentence_es": "Con diarrea el bebé debe tomar mucha agua.",
+    "sentence_hu": "Hasmenéssel a babának sok vizet kell innia.",
+    "sentence_en": "With diarrhea the baby must drink a lot of water.",
+    "sentence_de": "Bei Durchfall muss das Baby viel Wasser trinken.",
+    "sentence_lemmas": ["con", "diarrea", "el", "bebé", "deber", "tomar", "mucho", "agua"]
   },
   {
     "order": 4174,
@@ -21189,11 +21189,11 @@
     "hu": "íny",
     "en": "gums",
     "de": "Zahnfleisch",
-    "sentence_es": "Las encías son rosas.",
-    "sentence_hu": "Az ínyek rózsaszínűek.",
-    "sentence_en": "The gums are pink.",
-    "sentence_de": "Das Zahnfleisch ist rosa.",
-    "sentence_lemmas": ["el", "encía", "ser", "rosa"]
+    "sentence_es": "Cuando me cepillo me sangran las encías.",
+    "sentence_hu": "Amikor fogat mosok, vérzik az ínyem.",
+    "sentence_en": "When I brush my teeth, my gums bleed.",
+    "sentence_de": "Wenn ich mir die Zähne putze, blutet mein Zahnfleisch.",
+    "sentence_lemmas": ["cuando", "me", "cepillarse", "me", "sangrar", "el", "encía"]
   },
   {
     "order": 4190,
@@ -21309,11 +21309,11 @@
     "hu": "higiénia",
     "en": "hygiene",
     "de": "Hygiene",
-    "sentence_es": "La higiene es muy importante.",
-    "sentence_hu": "A higiénia nagyon fontos.",
-    "sentence_en": "Hygiene is very important.",
-    "sentence_de": "Hygiene ist sehr wichtig.",
-    "sentence_lemmas": ["el", "higiene", "ser", "muy", "importante"]
+    "sentence_es": "Me lavo las manos por higiene antes de comer.",
+    "sentence_hu": "Higiéniai okokból kezet mosok evés előtt.",
+    "sentence_en": "I wash my hands for hygiene before eating.",
+    "sentence_de": "Aus Hygiene wasche ich mir vor dem Essen die Hände.",
+    "sentence_lemmas": ["me", "lavarse", "el", "mano", "por", "higiene", "antes", "de", "comer"]
   },
   {
     "order": 4203,
@@ -21699,11 +21699,11 @@
     "hu": "ikon",
     "en": "icon",
     "de": "Symbol, Icon",
-    "sentence_es": "El icono azul es grande.",
-    "sentence_hu": "A kék ikon nagy.",
-    "sentence_en": "The blue icon is big.",
-    "sentence_de": "Das blaue Symbol ist groß.",
-    "sentence_lemmas": ["el", "icono", "azul", "ser", "grande"]
+    "sentence_es": "Toco el icono azul para abrir la aplicación.",
+    "sentence_hu": "Megérintem a kék ikont az alkalmazás megnyitásához.",
+    "sentence_en": "I tap the blue icon to open the app.",
+    "sentence_de": "Ich tippe auf das blaue Symbol, um die App zu öffnen.",
+    "sentence_lemmas": ["tocar", "el", "icono", "azul", "para", "abrir", "el", "aplicación"]
   },
   {
     "order": 4256,
@@ -21759,11 +21759,11 @@
     "hu": "hang (felvétel)",
     "en": "audio",
     "de": "Audio",
-    "sentence_es": "El audio es muy bueno.",
-    "sentence_hu": "A hang nagyon jó.",
-    "sentence_en": "The audio is very good.",
-    "sentence_de": "Der Ton ist sehr gut.",
-    "sentence_lemmas": ["el", "audio", "ser", "muy", "bueno"]
+    "sentence_es": "El audio de la videollamada se oye con ruido.",
+    "sentence_hu": "A videóhívás hangja zajosan hallatszik.",
+    "sentence_en": "The audio of the video call sounds noisy.",
+    "sentence_de": "Der Ton des Videoanrufs klingt verrauscht.",
+    "sentence_lemmas": ["el", "audio", "de", "el", "videollamada", "se", "oír", "con", "ruido"]
   },
   {
     "order": 4264,
@@ -21819,11 +21819,11 @@
     "hu": "SIM-kártya, chip",
     "en": "SIM chip",
     "de": "SIM-Chip",
-    "sentence_es": "El chip es muy pequeño.",
-    "sentence_hu": "A chip nagyon kicsi.",
-    "sentence_en": "The chip is very small.",
-    "sentence_de": "Der Chip ist sehr klein.",
-    "sentence_lemmas": ["el", "chip", "ser", "muy", "pequeño"]
+    "sentence_es": "Cambio el chip del teléfono en la tienda.",
+    "sentence_hu": "A telefon SIM-kártyáját a boltban cserélem.",
+    "sentence_en": "I change the phone's SIM chip at the store.",
+    "sentence_de": "Ich wechsle den SIM-Chip des Telefons im Laden.",
+    "sentence_lemmas": ["cambiar", "el", "chip", "de", "teléfono", "en", "el", "tienda"]
   },
   {
     "order": 4269,
@@ -21924,11 +21924,11 @@
     "hu": "keresőmotor",
     "en": "search engine",
     "de": "Suchmaschine",
-    "sentence_es": "El buscador es muy rápido.",
-    "sentence_hu": "A keresőmotor nagyon gyors.",
-    "sentence_en": "The search engine is very fast.",
-    "sentence_de": "Die Suchmaschine ist sehr schnell.",
-    "sentence_lemmas": ["el", "buscador", "ser", "muy", "rápido"]
+    "sentence_es": "Escribo mi pregunta en el buscador y leo las respuestas.",
+    "sentence_hu": "Beírom a kérdésem a keresőbe, és elolvasom a válaszokat.",
+    "sentence_en": "I type my question into the search engine and read the answers.",
+    "sentence_de": "Ich tippe meine Frage in die Suchmaschine und lese die Antworten.",
+    "sentence_lemmas": ["escribir", "mi", "pregunta", "en", "el", "buscador", "y", "leer", "el", "respuesta"]
   },
   {
     "order": 4277,
@@ -21939,11 +21939,11 @@
     "hu": "melléklet (e-mail)",
     "en": "attachment",
     "de": "Anhang (E-Mail)",
-    "sentence_es": "El adjunto es una carta.",
-    "sentence_hu": "A melléklet egy levél.",
-    "sentence_en": "The attachment is a letter.",
-    "sentence_de": "Der Anhang ist ein Brief.",
-    "sentence_lemmas": ["el", "adjunto", "ser", "un", "carta"]
+    "sentence_es": "Abro el adjunto del correo para leer la carta.",
+    "sentence_hu": "Megnyitom az e-mail mellékletét, hogy elolvassam a levelet.",
+    "sentence_en": "I open the email attachment to read the letter.",
+    "sentence_de": "Ich öffne den Anhang der E-Mail, um den Brief zu lesen.",
+    "sentence_lemmas": ["abrir", "el", "adjunto", "de", "correo", "para", "leer", "el", "carta"]
   },
   {
     "order": 4279,
@@ -22149,11 +22149,11 @@
     "hu": "víziló",
     "en": "hippopotamus",
     "de": "Nilpferd",
-    "sentence_es": "El hipopótamo es muy grande.",
-    "sentence_hu": "A víziló nagyon nagy.",
-    "sentence_en": "The hippopotamus is very big.",
-    "sentence_de": "Das Nilpferd ist sehr groß.",
-    "sentence_lemmas": ["el", "hipopótamo", "ser", "muy", "grande"]
+    "sentence_es": "El hipopótamo pasa el día dentro del agua.",
+    "sentence_hu": "A víziló a napot a vízben tölti.",
+    "sentence_en": "The hippo spends the day in the water.",
+    "sentence_de": "Das Nilpferd verbringt den Tag im Wasser.",
+    "sentence_lemmas": ["el", "hipopótamo", "pasar", "el", "día", "dentro", "de", "agua"]
   },
   {
     "order": 4305,
@@ -22179,11 +22179,11 @@
     "hu": "flamingó",
     "en": "flamingo",
     "de": "Flamingo",
-    "sentence_es": "El flamenco es un pájaro rosa.",
-    "sentence_hu": "A flamingó egy rózsaszín madár.",
-    "sentence_en": "The flamingo is a pink bird.",
-    "sentence_de": "Der Flamingo ist ein rosa Vogel.",
-    "sentence_lemmas": ["el", "flamenco", "ser", "un", "pájaro", "rosa"]
+    "sentence_es": "Los flamencos duermen sobre una sola pata.",
+    "sentence_hu": "A flamingók egy lábon alszanak.",
+    "sentence_en": "Flamingos sleep standing on one leg.",
+    "sentence_de": "Flamingos schlafen auf einem Bein.",
+    "sentence_lemmas": ["el", "flamenco", "dormir", "sobre", "un", "solo", "pata"]
   },
   {
     "order": 4307,
@@ -22209,11 +22209,11 @@
     "hu": "veréb",
     "en": "sparrow",
     "de": "Spatz",
-    "sentence_es": "El gorrión es un pájaro pequeño.",
-    "sentence_hu": "A veréb egy kis madár.",
-    "sentence_en": "The sparrow is a small bird.",
-    "sentence_de": "Der Spatz ist ein kleiner Vogel.",
-    "sentence_lemmas": ["el", "gorrión", "ser", "un", "pájaro", "pequeño"]
+    "sentence_es": "Un gorrión busca pan en la banqueta.",
+    "sentence_hu": "Egy veréb kenyeret keres a járdán.",
+    "sentence_en": "A sparrow looks for bread on the sidewalk.",
+    "sentence_de": "Ein Spatz sucht auf dem Gehweg nach Brot.",
+    "sentence_lemmas": ["un", "gorrión", "buscar", "pan", "en", "el", "banqueta"]
   },
   {
     "order": 4309,
@@ -22224,11 +22224,11 @@
     "hu": "holló, varjú",
     "en": "crow, raven",
     "de": "Rabe, Krähe",
-    "sentence_es": "El cuervo es un pájaro negro.",
-    "sentence_hu": "A holló egy fekete madár.",
-    "sentence_en": "The crow is a black bird.",
-    "sentence_de": "Die Krähe ist ein schwarzer Vogel.",
-    "sentence_lemmas": ["el", "cuervo", "ser", "un", "pájaro", "negro"]
+    "sentence_es": "El cuervo grita fuerte desde el árbol.",
+    "sentence_hu": "A holló hangosan károg a fáról.",
+    "sentence_en": "The crow caws loudly from the tree.",
+    "sentence_de": "Der Rabe krächzt laut vom Baum.",
+    "sentence_lemmas": ["el", "cuervo", "gritar", "fuerte", "desde", "el", "árbol"]
   },
   {
     "order": 4310,
@@ -22494,11 +22494,11 @@
     "hu": "műhold",
     "en": "satellite",
     "de": "Satellit",
-    "sentence_es": "La luna es un satélite.",
-    "sentence_hu": "A Hold egy természetes műhold.",
-    "sentence_en": "The moon is a satellite.",
-    "sentence_de": "Der Mond ist ein Satellit.",
-    "sentence_lemmas": ["el", "luna", "ser", "un", "satélite"]
+    "sentence_es": "Un satélite da vueltas alrededor del planeta.",
+    "sentence_hu": "Egy műhold kering a bolygó körül.",
+    "sentence_en": "A satellite orbits around the planet.",
+    "sentence_de": "Ein Satellit kreist um den Planeten.",
+    "sentence_lemmas": ["un", "satélite", "dar", "vuelta", "alrededor", "de", "planeta"]
   },
   {
     "order": 4344,
@@ -22524,11 +22524,11 @@
     "hu": "margaréta",
     "en": "daisy",
     "de": "Gänseblümchen",
-    "sentence_es": "La margarita es una flor blanca.",
-    "sentence_hu": "A margaréta egy fehér virág.",
-    "sentence_en": "The daisy is a white flower.",
-    "sentence_de": "Das Gänseblümchen ist eine weiße Blume.",
-    "sentence_lemmas": ["el", "margarita", "ser", "un", "flor", "blanco"]
+    "sentence_es": "Recojo margaritas blancas en el campo.",
+    "sentence_hu": "Fehér margarétákat szedek a mezőn.",
+    "sentence_en": "I pick white daisies in the field.",
+    "sentence_de": "Ich pflücke weiße Gänseblümchen auf dem Feld.",
+    "sentence_lemmas": ["recoger", "margarita", "blanco", "en", "el", "campo"]
   },
   {
     "order": 4346,
@@ -22539,11 +22539,11 @@
     "hu": "orchidea",
     "en": "orchid",
     "de": "Orchidee",
-    "sentence_es": "La orquídea es una flor bonita.",
-    "sentence_hu": "Az orchidea egy szép virág.",
-    "sentence_en": "The orchid is a pretty flower.",
-    "sentence_de": "Die Orchidee ist eine schöne Blume.",
-    "sentence_lemmas": ["el", "orquídea", "ser", "un", "flor", "bonito"]
+    "sentence_es": "Compro una orquídea para regalar en el cumpleaños.",
+    "sentence_hu": "Orchideát veszek ajándékba a születésnapra.",
+    "sentence_en": "I buy an orchid to give as a gift for the birthday.",
+    "sentence_de": "Ich kaufe eine Orchidee, um sie zum Geburtstag zu verschenken.",
+    "sentence_lemmas": ["comprar", "un", "orquídea", "para", "regalar", "en", "el", "cumpleaños"]
   },
   {
     "order": 4349,
@@ -22554,11 +22554,11 @@
     "hu": "fenyő",
     "en": "pine",
     "de": "Kiefer, Fichte",
-    "sentence_es": "El pino es verde en invierno.",
-    "sentence_hu": "A fenyő télen is zöld.",
-    "sentence_en": "The pine is green in winter.",
-    "sentence_de": "Die Kiefer ist im Winter grün.",
-    "sentence_lemmas": ["el", "pino", "ser", "verde", "en", "invierno"]
+    "sentence_es": "En la montaña crecen muchos pinos altos.",
+    "sentence_hu": "A hegyekben sok magas fenyő nő.",
+    "sentence_en": "Many tall pines grow in the mountains.",
+    "sentence_de": "In den Bergen wachsen viele hohe Kiefern.",
+    "sentence_lemmas": ["en", "el", "montaña", "crecer", "mucho", "pino", "alto"]
   },
   {
     "order": 4350,
@@ -22629,11 +22629,11 @@
     "hu": "felhőkarcoló",
     "en": "skyscraper",
     "de": "Wolkenkratzer",
-    "sentence_es": "El rascacielos es muy alto.",
-    "sentence_hu": "A felhőkarcoló nagyon magas.",
-    "sentence_en": "The skyscraper is very tall.",
-    "sentence_de": "Das Hochhaus ist sehr hoch.",
-    "sentence_lemmas": ["el", "rascacielos", "ser", "muy", "alto"]
+    "sentence_es": "Desde el último piso del rascacielos se ve toda la ciudad.",
+    "sentence_hu": "A felhőkarcoló legfelső emeletéről az egész város látszik.",
+    "sentence_en": "From the top floor of the skyscraper you can see the whole city.",
+    "sentence_de": "Vom obersten Stockwerk des Wolkenkratzers sieht man die ganze Stadt.",
+    "sentence_lemmas": ["desde", "el", "último", "piso", "de", "rascacielos", "se", "ver", "todo", "el", "ciudad"]
   },
   {
     "order": 4358,
@@ -22689,11 +22689,11 @@
     "hu": "felhőszakadás",
     "en": "downpour",
     "de": "Platzregen",
-    "sentence_es": "El aguacero es fuerte hoy.",
-    "sentence_hu": "A felhőszakadás ma erős.",
-    "sentence_en": "The downpour is strong today.",
-    "sentence_de": "Der Platzregen ist heute stark.",
-    "sentence_lemmas": ["el", "aguacero", "ser", "fuerte", "hoy"]
+    "sentence_es": "Un aguacero me mojó de pies a cabeza.",
+    "sentence_hu": "Egy felhőszakadás tetőtől talpig eláztatott.",
+    "sentence_en": "A downpour soaked me from head to toe.",
+    "sentence_de": "Ein Platzregen hat mich von Kopf bis Fuß durchnässt.",
+    "sentence_lemmas": ["un", "aguacero", "me", "mojar", "de", "pie", "a", "cabeza"]
   },
   {
     "order": 4364,
@@ -22749,11 +22749,11 @@
     "hu": "lány, csaj (köznyelv)",
     "en": "teen girl (informal)",
     "de": "Mädel (umgangssprachlich)",
-    "sentence_es": "La chava es mi amiga.",
-    "sentence_hu": "A lány a barátnőm.",
-    "sentence_en": "The girl is my friend.",
-    "sentence_de": "Das Mädel ist meine Freundin.",
-    "sentence_lemmas": ["el", "chava", "ser", "mi", "amiga"]
+    "sentence_es": "Esa chava baila muy bien en las fiestas.",
+    "sentence_hu": "Az a lány nagyon jól táncol a bulikon.",
+    "sentence_en": "That girl dances very well at parties.",
+    "sentence_de": "Das Mädel dort tanzt auf Partys sehr gut.",
+    "sentence_lemmas": ["ese", "chava", "bailar", "muy", "bien", "en", "el", "fiesta"]
   },
   {
     "order": 4388,
@@ -23079,11 +23079,11 @@
     "hu": "trench coat",
     "en": "trench coat",
     "de": "Trenchcoat",
-    "sentence_es": "La gabardina es para la lluvia.",
-    "sentence_hu": "A trench coat esőre való.",
-    "sentence_en": "The trench coat is for the rain.",
-    "sentence_de": "Der Trenchcoat ist für den Regen.",
-    "sentence_lemmas": ["el", "gabardina", "ser", "para", "el", "lluvia"]
+    "sentence_es": "Cuando llueve me pongo la gabardina y salgo.",
+    "sentence_hu": "Amikor esik az eső, felveszem a trench coatot, és kimegyek.",
+    "sentence_en": "When it rains I put on my trench coat and go out.",
+    "sentence_de": "Wenn es regnet, ziehe ich den Trenchcoat an und gehe hinaus.",
+    "sentence_lemmas": ["cuando", "llover", "me", "ponerse", "el", "gabardina", "y", "salir"]
   },
   {
     "order": 4436,
