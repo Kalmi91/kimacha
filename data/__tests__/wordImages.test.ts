@@ -59,6 +59,14 @@ describe('data/words-open/images.json kártya-képek', () => {
     expect(bad).toEqual([]);
   });
 
+  it('a cropped jelző az images.json modified mezőjéből jön, és van vágott és nem vágott kép is', () => {
+    setPcicTarget('es');
+    const flags = entries.map(([id, e]) => [id, wordImageFor(id)?.cropped, /cropped/i.test(String(e.modified ?? ''))] as const);
+    expect(flags.filter(([, got, want]) => got !== want).map(([id]) => id)).toEqual([]);
+    expect(flags.some(([, c]) => c)).toBe(true);
+    expect(flags.some(([, c]) => !c)).toBe(true);
+  });
+
   it('a képtelen kártyán nincs image', () => {
     setPcicTarget('es');
     expect(findPcicItem('o1')?.image).toBeUndefined();

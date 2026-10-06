@@ -1,14 +1,17 @@
-import { Image, StyleSheet, View } from 'react-native';
+import { Image, Linking, Pressable, StyleSheet, View } from 'react-native';
 import { Text } from '@/components/KText';
 
 import Colors from '@/constants/Colors';
+import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import type { WordImage } from '@/data/wordImages';
 
 type ColorScheme = (typeof Colors)['light'];
 
 // FB481/495/496/498/500: az (i) alatt kinyíló rész. A magyarázat (note) és/vagy a kártya képe;
-// a kép alatt kis, szürke forrássor. Ha mindkettő hiányzik, semmi nem jelenik meg.
+// a kép alatt kis forrássor, ami koppintásra megnyitja a kép Commons fájl-oldalát (CC BY / BY-SA
+// forrásmegjelölés: link a forrásra; vágott képnél a sorban „(cropped)” / „(recortada)” jelzés).
+// Ha se kép, se magyarázat nincs, semmi nem renderel.
 type Props = {
   note?: string;
   image?: WordImage;
@@ -16,7 +19,9 @@ type Props = {
 };
 
 export default function CardNote({ note, image, colors }: Props) {
+  const g = useGrammarColors();
   if (!note && !image) return null;
+  const linkColor = g.brutal ? g.ink : colors.tint;
   return (
     <View style={styles.wrap}>
       {image && (
@@ -28,9 +33,17 @@ export default function CardNote({ note, image, colors }: Props) {
             resizeMode="cover"
             accessible={false}
           />
-          <Text testID="learn-image-credit" style={[styles.credit, { color: colors.tabIconDefault }]}>
-            {t().pcic.photoCredit(image.author, image.license)}
-          </Text>
+          <Pressable
+            testID="learn-image-credit"
+            accessibilityRole="link"
+            accessibilityHint={t().pcic.photoCreditHint}
+            hitSlop={8}
+            onPress={() => {
+              Linking.openURL(image.sourceUrl).catch(() => {});
+            }}
+          >
+            <Text style={[styles.credit, { color: linkColor }]}>{t().pcic.photoCredit(image.author, image.license, image.cropped)}</Text>
+          </Pressable>
         </View>
       )}
       {!!note && (
@@ -62,6 +75,7 @@ const styles = StyleSheet.create({
     lineHeight: 15,
     textAlign: 'center',
     marginTop: 4,
+    textDecorationLine: 'underline',
   },
   noteText: {
     fontSize: 14,
