@@ -220,6 +220,7 @@ if (!listOnly) {
     soler: 'suelo sueles suele suelen',
     oír: 'oigo oyes oye oyen',
     cocer: 'cuezo cueces cuece cuecen',
+    tender: 'tiendo tiendes tiende tienden',
     poblar: 'pueblo pueblas puebla pueblan',
     herir: 'hiero hieres hiere hieren',
     negar: 'niego niegas niega niegan',
