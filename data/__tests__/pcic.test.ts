@@ -27,9 +27,9 @@ describe('data/pcic.ts: irány-tudatos korpusz (PLAN-ketiranyu 4. lépés)', () 
 
   // PLAN-learn-words-open 1-2. lépés: a 4 szint 150-150 kártya a words-open
   // a1/a2/b1/b2.json-ból, order = a fájl order mezője (1-600), id = o<order>.
-  it('en→es: A1/A2/B1/B2 = 1050-1219-1243-930 words-open kártya (601 = tocar), o<order> id, egyedi id', () => {
+  it('en→es: A1/A2/B1/B2 = 512-1371-1537-1022 words-open kártya (601 = tocar), o<order> id, egyedi id', () => {
     const levels = (['A1', 'A2', 'B1', 'B2'] as const).map((l) => pcicItemsForLevel(l));
-    expect(levels.map((items) => items.length)).toEqual([1050, 1219, 1243, 930]);
+    expect(levels.map((items) => items.length)).toEqual([512, 1371, 1537, 1022]);
     const all = levels.flat();
     expect(new Set(all.map((item) => item.id)).size).toBe(4442);
     expect(all.every((item) => item.id === `o${item.order}`)).toBe(true);
