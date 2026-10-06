@@ -51,8 +51,10 @@ const styles = StyleSheet.create({
     maxWidth: 320,
     marginBottom: 12,
   },
+  // height: 'auto' kell, mert weben a helyi kép saját pixel-magassága (RN Web) felülírná az aspectRatio-t.
   image: {
     width: '100%',
+    height: 'auto',
     borderRadius: 8,
   },
   credit: {
