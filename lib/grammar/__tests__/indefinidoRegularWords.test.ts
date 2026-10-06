@@ -46,6 +46,22 @@ describe('indefinido-regular: the verbs and words of the drills are in the table
     expect(wordCells.find((c) => c.person === 'house, home')?.answer).toBe('la casa');
   });
 
+  it('the other 28 missing words are a second meaning table in the deck, the 20 of the first one are unchanged', () => {
+    const wordCells = cells.filter((c) => c.id.startsWith('indefinido-regular-words-2::'));
+    expect(wordCells).toHaveLength(28);
+    expect(wordCells.every((c) => c.verb === '' && c.enPrompt === c.person)).toBe(true);
+    expect(cells.filter((c) => c.id.startsWith('indefinido-regular-words::'))).toHaveLength(20);
+    const spanish = wordCells.map((c) => norm(c.answer.replace(/^(el|la) /, '')));
+    for (const w of [
+      'café', 'padre', 'familia', 'hermano', 'día', 'hora', 'pequeño', 'teléfono', 'semana', 'frío',
+      'enfermo', 'después', 'mañana', 'médico', 'profesor', 'clase', 'hotel', 'ventana', 'vez', 'película',
+      'tren', 'domingo', 'vaso', 'concierto', 'lunes', 'enero', 'marzo', 'aeropuerto',
+    ]) {
+      expect(spanish).toContain(w);
+    }
+    expect(wordCells.find((c) => c.person === 'airport')?.answer).toBe('el aeropuerto');
+  });
+
   it('no indefinido form used in the drills is missing from the tables', () => {
     const tableTokens = new Set<string>();
     for (const b of lesson.body) {
