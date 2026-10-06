@@ -165,8 +165,9 @@ HOW YOU LEARN
 
 LEVELS, NOT A TREADMILL
 Words are sorted into levels, A1 to B2: pick yours and move up when you are
-ready. Grammar has its own tab, with short lessons by level. Progress is per
-topic, and the exam for a level unlocks when you have mastered enough of it.
+ready. Grammar has its own tab, with short lessons by level. The exam for a
+level opens once you have learned 80% of its words and finished one of its
+grammar lessons.
 
 LANGUAGES
 Learn Spanish if you speak English, or English if you speak Spanish. The
@@ -201,8 +202,8 @@ HOGYAN TANULSZ
 SZINTEK, NEM FUTÓSZALAG
 A szavak szintekbe vannak rendezve, A1-től B2-ig: válaszd a sajátodat, és lépj
 feljebb, ha készen állsz. A nyelvtan külön fülön van, rövid leckékkel
-szintenként. A haladás témánként számít, a szintvizsga pedig akkor nyílik, ha
-eleget tudsz.
+szintenként. A szint vizsgája akkor nyílik meg, ha a szint szavainak 80%-át
+megtanultad, és elvégezted a szint egy nyelvtani leckéjét.
 
 NYELVEK
 Spanyolt tanulhatsz, ha angolul beszélsz, vagy angolt, ha spanyolul. A felület
@@ -326,7 +327,7 @@ Amit kérek:
    jelentkezve (más címmel nem működik).
 2. Kapsz egy linket, ott „Become a tester", majd a Play-ből telepítés.
 3. Hagyd fent 14 napig, és nyisd meg néhányszor. Tanulni is lehet vele,
-   spanyolt és angolt tud, magyar felülettel.
+   spanyolt és angolt tud, angol vagy spanyol felülettel.
 4. Ha valami hibás, az appon belül van visszajelzés gomb, egyből hozzám jut.
 
 Köszi, enélkül nem tudom kirakni.
@@ -399,16 +400,11 @@ Kész fájlok (`store/screenshots/`, mind 1080x1920 PNG):
 | Fájl | Mit mutat | Felirat |
 |---|---|---|
 | `01-learn.png` | szó-kártya felfedve, hang + „Type It" | Learn a word, hear it, type it |
-| `02-topics.png` | témakör-fa A0.1-A0.3 + Grammar course belépő | Choose your topic, skip what you do not need |
+| `02-topics.png` | ⚠ ELAVULT: a témakör-fa kikerült a Play-vágásban, nem tölthető fel, új felvétel kell | n/a |
 | `03-grammar.png` | nyelvtani tanterv-képernyő | Every grammar rule from A1 to C1 |
-| `04-games.png` | 12 játék a Game fülön | 12 games, played with the words you know |
+| `04-games.png` | ⚠ ELAVULT: a Game fül kikerült a Play-vágásban, nem tölthető fel, új felvétel kell | n/a |
 | `05-stats.png` | statisztika + ütemezés | See what is scheduled and when |
 | `06-settings.png` | beállítások (napi új szó, heti cél, nehézség) | You set the pace, not the app |
 
 ⚠ A Play-vágás (2026-09-23) óta a `02-topics.png` (témakör-fa) és a `04-games.png` (Game fül)
 olyan képernyőt mutat, ami már nincs az appban: feltöltés előtt újra kell fotózni.
-
-Megjegyzés: a `04-games.png` friss profilon készült, ezért a játékok többségénél
-„N more words needed" felirat látszik. Ha feloldott állapotban akarod mutatni,
-ahhoz kb. 20 megtanult szó kell a munkamenetben; ezt kézzel gyorsabb végigvinni,
-mint bottal (a gépelős kártyát a bot nem tudja megválaszolni).
