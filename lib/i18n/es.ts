@@ -409,7 +409,8 @@ const es: Strings = {
     alsoLabel: 'también',
     // FB481/495/496/498: az (i) magyarázat-gomb kisegítő felirata.
     noteLabel: 'Más información',
-    photoCredit: (author: string, license: string) => `Foto: ${author}, ${license}, Wikimedia Commons`,
+    photoCredit: (author: string, license: string, cropped: boolean) => `Foto: ${author}, ${license}, Wikimedia Commons${cropped ? ' (recortada)' : ''}`,
+    photoCreditHint: 'Abre la página de la foto en Wikimedia Commons',
     levelBeginner: 'Principiante',
     levelElementary: 'Elemental',
     levelIntermediate: 'Intermedio',

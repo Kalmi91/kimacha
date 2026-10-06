@@ -22,6 +22,8 @@ export type WordImage = {
   author: string;
   license: string;
   sourceUrl: string;
+  // images.json `modified` szerint a kép vágott (a forrássor jelzi, CC BY / BY-SA módosítás-jelzés).
+  cropped: boolean;
 };
 
 export const IMAGE_SOURCES: Record<string, ImageSourcePropType> = {
@@ -63,5 +65,5 @@ export function wordImageFor(cardId: string): WordImage | undefined {
   const meta = IMAGE_META[cardId];
   const source = meta && IMAGE_SOURCES[meta.file];
   if (!meta || !source) return undefined;
-  return { source, width: meta.width, height: meta.height, author: meta.author, license: meta.license, sourceUrl: meta.sourceUrl };
+  return { source, width: meta.width, height: meta.height, author: meta.author, license: meta.license, sourceUrl: meta.sourceUrl, cropped: /cropped/i.test(meta.modified ?? '') };
 }
