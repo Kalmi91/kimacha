@@ -4,7 +4,6 @@
 // breaks the deck is caught here, not just in a hand-rolled fixture.
 
 import { lessonFor } from '../syllabus';
-import { isLessonV2 } from '../../games/content';
 import type { LessonV2 } from '../lessonTypes';
 import { hashString, shuffleArray } from '../../shuffle';
 import { normalizeWordToken } from '@/data/words';
@@ -39,13 +38,6 @@ describe('tableCellsForLesson', () => {
     expect(tableCellsForLesson(lesson)).toEqual([]);
   });
 
-  it('a schema-1 (legacy) lesson has no body, so 0 cells', () => {
-    // PLAN-fb1001 11. lépés: a posesivos már schema-2 és személy-táblás (kérdezhető), ezért
-    // a régi-séma esetet egy schema 1-re állított másolat fedi.
-    const lesson = { ...lessonFor('es', 'ser-estar')!, schema: 1 } as unknown as Parameters<typeof tableCellsForLesson>[0];
-    expect(tableCellsForLesson(lesson)).toEqual([]);
-  });
-
   it('null/undefined lesson -> 0 cells', () => {
     expect(tableCellsForLesson(undefined)).toEqual([]);
     expect(tableCellsForLesson(null)).toEqual([]);
@@ -62,7 +54,6 @@ describe('tableCellsForLesson', () => {
 
   it('deduplicates the same person+verb pair across two tables in one lesson', () => {
     const lesson = lessonFor('es', 'ser-estar')!;
-    if (!isLessonV2(lesson)) throw new Error('ser-estar should be a schema-2 lesson');
     const tables = lesson.body.filter((b) => b.kind === 'table');
     const doubled = { ...lesson, body: [...lesson.body, ...tables] };
     expect(tableCellsForLesson(doubled)).toHaveLength(10);

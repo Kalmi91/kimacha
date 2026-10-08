@@ -53,7 +53,6 @@ const es: Strings = {
   },
   games: {
     understood: 'Entendido',
-    moreLabel: 'Más',
     correctFeedback: '¡Correcto!',
     wrongFeedback: '¡Casi!',
     grammarChoice: {
@@ -100,7 +99,6 @@ const es: Strings = {
     footNote: 'Toda la gramática del idioma, de A1 a C1, en orden de enseñanza. Las lecciones marcadas "próximamente" están planeadas, pero todavía no escritas.',
     ruleLabel: 'La regla',
     examplesLabel: 'Ejemplos',
-    exceptionsLabel: 'Excepciones y casos especiales',
     startChoice: (n: number) => `Oraciones (${n})`,
     startMatch: (n: number) => `Relacionar (${n})`,
     startForm: (n: number) => `Formas (${n})`,

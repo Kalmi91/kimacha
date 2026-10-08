@@ -55,7 +55,6 @@ export default {
   // mark-item-feliratait tartja meg (a hub/confusables/myth/… kulcsok mentek).
   games: {
     understood: 'Got it',
-    moreLabel: 'More',
     correctFeedback: 'Correct!',
     wrongFeedback: 'Not quite!',
     grammarChoice: {
@@ -107,7 +106,6 @@ export default {
     footNote: 'The whole grammar of the language, A1 to C1, in teaching order. Lessons marked "coming" are planned, not written yet.',
     ruleLabel: 'The rule',
     examplesLabel: 'Examples',
-    exceptionsLabel: 'Exceptions and edge cases',
     // D3 (FB290, 2026-09-17): one button per kind instead of `startDrill` (all at once).
     startChoice: (n: number) => `Sentences (${n})`,
     startMatch: (n: number) => `Matching (${n})`,

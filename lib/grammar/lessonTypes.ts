@@ -1,10 +1,6 @@
-// LECKE-SEMA 1-2. szakasz: a lecke új sémája, blokk-alapú törzzsel (body) és a
-// két új feladat-fajtával (match, form). A `rule`/`more` próza-mezőket a
-// `body` tömb váltja: a szerkezet innentől adat, nem a moreBlocks.ts-féle
-// prózából-találgatás. A régi (rule/more) leckék `lib/games/content.ts`-ben,
-// `LegacyLesson` néven élnek tovább, amíg a többi 20 téma is át nem költözik
-// erre a sémára; a két alak `GrammarTopicData = LegacyLesson | LessonV2`
-// unióban fér meg egymás mellett.
+// LECKE-SEMA 1-2. szakasz: a lecke sémája, blokk-alapú törzzsel (body) és a
+// két új feladat-fajtával (match, form). A szerkezet adat, nem prózából
+// kitalált; minden lecke ilyen (`GrammarTopicData = LessonV2`, lib/games/content.ts).
 //
 // `Level` és a gap/mark item-típusok a content.ts-ből jönnek (ott a
 // „törzs" a régi típusoknak), hogy ne legyen két hely, ahol egy gap-item
@@ -104,7 +100,6 @@ export type LessonBlock =
       enPrompt?: string[][];
     }
   | { kind: 'usage'; title?: Lang4; points: { text: Lang4; examples: ExamplePair[] }[] }
-  | { kind: 'examples'; title?: Lang4; examples: ExamplePair[] }
   | {
       kind: 'contrast';
       title?: Lang4;

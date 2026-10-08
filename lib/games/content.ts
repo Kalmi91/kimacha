@@ -211,26 +211,8 @@ export function grammarKindCounts(topic: GrammarTopicData): Record<GrammarKind, 
   return counts;
 }
 
-// A régi (prózás rule/more) lecke-alak. Amíg a 20 másik témát nem migrálják
-// a LessonV2 blokk-sémára (LECKE-SEMA), ez él tovább változatlanul.
-export interface LegacyLesson {
-  schema?: undefined;
-  topic: string;
-  level: Level;
-  title: Record<string, string>; // hu/en/es/de
-  rule: Record<string, string>; // hu/en/es/de, the topic's one-sentence rule card
-  more?: Record<string, string>; // hu/en/es/de, K21 collapsed "Több" block: exceptions/edge cases
-  glossary?: { word: string; gloss: Record<string, string> }[];
-  items: (GrammarGapItem | GrammarMarkItem)[]; // a régi séma sosem tartalmaz match/form-ot
-}
-
-// LECKE-SEMA: a régi és az új lecke-alak uniója, hogy a két séma egymás
-// mellett élhessen a migráció alatt.
-export type GrammarTopicData = LegacyLesson | LessonV2;
-
-export function isLessonV2(t: GrammarTopicData): t is LessonV2 {
-  return t.schema === 2;
-}
+// LECKE-SEMA: minden lecke LessonV2 (schema 2); a régi rule/more alak megszűnt.
+export type GrammarTopicData = LessonV2;
 
 // Q1 (A1 alapok), GAMES.md 10. szekció token-burn queue.
 // A2, the past and future the course was missing.

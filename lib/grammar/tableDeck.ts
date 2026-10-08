@@ -13,7 +13,7 @@
 // without timers.
 
 import type { GrammarGapItem, GrammarItem, GrammarMarkItem, GrammarTopicData } from '../games/content';
-import { isLessonV2, isMatchItem, isWhyItem } from '../games/content';
+import { isMatchItem, isWhyItem } from '../games/content';
 import { isConjugationTable, isMeaningTable, isPersonTable } from './tableShape';
 import { DEFAULT_AGAIN_DELAY_SEC } from '../pcicSession';
 import type { ExamplePair, LessonV2 } from './lessonTypes';
@@ -94,7 +94,7 @@ const VOSOTROS_PERSONS = new Set(['vosotros', 'vosotros/vosotras']);
  * (qué/quién/dónde...) filtered out by FUNCTION_WORDS_ES below.
  */
 export function tableCellsForLesson(lesson: GrammarTopicData | null | undefined): DeckCell[] {
-  if (!lesson || !isLessonV2(lesson)) return [];
+  if (!lesson) return [];
   const cells: DeckCell[] = [];
   const seen = new Set<string>();
   for (const block of lesson.body) {
@@ -353,7 +353,7 @@ export function wordCellsForLesson(
   lesson: GrammarTopicData | null | undefined,
   learnedLang: string = 'es'
 ): WordDeckCard[] {
-  if (!lesson || !isLessonV2(lesson)) return [];
+  if (!lesson) return [];
   // FB471: a lecke maga kéri, hogy ne legyen szó-pakli (lecke-szintű kikapcsolás).
   if (lesson.noWordDeck) return [];
   // PLAN-fb0929 10. lépés (Kálmán 2026-09-30): es→en irányban a pakli az angol szókészletből épül.
@@ -474,9 +474,6 @@ function lessonSentencesEn(lesson: LessonV2): string[] {
         break;
       case 'usage':
         for (const point of block.points) pushEnExamples(out, point.examples);
-        break;
-      case 'examples':
-        pushEnExamples(out, block.examples);
         break;
       case 'contrast':
         for (const pair of block.pairs) {

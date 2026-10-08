@@ -12,9 +12,8 @@
 // A topic with no file yet is shown as planned-but-not-written; the screen
 // never pretends an empty lesson exists.
 
-import { getGrammarTopic, getGrammarTopics, grammarKindCounts, isLessonV2, type GrammarKind, type GrammarTopicData } from '@/lib/games/content';
+import { getGrammarTopic, getGrammarTopics, grammarKindCounts, type GrammarKind, type GrammarTopicData } from '@/lib/games/content';
 import type { Level } from '@/data/words';
-import { IS_PLAY_BUILD } from '@/lib/buildFlavor';
 import { EN_SYLLABUS, EN_UNITS } from './syllabusEn';
 
 export interface SyllabusTopic {
@@ -793,16 +792,8 @@ export function lessonFor(lang: string, topicId: string): GrammarTopicData | und
   return getGrammarTopic(lang, topicId);
 }
 
-// Play-vágás: the Play build only shows schema:2 lessons. The four remaining
-// schema:1 (rule/more wall-of-text) lessons stay in the repo, unmigrated, but
-// hasLesson is the one choke point course.tsx, lessonCoverage and
-// nextWrittenTopic all go through, so hiding them here keeps them off the
-// syllabus screen and out of the "next topic" button in that flavor only.
 export function hasLesson(lang: string, topicId: string): boolean {
-  const lesson = getGrammarTopic(lang, topicId);
-  if (!lesson) return false;
-  if (IS_PLAY_BUILD && !isLessonV2(lesson)) return false;
-  return true;
+  return getGrammarTopic(lang, topicId) !== undefined;
 }
 
 export interface GrammarTopicProgress {

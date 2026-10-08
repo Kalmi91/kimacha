@@ -14,7 +14,6 @@ import {
   isDictationItem,
   isFormItem,
   isArticleSetItem,
-  isLessonV2,
   isMarkItem,
   isMatchItem,
   isOrderItem,
@@ -39,7 +38,6 @@ import { hashString, shuffleNoFixedPoints, shuffleOptions } from '@/lib/shuffle'
 import GlossText from '@/components/games/GlossText';
 import { useDockedAction } from '@/components/learn/DockSlot';
 import LessonBody from '@/components/grammar/LessonBody';
-import MoreBlocks from '@/components/grammar/MoreBlocks';
 import { BrutalBox, SegmentBar, Sticker, inkButtonText, segmentsFilled, textOnFill } from '@/components/grammar/Brutal';
 import AnswerCompare from '@/components/grammar/AnswerCompare';
 import ResultBadge from '@/components/ResultBadge';
@@ -171,7 +169,6 @@ function ChoiceTranslation({
 }
 
 function findFormTable(topic: GrammarTopicData, tableId: string): Extract<LessonBlock, { kind: 'table' }> | undefined {
-  if (!isLessonV2(topic)) return undefined;
   return topic.body.find((b): b is Extract<LessonBlock, { kind: 'table' }> => b.kind === 'table' && b.id === tableId);
 }
 
@@ -942,7 +939,6 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   const [index, setIndex] = useState(resumeOk ? resume.index : 0);
   const [selected, setSelected] = useState<number | null>(null);
   const [correctCount, setCorrectCount] = useState(resumeOk ? resume.correct : 0);
-  const [showMore, setShowMore] = useState(false);
   // FB464: a választós tétel mondat-fordítása (F-gomb) nyitva van-e; új tételnél újra zárt.
   const [showTr, setShowTr] = useState(false);
   // NY22: egymás utáni helyes válaszok a körön belül, csak memóriában (nincs
@@ -983,7 +979,6 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
       onProgress?.({ seed, ids: roundIds, index: index + 1, correct: finalCorrectCount, total: totalUnits });
       setIndex((i) => i + 1);
       setSelected(null);
-      setShowMore(false);
       setShowTr(false);
       return;
     }
@@ -1267,20 +1262,6 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
                 style={[styles.example, { color: g.onB }]}
               />
             ))}
-            {'more' in topic && topic.more ? (
-              <View style={[styles.moreSection, { borderTopColor: g.onB }]}>
-                <Pressable onPress={() => setShowMore((v) => !v)} hitSlop={8}>
-                  <Text style={[styles.moreToggle, { color: g.onB }]}>
-                    {showMore ? `▾ ${s.games.moreLabel}` : `▸ ${s.games.moreLabel}`}
-                  </Text>
-                </Pressable>
-                {showMore ? (
-                  <View style={styles.moreBody}>
-                    <MoreBlocks more={topic.more} contentLang={contentLang} color={g.onB} />
-                  </View>
-                ) : null}
-              </View>
-            ) : null}
           </BrutalBox>
           </>
         ) : null}
@@ -1394,20 +1375,6 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
               style={[styles.example, { color: colors.text }]}
             />
           ))}
-          {'more' in topic && topic.more ? (
-            <View style={[styles.moreSection, { borderTopColor: colors.tabIconDefault + '33' }]}>
-              <Pressable onPress={() => setShowMore((v) => !v)} hitSlop={8}>
-                <Text style={[styles.moreToggle, { color: colors.tint }]}>
-                  {showMore ? `▾ ${s.games.moreLabel}` : `▸ ${s.games.moreLabel}`}
-                </Text>
-              </Pressable>
-              {showMore ? (
-                <View style={styles.moreBody}>
-                  <MoreBlocks more={topic.more} contentLang={contentLang} color={colors.tabIconDefault} />
-                </View>
-              ) : null}
-            </View>
-          ) : null}
           <Pressable testID="grammar-next" style={[styles.btn, { backgroundColor: colors.tint, marginTop: 12 }]} onPress={next}>
             <Text style={styles.btnText}>{s.games.understood}</Text>
           </Pressable>
@@ -1467,9 +1434,7 @@ const styles = StyleSheet.create({
   explainHeader: { fontSize: 16, fontWeight: '800' },
   explainText: { fontSize: 14, lineHeight: 20 },
   example: { fontSize: 14, fontStyle: 'italic', lineHeight: 20 },
-  moreSection: { borderTopWidth: StyleSheet.hairlineWidth, paddingTop: 10, marginTop: 2 },
   moreToggle: { fontSize: 13, fontWeight: '700' },
-  moreBody: { marginTop: 10 },
   btn: { paddingVertical: 14, borderRadius: 24, alignItems: 'center' },
   btnText: { color: '#FFFFFF', fontWeight: '700', fontSize: 16 },
   hint: { fontSize: 13, textAlign: 'center' },

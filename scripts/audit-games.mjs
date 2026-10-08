@@ -564,9 +564,6 @@ function auditLessonBody(topic, path) {
         });
         break;
       }
-      case 'examples':
-        auditExamplePairs(block.examples, blockPath, 1);
-        break;
       case 'table':
         if (!block.id) p1.push({ path: blockPath, issue: 'table missing id' });
         else if (seenTableIds.has(block.id)) p1.push({ path: blockPath, issue: `duplicate table id "${block.id}"` });

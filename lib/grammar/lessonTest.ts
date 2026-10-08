@@ -11,7 +11,6 @@
 import { examPassed, EXAM_PASS_PCT } from '@/lib/exam/score';
 import {
   isFormItem,
-  isLessonV2,
   isMarkItem,
   isMatchItem,
   isOrderItem,
@@ -184,7 +183,7 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
     };
   }
   if (isFormItem(item)) {
-    const table = isLessonV2(ctx.topic) ? ctx.topic.body.find((b) => b.kind === 'table' && b.id === item.table) : undefined;
+    const table = ctx.topic.body.find((b) => b.kind === 'table' && b.id === item.table);
     const headerCell = table && table.kind === 'table' ? table.header.find((h) => h.es === item.verb) : undefined;
     const localized = headerCell ? pick(headerCell) : undefined;
     const verbLabel = localized && localized !== item.verb ? `${item.verb} (${localized})` : item.verb;
