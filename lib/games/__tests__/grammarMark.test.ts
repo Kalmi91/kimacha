@@ -74,10 +74,12 @@ describe('markAnswerIndex', () => {
 
 describe('buildGrammarRound with a mark item', () => {
   const topic = (item: GrammarMarkItem): GrammarTopicData => ({
+    schema: 2,
     topic: 'test',
     level: 'A1',
     title: { hu: 't', en: 't', es: 't', de: 't' },
-    rule: { hu: 'r', en: 'r', es: 'r', de: 'r' },
+    body: [],
+    speak: { hu: 's', en: 's', es: 's', de: 's' },
     items: [item],
   });
 

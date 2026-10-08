@@ -31,10 +31,12 @@ const TR = {
 };
 
 const withTr: GrammarTopicData = {
+  schema: 2,
   topic: 'test-tr',
   level: 'A2',
   title: four('t'),
-  rule: four('r'),
+  body: [],
+  speak: four('s'),
   items: [gap('g1', TR)],
 };
 

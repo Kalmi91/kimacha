@@ -10,10 +10,12 @@ jest.mock('@/lib/ThemeContext', () => ({
 }));
 
 const topic: GrammarTopicData = {
+  schema: 2,
   topic: 'test-mark',
   level: 'A1',
   title: { hu: 't', en: 't', es: 't', de: 't' },
-  rule: { hu: 'r', en: 'r', es: 'r', de: 'r' },
+  body: [],
+  speak: { hu: 's', en: 's', es: 's', de: 's' },
   items: [
     {
       id: 'm1',

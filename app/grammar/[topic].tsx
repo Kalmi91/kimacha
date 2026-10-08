@@ -9,7 +9,7 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { normalizeWordToken, type Level } from '@/data/words';
-import { cumulativeCorpusWordIds, grammarKindCounts, isLessonV2, type GrammarGapItem, type GrammarItem, type GrammarKind, type GrammarTopicData } from '@/lib/games/content';
+import { cumulativeCorpusWordIds, grammarKindCounts, type GrammarGapItem, type GrammarItem, type GrammarKind, type GrammarTopicData } from '@/lib/games/content';
 import { buildGlossMap } from '@/lib/games/gloss';
 import { GRAMMAR_PROGRESS_KEY, lessonFor, nextWrittenTopic, scoredKinds, syllabusTopic } from '@/lib/grammar/syllabus';
 import {
@@ -28,13 +28,12 @@ import { ARTICLE_LESSON_ID, ARTICLE_ROUND_SIZE } from '@/lib/grammar/nounArticle
 import { LESSON_TEST_PASS_PCT, lessonTestFromRows, lessonTestKey, lessonTestSize, lessonTestUnlocked } from '@/lib/grammar/lessonTest';
 import { getScrollY, setScrollY } from '@/lib/grammar/scrollMemory';
 import { speak, speakSequence, stopSpeaking } from '@/lib/speech';
-import { splitByLanguage, splitByMarkers } from '@/lib/mixedSpeech';
+import { splitByMarkers } from '@/lib/mixedSpeech';
 import { speechLang } from '@/lib/languages';
 import GlossText from '@/components/games/GlossText';
 import GrammarDrill, { type RoundStats } from '@/components/grammar/GrammarDrill';
 import LessonBody from '@/components/grammar/LessonBody';
 import LessonTest from '@/components/grammar/LessonTest';
-import MoreBlocks from '@/components/grammar/MoreBlocks';
 import FeedbackButton from '@/components/FeedbackModal';
 import FitText from '@/components/FitText';
 import SpeakButton from '@/components/SpeakButton';
@@ -227,21 +226,6 @@ export default function GrammarLessonScreen() {
       why: item.why[contentLang] ?? item.why.en,
     }));
 
-  // LECKE-SEMA: LessonV2-nek nincs rule/more mezője; a body-blokkok
-  // megjelenítése step 3, itt csak annyi kell, hogy a régi séma tovább
-  // fusson és a fordító ne akadjon fenn az únión.
-  const ruleText = 'rule' in lesson ? lesson.rule[contentLang] ?? lesson.rule.en : '';
-
-  // FB216: nyelv-szakaszokra vágva olvassuk fel, hogy a spanyol példa spanyolul
-  // szóljon a magyar/angol magyarázat közepén is.
-  const readAloud = (text: string) =>
-    speakSequence(
-      splitByLanguage(text, { learnedLang, nativeLang: contentLang }).map((seg) => ({
-        text: seg.text,
-        locale: speechLang(seg.lang),
-      }))
-    );
-
   // LECKE-SEMA 3: a V2 lecke `speak` mezőjét a «...»-jelölés vágja szakaszokra
   // (nem korpusz-találgatás), és a gomb play<->stop kapcsoló (LECKE-SEMA 3.3).
   const toggleLessonSpeech = () => {
@@ -250,7 +234,6 @@ export default function GrammarLessonScreen() {
       setSpeaking(false);
       return;
     }
-    if (!isLessonV2(lesson)) return;
     const text = lesson.speak[contentLang as 'hu' | 'en' | 'es' | 'de'] ?? lesson.speak.en;
     const segments = splitByMarkers(text, { learnedLang, nativeLang: contentLang }).map((seg) => ({
       text: seg.text,
@@ -660,44 +643,21 @@ export default function GrammarLessonScreen() {
         scrollEventThrottle={100}
         onContentSizeChange={() => scrollRef.current?.scrollTo({ y: getScrollY(String(topicId)), animated: false })}
       >
-        {isLessonV2(lesson) ? (
-          <>
-            {/* LECKE-SEMA 1+3: a body-blokkok váltják a rule/more prózát, a
-                lesson.speak felolvasása egyetlen play<->stop gombbal. */}
-            <Text style={[styles.sectionLabel, { color: accentText }]}>{s.grammar.ruleLabel}</Text>
-            <SpeakButton
-              testID="speakToggle"
-              speaking={speaking}
-              style={styles.readRow}
-              brutalStyle={styles.readRowBrutal}
-              iconStyle={styles.speak}
-              labelStyle={[styles.readLabel, { color: accentText }]}
-              label={s.grammar.readAloud}
-              onPress={toggleLessonSpeech}
-              hitSlop={10}
-            />
-            <LessonBody blocks={lesson.body} contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'} learnedLang={learnedLang} />
-          </>
-        ) : (
-          <>
-            <Text style={[styles.sectionLabel, { color: accentText }]}>{s.grammar.ruleLabel}</Text>
-            <Card classicStyle={styles.card}>
-              <Text style={[styles.ruleText, { color: colors.text }]}>{ruleText}</Text>
-              {/* FB216: a hosszú magyarázatot fel is olvassa, a benne lévő spanyol
-                  példákat spanyol hangon (lib/mixedSpeech.ts). */}
-              <SpeakButton
-                testID="grammar-read-rule"
-                style={styles.readRow}
-                brutalStyle={styles.readRowBrutal}
-                iconStyle={styles.speak}
-                labelStyle={[styles.readLabel, { color: accentText }]}
-                label={s.grammar.readAloud}
-                onPress={() => readAloud(ruleText)}
-                hitSlop={10}
-              />
-            </Card>
-          </>
-        )}
+        {/* LECKE-SEMA 1+3: a body-blokkok váltják a rule/more prózát, a
+            lesson.speak felolvasása egyetlen play<->stop gombbal. */}
+        <Text style={[styles.sectionLabel, { color: accentText }]}>{s.grammar.ruleLabel}</Text>
+        <SpeakButton
+          testID="speakToggle"
+          speaking={speaking}
+          style={styles.readRow}
+          brutalStyle={styles.readRowBrutal}
+          iconStyle={styles.speak}
+          labelStyle={[styles.readLabel, { color: accentText }]}
+          label={s.grammar.readAloud}
+          onPress={toggleLessonSpeech}
+          hitSlop={10}
+        />
+        <LessonBody blocks={lesson.body} contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'} learnedLang={learnedLang} />
 
         <Text style={[styles.sectionLabel, { color: accentText }]}>{s.grammar.examplesLabel}</Text>
         {worked.map((w, i) => (
@@ -714,25 +674,6 @@ export default function GrammarLessonScreen() {
             <Text style={[styles.exampleWhy, { color: colors.tabIconDefault }]}>{w.why}</Text>
           </Card>
         ))}
-
-        {'more' in lesson && lesson.more ? (
-          <>
-            <Text style={[styles.sectionLabel, { color: accentText }]}>{s.grammar.exceptionsLabel}</Text>
-            <Card classicStyle={styles.card}>
-              <MoreBlocks more={lesson.more} contentLang={contentLang} color={colors.text} />
-              <SpeakButton
-                testID="grammar-read-more"
-                style={styles.readRow}
-                brutalStyle={styles.readRowBrutal}
-                iconStyle={styles.speak}
-                labelStyle={[styles.readLabel, { color: accentText }]}
-                label={s.grammar.readAloud}
-                onPress={() => readAloud(lesson.more?.[contentLang] ?? lesson.more?.en ?? '')}
-                hitSlop={10}
-              />
-            </Card>
-          </>
-        ) : null}
 
         {/* D3 (FB290): egy gomb fajtánként, hogy külön indítható legyen a
             mondatok / párosítás / ragozás, ne egyszerre az egész lecke.
@@ -837,7 +778,6 @@ const styles = StyleSheet.create({
   body: { padding: 16, paddingBottom: 100, gap: 8 },
   sectionLabel: { fontSize: 12, fontWeight: '800', textTransform: 'uppercase', letterSpacing: 0.6, marginTop: 10 },
   card: { borderRadius: 14, padding: 14, gap: 6 },
-  ruleText: { fontSize: 15, lineHeight: 23 },
   exampleRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   exampleText: { fontSize: 17, fontWeight: '600', flex: 1, lineHeight: 25 },
   exampleWhy: { fontSize: 13, lineHeight: 19 },

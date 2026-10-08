@@ -28,10 +28,12 @@ const AGUA = { hu: 'víz', en: 'water', es: 'water', de: 'Wasser' };
 const MESA = { hu: 'asztal', en: 'table', es: 'table', de: 'Tisch' };
 
 const articleTopic: GrammarTopicData = {
+  schema: 2,
   topic: 'test-article',
   level: 'A1',
   title: four('t'),
-  rule: four('r'),
+  body: [],
+  speak: four('s'),
   items: [noun('n1', 'agua', 'el', AGUA), noun('n2', 'mesa', 'la', MESA)],
 };
 

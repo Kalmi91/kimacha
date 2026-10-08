@@ -25,7 +25,7 @@ jest.mock('expo-router', () => ({
   useLocalSearchParams: () => ({ topic: mockTopicId }),
 }));
 
-// No real schema:1 lesson is left in the corpus: a minimal legacy fixture
+// A minimal choice-only fixture lesson
 // (lib/__tests__/fixtures/legacy-lesson.json) is added to the content registry.
 jest.mock('@/lib/games/content', () => {
   const actual = jest.requireActual('@/lib/games/content');
@@ -90,7 +90,7 @@ describe('grammar lesson screen: per-kind drill buttons', () => {
     view.unmount();
   });
 
-  it('schema-1 lesson (legacy fixture) shows a single choice button', async () => {
+  it('a choice-only lesson (fixture) shows a single choice button', async () => {
     mockTopicId = 'legacy-fixture';
     const view = render(<GrammarLessonScreen />);
     await flush(4);

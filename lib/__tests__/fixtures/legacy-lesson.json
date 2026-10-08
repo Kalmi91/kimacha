@@ -1,4 +1,5 @@
 {
+  "schema": 2,
   "topic": "legacy-fixture",
   "level": "A2",
   "title": {
@@ -7,17 +8,22 @@
     "es": "El pretérito perfecto compuesto",
     "de": "Das Perfekt"
   },
-  "rule": {
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "hu": "Alak: haber ragozva (he, has, ha, hemos, habéis, han) + participio (-ar → -ado, -er/-ir → -ido): he hablado, has comido, ha vivido. Akkor használod, ha az időszak, amiben történt, MÉG TART: hoy, esta semana, este año, siempre, nunca, todavía no, ya. A két rész SOSEM válik szét: nem mondasz „he no comido\"-t, hanem no he comido, és a névmás is elé megy: no lo he visto.",
+        "en": "Form: haber conjugated (he, has, ha, hemos, habéis, han) plus the participle (-ar → -ado, -er/-ir → -ido): he hablado, has comido, ha vivido. You use it when the period it happened in is STILL OPEN: hoy, esta semana, este año, siempre, nunca, todavía no, ya. The two parts NEVER split: not \"he no comido\" but no he comido, and pronouns go in front: no lo he visto.",
+        "es": "Forma: haber (he, has, ha, hemos, habéis, han) más participio (-ado, -ido): he hablado, has comido. Se usa cuando el periodo sigue abierto: hoy, esta semana, este año, siempre, nunca, todavía no, ya. Las dos partes no se separan: no he comido, no lo he visto.",
+        "de": "Form: haber (he, has, ha, hemos, habéis, han) plus Partizip (-ado, -ido): he hablado, has comido. Man nutzt es, wenn der Zeitraum NOCH LÄUFT: hoy, esta semana, este año, siempre, nunca, todavía no, ya. Die zwei Teile trennen sich nie: no he comido, no lo he visto."
+      }
+    }
+  ],
+  "speak": {
     "hu": "Alak: haber ragozva (he, has, ha, hemos, habéis, han) + participio (-ar → -ado, -er/-ir → -ido): he hablado, has comido, ha vivido. Akkor használod, ha az időszak, amiben történt, MÉG TART: hoy, esta semana, este año, siempre, nunca, todavía no, ya. A két rész SOSEM válik szét: nem mondasz „he no comido\"-t, hanem no he comido, és a névmás is elé megy: no lo he visto.",
     "en": "Form: haber conjugated (he, has, ha, hemos, habéis, han) plus the participle (-ar → -ado, -er/-ir → -ido): he hablado, has comido, ha vivido. You use it when the period it happened in is STILL OPEN: hoy, esta semana, este año, siempre, nunca, todavía no, ya. The two parts NEVER split: not \"he no comido\" but no he comido, and pronouns go in front: no lo he visto.",
     "es": "Forma: haber (he, has, ha, hemos, habéis, han) más participio (-ado, -ido): he hablado, has comido. Se usa cuando el periodo sigue abierto: hoy, esta semana, este año, siempre, nunca, todavía no, ya. Las dos partes no se separan: no he comido, no lo he visto.",
     "de": "Form: haber (he, has, ha, hemos, habéis, han) plus Partizip (-ado, -ido): he hablado, has comido. Man nutzt es, wenn der Zeitraum NOCH LÄUFT: hoy, esta semana, este año, siempre, nunca, todavía no, ya. Die zwei Teile trennen sich nie: no he comido, no lo he visto."
-  },
-  "more": {
-    "hu": "Rendhagyó participiók, amiket muszáj tudni: hacer → hecho, ver → visto, decir → dicho, escribir → escrito, poner → puesto, volver → vuelto, abrir → abierto, romper → roto, morir → muerto. Regionális különbség: Spanyolországban a mai eseményre perfectót mondanak (Hoy he comido tarde), Mexikóban és nagy részén Latin-Amerikának ugyanerre indefinidót (Hoy comí tarde). Mindkettő helyes, csak más vidék. A participio itt SOSEM egyeztetődik: ellas han llegado, nem llegadas.",
-    "en": "Irregular participles you simply have to know: hacer → hecho, ver → visto, decir → dicho, escribir → escrito, poner → puesto, volver → vuelto, abrir → abierto, romper → roto, morir → muerto. A regional split: Spain uses the perfect for today's events (Hoy he comido tarde), Mexico and most of Latin America use the preterite (Hoy comí tarde). Both are correct, they are different regions. The participle here NEVER agrees: ellas han llegado, not llegadas.",
-    "es": "Participios irregulares imprescindibles: hecho, visto, dicho, escrito, puesto, vuelto, abierto, roto, muerto. Diferencia regional: en España se dice Hoy he comido tarde; en México y casi toda América, Hoy comí tarde. El participio aquí no concuerda: ellas han llegado.",
-    "de": "Unregelmäßige Partizipien, die man können muss: hecho, visto, dicho, escrito, puesto, vuelto, abierto, roto, muerto. Regionaler Unterschied: in Spanien Hoy he comido tarde, in Mexiko und fast ganz Lateinamerika Hoy comí tarde. Das Partizip wird hier nie angeglichen: ellas han llegado."
   },
   "glossary": [
     {
