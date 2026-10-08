@@ -4,6 +4,12 @@
 
 subject=$(head -1 "$1")
 
+# No AI attribution lines: this repository keeps its history free of them.
+if grep -v '^#' "$1" | grep -qiE 'Co-Authored-By:.*(Claude|Anthropic)|Generated with.*Claude|Claude-Session'; then
+  echo "Commit message must not carry an AI attribution line (Co-Authored-By, Generated with, Claude-Session)." >&2
+  exit 1
+fi
+
 # Let git's own generated messages through (merge, revert, fixup, squash).
 case "$subject" in
   "Merge "*|"Revert "*|"fixup!"*|"squash!"*) exit 0 ;;
