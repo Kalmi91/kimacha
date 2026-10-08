@@ -23,6 +23,11 @@ expo-env.d.ts
 *.p12
 *.key
 *.mobileprovision
+*.keystore
+keystore.properties
+google-services.json
+GoogleService-Info.plist
+*service-account*.json
 
 # Metro
 .metro-health-check*
@@ -67,6 +72,9 @@ docs/UI-NEVEK.md
 /ITER1.1-PLAN.txt
 /TASK.md
 /skills
+/PLAN*.md
+/REVIEW-*.md
+/CLAUDE.md
 
 # Local Claude Code MCP config (empty stub, not project state)
 .mcp.json
@@ -76,10 +84,6 @@ docs/UI-NEVEK.md
 /.yarnrc
 /.yarnrc.yml
 
-# Claude Code writes session state here; only the project config and the
-# build skill are part of the repository.
-.claude/*
-!.claude/settings.json
-!.claude/skills/
-.claude/skills/*
-!.claude/skills/build-apk/
+# Claude Code state, settings and skills stay local; they are archived in the
+# private ai-workspace repo.
+/.claude/
