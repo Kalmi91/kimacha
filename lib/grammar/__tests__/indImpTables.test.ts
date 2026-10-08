@@ -2,13 +2,11 @@
 // (comer, ser, ir, tener, hacer), indefinido + imperfecto oszloppal, és a táblakártyák
 // ugyanúgy angol alakot kérdeznek, vosotros-kártya nélkül.
 
-import { isLessonV2 } from '@/lib/games/content';
 import { lessonFor } from '../syllabus';
 import { tableCellsForLesson } from '../tableDeck';
 
-const found = lessonFor('es', 'indefinido-imperfecto');
-if (!found || !isLessonV2(found)) throw new Error('indefinido-imperfecto must be a v2 lesson');
-const lesson = found;
+const lesson = lessonFor('es', 'indefinido-imperfecto');
+if (!lesson) throw new Error('indefinido-imperfecto must exist');
 const cells = tableCellsForLesson(lesson);
 const VERBS = ['hablar', 'comer', 'ser', 'ir', 'tener', 'hacer'];
 

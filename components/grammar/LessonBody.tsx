@@ -21,10 +21,9 @@ const LEGEND_CAPTION: Lang4 = {
   de: 'Jede Zeile ist eine Person, jede Farbe ist ein Verb.',
 };
 
-// LECKE-SEMA 1. szakasz: a LessonV2 body-blokkjainak megjelenítője. A
-// moreBlocks.ts (FB224) a próza szerkezetét TALÁLTA KI; ez a komponens innen
-// nem találgat, a JSON adja a szerkezetet (text/list/table/usage/examples/
-// contrast/tip), a komponens csak rajzol.
+// LECKE-SEMA 1. szakasz: a LessonV2 body-blokkjainak megjelenítője. A JSON
+// adja a szerkezetet (text/list/table/usage/contrast/tip), a komponens csak
+// rajzol.
 
 interface Props {
   blocks: LessonBlock[];
@@ -313,21 +312,6 @@ export default function LessonBody({ blocks, contentLang, learnedLang }: Props) 
                   ))}
                 </Card>
               ))}
-            </View>
-          );
-        }
-
-        if (block.kind === 'examples') {
-          return (
-            <View key={i} style={styles.section}>
-              {block.title ? (
-                <Text variant="title" style={[styles.sectionTitle, { color: titleColor }]}>{block.title[contentLang] ?? block.title.en}</Text>
-              ) : null}
-              <Card classicStyle={styles.card}>
-                {block.examples.map((ex, ei) => (
-                  <ExampleRow key={ei} ex={ex} contentLang={contentLang} learnedLang={learnedLang} colors={colors} />
-                ))}
-              </Card>
             </View>
           );
         }

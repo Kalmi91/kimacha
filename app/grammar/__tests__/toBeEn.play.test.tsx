@@ -28,7 +28,6 @@ import { act, fireEvent, render, screen, within } from '@testing-library/react-n
 import { getDb } from '@/lib/database.web';
 import { speakSequence } from '@/lib/speech';
 import { hasLesson, lessonFor } from '@/lib/grammar/syllabus';
-import { isLessonV2 } from '@/lib/games/content';
 import GrammarLessonScreen from '../[topic]';
 
 const flush = async (times = 3) => {
@@ -51,8 +50,7 @@ describe('to_be lesson, es→en direction', () => {
     expect(hasLesson('en', 'to_be')).toBe(true);
     expect(hasLesson('es', 'to_be')).toBe(false);
     const lesson = lessonFor('en', 'to_be');
-    expect(lesson && isLessonV2(lesson)).toBe(true);
-    if (lesson && isLessonV2(lesson)) expect(lesson.items).toHaveLength(30);
+    expect(lesson?.items).toHaveLength(30);
   });
 
   it('shows the English example sentence with its Spanish translation', async () => {
