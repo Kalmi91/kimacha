@@ -1,5 +1,5 @@
-// a `pickTransformRound` egyetlen felelőssége, hogy
-// legfeljebb `size` itemet adjon vissza, a legkevésbé gyakorolt előre sorolva.
+// The single responsibility of `pickTransformRound` is to
+// return at most `size` items, the least practised ones first.
 
 import { pickTransformRound } from '@/lib/grammar/transformRounds';
 import type { TransformItem } from '@/lib/grammar/lessonTypes';

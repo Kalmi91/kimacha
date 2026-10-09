@@ -13,8 +13,8 @@ export interface MatchOptions {
   /** Language the answer is written in, so its own spelling variants count. */
   lang?: string;
   /**
-   * a közös nemű főnév (gender 'mf', el guardia) a
-   * kártyán egy névelővel áll, de gépelve a másik névelő is helyes (la guardia).
+   * For a common-gender noun (gender 'mf', el guardia) the card shows one article,
+   * but typing the other article is correct too (la guardia).
    */
   eitherArticle?: boolean;
 }
@@ -74,9 +74,9 @@ function germanReadings(text: string): string[] {
  * languages; German adds its digraph reading, and only while accents are
  * forgiven — with strict accents on, ß and ä are the spelling being graded.
  */
-// Issue #3: a nyelvenkénti helyesírás-tolerancia táblából jön. Aminek nincs
-// bejegyzése, az az egy alakját adja vissza; egy új nyelv saját olvasat-
-// függvénnyel jelentkezik be, nem ennek a függvénynek az átírásával.
+// Issue #3: it comes from a per-language spelling-tolerance table. A language with no
+// entry returns its single form; a new language registers its own reading
+// function instead of rewriting this one.
 const ALTERNATE_READINGS: Record<string, (text: string) => string[]> = {
   de: germanReadings,
 };
@@ -89,8 +89,8 @@ function normalizedForms(text: string, opts: MatchOptions): string[][] {
   return [normalizeWords(text, opts.strictAccents)];
 }
 
-// User feedback (easy:"The engine makes a lot of noise."): "nem hace
-// kellett volna?? ide szerintem rosszat raktam be és elfogadta". The tap-to-order
+// User feedback (easy:"The engine makes a lot of noise."): "shouldn't it have been
+// hace?? I think I put the wrong one in here and it accepted it". The tap-to-order
 // card used the typing cards' 2-character Levenshtein tolerance, but a tile is
 // tapped, not typed: there is no typo to forgive, so the tolerance only ever hid
 // a genuinely wrong pick ("hacen" for "hace" is a single character away). Tiles
@@ -111,16 +111,16 @@ export function sentenceBuildMatch(built: string[], target: string[]): boolean {
 // one first (the same gloss-stripping the tile bank does).
 const withoutGloss = (text: string) => text.replace(/\([^)]*\)/g, ' ').trim();
 
-// User feedback (word:la fuerza): „itt a2 ben sok az olyan szó aminek
-// több jelentése van, ez miért van, ezek nagyon zavaróak". Egy szónak tényleg
-// lehet két jelentése (el piso = padló / emelet), és a kártya mindkettőt kiírja,
-// de a gépelés eddig CSAK az elsőt fogadta el (a hívó `back.split(' / ')[0]`-t
-// adott át), tehát a helyes „emelet" hibás lett. A „ / " tehát vagylagos: bármely
-// ága helyes válasz. A kártya továbbra is mindkettőt mutatja.
+// User feedback (word:la fuerza): "in A2 there are many words that have
+// several meanings, why is that, they are very confusing". A word really
+// can have two meanings (el piso = padló / emelet), and the card prints both,
+// but typing used to accept ONLY the first (the caller passed
+// `back.split(' / ')[0]`), so the correct "emelet" was marked wrong. So " / " is an
+// either-or: any branch is a correct answer. The card still shows both.
 const ALTERNATIVE_SEPARATOR = / \/ /;
 
 function answerCandidates(correct: string): string[] {
-  // A teljes leírt alak is helyes marad („padló / emelet" begépelve).
+  // The full typed form stays correct too ("padló / emelet" typed in full).
   const out: string[] = [correct.trim()];
   for (const part of correct.split(ALTERNATIVE_SEPARATOR)) {
     const full = part.trim();

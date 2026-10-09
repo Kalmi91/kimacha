@@ -1,4 +1,4 @@
-// A web teszt-horgok paraméter-értelmezője (lib/webTestHooks.ts).
+// Parameter parser of the web test hooks (lib/webTestHooks.ts).
 import { applyWebTestParams, getWebTestParams, parseWebTestParams } from '../webTestHooks';
 
 describe('parseWebTestParams', () => {
@@ -16,7 +16,7 @@ describe('parseWebTestParams', () => {
       skin: 'mix',
       mix: { colors: 'ukiyoe', font: 'memphis', shape: 'szecesszio', decor: 'deco' },
     });
-    // al-paletta is lehet a szín-forrás, a dísz lehet none
+    // a sub-palette can also be the color source, the decor can be none
     expect(parseWebTestParams('?mix=electric.zen.brutal.none')?.mix).toEqual({
       colors: 'electric',
       font: 'zen',

@@ -23,7 +23,7 @@ class MemoryDB implements DB {
     return { ...this.streak };
   }
 
-  // visszahozva, a PCIC-értékelés hívja (mirrors the
+  // brought back, called by the PCIC grading (mirrors the
   // native SQLiteDB.updateStreak).
   async updateStreak() {
     const today = localDateString();
@@ -49,7 +49,7 @@ class MemoryDB implements DB {
     return { ...(this.userLevels.get(this.activePair) ?? { level: 'A0', correct_streak: 0, mistakes_in_window: 0, fail_streak: 0 }) };
   }
 
-  // Play-vágás: updateLevel (the only public setter) had no app-code
+  // Play Store trim: updateLevel (the only public setter) had no app-code
   // caller and is gone; grammar-screen fixtures that need a specific level
   // use this instead. Not on the DB interface, same pattern as the old
   // __setRequeueLevelForTest.
@@ -83,7 +83,7 @@ class MemoryDB implements DB {
   async getGrammarPalette(): Promise<GrammarPaletteId> { return this.grammarPalette; }
   async setGrammarPalette(id: GrammarPaletteId): Promise<void> { this.grammarPalette = id; }
 
-  // választott téma + Saját mix (memory mirror of user_meta.skin / skin_mix).
+  // chosen theme + My mix (memory mirror of user_meta.skin / skin_mix).
   private skin: SkinSelection | null = null;
   private skinMix: SkinMix | null = null;
 
@@ -92,7 +92,7 @@ class MemoryDB implements DB {
   async getSkinMix(): Promise<SkinMix | null> { return this.skinMix; }
   async setSkinMix(mix: SkinMix): Promise<void> { this.skinMix = mix; }
 
-  // Play-vágás: getWordsOnly/setWordsOnly and getRandomTopics/
+  // Play Store trim: getWordsOnly/setWordsOnly and getRandomTopics/
   // setRandomTopics are gone (no caller since the Learn/Topics tabs left),
   // but the maps stay so an imported old backup's learn_settings.words_only /
   // .random_topics values still round-trip through exportAll unchanged.
@@ -121,7 +121,7 @@ class MemoryDB implements DB {
     this.againDelaySecMap.set(this.activePair, sec);
   }
 
-  // névelő-gombsor kapcsoló, per pár (a SQLite oldal tükre). Alapból be.
+  // article button row switch, per pair (mirror of the SQLite side). On by default.
   private articlePickerMap: Map<string, boolean> = new Map();
 
   async getArticlePicker(): Promise<boolean> {
@@ -203,7 +203,7 @@ class MemoryDB implements DB {
     return { minutes: this.usageMinutes.get(date) ?? 0, words: words.size };
   }
 
-  // Game fül tables, scoped to the active pair like every
+  // Game tab tables, scoped to the active pair like every
   // other per-pair setting/state in this interface.
   private gameProgressMap: Map<string, Map<string, { state: string; data: unknown }>> = new Map();
 
@@ -233,7 +233,7 @@ class MemoryDB implements DB {
     this.gameProgressMap.delete(this.gameKey(gameId));
   }
 
-  // a szintvizsga eredménye, lásd lib/exam/result.ts.
+  // the level exam result, see lib/exam/result.ts.
   async getExamResults(): Promise<ExamResults> {
     return readExamResults(this);
   }
@@ -242,9 +242,9 @@ class MemoryDB implements DB {
     return writeExamResult(this, level, pct, passed, date);
   }
 
-  // PCIC fül, SM-2, független a FSRS `cards`-tól. Nem
-  // pair-hez kötött (a fül csak es→en tételekkel dolgozik), session-scoped
-  // Map, mint a többi web-only állapot ebben a fájlban.
+  // PCIC tab, SM-2, independent of the FSRS `cards`. Not
+  // tied to a pair (the tab only works with es→en items), a session-scoped
+  // Map, like the other web-only state in this file.
   private pcicCards: Map<string, Sm2Card> = new Map();
 
   async getPcicCards(): Promise<Sm2Card[]> {
@@ -255,8 +255,8 @@ class MemoryDB implements DB {
     this.pcicCards.set(card.itemId, { ...card });
   }
 
-  // lásd lib/database.ts resetPcicCards komment - a
-  // valódi id-listát a betöltött korpuszból kérjük, nem az id előtagjából.
+  // see the resetPcicCards comment in lib/database.ts - the
+  // real id list is fetched from the loaded corpus, not from the id prefix.
   async resetPcicCards(levelPrefix?: string): Promise<void> {
     if (!levelPrefix) {
       this.pcicCards.clear();
@@ -268,8 +268,8 @@ class MemoryDB implements DB {
     }
   }
 
-  // session-scoped Map-ek, mint a pcicCards/pcicLevel
-  // fent, ugyanazzal a szignatúrával, mint a natív (SQLite) implementáció.
+  // session-scoped Maps, like pcicCards/pcicLevel
+  // above, with the same signature as the native (SQLite) implementation.
   private mistakeBatches: Map<string, { json: string; importedAt: string }> = new Map();
   private mistakeCards: Map<string, Sm2Card> = new Map();
 
@@ -291,11 +291,11 @@ class MemoryDB implements DB {
     this.mistakeCards.set(card.itemId, { ...card });
   }
 
-  // a kiválasztott PCIC szint.
-  // Pár-szerinti Map (mint articlePickerMap), hogy irányváltáskor
-  // mindkét pár megőrizze a saját szintjét; alap B1 en-es-nek (meglévő
-  // "b1-..." progressz), A1 minden es→en irányú párnak (ez adja az
-  // egyetlen tartalommal bíró szintet).
+  // the selected PCIC level.
+  // A per-pair Map (like articlePickerMap), so that on a direction switch
+  // both pairs keep their own level; default B1 for en-es (existing
+  // "b1-..." progress), A1 for every es→en pair (that is the
+  // only level with content).
   private pcicLevelMap: Map<string, PcicLevel> = new Map();
 
   async getPcicLevel(): Promise<PcicLevel> {

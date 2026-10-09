@@ -1,6 +1,6 @@
-// az A2, B1 és B2 szintvizsga ugyanazzal a
-// szabállyal, mint az A1: feloldás = a szint kártyáinak 80%-a tanult (SM-2 `review`) + a szint egy
-// kész nyelvtani leckéje; átmenés 80%; a tételek csak a szint tanult szavaiból és kész leckéiből.
+// The A2, B1 and B2 level exams with the same
+// rule as A1: unlock = 80% of the level's cards learned (SM-2 `review`) + one
+// finished grammar lesson of the level; pass = 80%; items only from the level's learned words and finished lessons.
 
 import { findPcicItem, pcicItemsForLevel, setPcicTarget, type PcicLevel } from '@/data/pcic';
 import { hasLesson, syllabusForLevel } from '@/lib/grammar/syllabus';
@@ -68,7 +68,7 @@ describe.each(LEVELS)('%s vizsga feloldása (80% tanult szó + egy kész lecke a
 });
 
 describe.each(LEVELS)('%s vizsga tételei: csak a szint tanult szavaiból és kész leckéiből', (level) => {
-  // A tanuló végigjárta az addigi szinteket: az előző szintek szavai tanultak, a leckéik készek.
+  // The learner has gone through the earlier levels: the words of the previous levels are learned, their lessons are done.
   const upTo = LEVELS.slice(0, LEVELS.indexOf(level) + 1);
   const allTopics = upTo.flatMap(topicsOf);
   const cards: Sm2Card[] = [];
@@ -79,7 +79,7 @@ describe.each(LEVELS)('%s vizsga tételei: csak a szint tanult szavaiból és k�
       if (l === level) learnedOfLevel.add(c.itemId);
     }
   }
-  // A szint kártyáinak többi része létezik, de nem tanult: azok szavai nem kerülhetnek tételbe.
+  // The rest of the level's cards exist but are not learned: their words must not get into an item.
   const unlearned = pcicItemsForLevel(level).filter((i) => !learnedOfLevel.has(i.id));
   const tenses = resolvedTensesFromLessons(allTopics);
   const exam = buildExam({
@@ -118,7 +118,7 @@ describe.each(LEVELS)('%s vizsga tételei: csak a szint tanult szavaiból és k�
 
   it('a nyelvtani tételek a szint (és az előtte kész szintek) kész leckéiből jönnek', () => {
     const gaps = exam.filter((i): i is Extract<ExamItem, { kind: 'gap_mc' }> => i.kind === 'gap_mc');
-    // A szint vizsgája csak a SAJÁT szint leckéiből kérdez, az előző szinteké nem kerül bele.
+    // The level's exam asks only from the lessons of ITS OWN level, those of the previous levels are not included.
     for (const g of gaps) expect(topicsOf(level)).toContain(g.topicId);
   });
 });

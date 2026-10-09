@@ -16,8 +16,8 @@ import type { DB } from './dbTypes';
 
 export type { DB };
 
-// egy meglévő telepítésen a haladás ma "b1-..." id-kkel
-// forog, ezért az oszlop hiánya (régi DB) B1-re esik vissza, nem A1-re.
+// on an existing installation the progress currently runs with "b1-..." ids,
+// so a missing column (old DB) falls back to B1, not A1.
 const DEFAULT_PCIC_LEVEL: PcicLevel = 'B1';
 
 class SQLiteDB implements DB {
@@ -38,8 +38,8 @@ class SQLiteDB implements DB {
     return await db.getFirstAsync<any>('SELECT * FROM streak WHERE id = 1');
   }
 
-  // visszahozva (a Tanulás fül vitte el egy korábbi lépésben),
-  // a PCIC-értékelés hívja, napi első hívás számít csak (a last_date őrzi).
+  // brought back (the Learn tab took it away in an earlier step),
+  // called by the PCIC grading, only the first call of the day counts (last_date keeps track).
   async updateStreak() {
     const db = await this.open();
     const today = localDateString();
@@ -95,8 +95,8 @@ class SQLiteDB implements DB {
     await db.runAsync('UPDATE user_meta SET grammar_palette = ? WHERE id = 1', [id]);
   }
 
-  // a választott téma. NULL = a felhasználó még nem választott: a hívó
-  // (lib/ThemeContext.tsx) a mentett paletta szerint dönt (classic → classic, minden más → brutal).
+  // the chosen theme. NULL = the user has not chosen yet: the caller
+  // (lib/ThemeContext.tsx) decides from the saved palette (classic → classic, anything else → brutal).
   async getSkin(): Promise<SkinSelection | null> {
     const db = await this.open();
     const row = await db.getFirstAsync<any>('SELECT skin FROM user_meta WHERE id = 1');
@@ -108,7 +108,7 @@ class SQLiteDB implements DB {
     await db.runAsync('UPDATE user_meta SET skin = ? WHERE id = 1', [id]);
   }
 
-  // A Saját mix négy forrása JSON-ként; érvénytelen / hiányzó érték = null.
+  // The four sources of My mix as JSON; an invalid / missing value = null.
   async getSkinMix(): Promise<SkinMix | null> {
     const db = await this.open();
     const row = await db.getFirstAsync<any>('SELECT skin_mix FROM user_meta WHERE id = 1');
@@ -120,24 +120,24 @@ class SQLiteDB implements DB {
     await db.runAsync('UPDATE user_meta SET skin_mix = ? WHERE id = 1', [JSON.stringify(mix)]);
   }
 
-  // a kiválasztott PCIC szint.
-  // A user_meta szingliton
-  // oszlop helyett a learn_settings pár-szerinti sorába költözött (mint a
-  // többi tanulási beállítás), hogy irányváltáskor mindkét pár megőrizze a
-  // SAJÁT szintjét. A régi (en-es) érték migrációja: runMigrations.
+  // the selected PCIC level.
+  // Instead of a user_meta singleton
+  // column it moved into the per-pair row of learn_settings (like the
+  // other learning settings), so that on a direction switch both pairs keep their
+  // OWN level. Migration of the old (en-es) value: runMigrations.
   async getPcicLevel(): Promise<PcicLevel> {
     const db = await this.open();
     const row = await db.getFirstAsync<any>('SELECT pcic_level FROM learn_settings WHERE pair = ?', [this.activePair]);
-    // Egy régebbi buildben választott, mára megszűnt szintnév (pl. "A1+") az alapra esik vissza.
+    // A level name chosen in an older build and since removed (e.g. "A1+") falls back to the default.
     if (row?.pcic_level && (PCIC_LEVELS as string[]).includes(row.pcic_level)) return row.pcic_level as PcicLevel;
-    // es→en-nek (egyelőre) csak A1 kap tartalmat; minden más pár a
-    // régi B1-alapértelmezésre esik vissza (meglévő "b1-..." progressz miatt).
+    // for es→en only A1 has content (for now); every other pair falls back to
+    // the old B1 default (because of the existing "b1-..." progress).
     return this.activePair.endsWith('-en') ? 'A1' : DEFAULT_PCIC_LEVEL;
   }
 
-  // Van-e MÁR kifejezetten választott szintje az aktív párnak (a fenti
-  // fallback nem számít annak). A Settings irányváltó sora ezzel dönti el,
-  // hogy az új irányban egyszer felugorjon-e a szint-választó lap.
+  // Whether the active pair ALREADY has an explicitly chosen level (the
+  // fallback above does not count as one). The Settings direction-switch row uses this to decide
+  // whether the level picker sheet should pop up once in the new direction.
   async hasPcicLevel(): Promise<boolean> {
     const db = await this.open();
     const row = await db.getFirstAsync<any>('SELECT pcic_level FROM learn_settings WHERE pair = ?', [this.activePair]);
@@ -180,8 +180,8 @@ class SQLiteDB implements DB {
     );
   }
 
-  // állítható, hány másodperc múlva jön
-  // mindenképp vissza egy rontott PCIC-kártya (lib/pcicSession.ts).
+  // adjustable: after how many seconds a missed PCIC card
+  // comes back no matter what (lib/pcicSession.ts).
   async getAgainDelaySec(): Promise<number> {
     const db = await this.open();
     const row = await db.getFirstAsync<any>('SELECT again_delay_sec FROM learn_settings WHERE pair = ?', [this.activePair]);
@@ -196,9 +196,9 @@ class SQLiteDB implements DB {
     );
   }
 
-  // User feedback: „ne begépelni kelljen a el la t hanem kiválasztani".
-  // Alapból BE, mert ő kérte; a kapcsoló azért van, hogy vissza tudjon állni
-  // gépelésre, ha mégsem válik be ("kíváncsi vagyok hogy milyen").
+  // User feedback: "I should not have to type the el la but pick it".
+  // ON by default, because the user asked for it; the switch exists so they can go back
+  // to typing if it does not work out ("I am curious what it will be like").
   async getArticlePicker(): Promise<boolean> {
     const db = await this.open();
     const row = await db.getFirstAsync<any>('SELECT article_picker FROM learn_settings WHERE pair = ?', [this.activePair]);
@@ -316,7 +316,7 @@ class SQLiteDB implements DB {
     return { minutes: usage?.minutes ?? 0, words: words.size };
   }
 
-  // Game fül tables, scoped to the active pair like every
+  // Game tab tables, scoped to the active pair like every
   // other per-pair setting/state in this interface.
   async getGameProgress(gameId: string) {
     const db = await this.open();
@@ -351,7 +351,7 @@ class SQLiteDB implements DB {
     await db.runAsync('DELETE FROM game_progress WHERE pair = ? AND game_id = ?', [this.activePair, gameId]);
   }
 
-  // a szintvizsga eredménye, lásd lib/exam/result.ts.
+  // the level exam result, see lib/exam/result.ts.
   async getExamResults(): Promise<ExamResults> {
     return readExamResults(this);
   }
@@ -360,8 +360,8 @@ class SQLiteDB implements DB {
     return writeExamResult(this, level, pct, passed, date);
   }
 
-  // PCIC fül, SM-2, független a FSRS `cards`-tól. Nem
-  // pair-hez kötött (a fül csak es→en tételekkel dolgozik).
+  // PCIC tab, SM-2, independent of the FSRS `cards`. Not
+  // tied to a pair (the tab only works with es→en items).
   async getPcicCards(): Promise<Sm2Card[]> {
     const db = await this.open();
     const rows = await db.getAllAsync<any>('SELECT * FROM pcic_cards');
@@ -394,10 +394,10 @@ class SQLiteDB implements DB {
     );
   }
 
-  // a `levelPrefix` (pl. "a1") már NEM a LIKE-mintát
-  // adja (a szint-igazítás óta egy id előtagja nem feltétlen a valódi szintje,
-  // lásd lib/pcicLevels.ts matchesLevel), hanem a törlendő szint neve; a
-  // valódi id-listát a betöltött korpuszból kérjük le.
+  // `levelPrefix` (e.g. "a1") no longer gives the LIKE pattern
+  // (since the difficulty fit, an id's prefix is not necessarily its real level,
+  // see matchesLevel in lib/pcicLevels.ts), it is the name of the level to clear; the
+  // real id list is fetched from the loaded corpus.
   async resetPcicCards(levelPrefix?: string): Promise<void> {
     const db = await this.open();
     if (levelPrefix) {
@@ -410,8 +410,8 @@ class SQLiteDB implements DB {
     }
   }
 
-  // a köteg JSON-ja egészében a `json` oszlopba
-  // kerül (a riport ebből olvas), `batchId` újratöltése lecseréli a tartalmat.
+  // the batch's JSON goes into the `json` column as a whole
+  // (the report reads from it), reloading a `batchId` replaces the content.
   async saveMistakeBatch(batchId: string, json: string, importedAt: string): Promise<void> {
     const db = await this.open();
     await db.runAsync(

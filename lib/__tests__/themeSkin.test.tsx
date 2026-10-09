@@ -1,6 +1,6 @@
-// a téma-motor a téma-kontextuson át: a választás (skin / Saját mix) mentése és
-// visszatöltése, régi felhasználó migrációja (skin NULL: classic → classic, brand → brutal),
-// egy módú téma mód-zárolása, a useSkin() és a díszkeret no-op alapértelmezése.
+// The theme engine through the theme context: saving and reloading the choice (skin / My mix),
+// migrating an old user (skin NULL: classic → classic, brand → brutal),
+// the mode lock of a single-mode theme, and the no-op defaults of useSkin() and the decor frame.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -210,7 +210,7 @@ describe('téma-motor a kontextuson át (PLAN-temak 2A)', () => {
 
 describe('dísz-rétegek: dísz nélküli témán no-op (a mai kinézet változatlan)', () => {
   it('a Neo-brutálnak és a Classicnak nincs regisztrált díszük, a slotok az alap tartalmat adják', async () => {
-    // a 4 kezdő téma díszt kapott; a mai kinézetet adó témák továbbra sem.
+    // the 4 starter themes got decor; the themes that give today's look still do not.
     expect(Object.keys(SKIN_DECOR)).toEqual(expect.arrayContaining(['deco', 'szocreal', 'csillampony', 'ukiyoe']));
     expect(Object.keys(SKIN_DECOR)).not.toContain('brutal');
     expect(Object.keys(SKIN_DECOR)).not.toContain('classic');

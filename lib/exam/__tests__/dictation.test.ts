@@ -1,6 +1,6 @@
-// a billentyűzet mikrofonjával diktált szöveg
-// összevetése a várt mondattal: kis- és nagybetű és írásjel nem számít, az ékezet a "Accents count"
-// beállítást követi, az eltérő szavak mindkét oldalon ki vannak emelve.
+// Comparing text dictated with the keyboard microphone
+// to the expected sentence: case and punctuation do not matter, accents follow the "Accents count"
+// setting, the differing words are highlighted on both sides.
 
 import { compareDictation } from '../dictation';
 
@@ -44,7 +44,7 @@ describe('compareDictation: kis- és nagybetű, írásjel', () => {
 
 describe('compareDictation: ékezet a "Accents count" beállítás szerint', () => {
   it('ékezet-szigor KI: az ékezet hiánya nem hiba', () => {
-    expect(compareDictation('donde esta el bano', '¿Dónde está el baño?', loose).correct).toBe(false); // az ñ külön betű
+    expect(compareDictation('donde esta el bano', '¿Dónde está el baño?', loose).correct).toBe(false); // ñ is a separate letter
     expect(compareDictation('donde esta el baño', '¿Dónde está el baño?', loose).correct).toBe(true);
     expect(compareDictation('ella esta aqui', 'Ella está aquí', loose).correct).toBe(true);
   });

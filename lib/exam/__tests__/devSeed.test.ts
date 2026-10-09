@@ -1,5 +1,5 @@
-// a __DEV__-only vezérlő által beállított
-// A1 állapot nyitja a vizsgát (a szint kártyáinak legalább 80%-a graduált + egy A1 lecke kész).
+// The A1 state set by the __DEV__-only control
+// opens the exam (at least 80% of the level's cards are graduated + one A1 lesson is done).
 
 import { pcicItemsForLevel, setPcicTarget } from '@/data/pcic';
 import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';

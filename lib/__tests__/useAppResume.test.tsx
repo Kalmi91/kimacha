@@ -1,5 +1,5 @@
-// hidegindításkor a mentett helyre lép (csak kész onboardingnál), utána minden folytatható váltást ment;
-// a mentést nem írja felül a kezdőlap, mielőtt a visszaállítás lefutott.
+// On a cold start it navigates to the saved place (only after finished onboarding), then saves every resumable switch;
+// the home screen does not overwrite the save before the restore has run.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 

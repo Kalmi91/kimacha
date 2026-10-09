@@ -1,6 +1,6 @@
-// A tétel-építő CSAK a
-// szint tanult szavaiból és a kész szint-leckékből épít; egy ismeretlen szó sem
-// kerülhet tételbe (a mondatok a lib/knownSentence.ts kapuján mennek át).
+// The exam item builder builds ONLY from the
+// learned words of the level and the finished level lessons; no unknown word can
+// get into an item (sentences go through the lib/knownSentence.ts gate).
 
 import { pcicItemsForLevel, setPcicTarget, type PcicItem } from '@/data/pcic';
 import { knownTokens, resolvedTensesFromLessons, unknownTokens } from '@/lib/knownSentence';
@@ -22,7 +22,7 @@ function setup(target: 'es' | 'en', learnedCount?: number, lessons: string[] = L
   const items = pcicItemsForLevel('A1');
   const all = a1SeedCards(items.map((i) => i.id), TODAY);
   const learned = learnedCount === undefined ? all : all.slice(0, learnedCount);
-  // A többi kártya létezik, de nem graduált (bemutatott vagy új): az ő szavaik nem kerülhetnek tételbe.
+  // The other cards exist but are not graduated (introduced or new): their words must not get into an item.
   const rest = items.slice(learned.length).map((it, i) => (i % 2 ? { ...sm2NewCard(it.id), state: 'learning' as const } : sm2NewCard(it.id)));
   const cards = [...learned, ...rest];
   const input = {
@@ -94,7 +94,7 @@ describe('buildExam: az A1 vizsga felépítése (en→es)', () => {
   });
 
   it('a tanulatlan kártyák szavai sehol nem szerepelnek a tételekben', () => {
-    // A kártyák 15%-a nem tanult: azok célnyelvi szavai (amik a tanult szavak között nincsenek) nem lehetnek a vizsgában.
+    // 15% of the cards are not learned: their target-language words (which are not among the learned words) must not be in the exam.
     const known = knownTokens('es', { learned: learnedEntries(cards, 'es', (id) => byId.get(id)), tenses: input.tenses });
     const texts = exam.flatMap((i) => {
       switch (i.kind) {
