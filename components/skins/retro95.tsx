@@ -6,7 +6,7 @@ import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 
-// PLAN-temak 6E, Retro 95: a 3D-perem (világos bal-fent, sötét jobb-lent) a kártyán és a gombokon a
+// Retro 95: a 3D-perem (világos bal-fent, sötét jobb-lent) a kártyán és a gombokon a
 // forma `bevel` jelzőjéből jön (BrutalBox), a gombok első betűje aláhúzva (buttonVariant 'bevel',
 // BrutalButton). A dísz: "kimacha.exe" címsor-sáv a fejléc fölött (sötétkék = a szín), jobbra x-gombbal.
 

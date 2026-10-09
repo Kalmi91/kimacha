@@ -1,4 +1,4 @@
-// LECKE-SEMA 1-2. szakasz: MINDEN schema 2 lecke szerkezeti ellenőrzése (a pilot
+// MINDEN schema 2 lecke szerkezeti ellenőrzése (a pilot
 // ser-estar után a core+ sáv leckéi is ezen a sémán vannak). Nem a tartalom
 // pedagógiai helyességét méri (az emberi felülvizsgálat dolga), hanem hogy a JSON
 // tartja-e a spec kötelező szerkezeti ígéreteit: van tábla, ahol alakok vannak,
@@ -41,7 +41,7 @@ describe('schema 2 lessons', () => {
   });
 });
 
-// NY1 (NYELVTAN.md "Adatformátum"): a jelvény-név minden igeidőre, mind a 4
+// a jelvény-név minden igeidőre, mind a 4
 // nyelven, hogy a TENSE_NAMES ne legyen csendben hiányos.
 describe('TENSE_IDS', () => {
   it('matches the copy in scripts/audit-games.mjs (the script cannot import the TS file)', () => {
@@ -103,7 +103,7 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
       }
     };
     collect(lesson.body);
-    // NY4: a transform-lecke (pl. indefinido-10-verbos) body-ja text+table+tip,
+    // a transform-lecke (pl. indefinido-10-verbos) body-ja text+table+tip,
     // nincs list/usage/examples/contrast blokk, tehát nincs is példapár. Csak a
     // transform itemet tartalmazó leckéken engedünk, a régi leckéken a szigor marad.
     if (lesson.items.some((i) => i.kind === 'transform')) return;
@@ -144,7 +144,7 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
   });
 
   it('has 1-2 match items with 5-6 unique es/en pairs', () => {
-    // NY4: a transform-leckén (pl. indefinido-10-verbos) nincs gap-alapú tartalom,
+    // a transform-leckén (pl. indefinido-10-verbos) nincs gap-alapú tartalom,
     // ezért nincs match pár sem; a régi leckéken a szigor marad.
     if (lesson.items.some((i) => i.kind === 'transform')) return;
     const matchItems = lesson.items.filter((i) => i.kind === 'match');
@@ -165,7 +165,7 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
       expect(text).toBeTruthy();
       const opens = (text.match(/«/g) ?? []).length;
       const closes = (text.match(/»/g) ?? []).length;
-      // FB414 (PLAN-fb0929, D3): a spanyol leckék felolvasásában nincs jelölt spanyol szakasz.
+      // a spanyol leckék felolvasásában nincs jelölt spanyol szakasz.
       expect(opens).toBe(0);
       expect(opens).toBe(closes);
       expect(text).not.toMatch(/[0-9]/);
@@ -173,12 +173,12 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
     }
   });
 
-  // TASK-8 (D4, FB288): "miért ez a mondat", a 3. audit-pont szabályai, plusz:
+  // "miért ez a mondat", a 3. audit-pont szabályai, plusz:
   // a jó opció szövege nem szerepel szó szerint a mondatban (különben a
   // feladat elárulná magát).
   it('why items (once authored) are 6-8, each with 3 unique-hu options and a translated sentence', () => {
     const whyItems = lesson.items.filter((i) => i.kind === 'why');
-    // TASK-8: a tartalom leckénként, adagolva kerül be a kódot lezáró commit
+    // a tartalom leckénként, adagolva kerül be a kódot lezáró commit
     // UTÁN (B szakasz); egy még érintetlen leckén 0 why item van, ez rendben.
     if (whyItems.length === 0) return;
     expect(whyItems.length).toBeGreaterThanOrEqual(6);
@@ -213,14 +213,14 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
         }
       });
 
-      // FB376: ha van `target`, szóhatárral szerepeljen az `es` mondatban.
+      // ha van `target`, szóhatárral szerepeljen az `es` mondatban.
       if (item.target) {
         expect(findWholeWord(item.es, item.target)).not.toBeNull();
       }
     }
   });
 
-  // NY1: a transform item (üres korpuszon most 0/0, NY4 után éles).
+  // a transform item (üres korpuszon most 0/0, utána éles).
   it('every transform item has a real prompt/answer pair and known words', () => {
     const transformItems = lesson.items.filter((i) => i.kind === 'transform');
     for (const item of transformItems) {
@@ -233,7 +233,7 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
 
   it("every gap item's wrong explanations are real sentences in 4 languages", () => {
     const gapItems = lesson.items.filter((i): i is GrammarGapItem => i.kind === undefined) as GrammarGapItem[];
-    // NY4: a transform-leckén (pl. indefinido-10-verbos) nincs gap-alapú tartalom;
+    // a transform-leckén (pl. indefinido-10-verbos) nincs gap-alapú tartalom;
     // a régi leckéken (nincs transform item) a szigor marad.
     if (lesson.items.some((i) => i.kind === 'transform')) return;
     expect(gapItems.length).toBeGreaterThanOrEqual(10);

@@ -1,10 +1,10 @@
-// Több jelentésű szavak kapuja (PLAN-tobbjelentes.md 2. lépés, R11-R14). Közös a két kapuban:
+// Több jelentésű szavak kapuja. Közös a két kapuban:
 // words-open-check.mjs (kérdés `en`, válasz `es`, hint `hint_en`) és validate-en-track.mjs (kérdés `es`, válasz `en`, hint `hint_es`).
 //   R11  ha egy normalizált kérdés legalább két kártyán szerepel, mindegyiknek kötelező a hint
 //   R12  a hintben pontosan egy *…* jelölés van, a jelölt szó első 2 betűje (kisbetű, ékezet nélkül) egyezik a kérdés
 //        valamelyik szavának első 2 betűjével (juego/jugar, llevo/llevar, played/play), legfeljebb 8 szó; az angol
 //        rendhagyó igealak is jó (be: am/is/are/was/were, have: has/had, do: does/did, go: goes/went)
-//   R13  hint csak R11 szerinti kártyán van, vagy olyan kártyán, amelynek order-e a `confusable` halmazban van (összetéveszthető csoport: scripts/words-open-confusable.json, PLAN-fb1002d, FB459)
+//   R13  hint csak R11 szerinti kártyán van, vagy olyan kártyán, amelynek order-e a `confusable` halmazban van (összetéveszthető csoport: scripts/words-open-confusable.json)
 //        splitAlternatives: a kérdést vesszőnél/pontosvesszőnél alternatívákra bontja; ha két kártya azonos alternatívát ad
 //        ("to try, to taste" és "to try, to attempt"), mindkettőn kötelező a hint (vagy összevonás). A régi kártyák (order <=
 //        legacyMaxOrder) egymás közti ütközéseit legfeljebb legacyWarnLimit darabig hibának, fölötte figyelmeztetésnek vesszük.

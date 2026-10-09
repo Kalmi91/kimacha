@@ -1,4 +1,4 @@
-// Neo-brutalista paletták (NY20, NYELVTAN.md "Neo-brutalista stílus"). A mód a
+// Neo-brutalista paletták. A mód a
 // meglévő Auto / Light / Dark téma-beállítást követi: világos = "papír", sötét
 // = "tinta" (BASE). A palettánként csak a két kitöltő szín van: a = akcentus,
 // b = második szín; a szöveg színes kitöltésen mindig ON_FILL. A 'classic' nem

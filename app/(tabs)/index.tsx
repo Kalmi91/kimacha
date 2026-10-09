@@ -52,17 +52,17 @@ import { examStatusFor, examUnlock, levelHasLesson, type ExamLevelStatus } from 
 // A szint-választó lap bezáródásának ideje (a RN-web Modal 250 ms-os kilépő animációja, ami kb. 100 ms késéssel indul, + tartalék).
 const SHEET_CLOSE_MS = 500;
 
-// PLAN-pcic 5. lépés: a PCIC fül. Angol -> spanyol gépelés, Anki-gombokkal
-// (again/hard/good/easy), az önálló SM-2 ütemezőn (lib/sm2.ts, 4. lépés).
+// a PCIC fül. Angol -> spanyol gépelés, Anki-gombokkal
+// (again/hard/good/easy), az önálló SM-2 ütemezőn (lib/sm2.ts).
 // Nem a FSRS `cards`/`sessionQueue` ütemezőt használja, azt nem érinti.
 
-// PLAN-fb0924 8. lépés (FB394/396): mondat-ritkítás (thinSentences).
+// mondat-ritkítás (thinSentences).
 function pcicIntroOrder(memberIds: string[]): string[] {
   return thinSentences(memberIds, (id) => findPcicItem(id)?.kind, (id) => id);
 }
 
-// SZ2 (SZAVAK.md): egy visszavonható értékelés pillanatképe. `counted` = a
-// számlálókat is léptette-e (SZ3 „Ezt nem tanulom" gombja majd false-t ír ide).
+// egy visszavonható értékelés pillanatképe. `counted` = a
+// számlálókat is léptette-e (az „Ezt nem tanulom" gombja majd false-t ír ide).
 interface UndoEntry {
   before: Sm2Card;
   after: Sm2Card;
@@ -71,7 +71,7 @@ interface UndoEntry {
   wasNew: boolean;
   g: Sm2Grade;
   counted: boolean;
-  // PLAN-ketiranyu 7. lépés: a mondatkártya-kadencia az értékelés előtti állapotban.
+  // a mondatkártya-kadencia az értékelés előtti állapotban.
   cadenceBefore: CadenceState;
 }
 
@@ -84,7 +84,7 @@ export default function PcicScreen() {
   const [loading, setLoading] = useState(true);
   const [today, setToday] = useState('');
   const [level, setLevel] = useState<PcicLevel>('B1');
-  // PLAN-ketiranyu 4. lépés: az aktív pár célnyelve (onboarding.target),
+  // az aktív pár célnyelve (onboarding.target),
   // ez dönti el a kártya prompt/válasz irányát, a TTS locale-t és a
   // névelő-gombsor/posOf megjelenését.
   const [target, setTarget] = useState<PcicTarget>('es');
@@ -92,23 +92,23 @@ export default function PcicScreen() {
   // haladáshoz MIND a négy szint kártyája kell, nem csak az aktívé.
   const [levelSheetOpen, setLevelSheetOpen] = useState(false);
   const [allLevelCards, setAllLevelCards] = useState<Sm2Card[]>([]);
-  // PLAN-vizsga A. szakasz 2. és 4. lépés (A1 a): a szintvizsga-sorok (A1-B2) a szint-választó lapon.
+  // 2. és a szintvizsga-sorok (A1-B2) a szint-választó lapon.
   const [examLevels, setExamLevels] = useState<ExamLevelStatus[]>([]);
   // s2 (anki-ui-terv.html): a Beállítások ékezet-szigor kapcsolója a PCIC
   // gépelésén is dönt (gradePcicAnswer strictAccents paramja).
   const [strictAccents, setStrictAccents] = useState(false);
-  // FB364 (PLAN-fb0923 5. lépés/D2): a Beállítások "Missed word comes back
+  // a Beállítások "Missed word comes back
   // after" steppere; a requeueAfterGrade "again" ágának a returnAt-ját adja.
   const [againDelaySec, setAgainDelaySec] = useState(DEFAULT_AGAIN_DELAY_SEC);
   const [allCards, setAllCards] = useState<Map<string, Sm2Card>>(new Map());
   const [queue, setQueue] = useState<Sm2Card[]>([]);
-  // FB456: a "+N új szó" bővítéskor a ma már kész kártyák száma; a csík az új adagot méri ehhez képest.
-  // FB485: az alap egy SZINTRE vonatkozik (a kész kártyákat a nézet szintjén számoljuk), másik szinten nem érvényes.
+  // a "+N új szó" bővítéskor a ma már kész kártyák száma; a csík az új adagot méri ehhez képest.
+  // az alap egy SZINTRE vonatkozik (a kész kártyákat a nézet szintjén számoljuk), másik szinten nem érvényes.
   const [batchBase, setBatchBase] = useState<{ day: string; level: string; n: number }>({ day: '', level: '', n: 0 });
   const [typedAnswer, setTypedAnswer] = useState('');
   const [articlePick, setArticlePick] = useState<ArticlePick>('');
   const [grade, setGrade] = useState<PcicGrade | null>(null);
-  // FB481/495/496/498 (PLAN-fb1005e): az (i) magyarázat ki/be nyitása. Az itemId-t tárolja (nem
+  // az (i) magyarázat ki/be nyitása. Az itemId-t tárolja (nem
   // boolean-t), hogy kártyaváltáskor a becsukódás LEVEZETETT állapot legyen, effekt nélkül
   // (react-hooks/set-state-in-effect).
   const [noteOpenFor, setNoteOpenFor] = useState<string | null>(null);
@@ -116,54 +116,54 @@ export default function PcicScreen() {
   const [sessionNew, setSessionNew] = useState(0);
   const [sessionAgain, setSessionAgain] = useState(0);
   const [lastGraded, setLastGraded] = useState<UndoEntry | null>(null);
-  // PLAN-ketiranyu 7. lépés: minden 4. új szó után 1 mondatkártya (felváltva
+  // minden 4. új szó után 1 mondatkártya (felváltva
   // összerakós és begépelős), csak gyakorlás: nem ír SRS-t (K3). A `tenses` a
   // kész nyelvtani leckékkel feloldott igeidők (lib/knownSentence.ts).
   const [cadence, setCadence] = useState<CadenceState>(INITIAL_CADENCE);
   const [sentenceCard, setSentenceCard] = useState<SentenceCardData | null>(null);
   const [tenses, setTenses] = useState<ReadonlySet<ResolvedTense>>(new Set());
-  // FB385/386: a "+10 új szó" gombbal bővített napi keret, a
+  // a "+10 új szó" gombbal bővített napi keret, a
   // learn_settings.new_bonus/new_bonus_date oszlopokban perzisztálva (a
   // naptári nappal lejár); load() a DB-ből olvassa vissza, nem nullázza.
   const [pcicBonus, setPcicBonus] = useState(0);
-  // PLAN-play 12. lépés (C): a Beállítások "Napi új szó" (learn_settings.daily_new_limit,
+  // (C): a Beállítások "Napi új szó" (learn_settings.daily_new_limit,
   // eddig csak a törölt Tanulás fül olvasta) mostantól a PCIC napi új tételeinek
   // számát is adja; a fejléc "new" chipje ebből számol (queue state === 'new').
   const [dailyNewLimit, setDailyNewLimit] = useState(DEFAULT_DAILY_NEW_LIMIT);
   // 5b: a dokkolt Check/Next sáv mért magassága, a görgető alsó paddingjéhez
   // és a 💬 bottomOffsetjéhez (DockedAction.tsx, a Learn DOCK_RESERVE-je az alapérték).
   const [dockH, setDockH] = useState(DOCK_RESERVE);
-  // FB350: a dokkolt sáv a billentyűzet fölé emelkedjen, mint a Learn fülön.
+  // a dokkolt sáv a billentyűzet fölé emelkedjen, mint a Learn fülön.
   const { dockLift } = useDockLift();
-  // FB391: a beviteli mező fókuszt kap minden ÚJ lapnál (lásd a FB319
+  // a beviteli mező fókuszt kap minden ÚJ lapnál (lásd a
   // effektet lent), nem csak első mountkor (az `autoFocus` prop erre nem
   // elég, mert a TextInput kártyaváltáskor nem remountol).
   const inputRef = useRef<TextInput>(null);
-  // FB408/FB409 (PLAN-fb0929 2. lépés): a beviteli mező minden új kártyánál
+  // a beviteli mező minden új kártyánál
   // ÚJRA MOUNTOL (a TextInput `key`-e ezt a számlálót tartalmazza). Ok: a mező
   // Check után `editable={false}` lett, majd Next után újra szerkeszthető, ugyanazon
   // a natív EditText-en. Androidon a letiltott-majd-engedélyezett mezőnek a
   // régi InputConnection / gépelési (composing) állapota megmarad: a `focus()`
-  // néha nem nyitja fel a billentyűzetet (FB408), és a Gboard szerint még
-  // "írás közben" lévő szövegből a törlés nem megy (FB409). Friss mező =
+  // néha nem nyitja fel a billentyűzetet, és a Gboard szerint még
+  // "írás közben" lévő szövegből a törlés nem megy. Friss mező =
   // friss InputConnection + `autoFocus`, ami minden mountnál felnyitja a
   // billentyűzetet. A számláló azt is lefedi, ha ugyanaz a lap jön újra (again).
   const [cardSeq, setCardSeq] = useState(0);
 
-  // PLAN-play 10. lépés: `overrideLevel` a szint-választó lapról jövő azonnali
+  // `overrideLevel` a szint-választó lapról jövő azonnali
   // váltásnak, hogy ne kelljen a setLevel-re várni egy render-kört (a db-be
   // már ott az új szint, load() csak újraolvassa vele).
   const load = useCallback(async (overrideLevel?: PcicLevel) => {
     const db = getDb();
     const day = localDateString();
-    // PLAN-ketiranyu 4. lépés: az aktív pár célnyelve dönti el, melyik irány
+    // az aktív pár célnyelve dönti el, melyik irány
     // paklija épül (data/pcic.ts setPcicTarget); a pcicItemsForLevel
     // hívás ELŐTT kell, különben a régi irány szavai jönnének.
     const onboarding = await db.getOnboarding();
     const dir = (onboarding?.target as PcicTarget) ?? 'es';
     setPcicTarget(dir);
     setTarget(dir);
-    // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 2. pont): ha
+    // Ha
     // az aktív párnak MÉG nincs kifejezetten választott szintje (Settings
     // irányváltás egy korábban nem onboardolt irányra; friss onboarding
     // mindig választat, ide sose ér el választatlanul), a szint-választó lap
@@ -172,7 +172,7 @@ export default function PcicScreen() {
     const lvl = overrideLevel ?? (await db.getPcicLevel());
     const newOrder = pcicItemsForLevel(lvl).map((i) => i.id);
     const rawCards = await db.getPcicCards();
-    // PLAN-ketiranyu 2. lépés: a régi PCIC-korpusz árva SRS-sorait (a
+    // a régi PCIC-korpusz árva SRS-sorait (a
     // betöltött korpuszban már nem létező item-id) kihagyja, mielőtt a
     // session belőlük épülne.
     const cards = dropOrphanCards(cardsForLevel(rawCards, lvl), (id) => findPcicItem(id) !== undefined);
@@ -180,11 +180,11 @@ export default function PcicScreen() {
     const newLimit = await db.getDailyNewLimit();
     const delaySec = await db.getAgainDelaySec();
     const bonus = await db.getPcicNewBonus(day);
-    // PLAN-ketiranyu 7. lépés: a feloldott igeidők a kész nyelvtani leckékből
+    // a feloldott igeidők a kész nyelvtani leckékből
     // (csak spanyol célnyelven van igeidő-kapu).
     const grammarRows = dir === 'es' ? await db.getGameProgress(GRAMMAR_PROGRESS_KEY) : [];
     const introducedToday = cards.filter((c) => c.introducedAt === day).length;
-    // FB452: a napi keret NAPI, a ma bevezetetteket minden szintről számoljuk (lib/pcicSession.ts pcicSessionNewLimit).
+    // a napi keret NAPI, a ma bevezetetteket minden szintről számoljuk (lib/pcicSession.ts pcicSessionNewLimit).
     const introducedAllLevels = dropOrphanCards(rawCards, (id) => findPcicItem(id) !== undefined).filter((c) => c.introducedAt === day).length;
     setTenses(resolvedTensesFromLessons(doneGrammarTopicProgress(dir, grammarRows).keys()));
     setLevel(lvl);
@@ -200,7 +200,7 @@ export default function PcicScreen() {
     setAgainDelaySec(delaySec);
     setToday(day);
     setAllCards(new Map(cards.map((c) => [c.itemId, c])));
-    // FB470 (kártya-szintű folytatás): az újraépült sorra rákerül a mentett sorrend és az "again" időzítők (napváltáskor / szintváltáskor érvénytelen).
+    // (kártya-szintű folytatás): az újraépült sorra rákerül a mentett sorrend és az "again" időzítők (napváltáskor / szintváltáskor érvénytelen).
     const resume = await loadLearnResume(db);
     setQueue(applyLearnResume(pickSm2Session(cards, pcicIntroOrder(newOrder), day, pcicSessionNewLimit({ limit: newLimit, bonus, introducedAllLevels, introducedThisLevel: introducedToday })), resume, day, lvl));
     if (isLearnResumeFor(resume, day, lvl) && resume.base !== null) setBatchBase({ day, level: lvl, n: resume.base });
@@ -236,7 +236,7 @@ export default function PcicScreen() {
     await load(lvl);
   };
 
-  // PLAN-vizsga A. szakasz 2. lépés (A1 a): a vizsga-sor három útja: indul a vizsga, a hiányzó
+  // a vizsga-sor három útja: indul a vizsga, a hiányzó
   // szavak gyakorlása (az A1 pakli), vagy a nyelvtani leckék (ha csak a lecke hiányzik).
   // A lap ELŐBB bezárul, és csak a kilépő animáció (web: 250 ms) után lépünk tovább: ha a push
   // azonnal háttérbe teszi ezt a képernyőt, a Modal kilépése nem fejeződik be, és a lap az új
@@ -245,18 +245,18 @@ export default function PcicScreen() {
     setLevelSheetOpen(false);
     setTimeout(go, SHEET_CLOSE_MS);
   };
-  // PLAN-vizsga C. szakasz (C1 a): a szintválasztó lap halk belépője az adaptív szintfelméréshez.
+  // a szintválasztó lap halk belépője az adaptív szintfelméréshez.
   const openPlacement = () => closeSheetThen(() => router.push('/placement'));
 
   const newOrder = useMemo(() => pcicItemsForLevel(level).map((i) => i.id), [level]);
   const current = queue[0];
   const currentItem = current ? findPcicItem(current.itemId) : undefined;
 
-  // PLAN-ketiranyu 4. lépés: a FeedbackButton párcímkéje az aktív iránnyal
+  // a FeedbackButton párcímkéje az aktív iránnyal
   // (korábban "es-en"-re volt égetve, holott a tényleges viselkedés en-es volt).
   const languagePair = target === 'es' ? 'en-es' : 'es-en';
 
-  // PLAN-ketiranyu 4. lépés: a prompt a kiinduló nyelvű mező, a válasz a
+  // a prompt a kiinduló nyelvű mező, a válasz a
   // célnyelvű; en-es-ben ez a régi sorrend (prompt en, válasz es), es-en-ben
   // fordítva. `sourceLang` a prompt/felolvasás nyelve, `target` a válaszé.
   const sourceLang = target === 'es' ? 'en' : 'es';
@@ -264,12 +264,12 @@ export default function PcicScreen() {
   const promptSource = target === 'es' ? currentItem?.en : currentItem?.es;
   const answerText = target === 'es' ? currentItem?.es : currentItem?.en;
 
-  // FB319/FB391: a prompt felolvasása ÉS a beviteli mező fókusza, amikor egy
+  // a prompt felolvasása ÉS a beviteli mező fókusza, amikor egy
   // ÚJ lap kerül képernyőre (kinyílik a billentyűzet). Csak a
   // `current?.itemId` váltására fusson (a `grade` a closure-ből olvasva
   // dönti el, hogy még nincs felfedve), felfedéskor (a `grade` state
   // változásakor) ne ismételje - se a felolvasás, se a fókusz.
-  // PLAN-ketiranyu 7. lépés: mondatkártya alatt nem szól a következő prompt;
+  // mondatkártya alatt nem szól a következő prompt;
   // a kártya bezárásakor (sentenceOpen false) szól, mint egy új lapnál.
   const sentenceOpen = sentenceCard !== null;
   useEffect(() => {
@@ -277,13 +277,13 @@ export default function PcicScreen() {
       speak(promptSource, speechLang(sourceLang));
       inputRef.current?.focus();
     }
-    // PLAN-play 11. lépés: kártyaváltáskor a folyamatban lévő felolvasás
-    // (pl. Check utáni szó+példamondat lánc) álljon le, LECKE-SEMA 3.3 minta.
+    // kártyaváltáskor a folyamatban lévő felolvasás
+    // (pl. Check utáni szó+példamondat lánc) álljon le (ugyanaz a minta).
     return () => stopSpeaking();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [current?.itemId, loading, sentenceOpen]);
 
-  // FB470 (kártya-szintű folytatás): minden sor- / adag-változás után elmenti a pillanatképet (lib/learnResume.ts).
+  // (kártya-szintű folytatás): minden sor- / adag-változás után elmenti a pillanatképet (lib/learnResume.ts).
   useEffect(() => {
     if (loading || !today) return;
     const base = batchBase.day === today && batchBase.level === level ? batchBase.n : null;
@@ -293,12 +293,12 @@ export default function PcicScreen() {
   const dueRemaining = queue.filter((c) => c.state !== 'new').length;
   const newRemaining = queue.filter((c) => c.state === 'new').length;
   const doneToday = countDoneToday([...allCards.values()], today);
-  // FB387/395 (PLAN-fb0924 1b. lépés): a fejléc mutassa, MIBŐL áll a mai
+  // a fejléc mutassa, MIBŐL áll a mai
   // bevezetés (szó vs. mondat), plusz a mai teljes keret (limit + bónusz).
-  // FB452: a napi keret NAPI, ezért a "ma bevezetett" minden szintről számol: a nézet szintjén az élő állapot
+  // a napi keret NAPI, ezért a "ma bevezetett" minden szintről számol: a nézet szintjén az élő állapot
   // (allCards, minden értékelés frissíti), a többi szinten a betöltéskori (allLevelCards).
   const cardsAllLevels = [...allCards.values(), ...allLevelCards.filter((c) => !allCards.has(c.itemId) && findPcicItem(c.itemId) !== undefined)];
-  // FB499: a vizsga-sor számai az ÉLŐ kártyákból számolnak (a betöltéskori állapot a menet közben tanult szavakat nem
+  // a vizsga-sor számai az ÉLŐ kártyákból számolnak (a betöltéskori állapot a menet közben tanult szavakat nem
   // tartalmazta), hogy a "N to go" és a "Practice words" ugyanazt a számot jelentse.
   const examRow = examLevels.map((loaded) => {
     const status: ExamLevelStatus = {
@@ -315,7 +315,7 @@ export default function PcicScreen() {
   const introducedTodayByKind = countIntroducedTodayByKind(cardsAllLevels, today, (id) => findPcicItem(id)?.kind);
   const todayNewBudget = dailyNewLimit + pcicBonus;
 
-  // SZ2 (SZAVAK.md): a DB-írás + számlálók itt, a queue-léptetés (advance) a
+  // a DB-írás + számlálók itt, a queue-léptetés (advance) a
   // hívó handleGrade-ben, külön.
   const commitGrade = async (g: Sm2Grade): Promise<Sm2Card | null> => {
     if (!current) return null;
@@ -323,7 +323,7 @@ export default function PcicScreen() {
     const before = { ...current };
     const next = sm2Review(current, g, today);
     await getDb().upsertPcicCard(next);
-    // PLAN-play 12. lépés: a napi streak-et innentől a PCIC-értékelés írja (a
+    // a napi streak-et innentől a PCIC-értékelés írja (a
     // Tanulás fül vitte el az egyetlen korábbi hívót); a metódus a nap első
     // hívásán túl no-op, tehát Again-re is biztonságos.
     await getDb().updateStreak();
@@ -336,7 +336,7 @@ export default function PcicScreen() {
     return next;
   };
 
-  // FB364: a `grade`-et is átadja a requeuenak, hogy csak a "Nem tudtam"
+  // a `grade`-et is átadja a requeuenak, hogy csak a "Nem tudtam"
   // (again) kártya kapjon returnAt-időzítőt, a "Tudtam" (good) ne.
   const advance = (next: Sm2Card, g: Sm2Grade) => {
     setQueue((prev) => requeueAfterGrade(prev, next, today, g, Date.now(), againDelaySec));
@@ -346,9 +346,9 @@ export default function PcicScreen() {
     setCardSeq((n) => n + 1);
   };
 
-  // PLAN-play 11. lépés: Check után a szó felolvasása UTÁN, láncolva, magától
+  // Check után a szó felolvasása UTÁN, láncolva, magától
   // szól a példamondat is, ha van a tételhez (exampleEs/exampleEn).
-  // PLAN-ketiranyu 4. lépés: mindkettő a célnyelven szól, nem mindig spanyolul.
+  // mindkettő a célnyelven szól, nem mindig spanyolul.
   const speakRevealed = (best: string) => {
     const example = target === 'es' ? currentItem?.exampleEs : currentItem?.exampleEn;
     if (example) {
@@ -365,7 +365,7 @@ export default function PcicScreen() {
     if (!current || !currentItem || !answerText) return;
     const answer = composeAnswer(articlePick, typedAnswer);
     if (answer.trim().length === 0) {
-      // Kálmán 2026-09-21: üres beküldés is felfedi a helyes alakot és
+      // üres beküldés is felfedi a helyes alakot és
       // felolvassa, de nem értékel automatikusan; a koppintás dönt, mint
       // bármelyik felfedésnél.
       const g = gradePcicAnswer('', answerText, strictAccents);
@@ -375,8 +375,8 @@ export default function PcicScreen() {
       speakRevealed(g.best);
       return;
     }
-    // FB321: felfedéskor mindig szóljon a helyes célnyelvi alak.
-    // FB399: mondat-tételnél a névmás nélküli válasz is jó.
+    // felfedéskor mindig szóljon a helyes célnyelvi alak.
+    // mondat-tételnél a névmás nélküli válasz is jó.
     const g = (currentItem.kind === 'sentence' ? gradeSentenceAnswer : gradePcicAnswer)(answer, answerText, strictAccents);
     setTypedAnswer(answer);
     setGrade(g);
@@ -389,7 +389,7 @@ export default function PcicScreen() {
     const next = await commitGrade(g);
     if (!next) return;
     advance(next, g);
-    // PLAN-ketiranyu 7. lépés: minden 4. ÚJ szó után jöhet egy mondatkártya
+    // minden 4. ÚJ szó után jöhet egy mondatkártya
     // (K3: csak gyakorlás, az eredménye nem ír SRS-t).
     if (!wasNew) return;
     const cardsById = new Map(allLevelCards.map((c) => [c.itemId, c]));
@@ -439,9 +439,9 @@ export default function PcicScreen() {
     setCardSeq((n) => n + 1);
   };
 
-  // PLAN-fb1001 K1: a haladás-nullázás (a régi 🗑️) a Beállítások fülre költözött.
+  // a haladás-nullázás (a régi 🗑️) a Beállítások fülre költözött.
 
-  // FB314/385/386: nincs több esedékes/új lap, de a témakörben van még be
+  // nincs több esedékes/új lap, de a témakörben van még be
   // nem vezetett tétel; ez a napi keretet bővíti +10-zel (perzisztálva,
   // a naptári nappal lejár) és újraépíti a sort.
   const handleMoreNew = (step: number = PCIC_NEW_BONUS_STEP) => {
@@ -462,7 +462,7 @@ export default function PcicScreen() {
     );
   };
 
-  // FB499: a vizsga-sor "Practice words" gombja. Ha a mai keret elfogyott, a sorban kiírt hiányzó
+  // a vizsga-sor "Practice words" gombja. Ha a mai keret elfogyott, a sorban kiírt hiányzó
   // szavakból bővíti (lib/pcicSession.ts practiceTopUpStep), és az új adag haladás-csíkja 0%-ról indul;
   // különben csak a szintre vált, mint eddig.
   const handlePractice = async (lvl: PcicLevel, missing: number) => {
@@ -483,7 +483,7 @@ export default function PcicScreen() {
   // koppintásra a szint-választó lap nyílik; a meglévő négy chip változatlan.
   // 5b: a régi egysoros szöveg-fejléc (`s.pcic.header`) helyett BadgeRow chip-sor;
   // a négy szám ugyanaz, csak külön i18n kulcsokból (badgeTotal/Due/New/Done).
-  // PLAN-hibaim.md 4. lépés: a "Hibáim" belépő önálló komponens (saját
+  // a "Hibáim" belépő önálló komponens (saját
   // betöltéssel), hogy ez a fájl (785 sor) ne nőjön 800 fölé; csak akkor
   // renderel, ha van betöltött köteg.
 
@@ -492,7 +492,7 @@ export default function PcicScreen() {
     <View style={styles.headerRow}>
       <View style={styles.headerBadges}>
         {g.brutal ? (
-          // NY19: a szint-chip doboz (aktív = a kitöltés).
+          // a szint-chip doboz (aktív = a kitöltés).
           <BrutalBox testID="learn-level-chip" fill="a" offset={2} boxStyle={styles.brutalLevelChip} onPress={() => setLevelSheetOpen(true)}>
             <Text style={[styles.levelChipText, { color: g.onFill, fontWeight: '500' }]}>{level} ▾</Text>
           </BrutalBox>
@@ -519,7 +519,7 @@ export default function PcicScreen() {
         )}
       </View>
     </View>
-    {/* FB387/395 javítás: a régi ötödik BadgeRow-chip (miből áll a mai bevezetés
+    {/* javítás: a régi ötödik BadgeRow-chip (miből áll a mai bevezetés
         + a mai teljes keret) egy hosszú, egybefüggő szöveg volt, ami chipként
         kilógott a képernyő jobb széléről (nem fért a sorba, és a chip belseje
         nem tördelhető). Külön, teljes szélességű, tördelhető sor lett belőle,
@@ -539,7 +539,7 @@ export default function PcicScreen() {
     );
   }
 
-  // PLAN-ketiranyu 7. lépés: a mondatkártya a következő szókártya ELŐTT jön
+  // a mondatkártya a következő szókártya ELŐTT jön
   // (a done-képernyő előtt is). A saját gombja zár; nem ír SRS-t (K3).
   if (sentenceCard) {
     return (
@@ -580,7 +580,7 @@ export default function PcicScreen() {
             />
           </ScrollView>
         ) : (
-          // FB397: a begépelős mondatkártya saját görgetője + a dokkolt Check sáv a
+          // a begépelős mondatkártya saját görgetője + a dokkolt Check sáv a
           // billentyűzet fölött (mint a szókártyán), ezért nincs külső ScrollView.
           <TypedSentenceCard
             key={sentenceCard.itemId}
@@ -607,7 +607,7 @@ export default function PcicScreen() {
   }
 
   if (!current || !currentItem) {
-    // FB317: hány PCIC-tétel van már bevezetve (nem 'new' állapotú) a teljes
+    // hány PCIC-tétel van már bevezetve (nem 'new' állapotú) a teljes
     // listából, a done-képernyő saját haladás-csíkjához.
     const introducedCount = [...allCards.values()].filter((c) => c.state !== 'new').length;
     const introducedPct = newOrder.length > 0 ? (introducedCount / newOrder.length) * 100 : 0;
@@ -628,7 +628,7 @@ export default function PcicScreen() {
           onClose={() => setLevelSheetOpen(false)}
         />
         <View style={styles.doneHeader}>
-          {/* FB402: rajzolt jelvény (pipa + konfetti) a 🎉 emoji helyett, a neo-brutalista stílusban. */}
+          {/* rajzolt jelvény (pipa + konfetti) a 🎉 emoji helyett, a neo-brutalista stílusban. */}
           <DoneBadge />
           <Text variant="title" style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.pcic.doneTitle}</Text>
         </View>
@@ -670,7 +670,7 @@ export default function PcicScreen() {
           )}
         </View>
         {newOrder.some((id) => !allCards.has(id) || allCards.get(id)!.state === 'new') && (
-          // FB449/FB451: +5 / +10 / +15 új szó, egy sorban (a +10 testID-ja változatlan: learn-more-new).
+          // +5 / +10 / +15 új szó, egy sorban (a +10 testID-ja változatlan: learn-more-new).
           <View style={styles.moreNewBlock}>
             <Text style={[styles.moreNewHint, { color: colors.tabIconDefault }]}>{s.pcic.moreNewHint}</Text>
             <View style={styles.moreNewRow}>
@@ -692,14 +692,14 @@ export default function PcicScreen() {
     );
   }
 
-  // FB320/FB352: a fejléc alatti haladás-csík a `doneToday` perzisztált napi
+  // a fejléc alatti haladás-csík a `doneToday` perzisztált napi
   // számból épül (nem a mountonként nullázódó `sessionAnswered`-ből), hogy
   // tab-váltás vagy app-újraindítás után is a valós napi haladást mutassa,
   // ne ugorjon vissza üresre.
-  // PLAN-fb1001 9. lépés (FB430, D1): a sáv a MAI adag hátralévőjét mutatja (az első
+  // a sáv a MAI adag hátralévőjét mutatja (az első
   // kártyánál üres, az utolsónál tele, adag közben nem indul újra; lib/pcicSession.ts
-  // dayProgressPercent). Az FB401-es 10-es szettes mérés minden 10. kártyánál újraindult.
-  // FB456: +N után az új adag haladását mutatja (finishedInBatch), nem a nap összesét.
+  // dayProgressPercent). Az eddigi 10-es szettes mérés minden 10. kártyánál újraindult.
+  // +N után az új adag haladását mutatja (finishedInBatch), nem a nap összesét.
   const barPct = dayProgressPercent(
     finishedInBatch(countFinishedToday([...allCards.values()], queue, today), batchBase.day === today && batchBase.level === level ? batchBase.n : 0),
     queue.length
@@ -715,7 +715,7 @@ export default function PcicScreen() {
         : undefined;
 
   // 5c: szófaj-chip a szó alatt, a spanyol alakból (lib/pcicPos.ts, döntés 6b).
-  // PLAN-ketiranyu 4. lépés (3. pont): posOf csak es célnyelven fut (a
+  // posOf csak es célnyelven fut (a
   // szabály/korpusz spanyol szóalakra épül, angol célnyelven nincs értelme).
   const pos = target === 'es' ? posOf(currentItem) : null;
 
@@ -767,10 +767,10 @@ export default function PcicScreen() {
           chipTone={current.state === 'new' ? 'new' : 'neutral'}
           onPress={() => Keyboard.dismiss()}
         >
-          {/* 5b: a szó melletti 🔊 újra elmondja az angolt (Kálmán kiegészítése,
-              anki-ui-terv.html), ugyanazzal a hívással, mint a lap-nyitáskori FB319 felolvasás. */}
+          {/* 5b: a szó melletti 🔊 újra elmondja az angolt (utólagos kiegészítés,
+              anki-ui-terv.html), ugyanazzal a hívással, mint a lap-nyitáskori felolvasás. */}
           <View style={styles.wordRow}>
-            {/* FB404/405/413: a hosszú szó / mondat ("reason (justification)", "they are
+            {/* a hosszú szó / mondat ("reason (justification)", "they are
                 going to arrive") a hosszától függő betűmérettel, összemenő szélességgel;
                 enélkül a natív sor kiterjedt a kártyán túlra és a bal széle levágódott. */}
             <SkinWord word={promptSource ?? ''} lang={sourceLang}>
@@ -778,13 +778,13 @@ export default function PcicScreen() {
                 {promptSource ?? ''}
               </FitText>
             </SkinWord>
-            {/* PLAN-temak 6E: a senior téma a 🔊 alá szöveges feliratot tesz (SkinSpeakLabel). */}
+            {/* a senior téma a 🔊 alá szöveges feliratot tesz (SkinSpeakLabel). */}
             <View style={{ alignItems: 'center' }}>
               <SpeakButton onPress={() => speak(promptSource ?? '', speechLang(sourceLang))} style={styles.speakBtn} iconStyle={styles.speakIcon} />
               <SkinSpeakLabel />
             </View>
           </View>
-          {/* PLAN-tobbjelentes 3. lépés (SZ8): kis mondat a szó alatt, ha a kérdésnek több
+          {/* kis mondat a szó alatt, ha a kérdésnek több
               jelentése van; a `*…*` jelölt rész félkövér + rózsaszín aláhúzás, a csillag nem
               látszik. Gépeléskor és a Check után is ott marad, felolvasás nem változik. */}
           {currentItem.hint && (
@@ -810,7 +810,7 @@ export default function PcicScreen() {
               </View>
             )}
             <Text style={[styles.sectionText, { color: colors.tabIconDefault }]}>{currentItem.section}</Text>
-            {/* FB481/495/496/498: (i) csak magyarázatos kártyán; koppintásra ki/be nyitja a
+            {/* (i) csak magyarázatos kártyán; koppintásra ki/be nyitja a
                 kártya `note`-ját a chip-sor alatt (a Check-sávot és a 💬-t nem takarja). */}
             {hasNote &&
               (g.brutal ? (
@@ -833,10 +833,10 @@ export default function PcicScreen() {
           </View>
           {noteOpen && <CardNote note={currentItem.note} image={currentItem.image} colors={colors} />}
 
-          {/* SZ7 (SZAVAK.md): FB188 névelő-gombsor a Learn fülről, ⊘ az alapállás.
-              FB214 kiegészítés: a PCIC-en a chip már mutatja, ha nem főnév, a
+          {/* névelő-gombsor a Learn fülről, ⊘ az alapállás.
+              kiegészítés: a PCIC-en a chip már mutatja, ha nem főnév, a
               sor csak noun/ismeretlen szófajnál jár (lib/articlePicker.ts).
-              PLAN-ketiranyu 4. lépés (3. pont): csak es célnyelvnél jár. */}
+              csak es célnyelvnél jár. */}
           {target === 'es' &&
             articlePickerApplies(target, currentItem.kind !== 'sentence', answerText) &&
             articleRowAppliesForPos(pos) && (
@@ -940,12 +940,12 @@ const styles = StyleSheet.create({
     padding: 20,
     justifyContent: 'flex-start',
   },
-  // FB320: a loading-ág is a közös containert használja, de a pörgettyűnek
+  // a loading-ág is a közös containert használja, de a pörgettyűnek
   // középen kell maradnia, nem a tetejére ugrania.
   centered: {
     justifyContent: 'center',
   },
-  // FB320: vékony haladás-csík a fejléc alatt, a tanuló nézeten.
+  // vékony haladás-csík a fejléc alatt, a tanuló nézeten.
   progressTrack: {
     height: 6,
     borderRadius: 3,
@@ -985,7 +985,7 @@ const styles = StyleSheet.create({
   brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   brutalTile: { flex: 1 },
   brutalTileBox: { paddingVertical: 12, alignItems: 'center' },
-  // FB449/FB451: a három "+N új szó" gomb egy sorban.
+  // a három "+N új szó" gomb egy sorban.
   moreNewBlock: { gap: 4 },
   moreNewHint: { fontSize: 13, textAlign: 'center' },
   moreNewRow: { flexDirection: 'row', gap: 10 },
@@ -998,7 +998,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  // FB387/395 javítás: a mai szó/mondat bontás saját, teljes szélességű,
+  // javítás: a mai szó/mondat bontás saját, teljes szélességű,
   // tördelhető sora a chip-sor alatt (lásd a headerRow utáni Text-et).
   todayLine: {
     fontSize: 12,
@@ -1019,7 +1019,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 8,
   },
-  // FB317: színes done-képernyő, a components/DoneScreen.tsx vizuális
+  // színes done-képernyő, a components/DoneScreen.tsx vizuális
   // nyelvén (doneEmoji, statsGrid), de saját stílusokkal.
   doneContainer: {
     gap: 16,
@@ -1089,8 +1089,8 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     textAlign: 'center',
   },
-  // FB392/393: a ℹ️ jegyzet szövege, a wordRow alatt.
-  // PLAN-tobbjelentes 3. lépés: kis mondat (hint) a nagy szó alatt.
+  // a ℹ️ jegyzet szövege, a wordRow alatt.
+  // kis mondat (hint) a nagy szó alatt.
   hintText: {
     fontSize: 14,
     lineHeight: 20,
@@ -1116,7 +1116,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     flexShrink: 1,
   },
-  // FB481/495/496/498: az (i) gomb a chip-sorban, és a kártya magyarázata alatta.
+  // az (i) gomb a chip-sorban, és a kártya magyarázata alatta.
   infoBtn: {
     minWidth: 24,
     minHeight: 24,
@@ -1176,11 +1176,11 @@ const styles = StyleSheet.create({
     fontSize: 13,
     textAlign: 'right',
   },
-  // PLAN-play 12. lépés (s3): a "Don't learn this" sora; a flex-end a régi
+  // a "Don't learn this" sora; a flex-end a régi
   // jobbra-igazított helyre teszi a dontLearn-t.
   // 7F/G2: a korábbi marginBottom: 8 helyett marginTop: 10 (a doboz magassága ~ugyanaz), hogy a sor ne
   // érjen a beviteli mezőhöz (szélesebb sormagasságú / elforgatott kártya-keretű témán átfedés volt).
-  // PLAN-temak 7H: ha a két felirat nem fér el egy sorban (széles betű: diszlexia), a második új sorba
+  // ha a két felirat nem fér el egy sorban (széles betű: diszlexia), a második új sorba
   // tör, nem lóg ki balra a kártyából (a flex-end miatt a kitöltött sor eleje esett le).
   bottomRow: {
     flexDirection: 'row',

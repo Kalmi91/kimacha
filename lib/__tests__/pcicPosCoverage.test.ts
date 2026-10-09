@@ -1,8 +1,8 @@
-// PLAN-fb0923 2. lepes (FB361-362), or-teszt: A1-B2 minden word/phrase
+// 2. lepes, or-teszt: A1-B2 minden word/phrase
 // tetelnek van szofaja, es sentence/pattern tetelnek sose.
-// PLAN-regi-szavak-ki 5. lepes: a posOf lemma-indexe a data/words-open, ezert a
+// 5. lepes: a posOf lemma-indexe a data/words-open, ezert a
 // teszt az elo pakli (data/pcic.ts, en->es irany) tetelein fut a korabbi nyers
-// PCIC-json helyett. FB482: a words-open det/interj szofaja (20 det + 6 interj, pl.
+// PCIC-json helyett. A words-open det/interj szofaja (20 det + 6 interj, pl.
 // "este", "hola", "adiós") is chipet kap, nincs kivetel.
 import { posOf } from '../pcicPos';
 import { PCIC_LEVELS, pcicItemsForLevel, setPcicTarget } from '../../data/pcic';

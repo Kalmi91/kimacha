@@ -18,7 +18,7 @@ export const BACKUP_TABLES = [
 
 export type BackupTable = (typeof BACKUP_TABLES)[number];
 
-// Play-vágás 7. lépés (2026-09-23): tables an older backup (e.g. 4.0.25) may
+// Play-vágás: tables an older backup (e.g. 4.0.25) may
 // still carry, but the app no longer reads or writes (their DB methods were
 // removed as dead: the Game tab's own score/settings tables, and the topic
 // picker). A restore accepts and skips them, so an old backup still loads.

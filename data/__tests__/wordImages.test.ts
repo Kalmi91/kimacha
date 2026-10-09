@@ -1,4 +1,4 @@
-// PLAN-fb1005i 2. lépés (FB498/500): a data/words-open/images.json kapuja. Minden bejegyzés egy létező
+// a data/words-open/images.json kapuja. Minden bejegyzés egy létező
 // `o<order>` kártya, van szerzője + licence + Commons forrás-URL-je, a kép-fájl létezik, a mérete rendben,
 // és a data/wordImages.ts require-térképe pont ezeket a fájlokat tudja.
 import fs from 'node:fs';

@@ -9,7 +9,7 @@ import { legibleOn } from '@/constants/Skins';
 
 type ColorScheme = (typeof Colors)['light'];
 
-// FB170 (a TypingCardScreen-ből költözött, 1:1): a billentyűzet felső élén
+// (a TypingCardScreen-ből költözött, 1:1): a billentyűzet felső élén
 // ülő egyetlen Check/→ sáv. A `dockedAction`/`inlineCheckBtn` stílusértékek
 // változatlanok, csak ide költöztek, hogy a PCIC is használhassa.
 export const DOCK_RESERVE = 76;
@@ -51,7 +51,7 @@ export default function DockedAction({ label, onPress, tone, color, bottom, colo
       onLayout={onHeight ? (e: LayoutChangeEvent) => onHeight(e.nativeEvent.layout.height) : undefined}
     >
       {g.brutal ? (
-        // NY19: Check = ink kitöltés, Next = a kitöltés.
+        // Check = ink kitöltés, Next = a kitöltés.
         <BrutalButton testID={testID ?? 'learn-docked-action'} label={label} fill={tone === 'next' ? 'a' : checkFill ?? 'ink'} icon={tone === 'next' ? '→' : '✓'} disabled={disabled} onPress={onPress} />
       ) : (
         <Pressable

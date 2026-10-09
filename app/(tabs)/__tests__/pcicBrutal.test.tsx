@@ -1,4 +1,4 @@
-// NY19: a Tanulás fül brutalista palettán (BrutalBox kártya, szint-doboz, dokkolt
+// a Tanulás fül brutalista palettán (BrutalBox kártya, szint-doboz, dokkolt
 // gomb, szegmentált progress), classic palettán a mai kinézet. Mock-minta:
 // pcicCardShell.test.tsx.
 
@@ -21,7 +21,7 @@ jest.mock('react-native-safe-area-context', () => ({
 }));
 
 // Egy fix tétel, hogy a teszt ne a valódi PCIC-korpusztól függjön.
-// PLAN-play 10. lépés: az id "b1-" előtaggal, mert lib/pcicLevels.ts a
+// az id "b1-" előtaggal, mert lib/pcicLevels.ts a
 // szint-szűrést az id-előtagból dönti el (a fül a B1 alap-szinten indul).
 const FIXTURE_ITEM = { id: 'b1-x1', es: 'vida', en: 'life', kind: 'word' as const, section: 'Test', order: 0 };
 jest.mock('@/data/pcic', () => ({
@@ -65,7 +65,7 @@ describe('Tanulás fül, neo-brutalista (NY19)', () => {
     view.unmount();
   });
 
-  // PLAN-learn-words-open 5a: a "Didn't know" / "Knew it" gomb egyforma: azonos
+  // a "Didn't know" / "Knew it" gomb egyforma: azonos
   // árnyék-eltolás (a külső burkoló margója), a doboz kitölti a sort (flex: 1),
   // a felirat középre igazított, és a sor a kártya teljes szélességén fut.
   it('brand palettán a két értékelő gomb egyforma: azonos eltolás, kitöltő doboz, középre igazított felirat', async () => {

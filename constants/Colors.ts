@@ -6,7 +6,7 @@ const navy = '#0F172A';
 const pink = '#EC4899';
 const cyan = '#06B6D4';
 
-// NY20: a brutalista paletta (GrammarPalettes) egy helyen képződik le a Colors
+// a brutalista paletta (GrammarPalettes) egy helyen képződik le a Colors
 // kulcsaira: a téma-kulcs `<paletta>-light|dark`, így a `Colors[theme]`-et olvasó
 // fájlok külön átírás nélkül váltanak (világos = papír, sötét = tinta).
 // tint/accent = a, secondary = b, border = ink, onTint = ON_FILL; a
@@ -37,7 +37,7 @@ function brutalColors(id: FillPaletteId, mode: 'light' | 'dark') {
   };
 }
 
-// PLAN-temak 2A: a téma-motor (constants/Skins.ts) témáihoz ugyanilyen Colors-bejegyzés,
+// a téma-motor (constants/Skins.ts) témáihoz ugyanilyen Colors-bejegyzés,
 // `<téma-id>-<mód>` kulcson. tint/accent = a, secondary = b (ha nincs: a), card = paper,
 // border = a keret saját színe (ha nincs: ink), onTint = onA; a szemantikus színek
 // (success / danger / warning / info / overlay) a brutalista készletből jönnek.
@@ -147,7 +147,7 @@ export default {
     info: '#38BDF8',
     border: '#334155',
     overlay: 'rgba(0,0,0,0.6)',
-    // PLAN-temak 7G: a fehér a #3B82F6-on 3,68 volt; a sötét alap-szín 4,85 (a tint szövegként a
+    // a fehér a #3B82F6-on 3,68 volt; a sötét alap-szín 4,85 (a tint szövegként a
     // sötét alapon marad, ezért a kitöltés szövege változott, nem a tint).
     onTint: navy,
   },

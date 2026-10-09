@@ -11,7 +11,7 @@ import {
 } from '@/constants/Skins';
 import type { ThemeKey } from '@/lib/ThemeContext';
 
-// PLAN-temak 2A: a téma-kiválasztásból (skin / mix + al-paletta + mód) a Colors-kulcs és az
+// a téma-kiválasztásból (skin / mix + al-paletta + mód) a Colors-kulcs és az
 // összerakott Skin. Tiszta függvények, hogy a ThemeContext és a useSkin ugyanazt lássa.
 
 // A színek forrása: egy téma vagy (Saját mixben) egy Neo-brutál al-paletta.

@@ -2,18 +2,18 @@ export type Level = 'A0' | 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2';
 
 export const LEVELS: Level[] = ['A0', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 
-// GAMES.md F-1 (K6 DÖNTÉS, 2026-08-26): word-class metadata for the game
+// F-1 (K6 DÖNTÉS, 2026-08-26): word-class metadata for the game
 // modules (bubble-pop, odd-one-out, ...). Both fields are optional so
 // unannotated entries (e.g. the words-open conj/det/interj cards) keep type-checking.
 export type WordPos = 'noun' | 'verb' | 'adj' | 'adv' | 'pron' | 'prep' | 'num' | 'phrase';
 export type WordGender = 'm' | 'f' | 'mf' | 'n' | '-';
 
-// PROMPT-POLICY 6: egy szó, ami csak Mexikóban él (ahorita, chido...), a
+// egy szó, ami csak Mexikóban él (ahorita, chido...), a
 // kártyán zászló-emojival jelzi, melyik országban használják. Mező nélkül =
 // spanyolországi, zászló nélkül (alapértelmezett).
 export type WordRegion = 'mx' | 'es';
 
-// PROMPT-POLICY 7: külön kártya csak akkor jár egy szónak, ha rendhagyó a
+// külön kártya csak akkor jár egy szónak, ha rendhagyó a
 // többese (el lápiz -> los lápices) vagy a szó csak többesben él (las gafas).
 // Ilyenkor a kártyán egy piktogram-címke jelzi, miért kérdezik külön.
 export type WordPlural = 'irregular' | 'only';
@@ -41,7 +41,7 @@ export interface WordEntry {
   gender?: WordGender;
   region?: WordRegion;
   plural?: WordPlural;
-  // FB357 (grammar:indefinido-10-verbos:drill): a lecke szűri ki a szót a
+  // (grammar:indefinido-10-verbos:drill): a lecke szűri ki a szót a
   // fókusz-módból/lessonWordIds()-ból, a kártya maga marad, haladás nem vész el.
   vosotros?: boolean;
   [key: string]: string | number | boolean | undefined;
@@ -49,7 +49,7 @@ export interface WordEntry {
 
 import { findOpenWordByForm, openWords } from './openWords';
 
-// FB150, Kálmán 2026-08-22 (`sentence:El calabacín es una verdura verde.`):
+// (`sentence:El calabacín es una verdura verde.`):
 // "ha rákattintok ... akár arra hogy calabacín akár arra hogy courset ... bele
 // tegye az olyan szavak közé, ahol ezeknek a helyesírását tudom gyakorolni".
 // A tap lands on a token of running text, the spelling list stores word ids, so
@@ -63,7 +63,7 @@ export function normalizeWordToken(raw: string): string {
   return raw.toLowerCase().replace(TOKEN_PUNCTUATION, '').replace(/\s+/g, ' ').trim();
 }
 
-// PLAN-regi-szavak-ki 5. lépés: a szöveg szerinti keresés (glossza, kevert felolvasás)
+// a szöveg szerinti keresés (glossza, kevert felolvasás)
 // a words-open kártyáin fut (data/openWords.ts), nem a régi szólistán.
 function allWordsFor(): WordEntry[] {
   return openWords;
@@ -79,7 +79,7 @@ function textKeysOf(value: string): string[] {
     keys.push(norm);
     const bare = norm.replace(LEADING_ARTICLE, '');
     if (bare && bare !== norm) keys.push(bare);
-    // FB273: a ragozott-alak kártya feje „hagan (hacer)", a mondatban „hagan"
+    // a ragozott-alak kártya feje „hagan (hacer)", a mondatban „hagan"
     // áll, tehát a zárójel előtti alak önmagában is kulcs.
     if (part.includes('(')) {
       const head = normalizeWordToken(part.replace(/\([^)]*\)/g, ' '));

@@ -1,5 +1,5 @@
-// FB25: char-level diff for typed answers, highlights the mistyped letters.
-// FB84: a letter the user left out used to be skipped silently, so "we hav"
+// char-level diff for typed answers, highlights the mistyped letters.
+// a letter the user left out used to be skipped silently, so "we hav"
 // looked flawless next to "we have". Missing letters are emitted too, flagged
 // `missing`, so the UI can show which character was dropped.
 //
@@ -17,7 +17,7 @@ interface DiffChar {
 const foldChar = (ch: string): string =>
   ch.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
-// FB98: the closing punctuation of a sentence is never the mistake. The grader
+// the closing punctuation of a sentence is never the mistake. The grader
 // already ignores it (strictAnswerMatch strips punctuation), but the diff still
 // painted the dropped "." amber, so an otherwise small slip looked like two
 // errors. Both tails come off before the diff; the one the learner typed is
@@ -25,7 +25,7 @@ const foldChar = (ch: string): string =>
 const LEADING_PUNCT = /^[¡¿"'(]+/;
 const TRAILING_PUNCT = /[.!?…,;:¡¿"')]+$/;
 
-// FB132: with strict accents on (Settings -> Difficulty) a dropped tilde IS the
+// with strict accents on (Settings -> Difficulty) a dropped tilde IS the
 // mistake, so the diff has to paint it, while case stays forgiven. Case and
 // accents therefore fold independently; `true`/`false` keep meaning "both".
 interface FoldOptions {

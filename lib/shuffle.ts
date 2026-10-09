@@ -1,4 +1,4 @@
-// Deterministic option shuffling for multiple-choice exam cards (FB2).
+// Deterministic option shuffling for multiple-choice exam cards.
 //
 // Several authored exam JSONs pin the correct option to slot A (correctIndex 0),
 // which makes the answer guessable. Shuffling the options at render time removes
@@ -28,7 +28,7 @@ export function hashString(str: string): number {
 
 /**
  * Seeded Fisher–Yates shuffle of MC options that also tracks where the correct
- * answer lands, so the correct option is no longer fixed to slot A (FB2).
+ * answer lands, so the correct option is no longer fixed to slot A.
  *
  * @returns options in their new order plus the relocated correctIndex.
  */
@@ -50,7 +50,7 @@ export function shuffleOptions<T>(
 }
 
 /**
- * Seeded Fisher–Yates shuffle of a plain array (GAMES.md 3.1, vocabPool.ts:
+ * Seeded Fisher–Yates shuffle of a plain array (vocabPool.ts:
  * "determinisztikus keverés a lib/shuffle.ts-ből, tesztelhetőség"). Same seed,
  * same order, every time, a game's word pool doesn't reshuffle itself on
  * every re-render.
@@ -66,7 +66,7 @@ export function shuffleArray<T>(items: T[], seed: number): T[] {
 }
 
 /**
- * Seeded shuffle of 0..n-1 where no index stays in its own slot (FB442: in a
+ * Seeded shuffle of 0..n-1 where no index stays in its own slot (in a
  * matching task the answer must never sit right next to its question). The
  * first seed that gives a derangement wins, so layouts that already had no
  * fixed point keep their order; n < 2 cannot be deranged and is returned as is.

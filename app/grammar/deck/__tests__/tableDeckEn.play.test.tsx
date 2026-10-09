@@ -1,4 +1,4 @@
-// PLAN-fb0929 10. lépés (Kálmán 2026-09-30): az es→en irányban a szavak-gyakorlása képernyő
+// az es→en irányban a szavak-gyakorlása képernyő
 // spanyol szót kérdez, az angol szót várja (és angolul olvassa fel); a spanyol irány marad.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));

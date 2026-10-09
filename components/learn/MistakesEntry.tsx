@@ -15,7 +15,7 @@ import type { MistakesBatch } from '@/lib/mistakes/format';
 
 type ColorScheme = (typeof Colors)['light'];
 
-// PLAN-hibaim.md 4. lépés (PCIC-belépő): önálló, adatot is maga tölt, hogy az
+// (PCIC-belépő): önálló, adatot is maga tölt, hogy az
 // app/(tabs)/index.tsx (785 sor) ne nőjön 800 fölé egy állapot+betöltés miatt.
 // Csak akkor renderel, ha van legalább egy betöltött "Hibáim" köteg; a PCIC
 // meglévő mezői/gombjai (BadgeRow, chip-ek) érintetlenek maradnak.
@@ -50,7 +50,7 @@ export default function MistakesEntry({ colors }: { colors: ColorScheme }) {
 
   if (!visible) return null;
 
-  // NY25: brutalista palettán `a` kitöltésű BrutalBox, nagybetűs 500-as szöveg.
+  // brutalista palettán `a` kitöltésű BrutalBox, nagybetűs 500-as szöveg.
   if (g.brutal) {
     return (
       <BrutalBox testID="mistakes-entry" fill="a" style={styles.brutalWrap} boxStyle={styles.brutalRow} onPress={() => router.push('/mistakes' as never)}>

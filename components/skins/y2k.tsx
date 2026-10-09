@@ -7,7 +7,7 @@ import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 
-// PLAN-temak 6E, Y2K: elforgatott (+8°) matrica "new word / palabra nueva" a kártya jobb felső
+// Y2K: elforgatott (+8°) matrica "new word / palabra nueva" a kártya jobb felső
 // sarkában, csillag-ikonok a kártya körül, a fejlécben streak-chip a valós napi sorozattal.
 
 const STICKER_FALLBACK = '#FF9BD2';

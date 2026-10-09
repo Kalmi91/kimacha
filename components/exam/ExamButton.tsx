@@ -6,8 +6,8 @@ import { BrutalButton } from '@/components/grammar/Brutal';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { useTheme } from '@/lib/ThemeContext';
 
-// PLAN-vizsga A. szakasz 2. lépés: a vizsga-képernyők gombja. Classic palettán a
-// DESIGN.md 5. pontja szerinti elsődleges (tint + onTint) vagy másodlagos (card +
+// a vizsga-képernyők gombja. Classic palettán a
+// A terv szerinti elsődleges (tint + onTint) vagy másodlagos (card +
 // border + text) gomb, brutalista palettán a meglévő BrutalButton.
 type Props = {
   label: string;

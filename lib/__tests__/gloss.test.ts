@@ -1,7 +1,7 @@
 import { getOpenWordsForLevel } from '@/data/openWords';
 import { resolveGloss, buildGlossMap } from '../games/gloss';
 
-// GAMES.md 3.2 / 0. szekció: GlossText's data source. A token resolves either
+// GlossText's data source. A token resolves either
 // to a corpus card (isNew reflects the caller's "known" set) or to an
 // authored override (story/myth "newWords"/"gloss"), and never to a blank.
 

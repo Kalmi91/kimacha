@@ -13,7 +13,7 @@ jest.mock('@/lib/speech', () => ({
   stopSpeaking: jest.fn(),
 }));
 
-// FB461/FB464: a beírós kártyák (vizsga, lecke-teszt) Check / Next gombja a billentyűzet fölé dokkolt sáv
+// a beírós kártyák (vizsga, lecke-teszt) Check / Next gombja a billentyűzet fölé dokkolt sáv
 // (DockSlot), mint a szókártyán; host nélkül (önálló render) a régi inline gomb marad.
 
 function Host({ children }: { children: React.ReactNode }) {

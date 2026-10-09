@@ -1,4 +1,4 @@
-// PLAN-vizsga B. szakasz (8. lépés): a nyelvtani lecke végi teszt tiszta logikája:
+// a nyelvtani lecke végi teszt tiszta logikája:
 // gomb-feltétel (B1 b), 10 kérdés (B2 a), 80% határ, a lecke %-a nem változik (B3 a),
 // az eredmény mentése / visszaolvasása, a "Test passed" jelhez a lista.
 

@@ -1,4 +1,4 @@
-// PLAN-play 12. lépés (s5, Kálmán 2026-09-23): "Known" = a PCIC-tétel
+// "Known" = a PCIC-tétel
 // ismétlési ideje (interval) >= KNOWN_THRESHOLD_DAYS; "graduated" = túljutott
 // a tanuló-lépéseken (state 'review', SM-2 "learning" fázison már túl van),
 // de a küszöb alatt. Tiszta függvények a már betöltött Sm2Card[]-on, a
@@ -6,7 +6,7 @@
 //
 // A kézzel "Ezt nem tanulom"-mal jelölt tételek (sm2MarkKnown, `known: true`)
 // egyik számba sem mennek bele: azok nem repetíció útján lettek ismertek,
-// hanem Kálmán mondta ki egyszer, hogy tudja őket.
+// hanem a tanuló mondta ki egyszer, hogy tudja őket.
 
 import type { Sm2Card } from './sm2';
 
@@ -29,7 +29,7 @@ export function countKnown(cards: Sm2Card[], thresholdDays: number = KNOWN_THRES
 }
 
 /**
- * FB406 (PLAN-fb0929 6. lépés): a "Words Known" kártya száma. A 21 napos küszöb
+ * a "Words Known" kártya száma. A 21 napos küszöb
  * (`countKnown`) egy kezdőnél hetekig 0-t adott, holott már tanult szavakat, ezért a
  * kártya a TANULT szavakat számolja: amelyik túljutott a tanuló-lépéseken (state
  * 'review'), vagy amit ő maga jelölt ismertnek ("Ezt nem tanulom"). A stabil (21+

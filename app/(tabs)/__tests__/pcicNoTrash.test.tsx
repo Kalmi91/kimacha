@@ -1,4 +1,4 @@
-// PLAN-fb1001 K1: a 🗑️ (haladás-nullázás) kikerült a Learn fejlécéből, a
+// a 🗑️ (haladás-nullázás) kikerült a Learn fejlécéből, a
 // Beállításokba költözött (settingsReset.test.tsx). Mock-minta: pcicFocus.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));

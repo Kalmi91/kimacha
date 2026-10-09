@@ -1,4 +1,4 @@
-// FB480 (PLAN-fb1005e): ha a kártya több választ fogad el ("el carro / el coche / el auto"), és a
+// ha a kártya több választ fogad el ("el carro / el coche / el auto"), és a
 // tanuló üresen vagy rosszul Check-el, a felfedés MINDEN elfogadott szót ugyanolyan súllyal kiírja
 // (nem csak az elsőt egy kis „also” sorban); helyes válasznál marad a „also” sor. Mock-minta:
 // app/(tabs)/__tests__/pcicHint.test.tsx.

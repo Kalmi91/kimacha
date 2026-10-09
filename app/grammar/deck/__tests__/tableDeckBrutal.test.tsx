@@ -1,4 +1,4 @@
-// NY25: a tábla-gyakorló képernyő brutalista palettán (vissza-doboz, SegmentBar), classic
+// a tábla-gyakorló képernyő brutalista palettán (vissza-doboz, SegmentBar), classic
 // palettán a mai fejléc és sáv. Mock-minta: tableDeck.play.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));

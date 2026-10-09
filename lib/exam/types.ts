@@ -1,4 +1,4 @@
-// PLAN-vizsga A. szakasz (2-3. lépés): a szintvizsga adatmodellje. A régi
+// a szintvizsga adatmodellje. A régi
 // (4afeb8c^) lib/examBuilder.ts tétel-fajtáiból csak az marad, ami a szintvizsgához
 // kell; minden tétel a tanult szavakból vagy a kész szint-leckékből jön, és
 // viszi magával, honnan (itemId / topicId), hogy a későbbi lépések (hibás tétel
@@ -6,7 +6,7 @@
 
 import type { PcicLevel } from '@/data/pcic';
 
-/** A szintek, amiknek van vizsgájuk (4. lépés: A1-B2, mind ugyanazzal a szabállyal). */
+/** A szintek, amiknek van vizsgájuk (A1-B2, mind ugyanazzal a szabállyal). */
 export const EXAM_LEVELS: readonly PcicLevel[] = ['A1', 'A2', 'B1', 'B2'];
 
 /** Az eredmény-lap készségei (A4); a tétel `skill`-je dönti el, melyikbe számít. */
@@ -26,7 +26,7 @@ export type ExamItem =
   | { kind: 'gap_mc'; skill: 'grammar'; topicId: string; sentence: string; options: string[]; correctIndex: number }
   // Olvasás: két tanult mondatból álló célnyelvi szöveg, a kiinduló nyelvű jelentését kell kiválasztani.
   | { kind: 'reading_mc'; skill: 'reading'; itemIds: string[]; text: string; options: string[]; correctIndex: number }
-  // Szóbeli (13. lépés): a billentyűzet mikrofonjával diktált mondat. `translate`: a prompt a kiinduló nyelvű
+  // Szóbeli a billentyűzet mikrofonjával diktált mondat. `translate`: a prompt a kiinduló nyelvű
   // mondat, az `expected` a célnyelvi; `repeat`: a prompt maga a célnyelvi mondat (olvasd fel).
   | { kind: 'speak'; skill: 'speaking'; itemId: string; prompt: string; expected: string; mode: 'translate' | 'repeat' };
 

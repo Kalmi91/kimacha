@@ -15,9 +15,9 @@ interface SplitOptions {
   nativeLang: string;
 }
 
-// LECKE-SEMA 3.2: a V2 lecke `speak` mezőjében a spanyol szakaszok «...»
+// a V2 lecke `speak` mezőjében a spanyol szakaszok «...»
 // jelöléssel vannak megjelölve a szerzőség idején, nem korpusz-találgatással
-// derülnek ki utólag (ez volt FB216/FB234 hibája: ismeretlen szónál rossz
+// derülnek ki utólag (ez volt a korábbi hiba: ismeretlen szónál rossz
 // hang).
 export function splitByMarkers(text: string, opts: SplitOptions): SpeechSegment[] {
   const segments: SpeechSegment[] = [];

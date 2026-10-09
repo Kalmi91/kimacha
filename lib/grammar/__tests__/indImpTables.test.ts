@@ -1,4 +1,4 @@
-// FB468: az indefinido-imperfecto lecke hablar mellett még 5 gyakori ige ragozó táblát kap
+// az indefinido-imperfecto lecke hablar mellett még 5 gyakori ige ragozó táblát kap
 // (comer, ser, ir, tener, hacer), indefinido + imperfecto oszloppal, és a táblakártyák
 // ugyanúgy angol alakot kérdeznek, vosotros-kártya nélkül.
 

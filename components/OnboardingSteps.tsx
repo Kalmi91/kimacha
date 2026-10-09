@@ -10,7 +10,7 @@ import { themeKeyFor } from '@/lib/skinTheme';
 import { useSkin } from '@/lib/useSkin';
 import { useTheme } from '@/lib/ThemeContext';
 
-// PLAN-temak 4C: az onboarding két új lépése, a bevezető ("How it works") és az 5 témás választó.
+// az onboarding két új lépése, a bevezető ("How it works") és az 5 témás választó.
 // A mai onboarding stílusában: közepre igazított tartalom, a cím a welcomeStyle (a hívó adja),
 // brutalista palettán BrutalButton, classic-on a mai kerek gomb.
 
@@ -76,7 +76,7 @@ function ThemeSampleRow({ id, selected, onPress }: { id: SkinId; selected: boole
   if (skin.uppercaseWord) wordStyle.textTransform = 'uppercase';
   const knowStyle: TextStyle = { color: c.onA, fontSize: 14 };
   if (fonts.body) knowStyle.fontFamily = fonts.body;
-  // PLAN-temak 7F: a téma neve kicsiben a minta-szó alatt.
+  // a téma neve kicsiben a minta-szó alatt.
   const nameStyle: TextStyle = { color: c.mu, fontSize: 11 };
   if (fonts.body) nameStyle.fontFamily = fonts.body;
   return (

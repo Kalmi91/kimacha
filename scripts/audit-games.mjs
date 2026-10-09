@@ -1,18 +1,18 @@
 #!/usr/bin/env node
 /**
- * audit-games.mjs, GAMES.md 3.6, the mechanical guard for the Game tab's
+ * audit-games.mjs, the mechanical guard for the Game tab's
  * content-driven games (grammar-choice, confusables, and future kinds: story,
- * chat, myth), scoped to data/games/**.json. PLAN-regi-szavak-ki 7. lépés: the
+ * chat, myth), scoped to data/games/**.json. The
  * Spanish taught vocabulary is the open deck (data/words-open, A1-B2).
  *
- * Guarantee (GAMES.md 0. szekció, the user's kőbe vésett kritérium): every
+ * Guarantee (the user's kőbe vésett kritérium): every
  * content word is EITHER already taught (in the target level's cumulative
  * Spanish vocabulary, built from the open deck: the `es`
  * field of every word card from A0 up to and including the content's own
  * `level`) OR carries an explicit gloss in the content JSON itself (a
  * confusables `members[].word`, or a `glossary[]` entry on the topic/set).
  *
- * P1 (build-blocking, GAMES.md 9. szekció "0 P1"):
+ * P1 (build-blocking):
  *   - a target-language content word that is neither taught nor glossed
  *   - a Record<lang,string> field (title/rule/more/why/wrong/gloss/hint/
  *     mnemonic/explanation) missing one of the 4 active languages
@@ -22,14 +22,14 @@
  *   - a grammar item missing a `wrong[...]` explanation for one of its
  *     non-correct options
  *   - a match pair longer than 3 (es) / 4 (en) words in the es track, 4 / 4 in
- *     the en track (FB465; the legacy items are listed in
+ *     the en track (the legacy items are listed in
  *     audit-games-match-debt.json and audit-games-match-debt-en.json, P2, shrink-only)
  *   - an es-track drill item that names vosotros (pronoun, vuestro, a vosotros
- *     verb form; FB466; legacy items in audit-games-vosotros-debt.json, same rule)
+ *     verb form; legacy items in audit-games-vosotros-debt.json, same rule)
  *   - a confusables drill whose `correct` is not one of the set's own
  *     `members[].word`, or a 'gap'/'listening' drill with no `sentence`
  *   - a myth item missing an id/level/track/claim/verdict, or a `source`
- *     with no `label` (GAMES.md 4.13 forrás-fegyelem: `label` is required,
+ *     with no `label` (forrás-fegyelem: `label` is required,
  *     `url` is intentionally OPTIONAL, an absent url is never a P1, a
  *     fabricated url would be far worse than none, see content.ts's MythItem)
  *   - a story scene missing text/translation, or a question with <2 options
@@ -54,7 +54,7 @@
  *   - a chat node with >=2 options where none is marked `good:true`
  *
  * Run: node scripts/audit-games.mjs
- * Exit 1 if any P1 is found (the F3 kapu, GAMES.md 9. szekció).
+ * Exit 1 if any P1 is found (the F3 kapu).
  */
 
 import { readFileSync, readdirSync, existsSync } from 'fs';
@@ -103,7 +103,7 @@ const GLUE_WHITELIST = new Set([
 const GLUE_STRIPPED = new Set([...GLUE_WHITELIST].map((w) => removeAccents(w)));
 
 // Culturally transparent proper nouns, not taught vocabulary cards. The
-// character-name block is story/chat cast (GAMES.md 4.5/4.6): a name is a
+// character-name block is story/chat cast a name is a
 // name in any language, glossing "María" scene after scene would be noise,
 // not a vocabulary lesson.
 const PROPER_NOUNS = new Set([
@@ -283,7 +283,7 @@ for (const lvl of LEVELS) {
   taughtByLevel[lvl] = set;
 }
 
-// PLAN-regi-szavak-ki 7b: a tanított szó ragozott alakja (és az igéhez írt névmás, verlo) is
+// a tanított szó ragozott alakja (és az igéhez írt névmás, verlo) is
 // tanított, ugyanazzal az alak-készlettel, amelyet az app glossza-indexe használ (lib/esForms).
 // A modulok tiszta TS, a words-open-check.mjs is így tölti a lib/games/conjugate.ts-t
 // (scripts/lib/importTs.mjs: transzpilálás, így Node 20-on is megy).
@@ -446,7 +446,7 @@ function checkLangs(obj, path) {
   }
 }
 
-// FB464: a kitöltött mondat összehasonlítható alakja (egy szóköz, nincs szóköz a záró írásjel előtt / a nyitó után);
+// a kitöltött mondat összehasonlítható alakja (egy szóköz, nincs szóköz a záró írásjel előtt / a nyitó után);
 // ugyanez a szabály van a scripts/grammar-translate.py norm_space() függvényében.
 function normFilled(str) {
   return String(str ?? '')
@@ -460,7 +460,7 @@ function wordCount(str) {
   return normalize(str).split(/\s+/).filter(Boolean).length;
 }
 
-// FB376: szóhatárral keresi a `target`-et a mondatban, hogy egy rövid target
+// szóhatárral keresi a `target`-et a mondatban, hogy egy rövid target
 // (pl. "es") ne találjon rá egy hosszabb szó belsejére (pl. "profesor").
 // Ugyanez a logika van lib/grammar/whyTarget.ts-ben (ez a script nem
 // importál TS fájlt).
@@ -504,7 +504,7 @@ function auditGrammarWord(tok, taughtSet, extra, path, lang = 'es') {
 
 const GRAMMAR_WORD_CLASSES = ['noun', 'verb', 'adjective', 'adverb', 'article', 'pronoun', 'preposition'];
 
-// TASK-9: object/reflexive pronouns and the bare negator are exempt from the
+// object/reflexive pronouns and the bare negator are exempt from the
 // self-revealing check below, see the comment at its call site.
 const OBJECT_PRONOUN_WORDS = new Set(['me', 'te', 'se', 'nos', 'os', 'le', 'les', 'lo', 'los', 'la', 'las', 'no']);
 
@@ -514,7 +514,7 @@ function markWords(sentence) {
 }
 
 // ---------------------------------------------------------------------------
-// LECKE-SEMA 4: LessonV2 (schema 2) body/speak/match/form ellenőrzés. A
+// LessonV2 (schema 2) body/speak/match/form ellenőrzés. A
 // régi (rule/more, gap/mark-only) leckéknél ez a szakasz nem fut; azok
 // pontosan úgy futnak tovább, ahogy eddig.
 // ---------------------------------------------------------------------------
@@ -577,7 +577,7 @@ function auditLessonBody(topic, path) {
         if (!Array.isArray(block.rows) || block.rows.length < 1) {
           p1.push({ path: blockPath, issue: 'table needs >=1 row' });
         }
-        // FB378: enPrompt, when present, is rows x verb-columns (rows minus
+        // enPrompt, when present, is rows x verb-columns (rows minus
         // the person column), one English sentence per cell.
         if (block.enPrompt !== undefined) {
           const verbCols = (block.header?.length ?? 1) - 1;
@@ -615,7 +615,7 @@ function auditLessonBody(topic, path) {
   });
 }
 
-// FB414 (PLAN-fb0929 5. lépés, D3): a spanyol nyelvtani leckék felolvasása spanyol szó nélkül
+// a spanyol nyelvtani leckék felolvasása spanyol szó nélkül
 // szól (a «...» jelölt spanyol szakaszok kimaradnak a szövegből, a szöveg úgy van megírva,
 // hogy nélkülük is értelmes legyen). Ezért a spanyol leckékben (lang 'es') NEM lehet «...»
 // jelölés; az angol célnyelvű leckék (lang 'en') felolvasása változatlan: ott legalább egy
@@ -638,9 +638,8 @@ function auditLessonSpeak(topic, path, dirLang = 'es') {
   }
 }
 
-// FB465: a párosító a különböző szavakat párosítja (tuve ~ I had), nem teljes mondatot. Egy pár
-// oldala max 3 (es) / 4 (en, a "used to" miatt) szó a spanyol sávban; az angol sávban (es→en,
-// Kálmán 2026-10-05) mindkét oldal max 4 szó (angol: "she used to live", spanyol: "no había
+// a párosító a különböző szavakat párosítja (tuve ~ I had), nem teljes mondatot. Egy pár
+// oldala max 3 (es) / 4 (en, a "used to" miatt) szó a spanyol sávban; az angol sávban (es→en) mindkét oldal max 4 szó (angol: "she used to live", spanyol: "no había
 // podido"). A korábbi, még hosszú tételek az `audit-games-match-debt.json` (es sáv) és az
 // `audit-games-match-debt-en.json` (en sáv) listán vannak (P2, a listák csak fogyhatnak); ami nincs
 // a listán, az P1. Ha egy listás tétel már megfelel, P1: ki kell venni a listáról.
@@ -671,7 +670,7 @@ function auditMatchLength(item, itemPath, lang, debtKey) {
   });
 }
 
-// FB466: mexikói norma, `vosotros` (névmás, birtokos, ragozott alak) nincs a spanyol sáv gyakorló
+// mexikói norma, `vosotros` (névmás, birtokos, ragozott alak) nincs a spanyol sáv gyakorló
 // feladataiban (a lecke magyarázó táblázatai kivétel, azok a `body`-ban vannak, nem az `items`-ben).
 // A korábbi, még vosotros-t említő tételek az `audit-games-vosotros-debt.json` listán vannak (P2, a
 // lista csak fogyhat); ami nincs a listán, az P1. Ha egy listás tétel már tiszta, P1: ki kell venni.
@@ -731,7 +730,7 @@ function auditMatchItem(item, itemPath, lang = 'es', debtKey = '') {
   }
 }
 
-// TASK-9 (12. lépés): a pilot 3-tagú összevont személy ("él/ella/usted",
+// a pilot 3-tagú összevont személy ("él/ella/usted",
 // "ellos/ellas/ustedes") mindig szóköz nélkül áll a "/" körül; egy 2-tagú,
 // nemek szerint szétválasztott címke (pronombres-od "él / usted (masculino)")
 // szándékosan más alak, azt ez a minta nem érinti.
@@ -765,7 +764,7 @@ function auditFormItem(item, itemPath, topic, tableIds) {
   }
 }
 
-// TASK-8 (D4, FB288): "miért ez a mondat", correctIndex érvényes, pontosan 3
+// "miért ez a mondat", correctIndex érvényes, pontosan 3
 // opció, opció-szövegek egyediek (hu-n), minden opció mind a 4 nyelven, a nem
 // jó opciókon van `wrong` mind a 4 nyelven, `es` nem üres és `tr.es` === `es`.
 function auditWhyItem(item, itemPath, lang = 'es') {
@@ -779,7 +778,7 @@ function auditWhyItem(item, itemPath, lang = 'es') {
   if (!item.es) p1.push({ path: itemPath, issue: 'why item missing es' });
   if (item.es && item.tr?.[lang] !== item.es) p1.push({ path: itemPath, issue: `why item tr.${lang} must equal es` });
 
-  // FB376 (PLAN-fb0923 4. lépés): a `target` megnevezi, mire vonatkozik a
+  // a `target` megnevezi, mire vonatkozik a
   // kérdés; hiánya P2, egy meglévő de a mondatban nem található target P1.
   if (!item.target) {
     p2.push({ path: itemPath, issue: 'why item missing target' });
@@ -804,7 +803,7 @@ function auditWhyItem(item, itemPath, lang = 'es') {
   });
 }
 
-// NY1 (NYELVTAN.md "Adatformátum"): a lessonTypes.ts TENSE_IDS másolata, mert
+// a lessonTypes.ts TENSE_IDS másolata, mert
 // ez a script nem tudja importálni a TS fájlt.
 const TENSE_IDS = [
   'presente',
@@ -840,10 +839,10 @@ function auditTenseField(tense, itemPath) {
   if (tense.from === tense.to) p1.push({ path: itemPath, issue: 'tense.from must differ from tense.to' });
 }
 
-// NY1: az igeidő-drill mondat-átírás item-fajtája. `wordIds` a mondat
-// kártyáira mutat (ez hajtja az NY2 unlockot), mindegyiknek léteznie kell és
+// az igeidő-drill mondat-átírás item-fajtája. `wordIds` a mondat
+// kártyáira mutat (ez hajtja az unlockot), mindegyiknek léteznie kell és
 // a lecke szintjénél nem lehet magasabb szintű.
-// PLAN-fb0929 7. lépés (D1): az új feladat-fajták (spot, order, dictation) ellenőrzése. A
+// az új feladat-fajták (spot, order, dictation) ellenőrzése. A
 // mondatok szavainak tanítottnak / szószedettel ellátottnak kell lenniük (checkWords), a
 // magyarázatok és fordítások négy nyelven, a hibakereső hibás szava és opciói konzisztensek.
 function auditNewKindItem(item, itemPath, topic, checkWords) {
@@ -950,12 +949,12 @@ function auditGrammarTopic(topic, filePath, lang = 'es') {
     if (seenIds.has(item.id)) p2.push({ path: itemPath, issue: `duplicate item id "${item.id}"` });
     seenIds.add(item.id);
 
-    // NY1: a `tense` mező choice/form/why itemen is megjelenhet (a jelvényhez);
+    // a `tense` mező choice/form/why itemen is megjelenhet (a jelvényhez);
     // ahol van, ugyanaz a from/to ellenőrzés fut, mint a transform itemen.
     if (item.kind !== 'transform' && item.tense) auditTenseField(item.tense, itemPath);
     auditVosotros(item, itemPath, lang, `${filePath}#${item.id}`);
 
-    // LECKE-SEMA 2: match/form saját ellenőrzőt kap, a gap/mark-os ág alatta
+    // match/form saját ellenőrzőt kap, a gap/mark-os ág alatta
     // változatlan (a "mint eddig" spec-ígéret).
     if (item.kind === 'match') {
       auditMatchItem(item, itemPath, lang, `${filePath}#${item.id}`);
@@ -973,7 +972,7 @@ function auditGrammarTopic(topic, filePath, lang = 'es') {
       auditTransformItem(item, itemPath, topic);
       continue;
     }
-    // PLAN-fb0929 7. lépés (D1): hibakereső / szórend / diktálás, ideiglenes ("trial") tételek.
+    // hibakereső / szórend / diktálás, ideiglenes ("trial") tételek.
     if (item.kind === 'spot' || item.kind === 'order' || item.kind === 'dictation') {
       auditNewKindItem(item, itemPath, topic, (text) => {
         for (const tok of toks(text)) auditGrammarWord(tok, taughtSet, extra, itemPath, lang);
@@ -981,7 +980,7 @@ function auditGrammarTopic(topic, filePath, lang = 'es') {
       continue;
     }
 
-    // FB219: a jelölős tétel kész mondatot ad, és a mondat egyik szavára kell
+    // a jelölős tétel kész mondatot ad, és a mondat egyik szavára kell
     // koppintani, tehát se lyuk, se opció-lista nincs benne.
     const isMark = item.kind === 'mark';
     if (isMark) {
@@ -1008,7 +1007,7 @@ function auditGrammarTopic(topic, filePath, lang = 'es') {
           if (seenOpts.has(opt)) p1.push({ path: itemPath, issue: `duplicate option "${opt}"` });
           seenOpts.add(opt);
         }
-        // TASK-9 (12. lépés, 2.3): önmagát eláruló tétel, ha a jó válasz
+        // (2.3): önmagát eláruló tétel, ha a jó válasz
         // szövege szó szerint (egész szóként, nem más szó részeként, pl.
         // "nos" a "nosotros"-ban) ott áll a mondatban a lyukon kívül. A
         // tárgy-/részeshatározó névmások (lo/la/los/las/le/les/me/te/se/
@@ -1053,7 +1052,7 @@ function auditGrammarTopic(topic, filePath, lang = 'es') {
     }
     checkLength(item.sentence ?? '', topic.level, itemPath);
 
-    // FB464: a mondat fordítása (opcionális, scripts/grammar-translate.py írja): négy nyelven, és a tanult
+    // a mondat fordítása (opcionális, scripts/grammar-translate.py írja): négy nyelven, és a tanult
     // nyelvi oldal a kitöltött mondat maga (mint a why-tételnél tr.es === es).
     if (item.tr !== undefined) {
       checkLangs(item.tr, `${itemPath} tr`);

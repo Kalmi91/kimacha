@@ -1,4 +1,4 @@
-// PLAN-vizsga A. szakasz 2. lépés (8. követelmény): a Settings alján, CSAK __DEV__-ben
+// a Settings alján, CSAK __DEV__-ben
 // látszó vezérlő egy A1 állapotot állít be, hogy a szintvizsga a web-előnézetben
 // végigkattintható legyen: a szint kártyáinak DEV_SEED_PERCENT%-a graduált (review),
 // és egy A1 nyelvtani lecke kész. Release-buildben (`__DEV__ === false`) a vezérlő
@@ -51,7 +51,7 @@ export async function seedA1ExamState(store: SeedStore, target: PcicTarget, toda
 }
 
 /**
- * 4. lépés: MINDEN vizsga-szint állapota egyszerre (A1-B2): a szint kártyáinak DEV_SEED_PERCENT%-a
+ * MINDEN vizsga-szint állapota egyszerre (A1-B2): a szint kártyáinak DEV_SEED_PERCENT%-a
  * graduált, és az irány minden megírt leckéje kész (egy A2+ vizsga-mondat a korábbi szintek
  * igeidőit és szavait is használja, ezért a feloldott igeidők a valós útnak megfelelően halmozódnak).
  * Újrafuttatva ugyanazt állítja be. A hívó előtte `setPcicTarget`-et hív.

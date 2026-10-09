@@ -1,4 +1,4 @@
-// FB467 (PLAN-fb1005c 1. lépés): a nyelvtani lecke-folyam MINDEN részén ott a 💬, és a kártya-azonosító
+// a nyelvtani lecke-folyam MINDEN részén ott a 💬, és a kártya-azonosító
 // megmondja, melyik részről van szó (grammar:<lecke>:<rész>): Nyelvtan fül listája, lecke-áttekintés,
 // feladat közben, feladat VÉGE (done), lecke-teszt (kérdés / kilépés / eredmény), pakli (kártya / vége /
 // üres), és a még meg nem írt lecke lapja. Beírós kérdésnél a 💬 a dokkolt Check-sáv fölött áll
@@ -164,7 +164,7 @@ describe.each(['brand', 'classic'] as const)('nyelvtani lecke: 💬 minden rész
     await press('grammar-start-choice');
     expect(card()).toMatch(new RegExp(`^grammar:${TOPIC}:drill(:.+)? \\| en→es \\| A1 \\| (-|\\d+)$`));
     await answerChoiceRound();
-    // FB467: ezt hiányolta Kálmán, a feladat végén (eredmény-lap) nem volt 💬.
+    // ezt hiányolta, a feladat végén (eredmény-lap) nem volt 💬.
     expect(screen.getByTestId('grammar-start-lessontest')).toBeTruthy();
     expect(card()).toBe(`grammar:${TOPIC}:done | en→es | A1 | -`);
     view.unmount();

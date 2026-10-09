@@ -1,7 +1,7 @@
-// GAMES.md 4.11 (F3, grammar-choice): "Melyik a helyes?" round-building, pulled
-// out of the screen so the FB2-style anti-position-bias shuffle (lib/shuffle.ts)
+// (F3, grammar-choice): "Melyik a helyes?" round-building, pulled
+// out of the screen so the usual anti-position-bias shuffle (lib/shuffle.ts)
 // is unit-testable without mounting the screen. A round is every item in the
-// topic (12-15 per GAMES.md, matches the "10-15 item = egy futam" spec), in a
+// topic (12-15 per, matches the "10-15 item = egy futam" spec), in a
 // seeded random order, each item's own options also seeded-shuffled so the
 // correct answer isn't predictably in the JSON's authored slot 0.
 
@@ -44,20 +44,20 @@ export interface GrammarMatchFormRoundItem {
   item: MatchItem | FormItem;
 }
 
-// TASK-8 (D4): a `why` tétel saját round-item alakja, az opciók nyelvfüggő
+// a `why` tétel saját round-item alakja, az opciók nyelvfüggő
 // (Lang4) szövegek, tehát nem fér a GrammarChoiceRoundItem lapos string[]
 // alakjába; a WhyDrillItem (GrammarDrill.tsx) a saját képernyő-ágán rajzolja.
 export interface GrammarWhyRoundItem {
   item: WhyItem;
 }
 
-// NY3 (NYELVTAN.md): az igeidő-drill mondat-átírás tétele saját round-item
+// az igeidő-drill mondat-átírás tétele saját round-item
 // alakban, a why/match/form mintáját követve.
 export interface GrammarTransformRoundItem {
   item: TransformItem;
 }
 
-// PLAN-fb0929 7. lépés (D1): a három új fajta (hibakereső, szórend, diktálás) is saját
+// a három új fajta (hibakereső, szórend, diktálás) is saját
 // round-item alakban, a why/transform mintáját követve.
 export interface GrammarNewKindRoundItem {
   item: SpotItem | OrderItem | DictationItem;
@@ -74,7 +74,7 @@ export function isChoiceRoundItem(r: GrammarRoundItem): r is GrammarChoiceRoundI
   return 'options' in r;
 }
 
-// LECKE-SEMA D3 (FB290, 2026-09-17): melyik fajtába tartozik egy round-item,
+// melyik fajtába tartozik egy round-item,
 // hogy a lecke-drill a kért fajtákra tudja szűrni a kört (`kinds` prop).
 export function grammarRoundItemKind(r: GrammarRoundItem): GrammarKind {
   if (isChoiceRoundItem(r)) return (r.item as GrammarGapItem).set === 'article' ? 'article' : 'choice';
@@ -86,16 +86,16 @@ export function grammarRoundItemKind(r: GrammarRoundItem): GrammarKind {
   return isTransformItem(r.item) ? 'transform' : 'why';
 }
 
-// LECKE-SEMA 2: a LessonV2 két új item-fajtája (match, form) a lecke szerzői
+// a LessonV2 két új item-fajtája (match, form) a lecke szerzői
 // sorrendjében kerül a kör VÉGÉRE, a gap/mark kör után, egymás közt és a
 // gap/mark körrel sem keverve (spec: "no shuffling of kinds"). Hogy egy adott
 // képernyő melyik fajtákat látja ebből, a GrammarDrill `kinds` propja dönti
-// el (D3, FB290): a lecke-drill fajtánként külön indítja, a Game fül
+// el (D3): a lecke-drill fajtánként külön indítja, a Game fül
 // grammar-choice-a a prop híján változatlanul csak a gap/mark körét kapja.
 export function buildGrammarRound(topic: GrammarTopicData, seed: number): GrammarRoundItem[] {
   // A `topic.items` uniós elem-típusa (LegacyLesson vs LessonV2) a `.filter`
   // narrowing-jét megzavarja; a `GrammarItem[]` cast egy lapos típusra hozza,
-  // mielőtt a predikátum leszűkít. FB357: a vosotros-tételek itt esnek ki a
+  // mielőtt a predikátum leszűkít. A vosotros-tételek itt esnek ki a
   // körből, EGY helyen minden lecke-item-fajtára (lib/grammar/vosotros.ts).
   const allItems = filterVosotros(topic.items as GrammarItem[]);
   const allChoiceItems = allItems.filter(
@@ -108,7 +108,7 @@ export function buildGrammarRound(topic: GrammarTopicData, seed: number): Gramma
       !isOrderItem(item) &&
       !isDictationItem(item)
   );
-  // PLAN-fb1002 13. lépés (FB448): az articulos-genero el / la készlete az app összes főneve, ez hosszabb, mint egy
+  // az articulos-genero el / la készlete az app összes főneve, ez hosszabb, mint egy
   // menet; egy futás ARTICLE_ROUND_SIZE tételt kap belőle (seedelt minta). Más leckét nem érint.
   let choiceItems = allChoiceItems;
   if (topic.topic === ARTICLE_LESSON_ID) {
@@ -119,7 +119,7 @@ export function buildGrammarRound(topic: GrammarTopicData, seed: number): Gramma
     }
   }
   const orderedChoice: GrammarChoiceRoundItem[] = shuffleArray(choiceItems, seed).map((item) => {
-    // FB219: a jelölős feladatnál a sorrend maga a mondat, tehát nincs mit
+    // a jelölős feladatnál a sorrend maga a mondat, tehát nincs mit
     // keverni; az „opciók" a mondat szavai, a helyes index a keresett szóé.
     if (isMarkItem(item)) {
       const tokens = markTokens(item.sentence);
@@ -133,25 +133,25 @@ export function buildGrammarRound(topic: GrammarTopicData, seed: number): Gramma
     return { item, options, correctIndex };
   });
 
-  // FB357: a match itemek maguk maradnak, csak a vosotros-párjuk esik ki.
+  // a match itemek maguk maradnak, csak a vosotros-párjuk esik ki.
   const matchItems: GrammarMatchFormRoundItem[] = allItems
     .filter((item): item is MatchItem => isMatchItem(item))
     .map((item) => ({ item: filterVosotrosPairs(item) }));
   const formItems: GrammarMatchFormRoundItem[] = allItems
     .filter((item): item is FormItem => isFormItem(item))
     .map((item) => ({ item }));
-  // TASK-8 (D4): a `why` tételek is a kör VÉGÉRE kerülnek, szerzői sorrendben,
+  // a `why` tételek is a kör VÉGÉRE kerülnek, szerzői sorrendben,
   // a match/form mintáját követve.
   const whyItems: GrammarWhyRoundItem[] = allItems
     .filter((item): item is WhyItem => isWhyItem(item))
     .map((item) => ({ item }));
-  // NY3: a transform tételek is a kör VÉGÉRE kerülnek, szerzői sorrendben,
+  // a transform tételek is a kör VÉGÉRE kerülnek, szerzői sorrendben,
   // a why mintáját követve.
   const transformItems: GrammarTransformRoundItem[] = allItems
     .filter((item): item is TransformItem => isTransformItem(item))
     .map((item) => ({ item }));
 
-  // PLAN-fb0929 7. lépés (D1): az új fajták is a kör VÉGÉRE, szerzői sorrendben.
+  // az új fajták is a kör VÉGÉRE, szerzői sorrendben.
   const newKindItems: GrammarNewKindRoundItem[] = allItems
     .filter((item): item is SpotItem | OrderItem | DictationItem => isSpotItem(item) || isOrderItem(item) || isDictationItem(item))
     .map((item) => ({ item }));
@@ -159,7 +159,7 @@ export function buildGrammarRound(topic: GrammarTopicData, seed: number): Gramma
   return [...orderedChoice, ...matchItems, ...formItems, ...whyItems, ...transformItems, ...newKindItems];
 }
 
-// The wrong-answer explanation is keyed by the option's own text (GAMES.md
+// The wrong-answer explanation is keyed by the option's own text (
 // 4.11 JSON: `wrong[optionText][lang]`), unaffected by the render-time shuffle.
 export function wrongExplanation(
   item: GrammarGapItem | GrammarMarkItem,

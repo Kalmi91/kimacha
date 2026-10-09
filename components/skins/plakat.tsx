@@ -6,9 +6,9 @@ import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 
-// PLAN-temak 6E (E2), Plakát: átlós piros sáv (-22°) és fekete kör jobb oldalt a háttérben, a
+// Plakát: átlós piros sáv (-22°) és fekete kör jobb oldalt a háttérben, a
 // fejléc alatt szlogen-csík megafon-ikonnal. A szó -6°-os forgatása a téma `wordRotate` mezője
-// (KText). Sarló-kalapács és vörös csillag nincs (Kálmán tiltása).
+// (KText). Sarló-kalapács és vörös csillag nincs (tiltott motívum).
 
 function PlakatBackdrop() {
   const g = useGrammarColors();

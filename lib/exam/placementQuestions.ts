@@ -1,4 +1,4 @@
-// PLAN-vizsga C. szakasz (Kálmán, 2026-10-01, C2 b): a szintfelmérő kérdései. Szót ÉS
+// a szintfelmérő kérdései. Szót ÉS
 // nyelvtant mér: a szó a szint words-open kártyáiból jön (a kérdés a célnyelvi szó, a
 // válasz a kiinduló nyelvű jelentés, négy közül), a nyelvtan a szint nyelvtani leckéinek
 // lyukas-mondat tételeiből (lib/exam/grammarItems.ts), a leckék KÉSZ voltától függetlenül.

@@ -1,4 +1,4 @@
-// PLAN-vizsga C. szakasz (Kálmán, 2026-10-01, C3 b): a felmérőben helyesen megválaszolt szó
+// a felmérőben helyesen megválaszolt szó
 // graduált (SM-2 review, a normál első intervallummal), a hibás vagy kihagyott nem változik.
 
 import { sm2NewCard, type Sm2Card } from '@/lib/sm2';

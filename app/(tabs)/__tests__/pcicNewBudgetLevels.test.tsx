@@ -1,4 +1,4 @@
-// FB452 ("new 42?"): a napi új-szó keret NAPI; az A1-en vett "+10" bónuszok és az ott ma bevezetett
+// ("new 42?"): a napi új-szó keret NAPI; az A1-en vett "+10" bónuszok és az ott ma bevezetett
 // szavak a másik szinten is számítanak, tehát a szintváltás után nem jön vissza a teljes bónuszos
 // keret új szóként. Mock-minta: pcicLevelPicker.test.tsx.
 

@@ -1,4 +1,4 @@
-// D3 (FB290, 2026-09-17): egy nyelvtan-téma csak akkor "kész", ha a
+// egy nyelvtan-téma csak akkor "kész", ha a
 // leckéjében LÉTEZŐ összes fajtájából van kész (>=80%) sor; a régi,
 // egy-értékű sorok mindent késznek jelentenek (visszamenőleges kompatibilitás).
 

@@ -1,6 +1,6 @@
 import { View, type StyleProp, type ViewStyle } from 'react-native';
 
-// PLAN-temak 6E (E2): a díszek további közös építőkockái (a parts.tsx mellett). Csak View, border /
+// a díszek további közös építőkockái (a parts.tsx mellett). Csak View, border /
 // borderRadius / transform trükkökkel (nincs SVG, nincs új natív függőség).
 
 // Háromszög, csúcsa fent: a border-trükk (a két oldalsó border átlátszó, az alsó színes).

@@ -9,7 +9,7 @@ import type { ExamLevelStatus } from '@/lib/exam/unlock';
 
 type ColorScheme = (typeof Colors)['light'];
 
-// PLAN-vizsga A. szakasz 2. lépés (Kálmán, 2026-10-01, A1 a): a szintválasztó lap
+// a szintválasztó lap
 // vizsga-sora a szint sora alatt. Zárva: lakat + mennyi hiányzik (szó, lecke);
 // koppintásra a hiányzó dologhoz visz (szavak gyakorlása / nyelvtani leckék), tehát
 // sosem "nincs adat" felirat gomb nélkül (DESIGN 9/9). Nyitva: "Ready" + a mentett

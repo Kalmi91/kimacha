@@ -1,4 +1,4 @@
-// NY19: a Beállítások fül brutalista palettán (BrutalBox sorok), classic palettán a
+// a Beállítások fül brutalista palettán (BrutalBox sorok), classic palettán a
 // mai kártya-sorok. Mock-minta: settingsPalette.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
@@ -43,7 +43,7 @@ describe('Beállítások fül, neo-brutalista (NY19)', () => {
     const view = render(<ThemeProvider><SettingsScreen /></ThemeProvider>);
     await flush();
     expect(view.queryAllByTestId('settings-row').length).toBe(0);
-    // PLAN-temak 4D: a paletta-chipek a Témák képernyőre költöztek; a Beállításokban a Témák-sor van.
+    // a paletta-chipek a Témák képernyőre költöztek; a Beállításokban a Témák-sor van.
     expect(view.queryByTestId('settings-theme-row')).toBeTruthy();
     view.unmount();
   });

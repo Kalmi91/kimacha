@@ -1,4 +1,4 @@
-// LECKE-SEMA 1. szakasz: a LessonBody a ser-estar pilot body-tömbjét rajzolja
+// a LessonBody a ser-estar pilot body-tömbjét rajzolja
 // ki; ez a teszt csak a szerkezetet nézi (mindkét tábla megvan, minden usage
 // pont első példamondata a képernyőn van, a tip szövege látszik), nem a
 // pedagógiai tartalmat.
@@ -44,7 +44,7 @@ describe('LessonBody', () => {
   });
 });
 
-// FB326 (Kálmán 2. terv): a ragozási táblák személy-blokkokban jelennek meg,
+// a ragozási táblák személy-blokkokban jelennek meg,
 // a tő halványan, a végződés külön, saját Text-ben (hogy a stílus is külön
 // legyen).
 describe('LessonBody conjugation table (FB326)', () => {
@@ -61,7 +61,7 @@ describe('LessonBody conjugation table (FB326)', () => {
   });
 });
 
-// FB381+382+383: legend above the table, one colour per verb column (not
+// legend above the table, one colour per verb column (not
 // per verb class, so tener/poder/hacer -no longer share a colour just
 // because they are all -er verbs), and no stem/ending split on a table that
 // has no shared base (indefinido-irregular's "strong stem" table).

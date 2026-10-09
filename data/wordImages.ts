@@ -1,4 +1,4 @@
-// PLAN-fb1005i 2. lépés (FB498/FB500): kép egyes kártyákhoz, Wikimedia Commonsról, az appba csomagolva.
+// kép egyes kártyákhoz, Wikimedia Commonsról, az appba csomagolva.
 // A metaadat (szerző, licenc, forrás-URL) a data/words-open/images.json-ban van, kulcsa az `o<order>` kártya-id;
 // a fájlok az assets/word-images/ alatt vannak. Metro csak statikus require-t tud, ezért a fájlnév -> forrás
 // térkép itt kézzel van vezetve; a data/__tests__/wordImages.test.ts kapuja ellenőrzi, hogy a kettő egyezik.

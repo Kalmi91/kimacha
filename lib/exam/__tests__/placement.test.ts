@@ -1,4 +1,4 @@
-// PLAN-vizsga C. szakasz (Kálmán, 2026-10-01, C4 a): az adaptív szintfelmérő lépcsője,
+// az adaptív szintfelmérő lépcsője,
 // szimulált válaszsorokra: mind jó -> B2, mind rossz -> A1, vegyes -> köztes szint,
 // és soha nem több 20 kérdésnél.
 

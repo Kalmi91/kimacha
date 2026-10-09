@@ -17,7 +17,7 @@ import { colorsSourceOf, modesOfSource, themeKeyFor } from '@/lib/skinTheme';
 import { ThemeContext, useTheme } from '@/lib/ThemeContext';
 import { useSkin } from '@/lib/useSkin';
 
-// PLAN-temak 4D: a Saját mix. Négy szekció (Colors / Font / Shape / Decor), mindegyik vízszintesen
+// a Saját mix. Négy szekció (Colors / Font / Shape / Decor), mindegyik vízszintesen
 // görgethető chip-sor; fölötte az élő előnézet-kártya a minta-szóval. A választás egy piszkozat,
 // a "Use this mix" gomb menti (setSkinMix + setSkin('mix')).
 

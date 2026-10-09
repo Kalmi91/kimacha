@@ -1,4 +1,4 @@
-// PLAN-vizsga A. szakasz 4. lépés (Kálmán, 2026-10-01): az A2, B1 és B2 szintvizsga ugyanazzal a
+// az A2, B1 és B2 szintvizsga ugyanazzal a
 // szabállyal, mint az A1: feloldás = a szint kártyáinak 80%-a tanult (SM-2 `review`) + a szint egy
 // kész nyelvtani leckéje; átmenés 80%; a tételek csak a szint tanult szavaiból és kész leckéiből.
 

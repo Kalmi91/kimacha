@@ -1,4 +1,4 @@
-// PLAN-hibaim.md 2. lépés: mistake_batches + mistake_cards a memory DB-n, a
+// mistake_batches + mistake_cards a memory DB-n, a
 // pcicDb.test.ts mintáját követve (lásd annak fejléce).
 
 import { getDb } from '../database.web';

@@ -1,4 +1,4 @@
-// PLAN-vizsga E. szakasz (15-16. lépés, Kálmán 2026-10-01): a próbavizsga képernyőjének folyamata.
+// a próbavizsga képernyőjének folyamata.
 // A feladatsor-építő mockolt (a tartalmát lib/exam/mock/__tests__/build.test.ts fedi), itt a
 // folyamat: intro, papíronként óra és feladatok (nincs azonnali visszajelzés), a hallás 2
 // lejátszása, a szóbeli helyőrző (2. csoport = hallás x2, provisional), eredmény mentése,

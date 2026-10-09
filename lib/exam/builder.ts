@@ -1,4 +1,3 @@
-// PLAN-vizsga A. szakasz 2. lépés (Kálmán, 2026-10-01, A7 b + a 4. követelmény):
 // a szintvizsga tételeinek építője. A régi (4afeb8c^) lib/examBuilder.ts a régi
 // data/words szókészletből és a data/exams JSON-ból épített; ez CSAK a szint
 // TANULT szavaiból (SM-2 `review`) és a szint kész nyelvtani leckéiből.
@@ -20,7 +19,7 @@ import type { ExamItem } from './types';
 import { isExamLearned } from './unlock';
 
 /**
- * Szóbeli tétel a vizsgában (13. lépés). DÖNTÉS KELL: hány legyen a 30-ból, Kálmán nem döntötte el; az
+ * Szóbeli tétel a vizsgában. DÖNTÉS KELL: hány legyen a 30-ból, ez még nincs eldöntve; az
  * alapérték 4. A szóbeli a szó (-2) és a nyelvtan (-2) rovására kerül a 30-ba, hogy az összes tétel ne nőjön.
  */
 export const EXAM_SPEAK_COUNT = 4;
@@ -208,7 +207,7 @@ export function buildExam(input: ExamBuildInput): ExamItem[] {
     }
   }
 
-  // Szóbeli (13. lépés): ugyanazon a mondat-kapun átment tanult mondat, a kiinduló nyelvről kell elmondani.
+  // Szóbeli ugyanazon a mondat-kapun átment tanult mondat, a kiinduló nyelvről kell elmondani.
   const speakBlock: ExamItem[] = spoken.map((p) => ({ kind: 'speak', skill: 'speaking', itemId: p.itemId, prompt: p.source, expected: p.target, mode: 'translate' }));
 
   return [...wordsBlock, ...grammarBlock, ...readingBlock, ...speakBlock];

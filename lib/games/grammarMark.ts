@@ -1,4 +1,4 @@
-// FB219: a „jelöld meg a mondatban" feladat mondat-oldali logikája. A képernyő
+// a „jelöld meg a mondatban" feladat mondat-oldali logikája. A képernyő
 // csak rajzol; a tokenizálás és a találat-eldöntés itt él, hogy teszttel
 // bizonyítható legyen (ugyanaz a séma, mint a grammarChoice round-építésénél).
 

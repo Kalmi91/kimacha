@@ -1,6 +1,6 @@
 import type { Lang4 } from './lessonTypes';
 
-// FB410 + FB411 (PLAN-fb0929 5. lépés), Kálmán 2026-09-29: „amable is identity?" és
+// User feedback: „amable is identity?" és
 // „kisbetűvel tedd még oda mintának, mi számít identitásnak". A "miért ez a mondat"
 // feladat szabály-opciói (pl. „profesión, identidad (ser)") alatt kisbetűs, halvány sor
 // mutatja, mi tartozik oda, két-három példával. A kulcs az opció ANGOL szövege

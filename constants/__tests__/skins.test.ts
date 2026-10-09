@@ -1,4 +1,4 @@
-// PLAN-temak 2A: a téma-motor adata: kontraszt-kapu (minden téma × minden módja), nevek (en + es),
+// a téma-motor adata: kontraszt-kapu (minden téma × minden módja), nevek (en + es),
 // csoportok, onboarding-lista, Colors-kulcsok, a mai classic / brutal értékek egyezése.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
@@ -31,7 +31,7 @@ import type { ThemeKey } from '@/lib/ThemeContext';
 const MIN = 4.5;
 
 // Kivételek: olyan pár, ami ténylegesen bukik és ezért itt rögzített (a teszt ellenőrzi, hogy még
-// bukik; ha javítják, a kivételt törölni kell). PLAN-temak 7G után üres: a classic sötét onA / a
+// bukik; ha javítják, a kivételt törölni kell). Utána üres: a classic sötét onA / a
 // (fehér a #3B82F6-on 3,68) a fehér helyett a sötét alap-színt kapta (4,85).
 const KNOWN_EXEMPT = new Set<string>();
 
@@ -40,7 +40,7 @@ function pairs(c: SkinColors): [string, string, string][] {
     ['ink/bg', c.ink, c.bg],
     ['ink/paper', c.ink, c.paper],
     ['mu/bg', c.mu, c.bg],
-    // PLAN-temak 7G: a halvány szöveg a kártyán és a beviteli mezőben (placeholder) is olvasható
+    // a halvány szöveg a kártyán és a beviteli mezőben (placeholder) is olvasható
     ['mu/paper', c.mu, c.paper],
     ['onA/a', c.onA, c.a],
   ];

@@ -1,4 +1,4 @@
-// PLAN-temak 6E (E2): a diszlexia, plakat, bauhaus, popart, szecesszio, kalocsai, memphis, kodex és
+// a diszlexia, plakat, bauhaus, popart, szecesszio, kalocsai, memphis, kodex és
 // graffiti dísze: a slotok kirajzolják a díszt az alap tartalom körül (testID-k: decor- = tiszta dísz,
 // skin- = tartalmat csomagoló / valós adatot mutató elem), sima View/Text, SVG nélkül.
 

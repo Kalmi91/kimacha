@@ -7,7 +7,7 @@ import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { useSkin } from '@/lib/useSkin';
 
-// PLAN-temak 4D, Ukiyo-e: hullám a kártya alján (két sor félkör, a téma `wave` színével), piros
+// Ukiyo-e: hullám a kártya alján (két sor félkör, a téma `wave` színével), piros
 // pecsét ("語") a kártya jobb felső sarkában. A `seal` / `wave` szín a téma extra-színe; más
 // színekkel (Saját mix) az a szín a tartalék.
 

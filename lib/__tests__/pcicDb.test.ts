@@ -1,4 +1,4 @@
-// PLAN-pcic 4. lépés: pcic_cards tábla a memory DB-n (a pattern, amit minden
+// pcic_cards tábla a memory DB-n (a pattern, amit minden
 // más DB-érintő teszt követ ebben a repóban, lásd lib/__tests__/gameDb.test.ts).
 
 import { getDb } from '../database.web';
@@ -34,7 +34,7 @@ describe('pcic_cards (memory db)', () => {
     expect(await db.getPcicCards()).toEqual([]);
   });
 
-  // PLAN-ketiranyu 4. lépés: a pcic_cards tábla nincs pair-hez kötve (a két
+  // a pcic_cards tábla nincs pair-hez kötve (a két
   // irány a w<id>/e<id> id-előtaggal válik el, data/pcic.ts), tehát az
   // irányváltás (setOnboarding) önmagában nem törli egyik irány haladását sem.
   it('irányváltás (setOnboarding) nem nullázza a másik irány kártyáit', async () => {
@@ -51,7 +51,7 @@ describe('pcic_cards (memory db)', () => {
     expect(cards.find(c => c.itemId === 'e1')?.state).toBe('learning');
   });
 
-  // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 1. pont): a
+  // A
   // pcic_level a learn_settings pár-szerinti sorába költözött (korábban
   // user_meta szingliton volt), hogy irányváltáskor mindkét pár megőrizze a
   // saját szintjét.
@@ -78,7 +78,7 @@ describe('pcic_cards (memory db)', () => {
     expect(await db.hasPcicLevel()).toBe(true);
   });
 
-  // FB385/386: getPcicNewBonus/setPcicNewBonus round-trip, memory-DB szinten.
+  // getPcicNewBonus/setPcicNewBonus round-trip, memory-DB szinten.
   it('getPcicNewBonus/setPcicNewBonus: perzisztál (reload-eset) és naptári nappal lejár', async () => {
     expect(await db.getPcicNewBonus('2026-09-18')).toBe(0);
 
