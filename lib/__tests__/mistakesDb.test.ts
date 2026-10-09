@@ -31,11 +31,4 @@ describe('mistake_batches + mistake_cards (memory db)', () => {
     expect(cards2.filter((c) => c.itemId === '2026-09-23-claude:w:w1')).toHaveLength(1);
     expect(cards2.find((c) => c.itemId === '2026-09-23-claude:w:w1')).toEqual(updated);
   });
-
-  it('getMistakeDueCount only counts introduced (review/learning) cards due today', async () => {
-    await db.upsertMistakeCard({ ...sm2NewCard('c1'), state: 'review', interval: 5, due: '2026-09-23' });
-    await db.upsertMistakeCard({ ...sm2NewCard('c2'), state: 'review', interval: 5, due: '2026-09-25' });
-    await db.upsertMistakeCard({ ...sm2NewCard('c3'), state: 'learning', due: '2026-09-23' });
-    expect(await db.getMistakeDueCount('2026-09-23')).toBe(2);
-  });
 });

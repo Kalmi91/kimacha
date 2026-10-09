@@ -34,7 +34,7 @@ describe('régi w<id> haladás a words-open váltás után (PLAN-learn-words-ope
     const cards = await db.getPcicCards();
     expect(cards.find((c) => c.itemId === 'w7')).toEqual(oldCard);
     expect(cards.find((c) => c.itemId === 'o12')).toBeUndefined();
-    expect((await db.getPcicStats('2026-10-01')).total).toBe(1);
+    expect(cards).toHaveLength(1);
   });
 
   it('a memóriás szűrés (dropOrphanCards, szint-nézetek) nem nyúl a DB-hez: w7 sehol nem jelenik meg, de megvan', async () => {

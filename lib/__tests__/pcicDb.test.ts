@@ -28,24 +28,10 @@ describe('pcic_cards (memory db)', () => {
     expect(cards.find(c => c.itemId === 'b1-0002')).toEqual(card);
   });
 
-  it('getPcicStats számol total/newIntroducedToday/dueToday/learned', async () => {
-    await db.resetPcicCards();
-    await db.upsertPcicCard({ ...sm2NewCard('s1'), state: 'review', interval: 25, due: '2026-09-18', introducedAt: '2026-08-01' });
-    await db.upsertPcicCard({ ...sm2NewCard('s2'), state: 'review', interval: 5, due: '2026-09-20', introducedAt: '2026-08-01' });
-    await db.upsertPcicCard({ ...sm2NewCard('s3'), state: 'learning', due: '2026-09-18', introducedAt: '2026-09-18' });
-
-    const stats = await db.getPcicStats('2026-09-18');
-    expect(stats.total).toBe(3);
-    expect(stats.newIntroducedToday).toBe(1);
-    expect(stats.dueToday).toBe(2); // s1 (review, due today) + s3 (learning, due today)
-    expect(stats.learned).toBe(1); // s1: review + interval >= 21
-  });
-
   it('resetPcicCards üres táblát ad', async () => {
     await db.upsertPcicCard(sm2NewCard('r1'));
     await db.resetPcicCards();
     expect(await db.getPcicCards()).toEqual([]);
-    expect((await db.getPcicStats('2026-09-18')).total).toBe(0);
   });
 
   // PLAN-ketiranyu 4. lépés: a pcic_cards tábla nincs pair-hez kötve (a két

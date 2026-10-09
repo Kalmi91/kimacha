@@ -12,88 +12,13 @@ import { DEFAULT_GRAMMAR_PALETTE, isGrammarPaletteId, type GrammarPaletteId } fr
 import { isSkinSelection, parseSkinMix, type SkinMix, type SkinSelection } from '@/constants/Skins';
 import { readExamResults, writeExamResult } from './exam/result';
 import type { ExamResult, ExamResults } from './exam/types';
+import type { DB } from './dbTypes';
+
+export type { DB };
 
 // PLAN-play 10. lépés: egy meglévő telepítésen a haladás ma "b1-..." id-kkel
 // forog, ezért az oszlop hiánya (régi DB) B1-re esik vissza, nem A1-re.
 const DEFAULT_PCIC_LEVEL: PcicLevel = 'B1';
-
-export interface DB {
-  getStreak(): Promise<{ current_count: number; last_date: string | null; longest_count: number }>;
-  getOnboarding(): Promise<{ source: string; target: string } | null>;
-  setOnboarding(source: string, target: string): Promise<void>;
-  getLevel(): Promise<{ level: string; correct_streak: number; mistakes_in_window: number; fail_streak: number }>;
-  claimDailyGreeting(): Promise<boolean>;
-  getStatusBarTint(): Promise<number>;
-  setStatusBarTint(index: number): Promise<void>;
-  getGrammarPalette(): Promise<GrammarPaletteId>;
-  setGrammarPalette(id: GrammarPaletteId): Promise<void>;
-  // PLAN-temak 2A: a választott téma és a Saját mix (null = még nincs választás; setSkin(null) visszaállít).
-  getSkin(): Promise<SkinSelection | null>;
-  setSkin(id: SkinSelection | null): Promise<void>;
-  getSkinMix(): Promise<SkinMix | null>;
-  setSkinMix(mix: SkinMix): Promise<void>;
-  // PLAN-play 12. lépés: napi streak-írás visszakerült (a Tanulás fül vitte
-  // el, a PCIC-értékelés az egyetlen hívó innentől, lásd app/(tabs)/index.tsx).
-  updateStreak(): Promise<void>;
-  getStrictAccents(): Promise<boolean>;
-  setStrictAccents(v: boolean): Promise<void>;
-  // FB364: a PCIC "rontott" (again) kártya ennyi másodperc múlva jön
-  // mindenképp vissza (lib/pcicSession.ts); a táblázat-pakli cooldownja
-  // (lib/grammar/tableDeck.ts) is ugyanebből olvas.
-  getAgainDelaySec(): Promise<number>;
-  setAgainDelaySec(sec: number): Promise<void>;
-  // FB188: a névelő-gombsor a gépelős spanyol főnév-kártyán, ki-be kapcsolható.
-  getArticlePicker(): Promise<boolean>;
-  setArticlePicker(v: boolean): Promise<void>;
-  getWeeklyGoalMinutes(): Promise<number>;
-  setWeeklyGoalMinutes(minutes: number): Promise<void>;
-  getFeedbackBtnSide(): Promise<'left' | 'right'>;
-  setFeedbackBtnSide(side: 'left' | 'right'): Promise<void>;
-  getDailyNewLimit(): Promise<number>;
-  setDailyNewLimit(limit: number): Promise<void>;
-  // FB385/386: a PCIC "+10 új szó" bónusz, a naptári nappal lejár (a `today`
-  // paramot a hívó adja, mint `getPcicStats`-nál); 0, ha `today`-re nincs
-  // perzisztált bónusz.
-  getPcicNewBonus(today: string): Promise<number>;
-  setPcicNewBonus(bonus: number, today: string): Promise<void>;
-  addUsageMinute(): Promise<number>;
-  getUsageStats(): Promise<UsageStats>;
-  getDayStats(date: string): Promise<{ minutes: number; words: number }>;
-  // GAMES.md 3.5 (F0): Game fül tables, scoped to the active pair like every
-  // other per-pair setting/state in this interface.
-  getGameProgress(gameId: string): Promise<{ itemId: string; state: string; data: unknown }[]>;
-  setGameProgress(gameId: string, itemId: string, state: string, data?: unknown): Promise<void>;
-  // PLAN-fb1001 7. lépés (FB431): egy játék/kurzus (pl. a nyelvtan) teljes haladása az aktív párra.
-  resetGameProgress(gameId: string): Promise<void>;
-  // PLAN-vizsga A. szakasz 2. lépés (A6 a): a szintvizsga eredménye szintenként (átment-e, legjobb pontszám),
-  // a `level-exam` game_progress sorokban (lib/exam/result.ts); `save` a korábbival összevonva ment.
-  getExamResults(): Promise<ExamResults>;
-  saveExamResult(level: string, pct: number, passed: boolean, date: string): Promise<ExamResult>;
-  // PLAN-pcic 4. lépés: PCIC fül, SM-2, független a FSRS `cards`-tól
-  getPcicCards(): Promise<Sm2Card[]>;
-  upsertPcicCard(card: Sm2Card): Promise<void>;
-  getPcicStats(today: string): Promise<{ total: number; newIntroducedToday: number; dueToday: number; learned: number }>;
-  // PLAN-play 10. lépés: a kiválasztott PCIC szint (A1-B2), app-szintű, mint a
-  // status-bar tint. `levelPrefix` opcionális: csak azt a szintet üríti ki
-  // (a betöltött korpuszból lekért id-lista szerint, lib/pcicLevels.ts
-  // matchesLevel mintájára - PLAN-fb0924 7a. lépés, a szint-igazítás óta nem
-  // csupasz id-előtag), üresen az egész táblát, mint eddig.
-  getPcicLevel(): Promise<PcicLevel>;
-  // PLAN-ketiranyu 4. lépés javítás: van-e KIFEJEZETTEN választott szintje az
-  // aktív párnak (a getPcicLevel fallbackja nem számít annak).
-  hasPcicLevel(): Promise<boolean>;
-  setPcicLevel(level: PcicLevel): Promise<void>;
-  resetPcicCards(levelPrefix?: string): Promise<void>;
-  // PLAN-hibaim.md 2. lépés: a "Hibáim" kötegek (Settings -> Load my mistakes)
-  // és a hozzájuk tartozó SM-2 haladás, a pcic_cards-tól elkülönítve.
-  saveMistakeBatch(batchId: string, json: string, importedAt: string): Promise<void>;
-  getMistakeBatches(): Promise<MistakeBatchRow[]>;
-  getMistakeCards(): Promise<Sm2Card[]>;
-  upsertMistakeCard(card: Sm2Card): Promise<void>;
-  getMistakeDueCount(today: string): Promise<number>;
-  exportAll(): Promise<BackupPayload>;
-  importAll(payload: BackupPayload): Promise<void>;
-}
 
 class SQLiteDB implements DB {
   private db: SQLite.SQLiteDatabase | null = null;
@@ -469,28 +394,6 @@ class SQLiteDB implements DB {
     );
   }
 
-  async getPcicStats(today: string): Promise<{ total: number; newIntroducedToday: number; dueToday: number; learned: number }> {
-    const db = await this.open();
-    const total = await db.getFirstAsync<any>('SELECT COUNT(*) as c FROM pcic_cards');
-    const newIntroducedToday = await db.getFirstAsync<any>(
-      'SELECT COUNT(*) as c FROM pcic_cards WHERE introduced_at = ?',
-      [today]
-    );
-    const dueToday = await db.getFirstAsync<any>(
-      "SELECT COUNT(*) as c FROM pcic_cards WHERE (state = 'review' OR state = 'learning') AND due <= ?",
-      [today]
-    );
-    const learned = await db.getFirstAsync<any>(
-      "SELECT COUNT(*) as c FROM pcic_cards WHERE state = 'review' AND interval >= 21"
-    );
-    return {
-      total: total?.c ?? 0,
-      newIntroducedToday: newIntroducedToday?.c ?? 0,
-      dueToday: dueToday?.c ?? 0,
-      learned: learned?.c ?? 0,
-    };
-  }
-
   // PLAN-fb0924 7a. lépés: a `levelPrefix` (pl. "a1") már NEM a LIKE-mintát
   // adja (a szint-igazítás óta egy id előtagja nem feltétlen a valódi szintje,
   // lásd lib/pcicLevels.ts matchesLevel), hanem a törlendő szint neve; a
@@ -554,19 +457,6 @@ class SQLiteDB implements DB {
          known = excluded.known`,
       [card.itemId, card.state, card.step, card.ease, card.interval, card.reps, card.lapses, card.due, card.lastReview, card.introducedAt, card.known ? 1 : 0]
     );
-  }
-
-  // Only counts cards already introduced (a row exists once graded at least
-  // once, same as pcic_cards); a freshly loaded batch's still-new cards are
-  // not "due" yet, see lib/mistakes/deck.ts pickMistakeSession for the full
-  // session count (due + capped new).
-  async getMistakeDueCount(today: string): Promise<number> {
-    const db = await this.open();
-    const row = await db.getFirstAsync<any>(
-      "SELECT COUNT(*) as c FROM mistake_cards WHERE (state = 'review' OR state = 'learning') AND due <= ?",
-      [today]
-    );
-    return row?.c ?? 0;
   }
 
   // Q0: full learning-state backup, every table across all pairs.
