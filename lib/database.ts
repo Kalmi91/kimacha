@@ -302,18 +302,14 @@ class SQLiteDB implements DB {
   }
 
   // what one local calendar day added up to, for the midnight celebration.
-  // `words` counts DISTINCT word cards touched that day, not raw attempts, so a
+  // `words` is the number of PCIC words first introduced that local day
+  // (introduced_at = date, the same rule as the daily new-word limit), so a
   // word drilled five times still reads as one word learned.
   async getDayStats(date: string): Promise<{ minutes: number; words: number }> {
     const db = await this.open();
     const usage = await db.getFirstAsync<any>('SELECT minutes FROM usage_minutes WHERE date = ?', [date]);
-    const rows = await db.getAllAsync<any>(
-      "SELECT DISTINCT word_id, timestamp FROM card_attempts WHERE type = 'word'"
-    );
-    const words = new Set(
-      rows.filter((r: any) => localDateString(new Date(r.timestamp)) === date).map((r: any) => r.word_id)
-    );
-    return { minutes: usage?.minutes ?? 0, words: words.size };
+    const learned = await db.getFirstAsync<any>('SELECT COUNT(*) AS n FROM pcic_cards WHERE introduced_at = ?', [date]);
+    return { minutes: usage?.minutes ?? 0, words: learned?.n ?? 0 };
   }
 
   // Game tab tables, scoped to the active pair like every
