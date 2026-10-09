@@ -23,7 +23,7 @@ const MINUTE_SECONDS = 60;
 // `session` counts the active minutes of THIS app run (a restart starts over),
 // `daily` reads the persisted day total, so its crossing (previous total was
 // one lower) can only happen once per calendar day even across restarts.
-// past the first hour the daily milestone repeats every 15 minutes, see
+// Past the first hour the daily milestone repeats every 15 minutes, see
 // lib/usageMilestones.ts.
 type UsageMilestone = { scope: 'session' | 'daily'; minutes: number };
 const SESSION_MILESTONES = [30];

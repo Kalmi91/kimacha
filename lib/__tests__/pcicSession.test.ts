@@ -429,7 +429,7 @@ describe('countFinishedToday (FB430)', () => {
   });
 });
 
-// ("new 42?"): a napi keret NAPI; a más szinten vett "+10"-ek nem jöhetnek vissza új szóként a másik szinten.
+// User feedback ("new 42?"): a napi keret NAPI; a más szinten vett "+10"-ek nem jöhetnek vissza új szóként a másik szinten.
 describe('pcicSessionNewLimit (FB452)', () => {
   const introduced = (prefix: string, n: number) =>
     Array.from({ length: n }, (_, i) => sm2Review(sm2NewCard(`${prefix}-${i}`), 'good', TODAY));
@@ -470,7 +470,7 @@ describe('pcicSessionNewLimit (FB452)', () => {
   });
 });
 
-// ("van még 40 szó, miért nem dobja fel?"): a "Practice words" gomb a hiányzóból ad, ha a keret elfogyott.
+// User feedback ("van még 40 szó, miért nem dobja fel?"): a "Practice words" gomb a hiányzóból ad, ha a keret elfogyott.
 describe('practiceTopUpStep (FB499)', () => {
   it('kimerült keret: az összes hiányzó szót adja egy koppintásra', () => {
     expect(practiceTopUpStep({ limit: 10, bonus: 0, introducedAllLevels: 10, missing: 40 })).toBe(40);

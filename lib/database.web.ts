@@ -292,7 +292,7 @@ class MemoryDB implements DB {
   }
 
   // a kiválasztott PCIC szint.
-  // javítás: pár-szerinti Map (mint articlePickerMap), hogy irányváltáskor
+  // Pár-szerinti Map (mint articlePickerMap), hogy irányváltáskor
   // mindkét pár megőrizze a saját szintjét; alap B1 en-es-nek (meglévő
   // "b1-..." progressz), A1 minden es→en irányú párnak (ez adja az
   // egyetlen tartalommal bíró szintet).

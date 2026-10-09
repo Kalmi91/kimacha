@@ -1,6 +1,6 @@
-// 2. lepes, or-teszt: A1-B2 minden word/phrase
+// Or-teszt: A1-B2 minden word/phrase
 // tetelnek van szofaja, es sentence/pattern tetelnek sose.
-// 5. lepes: a posOf lemma-indexe a data/words-open, ezert a
+// A posOf lemma-indexe a data/words-open, ezert a
 // teszt az elo pakli (data/pcic.ts, en->es irany) tetelein fut a korabbi nyers
 // PCIC-json helyett. A words-open det/interj szofaja (20 det + 6 interj, pl.
 // "este", "hola", "adiós") is chipet kap, nincs kivetel.

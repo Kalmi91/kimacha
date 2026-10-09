@@ -1,4 +1,4 @@
-// ("Practice the table" with an English prompt): on a lesson whose
+// "Practice the table" with an English prompt: on a lesson whose
 // conjugation tables carry `enPrompt`, the deck screen shows the English
 // sentence as the main prompt and the infinitive underneath, instead of the
 // bare "person · verb" caption. Mock pattern from tableDeck.play.test.tsx.
@@ -49,7 +49,7 @@ describe('table-deck screen: enPrompt (FB378)', () => {
   });
 
   it('every cell in this lesson has an English prompt', () => {
-    // Both indefinido-regular conjugation tables are fully filled in
+    // Both indefinido-regular conjugation tables are fully filled in,
     // so this also proves the fixture is meaningful: whichever
     // cell the (now shuffled) deck shows first will have one.
     expect(cells.length).toBeGreaterThan(0);

@@ -135,10 +135,10 @@ export function tableCellsForLesson(lesson: GrammarTopicData | null | undefined)
 // tartalmát, ezért ugyanez a motor szolgálja ki a szó-paklit is
 // (wordCellsForLesson lent) a tábla-pakli mellett, forrás-tömb-tipizálás
 // nélkül duplikálva.
-// a tábla-pakli sorrendje eleinte a
+// A tábla-pakli sorrendje eleinte a
 // tábla saját sor/oszlop-sorrendje volt (mindenki "yo · ser"-t látta
 // elsőnek), amitől a válasz a POZÍCIÓBÓL, nem a jelentésből tanulható meg.
-// (felülírja a fenti döntést): az 1. kör megint a
+// Felülírja a fenti döntést: az 1. kör megint a
 // tábla sorrendjében jön (ahogy a tábla olvasható), a kevert sorrend egy
 // KÜLÖN, választható "Nehezebb: keverve" kör lett (resetDeckShuffled), nem
 // az alapértelmezett. A shuffle maga (a seed-elt permutáció) változatlan.
@@ -246,7 +246,7 @@ export function resetDeckShuffled(cells: { id: string }[], lessonId: string, res
 // PCIC angol jelentéssel, funkciószó nélkül.
 // ---------------------------------------------------------------------------
 
-/** (step 3): the word-deck button only shows
+/** The word-deck button only shows
  *  at this many cards or more; below it, a table-less lesson stays
  *  buttonless rather than offering a near-empty deck. */
 export const WORD_DECK_MIN_CARDS = 8;
@@ -385,7 +385,7 @@ export function wordCellsForLesson(
 }
 
 // ---------------------------------------------------------------------------
-// ("mehet a javítás"): az es→en irány
+// Az es→en irány
 // szavak-gyakorlása. Eddig a pakli a spanyol PCIC-ből épült, ezért angol kérdést
 // adott és spanyol választ várt. Most a kérdés a spanyol szó, a válasz a begépelt
 // angol szó, a szavak az angol szókészletből (data/words/en/<szint>.json) jönnek,

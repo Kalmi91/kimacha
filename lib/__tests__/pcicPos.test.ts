@@ -1,7 +1,7 @@
 import { posOf } from '../pcicPos';
 
 describe('posOf (5c, FB348/351/358/359)', () => {
-  // (3. commit): 'el perro'/'la mesa'/'una casa' mind megvan a fő
+  // 'el perro'/'la mesa'/'una casa' mind megvan a fő
   // korpuszban (data/words-open) pos+gender-rel, ezért ezeket most a korpusz adja
   // vissza, nemmel együtt, nem a névelő-szabály.
   it('a korpuszban meglévő lemma nemmel együtt jön, ha főnév', () => {

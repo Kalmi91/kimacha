@@ -69,7 +69,7 @@ export interface DB {
   // a kiválasztott PCIC szint (A1-B2), app-szintű, mint a
   // status-bar tint. `levelPrefix` opcionális: csak azt a szintet üríti ki
   // (a betöltött korpuszból lekért id-lista szerint, lib/pcicLevels.ts
-  // matchesLevel mintájára -, a szint-igazítás óta nem
+  // matchesLevel mintájára: a szint-igazítás óta nem
   // csupasz id-előtag), üresen az egész táblát, mint eddig.
   getPcicLevel(): Promise<PcicLevel>;
   // van-e KIFEJEZETTEN választott szintje az

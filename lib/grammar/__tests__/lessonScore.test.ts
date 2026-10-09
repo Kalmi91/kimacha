@@ -1,4 +1,4 @@
-// (grammar-syllabus): the per-lesson correct-percent badge's pure math.
+// Grammar-syllabus: the per-lesson correct-percent badge's pure math.
 
 import { lessonBadgePercent, lessonPercent, lessonPercentsByTopic } from '../lessonScore';
 

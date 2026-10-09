@@ -1,4 +1,4 @@
-// (koordinátori észrevétel, 2026-10-01): az írás-pontozás ne legyen laza.
+// Az írás-pontozás ne legyen laza.
 // Üres, egyszavas, értelmetlen ("asdf"), ismételt szavas vagy a feladat szövegéből bemásolt válasz
 // NEM kap pontot; a jó válasz magas pontot kap; a pontozás arányos marad (a félig jó válasz fél
 // pontot, a rövid de őszinte válasz a tartalmi pontokat kapja, a szószám-jegyet nem).

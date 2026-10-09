@@ -1,5 +1,5 @@
 // validateMistakesPayload against the fixture, plus
-// one negative case per rule in the "Formátum" section of.
+// one negative case per rule of the payload format.
 
 import sample from './__fixtures__/sample.json';
 import { validateMistakesPayload } from './format';

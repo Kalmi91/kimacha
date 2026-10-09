@@ -100,7 +100,7 @@ const secondsSince = (startedAt: number) => Math.max(0, Math.round((Date.now() -
 
 // a nem-választós fajták közös brutalista elemei: b kitöltésű visszajelző
 // doboz (nagybetűs cím + egy mondat) és az ink kitöltésű gomb.
-// a jó / rossz jelzés a közös ResultBadge (szín + alak + ✓/✗ + szöveg),
+// A jó / rossz jelzés a közös ResultBadge (szín + alak + ✓/✗ + szöveg),
 // a doboz fölött; a b kitöltésű doboz csak a magyarázatot hordozza (ha van).
 function BrutalFeedback({ title, correct, children }: { title: string; correct: boolean; children?: React.ReactNode }) {
   return (
@@ -1158,7 +1158,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   // a mondat fordítása a felület nyelvén (ha a tételnek van `tr`-je).
   const choiceTr = current.item.tr ? (current.item.tr[contentLang as 'hu' | 'en' | 'es' | 'de'] ?? current.item.tr.en) : undefined;
 
-  // (neo-brutalista): a
+  // Neo-brutalista: a
   // mondat dobozban, a hiány b kitöltésű blokk, a válaszok 2x2 rácsban, a
   // helyes = a kitöltés + pipa, a visszajelző doboz b kitöltésű.
   if (g.brutal) {

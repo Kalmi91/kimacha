@@ -775,7 +775,7 @@ export function syllabusTopic(id: string, lang = 'es'): SyllabusTopic | undefine
 }
 
 /**
- * (drill Kész-képernyő): „tegyél bele egy gombot, hogy
+ * User feedback (drill Kész-képernyő): „tegyél bele egy gombot, hogy
  * kovetkező topicot lehessen tanulni". A tanterv sorrendjében a következő téma,
  * amihez MÁR VAN megírt lecke, tehát a gomb sosem visz üres képernyőre. A szint
  * határán nem áll meg: a tanterv folytatódik a következő szinten.

@@ -1,8 +1,7 @@
-// (deck.ts): tiszta függvények, amik a betöltött
+// Tiszta függvények, amik a betöltött
 // kötegekből (MistakesBatch[]) kártyalistát építenek, és az SM-2 ütemezőt
 // (lib/sm2.ts, ugyanaz mint a PCIC fülön) a "Hibáim" pakli saját tábláján
-// futtatják. A kártya-id séma és a `doubtful` kizárás:
-// "Formátum" szekció.
+// futtatják.
 
 import type { MistakesBatch, MistakePattern } from './format';
 import { DEFAULT_NEW_LIMIT, pickSm2Session, type Sm2Card } from '../sm2';
@@ -110,7 +109,6 @@ export function pickMistakeSession(
 /**
  * Előre kijelölt értékelés: pontos egyezés (`strictAnswerMatch`) esetén
  * "Knew it" (good), egyébként "Didn't know" (again).
- * "Képernyők" 3. pont.
  */
 export function suggestedMistakeGrade(typed: string, answer: string, opts: MatchOptions = {}): 'again' | 'good' {
   return typed.trim().length > 0 && strictAnswerMatch(typed, answer, opts) ? 'good' : 'again';

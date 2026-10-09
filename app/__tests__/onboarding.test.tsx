@@ -1,10 +1,10 @@
-// az onboarding üdvözlés után egy szint-lépést kap
+// az onboarding üdvözlés után egy szint-lépést kap.
 // Ez a screen csak új telepítésnél
 // fut le egyáltalán (app/_layout.tsx a getOnboarding() alapján dönt), tehát
 // az "csak új telepítés látja" feltétel a root-layout felelőssége, nem ezé a
 // screené; itt a screen SAJÁT lépéseit (nyelv-választás -> üdvözlés ->
 // szint-választás) teszteljük. Mock-minta: app/(tabs)/__tests__/pcicSpeak.test.tsx.
-// a nyelv-választás lépés a jóváhagyott
+// A nyelv-választás lépés a jóváhagyott
 // vázlat 1-3. pontja szerint bekerült a "Get Started" elé.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));

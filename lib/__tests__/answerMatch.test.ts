@@ -206,7 +206,7 @@ describe('eitherArticle (PROMPT-POLICY 5, FB285)', () => {
   });
 });
 
-// (indefinido-10-verbos): a lecke saját szövege szerint Mexikóban a
+// indefinido-10-verbos: a lecke saját szövege szerint Mexikóban a
 // vosotros alakot sosem használjuk, mindig ustedes van helyette, de a
 // vosotros-itemek `accept` listája eddig csak a vosotros alakot fogadta el;
 // egy ustedes-t begépelő tanuló jó válasza pirosra ment. A GrammarDrill

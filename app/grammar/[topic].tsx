@@ -77,7 +77,7 @@ export default function GrammarLessonScreen() {
   const [drillKind, setDrillKind] = useState<GrammarKind>('choice');
   // a látható drill-item id-ja, a feedback-kontextusba.
   const [drillItemId, setDrillItemId] = useState<string | undefined>(undefined);
-  // (kártya-szintű folytatás): true, amint a mentett gyakorlat visszaolvasása lefutott (előtte nem mentünk).
+  // Kártya-szintű folytatás: true, amint a mentett gyakorlat visszaolvasása lefutott (előtte nem mentünk).
   const [drillResumeReady, setDrillResumeReady] = useState(false);
   // a drill beírós tételeinek Check / Next sávja a billentyűzet fölé dokkol (components/learn/DockSlot.tsx).
   const dock = useDockSlot(colors);
@@ -107,7 +107,7 @@ export default function GrammarLessonScreen() {
     setLearnedLang(target);
     // Kimacha Play: UI always English, regardless of the
     // stored source language; the lesson data's hu/es/de fields stay unused.
-    // es→en a spanyol anyanyelvű tanuló spanyol magyarázatot kap.
+    // es→en: a spanyol anyanyelvű tanuló spanyol magyarázatot kap.
     setContentLang(target === 'en' ? 'es' : 'en');
     const levelData = await db.getLevel();
     setLevel((levelData.level as Level) ?? 'A1');
@@ -210,11 +210,11 @@ export default function GrammarLessonScreen() {
 
   // Two worked examples from the first items, so the lesson SHOWS the rule
   // before it asks anything.
-  // a jelölős feladat mondata már kész, nincs mit behelyettesíteni, így a
+  // A jelölős feladat mondata már kész, nincs mit behelyettesíteni, így a
   // bemutató példák a lyukas tételekből jönnek.
-  // uniós lecke-alak miatt a `.filter` narrowing csak egy lapos
+  // Uniós lecke-alak miatt a `.filter` narrowing csak egy lapos
   // `GrammarItem[]` castra épülve szűkít helyesen rule/more-hoz hasonlóan.
-  // a LessonV2 items tömbje match/form tételeket is tartalmaz,
+  // A LessonV2 items tömbje match/form tételeket is tartalmaz,
   // azoknak nincs `sentence`/`options` mezőjük, tehát itt kifejezetten a
   // (kind hiányzó vagy 'gap') tételekre kell szűkíteni, nem csak a mark-ot
   // kizárni.
@@ -249,7 +249,7 @@ export default function GrammarLessonScreen() {
     getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, itemId, state, data).catch(() => {});
   };
   // A lecke %-a: az ÖSSZES létező fajta átlaga, a meg nem kezdett fajta 0 (null: még semmit sem csinált).
-  // az ideiglenes fajták nem húzzák le a lecke %-át (scoredKinds).
+  // Az ideiglenes fajták nem húzzák le a lecke %-át (scoredKinds).
   const lessonScoreOf = (rows: ProgressRow[]) =>
     lessonScore(scoredKinds(lesson).map((k) => kindProgressFromRows(rows, String(topicId), k)));
 
@@ -409,7 +409,7 @@ export default function GrammarLessonScreen() {
     // ennek a körnek a pontszáma (ami fentebb, `pct`).
     const cumulativePct = lessonScoreOf(progressRows);
     // A teszt-gomb az egyetlen kitöltött (kiemelt) gomb a lapon, a többi másodlagos (keretes).
-    // a "Lesson test" gomb a done-lapon; csak akkor él, ha a lecke minden
+    // A "Lesson test" gomb a done-lapon; csak akkor él, ha a lecke minden
     // feladat-fajtájából volt már kör, addig szürke, alatta a teendő. A gomb alatti sor a szabály.
     const testSize = lessonTestSize(lesson, learnedLang, contentLang);
     const testReady = lessonTestUnlocked(lesson, progressRows, String(topicId));
@@ -451,7 +451,7 @@ export default function GrammarLessonScreen() {
           </Text>
         </>
       ) : null;
-    // (neo-brutalista): nagy
+    // Neo-brutalista: nagy
     // helyes-arány a kitöltött dobozban + combo-matrica, 3 kis doboz, "practice
     // this" a rontott mondattal, téma-progress szegmensekben, gombok.
     if (g.brutal) {
@@ -677,7 +677,7 @@ export default function GrammarLessonScreen() {
 
         {/* egy gomb fajtánként, hogy külön indítható legyen a
             mondatok / párosítás / ragozás, ne egyszerre az egész lecke.
-            a gomb alatt a fajta SAJÁT %-a, ugyanazzal a lessonPercent
+            A gomb alatt a fajta SAJÁT %-a, ugyanazzal a lessonPercent
             logikával, ami a Kész-képernyő kinti számát adja. */}
         {lessonTestResult?.passed ? (
           <Text testID="grammar-test-passed" style={[styles.testPassedNote, { color: g.brutal ? g.ink : colors.success }]}>

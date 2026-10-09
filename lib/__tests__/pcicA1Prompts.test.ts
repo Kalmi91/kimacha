@@ -1,5 +1,5 @@
-// 1. lepes: A1 PCIC fordítás-audit or-teszt.
-// az angol prompt ne legyen
+// A1 PCIC fordítás-audit or-teszt.
+// Az angol prompt ne legyen
 // felrevezeto a spanyol funkcioszavakhoz kepest (gracias/por favor/sin, es
 // forditva a "please"-re). Ha egy valodi kivetel adodik, ide egy explicit
 // EXCEPTIONS bejegyzes kell, kommenttel, nem a teszt lazitasa.

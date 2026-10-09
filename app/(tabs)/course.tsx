@@ -76,7 +76,7 @@ export default function GrammarSyllabusScreen() {
     setLearnedLang(target);
     // Kimacha Play: UI always English, regardless of the
     // stored source language; the syllabus data's hu/es/de fields stay unused.
-    // es→en a spanyol anyanyelvű tanuló spanyol magyarázatot kap.
+    // es→en: a spanyol anyanyelvű tanuló spanyol magyarázatot kap.
     setContentLang(target === 'en' ? 'es' : 'en');
 
     const levelData = await db.getLevel();
@@ -89,7 +89,7 @@ export default function GrammarSyllabusScreen() {
     const rows = await db.getGameProgress(GRAMMAR_PROGRESS_KEY);
     setProgress(doneGrammarTopicProgress(target, rows));
     // ugyanabból a lekérésből, külön DB-hívás nélkül.
-    // a lecke %-a az összes fajta átlaga (a meg nem csinált 0), nem a kumulált jó-arány.
+    // A lecke %-a az összes fajta átlaga (a meg nem csinált 0), nem a kumulált jó-arány.
     setPercents(lessonScoresByTopic(rows, (id) => lessonKinds(target, id)));
     setTestPassed(lessonTestPassedTopics(rows));
     setStreak((await db.getStreak())?.current_count ?? 0);
@@ -106,7 +106,7 @@ export default function GrammarSyllabusScreen() {
   const coverage = lessonCoverage(learnedLang);
   const doneCount = [...progress.values()].filter((p) => p.state === 'done').length;
 
-  // (neo-brutalista):
+  // Neo-brutalista:
   // a classic paletta a lenti mai kinézetet adja.
   if (g.brutal) {
     const shownLevel: Level = openLevel ?? 'A1';

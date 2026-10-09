@@ -27,9 +27,9 @@ import { zenDecor } from './zen';
 
 export type { SkinDecor } from './types';
 
-// / 4D / 6E: a dísz-regiszter. A 4D a 4 kezdő téma díszét tölti (deco, szocreal,
-// csillampony, ukiyoe), a 6E-E1 a loteria, senior, konnyu, retro95, y2k, kawaii, gamer, botanikus, zen,
-// a 6E-E2 a diszlexia, plakat, bauhaus, popart, szecesszio, kalocsai, memphis, kodex, graffiti díszét.
+// A dísz-regiszter. Az első adag a 4 kezdő téma díszét tölti (deco, szocreal,
+// csillampony, ukiyoe), a második a loteria, senior, konnyu, retro95, y2k, kawaii, gamer, botanikus, zen,
+// a harmadik a diszlexia, plakat, bauhaus, popart, szecesszio, kalocsai, memphis, kodex, graffiti díszét.
 // A brutal és a classic szándékosan dísz nélküli (no-op).
 export const SKIN_DECOR: Partial<Record<SkinId, SkinDecor>> = {
   deco: decoDecor,

@@ -1,5 +1,5 @@
 // a V2 pilot lecke (ser-estar) a lecke-képernyőn: a body
-// (LessonBody) renderel, és a felolvasás egyetlen play<->stop gombbal megy
+// (LessonBody) renderel, és a felolvasás egyetlen play<->stop gombbal megy,
 // nem a lib/speech valódi motorjával, azt itt kimockoljuk.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));

@@ -106,7 +106,7 @@ describe('grammar lesson screen: per-kind drill buttons', () => {
   // (n)" helyett a körös "10 / 50" gombot mutatja (a szám-pár nyelvfüggetlen,
   // az UI nyelve ebben a tesztkörnyezetben en), és egy kör végén egy "10"-et
   // említő gomb kínálja a folytatást. 4 az 50-ből vosotros volt,
-  // óta ustedes-item, a körös nevező ezért 50.
+  // azóta ustedes-item, a körös nevező ezért 50.
   it('indefinido-10-verbos (50 transform items) shows a 10/50 round button, and finishing a round offers 10 more', async () => {
     mockTopicId = 'indefinido-10-verbos';
     const now = 1700000000000;

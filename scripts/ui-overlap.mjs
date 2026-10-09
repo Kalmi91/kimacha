@@ -54,7 +54,7 @@ const DIST = path.join(ROOT, 'dist');
 const SHOTS = path.join(ROOT, 'ui-shots');
 const REPORT = path.join(ROOT, 'ui-overlap-report.json');
 
-// szabálya (CLAUDE.md, 2026-09-28): böngészős teszt némán, betöltés ELŐTT.
+// A projekt szabálya (CLAUDE.md, 2026-09-28): böngészős teszt némán, betöltés ELŐTT.
 const SPEECH_MUTE =
   "(()=>{const s=window.speechSynthesis;if(!s)return;s.speak=(u)=>setTimeout(()=>u.dispatchEvent(new Event('end')),0);})()";
 

@@ -1,6 +1,6 @@
 import { dailyPlanPercent } from '@/lib/dailyPlan';
 
-// (szocreal "Napi terv n%"): a mai percek a heti cél napi hetedéhez képest.
+// Szocreal "Napi terv n%": a mai percek a heti cél napi hetedéhez képest.
 describe('dailyPlanPercent', () => {
   it('a heti cél hetede a napi terv: 420 perc / hét = 60 perc / nap', () => {
     expect(dailyPlanPercent(0, 420)).toBe(0);

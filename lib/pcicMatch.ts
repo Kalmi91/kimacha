@@ -87,7 +87,7 @@ function isAccentOnlyDiff(a: string, b: string): boolean {
 // a `target` (korábban `es`) a CÉLNYELVI helyes
 // alak, akármelyik irányban; a normalizálás (ékezet, kis/nagybetű, "/" és
 // zárójel-alternatívák) nyelvfüggetlen, angolra is jó (jóváhagyott
-// vázlata, 3. pont).
+// vázlat, 3. pont).
 export function gradePcicAnswer(typed: string, target: string, strictAccents = false): PcicGrade {
   const alternatives = pcicAlternatives(target);
   const typedNorm = stripTrailingPunct(normalize(typed));

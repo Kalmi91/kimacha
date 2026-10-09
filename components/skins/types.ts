@@ -15,9 +15,9 @@ export type SkinDecor = {
   WordRenderer?: ComponentType<{ word: string; lang?: string; children: ReactNode }>;
   // Gomb-változat (senior: egymás alatt, ikon + szöveg; zen: csak szöveg; retro95: első betű aláhúzva).
   buttonVariant?: 'default' | 'stacked' | 'text' | 'bevel';
-  // (senior): a hang-gomb mellett szöveges felirat ("Felolvas"); lásd SkinSpeakLabel.
+  // Senior: a hang-gomb mellett szöveges felirat ("Felolvas"); lásd SkinSpeakLabel.
   speakLabel?: boolean;
-  // (retro95): a dokkolt Check-sáv kitöltése `a` (a spec szerint sötétkék, fehér szöveg);
+  // Retro95: a dokkolt Check-sáv kitöltése `a` (a spec szerint sötétkék, fehér szöveg);
   // alapból ink, mint a Neo-brutálon.
   checkFill?: 'a';
 };

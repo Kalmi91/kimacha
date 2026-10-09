@@ -15,7 +15,7 @@ import { findPromptOverlaps, type PromptLang } from '../promptOverlap';
 // (getWordsForLevel(level, 'en')) is gone, so the cases below that guard
 // the actual en corpus content read these JSON files straight off disk
 // instead, the same way `svCorpus.test.ts` reads the Swedish track.
-// a spanyol szólista (a0..c2.json) és a hu sáv kikerült, a
+// A spanyol szólista (a0..c2.json) és a hu sáv kikerült, a
 // spanyol oldal forrása a data/openWords.ts (words-open), a hu sáv őrei törölve. A words-open
 // teljességét és prompt-szabályait (hint-es többjelentés, mondat nélküli névmás/névelő kártyák)
 // a scripts/words-open-check.mjs kapu őrzi, ezért a spanyol sáv teljesség-, prompt- és

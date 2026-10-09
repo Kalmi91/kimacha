@@ -1,4 +1,4 @@
-// (F5, conjugation-slot). Verb-form generation: RULE-BASED for
+// Conjugation-slot. Verb-form generation: RULE-BASED for
 // regular -ar/-er/-ir verbs (endings generated, not hand-listed per verb) and
 // a hand-verified TABLE for the 15 core irregulars named in the spec (ser,
 // estar, ir, tener, hacer, poder, decir, ver, dar, saber, querer, venir,

@@ -297,7 +297,7 @@ describe('mergeDeckState', () => {
 
 // "itt is legyen egy nyelvtanulós kártya
 // csomag a szavakból" - a word-deck a tábla nélküli (nem kérdezhető táblás) leckéknek.
-// a pakli CSAK a lecke
+// A pakli CSAK a lecke
 // táblázatainak szavaiból épül, a szószedet és a példamondatok szavai nem számítanak.
 const LANG4 = { hu: 'x', en: 'x', es: 'x', de: 'x' };
 const tableFixture = (rows: string[][], over: Partial<LessonV2> = {}): LessonV2 => ({

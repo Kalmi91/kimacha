@@ -1,4 +1,4 @@
-// (kártya-szintű folytatás): ha az app a lecke egy gyakorlatában (drill) záródott be, a lecke ugyanabban a
+// Kártya-szintű folytatás: ha az app a lecke egy gyakorlatában (drill) záródott be, a lecke ugyanabban a
 // gyakorlatban nyílik meg (a kör a mentett futásból folytatódik); a leckéből kilépve a mentés törlődik.
 // Mock-minta: drillButtons.test.tsx.
 

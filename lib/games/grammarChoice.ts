@@ -1,7 +1,7 @@
-// (F3, grammar-choice): "Melyik a helyes?" round-building, pulled
+// Grammar-choice: "Melyik a helyes?" round-building, pulled
 // out of the screen so the usual anti-position-bias shuffle (lib/shuffle.ts)
 // is unit-testable without mounting the screen. A round is every item in the
-// topic (12-15 per, matches the "10-15 item = egy futam" spec), in a
+// topic (12-15 items, matches the "10-15 item = egy futam" spec), in a
 // seeded random order, each item's own options also seeded-shuffled so the
 // correct answer isn't predictably in the JSON's authored slot 0.
 
@@ -159,8 +159,8 @@ export function buildGrammarRound(topic: GrammarTopicData, seed: number): Gramma
   return [...orderedChoice, ...matchItems, ...formItems, ...whyItems, ...transformItems, ...newKindItems];
 }
 
-// The wrong-answer explanation is keyed by the option's own text (
-// 4.11 JSON: `wrong[optionText][lang]`), unaffected by the render-time shuffle.
+// The wrong-answer explanation is keyed by the option's own text
+// (JSON: `wrong[optionText][lang]`), unaffected by the render-time shuffle.
 export function wrongExplanation(
   item: GrammarGapItem | GrammarMarkItem,
   optionText: string,

@@ -103,7 +103,7 @@ export default function PcicScreen() {
   const [allCards, setAllCards] = useState<Map<string, Sm2Card>>(new Map());
   const [queue, setQueue] = useState<Sm2Card[]>([]);
   // a "+N új szó" bővítéskor a ma már kész kártyák száma; a csík az új adagot méri ehhez képest.
-  // az alap egy SZINTRE vonatkozik (a kész kártyákat a nézet szintjén számoljuk), másik szinten nem érvényes.
+  // Az alap egy SZINTRE vonatkozik (a kész kártyákat a nézet szintjén számoljuk), másik szinten nem érvényes.
   const [batchBase, setBatchBase] = useState<{ day: string; level: string; n: number }>({ day: '', level: '', n: 0 });
   const [typedAnswer, setTypedAnswer] = useState('');
   const [articlePick, setArticlePick] = useState<ArticlePick>('');
@@ -126,7 +126,7 @@ export default function PcicScreen() {
   // learn_settings.new_bonus/new_bonus_date oszlopokban perzisztálva (a
   // naptári nappal lejár); load() a DB-ből olvassa vissza, nem nullázza.
   const [pcicBonus, setPcicBonus] = useState(0);
-  // (C): a Beállítások "Napi új szó" (learn_settings.daily_new_limit,
+  // A Beállítások "Napi új szó" (learn_settings.daily_new_limit,
   // eddig csak a törölt Tanulás fül olvasta) mostantól a PCIC napi új tételeinek
   // számát is adja; a fejléc "new" chipje ebből számol (queue state === 'new').
   const [dailyNewLimit, setDailyNewLimit] = useState(DEFAULT_DAILY_NEW_LIMIT);
@@ -135,7 +135,7 @@ export default function PcicScreen() {
   const [dockH, setDockH] = useState(DOCK_RESERVE);
   // a dokkolt sáv a billentyűzet fölé emelkedjen, mint a Learn fülön.
   const { dockLift } = useDockLift();
-  // a beviteli mező fókuszt kap minden ÚJ lapnál (lásd a
+  // a beviteli mező fókuszt kap minden ÚJ lapnál (lásd az
   // effektet lent), nem csak első mountkor (az `autoFocus` prop erre nem
   // elég, mert a TextInput kártyaváltáskor nem remountol).
   const inputRef = useRef<TextInput>(null);
@@ -200,7 +200,7 @@ export default function PcicScreen() {
     setAgainDelaySec(delaySec);
     setToday(day);
     setAllCards(new Map(cards.map((c) => [c.itemId, c])));
-    // (kártya-szintű folytatás): az újraépült sorra rákerül a mentett sorrend és az "again" időzítők (napváltáskor / szintváltáskor érvénytelen).
+    // Kártya-szintű folytatás: az újraépült sorra rákerül a mentett sorrend és az "again" időzítők (napváltáskor / szintváltáskor érvénytelen).
     const resume = await loadLearnResume(db);
     setQueue(applyLearnResume(pickSm2Session(cards, pcicIntroOrder(newOrder), day, pcicSessionNewLimit({ limit: newLimit, bonus, introducedAllLevels, introducedThisLevel: introducedToday })), resume, day, lvl));
     if (isLearnResumeFor(resume, day, lvl) && resume.base !== null) setBatchBase({ day, level: lvl, n: resume.base });
@@ -269,7 +269,7 @@ export default function PcicScreen() {
   // `current?.itemId` váltására fusson (a `grade` a closure-ből olvasva
   // dönti el, hogy még nincs felfedve), felfedéskor (a `grade` state
   // változásakor) ne ismételje - se a felolvasás, se a fókusz.
-  // mondatkártya alatt nem szól a következő prompt;
+  // Mondatkártya alatt nem szól a következő prompt;
   // a kártya bezárásakor (sentenceOpen false) szól, mint egy új lapnál.
   const sentenceOpen = sentenceCard !== null;
   useEffect(() => {
@@ -283,7 +283,7 @@ export default function PcicScreen() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [current?.itemId, loading, sentenceOpen]);
 
-  // (kártya-szintű folytatás): minden sor- / adag-változás után elmenti a pillanatképet (lib/learnResume.ts).
+  // Kártya-szintű folytatás: minden sor- / adag-változás után elmenti a pillanatképet (lib/learnResume.ts).
   useEffect(() => {
     if (loading || !today) return;
     const base = batchBase.day === today && batchBase.level === level ? batchBase.n : null;
@@ -295,7 +295,7 @@ export default function PcicScreen() {
   const doneToday = countDoneToday([...allCards.values()], today);
   // a fejléc mutassa, MIBŐL áll a mai
   // bevezetés (szó vs. mondat), plusz a mai teljes keret (limit + bónusz).
-  // a napi keret NAPI, ezért a "ma bevezetett" minden szintről számol: a nézet szintjén az élő állapot
+  // A napi keret NAPI, ezért a "ma bevezetett" minden szintről számol: a nézet szintjén az élő állapot
   // (allCards, minden értékelés frissíti), a többi szinten a betöltéskori (allLevelCards).
   const cardsAllLevels = [...allCards.values(), ...allLevelCards.filter((c) => !allCards.has(c.itemId) && findPcicItem(c.itemId) !== undefined)];
   // a vizsga-sor számai az ÉLŐ kártyákból számolnak (a betöltéskori állapot a menet közben tanult szavakat nem
@@ -348,7 +348,7 @@ export default function PcicScreen() {
 
   // Check után a szó felolvasása UTÁN, láncolva, magától
   // szól a példamondat is, ha van a tételhez (exampleEs/exampleEn).
-  // mindkettő a célnyelven szól, nem mindig spanyolul.
+  // Mindkettő a célnyelven szól, nem mindig spanyolul.
   const speakRevealed = (best: string) => {
     const example = target === 'es' ? currentItem?.exampleEs : currentItem?.exampleEn;
     if (example) {
@@ -483,7 +483,7 @@ export default function PcicScreen() {
   // koppintásra a szint-választó lap nyílik; a meglévő négy chip változatlan.
   // 5b: a régi egysoros szöveg-fejléc (`s.pcic.header`) helyett BadgeRow chip-sor;
   // a négy szám ugyanaz, csak külön i18n kulcsokból (badgeTotal/Due/New/Done).
-  // a "Hibáim" belépő önálló komponens (saját
+  // A "Hibáim" belépő önálló komponens (saját
   // betöltéssel), hogy ez a fájl (785 sor) ne nőjön 800 fölé; csak akkor
   // renderel, ha van betöltött köteg.
 
@@ -696,7 +696,7 @@ export default function PcicScreen() {
   // számból épül (nem a mountonként nullázódó `sessionAnswered`-ből), hogy
   // tab-váltás vagy app-újraindítás után is a valós napi haladást mutassa,
   // ne ugorjon vissza üresre.
-  // a sáv a MAI adag hátralévőjét mutatja (az első
+  // A sáv a MAI adag hátralévőjét mutatja (az első
   // kártyánál üres, az utolsónál tele, adag közben nem indul újra; lib/pcicSession.ts
   // dayProgressPercent). Az eddigi 10-es szettes mérés minden 10. kártyánál újraindult.
   // +N után az új adag haladását mutatja (finishedInBatch), nem a nap összesét.
@@ -834,9 +834,9 @@ export default function PcicScreen() {
           {noteOpen && <CardNote note={currentItem.note} image={currentItem.image} colors={colors} />}
 
           {/* névelő-gombsor a Learn fülről, ⊘ az alapállás.
-              kiegészítés: a PCIC-en a chip már mutatja, ha nem főnév, a
+              Kiegészítés: a PCIC-en a chip már mutatja, ha nem főnév, a
               sor csak noun/ismeretlen szófajnál jár (lib/articlePicker.ts).
-              csak es célnyelvnél jár. */}
+              Csak es célnyelvnél jár. */}
           {target === 'es' &&
             articlePickerApplies(target, currentItem.kind !== 'sentence', answerText) &&
             articleRowAppliesForPos(pos) && (
@@ -1090,7 +1090,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   // a ℹ️ jegyzet szövege, a wordRow alatt.
-  // kis mondat (hint) a nagy szó alatt.
+  // Kis mondat (hint) a nagy szó alatt.
   hintText: {
     fontSize: 14,
     lineHeight: 20,
@@ -1180,7 +1180,7 @@ const styles = StyleSheet.create({
   // jobbra-igazított helyre teszi a dontLearn-t.
   // 7F/G2: a korábbi marginBottom: 8 helyett marginTop: 10 (a doboz magassága ~ugyanaz), hogy a sor ne
   // érjen a beviteli mezőhöz (szélesebb sormagasságú / elforgatott kártya-keretű témán átfedés volt).
-  // ha a két felirat nem fér el egy sorban (széles betű: diszlexia), a második új sorba
+  // Ha a két felirat nem fér el egy sorban (széles betű: diszlexia), a második új sorba
   // tör, nem lóg ki balra a kártyából (a flex-end miatt a kitöltött sor eleje esett le).
   bottomRow: {
     flexDirection: 'row',

@@ -26,7 +26,7 @@ export type ExamItem =
   | { kind: 'gap_mc'; skill: 'grammar'; topicId: string; sentence: string; options: string[]; correctIndex: number }
   // Olvasás: két tanult mondatból álló célnyelvi szöveg, a kiinduló nyelvű jelentését kell kiválasztani.
   | { kind: 'reading_mc'; skill: 'reading'; itemIds: string[]; text: string; options: string[]; correctIndex: number }
-  // Szóbeli a billentyűzet mikrofonjával diktált mondat. `translate`: a prompt a kiinduló nyelvű
+  // Szóbeli: a billentyűzet mikrofonjával diktált mondat. `translate`: a prompt a kiinduló nyelvű
   // mondat, az `expected` a célnyelvi; `repeat`: a prompt maga a célnyelvi mondat (olvasd fel).
   | { kind: 'speak'; skill: 'speaking'; itemId: string; prompt: string; expected: string; mode: 'translate' | 'repeat' };
 

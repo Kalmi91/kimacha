@@ -13,7 +13,7 @@ export const languages: Language[] = [
   { code: 'es', name: 'Español', flag: '🇪🇸' },
 ];
 
-// a második irány, es→en (
+// a második irány, es→en (a tanuló
 // tanul angolul spanyolból), a régi en→es mellett. Meglévő telepítés a
 // FORCED_PAIR miatt en-es-ben marad, ez a lista csak azt dönti el, melyik
 // párt fogadja el az onboarding/settings irányváltó.

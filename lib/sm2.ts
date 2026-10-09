@@ -17,7 +17,7 @@ export interface Sm2Card {
   due: string; // 'YYYY-MM-DD', new kártyánál üres string
   lastReview: string | null;
   introducedAt: string | null; // melyik napon lett először kérdezve
-  known?: boolean; // kézzel »tudott«-nak jelölte; ritka ellenőrzés, a statisztikában ismert
+  known?: boolean; // a tanuló kézzel »tudott«-nak jelölte; ritka ellenőrzés, a statisztikában ismert
 }
 
 // egy helyes válasz elég a graduáláshoz (a korábbi 2 lépés
@@ -186,7 +186,7 @@ export function pickSm2Session(
   return [...dueReview, ...learning, ...newCards];
 }
 
-/** ((b) változat): a szó ismertnek számít,
+/** A szó ismertnek számít,
  *  ritkán (KNOWN_INTERVAL_DAYS) mégis visszajön ellenőrzésre. Ease érintetlen. */
 export function sm2MarkKnown(card: Sm2Card, today: string): Sm2Card {
   return {

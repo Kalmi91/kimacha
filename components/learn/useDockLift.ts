@@ -9,14 +9,14 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 //
 // Three tries to place it, and the reason the first two missed was never the
 // keyboard height, it was what sat under the container:
-//   lifted the bar by the reported keyboard height, and the visible TAB BAR
+//   1. lifted the bar by the reported keyboard height, and the visible TAB BAR
 //     below the container ate that much of the lift (a ~49 dp gap).
-//   measured instead, and mixed window coordinates with the keyboard's screen
+//   2. measured instead, and mixed window coordinates with the keyboard's screen
 //     coordinates, so the bar slid under the keys.
-//   asked the window to resize, which an edge-to-edge Android window does not
+//   3. asked the window to resize, which an edge-to-edge Android window does not
 //     do (the IME arrives as an inset), so the bar stayed at the screen bottom,
 //     completely behind the keyboard.
-// with `tabBarHideOnKeyboard` the container now ends AT the bottom of
+// With `tabBarHideOnKeyboard` the container now ends AT the bottom of
 // the screen while typing, which is exactly where the reported keyboard height is
 // measured from, so the plain arithmetic is the correct one after all.
 //
