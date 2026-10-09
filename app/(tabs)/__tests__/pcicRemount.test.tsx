@@ -1,7 +1,7 @@
-// FB408/FB409 (PLAN-fb0929 2. lépés): a PCIC beviteli mező minden új kártyánál
+// a PCIC beviteli mező minden új kártyánál
 // ÚJRA mountol és autoFocus-szal indul, mert a Check után letiltott
 // (editable=false), majd újra engedélyezett natív mező nem hozta fel megbízhatóan
-// a billentyűzetet (FB408), és a törlés sem működött rajta (FB409).
+// a billentyűzetet, és a törlés sem működött rajta.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -13,7 +13,6 @@ jest.mock('@/lib/speech', () => ({
 jest.mock('expo-router', () => ({
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
   },
 }));
@@ -29,12 +28,8 @@ const ITEMS = [
 jest.mock('@/data/pcic', () => ({
   PCIC_LEVELS: ['B1'],
   PCIC_VIEW_LEVELS: ['B1'],
-  LEVEL_LABELS: { B1: 'Intermediate' },
   pcicItemsForLevel: () => ITEMS,
-  pcicItemsForViewLevel: () => ITEMS,
   findPcicItem: (id: string) => ITEMS.find((i) => i.id === id),
-  isPlusSentence: () => false,
-  realLevelOfView: (level: string) => level,
   setPcicTarget: () => {},
 }));
 

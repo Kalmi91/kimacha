@@ -8,12 +8,12 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 
-// FB403 (PLAN-fb0929 6. lépés), Kálmán: „a zöldet is valahogy át kellene dolgozni, mert
+// User feedback: „a zöldet is valahogy át kellene dolgozni, mert
 // nagyon elüt. sokszor nem tudom mikor jó és mikor nem". Egyetlen közös jelzés a
 // helyes / helytelen válaszra, minden kártyatípuson ugyanaz:
 //   helyes  = tokenből vett zöld kitöltés + ✓ + szöveg, TÖMÖR ink keret, eltolt árnyék
 //   helytelen = tokenből vett piros kitöltés + ✗ + szöveg, SZAGGATOTT keret, árnyék nélkül
-// A kettő színe ÉS alakja is különbözik (DESIGN.md: állapot-szín soha nem az egyetlen jel).
+// A kettő színe ÉS alakja is különbözik (állapot-szín soha nem az egyetlen jel).
 // A szöveg a felület nyelvén (s.games.correctFeedback / wrongFeedback).
 export default function ResultBadge({
   correct,
@@ -32,7 +32,7 @@ export default function ResultBadge({
   const s = t();
   const fill = correct ? colors.successFill : colors.danger;
   // Sötét szöveg a kitöltésen (token: ON_FILL; siker-zöld 7.8:1, a sötét mód danger-je 5.0:1).
-  // PLAN-temak 7H: a világos módú danger (#DC2626) a sötét szövegen 3.9:1 volt, a felirat (18 px) nem
+  // A világos módú danger (#DC2626) a sötét szövegen 3.9:1 volt, a felirat (18 px) nem
   // "nagy" szöveg (egyedi betűnél nincs félkövér), ezért 4.5 kell: ott a fehér (4.8:1) a jobb.
   const ink = bestOn(fill, [ON_FILL, '#FFFFFF']);
   const text = label ?? (correct ? s.games.correctFeedback : s.games.wrongFeedback);

@@ -1,4 +1,4 @@
-// NY19: a Statisztika fül brutalista palettán (BrutalBox kártyák, szegmentált heti
+// a Statisztika fül brutalista palettán (BrutalBox kártyák, szegmentált heti
 // cél sáv), classic palettán a mai kinézet. Mock-minta: settingsPalette.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
@@ -6,7 +6,6 @@ jest.mock('expo-router', () => ({
   useRouter: () => ({ push: jest.fn(), navigate: jest.fn(), back: jest.fn() }),
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
   },
 }));

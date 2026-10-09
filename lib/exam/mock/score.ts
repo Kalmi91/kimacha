@@ -1,4 +1,4 @@
-// PLAN-vizsga E. szakasz (Kálmán, 2026-10-01): a próbavizsga pontozása, ahogy a régi
+// a próbavizsga pontozása, ahogy a régi
 // (4afeb8c^) lib/exam/score.ts: tételenként, aztán KÉSZSÉGENKÉNT a készség 25 pontjára skálázva
 // (a telefonos vizsga rövidebb a valódinál), aztán a vizsga átmenési szabálya szerint
 // (lib/exam/mock/types.ts MockRule):
@@ -18,11 +18,11 @@ import { assessMessage, checkField, countWords, fold, foldedTokens } from './wri
 import { mockTaskItemCount, type MockAnswers, type MockExam, type MockSkill, type MockTask, type MockTaskAnswer } from './types';
 
 /** Egy készség pontja a valódi vizsgán (mind a négy 25). */
-export const SKILL_POINTS = 25;
+const SKILL_POINTS = 25;
 
 const SKILL_ORDER: MockSkill[] = ['reading', 'writing', 'listening', 'speaking'];
 
-export interface MockItemResult {
+interface MockItemResult {
   /** Mit kérdezett a feladat (a célnyelvi szöveg vagy az állítás). */
   label: string;
   given: string;
@@ -32,7 +32,7 @@ export interface MockItemResult {
   skill?: MockSkill;
 }
 
-export interface MockTaskResult {
+interface MockTaskResult {
   taskId: string;
   skill: MockSkill;
   correct: number;
@@ -58,7 +58,7 @@ export interface MockSkillResult {
   included: boolean;
 }
 
-export interface MockGroupResult {
+interface MockGroupResult {
   skills: MockSkill[];
   points: number;
   needed: number;
@@ -86,7 +86,7 @@ export interface MockResult {
 export { countWords, fold };
 
 /** A pontozás környezete: a célnyelvi szótár az írás értelmességének ellenőrzéséhez (nélküle ez a lépés kimarad). */
-export interface MockScoreContext {
+interface MockScoreContext {
   lexicon?: ReadonlySet<string>;
 }
 

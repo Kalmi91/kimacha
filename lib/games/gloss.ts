@@ -1,4 +1,4 @@
-// GAMES.md 3.2 (F0): meaning-resolution for ANY token a game shows, the other
+// meaning-resolution for ANY token a game shows, the other
 // half of the user's kőbe vésett kritérium (0. szekció): "vagy amit már
 // tanultam, vagy ami új, annak ki van írva a jelentése, vagy kattintani lehet
 // rá és kiírja". components/games/GlossText.tsx renders what this module
@@ -16,7 +16,7 @@ export interface GlossInfo {
   isNew: boolean;
 }
 
-export interface ResolveGlossOptions {
+interface ResolveGlossOptions {
   learnedLang: string;
   nativeLang: string;
   // word ids the player already knows (e.g. a PoolEntry list's non-new ids).
@@ -53,7 +53,7 @@ export function resolveGloss(token: string, opts: ResolveGlossOptions): GlossInf
 
 // Builds the Map<token, GlossInfo> GlossText.tsx takes as input, one lookup
 // per unique word in `text` (whitespace-split, punctuation forgiven by
-// normalizeWordToken like the rest of the tap-to-spell machinery, FB150).
+// normalizeWordToken like the rest of the tap-to-spell machinery).
 export function buildGlossMap(text: string, opts: ResolveGlossOptions): Map<string, GlossInfo> {
   const map = new Map<string, GlossInfo>();
   for (const raw of text.split(/\s+/)) {

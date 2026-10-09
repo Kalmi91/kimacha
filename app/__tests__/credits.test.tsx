@@ -1,5 +1,5 @@
-// PLAN-credits.md 2. lépés: a Credits képernyő rendereli a CEFR-J attribúciót, és a
-// Settings-sor a Credits képernyőre navigál. PLAN-regi-szavak-ki 7. lépés: a
+// a Credits képernyő rendereli a CEFR-J attribúciót, és a
+// Settings-sor a Credits képernyőre navigál. A
 // FrequencyWords/OpenSubtitles/CC BY-SA szöveg a régi szólistával együtt kikerült.
 // Mock-minta: app/mistakes/__tests__/report.test.tsx.
 
@@ -26,8 +26,8 @@ describe('CreditsScreen (app/credits.tsx)', () => {
   it('PLAN-temak 2B: listázza a betűk licencét, családonként egyszer', () => {
     const { getAllByTestId, getByText } = render(<CreditsScreen />);
 
-    // 29 betűfájl, de az Atkinson és a Jost két súllyal: 27 család.
-    expect(getAllByTestId('credits-font')).toHaveLength(27);
+    // 28 betűfájl, de az Atkinson és a Jost két súllyal: 26 család.
+    expect(getAllByTestId('credits-font')).toHaveLength(26);
     expect(getByText('Permanent Marker · Apache License 2.0')).toBeTruthy();
     expect(getByText('OpenDyslexic · SIL Open Font License 1.1')).toBeTruthy();
   });

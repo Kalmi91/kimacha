@@ -1,4 +1,4 @@
-// PLAN-vizsga E. szakasz (Kálmán E5 c): a próbavizsga a szint szavaiból áll, az ismeretlen
+// a próbavizsga a szint szavaiból áll, az ismeretlen
 // szóhoz szójegyzet jár: a feladat alatt a még nem tanult szavak jelentése (a felület
 // koppintásra nyitja). Tiszta modul: a hívó adja a szint tételeit és a tanult tételek id-it.
 //
@@ -17,7 +17,7 @@ export interface GlossaryEntry {
   meaning: string;
 }
 
-export interface GlossaryIndex {
+interface GlossaryIndex {
   singles: Map<string, { item: PcicItem; form: string }>;
   phrases: { words: string; item: PcicItem; form: string }[];
   target: MockTarget;

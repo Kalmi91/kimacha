@@ -1,4 +1,4 @@
-// PLAN-vizsga A. szakasz 2. lépés (Kálmán, 2026-10-01, A1 a): a szintválasztó lap A1 sora
+// a szintválasztó lap A1 sora
 // alatt a vizsga-sor: zárva mennyi hiányzik, nyitva "Ready" + a mentett eredmény.
 
 import { ScrollView } from 'react-native';

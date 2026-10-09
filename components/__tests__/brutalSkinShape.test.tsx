@@ -1,4 +1,4 @@
-// PLAN-temak 2A: a Brutal-komponensek (BrutalBox, Sticker, SegmentBar, BrutalButton, BrutalSwitch)
+// a Brutal-komponensek (BrutalBox, Sticker, SegmentBar, BrutalButton, BrutalSwitch)
 // a keret-vastagságot / stílust / színt, a sarkot és az árnyékot az aktív téma `shape`-éből veszik;
 // a Neo-brutál téma mai értékei (themePalette.test.tsx) változatlanok.
 

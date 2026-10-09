@@ -1,4 +1,4 @@
-// PLAN-vizsga A. szakasz 3. lépés (Kálmán, 2026-10-01, A2 b + A3 a + A4 b): a szintvizsga
+// a szintvizsga
 // akkor nyílik, ha a szint kártyáinak 80%-a TANULT (SM-2 `review`) ÉS van kész szint-lecke.
 
 import { pcicItemsForLevel, setPcicTarget } from '@/data/pcic';

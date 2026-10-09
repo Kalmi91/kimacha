@@ -1,4 +1,4 @@
-// PLAN-tobbjelentes 3. lépés (SZ8): a nagy szó alatti kis mondat (learn-hint, a `*…*`
+// a nagy szó alatti kis mondat (learn-hint, a `*…*`
 // rész kiemelve, csillag nélkül) és a Check utáni „also: b · c” sor (learn-also, perjeles
 // válasznál). Mock-minta: app/(tabs)/__tests__/pcicNote.test.tsx.
 
@@ -12,7 +12,6 @@ jest.mock('@/lib/speech', () => ({
 jest.mock('expo-router', () => ({
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
   },
 }));
@@ -30,12 +29,8 @@ jest.mock('@/data/pcic', () => {
   return {
     PCIC_LEVELS: ['B1'],
     PCIC_VIEW_LEVELS: ['B1'],
-    LEVEL_LABELS: { B1: 'Intermediate' },
     pcicItemsForLevel: () => items,
-    pcicItemsForViewLevel: () => items,
     findPcicItem: (id: string) => items.find((i) => i.id === id),
-    isPlusSentence: () => false,
-    realLevelOfView: (level: string) => level,
     setPcicTarget: () => {},
   };
 });

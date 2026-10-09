@@ -1,4 +1,4 @@
-// PLAN-ketiranyu 7. lépés: minden 4. ÚJ szó után mondatkártya a pakli-menetben
+// minden 4. ÚJ szó után mondatkártya a pakli-menetben
 // (felváltva összerakós és begépelős), csak gyakorlás: nem ír SRS-t (K3).
 // Mock-minta: app/(tabs)/__tests__/pcicDirection.test.tsx.
 
@@ -13,7 +13,6 @@ jest.mock('@/lib/speech', () => ({
 jest.mock('expo-router', () => ({
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
     // A teszt ezzel tudja újra "fókuszba hozni" a fület (fülváltás és vissza).
     (globalThis as { __focusCb?: () => void }).__focusCb = cb;
@@ -41,12 +40,8 @@ jest.mock('@/data/pcic', () => {
   return {
     PCIC_LEVELS: ['A1'],
     PCIC_VIEW_LEVELS: ['A1'],
-    LEVEL_LABELS: { A1: 'Beginner' },
     pcicItemsForLevel: () => ITEMS,
-    pcicItemsForViewLevel: () => ITEMS,
     findPcicItem: (id: string) => ITEMS.find((i) => i.id === id),
-    isPlusSentence: () => false,
-    realLevelOfView: (level: string) => level,
     levelOfItem: () => undefined,
     setPcicTarget: () => {},
   };

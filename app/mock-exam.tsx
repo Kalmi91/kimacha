@@ -35,7 +35,7 @@ import {
 import type { MockAnswers, MockExam, MockLevel, MockTaskAnswer } from '@/lib/exam/mock/types';
 import { isExamLearned } from '@/lib/exam/unlock';
 
-// PLAN-vizsga E. szakasz (15-16. lépés, Kálmán 2026-10-01): a próbavizsga képernyője a hivatalos
+// a próbavizsga képernyője a hivatalos
 // felépítéssel. Intro -> papíronként: papír-intro, óra, feladatok (nincs azonnali jelzés) ->
 // eredmény (csoportonként 30 / 50) -> átnézés. A szóbeli ebben a szeletben helyőrző (E2 a).
 // Papíronként mentve (E4 b): egy kész papír válaszai megmaradnak, a félbehagyott papír elölről
@@ -227,7 +227,7 @@ export default function MockExamScreen() {
     setPhase('intro');
   };
 
-  // PLAN-fb1002 6. lépés (FB447): a próbavizsga minden részén ott a 💬; a `part` mondja meg a Feedback sheetben,
+  // a próbavizsga minden részén ott a 💬; a `part` mondja meg a Feedback sheetben,
   // pontosan melyik részről van szó (mock-exam:<szint>:<rész>).
   const pair = `${target === 'es' ? 'en' : 'es'}→${target}`;
   const shell = (children: ReactNode, part?: string) => (
@@ -364,7 +364,7 @@ export default function MockExamScreen() {
         <Text testID="mock-task-counter" style={[styles.counter, { color: colors.textMuted }]}>
           {s.taskOf(taskIdx + 1, paper.tasks.length)}
         </Text>
-        {/* FB491: a görgető is feladatonként újramountol (key), különben az új feladat az előző görgetési
+        {/* a görgető is feladatonként újramountol (key), különben az új feladat az előző görgetési
             helyzetében nyílik: az eleje kicsúszik, a "Next task" gomb pedig ugyanott marad az ujj alatt. */}
         <ScrollView key={task.id} contentContainerStyle={styles.body} keyboardShouldPersistTaps="handled" keyboardDismissMode="on-drag">
           <MockTaskCard

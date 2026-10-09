@@ -1,4 +1,4 @@
-// FB412 (PLAN-fb0929 5. lépés): a helyes mondat a nyelvtani feladatokban is elhangzik,
+// a helyes mondat a nyelvtani feladatokban is elhangzik,
 // jó és rossz válasz után is (a mondatkártyák tesztje: sentenceCards.test.tsx).
 
 jest.mock('@/lib/speech', () => ({

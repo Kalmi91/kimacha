@@ -2,7 +2,7 @@ import type { DB } from '@/lib/database';
 import type { QueuedSm2Card } from '@/lib/pcicSession';
 import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
 
-// FB470 (kártya-szintű folytatás): a Learn-kör ott folytatódik, ahol az app bezárásakor abbamaradt. A sor a
+// Kártya-szintű folytatás: a Learn-kör ott folytatódik, ahol az app bezárásakor abbamaradt. A sor a
 // mentett SRS-állapotból eleve újraépül (az értékelt kártyák mentve vannak); ez a pillanatkép ráteszi az
 // újraépült sorra a SORRENDET (a soron lévő kártya, a rontott kártya helye) és az "again" időzítőket, valamint a
 // "+N új szó" adag csíkjának alapját (batchBase). Nem mentődik: a félig begépelt / felfedett válasz.
@@ -11,7 +11,7 @@ import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
 
 const LEARN_KEY = 'learn';
 
-export interface LearnResume {
+interface LearnResume {
   day: string;
   level: string;
   /** A sor tételei sorrendben, az első a soron lévő kártya. */

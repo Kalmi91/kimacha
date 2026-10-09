@@ -1,6 +1,6 @@
-// PLAN-play 10. lépés: a PCIC haladás szintenkénti elkülönítése (id-előtag
+// a PCIC haladás szintenkénti elkülönítése (id-előtag
 // alapján), amit a szint-választó lap N / total sorai is használnak.
-// PLAN-fb0924 7a. lépés (FB396, D3): a szint-igazítás óta egy item TÉNYLEGES
+// A szint-igazítás óta egy item TÉNYLEGES
 // szintje a betöltött korpuszból jön (levelOfItem), az id-előtag csak
 // tartalék, ha az id nincs a korpuszban (lásd a fixture-tesztek lent).
 
@@ -15,14 +15,14 @@ describe('matchesLevel', () => {
   });
 });
 
-// PLAN-fb0924 7a. lépés kritériuma: "teszt rá, hogy egy mozgatott, már tanult
+// A szint-igazítás kritériuma: "teszt rá, hogy egy mozgatott, már tanult
 // tétel az új szinten a haladásával együtt jelenik meg". A DB-migráció
 // (lib/db/migrations.ts applyPcicLevelMoves) a lib/pcicLevelMoves.ts térkép
 // szerint átnevezi a pcic_cards.item_id oszlopot; ez a teszt a MIGRÁCIÓ UTÁNI
 // állapotot szimulálja (a kártya már az ÚJ id-n van), és azt bizonyítja, hogy
 // onnantól a haladás a helyes (új) szint alatt jelenik meg, nem a réginél.
 describe('a mozgatott szó haladása az új szinten jelenik meg (FB396, 7a)', () => {
-  // FB384 konkrét példája: "morir" A2-ről A1-re mozgott.
+  // A konkrét példa: "morir" A2-ről A1-re mozgott.
   const oldId = 'a2-0bcfdca8';
   const newId = 'a1-46e12f1b';
 

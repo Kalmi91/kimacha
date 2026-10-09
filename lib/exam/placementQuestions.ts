@@ -1,4 +1,4 @@
-// PLAN-vizsga C. szakasz (Kálmán, 2026-10-01, C2 b): a szintfelmérő kérdései. Szót ÉS
+// a szintfelmérő kérdései. Szót ÉS
 // nyelvtant mér: a szó a szint words-open kártyáiból jön (a kérdés a célnyelvi szó, a
 // válasz a kiinduló nyelvű jelentés, négy közül), a nyelvtan a szint nyelvtani leckéinek
 // lyukas-mondat tételeiből (lib/exam/grammarItems.ts), a leckék KÉSZ voltától függetlenül.
@@ -12,7 +12,7 @@ import { gapSourcesForLevel, type GapSource } from './grammarItems';
 
 /** Egy lépcső (5 kérdés) sorrendje: szó, nyelvtan, szó, nyelvtan, szó. */
 export const PLACEMENT_PATTERN = ['word', 'gap', 'word', 'gap', 'word'] as const;
-export type PlacementKind = (typeof PLACEMENT_PATTERN)[number];
+type PlacementKind = (typeof PLACEMENT_PATTERN)[number];
 
 /** Szó-kérdés: a válaszlehetőségek (4) a kiinduló nyelvű jelentések. */
 export interface PlacementWordQuestion {
@@ -112,7 +112,7 @@ function gapQuestion(level: PcicLevel, gap: GapSource, seed: number): PlacementG
   return { kind: 'gap', level, topicId: gap.topicId, itemId: gap.itemId, sentence: gap.sentence, options, correctIndex };
 }
 
-export interface BuildPlacementInput {
+interface BuildPlacementInput {
   level: PcicLevel;
   /** A kérdés helye a lépcsőn belül (0..4): a PLACEMENT_PATTERN dönti el a fajtát. */
   position: number;

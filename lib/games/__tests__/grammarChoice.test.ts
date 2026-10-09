@@ -1,14 +1,14 @@
 import { buildGrammarRound, isChoiceRoundItem, wrongExplanation } from '../grammarChoice';
-import { markAnswerIndex, markTokens } from '../grammarMark';
-import { getGrammarTopics, isLessonV2, isMarkItem, type LegacyLesson } from '../content';
-import legacyFixture from '../../__tests__/fixtures/legacy-lesson.json';
+import { getGrammarTopics, isMarkItem, type GrammarGapItem, type GrammarTopicData } from '../content';
 
-function makeTopic(): LegacyLesson {
+function makeTopic(): GrammarTopicData {
   return {
+    schema: 2,
     topic: 'test-topic',
     level: 'A2',
     title: { hu: 't', en: 't', es: 't', de: 't' },
-    rule: { hu: 'r', en: 'r', es: 'r', de: 'r' },
+    body: [],
+    speak: { hu: 's', en: 's', es: 's', de: 's' },
     items: [
       {
         id: 'i1',
@@ -83,65 +83,19 @@ describe('buildGrammarRound', () => {
 describe('wrongExplanation', () => {
   it('looks up the explanation for a wrong option by its literal text', () => {
     const topic = makeTopic();
-    const item = topic.items[0];
+    const item = topic.items[0] as GrammarGapItem;
     expect(wrongExplanation(item, 'estoy', 'hu')).toBe('x');
     expect(wrongExplanation(item, 'nope', 'hu')).toBeUndefined();
   });
 });
 
-// Q1 content batch (GAMES.md 10., token-burn queue): every authored topic has
-// to be complete, or the game shows a half-explained rule to the learner.
-describe('authored grammar topics are complete (Q1 batch)', () => {
+describe('authored grammar topics', () => {
   const topics = getGrammarTopics('es');
-  // LECKE-SEMA: a ser-estar pilot már LessonV2 (body-blokkok, nincs rule, és
-  // match/form item is van benne); annak saját alakját a lessonSchema.test.ts
-  // ellenőrzi. Ez a leltár a még régi sémán lévő témákra vonatkozik.
-  // Nincs több valódi V1 lecke a korpuszban: a legacy-fixture tartja életben a
-  // régi séma ellenőrzését (a mostani V1 renderelő út még létezik).
-  const legacyTopics = [
-    ...topics.filter((t): t is LegacyLesson => !isLessonV2(t)),
-    legacyFixture as unknown as LegacyLesson,
-  ];
 
   it('offers the A1 topics before the A2 ones', () => {
     expect(topics.length).toBeGreaterThanOrEqual(7);
     const firstA2 = topics.findIndex((t) => t.level === 'A2');
     const lastA1 = topics.map((t) => t.level).lastIndexOf('A1');
     expect(lastA1).toBeLessThan(firstA2);
-  });
-
-  it.each(legacyTopics.map((t) => [t.topic, t] as const))('%s: rule, items and explanations in 4 languages', (_id, topic) => {
-    for (const lang of ['hu', 'en', 'es', 'de']) {
-      expect(topic.title[lang]).toBeTruthy();
-      expect(topic.rule[lang]).toBeTruthy();
-    }
-    expect(topic.items.length).toBeGreaterThanOrEqual(10);
-
-    for (const item of topic.items) {
-      expect(item.examples.length).toBeGreaterThan(0);
-      for (const lang of ['hu', 'en', 'es', 'de']) {
-        expect(item.why[lang]).toBeTruthy();
-      }
-
-      // FB219: a jelölős feladat kész mondatot ad, és a megjelölendő szónak
-      // benne kell lennie, különben a képernyőn nincs helyes válasz.
-      if (isMarkItem(item)) {
-        expect(item.sentence).not.toContain('___');
-        expect(markAnswerIndex(item, markTokens(item.sentence))).toBeGreaterThanOrEqual(0);
-        continue;
-      }
-
-      // Exactly one gap, and a correct index that exists.
-      expect(item.sentence.split('___')).toHaveLength(2);
-      expect(item.options[item.correct]).toBeTruthy();
-      // Every WRONG option must say why it is wrong, in all four languages:
-      // GAMES.md 4.11 promises "miért rossz a többi".
-      for (const option of item.options) {
-        if (option === item.options[item.correct]) continue;
-        for (const lang of ['hu', 'en', 'es', 'de']) {
-          expect(wrongExplanation(item, option, lang)).toBeTruthy();
-        }
-      }
-    }
   });
 });

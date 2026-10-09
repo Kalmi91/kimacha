@@ -1,4 +1,4 @@
-// FB219: the "tap the word class inside the sentence" drill, walked the way a
+// the "tap the word class inside the sentence" drill, walked the way a
 // learner walks it: read the prompt, tap a word, see the verdict.
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
@@ -10,10 +10,12 @@ jest.mock('@/lib/ThemeContext', () => ({
 }));
 
 const topic: GrammarTopicData = {
+  schema: 2,
   topic: 'test-mark',
   level: 'A1',
   title: { hu: 't', en: 't', es: 't', de: 't' },
-  rule: { hu: 'r', en: 'r', es: 'r', de: 'r' },
+  body: [],
+  speak: { hu: 's', en: 's', es: 's', de: 's' },
   items: [
     {
       id: 'm1',

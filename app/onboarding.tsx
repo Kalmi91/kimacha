@@ -8,13 +8,13 @@ import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { getDb } from '@/lib/database';
 import { t, setLanguage } from '@/lib/i18n';
-import { PCIC_VIEW_LEVELS, pcicItemsForLevel, pcicItemsForViewLevel, realLevelOfView, setPcicTarget, type PcicLevel, type PcicTarget } from '@/data/pcic';
+import { PCIC_VIEW_LEVELS, pcicItemsForLevel, setPcicTarget, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import LevelRow from '@/components/LevelRow';
 import PlacementEntry from '@/components/exam/PlacementEntry';
 import { BrutalButton } from '@/components/grammar/Brutal';
 import { OnboardingIntro, OnboardingThemeStep } from '@/components/OnboardingSteps';
 
-// PLAN-ketiranyu 4. lépés (2026-09-28, jóváhagyott vázlat 1-5. pont): az
+// Az
 // onboarding megint irányt kérdez, mint a régi (nem Kimacha Play) ág, de
 // csak a két támogatott párra (lib/languages.ts supportedPairs): angolból
 // tanulsz spanyolul (en→es), vagy spanyolból angolul (es→en). A választás a
@@ -26,7 +26,7 @@ export default function OnboardingScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
-  // NY19: brutalista palettán nagy, nagybetűs, ink színű cím.
+  // brutalista palettán nagy, nagybetűs, ink színű cím.
   const welcomeStyle = [styles.welcome, { color: colors.tint }, g.brutal && [styles.brutalWelcome, { color: g.ink }]];
   const s = t();
   const [step, setStep] = useState<'language' | 'welcome' | 'intro' | 'theme' | 'level'>('language');
@@ -79,7 +79,7 @@ export default function OnboardingScreen() {
     );
   }
 
-  // PLAN-temak 4C: üdvözlés után a bevezető, utána az 5 témás választó, csak aztán a szint.
+  // üdvözlés után a bevezető, utána az 5 témás választó, csak aztán a szint.
   if (step === 'intro') {
     return <OnboardingIntro titleStyle={welcomeStyle} onStart={() => setStep('theme')} />;
   }
@@ -91,14 +91,13 @@ export default function OnboardingScreen() {
   if (step === 'level') {
     // 3. pont: en-es-ben A1/A2/B1 (a meglévő "0 tétel = ne kínáljuk fel"
     // szűrő); es-en-ben csak A1, mindig felkínálva, akkor is, ha még üres (az
-    // 50 angol szó az 5. lépésben jön) - ilyenkor a sor alatt egy mondat mondja ki.
-    // 2026-09-28 review, 2. pont: en-es-ben a választható nézet-szintek
-    // (A1/A2/B1/B2, PLAN-learn-words-open 2. lépés), nem a nyers PCIC_LEVELS.
-    // PLAN-esen: es-en-ben is A1 + A2 van adat, ugyanaz a szűrő mindkét irányra.
-    const levels: PcicLevel[] =
-      PCIC_VIEW_LEVELS.filter((lvl) => pcicItemsForViewLevel(lvl).length > 0).map(realLevelOfView);
-    // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 3. pont): a
-    // feliratok a felület nyelvén (data/pcic.ts LEVEL_LABELS angolra égetve volt).
+    // 50 angol szó később jön) - ilyenkor a sor alatt egy mondat mondja ki.
+    // en-es-ben a választható nézet-szintek
+    // (A1/A2/B1/B2), nem a nyers PCIC_LEVELS.
+    // es-en-ben is A1 + A2 van adat, ugyanaz a szűrő mindkét irányra.
+    const levels: PcicLevel[] = PCIC_VIEW_LEVELS.filter((lvl) => pcicItemsForLevel(lvl).length > 0);
+    // A
+    // feliratok a felület nyelvén (korábban angolra égetve volt).
     const levelLabels: Record<PcicLevel, string> = {
       A1: s.pcic.levelBeginner,
       A2: s.pcic.levelElementary,
@@ -127,7 +126,7 @@ export default function OnboardingScreen() {
             </View>
           );
         })}
-        {/* PLAN-vizsga C. szakasz (C1 a): a szint-sorok alatt halk belépő a szintfelméréshez. */}
+        {/* a szint-sorok alatt halk belépő a szintfelméréshez. */}
         <PlacementEntry onPress={() => router.push('/placement')} />
       </View>
     );
@@ -182,7 +181,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '700',
   },
-  // 3. pont: "még nincs szó" sor az üres A1 alatt (es→en, amíg az 5. lépés nincs kész).
+  // "még nincs szó" sor az üres A1 alatt (es→en, amíg az angol szólista nincs kész).
   noWordsYet: {
     fontSize: 13,
     textAlign: 'center',

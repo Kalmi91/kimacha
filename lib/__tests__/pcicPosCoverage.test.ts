@@ -1,8 +1,8 @@
-// PLAN-fb0923 2. lepes (FB361-362), or-teszt: A1-B2 minden word/phrase
+// Or-teszt: A1-B2 minden word/phrase
 // tetelnek van szofaja, es sentence/pattern tetelnek sose.
-// PLAN-regi-szavak-ki 5. lepes: a posOf lemma-indexe a data/words-open, ezert a
+// A posOf lemma-indexe a data/words-open, ezert a
 // teszt az elo pakli (data/pcic.ts, en->es irany) tetelein fut a korabbi nyers
-// PCIC-json helyett. FB482: a words-open det/interj szofaja (20 det + 6 interj, pl.
+// PCIC-json helyett. A words-open det/interj szofaja (20 det + 6 interj, pl.
 // "este", "hola", "adiós") is chipet kap, nincs kivetel.
 import { posOf } from '../pcicPos';
 import { PCIC_LEVELS, pcicItemsForLevel, setPcicTarget } from '../../data/pcic';
@@ -42,9 +42,9 @@ describe('posOf lefedettseg (FB361-362)', () => {
     });
   }
 
-  it('sentence/pattern tetelre sose jar chip', () => {
+  it('sentence tetelre sose jar chip', () => {
     const withChip = OPEN_CARDS.filter(
-      (c) => c.sentence_es && (posOf({ es: c.sentence_es, kind: 'sentence' }) !== null || posOf({ es: c.sentence_es, kind: 'pattern' }) !== null),
+      (c) => c.sentence_es && posOf({ es: c.sentence_es, kind: 'sentence' }) !== null,
     ).map((c) => c.order);
     expect(withChip).toEqual([]);
   });

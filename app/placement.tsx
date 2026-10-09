@@ -9,7 +9,7 @@ import { getPcicTarget, pcicItemsForLevel, type PcicLevel, type PcicTarget } fro
 import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
-import { levelProgressView } from '@/lib/pcicLevels';
+import { levelProgress } from '@/lib/pcicLevels';
 import type { Sm2Card } from '@/lib/sm2';
 import { Card } from '@/components/grammar/Brutal';
 import LevelRow from '@/components/LevelRow';
@@ -28,7 +28,7 @@ import {
   type PlacementQuestion,
 } from '@/lib/exam/placementQuestions';
 
-// PLAN-vizsga C. szakasz (Kálmán, 2026-10-01, C1 a + C2 b + C3 b + C4 a): az adaptív szintfelmérő
+// az adaptív szintfelmérő
 // képernyője. A belépő az onboarding szint-lépésén és a szintválasztó lapon van; ide a kérdések
 // jönnek rögtön (lépcsős, A2-ről indul, legfeljebb 20), visszajelzés nélkül; a végén javasolt kezdő
 // szint, ami felülírható. A helyes szavak graduálódnak (lib/exam/placementKnown.ts), a szintet a
@@ -137,7 +137,7 @@ export default function PlacementScreen() {
     router.back();
   };
 
-  // FB447: a szintfelmérő minden részén ott a 💬; a `part` mondja meg a Feedback sheetben, pontosan
+  // a szintfelmérő minden részén ott a 💬; a `part` mondja meg a Feedback sheetben, pontosan
   // melyik részről van szó (placement:<rész>).
   const fbTarget = run?.target ?? getPcicTarget();
   const pair = `${fbTarget === 'es' ? 'en' : 'es'}→${fbTarget}`;
@@ -194,7 +194,7 @@ export default function PlacementScreen() {
                 key={level}
                 level={level}
                 label={levelLabels[level]}
-                introduced={levelProgressView(cards, level, total).introduced}
+                introduced={levelProgress(cards, level, total).introduced}
                 total={total}
                 active={level === placed}
                 colors={colors}
@@ -253,7 +253,6 @@ export default function PlacementScreen() {
 const styles = StyleSheet.create({
   screen: { flex: 1, paddingTop: spacing.xl },
   flex: { flex: 1 },
-  centered: { flex: 1 },
   body: { padding: spacing.lg, paddingBottom: FAB_CLEARANCE, gap: spacing.md },
   card: { borderRadius: radius.lg, padding: spacing.lg, gap: spacing.md },
   brutalCard: { padding: spacing.lg, gap: spacing.md },

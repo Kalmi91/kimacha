@@ -12,7 +12,7 @@
  *    that level's topic list.
  *  - cross-level dedup: one English headword (normalized `en`) is taught in exactly
  *    one level+topic (so A2 can't re-teach an A0/A1 word).
- *  - R11-R14 (PLAN-tobbjelentes.md 2. lépés, scripts/multi-meaning-rules.mjs): `es` question on 2+ cards
+ *  - R11-R14 (scripts/multi-meaning-rules.mjs): `es` question on 2+ cards
  *    needs `hint_es`; hint format; hint only on such cards; slash-separated `en` answers well-formed.
  *
  * Run: node scripts/validate-en-track.mjs   (exit 1 on any violation, build gate)

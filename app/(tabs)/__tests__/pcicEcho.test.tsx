@@ -1,4 +1,4 @@
-// PLAN-learn-words-open 5a: helyes válasz után a szó csak egyszer látszik (a
+// helyes válasz után a szó csak egyszer látszik (a
 // rózsaszín sor a hangszóróval), a zöld visszhang (diff-sor) kimarad. Ha a beírt
 // válasz eltér (rossz, vagy ékezet nélkül elfogadott), mindkét sor megmarad.
 // Mock-minta: pcicBrutal.test.tsx.
@@ -13,7 +13,6 @@ jest.mock('@/lib/speech', () => ({
 jest.mock('expo-router', () => ({
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
   },
 }));
@@ -26,12 +25,8 @@ const FIXTURE_ITEM = { id: 'b1-x1', es: 'está', en: 'is', kind: 'word' as const
 jest.mock('@/data/pcic', () => ({
   PCIC_LEVELS: ['B1'],
   PCIC_VIEW_LEVELS: ['B1'],
-  LEVEL_LABELS: { B1: 'Intermediate' },
   pcicItemsForLevel: () => [FIXTURE_ITEM],
-  pcicItemsForViewLevel: () => [FIXTURE_ITEM],
   findPcicItem: (id: string) => (id === 'b1-x1' ? FIXTURE_ITEM : undefined),
-  isPlusSentence: () => false,
-  realLevelOfView: (level: string) => level,
   setPcicTarget: () => {},
 }));
 
@@ -89,7 +84,7 @@ describe('PCIC felfedés: a helyes válasz csak egyszer látszik (5a)', () => {
     view.unmount();
   });
 
-  // FB460 ("Not quite!" és a rontott szó közé kis hely): a jelvény alatt a beírt szó sora nem ér hozzá.
+  // User feedback ("Not quite!" és a rontott szó közé kis hely): a jelvény alatt a beírt szó sora nem ér hozzá.
   it('rossz válasz: a "Not quite!" jelvény és a beírt (rontott) szó között rés van (FB460)', async () => {
     const view = await revealWith('xyz');
     const gap = StyleSheet.flatten(view.getByTestId('pcic-diff-line').props.style).marginTop ?? 0;

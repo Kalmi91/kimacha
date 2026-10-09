@@ -1,4 +1,4 @@
-// PLAN-fb0929 7. lépés (D1): hibakereső / szórend / diktálás, csak a ser-estar és a negacion leckében, trial jelöléssel.
+// hibakereső / szórend / diktálás, csak a ser-estar és a negacion leckében, trial jelöléssel.
 import { grammarKindCounts, isTrialItem } from '@/lib/games/content';
 import { buildGrammarRound, grammarRoundItemKind } from '@/lib/games/grammarChoice';
 import { lessonFor, lessonHasTrial, lessonKinds, scoredKinds } from '../syllabus';

@@ -21,8 +21,8 @@ import {
   type SchedulePreview,
   type ScheduleBucketKey,
 } from '@/lib/schedulePreview';
-import { PCIC_VIEW_LEVELS, pcicItemsForViewLevel, type PcicViewLevel } from '@/data/pcic';
-import { cardsForViewLevel } from '@/lib/pcicLevels';
+import { PCIC_VIEW_LEVELS, pcicItemsForLevel, type PcicLevel } from '@/data/pcic';
+import { cardsForLevel } from '@/lib/pcicLevels';
 import { countKnown, countGraduated, countLearned } from '@/lib/pcicStats';
 import { countDoneToday } from '@/lib/pcicSession';
 import FeedbackButton from '@/components/FeedbackModal';
@@ -52,7 +52,7 @@ export default function StatsScreen() {
   const router = useRouter();
   const [usage, setUsage] = useState<UsageStats>(EMPTY_STATS);
   const [streak, setStreak] = useState(0);
-  // PLAN-play 12. lépés (s5): "known" = interval >= 21 nap, globálisan (a 4
+  // "known" = interval >= 21 nap, globálisan (a 4
   // PCIC szint összesítve); "graduated" = túljutott a tanuló-lépéseken
   // (state 'review'), a küszöb alatt is (lib/pcicStats.ts).
   const [known, setKnown] = useState(0);
@@ -60,19 +60,19 @@ export default function StatsScreen() {
   const [reviewsToday, setReviewsToday] = useState(0);
   const [weeklyGoal, setWeeklyGoal] = useState(DEFAULT_WEEKLY_GOAL_MINUTES);
   const [schedule, setSchedule] = useState<SchedulePreview>(EMPTY_SCHEDULE);
-  // PLAN-play 12. lépés: a régi FSRS-szint (A0-C2) helyett a PCIC-szint
+  // a régi FSRS-szint (A0-C2) helyett a PCIC-szint
   // (A1-B2), amit a PCIC fül szint-választója állít.
-  const [pcicLevel, setPcicLevel] = useState<PcicViewLevel>('B1');
+  const [pcicLevel, setPcicLevel] = useState<PcicLevel>('B1');
   const [levelKnown, setLevelKnown] = useState(0);
   const [levelTotal, setLevelTotal] = useState(0);
-  const [otherLevels, setOtherLevels] = useState<{ level: PcicViewLevel; known: number }[]>([]);
+  const [otherLevels, setOtherLevels] = useState<{ level: PcicLevel; known: number }[]>([]);
   const [targetLang, setTargetLang] = useState('es');
   const [sourceLang, setSourceLang] = useState('en');
-  // PLAN-vizsga E1 a: a próbavizsga kártya szintjei (irányfüggő) és a mentett eredmények.
+  // a próbavizsga kártya szintjei (irányfüggő) és a mentett eredmények.
   const [mockLevels, setMockLevels] = useState<readonly MockLevel[]>(MOCK_LEVELS.es);
   const [mockOverview, setMockOverview] = useState<MockOverview>({});
   const [mockOfficial, setMockOfficial] = useState(true);
-  // FB254: a napi oszlop 60 perc fölött órában áll, koppintásra percre vált.
+  // a napi oszlop 60 perc fölött órában áll, koppintásra percre vált.
   const [chartInMinutes, setChartInMinutes] = useState(false);
 
   // Refresh every time the tab gains focus so numbers stay current across app-wide activity.
@@ -90,7 +90,7 @@ export default function StatsScreen() {
         setMockOfficial(mockTarget === 'es');
         readMockOverview(db, mockTarget, MOCK_LEVELS[mockTarget]).then(setMockOverview);
       });
-      // PLAN-play 12. lépés (s5): minden PCIC-számítás egyetlen getPcicCards()
+      // minden PCIC-számítás egyetlen getPcicCards()
       // hívásból (mint a PCIC fülön), a szűrés/összegzés tiszta függvényekben.
       db.getPcicLevel().then(async lvl => {
         setPcicLevel(lvl);
@@ -99,12 +99,12 @@ export default function StatsScreen() {
         setReviewsToday(countDoneToday(cards, today));
         setKnown(countKnown(cards));
         setGraduated(countGraduated(cards));
-        const selCards = cardsForViewLevel(cards, lvl);
-        // FB406: a kártya a tanult szavakat számolja (nem a 21 napos küszöböt elért kevés szót).
+        const selCards = cardsForLevel(cards, lvl);
+        // a kártya a tanult szavakat számolja (nem a 21 napos küszöböt elért kevés szót).
         setLevelKnown(countLearned(selCards));
-        setLevelTotal(pcicItemsForViewLevel(lvl).length);
-        setOtherLevels(PCIC_VIEW_LEVELS.filter(l => pcicItemsForViewLevel(l).length > 0).map(l => ({ level: l, known: countLearned(cardsForViewLevel(cards, l)) })));
-        // FB100 minta, PCIC-dátumokra: a bare 'YYYY-MM-DD' due-t helyi éjfélre
+        setLevelTotal(pcicItemsForLevel(lvl).length);
+        setOtherLevels(PCIC_VIEW_LEVELS.filter(l => pcicItemsForLevel(l).length > 0).map(l => ({ level: l, known: countLearned(cardsForLevel(cards, l)) })));
+        // minta, PCIC-dátumokra: a bare 'YYYY-MM-DD' due-t helyi éjfélre
         // egészíti ki, különben `new Date('YYYY-MM-DD')` UTC-éjfélt parseol, és
         // negatív UTC-eltolású zónában (pl. CDMX) egy nappal korábbra csúszna.
         const dueDates = selCards.filter(c => c.due).map(c => `${c.due}T00:00:00`);
@@ -117,7 +117,7 @@ export default function StatsScreen() {
   const sourceLangInfo = languages.find(l => l.code === sourceLang);
 
   const g = useGrammarColors();
-  // NY19: brutalista palettán a nagy számok tintával, 500 súllyal (az a / b szín a papíron olvashatatlan lehet).
+  // brutalista palettán a nagy számok tintával, 500 súllyal (az a / b szín a papíron olvashatatlan lehet).
   const tileValueStyle = (c: string) => [styles.tileValue, g.brutal ? { color: g.ink, fontWeight: '500' as const } : { color: c }];
   const maxMinutes = Math.max(1, ...usage.last7Days.map(d => d.minutes));
   const hasChartData = usage.last7Days.some(d => d.minutes > 0);
@@ -140,7 +140,7 @@ export default function StatsScreen() {
     later: s.stats.scheduleLater,
   };
 
-  // FB100: "mikor frissül" in the learner's own words: a clock time while the
+  // "mikor frissül" in the learner's own words: a clock time while the
   // next card is close, a day count once it is further out.
   const nextRefreshLabel = (iso: string) => {
     const due = new Date(iso);
@@ -162,7 +162,7 @@ export default function StatsScreen() {
       <ScrollView style={styles.container} contentContainerStyle={[styles.content, g.brutal && styles.brutalContent]}>
         <Text variant="title" style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.stats.title}</Text>
 
-      {/* PLAN-play 12. lépés (s5): a PCIC-szint jelvénye + known/total (interval
+      {/* a PCIC-szint jelvénye + known/total (interval
           >= 21 nap), alatta a másik 3 PCIC-szint known-száma. */}
       <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }]}>{s.progress.wordsKnown}</Text>
       <Card classicStyle={styles.levelCard} style={styles.gapBottom}>
@@ -178,7 +178,7 @@ export default function StatsScreen() {
             {s.header.levelProgress(levelKnown, levelTotal)}
           </Text>
         </View>
-        {/* FB283: no gem grid here, just which language we learn from and to;
+        {/* no gem grid here, just which language we learn from and to;
             the count above says how many words the level has and how many stuck. */}
         <Text style={[styles.levelCardPair, { color: colors.tabIconDefault }]}>
           {sourceLangInfo?.flag ?? ''} {sourceLangInfo?.name ?? sourceLang} → {targetLangInfo?.flag ?? ''}{' '}
@@ -198,7 +198,7 @@ export default function StatsScreen() {
 
       <View style={styles.tileRow}>
         <Card style={styles.tile} classicStyle={styles.tileClassic} boxStyle={styles.tileBox}>
-          {/* FB72: spell out the unit, a bare number left it unclear that
+          {/* spell out the unit, a bare number left it unclear that
               today's app time is counted in minutes. */}
           <Text style={tileValueStyle(colors.tint)}>{s.stats.minutes(usage.today)}</Text>
           <Text style={[styles.tileLabel, { color: colors.tabIconDefault }]}>{s.stats.today}</Text>
@@ -228,7 +228,7 @@ export default function StatsScreen() {
         </Card>
       )}
 
-      {/* FB65: weekly goal, the rolling 7-day total measured against the target
+      {/* weekly goal, the rolling 7-day total measured against the target
           set in Settings, with an explicit warning while it's still short. */}
       <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }]}>{s.stats.weeklyGoal}</Text>
       <Card classicStyle={styles.goalCard} boxStyle={styles.goalBox} style={styles.goalOuter}>
@@ -247,7 +247,7 @@ export default function StatsScreen() {
           />
         </View>
         )}
-        {/* FB147: a reached goal is the celebration, not a footnote, so it gets
+        {/* a reached goal is the celebration, not a footnote, so it gets
             the trophy and the big type. */}
         {goal.behind ? (
           <Text style={[styles.goalStatus, { color: legibleOn('#EAB308', colors.card) }]}>{s.stats.goalBehind(hours(goal.remaining))}</Text>
@@ -311,7 +311,7 @@ export default function StatsScreen() {
         </Card>
       </View>
 
-      {/* FB100: where the words went, how many wait now and how many sit in
+      {/* where the words went, how many wait now and how many sit in
           each distance bucket, plus the moment the queue next refills. */}
       <Text style={[styles.sectionLabel, { color: colors.tabIconDefault, marginTop: 24 }]}>
         {s.stats.schedule}
@@ -344,7 +344,7 @@ export default function StatsScreen() {
       )}
       </ScrollView>
 
-      {/* FB282: a gomb a ScrollView-n KÍVÜL lebeg, mint a settings fülön, nem a
+      {/* a gomb a ScrollView-n KÍVÜL lebeg, mint a settings fülön, nem a
           lista aljára ragadva. */}
       <FeedbackButton level="-" languagePair="-" currentCard="stats-tab" draggable />
     </View>
@@ -379,7 +379,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     alignItems: 'center',
   },
-  // NY19: brutalista doboz belseje.
+  // brutalista doboz belseje.
   tileBox: { paddingVertical: 14, paddingHorizontal: 12, alignItems: 'center' },
   gapBottom: { marginBottom: 20 },
   goalOuter: { marginBottom: 24 },
@@ -400,7 +400,7 @@ const styles = StyleSheet.create({
     marginTop: 4,
     textAlign: 'center',
   },
-  // UTEMEZO 6. szakasz: szint-badge + know/total + ProgressMeter kartya.
+  // szint-badge + know/total kartya.
   levelCard: {
     borderRadius: 14,
     padding: 16,
@@ -430,7 +430,7 @@ const styles = StyleSheet.create({
     fontSize: 13,
     marginTop: 6,
   },
-  // PLAN-play 12. lépés (s5): a másik 3 PCIC-szint known-száma, a pár-sor alatt.
+  // a másik 3 PCIC-szint known-száma, a pár-sor alatt.
   levelCardOthers: {
     fontSize: 12,
     marginTop: 8,
@@ -452,7 +452,7 @@ const styles = StyleSheet.create({
     letterSpacing: 0.5,
     marginBottom: 12,
   },
-  // FB65: weekly-goal card, value + progress bar + behind/reached status.
+  // weekly-goal card, value + progress bar + behind/reached status.
   goalCard: {
     borderRadius: 12,
     padding: 16,
@@ -482,7 +482,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     marginBottom: 20,
   },
-  // FB100: schedule card, one row per distance bucket + a footer summary.
+  // schedule card, one row per distance bucket + a footer summary.
   scheduleCard: {
     borderRadius: 12,
     padding: 16,

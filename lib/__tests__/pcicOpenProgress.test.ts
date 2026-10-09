@@ -1,11 +1,11 @@
-// PLAN-learn-words-open 3. lépés: az en→es pakli a data/words-open-re váltott
+// az en→es pakli a data/words-open-re váltott
 // (o<order> id-tér). A régi w<id> SRS-sorok a pcic_cards táblában maradnak
 // (a haladás nem vész el), csak a betöltött korpuszban nincsenek, ezért egyik
 // szint nézetében sem jelennek meg. Memory (web) DB, mint lib/__tests__/pcicDb.test.ts.
 
 import { findPcicItem } from '@/data/pcic';
 import { getDb } from '../database.web';
-import { cardsForLevel, cardsForViewLevel } from '../pcicLevels';
+import { cardsForLevel } from '../pcicLevels';
 import { dropOrphanCards } from '../pcicSession';
 import { sm2NewCard } from '../sm2';
 
@@ -34,7 +34,7 @@ describe('régi w<id> haladás a words-open váltás után (PLAN-learn-words-ope
     const cards = await db.getPcicCards();
     expect(cards.find((c) => c.itemId === 'w7')).toEqual(oldCard);
     expect(cards.find((c) => c.itemId === 'o12')).toBeUndefined();
-    expect((await db.getPcicStats('2026-10-01')).total).toBe(1);
+    expect(cards).toHaveLength(1);
   });
 
   it('a memóriás szűrés (dropOrphanCards, szint-nézetek) nem nyúl a DB-hez: w7 sehol nem jelenik meg, de megvan', async () => {
@@ -43,7 +43,7 @@ describe('régi w<id> haladás a words-open váltás után (PLAN-learn-words-ope
     expect(findPcicItem('w7')).toBeUndefined();
     expect(dropOrphanCards(cards, (id) => findPcicItem(id) !== undefined).map((c) => c.itemId)).toEqual(['o12']);
     for (const view of ['A1', 'A2', 'B1', 'B2'] as const) {
-      expect(cardsForViewLevel(cards, view).map((c) => c.itemId)).toEqual(view === 'A1' ? ['o12'] : []);
+      expect(cardsForLevel(cards, view).map((c) => c.itemId)).toEqual(view === 'A1' ? ['o12'] : []);
     }
 
     expect((await db.getPcicCards()).map((c) => c.itemId).sort()).toEqual(['o12', 'w7']);

@@ -1,10 +1,10 @@
-// FB219: a „jelöld meg a mondatban" feladat mondat-oldali logikája. A képernyő
+// a „jelöld meg a mondatban" feladat mondat-oldali logikája. A képernyő
 // csak rajzol; a tokenizálás és a találat-eldöntés itt él, hogy teszttel
 // bizonyítható legyen (ugyanaz a séma, mint a grammarChoice round-építésénél).
 
 import type { GrammarMarkItem } from './content';
 
-export interface MarkToken {
+interface MarkToken {
   /** A megjelenítendő darab, szóköz nélkül. */
   text: string;
   /** Szó-e (koppintható), vagy írásjel/szóköz. */

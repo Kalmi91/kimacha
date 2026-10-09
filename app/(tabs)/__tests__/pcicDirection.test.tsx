@@ -1,4 +1,4 @@
-// PLAN-ketiranyu 4. lépés (2026-09-28): a PCIC fül irány-tudatos lett. Ez a
+// a PCIC fül irány-tudatos lett. Ez a
 // teszt az es→en irányt fedi: a prompt a kiinduló (spanyol) mező, a válasz
 // (bírálás + felolvasás) a célnyelvi (angol) mező - a pcicSpeak.test.tsx
 // en→es esetének tükörképe. Mock-minta: app/(tabs)/__tests__/pcicSpeak.test.tsx.
@@ -13,7 +13,6 @@ jest.mock('@/lib/speech', () => ({
 jest.mock('expo-router', () => ({
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
   },
 }));
@@ -28,12 +27,8 @@ const FIXTURE_ITEM = { id: 'a1-x1', es: 'vida', en: 'life', kind: 'word' as cons
 jest.mock('@/data/pcic', () => ({
   PCIC_LEVELS: ['A1'],
   PCIC_VIEW_LEVELS: ['A1'],
-  LEVEL_LABELS: { A1: 'Beginner' },
   pcicItemsForLevel: () => [FIXTURE_ITEM],
-  pcicItemsForViewLevel: () => [FIXTURE_ITEM],
   findPcicItem: (id: string) => (id === 'a1-x1' ? FIXTURE_ITEM : undefined),
-  isPlusSentence: () => false,
-  realLevelOfView: (level: string) => level,
   setPcicTarget: () => {},
 }));
 
@@ -80,7 +75,7 @@ describe('PCIC fül: es→en irány (PLAN-ketiranyu 4. lépés)', () => {
     expect(mockSpeak).toHaveBeenCalledWith('life', 'en-US');
   });
 
-  // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 2. pont): egy
+  // Egy
   // frissen váltott irányban, ahol még sose választottak szintet
   // (db.hasPcicLevel() false), a főfül magától felnyitja a szint-választó
   // lapot, ahelyett hogy csendben a fallback szintre ugorna.

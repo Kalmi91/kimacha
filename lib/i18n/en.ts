@@ -1,11 +1,11 @@
 export default {
   onboarding: {
     welcome: 'Welcome to Kimacha! Thank you for using the app, it means a lot.',
-    // Kimacha Play: single en-es pair (Kálmán, 2026-09-22), no more language
+    // Kimacha Play: single en-es pair, no more language
     // picker here, just a way to start the course.
     start: 'Get Started',
   },
-  // PLAN-temak 4C: the intro step after the welcome, and the theme step after it.
+  // the intro step after the welcome, and the theme step after it.
   intro: {
     title: 'How it works',
     start: "Let's start",
@@ -26,7 +26,7 @@ export default {
     later: 'Later you can pick from 24 in Settings.',
     next: 'Continue',
   },
-  // Play-vágás 7. lépés: the flashcard-review keys (word/sentence prompts,
+  // Play-vágás: the flashcard-review keys (word/sentence prompts,
   // typing, skip, borrowed-from-topic, new/review tags, spelling-tap hint)
   // are gone with the Learn tab (step 3); correct/wrong/check still label the
   // PCIC screen's feedback.
@@ -36,7 +36,7 @@ export default {
     wrong: 'Wrong',
     next: 'Next',
     typeSentence: 'Type the sentence',
-    // PLAN-fb1001 K4: a válasz-beírómező szürke placeholdere, a célnyelv nevével.
+    // a válasz-beírómező szürke placeholdere, a célnyelv nevével.
     typeIn: (lang: string): string => (lang === 'es' ? 'Type in Spanish' : 'Type in English'),
   },
   done: {
@@ -48,14 +48,13 @@ export default {
     settings: 'Settings',
     grammar: 'Grammar',
     stats: 'Stats',
-    pcic: 'PCIC',
+    pcic: 'Learn',
   },
   // K33 (play-vágás, 2026-09-22): a Game/Talk fülek kikerültek, ez a
   // namespace csak a components/grammar/GrammarDrill.tsx feedback- és
   // mark-item-feliratait tartja meg (a hub/confusables/myth/… kulcsok mentek).
   games: {
     understood: 'Got it',
-    moreLabel: 'More',
     correctFeedback: 'Correct!',
     wrongFeedback: 'Not quite!',
     grammarChoice: {
@@ -71,7 +70,7 @@ export default {
         preposition: 'PREPOSITION',
       } as Record<string, string>,
       markWrong: 'Not this one. Look for the word that plays that role.',
-      // FB376: a `why` drill kérdés-sora, ha az itemnek van `target` mezője
+      // a `why` drill kérdés-sora, ha az itemnek van `target` mezője
       // (a kiemelt szó/szerkezet, amire a kérdés vonatkozik).
       whyQuestion: (target: string) => `Why «${target}»?`,
     },
@@ -87,16 +86,16 @@ export default {
     corePlusTag: 'core+',
     started: 'started',
     notStarted: 'new',
-    // NY21: brutalist course list.
+    // brutalist course list.
     doneTag: 'done',
     continueTag: 'continue →',
     weeklyGoalTitle: 'Weekly goal',
     weeklyGoalValue: (done: string, goal: string) => `${done} h / ${goal} h`,
-    // NY22: brutalist drill.
+    // brutalist drill.
     comboLabel: (n: number) => `combo x${n}`,
     perfect: 'perfect!',
     nextArrow: 'next →',
-    // NY24: brutalist round end.
+    // brutalist round end.
     statCorrect: 'correct',
     statTime: 'time',
     statStreak: 'streak',
@@ -107,12 +106,11 @@ export default {
     footNote: 'The whole grammar of the language, A1 to C1, in teaching order. Lessons marked "coming" are planned, not written yet.',
     ruleLabel: 'The rule',
     examplesLabel: 'Examples',
-    exceptionsLabel: 'Exceptions and edge cases',
-    // D3 (FB290, 2026-09-17): one button per kind instead of `startDrill` (all at once).
+    // one button per kind instead of `startDrill` (all at once).
     startChoice: (n: number) => `Sentences (${n})`,
     startMatch: (n: number) => `Matching (${n})`,
     startForm: (n: number) => `Forms (${n})`,
-    // TASK-8 (D4, FB288): "why this sentence" drill kind start button.
+    // "why this sentence" drill kind start button.
     startWhy: (n: number) => `Why? (${n})`,
     backToRule: 'Read the rule again',
     practiceAgain: 'Practice again',
@@ -120,16 +118,16 @@ export default {
     backToSyllabus: 'Back to the course',
     doneGood: 'That rule is sitting well.',
     doneAgain: 'Worth reading the rule once more before the next one.',
-    // FB216: kevert nyelvű felolvasás a lecke-szövegre.
+    // kevert nyelvű felolvasás a lecke-szövegre.
     readAloud: 'Read aloud',
-    // LECKE-SEMA 2.1-2.2: match/form feladat-fajták.
+    // match/form feladat-fajták.
     matchHint: 'Match the words',
     formHint: 'Type the correct form',
     showTable: 'Table',
     check: 'Check',
-    // NY3 (NYELVTAN.md "Első szelet"): tense rewrite drill.
+    // tense rewrite drill.
     startTransform: (n: number) => `Rewrite (${n})`,
-    // FB316 (NYELVTAN.md NY10): sentence-rewrite drill in rounds of 10 on big lessons.
+    // sentence-rewrite drill in rounds of 10 on big lessons.
     startTransformRound: (n: number, total: number) => `Sentence rewrite (${n} of ${total})`,
     moreRound: (n: number) => `${n} more`,
     rewriteTo: (tense: string) => `Rewrite in the ${tense}`,
@@ -138,24 +136,21 @@ export default {
     correctAnswer: 'Correct answer',
     next: 'Next',
     accentHint: 'Accepted without accents, missing accents are shown',
-    // FB328: cumulative correct-answer rate, on the syllabus list and the done screen.
+    // cumulative correct-answer rate, on the syllabus list and the done screen.
     lessonPercent: (n: number) => `So far: ${n}% correct`,
-    // PLAN-play 13. lépés: the table-deck button, only on lessons that have a
+    // the table-deck button, only on lessons that have a
     // conjugation table (lib/grammar/tableDeck.ts).
     practiceTable: (n: number) => `Practice the table · ${n} cells`,
-    // FB375 (PLAN-fb0923 6. lépés): the word-deck button, only on table-less
+    // the word-deck button, only on table-less
     // lessons with >= 8 word cards (lib/grammar/tableDeck.ts wordCellsForLesson).
     practiceWords: (n: number) => `Practice the words · ${n} cards`,
-    // PLAN-ketiranyu 4. lépés: es→en irányban a Grammar fül még nem tanít
-    // angol nyelvtant, csak ezt az egy sort mutatja a lecke-lista helyett.
-    enComingSoon: 'English grammar lessons are coming later.',
-    // FB416: a saját válasz a helyes fölött a hibás ragozásnál (AnswerCompare).
+    // a saját válasz a helyes fölött a hibás ragozásnál (AnswerCompare).
     yourAnswer: 'Your answer',
-    // FB421: a félbehagyott feladat sora a gomb alatt, pl. "3/10 · 30%".
+    // a félbehagyott feladat sora a gomb alatt, pl. "3/10 · 30%".
     runProgress: (done: number, total: number, pct: number) => `${done}/${total} · ${pct}%`,
-    // FB419: az el / la névelő-választó feladat gombja (csak ott, ahol van ilyen készlet).
+    // az el / la névelő-választó feladat gombja (csak ott, ahol van ilyen készlet).
     startArticle: (n: number) => `El or la? (${n})`,
-    // PLAN-fb0929 7. lépés (D1): ideiglenes, új feladat-fajták (hibakereső, szórend, diktálás).
+    // ideiglenes, új feladat-fajták (hibakereső, szórend, diktálás).
     trialBadge: 'NEW · TEST',
     startSpot: (n: number) => `Spot the mistake (${n})`,
     startOrder: (n: number) => `Word order (${n})`,
@@ -170,27 +165,24 @@ export default {
     dictationSlow: 'Slower',
   },
   settings: {
-    // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 3. pont):
     // a téma-választó gombok (korábban settings.tsx-ben angolra égetve).
     themeAuto: 'Auto',
     themeLight: 'Light',
     themeDark: 'Dark',
-    // NY12: the color-palette picker below the theme buttons.
-    paletteTitle: 'Colors',
+    // the color-palette picker below the theme buttons.
     paletteElectric: 'Electric blue',
     paletteLime: 'Lime + pink',
     paletteBrand: 'Kimacha',
     paletteCyan: 'Cyan + violet',
     paletteOrange: 'Orange + teal',
-    paletteClassic: 'Classic',
-    // PLAN-temak 4D: the theme grid (app/themes.tsx), My mix (app/theme-mix.tsx) and the theme decor texts.
+    // the theme grid (app/themes.tsx), My mix (app/theme-mix.tsx) and the theme decor texts.
     themes: {
       title: 'Themes',
       oneLook: 'This theme has one look.',
       posterSlogan: 'LEARN, LEARN, LEARN!',
       sample: 'el carro',
       know: 'I know',
-      // PLAN-temak 6E: the E1 theme decor texts (senior, retro95, y2k, gamer).
+      // the E1 theme decor texts (senior, retro95, y2k, gamer).
       readAloud: 'Read aloud',
       retroTitle: 'kimacha.exe',
       newWord: 'new word',
@@ -215,27 +207,27 @@ export default {
     strictAccentsHint: 'A missing accent (á, é, ñ) is a mistake when typing.',
     articlePicker: 'Article buttons',
     articlePickerHint: 'On Spanish noun cards you pick el/la/los/las instead of typing it. ⊘ means no article.',
-    // FB364 (PLAN-fb0923 5. lépés): a PCIC "again" kártya visszatérési ideje.
+    // a PCIC "again" kártya visszatérési ideje.
     missedWordDelay: 'Missed word comes back after',
     missedWordDelaySeconds: (n: string) => `${n} s`,
-    // PLAN-ketiranyu 4. lépés: a tanulási irány váltó sora + a hozzá tartozó
+    // a tanulási irány váltó sora + a hozzá tartozó
     // lap (Settings, a Backup sor fölött).
     learningDirection: 'Learning direction',
     chooseDirection: 'Choose learning direction',
     directionEnEs: 'English → Spanish',
     directionEsEn: 'Spanish → English',
     credits: 'Credits',
-    // PLAN-fb1001 7. lépés (FB431): a nyelvtan-haladás nullázó sora és megerősítése.
+    // a nyelvtan-haladás nullázó sora és megerősítése.
     resetGrammar: '🗑️ Reset grammar progress',
     resetGrammarTitle: 'Reset grammar progress',
     resetGrammarMessage: 'This clears all grammar lesson and practice progress. Are you sure?',
-    // PLAN-fb1002 5. lépés (FB446): az újrakezdő sorok egy lenyíló szekcióban.
+    // az újrakezdő sorok egy lenyíló szekcióban.
     resetSection: '🗑️ Restart progress',
-    // PLAN-vizsga A. szakasz 2. lépés: a __DEV__-only vizsga-vezérlő (csak fejlesztői buildben látszik).
+    // a __DEV__-only vizsga-vezérlő (csak fejlesztői buildben látszik).
     devSeedExamA1: 'DEV: set up the exam state (A1-B2)',
     devSeedExamA1Done: 'DEV: exam state is set (A1-B2), open the level sheet',
   },
-  // PLAN-temak 2A: theme (skin) names and group names for the Settings theme grid.
+  // theme (skin) names and group names for the Settings theme grid.
   skins: {
     names: {
       brutal: 'Neo-brutal',
@@ -283,7 +275,7 @@ export default {
     exportError: 'The backup could not be created.',
     importError: 'Invalid or corrupted backup file. Your data was not changed.',
   },
-  // PLAN-hibaim.md: the "Hibáim" import (Settings), report and practice deck.
+  // the "Hibáim" import (Settings), report and practice deck.
   mistakes: {
     load: '📥 Load my mistakes',
     loaded: (sentences: number, words: number, drills: number) =>
@@ -305,14 +297,14 @@ export default {
   progress: {
     wordsKnown: 'Words Known',
   },
-  // UTEMEZO 7. szakasz: the small tag on top of every card.
+  // the small tag on top of every card.
   // K33 (play-vágás, 2026-09-22): the Learn tab's header (three numbers +
   // focus session) is gone; levelProgress stays, Stats still uses it.
-  // Play-vágás 7. lépés: close had no caller left either, removed.
+  // Play-vágás: close had no caller left either, removed.
   header: {
     levelProgress: (known: number, total: number) => `${known} / ${total} words`,
   },
-  // PLAN-credits.md: word-data attribution screen, opened from Settings.
+  // word-data attribution screen, opened from Settings.
   credits: {
     title: 'Credits',
     cefrjBody:
@@ -336,7 +328,7 @@ export default {
     plusOneMinute: '+1 minute wooo!',
     milestoneSession: '🔥 Wow, {min} minutes in one go!',
     milestoneDaily: '🎉 {min} minutes today, you are doing great!',
-    // FB149: past the first hour, every quarter of an hour, random line.
+    // past the first hour, every quarter of an hour, random line.
     milestoneLong: [
       '🔥 {hours} hours today! This is not studying any more, this is training.',
       '💪 {min} minutes in the bag. The language cannot run away now.',
@@ -348,7 +340,7 @@ export default {
       '🎯 {hours} hours in today. Whoever puts that in, takes it out.',
     ],
     dailyGreeting: '👋 Hi! Let\'s start today\'s practice!',
-    // FB108: midnight rollover, the finished day's stats plus a celebration.
+    // midnight rollover, the finished day's stats plus a celebration.
     // Picked at random, so the lines come back around over time.
     dayRollover: [
       '🌙 Midnight! Yesterday: {words} words, {min} minutes. People who study at midnight are not doing it for fun.',
@@ -375,12 +367,12 @@ export default {
     noData: 'No usage yet, go learn something!',
     learningProgress: 'Learning Progress',
     reviewsToday: 'Reviews Today',
-    // PLAN-play 12. lépés (s5): "known" = interval >= 21 nap, "graduated" =
+    // "known" = interval >= 21 nap, "graduated" =
     // túljutott a tanuló-lépéseken (lib/pcicStats.ts).
     known21: 'Known (21+ days)',
     graduatedLabel: 'Learning → Graduated',
     knownAtLevel: (level: string, known: number) => `${level} ${known}`,
-    // FB100: how many words are put away for how long, and when they come back
+    // how many words are put away for how long, and when they come back
     schedule: 'Schedule',
     scheduleDueNow: 'Waiting now',
     scheduleWaiting: (n: number) => `${n} words put away`,
@@ -396,15 +388,14 @@ export default {
     scheduleNextDays: (days: number) => `in ${days} ${days === 1 ? 'day' : 'days'}`,
     scheduleEmpty: 'Nothing put away yet, learn a few words!',
   },
-  // PLAN-pcic step 5: the PCIC tab (English -> Spanish typing, Anki buttons).
+  // the PCIC tab (English -> Spanish typing, Anki buttons).
   pcic: {
-    header: (due: number, newCount: number, doneToday: number, total: number) => `${total} words · due ${due} · new ${newCount} · done today ${doneToday}`,
     // 5b: a BadgeRow chip-sorának négy külön felirata (anki-ui-terv.html).
     badgeTotal: (n: number) => `${n} words`,
     badgeDue: (n: number) => `due ${n}`,
     badgeNew: (n: number) => `new ${n}`,
     badgeDone: (n: number) => `done ${n}`,
-    // FB387/395 (PLAN-fb0924 1b. lépés): a mai bevezetés szó/mondat bontásban +
+    // a mai bevezetés szó/mondat bontásban +
     // a mai teljes keret (napi limit + az 1a "+10" bónusz), pl. "today: 6 words · 4 sentences / 10".
     badgeIntroducedToday: (words: number, sentences: number, budget: number) =>
       `today: ${words} word${words === 1 ? '' : 's'} · ${sentences} sentence${sentences === 1 ? '' : 's'} / ${budget}`,
@@ -416,9 +407,8 @@ export default {
     easy: 'Easy',
     doneTitle: 'Done for today',
     resetConfirmTitle: 'Reset progress',
-    resetConfirmMessage: 'This clears all PCIC progress. Are you sure?',
     resetConfirmYes: 'Reset',
-    // PLAN-fb1001 K1: a Beállítások sor, a nullázódó szint nevével.
+    // a Beállítások sor, a nullázódó szint nevével.
     resetRow: (level: string) => `🗑️ Reset progress (${level})`,
     resetConfirmLevel: (level: string) => `This clears all progress on the ${level} deck. Are you sure?`,
     undo: 'Undo',
@@ -432,33 +422,31 @@ export default {
     tileNew: 'New',
     tileAgain: 'Again',
     introduced: (n: number, total: number) => `${n} / ${total} words introduced`,
-    // FB350/5. commit: a gombsor intervallum-előnézete (korábban lib/sm2.ts
+    // commit: a gombsor intervallum-előnézete (korábban lib/sm2.ts
     // sm2Preview-ban magyarul égetve be, minden nyelven).
     intervalToday: '<1 day',
     intervalDays: (n: number) => `${n} ${n === 1 ? 'day' : 'days'}`,
-    // PLAN-play 10. lépés (s1/s2, anki-ui-terv.html): szint-választó + Next.
+    // Szint-választó + Next.
     chooseLevel: 'Choose level',
     next: (label: string) => `Next → ${label}`,
     accentForgiven: 'Missing accent, counted as correct',
-    // PLAN-tobbjelentes 3. lépés: a Check utáni „also: b · c” sor felirata (perjeles válasz).
+    // a Check utáni „also: b · c” sor felirata (perjeles válasz).
     alsoLabel: 'also',
-    // FB481/495/496/498: az (i) magyarázat-gomb kisegítő felirata.
+    // az (i) magyarázat-gomb kisegítő felirata.
     noteLabel: 'More info',
-    // FB498/500: a kártya képének forrássora (Wikimedia Commons).
+    // a kártya képének forrássora (Wikimedia Commons).
     photoCredit: (author: string, license: string, cropped: boolean) => `Photo: ${author}, ${license}, Wikimedia Commons${cropped ? ' (cropped)' : ''}`,
     photoCreditHint: 'Opens the photo page on Wikimedia Commons',
-    // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 3. pont):
     // a szint-választó lap feliratai és sorai (korábban data/pcic.ts
     // LEVEL_LABELS-ben és components/LevelRow.tsx-ben angolra égetve).
     levelBeginner: 'Beginner',
     levelElementary: 'Elementary',
     levelIntermediate: 'Intermediate',
     levelUpperIntermediate: 'Upper intermediate',
-    levelPlusSentences: '+1 · sentences',
     levelNotStarted: 'not started',
     levelRowIntroduced: (n: number, total: number) => `${n} / ${total} introduced`,
   },
-  // PLAN-vizsga B. szakasz (Kálmán, 2026-10-01): a nyelvtani lecke végi teszt feliratai.
+  // a nyelvtani lecke végi teszt feliratai.
   lessonTest: {
     take: 'Take the lesson test',
     rules: (n: number, pct: number) => `${n} ${n === 1 ? 'question' : 'questions'}, pass ${pct}%`,
@@ -470,7 +458,7 @@ export default {
     missedTitle: 'Missed questions',
     whyHeading: 'Why is the sentence like this?',
   },
-  // PLAN-vizsga A. szakasz 2. lépés (Kálmán, 2026-10-01): a szintvizsga feliratai (szintválasztó sor,
+  // a szintvizsga feliratai (szintválasztó sor,
   // bevezető, kérdések, eredmény). A felület sehol nem írja ki a vizsga hivatalos nevét.
   exam: {
     rowTitle: (level: string) => `Level exam ${level}`,
@@ -511,7 +499,7 @@ export default {
     lockedBody: 'Learn more words and finish a grammar lesson first.',
     emptyBody: 'There is not enough material for the exam yet.',
     back: 'Back',
-    // 6. lépés (2c): az eredmény készségenként; a gyenge pontoknál link a leckére / a szavakra.
+    // az eredmény készségenként; a gyenge pontoknál link a leckére / a szavakra.
     skillWords: 'Words',
     skillGrammar: 'Grammar',
     skillReading: 'Reading',
@@ -520,7 +508,7 @@ export default {
     skillReviewLesson: (title: string) => `Review lesson: ${title}`,
     skillReviewWords: 'Review these words',
     skillPracticeSentences: 'Practice sentences',
-    // 13. lépés (D1 b, D3): szóbeli tétel a billentyűzet mikrofonjával diktálva.
+    // szóbeli tétel a billentyűzet mikrofonjával diktálva.
     introSpeaking: (n: number) => `Speaking: ${n} ${n === 1 ? 'question' : 'questions'}`,
     skillSpeaking: 'Speaking',
     speakTranslate: (lang: string): string => (lang === 'es' ? 'Say it in Spanish' : 'Say it in English'),
@@ -529,7 +517,7 @@ export default {
     speakPlaceholder: 'Your spoken words appear here',
     speakYouSaid: 'You said',
   },
-  // PLAN-vizsga C. szakasz (Kálmán, 2026-10-01): az adaptív szintfelmérő feliratai
+  // az adaptív szintfelmérő feliratai
   // (belépő a szintválasztón, kérdések, eredmény).
   placement: {
     entry: 'Not sure? Take the 3 minute placement test',
@@ -553,8 +541,8 @@ export default {
     emptyBody: 'There is not enough material for a placement test yet.',
   },
   // 5c: szófaj-chip a PCIC szó alatt (lib/pcicPos.ts).
-  // FB361-362: a teljes WordPos-készlet felirata (nem csak noun/verb/phrase),
-  // + conj/prefix/suffix a PCIC-only Pos-értékekre.
+  // A teljes WordPos-készlet felirata (nem csak noun/verb/phrase),
+  // + conj/det/interj a PCIC-only Pos-értékekre.
   pos: {
     noun: 'noun',
     verb: 'verb',
@@ -567,10 +555,8 @@ export default {
     conj: 'conjunction',
     det: 'determiner',
     interj: 'interjection',
-    prefix: 'prefix',
-    suffix: 'suffix',
   },
-  // PLAN-vizsga E. szakasz (15-16. lépés, Kálmán 2026-10-01): a próbavizsga (Stats "Practice exam"
+  // a próbavizsga (Stats "Practice exam"
   // kártya, intro, papírok, eredmény, átnézés). A felület sehol nem ír ki védjegyes vizsganevet.
   mockExam: {
     cardTitle: 'Practice exam',
@@ -661,25 +647,25 @@ export default {
     tryAgain: 'Try again',
     back: 'Back to the result',
   },
-  // PLAN-play 13. lépés: the table-deck screen (a lesson's conjugation
+  // the table-deck screen (a lesson's conjugation
   // tables, practiced Anki-style with the PCIC card UI).
   tableDeck: {
     chip: 'TABLE',
     promptCaption: 'person · verb',
-    // FB375 (PLAN-fb0923 6. lépés): a tábla nélküli leckék szó-paklija
+    // a tábla nélküli leckék szó-paklija
     // ugyanezt a képernyőt használja, csak ez a két string vált.
     wordChip: 'WORD',
     wordPromptCaption: 'meaning',
-    // PLAN-fb0929 10. lépés: es→en irányban a kérdés a spanyol szó, a válasz az angol szó.
+    // es→en irányban a kérdés a spanyol szó, a válasz az angol szó.
     wordPromptCaptionEn: 'How do you say it in English?',
-    // FB378: caption for a cell with an English prompt (translate to Spanish).
+    // caption for a cell with an English prompt (translate to Spanish).
     promptCaptionEn: 'translate to Spanish',
-    // PLAN-fb1001 13. lépés (FB440): a ragozó kártyán az infinitivus rejtett, a súgó-gomb mutatja.
+    // a ragozó kártyán az infinitivus rejtett, a súgó-gomb mutatja.
     showVerb: 'Show the verb',
     progress: (done: number, total: number) => `${done} / ${total} done`,
     completeTitle: (n: number) => `All ${n} cells done 🎉`,
     startAgain: 'Start again',
-    // FB389 (PLAN-fb0924 3. lépés): a full pass, all cells shuffled, once
+    // a full pass, all cells shuffled, once
     // the plain (deck-order) "Start again" pass is done.
     harder: 'Harder: shuffled',
     backToLesson: 'Back to the lesson',

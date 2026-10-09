@@ -1,5 +1,5 @@
-// PLAN-fb1005d: a Learn (PCIC) kártyák adat-javításai Kálmán 2026-10-03/05 visszajelzései nyomán
-// (FB473-479, 482-484, 486, 497). Minden tétel egy-egy teszt, hogy a javítás ne csússzon vissza.
+// a Learn (PCIC) kártyák adat-javításai a visszajelzések nyomán.
+// Minden tétel egy-egy teszt, hogy a javítás ne csússzon vissza.
 import { gradePcicAnswer } from '@/lib/pcicMatch';
 import { dropOrphanCards } from '@/lib/pcicSession';
 import type { Sm2Card } from '@/lib/sm2';

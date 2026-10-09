@@ -1,4 +1,4 @@
-// FB470 (kártya-szintű folytatás): a Learn-kör pillanatképe: mentés, visszaolvasás, rárakás az újraépült sorra.
+// Kártya-szintű folytatás: a Learn-kör pillanatképe: mentés, visszaolvasás, rárakás az újraépült sorra.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 

@@ -1,4 +1,4 @@
-// PLAN-vizsga A. szakasz 2. lépés (Kálmán, 2026-10-01, A5 c + A6 a): a szintvizsga képernyője.
+// a szintvizsga képernyője.
 // A tétel-építő mockolt (a tételek tartalmát a lib/exam/__tests__/builder.test.ts fedi), itt a
 // folyamat: zárva nem indul; kérdés közben helyes válasz után nincs visszajelzés, hibás után
 // a helyes látszik; átmenéskor a gomb a következő szintre (nincs automatikus váltás); bukáskor
@@ -164,7 +164,7 @@ describe('szintvizsga képernyő (A1)', () => {
     expect(screen.getByText('A1 passed')).toBeTruthy();
     expect(await getDb().getExamResults()).toMatchObject({ A1: { passed: true, best: 100 } });
 
-    // A6 a: Kálmán dönt, nincs automatikus váltás; a gomb vált.
+    // Nincs automatikus váltás; a gomb vált.
     expect(await getDb().getPcicLevel()).toBe('A1');
     await press(screen, 'exam-continue');
     expect(await getDb().getPcicLevel()).toBe('A2');

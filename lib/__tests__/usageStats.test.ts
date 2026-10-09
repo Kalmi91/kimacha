@@ -6,7 +6,7 @@ import {
   DEFAULT_WEEKLY_GOAL_MINUTES,
 } from '../usageStats';
 
-// FB65: the Stats tab's weekly goal, measured against the rolling 7-day total.
+// the Stats tab's weekly goal, measured against the rolling 7-day total.
 describe('weeklyGoalProgress', () => {
   it('flags being short of the goal and reports the minutes left', () => {
     const p = weeklyGoalProgress(300, DEFAULT_WEEKLY_GOAL_MINUTES); // 5h of 7h

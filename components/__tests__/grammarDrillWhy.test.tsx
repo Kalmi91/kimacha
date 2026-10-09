@@ -1,6 +1,6 @@
-// TASK-8 (D4, FB288): "Miért ez a mondat?" feladat-fajta a lecke-drillben. A
+// "Miért ez a mondat?" feladat-fajta a lecke-drillben. A
 // `kinds={['why']}` mintáját a grammarDrillMatchForm.test.tsx match/form
-// tesztjei adják (D3, FB290).
+// tesztjei adják (D3).
 import { fireEvent, render, screen, within } from '@testing-library/react-native';
 
 import GrammarDrill from '../grammar/GrammarDrill';
@@ -69,7 +69,7 @@ describe('GrammarDrill: why item', () => {
   });
 });
 
-// FB379: the translation gives away the answer, so it starts hidden, a
+// the translation gives away the answer, so it starts hidden, a
 // button reveals it, and it shows on its own once the item is answered.
 describe('GrammarDrill: why item translation (FB379)', () => {
   it('starts hidden behind a button', () => {
@@ -91,7 +91,7 @@ describe('GrammarDrill: why item translation (FB379)', () => {
   });
 });
 
-// R21 (PLAN-eget-nyelvtan): ha a helyes opció a szerzői sorrendben mindig az első, a drillben
+// ha a helyes opció a szerzői sorrendben mindig az első, a drillben
 // akkor is különböző helyre kerül (seedelt keverés az item id-jából), a jó válasz továbbra is jó.
 describe('GrammarDrill: why option order (R21)', () => {
   const withId = (id: string): LessonV2 => ({ ...lesson, items: [{ ...(lesson.items[0] as object), id } as LessonV2['items'][number]] });

@@ -1,6 +1,6 @@
-// PLAN-hibaim.md 2. lépés: the `kimacha-hibaim` v1 payload the /hibaim skill
+// the `kimacha-hibaim` v1 payload the /hibaim skill
 // (laptop-side Drive/WhatsApp analysis) writes and Settings -> Load my
-// mistakes reads. Format + rules: PLAN-hibaim.md "Formátum" section, 1:1.
+// mistakes reads. Format + rules, 1:1.
 //
 // Deliberately import-free and erasable-syntax-only (no enum, no namespace,
 // no parameter properties): scripts/check-mistakes.mjs runs this file
@@ -38,7 +38,7 @@ export interface MistakeWord {
   note?: string;
 }
 
-export type MistakeWrongWordKind = 'spelling' | 'form' | 'word';
+type MistakeWrongWordKind = 'spelling' | 'form' | 'word';
 
 export interface MistakeWrongWord {
   wrong: string;
@@ -62,7 +62,7 @@ export interface MistakesBatch {
   wrongWords: MistakeWrongWord[];
 }
 
-export type ValidateMistakesResult =
+type ValidateMistakesResult =
   | { ok: true; batch: MistakesBatch }
   | { ok: false; error: string };
 

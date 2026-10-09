@@ -1,5 +1,5 @@
-// FB316 (NYELVTAN.md NY10): lefedettség-ellenőrzés az `indefinido-10-verbos`
-// lecke 50 transform itemjére. Kálmán döntése (2026-09-18): a mondatok csak a
+// lefedettség-ellenőrzés az `indefinido-10-verbos`
+// lecke 50 transform itemjére. A mondatok csak a
 // lecke 28 szavából épülnek, a 10 ige minden fő személyével. Ez a teszt ezt a
 // lefedettséget méri, nem a nyelvtani helyességet (azt az audit-games.mjs +
 // az emberi átolvasás adja).
@@ -13,9 +13,9 @@ const FILE = path.join(__dirname, '..', '..', 'data', 'games', 'grammar', 'es', 
 const lesson: LessonV2 = JSON.parse(fs.readFileSync(FILE, 'utf8'));
 const transformItems = lesson.items.filter(isTransformItem);
 
-// A lecke pontosan ezt a 28 szót taníthatja (TASK-9, Kálmán szava): sem több,
-// sem kevesebb wordId nem szerepelhet az itemeken. A wordId a words-open `order`-e
-// (PLAN-regi-szavak-ki 7b): a 28 régi szó lemma szerint 25 words-open kártya (estoy/están
+// A lecke pontosan ezt a 28 szót taníthatja: sem több,
+// sem kevesebb wordId nem szerepelhet az itemeken. A wordId a words-open `order`-e:
+// a 28 régi szó lemma szerint 25 words-open kártya (estoy/están
 // = estar, ir/vas = ir, tiene/tenemos = tener).
 const ALLOWED_WORD_IDS = [
   '119', '123', '129', '143', '150', '16', '174', '2', '208', '220', '254', '259', '283', '284', '285', '286',
@@ -40,7 +40,7 @@ const VERB_FORMS: Record<string, Record<string, string>> = {
 // Nyelvi tény: a szabályos -ar igéknél a nosotros alak azonos jelen időben és
 // indefinidóban (miramos/miramos), tehát ott a transform prompt==answer lenne
 // (audit P1 hiba). Ez a négy ige ezért a nosotros helyett kapott egy 5. itemet;
-// FB466 óta ez ustedes-item (miraron...), nem vosotros, ezért náluk a kötelező
+// azóta ez ustedes-item (miraron...), nem vosotros, ezért náluk a kötelező
 // személyek: yo, tú, él, ellos (a második ellos/ustedes-item az 5.).
 const NOSOTROS_REPLACED_BY_VOSOTROS = new Set(['mirar', 'pasar', 'esperar', 'necesitar']);
 

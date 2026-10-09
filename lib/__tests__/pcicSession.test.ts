@@ -1,4 +1,4 @@
-// SZ2 (SZAVAK.md): a session-sor léptetése értékelés után és visszavonáskor.
+// a session-sor léptetése értékelés után és visszavonáskor.
 
 import {
   countDoneToday,
@@ -114,7 +114,7 @@ describe('requeueAfterUndo', () => {
   });
 });
 
-// FB364 (PLAN-fb0923 5. lépés, D2): a rontott ("again") kártya N másodperc
+// a rontott ("again") kártya N másodperc
 // múlva mindenképp visszajön, akármennyi új/esedékes szó áll a sorban.
 describe('reorderForReturn / requeueAfterGrade (FB364, again-időzítő)', () => {
   it('(a) 20 új szó a sorban, rontás, 60 s múlva a rontott jön', () => {
@@ -188,7 +188,7 @@ describe('requeueAfterUndo (FB364, nincs árva időzítő)', () => {
   });
 });
 
-// FB352: a napi haladás perzisztált `lastReview`-ból számolt, tab-váltás vagy
+// a napi haladás perzisztált `lastReview`-ból számolt, tab-váltás vagy
 // app-újraindítás után is a valós napi számot kell adnia.
 describe('countDoneToday', () => {
   it('counts only cards reviewed today', () => {
@@ -217,7 +217,7 @@ describe('countDoneToday', () => {
   });
 });
 
-// FB385/386: "+10 new words" was flat-added to the standing limit and kept
+// "+10 new words" was flat-added to the standing limit and kept
 // only in React state (extraNew), so a tap after the day's introduced count
 // already ran past the limit (limit 10, introduced today 18) gave back only
 // 2 new cards instead of 10, and the bonus vanished on the next reload.
@@ -272,9 +272,9 @@ describe('nextPcicNewBonus + pcicNewBudget (FB385/386)', () => {
   });
 });
 
-// FB387/395 (PLAN-fb0924 1b. lépés): a fejléc "ma: N szó · M mondat / keret"
+// a fejléc "ma: N szó · M mondat / keret"
 // felbontása - a KIND szerinti szétválasztás, amit a "miért csak 6 vagy 8 jött 10
-// helyett" panasz (FB387/395) valójában hiányolt (a maradék a másik fajtára ment).
+// helyett" panasz valójában hiányolt (a maradék a másik fajtára ment).
 function kindMap(map: Record<string, PcicKind>): (itemId: string) => PcicKind | undefined {
   return (itemId) => map[itemId];
 }
@@ -298,7 +298,7 @@ describe('countIntroducedTodayByKind (FB387/395)', () => {
       reviewCard({ itemId: 'pat1', introducedAt: TODAY }),
       reviewCard({ itemId: 'chain-2', introducedAt: TODAY }), // lánc-tag, de kind: sentence
     ];
-    const kindOf = kindMap({ p1: 'phrase', pat1: 'pattern', 'chain-2': 'sentence' });
+    const kindOf = kindMap({ p1: 'phrase', pat1: 'word', 'chain-2': 'sentence' });
     expect(countIntroducedTodayByKind(cards, TODAY, kindOf)).toEqual({ words: 2, sentences: 1 });
   });
 
@@ -370,10 +370,10 @@ describe('thinSentences (PLAN-fb0924 8. lépés, FB394/396)', () => {
   });
 });
 
-// PLAN-fb1001 9. lépés (FB430, D1): a haladás-sáv a MAI adag hátralévőjét mutatja.
+// a haladás-sáv a MAI adag hátralévőjét mutatja.
 import { countFinishedToday, dayProgressPercent, finishedInBatch } from '../pcicSession';
 
-// FB456: a "+N új szó" bővítés után a csík az új adagot méri (a bővítéskor kész kártyák számához képest).
+// a "+N új szó" bővítés után a csík az új adagot méri (a bővítéskor kész kártyák számához képest).
 describe('finishedInBatch (FB456)', () => {
   it('+15 után az első új kártyánál 0%, az utolsónál 100%', () => {
     const base = 10; // a bővítéskor 10 kártya volt kész ma
@@ -429,7 +429,7 @@ describe('countFinishedToday (FB430)', () => {
   });
 });
 
-// FB452 ("new 42?"): a napi keret NAPI; a más szinten vett "+10"-ek nem jöhetnek vissza új szóként a másik szinten.
+// User feedback ("new 42?"): a napi keret NAPI; a más szinten vett "+10"-ek nem jöhetnek vissza új szóként a másik szinten.
 describe('pcicSessionNewLimit (FB452)', () => {
   const introduced = (prefix: string, n: number) =>
     Array.from({ length: n }, (_, i) => sm2Review(sm2NewCard(`${prefix}-${i}`), 'good', TODAY));
@@ -470,7 +470,7 @@ describe('pcicSessionNewLimit (FB452)', () => {
   });
 });
 
-// FB499 ("van még 40 szó, miért nem dobja fel?"): a "Practice words" gomb a hiányzóból ad, ha a keret elfogyott.
+// User feedback ("van még 40 szó, miért nem dobja fel?"): a "Practice words" gomb a hiányzóból ad, ha a keret elfogyott.
 describe('practiceTopUpStep (FB499)', () => {
   it('kimerült keret: az összes hiányzó szót adja egy koppintásra', () => {
     expect(practiceTopUpStep({ limit: 10, bonus: 0, introducedAllLevels: 10, missing: 40 })).toBe(40);

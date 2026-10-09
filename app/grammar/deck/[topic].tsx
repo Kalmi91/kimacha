@@ -39,14 +39,13 @@ import CardShell from '@/components/learn/CardShell';
 import DockedAction, { DOCK_RESERVE, FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
 
-// PLAN-play 13. lépés (s6, jóváhagyó lap
-// https://claude.ai/artifact/HsKKPddM4KKt7wBQZmLVNo): a lecke ragozó
+// A lecke ragozó
 // tábláinak celláit gyakorolja, a PCIC-kártya felületén (CardShell,
 // DockedAction), Anki-szerű ütemezéssel (lib/grammar/tableDeck.ts). A
 // haladás a game_progress-be perzisztál, ${topic}:tabledeck kulccsal, ugyanaz
 // a game_id (GRAMMAR_PROGRESS_KEY), mint a lecke-pontszámoké.
 //
-// FB375 (PLAN-fb0923 6. lépés): tábla nélküli leckén a kártya-forrás a lecke
+// tábla nélküli leckén a kártya-forrás a lecke
 // saját szavai (wordCellsForLesson), nem a ragozási tábla; a scheduler és a
 // képernyő ugyanaz, csak a promptBig szövege és a chip-felirat vált módonként.
 
@@ -61,13 +60,13 @@ interface DeckItem {
   /** The big prompt text: "person · verb" for a table cell, the English
    *  meaning for a word card. */
   promptBig: string;
-  /** FB378: the cell's English prompt ("she spoke"), table cells only; when
+  /** the cell's English prompt ("she spoke"), table cells only; when
    *  set, promptBig shows it (with `verb` as the infinitive underneath)
    *  instead of the bare person·verb prompt. */
   enPrompt?: string;
   /** The table cell's infinitive, shown under an enPrompt. */
   verb?: string;
-  /** PLAN-fb1001 13. lépés (FB440): a ragozó cella infinitivusa rejtett, a súgó-gombra (vagy
+  /** a ragozó cella infinitivusa rejtett, a súgó-gombra (vagy
    *  a Check után) látszik; oszlop-fejlécnél (személy-tábla) és szó-paklinál nincs. */
   hintVerb?: boolean;
 }
@@ -85,7 +84,7 @@ export default function TableDeckScreen() {
   const [learnedLang, setLearnedLang] = useState('es');
   const [level, setLevel] = useState<Level>('A1');
   const [strictAccents, setStrictAccents] = useState(false);
-  // FB364 (PLAN-fb0923 5. lépés/D2): egy beállítás, két hely, lásd
+  // egy beállítás, két hely, lásd
   // lib/grammar/tableDeck.ts fejét.
   const [againDelaySec, setAgainDelaySec] = useState(DEFAULT_AGAIN_DELAY_SEC);
   const [mode, setMode] = useState<DeckMode>('table');
@@ -93,14 +92,14 @@ export default function TableDeckScreen() {
   const [deck, setDeck] = useState<DeckState>({ cells: [], resetCount: 0, shuffled: false });
   const [typed, setTyped] = useState('');
   const [checked, setChecked] = useState<{ correct: boolean } | null>(null);
-  // PLAN-fb1001 13. lépés (FB440): annak a cellának az id-je, amihez a súgó-gombot megnyomták
+  // annak a cellának az id-je, amihez a súgó-gombot megnyomták
   // (kártyaváltáskor levezetve "nincs megnyomva", nincs reset-effekt).
   const [hintFor, setHintFor] = useState<string | null>(null);
-  // FB422 (PLAN-fb0929 2. lépés): a beviteli mező minden új cellánál újra mountol
+  // a beviteli mező minden új cellánál újra mountol
   // (a `key` ezt a számlálót tartalmazza), különben az `autoFocus` csak az első
   // cellánál fut, és a Check után letiltott (`editable={false}`), majd újra
   // engedélyezett natív mezőn Next után nem jön fel a billentyűzet. Ugyanaz az
-  // ok és javítás, mint a PCIC-kártyán (app/(tabs)/index.tsx cardSeq, FB408).
+  // ok és javítás, mint a PCIC-kártyán (app/(tabs)/index.tsx cardSeq).
   const [cellSeq, setCellSeq] = useState(0);
   const [dockH, setDockH] = useState(DOCK_RESERVE);
   const { dockLift } = useDockLift();
@@ -118,7 +117,7 @@ export default function TableDeckScreen() {
     setLearnedLang(target);
     const lesson = lessonFor(target, id);
     const tableCells = tableCellsForLesson(lesson);
-    // FB375: table cells win where they exist (unchanged behavior); a
+    // table cells win where they exist (unchanged behavior); a
     // table-less lesson falls back to its own word-deck.
     const deckMode: DeckMode = tableCells.length > 0 ? 'table' : 'word';
     const itemList: DeckItem[] =
@@ -126,13 +125,13 @@ export default function TableDeckScreen() {
         ? tableCells.map((c) => ({
             id: c.id,
             answer: c.answer,
-            // FB440: a rejtett infinitivus nincs a promptban (súgó-gomb mutatja).
+            // a rejtett infinitivus nincs a promptban (súgó-gomb mutatja).
             promptBig: c.enPrompt ?? (isInfinitive(c.verb) ? c.person : `${c.person} · ${c.verb}`),
             enPrompt: c.enPrompt,
             verb: c.verb,
             hintVerb: isInfinitive(c.verb),
           }))
-        : // PLAN-fb0929 10. lépés: es→en irányban a kérdés a spanyol szó, a válasz az angol szó.
+        : // es→en irányban a kérdés a spanyol szó, a válasz az angol szó.
           wordCellsForLesson(lesson, target).map((c) =>
             target === 'en' ? { id: c.id, answer: c.en, promptBig: c.es } : { id: c.id, answer: c.es, promptBig: c.en }
           );
@@ -154,7 +153,7 @@ export default function TableDeckScreen() {
     setLoading(false);
     // setTyped is listed because the React Compiler infers it as a
     // dependency of this async callback (the input's onChangeText={setTyped}
-    // below makes it "reactive"; see the identical PLAN-play 12. lépés note
+    // below makes it "reactive"; see the identical note
     // in app/(tabs)/index.tsx's own `load`). It is stable, so nothing
     // changes at runtime, but leaving it out counts as broken memoization.
   }, [topicId, setTyped]);
@@ -166,7 +165,7 @@ export default function TableDeckScreen() {
   };
 
   const entry = syllabusTopic(String(topicId), learnedLang);
-  // FB405: es→en irányban (spanyol felület) a cím a felület nyelvén, nem mindig angolul.
+  // es→en irányban (spanyol felület) a cím a felület nyelvén, nem mindig angolul.
   const lessonTitle = entry?.title[learnedLang === 'en' ? 'es' : 'en'] ?? entry?.title.en ?? String(topicId);
 
   // A FeedbackButton párcímkéje az aktív iránnyal (en→es vagy es→en).
@@ -204,7 +203,7 @@ export default function TableDeckScreen() {
     setNow(Date.now());
   };
 
-  // FB389: "Harder: shuffled" - all cells again, but shuffled this time
+  // "Harder: shuffled" - all cells again, but shuffled this time
   // (resetDeckInOrder above is the plain restart, in the deck's own order).
   const handleHarder = () => {
     const fresh = resetDeckShuffled(items, String(topicId), deck.resetCount);
@@ -215,7 +214,7 @@ export default function TableDeckScreen() {
     setNow(Date.now());
   };
 
-  // NY25: brutalista palettán vissza-doboz, nagybetűs cím, a haladás matrica.
+  // brutalista palettán vissza-doboz, nagybetűs cím, a haladás matrica.
   const header = (
     <View style={[styles.header, brutalHeaderRowStyle(g)]}>
       {g.brutal ? (
@@ -271,7 +270,7 @@ export default function TableDeckScreen() {
             <Text style={styles.btnTextOnTint}>{s.tableDeck.startAgain}</Text>
           </Pressable>
           )}
-          {/* FB389: same pill shape/size as "Start again" (outline instead
+          {/* same pill shape/size as "Start again" (outline instead
               of filled), so the two options read as equally-weighted choices. */}
           {g.brutal ? (
             <BrutalButton testID="tabledeck-harder" fill="paper" label={s.tableDeck.harder} onPress={handleHarder} style={styles.brutalBtn} />
@@ -295,7 +294,7 @@ export default function TableDeckScreen() {
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         {header}
-        {/* FB467: az üres pakli lapján is ott a 💬. */}
+        {/* az üres pakli lapján is ott a 💬. */}
         <FeedbackButton level={level} languagePair={deckPair} currentCard={`grammar:${topicId}:tabledeck:empty`} />
       </View>
     );
@@ -325,7 +324,7 @@ export default function TableDeckScreen() {
           <FitText variant="word" base={32} maxLines={3} reserve={100} style={[styles.promptBig, { color: colors.text }]}>
             {current.promptBig}
           </FitText>
-          {/* FB390: a meaning-table cell (lib/grammar/tableDeck.ts) has no
+          {/* a meaning-table cell (lib/grammar/tableDeck.ts) has no
               infinitive to show underneath (verb: ''), so this caption stays
               hidden there instead of rendering an empty line. */}
           {current.hintVerb && hintFor !== current.id && !checked ? (
@@ -422,7 +421,7 @@ const styles = StyleSheet.create({
   cardScrollContent: { flexGrow: 1, justifyContent: 'flex-start', paddingTop: 8 },
   promptCaption: { fontSize: 13, textAlign: 'center', marginBottom: 8 },
   promptBig: { fontSize: 32, fontWeight: '700', textAlign: 'center', marginBottom: 20 },
-  // FB378: the infinitive under the English prompt, pulled up into promptBig's
+  // the infinitive under the English prompt, pulled up into promptBig's
   // bottom margin so the two read as one prompt block.
   promptInfinitive: { fontSize: 15, fontStyle: 'italic', textAlign: 'center', marginTop: -12, marginBottom: 12 },
   // A rejtett infinitivus súgó-gombja: középen a prompt alatt.
@@ -448,7 +447,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   btnTextOnTint: { color: '#FFFFFF', fontSize: 16, fontWeight: '700' },
-  // FB389: "Harder: shuffled" pill, same size as `btn`, outline instead of filled.
+  // "Harder: shuffled" pill, same size as `btn`, outline instead of filled.
   btnOutline: { backgroundColor: 'transparent', borderWidth: 2 },
   ghostBtn: { marginTop: 4, padding: 8 },
   ghostBtnText: { fontSize: 14 },

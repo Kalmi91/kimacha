@@ -31,7 +31,7 @@ type Props = {
   colors: ColorScheme;
 };
 
-// NY19: brutalista palettán kis dobozok (a due = b, a done = a kitöltés).
+// brutalista palettán kis dobozok (a due = b, a done = a kitöltés).
 const TONE_FILL: Record<Tone, BrutalFill> = { default: 'paper', blue: 'b', green: 'paper', pink: 'a' };
 
 export default function BadgeRow({ items, colors }: Props) {
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: 6,
-    // FB405: a spanyol feliratú chipek összege szélesebb a képernyőnél; enélkül a
+    // a spanyol feliratú chipek összege szélesebb a képernyőnél; enélkül a
     // sor nem szűkül a szülőjéhez, így sosem tördelt, és az utolsó chip kilógott.
     flexShrink: 1,
   },

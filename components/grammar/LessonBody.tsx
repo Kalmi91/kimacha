@@ -12,7 +12,7 @@ import type { ExamplePair, Lang4, LessonBlock } from '@/lib/grammar/lessonTypes'
 import { isConjugationTable, personGloss, splitStemEnding, verbClassOf, verbColumnColor } from '@/lib/grammar/tableShape';
 import { groupTableRuns, type TableBlock } from '@/lib/grammar/tableGroups';
 
-// FB381-383: a jelmagyarázat alatti rövid magyarázó sor, minden ragozási
+// a jelmagyarázat alatti rövid magyarázó sor, minden ragozási
 // táblán (nem lecke-adat, ezért itt lakik, nem egy JSON body-blokkban).
 const LEGEND_CAPTION: Lang4 = {
   hu: 'Minden sor egy személy, minden szín egy ige.',
@@ -21,10 +21,9 @@ const LEGEND_CAPTION: Lang4 = {
   de: 'Jede Zeile ist eine Person, jede Farbe ist ein Verb.',
 };
 
-// LECKE-SEMA 1. szakasz: a LessonV2 body-blokkjainak megjelenítője. A
-// moreBlocks.ts (FB224) a próza szerkezetét TALÁLTA KI; ez a komponens innen
-// nem találgat, a JSON adja a szerkezetet (text/list/table/usage/examples/
-// contrast/tip), a komponens csak rajzol.
+// a LessonV2 body-blokkjainak megjelenítője. A JSON
+// adja a szerkezetet (text/list/table/usage/contrast/tip), a komponens csak
+// rajzol.
 
 interface Props {
   blocks: LessonBlock[];
@@ -51,7 +50,7 @@ function ExampleRow({ ex, contentLang, learnedLang, colors }: {
   );
 }
 
-// FB326 (Kálmán 2. terv, "Személy-blokkok"): egy ragozási `table` blokk
+// egy ragozási `table` blokk
 // személyenkénti dobozokban, a tő halvány, a végződés vastag és színes az
 // igeosztály szerint. isConjugationTable dönti el, hogy egy blokk ide esik.
 function ConjugationTable({ header, rows, contentLang, colors, isDark }: {
@@ -63,7 +62,7 @@ function ConjugationTable({ header, rows, contentLang, colors, isDark }: {
 }) {
   const g = useGrammarColors();
   const verbHeaders = header.slice(1);
-  // FB381: ha egyetlen alak sem bontható tisztán tőre+végződésre, nincs közös
+  // ha egyetlen alak sem bontható tisztán tőre+végződésre, nincs közös
   // alap a táblában, a tő/végződés bontásnak nincs értelme (rendhagyó); az
   // egész tábla akkor egyben megy, nem cellánként (egy oszlopon belül ne
   // legyen fele bontott, fele nem).
@@ -128,7 +127,7 @@ function ConjugationTable({ header, rows, contentLang, colors, isDark }: {
   );
 }
 
-// FB326: a nem-ragozási (referencia) táblák régi rács-nézete, de rendszer-
+// a nem-ragozási (referencia) táblák régi rács-nézete, de rendszer-
 // betűvel és flex-cellákkal, hogy görgetés nélkül elférjen. Csak 5+ oszlopnál
 // marad az oldalra görgetés (`scroll`), ott a cellák tartalom-szélesek.
 function GridTable({ header, rows, contentLang, colors, scroll }: {
@@ -169,7 +168,7 @@ function GridTable({ header, rows, contentLang, colors, scroll }: {
   return scroll ? <ScrollView horizontal>{grid}</ScrollView> : grid;
 }
 
-// FB443/FB445: egy igés ragozási tábla tömören: két oszlop (bal: egyes szám, jobb:
+// egy igés ragozási tábla tömören: két oszlop (bal: egyes szám, jobb:
 // többes szám), cellánként a személy kicsiben és alatta a vastag alak.
 function CompactVerbTable({ header, rows, colors, isDark }: {
   header: Lang4[];
@@ -210,7 +209,7 @@ function CompactVerbTable({ header, rows, colors, isDark }: {
   );
 }
 
-// FB443/FB445: az egymás utáni egy-igés ragozási táblák (lib/grammar/tableGroups.ts)
+// az egymás utáni egy-igés ragozási táblák (lib/grammar/tableGroups.ts)
 // egy füles csoport: az igék chipek, egyszerre egy tábla látszik, tömören.
 function TableTabs({ tables, contentLang, colors, isDark, titleColor }: {
   tables: TableBlock[];
@@ -258,7 +257,7 @@ export default function LessonBody({ blocks, contentLang, learnedLang }: Props) 
   const colors = Colors[theme];
   const isDark = isDarkTheme(theme);
   const g = useGrammarColors();
-  // NY23: brutalista palettán a címek ink színűek (a lime / cián kitöltés
+  // brutalista palettán a címek ink színűek (a lime / cián kitöltés
   // papíron nem olvasható szövegnek).
   const titleColor = g.brutal ? g.ink : colors.tint;
 
@@ -317,21 +316,6 @@ export default function LessonBody({ blocks, contentLang, learnedLang }: Props) 
           );
         }
 
-        if (block.kind === 'examples') {
-          return (
-            <View key={i} style={styles.section}>
-              {block.title ? (
-                <Text variant="title" style={[styles.sectionTitle, { color: titleColor }]}>{block.title[contentLang] ?? block.title.en}</Text>
-              ) : null}
-              <Card classicStyle={styles.card}>
-                {block.examples.map((ex, ei) => (
-                  <ExampleRow key={ei} ex={ex} contentLang={contentLang} learnedLang={learnedLang} colors={colors} />
-                ))}
-              </Card>
-            </View>
-          );
-        }
-
         if (block.kind === 'table') {
           const conjugation = isConjugationTable(block.header, block.rows);
           return (
@@ -351,7 +335,7 @@ export default function LessonBody({ blocks, contentLang, learnedLang }: Props) 
                   rows={block.rows}
                   contentLang={contentLang}
                   colors={colors}
-                  // FB326: a rács marad, de csak 5+ oszlopnál görgethető
+                  // a rács marad, de csak 5+ oszlopnál görgethető
                   // oldalra, ahol a szöveg valóban nem fér a képernyőre.
                   scroll={block.header.length >= 5}
                 />
@@ -403,7 +387,7 @@ const styles = StyleSheet.create({
   exampleEs: { fontSize: 15, fontWeight: '700', flex: 1 },
   exampleTr: { fontSize: 13 },
   speak: { fontSize: 16 },
-  // FB326, ragozási táblák ("2 Személy-blokkok" mock): egy doboz személyenként,
+  // ragozási táblák ("2 Személy-blokkok" mock): egy doboz személyenként,
   // a formák chipekként; lásd tablazat-tervek.html.
   pblocks: { gap: 8 },
   pblock: { borderRadius: 12, paddingVertical: 10, paddingHorizontal: 12, gap: 6 },
@@ -421,7 +405,7 @@ const styles = StyleSheet.create({
   },
   chipStem: { fontSize: 16 },
   chipEnding: { fontSize: 16, fontWeight: '700' },
-  // FB443/FB445: füles csoport + tömör (2 oszlopos) egy-igés tábla.
+  // füles csoport + tömör (2 oszlopos) egy-igés tábla.
   tabRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 6 },
   tab: { paddingVertical: 6, paddingHorizontal: 10, borderRadius: 999, borderWidth: StyleSheet.hairlineWidth },
   tabText: { fontSize: 14, fontWeight: '700' },
@@ -433,7 +417,7 @@ const styles = StyleSheet.create({
   legend: { flexDirection: 'row', flexWrap: 'wrap', gap: 12 },
   legendItem: { fontSize: 13.5 },
   legendCaption: { fontSize: 12, fontStyle: 'italic' },
-  // FB326, nem-ragozási (referencia) táblák: a régi rács, monospace és
+  // nem-ragozási (referencia) táblák: a régi rács, monospace és
   // fix minWidth nélkül; flex-cellák, hacsak 5+ oszlop miatt görgetős.
   grid: { borderWidth: StyleSheet.hairlineWidth, borderRadius: 10, overflow: 'hidden' },
   gridRow: { flexDirection: 'row' },

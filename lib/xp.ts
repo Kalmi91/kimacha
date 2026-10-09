@@ -1,7 +1,7 @@
-// PLAN-temak 6E (gamer): játék-szint az aktív tanulási percekből. 1 perc = 10 XP, 100 XP = 1 szint
+// Gamer: játék-szint az aktív tanulási percekből. 1 perc = 10 XP, 100 XP = 1 szint
 // (a LVL 1-ről indul), a sáv az aktuális szinten belüli haladást mutatja (0-99%).
-export const XP_PER_MINUTE = 10;
-export const XP_PER_LEVEL = 100;
+const XP_PER_MINUTE = 10;
+const XP_PER_LEVEL = 100;
 
 export function xpFromMinutes(minutes: number): number {
   return Math.max(0, Math.floor(minutes)) * XP_PER_MINUTE;

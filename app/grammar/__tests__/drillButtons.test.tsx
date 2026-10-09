@@ -1,4 +1,4 @@
-// D3 (FB290, 2026-09-17): a lecke-oldal fajtánként külön gombot ad, csak
+// a lecke-oldal fajtánként külön gombot ad, csak
 // azokra a fajtákra, amikből ténylegesen van item a leckében.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
@@ -25,7 +25,7 @@ jest.mock('expo-router', () => ({
   useLocalSearchParams: () => ({ topic: mockTopicId }),
 }));
 
-// No real schema:1 lesson is left in the corpus: a minimal legacy fixture
+// A minimal choice-only fixture lesson
 // (lib/__tests__/fixtures/legacy-lesson.json) is added to the content registry.
 jest.mock('@/lib/games/content', () => {
   const actual = jest.requireActual('@/lib/games/content');
@@ -71,7 +71,7 @@ describe('grammar lesson screen: per-kind drill buttons', () => {
 
     expect(within(screen.getByTestId('grammar-start-choice')).getByText(/\(12\)/)).toBeTruthy();
     expect(within(screen.getByTestId('grammar-start-match')).getByText(/\(1\)/)).toBeTruthy();
-    // FB357: 12 authored form items, 2 are vosotros (se-form-09/10), filtered
+    // 12 authored form items, 2 are vosotros (se-form-09/10), filtered
     // out of the round the button promises.
     expect(within(screen.getByTestId('grammar-start-form')).getByText(/\(10\)/)).toBeTruthy();
 
@@ -90,7 +90,7 @@ describe('grammar lesson screen: per-kind drill buttons', () => {
     view.unmount();
   });
 
-  it('schema-1 lesson (legacy fixture) shows a single choice button', async () => {
+  it('a choice-only lesson (fixture) shows a single choice button', async () => {
     mockTopicId = 'legacy-fixture';
     const view = render(<GrammarLessonScreen />);
     await flush(4);
@@ -102,11 +102,11 @@ describe('grammar lesson screen: per-kind drill buttons', () => {
     view.unmount();
   });
 
-  // FB316 (NYELVTAN.md NY10): az 50 transform itemes lecke a régi "Átírás
+  // az 50 transform itemes lecke a régi "Átírás
   // (n)" helyett a körös "10 / 50" gombot mutatja (a szám-pár nyelvfüggetlen,
   // az UI nyelve ebben a tesztkörnyezetben en), és egy kör végén egy "10"-et
-  // említő gomb kínálja a folytatást. FB357: 4 az 50-ből vosotros volt,
-  // FB466 óta ustedes-item, a körös nevező ezért 50.
+  // említő gomb kínálja a folytatást. 4 az 50-ből vosotros volt,
+  // azóta ustedes-item, a körös nevező ezért 50.
   it('indefinido-10-verbos (50 transform items) shows a 10/50 round button, and finishing a round offers 10 more', async () => {
     mockTopicId = 'indefinido-10-verbos';
     const now = 1700000000000;
@@ -137,7 +137,7 @@ describe('grammar lesson screen: per-kind drill buttons', () => {
 
     expect(within(screen.getByTestId('grammar-more-round')).getByText(/10/)).toBeTruthy();
 
-    // FB316: a kör 10 itemje "gyakoroltnak" számít, egy írással a kör végén.
+    // a kör 10 itemje "gyakoroltnak" számít, egy írással a kör végén.
     const rows = await getDb().getGameProgress(GRAMMAR_PROGRESS_KEY);
     const seenRow = rows.find((r) => r.itemId === 'indefinido-10-verbos:transform:seen');
     const seen = seenRow?.data as Record<string, number>;

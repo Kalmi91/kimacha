@@ -28,7 +28,7 @@ import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import FeedbackButton from '@/components/FeedbackModal';
 
-// PLAN-vizsga B. szakasz (8. lépés): a nyelvtani lecke végi teszt képernyője. Nincs bevezető
+// a nyelvtani lecke végi teszt képernyője. Nincs bevezető
 // (a lecke done-lapjának gombja alatt áll "10 questions, pass 80%"): kérdések (nincs élet; a
 // helyes válasz után nincs visszajelzés, a hibás után a helyes látszik, mint a szintvizsgán) ->
 // eredmény (az elrontott tételek a helyes válasszal és a lecke magyarázatával). A bukás nem
@@ -116,7 +116,7 @@ export default function LessonTest({
   const colors = Colors[theme];
   const g = useGrammarColors();
   const s = t();
-  // FB461/FB464: a beírós kérdés Check / Next sávja a billentyűzet fölé dokkol (components/learn/DockSlot.tsx).
+  // a beírós kérdés Check / Next sávja a billentyűzet fölé dokkol (components/learn/DockSlot.tsx).
   const dock = useDockSlot(colors);
 
   // A kiosztás: a kérdések, az eddig feltett tételek (újrapróba: új tételek előre) és az utolsó
@@ -183,7 +183,7 @@ export default function LessonTest({
     setPhase('running');
   };
 
-  // FB467: a lecke-teszt minden részén ott a 💬; a `part` mondja meg a Feedback sheetben, pontosan melyik
+  // a lecke-teszt minden részén ott a 💬; a `part` mondja meg a Feedback sheetben, pontosan melyik
   // részről van szó (grammar:<lecke>:lessontest:<rész>). Beírós kérdésnél a 💬 a dokkolt sáv fölé kerül.
   const shell = (children: ReactNode, part?: string, bottomOffset?: number) => (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>

@@ -1,4 +1,4 @@
-// P0 (Play-vágás 8. lépés): a 💬 gomb koppintására nyíljon meg a Feedback
+// P0 (Play-vágás): a 💬 gomb koppintására nyíljon meg a Feedback
 // modal, és a küldés a flavor szerinti utat hívja (lib/buildFlavor.ts):
 // Drive-flavor → fetch a FEEDBACK_URL-re, Play-flavor → Share.share, egyik
 // se navigáljon el az appból (nincs router/Linking hívás ezen az úton).

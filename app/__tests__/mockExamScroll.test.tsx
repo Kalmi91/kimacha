@@ -1,4 +1,4 @@
-// FB491 (PLAN-fb1005c 2. lépés): a próbavizsgán a "Next task" után a következő feladat ugyanabban a
+// a próbavizsgán a "Next task" után a következő feladat ugyanabban a
 // görgetési helyzetben nyílt, mint ahol az előző véget ért, ezért a feladat eleje (az utasítás, a
 // párosítás A-F szövegei) a képernyőn kívül volt, a "Next task" gomb pedig pontosan ugyanott maradt az
 // ujj alatt: a feladat "kimaradt", az átnézésben "No answer" lett. A javítás: minden feladat saját

@@ -1,4 +1,4 @@
-// FB470 (kártya-szintű folytatás): az app újranyitásakor a Learn-kör ott folytatódik, ahol abbamaradt: ugyanaz a
+// Kártya-szintű folytatás: az app újranyitásakor a Learn-kör ott folytatódik, ahol abbamaradt: ugyanaz a
 // soron lévő kártya, a rontott ("again") kártya a helyén (nem előre ugrik), a "+N új szó" adag csíkja ugyanott
 // áll. Az újranyitás = unmount + újra render (a DB marad, mint a perzisztált SQLite). Mock-minta:
 // pcicMoreNewSteps.test.tsx.
@@ -13,7 +13,6 @@ jest.mock('@/lib/speech', () => ({
 jest.mock('expo-router', () => ({
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
   },
 }));
@@ -37,13 +36,9 @@ const mockItemsByLevel: Record<string, ReturnType<typeof mkItems>> = { A1: mockA
 jest.mock('@/data/pcic', () => ({
   PCIC_LEVELS: ['A1', 'B1'],
   PCIC_VIEW_LEVELS: ['A1', 'B1'],
-  LEVEL_LABELS: { A1: 'Beginner', B1: 'Intermediate' },
   pcicItemsForLevel: (level: string) => mockItemsByLevel[level] ?? [],
-  pcicItemsForViewLevel: (level: string) => mockItemsByLevel[level] ?? [],
   findPcicItem: (id: string) => [...mockA1Items, ...mockB1Items].find((i) => i.id === id),
   levelOfItem: (id: string) => (id.startsWith('a1-') ? 'A1' : id.startsWith('b1-') ? 'B1' : undefined),
-  isPlusSentence: () => false,
-  realLevelOfView: (level: string) => level,
   setPcicTarget: () => {},
 }));
 

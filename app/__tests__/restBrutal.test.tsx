@@ -1,4 +1,4 @@
-// NY19: a Credits képernyő brutalista palettán (BrutalBox / BrutalButton),
+// a Credits képernyő brutalista palettán (BrutalBox / BrutalButton),
 // classic palettán a mai kinézet. Mock-minta: credits.test.tsx, onboarding.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
@@ -11,7 +11,6 @@ jest.mock('expo-router', () => ({
   useRouter: () => ({ back: jest.fn(), push: jest.fn() }),
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
   },
 }));

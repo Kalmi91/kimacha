@@ -1,4 +1,4 @@
-// PLAN-temak 4D: a Saját mix képernyő (app/theme-mix.tsx): négy chip-sor, élő előnézet a
+// a Saját mix képernyő (app/theme-mix.tsx): négy chip-sor, élő előnézet a
 // piszkozattal, a mentés (setSkinMix + setSkin('mix')) és a visszatöltés.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));

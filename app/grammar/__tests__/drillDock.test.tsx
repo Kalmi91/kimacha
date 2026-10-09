@@ -1,4 +1,4 @@
-// FB461 / FB462 / FB464 (PLAN-fb1002b 3. lépés), Kálmán: „tegyed be a check gombot a klaviatúra felé, ahogy
+// User feedback: „tegyed be a check gombot a klaviatúra felé, ahogy
 // a kártyáknál van", „csináld meg, hogy a check gomb mindenhol a klaviatúra felett legyen".
 // A nyelvtani drill beírós tételeinek (ragozás, átírás) Check gombja a szókártyával azonos, a képernyő
 // aljára dokkolt sáv (learn-dock, a billentyűzet felső élén), és a Check után ugyanott a Next jön.
@@ -22,7 +22,6 @@ jest.mock('expo-router', () => ({
   usePathname: () => '/grammar',
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
   },
   useLocalSearchParams: () => ({ topic: mockTopicId }),
@@ -50,7 +49,7 @@ async function openKind(topic: string, kind: string) {
   const db = getDb();
   await db.setOnboarding('en', 'es');
   (db as any).__setLevelForTest('A1');
-  // tiszta lap: a félbehagyott kör elmentődik (FB421), a web DB pedig memóriában él a tesztek között
+  // tiszta lap: a félbehagyott kör elmentődik, a web DB pedig memóriában él a tesztek között
   for (const k of ['choice', 'match', 'form', 'why', 'transform']) {
     for (const suffix of ['best', 'run', 'answered', 'correct']) {
       await db.setGameProgress(GRAMMAR_PROGRESS_KEY, `${topic}:${k}:${suffix}`, 'cleared', null);
@@ -116,7 +115,7 @@ describe('nyelvtani drill: a Check gomb a billentyűzet fölé dokkol (FB461, FB
   });
 });
 
-// FB462 (PLAN-fb1002b 4. lépés), Kálmán: „itt is ejtse ki a szavakat": a ragozás-drill a szókártyával azonos
+// User feedback: „itt is ejtse ki a szavakat": a ragozás-drill a szókártyával azonos
 // módon kiejti a helyes alakot a Check után (jó és rossz válasz után is), és ugyanazzal a 🔊 gombbal újra elmondható.
 describe('nyelvtani drill: a ragozás helyes alakja elhangzik (FB462)', () => {
   beforeEach(() => (speak as jest.Mock).mockClear());

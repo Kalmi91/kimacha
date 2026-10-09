@@ -1,4 +1,4 @@
-// PLAN-vizsga E. szakasz: az irányonkénti, szintenkénti vizsga-alak (papírok, percek, átmenési
+// az irányonkénti, szintenkénti vizsga-alak (papírok, percek, átmenési
 // szabály, tételszámok).
 //
 // es irány (angolul beszélő tanul spanyolt): a hivatalos A1 / A2 felépítés a régi (4afeb8c^)
@@ -29,7 +29,7 @@ export const AVERAGE_PASS_PCT = 70;
 /** Az angol A1 összpont-küszöbe 100-ból (a kutatás szerint a hivatalos: 50). */
 export const TOTAL_PASS_POINTS = 50;
 
-export interface MockCounts {
+interface MockCounts {
   /** A mondat célnyelvi szószáma legfeljebb ennyi (a szint nyelvtanán belül marad). */
   maxWords: number;
   readPassages: number;
@@ -50,7 +50,7 @@ export interface MockCounts {
   dictationSentences: number;
 }
 
-export interface MockPaperSpec {
+interface MockPaperSpec {
   id: string;
   name: string;
   minutes: number;
@@ -59,9 +59,9 @@ export interface MockPaperSpec {
 }
 
 /** Melyik feladat-kiosztás tartozik a vizsgához (lib/exam/mock/build.ts). */
-export type MockPlan = 'es-official' | 'en-a1' | 'en-a2';
+type MockPlan = 'es-official' | 'en-a1' | 'en-a2';
 
-export interface MockBlueprint {
+interface MockBlueprint {
   plan: MockPlan;
   /** Hivatalos felépítés (spanyol) vagy nemzetközi minta (angol): a felület másképp jelöli. */
   official: boolean;

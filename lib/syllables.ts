@@ -1,11 +1,10 @@
-// PLAN-temak 6E (Könnyű olvasás téma): spanyol szótagoló. Egy szót szótagokra bont úgy, hogy az
+// Könnyű olvasás téma: spanyol szótagoló. Egy szót szótagokra bont úgy, hogy az
 // eredeti betűk (kis-/nagybetű, ékezet) megmaradnak: syllabify('carro') -> ['ca', 'rro'].
 // Egyszerűsített, de a gyakori szabályokat tudja: diftongus / triftongus egy magban, hiátus
 // (két erős magánhangzó vagy ékezetes í / ú) két szótag, ch / ll / rr / qu / gu(e,i) egy hang,
 // mássalhangzó-csoport (pl, tr ...) együtt marad, mexikói tl együtt (a-tlas).
 
 const STRONG = 'aeoáéóàèò';
-const WEAK = 'iuüïy';
 const ACCENTED_WEAK = 'íú';
 const LETTERS = /[a-záéíóúüñàèòïç]/i;
 
@@ -108,7 +107,7 @@ export function syllabify(word: string): string[] {
 
 // Egy kifejezés (szóköz, kötőjel, írásjel): szavanként a szótagok; a nem betű részek külön elemek
 // (`syllables: null`), hogy a hívó változatlanul kirajzolhassa őket.
-export type PhrasePart = { text: string; syllables: string[] | null };
+type PhrasePart = { text: string; syllables: string[] | null };
 
 export function syllabifyPhrase(text: string): PhrasePart[] {
   const parts: PhrasePart[] = [];

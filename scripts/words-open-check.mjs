@@ -1,11 +1,11 @@
-// Kapu a szabad szókészlethez (data/words-open/{a1,a2,b1,b2}.json), PLAN-words-open.md R1-R8.
+// Kapu a szabad szókészlethez (data/words-open/{a1,a2,b1,b2}.json), R1-R8.
 // Futtatás: node scripts/words-open-check.mjs [--level a1|a2|b1|b2] [--list-only]
 //   --list-only  csak R1-R2 és R11-R15 (a lista kész, a mondatok még nincsenek)
 //   --level X    az R3-R10 csak az X szint kártyáin fut (a keresésekhez mindig mind a 600 kártya betöltődik)
 //   --to N       az R3-R10 csak az order <= N kártyákon fut (félkész szint ellenőrzése)
 // Szabályonként kiírja a hibák számát és az első 5 példát, hibánál exit 1.
-// PLAN-tobbjelentes.md 2. lépés: R1/R2 lazítás (több jelentés, 600 fölötti kártyák), R11-R14 (scripts/multi-meaning-rules.mjs).
-// R11 kibővítve (PLAN-words-open-2 3. kör): az `en` vessző/pontosvessző szerinti alternatívái is ütköznek; két kártya azonos alternatívája mindkettőn hint_en-t kér
+// R1/R2 lazítás (több jelentés, 600 fölötti kártyák), R11-R14 (scripts/multi-meaning-rules.mjs).
+// R11 kibővítve (3. kör): az `en` vessző/pontosvessző szerinti alternatívái is ütköznek; két kártya azonos alternatívája mindkettőn hint_en-t kér
 // (vagy összevonást); a régi 882 kártya egymás közti ütközése 50 fölött figyelmeztetés, nem hiba.
 //
 // R6 (szint-nyelvtan): a lib/grammar/tenseGate.ts NEM használható újra, mert az alak-térképét a régi
@@ -145,9 +145,9 @@ for (const c of cards) {
 }
 
 // ---------------------------------------------------------------- R11-R14 több jelentésű szavak (hint, perjeles válasz)
-// R11 bővítve: az `en` vessző/pontosvessző szerinti alternatívái, a zárójeles minősítő elhagyásával is ütköznek (PLAN-words-open-2); a 882 régi kártya egymás
+// R11 bővítve: az `en` vessző/pontosvessző szerinti alternatívái, a zárójeles minősítő elhagyásával is ütköznek; a 882 régi kártya egymás
 // közti ütközése 50 fölött figyelmeztetés, nem hiba.
-// R15 (PLAN-fb1002d, FB459): összetéveszthető csoportok (scripts/words-open-confusable.json): a tagok kártyáin akkor is kötelező a hint_en, ha a kérdésük
+// R15: összetéveszthető csoportok (scripts/words-open-confusable.json): a tagok kártyáin akkor is kötelező a hint_en, ha a kérdésük
 // nem azonos (while/when: mientras, cuando, cuándo); az R13 az ilyen kártyán megengedi a hintet. Minden tag létezik, egy halmaz legalább 2 tag, egy kártya egy halmazban.
 const confusableSets = JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts', 'words-open-confusable.json'), 'utf8')).sets;
 const byOrder = new Map(cards.map((c) => [c.order, c]));

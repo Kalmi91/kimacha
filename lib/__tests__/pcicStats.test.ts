@@ -54,7 +54,7 @@ describe('countKnown', () => {
   });
 });
 
-// FB406 (PLAN-fb0929 6. lépés): a "Words Known" kártya a tanult szavakat számolja.
+// a "Words Known" kártya a tanult szavakat számolja.
 describe('countLearned', () => {
   const card = (over: Partial<import('../sm2').Sm2Card>) =>
     ({ itemId: 'x', state: 'new', step: 0, interval: 0, ease: 2.5, due: '2026-09-30', lapses: 0, ...over }) as import('../sm2').Sm2Card;

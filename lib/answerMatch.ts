@@ -1,19 +1,19 @@
 /**
- * Strict word-level answer check for typing cards (FB6).
+ * Strict word-level answer check for typing cards.
  *
  * "she speak" must NOT pass for "She speaks" — a single letter can be the
  * whole grammar point (verb ending, plural -s). So every word must match
  * exactly; only case, punctuation and missing accents are forgiven
  * (beginner phone keyboards rarely produce á/é/ñ → "como estas" still
  * passes for "¿Cómo estás?"). A stray space typed inside a word ("ofi cina"
- * for "oficina") is forgiven too (FB34) via a whitespace-free fallback.
+ * for "oficina") is forgiven too via a whitespace-free fallback.
  */
 export interface MatchOptions {
   strictAccents?: boolean;
   /** Language the answer is written in, so its own spelling variants count. */
   lang?: string;
   /**
-   * PROMPT-POLICY 5 / FB285: a közös nemű főnév (gender 'mf', el guardia) a
+   * a közös nemű főnév (gender 'mf', el guardia) a
    * kártyán egy névelővel áll, de gépelve a másik névelő is helyes (la guardia).
    */
   eitherArticle?: boolean;
@@ -38,7 +38,7 @@ function normalizeWords(text: string, strictAccents = false): string[] {
     .filter(Boolean);
 }
 
-// FB132: the accent forgiveness above is a beginner crutch (phone keyboards
+// the accent forgiveness above is a beginner crutch (phone keyboards
 // rarely produce á/é/ñ), so it is switchable in Settings -> Difficulty. With
 // strict accents on, "como estas" no longer passes for "Cómo estás"; case and
 // punctuation stay forgiven either way.
@@ -89,7 +89,7 @@ function normalizedForms(text: string, opts: MatchOptions): string[][] {
   return [normalizeWords(text, opts.strictAccents)];
 }
 
-// FB137, Kálmán 2026-08-16 (easy:"The engine makes a lot of noise."): "nem hace
+// User feedback (easy:"The engine makes a lot of noise."): "nem hace
 // kellett volna?? ide szerintem rosszat raktam be és elfogadta". The tap-to-order
 // card used the typing cards' 2-character Levenshtein tolerance, but a tile is
 // tapped, not typed: there is no typo to forgive, so the tolerance only ever hid
@@ -108,10 +108,10 @@ export function sentenceBuildMatch(built: string[], target: string[]): boolean {
 // of the answer ("van (ő)", "óra (idő)", "ver (veremos)"). The normalisation
 // above turns "(" and ")" into spaces, so the gloss used to become a REQUIRED
 // word: "van" failed against "van (ő)". Both forms are accepted now, the full
-// one first (the same gloss-stripping the tile bank does since FB12).
+// one first (the same gloss-stripping the tile bank does).
 const withoutGloss = (text: string) => text.replace(/\([^)]*\)/g, ' ').trim();
 
-// FB215, Kálmán 2026-09-09 (word:la fuerza): „itt a2 ben sok az olyan szó aminek
+// User feedback (word:la fuerza): „itt a2 ben sok az olyan szó aminek
 // több jelentése van, ez miért van, ezek nagyon zavaróak". Egy szónak tényleg
 // lehet két jelentése (el piso = padló / emelet), és a kártya mindkettőt kiírja,
 // de a gépelés eddig CSAK az elsőt fogadta el (a hívó `back.split(' / ')[0]`-t
@@ -146,7 +146,7 @@ export function strictAnswerMatch(answer: string, correct: string, opts: MatchOp
       if (c.length === 0) return false;
       return answerForms.some((a) => {
         if (a.length === c.length && a.every((w, i) => w === c[i])) return true;
-        // FB34: a stray space typed inside a word ("ofi cina" for "oficina") must
+        // a stray space typed inside a word ("ofi cina" for "oficina") must
         // not fail the answer, compare the whitespace-free concatenation instead.
         return a.join('') === c.join('');
       });

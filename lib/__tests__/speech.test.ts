@@ -1,4 +1,4 @@
-// FB144: a missing system voice must not turn into a wrong-language reading.
+// a missing system voice must not turn into a wrong-language reading.
 
 jest.mock('expo-speech', () => ({
   speak: jest.fn(),
@@ -64,7 +64,7 @@ describe('speech voices', () => {
   });
 });
 
-// FB144 second pass, 2026-08-22: expo-speech's Android module builds the locale
+// second pass, 2026-08-22: expo-speech's Android module builds the locale
 // with `Locale("hu-HU")`, which is NOT a BCP-47 parse, so the tag was dropped and
 // the engine read Hungarian with the device's default voice. Android now gets the
 // bare code, and a concrete voice id when the device names one.
@@ -129,7 +129,7 @@ describe('what actually reaches the engine', () => {
     speak('brother', 'en-US');
     const [first, second] = (mocked.speak as jest.Mock).mock.calls;
     expect(first[1].voice).toBe('es-es-x-eed');
-    // FB161: English is no longer pinned, the LANGUAGE still separates the cards.
+    // English is no longer pinned, the LANGUAGE still separates the cards.
     expect(second[1].voice).toBeUndefined();
     expect(second[1].language).toBe('en-US');
   });
@@ -171,7 +171,7 @@ describe('region-aware voice pick', () => {
     expect(voiceIdFor('es-MX')).toBe('es-mx-enhanced');
   });
 
-  // FB161: English keeps the device's default voice, no pinning.
+  // English keeps the device's default voice, no pinning.
   it('never pins an english voice', async () => {
     await withVoiceList([
       { language: 'en-US', identifier: 'en-us-enhanced', quality: 'Enhanced' },
@@ -189,7 +189,7 @@ describe('region-aware voice pick', () => {
   });
 });
 
-// FB152, Kálmán 2026-08-23 (`word:¿Cuándo comes?`): "az s mintha lemaradna".
+// User feedback (`word:¿Cuándo comes?`): "az s mintha lemaradna".
 describe('final consonant clipping on android', () => {
   it('pads the utterance on android so a closing /s/ is not cut off', async () => {
     await withVoices(['es-MX']);
@@ -216,7 +216,7 @@ describe('final consonant clipping on android', () => {
   });
 });
 
-// Kálmán 2026-09-28: a web-build headless böngészős tesztje ne szóljon a gépen.
+// a web-build headless böngészős tesztje ne szóljon a gépen.
 describe('headless browser on web', () => {
   const onWebWithUserAgent = async (userAgent: string, fn: () => Promise<void>) => {
     const os = Platform.OS;

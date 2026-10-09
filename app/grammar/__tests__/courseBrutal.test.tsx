@@ -1,4 +1,4 @@
-// NY21: a brutalista kurzus-lista: fejléc streak-matricával, szint-dobozok
+// a brutalista kurzus-lista: fejléc streak-matricával, szint-dobozok
 // (aktív = a), kész = DONE matrica, folyamatban = b kitöltés + szegmentált
 // sáv, zárt = szaggatott doboz. A classic paletta a mai kinézet.
 // Mock-minta: course.play.test.tsx.
@@ -14,7 +14,6 @@ jest.mock('expo-router', () => ({
   usePathname: () => '/grammar',
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
   },
 }));

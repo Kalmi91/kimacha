@@ -1,4 +1,4 @@
-// FB448: az articulos-genero lecke el / la feladata az app összes főneve. FB493: a feladat a főnév jelentését (tr) is
+// az articulos-genero lecke el / la feladata az app összes főneve. A feladat a főnév jelentését (tr) is
 // hordozza, a szó-pakli pedig megszűnt (a pakli ismét a lecke saját szavai).
 import { buildGrammarRound, grammarRoundItemKind } from '@/lib/games/grammarChoice';
 import { isArticleSetItem } from '@/lib/games/content';
@@ -55,7 +55,7 @@ describe('articleNounItems (FB448)', () => {
     }
   });
 
-  // FB493: a főnév jelentése a words-open-ből (hu / en / de, es-nél az angol), a válasz után látszik.
+  // a főnév jelentése a words-open-ből (hu / en / de, es-nél az angol), a válasz után látszik.
   it('minden tételnek van jelentése (tr) mind a 4 nyelven, az angol a words-open en mezője', () => {
     for (const it of items) {
       for (const lang of LANGS) expect(it.tr?.[lang]?.trim()).toBeTruthy();

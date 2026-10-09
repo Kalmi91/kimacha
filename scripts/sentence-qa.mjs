@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Sentence-QA linter, distilled from the 2026-07-16/21 feedback round (FB52-58).
+// Sentence-QA linter, distilled from the 2026-07-16/21 feedback round.
 // Scans card sentences for the SAME problem classes the user flagged by hand, so
 // the rest of the corpus can be swept for repeats instead of waiting for reports.
 //
@@ -18,7 +18,7 @@ import { dirname, join } from 'node:path';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const levels = process.argv.slice(2).length ? process.argv.slice(2) : ['a0', 'a1', 'a2'];
 
-// ── Class NUM: EN↔ES number divergence (FB52 trousers, FB53 fruit, FB54 vegetables)
+// ── Class NUM: EN↔ES number divergence (trousers, fruit, vegetables)
 // Only a SUBSET of number differences is a real problem. Many nouns simply have a
 // fixed, natural number in Spanish that differs from English, `la ropa` (never
 // pluralised), `las vacaciones` / `las noticias` / `los deberes` (plural-only), `la
@@ -28,9 +28,9 @@ const levels = process.argv.slice(2).length ? process.argv.slice(2) : ['a0', 'a1
 // noun (`pantalón` ↔ trousers → NUM), and collective food nouns the user asked to
 // align (`fruta` / `verdura` → COLL, review-only).
 const NUM_NOUNS = [
-  { es_s: 'pantalón', es_p: 'pantalones', en: /\b(trousers|pants|jeans)\b/i, enAlwaysPlural: true, cls: 'NUM' },   // FB52
-  { es_s: 'fruta', es_p: 'frutas', en: /\bfruit\b/i, enUncountable: true, cls: 'COLL' },                            // FB53
-  { es_s: 'verdura', es_p: 'verduras', en: /\bvegetables?\b/i, cls: 'COLL' },                                        // FB54
+  { es_s: 'pantalón', es_p: 'pantalones', en: /\b(trousers|pants|jeans)\b/i, enAlwaysPlural: true, cls: 'NUM' },
+  { es_s: 'fruta', es_p: 'frutas', en: /\bfruit\b/i, enUncountable: true, cls: 'COLL' },
+  { es_s: 'verdura', es_p: 'verduras', en: /\bvegetables?\b/i, cls: 'COLL' },
   { es_s: 'ropa', es_p: 'ropas', en: /\bclothes\b/i, enAlwaysPlural: true, natural: true },
   { es_s: 'noticia', es_p: 'noticias', en: /\bnews\b/i, enUncountable: true, natural: true },
   { es_s: 'consejo', es_p: 'consejos', en: /\badvice\b/i, enUncountable: true, natural: true },
@@ -40,7 +40,7 @@ const NUM_NOUNS = [
   { es_s: 'vacación', es_p: 'vacaciones', en: /\b(holiday|vacation)\b/i, natural: true },
 ];
 
-// ── Class HARD: grammar above A0/A1 (FB56 "desde hace" + present perfect)
+// ── Class HARD: grammar above A0/A1 ("desde hace" + present perfect)
 const HARD_EN = [/\b(have|has)\s+been\b/i, /\b(have|has)\s+had\b/i, /\bused to\b/i, /\bhad\s+\w+ed\b/i];
 const HARD_ES = [
   /\bdesde hace\b/i,                              // "desde hace dos años"
@@ -49,14 +49,14 @@ const HARD_ES = [
   /\bhab[íi]a\b/i,                                // pluscuamperfecto / imperfect "había"
 ];
 
-// ── Class AGE: "Mi edad es X años" instead of "Tengo X años" (FB55)
+// ── Class AGE: "Mi edad es X años" instead of "Tengo X años"
 const AGE_ES = /\bedad\s+(es|era)\b/i;
 
-// ── Class OBSCURE-EN: rare EN words a beginner can't produce (FB57 "delighted").
+// ── Class OBSCURE-EN: rare EN words a beginner can't produce ("delighted").
 // Small starter blocklist; extend as more show up. A0/A1 scope only.
 const OBSCURE_EN = /\b(delighted|fond|keen|dull|weary|thorough|utterly|henceforth|whom|whilst|amid|seldom)\b/i;
 
-// ── Class AMBIG: color word == the subject object it describes (FB58 fruta/naranja).
+// ── Class AMBIG: color word == the subject object it describes (fruta/naranja).
 const AMBIG_ES = [
   { re: /\bfruta\b[^.?!]*\bnaranja\b/i, note: 'naranja = fruit AND color' },
   { re: /\bflor\b[^.?!]*\brosa\b/i, note: 'rosa = flower AND color' },

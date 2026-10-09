@@ -1,15 +1,15 @@
 import type { DB } from '@/lib/database';
 import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
 
-// FB470 (kártya-szintű folytatás): ha az app a nyelvtani lecke egy gyakorlatában (drill) záródott be, a
+// Kártya-szintű folytatás: ha az app a nyelvtani lecke egy gyakorlatában (drill) záródott be, a
 // következő hidegindításkor (lib/useAppResume.ts a leckére lép) a lecke ugyanabban a gyakorlatban nyílik meg;
-// a gyakorlat maga a mentett körből (FB421, a haladás-sor `run` mezője) ugyanazt a tételt adja. A leckéből
+// a gyakorlat maga a mentett körből (a haladás-sor `run` mezője) ugyanazt a tételt adja. A leckéből
 // kilépve (a képernyő unmountol) a mentés törlődik, így a leckét később a listából megnyitva nem ugrik a drillbe.
 // Napváltáskor érvénytelen.
 
 const DRILL_KEY = 'drill';
 
-export interface DrillResume {
+interface DrillResume {
   topicId: string;
   kind: string;
   day: string;

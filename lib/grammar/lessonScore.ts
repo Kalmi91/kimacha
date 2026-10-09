@@ -1,4 +1,4 @@
-// FB328 (grammar-syllabus), Kálmán 2026-09-21: "legyen kiírva egy százalék
+// User feedback (grammar-syllabus): "legyen kiírva egy százalék
 // szám, hogy a feladatok hányszázalékára sikerült jó választ adni". Pure
 // helpers: the game_progress `${topic}:answered`/`${topic}:correct` counters
 // (written in app/grammar/[topic].tsx's `finish`, one round at a time, every
@@ -43,8 +43,8 @@ export function lessonPercentsByTopic(rows: ProgressRow[]): Map<string, number> 
   return result;
 }
 
-// FB328, Kálmán 2026-09-21: the syllabus row's single badge percent. The
-// cumulative counters win when they exist; a topic marked `done` before FB328
+// the syllabus row's single badge percent. The
+// cumulative counters win when they exist; a topic marked `done` before this change
 // added them has no `${topic}:answered`/`${topic}:correct` rows yet, so the
 // badge falls back to that topic's last round result instead of showing
 // nothing.
@@ -61,7 +61,7 @@ export function lessonBadgePercent(
 }
 
 // ---------------------------------------------------------------------------
-// FB415 / FB420 / FB421 (PLAN-fb0929 4. lépés), Kálmán 2026-09-29: a lecke %-a a
+// a lecke %-a a
 // lecke ÖSSZES feladat-fajtájának átlaga (a még meg nem csinált fajta 0), a
 // félbehagyott feladat elmentődik és onnan folytatódik, a jobb eredmény felülírja
 // a régit. A tárolás ugyanaz a game_progress tábla (`grammar-course`), két új
@@ -72,7 +72,7 @@ export function lessonBadgePercent(
 // tartalékként olvasódnak (amíg a fajtának nincs sem best-, sem run-sora), hogy a
 // meglévő haladás ne tűnjön el.
 
-export type ScoredKind = 'choice' | 'article' | 'match' | 'form' | 'why' | 'transform' | 'spot' | 'order' | 'dictation';
+type ScoredKind = 'choice' | 'article' | 'match' | 'form' | 'why' | 'transform' | 'spot' | 'order' | 'dictation';
 
 export interface KindBest {
   correct: number;
@@ -194,7 +194,7 @@ export function kindProgressFromRows(rows: Row[], topicId: string, kind: ScoredK
 /**
  * A szillabusz-lista minden lecke-%-a egy menetben. `kindsOf` a lecke létező
  * feladat-fajtáit adja (üres: ismeretlen lecke). Ahol a lecke fajta-szintű sorai
- * hiányoznak (a FB380 előtti adat), a régi témaszintű számláló a tartalék.
+ * hiányoznak (a korábbi adat), a régi témaszintű számláló a tartalék.
  */
 export function lessonScoresByTopic(rows: Row[], kindsOf: (topicId: string) => ScoredKind[]): Map<string, number> {
   const topics = new Set<string>();

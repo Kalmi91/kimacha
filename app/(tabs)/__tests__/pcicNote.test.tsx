@@ -1,4 +1,4 @@
-// FB481/495/496/498 (PLAN-fb1005e): az (i) gomb a Learn-kártyán, csak magyarázatos (note) kártyán;
+// az (i) gomb a Learn-kártyán, csak magyarázatos (note) kártyán;
 // koppintásra a magyarázat kinyílik, újra koppintásra becsukódik, kártyaváltáskor becsukva marad.
 // Mock-minta: app/(tabs)/__tests__/pcicHint.test.tsx.
 
@@ -12,7 +12,6 @@ jest.mock('@/lib/speech', () => ({
 jest.mock('expo-router', () => ({
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
   },
 }));
@@ -30,12 +29,8 @@ jest.mock('@/data/pcic', () => {
   return {
     PCIC_LEVELS: ['B1'],
     PCIC_VIEW_LEVELS: ['B1'],
-    LEVEL_LABELS: { B1: 'Intermediate' },
     pcicItemsForLevel: () => items,
-    pcicItemsForViewLevel: () => items,
     findPcicItem: (id: string) => items.find((i) => i.id === id),
-    isPlusSentence: () => false,
-    realLevelOfView: (level: string) => level,
     setPcicTarget: () => {},
   };
 });

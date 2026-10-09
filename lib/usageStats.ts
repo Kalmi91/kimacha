@@ -19,27 +19,22 @@ export interface UsageStats {
   daysActive: number;
 }
 
-// FB65: weekly study goal, measured against the rolling 7-day usage total.
+// weekly study goal, measured against the rolling 7-day usage total.
 // Default 7 hours a week (the target the user asked for), settable in Settings.
 export const DEFAULT_WEEKLY_GOAL_MINUTES = 420;
 export const MIN_WEEKLY_GOAL_MINUTES = 60;
 export const MAX_WEEKLY_GOAL_MINUTES = 2100; // 35 hours, 5 a day
 export const WEEKLY_GOAL_STEP_MINUTES = 60;
 
-// FB77: daily new-word budget. A topic full of unknown words is overwhelming,
+// daily new-word budget. A topic full of unknown words is overwhelming,
 // so only this many brand-new WORD cards enter the queue per day; the learner
 // can raise it for today with the "+5 new words" button (bonus, see database).
 export const DEFAULT_DAILY_NEW_LIMIT = 10;
 export const MIN_DAILY_NEW_LIMIT = 5;
 export const MAX_DAILY_NEW_LIMIT = 100;
 export const DAILY_NEW_LIMIT_STEP = 5;
-export const DAILY_NEW_BONUS_STEP = 5;
-// FB133, Kálmán 2026-08-15/16: "itt lehegyen olyan opció is hogy plusz 10 új szó",
-// "ne csak plusz 5 szót lehessen hozzá adni, hanem plusz 10 vagy 15 ot". The Done
-// screen offers all three, the smallest first.
-export const DAILY_NEW_BONUS_STEPS = [5, 10, 15];
 
-export interface GoalProgress {
+interface GoalProgress {
   pct: number; // 0..1, clamped, for the progress bar
   behind: boolean; // still short of the goal for this 7-day window
   remaining: number; // minutes left to reach it (0 once reached)

@@ -1,4 +1,4 @@
-// FB328 (grammar-syllabus): the per-lesson correct-percent badge's pure math.
+// Grammar-syllabus: the per-lesson correct-percent badge's pure math.
 
 import { lessonBadgePercent, lessonPercent, lessonPercentsByTopic } from '../lessonScore';
 
@@ -71,7 +71,7 @@ describe('lessonBadgePercent', () => {
   });
 });
 
-// FB415 / FB420 / FB421 (PLAN-fb0929 4. lépés): a lecke %-a az összes fajta átlaga.
+// a lecke %-a az összes fajta átlaga.
 import {
   betterBest,
   kindPercent,

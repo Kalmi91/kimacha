@@ -1,11 +1,11 @@
-// GAMES.md 4.7 (F5, conjugation-slot). Verb-form generation: RULE-BASED for
+// Conjugation-slot. Verb-form generation: RULE-BASED for
 // regular -ar/-er/-ir verbs (endings generated, not hand-listed per verb) and
 // a hand-verified TABLE for the 15 core irregulars named in the spec (ser,
 // estar, ir, tener, hacer, poder, decir, ver, dar, saber, querer, venir,
 // poner, salir, haber). K15: Spanish only, callers show "soon" for every
 // other learned language.
 //
-// GAMES.md's own words: "A ragozási alakok tényállítások: ha egy alakban
+// The spec's own words: "A ragozási alakok tényállítások: ha egy alakban
 // bizonytalan vagy, inkább hagyd ki azt az igét vagy igeidőt, mint hogy
 // hibás alakot taníts." So a verb that is NOT in the irregular table and NOT
 // confidently plain-regular (stem-changing e→ie/o→ue/e→i, -uir y-insertion,
@@ -17,25 +17,18 @@
 // not an attempt at an exhaustive Spanish grammar.
 
 export type Tense = 'presente' | 'indefinido' | 'imperfecto' | 'futuro' | 'condicional' | 'subjuntivo_presente';
-export type Person = 'yo' | 'tu' | 'el' | 'nosotros' | 'ellos';
+type Person = 'yo' | 'tu' | 'el' | 'nosotros' | 'ellos';
 
 export const TENSES: Tense[] = ['presente', 'indefinido', 'imperfecto', 'futuro', 'condicional', 'subjuntivo_presente'];
 
-// The app's own Spanish grammar topics (data/topics/a1.json presente_ar/er/ir,
+// The app's own Spanish grammar topics (presente_ar/er/ir,
 // ser, estar…) teach a 5-person paradigm (yo/tú/él-ella/nosotros/ellos-ellas),
 // vosotros omitted (Latin-American convention: ustedes/ellos double up). This
 // module follows the same 5-person shape for consistency with the rest of
 // the app's Spanish grammar content.
-export const PERSONS: Person[] = ['yo', 'tu', 'el', 'nosotros', 'ellos'];
-export const PERSON_LABEL: Record<Person, string> = {
-  yo: 'yo',
-  tu: 'tú',
-  el: 'él/ella',
-  nosotros: 'nosotros',
-  ellos: 'ellos/ellas',
-};
+const PERSONS: Person[] = ['yo', 'tu', 'el', 'nosotros', 'ellos'];
 
-export interface ConjugationForm {
+interface ConjugationForm {
   person: Person;
   form: string;
 }
@@ -47,7 +40,7 @@ function toForms(tuple: FormTuple): ConjugationForm[] {
 }
 
 // ---------------------------------------------------------------------------
-// The 15 core irregulars (GAMES.md 4.7). Hand-verified, standard Spanish.
+// The 15 core irregulars. Hand-verified, standard Spanish.
 // ---------------------------------------------------------------------------
 
 const IRREGULAR: Record<string, Record<Tense, FormTuple>> = {

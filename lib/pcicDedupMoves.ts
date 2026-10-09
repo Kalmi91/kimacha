@@ -1,6 +1,6 @@
-// GENERÁLT FÁJL (a generáló scripts/pcic-dedup.mjs a PLAN-regi-szavak-ki 6. lépésében kikerült), ne szerkeszd kézzel.
+// GENERÁLT FÁJL (a generáló scripts/pcic-dedup.mjs kikerült), ne szerkeszd kézzel.
 //
-// PLAN-fb0924 7b. lépés (FB384, D3+D4): törölt (magasabb szintű/szinten-belüli
+// törölt (magasabb szintű/szinten-belüli
 // duplikátum) PCIC-item-id -> a megmaradó (legalacsonyabb szintű) item-id. A DB-
 // migráció (lib/db/migrations.ts applyPcicDedup) ezen a térképen viszi át a
 // meglévő pcic_cards SRS-haladást; ha MINDKÉT oldalon van haladás, az erősebb

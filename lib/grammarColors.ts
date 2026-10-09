@@ -15,7 +15,7 @@ export type GrammarColors = {
   text: string;
   // true: brutalista formák (BrutalBox, Sticker, SegmentBar); false: classic.
   brutal: boolean;
-  // PLAN-temak 2A: szöveg az a / b / c kitöltésen (onFill = onA), a harmadik szín,
+  // szöveg az a / b / c kitöltésen (onFill = onA), a harmadik szín,
   // a keret saját színe (alap: ink), szöveg ink kitöltésen, téma-specifikus színek.
   onA: string;
   onB: string;
@@ -25,11 +25,11 @@ export type GrammarColors = {
   extra: Record<string, string>;
 };
 
-// NY20: a téma-kulcsból (`<paletta>-light|dark` vagy a classic 'light' | 'dark')
+// a téma-kulcsból (`<paletta>-light|dark` vagy a classic 'light' | 'dark')
 // képzett kulcsok a nyelvtan-képernyőknek. classic esetén a mai Colors[theme]
 // értékeiből képez ugyanilyen kulcsokat (brutal = false). Csak a `theme`-től
 // függ, ezért a `useTheme`-et mockoló tesztekben ('light') a classic ág fut.
-// PLAN-temak 2A: a `<téma-id>-<mód>` kulcsok (constants/Skins.ts) a téma színeit adják.
+// A `<téma-id>-<mód>` kulcsok (constants/Skins.ts) a téma színeit adják.
 export function grammarColorsFor(theme: ThemeKey): GrammarColors {
   if (theme === 'light' || theme === 'dark') {
     const c = Colors[theme];
@@ -44,7 +44,7 @@ export function grammarColorsFor(theme: ThemeKey): GrammarColors {
       text: c.text,
       brutal: false,
       onA: c.onTint,
-      // PLAN-temak 7G: a rózsaszín (b) kitöltésen a fehér 3,53 volt, a fekete 5,2.
+      // a rózsaszín (b) kitöltésen a fehér 3,53 volt, a fekete 5,2.
       onB: bestOn(c.accent, [c.onTint, '#000000']),
       c: c.accent,
       border: c.text,

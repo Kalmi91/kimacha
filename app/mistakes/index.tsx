@@ -16,7 +16,7 @@ import { cardsForBatches, pickMistakeSession } from '@/lib/mistakes/deck';
 import { BrutalBackButton, BrutalButton, Card } from '@/components/grammar/Brutal';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
 
-// PLAN-hibaim.md 3. lépés ("Riport"): one row per loaded batch (newest
+// one row per loaded batch (newest
 // first, from getMistakeBatches()), a wrong-words list, the grammar patterns
 // to review (linking to an existing lesson when there is one), and the
 // doubtful (uncertain-correction) sentences the deck leaves out.

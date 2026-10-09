@@ -1,4 +1,4 @@
-// PLAN-regi-szavak-ki 5. lépés (2026-10-01): a spanyol szavak egyetlen forrása a
+// a spanyol szavak egyetlen forrása a
 // data/words-open (601 kártya, A1-B2). A kártyák a régi `WordEntry` alakjában
 // jönnek (id = a kártya `order`-e, 1-601), hogy a keresők és a hívóik (glossza,
 // kevert felolvasás, szófaj-index, igealak-térkép) változatlan aláírással élnek.
@@ -32,9 +32,9 @@ interface OpenCard {
 }
 
 /** A words-open kártya WordEntry-alakban; `openPos` a words-open nyers szófaja (conj, det, interj is). */
-export type OpenWord = WordEntry & { lemma: string; openPos: string };
+type OpenWord = WordEntry & { lemma: string; openPos: string };
 
-export const OPEN_LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2'];
+const OPEN_LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2'];
 
 // A WordPos-ba eső szófajok; conj/det/interj nem képezhető le, azoknak `pos` nélkül marad a kártya.
 const OPEN_POS_TO_WORD_POS: Record<string, WordPos> = {
@@ -99,7 +99,7 @@ export function getOpenWordsUpToLevel(level: Level): OpenWord[] {
   return openWords.filter((w) => allowed.has(w.level));
 }
 
-// Ragozott alak -> words-open lemma (glossza-lefedettség, a PLAN-regi-szavak-ki 5. lépése
+// Ragozott alak -> words-open lemma (glossza-lefedettség, a régi szólista kivezetése
 // utáni javítás): a régi lista a ragozott alakokat is hordozta, a words-open csak a
 // tőalakot. Az index kizárólag words-open kártyából épül (lib/esForms: igéknél a ragozó
 // motor alakjai, a motor által nem ragozott igéknél a bő tőváltozat-készlet, igenevek,

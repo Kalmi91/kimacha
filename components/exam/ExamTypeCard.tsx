@@ -14,12 +14,12 @@ import { stripSentencePunct } from '@/lib/sentenceCards';
 import { useTheme } from '@/lib/ThemeContext';
 import ExamButton from './ExamButton';
 
-// PLAN-vizsga A. szakasz 2. lépés (A5 c): szó- vagy mondat-beírás. Helyes válasz
+// szó- vagy mondat-beírás. Helyes válasz
 // után NINCS visszajelzés, a vizsga megy tovább; hibás (vagy "nem tudom") válasz
 // után mutatja a helyeset, és a "Next" lép tovább. Nincs hang: a vizsgában nincs hallás.
 type Props = {
   prompt: string;
-  /** Több jelentésű szó kis mondata; a `*jelölt*` rész kiemelve (PLAN-tobbjelentes). */
+  /** Több jelentésű szó kis mondata; a `*jelölt*` rész kiemelve. */
   hint?: string;
   answer: string;
   /** További elfogadott válaszok (pl. a nyelvtani teszt mondat-átírásánál); a hibás után az `answer` látszik. */
@@ -50,7 +50,7 @@ export default function ExamTypeCard({ prompt, hint, answer, accept, sentence, t
     else setMissed(true);
   };
 
-  // FB461/FB464: a Check (és hibás válasz után a Next) a billentyűzet fölé dokkolt sáv, ahogy a szókártyán (DockSlot).
+  // a Check (és hibás válasz után a Next) a billentyűzet fölé dokkolt sáv, ahogy a szókártyán (DockSlot).
   const { docked, padBottom } = useDockedAction(
     missed
       ? { label: `${s.card.next} →`, tone: 'next', testID: 'exam-next', onPress: () => onDone(false) }

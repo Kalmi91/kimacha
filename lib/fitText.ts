@@ -1,6 +1,6 @@
 import { useWindowDimensions } from 'react-native';
 
-// FB404/405/413 (PLAN-fb0929 1. lépés): a spanyol szavak és a spanyol felület
+// a spanyol szavak és a spanyol felület
 // feliratai hosszabbak az angolnál, és a natív Text egy sor-konténerben nem
 // törik a hosszú szót, ezért a nagy betűs szövegek kilógtak vagy a bal széle
 // levágódott ("reason (justification)" -> "eason"). A web nem ismeri az
@@ -17,7 +17,7 @@ const CHAR_EM_BOLD = 0.62;
 const CHAR_EM_REGULAR = 0.55;
 const CAPS_EXTRA_EM = 0.08;
 
-export interface FitOptions {
+interface FitOptions {
   /** A kívánt (legnagyobb) betűméret. */
   base: number;
   /** Az elérhető szélesség dp-ben (ablak-szélesség mínusz padding / testvérek). */

@@ -1,11 +1,11 @@
-// FB202, Kálmán 2026-09-09 (grammar:clases-de-palabras:lesson): „az app nem veszi
+// User feedback (grammar:clases-de-palabras:lesson): „az app nem veszi
 // figyelembe hogy a telefonomon van alul a vissza gomb meg az ilyenek valahol jó
 // valahol nem, amikro a chevk gombot csináltuk akkor is ez előjött. ugy kellen
 // megcsinálni, hogy az app nézze meg hogy van e olyan ha van akkor úgy töltse be az
 // appot, hogy ne legyen átfedés".
 //
 // Eddig képernyőnként foltoztuk: a tanuló-lap dokkolt Check gombja kapott egy
-// `insets.bottom` emelést (FB178), a többi képernyő nem kapott semmit, és a
+// `insets.bottom` emelést, a többi képernyő nem kapott semmit, és a
 // rendszer navigációs sávja (gesztus-csík vagy a három gomb) alá futott. Innentől
 // a gyökér-layout tartja a rést, egy helyen, minden képernyőnek.
 //

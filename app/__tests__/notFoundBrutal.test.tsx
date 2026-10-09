@@ -1,4 +1,4 @@
-// NY25: a "nincs ilyen képernyő" oldal brutalista palettán BrutalButton, classic palettán a mai link.
+// a "nincs ilyen képernyő" oldal brutalista palettán BrutalButton, classic palettán a mai link.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-router', () => {

@@ -1,4 +1,4 @@
-// FB376 (PLAN-fb0923 4. lépés): a `why` item opcionális `target` mezője a
+// a `why` item opcionális `target` mezője a
 // mondat pontos részét nevezi meg, amire a kérdés vonatkozik (WhyItem,
 // lessonTypes.ts). A keresés szóhatárral történik, hogy egy rövid target
 // (pl. "es") ne találjon rá egy hosszabb szó belsejére (pl. "profesor").

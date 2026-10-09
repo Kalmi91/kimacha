@@ -6,7 +6,7 @@ import { useDockLift } from '@/components/learn/useDockLift';
 
 type ColorScheme = (typeof Colors)['light'];
 
-// FB461/FB462/FB464 (PLAN-fb1002b 3. lépés), Kálmán: „tegyed be a check gombot a klaviatúra felé,
+// User feedback: „tegyed be a check gombot a klaviatúra felé,
 // ahogy a kártyáknál van", „csináld meg, hogy a check gomb mindenhol a klaviatúra felett legyen".
 // A szókártya, a mondatkártya és a táblakártya a Check / Next sávot a képernyő aljára dokkolja
 // (DockedAction), a billentyűzet felső élén. A nyelvtani drill (ragozás, átírás, diktálás) és a
@@ -15,7 +15,7 @@ type ColorScheme = (typeof Colors)['light'];
 // bejelenti, mi legyen rajta (useDockedAction), így a tétel nem kell ismerje a képernyő szerkezetét.
 // Host nélkül (önálló render, teszt) a tétel a régi inline gombot rajzolja.
 
-export interface DockSpec {
+interface DockSpec {
   label: string;
   onPress: () => void;
   tone: DockedActionTone;
@@ -32,7 +32,7 @@ interface DockContextValue {
 
 const DockContext = createContext<DockContextValue | null>(null);
 
-export interface DockSlotHost {
+interface DockSlotHost {
   value: DockContextValue;
   /** A dokkolt sáv, a képernyő-konténer KÖZVETLEN gyerekeként kell kirajzolni (absolute, bottom = a billentyűzet emelése). */
   node: ReactNode;

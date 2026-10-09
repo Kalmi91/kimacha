@@ -1,4 +1,4 @@
-// FB453 (Kálmán: „nem lehet spanyol szó az angol szók között”): a kártyák angol (és magyar / német)
+// User feedback („nem lehet spanyol szó az angol szók között”): a kártyák angol (és magyar / német)
 // jelentés-mezőjében nincs spanyol kifejezés. A tipikus szivárgás: „… ; tratar de = to try to”,
 // „(sin embargo)”, „(tener razón = …)”: az `=` jel és a spanyol ékezetes betűk az angol mezőben.
 import openA1 from '@/data/words-open/a1.json';

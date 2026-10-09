@@ -1,4 +1,4 @@
-// FB326 (Kálmán 2. terv, "Személy-blokkok"): tiszta helper a LessonBody
+// tiszta helper a LessonBody
 // tábla-blokkjához. Eldönti, hogy egy `table` blokk ragozási tábla-e
 // (fejléc 2..n cellája mind infinitivus, a sorok címkéi személy-névmások),
 // és ha igen, szétvágja egy alakot tőre és végződésre (a tő halvány, a
@@ -7,7 +7,7 @@
 
 import type { Lang4 } from './lessonTypes';
 
-export type VerbClass = 'ar' | 'er' | 'ir';
+type VerbClass = 'ar' | 'er' | 'ir';
 
 // A hat személy + a data/games/grammar/es/*.json-ban ténylegesen előforduló
 // szét- és összevont változatok (usted/ustedes külön is). A kulcsok innen
@@ -48,7 +48,7 @@ function isPersonLabel(label: string): boolean {
 // (0 hosszú tő). Szóköz vagy "+" a cellában (pl. "ir a + infinitivo") kizárja.
 const INFINITIVE_RE = /^[a-zàáâäèéêëìíîïòóôöùúûüñç]*(ar|er|ir)(se)?$/i;
 
-// PLAN-fb1001 13. lépés (FB440): exportálva, a táblakártya ebből tudja, hogy a címke egy infinitivus
+// exportálva, a táblakártya ebből tudja, hogy a címke egy infinitivus
 // (az rejtett marad, súgó-gombra látszik), nem oszlop-fejléc (az látszik).
 export function isInfinitive(word: string): boolean {
   return INFINITIVE_RE.test(word.trim());
@@ -65,7 +65,7 @@ export function isConjugationTable(header: Lang4[], rows: string[][]): boolean {
   return rows.every((row) => isPersonLabel(row[0]));
 }
 
-// PLAN-fb1001 11. lépés (FB437/FB438): személy-tábla = minden sor címkéje személy-névmás
+// személy-tábla = minden sor címkéje személy-névmás
 // (yo, tú, él/ella/usted...), a fejléc 2..n cellája viszont NEM csupa infinitivus
 // (pl. "Sujeto -> pronombre de objeto indirecto", "Persona -> ir a + infinitivo",
 // "Persona -> Masculino singular | ..."). Az ilyen tábla egyértelműen kérdezhető
@@ -77,7 +77,7 @@ export function isPersonTable(header: Lang4[], rows: string[][]): boolean {
   return rows.every((row) => isPersonLabel(row[0]));
 }
 
-// FB390: a reference table shaped like interrogativos.json's overview (row[0]
+// a reference table shaped like interrogativos.json's overview (row[0]
 // = an English meaning, e.g. "what"/"who"; row[1] = the single Spanish term
 // that means it, e.g. "qué"; further columns are extra reference context,
 // e.g. an example question, not part of the quiz). Detected by the author's
@@ -86,7 +86,7 @@ export function isPersonTable(header: Lang4[], rows: string[][]): boolean {
 // way (interrogativos today; any future lesson with the same header wins
 // the same treatment automatically). Deliberately narrow: a table with a
 // different header (Person, Singular, Infinitive, ...) stays reference-only
-// and falls back to the word-deck, per PLAN-fb0924 2. lépés ("ha egy tábla
+// and falls back to the word-deck, per the spec ("ha egy tábla
 // nem kérdezhető, ne erőltesd").
 export function isMeaningTable(header: Lang4[], rows: string[][]): boolean {
   if (header.length < 2 || rows.length === 0) return false;
@@ -137,7 +137,7 @@ export function splitStemEnding(form: string, infinitive: string): { stem: strin
   return { stem, ending };
 }
 
-// FB381-383: minden IGE (oszlop) saját színt kap az oszlop-indexe szerint,
+// minden IGE (oszlop) saját színt kap az oszlop-indexe szerint,
 // nem az igeosztálya szerint (hablar/comer/vivir addig 3 külön szín volt
 // véletlenül, de tener/estar/poder/hacer közül tener és poder és hacer mind
 // -er osztályú, tehát ugyanaz a szín jutott 3 különböző igének). Legalább 5

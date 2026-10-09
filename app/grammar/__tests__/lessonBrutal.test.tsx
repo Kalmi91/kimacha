@@ -1,4 +1,4 @@
-// NY23: a lecke-oldal neo-brutalista formákkal: fejléc (vissza-doboz, cím,
+// a lecke-oldal neo-brutalista formákkal: fejléc (vissza-doboz, cím,
 // szint-matrica), kártyák BrutalBox-ban, tábla-rács ink kerettel, kitöltésű
 // indító-gombok. A classic paletta a mai kinézet. Mock-minta: lessonV2.play.test.tsx.
 
@@ -18,7 +18,6 @@ jest.mock('expo-router', () => ({
   usePathname: () => '/grammar',
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
   },
   useLocalSearchParams: () => ({ topic: 'ser-estar' }),

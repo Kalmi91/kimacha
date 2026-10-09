@@ -1,4 +1,4 @@
-// FB378 ("Practice the table" with an English prompt): on a lesson whose
+// "Practice the table" with an English prompt: on a lesson whose
 // conjugation tables carry `enPrompt`, the deck screen shows the English
 // sentence as the main prompt and the infinitive underneath, instead of the
 // bare "person · verb" caption. Mock pattern from tableDeck.play.test.tsx.
@@ -49,9 +49,9 @@ describe('table-deck screen: enPrompt (FB378)', () => {
   });
 
   it('every cell in this lesson has an English prompt', () => {
-    // Both indefinido-regular conjugation tables are fully filled in
-    // (FB378b/c), so this also proves the fixture is meaningful: whichever
-    // cell the (now shuffled, FB377) deck shows first will have one.
+    // Both indefinido-regular conjugation tables are fully filled in,
+    // so this also proves the fixture is meaningful: whichever
+    // cell the (now shuffled) deck shows first will have one.
     expect(cells.length).toBeGreaterThan(0);
     expect(cells.every((c) => typeof c.enPrompt === 'string' && c.enPrompt.length > 0)).toBe(true);
   });
@@ -63,7 +63,7 @@ describe('table-deck screen: enPrompt (FB378)', () => {
     const first = cells.find((c) => screen.queryByText(c.enPrompt!) !== null);
     expect(first).toBeTruthy();
     expect(screen.getByText('translate to Spanish')).toBeTruthy();
-    // PLAN-fb1001 13. lépés (FB440): az infinitivus alapból rejtett, a súgó-gomb mutatja.
+    // az infinitivus alapból rejtett, a súgó-gomb mutatja.
     expect(screen.queryByText(first!.verb)).toBeNull();
     fireEvent.press(screen.getByTestId('tabledeck-hint'));
     expect(screen.getByText(first!.verb)).toBeTruthy();

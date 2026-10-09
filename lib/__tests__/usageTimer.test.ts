@@ -21,7 +21,7 @@ describe('usageTimer', () => {
   let changeHandler: (state: string) => void = () => {};
 
   beforeEach(() => {
-    // A nap-váltás figyelése (FB108) valós naptári dátumot néz, a tesztek pedig
+    // A nap-váltás figyelése valós naptári dátumot néz, a tesztek pedig
     // fél órákat léptetnek előre. Rögzített, nap közepi kezdőidő nélkül a
     // 23:30 után induló futás átlépte az éjfélt, a rollover nullázta a
     // session-perceket, és a 30 perces mérföldkő sosem sült el.
@@ -117,7 +117,7 @@ describe('usageTimer', () => {
     expect(onMinute).toHaveBeenCalledTimes(1);
   });
 
-  // FB63: one full active minute, split so the 30s idle window never lapses.
+  // one full active minute, split so the 30s idle window never lapses.
   const advanceOneMinute = () => {
     noteInteraction();
     jest.advanceTimersByTime(30_000);

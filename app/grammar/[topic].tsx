@@ -9,7 +9,7 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { normalizeWordToken, type Level } from '@/data/words';
-import { cumulativeCorpusWordIds, grammarKindCounts, isLessonV2, type GrammarGapItem, type GrammarItem, type GrammarKind, type GrammarTopicData } from '@/lib/games/content';
+import { cumulativeCorpusWordIds, grammarKindCounts, type GrammarGapItem, type GrammarItem, type GrammarKind, type GrammarTopicData } from '@/lib/games/content';
 import { buildGlossMap } from '@/lib/games/gloss';
 import { GRAMMAR_PROGRESS_KEY, lessonFor, nextWrittenTopic, scoredKinds, syllabusTopic } from '@/lib/grammar/syllabus';
 import {
@@ -28,13 +28,12 @@ import { ARTICLE_LESSON_ID, ARTICLE_ROUND_SIZE } from '@/lib/grammar/nounArticle
 import { LESSON_TEST_PASS_PCT, lessonTestFromRows, lessonTestKey, lessonTestSize, lessonTestUnlocked } from '@/lib/grammar/lessonTest';
 import { getScrollY, setScrollY } from '@/lib/grammar/scrollMemory';
 import { speak, speakSequence, stopSpeaking } from '@/lib/speech';
-import { splitByLanguage, splitByMarkers } from '@/lib/mixedSpeech';
+import { splitByMarkers } from '@/lib/mixedSpeech';
 import { speechLang } from '@/lib/languages';
 import GlossText from '@/components/games/GlossText';
 import GrammarDrill, { type RoundStats } from '@/components/grammar/GrammarDrill';
 import LessonBody from '@/components/grammar/LessonBody';
 import LessonTest from '@/components/grammar/LessonTest';
-import MoreBlocks from '@/components/grammar/MoreBlocks';
 import FeedbackButton from '@/components/FeedbackModal';
 import FitText from '@/components/FitText';
 import SpeakButton from '@/components/SpeakButton';
@@ -55,7 +54,7 @@ import { localDateString } from '@/lib/usageStats';
 type Phase = 'lesson' | 'drill' | 'done' | 'test';
 type ProgressRow = { itemId: string; state: string; data: unknown };
 
-// D3 (FB290, 2026-09-17): a gombok ebben a sorrendben jelennek meg, csak azok
+// a gombok ebben a sorrendben jelennek meg, csak azok
 // a fajták, amikből van item a leckében.
 const KIND_ORDER: GrammarKind[] = ['choice', 'article', 'match', 'form', 'why', 'transform', 'spot', 'order', 'dictation'];
 
@@ -73,29 +72,29 @@ export default function GrammarLessonScreen() {
   const [lesson, setLesson] = useState<GrammarTopicData | null>(null);
   const [phase, setPhase] = useState<Phase>('lesson');
   const [score, setScore] = useState<{ correct: number; total: number } | null>(null);
-  // D3 (FB290): melyik fajtát indította el a tanuló (a gombja szerint), ez megy
+  // melyik fajtát indította el a tanuló (a gombja szerint), ez megy
   // a GrammarDrill `kinds` propjába és a haladás-sor kulcsába is.
   const [drillKind, setDrillKind] = useState<GrammarKind>('choice');
-  // FB340-342/345/356: a látható drill-item id-ja, a feedback-kontextusba.
+  // a látható drill-item id-ja, a feedback-kontextusba.
   const [drillItemId, setDrillItemId] = useState<string | undefined>(undefined);
-  // FB470 (kártya-szintű folytatás): true, amint a mentett gyakorlat visszaolvasása lefutott (előtte nem mentünk).
+  // Kártya-szintű folytatás: true, amint a mentett gyakorlat visszaolvasása lefutott (előtte nem mentünk).
   const [drillResumeReady, setDrillResumeReady] = useState(false);
-  // FB461/FB462/FB464: a drill beírós tételeinek Check / Next sávja a billentyűzet fölé dokkol (components/learn/DockSlot.tsx).
+  // a drill beírós tételeinek Check / Next sávja a billentyűzet fölé dokkol (components/learn/DockSlot.tsx).
   const dock = useDockSlot(colors);
-  // FB327: a lecke-body ScrollView fázisváltáskor újra-mountol, a pozíciót a
+  // a lecke-body ScrollView fázisváltáskor újra-mountol, a pozíciót a
   // lib/grammar/scrollMemory.ts tartja topicId szerint, hogy visszaállítható legyen.
   const scrollRef = useRef<ScrollView>(null);
-  // LECKE-SEMA 3.3: a V2 lecke egyetlen (play → stop) gombja a lesson.speak
+  // a V2 lecke egyetlen (play → stop) gombja a lesson.speak
   // felolvasásához; leállítás gombnyomásra, fázisváltáskor és unmountkor is.
   const [speaking, setSpeaking] = useState(false);
-  // FB316 (NY10): hányszor gyakorolt már egy-egy transform item (itemId -> n),
+  // hányszor gyakorolt már egy-egy transform item (itemId -> n),
   // ez dönti el a következő 10-es kör sorrendjét (legkevésbé gyakorolt elöl).
   const [transformSeen, setTransformSeen] = useState<Record<string, number>>({});
-  // FB415 / FB420 / FB421 (PLAN-fb0929 4. lépés): a lecke haladás-sorai (game_progress),
+  // a lecke haladás-sorai (game_progress),
   // amikből fajtánként a legjobb befejezett kör (best) és a félbehagyott kör (run) jön;
   // a lecke %-a az ÖSSZES fajta átlaga (lib/grammar/lessonScore.ts), a meg nem csinált 0.
   const [progressRows, setProgressRows] = useState<ProgressRow[]>([]);
-  // NY24: a kör-vége képernyő adatai (csak memóriában): a drill statisztikája, a
+  // a kör-vége képernyő adatai (csak memóriában): a drill statisztikája, a
   // kör ELŐTTI kumulált %, és a streak-nap.
   const [roundStats, setRoundStats] = useState<RoundStats | null>(null);
   const [prevPct, setPrevPct] = useState<number | null>(null);
@@ -106,9 +105,9 @@ export default function GrammarLessonScreen() {
     const onboarding = await db.getOnboarding();
     const target = onboarding?.target ?? 'es';
     setLearnedLang(target);
-    // Kimacha Play: UI always English (Kálmán, 2026-09-22), regardless of the
+    // Kimacha Play: UI always English, regardless of the
     // stored source language; the lesson data's hu/es/de fields stay unused.
-    // es→en (Kálmán, 2026-09-28): a spanyol anyanyelvű tanuló spanyol magyarázatot kap.
+    // es→en: a spanyol anyanyelvű tanuló spanyol magyarázatot kap.
     setContentLang(target === 'en' ? 'es' : 'en');
     const levelData = await db.getLevel();
     setLevel((levelData.level as Level) ?? 'A1');
@@ -116,14 +115,14 @@ export default function GrammarLessonScreen() {
     const loadedLesson = lessonFor(target, String(topicId)) ?? null;
     setLesson(loadedLesson);
     if (loadedLesson) {
-      // FB316 (NY10): a kör indítása előtt betöltjük, melyik transform item
+      // a kör indítása előtt betöltjük, melyik transform item
       // hányszor gyakorolt, hogy a legkevésbé gyakorolt kerülhessen elöre.
       const progressRows = await db.getGameProgress(GRAMMAR_PROGRESS_KEY);
       const seenRow = progressRows.find((r) => r.itemId === `${String(topicId)}:transform:seen`);
       setTransformSeen((seenRow?.data as Record<string, number>) ?? {});
-      // FB415/FB421: ugyanabból a lekérésből a fajták best/run/régi sorai.
+      // ugyanabból a lekérésből a fajták best/run/régi sorai.
       setProgressRows(progressRows);
-      // FB470: ha az app ebben a gyakorlatban záródott be, ugyanabban nyílik meg (a kör a mentett futásból folytatódik, FB421).
+      // ha az app ebben a gyakorlatban záródott be, ugyanabban nyílik meg (a kör a mentett futásból folytatódik).
       const counts = grammarKindCounts(loadedLesson);
       const resumeKind = drillToResume(await loadDrillResume(db), String(topicId), localDateString(), KIND_ORDER.filter((k) => counts[k] > 0));
       if (resumeKind) {
@@ -139,7 +138,7 @@ export default function GrammarLessonScreen() {
 
   useLoadOnMount(load);
 
-  // FB470: a drillben állva menti a gyakorlatot, a leckéből kilépve (lecke-fázis, kész, unmount) törli.
+  // a drillben állva menti a gyakorlatot, a leckéből kilépve (lecke-fázis, kész, unmount) törli.
   useEffect(() => {
     if (!drillResumeReady) return;
     const db = getDb();
@@ -154,7 +153,7 @@ export default function GrammarLessonScreen() {
     [topicId]
   );
 
-  // LECKE-SEMA 3.3: felolvasás-leállítás fázisváltáskor és unmountkor is,
+  // felolvasás-leállítás fázisváltáskor és unmountkor is,
   // nem csak a gomb megnyomására. Hook-szabály miatt a `lesson`-null korai
   // return ELŐTT kell állnia.
   useEffect(() => {
@@ -180,42 +179,42 @@ export default function GrammarLessonScreen() {
           <View style={{ width: 24 }} />
         </View>
         <Text style={[styles.empty, { color: colors.tabIconDefault }]}>{s.grammar.soonLong}</Text>
-        {/* FB467: a még meg nem írt lecke lapján is ott a 💬. */}
+        {/* a még meg nem írt lecke lapján is ott a 💬. */}
         <FeedbackButton level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard={`grammar:${topicId}:soon`} />
       </View>
     );
   }
 
-  // LECKE-SEMA: title mindkét sémában Record<hu/en/es/de,string>-szerű, de a
+  // title mindkét sémában Record<hu/en/es/de,string>-szerű, de a
   // LessonV2 Lang4-je nem enged tetszőleges string-indexet, innen a cast.
   const lessonTitle = (lesson.title as Record<string, string>)[contentLang] ?? lesson.title.en;
   const knownIds = cumulativeCorpusWordIds(lesson.level, learnedLang);
   const overrides = Object.fromEntries((lesson.glossary ?? []).map((g) => [normalizeWordToken(g.word), g.gloss]));
-  // D3 (FB290): csak azokra a fajtákra jön gomb, amikből van item a leckében
+  // csak azokra a fajtákra jön gomb, amikből van item a leckében
   // (pl. hay-estar nem kap ragozás-gombot, mert nincs benne form item).
   const kindCounts = grammarKindCounts(lesson);
   const availableKinds = KIND_ORDER.filter((k) => kindCounts[k] > 0);
   // Az ideiglenes (csupa trial itemű) fajták: gombjuk jelvényt kap, és nem számítanak a lecke %-ába.
   const trialKinds = new Set<GrammarKind>(availableKinds.filter((k) => !scoredKinds(lesson).includes(k)));
-  // PLAN-play 13. lépés (s6): the deck button only where the lesson actually
+  // the deck button only where the lesson actually
   // has a conjugation table (lib/grammar/tableDeck.ts already excludes the
   // reference GridTables and vosotros rows).
   const tableDeckCells = tableCellsForLesson(lesson);
-  // FB375 (PLAN-fb0923 6. lépés, D5/a): a table-less lesson gets a word-deck
+  // a table-less lesson gets a word-deck
   // instead, built from its own vocabulary; only shown at >= 8 cards, and
   // never alongside the table-deck button (D5: "ne legyen két gomb").
-  // PLAN-fb0929 10. lépés: es→en irányban az angol szókészletből épül; ha nincs elég szó, nincs gomb.
+  // es→en irányban az angol szókészletből épül; ha nincs elég szó, nincs gomb.
   const wordDeckCells = tableDeckCells.length === 0 ? wordCellsForLesson(lesson, learnedLang) : [];
-  // PLAN-vizsga B. szakasz (8. lépés): a lecke végi teszt külön sora, nem része a lecke %-ának (B3 a).
+  // a lecke végi teszt külön sora, nem része a lecke %-ának (B3 a).
   const lessonTestResult = lessonTestFromRows(progressRows, String(topicId));
 
   // Two worked examples from the first items, so the lesson SHOWS the rule
   // before it asks anything.
-  // FB219: a jelölős feladat mondata már kész, nincs mit behelyettesíteni, így a
+  // A jelölős feladat mondata már kész, nincs mit behelyettesíteni, így a
   // bemutató példák a lyukas tételekből jönnek.
-  // LECKE-SEMA: uniós lecke-alak miatt a `.filter` narrowing csak egy lapos
+  // Uniós lecke-alak miatt a `.filter` narrowing csak egy lapos
   // `GrammarItem[]` castra épülve szűkít helyesen rule/more-hoz hasonlóan.
-  // LECKE-SEMA 2: a LessonV2 items tömbje match/form tételeket is tartalmaz,
+  // A LessonV2 items tömbje match/form tételeket is tartalmaz,
   // azoknak nincs `sentence`/`options` mezőjük, tehát itt kifejezetten a
   // (kind hiányzó vagy 'gap') tételekre kell szűkíteni, nem csak a mark-ot
   // kizárni.
@@ -227,30 +226,14 @@ export default function GrammarLessonScreen() {
       why: item.why[contentLang] ?? item.why.en,
     }));
 
-  // LECKE-SEMA: LessonV2-nek nincs rule/more mezője; a body-blokkok
-  // megjelenítése step 3, itt csak annyi kell, hogy a régi séma tovább
-  // fusson és a fordító ne akadjon fenn az únión.
-  const ruleText = 'rule' in lesson ? lesson.rule[contentLang] ?? lesson.rule.en : '';
-
-  // FB216: nyelv-szakaszokra vágva olvassuk fel, hogy a spanyol példa spanyolul
-  // szóljon a magyar/angol magyarázat közepén is.
-  const readAloud = (text: string) =>
-    speakSequence(
-      splitByLanguage(text, { learnedLang, nativeLang: contentLang }).map((seg) => ({
-        text: seg.text,
-        locale: speechLang(seg.lang),
-      }))
-    );
-
-  // LECKE-SEMA 3: a V2 lecke `speak` mezőjét a «...»-jelölés vágja szakaszokra
-  // (nem korpusz-találgatás), és a gomb play<->stop kapcsoló (LECKE-SEMA 3.3).
+  // a V2 lecke `speak` mezőjét a «...»-jelölés vágja szakaszokra
+  // (nem korpusz-találgatás), és a gomb play<->stop kapcsoló.
   const toggleLessonSpeech = () => {
     if (speaking) {
       stopSpeaking();
       setSpeaking(false);
       return;
     }
-    if (!isLessonV2(lesson)) return;
     const text = lesson.speak[contentLang as 'hu' | 'en' | 'es' | 'de'] ?? lesson.speak.en;
     const segments = splitByMarkers(text, { learnedLang, nativeLang: contentLang }).map((seg) => ({
       text: seg.text,
@@ -260,13 +243,13 @@ export default function GrammarLessonScreen() {
     speakSequence(segments, () => setSpeaking(false));
   };
 
-  // FB415/FB421: a lecke haladás-sorainak írása: helyi állapot + tartós (game_progress).
+  // a lecke haladás-sorainak írása: helyi állapot + tartós (game_progress).
   const saveRow = (itemId: string, state: string, data: unknown) => {
     setProgressRows((prev) => [...prev.filter((r) => r.itemId !== itemId), { itemId, state, data }]);
     getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, itemId, state, data).catch(() => {});
   };
   // A lecke %-a: az ÖSSZES létező fajta átlaga, a meg nem kezdett fajta 0 (null: még semmit sem csinált).
-  // PLAN-fb0929 7. lépés (D1): az ideiglenes fajták nem húzzák le a lecke %-át (scoredKinds).
+  // Az ideiglenes fajták nem húzzák le a lecke %-át (scoredKinds).
   const lessonScoreOf = (rows: ProgressRow[]) =>
     lessonScore(scoredKinds(lesson).map((k) => kindProgressFromRows(rows, String(topicId), k)));
 
@@ -274,7 +257,7 @@ export default function GrammarLessonScreen() {
     setPrevPct(lessonScoreOf(progressRows));
     setScore({ correct, total });
     setPhase('done');
-    // D3 (FB290): a sor kulcsa fajtánként külön (`${topic}:${kind}`), és csak
+    // a sor kulcsa fajtánként külön (`${topic}:${kind}`), és csak
     // akkor íródik, ha ez a fajta ezúttal >=80%-ra ment (lásd
     // doneGrammarTopicProgress: egy fajta csak így számít késznek).
     const pct = total ? Math.round((correct / total) * 100) : 0;
@@ -283,12 +266,12 @@ export default function GrammarLessonScreen() {
         .setGameProgress(GRAMMAR_PROGRESS_KEY, `${String(topicId)}:${drillKind}`, 'done', { correct, total })
         .catch(() => {});
     }
-    // FB421: befejezett kör: a jobb eredmény felülírja a régit (a gyengébb nem rontja),
+    // befejezett kör: a jobb eredmény felülírja a régit (a gyengébb nem rontja),
     // és a félbehagyott kör törlődik. A fajta %-a a legjobb kör eredménye.
     const prevBest = kindProgressFromRows(progressRows, String(topicId), drillKind).best;
     saveRow(kindBestKey(String(topicId), drillKind), 'best', betterBest(prevBest, { correct, total }));
     saveRow(kindRunKey(String(topicId), drillKind), 'run', null);
-    // FB316 (NY10): a kör itemjei "gyakoroltak" lesznek, jó és rossz válasz is
+    // a kör itemjei "gyakoroltak" lesznek, jó és rossz válasz is
     // számít; egy írás a kör végén, nem itemenként.
     if (drillKind === 'transform' && roundItemIds && roundItemIds.length) {
       const updated = { ...transformSeen };
@@ -300,7 +283,7 @@ export default function GrammarLessonScreen() {
     }
   };
 
-  // NY23: brutalista palettán a vissza-gomb dobozban, a cím nagybetűs, a szint matrica.
+  // brutalista palettán a vissza-gomb dobozban, a cím nagybetűs, a szint matrica.
   const header = g.brutal ? (
     <View style={styles.header}>
       <BrutalBox
@@ -310,7 +293,7 @@ export default function GrammarLessonScreen() {
       >
         <Text style={[styles.back, { color: g.ink }]}>←</Text>
       </BrutalBox>
-      {/* FB404/405/413: a hosszú (spanyol) cím két sorba törik és lépcsőzötten kisebb,
+      {/* a hosszú (spanyol) cím két sorba törik és lépcsőzötten kisebb,
           nem vágódik le "..."-tal. */}
       <FitText variant="title" base={17} maxLines={2} reserve={150} caps style={[styles.title, styles.brutalTitle, { color: g.ink }]}>
         {lessonTitle}
@@ -328,10 +311,10 @@ export default function GrammarLessonScreen() {
       <Text style={[styles.levelTag, { color: colors.tint }]}>{lesson.level}</Text>
     </View>
   );
-  // NY23: a cím-szín brutalista palettán ink (a kitöltő a / b szín papíron nem olvasható szöveg).
+  // a cím-szín brutalista palettán ink (a kitöltő a / b szín papíron nem olvasható szöveg).
   const accentText = g.brutal ? g.ink : colors.tint;
 
-  // NY23: fő gomb: brutalista palettán a kitöltésű doboz, classic-on a mai gomb.
+  // fő gomb: brutalista palettán a kitöltésű doboz, classic-on a mai gomb.
   const lessonButton = (testID: string, label: string, onPress: () => void, filled: boolean, first: boolean) =>
     g.brutal ? (
       <BrutalBox
@@ -385,9 +368,9 @@ export default function GrammarLessonScreen() {
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         <DockSlotProvider host={dock}>
-          {/* NY22: brutalista palettán a drill saját fejléce (X + szegmentált sáv + combo) váltja. */}
+          {/* brutalista palettán a drill saját fejléce (X + szegmentált sáv + combo) váltja. */}
           {g.brutal ? null : header}
-          {/* LECKE-SEMA 2/6.3/D3: a lecke-drill a `drillKind` fajtáját viszi végig
+          {/* a lecke-drill a `drillKind` fajtáját viszi végig
               (a gombok fajtánként külön indítanak), a Game fül grammar-choice-a
               a `kinds` prop híján változatlanul csak a gap/mark körét kapja. */}
           <GrammarDrill
@@ -400,7 +383,7 @@ export default function GrammarLessonScreen() {
             onItemChange={setDrillItemId}
             onRoundStats={setRoundStats}
             onClose={() => setPhase('lesson')}
-            // FB421: a félbehagyott kör onnan folytatódik, ahol abbamaradt; minden
+            // a félbehagyott kör onnan folytatódik, ahol abbamaradt; minden
             // megválaszolt tétel után elmentődik.
             resume={kindProgressFromRows(progressRows, String(topicId), drillKind).run ?? undefined}
             onProgress={(p) => saveRow(kindRunKey(String(topicId), drillKind), 'run', p satisfies KindRun)}
@@ -419,14 +402,14 @@ export default function GrammarLessonScreen() {
 
   if (phase === 'done' && score) {
     const pct = score.total ? Math.round((score.correct / score.total) * 100) : 0;
-    // Kálmán 2026-09-09: a Kész-képernyőről tovább lehessen lépni a következő
+    // a Kész-képernyőről tovább lehessen lépni a következő
     // témára. Csak megírt leckére kínáljuk fel, üres képernyőre nem viszünk.
     const next = nextWrittenTopic(learnedLang, String(topicId));
-    // FB328: a lecke MINDEN eddigi köréből számolt kumulált arány, nem csak
+    // a lecke MINDEN eddigi köréből számolt kumulált arány, nem csak
     // ennek a körnek a pontszáma (ami fentebb, `pct`).
     const cumulativePct = lessonScoreOf(progressRows);
     // A teszt-gomb az egyetlen kitöltött (kiemelt) gomb a lapon, a többi másodlagos (keretes).
-    // PLAN-vizsga B1 b: a "Lesson test" gomb a done-lapon; csak akkor él, ha a lecke minden
+    // A "Lesson test" gomb a done-lapon; csak akkor él, ha a lecke minden
     // feladat-fajtájából volt már kör, addig szürke, alatta a teendő. A gomb alatti sor a szabály.
     const testSize = lessonTestSize(lesson, learnedLang, contentLang);
     const testReady = lessonTestUnlocked(lesson, progressRows, String(topicId));
@@ -468,7 +451,7 @@ export default function GrammarLessonScreen() {
           </Text>
         </>
       ) : null;
-    // NY24 (neo-brutalista, NYELVTAN.md "Neo-brutalista stílus" 3. képernyő): nagy
+    // Neo-brutalista: nagy
     // helyes-arány a kitöltött dobozban + combo-matrica, 3 kis doboz, "practice
     // this" a rontott mondattal, téma-progress szegmensekben, gombok.
     if (g.brutal) {
@@ -569,7 +552,7 @@ export default function GrammarLessonScreen() {
               <Text style={[styles.ghostBtnText, { color: g.mu }]}>{s.grammar.backToSyllabus}</Text>
             </Pressable>
           </ScrollView>
-          {/* FB467: a feladat vége / eredmény-lapon is ott a 💬. */}
+          {/* a feladat vége / eredmény-lapon is ott a 💬. */}
           <FeedbackButton level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard={`grammar:${topicId}:done`} />
         </View>
       );
@@ -626,7 +609,7 @@ export default function GrammarLessonScreen() {
           >
             <Text style={[styles.btnText, { color: colors.tint }]}>{s.grammar.practiceAgain}</Text>
           </Pressable>
-          {/* FB316 (NY10): nagy (>10 itemes) transform-leckén egy külön gomb a
+          {/* nagy (>10 itemes) transform-leckén egy külön gomb a
               következő 10-es körre, ugyanaz a kézzelfogható lépés, mint a
               "Gyakorlás újra", csak a friss `transformSeen` térkép jelzi is. */}
           {drillKind === 'transform' && kindCounts.transform > TRANSFORM_ROUND_SIZE ? (
@@ -660,44 +643,21 @@ export default function GrammarLessonScreen() {
         scrollEventThrottle={100}
         onContentSizeChange={() => scrollRef.current?.scrollTo({ y: getScrollY(String(topicId)), animated: false })}
       >
-        {isLessonV2(lesson) ? (
-          <>
-            {/* LECKE-SEMA 1+3: a body-blokkok váltják a rule/more prózát, a
-                lesson.speak felolvasása egyetlen play<->stop gombbal. */}
-            <Text style={[styles.sectionLabel, { color: accentText }]}>{s.grammar.ruleLabel}</Text>
-            <SpeakButton
-              testID="speakToggle"
-              speaking={speaking}
-              style={styles.readRow}
-              brutalStyle={styles.readRowBrutal}
-              iconStyle={styles.speak}
-              labelStyle={[styles.readLabel, { color: accentText }]}
-              label={s.grammar.readAloud}
-              onPress={toggleLessonSpeech}
-              hitSlop={10}
-            />
-            <LessonBody blocks={lesson.body} contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'} learnedLang={learnedLang} />
-          </>
-        ) : (
-          <>
-            <Text style={[styles.sectionLabel, { color: accentText }]}>{s.grammar.ruleLabel}</Text>
-            <Card classicStyle={styles.card}>
-              <Text style={[styles.ruleText, { color: colors.text }]}>{ruleText}</Text>
-              {/* FB216: a hosszú magyarázatot fel is olvassa, a benne lévő spanyol
-                  példákat spanyol hangon (lib/mixedSpeech.ts). */}
-              <SpeakButton
-                testID="grammar-read-rule"
-                style={styles.readRow}
-                brutalStyle={styles.readRowBrutal}
-                iconStyle={styles.speak}
-                labelStyle={[styles.readLabel, { color: accentText }]}
-                label={s.grammar.readAloud}
-                onPress={() => readAloud(ruleText)}
-                hitSlop={10}
-              />
-            </Card>
-          </>
-        )}
+        {/* a body-blokkok váltják a rule/more prózát, a
+            lesson.speak felolvasása egyetlen play<->stop gombbal. */}
+        <Text style={[styles.sectionLabel, { color: accentText }]}>{s.grammar.ruleLabel}</Text>
+        <SpeakButton
+          testID="speakToggle"
+          speaking={speaking}
+          style={styles.readRow}
+          brutalStyle={styles.readRowBrutal}
+          iconStyle={styles.speak}
+          labelStyle={[styles.readLabel, { color: accentText }]}
+          label={s.grammar.readAloud}
+          onPress={toggleLessonSpeech}
+          hitSlop={10}
+        />
+        <LessonBody blocks={lesson.body} contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'} learnedLang={learnedLang} />
 
         <Text style={[styles.sectionLabel, { color: accentText }]}>{s.grammar.examplesLabel}</Text>
         {worked.map((w, i) => (
@@ -715,28 +675,9 @@ export default function GrammarLessonScreen() {
           </Card>
         ))}
 
-        {'more' in lesson && lesson.more ? (
-          <>
-            <Text style={[styles.sectionLabel, { color: accentText }]}>{s.grammar.exceptionsLabel}</Text>
-            <Card classicStyle={styles.card}>
-              <MoreBlocks more={lesson.more} contentLang={contentLang} color={colors.text} />
-              <SpeakButton
-                testID="grammar-read-more"
-                style={styles.readRow}
-                brutalStyle={styles.readRowBrutal}
-                iconStyle={styles.speak}
-                labelStyle={[styles.readLabel, { color: accentText }]}
-                label={s.grammar.readAloud}
-                onPress={() => readAloud(lesson.more?.[contentLang] ?? lesson.more?.en ?? '')}
-                hitSlop={10}
-              />
-            </Card>
-          </>
-        ) : null}
-
-        {/* D3 (FB290): egy gomb fajtánként, hogy külön indítható legyen a
+        {/* egy gomb fajtánként, hogy külön indítható legyen a
             mondatok / párosítás / ragozás, ne egyszerre az egész lecke.
-            FB380: a gomb alatt a fajta SAJÁT %-a, ugyanazzal a lessonPercent
+            A gomb alatt a fajta SAJÁT %-a, ugyanazzal a lessonPercent
             logikával, ami a Kész-képernyő kinti számát adja. */}
         {lessonTestResult?.passed ? (
           <Text testID="grammar-test-passed" style={[styles.testPassedNote, { color: g.brutal ? g.ink : colors.success }]}>
@@ -744,7 +685,7 @@ export default function GrammarLessonScreen() {
           </Text>
         ) : null}
         {availableKinds.map((kind, i) => {
-          // FB421 (D4): félbehagyott körnél "3/10 · 30%" (a meg nem válaszolt tétel 0), egyébként a
+          // félbehagyott körnél "3/10 · 30%" (a meg nem válaszolt tétel 0), egyébként a
           // fajta legjobb köre; a jobb eredmény felülírja a régit (lib/grammar/lessonScore.ts).
           const kindProg = kindProgressFromRows(progressRows, String(topicId), kind);
           const runInfo = kindProg.run ? runSummary(kindProg.run) : null;
@@ -779,7 +720,7 @@ export default function GrammarLessonScreen() {
                 true,
                 i === 0
               )}
-              {/* PLAN-fb0929 7. lépés (D1): az ideiglenes fajta gombja alatt az "ÚJ · TESZT" jelvény. */}
+              {/* az ideiglenes fajta gombja alatt az "ÚJ · TESZT" jelvény. */}
               {trialKinds.has(kind) ? (
                 <View style={styles.trialRow}>
                   <TrialBadge testID={`trial-badge-${kind}`} />
@@ -794,7 +735,7 @@ export default function GrammarLessonScreen() {
           );
         })}
 
-        {/* PLAN-play 13. lépés (s6): the deck button only where the lesson has
+        {/* the deck button only where the lesson has
             a conjugation table; outlined, to read as an optional extra next
             to the fajtánkénti drill gombok above. */}
         {tableDeckCells.length > 0 ? (
@@ -806,7 +747,7 @@ export default function GrammarLessonScreen() {
             availableKinds.length === 0
           )
         ) : wordDeckCells.length >= WORD_DECK_MIN_CARDS ? (
-          // FB375: same deck screen, the word-source variant (D5/a).
+          // same deck screen, the word-source variant (D5/a).
           lessonButton(
             'grammar-start-worddeck',
             s.grammar.practiceWords(wordDeckCells.length),
@@ -837,16 +778,15 @@ const styles = StyleSheet.create({
   body: { padding: 16, paddingBottom: 100, gap: 8 },
   sectionLabel: { fontSize: 12, fontWeight: '800', textTransform: 'uppercase', letterSpacing: 0.6, marginTop: 10 },
   card: { borderRadius: 14, padding: 14, gap: 6 },
-  ruleText: { fontSize: 15, lineHeight: 23 },
   exampleRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   exampleText: { fontSize: 17, fontWeight: '600', flex: 1, lineHeight: 25 },
   exampleWhy: { fontSize: 13, lineHeight: 19 },
   speak: { fontSize: 18 },
   readRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 12 },
-  // PLAN-fb1001 K2: a brutalista SpeakButton doboz-sora (nem nyúlik a kártya teljes szélességére).
+  // a brutalista SpeakButton doboz-sora (nem nyúlik a kártya teljes szélességére).
   readRowBrutal: { alignSelf: 'flex-start', marginTop: 12 },
   readLabel: { fontSize: 14, fontWeight: '700' },
-  // Kálmán 2026-09-09: „ne legyen ilyen igénytelen a szöveg mező szépe az egyik
+  // User feedback: „ne legyen ilyen igénytelen a szöveg mező szépe az egyik
   // pici a másik nagy". Egy gomb-alak az egész képernyőn: azonos szélesség
   // (`alignSelf: 'stretch'`), azonos magasság (a kitöltött változaton is ott a
   // 1.5 átlátszó keret) és azonos betűméret. A kitöltött és a keretes gomb már
@@ -863,7 +803,7 @@ const styles = StyleSheet.create({
   btnText: { fontSize: 16, fontWeight: '700', textAlign: 'center' },
   startBtn: { marginTop: 18 },
   btnTextOnTint: { color: '#FFFFFF' },
-  // NY23: neo-brutalista gombok, cím (nagybetűs, 500 súly).
+  // neo-brutalista gombok, cím (nagybetűs, 500 súly).
   // A chat-gomb (FAB) alól is kigördül az utolsó gomb.
   brutalPad: { paddingBottom: 130 },
   brutalBack: { paddingVertical: 4, paddingHorizontal: 10 },
@@ -891,12 +831,12 @@ const styles = StyleSheet.create({
   doneEmoji: { fontSize: 56 },
   doneScore: { fontSize: 34, fontWeight: '800' },
   doneNote: { fontSize: 14, textAlign: 'center', marginBottom: 12 },
-  // FB328: a kumulált "Eddig: NN%" sor, a pontszám és a "kész"-üzenet alatt.
+  // a kumulált "Eddig: NN%" sor, a pontszám és a "kész"-üzenet alatt.
   lessonPercentNote: { fontSize: 12, textAlign: 'center', marginTop: -6, marginBottom: 12 },
-  // FB380: ugyanaz a sor-stílus, fajtánként a saját gombja alatt.
+  // ugyanaz a sor-stílus, fajtánként a saját gombja alatt.
   kindPercentNote: { fontSize: 12, textAlign: 'center', marginTop: 2 },
   trialRow: { alignItems: 'center', marginTop: 6 },
-  // PLAN-vizsga B. szakasz: a lecke-teszt gombja alatti sor, és a lecke-oldal "Test passed" jele.
+  // a lecke-teszt gombja alatti sor, és a lecke-oldal "Test passed" jele.
   lessonTestNote: { fontSize: 12, textAlign: 'center', marginTop: 4 },
   testPassedNote: { fontSize: 14, fontWeight: '700', marginTop: 10 },
 });

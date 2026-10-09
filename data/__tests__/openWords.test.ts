@@ -1,4 +1,4 @@
-// PLAN-regi-szavak-ki 5. lépés: a words-open WordEntry-alakú nézete (data/openWords.ts).
+// a words-open WordEntry-alakú nézete (data/openWords.ts).
 import { getOpenWordsForLevel, getOpenWordsUpToLevel, openLevelOf, openWords } from '../openWords';
 
 describe('data/openWords.ts', () => {

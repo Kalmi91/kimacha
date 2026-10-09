@@ -1,7 +1,7 @@
-// PLAN-pcic 5. lépés: válasz-egyeztetés a PCIC fülhöz. Az es alak sokszor
+// válasz-egyeztetés a PCIC fülhöz. Az es alak sokszor
 // "/"-alternatívát hordoz ("tocar/sentir frío") vagy zárójeles opcionális
 // részt ("al final (de)"); mindkettő elfogadott alaknak számít. Az ékezet
-// számít a helyesíráshoz (Kálmán: "csak simán a szavak helyesírása"), de egy
+// számít a helyesíráshoz ("csak simán a szavak helyesírása"), de egy
 // szóvégi rag/betű-eltérés (pl. "bueno"/"buena") nyelvtanilag fontos, ezért
 // nem near, hanem wrong, még ha a szerkesztési távolság csak 1 is.
 
@@ -9,7 +9,7 @@ import { levenshtein } from './levenshtein';
 import { stripTrailingPunct } from './charDiff';
 import type { Sm2Grade } from './sm2';
 
-// FB400 (PLAN-fb0929 3. lépés): a kérdő- és felkiáltójel, a pont és a vessző sosem
+// a kérdő- és felkiáltójel, a pont és a vessző sosem
 // hiba, se elöl (¿ ¡), se hátul (? ! .), se a mondat közepén (vessző). Az
 // aposztróf és a kötőjel marad (angolul "don't", "well-known" a szó része).
 const IGNORED_PUNCT = /[¿?¡!.,;:…]/g;
@@ -55,7 +55,7 @@ function expandSlashes(s: string): string[] {
   return variants.map((v) => v.join(' '));
 }
 
-// PLAN-tobbjelentes 3. lépés (S1): a " / " (szóköz-per-szóköz) elválasztó teljes
+// a " / " (szóköz-per-szóköz) elválasztó teljes
 // alternatívákat választ el ("el carro / el coche / el auto"); a szóközmentes
 // "a/b" a fenti szó-pozíción belüli felbontásként marad, ahogy volt.
 export function pcicAlternatives(answer: string): string[] {
@@ -67,7 +67,7 @@ export function pcicAlternatives(answer: string): string[] {
 export interface PcicGrade {
   match: 'exact' | 'near' | 'wrong';
   best: string;
-  // PLAN-play 10. lépés: csak akkor igaz, ha az eltérés KIZÁRÓLAG ékezet, és
+  // csak akkor igaz, ha az eltérés KIZÁRÓLAG ékezet, és
   // az ékezet-szigor KI van kapcsolva (különben ez a helyzet 'wrong'). A UI
   // ez alapján írja ki a "Missing accent, counted as correct" sort.
   accentOnly?: boolean;
@@ -84,10 +84,10 @@ function isAccentOnlyDiff(a: string, b: string): boolean {
   return a !== b && foldAccents(a) === foldAccents(b);
 }
 
-// PLAN-ketiranyu 4. lépés: a `target` (korábban `es`) a CÉLNYELVI helyes
+// a `target` (korábban `es`) a CÉLNYELVI helyes
 // alak, akármelyik irányban; a normalizálás (ékezet, kis/nagybetű, "/" és
-// zárójel-alternatívák) nyelvfüggetlen, angolra is jó (Kálmán jóváhagyott
-// vázlata, 3. pont).
+// zárójel-alternatívák) nyelvfüggetlen, angolra is jó (jóváhagyott
+// vázlat, 3. pont).
 export function gradePcicAnswer(typed: string, target: string, strictAccents = false): PcicGrade {
   const alternatives = pcicAlternatives(target);
   const typedNorm = stripTrailingPunct(normalize(typed));
@@ -135,7 +135,7 @@ export function suggestedGrade(grade: PcicGrade): Sm2Grade {
   return 'again';
 }
 
-// FB399 (PLAN-fb0929 3. lépés): a spanyol mondatban az alany-névmás elhagyható
+// a spanyol mondatban az alany-névmás elhagyható
 // ("Yo como en casa." helyett "Como en casa." is jó). Csak az ELSŐ szó számít, és
 // pontosan ékezettel: "él" névmás, "el" névelő; "tú" névmás, "tu" birtokos.
 const SUBJECT_PRONOUNS = new Set([

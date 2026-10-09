@@ -5,16 +5,14 @@ import Colors from '@/constants/Colors';
 import { t } from '@/lib/i18n';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalBox, SegmentBar, segmentsFilled } from '@/components/grammar/Brutal';
-import type { PcicViewLevel } from '@/data/pcic';
+import type { PcicLevel } from '@/data/pcic';
 
 type ColorScheme = (typeof Colors)['light'];
 
 // s1 (anki-ui-terv.html): egy sor a szint-választó lapon, a PCIC fejléc-chip
-// alulról felcsúszó lapján ÉS az onboarding szint-lépésén is (PLAN-play 10.).
-// PLAN-fb0924 8. lépés: a `level` "A1+"/"A2+" is lehet (a badge ekkor
-// térköz nélküli "A1+" alakot mutat, a `label` adja a "+1 · sentences" szöveget).
+// alulról felcsúszó lapján ÉS az onboarding szint-lépésén is.
 type Props = {
-  level: PcicViewLevel;
+  level: PcicLevel;
   label: string;
   introduced: number;
   total: number;
@@ -25,12 +23,12 @@ type Props = {
 
 export default function LevelRow({ level, label, introduced, total, active, colors, onPress }: Props) {
   const pct = total > 0 ? (introduced / total) * 100 : 0;
-  // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 3. pont): a
+  // A
   // sor korábban angolra égetve mutatta ezt a két szöveget, spanyol
   // felületen is angolul maradt.
   const s = t();
   const g = useGrammarColors();
-  // NY19: brutalista palettán doboz (aktív = a kitöltés) + szegmentált sáv.
+  // brutalista palettán doboz (aktív = a kitöltés) + szegmentált sáv.
   if (g.brutal) {
     const ink = active ? g.onFill : g.ink;
     return (

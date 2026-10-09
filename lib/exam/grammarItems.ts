@@ -1,4 +1,4 @@
-// PLAN-vizsga A. szakasz 2. lépés: a vizsga nyelvtani tételei a szint KÉSZ
+// a vizsga nyelvtani tételei a szint KÉSZ
 // leckéinek lyukas-mondat (gap) tételeiből jönnek (4. követelmény). A lecke maga
 // tanítja a szavait (glossary + a korpusz-audit), ezért a lecke-tételt nem szűrjük
 // a tanult szavak kapuján, mint a szó-példamondatot (lib/exam/builder.ts): a

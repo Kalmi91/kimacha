@@ -10,7 +10,7 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { useSkin } from '@/lib/useSkin';
 
-// PLAN-temak 4D, Szocreál: belső 3 px-es b keret a 4 px-es ink keret alatt, felkelő nap (félkör +
+// Szocreál: belső 3 px-es b keret a 4 px-es ink keret alatt, felkelő nap (félkör +
 // sugarak, b színnel) a szó fölött, "Élmunkás" jelvény és "Napi terv n%" sáv a fejléc alatt.
 
 const FRAME_GAP = 3;
