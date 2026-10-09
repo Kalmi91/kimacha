@@ -272,7 +272,7 @@ interface BuildLessonTestOptions {
 }
 
 /**
- * The test: built from the lesson's items (without the temporary "NEW · TEST" items), cycling
+ * The test: built from the lesson's items (without the temporary trial items), cycling
  * through the kinds so it is mixed. Within a kind a fresh item precedes an already seen one, and within
  * that, one missed in the previous attempt precedes the rest. If the lesson has fewer items than `size`,
  * there are as many questions as there are items.

@@ -161,7 +161,6 @@ export default {
     // button of the el / la article-chooser task (only where such a set exists).
     startArticle: (n: number) => `El or la? (${n})`,
     // temporary, new task kinds (error finder, word order, dictation).
-    trialBadge: 'NEW · TEST',
     startSpot: (n: number) => `Spot the mistake (${n})`,
     startOrder: (n: number) => `Word order (${n})`,
     startDictation: (n: number) => `Dictation (${n})`,
