@@ -3,99 +3,85 @@
   "topic": "sustantivo-numero",
   "level": "A1",
   "title": {
-    "hu": "Főnév: nem és többes szám",
     "en": "Nouns: gender and plural",
-    "es": "El sustantivo: género y número",
-    "de": "Nomen: Genus und Plural"
+    "es": "El sustantivo: género y número"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "A spanyol főnévnek mindig van neme (hím vagy nő), akkor is, ha élettelen tárgy; ez a nem és a szám (egyes/többes) minden hozzá tartozó névelőt, melléknevet és névmást magával húz, ezért a főnévvel együtt kell megtanulni a névelőjét is.",
         "en": "Every Spanish noun has a gender (masculine or feminine), even a lifeless object; this gender and its number (singular/plural) pull along every article, adjective, and pronoun attached to it, which is why you should always learn a noun together with its article.",
-        "es": "Todo sustantivo español tiene género (masculino o femenino), incluso un objeto sin vida; ese género y su número (singular/plural) arrastran a todos los artículos, adjetivos y pronombres que lo acompañan, por eso conviene aprender el sustantivo junto con su artículo.",
-        "de": "Jedes spanische Nomen hat ein Genus (maskulin oder feminin), auch ein lebloser Gegenstand; dieses Genus und seine Zahl (Singular/Plural) ziehen jeden dazugehörigen Artikel, jedes Adjektiv und Pronomen mit, deshalb sollte man das Nomen immer zusammen mit seinem Artikel lernen."
+        "es": "Todo sustantivo español tiene género (masculino o femenino), incluso un objeto sin vida; ese género y su número (singular/plural) arrastran a todos los artículos, adjetivos y pronombres que lo acompañan, por eso conviene aprender el sustantivo junto con su artículo."
       }
     },
     {
       "kind": "list",
       "title": {
-        "hu": "A főnév neme",
         "en": "The noun's gender",
-        "es": "El género del sustantivo",
-        "de": "Das Genus des Nomens"
+        "es": "El género del sustantivo"
       },
       "items": [
         {
           "text": {
-            "hu": "-o végű szavak többnyire hímneműek: el libro.",
             "en": "Nouns ending in -o are mostly masculine: el libro.",
-            "es": "Los sustantivos en -o son mayormente masculinos: el libro.",
-            "de": "Nomen auf -o sind meist maskulin: el libro."
+            "es": "Los sustantivos en -o son mayormente masculinos: el libro."
           },
           "examples": [
             {
               "es": "El libro está en la mesa.",
-              "tr": { "hu": "A könyv az asztalon van.", "en": "The book is on the table.", "es": "El libro está en la mesa.", "de": "Das Buch liegt auf dem Tisch." }
+              "tr": { "en": "The book is on the table.", "es": "El libro está en la mesa." }
             },
             {
               "es": "El gato está en la mesa.",
-              "tr": { "hu": "A macska az asztalon van.", "en": "The cat is on the table.", "es": "El gato está en la mesa.", "de": "Die Katze ist auf dem Tisch." }
+              "tr": { "en": "The cat is on the table.", "es": "El gato está en la mesa." }
             }
           ]
         },
         {
           "text": {
-            "hu": "-a végű szavak többnyire nőneműek: la casa.",
             "en": "Nouns ending in -a are mostly feminine: la casa.",
-            "es": "Los sustantivos en -a son mayormente femeninos: la casa.",
-            "de": "Nomen auf -a sind meist feminin: la casa."
+            "es": "Los sustantivos en -a son mayormente femeninos: la casa."
           },
           "examples": [
             {
               "es": "La casa es grande.",
-              "tr": { "hu": "A ház nagy.", "en": "The house is big.", "es": "La casa es grande.", "de": "Das Haus ist groß." }
+              "tr": { "en": "The house is big.", "es": "La casa es grande." }
             },
             {
               "es": "La mesa es pequeña.",
-              "tr": { "hu": "Az asztal kicsi.", "en": "The table is small.", "es": "La mesa es pequeña.", "de": "Der Tisch ist klein." }
+              "tr": { "en": "The table is small.", "es": "La mesa es pequeña." }
             }
           ]
         },
         {
           "text": {
-            "hu": "-ción, -sión, -dad, -tad, -umbre végű szavak nőneműek: la canción, la ciudad.",
             "en": "Nouns ending in -ción, -sión, -dad, -tad, -umbre are feminine: la canción, la ciudad.",
-            "es": "Los sustantivos en -ción, -sión, -dad, -tad, -umbre son femeninos: la canción, la ciudad.",
-            "de": "Nomen auf -ción, -sión, -dad, -tad, -umbre sind feminin: la canción, la ciudad."
+            "es": "Los sustantivos en -ción, -sión, -dad, -tad, -umbre son femeninos: la canción, la ciudad."
           },
           "examples": [
             {
               "es": "La ciudad es grande.",
-              "tr": { "hu": "A város nagy.", "en": "The city is big.", "es": "La ciudad es grande.", "de": "Die Stadt ist groß." }
+              "tr": { "en": "The city is big.", "es": "La ciudad es grande." }
             },
             {
               "es": "La universidad está cerca.",
-              "tr": { "hu": "Az egyetem közel van.", "en": "The university is nearby.", "es": "La universidad está cerca.", "de": "Die Universität ist in der Nähe." }
+              "tr": { "en": "The university is nearby.", "es": "La universidad está cerca." }
             }
           ]
         },
         {
           "text": {
-            "hu": "-or, -aje végű szavak többnyire hímneműek: el color, el viaje.",
             "en": "Nouns ending in -or, -aje are mostly masculine: el color, el viaje.",
-            "es": "Los sustantivos en -or, -aje son casi siempre masculinos: el color, el viaje.",
-            "de": "Nomen auf -or, -aje sind meist maskulin: el color, el viaje."
+            "es": "Los sustantivos en -or, -aje son casi siempre masculinos: el color, el viaje."
           },
           "examples": [
             {
               "es": "El color es azul.",
-              "tr": { "hu": "A szín kék.", "en": "The color is blue.", "es": "El color es azul.", "de": "Die Farbe ist blau." }
+              "tr": { "en": "The color is blue.", "es": "El color es azul." }
             },
             {
               "es": "El viaje es largo.",
-              "tr": { "hu": "Az utazás hosszú.", "en": "The trip is long.", "es": "El viaje es largo.", "de": "Die Reise ist lang." }
+              "tr": { "en": "The trip is long.", "es": "El viaje es largo." }
             }
           ]
         }
@@ -104,81 +90,71 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Kivételek, amiket meg kell tanulni",
         "en": "Exceptions you have to learn",
-        "es": "Excepciones que hay que aprender",
-        "de": "Ausnahmen, die man lernen muss"
+        "es": "Excepciones que hay que aprender"
       },
       "items": [
         {
           "text": {
-            "hu": "Néhány -a végű szó hímnemű kivétel (sok közülük görög eredetű): el día, el mapa, el problema, el sistema, el idioma, el clima.",
             "en": "A few words ending in -a are masculine exceptions (many are Greek in origin): el día, el mapa, el problema, el sistema, el idioma, el clima.",
-            "es": "Algunas palabras en -a son excepciones masculinas (muchas de origen griego): el día, el mapa, el problema, el sistema, el idioma, el clima.",
-            "de": "Einige Wörter auf -a sind maskuline Ausnahmen (viele griechischen Ursprungs): el día, el mapa, el problema, el sistema, el idioma, el clima."
+            "es": "Algunas palabras en -a son excepciones masculinas (muchas de origen griego): el día, el mapa, el problema, el sistema, el idioma, el clima."
           },
           "examples": [
             {
               "es": "El problema es difícil.",
-              "tr": { "hu": "A probléma nehéz.", "en": "The problem is difficult.", "es": "El problema es difícil.", "de": "Das Problem ist schwer." }
+              "tr": { "en": "The problem is difficult.", "es": "El problema es difícil." }
             },
             {
               "es": "El idioma es bonito.",
-              "tr": { "hu": "A nyelv szép.", "en": "The language is beautiful.", "es": "El idioma es bonito.", "de": "Die Sprache ist schön." }
+              "tr": { "en": "The language is beautiful.", "es": "El idioma es bonito." }
             }
           ]
         },
         {
           "text": {
-            "hu": "La mano, la foto, la moto -o végűek, mégis nőneműek.",
             "en": "La mano, la foto, la moto end in -o, yet are feminine.",
-            "es": "La mano, la foto, la moto acaban en -o, pero son femeninas.",
-            "de": "La mano, la foto, la moto enden auf -o, sind aber feminin."
+            "es": "La mano, la foto, la moto acaban en -o, pero son femeninas."
           },
           "examples": [
             {
               "es": "Me duele la mano.",
-              "tr": { "hu": "Fáj a kezem.", "en": "My hand hurts.", "es": "Me duele la mano.", "de": "Meine Hand tut weh." }
+              "tr": { "en": "My hand hurts.", "es": "Me duele la mano." }
             },
             {
               "es": "La foto es bonita.",
-              "tr": { "hu": "A fénykép szép.", "en": "The photo is pretty.", "es": "La foto es bonita.", "de": "Das Foto ist schön." }
+              "tr": { "en": "The photo is pretty.", "es": "La foto es bonita." }
             }
           ]
         },
         {
           "text": {
-            "hu": "Az agua nőnemű, de a hangsúlyos a- előtt a la el-re vált: el agua (ugyanígy el aula, el hambre); a melléknév nőnemű marad: el agua fría.",
             "en": "Agua is feminine, but before a stressed a-, la becomes el: el agua (likewise el aula, el hambre); the adjective still stays feminine: el agua fría.",
-            "es": "Agua es femenino, pero ante a tónica, la pasa a el: el agua (igual el aula, el hambre); el adjetivo sigue femenino: el agua fría.",
-            "de": "Agua ist feminin, aber vor betontem a- wird la zu el: el agua (ebenso el aula, el hambre); das Adjektiv bleibt feminin: el agua fría."
+            "es": "Agua es femenino, pero ante a tónica, la pasa a el: el agua (igual el aula, el hambre); el adjetivo sigue femenino: el agua fría."
           },
           "examples": [
             {
               "es": "El agua está fría.",
-              "tr": { "hu": "A víz hideg.", "en": "The water is cold.", "es": "El agua está fría.", "de": "Das Wasser ist kalt." }
+              "tr": { "en": "The water is cold.", "es": "El agua está fría." }
             },
             {
               "es": "El aula está cerrada.",
-              "tr": { "hu": "A tanterem zárva van.", "en": "The classroom is closed.", "es": "El aula está cerrada.", "de": "Der Klassenraum ist geschlossen." }
+              "tr": { "en": "The classroom is closed.", "es": "El aula está cerrada." }
             }
           ]
         },
         {
           "text": {
-            "hu": "Vegyes csoport (fiúk és lányok) hímnemű többesbe megy: los niños.",
             "en": "A mixed group (boys and girls) takes the masculine plural: los niños.",
-            "es": "Un grupo mixto (niños y niñas) va en masculino plural: los niños.",
-            "de": "Eine gemischte Gruppe (Jungen und Mädchen) steht im maskulinen Plural: los niños."
+            "es": "Un grupo mixto (niños y niñas) va en masculino plural: los niños."
           },
           "examples": [
             {
               "es": "Los niños juegan en la clase.",
-              "tr": { "hu": "A gyerekek játszanak az osztályban.", "en": "The children play in the classroom.", "es": "Los niños juegan en la clase.", "de": "Die Kinder spielen im Klassenzimmer." }
+              "tr": { "en": "The children play in the classroom.", "es": "Los niños juegan en la clase." }
             },
             {
               "es": "Mis padres viven aquí.",
-              "tr": { "hu": "A szüleim itt élnek.", "en": "My parents live here.", "es": "Mis padres viven aquí.", "de": "Meine Eltern leben hier." }
+              "tr": { "en": "My parents live here.", "es": "Mis padres viven aquí." }
             }
           ]
         }
@@ -187,99 +163,87 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Hogyan lesz többes szám",
         "en": "How the plural is formed",
-        "es": "Cómo se forma el plural",
-        "de": "Wie der Plural gebildet wird"
+        "es": "Cómo se forma el plural"
       },
       "items": [
         {
           "text": {
-            "hu": "Magánhangzó után egyszerűen -s kerül a szóhoz: libro → libros.",
             "en": "After a vowel, simply add -s: libro → libros.",
-            "es": "Tras vocal, simplemente se añade -s: libro → libros.",
-            "de": "Nach einem Vokal wird einfach -s angehängt: libro → libros."
+            "es": "Tras vocal, simplemente se añade -s: libro → libros."
           },
           "examples": [
             {
               "es": "Tengo dos libros.",
-              "tr": { "hu": "Két könyvem van.", "en": "I have two books.", "es": "Tengo dos libros.", "de": "Ich habe zwei Bücher." }
+              "tr": { "en": "I have two books.", "es": "Tengo dos libros." }
             },
             {
               "es": "Las casas son grandes.",
-              "tr": { "hu": "A házak nagyok.", "en": "The houses are big.", "es": "Las casas son grandes.", "de": "Die Häuser sind groß." }
+              "tr": { "en": "The houses are big.", "es": "Las casas son grandes." }
             }
           ]
         },
         {
           "text": {
-            "hu": "Mássalhangzó után -es kerül a szóhoz: papel → papeles, mes → meses.",
             "en": "After a consonant, add -es: papel → papeles, mes → meses.",
-            "es": "Tras consonante, se añade -es: papel → papeles, mes → meses.",
-            "de": "Nach einem Konsonanten wird -es angehängt: papel → papeles, mes → meses."
+            "es": "Tras consonante, se añade -es: papel → papeles, mes → meses."
           },
           "examples": [
             {
               "es": "Necesito los papeles.",
-              "tr": { "hu": "Szükségem van a papírokra.", "en": "I need the papers.", "es": "Necesito los papeles.", "de": "Ich brauche die Papiere." }
+              "tr": { "en": "I need the papers.", "es": "Necesito los papeles." }
             },
             {
               "es": "Hay doce meses en el año.",
-              "tr": { "hu": "Tizenkét hónap van egy évben.", "en": "There are twelve months in a year.", "es": "Hay doce meses en el año.", "de": "Es gibt zwölf Monate im Jahr." }
+              "tr": { "en": "There are twelve months in a year.", "es": "Hay doce meses en el año." }
             }
           ]
         },
         {
           "text": {
-            "hu": "-z végű szónál a z c-re vált, mielőtt az -es hozzáadódik: lápiz → lápices.",
             "en": "For a word ending in -z, the z turns into c before -es is added: lápiz → lápices.",
-            "es": "En una palabra acabada en -z, la z pasa a c antes de añadir -es: lápiz → lápices.",
-            "de": "Bei einem Wort auf -z wird das z vor dem Anhängen von -es zu c: lápiz → lápices."
+            "es": "En una palabra acabada en -z, la z pasa a c antes de añadir -es: lápiz → lápices."
           },
           "examples": [
             {
               "es": "Compro tres lápices.",
-              "tr": { "hu": "Veszek három ceruzát.", "en": "I buy three pencils.", "es": "Compro tres lápices.", "de": "Ich kaufe drei Bleistifte." }
+              "tr": { "en": "I buy three pencils.", "es": "Compro tres lápices." }
             },
             {
               "es": "Las luces están encendidas.",
-              "tr": { "hu": "A lámpák égnek.", "en": "The lights are on.", "es": "Las luces están encendidas.", "de": "Die Lichter sind an." }
+              "tr": { "en": "The lights are on.", "es": "Las luces están encendidas." }
             }
           ]
         },
         {
           "text": {
-            "hu": "Néhány szónál a többes szám megváltoztatja az írásjelet: lección → lecciones elveszti az ékezetet, examen → exámenes pedig kap egyet, mert a szótagszám miatt máshova kerül a természetes hangsúly.",
             "en": "In some words the plural changes the written accent: lección → lecciones loses its accent mark, while examen → exámenes gains one, because the extra syllable shifts where the natural stress falls.",
-            "es": "En algunas palabras el plural cambia la tilde: lección → lecciones la pierde, mientras que examen → exámenes la gana, porque la sílaba extra desplaza el acento natural.",
-            "de": "Bei manchen Wörtern ändert der Plural das Akzentzeichen: lección → lecciones verliert es, examen → exámenes bekommt dagegen eines, weil die zusätzliche Silbe die natürliche Betonung verschiebt."
+            "es": "En algunas palabras el plural cambia la tilde: lección → lecciones la pierde, mientras que examen → exámenes la gana, porque la sílaba extra desplaza el acento natural."
           },
           "examples": [
             {
               "es": "Las lecciones son fáciles.",
-              "tr": { "hu": "A leckék könnyűek.", "en": "The lessons are easy.", "es": "Las lecciones son fáciles.", "de": "Die Lektionen sind leicht." }
+              "tr": { "en": "The lessons are easy.", "es": "Las lecciones son fáciles." }
             },
             {
               "es": "Tengo dos exámenes mañana.",
-              "tr": { "hu": "Holnap két vizsgám van.", "en": "I have two exams tomorrow.", "es": "Tengo dos exámenes mañana.", "de": "Ich habe morgen zwei Prüfungen." }
+              "tr": { "en": "I have two exams tomorrow.", "es": "Tengo dos exámenes mañana." }
             }
           ]
         },
         {
           "text": {
-            "hu": "Néhány szó nem változik többes számban: el lunes → los lunes.",
             "en": "Some words don't change in the plural: el lunes → los lunes.",
-            "es": "Algunas palabras no cambian en plural: el lunes → los lunes.",
-            "de": "Manche Wörter ändern sich im Plural nicht: el lunes → los lunes."
+            "es": "Algunas palabras no cambian en plural: el lunes → los lunes."
           },
           "examples": [
             {
               "es": "El lunes tengo clase.",
-              "tr": { "hu": "Hétfőn órám van.", "en": "On Monday I have class.", "es": "El lunes tengo clase.", "de": "Am Montag habe ich Unterricht." }
+              "tr": { "en": "On Monday I have class.", "es": "El lunes tengo clase." }
             },
             {
               "es": "Los lunes tengo clase.",
-              "tr": { "hu": "Hétfőnként órám van.", "en": "On Mondays I have class.", "es": "Los lunes tengo clase.", "de": "Montags habe ich Unterricht." }
+              "tr": { "en": "On Mondays I have class.", "es": "Los lunes tengo clase." }
             }
           ]
         }
@@ -287,95 +251,85 @@
     },
     {
       "kind": "list",
-      "title": { "hu": "Rendhagyó többes számok", "en": "Irregular plurals", "es": "Plurales irregulares", "de": "Unregelmäßige Plurale" },
+      "title": { "en": "Irregular plurals", "es": "Plurales irregulares" },
       "items": [
         {
           "text": {
-            "hu": "A -z végű szavakban a z c-re vált: la vez → las veces, el pez → los peces, la luz → las luces.",
             "en": "In words ending in -z, the z changes to c: la vez → las veces, el pez → los peces, la luz → las luces.",
-            "es": "En las palabras acabadas en -z, la z pasa a c: la vez → las veces, el pez → los peces, la luz → las luces.",
-            "de": "Bei Wörtern auf -z wird das z zu c: la vez → las veces, el pez → los peces, la luz → las luces."
+            "es": "En las palabras acabadas en -z, la z pasa a c: la vez → las veces, el pez → los peces, la luz → las luces."
           },
           "examples": [
             {
               "es": "Voy dos veces por semana.",
-              "tr": { "hu": "Hetente kétszer megyek.", "en": "I go twice a week.", "es": "Voy dos veces por semana.", "de": "Ich gehe zweimal pro Woche." }
+              "tr": { "en": "I go twice a week.", "es": "Voy dos veces por semana." }
             },
             {
               "es": "Hay tres peces en el agua.",
-              "tr": { "hu": "Három hal van a vízben.", "en": "There are three fish in the water.", "es": "Hay tres peces en el agua.", "de": "Es gibt drei Fische im Wasser." }
+              "tr": { "en": "There are three fish in the water.", "es": "Hay tres peces en el agua." }
             }
           ]
         },
         {
           "text": {
-            "hu": "A többszótagú, nem az utolsó szótagon hangsúlyos -s végű szavak többesben nem változnak: el lunes → los lunes, la crisis → las crisis, el paraguas → los paraguas.",
             "en": "Words of two or more syllables that end in an unstressed -s do not change in the plural: el lunes → los lunes, la crisis → las crisis, el paraguas → los paraguas.",
-            "es": "Las palabras de dos o más sílabas que acaban en -s sin acento en la última sílaba no cambian: el lunes → los lunes, la crisis → las crisis, el paraguas → los paraguas.",
-            "de": "Wörter mit mehreren Silben auf unbetontes -s bleiben im Plural gleich: el lunes → los lunes, la crisis → las crisis, el paraguas → los paraguas."
+            "es": "Las palabras de dos o más sílabas que acaban en -s sin acento en la última sílaba no cambian: el lunes → los lunes, la crisis → las crisis, el paraguas → los paraguas."
           },
           "examples": [
             {
               "es": "Los lunes tengo clase.",
-              "tr": { "hu": "Hétfőnként órám van.", "en": "On Mondays I have class.", "es": "Los lunes tengo clase.", "de": "Montags habe ich Unterricht." }
+              "tr": { "en": "On Mondays I have class.", "es": "Los lunes tengo clase." }
             },
             {
               "es": "En la casa hay dos paraguas.",
-              "tr": { "hu": "A házban két esernyő van.", "en": "There are two umbrellas in the house.", "es": "En la casa hay dos paraguas.", "de": "Im Haus gibt es zwei Regenschirme." }
+              "tr": { "en": "There are two umbrellas in the house.", "es": "En la casa hay dos paraguas." }
             }
           ]
         },
         {
           "text": {
-            "hu": "Az írott ékezet megjelenhet vagy eltűnhet: el joven → los jóvenes (kap egyet), el examen → los exámenes (kap egyet), la canción → las canciones (elveszti).",
             "en": "The written accent can appear or disappear: el joven → los jóvenes (gains one), el examen → los exámenes (gains one), la canción → las canciones (loses it).",
-            "es": "La tilde puede aparecer o desaparecer: el joven → los jóvenes (la gana), el examen → los exámenes (la gana), la canción → las canciones (la pierde).",
-            "de": "Der Akzent kann dazukommen oder wegfallen: el joven → los jóvenes (bekommt einen), el examen → los exámenes (bekommt einen), la canción → las canciones (verliert ihn)."
+            "es": "La tilde puede aparecer o desaparecer: el joven → los jóvenes (la gana), el examen → los exámenes (la gana), la canción → las canciones (la pierde)."
           },
           "examples": [
             {
               "es": "Los jóvenes escuchan música.",
-              "tr": { "hu": "A fiatalok zenét hallgatnak.", "en": "The young people listen to music.", "es": "Los jóvenes escuchan música.", "de": "Die Jugendlichen hören Musik." }
+              "tr": { "en": "The young people listen to music.", "es": "Los jóvenes escuchan música." }
             },
             {
               "es": "Tengo dos exámenes mañana.",
-              "tr": { "hu": "Holnap két vizsgám van.", "en": "I have two exams tomorrow.", "es": "Tengo dos exámenes mañana.", "de": "Ich habe morgen zwei Prüfungen." }
+              "tr": { "en": "I have two exams tomorrow.", "es": "Tengo dos exámenes mañana." }
             }
           ]
         },
         {
           "text": {
-            "hu": "El carácter → los caracteres: a többesben a hangsúly egy szótaggal később esik, ezért az ékezet eltűnik.",
             "en": "El carácter → los caracteres: in the plural the stress falls one syllable later, so the accent mark disappears.",
-            "es": "El carácter → los caracteres: en el plural el acento cae una sílaba más tarde, por eso desaparece la tilde.",
-            "de": "El carácter → los caracteres: im Plural rückt die Betonung eine Silbe weiter, deshalb fällt der Akzent weg."
+            "es": "El carácter → los caracteres: en el plural el acento cae una sílaba más tarde, por eso desaparece la tilde."
           },
           "examples": [
             {
               "es": "Ellos tienen caracteres diferentes.",
-              "tr": { "hu": "Különböző jellemük van.", "en": "They have different characters.", "es": "Ellos tienen caracteres diferentes.", "de": "Sie haben unterschiedliche Charaktere." }
+              "tr": { "en": "They have different characters.", "es": "Ellos tienen caracteres diferentes." }
             },
             {
               "es": "Mis hermanos tienen caracteres diferentes.",
-              "tr": { "hu": "A testvéreimnek különböző jellemük van.", "en": "My siblings have different characters.", "es": "Mis hermanos tienen caracteres diferentes.", "de": "Meine Geschwister haben unterschiedliche Charaktere." }
+              "tr": { "en": "My siblings have different characters.", "es": "Mis hermanos tienen caracteres diferentes." }
             }
           ]
         },
         {
           "text": {
-            "hu": "Néhány szót szinte mindig többes számban használunk: los lentes, los pantalones, las vacaciones, las tijeras.",
             "en": "A few words are almost always used in the plural: los lentes, los pantalones, las vacaciones, las tijeras.",
-            "es": "Algunas palabras se usan casi siempre en plural: los lentes, los pantalones, las vacaciones, las tijeras.",
-            "de": "Einige Wörter stehen fast immer im Plural: los lentes, los pantalones, las vacaciones, las tijeras."
+            "es": "Algunas palabras se usan casi siempre en plural: los lentes, los pantalones, las vacaciones, las tijeras."
           },
           "examples": [
             {
               "es": "Mis pantalones son azules.",
-              "tr": { "hu": "A nadrágom kék.", "en": "My pants are blue.", "es": "Mis pantalones son azules.", "de": "Meine Hose ist blau." }
+              "tr": { "en": "My pants are blue.", "es": "Mis pantalones son azules." }
             },
             {
               "es": "Las vacaciones son largas.",
-              "tr": { "hu": "A szünidő hosszú.", "en": "The holidays are long.", "es": "Las vacaciones son largas.", "de": "Die Ferien sind lang." }
+              "tr": { "en": "The holidays are long.", "es": "Las vacaciones son largas." }
             }
           ]
         }
@@ -385,14 +339,12 @@
       "kind": "table",
       "id": "plural",
       "title": {
-        "hu": "Egyes és többes szám névelővel",
         "en": "Singular and plural with the article",
-        "es": "Singular y plural con artículo",
-        "de": "Singular und Plural mit Artikel"
+        "es": "Singular y plural con artículo"
       },
       "header": [
-        { "hu": "Egyes szám", "en": "Singular", "es": "Singular", "de": "Singular" },
-        { "hu": "Többes szám", "en": "Plural", "es": "Plural", "de": "Plural" }
+        { "en": "Singular", "es": "Singular" },
+        { "en": "Plural", "es": "Plural" }
       ],
       "rows": [
         ["el libro", "los libros"],
@@ -420,29 +372,25 @@
     {
       "kind": "contrast",
       "title": {
-        "hu": "Hasonló, mégis más",
         "en": "Similar, yet different",
-        "es": "Parecido, pero distinto",
-        "de": "Ähnlich, aber anders"
+        "es": "Parecido, pero distinto"
       },
       "pairs": [
         {
           "a": "el problema",
           "b": "la casa",
           "note": {
-            "hu": "A problema -a végű, mégis hímnemű (görög eredet); a casa is -a végű, de az valóban nőnemű: a végződés önmagában nem elég, ismerni kell a kivételt.",
             "en": "Problema ends in -a yet is masculine (Greek origin); casa also ends in -a but really is feminine: the ending alone isn't enough, you have to know the exception.",
-            "es": "Problema acaba en -a pero es masculino (origen griego); casa también acaba en -a pero sí es femenino: la terminación sola no basta, hay que conocer la excepción.",
-            "de": "Problema endet auf -a und ist dennoch maskulin (griechischer Ursprung); casa endet ebenfalls auf -a, ist aber tatsächlich feminin: die Endung allein reicht nicht, man muss die Ausnahme kennen."
+            "es": "Problema acaba en -a pero es masculino (origen griego); casa también acaba en -a pero sí es femenino: la terminación sola no basta, hay que conocer la excepción."
           },
           "examples": [
             {
               "es": "El problema es difícil.",
-              "tr": { "hu": "A probléma nehéz.", "en": "The problem is difficult.", "es": "El problema es difícil.", "de": "Das Problem ist schwer." }
+              "tr": { "en": "The problem is difficult.", "es": "El problema es difícil." }
             },
             {
               "es": "La casa es grande.",
-              "tr": { "hu": "A ház nagy.", "en": "The house is big.", "es": "La casa es grande.", "de": "Das Haus ist groß." }
+              "tr": { "en": "The house is big.", "es": "La casa es grande." }
             }
           ]
         },
@@ -450,19 +398,17 @@
           "a": "el lunes",
           "b": "los lunes",
           "note": {
-            "hu": "Az alak pontosan ugyanaz egyes és többes számban is; csak a névelő (el/los) mutatja meg, hányról van szó.",
             "en": "The form is exactly the same in singular and plural; only the article (el/los) shows whether it's one or several.",
-            "es": "La forma es exactamente igual en singular y en plural; solo el artículo (el/los) indica si es uno o varios.",
-            "de": "Die Form ist im Singular und Plural genau gleich; nur der Artikel (el/los) zeigt, ob es einer oder mehrere sind."
+            "es": "La forma es exactamente igual en singular y en plural; solo el artículo (el/los) indica si es uno o varios."
           },
           "examples": [
             {
               "es": "El lunes tengo clase.",
-              "tr": { "hu": "Hétfőn órám van.", "en": "On Monday I have class.", "es": "El lunes tengo clase.", "de": "Am Montag habe ich Unterricht." }
+              "tr": { "en": "On Monday I have class.", "es": "El lunes tengo clase." }
             },
             {
               "es": "Los lunes tengo clase.",
-              "tr": { "hu": "Hétfőnként órám van.", "en": "On Mondays I have class.", "es": "Los lunes tengo clase.", "de": "Montags habe ich Unterricht." }
+              "tr": { "en": "On Mondays I have class.", "es": "Los lunes tengo clase." }
             }
           ]
         }
@@ -471,131 +417,127 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "A főnevet mindig a névelőjével tanuld: el mapa, la foto.",
         "en": "Always learn a noun together with its article: el mapa, la foto.",
-        "es": "Aprende siempre el sustantivo junto con su artículo: el mapa, la foto.",
-        "de": "Lerne das Nomen immer zusammen mit seinem Artikel: el mapa, la foto."
+        "es": "Aprende siempre el sustantivo junto con su artículo: el mapa, la foto."
       }
     }
   ],
   "speak": {
-    "hu": "Minden spanyol főnévnek van neme, még az élettelen tárgynak is, és ez a nem magával húz minden hozzá tartozó szót. A legtöbb o végű főnév hímnemű, a legtöbb a végű nőnemű. Néhány szót egyszerűen kivételként kell megtanulni: némelyik a-ra végződik, mégis hímnemű, néhány pedig o-ra, mégis nőnemű. A többes szám magánhangzó után egyszerű s, mássalhangzó után es, és a végső z c-re vált. Néha a többes szám az írott ékezetet is megváltoztatja, néha egyáltalán nem változik, néhány szó pedig szinte mindig többes számú.",
     "en": "Every Spanish noun has a gender, even a lifeless object, and that gender pulls along every word that goes with it. Most nouns ending in o are masculine and most ending in a are feminine. A few words you simply have to know as exceptions: some end in a yet are masculine, while a few end in o yet are feminine. The plural is a simple s after a vowel and es after a consonant, and after a final z the z turns into c. Sometimes the plural even changes the written accent, and sometimes it doesn't change at all, and a few words are almost always plural.",
-    "es": "Todo sustantivo español tiene género, incluso un objeto sin vida, y ese género arrastra a todas las palabras que lo acompañan. La mayoría de los sustantivos que acaban en o son masculinos y la mayoría de los que acaban en a son femeninos. Unas pocas palabras hay que conocerlas como excepciones: algunas acaban en a y son masculinas, mientras que otras acaban en o y son femeninas. El plural es una simple s tras vocal y es tras consonante, y tras una z final la z pasa a c. A veces el plural incluso cambia la tilde, a veces no cambia en absoluto, y unas pocas palabras se usan casi siempre en plural.",
-    "de": "Jedes spanische Nomen hat ein Geschlecht, auch ein lebloser Gegenstand, und dieses Geschlecht zieht alle dazugehörigen Wörter mit. Die meisten Nomen auf o sind maskulin und die meisten auf a feminin. Einige Wörter muss man einfach als Ausnahmen kennen: manche enden auf a und sind trotzdem maskulin, einige enden auf o und sind trotzdem feminin. Der Plural ist ein einfaches s nach Vokal und es nach Konsonant, und nach einem End-z wird das z zu c. Manchmal ändert der Plural sogar den geschriebenen Akzent, manchmal ändert er sich gar nicht, und einige Wörter stehen fast immer im Plural."
+    "es": "Todo sustantivo español tiene género, incluso un objeto sin vida, y ese género arrastra a todas las palabras que lo acompañan. La mayoría de los sustantivos que acaban en o son masculinos y la mayoría de los que acaban en a son femeninos. Unas pocas palabras hay que conocerlas como excepciones: algunas acaban en a y son masculinas, mientras que otras acaban en o y son femeninas. El plural es una simple s tras vocal y es tras consonante, y tras una z final la z pasa a c. A veces el plural incluso cambia la tilde, a veces no cambia en absoluto, y unas pocas palabras se usan casi siempre en plural."
   },
   "glossary": [
     {
       "word": "lápices",
-      "gloss": { "hu": "ceruzák", "en": "pencils", "es": "los lápices", "de": "Bleistifte" }
+      "gloss": { "en": "pencils", "es": "los lápices" }
     },
     {
       "word": "papeles",
-      "gloss": { "hu": "papírok", "en": "papers", "es": "los papeles", "de": "Papiere" }
+      "gloss": { "en": "papers", "es": "los papeles" }
     },
     {
       "word": "canciones",
-      "gloss": { "hu": "dalok", "en": "songs", "es": "las canciones", "de": "Lieder" }
+      "gloss": { "en": "songs", "es": "las canciones" }
     },
     {
       "word": "mapa",
-      "gloss": { "hu": "térkép", "en": "map", "es": "el mapa", "de": "Karte" }
+      "gloss": { "en": "map", "es": "el mapa" }
     },
     {
       "word": "aula",
-      "gloss": { "hu": "tanterem", "en": "classroom", "es": "el aula", "de": "Klassenraum" }
+      "gloss": { "en": "classroom", "es": "el aula" }
     },
     {
       "word": "duele",
-      "gloss": { "hu": "fáj", "en": "it hurts", "es": "doler → duele", "de": "tut weh" }
+      "gloss": { "en": "it hurts", "es": "doler → duele" }
     },
     {
       "word": "escucho",
-      "gloss": { "hu": "hallgatok", "en": "I listen", "es": "escuchar → escucho", "de": "ich höre zu" }
+      "gloss": { "en": "I listen", "es": "escuchar → escucho" }
     },
     {
       "word": "foto",
-      "gloss": { "hu": "fénykép", "en": "photo", "es": "la foto", "de": "Foto" }
+      "gloss": { "en": "photo", "es": "la foto" }
     },
     {
       "word": "lecciones",
-      "gloss": { "hu": "leckék", "en": "lessons", "es": "las lecciones", "de": "Lektionen" }
+      "gloss": { "en": "lessons", "es": "las lecciones" }
     },
     {
       "word": "luces",
-      "gloss": { "hu": "fények, lámpák", "en": "lights", "es": "las luces", "de": "Lichter" }
+      "gloss": { "en": "lights", "es": "las luces" }
     },
     {
       "word": "lápizes",
-      "gloss": { "hu": "nem létező alak", "en": "not a real form", "es": "forma inexistente", "de": "keine reale Form" }
+      "gloss": { "en": "not a real form", "es": "forma inexistente" }
     },
     {
       "word": "lápizs",
-      "gloss": { "hu": "nem létező alak", "en": "not a real form", "es": "forma inexistente", "de": "keine reale Form" }
+      "gloss": { "en": "not a real form", "es": "forma inexistente" }
     },
     {
       "word": "papels",
-      "gloss": { "hu": "nem létező alak", "en": "not a real form", "es": "forma inexistente", "de": "keine reale Form" }
+      "gloss": { "en": "not a real form", "es": "forma inexistente" }
     },
     {
       "word": "sistema",
-      "gloss": { "hu": "rendszer", "en": "system", "es": "el sistema", "de": "System" }
+      "gloss": { "en": "system", "es": "el sistema" }
     },
     {
       "word": "universidad",
-      "gloss": { "hu": "egyetem", "en": "university", "es": "la universidad", "de": "Universität" }
+      "gloss": { "en": "university", "es": "la universidad" }
     },
     {
       "word": "vezes",
-      "gloss": { "hu": "nem létező alak", "en": "not a real form", "es": "forma inexistente", "de": "keine reale Form" }
+      "gloss": { "en": "not a real form", "es": "forma inexistente" }
     },
     {
       "word": "vecs",
-      "gloss": { "hu": "nem létező alak", "en": "not a real form", "es": "forma inexistente", "de": "keine reale Form" }
+      "gloss": { "en": "not a real form", "es": "forma inexistente" }
     },
     {
       "word": "carácteres",
-      "gloss": { "hu": "nem létező alak", "en": "not a real form", "es": "forma inexistente", "de": "keine reale Form" }
+      "gloss": { "en": "not a real form", "es": "forma inexistente" }
     },
     {
       "word": "caractes",
-      "gloss": { "hu": "nem létező alak", "en": "not a real form", "es": "forma inexistente", "de": "keine reale Form" }
+      "gloss": { "en": "not a real form", "es": "forma inexistente" }
     },
     {
       "word": "peces",
-      "gloss": { "hu": "halak", "en": "fish", "es": "los peces", "de": "Fische" }
+      "gloss": { "en": "fish", "es": "los peces" }
     },
     {
       "word": "caracteres",
-      "gloss": { "hu": "jellemek", "en": "characters", "es": "los caracteres", "de": "Charaktere" }
+      "gloss": { "en": "characters", "es": "los caracteres" }
     },
     {
       "word": "diferentes",
-      "gloss": { "hu": "különböző", "en": "different", "es": "diferentes", "de": "unterschiedlich" }
+      "gloss": { "en": "different", "es": "diferentes" }
     },
     {
       "word": "tema",
-      "gloss": { "hu": "téma", "en": "topic", "es": "el tema", "de": "Thema" }
+      "gloss": { "en": "topic", "es": "el tema" }
     },
     {
       "word": "clima",
-      "gloss": { "hu": "éghajlat", "en": "climate", "es": "el clima", "de": "Klima" }
+      "gloss": { "en": "climate", "es": "el clima" }
     },
     {
       "word": "programa",
-      "gloss": { "hu": "műsor", "en": "program", "es": "el programa", "de": "Programm" }
+      "gloss": { "en": "program", "es": "el programa" }
     },
     {
       "word": "radio",
-      "gloss": { "hu": "rádió", "en": "radio", "es": "la radio", "de": "Radio" }
+      "gloss": { "en": "radio", "es": "la radio" }
     },
     {
       "word": "carro",
-      "gloss": { "hu": "autó", "en": "car", "es": "el carro", "de": "Auto" }
+      "gloss": { "en": "car", "es": "el carro" }
     },
     {
       "word": "pongo",
-      "gloss": { "hu": "teszek, rakok", "en": "I put", "es": "poner → pongo", "de": "ich lege, ich stelle" }
+      "gloss": { "en": "I put", "es": "poner → pongo" }
     }
   ],
   "items": [
@@ -605,27 +547,21 @@
       "options": ["El", "La", "Los"],
       "correct": 0,
       "why": {
-        "hu": "A libro -o végű, tehát hímnem, egyes szám: el libro.",
         "en": "Libro ends in -o, so it is masculine singular: el libro.",
-        "es": "Libro acaba en -o: masculino singular, el libro.",
-        "de": "Libro endet auf -o, also maskulin Singular: el libro."
+        "es": "Libro acaba en -o: masculino singular, el libro."
       },
       "wrong": {
         "La": {
-          "hu": "Ezzel a mondat azt jelentené, hogy a libro nőnemű, de a libro -o végű, hímnem; helyesen: El libro está en la mesa.",
           "en": "This would treat libro as feminine, but libro ends in -o and is masculine; the correct form is: El libro está en la mesa.",
-          "es": "Esto trataría a libro como femenino, pero libro acaba en -o y es masculino; la forma correcta es: El libro está en la mesa.",
-          "de": "Das würde libro als feminin behandeln, aber libro endet auf -o und ist maskulin; richtig ist: El libro está en la mesa."
+          "es": "Esto trataría a libro como femenino, pero libro acaba en -o y es masculino; la forma correcta es: El libro está en la mesa."
         },
         "Los": {
-          "hu": "Ezzel a mondat azt jelentené, hogy több könyv van az asztalon, de itt csak egy könyvről van szó; helyesen: El libro está en la mesa.",
           "en": "This would say several books are on the table, but there is only one book here; correctly: El libro está en la mesa.",
-          "es": "Esto diría que hay varios libros en la mesa, pero aquí solo hay un libro; correctamente: El libro está en la mesa.",
-          "de": "Das würde bedeuten, dass mehrere Bücher auf dem Tisch liegen, aber hier gibt es nur ein Buch; richtig: El libro está en la mesa."
+          "es": "Esto diría que hay varios libros en la mesa, pero aquí solo hay un libro; correctamente: El libro está en la mesa."
         }
       },
       "examples": ["El carro es nuevo.", "La casa es grande."],
-      "tr": { "hu": "A könyv az asztalon van.", "en": "The book is on the table.", "es": "El libro está en la mesa.", "de": "Das Buch liegt auf dem Tisch." }
+      "tr": { "en": "The book is on the table.", "es": "El libro está en la mesa." }
     },
     {
       "id": "sn-02",
@@ -633,27 +569,21 @@
       "options": ["lápices", "lápizes", "lápizs"],
       "correct": 0,
       "why": {
-        "hu": "A -z végű szavaknál a z c-re vált, és -es jön: lápiz → lápices.",
         "en": "A final -z turns into c before -es: lápiz → lápices.",
-        "es": "La -z final pasa a c y se añade -es: lápices.",
-        "de": "Ein End-z wird vor -es zu c: lápiz → lápices."
+        "es": "La -z final pasa a c y se añade -es: lápices."
       },
       "wrong": {
         "lápizes": {
-          "hu": "Ezzel a mondat egy nem létező alakot használna; a lápiz szóban a z c-re vált, mielőtt az -es hozzáadódik, ezért lápices a helyes: Tengo dos lápices en la mochila.",
           "en": "This would use a form that doesn't exist; in lápiz, the z turns into c before -es is added, so the correct form is lápices: Tengo dos lápices en la mochila.",
-          "es": "Esto usaría una forma que no existe; en lápiz, la z pasa a c antes de añadir -es, así que la forma correcta es lápices: Tengo dos lápices en la mochila.",
-          "de": "Das würde eine nicht existierende Form verwenden; bei lápiz wird das z vor dem Anhängen von -es zu c, also lautet die richtige Form lápices: Tengo dos lápices en la mochila."
+          "es": "Esto usaría una forma que no existe; en lápiz, la z pasa a c antes de añadir -es, así que la forma correcta es lápices: Tengo dos lápices en la mochila."
         },
         "lápizs": {
-          "hu": "Ezzel a mondat egy nem létező alakot használna; mássalhangzóra végződő szavak többese -es, nem -s, ezért lápices a helyes: Tengo dos lápices en la mochila.",
           "en": "This would use a form that doesn't exist; nouns ending in a consonant take -es, not -s, so the correct form is lápices: Tengo dos lápices en la mochila.",
-          "es": "Esto usaría una forma que no existe; los sustantivos acabados en consonante llevan -es, no -s, así que la forma correcta es lápices: Tengo dos lápices en la mochila.",
-          "de": "Das würde eine nicht existierende Form verwenden; Nomen auf Konsonant bekommen -es, nicht -s, also lautet die richtige Form lápices: Tengo dos lápices en la mochila."
+          "es": "Esto usaría una forma que no existe; los sustantivos acabados en consonante llevan -es, no -s, así que la forma correcta es lápices: Tengo dos lápices en la mochila."
         }
       },
       "examples": ["Compré tres lápices.", "Hay muchas luces en la calle."],
-      "tr": { "hu": "Két ceruza van a hátizsákommal.", "en": "I have two pencils in my backpack.", "es": "Tengo dos lápices en la mochila.", "de": "Ich habe zwei Bleistifte im Rucksack." }
+      "tr": { "en": "I have two pencils in my backpack.", "es": "Tengo dos lápices en la mochila." }
     },
     {
       "id": "sn-03",
@@ -661,27 +591,21 @@
       "options": ["La", "El", "Los"],
       "correct": 0,
       "why": {
-        "hu": "A -dad végű szavak nőneműek: la ciudad.",
         "en": "Nouns in -dad are feminine: la ciudad.",
-        "es": "Los sustantivos en -dad son femeninos: la ciudad.",
-        "de": "Nomen auf -dad sind feminin: la ciudad."
+        "es": "Los sustantivos en -dad son femeninos: la ciudad."
       },
       "wrong": {
         "El": {
-          "hu": "Ezzel a mondat azt jelentené, hogy a ciudad hímnemű, de a -dad végű szavak nőneműek; helyesen: La ciudad es muy grande.",
           "en": "This would treat ciudad as masculine, but nouns ending in -dad are feminine; correctly: La ciudad es muy grande.",
-          "es": "Esto trataría a ciudad como masculino, pero los sustantivos en -dad son femeninos; correctamente: La ciudad es muy grande.",
-          "de": "Das würde ciudad als maskulin behandeln, aber Nomen auf -dad sind feminin; richtig: La ciudad es muy grande."
+          "es": "Esto trataría a ciudad como masculino, pero los sustantivos en -dad son femeninos; correctamente: La ciudad es muy grande."
         },
         "Los": {
-          "hu": "Ezzel a mondat azt jelentené, hogy több városról van szó és hogy hímnemű, de itt egyetlen, nőnemű városról van szó; helyesen: La ciudad es muy grande.",
           "en": "This would say there are several cities and treat it as masculine, but here there is one, feminine city; correctly: La ciudad es muy grande.",
-          "es": "Esto diría que hay varias ciudades y la trataría como masculina, pero aquí hay una sola ciudad, femenina; correctamente: La ciudad es muy grande.",
-          "de": "Das würde mehrere Städte andeuten und sie als maskulin behandeln, aber hier gibt es eine, feminine Stadt; richtig: La ciudad es muy grande."
+          "es": "Esto diría que hay varias ciudades y la trataría como masculina, pero aquí hay una sola ciudad, femenina; correctamente: La ciudad es muy grande."
         }
       },
       "examples": ["La universidad está cerca.", "La canción es bonita."],
-      "tr": { "hu": "A város nagyon nagy.", "en": "The city is very big.", "es": "La ciudad es muy grande.", "de": "Die Stadt ist sehr groß." }
+      "tr": { "en": "The city is very big.", "es": "La ciudad es muy grande." }
     },
     {
       "id": "sn-04",
@@ -689,27 +613,21 @@
       "options": ["papeles", "papels", "papel"],
       "correct": 0,
       "why": {
-        "hu": "Mássalhangzóra végződő szó többesben -es-t kap: papel → papeles.",
         "en": "A noun ending in a consonant takes -es: papel → papeles.",
-        "es": "Un sustantivo acabado en consonante lleva -es: papeles.",
-        "de": "Ein Nomen auf Konsonant bekommt -es: papeles."
+        "es": "Un sustantivo acabado en consonante lleva -es: papeles."
       },
       "wrong": {
         "papels": {
-          "hu": "Ezzel a mondat egy nem létező alakot használna; mássalhangzóra végződő szó többese -es, nem -s: papel → papeles. Helyesen: Los papeles están en la mesa.",
           "en": "This would use a form that doesn't exist; a noun ending in a consonant takes -es, not -s: papel → papeles. Correctly: Los papeles están en la mesa.",
-          "es": "Esto usaría una forma que no existe; un sustantivo acabado en consonante lleva -es, no -s: papel → papeles. Correctamente: Los papeles están en la mesa.",
-          "de": "Das würde eine nicht existierende Form verwenden; ein Nomen auf Konsonant bekommt -es, nicht -s: papel → papeles. Richtig: Los papeles están en la mesa."
+          "es": "Esto usaría una forma que no existe; un sustantivo acabado en consonante lleva -es, no -s: papel → papeles. Correctamente: Los papeles están en la mesa."
         },
         "papel": {
-          "hu": "Ezzel a mondat azt jelentené, hogy csak egy papírról van szó, de a los többes számot kíván; helyesen: Los papeles están en la mesa.",
           "en": "This would say there is only one paper, but los requires a plural noun; correctly: Los papeles están en la mesa.",
-          "es": "Esto diría que hay un solo papel, pero los exige un sustantivo plural; correctamente: Los papeles están en la mesa.",
-          "de": "Das würde bedeuten, dass es nur ein Papier gibt, aber los verlangt ein Plural-Nomen; richtig: Los papeles están en la mesa."
+          "es": "Esto diría que hay un solo papel, pero los exige un sustantivo plural; correctamente: Los papeles están en la mesa."
         }
       },
       "examples": ["Los hoteles son caros.", "Las ciudades son grandes."],
-      "tr": { "hu": "A papírok az asztalon vannak.", "en": "The papers are on the table.", "es": "Los papeles están en la mesa.", "de": "Die Papiere liegen auf dem Tisch." }
+      "tr": { "en": "The papers are on the table.", "es": "Los papeles están en la mesa." }
     },
     {
       "id": "sn-05",
@@ -717,27 +635,21 @@
       "options": ["El", "La", "Las"],
       "correct": 0,
       "why": {
-        "hu": "A día kivétel: -a végű, de hímnemű.",
         "en": "Día is an exception: it ends in -a but is masculine.",
-        "es": "Día es excepción: acaba en -a pero es masculino.",
-        "de": "Día ist eine Ausnahme: es endet auf -a, ist aber maskulin."
+        "es": "Día es excepción: acaba en -a pero es masculino."
       },
       "wrong": {
         "La": {
-          "hu": "Ezzel a mondat azt jelentené, hogy a día nőnemű, de a día -a végű, mégis hímnemű kivétel; helyesen: El día es muy largo.",
           "en": "This would treat día as feminine, but día ends in -a yet is a masculine exception; correctly: El día es muy largo.",
-          "es": "Esto trataría a día como femenino, pero día acaba en -a pero es una excepción masculina; correctamente: El día es muy largo.",
-          "de": "Das würde día als feminin behandeln, aber día endet auf -a und ist eine maskuline Ausnahme; richtig: El día es muy largo."
+          "es": "Esto trataría a día como femenino, pero día acaba en -a pero es una excepción masculina; correctamente: El día es muy largo."
         },
         "Las": {
-          "hu": "Ezzel a mondat azt jelentené, hogy több napról van szó és hogy nőnemű, de itt egyetlen, hímnemű napról van szó; helyesen: El día es muy largo.",
           "en": "This would say there are several days and treat it as feminine, but here there is one, masculine day; correctly: El día es muy largo.",
-          "es": "Esto diría que hay varios días y lo trataría como femenino, pero aquí hay un solo día, masculino; correctamente: El día es muy largo.",
-          "de": "Das würde mehrere Tage andeuten und ihn als feminin behandeln, aber hier gibt es einen, maskulinen Tag; richtig: El día es muy largo."
+          "es": "Esto diría que hay varios días y lo trataría como femenino, pero aquí hay un solo día, masculino; correctamente: El día es muy largo."
         }
       },
       "examples": ["El mapa está en la pared.", "El problema es difícil."],
-      "tr": { "hu": "A nap nagyon hosszú.", "en": "The day is very long.", "es": "El día es muy largo.", "de": "Der Tag ist sehr lang." }
+      "tr": { "en": "The day is very long.", "es": "El día es muy largo." }
     },
     {
       "id": "sn-06",
@@ -745,27 +657,21 @@
       "options": ["la", "el", "los"],
       "correct": 0,
       "why": {
-        "hu": "A mano kivétel: -o végű, de nőnemű.",
         "en": "Mano is an exception: it ends in -o but is feminine.",
-        "es": "Mano es excepción: acaba en -o pero es femenino.",
-        "de": "Mano ist eine Ausnahme: es endet auf -o, ist aber feminin."
+        "es": "Mano es excepción: acaba en -o pero es femenino."
       },
       "wrong": {
         "el": {
-          "hu": "Ezzel a mondat azt jelentené, hogy a mano hímnemű, de a mano -o végű, mégis nőnemű kivétel; helyesen: Me duele la mano.",
           "en": "This would treat mano as masculine, but mano ends in -o and is a feminine exception; correctly: Me duele la mano.",
-          "es": "Esto trataría a mano como masculino, pero mano acaba en -o y es una excepción femenina; correctamente: Me duele la mano.",
-          "de": "Das würde mano als maskulin behandeln, aber mano endet auf -o und ist eine feminine Ausnahme; richtig: Me duele la mano."
+          "es": "Esto trataría a mano como masculino, pero mano acaba en -o y es una excepción femenina; correctamente: Me duele la mano."
         },
         "los": {
-          "hu": "Ezzel a mondat azt jelentené, hogy több kézről van szó és hogy hímnemű, de itt egyetlen, nőnemű kézről van szó; helyesen: Me duele la mano.",
           "en": "This would say several hands and treat it as masculine, but here there is one, feminine hand; correctly: Me duele la mano.",
-          "es": "Esto diría varias manos y la trataría como masculina, pero aquí hay una sola mano, femenina; correctamente: Me duele la mano.",
-          "de": "Das würde mehrere Hände andeuten und sie als maskulin behandeln, aber hier gibt es eine, feminine Hand; richtig: Me duele la mano."
+          "es": "Esto diría varias manos y la trataría como masculina, pero aquí hay una sola mano, femenina; correctamente: Me duele la mano."
         }
       },
       "examples": ["La foto es antigua.", "La moto es de mi hermano."],
-      "tr": { "hu": "Fáj a kezem.", "en": "My hand hurts.", "es": "Me duele la mano.", "de": "Meine Hand tut weh." }
+      "tr": { "en": "My hand hurts.", "es": "Me duele la mano." }
     },
     {
       "id": "sn-07",
@@ -773,27 +679,21 @@
       "options": ["estudiantes", "estudiante", "estudiantas"],
       "correct": 0,
       "why": {
-        "hu": "Magánhangzóra végződő szó +s: estudiante → estudiantes.",
         "en": "A noun ending in a vowel takes +s: estudiante → estudiantes.",
-        "es": "Sustantivo acabado en vocal, +s: estudiantes.",
-        "de": "Nomen auf Vokal bekommt +s: estudiantes."
+        "es": "Sustantivo acabado en vocal, +s: estudiantes."
       },
       "wrong": {
         "estudiante": {
-          "hu": "Ezzel a mondat azt jelentené, hogy csak egy diákról van szó, de a quince többes számot kíván; helyesen: En la clase hay quince estudiantes.",
           "en": "This would say there is only one student, but quince requires the plural; correctly: En la clase hay quince estudiantes.",
-          "es": "Esto diría que hay un solo estudiante, pero quince exige el plural; correctamente: En la clase hay quince estudiantes.",
-          "de": "Das würde bedeuten, dass es nur einen Studenten gibt, aber quince verlangt den Plural; richtig: En la clase hay quince estudiantes."
+          "es": "Esto diría que hay un solo estudiante, pero quince exige el plural; correctamente: En la clase hay quince estudiantes."
         },
         "estudiantas": {
-          "hu": "Ezzel a mondat helytelen alakot használna; az estudiante alakja nem változik nem szerint, egy nőnemű alanynál is estudiante marad; helyesen: En la clase hay quince estudiantes.",
           "en": "This would use an incorrect form; estudiante does not change form for gender, even for a female subject it stays estudiante; correctly: En la clase hay quince estudiantes.",
-          "es": "Esto usaría una forma incorrecta; estudiante no cambia de forma por género, incluso para un sujeto femenino sigue siendo estudiante; correctamente: En la clase hay quince estudiantes.",
-          "de": "Das würde eine falsche Form verwenden; estudiante ändert die Form nicht nach Genus, auch bei einem weiblichen Subjekt bleibt es estudiante; richtig: En la clase hay quince estudiantes."
+          "es": "Esto usaría una forma incorrecta; estudiante no cambia de forma por género, incluso para un sujeto femenino sigue siendo estudiante; correctamente: En la clase hay quince estudiantes."
         }
       },
       "examples": ["Hay dos profesores nuevos.", "Tengo tres hermanas."],
-      "tr": { "hu": "Az osztályban tizenöt diák van.", "en": "There are fifteen students in the class.", "es": "En la clase hay quince estudiantes.", "de": "In der Klasse sind fünfzehn Schüler." }
+      "tr": { "en": "There are fifteen students in the class.", "es": "En la clase hay quince estudiantes." }
     },
     {
       "id": "sn-08",
@@ -801,27 +701,21 @@
       "options": ["El", "La", "Los"],
       "correct": 0,
       "why": {
-        "hu": "Az agua nőnemű, de a hangsúlyos a- előtt a la el-re vált. A melléknév marad nőnemű: fría.",
         "en": "Agua is feminine, but la becomes el before a stressed a-. The adjective stays feminine: fría.",
-        "es": "Agua es femenino, pero la pasa a el ante a tónica. El adjetivo sigue femenino: fría.",
-        "de": "Agua ist feminin, aber la wird vor betontem a- zu el. Das Adjektiv bleibt feminin: fría."
+        "es": "Agua es femenino, pero la pasa a el ante a tónica. El adjetivo sigue femenino: fría."
       },
       "wrong": {
         "La": {
-          "hu": "Ezzel a mondat furcsán hangzana; a hangsúlyos a- előtt a la el-re vált, bár a szó nőnemű marad, ahogy a melléknév (fría) is mutatja; helyesen: El agua está muy fría.",
           "en": "This would be awkward to say; before a stressed a-, la becomes el, even though the noun stays feminine, as the adjective (fría) shows; correctly: El agua está muy fría.",
-          "es": "Esto sonaría mal; ante a tónica, la pasa a el, aunque el sustantivo sigue siendo femenino, como muestra el adjetivo (fría); correctamente: El agua está muy fría.",
-          "de": "Das würde sich seltsam anhören; vor betontem a- wird la zu el, auch wenn das Nomen feminin bleibt, wie das Adjektiv (fría) zeigt; richtig: El agua está muy fría."
+          "es": "Esto sonaría mal; ante a tónica, la pasa a el, aunque el sustantivo sigue siendo femenino, como muestra el adjetivo (fría); correctamente: El agua está muy fría."
         },
         "Los": {
-          "hu": "Ezzel a mondat azt jelentené, hogy több vízről van szó, de itt egyetlen víz mennyiségről van szó egyes számban; helyesen: El agua está muy fría.",
           "en": "This would say several waters, but here it is a single quantity of water in the singular; correctly: El agua está muy fría.",
-          "es": "Esto diría varias aguas, pero aquí se trata de una sola cantidad de agua en singular; correctamente: El agua está muy fría.",
-          "de": "Das würde mehrere Wasser andeuten, aber hier geht es um eine einzige Menge Wasser im Singular; richtig: El agua está muy fría."
+          "es": "Esto diría varias aguas, pero aquí se trata de una sola cantidad de agua en singular; correctamente: El agua está muy fría."
         }
       },
       "examples": ["El agua fría es buena.", "El aula está cerrada."],
-      "tr": { "hu": "A víz nagyon hideg.", "en": "The water is very cold.", "es": "El agua está muy fría.", "de": "Das Wasser ist sehr kalt." }
+      "tr": { "en": "The water is very cold.", "es": "El agua está muy fría." }
     },
     {
       "id": "sn-09",
@@ -829,27 +723,21 @@
       "options": ["las", "los", "el"],
       "correct": 0,
       "why": {
-        "hu": "A -ción végű szavak nőneműek, többesben -ciones: las canciones.",
         "en": "Nouns in -ción are feminine; the plural is -ciones: las canciones.",
-        "es": "Los sustantivos en -ción son femeninos: las canciones.",
-        "de": "Nomen auf -ción sind feminin: las canciones."
+        "es": "Los sustantivos en -ción son femeninos: las canciones."
       },
       "wrong": {
         "los": {
-          "hu": "Ezzel a mondat azt jelentené, hogy a canciones hímnemű, de a -ción/-ciones végű szavak nőneműek; helyesen: Escucho las canciones en español.",
           "en": "This would treat canciones as masculine, but -ción/-ciones nouns are feminine; correctly: Escucho las canciones en español.",
-          "es": "Esto trataría a canciones como masculino, pero los sustantivos en -ción/-ciones son femeninos; correctamente: Escucho las canciones en español.",
-          "de": "Das würde canciones als maskulin behandeln, aber Nomen auf -ción/-ciones sind feminin; richtig: Escucho las canciones en español."
+          "es": "Esto trataría a canciones como masculino, pero los sustantivos en -ción/-ciones son femeninos; correctamente: Escucho las canciones en español."
         },
         "el": {
-          "hu": "Ezzel a mondat azt jelentené, hogy egyetlen dalról van szó és hogy hímnemű, de itt több, nőnemű dalról van szó; helyesen: Escucho las canciones en español.",
           "en": "This would say a single song and treat it as masculine, but here there are several, feminine songs; correctly: Escucho las canciones en español.",
-          "es": "Esto diría una sola canción y la trataría como masculina, pero aquí hay varias, femeninas; correctamente: Escucho las canciones en español.",
-          "de": "Das würde ein einziges Lied andeuten und es als maskulin behandeln, aber hier gibt es mehrere, feminine Lieder; richtig: Escucho las canciones en español."
+          "es": "Esto diría una sola canción y la trataría como masculina, pero aquí hay varias, femeninas; correctamente: Escucho las canciones en español."
         }
       },
       "examples": ["Las lecciones son cortas.", "La estación está lejos."],
-      "tr": { "hu": "Hallgatom a spanyol nyelvű dalokat.", "en": "I listen to the songs in Spanish.", "es": "Escucho las canciones en español.", "de": "Ich höre mir die Lieder auf Spanisch an." }
+      "tr": { "en": "I listen to the songs in Spanish.", "es": "Escucho las canciones en español." }
     },
     {
       "id": "sn-10",
@@ -857,27 +745,21 @@
       "options": ["El", "La", "Las"],
       "correct": 0,
       "why": {
-        "hu": "Az -or végű szavak többnyire hímneműek: el color.",
         "en": "Nouns in -or are mostly masculine: el color.",
-        "es": "Los sustantivos en -or son casi siempre masculinos: el color.",
-        "de": "Nomen auf -or sind meist maskulin: el color."
+        "es": "Los sustantivos en -or son casi siempre masculinos: el color."
       },
       "wrong": {
         "La": {
-          "hu": "Ezzel a mondat azt jelentené, hogy a color nőnemű, de az -or végű szavak többnyire hímneműek; helyesen: El color de la casa es azul.",
           "en": "This would treat color as feminine, but -or nouns are mostly masculine; correctly: El color de la casa es azul.",
-          "es": "Esto trataría a color como femenino, pero los sustantivos en -or son casi siempre masculinos; correctamente: El color de la casa es azul.",
-          "de": "Das würde color als feminin behandeln, aber Nomen auf -or sind meist maskulin; richtig: El color de la casa es azul."
+          "es": "Esto trataría a color como femenino, pero los sustantivos en -or son casi siempre masculinos; correctamente: El color de la casa es azul."
         },
         "Las": {
-          "hu": "Ezzel a mondat azt jelentené, hogy több színről van szó és hogy nőnemű, de itt egyetlen, hímnemű színről van szó; helyesen: El color de la casa es azul.",
           "en": "This would say several colors and treat it as feminine, but here there is one, masculine color; correctly: El color de la casa es azul.",
-          "es": "Esto diría varios colores y lo trataría como femenino, pero aquí hay un solo color, masculino; correctamente: El color de la casa es azul.",
-          "de": "Das würde mehrere Farben andeuten und sie als feminin behandeln, aber hier gibt es eine, maskuline Farbe; richtig: El color de la casa es azul."
+          "es": "Esto diría varios colores y lo trataría como femenino, pero aquí hay un solo color, masculino; correctamente: El color de la casa es azul."
         }
       },
       "examples": ["El profesor es joven.", "El viaje es largo."],
-      "tr": { "hu": "A ház színe kék.", "en": "The color of the house is blue.", "es": "El color de la casa es azul.", "de": "Die Farbe des Hauses ist Blau." }
+      "tr": { "en": "The color of the house is blue.", "es": "El color de la casa es azul." }
     },
     {
       "id": "sn-11",
@@ -885,27 +767,21 @@
       "options": ["mis hermanos", "mis hermanas", "mi hermanos"],
       "correct": 0,
       "why": {
-        "hu": "Vegyes csoport hímnemű többesbe megy: hermanos.",
         "en": "A mixed group takes the masculine plural: hermanos.",
-        "es": "Un grupo mixto va en masculino plural: hermanos.",
-        "de": "Eine gemischte Gruppe steht im maskulinen Plural: hermanos."
+        "es": "Un grupo mixto va en masculino plural: hermanos."
       },
       "wrong": {
         "mis hermanas": {
-          "hu": "Ezzel a mondat azt jelentené, hogy csak a lányok tartoznak a csoportba, de a fiúk és lányok vegyes csoportja hímnemű többesbe megy; helyesen: Carlos y Ana son mis hermanos.",
           "en": "This would mean only the sisters belong to the group, but a mixed group of brothers and sisters takes the masculine plural; correctly: Carlos y Ana son mis hermanos.",
-          "es": "Esto significaría que solo las hermanas pertenecen al grupo, pero un grupo mixto de hermanos y hermanas va en masculino plural; correctamente: Carlos y Ana son mis hermanos.",
-          "de": "Das würde bedeuten, dass nur die Schwestern zur Gruppe gehören, aber eine gemischte Gruppe aus Brüdern und Schwestern steht im maskulinen Plural; richtig: Carlos y Ana son mis hermanos."
+          "es": "Esto significaría que solo las hermanas pertenecen al grupo, pero un grupo mixto de hermanos y hermanas va en masculino plural; correctamente: Carlos y Ana son mis hermanos."
         },
         "mi hermanos": {
-          "hu": "Ezzel a mondat egy nyelvtanilag hibás alakot használna; a birtokos névmás is többesbe megy a többes főnév előtt: mis hermanos, nem mi hermanos; helyesen: Carlos y Ana son mis hermanos.",
           "en": "This would use a grammatically wrong form; the possessive also goes plural before a plural noun: mis hermanos, not mi hermanos; correctly: Carlos y Ana son mis hermanos.",
-          "es": "Esto usaría una forma gramaticalmente incorrecta; el posesivo también va en plural ante un sustantivo plural: mis hermanos, no mi hermanos; correctamente: Carlos y Ana son mis hermanos.",
-          "de": "Das würde eine grammatisch falsche Form verwenden; das Possessivpronomen geht vor einem Plural-Nomen ebenfalls in den Plural: mis hermanos, nicht mi hermanos; richtig: Carlos y Ana son mis hermanos."
+          "es": "Esto usaría una forma gramaticalmente incorrecta; el posesivo también va en plural ante un sustantivo plural: mis hermanos, no mi hermanos; correctamente: Carlos y Ana son mis hermanos."
         }
       },
       "examples": ["Los niños juegan en el parque.", "Mis padres viven aquí."],
-      "tr": { "hu": "Carlos és Ana a testvéreim.", "en": "Carlos and Ana are my siblings.", "es": "Carlos y Ana son mis hermanos.", "de": "Carlos und Ana sind meine Geschwister." }
+      "tr": { "en": "Carlos and Ana are my siblings.", "es": "Carlos y Ana son mis hermanos." }
     },
     {
       "id": "sn-12",
@@ -913,27 +789,21 @@
       "options": ["un", "una", "unos"],
       "correct": 0,
       "why": {
-        "hu": "Az idioma görög eredetű -ma szó: hímnemű, ezért un idioma.",
         "en": "Idioma is a Greek -ma word: masculine, so un idioma.",
-        "es": "Idioma es palabra griega en -ma: masculino, un idioma.",
-        "de": "Idioma ist ein griechisches -ma-Wort: maskulin, un idioma."
+        "es": "Idioma es palabra griega en -ma: masculino, un idioma."
       },
       "wrong": {
         "una": {
-          "hu": "Ezzel a mondat azt jelentené, hogy az idioma nőnemű, de az idioma görög eredetű -ma szó, mégis hímnemű kivétel; helyesen: El español es un idioma bonito.",
           "en": "This would treat idioma as feminine, but idioma is a Greek-origin -ma word that is a masculine exception; correctly: El español es un idioma bonito.",
-          "es": "Esto trataría a idioma como femenino, pero idioma es una palabra de origen griego en -ma que es una excepción masculina; correctamente: El español es un idioma bonito.",
-          "de": "Das würde idioma als feminin behandeln, aber idioma ist ein griechisches -ma-Wort, das eine maskuline Ausnahme ist; richtig: El español es un idioma bonito."
+          "es": "Esto trataría a idioma como femenino, pero idioma es una palabra de origen griego en -ma que es una excepción masculina; correctamente: El español es un idioma bonito."
         },
         "unos": {
-          "hu": "Ezzel a mondat azt jelentené, hogy több nyelvről van szó, de itt egyetlen nyelvről, a spanyolról van szó egyes számban; helyesen: El español es un idioma bonito.",
           "en": "This would say several languages, but here it is about one language, Spanish, in the singular; correctly: El español es un idioma bonito.",
-          "es": "Esto diría varios idiomas, pero aquí se trata de un solo idioma, el español, en singular; correctamente: El español es un idioma bonito.",
-          "de": "Das würde mehrere Sprachen andeuten, aber hier geht es um eine Sprache, Spanisch, im Singular; richtig: El español es un idioma bonito."
+          "es": "Esto diría varios idiomas, pero aquí se trata de un solo idioma, el español, en singular; correctamente: El español es un idioma bonito."
         }
       },
       "examples": ["Tengo un problema.", "Es un sistema nuevo."],
-      "tr": { "hu": "A spanyol egy szép nyelv.", "en": "Spanish is a beautiful language.", "es": "El español es un idioma bonito.", "de": "Spanisch ist eine schöne Sprache." }
+      "tr": { "en": "Spanish is a beautiful language.", "es": "El español es un idioma bonito." }
     },
     {
       "id": "sn-match-01",
@@ -1048,27 +918,23 @@
       "id": "sn-why-01",
       "es": "El libro es interesante.",
       "target": "libro",
-      "tr": { "hu": "A könyv érdekes.", "en": "The book is interesting.", "es": "El libro es interesante.", "de": "Das Buch ist interessant." },
+      "tr": { "en": "The book is interesting.", "es": "El libro es interesante." },
       "options": [
         {
-          "text": { "hu": "-o hím / -a nő", "en": "-o is masculine, -a is feminine", "es": "-o masculino, -a femenino", "de": "-o maskulin, -a feminin" }
+          "text": { "en": "-o is masculine, -a is feminine", "es": "-o masculino, -a femenino" }
         },
         {
-          "text": { "hu": "mássalhangzó után -es a többes szám", "en": "after a consonant, the plural is -es", "es": "tras consonante, el plural es -es", "de": "nach einem Konsonanten lautet der Plural -es" },
+          "text": { "en": "after a consonant, the plural is -es", "es": "tras consonante, el plural es -es" },
           "wrong": {
-            "hu": "Ebben a mondatban nincs többes szám, a szabály itt a hím/nőnem: el libro -o végű, hímnem.",
             "en": "There is no plural in this sentence, the rule here is about gender: libro ends in -o, so masculine.",
-            "es": "En esta frase no hay plural, la regla aquí es de género: libro acaba en -o, masculino.",
-            "de": "In diesem Satz gibt es keinen Plural, die Regel hier betrifft das Genus: libro endet auf -o, also maskulin."
+            "es": "En esta frase no hay plural, la regla aquí es de género: libro acaba en -o, masculino."
           }
         },
         {
-          "text": { "hu": "görög eredetű -ma szó, hímnemű kivétel", "en": "a Greek -ma word, a masculine exception", "es": "palabra griega en -ma, excepción masculina", "de": "ein griechisches -ma-Wort, maskuline Ausnahme" },
+          "text": { "en": "a Greek -ma word, a masculine exception", "es": "palabra griega en -ma, excepción masculina" },
           "wrong": {
-            "hu": "A libro nem görög -ma szó, hanem sima -o végű hímnem; a -ma kivétel csak az olyan szavakra vonatkozik, mint el problema.",
             "en": "Libro is not a Greek -ma word, just a plain -o masculine; the -ma exception only applies to words like el problema.",
-            "es": "Libro no es una palabra griega en -ma, sino un simple masculino en -o; la excepción en -ma solo se aplica a palabras como el problema.",
-            "de": "Libro ist kein griechisches -ma-Wort, sondern ein einfaches Maskulinum auf -o; die -ma-Ausnahme gilt nur für Wörter wie el problema."
+            "es": "Libro no es una palabra griega en -ma, sino un simple masculino en -o; la excepción en -ma solo se aplica a palabras como el problema."
           }
         }
       ],
@@ -1079,27 +945,23 @@
       "id": "sn-why-02",
       "es": "La ciudad es grande.",
       "target": "ciudad",
-      "tr": { "hu": "A város nagy.", "en": "The city is big.", "es": "La ciudad es grande.", "de": "Die Stadt ist groß." },
+      "tr": { "en": "The city is big.", "es": "La ciudad es grande." },
       "options": [
         {
-          "text": { "hu": "-o hím / -a nő", "en": "-o is masculine, -a is feminine", "es": "-o masculino, -a femenino", "de": "-o maskulin, -a feminin" },
+          "text": { "en": "-o is masculine, -a is feminine", "es": "-o masculino, -a femenino" },
           "wrong": {
-            "hu": "A ciudad nem -o vagy -a végű, hanem -dad végű; ez egy másik szabály, nem az alap -o/-a.",
             "en": "Ciudad doesn't end in -o or -a, it ends in -dad; that is a different rule, not the basic -o/-a one.",
-            "es": "Ciudad no acaba en -o ni en -a, acaba en -dad; es otra regla, no la básica de -o/-a.",
-            "de": "Ciudad endet nicht auf -o oder -a, sondern auf -dad; das ist eine andere Regel, nicht die einfache -o/-a-Regel."
+            "es": "Ciudad no acaba en -o ni en -a, acaba en -dad; es otra regla, no la básica de -o/-a."
           }
         },
         {
-          "text": { "hu": "-dad végű szó nőnemű", "en": "a noun ending in -dad is feminine", "es": "un sustantivo en -dad es femenino", "de": "ein Nomen auf -dad ist feminin" }
+          "text": { "en": "a noun ending in -dad is feminine", "es": "un sustantivo en -dad es femenino" }
         },
         {
-          "text": { "hu": "többesben megváltozik a hangsúlyjel", "en": "the written accent changes in the plural", "es": "el acento escrito cambia en el plural", "de": "der Akzent ändert sich im Plural" },
+          "text": { "en": "the written accent changes in the plural", "es": "el acento escrito cambia en el plural" },
           "wrong": {
-            "hu": "Ez a mondat egyes számban áll, nincs benne semmilyen ékezet-változás; a szabály itt a -dad nőnem.",
             "en": "This sentence is in the singular, there is no accent change involved; the rule here is the -dad feminine rule.",
-            "es": "Esta frase está en singular, no hay cambio de acento; la regla aquí es la de -dad femenino.",
-            "de": "Dieser Satz steht im Singular, es gibt keine Akzentänderung; die Regel hier ist die -dad-Femininregel."
+            "es": "Esta frase está en singular, no hay cambio de acento; la regla aquí es la de -dad femenino."
           }
         }
       ],
@@ -1110,27 +972,23 @@
       "id": "sn-why-03",
       "es": "Necesito los papeles.",
       "target": "papeles",
-      "tr": { "hu": "Szükségem van a papírokra.", "en": "I need the papers.", "es": "Necesito los papeles.", "de": "Ich brauche die Papiere." },
+      "tr": { "en": "I need the papers.", "es": "Necesito los papeles." },
       "options": [
         {
-          "text": { "hu": "mássalhangzó után -es a többes szám", "en": "after a consonant, the plural is -es", "es": "tras consonante, el plural es -es", "de": "nach einem Konsonanten lautet der Plural -es" }
+          "text": { "en": "after a consonant, the plural is -es", "es": "tras consonante, el plural es -es" }
         },
         {
-          "text": { "hu": "-z végén z→c, majd -es", "en": "a final z becomes c, then -es", "es": "la z final pasa a c, y luego -es", "de": "ein End-z wird zu c, dann -es" },
+          "text": { "en": "a final z becomes c, then -es", "es": "la z final pasa a c, y luego -es" },
           "wrong": {
-            "hu": "A papel nem z-re végződik, hanem mássalhangzóra (l), ezért csak -es jön, nincs z→c váltás.",
             "en": "Papel doesn't end in z, it ends in a consonant (l), so it just takes -es, there is no z-to-c change.",
-            "es": "Papel no acaba en z, acaba en consonante (l), así que solo lleva -es, no hay cambio de z a c.",
-            "de": "Papel endet nicht auf z, sondern auf einen Konsonanten (l), also bekommt es nur -es, es gibt keinen z-zu-c-Wechsel."
+            "es": "Papel no acaba en z, acaba en consonante (l), así que solo lleva -es, no hay cambio de z a c."
           }
         },
         {
-          "text": { "hu": "a szó többesben nem változik", "en": "the word does not change in the plural", "es": "la palabra no cambia en plural", "de": "das Wort ändert sich im Plural nicht" },
+          "text": { "en": "the word does not change in the plural", "es": "la palabra no cambia en plural" },
           "wrong": {
-            "hu": "A papel igenis változik többesben: papel → papeles, nem invariáns szó.",
             "en": "Papel does change in the plural: papel → papeles, it is not an invariable word.",
-            "es": "Papel sí cambia en plural: papel → papeles, no es una palabra invariable.",
-            "de": "Papel ändert sich sehr wohl im Plural: papel → papeles, es ist kein unveränderliches Wort."
+            "es": "Papel sí cambia en plural: papel → papeles, no es una palabra invariable."
           }
         }
       ],
@@ -1141,27 +999,23 @@
       "id": "sn-why-04",
       "es": "Compro tres lápices nuevos.",
       "target": "lápices",
-      "tr": { "hu": "Veszek három új ceruzát.", "en": "I buy three new pencils.", "es": "Compro tres lápices nuevos.", "de": "Ich kaufe drei neue Bleistifte." },
+      "tr": { "en": "I buy three new pencils.", "es": "Compro tres lápices nuevos." },
       "options": [
         {
-          "text": { "hu": "-z végén z→c, majd -es", "en": "a final z becomes c, then -es", "es": "la z final pasa a c, y luego -es", "de": "ein End-z wird zu c, dann -es" }
+          "text": { "en": "a final z becomes c, then -es", "es": "la z final pasa a c, y luego -es" }
         },
         {
-          "text": { "hu": "mássalhangzó után -es a többes szám", "en": "after a consonant, the plural is -es", "es": "tras consonante, el plural es -es", "de": "nach einem Konsonanten lautet der Plural -es" },
+          "text": { "en": "after a consonant, the plural is -es", "es": "tras consonante, el plural es -es" },
           "wrong": {
-            "hu": "Itt nem elég az -es hozzáadása, mert a szó z-re végződik, előbb c-re kell váltani: lápiz → lápices.",
             "en": "Just adding -es isn't enough here, because the word ends in z, it has to become c first: lápiz → lápices.",
-            "es": "Aquí no basta con añadir -es, porque la palabra acaba en z, primero hay que pasarla a c: lápiz → lápices.",
-            "de": "Hier reicht das bloße Anhängen von -es nicht, weil das Wort auf z endet, es muss zuerst zu c werden: lápiz → lápices."
+            "es": "Aquí no basta con añadir -es, porque la palabra acaba en z, primero hay que pasarla a c: lápiz → lápices."
           }
         },
         {
-          "text": { "hu": "többesben megváltozik a hangsúlyjel", "en": "the written accent changes in the plural", "es": "el acento escrito cambia en el plural", "de": "der Akzent ändert sich im Plural" },
+          "text": { "en": "the written accent changes in the plural", "es": "el acento escrito cambia en el plural" },
           "wrong": {
-            "hu": "A lápices szóban nincs írásjel-változás, a hangsúly ugyanott marad; a szabály itt a z→c váltás.",
             "en": "There is no accent change in lápices, the stress stays in the same place; the rule here is the z-to-c change.",
-            "es": "En lápices no hay cambio de tilde, el acento se queda en el mismo sitio; la regla aquí es el cambio de z a c.",
-            "de": "Bei lápices gibt es keine Akzentänderung, die Betonung bleibt an derselben Stelle; die Regel hier ist der Wechsel von z zu c."
+            "es": "En lápices no hay cambio de tilde, el acento se queda en el mismo sitio; la regla aquí es el cambio de z a c."
           }
         }
       ],
@@ -1172,27 +1026,23 @@
       "id": "sn-why-05",
       "es": "El problema es difícil.",
       "target": "problema",
-      "tr": { "hu": "A probléma nehéz.", "en": "The problem is difficult.", "es": "El problema es difícil.", "de": "Das Problem ist schwer." },
+      "tr": { "en": "The problem is difficult.", "es": "El problema es difícil." },
       "options": [
         {
-          "text": { "hu": "görög eredetű -ma szó, hímnemű kivétel", "en": "a Greek -ma word, a masculine exception", "es": "palabra griega en -ma, excepción masculina", "de": "ein griechisches -ma-Wort, maskuline Ausnahme" }
+          "text": { "en": "a Greek -ma word, a masculine exception", "es": "palabra griega en -ma, excepción masculina" }
         },
         {
-          "text": { "hu": "-o hím / -a nő", "en": "-o is masculine, -a is feminine", "es": "-o masculino, -a femenino", "de": "-o maskulin, -a feminin" },
+          "text": { "en": "-o is masculine, -a is feminine", "es": "-o masculino, -a femenino" },
           "wrong": {
-            "hu": "A -a végződés alapján nőnemet várnánk, de a problema görög eredetű -ma szó, ezért kivételesen hímnemű: el problema.",
             "en": "The -a ending would suggest feminine, but problema is a Greek-origin -ma word, so it is exceptionally masculine: el problema.",
-            "es": "La -a haría esperar femenino, pero problema es una palabra de origen griego en -ma, así que es excepcionalmente masculina: el problema.",
-            "de": "Das -a würde feminin erwarten lassen, aber problema ist ein griechisches -ma-Wort und daher ausnahmsweise maskulin: el problema."
+            "es": "La -a haría esperar femenino, pero problema es una palabra de origen griego en -ma, así que es excepcionalmente masculina: el problema."
           }
         },
         {
-          "text": { "hu": "-dad végű szó nőnemű", "en": "a noun ending in -dad is feminine", "es": "un sustantivo en -dad es femenino", "de": "ein Nomen auf -dad ist feminin" },
+          "text": { "en": "a noun ending in -dad is feminine", "es": "un sustantivo en -dad es femenino" },
           "wrong": {
-            "hu": "A problema nem -dad végű, ez a szabály itt nem alkalmazható.",
             "en": "Problema doesn't end in -dad, this rule doesn't apply here.",
-            "es": "Problema no acaba en -dad, esta regla no se aplica aquí.",
-            "de": "Problema endet nicht auf -dad, diese Regel gilt hier nicht."
+            "es": "Problema no acaba en -dad, esta regla no se aplica aquí."
           }
         }
       ],
@@ -1203,27 +1053,23 @@
       "id": "sn-why-06",
       "es": "Las lecciones son fáciles.",
       "target": "lecciones",
-      "tr": { "hu": "A leckék könnyűek.", "en": "The lessons are easy.", "es": "Las lecciones son fáciles.", "de": "Die Lektionen sind leicht." },
+      "tr": { "en": "The lessons are easy.", "es": "Las lecciones son fáciles." },
       "options": [
         {
-          "text": { "hu": "többesben megváltozik a hangsúlyjel", "en": "the written accent changes in the plural", "es": "el acento escrito cambia en el plural", "de": "der Akzent ändert sich im Plural" }
+          "text": { "en": "the written accent changes in the plural", "es": "el acento escrito cambia en el plural" }
         },
         {
-          "text": { "hu": "mássalhangzó után -es a többes szám", "en": "after a consonant, the plural is -es", "es": "tras consonante, el plural es -es", "de": "nach einem Konsonanten lautet der Plural -es" },
+          "text": { "en": "after a consonant, the plural is -es", "es": "tras consonante, el plural es -es" },
           "wrong": {
-            "hu": "Nem csak -es kerül a szóhoz, az ékezet is eltűnik: lección → lecciones, mert a hangsúly az utolsó előtti szótagra esik, és az -s végű ilyen szó nem kap írott ékezetet.",
             "en": "It's not just -es being added, the accent mark also disappears: lección → lecciones, because the stress now falls on the second-to-last syllable of a word ending in -s, which takes no written accent.",
-            "es": "No solo se añade -es, la tilde también desaparece: lección → lecciones, porque el acento cae en la penúltima sílaba de una palabra terminada en -s, que no lleva tilde.",
-            "de": "Es wird nicht nur -es angehängt, auch das Akzentzeichen verschwindet: lección → lecciones, weil die Betonung auf der vorletzten Silbe eines Wortes auf -s liegt, das keinen Akzent braucht."
+            "es": "No solo se añade -es, la tilde también desaparece: lección → lecciones, porque el acento cae en la penúltima sílaba de una palabra terminada en -s, que no lleva tilde."
           }
         },
         {
-          "text": { "hu": "-z végén z→c, majd -es", "en": "a final z becomes c, then -es", "es": "la z final pasa a c, y luego -es", "de": "ein End-z wird zu c, dann -es" },
+          "text": { "en": "a final z becomes c, then -es", "es": "la z final pasa a c, y luego -es" },
           "wrong": {
-            "hu": "A lección nem z-re végződik, ez a szabály itt nem alkalmazható.",
             "en": "Lección doesn't end in z, this rule doesn't apply here.",
-            "es": "Lección no acaba en z, esta regla no se aplica aquí.",
-            "de": "Lección endet nicht auf z, diese Regel gilt hier nicht."
+            "es": "Lección no acaba en z, esta regla no se aplica aquí."
           }
         }
       ],
@@ -1234,27 +1080,23 @@
       "id": "sn-why-07",
       "es": "Los lunes tengo clase.",
       "target": "lunes",
-      "tr": { "hu": "Hétfőnként órám van.", "en": "On Mondays I have class.", "es": "Los lunes tengo clase.", "de": "Montags habe ich Unterricht." },
+      "tr": { "en": "On Mondays I have class.", "es": "Los lunes tengo clase." },
       "options": [
         {
-          "text": { "hu": "a szó többesben nem változik", "en": "the word does not change in the plural", "es": "la palabra no cambia en plural", "de": "das Wort ändert sich im Plural nicht" }
+          "text": { "en": "the word does not change in the plural", "es": "la palabra no cambia en plural" }
         },
         {
-          "text": { "hu": "mássalhangzó után -es a többes szám", "en": "after a consonant, the plural is -es", "es": "tras consonante, el plural es -es", "de": "nach einem Konsonanten lautet der Plural -es" },
+          "text": { "en": "after a consonant, the plural is -es", "es": "tras consonante, el plural es -es" },
           "wrong": {
-            "hu": "A lunes szó nem kap -es végződést, alakja egyes és többes számban ugyanaz marad.",
             "en": "Lunes does not take an -es ending, its form stays the same in singular and plural.",
-            "es": "Lunes no lleva terminación -es, su forma se mantiene igual en singular y en plural.",
-            "de": "Lunes bekommt keine -es-Endung, seine Form bleibt im Singular und Plural gleich."
+            "es": "Lunes no lleva terminación -es, su forma se mantiene igual en singular y en plural."
           }
         },
         {
-          "text": { "hu": "-o hím / -a nő", "en": "-o is masculine, -a is feminine", "es": "-o masculino, -a femenino", "de": "-o maskulin, -a feminin" },
+          "text": { "en": "-o is masculine, -a is feminine", "es": "-o masculino, -a femenino" },
           "wrong": {
-            "hu": "Itt nem a hím/nőnem a kérdés, hanem hogy a szó többesben változatlan marad.",
             "en": "The question here isn't gender, but that the word stays unchanged in the plural.",
-            "es": "Aquí no se trata del género, sino de que la palabra queda igual en plural.",
-            "de": "Hier geht es nicht um das Genus, sondern darum, dass das Wort im Plural unverändert bleibt."
+            "es": "Aquí no se trata del género, sino de que la palabra queda igual en plural."
           }
         }
       ],
@@ -1266,27 +1108,21 @@
       "options": ["veces", "vezes", "vecs"],
       "correct": 0,
       "why": {
-        "hu": "A vez -z végű, ezért a többesben a z c-re vált: vez → veces.",
         "en": "Vez ends in -z, so in the plural the z turns into c: vez → veces.",
-        "es": "Vez acaba en -z, por eso en plural la z pasa a c: vez → veces.",
-        "de": "Vez endet auf -z, deshalb wird das z im Plural zu c: vez → veces."
+        "es": "Vez acaba en -z, por eso en plural la z pasa a c: vez → veces."
       },
       "wrong": {
         "vezes": {
-          "hu": "Ezzel a mondat egy nem létező alakot használna; helyesen: Voy al cine dos veces por semana.",
           "en": "This would use a form that doesn't exist; the correct form is: Voy al cine dos veces por semana.",
-          "es": "Esto usaría una forma que no existe; la forma correcta es: Voy al cine dos veces por semana.",
-          "de": "Das würde eine nicht existierende Form verwenden; richtig ist: Voy al cine dos veces por semana."
+          "es": "Esto usaría una forma que no existe; la forma correcta es: Voy al cine dos veces por semana."
         },
         "vecs": {
-          "hu": "Ezzel a mondat egy nem létező alakot használna; helyesen: Voy al cine dos veces por semana.",
           "en": "This would use a form that doesn't exist; the correct form is: Voy al cine dos veces por semana.",
-          "es": "Esto usaría una forma que no existe; la forma correcta es: Voy al cine dos veces por semana.",
-          "de": "Das würde eine nicht existierende Form verwenden; richtig ist: Voy al cine dos veces por semana."
+          "es": "Esto usaría una forma que no existe; la forma correcta es: Voy al cine dos veces por semana."
         }
       },
       "examples": ["Voy dos veces por semana.", "Hay muchas luces en la calle."],
-      "tr": { "hu": "Hetente kétszer járok moziba.", "en": "I go to the cinema twice a week.", "es": "Voy al cine dos veces por semana.", "de": "Ich gehe zweimal pro Woche ins Kino." }
+      "tr": { "en": "I go to the cinema twice a week.", "es": "Voy al cine dos veces por semana." }
     },
     {
       "id": "sn-14",
@@ -1294,27 +1130,21 @@
       "options": ["peces", "pezes", "pezs"],
       "correct": 0,
       "why": {
-        "hu": "A pez -z végű, ezért a z c-re vált, és -es jön: pez → peces.",
         "en": "Pez ends in -z, so the z turns into c and -es is added: pez → peces.",
-        "es": "Pez acaba en -z, por eso la z pasa a c y se añade -es: pez → peces.",
-        "de": "Pez endet auf -z, deshalb wird das z zu c und -es kommt dazu: pez → peces."
+        "es": "Pez acaba en -z, por eso la z pasa a c y se añade -es: pez → peces."
       },
       "wrong": {
         "pezes": {
-          "hu": "Ezzel a mondat egy nem létező alakot használna; helyesen: Hay tres peces en el agua.",
           "en": "This would use a form that doesn't exist; the correct form is: Hay tres peces en el agua.",
-          "es": "Esto usaría una forma que no existe; la forma correcta es: Hay tres peces en el agua.",
-          "de": "Das würde eine nicht existierende Form verwenden; richtig ist: Hay tres peces en el agua."
+          "es": "Esto usaría una forma que no existe; la forma correcta es: Hay tres peces en el agua."
         },
         "pezs": {
-          "hu": "Ezzel a mondat egy nem létező alakot használna; helyesen: Hay tres peces en el agua.",
           "en": "This would use a form that doesn't exist; the correct form is: Hay tres peces en el agua.",
-          "es": "Esto usaría una forma que no existe; la forma correcta es: Hay tres peces en el agua.",
-          "de": "Das würde eine nicht existierende Form verwenden; richtig ist: Hay tres peces en el agua."
+          "es": "Esto usaría una forma que no existe; la forma correcta es: Hay tres peces en el agua."
         }
       },
       "examples": ["Hay tres peces en el agua.", "Compré tres lápices."],
-      "tr": { "hu": "Három hal van a vízben.", "en": "There are three fish in the water.", "es": "Hay tres peces en el agua.", "de": "Es sind drei Fische im Wasser." }
+      "tr": { "en": "There are three fish in the water.", "es": "Hay tres peces en el agua." }
     },
     {
       "id": "sn-15",
@@ -1322,27 +1152,21 @@
       "options": ["lunes", "luneses", "lunis"],
       "correct": 0,
       "why": {
-        "hu": "A lunes többszótagú, a hangsúly nem az utolsó szótagon van, ezért többesben nem változik: los lunes.",
         "en": "Lunes has two syllables and the stress is not on the last one, so it stays the same in the plural: los lunes.",
-        "es": "Lunes tiene dos sílabas y el acento no cae en la última, por eso no cambia en plural: los lunes.",
-        "de": "Lunes hat zwei Silben und die Betonung liegt nicht auf der letzten, deshalb bleibt es im Plural gleich: los lunes."
+        "es": "Lunes tiene dos sílabas y el acento no cae en la última, por eso no cambia en plural: los lunes."
       },
       "wrong": {
         "luneses": {
-          "hu": "Ezzel a mondat egy nem létező alakot használna; helyesen: Los lunes tengo clase de español.",
           "en": "This would use a form that doesn't exist; the correct form is: Los lunes tengo clase de español.",
-          "es": "Esto usaría una forma que no existe; la forma correcta es: Los lunes tengo clase de español.",
-          "de": "Das würde eine nicht existierende Form verwenden; richtig ist: Los lunes tengo clase de español."
+          "es": "Esto usaría una forma que no existe; la forma correcta es: Los lunes tengo clase de español."
         },
         "lunis": {
-          "hu": "Ezzel a mondat egy nem létező alakot használna; helyesen: Los lunes tengo clase de español.",
           "en": "This would use a form that doesn't exist; the correct form is: Los lunes tengo clase de español.",
-          "es": "Esto usaría una forma que no existe; la forma correcta es: Los lunes tengo clase de español.",
-          "de": "Das würde eine nicht existierende Form verwenden; richtig ist: Los lunes tengo clase de español."
+          "es": "Esto usaría una forma que no existe; la forma correcta es: Los lunes tengo clase de español."
         }
       },
       "examples": ["Los lunes tengo clase.", "El lunes tengo clase."],
-      "tr": { "hu": "Hétfőnként spanyolórám van.", "en": "On Mondays I have Spanish class.", "es": "Los lunes tengo clase de español.", "de": "Montags habe ich Spanischunterricht." }
+      "tr": { "en": "On Mondays I have Spanish class.", "es": "Los lunes tengo clase de español." }
     },
     {
       "id": "sn-16",
@@ -1350,27 +1174,21 @@
       "options": ["paraguas", "paraguases", "paragua"],
       "correct": 0,
       "why": {
-        "hu": "A paraguas többszótagú, nem az utolsó szótagon hangsúlyos -s végű szó, ezért többesben nem változik: dos paraguas.",
         "en": "Paraguas has several syllables and ends in an unstressed -s, so it stays the same in the plural: dos paraguas.",
-        "es": "Paraguas tiene varias sílabas y acaba en -s sin acento en la última, por eso no cambia en plural: dos paraguas.",
-        "de": "Paraguas hat mehrere Silben und endet auf unbetontes -s, deshalb bleibt es im Plural gleich: dos paraguas."
+        "es": "Paraguas tiene varias sílabas y acaba en -s sin acento en la última, por eso no cambia en plural: dos paraguas."
       },
       "wrong": {
         "paraguases": {
-          "hu": "Ezzel a mondat egy nem létező alakot használna; helyesen: En la casa hay dos paraguas.",
           "en": "This would use a form that doesn't exist; the correct form is: En la casa hay dos paraguas.",
-          "es": "Esto usaría una forma que no existe; la forma correcta es: En la casa hay dos paraguas.",
-          "de": "Das würde eine nicht existierende Form verwenden; richtig ist: En la casa hay dos paraguas."
+          "es": "Esto usaría una forma que no existe; la forma correcta es: En la casa hay dos paraguas."
         },
         "paragua": {
-          "hu": "Ez egyes számú alak, de a dos többes számot kíván; a paraguas többesben is paraguas: En la casa hay dos paraguas.",
           "en": "This is a singular form, but dos needs a plural; paraguas is the same in the plural: En la casa hay dos paraguas.",
-          "es": "Esta es una forma singular, pero dos pide plural; paraguas no cambia en plural: En la casa hay dos paraguas.",
-          "de": "Das ist eine Singularform, aber dos verlangt den Plural; paraguas bleibt im Plural gleich: En la casa hay dos paraguas."
+          "es": "Esta es una forma singular, pero dos pide plural; paraguas no cambia en plural: En la casa hay dos paraguas."
         }
       },
       "examples": ["En la casa hay dos paraguas.", "Los lunes tengo clase."],
-      "tr": { "hu": "A házban van két esernyő.", "en": "There are two umbrellas in the house.", "es": "En la casa hay dos paraguas.", "de": "Im Haus gibt es zwei Regenschirme." }
+      "tr": { "en": "There are two umbrellas in the house.", "es": "En la casa hay dos paraguas." }
     },
     {
       "id": "sn-17",
@@ -1378,27 +1196,21 @@
       "options": ["jóvenes", "jovenes", "jóvens"],
       "correct": 0,
       "why": {
-        "hu": "A joven többesében az ékezet megjelenik, hogy a hangsúly ugyanott maradjon: joven → jóvenes.",
         "en": "In the plural of joven a written accent appears, so the stress stays in the same place: joven → jóvenes.",
-        "es": "En el plural de joven aparece la tilde, para que el acento siga en el mismo sitio: joven → jóvenes.",
-        "de": "Im Plural von joven kommt ein Akzent dazu, damit die Betonung am selben Platz bleibt: joven → jóvenes."
+        "es": "En el plural de joven aparece la tilde, para que el acento siga en el mismo sitio: joven → jóvenes."
       },
       "wrong": {
         "jovenes": {
-          "hu": "Ékezet nélkül a hangsúly a jo-ve-nes szó utolsó előtti szótagjára esne, de a jóvenes első szótagon hangsúlyos: az ékezet kell. Helyesen: Los jóvenes escuchan música en casa.",
           "en": "Without the accent the stress would move to the middle syllable, but jóvenes is stressed on the first syllable, so the accent is needed. Correct: Los jóvenes escuchan música en casa.",
-          "es": "Sin tilde el acento pasaría a la sílaba central, pero jóvenes lleva el acento en la primera sílaba, así que la tilde es necesaria. Correcto: Los jóvenes escuchan música en casa.",
-          "de": "Ohne Akzent würde die Betonung auf die mittlere Silbe rutschen, aber jóvenes wird auf der ersten Silbe betont, der Akzent ist also nötig. Richtig: Los jóvenes escuchan música en casa."
+          "es": "Sin tilde el acento pasaría a la sílaba central, pero jóvenes lleva el acento en la primera sílaba, así que la tilde es necesaria. Correcto: Los jóvenes escuchan música en casa."
         },
         "jóvens": {
-          "hu": "Ezzel a mondat egy nem létező alakot használna; helyesen: Los jóvenes escuchan música en casa.",
           "en": "This would use a form that doesn't exist; the correct form is: Los jóvenes escuchan música en casa.",
-          "es": "Esto usaría una forma que no existe; la forma correcta es: Los jóvenes escuchan música en casa.",
-          "de": "Das würde eine nicht existierende Form verwenden; richtig ist: Los jóvenes escuchan música en casa."
+          "es": "Esto usaría una forma que no existe; la forma correcta es: Los jóvenes escuchan música en casa."
         }
       },
       "examples": ["Los jóvenes escuchan música.", "Tengo dos exámenes mañana."],
-      "tr": { "hu": "A fiatalok otthon hallgatnak zenét.", "en": "The young people listen to music at home.", "es": "Los jóvenes escuchan música en casa.", "de": "Die Jugendlichen hören zu Hause Musik." }
+      "tr": { "en": "The young people listen to music at home.", "es": "Los jóvenes escuchan música en casa." }
     },
     {
       "id": "sn-18",
@@ -1406,27 +1218,21 @@
       "options": ["caracteres", "carácteres", "caractes"],
       "correct": 0,
       "why": {
-        "hu": "A carácter többesében a hangsúly egy szótaggal később esik, ezért az ékezet eltűnik: carácter → caracteres.",
         "en": "In the plural of carácter the stress falls one syllable later, so the accent disappears: carácter → caracteres.",
-        "es": "En el plural de carácter el acento cae una sílaba más tarde, por eso desaparece la tilde: carácter → caracteres.",
-        "de": "Im Plural von carácter rückt die Betonung eine Silbe weiter, deshalb fällt der Akzent weg: carácter → caracteres."
+        "es": "En el plural de carácter el acento cae una sílaba más tarde, por eso desaparece la tilde: carácter → caracteres."
       },
       "wrong": {
         "carácteres": {
-          "hu": "A többesben a hangsúly a te szótagra kerül, ezért az ékezet nem kell: Ellos tienen caracteres diferentes.",
           "en": "In the plural the stress moves to the te syllable, so no accent mark is needed: Ellos tienen caracteres diferentes.",
-          "es": "En el plural el acento pasa a la sílaba te, por eso no lleva tilde: Ellos tienen caracteres diferentes.",
-          "de": "Im Plural wandert die Betonung auf die Silbe te, deshalb ist kein Akzent nötig: Ellos tienen caracteres diferentes."
+          "es": "En el plural el acento pasa a la sílaba te, por eso no lleva tilde: Ellos tienen caracteres diferentes."
         },
         "caractes": {
-          "hu": "Ezzel a mondat egy nem létező alakot használna; helyesen: Ellos tienen caracteres diferentes.",
           "en": "This would use a form that doesn't exist; the correct form is: Ellos tienen caracteres diferentes.",
-          "es": "Esto usaría una forma que no existe; la forma correcta es: Ellos tienen caracteres diferentes.",
-          "de": "Das würde eine nicht existierende Form verwenden; richtig ist: Ellos tienen caracteres diferentes."
+          "es": "Esto usaría una forma que no existe; la forma correcta es: Ellos tienen caracteres diferentes."
         }
       },
       "examples": ["Ellos tienen caracteres diferentes.", "Tengo dos exámenes mañana."],
-      "tr": { "hu": "Különböző személyiségük van.", "en": "They have different personalities.", "es": "Ellos tienen caracteres diferentes.", "de": "Sie haben unterschiedliche Charaktere." }
+      "tr": { "en": "They have different personalities.", "es": "Ellos tienen caracteres diferentes." }
     },
     {
       "id": "sn-match-02",
@@ -1511,21 +1317,17 @@
       "options": ["el", "la"],
       "correct": 0,
       "why": {
-        "hu": "A carro -o végű, tehát hímnem: el carro.",
         "en": "«carro» ends in -o, so it is masculine: el carro.",
-        "es": "«carro» acaba en -o: es masculino, el carro.",
-        "de": "«carro» endet auf -o, also maskulin: el carro."
+        "es": "«carro» acaba en -o: es masculino, el carro."
       },
       "wrong": {
         "la": {
-          "hu": "Ezzel a carro nőnemű lenne, de hímnem; helyesen: Mi madre tiene el carro nuevo.",
           "en": "This would make «carro» feminine, but it is masculine; correct: Mi madre tiene el carro nuevo.",
-          "es": "Esto haría femenino a «carro», pero es masculino; correcto: Mi madre tiene el carro nuevo.",
-          "de": "Damit wäre «carro» feminin, aber es ist maskulin; richtig: Mi madre tiene el carro nuevo."
+          "es": "Esto haría femenino a «carro», pero es masculino; correcto: Mi madre tiene el carro nuevo."
         }
       },
       "examples": ["El carro es nuevo.", "El gato está en la mesa."],
-      "tr": { "hu": "Anyámnak új autója van.", "en": "My mother has the new car.", "es": "Mi madre tiene el carro nuevo.", "de": "Meine Mutter hat das neue Auto." }
+      "tr": { "en": "My mother has the new car.", "es": "Mi madre tiene el carro nuevo." }
     },
     {
       "id": "sn-art-02",
@@ -1534,21 +1336,17 @@
       "options": ["el", "la"],
       "correct": 0,
       "why": {
-        "hu": "A papel végződése alapján nem lehet kitalálni a nemét, a névelővel együtt kell megtanulni: el papel (hímnem).",
         "en": "The ending of «papel» does not show its gender, so learn it with its article: el papel (masculine).",
-        "es": "La terminación de «papel» no indica el género, hay que aprenderla con el artículo: el papel (masculino).",
-        "de": "Die Endung von «papel» verrät das Genus nicht, man lernt es mit dem Artikel: el papel (maskulin)."
+        "es": "La terminación de «papel» no indica el género, hay que aprenderla con el artículo: el papel (masculino)."
       },
       "wrong": {
         "la": {
-          "hu": "Ezzel a papel nőnemű lenne, de hímnem; helyesen: Necesito el papel para escribir.",
           "en": "This would make «papel» feminine, but it is masculine; correct: Necesito el papel para escribir.",
-          "es": "Esto haría femenino a «papel», pero es masculino; correcto: Necesito el papel para escribir.",
-          "de": "Damit wäre «papel» feminin, aber es ist maskulin; richtig: Necesito el papel para escribir."
+          "es": "Esto haría femenino a «papel», pero es masculino; correcto: Necesito el papel para escribir."
         }
       },
       "examples": ["El libro está en la mesa.", "El lunes tengo clase."],
-      "tr": { "hu": "Szükségem van a papírra az íráshoz.", "en": "I need the paper to write.", "es": "Necesito el papel para escribir.", "de": "Ich brauche das Papier zum Schreiben." }
+      "tr": { "en": "I need the paper to write.", "es": "Necesito el papel para escribir." }
     },
     {
       "id": "sn-art-03",
@@ -1557,21 +1355,17 @@
       "options": ["el", "la"],
       "correct": 0,
       "why": {
-        "hu": "A hombre végződése alapján nem lehet kitalálni a nemét, a névelővel együtt kell megtanulni: el hombre (hímnem).",
         "en": "The ending of «hombre» does not show its gender, so learn it with its article: el hombre (masculine).",
-        "es": "La terminación de «hombre» no indica el género, hay que aprenderla con el artículo: el hombre (masculino).",
-        "de": "Die Endung von «hombre» verrät das Genus nicht, man lernt es mit dem Artikel: el hombre (maskulin)."
+        "es": "La terminación de «hombre» no indica el género, hay que aprenderla con el artículo: el hombre (masculino)."
       },
       "wrong": {
         "la": {
-          "hu": "Ezzel a hombre nőnemű lenne, de hímnem; helyesen: Creo que el hombre está en la calle.",
           "en": "This would make «hombre» feminine, but it is masculine; correct: Creo que el hombre está en la calle.",
-          "es": "Esto haría femenino a «hombre», pero es masculino; correcto: Creo que el hombre está en la calle.",
-          "de": "Damit wäre «hombre» feminin, aber es ist maskulin; richtig: Creo que el hombre está en la calle."
+          "es": "Esto haría femenino a «hombre», pero es masculino; correcto: Creo que el hombre está en la calle."
         }
       },
       "examples": ["El libro está en la mesa.", "El lunes tengo clase."],
-      "tr": { "hu": "Azt hiszem, a férfi az utcán van.", "en": "I think the man is in the street.", "es": "Creo que el hombre está en la calle.", "de": "Ich glaube, der Mann ist auf der Straße." }
+      "tr": { "en": "I think the man is in the street.", "es": "Creo que el hombre está en la calle." }
     },
     {
       "id": "sn-art-04",
@@ -1580,21 +1374,17 @@
       "options": ["el", "la"],
       "correct": 0,
       "why": {
-        "hu": "A café végződése alapján nem lehet kitalálni a nemét, a névelővel együtt kell megtanulni: el café (hímnem).",
         "en": "The ending of «café» does not show its gender, so learn it with its article: el café (masculine).",
-        "es": "La terminación de «café» no indica el género, hay que aprenderla con el artículo: el café (masculino).",
-        "de": "Die Endung von «café» verrät das Genus nicht, man lernt es mit dem Artikel: el café (maskulin)."
+        "es": "La terminación de «café» no indica el género, hay que aprenderla con el artículo: el café (masculino)."
       },
       "wrong": {
         "la": {
-          "hu": "Ezzel a café nőnemű lenne, de hímnem; helyesen: Me gusta el café con leche.",
           "en": "This would make «café» feminine, but it is masculine; correct: Me gusta el café con leche.",
-          "es": "Esto haría femenino a «café», pero es masculino; correcto: Me gusta el café con leche.",
-          "de": "Damit wäre «café» feminin, aber es ist maskulin; richtig: Me gusta el café con leche."
+          "es": "Esto haría femenino a «café», pero es masculino; correcto: Me gusta el café con leche."
         }
       },
       "examples": ["El libro está en la mesa.", "El lunes tengo clase."],
-      "tr": { "hu": "Szeretem a tejeskávét.", "en": "I like coffee with milk.", "es": "Me gusta el café con leche.", "de": "Ich mag Kaffee mit Milch." }
+      "tr": { "en": "I like coffee with milk.", "es": "Me gusta el café con leche." }
     },
     {
       "id": "sn-art-05",
@@ -1603,21 +1393,17 @@
       "options": ["El", "La"],
       "correct": 0,
       "why": {
-        "hu": "Az -aje végű szavak hímneműek: el viaje.",
         "en": "Nouns ending in -aje are masculine: el viaje.",
-        "es": "Los sustantivos acabados en -aje son masculinos: el viaje.",
-        "de": "Nomen auf -aje sind maskulin: el viaje."
+        "es": "Los sustantivos acabados en -aje son masculinos: el viaje."
       },
       "wrong": {
         "La": {
-          "hu": "Ezzel a viaje nőnemű lenne, de hímnem; helyesen: El viaje es muy largo.",
           "en": "This would make «viaje» feminine, but it is masculine; correct: El viaje es muy largo.",
-          "es": "Esto haría femenino a «viaje», pero es masculino; correcto: El viaje es muy largo.",
-          "de": "Damit wäre «viaje» feminin, aber es ist maskulin; richtig: El viaje es muy largo."
+          "es": "Esto haría femenino a «viaje», pero es masculino; correcto: El viaje es muy largo."
         }
       },
       "examples": ["El color es azul.", "El viaje es largo."],
-      "tr": { "hu": "Az utazás nagyon hosszú.", "en": "The trip is very long.", "es": "El viaje es muy largo.", "de": "Die Reise ist sehr lang." }
+      "tr": { "en": "The trip is very long.", "es": "El viaje es muy largo." }
     },
     {
       "id": "sn-art-06",
@@ -1626,21 +1412,17 @@
       "options": ["el", "la"],
       "correct": 0,
       "why": {
-        "hu": "A país végződése alapján nem lehet kitalálni a nemét, a névelővel együtt kell megtanulni: el país (hímnem).",
         "en": "The ending of «país» does not show its gender, so learn it with its article: el país (masculine).",
-        "es": "La terminación de «país» no indica el género, hay que aprenderla con el artículo: el país (masculino).",
-        "de": "Die Endung von «país» verrät das Genus nicht, man lernt es mit dem Artikel: el país (maskulin)."
+        "es": "La terminación de «país» no indica el género, hay que aprenderla con el artículo: el país (masculino)."
       },
       "wrong": {
         "la": {
-          "hu": "Ezzel a país nőnemű lenne, de hímnem; helyesen: Me gusta el país donde vivo.",
           "en": "This would make «país» feminine, but it is masculine; correct: Me gusta el país donde vivo.",
-          "es": "Esto haría femenino a «país», pero es masculino; correcto: Me gusta el país donde vivo.",
-          "de": "Damit wäre «país» feminin, aber es ist maskulin; richtig: Me gusta el país donde vivo."
+          "es": "Esto haría femenino a «país», pero es masculino; correcto: Me gusta el país donde vivo."
         }
       },
       "examples": ["El libro está en la mesa.", "El lunes tengo clase."],
-      "tr": { "hu": "Szeretem az országot, ahol élek.", "en": "I like the country where I live.", "es": "Me gusta el país donde vivo.", "de": "Ich mag das Land, in dem ich lebe." }
+      "tr": { "en": "I like the country where I live.", "es": "Me gusta el país donde vivo." }
     },
     {
       "id": "sn-art-07",
@@ -1649,21 +1431,17 @@
       "options": ["El", "La"],
       "correct": 0,
       "why": {
-        "hu": "A hét napjai hímneműek: el lunes.",
         "en": "The days of the week are masculine: el lunes.",
-        "es": "Los días de la semana son masculinos: el lunes.",
-        "de": "Die Wochentage sind maskulin: el lunes."
+        "es": "Los días de la semana son masculinos: el lunes."
       },
       "wrong": {
         "La": {
-          "hu": "Ezzel a lunes nőnemű lenne, de hímnem; helyesen: El lunes tengo clase.",
           "en": "This would make «lunes» feminine, but it is masculine; correct: El lunes tengo clase.",
-          "es": "Esto haría femenino a «lunes», pero es masculino; correcto: El lunes tengo clase.",
-          "de": "Damit wäre «lunes» feminin, aber es ist maskulin; richtig: El lunes tengo clase."
+          "es": "Esto haría femenino a «lunes», pero es masculino; correcto: El lunes tengo clase."
         }
       },
       "examples": ["El lunes tengo clase.", "Los lunes tengo clase."],
-      "tr": { "hu": "Hétfőn órám van.", "en": "On Monday I have class.", "es": "El lunes tengo clase.", "de": "Am Montag habe ich Unterricht." }
+      "tr": { "en": "On Monday I have class.", "es": "El lunes tengo clase." }
     },
     {
       "id": "sn-art-08",
@@ -1672,21 +1450,17 @@
       "options": ["el", "la"],
       "correct": 0,
       "why": {
-        "hu": "A mar végződése alapján nem lehet kitalálni a nemét, a névelővel együtt kell megtanulni: el mar (hímnem).",
         "en": "The ending of «mar» does not show its gender, so learn it with its article: el mar (masculine).",
-        "es": "La terminación de «mar» no indica el género, hay que aprenderla con el artículo: el mar (masculino).",
-        "de": "Die Endung von «mar» verrät das Genus nicht, man lernt es mit dem Artikel: el mar (maskulin)."
+        "es": "La terminación de «mar» no indica el género, hay que aprenderla con el artículo: el mar (masculino)."
       },
       "wrong": {
         "la": {
-          "hu": "Ezzel a mar nőnemű lenne, de hímnem; helyesen: Me gusta el mar.",
           "en": "This would make «mar» feminine, but it is masculine; correct: Me gusta el mar.",
-          "es": "Esto haría femenino a «mar», pero es masculino; correcto: Me gusta el mar.",
-          "de": "Damit wäre «mar» feminin, aber es ist maskulin; richtig: Me gusta el mar."
+          "es": "Esto haría femenino a «mar», pero es masculino; correcto: Me gusta el mar."
         }
       },
       "examples": ["El libro está en la mesa.", "El lunes tengo clase."],
-      "tr": { "hu": "Szeretem a tengert.", "en": "I like the sea.", "es": "Me gusta el mar.", "de": "Ich mag das Meer." }
+      "tr": { "en": "I like the sea.", "es": "Me gusta el mar." }
     },
     {
       "id": "sn-art-09",
@@ -1695,21 +1469,17 @@
       "options": ["el", "la"],
       "correct": 0,
       "why": {
-        "hu": "A día -a végű, mégis hímnem: ez a kivételek közé tartozik, el día.",
         "en": "«día» ends in -a but is masculine, one of the exceptions to learn: el día.",
-        "es": "«día» acaba en -a pero es masculino, una de las excepciones que hay que aprender: el día.",
-        "de": "«día» endet auf -a, ist aber maskulin, eine der Ausnahmen zum Lernen: el día."
+        "es": "«día» acaba en -a pero es masculino, una de las excepciones que hay que aprender: el día."
       },
       "wrong": {
         "la": {
-          "hu": "Ezzel a día nőnemű lenne, de hímnem; helyesen: Tengo el día libre.",
           "en": "This would make «día» feminine, but it is masculine; correct: Tengo el día libre.",
-          "es": "Esto haría femenino a «día», pero es masculino; correcto: Tengo el día libre.",
-          "de": "Damit wäre «día» feminin, aber es ist maskulin; richtig: Tengo el día libre."
+          "es": "Esto haría femenino a «día», pero es masculino; correcto: Tengo el día libre."
         }
       },
       "examples": ["El problema es difícil.", "El idioma es bonito."],
-      "tr": { "hu": "Szabadnapom van.", "en": "I have the day off.", "es": "Tengo el día libre.", "de": "Ich habe den Tag frei." }
+      "tr": { "en": "I have the day off.", "es": "Tengo el día libre." }
     },
     {
       "id": "sn-art-10",
@@ -1718,21 +1488,17 @@
       "options": ["el", "la"],
       "correct": 0,
       "why": {
-        "hu": "A mapa -a végű, mégis hímnem: ez a kivételek közé tartozik, el mapa.",
         "en": "«mapa» ends in -a but is masculine, one of the exceptions to learn: el mapa.",
-        "es": "«mapa» acaba en -a pero es masculino, una de las excepciones que hay que aprender: el mapa.",
-        "de": "«mapa» endet auf -a, ist aber maskulin, eine der Ausnahmen zum Lernen: el mapa."
+        "es": "«mapa» acaba en -a pero es masculino, una de las excepciones que hay que aprender: el mapa."
       },
       "wrong": {
         "la": {
-          "hu": "Ezzel a mapa nőnemű lenne, de hímnem; helyesen: Tengo el mapa de la ciudad.",
           "en": "This would make «mapa» feminine, but it is masculine; correct: Tengo el mapa de la ciudad.",
-          "es": "Esto haría femenino a «mapa», pero es masculino; correcto: Tengo el mapa de la ciudad.",
-          "de": "Damit wäre «mapa» feminin, aber es ist maskulin; richtig: Tengo el mapa de la ciudad."
+          "es": "Esto haría femenino a «mapa», pero es masculino; correcto: Tengo el mapa de la ciudad."
         }
       },
       "examples": ["El problema es difícil.", "El idioma es bonito."],
-      "tr": { "hu": "Nálam van a várostérkép.", "en": "I have the map of the city.", "es": "Tengo el mapa de la ciudad.", "de": "Ich habe den Stadtplan." }
+      "tr": { "en": "I have the map of the city.", "es": "Tengo el mapa de la ciudad." }
     },
     {
       "id": "sn-art-11",
@@ -1741,21 +1507,17 @@
       "options": ["El", "La"],
       "correct": 0,
       "why": {
-        "hu": "A problema -a végű, mégis hímnem: ez a kivételek közé tartozik, el problema.",
         "en": "«problema» ends in -a but is masculine, one of the exceptions to learn: el problema.",
-        "es": "«problema» acaba en -a pero es masculino, una de las excepciones que hay que aprender: el problema.",
-        "de": "«problema» endet auf -a, ist aber maskulin, eine der Ausnahmen zum Lernen: el problema."
+        "es": "«problema» acaba en -a pero es masculino, una de las excepciones que hay que aprender: el problema."
       },
       "wrong": {
         "La": {
-          "hu": "Ezzel a problema nőnemű lenne, de hímnem; helyesen: El problema es muy difícil.",
           "en": "This would make «problema» feminine, but it is masculine; correct: El problema es muy difícil.",
-          "es": "Esto haría femenino a «problema», pero es masculino; correcto: El problema es muy difícil.",
-          "de": "Damit wäre «problema» feminin, aber es ist maskulin; richtig: El problema es muy difícil."
+          "es": "Esto haría femenino a «problema», pero es masculino; correcto: El problema es muy difícil."
         }
       },
       "examples": ["El problema es difícil.", "El idioma es bonito."],
-      "tr": { "hu": "A probléma nagyon nehéz.", "en": "The problem is very difficult.", "es": "El problema es muy difícil.", "de": "Das Problem ist sehr schwierig." }
+      "tr": { "en": "The problem is very difficult.", "es": "El problema es muy difícil." }
     },
     {
       "id": "sn-art-12",
@@ -1764,21 +1526,17 @@
       "options": ["el", "la"],
       "correct": 0,
       "why": {
-        "hu": "Az idioma -a végű, mégis hímnem: ez a kivételek közé tartozik, el idioma.",
         "en": "«idioma» ends in -a but is masculine, one of the exceptions to learn: el idioma.",
-        "es": "«idioma» acaba en -a pero es masculino, una de las excepciones que hay que aprender: el idioma.",
-        "de": "«idioma» endet auf -a, ist aber maskulin, eine der Ausnahmen zum Lernen: el idioma."
+        "es": "«idioma» acaba en -a pero es masculino, una de las excepciones que hay que aprender: el idioma."
       },
       "wrong": {
         "la": {
-          "hu": "Ezzel az idioma nőnemű lenne, de hímnem; helyesen: Me gusta el idioma español.",
           "en": "This would make «idioma» feminine, but it is masculine; correct: Me gusta el idioma español.",
-          "es": "Esto haría femenino a «idioma», pero es masculino; correcto: Me gusta el idioma español.",
-          "de": "Damit wäre «idioma» feminin, aber es ist maskulin; richtig: Me gusta el idioma español."
+          "es": "Esto haría femenino a «idioma», pero es masculino; correcto: Me gusta el idioma español."
         }
       },
       "examples": ["El problema es difícil.", "El idioma es bonito."],
-      "tr": { "hu": "Szeretem a spanyol nyelvet.", "en": "I like the Spanish language.", "es": "Me gusta el idioma español.", "de": "Ich mag die spanische Sprache." }
+      "tr": { "en": "I like the Spanish language.", "es": "Me gusta el idioma español." }
     },
     {
       "id": "sn-art-13",
@@ -1787,21 +1545,17 @@
       "options": ["El", "La"],
       "correct": 0,
       "why": {
-        "hu": "A tema -a végű, mégis hímnem: ez a kivételek közé tartozik, el tema.",
         "en": "«tema» ends in -a but is masculine, one of the exceptions to learn: el tema.",
-        "es": "«tema» acaba en -a pero es masculino, una de las excepciones que hay que aprender: el tema.",
-        "de": "«tema» endet auf -a, ist aber maskulin, eine der Ausnahmen zum Lernen: el tema."
+        "es": "«tema» acaba en -a pero es masculino, una de las excepciones que hay que aprender: el tema."
       },
       "wrong": {
         "La": {
-          "hu": "Ezzel a tema nőnemű lenne, de hímnem; helyesen: El tema es interesante.",
           "en": "This would make «tema» feminine, but it is masculine; correct: El tema es interesante.",
-          "es": "Esto haría femenino a «tema», pero es masculino; correcto: El tema es interesante.",
-          "de": "Damit wäre «tema» feminin, aber es ist maskulin; richtig: El tema es interesante."
+          "es": "Esto haría femenino a «tema», pero es masculino; correcto: El tema es interesante."
         }
       },
       "examples": ["El problema es difícil.", "El idioma es bonito."],
-      "tr": { "hu": "A téma érdekes.", "en": "The topic is interesting.", "es": "El tema es interesante.", "de": "Das Thema ist interessant." }
+      "tr": { "en": "The topic is interesting.", "es": "El tema es interesante." }
     },
     {
       "id": "sn-art-14",
@@ -1810,21 +1564,17 @@
       "options": ["El", "La"],
       "correct": 0,
       "why": {
-        "hu": "A sistema -a végű, mégis hímnem: ez a kivételek közé tartozik, el sistema.",
         "en": "«sistema» ends in -a but is masculine, one of the exceptions to learn: el sistema.",
-        "es": "«sistema» acaba en -a pero es masculino, una de las excepciones que hay que aprender: el sistema.",
-        "de": "«sistema» endet auf -a, ist aber maskulin, eine der Ausnahmen zum Lernen: el sistema."
+        "es": "«sistema» acaba en -a pero es masculino, una de las excepciones que hay que aprender: el sistema."
       },
       "wrong": {
         "La": {
-          "hu": "Ezzel a sistema nőnemű lenne, de hímnem; helyesen: El sistema es nuevo.",
           "en": "This would make «sistema» feminine, but it is masculine; correct: El sistema es nuevo.",
-          "es": "Esto haría femenino a «sistema», pero es masculino; correcto: El sistema es nuevo.",
-          "de": "Damit wäre «sistema» feminin, aber es ist maskulin; richtig: El sistema es nuevo."
+          "es": "Esto haría femenino a «sistema», pero es masculino; correcto: El sistema es nuevo."
         }
       },
       "examples": ["El problema es difícil.", "El idioma es bonito."],
-      "tr": { "hu": "A rendszer új.", "en": "The system is new.", "es": "El sistema es nuevo.", "de": "Das System ist neu." }
+      "tr": { "en": "The system is new.", "es": "El sistema es nuevo." }
     },
     {
       "id": "sn-art-15",
@@ -1833,21 +1583,17 @@
       "options": ["El", "La"],
       "correct": 0,
       "why": {
-        "hu": "A clima -a végű, mégis hímnem: ez a kivételek közé tartozik, el clima.",
         "en": "«clima» ends in -a but is masculine, one of the exceptions to learn: el clima.",
-        "es": "«clima» acaba en -a pero es masculino, una de las excepciones que hay que aprender: el clima.",
-        "de": "«clima» endet auf -a, ist aber maskulin, eine der Ausnahmen zum Lernen: el clima."
+        "es": "«clima» acaba en -a pero es masculino, una de las excepciones que hay que aprender: el clima."
       },
       "wrong": {
         "La": {
-          "hu": "Ezzel a clima nőnemű lenne, de hímnem; helyesen: El clima de México es bueno.",
           "en": "This would make «clima» feminine, but it is masculine; correct: El clima de México es bueno.",
-          "es": "Esto haría femenino a «clima», pero es masculino; correcto: El clima de México es bueno.",
-          "de": "Damit wäre «clima» feminin, aber es ist maskulin; richtig: El clima de México es bueno."
+          "es": "Esto haría femenino a «clima», pero es masculino; correcto: El clima de México es bueno."
         }
       },
       "examples": ["El problema es difícil.", "El idioma es bonito."],
-      "tr": { "hu": "Mexikó éghajlata jó.", "en": "The climate of Mexico is good.", "es": "El clima de México es bueno.", "de": "Das Klima in Mexiko ist gut." }
+      "tr": { "en": "The climate of Mexico is good.", "es": "El clima de México es bueno." }
     },
     {
       "id": "sn-art-16",
@@ -1856,21 +1602,17 @@
       "options": ["el", "la"],
       "correct": 0,
       "why": {
-        "hu": "A programa -a végű, mégis hímnem: ez a kivételek közé tartozik, el programa.",
         "en": "«programa» ends in -a but is masculine, one of the exceptions to learn: el programa.",
-        "es": "«programa» acaba en -a pero es masculino, una de las excepciones que hay que aprender: el programa.",
-        "de": "«programa» endet auf -a, ist aber maskulin, eine der Ausnahmen zum Lernen: el programa."
+        "es": "«programa» acaba en -a pero es masculino, una de las excepciones que hay que aprender: el programa."
       },
       "wrong": {
         "la": {
-          "hu": "Ezzel a programa nőnemű lenne, de hímnem; helyesen: Me gusta el programa de radio.",
           "en": "This would make «programa» feminine, but it is masculine; correct: Me gusta el programa de radio.",
-          "es": "Esto haría femenino a «programa», pero es masculino; correcto: Me gusta el programa de radio.",
-          "de": "Damit wäre «programa» feminin, aber es ist maskulin; richtig: Me gusta el programa de radio."
+          "es": "Esto haría femenino a «programa», pero es masculino; correcto: Me gusta el programa de radio."
         }
       },
       "examples": ["El problema es difícil.", "El idioma es bonito."],
-      "tr": { "hu": "Szeretem a rádióműsort.", "en": "I like the radio program.", "es": "Me gusta el programa de radio.", "de": "Ich mag die Radiosendung." }
+      "tr": { "en": "I like the radio program.", "es": "Me gusta el programa de radio." }
     },
     {
       "id": "sn-art-17",
@@ -1879,21 +1621,17 @@
       "options": ["la", "el"],
       "correct": 0,
       "why": {
-        "hu": "A mano -o végű, mégis nőnem (kivétel): la mano.",
         "en": "«mano» ends in -o but is feminine (an exception): la mano.",
-        "es": "«mano» acaba en -o pero es femenino (una excepción): la mano.",
-        "de": "«mano» endet auf -o, ist aber feminin (eine Ausnahme): la mano."
+        "es": "«mano» acaba en -o pero es femenino (una excepción): la mano."
       },
       "wrong": {
         "el": {
-          "hu": "Ezzel a mano hímnemű lenne, de nőnem; helyesen: Pongo la mano en la mesa.",
           "en": "This would make «mano» masculine, but it is feminine; correct: Pongo la mano en la mesa.",
-          "es": "Esto haría masculino a «mano», pero es femenino; correcto: Pongo la mano en la mesa.",
-          "de": "Damit wäre «mano» maskulin, aber es ist feminin; richtig: Pongo la mano en la mesa."
+          "es": "Esto haría masculino a «mano», pero es femenino; correcto: Pongo la mano en la mesa."
         }
       },
       "examples": ["Me duele la mano.", "La foto es bonita."],
-      "tr": { "hu": "Az asztalra teszem a kezem.", "en": "I put my hand on the table.", "es": "Pongo la mano en la mesa.", "de": "Ich lege meine Hand auf den Tisch." }
+      "tr": { "en": "I put my hand on the table.", "es": "Pongo la mano en la mesa." }
     },
     {
       "id": "sn-art-18",
@@ -1902,21 +1640,17 @@
       "options": ["la", "el"],
       "correct": 0,
       "why": {
-        "hu": "A foto -o végű, mégis nőnem (kivétel, gyakran rövidített szó): la foto.",
         "en": "«foto» ends in -o but is feminine (an exception, often a shortened word): la foto.",
-        "es": "«foto» acaba en -o pero es femenino (una excepción, a menudo una palabra abreviada): la foto.",
-        "de": "«foto» endet auf -o, ist aber feminin (eine Ausnahme, oft ein verkürztes Wort): la foto."
+        "es": "«foto» acaba en -o pero es femenino (una excepción, a menudo una palabra abreviada): la foto."
       },
       "wrong": {
         "el": {
-          "hu": "Ezzel a foto hímnemű lenne, de nőnem; helyesen: Tengo la foto de mi familia.",
           "en": "This would make «foto» masculine, but it is feminine; correct: Tengo la foto de mi familia.",
-          "es": "Esto haría masculino a «foto», pero es femenino; correcto: Tengo la foto de mi familia.",
-          "de": "Damit wäre «foto» maskulin, aber es ist feminin; richtig: Tengo la foto de mi familia."
+          "es": "Esto haría masculino a «foto», pero es femenino; correcto: Tengo la foto de mi familia."
         }
       },
       "examples": ["Me duele la mano.", "La foto es bonita."],
-      "tr": { "hu": "Megvan a családi fotóm.", "en": "I have the photo of my family.", "es": "Tengo la foto de mi familia.", "de": "Ich habe das Foto meiner Familie." }
+      "tr": { "en": "I have the photo of my family.", "es": "Tengo la foto de mi familia." }
     },
     {
       "id": "sn-art-19",
@@ -1925,21 +1659,17 @@
       "options": ["la", "el"],
       "correct": 0,
       "why": {
-        "hu": "A moto -o végű, mégis nőnem (kivétel, gyakran rövidített szó): la moto.",
         "en": "«moto» ends in -o but is feminine (an exception, often a shortened word): la moto.",
-        "es": "«moto» acaba en -o pero es femenino (una excepción, a menudo una palabra abreviada): la moto.",
-        "de": "«moto» endet auf -o, ist aber feminin (eine Ausnahme, oft ein verkürztes Wort): la moto."
+        "es": "«moto» acaba en -o pero es femenino (una excepción, a menudo una palabra abreviada): la moto."
       },
       "wrong": {
         "el": {
-          "hu": "Ezzel a moto hímnemű lenne, de nőnem; helyesen: Mi hermano tiene la moto nueva.",
           "en": "This would make «moto» masculine, but it is feminine; correct: Mi hermano tiene la moto nueva.",
-          "es": "Esto haría masculino a «moto», pero es femenino; correcto: Mi hermano tiene la moto nueva.",
-          "de": "Damit wäre «moto» maskulin, aber es ist feminin; richtig: Mi hermano tiene la moto nueva."
+          "es": "Esto haría masculino a «moto», pero es femenino; correcto: Mi hermano tiene la moto nueva."
         }
       },
       "examples": ["Me duele la mano.", "La foto es bonita."],
-      "tr": { "hu": "A testvéremnek új motorja van.", "en": "My brother has the new motorcycle.", "es": "Mi hermano tiene la moto nueva.", "de": "Mein Bruder hat das neue Motorrad." }
+      "tr": { "en": "My brother has the new motorcycle.", "es": "Mi hermano tiene la moto nueva." }
     },
     {
       "id": "sn-art-20",
@@ -1948,21 +1678,17 @@
       "options": ["la", "el"],
       "correct": 0,
       "why": {
-        "hu": "A radio -o végű, mégis nőnem (kivétel, gyakran rövidített szó): la radio.",
         "en": "«radio» ends in -o but is feminine (an exception, often a shortened word): la radio.",
-        "es": "«radio» acaba en -o pero es femenino (una excepción, a menudo una palabra abreviada): la radio.",
-        "de": "«radio» endet auf -o, ist aber feminin (eine Ausnahme, oft ein verkürztes Wort): la radio."
+        "es": "«radio» acaba en -o pero es femenino (una excepción, a menudo una palabra abreviada): la radio."
       },
       "wrong": {
         "el": {
-          "hu": "Ezzel a radio hímnemű lenne; a készüléket Mexikóban valóban el radio-nak mondják, de a rádió mint médium nőnemű; helyesen: Mi tío trabaja en la radio.",
           "en": "This would make «radio» masculine; in Mexico the device is indeed el radio, but radio as a medium is feminine; correct: Mi tío trabaja en la radio.",
-          "es": "Esto haría masculino a «radio»; en México el aparato sí es el radio, pero la radio como medio es femenina; correcto: Mi tío trabaja en la radio.",
-          "de": "Damit wäre «radio» maskulin; in Mexiko heißt das Gerät tatsächlich el radio, aber das Radio als Medium ist feminin; richtig: Mi tío trabaja en la radio."
+          "es": "Esto haría masculino a «radio»; en México el aparato sí es el radio, pero la radio como medio es femenina; correcto: Mi tío trabaja en la radio."
         }
       },
       "examples": ["Me duele la mano.", "La foto es bonita."],
-      "tr": { "hu": "A nagybátyám a rádiónál dolgozik.", "en": "My uncle works in radio.", "es": "Mi tío trabaja en la radio.", "de": "Mein Onkel arbeitet beim Radio." }
+      "tr": { "en": "My uncle works in radio.", "es": "Mi tío trabaja en la radio." }
     },
     {
       "id": "sn-art-21",
@@ -1971,21 +1697,17 @@
       "options": ["el", "la"],
       "correct": 0,
       "why": {
-        "hu": "Az agua nőnem, de hangsúlyos a- előtt a la helyett el áll: el agua (a melléknév marad nőnemű: el agua fría).",
         "en": "Agua is feminine, but before a stressed a- the article la becomes el: el agua (the adjective stays feminine: el agua fría).",
-        "es": "Agua es femenino, pero ante una a- tónica el artículo la pasa a el: el agua (el adjetivo sigue siendo femenino: el agua fría).",
-        "de": "Agua ist feminin, aber vor betontem a- wird la zu el: el agua (das Adjektiv bleibt feminin: el agua fría)."
+        "es": "Agua es femenino, pero ante una a- tónica el artículo la pasa a el: el agua (el adjetivo sigue siendo femenino: el agua fría)."
       },
       "wrong": {
         "la": {
-          "hu": "A la agua nem használatos: hangsúlyos a- előtt el áll (el agua), de a szó nőnemű marad; helyesen: Quiero el agua fría.",
           "en": "\"La agua\" is not used: before a stressed a- Spanish uses el (el agua), while the word stays feminine; correct: Quiero el agua fría.",
-          "es": "«La agua» no se usa: ante una a- tónica se dice el (el agua), aunque la palabra sigue siendo femenina; correcto: Quiero el agua fría.",
-          "de": "«La agua» wird nicht verwendet: vor betontem a- steht el (el agua), das Wort bleibt aber feminin; richtig: Quiero el agua fría."
+          "es": "«La agua» no se usa: ante una a- tónica se dice el (el agua), aunque la palabra sigue siendo femenina; correcto: Quiero el agua fría."
         }
       },
       "examples": ["El agua está fría.", "El aula está cerrada."],
-      "tr": { "hu": "Hideg vizet kérek.", "en": "I want the cold water.", "es": "Quiero el agua fría.", "de": "Ich möchte das kalte Wasser." }
+      "tr": { "en": "I want the cold water.", "es": "Quiero el agua fría." }
     },
     {
       "id": "sn-art-22",
@@ -1994,21 +1716,17 @@
       "options": ["la", "el"],
       "correct": 0,
       "why": {
-        "hu": "A canción -ción/-sión/-dad végű, ezek a szavak nőneműek: la canción.",
         "en": "«canción» ends in -ción, -sión or -dad, and these nouns are feminine: la canción.",
-        "es": "«canción» acaba en -ción, -sión o -dad, y estos sustantivos son femeninos: la canción.",
-        "de": "«canción» endet auf -ción, -sión oder -dad, diese Nomen sind feminin: la canción."
+        "es": "«canción» acaba en -ción, -sión o -dad, y estos sustantivos son femeninos: la canción."
       },
       "wrong": {
         "el": {
-          "hu": "Ezzel a canción hímnemű lenne, de nőnem; helyesen: Me gusta la canción.",
           "en": "This would make «canción» masculine, but it is feminine; correct: Me gusta la canción.",
-          "es": "Esto haría masculino a «canción», pero es femenino; correcto: Me gusta la canción.",
-          "de": "Damit wäre «canción» maskulin, aber es ist feminin; richtig: Me gusta la canción."
+          "es": "Esto haría masculino a «canción», pero es femenino; correcto: Me gusta la canción."
         }
       },
       "examples": ["La ciudad es grande.", "La universidad está cerca."],
-      "tr": { "hu": "Tetszik a dal.", "en": "I like the song.", "es": "Me gusta la canción.", "de": "Ich mag das Lied." }
+      "tr": { "en": "I like the song.", "es": "Me gusta la canción." }
     },
     {
       "id": "sn-art-23",
@@ -2017,21 +1735,17 @@
       "options": ["La", "El"],
       "correct": 0,
       "why": {
-        "hu": "A lección -ción/-sión/-dad végű, ezek a szavak nőneműek: la lección.",
         "en": "«lección» ends in -ción, -sión or -dad, and these nouns are feminine: la lección.",
-        "es": "«lección» acaba en -ción, -sión o -dad, y estos sustantivos son femeninos: la lección.",
-        "de": "«lección» endet auf -ción, -sión oder -dad, diese Nomen sind feminin: la lección."
+        "es": "«lección» acaba en -ción, -sión o -dad, y estos sustantivos son femeninos: la lección."
       },
       "wrong": {
         "El": {
-          "hu": "Ezzel a lección hímnemű lenne, de nőnem; helyesen: La lección es fácil.",
           "en": "This would make «lección» masculine, but it is feminine; correct: La lección es fácil.",
-          "es": "Esto haría masculino a «lección», pero es femenino; correcto: La lección es fácil.",
-          "de": "Damit wäre «lección» maskulin, aber es ist feminin; richtig: La lección es fácil."
+          "es": "Esto haría masculino a «lección», pero es femenino; correcto: La lección es fácil."
         }
       },
       "examples": ["La ciudad es grande.", "La universidad está cerca."],
-      "tr": { "hu": "A lecke könnyű.", "en": "The lesson is easy.", "es": "La lección es fácil.", "de": "Die Lektion ist einfach." }
+      "tr": { "en": "The lesson is easy.", "es": "La lección es fácil." }
     },
     {
       "id": "sn-art-24",
@@ -2040,21 +1754,17 @@
       "options": ["la", "el"],
       "correct": 0,
       "why": {
-        "hu": "A ciudad -ción/-sión/-dad végű, ezek a szavak nőneműek: la ciudad.",
         "en": "«ciudad» ends in -ción, -sión or -dad, and these nouns are feminine: la ciudad.",
-        "es": "«ciudad» acaba en -ción, -sión o -dad, y estos sustantivos son femeninos: la ciudad.",
-        "de": "«ciudad» endet auf -ción, -sión oder -dad, diese Nomen sind feminin: la ciudad."
+        "es": "«ciudad» acaba en -ción, -sión o -dad, y estos sustantivos son femeninos: la ciudad."
       },
       "wrong": {
         "el": {
-          "hu": "Ezzel a ciudad hímnemű lenne, de nőnem; helyesen: Vivo en la ciudad grande.",
           "en": "This would make «ciudad» masculine, but it is feminine; correct: Vivo en la ciudad grande.",
-          "es": "Esto haría masculino a «ciudad», pero es femenino; correcto: Vivo en la ciudad grande.",
-          "de": "Damit wäre «ciudad» maskulin, aber es ist feminin; richtig: Vivo en la ciudad grande."
+          "es": "Esto haría masculino a «ciudad», pero es femenino; correcto: Vivo en la ciudad grande."
         }
       },
       "examples": ["La ciudad es grande.", "La universidad está cerca."],
-      "tr": { "hu": "A nagyvárosban élek.", "en": "I live in the big city.", "es": "Vivo en la ciudad grande.", "de": "Ich wohne in der großen Stadt." }
+      "tr": { "en": "I live in the big city.", "es": "Vivo en la ciudad grande." }
     },
     {
       "id": "sn-art-25",
@@ -2063,21 +1773,17 @@
       "options": ["La", "El"],
       "correct": 0,
       "why": {
-        "hu": "A verdad -ción/-sión/-dad végű, ezek a szavak nőneműek: la verdad.",
         "en": "«verdad» ends in -ción, -sión or -dad, and these nouns are feminine: la verdad.",
-        "es": "«verdad» acaba en -ción, -sión o -dad, y estos sustantivos son femeninos: la verdad.",
-        "de": "«verdad» endet auf -ción, -sión oder -dad, diese Nomen sind feminin: la verdad."
+        "es": "«verdad» acaba en -ción, -sión o -dad, y estos sustantivos son femeninos: la verdad."
       },
       "wrong": {
         "El": {
-          "hu": "Ezzel a verdad hímnemű lenne, de nőnem; helyesen: La verdad es importante.",
           "en": "This would make «verdad» masculine, but it is feminine; correct: La verdad es importante.",
-          "es": "Esto haría masculino a «verdad», pero es femenino; correcto: La verdad es importante.",
-          "de": "Damit wäre «verdad» maskulin, aber es ist feminin; richtig: La verdad es importante."
+          "es": "Esto haría masculino a «verdad», pero es femenino; correcto: La verdad es importante."
         }
       },
       "examples": ["La ciudad es grande.", "La universidad está cerca."],
-      "tr": { "hu": "Az igazság fontos.", "en": "The truth is important.", "es": "La verdad es importante.", "de": "Die Wahrheit ist wichtig." }
+      "tr": { "en": "The truth is important.", "es": "La verdad es importante." }
     },
     {
       "id": "sn-art-26",
@@ -2086,21 +1792,17 @@
       "options": ["La", "El"],
       "correct": 0,
       "why": {
-        "hu": "A salud végződése alapján nem lehet kitalálni a nemét, a névelővel együtt kell megtanulni: la salud (nőnem).",
         "en": "The ending of «salud» does not show its gender, so learn it with its article: la salud (feminine).",
-        "es": "La terminación de «salud» no indica el género, hay que aprenderla con el artículo: la salud (femenino).",
-        "de": "Die Endung von «salud» verrät das Genus nicht, man lernt es mit dem Artikel: la salud (feminin)."
+        "es": "La terminación de «salud» no indica el género, hay que aprenderla con el artículo: la salud (femenino)."
       },
       "wrong": {
         "El": {
-          "hu": "Ezzel a salud hímnemű lenne, de nőnem; helyesen: La salud es muy importante.",
           "en": "This would make «salud» masculine, but it is feminine; correct: La salud es muy importante.",
-          "es": "Esto haría masculino a «salud», pero es femenino; correcto: La salud es muy importante.",
-          "de": "Damit wäre «salud» maskulin, aber es ist feminin; richtig: La salud es muy importante."
+          "es": "Esto haría masculino a «salud», pero es femenino; correcto: La salud es muy importante."
         }
       },
       "examples": ["La casa es grande.", "La foto es bonita."],
-      "tr": { "hu": "Az egészség nagyon fontos.", "en": "Health is very important.", "es": "La salud es muy importante.", "de": "Die Gesundheit ist sehr wichtig." }
+      "tr": { "en": "Health is very important.", "es": "La salud es muy importante." }
     },
     {
       "id": "sn-art-27",
@@ -2109,21 +1811,17 @@
       "options": ["la", "el"],
       "correct": 0,
       "why": {
-        "hu": "Az -e végű szavak lehetnek hímneműek és nőneműek is, ezt a névelővel együtt kell megtanulni: la noche.",
         "en": "Nouns ending in -e can be either gender, so learn the article with the word: la noche.",
-        "es": "Los sustantivos acabados en -e pueden ser de cualquier género, así que hay que aprenderlos con el artículo: la noche.",
-        "de": "Nomen auf -e können beide Genera haben, man lernt sie mit dem Artikel: la noche."
+        "es": "Los sustantivos acabados en -e pueden ser de cualquier género, así que hay que aprenderlos con el artículo: la noche."
       },
       "wrong": {
         "el": {
-          "hu": "Ezzel a noche hímnemű lenne, de nőnem; helyesen: Por la noche estudio español.",
           "en": "This would make «noche» masculine, but it is feminine; correct: Por la noche estudio español.",
-          "es": "Esto haría masculino a «noche», pero es femenino; correcto: Por la noche estudio español.",
-          "de": "Damit wäre «noche» maskulin, aber es ist feminin; richtig: Por la noche estudio español."
+          "es": "Esto haría masculino a «noche», pero es femenino; correcto: Por la noche estudio español."
         }
       },
       "examples": ["La casa es grande.", "El carro es nuevo."],
-      "tr": { "hu": "Este spanyolul tanulok.", "en": "At night I study Spanish.", "es": "Por la noche estudio español.", "de": "Nachts lerne ich Spanisch." }
+      "tr": { "en": "At night I study Spanish.", "es": "Por la noche estudio español." }
     },
     {
       "id": "sn-art-28",
@@ -2132,21 +1830,17 @@
       "options": ["la", "el"],
       "correct": 0,
       "why": {
-        "hu": "Az -e végű szavak lehetnek hímneműek és nőneműek is, ezt a névelővel együtt kell megtanulni: la calle.",
         "en": "Nouns ending in -e can be either gender, so learn the article with the word: la calle.",
-        "es": "Los sustantivos acabados en -e pueden ser de cualquier género, así que hay que aprenderlos con el artículo: la calle.",
-        "de": "Nomen auf -e können beide Genera haben, man lernt sie mit dem Artikel: la calle."
+        "es": "Los sustantivos acabados en -e pueden ser de cualquier género, así que hay que aprenderlos con el artículo: la calle."
       },
       "wrong": {
         "el": {
-          "hu": "Ezzel a calle hímnemű lenne, de nőnem; helyesen: Mi casa está en la calle grande.",
           "en": "This would make «calle» masculine, but it is feminine; correct: Mi casa está en la calle grande.",
-          "es": "Esto haría masculino a «calle», pero es femenino; correcto: Mi casa está en la calle grande.",
-          "de": "Damit wäre «calle» maskulin, aber es ist feminin; richtig: Mi casa está en la calle grande."
+          "es": "Esto haría masculino a «calle», pero es femenino; correcto: Mi casa está en la calle grande."
         }
       },
       "examples": ["La casa es grande.", "El carro es nuevo."],
-      "tr": { "hu": "A házam a nagy utcában van.", "en": "My house is on the big street.", "es": "Mi casa está en la calle grande.", "de": "Mein Haus ist in der großen Straße." }
+      "tr": { "en": "My house is on the big street.", "es": "Mi casa está en la calle grande." }
     },
     {
       "id": "sn-art-29",
@@ -2155,21 +1849,17 @@
       "options": ["la", "el"],
       "correct": 0,
       "why": {
-        "hu": "Az -e végű szavak lehetnek hímneműek és nőneműek is, ezt a névelővel együtt kell megtanulni: la leche.",
         "en": "Nouns ending in -e can be either gender, so learn the article with the word: la leche.",
-        "es": "Los sustantivos acabados en -e pueden ser de cualquier género, así que hay que aprenderlos con el artículo: la leche.",
-        "de": "Nomen auf -e können beide Genera haben, man lernt sie mit dem Artikel: la leche."
+        "es": "Los sustantivos acabados en -e pueden ser de cualquier género, así que hay que aprenderlos con el artículo: la leche."
       },
       "wrong": {
         "el": {
-          "hu": "Ezzel a leche hímnemű lenne, de nőnem; helyesen: Quiero la leche fría.",
           "en": "This would make «leche» masculine, but it is feminine; correct: Quiero la leche fría.",
-          "es": "Esto haría masculino a «leche», pero es femenino; correcto: Quiero la leche fría.",
-          "de": "Damit wäre «leche» maskulin, aber es ist feminin; richtig: Quiero la leche fría."
+          "es": "Esto haría masculino a «leche», pero es femenino; correcto: Quiero la leche fría."
         }
       },
       "examples": ["La casa es grande.", "El carro es nuevo."],
-      "tr": { "hu": "A hideg tejet kérem.", "en": "I want the cold milk.", "es": "Quiero la leche fría.", "de": "Ich möchte die kalte Milch." }
+      "tr": { "en": "I want the cold milk.", "es": "Quiero la leche fría." }
     },
     {
       "id": "sn-art-30",
@@ -2178,21 +1868,17 @@
       "options": ["La", "El"],
       "correct": 0,
       "why": {
-        "hu": "Az -e végű szavak lehetnek hímneműek és nőneműek is, ezt a névelővel együtt kell megtanulni: la clase.",
         "en": "Nouns ending in -e can be either gender, so learn the article with the word: la clase.",
-        "es": "Los sustantivos acabados en -e pueden ser de cualquier género, así que hay que aprenderlos con el artículo: la clase.",
-        "de": "Nomen auf -e können beide Genera haben, man lernt sie mit dem Artikel: la clase."
+        "es": "Los sustantivos acabados en -e pueden ser de cualquier género, así que hay que aprenderlos con el artículo: la clase."
       },
       "wrong": {
         "El": {
-          "hu": "Ezzel a clase hímnemű lenne, de nőnem; helyesen: La clase es a las nueve.",
           "en": "This would make «clase» masculine, but it is feminine; correct: La clase es a las nueve.",
-          "es": "Esto haría masculino a «clase», pero es femenino; correcto: La clase es a las nueve.",
-          "de": "Damit wäre «clase» maskulin, aber es ist feminin; richtig: La clase es a las nueve."
+          "es": "Esto haría masculino a «clase», pero es femenino; correcto: La clase es a las nueve."
         }
       },
       "examples": ["La casa es grande.", "El carro es nuevo."],
-      "tr": { "hu": "Az óra kilenckor kezdődik.", "en": "The class is at nine.", "es": "La clase es a las nueve.", "de": "Der Unterricht ist um neun Uhr." }
+      "tr": { "en": "The class is at nine.", "es": "La clase es a las nueve." }
     },
     {
       "id": "sn-art-31",
@@ -2201,21 +1887,17 @@
       "options": ["la", "el"],
       "correct": 0,
       "why": {
-        "hu": "A mujer végződése alapján nem lehet kitalálni a nemét, a névelővel együtt kell megtanulni: la mujer (nőnem).",
         "en": "The ending of «mujer» does not show its gender, so learn it with its article: la mujer (feminine).",
-        "es": "La terminación de «mujer» no indica el género, hay que aprenderla con el artículo: la mujer (femenino).",
-        "de": "Die Endung von «mujer» verrät das Genus nicht, man lernt es mit dem Artikel: la mujer (feminin)."
+        "es": "La terminación de «mujer» no indica el género, hay que aprenderla con el artículo: la mujer (femenino)."
       },
       "wrong": {
         "el": {
-          "hu": "Ezzel a mujer hímnemű lenne, de nőnem; helyesen: Creo que la mujer está en la calle.",
           "en": "This would make «mujer» masculine, but it is feminine; correct: Creo que la mujer está en la calle.",
-          "es": "Esto haría masculino a «mujer», pero es femenino; correcto: Creo que la mujer está en la calle.",
-          "de": "Damit wäre «mujer» maskulin, aber es ist feminin; richtig: Creo que la mujer está en la calle."
+          "es": "Esto haría masculino a «mujer», pero es femenino; correcto: Creo que la mujer está en la calle."
         }
       },
       "examples": ["La casa es grande.", "La foto es bonita."],
-      "tr": { "hu": "Azt hiszem, a nő az utcán van.", "en": "I think the woman is in the street.", "es": "Creo que la mujer está en la calle.", "de": "Ich glaube, die Frau ist auf der Straße." }
+      "tr": { "en": "I think the woman is in the street.", "es": "Creo que la mujer está en la calle." }
     },
     {
       "id": "sn-art-32",
@@ -2224,21 +1906,17 @@
       "options": ["la", "el"],
       "correct": 0,
       "why": {
-        "hu": "A flor végződése alapján nem lehet kitalálni a nemét, a névelővel együtt kell megtanulni: la flor (nőnem).",
         "en": "The ending of «flor» does not show its gender, so learn it with its article: la flor (feminine).",
-        "es": "La terminación de «flor» no indica el género, hay que aprenderla con el artículo: la flor (femenino).",
-        "de": "Die Endung von «flor» verrät das Genus nicht, man lernt es mit dem Artikel: la flor (feminin)."
+        "es": "La terminación de «flor» no indica el género, hay que aprenderla con el artículo: la flor (femenino)."
       },
       "wrong": {
         "el": {
-          "hu": "Ezzel a flor hímnemű lenne, de nőnem; helyesen: Pongo la flor en la mesa.",
           "en": "This would make «flor» masculine, but it is feminine; correct: Pongo la flor en la mesa.",
-          "es": "Esto haría masculino a «flor», pero es femenino; correcto: Pongo la flor en la mesa.",
-          "de": "Damit wäre «flor» maskulin, aber es ist feminin; richtig: Pongo la flor en la mesa."
+          "es": "Esto haría masculino a «flor», pero es femenino; correcto: Pongo la flor en la mesa."
         }
       },
       "examples": ["La casa es grande.", "La foto es bonita."],
-      "tr": { "hu": "A virágot az asztalra teszem.", "en": "I put the flower on the table.", "es": "Pongo la flor en la mesa.", "de": "Ich stelle die Blume auf den Tisch." }
+      "tr": { "en": "I put the flower on the table.", "es": "Pongo la flor en la mesa." }
     },
     {
       "id": "sn-art-33",
@@ -2247,21 +1925,17 @@
       "options": ["La", "El"],
       "correct": 0,
       "why": {
-        "hu": "A luz végződése alapján nem lehet kitalálni a nemét, a névelővel együtt kell megtanulni: la luz (nőnem).",
         "en": "The ending of «luz» does not show its gender, so learn it with its article: la luz (feminine).",
-        "es": "La terminación de «luz» no indica el género, hay que aprenderla con el artículo: la luz (femenino).",
-        "de": "Die Endung von «luz» verrät das Genus nicht, man lernt es mit dem Artikel: la luz (feminin)."
+        "es": "La terminación de «luz» no indica el género, hay que aprenderla con el artículo: la luz (femenino)."
       },
       "wrong": {
         "El": {
-          "hu": "Ezzel a luz hímnemű lenne, de nőnem; helyesen: La luz está encendida.",
           "en": "This would make «luz» masculine, but it is feminine; correct: La luz está encendida.",
-          "es": "Esto haría masculino a «luz», pero es femenino; correcto: La luz está encendida.",
-          "de": "Damit wäre «luz» maskulin, aber es ist feminin; richtig: La luz está encendida."
+          "es": "Esto haría masculino a «luz», pero es femenino; correcto: La luz está encendida."
         }
       },
       "examples": ["La casa es grande.", "La foto es bonita."],
-      "tr": { "hu": "A lámpa fel van kapcsolva.", "en": "The light is on.", "es": "La luz está encendida.", "de": "Das Licht ist an." }
+      "tr": { "en": "The light is on.", "es": "La luz está encendida." }
     }
   ]
 }

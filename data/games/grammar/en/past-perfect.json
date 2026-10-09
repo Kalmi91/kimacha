@@ -3,42 +3,32 @@
   "topic": "past_perfect",
   "level": "B1",
   "title": {
-    "hu": "Régmúlt (I had finished)",
     "en": "The Past Perfect (I had finished)",
-    "es": "El pasado perfecto (I had finished)",
-    "de": "Das Past Perfect (I had finished)"
+    "es": "El pasado perfecto (I had finished)"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "A past perfect szerkezete: had + igenév (past participle): „I had finished”, „they had left”. Minden személyben ugyanaz a had. Két múltbeli esemény közül a korábbit jelöli: „When I arrived, the film had already started” (előbb kezdődött a film, aztán érkeztem). A spanyol „había terminado” (pluscuamperfecto) megfelelője.",
         "en": "The past perfect is formed with had + past participle: “I had finished”, “they had left”. It is the same had for every person. It marks the earlier of two past events: “When I arrived, the film had already started” (the film started first, then I arrived). It matches the Spanish “había terminado” (pluscuamperfecto).",
-        "es": "El pasado perfecto se forma con had + participio: «I had finished», «they had left». Es el mismo had para todas las personas. Marca el más antiguo de dos hechos del pasado: «When I arrived, the film had already started» (primero empezó la película, luego llegué). Equivale a «había terminado» (pluscuamperfecto).",
-        "de": "Das Past Perfect wird mit had + Partizip gebildet: „I had finished“, „they had left“. Es ist für alle Personen dasselbe had. Es kennzeichnet das frühere von zwei vergangenen Ereignissen: „When I arrived, the film had already started“ (erst begann der Film, dann kam ich an). Es entspricht dem spanischen „había terminado“ (pluscuamperfecto)."
+        "es": "El pasado perfecto se forma con had + participio: «I had finished», «they had left». Es el mismo had para todas las personas. Marca el más antiguo de dos hechos del pasado: «When I arrived, the film had already started» (primero empezó la película, luego llegué). Equivale a «había terminado» (pluscuamperfecto)."
       }
     },
     {
       "kind": "table",
       "id": "ppf-aux",
       "title": {
-        "hu": "A rendhagyó igék igenevei",
         "en": "Participles of irregular verbs",
-        "es": "Participios de verbos irregulares",
-        "de": "Partizipien unregelmäßiger Verben"
+        "es": "Participios de verbos irregulares"
       },
       "header": [
         {
-          "hu": "Ige",
           "en": "Verb",
-          "es": "Verbo",
-          "de": "Verb"
+          "es": "Verbo"
         },
         {
-          "hu": "past participle",
           "en": "past participle",
-          "es": "past participle",
-          "de": "past participle"
+          "es": "past participle"
         }
       ],
       "rows": [
@@ -79,64 +69,50 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Alak",
         "en": "Form",
-        "es": "Forma",
-        "de": "Form"
+        "es": "Forma"
       },
       "items": [
         {
           "text": {
-            "hu": "Állító: had + igenév. Rövid alak: I’d, she’d finished. Tagadás: hadn’t + igenév. A rendhagyó igék igenevét a present perfectnél tanultad (seen, gone, written).",
             "en": "Affirmative: had + participle. Short form: I’d, she’d finished. Negative: hadn’t + participle. You learned the participles of irregular verbs with the present perfect (seen, gone, written).",
-            "es": "Afirmativa: had + participio. Forma corta: I’d, she’d finished. Negación: hadn’t + participio. Los participios de los verbos irregulares los viste con el presente perfecto (seen, gone, written).",
-            "de": "Bejahend: had + Partizip. Kurzform: I’d, she’d finished. Verneinung: hadn’t + Partizip. Die Partizipien der unregelmäßigen Verben hast du beim Present Perfect gelernt (seen, gone, written)."
+            "es": "Afirmativa: had + participio. Forma corta: I’d, she’d finished. Negación: hadn’t + participio. Los participios de los verbos irregulares los viste con el presente perfecto (seen, gone, written)."
           },
           "examples": [
             {
               "es": "I had already eaten when you called.",
               "tr": {
-                "hu": "Már ettem, amikor hívtál.",
                 "en": "I had already eaten when you called.",
-                "es": "Ya había comido cuando llamaste.",
-                "de": "Ich hatte schon gegessen, als du angerufen hast."
+                "es": "Ya había comido cuando llamaste."
               }
             },
             {
               "es": "We hadn't seen each other for years.",
               "tr": {
-                "hu": "Évek óta nem láttuk egymást.",
                 "en": "We hadn't seen each other for years.",
-                "es": "No nos habíamos visto en años.",
-                "de": "Wir hatten uns jahrelang nicht gesehen."
+                "es": "No nos habíamos visto en años."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Kérdés: Had + alany + igenév. Rövid válasz: Yes, I had. / No, I hadn’t.",
             "en": "Question: Had + subject + participle. Short answers: Yes, I had. / No, I hadn’t.",
-            "es": "Pregunta: Had + sujeto + participio. Respuestas cortas: Yes, I had. / No, I hadn’t.",
-            "de": "Frage: Had + Subjekt + Partizip. Kurzantworten: Yes, I had. / No, I hadn’t."
+            "es": "Pregunta: Had + sujeto + participio. Respuestas cortas: Yes, I had. / No, I hadn’t."
           },
           "examples": [
             {
               "es": "Had you finished before dinner?",
               "tr": {
-                "hu": "Befejezted vacsora előtt?",
                 "en": "Had you finished before dinner?",
-                "es": "¿Ya habías terminado antes de la cena?",
-                "de": "Warst du vor dem Abendessen fertig?"
+                "es": "¿Ya habías terminado antes de la cena?"
               }
             },
             {
               "es": "Had she left when you arrived?",
               "tr": {
-                "hu": "Elment már, amikor megérkeztél?",
                 "en": "Had she left when you arrived?",
-                "es": "¿Ya se había ido cuando llegaste?",
-                "de": "War sie schon weg, als du ankamst?"
+                "es": "¿Ya se había ido cuando llegaste?"
               }
             }
           ]
@@ -146,92 +122,72 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Mire használjuk",
         "en": "What we use it for",
-        "es": "Para qué se usa",
-        "de": "Wofür wir es benutzen"
+        "es": "Para qué se usa"
       },
       "items": [
         {
           "text": {
-            "hu": "A korábbi esemény két múltbeli esemény közül. A későbbi egyszerű múlt, a korábbi past perfect: „When I got to the station, the train had left.”",
             "en": "The earlier event of two past events. The later one is in the past simple, the earlier one in the past perfect: “When I got to the station, the train had left.”",
-            "es": "El hecho más antiguo de dos hechos del pasado. El más reciente va en pasado simple y el más antiguo en pasado perfecto: «When I got to the station, the train had left.»",
-            "de": "Das frühere von zwei vergangenen Ereignissen. Das spätere steht im Past Simple, das frühere im Past Perfect: „When I got to the station, the train had left.“"
+            "es": "El hecho más antiguo de dos hechos del pasado. El más reciente va en pasado simple y el más antiguo en pasado perfecto: «When I got to the station, the train had left.»"
           },
           "examples": [
             {
               "es": "When I got to the station, the train had left.",
               "tr": {
-                "hu": "Amikor az állomásra értem, a vonat már elment.",
                 "en": "When I got to the station, the train had left.",
-                "es": "Cuando llegué a la estación, el tren ya se había ido.",
-                "de": "Als ich am Bahnhof ankam, war der Zug schon abgefahren."
+                "es": "Cuando llegué a la estación, el tren ya se había ido."
               }
             },
             {
               "es": "She was sad because she had lost her keys.",
               "tr": {
-                "hu": "Szomorú volt, mert elvesztette a kulcsát.",
                 "en": "She was sad because she had lost her keys.",
-                "es": "Estaba triste porque había perdido sus llaves.",
-                "de": "Sie war traurig, weil sie ihre Schlüssel verloren hatte."
+                "es": "Estaba triste porque había perdido sus llaves."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Jelzők: already, just, never … before, by the time, before, after, when. A „by the time” azt jelenti: mire. „By the time we arrived, the shop had closed.”",
             "en": "Signal words: already, just, never … before, by the time, before, after, when. “By the time” means “when it reached that moment”: “By the time we arrived, the shop had closed.”",
-            "es": "Palabras guía: already, just, never … before, by the time, before, after, when. «By the time» significa «para cuando»: «By the time we arrived, the shop had closed.»",
-            "de": "Signalwörter: already, just, never … before, by the time, before, after, when. „By the time“ heißt „bis“: „By the time we arrived, the shop had closed.“"
+            "es": "Palabras guía: already, just, never … before, by the time, before, after, when. «By the time» significa «para cuando»: «By the time we arrived, the shop had closed.»"
           },
           "examples": [
             {
               "es": "I had never eaten fish before that day.",
               "tr": {
-                "hu": "Azelőtt a nap előtt soha nem ettem halat.",
                 "en": "I had never eaten fish before that day.",
-                "es": "Nunca había comido pescado antes de ese día.",
-                "de": "Vor diesem Tag hatte ich nie Fisch gegessen."
+                "es": "Nunca había comido pescado antes de ese día."
               }
             },
             {
               "es": "After she had finished dinner, she watched TV.",
               "tr": {
-                "hu": "Miután befejezte a vacsorát, tévét nézett.",
                 "en": "After she had finished dinner, she watched TV.",
-                "es": "Después de que terminó de cenar, vio la tele.",
-                "de": "Nachdem sie das Abendessen beendet hatte, sah sie fern."
+                "es": "Después de que terminó de cenar, vio la tele."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Ha az események egymás után történtek, és a sorrend a mondatból is kiderül, mindkettő egyszerű múlt: „I went home, and then I called her.”",
             "en": "When events happened in order and the order is clear from the sentence, both are in the past simple: “I went home, and then I called her.”",
-            "es": "Cuando los hechos pasaron en orden y el orden está claro en la oración, los dos van en pasado simple: «I went home, and then I called her.»",
-            "de": "Wenn die Ereignisse nacheinander passiert sind und die Reihenfolge aus dem Satz klar ist, stehen beide im Past Simple: „I went home, and then I called her.“"
+            "es": "Cuando los hechos pasaron en orden y el orden está claro en la oración, los dos van en pasado simple: «I went home, and then I called her.»"
           },
           "examples": [
             {
               "es": "I went home, and then I called her.",
               "tr": {
-                "hu": "Hazamentem, aztán felhívtam.",
                 "en": "I went home, and then I called her.",
-                "es": "Me fui a la casa y luego la llamé.",
-                "de": "Ich bin nach Hause gegangen und habe sie dann angerufen."
+                "es": "Me fui a la casa y luego la llamé."
               }
             },
             {
               "es": "He opened the door and turned on the light.",
               "tr": {
-                "hu": "Kinyitotta az ajtót, és felkapcsolta a villanyt.",
                 "en": "He opened the door and turned on the light.",
-                "es": "Abrió la puerta y prendió la luz.",
-                "de": "Er öffnete die Tür und schaltete das Licht an."
+                "es": "Abrió la puerta y prendió la luz."
               }
             }
           ]
@@ -241,63 +197,49 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "A spanyolban a „cuando llegué, ya se fue” is megy, angolul viszont a korábbi eseményhez had kell: „When I arrived, he had already left.” Ne a spanyol igeidőt fordítsd, hanem azt nézd, melyik történt előbb.",
         "en": "In Spanish “cuando llegué, ya se fue” works, but in English the earlier event needs had: “When I arrived, he had already left.” Don’t translate the Spanish tense, check which event happened first.",
-        "es": "En español «cuando llegué, ya se fue» funciona, pero en inglés el hecho anterior necesita had: «When I arrived, he had already left.» No traduzcas el tiempo del español, fíjate cuál pasó primero.",
-        "de": "Im Spanischen geht „cuando llegué, ya se fue“, aber im Englischen braucht das frühere Ereignis had: „When I arrived, he had already left.“ Übersetze nicht die spanische Zeitform, sondern schau, was zuerst passiert ist."
+        "es": "En español «cuando llegué, ya se fue» funciona, pero en inglés el hecho anterior necesita had: «When I arrived, he had already left.» No traduzcas el tiempo del español, fíjate cuál pasó primero."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "Múltbeli történetben ne használj present perfectet a korábbi eseményre. Nem „When I arrived, she has left”, hanem „When I arrived, she had left”.",
         "en": "In a story in the past, don’t use the present perfect for the earlier event. Not “When I arrived, she has left”, but “When I arrived, she had left”.",
-        "es": "En una historia en pasado, no uses el presente perfecto para el hecho anterior. No «When I arrived, she has left», sino «When I arrived, she had left».",
-        "de": "In einer Geschichte in der Vergangenheit nimm für das frühere Ereignis nicht das Present Perfect. Nicht „When I arrived, she has left“, sondern „When I arrived, she had left“."
+        "es": "En una historia en pasado, no uses el presente perfecto para el hecho anterior. No «When I arrived, she has left», sino «When I arrived, she had left»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A had után az igenév áll, nem az egyszerű múlt alak: nem „I had went”, hanem „I had gone”. És a had mindig had: nincs „he haves” és nincs „he hads”.",
         "en": "After had comes the participle, not the past simple form: not “I had went”, but “I had gone”. And had is always had: there is no “he haves” and no “he hads”.",
-        "es": "Después de had va el participio, no la forma del pasado simple: no «I had went», sino «I had gone». Y had siempre es had: no existe «he haves» ni «he hads».",
-        "de": "Nach had steht das Partizip, nicht die Past-Simple-Form: nicht „I had went“, sondern „I had gone“. Und had bleibt immer had: es gibt kein „he haves“ und kein „he hads“."
+        "es": "Después de had va el participio, no la forma del pasado simple: no «I had went», sino «I had gone». Y had siempre es had: no existe «he haves» ni «he hads»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A rövid „’d” kétféle lehet: „I’d finished” = I had finished, „I’d finish” = I would finish. Az igenév (finished) árulja el, melyik az.",
         "en": "The short “’d” can be two things: “I’d finished” = I had finished, “I’d finish” = I would finish. The participle (finished) tells you which one it is.",
-        "es": "La forma corta «’d» puede ser dos cosas: «I’d finished» = I had finished, «I’d finish» = I would finish. El participio (finished) te dice cuál es.",
-        "de": "Die Kurzform „’d“ kann zweierlei sein: „I’d finished“ = I had finished, „I’d finish“ = I would finish. Das Partizip (finished) verrät, welches es ist."
+        "es": "La forma corta «’d» puede ser dos cosas: «I’d finished» = I had finished, «I’d finish» = I would finish. El participio (finished) te dice cuál es."
       }
     }
   ],
   "speak": {
-    "hu": "A past perfect szerkezete: «had» plusz az ige igenéve: «I had finished». Minden személyben ugyanaz a «had». Két múltbeli esemény közül a korábbit jelöli: «When I arrived, the film had already started». Jelzők: «already», «just», «never before», «by the time», «after». Ha az események egymás után történtek, és a sorrend egyértelmű, mindkettő egyszerű múlt: «I went home, and then I called her». Vigyázat: nem «When I arrived, she has left», hanem «When I arrived, she had left». És nem «I had went», hanem «I had gone».",
     "en": "The past perfect is «had» plus the past participle: «I had finished». It is the same «had» for every person. It marks the earlier of two past events: «When I arrived, the film had already started». Signal words: «already», «just», «never before», «by the time», «after». When events happened in order and the order is clear, both are in the past simple: «I went home, and then I called her». Careful: not «When I arrived, she has left», but «When I arrived, she had left». And not «I had went», but «I had gone».",
-    "es": "El pasado perfecto es «had» más el participio: «I had finished». Es el mismo «had» para todas las personas. Marca el más antiguo de dos hechos del pasado: «When I arrived, the film had already started». Palabras guía: «already», «just», «never before», «by the time», «after». Si los hechos pasaron en orden y el orden es claro, los dos van en pasado simple: «I went home, and then I called her». Cuidado: no «When I arrived, she has left», sino «When I arrived, she had left». Y no «I had went», sino «I had gone».",
-    "de": "Das Past Perfect besteht aus «had» plus dem Partizip: «I had finished». Es ist für alle Personen dasselbe «had». Es kennzeichnet das frühere von zwei vergangenen Ereignissen: «When I arrived, the film had already started». Signalwörter: «already», «just», «never before», «by the time», «after». Wenn die Ereignisse nacheinander passiert sind und die Reihenfolge klar ist, stehen beide im Past Simple: «I went home, and then I called her». Vorsicht: nicht «When I arrived, she has left», sondern «When I arrived, she had left». Und nicht «I had went», sondern «I had gone»."
+    "es": "El pasado perfecto es «had» más el participio: «I had finished». Es el mismo «had» para todas las personas. Marca el más antiguo de dos hechos del pasado: «When I arrived, the film had already started». Palabras guía: «already», «just», «never before», «by the time», «after». Si los hechos pasaron en orden y el orden es claro, los dos van en pasado simple: «I went home, and then I called her». Cuidado: no «When I arrived, she has left», sino «When I arrived, she had left». Y no «I had went», sino «I had gone»."
   },
   "glossary": [
     {
       "word": "gone",
       "gloss": {
-        "hu": "elment (a go igenéve)",
         "en": "participle of go",
-        "es": "ido (participio de go)",
-        "de": "gegangen, weg (Partizip von go)"
+        "es": "ido (participio de go)"
       }
     },
     {
       "word": "hadn't",
       "gloss": {
-        "hu": "nem volt (had not)",
         "en": "had not",
-        "es": "no había (had not)",
-        "de": "hatte nicht (had not)"
+        "es": "no había (had not)"
       }
     }
   ],
@@ -312,30 +254,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A film korábban kezdődött, mint ahogy megérkeztem, ezért had kell: had already started.",
         "en": "The film started before I arrived, so you need had: had already started.",
-        "es": "La película empezó antes de que yo llegara, así que hace falta had: had already started.",
-        "de": "Der Film begann, bevor ich ankam, deshalb braucht man had: had already started."
+        "es": "La película empezó antes de que yo llegara, así que hace falta had: had already started."
       },
       "wrong": {
         "has": {
-          "hu": "A has present perfect, de a mondat múltbeli történetet mesél (arrived); a korábbi eseményhez had kell.",
           "en": "“Has” is the present perfect, but the sentence tells a story in the past (arrived); the earlier event needs had.",
-          "es": "«Has» es presente perfecto, pero la oración cuenta una historia en pasado (arrived); el hecho anterior necesita had.",
-          "de": "„Has“ ist Present Perfect, aber der Satz erzählt eine Geschichte in der Vergangenheit (arrived); das frühere Ereignis braucht had."
+          "es": "«Has» es presente perfecto, pero la oración cuenta una historia en pasado (arrived); el hecho anterior necesita had."
         },
         "was": {
-          "hu": "A „was already started” nem helyes szerkezet; a korábbi események jelölésére had + igenév kell.",
           "en": "“Was already started” is not a correct structure; to mark an earlier event you need had + participle.",
-          "es": "«Was already started» no es una estructura correcta; para marcar un hecho anterior hace falta had + participio.",
-          "de": "„Was already started“ ist keine korrekte Struktur; für ein früheres Ereignis braucht man had + Partizip."
+          "es": "«Was already started» no es una estructura correcta; para marcar un hecho anterior hace falta had + participio."
         }
       },
       "examples": [
         "When I got there, they had left.",
         "When she came, he had gone."
       ],
-      "tr": { "hu": "Amikor megérkeztem, a film már elkezdődött.", "en": "When I arrived, the film had already started.", "es": "Cuando llegué, la película ya había empezado.", "de": "Als ich ankam, hatte der Film bereits begonnen." }
+      "tr": { "en": "When I arrived, the film had already started.", "es": "Cuando llegué, la película ya había empezado." }
     },
     {
       "id": "ppf-02",
@@ -347,30 +283,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A „by the time” (mire) mellett a korábbi eseményhez had kell: the shop had closed its doors.",
         "en": "With “by the time” the earlier event needs had: the shop had closed its doors.",
-        "es": "Con «by the time» el hecho anterior necesita had: the shop had closed its doors.",
-        "de": "Bei „by the time“ braucht das frühere Ereignis had: the shop had closed its doors."
+        "es": "Con «by the time» el hecho anterior necesita had: the shop had closed its doors."
       },
       "wrong": {
         "has": {
-          "hu": "A has present perfect; a „by the time we arrived” múltbeli pillanatot ad meg, ezért had kell.",
           "en": "“Has” is the present perfect; “by the time we arrived” gives a moment in the past, so you need had.",
-          "es": "«Has» es presente perfecto; «by the time we arrived» da un momento del pasado, por eso hace falta had.",
-          "de": "„Has“ ist Present Perfect; „by the time we arrived“ nennt einen Moment der Vergangenheit, deshalb braucht man had."
+          "es": "«Has» es presente perfecto; «by the time we arrived» da un momento del pasado, por eso hace falta had."
         },
         "was": {
-          "hu": "A „was closed its doors” nem lehetséges: a was után nem állhat tárgy; a korábbi bezáráshoz had closed kell.",
           "en": "“Was closed its doors” is not possible: after was there can be no object; the earlier closing needs had closed.",
-          "es": "«Was closed its doors» no es posible: después de was no puede ir un objeto; el cierre anterior necesita had closed.",
-          "de": "„Was closed its doors“ ist nicht möglich: nach was kann kein Objekt stehen; das frühere Schließen braucht had closed."
+          "es": "«Was closed its doors» no es posible: después de was no puede ir un objeto; el cierre anterior necesita had closed."
         }
       },
       "examples": [
         "By the time I called, he had gone to bed.",
         "By the time she came, we had eaten."
       ],
-      "tr": { "hu": "Mire megérkeztünk, a bolt már bezárt.", "en": "By the time we arrived, the shop had closed its doors.", "es": "Para cuando llegamos, la tienda había cerrado sus puertas.", "de": "Als wir ankamen, hatte der Laden bereits geschlossen." }
+      "tr": { "en": "By the time we arrived, the shop had closed its doors.", "es": "Para cuando llegamos, la tienda había cerrado sus puertas." }
     },
     {
       "id": "ppf-03",
@@ -382,30 +312,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „before that day” múltbeli pillanat előtti időt jelöl, ezért had kell: I had never eaten.",
         "en": "“Before that day” refers to the time before a moment in the past, so you need had: I had never eaten.",
-        "es": "«Before that day» se refiere al tiempo antes de un momento del pasado, así que hace falta had: I had never eaten.",
-        "de": "„Before that day“ bezieht sich auf die Zeit vor einem Moment in der Vergangenheit, deshalb braucht man had: I had never eaten."
+        "es": "«Before that day» se refiere al tiempo antes de un momento del pasado, así que hace falta had: I had never eaten."
       },
       "wrong": {
         "have": {
-          "hu": "A have present perfect, a mostanáig tartó időhöz való; a „that day” múltbeli nap, ezért had kell.",
           "en": "“Have” is the present perfect, for time up to now; “that day” is a day in the past, so you need had.",
-          "es": "«Have» es presente perfecto, para el tiempo hasta ahora; «that day» es un día del pasado, por eso hace falta had.",
-          "de": "„Have“ ist Present Perfect, für Zeit bis jetzt; „that day“ ist ein Tag in der Vergangenheit, deshalb braucht man had."
+          "es": "«Have» es presente perfecto, para el tiempo hasta ahora; «that day» es un día del pasado, por eso hace falta had."
         },
         "was": {
-          "hu": "A „was never eaten” szenvedő szerkezet lenne (nem ették meg); itt had + igenév kell.",
           "en": "“Was never eaten” would be a passive (nobody ate it); here you need had + participle.",
-          "es": "«Was never eaten» sería una pasiva (nadie se lo comió); aquí hace falta had + participio.",
-          "de": "„Was never eaten“ wäre ein Passiv (niemand hat es gegessen); hier braucht man had + Partizip."
+          "es": "«Was never eaten» sería una pasiva (nadie se lo comió); aquí hace falta had + participio."
         }
       },
       "examples": [
         "She had never seen him before.",
         "We had never been there before."
       ],
-      "tr": { "hu": "Az előtt a nap előtt sosem ettem halat.", "en": "I had never eaten fish before that day.", "es": "Nunca había comido pescado antes de ese día.", "de": "Vor diesem Tag hatte ich noch nie Fisch gegessen." }
+      "tr": { "en": "I had never eaten fish before that day.", "es": "Nunca había comido pescado antes de ese día." }
     },
     {
       "id": "ppf-04",
@@ -417,30 +341,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Az „after” a korábbi eseményt vezeti be, ezért past perfect kell: had finished.",
         "en": "“After” introduces the earlier event, so you need the past perfect: had finished.",
-        "es": "«After» introduce el hecho anterior, así que hace falta el pasado perfecto: had finished.",
-        "de": "„After“ leitet das frühere Ereignis ein, deshalb braucht man das Past Perfect: had finished."
+        "es": "«After» introduce el hecho anterior, así que hace falta el pasado perfecto: had finished."
       },
       "wrong": {
         "has finished": {
-          "hu": "A has finished present perfect; a mondat többi része múlt (watched), ezért had finished kell.",
           "en": "“Has finished” is the present perfect; the rest of the sentence is past (watched), so you need had finished.",
-          "es": "«Has finished» es presente perfecto; el resto de la oración está en pasado (watched), por eso hace falta had finished.",
-          "de": "„Has finished“ ist Present Perfect; der Rest des Satzes steht in der Vergangenheit (watched), deshalb braucht man had finished."
+          "es": "«Has finished» es presente perfecto; el resto de la oración está en pasado (watched), por eso hace falta had finished."
         },
         "finishes": {
-          "hu": "A „finishes” jelen idő, de a mondat múltban van (watched).",
           "en": "“Finishes” is present, but the sentence is in the past (watched).",
-          "es": "«Finishes» es presente, pero la oración está en pasado (watched).",
-          "de": "„Finishes“ ist Präsens, aber der Satz steht in der Vergangenheit (watched)."
+          "es": "«Finishes» es presente, pero la oración está en pasado (watched)."
         }
       },
       "examples": [
         "After he had eaten, he went out.",
         "After they had left, I cleaned the house."
       ],
-      "tr": { "hu": "Miután befejezte a vacsorát, tévét nézett.", "en": "After she had finished dinner, she watched TV.", "es": "Después de que hubo terminado de cenar, vio la tele.", "de": "Nachdem sie zu Abend gegessen hatte, sah sie fern." }
+      "tr": { "en": "After she had finished dinner, she watched TV.", "es": "Después de que hubo terminado de cenar, vio la tele." }
     },
     {
       "id": "ppf-05",
@@ -452,30 +370,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A kulcsot korábban hagytam otthon, mint ahogy az ajtót nem tudtam kinyitni: had left.",
         "en": "I left the keys at home before I could not open the door: had left.",
-        "es": "Dejé las llaves en la casa antes de no poder abrir la puerta: had left.",
-        "de": "Ich ließ die Schlüssel zu Hause, bevor ich die Tür nicht öffnen konnte: had left."
+        "es": "Dejé las llaves en la casa antes de no poder abrir la puerta: had left."
       },
       "wrong": {
         "leave": {
-          "hu": "A „leave” alapige; a because után igenévvel készült had left kell.",
           "en": "“Leave” is the base verb; after because you need had left, made with the participle.",
-          "es": "«Leave» es el verbo base; después de because hace falta had left, formado con el participio.",
-          "de": "„Leave“ ist die Grundform; nach because braucht man had left, gebildet mit dem Partizip."
+          "es": "«Leave» es el verbo base; después de because hace falta had left, formado con el participio."
         },
         "have left": {
-          "hu": "A have left present perfect; a mondat múltban van (could not), ezért had left kell.",
           "en": "“Have left” is the present perfect; the sentence is in the past (could not), so you need had left.",
-          "es": "«Have left» es presente perfecto; la oración está en pasado (could not), por eso hace falta had left.",
-          "de": "„Have left“ ist Present Perfect; der Satz steht in der Vergangenheit (could not), deshalb braucht man had left."
+          "es": "«Have left» es presente perfecto; la oración está en pasado (could not), por eso hace falta had left."
         }
       },
       "examples": [
         "She was sad because she had lost her phone.",
         "I was late because I had missed the bus."
       ],
-      "tr": { "hu": "Nem tudtam kinyitni az ajtót, mert otthon hagytam a kulcsaimat.", "en": "I could not open the door because I had left my keys at home.", "es": "No pude abrir la puerta porque había dejado mis llaves en casa.", "de": "Ich konnte die Tür nicht öffnen, weil ich meine Schlüssel zu Hause gelassen hatte." }
+      "tr": { "en": "I could not open the door because I had left my keys at home.", "es": "No pude abrir la puerta porque había dejado mis llaves en casa." }
     },
     {
       "id": "ppf-06",
@@ -487,30 +399,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Tagadás past perfecttel: hadn’t eaten. A tagadott cselekvés korábbi volt, mint az éhség.",
         "en": "A negative in the past perfect: hadn’t eaten. The action that did not happen came before the hunger.",
-        "es": "Una negación en pasado perfecto: hadn’t eaten. La acción que no ocurrió fue anterior al hambre.",
-        "de": "Eine Verneinung im Past Perfect: hadn’t eaten. Die Handlung, die nicht stattfand, lag vor dem Hunger."
+        "es": "Una negación en pasado perfecto: hadn’t eaten. La acción que no ocurrió fue anterior al hambre."
       },
       "wrong": {
         "haven’t": {
-          "hu": "A haven’t present perfect tagadása; a mondat múltban van (were hungry), ezért hadn’t kell.",
           "en": "“Haven’t” is the present perfect negative; the sentence is in the past (were hungry), so you need hadn’t.",
-          "es": "«Haven’t» es la negación del presente perfecto; la oración está en pasado (were hungry), por eso hace falta hadn’t.",
-          "de": "„Haven’t“ ist die Verneinung des Present Perfect; der Satz steht in der Vergangenheit (were hungry), deshalb braucht man hadn’t."
+          "es": "«Haven’t» es la negación del presente perfecto; la oración está en pasado (were hungry), por eso hace falta hadn’t."
         },
         "weren’t": {
-          "hu": "A „weren’t eaten” szenvedő szerkezet lenne; itt hadn’t + igenév kell.",
           "en": "“Weren’t eaten” would be a passive; here you need hadn’t + participle.",
-          "es": "«Weren’t eaten» sería una pasiva; aquí hace falta hadn’t + participio.",
-          "de": "„Weren’t eaten“ wäre ein Passiv; hier braucht man hadn’t + Partizip."
+          "es": "«Weren’t eaten» sería una pasiva; aquí hace falta hadn’t + participio."
         }
       },
       "examples": [
         "They hadn't slept, so they were tired.",
         "He hadn't eaten, so he was hungry."
       ],
-      "tr": { "hu": "Éhesek voltunk, mert egész nap nem ettünk.", "en": "We were hungry because we hadn’t eaten all day.", "es": "Teníamos hambre porque no habíamos comido en todo el día.", "de": "Wir waren hungrig, weil wir den ganzen Tag nichts gegessen hatten." }
+      "tr": { "en": "We were hungry because we hadn’t eaten all day.", "es": "Teníamos hambre porque no habíamos comido en todo el día." }
     },
     {
       "id": "ppf-07",
@@ -522,30 +428,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A tanár belépése előtti állapotra kérdezünk, ezért past perfect kérdés kell: Had you finished…?",
         "en": "We ask about the state before the teacher came in, so you need a past perfect question: Had you finished…?",
-        "es": "Preguntamos por el estado antes de que entrara el maestro, así que hace falta una pregunta en pasado perfecto: Had you finished…?",
-        "de": "Wir fragen nach dem Zustand vor dem Eintreten des Lehrers, deshalb braucht man eine Frage im Past Perfect: Had you finished…?"
+        "es": "Preguntamos por el estado antes de que entrara el maestro, así que hace falta una pregunta en pasado perfecto: Had you finished…?"
       },
       "wrong": {
         "Did": {
-          "hu": "A did után alapige kell (Did you finish…?); a „finished” igenév, ezért a did nem illik hozzá.",
           "en": "After did you need the base verb (Did you finish…?); “finished” is a participle here, so did does not fit.",
-          "es": "Después de did hace falta el verbo base (Did you finish…?); «finished» es un participio aquí, por eso did no encaja.",
-          "de": "Nach did braucht man die Grundform (Did you finish…?); „finished“ ist hier ein Partizip, deshalb passt did nicht."
+          "es": "Después de did hace falta el verbo base (Did you finish…?); «finished» es un participio aquí, por eso did no encaja."
         },
         "Do": {
-          "hu": "A do jelen idejű kérdést csinálna, és utána alapige kell; itt a past perfect kérdés a jó.",
           "en": "“Do” would make a present question and needs a base verb after it; here the past perfect question is right.",
-          "es": "«Do» formaría una pregunta en presente y necesita un verbo base después; aquí la pregunta en pasado perfecto es la correcta.",
-          "de": "„Do“ würde eine Frage im Präsens bilden und braucht danach die Grundform; hier ist die Frage im Past Perfect richtig."
+          "es": "«Do» formaría una pregunta en presente y necesita un verbo base después; aquí la pregunta en pasado perfecto es la correcta."
         }
       },
       "examples": [
         "Had she left when you arrived?",
         "Had they eaten before the movie?"
       ],
-      "tr": { "hu": "Amikor bejött a tanár, befejezted már a házi feladatodat?", "en": "When the teacher came in, Had you finished your homework?", "es": "Cuando entró el maestro, ¿habías terminado tu tarea?", "de": "Hattest du deine Hausaufgaben fertig, als der Lehrer reinkam?" }
+      "tr": { "en": "When the teacher came in, Had you finished your homework?", "es": "Cuando entró el maestro, ¿habías terminado tu tarea?" }
     },
     {
       "id": "ppf-08",
@@ -557,30 +457,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A had után igenév kell: had written.",
         "en": "After had you need the participle: had written.",
-        "es": "Después de had hace falta el participio: had written.",
-        "de": "Nach had braucht man das Partizip: had written."
+        "es": "Después de had hace falta el participio: had written."
       },
       "wrong": {
         "write": {
-          "hu": "Az „write” alapige; a had után az igenév kell (written).",
           "en": "“Write” is the base verb; after had you need the participle (written).",
-          "es": "«Write» es el verbo base; después de had hace falta el participio (written).",
-          "de": "„Write“ ist die Grundform; nach had braucht man das Partizip (written)."
+          "es": "«Write» es el verbo base; después de had hace falta el participio (written)."
         },
         "wrote": {
-          "hu": "A wrote az egyszerű múlt alakja; a had után az igenév (written) áll.",
           "en": "“Wrote” is the past simple form; after had comes the participle (written).",
-          "es": "«Wrote» es la forma del pasado simple; después de had va el participio (written).",
-          "de": "„Wrote“ ist die Past-Simple-Form; nach had steht das Partizip (written)."
+          "es": "«Wrote» es la forma del pasado simple; después de had va el participio (written)."
         }
       },
       "examples": [
         "He had seen the film before.",
         "We had eaten before they came."
       ],
-      "tr": { "hu": "Megírta a levelet, mielőtt a férfi megérkezett.", "en": "She had written the letter before he came.", "es": "Ella había escrito la carta antes de que él viniera.", "de": "Sie hatte den Brief geschrieben, bevor er kam." }
+      "tr": { "en": "She had written the letter before he came.", "es": "Ella había escrito la carta antes de que él viniera." }
     },
     {
       "id": "ppf-09",
@@ -592,30 +486,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A had already után igenév áll: had already eaten.",
         "en": "After had already comes the participle: had already eaten.",
-        "es": "Después de had already va el participio: had already eaten.",
-        "de": "Nach had already steht das Partizip: had already eaten."
+        "es": "Después de had already va el participio: had already eaten."
       },
       "wrong": {
         "eat": {
-          "hu": "Az „eat” alapige; a had után az igenév kell (eaten).",
           "en": "“Eat” is the base verb; after had you need the participle (eaten).",
-          "es": "«Eat» es el verbo base; después de had hace falta el participio (eaten).",
-          "de": "„Eat“ ist die Grundform; nach had braucht man das Partizip (eaten)."
+          "es": "«Eat» es el verbo base; después de had hace falta el participio (eaten)."
         },
         "ate": {
-          "hu": "Az ate az egyszerű múlt; a had után az igenév (eaten) áll. Nem „had ate”.",
           "en": "“Ate” is the past simple; after had comes the participle (eaten). Not “had ate”.",
-          "es": "«Ate» es el pasado simple; después de had va el participio (eaten). No «had ate».",
-          "de": "„Ate“ ist das Past Simple; nach had steht das Partizip (eaten). Nicht „had ate“."
+          "es": "«Ate» es el pasado simple; después de had va el participio (eaten). No «had ate»."
         }
       },
       "examples": [
         "They had already left.",
         "She had already seen it."
       ],
-      "tr": { "hu": "Mire odaértünk, ők már ettek.", "en": "When we got there, they had already eaten.", "es": "Cuando llegamos ahí, ellos ya habían comido.", "de": "Als wir dort ankamen, hatten sie bereits gegessen." }
+      "tr": { "en": "When we got there, they had already eaten.", "es": "Cuando llegamos ahí, ellos ya habían comido." }
     },
     {
       "id": "ppf-10",
@@ -627,30 +515,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A munka a hívás előtt készült el, ezért before kell: before the boss called.",
         "en": "The work was finished before the call, so you need before: before the boss called.",
-        "es": "El trabajo estaba terminado antes de la llamada, así que hace falta before: before the boss called.",
-        "de": "Die Arbeit war vor dem Anruf fertig, deshalb braucht man before: before the boss called."
+        "es": "El trabajo estaba terminado antes de la llamada, así que hace falta before: before the boss called."
       },
       "wrong": {
         "after": {
-          "hu": "Az after azt jelentené, hogy a hívás után fejeztem be; a had finished viszont korábbi cselekvést jelöl.",
           "en": "“After” would mean I finished after the call; but had finished marks an earlier action.",
-          "es": "«After» significaría que terminé después de la llamada; pero had finished marca una acción anterior.",
-          "de": "„After“ würde heißen, dass ich nach dem Anruf fertig wurde; had finished kennzeichnet aber eine frühere Handlung."
+          "es": "«After» significaría que terminé después de la llamada; pero had finished marca una acción anterior."
         },
         "during": {
-          "hu": "A during után főnév áll (during the call), nem egy teljes mondat (the boss called).",
           "en": "During is followed by a noun (during the call), not by a full clause (the boss called).",
-          "es": "Después de during va un sustantivo (during the call), no una oración completa (the boss called).",
-          "de": "Nach during steht ein Nomen (during the call), kein ganzer Satz (the boss called)."
+          "es": "Después de during va un sustantivo (during the call), no una oración completa (the boss called)."
         }
       },
       "examples": [
         "She had left before I came.",
         "We had eaten before they arrived."
       ],
-      "tr": { "hu": "Befejeztem a munkámat, mielőtt a főnök telefonált.", "en": "I had finished my work before the boss called.", "es": "Había terminado mi trabajo antes de que el jefe llamara.", "de": "Ich hatte meine Arbeit beendet, bevor der Chef anrief." }
+      "tr": { "en": "I had finished my work before the boss called.", "es": "Había terminado mi trabajo antes de que el jefe llamara." }
     },
     {
       "id": "ppf-11",
@@ -662,30 +544,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Az eső előbb esett, mint ahogy az utca nedves volt: it had rained.",
         "en": "The rain fell before the street was wet: it had rained.",
-        "es": "La lluvia cayó antes de que la calle estuviera mojada: it had rained.",
-        "de": "Der Regen fiel, bevor die Straße nass war: it had rained."
+        "es": "La lluvia cayó antes de que la calle estuviera mojada: it had rained."
       },
       "wrong": {
         "has": {
-          "hu": "A has present perfect; a mondat múltbeli képet ír le (was wet), ezért had kell.",
           "en": "“Has” is the present perfect; the sentence describes a picture in the past (was wet), so you need had.",
-          "es": "«Has» es presente perfecto; la oración describe una imagen del pasado (was wet), por eso hace falta had.",
-          "de": "„Has“ ist Present Perfect; der Satz beschreibt ein Bild in der Vergangenheit (was wet), deshalb braucht man had."
+          "es": "«Has» es presente perfecto; la oración describe una imagen del pasado (was wet), por eso hace falta had."
         },
         "was": {
-          "hu": "A „was rained” nem helyes szerkezet; a had + igenév jelöli a korábbi eseményt.",
           "en": "“Was rained” is not a correct structure; had + participle marks the earlier event.",
-          "es": "«Was rained» no es una estructura correcta; had + participio marca el hecho anterior.",
-          "de": "„Was rained“ ist keine korrekte Struktur; had + Partizip kennzeichnet das frühere Ereignis."
+          "es": "«Was rained» no es una estructura correcta; had + participio marca el hecho anterior."
         }
       },
       "examples": [
         "It had snowed in the night.",
         "Someone had opened the window."
       ],
-      "tr": { "hu": "Vizes volt az utca. Éjszaka esett az eső.", "en": "The street was wet. It had rained in the night.", "es": "La calle estaba mojada. Había llovido en la noche.", "de": "Die Straße war nass. Es hatte in der Nacht geregnet." }
+      "tr": { "en": "The street was wet. It had rained in the night.", "es": "La calle estaba mojada. Había llovido en la noche." }
     },
     {
       "id": "ppf-12",
@@ -697,30 +573,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A változás korábbi volt, mint a felismerés pillanata: he had changed.",
         "en": "The change came before the moment I tried to recognize him: he had changed.",
-        "es": "El cambio fue anterior al momento en que intenté reconocerlo: he had changed.",
-        "de": "Die Veränderung lag vor dem Moment, in dem ich ihn erkennen wollte: he had changed."
+        "es": "El cambio fue anterior al momento en que intenté reconocerlo: he had changed."
       },
       "wrong": {
         "has": {
-          "hu": "A has present perfect; a mondat múltbeli pillanatra utal (did not recognize), ezért had kell.",
           "en": "“Has” is the present perfect; the sentence refers to a moment in the past (did not recognize), so you need had.",
-          "es": "«Has» es presente perfecto; la oración se refiere a un momento del pasado (did not recognize), por eso hace falta had.",
-          "de": "„Has“ ist Present Perfect; der Satz bezieht sich auf einen Moment der Vergangenheit (did not recognize), deshalb braucht man had."
+          "es": "«Has» es presente perfecto; la oración se refiere a un momento del pasado (did not recognize), por eso hace falta had."
         },
         "did": {
-          "hu": "A did után alapige kell (did change); a „changed” igenévvel a had jó.",
           "en": "After did you need the base verb (did change); with the participle “changed”, had is right.",
-          "es": "Después de did hace falta el verbo base (did change); con el participio «changed», had es lo correcto.",
-          "de": "Nach did braucht man die Grundform (did change); mit dem Partizip „changed“ ist had richtig."
+          "es": "Después de did hace falta el verbo base (did change); con el participio «changed», had es lo correcto."
         }
       },
       "examples": [
         "She had changed her job.",
         "They had moved to another city."
       ],
-      "tr": { "hu": "Nem ismertem fel, mert sokat változott.", "en": "I did not recognize him because he had changed a lot.", "es": "No lo reconocí porque había cambiado mucho.", "de": "Ich habe ihn nicht erkannt, weil er sich sehr verändert hatte." }
+      "tr": { "en": "I did not recognize him because he had changed a lot.", "es": "No lo reconocí porque había cambiado mucho." }
     },
     {
       "id": "ppf-13",
@@ -732,30 +602,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A told egy múltbeli pillanat; amit mondott, az korábbi esemény volt: had read.",
         "en": "“Told” is a moment in the past; what she said refers to an earlier event: had read.",
-        "es": "«Told» es un momento del pasado; lo que dijo se refiere a un hecho anterior: had read.",
-        "de": "„Told“ ist ein Moment in der Vergangenheit; was sie sagte, betrifft ein früheres Ereignis: had read."
+        "es": "«Told» es un momento del pasado; lo que dijo se refiere a un hecho anterior: had read."
       },
       "wrong": {
         "reads": {
-          "hu": "A „reads” egyszerű jelen; a told múlt, és az olvasás még korábbi volt.",
           "en": "“Reads” is the simple present; told is past, and the reading came even earlier.",
-          "es": "«Reads» es el presente simple; told es pasado, y la lectura fue aún anterior.",
-          "de": "„Reads“ ist das Present Simple; told ist Vergangenheit, und das Lesen lag noch früher."
+          "es": "«Reads» es el presente simple; told es pasado, y la lectura fue aún anterior."
         },
         "was reading": {
-          "hu": "A was reading folyamatos múlt lenne; az „already” kész eseményt kér, ezért had read.",
           "en": "Was reading would be the past continuous; “already” asks for a finished event, so had read.",
-          "es": "Was reading sería el pasado continuo; «already» pide un hecho terminado, por eso had read.",
-          "de": "Was reading wäre das Past Continuous; „already“ verlangt ein abgeschlossenes Ereignis, deshalb had read."
+          "es": "Was reading sería el pasado continuo; «already» pide un hecho terminado, por eso had read."
         }
       },
       "examples": [
         "He said he had seen it already.",
         "She told me she had finished."
       ],
-      "tr": { "hu": "Azt mondta nekem, hogy már olvasta a könyvet.", "en": "She told me she had read the book already.", "es": "Ella me dijo que ya había leído el libro.", "de": "Sie sagte mir, dass sie das Buch schon gelesen hatte." }
+      "tr": { "en": "She told me she had read the book already.", "es": "Ella me dijo que ya había leído el libro." }
     },
     {
       "id": "ppf-14",
@@ -767,30 +631,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A találkozás előtti hosszú időszakot hadn’t seen fejezi ki.",
         "en": "The long period before the meeting is expressed by hadn’t seen.",
-        "es": "El largo periodo antes del encuentro se expresa con hadn’t seen.",
-        "de": "Den langen Zeitraum vor dem Treffen drückt hadn’t seen aus."
+        "es": "El largo periodo antes del encuentro se expresa con hadn’t seen."
       },
       "wrong": {
         "haven't": {
-          "hu": "A haven’t present perfect; a mondat múltban van (were happy), ezért hadn’t kell.",
           "en": "“Haven’t” is the present perfect; the sentence is in the past (were happy), so you need hadn’t.",
-          "es": "«Haven’t» es presente perfecto; la oración está en pasado (were happy), por eso hace falta hadn’t.",
-          "de": "„Haven’t“ ist Present Perfect; der Satz steht in der Vergangenheit (were happy), deshalb braucht man hadn’t."
+          "es": "«Haven’t» es presente perfecto; la oración está en pasado (were happy), por eso hace falta hadn’t."
         },
         "weren't": {
-          "hu": "A „weren’t seen” szenvedő szerkezet lenne; itt hadn’t + igenév kell.",
           "en": "“Weren’t seen” would be a passive; here you need hadn’t + participle.",
-          "es": "«Weren’t seen» sería una pasiva; aquí hace falta hadn’t + participio.",
-          "de": "„Weren’t seen“ wäre ein Passiv; hier braucht man hadn’t + Partizip."
+          "es": "«Weren’t seen» sería una pasiva; aquí hace falta hadn’t + participio."
         }
       },
       "examples": [
         "We hadn't met before.",
         "She hadn't called for a week."
       ],
-      "tr": { "hu": "Évek óta nem láttam, ezért nagyon boldog voltam.", "en": "I hadn't seen him for years, so I was very happy.", "es": "No lo había visto por años, así que estaba muy feliz.", "de": "Ich hatte ihn seit Jahren nicht gesehen, also war ich sehr glücklich." }
+      "tr": { "en": "I hadn't seen him for years, so I was very happy.", "es": "No lo había visto por años, así que estaba muy feliz." }
     },
     {
       "id": "ppf-15",
@@ -802,30 +660,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az események egymás után, kimondott sorrendben történtek (first … after that), ezért mindkettő egyszerű múlt: went.",
         "en": "The events happened in order, with the order stated (first … after that), so both are in the past simple: went.",
-        "es": "Los hechos pasaron en orden, con el orden dicho (first … after that), así que los dos van en pasado simple: went.",
-        "de": "Die Ereignisse passierten nacheinander, die Reihenfolge ist genannt (first … after that), deshalb stehen beide im Past Simple: went."
+        "es": "Los hechos pasaron en orden, con el orden dicho (first … after that), así que los dos van en pasado simple: went."
       },
       "wrong": {
         "had gone": {
-          "hu": "A had gone azt jelentené, hogy már elment, mielőtt a vacsora volt; a first … after that viszont sorrendet ad.",
           "en": "“Had gone” would mean he had already gone out before dinner; but first … after that gives the order.",
-          "es": "«Had gone» significaría que ya había salido antes de la cena; pero first … after that da el orden.",
-          "de": "„Had gone“ würde heißen, dass er schon vor dem Abendessen ausgegangen war; first … after that gibt aber die Reihenfolge an."
+          "es": "«Had gone» significaría que ya había salido antes de la cena; pero first … after that da el orden."
         },
         "goes": {
-          "hu": "A „goes” egyszerű jelen; a mondat múltban van (ate).",
           "en": "“Goes” is the simple present; the sentence is in the past (ate).",
-          "es": "«Goes» es el presente simple; la oración está en pasado (ate).",
-          "de": "„Goes“ ist das Present Simple; der Satz steht in der Vergangenheit (ate)."
+          "es": "«Goes» es el presente simple; la oración está en pasado (ate)."
         }
       },
       "examples": [
         "First I called her, and after that I went home.",
         "He opened the door and came in."
       ],
-      "tr": { "hu": "Előbb megvacsorázott, aztán elment itthonról.", "en": "First he ate dinner, and after that he went out.", "es": "Primero cenó y después de eso salió.", "de": "Zuerst aß er zu Abend und danach ging er aus." }
+      "tr": { "en": "First he ate dinner, and after that he went out.", "es": "Primero cenó y después de eso salió." }
     },
     {
       "id": "ppf-16",
@@ -837,30 +689,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A by the time I called múltbeli pillanat, az elmenetel korábbi volt: he had already left.",
         "en": "“By the time I called” is a moment in the past, and leaving came earlier: he had already left.",
-        "es": "«By the time I called» es un momento del pasado, y el irse fue anterior: he had already left.",
-        "de": "„By the time I called“ ist ein Moment der Vergangenheit, und das Weggehen lag früher: he had already left."
+        "es": "«By the time I called» es un momento del pasado, y el irse fue anterior: he had already left."
       },
       "wrong": {
         "has": {
-          "hu": "A has present perfect; a „by the time I called” múltra utal, ezért had kell.",
           "en": "“Has” is the present perfect; “by the time I called” points to the past, so you need had.",
-          "es": "«Has» es presente perfecto; «by the time I called» apunta al pasado, por eso hace falta had.",
-          "de": "„Has“ ist Present Perfect; „by the time I called“ verweist auf die Vergangenheit, deshalb braucht man had."
+          "es": "«Has» es presente perfecto; «by the time I called» apunta al pasado, por eso hace falta had."
         },
         "did": {
-          "hu": "A did után alapige kell (did leave); a „left” alak mellé had való.",
           "en": "After did you need the base verb (did leave); with the form “left” the helper is had.",
-          "es": "Después de did hace falta el verbo base (did leave); con la forma «left» el auxiliar es had.",
-          "de": "Nach did braucht man die Grundform (did leave); bei der Form „left“ ist had das Hilfsverb."
+          "es": "Después de did hace falta el verbo base (did leave); con la forma «left» el auxiliar es had."
         }
       },
       "examples": [
         "By the time we got there, it had started.",
         "By the time she came, I had gone."
       ],
-      "tr": { "hu": "Mire telefonáltam, ő már elment.", "en": "By the time I called, he had already left.", "es": "Para cuando llamé, él ya se había ido.", "de": "Als ich anrief, war er bereits weggegangen." }
+      "tr": { "en": "By the time I called, he had already left.", "es": "Para cuando llamé, él ya se había ido." }
     },
     {
       "id": "ppf-17",
@@ -872,30 +718,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A tanulás a vizsga előtt történt, ezért had studied: a had minden személyben had.",
         "en": "The studying came before the exam, so had studied: had is the same for every person.",
-        "es": "El estudio fue antes del examen, así que had studied: had es igual para todas las personas.",
-        "de": "Das Lernen lag vor der Prüfung, deshalb had studied: had ist für alle Personen gleich."
+        "es": "El estudio fue antes del examen, así que had studied: had es igual para todas las personas."
       },
       "wrong": {
         "has": {
-          "hu": "A has present perfect; a mondat múltban van (was easy), ezért had kell.",
           "en": "“Has” is the present perfect; the sentence is in the past (was easy), so you need had.",
-          "es": "«Has» es presente perfecto; la oración está en pasado (was easy), por eso hace falta had.",
-          "de": "„Has“ ist Present Perfect; der Satz steht in der Vergangenheit (was easy), deshalb braucht man had."
+          "es": "«Has» es presente perfecto; la oración está en pasado (was easy), por eso hace falta had."
         },
         "have": {
-          "hu": "A have a he mellé sem jó, és present perfect is; a past perfecthez had kell.",
           "en": "“Have” is wrong with he and is also the present perfect; the past perfect needs had.",
-          "es": "«Have» tampoco es correcto con he y además es presente perfecto; el pasado perfecto necesita had.",
-          "de": "„Have“ ist bei he falsch und außerdem Present Perfect; das Past Perfect braucht had."
+          "es": "«Have» tampoco es correcto con he y además es presente perfecto; el pasado perfecto necesita had."
         }
       },
       "examples": [
         "She had worked hard, so she was tired.",
         "We had practiced a lot."
       ],
-      "tr": { "hu": "Sokat tanult, így a vizsga könnyű volt.", "en": "He had studied a lot, so the exam was easy.", "es": "Él había estudiado mucho, así que el examen estuvo fácil.", "de": "Er hatte viel gelernt, daher war die Prüfung einfach." }
+      "tr": { "en": "He had studied a lot, so the exam was easy.", "es": "Él había estudiado mucho, así que el examen estuvo fácil." }
     },
     {
       "id": "ppf-18",
@@ -951,46 +791,34 @@
       "es": "The film had already started when I arrived.",
       "target": "had",
       "tr": {
-        "hu": "A film már elkezdődött, amikor megérkeztem.",
         "en": "The film had already started when I arrived.",
-        "es": "La película ya había empezado cuando llegué.",
-        "de": "Der Film hatte schon angefangen, als ich ankam."
+        "es": "La película ya había empezado cuando llegué."
       },
       "options": [
         {
           "text": {
-            "hu": "egyszerű múlt: két egymás utáni esemény",
             "en": "past simple: two events one after another",
-            "es": "pasado simple: dos hechos uno después del otro",
-            "de": "Past Simple: zwei Ereignisse nacheinander"
+            "es": "pasado simple: dos hechos uno después del otro"
           },
           "wrong": {
-            "hu": "A film még az érkezésem előtt elkezdődött; a had already started a korábbi eseményt jelöli, nem egyszerű sorrendet.",
             "en": "The film started before I arrived; had already started marks the earlier event, not a simple sequence.",
-            "es": "La película empezó antes de que yo llegara; had already started marca el hecho anterior, no una simple secuencia.",
-            "de": "Der Film begann vor meiner Ankunft; had already started kennzeichnet das frühere Ereignis, nicht eine einfache Abfolge."
+            "es": "La película empezó antes de que yo llegara; had already started marca el hecho anterior, no una simple secuencia."
           }
         },
         {
           "text": {
-            "hu": "past perfect: a korábbi esemény két múltbeli közül",
             "en": "past perfect: the earlier of two past events",
-            "es": "pasado perfecto: el más antiguo de dos hechos del pasado",
-            "de": "Past Perfect: das frühere von zwei vergangenen Ereignissen"
+            "es": "pasado perfecto: el más antiguo de dos hechos del pasado"
           }
         },
         {
           "text": {
-            "hu": "present perfect: mostanáig tartó idő",
             "en": "present perfect: time up to now",
-            "es": "presente perfecto: tiempo hasta ahora",
-            "de": "Present Perfect: Zeit bis jetzt"
+            "es": "presente perfecto: tiempo hasta ahora"
           },
           "wrong": {
-            "hu": "A mondat múltbeli pillanatra utal (when I arrived), nem a jelenre; a had already started past perfect.",
             "en": "The sentence refers to a moment in the past (when I arrived), not to now; had already started is the past perfect.",
-            "es": "La oración se refiere a un momento del pasado (when I arrived), no a ahora; had already started es pasado perfecto.",
-            "de": "Der Satz bezieht sich auf einen Moment der Vergangenheit (when I arrived), nicht auf jetzt; had already started ist Past Perfect."
+            "es": "La oración se refiere a un momento del pasado (when I arrived), no a ahora; had already started es pasado perfecto."
           }
         }
       ],
@@ -1002,46 +830,34 @@
       "es": "I went home, and then I called her.",
       "target": "went",
       "tr": {
-        "hu": "Hazamentem, aztán felhívtam.",
         "en": "I went home, and then I called her.",
-        "es": "Me fui a la casa y luego la llamé.",
-        "de": "Ich bin nach Hause gegangen und habe sie dann angerufen."
+        "es": "Me fui a la casa y luego la llamé."
       },
       "options": [
         {
           "text": {
-            "hu": "past perfect: a korábbi esemény",
             "en": "past perfect: the earlier event",
-            "es": "pasado perfecto: el hecho anterior",
-            "de": "Past Perfect: das frühere Ereignis"
+            "es": "pasado perfecto: el hecho anterior"
           },
           "wrong": {
-            "hu": "A „and then” megadja a sorrendet, ezért nem kell past perfect; egyszerű sorrendnél mindkettő egyszerű múlt.",
             "en": "“And then” gives the order, so the past perfect is not needed; in a simple sequence both are in the past simple.",
-            "es": "«And then» da el orden, por eso no hace falta el pasado perfecto; en una secuencia simple los dos van en pasado simple.",
-            "de": "„And then“ gibt die Reihenfolge an, deshalb braucht man kein Past Perfect; in einer einfachen Abfolge stehen beide im Past Simple."
+            "es": "«And then» da el orden, por eso no hace falta el pasado perfecto; en una secuencia simple los dos van en pasado simple."
           }
         },
         {
           "text": {
-            "hu": "present perfect: friss eredmény",
             "en": "present perfect: a recent result",
-            "es": "presente perfecto: un resultado reciente",
-            "de": "Present Perfect: ein frisches Ergebnis"
+            "es": "presente perfecto: un resultado reciente"
           },
           "wrong": {
-            "hu": "A „went” és a „called” egyszerű múlt, kész, egymás utáni események; nincs kapcsolat a jelennel.",
             "en": "“Went” and “called” are past simple, finished events in order; there is no link to now.",
-            "es": "«Went» y «called» son pasado simple, hechos terminados en orden; no hay conexión con ahora.",
-            "de": "„Went“ und „called“ sind Past Simple, abgeschlossene Ereignisse nacheinander; es gibt keine Verbindung zu jetzt."
+            "es": "«Went» y «called» son pasado simple, hechos terminados en orden; no hay conexión con ahora."
           }
         },
         {
           "text": {
-            "hu": "egyszerű múlt: sorrendben történt események",
             "en": "past simple: events that happened in order",
-            "es": "pasado simple: hechos que pasaron en orden",
-            "de": "Past Simple: Ereignisse in zeitlicher Reihenfolge"
+            "es": "pasado simple: hechos que pasaron en orden"
           }
         }
       ],
@@ -1053,46 +869,34 @@
       "es": "By the time we arrived, the shop had closed.",
       "target": "By",
       "tr": {
-        "hu": "Mire megérkeztünk, a bolt bezárt.",
         "en": "By the time we arrived, the shop had closed.",
-        "es": "Para cuando llegamos, la tienda ya había cerrado.",
-        "de": "Als wir ankamen, hatte das Geschäft schon geschlossen."
+        "es": "Para cuando llegamos, la tienda ya había cerrado."
       },
       "options": [
         {
           "text": {
-            "hu": "past perfect: a by the time után a korábbi esemény",
             "en": "past perfect: the earlier event after by the time",
-            "es": "pasado perfecto: el hecho anterior después de by the time",
-            "de": "Past Perfect: das frühere Ereignis nach by the time"
+            "es": "pasado perfecto: el hecho anterior después de by the time"
           }
         },
         {
           "text": {
-            "hu": "egyszerű múlt: lezárt időpont",
             "en": "past simple: a finished time",
-            "es": "pasado simple: un tiempo terminado",
-            "de": "Past Simple: ein abgeschlossener Zeitpunkt"
+            "es": "pasado simple: un tiempo terminado"
           },
           "wrong": {
-            "hu": "Az egyszerű múlt a bezárást külön eseménynek mutatná; a by the time azt jelzi, hogy a bezárás az érkezés előtt történt.",
             "en": "The past simple would show the closing as a separate event; by the time shows that the closing happened before the arrival.",
-            "es": "El pasado simple mostraría el cierre como un hecho separado; by the time muestra que el cierre pasó antes de la llegada.",
-            "de": "Das Past Simple würde das Schließen als eigenes Ereignis zeigen; by the time zeigt, dass das Schließen vor der Ankunft passierte."
+            "es": "El pasado simple mostraría el cierre como un hecho separado; by the time muestra que el cierre pasó antes de la llegada."
           }
         },
         {
           "text": {
-            "hu": "egyszerű jelen: szokás",
             "en": "present simple: a habit",
-            "es": "presente simple: un hábito",
-            "de": "Present Simple: eine Gewohnheit"
+            "es": "presente simple: un hábito"
           },
           "wrong": {
-            "hu": "Egy konkrét múltbeli alkalomról van szó, nem szokásról; a had closed múltbeli korábbi eseményt jelent.",
             "en": "This is about one particular occasion in the past, not a habit; had closed means an earlier event in the past.",
-            "es": "Se trata de una ocasión concreta en el pasado, no de un hábito; had closed significa un hecho anterior en el pasado.",
-            "de": "Es geht um einen bestimmten Anlass in der Vergangenheit, nicht um eine Gewohnheit; had closed bedeutet ein früheres Ereignis in der Vergangenheit."
+            "es": "Se trata de una ocasión concreta en el pasado, no de un hábito; had closed significa un hecho anterior en el pasado."
           }
         }
       ],
@@ -1104,46 +908,34 @@
       "es": "I was tired because I hadn’t slept.",
       "target": "hadn’t",
       "tr": {
-        "hu": "Fáradt voltam, mert nem aludtam.",
         "en": "I was tired because I hadn’t slept.",
-        "es": "Estaba cansado porque no había dormido.",
-        "de": "Ich war müde, weil ich nicht geschlafen hatte."
+        "es": "Estaba cansado porque no había dormido."
       },
       "options": [
         {
           "text": {
-            "hu": "egyszerű múlt tagadása: egy lezárt időpontban",
             "en": "past simple negative: at a finished time",
-            "es": "negación del pasado simple: en un tiempo terminado",
-            "de": "Verneinung im Past Simple: zu einem abgeschlossenen Zeitpunkt"
+            "es": "negación del pasado simple: en un tiempo terminado"
           },
           "wrong": {
-            "hu": "A hadn’t slept a fáradtság előtti időszakról szól, nem egy lezárt időpontról; ez a past perfect tagadása.",
             "en": "Hadn’t slept refers to the time before the tiredness, not to a finished point in time; this is the past perfect negative.",
-            "es": "Hadn’t slept se refiere al tiempo antes del cansancio, no a un punto terminado en el tiempo; es la negación del pasado perfecto.",
-            "de": "Hadn’t slept bezieht sich auf die Zeit vor der Müdigkeit, nicht auf einen abgeschlossenen Zeitpunkt; das ist die Verneinung des Past Perfect."
+            "es": "Hadn’t slept se refiere al tiempo antes del cansancio, no a un punto terminado en el tiempo; es la negación del pasado perfecto."
           }
         },
         {
           "text": {
-            "hu": "present perfect tagadása: most is így van",
             "en": "present perfect negative: still true now",
-            "es": "negación del presente perfecto: sigue siendo así ahora",
-            "de": "Verneinung im Present Perfect: gilt auch jetzt"
+            "es": "negación del presente perfecto: sigue siendo así ahora"
           },
           "wrong": {
-            "hu": "A mondat múltban van (was tired), ezért a hadn’t a past perfect; a haven’t a mostanáig tartó időt jelölné.",
             "en": "The sentence is in the past (was tired), so hadn’t is the past perfect; haven’t would show time up to now.",
-            "es": "La oración está en pasado (was tired), por eso hadn’t es el pasado perfecto; haven’t indicaría el tiempo hasta ahora.",
-            "de": "Der Satz steht in der Vergangenheit (was tired), deshalb ist hadn’t das Past Perfect; haven’t würde die Zeit bis jetzt zeigen."
+            "es": "La oración está en pasado (was tired), por eso hadn’t es el pasado perfecto; haven’t indicaría el tiempo hasta ahora."
           }
         },
         {
           "text": {
-            "hu": "past perfect tagadása: a fáradtság előtti időszak",
             "en": "past perfect negative: the time before the tiredness",
-            "es": "negación del pasado perfecto: el tiempo antes del cansancio",
-            "de": "Verneinung im Past Perfect: die Zeit vor der Müdigkeit"
+            "es": "negación del pasado perfecto: el tiempo antes del cansancio"
           }
         }
       ],
@@ -1155,46 +947,34 @@
       "es": "She told me she had read the book.",
       "target": "had",
       "tr": {
-        "hu": "Azt mondta, hogy elolvasta a könyvet.",
         "en": "She told me she had read the book.",
-        "es": "Me dijo que había leído el libro.",
-        "de": "Sie sagte mir, dass sie das Buch gelesen hatte."
+        "es": "Me dijo que había leído el libro."
       },
       "options": [
         {
           "text": {
-            "hu": "present perfect: friss eredmény",
             "en": "present perfect: a recent result",
-            "es": "presente perfecto: un resultado reciente",
-            "de": "Present Perfect: ein frisches Ergebnis"
+            "es": "presente perfecto: un resultado reciente"
           },
           "wrong": {
-            "hu": "A told múlt idő, ezért a had read is múltra utal; a has read present perfect lenne.",
             "en": "Told is past, so had read also refers to the past; has read would be the present perfect.",
-            "es": "Told es pasado, por eso had read también apunta al pasado; has read sería presente perfecto.",
-            "de": "Told ist Vergangenheit, deshalb verweist auch had read auf die Vergangenheit; has read wäre Present Perfect."
+            "es": "Told es pasado, por eso had read también apunta al pasado; has read sería presente perfecto."
           }
         },
         {
           "text": {
-            "hu": "past perfect: az olvasás korábbi volt, mint a mondás",
             "en": "past perfect: the reading came before the telling",
-            "es": "pasado perfecto: la lectura fue anterior al decir",
-            "de": "Past Perfect: das Lesen lag vor dem Sagen"
+            "es": "pasado perfecto: la lectura fue anterior al decir"
           }
         },
         {
           "text": {
-            "hu": "egyszerű múlt: egyidejű események",
             "en": "past simple: events at the same time",
-            "es": "pasado simple: hechos al mismo tiempo",
-            "de": "Past Simple: gleichzeitige Ereignisse"
+            "es": "pasado simple: hechos al mismo tiempo"
           },
           "wrong": {
-            "hu": "Az olvasás nem egyidejű a mondással, hanem előtte történt; ezt a had read fejezi ki.",
             "en": "The reading did not happen at the same time as the telling but before it; had read expresses that.",
-            "es": "La lectura no ocurrió al mismo tiempo que el decir, sino antes; had read expresa eso.",
-            "de": "Das Lesen fand nicht gleichzeitig mit dem Sagen statt, sondern davor; had read drückt das aus."
+            "es": "La lectura no ocurrió al mismo tiempo que el decir, sino antes; had read expresa eso."
           }
         }
       ],

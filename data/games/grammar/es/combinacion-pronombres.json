@@ -3,203 +3,159 @@
   "topic": "combinacion-pronombres",
   "level": "A2",
   "title": {
-    "hu": "Két névmás együtt: se lo doy",
     "en": "Two pronouns together: se lo doy",
-    "es": "Dos pronombres juntos: se lo doy",
-    "de": "Zwei Pronomen zusammen: se lo doy"
+    "es": "Dos pronombres juntos: se lo doy"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "Ha egy mondatban a címzett (kinek) és a dolog (mit) is névmás, a kettő egymás mellé kerül, mindig ugyanabban a sorrendben: előbb a részes eset, utána a tárgyeset névmás (me lo, te la, nos los). A harmadik személyű le és les ilyenkor se-vé változik: se lo, se la. A pár egy darabban áll az ige előtt, vagy együtt tapad az infinitivo és a gerundio végére.",
         "en": "When both the recipient (to whom) and the thing (what) in a sentence are pronouns, the two go next to each other, always in the same order: the indirect pronoun first, then the direct pronoun (me lo, te la, nos los). The third-person le and les turn into se in this position: se lo, se la. The pair stands as one block before the verb, or attaches together to the end of an infinitive or a gerund.",
-        "es": "Cuando en una frase tanto el destinatario (a quién) como la cosa (qué) son pronombres, los dos van juntos y siempre en el mismo orden: primero el indirecto y después el directo (me lo, te la, nos los). Le y les, de tercera persona, se convierten entonces en se: se lo, se la. La pareja va como un bloque delante del verbo, o se pega junta al final de un infinitivo o de un gerundio.",
-        "de": "Wenn in einem Satz sowohl der Empfänger (wem) als auch die Sache (was) Pronomen sind, stehen beide nebeneinander, immer in derselben Reihenfolge: zuerst das indirekte, dann das direkte Pronomen (me lo, te la, nos los). Das Pronomen le oder les der dritten Person wird dabei zu se: se lo, se la. Das Paar steht als ein Block vor dem Verb oder hängt gemeinsam am Ende eines Infinitivs oder Gerundiums."
+        "es": "Cuando en una frase tanto el destinatario (a quién) como la cosa (qué) son pronombres, los dos van juntos y siempre en el mismo orden: primero el indirecto y después el directo (me lo, te la, nos los). Le y les, de tercera persona, se convierten entonces en se: se lo, se la. La pareja va como un bloque delante del verbo, o se pega junta al final de un infinitivo o de un gerundio."
       }
     },
     {
       "kind": "usage",
       "title": {
-        "hu": "Szabályok",
         "en": "Rules",
-        "es": "Reglas",
-        "de": "Regeln"
+        "es": "Reglas"
       },
       "points": [
         {
           "text": {
-            "hu": "A sorrend kötött: előbb a részes eset névmás (me, te, se, nos), utána a tárgyeset névmás (lo, la, los, las). Fordítva nem lehet, és nem kerülhet közéjük semmi.",
             "en": "The order is fixed: the indirect pronoun (me, te, se, nos) comes first, then the direct pronoun (lo, la, los, las). It cannot be reversed, and nothing can go between them.",
-            "es": "El orden es fijo: primero el pronombre indirecto (me, te, se, nos) y después el directo (lo, la, los, las). No se puede invertir, y nada puede ir entre los dos.",
-            "de": "Die Reihenfolge ist fest: zuerst das indirekte Pronomen (me, te, se, nos), dann das direkte (lo, la, los, las). Man kann sie nicht umkehren, und nichts darf dazwischen stehen."
+            "es": "El orden es fijo: primero el pronombre indirecto (me, te, se, nos) y después el directo (lo, la, los, las). No se puede invertir, y nada puede ir entre los dos."
           },
           "examples": [
             {
               "es": "Mi hermana me lo trae hoy.",
               "tr": {
-                "hu": "A nővérem ma hozza nekem.",
                 "en": "My sister brings it to me today.",
-                "es": "Mi hermana me lo trae hoy.",
-                "de": "Meine Schwester bringt es mir heute."
+                "es": "Mi hermana me lo trae hoy."
               }
             },
             {
               "es": "Yo te la llevo mañana.",
               "tr": {
-                "hu": "Holnap viszem neked.",
                 "en": "I take it to you tomorrow.",
-                "es": "Yo te la llevo mañana.",
-                "de": "Ich bringe sie dir morgen."
+                "es": "Yo te la llevo mañana."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A második névmás (lo, la, los, las) mindig a dologhoz igazodik nemben és számban, nem a címzetthez: egy könyvet adsz két embernek, mégis se lo.",
             "en": "The second pronoun (lo, la, los, las) always agrees in gender and number with the thing, not with the recipient: you give one book to two people, yet it is still se lo.",
-            "es": "El segundo pronombre (lo, la, los, las) concuerda siempre en género y número con la cosa, no con el destinatario: das un libro a dos personas y sigue siendo se lo.",
-            "de": "Das zweite Pronomen (lo, la, los, las) richtet sich immer nach Geschlecht und Zahl der Sache, nicht nach dem Empfänger: Du gibst zwei Personen ein Buch und sagst trotzdem se lo."
+            "es": "El segundo pronombre (lo, la, los, las) concuerda siempre en género y número con la cosa, no con el destinatario: das un libro a dos personas y sigue siendo se lo."
           },
           "examples": [
             {
               "es": "¿Las llaves? Te las doy hoy.",
               "tr": {
-                "hu": "A kulcsok? Ma odaadom neked.",
                 "en": "The keys? I give them to you today.",
-                "es": "¿Las llaves? Te las doy hoy.",
-                "de": "Die Schlüssel? Ich gebe sie dir heute."
+                "es": "¿Las llaves? Te las doy hoy."
               }
             },
             {
               "es": "¿El café? Te lo compro ahora.",
               "tr": {
-                "hu": "A kávé? Most megveszem neked.",
                 "en": "The coffee? I buy it for you now.",
-                "es": "¿El café? Te lo compro ahora.",
-                "de": "Der Kaffee? Ich kaufe ihn dir jetzt."
+                "es": "¿El café? Te lo compro ahora."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Ha a részes eset névmás le vagy les, és utána lo, la, los vagy las következne, a le és a les se-vé válik, mert a spanyolban két l-lel kezdődő névmás nem állhat egymás mellett: se lo, se la, se los, se las.",
             "en": "When the indirect pronoun is le or les and lo, la, los or las would follow, le and les turn into se, because in Spanish two pronouns beginning with l cannot stand side by side: se lo, se la, se los, se las.",
-            "es": "Cuando el pronombre indirecto es le o les y detrás iría lo, la, los o las, le y les se convierten en se, porque en español dos pronombres que empiezan por l no pueden ir juntos: se lo, se la, se los, se las.",
-            "de": "Ist das indirekte Pronomen le oder les und würde lo, la, los oder las folgen, werden le und les zu se, weil im Spanischen zwei Pronomen mit l nicht nebeneinanderstehen dürfen: se lo, se la, se los, se las."
+            "es": "Cuando el pronombre indirecto es le o les y detrás iría lo, la, los o las, le y les se convierten en se, porque en español dos pronombres que empiezan por l no pueden ir juntos: se lo, se la, se los, se las."
           },
           "examples": [
             {
               "es": "Le doy el regalo a Ana. Se lo doy.",
               "tr": {
-                "hu": "Odaadom Anának az ajándékot. Odaadom neki.",
                 "en": "I give Ana the gift. I give it to her.",
-                "es": "Le doy el regalo a Ana. Se lo doy.",
-                "de": "Ich gebe Ana das Geschenk. Ich gebe es ihr."
+                "es": "Le doy el regalo a Ana. Se lo doy."
               }
             },
             {
               "es": "Les escribo una carta a mis papás. Se la escribo.",
               "tr": {
-                "hu": "Levelet írok a szüleimnek. Megírom nekik.",
                 "en": "I write a letter to my parents. I write it to them.",
-                "es": "Les escribo una carta a mis papás. Se la escribo.",
-                "de": "Ich schreibe meinen Eltern einen Brief. Ich schreibe ihn ihnen."
+                "es": "Les escribo una carta a mis papás. Se la escribo."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A se nem árulja el, kiről van szó: lehet neki, nekik, Önnek vagy Önöknek. Ha félreérthető, a mondat végére teszünk egy a + személy részt (a él, a ella, a usted, a ellos), a névmás ettől még kötelező marad.",
             "en": "Se does not say who is meant: it can be to him, to her, to them or to you (formal). If it could be unclear, add an a + person phrase at the end (a él, a ella, a usted, a ellos); the pronoun stays obligatory anyway.",
-            "es": "Se no dice de quién se trata: puede ser a él, a ella, a ellos o a usted. Si puede haber duda, se añade al final una parte con a + persona (a él, a ella, a usted, a ellos); el pronombre sigue siendo obligatorio.",
-            "de": "Se verrät nicht, wer gemeint ist: es kann ihm, ihr, ihnen oder Ihnen heißen. Ist es missverständlich, hängt man am Ende a + Person an (a él, a ella, a usted, a ellos); das Pronomen bleibt trotzdem Pflicht."
+            "es": "Se no dice de quién se trata: puede ser a él, a ella, a ellos o a usted. Si puede haber duda, se añade al final una parte con a + persona (a él, a ella, a usted, a ellos); el pronombre sigue siendo obligatorio."
           },
           "examples": [
             {
               "es": "Se lo doy a ella.",
               "tr": {
-                "hu": "Odaadom neki, a nőnek.",
                 "en": "I give it to her.",
-                "es": "Se lo doy a ella.",
-                "de": "Ich gebe es ihr."
+                "es": "Se lo doy a ella."
               }
             },
             {
               "es": "Se lo doy a ustedes.",
               "tr": {
-                "hu": "Odaadom Önöknek.",
                 "en": "I give it to you all.",
-                "es": "Se lo doy a ustedes.",
-                "de": "Ich gebe es Ihnen."
+                "es": "Se lo doy a ustedes."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Ragozott ige előtt a két névmás egy tömbként áll közvetlenül az ige előtt. A tagadószó (no) a tömb elé kerül, és semmi más nem állhat a névmások között.",
             "en": "Before a conjugated verb the two pronouns stand as one block right in front of the verb. The negative word (no) goes before the block, and nothing else may come between the pronouns.",
-            "es": "Delante de un verbo conjugado, los dos pronombres van como un bloque justo antes del verbo. La palabra no va antes del bloque, y nada más puede ir entre los pronombres.",
-            "de": "Vor einem konjugierten Verb stehen die beiden Pronomen als ein Block direkt vor dem Verb. Das Wort no steht vor dem Block, und nichts anderes darf zwischen den Pronomen stehen."
+            "es": "Delante de un verbo conjugado, los dos pronombres van como un bloque justo antes del verbo. La palabra no va antes del bloque, y nada más puede ir entre los pronombres."
           },
           "examples": [
             {
               "es": "Mi tío nos lo da cada mes.",
               "tr": {
-                "hu": "A nagybátyám minden hónapban odaadja nekünk.",
                 "en": "My uncle gives it to us every month.",
-                "es": "Mi tío nos lo da cada mes.",
-                "de": "Mein Onkel gibt es uns jeden Monat."
+                "es": "Mi tío nos lo da cada mes."
               }
             },
             {
               "es": "No se lo vendo a nadie.",
               "tr": {
-                "hu": "Nem adom el senkinek.",
                 "en": "I don't sell it to anyone.",
-                "es": "No se lo vendo a nadie.",
-                "de": "Ich verkaufe es niemandem."
+                "es": "No se lo vendo a nadie."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Infinitivo vagy gerundio mellett a pár együtt tapad a végére, vagy egyben a ragozott segédige elé kerül. Ha a két névmás tapad, ékezet kell: az infinitivónál is (comprártelo), a gerundiónál is (escribiéndotela).",
             "en": "With an infinitive or a gerund the pair attaches together to the end, or goes as one block before the conjugated auxiliary. When the two pronouns attach, a written accent is required: on the infinitive too (comprártelo) and on the gerund (escribiéndotela).",
-            "es": "Con un infinitivo o un gerundio, la pareja se pega junta al final, o va como un bloque delante del verbo conjugado. Cuando se pegan los dos pronombres, hace falta tilde: también en el infinitivo (comprártelo) y en el gerundio (escribiéndotela).",
-            "de": "Bei einem Infinitiv oder Gerundium hängt das Paar gemeinsam am Ende, oder es steht als Block vor dem konjugierten Hilfsverb. Hängen beide Pronomen an, ist ein Akzent Pflicht: auch beim Infinitiv (comprártelo) und beim Gerundium (escribiéndotela)."
+            "es": "Con un infinitivo o un gerundio, la pareja se pega junta al final, o va como un bloque delante del verbo conjugado. Cuando se pegan los dos pronombres, hace falta tilde: también en el infinitivo (comprártelo) y en el gerundio (escribiéndotela)."
           },
           "examples": [
             {
               "es": "Voy a llevártelo mañana.",
               "tr": {
-                "hu": "Holnap elviszem neked.",
                 "en": "I am going to take it to you tomorrow.",
-                "es": "Voy a llevártelo mañana.",
-                "de": "Ich bringe es dir morgen."
+                "es": "Voy a llevártelo mañana."
               }
             },
             {
               "es": "Te lo voy a llevar mañana.",
               "tr": {
-                "hu": "Holnap elviszem neked.",
                 "en": "I am going to take it to you tomorrow.",
-                "es": "Te lo voy a llevar mañana.",
-                "de": "Ich bringe es dir morgen."
+                "es": "Te lo voy a llevar mañana."
               }
             },
             {
               "es": "Estoy escribiéndosela a mi jefe.",
               "tr": {
-                "hu": "Épp írom a főnökömnek.",
                 "en": "I am writing it to my boss right now.",
-                "es": "Estoy escribiéndosela a mi jefe.",
-                "de": "Ich schreibe es gerade meinem Chef."
+                "es": "Estoy escribiéndosela a mi jefe."
               }
             }
           ]
@@ -210,23 +166,17 @@
       "kind": "table",
       "id": "combinacion-pares",
       "title": {
-        "hu": "Melyik névmás-pár kell?",
         "en": "Which pronoun pair is needed?",
-        "es": "¿Qué pareja de pronombres hace falta?",
-        "de": "Welches Pronomenpaar wird gebraucht?"
+        "es": "¿Qué pareja de pronombres hace falta?"
       },
       "header": [
         {
-          "hu": "helyzet",
           "en": "situation",
-          "es": "situación",
-          "de": "Situation"
+          "es": "situación"
         },
         {
-          "hu": "névmás-pár",
           "en": "pronoun pair",
-          "es": "pareja de pronombres",
-          "de": "Pronomenpaar"
+          "es": "pareja de pronombres"
         }
       ],
       "rows": [
@@ -283,38 +233,30 @@
     {
       "kind": "contrast",
       "title": {
-        "hu": "Hasonló, mégis más",
         "en": "Similar, yet different",
-        "es": "Parecido, pero distinto",
-        "de": "Ähnlich, aber anders"
+        "es": "Parecido, pero distinto"
       },
       "pairs": [
         {
           "a": "te lo doy",
           "b": "se lo doy",
           "note": {
-            "hu": "A te (és a me, a nos) soha nem változik: csak a le és a les lesz se-vé. A te lo annak szól, akivel beszélsz, a se lo egy harmadik személynek vagy Önnek.",
             "en": "Te (and me, nos) never changes: only le and les turn into se. Te lo is for the person you are talking to, se lo for a third person or a formal you.",
-            "es": "Te (y me, nos) nunca cambia: solo le y les se convierten en se. Te lo es para la persona con quien hablas, se lo para una tercera persona o para usted.",
-            "de": "Te (und me, nos) ändert sich nie: nur le und les werden zu se. Te lo gilt der Person, mit der du sprichst, se lo einer dritten Person oder dem Sie."
+            "es": "Te (y me, nos) nunca cambia: solo le y les se convierten en se. Te lo es para la persona con quien hablas, se lo para una tercera persona o para usted."
           },
           "examples": [
             {
               "es": "Te lo doy hoy.",
               "tr": {
-                "hu": "Ma odaadom neked.",
                 "en": "I give it to you today.",
-                "es": "Te lo doy hoy.",
-                "de": "Ich gebe es dir heute."
+                "es": "Te lo doy hoy."
               }
             },
             {
               "es": "Se lo doy a mi jefe.",
               "tr": {
-                "hu": "Odaadom a főnökömnek.",
                 "en": "I give it to my boss.",
-                "es": "Se lo doy a mi jefe.",
-                "de": "Ich gebe es meinem Chef."
+                "es": "Se lo doy a mi jefe."
               }
             }
           ]
@@ -323,28 +265,22 @@
           "a": "se lo doy a mis padres",
           "b": "se los doy a mi madre",
           "note": {
-            "hu": "A lo és a los a dologhoz tartozik, nem a címzetthez: egy könyv két szülőnek is se lo, több könyv egy anyának is se los.",
             "en": "Lo and los belong to the thing, not to the recipient: one book for two parents is still se lo, several books for one mother is se los.",
-            "es": "Lo y los pertenecen a la cosa, no al destinatario: un libro para dos padres sigue siendo se lo, varios libros para una madre son se los.",
-            "de": "Lo und los gehören zur Sache, nicht zum Empfänger: ein Buch für zwei Eltern bleibt se lo, mehrere Bücher für eine Mutter sind se los."
+            "es": "Lo y los pertenecen a la cosa, no al destinatario: un libro para dos padres sigue siendo se lo, varios libros para una madre son se los."
           },
           "examples": [
             {
               "es": "El libro, se lo doy a mis padres.",
               "tr": {
-                "hu": "A könyvet a szüleimnek adom.",
                 "en": "The book, I give it to my parents.",
-                "es": "El libro, se lo doy a mis padres.",
-                "de": "Das Buch gebe ich meinen Eltern."
+                "es": "El libro, se lo doy a mis padres."
               }
             },
             {
               "es": "Los libros, se los doy a mi madre.",
               "tr": {
-                "hu": "A könyveket az anyámnak adom.",
                 "en": "The books, I give them to my mother.",
-                "es": "Los libros, se los doy a mi madre.",
-                "de": "Die Bücher gebe ich meiner Mutter."
+                "es": "Los libros, se los doy a mi madre."
               }
             }
           ]
@@ -353,28 +289,22 @@
           "a": "voy a comprártelo",
           "b": "te lo voy a comprar",
           "note": {
-            "hu": "Mindkettő helyes, és ugyanazt jelenti: a pár vagy az infinitivo végére tapad (ékezettel), vagy egyben a segédige elé kerül. Keverni nem lehet: a „voy a te lo comprar” hiba.",
             "en": "Both are correct and mean the same: the pair either attaches to the end of the infinitive (with an accent) or goes as one block before the auxiliary. They cannot be mixed: voy a te lo comprar is a mistake.",
-            "es": "Las dos son correctas y significan lo mismo: la pareja se pega al final del infinitivo (con tilde) o va como un bloque delante del auxiliar. No se pueden mezclar: voy a te lo comprar es un error.",
-            "de": "Beide sind richtig und bedeuten dasselbe: das Paar hängt am Ende des Infinitivs (mit Akzent) oder steht als Block vor dem Hilfsverb. Mischen darf man sie nicht: voy a te lo comprar ist ein Fehler."
+            "es": "Las dos son correctas y significan lo mismo: la pareja se pega al final del infinitivo (con tilde) o va como un bloque delante del auxiliar. No se pueden mezclar: voy a te lo comprar es un error."
           },
           "examples": [
             {
               "es": "Voy a comprártelo hoy.",
               "tr": {
-                "hu": "Ma megveszem neked.",
                 "en": "I am going to buy it for you today.",
-                "es": "Voy a comprártelo hoy.",
-                "de": "Ich kaufe es dir heute."
+                "es": "Voy a comprártelo hoy."
               }
             },
             {
               "es": "Te lo voy a comprar hoy.",
               "tr": {
-                "hu": "Ma megveszem neked.",
                 "en": "I am going to buy it for you today.",
-                "es": "Te lo voy a comprar hoy.",
-                "de": "Ich kaufe es dir heute."
+                "es": "Te lo voy a comprar hoy."
               }
             }
           ]
@@ -384,18 +314,14 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Gyors próba: ha két l-lel kezdődő névmás kerülne egymás mellé (le lo, les los), az első mindig se. Ha nem le vagy les van, a névmás nem változik: te lo, me la, nos los.",
         "en": "Quick test: if two pronouns beginning with l would stand side by side (le lo, les los), the first one always becomes se. If it is not le or les, the pronoun does not change: te lo, me la, nos los.",
-        "es": "Prueba rápida: si dos pronombres con l fueran juntos (le lo, les los), el primero siempre se convierte en se. Si no es le ni les, el pronombre no cambia: te lo, me la, nos los.",
-        "de": "Schnelltest: Würden zwei Pronomen mit l nebeneinanderstehen (le lo, les los), wird das erste immer zu se. Ist es nicht le oder les, bleibt das Pronomen unverändert: te lo, me la, nos los."
+        "es": "Prueba rápida: si dos pronombres con l fueran juntos (le lo, les los), el primero siempre se convierte en se. Si no es le ni les, el pronombre no cambia: te lo, me la, nos los."
       }
     }
   ],
   "speak": {
-    "hu": "Ha egy mondatban a címzett és a dolog is névmás, a két névmás egymás mellé kerül, és mindig ugyanabban a sorrendben áll: előbb a címzett névmása, utána a dolog névmása. A második névmás nemben és számban a dologhoz igazodik, nem a címzetthez. Ha a címzett harmadik személy, a névmása l betűvel kezdődik, és ha mögötte is l betűs névmás következne, az első helyére egy rövid s betűs szó lép, mert két l betűs névmás nem állhat egymás mellett. Ez az s betűs szó nem mutatja a számot és a személyt, ezért ha kell, a mondat végén megnevezzük, kiről van szó. A beszélő és a hallgató névmása nem változik. A névmás-pár egy darabban áll a ragozott ige előtt, a tagadószó pedig a pár elé kerül. Főnévi igenév vagy gerundium mellett a két névmás együtt tapad a szó végére, és ilyenkor mindig kell az ékezet.",
     "en": "When both the recipient and the thing in a sentence are pronouns, the two pronouns go side by side, always in the same order: the pronoun for the recipient first, then the pronoun for the thing. The second pronoun agrees in gender and number with the thing, not with the recipient. When the recipient is a third person, its pronoun starts with the letter l, and if another pronoun starting with l would follow, a short word starting with s takes the place of the first one, because two pronouns starting with l cannot stand next to each other. That s word shows neither number nor person, so when needed, we name the person at the end of the sentence. The pronouns for the speaker and the listener never change. The pair stands as one block before the conjugated verb, and the negative word goes before the pair. With an infinitive or a gerund, the two pronouns attach together to the end of the word, and then a written accent is always needed.",
-    "es": "Cuando en una frase el destinatario y la cosa son pronombres, los dos pronombres van juntos y siempre en el mismo orden: primero el del destinatario y después el de la cosa. El segundo pronombre concuerda en género y número con la cosa, no con el destinatario. Cuando el destinatario es de tercera persona, su pronombre empieza por la letra l, y si detrás vendría otro pronombre con l, una palabra corta con s ocupa el lugar del primero, porque dos pronombres con l no pueden ir juntos. Esa palabra con s no muestra ni el número ni la persona, así que, si hace falta, se nombra a la persona al final de la frase. Los pronombres del hablante y del oyente nunca cambian. La pareja va como un bloque delante del verbo conjugado, y la palabra de negación va antes de la pareja. Con un infinitivo o un gerundio, los dos pronombres se pegan juntos al final de la palabra, y entonces siempre hace falta la tilde.",
-    "de": "Wenn in einem Satz sowohl der Empfänger als auch die Sache Pronomen sind, stehen die beiden Pronomen nebeneinander, immer in derselben Reihenfolge: zuerst das Pronomen des Empfängers, dann das der Sache. Das zweite Pronomen richtet sich in Geschlecht und Zahl nach der Sache, nicht nach dem Empfänger. Ist der Empfänger eine dritte Person, beginnt sein Pronomen mit dem Buchstaben l, und würde danach ein weiteres Pronomen mit l folgen, tritt anstelle des ersten ein kurzes Wort mit s, weil zwei Pronomen mit l nicht nebeneinanderstehen dürfen. Dieses Wort mit s zeigt weder Zahl noch Person an, deshalb nennt man die Person bei Bedarf am Satzende. Die Pronomen für Sprecher und Hörer ändern sich nie. Das Paar steht als ein Block vor dem konjugierten Verb, und das Verneinungswort steht vor dem Paar. Bei einem Infinitiv oder Gerundium hängen die beiden Pronomen gemeinsam am Wortende, und dann ist immer ein Akzent nötig."
+    "es": "Cuando en una frase el destinatario y la cosa son pronombres, los dos pronombres van juntos y siempre en el mismo orden: primero el del destinatario y después el de la cosa. El segundo pronombre concuerda en género y número con la cosa, no con el destinatario. Cuando el destinatario es de tercera persona, su pronombre empieza por la letra l, y si detrás vendría otro pronombre con l, una palabra corta con s ocupa el lugar del primero, porque dos pronombres con l no pueden ir juntos. Esa palabra con s no muestra ni el número ni la persona, así que, si hace falta, se nombra a la persona al final de la frase. Los pronombres del hablante y del oyente nunca cambian. La pareja va como un bloque delante del verbo conjugado, y la palabra de negación va antes de la pareja. Con un infinitivo o un gerundio, los dos pronombres se pegan juntos al final de la palabra, y entonces siempre hace falta la tilde."
   },
   "items": [
     {
@@ -408,30 +334,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A mi hermana a címzett (le), az el regalo a dolog (lo), és a le + lo helyén se lo áll.",
         "en": "Mi hermana is the recipient (le), el regalo is the thing (lo), and in place of le + lo we use se lo.",
-        "es": "Mi hermana es el destinatario (le), el regalo es la cosa (lo), y en lugar de le + lo se dice se lo.",
-        "de": "Mi hermana ist der Empfänger (le), el regalo die Sache (lo), und anstelle von le + lo steht se lo."
+        "es": "Mi hermana es el destinatario (le), el regalo es la cosa (lo), y en lugar de le + lo se dice se lo."
       },
       "wrong": {
         "Le lo": {
-          "hu": "A le és a lo két l-lel kezdődő névmás egymás mellett, ezt a spanyol nem engedi: a le se-vé válik. Helyesen: se lo doy.",
           "en": "Le and lo are two pronouns beginning with l side by side, which Spanish does not allow: le turns into se. Correct: se lo doy.",
-          "es": "Le y lo son dos pronombres con l juntos, y el español no lo admite: le se convierte en se. Lo correcto es se lo doy.",
-          "de": "Le und lo sind zwei Pronomen mit l nebeneinander, das erlaubt das Spanische nicht: le wird zu se. Richtig: se lo doy."
+          "es": "Le y lo son dos pronombres con l juntos, y el español no lo admite: le se convierte en se. Lo correcto es se lo doy."
         },
         "Lo se": {
-          "hu": "A sorrend kötött: előbb a részes eset névmás (se), utána a tárgyeset (lo). A lo se fordított sorrend. Helyesen: se lo doy.",
           "en": "The order is fixed: the indirect pronoun (se) first, then the direct one (lo). Lo se is reversed. Correct: se lo doy.",
-          "es": "El orden es fijo: primero el pronombre indirecto (se) y después el directo (lo). Lo se está invertido. Lo correcto es se lo doy.",
-          "de": "Die Reihenfolge ist fest: zuerst das indirekte Pronomen (se), dann das direkte (lo). Lo se ist umgekehrt. Richtig: se lo doy."
+          "es": "El orden es fijo: primero el pronombre indirecto (se) y después el directo (lo). Lo se está invertido. Lo correcto es se lo doy."
         }
       },
       "examples": [
         "Se lo doy a mi jefe.",
         "Se lo compro a mi mamá."
       ],
-      "tr": { "hu": "Az ajándék? Ma odaadom a nővéremnek.", "en": "The gift? I'm giving it to my sister today.", "es": "¿El regalo? Se lo doy a mi hermana hoy.", "de": "Das Geschenk? Ich gebe es heute meiner Schwester." }
+      "tr": { "en": "The gift? I'm giving it to my sister today.", "es": "¿El regalo? Se lo doy a mi hermana hoy." }
     },
     {
       "id": "cp-02",
@@ -443,30 +363,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A mis primos a címzettek (les), a los libros a dolog (los): a les + los helyén se los áll, és a los a könyvekhez igazodik.",
         "en": "Mis primos are the recipients (les), los libros are the things (los): in place of les + los we use se los, and los matches the books.",
-        "es": "Mis primos son los destinatarios (les), los libros son las cosas (los): en lugar de les + los se dice se los, y los concuerda con los libros.",
-        "de": "Mis primos sind die Empfänger (les), los libros die Sachen (los): anstelle von les + los steht se los, und los passt zu den Büchern."
+        "es": "Mis primos son los destinatarios (les), los libros son las cosas (los): en lugar de les + los se dice se los, y los concuerda con los libros."
       },
       "wrong": {
         "Les los": {
-          "hu": "A les és a los két l-lel kezdődő névmás egymás mellett: a les se-vé válik, és a se a számot nem mutatja. Helyesen: se los llevo.",
           "en": "Les and los are two pronouns beginning with l side by side: les turns into se, and se does not show number. Correct: se los llevo.",
-          "es": "Les y los son dos pronombres con l juntos: les se convierte en se, y se no marca el número. Lo correcto es se los llevo.",
-          "de": "Les und los sind zwei Pronomen mit l nebeneinander: les wird zu se, und se zeigt die Zahl nicht an. Richtig: se los llevo."
+          "es": "Les y los son dos pronombres con l juntos: les se convierte en se, y se no marca el número. Lo correcto es se los llevo."
         },
         "Se lo": {
-          "hu": "A lo egyetlen hímnemű dolog helyén áll, de a libros többes szám, ezért los kell. A címzettek száma a se-n nem látszik, a dolgoké igen. Helyesen: se los llevo.",
           "en": "Lo stands for one masculine thing, but los libros is plural, so los is needed. The number of recipients does not show on se, but the number of the things does. Correct: se los llevo.",
-          "es": "Lo sustituye una sola cosa masculina, pero los libros es plural, por eso hace falta los. El número de los destinatarios no se ve en se, el de las cosas sí. Lo correcto es se los llevo.",
-          "de": "Lo steht für eine einzelne maskuline Sache, aber los libros ist Plural, deshalb braucht es los. Die Zahl der Empfänger sieht man an se nicht, die der Sachen schon. Richtig: se los llevo."
+          "es": "Lo sustituye una sola cosa masculina, pero los libros es plural, por eso hace falta los. El número de los destinatarios no se ve en se, el de las cosas sí. Lo correcto es se los llevo."
         }
       },
       "examples": [
         "Se los doy a mis amigos.",
         "Se los compro a mis papás."
       ],
-      "tr": { "hu": "A könyvek? Holnap elviszem őket az unokatestvéreimnek.", "en": "The books? I'm taking them to my cousins tomorrow.", "es": "¿Los libros? Se los llevo a mis primos mañana.", "de": "Die Bücher? Ich bringe sie morgen meinen Cousins." }
+      "tr": { "en": "The books? I'm taking them to my cousins tomorrow.", "es": "¿Los libros? Se los llevo a mis primos mañana." }
     },
     {
       "id": "cp-03",
@@ -478,30 +392,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A mi mamá a címzett (le), a las flores a dolog (las): a le + las helyén se las áll, és a las a virágokhoz igazodik.",
         "en": "Mi mamá is the recipient (le), las flores are the things (las): in place of le + las we use se las, and las matches the flowers.",
-        "es": "Mi mamá es el destinatario (le), las flores son las cosas (las): en lugar de le + las se dice se las, y las concuerda con las flores.",
-        "de": "Mi mamá ist die Empfängerin (le), las flores sind die Sachen (las): anstelle von le + las steht se las, und las passt zu den Blumen."
+        "es": "Mi mamá es el destinatario (le), las flores son las cosas (las): en lugar de le + las se dice se las, y las concuerda con las flores."
       },
       "wrong": {
         "Se la": {
-          "hu": "A la egyetlen nőnemű dolog helyén áll, de a flores többes szám, ezért las kell. Helyesen: se las compro.",
           "en": "La stands for one feminine thing, but flores is plural, so las is needed. Correct: se las compro.",
-          "es": "La sustituye una sola cosa femenina, pero flores es plural, por eso hace falta las. Lo correcto es se las compro.",
-          "de": "La steht für eine einzelne feminine Sache, aber flores ist Plural, deshalb braucht es las. Richtig: se las compro."
+          "es": "La sustituye una sola cosa femenina, pero flores es plural, por eso hace falta las. Lo correcto es se las compro."
         },
         "Les las": {
-          "hu": "A mi mamá egy személy, tehát les nem lehet, és le/les + las helyén úgyis se las áll: két l-es névmás nem állhat egymás mellett. Helyesen: se las compro.",
           "en": "Mi mamá is one person, so it cannot be les, and in place of le/les + las we use se las anyway: two pronouns with l cannot stand side by side. Correct: se las compro.",
-          "es": "Mi mamá es una sola persona, así que no puede ser les, y en lugar de le/les + las se dice se las de todos modos: dos pronombres con l no pueden ir juntos. Lo correcto es se las compro.",
-          "de": "Mi mamá ist eine einzelne Person, also kann es nicht les sein, und anstelle von le/les + las steht ohnehin se las: zwei Pronomen mit l dürfen nicht nebeneinanderstehen. Richtig: se las compro."
+          "es": "Mi mamá es una sola persona, así que no puede ser les, y en lugar de le/les + las se dice se las de todos modos: dos pronombres con l no pueden ir juntos. Lo correcto es se las compro."
         }
       },
       "examples": [
         "Se las doy a mi hermana.",
         "Se las llevo a mi jefe."
       ],
-      "tr": { "hu": "A virágok? Ma megveszem őket anyámnak.", "en": "The flowers? I'm buying them for my mom today.", "es": "¿Las flores? Se las compro a mi mamá hoy.", "de": "Die Blumen? Ich kaufe sie heute meiner Mutter." }
+      "tr": { "en": "The flowers? I'm buying them for my mom today.", "es": "¿Las flores? Se las compro a mi mamá hoy." }
     },
     {
       "id": "cp-04",
@@ -513,30 +421,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A címzett (mis padres) névmása se, a dolog (el pastel) névmása pedig lo, mert a pastel hímnemű és egyes szám.",
         "en": "The pronoun for the recipient (mis padres) is se, and the pronoun for the thing (el pastel) is lo, because pastel is masculine and singular.",
-        "es": "El pronombre del destinatario (mis padres) es se, y el de la cosa (el pastel) es lo, porque pastel es masculino y singular.",
-        "de": "Das Pronomen für den Empfänger (mis padres) ist se, das für die Sache (el pastel) ist lo, weil pastel maskulin und Singular ist."
+        "es": "El pronombre del destinatario (mis padres) es se, y el de la cosa (el pastel) es lo, porque pastel es masculino y singular."
       },
       "wrong": {
         "Se los": {
-          "hu": "A los a címzettek (padres) többes számát követné, de a második névmás a dologhoz igazodik, nem a címzetthez, és a pastel egyetlen darab. Helyesen: se lo compro.",
           "en": "Los would follow the plural of the recipients (padres), but the second pronoun agrees with the thing, not with the recipient, and the pastel is a single item. Correct: se lo compro.",
-          "es": "Los seguiría el plural de los destinatarios (padres), pero el segundo pronombre concuerda con la cosa, no con el destinatario, y el pastel es uno solo. Lo correcto es se lo compro.",
-          "de": "Los würde der Mehrzahl der Empfänger (padres) folgen, aber das zweite Pronomen richtet sich nach der Sache, nicht nach dem Empfänger, und der Kuchen ist nur einer. Richtig: se lo compro."
+          "es": "Los seguiría el plural de los destinatarios (padres), pero el segundo pronombre concuerda con la cosa, no con el destinatario, y el pastel es uno solo. Lo correcto es se lo compro."
         },
         "Se la": {
-          "hu": "A la nőnemű dolog helyén áll, a pastel viszont hímnemű. Helyesen: se lo compro.",
           "en": "La stands for a feminine thing, but pastel is masculine. Correct: se lo compro.",
-          "es": "La sustituye una cosa femenina, pero pastel es masculino. Lo correcto es se lo compro.",
-          "de": "La steht für eine feminine Sache, aber pastel ist maskulin. Richtig: se lo compro."
+          "es": "La sustituye una cosa femenina, pero pastel es masculino. Lo correcto es se lo compro."
         }
       },
       "examples": [
         "Se lo llevo a mis abuelos.",
         "Se lo doy a mis tíos."
       ],
-      "tr": { "hu": "A torta? Megveszem a szüleimnek.", "en": "The cake? I'm buying it for my parents.", "es": "¿El pastel? Se lo compro a mis padres.", "de": "Der Kuchen? Ich kaufe ihn meinen Eltern." }
+      "tr": { "en": "The cake? I'm buying it for my parents.", "es": "¿El pastel? Se lo compro a mis padres." }
     },
     {
       "id": "cp-05",
@@ -548,30 +450,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A me a címzett (nekem), a lo a dolog (a libro), és a részes eset névmás áll elöl.",
         "en": "Me is the recipient (to me), lo is the thing (the libro), and the indirect pronoun comes first.",
-        "es": "Me es el destinatario (a mí), lo es la cosa (el libro), y el pronombre indirecto va primero.",
-        "de": "Me ist der Empfänger (mir), lo ist die Sache (das libro), und das indirekte Pronomen steht vorn."
+        "es": "Me es el destinatario (a mí), lo es la cosa (el libro), y el pronombre indirecto va primero."
       },
       "wrong": {
         "Lo me": {
-          "hu": "A sorrend kötött: a részes eset névmás (me) megy előre, a tárgyeset (lo) mögötte. Helyesen: me lo trae.",
           "en": "The order is fixed: the indirect pronoun (me) goes first, the direct one (lo) after it. Correct: me lo trae.",
-          "es": "El orden es fijo: el pronombre indirecto (me) va primero y el directo (lo) detrás. Lo correcto es me lo trae.",
-          "de": "Die Reihenfolge ist fest: das indirekte Pronomen (me) steht vorn, das direkte (lo) dahinter. Richtig: me lo trae."
+          "es": "El orden es fijo: el pronombre indirecto (me) va primero y el directo (lo) detrás. Lo correcto es me lo trae."
         },
         "Me le": {
-          "hu": "A le nem állhat a dolog helyén: a dolgot (el libro) tárgyeset névmás jelöli, a lo. A le csak címzetthez jó. Helyesen: me lo trae.",
           "en": "Le cannot stand for the thing: the thing (el libro) is shown by a direct pronoun, lo. Le is only for a recipient. Correct: me lo trae.",
-          "es": "Le no puede representar la cosa: la cosa (el libro) se marca con un pronombre directo, lo. Le solo sirve para un destinatario. Lo correcto es me lo trae.",
-          "de": "Le kann nicht für die Sache stehen: die Sache (el libro) wird mit einem direkten Pronomen ausgedrückt, lo. Le ist nur für einen Empfänger. Richtig: me lo trae."
+          "es": "Le no puede representar la cosa: la cosa (el libro) se marca con un pronombre directo, lo. Le solo sirve para un destinatario. Lo correcto es me lo trae."
         }
       },
       "examples": [
         "Mi tío me lo da mañana.",
         "Mi mamá me lo compra hoy."
       ],
-      "tr": { "hu": "És a könyvem? A nővérem ma elhozza nekem.", "en": "And my book? My sister is bringing it to me today.", "es": "¿Y mi libro? Mi hermana Me lo trae hoy.", "de": "Und mein Buch? Meine Schwester bringt es mir heute." }
+      "tr": { "en": "And my book? My sister is bringing it to me today.", "es": "¿Y mi libro? Mi hermana Me lo trae hoy." }
     },
     {
       "id": "cp-06",
@@ -583,30 +479,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A te a beszélgetőpartner (neked), a la a maleta (nőnemű, egyes szám), és a részes eset névmás áll elöl.",
         "en": "Te is the person you talk to (to you), la is the maleta (feminine, singular), and the indirect pronoun comes first.",
-        "es": "Te es la persona con quien hablas (a ti), la es la maleta (femenino, singular), y el pronombre indirecto va primero.",
-        "de": "Te ist die Person, mit der du sprichst (dir), la ist die maleta (feminin, Singular), und das indirekte Pronomen steht vorn."
+        "es": "Te es la persona con quien hablas (a ti), la es la maleta (femenino, singular), y el pronombre indirecto va primero."
       },
       "wrong": {
         "La te": {
-          "hu": "A sorrend kötött: a részes eset névmás (te) megy előre, a tárgyeset (la) mögötte. Helyesen: te la llevo.",
           "en": "The order is fixed: the indirect pronoun (te) goes first, the direct one (la) after it. Correct: te la llevo.",
-          "es": "El orden es fijo: el pronombre indirecto (te) va primero y el directo (la) detrás. Lo correcto es te la llevo.",
-          "de": "Die Reihenfolge ist fest: das indirekte Pronomen (te) steht vorn, das direkte (la) dahinter. Richtig: te la llevo."
+          "es": "El orden es fijo: el pronombre indirecto (te) va primero y el directo (la) detrás. Lo correcto es te la llevo."
         },
         "Te lo": {
-          "hu": "A lo hímnemű dolgot jelent, a maleta viszont nőnemű, ezért la kell. Helyesen: te la llevo.",
           "en": "Lo stands for a masculine thing, but maleta is feminine, so la is needed. Correct: te la llevo.",
-          "es": "Lo sustituye una cosa masculina, pero maleta es femenino, por eso hace falta la. Lo correcto es te la llevo.",
-          "de": "Lo steht für eine maskuline Sache, aber maleta ist feminin, deshalb braucht es la. Richtig: te la llevo."
+          "es": "Lo sustituye una cosa masculina, pero maleta es femenino, por eso hace falta la. Lo correcto es te la llevo."
         }
       },
       "examples": [
         "Te la compro mañana.",
         "Te la llevo a tu casa."
       ],
-      "tr": { "hu": "A bőröndöd? Én elviszem neked a kocsihoz.", "en": "Your suitcase? I'll take it to the car for you.", "es": "¿Tu maleta? Te la llevo yo hasta el coche.", "de": "Ihr Koffer? Ich bringe ihn Ihnen zum Auto." }
+      "tr": { "en": "Your suitcase? I'll take it to the car for you.", "es": "¿Tu maleta? Te la llevo yo hasta el coche." }
     },
     {
       "id": "cp-07",
@@ -618,30 +508,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A nos a címzett (nekünk), a los pedig a zapatos (hímnemű, többes szám); a nos soha nem változik se-vé.",
         "en": "Nos is the recipient (to us), and los stands for the zapatos (masculine, plural); nos never turns into se.",
-        "es": "Nos representa al destinatario (a nosotros), y los representa los zapatos (masculino, plural); nos nunca se convierte en se.",
-        "de": "Nos ist der Empfänger (uns), und los steht für die zapatos (maskulin, Plural); nos wird nie zu se."
+        "es": "Nos representa al destinatario (a nosotros), y los representa los zapatos (masculino, plural); nos nunca se convierte en se."
       },
       "wrong": {
         "Se los": {
-          "hu": "Csak a le és a les lesz se-vé; a nos marad nos, mert nem harmadik személy. Helyesen: nos los lleva.",
           "en": "Only le and les turn into se; nos stays nos, because it is not a third person. Correct: nos los lleva.",
-          "es": "Solo le y les se convierten en se; nos sigue siendo nos, porque no es de tercera persona. Lo correcto es nos los lleva.",
-          "de": "Nur le und les werden zu se; nos bleibt nos, weil es keine dritte Person ist. Richtig: nos los lleva."
+          "es": "Solo le y les se convierten en se; nos sigue siendo nos, porque no es de tercera persona. Lo correcto es nos los lleva."
         },
         "Nos las": {
-          "hu": "A las nőnemű többes számú dolgot jelent, a zapatos viszont hímnemű. Helyesen: nos los lleva.",
           "en": "Las stands for feminine plural things, but zapatos is masculine. Correct: nos los lleva.",
-          "es": "Las sustituye cosas femeninas en plural, pero zapatos es masculino. Lo correcto es nos los lleva.",
-          "de": "Las steht für feminine Sachen im Plural, aber zapatos ist maskulin. Richtig: nos los lleva."
+          "es": "Las sustituye cosas femeninas en plural, pero zapatos es masculino. Lo correcto es nos los lleva."
         }
       },
       "examples": [
         "Mi hermano nos los compra.",
         "Mi jefe nos lo da cada mes."
       ],
-      "tr": { "hu": "Ki viszi el nekünk a cipőket? Az apám elviszi nekünk.", "en": "Who's taking our shoes for us? My dad's taking them for us.", "es": "¿Quién nos lleva los zapatos? Mi papá Nos los lleva.", "de": "Wer bringt uns die Schuhe? Mein Vater bringt sie uns." }
+      "tr": { "en": "Who's taking our shoes for us? My dad's taking them for us.", "es": "¿Quién nos lleva los zapatos? Mi papá Nos los lleva." }
     },
     {
       "id": "cp-08",
@@ -653,30 +537,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Infinitivo mellett a két névmás együtt tapad a végére, és két névmásnál ékezet kell: llevártelo.",
         "en": "With an infinitive the two pronouns attach together at the end, and with two pronouns an accent is required: llevártelo.",
-        "es": "Con un infinitivo los dos pronombres se pegan juntos al final, y con dos pronombres hace falta tilde: llevártelo.",
-        "de": "Beim Infinitiv hängen die beiden Pronomen gemeinsam am Ende, und bei zwei Pronomen ist ein Akzent nötig: llevártelo."
+        "es": "Con un infinitivo los dos pronombres se pegan juntos al final, y con dos pronombres hace falta tilde: llevártelo."
       },
       "wrong": {
         "te lo llevar": {
-          "hu": "A névmás-pár vagy az infinitivo végére tapad, vagy a voy a elé kerül (te lo voy a llevar); a voy a és az infinitivo közé nem állhat. Helyesen: voy a llevártelo.",
           "en": "The pair either attaches to the end of the infinitive or goes before voy a (te lo voy a llevar); it cannot stand between voy a and the infinitive. Correct: voy a llevártelo.",
-          "es": "La pareja se pega al final del infinitivo o va delante de voy a (te lo voy a llevar); no puede ir entre voy a y el infinitivo. Lo correcto es voy a llevártelo.",
-          "de": "Das Paar hängt am Ende des Infinitivs oder steht vor voy a (te lo voy a llevar); zwischen voy a und dem Infinitiv darf es nicht stehen. Richtig: voy a llevártelo."
+          "es": "La pareja se pega al final del infinitivo o va delante de voy a (te lo voy a llevar); no puede ir entre voy a y el infinitivo. Lo correcto es voy a llevártelo."
         },
         "llevarte lo": {
-          "hu": "A két névmás nem választható szét: egyetlen szóként tapadnak az infinitivóhoz, a sorrendben (te + lo), ékezettel. Helyesen: llevártelo.",
           "en": "The two pronouns cannot be separated: they attach to the infinitive as one word, in this order (te + lo), with an accent. Correct: llevártelo.",
-          "es": "Los dos pronombres no se pueden separar: se pegan al infinitivo como una sola palabra, en este orden (te + lo), con tilde. Lo correcto es llevártelo.",
-          "de": "Die beiden Pronomen dürfen nicht getrennt werden: sie hängen als ein Wort am Infinitiv, in dieser Reihenfolge (te + lo), mit Akzent. Richtig: llevártelo."
+          "es": "Los dos pronombres no se pueden separar: se pegan al infinitivo como una sola palabra, en este orden (te + lo), con tilde. Lo correcto es llevártelo."
         }
       },
       "examples": [
         "Voy a comprártelo hoy.",
         "Quiero llevártelo mañana."
       ],
-      "tr": { "hu": "A könyved? Holnap elviszem neked.", "en": "Your book? I'm going to take it to you tomorrow.", "es": "¿Tu libro? Voy a llevártelo mañana.", "de": "Dein Buch? Ich werde es dir morgen bringen." }
+      "tr": { "en": "Your book? I'm going to take it to you tomorrow.", "es": "¿Tu libro? Voy a llevártelo mañana." }
     },
     {
       "id": "cp-09",
@@ -688,30 +566,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Infinitivo után a se + lo együtt tapad, és két névmásnál az infinitivo ékezetet kap: comprárselo.",
         "en": "After an infinitive, se + lo attach together, and with two pronouns the infinitive takes an accent: comprárselo.",
-        "es": "Tras un infinitivo, se + lo se pegan juntos, y con dos pronombres el infinitivo lleva tilde: comprárselo.",
-        "de": "Nach einem Infinitiv hängen se + lo gemeinsam an, und bei zwei Pronomen bekommt der Infinitiv einen Akzent: comprárselo."
+        "es": "Tras un infinitivo, se + lo se pegan juntos, y con dos pronombres el infinitivo lleva tilde: comprárselo."
       },
       "wrong": {
         "comprarselo": {
-          "hu": "Két névmás tapadásakor az infinitivo hangsúlyos szótagja ékezetet kap; ékezet nélkül a szó hibás. Helyesen: comprárselo.",
           "en": "When two pronouns attach, the stressed syllable of the infinitive takes an accent; without it the word is wrong. Correct: comprárselo.",
-          "es": "Cuando se pegan dos pronombres, la sílaba tónica del infinitivo lleva tilde; sin ella la palabra es incorrecta. Lo correcto es comprárselo.",
-          "de": "Wenn zwei Pronomen anhängen, bekommt die betonte Silbe des Infinitivs einen Akzent; ohne ihn ist das Wort falsch. Richtig: comprárselo."
+          "es": "Cuando se pegan dos pronombres, la sílaba tónica del infinitivo lleva tilde; sin ella la palabra es incorrecta. Lo correcto es comprárselo."
         },
         "se lo comprar": {
-          "hu": "A névmás-pár nem állhat külön az infinitivo előtt a quiero után: vagy az infinitivo végére tapad (comprárselo), vagy a quiero elé kerül (se lo quiero comprar). Helyesen: quiero comprárselo.",
           "en": "The pair cannot stand separately before the infinitive after quiero: it either attaches to the end of the infinitive (comprárselo) or goes before quiero (se lo quiero comprar). Correct: quiero comprárselo.",
-          "es": "La pareja no puede ir suelta delante del infinitivo tras quiero: o se pega al final del infinitivo (comprárselo) o va delante de quiero (se lo quiero comprar). Lo correcto es quiero comprárselo.",
-          "de": "Das Paar darf nach quiero nicht lose vor dem Infinitiv stehen: entweder hängt es am Ende des Infinitivs (comprárselo) oder steht vor quiero (se lo quiero comprar). Richtig: quiero comprárselo."
+          "es": "La pareja no puede ir suelta delante del infinitivo tras quiero: o se pega al final del infinitivo (comprárselo) o va delante de quiero (se lo quiero comprar). Lo correcto es quiero comprárselo."
         }
       },
       "examples": [
         "Quiero llevárselo mañana.",
         "Se lo quiero llevar mañana."
       ],
-      "tr": { "hu": "Az ajándék? Ma meg akarom venni anyámnak.", "en": "The gift? I want to buy it for my mom today.", "es": "¿El regalo? Quiero comprárselo a mi mamá hoy.", "de": "Das Geschenk? Ich möchte es heute meiner Mutter kaufen." }
+      "tr": { "en": "The gift? I want to buy it for my mom today.", "es": "¿El regalo? Quiero comprárselo a mi mamá hoy." }
     },
     {
       "id": "cp-10",
@@ -723,30 +595,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Gerundio végére a névmás-pár együtt tapad, és a gerundio ékezetet kap: escribiéndosela.",
         "en": "The pronoun pair attaches together to the end of a gerund, and the gerund takes an accent: escribiéndosela.",
-        "es": "La pareja de pronombres se pega junta al final del gerundio, y el gerundio lleva tilde: escribiéndosela.",
-        "de": "Das Pronomenpaar hängt gemeinsam am Ende des Gerundiums, und das Gerundium bekommt einen Akzent: escribiéndosela."
+        "es": "La pareja de pronombres se pega junta al final del gerundio, y el gerundio lleva tilde: escribiéndosela."
       },
       "wrong": {
         "se la escribiendo": {
-          "hu": "A gerundio előtt a pár nem állhat külön: vagy a gerundio végére tapad, vagy a segédige (estoy) elé kerül: se la estoy escribiendo. Helyesen: estoy escribiéndosela.",
           "en": "The pair cannot stand separately before the gerund: it either attaches to the end of the gerund or goes before the auxiliary (estoy): se la estoy escribiendo. Correct: estoy escribiéndosela.",
-          "es": "La pareja no puede ir suelta delante del gerundio: o se pega al final del gerundio o va delante del auxiliar (estoy): se la estoy escribiendo. Lo correcto es estoy escribiéndosela.",
-          "de": "Das Paar darf nicht lose vor dem Gerundium stehen: entweder hängt es am Ende des Gerundiums oder steht vor dem Hilfsverb (estoy): se la estoy escribiendo. Richtig: estoy escribiéndosela."
+          "es": "La pareja no puede ir suelta delante del gerundio: o se pega al final del gerundio o va delante del auxiliar (estoy): se la estoy escribiendo. Lo correcto es estoy escribiéndosela."
         },
         "escribiendo se la": {
-          "hu": "A névmások nem állhatnak külön szóként a gerundio után: egyetlen szóként tapadnak hozzá, ékezettel. Helyesen: estoy escribiéndosela.",
           "en": "The pronouns cannot stand as separate words after the gerund: they attach to it as one word, with an accent. Correct: estoy escribiéndosela.",
-          "es": "Los pronombres no pueden ir como palabras sueltas detrás del gerundio: se pegan a él como una sola palabra, con tilde. Lo correcto es estoy escribiéndosela.",
-          "de": "Die Pronomen dürfen nicht als einzelne Wörter hinter dem Gerundium stehen: sie hängen als ein Wort daran, mit Akzent. Richtig: estoy escribiéndosela."
+          "es": "Los pronombres no pueden ir como palabras sueltas detrás del gerundio: se pegan a él como una sola palabra, con tilde. Lo correcto es estoy escribiéndosela."
         }
       },
       "examples": [
         "Estoy comprándotelo ahora.",
         "Se la estoy escribiendo ahora."
       ],
-      "tr": { "hu": "A levél? Most írom a főnökömnek.", "en": "The letter? I'm writing it to my boss now.", "es": "¿La carta? Estoy escribiéndosela a mi jefe ahora.", "de": "Der Brief? Ich schreibe ihn gerade meinem Chef." }
+      "tr": { "en": "The letter? I'm writing it to my boss now.", "es": "¿La carta? Estoy escribiéndosela a mi jefe ahora." }
     },
     {
       "id": "cp-11",
@@ -758,30 +624,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A tagadószó (no) a névmás-pár elé kerül, a pár (se lo) pedig egy tömbként az ige (vendo) előtt áll: no se lo vendo.",
         "en": "The negative word (no) goes before the pronoun pair, and the pair (se lo) stands as one block before the verb (vendo): no se lo vendo.",
-        "es": "La palabra de negación (no) va antes de la pareja de pronombres, y la pareja (se lo) va como un bloque delante del verbo (vendo): no se lo vendo.",
-        "de": "Das Verneinungswort (no) steht vor dem Pronomenpaar, und das Paar (se lo) steht als Block vor dem Verb (vendo): no se lo vendo."
+        "es": "La palabra de negación (no) va antes de la pareja de pronombres, y la pareja (se lo) va como un bloque delante del verbo (vendo): no se lo vendo."
       },
       "wrong": {
         "se lo no vendo": {
-          "hu": "A no nem állhat a névmások és az ige közé: a tagadószó a pár elé kerül. Helyesen: no se lo vendo.",
           "en": "No cannot stand between the pronouns and the verb: the negative word goes before the pair. Correct: no se lo vendo.",
-          "es": "No no puede ir entre los pronombres y el verbo: la palabra de negación va antes de la pareja. Lo correcto es no se lo vendo.",
-          "de": "No darf nicht zwischen den Pronomen und dem Verb stehen: das Verneinungswort steht vor dem Paar. Richtig: no se lo vendo."
+          "es": "No no puede ir entre los pronombres y el verbo: la palabra de negación va antes de la pareja. Lo correcto es no se lo vendo."
         },
         "no lo se vendo": {
-          "hu": "A sorrend kötött: a részes eset névmás (se) megy előre, a tárgyeset (lo) mögötte, és semmi nem választhatja el őket. Helyesen: no se lo vendo.",
           "en": "The order is fixed: the indirect pronoun (se) goes first, the direct one (lo) after it, and nothing can separate them. Correct: no se lo vendo.",
-          "es": "El orden es fijo: el pronombre indirecto (se) va primero y el directo (lo) detrás, y nada puede separarlos. Lo correcto es no se lo vendo.",
-          "de": "Die Reihenfolge ist fest: das indirekte Pronomen (se) steht vorn, das direkte (lo) dahinter, und nichts darf sie trennen. Richtig: no se lo vendo."
+          "es": "El orden es fijo: el pronombre indirecto (se) va primero y el directo (lo) detrás, y nada puede separarlos. Lo correcto es no se lo vendo."
         }
       },
       "examples": [
         "No se lo doy a nadie.",
         "No te lo llevo hoy."
       ],
-      "tr": { "hu": "Az autóm új: senkinek sem adom el.", "en": "My car is new: I'm not selling it to anyone.", "es": "Mi coche es nuevo: no se lo vendo a nadie.", "de": "Mein Auto ist neu: Ich verkaufe es niemandem." }
+      "tr": { "en": "My car is new: I'm not selling it to anyone.", "es": "Mi coche es nuevo: no se lo vendo a nadie." }
     },
     {
       "id": "cp-12",
@@ -793,30 +653,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A megszólított urat magázzuk (usted), a harmadik személy névmása le, és a le + la helyén se la áll.",
         "en": "We address the gentleman formally (usted), the third-person pronoun is le, and in place of le + la we use se la.",
-        "es": "Al señor se le habla de usted, el pronombre de tercera persona es le, y en lugar de le + la se dice se la.",
-        "de": "Der Herr wird gesiezt (usted), das Pronomen der dritten Person ist le, und anstelle von le + la steht se la."
+        "es": "Al señor se le habla de usted, el pronombre de tercera persona es le, y en lugar de le + la se dice se la."
       },
       "wrong": {
         "Te la": {
-          "hu": "A te a tegezett (tú) személyre való; a megszólított urat magázzuk, ezért se. Helyesen: se la llevo.",
           "en": "Te is for someone addressed informally (tú); the gentleman is addressed formally, so it is se. Correct: se la llevo.",
-          "es": "Te es para alguien a quien se tutea (tú); al señor se le habla de usted, por eso es se. Lo correcto es se la llevo.",
-          "de": "Te ist für jemanden, den man duzt (tú); der Herr wird gesiezt, deshalb se. Richtig: se la llevo."
+          "es": "Te es para alguien a quien se tutea (tú); al señor se le habla de usted, por eso es se. Lo correcto es se la llevo."
         },
         "Me la": {
-          "hu": "A me a beszélőre mutat, de itt a címzett nem a beszélő. Helyesen: se la llevo.",
           "en": "Me points to the speaker, but here the recipient is not the speaker. Correct: se la llevo.",
-          "es": "Me remite al hablante, pero aquí el destinatario no es quien habla. Lo correcto es se la llevo.",
-          "de": "Me verweist auf den Sprecher, aber hier ist der Empfänger nicht der Sprecher. Richtig: se la llevo."
+          "es": "Me remite al hablante, pero aquí el destinatario no es quien habla. Lo correcto es se la llevo."
         }
       },
       "examples": [
         "Señor, se lo llevo ahora mismo.",
         "Se la compro hoy, señor."
       ],
-      "tr": { "hu": "A levese, uram? Kiviszem az asztalához.", "en": "Your soup, sir? I'll bring it to your table.", "es": "¿Su sopa, señor? Se la llevo a su mesa.", "de": "Ihre Suppe, mein Herr? Ich bringe sie Ihnen an Ihren Tisch." }
+      "tr": { "en": "Your soup, sir? I'll bring it to your table.", "es": "¿Su sopa, señor? Se la llevo a su mesa." }
     },
     {
       "id": "cp-match-01",
@@ -950,46 +804,34 @@
       "es": "Mi hermana me lo trae hoy.",
       "target": "me",
       "tr": {
-        "hu": "A nővérem ma hozza nekem.",
         "en": "My sister brings it to me today.",
-        "es": "Mi hermana me lo trae hoy.",
-        "de": "Meine Schwester bringt es mir heute."
+        "es": "Mi hermana me lo trae hoy."
       },
       "options": [
         {
           "text": {
-            "hu": "le / les + lo, la, los, las → se lo, se la…",
             "en": "le / les + lo, la, los, las → se lo, se la…",
-            "es": "le / les + lo, la, los, las → se lo, se la…",
-            "de": "le / les + lo, la, los, las → se lo, se la…"
+            "es": "le / les + lo, la, los, las → se lo, se la…"
           },
           "wrong": {
-            "hu": "Itt nincs le vagy les: a me nem változik, se-vé csak a le és a les alakul. A „me lo” a sorrendről szól.",
             "en": "There is no le or les here: me does not change, only le and les turn into se. Me lo is about the order.",
-            "es": "Aquí no hay le ni les: me no cambia, solo le y les se convierten en se. Me lo trata del orden.",
-            "de": "Hier gibt es kein le oder les: me ändert sich nicht, nur le und les werden zu se. Me lo betrifft die Reihenfolge."
+            "es": "Aquí no hay le ni les: me no cambia, solo le y les se convierten en se. Me lo trata del orden."
           }
         },
         {
           "text": {
-            "hu": "sorrend: részes + tárgyeset névmás (me lo, te la)",
             "en": "order: indirect + direct pronoun (me lo, te la)",
-            "es": "orden: indirecto + directo (me lo, te la)",
-            "de": "Reihenfolge: indirektes + direktes Pronomen (me lo, te la)"
+            "es": "orden: indirecto + directo (me lo, te la)"
           }
         },
         {
           "text": {
-            "hu": "a pár együtt marad: az ige előtt, vagy az infinitivo / gerundio végén (ékezet)",
             "en": "the pair stays together: before the verb, or at the end of an infinitive / gerund (accent)",
-            "es": "la pareja va junta: delante del verbo, o al final de un infinitivo / gerundio (tilde)",
-            "de": "das Paar bleibt zusammen: vor dem Verb oder am Ende von Infinitiv / Gerundium (Akzent)"
+            "es": "la pareja va junta: delante del verbo, o al final de un infinitivo / gerundio (tilde)"
           },
           "wrong": {
-            "hu": "A pár itt tényleg az ige előtt áll, de ez nem magyarázza, miért me lo és nem lo me: a kérdés a névmások sorrendje.",
             "en": "The pair does stand before the verb here, but that does not explain why it is me lo and not lo me: the question is the order of the pronouns.",
-            "es": "La pareja sí va delante del verbo, pero eso no explica por qué es me lo y no lo me: la cuestión es el orden de los pronombres.",
-            "de": "Das Paar steht hier zwar vor dem Verb, aber das erklärt nicht, warum es me lo und nicht lo me heißt: es geht um die Reihenfolge der Pronomen."
+            "es": "La pareja sí va delante del verbo, pero eso no explica por qué es me lo y no lo me: la cuestión es el orden de los pronombres."
           }
         }
       ],
@@ -1001,46 +843,34 @@
       "es": "Se lo doy a Ana.",
       "target": "Se",
       "tr": {
-        "hu": "Odaadom Anának.",
         "en": "I give it to Ana.",
-        "es": "Se lo doy a Ana.",
-        "de": "Ich gebe es Ana."
+        "es": "Se lo doy a Ana."
       },
       "options": [
         {
           "text": {
-            "hu": "le / les + lo, la, los, las → se lo, se la…",
             "en": "le / les + lo, la, los, las → se lo, se la…",
-            "es": "le / les + lo, la, los, las → se lo, se la…",
-            "de": "le / les + lo, la, los, las → se lo, se la…"
+            "es": "le / les + lo, la, los, las → se lo, se la…"
           }
         },
         {
           "text": {
-            "hu": "sorrend: részes + tárgyeset névmás (me lo, te la)",
             "en": "order: indirect + direct pronoun (me lo, te la)",
-            "es": "orden: indirecto + directo (me lo, te la)",
-            "de": "Reihenfolge: indirektes + direktes Pronomen (me lo, te la)"
+            "es": "orden: indirecto + directo (me lo, te la)"
           },
           "wrong": {
-            "hu": "A sorrend (részes + tárgyeset) itt is érvényes, de ez nem magyarázza, miért se és nem le: két l-es névmás kerülne egymás mellé.",
             "en": "The order (indirect + direct) holds here too, but that does not explain why it is se and not le: two pronouns with l would stand side by side.",
-            "es": "El orden (indirecto + directo) también se cumple aquí, pero no explica por qué es se y no le: irían juntos dos pronombres con l.",
-            "de": "Die Reihenfolge (indirekt + direkt) gilt auch hier, erklärt aber nicht, warum es se und nicht le heißt: zwei Pronomen mit l würden nebeneinanderstehen."
+            "es": "El orden (indirecto + directo) también se cumple aquí, pero no explica por qué es se y no le: irían juntos dos pronombres con l."
           }
         },
         {
           "text": {
-            "hu": "a második névmás a dologhoz igazodik (lo, la, los, las)",
             "en": "the second pronoun agrees with the thing (lo, la, los, las)",
-            "es": "el segundo pronombre concuerda con la cosa (lo, la, los, las)",
-            "de": "das zweite Pronomen richtet sich nach der Sache (lo, la, los, las)"
+            "es": "el segundo pronombre concuerda con la cosa (lo, la, los, las)"
           },
           "wrong": {
-            "hu": "A kijelölt szó, a se, nem a dologhoz igazodik: azt a lo teszi. A se a le helyén áll.",
             "en": "The marked word, se, does not agree with the thing: lo does that. Se stands in place of le.",
-            "es": "La palabra marcada, se, no concuerda con la cosa: eso lo hace lo. Se está en lugar de le.",
-            "de": "Das markierte Wort se richtet sich nicht nach der Sache: das tut lo. Se steht anstelle von le."
+            "es": "La palabra marcada, se, no concuerda con la cosa: eso lo hace lo. Se está en lugar de le."
           }
         }
       ],
@@ -1052,46 +882,34 @@
       "es": "Las llaves, te las llevo hoy.",
       "target": "las",
       "tr": {
-        "hu": "A kulcsokat ma viszem neked.",
         "en": "The keys, I take them to you today.",
-        "es": "Las llaves, te las llevo hoy.",
-        "de": "Die Schlüssel bringe ich dir heute."
+        "es": "Las llaves, te las llevo hoy."
       },
       "options": [
         {
           "text": {
-            "hu": "sorrend: részes + tárgyeset névmás (me lo, te la)",
             "en": "order: indirect + direct pronoun (me lo, te la)",
-            "es": "orden: indirecto + directo (me lo, te la)",
-            "de": "Reihenfolge: indirektes + direktes Pronomen (me lo, te la)"
+            "es": "orden: indirecto + directo (me lo, te la)"
           },
           "wrong": {
-            "hu": "A sorrend (te + las) helyes, de a kijelölt las nem a sorrend miatt las, hanem mert a llaves nőnemű többes szám.",
             "en": "The order (te + las) is right, but the marked las is las not because of the order but because llaves is feminine plural.",
-            "es": "El orden (te + las) es correcto, pero el las marcado es las no por el orden, sino porque llaves es femenino plural.",
-            "de": "Die Reihenfolge (te + las) stimmt, aber das markierte las heißt las nicht wegen der Reihenfolge, sondern weil llaves feminin Plural ist."
+            "es": "El orden (te + las) es correcto, pero el las marcado es las no por el orden, sino porque llaves es femenino plural."
           }
         },
         {
           "text": {
-            "hu": "a pár együtt marad: az ige előtt, vagy az infinitivo / gerundio végén (ékezet)",
             "en": "the pair stays together: before the verb, or at the end of an infinitive / gerund (accent)",
-            "es": "la pareja va junta: delante del verbo, o al final de un infinitivo / gerundio (tilde)",
-            "de": "das Paar bleibt zusammen: vor dem Verb oder am Ende von Infinitiv / Gerundium (Akzent)"
+            "es": "la pareja va junta: delante del verbo, o al final de un infinitivo / gerundio (tilde)"
           },
           "wrong": {
-            "hu": "A pár az ige előtt áll, de ez nem magyarázza, miért las és nem lo vagy la: azt a dolog (llaves) neme és száma dönti el.",
             "en": "The pair stands before the verb, but that does not explain why it is las and not lo or la: the gender and number of the thing (llaves) decide that.",
-            "es": "La pareja va delante del verbo, pero eso no explica por qué es las y no lo o la: lo decide el género y el número de la cosa (llaves).",
-            "de": "Das Paar steht vor dem Verb, aber das erklärt nicht, warum es las und nicht lo oder la heißt: das entscheiden Geschlecht und Zahl der Sache (llaves)."
+            "es": "La pareja va delante del verbo, pero eso no explica por qué es las y no lo o la: lo decide el género y el número de la cosa (llaves)."
           }
         },
         {
           "text": {
-            "hu": "a második névmás a dologhoz igazodik (lo, la, los, las)",
             "en": "the second pronoun agrees with the thing (lo, la, los, las)",
-            "es": "el segundo pronombre concuerda con la cosa (lo, la, los, las)",
-            "de": "das zweite Pronomen richtet sich nach der Sache (lo, la, los, las)"
+            "es": "el segundo pronombre concuerda con la cosa (lo, la, los, las)"
           }
         }
       ],
@@ -1103,46 +921,34 @@
       "es": "Voy a comprártelo.",
       "target": "comprártelo",
       "tr": {
-        "hu": "Megveszem neked.",
         "en": "I am going to buy it for you.",
-        "es": "Voy a comprártelo.",
-        "de": "Ich kaufe es dir."
+        "es": "Voy a comprártelo."
       },
       "options": [
         {
           "text": {
-            "hu": "le / les + lo, la, los, las → se lo, se la…",
             "en": "le / les + lo, la, los, las → se lo, se la…",
-            "es": "le / les + lo, la, los, las → se lo, se la…",
-            "de": "le / les + lo, la, los, las → se lo, se la…"
+            "es": "le / les + lo, la, los, las → se lo, se la…"
           },
           "wrong": {
-            "hu": "Itt nincs le vagy les: a te nem változik se-vé. A kijelölt szó azért egybeírt és ékezetes, mert a pár az infinitivóhoz tapad.",
             "en": "There is no le or les here: te does not turn into se. The marked word is written as one word with an accent because the pair attaches to the infinitive.",
-            "es": "Aquí no hay le ni les: te no se convierte en se. La palabra marcada se escribe junta y con tilde porque la pareja se pega al infinitivo.",
-            "de": "Hier gibt es kein le oder les: te wird nicht zu se. Das markierte Wort ist zusammengeschrieben und mit Akzent, weil das Paar am Infinitiv hängt."
+            "es": "Aquí no hay le ni les: te no se convierte en se. La palabra marcada se escribe junta y con tilde porque la pareja se pega al infinitivo."
           }
         },
         {
           "text": {
-            "hu": "sorrend: részes + tárgyeset névmás (me lo, te la)",
             "en": "order: indirect + direct pronoun (me lo, te la)",
-            "es": "orden: indirecto + directo (me lo, te la)",
-            "de": "Reihenfolge: indirektes + direktes Pronomen (me lo, te la)"
+            "es": "orden: indirecto + directo (me lo, te la)"
           },
           "wrong": {
-            "hu": "A sorrend (te + lo) helyes, de a kijelölt szót az különbözteti meg, hogy a pár az infinitivo végére tapad, ékezettel.",
             "en": "The order (te + lo) is right, but what sets the marked word apart is that the pair attaches to the end of the infinitive, with an accent.",
-            "es": "El orden (te + lo) es correcto, pero lo que distingue la palabra marcada es que la pareja se pega al final del infinitivo, con tilde.",
-            "de": "Die Reihenfolge (te + lo) stimmt, aber das markierte Wort zeichnet aus, dass das Paar am Ende des Infinitivs hängt, mit Akzent."
+            "es": "El orden (te + lo) es correcto, pero lo que distingue la palabra marcada es que la pareja se pega al final del infinitivo, con tilde."
           }
         },
         {
           "text": {
-            "hu": "a pár együtt marad: az ige előtt, vagy az infinitivo / gerundio végén (ékezet)",
             "en": "the pair stays together: before the verb, or at the end of an infinitive / gerund (accent)",
-            "es": "la pareja va junta: delante del verbo, o al final de un infinitivo / gerundio (tilde)",
-            "de": "das Paar bleibt zusammen: vor dem Verb oder am Ende von Infinitiv / Gerundium (Akzent)"
+            "es": "la pareja va junta: delante del verbo, o al final de un infinitivo / gerundio (tilde)"
           }
         }
       ],
@@ -1154,46 +960,34 @@
       "es": "Señor, se la llevo ahora.",
       "target": "se",
       "tr": {
-        "hu": "Uram, most viszem Önnek.",
         "en": "Sir, I take it to you now.",
-        "es": "Señor, se la llevo ahora.",
-        "de": "Mein Herr, ich bringe es Ihnen jetzt."
+        "es": "Señor, se la llevo ahora."
       },
       "options": [
         {
           "text": {
-            "hu": "a pár együtt marad: az ige előtt, vagy az infinitivo / gerundio végén (ékezet)",
             "en": "the pair stays together: before the verb, or at the end of an infinitive / gerund (accent)",
-            "es": "la pareja va junta: delante del verbo, o al final de un infinitivo / gerundio (tilde)",
-            "de": "das Paar bleibt zusammen: vor dem Verb oder am Ende von Infinitiv / Gerundium (Akzent)"
+            "es": "la pareja va junta: delante del verbo, o al final de un infinitivo / gerundio (tilde)"
           },
           "wrong": {
-            "hu": "A pár az ige előtt áll, de a kérdés a se: a magázott Señor harmadik személy (le), ami la előtt se-vé alakul.",
             "en": "The pair stands before the verb, but the question is se: the formal Señor is a third person (le), which turns into se before la.",
-            "es": "La pareja va delante del verbo, pero la cuestión es se: el Señor, tratado de usted, es de tercera persona (le), que ante la se convierte en se.",
-            "de": "Das Paar steht vor dem Verb, aber es geht um se: der gesiezte Señor ist eine dritte Person (le), das vor la zu se wird."
+            "es": "La pareja va delante del verbo, pero la cuestión es se: el Señor, tratado de usted, es de tercera persona (le), que ante la se convierte en se."
           }
         },
         {
           "text": {
-            "hu": "le / les + lo, la, los, las → se lo, se la…",
             "en": "le / les + lo, la, los, las → se lo, se la…",
-            "es": "le / les + lo, la, los, las → se lo, se la…",
-            "de": "le / les + lo, la, los, las → se lo, se la…"
+            "es": "le / les + lo, la, los, las → se lo, se la…"
           }
         },
         {
           "text": {
-            "hu": "a második névmás a dologhoz igazodik (lo, la, los, las)",
             "en": "the second pronoun agrees with the thing (lo, la, los, las)",
-            "es": "el segundo pronombre concuerda con la cosa (lo, la, los, las)",
-            "de": "das zweite Pronomen richtet sich nach der Sache (lo, la, los, las)"
+            "es": "el segundo pronombre concuerda con la cosa (lo, la, los, las)"
           },
           "wrong": {
-            "hu": "A la a dologhoz igazodik (nőnemű, egyes szám), de a kijelölt rész a se, ami a le átalakulása, nem a dolog neme.",
             "en": "La agrees with the thing (feminine, singular), but the marked part is se, which is the transformed le, not the gender of the thing.",
-            "es": "La concuerda con la cosa (femenino, singular), pero la parte marcada es se, que es la transformación de le, no el género de la cosa.",
-            "de": "La richtet sich nach der Sache (feminin, Singular), aber der markierte Teil ist se, die Umwandlung von le, nicht das Geschlecht der Sache."
+            "es": "La concuerda con la cosa (femenino, singular), pero la parte marcada es se, que es la transformación de le, no el género de la cosa."
           }
         }
       ],
@@ -1205,46 +999,34 @@
       "es": "Estoy escribiéndotela.",
       "target": "escribiéndotela",
       "tr": {
-        "hu": "Épp írom neked.",
         "en": "I am writing it to you right now.",
-        "es": "Estoy escribiéndotela.",
-        "de": "Ich schreibe sie dir gerade."
+        "es": "Estoy escribiéndotela."
       },
       "options": [
         {
           "text": {
-            "hu": "sorrend: részes + tárgyeset névmás (me lo, te la)",
             "en": "order: indirect + direct pronoun (me lo, te la)",
-            "es": "orden: indirecto + directo (me lo, te la)",
-            "de": "Reihenfolge: indirektes + direktes Pronomen (me lo, te la)"
+            "es": "orden: indirecto + directo (me lo, te la)"
           },
           "wrong": {
-            "hu": "A sorrend (te + la) helyes, de a kijelölt szót az különbözteti meg, hogy a pár a gerundio végére tapad, ékezettel.",
             "en": "The order (te + la) is right, but what sets the marked word apart is that the pair attaches to the end of the gerund, with an accent.",
-            "es": "El orden (te + la) es correcto, pero lo que distingue la palabra marcada es que la pareja se pega al final del gerundio, con tilde.",
-            "de": "Die Reihenfolge (te + la) stimmt, aber das markierte Wort zeichnet aus, dass das Paar am Ende des Gerundiums hängt, mit Akzent."
+            "es": "El orden (te + la) es correcto, pero lo que distingue la palabra marcada es que la pareja se pega al final del gerundio, con tilde."
           }
         },
         {
           "text": {
-            "hu": "a pár együtt marad: az ige előtt, vagy az infinitivo / gerundio végén (ékezet)",
             "en": "the pair stays together: before the verb, or at the end of an infinitive / gerund (accent)",
-            "es": "la pareja va junta: delante del verbo, o al final de un infinitivo / gerundio (tilde)",
-            "de": "das Paar bleibt zusammen: vor dem Verb oder am Ende von Infinitiv / Gerundium (Akzent)"
+            "es": "la pareja va junta: delante del verbo, o al final de un infinitivo / gerundio (tilde)"
           }
         },
         {
           "text": {
-            "hu": "a második névmás a dologhoz igazodik (lo, la, los, las)",
             "en": "the second pronoun agrees with the thing (lo, la, los, las)",
-            "es": "el segundo pronombre concuerda con la cosa (lo, la, los, las)",
-            "de": "das zweite Pronomen richtet sich nach der Sache (lo, la, los, las)"
+            "es": "el segundo pronombre concuerda con la cosa (lo, la, los, las)"
           },
           "wrong": {
-            "hu": "A la a dologhoz igazodik, de a kijelölt szó alakját az dönti el, hogy a pár a gerundio végére tapad.",
             "en": "La agrees with the thing, but the form of the marked word is decided by the pair attaching to the end of the gerund.",
-            "es": "La concuerda con la cosa, pero la forma de la palabra marcada la decide que la pareja se pega al final del gerundio.",
-            "de": "La richtet sich nach der Sache, aber die Form des markierten Wortes bestimmt, dass das Paar am Ende des Gerundiums hängt."
+            "es": "La concuerda con la cosa, pero la forma de la palabra marcada la decide que la pareja se pega al final del gerundio."
           }
         }
       ],
@@ -1256,46 +1038,34 @@
       "es": "Los pasteles, se los compro a mis papás.",
       "target": "los",
       "tr": {
-        "hu": "A süteményeket a szüleimnek veszem.",
         "en": "The cakes, I buy them for my parents.",
-        "es": "Los pasteles, se los compro a mis papás.",
-        "de": "Die Kuchen kaufe ich meinen Eltern."
+        "es": "Los pasteles, se los compro a mis papás."
       },
       "options": [
         {
           "text": {
-            "hu": "a második névmás a dologhoz igazodik (lo, la, los, las)",
             "en": "the second pronoun agrees with the thing (lo, la, los, las)",
-            "es": "el segundo pronombre concuerda con la cosa (lo, la, los, las)",
-            "de": "das zweite Pronomen richtet sich nach der Sache (lo, la, los, las)"
+            "es": "el segundo pronombre concuerda con la cosa (lo, la, los, las)"
           }
         },
         {
           "text": {
-            "hu": "le / les + lo, la, los, las → se lo, se la…",
             "en": "le / les + lo, la, los, las → se lo, se la…",
-            "es": "le / les + lo, la, los, las → se lo, se la…",
-            "de": "le / les + lo, la, los, las → se lo, se la…"
+            "es": "le / les + lo, la, los, las → se lo, se la…"
           },
           "wrong": {
-            "hu": "A le/les → se átalakulás a se-t magyarázza, a kijelölt los-t nem: az a dologhoz (pasteles) igazodik, nem a papás-hoz.",
             "en": "The change of le/les into se explains se, not the marked los: that agrees with the thing (pasteles), not with papás.",
-            "es": "El cambio de le/les en se explica se, no el los marcado: ese concuerda con la cosa (pasteles), no con papás.",
-            "de": "Die Umwandlung von le/les zu se erklärt se, nicht das markierte los: das richtet sich nach der Sache (pasteles), nicht nach papás."
+            "es": "El cambio de le/les en se explica se, no el los marcado: ese concuerda con la cosa (pasteles), no con papás."
           }
         },
         {
           "text": {
-            "hu": "a pár együtt marad: az ige előtt, vagy az infinitivo / gerundio végén (ékezet)",
             "en": "the pair stays together: before the verb, or at the end of an infinitive / gerund (accent)",
-            "es": "la pareja va junta: delante del verbo, o al final de un infinitivo / gerundio (tilde)",
-            "de": "das Paar bleibt zusammen: vor dem Verb oder am Ende von Infinitiv / Gerundium (Akzent)"
+            "es": "la pareja va junta: delante del verbo, o al final de un infinitivo / gerundio (tilde)"
           },
           "wrong": {
-            "hu": "A pár az ige előtt áll, de ez nem magyarázza, miért los és nem lo: azt a pasteles (hímnemű, többes szám) dönti el.",
             "en": "The pair stands before the verb, but that does not explain why it is los and not lo: the pasteles (masculine, plural) decide that.",
-            "es": "La pareja va delante del verbo, pero eso no explica por qué es los y no lo: lo deciden los pasteles (masculino, plural).",
-            "de": "Das Paar steht vor dem Verb, aber das erklärt nicht, warum es los und nicht lo heißt: das entscheiden die pasteles (maskulin, Plural)."
+            "es": "La pareja va delante del verbo, pero eso no explica por qué es los y no lo: lo deciden los pasteles (masculino, plural)."
           }
         }
       ],

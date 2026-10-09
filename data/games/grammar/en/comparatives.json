@@ -3,42 +3,32 @@
   "topic": "comparatives",
   "level": "A2",
   "title": {
-    "hu": "A középfok (taller, more expensive)",
     "en": "Comparatives (taller, more expensive)",
-    "es": "Los comparativos (taller, more expensive)",
-    "de": "Der Komparativ (taller, more expensive)"
+    "es": "Los comparativos (taller, more expensive)"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "Két dolgot a középfokkal hasonlítunk össze: „My brother is taller than me”. A spanyol „más alto que” angolul két módon készül: a rövid melléknévhez -er kerül (tall → taller), a hosszúhoz „more” elé (expensive → more expensive). Az „és mint” szócska mindig „than”. Van néhány rendhagyó alak is: good → better, bad → worse.",
         "en": "We compare two things with the comparative: “My brother is taller than me”. Spanish “más alto que” is built in two ways in English: short adjectives take -er (tall → taller), long ones take “more” before them (expensive → more expensive). The word for “que” is always “than”. There are also a few irregular forms: good → better, bad → worse.",
-        "es": "Comparamos dos cosas con el comparativo: «My brother is taller than me». El «más alto que» del español se forma de dos maneras en inglés: los adjetivos cortos llevan -er (tall → taller), los largos llevan «more» delante (expensive → more expensive). La palabra para «que» es siempre «than». También hay algunas formas irregulares: good → better, bad → worse.",
-        "de": "Zwei Dinge vergleichen wir mit dem Komparativ: „My brother is taller than me“. Spanisch „más alto que“ wird im Englischen auf zwei Arten gebildet: Kurze Adjektive bekommen -er (tall → taller), lange bekommen „more“ davor (expensive → more expensive). Das Wort für „que“ ist immer „than“. Dazu kommen einige unregelmäßige Formen: good → better, bad → worse."
+        "es": "Comparamos dos cosas con el comparativo: «My brother is taller than me». El «más alto que» del español se forma de dos maneras en inglés: los adjetivos cortos llevan -er (tall → taller), los largos llevan «more» delante (expensive → more expensive). La palabra para «que» es siempre «than». También hay algunas formas irregulares: good → better, bad → worse."
       }
     },
     {
       "kind": "table",
       "id": "cm-forms",
       "title": {
-        "hu": "Középfok",
         "en": "Comparatives",
-        "es": "Comparativos",
-        "de": "Komparativ"
+        "es": "Comparativos"
       },
       "header": [
         {
-          "hu": "Melléknév",
           "en": "Adjective",
-          "es": "Adjetivo",
-          "de": "Adjektiv"
+          "es": "Adjetivo"
         },
         {
-          "hu": "comparative",
           "en": "comparative",
-          "es": "comparative",
-          "de": "comparative"
+          "es": "comparative"
         }
       ],
       "rows": [
@@ -103,92 +93,72 @@
     {
       "kind": "list",
       "title": {
-        "hu": "A középfok képzése",
         "en": "Forming the comparative",
-        "es": "Cómo se forma el comparativo",
-        "de": "Bildung des Komparativs"
+        "es": "Cómo se forma el comparativo"
       },
       "items": [
         {
           "text": {
-            "hu": "Egy szótagú melléknév: -er (tall → taller). -e végű: csak -r (nice → nicer). Mássalhangzó + magánhangzó + mássalhangzó: a mássalhangzó megkettőződik (big → bigger, hot → hotter). -y végű: -ier (happy → happier, easy → easier).",
             "en": "One-syllable adjectives: add -er (tall → taller). Ending in -e: just -r (nice → nicer). Consonant + vowel + consonant: double the last consonant (big → bigger, hot → hotter). Ending in -y: -ier (happy → happier, easy → easier).",
-            "es": "Adjetivos de una sílaba: añade -er (tall → taller). Terminados en -e: solo -r (nice → nicer). Consonante + vocal + consonante: se duplica la última consonante (big → bigger, hot → hotter). Terminados en -y: -ier (happy → happier, easy → easier).",
-            "de": "Einsilbige Adjektive: -er anhängen (tall → taller). Auf -e: nur -r (nice → nicer). Konsonant + Vokal + Konsonant: der letzte Konsonant wird verdoppelt (big → bigger, hot → hotter). Auf -y: -ier (happy → happier, easy → easier)."
+            "es": "Adjetivos de una sílaba: añade -er (tall → taller). Terminados en -e: solo -r (nice → nicer). Consonante + vocal + consonante: se duplica la última consonante (big → bigger, hot → hotter). Terminados en -y: -ier (happy → happier, easy → easier)."
           },
           "examples": [
             {
               "es": "My brother is taller than me.",
               "tr": {
-                "hu": "A fivérem magasabb nálam.",
                 "en": "My brother is taller than me.",
-                "es": "Mi hermano es más alto que yo.",
-                "de": "Mein Bruder ist größer als ich."
+                "es": "Mi hermano es más alto que yo."
               }
             },
             {
               "es": "Today is hotter than yesterday.",
               "tr": {
-                "hu": "Ma melegebb van, mint tegnap.",
                 "en": "Today is hotter than yesterday.",
-                "es": "Hoy hace más calor que ayer.",
-                "de": "Heute ist es heißer als gestern."
+                "es": "Hoy hace más calor que ayer."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Hosszabb melléknév (két vagy több szótag, de nem -y végű): a melléknév elé „more” kerül, a melléknév nem változik (expensive → more expensive, interesting → more interesting).",
             "en": "Longer adjectives (two or more syllables, not ending in -y): “more” goes before the adjective, which does not change (expensive → more expensive, interesting → more interesting).",
-            "es": "Adjetivos más largos (dos o más sílabas, que no terminan en -y): «more» va delante del adjetivo, que no cambia (expensive → more expensive, interesting → more interesting).",
-            "de": "Längere Adjektive (zwei oder mehr Silben, nicht auf -y): „more“ steht vor dem Adjektiv, das sich nicht verändert (expensive → more expensive, interesting → more interesting)."
+            "es": "Adjetivos más largos (dos o más sílabas, que no terminan en -y): «more» va delante del adjetivo, que no cambia (expensive → more expensive, interesting → more interesting)."
           },
           "examples": [
             {
               "es": "This book is more interesting than that book.",
               "tr": {
-                "hu": "Ez a könyv érdekesebb, mint az a könyv.",
                 "en": "This book is more interesting than that book.",
-                "es": "Este libro es más interesante que ese libro.",
-                "de": "Dieses Buch ist interessanter als jenes Buch."
+                "es": "Este libro es más interesante que ese libro."
               }
             },
             {
               "es": "A house is more expensive than a phone.",
               "tr": {
-                "hu": "Egy ház drágább, mint egy telefon.",
                 "en": "A house is more expensive than a phone.",
-                "es": "Una casa es más cara que un teléfono.",
-                "de": "Ein Haus ist teurer als ein Handy."
+                "es": "Una casa es más cara que un teléfono."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Rendhagyó alakok: good → better, bad → worse, far → farther. Ezeket meg kell tanulni; nem mondjuk, hogy „gooder” vagy „more good”.",
             "en": "Irregular forms: good → better, bad → worse, far → farther. You have to learn them; we do not say “gooder” or “more good”.",
-            "es": "Formas irregulares: good → better, bad → worse, far → farther. Hay que aprenderlas; no decimos «gooder» ni «more good».",
-            "de": "Unregelmäßige Formen: good → better, bad → worse, far → farther. Man muss sie lernen; man sagt nicht „gooder“ oder „more good“."
+            "es": "Formas irregulares: good → better, bad → worse, far → farther. Hay que aprenderlas; no decimos «gooder» ni «more good»."
           },
           "examples": [
             {
               "es": "This phone is better than that phone.",
               "tr": {
-                "hu": "Ez a telefon jobb, mint az a telefon.",
                 "en": "This phone is better than that phone.",
-                "es": "Este teléfono es mejor que ese teléfono.",
-                "de": "Dieses Handy ist besser als jenes Handy."
+                "es": "Este teléfono es mejor que ese teléfono."
               }
             },
             {
               "es": "The weather today is worse than yesterday.",
               "tr": {
-                "hu": "Ma rosszabb az idő, mint tegnap.",
                 "en": "The weather today is worse than yesterday.",
-                "es": "El clima de hoy es peor que el de ayer.",
-                "de": "Das Wetter heute ist schlechter als gestern."
+                "es": "El clima de hoy es peor que el de ayer."
               }
             }
           ]
@@ -198,36 +168,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Összehasonlítás: than és as… as",
         "en": "Comparing: than and as… as",
-        "es": "Comparar: than y as… as",
-        "de": "Vergleichen: than und as… as"
+        "es": "Comparar: than y as… as"
       },
       "items": [
         {
           "text": {
-            "hu": "A „que” a középfok után „than”: taller than me. Egyenlőség: as + melléknév + as (as tall as). Kisebb mérték: not as + melléknév + as.",
             "en": "After the comparative, “que” is “than”: taller than me. Equality: as + adjective + as (as tall as). Less: not as + adjective + as.",
-            "es": "Después del comparativo, «que» es «than»: taller than me. Igualdad: as + adjetivo + as (as tall as). Menos: not as + adjetivo + as.",
-            "de": "Nach dem Komparativ ist „que“ „than“: taller than me. Gleichheit: as + Adjektiv + as (as tall as). Weniger: not as + Adjektiv + as."
+            "es": "Después del comparativo, «que» es «than»: taller than me. Igualdad: as + adjetivo + as (as tall as). Menos: not as + adjetivo + as."
           },
           "examples": [
             {
               "es": "She is as tall as her brother.",
               "tr": {
-                "hu": "Ugyanolyan magas, mint a fivére.",
                 "en": "She is as tall as her brother.",
-                "es": "Ella es tan alta como su hermano.",
-                "de": "Sie ist so groß wie ihr Bruder."
+                "es": "Ella es tan alta como su hermano."
               }
             },
             {
               "es": "This book is not as interesting as that book.",
               "tr": {
-                "hu": "Ez a könyv nem olyan érdekes, mint az.",
                 "en": "This book is not as interesting as that book.",
-                "es": "Este libro no es tan interesante como ese libro.",
-                "de": "Dieses Buch ist nicht so interessant wie jenes Buch."
+                "es": "Este libro no es tan interesante como ese libro."
               }
             }
           ]
@@ -237,63 +199,49 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Rövid melléknévhez ne tegyél „more”-t. Ne mondd, hogy „more big” vagy „more tall”, hanem: „bigger”, „taller”.",
         "en": "Do not put “more” before a short adjective. Do not say “more big” or “more tall”; say “bigger”, “taller”.",
-        "es": "No pongas «more» delante de un adjetivo corto. No digas «more big» ni «more tall», di «bigger», «taller».",
-        "de": "Setze „more“ nicht vor ein kurzes Adjektiv. Sag nicht „more big“ oder „more tall“, sondern „bigger“, „taller“."
+        "es": "No pongas «more» delante de un adjetivo corto. No digas «more big» ni «more tall», di «bigger», «taller»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "Ne kettőzd a jelölést. Ne mondd, hogy „more better” vagy „more expensiver”, hanem: „better”, „more expensive”.",
         "en": "Do not mark the comparative twice. Do not say “more better” or “more expensiver”; say “better”, “more expensive”.",
-        "es": "No marques el comparativo dos veces. No digas «more better» ni «more expensiver», di «better», «more expensive».",
-        "de": "Markiere den Komparativ nicht doppelt. Sag nicht „more better“ oder „more expensiver“, sondern „better“, „more expensive“."
+        "es": "No marques el comparativo dos veces. No digas «more better» ni «more expensiver», di «better», «more expensive»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A „que” után középfokban „than” áll, nem „that” és nem „as”. Ne mondd, hogy „taller that me” vagy „taller as me”, hanem: „taller than me”.",
         "en": "After a comparative, “que” is “than”, not “that” and not “as”. Do not say “taller that me” or “taller as me”; say “taller than me”.",
-        "es": "Después de un comparativo, «que» es «than», no «that» ni «as». No digas «taller that me» ni «taller as me», di «taller than me».",
-        "de": "Nach einem Komparativ ist „que“ „than“, nicht „that“ und nicht „as“. Sag nicht „taller that me“ oder „taller as me“, sondern „taller than me“."
+        "es": "Después de un comparativo, «que» es «than», no «that» ni «as». No digas «taller that me» ni «taller as me», di «taller than me»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A „mejor” és a „peor” angolul „better” és „worse” (nem „more good”, „more bad”).",
         "en": "Spanish “mejor” and “peor” are “better” and “worse” in English (not “more good”, “more bad”).",
-        "es": "El «mejor» y el «peor» del español son «better» y «worse» en inglés (no «more good», «more bad»).",
-        "de": "Spanisch „mejor“ und „peor“ sind im Englischen „better“ und „worse“ (nicht „more good“, „more bad“)."
+        "es": "El «mejor» y el «peor» del español son «better» y «worse» en inglés (no «more good», «more bad»)."
       }
     }
   ],
   "speak": {
-    "hu": "Két dolgot a középfokkal hasonlítunk össze. Rövid melléknévhez -er kerül: «tall», «taller», «big», «bigger». Hosszú melléknév elé «more» jön: «expensive», «more expensive». Rendhagyó alakok: «good», «better», «bad», «worse». A «que» angolul «than»: «My brother is taller than me». Egyenlőségre: «as tall as». Vigyázat: nem «more big», nem «more better», és nem «taller that me».",
     "en": "We compare two things with the comparative. Short adjectives take -er: «tall», «taller», «big», «bigger». Long adjectives take «more» before them: «expensive», «more expensive». Irregular forms: «good», «better», «bad», «worse». The word for «que» is «than»: «My brother is taller than me». For equality: «as tall as». Careful: not «more big», not «more better», and not «taller that me».",
-    "es": "Comparamos dos cosas con el comparativo. Los adjetivos cortos llevan -er: «tall», «taller», «big», «bigger». Los adjetivos largos llevan «more» delante: «expensive», «more expensive». Formas irregulares: «good», «better», «bad», «worse». La palabra para «que» es «than»: «My brother is taller than me». Para la igualdad: «as tall as». Cuidado: no «more big», no «more better» y no «taller that me».",
-    "de": "Zwei Dinge vergleichen wir mit dem Komparativ. Kurze Adjektive bekommen -er: «tall», «taller», «big», «bigger». Lange Adjektive bekommen «more» davor: «expensive», «more expensive». Unregelmäßige Formen: «good», «better», «bad», «worse». Das Wort für «que» ist «than»: «My brother is taller than me». Für Gleichheit: «as tall as». Vorsicht: nicht «more big», nicht «more better» und nicht «taller that me»."
+    "es": "Comparamos dos cosas con el comparativo. Los adjetivos cortos llevan -er: «tall», «taller», «big», «bigger». Los adjetivos largos llevan «more» delante: «expensive», «more expensive». Formas irregulares: «good», «better», «bad», «worse». La palabra para «que» es «than»: «My brother is taller than me». Para la igualdad: «as tall as». Cuidado: no «more big», no «more better» y no «taller that me»."
   },
   "glossary": [
     {
       "word": "nicer",
       "gloss": {
-        "hu": "kedvesebb, szebb (nice)",
         "en": "nice + -er",
-        "es": "más agradable (nice)",
-        "de": "netter (nice)"
+        "es": "más agradable (nice)"
       }
     },
     {
       "word": "happier",
       "gloss": {
-        "hu": "boldogabb (happy)",
         "en": "happy + -er",
-        "es": "más feliz (happy)",
-        "de": "glücklicher (happy)"
+        "es": "más feliz (happy)"
       }
     }
   ],
@@ -308,30 +256,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A tall egy szótagú melléknév, ezért -er kell: taller than me.",
         "en": "Tall is a one-syllable adjective, so it takes -er: taller than me.",
-        "es": "Tall es un adjetivo de una sílaba, por eso lleva -er: taller than me.",
-        "de": "Tall ist ein einsilbiges Adjektiv, deshalb bekommt es -er: taller than me."
+        "es": "Tall es un adjetivo de una sílaba, por eso lleva -er: taller than me."
       },
       "wrong": {
         "more tall": {
-          "hu": "Rövid melléknévhez nem „more”, hanem -er kell: taller.",
           "en": "A short adjective takes -er, not “more”: taller.",
-          "es": "Un adjetivo corto lleva -er, no «more»: taller.",
-          "de": "Ein kurzes Adjektiv bekommt -er, nicht „more“: taller."
+          "es": "Un adjetivo corto lleva -er, no «more»: taller."
         },
         "tall": {
-          "hu": "A „than” előtt középfok kell, nem alapfok: taller.",
           "en": "Before “than” you need the comparative, not the base form: taller.",
-          "es": "Antes de «than» hace falta el comparativo, no la forma base: taller.",
-          "de": "Vor „than“ braucht man den Komparativ, nicht die Grundform: taller."
+          "es": "Antes de «than» hace falta el comparativo, no la forma base: taller."
         }
       },
       "examples": [
         "My sister is older than me.",
         "A tree is taller than a house."
       ],
-      "tr": { "hu": "A bátyám magasabb nálam.", "en": "My brother is taller than me.", "es": "Mi hermano es más alto que yo.", "de": "Mein Bruder ist größer als ich." }
+      "tr": { "en": "My brother is taller than me.", "es": "Mi hermano es más alto que yo." }
     },
     {
       "id": "cm-02",
@@ -343,30 +285,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A big mássalhangzó + magánhangzó + mássalhangzó, ezért a g megkettőződik: bigger.",
         "en": "Big is consonant + vowel + consonant, so the g is doubled: bigger.",
-        "es": "Big es consonante + vocal + consonante, por eso la g se duplica: bigger.",
-        "de": "Big ist Konsonant + Vokal + Konsonant, deshalb wird das g verdoppelt: bigger."
+        "es": "Big es consonante + vocal + consonante, por eso la g se duplica: bigger."
       },
       "wrong": {
         "big": {
-          "hu": "A „big” alapfok; a „than” előtt középfok kell: bigger.",
           "en": "“Big” is the base form; before “than” you need the comparative: bigger.",
-          "es": "«Big» es la forma base; antes de «than» hace falta el comparativo: bigger.",
-          "de": "„Big“ ist die Grundform; vor „than“ braucht man den Komparativ: bigger."
+          "es": "«Big» es la forma base; antes de «than» hace falta el comparativo: bigger."
         },
         "more big": {
-          "hu": "Rövid melléknévhez nem „more”, hanem -er kell: bigger.",
           "en": "A short adjective takes -er, not “more”: bigger.",
-          "es": "Un adjetivo corto lleva -er, no «more»: bigger.",
-          "de": "Ein kurzes Adjektiv bekommt -er, nicht „more“: bigger."
+          "es": "Un adjetivo corto lleva -er, no «more»: bigger."
         }
       },
       "examples": [
         "My house is bigger than your house.",
         "A bus is bigger than a car."
       ],
-      "tr": { "hu": "Ez az autó nagyobb, mint az az autó.", "en": "This car is bigger than that car.", "es": "Este carro es más grande que ese carro.", "de": "Dieses Auto ist größer als jenes Auto." }
+      "tr": { "en": "This car is bigger than that car.", "es": "Este carro es más grande que ese carro." }
     },
     {
       "id": "cm-16",
@@ -386,30 +322,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az interesting hosszú melléknév, ezért „more” kell elé: more interesting.",
         "en": "Interesting is a long adjective, so it takes “more” before it: more interesting.",
-        "es": "Interesting es un adjetivo largo, por eso lleva «more» delante: more interesting.",
-        "de": "Interesting ist ein langes Adjektiv, deshalb steht „more“ davor: more interesting."
+        "es": "Interesting es un adjetivo largo, por eso lleva «more» delante: more interesting."
       },
       "wrong": {
         "interesting": {
-          "hu": "A „interesting” alapfok; a „than” előtt középfok kell: more interesting.",
           "en": "“Interesting” is the base form; before “than” you need the comparative: more interesting.",
-          "es": "«Interesting» es la forma base; antes de «than» hace falta el comparativo: more interesting.",
-          "de": "„Interesting“ ist die Grundform; vor „than“ braucht man den Komparativ: more interesting."
+          "es": "«Interesting» es la forma base; antes de «than» hace falta el comparativo: more interesting."
         },
         "most interesting": {
-          "hu": "A „most” a felsőfokhoz való; két dolog összehasonlításához „more” kell.",
           "en": "“Most” is for the superlative; to compare two things you need “more”.",
-          "es": "«Most» es para el superlativo; para comparar dos cosas hace falta «more».",
-          "de": "„Most“ gehört zum Superlativ; um zwei Dinge zu vergleichen, braucht man „more“."
+          "es": "«Most» es para el superlativo; para comparar dos cosas hace falta «more»."
         }
       },
       "examples": [
         "This movie is more interesting than that movie.",
         "English is more interesting than math."
       ],
-      "tr": { "hu": "Ez a könyv érdekesebb, mint az a könyv.", "en": "This book is more interesting than that book.", "es": "Este libro es más interesante que ese libro.", "de": "Dieses Buch ist interessanter als jenes Buch." }
+      "tr": { "en": "This book is more interesting than that book.", "es": "Este libro es más interesante que ese libro." }
     },
     {
       "id": "cm-04",
@@ -421,30 +351,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az expensive hosszú melléknév, ezért „more” kell elé: more expensive.",
         "en": "Expensive is a long adjective, so it takes “more” before it: more expensive.",
-        "es": "Expensive es un adjetivo largo, por eso lleva «more» delante: more expensive.",
-        "de": "Expensive ist ein langes Adjektiv, deshalb steht „more“ davor: more expensive."
+        "es": "Expensive es un adjetivo largo, por eso lleva «more» delante: more expensive."
       },
       "wrong": {
         "expensive": {
-          "hu": "A „expensive” alapfok; a „than” előtt középfok kell: more expensive.",
           "en": "“Expensive” is the base form; before “than” you need the comparative: more expensive.",
-          "es": "«Expensive» es la forma base; antes de «than» hace falta el comparativo: more expensive.",
-          "de": "„Expensive“ ist die Grundform; vor „than“ braucht man den Komparativ: more expensive."
+          "es": "«Expensive» es la forma base; antes de «than» hace falta el comparativo: more expensive."
         },
         "most expensive": {
-          "hu": "A „most” a felsőfokhoz való; két dolog összehasonlításához „more” kell: more expensive.",
           "en": "“Most” is for the superlative; to compare two things you need “more”: more expensive.",
-          "es": "«Most» es para el superlativo; para comparar dos cosas hace falta «more»: more expensive.",
-          "de": "„Most“ gehört zum Superlativ; um zwei Dinge zu vergleichen, braucht man „more“: more expensive."
+          "es": "«Most» es para el superlativo; para comparar dos cosas hace falta «more»: more expensive."
         }
       },
       "examples": [
         "A car is more expensive than a bike.",
         "This bag is more expensive."
       ],
-      "tr": { "hu": "Egy ház drágább, mint egy telefon.", "en": "A house is more expensive than a phone.", "es": "Una casa es más cara que un celular.", "de": "Ein Haus ist teurer als ein Telefon." }
+      "tr": { "en": "A house is more expensive than a phone.", "es": "Una casa es más cara que un celular." }
     },
     {
       "kind": "why",
@@ -452,46 +376,34 @@
       "es": "My brother is taller than me.",
       "target": "taller",
       "tr": {
-        "hu": "A fivérem magasabb nálam.",
         "en": "My brother is taller than me.",
-        "es": "Mi hermano es más alto que yo.",
-        "de": "Mein Bruder ist größer als ich."
+        "es": "Mi hermano es más alto que yo."
       },
       "options": [
         {
           "text": {
-            "hu": "rövid melléknév: melléknév + -er + than",
             "en": "short adjective: adjective + -er + than",
-            "es": "adjetivo corto: adjetivo + -er + than",
-            "de": "kurzes Adjektiv: Adjektiv + -er + than"
+            "es": "adjetivo corto: adjetivo + -er + than"
           }
         },
         {
           "text": {
-            "hu": "hosszú melléknév: more + melléknév",
             "en": "long adjective: more + adjective",
-            "es": "adjetivo largo: more + adjetivo",
-            "de": "langes Adjektiv: more + Adjektiv"
+            "es": "adjetivo largo: more + adjetivo"
           },
           "wrong": {
-            "hu": "A tall rövid melléknév, ezért nem „more tall”, hanem „taller”.",
             "en": "Tall is a short adjective, so not “more tall” but “taller”.",
-            "es": "Tall es un adjetivo corto, por eso no «more tall» sino «taller».",
-            "de": "Tall ist ein kurzes Adjektiv, deshalb nicht „more tall“, sondern „taller“."
+            "es": "Tall es un adjetivo corto, por eso no «more tall» sino «taller»."
           }
         },
         {
           "text": {
-            "hu": "felsőfok: the + melléknév + -est",
             "en": "superlative: the + adjective + -est",
-            "es": "superlativo: the + adjetivo + -est",
-            "de": "Superlativ: the + Adjektiv + -est"
+            "es": "superlativo: the + adjetivo + -est"
           },
           "wrong": {
-            "hu": "Két dolgot hasonlítunk össze (fivér és én), ezért középfok kell, nem felsőfok.",
             "en": "We compare two things (brother and me), so the comparative is needed, not the superlative.",
-            "es": "Comparamos dos cosas (hermano y yo), por eso hace falta el comparativo, no el superlativo.",
-            "de": "Wir vergleichen zwei Dinge (Bruder und ich), deshalb braucht man den Komparativ, nicht den Superlativ."
+            "es": "Comparamos dos cosas (hermano y yo), por eso hace falta el comparativo, no el superlativo."
           }
         }
       ],
@@ -507,30 +419,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A happy -y végű, ezért az y helyére -ier kerül: happier.",
         "en": "Happy ends in -y, so the y becomes -ier: happier.",
-        "es": "Happy termina en -y, por eso la y cambia a -ier: happier.",
-        "de": "Happy endet auf -y, deshalb wird das y zu -ier: happier."
+        "es": "Happy termina en -y, por eso la y cambia a -ier: happier."
       },
       "wrong": {
         "more happy": {
-          "hu": "Az -y végű rövid melléknévhez -ier kell, nem „more”: happier.",
           "en": "A short adjective ending in -y takes -ier, not “more”: happier.",
-          "es": "Un adjetivo corto terminado en -y lleva -ier, no «more»: happier.",
-          "de": "Ein kurzes Adjektiv auf -y bekommt -ier, nicht „more“: happier."
+          "es": "Un adjetivo corto terminado en -y lleva -ier, no «more»: happier."
         },
         "happy": {
-          "hu": "A „happy” alapfok; a „than” előtt középfok kell: happier.",
           "en": "“Happy” is the base form; before “than” you need the comparative: happier.",
-          "es": "«Happy» es la forma base; antes de «than» hace falta el comparativo: happier.",
-          "de": "„Happy“ ist die Grundform; vor „than“ braucht man den Komparativ: happier."
+          "es": "«Happy» es la forma base; antes de «than» hace falta el comparativo: happier."
         }
       },
       "examples": [
         "This test is easier than that test.",
         "My brother is happier now."
       ],
-      "tr": { "hu": "A nővérem boldogabb nálam.", "en": "My sister is happier than me.", "es": "Mi hermana es más feliz que yo.", "de": "Meine Schwester ist glücklicher als ich." }
+      "tr": { "en": "My sister is happier than me.", "es": "Mi hermana es más feliz que yo." }
     },
     {
       "id": "cm-06",
@@ -542,30 +448,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A hot mássalhangzó + magánhangzó + mássalhangzó, ezért a t megkettőződik: hotter.",
         "en": "Hot is consonant + vowel + consonant, so the t is doubled: hotter.",
-        "es": "Hot es consonante + vocal + consonante, por eso la t se duplica: hotter.",
-        "de": "Hot ist Konsonant + Vokal + Konsonant, deshalb wird das t verdoppelt: hotter."
+        "es": "Hot es consonante + vocal + consonante, por eso la t se duplica: hotter."
       },
       "wrong": {
         "hot": {
-          "hu": "A „hot” alapfok; a „than” előtt középfok kell: hotter.",
           "en": "“Hot” is the base form; before “than” you need the comparative: hotter.",
-          "es": "«Hot» es la forma base; antes de «than» hace falta el comparativo: hotter.",
-          "de": "„Hot“ ist die Grundform; vor „than“ braucht man den Komparativ: hotter."
+          "es": "«Hot» es la forma base; antes de «than» hace falta el comparativo: hotter."
         },
         "more hot": {
-          "hu": "Rövid melléknévhez nem „more”, hanem -er kell: hotter.",
           "en": "A short adjective takes -er, not “more”: hotter.",
-          "es": "Un adjetivo corto lleva -er, no «more»: hotter.",
-          "de": "Ein kurzes Adjektiv bekommt -er, nicht „more“: hotter."
+          "es": "Un adjetivo corto lleva -er, no «more»: hotter."
         }
       },
       "examples": [
         "Summer is hotter than winter.",
         "Mexico City is hotter than my city."
       ],
-      "tr": { "hu": "Ma melegebb van, mint tegnap.", "en": "Today is hotter than yesterday.", "es": "Hoy hace más calor que ayer.", "de": "Heute ist es wärmer als gestern." }
+      "tr": { "en": "Today is hotter than yesterday.", "es": "Hoy hace más calor que ayer." }
     },
     {
       "id": "cm-17",
@@ -585,30 +485,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A cheap egy szótagú melléknév, ezért -er kell: cheaper.",
         "en": "Cheap is a one-syllable adjective, so it takes -er: cheaper.",
-        "es": "Cheap es un adjetivo de una sílaba, por eso lleva -er: cheaper.",
-        "de": "Cheap ist ein einsilbiges Adjektiv, deshalb bekommt es -er: cheaper."
+        "es": "Cheap es un adjetivo de una sílaba, por eso lleva -er: cheaper."
       },
       "wrong": {
         "more cheap": {
-          "hu": "Rövid melléknévhez nem „more”, hanem -er kell: cheaper.",
           "en": "A short adjective takes -er, not “more”: cheaper.",
-          "es": "Un adjetivo corto lleva -er, no «more»: cheaper.",
-          "de": "Ein kurzes Adjektiv bekommt -er, nicht „more“: cheaper."
+          "es": "Un adjetivo corto lleva -er, no «more»: cheaper."
         },
         "cheap": {
-          "hu": "A „cheap” alapfok; a „than” előtt középfok kell: cheaper.",
           "en": "“Cheap” is the base form; before “than” you need the comparative: cheaper.",
-          "es": "«Cheap» es la forma base; antes de «than» hace falta el comparativo: cheaper.",
-          "de": "„Cheap“ ist die Grundform; vor „than“ braucht man den Komparativ: cheaper."
+          "es": "«Cheap» es la forma base; antes de «than» hace falta el comparativo: cheaper."
         }
       },
       "examples": [
         "Buses are cheaper than cars.",
         "This phone is cheaper."
       ],
-      "tr": { "hu": "A biciklik olcsóbbak, mint az autók.", "en": "Bikes are cheaper than cars.", "es": "Las bicicletas son más baratas que los carros.", "de": "Fahrräder sind billiger als Autos." }
+      "tr": { "en": "Bikes are cheaper than cars.", "es": "Las bicicletas son más baratas que los carros." }
     },
     {
       "id": "cm-08",
@@ -620,30 +514,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A good rendhagyó: a középfoka better.",
         "en": "Good is irregular: its comparative is better.",
-        "es": "Good es irregular: su comparativo es better.",
-        "de": "Good ist unregelmäßig: Sein Komparativ ist better."
+        "es": "Good es irregular: su comparativo es better."
       },
       "wrong": {
         "more good": {
-          "hu": "A good középfoka nem „more good”, hanem „better”.",
           "en": "The comparative of good is not “more good” but “better”.",
-          "es": "El comparativo de good no es «more good» sino «better».",
-          "de": "Der Komparativ von good ist nicht „more good“, sondern „better“."
+          "es": "El comparativo de good no es «more good» sino «better»."
         },
         "good": {
-          "hu": "A „good” alapfok; a „than” előtt középfok kell: better.",
           "en": "“Good” is the base form; before “than” you need the comparative: better.",
-          "es": "«Good» es la forma base; antes de «than» hace falta el comparativo: better.",
-          "de": "„Good“ ist die Grundform; vor „than“ braucht man den Komparativ: better."
+          "es": "«Good» es la forma base; antes de «than» hace falta el comparativo: better."
         }
       },
       "examples": [
         "My English is better now.",
         "This house is better than that house."
       ],
-      "tr": { "hu": "Ez a telefon jobb, mint az én telefonom.", "en": "This phone is better than my phone.", "es": "Este celular es mejor que mi celular.", "de": "Dieses Telefon ist besser als mein Telefon." }
+      "tr": { "en": "This phone is better than my phone.", "es": "Este celular es mejor que mi celular." }
     },
     {
       "id": "cm-19",
@@ -663,30 +551,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A bad rendhagyó: a középfoka worse.",
         "en": "Bad is irregular: its comparative is worse.",
-        "es": "Bad es irregular: su comparativo es worse.",
-        "de": "Bad ist unregelmäßig: Sein Komparativ ist worse."
+        "es": "Bad es irregular: su comparativo es worse."
       },
       "wrong": {
         "more bad": {
-          "hu": "A bad középfoka nem „more bad”, hanem „worse”.",
           "en": "The comparative of bad is not “more bad” but “worse”.",
-          "es": "El comparativo de bad no es «more bad» sino «worse».",
-          "de": "Der Komparativ von bad ist nicht „more bad“, sondern „worse“."
+          "es": "El comparativo de bad no es «more bad» sino «worse»."
         },
         "bad": {
-          "hu": "A „bad” alapfok; a „than” előtt középfok kell: worse.",
           "en": "“Bad” is the base form; before “than” you need the comparative: worse.",
-          "es": "«Bad» es la forma base; antes de «than» hace falta el comparativo: worse.",
-          "de": "„Bad“ ist die Grundform; vor „than“ braucht man den Komparativ: worse."
+          "es": "«Bad» es la forma base; antes de «than» hace falta el comparativo: worse."
         }
       },
       "examples": [
         "My English is worse than hers.",
         "This food is worse."
       ],
-      "tr": { "hu": "A mai időjárás rosszabb, mint a tegnapi.", "en": "The weather today is worse than yesterday.", "es": "El clima de hoy está peor que el de ayer.", "de": "Das Wetter heute ist schlechter als gestern." }
+      "tr": { "en": "The weather today is worse than yesterday.", "es": "El clima de hoy está peor que el de ayer." }
     },
     {
       "id": "cm-10",
@@ -698,30 +580,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A nice -e végű, ezért csak -r kell: nicer.",
         "en": "Nice ends in -e, so only -r is added: nicer.",
-        "es": "Nice termina en -e, por eso solo se añade -r: nicer.",
-        "de": "Nice endet auf -e, deshalb kommt nur -r dazu: nicer."
+        "es": "Nice termina en -e, por eso solo se añade -r: nicer."
       },
       "wrong": {
         "more nice": {
-          "hu": "Rövid melléknévhez nem „more”, hanem -er (-r) kell: nicer.",
           "en": "A short adjective takes -er (-r), not “more”: nicer.",
-          "es": "Un adjetivo corto lleva -er (-r), no «more»: nicer.",
-          "de": "Ein kurzes Adjektiv bekommt -er (-r), nicht „more“: nicer."
+          "es": "Un adjetivo corto lleva -er (-r), no «more»: nicer."
         },
         "nice": {
-          "hu": "A „nice” alapfok; a „than” előtt középfok kell: nicer.",
           "en": "“Nice” is the base form; before “than” you need the comparative: nicer.",
-          "es": "«Nice» es la forma base; antes de «than» hace falta el comparativo: nicer.",
-          "de": "„Nice“ ist die Grundform; vor „than“ braucht man den Komparativ: nicer."
+          "es": "«Nice» es la forma base; antes de «than» hace falta el comparativo: nicer."
         }
       },
       "examples": [
         "My room is nicer than your room.",
         "This city is nicer."
       ],
-      "tr": { "hu": "Az én házam szebb, mint a te házad.", "en": "My house is nicer than your house.", "es": "Mi casa es más bonita que tu casa.", "de": "Mein Haus ist schöner als dein Haus." }
+      "tr": { "en": "My house is nicer than your house.", "es": "Mi casa es más bonita que tu casa." }
     },
     {
       "id": "cm-18",
@@ -737,46 +613,34 @@
       "es": "This book is more interesting than that book.",
       "target": "more",
       "tr": {
-        "hu": "Ez a könyv érdekesebb, mint az a könyv.",
         "en": "This book is more interesting than that book.",
-        "es": "Este libro es más interesante que ese libro.",
-        "de": "Dieses Buch ist interessanter als jenes Buch."
+        "es": "Este libro es más interesante que ese libro."
       },
       "options": [
         {
           "text": {
-            "hu": "hosszú melléknév: more + melléknév",
             "en": "long adjective: more + adjective",
-            "es": "adjetivo largo: more + adjetivo",
-            "de": "langes Adjektiv: more + Adjektiv"
+            "es": "adjetivo largo: more + adjetivo"
           }
         },
         {
           "text": {
-            "hu": "rövid melléknév: -er",
             "en": "short adjective: -er",
-            "es": "adjetivo corto: -er",
-            "de": "kurzes Adjektiv: -er"
+            "es": "adjetivo corto: -er"
           },
           "wrong": {
-            "hu": "Az interesting hosszú melléknév, ezért nem „interestinger”, hanem „more interesting”.",
             "en": "Interesting is a long adjective, so not “interestinger” but “more interesting”.",
-            "es": "Interesting es un adjetivo largo, por eso no «interestinger» sino «more interesting».",
-            "de": "Interesting ist ein langes Adjektiv, deshalb nicht „interestinger“, sondern „more interesting“."
+            "es": "Interesting es un adjetivo largo, por eso no «interestinger» sino «more interesting»."
           }
         },
         {
           "text": {
-            "hu": "rendhagyó középfok",
             "en": "irregular comparative",
-            "es": "comparativo irregular",
-            "de": "unregelmäßiger Komparativ"
+            "es": "comparativo irregular"
           },
           "wrong": {
-            "hu": "Az interesting nem rendhagyó; a hosszú melléknevek szabályosan „more”-ral képzik a középfokot.",
             "en": "Interesting is not irregular; long adjectives regularly form the comparative with “more”.",
-            "es": "Interesting no es irregular; los adjetivos largos forman regularmente el comparativo con «more».",
-            "de": "Interesting ist nicht unregelmäßig; lange Adjektive bilden den Komparativ regelmäßig mit „more“."
+            "es": "Interesting no es irregular; los adjetivos largos forman regularmente el comparativo con «more»."
           }
         }
       ],
@@ -792,30 +656,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A középfok után a „que” angolul „than”: taller than me.",
         "en": "After a comparative “que” is “than”: taller than me.",
-        "es": "Después de un comparativo «que» es «than»: taller than me.",
-        "de": "Nach einem Komparativ ist „que“ „than“: taller than me."
+        "es": "Después de un comparativo «que» es «than»: taller than me."
       },
       "wrong": {
         "that": {
-          "hu": "A „that” nem jelent „que”-t az összehasonlításban; „than” kell.",
           "en": "“That” does not mean “que” in a comparison; you need “than”.",
-          "es": "«That» no significa «que» en una comparación; hace falta «than».",
-          "de": "„That“ bedeutet in einem Vergleich nicht „que“; man braucht „than“."
+          "es": "«That» no significa «que» en una comparación; hace falta «than»."
         },
         "as": {
-          "hu": "Az „as” az egyenlőségnél áll (as tall as); középfok után „than” kell.",
           "en": "“As” is for equality (as tall as); after a comparative you need “than”.",
-          "es": "«As» es para la igualdad (as tall as); después de un comparativo hace falta «than».",
-          "de": "„As“ steht bei Gleichheit (as tall as); nach einem Komparativ braucht man „than“."
+          "es": "«As» es para la igualdad (as tall as); después de un comparativo hace falta «than»."
         }
       },
       "examples": [
         "He is older than me.",
         "My dog is bigger than your dog."
       ],
-      "tr": { "hu": "Ő magasabb nálam.", "en": "She is taller than me.", "es": "Ella es más alta que yo.", "de": "Sie ist größer als ich." }
+      "tr": { "en": "She is taller than me.", "es": "Ella es más alta que yo." }
     },
     {
       "id": "cm-12",
@@ -827,30 +685,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az egyenlőség szerkezete: as + melléknév + as: as tall as.",
         "en": "The structure of equality is as + adjective + as: as tall as.",
-        "es": "La estructura de la igualdad es as + adjetivo + as: as tall as.",
-        "de": "Die Struktur der Gleichheit ist as + Adjektiv + as: as tall as."
+        "es": "La estructura de la igualdad es as + adjetivo + as: as tall as."
       },
       "wrong": {
         "taller as": {
-          "hu": "Az egyenlőségnél nincs középfok: as tall as, nem „taller as”.",
           "en": "Equality uses no comparative: as tall as, not “taller as”.",
-          "es": "La igualdad no usa comparativo: as tall as, no «taller as».",
-          "de": "Die Gleichheit benutzt keinen Komparativ: as tall as, nicht „taller as“."
+          "es": "La igualdad no usa comparativo: as tall as, no «taller as»."
         },
         "more tall than": {
-          "hu": "Az „olyan magas, mint” egyenlőség: as tall as; a „more… than” másik szerkezet, és rövid melléknévhez amúgy sem jó.",
           "en": "“As tall as” shows equality; “more… than” is another structure, and it does not suit a short adjective anyway.",
-          "es": "«As tall as» expresa igualdad; «more… than» es otra estructura, y además no sirve para un adjetivo corto.",
-          "de": "„As tall as“ drückt Gleichheit aus; „more… than“ ist eine andere Struktur und passt ohnehin nicht zu einem kurzen Adjektiv."
+          "es": "«As tall as» expresa igualdad; «more… than» es otra estructura, y además no sirve para un adjetivo corto."
         }
       },
       "examples": [
         "She is as old as me.",
         "This car is as big as that car."
       ],
-      "tr": { "hu": "Ő olyan magas, mint a bátyja.", "en": "She is as tall as her brother.", "es": "Ella es tan alta como su hermano.", "de": "Sie ist so groß wie ihr Bruder." }
+      "tr": { "en": "She is as tall as her brother.", "es": "Ella es tan alta como su hermano." }
     },
     {
       "id": "cm-25",
@@ -892,30 +744,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az „as… as” között a melléknév alapalakja áll: as interesting as.",
         "en": "Between “as… as” the adjective stays in its base form: as interesting as.",
-        "es": "Entre «as… as» el adjetivo va en forma base: as interesting as.",
-        "de": "Zwischen „as… as“ steht das Adjektiv in der Grundform: as interesting as."
+        "es": "Entre «as… as» el adjetivo va en forma base: as interesting as."
       },
       "wrong": {
         "more interesting": {
-          "hu": "Az „as… as” között nincs középfok, csak az alapalak: as interesting as.",
           "en": "Between “as… as” there is no comparative, only the base form: as interesting as.",
-          "es": "Entre «as… as» no hay comparativo, solo la forma base: as interesting as.",
-          "de": "Zwischen „as… as“ steht kein Komparativ, nur die Grundform: as interesting as."
+          "es": "Entre «as… as» no hay comparativo, solo la forma base: as interesting as."
         },
         "most interesting": {
-          "hu": "A „most” a felsőfokhoz való; itt az „as… as” között az alapalak áll: as interesting as.",
           "en": "“Most” is for the superlative; between “as… as” the base form is used: as interesting as.",
-          "es": "«Most» es para el superlativo; entre «as… as» se usa la forma base: as interesting as.",
-          "de": "„Most“ gehört zum Superlativ; zwischen „as… as“ steht die Grundform: as interesting as."
+          "es": "«Most» es para el superlativo; entre «as… as» se usa la forma base: as interesting as."
         }
       },
       "examples": [
         "She is as tall as him.",
         "This is not as big as that."
       ],
-      "tr": { "hu": "Ez a könyv nem olyan érdekes, mint az a könyv.", "en": "This book is not as interesting as that book.", "es": "Este libro no es tan interesante como ese libro.", "de": "Dieses Buch ist nicht so interessant wie jenes Buch." }
+      "tr": { "en": "This book is not as interesting as that book.", "es": "Este libro no es tan interesante como ese libro." }
     },
     {
       "kind": "why",
@@ -923,46 +769,34 @@
       "es": "This phone is better than that phone.",
       "target": "better",
       "tr": {
-        "hu": "Ez a telefon jobb, mint az a telefon.",
         "en": "This phone is better than that phone.",
-        "es": "Este teléfono es mejor que ese teléfono.",
-        "de": "Dieses Handy ist besser als jenes Handy."
+        "es": "Este teléfono es mejor que ese teléfono."
       },
       "options": [
         {
           "text": {
-            "hu": "rendhagyó középfok: good → better",
             "en": "irregular comparative: good → better",
-            "es": "comparativo irregular: good → better",
-            "de": "unregelmäßiger Komparativ: good → better"
+            "es": "comparativo irregular: good → better"
           }
         },
         {
           "text": {
-            "hu": "szabályos -er: gooder",
             "en": "regular -er: gooder",
-            "es": "-er regular: gooder",
-            "de": "regelmäßiges -er: gooder"
+            "es": "-er regular: gooder"
           },
           "wrong": {
-            "hu": "A good rendhagyó, ezért nem „gooder”, hanem „better”.",
             "en": "Good is irregular, so not “gooder” but “better”.",
-            "es": "Good es irregular, por eso no «gooder» sino «better».",
-            "de": "Good ist unregelmäßig, deshalb nicht „gooder“, sondern „better“."
+            "es": "Good es irregular, por eso no «gooder» sino «better»."
           }
         },
         {
           "text": {
-            "hu": "more + melléknév: more good",
             "en": "more + adjective: more good",
-            "es": "more + adjetivo: more good",
-            "de": "more + Adjektiv: more good"
+            "es": "more + adjetivo: more good"
           },
           "wrong": {
-            "hu": "A good középfoka nem „more good”, hanem „better”.",
             "en": "The comparative of good is not “more good” but “better”.",
-            "es": "El comparativo de good no es «more good» sino «better».",
-            "de": "Der Komparativ von good ist nicht „more good“, sondern „better“."
+            "es": "El comparativo de good no es «more good» sino «better»."
           }
         }
       ],
@@ -978,30 +812,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A fast egy szótagú melléknév, ezért -er kell: faster.",
         "en": "Fast is a one-syllable adjective, so it takes -er: faster.",
-        "es": "Fast es un adjetivo de una sílaba, por eso lleva -er: faster.",
-        "de": "Fast ist ein einsilbiges Adjektiv, deshalb bekommt es -er: faster."
+        "es": "Fast es un adjetivo de una sílaba, por eso lleva -er: faster."
       },
       "wrong": {
         "more fast": {
-          "hu": "Rövid melléknévhez nem „more”, hanem -er kell: faster.",
           "en": "A short adjective takes -er, not “more”: faster.",
-          "es": "Un adjetivo corto lleva -er, no «more»: faster.",
-          "de": "Ein kurzes Adjektiv bekommt -er, nicht „more“: faster."
+          "es": "Un adjetivo corto lleva -er, no «more»: faster."
         },
         "fastest": {
-          "hu": "A „fastest” felsőfok; két autó összehasonlításához középfok kell: faster.",
           "en": "“Fastest” is the superlative; to compare two cars you need the comparative: faster.",
-          "es": "«Fastest» es el superlativo; para comparar dos coches hace falta el comparativo: faster.",
-          "de": "„Fastest“ ist der Superlativ; um zwei Autos zu vergleichen, braucht man den Komparativ: faster."
+          "es": "«Fastest» es el superlativo; para comparar dos coches hace falta el comparativo: faster."
         }
       },
       "examples": [
         "My bike is faster than your bike.",
         "A car is faster than a bus."
       ],
-      "tr": { "hu": "A te autód gyorsabb, mint az én autóm?", "en": "Is your car faster than my car?", "es": "¿Tu carro es más rápido que mi carro?", "de": "Ist dein Auto schneller als mein Auto?" }
+      "tr": { "en": "Is your car faster than my car?", "es": "¿Tu carro es más rápido que mi carro?" }
     },
     {
       "id": "cm-20",
@@ -1021,30 +849,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A cold egy szótagú melléknév, ezért -er kell: colder.",
         "en": "Cold is a one-syllable adjective, so it takes -er: colder.",
-        "es": "Cold es un adjetivo de una sílaba, por eso lleva -er: colder.",
-        "de": "Cold ist ein einsilbiges Adjektiv, deshalb bekommt es -er: colder."
+        "es": "Cold es un adjetivo de una sílaba, por eso lleva -er: colder."
       },
       "wrong": {
         "more cold": {
-          "hu": "Rövid melléknévhez nem „more”, hanem -er kell: colder.",
           "en": "A short adjective takes -er, not “more”: colder.",
-          "es": "Un adjetivo corto lleva -er, no «more»: colder.",
-          "de": "Ein kurzes Adjektiv bekommt -er, nicht „more“: colder."
+          "es": "Un adjetivo corto lleva -er, no «more»: colder."
         },
         "cold": {
-          "hu": "A „cold” alapfok; a „than” előtt középfok kell: colder.",
           "en": "“Cold” is the base form; before “than” you need the comparative: colder.",
-          "es": "«Cold» es la forma base; antes de «than» hace falta el comparativo: colder.",
-          "de": "„Cold“ ist die Grundform; vor „than“ braucht man den Komparativ: colder."
+          "es": "«Cold» es la forma base; antes de «than» hace falta el comparativo: colder."
         }
       },
       "examples": [
         "Night is colder than day.",
         "It is colder today."
       ],
-      "tr": { "hu": "A tél hidegebb, mint a nyár.", "en": "Winter is colder than summer.", "es": "El invierno es más frío que el verano.", "de": "Der Winter ist kälter als der Sommer." }
+      "tr": { "en": "Winter is colder than summer.", "es": "El invierno es más frío que el verano." }
     },
     {
       "id": "cm-21",

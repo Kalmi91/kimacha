@@ -9,7 +9,7 @@ match: every pair is cut down to the part the lesson is about ("tuve un problema
 "tuve" = "I had"), the hand-made examples of FB441 (7b14e09) and FB465 (im-match-01). The learned-language side
 must be a contiguous part of the ORIGINAL phrase (so the pairing itself cannot change), the gloss side comes
 from Gemini. vosotros: the wrong option that names vosotros is replaced by another wrong option that fits the
-lesson, and the explanations are rewritten in all four languages (Mexican norm: ustedes). The correct answer
+lesson, and the explanations are rewritten in both languages (Mexican norm: ustedes). The correct answer
 of an item never changes (validated).
 
 Run it from YOUR OWN terminal, never from an agent session (LLM text in a session is forbidden; the key stays
@@ -51,7 +51,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 GRAMMAR = ROOT / "data" / "games" / "grammar"
 SCRIPTS = ROOT / "scripts"
-LANGS = ("hu", "en", "es", "de")
+LANGS = ("en", "es")
 DEFAULT_MODEL = "gemini-2.5-flash"
 ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
 
@@ -396,13 +396,13 @@ def validate_vosotros(old, new):
             return None, "vosotros in the correct option: needs a hand edit"
         for n, opt in enumerate(n_opts):
             if not isinstance(opt, dict) or not _lang4(opt.get("text")):
-                return None, f"option {n}: text must have 4 languages"
+                return None, f"option {n}: text must have 2 languages"
             if n != c and (not _lang4(opt.get("wrong")) or any(len(opt["wrong"][l].strip()) < WRONG_MIN for l in LANGS)):
-                return None, f"option {n}: wrong explanation must have 4 real sentences"
+                return None, f"option {n}: wrong explanation must have 2 real sentences"
             if n == c and "wrong" in opt:
                 return None, "the correct option has no wrong explanation"
-        if len({o["text"]["hu"].strip().lower() for o in n_opts}) != 3:
-            return None, "option texts are not unique (hu)"
+        if len({o["text"]["en"].strip().lower() for o in n_opts}) != 3:
+            return None, "option texts are not unique (en)"
         for n, opt in enumerate(n_opts):
             if n != c and opt["wrong"] == o_opts[n].get("wrong") and find_vosotros(o_opts[n]):
                 return None, f"option {n}: still the old text"
@@ -423,7 +423,7 @@ def validate_vosotros(old, new):
             if not _lang4(expl) or any(len(expl[l].strip()) <= 40 for l in LANGS):
                 return None, f"wrong '{key}': 4 sentences of more than 40 characters needed"
         if not _lang4(new.get("why")):
-            return None, "why must have 4 languages"
+            return None, "why must have 2 languages"
     hit = find_vosotros(new)
     if hit:
         return None, f"vosotros left ('{hit}')"
@@ -437,7 +437,7 @@ def build_match_prompt(track, batch):
     learned, gloss = LEARNED[track], GLOSS[track]
     lim = MATCH_MAX[track]
     lines = [
-        "You fix pairing exercises of a language-learning grammar course (Mexican Spanish and English, four UI languages).",
+        "You fix pairing exercises of a language-learning grammar course (Mexican Spanish and English, two UI languages).",
         f"In a pairing exercise the learner matches each {LANG_NAMES[learned]} part with its {LANG_NAMES[gloss]} meaning.",
         "The pairs are currently whole phrases or sentences. The exercise must pair ONLY THE WORD OR SHORT FORM THE LESSON",
         "IS ABOUT (in a tense lesson the verb form; otherwise the pronoun, connector or word that varies), like these",
@@ -479,7 +479,7 @@ def match_schema():
 
 def build_vosotros_prompt(batch):
     lines = [
-        "You fix drill items of a Spanish grammar course (Mexican Spanish; UI languages hu, en, es, de).",
+        "You fix drill items of a Spanish grammar course (Mexican Spanish; UI languages en, es).",
         "Mexican norm: the course never uses vosotros. NO item may contain vosotros, vosotras, vuestro/a/os/as, the",
         'pronoun "os", or any vosotros verb form (-áis, -éis, -ís, -asteis, -isteis, -abais, -íais, -aréis, vais, sois,',
         "veis, hablad, comed ...), in ANY language field, and not as an option either. ustedes is the plural 'you'.",
@@ -490,12 +490,12 @@ def build_vosotros_prompt(batch):
         "- A wrong option that is a vosotros form or pronoun is replaced by another plausible WRONG option that fits the",
         "  point of the lesson and the sentence (a why item: another person such as ellos/ustedes; a gap item: another real",
         "  but wrong form, never vosotros), different from the other options. Its explanation says concretely, in all",
-        "  four languages, why it does not fit here and names the right form (at least one full sentence each).",
+        "  both languages, why it does not fit here and names the right form (at least one full sentence each).",
         "- A sentence that only mentions vosotros in passing is rewritten without it, same meaning.",
-        "- why items keep exactly 3 options; every option has `text` in hu/en/es/de; the hu texts differ; only the wrong",
-        "  options have `wrong` (hu/en/es/de). gap items keep the same number of options; `wrong` is an object keyed by",
-        "  each wrong option string, each with hu/en/es/de explanations.",
-        "- Write natural Hungarian, English, Spanish (Mexican) and German; no machine-translation word salad.",
+        "- why items keep exactly 3 options; every option has `text` in en/es; the en texts differ; only the wrong",
+        "  options have `wrong` (en/es). gap items keep the same number of options; `wrong` is an object keyed by",
+        "  each wrong option string, each with en/es explanations.",
+        "- Write natural English and Spanish (Mexican); no machine-translation word salad.",
         'Return a JSON array with one object per item: {"id": <the item number you were given>, "item": <the complete rewritten item>}.',
         "Items:",
         json.dumps([{"id": str(n), "item": w["item"]} for n, w in enumerate(batch)], ensure_ascii=False, indent=1),

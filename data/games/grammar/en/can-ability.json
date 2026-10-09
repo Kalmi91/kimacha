@@ -3,48 +3,36 @@
   "topic": "can_ability",
   "level": "A1",
   "title": {
-    "hu": "A „can” (képesség): I can swim",
     "en": "Can (ability): I can swim",
-    "es": "Can (habilidad): I can swim",
-    "de": "Can (Fähigkeit): I can swim"
+    "es": "Can (habilidad): I can swim"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "A „can” a spanyol „saber” (valamit tudni csinálni) és a „poder” (lehetősége van) angol megfelelője: „I can swim” = „Sé nadar”, „Can I open the window?” = „¿Puedo abrir la ventana?”. A „can” segédige (modális ige): minden személynél ugyanaz az alakja, utána közvetlenül az ige alapalakja áll. Nincs -s, nincs „to”, nincs „do”.",
         "en": "The English “can” covers Spanish “saber” (knowing how to do something) and “poder” (being able to, being allowed to): “I can swim” = “Sé nadar”, “Can I open the window?” = “¿Puedo abrir la ventana?”. “Can” is a modal verb: it has the same form for every person, and the base verb follows it directly. No -s, no “to”, no “do”.",
-        "es": "El «can» del inglés cubre el «saber» (saber hacer algo) y el «poder» (tener la posibilidad o el permiso) del español: «I can swim» = «Sé nadar», «Can I open the window?» = «¿Puedo abrir la ventana?». «Can» es un verbo modal: tiene la misma forma para todas las personas, y el verbo base va justo detrás. Sin -s, sin «to», sin «do».",
-        "de": "Das englische „can“ deckt das spanische „saber“ (etwas können) und „poder“ (die Möglichkeit oder Erlaubnis haben) ab: „I can swim“ = „Sé nadar“, „Can I open the window?“ = „¿Puedo abrir la ventana?“. „Can“ ist ein Modalverb: Es hat für jede Person dieselbe Form, und die Grundform des Verbs folgt direkt. Kein -s, kein „to“, kein „do“."
+        "es": "El «can» del inglés cubre el «saber» (saber hacer algo) y el «poder» (tener la posibilidad o el permiso) del español: «I can swim» = «Sé nadar», «Can I open the window?» = «¿Puedo abrir la ventana?». «Can» es un verbo modal: tiene la misma forma para todas las personas, y el verbo base va justo detrás. Sin -s, sin «to», sin «do»."
       }
     },
     {
       "kind": "table",
       "id": "ca-forms",
       "title": {
-        "hu": "Can + ige",
         "en": "Can + verb",
-        "es": "Can + verbo",
-        "de": "Can + Verb"
+        "es": "Can + verbo"
       },
       "header": [
         {
-          "hu": "Személy",
           "en": "Person",
-          "es": "Persona",
-          "de": "Person"
+          "es": "Persona"
         },
         {
-          "hu": "swim",
           "en": "swim",
-          "es": "swim",
-          "de": "swim"
+          "es": "swim"
         },
         {
-          "hu": "speak",
           "en": "speak",
-          "es": "speak",
-          "de": "speak"
+          "es": "speak"
         }
       ],
       "rows": [
@@ -79,29 +67,21 @@
       "kind": "table",
       "id": "ca-neg",
       "title": {
-        "hu": "Tagadás és kérdés a „swim” igével",
         "en": "Negatives and questions with “swim”",
-        "es": "Negación y pregunta con «swim»",
-        "de": "Verneinung und Frage mit „swim“"
+        "es": "Negación y pregunta con «swim»"
       },
       "header": [
         {
-          "hu": "Személy",
           "en": "Person",
-          "es": "Persona",
-          "de": "Person"
+          "es": "Persona"
         },
         {
-          "hu": "tagadás",
           "en": "negative",
-          "es": "negación",
-          "de": "Verneinung"
+          "es": "negación"
         },
         {
-          "hu": "kérdés",
           "en": "question",
-          "es": "pregunta",
-          "de": "Frage"
+          "es": "pregunta"
         }
       ],
       "rows": [
@@ -135,92 +115,72 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Alak: állító, tagadó, kérdő",
         "en": "Form: affirmative, negative, question",
-        "es": "Forma: afirmativa, negativa, pregunta",
-        "de": "Form: bejahend, verneinend, Frage"
+        "es": "Forma: afirmativa, negativa, pregunta"
       },
       "items": [
         {
           "text": {
-            "hu": "Állító: alany + can + alapige, minden személynél ugyanúgy (she can swim, nem „she cans swim”).",
             "en": "Affirmative: subject + can + base verb, the same for every person (she can swim, not “she cans swim”).",
-            "es": "Afirmativa: sujeto + can + verbo base, igual para todas las personas (she can swim, no «she cans swim»).",
-            "de": "Bejahend: Subjekt + can + Grundform, für jede Person gleich (she can swim, nicht „she cans swim“)."
+            "es": "Afirmativa: sujeto + can + verbo base, igual para todas las personas (she can swim, no «she cans swim»)."
           },
           "examples": [
             {
               "es": "I can swim.",
               "tr": {
-                "hu": "Tudok úszni.",
                 "en": "I can swim.",
-                "es": "Sé nadar.",
-                "de": "Ich kann schwimmen."
+                "es": "Sé nadar."
               }
             },
             {
               "es": "She can speak English.",
               "tr": {
-                "hu": "Tud angolul beszélni.",
                 "en": "She can speak English.",
-                "es": "Ella sabe hablar inglés.",
-                "de": "Sie kann Englisch sprechen."
+                "es": "Ella sabe hablar inglés."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Tagadás: can’t (írásban cannot, egy szó; a „can not” ritka). A can’t után is alapige áll.",
             "en": "Negative: can’t (in writing cannot, one word; “can not” is rare). The base verb follows can’t too.",
-            "es": "Negación: can’t (por escrito cannot, una palabra; «can not» es raro). Después de can’t también va el verbo base.",
-            "de": "Verneinung: can’t (geschrieben cannot, ein Wort; „can not“ ist selten). Auch nach can’t folgt die Grundform."
+            "es": "Negación: can’t (por escrito cannot, una palabra; «can not» es raro). Después de can’t también va el verbo base."
           },
           "examples": [
             {
               "es": "He can't cook.",
               "tr": {
-                "hu": "Nem tud főzni.",
                 "en": "He can't cook.",
-                "es": "Él no sabe cocinar.",
-                "de": "Er kann nicht kochen."
+                "es": "Él no sabe cocinar."
               }
             },
             {
               "es": "We can't dance.",
               "tr": {
-                "hu": "Nem tudunk táncolni.",
                 "en": "We can't dance.",
-                "es": "No sabemos bailar.",
-                "de": "Wir können nicht tanzen."
+                "es": "No sabemos bailar."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Kérdés: Can + alany + alapige. Nincs „do”. Rövid válasz: Yes, I can. / No, I can’t.",
             "en": "Questions: Can + subject + base verb. There is no “do”. Short answers: Yes, I can. / No, I can’t.",
-            "es": "Pregunta: Can + sujeto + verbo base. No hay «do». Respuesta corta: Yes, I can. / No, I can’t.",
-            "de": "Frage: Can + Subjekt + Grundform. Es gibt kein „do“. Kurzantwort: Yes, I can. / No, I can’t."
+            "es": "Pregunta: Can + sujeto + verbo base. No hay «do». Respuesta corta: Yes, I can. / No, I can’t."
           },
           "examples": [
             {
               "es": "Can you swim?",
               "tr": {
-                "hu": "Tudsz úszni?",
                 "en": "Can you swim?",
-                "es": "¿Sabes nadar?",
-                "de": "Kannst du schwimmen?"
+                "es": "¿Sabes nadar?"
               }
             },
             {
               "es": "Can they run fast? No, they can't.",
               "tr": {
-                "hu": "Tudnak gyorsan futni? Nem.",
                 "en": "Can they run fast? No, they can't.",
-                "es": "¿Pueden correr rápido? No.",
-                "de": "Können sie schnell laufen? Nein."
+                "es": "¿Pueden correr rápido? No."
               }
             }
           ]
@@ -230,64 +190,50 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Mire használjuk",
         "en": "What we use it for",
-        "es": "Para qué se usa",
-        "de": "Wofür wir es benutzen"
+        "es": "Para qué se usa"
       },
       "items": [
         {
           "text": {
-            "hu": "Képesség: mit tudsz csinálni (I can swim, she can cook). A spanyol „saber + infinitivo” angolul „can”, nem „know”.",
             "en": "Ability: what you know how to do (I can swim, she can cook). Spanish “saber + infinitivo” is “can” in English, not “know”.",
-            "es": "Habilidad: lo que sabes hacer (I can swim, she can cook). El «saber + infinitivo» del español es «can» en inglés, no «know».",
-            "de": "Fähigkeit: was du kannst (I can swim, she can cook). Spanisch „saber + infinitivo“ ist im Englischen „can“, nicht „know“."
+            "es": "Habilidad: lo que sabes hacer (I can swim, she can cook). El «saber + infinitivo» del español es «can» en inglés, no «know»."
           },
           "examples": [
             {
               "es": "She can sing and dance.",
               "tr": {
-                "hu": "Tud énekelni és táncolni.",
                 "en": "She can sing and dance.",
-                "es": "Ella sabe cantar y bailar.",
-                "de": "Sie kann singen und tanzen."
+                "es": "Ella sabe cantar y bailar."
               }
             },
             {
               "es": "Babies can't walk.",
               "tr": {
-                "hu": "A babák nem tudnak járni.",
                 "en": "Babies can't walk.",
-                "es": "Los bebés no pueden caminar.",
-                "de": "Babys können nicht laufen."
+                "es": "Los bebés no pueden caminar."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Kérés és engedély: Can you help me? (kérés) Can I use your pen? (engedély).",
             "en": "Requests and permission: Can you help me? (request) Can I use your pen? (permission).",
-            "es": "Peticiones y permiso: Can you help me? (petición) Can I use your pen? (permiso).",
-            "de": "Bitten und Erlaubnis: Can you help me? (Bitte) Can I use your pen? (Erlaubnis)."
+            "es": "Peticiones y permiso: Can you help me? (petición) Can I use your pen? (permiso)."
           },
           "examples": [
             {
               "es": "Can you open the door, please?",
               "tr": {
-                "hu": "Kinyitnád az ajtót, kérlek?",
                 "en": "Can you open the door, please?",
-                "es": "¿Puedes abrir la puerta, por favor?",
-                "de": "Kannst du bitte die Tür öffnen?"
+                "es": "¿Puedes abrir la puerta, por favor?"
               }
             },
             {
               "es": "Can I use your pen?",
               "tr": {
-                "hu": "Használhatom a tollad?",
                 "en": "Can I use your pen?",
-                "es": "¿Puedo usar tu bolígrafo?",
-                "de": "Kann ich deinen Stift benutzen?"
+                "es": "¿Puedo usar tu bolígrafo?"
               }
             }
           ]
@@ -297,45 +243,35 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "A „can” sosem kap -s-t. Ne mondd, hogy „He cans swim”, hanem: „He can swim”.",
         "en": "“Can” never takes -s. Do not say “He cans swim”; say “He can swim”.",
-        "es": "«Can» nunca lleva -s. No digas «He cans swim», di «He can swim».",
-        "de": "„Can“ bekommt nie ein -s. Sag nicht „He cans swim“, sondern „He can swim“."
+        "es": "«Can» nunca lleva -s. No digas «He cans swim», di «He can swim»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A „can” után nincs „to” és nincs -ing. Ne mondd, hogy „I can to swim” vagy „I can swimming”, hanem: „I can swim”.",
         "en": "After “can” there is no “to” and no -ing. Do not say “I can to swim” or “I can swimming”; say “I can swim”.",
-        "es": "Después de «can» no hay «to» ni -ing. No digas «I can to swim» ni «I can swimming», di «I can swim».",
-        "de": "Nach „can“ steht weder „to“ noch -ing. Sag nicht „I can to swim“ oder „I can swimming“, sondern „I can swim“."
+        "es": "Después de «can» no hay «to» ni -ing. No digas «I can to swim» ni «I can swimming», di «I can swim»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "Kérdésben és tagadásban nincs „do”. Ne mondd, hogy „Do you can swim?” vagy „I don’t can swim”, hanem: „Can you swim?” és „I can’t swim”.",
         "en": "In questions and negatives there is no “do”. Do not say “Do you can swim?” or “I don’t can swim”; say “Can you swim?” and “I can’t swim”.",
-        "es": "En preguntas y negaciones no hay «do». No digas «Do you can swim?» ni «I don’t can swim», di «Can you swim?» y «I can’t swim».",
-        "de": "In Fragen und Verneinungen gibt es kein „do“. Sag nicht „Do you can swim?“ oder „I don’t can swim“, sondern „Can you swim?“ und „I can’t swim“."
+        "es": "En preguntas y negaciones no hay «do». No digas «Do you can swim?» ni «I don’t can swim», di «Can you swim?» y «I can’t swim»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A „sé nadar” nem „I know swim”. Az angol „know” után „how to” kell (I know how to swim), egyszerűbb a „can”: „I can swim”.",
         "en": "“Sé nadar” is not “I know swim”. After “know” English needs “how to” (I know how to swim); “can” is simpler: “I can swim”.",
-        "es": "«Sé nadar» no es «I know swim». Después de «know» el inglés necesita «how to» (I know how to swim); «can» es más simple: «I can swim».",
-        "de": "„Sé nadar“ ist nicht „I know swim“. Nach „know“ braucht das Englische „how to“ (I know how to swim); „can“ ist einfacher: „I can swim“."
+        "es": "«Sé nadar» no es «I know swim». Después de «know» el inglés necesita «how to» (I know how to swim); «can» es más simple: «I can swim»."
       }
     }
   ],
   "speak": {
-    "hu": "A «can» a spanyol «saber» és «poder» angol megfelelője. Minden személynél ugyanaz az alakja: «I can swim», «she can swim», «they can swim». Utána közvetlenül az alapige áll: nincs -s, nincs «to». Tagadás: «I can't swim». Kérdés: «Can you swim?». Rövid válasz: «Yes, I can» vagy «No, I can't». Kérésre is jó: «Can you help me?». Vigyázat: nem «he cans», nem «Do you can», és nem «I know swim».",
     "en": "The word «can» covers the Spanish «saber» and «poder». It has the same form for every person: «I can swim», «she can swim», «they can swim». The base verb follows it directly: no -s, no «to». Negative: «I can't swim». Question: «Can you swim?». Short answers: «Yes, I can» or «No, I can't». It also works for requests: «Can you help me?». Careful: not «he cans», not «Do you can», and not «I know swim».",
-    "es": "El «can» cubre el «saber» y el «poder» del español. Tiene la misma forma para todas las personas: «I can swim», «she can swim», «they can swim». Después va directamente el verbo base: sin -s, sin «to». Negación: «I can't swim». Pregunta: «Can you swim?». Respuesta corta: «Yes, I can» o «No, I can't». También sirve para pedir algo: «Can you help me?». Cuidado: no «he cans», no «Do you can» y no «I know swim».",
-    "de": "Das Wort «can» deckt das spanische «saber» und «poder» ab. Es hat für jede Person dieselbe Form: «I can swim», «she can swim», «they can swim». Danach folgt direkt die Grundform: kein -s, kein «to». Verneinung: «I can't swim». Frage: «Can you swim?». Kurzantwort: «Yes, I can» oder «No, I can't». Es passt auch für Bitten: «Can you help me?». Vorsicht: nicht «he cans», nicht «Do you can» und nicht «I know swim»."
+    "es": "El «can» cubre el «saber» y el «poder» del español. Tiene la misma forma para todas las personas: «I can swim», «she can swim», «they can swim». Después va directamente el verbo base: sin -s, sin «to». Negación: «I can't swim». Pregunta: «Can you swim?». Respuesta corta: «Yes, I can» o «No, I can't». También sirve para pedir algo: «Can you help me?». Cuidado: no «he cans», no «Do you can» y no «I know swim»."
   },
   "items": [
     {
@@ -348,30 +284,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „can” után közvetlenül az alapige áll: I can swim.",
         "en": "After “can” the base verb follows directly: I can swim.",
-        "es": "Después de «can» va directamente el verbo base: I can swim.",
-        "de": "Nach „can“ folgt direkt die Grundform: I can swim."
+        "es": "Después de «can» va directamente el verbo base: I can swim."
       },
       "wrong": {
         "cans": {
-          "hu": "A „can” sosem kap -s-t, egyik személynél sem.",
           "en": "“Can” never takes -s, with any person.",
-          "es": "«Can» nunca lleva -s, con ninguna persona.",
-          "de": "„Can“ bekommt nie ein -s, bei keiner Person."
+          "es": "«Can» nunca lleva -s, con ninguna persona."
         },
         "can to": {
-          "hu": "A „can” után nincs „to”: I can swim.",
           "en": "There is no “to” after “can”: I can swim.",
-          "es": "Después de «can» no hay «to»: I can swim.",
-          "de": "Nach „can“ steht kein „to“: I can swim."
+          "es": "Después de «can» no hay «to»: I can swim."
         }
       },
       "examples": [
         "You can run.",
         "We can dance."
       ],
-      "tr": { "hu": "Tudok úszni.", "en": "I can swim.", "es": "Puedo nadar.", "de": "Ich kann schwimmen." }
+      "tr": { "en": "I can swim.", "es": "Puedo nadar." }
     },
     {
       "id": "ca-02",
@@ -383,30 +313,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „she” mellett is „can” áll, nem „cans”: She can speak English.",
         "en": "With “she” it is still “can”, not “cans”: She can speak English.",
-        "es": "Con «she» sigue siendo «can», no «cans»: She can speak English.",
-        "de": "Auch bei „she“ heißt es „can“, nicht „cans“: She can speak English."
+        "es": "Con «she» sigue siendo «can», no «cans»: She can speak English."
       },
       "wrong": {
         "cans": {
-          "hu": "A „can” a he / she / it mellett sem kap -s-t.",
           "en": "“Can” takes no -s even with he / she / it.",
-          "es": "«Can» no lleva -s ni siquiera con he / she / it.",
-          "de": "„Can“ bekommt auch bei he / she / it kein -s."
+          "es": "«Can» no lleva -s ni siquiera con he / she / it."
         },
         "is can": {
-          "hu": "A „can” önmagában segédige, a to be nem kell mellé: She can speak.",
           "en": "“Can” is a helper verb on its own; it needs no to be: She can speak.",
-          "es": "«Can» es un auxiliar por sí solo; no necesita to be: She can speak.",
-          "de": "„Can“ ist für sich ein Hilfsverb; es braucht kein to be: She can speak."
+          "es": "«Can» es un auxiliar por sí solo; no necesita to be: She can speak."
         }
       },
       "examples": [
         "He can cook.",
         "My mother can sing."
       ],
-      "tr": { "hu": "Tud angolul beszélni.", "en": "She can speak English.", "es": "Ella puede hablar inglés.", "de": "Sie kann Englisch sprechen." }
+      "tr": { "en": "She can speak English.", "es": "Ella puede hablar inglés." }
     },
     {
       "id": "ca-15",
@@ -426,30 +350,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A „can” után az ige alapalakja áll, -s nélkül: He can run fast.",
         "en": "After “can” the verb stays in its base form, with no -s: He can run fast.",
-        "es": "Después de «can» el verbo va en forma base, sin -s: He can run fast.",
-        "de": "Nach „can“ steht das Verb in der Grundform, ohne -s: He can run fast."
+        "es": "Después de «can» el verbo va en forma base, sin -s: He can run fast."
       },
       "wrong": {
         "runs": {
-          "hu": "Az -s a „can”-nál nem jelenik meg az igén: can run, nem „can runs”.",
           "en": "The -s does not appear on the verb after “can”: can run, not “can runs”.",
-          "es": "La -s no aparece en el verbo después de «can»: can run, no «can runs».",
-          "de": "Das -s erscheint nach „can“ nicht am Verb: can run, nicht „can runs“."
+          "es": "La -s no aparece en el verbo después de «can»: can run, no «can runs»."
         },
         "to run": {
-          "hu": "A „can” után nincs „to”: can run.",
           "en": "There is no “to” after “can”: can run.",
-          "es": "Después de «can» no hay «to»: can run.",
-          "de": "Nach „can“ steht kein „to“: can run."
+          "es": "Después de «can» no hay «to»: can run."
         }
       },
       "examples": [
         "She can run fast.",
         "My dog can run."
       ],
-      "tr": { "hu": "Gyorsan tud futni.", "en": "He can run fast.", "es": "Él puede correr rápido.", "de": "Er kann schnell laufen." }
+      "tr": { "en": "He can run fast.", "es": "Él puede correr rápido." }
     },
     {
       "id": "ca-04",
@@ -461,30 +379,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „can” után az ige alapalakja áll: She can sing and dance.",
         "en": "After “can” the verb stays in its base form: She can sing and dance.",
-        "es": "Después de «can» el verbo va en forma base: She can sing and dance.",
-        "de": "Nach „can“ steht das Verb in der Grundform: She can sing and dance."
+        "es": "Después de «can» el verbo va en forma base: She can sing and dance."
       },
       "wrong": {
         "sings": {
-          "hu": "A „can” után nem kap az ige -s-t, még a „she” mellett sem.",
           "en": "After “can” the verb takes no -s, not even with “she”.",
-          "es": "Después de «can» el verbo no lleva -s, ni siquiera con «she».",
-          "de": "Nach „can“ bekommt das Verb kein -s, auch nicht bei „she“."
+          "es": "Después de «can» el verbo no lleva -s, ni siquiera con «she»."
         },
         "singing": {
-          "hu": "A „can” után nincs -ing: can sing.",
           "en": "There is no -ing after “can”: can sing.",
-          "es": "Después de «can» no hay -ing: can sing.",
-          "de": "Nach „can“ steht kein -ing: can sing."
+          "es": "Después de «can» no hay -ing: can sing."
         }
       },
       "examples": [
         "He can sing.",
         "We can dance and sing."
       ],
-      "tr": { "hu": "Tud énekelni és táncolni.", "en": "She can sing and dance.", "es": "Ella puede cantar y bailar.", "de": "Sie kann singen und tanzen." }
+      "tr": { "en": "She can sing and dance.", "es": "Ella puede cantar y bailar." }
     },
     {
       "kind": "why",
@@ -492,46 +404,34 @@
       "es": "She can swim.",
       "target": "can",
       "tr": {
-        "hu": "Tud úszni.",
         "en": "She can swim.",
-        "es": "Ella sabe nadar.",
-        "de": "Sie kann schwimmen."
+        "es": "Ella sabe nadar."
       },
       "options": [
         {
           "text": {
-            "hu": "a „can” minden személynél ugyanaz, -s nélkül",
             "en": "“can” is the same for every person, with no -s",
-            "es": "«can» es igual para todas las personas, sin -s",
-            "de": "„can“ ist für jede Person gleich, ohne -s"
+            "es": "«can» es igual para todas las personas, sin -s"
           }
         },
         {
           "text": {
-            "hu": "a he / she / it mellett -s kell: cans",
             "en": "with he / she / it you need -s: cans",
-            "es": "con he / she / it hace falta -s: cans",
-            "de": "bei he / she / it braucht man -s: cans"
+            "es": "con he / she / it hace falta -s: cans"
           },
           "wrong": {
-            "hu": "A „can” modális ige, ezért sosem kap -s-t: she can, nem „she cans”.",
             "en": "“Can” is a modal verb, so it never takes -s: she can, not “she cans”.",
-            "es": "«Can» es un verbo modal, por eso nunca lleva -s: she can, no «she cans».",
-            "de": "„Can“ ist ein Modalverb, deshalb bekommt es nie ein -s: she can, nicht „she cans“."
+            "es": "«Can» es un verbo modal, por eso nunca lleva -s: she can, no «she cans»."
           }
         },
         {
           "text": {
-            "hu": "a „can” után „to” kell",
             "en": "after “can” you need “to”",
-            "es": "después de «can» hace falta «to»",
-            "de": "nach „can“ braucht man „to“"
+            "es": "después de «can» hace falta «to»"
           },
           "wrong": {
-            "hu": "A „can” után az alapige közvetlenül áll, „to” nélkül: can swim.",
             "en": "After “can” the base verb follows directly, with no “to”: can swim.",
-            "es": "Después de «can» el verbo base va directamente, sin «to»: can swim.",
-            "de": "Nach „can“ folgt die Grundform direkt, ohne „to“: can swim."
+            "es": "Después de «can» el verbo base va directamente, sin «to»: can swim."
           }
         }
       ],
@@ -547,30 +447,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „can” kérdésben az alany elé kerül: Can you cook?",
         "en": "In a question “can” goes before the subject: Can you cook?",
-        "es": "En una pregunta «can» va antes del sujeto: Can you cook?",
-        "de": "In der Frage steht „can“ vor dem Subjekt: Can you cook?"
+        "es": "En una pregunta «can» va antes del sujeto: Can you cook?"
       },
       "wrong": {
         "Do": {
-          "hu": "A „can” mellé nem kell „do”: Can you cook?, nem „Do you can cook?”.",
           "en": "“Can” needs no “do”: Can you cook?, not “Do you can cook?”.",
-          "es": "«Can» no necesita «do»: Can you cook?, no «Do you can cook?».",
-          "de": "„Can“ braucht kein „do“: Can you cook?, nicht „Do you can cook?“."
+          "es": "«Can» no necesita «do»: Can you cook?, no «Do you can cook?»."
         },
         "Are": {
-          "hu": "Az „Are” a to be alakja; a képességet a „can” fejezi ki: Can you cook?",
           "en": "“Are” is a form of to be; ability is expressed by “can”: Can you cook?",
-          "es": "«Are» es una forma de to be; la habilidad se expresa con «can»: Can you cook?",
-          "de": "„Are“ ist eine Form von to be; die Fähigkeit drückt „can“ aus: Can you cook?"
+          "es": "«Are» es una forma de to be; la habilidad se expresa con «can»: Can you cook?"
         }
       },
       "examples": [
         "Can you swim?",
         "Can they dance?"
       ],
-      "tr": { "hu": "Tudsz főzni?", "en": "Can you cook?", "es": "¿Puedes cocinar?", "de": "Kannst du kochen?" }
+      "tr": { "en": "Can you cook?", "es": "¿Puedes cocinar?" }
     },
     {
       "id": "ca-06",
@@ -582,30 +476,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Még a „your sister” (she) mellett is „Can” áll: Can your sister dance?",
         "en": "Even with “your sister” (she) it is “Can”: Can your sister dance?",
-        "es": "Incluso con «your sister» (she) se usa «Can»: Can your sister dance?",
-        "de": "Auch bei „your sister“ (she) steht „Can“: Can your sister dance?"
+        "es": "Incluso con «your sister» (she) se usa «Can»: Can your sister dance?"
       },
       "wrong": {
         "Does": {
-          "hu": "A „can” mellé nem kell „does”: Can your sister dance?",
           "en": "“Can” needs no “does”: Can your sister dance?",
-          "es": "«Can» no necesita «does»: Can your sister dance?",
-          "de": "„Can“ braucht kein „does“: Can your sister dance?"
+          "es": "«Can» no necesita «does»: Can your sister dance?"
         },
         "Is": {
-          "hu": "Az „Is” a to be alakja; a képességet a „can” fejezi ki.",
           "en": "“Is” is a form of to be; ability is expressed by “can”.",
-          "es": "«Is» es una forma de to be; la habilidad se expresa con «can».",
-          "de": "„Is“ ist eine Form von to be; die Fähigkeit drückt „can“ aus."
+          "es": "«Is» es una forma de to be; la habilidad se expresa con «can»."
         }
       },
       "examples": [
         "Can your brother cook?",
         "Can your mother sing?"
       ],
-      "tr": { "hu": "Tud a nővéred táncolni?", "en": "Can your sister dance?", "es": "¿Puede bailar tu hermana?", "de": "Kann deine Schwester tanzen?" }
+      "tr": { "en": "Can your sister dance?", "es": "¿Puede bailar tu hermana?" }
     },
     {
       "id": "ca-16",
@@ -625,30 +513,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Aki nem tud úszni, nem megy a vízbe: I can’t swim.",
         "en": "Someone who cannot swim does not go in the water: I can’t swim.",
-        "es": "Quien no sabe nadar no entra en el agua: I can’t swim.",
-        "de": "Wer nicht schwimmen kann, geht nicht ins Wasser: I can’t swim."
+        "es": "Quien no sabe nadar no entra en el agua: I can’t swim."
       },
       "wrong": {
         "can": {
-          "hu": "A „can” azt jelentené, hogy tudsz úszni; a mondat többi része az ellenkezőjét mutatja: can’t.",
           "en": "“Can” would mean you can swim; the rest of the sentence shows the opposite: can’t.",
-          "es": "«Can» significaría que sabes nadar; el resto de la oración muestra lo contrario: can’t.",
-          "de": "„Can“ hieße, dass du schwimmen kannst; der Rest des Satzes zeigt das Gegenteil: can’t."
+          "es": "«Can» significaría que sabes nadar; el resto de la oración muestra lo contrario: can’t."
         },
         "don't": {
-          "hu": "A „can” mellé nem a „don’t”, hanem a „can’t” a tagadás.",
           "en": "The negative of “can” is “can’t”, not “don’t”.",
-          "es": "La negación de «can» es «can’t», no «don’t».",
-          "de": "Die Verneinung von „can“ ist „can’t“, nicht „don’t“."
+          "es": "La negación de «can» es «can’t», no «don’t»."
         }
       },
       "examples": [
         "You can't sing.",
         "She can't run fast."
       ],
-      "tr": { "hu": "Nem tudok úszni, ezért nem megyek be a vízbe.", "en": "I can't swim, so I do not go in the water.", "es": "No sé nadar, así que no me meto al agua.", "de": "Ich kann nicht schwimmen, deshalb gehe ich nicht ins Wasser." }
+      "tr": { "en": "I can't swim, so I do not go in the water.", "es": "No sé nadar, así que no me meto al agua." }
     },
     {
       "id": "ca-08",
@@ -660,30 +542,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „can” tagadása „can’t”, és utána alapige áll: He can’t cook.",
         "en": "The negative of “can” is “can’t”, followed by the base verb: He can’t cook.",
-        "es": "La negación de «can» es «can’t», seguido del verbo base: He can’t cook.",
-        "de": "Die Verneinung von „can“ ist „can’t“, danach folgt die Grundform: He can’t cook."
+        "es": "La negación de «can» es «can’t», seguido del verbo base: He can’t cook."
       },
       "wrong": {
         "doesn't can": {
-          "hu": "A „can” mellé nem kell „doesn’t”: He can’t cook.",
           "en": "“Can” needs no “doesn’t”: He can’t cook.",
-          "es": "«Can» no necesita «doesn’t»: He can’t cook.",
-          "de": "„Can“ braucht kein „doesn’t“: He can’t cook."
+          "es": "«Can» no necesita «doesn’t»: He can’t cook."
         },
         "isn't can": {
-          "hu": "A „can” nem a to be-vel tagadunk: He can’t cook.",
           "en": "We do not negate “can” with to be: He can’t cook.",
-          "es": "«Can» no se niega con to be: He can’t cook.",
-          "de": "„Can“ verneint man nicht mit to be: He can’t cook."
+          "es": "«Can» no se niega con to be: He can’t cook."
         }
       },
       "examples": [
         "I can't cook.",
         "They can't swim."
       ],
-      "tr": { "hu": "Nem tud főzni.", "en": "He can't cook.", "es": "Él no sabe cocinar.", "de": "Er kann nicht kochen." }
+      "tr": { "en": "He can't cook.", "es": "Él no sabe cocinar." }
     },
     {
       "id": "ca-09",
@@ -695,30 +571,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A nemleges rövid válasz a „can” tagadásával megy: No, I can’t.",
         "en": "The negative short answer uses the negative of “can”: No, I can’t.",
-        "es": "La respuesta corta negativa usa la negación de «can»: No, I can’t.",
-        "de": "Die verneinende Kurzantwort nimmt die Verneinung von „can“: No, I can’t."
+        "es": "La respuesta corta negativa usa la negación de «can»: No, I can’t."
       },
       "wrong": {
         "don't": {
-          "hu": "A „Can you…?” kérdésre nem „don’t”, hanem „can’t” a válasz.",
           "en": "A “Can you…?” question is answered with “can’t”, not “don’t”.",
-          "es": "A una pregunta «Can you…?» se responde con «can’t», no con «don’t».",
-          "de": "Eine „Can you…?“-Frage beantwortet man mit „can’t“, nicht mit „don’t“."
+          "es": "A una pregunta «Can you…?» se responde con «can’t», no con «don’t»."
         },
         "not": {
-          "hu": "A „No, I not” hibás; a segédige is kell: No, I can’t.",
           "en": "“No, I not” is wrong; the helper verb is needed too: No, I can’t.",
-          "es": "«No, I not» es incorrecto; también hace falta el auxiliar: No, I can’t.",
-          "de": "„No, I not“ ist falsch; das Hilfsverb ist auch nötig: No, I can’t."
+          "es": "«No, I not» es incorrecto; también hace falta el auxiliar: No, I can’t."
         }
       },
       "examples": [
         "Can he cook? No, he can't.",
         "Can they run? No, they can't."
       ],
-      "tr": { "hu": "Tudsz úszni? Nem, nem tudok.", "en": "Can you swim? No, I can't.", "es": "¿Sabes nadar? No, no sé.", "de": "Kannst du schwimmen? Nein, kann ich nicht." }
+      "tr": { "en": "Can you swim? No, I can't.", "es": "¿Sabes nadar? No, no sé." }
     },
     {
       "kind": "why",
@@ -726,46 +596,34 @@
       "es": "Can you swim?",
       "target": "Can",
       "tr": {
-        "hu": "Tudsz úszni?",
         "en": "Can you swim?",
-        "es": "¿Sabes nadar?",
-        "de": "Kannst du schwimmen?"
+        "es": "¿Sabes nadar?"
       },
       "options": [
         {
           "text": {
-            "hu": "kérdés: a „can” az alany elé kerül, „do” nélkül",
             "en": "question: “can” goes before the subject, with no “do”",
-            "es": "pregunta: «can» va antes del sujeto, sin «do»",
-            "de": "Frage: „can“ steht vor dem Subjekt, ohne „do“"
+            "es": "pregunta: «can» va antes del sujeto, sin «do»"
           }
         },
         {
           "text": {
-            "hu": "kérdés „do” segédigével: Do you can…?",
             "en": "question with the helper “do”: Do you can…?",
-            "es": "pregunta con el auxiliar «do»: Do you can…?",
-            "de": "Frage mit dem Hilfsverb „do“: Do you can…?"
+            "es": "pregunta con el auxiliar «do»: Do you can…?"
           },
           "wrong": {
-            "hu": "A „can” maga segédige, mellé nem jön „do”: Can you…?, nem „Do you can…?”.",
             "en": "“Can” is itself a helper verb, so no “do” is added: Can you…?, not “Do you can…?”.",
-            "es": "«Can» es en sí un auxiliar, así que no se añade «do»: Can you…?, no «Do you can…?».",
-            "de": "„Can“ ist selbst ein Hilfsverb, deshalb kommt kein „do“ dazu: Can you…?, nicht „Do you can…?“."
+            "es": "«Can» es en sí un auxiliar, así que no se añade «do»: Can you…?, no «Do you can…?»."
           }
         },
         {
           "text": {
-            "hu": "kijelentés hanglejtéssel, mint a spanyolban: You can swim?",
             "en": "a statement with rising intonation, as in Spanish: You can swim?",
-            "es": "una afirmación con entonación, como en español: You can swim?",
-            "de": "eine Aussage mit Betonung wie im Spanischen: You can swim?"
+            "es": "una afirmación con entonación, como en español: You can swim?"
           },
           "wrong": {
-            "hu": "A neutrális kérdésben a sorrend megfordul: Can you swim?",
             "en": "In a neutral question the order flips: Can you swim?",
-            "es": "En una pregunta neutra el orden se invierte: Can you swim?",
-            "de": "In der neutralen Frage dreht sich die Reihenfolge um: Can you swim?"
+            "es": "En una pregunta neutra el orden se invierte: Can you swim?"
           }
         }
       ],
@@ -781,30 +639,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „can” után az ige alapalakja áll: She can read and write English.",
         "en": "After “can” the verb stays in its base form: She can read and write English.",
-        "es": "Después de «can» el verbo va en forma base: She can read and write English.",
-        "de": "Nach „can“ steht das Verb in der Grundform: She can read and write English."
+        "es": "Después de «can» el verbo va en forma base: She can read and write English."
       },
       "wrong": {
         "reads": {
-          "hu": "A „can” után nem kap az ige -s-t, még a „she” mellett sem.",
           "en": "After “can” the verb takes no -s, not even with “she”.",
-          "es": "Después de «can» el verbo no lleva -s, ni siquiera con «she».",
-          "de": "Nach „can“ bekommt das Verb kein -s, auch nicht bei „she“."
+          "es": "Después de «can» el verbo no lleva -s, ni siquiera con «she»."
         },
         "reading": {
-          "hu": "A „can” után nincs -ing: can read.",
           "en": "There is no -ing after “can”: can read.",
-          "es": "Después de «can» no hay -ing: can read.",
-          "de": "Nach „can“ steht kein -ing: can read."
+          "es": "Después de «can» no hay -ing: can read."
         }
       },
       "examples": [
         "I can read and write.",
         "He can read English."
       ],
-      "tr": { "hu": "Tud angolul írni és olvasni.", "en": "She can read and write English.", "es": "Ella sabe leer y escribir en inglés.", "de": "Sie kann Englisch lesen und schreiben." }
+      "tr": { "en": "She can read and write English.", "es": "Ella sabe leer y escribir en inglés." }
     },
     {
       "id": "ca-11",
@@ -816,30 +668,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „Can you” után az alapige áll: Can you open the door, please?",
         "en": "After “Can you” the base verb follows: Can you open the door, please?",
-        "es": "Después de «Can you» va el verbo base: Can you open the door, please?",
-        "de": "Nach „Can you“ folgt die Grundform: Can you open the door, please?"
+        "es": "Después de «Can you» va el verbo base: Can you open the door, please?"
       },
       "wrong": {
         "opens": {
-          "hu": "A „can” után nem kap az ige -s-t: Can you open…?",
           "en": "After “can” the verb takes no -s: Can you open…?",
-          "es": "Después de «can» el verbo no lleva -s: Can you open…?",
-          "de": "Nach „can“ bekommt das Verb kein -s: Can you open…?"
+          "es": "Después de «can» el verbo no lleva -s: Can you open…?"
         },
         "to open": {
-          "hu": "A „can” után nincs „to”: Can you open…?",
           "en": "There is no “to” after “can”: Can you open…?",
-          "es": "Después de «can» no hay «to»: Can you open…?",
-          "de": "Nach „can“ steht kein „to“: Can you open…?"
+          "es": "Después de «can» no hay «to»: Can you open…?"
         }
       },
       "examples": [
         "Can you help me, please?",
         "Can you close the door?"
       ],
-      "tr": { "hu": "Ki tudnád nyitni az ajtót, kérlek?", "en": "Can you open the door, please?", "es": "¿Puedes abrir la puerta, por favor?", "de": "Kannst du bitte die Tür öffnen?" }
+      "tr": { "en": "Can you open the door, please?", "es": "¿Puedes abrir la puerta, por favor?" }
     },
     {
       "id": "ca-21",
@@ -881,30 +727,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Engedélykérésnél is „can” + alapige: Can I use your pen?",
         "en": "To ask for permission too it is “can” + base verb: Can I use your pen?",
-        "es": "Para pedir permiso también es «can» + verbo base: Can I use your pen?",
-        "de": "Auch um Erlaubnis zu bitten heißt es „can“ + Grundform: Can I use your pen?"
+        "es": "Para pedir permiso también es «can» + verbo base: Can I use your pen?"
       },
       "wrong": {
         "uses": {
-          "hu": "Az „I” mellett és a „can” után az ige -s nélkül áll: use.",
           "en": "After “can”, and with “I”, the verb has no -s: use.",
-          "es": "Después de «can», y con «I», el verbo no lleva -s: use.",
-          "de": "Nach „can“, und bei „I“, steht das Verb ohne -s: use."
+          "es": "Después de «can», y con «I», el verbo no lleva -s: use."
         },
         "to use": {
-          "hu": "A „can” után nincs „to”: Can I use…?",
           "en": "There is no “to” after “can”: Can I use…?",
-          "es": "Después de «can» no hay «to»: Can I use…?",
-          "de": "Nach „can“ steht kein „to“: Can I use…?"
+          "es": "Después de «can» no hay «to»: Can I use…?"
         }
       },
       "examples": [
         "Can I open the window?",
         "Can I help you?"
       ],
-      "tr": { "hu": "Használhatom a tolladat?", "en": "Can I use your pen?", "es": "¿Puedo usar tu pluma?", "de": "Kann ich deinen Stift benutzen?" }
+      "tr": { "en": "Can I use your pen?", "es": "¿Puedo usar tu pluma?" }
     },
     {
       "id": "ca-17",
@@ -924,30 +764,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „can’t” után is az ige alapalakja áll: Babies can’t walk.",
         "en": "After “can’t” too the verb stays in its base form: Babies can’t walk.",
-        "es": "Después de «can’t» también el verbo va en forma base: Babies can’t walk.",
-        "de": "Auch nach „can’t“ steht das Verb in der Grundform: Babies can’t walk."
+        "es": "Después de «can’t» también el verbo va en forma base: Babies can’t walk."
       },
       "wrong": {
         "walks": {
-          "hu": "A „can’t” után nem kap az ige -s-t: can’t walk.",
           "en": "After “can’t” the verb takes no -s: can’t walk.",
-          "es": "Después de «can’t» el verbo no lleva -s: can’t walk.",
-          "de": "Nach „can’t“ bekommt das Verb kein -s: can’t walk."
+          "es": "Después de «can’t» el verbo no lleva -s: can’t walk."
         },
         "to walk": {
-          "hu": "A „can’t” után nincs „to”: can’t walk.",
           "en": "There is no “to” after “can’t”: can’t walk.",
-          "es": "Después de «can’t» no hay «to»: can’t walk.",
-          "de": "Nach „can’t“ steht kein „to“: can’t walk."
+          "es": "Después de «can’t» no hay «to»: can’t walk."
         }
       },
       "examples": [
         "Dogs can't cook.",
         "I can't sing."
       ],
-      "tr": { "hu": "A babák még nem tudnak járni.", "en": "Babies can't walk.", "es": "Los bebés no pueden caminar.", "de": "Babys können nicht laufen." }
+      "tr": { "en": "Babies can't walk.", "es": "Los bebés no pueden caminar." }
     },
     {
       "kind": "why",
@@ -955,46 +789,34 @@
       "es": "I can't swim.",
       "target": "can't",
       "tr": {
-        "hu": "Nem tudok úszni.",
         "en": "I can't swim.",
-        "es": "No sé nadar.",
-        "de": "Ich kann nicht schwimmen."
+        "es": "No sé nadar."
       },
       "options": [
         {
           "text": {
-            "hu": "tagadás: can’t + alapige",
             "en": "negative: can’t + base verb",
-            "es": "negación: can’t + verbo base",
-            "de": "Verneinung: can’t + Grundform"
+            "es": "negación: can’t + verbo base"
           }
         },
         {
           "text": {
-            "hu": "tagadás „don’t” segédigével: I don’t can swim",
             "en": "negative with the helper “don’t”: I don’t can swim",
-            "es": "negación con el auxiliar «don’t»: I don’t can swim",
-            "de": "Verneinung mit dem Hilfsverb „don’t“: I don’t can swim"
+            "es": "negación con el auxiliar «don’t»: I don’t can swim"
           },
           "wrong": {
-            "hu": "A „can” maga tagadható: can’t. A „don’t can” hibás.",
             "en": "“Can” can be negated on its own: can’t. “Don’t can” is wrong.",
-            "es": "«Can» se puede negar por sí solo: can’t. «Don’t can» es incorrecto.",
-            "de": "„Can“ lässt sich selbst verneinen: can’t. „Don’t can“ ist falsch."
+            "es": "«Can» se puede negar por sí solo: can’t. «Don’t can» es incorrecto."
           }
         },
         {
           "text": {
-            "hu": "tagadás „no”-val: I no can swim",
             "en": "negative with “no”: I no can swim",
-            "es": "negación con «no»: I no can swim",
-            "de": "Verneinung mit „no“: I no can swim"
+            "es": "negación con «no»: I no can swim"
           },
           "wrong": {
-            "hu": "A „no” a spanyol minta másolata; angolul „can’t” kell.",
             "en": "“No” copies the Spanish pattern; English needs “can’t”.",
-            "es": "«No» copia el patrón del español; el inglés necesita «can’t».",
-            "de": "„No“ folgt dem spanischen Muster; das Englische braucht „can’t“."
+            "es": "«No» copia el patrón del español; el inglés necesita «can’t»."
           }
         }
       ],
@@ -1010,30 +832,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „sé nadar” angolul „I can swim”: a „can” mellett közvetlenül az alapige áll.",
         "en": "“Sé nadar” is “I can swim” in English: after “can” the base verb follows directly.",
-        "es": "«Sé nadar» es «I can swim» en inglés: después de «can» va directamente el verbo base.",
-        "de": "„Sé nadar“ heißt im Englischen „I can swim“: Nach „can“ folgt direkt die Grundform."
+        "es": "«Sé nadar» es «I can swim» en inglés: después de «can» va directamente el verbo base."
       },
       "wrong": {
         "know": {
-          "hu": "A „know” után „how to” kell (I know how to swim); a „know swim” hibás. Egyszerűbb: can.",
           "en": "After “know” you need “how to” (I know how to swim); “know swim” is wrong. Simpler: can.",
-          "es": "Después de «know» hace falta «how to» (I know how to swim); «know swim» es incorrecto. Más simple: can.",
-          "de": "Nach „know“ braucht man „how to“ (I know how to swim); „know swim“ ist falsch. Einfacher: can."
+          "es": "Después de «know» hace falta «how to» (I know how to swim); «know swim» es incorrecto. Más simple: can."
         },
         "cans": {
-          "hu": "A „can” sosem kap -s-t, egyik személynél sem.",
           "en": "“Can” never takes -s, with any person.",
-          "es": "«Can» nunca lleva -s, con ninguna persona.",
-          "de": "„Can“ bekommt nie ein -s, bei keiner Person."
+          "es": "«Can» nunca lleva -s, con ninguna persona."
         }
       },
       "examples": [
         "You can swim.",
         "They can sing."
       ],
-      "tr": { "hu": "Tudok úszni.", "en": "I can swim.", "es": "Puedo nadar.", "de": "Ich kann schwimmen." }
+      "tr": { "en": "I can swim.", "es": "Puedo nadar." }
     },
     {
       "id": "ca-22",

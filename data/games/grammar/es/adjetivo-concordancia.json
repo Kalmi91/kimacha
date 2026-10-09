@@ -3,110 +3,86 @@
   "topic": "adjetivo-concordancia",
   "level": "A1",
   "title": {
-    "hu": "Melléknév-egyeztetés",
     "en": "Adjective agreement",
-    "es": "Concordancia del adjetivo",
-    "de": "Adjektivangleichung"
+    "es": "Concordancia del adjetivo"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "A spanyol melléknév a főnév UTÁN áll, és felveszi a főnév nemét (hím/nő) és számát (egyes/többes); ezért a melléknevet a főnévvel együtt kell egyeztetni, nem külön szabályként megtanulni.",
         "en": "The Spanish adjective goes AFTER the noun, and takes the noun's gender (masculine/feminine) and number (singular/plural); so you always agree the adjective together with the noun, not as a separate rule to memorize on its own.",
-        "es": "El adjetivo español va DETRÁS del sustantivo, y concuerda en género (masculino/femenino) y número (singular/plural); por eso siempre se ajusta el adjetivo junto con el sustantivo, no como una regla aparte.",
-        "de": "Das spanische Adjektiv steht HINTER dem Nomen und übernimmt dessen Genus (maskulin/feminin) und Numerus (Singular/Plural); deshalb passt man das Adjektiv immer zusammen mit dem Nomen an, nicht als eigene Regel."
+        "es": "El adjetivo español va DETRÁS del sustantivo, y concuerda en género (masculino/femenino) y número (singular/plural); por eso siempre se ajusta el adjetivo junto con el sustantivo, no como una regla aparte."
       }
     },
     {
       "kind": "list",
       "title": {
-        "hu": "Az alakok",
         "en": "The forms",
-        "es": "Las formas",
-        "de": "Die Formen"
+        "es": "Las formas"
       },
       "items": [
         {
           "text": {
-            "hu": "-o végű melléknév négy alakú: hímnem/nőnem, egyes/többes: alto, alta, altos, altas.",
             "en": "An adjective ending in -o has four forms: masculine/feminine, singular/plural: alto, alta, altos, altas.",
-            "es": "El adjetivo en -o tiene cuatro formas: masculino/femenino, singular/plural: alto, alta, altos, altas.",
-            "de": "Ein Adjektiv auf -o hat vier Formen: maskulin/feminin, Singular/Plural: alto, alta, altos, altas."
+            "es": "El adjetivo en -o tiene cuatro formas: masculino/femenino, singular/plural: alto, alta, altos, altas."
           },
           "examples": [
             {
               "es": "Mi hermano es alto.",
               "tr": {
-                "hu": "A bátyám magas.",
                 "en": "My brother is tall.",
-                "es": "Mi hermano es alto.",
-                "de": "Mein Bruder ist groß."
+                "es": "Mi hermano es alto."
               }
             },
             {
               "es": "Mis hermanas son altas.",
               "tr": {
-                "hu": "A nővéreim magasak.",
                 "en": "My sisters are tall.",
-                "es": "Mis hermanas son altas.",
-                "de": "Meine Schwestern sind groß."
+                "es": "Mis hermanas son altas."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Az -e vagy mássalhangzó végű melléknév általában nemben nem változik, csak számban: grande, grandes; azul, azules.",
             "en": "An adjective ending in -e or a consonant usually does not change for gender, only for number: grande, grandes; azul, azules.",
-            "es": "El adjetivo en -e o consonante normalmente no cambia de género, solo de número: grande, grandes; azul, azules.",
-            "de": "Ein Adjektiv auf -e oder Konsonant ändert sich in der Regel nicht nach Genus, nur nach Numerus: grande, grandes; azul, azules."
+            "es": "El adjetivo en -e o consonante normalmente no cambia de género, solo de número: grande, grandes; azul, azules."
           },
           "examples": [
             {
               "es": "El carro es grande.",
               "tr": {
-                "hu": "Az autó nagy.",
                 "en": "The car is big.",
-                "es": "El carro es grande.",
-                "de": "Das Auto ist groß."
+                "es": "El carro es grande."
               }
             },
             {
               "es": "Las camisas son azules.",
               "tr": {
-                "hu": "Az ingek kékek.",
                 "en": "The shirts are blue.",
-                "es": "Las camisas son azules.",
-                "de": "Die Hemden sind blau."
+                "es": "Las camisas son azules."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A nemzetiség-melléknevek és az -dor végűek mássalhangzó után is kapnak nőnemű alakot: español, española, españoles, españolas; trabajador, trabajadora.",
             "en": "Nationality adjectives and those in -dor take a feminine form even after a consonant: español, española, españoles, españolas; trabajador, trabajadora.",
-            "es": "Los adjetivos de nacionalidad y los terminados en -dor tienen femenino aunque acaben en consonante: español, española, españoles, españolas; trabajador, trabajadora.",
-            "de": "Nationalitätsadjektive und Adjektive auf -dor haben auch nach Konsonant eine feminine Form: español, española, españoles, españolas; trabajador, trabajadora."
+            "es": "Los adjetivos de nacionalidad y los terminados en -dor tienen femenino aunque acaben en consonante: español, española, españoles, españolas; trabajador, trabajadora."
           },
           "examples": [
             {
               "es": "Mi amiga es alemana.",
               "tr": {
-                "hu": "A barátnőm német.",
                 "en": "My friend is German.",
-                "es": "Mi amiga es alemana.",
-                "de": "Meine Freundin ist Deutsche."
+                "es": "Mi amiga es alemana."
               }
             },
             {
               "es": "Ellos son mexicanos.",
               "tr": {
-                "hu": "Ők mexikóiak.",
                 "en": "They are Mexican.",
-                "es": "Ellos son mexicanos.",
-                "de": "Sie sind Mexikaner."
+                "es": "Ellos son mexicanos."
               }
             }
           ]
@@ -116,64 +92,50 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Vegyes nem és mennyiség",
         "en": "Mixed gender and quantity",
-        "es": "Género mixto y cantidad",
-        "de": "Gemischtes Genus und Menge"
+        "es": "Género mixto y cantidad"
       },
       "items": [
         {
           "text": {
-            "hu": "Ha a melléknév több főnévre vonatkozik, és legalább egy hímnemű, a melléknév hímnemű többes: el libro y la mesa son nuevos.",
             "en": "If the adjective covers several nouns and at least one is masculine, the adjective is masculine plural: el libro y la mesa son nuevos.",
-            "es": "Si el adjetivo se refiere a varios sustantivos y al menos uno es masculino, el adjetivo va en masculino plural: el libro y la mesa son nuevos.",
-            "de": "Bezieht sich das Adjektiv auf mehrere Nomen und ist mindestens eines maskulin, steht das Adjektiv im maskulinen Plural: el libro y la mesa son nuevos."
+            "es": "Si el adjetivo se refiere a varios sustantivos y al menos uno es masculino, el adjetivo va en masculino plural: el libro y la mesa son nuevos."
           },
           "examples": [
             {
               "es": "El padre y la madre están cansados.",
               "tr": {
-                "hu": "Az apa és az anya fáradtak.",
                 "en": "The father and the mother are tired.",
-                "es": "El padre y la madre están cansados.",
-                "de": "Der Vater und die Mutter sind müde."
+                "es": "El padre y la madre están cansados."
               }
             },
             {
               "es": "Los niños y las niñas son pequeños.",
               "tr": {
-                "hu": "A fiúk és a lányok kicsik.",
                 "en": "The boys and the girls are small.",
-                "es": "Los niños y las niñas son pequeños.",
-                "de": "Die Jungen und die Mädchen sind klein."
+                "es": "Los niños y las niñas son pequeños."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A mucho és a poco mennyiség-melléknévként egyeztet nemben és számban (mucho, mucha, muchos, muchas), de a muy határozószó változatlan marad.",
             "en": "Mucho and poco, as quantity adjectives, agree in gender and number (mucho, mucha, muchos, muchas), but the adverb muy never changes.",
-            "es": "Mucho y poco, como adjetivos de cantidad, concuerdan en género y número (mucho, mucha, muchos, muchas), pero el adverbio muy no cambia nunca.",
-            "de": "Mucho und poco stimmen als Mengenadjektive in Genus und Numerus überein (mucho, mucha, muchos, muchas), das Adverb muy ändert sich dagegen nie."
+            "es": "Mucho y poco, como adjetivos de cantidad, concuerdan en género y número (mucho, mucha, muchos, muchas), pero el adverbio muy no cambia nunca."
           },
           "examples": [
             {
               "es": "Tiene muchas ideas.",
               "tr": {
-                "hu": "Sok ötlete van.",
                 "en": "She has many ideas.",
-                "es": "Tiene muchas ideas.",
-                "de": "Sie hat viele Ideen."
+                "es": "Tiene muchas ideas."
               }
             },
             {
               "es": "Es muy alta.",
               "tr": {
-                "hu": "Nagyon magas.",
                 "en": "She is very tall.",
-                "es": "Es muy alta.",
-                "de": "Sie ist sehr groß."
+                "es": "Es muy alta."
               }
             }
           ]
@@ -184,35 +146,25 @@
       "kind": "table",
       "id": "concordancia",
       "title": {
-        "hu": "Melléknevek négy alakban",
         "en": "Adjectives in four forms",
-        "es": "Adjetivos en cuatro formas",
-        "de": "Adjektive in vier Formen"
+        "es": "Adjetivos en cuatro formas"
       },
       "header": [
         {
-          "hu": "Hímnem egyes",
           "en": "Masculine singular",
-          "es": "Masculino singular",
-          "de": "Maskulin Singular"
+          "es": "Masculino singular"
         },
         {
-          "hu": "Nőnem egyes",
           "en": "Feminine singular",
-          "es": "Femenino singular",
-          "de": "Feminin Singular"
+          "es": "Femenino singular"
         },
         {
-          "hu": "Hímnem többes",
           "en": "Masculine plural",
-          "es": "Masculino plural",
-          "de": "Maskulin Plural"
+          "es": "Masculino plural"
         },
         {
-          "hu": "Nőnem többes",
           "en": "Feminine plural",
-          "es": "Femenino plural",
-          "de": "Feminin Plural"
+          "es": "Femenino plural"
         }
       ],
       "rows": [
@@ -281,92 +233,72 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Hely és kivételek",
         "en": "Position and exceptions",
-        "es": "Posición y excepciones",
-        "de": "Stellung und Ausnahmen"
+        "es": "Posición y excepciones"
       },
       "items": [
         {
           "text": {
-            "hu": "Néhány melléknév a főnév ELÉ is kerülhet, és ilyenkor más jelentést kap: un hombre grande (nagy termetű) vs un gran hombre (nagyszerű ember); mi viejo amigo (régi barátom) vs mi amigo viejo (idős barátom).",
             "en": "A few adjectives can also go BEFORE the noun, and then take on a different meaning: un hombre grande (a physically big man) vs un gran hombre (a great man); mi viejo amigo (a long-standing friend) vs mi amigo viejo (an elderly friend).",
-            "es": "Algunos adjetivos también pueden ir DELANTE del sustantivo, y entonces cambian de sentido: un hombre grande y un gran hombre; mi viejo amigo y mi amigo viejo.",
-            "de": "Manche Adjektive können auch VOR dem Nomen stehen und bekommen dann eine andere Bedeutung: un hombre grande (körperlich groß) und un gran hombre (großartiger Mann); mi viejo amigo (langjähriger Freund) und mi amigo viejo (alter, betagter Freund)."
+            "es": "Algunos adjetivos también pueden ir DELANTE del sustantivo, y entonces cambian de sentido: un hombre grande y un gran hombre; mi viejo amigo y mi amigo viejo."
           },
           "examples": [
             {
               "es": "Es un hombre grande.",
               "tr": {
-                "hu": "Ő egy nagy termetű férfi.",
                 "en": "He is a physically big man.",
-                "es": "Es un hombre grande.",
-                "de": "Er ist ein körperlich großer Mann."
+                "es": "Es un hombre grande."
               }
             },
             {
               "es": "Es un gran hombre.",
               "tr": {
-                "hu": "Ő egy nagyszerű ember.",
                 "en": "He is a great man.",
-                "es": "Es un gran hombre.",
-                "de": "Er ist ein großartiger Mann."
+                "es": "Es un gran hombre."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A bueno és malo hímnemű EGYES szám előtt lerövidül (buen, mal), a grande pedig bármilyen EGYES számú főnév előtt (gran): un buen día, un mal año, un gran problema, una gran casa.",
             "en": "Bueno and malo shorten before a masculine SINGULAR noun (buen, mal), while grande shortens before any SINGULAR noun (gran): un buen día, un mal año, un gran problema, una gran casa.",
-            "es": "Bueno y malo se acortan ante un sustantivo masculino SINGULAR (buen, mal); grande se acorta ante cualquier sustantivo SINGULAR (gran): un buen día, un mal año, un gran problema, una gran casa.",
-            "de": "Bueno und malo verkürzen sich vor einem maskulinen SINGULAR-Nomen (buen, mal), grande vor jedem SINGULAR-Nomen (gran): un buen día, un mal año, un gran problema, una gran casa."
+            "es": "Bueno y malo se acortan ante un sustantivo masculino SINGULAR (buen, mal); grande se acorta ante cualquier sustantivo SINGULAR (gran): un buen día, un mal año, un gran problema, una gran casa."
           },
           "examples": [
             {
               "es": "Hoy es un buen día.",
               "tr": {
-                "hu": "Ma jó nap van.",
                 "en": "Today is a good day.",
-                "es": "Hoy es un buen día.",
-                "de": "Heute ist ein guter Tag."
+                "es": "Hoy es un buen día."
               }
             },
             {
               "es": "Fue un mal año.",
               "tr": {
-                "hu": "Rossz év volt.",
                 "en": "It was a bad year.",
-                "es": "Fue un mal año.",
-                "de": "Es war ein schlechtes Jahr."
+                "es": "Fue un mal año."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Ha a színt főnévként használjuk, a melléknév nem egyeztetődik: camisas naranja, faldas rosa.",
             "en": "When a colour is used as a noun, the adjective does not agree: camisas naranja, faldas rosa.",
-            "es": "Cuando el color se usa como sustantivo, el adjetivo no concuerda: camisas naranja, faldas rosa.",
-            "de": "Wird die Farbe wie ein Nomen verwendet, richtet sich das Adjektiv nicht nach dem Nomen: camisas naranja, faldas rosa."
+            "es": "Cuando el color se usa como sustantivo, el adjetivo no concuerda: camisas naranja, faldas rosa."
           },
           "examples": [
             {
               "es": "Tengo camisas naranja.",
               "tr": {
-                "hu": "Narancssárga ingeim vannak.",
                 "en": "I have orange shirts.",
-                "es": "Tengo camisas naranja.",
-                "de": "Ich habe orangefarbene Hemden."
+                "es": "Tengo camisas naranja."
               }
             },
             {
               "es": "Compré faldas rosa.",
               "tr": {
-                "hu": "Rózsaszín szoknyákat vettem.",
                 "en": "I bought pink skirts.",
-                "es": "Compré faldas rosa.",
-                "de": "Ich habe rosa Röcke gekauft."
+                "es": "Compré faldas rosa."
               }
             }
           ]
@@ -376,38 +308,30 @@
     {
       "kind": "contrast",
       "title": {
-        "hu": "Hasonló, mégis más",
         "en": "Similar, yet different",
-        "es": "Parecido, pero distinto",
-        "de": "Ähnlich, aber anders"
+        "es": "Parecido, pero distinto"
       },
       "pairs": [
         {
           "a": "un carro rojo",
           "b": "una casa roja",
           "note": {
-            "hu": "A rojo -o végű, ezért négy alakja van; a főnév neme dönti el, melyik jön: carro hímnemű → rojo, casa nőnemű → roja.",
             "en": "Rojo ends in -o, so it has four forms; the noun's gender decides which one: carro is masculine → rojo, casa is feminine → roja.",
-            "es": "Rojo acaba en -o, así que tiene cuatro formas; el género del sustantivo decide cuál usar: carro es masculino → rojo, casa es femenino → roja.",
-            "de": "Rojo endet auf -o und hat daher vier Formen; das Genus des Nomens entscheidet, welche Form: carro ist maskulin → rojo, casa ist feminin → roja."
+            "es": "Rojo acaba en -o, así que tiene cuatro formas; el género del sustantivo decide cuál usar: carro es masculino → rojo, casa es femenino → roja."
           },
           "examples": [
             {
               "es": "El carro rojo es nuevo.",
               "tr": {
-                "hu": "A piros autó új.",
                 "en": "The red car is new.",
-                "es": "El carro rojo es nuevo.",
-                "de": "Das rote Auto ist neu."
+                "es": "El carro rojo es nuevo."
               }
             },
             {
               "es": "La casa roja es grande.",
               "tr": {
-                "hu": "A piros ház nagy.",
                 "en": "The red house is big.",
-                "es": "La casa roja es grande.",
-                "de": "Das rote Haus ist groß."
+                "es": "La casa roja es grande."
               }
             }
           ]
@@ -416,28 +340,22 @@
           "a": "un chico grande",
           "b": "un gran chico",
           "note": {
-            "hu": "Ugyanaz a két szó, más sorrendben: mögötte a termetről szól, előtte a jellemről; a hely dönti el a jelentést.",
             "en": "The same two words in a different order: after the noun it is about size, before it is about character; word order decides the meaning.",
-            "es": "Las mismas dos palabras en otro orden: detrás habla del tamaño, delante del carácter; el orden decide el sentido.",
-            "de": "Dieselben zwei Wörter in anderer Reihenfolge: dahinter geht es um die Größe, davor um den Charakter; die Wortstellung entscheidet die Bedeutung."
+            "es": "Las mismas dos palabras en otro orden: detrás habla del tamaño, delante del carácter; el orden decide el sentido."
           },
           "examples": [
             {
               "es": "Es un chico grande para su edad.",
               "tr": {
-                "hu": "Nagy termetű fiú a korához képest.",
                 "en": "He is a big boy for his age.",
-                "es": "Es un chico grande para su edad.",
-                "de": "Er ist ein großer Junge für sein Alter."
+                "es": "Es un chico grande para su edad."
               }
             },
             {
               "es": "Es un gran chico, siempre ayuda.",
               "tr": {
-                "hu": "Remek srác, mindig segít.",
                 "en": "He is a great guy, he always helps.",
-                "es": "Es un gran chico, siempre ayuda.",
-                "de": "Er ist ein toller Junge, er hilft immer."
+                "es": "Es un gran chico, siempre ayuda."
               }
             }
           ]
@@ -447,126 +365,98 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "A buen és mal CSAK hímnemű egyes szám előtt rövidül, a gran bármilyen egyes számú főnév előtt; utána mindig a teljes alak áll: buena, mala, grande.",
         "en": "Buen and mal shorten ONLY before a masculine singular noun, gran before any singular noun; after the noun, the full form always stands: buena, mala, grande.",
-        "es": "Buen y mal se acortan SOLO ante un sustantivo masculino singular, gran ante cualquier sustantivo singular; detrás siempre va la forma entera: buena, mala, grande.",
-        "de": "Buen und mal verkürzen sich NUR vor einem maskulinen Singular-Nomen, gran vor jedem Singular-Nomen; dahinter steht immer die volle Form: buena, mala, grande."
+        "es": "Buen y mal se acortan SOLO ante un sustantivo masculino singular, gran ante cualquier sustantivo singular; detrás siempre va la forma entera: buena, mala, grande."
       }
     }
   ],
   "speak": {
-    "hu": "A spanyolban a melléknév általában a főnév után áll, és követi annak nemét és számát. Az o betűre végződő melléknévnek négy alakja van. Az e-re vagy mássalhangzóra végződő csak számban változik. A mássalhangzóra végződő nemzetiségnevek nőnemben mégis kapnak egy a-t. Három gyakori melléknév, a jó, a rossz és a nagy, a főnév előtt megrövidül, a nagy pedig jelentést is vált: a főnév előtt nagyszerűt jelent, utána méretre nagyot.",
     "en": "In Spanish the adjective usually comes after the noun and matches its gender and number. An adjective ending in the letter o has four forms. One ending in e or in a consonant changes only for number. Nationalities that end in a consonant still add an a for the feminine. Three common adjectives, the ones meaning good, bad and big, get shorter before the noun, and big also changes its meaning: before the noun it means great, after the noun it means large.",
-    "es": "En español el adjetivo suele ir después del sustantivo y concuerda con él en género y número. El adjetivo que termina en la letra o tiene cuatro formas. El que termina en e o en consonante solo cambia en número. Las nacionalidades que acaban en consonante añaden una a para el femenino. Tres adjetivos muy comunes, los que significan bueno, malo y grande, se acortan delante del sustantivo, y grande además cambia de sentido: delante significa admirable, detrás significa de gran tamaño.",
-    "de": "Im Spanischen steht das Adjektiv meist nach dem Nomen und richtet sich nach dessen Geschlecht und Zahl. Ein Adjektiv auf den Buchstaben o hat vier Formen. Eines auf e oder auf einen Konsonanten ändert sich nur in der Zahl. Nationalitäten auf Konsonant bekommen im Femininum trotzdem ein a. Drei häufige Adjektive, die für gut, schlecht und groß stehen, werden vor dem Nomen kürzer, und groß ändert dabei auch die Bedeutung: davor heißt es großartig, danach heißt es von der Größe her groß."
+    "es": "En español el adjetivo suele ir después del sustantivo y concuerda con él en género y número. El adjetivo que termina en la letra o tiene cuatro formas. El que termina en e o en consonante solo cambia en número. Las nacionalidades que acaban en consonante añaden una a para el femenino. Tres adjetivos muy comunes, los que significan bueno, malo y grande, se acortan delante del sustantivo, y grande además cambia de sentido: delante significa admirable, detrás significa de gran tamaño."
   },
   "glossary": [
     {
       "word": "españolas",
       "gloss": {
-        "hu": "spanyol (nőnemű többes)",
         "en": "Spanish (fem. pl.)",
-        "es": "españolas",
-        "de": "spanische"
+        "es": "españolas"
       }
     },
     {
       "word": "azules",
       "gloss": {
-        "hu": "kékek",
         "en": "blue (plural)",
-        "es": "azules",
-        "de": "blaue"
+        "es": "azules"
       }
     },
     {
       "word": "trabajadora",
       "gloss": {
-        "hu": "szorgalmas (nőnem)",
         "en": "hard-working (fem.)",
-        "es": "trabajadora",
-        "de": "fleißig"
+        "es": "trabajadora"
       }
     },
     {
       "word": "interesantes",
       "gloss": {
-        "hu": "érdekesek",
         "en": "interesting (plural)",
-        "es": "interesantes",
-        "de": "interessante"
+        "es": "interesantes"
       }
     },
     {
       "word": "alemana",
       "gloss": {
-        "hu": "német (nőnem)",
         "en": "German (fem.)",
-        "es": "alemana",
-        "de": "deutsche"
+        "es": "alemana"
       }
     },
     {
       "word": "buen",
       "gloss": {
-        "hu": "jó (rövid alak főnév előtt)",
         "en": "good (short form before a noun)",
-        "es": "buen",
-        "de": "gut (Kurzform)"
+        "es": "buen"
       }
     },
     {
       "word": "cuarto",
       "gloss": {
-        "hu": "szoba",
         "en": "room",
-        "es": "el cuarto",
-        "de": "Zimmer"
+        "es": "el cuarto"
       }
     },
     {
       "word": "fue",
       "gloss": {
-        "hu": "volt, ment (ser/ir múlt)",
         "en": "was, went",
-        "es": "fue",
-        "de": "war, ging"
+        "es": "fue"
       }
     },
     {
       "word": "gran",
       "gloss": {
-        "hu": "nagyszerű (rövid alak főnév előtt)",
         "en": "great (short form before a noun)",
-        "es": "gran",
-        "de": "großartig (Kurzform)"
+        "es": "gran"
       }
     },
     {
       "word": "mexicanos",
       "gloss": {
-        "hu": "mexikóiak",
         "en": "Mexicans",
-        "es": "mexicanos",
-        "de": "Mexikaner"
+        "es": "mexicanos"
       }
     },
     {
       "word": "carro",
       "gloss": {
-        "hu": "autó",
         "en": "car",
-        "es": "el carro",
-        "de": "Auto"
+        "es": "el carro"
       }
     },
     {
       "word": "carros",
       "gloss": {
-        "hu": "autók",
         "en": "cars",
-        "es": "los carros",
-        "de": "Autos"
+        "es": "los carros"
       }
     }
   ],
@@ -581,30 +471,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A casa nőnemű egyes szám, tehát a melléknév is: bonita.",
         "en": "Casa is feminine singular, so the adjective follows: bonita.",
-        "es": "Casa es femenino singular: bonita.",
-        "de": "Casa ist feminin Singular: bonita."
+        "es": "Casa es femenino singular: bonita."
       },
       "wrong": {
         "bonito": {
-          "hu": "Ezzel a mondat azt jelentené, hogy a casa hímnemű, de a casa nőnemű, tehát bonita a helyes alak; helyesen: La casa es muy bonita.",
           "en": "This would treat casa as masculine, but casa is feminine, so bonita is the right form; correctly: La casa es muy bonita.",
-          "es": "Esto trataría a casa como masculino, pero casa es femenino, así que la forma correcta es bonita; correctamente: La casa es muy bonita.",
-          "de": "Das würde casa als maskulin behandeln, aber casa ist feminin, daher ist bonita die richtige Form; richtig: La casa es muy bonita."
+          "es": "Esto trataría a casa como masculino, pero casa es femenino, así que la forma correcta es bonita; correctamente: La casa es muy bonita."
         },
         "bonitos": {
-          "hu": "Ezzel a mondat azt jelentené, hogy több házról van szó, de itt egyetlen, nőnemű házról beszélünk; helyesen: La casa es muy bonita.",
           "en": "This would say there are several houses, but here it is about one, feminine house; correctly: La casa es muy bonita.",
-          "es": "Esto diría que hay varias casas, pero aquí se habla de una sola casa, femenina; correctamente: La casa es muy bonita.",
-          "de": "Das würde mehrere Häuser andeuten, aber hier geht es um ein einziges, feminines Haus; richtig: La casa es muy bonita."
+          "es": "Esto diría que hay varias casas, pero aquí se habla de una sola casa, femenina; correctamente: La casa es muy bonita."
         }
       },
       "examples": [
         "La comida está buena.",
         "La ciudad es tranquila."
       ],
-      "tr": { "hu": "A ház nagyon szép.", "en": "The house is very beautiful.", "es": "La casa es muy bonita.", "de": "Das Haus ist sehr schön." }
+      "tr": { "en": "The house is very beautiful.", "es": "La casa es muy bonita." }
     },
     {
       "id": "ac-02",
@@ -616,30 +500,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A carros hímnemű többes: nuevos.",
         "en": "Coches is masculine plural: nuevos.",
-        "es": "Coches es masculino plural: nuevos.",
-        "de": "Coches ist maskulin Plural: nuevos."
+        "es": "Coches es masculino plural: nuevos."
       },
       "wrong": {
         "nuevo": {
-          "hu": "Ezzel a mondat azt jelentené, hogy egyetlen autóról van szó, de a carros többes szám; helyesen: Los carros son nuevos.",
           "en": "This would say there is a single car, but carros is plural; correctly: Los carros son nuevos.",
-          "es": "Esto diría que hay un solo carro, pero carros es plural; correctamente: Los carros son nuevos.",
-          "de": "Das würde ein einziges Auto andeuten, aber carros steht im Plural; richtig: Los carros son nuevos."
+          "es": "Esto diría que hay un solo carro, pero carros es plural; correctamente: Los carros son nuevos."
         },
         "nuevas": {
-          "hu": "Ezzel a mondat azt jelentené, hogy a carros nőnemű, de a carro hímnemű; helyesen: Los carros son nuevos.",
           "en": "This would treat carros as feminine, but carro is masculine; correctly: Los carros son nuevos.",
-          "es": "Esto trataría a carros como femenino, pero carro es masculino; correctamente: Los carros son nuevos.",
-          "de": "Das würde carros als feminin behandeln, aber carro ist maskulin; richtig: Los carros son nuevos."
+          "es": "Esto trataría a carros como femenino, pero carro es masculino; correctamente: Los carros son nuevos."
         }
       },
       "examples": [
         "Los libros son caros.",
         "Las mesas son pequeñas."
       ],
-      "tr": { "hu": "Az autók újak.", "en": "The cars are new.", "es": "Los carros son nuevos.", "de": "Die Autos sind neu." }
+      "tr": { "en": "The cars are new.", "es": "Los carros son nuevos." }
     },
     {
       "id": "ac-03",
@@ -651,30 +529,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az -e végű melléknév nem változik nem szerint: inteligente.",
         "en": "An adjective in -e does not change for gender: inteligente.",
-        "es": "El adjetivo en -e no cambia por género: inteligente.",
-        "de": "Ein Adjektiv auf -e ändert sich nicht nach Genus."
+        "es": "El adjetivo en -e no cambia por género: inteligente."
       },
       "wrong": {
         "inteligenta": {
-          "hu": "Ezzel a mondat helytelen alakot használna; az -e végű melléknév nem változik nem szerint, egy nőnemű alanynál is inteligente marad; helyesen: Mi hermana es muy inteligente.",
           "en": "This would use an incorrect form; an -e adjective does not change for gender, so it stays inteligente even for a feminine subject; correctly: Mi hermana es muy inteligente.",
-          "es": "Esto usaría una forma incorrecta; el adjetivo en -e no cambia de género, sigue siendo inteligente incluso para un sujeto femenino; correctamente: Mi hermana es muy inteligente.",
-          "de": "Das würde eine falsche Form verwenden; ein Adjektiv auf -e ändert sich nicht nach Genus, es bleibt inteligente auch bei einem femininen Subjekt; richtig: Mi hermana es muy inteligente."
+          "es": "Esto usaría una forma incorrecta; el adjetivo en -e no cambia de género, sigue siendo inteligente incluso para un sujeto femenino; correctamente: Mi hermana es muy inteligente."
         },
         "inteligentes": {
-          "hu": "Ezzel a mondat azt jelentené, hogy többen intelligensek, de a hermana egyetlen személy; helyesen: Mi hermana es muy inteligente.",
           "en": "This would say several people are intelligent, but hermana is a single person; correctly: Mi hermana es muy inteligente.",
-          "es": "Esto diría que varias personas son inteligentes, pero hermana es una sola persona; correctamente: Mi hermana es muy inteligente.",
-          "de": "Das würde mehrere intelligente Personen andeuten, aber hermana ist eine einzige Person; richtig: Mi hermana es muy inteligente."
+          "es": "Esto diría que varias personas son inteligentes, pero hermana es una sola persona; correctamente: Mi hermana es muy inteligente."
         }
       },
       "examples": [
         "El libro es interesante.",
         "La clase es grande."
       ],
-      "tr": { "hu": "A nővérem nagyon okos.", "en": "My sister is very intelligent.", "es": "Mi hermana es muy inteligente.", "de": "Meine Schwester ist sehr intelligent." }
+      "tr": { "en": "My sister is very intelligent.", "es": "Mi hermana es muy inteligente." }
     },
     {
       "id": "ac-04",
@@ -686,30 +558,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az azul nemben nem változik, de többesben -es-t kap: azules.",
         "en": "Azul does not change for gender but adds -es in the plural: azules.",
-        "es": "Azul no cambia de género pero hace plural en -es: azules.",
-        "de": "Azul ändert sich nicht nach Genus, im Plural aber -es: azules."
+        "es": "Azul no cambia de género pero hace plural en -es: azules."
       },
       "wrong": {
         "azul": {
-          "hu": "Ezzel a mondat azt jelentené, hogy egyetlen ingről van szó, de a camisas többes szám; helyesen: Las camisas son azules.",
           "en": "This would say there is a single shirt, but camisas is plural; correctly: Las camisas son azules.",
-          "es": "Esto diría que hay una sola camisa, pero camisas es plural; correctamente: Las camisas son azules.",
-          "de": "Das würde ein einziges Hemd andeuten, aber camisas steht im Plural; richtig: Las camisas son azules."
+          "es": "Esto diría que hay una sola camisa, pero camisas es plural; correctamente: Las camisas son azules."
         },
         "azulas": {
-          "hu": "Ezzel a mondat egy nem létező alakot használna; az azul nem kap nőnemű -a végződést, csak számban változik; helyesen: Las camisas son azules.",
           "en": "This would use a form that doesn't exist; azul does not take a feminine -a ending, it only changes for number; correctly: Las camisas son azules.",
-          "es": "Esto usaría una forma que no existe; azul no lleva terminación femenina en -a, solo cambia de número; correctamente: Las camisas son azules.",
-          "de": "Das würde eine nicht existierende Form verwenden; azul bekommt keine feminine Endung auf -a, es ändert sich nur im Numerus; richtig: Las camisas son azules."
+          "es": "Esto usaría una forma que no existe; azul no lleva terminación femenina en -a, solo cambia de número; correctamente: Las camisas son azules."
         }
       },
       "examples": [
         "Los zapatos son grises.",
         "Las paredes son blancas."
       ],
-      "tr": { "hu": "Az ingek kékek.", "en": "The shirts are blue.", "es": "Las camisas son azules.", "de": "Die Hemden sind blau." }
+      "tr": { "en": "The shirts are blue.", "es": "Las camisas son azules." }
     },
     {
       "id": "ac-05",
@@ -721,30 +587,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A nemzetiségek mássalhangzó után is kapnak nőnemű alakot: española.",
         "en": "Nationalities take a feminine form even after a consonant: española.",
-        "es": "Las nacionalidades tienen femenino aunque acaben en consonante: española.",
-        "de": "Nationalitäten haben auch nach Konsonant eine feminine Form."
+        "es": "Las nacionalidades tienen femenino aunque acaben en consonante: española."
       },
       "wrong": {
         "español": {
-          "hu": "Ezzel a mondat azt jelentené, hogy ella hímnemű, de az ella nőnemű alany, tehát española a helyes alak; helyesen: Ella es española y trabaja en un hospital.",
           "en": "This would treat ella as masculine, but ella is a feminine subject, so española is correct; correctly: Ella es española y trabaja en un hospital.",
-          "es": "Esto trataría a ella como masculino, pero ella es un sujeto femenino, así que española es lo correcto; correctamente: Ella es española y trabaja en un hospital.",
-          "de": "Das würde ella als maskulin behandeln, aber ella ist ein feminines Subjekt, also ist española richtig; richtig: Ella es española y trabaja en un hospital."
+          "es": "Esto trataría a ella como masculino, pero ella es un sujeto femenino, así que española es lo correcto; correctamente: Ella es española y trabaja en un hospital."
         },
         "españoles": {
-          "hu": "Ezzel a mondat azt jelentené, hogy többen vannak, de az ella egyetlen személy; helyesen: Ella es española y trabaja en un hospital.",
           "en": "This would say there are several people, but ella is one person; correctly: Ella es española y trabaja en un hospital.",
-          "es": "Esto diría que hay varias personas, pero ella es una sola persona; correctamente: Ella es española y trabaja en un hospital.",
-          "de": "Das würde mehrere Personen andeuten, aber ella ist eine einzige Person; richtig: Ella es española y trabaja en un hospital."
+          "es": "Esto diría que hay varias personas, pero ella es una sola persona; correctamente: Ella es española y trabaja en un hospital."
         }
       },
       "examples": [
         "Mi amiga es alemana.",
         "Ellos son mexicanos."
       ],
-      "tr": { "hu": "Ő spanyol, és egy kórházban dolgozik.", "en": "She is Spanish and works in a hospital.", "es": "Ella es española y trabaja en un hospital.", "de": "Sie ist Spanierin und arbeitet in einem Krankenhaus." }
+      "tr": { "en": "She is Spanish and works in a hospital.", "es": "Ella es española y trabaja en un hospital." }
     },
     {
       "id": "ac-06",
@@ -756,30 +616,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Vegyes nem esetén hímnemű többes: nuevos.",
         "en": "With mixed genders it goes masculine plural: nuevos.",
-        "es": "Con géneros mezclados, masculino plural: nuevos.",
-        "de": "Bei gemischtem Genus gilt maskulin Plural: nuevos."
+        "es": "Con géneros mezclados, masculino plural: nuevos."
       },
       "wrong": {
         "nuevas": {
-          "hu": "Ezzel a mondat azt jelentené, hogy mindkét főnév nőnemű, de a libro hímnemű, ezért hímnemű többes kell; helyesen: El libro y la mesa son nuevos.",
           "en": "This would need both nouns to be feminine, but libro is masculine, so the masculine plural is needed; correctly: El libro y la mesa son nuevos.",
-          "es": "Esto necesitaría que ambos sustantivos fueran femeninos, pero libro es masculino, así que hace falta el masculino plural; correctamente: El libro y la mesa son nuevos.",
-          "de": "Dafür müssten beide Nomen feminin sein, aber libro ist maskulin, daher braucht es den maskulinen Plural; richtig: El libro y la mesa son nuevos."
+          "es": "Esto necesitaría que ambos sustantivos fueran femeninos, pero libro es masculino, así que hace falta el masculino plural; correctamente: El libro y la mesa son nuevos."
         },
         "nuevo": {
-          "hu": "Ezzel a mondat azt jelentené, hogy egyetlen dologról van szó, de két dologról (libro és mesa) beszélünk; helyesen: El libro y la mesa son nuevos.",
           "en": "This would say there is a single thing, but there are two things here (libro and mesa); correctly: El libro y la mesa son nuevos.",
-          "es": "Esto diría que hay una sola cosa, pero aquí se habla de dos (libro y mesa); correctamente: El libro y la mesa son nuevos.",
-          "de": "Das würde eine einzige Sache andeuten, aber hier geht es um zwei Dinge (libro und mesa); richtig: El libro y la mesa son nuevos."
+          "es": "Esto diría que hay una sola cosa, pero aquí se habla de dos (libro y mesa); correctamente: El libro y la mesa son nuevos."
         }
       },
       "examples": [
         "El padre y la madre están cansados.",
         "Los niños y las niñas son pequeños."
       ],
-      "tr": { "hu": "A könyv és az asztal újak.", "en": "The book and the table are new.", "es": "El libro y la mesa son nuevos.", "de": "Das Buch und der Tisch sind neu." }
+      "tr": { "en": "The book and the table are new.", "es": "El libro y la mesa son nuevos." }
     },
     {
       "id": "ac-07",
@@ -791,30 +645,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A bueno hímnemű egyes szám ELŐTT buen-re rövidül.",
         "en": "Bueno shortens to buen before a masculine singular noun.",
-        "es": "Bueno se acorta a buen ante masculino singular.",
-        "de": "Bueno verkürzt sich vor maskulinem Singular zu buen."
+        "es": "Bueno se acorta a buen ante masculino singular."
       },
       "wrong": {
         "bueno": {
-          "hu": "Ezzel a mondat a teljes bueno-t használná hímnemű egyes számú főnév ELŐTT, de ott buen-re rövidül; helyesen: Hoy es un buen día.",
           "en": "This would use the full bueno BEFORE a masculine singular noun, but there it shortens to buen; correctly: Hoy es un buen día.",
-          "es": "Esto usaría bueno entero DELANTE de un sustantivo masculino singular, pero ahí se acorta a buen; correctamente: Hoy es un buen día.",
-          "de": "Das würde das volle bueno VOR ein maskulines Singular-Nomen setzen, aber dort verkürzt es sich zu buen; richtig: Hoy es un buen día."
+          "es": "Esto usaría bueno entero DELANTE de un sustantivo masculino singular, pero ahí se acorta a buen; correctamente: Hoy es un buen día."
         },
         "buena": {
-          "hu": "Ezzel a mondat azt jelentené, hogy a día nőnemű, de a día hímnemű; helyesen: Hoy es un buen día.",
           "en": "This would treat día as feminine, but día is masculine; correctly: Hoy es un buen día.",
-          "es": "Esto trataría a día como femenino, pero día es masculino; correctamente: Hoy es un buen día.",
-          "de": "Das würde día als feminin behandeln, aber día ist maskulin; richtig: Hoy es un buen día."
+          "es": "Esto trataría a día como femenino, pero día es masculino; correctamente: Hoy es un buen día."
         }
       },
       "examples": [
         "Fue un mal año.",
         "Es un gran problema."
       ],
-      "tr": { "hu": "Ma egy jó nap van.", "en": "Today is a good day.", "es": "Hoy es un buen día.", "de": "Heute ist ein guter Tag." }
+      "tr": { "en": "Today is a good day.", "es": "Hoy es un buen día." }
     },
     {
       "id": "ac-08",
@@ -826,30 +674,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A főnév ELŐTT a grande gran-ra rövidül, és „nagyszerűt\" jelent, nem termetet.",
         "en": "Before the noun grande shortens to gran and means great, not big in size.",
-        "es": "Delante del sustantivo, grande se acorta a gran y significa excelente.",
-        "de": "Vor dem Nomen wird grande zu gran und heißt großartig, nicht groß."
+        "es": "Delante del sustantivo, grande se acorta a gran y significa excelente."
       },
       "wrong": {
         "grande": {
-          "hu": "Ezzel a mondat azt jelentené, hogy a hombre nagy termetű, de a mondat a jelleméről szól; a főnév előtt gran a helyes, ami „nagyszerűt” jelent; helyesen: Es un gran hombre: ayuda a todos.",
           "en": "This would say the man is physically big, but the sentence is about his character; before the noun, gran is correct and means great; correctly: Es un gran hombre: ayuda a todos.",
-          "es": "Esto diría que el hombre es de gran tamaño, pero la frase habla de su carácter; delante del sustantivo, lo correcto es gran, que significa excelente; correctamente: Es un gran hombre: ayuda a todos.",
-          "de": "Das würde bedeuten, der Mann sei körperlich groß, aber der Satz spricht von seinem Charakter; vor dem Nomen ist gran richtig, was großartig bedeutet; richtig: Es un gran hombre: ayuda a todos."
+          "es": "Esto diría que el hombre es de gran tamaño, pero la frase habla de su carácter; delante del sustantivo, lo correcto es gran, que significa excelente; correctamente: Es un gran hombre: ayuda a todos."
         },
         "granda": {
-          "hu": "Ezzel a mondat egy nem létező alakot használna; helyesen: Es un gran hombre: ayuda a todos.",
           "en": "This would use a form that doesn't exist; correctly: Es un gran hombre: ayuda a todos.",
-          "es": "Esto usaría una forma que no existe; correctamente: Es un gran hombre: ayuda a todos.",
-          "de": "Das würde eine nicht existierende Form verwenden; richtig: Es un gran hombre: ayuda a todos."
+          "es": "Esto usaría una forma que no existe; correctamente: Es un gran hombre: ayuda a todos."
         }
       },
       "examples": [
         "Es una gran mujer.",
         "Fue un gran día."
       ],
-      "tr": { "hu": "Ő egy nagyszerű ember: mindenkinek segít.", "en": "He is a great man: he helps everyone.", "es": "Es un gran hombre: ayuda a todos.", "de": "Er ist ein großartiger Mann: Er hilft allen." }
+      "tr": { "en": "He is a great man: he helps everyone.", "es": "Es un gran hombre: ayuda a todos." }
     },
     {
       "id": "ac-09",
@@ -861,30 +703,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Nőnemű többes: trabajadoras.",
         "en": "Feminine plural: trabajadoras.",
-        "es": "Femenino plural: trabajadoras.",
-        "de": "Feminin Plural: trabajadoras."
+        "es": "Femenino plural: trabajadoras."
       },
       "wrong": {
         "trabajadores": {
-          "hu": "Ezzel a mondat azt jelentené, hogy amigas hímnemű, de az amigas nőnemű; helyesen: Mis amigas son muy trabajadoras.",
           "en": "This would treat amigas as masculine, but amigas is feminine; correctly: Mis amigas son muy trabajadoras.",
-          "es": "Esto trataría a amigas como masculino, pero amigas es femenino; correctamente: Mis amigas son muy trabajadoras.",
-          "de": "Das würde amigas als maskulin behandeln, aber amigas ist feminin; richtig: Mis amigas son muy trabajadoras."
+          "es": "Esto trataría a amigas como masculino, pero amigas es femenino; correctamente: Mis amigas son muy trabajadoras."
         },
         "trabajadora": {
-          "hu": "Ezzel a mondat azt jelentené, hogy egyetlen barátnőről van szó, de amigas többes szám; helyesen: Mis amigas son muy trabajadoras.",
           "en": "This would say there is a single friend, but amigas is plural; correctly: Mis amigas son muy trabajadoras.",
-          "es": "Esto diría que hay una sola amiga, pero amigas es plural; correctamente: Mis amigas son muy trabajadoras.",
-          "de": "Das würde eine einzige Freundin andeuten, aber amigas steht im Plural; richtig: Mis amigas son muy trabajadoras."
+          "es": "Esto diría que hay una sola amiga, pero amigas es plural; correctamente: Mis amigas son muy trabajadoras."
         }
       },
       "examples": [
         "Las clases son interesantes.",
         "Los profesores son jóvenes."
       ],
-      "tr": { "hu": "A barátnőim nagyon szorgalmasak.", "en": "My friends are very hardworking.", "es": "Mis amigas son muy trabajadoras.", "de": "Meine Freundinnen sind sehr fleißig." }
+      "tr": { "en": "My friends are very hardworking.", "es": "Mis amigas son muy trabajadoras." }
     },
     {
       "id": "ac-10",
@@ -896,30 +732,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A camisa nőnemű egyes szám, és a szín mögé kerül: camisa blanca.",
         "en": "Camisa is feminine singular, and the colour follows it: camisa blanca.",
-        "es": "Camisa es femenino singular y el color va detrás: camisa blanca.",
-        "de": "Camisa ist feminin Singular, die Farbe steht dahinter."
+        "es": "Camisa es femenino singular y el color va detrás: camisa blanca."
       },
       "wrong": {
         "blanco": {
-          "hu": "Ezzel a mondat azt jelentené, hogy a camisa hímnemű, de a camisa nőnemű; helyesen: Tengo una camisa blanca.",
           "en": "This would treat camisa as masculine, but camisa is feminine; correctly: Tengo una camisa blanca.",
-          "es": "Esto trataría a camisa como masculino, pero camisa es femenino; correctamente: Tengo una camisa blanca.",
-          "de": "Das würde camisa als maskulin behandeln, aber camisa ist feminin; richtig: Tengo una camisa blanca."
+          "es": "Esto trataría a camisa como masculino, pero camisa es femenino; correctamente: Tengo una camisa blanca."
         },
         "blancas": {
-          "hu": "Ezzel a mondat azt jelentené, hogy több ingről van szó, de az una egyetlen inget jelöl; helyesen: Tengo una camisa blanca.",
           "en": "This would say there are several shirts, but una marks a single shirt; correctly: Tengo una camisa blanca.",
-          "es": "Esto diría que hay varias camisas, pero una marca una sola; correctamente: Tengo una camisa blanca.",
-          "de": "Das würde mehrere Hemden andeuten, aber una zeigt ein einziges Hemd an; richtig: Tengo una camisa blanca."
+          "es": "Esto diría que hay varias camisas, pero una marca una sola; correctamente: Tengo una camisa blanca."
         }
       },
       "examples": [
         "Un carro negro.",
         "Unas flores amarillas."
       ],
-      "tr": { "hu": "Van egy fehér ingem.", "en": "I have a white shirt.", "es": "Tengo una camisa blanca.", "de": "Ich habe ein weißes Hemd." }
+      "tr": { "en": "I have a white shirt.", "es": "Tengo una camisa blanca." }
     },
     {
       "id": "ac-11",
@@ -931,30 +761,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A difícil nemben nem változik, többesben -es: difíciles.",
         "en": "Difícil does not change for gender; the plural adds -es: difíciles.",
-        "es": "Difícil no cambia de género; el plural es difíciles.",
-        "de": "Difícil ändert sich nicht nach Genus; Plural: difíciles."
+        "es": "Difícil no cambia de género; el plural es difíciles."
       },
       "wrong": {
         "difícil": {
-          "hu": "Ezzel a mondat azt jelentené, hogy egyetlen gyakorlatról van szó, de ejercicios többes szám; helyesen: Los ejercicios son difíciles.",
           "en": "This would say there is a single exercise, but ejercicios is plural; correctly: Los ejercicios son difíciles.",
-          "es": "Esto diría que hay un solo ejercicio, pero ejercicios es plural; correctamente: Los ejercicios son difíciles.",
-          "de": "Das würde eine einzige Übung andeuten, aber ejercicios steht im Plural; richtig: Los ejercicios son difíciles."
+          "es": "Esto diría que hay un solo ejercicio, pero ejercicios es plural; correctamente: Los ejercicios son difíciles."
         },
         "difíciles y difícil": {
-          "hu": "Ezzel a mondat két alakot is használna egyszerre, de egyetlen melléknév is elég; helyesen: Los ejercicios son difíciles.",
           "en": "This would use two forms at once, but a single adjective is enough; correctly: Los ejercicios son difíciles.",
-          "es": "Esto usaría dos formas a la vez, pero basta con un solo adjetivo; correctamente: Los ejercicios son difíciles.",
-          "de": "Das würde zwei Formen zugleich verwenden, aber ein einziges Adjektiv genügt; richtig: Los ejercicios son difíciles."
+          "es": "Esto usaría dos formas a la vez, pero basta con un solo adjetivo; correctamente: Los ejercicios son difíciles."
         }
       },
       "examples": [
         "Las preguntas son fáciles.",
         "Los exámenes son largos."
       ],
-      "tr": { "hu": "A gyakorlatok nehezek.", "en": "The exercises are difficult.", "es": "Los ejercicios son difíciles.", "de": "Die Übungen sind schwierig." }
+      "tr": { "en": "The exercises are difficult.", "es": "Los ejercicios son difíciles." }
     },
     {
       "id": "ac-12",
@@ -966,30 +790,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A casa nőnemű egyes szám: pequeña, és a melléknév a főnév mögött áll.",
         "en": "Casa is feminine singular: pequeña, and the adjective follows the noun.",
-        "es": "Casa es femenino singular: pequeña, detrás del sustantivo.",
-        "de": "Casa ist feminin Singular: pequeña, hinter dem Nomen."
+        "es": "Casa es femenino singular: pequeña, detrás del sustantivo."
       },
       "wrong": {
         "pequeño": {
-          "hu": "Ezzel a mondat azt jelentené, hogy a casa hímnemű, de a casa nőnemű; helyesen: Vivo en una casa pequeña cerca del parque.",
           "en": "This would treat casa as masculine, but casa is feminine; correctly: Vivo en una casa pequeña cerca del parque.",
-          "es": "Esto trataría a casa como masculino, pero casa es femenino; correctamente: Vivo en una casa pequeña cerca del parque.",
-          "de": "Das würde casa als maskulin behandeln, aber casa ist feminin; richtig: Vivo en una casa pequeña cerca del parque."
+          "es": "Esto trataría a casa como masculino, pero casa es femenino; correctamente: Vivo en una casa pequeña cerca del parque."
         },
         "pequeñas": {
-          "hu": "Ezzel a mondat azt jelentené, hogy több házról van szó, de az una egyetlen házat jelöl; helyesen: Vivo en una casa pequeña cerca del parque.",
           "en": "This would say there are several houses, but una marks a single house; correctly: Vivo en una casa pequeña cerca del parque.",
-          "es": "Esto diría que hay varias casas, pero una marca una sola; correctamente: Vivo en una casa pequeña cerca del parque.",
-          "de": "Das würde mehrere Häuser andeuten, aber una zeigt ein einziges Haus an; richtig: Vivo en una casa pequeña cerca del parque."
+          "es": "Esto diría que hay varias casas, pero una marca una sola; correctamente: Vivo en una casa pequeña cerca del parque."
         }
       },
       "examples": [
         "Una calle tranquila.",
         "Un cuarto limpio."
       ],
-      "tr": { "hu": "Egy kis házban lakom a park közelében.", "en": "I live in a small house near the park.", "es": "Vivo en una casa pequeña cerca del parque.", "de": "Ich wohne in einem kleinen Haus in der Nähe des Parks." }
+      "tr": { "en": "I live in a small house near the park.", "es": "Vivo en una casa pequeña cerca del parque." }
     },
     {
       "id": "ac-match-01",
@@ -1123,46 +941,34 @@
       "es": "Mi hermano es muy alto.",
       "target": "alto",
       "tr": {
-        "hu": "A bátyám nagyon magas.",
         "en": "My brother is very tall.",
-        "es": "Mi hermano es muy alto.",
-        "de": "Mein Bruder ist sehr groß."
+        "es": "Mi hermano es muy alto."
       },
       "options": [
         {
           "text": {
-            "hu": "-o/-a: négy alak",
             "en": "-o/-a: four forms",
-            "es": "-o/-a: cuatro formas",
-            "de": "-o/-a: vier Formen"
+            "es": "-o/-a: cuatro formas"
           }
         },
         {
           "text": {
-            "hu": "-e vagy mássalhangzó: két alak",
             "en": "-e or consonant: two forms",
-            "es": "-e o consonante: dos formas",
-            "de": "-e oder Konsonant: zwei Formen"
+            "es": "-e o consonante: dos formas"
           },
           "wrong": {
-            "hu": "Alto -o végű, nem -e vagy mássalhangzó végű, tehát nem ez a szabály él, hanem a négy alakos -o/-a szabály.",
             "en": "Alto ends in -o, not in -e or a consonant, so this rule doesn't apply, it is the four-form -o/-a rule.",
-            "es": "Alto acaba en -o, no en -e ni consonante, así que esta regla no aplica, es la regla de cuatro formas en -o/-a.",
-            "de": "Alto endet auf -o, nicht auf -e oder Konsonant, diese Regel gilt also nicht, es ist die vierformige -o/-a-Regel."
+            "es": "Alto acaba en -o, no en -e ni consonante, así que esta regla no aplica, es la regla de cuatro formas en -o/-a."
           }
         },
         {
           "text": {
-            "hu": "nemzetiség mássalhangzóra: négy alak",
             "en": "nationality + consonant: four forms",
-            "es": "nacionalidad en consonante: cuatro formas",
-            "de": "Nationalität auf Konsonant: vier Formen"
+            "es": "nacionalidad en consonante: cuatro formas"
           },
           "wrong": {
-            "hu": "Alto nem nemzetiség-melléknév, a négy alakja a sima -o/-a szabályból jön, nem a nemzetiség-kivételből.",
             "en": "Alto is not a nationality adjective, its four forms come from the plain -o/-a rule, not the nationality exception.",
-            "es": "Alto no es un adjetivo de nacionalidad, sus cuatro formas vienen de la regla simple en -o/-a, no de la excepción de nacionalidad.",
-            "de": "Alto ist kein Nationalitätsadjektiv, seine vier Formen kommen aus der einfachen -o/-a-Regel, nicht aus der Nationalitäts-Ausnahme."
+            "es": "Alto no es un adjetivo de nacionalidad, sus cuatro formas vienen de la regla simple en -o/-a, no de la excepción de nacionalidad."
           }
         }
       ],
@@ -1174,46 +980,34 @@
       "es": "La sopa está muy caliente.",
       "target": "caliente",
       "tr": {
-        "hu": "A leves nagyon forró.",
         "en": "The soup is very hot.",
-        "es": "La sopa está muy caliente.",
-        "de": "Die Suppe ist sehr heiß."
+        "es": "La sopa está muy caliente."
       },
       "options": [
         {
           "text": {
-            "hu": "-o/-a: négy alak",
             "en": "-o/-a: four forms",
-            "es": "-o/-a: cuatro formas",
-            "de": "-o/-a: vier Formen"
+            "es": "-o/-a: cuatro formas"
           },
           "wrong": {
-            "hu": "Caliente nem -o vagy -a végű, hanem -e végű, ezért nem a négy alakos szabály vonatkozik rá, hanem a nemben nem változó -e szabály.",
             "en": "Caliente doesn't end in -o or -a, it ends in -e, so the four-form rule doesn't apply, it is the -e rule with no gender change.",
-            "es": "Caliente no acaba en -o ni en -a, sino en -e, así que no aplica la regla de cuatro formas, sino la regla en -e sin cambio de género.",
-            "de": "Caliente endet nicht auf -o oder -a, sondern auf -e, daher gilt nicht die vierformige Regel, sondern die -e-Regel ohne Genuswechsel."
+            "es": "Caliente no acaba en -o ni en -a, sino en -e, así que no aplica la regla de cuatro formas, sino la regla en -e sin cambio de género."
           }
         },
         {
           "text": {
-            "hu": "-e vagy mássalhangzó: két alak",
             "en": "-e or consonant: two forms",
-            "es": "-e o consonante: dos formas",
-            "de": "-e oder Konsonant: zwei Formen"
+            "es": "-e o consonante: dos formas"
           }
         },
         {
           "text": {
-            "hu": "vegyes nem: hímnemű többes",
             "en": "mixed gender: masculine plural",
-            "es": "género mixto: masculino plural",
-            "de": "gemischtes Genus: maskulin Plural"
+            "es": "género mixto: masculino plural"
           },
           "wrong": {
-            "hu": "Itt csak egyetlen főnévről (sopa) van szó, nincs vegyes nemű csoport, tehát a vegyes nem szabálya itt nem él.",
             "en": "Here there is only one noun (sopa), no mixed-gender group, so the mixed-gender rule does not apply here.",
-            "es": "Aquí solo hay un sustantivo (sopa), no hay grupo de género mixto, así que la regla de género mixto no aplica aquí.",
-            "de": "Hier gibt es nur ein Nomen (sopa), keine gemischtgeschlechtliche Gruppe, die Regel für gemischtes Genus gilt hier also nicht."
+            "es": "Aquí solo hay un sustantivo (sopa), no hay grupo de género mixto, así que la regla de género mixto no aplica aquí."
           }
         }
       ],
@@ -1225,46 +1019,34 @@
       "es": "Mi amiga es alemana.",
       "target": "alemana",
       "tr": {
-        "hu": "A barátnőm német.",
         "en": "My friend is German.",
-        "es": "Mi amiga es alemana.",
-        "de": "Meine Freundin ist Deutsche."
+        "es": "Mi amiga es alemana."
       },
       "options": [
         {
           "text": {
-            "hu": "-o/-a: négy alak",
             "en": "-o/-a: four forms",
-            "es": "-o/-a: cuatro formas",
-            "de": "-o/-a: vier Formen"
+            "es": "-o/-a: cuatro formas"
           },
           "wrong": {
-            "hu": "Alemán mássalhangzóra végződik, nem -o vagy -a végű, tehát nem az alap -o/-a szabály adja a nőnemű alakot, hanem a nemzetiség-kivétel.",
             "en": "Alemán ends in a consonant, not in -o or -a, so the basic -o/-a rule doesn't give the feminine form, the nationality exception does.",
-            "es": "Alemán acaba en consonante, no en -o ni en -a, así que la regla básica en -o/-a no da la forma femenina, sino la excepción de nacionalidad.",
-            "de": "Alemán endet auf einen Konsonanten, nicht auf -o oder -a, daher liefert nicht die einfache -o/-a-Regel die feminine Form, sondern die Nationalitäts-Ausnahme."
+            "es": "Alemán acaba en consonante, no en -o ni en -a, así que la regla básica en -o/-a no da la forma femenina, sino la excepción de nacionalidad."
           }
         },
         {
           "text": {
-            "hu": "-e vagy mássalhangzó: két alak",
             "en": "-e or consonant: two forms",
-            "es": "-e o consonante: dos formas",
-            "de": "-e oder Konsonant: zwei Formen"
+            "es": "-e o consonante: dos formas"
           },
           "wrong": {
-            "hu": "A nemzetiség-melléknevek mássalhangzó után IS kapnak nőnemű alakot, ez eltér az általános -e/mássalhangzó szabálytól, ahol nincs nembeli váltás.",
             "en": "Nationality adjectives DO take a feminine form even after a consonant, unlike the general -e/consonant rule, where gender doesn't change.",
-            "es": "Los adjetivos de nacionalidad SÍ tienen forma femenina tras consonante, a diferencia de la regla general en -e/consonante, donde no cambia el género.",
-            "de": "Nationalitätsadjektive bekommen auch nach einem Konsonanten eine feminine Form, anders als bei der allgemeinen -e/Konsonanten-Regel ohne Genuswechsel."
+            "es": "Los adjetivos de nacionalidad SÍ tienen forma femenina tras consonante, a diferencia de la regla general en -e/consonante, donde no cambia el género."
           }
         },
         {
           "text": {
-            "hu": "nemzetiség mássalhangzóra: négy alak",
             "en": "nationality + consonant: four forms",
-            "es": "nacionalidad en consonante: cuatro formas",
-            "de": "Nationalität auf Konsonant: vier Formen"
+            "es": "nacionalidad en consonante: cuatro formas"
           }
         }
       ],
@@ -1276,46 +1058,34 @@
       "es": "El perro y la gata son negros.",
       "target": "negros",
       "tr": {
-        "hu": "A kutya és a macska feketék.",
         "en": "The dog and the cat are black.",
-        "es": "El perro y la gata son negros.",
-        "de": "Der Hund und die Katze sind schwarz."
+        "es": "El perro y la gata son negros."
       },
       "options": [
         {
           "text": {
-            "hu": "vegyes nem: hímnemű többes",
             "en": "mixed gender: masculine plural",
-            "es": "género mixto: masculino plural",
-            "de": "gemischtes Genus: maskulin Plural"
+            "es": "género mixto: masculino plural"
           }
         },
         {
           "text": {
-            "hu": "-o/-a: négy alak",
             "en": "-o/-a: four forms",
-            "es": "-o/-a: cuatro formas",
-            "de": "-o/-a: vier Formen"
+            "es": "-o/-a: cuatro formas"
           },
           "wrong": {
-            "hu": "A négy alakos -o/-a szabály egyetlen főnévre vonatkozna, itt viszont két különböző nemű főnévről van szó együtt, ezért a vegyes nem szabálya dönt.",
             "en": "The four-form -o/-a rule would apply to a single noun, but here two nouns of different gender appear together, so the mixed-gender rule decides.",
-            "es": "La regla de cuatro formas en -o/-a se aplicaría a un solo sustantivo, pero aquí hay dos sustantivos de género distinto juntos, así que decide la regla de género mixto.",
-            "de": "Die vierformige -o/-a-Regel würde für ein einzelnes Nomen gelten, hier stehen aber zwei Nomen unterschiedlichen Genus zusammen, daher entscheidet die Regel für gemischtes Genus."
+            "es": "La regla de cuatro formas en -o/-a se aplicaría a un solo sustantivo, pero aquí hay dos sustantivos de género distinto juntos, así que decide la regla de género mixto."
           }
         },
         {
           "text": {
-            "hu": "-e vagy mássalhangzó: két alak",
             "en": "-e or consonant: two forms",
-            "es": "-e o consonante: dos formas",
-            "de": "-e oder Konsonant: zwei Formen"
+            "es": "-e o consonante: dos formas"
           },
           "wrong": {
-            "hu": "A negros -o végű melléknévalak, nem -e vagy mássalhangzó végű; a szám és a vegyes nem miatt lesz hímnemű többes, nem az -e szabály miatt.",
             "en": "Negros is an -o form, not an -e or consonant one; it is masculine plural because of the number and the mixed gender, not the -e rule.",
-            "es": "Negros es una forma en -o, no en -e ni consonante; es masculino plural por el número y el género mixto, no por la regla en -e.",
-            "de": "Negros ist eine -o-Form, keine -e- oder Konsonantenform; es ist maskulin Plural wegen der Zahl und des gemischten Genus, nicht wegen der -e-Regel."
+            "es": "Negros es una forma en -o, no en -e ni consonante; es masculino plural por el número y el género mixto, no por la regla en -e."
           }
         }
       ],
@@ -1327,46 +1097,34 @@
       "es": "Hoy es un buen día.",
       "target": "buen",
       "tr": {
-        "hu": "Ma jó nap van.",
         "en": "Today is a good day.",
-        "es": "Hoy es un buen día.",
-        "de": "Heute ist ein guter Tag."
+        "es": "Hoy es un buen día."
       },
       "options": [
         {
           "text": {
-            "hu": "buen/mal/gran a főnév előtt rövidül",
             "en": "buen/mal/gran shorten before the noun",
-            "es": "buen/mal/gran se acortan delante del sustantivo",
-            "de": "buen/mal/gran verkürzen sich vor dem Nomen"
+            "es": "buen/mal/gran se acortan delante del sustantivo"
           }
         },
         {
           "text": {
-            "hu": "a melléknév a főnév után áll",
             "en": "the adjective goes after the noun",
-            "es": "el adjetivo va detrás del sustantivo",
-            "de": "das Adjektiv steht nach dem Nomen"
+            "es": "el adjetivo va detrás del sustantivo"
           },
           "wrong": {
-            "hu": "Itt a melléknév a főnév ELŐTT áll (buen día), ezért ez éppen a kivétel, nem az alap „főnév után” szabály.",
             "en": "Here the adjective goes BEFORE the noun (buen día), so this is exactly the exception, not the basic \"after the noun\" rule.",
-            "es": "Aquí el adjetivo va DELANTE del sustantivo (buen día), así que esto es justo la excepción, no la regla básica de ir detrás.",
-            "de": "Hier steht das Adjektiv VOR dem Nomen (buen día), das ist also genau die Ausnahme, nicht die einfache Regel „nach dem Nomen“."
+            "es": "Aquí el adjetivo va DELANTE del sustantivo (buen día), así que esto es justo la excepción, no la regla básica de ir detrás."
           }
         },
         {
           "text": {
-            "hu": "-o/-a: négy alak",
             "en": "-o/-a: four forms",
-            "es": "-o/-a: cuatro formas",
-            "de": "-o/-a: vier Formen"
+            "es": "-o/-a: cuatro formas"
           },
           "wrong": {
-            "hu": "A bueno itt nem a teljes négy alakú formában áll, hanem a hímnemű egyes szám előtti rövidült buen alakban.",
             "en": "Bueno here does not stand in its full four-form shape, but in the shortened buen form before a masculine singular noun.",
-            "es": "Bueno aquí no está en su forma entera de cuatro formas, sino en la forma acortada buen ante un sustantivo masculino singular.",
-            "de": "Bueno steht hier nicht in seiner vollen vierformigen Gestalt, sondern in der verkürzten Form buen vor einem maskulinen Singular-Nomen."
+            "es": "Bueno aquí no está en su forma entera de cuatro formas, sino en la forma acortada buen ante un sustantivo masculino singular."
           }
         }
       ],
@@ -1378,46 +1136,34 @@
       "es": "Tengo un problema difícil.",
       "target": "difícil",
       "tr": {
-        "hu": "Egy nehéz problémám van.",
         "en": "I have a difficult problem.",
-        "es": "Tengo un problema difícil.",
-        "de": "Ich habe ein schwieriges Problem."
+        "es": "Tengo un problema difícil."
       },
       "options": [
         {
           "text": {
-            "hu": "a melléknév a főnév után áll",
             "en": "the adjective goes after the noun",
-            "es": "el adjetivo va detrás del sustantivo",
-            "de": "das Adjektiv steht nach dem Nomen"
+            "es": "el adjetivo va detrás del sustantivo"
           }
         },
         {
           "text": {
-            "hu": "buen/mal/gran a főnév előtt rövidül",
             "en": "buen/mal/gran shorten before the noun",
-            "es": "buen/mal/gran se acortan delante del sustantivo",
-            "de": "buen/mal/gran verkürzen sich vor dem Nomen"
+            "es": "buen/mal/gran se acortan delante del sustantivo"
           },
           "wrong": {
-            "hu": "A difícil nem tartozik a buen/mal/gran rövidülő szavak közé, és itt a főnév UTÁN áll, tehát nem ez a kivétel-szabály él.",
             "en": "Difícil is not one of the buen/mal/gran shortening words, and here it goes AFTER the noun, so this exception rule doesn't apply.",
-            "es": "Difícil no está entre las palabras que se acortan como buen/mal/gran, y aquí va DETRÁS del sustantivo, así que no aplica esta excepción.",
-            "de": "Difícil gehört nicht zu den verkürzenden Wörtern buen/mal/gran, und steht hier HINTER dem Nomen, diese Ausnahmeregel gilt also nicht."
+            "es": "Difícil no está entre las palabras que se acortan como buen/mal/gran, y aquí va DETRÁS del sustantivo, así que no aplica esta excepción."
           }
         },
         {
           "text": {
-            "hu": "-e vagy mássalhangzó: két alak",
             "en": "-e or consonant: two forms",
-            "es": "-e o consonante: dos formas",
-            "de": "-e oder Konsonant: zwei Formen"
+            "es": "-e o consonante: dos formas"
           },
           "wrong": {
-            "hu": "Bár a difícil -e/mássalhangzó típusú melléknév, itt éppen a helyére kérdezünk (a főnév után áll), nem az alakjára.",
             "en": "Although difícil is an -e/consonant-type adjective, here we are asking about its position (it goes after the noun), not its form.",
-            "es": "Aunque difícil es un adjetivo de tipo -e/consonante, aquí preguntamos por su posición (va detrás del sustantivo), no por su forma.",
-            "de": "Obwohl difícil ein Adjektiv vom Typ -e/Konsonant ist, geht es hier um seine Stellung (es steht nach dem Nomen), nicht um seine Form."
+            "es": "Aunque difícil es un adjetivo de tipo -e/consonante, aquí preguntamos por su posición (va detrás del sustantivo), no por su forma."
           }
         }
       ],
@@ -1429,46 +1175,34 @@
       "es": "Tiene muchas ideas.",
       "target": "muchas",
       "tr": {
-        "hu": "Sok ötlete van.",
         "en": "She has many ideas.",
-        "es": "Tiene muchas ideas.",
-        "de": "Sie hat viele Ideen."
+        "es": "Tiene muchas ideas."
       },
       "options": [
         {
           "text": {
-            "hu": "mucho/poco egyeztet, muy nem",
             "en": "mucho/poco agree, muy does not",
-            "es": "mucho/poco concuerdan, muy no",
-            "de": "mucho/poco stimmen überein, muy nicht"
+            "es": "mucho/poco concuerdan, muy no"
           }
         },
         {
           "text": {
-            "hu": "-o/-a: négy alak",
             "en": "-o/-a: four forms",
-            "es": "-o/-a: cuatro formas",
-            "de": "-o/-a: vier Formen"
+            "es": "-o/-a: cuatro formas"
           },
           "wrong": {
-            "hu": "A mucho nem a normál -o/-a melléknevek négy alakos szabályát követi példaként, hanem külön mennyiség-melléknévi szabályt, amit itt kérdezünk.",
             "en": "Mucho is not just an example of the regular -o/-a four-form rule, it follows its own quantity-adjective rule, which is what this asks about.",
-            "es": "Mucho no es solo un ejemplo de la regla normal de cuatro formas en -o/-a, sigue su propia regla de adjetivo de cantidad, que es lo que se pregunta aquí.",
-            "de": "Mucho ist nicht nur ein Beispiel der normalen vierformigen -o/-a-Regel, es folgt einer eigenen Mengenadjektiv-Regel, danach wird hier gefragt."
+            "es": "Mucho no es solo un ejemplo de la regla normal de cuatro formas en -o/-a, sigue su propia regla de adjetivo de cantidad, que es lo que se pregunta aquí."
           }
         },
         {
           "text": {
-            "hu": "vegyes nem: hímnemű többes",
             "en": "mixed gender: masculine plural",
-            "es": "género mixto: masculino plural",
-            "de": "gemischtes Genus: maskulin Plural"
+            "es": "género mixto: masculino plural"
           },
           "wrong": {
-            "hu": "Itt egyetlen főnévről (ideas) van szó, nincs vegyes nemű csoport; a muchas alakja a mennyiség-egyeztetés szabályából jön.",
             "en": "Here there is only one noun (ideas), no mixed-gender group; the form muchas comes from the quantity-agreement rule.",
-            "es": "Aquí solo hay un sustantivo (ideas), no hay grupo de género mixto; la forma muchas viene de la regla de concordancia de cantidad.",
-            "de": "Hier gibt es nur ein Nomen (ideas), keine gemischtgeschlechtliche Gruppe; die Form muchas kommt aus der Mengen-Kongruenzregel."
+            "es": "Aquí solo hay un sustantivo (ideas), no hay grupo de género mixto; la forma muchas viene de la regla de concordancia de cantidad."
           }
         }
       ],

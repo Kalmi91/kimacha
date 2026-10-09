@@ -3,42 +3,32 @@
   "topic": "plurals",
   "level": "A1",
   "title": {
-    "hu": "A többes szám (book → books)",
     "en": "Plural nouns (book → books)",
-    "es": "El plural (book → books)",
-    "de": "Der Plural (book → books)"
+    "es": "El plural (book → books)"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "Az angol többes szám a spanyolhoz hasonlóan többnyire egy -s (book → books). Három nagy különbség van. Egy: a névelő és a melléknév NEM változik többesben (the big dogs, nem „the bigs dogs”). Kettő: az „a / an” egyes számú főnév előtt áll, többes számnál egyszerűen elmarad (a dog → dogs). Három: van néhány rendhagyó alak, amit meg kell tanulni (child → children).",
         "en": "English plurals are, like Spanish, mostly just an -s (book → books). There are three big differences. One: the article and the adjective do NOT change in the plural (the big dogs, not “the bigs dogs”). Two: “a / an” goes with singular nouns only, so it simply disappears in the plural (a dog → dogs). Three: some plurals are irregular and must be learned (child → children).",
-        "es": "El plural en inglés, como en español, casi siempre es una -s (book → books). Hay tres grandes diferencias. Una: el artículo y el adjetivo NO cambian en plural (the big dogs, no «the bigs dogs»). Dos: «a / an» va solo con nombres en singular, así que en plural simplemente desaparece (a dog → dogs). Tres: hay plurales irregulares que hay que aprender (child → children).",
-        "de": "Der englische Plural ist wie im Spanischen meist einfach ein -s (book → books). Es gibt drei große Unterschiede. Eins: Artikel und Adjektiv verändern sich im Plural NICHT (the big dogs, nicht „the bigs dogs“). Zwei: „a / an“ steht nur bei Nomen im Singular, im Plural fällt es einfach weg (a dog → dogs). Drei: Es gibt unregelmäßige Plurale, die man lernen muss (child → children)."
+        "es": "El plural en inglés, como en español, casi siempre es una -s (book → books). Hay tres grandes diferencias. Una: el artículo y el adjetivo NO cambian en plural (the big dogs, no «the bigs dogs»). Dos: «a / an» va solo con nombres en singular, así que en plural simplemente desaparece (a dog → dogs). Tres: hay plurales irregulares que hay que aprender (child → children)."
       }
     },
     {
       "kind": "table",
       "id": "pl-forms",
       "title": {
-        "hu": "Egyes és többes szám",
         "en": "Singular and plural",
-        "es": "Singular y plural",
-        "de": "Singular und Plural"
+        "es": "Singular y plural"
       },
       "header": [
         {
-          "hu": "Egyes szám",
           "en": "Singular",
-          "es": "Singular",
-          "de": "Singular"
+          "es": "Singular"
         },
         {
-          "hu": "plural",
           "en": "plural",
-          "es": "plural",
-          "de": "plural"
+          "es": "plural"
         }
       ],
       "rows": [
@@ -103,120 +93,94 @@
     {
       "kind": "list",
       "title": {
-        "hu": "A többes szám képzése",
         "en": "How to make the plural",
-        "es": "Cómo se forma el plural",
-        "de": "So bildet man den Plural"
+        "es": "Cómo se forma el plural"
       },
       "items": [
         {
           "text": {
-            "hu": "A legtöbb főnév: -s (book → books). Akkor is, ha az y előtt magánhangzó áll (day → days).",
             "en": "Most nouns: add -s (book → books). This includes nouns where y follows a vowel (day → days).",
-            "es": "Casi todos los nombres: añade -s (book → books). También cuando la y va detrás de una vocal (day → days).",
-            "de": "Die meisten Nomen: -s anhängen (book → books). Das gilt auch, wenn vor dem y ein Vokal steht (day → days)."
+            "es": "Casi todos los nombres: añade -s (book → books). También cuando la y va detrás de una vocal (day → days)."
           },
           "examples": [
             {
               "es": "I have two dogs.",
               "tr": {
-                "hu": "Két kutyám van.",
                 "en": "I have two dogs.",
-                "es": "Tengo dos perros.",
-                "de": "Ich habe zwei Hunde."
+                "es": "Tengo dos perros."
               }
             },
             {
               "es": "The days are long.",
               "tr": {
-                "hu": "A napok hosszúak.",
                 "en": "The days are long.",
-                "es": "Los días son largos.",
-                "de": "Die Tage sind lang."
+                "es": "Los días son largos."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "-s, -ss, -sh, -ch vagy -x végű főnevek: -es (bus → buses, class → classes, watch → watches).",
             "en": "Nouns ending in -s, -ss, -sh, -ch or -x: add -es (bus → buses, class → classes, watch → watches).",
-            "es": "Nombres que terminan en -s, -ss, -sh, -ch o -x: añade -es (bus → buses, class → classes, watch → watches).",
-            "de": "Nomen auf -s, -ss, -sh, -ch oder -x: -es anhängen (bus → buses, class → classes, watch → watches)."
+            "es": "Nombres que terminan en -s, -ss, -sh, -ch o -x: añade -es (bus → buses, class → classes, watch → watches)."
           },
           "examples": [
             {
               "es": "I take two buses to work.",
               "tr": {
-                "hu": "Két busszal megyek dolgozni.",
                 "en": "I take two buses to work.",
-                "es": "Tomo dos autobuses al trabajo.",
-                "de": "Ich nehme zwei Busse zur Arbeit."
+                "es": "Tomo dos autobuses al trabajo."
               }
             },
             {
               "es": "She has three watches.",
               "tr": {
-                "hu": "Három órája van.",
                 "en": "She has three watches.",
-                "es": "Ella tiene tres relojes.",
-                "de": "Sie hat drei Uhren."
+                "es": "Ella tiene tres relojes."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Mássalhangzó + y végű főnevek: az y helyére -ies kerül (city → cities, family → families, baby → babies).",
             "en": "Nouns ending in consonant + y: change the y to -ies (city → cities, family → families, baby → babies).",
-            "es": "Nombres que terminan en consonante + y: la y cambia a -ies (city → cities, family → families, baby → babies).",
-            "de": "Nomen auf Konsonant + y: Das y wird zu -ies (city → cities, family → families, baby → babies)."
+            "es": "Nombres que terminan en consonante + y: la y cambia a -ies (city → cities, family → families, baby → babies)."
           },
           "examples": [
             {
               "es": "Mexico has big cities.",
               "tr": {
-                "hu": "Mexikóban nagy városok vannak.",
                 "en": "Mexico has big cities.",
-                "es": "México tiene ciudades grandes.",
-                "de": "Mexiko hat große Städte."
+                "es": "México tiene ciudades grandes."
               }
             },
             {
               "es": "Their families are big.",
               "tr": {
-                "hu": "A családjaik nagyok.",
                 "en": "Their families are big.",
-                "es": "Sus familias son grandes.",
-                "de": "Ihre Familien sind groß."
+                "es": "Sus familias son grandes."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Rendhagyó többes számok, ezeket meg kell tanulni: man → men, woman → women, child → children, person → people, foot → feet, tooth → teeth. A fish nem változik (one fish, two fish).",
             "en": "Irregular plurals, which you have to learn: man → men, woman → women, child → children, person → people, foot → feet, tooth → teeth. Fish does not change (one fish, two fish).",
-            "es": "Plurales irregulares que hay que aprender: man → men, woman → women, child → children, person → people, foot → feet, tooth → teeth. Fish no cambia (one fish, two fish).",
-            "de": "Unregelmäßige Plurale, die man lernen muss: man → men, woman → women, child → children, person → people, foot → feet, tooth → teeth. Fish bleibt gleich (one fish, two fish)."
+            "es": "Plurales irregulares que hay que aprender: man → men, woman → women, child → children, person → people, foot → feet, tooth → teeth. Fish no cambia (one fish, two fish)."
           },
           "examples": [
             {
               "es": "My children are at school.",
               "tr": {
-                "hu": "A gyerekeim iskolában vannak.",
                 "en": "My children are at school.",
-                "es": "Mis hijos están en la escuela.",
-                "de": "Meine Kinder sind in der Schule."
+                "es": "Mis hijos están en la escuela."
               }
             },
             {
               "es": "The women work here.",
               "tr": {
-                "hu": "A nők itt dolgoznak.",
                 "en": "The women work here.",
-                "es": "Las mujeres trabajan aquí.",
-                "de": "Die Frauen arbeiten hier."
+                "es": "Las mujeres trabajan aquí."
               }
             }
           ]
@@ -226,64 +190,50 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Amire figyelj",
         "en": "What to watch",
-        "es": "A qué debes prestar atención",
-        "de": "Worauf du achten musst"
+        "es": "A qué debes prestar atención"
       },
       "items": [
         {
           "text": {
-            "hu": "Számnevek és „many” után többes szám áll: two dogs, many friends. Az egyes szám csak az „one” után van.",
             "en": "After numbers and “many”, use the plural: two dogs, many friends. The singular is only for “one”.",
-            "es": "Después de números y de «many» va el plural: two dogs, many friends. El singular solo va con «one».",
-            "de": "Nach Zahlen und „many“ steht der Plural: two dogs, many friends. Der Singular gilt nur bei „one“."
+            "es": "Después de números y de «many» va el plural: two dogs, many friends. El singular solo va con «one»."
           },
           "examples": [
             {
               "es": "I have two brothers.",
               "tr": {
-                "hu": "Két fivérem van.",
                 "en": "I have two brothers.",
-                "es": "Tengo dos hermanos.",
-                "de": "Ich habe zwei Brüder."
+                "es": "Tengo dos hermanos."
               }
             },
             {
               "es": "How many friends do you have?",
               "tr": {
-                "hu": "Hány barátod van?",
                 "en": "How many friends do you have?",
-                "es": "¿Cuántos amigos tienes?",
-                "de": "Wie viele Freunde hast du?"
+                "es": "¿Cuántos amigos tienes?"
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A „people” már többes szám, nem kap -s-t: the people are nice. Néhány főnév nem számlálható, nincs többese: music, water, news.",
             "en": "“People” is already plural and takes no -s: the people are nice. Some nouns are uncountable and have no plural: music, water, news.",
-            "es": "«People» ya es plural y no lleva -s: the people are nice. Algunos nombres son incontables y no tienen plural: music, water, news.",
-            "de": "„People“ ist schon Plural und bekommt kein -s: the people are nice. Manche Nomen sind unzählbar und haben keinen Plural: music, water, news."
+            "es": "«People» ya es plural y no lleva -s: the people are nice. Algunos nombres son incontables y no tienen plural: music, water, news."
           },
           "examples": [
             {
               "es": "The people here are very nice.",
               "tr": {
-                "hu": "Az itteni emberek nagyon kedvesek.",
                 "en": "The people here are very nice.",
-                "es": "La gente de aquí es muy amable.",
-                "de": "Die Leute hier sind sehr nett."
+                "es": "La gente de aquí es muy amable."
               }
             },
             {
               "es": "I like music.",
               "tr": {
-                "hu": "Szeretem a zenét.",
                 "en": "I like music.",
-                "es": "Me gusta la música.",
-                "de": "Ich mag Musik."
+                "es": "Me gusta la música."
               }
             }
           ]
@@ -293,36 +243,28 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Vigyázat: a melléknév nem kap -s-t. Ne mondd, hogy „I like bigs dogs”, hanem: „I like big dogs”.",
         "en": "Careful: adjectives never take -s. Do not say “I like bigs dogs”; say “I like big dogs”.",
-        "es": "Cuidado: los adjetivos nunca llevan -s. No digas «I like bigs dogs», di «I like big dogs».",
-        "de": "Vorsicht: Adjektive bekommen nie ein -s. Sag nicht „I like bigs dogs“, sondern „I like big dogs“."
+        "es": "Cuidado: los adjetivos nunca llevan -s. No digas «I like bigs dogs», di «I like big dogs»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "Számnév után mindig többes szám kell: „two dog” hiba, helyesen „two dogs”. A rendhagyó alakokhoz nem teszel -s-t: nem „childs”, nem „mans”, hanem „children”, „men”.",
         "en": "After a number you always need the plural: “two dog” is wrong, say “two dogs”. Do not add -s to irregular plurals: not “childs” or “mans”, but “children” and “men”.",
-        "es": "Después de un número siempre va el plural: «two dog» es un error, di «two dogs». No añadas -s a los plurales irregulares: no «childs» ni «mans», sino «children» y «men».",
-        "de": "Nach einer Zahl steht immer der Plural: „two dog“ ist falsch, sag „two dogs“. Bei unregelmäßigen Pluralen kein -s: nicht „childs“ oder „mans“, sondern „children“ und „men“."
+        "es": "Después de un número siempre va el plural: «two dog» es un error, di «two dogs». No añadas -s a los plurales irregulares: no «childs» ni «mans», sino «children» y «men»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A „news” nem számlálható, ezért egyes számú igét kap, és nincs „a news”: The news is good. Ugyanígy nincs „informations” sem, csak „information”.",
         "en": "“News” is uncountable, so it takes a singular verb, and there is no “a news”: The news is good. In the same way there is no “informations”, only “information”.",
-        "es": "«News» es incontable, por eso lleva el verbo en singular y no existe «a news»: The news is good. Igualmente no existe «informations», solo «information».",
-        "de": "„News“ ist unzählbar, deshalb steht das Verb im Singular, und „a news“ gibt es nicht: The news is good. Genauso gibt es kein „informations“, nur „information“."
+        "es": "«News» es incontable, por eso lleva el verbo en singular y no existe «a news»: The news is good. Igualmente no existe «informations», solo «information»."
       }
     }
   ],
   "speak": {
-    "hu": "Az angol többes szám többnyire egy -s: «book», «books». A -s, -ss, -sh, -ch végű szavak -es-t kapnak: «bus», «buses», «watch», «watches». Mássalhangzó plusz y végnél az y -ies lesz: «city», «cities». Rendhagyó alakok: «man», «men», «woman», «women», «child», «children», «person», «people». Vigyázat: a melléknév nem változik: «big dogs», nem «bigs dogs». Számnév után többes szám kell: «two dogs».",
     "en": "The English plural is mostly just an -s: «book», «books». Words ending in -s, -ss, -sh, -ch take -es: «bus», «buses», «watch», «watches». After a consonant plus y, the y becomes -ies: «city», «cities». Irregular forms: «man», «men», «woman», «women», «child», «children», «person», «people». Careful: the adjective does not change: «big dogs», not «bigs dogs». After a number you need the plural: «two dogs».",
-    "es": "El plural en inglés casi siempre es una -s: «book», «books». Las palabras que terminan en -s, -ss, -sh, -ch llevan -es: «bus», «buses», «watch», «watches». Con consonante más y, la y cambia a -ies: «city», «cities». Formas irregulares: «man», «men», «woman», «women», «child», «children», «person», «people». Cuidado: el adjetivo no cambia: «big dogs», no «bigs dogs». Después de un número hace falta el plural: «two dogs».",
-    "de": "Der englische Plural ist meist einfach ein -s: «book», «books». Wörter auf -s, -ss, -sh, -ch bekommen -es: «bus», «buses», «watch», «watches». Nach Konsonant plus y wird das y zu -ies: «city», «cities». Unregelmäßige Formen: «man», «men», «woman», «women», «child», «children», «person», «people». Vorsicht: Das Adjektiv verändert sich nicht: «big dogs», nicht «bigs dogs». Nach einer Zahl braucht man den Plural: «two dogs»."
+    "es": "El plural en inglés casi siempre es una -s: «book», «books». Las palabras que terminan en -s, -ss, -sh, -ch llevan -es: «bus», «buses», «watch», «watches». Con consonante más y, la y cambia a -ies: «city», «cities». Formas irregulares: «man», «men», «woman», «women», «child», «children», «person», «people». Cuidado: el adjetivo no cambia: «big dogs», no «bigs dogs». Después de un número hace falta el plural: «two dogs»."
   },
   "items": [
     {
@@ -335,30 +277,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A „two” után többes szám kell, és a dog sima -s-t kap: two dogs.",
         "en": "After “two” you need the plural, and dog takes a plain -s: two dogs.",
-        "es": "Después de «two» hace falta el plural, y dog lleva una simple -s: two dogs.",
-        "de": "Nach „two“ braucht man den Plural, und dog bekommt ein einfaches -s: two dogs."
+        "es": "Después de «two» hace falta el plural, y dog lleva una simple -s: two dogs."
       },
       "wrong": {
         "dog": {
-          "hu": "A „dog” egyes szám; a „two” után többes szám kell.",
           "en": "“Dog” is singular; after “two” you need the plural.",
-          "es": "«Dog» es singular; después de «two» hace falta el plural.",
-          "de": "„Dog“ ist Singular; nach „two“ braucht man den Plural."
+          "es": "«Dog» es singular; después de «two» hace falta el plural."
         },
         "doges": {
-          "hu": "Az -es csak -s, -sh, -ch, -x végű szavakhoz kell; a dog-hoz elég az -s: dogs.",
           "en": "The -es ending is only for words ending in -s, -sh, -ch, -x; dog just needs -s: dogs.",
-          "es": "La terminación -es es solo para palabras que acaban en -s, -sh, -ch, -x; dog solo necesita -s: dogs.",
-          "de": "Die Endung -es gibt es nur bei Wörtern auf -s, -sh, -ch, -x; dog braucht nur -s: dogs."
+          "es": "La terminación -es es solo para palabras que acaban en -s, -sh, -ch, -x; dog solo necesita -s: dogs."
         }
       },
       "examples": [
         "She has two cats.",
         "We have three books."
       ],
-      "tr": { "hu": "Két kutyám van.", "en": "I have two dogs.", "es": "Tengo dos perros.", "de": "Ich habe zwei Hunde." }
+      "tr": { "en": "I have two dogs.", "es": "Tengo dos perros." }
     },
     {
       "id": "pl-02",
@@ -370,30 +306,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A bus -s végű, ezért -es kell a többeshez: buses.",
         "en": "Bus ends in -s, so the plural takes -es: buses.",
-        "es": "Bus termina en -s, por eso el plural lleva -es: buses.",
-        "de": "Bus endet auf -s, deshalb bekommt der Plural -es: buses."
+        "es": "Bus termina en -s, por eso el plural lleva -es: buses."
       },
       "wrong": {
         "bus": {
-          "hu": "A „bus” egyes szám; a „two” után többes szám kell.",
           "en": "“Bus” is singular; after “two” you need the plural.",
-          "es": "«Bus» es singular; después de «two» hace falta el plural.",
-          "de": "„Bus“ ist Singular; nach „two“ braucht man den Plural."
+          "es": "«Bus» es singular; después de «two» hace falta el plural."
         },
         "buss": {
-          "hu": "Az -s végű szavak nem sima -s-t, hanem -es-t kapnak: buses, sosem „buss”.",
           "en": "Words ending in -s take -es, not a plain -s: buses, never “buss”.",
-          "es": "Las palabras que terminan en -s llevan -es, no una simple -s: buses, nunca «buss».",
-          "de": "Wörter auf -s bekommen -es, kein einfaches -s: buses, niemals „buss“."
+          "es": "Las palabras que terminan en -s llevan -es, no una simple -s: buses, nunca «buss»."
         }
       },
       "examples": [
         "We have two classes today.",
         "She takes three buses."
       ],
-      "tr": { "hu": "Két busszal járok dolgozni.", "en": "I take two buses to work.", "es": "Tomo dos camiones para ir al trabajo.", "de": "Ich fahre mit zwei Bussen zur Arbeit." }
+      "tr": { "en": "I take two buses to work.", "es": "Tomo dos camiones para ir al trabajo." }
     },
     {
       "id": "pl-16",
@@ -413,30 +343,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A child rendhagyó: a többese children (nem „childs”).",
         "en": "Child is irregular: its plural is children (not “childs”).",
-        "es": "Child es irregular: su plural es children (no «childs»).",
-        "de": "Child ist unregelmäßig: Der Plural lautet children (nicht „childs“)."
+        "es": "Child es irregular: su plural es children (no «childs»)."
       },
       "wrong": {
         "child": {
-          "hu": "A „child” egyes szám, de az „are” többes számot kíván: children.",
           "en": "“Child” is singular, but “are” needs a plural: children.",
-          "es": "«Child» es singular, pero «are» pide un plural: children.",
-          "de": "„Child“ ist Singular, aber „are“ verlangt einen Plural: children."
+          "es": "«Child» es singular, pero «are» pide un plural: children."
         },
         "childs": {
-          "hu": "A „childs” nem létező alak; a child rendhagyó: children.",
           "en": "“Childs” does not exist; child is irregular: children.",
-          "es": "«Childs» no existe; child es irregular: children.",
-          "de": "„Childs“ gibt es nicht; child ist unregelmäßig: children."
+          "es": "«Childs» no existe; child es irregular: children."
         }
       },
       "examples": [
         "The children play at home.",
         "She has two children."
       ],
-      "tr": { "hu": "A gyerekeim iskolában vannak.", "en": "My children are at school.", "es": "Mis hijos están en la escuela.", "de": "Meine Kinder sind in der Schule." }
+      "tr": { "en": "My children are at school.", "es": "Mis hijos están en la escuela." }
     },
     {
       "kind": "why",
@@ -444,46 +368,34 @@
       "es": "She has two babies.",
       "target": "babies",
       "tr": {
-        "hu": "Két babája van.",
         "en": "She has two babies.",
-        "es": "Ella tiene dos bebés.",
-        "de": "Sie hat zwei Babys."
+        "es": "Ella tiene dos bebés."
       },
       "options": [
         {
           "text": {
-            "hu": "mássalhangzó + y: az y helyére -ies kerül",
             "en": "consonant + y: the y changes to -ies",
-            "es": "consonante + y: la y cambia a -ies",
-            "de": "Konsonant + y: das y wird zu -ies"
+            "es": "consonante + y: la y cambia a -ies"
           }
         },
         {
           "text": {
-            "hu": "sima -s a szó végére",
             "en": "a plain -s at the end of the word",
-            "es": "una simple -s al final de la palabra",
-            "de": "ein einfaches -s am Wortende"
+            "es": "una simple -s al final de la palabra"
           },
           "wrong": {
-            "hu": "Mássalhangzó + y után nem sima -s jön: az y -ies lesz (baby → babies).",
             "en": "After consonant + y you do not add a plain -s: the y becomes -ies (baby → babies).",
-            "es": "Después de consonante + y no se añade una simple -s: la y pasa a -ies (baby → babies).",
-            "de": "Nach Konsonant + y kommt kein einfaches -s: das y wird zu -ies (baby → babies)."
+            "es": "Después de consonante + y no se añade una simple -s: la y pasa a -ies (baby → babies)."
           }
         },
         {
           "text": {
-            "hu": "rendhagyó többes szám",
             "en": "irregular plural",
-            "es": "plural irregular",
-            "de": "unregelmäßiger Plural"
+            "es": "plural irregular"
           },
           "wrong": {
-            "hu": "A babies szabályos: az -ies-szabály minden mássalhangzó + y végű főnévre érvényes, nem kell külön megtanulni.",
             "en": "Babies is regular: the -ies rule works for every noun ending in consonant + y, you do not need to learn it separately.",
-            "es": "Babies es regular: la regla -ies vale para todos los nombres que acaban en consonante + y, no hay que aprenderlo aparte.",
-            "de": "Babies ist regelmäßig: Die -ies-Regel gilt für jedes Nomen auf Konsonant + y, man muss es nicht einzeln lernen."
+            "es": "Babies es regular: la regla -ies vale para todos los nombres que acaban en consonante + y, no hay que aprenderlo aparte."
           }
         }
       ],
@@ -499,30 +411,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A man rendhagyó: a többese men.",
         "en": "Man is irregular: its plural is men.",
-        "es": "Man es irregular: su plural es men.",
-        "de": "Man ist unregelmäßig: Der Plural lautet men."
+        "es": "Man es irregular: su plural es men."
       },
       "wrong": {
         "man": {
-          "hu": "A „man” egyes szám; a „two” után többes szám kell: men.",
           "en": "“Man” is singular; after “two” you need the plural: men.",
-          "es": "«Man» es singular; después de «two» hace falta el plural: men.",
-          "de": "„Man“ ist Singular; nach „two“ braucht man den Plural: men."
+          "es": "«Man» es singular; después de «two» hace falta el plural: men."
         },
         "mans": {
-          "hu": "A „mans” nem létező alak; a man rendhagyó: men.",
           "en": "“Mans” does not exist; man is irregular: men.",
-          "es": "«Mans» no existe; man es irregular: men.",
-          "de": "„Mans“ gibt es nicht; man ist unregelmäßig: men."
+          "es": "«Mans» no existe; man es irregular: men."
         }
       },
       "examples": [
         "The men are at home.",
         "Three men work here."
       ],
-      "tr": { "hu": "Két férfi dolgozik ebben az irodában.", "en": "Two men work in this office.", "es": "Dos hombres trabajan en esta oficina.", "de": "Zwei Männer arbeiten in diesem Büro." }
+      "tr": { "en": "Two men work in this office.", "es": "Dos hombres trabajan en esta oficina." }
     },
     {
       "id": "pl-05",
@@ -534,30 +440,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A watch -ch végű, ezért -es kell a többeshez: watches.",
         "en": "Watch ends in -ch, so the plural takes -es: watches.",
-        "es": "Watch termina en -ch, por eso el plural lleva -es: watches.",
-        "de": "Watch endet auf -ch, deshalb bekommt der Plural -es: watches."
+        "es": "Watch termina en -ch, por eso el plural lleva -es: watches."
       },
       "wrong": {
         "watch": {
-          "hu": "A „watch” egyes szám; a „three” után többes szám kell.",
           "en": "“Watch” is singular; after “three” you need the plural.",
-          "es": "«Watch» es singular; después de «three» hace falta el plural.",
-          "de": "„Watch“ ist Singular; nach „three“ braucht man den Plural."
+          "es": "«Watch» es singular; después de «three» hace falta el plural."
         },
         "watchs": {
-          "hu": "A -ch végű szavak -es-t kapnak: watches, sosem „watchs”.",
           "en": "Words ending in -ch take -es: watches, never “watchs”.",
-          "es": "Las palabras que terminan en -ch llevan -es: watches, nunca «watchs».",
-          "de": "Wörter auf -ch bekommen -es: watches, niemals „watchs“."
+          "es": "Las palabras que terminan en -ch llevan -es: watches, nunca «watchs»."
         }
       },
       "examples": [
         "We have two classes.",
         "He takes two buses."
       ],
-      "tr": { "hu": "Három karórája van.", "en": "She has three watches.", "es": "Ella tiene tres relojes.", "de": "Sie hat drei Uhren." }
+      "tr": { "en": "She has three watches.", "es": "Ella tiene tres relojes." }
     },
     {
       "id": "pl-23",
@@ -599,30 +499,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A baby mássalhangzó + y végű, ezért az y helyére -ies kerül: babies.",
         "en": "Baby ends in consonant + y, so the y becomes -ies: babies.",
-        "es": "Baby termina en consonante + y, por eso la y cambia a -ies: babies.",
-        "de": "Baby endet auf Konsonant + y, deshalb wird das y zu -ies: babies."
+        "es": "Baby termina en consonante + y, por eso la y cambia a -ies: babies."
       },
       "wrong": {
         "baby": {
-          "hu": "A „baby” egyes szám; a „two” után többes szám kell.",
           "en": "“Baby” is singular; after “two” you need the plural.",
-          "es": "«Baby» es singular; después de «two» hace falta el plural.",
-          "de": "„Baby“ ist Singular; nach „two“ braucht man den Plural."
+          "es": "«Baby» es singular; después de «two» hace falta el plural."
         },
         "babys": {
-          "hu": "Mássalhangzó + y után nem sima -s jön: baby → babies.",
           "en": "After consonant + y you do not add a plain -s: baby → babies.",
-          "es": "Después de consonante + y no se añade una simple -s: baby → babies.",
-          "de": "Nach Konsonant + y kommt kein einfaches -s: baby → babies."
+          "es": "Después de consonante + y no se añade una simple -s: baby → babies."
         }
       },
       "examples": [
         "Their families are big.",
         "Mexico has big cities."
       ],
-      "tr": { "hu": "A nővéremnek két kisbabája van.", "en": "My sister has two babies.", "es": "Mi hermana tiene dos bebés.", "de": "Meine Schwester hat zwei Babys." }
+      "tr": { "en": "My sister has two babies.", "es": "Mi hermana tiene dos bebés." }
     },
     {
       "id": "pl-07",
@@ -634,30 +528,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „people” a person szokásos többese, és már többes szám: The people here are very nice.",
         "en": "“People” is the usual plural of person, and it is already plural: The people here are very nice.",
-        "es": "«People» es el plural habitual de person, y ya es plural: The people here are very nice.",
-        "de": "„People“ ist der übliche Plural von person und schon Plural: The people here are very nice."
+        "es": "«People» es el plural habitual de person, y ya es plural: The people here are very nice."
       },
       "wrong": {
         "person": {
-          "hu": "A „person” egyes szám; az „are” többes számot kíván: people.",
           "en": "“Person” is singular; “are” needs a plural: people.",
-          "es": "«Person» es singular; «are» pide un plural: people.",
-          "de": "„Person“ ist Singular; „are“ verlangt einen Plural: people."
+          "es": "«Person» es singular; «are» pide un plural: people."
         },
         "peoples": {
-          "hu": "A „peoples” csak „népek, nemzetek” jelentésű; „emberek” = people, -s nélkül.",
           "en": "“Peoples” only means “nations, ethnic groups”; for “people” use people, with no -s.",
-          "es": "«Peoples» solo significa «pueblos, naciones»; para «gente» se usa people, sin -s.",
-          "de": "„Peoples“ bedeutet nur „Völker“; für „Leute“ sagt man people, ohne -s."
+          "es": "«Peoples» solo significa «pueblos, naciones»; para «gente» se usa people, sin -s."
         }
       },
       "examples": [
         "Three people are here.",
         "Many people live in the city."
       ],
-      "tr": { "hu": "Az itteni emberek nagyon kedvesek.", "en": "The people here are very nice.", "es": "La gente aquí es muy amable.", "de": "Die Leute hier sind sehr nett." }
+      "tr": { "en": "The people here are very nice.", "es": "La gente aquí es muy amable." }
     },
     {
       "id": "pl-17",
@@ -677,30 +565,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A foot rendhagyó: a többese feet.",
         "en": "Foot is irregular: its plural is feet.",
-        "es": "Foot es irregular: su plural es feet.",
-        "de": "Foot ist unregelmäßig: Der Plural lautet feet."
+        "es": "Foot es irregular: su plural es feet."
       },
       "wrong": {
         "foot": {
-          "hu": "A „foot” egyes szám; az „are” többes számot kíván: feet.",
           "en": "“Foot” is singular; “are” needs a plural: feet.",
-          "es": "«Foot» es singular; «are» pide un plural: feet.",
-          "de": "„Foot“ ist Singular; „are“ verlangt einen Plural: feet."
+          "es": "«Foot» es singular; «are» pide un plural: feet."
         },
         "foots": {
-          "hu": "A „foots” nem létező alak; a foot rendhagyó: feet.",
           "en": "“Foots” does not exist; foot is irregular: feet.",
-          "es": "«Foots» no existe; foot es irregular: feet.",
-          "de": "„Foots“ gibt es nicht; foot ist unregelmäßig: feet."
+          "es": "«Foots» no existe; foot es irregular: feet."
         }
       },
       "examples": [
         "Her feet are small.",
         "My teeth are white."
       ],
-      "tr": { "hu": "Fázik a lábam.", "en": "My feet are cold.", "es": "Tengo los pies fríos.", "de": "Meine Füße sind kalt." }
+      "tr": { "en": "My feet are cold.", "es": "Tengo los pies fríos." }
     },
     {
       "id": "pl-09",
@@ -712,30 +594,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A melléknév többes számban sem változik: big dogs.",
         "en": "The adjective does not change in the plural: big dogs.",
-        "es": "El adjetivo no cambia en plural: big dogs.",
-        "de": "Das Adjektiv verändert sich im Plural nicht: big dogs."
+        "es": "El adjetivo no cambia en plural: big dogs."
       },
       "wrong": {
         "bigs": {
-          "hu": "A melléknév sosem kap -s-t: big dogs, nem „bigs dogs”.",
           "en": "Adjectives never take -s: big dogs, not “bigs dogs”.",
-          "es": "Los adjetivos nunca llevan -s: big dogs, no «bigs dogs».",
-          "de": "Adjektive bekommen nie ein -s: big dogs, nicht „bigs dogs“."
+          "es": "Los adjetivos nunca llevan -s: big dogs, no «bigs dogs»."
         },
         "a big": {
-          "hu": "Az „a” egyes számú főnév előtt áll; a „dogs” többes szám, ott nincs „a”.",
           "en": "“A” goes before a singular noun; “dogs” is plural, so there is no “a”.",
-          "es": "«A» va delante de un nombre singular; «dogs» es plural, ahí no hay «a».",
-          "de": "„A“ steht vor einem Singular-Nomen; „dogs“ ist Plural, dort steht kein „a“."
+          "es": "«A» va delante de un nombre singular; «dogs» es plural, ahí no hay «a»."
         }
       },
       "examples": [
         "She has small cats.",
         "We like old books."
       ],
-      "tr": { "hu": "Szeretem a nagy kutyákat.", "en": "I like big dogs.", "es": "Me gustan los perros grandes.", "de": "Ich mag große Hunde." }
+      "tr": { "en": "I like big dogs.", "es": "Me gustan los perros grandes." }
     },
     {
       "kind": "why",
@@ -743,46 +619,34 @@
       "es": "I have two children.",
       "target": "children",
       "tr": {
-        "hu": "Két gyerekem van.",
         "en": "I have two children.",
-        "es": "Tengo dos hijos.",
-        "de": "Ich habe zwei Kinder."
+        "es": "Tengo dos hijos."
       },
       "options": [
         {
           "text": {
-            "hu": "rendhagyó többes szám, meg kell tanulni",
             "en": "irregular plural, you have to learn it",
-            "es": "plural irregular, hay que aprenderlo",
-            "de": "unregelmäßiger Plural, man muss ihn lernen"
+            "es": "plural irregular, hay que aprenderlo"
           }
         },
         {
           "text": {
-            "hu": "sima -s a szó végére",
             "en": "a plain -s at the end of the word",
-            "es": "una simple -s al final de la palabra",
-            "de": "ein einfaches -s am Wortende"
+            "es": "una simple -s al final de la palabra"
           },
           "wrong": {
-            "hu": "A child többese nem „childs”: a szó rendhagyó, children.",
             "en": "The plural of child is not “childs”: the word is irregular, children.",
-            "es": "El plural de child no es «childs»: la palabra es irregular, children.",
-            "de": "Der Plural von child ist nicht „childs“: Das Wort ist unregelmäßig, children."
+            "es": "El plural de child no es «childs»: la palabra es irregular, children."
           }
         },
         {
           "text": {
-            "hu": "-es a szó végére",
             "en": "-es at the end of the word",
-            "es": "-es al final de la palabra",
-            "de": "-es am Wortende"
+            "es": "-es al final de la palabra"
           },
           "wrong": {
-            "hu": "Az -es a -s, -sh, -ch, -x végű szavakhoz kell; a child nem ilyen, hanem rendhagyó: children.",
             "en": "The -es ending is for words ending in -s, -sh, -ch, -x; child is not one of them but irregular: children.",
-            "es": "La terminación -es es para palabras que acaban en -s, -sh, -ch, -x; child no es una de ellas, sino irregular: children.",
-            "de": "Die Endung -es gehört zu Wörtern auf -s, -sh, -ch, -x; child gehört nicht dazu, sondern ist unregelmäßig: children."
+            "es": "La terminación -es es para palabras que acaban en -s, -sh, -ch, -x; child no es una de ellas, sino irregular: children."
           }
         }
       ],
@@ -798,30 +662,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A class -ss végű, ezért -es kell a többeshez: classes.",
         "en": "Class ends in -ss, so the plural takes -es: classes.",
-        "es": "Class termina en -ss, por eso el plural lleva -es: classes.",
-        "de": "Class endet auf -ss, deshalb bekommt der Plural -es: classes."
+        "es": "Class termina en -ss, por eso el plural lleva -es: classes."
       },
       "wrong": {
         "class": {
-          "hu": "A „class” egyes szám; a „three” után többes szám kell.",
           "en": "“Class” is singular; after “three” you need the plural.",
-          "es": "«Class» es singular; después de «three» hace falta el plural.",
-          "de": "„Class“ ist Singular; nach „three“ braucht man den Plural."
+          "es": "«Class» es singular; después de «three» hace falta el plural."
         },
         "classs": {
-          "hu": "Az -ss végű szavak -es-t kapnak: classes, sosem „classs”.",
           "en": "Words ending in -ss take -es: classes, never “classs”.",
-          "es": "Las palabras que terminan en -ss llevan -es: classes, nunca «classs».",
-          "de": "Wörter auf -ss bekommen -es: classes, niemals „classs“."
+          "es": "Las palabras que terminan en -ss llevan -es: classes, nunca «classs»."
         }
       },
       "examples": [
         "I take two buses.",
         "She has two watches."
       ],
-      "tr": { "hu": "Ma három óránk van.", "en": "We have three classes today.", "es": "Hoy tenemos tres clases.", "de": "Wir haben heute drei Unterrichtsstunden." }
+      "tr": { "en": "We have three classes today.", "es": "Hoy tenemos tres clases." }
     },
     {
       "id": "pl-11",
@@ -833,30 +691,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A „how many” után többes szám áll: How many friends do you have?",
         "en": "After “how many” the plural follows: How many friends do you have?",
-        "es": "Después de «how many» va el plural: How many friends do you have?",
-        "de": "Nach „how many“ steht der Plural: How many friends do you have?"
+        "es": "Después de «how many» va el plural: How many friends do you have?"
       },
       "wrong": {
         "friend": {
-          "hu": "A „how many” után többes szám kell, nem egyes.",
           "en": "After “how many” you need the plural, not the singular.",
-          "es": "Después de «how many» hace falta el plural, no el singular.",
-          "de": "Nach „how many“ braucht man den Plural, nicht den Singular."
+          "es": "Después de «how many» hace falta el plural, no el singular."
         },
         "friendes": {
-          "hu": "Az -es csak -s, -sh, -ch, -x végű szavakhoz kell; a friend-hez elég az -s: friends.",
           "en": "The -es ending is only for words ending in -s, -sh, -ch, -x; friend just needs -s: friends.",
-          "es": "La terminación -es es solo para palabras que acaban en -s, -sh, -ch, -x; friend solo necesita -s: friends.",
-          "de": "Die Endung -es gibt es nur bei Wörtern auf -s, -sh, -ch, -x; friend braucht nur -s: friends."
+          "es": "La terminación -es es solo para palabras que acaban en -s, -sh, -ch, -x; friend solo necesita -s: friends."
         }
       },
       "examples": [
         "How many brothers do you have?",
         "She has many friends."
       ],
-      "tr": { "hu": "Hány barátod van?", "en": "How many friends do you have?", "es": "¿Cuántos amigos tienes?", "de": "Wie viele Freunde hast du?" }
+      "tr": { "en": "How many friends do you have?", "es": "¿Cuántos amigos tienes?" }
     },
     {
       "id": "pl-18",
@@ -876,30 +728,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A music nem számlálható: nincs többese, és nincs előtte „a”. I like music.",
         "en": "Music is uncountable: it has no plural and no “a” before it. I like music.",
-        "es": "Music es incontable: no tiene plural ni lleva «a» delante. I like music.",
-        "de": "Music ist unzählbar: Es hat keinen Plural und kein „a“ davor. I like music."
+        "es": "Music es incontable: no tiene plural ni lleva «a» delante. I like music."
       },
       "wrong": {
         "musics": {
-          "hu": "A music nem számlálható, ezért nem kap -s-t: music, sosem „musics”.",
           "en": "Music is uncountable, so it takes no -s: music, never “musics”.",
-          "es": "Music es incontable, por eso no lleva -s: music, nunca «musics».",
-          "de": "Music ist unzählbar, deshalb kein -s: music, niemals „musics“."
+          "es": "Music es incontable, por eso no lleva -s: music, nunca «musics»."
         },
         "a music": {
-          "hu": "A nem számlálható főnév előtt nincs „a”: music, sosem „a music”.",
           "en": "There is no “a” before an uncountable noun: music, never “a music”.",
-          "es": "Delante de un nombre incontable no va «a»: music, nunca «a music».",
-          "de": "Vor einem unzählbaren Nomen steht kein „a“: music, niemals „a music“."
+          "es": "Delante de un nombre incontable no va «a»: music, nunca «a music»."
         }
       },
       "examples": [
         "He likes water.",
         "We like music."
       ],
-      "tr": { "hu": "Szeretem a zenét.", "en": "I like music.", "es": "Me gusta la música.", "de": "Ich mag Musik." }
+      "tr": { "en": "I like music.", "es": "Me gusta la música." }
     },
     {
       "id": "pl-13",
@@ -911,30 +757,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A „dogs” többes szám: előtte szám (two) állhat, az „a / an” nem.",
         "en": "“Dogs” is plural: a number (two) can go before it, “a / an” cannot.",
-        "es": "«Dogs» es plural: delante puede ir un número (two), «a / an» no.",
-        "de": "„Dogs“ ist Plural: Davor kann eine Zahl (two) stehen, „a / an“ nicht."
+        "es": "«Dogs» es plural: delante puede ir un número (two), «a / an» no."
       },
       "wrong": {
         "a": {
-          "hu": "Az „a” csak egyes számú főnév előtt áll: a dog, de two dogs.",
           "en": "“A” only goes before a singular noun: a dog, but two dogs.",
-          "es": "«A» solo va delante de un nombre singular: a dog, pero two dogs.",
-          "de": "„A“ steht nur vor einem Singular-Nomen: a dog, aber two dogs."
+          "es": "«A» solo va delante de un nombre singular: a dog, pero two dogs."
         },
         "an": {
-          "hu": "Az „an” csak egyes számú főnév előtt áll: an apple, de two apples.",
           "en": "“An” only goes before a singular noun: an apple, but two apples.",
-          "es": "«An» solo va delante de un nombre singular: an apple, pero two apples.",
-          "de": "„An“ steht nur vor einem Singular-Nomen: an apple, aber two apples."
+          "es": "«An» solo va delante de un nombre singular: an apple, pero two apples."
         }
       },
       "examples": [
         "She has two cats.",
         "I have three books."
       ],
-      "tr": { "hu": "Két kutyám van.", "en": "I have two dogs.", "es": "Tengo dos perros.", "de": "Ich habe zwei Hunde." }
+      "tr": { "en": "I have two dogs.", "es": "Tengo dos perros." }
     },
     {
       "kind": "why",
@@ -942,46 +782,34 @@
       "es": "I like big dogs.",
       "target": "big",
       "tr": {
-        "hu": "Szeretem a nagy kutyákat.",
         "en": "I like big dogs.",
-        "es": "Me gustan los perros grandes.",
-        "de": "Ich mag große Hunde."
+        "es": "Me gustan los perros grandes."
       },
       "options": [
         {
           "text": {
-            "hu": "a melléknév többesben sem változik",
             "en": "the adjective does not change in the plural",
-            "es": "el adjetivo no cambia en plural",
-            "de": "das Adjektiv verändert sich im Plural nicht"
+            "es": "el adjetivo no cambia en plural"
           }
         },
         {
           "text": {
-            "hu": "a melléknév -s-t kap, mint a főnév",
             "en": "the adjective takes -s, like the noun",
-            "es": "el adjetivo lleva -s, como el nombre",
-            "de": "das Adjektiv bekommt -s wie das Nomen"
+            "es": "el adjetivo lleva -s, como el nombre"
           },
           "wrong": {
-            "hu": "A spanyolban egyezik a melléknév (grandes), az angolban soha: big dogs.",
             "en": "In Spanish the adjective agrees (grandes), in English never: big dogs.",
-            "es": "En español el adjetivo concuerda (grandes), en inglés nunca: big dogs.",
-            "de": "Im Spanischen richtet sich das Adjektiv nach dem Nomen (grandes), im Englischen nie: big dogs."
+            "es": "En español el adjetivo concuerda (grandes), en inglés nunca: big dogs."
           }
         },
         {
           "text": {
-            "hu": "a melléknév a főnév után áll",
             "en": "the adjective goes after the noun",
-            "es": "el adjetivo va después del nombre",
-            "de": "das Adjektiv steht nach dem Nomen"
+            "es": "el adjetivo va después del nombre"
           },
           "wrong": {
-            "hu": "Az angolban a melléknév a főnév ELŐTT áll (big dogs), nem utána, mint a spanyolban.",
             "en": "In English the adjective goes BEFORE the noun (big dogs), not after it as in Spanish.",
-            "es": "En inglés el adjetivo va ANTES del nombre (big dogs), no después como en español.",
-            "de": "Im Englischen steht das Adjektiv VOR dem Nomen (big dogs), nicht danach wie im Spanischen."
+            "es": "En inglés el adjetivo va ANTES del nombre (big dogs), no después como en español."
           }
         }
       ],
@@ -997,30 +825,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A family mássalhangzó + y végű, ezért az y helyére -ies kerül: families.",
         "en": "Family ends in consonant + y, so the y becomes -ies: families.",
-        "es": "Family termina en consonante + y, por eso la y cambia a -ies: families.",
-        "de": "Family endet auf Konsonant + y, deshalb wird das y zu -ies: families."
+        "es": "Family termina en consonante + y, por eso la y cambia a -ies: families."
       },
       "wrong": {
         "family": {
-          "hu": "A „family” egyes szám; az „are” többes számot kíván: families.",
           "en": "“Family” is singular; “are” needs a plural: families.",
-          "es": "«Family» es singular; «are» pide un plural: families.",
-          "de": "„Family“ ist Singular; „are“ verlangt einen Plural: families."
+          "es": "«Family» es singular; «are» pide un plural: families."
         },
         "familys": {
-          "hu": "Mássalhangzó + y után nem sima -s jön: family → families.",
           "en": "After consonant + y you do not add a plain -s: family → families.",
-          "es": "Después de consonante + y no se añade una simple -s: family → families.",
-          "de": "Nach Konsonant + y kommt kein einfaches -s: family → families."
+          "es": "Después de consonante + y no se añade una simple -s: family → families."
         }
       },
       "examples": [
         "Mexico has big cities.",
         "My sister has two babies."
       ],
-      "tr": { "hu": "Nagy a családjuk.", "en": "Their families are big.", "es": "Sus familias son grandes.", "de": "Ihre Familien sind groß." }
+      "tr": { "en": "Their families are big.", "es": "Sus familias son grandes." }
     },
     {
       "id": "pl-15",
@@ -1032,30 +854,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A woman rendhagyó: a többese women.",
         "en": "Woman is irregular: its plural is women.",
-        "es": "Woman es irregular: su plural es women.",
-        "de": "Woman ist unregelmäßig: Der Plural lautet women."
+        "es": "Woman es irregular: su plural es women."
       },
       "wrong": {
         "woman": {
-          "hu": "A „woman” egyes szám; a „two” után többes szám kell: women.",
           "en": "“Woman” is singular; after “two” you need the plural: women.",
-          "es": "«Woman» es singular; después de «two» hace falta el plural: women.",
-          "de": "„Woman“ ist Singular; nach „two“ braucht man den Plural: women."
+          "es": "«Woman» es singular; después de «two» hace falta el plural: women."
         },
         "womans": {
-          "hu": "A „womans” nem létező alak; a woman rendhagyó: women.",
           "en": "“Womans” does not exist; woman is irregular: women.",
-          "es": "«Womans» no existe; woman es irregular: women.",
-          "de": "„Womans“ gibt es nicht; woman ist unregelmäßig: women."
+          "es": "«Womans» no existe; woman es irregular: women."
         }
       },
       "examples": [
         "The women work here.",
         "Three women are here."
       ],
-      "tr": { "hu": "Két nő van az ajtónál.", "en": "Two women are at the door.", "es": "Dos mujeres están en la puerta.", "de": "Zwei Frauen stehen an der Tür." }
+      "tr": { "en": "Two women are at the door.", "es": "Dos mujeres están en la puerta." }
     },
     {
       "id": "pl-19",

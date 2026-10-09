@@ -3,284 +3,222 @@
   "topic": "comparativos-superlativos",
   "level": "A2",
   "title": {
-    "hu": "Összehasonlítás és felsőfok",
     "en": "Comparatives and superlatives",
-    "es": "Comparativos y superlativos",
-    "de": "Komparativ und Superlativ"
+    "es": "Comparativos y superlativos"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "Ha választani, véleményt mondani vagy árat, méretet, mennyiséget összehasonlítani kell, spanyolul a más/menos, a tan/tanto és a felsőfok viszi a mondatot: boltban, étteremben, lakáskeresésnél szinte minden mondat tartalmaz egyet közülük.",
         "en": "Choosing, giving an opinion, or comparing price, size and quantity all run on más/menos, tan/tanto and the superlative in Spanish: in a shop, a restaurant or a flat search almost every sentence carries one of them.",
-        "es": "Para elegir, opinar o comparar precio, tamaño y cantidad, el español usa más/menos, tan/tanto y el superlativo: en una tienda, un restaurante o al buscar departamento, casi toda frase lleva uno de ellos.",
-        "de": "Beim Auswählen, Meinungsäußern oder beim Vergleichen von Preis, Größe und Menge trägt im Spanischen más/menos, tan/tanto und der Superlativ den Satz: im Laden, im Restaurant oder bei der Wohnungssuche enthält fast jeder Satz eines davon."
+        "es": "Para elegir, opinar o comparar precio, tamaño y cantidad, el español usa más/menos, tan/tanto y el superlativo: en una tienda, un restaurante o al buscar departamento, casi toda frase lleva uno de ellos."
       }
     },
     {
       "kind": "usage",
       "title": {
-        "hu": "Szabályok",
         "en": "Rules",
-        "es": "Reglas",
-        "de": "Regeln"
+        "es": "Reglas"
       },
       "points": [
         {
           "text": {
-            "hu": "A más ... que és a menos ... que két dolgot hasonlít össze melléknévvel, határozóval vagy főnévvel: az egyik oldal többet vagy kevesebbet kap, mint a másik.",
             "en": "Más ... que and menos ... que compare two things with an adjective, adverb or noun: one side gets more or less than the other.",
-            "es": "Más ... que y menos ... que comparan dos cosas con un adjetivo, un adverbio o un sustantivo: un lado tiene más o menos que el otro.",
-            "de": "Más ... que und menos ... que vergleichen zwei Dinge mit einem Adjektiv, Adverb oder Substantiv: eine Seite hat mehr oder weniger als die andere."
+            "es": "Más ... que y menos ... que comparan dos cosas con un adjetivo, un adverbio o un sustantivo: un lado tiene más o menos que el otro."
           },
           "examples": [
             {
               "es": "Este carro es más caro que el otro.",
               "tr": {
-                "hu": "Ez a kocsi drágább, mint a másik.",
                 "en": "This car is more expensive than the other one.",
-                "es": "Este carro es más caro que el otro.",
-                "de": "Dieses Auto ist teurer als das andere."
+                "es": "Este carro es más caro que el otro."
               }
             },
             {
               "es": "Camino más rápido que tú.",
               "tr": {
-                "hu": "Gyorsabban sétálok, mint te.",
                 "en": "I walk faster than you.",
-                "es": "Camino más rápido que tú.",
-                "de": "Ich gehe schneller als du."
+                "es": "Camino más rápido que tú."
               }
             },
             {
               "es": "Hay más gente aquí que allí.",
               "tr": {
-                "hu": "Itt több ember van, mint ott.",
                 "en": "There are more people here than there.",
-                "es": "Hay más gente aquí que allí.",
-                "de": "Hier sind mehr Leute als dort."
+                "es": "Hay más gente aquí que allí."
               }
             },
             {
               "es": "Tengo menos tiempo que ayer.",
               "tr": {
-                "hu": "Kevesebb időm van, mint tegnap.",
                 "en": "I have less time than yesterday.",
-                "es": "Tengo menos tiempo que ayer.",
-                "de": "Ich habe weniger Zeit als gestern."
+                "es": "Tengo menos tiempo que ayer."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Az egyenlőséget melléknévnél és határozónál tan ... como fejezi ki, változatlan alakban; főnévnél a tanto illeszkedik nemben és számban: tanto, tanta, tantos, tantas ... como.",
             "en": "Equality with an adjective or adverb is tan ... como, unchanged in form; with a noun, tanto agrees in gender and number: tanto, tanta, tantos, tantas ... como.",
-            "es": "La igualdad con un adjetivo o un adverbio es tan ... como, sin cambiar de forma; con un sustantivo, tanto concuerda en género y número: tanto, tanta, tantos, tantas ... como.",
-            "de": "Gleichheit bei einem Adjektiv oder Adverb ist tan ... como, unverändert in der Form; bei einem Substantiv stimmt tanto in Geschlecht und Zahl überein: tanto, tanta, tantos, tantas ... como."
+            "es": "La igualdad con un adjetivo o un adverbio es tan ... como, sin cambiar de forma; con un sustantivo, tanto concuerda en género y número: tanto, tanta, tantos, tantas ... como."
           },
           "examples": [
             {
               "es": "Mi hermano es tan alto como yo.",
               "tr": {
-                "hu": "A testvérem olyan magas, mint én.",
                 "en": "My brother is as tall as me.",
-                "es": "Mi hermano es tan alto como yo.",
-                "de": "Mein Bruder ist so groß wie ich."
+                "es": "Mi hermano es tan alto como yo."
               }
             },
             {
               "es": "Bebo tanta agua como tú.",
               "tr": {
-                "hu": "Annyi vizet iszom, mint te.",
                 "en": "I drink as much water as you.",
-                "es": "Bebo tanta agua como tú.",
-                "de": "Ich trinke so viel Wasser wie du."
+                "es": "Bebo tanta agua como tú."
               }
             },
             {
               "es": "Tengo tantos libros como tú.",
               "tr": {
-                "hu": "Annyi könyvem van, mint neked.",
                 "en": "I have as many books as you.",
-                "es": "Tengo tantos libros como tú.",
-                "de": "Ich habe so viele Bücher wie du."
+                "es": "Tengo tantos libros como tú."
               }
             },
             {
               "es": "Hay tantas personas aquí como allí.",
               "tr": {
-                "hu": "Itt annyi ember van, mint ott.",
                 "en": "There are as many people here as there.",
-                "es": "Hay tantas personas aquí como allí.",
-                "de": "Hier sind so viele Leute wie dort."
+                "es": "Hay tantas personas aquí como allí."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Néhány melléknévnek rendhagyó középfoka van: bueno helyett mejor, malo helyett peor; korra grande helyett mayor, pequeño helyett menor jön, méretre viszont a más grande és a más pequeño marad.",
             "en": "Some adjectives have an irregular comparative: mejor instead of bueno, peor instead of malo; for age, mayor replaces grande and menor replaces pequeño, but for size más grande and más pequeño stay.",
-            "es": "Algunos adjetivos tienen un comparativo irregular: mejor en vez de bueno, peor en vez de malo; para la edad, mayor sustituye a grande y menor a pequeño, pero para el tamaño quedan más grande y más pequeño.",
-            "de": "Manche Adjektive haben einen unregelmäßigen Komparativ: mejor statt bueno, peor statt malo; für das Alter ersetzt mayor grande und menor pequeño, für die Größe bleiben aber más grande und más pequeño."
+            "es": "Algunos adjetivos tienen un comparativo irregular: mejor en vez de bueno, peor en vez de malo; para la edad, mayor sustituye a grande y menor a pequeño, pero para el tamaño quedan más grande y más pequeño."
           },
           "examples": [
             {
               "es": "Este restaurante es mejor que aquel.",
               "tr": {
-                "hu": "Ez az étterem jobb, mint az.",
                 "en": "This restaurant is better than that one.",
-                "es": "Este restaurante es mejor que aquel.",
-                "de": "Dieses Restaurant ist besser als jenes."
+                "es": "Este restaurante es mejor que aquel."
               }
             },
             {
               "es": "El tiempo hoy es peor que ayer.",
               "tr": {
-                "hu": "Ma rosszabb az idő, mint tegnap.",
                 "en": "The weather today is worse than yesterday.",
-                "es": "El tiempo hoy es peor que ayer.",
-                "de": "Das Wetter heute ist schlechter als gestern."
+                "es": "El tiempo hoy es peor que ayer."
               }
             },
             {
               "es": "Mi hermana mayor vive en la ciudad.",
               "tr": {
-                "hu": "A nővérem a városban él.",
                 "en": "My older sister lives in the city.",
-                "es": "Mi hermana mayor vive en la ciudad.",
-                "de": "Meine ältere Schwester lebt in der Stadt."
+                "es": "Mi hermana mayor vive en la ciudad."
               }
             },
             {
               "es": "Mi hermano menor tiene diez años.",
               "tr": {
-                "hu": "Az öcsém tízéves.",
                 "en": "My younger brother is ten years old.",
-                "es": "Mi hermano menor tiene diez años.",
-                "de": "Mein jüngerer Bruder ist zehn Jahre alt."
+                "es": "Mi hermano menor tiene diez años."
               }
             },
             {
               "es": "Compro una casa más grande que esta.",
               "tr": {
-                "hu": "Egy ennél nagyobb házat veszek.",
                 "en": "I'm buying a house bigger than this one.",
-                "es": "Compro una casa más grande que esta.",
-                "de": "Ich kaufe ein Haus, das größer ist als dieses."
+                "es": "Compro una casa más grande que esta."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Egy szám előtt sosem que áll, hanem más de vagy menos de: a que csak két dolgot hasonlít össze, egy számmal a de kell.",
             "en": "Before a number it is never que, but más de or menos de: que only compares two things, a number needs de.",
-            "es": "Delante de un número nunca va que, sino más de o menos de: que solo compara dos cosas, con un número hace falta de.",
-            "de": "Vor einer Zahl steht nie que, sondern más de oder menos de: que vergleicht nur zwei Dinge, bei einer Zahl braucht man de."
+            "es": "Delante de un número nunca va que, sino más de o menos de: que solo compara dos cosas, con un número hace falta de."
           },
           "examples": [
             {
               "es": "Hay más de cien estudiantes aquí.",
               "tr": {
-                "hu": "Itt több mint száz diák van.",
                 "en": "There are more than a hundred students here.",
-                "es": "Hay más de cien estudiantes aquí.",
-                "de": "Hier sind mehr als hundert Studenten."
+                "es": "Hay más de cien estudiantes aquí."
               }
             },
             {
               "es": "Tengo menos de diez minutos.",
               "tr": {
-                "hu": "Kevesebb mint tíz percem van.",
                 "en": "I have less than ten minutes.",
-                "es": "Tengo menos de diez minutos.",
-                "de": "Ich habe weniger als zehn Minuten."
+                "es": "Tengo menos de diez minutos."
               }
             },
             {
               "es": "Compro más de tres cosas.",
               "tr": {
-                "hu": "Háromnál több dolgot veszek.",
                 "en": "I buy more than three things.",
-                "es": "Compro más de tres cosas.",
-                "de": "Ich kaufe mehr als drei Dinge."
+                "es": "Compro más de tres cosas."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A felsőfok egy csoporton belüli legmagasabb vagy legalacsonyabb fokot jelöli: el/la/los/las + (főnév) + más/menos + melléknév + de, ahol a de a csoportot adja meg.",
             "en": "The superlative marks the highest or lowest degree within a group: el/la/los/las + (noun) + más/menos + adjective + de, where de names the group.",
-            "es": "El superlativo marca el grado más alto o más bajo dentro de un grupo: el/la/los/las + (sustantivo) + más/menos + adjetivo + de, donde de indica el grupo.",
-            "de": "Der Superlativ markiert den höchsten oder niedrigsten Grad innerhalb einer Gruppe: el/la/los/las + (Substantiv) + más/menos + Adjektiv + de, wobei de die Gruppe angibt."
+            "es": "El superlativo marca el grado más alto o más bajo dentro de un grupo: el/la/los/las + (sustantivo) + más/menos + adjetivo + de, donde de indica el grupo."
           },
           "examples": [
             {
               "es": "Es el restaurante más caro de la ciudad.",
               "tr": {
-                "hu": "Ez a legdrágább étterem a városban.",
                 "en": "It is the most expensive restaurant in the city.",
-                "es": "Es el restaurante más caro de la ciudad.",
-                "de": "Es ist das teuerste Restaurant der Stadt."
+                "es": "Es el restaurante más caro de la ciudad."
               }
             },
             {
               "es": "Es la mejor estudiante de la clase.",
               "tr": {
-                "hu": "Ő a legjobb diák az osztályban.",
                 "en": "She is the best student in the class.",
-                "es": "Es la mejor estudiante de la clase.",
-                "de": "Sie ist die beste Schülerin der Klasse."
+                "es": "Es la mejor estudiante de la clase."
               }
             },
             {
               "es": "Son los libros más interesantes de la tienda.",
               "tr": {
-                "hu": "Ezek a legérdekesebb könyvek a boltban.",
                 "en": "These are the most interesting books in the store.",
-                "es": "Son los libros más interesantes de la tienda.",
-                "de": "Das sind die interessantesten Bücher im Laden."
+                "es": "Son los libros más interesantes de la tienda."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Az abszolút felsőfokot az -ísimo/-a végződés adja, összehasonlítási pont nélkül: carísimo, buenísimo, facilísimo. Van, ahol a helyesírás is változik, hogy a hang megmaradjon: rico → riquísimo, largo → larguísimo. Ugyanezt mondja a muy + melléknév is.",
             "en": "The absolute superlative comes from the ending -ísimo/-a, with no point of comparison: carísimo, buenísimo, facilísimo. Sometimes the spelling changes to keep the sound: rico → riquísimo, largo → larguísimo. Muy + adjective says the same thing.",
-            "es": "El superlativo absoluto se forma con la terminación -ísimo/-a, sin punto de comparación: carísimo, buenísimo, facilísimo. A veces la ortografía cambia para mantener el sonido: rico → riquísimo, largo → larguísimo. Muy + adjetivo dice lo mismo.",
-            "de": "Der absolute Superlativ entsteht mit der Endung -ísimo/-a, ohne Vergleichspunkt: carísimo, buenísimo, facilísimo. Manchmal ändert sich die Schreibung, um den Laut zu erhalten: rico → riquísimo, largo → larguísimo. Muy + Adjektiv sagt dasselbe."
+            "es": "El superlativo absoluto se forma con la terminación -ísimo/-a, sin punto de comparación: carísimo, buenísimo, facilísimo. A veces la ortografía cambia para mantener el sonido: rico → riquísimo, largo → larguísimo. Muy + adjetivo dice lo mismo."
           },
           "examples": [
             {
               "es": "Este pastel está riquísimo.",
               "tr": {
-                "hu": "Ez a sütemény nagyon finom.",
                 "en": "This cake is extremely tasty.",
-                "es": "Este pastel está riquísimo.",
-                "de": "Dieser Kuchen ist überaus lecker."
+                "es": "Este pastel está riquísimo."
               }
             },
             {
               "es": "Este libro es larguísimo.",
               "tr": {
-                "hu": "Ez a könyv nagyon hosszú.",
                 "en": "This book is extremely long.",
-                "es": "Este libro es larguísimo.",
-                "de": "Dieses Buch ist überaus lang."
+                "es": "Este libro es larguísimo."
               }
             },
             {
               "es": "Es muy caro, es carísimo.",
               "tr": {
-                "hu": "Nagyon drága, vagyis borzasztóan drága.",
                 "en": "It's very expensive, it's extremely expensive.",
-                "es": "Es muy caro, es carísimo.",
-                "de": "Es ist sehr teuer, es ist überaus teuer."
+                "es": "Es muy caro, es carísimo."
               }
             }
           ]
@@ -291,29 +229,21 @@
       "kind": "table",
       "id": "irregulares",
       "title": {
-        "hu": "Rendhagyó közép- és felsőfokok",
         "en": "Irregular comparatives and superlatives",
-        "es": "Comparativos y superlativos irregulares",
-        "de": "Unregelmäßige Komparative und Superlative"
+        "es": "Comparativos y superlativos irregulares"
       },
       "header": [
         {
-          "hu": "Alapfok",
           "en": "Positive",
-          "es": "positivo",
-          "de": "Positiv"
+          "es": "positivo"
         },
         {
-          "hu": "Középfok",
           "en": "Comparative",
-          "es": "comparativo",
-          "de": "Komparativ"
+          "es": "comparativo"
         },
         {
-          "hu": "Felsőfok",
           "en": "Superlative",
-          "es": "superlativo",
-          "de": "Superlativ"
+          "es": "superlativo"
         }
       ],
       "rows": [
@@ -362,38 +292,30 @@
     {
       "kind": "contrast",
       "title": {
-        "hu": "Hasonló, mégis más",
         "en": "Similar, yet different",
-        "es": "Parecido, pero distinto",
-        "de": "Ähnlich, aber anders"
+        "es": "Parecido, pero distinto"
       },
       "pairs": [
         {
           "a": "más que",
           "b": "más de",
           "note": {
-            "hu": "A más que egy másik dologhoz vagy személyhez hasonlít, a más de egy szám előtt áll.",
             "en": "Más que compares to another thing or person, más de goes before a number.",
-            "es": "Más que compara con otra cosa o persona, más de va delante de un número.",
-            "de": "Más que vergleicht mit einer anderen Sache oder Person, más de steht vor einer Zahl."
+            "es": "Más que compara con otra cosa o persona, más de va delante de un número."
           },
           "examples": [
             {
               "es": "Es más alto que su hermano.",
               "tr": {
-                "hu": "Magasabb, mint a testvére.",
                 "en": "He is taller than his brother.",
-                "es": "Es más alto que su hermano.",
-                "de": "Er ist größer als sein Bruder."
+                "es": "Es más alto que su hermano."
               }
             },
             {
               "es": "Tiene más de treinta años.",
               "tr": {
-                "hu": "Több mint harminc éves.",
                 "en": "He is more than thirty years old.",
-                "es": "Tiene más de treinta años.",
-                "de": "Er ist über dreißig Jahre alt."
+                "es": "Tiene más de treinta años."
               }
             }
           ]
@@ -402,28 +324,22 @@
           "a": "tan como",
           "b": "tanto como",
           "note": {
-            "hu": "A tan melléknévvel vagy határozóval áll, változatlan alakban; a tanto főnévvel, nemben és számban egyeztetve.",
             "en": "Tan goes with an adjective or adverb, unchanged; tanto goes with a noun, agreeing in gender and number.",
-            "es": "Tan va con un adjetivo o un adverbio, sin cambiar; tanto va con un sustantivo, concordando en género y número.",
-            "de": "Tan steht bei einem Adjektiv oder Adverb, unverändert; tanto steht bei einem Substantiv, in Geschlecht und Zahl angeglichen."
+            "es": "Tan va con un adjetivo o un adverbio, sin cambiar; tanto va con un sustantivo, concordando en género y número."
           },
           "examples": [
             {
               "es": "Es tan alto como su hermano.",
               "tr": {
-                "hu": "Olyan magas, mint a testvére.",
                 "en": "He is as tall as his brother.",
-                "es": "Es tan alto como su hermano.",
-                "de": "Er ist so groß wie sein Bruder."
+                "es": "Es tan alto como su hermano."
               }
             },
             {
               "es": "Tiene tanto dinero como su hermano.",
               "tr": {
-                "hu": "Annyi pénze van, mint a testvérének.",
                 "en": "He has as much money as his brother.",
-                "es": "Tiene tanto dinero como su hermano.",
-                "de": "Er hat so viel Geld wie sein Bruder."
+                "es": "Tiene tanto dinero como su hermano."
               }
             }
           ]
@@ -433,36 +349,28 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "A mayor/menor csak korra rendhagyó (mi hermano mayor), méretre a más grande és a más pequeño marad (una casa más grande).",
         "en": "Mayor/menor is only irregular for age (mi hermano mayor); for size más grande and más pequeño stay (una casa más grande).",
-        "es": "Mayor/menor es irregular solo para la edad (mi hermano mayor); para el tamaño quedan más grande y más pequeño (una casa más grande).",
-        "de": "Mayor/menor ist nur beim Alter unregelmäßig (mi hermano mayor); für die Größe bleiben más grande und más pequeño (una casa más grande)."
+        "es": "Mayor/menor es irregular solo para la edad (mi hermano mayor); para el tamaño quedan más grande y más pequeño (una casa más grande)."
       }
     }
   ],
   "speak": {
-    "hu": "Két dolog összehasonlításához a melléknév elé a több vagy a kevesebb szót tesszük, utána pedig a mint szót. Egyenlőségnél a melléknév két kis szó közé kerül, amelyek együtt azt jelentik, hogy olyan mint, a főnév előtt pedig a ugyanannyi szó egyező alakja áll. Néhány középfok rendhagyó: jobb, rosszabb, idősebb és fiatalabb, méretnél viszont marad a szabályos forma. Szám előtt a mint helyett a valaminek a szó áll. A felsőfokhoz határozott névelő és az elöljáró kell, az erős végződés pedig azt jelenti: nagyon-nagyon.",
     "en": "To compare two things, put the word for more or the word for less before the adjective, and then the word for than. For equality, an adjective goes between two little words that together mean as, and a noun uses a form of the word for as much or as many, which agrees with the noun. A few comparatives are irregular: better, worse, older and younger, while for size the regular pattern stays. Before a number, use the word for of instead of than. The superlative needs the definite article plus the word for of, and a strong ending on the adjective means very very.",
-    "es": "Para comparar dos cosas se pone la palabra de más o la de menos antes del adjetivo y luego la palabra que introduce el segundo término. Para la igualdad, el adjetivo va entre dos palabras pequeñas que juntas significan tan como, y un sustantivo lleva la forma de tanto que concuerda con él. Algunos comparativos son irregulares: mejor, peor, mayor y menor, mientras que para el tamaño se mantiene el patrón regular. Antes de un número se usa la preposición de en lugar de la palabra de comparación. El superlativo lleva el artículo determinado más la preposición de, y una terminación fuerte en el adjetivo significa muy muy.",
-    "de": "Um zwei Dinge zu vergleichen, steht das Wort für mehr oder für weniger vor dem Adjektiv und danach das Wort für als. Bei Gleichheit steht das Adjektiv zwischen zwei kleinen Wörtern, die zusammen so wie bedeuten, und ein Nomen bekommt die passende Form von so viel. Einige Komparative sind unregelmäßig: besser, schlechter, älter und jünger, für die Größe bleibt das regelmäßige Muster. Vor einer Zahl steht das Wort für von statt als. Der Superlativ braucht den bestimmten Artikel und das Wort für von, und eine kräftige Endung am Adjektiv bedeutet sehr sehr."
+    "es": "Para comparar dos cosas se pone la palabra de más o la de menos antes del adjetivo y luego la palabra que introduce el segundo término. Para la igualdad, el adjetivo va entre dos palabras pequeñas que juntas significan tan como, y un sustantivo lleva la forma de tanto que concuerda con él. Algunos comparativos son irregulares: mejor, peor, mayor y menor, mientras que para el tamaño se mantiene el patrón regular. Antes de un número se usa la preposición de en lugar de la palabra de comparación. El superlativo lleva el artículo determinado más la preposición de, y una terminación fuerte en el adjetivo significa muy muy."
   },
   "glossary": [
     {
       "word": "riquísimo",
       "gloss": {
-        "hu": "nagyon finom (abszolút felsőfok)",
         "en": "extremely tasty (absolute superlative)",
-        "es": "muy rico, sabroso (superlativo absoluto)",
-        "de": "überaus lecker (absoluter Superlativ)"
+        "es": "muy rico, sabroso (superlativo absoluto)"
       }
     },
     {
       "word": "carro",
       "gloss": {
-        "hu": "autó",
         "en": "car",
-        "es": "el carro",
-        "de": "Auto"
+        "es": "el carro"
       }
     }
   ],
@@ -476,24 +384,20 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A más középfokot que vezeti be, ha melléknevet hasonlítunk: más caro que.",
         "en": "The comparative más is followed by que when comparing an adjective: más caro que.",
-        "es": "El comparativo más se completa con que al comparar un adjetivo: más caro que.",
-        "de": "Der Komparativ más wird bei einem Adjektivvergleich mit que fortgesetzt: más caro que."
+        "es": "El comparativo más se completa con que al comparar un adjetivo: más caro que."
       },
       "wrong": {
         "como": {
-          "hu": "A como a tan szóval párosul egyenlőségnél (tan caro como), a más középfokhoz que kell: más caro que.",
           "en": "Como pairs with tan for equality (tan caro como); the comparative más needs que: más caro que.",
-          "es": "Como se empareja con tan para la igualdad (tan caro como); el comparativo más pide que: más caro que.",
-          "de": "Como gehört zu tan bei Gleichheit (tan caro como); der Komparativ más braucht que: más caro que."
+          "es": "Como se empareja con tan para la igualdad (tan caro como); el comparativo más pide que: más caro que."
         }
       },
       "examples": [
         "Este restaurante es más caro que aquel.",
         "Camino más rápido que tú."
       ],
-      "tr": { "hu": "Ez az autó drágább, mint a másik.", "en": "This car is more expensive than the other one.", "es": "Este carro es más caro que el otro.", "de": "Dieses Auto ist teurer als das andere." }
+      "tr": { "en": "This car is more expensive than the other one.", "es": "Este carro es más caro que el otro." }
     },
     {
       "id": "cs-02",
@@ -504,24 +408,20 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az egyenlőséget tan + melléknév + como fejezi ki: tan alta como.",
         "en": "Equality is expressed with tan + adjective + como: tan alta como.",
-        "es": "La igualdad se expresa con tan + adjetivo + como: tan alta como.",
-        "de": "Gleichheit wird mit tan + Adjektiv + como ausgedrückt: tan alta como."
+        "es": "La igualdad se expresa con tan + adjetivo + como: tan alta como."
       },
       "wrong": {
         "que": {
-          "hu": "A que a más/menos középfokhoz kell, az egyenlőséghez (tan) como jár: tan alta como.",
           "en": "Que belongs with the comparative más/menos; equality (tan) takes como: tan alta como.",
-          "es": "Que va con el comparativo más/menos; la igualdad (tan) lleva como: tan alta como.",
-          "de": "Que gehört zum Komparativ más/menos; Gleichheit (tan) nimmt como: tan alta como."
+          "es": "Que va con el comparativo más/menos; la igualdad (tan) lleva como: tan alta como."
         }
       },
       "examples": [
         "Mi hermano es tan alto como yo.",
         "Este libro es tan interesante como el otro."
       ],
-      "tr": { "hu": "A nővérem olyan magas, mint én.", "en": "My sister is as tall as I am.", "es": "Mi hermana es tan alta como yo.", "de": "Meine Schwester ist so groß wie ich." }
+      "tr": { "en": "My sister is as tall as I am.", "es": "Mi hermana es tan alta como yo." }
     },
     {
       "id": "cs-03",
@@ -532,24 +432,20 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A tanto (itt hímnemű egyes szám: tiempo) como-val zárul: tanto tiempo como.",
         "en": "Tanto (here masculine singular tiempo) is closed with como: tanto tiempo como.",
-        "es": "Tanto (aquí masculino singular tiempo) se cierra con como: tanto tiempo como.",
-        "de": "Tanto (hier maskulin Singular tiempo) wird mit como abgeschlossen: tanto tiempo como."
+        "es": "Tanto (aquí masculino singular tiempo) se cierra con como: tanto tiempo como."
       },
       "wrong": {
         "que": {
-          "hu": "A que a más/menos középfokhoz tartozik, a tanto szerkezet como-t kíván: tanto tiempo como.",
           "en": "Que belongs with the comparative más/menos; the tanto construction needs como: tanto tiempo como.",
-          "es": "Que pertenece al comparativo más/menos; la construcción tanto pide como: tanto tiempo como.",
-          "de": "Que gehört zum Komparativ más/menos; die tanto-Konstruktion braucht como: tanto tiempo como."
+          "es": "Que pertenece al comparativo más/menos; la construcción tanto pide como: tanto tiempo como."
         }
       },
       "examples": [
         "Tengo tanto trabajo como tú.",
         "Ella tiene tanto dinero como yo."
       ],
-      "tr": { "hu": "Nekem annyi időm van, mint neked.", "en": "I have as much time as you do.", "es": "Tengo tanto tiempo como tú.", "de": "Ich habe so viel Zeit wie du." }
+      "tr": { "en": "I have as much time as you do.", "es": "Tengo tanto tiempo como tú." }
     },
     {
       "id": "cs-04",
@@ -560,24 +456,20 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A tantos (a hímnemű többes libros miatt) como-val zárul: tantos libros como.",
         "en": "Tantos (agreeing with the masculine plural libros) is closed with como: tantos libros como.",
-        "es": "Tantos (concordando con el masculino plural libros) se cierra con como: tantos libros como.",
-        "de": "Tantos (übereinstimmend mit dem maskulinen Plural libros) wird mit como abgeschlossen: tantos libros como."
+        "es": "Tantos (concordando con el masculino plural libros) se cierra con como: tantos libros como."
       },
       "wrong": {
         "que": {
-          "hu": "A que a más/menos középfokhoz kell, a tantos szerkezet como-t kíván: tantos libros como.",
           "en": "Que belongs with the comparative más/menos; the tantos construction needs como: tantos libros como.",
-          "es": "Que pertenece al comparativo más/menos; la construcción tantos pide como: tantos libros como.",
-          "de": "Que gehört zum Komparativ más/menos; die tantos-Konstruktion braucht como: tantos libros como."
+          "es": "Que pertenece al comparativo más/menos; la construcción tantos pide como: tantos libros como."
         }
       },
       "examples": [
         "Hay tantas personas aquí como allí.",
         "Compro tantas cosas como tú."
       ],
-      "tr": { "hu": "Annyi könyv van itt, mint ott.", "en": "There are as many books here as there.", "es": "Hay tantos libros aquí como allí.", "de": "Es gibt hier so viele Bücher wie dort." }
+      "tr": { "en": "There are as many books here as there.", "es": "Hay tantos libros aquí como allí." }
     },
     {
       "id": "cs-05",
@@ -588,24 +480,20 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A bueno rendhagyó középfoka mejor, nem más bueno: es mejor que el otro.",
         "en": "The irregular comparative of bueno is mejor, not más bueno: es mejor que el otro.",
-        "es": "El comparativo irregular de bueno es mejor, no más bueno: es mejor que el otro.",
-        "de": "Der unregelmäßige Komparativ von bueno ist mejor, nicht más bueno: es mejor que el otro."
+        "es": "El comparativo irregular de bueno es mejor, no más bueno: es mejor que el otro."
       },
       "wrong": {
         "más bueno": {
-          "hu": "A más bueno itt nem természetes: egy dolog minőségére mejor kell, a más bueno inkább egy ember jóságáról szólna: es mejor que el otro.",
           "en": "Más bueno is not natural here: for the quality of a thing mejor is needed, más bueno would rather be about a person's kindness: es mejor que el otro.",
-          "es": "Más bueno no es natural aquí: para la calidad de una cosa hace falta mejor, más bueno hablaría más bien de la bondad de una persona: es mejor que el otro.",
-          "de": "Más bueno ist hier nicht natürlich: für die Qualität einer Sache braucht man mejor, más bueno würde eher von der Güte einer Person sprechen: es mejor que el otro."
+          "es": "Más bueno no es natural aquí: para la calidad de una cosa hace falta mejor, más bueno hablaría más bien de la bondad de una persona: es mejor que el otro."
         }
       },
       "examples": [
         "Esta película es mejor que la otra.",
         "Este pastel es mejor que aquel."
       ],
-      "tr": { "hu": "Ez a könyv jobb, mint a másik.", "en": "This book is better than the other one.", "es": "Este libro es mejor que el otro.", "de": "Dieses Buch ist besser als das andere." }
+      "tr": { "en": "This book is better than the other one.", "es": "Este libro es mejor que el otro." }
     },
     {
       "id": "cs-06",
@@ -616,24 +504,20 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A malo rendhagyó középfoka peor, nem más malo: es peor que la otra.",
         "en": "The irregular comparative of malo is peor, not más malo: es peor que la otra.",
-        "es": "El comparativo irregular de malo es peor, no más malo: es peor que la otra.",
-        "de": "Der unregelmäßige Komparativ von malo ist peor, nicht más malo: es peor que la otra."
+        "es": "El comparativo irregular de malo es peor, no más malo: es peor que la otra."
       },
       "wrong": {
         "más malo": {
-          "hu": "A más malo itt nem természetes: egy dolog minőségére peor kell, a más malo inkább egy ember rosszaságáról szólna: es peor que la otra.",
           "en": "Más malo is not natural here: for the quality of a thing peor is needed, más malo would rather be about a person's badness: es peor que la otra.",
-          "es": "Más malo no es natural aquí: para la calidad de una cosa hace falta peor, más malo hablaría más bien de la maldad de una persona: es peor que la otra.",
-          "de": "Más malo ist hier nicht natürlich: für die Qualität einer Sache braucht man peor, más malo würde eher von der Bosheit einer Person sprechen: es peor que la otra."
+          "es": "Más malo no es natural aquí: para la calidad de una cosa hace falta peor, más malo hablaría más bien de la maldad de una persona: es peor que la otra."
         }
       },
       "examples": [
         "Este restaurante es peor que aquel.",
         "El tiempo hoy es peor que ayer."
       ],
-      "tr": { "hu": "Ez a film rosszabb, mint a másik.", "en": "This movie is worse than the other one.", "es": "Esta película es peor que la otra.", "de": "Dieser Film ist schlechter als der andere." }
+      "tr": { "en": "This movie is worse than the other one.", "es": "Esta película es peor que la otra." }
     },
     {
       "id": "cs-07",
@@ -644,24 +528,20 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Korra a grande rendhagyó középfoka mayor: mi hermano mayor.",
         "en": "For age, the irregular comparative of grande is mayor: mi hermano mayor.",
-        "es": "Para la edad, el comparativo irregular de grande es mayor: mi hermano mayor.",
-        "de": "Für das Alter ist der unregelmäßige Komparativ von grande mayor: mi hermano mayor."
+        "es": "Para la edad, el comparativo irregular de grande es mayor: mi hermano mayor."
       },
       "wrong": {
         "más grande": {
-          "hu": "A más grande méretre vonatkozik, korra a mayor a helyes: mi hermano mayor.",
           "en": "Más grande refers to size; for age mayor is correct: mi hermano mayor.",
-          "es": "Más grande se refiere al tamaño; para la edad lo correcto es mayor: mi hermano mayor.",
-          "de": "Más grande bezieht sich auf die Größe; für das Alter ist mayor richtig: mi hermano mayor."
+          "es": "Más grande se refiere al tamaño; para la edad lo correcto es mayor: mi hermano mayor."
         }
       },
       "examples": [
         "Mi hermana mayor vive aquí.",
         "Ella tiene un hermano mayor."
       ],
-      "tr": { "hu": "A bátyám harminc éves.", "en": "My older brother is thirty years old.", "es": "Mi hermano mayor tiene treinta años.", "de": "Mein älterer Bruder ist dreißig Jahre alt." }
+      "tr": { "en": "My older brother is thirty years old.", "es": "Mi hermano mayor tiene treinta años." }
     },
     {
       "id": "cs-08",
@@ -672,24 +552,20 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Méretre a grande középfoka más grande marad, a mayor csak korra rendhagyó: más grande que la otra.",
         "en": "For size, the comparative of grande stays más grande; mayor is only irregular for age: más grande que la otra.",
-        "es": "Para el tamaño, el comparativo de grande sigue siendo más grande; mayor es irregular solo para la edad: más grande que la otra.",
-        "de": "Für die Größe bleibt der Komparativ von grande más grande; mayor ist nur für das Alter unregelmäßig: más grande que la otra."
+        "es": "Para el tamaño, el comparativo de grande sigue siendo más grande; mayor es irregular solo para la edad: más grande que la otra."
       },
       "wrong": {
         "mayor": {
-          "hu": "A mayor korra vonatkozik, méretre a más grande a helyes: más grande que la otra.",
           "en": "Mayor refers to age; for size más grande is correct: más grande que la otra.",
-          "es": "Mayor se refiere a la edad; para el tamaño lo correcto es más grande: más grande que la otra.",
-          "de": "Mayor bezieht sich auf das Alter; für die Größe ist más grande richtig: más grande que la otra."
+          "es": "Mayor se refiere a la edad; para el tamaño lo correcto es más grande: más grande que la otra."
         }
       },
       "examples": [
         "Quiero una casa más grande que esta.",
         "Este cuarto es más grande que aquel."
       ],
-      "tr": { "hu": "Nagyobb házat veszek, mint a másik.", "en": "I'm buying a bigger house than the other one.", "es": "Compro una casa más grande que la otra.", "de": "Ich kaufe ein größeres Haus als das andere." }
+      "tr": { "en": "I'm buying a bigger house than the other one.", "es": "Compro una casa más grande que la otra." }
     },
     {
       "id": "cs-09",
@@ -700,24 +576,20 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Szám előtt, állító mondatban a más után de áll, nem que: más de diez.",
         "en": "Before a number in an affirmative sentence, más is followed by de, not que: más de diez.",
-        "es": "Delante de un número en una frase afirmativa, más va seguido de de, no de que: más de diez.",
-        "de": "Vor einer Zahl folgt im bejahten Satz auf más de, nicht que: más de diez."
+        "es": "Delante de un número en una frase afirmativa, más va seguido de de, no de que: más de diez."
       },
       "wrong": {
         "que": {
-          "hu": "A que csak két dolog összehasonlításánál áll más után, számnál de kell: más de diez.",
           "en": "Que only follows más when comparing two things; before a number de is needed: más de diez.",
-          "es": "Que solo sigue a más al comparar dos cosas; delante de un número hace falta de: más de diez.",
-          "de": "Que folgt auf más nur beim Vergleich zweier Dinge; vor einer Zahl braucht man de: más de diez."
+          "es": "Que solo sigue a más al comparar dos cosas; delante de un número hace falta de: más de diez."
         }
       },
       "examples": [
         "Tengo más de treinta años.",
         "Hay más de cien personas aquí."
       ],
-      "tr": { "hu": "Több mint tíz diák van az osztályban.", "en": "There are more than ten students in the class.", "es": "Hay más de diez estudiantes en la clase.", "de": "Es sind mehr als zehn Studenten in der Klasse." }
+      "tr": { "en": "There are more than ten students in the class.", "es": "Hay más de diez estudiantes en la clase." }
     },
     {
       "id": "cs-10",
@@ -728,24 +600,20 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A felsőfokot de zárja, a csoportot jelölve: el más caro de la ciudad.",
         "en": "The superlative is closed with de, marking the group: el más caro de la ciudad.",
-        "es": "El superlativo se cierra con de, marcando el grupo: el más caro de la ciudad.",
-        "de": "Der Superlativ wird mit de abgeschlossen, das die Gruppe markiert: el más caro de la ciudad."
+        "es": "El superlativo se cierra con de, marcando el grupo: el más caro de la ciudad."
       },
       "wrong": {
         "que": {
-          "hu": "A que két dolgot hasonlítana össze (más caro que valami); a felsőfok csoportját de adja meg: el más caro de la ciudad.",
           "en": "Que would compare two things (más caro que something); the group of a superlative is given by de: el más caro de la ciudad.",
-          "es": "Que compararía dos cosas (más caro que algo); el grupo de un superlativo lo marca de: el más caro de la ciudad.",
-          "de": "Que würde zwei Dinge vergleichen (más caro que etwas); die Gruppe eines Superlativs gibt de an: el más caro de la ciudad."
+          "es": "Que compararía dos cosas (más caro que algo); el grupo de un superlativo lo marca de: el más caro de la ciudad."
         }
       },
       "examples": [
         "Es la tienda más barata de la ciudad.",
         "Es el libro más interesante de la clase."
       ],
-      "tr": { "hu": "Ez a legdrágább étterem a városban.", "en": "It's the most expensive restaurant in the city.", "es": "Es el restaurante más caro de la ciudad.", "de": "Es ist das teuerste Restaurant der Stadt." }
+      "tr": { "en": "It's the most expensive restaurant in the city.", "es": "Es el restaurante más caro de la ciudad." }
     },
     {
       "id": "cs-11",
@@ -756,24 +624,20 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A bueno felsőfoka is mejor, nem más buena: la mejor estudiante.",
         "en": "The superlative of bueno is also mejor, not más buena: la mejor estudiante.",
-        "es": "El superlativo de bueno también es mejor, no más buena: la mejor estudiante.",
-        "de": "Der Superlativ von bueno ist ebenfalls mejor, nicht más buena: la mejor estudiante."
+        "es": "El superlativo de bueno también es mejor, no más buena: la mejor estudiante."
       },
       "wrong": {
         "más buena": {
-          "hu": "A más buena itt nem természetes: a 'legjobb diák' mejor, a más buena inkább a legkedvesebbet jelentené; a mejor nemtől függetlenül ugyanaz marad: la mejor estudiante.",
           "en": "Más buena is not natural here: 'the best student' is mejor, más buena would rather mean the kindest; mejor stays the same regardless of gender: la mejor estudiante.",
-          "es": "Más buena no es natural aquí: 'la mejor estudiante' lleva mejor, más buena significaría más bien la más amable; mejor no cambia según el género: la mejor estudiante.",
-          "de": "Más buena ist hier nicht natürlich: 'die beste Schülerin' ist mejor, más buena würde eher die Netteste bedeuten; mejor bleibt unabhängig vom Geschlecht gleich: la mejor estudiante."
+          "es": "Más buena no es natural aquí: 'la mejor estudiante' lleva mejor, más buena significaría más bien la más amable; mejor no cambia según el género: la mejor estudiante."
         }
       },
       "examples": [
         "Es el mejor restaurante de la ciudad.",
         "Son los mejores libros de la tienda."
       ],
-      "tr": { "hu": "Ő a legjobb diák az osztályban.", "en": "She is the best student in the class.", "es": "Ella es la mejor estudiante de la clase.", "de": "Sie ist die beste Schülerin der Klasse." }
+      "tr": { "en": "She is the best student in the class.", "es": "Ella es la mejor estudiante de la clase." }
     },
     {
       "id": "cs-12",
@@ -784,24 +648,20 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Összehasonlítási pont nélkül az abszolút felsőfok -ísimo kell: está riquísimo.",
         "en": "Without a point of comparison, the absolute superlative -ísimo is needed: está riquísimo.",
-        "es": "Sin un punto de comparación, hace falta el superlativo absoluto -ísimo: está riquísimo.",
-        "de": "Ohne Vergleichspunkt braucht man den absoluten Superlativ -ísimo: está riquísimo."
+        "es": "Sin un punto de comparación, hace falta el superlativo absoluto -ísimo: está riquísimo."
       },
       "wrong": {
         "más rico": {
-          "hu": "A más rico összehasonlítási pontot kívánna (más rico que algo); itt nincs ilyen, -ísimo kell: está riquísimo.",
           "en": "Más rico would need a point of comparison (más rico que something); here there is none, -ísimo is needed: está riquísimo.",
-          "es": "Más rico necesitaría un punto de comparación (más rico que algo); aquí no lo hay, hace falta -ísimo: está riquísimo.",
-          "de": "Más rico bräuchte einen Vergleichspunkt (más rico que etwas); hier gibt es keinen, -ísimo ist nötig: está riquísimo."
+          "es": "Más rico necesitaría un punto de comparación (más rico que algo); aquí no lo hay, hace falta -ísimo: está riquísimo."
         }
       },
       "examples": [
         "Este café está riquísimo.",
         "La comida está riquísima."
       ],
-      "tr": { "hu": "Ez a sütemény nagyon finom, nincs másik ilyen jó.", "en": "This cake is delicious, there's no other one as good.", "es": "Este pastel está riquísimo, no hay otro tan bueno.", "de": "Dieser Kuchen ist köstlich, es gibt keinen anderen so guten." }
+      "tr": { "en": "This cake is delicious, there's no other one as good.", "es": "Este pastel está riquísimo, no hay otro tan bueno." }
     },
     {
       "id": "cs-match-01",
@@ -935,46 +795,34 @@
       "es": "Tengo más de treinta años.",
       "target": "más de treinta",
       "tr": {
-        "hu": "Több mint harminc éves vagyok.",
         "en": "I am more than thirty years old.",
-        "es": "Tengo más de treinta años.",
-        "de": "Ich bin älter als dreißig Jahre."
+        "es": "Tengo más de treinta años."
       },
       "options": [
         {
           "text": {
-            "hu": "szám: más/menos de",
             "en": "a number: más/menos de",
-            "es": "número con más/menos de",
-            "de": "eine Zahl: más/menos de"
+            "es": "número con más/menos de"
           }
         },
         {
           "text": {
-            "hu": "főnév: tanto/a/os/as",
             "en": "a noun: tanto/a/os/as",
-            "es": "sustantivo con tanto/a",
-            "de": "ein Substantiv: tanto/a/os/as"
+            "es": "sustantivo con tanto/a"
           },
           "wrong": {
-            "hu": "Nincs tanto/a-val egyeztetett főnév a mondatban, hanem egy szám áll más után: más de treinta.",
             "en": "There is no noun agreeing with tanto/a in the sentence, but a number after más: más de treinta.",
-            "es": "No hay un sustantivo con concordancia tanto/a en la frase, sino un número después de más: más de treinta.",
-            "de": "Es gibt kein mit tanto/a übereinstimmendes Substantiv im Satz, sondern eine Zahl nach más: más de treinta."
+            "es": "No hay un sustantivo con concordancia tanto/a en la frase, sino un número después de más: más de treinta."
           }
         },
         {
           "text": {
-            "hu": "rendhagyó középfok (mejor/peor/mayor/menor)",
             "en": "irregular comparative (mejor/peor/mayor/menor)",
-            "es": "comparativo irregular",
-            "de": "unregelmäßiger Komparativ (mejor/peor/mayor/menor)"
+            "es": "comparativo irregular"
           },
           "wrong": {
-            "hu": "Nincs rendhagyó középfok a mondatban, hanem egy szám más után: más de treinta.",
             "en": "There is no irregular comparative in the sentence, but a number after más: más de treinta.",
-            "es": "No hay un comparativo irregular en la frase, sino un número después de más: más de treinta.",
-            "de": "Es gibt keinen unregelmäßigen Komparativ im Satz, sondern eine Zahl nach más: más de treinta."
+            "es": "No hay un comparativo irregular en la frase, sino un número después de más: más de treinta."
           }
         }
       ],
@@ -986,46 +834,34 @@
       "es": "Hay tanta gente aquí como allí.",
       "target": "tanta gente",
       "tr": {
-        "hu": "Itt annyi ember van, mint ott.",
         "en": "There are as many people here as there.",
-        "es": "Hay tanta gente aquí como allí.",
-        "de": "Hier gibt es so viele Leute wie dort."
+        "es": "Hay tanta gente aquí como allí."
       },
       "options": [
         {
           "text": {
-            "hu": "szám: más/menos de",
             "en": "a number: más/menos de",
-            "es": "número con más/menos de",
-            "de": "eine Zahl: más/menos de"
+            "es": "número con más/menos de"
           },
           "wrong": {
-            "hu": "Nincs szám a mondatban, hanem egy főnév (gente) tanto/a-val egyeztetve: tanta gente.",
             "en": "There is no number in the sentence, but a noun (gente) agreeing with tanto/a: tanta gente.",
-            "es": "No hay un número en la frase, sino un sustantivo (gente) con concordancia tanto/a: tanta gente.",
-            "de": "Es gibt keine Zahl im Satz, sondern ein Substantiv (gente), das mit tanto/a übereinstimmt: tanta gente."
+            "es": "No hay un número en la frase, sino un sustantivo (gente) con concordancia tanto/a: tanta gente."
           }
         },
         {
           "text": {
-            "hu": "főnév: tanto/a/os/as",
             "en": "a noun: tanto/a/os/as",
-            "es": "sustantivo con tanto/a",
-            "de": "ein Substantiv: tanto/a/os/as"
+            "es": "sustantivo con tanto/a"
           }
         },
         {
           "text": {
-            "hu": "rendhagyó középfok (mejor/peor/mayor/menor)",
             "en": "irregular comparative (mejor/peor/mayor/menor)",
-            "es": "comparativo irregular",
-            "de": "unregelmäßiger Komparativ (mejor/peor/mayor/menor)"
+            "es": "comparativo irregular"
           },
           "wrong": {
-            "hu": "Nincs rendhagyó középfok a mondatban, a tanta egyezik a gente főnévvel.",
             "en": "There is no irregular comparative in the sentence, tanta simply agrees with the noun gente.",
-            "es": "No hay un comparativo irregular en la frase, tanta concuerda con el sustantivo gente.",
-            "de": "Es gibt keinen unregelmäßigen Komparativ im Satz, tanta stimmt einfach mit dem Substantiv gente überein."
+            "es": "No hay un comparativo irregular en la frase, tanta concuerda con el sustantivo gente."
           }
         }
       ],
@@ -1037,46 +873,34 @@
       "es": "Mi hermano mayor vive en la ciudad.",
       "target": "mayor",
       "tr": {
-        "hu": "A bátyám a városban él.",
         "en": "My older brother lives in the city.",
-        "es": "Mi hermano mayor vive en la ciudad.",
-        "de": "Mein älterer Bruder lebt in der Stadt."
+        "es": "Mi hermano mayor vive en la ciudad."
       },
       "options": [
         {
           "text": {
-            "hu": "szám: más/menos de",
             "en": "a number: más/menos de",
-            "es": "número con más/menos de",
-            "de": "eine Zahl: más/menos de"
+            "es": "número con más/menos de"
           },
           "wrong": {
-            "hu": "Nincs szám a mondatban, hanem egy rendhagyó középfok: mayor (korra).",
             "en": "There is no number in the sentence, but an irregular comparative: mayor (for age).",
-            "es": "No hay un número en la frase, sino un comparativo irregular: mayor (para la edad).",
-            "de": "Es gibt keine Zahl im Satz, sondern einen unregelmäßigen Komparativ: mayor (für das Alter)."
+            "es": "No hay un número en la frase, sino un comparativo irregular: mayor (para la edad)."
           }
         },
         {
           "text": {
-            "hu": "főnév: tanto/a/os/as",
             "en": "a noun: tanto/a/os/as",
-            "es": "sustantivo con tanto/a",
-            "de": "ein Substantiv: tanto/a/os/as"
+            "es": "sustantivo con tanto/a"
           },
           "wrong": {
-            "hu": "Nincs tanto/a-val egyeztetett főnév a mondatban, hanem egy rendhagyó középfok: mayor.",
             "en": "There is no noun agreeing with tanto/a in the sentence, but an irregular comparative: mayor.",
-            "es": "No hay un sustantivo con concordancia tanto/a en la frase, sino un comparativo irregular: mayor.",
-            "de": "Es gibt kein mit tanto/a übereinstimmendes Substantiv im Satz, sondern einen unregelmäßigen Komparativ: mayor."
+            "es": "No hay un sustantivo con concordancia tanto/a en la frase, sino un comparativo irregular: mayor."
           }
         },
         {
           "text": {
-            "hu": "rendhagyó középfok (mejor/peor/mayor/menor)",
             "en": "irregular comparative (mejor/peor/mayor/menor)",
-            "es": "comparativo irregular",
-            "de": "unregelmäßiger Komparativ (mejor/peor/mayor/menor)"
+            "es": "comparativo irregular"
           }
         }
       ],
@@ -1088,46 +912,34 @@
       "es": "Hay más de cien estudiantes en la clase.",
       "target": "más de cien",
       "tr": {
-        "hu": "Több mint száz diák van az osztályban.",
         "en": "There are more than a hundred students in the class.",
-        "es": "Hay más de cien estudiantes en la clase.",
-        "de": "Es gibt mehr als hundert Studenten in der Klasse."
+        "es": "Hay más de cien estudiantes en la clase."
       },
       "options": [
         {
           "text": {
-            "hu": "szám: más/menos de",
             "en": "a number: más/menos de",
-            "es": "número con más/menos de",
-            "de": "eine Zahl: más/menos de"
+            "es": "número con más/menos de"
           }
         },
         {
           "text": {
-            "hu": "főnév: tanto/a/os/as",
             "en": "a noun: tanto/a/os/as",
-            "es": "sustantivo con tanto/a",
-            "de": "ein Substantiv: tanto/a/os/as"
+            "es": "sustantivo con tanto/a"
           },
           "wrong": {
-            "hu": "Nincs tanto/a-val egyeztetett főnév a mondatban, hanem egy szám más után: más de cien.",
             "en": "There is no noun agreeing with tanto/a in the sentence, but a number after más: más de cien.",
-            "es": "No hay un sustantivo con concordancia tanto/a en la frase, sino un número después de más: más de cien.",
-            "de": "Es gibt kein mit tanto/a übereinstimmendes Substantiv im Satz, sondern eine Zahl nach más: más de cien."
+            "es": "No hay un sustantivo con concordancia tanto/a en la frase, sino un número después de más: más de cien."
           }
         },
         {
           "text": {
-            "hu": "rendhagyó középfok (mejor/peor/mayor/menor)",
             "en": "irregular comparative (mejor/peor/mayor/menor)",
-            "es": "comparativo irregular",
-            "de": "unregelmäßiger Komparativ (mejor/peor/mayor/menor)"
+            "es": "comparativo irregular"
           },
           "wrong": {
-            "hu": "Nincs rendhagyó középfok a mondatban, hanem egy szám más után: más de cien.",
             "en": "There is no irregular comparative in the sentence, but a number after más: más de cien.",
-            "es": "No hay un comparativo irregular en la frase, sino un número después de más: más de cien.",
-            "de": "Es gibt keinen unregelmäßigen Komparativ im Satz, sondern eine Zahl nach más: más de cien."
+            "es": "No hay un comparativo irregular en la frase, sino un número después de más: más de cien."
           }
         }
       ],
@@ -1139,46 +951,34 @@
       "es": "Tengo tantos libros como tú.",
       "target": "tantos libros",
       "tr": {
-        "hu": "Annyi könyvem van, mint neked.",
         "en": "I have as many books as you.",
-        "es": "Tengo tantos libros como tú.",
-        "de": "Ich habe so viele Bücher wie du."
+        "es": "Tengo tantos libros como tú."
       },
       "options": [
         {
           "text": {
-            "hu": "szám: más/menos de",
             "en": "a number: más/menos de",
-            "es": "número con más/menos de",
-            "de": "eine Zahl: más/menos de"
+            "es": "número con más/menos de"
           },
           "wrong": {
-            "hu": "Nincs szám a mondatban, hanem egy főnév (libros) tanto/a-val egyeztetve: tantos libros.",
             "en": "There is no number in the sentence, but a noun (libros) agreeing with tanto/a: tantos libros.",
-            "es": "No hay un número en la frase, sino un sustantivo (libros) con concordancia tanto/a: tantos libros.",
-            "de": "Es gibt keine Zahl im Satz, sondern ein Substantiv (libros), das mit tanto/a übereinstimmt: tantos libros."
+            "es": "No hay un número en la frase, sino un sustantivo (libros) con concordancia tanto/a: tantos libros."
           }
         },
         {
           "text": {
-            "hu": "főnév: tanto/a/os/as",
             "en": "a noun: tanto/a/os/as",
-            "es": "sustantivo con tanto/a",
-            "de": "ein Substantiv: tanto/a/os/as"
+            "es": "sustantivo con tanto/a"
           }
         },
         {
           "text": {
-            "hu": "rendhagyó középfok (mejor/peor/mayor/menor)",
             "en": "irregular comparative (mejor/peor/mayor/menor)",
-            "es": "comparativo irregular",
-            "de": "unregelmäßiger Komparativ (mejor/peor/mayor/menor)"
+            "es": "comparativo irregular"
           },
           "wrong": {
-            "hu": "Nincs rendhagyó középfok a mondatban, a tantos egyezik a libros főnévvel.",
             "en": "There is no irregular comparative in the sentence, tantos simply agrees with the noun libros.",
-            "es": "No hay un comparativo irregular en la frase, tantos concuerda con el sustantivo libros.",
-            "de": "Es gibt keinen unregelmäßigen Komparativ im Satz, tantos stimmt einfach mit dem Substantiv libros überein."
+            "es": "No hay un comparativo irregular en la frase, tantos concuerda con el sustantivo libros."
           }
         }
       ],
@@ -1190,46 +990,34 @@
       "es": "Este restaurante es peor que el otro.",
       "target": "peor",
       "tr": {
-        "hu": "Ez az étterem rosszabb, mint a másik.",
         "en": "This restaurant is worse than the other one.",
-        "es": "Este restaurante es peor que el otro.",
-        "de": "Dieses Restaurant ist schlechter als das andere."
+        "es": "Este restaurante es peor que el otro."
       },
       "options": [
         {
           "text": {
-            "hu": "szám: más/menos de",
             "en": "a number: más/menos de",
-            "es": "número con más/menos de",
-            "de": "eine Zahl: más/menos de"
+            "es": "número con más/menos de"
           },
           "wrong": {
-            "hu": "Nincs szám a mondatban, hanem egy rendhagyó középfok: peor.",
             "en": "There is no number in the sentence, but an irregular comparative: peor.",
-            "es": "No hay un número en la frase, sino un comparativo irregular: peor.",
-            "de": "Es gibt keine Zahl im Satz, sondern einen unregelmäßigen Komparativ: peor."
+            "es": "No hay un número en la frase, sino un comparativo irregular: peor."
           }
         },
         {
           "text": {
-            "hu": "főnév: tanto/a/os/as",
             "en": "a noun: tanto/a/os/as",
-            "es": "sustantivo con tanto/a",
-            "de": "ein Substantiv: tanto/a/os/as"
+            "es": "sustantivo con tanto/a"
           },
           "wrong": {
-            "hu": "Nincs tanto/a-val egyeztetett főnév a mondatban, hanem egy rendhagyó középfok: peor.",
             "en": "There is no noun agreeing with tanto/a in the sentence, but an irregular comparative: peor.",
-            "es": "No hay un sustantivo con concordancia tanto/a en la frase, sino un comparativo irregular: peor.",
-            "de": "Es gibt kein mit tanto/a übereinstimmendes Substantiv im Satz, sondern einen unregelmäßigen Komparativ: peor."
+            "es": "No hay un sustantivo con concordancia tanto/a en la frase, sino un comparativo irregular: peor."
           }
         },
         {
           "text": {
-            "hu": "rendhagyó középfok (mejor/peor/mayor/menor)",
             "en": "irregular comparative (mejor/peor/mayor/menor)",
-            "es": "comparativo irregular",
-            "de": "unregelmäßiger Komparativ (mejor/peor/mayor/menor)"
+            "es": "comparativo irregular"
           }
         }
       ],
@@ -1241,46 +1029,34 @@
       "es": "Compro más de diez cosas en la tienda.",
       "target": "más de diez",
       "tr": {
-        "hu": "Több mint tíz dolgot veszek a boltban.",
         "en": "I buy more than ten things at the store.",
-        "es": "Compro más de diez cosas en la tienda.",
-        "de": "Ich kaufe mehr als zehn Dinge im Laden."
+        "es": "Compro más de diez cosas en la tienda."
       },
       "options": [
         {
           "text": {
-            "hu": "szám: más/menos de",
             "en": "a number: más/menos de",
-            "es": "número con más/menos de",
-            "de": "eine Zahl: más/menos de"
+            "es": "número con más/menos de"
           }
         },
         {
           "text": {
-            "hu": "főnév: tanto/a/os/as",
             "en": "a noun: tanto/a/os/as",
-            "es": "sustantivo con tanto/a",
-            "de": "ein Substantiv: tanto/a/os/as"
+            "es": "sustantivo con tanto/a"
           },
           "wrong": {
-            "hu": "Nincs tanto/a-val egyeztetett főnév a mondatban, hanem egy szám más után: más de diez.",
             "en": "There is no noun agreeing with tanto/a in the sentence, but a number after más: más de diez.",
-            "es": "No hay un sustantivo con concordancia tanto/a en la frase, sino un número después de más: más de diez.",
-            "de": "Es gibt kein mit tanto/a übereinstimmendes Substantiv im Satz, sondern eine Zahl nach más: más de diez."
+            "es": "No hay un sustantivo con concordancia tanto/a en la frase, sino un número después de más: más de diez."
           }
         },
         {
           "text": {
-            "hu": "rendhagyó középfok (mejor/peor/mayor/menor)",
             "en": "irregular comparative (mejor/peor/mayor/menor)",
-            "es": "comparativo irregular",
-            "de": "unregelmäßiger Komparativ (mejor/peor/mayor/menor)"
+            "es": "comparativo irregular"
           },
           "wrong": {
-            "hu": "Nincs rendhagyó középfok a mondatban, hanem egy szám más után: más de diez.",
             "en": "There is no irregular comparative in the sentence, but a number after más: más de diez.",
-            "es": "No hay un comparativo irregular en la frase, sino un número después de más: más de diez.",
-            "de": "Es gibt keinen unregelmäßigen Komparativ im Satz, sondern eine Zahl nach más: más de diez."
+            "es": "No hay un comparativo irregular en la frase, sino un número después de más: más de diez."
           }
         }
       ],
