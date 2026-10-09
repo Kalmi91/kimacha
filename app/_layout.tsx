@@ -31,7 +31,6 @@ initI18n();
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
     ...FONT_FILES,
   });
   const [onboardingDone, setOnboardingDone] = useState<boolean | null>(null);

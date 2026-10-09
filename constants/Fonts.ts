@@ -4,7 +4,6 @@
 // ShipporiMincho (8,6 MB) helyett Spectral-Light (a PLAN-temak.md 2B/2. pontja szerint).
 
 export const FONT_NAMES = [
-  'ArchivoBlack',
   'PoiretOne',
   'JosefinSans',
   'AlfaSlabOne',
@@ -38,7 +37,6 @@ export const FONT_NAMES = [
 type FontName = (typeof FONT_NAMES)[number];
 
 export const FONT_FILES: Record<FontName, number> = {
-  ArchivoBlack: require('../assets/fonts/ArchivoBlack-Regular.ttf'),
   PoiretOne: require('../assets/fonts/PoiretOne-Regular.ttf'),
   JosefinSans: require('../assets/fonts/JosefinSans-Regular.ttf'),
   AlfaSlabOne: require('../assets/fonts/AlfaSlabOne-Regular.ttf'),
@@ -79,7 +77,6 @@ const gf = (family: string, license: string = OFL): FontLicense => ({
 });
 
 export const FONT_LICENSES: Record<FontName, FontLicense> = {
-  ArchivoBlack: gf('Archivo Black'),
   PoiretOne: gf('Poiret One'),
   JosefinSans: gf('Josefin Sans'),
   AlfaSlabOne: gf('Alfa Slab One'),

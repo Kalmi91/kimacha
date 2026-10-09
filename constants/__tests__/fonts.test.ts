@@ -10,8 +10,8 @@ const ROOT = join(__dirname, '..', '..');
 const FONTS_TS = readFileSync(join(ROOT, 'constants', 'Fonts.ts'), 'utf8');
 
 describe('constants/Fonts.ts', () => {
-  it('29 egyedi betűnév, a PLAN-temak 2B listája (ShipporiMincho helyett Spectral-Light)', () => {
-    expect(FONT_NAMES).toHaveLength(29);
+  it('28 egyedi betűnév, a PLAN-temak 2B listája (ShipporiMincho helyett Spectral-Light)', () => {
+    expect(FONT_NAMES).toHaveLength(28);
     expect(new Set(FONT_NAMES).size).toBe(FONT_NAMES.length);
     expect(FONT_NAMES).toContain('Spectral-Light');
     expect(FONT_NAMES).not.toContain('ShipporiMincho');
@@ -46,9 +46,8 @@ describe('constants/Fonts.ts', () => {
     }
   });
 
-  it('a _layout.tsx useFonts-ja megkapja a FONT_FILES-t, a SpaceMono marad', () => {
+  it('a _layout.tsx useFonts-ja megkapja a FONT_FILES-t', () => {
     const layout = readFileSync(join(ROOT, 'app', '_layout.tsx'), 'utf8');
     expect(layout).toContain('...FONT_FILES');
-    expect(layout).toContain("SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf')");
   });
 });
