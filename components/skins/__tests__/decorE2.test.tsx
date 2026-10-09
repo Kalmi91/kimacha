@@ -1,6 +1,6 @@
-// a diszlexia, plakat, bauhaus, popart, szecesszio, kalocsai, memphis, kodex és
-// graffiti dísze: a slotok kirajzolják a díszt az alap tartalom körül (testID-k: decor- = tiszta dísz,
-// skin- = tartalmat csomagoló / valós adatot mutató elem), sima View/Text, SVG nélkül.
+// the decoration of the diszlexia, plakat, bauhaus, popart, szecesszio, kalocsai, memphis, kodex and
+// graffiti themes: the slots draw the decoration around the base content (testIDs: decor- = pure decoration,
+// skin- = an element wrapping content / showing real data), plain View/Text, no SVG.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -50,14 +50,14 @@ async function mountSkin(skin: SkinId, extra?: React.ReactNode) {
     </ThemeProvider>,
   );
   await flush();
-  // a fejléc és a kártya alap tartalma mindig megmarad a dísz körül
+  // the header's and the card's base content always stays around the decoration
   for (const text of ['fejlec', 'kartya']) expect(view.getByText(text)).toBeTruthy();
   return view;
 }
 
 const light = (id: SkinId) => SKINS[id].colors.light!;
 
-describe('a 9 E2 téma díszei (PLAN-temak 6E)', () => {
+describe('decor of the 9 E2 themes', () => {
   let scheme: jest.SpyInstance;
   beforeEach(async () => {
     scheme = jest.spyOn(RN, 'useColorScheme').mockReturnValue('light');
@@ -68,7 +68,7 @@ describe('a 9 E2 téma díszei (PLAN-temak 6E)', () => {
     await getDb().setSkin(null);
   });
 
-  it('a regiszter a 9 témát tölti, mindegyiknek van legalább egy slotja', () => {
+  it('the registry fills the 9 themes, each has at least one slot', () => {
     for (const id of ['diszlexia', 'plakat', 'bauhaus', 'popart', 'szecesszio', 'kalocsai', 'memphis', 'kodex', 'graffiti'] as const) {
       const decor = SKIN_DECOR[id];
       expect(decor).toBeDefined();
@@ -76,7 +76,7 @@ describe('a 9 E2 téma díszei (PLAN-temak 6E)', () => {
     }
   });
 
-  it('diszlexia: sárga olvasó-sáv a szó mögött (a szó megmarad), sötét módban a sötét sáv-szín', async () => {
+  it('diszlexia: yellow reading bar behind the word (the word stays), in dark mode the dark bar color', async () => {
     const view = await mountSkin('diszlexia');
     expect(view.getByText('casa')).toBeTruthy();
     expect(view.getByTestId('skin-diszlexia-word')).toBeTruthy();
@@ -93,7 +93,7 @@ describe('a 9 E2 téma díszei (PLAN-temak 6E)', () => {
     dark.unmount();
   });
 
-  it('plakat: -22°-os piros sáv, fekete kör, szlogen-csík megafonnal, a szó -6°-ban', async () => {
+  it('plakat: -22° red band, black circle, slogan strip with a megaphone, the word at -6°', async () => {
     const view = await mountSkin(
       'plakat',
       <>
@@ -111,19 +111,19 @@ describe('a 9 E2 téma díszei (PLAN-temak 6E)', () => {
     expect(view.getByText('📣')).toBeTruthy();
     expect(flat(view.getByText('szo').props.style).transform).toEqual([{ rotate: '-6deg' }]);
     expect(flat(view.getByText('torzs').props.style)?.transform).toBeUndefined();
-    // a Saját mix előnézete is forgatja a szót, a többi téma nem
+    // the My mix preview rotates the word too, the other themes do not
     expect(previewTextStyle(SKINS.plakat, 'word', 30).transform).toEqual([{ rotate: '-6deg' }]);
     expect(previewTextStyle(SKINS.plakat, 'body', 14).transform).toBeUndefined();
     expect(previewTextStyle(SKINS.bauhaus, 'word', 30).transform).toBeUndefined();
     view.unmount();
   });
 
-  it('plakat: nincs sarló-kalapács és vörös csillag', () => {
+  it('plakat: no hammer-and-sickle and red star', () => {
     const src = fs.readFileSync(path.join(__dirname, '..', 'plakat.tsx'), 'utf8');
     expect(src).not.toMatch(/☭|⚒|🔨|⭐|★|☆|✯|🌟|🚩/);
   });
 
-  it('bauhaus: kör-négyzet-háromszög a fejléc fölött, sárga kör a sarokban (levágva), kék sáv balra', async () => {
+  it('bauhaus: circle-square-triangle above the header, yellow circle in the corner (cropped), blue bar on the left', async () => {
     const view = await mountSkin('bauhaus');
     const c = light('bauhaus');
     expect(flat(view.getByTestId('decor-bauhaus-circle').props.style).backgroundColor).toBe(c.a);
@@ -135,7 +135,7 @@ describe('a 9 E2 téma díszei (PLAN-temak 6E)', () => {
     view.unmount();
   });
 
-  it('popart: legfeljebb 150 Ben-Day pötty (a, 40%), buborék-farok a kártya bal alsó sarkán', async () => {
+  it('popart: at most 150 Ben-Day dots (a, 40%), speech-bubble tail at the bottom-left corner of the card', async () => {
     const view = await mountSkin('popart');
     const c = light('popart');
     const dots = view.getAllByTestId('decor-popart-dot');
@@ -148,7 +148,7 @@ describe('a 9 E2 téma díszei (PLAN-temak 6E)', () => {
     view.unmount();
   });
 
-  it('szecesszió: 1 px-es b külső keret 3 px réssel (íves tető), virág a szó fölött és a cím két oldalán', async () => {
+  it('szecesszio: 1 px b outer border with a 3 px gap (arched top), flower above the word and on both sides of the title', async () => {
     const view = await mountSkin('szecesszio');
     const c = light('szecesszio');
     expect(flat(view.getByTestId('decor-szecesszio-outer').props.style)).toMatchObject({
@@ -164,12 +164,12 @@ describe('a 9 E2 téma díszei (PLAN-temak 6E)', () => {
       borderBottomLeftRadius: 12,
     });
     expect(view.getAllByTestId('decor-szecesszio-bloom-petal')).toHaveLength(8);
-    // nem-cím fejlécnél: virág - vonal - virág sor
+    // on a non-title header: a flower - line - flower row
     expect(view.getByTestId('decor-szecesszio-ornament')).toBeTruthy();
     expect(view.getAllByTestId('decor-szecesszio-flower')).toHaveLength(2);
     view.unmount();
 
-    // a fejléc maga a cím: virág mindkét oldalán, sor nélkül
+    // the header is the title itself: a flower on both sides, no row
     await getDb().setSkin('szecesszio');
     const title = render(
       <ThemeProvider>
@@ -185,7 +185,7 @@ describe('a 9 E2 téma díszei (PLAN-temak 6E)', () => {
     title.unmount();
   });
 
-  it('kalocsai: öt színű virág-sor, növény-ikon a két felső sarokban, a másodlagos gomb szaggatott b keretű', async () => {
+  it('kalocsai: five-color flower row, plant icon in the two top corners, the secondary button has a dashed b border', async () => {
     const view = await mountSkin(
       'kalocsai',
       <>
@@ -205,7 +205,7 @@ describe('a 9 E2 téma díszei (PLAN-temak 6E)', () => {
     view.unmount();
   });
 
-  it('memphis: cikcakk (b), sárga kör, türkiz (c) háromszög a háttérben', async () => {
+  it('memphis: zigzag (b), yellow circle, turquoise (c) triangle in the background', async () => {
     const view = await mountSkin('memphis');
     const c = light('memphis');
     const bars = view.getAllByTestId('decor-memphis-zigzag-bar');
@@ -216,9 +216,9 @@ describe('a 9 E2 téma díszei (PLAN-temak 6E)', () => {
     view.unmount();
   });
 
-  it('kódex: belső keret, iniciálé arany dobozban piros betűvel, a többi betű a szó elemében', async () => {
+  it('kodex: inner border, initial in a gold box with a red letter, the other letters in the word element', async () => {
     const view = await mountSkin('kodex');
-    // a mountSkin "casa" szava: C iniciálé + asa
+    // the mountSkin "casa" word: C drop cap + asa
     const c = light('kodex');
     expect(view.getByText('asa')).toBeTruthy();
     expect(view.getAllByTestId('skin-kodex-initial')).toHaveLength(1);
@@ -232,7 +232,7 @@ describe('a 9 E2 téma díszei (PLAN-temak 6E)', () => {
     view.unmount();
   });
 
-  it('graffiti: -2°-os kártya, két csorgás a keret alján, szó b, cím c színnel', async () => {
+  it('graffiti: -2° card, two drips at the bottom of the border, word b, title c color', async () => {
     const view = await mountSkin(
       'graffiti',
       <SkinHeader>
@@ -249,7 +249,7 @@ describe('a 9 E2 téma díszei (PLAN-temak 6E)', () => {
     view.unmount();
   });
 
-  it('a díszek fájljai csak View / Text-et használnak: nincs SVG, expo-image vagy más natív függőség', () => {
+  it('the decor files use only View / Text: no SVG, expo-image or other native dependency', () => {
     const dir = path.join(__dirname, '..');
     for (const file of [
       'partsE2.tsx', 'diszlexia.tsx', 'plakat.tsx', 'bauhaus.tsx', 'popart.tsx', 'szecesszio.tsx', 'kalocsai.tsx',

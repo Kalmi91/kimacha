@@ -1,5 +1,5 @@
-// az onboarding brutalista palettán (nyelv-gombok dobozként), classic
-// palettán a mai gombok. Mock-minta: onboarding.test.tsx.
+// The onboarding on the brutalist palette (language buttons as boxes), today's buttons on the classic
+// palette. Mock pattern: onboarding.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-router', () => ({
@@ -22,8 +22,8 @@ const flush = async (times = 6) => {
   }
 };
 
-describe('Onboarding, neo-brutalista (NY19)', () => {
-  it('brand palettán a nyelv- és start-gomb BrutalBox, a lépések működnek', async () => {
+describe('Onboarding, neo-brutalist', () => {
+  it('with the brand palette the language and start buttons are BrutalBox, the steps work', async () => {
     await getDb().setGrammarPalette('brand');
     const view = render(<ThemeProvider><OnboardingScreen /></ThemeProvider>);
     await flush();
@@ -31,14 +31,14 @@ describe('Onboarding, neo-brutalista (NY19)', () => {
     fireEvent.press(view.getByTestId('onboarding-lang-en'));
     expect(view.queryByTestId('onboarding-start')).toBeTruthy();
     fireEvent.press(view.getByTestId('onboarding-start'));
-    // bevezető + téma-lépés a szint előtt.
+    // intro + theme step before the level.
     fireEvent.press(view.getByTestId('onboarding-intro-start'));
     fireEvent.press(view.getByTestId('onboarding-theme-next'));
     expect(view.queryByText('Choose level')).toBeTruthy();
     view.unmount();
   });
 
-  it('classic palettán a mai kinézet: nincs BrutalBox gomb', async () => {
+  it('with the classic palette the current look stays: no BrutalBox button', async () => {
     await getDb().setGrammarPalette('classic');
     const view = render(<ThemeProvider><OnboardingScreen /></ThemeProvider>);
     await flush();

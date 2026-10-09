@@ -1,9 +1,9 @@
 import { View, type StyleProp, type ViewStyle } from 'react-native';
 
-// a díszek további közös építőkockái (a parts.tsx mellett). Csak View, border /
-// borderRadius / transform trükkökkel (nincs SVG, nincs új natív függőség).
+// further shared building blocks of the decor (next to parts.tsx). Only View, border /
+// borderRadius / transform tricks (no SVG, no new native dependency).
 
-// Háromszög, csúcsa fent: a border-trükk (a két oldalsó border átlátszó, az alsó színes).
+// Triangle, apex up: the border trick (the two side borders transparent, the bottom one colored).
 export function Triangle({
   width,
   height,
@@ -38,7 +38,7 @@ export function Triangle({
   );
 }
 
-// Virág: `petals` szirom (kör) a közép körül + középpont.
+// Flower: `petals` petals (circles) around the center + a center dot.
 export function Flower({
   size,
   petals = 5,
@@ -90,7 +90,7 @@ export function Flower({
   );
 }
 
-// Növény-ikon: virág egy száron, két levéllel (kalocsai). 18 x 30.
+// Plant icon: a flower on a stem, with two leaves (kalocsai). 18 x 30.
 export function Plant({
   flower,
   center,
@@ -138,7 +138,7 @@ export function Plant({
   );
 }
 
-// Cikcakk-vonal: `segments` ferde sáv, felváltva +/- szögben; egy lépés `step` px széles, `rise` px magas.
+// Zigzag line: `segments` slanted bars, alternating +/- angle; one step is `step` px wide, `rise` px high.
 export function Zigzag({
   segments,
   color,

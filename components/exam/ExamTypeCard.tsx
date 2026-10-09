@@ -14,18 +14,18 @@ import { stripSentencePunct } from '@/lib/sentenceCards';
 import { useTheme } from '@/lib/ThemeContext';
 import ExamButton from './ExamButton';
 
-// szó- vagy mondat-beírás. Helyes válasz
-// után NINCS visszajelzés, a vizsga megy tovább; hibás (vagy "nem tudom") válasz
-// után mutatja a helyeset, és a "Next" lép tovább. Nincs hang: a vizsgában nincs hallás.
+// word or sentence typing. After a correct answer there is NO feedback, the exam moves on; after a
+// wrong (or "I don't know") answer it shows the correct one, and "Next" moves on. No sound: the
+// exam has no listening.
 type Props = {
   prompt: string;
-  /** Több jelentésű szó kis mondata; a `*jelölt*` rész kiemelve. */
+  /** A short sentence for a word with several meanings; the `*marked*` part is highlighted. */
   hint?: string;
   answer: string;
-  /** További elfogadott válaszok (pl. a nyelvtani teszt mondat-átírásánál); a hibás után az `answer` látszik. */
+  /** Further accepted answers (e.g. for the sentence transformation of the grammar test); after a wrong answer `answer` is shown. */
   accept?: string[];
   sentence: boolean;
-  /** A tanult nyelv kódja, a placeholder feliratához. */
+  /** Code of the learned language, for the placeholder caption. */
   targetLang: string;
   strictAccents: boolean;
   onDone: (correct: boolean) => void;
@@ -50,7 +50,7 @@ export default function ExamTypeCard({ prompt, hint, answer, accept, sentence, t
     else setMissed(true);
   };
 
-  // a Check (és hibás válasz után a Next) a billentyűzet fölé dokkolt sáv, ahogy a szókártyán (DockSlot).
+  // Check (and Next after a wrong answer) is a bar docked above the keyboard, as on the word card (DockSlot).
   const { docked, padBottom } = useDockedAction(
     missed
       ? { label: `${s.card.next} →`, tone: 'next', testID: 'exam-next', onPress: () => onDone(false) }

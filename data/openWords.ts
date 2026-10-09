@@ -1,10 +1,10 @@
-// a spanyol szavak egyetlen forrása a
-// data/words-open (601 kártya, A1-B2). A kártyák a régi `WordEntry` alakjában
-// jönnek (id = a kártya `order`-e, 1-601), hogy a keresők és a hívóik (glossza,
-// kevert felolvasás, szófaj-index, igealak-térkép) változatlan aláírással élnek.
-// A words-openben nincs `id`, `gender` és A0/C1/C2 szint: a nemet a névelő adja
-// (a régi annotáló script is a névelőből vette), a szélső szintek az A1-re és a
-// B2-re esnek (lásd openLevelOf, ugyanaz a szabály, mint a tableDeck PCIC_LEVEL_CEILING-je).
+// The single source of the Spanish words is
+// data/words-open (601 cards, A1-B2). The cards come in the shape of the old `WordEntry`
+// (id = the card's `order`, 1-601), so that the lookups and their callers (glossary,
+// mixed read-aloud, part-of-speech index, verb-form map) live on with an unchanged signature.
+// words-open has no `id`, `gender` and A0/C1/C2 levels: the gender comes from the article
+// (the old annotating script took it from the article too), the edge levels
+// fall onto A1 and B2 (see openLevelOf, the same rule as PCIC_LEVEL_CEILING of tableDeck).
 
 import type { Level, WordEntry, WordGender, WordPos } from '@/data/words';
 import { encliticBases, formsOfCard } from '@/lib/esForms';
@@ -31,12 +31,12 @@ interface OpenCard {
   hint_en?: string;
 }
 
-/** A words-open kártya WordEntry-alakban; `openPos` a words-open nyers szófaja (conj, det, interj is). */
+/** A words-open card in WordEntry shape; `openPos` is the raw part of speech of words-open (conj, det, interj too). */
 type OpenWord = WordEntry & { lemma: string; openPos: string };
 
 const OPEN_LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2'];
 
-// A WordPos-ba eső szófajok; conj/det/interj nem képezhető le, azoknak `pos` nélkül marad a kártya.
+// The parts of speech that fall into WordPos; conj/det/interj cannot be mapped, those cards stay without `pos`.
 const OPEN_POS_TO_WORD_POS: Record<string, WordPos> = {
   noun: 'noun',
   verb: 'verb',
@@ -81,7 +81,7 @@ const FILES: OpenCard[][] = [openA1, openA2, openB1, openB2] as OpenCard[][];
 
 export const openWords: OpenWord[] = FILES.flatMap((cards) => cards.map(toWord));
 
-/** A words-open szintje: A0 → A1, C1/C2 → B2 (A1 az alsó, B2 a felső határ). */
+/** The level in words-open: A0 → A1, C1/C2 → B2 (A1 is the lower, B2 the upper bound). */
 export function openLevelOf(level: Level): Level {
   if (level === 'A0') return 'A1';
   if (level === 'C1' || level === 'C2') return 'B2';
@@ -92,19 +92,19 @@ export function getOpenWordsForLevel(level: Level): OpenWord[] {
   return openWords.filter((w) => w.level === level);
 }
 
-/** A szinttől (a clamp után) kumulatívan A1-ig visszamenően minden kártya. */
+/** Every card from the level (after the clamp) cumulatively back down to A1. */
 export function getOpenWordsUpToLevel(level: Level): OpenWord[] {
   const idx = OPEN_LEVELS.indexOf(openLevelOf(level));
   const allowed = new Set(OPEN_LEVELS.slice(0, idx + 1));
   return openWords.filter((w) => allowed.has(w.level));
 }
 
-// Ragozott alak -> words-open lemma (glossza-lefedettség, a régi szólista kivezetése
-// utáni javítás): a régi lista a ragozott alakokat is hordozta, a words-open csak a
-// tőalakot. Az index kizárólag words-open kártyából épül (lib/esForms: igéknél a ragozó
-// motor alakjai, a motor által nem ragozott igéknél a bő tőváltozat-készlet, igenevek,
-// főnévnél/melléknévnél a többes és a nemi alak). Az igéhez írt névmás (verlo, ayúdame)
-// a keresésnél válik le.
+// Inflected form -> words-open lemma (glossary coverage, the fix after retiring
+// the old word list): the old list carried the inflected forms too, words-open only the
+// base form. The index is built exclusively from words-open cards (lib/esForms: for verbs the forms of the
+// conjugation engine, for verbs the engine does not conjugate the broad set of stem variants, the non-finite
+// forms, for nouns/adjectives the plural and the gendered form). The pronoun written onto a verb (verlo, ayúdame)
+// is split off at lookup time.
 const FORM_ARTICLE = /^(el|la|los|las|un|una|unos|unas)\s+/;
 const FORM_DEPS = { conjugate, TENSES, esPlural, esFeminine };
 
@@ -118,25 +118,25 @@ function buildFormIndex(): Map<string, OpenWord> {
   const folded = new Map<string, OpenWord>();
   const add = (form: string | null, card: OpenWord) => {
     const key = form?.trim().toLowerCase();
-    // Az első kártya nyer, így az alacsonyabb szint birtokol egy többkártyás alakot.
+    // The first card wins, so the lower level owns a form shared by several cards.
     if (key && !index.has(key)) index.set(key, card);
     if (key && !folded.has(foldAccents(key))) folded.set(foldAccents(key), card);
   };
   for (const card of openWords) {
     for (const f of formsOfCard(card.es, card.openPos, FORM_DEPS)) add(f, card);
-    // az igéhez írt névmás levágása az infinitívre is kell (verlo): a fejszó is bekerül az ékezetmentes indexbe
+    // the pronoun written onto the verb has to be cut off the infinitive too (verlo): the head word also goes into the accent-free index
     if (card.openPos === 'verb') for (const alt of card.es.split(' / ')) add(alt, card);
   }
   foldedIndex = folded;
   return index;
 }
 
-/** A ragozott, többes vagy nemi alak words-open kártyája (a tőalakot a hívó már megkereste); csak spanyolra. */
+/** The words-open card of an inflected, plural or gendered form (the caller has already looked up the base form); Spanish only. */
 export function findOpenWordByForm(norm: string): OpenWord | undefined {
   if (!formIndex) formIndex = buildFormIndex();
   const direct = formIndex.get(norm) ?? formIndex.get(norm.replace(FORM_ARTICLE, ''));
   if (direct) return direct;
-  // verlo, ayúdame, repetirlo: a névmás nélküli tő ige-alak (ékezet nélkül keresve)
+  // verlo, ayúdame, repetirlo: the base verb form without the pronoun (looked up without accents)
   for (const base of encliticBases(norm)) {
     const hit = foldedIndex?.get(foldAccents(base));
     if (hit && hit.openPos === 'verb') return hit;

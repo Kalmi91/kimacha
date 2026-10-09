@@ -12,7 +12,7 @@ import { onActiveMinute, onUsageMilestone, onDayRollover } from '@/lib/usageTime
 import { pickDayRolloverMessage } from '@/lib/dayRollover';
 import { isLongHaulMilestone, pickMilestoneLine } from '@/lib/usageMilestones';
 
-// "+1 perc wauuuuuuuu" popup: fires once per full active minute (usageTimer's
+// "+1 minute wauuuuuuuu" popup: fires once per full active minute (usageTimer's
 // onActiveMinute), fades/slides in, sits for a couple seconds, fades out.
 // Mounted once in the root layout so it can appear over any screen/tab.
 //
@@ -26,7 +26,7 @@ const MILESTONE_VISIBLE_MS = 4000;
 const ROLLOVER_VISIBLE_MS = 8000;
 const ANIM_MS = 250;
 
-// `hidden` (az onboarding alatt) nem rajzol semmit, hogy ne takarja el a címet.
+// `hidden` (during onboarding) draws nothing, so it does not cover the title.
 export default function UsageToast({ hidden = false }: { hidden?: boolean }) {
   const { theme } = useTheme();
   const colors = Colors[theme];
@@ -122,7 +122,7 @@ export default function UsageToast({ hidden = false }: { hidden?: boolean }) {
 
   if (!visible || hidden) return null;
 
-  // brutalista palettán BrutalBox (sarok 0, tömör árnyék), nem pirula.
+  // brutalist palette: BrutalBox (corner 0, solid shadow), not a pill.
   if (g.brutal) {
     const fill = isMilestone ? 'b' : 'a';
     return (

@@ -1,6 +1,5 @@
-// az átmenés 80%, ugyanaz,
-// mint a feloldás küszöbe és a nyelvtani lecke küszöbe. Egész számokkal számol,
-// hogy 79,9% soha ne kerekedjen 80-ra.
+// The pass mark is 80%, the same as the unlock threshold and the grammar lesson threshold. It works
+// with integers so that 79.9% never rounds to 80.
 
 import type { ExamItemResult, ExamSkill } from './types';
 
@@ -9,10 +8,10 @@ export const EXAM_PASS_PCT = 80;
 export interface ExamScore {
   correct: number;
   total: number;
-  /** Egész százalék, lefelé kerekítve (79,9 -> 79). */
+  /** Whole percent, rounded down (79.9 -> 79). */
   pct: number;
   passed: boolean;
-  /** Készségenként (A4 eredmény-lap, későbbi lépés); csak a szerepelt készségek kulcsai vannak meg. */
+  /** Per skill (result sheet, a later step); only the keys of the skills that occurred are present. */
   bySkill: Partial<Record<ExamSkill, { correct: number; total: number }>>;
 }
 

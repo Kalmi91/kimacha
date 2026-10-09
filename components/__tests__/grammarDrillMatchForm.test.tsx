@@ -1,7 +1,6 @@
-// match/form feladatok a lecke-drillben. A
-// `kinds={['choice','match','form']}` kell, különben a régi (gap/mark-only)
-// kör futna, ahogy a Game fül grammar-choice-ánál is marad
-// (`kinds` prop nélkül).
+// match/form items in the lesson drill. `kinds={['choice','match','form']}` is required, otherwise
+// the old (gap/mark-only) round would run, as it still does for the Game tab's grammar-choice
+// (without a `kinds` prop).
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import GrammarDrill from '../grammar/GrammarDrill';
@@ -106,7 +105,7 @@ describe('GrammarDrill: form item', () => {
   });
 });
 
-// a form item `accept` mezője működik (két helyes alak).
+// the `accept` field of a form item works (two correct forms).
 describe('GrammarDrill: form item accept', () => {
   const withAccept: LessonV2 = { ...lesson, items: [{ ...(lesson.items[1] as object), accept: ['somos también'] } as LessonV2['items'][number]] };
 
@@ -129,7 +128,7 @@ describe('GrammarDrill: form item accept', () => {
   });
 });
 
-// a `kinds` prop szűri a kört a kért fajtákra.
+// the `kinds` prop filters the round down to the requested kinds.
 describe('GrammarDrill: kinds filter', () => {
   const mixedLesson: LessonV2 = {
     ...lesson,

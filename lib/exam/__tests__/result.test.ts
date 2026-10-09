@@ -1,12 +1,11 @@
-// a szintvizsga eredménye (átment-e, legjobb
-// pontszám, szintenként) a memory DB-n; a natív lib/database.ts ugyanezt a két segédet
-// (lib/exam/result.ts) hívja, ezért ez a teszt a közös viselkedést fedi.
+// The level exam result (passed or not, best score, per level) on the memory DB; the native
+// lib/database.ts calls the same two helpers (lib/exam/result.ts), so this test covers the shared behaviour.
 
 import { getDb } from '../../database.web';
 import { EXAM_PROGRESS_KEY, mergeExamResult } from '../result';
 
 describe('mergeExamResult', () => {
-  it('az első próba önmaga az eredmény', () => {
+  it('the first attempt is itself the result', () => {
     expect(mergeExamResult(undefined, 60, false, '2026-10-01')).toEqual({
       passed: false,
       best: 60,
@@ -16,13 +15,13 @@ describe('mergeExamResult', () => {
     });
   });
 
-  it('az átmenés és a legjobb pontszám nem vész el egy gyengébb újrapróbán', () => {
+  it('the pass and the best score are not lost on a weaker retry', () => {
     const first = mergeExamResult(undefined, 90, true, '2026-10-01');
     const second = mergeExamResult(first, 70, false, '2026-10-02');
     expect(second).toEqual({ passed: true, best: 90, bestAt: '2026-10-01', last: 70, lastAt: '2026-10-02' });
   });
 
-  it('a jobb pontszám felülírja a legjobbat és a napját', () => {
+  it('a better score overwrites the best and its day', () => {
     const first = mergeExamResult(undefined, 60, false, '2026-10-01');
     const second = mergeExamResult(first, 85, true, '2026-10-03');
     expect(second).toEqual({ passed: true, best: 85, bestAt: '2026-10-03', last: 85, lastAt: '2026-10-03' });
@@ -32,11 +31,11 @@ describe('mergeExamResult', () => {
 describe('getExamResults / saveExamResult (memory db)', () => {
   const db = getDb();
 
-  it('mentés előtt nincs eredmény', async () => {
+  it('no result before saving', async () => {
     expect(await db.getExamResults()).toEqual({});
   });
 
-  it('a mentett eredmény visszaolvasható, szintenként külön', async () => {
+  it('the saved result can be read back, separately per level', async () => {
     await db.saveExamResult('A1', 60, false, '2026-10-01');
     await db.saveExamResult('A2', 95, true, '2026-10-02');
     expect(await db.getExamResults()).toEqual({
@@ -45,14 +44,14 @@ describe('getExamResults / saveExamResult (memory db)', () => {
     });
   });
 
-  it('az újrapróba összevonva ment: átmenés + legjobb megmarad', async () => {
+  it('a retry saves merged: the pass + best stay', async () => {
     await db.saveExamResult('A1', 88, true, '2026-10-03');
     const saved = await db.saveExamResult('A1', 50, false, '2026-10-04');
     expect(saved).toEqual({ passed: true, best: 88, bestAt: '2026-10-03', last: 50, lastAt: '2026-10-04' });
     expect((await db.getExamResults()).A1).toEqual(saved);
   });
 
-  it('a `level-exam` game_progress sorokban él, és a backup export/import hozza vissza', async () => {
+  it('it lives in `level-exam` game_progress rows, and backup export/import brings it back', async () => {
     const rows = await db.getGameProgress(EXAM_PROGRESS_KEY);
     expect(rows.map((r) => r.itemId).sort()).toEqual(['A1', 'A2']);
     expect(rows.find((r) => r.itemId === 'A1')?.state).toBe('passed');

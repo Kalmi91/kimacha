@@ -4,12 +4,12 @@ import { ON_FILL } from '@/constants/GrammarPalettes';
 import { legibleOn, textContrastMin } from '@/constants/Skins';
 import { useSkin } from '@/lib/useSkin';
 
-// a charDiff-sor jelölései (rossz betű = piros, kihagyott betű = borostyán kitöltés),
-// olvasható szöveggel minden témán (a borostyán + aláhúzás a kihagyott betű, a pirosaktól
-// elkülönítve). A kihagyott betű szövege sötét (a fehér a borostyánon 1,9:1
-// volt). A rossz betűé fehér marad, ha az átmegy (Neo-brutál / Klasszikus rendszer-betűn a 20 px
-// félkövér nagy szöveg, 3,76:1); egyedi betűnél, ahol a KText elhagyja a félkövért, 4,5 kell, ott
-// a szöveg sötétedik (legibleOn).
+// Markings of the charDiff row (wrong letter = red, missed letter = amber fill),
+// with readable text on every theme (amber + underline marks the missed letter, set apart
+// from the reds). The text of the missed letter is dark (white on amber was 1.9:1).
+// The wrong letter's text stays white if that passes (on Neo-brutalist / Classic with the system font the 20 px
+// bold large text, 3.76:1); for a custom font, where KText drops the bold, 4.5 is needed, and there
+// the text darkens (legibleOn).
 export function useDiffStyles(): { wrong: TextStyle; missing: TextStyle } {
   const { skin } = useSkin();
   return {

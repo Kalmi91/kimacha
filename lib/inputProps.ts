@@ -1,9 +1,9 @@
 // Shared TextInput props for every ANSWER field (typing card, practice field,
 // exam typing).
 //
-// User feedback: "azt meg tudod csinálni, hogy az applikációval
-// kikapcsoltatod a telefonom auto complitjét? hogy itt felajánlja a szavakat ez
-// zavaró". The fields already carried `autoCorrect={false}`, which only turns
+// User feedback: "can you make it so that the app
+// turns off my phone's autocomplete? that it offers the words here is
+// disturbing". The fields already carried `autoCorrect={false}`, which only turns
 // off the correction, not the suggestion strip or the autofill popup, so Gboard
 // kept offering the very word the card is asking for. The rest of the flags do
 // that: no suggestions, no autofill, no spell-check underline.

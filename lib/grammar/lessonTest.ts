@@ -1,12 +1,12 @@
-// a nyelvtani
-// lecke végi teszt. 10 kérdés a lecke SAJÁT tételeiből (a lecke mondatai mehetnek, N1),
-// vegyes fajtával; az átmenés 80% (mint a szintvizsgánál); a teszt NEM számít a lecke
-// %-ába (lib/grammar/lessonScore.ts), külön "Test passed" jelet kap; a bukás nem zár le semmit.
+// The grammar
+// end-of-lesson test. 10 questions from the lesson's OWN items (the lesson's sentences are allowed),
+// of mixed kinds; the pass mark is 80% (as for the level exam); the test does NOT count toward the lesson's
+// % (lib/grammar/lessonScore.ts), it gets a separate "Test passed" badge; failing locks nothing.
 //
-// A tárolás a meglévő `grammar-course` game_progress táblában, leckénként egy sor:
+// Storage is in the existing `grammar-course` game_progress table, one row per lesson:
 //   `${topic}:lessontest`  state 'passed' | 'failed'  data LessonTestResult
-// A `lessonScoresByTopic` (lecke-%) és a `doneGrammarTopicProgress` (kész-jelzés) ezt a sort
-// nem olvassa (más sor-forma, más state), így a teszt a lecke %-át nem érinti. Nincs új tábla.
+// `lessonScoresByTopic` (lesson %) and `doneGrammarTopicProgress` (done flag) do not read this row
+// (different row shape, different state), so the test does not affect the lesson's %. No new table.
 
 import { examPassed, EXAM_PASS_PCT } from '@/lib/exam/score';
 import {
@@ -36,17 +36,17 @@ export const LESSON_TEST_PASS_PCT = EXAM_PASS_PCT;
 const KEY_SUFFIX = ':lessontest';
 export const lessonTestKey = (topicId: string) => `${topicId}${KEY_SUFFIX}`;
 
-/** Egy lecke mentett teszt-eredménye. */
+/** The saved test result of one lesson. */
 export interface LessonTestResult {
-  /** Egyszer már átment-e (az újrapróba ezt nem veszi el). */
+  /** Whether it has been passed at least once (a retry does not take this away). */
   passed: boolean;
-  /** A legjobb pontszám, egész százalék. */
+  /** The best score, whole percent. */
   best: number;
   bestAt: string;
-  /** A legutóbbi próba pontszáma, egész százalék. */
+  /** The score of the latest attempt, whole percent. */
   last: number;
   lastAt: string;
-  /** A legutóbbi próba elrontott tételeinek id-ja: a következő próba ezeket húzza előre. */
+  /** Ids of the items missed in the latest attempt: the next attempt pulls these forward. */
   missed: string[];
 }
 
@@ -57,7 +57,7 @@ function isResult(data: unknown): data is LessonTestResult {
   return !!d && typeof d.passed === 'boolean' && typeof d.best === 'number' && typeof d.last === 'number';
 }
 
-/** Új próba beolvasztása a korábbi eredménybe: az átmenés és a legjobb pontszám nem vész el. */
+/** Merges a new attempt into the earlier result: the pass and the best score are not lost. */
 export function mergeLessonTestResult(
   prev: LessonTestResult | null | undefined,
   correct: number,
@@ -79,7 +79,7 @@ export function mergeLessonTestResult(
   };
 }
 
-/** Egy lecke teszt-eredménye a haladás-sorokból, vagy null, ha még nem tesztelt. */
+/** A lesson's test result from the progress rows, or null if it has not been tested yet. */
 export function lessonTestFromRows(rows: Row[], topicId: string): LessonTestResult | null {
   const key = lessonTestKey(topicId);
   for (const row of rows) {
@@ -88,7 +88,7 @@ export function lessonTestFromRows(rows: Row[], topicId: string): LessonTestResu
   return null;
 }
 
-/** Azok a leckék, amiken a tanuló átment a teszten (a tanterv-lista "Test passed" jeléhez). */
+/** The lessons whose test the learner has passed (for the syllabus list's "Test passed" badge). */
 export function lessonTestPassedTopics(rows: Row[]): Set<string> {
   const out = new Set<string>();
   for (const row of rows) {
@@ -101,20 +101,20 @@ export function lessonTestPassedTopics(rows: Row[]): Set<string> {
 function hadRound(rows: Row[], topicId: string, kind: GrammarKind): boolean {
   const p = kindProgressFromRows(rows, topicId, kind);
   if (p.best || p.legacy) return true;
-  // A "kész" sor: `${topic}:${kind}` (>= 80%-os kör) vagy a régi, egész-lecke sor (`${topic}`).
+  // The "done" row: `${topic}:${kind}` (a round of >= 80%) or the old whole-lesson row (`${topic}`).
   return rows.some((r) => r.state === 'done' && (r.itemId === `${topicId}:${kind}` || r.itemId === topicId));
 }
 
-/** B1 b: a teszt-gomb akkor él, ha a lecke MINDEN (a %-ba számító) feladat-fajtájából volt már befejezett kör. */
+/** The test button is enabled once there has been a completed round of EVERY exercise kind of the lesson (the ones counting toward the %). */
 export function lessonTestUnlocked(lesson: GrammarTopicData, rows: Row[], topicId: string): boolean {
   const kinds = scoredKinds(lesson);
   return kinds.length > 0 && kinds.every((k) => hadRound(rows, topicId, k));
 }
 
 // ---------------------------------------------------------------------------
-// A kérdések. A lecke-tételek a vizsga-kártyákon (components/exam/*) jelennek meg: ott a
-// helyes válasz után nincs visszajelzés, a hibás után a helyes látszik (A5 c); a magyarázat
-// (a lecke `why`-ja) az eredmény-lapon jön az elrontott tételekhez.
+// The questions. The lesson items appear on the exam cards (components/exam/*): there,
+// a correct answer gets no feedback and after a wrong one the correct answer is shown; the explanation
+// (the lesson's `why`) comes on the result sheet for the missed items.
 
 export type LessonTestView =
   | { card: 'choice'; heading: string; text: string; options: string[]; correctIndex: number }
@@ -126,7 +126,7 @@ export interface LessonTestQuestion {
   id: string;
   kind: GrammarKind;
   view: LessonTestView;
-  /** Az eredmény-lap sora: mit kérdezett, mi a helyes (üres: nincs egyetlen válasz), és miért. */
+  /** The result sheet row: what was asked, what is correct (empty: no single answer), and why. */
   review: { question: string; answer: string; why?: string };
 }
 
@@ -172,7 +172,7 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
   const item = r.item;
   if (isMatchItem(item)) {
     if (item.pairs.length < 2) return null;
-    // A pár {es, en} szó szerint spanyol/angol; a vizsga-kártya bal oldala a TANULT nyelv.
+    // The pair {es, en} is literally Spanish/English; the left side of the exam card is the LEARNED language.
     const learnedIsEn = ctx.learnedLang === 'en';
     const pairs = item.pairs.map((p) => ({ left: learnedIsEn ? p.en : p.es, right: learnedIsEn ? p.es : p.en }));
     return {
@@ -206,7 +206,7 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
       id: item.id,
       kind,
       view: { card: 'choice', heading, text: item.es, options: sh.options, correctIndex: sh.correctIndex },
-      // Az eredmény-lapon a kérdés szövege is látszik, nem csak a mondat.
+      // The result sheet also shows the question text, not just the sentence.
       review: { question: `${heading}\n${item.es}`, answer: sh.options[sh.correctIndex], why: pick(item.tr) },
     };
   }
@@ -256,7 +256,7 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
       review: { question: pick(item.prompt), answer: item.es },
     };
   }
-  // A diktálás hallgatást kérne, a teszt (mint a vizsga) hang nélkül megy: kimarad.
+  // Dictation would require listening, and the test (like the exam) runs without sound: it is left out.
   return null;
 }
 
@@ -265,17 +265,17 @@ interface BuildLessonTestOptions {
   learnedLang: string;
   contentLang: string;
   size?: number;
-  /** Az előző próba elrontott tételei: a friss tételek közt előre kerülnek. */
+  /** Items missed in the previous attempt: they move to the front among the fresh items. */
   missedBefore?: ReadonlySet<string>;
-  /** A már feltett tételek (újrapróba): a rendszer előbb a még nem látottakból húz, "új 10 tételt". */
+  /** Items already asked (retry): the system draws from the not-yet-seen ones first, "10 new items". */
   avoid?: ReadonlySet<string>;
 }
 
 /**
- * A teszt: a lecke tételeiből (az ideiglenes "ÚJ · TESZT" tételek nélkül), fajtánként
- * körbejárva, hogy vegyes legyen. Fajtán belül a friss tétel megelőzi a már látottat, azon
- * belül az előző próbán elrontott a többit. Ha a leckében kevesebb tétel van, mint `size`,
- * annyi kérdés lesz, ahány van.
+ * The test: built from the lesson's items (without the temporary "NEW · TEST" items), cycling
+ * through the kinds so it is mixed. Within a kind a fresh item precedes an already seen one, and within
+ * that, one missed in the previous attempt precedes the rest. If the lesson has fewer items than `size`,
+ * there are as many questions as there are items.
  */
 export function buildLessonTest(lesson: GrammarTopicData, opts: BuildLessonTestOptions): LessonTestQuestion[] {
   const { seed, size = LESSON_TEST_SIZE, missedBefore, avoid } = opts;
@@ -294,7 +294,7 @@ export function buildLessonTest(lesson: GrammarTopicData, opts: BuildLessonTestO
   const queues: LessonTestQuestion[][] = [];
   for (const kind of shuffleArray([...groups.keys()], seed)) {
     const shuffled = shuffleArray(groups.get(kind) ?? [], seed + hashString(kind));
-    // rang: 0 friss+elrontott, 1 friss, 2 látott+elrontott, 3 látott (stabil, kézzel szétválogatva)
+    // rank: 0 fresh+missed, 1 fresh, 2 seen+missed, 3 seen (stable, sorted into buckets by hand)
     const buckets: LessonTestQuestion[][] = [[], [], [], []];
     for (const q of shuffled) buckets[(avoid?.has(q.id) ? 2 : 0) + (missedBefore?.has(q.id) ? 0 : 1)].push(q);
     queues.push(buckets.flat());
@@ -315,7 +315,7 @@ export function buildLessonTest(lesson: GrammarTopicData, opts: BuildLessonTestO
   return shuffleArray(picked, seed + 1);
 }
 
-/** Hány kérdéses a lecke tesztje (a gomb alatti sorhoz): `LESSON_TEST_SIZE`, vagy kevesebb, ha a leckében kevesebb tétel van. */
+/** How many questions the lesson's test has (for the line under the button): `LESSON_TEST_SIZE`, or fewer if the lesson has fewer items. */
 export function lessonTestSize(lesson: GrammarTopicData, learnedLang: string, contentLang: string): number {
   return buildLessonTest(lesson, { seed: 1, learnedLang, contentLang }).length;
 }

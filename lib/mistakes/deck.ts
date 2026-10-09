@@ -1,13 +1,13 @@
-// Tiszta függvények, amik a betöltött
-// kötegekből (MistakesBatch[]) kártyalistát építenek, és az SM-2 ütemezőt
-// (lib/sm2.ts, ugyanaz mint a PCIC fülön) a "Hibáim" pakli saját tábláján
-// futtatják.
+// Pure functions that build a card list from the loaded
+// batches (MistakesBatch[]), and run the SM-2 scheduler
+// (lib/sm2.ts, the same as on the PCIC tab) on the "Hibáim" ("My mistakes") deck's
+// own table.
 
 import type { MistakesBatch, MistakePattern } from './format';
 import { DEFAULT_NEW_LIMIT, pickSm2Session, type Sm2Card } from '../sm2';
 import { strictAnswerMatch, type MatchOptions } from '../answerMatch';
 
-/** A `mistake_batches` sor alakja, natív és web DB-ben egyaránt. */
+/** Shape of a `mistake_batches` row, in both native and web DB. */
 export interface MistakeBatchRow {
   batchId: string;
   json: string;
@@ -17,30 +17,30 @@ export interface MistakeBatchRow {
 export type MistakeCardKind = 'sentence' | 'word' | 'drill';
 
 export interface MistakeCard {
-  /** SM-2 itemId, egyben a pakli-kártya azonosítója. */
+  /** SM-2 itemId, also the deck card's identifier. */
   cardId: string;
   kind: MistakeCardKind;
   batchId: string;
-  /** A kártya tetején álló nagy szöveg (mondat/szó: en; drill: prompt). */
+  /** The big text at the top of the card (sentence/word: en; drill: prompt). */
   prompt: string;
-  /** Drillnél a prompt alatt kicsiben (en); mondat/szónál nincs. */
+  /** For a drill, small under the prompt (en); none for a sentence/word. */
   promptEn?: string;
-  /** A begépelendő, helyes spanyol alak. */
+  /** The correct Spanish form to be typed. */
   answer: string;
-  /** Csak mondatnál: a régen leírt hibás mondat, "You said:" alatt. */
+  /** Sentence only: the faulty sentence written long ago, under "You said:". */
   wrong?: string;
-  /** A minta szabálya egy sorban (mondat és drill, ha van patternje). */
+  /** The pattern's rule in one line (sentence and drill, if it has a pattern). */
   patternRule?: string;
 }
 
-/** A minta id -> MistakePattern index, hogy a mondat/drill fel tudja oldani a szabályát. */
+/** Index of pattern id -> MistakePattern, so the sentence/drill can resolve its rule. */
 function patternIndex(batch: MistakesBatch): Map<string, MistakePattern> {
   return new Map(batch.patterns.map((p) => [p.id, p]));
 }
 
 /**
- * Egy köteg kártyái, fájl-sorrendben. `doubtful: true` mondat kimarad (a
- * riport ⚠-lel listázza, de nem kerül a paklibe).
+ * The cards of one batch, in file order. A `doubtful: true` sentence is left out (the
+ * report lists it with ⚠, but it does not go into the deck).
  */
 export function cardsForBatch(batch: MistakesBatch): MistakeCard[] {
   const patterns = patternIndex(batch);
@@ -87,14 +87,14 @@ export function cardsForBatch(batch: MistakesBatch): MistakeCard[] {
   return cards;
 }
 
-/** Több (jelenleg betöltött) köteg kártyái egymás után, kötegenként fájl-sorrendben. */
+/** The cards of several (currently loaded) batches one after another, in file order within each batch. */
 export function cardsForBatches(batches: MistakesBatch[]): MistakeCard[] {
   return batches.flatMap(cardsForBatch);
 }
 
 /**
- * A mai session: minden esedékes (review/learning, due <= today) + legfeljebb
- * `newLimit` új kártya, a `lib/sm2.ts` ütemezőjével (ugyanaz, mint a PCIC fülön).
+ * Today's session: every due card (review/learning, due <= today) + at most
+ * `newLimit` new cards, with the scheduler of `lib/sm2.ts` (the same as on the PCIC tab).
  */
 export function pickMistakeSession(
   progress: Sm2Card[],
@@ -107,8 +107,8 @@ export function pickMistakeSession(
 }
 
 /**
- * Előre kijelölt értékelés: pontos egyezés (`strictAnswerMatch`) esetén
- * "Knew it" (good), egyébként "Didn't know" (again).
+ * Pre-selected grading: on an exact match (`strictAnswerMatch`)
+ * "Knew it" (good), otherwise "Didn't know" (again).
  */
 export function suggestedMistakeGrade(typed: string, answer: string, opts: MatchOptions = {}): 'again' | 'good' {
   return typed.trim().length > 0 && strictAnswerMatch(typed, answer, opts) ? 'good' : 'again';

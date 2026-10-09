@@ -1,6 +1,6 @@
-// a `to_be` lecke es→en irányban. A tanult nyelv az
-// angol (a mondatok angolul állnak és angolul olvasódnak fel), a magyarázat és
-// a fordítás a spanyol anyanyelvű tanulónak spanyolul jelenik meg.
+// the `to_be` lesson in the es→en direction. The learned language is
+// English (the sentences are in English and read aloud in English), the explanation and
+// the translation are shown in Spanish to the Spanish-native learner.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({

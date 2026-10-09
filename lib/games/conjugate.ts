@@ -1,13 +1,13 @@
-// Conjugation-slot. Verb-form generation: RULE-BASED for
+// Conjugation slot. Verb-form generation: RULE-BASED for
 // regular -ar/-er/-ir verbs (endings generated, not hand-listed per verb) and
-// a hand-verified TABLE for the 15 core irregulars named in the spec (ser,
+// a hand-verified TABLE for the 15 core irregulars (ser,
 // estar, ir, tener, hacer, poder, decir, ver, dar, saber, querer, venir,
-// poner, salir, haber). K15: Spanish only, callers show "soon" for every
+// poner, salir, haber). Spanish only, callers show "soon" for every
 // other learned language.
 //
-// The spec's own words: "A ragozási alakok tényállítások: ha egy alakban
-// bizonytalan vagy, inkább hagyd ki azt az igét vagy igeidőt, mint hogy
-// hibás alakot taníts." So a verb that is NOT in the irregular table and NOT
+// The guiding rule: "Conjugated forms are factual claims: if you are unsure
+// about a form, leave out that verb or tense rather than teach a wrong
+// form." So a verb that is NOT in the irregular table and NOT
 // confidently plain-regular (stem-changing e→ie/o→ue/e→i, -uir y-insertion,
 // 1st-person-only -zco/-jo/-go/-y irregulars, accent-shifting -iar/-uar
 // verbs, an irregular preterite stem, or a compound of an irregular base)
@@ -182,7 +182,7 @@ const EXCLUDE_INFINITIVES = new Set([
   'invertir', 'divertir', 'divertirse', 'mentir', 'preferir', 'sentar', 'sentarse',
   'cerrar', 'comenzar', 'negar', 'calentar', 'temblar', 'despertar', 'despertarse',
   'advertir', 'convertir', 'hervir', 'sugerir', 'requerir', 'referir', 'desmentir',
-  // BUG-002: nevar is e→ie (nieva, not "neva") AND impersonal, so a "yo" slot
+  // nevar is e→ie (nieva, not "neva") AND impersonal, so a "yo" slot
   // would be nonsense even with the right stem.
   'nevar',
   // o→ue stem change
@@ -190,7 +190,7 @@ const EXCLUDE_INFINITIVES = new Set([
   'costar', 'devolver', 'colgar', 'jugar', 'resolver', 'soñar', 'demostrar',
   'volver', 'mover', 'mostrar', 'rogar', 'comprobar', 'apostar', 'aprobar',
   'renovar', 'envolver', 'revolver', 'conmover', 'absolver', 'soler', 'llover', 'oler',
-  // BUG-002: almorzar is o→ue on top of the -zar spelling swap (almuerzo,
+  // almorzar is o→ue on top of the -zar spelling swap (almuerzo,
   // almuerce), which the two narrow rules below cannot produce.
   'almorzar',
   // e→i stem change (-ir only)
@@ -276,7 +276,7 @@ function frontEStem(stem: string): string {
 
 const VOWELS = new Set(['a', 'e', 'i', 'o', 'u']);
 
-// BUG-002: whole verb FAMILIES need a stem change the endings above cannot
+// Whole verb FAMILIES need a stem change the endings above cannot
 // produce, and a name list only protects the verbs someone remembered to add:
 // ofrecer ("ofreco" for ofrezco), vencer ("venco" for venzo) and subyacer
 // ("subyaco" for subyazco) all slipped through. Every Spanish -cer/-cir verb

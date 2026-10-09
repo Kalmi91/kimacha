@@ -18,7 +18,7 @@ export const BACKUP_TABLES = [
 
 export type BackupTable = (typeof BACKUP_TABLES)[number];
 
-// Play-vágás: tables an older backup (e.g. 4.0.25) may
+// Play cut: tables an older backup (e.g. 4.0.25) may
 // still carry, but the app no longer reads or writes (their DB methods were
 // removed as dead: the Game tab's own score/settings tables, and the topic
 // picker). A restore accepts and skips them, so an old backup still loads.
@@ -43,7 +43,7 @@ export function getAppVersion(): string {
   return Constants.expoConfig?.version ?? 'unknown';
 }
 
-// Play-vágás (2026-09-23): the per-table column types a row is checked
+// Play cut (2026-09-23): the per-table column types a row is checked
 // against, taken straight from the CREATE TABLE statements in database.ts.
 // SQLite has no boolean type, so the 0/1 flag columns (buried, in_hand,
 // words_only, ...) are 'number' like every other INTEGER/REAL column.

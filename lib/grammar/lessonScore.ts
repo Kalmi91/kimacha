@@ -1,5 +1,5 @@
-// User feedback (grammar-syllabus): "legyen kiírva egy százalék
-// szám, hogy a feladatok hányszázalékára sikerült jó választ adni". Pure
+// Learner request (grammar syllabus): "show a percentage
+// number for what percent of the exercises I answered correctly". Pure
 // helpers: the game_progress `${topic}:answered`/`${topic}:correct` counters
 // (written in app/grammar/[topic].tsx's `finish`, one round at a time, every
 // kind) turn into one cumulative lesson percentage.
@@ -61,16 +61,16 @@ export function lessonBadgePercent(
 }
 
 // ---------------------------------------------------------------------------
-// a lecke %-a a
-// lecke ÖSSZES feladat-fajtájának átlaga (a még meg nem csinált fajta 0), a
-// félbehagyott feladat elmentődik és onnan folytatódik, a jobb eredmény felülírja
-// a régit. A tárolás ugyanaz a game_progress tábla (`grammar-course`), két új
-// sor-fajtával fajtánként:
-//   `${topic}:${kind}:best`  state 'best'  data {correct, total}   (a legjobb befejezett kör)
-//   `${topic}:${kind}:run`   state 'run'   data KindRun | null     (a félbehagyott kör)
-// A régi kumulált számlálók (`${topic}:${kind}:answered` / `:correct`) csak
-// tartalékként olvasódnak (amíg a fajtának nincs sem best-, sem run-sora), hogy a
-// meglévő haladás ne tűnjön el.
+// A lesson's % is the
+// average over ALL of the lesson's exercise kinds (a kind not yet done counts as 0), an
+// abandoned exercise is saved and resumed from there, a better result overwrites
+// the old one. Storage is the same game_progress table (`grammar-course`), with two new
+// row kinds per kind:
+//   `${topic}:${kind}:best`  state 'best'  data {correct, total}   (the best completed round)
+//   `${topic}:${kind}:run`   state 'run'   data KindRun | null     (the abandoned round)
+// The old cumulative counters (`${topic}:${kind}:answered` / `:correct`) are only
+// read as a fallback (while the kind has neither a best nor a run row), so that
+// existing progress does not disappear.
 
 type ScoredKind = 'choice' | 'article' | 'match' | 'form' | 'why' | 'transform' | 'spot' | 'order' | 'dictation';
 
@@ -79,14 +79,14 @@ export interface KindBest {
   total: number;
 }
 
-/** Egy félbehagyott kör: ugyanaz a kör folytatható (seed + item-id lista), `index` a már megválaszolt tételek száma. */
+/** An abandoned round: the same round can be resumed (seed + item-id list), `index` is the number of items already answered. */
 export interface KindRun {
   seed: number;
   ids: string[];
   index: number;
-  /** A jó válaszok száma egységekben (a párosításnál a jó párok), ld. GrammarDrill. */
+  /** Number of correct answers in units (for matching, the correct pairs), see GrammarDrill. */
   correct: number;
-  /** A teljes kör egységekben (a párosításnál az összes pár). */
+  /** The whole round in units (for matching, all pairs). */
   total: number;
 }
 
@@ -102,9 +102,9 @@ const ratioPercent = (correct: number, total: number): number | null =>
   total > 0 ? Math.round((correct / total) * 100) : null;
 
 /**
- * Egy feladat-fajta %-a: a legjobb befejezett kör és a most félbehagyott kör közül
- * a jobb (a meg nem válaszolt tétel 0-nak számít, ezért 3 jó a 10-ből = 30%).
- * `null`: a fajtát még nem kezdte el. Csak ha nincs best/run, jön a régi számláló.
+ * The % of one exercise kind: the better of the best completed round and the currently
+ * abandoned round (an unanswered item counts as 0, so 3 correct out of 10 = 30%).
+ * `null`: the kind has not been started yet. The old counter is used only if there is no best/run.
  */
 export function kindPercent(p: KindProgress): number | null {
   const candidates: number[] = [];
@@ -123,7 +123,7 @@ export function kindPercent(p: KindProgress): number | null {
   return candidates.length > 0 ? Math.max(...candidates) : null;
 }
 
-/** A lecke %-a: az ÖSSZES fajta átlaga, a meg nem kezdett fajta 0. `null`, ha egyikhez sem nyúlt. */
+/** A lesson's %: the average of ALL kinds, a kind not started counts as 0. `null` if none was touched. */
 export function lessonScore(kinds: KindProgress[]): number | null {
   if (kinds.length === 0) return null;
   const percents = kinds.map(kindPercent);
@@ -132,7 +132,7 @@ export function lessonScore(kinds: KindProgress[]): number | null {
   return Math.round(sum / kinds.length);
 }
 
-/** A jobb eredmény felülírja a régit; egyenlő aránynál a régi marad. */
+/** A better result overwrites the old one; at an equal ratio the old one stays. */
 export function betterBest(old: KindBest | null, next: KindBest): KindBest {
   if (!old) return next;
   const a = ratioPercent(old.correct, old.total) ?? -1;
@@ -140,7 +140,7 @@ export function betterBest(old: KindBest | null, next: KindBest): KindBest {
   return b > a ? next : old;
 }
 
-/** A lecke-képernyő fajta-gombja alatti sor "3/10 · 30%" alakja (csak félbehagyott körnél). */
+/** The "3/10 · 30%" form of the line under a kind button on the lesson screen (only for an abandoned round). */
 export function runSummary(run: KindRun): { answered: number; of: number; percent: number } {
   return { answered: run.index, of: run.ids.length, percent: ratioPercent(run.correct, run.total) ?? 0 };
 }
@@ -171,7 +171,7 @@ function isKindRun(v: unknown): v is KindRun {
 export const kindBestKey = (topicId: string, kind: ScoredKind) => `${topicId}:${kind}:best`;
 export const kindRunKey = (topicId: string, kind: ScoredKind) => `${topicId}:${kind}:run`;
 
-/** Egy lecke egy fajtájának tárolt haladása a game_progress sorokból. */
+/** The stored progress of one kind of one lesson, from the game_progress rows. */
 export function kindProgressFromRows(rows: Row[], topicId: string, kind: ScoredKind): KindProgress {
   let best: KindBest | null = null;
   let run: KindRun | null = null;
@@ -192,9 +192,9 @@ export function kindProgressFromRows(rows: Row[], topicId: string, kind: ScoredK
 }
 
 /**
- * A szillabusz-lista minden lecke-%-a egy menetben. `kindsOf` a lecke létező
- * feladat-fajtáit adja (üres: ismeretlen lecke). Ahol a lecke fajta-szintű sorai
- * hiányoznak (a korábbi adat), a régi témaszintű számláló a tartalék.
+ * Every lesson % of the syllabus list in one pass. `kindsOf` returns the lesson's existing
+ * exercise kinds (empty: unknown lesson). Where the lesson's kind-level rows
+ * are missing (earlier data), the old topic-level counter is the fallback.
  */
 export function lessonScoresByTopic(rows: Row[], kindsOf: (topicId: string) => ScoredKind[]): Map<string, number> {
   const topics = new Set<string>();

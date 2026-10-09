@@ -1,6 +1,6 @@
-// a próbavizsga minden részén ott a visszajelzés-gomb, és a
-// kártya-azonosító megmondja, melyik részről van szó (mock-exam:<szint>:<rész>).
-// Mock-minta: mockExam.test.tsx; a FeedbackModal itt csak a kapott `currentCard`-ot írja ki.
+// The feedback button is on every part of the mock exam, and the
+// card id says which part it is (mock-exam:<level>:<part>).
+// Mock pattern: mockExam.test.tsx; the FeedbackModal here only prints the `currentCard` it receives.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -87,7 +87,7 @@ const flush = async (times = 10) => {
   }
 };
 
-describe('Próbavizsga: visszajelzés-gomb minden részen (FB447)', () => {
+describe('Mock exam: feedback button on every part', () => {
   beforeEach(async () => {
     jest.useFakeTimers({ doNotFake: ['nextTick', 'setImmediate', 'queueMicrotask'] });
     mockExamRef.current = exam();
@@ -98,7 +98,7 @@ describe('Próbavizsga: visszajelzés-gomb minden részen (FB447)', () => {
   });
   afterEach(() => jest.useRealTimers());
 
-  it('intro, papír-intro, feladat, kilépés, szóbeli, eredmény, átnézés: mind saját azonosítóval', async () => {
+  it('intro, paper intro, task, exit, spoken, result, review: all with their own identifier', async () => {
     const s = render(
       <ThemeProvider>
         <MockExamScreen />

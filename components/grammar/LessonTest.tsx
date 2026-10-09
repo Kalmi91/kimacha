@@ -28,11 +28,11 @@ import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import FeedbackButton from '@/components/FeedbackModal';
 
-// a nyelvtani lecke végi teszt képernyője. Nincs bevezető
-// (a lecke done-lapjának gombja alatt áll "10 questions, pass 80%"): kérdések (nincs élet; a
-// helyes válasz után nincs visszajelzés, a hibás után a helyes látszik, mint a szintvizsgán) ->
-// eredmény (az elrontott tételek a helyes válasszal és a lecke magyarázatával). A bukás nem
-// zár le semmit (B4 a), az újrapróba új tételeket húz. A mentést a szülő végzi (`onSave`).
+// the end-of-lesson test screen of a grammar lesson. There is no intro
+// (under the lesson's done-page button it says "10 questions, pass 80%"): questions (no lives;
+// no feedback after a right answer, after a wrong one the right one is shown, as in the level exam) ->
+// result (the missed items with the right answer and the lesson's explanation). A fail does not
+// lock anything, a retry draws new items. Saving is done by the parent (`onSave`).
 
 type Phase = 'running' | 'leaving' | 'result';
 type Answered = { q: LessonTestQuestion; correct: boolean };
@@ -50,16 +50,16 @@ interface Props {
   topicId: string;
   learnedLang: string;
   contentLang: string;
-  /** A felhasználó szintje: a 💬 (FeedbackModal) a Feedback sheetbe ezt írja. */
+  /** The user's level: the 💬 (FeedbackModal) writes this into the Feedback sheet. */
   level: string;
-  /** A korábbi mentett eredmény (az elrontott tételek előre kerülnek, a legjobb pont megmarad). */
+  /** The previous saved result (missed items move to the front, the best score is kept). */
   previous: LessonTestResult | null;
   hasNextTopic: boolean;
   onSave: (result: LessonTestResult) => void;
   onNextTopic: () => void;
   onBackToRule: () => void;
   onBackToSyllabus: () => void;
-  /** A ✕ megerősítése után: vissza a leckéhez, mentés nélkül. */
+  /** After confirming the ✕: back to the lesson, without saving. */
   onLeave: () => void;
 }
 
@@ -116,11 +116,11 @@ export default function LessonTest({
   const colors = Colors[theme];
   const g = useGrammarColors();
   const s = t();
-  // a beírós kérdés Check / Next sávja a billentyűzet fölé dokkol (components/learn/DockSlot.tsx).
+  // the Check / Next bar of a typed question docks above the keyboard (components/learn/DockSlot.tsx).
   const dock = useDockSlot(colors);
 
-  // A kiosztás: a kérdések, az eddig feltett tételek (újrapróba: új tételek előre) és az utolsó
-  // próba elrontottjai (a következő próba ezeket húzza előre).
+  // The draw: the questions, the items asked so far (retry: new items to the front) and the last
+  // attempt's missed items (the next attempt pulls these to the front).
   const deal = (missed: ReadonlySet<string>, used: ReadonlySet<string>) => {
     const qs = buildLessonTest(lesson, {
       seed: Date.now(),
@@ -183,8 +183,8 @@ export default function LessonTest({
     setPhase('running');
   };
 
-  // a lecke-teszt minden részén ott a 💬; a `part` mondja meg a Feedback sheetben, pontosan melyik
-  // részről van szó (grammar:<lecke>:lessontest:<rész>). Beírós kérdésnél a 💬 a dokkolt sáv fölé kerül.
+  // the 💬 is on every part of the lesson test; `part` tells the Feedback sheet exactly which
+  // part it is about (grammar:<lesson>:lessontest:<part>). On a typed question the 💬 sits above the docked bar.
   const shell = (children: ReactNode, part?: string, bottomOffset?: number) => (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
       {children}

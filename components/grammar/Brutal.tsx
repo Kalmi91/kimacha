@@ -10,13 +10,13 @@ import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
 import { useSkin } from '@/lib/useSkin';
 import { useTheme } from '@/lib/ThemeContext';
 
-// a neo-brutalista forma-elemek.
-// Csak akkor használjuk őket, ha useGrammarColors().brutal igaz; a classic
-// paletta a mai kinézetet adja, ezek nélkül.
+// the neo-brutalist form elements.
+// We only use them when useGrammarColors().brutal is true; the classic
+// palette gives today's look, without these.
 
 export type BrutalFill = 'paper' | 'a' | 'b' | 'ink';
 
-// A Neo-brutál árnyék-eltolás (px): az `offset` prop ehhez képest skálázódik a téma shadowOffset-jére.
+// The Neo-brutal shadow offset (px): the `offset` prop is scaled relative to it onto the theme's shadowOffset.
 const BRUTAL_SHADOW = 3;
 
 function fillColor(g: GrammarColors, fill: BrutalFill): string {
@@ -26,8 +26,8 @@ function fillColor(g: GrammarColors, fill: BrutalFill): string {
   return g.paper;
 }
 
-// A szöveg színe az adott kitöltésen: színes (a / b) kitöltésen az onA / onB (brutal témánál
-// mindig onFill), tintán a papír-alap, papíron az ink.
+// The text colour on the given fill: on a coloured (a / b) fill onA / onB (always onFill on the
+// brutal theme), on tint the paper base, on paper the ink.
 export function textOnFill(g: GrammarColors, fill: BrutalFill): string {
   if (fill === 'a') return g.onA;
   if (fill === 'b') return g.onB;
@@ -35,13 +35,13 @@ export function textOnFill(g: GrammarColors, fill: BrutalFill): string {
   return g.ink;
 }
 
-// A fő gomb (ink kitöltés) szövege: Neo-brutál világos módban a b szín, sötét módban (ahol az ink
-// világos) a sötét alap, hogy olvasható maradjon (grammarColorsFor onInk); a többi témánál a bg.
+// The text of the main button (ink fill): in Neo-brutal light mode the b colour, in dark mode (where
+// the ink is light) the dark base so that it stays readable (grammarColorsFor onInk); on the other themes the bg.
 export function inkButtonText(g: GrammarColors): string {
   return g.onInk;
 }
 
-// a forma-szerepek (keret / árnyék színe) és a sarok-sugár a téma `shape`-éből.
+// the form roles (border / shadow colour) and the corner radius from the theme's `shape`.
 export function roleColor(g: GrammarColors, role: ColorRole = 'ink'): string {
   if (role === 'a') return g.a;
   if (role === 'b') return g.b;
@@ -55,22 +55,22 @@ export function radiusStyle(r: number | CornerRadii): ViewStyle {
   return { borderTopLeftRadius: r[0], borderTopRightRadius: r[1], borderBottomRightRadius: r[2], borderBottomLeftRadius: r[3] };
 }
 
-// Kis elemek (matrica, szegmens, kapcsoló) keret-vastagsága és sarka: a téma kerete, de legfeljebb
-// a mai 2 px, illetve a `maxRadius`; a Neo-brutál téma mai értékei (2 px, sarok 0) változatlanok.
+// Border width and corner of small elements (sticker, segment, switch): the theme's border, but at
+// most today's 2 px, and the `maxRadius`; the Neo-brutal theme's current values (2 px, corner 0) are unchanged.
 function smallRadius(shape: SkinShape, maxRadius: number): ViewStyle {
   return typeof shape.buttonRadius === 'number' ? radiusStyle(Math.min(shape.buttonRadius, maxRadius)) : {};
 }
 
-// a téma gomb-változata (a díszből). Alapból 'default': semmi nem változik.
-// stacked (senior): teljes szélesség, min. 48 magas; text (zen): csak szöveg; bevel (retro95):
-// a gomb első betűje aláhúzva (a 3D-perem a forma `bevel` jelzőjéből jön).
+// the theme's button variant (from the decor). 'default' by default: nothing changes.
+// stacked (senior): full width, at least 48 high; text (zen): text only; bevel (retro95):
+// the first letter of the button underlined (the 3D edge comes from the form's `bevel` flag).
 type ButtonVariant = NonNullable<SkinDecor['buttonVariant']>;
 
 export function useButtonVariant(): ButtonVariant {
   return useSkinDecor().buttonVariant ?? 'default';
 }
 
-// A push-gomb szövegének színe: csak szöveg változatban (zen) az ink, különben a kitöltés szerint.
+// The text colour of the push button: in the text-only variant (zen) the ink, otherwise according to the fill.
 export function actionTextColor(g: GrammarColors, fill: BrutalFill, variant: ButtonVariant): string {
   if (variant === 'text') return g.ink;
   return fill === 'ink' ? inkButtonText(g) : textOnFill(g, fill);
@@ -81,19 +81,19 @@ function minHeightOf(style: StyleProp<ViewStyle>): number {
   return typeof h === 'number' ? h : 0;
 }
 
-// retro95: a 3D-perem négy oldalának színe (világos bal-fent, sötét jobb-lent); a téma extra-színe,
-// más színekkel (Saját mix) a Win95 alapértékek.
+// retro95: the colours of the four sides of the 3D edge (light top-left, dark bottom-right); the theme's
+// extra colour, with other colours (My mix) the Win95 defaults.
 function bevelColors(g: GrammarColors): ViewStyle {
   const light = g.extra.bevelLight ?? '#FFFFFF';
   const dark = g.extra.bevelDark ?? '#808080';
   return { borderTopColor: light, borderLeftColor: light, borderBottomColor: dark, borderRightColor: dark };
 }
 
-// Doboz: Neo-brutál témán 2,5 px ink keret, sarok 0, tömör eltolt árnyék (3 px jobbra + 3 px le,
-// ink színnel, elmosás nélkül). RN-ben nem elevation/shadow*: egy ink színű
-// hátsó View, a doboz mögé eltolva. Zárt (dashed) doboz: szaggatott keret,
-// árnyék nélkül. A keret vastagsága / stílusa / színe, a sarok és az árnyék
-// eltolása + színe az aktív téma `shape`-éből jön (az `offset` a 3 px-es alap arányában skálázódik).
+// Box: on the Neo-brutal theme a 2.5 px ink border, corner 0, a solid offset shadow (3 px right + 3 px down,
+// ink colour, no blur). In RN not elevation/shadow*: an ink-coloured
+// back View, offset behind the box. Locked (dashed) box: dashed border,
+// no shadow. The border width / style / colour, the corner and the shadow
+// offset + colour come from the active theme's `shape` (the `offset` is scaled relative to the 3 px base).
 export function BrutalBox({
   children,
   fill = 'paper',
@@ -112,15 +112,15 @@ export function BrutalBox({
   fill?: BrutalFill;
   dashed?: boolean;
   offset?: number;
-  // 'button': a gomb-sarok (shape.buttonRadius), 'card': a kártya-sarok (shape.radius).
+  // 'button': the button corner (shape.buttonRadius), 'card': the card corner (shape.radius).
   kind?: 'card' | 'button';
-  // A külső (elrendezési) burkoló stílusa.
+  // The style of the outer (layout) wrapper.
   style?: StyleProp<ViewStyle>;
-  // Az előlapi doboz stílusa (padding, igazítás).
+  // The style of the front box (padding, alignment).
   boxStyle?: StyleProp<ViewStyle>;
   onPress?: () => void;
   disabled?: boolean;
-  // push-gomb (BrutalButton, a Tudom / Nem tudom gombok): a téma gomb-változata érvényes rá.
+  // push button (BrutalButton, the Knew it / Didn't know buttons): the theme's button variant applies to it.
   action?: boolean;
   testID?: string;
   accessibilityLabel?: string;
@@ -180,7 +180,7 @@ export function BrutalBox({
   );
 }
 
-// Matrica: 2 px keret, kis betű, 500 súly, -6° és +8° közti elforgatás
+// Sticker: 2 px border, small letters, weight 500, rotated between -6° and +8°
 // (streak, CORE, DONE, combo).
 export function Sticker({
   label,
@@ -219,8 +219,8 @@ export function Sticker({
   );
 }
 
-// Lecke-kártya: brutalista palettán BrutalBox (paper vagy b kitöltéssel), classic
-// paletta esetén a mai sima kártya (classicStyle + a paper = mai card szín).
+// Lesson card: on the brutalist palette a BrutalBox (with paper or b fill), on the classic
+// palette today's plain card (classicStyle + paper = today's card colour).
 export function Card({
   children,
   fill = 'paper',
@@ -233,9 +233,9 @@ export function Card({
   fill?: BrutalFill;
   style?: StyleProp<ViewStyle>;
   classicStyle?: StyleProp<ViewStyle>;
-  // a brutalista doboz belső stílusa (a default styles.card után).
+  // the inner style of the brutalist box (after the default styles.card).
   boxStyle?: StyleProp<ViewStyle>;
-  // Csak a brutalista dobozra kerül (a classic ág nem kap testID-t).
+  // Only goes on the brutalist box (the classic branch gets no testID).
   testID?: string;
 }) {
   const g = useGrammarColors();
@@ -249,8 +249,8 @@ export function Card({
   return <View style={[{ backgroundColor: g.paper }, classicStyle, style]}>{children}</View>;
 }
 
-// a fő gomb (nagybetűs, 500 súly): ink kitöltés b / bg színű szöveggel, vagy
-// a / b kitöltés #111 szöveggel.
+// the main button (uppercase, weight 500): ink fill with b / bg coloured text, or
+// a / b fill with #111 text.
 export function BrutalButton({
   label,
   onPress,
@@ -268,12 +268,13 @@ export function BrutalButton({
   testID?: string;
   accessibilityLabel?: string;
   style?: StyleProp<ViewStyle>;
-  // a senior (stacked) témán a címke elé kerülő ikon; más témán nem látszik.
+  // the icon placed before the label on the senior (stacked) theme; not shown on other themes.
   icon?: string;
 }) {
   const g = useGrammarColors();
   const variant = useButtonVariant();
-  // zen: a fő (a kitöltésű, "Tudom") gomb szövege aláhúzva; retro95: a gomb első betűje aláhúzva.
+  // zen: the text of the main (the a-filled, "Knew it") button underlined; retro95: the first
+  // letter of the button underlined.
   const underlineAll = variant === 'text' && fill === 'a';
   const text =
     variant === 'bevel' && label ? (
@@ -311,14 +312,14 @@ export function BrutalButton({
   );
 }
 
-// beviteli mező brutalista palettán: 2,5 px ink keret, sarok 0, papír háttér.
+// input field on the brutalist palette: 2.5 px ink border, corner 0, paper background.
 export function brutalInputStyle(g: GrammarColors): TextStyle {
-  // a téma saját beviteli mező-színe (retro95: fehér "mező"), ha van; különben a papír.
+  // the theme's own input-field colour (retro95: white "field"), if it has one; otherwise the paper.
   return { borderWidth: 2.5, borderColor: g.ink, borderRadius: 0, backgroundColor: g.extra.field ?? g.paper, color: g.ink };
 }
 
-// kapcsoló. Brutalista palettán téglalap sín (2,5 px ink keret, sarok 0), négyzetes
-// ink gomb, bekapcsolva a sín `a` kitöltésű; classic palettán a mai Switch.
+// switch. On the brutalist palette a rectangular track (2.5 px ink border, corner 0), a square
+// ink knob, when on the track has the `a` fill; on the classic palette today's Switch.
 export function BrutalSwitch({
   value,
   onValueChange,
@@ -367,7 +368,7 @@ export function BrutalSwitch({
   );
 }
 
-// vissza-nyíl a képernyőbe rajzolt fejlécsorban: kis BrutalBox, ink nyíl.
+// back arrow in the header row drawn into the screen: a small BrutalBox, ink arrow.
 export function BrutalBackButton({ onPress, testID }: { onPress: () => void; testID?: string }) {
   const g = useGrammarColors();
   return (
@@ -377,12 +378,12 @@ export function BrutalBackButton({ onPress, testID }: { onPress: () => void; tes
   );
 }
 
-// Hány blokk legyen kitöltve a szegmentált sávban egy 0-100 százalékhoz.
+// How many blocks are filled in the segmented bar for a 0-100 percentage.
 export function segmentsFilled(percent: number, segments: number): number {
   return Math.max(0, Math.min(segments, Math.round((percent / 100) * segments)));
 }
 
-// Szegmentált progress: 5-8 blokk, 9 px magas, 2 px keret, kész blokk = ink kitöltés.
+// Segmented progress: 5-8 blocks, 9 px high, 2 px border, done block = ink fill.
 export function SegmentBar({
   filled,
   segments = 6,

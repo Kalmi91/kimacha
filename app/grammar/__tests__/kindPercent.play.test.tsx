@@ -1,8 +1,8 @@
-//  - a lecke %-a az ÖSSZES feladat-fajta átlaga, a meg nem csinált 0;
-//    a lecke-lista és a lecke-képernyő ugyanazt a számot adja (lessonScore).
-//  - a párosítás részpontot kap (1 hiba 6 párból = 5/6, nem 0).
-//  - a félbehagyott feladat elmentődik ("3/10 · 20%"), újranyitva onnan
-//    folytatódik, a jobb eredmény felülírja a régit.
+//  - the lesson % is the average over ALL task kinds, a kind not yet done counts as 0;
+//    the lesson list and the lesson screen give the same number (lessonScore).
+//  - matching gets partial credit (1 mistake out of 6 pairs = 5/6, not 0).
+//  - an abandoned task is saved ("3/10 · 20%"), when reopened it continues
+//    from there, and the better result overwrites the old one.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({
@@ -52,7 +52,7 @@ const KIND_COUNT = lessonKinds('es', 'ser-estar').length;
 
 async function solveMatch(wrongFirst = false) {
   if (wrongFirst) {
-    // az 1. bal (0. pár) egy rossz jobbal: az a pár elveszik
+    // the 1st left item (pair 0) with a wrong right one: that pair is lost
     const wrongPos = RIGHT_ORDER.findIndex((p) => p !== 0);
     fireEvent.press(screen.getByTestId('match-left-0'));
     fireEvent.press(screen.getByTestId(`match-right-${wrongPos}`));
@@ -77,7 +77,7 @@ async function clearProgress() {
   const db = getDb();
   await db.setOnboarding('en', 'es');
   (db as any).__setLevelForTest('A1');
-  // tiszta lap: a web DB memóriában él a tesztek között
+  // clean slate: the web DB lives in memory between the tests
   for (const kind of ['choice', 'match', 'form', 'why', 'transform']) {
     for (const suffix of ['best', 'run', 'answered', 'correct']) {
       await db.setGameProgress(GRAMMAR_PROGRESS_KEY, `ser-estar:${kind}:${suffix}`, 'cleared', null);
@@ -85,7 +85,7 @@ async function clearProgress() {
   }
 }
 
-describe('grammar lesson screen: lesson % = average of ALL kinds (FB415)', () => {
+describe('grammar lesson screen: lesson % = average of ALL kinds', () => {
   beforeEach(clearProgress);
 
   it('one perfect kind out of several is NOT 100% for the lesson', async () => {
@@ -99,7 +99,7 @@ describe('grammar lesson screen: lesson % = average of ALL kinds (FB415)', () =>
     await flush(1);
     await solveMatch();
 
-    // 6/6 pár = 100% a fajtára, de a lecke átlaga az összes fajtán: 100 / KIND_COUNT
+    // 6/6 pairs = 100% for the kind, but the lesson average is over all kinds: 100 / KIND_COUNT
     expect(screen.getByTestId('grammar-lesson-percent')).toHaveTextContent(`So far: ${Math.round(100 / KIND_COUNT)}% correct`);
     fireEvent.press(screen.getByText('Read the rule again'));
     await flush(1);
@@ -107,7 +107,7 @@ describe('grammar lesson screen: lesson % = average of ALL kinds (FB415)', () =>
     expect(screen.queryByTestId('grammar-kind-percent-form')).toBeNull();
   });
 
-  it('a match with one wrong pair out of six scores 5/6 = 83%, not 0 (FB420)', async () => {
+  it('a match with one wrong pair out of six scores 5/6 = 83%, not 0', async () => {
     render(<GrammarLessonScreen />);
     await flush(4);
 
@@ -121,7 +121,7 @@ describe('grammar lesson screen: lesson % = average of ALL kinds (FB415)', () =>
   });
 });
 
-describe('grammar lesson screen: a half-done round is saved and resumed (FB421)', () => {
+describe('grammar lesson screen: a half-done round is saved and resumed', () => {
   beforeEach(clearProgress);
 
   it('shows "3/10 · 20%" for 2 right of 3 answered, resumes at item 4, and a weaker restart does not lower the best', async () => {
@@ -134,24 +134,24 @@ describe('grammar lesson screen: a half-done round is saved and resumed (FB421)'
     await answerForm(1, true);
     await answerForm(2, false);
 
-    // ✕: vissza a leckéhez, a kör félbe marad
+    // ✕: back to the lesson, the round is left unfinished
     fireEvent.press(screen.getByText('←'));
     await flush(1);
     expect(screen.getByTestId('grammar-kind-percent-form')).toHaveTextContent('3/10 · 20%');
 
-    // újranyitva a 4. tételnél folytatja
+    // reopened, it continues at the 4th item
     fireEvent.press(screen.getByTestId('grammar-start-form'));
     await flush(1);
     expect(screen.getByTestId('grammar-drill-progress')).toHaveTextContent('4 / 10');
     for (let i = 3; i < 10; i++) await answerForm(i, true);
 
-    // 9/10 = 90%: a kör vége, a fajta legjobbja
+    // 9/10 = 90%: the end of the round, the kind's best
     expect(screen.getByText('9 / 10')).toBeTruthy();
     fireEvent.press(screen.getByText('Read the rule again'));
     await flush(1);
     expect(screen.getByTestId('grammar-kind-percent-form')).toHaveTextContent('So far: 90% correct');
 
-    // új, gyengébb kör félig: a sor a saját állását mutatja, de a fajta legjobbja nem romlik
+    // a new, weaker half-finished round: the row shows its own standing, but the kind's best does not get worse
     fireEvent.press(screen.getByTestId('grammar-start-form'));
     await flush(1);
     await answerForm(0, false);

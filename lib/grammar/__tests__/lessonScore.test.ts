@@ -71,7 +71,7 @@ describe('lessonBadgePercent', () => {
   });
 });
 
-// a lecke %-a az összes fajta átlaga.
+// A lesson's % is the average over all kinds.
 import {
   betterBest,
   kindPercent,
@@ -89,65 +89,65 @@ const withRun = (correct: number, total: number, index = 3, items = 10): KindPro
   run: { seed: 1, ids: Array.from({ length: items }, (_, i) => `i${i}`), index, correct, total },
 });
 
-describe('kindPercent (FB421)', () => {
-  it('null, ha a fajtát még nem kezdte el', () => {
+describe('kindPercent', () => {
+  it('null if the kind has not been started', () => {
     expect(kindPercent(NO_KIND_PROGRESS)).toBeNull();
   });
 
-  it('a 10-ből 3 jó félbehagyott kör 30% (a meg nem válaszolt tétel 0)', () => {
+  it('3 right out of 10 in an abandoned round is 30% (the unanswered item counts 0)', () => {
     expect(kindPercent(withRun(3, 10))).toBe(30);
   });
 
-  it('a jobb eredmény felülírja a régit: a félbehagyott kör nem viszi le a legjobbat', () => {
+  it('a better result overwrites the old one: an abandoned round does not lower the best', () => {
     expect(kindPercent({ ...withRun(3, 10), best: { correct: 9, total: 10 } })).toBe(90);
   });
 
-  it('a folytatott kör feljavítja: 3 jó -> 7 jó a 10-ből', () => {
+  it('a continued round improves it: 3 right -> 7 right out of 10', () => {
     expect(kindPercent(withRun(7, 10, 8))).toBe(70);
   });
 
-  it('a régi kumulált számláló csak tartalék', () => {
+  it('the old cumulated counter is only a fallback', () => {
     expect(kindPercent({ ...NO_KIND_PROGRESS, legacy: { correct: 15, total: 20 } })).toBe(75);
     expect(kindPercent({ ...withBest(5, 10), legacy: { correct: 20, total: 20 } })).toBe(50);
   });
 });
 
-describe('lessonScore (FB415)', () => {
-  it('null, ha egyik fajtához sem nyúlt', () => {
+describe('lessonScore', () => {
+  it('null if no kind was touched', () => {
     expect(lessonScore([NO_KIND_PROGRESS, NO_KIND_PROGRESS, NO_KIND_PROGRESS, NO_KIND_PROGRESS])).toBeNull();
   });
 
-  it('csak a 2. feladat kész 100%-on a négyből: a lecke 25%, nem 100%', () => {
+  it('only the 2nd task is done at 100% of four: the lesson is 25%, not 100%', () => {
     expect(lessonScore([NO_KIND_PROGRESS, withBest(6, 6), NO_KIND_PROGRESS, NO_KIND_PROGRESS])).toBe(25);
   });
 
-  it('a meg nem csinált fajta 0-nak számít az átlagban', () => {
+  it('a kind not done counts as 0 in the average', () => {
     expect(lessonScore([withBest(10, 10), withBest(5, 10), NO_KIND_PROGRESS, NO_KIND_PROGRESS])).toBe(38); // 150/4
   });
 
-  it('minden fajta kész: az átlag', () => {
+  it('every kind done: the average', () => {
     expect(lessonScore([withBest(10, 10), withBest(8, 10)])).toBe(90);
   });
 
-  it('üres fajta-lista: null', () => {
+  it('empty kind list: null', () => {
     expect(lessonScore([])).toBeNull();
   });
 });
 
-describe('betterBest (FB421)', () => {
-  it('az első befejezett kör lesz a legjobb', () => {
+describe('betterBest', () => {
+  it('the first finished round becomes the best', () => {
     expect(betterBest(null, { correct: 3, total: 10 })).toEqual({ correct: 3, total: 10 });
   });
-  it('a jobb új eredmény felülír', () => {
+  it('a better new result overwrites', () => {
     expect(betterBest({ correct: 3, total: 10 }, { correct: 8, total: 10 })).toEqual({ correct: 8, total: 10 });
   });
-  it('a gyengébb új eredmény nem ír felül', () => {
+  it('a weaker new result does not overwrite', () => {
     expect(betterBest({ correct: 9, total: 10 }, { correct: 4, total: 10 })).toEqual({ correct: 9, total: 10 });
   });
 });
 
 describe('runSummary', () => {
-  it('"3/10 · 30%" adatai', () => {
+  it('data for "3/10 · 30%"', () => {
     expect(runSummary(withRun(3, 10).run!)).toEqual({ answered: 3, of: 10, percent: 30 });
   });
 });
@@ -163,19 +163,19 @@ describe('kindProgressFromRows / lessonScoresByTopic', () => {
     { itemId: 'gustar:correct', state: 'count', data: 5 },
   ];
 
-  it('kiolvassa a best/run/legacy sorokat egy fajtához', () => {
+  it('reads the best/run/legacy rows for a kind', () => {
     expect(kindProgressFromRows(rows, 'ser-estar', 'choice').best).toEqual({ correct: 8, total: 10 });
     expect(kindProgressFromRows(rows, 'ser-estar', 'match').run?.index).toBe(1);
     expect(kindProgressFromRows(rows, 'ser-estar', 'form').legacy).toEqual({ correct: 6, total: 10 });
     expect(kindProgressFromRows(rows, 'ser-estar', 'why')).toEqual(NO_KIND_PROGRESS);
   });
 
-  it('az összes létező fajta átlaga a lista-%: (80 + 25 + 60 + 0) / 4', () => {
+  it('the average of all existing kinds is the list %: (80 + 25 + 60 + 0) / 4', () => {
     const scores = lessonScoresByTopic(rows, (id) => (id === 'ser-estar' ? ['choice', 'match', 'form', 'why'] : []));
     expect(scores.get('ser-estar')).toBe(41); // 165 / 4 = 41.25
   });
 
-  it('a fajta-sor nélküli, régi témaszintű számláló a tartalék', () => {
+  it('the old topic-level counter without kind rows is the fallback', () => {
     const scores = lessonScoresByTopic(rows, () => []);
     expect(scores.get('gustar')).toBe(100);
   });

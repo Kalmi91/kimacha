@@ -1,9 +1,8 @@
-// a szintvizsga eredménye (átment-e,
-// legjobb pontszám, szintenként) a meglévő `game_progress` táblában tárolódik,
-// `level-exam` játékként, itemId = a szint. Nincs új tábla és migráció, a mentés
-// pár-szintű, és a backup (exportAll/importAll) magától viszi. A DB-osztályok
-// (lib/database.ts ÉS lib/database.web.ts) ugyanezt a két segédet hívják, hogy
-// a két megvalósítás ne csúszhasson el egymástól.
+// The level exam result (passed or not, best score, per level) is stored in the existing
+// `game_progress` table, as the `level-exam` game, itemId = the level. No new table or migration,
+// the save is per pair and level, and the backup (exportAll/importAll) carries it automatically.
+// The DB classes (lib/database.ts AND lib/database.web.ts) call the same two helpers, so that
+// the two implementations cannot drift apart.
 
 import type { ExamResult, ExamResults } from './types';
 
@@ -20,7 +19,7 @@ function isResult(data: unknown): data is ExamResult {
   return !!d && typeof d.passed === 'boolean' && typeof d.best === 'number' && typeof d.last === 'number';
 }
 
-/** Új próba beolvasztása a korábbi eredménybe: az átmenés és a legjobb pontszám nem vész el. */
+/** Merges a new attempt into the earlier result: the pass and the best score are not lost. */
 export function mergeExamResult(prev: ExamResult | undefined, pct: number, passed: boolean, date: string): ExamResult {
   if (!prev) return { passed, best: pct, bestAt: date, last: pct, lastAt: date };
   const better = pct > prev.best;

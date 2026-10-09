@@ -1,11 +1,11 @@
-// a próbavizsga adatmodellje. A régi (4afeb8c^)
-// lib/exam/types.ts szerkezetét viszi tovább: papírok (saját órával), feladat-fajták, nincs
-// azonnali visszajelzés, készségenkénti pont és az átmenési szabály. A feladatok nem kézzel írt
-// JSON-ból, hanem a szint szavaiból épülnek (lib/exam/mock/build.ts), az irányt a `target` adja.
+// The practice exam data model. It continues the structure of the old (4afeb8c^)
+// lib/exam/types.ts: papers (with their own clock), task kinds, no
+// immediate feedback, per-skill points and the pass rule. The tasks are not built from hand-written
+// JSON but from the level's words (lib/exam/mock/build.ts), the direction is given by `target`.
 //
-// Papír és készség külön fogalom: a papír az óra egysége (a spanyol irányban papír = készség, az
-// angol A1 írásbelije hallást, olvasást és írást is tartalmaz, az angol A2 olvasás + írás egy
-// közös papír), a készség a pontozás egysége (minden feladat egy készséghez tartozik).
+// Paper and skill are separate concepts: the paper is the unit of the clock (in the Spanish direction paper = skill, the
+// English A1 written exam also contains listening, reading and writing, the English A2 reading + writing is one
+// shared paper), the skill is the unit of scoring (every task belongs to one skill).
 
 import type { PcicLevel, PcicTarget } from '@/data/pcic';
 import { foldedTokens } from './writing';
@@ -21,30 +21,30 @@ export interface MockChoice {
 
 interface MockTaskBase {
   id: string;
-  /** Melyik készség pontjába számít a feladat. */
+  /** Which skill's points the task counts into. */
   skill: MockSkill;
   instruction: string;
 }
 
-/** A felvételes feladatok hányszor játszhatók le (alap: kétszer; az angol A1 első része egyszer). */
+/** How many times recorded tasks can be played (default: twice; the first part of English A1: once). */
 interface MockPlays {
   plays?: number;
 }
 
 export interface MockMatchTask extends MockTaskBase, MockPlays {
   kind: 'match' | 'listen_match';
-  /** listen_match: a felolvasott célnyelvi mondatok, a `prompts` sorrendjében. */
+  /** listen_match: the target-language sentences read aloud, in the order of `prompts`. */
   audio?: string[];
-  /** match: a prompt szövege a célnyelvi mondat; listen_match: üres, a felület "Recording N"-t ír. */
+  /** match: the prompt text is the target-language sentence; listen_match: empty, the UI writes "Recording N". */
   prompts: { id: string; text: string }[];
-  /** A kiinduló nyelvi jelentések (egy több, mint ahány prompt). */
+  /** The source-language meanings (one more than the number of prompts). */
   options: { id: string; text: string }[];
   answer: Record<string, string>;
 }
 
 export interface MockReadMcTask extends MockTaskBase {
   kind: 'read_mc';
-  /** Egy kis célnyelvi szöveg + egy kérdés (a felület adja a kérdés szövegét), a válaszok kiinduló nyelviek. */
+  /** A short target-language text + a question (the UI supplies the question text), the answers are in the source language. */
   passages: ({ text: string } & MockChoice)[];
 }
 
@@ -56,37 +56,37 @@ export interface MockTrueFalseTask extends MockTaskBase {
 
 export interface MockGapMcTask extends MockTaskBase {
   kind: 'gap_mc';
-  /** Egy mondat egy `___` hellyel, 3 válasszal (célnyelvi szavak). */
+  /** A sentence with one `___` place and 3 answers (target-language words). */
   gaps: ({ text: string } & MockChoice)[];
 }
 
-/** Begépelős hézag: egy mondat egy `___` hellyel, a hiányzó szót kell beírni (nyílt hézagtöltés). */
+/** Typed gap: a sentence with one `___` place, the missing word must be typed in (open gap filling). */
 export interface MockGapTypeTask extends MockTaskBase, MockPlays {
   kind: 'gap_type';
-  /** Ha van, a mondatokat felolvassák (jegyzet-kiegészítés hallás után), a képernyőn a lyukas szöveg áll. */
+  /** If present, the sentences are read aloud (note completion after listening), and the gapped text is on screen. */
   audio?: string[];
-  /** `hint`: a hiányzó szó első betűje (a felület a beviteli mezőben mutatja), hogy a nyílt hézagnak kevesebb jó megoldása legyen. */
+  /** `hint`: the first letter of the missing word (the UI shows it in the input field), so that the open gap has fewer correct solutions. */
   gaps: { text: string; answer: string; hint?: string }[];
 }
 
-/** Diktálás: a felvételt szó szerint le kell írni (hallás ÉS írás is pontot kap). */
+/** Dictation: the recording must be written down verbatim (both listening and writing get a point). */
 export interface MockDictationTask extends MockTaskBase, MockPlays {
   kind: 'dictation';
   audio: string[];
-  /** A helyes szöveg (a felolvasott mondatok egymás után). */
+  /** The correct text (the read-aloud sentences one after another). */
   text: string;
 }
 
 export interface MockListenTask extends MockTaskBase, MockPlays {
   kind: 'listen_mc' | 'listen_dialogue';
-  /** Mit mond a felvétel; TTS-sel szól a célnyelven. Soronként egy kérdés. */
+  /** What the recording says; it is spoken with TTS in the target language. One question per line. */
   audio: string[];
   questions: MockChoice[];
 }
 
 export type MockFormCheck = 'fullname' | 'word' | 'address' | 'age' | 'phone' | 'email' | 'level';
 
-/** Mit kell egy űrlap-mezőnek tartalmaznia (lib/exam/mock/writing.ts checkField); alapból szám-mezőnél életkor, szövegnél egy szó. */
+/** What a form field must contain (lib/exam/mock/writing.ts checkField); by default an age for a number field, one word for a text field. */
 export interface MockFormField {
   id: string;
   label: string;
@@ -104,7 +104,7 @@ export interface MockShortMessageTask extends MockTaskBase {
   kind: 'short_message';
   prompt: string;
   minWords: number;
-  /** Egy tartalmi pont = egy jegy; kis/nagybetű és ékezet nélkül egyeztetett kulcsszavakkal. */
+  /** One content point = one mark; keywords are matched without case and accents. */
   points: { id: string; label: string; keywords: string[] }[];
 }
 
@@ -120,14 +120,14 @@ export type MockTask =
   | MockShortMessageTask;
 
 export interface MockPaper {
-  /** Stabil azonosító (a mentés ezt jegyzi): spanyolul a készség neve, angolul `written` / `readingwriting` / `listening` / `speaking`. */
+  /** Stable id (the save records it): in Spanish the skill name, in English `written` / `readingwriting` / `listening` / `speaking`. */
   id: string;
-  /** A papír neve a célnyelven. */
+  /** The paper's name in the target language. */
   name: string;
   minutes: number;
-  /** A papírban szereplő készségek összpontja (készségenként 25). */
+  /** The total points of the skills in the paper (25 per skill). */
   points: number;
-  /** A szóbeli ebben a szeletben helyőrző: nincs feladata, nem számít bele. */
+  /** Speaking is a placeholder in this slice: it has no task and does not count. */
   placeholder: boolean;
   tasks: MockTask[];
 }
@@ -139,11 +139,11 @@ export interface MockGroup {
 }
 
 /**
- * Az átmenési szabály alakja:
- * - groups: csoportonként küszöb (a spanyol hivatalos A1 / A2: olvasás + írás, hallás + szóbeli, mind 30 / 50);
- * - total: egy összpont-küszöb, részenkénti minimum nélkül, a készségek kompenzálnak (angol A1);
- * - average: a négy készség egyenlő súlyú átlaga egy százalék-küszöbhöz mérve; a küszöböt a vizsgáztató nem
- *   publikálja, ezért közelítő érték (angol A2, lib/exam/mock/blueprint.ts AVERAGE_PASS_PCT).
+ * The shape of the pass rule:
+ * - groups: a threshold per group (the official Spanish A1 / A2: reading + writing, listening + speaking, all 30 / 50);
+ * - total: a single total-score threshold, no per-skill minimum, the skills compensate each other (English A1);
+ * - average: the equal-weight average of the four skills against a percentage threshold; the examiner does not
+ *   publish the threshold, so it is an approximate value (English A2, lib/exam/mock/blueprint.ts AVERAGE_PASS_PCT).
  */
 export type MockRule =
   | { kind: 'groups'; groups: MockGroup[] }
@@ -154,22 +154,22 @@ export interface MockExam {
   target: MockTarget;
   level: MockLevel;
   seed: number;
-  /** Igaz, ha a hivatalos felépítést követi (spanyol); hamis, ha nemzetközi mintára épül (angol): a felület másképp jelöli. */
+  /** True if it follows the official structure (Spanish); false if it is based on an international sample (English): the UI labels it differently. */
   official: boolean;
   papers: MockPaper[];
-  /** A készségek neve a célnyelven (az eredmény-lap sávjaihoz). */
+  /** The names of the skills in the target language (for the bands of the result sheet). */
   skillNames: Record<MockSkill, string>;
   rule: MockRule;
 }
 
-/** Mit adott a tanuló egy feladatra: tétel-index vagy prompt/mező id a kulcs. */
+/** What the learner gave for a task: the key is the item index or the prompt/field id. */
 export type MockTaskAnswer = Record<string, string | number | boolean | null>;
 export type MockAnswers = Record<string, MockTaskAnswer>;
 
-/** A felvételes feladat lejátszásainak alapértéke. */
+/** The default number of plays of a recorded task. */
 export const DEFAULT_PLAYS = 2;
 
-/** Hány pontozott jegy van egy feladatban. */
+/** How many scored marks there are in a task. */
 export function mockTaskItemCount(task: MockTask): number {
   switch (task.kind) {
     case 'match':
@@ -186,10 +186,10 @@ export function mockTaskItemCount(task: MockTask): number {
     case 'listen_dialogue':
       return task.questions.length;
     case 'dictation':
-      return foldedTokens(task.text).length * 2; // minden szó egy hallás- és egy írás-jegy
+      return foldedTokens(task.text).length * 2; // every word is one listening and one writing mark
     case 'form_fill':
       return task.fields.length;
     case 'short_message':
-      return task.points.length + 1; // tartalmi pontok + a szószám elérése
+      return task.points.length + 1; // content points + reaching the word count
   }
 }

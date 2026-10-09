@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 // Sentence specificity linter, from the 2026-08-25/26 feedback round.
 //
-// `word:Saturday`: "ezek a mondatok ... nem specifikus ... szombaton nem
-// dolgozunk ezzel az a baj hogy vasárnap sem". Same for "el guisante es una
+// `word:Saturday`: "these sentences ... are not specific ... we don't work on
+// Saturday, the problem is that we don't work on Sunday either". Same for "el guisante es una
 // verdura verde", which is equally true of the courgette, and `word:home cooking`,
-// "eléggé rövid mondat és nem specifikus".
+// "a rather short sentence and not specific".
 //
 // The shared defect: the example sentence stays TRUE when the target word is
 // swapped for a sibling, so it teaches nothing about the word it is supposed to

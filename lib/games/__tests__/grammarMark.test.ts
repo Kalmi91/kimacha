@@ -2,9 +2,9 @@ import { markAnswerIndex, markTokens } from '../grammarMark';
 import { buildGrammarRound, type GrammarChoiceRoundItem } from '../grammarChoice';
 import type { GrammarMarkItem, GrammarTopicData } from '../content';
 
-// buildGrammarRound most a match/form ágat is visszaadhatja
-// (GrammarMatchFormRoundItem, options nélkül); ez a teszt csak jelölős
-// tételekkel dolgozik, tehát a round[0] mindig a choice-ág, a cast ezt fejezi ki.
+// buildGrammarRound can now also return the match/form branch
+// (GrammarMatchFormRoundItem, without options); this test only works with
+// mark items, so round[0] is always the choice branch, and the cast expresses that.
 const choice = (r: ReturnType<typeof buildGrammarRound>[number]) => r as GrammarChoiceRoundItem;
 
 function markItem(over: Partial<GrammarMarkItem> = {}): GrammarMarkItem {

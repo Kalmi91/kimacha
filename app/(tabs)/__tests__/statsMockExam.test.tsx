@@ -1,7 +1,7 @@
-// a Stats fül "Practice exam" kártyája a próbavizsga belépője.
-// Szintenként egy gomb (mindkét irányban A1 és A2; az angol irányon a felirat nemzetközi mintát jelöl,
-// nem hivatalosat), a gomb a /mock-exam képernyőre visz, alatta a legutóbbi eredmény
-// vagy a félbehagyott vizsga jelzése. Mock-minta: statsBrutal.test.tsx.
+// The "Practice exam" card on the Stats tab is the entry to the mock exam.
+// One button per level (A1 and A2 in both directions; in the English direction the label marks an international sample,
+// not an official one), the button leads to the /mock-exam screen, below it the latest result
+// or the sign of an abandoned exam. Mock pattern: statsBrutal.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 const mockPush = jest.fn();
@@ -40,13 +40,13 @@ const renderStats = async () => {
   return view;
 };
 
-describe('Stats fül: Practice exam kártya (E1 a)', () => {
+describe('Stats tab: Practice exam card', () => {
   beforeEach(async () => {
     mockPush.mockClear();
     await getDb().resetGameProgress(MOCK_EXAM_PROGRESS_KEY);
   });
 
-  it('es irány (en→es): A1 és A2 gomb, a gomb a próbavizsgára visz a szinttel', async () => {
+  it('es direction (en→es): A1 and A2 button, the button leads to the mock exam with the level', async () => {
     await getDb().setOnboarding('en', 'es');
     const view = await renderStats();
     expect(view.getByTestId('mock-exam-card')).toBeTruthy();
@@ -58,7 +58,7 @@ describe('Stats fül: Practice exam kártya (E1 a)', () => {
     view.unmount();
   });
 
-  it('es→en irány: A1 és A2 gomb is, nemzetközi-minta felirattal (nem "official")', async () => {
+  it('es→en direction: A1 and A2 button too, with an international-sample label (not "official")', async () => {
     await getDb().setOnboarding('es', 'en');
     const view = await renderStats();
     expect(view.getByText('A full practice exam modelled on an international format: reading, listening, writing and speaking.')).toBeTruthy();
@@ -70,7 +70,7 @@ describe('Stats fül: Practice exam kártya (E1 a)', () => {
     view.unmount();
   });
 
-  it('a legutóbbi eredmény látszik a kártyán (szint, átment-e, dátum)', async () => {
+  it('the latest result shows on the card (level, passed or not, date)', async () => {
     await getDb().setOnboarding('en', 'es');
     await getDb().setGameProgress(MOCK_EXAM_PROGRESS_KEY, 'es-A1', 'passed', {
       passed: true,
@@ -84,7 +84,7 @@ describe('Stats fül: Practice exam kártya (E1 a)', () => {
     view.unmount();
   });
 
-  it('a félbehagyott vizsgát jelzi a kártya', async () => {
+  it('the card flags an abandoned exam', async () => {
     await getDb().setOnboarding('en', 'es');
     await getDb().setGameProgress(MOCK_EXAM_PROGRESS_KEY, 'es-A2-session', 'open', { seed: 1, sig: 'x', done: ['reading'], answers: {} });
     const view = await renderStats();

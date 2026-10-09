@@ -1,13 +1,13 @@
-// Neo-brutalista paletták. A mód a
-// meglévő Auto / Light / Dark téma-beállítást követi: világos = "papír", sötét
-// = "tinta" (BASE). A palettánként csak a két kitöltő szín van: a = akcentus,
-// b = második szín; a szöveg színes kitöltésen mindig ON_FILL. A 'classic' nem
-// brutalista: a mai Colors[light|dark] értékeket adja (lib/ThemeContext.tsx).
+// Neo-brutalist palettes. The mode follows the
+// existing Auto / Light / Dark theme setting: light = "paper", dark
+// = "ink" (BASE). Each palette has only the two fill colors: a = accent,
+// b = second color; text on a colored fill is always ON_FILL. 'classic' is not
+// brutalist: it returns today's Colors[light|dark] values (lib/ThemeContext.tsx).
 export type GrammarPaletteId = 'brand' | 'electric' | 'lime' | 'cyan' | 'orange' | 'classic';
 export type FillPaletteId = Exclude<GrammarPaletteId, 'classic'>;
 
 type PaletteFills = { a: string; b: string };
-// bg = háttér, paper = kártya, ink = keret + szöveg, mu = halvány szöveg.
+// bg = background, paper = card, ink = frame + text, mu = muted text.
 type PaletteBase = { bg: string; paper: string; ink: string; mu: string };
 
 export const DEFAULT_GRAMMAR_PALETTE: GrammarPaletteId = 'brand';

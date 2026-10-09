@@ -8,10 +8,10 @@ import type { WordImage } from '@/data/wordImages';
 
 type ColorScheme = (typeof Colors)['light'];
 
-// az (i) alatt kinyíló rész. A magyarázat (note) és/vagy a kártya képe;
-// a kép alatt kis forrássor, ami koppintásra megnyitja a kép Commons fájl-oldalát (CC BY / BY-SA
-// forrásmegjelölés: link a forrásra; vágott képnél a sorban „(cropped)” / „(recortada)” jelzés).
-// Ha se kép, se magyarázat nincs, semmi nem renderel.
+// the part that opens under the (i). The explanation (note) and/or the card's image;
+// below the image a small source line that opens the image's Commons file page on tap (CC BY / BY-SA
+// attribution: link to the source; for a cropped image the line shows "(cropped)" / "(recortada)").
+// If there is neither an image nor an explanation, nothing renders.
 type Props = {
   note?: string;
   image?: WordImage;
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     maxWidth: 320,
     marginBottom: 12,
   },
-  // height: 'auto' kell, mert weben a helyi kép saját pixel-magassága (RN Web) felülírná az aspectRatio-t.
+  // height: 'auto' is needed because on web the local image's own pixel height (RN Web) would override the aspectRatio.
   image: {
     width: '100%',
     height: 'auto',

@@ -1,6 +1,6 @@
-// minden 4. ÚJ szó után mondatkártya a pakli-menetben
-// (felváltva összerakós és begépelős), csak gyakorlás: nem ír SRS-t (K3).
-// Mock-minta: app/(tabs)/__tests__/pcicDirection.test.tsx.
+// A sentence card after every 4th NEW word in the deck round
+// (alternating assemble and type-in), practice only: it writes no SRS.
+// Mock pattern: app/(tabs)/__tests__/pcicDirection.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -14,7 +14,7 @@ jest.mock('expo-router', () => ({
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
     useEffect(cb, []);
-    // A teszt ezzel tudja újra "fókuszba hozni" a fület (fülváltás és vissza).
+    // With this the test can bring the tab back "into focus" (tab switch and back).
     (globalThis as { __focusCb?: () => void }).__focusCb = cb;
   },
 }));
@@ -76,7 +76,7 @@ const ANSWERS: Record<string, string> = {
   'the light': 'la luz',
 };
 
-describe('PCIC fül: mondatkártya (PLAN-ketiranyu 7. lépés)', () => {
+describe('PCIC tab: sentence card', () => {
   beforeEach(async () => {
     await getDb().resetPcicCards();
     await getDb().resetGameProgress(RESUME_GAME_ID);
@@ -85,7 +85,7 @@ describe('PCIC fül: mondatkártya (PLAN-ketiranyu 7. lépés)', () => {
     mockSpeak.mockClear();
   });
 
-  // Egy ÚJ szó megválaszolása: begépeli a helyes alakot, Check, Next.
+  // Answering a NEW word: types the correct form, Check, Next.
   const answerWord = async (r: ReturnType<typeof render>, prompt: string) => {
     expect(r.getByText(prompt)).toBeTruthy();
     fireEvent.changeText(r.UNSAFE_getByType(TextInput), ANSWERS[prompt]);
@@ -95,7 +95,7 @@ describe('PCIC fül: mondatkártya (PLAN-ketiranyu 7. lépés)', () => {
     await flush();
   };
 
-  it('a 4. új szó után összerakós kártya jön, a 8. után begépelős, és egyik sem ír SRS-t', async () => {
+  it('after the 4th new word a build-the-sentence card comes, after the 8th a type-it card, and neither writes SRS', async () => {
     const r = render(<PcicScreen />);
     await flush();
 
@@ -104,7 +104,7 @@ describe('PCIC fül: mondatkártya (PLAN-ketiranyu 7. lépés)', () => {
     expect(r.queryByText('The book and the table.')).toBeNull();
 
     await answerWord(r, 'the house');
-    // Összerakós kártya: a forrás-mondat felül, a következő szó még nem szól.
+    // Assemble card: the source sentence on top, the next word does not speak yet.
     expect(r.getByText('The book and the table.')).toBeTruthy();
     expect(r.queryByText('the dog')).toBeNull();
     expect(mockSpeak).not.toHaveBeenCalledWith('the dog', 'en-US');
@@ -114,13 +114,13 @@ describe('PCIC fül: mondatkártya (PLAN-ketiranyu 7. lépés)', () => {
     fireEvent.press(r.getByText(/^Next/));
     await flush();
 
-    // A kártya bezárult: a 5. szó promptja látszik és felolvasódik.
+    // The card closed: the prompt of the 5th word shows and is read aloud.
     expect(r.getByText('the dog')).toBeTruthy();
     expect(mockSpeak).toHaveBeenCalledWith('the dog', 'en-US');
     expect((await getDb().getPcicCards()).length).toBe(4);
 
     for (const prompt of ['the dog', 'the chair', 'the glass', 'the light']) await answerWord(r, prompt);
-    // Begépelős kártya: az 5. szónak nincs mondata, a 6.-é (silla) megy át a kapun.
+    // Type-in card: the 5th word has no sentence, the 6th's (silla) goes through the gate.
     expect(r.getByText('The chair and the table.')).toBeTruthy();
     fireEvent.changeText(r.getByPlaceholderText('Type the sentence'), 'la silla y la mesa');
     fireEvent.press(r.getByText('✓ Check'));
@@ -130,12 +130,12 @@ describe('PCIC fül: mondatkártya (PLAN-ketiranyu 7. lépés)', () => {
     expect((await getDb().getPcicCards()).length).toBe(8);
   });
 
-  it('a visszavonás (Undo) visszaadja a kadencia-számlálót: az újra értékelt 4. szó ismét mondatot ad', async () => {
+  it('Undo restores the cadence counter: the re-rated 4th word gives a sentence again', async () => {
     const r = render(<PcicScreen />);
     await flush();
     for (const prompt of ['the book', 'the table', 'the cat']) await answerWord(r, prompt);
     await answerWord(r, 'the house');
-    // Bezárás rossz építéssel is lehet: egy csempe, Check, Next.
+    // It can also be closed with a wrong build: one tile, Check, Next.
     fireEvent.press(r.getAllByText('mesa')[0]);
     fireEvent.press(r.getByText('Check'));
     fireEvent.press(r.getByText(/^Next/));
@@ -143,18 +143,18 @@ describe('PCIC fül: mondatkártya (PLAN-ketiranyu 7. lépés)', () => {
 
     fireEvent.press(r.getByLabelText('Undo'));
     await flush();
-    // Az undo a felfedett állapotot állítja vissza: újra a Next értékel.
+    // Undo restores the revealed state: Next grades again.
     fireEvent.press(r.getByText('Next → Knew it'));
     await flush();
     expect(r.getByText('The book and the table.')).toBeTruthy();
   });
 
-  it('a számláló fülváltáson át is számol: 3 új szó, fókusz-újratöltés, a 4. után jön a kártya', async () => {
+  it('the counter also counts across tab switches: 3 new words, focus reload, the card comes after the 4th', async () => {
     const r = render(<PcicScreen />);
     await flush();
     for (const prompt of ['the book', 'the table', 'the cat']) await answerWord(r, prompt);
 
-    // Settingsbe és vissza: a fül újra fókuszba kerül, load() újraépíti a sort.
+    // To Settings and back: the tab gets focus again, load() rebuilds the queue.
     await act(async () => {
       (globalThis as { __focusCb?: () => void }).__focusCb?.();
     });

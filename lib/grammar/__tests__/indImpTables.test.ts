@@ -1,6 +1,6 @@
-// az indefinido-imperfecto lecke hablar mellett még 5 gyakori ige ragozó táblát kap
-// (comer, ser, ir, tener, hacer), indefinido + imperfecto oszloppal, és a táblakártyák
-// ugyanúgy angol alakot kérdeznek, vosotros-kártya nélkül.
+// Besides hablar, the indefinido-imperfecto lesson gets conjugation tables for 5 more common verbs
+// (comer, ser, ir, tener, hacer), with an indefinido + imperfecto column, and the table cards
+// are asked the same way, with an English prompt, with no vosotros card.
 
 import { lessonFor } from '../syllabus';
 import { tableCellsForLesson } from '../tableDeck';
@@ -10,7 +10,7 @@ if (!lesson) throw new Error('indefinido-imperfecto must exist');
 const cells = tableCellsForLesson(lesson);
 const VERBS = ['hablar', 'comer', 'ser', 'ir', 'tener', 'hacer'];
 
-describe('indefinido-imperfecto verb tables (FB468)', () => {
+describe('indefinido-imperfecto verb tables', () => {
   it('has one indefinido + imperfecto table for each of the six verbs', () => {
     const ids = lesson.body.filter((b) => b.kind === 'table').map((b) => (b as { id: string }).id);
     expect(ids).toEqual(expect.arrayContaining(VERBS.map((v) => `ind-imp-${v}`)));

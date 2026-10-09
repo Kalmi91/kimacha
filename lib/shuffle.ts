@@ -51,7 +51,7 @@ export function shuffleOptions<T>(
 
 /**
  * Seeded Fisher–Yates shuffle of a plain array (vocabPool.ts:
- * "determinisztikus keverés a lib/shuffle.ts-ből, tesztelhetőség"). Same seed,
+ * "deterministic shuffle from lib/shuffle.ts, for testability"). Same seed,
  * same order, every time, a game's word pool doesn't reshuffle itself on
  * every re-render.
  */

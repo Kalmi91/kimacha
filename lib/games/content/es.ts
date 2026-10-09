@@ -1,13 +1,13 @@
-// Issue #3: a spanyol sáv játék-tartalmának regisztrációja.
+// Issue #3: registration of the Spanish lane's game content.
 //
-// Korábban mind a nyolc `…ByLang` map és a hozzájuk tartozó hatvan JSON-import
-// egyetlen fájlban, a `lib/games/content.ts`-ben ült. Két nyelvi sáv így
-// ugyanazokat a sorokat szerkesztette volna minden új tartalomnál. Mostantól
-// egy nyelv = egy ilyen köteg-fájl, és a `content.ts` csak összefűzi őket:
-// új nyelv = egy új fájl + egy sor a `BUNDLES` táblában.
+// Previously all eight `…ByLang` maps and their sixty JSON imports lived
+// in a single file, `lib/games/content.ts`. Two language lanes would thus
+// have edited the same lines for every new piece of content. From now on
+// one language = one bundle file like this, and `content.ts` only stitches them together:
+// a new language = a new file + one line in the `BUNDLES` table.
 //
-// A típusok `import type`-pal jönnek, tehát futásidőben nincs körkörös import
-// a `content.ts` felé, csak fordításidejű hivatkozás.
+// The types come in via `import type`, so there is no circular import at
+// runtime towards `content.ts`, only a compile-time reference.
 
 import type {
   GrammarTopicData,
@@ -96,10 +96,10 @@ import grammarEsSeImpersonalPasiva from '@/data/games/grammar/es/se-impersonal-p
 import grammarEsSeAccidental from '@/data/games/grammar/es/se-accidental.json';
 import grammarEsNumeralesOrdinales from '@/data/games/grammar/es/numerales-ordinales.json';
 
-// K33 (play-vágás, 2026-09-22): a Játék/Átbeszélő fülek és a hozzájuk tartozó
-// data/games/{ccat,myths,chats,stories,confusables} mappák kikerültek. A
-// Play-vágás a `LanguageContentBundle` mezőit is levágta erre az
-// egyre: stories/chats/confusables/myths/ccat* kikerült, grammarTopics maradt.
+// Play cut: the Games/Átbeszélő tabs and their
+// data/games/{ccat,myths,chats,stories,confusables} folders were removed. The
+// Play cut also trimmed the `LanguageContentBundle` fields down to this
+// one: stories/chats/confusables/myths/ccat* are gone, grammarTopics remains.
 export const esContent: LanguageContentBundle = {
     // The JSON's per-item literal shape (each `wrong` only has the one key that
     // item actually needs) is narrower than GrammarWrongExplanation's index
@@ -110,11 +110,11 @@ export const esContent: LanguageContentBundle = {
     // Teaching order: A1 first, then A2. lib/grammar/syllabus.ts is the map that
     // groups these into units and says which ones are still unwritten.
   grammarTopics: [
-    // Tanulási sorrend = lib/grammar/syllabus.ts sorrendje. A core+ sáv (a
-    // beszéd-mag) témái ebben a sorban jönnek, A1-től B1-ig.
+    // Learning order = the order of lib/grammar/syllabus.ts. The topics of the core+ lane (the
+    // speech core) come in this sequence, from A1 to B1.
     grammarEsClasesDePalabras,
     grammarEsSustantivoNumero,
-    // az app összes főneve el / la feladatként is (lib/grammar/nounArticles.ts).
+    // every noun in the app also as an el / la exercise (lib/grammar/nounArticles.ts).
     withArticleNouns(grammarEsArticulosGenero as unknown as LessonV2),
     grammarEsAdjetivoConcordancia,
     grammarEsPresenteRegular,

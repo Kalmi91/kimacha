@@ -1,15 +1,15 @@
 import type { Sm2Card, Sm2Grade } from './sm2';
 import type { PcicKind } from '@/data/pcic';
 
-// a sor léptetése értékelés után és visszavonáskor, tesztelhetően.
+// Advancing the queue after a rating and on undo, in a testable way.
 
-// a rontott ("again") kártya eddig időzítő
-// nélkül a sor VÉGÉRE ment, ezért sok új szó mögött sokára jött vissza.
-// Mostantól kap egy `returnAt` időbélyeget (most + N s); a következő kártya
-// kiválasztásakor (`reorderForReturn`) a lejárt returnAt-ú (vagy - ha nincs
-// más kártya a sorban - a leghamarabb lejáró) rontott kártya jön előre,
-// akármennyi új/esedékes szó áll a sorban. A "Knew it" (`good`) és a
-// graduált kártyákra nincs időzítő (a régi append-a-végére viselkedés él).
+// A missed ("again") card used to go to the END of the queue without a timer,
+// so behind many new words it took a long time to come back.
+// It now gets a `returnAt` timestamp (now + N s); when the next card is
+// picked (`reorderForReturn`), the missed card with an expired returnAt (or, if there is no
+// other card in the queue, the one expiring soonest) comes to the front,
+// no matter how many new/due words are in the queue. "Knew it" (`good`) and
+// graduated cards get no timer (the old append-to-the-end behavior applies).
 export type QueuedSm2Card = Sm2Card & { returnAt?: number };
 
 export const DEFAULT_AGAIN_DELAY_SEC = 60;
@@ -18,11 +18,11 @@ export const MAX_AGAIN_DELAY_SEC = 300;
 export const AGAIN_DELAY_STEP_SEC = 15;
 
 /**
- * A sorban legfeljebb EGY rontott (returnAt-tal jelölt) kártyát emel a sor
- * elejére: a lejárt returnAt-ok közül a legrégebbit, vagy - ha a sorban a
- * jelölt kártyákon kívül más nincs - a leghamarabb lejárót (a tanuló ne
- * várjon feleslegesen). A többi kártya egymáshoz viszonyított sorrendje nem
- * változik.
+ * Moves at most ONE missed (returnAt-marked) card to the front of the
+ * queue: the oldest of the expired returnAt cards, or - if the queue has nothing
+ * but the marked cards - the one expiring soonest (so the learner does not
+ * wait needlessly). The relative order of the other cards does not
+ * change.
  */
 export function reorderForReturn(queue: QueuedSm2Card[], now: number): QueuedSm2Card[] {
   if (queue.length <= 1) return queue;
@@ -41,10 +41,10 @@ export function reorderForReturn(queue: QueuedSm2Card[], now: number): QueuedSm2
 }
 
 /**
- * Értékelés után: az első kártya kikerül; ha ma még esedékes (learning), a
- * sor végére kerül. `again` esetén a visszatért kártya `returnAt = now +
- * delaySec * 1000` jelölést kap; ezután `reorderForReturn` dönt, mikor kerül
- * elő (lehet a lejárat előtt is, ha nincs más kártya a sorban).
+ * After a rating: the first card is removed; if it is still due today (learning), it
+ * goes to the end of the queue. On `again` the returned card gets the mark `returnAt = now +
+ * delaySec * 1000`; `reorderForReturn` then decides when it comes
+ * up (possibly before the deadline, if there is no other card in the queue).
  */
 export function requeueAfterGrade(
   queue: QueuedSm2Card[],
@@ -56,19 +56,19 @@ export function requeueAfterGrade(
 ): QueuedSm2Card[] {
   const rest = queue.slice(1);
   if (next.due !== today) return rest;
-  // A visszahozott kártya a `sm2Review` másolatában magával hozná a lejárt
-  // returnAt-ját, és "Knew it" után azonnal újra a sor elejére ugrana
-  // (4.1.0 web-smoke, 2026-09-24). Csak az `again` kap új időzítőt.
+  // The returned card would carry its expired returnAt in the copy made by `sm2Review`,
+  // and after "Knew it" it would immediately jump to the front of the queue again
+  // (4.1.0 web smoke test, 2026-09-24). Only `again` gets a new timer.
   const { returnAt: _stale, ...clean } = next as QueuedSm2Card;
   const entry: QueuedSm2Card = grade === 'again' ? { ...clean, returnAt: now + delaySec * 1000 } : clean;
   return reorderForReturn([...rest, entry], now);
 }
 
 /**
- * Visszavonás: az értékelt kártya BÁRHONNAN kikerül a sorból (itemId
- * szerint, nem pozíció szerint - a `reorderForReturn` a returnAt-jelölt
- * kártyát máshova mozgathatta), így nem marad árva időzítő; az értékelés
- * előtti állapot a sor ELEJÉRE kerül.
+ * Undo: the rated card is removed from the queue from ANYWHERE (by itemId,
+ * not by position - `reorderForReturn` may have moved the returnAt-marked
+ * card elsewhere), so no orphan timer is left; the pre-rating
+ * state goes to the FRONT of the queue.
  */
 export function requeueAfterUndo(
   queue: QueuedSm2Card[],
@@ -80,31 +80,31 @@ export function requeueAfterUndo(
   return [before, ...rest];
 }
 
-// kiemelve tiszta függvénybe, hogy a napi haladás (a header-sor és a
-// csík) tab-váltás/app-újraindítás után is a perzisztált `lastReview`-ból
-// számolt, valós napi számot mutassa, ne csak a (mountonként nullázódó)
-// menet-számlálót.
+// Extracted into a pure function so that the daily progress (the header row and the
+// bar) shows the real daily count computed from the persisted `lastReview`, even after a
+// tab switch/app restart, not just the session counter (which resets on
+// every mount).
 export function countDoneToday(cards: Sm2Card[], today: string): number {
   return cards.filter((c) => c.lastReview === today).length;
 }
 
 export const PCIC_NEW_BONUS_STEP = 10;
-// a "kész mára" képernyő +5 / +10 / +15 új szó gombjai.
+// the +5 / +10 / +15 new word buttons of the "done for today" screen.
 export const PCIC_NEW_BONUS_STEPS = [5, 10, 15] as const;
 
 interface PcicNewBudgetInput {
-  limit: number; // a Beállítások napi új-szó kerete (daily_new_limit)
-  bonus: number; // a mai napra perzisztált bónusz (learn_settings.new_bonus, csak ha new_bonus_date === ma)
-  introducedToday: number; // a ma bevezetett (introducedAt === ma) kártyák száma
+  limit: number; // daily new-word budget from Settings (daily_new_limit)
+  bonus: number; // bonus persisted for today (learn_settings.new_bonus, only if new_bonus_date === today)
+  introducedToday: number; // number of cards introduced today (introducedAt === today)
 }
 
 /**
- * a "+10 új szó" bónusz eddig csak React-state-ben élt
- * (`extraNew`), amit a `load()` minden fókusz-váltásnál/új napon nullázott,
- * ÉS a flat +10-et adta a napi kerethez, függetlenül attól, hány szó lett
- * már bevezetve ma. Emiatt (limit 10, ma bevezetve 18) a "+10" 2 új kártyát
- * adott (10+10-18), nem 10-et. Ez a következő bónusz-érték: annyival TÖBB
- * lesz, mint amennyi ma már be van vezetve, plusz a lépés (alap 10).
+ * The "+10 new words" bonus used to live only in React state
+ * (`extraNew`), which `load()` reset on every focus change/new day,
+ * AND it added a flat +10 to the daily budget regardless of how many words had
+ * already been introduced today. So (limit 10, 18 introduced today) the "+10" gave 2 new cards
+ * (10+10-18), not 10. This is the next bonus value: it will be that much MORE
+ * than the number already introduced today, plus the step (default 10).
  */
 export function nextPcicNewBonus(
   { limit, bonus, introducedToday }: PcicNewBudgetInput,
@@ -114,27 +114,27 @@ export function nextPcicNewBonus(
 }
 
 /**
- * A `pickSm2Session` `newLimit` paraméterének adandó érték: a keret + a mai
- * napra perzisztált bónusz, de sosem kevesebb, mint amennyi ma már be van
- * vezetve (a `pickSm2Session` ebből vonja ki `introducedToday`-t, tehát ha
- * ez itt már `introducedToday` alatt lenne, negatív keret helyett 0 jönne ki
- * idő előtt). Nap-váltáskor a hívó oldal a DB-től 0 bónuszt kap (a
- * `new_bonus_date` nem a mai), tehát ez a függvény önmagában nem tud a
- * naptári napról - azt a `getPcicNewBonus(today)` DB-hívás dönti el.
+ * The value to pass as the `newLimit` parameter of `pickSm2Session`: the budget plus the bonus
+ * persisted for today, but never less than the number already introduced today
+ * (`pickSm2Session` subtracts `introducedToday` from it, so if
+ * this were already below `introducedToday`, 0 would come out instead of a negative budget
+ * prematurely). On a day change the caller gets a 0 bonus from the DB (the
+ * `new_bonus_date` is not today), so this function by itself does not know about the
+ * calendar day - the `getPcicNewBonus(today)` DB call decides that.
  */
 export function pcicNewBudget({ limit, bonus, introducedToday }: PcicNewBudgetInput): number {
   return Math.max(introducedToday, limit + bonus);
 }
 
 /**
- * User feedback ("new 42?"): a napi új-szó keret és a +N bónusz NAPI érték (egy sor a
- * learn_settings-ben), de a ma bevezetett kártyákat a hívó a nézet szintjén
- * számolta. Ha a tanuló az A1-en háromszor kért "+10"-et, majd átváltott A2-re,
- * ott a szint 0 mai szava mellett a teljes bónuszos keret (limit + bónusz) új
- * szóként jött vissza. A pickSm2Session newLimit paramétere: a napi keret a
- * MINDEN szinten ma bevezetettekkel csökkentve; a nézet szintjén bevezetetteket a
- * pickSm2Session maga vonja le, ezért azokat itt visszaadjuk. Egy szintnél
- * (all === this) ugyanaz, mint a pcicNewBudget.
+ * The daily new-word budget and the +N bonus are DAILY values (one row in
+ * learn_settings), but the caller counted the cards introduced today at the view level.
+ * If the learner asked for "+10" three times on A1, then switched to A2,
+ * there the full bonus budget (limit + bonus) came back as new words even with
+ * 0 words of that level introduced today. The value for the newLimit parameter of pickSm2Session: the daily budget
+ * reduced by the cards introduced today on EVERY level; the ones introduced at the view's level are
+ * subtracted by pickSm2Session itself, so we add those back here. For a single level
+ * (all === this) it is the same as pcicNewBudget.
  */
 export function pcicSessionNewLimit({
   limit,
@@ -152,11 +152,10 @@ export function pcicSessionNewLimit({
 }
 
 /**
- * User feedback ("azt írja, hogy van még 40 szó, miért nem dobja fel?"): a szint-választó vizsga-sora kiírja, mennyi
- * szó hiányzik a feloldáshoz ("N to go"), a "Practice words" gomb viszont a napi keret kimerülése után semmit
- * nem adott. Ha a mai keret (limit + bónusz) már elfogyott, a gomb a szint ÖSSZES hiányzó új szavát adja egy
- * koppintásra ("mindet egyszerre"); ha még van keret, nem bővít (a szokásos napi
- * adag jön). A visszaadott érték a kért bónusz-lépés (0 = nincs bővítés).
+ * The level picker's exam row shows how many words are missing for the unlock ("N to go"), but the "Practice words" button gave nothing
+ * once the daily budget was used up. If today's budget (limit + bonus) is already spent, the button gives ALL the missing new words of the level in one
+ * tap ("all at once"); if there is budget left, it does not extend (the usual daily
+ * batch comes). The returned value is the requested bonus step (0 = no extension).
  */
 export function practiceTopUpStep({
   limit,
@@ -173,13 +172,13 @@ export function practiceTopUpStep({
   return missing;
 }
 
-// A napi keret MINDEN kártyát számol
-// (szó, kifejezés, mondat, lánc-tag), ahogy eddig - ez nem változik. Ami hiányzott:
-// a fejléc nem mutatta meg, MIBŐL áll a mai bevezetés, ezért egy 10-es keretnél a
-// "csak 6 vagy 8 jött" zavarba fulladt (a maradék a másik fajtára ment el, vagy
-// korábban ebben a napi körben már bevezetődött). Ez a felbontás, `word` = kind
-// word/phrase/pattern, `sentence` = kind sentence (a lánc-mondatok is ide esnek,
-// mert egy lánc-tag ugyanolyan `sentence` kind-ú PcicItem, mint bármely más mondat).
+// The daily budget counts EVERY card
+// (word, phrase, sentence, chain member), as before - this does not change. What was missing:
+// the header did not show WHAT today's introductions consist of, so with a budget of 10 the
+// "only 6 or 8 came" confusion arose (the rest went to the other kind, or
+// was already introduced earlier in this day's round). This is the breakdown: `word` = kind
+// word/phrase/pattern, `sentence` = kind sentence (chain sentences fall here too,
+// because a chain member is the same `sentence`-kind PcicItem as any other sentence).
 interface TodayIntroducedByKind {
   words: number;
   sentences: number;
@@ -195,25 +194,25 @@ export function countIntroducedTodayByKind(
   for (const card of cards) {
     if (card.introducedAt !== today) continue;
     if (kindOf(card.itemId) === 'sentence') sentences++;
-    else words++; // word / phrase / pattern / ismeretlen -> szó-vödör
+    else words++; // word / phrase / pattern / unknown -> word bucket
   }
   return { words, sentences };
 }
 
-// a szintek közti duplikátum-egyesítéskor
-// (lib/db/migrations.ts applyPcicDedup) ha MINDKÉT oldalon (a törölt és a
-// megmaradó item-id-n is) van SRS-haladás, az "erősebb" oldal nyer: több
-// sikeres ismétlés (reps - lapses), holtversenyben nagyobb interval, végül
-// a korábbi esedékesség (hogy az ismétlés ne csússzon ki). A `cardMerge.ts`
-// pickSurvivor-jának Sm2Card-megfelelője (az ottani `stability` mező itt
-// nincs, az FSRS-only `cards` táblára épült).
-// A bevezetendő új kártyák sorrendjében két
-// mondat (vagy csoport, ami `groupOf` szerint EGY egységnek számít) közt
-// legalább `minGap` nem-mondat kártyának kell lennie ("10 kártyánként max 1
-// mondat"). Ami idő előtt jönne, EBBŐL a hívásból kimarad (nem a sor végére
-// kerül, hanem eldobódik): a
-// következő sor-építés (load()/handleMoreNew()) újra megvizsgálja, mert addigra
-// már más kártyák is bevezetődtek.
+// When merging duplicates across levels
+// (applyPcicDedup in lib/db/migrations.ts), if there is SRS progress on BOTH sides (on the deleted and
+// the surviving item id), the "stronger" side wins: more
+// successful reviews (reps - lapses), on a tie the larger interval, finally
+// the earlier due date (so the review does not slip away). The Sm2Card equivalent of
+// pickSurvivor in `cardMerge.ts` (the `stability` field there does not exist
+// here; it was built for the FSRS-only `cards` table).
+// In the order of new cards to introduce, between two
+// sentences (or groups, which count as ONE unit per `groupOf`) there must be
+// at least `minGap` non-sentence cards ("max 1 sentence per 10
+// cards"). Whatever would come too early is left out of THIS call (it is not moved to the end of the queue
+// but dropped): the
+// next queue build (load()/handleMoreNew()) re-checks it, because by then
+// other cards have been introduced too.
 export function thinSentences(
   orderedIds: string[],
   kindOf: (id: string) => PcicKind | undefined,
@@ -221,7 +220,7 @@ export function thinSentences(
   minGap: number = 9
 ): string[] {
   const result: string[] = [];
-  let sinceLastGroup = minGap; // az első mondat-csoport várakozás nélkül mehet
+  let sinceLastGroup = minGap; // the first sentence group can go without waiting
   let activeGroup: string | null = null;
   for (const id of orderedIds) {
     if (kindOf(id) !== 'sentence') {
@@ -237,17 +236,16 @@ export function thinSentences(
         sinceLastGroup = 0;
       }
     }
-    // else: idő előtt jönne, ebből a hívásból kimarad.
+    // else: it would come too early, so it is left out of this call.
   }
   return result;
 }
 
-// a régi PCIC-korpuszból itt maradt
-// SRS-sorok (data/pcic.ts most már a data/words alapú korpuszt tölti be, a
-// régi "a1-..."/"b1-..." id-k nincsenek benne) a `matchesLevel` id-előtag
-// tartalékszabálya miatt továbbra is bekerülnének egy szint pakljába, holott
-// `findPcicItem` rájuk undefined-ot ad. Ez a szűrő kihagyja őket, mielőtt a
-// session összeáll, hogy a pakli ne akadjon el egy üres/felfedhetetlen lapon.
+// SRS rows left over from the old PCIC corpus (data/pcic.ts now loads the
+// data/words based corpus, the old "a1-..."/"b1-..." ids are not in it) would still
+// end up in a level's deck through the id-prefix fallback rule of `matchesLevel`, even though
+// `findPcicItem` returns undefined for them. This filter skips them before the
+// session is built, so the deck does not get stuck on an empty/unrevealable card.
 export function dropOrphanCards(cards: Sm2Card[], itemExists: (id: string) => boolean): Sm2Card[] {
   return cards.filter((c) => itemExists(c.itemId));
 }
@@ -260,23 +258,22 @@ export function pickStrongerSm2Card(a: Sm2Card, b: Sm2Card): Sm2Card {
   return a.due <= b.due ? a : b;
 }
 
-// User feedback: „fenn a fekete csík, azt úgy akarom, hogy azt
-// számolja, mennyi van még a pakliból, mikor fejeződik be, most nem tudom, mit számol,
-// mert újraindult". (Az eddigi 10-es szettes sáv minden 10. kártyánál újraindult.) A sáv
-// most a MAI adag hátralévőjét mutatja: az első kártyánál üres, a nap utolsó kártyájánál
-// tele, adag közben nem indul újra. A "kész" kártya = ma értékelt és már nincs a sorban
-// (egy "again" kártya a sorban marad, tehát még nem kész, az adag mérete nem ingadozik).
-// A "+10 új szó" bővítés a sort növeli, így az új teljes adaghoz mér.
+// The black bar at the top should count how much of the deck is left and when it
+// finishes; the old 10-card set bar restarted at every 10th card, so it was unclear what it counted.
+// The bar now shows the remainder of TODAY's batch: empty at the first card, full at the last card of the day,
+// and it does not restart mid-batch. A "finished" card = rated today and no longer in the queue
+// (an "again" card stays in the queue, so it is not finished yet and the batch size does not fluctuate).
+// The "+10 new words" extension grows the queue, so the bar measures against the new full batch.
 export function countFinishedToday(cards: Sm2Card[], queue: Sm2Card[], today: string): number {
   const inQueue = new Set(queue.map((c) => c.itemId));
   return cards.filter((c) => c.lastReview === today && !inQueue.has(c.itemId)).length;
 }
 
-// User feedback ("+15 szó, bebugosodott a csík"): a "+N új szó" bővítés új adagot indít, de a
-// `countFinishedToday` az egész nap kész kártyáit számolja, így a csík +N után nem 0-ról,
-// hanem pl. 78%-ról indult (a nap eddigi kész kártyái az új adagon is "készek" voltak).
-// A bővítéskor a hívó eltárolja a már kész kártyák számát (batchBase), a csík ehhez képest
-// az ÚJ adag haladását méri: az első új kártyánál üres, az utolsónál tele.
+// The "+N new words" extension starts a new batch, but
+// `countFinishedToday` counts the finished cards of the whole day, so after +N the bar did not start from 0
+// but from e.g. 78% (the day's finished cards so far also counted as "finished" in the new batch).
+// On extension the caller stores the number of already finished cards (batchBase), and relative to it the bar
+// measures the progress of the NEW batch: empty at the first new card, full at the last.
 export function finishedInBatch(finishedToday: number, batchBase: number): number {
   return Math.max(0, finishedToday - batchBase);
 }

@@ -1,5 +1,5 @@
-// minden regisztrált betűhöz van fájl és licenc, a fájlok léteznek és
-// valódi betűfájlok (nem letöltési hibaoldal).
+// every registered font has a file and a license, the files exist and are
+// real font files (not a download error page).
 
 import { existsSync, readFileSync, statSync } from 'fs';
 import { join } from 'path';
@@ -10,7 +10,7 @@ const ROOT = join(__dirname, '..', '..');
 const FONTS_TS = readFileSync(join(ROOT, 'constants', 'Fonts.ts'), 'utf8');
 
 describe('constants/Fonts.ts', () => {
-  it('28 egyedi betűnév, a PLAN-temak 2B listája (ShipporiMincho helyett Spectral-Light)', () => {
+  it('28 unique font names, the theme font list (Spectral-Light instead of ShipporiMincho)', () => {
     expect(FONT_NAMES).toHaveLength(28);
     expect(new Set(FONT_NAMES).size).toBe(FONT_NAMES.length);
     expect(FONT_NAMES).toContain('Spectral-Light');
@@ -20,7 +20,7 @@ describe('constants/Fonts.ts', () => {
     }
   });
 
-  it('minden FONT_NAMES-hez van require és licenc, és semmi extra', () => {
+  it('every FONT_NAMES entry has a require and a license, and nothing extra', () => {
     for (const name of FONT_NAMES) {
       expect(FONT_FILES[name]).toBeDefined();
       const lic = FONT_LICENSES[name];
@@ -32,7 +32,7 @@ describe('constants/Fonts.ts', () => {
     expect(Object.keys(FONT_LICENSES).sort()).toEqual([...FONT_NAMES].sort());
   });
 
-  it('a hivatkozott betűfájlok léteznek, érvényes TTF/OTF fejléccel', () => {
+  it('the referenced font files exist, with a valid TTF/OTF header', () => {
     const paths = [...FONTS_TS.matchAll(/require\('\.\.\/assets\/fonts\/([^']+)'\)/g)].map((m) => m[1]);
     expect(paths).toHaveLength(FONT_NAMES.length);
     expect(new Set(paths).size).toBe(paths.length);
@@ -46,7 +46,7 @@ describe('constants/Fonts.ts', () => {
     }
   });
 
-  it('a _layout.tsx useFonts-ja megkapja a FONT_FILES-t', () => {
+  it('the useFonts of _layout.tsx gets FONT_FILES', () => {
     const layout = readFileSync(join(ROOT, 'app', '_layout.tsx'), 'utf8');
     expect(layout).toContain('...FONT_FILES');
   });

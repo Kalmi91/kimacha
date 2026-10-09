@@ -1,20 +1,19 @@
-// a szintfelmérő kérdései. Szót ÉS
-// nyelvtant mér: a szó a szint words-open kártyáiból jön (a kérdés a célnyelvi szó, a
-// válasz a kiinduló nyelvű jelentés, négy közül), a nyelvtan a szint nyelvtani leckéinek
-// lyukas-mondat tételeiből (lib/exam/grammarItems.ts), a leckék KÉSZ voltától függetlenül.
-// A szó-kérdésben nincs mondat (észak-csillag: soha mondat ismeretlen szóval); a lecke
-// mondatai a lecke saját, auditált tételei. Tiszta modul: a hívó adja az adatot.
+// The placement test questions. They measure words AND grammar: the word comes from the level's
+// words-open cards (the question is the target-language word, the answer the source-language meaning, one of
+// four), the grammar from the gap-sentence items of the level's grammar lessons (lib/exam/grammarItems.ts),
+// whether or not the lessons are DONE. A word question has no sentence (north star: never a sentence with an
+// unknown word); the lesson's sentences are the lesson's own audited items. Pure module: the caller supplies the data.
 
 import { PCIC_LEVELS, pcicItemsForLevel, type PcicItem, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import { hasLesson, syllabusForLevel } from '@/lib/grammar/syllabus';
 import { hashString, shuffleArray, shuffleOptions } from '@/lib/shuffle';
 import { gapSourcesForLevel, type GapSource } from './grammarItems';
 
-/** Egy lépcső (5 kérdés) sorrendje: szó, nyelvtan, szó, nyelvtan, szó. */
+/** The order of one step (5 questions): word, grammar, word, grammar, word. */
 export const PLACEMENT_PATTERN = ['word', 'gap', 'word', 'gap', 'word'] as const;
 type PlacementKind = (typeof PLACEMENT_PATTERN)[number];
 
-/** Szó-kérdés: a válaszlehetőségek (4) a kiinduló nyelvű jelentések. */
+/** Word question: the answer options (4) are source-language meanings. */
 export interface PlacementWordQuestion {
   kind: 'word';
   level: PcicLevel;
@@ -24,7 +23,7 @@ export interface PlacementWordQuestion {
   correctIndex: number;
 }
 
-/** Nyelvtan-kérdés: lyukas mondat, a lecke tételéből. */
+/** Grammar question: a gap sentence, from a lesson item. */
 export interface PlacementGapQuestion {
   kind: 'gap';
   level: PcicLevel;
@@ -37,7 +36,7 @@ export interface PlacementGapQuestion {
 
 export type PlacementQuestion = PlacementWordQuestion | PlacementGapQuestion;
 
-/** Egy szint kérdés-készlete. */
+/** The question pool of one level. */
 export interface PlacementPool {
   items: PcicItem[];
   gaps: GapSource[];
@@ -49,12 +48,12 @@ export function placementQuestionKey(q: PlacementQuestion): string {
   return q.kind === 'word' ? `w:${q.itemId}` : `g:${q.topicId}:${q.itemId}`;
 }
 
-/** A mérhető szintek: amihez van szó-adat az aktív irányban (a hívó előtte `setPcicTarget`-et hív). */
+/** The measurable levels: those with word data in the active direction (the caller calls `setPcicTarget` first). */
 export function placementLevels(): PcicLevel[] {
   return PCIC_LEVELS.filter((level) => pcicItemsForLevel(level).length > 0);
 }
 
-/** Egy szint készlete az aktív irányhoz: a szint szavai + MINDEN megírt nyelvtani lecke gap tétele. */
+/** The pool of one level for the active direction: the level's words + the gap items of EVERY written grammar lesson. */
 export function placementPoolFor(level: PcicLevel, target: PcicTarget): PlacementPool {
   const topicIds = syllabusForLevel(level, target)
     .map((topic) => topic.id)
@@ -65,9 +64,9 @@ export function placementPoolFor(level: PcicLevel, target: PcicTarget): Placemen
 const norm = (text: string) => text.trim().toLowerCase();
 
 interface WordSides {
-  /** A kérdezett (célnyelvi) szó. */
+  /** The word asked (target language). */
   word: string;
-  /** A jó válasz (kiinduló nyelvű jelentés). */
+  /** The right answer (source-language meaning). */
   meaning: string;
 }
 
@@ -80,10 +79,10 @@ function sidesOf(item: PcicItem, target: PcicTarget): WordSides | undefined {
 function wordQuestion(level: PcicLevel, item: PcicItem, items: PcicItem[], target: PcicTarget, seed: number): PlacementWordQuestion | undefined {
   const own = sidesOf(item, target);
   if (!own) return undefined;
-  // Csapdák: más jelentés, azonos szófajjal előre (hihetőbb), de a kérdezett szóval vagy a jó
-  // válasszal azonos szöveg nem lehet köztük (azonos írású szó / szinonim-jelölt = két jó válasz).
+  // Traps: a different meaning, same part of speech first (more plausible), but the text must not be the same as the asked word or the
+  // right answer (a same-spelling word / synonym candidate = two right answers).
   const taken = new Set([norm(own.meaning)]);
-  // Az azonos írású másik szó jelentése is jó válasz lenne: az sem csapda.
+  // The meaning of another word with the same spelling would also be a right answer: it is no trap either.
   for (const other of items) {
     const sides = sidesOf(other, target);
     if (sides && norm(sides.word) === norm(own.word)) taken.add(norm(sides.meaning));
@@ -114,18 +113,18 @@ function gapQuestion(level: PcicLevel, gap: GapSource, seed: number): PlacementG
 
 interface BuildPlacementInput {
   level: PcicLevel;
-  /** A kérdés helye a lépcsőn belül (0..4): a PLACEMENT_PATTERN dönti el a fajtát. */
+  /** The position of the question within the step (0..4): PLACEMENT_PATTERN decides the kind. */
   position: number;
   target: PcicTarget;
   pool: PlacementPool;
-  /** Már feltett kérdések (placementQuestionKey), hogy ugyanaz ne jöjjön kétszer. */
+  /** Questions already asked (placementQuestionKey), so that the same one does not come twice. */
   used: ReadonlySet<string>;
   seed: number;
 }
 
 /**
- * A következő kérdés. Ha a kért fajtából elfogyott a készlet (pl. a szinthez nincs megírt
- * lecke), a másik fajtából ad; ha mindkettőből elfogyott, `undefined`.
+ * The next question. If the pool of the requested kind has run out (e.g. no lesson is written
+ * for the level), it takes one of the other kind; if both have run out, `undefined`.
  */
 export function buildPlacementQuestion(input: BuildPlacementInput): PlacementQuestion | undefined {
   const { level, position, target, pool, used, seed } = input;

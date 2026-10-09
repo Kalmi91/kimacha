@@ -1,5 +1,5 @@
-// StatusBarStrip, UsageToast és MistakesEntry brutalista palettán
-// (SegmentBar / ink vonal / BrutalBox, sarok 0), classic palettán a mai kinézet.
+// StatusBarStrip, UsageToast and MistakesEntry on the brutalist palette
+// (SegmentBar / ink line / BrutalBox, corner 0), today's look on the classic palette.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-router', () => ({ router: { push: jest.fn() } }));
@@ -43,8 +43,8 @@ const flush = async (times = 6) => {
 
 const wrap = (ui: React.ReactElement) => <ThemeProvider>{ui}</ThemeProvider>;
 
-describe('Fejléc-elemek, neo-brutalista (NY25)', () => {
-  it('StatusBarStrip: brand palettán alsó ink vonal, classic palettán nincs', async () => {
+describe('Header elements, neo-brutalist', () => {
+  it('StatusBarStrip: with the brand palette a bottom ink line, with the classic palette none', async () => {
     await getDb().setGrammarPalette('brand');
     const brand = render(wrap(<StatusBarStrip />));
     await flush();
@@ -60,7 +60,7 @@ describe('Fejléc-elemek, neo-brutalista (NY25)', () => {
     classic.unmount();
   });
 
-  it('UsageToast: brand palettán BrutalBox (sarok 0), classic palettán pirula', async () => {
+  it('UsageToast: with the brand palette a BrutalBox (corner 0), with the classic palette a pill', async () => {
     const { __fireMinute } = jest.requireMock('@/lib/usageTimer');
     await getDb().setGrammarPalette('brand');
     const brand = render(wrap(<UsageToast />));
@@ -77,7 +77,7 @@ describe('Fejléc-elemek, neo-brutalista (NY25)', () => {
     classic.unmount();
   });
 
-  it('UsageToast: hidden alatt (onboarding) nem rajzol, a classic pirulának saját azonosítója van (7F)', async () => {
+  it('UsageToast: does not draw while hidden (onboarding), the classic pill has its own identifier', async () => {
     const { __fireMinute } = jest.requireMock('@/lib/usageTimer');
     await getDb().setGrammarPalette('brand');
     const hiddenBrand = render(wrap(<UsageToast hidden />));
@@ -100,7 +100,7 @@ describe('Fejléc-elemek, neo-brutalista (NY25)', () => {
     classic.unmount();
   });
 
-  it('MistakesEntry: brand palettán BrutalBox belépő, classic palettán a mai sor', async () => {
+  it('MistakesEntry: with the brand palette a BrutalBox entry, with the classic palette the current row', async () => {
     const result = validateMistakesPayload(sample);
     if (!result.ok) throw new Error(result.error);
     await getDb().saveMistakeBatch(result.batch.batchId, JSON.stringify(result.batch), '2026-09-23T10:00:00.000Z');

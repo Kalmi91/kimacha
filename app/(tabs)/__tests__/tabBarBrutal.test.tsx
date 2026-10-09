@@ -1,5 +1,5 @@
-// a tab-bar brutalista palettán (az aktív ikon kitöltésű dobozon), classic
-// palettán a mai sima ikon. A Tabs mock csak a tabBarIcon-okat rendereli.
+// The tab bar on the brutalist palette (the active icon on a filled box), today's
+// plain icon on the classic palette. The Tabs mock renders only the tabBarIcons.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-symbols', () => ({ SymbolView: () => null }));
@@ -37,8 +37,8 @@ const flush = async (times = 6) => {
   }
 };
 
-describe('Tab-bar, neo-brutalista (NY19)', () => {
-  it('brand palettán az aktív ikon dobozon ül', async () => {
+describe('Tab bar, neo-brutalist', () => {
+  it('with the brand palette the active icon sits in a box', async () => {
     await getDb().setGrammarPalette('brand');
     const view = render(<ThemeProvider><TabLayout /></ThemeProvider>);
     await flush();
@@ -46,7 +46,7 @@ describe('Tab-bar, neo-brutalista (NY19)', () => {
     view.unmount();
   });
 
-  it('classic palettán a mai ikon: nincs doboz', async () => {
+  it('with the classic palette the current icon: no box', async () => {
     await getDb().setGrammarPalette('classic');
     const view = render(<ThemeProvider><TabLayout /></ThemeProvider>);
     await flush();

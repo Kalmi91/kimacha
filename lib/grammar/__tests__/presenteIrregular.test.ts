@@ -1,4 +1,4 @@
-// a presente-irregular lecke a leggyakoribb rendhagyó igék mindegyikét tartalmazza.
+// the presente-irregular lesson contains every one of the most frequent irregular verbs.
 import lessonJson from '@/data/games/grammar/es/presente-irregular.json';
 import { lessonFor } from '../syllabus';
 import { tableCellsForLesson } from '../tableDeck';
@@ -10,16 +10,16 @@ const verbsInTables = new Set(tables.flatMap((t) => t.header.slice(1).map((h) =>
 
 const REQUIRED = [
   'ser', 'estar', 'ir', 'tener', 'hacer', 'decir', 'poder', 'querer', 'venir', 'salir', 'poner', 'saber', 'conocer', 'dar', 'ver', 'oír', 'traer',
-  // + a leggyakoribbak közül
+  // + from among the most frequent ones
   'parecer', 'seguir', 'conducir', 'caer', 'valer',
 ];
 
-describe('presente-irregular: a rendhagyó igék teljes köre (FB423)', () => {
-  it('mind a 17 kért ige és az 5 további ige táblában szerepel', () => {
+describe('presente-irregular: the full set of irregular verbs', () => {
+  it('all 17 requested verbs and 5 further verbs are in the table', () => {
     for (const verb of REQUIRED) expect(verbsInTables.has(verb)).toBe(true);
   });
 
-  it('a táblák hat személyt adnak, és a yo-alakok a jó rendhagyó alakok', () => {
+  it('the tables give six persons, and the yo forms are the right irregular forms', () => {
     const yoOf = (verb: string) => {
       const t = tables.find((tb) => tb.header.slice(1).some((h) => h.es === verb))!;
       const col = t.header.slice(1).findIndex((h) => h.es === verb) + 1;
@@ -41,7 +41,7 @@ describe('presente-irregular: a rendhagyó igék teljes köre (FB423)', () => {
     expect(yoOf('valer')).toBe('valgo');
   });
 
-  it('minden új igéhez van ragozás-feladat, és a válasz a táblában is ott van', () => {
+  it('every new verb has a conjugation task, and the answer is also in the table', () => {
     const forms = lesson.items.filter((i) => i.kind === 'form') as { verb: string; person: string; answer: string; table: string }[];
     for (const verb of ['estar', 'poder', 'querer', 'saber', 'conocer', 'dar', 'ver', 'oír', 'traer', 'parecer', 'seguir', 'conducir', 'caer', 'valer']) {
       const f = forms.find((x) => x.verb === verb);
@@ -53,7 +53,7 @@ describe('presente-irregular: a rendhagyó igék teljes köre (FB423)', () => {
     }
   });
 
-  it('a táblagyakorlat (deck) az új táblák celláit is felveszi', () => {
+  it('the table drill (deck) takes in the cells of the new tables too', () => {
     const cells = tableCellsForLesson(lessonFor('es', 'presente-irregular'));
     expect(cells.length).toBeGreaterThan(60);
     expect(cells.some((c) => c.answer === 'conduzco')).toBe(true);

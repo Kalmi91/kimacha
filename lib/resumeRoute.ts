@@ -3,23 +3,23 @@ import { Platform } from 'react-native';
 import type { DB } from '@/lib/database';
 import { hasLesson } from '@/lib/grammar/syllabus';
 
-// User feedback ("csináld meg úgy az appot, ha kilépek és visszalépek, akkor oda tegyen vissza, ahol voltam"):
-// az app az utolsó folytatható helyet menti (fül, nyelvtani lecke és táblás gyakorlata), és hidegindításkor
-// (háttérből visszatéréskor is, ha az Android kilőtte a folyamatot) oda lép vissza. A Learn fül szintje a
-// PCIC-szintnél eleve perzisztált, a sor a mentett SRS-állapotból épül újra, ezért ugyanonnan folytatódik.
-// Nem mentődik: a félig begépelt válasz, a vizsga / szintfelmérés / onboarding (azok állapota nem folytatható).
+// The app saves the last resumable place (tab, grammar lesson and its table exercise), and on cold start
+// (also when returning from the background, if Android killed the process) steps back to it, so that quitting
+// and coming back puts the learner where they were. The level of the Learn tab is already persisted with the
+// PCIC level, and the queue is rebuilt from the saved SRS state, so it continues from the same place.
+// Not saved: a half-typed answer, the exam / level test / onboarding (their state cannot be resumed).
 
 export const RESUME_GAME_ID = 'app-resume';
 const RESUME_ITEM_ID = 'route';
-// A webes DB memóriában él (újratöltéskor elvész), ezért a webes build a helyet a localStorage-ban őrzi.
+// The web DB lives in memory (lost on reload), so the web build keeps the place in localStorage.
 const WEB_KEY = 'kimacha-resume';
 
 const TAB_PATHS = new Set(['/course', '/stats', '/settings']);
 const DECK_RE = /^\/grammar\/deck\/([^/]+)$/;
 const LESSON_RE = /^\/grammar\/([^/]+)$/;
 
-/** A mentendő hely az expo-router pathname-jéből: a Learn fül ('/'), a három másik fül, a nyelvtani lecke és a
- *  táblás gyakorlata. Minden más képernyő nem folytatható: null (a korábban mentett hely marad). */
+/** The place to save, from the expo-router pathname: the Learn tab ('/'), the three other tabs, the grammar lesson and its
+ *  table exercise. Every other screen is not resumable: null (the previously saved place stays). */
 export function resumablePath(pathname: string): string | null {
   const p = pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname;
   if (p === '/' || p === '') return '/';
@@ -28,9 +28,9 @@ export function resumablePath(pathname: string): string | null {
   return lesson && lesson[1] !== 'deck' ? p : null;
 }
 
-/** A mentett helyhez az induláskor végrehajtandó navigáció (az első lépés `replace`, a többi `push`, hogy a
- *  Vissza a Nyelvtan listára vigyen). Üres lista = a kezdőlap (Learn) marad: nincs mentett hely, a Learn volt az
- *  utolsó, vagy a mentett hely már nem létezik (törölt lecke). */
+/** The navigation to perform at startup for the saved place (the first step is `replace`, the rest `push`, so that
+ *  Back leads to the Grammar list). An empty list = the home screen (Learn) stays: there is no saved place, Learn was the
+ *  last one, or the saved place no longer exists (deleted lesson). */
 export function resumeSteps(saved: string | null, lang: string): string[] {
   const path = saved ? resumablePath(saved) : null;
   if (!path || path === '/') return [];
@@ -60,6 +60,6 @@ export async function saveResumePath(db: DB, path: string): Promise<void> {
     }
     await db.setGameProgress(RESUME_GAME_ID, RESUME_ITEM_ID, 'saved', { path });
   } catch {
-    // A hely mentése kényelmi funkció: hiba esetén az app a kezdőlapról indul, nem állhat le miatta.
+    // Saving the place is a convenience: on error the app starts from the home screen, it must not crash because of it.
   }
 }

@@ -1,5 +1,5 @@
-// a szintfelmérő kérdései a valódi
-// data/words-open készletből és a szintek nyelvtani leckéiből, mindkét irányban.
+// The placement questions are built from the real data/words-open set and the grammar
+// lessons of each level, in both directions.
 
 import { PCIC_LEVELS, pcicItemsForLevel, setPcicTarget, type PcicItem, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import {
@@ -17,7 +17,7 @@ const norm = (text: string) => text.trim().toLowerCase();
 afterEach(() => setPcicTarget('es'));
 
 describe('placementLevels', () => {
-  it('en→es: A1-B2, es→en: A1-B1 (a B2 üres)', () => {
+  it('en→es: A1-B2, es→en: A1-B1 (B2 is empty)', () => {
     setPcicTarget('es');
     expect(placementLevels()).toEqual(['A1', 'A2', 'B1', 'B2']);
     setPcicTarget('en');
@@ -25,7 +25,7 @@ describe('placementLevels', () => {
   });
 });
 
-describe('buildPlacementQuestion: szó-kérdés', () => {
+describe('buildPlacementQuestion: word question', () => {
   const cases: [PcicTarget, PcicLevel][] = [];
   for (const target of ['es', 'en'] as const) {
     setPcicTarget(target);
@@ -33,7 +33,7 @@ describe('buildPlacementQuestion: szó-kérdés', () => {
   }
   setPcicTarget('es');
 
-  it.each(cases)('%s %s: a szint minden szavából jó kérdés lesz: 4 különböző válasz, egy jó, két jó válasz soha', (target, level) => {
+  it.each(cases)('%s %s: every word of the level makes a good question: 4 different answers, one right, never two right answers', (target, level) => {
     setPcicTarget(target);
     const items = pcicItemsForLevel(level);
     const pool: PlacementPool = { items, gaps: [] };
@@ -49,7 +49,7 @@ describe('buildPlacementQuestion: szó-kérdés', () => {
       expect(q.options).toHaveLength(4);
       expect(new Set(q.options.map(norm)).size).toBe(4);
       expect(q.options[q.correctIndex]).toBe(meaning.trim());
-      // Azonos írású másik szó jelentése nem lehet csapda (az is jó válasz lenne).
+      // The meaning of another word with the same spelling cannot be a trap (it would also be a correct answer).
       const homographMeanings = items
         .filter((i) => i.id !== item.id && norm((target === 'es' ? i.es : i.en).split(' / ')[0]) === norm(q.word))
         .map((i) => norm(target === 'es' ? i.en : i.es));
@@ -59,12 +59,12 @@ describe('buildPlacementQuestion: szó-kérdés', () => {
       used.add(placementQuestionKey(q));
       built++;
     }
-    // Az utolsó néhány szónak nincs elég csapdája csak ha a készlet szinte üres; itt a szint szavainak (szinte) mind kérdés lesz.
+    // The last few words lack enough traps only when the pool is almost empty; here (nearly) all of the level's words become questions.
     expect(built).toBeGreaterThanOrEqual(items.length - 5);
     expect(used.size).toBe(built);
   });
 
-  it('a perjeles célnyelvi alaknál az első alternatíva a kérdezett szó', () => {
+  it('for a slash-separated target-language form the first alternative is the asked word', () => {
     setPcicTarget('es');
     const pool: PlacementPool = {
       items: [
@@ -88,7 +88,7 @@ describe('buildPlacementQuestion: szó-kérdés', () => {
     expect(words).not.toContain('el carro / el coche');
   });
 
-  it('ugyanaz a seed ugyanazt a kérdést adja, más seed mást', () => {
+  it('the same seed gives the same question, a different seed a different one', () => {
     setPcicTarget('es');
     const pool = placementPoolFor('A2', 'es');
     const input = { level: 'A2' as const, position: 0, target: 'es' as const, pool, used: new Set<string>() };
@@ -98,18 +98,18 @@ describe('buildPlacementQuestion: szó-kérdés', () => {
   });
 });
 
-describe('buildPlacementQuestion: nyelvtan és sorrend', () => {
-  it('egy lépcső sorrendje: szó, nyelvtan, szó, nyelvtan, szó', () => {
+describe('buildPlacementQuestion: grammar and order', () => {
+  it('the order of one step: word, grammar, word, grammar, word', () => {
     expect([...PLACEMENT_PATTERN]).toEqual(['word', 'gap', 'word', 'gap', 'word']);
   });
 
-  it('az A1 (es) lépcsőjén a nyelvtan-helyeken lyukas mondat van, minden kérdés más', () => {
+  it('on the A1 (es) step the grammar places have a gap sentence, every question different', () => {
     setPcicTarget('es');
     const pool = placementPoolFor('A1', 'es');
     expect(pool.gaps.length).toBeGreaterThan(10);
     const used = new Set<string>();
     const kinds: string[] = [];
-    // 4 lépcsőnyi (20) kérdés ugyanazon a szinten.
+    // Four steps' worth (20) of questions on the same level.
     for (let n = 0; n < 20; n++) {
       const q = buildPlacementQuestion({ level: 'A1', position: n % 5, target: 'es', pool, used, seed: 5 }) as PlacementQuestion;
       expect(q).toBeDefined();
@@ -126,25 +126,25 @@ describe('buildPlacementQuestion: nyelvtan és sorrend', () => {
     expect(used.size).toBe(20);
   });
 
-  it('a lecke KÉSZ voltától függetlenül a szint összes megírt leckéjéből jön nyelvtan', () => {
+  it('grammar comes from all written lessons of the level regardless of whether the lesson is DONE', () => {
     setPcicTarget('es');
     const topics = new Set(placementPoolFor('A1', 'es').gaps.map((g) => g.topicId));
     expect(topics.size).toBeGreaterThan(3);
   });
 
-  it('ha a szinthez nincs nyelvtan, a nyelvtan-helyen is szó jön', () => {
+  it('if the level has no grammar, a word comes at the grammar place too', () => {
     setPcicTarget('es');
     const pool: PlacementPool = { items: placementPoolFor('A1', 'es').items, gaps: [] };
     const q = buildPlacementQuestion({ level: 'A1', position: 1, target: 'es', pool, used: new Set(), seed: 2 });
     expect(q?.kind).toBe('word');
   });
 
-  it('ha elfogyott a készlet, undefined', () => {
+  it('when the supply has run out, undefined', () => {
     const q = buildPlacementQuestion({ level: 'A1', position: 0, target: 'es', pool: { items: [], gaps: [] }, used: new Set(), seed: 1 });
     expect(q).toBeUndefined();
   });
 
-  it('minden szinten van nyelvtani készlet vagy a szó-készlet pótolja (es és en)', () => {
+  it('every level has a grammar supply or the word supply fills in (es and en)', () => {
     for (const target of ['es', 'en'] as const) {
       setPcicTarget(target);
       for (const level of placementLevels()) {

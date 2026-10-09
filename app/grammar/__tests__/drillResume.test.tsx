@@ -1,6 +1,6 @@
-// Kártya-szintű folytatás: ha az app a lecke egy gyakorlatában (drill) záródott be, a lecke ugyanabban a
-// gyakorlatban nyílik meg (a kör a mentett futásból folytatódik); a leckéből kilépve a mentés törlődik.
-// Mock-minta: drillButtons.test.tsx.
+// Card-level resume: if the app was closed in one practice (drill) of the lesson, the lesson opens in the same
+// practice (the round continues from the saved run); on leaving the lesson the save is deleted.
+// Mock pattern: drillButtons.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({
@@ -41,7 +41,7 @@ const flush = async (times = 8) => {
   }
 };
 
-describe('grammar lesson screen: a bezáráskor nyitott gyakorlat újranyitáskor folytatódik (FB470)', () => {
+describe('grammar lesson screen: an exercise open at close resumes on reopening', () => {
   const today = localDateString();
 
   beforeEach(async () => {
@@ -52,16 +52,16 @@ describe('grammar lesson screen: a bezáráskor nyitott gyakorlat újranyitásko
     mockTopicId = 'ser-estar';
   });
 
-  it('mentés nélkül a lecke oldala nyílik (nem a gyakorlat)', async () => {
+  it('without a save the lesson page opens (not the exercise)', async () => {
     render(<GrammarLessonScreen />);
     await flush();
     expect(screen.getByTestId('grammar-start-form')).toBeTruthy();
     expect(screen.queryByTestId('formInput')).toBeNull();
-    // a lecke-oldal nem ír mentést
+    // the lesson page does not write a save
     expect(await loadDrillResume(getDb())).toBeNull();
   });
 
-  it('mentett gyakorlat (ma, ugyanez a lecke): a lecke a gyakorlatban nyílik, a mentés megmarad', async () => {
+  it('a saved exercise (today, same lesson): the lesson opens in the exercise, the save stays', async () => {
     await saveDrillResume(getDb(), { topicId: 'ser-estar', kind: 'form', day: today });
     render(<GrammarLessonScreen />);
     await flush();
@@ -70,7 +70,7 @@ describe('grammar lesson screen: a bezáráskor nyitott gyakorlat újranyitásko
     expect(await loadDrillResume(getDb())).toEqual({ topicId: 'ser-estar', kind: 'form', day: today });
   });
 
-  it('másik napról / másik leckéhez / nem kínált fajtához maradt mentés nem ugrik a gyakorlatba', async () => {
+  it('a save left over from another day / another lesson / a kind not offered does not jump into the exercise', async () => {
     for (const saved of [
       { topicId: 'ser-estar', kind: 'form', day: '2000-01-01' },
       { topicId: 'imperfecto', kind: 'form', day: today },
@@ -86,20 +86,20 @@ describe('grammar lesson screen: a bezáráskor nyitott gyakorlat újranyitásko
     }
   });
 
-  it('a gyakorlatot elindítva menti; a képernyőből kilépve törli', async () => {
+  it('starting the exercise saves it; leaving the screen deletes it', async () => {
     const view = render(<GrammarLessonScreen />);
     await flush();
     fireEvent.press(screen.getByTestId('grammar-start-form'));
     await flush();
     expect(await loadDrillResume(getDb())).toEqual({ topicId: 'ser-estar', kind: 'form', day: today });
 
-    // kilépés a képernyőből (unmount): a mentés törlődik, a lecke később a listából nem ugrik a drillbe
+    // leaving the screen (unmount): the save is deleted, and later the lesson does not jump into the drill from the list
     view.unmount();
     await flush();
     expect(await loadDrillResume(getDb())).toBeNull();
   });
 
-  it('a törölt mentés nem hoz vissza gyakorlatot', async () => {
+  it('a deleted save does not bring back an exercise', async () => {
     await saveDrillResume(getDb(), { topicId: 'ser-estar', kind: 'form', day: today });
     await clearDrillResume(getDb());
     render(<GrammarLessonScreen />);

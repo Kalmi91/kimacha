@@ -1,7 +1,7 @@
-// a szóbeli tétel kártyája. A tanuló a
-// billentyűzet mikrofonjával diktál egy szövegmezőbe (a tesztben begépelt szöveg ugyanaz); az app
-// összeveti a várt mondattal. Helyes mondat után nincs visszajelzés, hibás után az eltérő szavak
-// ki vannak emelve, és a "Next" lép tovább. Az ékezet a "Accents count" beállítást követi.
+// The card of the oral item. The learner dictates into a text field with the
+// keyboard's microphone (in the test, typed text is the same); the app
+// compares it with the expected sentence. After a correct sentence there is no feedback, after a wrong one the differing words
+// are highlighted, and "Next" moves on. The accent follows the "Accents count" setting.
 
 import { fireEvent, render } from '@testing-library/react-native';
 
@@ -31,7 +31,7 @@ const say = (screen: ReturnType<typeof renderCard>, text: string) => {
 };
 
 describe('ExamSpeakCard', () => {
-  it('translate módban a kiinduló nyelvű mondatot mutatja, a célnyelv nevével és a billentyűzet-mikrofon felirattal', () => {
+  it('in translate mode shows the sentence in the source language, with the target language name and the keyboard-microphone label', () => {
     const screen = renderCard();
     expect(screen.getByTestId('exam-speak-mode').props.children).toBe('Say it in Spanish');
     expect(screen.getByTestId('exam-speak-prompt').props.children).toBe('I eat at home.');
@@ -41,7 +41,7 @@ describe('ExamSpeakCard', () => {
     expect(screen.getByTestId('exam-speak-input')).toBeTruthy();
   });
 
-  it('repeat módban a felolvasandó célnyelvi mondatot mutatja; angol célnyelven a felirat angolt kér', () => {
+  it('in repeat mode shows the target-language sentence to read aloud; with English as the target the label asks for English', () => {
     const repeat = renderCard({ mode: 'repeat', prompt: 'Yo como en casa.' });
     expect(repeat.getByTestId('exam-speak-mode').props.children).toBe('Read it aloud');
     repeat.unmount();
@@ -50,14 +50,14 @@ describe('ExamSpeakCard', () => {
     expect(english.getByTestId('exam-speak-mode').props.children).toBe('Say it in English');
   });
 
-  it('a Check addig szürke, amíg nincs diktált szöveg', () => {
+  it('Check stays grey until there is dictated text', () => {
     const screen = renderCard();
     expect(screen.getByTestId('exam-check').props.accessibilityState?.disabled ?? screen.getByTestId('exam-check').props.disabled).toBeTruthy();
     fireEvent.changeText(screen.getByTestId('exam-speak-input'), 'yo como');
     expect(screen.getByTestId('exam-check').props.accessibilityState?.disabled ?? screen.getByTestId('exam-check').props.disabled).toBeFalsy();
   });
 
-  it('helyes diktálás (kis- és nagybetű, írásjel nélkül): kész, nincs visszajelzés', () => {
+  it('correct dictation (ignoring case, without punctuation): done, no feedback', () => {
     const screen = renderCard();
     say(screen, 'yo como en casa');
     expect(screen.onDone).toHaveBeenCalledWith(true);
@@ -65,7 +65,7 @@ describe('ExamSpeakCard', () => {
     expect(screen.queryByText('Not quite!')).toBeNull();
   });
 
-  it('hibás diktálás: az eltérő szavak mindkét oldalon ki vannak emelve, a Next lép tovább', () => {
+  it('wrong dictation: the differing words are highlighted on both sides, Next advances', () => {
     const screen = renderCard();
     say(screen, 'yo bebo en casa');
     expect(screen.onDone).not.toHaveBeenCalled();
@@ -79,7 +79,7 @@ describe('ExamSpeakCard', () => {
     expect(screen.onDone).toHaveBeenCalledTimes(1);
   });
 
-  it('az ékezet a beállítást követi: KI mellett nem hiba, BE mellett eltérő szó', () => {
+  it('the accent follows the setting: OFF is not an error, ON is a differing word', () => {
     const loose = renderCard({ expected: 'Ella está aquí', prompt: 'She is here.', strictAccents: false });
     say(loose, 'ella esta aqui');
     expect(loose.onDone).toHaveBeenCalledWith(true);
@@ -92,7 +92,7 @@ describe('ExamSpeakCard', () => {
     expect(strict.getAllByTestId('exam-speak-extra')).toHaveLength(2);
   });
 
-  it('spanyol célnyelven a névmás elhagyható, angolon nem érvényes a spanyol névmás-szabály', () => {
+  it('with Spanish as the target language the pronoun can be dropped, with English the Spanish pronoun rule does not apply', () => {
     const es = renderCard();
     say(es, 'como en casa');
     expect(es.onDone).toHaveBeenCalledWith(true);
@@ -104,7 +104,7 @@ describe('ExamSpeakCard', () => {
     expect(en.getAllByTestId('exam-speak-missing').map((n) => n.props.children.join(''))).toEqual(['I']);
   });
 
-  it('"I don\'t know": a helyes mondat látszik, és csak a Next lép tovább', () => {
+  it('"I don\'t know": the correct sentence shows, and only Next advances', () => {
     const screen = renderCard();
     fireEvent.press(screen.getByTestId('exam-dont-know'));
     expect(screen.onDone).not.toHaveBeenCalled();

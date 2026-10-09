@@ -1,7 +1,6 @@
-// a LessonBody a ser-estar pilot body-tömbjét rajzolja
-// ki; ez a teszt csak a szerkezetet nézi (mindkét tábla megvan, minden usage
-// pont első példamondata a képernyőn van, a tip szövege látszik), nem a
-// pedagógiai tartalmat.
+// LessonBody renders the body array of the ser-estar pilot; this test only checks the structure
+// (both tables are there, the first example sentence of every usage point is on screen, the tip
+// text is visible), not the pedagogical content.
 import { StyleSheet } from 'react-native';
 import { render, screen } from '@testing-library/react-native';
 
@@ -44,10 +43,9 @@ describe('LessonBody', () => {
   });
 });
 
-// a ragozási táblák személy-blokkokban jelennek meg,
-// a tő halványan, a végződés külön, saját Text-ben (hogy a stílus is külön
-// legyen).
-describe('LessonBody conjugation table (FB326)', () => {
+// conjugation tables appear in person blocks, the stem dimmed, the ending separate in its own
+// Text (so that its style can be separate too).
+describe('LessonBody conjugation table', () => {
   it('renders 6 person blocks for presente-regular, hablamos split as stem + ending', () => {
     render(<LessonBody blocks={presenteRegular.body} contentLang="en" learnedLang="es" />);
     for (const person of ['yo', 'tú', 'él/ella/usted', 'nosotros', 'vosotros', 'ellos/ellas/ustedes']) {
@@ -65,7 +63,7 @@ describe('LessonBody conjugation table (FB326)', () => {
 // per verb class, so tener/poder/hacer -no longer share a colour just
 // because they are all -er verbs), and no stem/ending split on a table that
 // has no shared base (indefinido-irregular's "strong stem" table).
-describe('LessonBody conjugation table colouring (FB381-383)', () => {
+describe('LessonBody conjugation table colouring', () => {
   const indefinidoIrregular = indefinidoIrregularJson as unknown as LessonV2;
   const strongStemTable = indefinidoIrregular.body.filter((b) => b.kind === 'table' && b.id === 'indefinido-fuerte-1');
 

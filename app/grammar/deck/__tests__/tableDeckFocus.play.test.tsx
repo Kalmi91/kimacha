@@ -1,6 +1,6 @@
-// a table-deck beviteli mezője minden új cellánál
-// újra mountol (autoFocus-szal), különben Check után a letiltott, majd újra
-// engedélyezett mezőn nem jött fel a billentyűzet. Mock-minta:
+// the table-deck's input field remounts for every new cell
+// (with autoFocus), otherwise after Check the keyboard did not come up on the disabled and then
+// re-enabled field. Mock pattern:
 // app/grammar/deck/__tests__/tableDeck.play.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
@@ -35,7 +35,7 @@ const flush = async (times = 3) => {
   }
 };
 
-describe('table-deck: friss beviteli mező minden cellánál (FB422)', () => {
+describe('table-deck: a fresh input field for every cell', () => {
   beforeEach(async () => {
     jest.clearAllMocks();
     const db = getDb();
@@ -43,7 +43,7 @@ describe('table-deck: friss beviteli mező minden cellánál (FB422)', () => {
     await db.setGameProgress('grammar', 'ser-estar:tabledeck', 'progress', undefined as never).catch(() => {});
   });
 
-  it('Next után a mező ÚJ példány, szerkeszthető és autoFocus-os', async () => {
+  it('after Next the field is a NEW instance, editable and autoFocus', async () => {
     render(<TableDeckScreen />);
     await flush();
     const first = screen.getByTestId('tabledeck-input');

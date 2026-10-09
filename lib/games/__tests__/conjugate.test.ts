@@ -205,7 +205,7 @@ describe('TENSES export', () => {
   });
 });
 
-describe('BUG-002: verbs that used to be handed out with a wrong form', () => {
+describe('verbs that used to be handed out with a wrong form', () => {
   // "almorzo/almorce", "neva", "ofreco/ofreca", "venco/venca" and "subyaco" were
   // all generated and shown as facts, because the exclusion list is a name list
   // and these names were missing from it.

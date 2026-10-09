@@ -47,8 +47,8 @@ import { clearLearnResume } from '@/lib/learnResume';
 
 const appVersionLabel = appBuildTag();
 
-// a nullázható paklik (a szintek, amiken van
-// haladás) és az, hogy van-e nyelvtan-haladás. Az aktív irány szavai számítanak.
+// The resettable decks (the levels that have
+// progress) and whether there is any grammar progress. The active direction's words count.
 async function loadResettable(): Promise<{ levels: PcicLevel[]; grammar: boolean }> {
   const db = getDb();
   const onboarding = await db.getOnboarding();
@@ -61,7 +61,7 @@ async function loadResettable(): Promise<{ levels: PcicLevel[]; grammar: boolean
   };
 }
 
-// a beállítás-sor: brutalista palettán BrutalBox, classic palettán a mai kártya-sor.
+// The settings row: BrutalBox on the brutalist palette, today's card row on the classic palette.
 function Row({ onPress, children }: { onPress?: () => void; children: ReactNode }) {
   const g = useGrammarColors();
   if (g.brutal) {
@@ -81,7 +81,7 @@ function Row({ onPress, children }: { onPress?: () => void; children: ReactNode 
   );
 }
 
-// A −/+ léptető gomb (brutalista palettán doboz).
+// The −/+ stepper button (a box on the brutalist palette).
 function StepBtn({ label, onPress }: { label: string; onPress: () => void }) {
   const g = useGrammarColors();
   if (g.brutal) {
@@ -100,10 +100,10 @@ function StepBtn({ label, onPress }: { label: string; onPress: () => void }) {
 
 export default function SettingsScreen() {
   const { theme } = useTheme();
-  // az aktív téma a Témák-sorban (név + minta).
+  // The active theme in the Themes row (name + sample).
   const { id: skinId, skin: activeSkin, mode } = useSkin();
-  // 7F/G2: a léptető sorokban a címke ennél keskenyebbre nem szorulhat, előbb a léptető törik a címke alá
-  // (egyedi test-betűs / nagyított / betűközös témán 112, a mai Neo-brutál és Klasszikus kinézetén 64: ott ez nem tör).
+  // In the stepper rows the label cannot be squeezed narrower than this; the stepper wraps below the label first
+  // (112 on a theme with a custom body font / enlarged / letter-spaced text, 64 on today's Neo-brutal and Classic looks: there it does not wrap).
   const wideText = !!activeSkin.fonts.body || activeSkin.fontScale > 1 || activeSkin.spacingScope === 'all';
   const stepLabel = { minWidth: wideText ? 112 : 64 };
   const colors = Colors[theme];
@@ -113,37 +113,37 @@ export default function SettingsScreen() {
   const router = useRouter();
   const [level, setLevel] = useState<Level>('A0');
   const [direction, setDirection] = useState<[string, string]>(['en', 'es']);
-  // a tanulási irány váltó sora és a
-  // hozzá tartozó kis lap.
+  // The row of the learning-direction switch and its
+  // small sheet.
   const [directionSheetOpen, setDirectionSheetOpen] = useState(false);
   // weekly study goal in minutes (UI shows whole hours).
   const [weeklyGoal, setWeeklyGoal] = useState(DEFAULT_WEEKLY_GOAL_MINUTES);
   // daily budget of brand-new words entering the queue.
   const [dailyNewLimit, setDailyNewLimit] = useState(DEFAULT_DAILY_NEW_LIMIT);
-  // a PCIC "again" kártya visszatérési ideje.
+  // The return time of the PCIC "again" card.
   const [againDelaySec, setAgainDelaySec] = useState(DEFAULT_AGAIN_DELAY_SEC);
   // difficulty switches. Accents are the first one: off = the beginner
   // grader forgives a missing á/é/ñ, on = it counts as a mistake.
   const [strictAccents, setStrictAccents] = useState(false);
-  // névelő-gombsor a gépelős spanyol főnév-kártyán. Alapból be, mert
-  // a fejlesztő kérte; a kapcsoló a visszaút, ha kipróbálva mégsem válik be.
+  // Article button row on the typing Spanish noun card. On by default, because
+  // the developer asked for it; the switch is the way back if it turns out not to work well in practice.
   const [articlePicker, setArticlePicker] = useState(true);
-  // User feedback: "legyen egy szöveg ami gratulál, hogy elértem a
-  // heti limitet ami a cél, valami hatalmas nagy. és a célnál írja is ki hogy
-  // kész zölddel". The goal stepper never said whether the goal was met, so the
+  // User feedback: "there should be a text that congratulates me for reaching the
+  // weekly limit, which is the goal, something huge. and at the goal it should also write
+  // 'done' in green". The goal stepper never said whether the goal was met, so the
   // rolling 7-day total is read here too.
   const [weekMinutes, setWeekMinutes] = useState(0);
   // languages of this course the phone has no TTS voice for. Without the
   // hint the learner only hears a wrong-language reading (or now, silence) and
   // has no idea it is a missing system voice, not the app.
   const [missingVoices, setMissingVoices] = useState<string[]>([]);
-  // a nullázó sorok: egy pakli-sor minden szintre, amin van
-  // haladás, és egy nyelvtan-sor, ha van nyelvtan-haladás.
+  // The reset rows: one deck row for every level that has
+  // progress, and one grammar row if there is grammar progress.
   const [resetLevels, setResetLevels] = useState<PcicLevel[]>([]);
   const [hasGrammarProgress, setHasGrammarProgress] = useState(false);
-  // a nullázó sorok egy lenyíló szekcióban, alapból zárva.
+  // The reset rows in a collapsible section, closed by default.
   const [resetOpen, setResetOpen] = useState(false);
-  // a __DEV__-only vizsga-vezérlő állapota (lásd lent).
+  // State of the __DEV__-only exam control (see below).
   const [examSeeded, setExamSeeded] = useState(false);
 
   useFocusEffect(
@@ -175,26 +175,26 @@ export default function SettingsScreen() {
     await getDb().setStrictAccents(v);
   };
 
-  // ugyanaz a betöltési pont, mint a többi tanulási beállításnál.
+  // The same loading point as for the other learning settings.
   const handleArticlePickerToggle = async (v: boolean) => {
     setArticlePicker(v);
     await getDb().setArticlePicker(v);
   };
 
-  // Irányváltás:
-  // nincs megerősítő kérdés, mert visszaváltható és a haladás nem vész el (a
-  // két irány külön id-térrel/pair-rel és külön pár-szintű szinttel él,
-  // lib/database.ts getPcicLevel/hasPcicLevel). Ha az új irányban még nincs
-  // kifejezetten választott szint, a főfül (app/(tabs)/index.tsx load())
-  // magától felnyitja a szint-választó lapot, itt nem kell külön kezelni.
+  // Direction switch:
+  // no confirmation question, because it can be switched back and the progress is not lost (the
+  // two directions live with separate id spaces/pairs and a separate pair-level level,
+  // lib/database.ts getPcicLevel/hasPcicLevel). If the new direction does not yet have an
+  // explicitly chosen level, the main tab (app/(tabs)/index.tsx load())
+  // opens the level picker sheet by itself, no separate handling is needed here.
   const handleSelectDirection = async (source: 'en' | 'es', target: PcicTarget) => {
     setDirectionSheetOpen(false);
     if (source === direction[0] && target === direction[1]) return;
     const db = getDb();
     await db.setOnboarding(source, target);
     setLanguage(source);
-    // Csak itt, egy VÉGLEGESÍTETT váltásnál kell a teljes fa remountja (a
-    // tab-fülek felirata is), az onboarding próba-váltása ezt nem hívja.
+    // A full remount of the tree (including the tab labels) is needed only here, on a
+    // FINALIZED switch; the onboarding trial switch does not call it.
     notifyLanguageChange();
     setPcicTarget(target);
     setDirection([source, target]);
@@ -247,7 +247,7 @@ export default function SettingsScreen() {
     else Alert.alert(title, message);
   };
 
-  // Q0: export the whole learning state to a JSON file. Native hands it to the
+  // Export the whole learning state to a JSON file. Native hands it to the
   // Android/iOS share sheet (user saves it to Drive, email, anywhere); web
   // downloads it as a file.
   const handleBackup = async () => {
@@ -274,7 +274,7 @@ export default function SettingsScreen() {
     }
   };
 
-  // Q0: pick a backup JSON, validate it, then (after an explicit confirm,
+  // Pick a backup JSON, validate it, then (after an explicit confirm,
   // this overwrites all progress) import it in one transaction and reload.
   const handleRestore = async () => {
     try {
@@ -307,9 +307,9 @@ export default function SettingsScreen() {
     }
   };
 
-  // a Learn fejlécéből ide költözött haladás-nullázás,
-  // paklinként (szintenként) és a nyelvtanra külön; mind megerősítéssel. A Learn és a
-  // Kurzus fül fókuszra újratölt, a sorok itt azonnal frissülnek.
+  // Progress reset moved here from the Learn header,
+  // per deck (per level) and separately for grammar; all with confirmation. The Learn and the
+  // Course tab reload on focus, the rows here refresh immediately.
   const confirmReset = (title: string, message: string, doReset: () => Promise<void>) => {
     const run = async () => {
       await doReset();
@@ -329,14 +329,14 @@ export default function SettingsScreen() {
   const handleResetDeck = (lvl: PcicLevel) =>
     confirmReset(s.pcic.resetConfirmTitle, s.pcic.resetConfirmLevel(lvl), async () => {
       await getDb().resetPcicCards(lvl.toLowerCase());
-      // a mentett Learn-kör pillanatképe a nullázott haladásra már nem érvényes.
+      // The saved Learn-round snapshot is no longer valid after the progress was reset.
       await clearLearnResume(getDb());
     });
   const handleResetGrammar = () =>
     confirmReset(s.settings.resetGrammarTitle, s.settings.resetGrammarMessage, () => getDb().resetGameProgress(GRAMMAR_PROGRESS_KEY));
 
-  // 2. és csak __DEV__-ben látszó sor; beállítja a vizsga
-  // állapotát (A1-B2: a szint kártyáinak 85%-a graduált + a megírt leckék készek), hogy a vizsga végigkattintható legyen.
+  // Row visible only in __DEV__; it sets the exam
+  // state (A1-B2: 85% of the level's cards graduated + the written lessons done) so that the exam can be clicked through.
   const handleSeedExamA1 = async () => {
     const db = getDb();
     const onboarding = await db.getOnboarding();
@@ -428,8 +428,8 @@ export default function SettingsScreen() {
         </View>
       </Row>
 
-      {/* a PCIC "again" kártya visszatérési
-          ideje; ugyanezt olvassa a nyelvtani táblázat-pakli cooldownja is. */}
+      {/* the return time of the PCIC "again" card; the grammar table-deck cooldown
+          reads the same value too. */}
       <Row>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }, stepLabel]}>{s.settings.missedWordDelay}</Text>
         <View style={styles.goalStepper}>
@@ -442,7 +442,7 @@ export default function SettingsScreen() {
       </Row>
 
       {/* accent strictness, standalone toggle (the
-          dial that used to wrap it, P/R kézben-lévő-szó ablak, is gone). */}
+          dial that used to wrap it, the word-in-hand window, is gone). */}
       <Row>
         <View style={styles.difficultyLabelBox}>
           <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.strictAccents}</Text>
@@ -451,9 +451,8 @@ export default function SettingsScreen() {
         <BrutalSwitch testID="settings-strict-accents" value={strictAccents} onValueChange={handleStrictAccentsToggle} />
       </Row>
 
-      {/* névelő-gombsor a gépelős spanyol főnév-kártyákon.
-          Csak spanyol
-          célnyelvnél él (index.tsx-ben is target==='es'-nél jár a gombsor). */}
+      {/* article button row on the typing Spanish noun cards.
+          It is active only for Spanish as the target language (in index.tsx the button row also appears only at target==='es'). */}
       {direction[1] === 'es' && (
         <Row>
           <View style={styles.difficultyLabelBox}>
@@ -464,7 +463,7 @@ export default function SettingsScreen() {
         </Row>
       )}
 
-      {/* tanulási irány váltó sora. */}
+      {/* learning-direction switch row. */}
       <Row onPress={() => setDirectionSheetOpen(true)}>
         <View style={styles.difficultyLabelBox}>
           <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.learningDirection}</Text>
@@ -475,7 +474,7 @@ export default function SettingsScreen() {
         <Text style={[styles.rowArrow, { color: arrowColor }]}>→</Text>
       </Row>
 
-      {/* Q0: backup (export + share) and restore (pick file + confirm + import). */}
+      {/* Backup (export + share) and restore (pick file + confirm + import). */}
       <Row onPress={handleBackup}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>💾 {s.backup.backup}</Text>
         <Text style={[styles.rowArrow, { color: arrowColor }]}>→</Text>
@@ -486,13 +485,13 @@ export default function SettingsScreen() {
         <Text style={[styles.rowArrow, { color: arrowColor }]}>→</Text>
       </Row>
 
-      {/* import a "Hibáim" kötegből (Drive JSON). */}
+      {/* import from the "My mistakes" bundle (Drive JSON). */}
       <Row onPress={handleLoadMistakes}>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.mistakes.load}</Text>
         <Text style={[styles.rowArrow, { color: arrowColor }]}>→</Text>
       </Row>
 
-      {/* haladás-nullázás megerősítéssel, paklinként és a nyelvtanra. */}
+      {/* progress reset with confirmation, per deck and for grammar. */}
       {(resetLevels.length > 0 || hasGrammarProgress) && (
         <Row onPress={() => setResetOpen((o) => !o)}>
           <Text testID="settings-reset-section" style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.resetSection}</Text>
@@ -525,7 +524,7 @@ export default function SettingsScreen() {
       {/* app version, small and grey, so the user can tell which build runs. */}
       <Text style={[styles.versionText, { color: colors.tabIconDefault }]}>{appVersionLabel}</Text>
 
-      {/* fejlesztői vezérlő, release-buildben (`__DEV__ === false`) nem renderelődik. */}
+      {/* developer control; it is not rendered in a release build (`__DEV__ === false`). */}
       {__DEV__ && (
         <Row onPress={handleSeedExamA1}>
           <Text testID="dev-seed-exam" style={[styles.wordsOnlyLabel, { color: colors.text }]}>
@@ -538,8 +537,8 @@ export default function SettingsScreen() {
 
       <FeedbackButton level={level} languagePair={direction.join('→')} currentCard="settings-tab" />
 
-      {/* kis lap a két iránnyal, az
-          aktuális pipával, a LevelPickerSheet mintájára (components/LevelPickerSheet.tsx). */}
+      {/* small sheet with the two directions, the
+          current one ticked, modeled on LevelPickerSheet (components/LevelPickerSheet.tsx). */}
       <Modal visible={directionSheetOpen} transparent animationType="slide" onRequestClose={() => setDirectionSheetOpen(false)}>
         <Pressable style={styles.sheetOverlay} onPress={() => setDirectionSheetOpen(false)}>
           <Pressable style={[styles.sheet, { backgroundColor: colors.card }, g.brutal && [styles.brutalSheet, { borderColor: g.ink }]]} onPress={() => {}}>
@@ -595,7 +594,7 @@ const styles = StyleSheet.create({
     padding: 24,
     paddingTop: 40,
     // room under the last row so the FAB never covers it (96 → 120,
-    // a hosszabb lista utolsó sora is a 💬 fölé görgethető)
+    // so the last row of a longer list can also be scrolled above the 💬)
     paddingBottom: 120,
   },
   versionText: {
@@ -603,8 +602,8 @@ const styles = StyleSheet.create({
     fontSize: 12,
     textAlign: 'center',
   },
-  // az irányváltó kis lapja, a
-  // components/LevelPickerSheet.tsx overlay/sheet stílusának mintájára.
+  // The direction switch's small sheet, modeled on the
+  // overlay/sheet styles of components/LevelPickerSheet.tsx.
   sheetOverlay: {
     flex: 1,
     backgroundColor: 'rgba(0,0,0,0.5)',
@@ -635,10 +634,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
   },
-  // brutalista formák.
+  // brutalist shapes.
   brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   brutalRowOuter: { marginTop: 12 },
-  // 7F/G2: flexWrap + rowGap: ha a széles betűjű téma a léptetőt túl szélesre hizza, az a címke alá törik.
+  // flexWrap + rowGap: if a theme with a wide font makes the stepper too wide, it wraps below the label.
   brutalRow: { flexDirection: 'row', flexWrap: 'wrap', rowGap: 8, alignItems: 'center', justifyContent: 'space-between', paddingVertical: 12, paddingHorizontal: 14 },
   brutalStepOuter: { width: 38 },
   brutalStep: { width: 34, height: 34, alignItems: 'center', justifyContent: 'center' },
@@ -655,14 +654,14 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '600',
   },
-  // a Témák-sor tartalma (minta + név + nyíl).
+  // Content of the Themes row (sample + name + arrow).
   themeRow: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: 12 },
   themeChevron: { marginLeft: 'auto', fontSize: 22, fontWeight: '700' },
   sectionHint: {
     fontSize: 12,
     fontWeight: '500',
     marginTop: 2,
-    // 7F/G2: a kapcsolótól / nyíltól a hint se érjen hozzá (a címke saját marginRight-ja a hintre nem vonatkozik).
+    // keep the hint from touching the switch / arrow (the label's own marginRight does not apply to the hint).
     marginRight: 12,
   },
   // The label inside already carries the right margin (see wordsOnlyLabel).
@@ -688,7 +687,7 @@ const styles = StyleSheet.create({
     flex: 1,
     marginRight: 12,
   },
-  // a "→" a sor jobb szélén ül, a szöveg kapja a maradék szélességet.
+  // the "→" sits at the row's right edge, the text gets the remaining width.
   rowArrow: {
     fontSize: 16,
     fontWeight: '600',

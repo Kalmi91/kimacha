@@ -1,7 +1,7 @@
-// .ts modul betöltése bármely Node >= 18-on. A Node 20 nem ismeri a .ts kiterjesztést
-// (ERR_UNKNOWN_FILE_EXTENSION), a natív type-stripping csak 22.6+ / 24-től van; ez a segéd a
-// projekt typescript-jével transzpilál, és data: URL-ről importálja az eredményt.
-// Csak import-mentes modulra jó (a data: URL-ből nincs relatív feloldás): import esetén hibával áll le.
+// Loads a .ts module on any Node >= 18. Node 20 does not know the .ts extension
+// (ERR_UNKNOWN_FILE_EXTENSION); native type stripping exists only from 22.6+ / 24. This helper
+// transpiles with the project's typescript and imports the result from a data: URL.
+// Only works for import-free modules (a data: URL has no relative resolution): it throws if the module has imports.
 
 import { readFileSync } from 'node:fs';
 import ts from 'typescript';

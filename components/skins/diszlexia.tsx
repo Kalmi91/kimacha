@@ -4,8 +4,8 @@ import { StyleSheet, View } from 'react-native';
 import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 
-// Diszlexia: olvasó-sáv, sárga csík a szó mögött, a szó-sor teljes szélességében.
-// A sáv a téma `band` színe; más színekkel (Saját mix) a b szín halványítva a tartalék.
+// Dyslexia: a reading band, a yellow stripe behind the word, across the full width of the word row.
+// The band is the theme's `band` color; with other colors (My mix) the lightened b color is the fallback.
 
 function DiszlexiaWord({ children }: { word: string; children: ReactNode }) {
   const g = useGrammarColors();
@@ -23,8 +23,8 @@ function DiszlexiaWord({ children }: { word: string; children: ReactNode }) {
 }
 
 const styles = StyleSheet.create({
-  // flexGrow: a sor-konténerben (szó + 🔊) a sáv kitölti a szó helyét; alignSelf stretch: oszlopban
-  // (előnézet) a teljes szélesség. A flexShrink a FitText miatt kell.
+  // flexGrow: in the row container (word + 🔊) the band fills the word's space; alignSelf stretch: in a column
+  // (preview) it takes the full width. flexShrink is needed because of FitText.
   word: { flexGrow: 1, flexShrink: 1, alignSelf: 'stretch', alignItems: 'center', justifyContent: 'center', paddingVertical: 4 },
 });
 

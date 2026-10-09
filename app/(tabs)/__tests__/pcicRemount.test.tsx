@@ -1,7 +1,6 @@
-// a PCIC beviteli mező minden új kártyánál
-// ÚJRA mountol és autoFocus-szal indul, mert a Check után letiltott
-// (editable=false), majd újra engedélyezett natív mező nem hozta fel megbízhatóan
-// a billentyűzetet, és a törlés sem működött rajta.
+// The PCIC input field REMOUNTS and starts with autoFocus on every new card, because
+// a native field that was disabled after Check (editable=false) and then re-enabled
+// did not reliably bring up the keyboard, and deleting did not work on it either.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -47,7 +46,7 @@ const flush = async (times = 4) => {
   }
 };
 
-describe('PCIC fül: friss beviteli mező minden új kártyánál (FB408, FB409)', () => {
+describe('PCIC tab: a fresh input field for every new card', () => {
   beforeEach(async () => {
     await getDb().resetPcicCards();
     jest.spyOn(TextInput.prototype, 'focus').mockImplementation(() => {});
@@ -57,13 +56,13 @@ describe('PCIC fül: friss beviteli mező minden új kártyánál (FB408, FB409)
     jest.restoreAllMocks();
   });
 
-  it('az első kártya mezője autoFocus-szal indul', async () => {
+  it('the first card field starts with autoFocus', async () => {
     const { UNSAFE_getByType } = render(<PcicScreen />);
     await flush();
     expect(UNSAFE_getByType(TextInput).props.autoFocus).toBe(true);
   });
 
-  it('Check után nem autoFocus-os (letiltott mező), a következő kártyánál ÚJ, autoFocus-os példány jön', async () => {
+  it('after Check it is not autoFocus (disabled field), on the next card a NEW autoFocus instance appears', async () => {
     const { UNSAFE_getByType, getByText } = render(<PcicScreen />);
     await flush();
     const first = UNSAFE_getByType(TextInput);

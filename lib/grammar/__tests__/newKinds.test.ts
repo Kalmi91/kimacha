@@ -1,4 +1,4 @@
-// hibakereső / szórend / diktálás, csak a ser-estar és a negacion leckében, trial jelöléssel.
+// Error spotting / word order / dictation, only in the ser-estar and negacion lessons, marked as trial.
 import { grammarKindCounts, isTrialItem } from '@/lib/games/content';
 import { buildGrammarRound, grammarRoundItemKind } from '@/lib/games/grammarChoice';
 import { lessonFor, lessonHasTrial, lessonKinds, scoredKinds } from '../syllabus';
@@ -8,22 +8,22 @@ import type { LessonV2 } from '../lessonTypes';
 const serEstar = lessonFor('es', 'ser-estar') as LessonV2;
 const negacion = lessonFor('es', 'negacion') as LessonV2;
 
-describe('új feladat-fajták a két próba-leckében', () => {
-  it('ser-estar: hibakereső nincs (FB435), diktálás 5, szórend nincs', () => {
+describe('new task kinds in the two trial lessons', () => {
+  it('ser-estar: no error spotting, dictation 5, no word order', () => {
     const c = grammarKindCounts(serEstar);
     expect(c.spot).toBe(0);
     expect(c.dictation).toBe(5);
     expect(c.order).toBe(0);
   });
 
-  it('negacion: szórend 5 + hibakereső 5, diktálás nincs', () => {
+  it('negacion: word order 5 + error spotting 5, no dictation', () => {
     const c = grammarKindCounts(negacion);
     expect(c.order).toBe(5);
     expect(c.spot).toBe(5);
     expect(c.dictation).toBe(0);
   });
 
-  it('minden új tétel trial jelölésű, és csak ebben a két leckében van új fajta', () => {
+  it('every new item is marked trial, and only these two lessons have a new kind', () => {
     for (const lesson of [serEstar, negacion]) {
       const fresh = lesson.items.filter((i) => ['spot', 'order', 'dictation'].includes(i.kind ?? ''));
       expect(fresh.length).toBe(lesson === serEstar ? 5 : 10);
@@ -39,7 +39,7 @@ describe('új feladat-fajták a két próba-leckében', () => {
     }
   });
 
-  it('az es→en irány leckéi nem változtak', () => {
+  it('the lessons of the es→en direction have not changed', () => {
     for (const id of ['to_be', 'articles']) {
       const l = lessonFor('en', id)!;
       const c = grammarKindCounts(l);
@@ -47,7 +47,7 @@ describe('új feladat-fajták a két próba-leckében', () => {
     }
   });
 
-  it('az ideiglenes fajták nem számítanak a lecke %-ába', () => {
+  it('the provisional kinds do not count toward the lesson %', () => {
     expect(scoredKinds(serEstar)).not.toContain('spot');
     expect(scoredKinds(serEstar)).not.toContain('dictation');
     expect(scoredKinds(negacion)).not.toContain('order');
@@ -55,7 +55,7 @@ describe('új feladat-fajták a két próba-leckében', () => {
     expect(lessonKinds('es', 'ser-estar')).toContain('choice');
   });
 
-  it('a kör az új tételeket a végére teszi, saját fajta-címkével', () => {
+  it('the round puts the new items at the end, with their own kind label', () => {
     const round = buildGrammarRound(negacion, 7);
     const kinds = round.map((r) => grammarRoundItemKind(r));
     const firstNew = kinds.findIndex((k) => k === 'order' || k === 'spot');
@@ -66,12 +66,12 @@ describe('új feladat-fajták a két próba-leckében', () => {
 });
 
 describe('fixedSentence', () => {
-  it('a hibás szót cseréli, az írásjel a helyén marad', () => {
+  it('replaces the wrong word, the punctuation stays in place', () => {
     expect(fixedSentence('Yo soy cansado.', 1, 'estoy')).toBe('Yo estoy cansado.');
     expect(fixedSentence('No veo algo.', 2, 'nada')).toBe('No veo nada.');
   });
 
-  it('üres opció a szót törli, az írásjel az előző szóra kerül', () => {
+  it('an empty option deletes the word, the punctuation goes to the previous word', () => {
     expect(fixedSentence('Nadie no viene.', 1, '')).toBe('Nadie viene.');
     expect(fixedSentence('Nadie viene no.', 2, '')).toBe('Nadie viene.');
   });

@@ -1,6 +1,6 @@
 // empty state, and a loaded batch's
 // wrong-words / review-again (with and without a written lesson) / doubtful
-// sections. Mock-minta: app/(tabs)/__tests__/pcicCardShell.test.tsx.
+// sections. Mock pattern: app/(tabs)/__tests__/pcicCardShell.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -25,8 +25,8 @@ const flush = async (times = 3) => {
   }
 };
 
-describe('Riport (app/mistakes/index.tsx)', () => {
-  it('nincs betöltött köteg -> üres állapot szöveg, nincs "Practice" gomb', async () => {
+describe('Report (app/mistakes/index.tsx)', () => {
+  it('no batch loaded -> empty state text, no "Practice" button', async () => {
     const { getByText, queryByTestId } = render(<MistakesReportScreen />);
     await flush();
 
@@ -34,7 +34,7 @@ describe('Riport (app/mistakes/index.tsx)', () => {
     expect(queryByTestId('mistakes-practice-btn')).toBeNull();
   });
 
-  it('betöltött köteg: cím/dátum, wrong words, review-again (van lecke / nincs lecke), doubtful mondat', async () => {
+  it('loaded batch: title/date, wrong words, review-again (with lesson / without lesson), doubtful sentence', async () => {
     const result = validateMistakesPayload(sample);
     if (!result.ok) throw new Error(result.error);
     const batch = { ...result.batch, patterns: [{ ...result.batch.patterns[1], lessons: ['ser-estar', 'totally-fake-topic-xyz'] }] };

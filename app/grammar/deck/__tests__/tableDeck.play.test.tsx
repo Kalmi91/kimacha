@@ -43,13 +43,13 @@ const flush = async (times = 3) => {
 
 const cells = tableCellsForLesson(lessonFor('es', 'ser-estar')!);
 
-// az 1. kör (és a "Start again") megint a
-// tábla/forrás sorrendjében jön, tehát a képernyő a `cells` saját tömb-
-// sorrendjét mutatja; nincs shuffle-t kell újraszámolni a pass 0-hoz.
+// the 1st round (and "Start again") again comes in the
+// table/source order, so the screen shows the `cells` array's own
+// order; there is no shuffle to recompute for pass 0.
 const tableOrder = cells.map((c) => c.id);
 const cellAt = (i: number) => cells.find((c) => c.id === tableOrder[i])!;
 
-// a ser-estar táblának van angol promptja, ez látszik a puszta személy helyett.
+// the ser-estar table has an English prompt, which is shown instead of the bare person.
 const promptOf = (c: { enPrompt?: string; person: string }) => c.enPrompt ?? c.person;
 
 const answerCurrent = async (typed: string) => {
@@ -96,8 +96,8 @@ describe('table-deck screen: ser-estar playthrough', () => {
     view.unmount();
   });
 
-  // a ragozó kártyán az infinitivus ("ser") alapból rejtett,
-  // a súgó-gomb mutatja; Check után magától látszik.
+  // on the conjugation card the infinitive ("ser") is hidden by default,
+  // the hint button shows it; after Check it is visible by itself.
   it('the infinitive is hidden by default, the hint button shows it', async () => {
     const view = render(<TableDeckScreen />);
     await flush();

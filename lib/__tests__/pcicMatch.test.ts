@@ -16,7 +16,7 @@ describe('pcicAlternatives', () => {
     expect(pcicAlternatives('al final (de)')).toEqual(['al final de', 'al final']);
   });
 
-  // a " / " teljes alternatívákat választ el.
+  // a " / " separates complete alternatives.
   it('splits a " / " separated answer into whole alternatives', () => {
     expect(pcicAlternatives('el carro / el coche / el auto')).toEqual(['el carro', 'el coche', 'el auto']);
   });
@@ -27,7 +27,7 @@ describe('pcicAlternatives', () => {
 });
 
 describe('gradePcicAnswer', () => {
-  it('a " / " alakból bármelyik alternatíva exact, a best a begépelt alak', () => {
+  it('any alternative of a " / " form is exact, best is the typed form', () => {
     const target = 'el carro / el coche / el auto';
     expect(gradePcicAnswer('el coche', target)).toEqual({ match: 'exact', best: 'el coche' });
     expect(gradePcicAnswer('el carro', target)).toEqual({ match: 'exact', best: 'el carro' });
@@ -56,16 +56,16 @@ describe('gradePcicAnswer', () => {
     expect(gradePcicAnswer('Buenos días', 'Buenos días.').match).toBe('exact');
   });
 
-  it('grades an empty answer as wrong, revealing the correct word (SZ5)', () => {
+  it('grades an empty answer as wrong, revealing the correct word', () => {
     const g = gradePcicAnswer('', 'hola');
     expect(g.match).toBe('wrong');
     expect(g.best).toBe('hola');
   });
 });
 
-// a Beállítások ékezet-szigor
-// kapcsolója a PCIC gépelésén is dönt, és ez adja a Next-gomb javaslatát.
-describe('gradePcicAnswer strict accents (PLAN-play 10)', () => {
+// The accent-strictness switch in Settings
+// also decides on PCIC typing, and it drives the suggestion of the Next button.
+describe('gradePcicAnswer strict accents', () => {
   it('a missing accent is near + accentOnly when strict is off (default)', () => {
     const g = gradePcicAnswer('cafe', 'café');
     expect(g.match).toBe('near');
@@ -102,58 +102,58 @@ describe('suggestedGrade', () => {
   });
 });
 
-// a kérdő- és felkiáltójel sosem hiba.
-describe('gradePcicAnswer: írásjelek (FB400)', () => {
-  it('a hiányzó ¿ és ? nem hiba', () => {
+// question and exclamation marks are never a mistake.
+describe('gradePcicAnswer: punctuation', () => {
+  it('a missing ¿ and ? is not an error', () => {
     expect(gradePcicAnswer('Dónde estás', '¿Dónde estás?').match).toBe('exact');
     expect(gradePcicAnswer('¿Dónde estás', '¿Dónde estás?').match).toBe('exact');
     expect(gradePcicAnswer('Dónde estás?', '¿Dónde estás?').match).toBe('exact');
   });
 
-  it('a hiányzó ¡ és ! nem hiba', () => {
+  it('a missing ¡ and ! is not an error', () => {
     expect(gradePcicAnswer('Qué bien', '¡Qué bien!').match).toBe('exact');
   });
 
-  it('a mondat közbeni vessző hiánya sem hiba', () => {
+  it('a missing comma inside the sentence is not an error either', () => {
     expect(gradePcicAnswer('Hola cómo estás', 'Hola, ¿cómo estás?').match).toBe('exact');
   });
 
-  it('az írásjel nélkül is hibás szó marad hibás', () => {
+  it('a word wrong even without punctuation stays wrong', () => {
     expect(gradePcicAnswer('Donde estas', '¿Dónde estás?', true).match).toBe('wrong');
   });
 
-  it('az angol aposztróf a szó része marad', () => {
+  it('the English apostrophe stays part of the word', () => {
     expect(gradePcicAnswer("dont", "don't").match).not.toBe('exact');
     expect(gradePcicAnswer("don't", "Don't.").match).toBe('exact');
   });
 });
 
-// a névmás nélküli mondat is jó.
-describe('gradeSentenceAnswer: alany-névmás (FB399)', () => {
-  it('a névmás nélküli válasz elfogadott, ha a helyes mondat névmással kezdődik', () => {
+// a sentence without the pronoun is correct too.
+describe('gradeSentenceAnswer: subject pronoun', () => {
+  it('an answer without the pronoun is accepted if the correct sentence starts with a pronoun', () => {
     expect(gradeSentenceAnswer('como en casa', 'Yo como en casa').match).toBe('exact');
     expect(gradeSentenceAnswer('Como en casa', 'Yo como en casa.').match).toBe('exact');
     expect(gradeSentenceAnswer('vivimos aquí', 'Nosotros vivimos aquí').match).toBe('exact');
   });
 
-  it('a névmással írt válasz továbbra is jó, és a mutatott alak a teljes mondat', () => {
+  it('an answer written with the pronoun is still right, and the shown form is the full sentence', () => {
     const g = gradeSentenceAnswer('yo como en casa', 'Yo como en casa');
     expect(g.match).toBe('exact');
     expect(gradeSentenceAnswer('como en casa', 'Yo como en casa').best).toBe('Yo como en casa');
   });
 
-  it('a névelő "El" nem névmás: az "El libro..." nem hagyható el', () => {
+  it('the article "El" is not a pronoun: "El libro..." cannot be dropped', () => {
     expect(gradeSentenceAnswer('libro es rojo', 'El libro es rojo').match).not.toBe('exact');
     expect(withoutLeadingSubjectPronoun('El libro es rojo')).toBeNull();
     expect(withoutLeadingSubjectPronoun('Él es médico')).toBe('es médico');
   });
 
-  it('a "Tu" birtokos nem névmás, a "Tú" igen', () => {
+  it('the possessive "Tu" is not a pronoun, "Tú" is', () => {
     expect(withoutLeadingSubjectPronoun('Tu casa es grande')).toBeNull();
     expect(withoutLeadingSubjectPronoun('Tú eres alto')).toBe('eres alto');
   });
 
-  it('a hibás válasz névmás nélkül is hibás', () => {
+  it('a wrong answer is wrong even without the pronoun', () => {
     expect(gradeSentenceAnswer('bebo en casa', 'Yo como en casa').match).toBe('wrong');
   });
 });

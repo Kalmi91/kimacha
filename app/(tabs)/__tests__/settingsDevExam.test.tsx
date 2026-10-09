@@ -1,7 +1,7 @@
-// a Settings alján egy csak __DEV__-ben
-// látszó vezérlő beállít egy A1 állapotot (a szint kártyáinak 85%-a graduált + egy A1 lecke
-// kész), hogy a vizsga a web-előnézetben végigkattintható legyen. Release-buildben
-// (`__DEV__ === false`) nem jelenik meg. Mock-minta: settingsReset.test.tsx.
+// A control at the bottom of Settings, visible only in __DEV__,
+// sets up an A1 state (85% of the level's cards graduated + one A1 lesson
+// done) so the exam can be clicked through in the web preview. It does not appear in a
+// release build (`__DEV__ === false`). Mock pattern: settingsReset.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-router', () => ({
@@ -37,7 +37,7 @@ const flush = async () => {
 const g = globalThis as unknown as { __DEV__: boolean };
 const originalDev = g.__DEV__;
 
-describe('Beállítások: __DEV__-only vizsga-vezérlő', () => {
+describe('Settings: __DEV__-only exam control', () => {
   beforeEach(async () => {
     setPcicTarget('es');
     await getDb().setOnboarding('en', 'es');
@@ -48,7 +48,7 @@ describe('Beállítások: __DEV__-only vizsga-vezérlő', () => {
     g.__DEV__ = originalDev;
   });
 
-  it('fejlesztői buildben látszik, és beállítja az A1 állapotot: a vizsga nyitva', async () => {
+  it('shown in a dev build, and sets the A1 state: the exam is open', async () => {
     g.__DEV__ = true;
     const { getByTestId } = render(<ThemeProvider><SettingsScreen /></ThemeProvider>);
     await flush();
@@ -65,7 +65,7 @@ describe('Beállítások: __DEV__-only vizsga-vezérlő', () => {
     expect(getByTestId('dev-seed-exam').props.children).toBe('DEV: exam state is set (A1-B2), open the level sheet');
   });
 
-  it('release-buildben (__DEV__ === false) nem jelenik meg', async () => {
+  it('not shown in a release build (__DEV__ === false)', async () => {
     g.__DEV__ = false;
     const { queryByTestId, queryByText } = render(<ThemeProvider><SettingsScreen /></ThemeProvider>);
     await flush();

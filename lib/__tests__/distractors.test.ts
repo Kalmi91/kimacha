@@ -34,7 +34,7 @@ describe('nearMissDistractors', () => {
     expect(new Set(out.map((w) => w.toLowerCase())).size).toBe(out.length);
   });
 
-  it('splits multi-word grammar cards into single tokens (FB: "yo hablo" tile)', () => {
+  it('splits multi-word grammar cards into single tokens ("yo hablo" tile)', () => {
     const out = nearMissDistractors(['yo', 'hablo', 'español'], ['yo hablo', 'tú hablas', 'comer'], 'es');
     expect(out.every((w) => !w.includes(' '))).toBe(true);
     expect(out).toContain('hablas');
@@ -43,7 +43,7 @@ describe('nearMissDistractors', () => {
 
   // "They decide together." → "Ellos deciden juntos."; from the English
   // side ellos/ellas are both correct, so the counterpart is barred as a trap.
-  it('never offers the gender-counterpart pronoun (FB50: ellos vs ellas)', () => {
+  it('never offers the gender-counterpart pronoun (ellos vs ellas)', () => {
     const out = nearMissDistractors(
       ['ellos', 'deciden', 'juntos'],
       ['ellas', 'deciden', 'comer', 'casa', 'rojo'],
@@ -58,7 +58,7 @@ describe('nearMissDistractors', () => {
     expect(out2.map((o) => o.toLowerCase())).not.toContain('nosotros');
   });
 
-  it('rejects unconfusable short words (FB: "mil" next to "muy")', () => {
+  it('rejects unconfusable short words ("mil" next to "muy")', () => {
     const out = nearMissDistractors(
       ['tú', 'hablas', 'muy', 'bien'],
       ['mil', 'hablo', 'habla', 'hablan', 'hablamos'],
@@ -69,7 +69,7 @@ describe('nearMissDistractors', () => {
 
   // Hungarian has one third-person pronoun for both genders, so "sie" is as
   // correct a reading of "ő megy" as "er" is: offering it as a trap is unfair.
-  it('bars the German third-person counterpart (FB50, hu source)', () => {
+  it('bars the German third-person counterpart (hu source)', () => {
     const out = nearMissDistractors(
       ['er', 'geht', 'nach', 'Hause'],
       ['sie', 'gehen', 'essen', 'rot'],

@@ -1,9 +1,9 @@
-// a próbavizsga képernyőjének folyamata.
-// A feladatsor-építő mockolt (a tartalmát lib/exam/mock/__tests__/build.test.ts fedi), itt a
-// folyamat: intro, papíronként óra és feladatok (nincs azonnali visszajelzés), a hallás 2
-// lejátszása, a szóbeli helyőrző (2. csoport = hallás x2, provisional), eredmény mentése,
-// félbehagyott vizsga folytatása (papíronként mentve), lejáró óra, szójegyzet ismeretlen szóra.
-// Mock-minta: app/__tests__/exam.test.tsx.
+// The flow of the mock exam screen.
+// The task-set builder is mocked (its content is covered by lib/exam/mock/__tests__/build.test.ts), here it is
+// the flow: intro, a clock and tasks per paper (no immediate feedback), listening played
+// twice, the oral placeholder (group 2 = listening x2, provisional), saving the result,
+// resuming an abandoned exam (saved per paper), an expiring clock, glossary for an unknown word.
+// Mock pattern: app/__tests__/exam.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -143,7 +143,7 @@ const press = async (screen: Screen, testID: string) => {
   await flush();
 };
 
-// Az óra másodperces tickjei ne fussanak a tesztek közben (act-figyelmeztetés); a lejárat külön teszt.
+// The clock's per-second ticks should not run during tests (act warning); expiry is a separate test.
 const reset = async () => {
   jest.useFakeTimers({ doNotFake: ['nextTick', 'setImmediate', 'queueMicrotask'] });
   mockBack.mockClear();
@@ -156,7 +156,7 @@ const reset = async () => {
   await getDb().resetPcicCards();
 };
 
-// A három kitöltendő papír helyes megoldása (olvasás, írás, hallás), a szóbeli helyőrzővel.
+// The correct solutions of the three papers to fill in (reading, writing, listening), with the oral placeholder.
 const solveReading = async (s: Screen) => {
   await press(s, 'mock-start-paper');
   await press(s, 'mock-option-r0-0');
@@ -177,10 +177,10 @@ afterEach(() => {
   jest.useRealTimers();
 });
 
-describe('Próbavizsga: folyamat (E1-E5)', () => {
+describe('Mock exam: flow', () => {
   beforeEach(reset);
 
-  it('intro: négy papír a hivatalos percekkel, a szóbeli "hamarosan", átmenési szabály, rövidítés-megjegyzés', async () => {
+  it('intro: four papers with the official minutes, the spoken part "coming soon", pass rule, abbreviation note', async () => {
     const s = await mount();
     expect(s.getByText('A1 practice exam')).toBeTruthy();
     expect(s.getByText('Modeled on the official A1 exam format')).toBeTruthy();
@@ -193,7 +193,7 @@ describe('Próbavizsga: folyamat (E1-E5)', () => {
     s.unmount();
   });
 
-  it('végigvitel: papír-intro, óra, nincs azonnali jelzés, szóbeli helyőrző, eredmény (hallás x2, provisional), mentés', async () => {
+  it('full run: paper intro, clock, no immediate feedback, spoken placeholder, result (listening x2, provisional), save', async () => {
     const s = await mount();
     await press(s, 'mock-begin');
     expect(s.getByText('Paper 1 of 4')).toBeTruthy();
@@ -202,8 +202,8 @@ describe('Próbavizsga: folyamat (E1-E5)', () => {
     await press(s, 'mock-start-paper');
     expect(s.getByText('⏱ 45:00')).toBeTruthy();
     expect(s.getByText('Task 1 / 1')).toBeTruthy();
-    await press(s, 'mock-option-r0-1'); // rossz válasz
-    expect(s.queryByText(t().games.correctFeedback)).toBeNull(); // nincs azonnali visszajelzés
+    await press(s, 'mock-option-r0-1'); // wrong answer
+    expect(s.queryByText(t().games.correctFeedback)).toBeNull(); // no immediate feedback
     expect(s.queryByText(t().games.wrongFeedback)).toBeNull();
     await press(s, 'mock-option-r0-0');
     await press(s, 'mock-next-task');
@@ -232,16 +232,16 @@ describe('Próbavizsga: folyamat (E1-E5)', () => {
     s.unmount();
   });
 
-  it('átnézés: tételenként a kérdés, a te válaszod, a helyes válasz; "Try again" új intro-ra visz', async () => {
+  it('review: per item the question, your answer, the correct answer; "Try again" leads to a new intro', async () => {
     const s = await mount();
     await press(s, 'mock-begin');
     await press(s, 'mock-start-paper');
-    await press(s, 'mock-option-r0-1'); // rossz
+    await press(s, 'mock-option-r0-1'); // wrong
     await press(s, 'mock-next-task');
     await press(s, 'mock-start-paper');
-    await press(s, 'mock-next-task'); // üres írás
+    await press(s, 'mock-next-task'); // empty writing
     await press(s, 'mock-start-paper');
-    await press(s, 'mock-next-task'); // üres hallás
+    await press(s, 'mock-next-task'); // empty listening
     await press(s, 'mock-start-paper');
     await press(s, 'mock-speaking-continue');
     expect(s.getByText('Not passed')).toBeTruthy();
@@ -257,7 +257,7 @@ describe('Próbavizsga: folyamat (E1-E5)', () => {
     s.unmount();
   });
 
-  it('hallás: legfeljebb 2 lejátszás, a harmadik koppintás néma', async () => {
+  it('listening: at most 2 plays, the third tap is silent', async () => {
     const s = await mount();
     await press(s, 'mock-begin');
     await solveReading(s);
@@ -266,7 +266,7 @@ describe('Próbavizsga: folyamat (E1-E5)', () => {
     expect(s.getByText('Plays left: 2')).toBeTruthy();
     await press(s, 'mock-play');
     expect(s.getByText('Plays left: 1')).toBeTruthy();
-    // A mock-olt hang azonnal "kész", ezért a zár magától feloldódik: a 2. lejátszás mehet.
+    // The mocked audio is "done" immediately, so the lock releases by itself: the 2nd play can go.
     const speakMock = speak as jest.Mock;
     speakMock.mock.calls[0][2].onDone?.();
     await press(s, 'mock-play');
@@ -278,13 +278,13 @@ describe('Próbavizsga: folyamat (E1-E5)', () => {
   });
 });
 
-describe('Próbavizsga: részenkénti mentés és folytatás (E4 b)', () => {
+describe('Mock exam: per-paper save and resume', () => {
   beforeEach(reset);
 
-  it('félbehagyás után a kész papír válasza megmarad, a folytatás a következő papírnál indul', async () => {
+  it("after quitting midway the finished paper's answer stays, resume starts at the next paper", async () => {
     const first = await mount();
     await press(first, 'mock-begin');
-    await solveReading(first); // olvasás kész, helyes
+    await solveReading(first); // reading done, correct
     expect(first.getByText('Paper 2 of 4')).toBeTruthy();
     await press(first, 'mock-start-paper');
     await press(first, 'mock-close');
@@ -301,18 +301,18 @@ describe('Próbavizsga: részenkénti mentés és folytatás (E4 b)', () => {
     await press(second, 'mock-resume');
     expect(second.getByText('Paper 2 of 4')).toBeTruthy();
     await press(second, 'mock-start-paper');
-    await press(second, 'mock-next-task'); // üres írás
+    await press(second, 'mock-next-task'); // empty writing
     await solveListening(second);
     await press(second, 'mock-start-paper');
     await press(second, 'mock-speaking-continue');
-    // Az olvasás a mentett (helyes) válaszból 25 pont, az írás üres = 0: az 1. csoport 25 / 50, bukás.
+    // Reading gives 25 points from the saved (correct) answers, writing is empty = 0: group 1 is 25 / 50, fail.
     expect(second.getByText('Comprensión de lectura: 25 / 25')).toBeTruthy();
     expect(second.getByText('Expresión e interacción escritas: 0 / 25')).toBeTruthy();
     expect(second.getByText('Not passed')).toBeTruthy();
     second.unmount();
   });
 
-  it('"Start over" törli a mentést, és elölről indít', async () => {
+  it('"Start over" deletes the save and restarts from the beginning', async () => {
     const first = await mount();
     await press(first, 'mock-begin');
     await solveReading(first);
@@ -325,7 +325,7 @@ describe('Próbavizsga: részenkénti mentés és folytatás (E4 b)', () => {
     second.unmount();
   });
 
-  it('változott feladatsor (más ujjlenyomat) esetén a mentés nem folytatható, tiszta intro jön', async () => {
+  it('with a changed task set (different fingerprint) the save cannot be resumed, a clean intro appears', async () => {
     const first = await mount();
     await press(first, 'mock-begin');
     await solveReading(first);
@@ -339,16 +339,16 @@ describe('Próbavizsga: részenkénti mentés és folytatás (E4 b)', () => {
   });
 });
 
-describe('Próbavizsga: valódi vizsgaóra (E3 a)', () => {
+describe('Mock exam: real exam clock', () => {
   beforeEach(reset);
 
-  it('lejárt óránál a papír ott zár, ahol tart: a megválaszolatlan 0, és ezt jelzi', async () => {
+  it('when the clock runs out the paper closes where it stands: unanswered is 0, and it says so', async () => {
     const s = await mount();
     await press(s, 'mock-begin');
     await solveReading(s);
     await press(s, 'mock-start-paper');
     expect(s.getByText('⏱ 25:00')).toBeTruthy();
-    // 25 perc az írás-papír ideje; az órát egyszerre ugorjuk át, a következő tick lezárja a papírt.
+    // 25 minutes is the writing paper's time; we skip the clock in one jump, the next tick closes the paper.
     jest.setSystemTime(Date.now() + 25 * 60_000 + 1000);
     await act(async () => {
       jest.advanceTimersByTime(1000);
@@ -360,10 +360,10 @@ describe('Próbavizsga: valódi vizsgaóra (E3 a)', () => {
   });
 });
 
-describe('Próbavizsga: szójegyzet ismeretlen szóra (E5 c)', () => {
+describe('Mock exam: glossary for an unknown word', () => {
   beforeEach(reset);
 
-  // Egy valódi A1 szó a szint tételeiből; a feladat szövege csak ez a szó.
+  // A real A1 word from the level's items; the task text is just this word.
   const word = () => {
     setPcicTarget('es');
     const items = pcicItemsForLevel('A1');
@@ -379,13 +379,13 @@ describe('Próbavizsga: szójegyzet ismeretlen szóra (E5 c)', () => {
     mockExam = e;
   };
 
-  it('ismeretlen szónál a feladat alatt koppintásra nyílik a jelentése; a lista szó = jelentés', async () => {
+  it('on an unknown word the meaning opens on tap under the task; the list word = meaning', async () => {
     const { word: w } = word();
     withPassage(w);
     const s = await mount();
     await press(s, 'mock-begin');
     await press(s, 'mock-start-paper');
-    expect(s.queryByTestId('mock-glossary-entry')).toBeNull(); // zárva, amíg nem koppint
+    expect(s.queryByTestId('mock-glossary-entry')).toBeNull(); // closed until the user taps
     await press(s, 'mock-glossary-toggle');
     const entries = s.getAllByTestId('mock-glossary-entry');
     expect(entries.length).toBeGreaterThanOrEqual(1);
@@ -393,7 +393,7 @@ describe('Próbavizsga: szójegyzet ismeretlen szóra (E5 c)', () => {
     s.unmount();
   });
 
-  it('a tanult szóhoz nincs szójegyzet', async () => {
+  it('there is no glossary for a learned word', async () => {
     const { items, word: w } = word();
     withPassage(w);
     for (const it of items) await getDb().upsertPcicCard({ ...sm2NewCard(it.id), state: 'review' as const, interval: 7, reps: 3 });
@@ -405,8 +405,8 @@ describe('Próbavizsga: szójegyzet ismeretlen szóra (E5 c)', () => {
   });
 });
 
-// Az angol irány (es→en) fixture-jei: az A1 egy írásbeli papír + szóbeli helyőrző, az A2 olvasás + írás közös papír,
-// hallás, szóbeli helyőrző; a felület spanyolul van, a vizsga szövege angol.
+// Fixtures of the English direction (es→en): A1 is one written paper + oral placeholder, A2 is a shared reading + writing paper,
+// listening, oral placeholder; the UI is in Spanish, the exam text is English.
 const EN_NAMES = { reading: 'Reading', writing: 'Writing', listening: 'Listening', speaking: 'Speaking' } as const;
 const enTasks = (): MockExam['papers'][number]['tasks'] => [
   { id: 'x-1', skill: 'reading', kind: 'read_mc', instruction: 'PART 1. Read the texts.', passages: [{ text: 'I have a dog. It is big.', options: ['Tengo un perro. Es grande.', 'Tengo un gato. Es grande.', 'Tengo un perro. Es pequeño.'], correct: 0 }] },
@@ -439,7 +439,7 @@ const enExam = (level: 'A1' | 'A2'): MockExam => {
 
 const GOOD_EN_MESSAGE = 'Hello my name is Ana and I live in a small house near the park';
 
-describe('Próbavizsga: es→en irány (nemzetközi minta, a felület spanyolul)', () => {
+describe('Mock exam: es→en direction (international sample, UI in Spanish)', () => {
   beforeEach(async () => {
     await reset();
     setLanguage('es');
@@ -447,7 +447,7 @@ describe('Próbavizsga: es→en irány (nemzetközi minta, a felület spanyolul)
   });
   afterEach(() => setLanguage('en'));
 
-  it('nem elérhető szinten (B1) nincs próbavizsga, gomb visz tovább', async () => {
+  it('on an unavailable level (B1) there is no mock exam, the button leads on', async () => {
     mockLevel = 'B1';
     const s = await mount();
     expect(s.getByText('Todavía no hay examen de práctica para este nivel.')).toBeTruthy();
@@ -456,7 +456,7 @@ describe('Próbavizsga: es→en irány (nemzetközi minta, a felület spanyolul)
     s.unmount();
   });
 
-  it('A1: nemzetközi-minta felirat (nem "hivatalos"), egy 75 perces írásbeli, összpont-szabály, szóbeli helyőrző, összpont-sor az eredményen', async () => {
+  it('A1: international-sample label (not "official"), one 75-minute written paper, total-score rule, spoken placeholder, total-score row on the result', async () => {
     mockLevel = 'A1';
     mockExam = enExam('A1');
     const s = await mount();
@@ -471,7 +471,7 @@ describe('Próbavizsga: es→en irány (nemzetközi minta, a felület spanyolul)
     expect(s.getByText('Prueba 1 de 2')).toBeTruthy();
     await press(s, 'mock-start-paper');
     expect(s.getByText('⏱ 75:00')).toBeTruthy();
-    // A hallás-feladat (1. a papíron) egyszer játszható: a felület ezt mutatja.
+    // The listening task (1st on the paper) can be played once: the UI shows this.
     expect(s.getByText('Reproducciones restantes: 1')).toBeTruthy();
     await press(s, 'mock-option-l0-0');
     await press(s, 'mock-next-task');
@@ -497,7 +497,7 @@ describe('Próbavizsga: es→en irány (nemzetközi minta, a felület spanyolul)
     s.unmount();
   });
 
-  it('A1 hallás-újrajátszás: az első rész egyszer játszható, a második koppintás néma', async () => {
+  it('A1 listening replay: the first part can be played once, the second tap is silent', async () => {
     mockLevel = 'A1';
     mockExam = enExam('A1');
     const s = await mount();
@@ -511,13 +511,13 @@ describe('Próbavizsga: es→en irány (nemzetközi minta, a felület spanyolul)
     s.unmount();
   });
 
-  it('A1: egy készség nullával is átmehet (nincs részenkénti minimum), ha az összpont megvan', async () => {
+  it('A1: a skill may pass with zero (no per-part minimum) if the total score is met', async () => {
     mockLevel = 'A1';
     mockExam = enExam('A1');
     const s = await mount();
     await press(s, 'mock-begin');
     await press(s, 'mock-start-paper');
-    await press(s, 'mock-next-task'); // hallás üres
+    await press(s, 'mock-next-task'); // empty listening
     await press(s, 'mock-option-r0-0');
     await press(s, 'mock-next-task');
     fireEvent.changeText(s.getByTestId('mock-message'), GOOD_EN_MESSAGE);
@@ -529,7 +529,7 @@ describe('Próbavizsga: es→en irány (nemzetközi minta, a felület spanyolul)
     s.unmount();
   });
 
-  it('A2: Olvasás + Írás közös papír (60 perc), Hallás, átlag-szabály "közelítő" jelzéssel, átlag-sor az eredményen', async () => {
+  it('A2: Reading + Writing shared paper (60 minutes), Listening, average rule with an "approximate" flag, average row on the result', async () => {
     mockLevel = 'A2';
     mockExam = enExam('A2');
     const s = await mount();
@@ -559,7 +559,7 @@ describe('Próbavizsga: es→en irány (nemzetközi minta, a felület spanyolul)
     s.unmount();
   });
 
-  it('a felület angolul sem ír "official" vizsgát az angol irányon (nemzetközi minta felirat)', async () => {
+  it('the UI does not say "official" exam even in English on the English direction (international-sample label)', async () => {
     setLanguage('en');
     mockLevel = 'A1';
     mockExam = enExam('A1');

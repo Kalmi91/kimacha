@@ -1,7 +1,7 @@
-// a Credits képernyő rendereli a CEFR-J attribúciót, és a
-// Settings-sor a Credits képernyőre navigál. A
-// FrequencyWords/OpenSubtitles/CC BY-SA szöveg a régi szólistával együtt kikerült.
-// Mock-minta: app/mistakes/__tests__/report.test.tsx.
+// The Credits screen renders the CEFR-J attribution, and the
+// Settings row navigates to the Credits screen. The
+// FrequencyWords/OpenSubtitles/CC BY-SA text was removed together with the old word list.
+// Mock pattern: app/mistakes/__tests__/report.test.tsx.
 
 const mockPush = jest.fn();
 const mockBack = jest.fn();
@@ -15,7 +15,7 @@ import { fireEvent, render } from '@testing-library/react-native';
 import CreditsScreen from '../credits';
 
 describe('CreditsScreen (app/credits.tsx)', () => {
-  it('rendereli a CEFR-J szöveget, a FrequencyWords szöveg nélkül', () => {
+  it('renders the CEFR-J text, without the FrequencyWords text', () => {
     const { getAllByText, getByText, queryByText } = render(<CreditsScreen />);
 
     expect(getAllByText(/CEFR-J/).length).toBeGreaterThan(0);
@@ -24,16 +24,16 @@ describe('CreditsScreen (app/credits.tsx)', () => {
     expect(queryByText(/CC BY-SA/)).toBeNull();
   });
 
-  it('PLAN-temak 2B: listázza a betűk licencét, családonként egyszer', () => {
+  it('lists the font licenses, once per family', () => {
     const { getAllByTestId, getByText } = render(<CreditsScreen />);
 
-    // 28 betűfájl, de az Atkinson és a Jost két súllyal: 26 család.
+    // 28 font files, but Atkinson and Jost come in two weights: 26 families.
     expect(getAllByTestId('credits-font')).toHaveLength(26);
     expect(getByText('Permanent Marker · Apache License 2.0')).toBeTruthy();
     expect(getByText('OpenDyslexic · SIL Open Font License 1.1')).toBeTruthy();
   });
 
-  it('Play-előkészítés: a Wikimedia Commons fotó-sor és az Adatvédelmi tájékoztató sor megnyitja a hirdetett URL-t', () => {
+  it('Play prep: the Wikimedia Commons photo row and the Privacy policy row open the advertised URL', () => {
     const openURL = jest.spyOn(Linking, 'openURL').mockResolvedValue(true);
     const { getByText, getByTestId } = render(<CreditsScreen />);
 

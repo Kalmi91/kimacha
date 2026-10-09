@@ -29,7 +29,7 @@ function card(over: Partial<Sm2Card>): Sm2Card {
   };
 }
 
-describe('isSentenceKnown (spanyol)', () => {
+describe('isSentenceKnown (Spanish)', () => {
   it('accepts a sentence made only of learned words and free words', () => {
     expect(isSentenceKnown('El libro y la mesa.', 'es', { learned: ['el libro', 'la mesa'] })).toBe(true);
   });
@@ -108,7 +108,7 @@ describe('isSentenceKnown (spanyol)', () => {
   });
 });
 
-describe('isSentenceKnown (angol)', () => {
+describe('isSentenceKnown (English)', () => {
   it('accepts learned words, free words and the -s/-ed/-ing forms of a learned single word', () => {
     expect(isSentenceKnown('The dog runs.', 'en', { learned: ['dog', 'run'] })).toBe(true);
     expect(isSentenceKnown('The dog is walking.', 'en', { learned: ['dog', 'walk', 'to be'] })).toBe(true);

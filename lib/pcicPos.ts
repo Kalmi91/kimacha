@@ -1,25 +1,25 @@
-// A PCIC-tételnek
-// (a régi PCIC-korpusz: id, order, es, kind, source, section,
-// headword) nincs szófaj-mezője. A (b) opciót választottuk:
-// olcsó szabály a spanyol alakból, generálás/adatbővítés nélkül. Ha egyszer
-// lesz valódi `pos` mező a tételen, ez a függvény azt olvassa előbb.
+// A PCIC item
+// (the old PCIC corpus: id, order, es, kind, source, section,
+// headword) has no part-of-speech field. We chose a
+// cheap rule on the Spanish form, with no generation/data expansion. If a real
+// `pos` field ever appears on the item, this function reads that first.
 //
-// A PCIC névelő nélkül tárolja a spanyol
-// alakot (`"es": "vida"`), ezért a főnevek a névelő-szabályból kimaradtak.
-// A fő szókorpusz viszont névelővel tárolja ("la vida"), és sokkal pontosabb,
-// mint az olcsó szabály. Mostantól ez a korpusz az elsődleges forrás, a
-// névelő/igevégződés-szabály csak akkor fut, ha a lemma nincs benne.
-// A fő korpusz a data/words-open (data/openWords.ts),
-// a főnév neme a névelőből jön (a régi annotáló is onnan vette).
+// PCIC stores the Spanish form
+// without the article (`"es": "vida"`), so nouns were missed by the article rule.
+// The main word corpus, however, stores it with the article ("la vida") and is far more
+// precise than the cheap rule. From now on this corpus is the primary source; the
+// article/verb-ending rule only runs if the lemma is not in it.
+// The main corpus is data/words-open (data/openWords.ts);
+// the gender of a noun comes from the article (the old annotator took it from there too).
 import type { PcicKind } from '@/data/pcic';
 import { openWords } from '@/data/openWords';
 import type { WordGender, WordPos } from '@/data/words';
 
-// a chip minden korpusz-szófajt kaphat (nem csak noun/verb/phrase),
-// ezért a Pos lefedi a teljes WordPos-készletet. A `conj`
-// csak a PCIC oldalon létezik (kötőszó), a korpusz WordPos típusát ez nem
-// bővíti, azt kézzel írt PCIC `pos` mező adja; a lemma-index (korpuszból) csak a `conj`-ot adja (a words-open kötőszavai).
-// A words-open `det` (determináns) és `interj` (indulatszó) szófaja is chipet kap.
+// the chip can get any corpus part of speech (not only noun/verb/phrase),
+// so Pos covers the full WordPos set. `conj`
+// exists only on the PCIC side (conjunction); it does not extend the corpus WordPos type,
+// it comes from a hand-written PCIC `pos` field; the lemma index (from the corpus) yields only `conj` (the conjunctions of words-open).
+// The words-open parts of speech `det` (determiner) and `interj` (interjection) also get a chip.
 export type Pos = WordPos | 'conj' | 'det' | 'interj';
 
 export interface PosInfo {
@@ -30,12 +30,12 @@ export interface PosInfo {
 const ARTICLES = ['el', 'la', 'los', 'las', 'un', 'una'];
 const LEADING_ARTICLE = /^(el|la|los|las|un|una)\s+/;
 
-// Egy szó és -ar/-er/-ir(se) végű: infinitivus alak.
+// A single word ending in -ar/-er/-ir(se): an infinitive form.
 const VERB_ENDING = /^[a-záéíóúñü]+(ar|er|ir|arse|erse|irse)$/i;
 
-// a Pos lefedi a teljes WordPos-készletet, ezért minden
-// korpusz-szófaj átjön a lemma-indexbe (korábban csak noun/verb/phrase).
-// A words-open nyers szófajából (OpenWord.openPos).
+// Pos covers the full WordPos set, so every
+// corpus part of speech makes it into the lemma index (previously only noun/verb/phrase).
+// Taken from the raw part of speech of words-open (OpenWord.openPos).
 const CORPUS_POS_TO_PCIC: Partial<Record<string, Pos>> = {
   noun: 'noun',
   verb: 'verb',
@@ -53,8 +53,8 @@ function normalizeLemma(es: string): string {
   return es.trim().toLowerCase().replace(LEADING_ARTICLE, '');
 }
 
-// Lusta, modul-szintű Map<lemma, PosInfo | null>. `null` = két korpusz-tétel
-// ugyanarra a lemmára eltérő szófajt/nemet ad, tehát nem találgatunk.
+// Lazy, module-level Map<lemma, PosInfo | null>. `null` = two corpus items
+// give the same lemma a different part of speech/gender, so we do not guess.
 let lemmaIndex: Map<string, PosInfo | null> | null = null;
 
 function getLemmaIndex(): Map<string, PosInfo | null> {
@@ -64,7 +64,7 @@ function getLemmaIndex(): Map<string, PosInfo | null> {
     const pos = CORPUS_POS_TO_PCIC[w.openPos];
     if (!pos) continue;
     const info: PosInfo = pos === 'noun' && w.gender ? { pos, gender: w.gender } : { pos };
-    // A perjeles alak ("el carro / el coche") minden alternatívája külön lemma.
+    // Every alternative of a slash form ("el carro / el coche") is its own lemma.
     for (const alt of w.es.split(' / ')) {
       const lemma = normalizeLemma(alt);
       if (!lemma) continue;
@@ -73,7 +73,7 @@ function getLemmaIndex(): Map<string, PosInfo | null> {
         continue;
       }
       const existing = map.get(lemma);
-      if (existing === null) continue; // már ütközőnek jelölve
+      if (existing === null) continue; // already marked as colliding
       if (!existing || existing.pos !== info.pos || existing.gender !== info.gender) {
         map.set(lemma, null);
       }
@@ -84,8 +84,8 @@ function getLemmaIndex(): Map<string, PosInfo | null> {
 }
 
 export function posOf(item: { es: string; kind: PcicKind; pos?: Pos | null }): PosInfo | null {
-  // mondat-tételnek sose jár szófaj-chip, még akkor sem, ha
-  // volna `pos` mezője vagy a korpusz ismerné a spanyol alakot.
+  // a sentence item never gets a part-of-speech chip, even if it
+  // had a `pos` field or the corpus knew the Spanish form.
   if (item.kind === 'sentence') return null;
   if (item.pos) return { pos: item.pos };
 

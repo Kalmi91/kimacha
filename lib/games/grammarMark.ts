@@ -1,22 +1,22 @@
-// a „jelöld meg a mondatban" feladat mondat-oldali logikája. A képernyő
-// csak rajzol; a tokenizálás és a találat-eldöntés itt él, hogy teszttel
-// bizonyítható legyen (ugyanaz a séma, mint a grammarChoice round-építésénél).
+// Sentence-side logic of the "mark it in the sentence" exercise. The screen
+// only renders; tokenization and hit detection live here so they can be
+// proven by tests (same scheme as in grammarChoice's round building).
 
 import type { GrammarMarkItem } from './content';
 
 interface MarkToken {
-  /** A megjelenítendő darab, szóköz nélkül. */
+  /** The piece to display, without spaces. */
   text: string;
-  /** Szó-e (koppintható), vagy írásjel/szóköz. */
+  /** Whether it is a word (tappable), or punctuation/whitespace. */
   isWord: boolean;
 }
 
-// A spanyol írásjelek a szó MELLÉ kerülnek, nem bele: „¿Qué haces?" három szava
-// qué/haces, a ¿ és a ? külön, nem koppintható darab. Az ékezet és a ñ a szó
-// része, a kötőjeles alak (se-lo) egyben marad.
+// Spanish punctuation goes NEXT TO the word, not into it: the words of "¿Qué haces?" are
+// qué/haces, while ¿ and ? are separate, non-tappable pieces. The accent and ñ are
+// part of the word, and a hyphenated form (se-lo) stays in one piece.
 const WORD_RE = /[\p{L}\p{M}\d]+(?:['’-][\p{L}\p{M}\d]+)*/gu;
 
-/** A mondat szó- és nem-szó darabjai, eredeti sorrendben. */
+/** The sentence's word and non-word pieces, in original order. */
 export function markTokens(sentence: string): MarkToken[] {
   const out: MarkToken[] = [];
   let last = 0;
@@ -35,8 +35,8 @@ function normalize(text: string): string {
 }
 
 /**
- * Hányadik TOKEN a helyes válasz, vagy -1, ha a megadott szó nincs a mondatban
- * (az audit ezt kapuzza, futásidőben a képernyő ilyenkor nem jelöl semmit).
+ * Which TOKEN is the correct answer, or -1 if the given word is not in the sentence
+ * (the audit gates this; at runtime the screen then marks nothing).
  */
 export function markAnswerIndex(item: GrammarMarkItem, tokens: MarkToken[]): number {
   const wanted = normalize(item.answer.trim());

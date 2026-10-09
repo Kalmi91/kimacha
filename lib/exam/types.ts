@@ -1,52 +1,52 @@
-// a szintvizsga adatmodellje. A régi
-// (4afeb8c^) lib/examBuilder.ts tétel-fajtáiból csak az marad, ami a szintvizsgához
-// kell; minden tétel a tanult szavakból vagy a kész szint-leckékből jön, és
-// viszi magával, honnan (itemId / topicId), hogy a későbbi lépések (hibás tétel
-// vissza az SM-2-be, eredmény készségenként + lecke-link) ne a tételből találgassák.
+// Data model of the level exam. Of the old item kinds in
+// lib/examBuilder.ts (4afeb8c^) only those the level exam needs are kept; every item
+// comes from learned words or from finished level lessons, and carries its origin
+// (itemId / topicId) so that later steps (wrong item back into SM-2, result per
+// skill + lesson link) do not have to guess it from the item.
 
 import type { PcicLevel } from '@/data/pcic';
 
-/** A szintek, amiknek van vizsgájuk (A1-B2, mind ugyanazzal a szabállyal). */
+/** The levels that have an exam (A1-B2, all under the same rule). */
 export const EXAM_LEVELS: readonly PcicLevel[] = ['A1', 'A2', 'B1', 'B2'];
 
-/** Az eredmény-lap készségei (A4); a tétel `skill`-je dönti el, melyikbe számít. */
+/** The skills on the result sheet; an item's `skill` decides which one it counts toward. */
 export type ExamSkill = 'words' | 'grammar' | 'reading' | 'speaking';
 
 export type ExamItem =
-  // Szó beírása: a prompt a kiinduló nyelven, a válasz a célnyelven (irányfüggő).
+  // Word typing: the prompt is in the source language, the answer in the target language (direction-dependent).
   | { kind: 'word_type'; skill: 'words'; itemId: string; prompt: string; hint?: string; answer: string }
-  // Párosítás: bal = célnyelvi szó, jobb = kiinduló nyelvi jelentés.
+  // Matching: left = target-language word, right = source-language meaning.
   | { kind: 'match'; skill: 'words'; itemIds: string[]; pairs: { left: string; right: string }[] }
-  // Mondat-összerakás: a prompt a kiinduló nyelvű mondat, a csempék a célnyelviek.
-  // `sentence` az eredeti célnyelvi mondat (nagybetűvel, írásjellel): a hibás válasz után ezt mutatja.
+  // Sentence building: the prompt is the source-language sentence, the tiles are target-language.
+  // `sentence` is the original target-language sentence (capitalised, with punctuation): shown after a wrong answer.
   | { kind: 'sent_order'; skill: 'words'; itemId: string; prompt: string; answerTokens: string[]; sentence: string; distractors: string[] }
-  // Mondat-beírás: a prompt a kiinduló nyelvű mondat, a válasz a célnyelvi.
+  // Sentence typing: the prompt is the source-language sentence, the answer is the target-language one.
   | { kind: 'sent_type'; skill: 'words'; itemId: string; prompt: string; answer: string }
-  // Nyelvtan: lyukas mondat 3 válasszal, egy kész szint-lecke tételeiből.
+  // Grammar: a gap sentence with 3 options, taken from the items of a finished level lesson.
   | { kind: 'gap_mc'; skill: 'grammar'; topicId: string; sentence: string; options: string[]; correctIndex: number }
-  // Olvasás: két tanult mondatból álló célnyelvi szöveg, a kiinduló nyelvű jelentését kell kiválasztani.
+  // Reading: a target-language text made of two learned sentences; the source-language meaning must be chosen.
   | { kind: 'reading_mc'; skill: 'reading'; itemIds: string[]; text: string; options: string[]; correctIndex: number }
-  // Szóbeli: a billentyűzet mikrofonjával diktált mondat. `translate`: a prompt a kiinduló nyelvű
-  // mondat, az `expected` a célnyelvi; `repeat`: a prompt maga a célnyelvi mondat (olvasd fel).
+  // Speaking: a sentence dictated with the keyboard's microphone. `translate`: the prompt is the
+  // source-language sentence and `expected` is the target-language one; `repeat`: the prompt is the target-language sentence itself (read it aloud).
   | { kind: 'speak'; skill: 'speaking'; itemId: string; prompt: string; expected: string; mode: 'translate' | 'repeat' };
 
-/** Egy megválaszolt tétel: a későbbi lépések (SM-2 vissza, készségenkénti lap) ebből dolgoznak. */
+/** An answered item: later steps (back into SM-2, per-skill sheet) work from this. */
 export interface ExamItemResult {
   item: ExamItem;
   correct: boolean;
 }
 
-/** Egy szint mentett eredménye (game_progress, `level-exam` játék, itemId = a szint). */
+/** The saved result of one level (game_progress, `level-exam` game, itemId = the level). */
 export interface ExamResult {
-  /** Egyszer már átment-e (az újrapróba ezt nem veszi el). */
+  /** Whether it has been passed at least once (a retry does not take this away). */
   passed: boolean;
-  /** A legjobb pontszám, egész százalék. */
+  /** The best score, whole percent. */
   best: number;
-  /** A legjobb pontszám napja, YYYY-MM-DD. */
+  /** The day of the best score, YYYY-MM-DD. */
   bestAt: string;
-  /** A legutóbbi próba pontszáma, egész százalék. */
+  /** The score of the latest attempt, whole percent. */
   last: number;
-  /** A legutóbbi próba napja, YYYY-MM-DD. */
+  /** The day of the latest attempt, YYYY-MM-DD. */
   lastAt: string;
 }
 

@@ -1,6 +1,6 @@
-// a nyelvtani lecke végi teszt tiszta logikája:
-// gomb-feltétel (B1 b), 10 kérdés (B2 a), 80% határ, a lecke %-a nem változik (B3 a),
-// az eredmény mentése / visszaolvasása, a "Test passed" jelhez a lista.
+// Pure logic of the end-of-lesson grammar test:
+// button condition, 10 questions, 80% threshold, the lesson's % does not change,
+// saving / reading back the result, the list for the "Test passed" badge.
 
 import { getGrammarTopics, isTrialItem, type GrammarItem } from '@/lib/games/content';
 import { doneGrammarTopicProgress, lessonFor, scoredKinds } from '@/lib/grammar/syllabus';
@@ -26,27 +26,27 @@ const opts = (seed = 1) => ({ seed, learnedLang: 'es', contentLang: 'en' });
 const bestRows = (topicId: string, kinds: ReturnType<typeof scoredKinds>) =>
   kinds.map((k) => ({ itemId: kindBestKey(topicId, k), state: 'best', data: { correct: 5, total: 10 } }));
 
-describe('gomb-feltétel (B1 b)', () => {
-  it('a lecke tesztjének van kérdése és a lecke-oldalon fajtái is', () => {
+describe('button condition', () => {
+  it('the lesson test has questions and the lesson page has its kinds too', () => {
     expect(lessonTestSize(lesson(), 'es', 'en')).toBe(LESSON_TEST_SIZE);
     expect(scoredKinds(lesson()).length).toBeGreaterThan(1);
   });
 
-  it('kör nélkül zárt', () => {
+  it('locked without a round', () => {
     expect(lessonTestUnlocked(lesson(), [], TOPIC)).toBe(false);
   });
 
-  it('akkor nyit, ha MINDEN fajtából volt befejezett kör', () => {
+  it('opens if there was a finished round of EVERY kind', () => {
     const kinds = scoredKinds(lesson());
     expect(lessonTestUnlocked(lesson(), bestRows(TOPIC, kinds), TOPIC)).toBe(true);
   });
 
-  it('egyetlen hiányzó fajta is zárva tartja', () => {
+  it('a single missing kind keeps it locked', () => {
     const kinds = scoredKinds(lesson());
     expect(lessonTestUnlocked(lesson(), bestRows(TOPIC, kinds.slice(1)), TOPIC)).toBe(false);
   });
 
-  it('a félbehagyott kör (run) nem számít körnek', () => {
+  it('an abandoned round (run) does not count as a round', () => {
     const kinds = scoredKinds(lesson());
     const rows = [
       ...bestRows(TOPIC, kinds.slice(1)),
@@ -55,7 +55,7 @@ describe('gomb-feltétel (B1 b)', () => {
     expect(lessonTestUnlocked(lesson(), rows, TOPIC)).toBe(false);
   });
 
-  it('a régi (FB290) kész-sor és a régi egész-lecke sor is körnek számít', () => {
+  it('the old done row and the old whole-lesson row also count as a round', () => {
     const kinds = scoredKinds(lesson());
     const perKind = kinds.map((k) => ({ itemId: `${TOPIC}:${k}`, state: 'done', data: { correct: 9, total: 10 } }));
     expect(lessonTestUnlocked(lesson(), perKind, TOPIC)).toBe(true);
@@ -63,26 +63,26 @@ describe('gomb-feltétel (B1 b)', () => {
   });
 });
 
-describe('a teszt kérdései (B2 a)', () => {
-  it('10 kérdés, egyedi tételekkel, vegyes fajtával', () => {
+describe('the test questions', () => {
+  it('10 questions, with unique items, mixed kinds', () => {
     const qs = buildLessonTest(lesson(), opts());
     expect(qs).toHaveLength(LESSON_TEST_SIZE);
     expect(new Set(qs.map((q) => q.id)).size).toBe(qs.length);
     expect(new Set(qs.map((q) => q.kind)).size).toBeGreaterThan(1);
   });
 
-  it('ugyanaz a seed ugyanazt, másik seed más sorrendet ad', () => {
+  it('the same seed gives the same order, a different seed another order', () => {
     const a = buildLessonTest(lesson(), opts(7)).map((q) => q.id);
     expect(buildLessonTest(lesson(), opts(7)).map((q) => q.id)).toEqual(a);
     expect(buildLessonTest(lesson(), opts(8)).map((q) => q.id)).not.toEqual(a);
   });
 
-  it('az újrapróba új tételeket húz előre (avoid), és az elrontottak megelőzik a többit', () => {
+  it('the retry draws new items ahead (avoid), and the missed ones come before the rest', () => {
     const first = buildLessonTest(lesson(), opts(1));
     const used = new Set(first.map((q) => q.id));
     const retry = buildLessonTest(lesson(), { ...opts(2), avoid: used });
     const fresh = retry.filter((q) => !used.has(q.id)).length;
-    // legalább annyi friss tétel, amennyit a lecke még tartogat
+    // at least as many fresh items as the lesson still has left
     const pool = lesson().items.filter((it) => !isTrialItem(it as GrammarItem)).length;
     expect(fresh).toBeGreaterThanOrEqual(Math.min(LESSON_TEST_SIZE, pool - used.size) - 2);
     const missed = new Set(first.slice(0, 2).map((q) => q.id));
@@ -90,7 +90,7 @@ describe('a teszt kérdései (B2 a)', () => {
     expect(again.filter((q) => missed.has(q.id)).length).toBe(missed.size);
   });
 
-  it('nincs ideiglenes (trial) és nincs diktálás-tétel a tesztben', () => {
+  it('there is no trial and no dictation item in the test', () => {
     for (const [lang, content] of [['es', 'en'], ['en', 'es']] as const) {
       for (const l of getGrammarTopics(lang)) {
         const byId = new Map((l.items as GrammarItem[]).map((it) => [it.id, it]));
@@ -122,7 +122,7 @@ describe('a teszt kérdései (B2 a)', () => {
     }
   };
 
-  it('minden megírt leckére (es és en irány) összeáll egy érvényes teszt', () => {
+  it('a valid test comes together for every written lesson (es and en direction)', () => {
     for (const [lang, content] of [['es', 'en'], ['en', 'es']] as const) {
       const lessons = getGrammarTopics(lang);
       expect(lessons.length).toBeGreaterThan(0);
@@ -136,25 +136,25 @@ describe('a teszt kérdései (B2 a)', () => {
   });
 });
 
-describe('minden tétel-fajta vizsga-kártyává alakul', () => {
+describe('every item kind turns into an exam card', () => {
   const all = (topic: string, lang = 'es', content = 'en') =>
     buildLessonTest(lessonFor(lang, topic)!, { seed: 5, learnedLang: lang, contentLang: content, size: 200 });
 
-  // A mai hibakereső / szórend tételek mind ideiglenesek (trial), ezért a teszt kihagyja őket;
-  // a jóváhagyás utáni állapotot a trial-jelzés nélküli másolat adja.
+  // The current error-spotting / word-order items are all temporary (trial), so the test skips them;
+  // the post-approval state is given by the copy without the trial flag.
   const approved = (topic: string) => {
     const l = lessonFor('es', topic)!;
     return { ...l, items: (l.items as GrammarItem[]).map((it) => ({ ...it, trial: undefined })) } as typeof l;
   };
   const allApproved = (topic: string) => buildLessonTest(approved(topic), { seed: 5, learnedLang: 'es', contentLang: 'en', size: 200 });
 
-  it('a trial hibakereső / szórend tétel kimarad a tesztből', () => {
+  it('the trial error-spotting / word-order item is left out of the test', () => {
     const kinds = new Set(all('negacion').map((q) => q.kind));
     expect(kinds.has('spot')).toBe(false);
     expect(kinds.has('order')).toBe(false);
   });
 
-  it('hibakereső: a hibás szó «»-ben, a javított mondat az eredmény-lapon', () => {
+  it('error spotting: the wrong word in «», the corrected sentence on the result page', () => {
     const spots = allApproved('negacion').filter((q) => q.kind === 'spot');
     expect(spots.length).toBeGreaterThan(0);
     for (const q of spots) {
@@ -164,7 +164,7 @@ describe('minden tétel-fajta vizsga-kártyává alakul', () => {
     }
   });
 
-  it('szórend: csempék a mondat szavaiból, a kérdés a felület nyelvén', () => {
+  it('word order: tiles from the words of the sentence, the question in the UI language', () => {
     const orders = allApproved('negacion').filter((q) => q.kind === 'order');
     expect(orders.length).toBeGreaterThan(0);
     for (const q of orders) {
@@ -173,7 +173,7 @@ describe('minden tétel-fajta vizsga-kártyává alakul', () => {
     }
   });
 
-  it('mondat-átírás: begépelős kártya, a válasz a lecke megoldása, a hint megnevezi az igeidőt', () => {
+  it('sentence rewrite: type-it card, the answer is the lesson solution, the hint names the tense', () => {
     const transforms = all('ir-a-infinitivo').filter((q) => q.kind === 'transform');
     expect(transforms.length).toBeGreaterThan(0);
     for (const q of transforms) {
@@ -185,13 +185,13 @@ describe('minden tétel-fajta vizsga-kártyává alakul', () => {
     }
   });
 
-  it('ragozás és "miért": a ragozás begépelős, a "miért" feleletválasztós a lecke magyarázatával', () => {
+  it('conjugation and "why": conjugation is type-it, "why" is multiple choice with the lesson explanation', () => {
     const qs = all(TOPIC);
     expect(qs.filter((q) => q.kind === 'form').every((q) => q.view.card === 'type')).toBe(true);
     const why = qs.filter((q) => q.kind === 'why');
     expect(why.length).toBeGreaterThan(0);
     expect(why.every((q) => q.view.card === 'choice' && !!q.review.why)).toBe(true);
-    // az eredmény-lapon a kérdés szövege is látszik (pl. "Why «Escriben»?"), nem csak a mondat
+    // the result sheet also shows the question text (e.g. "Why «Escriben»?"), not just the sentence
     for (const q of why) {
       if (q.view.card !== 'choice') continue;
       expect(q.review.question).toBe(`${q.view.heading}\n${q.view.text}`);
@@ -199,15 +199,15 @@ describe('minden tétel-fajta vizsga-kártyává alakul', () => {
     expect(why.some((q) => /^Why «/.test(q.review.question))).toBe(true);
   });
 
-  it('a "csak transform" leckéből is jön teszt (indefinido-10-verbos)', () => {
+  it('a test also comes from the "transform only" lesson (indefinido-10-verbos)', () => {
     const qs = all('indefinido-10-verbos');
     expect(qs.length).toBe(50);
     expect(buildLessonTest(lessonFor('es', 'indefinido-10-verbos')!, opts()).length).toBe(LESSON_TEST_SIZE);
   });
 });
 
-describe('az átmenés és a mentés', () => {
-  it('80% a határ: 8/10 átment, 7/10 nem, a 79,9% sem kerekedik 80-ra', () => {
+describe('the pass and the save', () => {
+  it('80% is the boundary: 8/10 passed, 7/10 not, 79.9% does not round to 80 either', () => {
     expect(LESSON_TEST_PASS_PCT).toBe(80);
     expect(mergeLessonTestResult(undefined, 8, 10, '2026-10-01', []).passed).toBe(true);
     expect(mergeLessonTestResult(undefined, 7, 10, '2026-10-01', []).passed).toBe(false);
@@ -215,7 +215,7 @@ describe('az átmenés és a mentés', () => {
     expect(mergeLessonTestResult(null, 799, 1000, '2026-10-01', []).best).toBe(79);
   });
 
-  it('a bukás után az átmenés és a legjobb pont megmarad, az utolsó próba felülíródik', () => {
+  it('after a fail the pass and the best score stay, the last attempt is overwritten', () => {
     const first = mergeLessonTestResult(null, 9, 10, '2026-10-01', ['a']);
     const second = mergeLessonTestResult(first, 5, 10, '2026-10-02', ['b', 'c']);
     expect(second).toEqual({ passed: true, best: 90, bestAt: '2026-10-01', last: 50, lastAt: '2026-10-02', missed: ['b', 'c'] });
@@ -224,7 +224,7 @@ describe('az átmenés és a mentés', () => {
     expect(third.bestAt).toBe('2026-10-03');
   });
 
-  it('visszaolvasható a sorokból, és a "Test passed" lista csak az átment leckéket adja', () => {
+  it('readable back from the rows, and the "Test passed" list gives only the passed lessons', () => {
     const passed = mergeLessonTestResult(null, 9, 10, '2026-10-01', []);
     const failed = mergeLessonTestResult(null, 4, 10, '2026-10-01', ['x']);
     const rows = [
@@ -239,8 +239,8 @@ describe('az átmenés és a mentés', () => {
   });
 });
 
-describe('a teszt nem számít a lecke %-ába (B3 a)', () => {
-  it('a lecke %-a, a kész-jelzés és a tanterv-lista %-a ugyanaz a teszt-sorral és anélkül', () => {
+describe('the test does not count toward the lesson %', () => {
+  it('the lesson %, the done mark and the syllabus list % are the same with and without the test row', () => {
     const kinds = scoredKinds(lesson());
     const base: Row[] = [
       ...bestRows(TOPIC, kinds),

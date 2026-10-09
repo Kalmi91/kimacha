@@ -11,10 +11,10 @@ import {
 } from '@/constants/Skins';
 import type { ThemeKey } from '@/lib/ThemeContext';
 
-// a téma-kiválasztásból (skin / mix + al-paletta + mód) a Colors-kulcs és az
-// összerakott Skin. Tiszta függvények, hogy a ThemeContext és a useSkin ugyanazt lássa.
+// From the theme selection (skin / mix + sub-palette + mode), the Colors key and the
+// composed Skin. Pure functions, so that ThemeContext and useSkin see the same thing.
 
-// A színek forrása: egy téma vagy (Saját mixben) egy Neo-brutál al-paletta.
+// The source of the colors: a theme or (in My mix) a Neo-brutalist sub-palette.
 type ColorsSource = SkinId | GrammarPaletteId;
 
 export function colorsSourceOf(skin: SkinSelection, mix: SkinMix): ColorsSource {
@@ -27,19 +27,19 @@ export function modesOfSource(source: ColorsSource): SkinMode[] {
   return isSkinId(source) ? SKINS[source].modes : BOTH;
 }
 
-// A Neo-brutál al-paletta: a mentett érték; a régi 'classic' (nem al-paletta) itt brand-re esik.
+// The Neo-brutalist sub-palette: the saved value; the old 'classic' (not a sub-palette) falls back to brand here.
 function fillPaletteOf(grammarPalette: GrammarPaletteId): FillPaletteId {
   return grammarPalette === 'classic' ? 'brand' : grammarPalette;
 }
 
-// brutal → a mentett al-paletta; classic → a mai 'light' | 'dark' kulcs; minden más `<id>-<mód>`.
+// brutal → the saved sub-palette; classic → today's 'light' | 'dark' key; everything else `<id>-<mode>`.
 export function themeKeyFor(source: ColorsSource, mode: SkinMode, grammarPalette: GrammarPaletteId): ThemeKey {
   if (source === 'classic') return mode;
   if (source === 'brutal') return `${fillPaletteOf(grammarPalette)}-${mode}` as ThemeKey;
   return `${source}-${mode}` as ThemeKey;
 }
 
-// A téma-kulcsból a téma-id: a ThemeContextet mockoló tesztek ({ theme: 'light' }) skin nélkül hívják.
+// From the theme key to the theme id: tests that mock ThemeContext ({ theme: 'light' }) call it without a skin.
 export function skinIdOfTheme(theme: ThemeKey): SkinId {
   if (theme === 'light' || theme === 'dark') return 'classic';
   const id = theme.slice(0, theme.lastIndexOf('-'));
@@ -52,8 +52,8 @@ function colorsOfSource(source: ColorsSource, grammarPalette: GrammarPaletteId):
   return brutalSkinColors(source as FillPaletteId);
 }
 
-// Az aktív Skin: egy téma maga, vagy a Saját mix négy forrásából összerakva (szín, betű, forma;
-// a díszt a useSkinDecor oldja fel a mix.decor-ból).
+// The active Skin: a theme itself, or composed from the four sources of My mix (color, font, shape;
+// the decoration is resolved by useSkinDecor from mix.decor).
 export function composeSkin(selection: SkinSelection, mix: SkinMix, grammarPalette: GrammarPaletteId): Skin {
   if (selection === 'mix') {
     const font = SKINS[mix.font];

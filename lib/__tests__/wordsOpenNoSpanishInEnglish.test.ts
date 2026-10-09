@@ -1,6 +1,6 @@
-// User feedback („nem lehet spanyol szó az angol szók között”): a kártyák angol (és magyar / német)
-// jelentés-mezőjében nincs spanyol kifejezés. A tipikus szivárgás: „… ; tratar de = to try to”,
-// „(sin embargo)”, „(tener razón = …)”: az `=` jel és a spanyol ékezetes betűk az angol mezőben.
+// User feedback ("there must be no Spanish word among the English words"): the English (and Hungarian / German)
+// meaning fields of the cards contain no Spanish expression. The typical leak: "… ; tratar de = to try to",
+// "(sin embargo)", "(tener razón = …)": the `=` sign and Spanish accented letters in the English field.
 import openA1 from '@/data/words-open/a1.json';
 import openA2 from '@/data/words-open/a2.json';
 import openB1 from '@/data/words-open/b1.json';
@@ -9,18 +9,18 @@ import openB2 from '@/data/words-open/b2.json';
 type Card = { order: number; level: string; es: string; hu: string; en: string; de: string };
 const cards = [...openA1, ...openA2, ...openB1, ...openB2] as unknown as Card[];
 
-describe('words-open: nincs spanyol kifejezés a jelentés-mezőkben (FB453)', () => {
-  it('az angol mezőben nincs spanyol ékezetes betű és nincs „=” (kifejezés-magyarázat)', () => {
+describe('words-open: no Spanish expression in the meaning fields', () => {
+  it('the English field has no Spanish accented letter and no "=" (expression explanation)', () => {
     const bad = cards.filter((c) => /[ñ¿¡áéíóú]/i.test(c.en) || c.en.includes('='));
     expect(bad.map((c) => `${c.level} ${c.order}: ${c.en}`)).toEqual([]);
   });
 
-  it('a magyar és a német mezőben sincs „=” (spanyol kifejezés-magyarázat)', () => {
+  it('the Hungarian and German fields have no "=" either (Spanish expression explanation)', () => {
     const bad = cards.filter((c) => c.hu.includes('=') || c.de.includes('='));
     expect(bad.map((c) => `${c.level} ${c.order}: ${c.hu} | ${c.de}`)).toEqual([]);
   });
 
-  it('a többszavas spanyol kifejezés (az es mező szavai) nem szerepel zárójelben az angol mezőben', () => {
+  it('a multi-word Spanish expression (the words of the es field) does not appear in parentheses in the English field', () => {
     const bad = cards.filter((c) => {
       const phrase = c.es.split(' / ').pop()!.trim();
       return phrase.includes(' ') && c.en.toLowerCase().includes(phrase.toLowerCase());

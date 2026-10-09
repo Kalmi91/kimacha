@@ -1,8 +1,8 @@
-// lefedettség-ellenőrzés az `indefinido-10-verbos`
-// lecke 50 transform itemjére. A mondatok csak a
-// lecke 28 szavából épülnek, a 10 ige minden fő személyével. Ez a teszt ezt a
-// lefedettséget méri, nem a nyelvtani helyességet (azt az audit-games.mjs +
-// az emberi átolvasás adja).
+// Coverage check for the 50 transform items of the `indefinido-10-verbos`
+// lesson. The sentences are built only from the
+// lesson's 28 words, with every main person of the 10 verbs. This test measures this
+// coverage, not grammatical correctness (that is provided by audit-games.mjs +
+// a human read-through).
 
 import fs from 'fs';
 import path from 'path';
@@ -13,18 +13,18 @@ const FILE = path.join(__dirname, '..', '..', 'data', 'games', 'grammar', 'es', 
 const lesson: LessonV2 = JSON.parse(fs.readFileSync(FILE, 'utf8'));
 const transformItems = lesson.items.filter(isTransformItem);
 
-// A lecke pontosan ezt a 28 szót taníthatja: sem több,
-// sem kevesebb wordId nem szerepelhet az itemeken. A wordId a words-open `order`-e:
-// a 28 régi szó lemma szerint 25 words-open kártya (estoy/están
+// The lesson may teach exactly these 28 words: neither more nor
+// fewer wordIds may appear on the items. A wordId is the `order` of words-open:
+// by lemma the 28 old words are 25 words-open cards (estoy/están
 // = estar, ir/vas = ir, tiene/tenemos = tener).
 const ALLOWED_WORD_IDS = [
   '119', '123', '129', '143', '150', '16', '174', '2', '208', '220', '254', '259', '283', '284', '285', '286',
   '33', '391', '51', '52', '610', '632', '74', '77', '88',
 ];
 
-// 10 ige x 6 alak; az answer szövegéből dönti el a személyt (szóhatáros
-// egyezés, hogy "tuvo" ne illeszkedjen "estuvo"-ra). A gustar külön logikát
-// kap (me/te/le/nos/les), mert nála nem alanyi személyragozás van.
+// 10 verbs x 6 forms; the person is decided from the answer text (word-boundary
+// match so that "tuvo" does not match "estuvo"). gustar gets separate logic
+// (me/te/le/nos/les), because it has no subject-person conjugation.
 const VERB_FORMS: Record<string, Record<string, string>> = {
   estar: { yo: 'estuve', tu: 'estuviste', el: 'estuvo', nosotros: 'estuvimos', vosotros: 'estuvisteis', ellos: 'estuvieron' },
   ir: { yo: 'fui', tu: 'fuiste', el: 'fue', nosotros: 'fuimos', vosotros: 'fuisteis', ellos: 'fueron' },
@@ -37,11 +37,11 @@ const VERB_FORMS: Record<string, Record<string, string>> = {
   necesitar: { yo: 'necesité', tu: 'necesitaste', el: 'necesitó', nosotros: 'necesitamos', vosotros: 'necesitasteis', ellos: 'necesitaron' },
 };
 
-// Nyelvi tény: a szabályos -ar igéknél a nosotros alak azonos jelen időben és
-// indefinidóban (miramos/miramos), tehát ott a transform prompt==answer lenne
-// (audit P1 hiba). Ez a négy ige ezért a nosotros helyett kapott egy 5. itemet;
-// azóta ez ustedes-item (miraron...), nem vosotros, ezért náluk a kötelező
-// személyek: yo, tú, él, ellos (a második ellos/ustedes-item az 5.).
+// Language fact: for regular -ar verbs the nosotros form is identical in the present and
+// in the indefinido (miramos/miramos), so the transform prompt would equal the answer there
+// (an error). Instead of nosotros, these four verbs therefore got a 5th item;
+// since then it is an ustedes item (miraron...), not vosotros, so the required
+// persons for them are: yo, tú, él, ellos (the second ellos/ustedes item is the 5th).
 const NOSOTROS_REPLACED_BY_VOSOTROS = new Set(['mirar', 'pasar', 'esperar', 'necesitar']);
 
 function wordsOf(answer: string): string[] {
@@ -66,7 +66,7 @@ function classify(answer: string): { verb: string; person: string } | null {
   return null;
 }
 
-describe('indefinido-10-verbos, FB316 coverage', () => {
+describe('indefinido-10-verbos coverage', () => {
   it('has exactly 50 transform items', () => {
     expect(transformItems.length).toBe(50);
   });

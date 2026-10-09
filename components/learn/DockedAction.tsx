@@ -9,12 +9,12 @@ import { legibleOn } from '@/constants/Skins';
 
 type ColorScheme = (typeof Colors)['light'];
 
-// A TypingCardScreen-ből költözött (1:1): a billentyűzet felső élén
-// ülő egyetlen Check/→ sáv. A `dockedAction`/`inlineCheckBtn` stílusértékek
-// változatlanok, csak ide költöztek, hogy a PCIC is használhassa.
+// Moved here from TypingCardScreen (1:1): the single Check/→ bar
+// sitting on the keyboard's top edge. The `dockedAction`/`inlineCheckBtn` style values
+// are unchanged, they just moved here so PCIC can use them too.
 export const DOCK_RESERVE = 76;
-// A sáv fölé emelt 💬 (FeedbackModal) alatt a görgető alján ennyi hely kell a sáv (dockH + dockLift)
-// fölött: a gomb alsó távolsága (styles.fab.bottom 24) + magassága (styles.brutalFab.height 55) + 12 px rés.
+// Under the 💬 (FeedbackModal) lifted above the bar, the bottom of the scroller needs this much room above the bar (dockH + dockLift):
+// the button's bottom distance (styles.fab.bottom 24) + its height (styles.brutalFab.height 55) + a 12 px gap.
 export const FAB_CLEARANCE = 24 + 55 + 12;
 
 export type DockedActionTone = 'check' | 'next';
@@ -29,15 +29,15 @@ type Props = {
   label: string;
   onPress: () => void;
   tone: Tone;
-  /** A hívó ezzel felülírhatja a tone alapszínét (a Learn a saját, bejósolt-eltalálástól függő logikáját adja ide). */
+  /** The caller can override the tone's base colour with this (Learn passes its own logic here, which depends on whether the prediction came true). */
   color?: string;
   bottom: number;
   colors: ColorScheme;
-  /** A tényleges kirajzolt magasság, hogy a hívó beállíthassa a görgető alsó paddingjét és a 💬 bottomOffsetjét. */
+  /** The height actually drawn, so the caller can set the scroller's bottom padding and the 💬 bottomOffset. */
   onHeight?: (h: number) => void;
-  /** A gomb azonosítója (alap: `learn-docked-action`); a nyelvtani drillben a régi inline gomb azonosítóját viszi tovább. */
+  /** The button's id (default: `learn-docked-action`); in the grammar drill it carries over the old inline button's id. */
   testID?: string;
-  /** Letiltott gomb (a vizsga beírós kártyáján üres válasznál). */
+  /** Disabled button (on the exam's typed card when the answer is empty). */
   disabled?: boolean;
 };
 
@@ -51,7 +51,7 @@ export default function DockedAction({ label, onPress, tone, color, bottom, colo
       onLayout={onHeight ? (e: LayoutChangeEvent) => onHeight(e.nativeEvent.layout.height) : undefined}
     >
       {g.brutal ? (
-        // Check = ink kitöltés, Next = a kitöltés.
+        // Check = ink fill, Next = the fill.
         <BrutalButton testID={testID ?? 'learn-docked-action'} label={label} fill={tone === 'next' ? 'a' : checkFill ?? 'ink'} icon={tone === 'next' ? '→' : '✓'} disabled={disabled} onPress={onPress} />
       ) : (
         <Pressable

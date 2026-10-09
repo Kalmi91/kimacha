@@ -3,23 +3,23 @@ import { Text, type KTextProps } from '@/components/KText';
 
 import { useFitFontSize } from '@/lib/fitText';
 
-// nagy betűs, hosszú-szavas szöveg (kártya-szó, csempe, cím),
-// aminek a betűmérete a hossz szerint lépcsőzik (lib/fitText.ts), és ami egy
-// sor-konténerben is összemegy (`flexShrink: 1`), nem lóg ki és nem vágódik le.
-// Csak sima szöveget vesz (children: string); kiemelt / beágyazott részeknél
-// a `useFitFontSize` hookot kell hívni közvetlenül.
+// A large-letter, long-word text (card word, tile, title)
+// whose font size steps down by length (lib/fitText.ts) and which also shrinks inside a
+// row container (`flexShrink: 1`), so it neither overflows nor gets clipped.
+// It takes plain text only (children: string); for highlighted / nested parts
+// call the `useFitFontSize` hook directly.
 type Props = Omit<KTextProps, 'children'> & {
   children: string;
-  /** A kívánt (legnagyobb) betűméret. */
+  /** The desired (largest) font size. */
   base: number;
-  /** Az ablak-szélességből levonandó hely (padding, testvér elemek). */
+  /** Space to subtract from the window width (padding, sibling elements). */
   reserve?: number;
   maxLines?: number;
   bold?: boolean;
   min?: number;
-  /** Nagybetűs megjelenítés (textTransform: uppercase). */
+  /** Uppercase rendering (textTransform: uppercase). */
   caps?: boolean;
-  /** Ha megadott, a sormagasság a betűmérethez arányos (méret * arány). */
+  /** If given, the line height is proportional to the font size (size * ratio). */
   lineHeightRatio?: number;
 };
 

@@ -1,6 +1,6 @@
-// a beviteli mező fókuszt kap minden ÚJ PCIC-lapnál (kinyílik a
-// billentyűzet), de a felfedés után nem nyílik újra. Mock-minta:
-// app/(tabs)/__tests__/pcicSpeak.test.tsx (ugyanaz az effekt viszi mindkettőt).
+// The input field gets focus on every NEW PCIC page (the keyboard
+// opens), but does not reopen after the reveal. Mock pattern:
+// app/(tabs)/__tests__/pcicSpeak.test.tsx (the same effect drives both).
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -16,13 +16,13 @@ jest.mock('expo-router', () => ({
   },
 }));
 
-// useDockLift (a PCIC dokkolt sávja) most useSafeAreaInsets-et hív, ami
-// SafeAreaProvider nélkül dob; itt a mérete nem számít, csak ne dobjon.
+// useDockLift (the PCIC docked bar) now calls useSafeAreaInsets, which
+// throws without a SafeAreaProvider; its size does not matter here, it just must not throw.
 jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, left: 0, right: 0, bottom: 0 }),
 }));
 
-// Egy fix tétel, hogy a teszt ne a valódi PCIC-korpusztól függjön.
+// One fixed item, so the test does not depend on the real PCIC corpus.
 const FIXTURE_ITEM = { id: 'b1-x1', es: 'vida', en: 'life', kind: 'word' as const, section: 'Test', order: 0 };
 jest.mock('@/data/pcic', () => ({
   PCIC_LEVELS: ['B1'],
@@ -46,7 +46,7 @@ const flush = async (times = 4) => {
   }
 };
 
-describe('PCIC fül: a mező fókusza (FB391)', () => {
+describe('PCIC tab: field focus', () => {
   let focusSpy: jest.SpyInstance;
 
   beforeEach(async () => {
@@ -58,14 +58,14 @@ describe('PCIC fül: a mező fókusza (FB391)', () => {
     focusSpy.mockRestore();
   });
 
-  it('új lap megjelenésekor (mountkor) a mező fókuszt kap', async () => {
+  it('when a new card appears (on mount), the field gets focus', async () => {
     render(<PcicScreen />);
     await flush();
 
     expect(focusSpy).toHaveBeenCalled();
   });
 
-  it('felfedés (Check) után NEM kap újra fókuszt, amíg ugyanaz a lap van képernyőn', async () => {
+  it('after reveal (Check) it does NOT regain focus while the same card is on screen', async () => {
     const { UNSAFE_getByType, getByText } = render(<PcicScreen />);
     await flush();
     const callsAfterMount = focusSpy.mock.calls.length;

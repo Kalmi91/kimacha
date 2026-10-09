@@ -54,12 +54,12 @@ describe('countKnown', () => {
   });
 });
 
-// a "Words Known" kártya a tanult szavakat számolja.
+// the "Words Known" card counts the learned words.
 describe('countLearned', () => {
   const card = (over: Partial<import('../sm2').Sm2Card>) =>
     ({ itemId: 'x', state: 'new', step: 0, interval: 0, ease: 2.5, due: '2026-09-30', lapses: 0, ...over }) as import('../sm2').Sm2Card;
 
-  it('a tanuló-lépéseken túljutott (review) és a kézzel ismertnek jelölt szó is számít, az új és a tanuló nem', () => {
+  it('a word past the learning steps (review) and one marked known by hand also count, new and learning ones do not', () => {
     const cards = [
       card({ itemId: 'a', state: 'review', interval: 1 }),
       card({ itemId: 'b', state: 'review', interval: 30 }),
@@ -70,7 +70,7 @@ describe('countLearned', () => {
     expect(countLearned(cards)).toBe(3);
   });
 
-  it('a 21 napos küszöbű countKnown ettől szigorúbb', () => {
+  it('countKnown with the 21-day threshold is stricter than this', () => {
     const cards = [card({ itemId: 'a', state: 'review', interval: 1 }), card({ itemId: 'b', state: 'review', interval: 30 })];
     expect(countKnown(cards)).toBe(1);
     expect(countLearned(cards)).toBe(2);

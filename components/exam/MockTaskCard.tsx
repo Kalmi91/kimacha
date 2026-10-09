@@ -12,19 +12,19 @@ import { speechLang } from '@/lib/languages';
 import { speak, stop as stopSpeaking } from '@/lib/speech';
 import { useTheme } from '@/lib/ThemeContext';
 
-// egy próbavizsga-feladat a képernyőn. A régi
-// (4afeb8c^) components/exam/ExamTaskCard.tsx szerkezete: az utasítás a CÉLNYELVEN, mint egy
-// valódi papíron (alatta a felület nyelvén egy rövid segítség), aztán a tételek. Semmi nem
-// mondja meg, jó-e a válasz: a vizsgán a végén derül ki. Az ismeretlen szóhoz szójegyzet
-// jár, koppintásra nyílik. A felvételes feladatnál a lejátszások száma a feladaté (alap: 2; az angol A1 első része egyszer).
+// one mock-exam task on screen. The structure of the old (4afeb8c^) components/exam/ExamTaskCard.tsx:
+// the instruction in the TARGET language, as on a real paper (a short help in the interface
+// language under it), then the items. Nothing says whether an answer is right: that only comes out
+// at the end of the exam. An unknown word gets a glossary entry, opened by tapping. For a recording
+// task the number of plays is the task's (default: 2; the first part of English A1 once).
 
 type Props = {
   task: MockTask;
   answer: MockTaskAnswer;
   onAnswer: (key: string, value: string | number | boolean | null) => void;
-  /** A tanult nyelv (a felolvasás nyelve). */
+  /** The learned language (the language of the read-aloud). */
   target: MockTarget;
-  /** Hamis, ha az eszközön nincs hang a tanult nyelvhez: ilyenkor a szöveg látszik. */
+  /** False if the device has no voice for the learned language: then the text is shown. */
   canSpeak: boolean;
   glossary: GlossaryEntry[];
 };
@@ -39,8 +39,8 @@ export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak,
   const [showGlossary, setShowGlossary] = useState(false);
   const playingRef = useRef(false);
 
-  // A képernyő key={task.id}-vel építi újra a kártyát, így az új feladat nulla lejátszással indul;
-  // a kártya eltűnésekor a még szóló felvétel leáll.
+  // The screen rebuilds the card with key={task.id}, so a new task starts with zero plays; when the
+  // card disappears, a recording that is still playing stops.
   useEffect(() => {
     return () => {
       playingRef.current = false;
@@ -51,12 +51,12 @@ export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak,
   const audioLines = 'audio' in task && task.audio ? task.audio : [];
   const isListening = audioLines.length > 0;
   const maxPlays = 'plays' in task && typeof task.plays === 'number' ? task.plays : DEFAULT_PLAYS;
-  // A hallás utáni hézag külön segítséget kap (a hézagok szövege látszik, a mondatok szólnak).
+  // The listening gap task gets separate help (the text of the gaps is visible, the sentences are spoken).
   const hintKey = task.kind === 'gap_type' && audioLines.length > 0 ? 'listen_fill' : task.kind;
   const isDialogue = task.kind === 'listen_dialogue';
 
   const playAudio = () => {
-    // Amíg szól a felvétel, a gomb néma (a dupla koppintás ne égessen el két meghallgatást).
+    // While the recording plays, the button is mute (a double tap must not use up two listens).
     if (playingRef.current || plays >= maxPlays || audioLines.length === 0) return;
     playingRef.current = true;
     setPlays((p) => p + 1);
@@ -64,7 +64,7 @@ export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak,
     const release = () => {
       playingRef.current = false;
     };
-    // Soronként egy felolvasás; a párbeszédben a páratlan sorok mélyebb hangon szólnak (két beszélő).
+    // One read-aloud per line; in a dialogue the odd lines are spoken in a deeper voice (two speakers).
     audioLines.forEach((line, i) => {
       const last = i === audioLines.length - 1;
       speak(line, speechLang(target), {

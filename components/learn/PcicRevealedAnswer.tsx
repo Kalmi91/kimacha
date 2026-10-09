@@ -17,12 +17,12 @@ import { legibleOn, textContrastMin } from '@/constants/Skins';
 import { useDiffStyles } from '@/lib/useDiffStyles';
 import { useSkin } from '@/lib/useSkin';
 
-// a PCIC kártya felfedett-állapot blokkja
-// (app/(tabs)/index.tsx-ből kiemelve, felelősség szerinti szétvágás, nincs
-// viselkedés-változás): a Check utáni diff + helyes alak + példamondat, és a
-// Tudtam/Nem tudtam gombsor. A hívó csak `grade` truthy esetén rendereli.
+// the revealed-state block of the PCIC card
+// (extracted from app/(tabs)/index.tsx, split by responsibility, no
+// behaviour change): the post-Check diff + correct form + example sentence, and the
+// Didn't know / Knew it button row. The caller only renders it when `grade` is truthy.
 
-// A régi (PR #27 előtti) gombsor sorrendje: Nem tudtam, Tudtam.
+// The old (pre-PR #27) button row order: Didn't know, Knew it.
 const GRADES: Sm2Grade[] = ['again', 'good'];
 
 export default function PcicRevealedAnswer({
@@ -45,13 +45,13 @@ export default function PcicRevealedAnswer({
   current: Sm2Card;
   currentItem: PcicItem;
   today: string;
-  // melyik irány aktív, hogy a felfedés (felolvasás,
-  // példamondat, jelentés-lista) a célnyelvet mutassa, ne mindig a spanyolt.
+  // which direction is active, so the reveal (read-aloud,
+  // example sentence, meaning list) shows the target language, not always Spanish.
   target: PcicTarget;
   onGrade: (g: Sm2Grade) => void;
 }) {
-  // A régi gombsor intervallum-előnézete grade-enként (lib/sm2.ts
-  // sm2PreviewDays), i18n-nel formázva (ne csak magyarul).
+  // The old button row's interval preview per grade (lib/sm2.ts
+  // sm2PreviewDays), formatted with i18n (not only in Hungarian).
   const g = useGrammarColors();
   const { skin } = useSkin();
   const diff = useDiffStyles();
@@ -64,25 +64,25 @@ export default function PcicRevealedAnswer({
   const example = target === 'es' ? currentItem?.exampleEs : currentItem?.exampleEn;
   const exampleGloss = target === 'es' ? currentItem?.exampleEn : currentItem?.exampleEs;
 
-  // ha a beírt válasz betűre és ékezetre pontosan a cél
-  // (kis-nagybetűt és a széli szóközt nem számítva), a zöld visszhang kimarad, a
-  // szó csak egyszer látszik (a rózsaszín sor a hangszóróval).
+  // if the typed answer exactly matches the target letter for letter and accent
+  // (ignoring case and edge whitespace), the green echo is left out, the
+  // word is shown only once (the pink line with the speaker).
   const typedExact = typedAnswer.trim().toLowerCase() === grade.best.trim().toLowerCase();
 
-  // ha a válasznak több alternatívája van (S1, pl. "el carro /
-  // el coche"), a mutatott helyes alak alatt a többi is látszik, hogy a tanuló tudja, melyik még jó.
+  // if the answer has several alternatives (e.g. "el carro /
+  // el coche"), the others are shown under the displayed correct form, so the learner knows which else is right.
   const alsoAlternatives = pcicAlternatives(target === 'es' ? currentItem.es : currentItem.en).filter(
     (alt) => alt !== grade.best
   );
-  // üres / rossz válasznál a mutatott alak mellett a többi elfogadott alak is
-  // ugyanolyan sorban látszik (nem csak egy kis „also” sorban); helyes válasznál marad az „also” sor.
+  // on an empty / wrong answer, the other accepted forms are shown next to the displayed form
+  // in the same kind of row (not only in a small "also" row); on a right answer the "also" row stays.
   const answerColor = legibleOn(colors.tint, colors.card, textContrastMin(skin, 'word', 22, true));
   const showAllAccepted = nextGrade !== 'good';
 
   return (
     <>
       <View style={styles.resultSection}>
-        {/* egyetlen, minden kártyán azonos jó / rossz jelzés (szín + alak + ✓/✗ + szöveg). */}
+        {/* a single right / wrong signal, identical on every card (colour + shape + ✓/✗ + text). */}
         <ResultBadge correct={nextGrade === 'good'} align="center" testID="pcic-result-badge" />
         {!typedExact && (
         <Text testID="pcic-diff-line" style={styles.diffLine}>
@@ -129,14 +129,14 @@ export default function PcicRevealedAnswer({
             ))}
           </Text>
         )}
-        {/* s2 (anki-ui-terv.html): ékezet-szigor KI + csak-ékezet eltérés
-            -> a diff sárga jelölése mellett kimondva is 100%-nak számít. */}
+        {/* accent strictness OFF + accent-only mismatch
+            -> besides the yellow marking in the diff, it is also stated explicitly as counting for 100%. */}
         {grade.accentOnly && (
           <Text style={[styles.accentNote, { color: colors.tabIconDefault }]}>{s.pcic.accentForgiven}</Text>
         )}
-        {/* példamondat a megoldás alatt, csak Check
-            után és csak ha van egyezés a korpuszban (currentItem.exampleEs).
-            Célnyelven szól, a másik nyelv a gloss. */}
+        {/* example sentence under the solution, only after Check
+            and only if there is a match in the corpus (currentItem.exampleEs).
+            It is in the target language, the other language is the gloss. */}
         {example && (
           <>
             <View style={[styles.frontRow, styles.exampleRow]}>
@@ -151,17 +151,17 @@ export default function PcicRevealedAnswer({
         )}
       </View>
 
-      {/* a régi (PR #27 előtti) Tudtam/Nem tudtam
-          gombsor vissza, intervallum-előnézettel; a koppintás dönt és
-          értékel, üres beküldés után is. */}
+      {/* the old (pre-PR #27) Knew it / Didn't know
+          button row is back, with the interval preview; the tap decides and
+          grades, even after an empty submit. */}
       <View testID="pcic-grades" style={[styles.gradesRow, g.brutal && styles.brutalGradesRow, g.brutal && stacked && styles.gradesStacked]}>
         {GRADES.map((gr) => {
           const isPre = nextGrade === gr;
           if (g.brutal) {
-            // doboz (good = a, again = b). A két gomb
-            // egyforma (azonos árnyék-eltolás, a sor a kártya teljes szélességén).
-            // A téma gomb-változata: senior = egymás alatt + ikon, zen = csak szöveg,
-            // a "Tudom" aláhúzva.
+            // box (good = a, again = b). The two buttons are
+            // identical (same shadow offset, the row spans the card's full width).
+            // The theme's button variant: senior = stacked + icon, zen = text only,
+            // the "Knew it" underlined.
             const fill = gr === 'good' ? 'a' : 'b';
             const labelColor = actionTextColor(g, fill, variant);
             return (
@@ -216,7 +216,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 16,
   },
-  // a "Not quite!" jelvény és a beírt (rontott) szó közt látható rés kell (régen 0 px volt, a két elem összeért).
+  // there must be a visible gap between the "Not quite!" badge and the typed (wrong) word (it used to be 0 px, the two elements touched).
   diffLine: {
     fontSize: 20,
     fontWeight: '700',
@@ -237,7 +237,7 @@ const styles = StyleSheet.create({
     gap: 8,
     marginTop: 8,
   },
-  // "also: b · c" sor a helyes alak alatt.
+  // "also: b · c" row under the correct form.
   alsoLine: {
     fontSize: 13,
     textAlign: 'center',
@@ -246,13 +246,13 @@ const styles = StyleSheet.create({
   alsoAlt: {
     fontWeight: '700',
   },
-  // s2 (anki-ui-terv.html): "Missing accent, counted as correct" sor.
+  // "Missing accent, counted as correct" row.
   accentNote: {
     fontSize: 12,
     textAlign: 'center',
     marginTop: 4,
   },
-  // példamondat a megoldás alatt, Check után.
+  // example sentence under the solution, after Check.
   exampleRow: {
     marginTop: 12,
   },
@@ -283,7 +283,7 @@ const styles = StyleSheet.create({
   brutalGradesRow: { alignSelf: 'stretch' },
   brutalGrade: { flex: 1 },
   brutalGradeBox: { flex: 1, paddingVertical: 8, alignItems: 'center', justifyContent: 'center' },
-  // Senior: a két gomb egymás alatt, teljes szélességben.
+  // Senior: the two buttons stacked, full width.
   gradesStacked: { flexDirection: 'column' },
   brutalGradeStacked: { alignSelf: 'stretch' },
   brutalGradeBoxStacked: { paddingVertical: 10, alignItems: 'center', justifyContent: 'center' },

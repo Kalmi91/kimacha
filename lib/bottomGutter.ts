@@ -1,28 +1,28 @@
-// User feedback (grammar:clases-de-palabras:lesson): „az app nem veszi
-// figyelembe hogy a telefonomon van alul a vissza gomb meg az ilyenek valahol jó
-// valahol nem, amikro a chevk gombot csináltuk akkor is ez előjött. ugy kellen
-// megcsinálni, hogy az app nézze meg hogy van e olyan ha van akkor úgy töltse be az
-// appot, hogy ne legyen átfedés".
+// User feedback (grammar:clases-de-palabras:lesson): "the app does not take into
+// account that on my phone there is the back button at the bottom and such, somewhere it is fine,
+// somewhere not, when we made the check button this came up too. It should be done so that the
+// app checks whether there is one, and if there is, it loads the app
+// in a way that there is no overlap".
 //
-// Eddig képernyőnként foltoztuk: a tanuló-lap dokkolt Check gombja kapott egy
-// `insets.bottom` emelést, a többi képernyő nem kapott semmit, és a
-// rendszer navigációs sávja (gesztus-csík vagy a három gomb) alá futott. Innentől
-// a gyökér-layout tartja a rést, egy helyen, minden képernyőnek.
+// Until now we patched it screen by screen: the docked Check button of the learn sheet got an
+// `insets.bottom` lift, the other screens got nothing, and ran under the
+// system navigation bar (gesture strip or the three buttons). From now on
+// the root layout holds the gap, in one place, for every screen.
 //
-// A `(tabs)` csoport a kivétel: ott a fülsáv maga rajzol bele az inset-be
-// (React Navigation bottom-tabs), tehát ha a gyökér is kipárnázna, a fülsáv egy
-// navigációs-sávnyival a levegőben lógna.
+// The `(tabs)` group is the exception: there the tab bar itself draws into the inset
+// (React Navigation bottom-tabs), so if the root padded too, the tab bar would hang
+// in the air by a navigation-bar's height.
 
 /**
- * Mekkora alsó rés kell a gyökér-layoutnak az aktuális útvonalon.
+ * How much bottom gap the root layout needs on the current route.
  *
- * @param segments az expo-router `useSegments()` értéke
- * @param insetBottom a rendszer alsó safe-area inset-je (0, ha nincs sáv)
- * @returns a rés pontokban
+ * @param segments the value of expo-router's `useSegments()`
+ * @param insetBottom the system bottom safe-area inset (0 if there is no bar)
+ * @returns the gap in points
  */
 export function bottomGutter(segments: string[], insetBottom: number): number {
-  // Az első képernyő kirajzolása előtt még nincs útvonal. Ilyenkor nem párnázunk,
-  // hogy a fülekkel induló app ne ugorjon egyet az első képkockán.
+  // Before the first screen is drawn there is no route yet. Then we do not pad,
+  // so an app that starts with tabs does not jump on the first frame.
   if (segments.length === 0) return 0;
   if (segments[0] === '(tabs)') return 0;
   return Math.max(0, insetBottom);

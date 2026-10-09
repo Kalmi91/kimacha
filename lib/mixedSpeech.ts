@@ -1,12 +1,12 @@
-// A nyelvtan-lecke szövege kevert: a magyarázat a tanuló saját nyelvén megy, a
-// benne lévő PÉLDÁK spanyolul („FŐNÉV: dolog vagy személy (casa, perro)"). Egy
-// hanggal felolvasva a spanyol példa magyar kiejtéssel szól, ami pont azt rontja
-// el, amit tanítani akar. Ez a modul vágja szét a szöveget nyelv-szakaszokra; a
-// felolvasás maga a lib/speech.ts dolga.
+// The text of a grammar lesson is mixed: the explanation goes in the learner's own language, the
+// EXAMPLES in it are Spanish ("NOUN: a thing or a person (casa, perro)"). Read aloud with one
+// voice, the Spanish example sounds with the explanation language's pronunciation, which spoils
+// exactly what it wants to teach. This module cuts the text into language sections; the
+// read-aloud itself is the job of lib/speech.ts.
 
 interface SpeechSegment {
   text: string;
-  /** A szakasz nyelve: a tanult nyelv kódja, vagy a tartalom nyelvéé. */
+  /** The language of the section: the code of the learned language, or that of the content. */
   lang: string;
 }
 
@@ -15,10 +15,10 @@ interface SplitOptions {
   nativeLang: string;
 }
 
-// a V2 lecke `speak` mezőjében a spanyol szakaszok «...»
-// jelöléssel vannak megjelölve a szerzőség idején, nem korpusz-találgatással
-// derülnek ki utólag (ez volt a korábbi hiba: ismeretlen szónál rossz
-// hang).
+// in the `speak` field of a V2 lesson the Spanish sections are marked with
+// «...» at authoring time, they are not worked out afterwards by
+// guessing from the corpus (that was the earlier bug: the wrong
+// voice on an unknown word).
 export function splitByMarkers(text: string, opts: SplitOptions): SpeechSegment[] {
   const segments: SpeechSegment[] = [];
   let i = 0;
@@ -34,8 +34,8 @@ export function splitByMarkers(text: string, opts: SplitOptions): SpeechSegment[
 
     const close = text.indexOf('»', open + 1);
     if (close === -1) {
-      // Nincs záró jel: a nyitó jeltől a mondat végéig natívan olvassuk fel
-      // (a jelölés maga nem szöveg, kimarad).
+      // No closing mark: from the opening mark to the end of the sentence we read it
+      // natively (the mark itself is not text, it is left out).
       const rest = text.slice(open + 1).trim();
       if (rest) segments.push({ text: rest, lang: opts.nativeLang });
       break;

@@ -35,11 +35,10 @@ import {
 import type { MockAnswers, MockExam, MockLevel, MockTaskAnswer } from '@/lib/exam/mock/types';
 import { isExamLearned } from '@/lib/exam/unlock';
 
-// a próbavizsga képernyője a hivatalos
-// felépítéssel. Intro -> papíronként: papír-intro, óra, feladatok (nincs azonnali jelzés) ->
-// eredmény (csoportonként 30 / 50) -> átnézés. A szóbeli ebben a szeletben helyőrző (E2 a).
-// Papíronként mentve (E4 b): egy kész papír válaszai megmaradnak, a félbehagyott papír elölről
-// indul. Állapot: lib/exam/mock/session.ts, feladatsor: lib/exam/mock/build.ts.
+// The mock-exam screen, laid out like the official exam. Intro -> per paper: paper intro, clock,
+// tasks (no immediate feedback) -> result (per group: 30 / 50) -> review. The oral part is a
+// placeholder in this slice. Saved per paper: the answers of a finished paper are kept, an
+// abandoned paper restarts from the beginning. State: lib/exam/mock/session.ts, task set: lib/exam/mock/build.ts.
 
 type Phase = 'loading' | 'unavailable' | 'empty' | 'intro' | 'paperIntro' | 'task' | 'speaking' | 'result' | 'review';
 
@@ -55,7 +54,7 @@ export default function MockExamScreen() {
   const [level, setLevel] = useState<MockLevel>('A1');
   const [exam, setExam] = useState<MockExam | null>(null);
   const [learned, setLearned] = useState<ReadonlySet<string>>(new Set());
-  // A célnyelv ismert szavai az írás értelmességi ellenőrzéséhez (lib/exam/mock/writing.ts).
+  // The known words of the target language, for the sense check of the writing task (lib/exam/mock/writing.ts).
   const [lexicon, setLexicon] = useState<ReadonlySet<string> | undefined>(undefined);
   const [saved, setSaved] = useState<MockSession | null>(null);
   const [canSpeak, setCanSpeak] = useState(true);
@@ -70,7 +69,7 @@ export default function MockExamScreen() {
   const [leaving, setLeaving] = useState(false);
   const closingRef = useRef(false);
 
-  // --- Betöltés: irány, szint-szavak, tanult szavak (szójegyzethez), mentett vizsga.
+  // --- Loading: direction, level words, learned words (for the glossary), saved exam.
   useEffect(() => {
     let alive = true;
     (async () => {
@@ -88,7 +87,7 @@ export default function MockExamScreen() {
       if (!alive) return;
       const items = pcicItemsForLevel(lvl);
       const fresh = () => buildMockExam({ target: tgt, level: lvl, items, seed: Date.now() });
-      // A mentett vizsga csak akkor folytatható, ha a magjából ugyanaz a feladatsor épül vissza.
+      // A saved exam can only be resumed if the same task set can be rebuilt from its seed.
       const session = overview[lvl]?.session ?? null;
       const rebuilt = session ? buildMockExam({ target: tgt, level: lvl, items, seed: session.seed }) : null;
       const resumable = session && rebuilt && mockExamSignature(rebuilt) === session.sig ? session : null;
@@ -113,7 +112,7 @@ export default function MockExamScreen() {
   const task = paper?.tasks[taskIdx];
   const left = paper ? secondsLeft(startedAt, paper.minutes, now) : 0;
 
-  // --- Óra: papíronként külön megy; időbélyegből számol, a másodperc-tick csak frissíti a képernyőt.
+  // --- Clock: runs per paper; computed from a timestamp, the per-second tick only refreshes the screen.
   useEffect(() => {
     if (phase !== 'task') return;
     const id = setInterval(() => setNow(Date.now()), 1000);
@@ -130,7 +129,7 @@ export default function MockExamScreen() {
     setPhase('result');
   };
 
-  // Egy papír lezárása (a tanuló befejezte, vagy lejárt az óra): válaszai mentődnek, jön a következő.
+  // Closing a paper (the learner finished it, or the clock ran out): its answers are saved, then the next one follows.
   const closePaper = async (byClock: boolean) => {
     if (!exam || !paper || closingRef.current) return;
     closingRef.current = true;
@@ -150,7 +149,7 @@ export default function MockExamScreen() {
     closingRef.current = false;
   };
 
-  // A lejáró óra a legfrissebb állapotból zárja a papírt (az effekt a renderelt closePaper-t hívja).
+  // An expiring clock closes the paper from the latest state (the effect calls the rendered closePaper).
   const closeRef = useRef(closePaper);
   useEffect(() => {
     closeRef.current = closePaper;
@@ -227,8 +226,8 @@ export default function MockExamScreen() {
     setPhase('intro');
   };
 
-  // a próbavizsga minden részén ott a 💬; a `part` mondja meg a Feedback sheetben,
-  // pontosan melyik részről van szó (mock-exam:<szint>:<rész>).
+  // The 💬 button is on every part of the mock exam; `part` tells the Feedback sheet
+  // exactly which part it is about (mock-exam:<level>:<part>).
   const pair = `${target === 'es' ? 'en' : 'es'}→${target}`;
   const shell = (children: ReactNode, part?: string) => (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
@@ -364,8 +363,8 @@ export default function MockExamScreen() {
         <Text testID="mock-task-counter" style={[styles.counter, { color: colors.textMuted }]}>
           {s.taskOf(taskIdx + 1, paper.tasks.length)}
         </Text>
-        {/* a görgető is feladatonként újramountol (key), különben az új feladat az előző görgetési
-            helyzetében nyílik: az eleje kicsúszik, a "Next task" gomb pedig ugyanott marad az ujj alatt. */}
+        {/* the scroller also remounts per task (key), otherwise the new task opens at the previous scroll
+            position: its top slides out of view and the "Next task" button stays in the same place under the finger. */}
         <ScrollView key={task.id} contentContainerStyle={styles.body} keyboardShouldPersistTaps="handled" keyboardDismissMode="on-drag">
           <MockTaskCard
             key={task.id}

@@ -2,30 +2,30 @@ export type Level = 'A0' | 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2';
 
 export const LEVELS: Level[] = ['A0', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 
-// F-1 (K6 DÖNTÉS, 2026-08-26): word-class metadata for the game
+// F-1 (K6 DECISION, 2026-08-26): word-class metadata for the game
 // modules (bubble-pop, odd-one-out, ...). Both fields are optional so
 // unannotated entries (e.g. the words-open conj/det/interj cards) keep type-checking.
 export type WordPos = 'noun' | 'verb' | 'adj' | 'adv' | 'pron' | 'prep' | 'num' | 'phrase';
 export type WordGender = 'm' | 'f' | 'mf' | 'n' | '-';
 
-// egy szó, ami csak Mexikóban él (ahorita, chido...), a
-// kártyán zászló-emojival jelzi, melyik országban használják. Mező nélkül =
-// spanyolországi, zászló nélkül (alapértelmezett).
+// a word that lives only in Mexico (ahorita, chido...) is
+// marked on the card with a flag emoji showing which country uses it. No field =
+// from Spain, no flag (the default).
 export type WordRegion = 'mx' | 'es';
 
-// külön kártya csak akkor jár egy szónak, ha rendhagyó a
-// többese (el lápiz -> los lápices) vagy a szó csak többesben él (las gafas).
-// Ilyenkor a kártyán egy piktogram-címke jelzi, miért kérdezik külön.
+// a word gets a separate card only if its
+// plural is irregular (el lápiz -> los lápices) or the word exists only in the plural (las gafas).
+// In that case a pictogram label on the card shows why it is asked separately.
 export type WordPlural = 'irregular' | 'only';
 
-// Issue #3, 4. szakasz: a mezők KÖTELEZŐEK, de minden szófájl `as WordEntry[]`
-// cast-tal jön be, ezért a fordító nem látja, ha egy bejegyzésből hiányzik
-// valamelyik. Egy hiányos sáv-bejegyzés így csak futásidőben bukna ki, üres
-// kártyaként. A cast nem tüntethető el (a JSON-modulok szerkezete tágabb, mint
-// a kézzel írt típus), ezért az ígéretet TESZT tartja: a
-// `lib/__tests__/corpusIntegrity.test.ts` „every corpus entry carries…" esete
-// minden korpuszra ellenőrzi. Egy új nyelvi sáv ugyanezt vállalja: a mai
-// spanyol, angol és magyar készlet mind a négy felszíni nyelvet hordozza.
+// Issue #3, section 4: the fields are REQUIRED, but every word file comes in with an
+// `as WordEntry[]` cast, so the compiler does not see when an entry lacks
+// one of them. An incomplete band entry would then show up only at runtime, as an empty
+// card. The cast cannot be removed (the structure of the JSON modules is wider than
+// the hand-written type), so the promise is kept by a TEST: the
+// `lib/__tests__/corpusIntegrity.test.ts` case "every corpus entry carries…" checks
+// it for every corpus. A new language band takes on the same: today's
+// Spanish, English and Hungarian sets all carry all four surface languages.
 export interface WordEntry {
   id: number;
   level: Level;
@@ -41,17 +41,17 @@ export interface WordEntry {
   gender?: WordGender;
   region?: WordRegion;
   plural?: WordPlural;
-  // indefinido-10-verbos drill: a lecke szűri ki a szót a
-  // fókusz-módból/lessonWordIds()-ból, a kártya maga marad, haladás nem vész el.
+  // indefinido-10-verbos drill: the lesson filters the word out of the
+  // focus mode/lessonWordIds(), the card itself stays, no progress is lost.
   vosotros?: boolean;
   [key: string]: string | number | boolean | undefined;
 }
 
 import { findOpenWordByForm, openWords } from './openWords';
 
-// User feedback (`sentence:El calabacín es una verdura verde.`):
-// "ha rákattintok ... akár arra hogy calabacín akár arra hogy courset ... bele
-// tegye az olyan szavak közé, ahol ezeknek a helyesírását tudom gyakorolni".
+// User feedback (`sentence:El calabacín es una verdura verde.`), translated from Hungarian:
+// "if I tap ... on calabacín or on courset ... put it among the
+// words where I can practise their spelling".
 // A tap lands on a token of running text, the spelling list stores word ids, so
 // the token has to find its card. Matching forgives what running text adds
 // (case, punctuation) and what a headword carries (its article), but never the
@@ -63,8 +63,8 @@ export function normalizeWordToken(raw: string): string {
   return raw.toLowerCase().replace(TOKEN_PUNCTUATION, '').replace(/\s+/g, ' ').trim();
 }
 
-// a szöveg szerinti keresés (glossza, kevert felolvasás)
-// a words-open kártyáin fut (data/openWords.ts), nem a régi szólistán.
+// the lookup by text (glossary, mixed read-aloud)
+// runs on the words-open cards (data/openWords.ts), not on the old word list.
 function allWordsFor(): WordEntry[] {
   return openWords;
 }
@@ -79,8 +79,8 @@ function textKeysOf(value: string): string[] {
     keys.push(norm);
     const bare = norm.replace(LEADING_ARTICLE, '');
     if (bare && bare !== norm) keys.push(bare);
-    // a ragozott-alak kártya feje „hagan (hacer)", a mondatban „hagan"
-    // áll, tehát a zárójel előtti alak önmagában is kulcs.
+    // the card head of an inflected form is "hagan (hacer)", the sentence has "hagan",
+    // so the form before the parenthesis is a key on its own too.
     if (part.includes('(')) {
       const head = normalizeWordToken(part.replace(/\([^)]*\)/g, ' '));
       if (head && head !== norm) keys.push(head);
@@ -119,7 +119,7 @@ export function findWordByText(token: string, field: string, lang: string = 'es'
   for (const [key, entry] of map) {
     if (key.endsWith(` ${norm}`)) return entry;
   }
-  // A ragozott/többes/nemi alak a words-open tőalakú kártyájához tartozik (csak spanyol).
+  // An inflected/plural/gendered form belongs to the base-form words-open card (Spanish only).
   if (field === 'es') return findOpenWordByForm(norm);
   return undefined;
 }

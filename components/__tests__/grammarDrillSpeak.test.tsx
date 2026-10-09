@@ -1,5 +1,5 @@
-// a helyes mondat a nyelvtani feladatokban is elhangzik,
-// jó és rossz válasz után is (a mondatkártyák tesztje: sentenceCards.test.tsx).
+// the correct sentence is spoken in the grammar items too, after a right and a wrong answer
+// alike (the sentence-card test: sentenceCards.test.tsx).
 
 jest.mock('@/lib/speech', () => ({
   speak: jest.fn(),
@@ -38,16 +38,16 @@ const lesson: LessonV2 = {
   ],
 };
 
-describe('GrammarDrill: a helyes mondat elhangzik (FB412)', () => {
+describe('GrammarDrill: the correct sentence is spoken', () => {
   beforeEach(() => speech.speak.mockClear());
 
-  it('rossz válasz után a kitöltött helyes mondatot mondja', () => {
+  it('after a wrong answer it speaks the filled-in correct sentence', () => {
     render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="en" onFinish={jest.fn()} />);
-    fireEvent.press(screen.getByText('estoy')); // rossz
+    fireEvent.press(screen.getByText('estoy')); // wrong
     expect(speech.speak).toHaveBeenCalledWith('Yo soy estudiante.', 'es-MX');
   });
 
-  it('jó válasz után is', () => {
+  it('after a correct answer too', () => {
     render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="en" onFinish={jest.fn()} />);
     fireEvent.press(screen.getByText('soy'));
     expect(speech.speak).toHaveBeenCalledWith('Yo soy estudiante.', 'es-MX');

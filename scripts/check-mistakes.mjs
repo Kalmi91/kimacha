@@ -1,13 +1,13 @@
-// A /hibaim skill
-// (laptop) ezzel ellenőrzi a batch JSON-t a repo SAJÁT validátorával
-// (lib/mistakes/format.ts), mielőtt a Drive-ra tenné, hogy ne duplikálja a
-// szabályokat egy második, laptopon karbantartott másolatban.
+// The mistakes-import skill (run on a separate machine) uses this to check the
+// batch JSON with the repo's OWN validator (lib/mistakes/format.ts) before
+// uploading it to Drive, so the rules are not duplicated in a second copy
+// maintained on that machine.
 //
-// Node 22 beépített TypeScript type-strippel importálja a .ts fájlt (nincs
-// build lépés, nincs ts-node); a validátor emiatt import-mentes és csak
-// törölhető TS-szintaxist használ.
+// Node 22's built-in TypeScript type stripping imports the .ts file (no build
+// step, no ts-node); the validator is therefore import-free and uses only
+// erasable TS syntax.
 //
-// Usage: node scripts/check-mistakes.mjs <fájl.json>
+// Usage: node scripts/check-mistakes.mjs <file.json>
 
 import { readFileSync } from 'node:fs';
 import { validateMistakesPayload } from '../lib/mistakes/format.ts';

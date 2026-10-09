@@ -1,16 +1,16 @@
-// lib/i18n/es.ts most már teljes
-// felület-fordítás (nem csak a `usage` blokk), és t()/setLanguage() tényleg
-// vált, nem no-op. Ez a teszt a modul futásidejű viselkedését fedi; a kulcs-
-// egyezést maga a TypeScript is kikényszeríti (es.ts: Strings = typeof en),
-// de egy futásidejű mélységi ellenőrzés itt is kimondja, amit a típus ígér.
+// lib/i18n/es.ts is now a complete
+// interface translation (not just the `usage` block), and t()/setLanguage() really
+// switch, they are not a no-op. This test covers the module's runtime behavior; the key
+// match is enforced by TypeScript itself (es.ts: Strings = typeof en),
+// but a runtime deep check here also states what the type promises.
 
 import en from '../en';
 import es from '../es';
 import { t, setLanguage, currentLanguage, stringsFor } from '../index';
 
-// Rekurzívan bejárja mindkét objektumot, és összeveti a kulcsok halmazát
-// minden szinten (a levélérték típusát - string vs function - a TS típus már
-// kikényszerítette, ez csak a kulcsok jelenlétét ellenőrzi újra, futásidőben).
+// Walks both objects recursively and compares the set of keys at
+// every level (the type of the leaf value - string vs function - is already enforced
+// by the TS type, this only re-checks the presence of the keys, at runtime).
 function collectKeyPaths(obj: unknown, prefix = ''): string[] {
   if (obj === null || typeof obj !== 'object' || Array.isArray(obj)) return [prefix];
   const paths: string[] = [];
@@ -20,41 +20,41 @@ function collectKeyPaths(obj: unknown, prefix = ''): string[] {
   return paths;
 }
 
-describe('lib/i18n: es.ts teljes lefedettsége + t()/setLanguage() (PLAN-ketiranyu 4. lépés)', () => {
+describe('lib/i18n: full coverage of es.ts + t()/setLanguage()', () => {
   afterEach(() => {
     setLanguage('en');
   });
 
-  it('az es.ts minden en.ts kulcsa megvan (és fordítva, nincs árva kulcs egyik oldalon sem)', () => {
+  it('every en.ts key is present in es.ts (and vice versa, no orphan key on either side)', () => {
     const enPaths = collectKeyPaths(en).sort();
     const esPaths = collectKeyPaths(es).sort();
     expect(esPaths).toEqual(enPaths);
   });
 
-  it('setLanguage("en") után t() az angol szöveget adja', () => {
+  it('after setLanguage("en") t() gives the English text', () => {
     setLanguage('en');
     expect(currentLanguage()).toBe('en');
     expect(t().onboarding.start).toBe('Get Started');
   });
 
-  it('setLanguage("es") után t() a spanyol szöveget adja', () => {
+  it('after setLanguage("es") t() gives the Spanish text', () => {
     setLanguage('es');
     expect(currentLanguage()).toBe('es');
     expect(t().onboarding.start).toBe('Empezar');
   });
 
-  it('ismeretlen kódra angolra esik vissza', () => {
+  it('for an unknown code it falls back to English', () => {
     setLanguage('xx');
     expect(t().onboarding.start).toBe('Get Started');
   });
 
-  it('stringsFor a kért nyelv usage-blokkját adja (a tanult nyelv toastjaihoz)', () => {
+  it('stringsFor gives the usage block of the requested language (for the toasts of the learned language)', () => {
     expect(stringsFor('es').usage.dailyGreeting).toBe(es.usage.dailyGreeting);
     expect(stringsFor('en').usage.dailyGreeting).toBe(en.usage.dailyGreeting);
   });
 
-  // "1 days" helyett egyes szám (1 day / 1 día); a többi szám marad többes.
-  it('a nap-feliratok egyes/többes száma: intervalDays és scheduleNextDays (en, es)', () => {
+  // singular instead of "1 days" (1 day / 1 día); other numbers stay plural.
+  it('singular/plural of the day labels: intervalDays and scheduleNextDays (en, es)', () => {
     expect(en.pcic.intervalDays(1)).toBe('1 day');
     expect(en.pcic.intervalDays(2)).toBe('2 days');
     expect(en.pcic.intervalDays(21)).toBe('21 days');
@@ -66,9 +66,9 @@ describe('lib/i18n: es.ts teljes lefedettsége + t()/setLanguage() (PLAN-ketiran
     expect(es.stats.scheduleNextDays(4)).toBe('en 4 días');
   });
 
-  // Az elírás-javításkor a mondatszám kiesett a
-  // spanyol "hoy: ... palabras · oraciones / 10" sorból.
-  it('a spanyol badgeIntroducedToday kiírja a mondatszámot (1 oración, 2 oraciones)', () => {
+  // When the typo was fixed, the sentence count dropped out of the
+  // Spanish "hoy: ... palabras · oraciones / 10" line.
+  it('the Spanish badgeIntroducedToday prints the sentence count (1 oración, 2 oraciones)', () => {
     expect(es.pcic.badgeIntroducedToday(3, 1, 10)).toBe('hoy: 3 palabras · 1 oración / 10');
     expect(es.pcic.badgeIntroducedToday(1, 2, 10)).toBe('hoy: 1 palabra · 2 oraciones / 10');
     expect(es.pcic.badgeIntroducedToday(0, 0, 10)).toBe('hoy: 0 palabras · 0 oraciones / 10');

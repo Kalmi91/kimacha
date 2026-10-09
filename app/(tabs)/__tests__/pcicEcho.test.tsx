@@ -1,7 +1,7 @@
-// helyes válasz után a szó csak egyszer látszik (a
-// rózsaszín sor a hangszóróval), a zöld visszhang (diff-sor) kimarad. Ha a beírt
-// válasz eltér (rossz, vagy ékezet nélkül elfogadott), mindkét sor megmarad.
-// Mock-minta: pcicBrutal.test.tsx.
+// After a correct answer the word is shown only once (the
+// pink row with the speaker), the green echo (diff row) is left out. If the typed
+// answer differs (wrong, or accepted without accents), both rows stay.
+// Mock pattern: pcicBrutal.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -56,12 +56,12 @@ async function revealWith(typed: string) {
   return view;
 }
 
-describe('PCIC felfedés: a helyes válasz csak egyszer látszik (5a)', () => {
+describe('PCIC reveal: the correct answer shows only once', () => {
   beforeEach(async () => {
     await getDb().resetPcicCards();
   });
 
-  it('pontosan a cél (kis-nagybetű és széli szóköz nélkül): nincs zöld visszhang, egyetlen "está" (a rózsaszín sor)', async () => {
+  it('exactly the target (ignoring case and edge whitespace): no green echo, a single "está" (the pink row)', async () => {
     for (const typed of ['está', '  EstÁ  ']) {
       const view = await revealWith(typed);
       expect(view.queryByTestId('pcic-diff-line')).toBeNull();
@@ -70,22 +70,22 @@ describe('PCIC felfedés: a helyes válasz csak egyszer látszik (5a)', () => {
     }
   });
 
-  it('ékezet nélkül elfogadott válasz: a diff-sor (beírt alak) és a rózsaszín cél-sor is megmarad', async () => {
+  it('an answer accepted without accents: the diff row (typed form) and the pink target row both stay', async () => {
     const view = await revealWith('esta');
     expect(view.getByTestId('pcic-diff-line')).toBeTruthy();
     expect(view.getAllByText('está')).toHaveLength(1);
     view.unmount();
   });
 
-  it('rossz válasz: a diff-sor és a rózsaszín cél-sor is megmarad', async () => {
+  it('wrong answer: the diff row and the pink target row both stay', async () => {
     const view = await revealWith('xyz');
     expect(view.getByTestId('pcic-diff-line')).toBeTruthy();
     expect(view.getAllByText('está')).toHaveLength(1);
     view.unmount();
   });
 
-  // User feedback ("Not quite!" és a rontott szó közé kis hely): a jelvény alatt a beírt szó sora nem ér hozzá.
-  it('rossz válasz: a "Not quite!" jelvény és a beírt (rontott) szó között rés van (FB460)', async () => {
+  // User feedback (a small gap is needed between "Not quite!" and the misspelled word): the row of the typed word under the badge does not touch it.
+  it('wrong answer: there is a gap between the "Not quite!" badge and the typed (wrong) word', async () => {
     const view = await revealWith('xyz');
     const gap = StyleSheet.flatten(view.getByTestId('pcic-diff-line').props.style).marginTop ?? 0;
     expect(gap).toBeGreaterThanOrEqual(8);

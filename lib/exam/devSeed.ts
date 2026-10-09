@@ -1,18 +1,17 @@
-// a Settings alján, CSAK __DEV__-ben
-// látszó vezérlő egy A1 állapotot állít be, hogy a szintvizsga a web-előnézetben
-// végigkattintható legyen: a szint kártyáinak DEV_SEED_PERCENT%-a graduált (review),
-// és egy A1 nyelvtani lecke kész. Release-buildben (`__DEV__ === false`) a vezérlő
-// nem renderelődik, ez a modul onnan nem hívódik.
+// The control shown at the bottom of Settings, ONLY in __DEV__, sets up an A1 state so that the
+// level exam can be clicked through in the web preview: DEV_SEED_PERCENT% of the level's
+// cards are graduated (review) and one A1 grammar lesson is done. In a release build
+// (`__DEV__ === false`) the control is not rendered and this module is never called from there.
 
 import { pcicItemsForLevel, type PcicTarget } from '@/data/pcic';
 import { GRAMMAR_PROGRESS_KEY, hasLesson, syllabusForLevel } from '@/lib/grammar/syllabus';
 import { addDays, sm2NewCard, type Sm2Card } from '@/lib/sm2';
 import { EXAM_LEVELS } from './types';
 
-/** A feloldási küszöb (80%) fölött, hogy a vezérlő által beállított állapot biztosan nyitott legyen. */
+/** Above the unlock threshold (80%) so that the state set by the control is guaranteed to be unlocked. */
 export const DEV_SEED_PERCENT = 85;
 
-/** Az első DEV_SEED_PERCENT% graduált kártya, a jövőbeli esedékesség miatt nem lepi el a tanulófület. */
+/** The first DEV_SEED_PERCENT% of the cards, graduated; their due date is in the future, so they do not flood the Learn tab. */
 export function a1SeedCards(itemIds: string[], today: string): Sm2Card[] {
   const n = Math.ceil((itemIds.length * DEV_SEED_PERCENT) / 100);
   return itemIds.slice(0, n).map((itemId) => ({
@@ -27,8 +26,8 @@ export function a1SeedCards(itemIds: string[], today: string): Sm2Card[] {
 }
 
 /**
- * Az A1 lecke, amit a vezérlő késznek jelöl. Spanyolon a jelen idő: az nyitja fel az igék
- * ragozott alakjait a mondat-kapuban, enélkül szinte nincs vizsga-mondat (lib/knownSentence.ts).
+ * The A1 lesson the control marks as done. In Spanish this is the present tense: it unlocks the
+ * conjugated verb forms in the sentence gate, without it there are almost no exam sentences (lib/knownSentence.ts).
  */
 export function a1SeedLesson(lang: PcicTarget): string | undefined {
   if (lang === 'es') return 'presente-regular';
@@ -40,21 +39,21 @@ type SeedStore = {
   setGameProgress(gameId: string, itemId: string, state: string, data?: unknown): Promise<void>;
 };
 
-/** Beállítja az A1 vizsga-állapotot az aktív irány paklijára (a hívó előtte `setPcicTarget`-et hív). */
+/** Sets up the A1 exam state for the active direction's deck (the caller calls `setPcicTarget` first). */
 export async function seedA1ExamState(store: SeedStore, target: PcicTarget, today: string): Promise<void> {
   for (const card of a1SeedCards(pcicItemsForLevel('A1').map((i) => i.id), today)) {
     await store.upsertPcicCard(card);
   }
   const lesson = a1SeedLesson(target);
-  // Az `itemId === topicId` sor minden feladat-fajtát késznek jelent (lib/grammar/syllabus.ts doneGrammarTopicProgress).
+  // The `itemId === topicId` row means every task kind is done (lib/grammar/syllabus.ts doneGrammarTopicProgress).
   if (lesson) await store.setGameProgress(GRAMMAR_PROGRESS_KEY, lesson, 'done', { correct: 1, total: 1 });
 }
 
 /**
- * MINDEN vizsga-szint állapota egyszerre (A1-B2): a szint kártyáinak DEV_SEED_PERCENT%-a
- * graduált, és az irány minden megírt leckéje kész (egy A2+ vizsga-mondat a korábbi szintek
- * igeidőit és szavait is használja, ezért a feloldott igeidők a valós útnak megfelelően halmozódnak).
- * Újrafuttatva ugyanazt állítja be. A hívó előtte `setPcicTarget`-et hív.
+ * The state of EVERY exam level at once (A1-B2): DEV_SEED_PERCENT% of the level's cards are
+ * graduated and every written lesson of the direction is done (an A2+ exam sentence also uses the
+ * tenses and words of earlier levels, so the unlocked tenses accumulate as on the real path).
+ * Running it again sets up the same state. The caller calls `setPcicTarget` first.
  */
 export async function seedExamState(store: SeedStore, target: PcicTarget, today: string): Promise<void> {
   for (const level of EXAM_LEVELS) {

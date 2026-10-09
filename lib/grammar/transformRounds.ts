@@ -1,13 +1,13 @@
-// a mondat-átírás (transform) kör 10-es adagokban
-// megy, a legkevésbé gyakorolt item elöl, hogy egy nagy lecke (pl. 50 tétel)
-// ne egyszerre ugorjon a tanuló elé. `seenCounts` a game_progress
-// `${topicId}:transform:seen` sorából jön (app/grammar/[topic].tsx).
+// The sentence-rewriting (transform) round goes in batches of 10, the
+// least practised item first, so a big lesson (e.g. 50 items)
+// does not land in front of the learner all at once. `seenCounts` comes from the game_progress
+// `${topicId}:transform:seen` row (app/grammar/[topic].tsx).
 
 import { shuffleArray } from '../shuffle';
 import type { TransformItem } from './lessonTypes';
 
-// A gomb-feliratok (app/grammar/[topic].tsx) és a kör mérete egy helyről jön,
-// hogy ne csússzanak szét (pl. "10 / 50" gomb, de 12-es kör).
+// The button labels (app/grammar/[topic].tsx) and the round size come from one place,
+// so they cannot drift apart (e.g. a "10 / 50" button but a round of 12).
 export const TRANSFORM_ROUND_SIZE = 10;
 
 export function pickTransformRound(
@@ -18,8 +18,8 @@ export function pickTransformRound(
 ): TransformItem[] {
   const shuffled = shuffleArray(items as TransformItem[], seed);
   if (shuffled.length <= size) return shuffled;
-  // Array.prototype.sort stabil (ES2019+): azonos "seen" számnál a fenti
-  // seedelt keverés sorrendje marad, ez adja a "seed szerinti véletlent".
+  // Array.prototype.sort is stable (ES2019+): with equal "seen" counts the order of the
+  // seeded shuffle above stays, which gives the "seed-based randomness".
   const bySeen = [...shuffled].sort((a, b) => (seenCounts[a.id] ?? 0) - (seenCounts[b.id] ?? 0));
   return bySeen.slice(0, size);
 }

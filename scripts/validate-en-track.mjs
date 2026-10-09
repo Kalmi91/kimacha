@@ -35,7 +35,7 @@ const ID_RANGE = { A0: [[5800, 5999]], A1: [[5001, 5399], [7600, 8799], [10798, 
 
 const errors = [];
 const err = (m) => errors.push(m);
-const rules = {}; // R11-R14: szabályonként külön, hogy az első 5 példa ne vesszen el a régi hibák mögött
+const rules = {}; // R11-R14: kept per rule so the first 5 examples are not buried behind old errors
 const ruleFail = (r, m) => (rules[r] ||= []).push(m);
 const loadJson = (p) => (existsSync(join(ROOT, p)) ? JSON.parse(readFileSync(join(ROOT, p), 'utf8')) : null);
 const normEn = (s) => (s ?? '').toLowerCase().replace(/['’]/g, '').replace(/[.,;:!?"()]/g, '').trim();

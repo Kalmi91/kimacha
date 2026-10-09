@@ -1,19 +1,19 @@
-// User feedback (easy:The clients have): „megint a have arrived os mondatot
-// teszed be pedig még ezt a nyelvtani szerkezetet nem tanítottad ez a hiba töbazőr
-// előfordúlt erre figyelj old meg, hogy többszőr ne legyen. legyen olyan hogy bizonyos
-// nyelvtani szerkezeteket feloldunk és akkor lehet mondjuk vizsgára is menni, meg akkor
-// adja be ide is a mondatokat".
+// User feedback (easy:The clients have): "you are putting in the 'have arrived' sentence again,
+// even though you have not taught this grammatical structure yet, this mistake has occurred
+// several times, watch out for this, solve it so that it does not happen again. let there be a way
+// where we unlock certain grammatical structures, and then it is possible to go to the exam too,
+// and then give the sentences in there as well".
 //
-// A korpusz-audit eddig a SZÓKINCSET őrizte: minden szó legyen tanult. A NYELVTANT
-// semmi nem őrizte, ezért egy A1-es szó példamondata nyugodtan használhatott A2-es
-// összetett múltat („han llegado" = have arrived). Ez a modul zárja azt a rést.
+// The corpus audit used to guard only the VOCABULARY: every word must be learned. Nothing
+// guarded the GRAMMAR, so the example sentence of an A1 word could freely use an A2
+// compound past ("han llegado" = have arrived). This module closes that gap.
 //
-// A felismerés nem heurisztika: a `lib/games/conjugate.ts` ragozó motorja már
-// legenerálja a ragozott alakokat a korpusz igéiből, ezért egy alak → szerkezet
-// térképet építünk, és a mondat szavait egyszerűen kikeressük. Ami nincs a
-// térképen, az nem is számít, tehát téves riasztás nem keletkezik.
-// Az összetett igeidőket (haber + participio) külön mintázat fogja, mert azok
-// két szóból állnak, és pont ezek a leggyakoribb szint-túllépések.
+// The detection is not a heuristic: the conjugation engine `lib/games/conjugate.ts` already
+// generates the inflected forms from the corpus verbs, so we build a form → structure
+// map and simply look up the words of the sentence. What is not on the
+// map does not count, so no false alarm can arise.
+// The compound tenses (haber + participio) are caught by a separate pattern, because they
+// consist of two words, and these are exactly the most common level overshoots.
 
 import { LEVELS, type Level } from '@/data/words';
 import { openWords } from '@/data/openWords';
@@ -27,10 +27,10 @@ export type Structure =
   | 'condicional_perfecto'
   | 'imperativo';
 
-/** Melyik szinten TANÍTJUK a szerkezetet (lib/grammar/syllabus.ts sorrendje). */
+/** At which level we TEACH the structure (the order of lib/grammar/syllabus.ts). */
 const STRUCTURE_LEVEL: Record<Structure, Level> = {
-  // A jelen idő az alapállás: már az A0-s mondatok is ebben állnak, a tanterv
-  // A1-es `presente-regular` témája a szabályt írja le, nem vezeti be a használatát.
+  // The present tense is the default: even the A0 sentences are in it, the syllabus's
+  // A1 `presente-regular` topic describes the rule, it does not introduce its use.
   presente: 'A0',
   indefinido: 'A2',
   imperfecto: 'A2',
@@ -41,9 +41,9 @@ const STRUCTURE_LEVEL: Record<Structure, Level> = {
   pluscuamperfecto: 'B1',
   futuro_perfecto: 'C1',
   condicional_perfecto: 'C1',
-  // A felszólítás usted-alakja és a tiltás ALAKRA kötőmód (tome, no seas), de a
-  // tanterv A2-ben tanítja, és nem kötőmódi mellékmondat. Külön szerkezet, hogy
-  // egy A2-es „Tome asiento" ne bukjon el a B1-es kötőmód-kapun.
+  // The usted form of the imperative and the prohibition are subjunctive in FORM (tome, no seas),
+  // but the syllabus teaches them at A2, and they are not a subjunctive subordinate clause. A
+  // separate structure, so that an A2 "Tome asiento" does not fail the B1 subjunctive gate.
   imperativo: 'A2',
 };
 
@@ -52,7 +52,7 @@ const HABER_IMPERFECT = new Set(['habia', 'había', 'habias', 'habías', 'habiam
 const HABER_FUTURE = new Set(['habre', 'habré', 'habras', 'habrás', 'habra', 'habrá', 'habremos', 'habreis', 'habréis', 'habran', 'habrán']);
 const HABER_CONDITIONAL = new Set(['habria', 'habría', 'habrias', 'habrías', 'habriamos', 'habríamos', 'habriais', 'habríais', 'habrian', 'habrían']);
 
-// A rendhagyó participiumok, amiket az -ado/-ido minta nem fog meg.
+// The irregular participles that the -ado/-ido pattern does not catch.
 const IRREGULAR_PARTICIPLES = new Set([
   'visto', 'hecho', 'dicho', 'escrito', 'puesto', 'vuelto', 'abierto', 'muerto',
   'roto', 'cubierto', 'descrito', 'devuelto', 'resuelto', 'satisfecho', 'impreso',
@@ -62,20 +62,20 @@ function isParticiple(token: string): boolean {
   return /(?:ado|ados|ada|adas|ido|idos|ida|idas)$/.test(token) || IRREGULAR_PARTICIPLES.has(token);
 }
 
-// A `que` szándékosan NINCS itt: a „que + kötőmód" pont a mellékmondati kötőmód,
-// nem felszólítás.
+// `que` is deliberately NOT here: "que + subjunctive" is exactly the subordinate-clause
+// subjunctive, not an imperative.
 const COMMAND_LEAD_INS = new Set(['no', 'nunca', 'jamas', 'jamás', 'y', 'pero']);
 
-// A kötőmódot a spanyolban kiváltó szó hívja elő. Kiváltó nélkül egy kötőmódi
-// ALAKÚ szó szinte biztosan főnév (tema, salga mint „kimenetel"), ezért csak
-// kiváltó jelenlétében számítjuk kötőmódnak. Ez a kapu inkább téveszt lefelé.
+// In Spanish a trigger word calls out the subjunctive. Without a trigger a word of subjunctive
+// FORM is almost certainly a noun (tema, salga as "outcome"), so we count it as subjunctive only
+// when a trigger is present. This gate errs on the permissive side.
 const SUBJUNCTIVE_TRIGGERS = new Set([
   'que', 'ojala', 'ojalá', 'quiza', 'quizá', 'quizas', 'quizás', 'acaso',
   'cuando', 'aunque', 'mientras', 'hasta', 'antes', 'despues', 'después', 'sin',
   'para', 'como', 'donde', 'dónde', 'tal',
 ]);
 
-/** Felszólítás-pozíció: tagmondat eleje, tiltás után, vagy tapadó névmással. */
+/** Imperative position: start of a clause, after a prohibition, or with an attached pronoun. */
 function isCommandPosition(tokens: string[], i: number): boolean {
   if (/(?:me|te|se|nos|le|les|lo|la|los|las)$/.test(tokens[i]) && tokens[i].length > 5) return true;
   if (i === 0) return true;
@@ -91,9 +91,9 @@ export function tokenize(sentence: string): string[] {
     .filter(Boolean);
 }
 
-// Alak → szerkezet. Ütközésnél (pl. a -ar igék `hablamos` alakja jelen ÉS
-// befejezett múlt is) a KORÁBBAN tanított szerkezet nyer, hogy egy szabályos
-// A1-es mondat sose essen fenn a kapun.
+// Form → structure. On a collision (e.g. the `hablamos` form of -ar verbs is both present AND
+// preterite) the EARLIER-taught structure wins, so a regular
+// A1 sentence never fails the gate.
 let formIndex: Map<string, Structure> | null = null;
 
 function levelRank(level: Level): number {
@@ -103,14 +103,14 @@ function levelRank(level: Level): number {
 function buildFormIndex(): Map<string, Structure> {
   const index = new Map<string, Structure>();
   const infinitives = new Set<string>();
-  // a words-open igéi; a perjeles alak ("volver / regresar")
-  // minden alternatívája külön főnévi igenév.
+  // the verbs of words-open; every alternative of a slash form ("volver / regresar")
+  // is a separate infinitive.
   for (const w of openWords) {
     if (w.pos !== 'verb') continue;
     for (const alt of String(w.es ?? '').split(' / ')) {
       const es = alt.trim().toLowerCase();
-      // A szótári alakok között ragozott bejegyzés is van („yo hablo"), abból nem
-      // lehet ragozni; csak a főnévi igenevek kellenek.
+      // Among the dictionary forms there is also a conjugated entry ("yo hablo"), it
+      // cannot be conjugated; only the infinitives are needed.
       if (/^[a-záéíóúñü]+(ar|er|ir)$/.test(es)) infinitives.add(es);
     }
   }
@@ -134,11 +134,11 @@ function getFormIndex(): Map<string, Structure> {
   return formIndex;
 }
 
-// Homográfok. A ragozott alakok fele egyben főnév vagy elöljáró is: `vino`
-// (bor / venir múltja), `entre` (között / entrar kötőmódja), `viaje` (utazás /
-// viajar kötőmódja), `tema` (téma / temer kötőmódja). Ha a szó a korpuszban NEM
-// igeként szerepel, nem igealaknak vesszük: a kapu inkább engedjen át egy
-// gyanús mondatot, mint hogy szabályos mondatokat kényszerítsen átírásra.
+// Homographs. Half of the inflected forms are also a noun or a preposition: `vino`
+// (wine / preterite of venir), `entre` (between / subjunctive of entrar), `viaje` (trip /
+// subjunctive of viajar), `tema` (topic / subjunctive of temer). If the word occurs in the
+// corpus as NOT a verb, we do not take it as a verb form: the gate should rather let a
+// suspicious sentence through than force regular sentences to be rewritten.
 let nonVerbForms: Set<string> | null = null;
 
 function getNonVerbForms(): Set<string> {
@@ -146,17 +146,17 @@ function getNonVerbForms(): Set<string> {
   const set = new Set<string>();
   for (const w of openWords) {
     if (w.pos === 'verb') continue;
-    // A `phrase` bejegyzések több szóból állnak („no hablo español"), és a
-    // szavaik közt IGEALAK is van. Ha azokat felvennénk, a saját alak-térképünket
-    // ütnénk ki: a „hablo" nem-igévé válna. A kifejezéseket ezért kihagyjuk.
+    // The `phrase` entries consist of several words ("no hablo español"), and among
+    // their words there are also VERB FORMS. If we included them, we would knock out our own
+    // form map: "hablo" would become a non-verb. So we leave the phrases out.
     if (w.pos === 'phrase') continue;
     const es = String(w.es ?? '').trim().toLowerCase();
     if (!es) continue;
-    // A szótári alak névelővel jön („el vino"), a mondatban névelő nélkül áll.
+    // The dictionary form comes with an article ("el vino"), in the sentence it stands without one.
     for (const part of es.split(/\s+/)) {
       if (['el', 'la', 'los', 'las', 'un', 'una', 'unos', 'unas'].includes(part)) continue;
       set.add(part);
-      // A szótári alak egyes számban áll, a mondatban lehet többes: „viajes".
+      // The dictionary form is singular, in the sentence it can be plural: "viajes".
       set.add(`${part}s`);
       if (/[^aeiouáéíóú]$/.test(part)) set.add(`${part}es`);
     }
@@ -165,20 +165,20 @@ function getNonVerbForms(): Set<string> {
   return set;
 }
 
-/** Tesztekhez: felejtse el a legenerált alak-térképet. */
+/** For tests: forget the generated form map. */
 export function resetFormIndex(): void {
   formIndex = null;
   nonVerbForms = null;
 }
 
-/** Milyen igeidőket használ a mondat. Ismeretlen alak nem kerül bele. */
+/** Which tenses the sentence uses. An unknown form is not included. */
 export function detectStructures(sentence: string): Set<Structure> {
   const tokens = tokenize(sentence);
   const found = new Set<Structure>();
   const consumed = new Set<number>();
 
-  // Összetett igeidők: haber + participio. Ez a kettő együtt egyértelmű, és
-  // pont ez volt a hibás eset („han llegado" egy A1-es mondatban).
+  // Compound tenses: haber + participio. These two together are unambiguous, and
+  // this was exactly the faulty case ("han llegado" in an A1 sentence).
   for (let i = 0; i < tokens.length - 1; i++) {
     const aux = tokens[i];
     if (!isParticiple(tokens[i + 1])) continue;
@@ -200,10 +200,10 @@ export function detectStructures(sentence: string): Set<Structure> {
     if (nonVerbs.has(token)) return;
     const structure = index.get(token);
     if (!structure) return;
-    // A kötőmódi ALAK felszólításként is áll: „Tome asiento", „No seas tonto",
-    // „Avísame". Ilyenkor a tanterv felszólítás-témája a mérce (A2), nem a
-    // kötőmódi mellékmondaté (B1). Felszólításnak vesszük, ha a tagmondat élén
-    // áll, ha tiltószó előzi, vagy ha névmás tapadt hozzá.
+    // A subjunctive FORM also stands as an imperative: "Tome asiento", "No seas tonto",
+    // "Avísame". In that case the syllabus's imperative topic is the yardstick (A2), not
+    // that of the subjunctive subordinate clause (B1). We take it as an imperative if it
+    // stands at the head of the clause, if a prohibition word precedes it, or if a pronoun is attached.
     if (structure === 'subjuntivo_presente') {
       if (isCommandPosition(tokens, i)) {
         found.add('imperativo');

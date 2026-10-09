@@ -12,7 +12,7 @@ describe('languages', () => {
       expect(supportedPairs.every(([s, t]) => s !== t)).toBe(true);
     });
 
-    // a második irány, es→en, hozzáadva.
+    // the second direction, es→en, was added.
     it('lists the en-es and es-en pairs', () => {
       expect(supportedPairs).toEqual([['en', 'es'], ['es', 'en']]);
     });
@@ -32,28 +32,28 @@ describe('languages', () => {
     });
   });
 
-  // a régi (onboarding kész, pár nélküli/elavult
-  // pár) állapot en-es-nek számít, a FORCED_PAIR ezt kényszeríti ki
-  // (app/_layout.tsx needsPairCorrection); az új es-en párt NEM javítja át.
+  // the legacy state (onboarding done, no pair / an outdated
+  // pair) counts as en-es, which FORCED_PAIR enforces
+  // (app/_layout.tsx needsPairCorrection); it does NOT rewrite the new es-en pair.
   describe('needsPairCorrection + FORCED_PAIR', () => {
     it('FORCED_PAIR = en→es', () => {
       expect(FORCED_PAIR).toEqual({ source: 'en', target: 'es' });
     });
 
-    it('egy elavult pár (pl. régi hu-es ág) javításra szorul', () => {
+    it('an outdated pair (e.g. the old hu-es branch) needs repair', () => {
       expect(needsPairCorrection({ source: 'hu', target: 'es' })).toBe(true);
     });
 
-    it('önmagával vagy ismeretlen céllal alkotott pár javításra szorul', () => {
+    it('a pair made with itself or an unknown target needs repair', () => {
       expect(needsPairCorrection({ source: 'es', target: 'es' })).toBe(true);
       expect(needsPairCorrection({ source: 'en', target: 'de' })).toBe(true);
     });
 
-    it('az en-es pár nem szorul javításra', () => {
+    it('the en-es pair needs no repair', () => {
       expect(needsPairCorrection({ source: 'en', target: 'es' })).toBe(false);
     });
 
-    it('az új es-en pár sem szorul javításra', () => {
+    it('the new es-en pair needs no repair either', () => {
       expect(needsPairCorrection({ source: 'es', target: 'en' })).toBe(false);
     });
   });

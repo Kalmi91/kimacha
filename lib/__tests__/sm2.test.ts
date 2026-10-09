@@ -1,4 +1,4 @@
-// SM-2 (Anki-módszerű) ütemező tiszta függvényei.
+// Pure functions of the SM-2 (Anki-style) scheduler.
 
 import { sm2NewCard, sm2Review, sm2PreviewDays, pickSm2Session, sm2MarkKnown, addDays, KNOWN_INTERVAL_DAYS, DEFAULT_NEW_LIMIT, type Sm2Card } from '../sm2';
 
@@ -58,7 +58,7 @@ describe('sm2Review, learning/new', () => {
   });
 });
 
-describe('sm2Review, review állapot', () => {
+describe('sm2Review, review state', () => {
   it('good: interval = round(interval * ease)', () => {
     const next = sm2Review(reviewCard({ interval: 10, ease: 2.5 }), 'good', TODAY);
     expect(next.interval).toBe(25);
@@ -74,12 +74,12 @@ describe('sm2Review, review állapot', () => {
 
   it('easy: interval = round(interval * ease * 1.3), ease + 0.15', () => {
     const next = sm2Review(reviewCard({ interval: 10, ease: 2.5 }), 'easy', TODAY);
-    // round(10 * 2.5 * 1.3) = round(32.5) = 33 a kódban (Math.round felkerekít .5-nél)
+    // round(10 * 2.5 * 1.3) = round(32.5) = 33 in the code (Math.round rounds up at .5)
     expect(next.interval).toBe(33);
     expect(next.ease).toBeCloseTo(2.65);
   });
 
-  it('again: lapse, ease - 0.20, learning step 0, majd good -> interval 1 (LEARNING_STEPS=1)', () => {
+  it('again: lapse, ease - 0.20, learning step 0, then good -> interval 1 (LEARNING_STEPS=1)', () => {
     const lapsed = sm2Review(reviewCard({ ease: 2.5, lapses: 0 }), 'again', TODAY);
     expect(lapsed.state).toBe('learning');
     expect(lapsed.step).toBe(0);
@@ -93,24 +93,24 @@ describe('sm2Review, review állapot', () => {
     expect(g1.due).toBe(TOMORROW);
   });
 
-  it('ease floor 1.3, ismételt again sem megy alá', () => {
+  it('ease floor 1.3, repeated again does not go below it either', () => {
     let card = reviewCard({ ease: 1.4 });
     card = sm2Review(card, 'again', TODAY);
     expect(card.ease).toBeCloseTo(1.3);
-    // relearning -> graduál vissza review-ba (egy "good", LEARNING_STEPS=1), ismét again
+    // relearning -> graduates back to review (a single "good", LEARNING_STEPS=1), then "again" once more
     card = sm2Review(card, 'good', TODAY);
     expect(card.state).toBe('review');
     card = sm2Review(card, 'again', TODAY);
     expect(card.ease).toBeCloseTo(1.3);
   });
 
-  it('interval floor: min interval + 1 alacsony ease-nél is', () => {
+  it('interval floor: min interval + 1 even at a low ease', () => {
     const next = sm2Review(reviewCard({ interval: 5, ease: 1.3 }), 'good', TODAY);
-    // round(5 * 1.3) = round(6.5) = 7 (Math.round felkerekít .5-nél), ami már > interval+1
+    // round(5 * 1.3) = round(6.5) = 7 (Math.round rounds up at .5), which is already > interval+1
     expect(next.interval).toBeGreaterThanOrEqual(6);
   });
 
-  it('reps mindig +1, lastReview = today', () => {
+  it('reps always +1, lastReview = today', () => {
     const next = sm2Review(reviewCard({ reps: 7 }), 'good', TODAY);
     expect(next.reps).toBe(8);
     expect(next.lastReview).toBe(TODAY);
@@ -118,7 +118,7 @@ describe('sm2Review, review állapot', () => {
 });
 
 describe('sm2PreviewDays', () => {
-  it('learning kártyánál 0 nap a nem-graduáló gombokra', () => {
+  it('for a learning card 0 days for the non-graduating buttons', () => {
     const c0 = sm2NewCard('b1-0005');
     const days = sm2PreviewDays(c0, TODAY);
     expect(days.again).toBe(0);
@@ -126,7 +126,7 @@ describe('sm2PreviewDays', () => {
     expect(days.easy).toBe(4);
   });
 
-  it('review kártyánál napok számában adja vissza', () => {
+  it('for a review card it returns in number of days', () => {
     const days = sm2PreviewDays(reviewCard({ interval: 10, ease: 2.5 }), TODAY);
     expect(days.good).toBe(25);
     expect(days.hard).toBe(12);
@@ -135,7 +135,7 @@ describe('sm2PreviewDays', () => {
 });
 
 describe('pickSm2Session', () => {
-  it('esedékes review az új kártyák előtt, learning benne van', () => {
+  it('due review before new cards, learning is included', () => {
     const dueReview = reviewCard({ itemId: 'r1', due: TODAY });
     const laterReview = reviewCard({ itemId: 'r2', due: addDays(TODAY, 5) });
     const learningCard: Sm2Card = { ...sm2NewCard('l1'), state: 'learning', step: 0, due: TODAY, introducedAt: TODAY };
@@ -146,10 +146,10 @@ describe('pickSm2Session', () => {
     expect(ids).toContain('l1');
     expect(ids).toContain('n1');
     expect(ids).toContain('n2');
-    expect(ids).not.toContain('r2'); // csak jövőben esedékes, nincs benne
+    expect(ids).not.toContain('r2'); // due only in the future, not in it
   });
 
-  it('newLimit tartva a mai introducedAt beszámításával', () => {
+  it("newLimit held by counting today's introducedAt", () => {
     const alreadyIntroduced: Sm2Card[] = ['a', 'b', 'c'].map(id => ({
       ...sm2NewCard(id),
       state: 'learning',
@@ -159,10 +159,10 @@ describe('pickSm2Session', () => {
     const newOrder = ['n1', 'n2', 'n3', 'n4', 'n5'];
     const session = pickSm2Session(alreadyIntroduced, newOrder, TODAY, 5);
     const newOnes = session.filter(c => c.state === 'new');
-    expect(newOnes.length).toBe(2); // 5 - 3 már bevezetett
+    expect(newOnes.length).toBe(2); // 5 - 3 already introduced
   });
 
-  it('due <= today szerint rendezi a review kártyákat növekvő sorrendbe', () => {
+  it('sorts the review cards ascending by due <= today', () => {
     const later = reviewCard({ itemId: 'r-later', due: TODAY });
     const earlier = reviewCard({ itemId: 'r-earlier', due: addDays(TODAY, -3) });
     const session = pickSm2Session([later, earlier], [], TODAY, 20);
@@ -170,11 +170,11 @@ describe('pickSm2Session', () => {
   });
 });
 
-// a "+10 új szó" gomb a newLimit paramétert emeli meg futásidőben.
-describe('pickSm2Session, newLimit határeset (FB314)', () => {
-  it('25 új tétel, 20 ma bevezetett: alap keret 0 új, newLimit 30 az 5 maradékot adja, a 20 learning a sor elején marad', () => {
+// the "+10 new words" button raises the newLimit parameter at runtime.
+describe('pickSm2Session, newLimit edge case', () => {
+  it('25 new items, 20 introduced today: base budget 0 new, newLimit 30 gives the 5 remaining, the 20 learning stay at the head of the queue', () => {
     const newOrder = Array.from({ length: 25 }, (_, i) => `n${i}`);
-    // az első 20 newOrder-tétel ma már bevezetve (learning), az utolsó 5 (n20..n24) még valódi új
+    // the first 20 newOrder items are already introduced today (learning), the last 5 (n20..n24) are still truly new
     const introduced: Sm2Card[] = newOrder.slice(0, 20).map((id) => ({
       ...sm2NewCard(id),
       state: 'learning',
@@ -190,7 +190,7 @@ describe('pickSm2Session, newLimit határeset (FB314)', () => {
     expect(atThirty.slice(0, 20).every(c => c.state === 'learning')).toBe(true);
   });
 
-  it('ha minden újként megjelölt tétel már be van vezetve, nagy newLimit sem ad új lapot', () => {
+  it('if every item marked new is already introduced, even a large newLimit gives no new card', () => {
     const newOrder = Array.from({ length: 25 }, (_, i) => `n${i}`);
     const allIntroduced: Sm2Card[] = newOrder.map((id) => ({
       ...sm2NewCard(id),
@@ -204,7 +204,7 @@ describe('pickSm2Session, newLimit határeset (FB314)', () => {
 });
 
 describe('sm2MarkKnown', () => {
-  it('new kártyát review-ra állítja, interval KNOWN_INTERVAL_DAYS, ease változatlan, known true', () => {
+  it('sets a new card to review, interval KNOWN_INTERVAL_DAYS, ease unchanged, known true', () => {
     const c0 = sm2NewCard('b1-0001');
     const known = sm2MarkKnown(c0, TODAY);
     expect(known.state).toBe('review');
@@ -216,7 +216,7 @@ describe('sm2MarkKnown', () => {
     expect(known.introducedAt).toBe(TODAY);
   });
 
-  it('review kártyánál az ease marad', () => {
+  it('for a review card the ease stays', () => {
     const c0 = reviewCard({ ease: 2.1 });
     const known = sm2MarkKnown(c0, TODAY);
     expect(known.ease).toBe(2.1);
@@ -227,7 +227,7 @@ describe('sm2MarkKnown', () => {
 });
 
 describe('addDays', () => {
-  it('napokat ad hozzá, hónap-/évváltásnál is', () => {
+  it('adds days, across month / year boundaries too', () => {
     expect(addDays('2026-09-18', 1)).toBe('2026-09-19');
     expect(addDays('2026-09-30', 1)).toBe('2026-10-01');
     expect(addDays('2026-12-31', 1)).toBe('2027-01-01');

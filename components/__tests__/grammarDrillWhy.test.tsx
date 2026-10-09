@@ -1,6 +1,5 @@
-// "Miért ez a mondat?" feladat-fajta a lecke-drillben. A
-// `kinds={['why']}` mintáját a grammarDrillMatchForm.test.tsx match/form
-// tesztjei adják (D3).
+// the "Why this sentence?" item kind in the lesson drill. The pattern for `kinds={['why']}`
+// comes from the match/form tests in grammarDrillMatchForm.test.tsx.
 import { fireEvent, render, screen, within } from '@testing-library/react-native';
 
 import GrammarDrill from '../grammar/GrammarDrill';
@@ -71,7 +70,7 @@ describe('GrammarDrill: why item', () => {
 
 // the translation gives away the answer, so it starts hidden, a
 // button reveals it, and it shows on its own once the item is answered.
-describe('GrammarDrill: why item translation (FB379)', () => {
+describe('GrammarDrill: why item translation', () => {
   it('starts hidden behind a button', () => {
     render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={jest.fn()} kinds={['why']} />);
     expect(screen.queryByText('Tanár vagyok.')).toBeNull();
@@ -91,8 +90,8 @@ describe('GrammarDrill: why item translation (FB379)', () => {
   });
 });
 
-// ha a helyes opció a szerzői sorrendben mindig az első, a drillben
-// akkor is különböző helyre kerül (seedelt keverés az item id-jából), a jó válasz továbbra is jó.
+// if the correct option is always first in the authored order, it still lands in different places
+// in the drill (seeded shuffle from the item id), and the right answer is still right.
 describe('GrammarDrill: why option order (R21)', () => {
   const withId = (id: string): LessonV2 => ({ ...lesson, items: [{ ...(lesson.items[0] as object), id } as LessonV2['items'][number]] });
 

@@ -1,5 +1,5 @@
-// a Saját mix képernyő (app/theme-mix.tsx): négy chip-sor, élő előnézet a
-// piszkozattal, a mentés (setSkinMix + setSkin('mix')) és a visszatöltés.
+// The My mix screen (app/theme-mix.tsx): four chip rows, a live preview with the
+// draft, saving (setSkinMix + setSkin('mix')) and reloading.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 const mockBack = jest.fn();
@@ -49,7 +49,7 @@ async function mount() {
 
 const flat = (style: unknown) => RN.StyleSheet.flatten(style as RN.StyleProp<RN.ViewStyle & RN.TextStyle>);
 
-describe('Saját mix képernyő (PLAN-temak 4D)', () => {
+describe('Custom mix screen', () => {
   let scheme: jest.SpyInstance;
   beforeEach(async () => {
     scheme = jest.spyOn(RN, 'useColorScheme').mockReturnValue('light');
@@ -60,7 +60,7 @@ describe('Saját mix képernyő (PLAN-temak 4D)', () => {
   });
   afterEach(() => scheme.mockRestore());
 
-  it('négy szekció; a Colors-ban a régi 4 al-paletta is, a Shape-ben összevont formák, a Decor-ban None + a díszes témák', async () => {
+  it('four sections; Colors also has the 4 old sub-palettes, Shape has merged shapes, Decor has None + the decorated themes', async () => {
     const view = await mount();
     for (const section of ['colors', 'font', 'shape', 'decor']) {
       expect(view.getByTestId(`mix-section-${section}`)).toBeTruthy();
@@ -90,7 +90,7 @@ describe('Saját mix képernyő (PLAN-temak 4D)', () => {
     view.unmount();
   });
 
-  it('az élő előnézet a piszkozat színét, betűjét és díszét rajzolja', async () => {
+  it('the live preview draws the draft color, font and decor', async () => {
     const view = await mount();
     expect(view.getByText('el carro')).toBeTruthy();
     expect(view.queryByTestId('decor-csillampony-rainbow')).toBeNull();
@@ -107,12 +107,12 @@ describe('Saját mix képernyő (PLAN-temak 4D)', () => {
     fireEvent.press(view.getByTestId('mix-decor-none'));
     await flush();
     expect(view.queryByTestId('decor-csillampony-rainbow')).toBeNull();
-    // a képernyő maga nem változott: a mentés előtt az aktív téma ugyanaz
+    // the screen itself did not change: before saving, the active theme is the same
     expect(ctx.skin).toBe('brutal');
     view.unmount();
   });
 
-  it('a mix mentése (setSkinMix + setSkin) és visszatöltése', async () => {
+  it('saving the mix (setSkinMix + setSkin) and reloading it', async () => {
     const shapeId = uniqueShapeChoices()[2];
     const view = await mount();
     fireEvent.press(view.getByTestId('mix-colors-ukiyoe'));
@@ -131,7 +131,7 @@ describe('Saját mix képernyő (PLAN-temak 4D)', () => {
     expect(await getDb().getSkinMix()).toEqual(mix);
     view.unmount();
 
-    // újranyitva a mentett mix van kijelölve
+    // on reopening, the saved mix is selected
     const again = await mount();
     expect(ctx.skin).toBe('mix');
     expect(again.getByTestId('mix-colors-ukiyoe-selected')).toBeTruthy();

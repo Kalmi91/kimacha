@@ -1,5 +1,5 @@
-// az articulos-genero lecke el / la feladata az app összes főneve. A feladat a főnév jelentését (tr) is
-// hordozza, a szó-pakli pedig megszűnt (a pakli ismét a lecke saját szavai).
+// The articulos-genero lesson's el / la exercise covers every noun in the app. The exercise also
+// carries the noun's meaning (tr), and the word deck is gone (the deck is again the lesson's own words).
 import { buildGrammarRound, grammarRoundItemKind } from '@/lib/games/grammarChoice';
 import { isArticleSetItem } from '@/lib/games/content';
 import { lessonFor, lessonKinds } from '@/lib/grammar/syllabus';
@@ -14,26 +14,26 @@ import type { LessonV2 } from '@/lib/grammar/lessonTypes';
 
 const LANGS = ['hu', 'en', 'es', 'de'] as const;
 
-describe('articleNouns (FB448)', () => {
+describe('articleNouns', () => {
   const nouns = articleNouns();
 
-  it('az app főneveinek szinte mindegyike: több száz, egyedi', () => {
+  it('nearly all nouns of the app: several hundred, unique', () => {
     expect(nouns.length).toBeGreaterThan(300);
     expect(new Set(nouns.map((n) => n.noun)).size).toBe(nouns.length);
     expect(new Set(nouns.map((n) => n.id)).size).toBe(nouns.length);
   });
 
-  it('agua -> el (a nőnemű szó is «el»-t kap), mesa -> la, többes szám kimarad', () => {
+  it('agua -> el (the feminine word also gets «el»), mesa -> la, plurals left out', () => {
     expect(nouns.find((n) => n.noun === 'agua')?.article).toBe('el');
     expect(nouns.find((n) => n.noun === 'mesa')?.article).toBe('la');
     expect(nouns.find((n) => n.noun === 'vacaciones')).toBeUndefined();
   });
 });
 
-describe('articleNounItems (FB448)', () => {
+describe('articleNounItems', () => {
   const items = articleNounItems();
 
-  it('minden tétel egy lyukas szó, el / la opcióval, a helyes index a névelőé', () => {
+  it('every item is a gap word, with el / la options, the right index is the article one', () => {
     const nouns = articleNouns();
     expect(items).toHaveLength(nouns.length);
     items.forEach((it, i) => {
@@ -45,7 +45,7 @@ describe('articleNounItems (FB448)', () => {
     expect(new Set(items.map((i) => i.id)).size).toBe(items.length);
   });
 
-  it('a why és a wrong magyarázat mind a 4 nyelven kitöltött, a rossz opcióra van wrong', () => {
+  it('the why and wrong explanations are filled in all 4 languages, wrong exists for the wrong option', () => {
     for (const it of items) {
       const wrongOpt = it.options[1 - it.correct];
       for (const lang of LANGS) {
@@ -55,8 +55,8 @@ describe('articleNounItems (FB448)', () => {
     }
   });
 
-  // a főnév jelentése a words-open-ből (hu / en / de, es-nél az angol), a válasz után látszik.
-  it('minden tételnek van jelentése (tr) mind a 4 nyelven, az angol a words-open en mezője', () => {
+  // the noun's meaning from words-open (hu / en / de, English for es), shown after the answer.
+  it('every item has a meaning (tr) in all 4 languages, the English one is the en field of words-open', () => {
     for (const it of items) {
       for (const lang of LANGS) expect(it.tr?.[lang]?.trim()).toBeTruthy();
     }
@@ -65,24 +65,24 @@ describe('articleNounItems (FB448)', () => {
     expect(agua.tr?.es).toBe('water');
   });
 
-  it('az agua magyarázata kimondja a kivételt', () => {
+  it('the explanation of agua states the exception', () => {
     const agua = items.find((i) => i.sentence === '___ agua')!;
     expect(agua.why.en).toMatch(/feminine/);
     expect(agua.options[agua.correct]).toBe('el');
   });
 });
 
-describe('az articulos-genero lecke (FB448)', () => {
+describe('the articulos-genero lesson', () => {
   const lesson = lessonFor('es', ARTICLE_LESSON_ID) as LessonV2;
 
-  it('a lecke tételei közt ott a főnév-készlet, a szerzői tételek megvannak', () => {
+  it('among the lesson items is the noun set, the authored items are present', () => {
     const article = lesson.items.filter((i) => isArticleSetItem(i as never));
     expect(article.length).toBe(articleNouns().length);
     expect(lesson.items.length).toBeGreaterThan(article.length + 20);
     expect(lessonKinds('es', ARTICLE_LESSON_ID)).toContain('article');
   });
 
-  it('egy futás pontosan ARTICLE_ROUND_SIZE főnevet ad, seedelt és változó mintával', () => {
+  it('one run gives exactly ARTICLE_ROUND_SIZE nouns, with a seeded and a varying sample', () => {
     const count = (seed: number) =>
       buildGrammarRound(lesson, seed).filter((r) => grammarRoundItemKind(r) === 'article').map((r) => (r.item as { id: string }).id);
     const a = count(1);
@@ -91,13 +91,13 @@ describe('az articulos-genero lecke (FB448)', () => {
     expect(count(2)).not.toEqual(a);
   });
 
-  it('más leckét nem érint: a sustantivo-numero el / la készlete teljes marad', () => {
+  it('it does not touch another lesson: the el / la set of sustantivo-numero stays complete', () => {
     const sn = lessonFor('es', 'sustantivo-numero') as LessonV2;
     const round = buildGrammarRound(sn, 1).filter((r) => grammarRoundItemKind(r) === 'article');
     expect(round).toHaveLength(sn.items.filter((i) => isArticleSetItem(i as never)).length);
   });
 
-  it('FB493: nincs főnév-pakli, a lecke paklija a lecke saját szavai (küszöb alatt), és nincs tábla-pakli sem', () => {
+  it("no noun deck, the lesson deck is the lesson's own words (below the threshold), and no table deck either", () => {
     const cards = wordCellsForLesson(lesson, 'es');
     expect(cards.length).toBeLessThan(WORD_DECK_MIN_CARDS);
     expect(cards.some((c) => c.id.startsWith('noun::'))).toBe(false);
