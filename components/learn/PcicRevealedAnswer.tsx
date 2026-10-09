@@ -104,7 +104,7 @@ export default function PcicRevealedAnswer({
         )}
         <View style={styles.frontRow}>
           <Text testID="pcic-correct-answer" variant="word" style={[styles.correctAnswer, { color: answerColor }]}>{grade.best}</Text>
-          <Pressable onPress={() => speak(grade.best, speechLang(target))} style={styles.speakBtn}>
+          <Pressable accessibilityRole="button" accessibilityLabel={t().a11y.speak} onPress={() => speak(grade.best, speechLang(target))} style={styles.speakBtn}>
             <Text style={styles.speakIcon}>🔊</Text>
             <SkinSpeakLabel />
           </Pressable>
@@ -112,7 +112,7 @@ export default function PcicRevealedAnswer({
         {showAllAccepted && alsoAlternatives.map((alt, i) => (
           <View key={alt} style={styles.frontRow}>
             <Text testID={`pcic-correct-answer-${i + 2}`} variant="word" style={[styles.correctAnswer, { color: answerColor }]}>{alt}</Text>
-            <Pressable onPress={() => speak(alt, speechLang(target))} style={styles.speakBtn}>
+            <Pressable accessibilityRole="button" accessibilityLabel={t().a11y.speak} onPress={() => speak(alt, speechLang(target))} style={styles.speakBtn}>
               <Text style={styles.speakIcon}>🔊</Text>
               <SkinSpeakLabel />
             </Pressable>
@@ -141,7 +141,7 @@ export default function PcicRevealedAnswer({
           <>
             <View style={[styles.frontRow, styles.exampleRow]}>
               <Text style={[styles.exampleEs, { color: colors.text }]}>{example}</Text>
-              <Pressable onPress={() => speak(example, speechLang(target))} style={styles.speakBtn}>
+              <Pressable accessibilityRole="button" accessibilityLabel={t().a11y.speak} onPress={() => speak(example, speechLang(target))} style={styles.speakBtn}>
                 <Text style={styles.speakIcon}>🔊</Text>
                 <SkinSpeakLabel />
               </Pressable>

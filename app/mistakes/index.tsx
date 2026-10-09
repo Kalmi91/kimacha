@@ -62,7 +62,7 @@ export default function MistakesReportScreen() {
           <BrutalBackButton testID="mistakes-back" onPress={() => router.back()} />
         </View>
       ) : (
-      <Pressable onPress={() => router.back()} hitSlop={12}>
+      <Pressable accessibilityRole="button" accessibilityLabel={s.a11y.back} onPress={() => router.back()} hitSlop={12}>
         <Text style={[styles.back, { color: colors.text }]}>←</Text>
       </Pressable>
       )}

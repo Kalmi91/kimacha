@@ -554,7 +554,7 @@ function WhyDrillItem({
                 item.es
               )}
             </Text>
-            <Pressable onPress={() => speak(item.es, speechLang(learnedLang))} hitSlop={10}>
+            <Pressable accessibilityRole="button" accessibilityLabel={t().a11y.speak} onPress={() => speak(item.es, speechLang(learnedLang))} hitSlop={10}>
               <Text style={styles.speak}>🔊</Text>
             </Pressable>
           </View>
@@ -634,7 +634,7 @@ function WhyDrillItem({
               item.es
             )}
           </Text>
-          <Pressable onPress={() => speak(item.es, speechLang(learnedLang))} hitSlop={10}>
+          <Pressable accessibilityRole="button" accessibilityLabel={t().a11y.speak} onPress={() => speak(item.es, speechLang(learnedLang))} hitSlop={10}>
             <Text style={styles.speak}>🔊</Text>
           </Pressable>
         </View>
@@ -1023,7 +1023,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
     <View style={styles.brutalHead}>
       <View style={styles.brutalHeadRow}>
         {onClose ? (
-          <BrutalBox testID="grammar-back" offset={2} boxStyle={styles.brutalClose} onPress={onClose}>
+          <BrutalBox testID="grammar-back" accessibilityLabel={s.a11y.close} offset={2} boxStyle={styles.brutalClose} onPress={onClose}>
             <Text style={[styles.brutalCloseText, { color: g.ink }]}>✕</Text>
           </BrutalBox>
         ) : null}

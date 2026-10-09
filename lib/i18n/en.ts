@@ -50,6 +50,16 @@ export default {
     stats: 'Stats',
     pcic: 'Learn',
   },
+  // accessibility labels (screen readers) of the controls that show only an icon or a symbol.
+  a11y: {
+    back: 'Back',
+    close: 'Close',
+    speak: 'Play audio',
+    stopSpeaking: 'Stop audio',
+    statusBarTint: 'Change the color of the top strip',
+    increase: (what: string): string => `Increase ${what.toLowerCase()}`,
+    decrease: (what: string): string => `Decrease ${what.toLowerCase()}`,
+  },
   // Play cut: the Game/Talk tabs were removed, this
   // namespace keeps only the feedback and mark-item labels of components/grammar/GrammarDrill.tsx
   // (the hub/confusables/myth/… keys went).

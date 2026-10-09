@@ -7,6 +7,7 @@ import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { Card } from '@/components/grammar/Brutal';
 import { speak } from '@/lib/speech';
+import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
 import type { ExamplePair, Lang4, LessonBlock } from '@/lib/grammar/lessonTypes';
 import { isConjugationTable, personGloss, splitStemEnding, verbClassOf, verbColumnColor } from '@/lib/grammar/tableShape';
@@ -41,7 +42,7 @@ function ExampleRow({ ex, contentLang, learnedLang, colors }: {
     <View style={styles.exampleBlock}>
       <View style={styles.exampleRow}>
         <Text style={[styles.exampleEs, { color: colors.text }]}>{ex.es}</Text>
-        <Text testID="lessonbody-speak" onPress={() => speak(ex.es, speechLang(learnedLang))} style={styles.speak}>
+        <Text testID="lessonbody-speak" accessibilityRole="button" accessibilityLabel={t().a11y.speak} onPress={() => speak(ex.es, speechLang(learnedLang))} style={styles.speak}>
           🔊
         </Text>
       </View>
