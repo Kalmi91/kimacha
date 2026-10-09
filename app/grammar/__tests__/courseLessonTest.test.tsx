@@ -13,7 +13,6 @@ jest.mock('expo-router', () => ({
   usePathname: () => '/grammar',
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
   },
 }));
