@@ -32,9 +32,9 @@ describe('strictAnswerMatch', () => {
   });
 });
 
-// User feedback: "most spanyolba szeretném ha mostantól kezdve az
-// ékezetek is hibák lennének, pontosan akarom leírni ... de ezt egy ilyen ki be
-// kapcsolható dolognak akarom". Only the accents get stricter, case and
+// User feedback: "for Spanish I want accents to count as mistakes from now
+// on, I want to write them exactly ... but as something I can switch on and
+// off". Only the accents get stricter, case and
 // punctuation stay forgiven either way.
 describe('strictAnswerMatch with strict accents (FB132)', () => {
   it('fails a missing accent that the default grader forgives', () => {
@@ -60,8 +60,8 @@ describe('strictAnswerMatch with strict accents (FB132)', () => {
   });
 });
 
-// User feedback (easy:"The engine makes a lot of noise."): "nem hace
-// kellett volna?? ide szerintem rosszat raktam be és elfogadta". Tap-to-order has
+// User feedback (easy:"The engine makes a lot of noise."): "shouldn't it have
+// been hace?? I think I put the wrong one in here and it accepted it". Tap-to-order has
 // no typing, so the typing cards' 2-character tolerance must not apply here.
 describe('sentenceBuildMatch (FB137)', () => {
   const target = ['El', 'motor', 'hace', 'mucho', 'ruido.'];
@@ -164,7 +164,7 @@ describe('strictAnswerMatch, German spellings', () => {
   });
 });
 
-// két jelentésű kártyán mindkét ág helyes válasz.
+// On a card with two meanings, both sides are a correct answer.
 describe('alternative meanings', () => {
   it('accepts either side of a " / " gloss', () => {
     expect(strictAnswerMatch('padló', 'padló / emelet')).toBe(true);
@@ -206,12 +206,12 @@ describe('eitherArticle (PROMPT-POLICY 5, FB285)', () => {
   });
 });
 
-// indefinido-10-verbos: a lecke saját szövege szerint Mexikóban a
-// vosotros alakot sosem használjuk, mindig ustedes van helyette, de a
-// vosotros-itemek `accept` listája eddig csak a vosotros alakot fogadta el;
-// egy ustedes-t begépelő tanuló jó válasza pirosra ment. A GrammarDrill
-// `check()`-je (components/grammar/GrammarDrill.tsx) pontosan így vizsgál
-// egy transform itemet: `[item.answer, ...(item.accept ?? [])]` bármelyikére.
+// indefinido-10-verbos: according to the lesson's own text, in Mexico the
+// vosotros form is never used and ustedes always replaces it, but the `accept`
+// list of the vosotros items used to accept only the vosotros form;
+// a learner who typed the ustedes form got a correct answer marked red. The
+// GrammarDrill `check()` (components/grammar/GrammarDrill.tsx) checks
+// a transform item in exactly this way: against any of `[item.answer, ...(item.accept ?? [])]`.
 describe('indefinido-10-verbos transform accept lists (FB356)', () => {
   it('accepts the Mexican ustedes form alongside the taught vosotros form', () => {
     const candidates = ['Mirasteis la película tarde.', 'Vosotros mirasteis la película tarde.', 'Ustedes miraron la película tarde.'];

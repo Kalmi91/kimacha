@@ -1,6 +1,6 @@
-// a brutalista paletta a téma-kontextuson át képződik le a Colors
-// kulcsaira; az alapérték brand, a választás tartós (db), a mód (papír / tinta)
-// az Auto / Light / Dark beállítást követi, a classic a mai színeket adja.
+// The brutalist palette is mapped onto the Colors keys through the theme context;
+// the default is brand, the choice is persistent (db), the mode (paper / ink)
+// follows the Auto / Light / Dark setting, and classic gives today's colors.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -136,7 +136,7 @@ describe('BrutalBox / Sticker / SegmentBar (NY20)', () => {
       .UNSAFE_getAllByType(View)
       .map((v) => RN.StyleSheet.flatten(v.props.style))
       .filter((st) => st?.position === 'absolute');
-    // csak a tömör doboz kap hátsó árnyék-View-t, a zárt (dashed) nem
+    // only the solid box gets a back-shadow View, the closed (dashed) one does not
     expect(backs).toHaveLength(1);
     expect(backs[0]).toMatchObject({ left: 3, top: 3, right: -3, bottom: -3 });
     const closed = screen.getByTestId('closed');

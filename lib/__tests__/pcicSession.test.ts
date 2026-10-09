@@ -1,4 +1,4 @@
-// a session-sor léptetése értékelés után és visszavonáskor.
+// stepping the session queue after grading and on undo.
 
 import {
   countDoneToday,
@@ -39,7 +39,7 @@ function reviewCard(overrides: Partial<Sm2Card> = {}): Sm2Card {
 describe('requeueAfterGrade', () => {
   it('learning kártya (due === today) a sor végére kerül', () => {
     const before = sm2NewCard('b1-0002');
-    const graded = sm2Review(before, 'hard', TODAY); // learning, due today (LEARNING_STEPS=1: "good" már graduálna)
+    const graded = sm2Review(before, 'hard', TODAY); // learning, due today (LEARNING_STEPS=1: "good" would already graduate)
     const other = reviewCard({ itemId: 'b1-0003' });
     const queue = [before, other];
 
@@ -62,7 +62,7 @@ describe('requeueAfterGrade', () => {
 
   it('FB312: egyelemű sor, learning lap (due ma) a grade után ugyanazt az egy lapot tartalmazza', () => {
     const before = sm2NewCard('b1-0010');
-    const graded = sm2Review(before, 'hard', TODAY); // learning, due today, egyedüli lap a sorban (LEARNING_STEPS=1: "good" már graduálna)
+    const graded = sm2Review(before, 'hard', TODAY); // learning, due today, the only card in the queue (LEARNING_STEPS=1: "good" would already graduate)
     const queue = [before];
 
     const next = requeueAfterGrade(queue, graded, TODAY);
@@ -75,16 +75,16 @@ describe('requeueAfterGrade', () => {
     const missed = sm2Review(sm2NewCard('b1-0020'), 'again', TODAY);
     const other1 = reviewCard({ itemId: 'b1-0021' });
     const other2 = reviewCard({ itemId: 'b1-0022' });
-    // "Didn't know" 60 s-os időzítővel, aztán 61 s múlva egy másik kártya értékelése előhozza.
+    // "Didn't know" with a 60 s timer, then 61 s later grading another card brings it back.
     let queue = requeueAfterGrade([missed, other1, other2], missed, TODAY, 'again', now, 60);
     queue = requeueAfterGrade(queue, sm2Review(other1, 'again', TODAY), TODAY, 'again', now + 61_000, 60);
     expect(queue[0].itemId).toBe('b1-0020');
 
     const knew = sm2Review(queue[0], 'good', TODAY);
-    expect(knew.due).not.toBe(TODAY); // egy "good" graduál (LEARNING_STEPS=1), nem marad ma esedékes
+    expect(knew.due).not.toBe(TODAY); // a "good" graduates (LEARNING_STEPS=1), it does not stay due today
     const after = requeueAfterGrade(queue, knew, TODAY, 'good', now + 62_000, 60);
 
-    expect(after.some((c) => c.itemId === 'b1-0020')).toBe(false); // graduált, kikerült a mai sorból
+    expect(after.some((c) => c.itemId === 'b1-0020')).toBe(false); // graduated, dropped out of today's queue
   });
 });
 
@@ -114,8 +114,8 @@ describe('requeueAfterUndo', () => {
   });
 });
 
-// a rontott ("again") kártya N másodperc
-// múlva mindenképp visszajön, akármennyi új/esedékes szó áll a sorban.
+// a failed ("again") card definitely comes back after N seconds,
+// no matter how many new/due words are in the queue.
 describe('reorderForReturn / requeueAfterGrade (FB364, again-időzítő)', () => {
   it('(a) 20 új szó a sorban, rontás, 60 s múlva a rontott jön', () => {
     const A = sm2NewCard('a1');
@@ -123,10 +123,10 @@ describe('reorderForReturn / requeueAfterGrade (FB364, again-időzítő)', () =>
     const others = Array.from({ length: 20 }, (_, i) => sm2NewCard(`n${i}`));
     const afterGrade = requeueAfterGrade([A, ...others], gradedA, TODAY, 'again', 0, 60);
 
-    // Rögtön a rontás után (t=0) még nem esedékes, hátra kerül.
+    // Right after the failure (t=0) it is not due yet, it goes to the back.
     expect(afterGrade[0].itemId).not.toBe('a1');
 
-    // 60 s múlva a kiválasztás a 20 szó ellenére a rontottat adja.
+    // After 60 s the selection returns the failed card despite the 20 words.
     const reordered = reorderForReturn(afterGrade, 60_000);
     expect(reordered[0].itemId).toBe('a1');
   });
@@ -149,7 +149,7 @@ describe('reorderForReturn / requeueAfterGrade (FB364, again-időzítő)', () =>
     const gradedA = sm2Review(A, 'again', TODAY);
     const afterGrade = requeueAfterGrade([A], gradedA, TODAY, 'again', 0, 60);
 
-    // t=0, a 60 s-os returnAt még nincs lejárva, de nincs más kártya a sorban.
+    // t=0, the 60 s returnAt has not expired yet, but there is no other card in the queue.
     expect(afterGrade[0].itemId).toBe('a1');
     expect(afterGrade[0].returnAt).toBe(60_000);
   });
@@ -157,14 +157,14 @@ describe('reorderForReturn / requeueAfterGrade (FB364, again-időzítő)', () =>
   it('(d) két rontás: a régebbi jön előbb', () => {
     const older: QueuedSm2Card = { ...sm2NewCard('old'), returnAt: 1000 };
     const newer: QueuedSm2Card = { ...sm2NewCard('new'), returnAt: 2000 };
-    // "newer" ül elöl a sorban, de "older" returnAt-ja korábbi.
+    // "newer" sits at the front of the queue, but the returnAt of "older" is earlier.
     const reordered = reorderForReturn([newer, older], 5000);
     expect(reordered[0].itemId).toBe('old');
   });
 
   it('"Knew it" (good) egy lépésben graduál (LEARNING_STEPS=1): kikerül a sorból, nincs időzítő', () => {
     const A = sm2NewCard('a1');
-    const gradedA = sm2Review(A, 'good', TODAY); // egy "good" graduál, review, due holnap
+    const gradedA = sm2Review(A, 'good', TODAY); // a "good" graduates, review, due tomorrow
     expect(gradedA.state).toBe('review');
     expect(gradedA.due).not.toBe(TODAY);
     const other = sm2NewCard('b1');
@@ -188,15 +188,15 @@ describe('requeueAfterUndo (FB364, nincs árva időzítő)', () => {
   });
 });
 
-// a napi haladás perzisztált `lastReview`-ból számolt, tab-váltás vagy
-// app-újraindítás után is a valós napi számot kell adnia.
+// the daily progress is computed from the persisted `lastReview` and must give the real daily number
+// even after a tab switch or an app restart.
 describe('countDoneToday', () => {
   it('counts only cards reviewed today', () => {
     const cards = [
       reviewCard({ itemId: 'b1-0011', lastReview: TODAY }),
       reviewCard({ itemId: 'b1-0012', lastReview: TODAY }),
       reviewCard({ itemId: 'b1-0013', lastReview: addDays(TODAY, -1) }),
-      sm2NewCard('b1-0014'), // lastReview: null, még nem értékelt
+      sm2NewCard('b1-0014'), // lastReview: null, not graded yet
     ];
 
     expect(countDoneToday(cards, TODAY)).toBe(2);
@@ -204,7 +204,7 @@ describe('countDoneToday', () => {
 
   it('stays correct after a remount (fresh array, same persisted data)', () => {
     const persisted = [reviewCard({ itemId: 'b1-0015', lastReview: TODAY })];
-    // Egy "remount" csak újra beolvassa ugyanazt az adatot, új tömbként.
+    // A "remount" just reads the same data again, as a new array.
     const reloaded = persisted.map((c) => ({ ...c }));
 
     expect(countDoneToday(reloaded, TODAY)).toBe(1);
@@ -272,9 +272,9 @@ describe('nextPcicNewBonus + pcicNewBudget (FB385/386)', () => {
   });
 });
 
-// a fejléc "ma: N szó · M mondat / keret"
-// felbontása - a KIND szerinti szétválasztás, amit a "miért csak 6 vagy 8 jött 10
-// helyett" panasz valójában hiányolt (a maradék a másik fajtára ment).
+// the breakdown of the header "today: N words · M sentences / limit"
+// - the split by KIND, which the complaint "why did only 6 or 8 come instead of 10"
+// actually lacked (the rest went to the other kind).
 function kindMap(map: Record<string, PcicKind>): (itemId: string) => PcicKind | undefined {
   return (itemId) => map[itemId];
 }
@@ -296,7 +296,7 @@ describe('countIntroducedTodayByKind (FB387/395)', () => {
     const cards = [
       reviewCard({ itemId: 'p1', introducedAt: TODAY }),
       reviewCard({ itemId: 'pat1', introducedAt: TODAY }),
-      reviewCard({ itemId: 'chain-2', introducedAt: TODAY }), // lánc-tag, de kind: sentence
+      reviewCard({ itemId: 'chain-2', introducedAt: TODAY }), // chain member, but kind: sentence
     ];
     const kindOf = kindMap({ p1: 'phrase', pat1: 'word', 'chain-2': 'sentence' });
     expect(countIntroducedTodayByKind(cards, TODAY, kindOf)).toEqual({ words: 2, sentences: 1 });
@@ -319,8 +319,8 @@ describe('countIntroducedTodayByKind (FB387/395)', () => {
 
 describe('pickStrongerSm2Card (FB384, 7b)', () => {
   it('több sikeres ismétlés (reps - lapses) nyer', () => {
-    const strong = reviewCard({ itemId: 'x', reps: 10, lapses: 1 }); // 9 sikeres
-    const weak = reviewCard({ itemId: 'y', reps: 5, lapses: 0 }); // 5 sikeres
+    const strong = reviewCard({ itemId: 'x', reps: 10, lapses: 1 }); // 9 successful
+    const weak = reviewCard({ itemId: 'y', reps: 5, lapses: 0 }); // 5 successful
     expect(pickStrongerSm2Card(strong, weak)).toBe(strong);
     expect(pickStrongerSm2Card(weak, strong)).toBe(strong);
   });
@@ -349,7 +349,7 @@ describe('thinSentences (PLAN-fb0924 8. lépés, FB394/396)', () => {
 
   it('egy második mondat kimarad, ha a kettő közt kevesebb, mint minGap nem-mondat kártya van', () => {
     const order = ['s1', 'w1', 's2', 'w2', 'w3'];
-    // s1 -> s2 közt csak 1 szó van, minGap 2 -> s2 kimarad ebből a hívásból.
+    // between s1 -> s2 there is only 1 word, minGap 2 -> s2 is left out of this call.
     expect(thinSentences(order, kind, ownGroup, 2)).toEqual(['s1', 'w1', 'w2', 'w3']);
   });
 
@@ -360,7 +360,7 @@ describe('thinSentences (PLAN-fb0924 8. lépés, FB394/396)', () => {
 
   it('egy csoport (groupOf) tagjai egymás után, rés nélkül is bemehetnek - EGY egységnek számítanak', () => {
     const order = ['w1', 's1', 's2', 'w2'];
-    const sameGroup = () => 'chain-1'; // s1 és s2 ugyanabba a láncba tartozik
+    const sameGroup = () => 'chain-1'; // s1 and s2 belong to the same chain
     expect(thinSentences(order, kind, sameGroup, 9)).toEqual(['w1', 's1', 's2', 'w2']);
   });
 
@@ -370,13 +370,13 @@ describe('thinSentences (PLAN-fb0924 8. lépés, FB394/396)', () => {
   });
 });
 
-// a haladás-sáv a MAI adag hátralévőjét mutatja.
+// the progress bar shows what is left of TODAY's batch.
 import { countFinishedToday, dayProgressPercent, finishedInBatch } from '../pcicSession';
 
-// a "+N új szó" bővítés után a csík az új adagot méri (a bővítéskor kész kártyák számához képest).
+// after the "+N new words" extension the bar measures the new batch (relative to the number of cards done at the time of the extension).
 describe('finishedInBatch (FB456)', () => {
   it('+15 után az első új kártyánál 0%, az utolsónál 100%', () => {
-    const base = 10; // a bővítéskor 10 kártya volt kész ma
+    const base = 10; // at the time of the extension 10 cards were done today
     expect(dayProgressPercent(finishedInBatch(10, base), 15)).toBe(0);
     expect(dayProgressPercent(finishedInBatch(17, base), 8)).toBeGreaterThan(dayProgressPercent(finishedInBatch(16, base), 9));
     expect(dayProgressPercent(finishedInBatch(25, base), 0)).toBe(100);
@@ -404,7 +404,7 @@ describe('dayProgressPercent (FB430)', () => {
 
   it('"+10 új" bővítés: a sor nő, az új teljes adaghoz mér (a sáv visszább lép, nem nullázódik)', () => {
     const before = dayProgressPercent(29, 1);
-    const after = dayProgressPercent(29, 11); // 10 új kártya került a sorba
+    const after = dayProgressPercent(29, 11); // 10 new cards were added to the queue
     expect(before).toBe(100);
     expect(after).toBeCloseTo((29 / 39) * 100);
     expect(after).toBeGreaterThan(0);
@@ -421,15 +421,15 @@ describe('countFinishedToday (FB430)', () => {
   const card = (itemId: string, lastReview: string | null) => ({ ...sm2NewCard(itemId), lastReview });
 
   it('csak a ma értékelt ÉS már nem sorban álló kártyák számítanak késznek', () => {
-    const a = card('a', '2026-10-01'); // kész
-    const b = card('b', '2026-10-01'); // "again": ma értékelt, de a sorban maradt
-    const c = card('c', '2026-09-30'); // tegnapi
-    const d = card('d', null); // új
+    const a = card('a', '2026-10-01'); // done
+    const b = card('b', '2026-10-01'); // "again": graded today, but stayed in the queue
+    const c = card('c', '2026-09-30'); // yesterday's
+    const d = card('d', null); // new
     expect(countFinishedToday([a, b, c, d], [b, d], '2026-10-01')).toBe(1);
   });
 });
 
-// User feedback ("new 42?"): a napi keret NAPI; a más szinten vett "+10"-ek nem jöhetnek vissza új szóként a másik szinten.
+// User feedback ("new 42?"): the daily limit is DAILY; "+10"s taken at another level must not come back as new words at the other level.
 describe('pcicSessionNewLimit (FB452)', () => {
   const introduced = (prefix: string, n: number) =>
     Array.from({ length: n }, (_, i) => sm2Review(sm2NewCard(`${prefix}-${i}`), 'good', TODAY));
@@ -439,11 +439,11 @@ describe('pcicSessionNewLimit (FB452)', () => {
 
   it('reprodukálja az esetet: A1-en 40 szó bevezetve (limit 10, bónusz 32), az A2-n nem jön 42 új szó', () => {
     const a1 = introduced('a1', 40);
-    const old = pcicNewBudget({ limit: 10, bonus: 32, introducedToday: 0 }); // a régi: a szint 0 szava mellett a teljes keret
+    const old = pcicNewBudget({ limit: 10, bonus: 32, introducedToday: 0 }); // the old behavior: with the level's 0 words, the full limit
     expect(newCount([], fresh('a2', 100), old)).toBe(42);
 
     const limit = pcicSessionNewLimit({ limit: 10, bonus: 32, introducedAllLevels: a1.length, introducedThisLevel: 0 });
-    expect(newCount([], fresh('a2', 100), limit)).toBe(2); // 10 + 32 - 40: a napi keretből ennyi maradt
+    expect(newCount([], fresh('a2', 100), limit)).toBe(2); // 10 + 32 - 40: this much of the daily limit was left
   });
 
   it('egy szintnél (all === this) pontosan a régi pcicNewBudget', () => {
@@ -456,13 +456,13 @@ describe('pcicSessionNewLimit (FB452)', () => {
 
   it('a nézet szintjén bevezetettet a pickSm2Session vonja le, a másik szint szavait a keret', () => {
     const thisLevel = introduced('a2', 3);
-    // más szinten ma 4 szó volt bevezetve; limit 10, bónusz 0: összesen 7 bevezetve, 3 új maradt
+    // 4 words were introduced today at another level; limit 10, bonus 0: 7 introduced in total, 3 new left
     const limit = pcicSessionNewLimit({ limit: 10, bonus: 0, introducedAllLevels: 7, introducedThisLevel: 3 });
     expect(newCount(thisLevel, fresh('a2', 100), limit)).toBe(3);
   });
 
   it('a "+10" a másik szintről örökölt bónusszal: a megmaradt 2 + az új 10 szó', () => {
-    // A1-en 40 bevezetve, bónusz 32; A2-n "+10": a bónusz 42 lesz, a keret 52 - 40 = 12 új szó (2 megmaradt + 10)
+    // On A1 40 introduced, bonus 32; on A2 "+10": the bonus becomes 42, the limit is 52 - 40 = 12 new words (2 left over + 10)
     const next = nextPcicNewBonus({ limit: 10, bonus: 32, introducedToday: 40 });
     expect(next).toBe(42);
     const limit = pcicSessionNewLimit({ limit: 10, bonus: next, introducedAllLevels: 40, introducedThisLevel: 0 });
@@ -470,7 +470,7 @@ describe('pcicSessionNewLimit (FB452)', () => {
   });
 });
 
-// User feedback ("van még 40 szó, miért nem dobja fel?"): a "Practice words" gomb a hiányzóból ad, ha a keret elfogyott.
+// User feedback ("there are still 40 words, why doesn't it bring them up?"): the "Practice words" button gives from the missing words when the limit has run out.
 describe('practiceTopUpStep (FB499)', () => {
   it('kimerült keret: az összes hiányzó szót adja egy koppintásra', () => {
     expect(practiceTopUpStep({ limit: 10, bonus: 0, introducedAllLevels: 10, missing: 40 })).toBe(40);

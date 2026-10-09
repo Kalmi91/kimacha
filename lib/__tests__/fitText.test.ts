@@ -1,6 +1,6 @@
 import { fitFontSize, FIT_STEPS } from '../fitText';
 
-// 360 dp-s telefon, 24 + 24 dp kártya-padding és a 🔊 gomb után kb. 226 dp jut a szóra.
+// On a 360 dp phone, after 24 + 24 dp of card padding and the 🔊 button, about 226 dp is left for the word.
 const W = 226;
 
 describe('fitFontSize', () => {
@@ -9,14 +9,14 @@ describe('fitFontSize', () => {
   });
 
   it('a hosszú, törhetetlen szó kisebb lépcsőt kap, mint amennyire kilógna', () => {
-    // "(justification)" 15 karakter, 32-es betűn ~300 dp, nem fér 226-ba
+    // "(justification)" is 15 characters, ~300 dp at font size 32, does not fit into 226
     const size = fitFontSize('reason (justification)', { base: 32, width: W });
     expect(size).toBeLessThan(32);
     expect(size * 0.62 * '(justification)'.length).toBeLessThanOrEqual(W);
   });
 
   it('több szóból álló mondat törik, nem zsugorodik feleslegesen', () => {
-    // "they are going to arrive" két-három sorba törhet 32-esen is
+    // "they are going to arrive" may break into two or three lines even at 32
     expect(fitFontSize('they are going to arrive', { base: 32, width: W, maxLines: 3 })).toBe(32);
   });
 
@@ -38,7 +38,7 @@ describe('fitFontSize', () => {
   });
 
   it('per-jelnél és kötőjelnél is törik', () => {
-    // "am / is / are" szóközök nélküli írásban is szétesik a per-jelnél
+    // "am / is / are" breaks apart at the slash even when written without spaces
     expect(fitFontSize('am/is/are/was/were/been', { base: 22, width: 180, maxLines: 3 })).toBe(22);
   });
 

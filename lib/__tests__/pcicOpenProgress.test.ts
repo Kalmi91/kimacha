@@ -1,7 +1,7 @@
-// az en→es pakli a data/words-open-re váltott
-// (o<order> id-tér). A régi w<id> SRS-sorok a pcic_cards táblában maradnak
-// (a haladás nem vész el), csak a betöltött korpuszban nincsenek, ezért egyik
-// szint nézetében sem jelennek meg. Memory (web) DB, mint lib/__tests__/pcicDb.test.ts.
+// The en→es deck switched to data/words-open
+// (o<order> id space). The old w<id> SRS rows stay in the pcic_cards table
+// (progress is not lost), they are just not in the loaded corpus, so they do not
+// appear in any level's view. Memory (web) DB, like lib/__tests__/pcicDb.test.ts.
 
 import { findPcicItem } from '@/data/pcic';
 import { getDb } from '../database.web';

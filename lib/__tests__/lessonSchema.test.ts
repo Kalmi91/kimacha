@@ -1,11 +1,11 @@
-// MINDEN schema 2 lecke szerkezeti ellenőrzése (a pilot
-// ser-estar után a core+ sáv leckéi is ezen a sémán vannak). Nem a tartalom
-// pedagógiai helyességét méri (az emberi felülvizsgálat dolga), hanem hogy a JSON
-// tartja-e a spec kötelező szerkezeti ígéreteit: van tábla, ahol alakok vannak,
-// minden list/usage pont legalább 2 példával, a form tételek a táblákból jönnek
-// (több igés táblánál az ige oszlopából), a match egyedi párokból áll, a speak
-// kiegyensúlyozott «»-jelöléssel, és a wrong-magyarázatok valódi mondatok, nem
-// egysoros "rossz".
+// Structural check of EVERY schema 2 lesson (after the ser-estar
+// pilot the lessons of the core+ band use this schema too). It does not measure the
+// pedagogical correctness of the content (that is for human review), only whether the JSON
+// keeps the spec's mandatory structural promises: there is a table wherever there are forms,
+// every list/usage point has at least 2 examples, form items come from the tables
+// (from the verb column in tables with several verbs), match consists of unique pairs, speak
+// has balanced «» markup, and the wrong explanations are real sentences, not a
+// one-line "wrong".
 
 import fs from 'fs';
 import path from 'path';
@@ -41,8 +41,8 @@ describe('schema 2 lessons', () => {
   });
 });
 
-// a jelvény-név minden igeidőre, mind a 4
-// nyelven, hogy a TENSE_NAMES ne legyen csendben hiányos.
+// A badge name for every tense, in all 4
+// languages, so that TENSE_NAMES is not silently incomplete.
 describe('TENSE_IDS', () => {
   it('matches the copy in scripts/audit-games.mjs (the script cannot import the TS file)', () => {
     const src = fs.readFileSync(path.join(__dirname, '..', '..', 'scripts', 'audit-games.mjs'), 'utf8');
@@ -103,9 +103,9 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
       }
     };
     collect(lesson.body);
-    // a transform-lecke (pl. indefinido-10-verbos) body-ja text+table+tip,
-    // nincs list/usage/examples/contrast blokk, tehát nincs is példapár. Csak a
-    // transform itemet tartalmazó leckéken engedünk, a régi leckéken a szigor marad.
+    // the body of a transform lesson (e.g. indefinido-10-verbos) is text+table+tip,
+    // with no list/usage/examples/contrast block, hence no example pair either. We allow this only on
+    // lessons that contain a transform item; the older lessons keep the strict rule.
     if (lesson.items.some((i) => i.kind === 'transform')) return;
     expect(pairs.length).toBeGreaterThan(0);
     for (const pair of pairs) {
@@ -135,7 +135,7 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
       expect(table).toBeTruthy();
       const row = table.rows.find((r) => r[0] === item.person);
       expect(row).toBeTruthy();
-      // több igés tábla: az ige oszlopa a fejléc `es` cellájából; egy igésnél a 2.
+      // multi-verb table: the verb column comes from the header's `es` cell; for a single-verb table it is the 2nd column.
       const verbCol = table.header.findIndex((h, ci) => ci > 0 && h.es === item.verb);
       const col = verbCol > 0 ? verbCol : 1;
       expect(table.header[col].es).toBe(item.verb);
@@ -144,8 +144,8 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
   });
 
   it('has 1-2 match items with 5-6 unique es/en pairs', () => {
-    // a transform-leckén (pl. indefinido-10-verbos) nincs gap-alapú tartalom,
-    // ezért nincs match pár sem; a régi leckéken a szigor marad.
+    // a transform lesson (e.g. indefinido-10-verbos) has no gap-based content,
+    // hence no match pair either; the older lessons keep the strict rule.
     if (lesson.items.some((i) => i.kind === 'transform')) return;
     const matchItems = lesson.items.filter((i) => i.kind === 'match');
     expect(matchItems.length).toBeGreaterThanOrEqual(1);
@@ -165,7 +165,7 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
       expect(text).toBeTruthy();
       const opens = (text.match(/«/g) ?? []).length;
       const closes = (text.match(/»/g) ?? []).length;
-      // a spanyol leckék felolvasásában nincs jelölt spanyol szakasz.
+      // in the read-aloud text of the Spanish lessons there is no marked Spanish section.
       expect(opens).toBe(0);
       expect(opens).toBe(closes);
       expect(text).not.toMatch(/[0-9]/);
@@ -173,13 +173,13 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
     }
   });
 
-  // "miért ez a mondat", a 3. audit-pont szabályai, plusz:
-  // a jó opció szövege nem szerepel szó szerint a mondatban (különben a
-  // feladat elárulná magát).
+  // "why this sentence": the audit rules for these items, plus:
+  // the text of the correct option does not appear verbatim in the sentence (otherwise the
+  // task would give itself away).
   it('why items (once authored) are 6-8, each with 3 unique-hu options and a translated sentence', () => {
     const whyItems = lesson.items.filter((i) => i.kind === 'why');
-    // a tartalom leckénként, adagolva kerül be a kódot lezáró commit
-    // UTÁN (B szakasz); egy még érintetlen leckén 0 why item van, ez rendben.
+    // the content is added lesson by lesson, in batches, AFTER the commit
+    // that closes the code; a still untouched lesson has 0 why items, which is fine.
     if (whyItems.length === 0) return;
     expect(whyItems.length).toBeGreaterThanOrEqual(6);
     expect(whyItems.length).toBeLessThanOrEqual(8);
@@ -204,7 +204,7 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
       item.options.forEach((opt, i) => {
         for (const lang of LANGS) expect(opt.text[lang]).toBeTruthy();
         if (i === item.correctIndex && opt.text.es) {
-          // A jó opció (a szabály neve) ne szerepeljen szó szerint a mondatban.
+          // The correct option (the rule's name) must not appear verbatim in the sentence.
           expect(esLower).not.toContain(opt.text.es.toLowerCase());
         }
         if (i !== item.correctIndex) {
@@ -213,14 +213,14 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
         }
       });
 
-      // ha van `target`, szóhatárral szerepeljen az `es` mondatban.
+      // if there is a `target`, it must appear in the `es` sentence as a whole word.
       if (item.target) {
         expect(findWholeWord(item.es, item.target)).not.toBeNull();
       }
     }
   });
 
-  // a transform item (üres korpuszon most 0/0, utána éles).
+  // the transform items (0/0 for now on an empty corpus, live afterwards).
   it('every transform item has a real prompt/answer pair and known words', () => {
     const transformItems = lesson.items.filter((i) => i.kind === 'transform');
     for (const item of transformItems) {
@@ -233,8 +233,8 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
 
   it("every gap item's wrong explanations are real sentences in 4 languages", () => {
     const gapItems = lesson.items.filter((i): i is GrammarGapItem => i.kind === undefined) as GrammarGapItem[];
-    // a transform-leckén (pl. indefinido-10-verbos) nincs gap-alapú tartalom;
-    // a régi leckéken (nincs transform item) a szigor marad.
+    // a transform lesson (e.g. indefinido-10-verbos) has no gap-based content;
+    // the older lessons (no transform item) keep the strict rule.
     if (lesson.items.some((i) => i.kind === 'transform')) return;
     expect(gapItems.length).toBeGreaterThanOrEqual(10);
     const bareWrong = /^(wrong|rossz|falsch|incorrecto)\.?$/i;

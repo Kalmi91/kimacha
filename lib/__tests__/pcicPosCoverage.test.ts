@@ -1,9 +1,9 @@
-// Or-teszt: A1-B2 minden word/phrase
-// tetelnek van szofaja, es sentence/pattern tetelnek sose.
-// A posOf lemma-indexe a data/words-open, ezert a
-// teszt az elo pakli (data/pcic.ts, en->es irany) tetelein fut a korabbi nyers
-// PCIC-json helyett. A words-open det/interj szofaja (20 det + 6 interj, pl.
-// "este", "hola", "adiós") is chipet kap, nincs kivetel.
+// Guard test: every A1-B2 word/phrase
+// item has a part of speech, and a sentence/pattern item never does.
+// The lemma index of posOf is data/words-open, so the
+// test runs on the items of the live deck (data/pcic.ts, en->es direction) instead of the former raw
+// PCIC json. The det/interj parts of speech of words-open (20 det + 6 interj, e.g.
+// "este", "hola", "adiós") also get a chip, no exceptions.
 import { posOf } from '../pcicPos';
 import { PCIC_LEVELS, pcicItemsForLevel, setPcicTarget } from '../../data/pcic';
 import openA1 from '../../data/words-open/a1.json';
@@ -34,7 +34,7 @@ describe('posOf lefedettseg (FB361-362)', () => {
   for (const level of PCIC_LEVELS) {
     it(`${level}: minden word/phrase tetel kap szofajt`, () => {
       const wordish = pcicItemsForLevel(level).filter((i) => i.kind === 'word' || i.kind === 'phrase');
-      // `pos` nelkul, hogy a lemma-index es a szabaly fedese mulljon, ne a kartya sajat mezoje.
+      // without `pos`, so that the coverage depends on the lemma index and the rule, not on the card's own field.
       const missing = wordish
         .filter((i) => posOf({ es: i.es, kind: i.kind }) === null)
         .map((i) => i.id);

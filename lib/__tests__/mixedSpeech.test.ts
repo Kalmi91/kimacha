@@ -2,8 +2,8 @@ import { splitByMarkers } from '@/lib/mixedSpeech';
 
 const hu = { learnedLang: 'es', nativeLang: 'hu' };
 
-// a V2 `speak` mező «...»-jelölésből vágja a nyelvváltást,
-// nem korpusz-találgatásból.
+// the V2 `speak` field cuts the language switches from the «...» markup,
+// not from corpus guessing.
 describe('splitByMarkers', () => {
   it('splits balanced markers into alternating native/learned segments', () => {
     const segments = splitByMarkers('Azt mondja: «Soy profesor». Érted?', hu);
