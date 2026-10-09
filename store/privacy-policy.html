@@ -23,11 +23,11 @@
 <h1>Kimacha, Privacy Policy</h1>
 <p class="meta">App: Kimacha (<code>com.kimachaapp.kimacha.app</code>) &middot; Developer: Kálmán Fekete &middot;
 Contact: <a href="mailto:edenysza01@gmail.com">edenysza01@gmail.com</a><br>
-Last updated: 8 September 2026</p>
+Last updated: 8 October 2026</p>
 
-<p>Kimacha is a language-learning app. This policy describes exactly what data the app handles,
-where it goes, and what it is used for. There are no ads, no advertising identifiers, and no
-third-party analytics or tracking SDKs in the app.</p>
+<p>Kimacha is a language-learning app. In short: the app collects no personal data, makes no
+network requests of its own, and has no accounts, no ads, no advertising identifiers and no
+analytics or tracking SDKs. This policy describes exactly what that means.</p>
 
 <h2>1. Data stored only on your device</h2>
 <p>Everything you need to use the app stays on your phone, in a local database, and is never sent
@@ -39,108 +39,117 @@ anywhere by the app:</p>
   <li>your settings (daily new-word limit, weekly study goal, difficulty options, colour choice);</li>
   <li>daily study time in minutes and streak counters.</li>
 </ul>
-<p>Uninstalling the app deletes this data. You can also export it yourself with
-<em>Settings &rarr; Backup</em> and restore it with <em>Settings &rarr; Restore</em>.</p>
+<p>Uninstalling the app deletes this data.</p>
 
-<h2>2. Data the app sends</h2>
-<p>Two things leave the device. Both go to a Google Apps Script endpoint owned by the developer,
-which appends a row to a private Google Sheet in the developer's own Google account. The data is
-not sold, not shared with any other company, and is not used for advertising.</p>
+<h2>2. Data the app collects or shares</h2>
+<p>None. The developer receives no data from the app: there is no server, no account, no usage
+statistics and no crash reporting.</p>
 
-<h3>2.1 Anonymous usage statistics (automatic, at most once every 24 hours)</h3>
-<table>
-  <tr><th>Field</th><th>What it is</th></tr>
-  <tr><td>Random install ID</td><td>A random UUID generated on this device when the app is first
-      opened. It is not your device ID, advertising ID, phone number, email address, or name, and
-      it cannot be traced back to you by the developer.</td></tr>
-  <tr><td>Level and language pair</td><td>e.g. "A1", "en&rarr;es"</td></tr>
-  <tr><td>Learning counters</td><td>streak length, mastered word count, reviews today, accuracy
-      percentage, average response time, card-type counts</td></tr>
-  <tr><td>Five most-missed words</td><td>the vocabulary items you got wrong most often</td></tr>
-  <tr><td>First-use date, app version, timestamp</td><td>&nbsp;</td></tr>
-</table>
-<p>Purpose: to see whether the learning schedule works and which vocabulary is too hard, so the
-course content can be fixed. No account, contact details, location, contacts, photos, files,
-message content or device identifiers are collected.</p>
+<h2>3. Backup</h2>
+<p>The backup is a file that you create yourself with <em>Settings &rarr; Backup</em> and restore
+with <em>Settings &rarr; Restore</em>. The app hands the file to the Android share sheet or file
+picker, and you decide where it goes. The app does not upload it anywhere.</p>
+<p>Separately, Android may include the app's local data in your device's automatic backup to your
+Google account (Android Auto Backup). That is done by Android under your device and Google account
+settings, not by Kimacha, and you can turn it off in your device settings.</p>
 
-<h3>2.2 Feedback you choose to send</h3>
-<p>When you tap the feedback button and submit a message, the text you wrote is sent together with
-the current card, your level, your language pair, and the app version, so the report can be acted
-on. Nothing is sent unless you press Send. Please do not type personal information into the
-feedback box.</p>
+<h2>4. Feedback</h2>
+<p>When you tap the feedback button and write a message, the app opens the Android share sheet with
+your text, the card you were looking at, and the app version. Nothing is sent by the app itself:
+the message goes only to the app and destination you pick (for example your e-mail app), and only
+if you pick one. Please do not type personal information into the feedback box.</p>
 
-<h2>3. Text-to-speech</h2>
+<h2>5. Text-to-speech</h2>
 <p>Word and sentence pronunciation uses the text-to-speech engine already installed on your phone
 (for example Google Speech Services). The app passes the word to the system; whether that engine
 processes speech on the device or on its provider's servers is governed by that engine's own
 privacy policy, not by Kimacha.</p>
 
-<h2>4. Permissions</h2>
-<p>The app requests internet access only (for the two transmissions above). It does not request
-location, camera, microphone, contacts, or storage permissions. File access is used only when you
-explicitly pick a backup file to import or export.</p>
+<h2>6. Links</h2>
+<p>The credits screen and the photo credits on some cards contain links (for example to Wikimedia
+Commons and font licences). They open in your browser only when you tap them; from then on the
+website's own privacy policy applies.</p>
 
-<h2>5. Retention and deletion</h2>
-<p>Usage statistics and feedback rows are kept in the developer's private spreadsheet for as long
-as they are useful for improving the app. To have the rows belonging to your install deleted,
-email <a href="mailto:edenysza01@gmail.com">edenysza01@gmail.com</a>; you can find your random
-install ID nowhere in the UI, so please describe when you installed the app and which language pair
-you used, or simply ask for deletion of all data received in a given period. Local data on your
-phone is deleted by uninstalling the app.</p>
+<h2>7. Permissions</h2>
+<p>The app declares one Android permission: <code>android.permission.INTERNET</code>. It is added
+by a library the app bundles (the file-handling library), and the app's own code makes no network
+requests. The app does not request location, camera, microphone, contacts, notifications,
+vibration, overlay or storage permissions. Backup files are exchanged through the system share
+sheet and file picker, which need no storage permission.</p>
 
-<h2>6. Children</h2>
-<p>Kimacha is not directed at children under 13 and does not knowingly collect data from them.</p>
+<h2>8. Retention and deletion</h2>
+<p>The developer holds no data about you, so there is nothing to delete on the developer's side.
+Data on your phone is deleted by uninstalling the app. Backup files you exported and feedback
+messages you sent are in the places you chose, and you manage them there.</p>
 
-<h2>7. Changes</h2>
+<h2>9. Children</h2>
+<p>Kimacha is not directed at children under 13 and does not collect data from anyone.</p>
+
+<h2>10. Changes</h2>
 <p>If this policy changes, the updated version will be published at this same address with a new
 "last updated" date.</p>
 
 <hr>
 
 <h1>Kimacha, Adatkezelési tájékoztató (magyarul)</h1>
-<p class="meta">Utolsó frissítés: 2026. szeptember 8. &middot; Kapcsolat:
+<p class="meta">Utolsó frissítés: 2026. október 8. &middot; Kapcsolat:
 <a href="mailto:edenysza01@gmail.com">edenysza01@gmail.com</a></p>
 
-<p>A Kimacha nyelvtanuló alkalmazás. Nincs benne hirdetés, hirdetési azonosító, sem külső
-analitikai vagy nyomkövető SDK.</p>
+<p>A Kimacha nyelvtanuló alkalmazás. Röviden: az alkalmazás nem gyűjt személyes adatot, nem
+kezdeményez saját hálózati kérést, nincs benne fiók, hirdetés, hirdetési azonosító, sem
+analitikai vagy nyomkövető SDK. Az alábbiakban részletesen leírjuk, mit jelent ez.</p>
 
 <h2>1. Csak a készüléken tárolt adatok</h2>
 <p>A tanulási haladás (kártyánkénti ismétlési ütemezés, hibák, helyesírás-lista), a beállítások
 (napi új szó, heti cél, nehézségi kapcsolók), a napi tanulási percek és a sorozat mind helyben,
-a telefon adatbázisában marad. Az alkalmazás törlésével ezek is törlődnek; a
-<em>Beállítások &rarr; Mentés</em> és <em>Visszaállítás</em> funkcióval saját magad exportálhatod.</p>
+a telefon adatbázisában marad, és az alkalmazás sehová nem küldi el. Az alkalmazás
+eltávolításával ezek is törlődnek.</p>
 
-<h2>2. Amit az alkalmazás elküld</h2>
-<p>Két dolog hagyja el a készüléket, mindkettő a fejlesztő saját Google Apps Script végpontjára,
-onnan a fejlesztő privát Google-táblázatába. Az adatokat nem adjuk el, nem osztjuk meg más céggel,
-és nem használjuk hirdetésre.</p>
-<ul>
-  <li><strong>Névtelen használati statisztika</strong> (automatikusan, legfeljebb 24 óránként):
-      a telepítéskor generált véletlen azonosító (nem eszközazonosító, nem hirdetési azonosító,
-      nem e-mail, nem telefonszám), a szint és a nyelvpár, a sorozat hossza, a megtanult szavak
-      száma, a napi ismétlésszám, a pontossági arány, az átlagos válaszidő, a kártyatípusok
-      darabszáma, az öt legtöbbször elrontott szó, az első használat dátuma és az app verziója.
-      Célja: kiderüljön, működik-e az ütemezés és melyik tananyag túl nehéz.</li>
-  <li><strong>Visszajelzés, amit te küldesz be</strong>: a beírt szöveg, az aktuális kártya, a
-      szint, a nyelvpár és az app verziója. Küldés gomb nélkül semmi nem megy el. Kérjük, ne írj
-      személyes adatot a visszajelzésbe.</li>
-</ul>
+<h2>2. Amit az alkalmazás gyűjt vagy megoszt</h2>
+<p>Semmit. A fejlesztő nem kap adatot az alkalmazásból: nincs szerver, fiók, használati
+statisztika vagy összeomlás-jelentés.</p>
 
-<h2>3. Felolvasás</h2>
+<h2>3. Mentés</h2>
+<p>A mentés egy fájl, amelyet te hozol létre a <em>Beállítások &rarr; Mentés</em> funkcióval, és a
+<em>Visszaállítás</em> funkcióval töltesz vissza. Az alkalmazás a fájlt az Android megosztás-
+vagy fájlválasztó ablakának adja át, te döntöd el, hová kerül; az app sehová nem tölti fel.</p>
+<p>Ettől külön az Android a készülék automatikus mentésébe (Android Auto Backup) belefoglalhatja
+az alkalmazás helyi adatait a Google-fiókodban. Ezt az Android végzi a készülék és a Google-fiók
+beállításai szerint, nem a Kimacha, és a készülék beállításaiban kikapcsolható.</p>
+
+<h2>4. Visszajelzés</h2>
+<p>Ha a visszajelzés gombbal írsz egy üzenetet, az alkalmazás az Android megosztás-ablakát nyitja
+meg a szöveggel, az éppen látott kártyával és az app verziójával. Az alkalmazás maga nem küld el
+semmit: az üzenet csak oda megy, amit te választasz (például az e-mail-alkalmazásod), és csak ha
+választasz. Kérjük, ne írj személyes adatot a visszajelzésbe.</p>
+
+<h2>5. Felolvasás</h2>
 <p>A kiejtést a telefonon már telepített beszédszintetizátor (pl. Google Speech Services) végzi;
 annak adatkezelésére a saját tájékoztatója vonatkozik.</p>
 
-<h2>4. Engedélyek</h2>
-<p>Csak internet-hozzáférés. Nincs helyadat, kamera, mikrofon, névjegy vagy tárhely-engedély;
-fájlhoz csak akkor nyúl, ha te magad választasz mentés-fájlt.</p>
+<h2>6. Hivatkozások</h2>
+<p>A köszönetnyilvánítás képernyő és egyes kártyák fotó-forrásai hivatkozásokat tartalmaznak
+(például Wikimedia Commons, betűtípus-licencek). Ezek csak akkor nyílnak meg a böngészőben, ha
+rájuk koppintasz; onnantól az adott weboldal saját tájékoztatója érvényes.</p>
 
-<h2>5. Megőrzés és törlés</h2>
-<p>A statisztika- és visszajelzés-sorok a fejlesztő privát táblázatában maradnak, amíg az app
-fejlesztéséhez hasznosak. Törlést az <a href="mailto:edenysza01@gmail.com">edenysza01@gmail.com</a>
-címen lehet kérni. A telefonon tárolt adatok az app eltávolításával törlődnek.</p>
+<h2>7. Engedélyek</h2>
+<p>Az alkalmazás egyetlen Android-engedélyt deklarál: <code>android.permission.INTERNET</code>.
+Ezt egy beépített függvénytár (a fájlkezelő) adja hozzá, az alkalmazás saját kódja nem
+kezdeményez hálózati kérést. Nem kér helyadat, kamera, mikrofon, névjegy, értesítés, rezgés,
+rávetítés vagy tárhely-engedélyt. A mentés-fájlok a rendszer megosztás- és fájlválasztó
+ablakán át mozognak, ehhez nem kell tárhely-engedély.</p>
 
-<h2>6. Gyermekek</h2>
-<p>Az alkalmazás nem 13 év alattiaknak készült, és tudatosan nem gyűjt tőlük adatot.</p>
+<h2>8. Megőrzés és törlés</h2>
+<p>A fejlesztőnél nincs rólad adat, így a fejlesztő oldalán nincs mit törölni. A telefonon tárolt
+adatok az app eltávolításával törlődnek. Az általad exportált mentés-fájlokat és az elküldött
+visszajelzéseket ott kezeled, ahová tetted őket.</p>
+
+<h2>9. Gyermekek</h2>
+<p>Az alkalmazás nem 13 év alattiaknak készült, és senkitől nem gyűjt adatot.</p>
+
+<h2>10. Változások</h2>
+<p>Ha a tájékoztató változik, az új változat ugyanezen a címen jelenik meg új "utolsó frissítés"
+dátummal.</p>
 
 </body>
 </html>
