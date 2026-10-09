@@ -12,7 +12,7 @@ describe('languages', () => {
       expect(supportedPairs.every(([s, t]) => s !== t)).toBe(true);
     });
 
-    // a második irány, es→en, hozzáadva.
+    // the second direction, es→en, was added.
     it('lists the en-es and es-en pairs', () => {
       expect(supportedPairs).toEqual([['en', 'es'], ['es', 'en']]);
     });
@@ -32,9 +32,9 @@ describe('languages', () => {
     });
   });
 
-  // a régi (onboarding kész, pár nélküli/elavult
-  // pár) állapot en-es-nek számít, a FORCED_PAIR ezt kényszeríti ki
-  // (app/_layout.tsx needsPairCorrection); az új es-en párt NEM javítja át.
+  // the legacy state (onboarding done, no pair / an outdated
+  // pair) counts as en-es, which FORCED_PAIR enforces
+  // (app/_layout.tsx needsPairCorrection); it does NOT rewrite the new es-en pair.
   describe('needsPairCorrection + FORCED_PAIR', () => {
     it('FORCED_PAIR = en→es', () => {
       expect(FORCED_PAIR).toEqual({ source: 'en', target: 'es' });

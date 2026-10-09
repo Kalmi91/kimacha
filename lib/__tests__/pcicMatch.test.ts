@@ -16,7 +16,7 @@ describe('pcicAlternatives', () => {
     expect(pcicAlternatives('al final (de)')).toEqual(['al final de', 'al final']);
   });
 
-  // a " / " teljes alternatívákat választ el.
+  // a " / " separates complete alternatives.
   it('splits a " / " separated answer into whole alternatives', () => {
     expect(pcicAlternatives('el carro / el coche / el auto')).toEqual(['el carro', 'el coche', 'el auto']);
   });
@@ -63,8 +63,8 @@ describe('gradePcicAnswer', () => {
   });
 });
 
-// a Beállítások ékezet-szigor
-// kapcsolója a PCIC gépelésén is dönt, és ez adja a Next-gomb javaslatát.
+// The accent-strictness switch in Settings
+// also decides on PCIC typing, and it drives the suggestion of the Next button.
 describe('gradePcicAnswer strict accents (PLAN-play 10)', () => {
   it('a missing accent is near + accentOnly when strict is off (default)', () => {
     const g = gradePcicAnswer('cafe', 'café');
@@ -102,7 +102,7 @@ describe('suggestedGrade', () => {
   });
 });
 
-// a kérdő- és felkiáltójel sosem hiba.
+// question and exclamation marks are never a mistake.
 describe('gradePcicAnswer: írásjelek (FB400)', () => {
   it('a hiányzó ¿ és ? nem hiba', () => {
     expect(gradePcicAnswer('Dónde estás', '¿Dónde estás?').match).toBe('exact');
@@ -128,7 +128,7 @@ describe('gradePcicAnswer: írásjelek (FB400)', () => {
   });
 });
 
-// a névmás nélküli mondat is jó.
+// a sentence without the pronoun is correct too.
 describe('gradeSentenceAnswer: alany-névmás (FB399)', () => {
   it('a névmás nélküli válasz elfogadott, ha a helyes mondat névmással kezdődik', () => {
     expect(gradeSentenceAnswer('como en casa', 'Yo como en casa').match).toBe('exact');

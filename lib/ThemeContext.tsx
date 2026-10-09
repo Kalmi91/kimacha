@@ -16,23 +16,23 @@ import { getWebTestParams } from '@/lib/webTestHooks';
 
 type Theme = 'light' | 'dark';
 type ThemeOverride = Theme | 'system';
-// brutalista palettánál a `theme` a `<paletta>-light|dark` kulcs
-// (Colors['brand-light'] ...), így a meglévő `Colors[theme]` hívók külön
-// átírás nélkül váltanak; classic esetén a mai 'light' | 'dark'. A mód
-// (papír / tinta) az Auto / Light / Dark beállítást követi.
-// A többi téma `<téma-id>-<mód>` kulcson (constants/Skins.ts); egy módú
-// témánál a mód a témáé, az Auto / Light / Dark hatástalan.
+// For a brutalist palette `theme` is the `<palette>-light|dark` key
+// (Colors['brand-light'] ...), so existing `Colors[theme]` callers switch
+// without any rewrite; for classic it stays today's 'light' | 'dark'. The mode
+// (paper / ink) follows the Auto / Light / Dark setting.
+// The other themes use the `<theme-id>-<mode>` key (constants/Skins.ts); for a
+// single-mode theme the mode belongs to the theme and Auto / Light / Dark has no effect.
 export type ThemeKey = keyof typeof Colors;
 
-// Exportált: a Saját mix élő előnézete (app/theme-mix.tsx) a piszkozat-mixszel felülírja a kontextust.
+// Exported: the live preview of My mix (app/theme-mix.tsx) overrides the context with the draft mix.
 export const ThemeContext = createContext<{
   theme: ThemeKey;
   override: ThemeOverride;
   setOverride: (o: ThemeOverride) => void;
   grammarPalette: GrammarPaletteId;
   setGrammarPalette: (p: GrammarPaletteId) => void;
-  // az aktív téma (a mentett, vagy régi felhasználónál a paletta szerinti),
-  // a Saját mix négy forrása, és a váltásuk (a db-be is mentenek).
+  // the active theme (the saved one, or for a legacy user the one derived from the palette),
+  // the four sources of My mix, and their setters (which also persist to the db).
   skin: SkinSelection;
   setSkin: (s: SkinSelection) => void;
   skinMix: SkinMix;
@@ -54,7 +54,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const systemScheme: Theme = raw === 'light' ? 'light' : 'dark';
   const [override, setOverride] = useState<ThemeOverride>(() => getWebTestParams()?.mode ?? 'system');
   const [grammarPalette, setPalette] = useState<GrammarPaletteId>(DEFAULT_GRAMMAR_PALETTE);
-  // null = még nincs választott téma: a régi (paletta-alapú) viselkedés, lásd legacySkinFor.
+  // null = no theme chosen yet: the legacy (palette-based) behavior, see legacySkinFor.
   const [chosenSkin, setChosenSkin] = useState<SkinSelection | null>(null);
   const [skinMix, setMix] = useState<SkinMix>(DEFAULT_SKIN_MIX);
   const skin: SkinSelection = chosenSkin ?? legacySkinFor(grammarPalette);

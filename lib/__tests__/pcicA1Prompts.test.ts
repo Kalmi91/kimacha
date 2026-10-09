@@ -1,11 +1,11 @@
-// A1 PCIC fordítás-audit or-teszt.
-// Az angol prompt ne legyen
-// felrevezeto a spanyol funkcioszavakhoz kepest (gracias/por favor/sin, es
-// forditva a "please"-re). Ha egy valodi kivetel adodik, ide egy explicit
-// EXCEPTIONS bejegyzes kell, kommenttel, nem a teszt lazitasa.
+// A1 PCIC translation-audit guard test.
+// The English prompt must not be
+// misleading relative to the Spanish function words (gracias/por favor/sin, and es
+// translated as "please"). If a real exception turns up, an explicit
+// EXCEPTIONS entry with a comment is needed here, not a loosened test.
 import { pcicItemsForLevel } from '@/data/pcic';
 
-// id -> ok, ha egy tetel jogosan ter el a szabalytol (jelenleg nincs ilyen).
+// id -> reason, if an item rightfully deviates from the rule (there is none at present).
 const EXCEPTIONS = new Set<string>([]);
 
 function tokens(s: string): string[] {
@@ -45,10 +45,10 @@ function collectPairs(): Pair[] {
 describe('PCIC A1 prompt audit (PROMPT-POLICY 4, 12-15. szakasz, FB370-374)', () => {
   const pairs = collectPairs().filter((p) => !EXCEPTIONS.has(p.id));
 
-  // a gyakorisági korpusznak (data/pcic.ts)
-  // nincs `kind: 'sentence'` tétele (csak word/phrase), a 'sentence-item' kategória
-  // ezért állandóan üres - a nem-üresen-zöld önellenőrzés innentől csak a
-  // (továbbra is élő és auditált) szó-példamondatokat követeli meg.
+  // the frequency corpus (data/pcic.ts)
+  // has no `kind: 'sentence'` item (only word/phrase), so the 'sentence-item' category
+  // is permanently empty - from now on the not-vacuously-green self-check requires only the
+  // (still live and audited) word example sentences.
   it('legalabb egy pelda-mondatot lefed (a teszt nem üresen zöld)', () => {
     expect(pairs.filter((p) => p.label === 'example-sentence').length).toBeGreaterThan(0);
   });

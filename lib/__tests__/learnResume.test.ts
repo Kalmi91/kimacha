@@ -1,4 +1,4 @@
-// Kártya-szintű folytatás: a Learn-kör pillanatképe: mentés, visszaolvasás, rárakás az újraépült sorra.
+// Card-level resume: a snapshot of the Learn round: save, read back, apply onto the rebuilt queue.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -18,7 +18,7 @@ describe('buildLearnResume / applyLearnResume', () => {
   it('a mentett sorrend és az "again" időzítő visszakerül az újraépült sorra', () => {
     const saved = buildLearnResume(q(['d', 'e', 'a'], { a: 1234 }), DAY, 'A1', 3);
     expect(saved).toEqual({ day: DAY, level: 'A1', order: ['d', 'e', 'a'], returns: { a: 1234 }, base: 3 });
-    // az újraépült (normál) sorban az "a" (rontott, learning) elöl áll, a "d", "e" mögötte
+    // in the rebuilt (normal) queue "a" (failed, learning) is at the front, with "d" and "e" behind it
     const rebuilt = q(['a', 'd', 'e', 'f']);
     const applied = applyLearnResume(rebuilt, saved, DAY, 'A1');
     expect(ids(applied)).toEqual(['d', 'e', 'a', 'f']);
@@ -38,7 +38,7 @@ describe('buildLearnResume / applyLearnResume', () => {
 
   it('ami a mentett sorból már nem esedékes / nem létezik, kiesik; az új tétel a normál sorrendben követi', () => {
     const saved = buildLearnResume(q(['x', 'd', 'nincs-ilyen', 'e']), DAY, 'A1', null);
-    const rebuilt = q(['e', 'd', 'f', 'g']); // az x már nincs a sorban (értékelt)
+    const rebuilt = q(['e', 'd', 'f', 'g']); // x is no longer in the queue (graded)
     expect(ids(applyLearnResume(rebuilt, saved, DAY, 'A1'))).toEqual(['d', 'e', 'f', 'g']);
   });
 

@@ -1,5 +1,5 @@
-// pcic_cards tábla a memory DB-n (a pattern, amit minden
-// más DB-érintő teszt követ ebben a repóban, lásd lib/__tests__/gameDb.test.ts).
+// The pcic_cards table on the memory DB (the pattern every
+// other DB-touching test in this repo follows, see lib/__tests__/gameDb.test.ts).
 
 import { getDb } from '../database.web';
 import { sm2NewCard } from '../sm2';
@@ -34,9 +34,9 @@ describe('pcic_cards (memory db)', () => {
     expect(await db.getPcicCards()).toEqual([]);
   });
 
-  // a pcic_cards tábla nincs pair-hez kötve (a két
-  // irány a w<id>/e<id> id-előtaggal válik el, data/pcic.ts), tehát az
-  // irányváltás (setOnboarding) önmagában nem törli egyik irány haladását sem.
+  // the pcic_cards table is not tied to a pair (the two
+  // directions are told apart by the w<id>/e<id> id prefix, data/pcic.ts), so
+  // switching direction (setOnboarding) on its own does not delete the progress of either direction.
   it('irányváltás (setOnboarding) nem nullázza a másik irány kártyáit', async () => {
     await db.resetPcicCards();
     await db.setOnboarding('en', 'es');
@@ -51,10 +51,9 @@ describe('pcic_cards (memory db)', () => {
     expect(cards.find(c => c.itemId === 'e1')?.state).toBe('learning');
   });
 
-  // A
-  // pcic_level a learn_settings pár-szerinti sorába költözött (korábban
-  // user_meta szingliton volt), hogy irányváltáskor mindkét pár megőrizze a
-  // saját szintjét.
+  // pcic_level moved into the per-pair row of learn_settings (it used to be a
+  // user_meta singleton), so that on a direction switch both pairs keep their
+  // own level.
   it('pcic_level pár-szerint: oda-vissza váltás megtartja mindkét irány saját szintjét', async () => {
     await db.setOnboarding('en', 'es');
     await db.setPcicLevel('B1');
@@ -67,10 +66,10 @@ describe('pcic_cards (memory db)', () => {
     expect(await db.getPcicLevel()).toBe('A1');
   });
 
-  // Ugyanaz a pont: hasPcicLevel csak akkor igaz, ha az aktív párnak
-  // KIFEJEZETTEN van választott szintje (nem a getPcicLevel fallbackja
-  // miatt); ezzel dönti el a Settings irányváltó sora / a főfül load()-ja,
-  // hogy fel kell-e nyitni a szint-választó lapot.
+  // The same point: hasPcicLevel is true only if the active pair
+  // EXPLICITLY has a chosen level (not because of getPcicLevel's fallback);
+  // this is what the Settings direction-switch row / the main tab's load() use
+  // to decide whether the level-picker sheet has to be opened.
   it('hasPcicLevel: hamis egy még sose választott párnak, igaz setPcicLevel után', async () => {
     await db.setOnboarding('xx', 'yy');
     expect(await db.hasPcicLevel()).toBe(false);
@@ -78,16 +77,16 @@ describe('pcic_cards (memory db)', () => {
     expect(await db.hasPcicLevel()).toBe(true);
   });
 
-  // getPcicNewBonus/setPcicNewBonus round-trip, memory-DB szinten.
+  // getPcicNewBonus/setPcicNewBonus round-trip, at the memory-DB level.
   it('getPcicNewBonus/setPcicNewBonus: perzisztál (reload-eset) és naptári nappal lejár', async () => {
     expect(await db.getPcicNewBonus('2026-09-18')).toBe(0);
 
     await db.setPcicNewBonus(18, '2026-09-18');
-    // "Reload": ugyanarra a napra ÚJRA lekérdezve ugyanaz jön, nem nullázódik.
+    // "Reload": querying the same day AGAIN returns the same value, it does not reset to zero.
     expect(await db.getPcicNewBonus('2026-09-18')).toBe(18);
     expect(await db.getPcicNewBonus('2026-09-18')).toBe(18);
 
-    // Nap-váltás: a tegnapi bónusz nem számít a következő napon.
+    // Day change: yesterday's bonus does not count on the next day.
     expect(await db.getPcicNewBonus('2026-09-19')).toBe(0);
   });
 });

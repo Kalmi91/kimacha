@@ -15,7 +15,7 @@ describe('articlePickerApplies', () => {
   });
 
   it('stays on verb and adjective cards too, where ⊘ is the right answer (FB214)', () => {
-    // A gombsor nem a szófajtól függ: a tanuló dolga eldönteni, kell-e névelő.
+    // The button row does not depend on the part of speech: it is up to the learner to decide whether an article is needed.
     expect(articlePickerApplies('es', true)).toBe(true);
   });
 
@@ -126,8 +126,8 @@ describe('articleRowAppliesForPos (FB214 kiegészítés, PCIC chip)', () => {
   });
 });
 
-// egy " / " alak, amelynek minden alternatívája
-// "névelő + egy szó", úgy viselkedik, mint az egyszavas főnév.
+// A " / " form whose every alternative is
+// "article + one word" behaves like a single-word noun.
 describe('perjeles (" / ") válasz', () => {
   const answer = 'el carro / el coche / el auto';
 

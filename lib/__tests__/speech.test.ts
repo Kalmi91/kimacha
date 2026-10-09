@@ -189,7 +189,7 @@ describe('region-aware voice pick', () => {
   });
 });
 
-// User feedback (`word:¿Cuándo comes?`): "az s mintha lemaradna".
+// User feedback (`word:¿Cuándo comes?`): "the s seems to get dropped".
 describe('final consonant clipping on android', () => {
   it('pads the utterance on android so a closing /s/ is not cut off', async () => {
     await withVoices(['es-MX']);
@@ -216,7 +216,7 @@ describe('final consonant clipping on android', () => {
   });
 });
 
-// a web-build headless böngészős tesztje ne szóljon a gépen.
+// the headless browser test of the web build must not make sound on the machine.
 describe('headless browser on web', () => {
   const onWebWithUserAgent = async (userAgent: string, fn: () => Promise<void>) => {
     const os = Platform.OS;

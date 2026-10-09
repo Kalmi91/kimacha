@@ -11,15 +11,15 @@ import { openWords } from '@/data/openWords';
 import { pickSurvivor } from '../cardMerge';
 import { findPromptOverlaps, type PromptLang } from '../promptOverlap';
 
-// Play-vágás: the en word-branch loader path
+// Play cut: the en word-branch loader path
 // (getWordsForLevel(level, 'en')) is gone, so the cases below that guard
 // the actual en corpus content read these JSON files straight off disk
 // instead.
-// A spanyol szólista (a0..c2.json) és a hu sáv kikerült, a
-// spanyol oldal forrása a data/openWords.ts (words-open), a hu sáv őrei törölve. A words-open
-// teljességét és prompt-szabályait (hint-es többjelentés, mondat nélküli névmás/névelő kártyák)
-// a scripts/words-open-check.mjs kapu őrzi, ezért a spanyol sáv teljesség-, prompt- és
-// headword-szivárgás esetei itt nem futnak.
+// The Spanish word list (a0..c2.json) and the hu band were removed; the
+// source of the Spanish side is data/openWords.ts (words-open), and the guards of the hu band were deleted. The completeness
+// and prompt rules of words-open (multi-meaning cards with a hint, pronoun/article cards without a sentence)
+// are guarded by the scripts/words-open-check.mjs gate, so the completeness, prompt and
+// headword-leak cases of the Spanish band do not run here.
 function branchLevel(lang: string, level: string): WordEntry[] {
   return JSON.parse(readFileSync(join(__dirname, '..', '..', 'data', 'words', lang, `${level}.json`), 'utf8'));
 }
@@ -101,11 +101,11 @@ describe('pickSurvivor', () => {
   });
 });
 
-// User feedback (word:the post office): „ennek van névelője angolba ott a
-// the spanyolba nincs el vagy la? ez hiba? ne legyen ott a the ha nincs el la".
-// A `correos` a spanyol oldalon névelő nélkül állt, a natív oldalon viszont
-// névelővel, ezért a kártya két fele ellentmondott egymásnak. Ez az őr azt tartja
-// fenn, hogy ha a tanult alak nem hoz névelőt, a natív prompt se hozzon.
+// User feedback (word:the post office): "in English it has an article, the,
+// but in Spanish there is no el or la? is this a mistake? there should be no the if there is no el la".
+// `correos` had no article on the Spanish side but had one on the native side,
+// so the two halves of the card contradicted each other. This guard makes sure
+// that if the learned form carries no article, the native prompt does not either.
 describe('article agreement between the two sides of a card', () => {
   const ES_ARTICLE = /^(el|la|los|las|un|una|unos|unas)[\s/]/i;
   const EN_ARTICLE = /^(the|a|an)\s/i;
@@ -114,19 +114,19 @@ describe('article agreement between the two sides of a card', () => {
     const offenders = openWords
       .filter((w) => w.pos !== 'verb')
       .filter((w) => EN_ARTICLE.test(w.en ?? '') && !ES_ARTICLE.test(w.es ?? ''))
-      // `un/una` maga a névelő-kártya, ott a prompt "a / an" a helyes tartalom.
+      // `un/una` is itself the article card, so the prompt "a / an" is the correct content there.
       .filter((w) => !/^un\/una$/i.test(w.es ?? ''))
       .map((w) => `${w.id} ${w.es} = ${w.en}`);
     expect(offenders).toEqual([]);
   });
 });
 
-// Issue #3, 4. szakasz: „`data/words.ts:14` declares es, hu, en, de and the
+// Issue #3, section 4: "`data/words.ts:14` declares es, hu, en, de and the
 // sentence_* fields as required, but every word file is cast with
 // `as WordEntry[]`. A Swedish entry missing es/hu type-checks and then breaks at
-// runtime." A cast nem szüntethető meg, ezért a típus ígéretét itt tartjuk meg.
-// A mai korpusz (en-ág) teljesíti; egy új
-// nyelvi sáv ugyanezt vállalja, vagy ez a teszt megmondja, hogy nem.
+// runtime." The cast cannot be removed, so the type's promise is kept here.
+// Today's corpus (the en band) fulfils it; a new
+// language band must do the same, or this test will say that it does not.
 describe('word entry completeness', () => {
   const SURFACE_LANGS = ['es', 'hu', 'en', 'de'] as const;
 
@@ -147,12 +147,12 @@ describe('word entry completeness', () => {
   });
 });
 
-// "Egy szinten és sávon belül két szónak nem lehet olyan
-// promptja, amelyből nem dönthető el, melyik a kérdezett." A 9.4 szerint a
-// korpusz-menet (2026-09-14/15) után ez az őr ÉLES: új szó nem hozhatja
-// vissza a hibát. A fürt-logika a lib/promptOverlap.ts-ben él. Az en sáv (Play-vágás óta a JSON-ból, nem a
-// betöltőből) csak azokra a szintekre ad szavakat, amik tényleg léteznek;
-// a hiányzó szintre üres lista jön, amin a fürt-keresés triviálisan üres.
+// "Within one level and band, no two words may have prompts from which it
+// cannot be told which one is being asked." After the corpus pass (2026-09-14/15)
+// this guard is LIVE: a new word must not bring the error back. The cluster logic
+// lives in lib/promptOverlap.ts. The en band (read from the JSON since the Play cut, not from the
+// loader) yields words only for the levels that really exist;
+// a missing level gives an empty list, on which the cluster search is trivially empty.
 describe('prompt policy (PROMPT-POLICY 1)', () => {
   const BANDS: { label: string; wordsByLevel: (level: Level) => WordEntry[]; headword: PromptLang; prompt: PromptLang }[] = [
     { label: 'en', wordsByLevel: (level) => EN_BRANCH_BY_LEVEL[level] ?? [], headword: 'en', prompt: 'hu' },

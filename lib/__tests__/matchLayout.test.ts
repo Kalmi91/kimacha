@@ -1,5 +1,5 @@
-// a párosító drill (a) a lényeget párosítja (ii-match-01: csak az
-// igealak), (b) a jobb oszlopban egyetlen pár sem áll a saját sorában.
+// the matching drill (a) pairs the essential part (ii-match-01: only the
+// verb form), (b) no pair stands in its own row in the right column.
 import fs from 'fs';
 import path from 'path';
 

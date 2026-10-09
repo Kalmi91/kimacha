@@ -1,4 +1,4 @@
-// SM-2 (Anki-módszerű) ütemező tiszta függvényei.
+// Pure functions of the SM-2 (Anki-style) scheduler.
 
 import { sm2NewCard, sm2Review, sm2PreviewDays, pickSm2Session, sm2MarkKnown, addDays, KNOWN_INTERVAL_DAYS, DEFAULT_NEW_LIMIT, type Sm2Card } from '../sm2';
 
@@ -74,7 +74,7 @@ describe('sm2Review, review állapot', () => {
 
   it('easy: interval = round(interval * ease * 1.3), ease + 0.15', () => {
     const next = sm2Review(reviewCard({ interval: 10, ease: 2.5 }), 'easy', TODAY);
-    // round(10 * 2.5 * 1.3) = round(32.5) = 33 a kódban (Math.round felkerekít .5-nél)
+    // round(10 * 2.5 * 1.3) = round(32.5) = 33 in the code (Math.round rounds up at .5)
     expect(next.interval).toBe(33);
     expect(next.ease).toBeCloseTo(2.65);
   });
@@ -97,7 +97,7 @@ describe('sm2Review, review állapot', () => {
     let card = reviewCard({ ease: 1.4 });
     card = sm2Review(card, 'again', TODAY);
     expect(card.ease).toBeCloseTo(1.3);
-    // relearning -> graduál vissza review-ba (egy "good", LEARNING_STEPS=1), ismét again
+    // relearning -> graduates back to review (a single "good", LEARNING_STEPS=1), then "again" once more
     card = sm2Review(card, 'good', TODAY);
     expect(card.state).toBe('review');
     card = sm2Review(card, 'again', TODAY);
@@ -106,7 +106,7 @@ describe('sm2Review, review állapot', () => {
 
   it('interval floor: min interval + 1 alacsony ease-nél is', () => {
     const next = sm2Review(reviewCard({ interval: 5, ease: 1.3 }), 'good', TODAY);
-    // round(5 * 1.3) = round(6.5) = 7 (Math.round felkerekít .5-nél), ami már > interval+1
+    // round(5 * 1.3) = round(6.5) = 7 (Math.round rounds up at .5), which is already > interval+1
     expect(next.interval).toBeGreaterThanOrEqual(6);
   });
 
@@ -146,7 +146,7 @@ describe('pickSm2Session', () => {
     expect(ids).toContain('l1');
     expect(ids).toContain('n1');
     expect(ids).toContain('n2');
-    expect(ids).not.toContain('r2'); // csak jövőben esedékes, nincs benne
+    expect(ids).not.toContain('r2'); // due only in the future, not in it
   });
 
   it('newLimit tartva a mai introducedAt beszámításával', () => {
@@ -159,7 +159,7 @@ describe('pickSm2Session', () => {
     const newOrder = ['n1', 'n2', 'n3', 'n4', 'n5'];
     const session = pickSm2Session(alreadyIntroduced, newOrder, TODAY, 5);
     const newOnes = session.filter(c => c.state === 'new');
-    expect(newOnes.length).toBe(2); // 5 - 3 már bevezetett
+    expect(newOnes.length).toBe(2); // 5 - 3 already introduced
   });
 
   it('due <= today szerint rendezi a review kártyákat növekvő sorrendbe', () => {
@@ -170,11 +170,11 @@ describe('pickSm2Session', () => {
   });
 });
 
-// a "+10 új szó" gomb a newLimit paramétert emeli meg futásidőben.
+// the "+10 new words" button raises the newLimit parameter at runtime.
 describe('pickSm2Session, newLimit határeset (FB314)', () => {
   it('25 új tétel, 20 ma bevezetett: alap keret 0 új, newLimit 30 az 5 maradékot adja, a 20 learning a sor elején marad', () => {
     const newOrder = Array.from({ length: 25 }, (_, i) => `n${i}`);
-    // az első 20 newOrder-tétel ma már bevezetve (learning), az utolsó 5 (n20..n24) még valódi új
+    // the first 20 newOrder items are already introduced today (learning), the last 5 (n20..n24) are still truly new
     const introduced: Sm2Card[] = newOrder.slice(0, 20).map((id) => ({
       ...sm2NewCard(id),
       state: 'learning',

@@ -145,9 +145,9 @@ describe('headwordLeaks (PROMPT-POLICY 12)', () => {
     expect(leaks).toEqual([]);
   });
 
-  // Valós korpusz-találatok (2026-09-18-i futtatás): a " / " mellett a
-  // korpusz "/" és ", " alak-elválasztót is használ (ua. mint a
-  // corpusIntegrity.test.ts "senses" helperje), ezek is cognate-ok, nem hiba.
+  // Real corpus hits (run of 2026-09-18): besides " / " the
+  // corpus also uses "/" and ", " as form separators (same as the
+  // "senses" helper of corpusIntegrity.test.ts); these are cognates too, not an error.
   it('accepts a cognate joined by a bare slash, no surrounding spaces', () => {
     const leaks = headwordLeaks([{ id: 2095, headword: 'grave', prompt: 'serious/grave' }], 'en');
     expect(leaks).toEqual([]);

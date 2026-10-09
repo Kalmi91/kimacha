@@ -1,4 +1,4 @@
-// az app az utolsó folytatható helyet menti, és hidegindításkor oda lép vissza.
+// the app saves the last resumable place and returns to it on a cold start.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -45,7 +45,7 @@ describe('resumeSteps', () => {
     expect(resumeSteps('/', 'es')).toEqual([]);
     expect(resumeSteps('/exam', 'es')).toEqual([]);
     expect(resumeSteps('semmi', 'es')).toEqual([]);
-    // törölt / ismeretlen lecke
+    // deleted / unknown lesson
     expect(resumeSteps('/grammar/nincs-ilyen-lecke', 'es')).toEqual([]);
     expect(resumeSteps('/grammar/deck/nincs-ilyen-lecke', 'es')).toEqual([]);
   });

@@ -1,4 +1,4 @@
-// Könnyű olvasás: a spanyol szótagoló.
+// Easy reading: the Spanish syllabifier.
 import { syllabify, syllabifyPhrase } from '@/lib/syllables';
 
 describe('syllabify', () => {
