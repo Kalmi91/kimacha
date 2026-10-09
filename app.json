@@ -45,7 +45,16 @@
       ],
       "expo-sqlite",
       "expo-sharing",
-      "./plugins/withPlaySigning"
+      "./plugins/withPlaySigning",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "enableMinifyInReleaseBuilds": true,
+            "enableShrinkResourcesInReleaseBuilds": true
+          }
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
