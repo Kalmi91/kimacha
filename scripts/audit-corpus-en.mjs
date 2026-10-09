@@ -90,6 +90,10 @@ function tokenizeEn(str) {
   return normalizeEn(str).split(/\s+/).filter((t) => t.length > 0);
 }
 
+// Words whose final -s is not a plural: stripping it would match another taught
+// word (news → new). Only words that are not taught as their own headword.
+const NON_PLURAL_S = new Set(['news', 'economics', 'athletics']);
+
 /**
  * Candidate stem set for an English token: the token plus conservative
  * de-inflections (plural, 3rd-person, past, gerund, comparative/superlative).
@@ -99,6 +103,7 @@ function tokenizeEn(str) {
 function stemForms(token) {
   const t = token;
   const forms = new Set([t]);
+  if (NON_PLURAL_S.has(t)) return forms;
   const add = (s) => { if (s && s.length >= 2) forms.add(s); };
 
   if (t.endsWith('ies') && t.length > 4) { add(t.slice(0, -3) + 'y'); }
