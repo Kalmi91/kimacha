@@ -54,6 +54,7 @@ jest.mock('../db/migrations', () => ({
 }));
 
 import { getDb } from '../database';
+import { validateBackupPayload } from '../backup';
 
 beforeEach(() => {
   for (const t of Object.keys(tables)) delete tables[t];
@@ -133,6 +134,14 @@ describe('exportAll / importAll (native db)', () => {
     const migrations = jest.requireMock('../db/migrations');
     expect(migrations.applyPcicLevelMoves).toHaveBeenCalled();
     expect(migrations.applyPcicDedup).toHaveBeenCalled();
+  });
+
+  it('exports a legacy pcic_cards row with known NULL as 0, so the backup still validates', async () => {
+    seedAll();
+    tables.pcic_cards = [{ ...pcicRow('b1-0001', '2026-10-08'), known: null }, { ...pcicRow('b1-0002', '2026-10-07'), known: 1 }];
+    const payload = await getDb().exportAll();
+    expect(payload.tables.pcic_cards.map((r: any) => r.known)).toEqual([0, 1]);
+    expect(() => validateBackupPayload(JSON.parse(JSON.stringify(payload)))).not.toThrow();
   });
 
   it('a v1 file leaves the local pcic_cards, mistake_* and usage_minutes alone', async () => {
