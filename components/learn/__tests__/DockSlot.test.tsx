@@ -13,8 +13,8 @@ jest.mock('@/lib/speech', () => ({
   stopSpeaking: jest.fn(),
 }));
 
-// a beírós kártyák (vizsga, lecke-teszt) Check / Next gombja a billentyűzet fölé dokkolt sáv
-// (DockSlot), mint a szókártyán; host nélkül (önálló render) a régi inline gomb marad.
+// the Check / Next button of the typed cards (exam, lesson test) is a bar docked above the keyboard
+// (DockSlot), like on the word card; without a host (standalone render) the old inline button stays.
 
 function Host({ children }: { children: React.ReactNode }) {
   const dock = useDockSlot(Colors.light);

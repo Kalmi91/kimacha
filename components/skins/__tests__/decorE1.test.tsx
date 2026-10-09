@@ -1,6 +1,6 @@
-// a loteria, senior, konnyu, retro95, y2k, kawaii, gamer, botanikus és zen téma
-// díszei és egyedi elrendezése: a slotok kirajzolják a díszt az alap tartalom körül, a gomb-változatok
-// (senior egymás alatt, retro95 3D + aláhúzott első betű, zen csak szöveg) a BrutalButton / BrutalBox-on át.
+// the decorations and custom layouts of the loteria, senior, konnyu, retro95, y2k, kawaii, gamer, botanikus and zen themes:
+// the slots draw the decoration around the base content, the button variants
+// (senior stacked, retro95 3D + underlined first letter, zen text only) through BrutalButton / BrutalBox.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -45,7 +45,7 @@ async function mountUi(skin: SkinId, ui: ReactElement) {
   return view;
 }
 
-// A négy slot egymás mellett (mint a decor.test.tsx-ben), az alap tartalom a dísz körül marad.
+// The four slots side by side (as in decor.test.tsx), the base content stays around the decoration.
 async function mountSkin(skin: SkinId, lang?: string) {
   const view = await mountUi(
     skin,
@@ -67,7 +67,7 @@ async function mountSkin(skin: SkinId, lang?: string) {
   return view;
 }
 
-// A PCIC felfedett-állapot blokk (Tudtam / Nem tudtam gombsor) minimális tartalommal.
+// The PCIC revealed-state block (Knew it / Didn't know button row) with minimal content.
 async function mountGrades(skin: SkinId) {
   const item = { id: 'x-1', es: 'casa', en: 'house', kind: 'word', section: 's', order: 1 } as PcicItem;
   const card: Sm2Card = {
@@ -327,7 +327,7 @@ describe('a 9 E1 téma díszei (PLAN-temak 6E)', () => {
     for (const gr of ['good', 'again']) {
       expect(flat(view.getByTestId(`pcic-grade-${gr}`).props.style)).toMatchObject({ minHeight: 48 });
     }
-    // a sor oszlopban: a két gomb szülője column irányú
+    // the row is a column: the two buttons' parent has column direction
     expect(flat(view.getByTestId('pcic-grades').props.style).flexDirection).toBe('column');
     expect(view.getAllByTestId('skin-speak-label').length).toBeGreaterThanOrEqual(1);
     view.unmount();

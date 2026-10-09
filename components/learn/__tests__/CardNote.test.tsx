@@ -1,6 +1,6 @@
-// az (i) alatti rész a kártya képét és forrássorát mutatja;
-// a forrássor koppintásra megnyitja a kép Commons fájl-oldalát, vágott képnél jelzés van a sorban;
-// képtelen kártyán nincs kép-elem, és ha se kép, se magyarázat nincs, semmi nem renderel.
+// the part under the (i) shows the card's image and its source line;
+// the source line opens the image's Commons file page on tap, a cropped image is flagged in the line;
+// a card without an image has no image element, and if there is neither image nor explanation, nothing renders.
 import { Linking } from 'react-native';
 import { fireEvent, render } from '@testing-library/react-native';
 import Colors from '@/constants/Colors';

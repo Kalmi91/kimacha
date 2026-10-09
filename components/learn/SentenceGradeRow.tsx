@@ -7,10 +7,10 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalBox, actionTextColor, useButtonVariant } from '@/components/grammar/Brutal';
 import { legibleOn } from '@/constants/Skins';
 
-// a szókártya Check utáni "Didn't know" / "Knew it" felülbíráló gombsora
-// (PcicRevealedAnswer.tsx) a mondatkártyákon is, ugyanazzal a megjelenéssel. A mondatkártya
-// nem ír SRS-t (K3), ezért itt nincs intervallum-előnézet: a koppintás a kijelzett
-// értékelést (jelvény, keret, Next szín) írja át, a Next utána ezt adja tovább.
+// the word card's "Didn't know" / "Knew it" override button row after Check
+// (PcicRevealedAnswer.tsx), on the sentence cards too, with the same look. The sentence card
+// does not write SRS, so there is no interval preview here: a tap changes the displayed
+// grade (badge, border, Next colour), and Next then passes this on.
 const GRADES = ['again', 'good'] as const;
 
 export default function SentenceGradeRow({
@@ -19,7 +19,7 @@ export default function SentenceGradeRow({
   onOverride,
 }: {
   colors: (typeof Colors)['light'];
-  // A most kijelzett értékelés: az előre kijelölt gomb ez.
+  // The grade displayed now: the pre-selected button is this one.
   result: 'correct' | 'wrong';
   onOverride: (correct: boolean) => void;
 }) {

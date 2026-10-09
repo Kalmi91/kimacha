@@ -1,5 +1,5 @@
-// a 4 kezdő téma díszei (deco, szocreal, csillampony, ukiyoe): a slotok kirajzolják
-// a díszt az alap tartalom körül, sima View/Text, SVG és új natív függőség nélkül.
+// the decorations of the 4 starter themes (deco, szocreal, csillampony, ukiyoe): the slots draw
+// the decoration around the base content, with plain View/Text, no SVG and no new native dependency.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -46,7 +46,7 @@ async function mountSkin(skin: SkinId) {
     </ThemeProvider>,
   );
   await flush();
-  // az alap tartalom mindig megmarad a dísz körül
+  // the base content always stays around the decoration
   for (const text of ['fejlec', 'kartya', 'casa']) expect(view.getByText(text)).toBeTruthy();
   return view;
 }
@@ -116,7 +116,7 @@ describe('a 4 kezdő téma díszei (PLAN-temak 4D)', () => {
     const bands = view.getAllByTestId('decor-csillampony-band');
     expect(bands.map((b) => flat(b.props.style).borderColor)).toEqual(RAINBOW);
     expect(RAINBOW).toEqual(['#FF6EC7', '#FFB347', '#FFE066', '#7BE0AD', '#7FB8FF', '#C9A7FF']);
-    // a külső sáv a legnagyobb félkör
+    // the outer band is the largest semicircle
     const widths = bands.map((b) => flat(b.props.style).width as number);
     expect([...widths].sort((x, y) => y - x)).toEqual(widths);
     expect(view.getByTestId('decor-csillampony-sparkles')).toBeTruthy();

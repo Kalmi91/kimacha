@@ -6,10 +6,10 @@ import { useSkinDecor } from '@/components/skins';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 
-// a dísz-rétegek helyei a képernyőkben. Dísz nélkül (alapértelmezés) semmit
-// nem renderelnek / az alap tartalmat adják vissza, így a mai kinézet változatlan.
+// the places of the decoration layers in the screens. Without a decoration (the default) they render nothing
+// / return the base content, so today's look is unchanged.
 
-// A képernyő gyökér-View-jának első gyereke: a háttér-dísz a tartalom mögé kerül.
+// The first child of the screen's root View: the background decoration goes behind the content.
 export function SkinBackdrop() {
   const { Backdrop } = useSkinDecor();
   if (!Backdrop) return null;
@@ -41,7 +41,7 @@ export function SkinWord({ word, lang, children }: { word: string; lang?: string
   );
 }
 
-// a hang-gomb (🔊) alá kerülő szöveges felirat, ha a téma kéri (senior: "Felolvas").
+// the text label under the sound button (🔊), if the theme asks for it (senior: "Felolvas", i.e. "Read aloud").
 export function SkinSpeakLabel() {
   const { speakLabel } = useSkinDecor();
   const g = useGrammarColors();

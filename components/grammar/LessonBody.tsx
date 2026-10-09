@@ -12,8 +12,8 @@ import type { ExamplePair, Lang4, LessonBlock } from '@/lib/grammar/lessonTypes'
 import { isConjugationTable, personGloss, splitStemEnding, verbClassOf, verbColumnColor } from '@/lib/grammar/tableShape';
 import { groupTableRuns, type TableBlock } from '@/lib/grammar/tableGroups';
 
-// a jelmagyarázat alatti rövid magyarázó sor, minden ragozási
-// táblán (nem lecke-adat, ezért itt lakik, nem egy JSON body-blokkban).
+// the short explanatory line under the legend, on every conjugation
+// table (not lesson data, so it lives here, not in a JSON body block).
 const LEGEND_CAPTION: Lang4 = {
   hu: 'Minden sor egy személy, minden szín egy ige.',
   en: 'Each row is one person; each colour is one verb.',
@@ -21,9 +21,9 @@ const LEGEND_CAPTION: Lang4 = {
   de: 'Jede Zeile ist eine Person, jede Farbe ist ein Verb.',
 };
 
-// a LessonV2 body-blokkjainak megjelenítője. A JSON
-// adja a szerkezetet (text/list/table/usage/contrast/tip), a komponens csak
-// rajzol.
+// renderer for the LessonV2 body blocks. The JSON
+// gives the structure (text/list/table/usage/contrast/tip), the component only
+// draws.
 
 interface Props {
   blocks: LessonBlock[];
@@ -50,9 +50,9 @@ function ExampleRow({ ex, contentLang, learnedLang, colors }: {
   );
 }
 
-// egy ragozási `table` blokk
-// személyenkénti dobozokban, a tő halvány, a végződés vastag és színes az
-// igeosztály szerint. isConjugationTable dönti el, hogy egy blokk ide esik.
+// a conjugation `table` block
+// in per-person boxes, the stem faint, the ending bold and coloured by
+// verb class. isConjugationTable decides whether a block belongs here.
 function ConjugationTable({ header, rows, contentLang, colors, isDark }: {
   header: Lang4[];
   rows: string[][];
@@ -62,10 +62,10 @@ function ConjugationTable({ header, rows, contentLang, colors, isDark }: {
 }) {
   const g = useGrammarColors();
   const verbHeaders = header.slice(1);
-  // ha egyetlen alak sem bontható tisztán tőre+végződésre, nincs közös
-  // alap a táblában, a tő/végződés bontásnak nincs értelme (rendhagyó); az
-  // egész tábla akkor egyben megy, nem cellánként (egy oszlopon belül ne
-  // legyen fele bontott, fele nem).
+  // if no form can be split cleanly into stem+ending, there is no common
+  // base in the table, so the stem/ending split makes no sense (irregular); the
+  // whole table then goes as one piece, not cell by cell (within a column, half
+  // should not be split and half not).
   const isRegularTable = rows.every((row) => verbHeaders.every((h, ci) => splitStemEnding(row[ci + 1], h.es) !== null));
 
   return (
@@ -127,9 +127,9 @@ function ConjugationTable({ header, rows, contentLang, colors, isDark }: {
   );
 }
 
-// a nem-ragozási (referencia) táblák régi rács-nézete, de rendszer-
-// betűvel és flex-cellákkal, hogy görgetés nélkül elférjen. Csak 5+ oszlopnál
-// marad az oldalra görgetés (`scroll`), ott a cellák tartalom-szélesek.
+// the old grid view of non-conjugation (reference) tables, but with the system
+// font and flex cells so it fits without scrolling. Only with 5+ columns
+// does sideways scrolling remain (`scroll`), there the cells are content-wide.
 function GridTable({ header, rows, contentLang, colors, scroll }: {
   header: Lang4[];
   rows: string[][];
@@ -168,8 +168,8 @@ function GridTable({ header, rows, contentLang, colors, scroll }: {
   return scroll ? <ScrollView horizontal>{grid}</ScrollView> : grid;
 }
 
-// egy igés ragozási tábla tömören: két oszlop (bal: egyes szám, jobb:
-// többes szám), cellánként a személy kicsiben és alatta a vastag alak.
+// a one-verb conjugation table, compact: two columns (left: singular, right:
+// plural), per cell the person small and below it the bold form.
 function CompactVerbTable({ header, rows, colors, isDark }: {
   header: Lang4[];
   rows: string[][];
@@ -209,8 +209,8 @@ function CompactVerbTable({ header, rows, colors, isDark }: {
   );
 }
 
-// az egymás utáni egy-igés ragozási táblák (lib/grammar/tableGroups.ts)
-// egy füles csoport: az igék chipek, egyszerre egy tábla látszik, tömören.
+// consecutive one-verb conjugation tables (lib/grammar/tableGroups.ts)
+// as one tabbed group: the verbs are chips, one table is visible at a time, compact.
 function TableTabs({ tables, contentLang, colors, isDark, titleColor }: {
   tables: TableBlock[];
   contentLang: Props['contentLang'];
@@ -257,8 +257,8 @@ export default function LessonBody({ blocks, contentLang, learnedLang }: Props) 
   const colors = Colors[theme];
   const isDark = isDarkTheme(theme);
   const g = useGrammarColors();
-  // brutalista palettán a címek ink színűek (a lime / cián kitöltés
-  // papíron nem olvasható szövegnek).
+  // on the brutalist palette the headings are ink-coloured (the lime / cyan fill
+  // is unreadable as text on paper).
   const titleColor = g.brutal ? g.ink : colors.tint;
 
   return (
@@ -335,8 +335,8 @@ export default function LessonBody({ blocks, contentLang, learnedLang }: Props) 
                   rows={block.rows}
                   contentLang={contentLang}
                   colors={colors}
-                  // a rács marad, de csak 5+ oszlopnál görgethető
-                  // oldalra, ahol a szöveg valóban nem fér a képernyőre.
+                  // the grid stays, but scrolls sideways only with 5+
+                  // columns, where the text really does not fit on the screen.
                   scroll={block.header.length >= 5}
                 />
               )}
@@ -387,8 +387,7 @@ const styles = StyleSheet.create({
   exampleEs: { fontSize: 15, fontWeight: '700', flex: 1 },
   exampleTr: { fontSize: 13 },
   speak: { fontSize: 16 },
-  // ragozási táblák ("2 Személy-blokkok" mock): egy doboz személyenként,
-  // a formák chipekként; lásd tablazat-tervek.html.
+  // conjugation tables: one box per person, the forms as chips.
   pblocks: { gap: 8 },
   pblock: { borderRadius: 12, paddingVertical: 10, paddingHorizontal: 12, gap: 6 },
   pblockWho: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'baseline' },
@@ -405,7 +404,7 @@ const styles = StyleSheet.create({
   },
   chipStem: { fontSize: 16 },
   chipEnding: { fontSize: 16, fontWeight: '700' },
-  // füles csoport + tömör (2 oszlopos) egy-igés tábla.
+  // tabbed group + compact (2-column) one-verb table.
   tabRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 6 },
   tab: { paddingVertical: 6, paddingHorizontal: 10, borderRadius: 999, borderWidth: StyleSheet.hairlineWidth },
   tabText: { fontSize: 14, fontWeight: '700' },
@@ -417,8 +416,8 @@ const styles = StyleSheet.create({
   legend: { flexDirection: 'row', flexWrap: 'wrap', gap: 12 },
   legendItem: { fontSize: 13.5 },
   legendCaption: { fontSize: 12, fontStyle: 'italic' },
-  // nem-ragozási (referencia) táblák: a régi rács, monospace és
-  // fix minWidth nélkül; flex-cellák, hacsak 5+ oszlop miatt görgetős.
+  // non-conjugation (reference) tables: the old grid, monospace and
+  // without a fixed minWidth; flex cells, unless scrolling because of 5+ columns.
   grid: { borderWidth: StyleSheet.hairlineWidth, borderRadius: 10, overflow: 'hidden' },
   gridRow: { flexDirection: 'row' },
   gridCell: { paddingVertical: 8, paddingHorizontal: 10, fontSize: 14.5 },

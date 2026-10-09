@@ -15,10 +15,10 @@ import type { MistakesBatch } from '@/lib/mistakes/format';
 
 type ColorScheme = (typeof Colors)['light'];
 
-// PCIC-belépő: önálló, adatot is maga tölt, hogy az
-// app/(tabs)/index.tsx (785 sor) ne nőjön 800 fölé egy állapot+betöltés miatt.
-// Csak akkor renderel, ha van legalább egy betöltött "Hibáim" köteg; a PCIC
-// meglévő mezői/gombjai (BadgeRow, chip-ek) érintetlenek maradnak.
+// PCIC entry point: standalone, loads its own data too, so that
+// app/(tabs)/index.tsx (785 lines) does not grow past 800 because of one state + loading.
+// Only renders if there is at least one loaded "Hibáim" ("My mistakes") batch; the PCIC's
+// existing fields/buttons (BadgeRow, chips) stay untouched.
 export default function MistakesEntry({ colors }: { colors: ColorScheme }) {
   const g = useGrammarColors();
   const [visible, setVisible] = useState(false);
@@ -50,7 +50,7 @@ export default function MistakesEntry({ colors }: { colors: ColorScheme }) {
 
   if (!visible) return null;
 
-  // brutalista palettán `a` kitöltésű BrutalBox, nagybetűs 500-as szöveg.
+  // on the brutalist palette a BrutalBox with `a` fill, uppercase weight-500 text.
   if (g.brutal) {
     return (
       <BrutalBox testID="mistakes-entry" fill="a" style={styles.brutalWrap} boxStyle={styles.brutalRow} onPress={() => router.push('/mistakes' as never)}>

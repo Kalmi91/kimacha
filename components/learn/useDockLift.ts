@@ -2,10 +2,9 @@ import { useEffect, useState } from 'react';
 import { Keyboard } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-// User feedback: "azt akarom hogy a check rész az pont a klaviatúrám
-// felett legyen és nem kell ketto". The typing card had two Check buttons (the
-// in-card one and the older one below the card); there is one now, docked
-// to the bottom edge of this screen.
+// The typing card had two Check buttons (the in-card one and the older one
+// below the card); there is one now, docked to the bottom edge of this screen,
+// right above the keyboard.
 //
 // Three tries to place it, and the reason the first two missed was never the
 // keyboard height, it was what sat under the container:
