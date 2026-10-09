@@ -104,7 +104,7 @@ function stemForms(token) {
   const t = token;
   const forms = new Set([t]);
   if (NON_PLURAL_S.has(t)) return forms;
-  const add =(s) => { if (s && s.length >= 2) forms.add(s); };
+  const add = (s) => { if (s && s.length >= 2) forms.add(s); };
 
   if (t.endsWith('ies') && t.length > 4) { add(t.slice(0, -3) + 'y'); }
   if (t.endsWith('es') && t.length > 3) { add(t.slice(0, -2)); add(t.slice(0, -1)); }
