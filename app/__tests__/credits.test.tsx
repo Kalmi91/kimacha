@@ -1,7 +1,7 @@
-// a Credits képernyő rendereli a CEFR-J attribúciót, és a
-// Settings-sor a Credits képernyőre navigál. A
-// FrequencyWords/OpenSubtitles/CC BY-SA szöveg a régi szólistával együtt kikerült.
-// Mock-minta: app/mistakes/__tests__/report.test.tsx.
+// The Credits screen renders the CEFR-J attribution, and the
+// Settings row navigates to the Credits screen. The
+// FrequencyWords/OpenSubtitles/CC BY-SA text was removed together with the old word list.
+// Mock pattern: app/mistakes/__tests__/report.test.tsx.
 
 const mockPush = jest.fn();
 const mockBack = jest.fn();
@@ -27,7 +27,7 @@ describe('CreditsScreen (app/credits.tsx)', () => {
   it('PLAN-temak 2B: listázza a betűk licencét, családonként egyszer', () => {
     const { getAllByTestId, getByText } = render(<CreditsScreen />);
 
-    // 28 betűfájl, de az Atkinson és a Jost két súllyal: 26 család.
+    // 28 font files, but Atkinson and Jost come in two weights: 26 families.
     expect(getAllByTestId('credits-font')).toHaveLength(26);
     expect(getByText('Permanent Marker · Apache License 2.0')).toBeTruthy();
     expect(getByText('OpenDyslexic · SIL Open Font License 1.1')).toBeTruthy();

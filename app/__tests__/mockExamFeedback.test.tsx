@@ -1,6 +1,6 @@
-// a próbavizsga minden részén ott a visszajelzés-gomb, és a
-// kártya-azonosító megmondja, melyik részről van szó (mock-exam:<szint>:<rész>).
-// Mock-minta: mockExam.test.tsx; a FeedbackModal itt csak a kapott `currentCard`-ot írja ki.
+// The feedback button is on every part of the mock exam, and the
+// card id says which part it is (mock-exam:<level>:<part>).
+// Mock pattern: mockExam.test.tsx; the FeedbackModal here only prints the `currentCard` it receives.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 

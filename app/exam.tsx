@@ -33,9 +33,9 @@ import { EXAM_LEVELS, type ExamItem, type ExamItemResult } from '@/lib/exam/type
 import { examStatusFor } from '@/lib/exam/unlock';
 import type { Sm2Card } from '@/lib/sm2';
 
-// a szintvizsga képernyője.
-// Bevezető -> kérdések (nincs élet; helyes válasz után nincs visszajelzés, hibás után
-// a helyes látszik: A5 c) -> eredmény (átmenéskor gomb a következő szintre, nincs automatikus váltás; bukáskor pontszám + újrapróba). Az eredmény mentése: lib/exam/result.ts.
+// The level exam screen.
+// Intro -> questions (no lives; no feedback after a correct answer, after a wrong one
+// the correct answer is shown) -> result (on a pass a button to the next level, no automatic switch; on a fail the score + retry). The result is saved in lib/exam/result.ts.
 
 type Phase = 'loading' | 'locked' | 'empty' | 'intro' | 'running' | 'result';
 
@@ -100,7 +100,7 @@ export default function ExamScreen() {
   const colors = Colors[theme];
   const g = useGrammarColors();
   const s = t();
-  // a beírós kérdés Check / Next sávja a billentyűzet fölé dokkol (components/learn/DockSlot.tsx).
+  // The typing question's Check / Next bar docks above the keyboard (components/learn/DockSlot.tsx).
   const dock = useDockSlot(colors);
   const router = useRouter();
   const params = useLocalSearchParams<{ level?: string }>();
@@ -181,9 +181,9 @@ export default function ExamScreen() {
     const db = getDb();
     const today = localDateString();
     await db.saveExamResult(level, sc.pct, sc.passed, today);
-    // az elrontott szó-tétel kártyája `again`-nel visszamegy az SM-2 ismétlésbe
-    // (a nyelvtani hibának nincs kártyája, annak az eredmény-lap a lecke-linkje a visszacsatolás).
-    // A friss kártyák a memóriában is frissülnek, hogy az újrapróba ne húzza újra a most elrontott szót.
+    // The card of a missed word item goes back to SM-2 review with `again`
+    // (a grammar mistake has no card; for it the result page's lesson link is the feedback).
+    // The fresh cards are also refreshed in memory, so that a retry does not draw the word that was just missed again.
     const back = source ? requeueWrongWords(source.cards, all, today) : [];
     for (const card of back) await db.upsertPcicCard(card);
     if (source && back.length > 0) {
@@ -211,14 +211,14 @@ export default function ExamScreen() {
 
   const counts = (skill: ExamItem['skill']) => exam.filter((i) => i.skill === skill).length;
 
-  // a gyenge szó- (vagy olvasás-)pontnál a tanulófülre vissza, az aktuális szint paklijára.
+  // At a weak word (or reading) point, back to the learn tab, on the current level's deck.
   const practiceWords = async () => {
     await getDb().setPcicLevel(level);
     router.back();
   };
 
-  // a szintvizsga minden részén ott a 💬; a `part` mondja meg a Feedback sheetben, pontosan
-  // melyik részről van szó (exam:<szint>:<rész>). Beírós kérdésnél a 💬 a dokkolt sáv fölé kerül.
+  // The 💬 is on every part of the level exam; the `part` tells the Feedback sheet exactly
+  // which part it is (exam:<level>:<part>). On a typing question the 💬 sits above the docked bar.
   const pair = `${source?.target === 'en' ? 'es' : 'en'}→${source?.target ?? 'es'}`;
   const shell = (children: ReactNode, part?: string, bottomOffset?: number) => (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
@@ -264,8 +264,8 @@ export default function ExamScreen() {
   }
 
   if (phase === 'result' && score) {
-    // készségenként pont és %, a gyenge pontoknál link (nyelvtan: a leggyakrabban elrontott
-    // leckék; szó, olvasás: vissza a tanulófülre ezen a szinten).
+    // Points and % per skill, a link at the weak points (grammar: the most often missed
+    // lessons; word, reading: back to the learn tab at this level).
     const skills = skillResults(score);
     const isWeak = (skill: ExamItem['skill']) => skills.some((r) => r.skill === skill && r.weak);
     const contentLang = source?.target === 'en' ? 'es' : 'en';
