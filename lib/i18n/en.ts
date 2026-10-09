@@ -48,7 +48,7 @@ export default {
     settings: 'Settings',
     grammar: 'Grammar',
     stats: 'Stats',
-    pcic: 'PCIC',
+    pcic: 'Learn',
   },
   // K33 (play-vágás, 2026-09-22): a Game/Talk fülek kikerültek, ez a
   // namespace csak a components/grammar/GrammarDrill.tsx feedback- és
