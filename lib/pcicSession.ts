@@ -92,7 +92,7 @@ export const PCIC_NEW_BONUS_STEP = 10;
 // FB449/FB451: a "kész mára" képernyő +5 / +10 / +15 új szó gombjai.
 export const PCIC_NEW_BONUS_STEPS = [5, 10, 15] as const;
 
-export interface PcicNewBudgetInput {
+interface PcicNewBudgetInput {
   limit: number; // a Beállítások napi új-szó kerete (daily_new_limit)
   bonus: number; // a mai napra perzisztált bónusz (learn_settings.new_bonus, csak ha new_bonus_date === ma)
   introducedToday: number; // a ma bevezetett (introducedAt === ma) kártyák száma
@@ -180,7 +180,7 @@ export function practiceTopUpStep({
 // korábban ebben a napi körben már bevezetődött). Ez a felbontás, `word` = kind
 // word/phrase/pattern, `sentence` = kind sentence (a lánc-mondatok is ide esnek,
 // mert egy lánc-tag ugyanolyan `sentence` kind-ú PcicItem, mint bármely más mondat).
-export interface TodayIntroducedByKind {
+interface TodayIntroducedByKind {
   words: number;
   sentences: number;
 }

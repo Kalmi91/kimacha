@@ -38,7 +38,7 @@ export interface MistakeWord {
   note?: string;
 }
 
-export type MistakeWrongWordKind = 'spelling' | 'form' | 'word';
+type MistakeWrongWordKind = 'spelling' | 'form' | 'word';
 
 export interface MistakeWrongWord {
   wrong: string;
@@ -62,7 +62,7 @@ export interface MistakesBatch {
   wrongWords: MistakeWrongWord[];
 }
 
-export type ValidateMistakesResult =
+type ValidateMistakesResult =
   | { ok: true; batch: MistakesBatch }
   | { ok: false; error: string };
 

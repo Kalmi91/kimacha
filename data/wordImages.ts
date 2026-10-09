@@ -5,7 +5,7 @@
 import type { ImageSourcePropType } from 'react-native';
 import imagesJson from '@/data/words-open/images.json';
 
-export type WordImageMeta = {
+type WordImageMeta = {
   file: string;
   width: number;
   height: number;

@@ -13,20 +13,20 @@ import type { PcicLevel } from '@/data/pcic';
 
 export const PLACEMENT_BLOCK = 5;
 export const PLACEMENT_MAX_QUESTIONS = 20;
-export const PLACEMENT_START_LEVEL: PcicLevel = 'A2';
+const PLACEMENT_START_LEVEL: PcicLevel = 'A2';
 /** Ennyi %-tól "feljebb" (4/5, 8/10). */
-export const PLACEMENT_PASS_PCT = 80;
+const PLACEMENT_PASS_PCT = 80;
 /** Ennyi %-ig "lejjebb" (2/5, 4/10). */
-export const PLACEMENT_FAIL_PCT = 40;
+const PLACEMENT_FAIL_PCT = 40;
 /** Egy szinten legfeljebb ennyi lépcső (a köztes eredmény egyszer ismétel). */
-export const PLACEMENT_MAX_BLOCKS_PER_LEVEL = 2;
+const PLACEMENT_MAX_BLOCKS_PER_LEVEL = 2;
 
 export interface PlacementTally {
   asked: number;
   correct: number;
 }
 
-export type PlacementVerdict = 'pass' | 'mixed' | 'fail';
+type PlacementVerdict = 'pass' | 'mixed' | 'fail';
 
 export interface PlacementState {
   /** A mérhető szintek növekvő sorrendben (csak amihez van adat). */

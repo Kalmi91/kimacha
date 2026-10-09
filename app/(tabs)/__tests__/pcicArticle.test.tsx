@@ -30,7 +30,6 @@ const FIXTURE_ITEM = { id: 'b1-x1', es: 'el perro', en: 'dog', kind: 'word' as c
 jest.mock('@/data/pcic', () => ({
   PCIC_LEVELS: ['B1'],
   PCIC_VIEW_LEVELS: ['B1'],
-  LEVEL_LABELS: { B1: 'Intermediate' },
   pcicItemsForLevel: () => [FIXTURE_ITEM],
   findPcicItem: (id: string) => (id === 'b1-x1' ? FIXTURE_ITEM : undefined),
   setPcicTarget: () => {},

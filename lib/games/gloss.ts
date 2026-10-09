@@ -16,7 +16,7 @@ export interface GlossInfo {
   isNew: boolean;
 }
 
-export interface ResolveGlossOptions {
+interface ResolveGlossOptions {
   learnedLang: string;
   nativeLang: string;
   // word ids the player already knows (e.g. a PoolEntry list's non-new ids).

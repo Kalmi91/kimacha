@@ -4,13 +4,13 @@
 // el, amit tanítani akar. Ez a modul vágja szét a szöveget nyelv-szakaszokra; a
 // felolvasás maga a lib/speech.ts dolga.
 
-export interface SpeechSegment {
+interface SpeechSegment {
   text: string;
   /** A szakasz nyelve: a tanult nyelv kódja, vagy a tartalom nyelvéé. */
   lang: string;
 }
 
-export interface SplitOptions {
+interface SplitOptions {
   learnedLang: string;
   nativeLang: string;
 }

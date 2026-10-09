@@ -29,7 +29,6 @@ const ITEMS = [
 jest.mock('@/data/pcic', () => ({
   PCIC_LEVELS: ['B1'],
   PCIC_VIEW_LEVELS: ['B1'],
-  LEVEL_LABELS: { B1: 'Intermediate' },
   pcicItemsForLevel: () => ITEMS,
   findPcicItem: (id: string) => ITEMS.find((i) => i.id === id),
   setPcicTarget: () => {},

@@ -30,7 +30,7 @@ export const MATCH_PAIRS = 4;
 const MIN_SENTENCE_WORDS = 3;
 const MAX_SENTENCE_WORDS = 9;
 
-export interface ExamBuildInput {
+interface ExamBuildInput {
   target: PcicTarget;
   /** A szint kártyái (a hívó a betöltött korpuszból adja). */
   items: PcicItem[];

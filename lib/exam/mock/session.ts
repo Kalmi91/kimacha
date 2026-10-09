@@ -72,7 +72,7 @@ export async function clearMockSession(store: ProgressStore, target: MockTarget,
   await store.setGameProgress(MOCK_EXAM_PROGRESS_KEY, sessionId(target, level), 'done', null);
 }
 
-export function lastFromResult(result: MockResult, date: string): MockLast {
+function lastFromResult(result: MockResult, date: string): MockLast {
   return {
     passed: result.passed,
     provisional: result.provisional,

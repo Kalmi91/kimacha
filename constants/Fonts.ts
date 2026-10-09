@@ -35,7 +35,7 @@ export const FONT_NAMES = [
   'OpenDyslexic',
 ] as const;
 
-export type FontName = (typeof FONT_NAMES)[number];
+type FontName = (typeof FONT_NAMES)[number];
 
 export const FONT_FILES: Record<FontName, number> = {
   ArchivoBlack: require('../assets/fonts/ArchivoBlack-Regular.ttf'),
@@ -69,7 +69,7 @@ export const FONT_FILES: Record<FontName, number> = {
   OpenDyslexic: require('../assets/fonts/OpenDyslexic-Regular.otf'),
 };
 
-export type FontLicense = { family: string; license: string; url: string };
+type FontLicense = { family: string; license: string; url: string };
 
 const OFL = 'SIL Open Font License 1.1';
 const gf = (family: string, license: string = OFL): FontLicense => ({

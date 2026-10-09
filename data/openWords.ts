@@ -32,9 +32,9 @@ interface OpenCard {
 }
 
 /** A words-open kártya WordEntry-alakban; `openPos` a words-open nyers szófaja (conj, det, interj is). */
-export type OpenWord = WordEntry & { lemma: string; openPos: string };
+type OpenWord = WordEntry & { lemma: string; openPos: string };
 
-export const OPEN_LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2'];
+const OPEN_LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2'];
 
 // A WordPos-ba eső szófajok; conj/det/interj nem képezhető le, azoknak `pos` nélkül marad a kártya.
 const OPEN_POS_TO_WORD_POS: Record<string, WordPos> = {

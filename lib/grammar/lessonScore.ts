@@ -72,7 +72,7 @@ export function lessonBadgePercent(
 // tartalékként olvasódnak (amíg a fajtának nincs sem best-, sem run-sora), hogy a
 // meglévő haladás ne tűnjön el.
 
-export type ScoredKind = 'choice' | 'article' | 'match' | 'form' | 'why' | 'transform' | 'spot' | 'order' | 'dictation';
+type ScoredKind = 'choice' | 'article' | 'match' | 'form' | 'why' | 'transform' | 'spot' | 'order' | 'dictation';
 
 export interface KindBest {
   correct: number;

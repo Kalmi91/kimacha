@@ -7,7 +7,7 @@ import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
 import { composeSkin, skinIdOfTheme } from '@/lib/skinTheme';
 import { useTheme, type ThemeKey } from '@/lib/ThemeContext';
 
-export type SkinState = {
+type SkinState = {
   // A kiválasztás ('mix' = Saját mix).
   id: SkinSelection;
   // Az aktív Skin (mixnél a négy forrásból összerakva).

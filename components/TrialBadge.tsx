@@ -5,7 +5,7 @@ import { t } from '@/lib/i18n';
 // diktálás) csak két leckében élnek, ideiglenes "ÚJ · TESZT" jelöléssel, hogy Kálmán
 // kipróbálhassa és jóváhagyhassa. EGY helyről kivehető: a TRIAL_BADGES false-ra állításától
 // eltűnik minden jelvény (a feladat-gombokon, a feladatokon és a lecke-listán is).
-export const TRIAL_BADGES = true;
+const TRIAL_BADGES = true;
 
 export default function TrialBadge({ testID = 'trial-badge' }: { testID?: string }) {
   if (!TRIAL_BADGES) return null;

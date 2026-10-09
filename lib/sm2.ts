@@ -27,7 +27,7 @@ export interface Sm2Card {
 // (lásd pickSm2Session), és onnan ugyanígy egy jó válasszal graduál.
 export const LEARNING_STEPS = 1;
 const EASE_FLOOR = 1.3;
-export const DEFAULT_EASE = 2.5;
+const DEFAULT_EASE = 2.5;
 const GRADUATE_INTERVAL_DAYS = 1;
 const EASY_LEARNING_INTERVAL_DAYS = 4;
 export const DEFAULT_NEW_LIMIT = 20;
