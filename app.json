@@ -44,7 +44,8 @@
         }
       ],
       "expo-sqlite",
-      "expo-sharing"
+      "expo-sharing",
+      "./plugins/withPlaySigning"
     ],
     "experiments": {
       "typedRoutes": true
