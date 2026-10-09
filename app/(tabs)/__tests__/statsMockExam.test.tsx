@@ -1,7 +1,7 @@
-// a Stats fül "Practice exam" kártyája a próbavizsga belépője.
-// Szintenként egy gomb (mindkét irányban A1 és A2; az angol irányon a felirat nemzetközi mintát jelöl,
-// nem hivatalosat), a gomb a /mock-exam képernyőre visz, alatta a legutóbbi eredmény
-// vagy a félbehagyott vizsga jelzése. Mock-minta: statsBrutal.test.tsx.
+// The "Practice exam" card on the Stats tab is the entry to the mock exam.
+// One button per level (A1 and A2 in both directions; in the English direction the label marks an international sample,
+// not an official one), the button leads to the /mock-exam screen, below it the latest result
+// or the sign of an abandoned exam. Mock pattern: statsBrutal.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 const mockPush = jest.fn();

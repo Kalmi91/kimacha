@@ -1,7 +1,7 @@
-// User feedback ("valamiért itt nem megy a progress bar", A2): a "+N új szó" adag-alapja (batchBase) egy
-// SZINTRE érvényes mérés volt, de szint-váltáskor is megmaradt. A1-en +15 után (alap = a nap addigi
-// kész kártyái az A1-en) a másik szinten a haladás-csík addig 0% maradt, amíg ott az alapnál több
-// kártya el nem készült. Mock-minta: pcicMoreNewSteps.test.tsx.
+// User feedback ("the progress bar doesn't work here for some reason", A2): the batch base (batchBase) of the "+N new words" batch was
+// a measurement valid for ONE LEVEL, but it also stayed in place after a level switch. After +15 on A1 (base = the cards
+// the day had finished so far on A1), the progress bar on the other level stayed at 0% until more cards than the base
+// had been finished there. Mock pattern: pcicMoreNewSteps.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -63,7 +63,7 @@ const flush = async (times = 8) => {
 describe('PCIC fül: a haladás-csík a másik szinten is halad (FB485)', () => {
   const today = localDateString();
 
-  // A1-en a napi keret (10) kimerítve: ma 10 szó kész, a sor üres, a "kész mára" képernyő jön.
+  // The daily budget (10) is used up on A1: 10 words done today, the queue is empty, the "done for today" screen shows up.
   beforeEach(async () => {
     await getDb().resetPcicCards();
     await getDb().setPcicNewBonus(0, today);
@@ -89,7 +89,7 @@ describe('PCIC fül: a haladás-csík a másik szinten is halad (FB485)', () => 
       await flush();
     }
     const width = StyleSheet.flatten(getByTestId('learn-progress-fill').props.style).width as string;
-    // 5 kész, 10 hátra: 5 / (15 - 1).
+    // 5 done, 10 to go: 5 / (15 - 1).
     expect(parseFloat(width)).toBeCloseTo((5 / 14) * 100, 1);
   });
 

@@ -1,6 +1,6 @@
-// a haladás-nullázás a Beállításokban él (a Learn
-// fejlécből költözött): egy sor minden paklira (szintre), amin van haladás, és egy
-// sor a nyelvtanra; mind megerősítéssel. Mock-minta: settingsBrutal.test.tsx.
+// Progress reset lives in Settings (moved
+// from the Learn header): one row for every deck (level) that has progress, and one
+// row for grammar; all with confirmation. Mock pattern: settingsBrutal.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-router', () => ({
@@ -35,10 +35,10 @@ const flush = async () => {
   }
 };
 
-// a nullázó sorok egy lenyíló szekcióban vannak, előbb ki kell nyitni.
+// the reset rows are in a collapsible section, which has to be opened first.
 const openReset = (r: { getByText: (t: string) => unknown }) => fireEvent.press(r.getByText('🗑️ Restart progress') as never);
 
-// A megerősítő Alert destruktív gombját nyomja meg (natív ág).
+// Presses the destructive button of the confirming Alert (native branch).
 const confirmAlert = async (alertSpy: jest.SpyInstance) => {
   const buttons = alertSpy.mock.calls[alertSpy.mock.calls.length - 1][2] ?? [];
   const yes = buttons.find((b: { style?: string }) => b.style === 'destructive');
@@ -78,7 +78,7 @@ describe('Beállítások: haladás nullázása (PLAN-fb1001 K1 + FB431)', () => 
     const { getByText, queryByText } = r;
     await flush();
 
-    // zárva a sorok nem látszanak, a szekció-fejléc igen.
+    // closed, the rows are not visible, the section header is.
     expect(queryByText('🗑️ Reset progress (B1)')).toBeNull();
     openReset(r);
     expect(queryByText('🗑️ Reset progress (A2)')).toBeNull();
@@ -94,7 +94,7 @@ describe('Beállítások: haladás nullázása (PLAN-fb1001 K1 + FB431)', () => 
     expect(getByText('🗑️ Reset progress (B1)')).toBeTruthy();
   });
 
-  // a mentett Learn-kör pillanatképe a nullázott haladásra már nem érvényes.
+  // the snapshot of the saved Learn round is no longer valid for the reset progress.
   it('a pakli nullázása a mentett Learn-kör pillanatképét is eldobja', async () => {
     await seedCard('A1');
     await saveLearnResume(getDb(), buildLearnResume([sm2NewCard(pcicItemsForLevel('A1')[0].id)], '2026-10-05', 'A1', null));

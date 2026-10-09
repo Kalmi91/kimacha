@@ -1,6 +1,6 @@
-// a Learn kártya beírómezőjében szürke placeholder mondja meg, mit
-// kell írni ("Type in Spanish"); a nyelv neve az irány célnyelvéből jön
-// (es→en irányban "Type in English"). Mock-minta: pcicDirection.test.tsx.
+// The input field of the Learn card has a gray placeholder that tells what
+// to type ("Type in Spanish"); the language name comes from the target language of the direction
+// (in the es→en direction "Type in English"). Mock pattern: pcicDirection.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({

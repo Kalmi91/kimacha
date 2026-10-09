@@ -1,7 +1,7 @@
-// a tanulófül szint-választó lapján
-// az A1 sor alatt ott a vizsga-sor, az SM-2 adatból és a kész leckékből számolva; a koppintás
-// a vizsgára (nyitva), a szavak gyakorlására vagy a nyelvtani leckékre visz. A valódi
-// words-open korpusszal fut (nem mockolt data/pcic). Mock-minta: pcicLevelPicker.test.tsx.
+// On the level picker sheet of the Learn tab,
+// the exam row sits below the A1 row, computed from SM-2 data and finished lessons; tapping it
+// leads to the exam (when open), to practicing the words, or to the grammar lessons. It runs against the real
+// words-open corpus (data/pcic is not mocked). Mock pattern: pcicLevelPicker.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -42,7 +42,7 @@ const flush = async (times = 8) => {
   }
 };
 
-// A lap bezárul, és csak a kilépő animáció után (SHEET_CLOSE_MS) lép tovább a navigáció.
+// The sheet closes, and navigation only proceeds after the exit animation (SHEET_CLOSE_MS).
 const afterSheetClose = async () => {
   await act(async () => {
     jest.advanceTimersByTime(600);
@@ -50,7 +50,7 @@ const afterSheetClose = async () => {
   await flush();
 };
 
-// A1-B2 mindegyik szint alatt van vizsga-sor, ezért a szint-sorok feliratai szintenként keresendők.
+// There is an exam row under every level A1-B2, so the level row labels have to be looked up per level.
 const a1 = (screen: ReturnType<typeof render>) => within(screen.getByTestId('exam-row-A1'));
 
 const openSheet = async () => {
@@ -80,7 +80,7 @@ describe('Tanulófül: A1 vizsga-sor a szint-választó lapon', () => {
     expect(a1(screen).getByTestId('exam-row-words').props.children).toBe(`0 / ${needed} words learned, ${needed} to go`);
     expect(a1(screen).getByText(/Finish one A1 grammar lesson/)).toBeTruthy();
 
-    // "Practice words": a lap bezárul (az A1 pakli marad), vizsga nem indul.
+    // "Practice words": the sheet closes (the A1 deck stays), no exam starts.
     fireEvent.press(screen.getByTestId('exam-row-A1'));
     await flush();
     expect(screen.queryByTestId('exam-row-A1')).toBeNull();
@@ -110,7 +110,7 @@ describe('Tanulófül: A1 vizsga-sor a szint-választó lapon', () => {
 
     fireEvent.press(screen.getByTestId('exam-row-A1'));
     await flush();
-    // A lap ELŐBB bezárul, a navigáció csak utána jön (különben a lap a vizsga fölött marad).
+    // The sheet closes FIRST, navigation only comes after that (otherwise the sheet stays above the exam).
     expect(screen.queryByTestId('exam-row-A1')).toBeNull();
     expect(mockPush).not.toHaveBeenCalled();
     await afterSheetClose();

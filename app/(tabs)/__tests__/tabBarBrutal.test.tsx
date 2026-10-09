@@ -1,5 +1,5 @@
-// a tab-bar brutalista palettán (az aktív ikon kitöltésű dobozon), classic
-// palettán a mai sima ikon. A Tabs mock csak a tabBarIcon-okat rendereli.
+// The tab bar on the brutalist palette (the active icon on a filled box), today's
+// plain icon on the classic palette. The Tabs mock renders only the tabBarIcons.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-symbols', () => ({ SymbolView: () => null }));

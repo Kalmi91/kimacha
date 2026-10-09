@@ -1,6 +1,6 @@
-// minden 4. ÚJ szó után mondatkártya a pakli-menetben
-// (felváltva összerakós és begépelős), csak gyakorlás: nem ír SRS-t (K3).
-// Mock-minta: app/(tabs)/__tests__/pcicDirection.test.tsx.
+// A sentence card after every 4th NEW word in the deck round
+// (alternating assemble and type-in), practice only: it writes no SRS.
+// Mock pattern: app/(tabs)/__tests__/pcicDirection.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -14,7 +14,7 @@ jest.mock('expo-router', () => ({
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
     useEffect(cb, []);
-    // A teszt ezzel tudja újra "fókuszba hozni" a fület (fülváltás és vissza).
+    // With this the test can bring the tab back "into focus" (tab switch and back).
     (globalThis as { __focusCb?: () => void }).__focusCb = cb;
   },
 }));
@@ -85,7 +85,7 @@ describe('PCIC fül: mondatkártya (PLAN-ketiranyu 7. lépés)', () => {
     mockSpeak.mockClear();
   });
 
-  // Egy ÚJ szó megválaszolása: begépeli a helyes alakot, Check, Next.
+  // Answering a NEW word: types the correct form, Check, Next.
   const answerWord = async (r: ReturnType<typeof render>, prompt: string) => {
     expect(r.getByText(prompt)).toBeTruthy();
     fireEvent.changeText(r.UNSAFE_getByType(TextInput), ANSWERS[prompt]);
@@ -104,7 +104,7 @@ describe('PCIC fül: mondatkártya (PLAN-ketiranyu 7. lépés)', () => {
     expect(r.queryByText('The book and the table.')).toBeNull();
 
     await answerWord(r, 'the house');
-    // Összerakós kártya: a forrás-mondat felül, a következő szó még nem szól.
+    // Assemble card: the source sentence on top, the next word does not speak yet.
     expect(r.getByText('The book and the table.')).toBeTruthy();
     expect(r.queryByText('the dog')).toBeNull();
     expect(mockSpeak).not.toHaveBeenCalledWith('the dog', 'en-US');
@@ -114,13 +114,13 @@ describe('PCIC fül: mondatkártya (PLAN-ketiranyu 7. lépés)', () => {
     fireEvent.press(r.getByText(/^Next/));
     await flush();
 
-    // A kártya bezárult: a 5. szó promptja látszik és felolvasódik.
+    // The card closed: the prompt of the 5th word shows and is read aloud.
     expect(r.getByText('the dog')).toBeTruthy();
     expect(mockSpeak).toHaveBeenCalledWith('the dog', 'en-US');
     expect((await getDb().getPcicCards()).length).toBe(4);
 
     for (const prompt of ['the dog', 'the chair', 'the glass', 'the light']) await answerWord(r, prompt);
-    // Begépelős kártya: az 5. szónak nincs mondata, a 6.-é (silla) megy át a kapun.
+    // Type-in card: the 5th word has no sentence, the 6th's (silla) goes through the gate.
     expect(r.getByText('The chair and the table.')).toBeTruthy();
     fireEvent.changeText(r.getByPlaceholderText('Type the sentence'), 'la silla y la mesa');
     fireEvent.press(r.getByText('✓ Check'));
@@ -135,7 +135,7 @@ describe('PCIC fül: mondatkártya (PLAN-ketiranyu 7. lépés)', () => {
     await flush();
     for (const prompt of ['the book', 'the table', 'the cat']) await answerWord(r, prompt);
     await answerWord(r, 'the house');
-    // Bezárás rossz építéssel is lehet: egy csempe, Check, Next.
+    // It can also be closed with a wrong build: one tile, Check, Next.
     fireEvent.press(r.getAllByText('mesa')[0]);
     fireEvent.press(r.getByText('Check'));
     fireEvent.press(r.getByText(/^Next/));
@@ -143,7 +143,7 @@ describe('PCIC fül: mondatkártya (PLAN-ketiranyu 7. lépés)', () => {
 
     fireEvent.press(r.getByLabelText('Undo'));
     await flush();
-    // Az undo a felfedett állapotot állítja vissza: újra a Next értékel.
+    // Undo restores the revealed state: Next grades again.
     fireEvent.press(r.getByText('Next → Knew it'));
     await flush();
     expect(r.getByText('The book and the table.')).toBeTruthy();
@@ -154,7 +154,7 @@ describe('PCIC fül: mondatkártya (PLAN-ketiranyu 7. lépés)', () => {
     await flush();
     for (const prompt of ['the book', 'the table', 'the cat']) await answerWord(r, prompt);
 
-    // Settingsbe és vissza: a fül újra fókuszba kerül, load() újraépíti a sort.
+    // To Settings and back: the tab gets focus again, load() rebuilds the queue.
     await act(async () => {
       (globalThis as { __focusCb?: () => void }).__focusCb?.();
     });

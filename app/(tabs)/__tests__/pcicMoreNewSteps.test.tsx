@@ -1,5 +1,5 @@
-// a "kész mára" képernyőn +5 / +10 / +15 új szó gomb van (a +10 testID-ja: learn-more-new);
-// minden gomb a napi kerethez ennyivel többet ad. Mock-minta: pcicNewBudgetLevels.test.tsx.
+// The "done for today" screen has +5 / +10 / +15 new word buttons (testID of +10: learn-more-new);
+// each button adds that much to the daily budget. Mock pattern: pcicNewBudgetLevels.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -61,7 +61,7 @@ const flush = async (times = 8) => {
 describe('PCIC fül: +5 / +10 / +15 új szó a "kész mára" képernyőn (FB449, FB451)', () => {
   const today = localDateString();
 
-  // A napi keret (10) ki van merítve: ma 10 szó bevezetve és kész, a sor üres, a "kész mára" képernyő jön.
+  // The daily budget (10) is used up: 10 words introduced and done today, the queue is empty, the "done for today" screen shows up.
   beforeEach(async () => {
     await getDb().resetPcicCards();
     await getDb().setPcicNewBonus(0, today);
@@ -91,8 +91,8 @@ describe('PCIC fül: +5 / +10 / +15 új szó a "kész mára" képernyőn (FB449,
     expect(await getDb().getPcicNewBonus(today)).toBe(n);
   });
 
-  // User feedback ("nyomtam egy +15 szót és bebugosodott a csík"): a haladás-csík a +N után az ÚJ adagot méri,
-  // az első új kártyánál üres (régen a nap eddigi 10 kész kártyájától 42%-ról indult).
+  // User feedback ("I pressed +15 words and the bar got buggy"): after +N the progress bar measures the NEW batch,
+  // and is empty at the first new card (it used to start at 42% from the 10 cards the day had already finished).
   it.each([
     ['learn-more-new-5', 5],
     ['learn-more-new', 10],
