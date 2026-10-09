@@ -400,7 +400,7 @@ const styles = StyleSheet.create({
     marginTop: 4,
     textAlign: 'center',
   },
-  // UTEMEZO 6. szakasz: szint-badge + know/total + ProgressMeter kartya.
+  // UTEMEZO 6. szakasz: szint-badge + know/total kartya.
   levelCard: {
     borderRadius: 14,
     padding: 16,

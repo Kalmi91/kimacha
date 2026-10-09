@@ -1,4 +1,4 @@
-// NY25: ProgressMeter, StatusBarStrip, UsageToast és MistakesEntry brutalista palettán
+// NY25: StatusBarStrip, UsageToast és MistakesEntry brutalista palettán
 // (SegmentBar / ink vonal / BrutalBox, sarok 0), classic palettán a mai kinézet.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
@@ -27,7 +27,6 @@ import { getDb } from '@/lib/database';
 import { validateMistakesPayload } from '@/lib/mistakes/format';
 import sample from '@/lib/mistakes/__fixtures__/sample.json';
 import { ThemeProvider } from '@/lib/ThemeContext';
-import ProgressMeter from '../ProgressMeter';
 import StatusBarStrip from '../StatusBarStrip';
 import UsageToast from '../UsageToast';
 import MistakesEntry from '../learn/MistakesEntry';
@@ -45,22 +44,6 @@ const flush = async (times = 6) => {
 const wrap = (ui: React.ReactElement) => <ThemeProvider>{ui}</ThemeProvider>;
 
 describe('Fejléc-elemek, neo-brutalista (NY25)', () => {
-  it('ProgressMeter: brand palettán SegmentBar, classic palettán gyémánt-rács', async () => {
-    await getDb().setGrammarPalette('brand');
-    const brand = render(wrap(<ProgressMeter known={5} total={10} langFlag="x" langName="Español" />));
-    await flush();
-    expect(brand.queryByTestId('progress-segments')).toBeTruthy();
-    // 50% = 4 / 8 kitöltött blokk
-    expect(brand.queryByTestId('progress-segments-3')).toBeTruthy();
-    brand.unmount();
-
-    await getDb().setGrammarPalette('classic');
-    const classic = render(wrap(<ProgressMeter known={5} total={10} langFlag="x" langName="Español" />));
-    await flush();
-    expect(classic.queryByTestId('progress-segments')).toBeNull();
-    classic.unmount();
-  });
-
   it('StatusBarStrip: brand palettán alsó ink vonal, classic palettán nincs', async () => {
     await getDb().setGrammarPalette('brand');
     const brand = render(wrap(<StatusBarStrip />));
