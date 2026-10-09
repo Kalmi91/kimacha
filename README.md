@@ -11,7 +11,7 @@ Multilingual UI (hu / en / es / de).
 
 - **Expo SDK 56** / React Native 0.85 / React 19 / TypeScript
 - **expo-router** (file-based navigation), **expo-sqlite** (local store)
-- **SM-2** spaced-repetition scheduling (`lib/sm2.ts`)
+- **ts-fsrs** spaced-repetition scheduling
 
 ## Development
 
