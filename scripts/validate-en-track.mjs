@@ -8,7 +8,7 @@
  *    sublevel orders contiguous from 1.
  *  - cards: required fields present + non-empty (id, level, es, hu, en, de, topic,
  *    topicOrder, sentence_{es,hu,en,de}); level matches file; id within the level's
- *    reserved block; ids globally unique across the en track; card.topic exists in
+ *    reserved block(s); ids globally unique across the en track; card.topic exists in
  *    that level's topic list.
  *  - cross-level dedup: one English headword (normalized `en`) is taught in exactly
  *    one level+topic (so A2 can't re-teach an A0/A1 word).
@@ -27,8 +27,11 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 const LEVELS = ['A0', 'A1', 'A2', 'B1', 'B2', 'C1'];
 
-// Reserved, non-overlapping id blocks per en level.
-const ID_RANGE = { A0: [5800, 5999], A1: [5001, 5399], A2: [5400, 5799], B1: [10000, 10999], B2: [11000, 11999], C1: [12000, 12999] };
+// Reserved id blocks per en level (inclusive [lo, hi] ranges). The A1/A2 ids 7600-9399 were handed
+// out in sub-batches after the original blocks, and 10798-10999 (the tail of the B1 block) is one shared
+// counter used by A1, A2 and B1. Card ids are persisted as word_id in the learner's progress tables,
+// so never renumber: extend these ranges instead.
+const ID_RANGE = { A0: [[5800, 5999]], A1: [[5001, 5399], [7600, 8799], [10798, 10999]], A2: [[5400, 5799], [8800, 9399], [10798, 10999]], B1: [[10000, 10999]], B2: [[11000, 11999]], C1: [[12000, 12999]] };
 
 const errors = [];
 const err = (m) => errors.push(m);
@@ -72,13 +75,13 @@ for (const lvl of LEVELS) {
   if (!cards) continue;
   totalCards += cards.length;
   allCards.push(...cards);
-  const [lo, hi] = ID_RANGE[lvl];
+  const ranges = ID_RANGE[lvl];
   for (const c of cards) {
     for (const f of REQUIRED) {
       if (c[f] === undefined || c[f] === null || c[f] === '') err(`${lvl} card ${c.id ?? '?'}: missing/empty field ${f}`);
     }
     if (c.level !== lvl) err(`${lvl} card ${c.id}: level field is ${c.level}`);
-    if (typeof c.id === 'number' && (c.id < lo || c.id > hi)) err(`${lvl} card ${c.id}: id outside block ${lo}-${hi}`);
+    if (typeof c.id === 'number' && !ranges.some(([lo, hi]) => c.id >= lo && c.id <= hi)) err(`${lvl} card ${c.id}: id outside blocks ${ranges.map(([lo, hi]) => `${lo}-${hi}`).join(', ')}`);
     if (seenId.has(c.id)) err(`duplicate id ${c.id} (${seenId.get(c.id)} + ${lvl})`);
     else seenId.set(c.id, lvl);
     if (c.topic && !topicIdsByLevel[lvl].has(c.topic)) err(`${lvl} card ${c.id}: topic ${c.topic} not in ${lvl} topic list`);
