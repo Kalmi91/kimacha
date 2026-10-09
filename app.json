@@ -46,6 +46,7 @@
       "expo-sqlite",
       "expo-sharing",
       "./plugins/withPlaySigning",
+      "./plugins/withNativeDebugSymbols",
       [
         "expo-build-properties",
         {

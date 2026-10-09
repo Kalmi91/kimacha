@@ -56,7 +56,7 @@ function patchBuildGradle(src) {
   let out = src;
 
   const useKey = out.replace(
-    /(release\s*\{[^}]*?signingConfig )signingConfigs\.debug/,
+    /(^ {8}release \{\n(?: {9,}.*\n)*? {12}signingConfig )signingConfigs\.debug/m,
     '$1playStoreBuild ? signingConfigs.release : signingConfigs.debug'
   );
   if (useKey === out) throw new Error('withPlaySigning: buildTypes.release signingConfig anchor not found');

@@ -50,6 +50,11 @@ describe('withPlaySigning.patchBuildGradle', () => {
     expect(patchBuildGradle(out)).toBe(out);
   });
 
+  it('copes with a nested block that another plugin put into the release build type', () => {
+    const nested = TEMPLATE.replace('        release {\n', "        release {\n            ndk {\n                debugSymbolLevel 'SYMBOL_TABLE'\n            }\n");
+    expect(patchBuildGradle(nested)).toContain('signingConfig playStoreBuild ? signingConfigs.release');
+  });
+
   it('throws when the template no longer has the expected anchors', () => {
     expect(() => patchBuildGradle('android {\n}\n')).toThrow('anchor not found');
   });
