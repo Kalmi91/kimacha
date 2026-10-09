@@ -83,7 +83,7 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
     const build = feedbackBuildTag();
 
     if (IS_PLAY_BUILD) {
-      // Play flavor: no server call (lib/buildFlavor.ts); the learner's own
+      // Play cut: no server call (lib/buildFlavor.ts); the learner's own
       // share sheet sends the text wherever they pick (most often e-mail).
       try {
         await Share.share({ message: `${build} · ${currentCard}\n\n${text.trim()}` });

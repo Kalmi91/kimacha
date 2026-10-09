@@ -395,7 +395,7 @@ class SQLiteDB implements DB {
   }
 
   // `levelPrefix` (e.g. "a1") no longer gives the LIKE pattern
-  // (since the difficulty fit, an id's prefix is not necessarily its real level,
+  // (since the difficulty re-leveling, an id's prefix is not necessarily its real level,
   // see matchesLevel in lib/pcicLevels.ts), it is the name of the level to clear; the
   // real id list is fetched from the loaded corpus.
   async resetPcicCards(levelPrefix?: string): Promise<void> {

@@ -1,7 +1,7 @@
-// kép egyes kártyákhoz, Wikimedia Commonsról, az appba csomagolva.
-// A metaadat (szerző, licenc, forrás-URL) a data/words-open/images.json-ban van, kulcsa az `o<order>` kártya-id;
-// a fájlok az assets/word-images/ alatt vannak. Metro csak statikus require-t tud, ezért a fájlnév -> forrás
-// térkép itt kézzel van vezetve; a data/__tests__/wordImages.test.ts kapuja ellenőrzi, hogy a kettő egyezik.
+// Images for some cards, from Wikimedia Commons, bundled into the app.
+// The metadata (author, licence, source URL) lives in data/words-open/images.json, keyed by the `o<order>` card id;
+// the files are under assets/word-images/. Metro can only do static require, so the file name -> source
+// map is maintained by hand here; the gate of data/__tests__/wordImages.test.ts checks that the two agree.
 import type { ImageSourcePropType } from 'react-native';
 import imagesJson from '@/data/words-open/images.json';
 
@@ -22,7 +22,7 @@ export type WordImage = {
   author: string;
   license: string;
   sourceUrl: string;
-  // images.json `modified` szerint a kép vágott (a forrássor jelzi, CC BY / BY-SA módosítás-jelzés).
+  // according to images.json `modified` the image is cropped (the source line shows it, CC BY / BY-SA modification notice).
   cropped: boolean;
 };
 
@@ -60,7 +60,7 @@ export const IMAGE_SOURCES: Record<string, ImageSourcePropType> = {
 
 export const IMAGE_META = imagesJson as Record<string, WordImageMeta>;
 
-// Egy kártya képe (kártya-id: `o<order>`), vagy undefined, ha nincs.
+// The image of a card (card id: `o<order>`), or undefined if there is none.
 export function wordImageFor(cardId: string): WordImage | undefined {
   const meta = IMAGE_META[cardId];
   const source = meta && IMAGE_SOURCES[meta.file];

@@ -102,7 +102,7 @@ describe('Brutal components: the shape comes from the theme', () => {
     expect(flat('box')).toMatchObject({ borderWidth: 1, borderColor: '#E8DFC8', borderRadius: 12 });
   });
 
-  it('the sticker and the segment take the theme border (at most 2 px), the scaled offset is proportional', async () => {
+  it("the sticker and the segment take the theme's border (at most 2 px), the scaled offset is proportional", async () => {
     await renderWithSkin(
       'memphis',
       <View>
@@ -117,7 +117,7 @@ describe('Brutal components: the shape comes from the theme', () => {
     expect(shadows().some((st) => st.left === 4 && st.top === 4)).toBe(true);
   });
 
-  it('the switch track follows the theme border and corner, visible even with a zero border (min 1 px)', async () => {
+  it("the switch track follows the theme's border and corner, visible even with a zero border (min 1 px)", async () => {
     await renderWithSkin('zen', <BrutalSwitch testID="sw" value={false} onValueChange={() => {}} />);
     expect(flat('sw').borderWidth).toBe(1);
   });

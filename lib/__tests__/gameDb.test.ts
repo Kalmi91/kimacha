@@ -1,4 +1,4 @@
-// game_progress (memory db). Play-vágás
+// game_progress (memory db). Play cut
 // (2026-09-23): game_scores/game_settings and the vocabPool helper
 // (getAllWordCards) lost their last caller with the Game tab and are gone;
 // game_progress survives, now also used by the grammar drill.

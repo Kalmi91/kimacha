@@ -1,4 +1,4 @@
-// a presente-irregular lecke a leggyakoribb rendhagyó igék mindegyikét tartalmazza.
+// the presente-irregular lesson contains every one of the most frequent irregular verbs.
 import lessonJson from '@/data/games/grammar/es/presente-irregular.json';
 import { lessonFor } from '../syllabus';
 import { tableCellsForLesson } from '../tableDeck';
@@ -10,7 +10,7 @@ const verbsInTables = new Set(tables.flatMap((t) => t.header.slice(1).map((h) =>
 
 const REQUIRED = [
   'ser', 'estar', 'ir', 'tener', 'hacer', 'decir', 'poder', 'querer', 'venir', 'salir', 'poner', 'saber', 'conocer', 'dar', 'ver', 'oír', 'traer',
-  // + a leggyakoribbak közül
+  // + from among the most frequent ones
   'parecer', 'seguir', 'conducir', 'caer', 'valer',
 ];
 

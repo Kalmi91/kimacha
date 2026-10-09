@@ -1,6 +1,6 @@
-// az összetéveszthető csoportok (scripts/words-open-confusable.json, pl. while/when:
-// mientras, cuando, cuándo) minden tagján van kis mondat (hint_en), és a Learn-kártya hozzáfér (PcicItem.hint).
-// A scripts/words-open-check.mjs R15 ugyanezt őrzi, de a CI csak a jestet futtatja.
+// every member of the confusable groups (scripts/words-open-confusable.json, e.g. while/when:
+// mientras, cuando, cuándo) has a short sentence (hint_en), and the Learn card gives access to it (PcicItem.hint).
+// R15 of scripts/words-open-check.mjs guards the same, but CI runs only jest.
 import confusable from '../../scripts/words-open-confusable.json';
 import { findPcicItem, setPcicTarget } from '../pcic';
 

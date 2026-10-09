@@ -1,4 +1,4 @@
-// Kimacha Play-vágás: the same source builds two flavors. The Drive-APK
+// Kimacha Play cut: the same source builds two flavors. The Drive-APK
 // (the maintainer's phone, /build_kimacha) keeps sending feedback to the Apps Script
 // endpoint; the Play build (AAB) never makes that network call, so
 // EXPO_PUBLIC_PLAY_STORE='1' (set on the bundleRelease command, Metro inlines

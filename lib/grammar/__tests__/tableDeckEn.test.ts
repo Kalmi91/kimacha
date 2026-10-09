@@ -90,7 +90,7 @@ describe('wordCellsForLesson es→en direction', () => {
     }
   });
 
-  it('the glossary is the author choice: the question is gloss.es, the answer the English word; a non-existent form is left out', () => {
+  it("the glossary is the author's choice: the question is gloss.es, the answer the English word; a non-existent form is left out", () => {
     const lesson = synthetic('A1', [], {
       glossary: [
         { word: 'university', gloss: { hu: 'egyetem', en: 'university', es: 'universidad', de: 'Universität' } },

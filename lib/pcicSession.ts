@@ -3,10 +3,10 @@ import type { PcicKind } from '@/data/pcic';
 
 // Advancing the queue after a rating and on undo, in a testable way.
 
-// A failed ("again") card used to go to the END of the queue without a timer,
+// A missed ("again") card used to go to the END of the queue without a timer,
 // so behind many new words it took a long time to come back.
 // It now gets a `returnAt` timestamp (now + N s); when the next card is
-// picked (`reorderForReturn`), the failed card with an expired returnAt (or, if there is no
+// picked (`reorderForReturn`), the missed card with an expired returnAt (or, if there is no
 // other card in the queue, the one expiring soonest) comes to the front,
 // no matter how many new/due words are in the queue. "Knew it" (`good`) and
 // graduated cards get no timer (the old append-to-the-end behavior applies).
@@ -18,7 +18,7 @@ export const MAX_AGAIN_DELAY_SEC = 300;
 export const AGAIN_DELAY_STEP_SEC = 15;
 
 /**
- * Moves at most ONE failed (returnAt-marked) card to the front of the
+ * Moves at most ONE missed (returnAt-marked) card to the front of the
  * queue: the oldest of the expired returnAt cards, or - if the queue has nothing
  * but the marked cards - the one expiring soonest (so the learner does not
  * wait needlessly). The relative order of the other cards does not
@@ -58,7 +58,7 @@ export function requeueAfterGrade(
   if (next.due !== today) return rest;
   // The returned card would carry its expired returnAt in the copy made by `sm2Review`,
   // and after "Knew it" it would immediately jump to the front of the queue again
-  // (4.1.0 web smoke test). Only `again` gets a new timer.
+  // (4.1.0 web smoke test, 2026-09-24). Only `again` gets a new timer.
   const { returnAt: _stale, ...clean } = next as QueuedSm2Card;
   const entry: QueuedSm2Card = grade === 'again' ? { ...clean, returnAt: now + delaySec * 1000 } : clean;
   return reorderForReturn([...rest, entry], now);

@@ -1,5 +1,5 @@
-// a szintválasztó lap A1 sora
-// alatt a vizsga-sor: zárva mennyi hiányzik, nyitva "Ready" + a mentett eredmény.
+// the A1 row of the level picker sheet
+// with the exam row under it: closed shows how much is missing, open shows "Ready" + the saved result.
 
 import { ScrollView } from 'react-native';
 import { fireEvent, render, within } from '@testing-library/react-native';
@@ -143,7 +143,7 @@ describe('LevelPickerSheet: exam row (A1)', () => {
     );
     const list = within(UNSAFE_getByType(ScrollView));
     for (const level of ['A1', 'A2', 'B1', 'B2']) expect(list.getByTestId(`exam-row-${level}`)).toBeTruthy();
-    // A cím a görgetett listán kívül marad.
+    // The title stays outside the scrolled list.
     expect(getByText('Level')).toBeTruthy();
     expect(list.queryByText('Level')).toBeNull();
   });

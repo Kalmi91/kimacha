@@ -1,7 +1,7 @@
 // Answer matching for the PCIC tab. The es form often carries a
 // "/" alternative ("tocar/sentir frío") or a parenthesized optional
 // part ("al final (de)"); both count as accepted forms. Accents
-// count for spelling, but a word-final ending/letter difference (e.g. "bueno"/"buena")
+// count for spelling ("just the plain spelling of the words"), but a word-final ending/letter difference (e.g. "bueno"/"buena")
 // matters grammatically, so it is
 // wrong, not near, even if the edit distance is only 1.
 

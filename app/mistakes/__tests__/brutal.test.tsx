@@ -1,5 +1,5 @@
-// a Hibák riport brutalista palettán (BrutalBox köteg-kártya), classic
-// palettán a mai kinézet. Mock-minta: report.test.tsx.
+// the Mistakes report on the brutalist palette (BrutalBox batch card), classic
+// palette is today's look. Mock pattern: report.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 

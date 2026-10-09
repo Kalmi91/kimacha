@@ -1,5 +1,5 @@
-// mistake_batches + mistake_cards a memory DB-n, a
-// pcicDb.test.ts mintáját követve (lásd annak fejléce).
+// mistake_batches + mistake_cards on the memory DB, following the
+// pattern of pcicDb.test.ts (see its header).
 
 import { getDb } from '../database.web';
 import { sm2NewCard } from '../sm2';

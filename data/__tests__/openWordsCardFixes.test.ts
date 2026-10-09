@@ -1,5 +1,5 @@
-// a Learn (PCIC) kártyák adat-javításai a visszajelzések nyomán.
-// Minden tétel egy-egy teszt, hogy a javítás ne csússzon vissza.
+// Data fixes of the Learn (PCIC) cards after user feedback.
+// Every item is a test of its own, so the fix cannot slip back.
 import { gradePcicAnswer } from '@/lib/pcicMatch';
 import { dropOrphanCards } from '@/lib/pcicSession';
 import type { Sm2Card } from '@/lib/sm2';
@@ -62,10 +62,10 @@ describe('data/words-open card fixes', () => {
     const all = (['A1', 'A2', 'B1', 'B2'] as const).flatMap((l) => pcicItemsForLevel(l));
     const orders = new Set(all.map((i) => i.order));
     for (const r of retired.retired) expect(orders.has(r.order)).toBe(false);
-    // a szomszédos orderek ugyanazok a kártyák maradtak
+    // the neighbouring orders stayed the same cards
     expect(findPcicItem('o2704')?.order).toBe(2704);
     expect(findPcicItem('o2706')?.order).toBe(2706);
-    // az eltűnt kártya haladás-sora árva: a session kihagyja
+    // the progress row of the vanished card is orphaned: the session skips it
     const orphan = { itemId: 'o2705', state: 'review' } as Sm2Card;
     expect(dropOrphanCards([orphan], (id) => findPcicItem(id) !== undefined)).toEqual([]);
   });

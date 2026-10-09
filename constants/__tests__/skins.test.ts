@@ -128,7 +128,7 @@ describe('theme list', () => {
     expect(DEFAULT_SKIN).toBe('brutal');
   });
 
-  it('the groups together cover exactly the 24 ids, without repetition, and a theme own group matches', () => {
+  it("the groups together cover exactly the 24 ids, without repetition, and a theme's own group matches", () => {
     const flat = SKIN_GROUPS.flatMap((g) => g.skins);
     expect(flat).toHaveLength(24);
     expect([...flat].sort()).toEqual([...SKIN_IDS].sort());

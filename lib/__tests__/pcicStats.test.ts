@@ -54,7 +54,7 @@ describe('countKnown', () => {
   });
 });
 
-// a "Words Known" kártya a tanult szavakat számolja.
+// the "Words Known" card counts the learned words.
 describe('countLearned', () => {
   const card = (over: Partial<import('../sm2').Sm2Card>) =>
     ({ itemId: 'x', state: 'new', step: 0, interval: 0, ease: 2.5, due: '2026-09-30', lapses: 0, ...over }) as import('../sm2').Sm2Card;

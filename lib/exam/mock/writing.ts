@@ -1,6 +1,6 @@
-// Tightening of the writing paper: the keyword scoring used to be too lax: a pasted task text, a
+// Tightening of the writing paper (coordinator's observation, 2026-10-01: the keyword scoring used to be too lax: a pasted task text, a
 // much-repeated word or a meaningless jumble of letters also earned points because of the word
-// count, and the form accepted any filled-in field.
+// count, and the form accepted any filled-in field).
 //
 // A message earns points only if it is MEANINGFUL text: long passages pasted from the task text
 // do not count, nonsense words (with no vowels, repeated letters) do not count, the text cannot be

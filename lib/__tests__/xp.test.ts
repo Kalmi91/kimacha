@@ -1,4 +1,4 @@
-// Gamer: a perc -> XP -> szint számítás.
+// Gamer: the minutes -> XP -> level calculation.
 import { xpFromMinutes, xpLevel } from '@/lib/xp';
 
 describe('xp', () => {
