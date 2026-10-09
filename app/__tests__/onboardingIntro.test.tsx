@@ -32,7 +32,7 @@ async function toIntro(lang: 'English' | 'Español' = 'English') {
   fireEvent.press(screen.getByTestId('onboarding-start'));
 }
 
-describe('Onboarding: bevezető + témás lépés (PLAN-temak 4C)', () => {
+describe('Onboarding: intro + theme step', () => {
   let scheme: jest.SpyInstance;
   beforeEach(async () => {
     scheme = jest.spyOn(RN, 'useColorScheme').mockReturnValue('light');
@@ -44,7 +44,7 @@ describe('Onboarding: bevezető + témás lépés (PLAN-temak 4C)', () => {
     setLanguage('en');
   });
 
-  it('a "Get Started" a bevezetőre visz: cím, biztató első pont, lista, kiemelt "Don\'t overdo it", zárósor', async () => {
+  it('"Get Started" leads to the intro: title, encouraging first point, list, highlighted "Don\'t overdo it", closing line', async () => {
     await toIntro();
     expect(screen.getByText('How it works')).toBeTruthy();
     expect(screen.getByTestId('intro-first')).toBeTruthy();
@@ -61,13 +61,13 @@ describe('Onboarding: bevezető + témás lépés (PLAN-temak 4C)', () => {
     expect(screen.getByText("Let's start")).toBeTruthy();
   });
 
-  it('nincs Skip / Kihagyás gomb a bevezetőn (se angolul, se spanyolul)', async () => {
+  it('no Skip button on the intro (neither in English nor in Spanish)', async () => {
     await toIntro();
     expect(screen.queryByText(/skip|kihagy|omitir|saltar/i)).toBeNull();
     expect(screen.queryByTestId('onboarding-skip')).toBeNull();
   });
 
-  it('a bevezető spanyolul is megvan, ¿ ¡ nélkül', async () => {
+  it('the intro exists in Spanish too, without ¿ ¡', async () => {
     await toIntro('Español');
     expect(screen.getByText('Así funciona')).toBeTruthy();
     expect(screen.getByText('Cada día vas a saber un poquito más que ayer.')).toBeTruthy();
@@ -77,7 +77,7 @@ describe('Onboarding: bevezető + témás lépés (PLAN-temak 4C)', () => {
     expect(texts).not.toContain('¡');
   });
 
-  it('a "Let\'s start" a téma-lépésre visz, nem egyenesen a szintre', async () => {
+  it('"Let\'s start" leads to the theme step, not straight to the level', async () => {
     await toIntro();
     fireEvent.press(screen.getByText("Let's start"));
     expect(screen.getByTestId('onboarding-theme')).toBeTruthy();
@@ -85,7 +85,7 @@ describe('Onboarding: bevezető + témás lépés (PLAN-temak 4C)', () => {
     expect(screen.getByText('Later you can pick from 24 in Settings.')).toBeTruthy();
   });
 
-  it('a téma-lépés pontosan az 5 ajánlott sort mutatja, a minta-szóval és a "tudom" pirulával', async () => {
+  it('the theme step shows exactly the 5 recommended rows, with the sample word and the "I know" pill', async () => {
     await toIntro();
     fireEvent.press(screen.getByText("Let's start"));
     for (const id of ONBOARDING_SKINS) expect(screen.getByTestId(`onboarding-theme-${id}`)).toBeTruthy();
@@ -94,7 +94,7 @@ describe('Onboarding: bevezető + témás lépés (PLAN-temak 4C)', () => {
     expect(screen.getAllByText('I know')).toHaveLength(5);
   });
 
-  it('7F: minden téma-sorban a téma neve is látszik a minta-szó alatt', async () => {
+  it('every theme row also shows the theme name under the sample word', async () => {
     await toIntro();
     fireEvent.press(screen.getByText("Let's start"));
     for (const id of ONBOARDING_SKINS) {
@@ -102,7 +102,7 @@ describe('Onboarding: bevezető + témás lépés (PLAN-temak 4C)', () => {
     }
   });
 
-  it('spanyol felületen a minta-szó "the car", a pirula "Lo sé"', async () => {
+  it('on the Spanish UI the sample word is "the car", the pill is "Lo sé"', async () => {
     await toIntro('Español');
     fireEvent.press(screen.getByText('Empecemos'));
     expect(screen.getAllByText('the car')).toHaveLength(5);
@@ -110,7 +110,7 @@ describe('Onboarding: bevezető + témás lépés (PLAN-temak 4C)', () => {
     expect(screen.getByText('Después puedes elegir entre 24 en Ajustes.')).toBeTruthy();
   });
 
-  it('minden sor a téma saját betűjével és hátterével rajzolódik', async () => {
+  it('every row is drawn with its own theme font and background', async () => {
     await toIntro();
     fireEvent.press(screen.getByText("Let's start"));
     const fonts = screen.getAllByText('el carro').map((n) => RN.StyleSheet.flatten(n.props.style).fontFamily);
@@ -119,7 +119,7 @@ describe('Onboarding: bevezető + témás lépés (PLAN-temak 4C)', () => {
     expect(fonts).toEqual(['Spectral-Light', 'Fredoka-Medium', 'Playfair-Black', undefined, 'PoiretOne']);
   });
 
-  it('koppintásra a téma azonnal mentődik (setSkin), a kiválasztott sor jelölt', async () => {
+  it('on tap the theme is saved immediately (setSkin), the selected row is marked', async () => {
     await toIntro();
     fireEvent.press(screen.getByText("Let's start"));
     expect(screen.getByTestId('onboarding-theme-brutal').props.accessibilityState).toMatchObject({ selected: true });
@@ -135,7 +135,7 @@ describe('Onboarding: bevezető + témás lépés (PLAN-temak 4C)', () => {
     expect(await getDb().getSkin()).toBe('ukiyoe');
   });
 
-  it('a "Continue" a szint-választóra visz', async () => {
+  it('"Continue" leads to the level picker', async () => {
     await toIntro();
     fireEvent.press(screen.getByText("Let's start"));
     fireEvent.press(screen.getByTestId('onboarding-theme-next'));

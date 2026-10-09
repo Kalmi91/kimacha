@@ -9,7 +9,7 @@ import { cardsForLevel } from '../pcicLevels';
 import { dropOrphanCards } from '../pcicSession';
 import { sm2NewCard } from '../sm2';
 
-describe('régi w<id> haladás a words-open váltás után (PLAN-learn-words-open 3)', () => {
+describe('old w<id> progress after the words-open switch', () => {
   const db = getDb();
   const oldCard = {
     ...sm2NewCard('w7'),
@@ -26,7 +26,7 @@ describe('régi w<id> haladás a words-open váltás után (PLAN-learn-words-ope
     await db.upsertPcicCard({ ...sm2NewCard('o12'), state: 'learning', due: '2026-10-01', introducedAt: '2026-10-01' });
   });
 
-  it('a régi w<id> sor megmarad a DB-ben szint-reset után is (a reset csak a betöltött o<order> id-ket törli)', async () => {
+  it('the old w<id> row stays in the DB even after a level reset (the reset deletes only the loaded o<order> ids)', async () => {
     for (const level of ['a1', 'a2', 'b1', 'b2']) {
       await db.resetPcicCards(level);
     }
@@ -37,7 +37,7 @@ describe('régi w<id> haladás a words-open váltás után (PLAN-learn-words-ope
     expect(cards).toHaveLength(1);
   });
 
-  it('a memóriás szűrés (dropOrphanCards, szint-nézetek) nem nyúl a DB-hez: w7 sehol nem jelenik meg, de megvan', async () => {
+  it('the in-memory filtering (dropOrphanCards, level views) does not touch the DB: w7 shows nowhere, but it exists', async () => {
     const cards = await db.getPcicCards();
 
     expect(findPcicItem('w7')).toBeUndefined();
@@ -49,7 +49,7 @@ describe('régi w<id> haladás a words-open váltás után (PLAN-learn-words-ope
     expect((await db.getPcicCards()).map((c) => c.itemId).sort()).toEqual(['o12', 'w7']);
   });
 
-  it('az o<order> id szintje a betöltött korpuszból jön (levelOfItem), nem az id-előtagból', () => {
+  it('the level of an o<order> id comes from the loaded corpus (levelOfItem), not from the id prefix', () => {
     const cards = ['o1', 'o150', 'o151', 'o300', 'o301', 'o450', 'o451', 'o600'].map((id) => sm2NewCard(id));
 
     expect(cardsForLevel(cards, 'A1').map((c) => c.itemId)).toEqual(['o1', 'o150']);

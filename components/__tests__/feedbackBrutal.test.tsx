@@ -20,8 +20,8 @@ const flush = async (times = 6) => {
   }
 };
 
-describe('Feedback FAB, neo-brutalista (NY19)', () => {
-  it('brand palettán négyzetes BrutalBox FAB, a modal is doboz', async () => {
+describe('Feedback FAB, neo-brutalist', () => {
+  it('with the brand palette a square BrutalBox FAB, the modal is a box too', async () => {
     await getDb().setGrammarPalette('brand');
     const view = render(<ThemeProvider><FeedbackButton level="B1" languagePair="es-en" currentCard="pcic" /></ThemeProvider>);
     await flush();
@@ -31,7 +31,7 @@ describe('Feedback FAB, neo-brutalista (NY19)', () => {
     view.unmount();
   });
 
-  it('classic palettán a mai kör-gomb: nincs BrutalBox', async () => {
+  it('with the classic palette the current round button: no BrutalBox', async () => {
     await getDb().setGrammarPalette('classic');
     const view = render(<ThemeProvider><FeedbackButton level="B1" languagePair="es-en" currentCard="pcic" /></ThemeProvider>);
     await flush();

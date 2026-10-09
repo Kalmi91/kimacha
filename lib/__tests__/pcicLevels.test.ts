@@ -21,12 +21,12 @@ describe('matchesLevel', () => {
 // to the lib/pcicLevelMoves.ts map; this test simulates the state AFTER THE MIGRATION
 // (the card is already under the NEW id) and proves that from then on
 // the progress shows up under the correct (new) level, not under the old one.
-describe('a mozgatott szó haladása az új szinten jelenik meg (FB396, 7a)', () => {
+describe('the progress of a moved word shows up on the new level', () => {
   // The concrete example: "morir" moved from A2 to A1.
   const oldId = 'a2-0bcfdca8';
   const newId = 'a1-46e12f1b';
 
-  it('a régi (megszűnt) id-n a haladás sem az A1, sem az A2 szűrőben nem jelenik meg', () => {
+  it('on the old (retired) id the progress shows in neither the A1 nor the A2 filter', () => {
     const staleCard = { ...sm2NewCard(oldId), state: 'review' as const };
     // The old id does not belong to the true A1/A2 membership: since the id is no longer
     // in the loaded corpus, matchesLevel falls back to the id prefix,
@@ -35,7 +35,7 @@ describe('a mozgatott szó haladása az új szinten jelenik meg (FB396, 7a)', ()
     expect(cardsForLevel([staleCard], 'A2').map((c) => c.itemId)).toEqual([oldId]);
   });
 
-  it('az új id-n (a migráció UTÁN) a haladás az A1 alatt jelenik meg, A2 alatt nem', () => {
+  it('on the new id (AFTER the migration) the progress shows under A1, not under A2', () => {
     const migratedCard = { ...sm2NewCard(newId), state: 'review' as const };
     expect(cardsForLevel([migratedCard], 'A1').map((c) => c.itemId)).toEqual([newId]);
     expect(cardsForLevel([migratedCard], 'A2')).toEqual([]);

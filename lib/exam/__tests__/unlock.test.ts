@@ -9,45 +9,45 @@ import { doneLessonsOfLevel, examStatusFor, examUnlock, isExamLearned } from '..
 const ids = (n: number) => Array.from({ length: n }, (_, i) => `o${i + 1}`);
 const review = (itemId: string): Sm2Card => ({ ...sm2NewCard(itemId), state: 'review', interval: 3, due: '2026-10-05' });
 
-describe('isExamLearned (A2 b: graduált, nem csak bemutatott)', () => {
-  it('csak a review állapotú kártya tanult', () => {
+describe('isExamLearned (graduated, not only introduced)', () => {
+  it('only a card in review state is learned', () => {
     expect(isExamLearned(sm2NewCard('o1'))).toBe(false);
     expect(isExamLearned({ ...sm2NewCard('o1'), state: 'learning' })).toBe(false);
     expect(isExamLearned(review('o1'))).toBe(true);
   });
 
-  it('a visszaesett (lapse után újra learning) kártya nem tanult', () => {
+  it('a lapsed card (learning again after a lapse) is not learned', () => {
     expect(isExamLearned({ ...sm2NewCard('o1'), state: 'learning', lapses: 2, reps: 5 })).toBe(false);
   });
 
-  it('a kézzel tudottnak jelölt (review, known) kártya tanult', () => {
+  it('a card marked known by hand (review, known) is learned', () => {
     expect(isExamLearned({ ...review('o1'), known: true, interval: 60 })).toBe(true);
   });
 });
 
-describe('examUnlock (A3 a + A4 b: 80% tanult szó + egy kész lecke)', () => {
+describe('examUnlock (80% learned words + one finished lesson)', () => {
   const level = ids(150);
 
-  it('120 / 150 tanult szó és egy kész lecke: nyitva', () => {
+  it('120 / 150 learned words and one finished lesson: open', () => {
     const u = examUnlock('A1', level, ids(120).map(review), true);
     expect(u).toMatchObject({ total: 150, learned: 120, needed: 120, missing: 0, lessonDone: true, unlocked: true });
   });
 
-  it('79% (119 / 150) zárva, és megmondja, mennyi hiányzik', () => {
+  it('79% (119 / 150) locked, and says how much is missing', () => {
     const u = examUnlock('A1', level, ids(119).map(review), true);
     expect(u).toMatchObject({ learned: 119, needed: 120, missing: 1, unlocked: false });
   });
 
-  it('a 118 / 150 (78,7%) is zárva', () => {
+  it('118 / 150 (78.7%) is locked too', () => {
     expect(examUnlock('A1', level, ids(118).map(review), true).unlocked).toBe(false);
   });
 
-  it('elég szó, de nincs kész lecke: zárva', () => {
+  it('enough words, but no finished lesson: locked', () => {
     const u = examUnlock('A1', level, ids(150).map(review), false);
     expect(u).toMatchObject({ missing: 0, lessonDone: false, unlocked: false });
   });
 
-  it('a bemutatott (learning) és az új kártya nem számít tanultnak', () => {
+  it('an introduced (learning) and a new card do not count as learned', () => {
     const cards = [
       ...ids(100).map(review),
       ...ids(150)
@@ -59,23 +59,23 @@ describe('examUnlock (A3 a + A4 b: 80% tanult szó + egy kész lecke)', () => {
     expect(u.unlocked).toBe(false);
   });
 
-  it('másik szint kártyái (és árva kártyák) nem számítanak bele', () => {
+  it('cards of another level (and orphan cards) do not count', () => {
     const cards = [...ids(119).map(review), review('o151'), review('a1-0184')];
     expect(examUnlock('A1', level, cards, true).learned).toBe(119);
   });
 
-  it('üres szintnél nincs vizsga', () => {
+  it('no exam for an empty level', () => {
     expect(examUnlock('A1', [], [], true).unlocked).toBe(false);
   });
 });
 
-describe('examStatusFor (a valódi A1 words-open pakli + a kész leckék)', () => {
+describe('examStatusFor (the real A1 words-open deck + the finished lessons)', () => {
   beforeEach(() => setPcicTarget('es'));
 
   const a1 = () => pcicItemsForLevel('A1').map((i) => i.id);
   const row = (topic: string) => ({ itemId: topic, state: 'done', data: { correct: 1, total: 1 } });
 
-  it('a szint kártyáinak 80%-a + egy A1 lecke nyitja, eggyel kevesebb nem', () => {
+  it('80% of the level cards + one A1 lesson opens it, one fewer does not', () => {
     const needed = Math.ceil(0.8 * a1().length);
     expect(needed).toBeGreaterThan(1);
     const open = examStatusFor('A1', 'es', a1().slice(0, needed).map(review), [row('presente-regular')]);
@@ -84,19 +84,19 @@ describe('examStatusFor (a valódi A1 words-open pakli + a kész leckék)', () =
     expect(closed).toMatchObject({ unlocked: false, missing: 1, lessonDone: true });
   });
 
-  it('A2 szintű kész lecke nem nyitja az A1 vizsgát', () => {
+  it('a finished A2-level lesson does not open the A1 exam', () => {
     const a2Topic = syllabusForLevel('A2', 'es')[0].id;
     const status = examStatusFor('A1', 'es', a1().map(review), [row(a2Topic)]);
     expect(status).toMatchObject({ lessonDone: false, unlocked: false });
   });
 
-  it('a fajtánkénti sorok közül csak a teljesen kész lecke számít (doneGrammarTopicProgress)', () => {
+  it('of the per-kind rows only a fully finished lesson counts (doneGrammarTopicProgress)', () => {
     // Only one of the presente-regular task kinds is done: the lesson is not finished.
     const partial = [{ itemId: 'presente-regular:choice', state: 'done', data: { correct: 1, total: 1 } }];
     expect(examStatusFor('A1', 'es', a1().map(review), partial).lessonDone).toBe(false);
   });
 
-  it('a mentett eredmény a státuszba kerül', () => {
+  it('the saved result goes into the status', () => {
     const result = { passed: true, best: 92, bestAt: '2026-10-01', last: 92, lastAt: '2026-10-01' };
     const status = examStatusFor('A1', 'es', a1().map(review), [row('presente-regular')], result);
     expect(status.result).toEqual(result);
@@ -104,7 +104,7 @@ describe('examStatusFor (a valódi A1 words-open pakli + a kész leckék)', () =
 });
 
 describe('doneLessonsOfLevel', () => {
-  it('csak a megadott szint tantervében lévő kész leckéket adja', () => {
+  it('gives only the finished lessons that are in the syllabus of the given level', () => {
     const a2Topic = syllabusForLevel('A2', 'es')[0].id;
     expect(doneLessonsOfLevel('A1', 'es', ['presente-regular', a2Topic, 'nincs-ilyen'])).toEqual(['presente-regular']);
   });

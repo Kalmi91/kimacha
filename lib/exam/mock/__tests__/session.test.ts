@@ -33,8 +33,8 @@ function memoryStore() {
   };
 }
 
-describe('valódi vizsgaidők (E3 a)', () => {
-  it('a hátralévő idő az időbélyegből számolódik, 0 alá nem megy', () => {
+describe('real exam times', () => {
+  it('the remaining time is computed from the timestamp, it does not go below 0', () => {
     const start = 1_000_000;
     expect(secondsLeft(start, 25, start)).toBe(25 * 60);
     expect(secondsLeft(start, 25, start + 1000)).toBe(25 * 60 - 1);
@@ -43,7 +43,7 @@ describe('valódi vizsgaidők (E3 a)', () => {
     expect(secondsLeft(start, 25, start + 99 * 60_000)).toBe(0);
   });
 
-  it('m:ss formátum, és a figyelmeztetés az utolsó percre jön', () => {
+  it('m:ss format, and the warning comes for the last minute', () => {
     expect(formatClock(45 * 60)).toBe('45:00');
     expect(formatClock(61)).toBe('1:01');
     expect(formatClock(-3)).toBe('0:00');
@@ -51,13 +51,13 @@ describe('valódi vizsgaidők (E3 a)', () => {
   });
 });
 
-describe('részenkénti mentés és folytatás (E4 b)', () => {
+describe('per-part save and resume', () => {
   const exam = () => {
     setPcicTarget('es');
     return buildMockExam({ target: 'es', level: 'A1', items: pcicItemsForLevel('A1'), seed: 21 });
   };
 
-  it('a mentett munkamenet visszaolvasható: mag, ujjlenyomat, kész papírok, válaszok', async () => {
+  it('the saved session can be read back: seed, fingerprint, finished papers, answers', async () => {
     const store = memoryStore();
     const e = exam();
     const session: MockSession = { seed: e.seed, sig: mockExamSignature(e), done: ['reading'], answers: { 'reading-1': { '0': 2 } } };
@@ -68,7 +68,7 @@ describe('részenkénti mentés és folytatás (E4 b)', () => {
     expect(store.rows.get(`${MOCK_EXAM_PROGRESS_KEY}|es-A1-session`)?.state).toBe('open');
   });
 
-  it('a mag ugyanazt a vizsgát adja vissza: a mentett ujjlenyomat egyezik, így folytatható', async () => {
+  it('the seed returns the same exam: the saved fingerprint matches, so it can be resumed', async () => {
     const e = exam();
     const sig = mockExamSignature(e);
     const rebuilt = buildMockExam({ target: 'es', level: 'A1', items: pcicItemsForLevel('A1'), seed: e.seed });
@@ -77,7 +77,7 @@ describe('részenkénti mentés és folytatás (E4 b)', () => {
     expect(mockExamSignature(changed)).not.toBe(sig);
   });
 
-  it('befejezés után a munkamenet lezárul, az eredmény megmarad (Stats kártya)', async () => {
+  it('after finishing the session closes, the result stays (Stats card)', async () => {
     const store = memoryStore();
     const e = exam();
     await saveMockSession(store, 'es', 'A1', { seed: e.seed, sig: mockExamSignature(e), done: ['reading', 'writing'], answers: {} });
@@ -90,7 +90,7 @@ describe('részenkénti mentés és folytatás (E4 b)', () => {
     expect(store.rows.get(`${MOCK_EXAM_PROGRESS_KEY}|es-A1`)?.state).toBe('failed');
   });
 
-  it('az irányok és szintek külön kulcson élnek (es-A1, es-A2, en-A2)', async () => {
+  it('the directions and levels live on separate keys (es-A1, es-A2, en-A2)', async () => {
     const store = memoryStore();
     const e = exam();
     const r = scoreMockExam(e, {});

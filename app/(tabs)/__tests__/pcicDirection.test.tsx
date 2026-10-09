@@ -49,21 +49,21 @@ const flush = async (times = 4) => {
   }
 };
 
-describe('PCIC fül: es→en irány (PLAN-ketiranyu 4. lépés)', () => {
+describe('PCIC tab: es→en direction', () => {
   beforeEach(async () => {
     await getDb().resetPcicCards();
     await getDb().setOnboarding('es', 'en');
     mockSpeak.mockClear();
   });
 
-  it('új lap megjelenésekor a spanyol promptot mondja ki (a kiinduló nyelv)', async () => {
+  it('when a new card appears, it speaks the Spanish prompt (the source language)', async () => {
     render(<PcicScreen />);
     await flush();
 
     expect(mockSpeak).toHaveBeenCalledWith('vida', 'es-MX');
   });
 
-  it('felfedéskor angolul mondja ki a helyes (célnyelvi) alakot, "life"-ra bírál', async () => {
+  it('on reveal it speaks the correct (target-language) form in English, grades on "life"', async () => {
     const { UNSAFE_getByType, getByText } = render(<PcicScreen />);
     await flush();
     mockSpeak.mockClear();
@@ -78,7 +78,7 @@ describe('PCIC fül: es→en irány (PLAN-ketiranyu 4. lépés)', () => {
   // In a freshly switched direction where no level has been chosen yet
   // (db.hasPcicLevel() false), the main tab opens the level picker sheet by itself
   // instead of silently jumping to the fallback level.
-  it('szint nélkül landolva (hasPcicLevel false) magától felnyílik a szint-választó lap', async () => {
+  it('landing without a level (hasPcicLevel false), the level picker sheet opens by itself', async () => {
     const { getByText } = render(<PcicScreen />);
     await flush();
 

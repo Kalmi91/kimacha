@@ -116,7 +116,7 @@ const solveOk = async (q: LessonTestQuestion) => {
   }
 };
 
-describe.each(['brand', 'classic'] as const)('nyelvtani lecke: 💬 minden részen (%s paletta)', (palette) => {
+describe.each(['brand', 'classic'] as const)('grammar lesson: 💬 on every part (%s palette)', (palette) => {
   beforeEach(async () => {
     jest.clearAllMocks();
     jest.spyOn(Date, 'now').mockReturnValue(NOW);
@@ -129,7 +129,7 @@ describe.each(['brand', 'classic'] as const)('nyelvtani lecke: 💬 minden rész
   });
   afterEach(() => (Date.now as jest.Mock).mockRestore());
 
-  it('Nyelvtan fül listája: grammar-syllabus', async () => {
+  it('Grammar tab list: grammar-syllabus', async () => {
     const view = render(
       <ThemeProvider>
         <GrammarSyllabusScreen />
@@ -140,7 +140,7 @@ describe.each(['brand', 'classic'] as const)('nyelvtani lecke: 💬 minden rész
     view.unmount();
   });
 
-  it('még meg nem írt lecke lapja: grammar:<lecke>:soon', async () => {
+  it('page of a lesson not yet written: grammar:<lesson>:soon', async () => {
     mockTopicId = 'no-such-lesson';
     const view = render(
       <ThemeProvider>
@@ -152,7 +152,7 @@ describe.each(['brand', 'classic'] as const)('nyelvtani lecke: 💬 minden rész
     view.unmount();
   });
 
-  it('áttekintés, feladat közben, feladat VÉGE (done): mind saját azonosítóval', async () => {
+  it('overview, during an exercise, exercise END (done): all with their own identifier', async () => {
     await seedBest(['match', 'form', 'why']);
     const view = render(
       <ThemeProvider>
@@ -170,7 +170,7 @@ describe.each(['brand', 'classic'] as const)('nyelvtani lecke: 💬 minden rész
     view.unmount();
   });
 
-  it('lecke-teszt: kérdés (beírósnál a dokkolt sáv fölött), kilépés, vissza, eredmény', async () => {
+  it('lesson test: question (above the docked bar for typed ones), exit, back, result', async () => {
     await seedBest(['match', 'form', 'why']);
     const view = render(
       <ThemeProvider>
@@ -204,7 +204,7 @@ describe.each(['brand', 'classic'] as const)('nyelvtani lecke: 💬 minden rész
   });
 });
 
-describe('nyelvtani pakli (deck): 💬 kártyán, a pakli végén, üres lapon', () => {
+describe('grammar deck: 💬 on a card, at the end of the deck, on an empty sheet', () => {
   const cells = tableCellsForLesson(lessonFor('es', 'ser-estar')!);
 
   beforeEach(async () => {
@@ -216,7 +216,7 @@ describe('nyelvtani pakli (deck): 💬 kártyán, a pakli végén, üres lapon',
     await db.resetGameProgress(GRAMMAR_PROGRESS_KEY);
   });
 
-  it('kártya: grammar:<lecke>:tabledeck:<cella>, a dokkolt sáv fölött', async () => {
+  it('card: grammar:<lesson>:tabledeck:<cell>, above the docked bar', async () => {
     mockTopicId = 'ser-estar';
     const view = render(<TableDeckScreen />);
     await flush();
@@ -224,7 +224,7 @@ describe('nyelvtani pakli (deck): 💬 kártyán, a pakli végén, üres lapon',
     view.unmount();
   });
 
-  it('pakli vége: grammar:<lecke>:tabledeck', async () => {
+  it('end of deck: grammar:<lesson>:tabledeck', async () => {
     mockTopicId = 'ser-estar';
     await getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, 'ser-estar:tabledeck', 'progress', {
       cells: cells.map((c) => ({ id: c.id, done: true, dueAt: null })),
@@ -238,7 +238,7 @@ describe('nyelvtani pakli (deck): 💬 kártyán, a pakli végén, üres lapon',
     view.unmount();
   });
 
-  it('üres pakli (nincs cella és nincs szó-pakli): grammar:<lecke>:tabledeck:empty', async () => {
+  it('empty deck (no cell and no word deck): grammar:<lesson>:tabledeck:empty', async () => {
     mockTopicId = 'no-such-lesson';
     const view = render(<TableDeckScreen />);
     await flush();

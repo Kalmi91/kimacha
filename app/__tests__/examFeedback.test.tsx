@@ -43,7 +43,7 @@ const flush = async (times = 8) => {
   }
 };
 
-describe('Szintvizsga: visszajelzés-gomb minden részen (FB447)', () => {
+describe('Level exam: feedback button on every part', () => {
   beforeEach(async () => {
     await getDb().resetPcicCards();
     await getDb().resetGameProgress(GRAMMAR_PROGRESS_KEY);
@@ -51,14 +51,14 @@ describe('Szintvizsga: visszajelzés-gomb minden részen (FB447)', () => {
     await getDb().setPcicLevel('A1');
   });
 
-  it('zárva: a lakat-lapon is ott van, saját azonosítóval', async () => {
+  it('locked: it is on the lock sheet too, with its own identifier', async () => {
     const s = render(<ExamScreen />);
     await flush();
     expect(s.getByTestId('fb-card').props.children).toBe('exam:A1:locked | en→es | A1 | -');
     s.unmount();
   });
 
-  it('bevezető, kérdések (a beírósnál a dokkolt sáv fölött), kilépés, eredmény: mind saját azonosítóval', async () => {
+  it('intro, questions (above the docked bar for typed ones), exit, result: all with their own identifier', async () => {
     await getDb().setOnboarding('en', 'es');
     await seedA1ExamState(getDb(), 'es', '2026-10-01');
     const s = render(<ExamScreen />);

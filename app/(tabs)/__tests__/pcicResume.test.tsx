@@ -65,7 +65,7 @@ const flush = async (times = 8) => {
 // In the mock corpus the prompt is the English word: "a1word<i>".
 const promptShown = (screen: ReturnType<typeof render>, i: number) => screen.queryByText(`a1word${i}`) !== null;
 
-describe('PCIC fül: a kör újranyitáskor ott folytatódik, ahol abbamaradt (FB470)', () => {
+describe('PCIC tab: on reopening, the round resumes where it left off', () => {
   const today = localDateString();
 
   beforeEach(async () => {
@@ -75,7 +75,7 @@ describe('PCIC fül: a kör újranyitáskor ott folytatódik, ahol abbamaradt (F
     await getDb().setPcicLevel('A1');
   });
 
-  it('a rontott kártya a helyén marad: a soron lévő kártya újranyitás után ugyanaz (nem a rontott ugrik előre)', async () => {
+  it('the failed card stays in place: the current card is the same after reopening (the failed one does not jump ahead)', async () => {
     const first = render(<PcicScreen />);
     await flush();
     expect(promptShown(first, 0)).toBe(true);
@@ -96,7 +96,7 @@ describe('PCIC fül: a kör újranyitáskor ott folytatódik, ahol abbamaradt (F
     expect(promptShown(second, 0)).toBe(false);
   });
 
-  it('a "+N új szó" adag csíkja újranyitás után ugyanott áll', async () => {
+  it('the "+N new words" batch bar stays in the same place after reopening', async () => {
     for (const item of mockA1Items.slice(0, 10)) await getDb().upsertPcicCard(sm2Review(sm2NewCard(item.id), 'good', today));
     const first = render(<PcicScreen />);
     await flush();
@@ -115,7 +115,7 @@ describe('PCIC fül: a kör újranyitáskor ott folytatódik, ahol abbamaradt (F
     expect(StyleSheet.flatten(second.getByTestId('learn-progress-fill').props.style).width).toBe(before);
   });
 
-  it('másik napról maradt mentés eldobódik: a sor a normál úton épül', async () => {
+  it('a save left over from another day is discarded: the queue is built the normal way', async () => {
     const stale = mockA1Items.slice(0, 5).map((i) => sm2NewCard(i.id)).reverse();
     await saveLearnResume(getDb(), buildLearnResume(stale, '2000-01-01', 'A1', null));
     const screen = render(<PcicScreen />);
@@ -123,7 +123,7 @@ describe('PCIC fül: a kör újranyitáskor ott folytatódik, ahol abbamaradt (F
     expect(promptShown(screen, 0)).toBe(true);
   });
 
-  it('másik szinten készült mentés nem érvényes az aktív szintre', async () => {
+  it('a save made on another level is not valid for the active level', async () => {
     const other = mockA1Items.slice(0, 5).map((i) => sm2NewCard(i.id)).reverse();
     await saveLearnResume(getDb(), buildLearnResume(other, today, 'B1', null));
     const screen = render(<PcicScreen />);
@@ -131,7 +131,7 @@ describe('PCIC fül: a kör újranyitáskor ott folytatódik, ahol abbamaradt (F
     expect(promptShown(screen, 0)).toBe(true);
   });
 
-  it('a mentett, de már nem létező kártya kiesik, a normál sor megy tovább', async () => {
+  it('a saved card that no longer exists is dropped, the normal queue continues', async () => {
     const ghost = { ...sm2NewCard('a1-nincs-ilyen') };
     await saveLearnResume(getDb(), buildLearnResume([ghost, sm2NewCard(mockA1Items[3].id)], today, 'A1', null));
     const screen = render(<PcicScreen />);
@@ -143,7 +143,7 @@ describe('PCIC fül: a kör újranyitáskor ott folytatódik, ahol abbamaradt (F
     expect(promptShown(screen, 0)).toBe(true);
   });
 
-  it('a mentett kártya, ami már nem esedékes (ma értékelt), kiesik: a normál sor megy tovább', async () => {
+  it('a saved card that is no longer due (rated today) is dropped: the normal queue continues', async () => {
     await getDb().upsertPcicCard(sm2Review(sm2NewCard(mockA1Items[0].id), 'good', today));
     await saveLearnResume(getDb(), buildLearnResume([sm2NewCard(mockA1Items[0].id), sm2NewCard(mockA1Items[1].id)], today, 'A1', null));
     const screen = render(<PcicScreen />);

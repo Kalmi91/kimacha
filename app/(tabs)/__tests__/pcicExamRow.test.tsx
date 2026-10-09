@@ -61,7 +61,7 @@ const openSheet = async () => {
   return screen;
 };
 
-describe('Tanulófül: A1 vizsga-sor a szint-választó lapon', () => {
+describe('Learn tab: A1 exam row on the level picker sheet', () => {
   beforeEach(async () => {
     jest.useFakeTimers();
     mockPush.mockClear();
@@ -74,7 +74,7 @@ describe('Tanulófül: A1 vizsga-sor a szint-választó lapon', () => {
   });
   afterEach(() => jest.useRealTimers());
 
-  it('haladás nélkül zárva: 0 / a szint 80%-a szó, és koppintásra nem indul vizsga', async () => {
+  it('locked without progress: 0 / 80% of the level words, and tapping does not start an exam', async () => {
     const needed = Math.ceil(0.8 * pcicItemsForLevel('A1').length);
     const screen = await openSheet();
     expect(a1(screen).getByTestId('exam-row-words').props.children).toBe(`0 / ${needed} words learned, ${needed} to go`);
@@ -88,7 +88,7 @@ describe('Tanulófül: A1 vizsga-sor a szint-választó lapon', () => {
     expect(mockPush).not.toHaveBeenCalled();
   });
 
-  it('80% alatt (eggyel) még zárva, 80%-on és egy kész leckével nyitva', async () => {
+  it('locked just below 80% (by one), open at 80% with one finished lesson', async () => {
     const ids = pcicItemsForLevel('A1').map((i) => i.id);
     const needed = Math.ceil(0.8 * ids.length);
     for (const c of a1SeedCards(ids, '2026-10-01').slice(0, needed - 1)) await getDb().upsertPcicCard(c);
@@ -103,7 +103,7 @@ describe('Tanulófül: A1 vizsga-sor a szint-választó lapon', () => {
     expect(a1(screen).getByTestId('exam-row-ready')).toBeTruthy();
   });
 
-  it('nyitva a koppintás a vizsga képernyőre visz az A1 szinttel, és a lap bezárul', async () => {
+  it('when open, tapping goes to the exam screen with the A1 level, and the sheet closes', async () => {
     await seedA1ExamState(getDb(), 'es', '2026-10-01');
     const screen = await openSheet();
     expect(a1(screen).getByTestId('exam-row-ready').props.children).toEqual(['Ready', '']);
@@ -119,7 +119,7 @@ describe('Tanulófül: A1 vizsga-sor a szint-választó lapon', () => {
     expect(screen.queryByTestId('exam-row-A1')).toBeNull();
   });
 
-  it('4. lépés: A1-B2 mindegyik szint alatt van vizsga-sor; a nyitott A2-B2 saját szintjével indul', async () => {
+  it('step 4: every level A1-B2 has an exam row; the open A2-B2 starts with its own level', async () => {
     await seedExamState(getDb(), 'es', '2026-10-01');
     const screen = await openSheet();
     for (const level of ['A1', 'A2', 'B1', 'B2']) {
@@ -132,7 +132,7 @@ describe('Tanulófül: A1 vizsga-sor a szint-választó lapon', () => {
     expect(mockPush).toHaveBeenCalledWith({ pathname: '/exam', params: { level: 'B2' } });
   });
 
-  it('4. lépés: zárt A2 sor mutatja, mennyi hiányzik, és a "Practice words" az A2 paklit nyitja', async () => {
+  it('step 4: the locked A2 row shows how much is missing, and "Practice words" opens the A2 deck', async () => {
     await seedA1ExamState(getDb(), 'es', '2026-10-01');
     const screen = await openSheet();
     expect(within(screen.getByTestId('exam-row-A2')).getByTestId('exam-row-words').props.children).toBe(
@@ -145,14 +145,14 @@ describe('Tanulófül: A1 vizsga-sor a szint-választó lapon', () => {
     expect(await getDb().getPcicLevel()).toBe('A2');
   });
 
-  it('a mentett eredmény (átment, legjobb pontszám) megjelenik a nyitott soron', async () => {
+  it('the saved result (passed, best score) shows on the open row', async () => {
     await seedA1ExamState(getDb(), 'es', '2026-10-01');
     await getDb().saveExamResult('A1', 90, true, '2026-10-01');
     const screen = await openSheet();
     expect(a1(screen).getByTestId('exam-row-ready').props.children).toEqual(['Ready', ' · Passed · best 90%']);
   });
 
-  it('ha csak a lecke hiányzik, a koppintás a nyelvtani leckékre visz', async () => {
+  it('if only the lesson is missing, tapping goes to the grammar lessons', async () => {
     const ids = pcicItemsForLevel('A1').map((i) => i.id);
     for (const c of a1SeedCards(ids, '2026-10-01')) await getDb().upsertPcicCard(c);
     const screen = await openSheet();

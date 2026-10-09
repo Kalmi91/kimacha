@@ -42,7 +42,7 @@ const flush = async (times = 8) => {
   }
 };
 
-describe('Tanulófül: a vizsga-sor "Practice words" gombja a hiányzó szavakból ad (FB499)', () => {
+describe('Learn tab: the exam row "Practice words" button draws from the missing words', () => {
   const today = localDateString();
 
   // The daily budget (10) is used up: 10 A1 words introduced and learned (review) today, the queue is empty.
@@ -57,7 +57,7 @@ describe('Tanulófül: a vizsga-sor "Practice words" gombja a hiányzó szavakb�
     await getDb().setPcicLevel('A1');
   });
 
-  it('keret kimerítve, az aktív A1 szinten: a koppintás után új szavak jönnek, nem a "kész mára" képernyő', async () => {
+  it('budget used up, on the active A1 level: tapping brings new words, not the "done for today" screen', async () => {
     const needed = Math.ceil(0.8 * pcicItemsForLevel('A1').length);
     const screen = render(<PcicScreen />);
     await flush();
@@ -76,7 +76,7 @@ describe('Tanulófül: a vizsga-sor "Practice words" gombja a hiányzó szavakb�
     expect(await getDb().getPcicNewBonus(today)).toBe(needed - 10);
   });
 
-  it('kevés hiányzó szó: pontosan annyit ad, amennyi hiányzik (3)', async () => {
+  it('few missing words: gives exactly as many as are missing (3)', async () => {
     const ids = pcicItemsForLevel('A1').map((i) => i.id);
     const needed = Math.ceil(0.8 * ids.length);
     // 80% - 3 learned words (introduced on earlier days, due tomorrow), 10 introduced today (the budget is used up).
@@ -95,7 +95,7 @@ describe('Tanulófül: a vizsga-sor "Practice words" gombja a hiányzó szavakb�
     expect(screen.getByText('new 3')).toBeTruthy();
   });
 
-  it('a lap vizsga-sora a menet közben tanult szavakat is számolja (nem a betöltéskori állapotot)', async () => {
+  it('the sheet exam row also counts words learned during the session (not the state at load)', async () => {
     await getDb().resetPcicCards();
     const needed = Math.ceil(0.8 * pcicItemsForLevel('A1').length);
     const screen = render(<PcicScreen />);
@@ -109,7 +109,7 @@ describe('Tanulófül: a vizsga-sor "Practice words" gombja a hiányzó szavakb�
     );
   });
 
-  it('van még napi keret: a koppintás nem bővíti a keretet (a szint a szokásos napi adagot adja)', async () => {
+  it('daily budget remains: tapping does not extend the budget (the level gives the usual daily batch)', async () => {
     await getDb().resetPcicCards();
     const screen = render(<PcicScreen />);
     await flush();

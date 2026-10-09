@@ -11,12 +11,12 @@ const lessons: { name: string; lesson: LessonV2 }[] = fs
   .filter((f) => f.endsWith('.json'))
   .map((f) => ({ name: f.replace('.json', ''), lesson: JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')) as LessonV2 }));
 
-describe('spanyol leckék felolvasása (FB414)', () => {
-  it('mind a 79 spanyol lecke megvan', () => {
+describe('reading Spanish lessons aloud', () => {
+  it('all 79 Spanish lessons are present', () => {
     expect(lessons).toHaveLength(79);
   });
 
-  it.each(lessons.map((l) => [l.name, l.lesson] as const))('%s: nincs jelölt spanyol szakasz, mind a négy nyelven van szöveg', (_name, lesson) => {
+  it.each(lessons.map((l) => [l.name, l.lesson] as const))('%s: no marked Spanish section, text exists in all four languages', (_name, lesson) => {
     for (const lang of ['hu', 'en', 'es', 'de'] as const) {
       const text = lesson.speak[lang];
       expect(typeof text).toBe('string');
@@ -25,7 +25,7 @@ describe('spanyol leckék felolvasása (FB414)', () => {
     }
   });
 
-  it.each(lessons.map((l) => [l.name, l.lesson] as const))('%s: a felolvasás egyetlen angol szakasz, a tanult nyelvű (spanyol) szó nélkül', (_name, lesson) => {
+  it.each(lessons.map((l) => [l.name, l.lesson] as const))('%s: the read-aloud is a single English section, without a word of the learned language (Spanish)', (_name, lesson) => {
     const segments = splitByMarkers(lesson.speak.en, { learnedLang: 'es', nativeLang: 'en' });
     expect(segments.every((s) => s.lang === 'en')).toBe(true);
     // there are no Spanish letters in the English text either

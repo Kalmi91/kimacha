@@ -38,7 +38,7 @@ describe('FeedbackModal (FeedbackButton)', () => {
     expect(getByPlaceholderText('Share your thoughts...')).toBeTruthy();
   });
 
-  it('Drive-flavorban a küldés fetch-csel megy a FEEDBACK_URL-re, nem Share-rel', async () => {
+  it('in the Drive flavor sending goes by fetch to FEEDBACK_URL, not by Share', async () => {
     const shareSpy = jest.spyOn(Share, 'share').mockResolvedValue({ action: 'sharedAction' } as never);
     global.fetch = jest.fn().mockResolvedValue({ ok: true } as never);
 
@@ -57,7 +57,7 @@ describe('FeedbackModal (FeedbackButton)', () => {
     expect(shareSpy).not.toHaveBeenCalled();
   });
 
-  it('Play-flavorban a küldés a megosztás-lapot hívja, nem fetch-et', async () => {
+  it('in the Play flavor sending calls the share sheet, not fetch', async () => {
     const buildFlavor = require('@/lib/buildFlavor');
     buildFlavor.IS_PLAY_BUILD = true;
     buildFlavor.FEEDBACK_URL = null;

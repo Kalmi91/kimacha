@@ -20,41 +20,41 @@ function collectKeyPaths(obj: unknown, prefix = ''): string[] {
   return paths;
 }
 
-describe('lib/i18n: es.ts teljes lefedettsége + t()/setLanguage() (PLAN-ketiranyu 4. lépés)', () => {
+describe('lib/i18n: full coverage of es.ts + t()/setLanguage()', () => {
   afterEach(() => {
     setLanguage('en');
   });
 
-  it('az es.ts minden en.ts kulcsa megvan (és fordítva, nincs árva kulcs egyik oldalon sem)', () => {
+  it('every en.ts key is present in es.ts (and vice versa, no orphan key on either side)', () => {
     const enPaths = collectKeyPaths(en).sort();
     const esPaths = collectKeyPaths(es).sort();
     expect(esPaths).toEqual(enPaths);
   });
 
-  it('setLanguage("en") után t() az angol szöveget adja', () => {
+  it('after setLanguage("en") t() gives the English text', () => {
     setLanguage('en');
     expect(currentLanguage()).toBe('en');
     expect(t().onboarding.start).toBe('Get Started');
   });
 
-  it('setLanguage("es") után t() a spanyol szöveget adja', () => {
+  it('after setLanguage("es") t() gives the Spanish text', () => {
     setLanguage('es');
     expect(currentLanguage()).toBe('es');
     expect(t().onboarding.start).toBe('Empezar');
   });
 
-  it('ismeretlen kódra angolra esik vissza', () => {
+  it('for an unknown code it falls back to English', () => {
     setLanguage('xx');
     expect(t().onboarding.start).toBe('Get Started');
   });
 
-  it('stringsFor a kért nyelv usage-blokkját adja (a tanult nyelv toastjaihoz)', () => {
+  it('stringsFor gives the usage block of the requested language (for the toasts of the learned language)', () => {
     expect(stringsFor('es').usage.dailyGreeting).toBe(es.usage.dailyGreeting);
     expect(stringsFor('en').usage.dailyGreeting).toBe(en.usage.dailyGreeting);
   });
 
   // singular instead of "1 days" (1 day / 1 día); other numbers stay plural.
-  it('a nap-feliratok egyes/többes száma: intervalDays és scheduleNextDays (en, es)', () => {
+  it('singular/plural of the day labels: intervalDays and scheduleNextDays (en, es)', () => {
     expect(en.pcic.intervalDays(1)).toBe('1 day');
     expect(en.pcic.intervalDays(2)).toBe('2 days');
     expect(en.pcic.intervalDays(21)).toBe('21 days');
@@ -68,7 +68,7 @@ describe('lib/i18n: es.ts teljes lefedettsége + t()/setLanguage() (PLAN-ketiran
 
   // When the typo was fixed, the sentence count dropped out of the
   // Spanish "hoy: ... palabras · oraciones / 10" line.
-  it('a spanyol badgeIntroducedToday kiírja a mondatszámot (1 oración, 2 oraciones)', () => {
+  it('the Spanish badgeIntroducedToday prints the sentence count (1 oración, 2 oraciones)', () => {
     expect(es.pcic.badgeIntroducedToday(3, 1, 10)).toBe('hoy: 3 palabras · 1 oración / 10');
     expect(es.pcic.badgeIntroducedToday(1, 2, 10)).toBe('hoy: 1 palabra · 2 oraciones / 10');
     expect(es.pcic.badgeIntroducedToday(0, 0, 10)).toBe('hoy: 0 palabras · 0 oraciones / 10');

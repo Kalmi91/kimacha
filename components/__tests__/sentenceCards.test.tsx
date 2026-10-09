@@ -12,7 +12,7 @@ beforeEach(() => {
   speech.stop.mockClear();
 });
 
-describe('EasySentenceCard (összerakós)', () => {
+describe('EasySentenceCard (build-the-sentence)', () => {
   const props = {
     sourceSentence: 'The book and the table.',
     targetWords: ['el', 'libro', 'y', 'la', 'mesa'],
@@ -53,7 +53,7 @@ describe('EasySentenceCard (összerakós)', () => {
   });
 });
 
-describe('TypedSentenceCard (begépelős)', () => {
+describe('TypedSentenceCard (type-it)', () => {
   const props = {
     sourceSentence: 'The book and the table.',
     targetSentence: 'El libro y la mesa.',
@@ -125,7 +125,7 @@ describe('TypedSentenceCard (begépelős)', () => {
 
 // the word card's "Didn't know" / "Knew it" button row after Check is on the sentence cards too;
 // tapping overrides the displayed rating, and Next passes it on (the sentence card writes no SRS).
-describe('FB455: Didn\'t know / Knew it a mondatkártyákon', () => {
+describe('Didn\'t know / Knew it on the sentence cards', () => {
   const easy = {
     sourceSentence: 'The book and the table.',
     targetWords: ['el', 'libro', 'y', 'la', 'mesa'],
@@ -133,7 +133,7 @@ describe('FB455: Didn\'t know / Knew it a mondatkártyákon', () => {
   };
   const typed = { sourceSentence: 'The book and the table.', targetSentence: 'El libro y la mesa.' };
 
-  it('összerakós: Check előtt nincsenek, rossz építés után megjelennek, a "Knew it" jóra írja át', () => {
+  it('build-the-sentence: not shown before Check, appear after a wrong build, "Knew it" rewrites it to right', () => {
     const onResult = jest.fn();
     const r = render(<EasySentenceCard {...easy} onResult={onResult} gradeButtons />);
     expect(r.queryByTestId('sentence-grades')).toBeNull();
@@ -150,7 +150,7 @@ describe('FB455: Didn\'t know / Knew it a mondatkártyákon', () => {
     expect(onResult).toHaveBeenCalledWith(true);
   });
 
-  it('összerakós: jó építés után a "Didn\'t know" rosszra írja át', () => {
+  it('build-the-sentence: after a right build "Didn\'t know" rewrites it to wrong', () => {
     const onResult = jest.fn();
     const r = render(<EasySentenceCard {...easy} onResult={onResult} gradeButtons />);
     for (const w of easy.targetWords) fireEvent.press(r.getAllByText(w)[0]);
@@ -162,7 +162,7 @@ describe('FB455: Didn\'t know / Knew it a mondatkártyákon', () => {
     expect(onResult).toHaveBeenCalledWith(false);
   });
 
-  it('begépelős: rossz válasz után megjelennek, a "Knew it" jóra írja át, a Next ezt adja tovább', () => {
+  it('type-it: appear after a wrong answer, "Knew it" rewrites it to right, Next passes this on', () => {
     const onResult = jest.fn();
     const r = render(<TypedSentenceCard {...typed} onResult={onResult} gradeButtons />);
     expect(r.queryByTestId('sentence-grades')).toBeNull();
@@ -178,7 +178,7 @@ describe('FB455: Didn\'t know / Knew it a mondatkártyákon', () => {
     expect(onResult).toHaveBeenCalledWith(true);
   });
 
-  it('begépelős: jó válasz után a "Didn\'t know" rosszra írja át', () => {
+  it('type-it: after a right answer "Didn\'t know" rewrites it to wrong', () => {
     const onResult = jest.fn();
     const r = render(<TypedSentenceCard {...typed} onResult={onResult} gradeButtons />);
     fireEvent.changeText(r.getByPlaceholderText('Type the sentence'), 'el libro y la mesa');
@@ -190,7 +190,7 @@ describe('FB455: Didn\'t know / Knew it a mondatkártyákon', () => {
     expect(onResult).toHaveBeenCalledWith(false);
   });
 
-  it('a gombok opt-in: prop nélkül (pl. a nyelvtani rendező feladat) nincsenek', () => {
+  it('the buttons are opt-in: without the prop (e.g. the grammar ordering task) they are absent', () => {
     const r = render(<TypedSentenceCard {...typed} onResult={jest.fn()} />);
     fireEvent.changeText(r.getByPlaceholderText('Type the sentence'), 'el gato');
     fireEvent.press(r.getByText('✓ Check'));
@@ -204,8 +204,8 @@ describe('FB455: Didn\'t know / Knew it a mondatkártyákon', () => {
 
 // the task sentence is spoken when the card opens (in the source language), like the word card's
 // prompt; without a locale nothing is spoken.
-describe('a feladat-mondat felolvasása megnyitáskor (FB434)', () => {
-  it('begépelős kártya: a forrás-mondat elhangzik angolul', () => {
+describe('the task sentence is read aloud on open', () => {
+  it('type-it card: the source sentence is spoken in English', () => {
     render(
       <TypedSentenceCard
         sourceSentence="The book and the table."
@@ -219,7 +219,7 @@ describe('a feladat-mondat felolvasása megnyitáskor (FB434)', () => {
     expect(speech.speak).toHaveBeenCalledWith('The book and the table.', 'en-US');
   });
 
-  it('összerakós kártya: a forrás-mondat elhangzik angolul', () => {
+  it('build-the-sentence card: the source sentence is spoken in English', () => {
     render(
       <EasySentenceCard
         sourceSentence="The book and the table."
@@ -234,7 +234,7 @@ describe('a feladat-mondat felolvasása megnyitáskor (FB434)', () => {
     expect(speech.speak).toHaveBeenCalledWith('The book and the table.', 'en-US');
   });
 
-  it('forrás-locale nélkül nem szól a megnyitáskor', () => {
+  it('without a source locale it does not speak on open', () => {
     render(<TypedSentenceCard sourceSentence="x" targetSentence="y" speechLocale="es-MX" onResult={jest.fn()} />);
     expect(speech.speak).not.toHaveBeenCalled();
   });

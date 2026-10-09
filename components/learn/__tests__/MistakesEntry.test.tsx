@@ -19,14 +19,14 @@ const flush = async (times = 3) => {
   }
 };
 
-describe('MistakesEntry (PCIC-belépő)', () => {
-  it('nincs betöltött köteg -> nem renderel semmit', async () => {
+describe('MistakesEntry (PCIC entry)', () => {
+  it('no batch loaded -> renders nothing', async () => {
     const { toJSON } = render(<MistakesEntry colors={Colors.light} />);
     await flush();
     expect(toJSON()).toBeNull();
   });
 
-  it('betöltött köteggel a due-számot mutatja', async () => {
+  it('with a loaded batch shows the due count', async () => {
     const result = validateMistakesPayload(sample);
     if (!result.ok) throw new Error(result.error);
     await getDb().saveMistakeBatch(result.batch.batchId, JSON.stringify(result.batch), '2026-09-23T10:00:00.000Z');

@@ -8,14 +8,14 @@ import { findPcicItem, setPcicTarget } from '@/data/pcic';
 import { setLanguage } from '@/lib/i18n';
 import CardNote from '../CardNote';
 
-describe('CardNote (kép + forrássor + magyarázat)', () => {
+describe('CardNote (image + source line + explanation)', () => {
   beforeEach(() => setPcicTarget('es'));
   afterEach(() => {
     setLanguage('en');
     jest.restoreAllMocks();
   });
 
-  it('a vágott képes kártyán kép-elem és forrássor van, a sorban „(cropped)” jelzéssel', () => {
+  it('on a cropped-image card there is an image element and a source line, with a "(cropped)" mark in the line', () => {
     const item = findPcicItem('o2771');
     const { getByTestId, getByText } = render(<CardNote note={item?.note} image={item?.image} colors={Colors.light} />);
     expect(getByTestId('learn-image')).toBeTruthy();
@@ -23,7 +23,7 @@ describe('CardNote (kép + forrássor + magyarázat)', () => {
     expect(getByTestId('learn-note')).toBeTruthy();
   });
 
-  it('a nem vágott (csak átméretezett) képnél nincs „cropped” jelzés', () => {
+  it('for an uncropped (only resized) image there is no "cropped" mark', () => {
     const item = findPcicItem('o1510');
     expect(item?.note).toBeUndefined();
     const { getByTestId, getByText, queryByTestId, queryByText } = render(<CardNote note={item?.note} image={item?.image} colors={Colors.light} />);
@@ -33,7 +33,7 @@ describe('CardNote (kép + forrássor + magyarázat)', () => {
     expect(queryByTestId('learn-note')).toBeNull();
   });
 
-  it('spanyol felületen „Foto:” és „(recortada)”', () => {
+  it('on the Spanish UI "Foto:" and "(recortada)"', () => {
     setLanguage('es');
     const cropped = findPcicItem('o2771');
     const { getByText, unmount } = render(<CardNote image={cropped?.image} colors={Colors.light} />);
@@ -45,7 +45,7 @@ describe('CardNote (kép + forrássor + magyarázat)', () => {
     expect(r.queryByText(/recortada/)).toBeNull();
   });
 
-  it('a forrássor link-szerepű, koppintásra a kép forrás-URL-jét nyitja meg', () => {
+  it('the source line has a link role, tapping opens the image source URL', () => {
     const open = jest.spyOn(Linking, 'openURL').mockResolvedValue(true);
     const item = findPcicItem('o2771');
     const { getByTestId } = render(<CardNote image={item?.image} colors={Colors.light} />);
@@ -57,14 +57,14 @@ describe('CardNote (kép + forrássor + magyarázat)', () => {
     expect(item?.image?.sourceUrl).toMatch(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/);
   });
 
-  it('a képtelen kártyán nincs kép-elem és nincs forrássor', () => {
+  it('on a card without an image there is no image element and no source line', () => {
     const { queryByTestId, getByTestId } = render(<CardNote note="Just a note." colors={Colors.light} />);
     expect(queryByTestId('learn-image')).toBeNull();
     expect(queryByTestId('learn-image-credit')).toBeNull();
     expect(getByTestId('learn-note')).toBeTruthy();
   });
 
-  it('se kép, se magyarázat -> nem renderel semmit', () => {
+  it('neither image nor explanation -> renders nothing', () => {
     const { toJSON } = render(<CardNote colors={Colors.light} />);
     expect(toJSON()).toBeNull();
   });

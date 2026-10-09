@@ -71,12 +71,12 @@ const drill = (topic: GrammarTopicData, contentLang = 'en') => (
 describe.each([
   ['classic', 'classic'],
   ['brutal', 'brand'],
-])('az el / la tétel főnév-jelentése (FB493), %s paletta', (_name, palette) => {
+])('the noun meaning of the el / la item, %s palette', (_name, palette) => {
   beforeEach(async () => {
     await getDb().setGrammarPalette(palette as 'classic' | 'brand');
   });
 
-  it('válasz előtt rejtett, válasz után magától megjelenik (jó és rossz tippnél is), a felület nyelvén', async () => {
+  it('hidden before answering, appears by itself after answering (on a right and a wrong guess), in the UI language', async () => {
     render(drill({ ...articleTopic, items: [articleTopic.items[0]] }, 'en'));
     await flush();
 
@@ -85,7 +85,7 @@ describe.each([
     expect(screen.getByTestId('choice-translation')).toHaveTextContent('water');
   });
 
-  it('a jelentés a hu / de felületen a saját nyelvén áll', async () => {
+  it('on the hu / de UI the meaning is in its own language', async () => {
     const view = render(drill({ ...articleTopic, items: [articleTopic.items[0]] }, 'hu'));
     await flush();
     fireEvent.press(screen.getAllByTestId('grammar-option')[0]);
@@ -98,7 +98,7 @@ describe.each([
     expect(screen.getByTestId('choice-translation')).toHaveTextContent('Wasser');
   });
 
-  it('az F-gomb válasz előtt is megmutatja, és a következő tételnél újra zárt', async () => {
+  it('the F button shows it even before answering, and it is closed again on the next item', async () => {
     render(drill(articleTopic, 'en'));
     await flush();
 
@@ -115,7 +115,7 @@ describe.each([
     expect(screen.queryByTestId('choice-translation')).toBeNull();
   });
 
-  it('a sima választós tételnél a fordítás válasz után is csak az F-gombra nyílik', async () => {
+  it('on a plain choice item the translation opens only on the F button even after answering', async () => {
     render(
       <ThemeProvider>
         <GrammarDrill topic={plainGapTopic} learnedLang="es" contentLang="en" onFinish={jest.fn()} kinds={['choice']} />

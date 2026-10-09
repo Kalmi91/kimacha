@@ -29,8 +29,8 @@ const flush = async () => {
   }
 };
 
-describe('Beállítások fül, neo-brutalista (NY19)', () => {
-  it('brand palettán a sorok BrutalBox dobozok', async () => {
+describe('Settings tab, neo-brutalist', () => {
+  it('with the brand palette the rows are BrutalBox boxes', async () => {
     await getDb().setGrammarPalette('brand');
     const view = render(<ThemeProvider><SettingsScreen /></ThemeProvider>);
     await flush();
@@ -38,7 +38,7 @@ describe('Beállítások fül, neo-brutalista (NY19)', () => {
     view.unmount();
   });
 
-  it('classic palettán a mai kinézet: nincs BrutalBox sor, a beállítások megvannak', async () => {
+  it('with the classic palette the current look stays: no BrutalBox row, the settings are present', async () => {
     await getDb().setGrammarPalette('classic');
     const view = render(<ThemeProvider><SettingsScreen /></ThemeProvider>);
     await flush();

@@ -41,14 +41,14 @@ async function seedBatch() {
   await getDb().saveMistakeBatch(result.batch.batchId, JSON.stringify(result.batch), '2026-09-23T10:00:00.000Z');
 }
 
-describe('Pakli (app/mistakes/deck.tsx)', () => {
-  it('üres pakli (nincs betöltött köteg) -> "All done for now"', async () => {
+describe('Deck (app/mistakes/deck.tsx)', () => {
+  it('empty deck (no batch loaded) -> "All done for now"', async () => {
     const { getByText } = render(<MistakesDeckScreen />);
     await flush();
     expect(getByText('All done for now')).toBeTruthy();
   });
 
-  it('a szó-kártya chipje "Word", Check után előre kijelölt "Knew it" pontos egyezésnél', async () => {
+  it('the word card chip is "Word", after Check "Knew it" is preselected on an exact match', async () => {
     await seedBatch();
     const { getByText, UNSAFE_getByType } = render(<MistakesDeckScreen />);
     await flush();
@@ -67,7 +67,7 @@ describe('Pakli (app/mistakes/deck.tsx)', () => {
     expect(getByText('Pero no tienes tomate.')).toBeTruthy();
   });
 
-  it('rossz válasz -> előre kijelölt "Didn\'t know", a koppintás a következő kártyára visz', async () => {
+  it('wrong answer -> "Didn\'t know" preselected, tapping goes to the next card', async () => {
     await seedBatch();
     const { getByText, UNSAFE_getByType } = render(<MistakesDeckScreen />);
     await flush();

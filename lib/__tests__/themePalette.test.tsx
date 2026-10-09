@@ -32,7 +32,7 @@ const flush = async () => {
   }
 };
 
-describe('paletta-infrastruktúra (NY20)', () => {
+describe('palette infrastructure', () => {
   let scheme: jest.SpyInstance;
   beforeEach(async () => {
     scheme = jest.spyOn(RN, 'useColorScheme').mockReturnValue('light');
@@ -40,7 +40,7 @@ describe('paletta-infrastruktúra (NY20)', () => {
   });
   afterEach(() => scheme.mockRestore());
 
-  it('az alapérték brand, világos módban papír, és a Colors[theme] a paletta', async () => {
+  it('the default is brand, paper in light mode, and Colors[theme] is the palette', async () => {
     render(<ThemeProvider><Probe /></ThemeProvider>);
     await flush();
 
@@ -58,7 +58,7 @@ describe('paletta-infrastruktúra (NY20)', () => {
     expect(gc).toMatchObject({ brutal: true, bg: '#FFFBEA', paper: '#FFFFFF', ink: '#111111', mu: '#6B6B6B', a: '#EC4899', b: '#22D3EE', onFill: '#111111' });
   });
 
-  it('sötét módban tinta, az Auto / Light / Dark beállítást követi', async () => {
+  it('in dark mode ink, follows the Auto / Light / Dark setting', async () => {
     render(<ThemeProvider><Probe /></ThemeProvider>);
     await flush();
     act(() => ctx.setOverride('dark'));
@@ -72,7 +72,7 @@ describe('paletta-infrastruktúra (NY20)', () => {
     expect(ctx.theme).toBe('brand-light');
   });
 
-  it('a választás újratöltés után is megmarad, a régi mentett érték (electric) érvényes', async () => {
+  it('the choice persists after reload, the old saved value (electric) is valid', async () => {
     const first = render(<ThemeProvider><Probe /></ThemeProvider>);
     await flush();
     act(() => ctx.setGrammarPalette('electric'));
@@ -88,7 +88,7 @@ describe('paletta-infrastruktúra (NY20)', () => {
     expect(gc.b).toBe('#FFD23F');
   });
 
-  it('a classic a mai Colors[light|dark] értékeket adja, brutalista formák nélkül', async () => {
+  it('classic gives the current Colors[light|dark] values, without brutalist shapes', async () => {
     render(<ThemeProvider><Probe /></ThemeProvider>);
     await flush();
     act(() => ctx.setGrammarPalette('classic'));
@@ -107,7 +107,7 @@ describe('paletta-infrastruktúra (NY20)', () => {
     expect(gc.paper).toBe(Colors.dark.card);
   });
 
-  it('a paletta-értékek egyeznek a jóváhagyott táblával', () => {
+  it('the palette values match the approved table', () => {
     expect(BASE.light).toEqual({ bg: '#FFFBEA', paper: '#FFFFFF', ink: '#111111', mu: '#6B6B6B' });
     expect(BASE.dark).toEqual({ bg: '#111111', paper: '#1C1C1C', ink: '#F5F5F5', mu: '#A0A0A0' });
     expect(PALETTE_FILLS).toEqual({
@@ -121,7 +121,7 @@ describe('paletta-infrastruktúra (NY20)', () => {
 });
 
 describe('BrutalBox / Sticker / SegmentBar (NY20)', () => {
-  it('a doboz mögé tömör, eltolt ink hátsó View kerül (nem shadow*)', () => {
+  it('behind the box goes a solid, offset ink back View (not shadow*)', () => {
     render(
       <ThemeProvider>
         <BrutalBox testID="box" fill="a"><Text>x</Text></BrutalBox>
@@ -143,7 +143,7 @@ describe('BrutalBox / Sticker / SegmentBar (NY20)', () => {
     expect(RN.StyleSheet.flatten(closed.props.style).borderStyle).toBe('dashed');
   });
 
-  it('a matrica el van forgatva, a szegmentált sáv a kész blokkokat tinta-kitöltéssel adja', () => {
+  it('the sticker is rotated, the segmented bar gives the done blocks with ink fill', () => {
     render(
       <ThemeProvider>
         <View>

@@ -88,7 +88,7 @@ describe('grammar lesson screen: table-deck button', () => {
   // where that stays below the threshold, there is no deck entry (and no crash).
   // A later change restores this for articulos-genero: the earlier deck built from all the app's
   // nouns is gone, the nouns only appear in the el / la task, and the deck is again the lesson's own words.
-  it('articulos-genero (a tábla szavai a küszöb alatt) nem kap szó-pakli belépőt', async () => {
+  it('articulos-genero (table words below the threshold) gets no word-deck entry', async () => {
     mockTopicId = 'articulos-genero';
     const view = render(<GrammarLessonScreen />);
     await flush();
@@ -99,7 +99,7 @@ describe('grammar lesson screen: table-deck button', () => {
     view.unmount();
   });
 
-  it('marcadores-temporales (elég tábla-szó) megtartja a szó-pakli belépőt', async () => {
+  it('marcadores-temporales (enough table words) keeps the word-deck entry', async () => {
     mockTopicId = 'marcadores-temporales';
     const view = render(<GrammarLessonScreen />);
     await flush();

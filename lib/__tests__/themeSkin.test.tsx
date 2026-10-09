@@ -38,7 +38,7 @@ const flush = async () => {
   }
 };
 
-describe('téma-motor a kontextuson át (PLAN-temak 2A)', () => {
+describe('theme engine through the context', () => {
   let scheme: jest.SpyInstance;
   beforeEach(async () => {
     scheme = jest.spyOn(RN, 'useColorScheme').mockReturnValue('light');
@@ -47,7 +47,7 @@ describe('téma-motor a kontextuson át (PLAN-temak 2A)', () => {
   });
   afterEach(() => scheme.mockRestore());
 
-  it('alapértelmezés: brutal + brand, a mai Colors-kulcs és forma', async () => {
+  it('default: brutal + brand, the current Colors key and shape', async () => {
     render(<ThemeProvider><Probe /></ThemeProvider>);
     await flush();
     expect(ctx.skin).toBe('brutal');
@@ -58,7 +58,7 @@ describe('téma-motor a kontextuson át (PLAN-temak 2A)', () => {
     expect(sk.modeLocked).toBe(false);
   });
 
-  it('régi felhasználó (skin NULL): classic paletta → classic, brand → brutal, cyan → brutal cyan', async () => {
+  it('old user (skin NULL): classic palette → classic, brand → brutal, cyan → brutal cyan', async () => {
     await getDb().setGrammarPalette('classic');
     const classic = render(<ThemeProvider><Probe /></ThemeProvider>);
     await flush();
@@ -80,7 +80,7 @@ describe('téma-motor a kontextuson át (PLAN-temak 2A)', () => {
     expect(ctx.theme).toBe('cyan-light');
   });
 
-  it('a mai paletta-váltó API változatlan: classic ↔ brutális paletta a skin választása nélkül is átvált', async () => {
+  it('the current palette-switch API is unchanged: classic ↔ brutalist palette switches even without choosing a skin', async () => {
     render(<ThemeProvider><Probe /></ThemeProvider>);
     await flush();
     act(() => ctx.setGrammarPalette('classic'));
@@ -93,7 +93,7 @@ describe('téma-motor a kontextuson át (PLAN-temak 2A)', () => {
     expect(ctx.theme).toBe('lime-light');
   });
 
-  it('a választott téma mentődik és újratöltés után visszajön; a Colors-kulcs `<id>-<mód>`', async () => {
+  it('the chosen theme is saved and comes back after reload; the Colors key is `<id>-<mode>`', async () => {
     const first = render(<ThemeProvider><Probe /></ThemeProvider>);
     await flush();
     act(() => ctx.setSkin('ukiyoe'));
@@ -111,7 +111,7 @@ describe('téma-motor a kontextuson át (PLAN-temak 2A)', () => {
     expect(sk.colors).toMatchObject({ brutal: true, bg: '#EFE6D2', extra: { seal: '#C0392B', wave: '#1F3A5F' } });
   });
 
-  it('kétmódú témánál az Auto / Light / Dark, egy módúnál a téma módja marad', async () => {
+  it('for a dual-mode theme Auto / Light / Dark, for a single-mode one the theme mode stays', async () => {
     render(<ThemeProvider><Probe /></ThemeProvider>);
     await flush();
     act(() => ctx.setSkin('deco'));
@@ -136,7 +136,7 @@ describe('téma-motor a kontextuson át (PLAN-temak 2A)', () => {
     expect(sk.modeLocked).toBe(true);
   });
 
-  it('Saját mix: a színek, a betű és a forma külön forrásból; mentés + visszatöltés', async () => {
+  it('Custom mix: colors, font and shape from separate sources; save + reload', async () => {
     const mix = { colors: 'electric', font: 'deco', shape: 'memphis', decor: 'kodex' } as const;
     const first = render(<ThemeProvider><Probe /></ThemeProvider>);
     await flush();
@@ -162,7 +162,7 @@ describe('téma-motor a kontextuson át (PLAN-temak 2A)', () => {
     expect(ctx.theme).toBe('electric-light');
   });
 
-  it('Saját mix: egy módú téma színei a téma módját adják; classic forma = nem brutalista', async () => {
+  it('Custom mix: the colors of a single-mode theme give the theme mode; classic shape = not brutalist', async () => {
     render(<ThemeProvider><Probe /></ThemeProvider>);
     await flush();
     act(() => {
@@ -181,7 +181,7 @@ describe('téma-motor a kontextuson át (PLAN-temak 2A)', () => {
     expect(ctx.skinMix).toEqual({ colors: 'cyan', font: 'brutal', shape: 'deco', decor: 'none' });
   });
 
-  it('a skin-választás a db-ben a grammar_palette-től független; setSkin(null) visszaáll a régi viselkedésre', async () => {
+  it('the skin choice in the db is independent of grammar_palette; setSkin(null) restores the old behavior', async () => {
     render(<ThemeProvider><Probe /></ThemeProvider>);
     await flush();
     act(() => ctx.setSkin('kodex'));
@@ -194,7 +194,7 @@ describe('téma-motor a kontextuson át (PLAN-temak 2A)', () => {
     expect(await getDb().getGrammarPalette()).toBe('classic');
   });
 
-  it('a backup exportja + importja átviszi a skin-t és a mixet', async () => {
+  it('the backup export + import carries the skin and the mix', async () => {
     const mix = { colors: 'ukiyoe', font: 'zen', shape: 'bauhaus', decor: 'none' } as const;
     await getDb().setSkin('mix');
     await getDb().setSkinMix(mix);
@@ -208,8 +208,8 @@ describe('téma-motor a kontextuson át (PLAN-temak 2A)', () => {
   });
 });
 
-describe('dísz-rétegek: dísz nélküli témán no-op (a mai kinézet változatlan)', () => {
-  it('a Neo-brutálnak és a Classicnak nincs regisztrált díszük, a slotok az alap tartalmat adják', async () => {
+describe('decor layers: on a theme without decor a no-op (the current look is unchanged)', () => {
+  it('Neo-brutalist and Classic have no registered decor, the slots give the base content', async () => {
     // the 4 starter themes got decor; the themes that give today's look still do not.
     expect(Object.keys(SKIN_DECOR)).toEqual(expect.arrayContaining(['deco', 'szocreal', 'csillampony', 'ukiyoe']));
     expect(Object.keys(SKIN_DECOR)).not.toContain('brutal');

@@ -52,7 +52,7 @@ const seedCard = async (level: 'A1' | 'B1') => {
   await getDb().upsertPcicCard(sm2NewCard(pcicItemsForLevel(level)[0].id));
 };
 
-describe('Beállítások: haladás nullázása (PLAN-fb1001 K1 + FB431)', () => {
+describe('Settings: progress reset', () => {
   beforeEach(async () => {
     setPcicTarget('es');
     await getDb().setOnboarding('en', 'es');
@@ -61,7 +61,7 @@ describe('Beállítások: haladás nullázása (PLAN-fb1001 K1 + FB431)', () => 
   });
   afterEach(() => jest.restoreAllMocks());
 
-  it('haladás nélkül nincs nullázó sor', async () => {
+  it('no reset row without progress', async () => {
     const { queryByText } = render(<ThemeProvider><SettingsScreen /></ThemeProvider>);
     await flush();
 
@@ -70,7 +70,7 @@ describe('Beállítások: haladás nullázása (PLAN-fb1001 K1 + FB431)', () => 
     expect(queryByText('🗑️ Restart progress')).toBeNull();
   });
 
-  it('csak a haladásos pakli kap sort, megerősítés után a saját szintjét nullázza', async () => {
+  it('only a deck with progress gets a row, after confirmation it resets its own level', async () => {
     await seedCard('A1');
     await seedCard('B1');
     const alertSpy = jest.spyOn(Alert, 'alert').mockImplementation(() => {});
@@ -95,7 +95,7 @@ describe('Beállítások: haladás nullázása (PLAN-fb1001 K1 + FB431)', () => 
   });
 
   // the snapshot of the saved Learn round is no longer valid for the reset progress.
-  it('a pakli nullázása a mentett Learn-kör pillanatképét is eldobja', async () => {
+  it('resetting the deck also discards the saved Learn round snapshot', async () => {
     await seedCard('A1');
     await saveLearnResume(getDb(), buildLearnResume([sm2NewCard(pcicItemsForLevel('A1')[0].id)], '2026-10-05', 'A1', null));
     const alertSpy = jest.spyOn(Alert, 'alert').mockImplementation(() => {});
@@ -107,7 +107,7 @@ describe('Beállítások: haladás nullázása (PLAN-fb1001 K1 + FB431)', () => 
     expect(await loadLearnResume(getDb())).toBeNull();
   });
 
-  it('megerősítés nélkül (Cancel) semmi nem törlődik', async () => {
+  it('without confirmation (Cancel) nothing is deleted', async () => {
     await seedCard('B1');
     const alertSpy = jest.spyOn(Alert, 'alert').mockImplementation(() => {});
     const r = render(<ThemeProvider><SettingsScreen /></ThemeProvider>);
@@ -120,7 +120,7 @@ describe('Beállítások: haladás nullázása (PLAN-fb1001 K1 + FB431)', () => 
     expect((await getDb().getPcicCards()).length).toBe(1);
   });
 
-  it('a nyelvtan-sor csak a nyelvtan-haladást nullázza, a paklit nem', async () => {
+  it('the grammar row resets only the grammar progress, not the deck', async () => {
     await seedCard('B1');
     await getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, 'presente-regular:form', 'done', { correct: 3, total: 3 });
     const alertSpy = jest.spyOn(Alert, 'alert').mockImplementation(() => {});

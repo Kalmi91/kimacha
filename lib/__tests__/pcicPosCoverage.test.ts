@@ -20,10 +20,10 @@ interface OpenCard {
 const OPEN_CARDS = [...openA1, ...openA2, ...openB1, ...openB2] as OpenCard[];
 const DET_INTERJ_IDS = new Set(OPEN_CARDS.filter((c) => c.pos === 'det' || c.pos === 'interj').map((c) => `o${c.order}`));
 
-describe('posOf lefedettseg (FB361-362)', () => {
+describe('posOf coverage', () => {
   beforeAll(() => setPcicTarget('es'));
 
-  it('FB482: a det/interj kartyak (26 szo, pl. o883 adiós) is kapnak szofaj-chipet', () => {
+  it('the det/interj cards (26 words, e.g. o883 adiós) also get a part-of-speech chip', () => {
     expect(DET_INTERJ_IDS.size).toBe(26);
     const items = (['A1', 'A2', 'B1', 'B2'] as const).flatMap((l) => pcicItemsForLevel(l)).filter((i) => DET_INTERJ_IDS.has(i.id));
     expect(items).toHaveLength(26);
@@ -32,7 +32,7 @@ describe('posOf lefedettseg (FB361-362)', () => {
   });
 
   for (const level of PCIC_LEVELS) {
-    it(`${level}: minden word/phrase tetel kap szofajt`, () => {
+    it(`${level}: every word/phrase item gets a part of speech`, () => {
       const wordish = pcicItemsForLevel(level).filter((i) => i.kind === 'word' || i.kind === 'phrase');
       // without `pos`, so that the coverage depends on the lemma index and the rule, not on the card's own field.
       const missing = wordish
@@ -42,7 +42,7 @@ describe('posOf lefedettseg (FB361-362)', () => {
     });
   }
 
-  it('sentence tetelre sose jar chip', () => {
+  it('a sentence item never gets a chip', () => {
     const withChip = OPEN_CARDS.filter(
       (c) => c.sentence_es && posOf({ es: c.sentence_es, kind: 'sentence' }) !== null,
     ).map((c) => c.order);

@@ -49,12 +49,12 @@ const flush = async (times = 6) => {
 
 jest.setTimeout(30000);
 
-describe('Tanulás fül, neo-brutalista (NY19)', () => {
+describe('Learn tab, neo-brutalist', () => {
   beforeEach(async () => {
     await getDb().resetPcicCards();
   });
 
-  it('brand palettán BrutalBox kártya, szint-doboz, dokkolt gomb és szegmentált sáv jelenik meg', async () => {
+  it('with the brand palette a BrutalBox card, level box, docked button and segmented bar appear', async () => {
     await getDb().setGrammarPalette('brand');
     const view = render(<ThemeProvider><PcicScreen /></ThemeProvider>);
     await flush();
@@ -68,7 +68,7 @@ describe('Tanulás fül, neo-brutalista (NY19)', () => {
   // The "Didn't know" / "Knew it" buttons are identical: same
   // shadow offset (the margin of the outer wrapper), the box fills the row (flex: 1),
   // the label is centered, and the row spans the full width of the card.
-  it('brand palettán a két értékelő gomb egyforma: azonos eltolás, kitöltő doboz, középre igazított felirat', async () => {
+  it('with the brand palette the two rating buttons are identical: same offset, fill box, centered label', async () => {
     await getDb().setGrammarPalette('brand');
     const view = render(<ThemeProvider><PcicScreen /></ThemeProvider>);
     await flush();
@@ -90,7 +90,7 @@ describe('Tanulás fül, neo-brutalista (NY19)', () => {
     view.unmount();
   });
 
-  it('classic palettán a mai kinézet: nincs BrutalBox', async () => {
+  it('with the classic palette the current look stays: no BrutalBox', async () => {
     await getDb().setGrammarPalette('classic');
     const view = render(<ThemeProvider><PcicScreen /></ThemeProvider>);
     await flush();

@@ -20,7 +20,7 @@ describe('pcic_cards (memory db)', () => {
     expect(cards2.find(c => c.itemId === 'b1-0001')).toEqual(updated);
   });
 
-  it('SZ3: known:true kártya known:true-ként jön vissza', async () => {
+  it('a known:true card comes back as known:true', async () => {
     await db.resetPcicCards();
     const card = { ...sm2NewCard('b1-0002'), state: 'review' as const, interval: 60, due: '2026-11-17', introducedAt: '2026-09-18', known: true };
     await db.upsertPcicCard(card);
@@ -28,7 +28,7 @@ describe('pcic_cards (memory db)', () => {
     expect(cards.find(c => c.itemId === 'b1-0002')).toEqual(card);
   });
 
-  it('resetPcicCards üres táblát ad', async () => {
+  it('resetPcicCards gives an empty table', async () => {
     await db.upsertPcicCard(sm2NewCard('r1'));
     await db.resetPcicCards();
     expect(await db.getPcicCards()).toEqual([]);
@@ -37,7 +37,7 @@ describe('pcic_cards (memory db)', () => {
   // the pcic_cards table is not tied to a pair (the two
   // directions are told apart by the w<id>/e<id> id prefix, data/pcic.ts), so
   // switching direction (setOnboarding) on its own does not delete the progress of either direction.
-  it('irányváltás (setOnboarding) nem nullázza a másik irány kártyáit', async () => {
+  it('a direction change (setOnboarding) does not reset the other direction cards', async () => {
     await db.resetPcicCards();
     await db.setOnboarding('en', 'es');
     await db.upsertPcicCard({ ...sm2NewCard('w1'), state: 'review', interval: 5, due: '2026-09-20', introducedAt: '2026-09-18' });
@@ -54,7 +54,7 @@ describe('pcic_cards (memory db)', () => {
   // pcic_level moved into the per-pair row of learn_settings (it used to be a
   // user_meta singleton), so that on a direction switch both pairs keep their
   // own level.
-  it('pcic_level pár-szerint: oda-vissza váltás megtartja mindkét irány saját szintjét', async () => {
+  it('pcic_level per pair: switching back and forth keeps each direction own level', async () => {
     await db.setOnboarding('en', 'es');
     await db.setPcicLevel('B1');
     await db.setOnboarding('es', 'en');
@@ -70,7 +70,7 @@ describe('pcic_cards (memory db)', () => {
   // EXPLICITLY has a chosen level (not because of getPcicLevel's fallback);
   // this is what the Settings direction-switch row / the main tab's load() use
   // to decide whether the level-picker sheet has to be opened.
-  it('hasPcicLevel: hamis egy még sose választott párnak, igaz setPcicLevel után', async () => {
+  it('hasPcicLevel: false for a pair never chosen yet, true after setPcicLevel', async () => {
     await db.setOnboarding('xx', 'yy');
     expect(await db.hasPcicLevel()).toBe(false);
     await db.setPcicLevel('A1');
@@ -78,7 +78,7 @@ describe('pcic_cards (memory db)', () => {
   });
 
   // getPcicNewBonus/setPcicNewBonus round-trip, at the memory-DB level.
-  it('getPcicNewBonus/setPcicNewBonus: perzisztál (reload-eset) és naptári nappal lejár', async () => {
+  it('getPcicNewBonus/setPcicNewBonus: persists (reload case) and expires with the calendar day', async () => {
     expect(await db.getPcicNewBonus('2026-09-18')).toBe(0);
 
     await db.setPcicNewBonus(18, '2026-09-18');

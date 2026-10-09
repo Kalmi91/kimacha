@@ -19,12 +19,12 @@ import { act, fireEvent, render } from '@testing-library/react-native';
 import { getDb } from '@/lib/database';
 import OnboardingScreen from '../onboarding';
 
-describe('OnboardingScreen: nyelv- és szint-lépés (PLAN-ketiranyu 4. lépés)', () => {
+describe('OnboardingScreen: language and level step', () => {
   beforeEach(() => {
     mockReplace.mockClear();
   });
 
-  it('nyelv-választással indul, mindkét gomb kétnyelvű cím alatt látszik', () => {
+  it('starts with language choice, both buttons shown under a bilingual title', () => {
     const { getByText } = render(<OnboardingScreen />);
 
     expect(getByText('Which language do you speak? / ¿Qué idioma hablas?')).toBeTruthy();
@@ -32,7 +32,7 @@ describe('OnboardingScreen: nyelv- és szint-lépés (PLAN-ketiranyu 4. lépés)
     expect(getByText('Español')).toBeTruthy();
   });
 
-  it('"English" -> en→es: üdvözlés, majd a szint-választó a "Get Started" után', () => {
+  it('"English" -> en→es: greeting, then the level picker after "Get Started"', () => {
     const { getByText, queryByText } = render(<OnboardingScreen />);
     fireEvent.press(getByText('English'));
 
@@ -52,7 +52,7 @@ describe('OnboardingScreen: nyelv- és szint-lépés (PLAN-ketiranyu 4. lépés)
     expect(getByText('Upper intermediate')).toBeTruthy();
   });
 
-  it('en→es szint kiválasztása menti az onboardingot + a PCIC szintet, és a fülekre navigál', async () => {
+  it('choosing the en→es level saves the onboarding + the PCIC level, and navigates to the tabs', async () => {
     const { getByText } = render(<OnboardingScreen />);
     fireEvent.press(getByText('English'));
     fireEvent.press(getByText('Get Started'));
@@ -70,7 +70,7 @@ describe('OnboardingScreen: nyelv- és szint-lépés (PLAN-ketiranyu 4. lépés)
   });
 
   // below the level rows a quiet entry point to the placement test; the rows stay.
-  it('a szint-lépésen a sorok alatt ott a szintfelmérő-belépő, és a felmérő képernyőjére visz', () => {
+  it('on the level step, under the rows there is the placement-test entry, and it leads to the placement screen', () => {
     const { getByText, getByTestId } = render(<OnboardingScreen />);
     fireEvent.press(getByText('English'));
     fireEvent.press(getByText('Get Started'));
@@ -84,7 +84,7 @@ describe('OnboardingScreen: nyelv- és szint-lépés (PLAN-ketiranyu 4. lépés)
     expect(mockReplace).not.toHaveBeenCalled();
   });
 
-  it('"Español" -> es→en: spanyol üdvözlés, a szint-választó A1-et, A2-t és B1-et kínálja', () => {
+  it('"Español" -> es→en: Spanish greeting, the level picker offers A1, A2 and B1', () => {
     const { getByText, queryByText } = render(<OnboardingScreen />);
     fireEvent.press(getByText('Español'));
 
@@ -105,7 +105,7 @@ describe('OnboardingScreen: nyelv- és szint-lépés (PLAN-ketiranyu 4. lépés)
     expect(queryByText('B2')).toBeNull();
   });
 
-  it('es→en A1 kiválasztása "es"/"en"-t ment, mindig A1 szinttel', async () => {
+  it('choosing es→en A1 saves "es"/"en", always with level A1', async () => {
     const { getByText } = render(<OnboardingScreen />);
     fireEvent.press(getByText('Español'));
     fireEvent.press(getByText('Empezar'));

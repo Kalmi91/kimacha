@@ -36,7 +36,7 @@ async function renderWithSkin(skin: SkinId, ui: React.ReactElement) {
   await flush();
 }
 
-describe('Brutal-komponensek: a forma a témából jön (PLAN-temak 2A)', () => {
+describe('Brutal components: the shape comes from the theme', () => {
   let scheme: jest.SpyInstance;
   beforeEach(async () => {
     scheme = jest.spyOn(RN, 'useColorScheme').mockReturnValue('light');
@@ -45,14 +45,14 @@ describe('Brutal-komponensek: a forma a témából jön (PLAN-temak 2A)', () => 
   });
   afterEach(() => scheme.mockRestore());
 
-  it('deco: 1 px keret az a színnel, sarok 0, nincs árnyék-View', async () => {
+  it('deco: 1 px border in the a color, corner 0, no shadow View', async () => {
     await renderWithSkin('deco', <BrutalBox testID="box" fill="a"><Text>x</Text></BrutalBox>);
     expect(flat('box')).toMatchObject({ borderWidth: 1, borderColor: '#8B6D24', borderStyle: 'solid' });
     expect(flat('box').borderRadius).toBeUndefined();
     expect(shadows()).toHaveLength(0);
   });
 
-  it('memphis: 6 px árnyék a b színnel, a gomb sarka 999 (pill), a kártyáé 0', async () => {
+  it('memphis: 6 px shadow in the b color, the button corner 999 (pill), the card one 0', async () => {
     await renderWithSkin(
       'memphis',
       <View>
@@ -69,7 +69,7 @@ describe('Brutal-komponensek: a forma a témából jön (PLAN-temak 2A)', () => 
     expect(backs[1]).toMatchObject({ borderRadius: 999 });
   });
 
-  it('szecesszio: sarkonként eltérő sugár (70/70/8/8 kártya, 14/14/4/4 gomb)', async () => {
+  it('szecesszio: per-corner differing radius (70/70/8/8 card, 14/14/4/4 button)', async () => {
     await renderWithSkin(
       'szecesszio',
       <View>
@@ -87,22 +87,22 @@ describe('Brutal-komponensek: a forma a témából jön (PLAN-temak 2A)', () => 
     expect(flat('btn')).toMatchObject({ borderTopLeftRadius: 14, borderBottomRightRadius: 4 });
   });
 
-  it('kalocsai: szaggatott keret az a színnel, 10 px sarok', async () => {
+  it('kalocsai: dashed border in the a color, 10 px corner', async () => {
     await renderWithSkin('kalocsai', <BrutalBox testID="box"><Text>x</Text></BrutalBox>);
     expect(flat('box')).toMatchObject({ borderStyle: 'dashed', borderColor: '#E2231A', borderRadius: 10, borderWidth: 2 });
   });
 
-  it('zen: 0 px keret; konnyu: border színű 1 px keret, 12 px sarok', async () => {
+  it('zen: 0 px border; konnyu: border-color 1 px border, 12 px corner', async () => {
     await renderWithSkin('zen', <BrutalBox testID="box"><Text>x</Text></BrutalBox>);
     expect(flat('box').borderWidth).toBe(0);
   });
 
-  it('konnyu: border színű 1 px keret, 12 px sarok', async () => {
+  it('konnyu: border-color 1 px border, 12 px corner', async () => {
     await renderWithSkin('konnyu', <BrutalBox testID="box"><Text>x</Text></BrutalBox>);
     expect(flat('box')).toMatchObject({ borderWidth: 1, borderColor: '#E8DFC8', borderRadius: 12 });
   });
 
-  it('a matrica és a szegmens a téma keretét veszi (legfeljebb 2 px), a skálázott offset arányos', async () => {
+  it('the sticker and the segment take the theme border (at most 2 px), the scaled offset is proportional', async () => {
     await renderWithSkin(
       'memphis',
       <View>
@@ -117,12 +117,12 @@ describe('Brutal-komponensek: a forma a témából jön (PLAN-temak 2A)', () => 
     expect(shadows().some((st) => st.left === 4 && st.top === 4)).toBe(true);
   });
 
-  it('a kapcsoló sínje a téma keretét és sarkát követi, nulla keretnél is látszik (min 1 px)', async () => {
+  it('the switch track follows the theme border and corner, visible even with a zero border (min 1 px)', async () => {
     await renderWithSkin('zen', <BrutalSwitch testID="sw" value={false} onValueChange={() => {}} />);
     expect(flat('sw').borderWidth).toBe(1);
   });
 
-  it('a Neo-brutál téma mai értékei: 2,5 px ink keret, sarok 0, 3 px ink árnyék, ink-gomb szövege b / bg', async () => {
+  it('the current values of the Neo-brutalist theme: 2.5 px ink border, corner 0, 3 px ink shadow, ink button text b / bg', async () => {
     await renderWithSkin('brutal', <BrutalBox testID="box"><Text>x</Text></BrutalBox>);
     expect(flat('box')).toMatchObject({ borderWidth: 2.5, borderColor: '#111111' });
     expect(shadows()[0]).toMatchObject({ left: 3, top: 3, right: -3, bottom: -3, backgroundColor: '#111111' });
@@ -132,7 +132,7 @@ describe('Brutal-komponensek: a forma a témából jön (PLAN-temak 2A)', () => 
     expect(textOnFill(grammarColorsFor('brand-light'), 'b')).toBe('#111111');
   });
 
-  it('új témánál a szöveg a-n onA, b-n onB, ink-kitöltésen a bg', () => {
+  it('for a new theme the text is onA on a, onB on b, bg on an ink fill', () => {
     const g = grammarColorsFor('kawaii-light');
     expect(textOnFill(g, 'a')).toBe('#1E5E46');
     expect(textOnFill(g, 'b')).toBe('#4B3A80');

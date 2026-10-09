@@ -177,10 +177,10 @@ afterEach(() => {
   jest.useRealTimers();
 });
 
-describe('Próbavizsga: folyamat (E1-E5)', () => {
+describe('Mock exam: flow', () => {
   beforeEach(reset);
 
-  it('intro: négy papír a hivatalos percekkel, a szóbeli "hamarosan", átmenési szabály, rövidítés-megjegyzés', async () => {
+  it('intro: four papers with the official minutes, the spoken part "coming soon", pass rule, abbreviation note', async () => {
     const s = await mount();
     expect(s.getByText('A1 practice exam')).toBeTruthy();
     expect(s.getByText('Modeled on the official A1 exam format')).toBeTruthy();
@@ -193,7 +193,7 @@ describe('Próbavizsga: folyamat (E1-E5)', () => {
     s.unmount();
   });
 
-  it('végigvitel: papír-intro, óra, nincs azonnali jelzés, szóbeli helyőrző, eredmény (hallás x2, provisional), mentés', async () => {
+  it('full run: paper intro, clock, no immediate feedback, spoken placeholder, result (listening x2, provisional), save', async () => {
     const s = await mount();
     await press(s, 'mock-begin');
     expect(s.getByText('Paper 1 of 4')).toBeTruthy();
@@ -232,7 +232,7 @@ describe('Próbavizsga: folyamat (E1-E5)', () => {
     s.unmount();
   });
 
-  it('átnézés: tételenként a kérdés, a te válaszod, a helyes válasz; "Try again" új intro-ra visz', async () => {
+  it('review: per item the question, your answer, the correct answer; "Try again" leads to a new intro', async () => {
     const s = await mount();
     await press(s, 'mock-begin');
     await press(s, 'mock-start-paper');
@@ -257,7 +257,7 @@ describe('Próbavizsga: folyamat (E1-E5)', () => {
     s.unmount();
   });
 
-  it('hallás: legfeljebb 2 lejátszás, a harmadik koppintás néma', async () => {
+  it('listening: at most 2 plays, the third tap is silent', async () => {
     const s = await mount();
     await press(s, 'mock-begin');
     await solveReading(s);
@@ -278,10 +278,10 @@ describe('Próbavizsga: folyamat (E1-E5)', () => {
   });
 });
 
-describe('Próbavizsga: részenkénti mentés és folytatás (E4 b)', () => {
+describe('Mock exam: per-paper save and resume', () => {
   beforeEach(reset);
 
-  it('félbehagyás után a kész papír válasza megmarad, a folytatás a következő papírnál indul', async () => {
+  it('after quitting midway the finished paper answer stays, resume starts at the next paper', async () => {
     const first = await mount();
     await press(first, 'mock-begin');
     await solveReading(first); // reading done, correct
@@ -312,7 +312,7 @@ describe('Próbavizsga: részenkénti mentés és folytatás (E4 b)', () => {
     second.unmount();
   });
 
-  it('"Start over" törli a mentést, és elölről indít', async () => {
+  it('"Start over" deletes the save and restarts from the beginning', async () => {
     const first = await mount();
     await press(first, 'mock-begin');
     await solveReading(first);
@@ -325,7 +325,7 @@ describe('Próbavizsga: részenkénti mentés és folytatás (E4 b)', () => {
     second.unmount();
   });
 
-  it('változott feladatsor (más ujjlenyomat) esetén a mentés nem folytatható, tiszta intro jön', async () => {
+  it('with a changed task set (different fingerprint) the save cannot be resumed, a clean intro appears', async () => {
     const first = await mount();
     await press(first, 'mock-begin');
     await solveReading(first);
@@ -339,10 +339,10 @@ describe('Próbavizsga: részenkénti mentés és folytatás (E4 b)', () => {
   });
 });
 
-describe('Próbavizsga: valódi vizsgaóra (E3 a)', () => {
+describe('Mock exam: real exam clock', () => {
   beforeEach(reset);
 
-  it('lejárt óránál a papír ott zár, ahol tart: a megválaszolatlan 0, és ezt jelzi', async () => {
+  it('when the clock runs out the paper closes where it stands: unanswered is 0, and it says so', async () => {
     const s = await mount();
     await press(s, 'mock-begin');
     await solveReading(s);
@@ -360,7 +360,7 @@ describe('Próbavizsga: valódi vizsgaóra (E3 a)', () => {
   });
 });
 
-describe('Próbavizsga: szójegyzet ismeretlen szóra (E5 c)', () => {
+describe('Mock exam: glossary for an unknown word', () => {
   beforeEach(reset);
 
   // A real A1 word from the level's items; the task text is just this word.
@@ -379,7 +379,7 @@ describe('Próbavizsga: szójegyzet ismeretlen szóra (E5 c)', () => {
     mockExam = e;
   };
 
-  it('ismeretlen szónál a feladat alatt koppintásra nyílik a jelentése; a lista szó = jelentés', async () => {
+  it('on an unknown word the meaning opens on tap under the task; the list word = meaning', async () => {
     const { word: w } = word();
     withPassage(w);
     const s = await mount();
@@ -393,7 +393,7 @@ describe('Próbavizsga: szójegyzet ismeretlen szóra (E5 c)', () => {
     s.unmount();
   });
 
-  it('a tanult szóhoz nincs szójegyzet', async () => {
+  it('there is no glossary for a learned word', async () => {
     const { items, word: w } = word();
     withPassage(w);
     for (const it of items) await getDb().upsertPcicCard({ ...sm2NewCard(it.id), state: 'review' as const, interval: 7, reps: 3 });
@@ -439,7 +439,7 @@ const enExam = (level: 'A1' | 'A2'): MockExam => {
 
 const GOOD_EN_MESSAGE = 'Hello my name is Ana and I live in a small house near the park';
 
-describe('Próbavizsga: es→en irány (nemzetközi minta, a felület spanyolul)', () => {
+describe('Mock exam: es→en direction (international sample, UI in Spanish)', () => {
   beforeEach(async () => {
     await reset();
     setLanguage('es');
@@ -447,7 +447,7 @@ describe('Próbavizsga: es→en irány (nemzetközi minta, a felület spanyolul)
   });
   afterEach(() => setLanguage('en'));
 
-  it('nem elérhető szinten (B1) nincs próbavizsga, gomb visz tovább', async () => {
+  it('on an unavailable level (B1) there is no mock exam, the button leads on', async () => {
     mockLevel = 'B1';
     const s = await mount();
     expect(s.getByText('Todavía no hay examen de práctica para este nivel.')).toBeTruthy();
@@ -456,7 +456,7 @@ describe('Próbavizsga: es→en irány (nemzetközi minta, a felület spanyolul)
     s.unmount();
   });
 
-  it('A1: nemzetközi-minta felirat (nem "hivatalos"), egy 75 perces írásbeli, összpont-szabály, szóbeli helyőrző, összpont-sor az eredményen', async () => {
+  it('A1: international-sample label (not "official"), one 75-minute written paper, total-score rule, spoken placeholder, total-score row on the result', async () => {
     mockLevel = 'A1';
     mockExam = enExam('A1');
     const s = await mount();
@@ -497,7 +497,7 @@ describe('Próbavizsga: es→en irány (nemzetközi minta, a felület spanyolul)
     s.unmount();
   });
 
-  it('A1 hallás-újrajátszás: az első rész egyszer játszható, a második koppintás néma', async () => {
+  it('A1 listening replay: the first part can be played once, the second tap is silent', async () => {
     mockLevel = 'A1';
     mockExam = enExam('A1');
     const s = await mount();
@@ -511,7 +511,7 @@ describe('Próbavizsga: es→en irány (nemzetközi minta, a felület spanyolul)
     s.unmount();
   });
 
-  it('A1: egy készség nullával is átmehet (nincs részenkénti minimum), ha az összpont megvan', async () => {
+  it('A1: a skill may pass with zero (no per-part minimum) if the total score is met', async () => {
     mockLevel = 'A1';
     mockExam = enExam('A1');
     const s = await mount();
@@ -529,7 +529,7 @@ describe('Próbavizsga: es→en irány (nemzetközi minta, a felület spanyolul)
     s.unmount();
   });
 
-  it('A2: Olvasás + Írás közös papír (60 perc), Hallás, átlag-szabály "közelítő" jelzéssel, átlag-sor az eredményen', async () => {
+  it('A2: Reading + Writing shared paper (60 minutes), Listening, average rule with an "approximate" flag, average row on the result', async () => {
     mockLevel = 'A2';
     mockExam = enExam('A2');
     const s = await mount();
@@ -559,7 +559,7 @@ describe('Próbavizsga: es→en irány (nemzetközi minta, a felület spanyolul)
     s.unmount();
   });
 
-  it('a felület angolul sem ír "official" vizsgát az angol irányon (nemzetközi minta felirat)', async () => {
+  it('the UI does not say "official" exam even in English on the English direction (international-sample label)', async () => {
     setLanguage('en');
     mockLevel = 'A1';
     mockExam = enExam('A1');

@@ -78,7 +78,7 @@ afterEach(() => {
   jest.useRealTimers();
 });
 
-describe('Próbavizsga: a feladatváltás a görgető tetejére visz (FB491)', () => {
+describe('Mock exam: switching tasks goes to the top of the scroll view', () => {
   beforeEach(async () => {
     jest.useFakeTimers({ doNotFake: ['nextTick', 'setImmediate', 'queueMicrotask'] });
     setPcicTarget('es');
@@ -87,7 +87,7 @@ describe('Próbavizsga: a feladatváltás a görgető tetejére visz (FB491)', (
     await getDb().resetPcicCards();
   });
 
-  it('minden új feladat friss görgetőt kap (nem örökli az előző görgetési helyzetét)', async () => {
+  it('every new task gets a fresh scroll view (it does not inherit the previous scroll position)', async () => {
     const s = render(
       <ThemeProvider>
         <MockExamScreen />

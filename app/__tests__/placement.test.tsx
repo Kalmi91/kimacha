@@ -51,8 +51,8 @@ const play = async (screen: Screen, right: (n: number) => boolean) => {
 
 const cardsById = async () => new Map((await getDb().getPcicCards()).map((c) => [c.itemId, c]));
 
-describe('PlacementScreen (onboarding: még nincs mentett irány)', () => {
-  it('"Start at" az onboardingban rögzíti az irányt és a szintet, és a fülekre lép (C1 a)', async () => {
+describe('PlacementScreen (onboarding: no saved direction yet)', () => {
+  it('"Start at" in onboarding records the direction and the level, and goes to the tabs', async () => {
     const screen = render(<PlacementScreen />);
     await flush();
     await play(screen, () => true);
@@ -75,7 +75,7 @@ describe('PlacementScreen', () => {
     mockReplace.mockClear();
   });
 
-  it('A2-ről indul; kérdés-sorszám, négy szint-pont, szó-kérdés 4 válasszal + "I don\'t know" (C2 b)', async () => {
+  it('starts from A2; question number, four level dots, word question with 4 answers + "I don\'t know"', async () => {
     const screen = render(<PlacementScreen />);
     await flush();
 
@@ -94,7 +94,7 @@ describe('PlacementScreen', () => {
     expect(screen.queryByTestId('exam-next')).toBeNull();
   });
 
-  it('mind jó -> B2 15 kérdés után; a helyes szavak graduálnak, a nyelvtan-kérdés nem hoz kártyát (C3 b)', async () => {
+  it('all right -> B2 after 15 questions; correct words graduate, a grammar question brings no card', async () => {
     const screen = render(<PlacementScreen />);
     await flush();
     await play(screen, () => true);
@@ -110,7 +110,7 @@ describe('PlacementScreen', () => {
     expect(cards.size).toBeGreaterThanOrEqual(9);
   });
 
-  it('mind rossz ("I don\'t know") -> A1 10 kérdés után; a szavak kártyái nem változnak', async () => {
+  it('all wrong ("I don\'t know") -> A1 after 10 questions; word cards do not change', async () => {
     const before = await getDb().getPcicCards();
     const screen = render(<PlacementScreen />);
     await flush();
@@ -122,7 +122,7 @@ describe('PlacementScreen', () => {
     expect(await getDb().getPcicCards()).toEqual(before);
   });
 
-  it('a javasolt szint felülírható: "Choose another level" a szint-sorokat mutatja, a koppintás menti és visszalép (C3)', async () => {
+  it('the suggested level can be overridden: "Choose another level" shows the level rows, tapping saves and goes back', async () => {
     const screen = render(<PlacementScreen />);
     await flush();
     await play(screen, () => true);
@@ -137,7 +137,7 @@ describe('PlacementScreen', () => {
     expect(mockBack).toHaveBeenCalledTimes(1);
   });
 
-  it('"Start at" a mentett irányú felhasználónál a szintet menti és visszalép a tanulófülre', async () => {
+  it('"Start at" for a user with a saved direction saves the level and goes back to the Learn tab', async () => {
     const screen = render(<PlacementScreen />);
     await flush();
     await play(screen, () => true);
@@ -148,7 +148,7 @@ describe('PlacementScreen', () => {
     expect(mockReplace).not.toHaveBeenCalled();
   });
 
-  it('"Take it again" új felmérést indít', async () => {
+  it('"Take it again" starts a new placement test', async () => {
     const screen = render(<PlacementScreen />);
     await flush();
     await play(screen, () => false);
@@ -158,7 +158,7 @@ describe('PlacementScreen', () => {
     expect(screen.getByTestId('placement-counter').props.children).toBe('Question 1');
   });
 
-  it('kilépés (X) a megerősítés után visszalép, és semmi nem mentődik', async () => {
+  it('exit (X) goes back after confirmation, and nothing is saved', async () => {
     const before = await getDb().getPcicCards();
     const levelBefore = await getDb().getPcicLevel();
     const screen = render(<PlacementScreen />);

@@ -60,7 +60,7 @@ const flush = async (times = 8) => {
   }
 };
 
-describe('PCIC fül: a haladás-csík a másik szinten is halad (FB485)', () => {
+describe('PCIC tab: the progress bar also advances on the other level', () => {
   const today = localDateString();
 
   // The daily budget (10) is used up on A1: 10 words done today, the queue is empty, the "done for today" screen shows up.
@@ -71,7 +71,7 @@ describe('PCIC fül: a haladás-csík a másik szinten is halad (FB485)', () => 
     await getDb().setPcicLevel('A1');
   });
 
-  it('A1-en +15 után, a B1-re váltva az első kész kártya már mozdítja a csíkot', async () => {
+  it('after +15 on A1, switching to B1: the first finished card already moves the bar', async () => {
     const { getByTestId, getByText } = render(<PcicScreen />);
     await flush();
     fireEvent.press(getByTestId('learn-more-new-15'));
@@ -93,7 +93,7 @@ describe('PCIC fül: a haladás-csík a másik szinten is halad (FB485)', () => 
     expect(parseFloat(width)).toBeCloseTo((5 / 14) * 100, 1);
   });
 
-  it('a +N adag-alapja a saját szintjén megmarad: A1-en +15 után, A1-en maradva a csík 0%-ról indul', async () => {
+  it('the +N batch base stays on its own level: after +15 on A1, staying on A1 the bar starts from 0%', async () => {
     const { getByTestId } = render(<PcicScreen />);
     await flush();
     fireEvent.press(getByTestId('learn-more-new-15'));

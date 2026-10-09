@@ -26,8 +26,8 @@ const flush = async (times = 6) => {
   }
 };
 
-describe('Not-found, neo-brutalista (NY25)', () => {
-  it('brand palettán BrutalButton, classic palettán a mai link', async () => {
+describe('Not-found, neo-brutalist', () => {
+  it('with the brand palette BrutalButton, with the classic palette the current link', async () => {
     await getDb().setGrammarPalette('brand');
     const brand = render(<ThemeProvider><NotFoundScreen /></ThemeProvider>);
     await flush();

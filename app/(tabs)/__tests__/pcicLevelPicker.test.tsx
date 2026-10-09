@@ -53,13 +53,13 @@ const flush = async (times = 4) => {
   }
 };
 
-describe('PCIC fül: szint-választó (PLAN-play 10)', () => {
+describe('PCIC tab: level picker', () => {
   beforeEach(async () => {
     await getDb().resetPcicCards();
     await getDb().setPcicLevel('B1');
   });
 
-  it('a fejléc az aktív szintet mutatja, a lap a másik szintet is felkínálja', async () => {
+  it('the header shows the active level, the sheet also offers the other level', async () => {
     const { getByText } = render(<PcicScreen />);
     await flush();
 
@@ -74,7 +74,7 @@ describe('PCIC fül: szint-választó (PLAN-play 10)', () => {
     expect(getByText('Intermediate')).toBeTruthy();
   });
 
-  it('másik szint választása azonnal annak pakliját adja, és perzisztálja a választást', async () => {
+  it('choosing another level immediately gives its deck, and persists the choice', async () => {
     const { getByText, queryByText } = render(<PcicScreen />);
     await flush();
 
@@ -89,7 +89,7 @@ describe('PCIC fül: szint-választó (PLAN-play 10)', () => {
     expect(await getDb().getPcicLevel()).toBe('A1');
   });
 
-  it('a haladás szintenként elkülönül: a B1 tétel "Knew it"-je nem tűnik el A1-re váltva, és A1-ről visszaváltva megmarad', async () => {
+  it('progress is separate per level: the B1 "Knew it" does not vanish when switching to A1, and survives switching back from A1', async () => {
     const { getByText, UNSAFE_getByType } = render(<PcicScreen />);
     await flush();
 

@@ -138,7 +138,7 @@ describe('grammar course', () => {
 
   // in es→en the English syllabus is shown
   // (A1, A2, B1, B2), the lesson-less topics with a "pronto" badge, without the Spanish topics.
-  it('es→en irányban az angol tantervet mutatja, spanyol téma nélkül', async () => {
+  it('in the es→en direction shows the English syllabus, without Spanish topics', async () => {
     await getDb().setOnboarding('es', 'en');
     setLanguage('es');
     const view = render(<GrammarSyllabusScreen />);

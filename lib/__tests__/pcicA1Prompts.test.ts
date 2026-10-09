@@ -42,33 +42,33 @@ function collectPairs(): Pair[] {
   return pairs;
 }
 
-describe('PCIC A1 prompt audit (PROMPT-POLICY 4, 12-15. szakasz, FB370-374)', () => {
+describe('PCIC A1 prompt audit', () => {
   const pairs = collectPairs().filter((p) => !EXCEPTIONS.has(p.id));
 
   // the frequency corpus (data/pcic.ts)
   // has no `kind: 'sentence'` item (only word/phrase), so the 'sentence-item' category
   // is permanently empty - from now on the not-vacuously-green self-check requires only the
   // (still live and audited) word example sentences.
-  it('legalabb egy pelda-mondatot lefed (a teszt nem üresen zöld)', () => {
+  it('covers at least one example sentence (the test is not green on empty)', () => {
     expect(pairs.filter((p) => p.label === 'example-sentence').length).toBeGreaterThan(0);
   });
 
-  it('"gracias" a spanyolban -> az angol tartalmazza "thank"-et', () => {
+  it('"gracias" in Spanish -> the English contains "thank"', () => {
     const bad = pairs.filter((p) => tokens(p.es).includes('gracias') && !p.en.toLowerCase().includes('thank'));
     expect(bad.map((p) => `${p.id} [${p.label}] "${p.es}" || "${p.en}"`)).toEqual([]);
   });
 
-  it('"por favor" a spanyolban -> az angol tartalmazza "please"-t', () => {
+  it('"por favor" in Spanish -> the English contains "please"', () => {
     const bad = pairs.filter((p) => hasPorFavor(tokens(p.es)) && !p.en.toLowerCase().includes('please'));
     expect(bad.map((p) => `${p.id} [${p.label}] "${p.es}" || "${p.en}"`)).toEqual([]);
   });
 
-  it('"sin " (szohataron) a spanyolban -> az angol tartalmazza "without"-ot', () => {
+  it('"sin " (at a word boundary) in Spanish -> the English contains "without"', () => {
     const bad = pairs.filter((p) => tokens(p.es).includes('sin') && !p.en.toLowerCase().includes('without'));
     expect(bad.map((p) => `${p.id} [${p.label}] "${p.es}" || "${p.en}"`)).toEqual([]);
   });
 
-  it('fordítva: az angol "please" csak akkor jó, ha az es-ben "por favor" vagy "favor" van', () => {
+  it('reversed: the English "please" is right only if the es has "por favor" or "favor"', () => {
     const bad = pairs.filter((p) => p.en.toLowerCase().includes('please') && !tokens(p.es).includes('favor'));
     expect(bad.map((p) => `${p.id} [${p.label}] "${p.es}" || "${p.en}"`)).toEqual([]);
   });

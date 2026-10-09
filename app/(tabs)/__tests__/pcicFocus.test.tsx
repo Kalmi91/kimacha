@@ -46,7 +46,7 @@ const flush = async (times = 4) => {
   }
 };
 
-describe('PCIC fül: a mező fókusza (FB391)', () => {
+describe('PCIC tab: field focus', () => {
   let focusSpy: jest.SpyInstance;
 
   beforeEach(async () => {
@@ -58,14 +58,14 @@ describe('PCIC fül: a mező fókusza (FB391)', () => {
     focusSpy.mockRestore();
   });
 
-  it('új lap megjelenésekor (mountkor) a mező fókuszt kap', async () => {
+  it('when a new card appears (on mount), the field gets focus', async () => {
     render(<PcicScreen />);
     await flush();
 
     expect(focusSpy).toHaveBeenCalled();
   });
 
-  it('felfedés (Check) után NEM kap újra fókuszt, amíg ugyanaz a lap van képernyőn', async () => {
+  it('after reveal (Check) it does NOT regain focus while the same card is on screen', async () => {
     const { UNSAFE_getByType, getByText } = render(<PcicScreen />);
     await flush();
     const callsAfterMount = focusSpy.mock.calls.length;

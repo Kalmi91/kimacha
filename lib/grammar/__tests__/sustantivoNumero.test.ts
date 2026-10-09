@@ -8,8 +8,8 @@ import type { LessonV2 } from '../lessonTypes';
 const lesson = lessonJson as unknown as LessonV2;
 const articleItems = lesson.items.filter((i) => isArticleSetItem(i)) as GrammarGapItem[];
 
-describe('sustantivo-numero: el / la készlet (FB419)', () => {
-  it('legalább 20 főnév van benne, saját gombbal (article), nem a mondat-feladatok között', () => {
+describe('sustantivo-numero: el / la set', () => {
+  it('it has at least 20 nouns, with its own button (article), not among the sentence tasks', () => {
     const counts = grammarKindCounts(lesson);
     expect(counts.article).toBeGreaterThanOrEqual(20);
     expect(counts.article).toBe(articleItems.length);
@@ -17,14 +17,14 @@ describe('sustantivo-numero: el / la készlet (FB419)', () => {
     expect(lessonKinds('es', 'sustantivo-numero')).toContain('article');
   });
 
-  it('a trükkös főnevek mind szerepelnek: problema, día, mapa, agua, mano, foto, moto, radio', () => {
+  it('the tricky nouns are all present: problema, día, mapa, agua, mano, foto, moto, radio', () => {
     const nouns = articleItems.map((i) => i.sentence.toLowerCase());
     for (const noun of ['problema', 'día', 'mapa', 'agua', 'mano', 'foto', 'moto', 'radio']) {
       expect(nouns.some((s) => s.includes(` ${noun} `) || s.includes(` ${noun}.`))).toBe(true);
     }
   });
 
-  it('minden tétel el / la közül választ, a helyes az első (a kör keveri), és van magyarázata mind a négy nyelven', () => {
+  it('every item chooses between el / la, the right one is first (the round shuffles), and has an explanation in all four languages', () => {
     for (const item of articleItems) {
       expect(item.options).toHaveLength(2);
       expect(item.options.map((o) => o.toLowerCase()).sort()).toEqual(['el', 'la']);
@@ -37,7 +37,7 @@ describe('sustantivo-numero: el / la készlet (FB419)', () => {
     }
   });
 
-  it('a helyes névelő tényleg a helyes: a trükkös főnevek', () => {
+  it('the right article is really right: the tricky nouns', () => {
     const correctArticleOf = (noun: string) => {
       const item = articleItems.find((i) => new RegExp(`(^|\\s)___ ${noun}[ .]`, 'i').test(i.sentence));
       return item?.options[item.correct].toLowerCase();
@@ -52,7 +52,7 @@ describe('sustantivo-numero: el / la készlet (FB419)', () => {
     expect(correctArticleOf('radio')).toBe('la');
   });
 
-  it('a kör az article fajtára csak az el / la tételeket adja, a choice fajta nem tartalmazza őket', () => {
+  it('for the article kind the round gives only the el / la items, the choice kind does not contain them', () => {
     const round = buildGrammarRound(lesson, 1);
     const article = round.filter((r) => grammarRoundItemKind(r) === 'article');
     const choice = round.filter((r) => grammarRoundItemKind(r) === 'choice');
@@ -61,12 +61,12 @@ describe('sustantivo-numero: el / la készlet (FB419)', () => {
   });
 });
 
-describe('sustantivo-numero: rendhagyó többes számok (FB418)', () => {
+describe('sustantivo-numero: irregular plurals', () => {
   const tableRows = (lesson.body.find((b) => b.kind === 'table' && b.id === 'plural') as { rows: string[][] }).rows;
   const forms = lesson.items.filter((i) => i.kind === 'form') as { person: string; answer: string }[];
   const answerOf = (person: string) => forms.find((f) => f.person === person)?.answer;
 
-  it('van rendhagyó-blokk a leckében: -z → -ces, változatlan -s, ékezetváltás, carácter', () => {
+  it('the lesson has an irregular block: -z → -ces, unchanged -s, accent shift, carácter', () => {
     const titles = lesson.body.map((b) => ('title' in b && b.title ? b.title.en : ''));
     expect(titles).toContain('Irregular plurals');
     const block = lesson.body.find((b) => b.kind === 'list' && b.title?.en === 'Irregular plurals') as {
@@ -78,7 +78,7 @@ describe('sustantivo-numero: rendhagyó többes számok (FB418)', () => {
     }
   });
 
-  it('a ragozás-feladat a rendhagyó alakokat kérdezi, és a segítő tábla is tartalmazza őket', () => {
+  it('the conjugation task asks the irregular forms, and the helper table contains them too', () => {
     expect(answerOf('la vez')).toBe('las veces');
     expect(answerOf('el pez')).toBe('los peces');
     expect(answerOf('la crisis')).toBe('las crisis');

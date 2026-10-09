@@ -58,7 +58,7 @@ const flush = async (times = 8) => {
   }
 };
 
-describe('PCIC fül: +5 / +10 / +15 új szó a "kész mára" képernyőn (FB449, FB451)', () => {
+describe('PCIC tab: +5 / +10 / +15 new words on the "done for today" screen', () => {
   const today = localDateString();
 
   // The daily budget (10) is used up: 10 words introduced and done today, the queue is empty, the "done for today" screen shows up.
@@ -69,7 +69,7 @@ describe('PCIC fül: +5 / +10 / +15 új szó a "kész mára" képernyőn (FB449,
     await getDb().setPcicLevel('B1');
   });
 
-  it('a három gomb ott van a "kész mára" képernyőn', async () => {
+  it('the three buttons are on the "done for today" screen', async () => {
     const { getByText, getByTestId } = render(<PcicScreen />);
     await flush();
     expect(getByText('Done for today')).toBeTruthy();
@@ -82,7 +82,7 @@ describe('PCIC fül: +5 / +10 / +15 új szó a "kész mára" képernyőn (FB449,
     ['learn-more-new-5', 5],
     ['learn-more-new', 10],
     ['learn-more-new-15', 15],
-  ])('%s: pontosan %i új szót ad a napi keretre', async (testID, n) => {
+  ])('%s: gives exactly %i new words for the daily budget', async (testID, n) => {
     const { getByTestId, getByText } = render(<PcicScreen />);
     await flush();
     fireEvent.press(getByTestId(testID));
@@ -97,7 +97,7 @@ describe('PCIC fül: +5 / +10 / +15 új szó a "kész mára" képernyőn (FB449,
     ['learn-more-new-5', 5],
     ['learn-more-new', 10],
     ['learn-more-new-15', 15],
-  ])('%s: a haladás-csík 0%%-ról indul az új adagnál (FB456)', async (testID) => {
+  ])('%s: the progress bar starts from 0%% for the new batch', async (testID) => {
     const { getByTestId } = render(<PcicScreen />);
     await flush();
     fireEvent.press(getByTestId(testID));

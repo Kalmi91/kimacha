@@ -114,7 +114,7 @@ const runTest = async (wrongAt: number[]) => {
   return qs;
 };
 
-describe.each(['brand', 'classic'] as const)('lecke végi teszt (%s paletta)', (palette) => {
+describe.each(['brand', 'classic'] as const)('end-of-lesson test (%s palette)', (palette) => {
   beforeEach(async () => {
     jest.clearAllMocks();
     jest.spyOn(Date, 'now').mockReturnValue(NOW);
@@ -135,7 +135,7 @@ describe.each(['brand', 'classic'] as const)('lecke végi teszt (%s paletta)', (
     await flush();
   };
 
-  it('B1 b: amíg nem volt kör minden fajtából, a gomb szürke és a teendőt írja', async () => {
+  it('B1 b: until a round of every kind is done, the button is grey and states what to do', async () => {
     await seedBest(['match', 'form']); // "why" is missing, "choice" is just being finished
     await open();
     expect(screen.queryByTestId('grammar-start-lessontest')).toBeNull(); // not on the lesson page, only on the done page
@@ -146,7 +146,7 @@ describe.each(['brand', 'classic'] as const)('lecke végi teszt (%s paletta)', (
     expect(screen.queryByTestId('lesson-test-counter')).toBeNull();
   });
 
-  it('B1 b: ha minden fajtából volt kör, a gomb él, alatta "10 questions, pass 80%"', async () => {
+  it('B1 b: once a round of every kind is done, the button is live, with "10 questions, pass 80%" under it', async () => {
     await seedBest(['match', 'form', 'why']);
     await open();
     await playChoiceRound();
@@ -154,7 +154,7 @@ describe.each(['brand', 'classic'] as const)('lecke végi teszt (%s paletta)', (
     expect(screen.getByTestId('grammar-lessontest-note')).toHaveTextContent('10 questions, pass 80%');
   });
 
-  it('a done-lapon a teszt-gomb az egyetlen kitöltött gomb, a "Next topic" másodlagos (keretes)', async () => {
+  it('on the done page the test button is the only filled button, "Next topic" is secondary (outlined)', async () => {
     await seedBest(['match', 'form', 'why']);
     await open();
     await playChoiceRound();
@@ -166,7 +166,7 @@ describe.each(['brand', 'classic'] as const)('lecke végi teszt (%s paletta)', (
     else expect(fill('grammar-next-topic')).toBeUndefined();
   });
 
-  it('B2 a + 80%: 10 kérdés, helyes után nincs visszajelzés; 10/10 átment, mentődik, "Next topic"', async () => {
+  it('B2 a + 80%: 10 questions, no feedback after a correct one; 10/10 passed, saved, "Next topic"', async () => {
     await seedBest(['match', 'form', 'why']);
     await open();
     await playChoiceRound();
@@ -192,7 +192,7 @@ describe.each(['brand', 'classic'] as const)('lecke végi teszt (%s paletta)', (
     expect(mockBack).toHaveBeenCalledTimes(1);
   });
 
-  it('B4 a + 80% határ: 7/10 még nem átment, az elrontottak a helyes válasszal; nincs zár; újrapróba', async () => {
+  it('B4 a + 80% boundary: 7/10 is not yet a pass, the wrong ones with the correct answer; no lock; retry', async () => {
     await seedBest(['match', 'form', 'why']);
     await open();
     await playChoiceRound();
@@ -214,7 +214,7 @@ describe.each(['brand', 'classic'] as const)('lecke végi teszt (%s paletta)', (
     expect(screen.getByTestId('lesson-test-counter').props.children).toBe('Question 1 / 10');
   });
 
-  it('az elrontott "miért" tételnél az eredmény-lapon a kérdés szövege is látszik', async () => {
+  it('for a wrong "why" item the question text also shows on the result page', async () => {
     await seedBest(['match', 'form', 'why']);
     await open();
     await playChoiceRound();
@@ -227,7 +227,7 @@ describe.each(['brand', 'classic'] as const)('lecke végi teszt (%s paletta)', (
     expect(screen.getAllByText(/^Why «/).length).toBe(why.length);
   });
 
-  it('8/10 átment (a határon)', async () => {
+  it('8/10 passed (at the boundary)', async () => {
     await seedBest(['match', 'form', 'why']);
     await open();
     await playChoiceRound();
@@ -237,7 +237,7 @@ describe.each(['brand', 'classic'] as const)('lecke végi teszt (%s paletta)', (
     expect(screen.getByTestId('lesson-test-score')).toHaveTextContent(/^8 \/ 10/);
   });
 
-  it('a ✕ megerősítés után vissza a leckéhez, mentés nélkül', async () => {
+  it('after confirming ✕ back to the lesson, without saving', async () => {
     await seedBest(['match', 'form', 'why']);
     await open();
     await playChoiceRound();
@@ -251,19 +251,19 @@ describe.each(['brand', 'classic'] as const)('lecke végi teszt (%s paletta)', (
     expect((await getDb().getGameProgress(GRAMMAR_PROGRESS_KEY)).find((r) => r.itemId === lessonTestKey(TOPIC))).toBeUndefined();
   });
 
-  it('"Test passed" jel a lecke-oldalon, ha a lecke már átment a teszten', async () => {
+  it('"Test passed" mark on the lesson page if the lesson has already passed the test', async () => {
     await getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, lessonTestKey(TOPIC), 'passed', mergeLessonTestResult(null, 9, 10, '2026-10-01', []));
     await open();
     expect(screen.getByTestId('grammar-test-passed')).toHaveTextContent(/Test passed · best 90%$/);
   });
 
-  it('a lecke-oldalon nincs jel, amíg nem ment át', async () => {
+  it('no mark on the lesson page until it has passed', async () => {
     await getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, lessonTestKey(TOPIC), 'failed', mergeLessonTestResult(null, 5, 10, '2026-10-01', []));
     await open();
     expect(screen.queryByTestId('grammar-test-passed')).toBeNull();
   });
 
-  it('a teszt-gomb szabálya megegyezik a lecke fajtáival (nincs kimaradó fajta)', () => {
+  it('the rule of the test button matches the lesson kinds (no kind left out)', () => {
     expect(scoredKinds(lessonFor('es', TOPIC)!)).toEqual(['choice', 'match', 'form', 'why']);
   });
 });

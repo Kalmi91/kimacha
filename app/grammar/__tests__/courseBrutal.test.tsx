@@ -37,7 +37,7 @@ const flush = async (times = 4) => {
 
 const style = (id: string) => StyleSheet.flatten(screen.getByTestId(id).props.style);
 
-describe('kurzus-lista, neo-brutalista (NY21)', () => {
+describe('course list, neo-brutalist', () => {
   beforeEach(async () => {
     const db = getDb();
     await db.setOnboarding('en', 'es');
@@ -45,7 +45,7 @@ describe('kurzus-lista, neo-brutalista (NY21)', () => {
     await db.setGrammarPalette('brand');
   });
 
-  it('streak-matrica, aktív szint-doboz a-val, core-matrica, heti cél doboz', async () => {
+  it('streak sticker, active level box with a, core sticker, weekly goal box', async () => {
     await getDb().updateStreak();
     const view = render(<ThemeProvider><GrammarSyllabusScreen /></ThemeProvider>);
     await flush();
@@ -61,7 +61,7 @@ describe('kurzus-lista, neo-brutalista (NY21)', () => {
     view.unmount();
   });
 
-  it('kész téma DONE matricát kap, folyamatban lévő b kitöltést és szegmentált sávot', async () => {
+  it('a finished topic gets a DONE sticker, one in progress gets a b fill and a segmented bar', async () => {
     const db = getDb();
     await db.setGameProgress(GRAMMAR_PROGRESS_KEY, 'presente-regular', 'done', { correct: 10, total: 12 });
     await db.setGameProgress(GRAMMAR_PROGRESS_KEY, 'presente-irregular:choice', 'started', { correct: 6, total: 10 });
@@ -72,7 +72,7 @@ describe('kurzus-lista, neo-brutalista (NY21)', () => {
     view.unmount();
   });
 
-  it('classic palettával a mai (nem brutalista) lista jelenik meg: nincs matrica-forgatás', async () => {
+  it('with the classic palette the current (non-brutalist) list shows: no sticker rotation', async () => {
     await getDb().setGrammarPalette('classic');
     const view = render(<ThemeProvider><GrammarSyllabusScreen /></ThemeProvider>);
     await flush(6);

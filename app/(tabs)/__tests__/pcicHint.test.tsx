@@ -64,7 +64,7 @@ async function typeAndCheck(utils: ReturnType<typeof render>, answer: string) {
   await flush();
 }
 
-describe('PCIC fül: hint és „also” sor (PLAN-tobbjelentes 3. lépés)', () => {
+describe('PCIC tab: hint and "also" row', () => {
   beforeEach(async () => {
     await getDb().resetPcicCards();
     await getDb().resetGameProgress(RESUME_GAME_ID);
@@ -75,7 +75,7 @@ describe('PCIC fül: hint és „also” sor (PLAN-tobbjelentes 3. lépés)', ()
     jest.restoreAllMocks();
   });
 
-  it('a hint megjelenik a szó alatt, csillag nélkül, a jelölt rész kiemelve', async () => {
+  it('the hint shows under the word, without an asterisk, with the marked part highlighted', async () => {
     const utils = render(<PcicScreen />);
     await flush();
 
@@ -88,7 +88,7 @@ describe('PCIC fül: hint és „also” sor (PLAN-tobbjelentes 3. lépés)', ()
     expect(mark.textDecorationColor).toBe('#EC4899');
   });
 
-  it('a hint a Check után is látszik', async () => {
+  it('the hint is still shown after Check', async () => {
     const utils = render(<PcicScreen />);
     await flush();
     await typeAndCheck(utils, 'el coche');
@@ -96,7 +96,7 @@ describe('PCIC fül: hint és „also” sor (PLAN-tobbjelentes 3. lépés)', ()
     expect(textOf(utils.getByTestId('learn-hint').props.children)).toBe('The car is red.');
   });
 
-  it('hint nélküli kártyán nincs learn-hint', async () => {
+  it('no learn-hint on a card without a hint', async () => {
     const utils = render(<PcicScreen />);
     await flush();
     await typeAndCheck(utils, 'el coche');
@@ -107,7 +107,7 @@ describe('PCIC fül: hint és „also” sor (PLAN-tobbjelentes 3. lépés)', ()
     expect(utils.queryByTestId('learn-hint')).toBeNull();
   });
 
-  it('perjeles válasznál a learn-also a többi alakot mutatja, a mutatott alak nélkül', async () => {
+  it('with a slash-separated answer, learn-also shows the other forms, without the shown one', async () => {
     const utils = render(<PcicScreen />);
     await flush();
     expect(utils.queryByTestId('learn-also')).toBeNull(); // Not there before Check
@@ -116,7 +116,7 @@ describe('PCIC fül: hint és „also” sor (PLAN-tobbjelentes 3. lépés)', ()
     expect(textOf(utils.getByTestId('learn-also').props.children)).toBe('also: el carro · el auto');
   });
 
-  it('egy alakú válasznál nincs learn-also', async () => {
+  it('no learn-also with a single-form answer', async () => {
     const utils = render(<PcicScreen />);
     await flush();
     await typeAndCheck(utils, 'el coche');

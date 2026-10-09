@@ -34,7 +34,7 @@ const flush = async (times = 6) => {
   }
 };
 
-describe.each(['brand', 'classic'] as const)('kurzus-lista: "Test passed" jel (%s paletta)', (palette) => {
+describe.each(['brand', 'classic'] as const)('course list: "Test passed" mark (%s palette)', (palette) => {
   beforeEach(async () => {
     const db = getDb();
     await db.setOnboarding('en', 'es');
@@ -43,7 +43,7 @@ describe.each(['brand', 'classic'] as const)('kurzus-lista: "Test passed" jel (%
     await db.resetGameProgress(GRAMMAR_PROGRESS_KEY);
   });
 
-  it('csak az átment lecke kap jelet', async () => {
+  it('only a passed lesson gets a mark', async () => {
     const db = getDb();
     await db.setGameProgress(GRAMMAR_PROGRESS_KEY, lessonTestKey('presente-regular'), 'passed', mergeLessonTestResult(null, 9, 10, '2026-10-01', []));
     await db.setGameProgress(GRAMMAR_PROGRESS_KEY, lessonTestKey('ser-estar'), 'failed', mergeLessonTestResult(null, 5, 10, '2026-10-01', ['x']));
@@ -59,7 +59,7 @@ describe.each(['brand', 'classic'] as const)('kurzus-lista: "Test passed" jel (%
     view.unmount();
   });
 
-  it('a teszt-sor nem számít a lecke %-ába: csak teszt-sorral a lecke nem "elkezdett"', async () => {
+  it('the test row does not count toward the lesson %: with only a test row the lesson is not "started"', async () => {
     await getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, lessonTestKey('presente-regular'), 'passed', mergeLessonTestResult(null, 10, 10, '2026-10-01', []));
     const view = render(
       <ThemeProvider>

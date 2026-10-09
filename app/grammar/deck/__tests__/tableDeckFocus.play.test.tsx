@@ -35,7 +35,7 @@ const flush = async (times = 3) => {
   }
 };
 
-describe('table-deck: friss beviteli mező minden cellánál (FB422)', () => {
+describe('table-deck: a fresh input field for every cell', () => {
   beforeEach(async () => {
     jest.clearAllMocks();
     const db = getDb();
@@ -43,7 +43,7 @@ describe('table-deck: friss beviteli mező minden cellánál (FB422)', () => {
     await db.setGameProgress('grammar', 'ser-estar:tabledeck', 'progress', undefined as never).catch(() => {});
   });
 
-  it('Next után a mező ÚJ példány, szerkeszthető és autoFocus-os', async () => {
+  it('after Next the field is a NEW instance, editable and autoFocus', async () => {
     render(<TableDeckScreen />);
     await flush();
     const first = screen.getByTestId('tabledeck-input');
