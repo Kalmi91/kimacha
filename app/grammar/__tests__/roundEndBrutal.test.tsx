@@ -1,6 +1,6 @@
-// a kör-vége képernyő (3. képernyő): nagy helyes-arány + combo-matrica,
-// 3 kis doboz, "practice this" a rontott mondattal, téma-progress szegmensekben,
-// XP nélkül. Mock-minta: lessonV2.play.test.tsx.
+// the round-end screen (screen 3): big correct-ratio + combo sticker,
+// 3 small boxes, "practice this" with the wrong sentence, topic progress in segments,
+// no XP. Mock pattern: lessonV2.play.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({
@@ -81,7 +81,7 @@ describe('kör vége, neo-brutalista (NY24)', () => {
     expect(screen.queryByText('streak')).toBeTruthy();
     expect(screen.queryByTestId('grammar-practice-again')).toBeTruthy();
     expect(screen.queryByTestId('grammar-lesson-percent')).toBeTruthy();
-    // XP nincs: csak a helyes-arány áll a nagy dobozban.
+    // No XP: only the correct-ratio is in the big box.
     expect(screen.queryByText(/XP/)).toBeNull();
   });
 

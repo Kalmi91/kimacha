@@ -1,5 +1,5 @@
-// a tábla-gyakorló képernyő brutalista palettán (vissza-doboz, SegmentBar), classic
-// palettán a mai fejléc és sáv. Mock-minta: tableDeck.play.test.tsx.
+// the table-practice screen on the brutalist palette (back box, SegmentBar), on the classic
+// palette today's header and bar. Mock pattern: tableDeck.play.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({

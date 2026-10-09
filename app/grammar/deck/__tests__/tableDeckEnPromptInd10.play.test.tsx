@@ -1,6 +1,6 @@
-// a indefinido-10-verbos táblakártyáján a prompt az angol alak ("I went"),
-// nem a puszta "yo"; a spanyol főnévi igenév ("ir") a súgó-gombra jelenik meg.
-// Mock-minta: tableDeckEnPrompt.play.test.tsx.
+// on the indefinido-10-verbos table card the prompt is the English form ("I went"),
+// not the bare "yo"; the Spanish infinitive ("ir") appears on the hint button.
+// Mock pattern: tableDeckEnPrompt.play.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({

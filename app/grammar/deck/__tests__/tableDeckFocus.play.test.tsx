@@ -1,6 +1,6 @@
-// a table-deck beviteli mezője minden új cellánál
-// újra mountol (autoFocus-szal), különben Check után a letiltott, majd újra
-// engedélyezett mezőn nem jött fel a billentyűzet. Mock-minta:
+// the table-deck's input field remounts for every new cell
+// (with autoFocus), otherwise after Check the keyboard did not come up on the disabled and then
+// re-enabled field. Mock pattern:
 // app/grammar/deck/__tests__/tableDeck.play.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));

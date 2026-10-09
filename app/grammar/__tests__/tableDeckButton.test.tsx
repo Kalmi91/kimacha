@@ -71,9 +71,9 @@ describe('grammar lesson screen: table-deck button', () => {
     view.unmount();
   });
 
-  // a személy-tábla (minden sor személy-névmás, a fejléc nem
-  // csupa infinitivus) kérdezhető, ezért gombot kap; a régi "posesivos = schema-1, nincs gomb"
-  // teszt a posesivos schema-2-re költözésekor elavult volt.
+  // the person table (every row is a personal pronoun, the header is not
+  // all infinitives) can be quizzed, so it gets a button; the old "posesivos = schema-1, no button"
+  // test became outdated when posesivos moved to schema-2.
   it('a person table (pronombres-oi) gets the deck button, 5 cells (vosotros dropped)', async () => {
     mockTopicId = 'pronombres-oi';
     const view = render(<GrammarLessonScreen />);
@@ -84,10 +84,10 @@ describe('grammar lesson screen: table-deck button', () => {
 
     view.unmount();
   });
-  // a szó-pakli csak a tábla szavaiból
-  // épül; ahol így küszöb alatt marad, nincs pakli-belépő (és nincs crash).
-  // Egy későbbi változtatás visszaállítja ezt az articulos-genero-ra: a korábbi, az app összes főnevéből
-  // épített pakli megszűnt, a főnevek csak az el / la feladatban vannak, a pakli ismét a lecke saját szavai.
+  // the word deck is built only from the table's words;
+  // where that stays below the threshold, there is no deck entry (and no crash).
+  // A later change restores this for articulos-genero: the earlier deck built from all the app's
+  // nouns is gone, the nouns only appear in the el / la task, and the deck is again the lesson's own words.
   it('articulos-genero (a tábla szavai a küszöb alatt) nem kap szó-pakli belépőt', async () => {
     mockTopicId = 'articulos-genero';
     const view = render(<GrammarLessonScreen />);

@@ -1,5 +1,5 @@
-// az es→en irányban a szavak-gyakorlása képernyő
-// spanyol szót kérdez, az angol szót várja (és angolul olvassa fel); a spanyol irány marad.
+// in the es→en direction the word-practice screen
+// asks a Spanish word, expects the English word (and reads it aloud in English); the Spanish direction stays.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({
@@ -44,10 +44,10 @@ describe('szavak-gyakorlása képernyő, es→en irány', () => {
     jest.clearAllMocks();
     mockTopic = 'to_be';
     await getDb().setOnboarding('es', 'en');
-    // tiszta pakli: a web DB memóriában él a tesztek között
+    // clean deck: the web DB lives in memory between the tests
     await getDb().setGameProgress('grammar-course', 'to_be:tabledeck', 'progress', undefined);
     setPcicTarget('en');
-    setLanguage('es'); // es→en irányban a felület spanyol
+    setLanguage('es'); // in es→en the UI is Spanish
   });
 
   afterEach(() => {
@@ -59,7 +59,7 @@ describe('szavak-gyakorlása képernyő, es→en irány', () => {
     render(<TableDeckScreen />);
     await flush();
 
-    // az első kártya: yo soy -> I am
+    // the first card: yo soy -> I am
     expect(screen.getByText('yo soy')).toBeTruthy();
     expect(screen.getByText('¿Cómo se dice en inglés?')).toBeTruthy();
 
@@ -72,7 +72,7 @@ describe('szavak-gyakorlása képernyő, es→en irány', () => {
 
     fireEvent.press(screen.getByText('Siguiente →'));
     await flush();
-    // a második kártya
+    // the second card
     expect(screen.getByText('tú eres')).toBeTruthy();
   });
 
@@ -82,7 +82,7 @@ describe('szavak-gyakorlása képernyő, es→en irány', () => {
     fireEvent.changeText(screen.getByTestId('tabledeck-input'), 'yo soy');
     fireEvent.press(screen.getByText('✓ Comprobar'));
     await flush();
-    // hibás: a helyes angol válasz látszik
+    // wrong: the correct English answer is shown
     expect(screen.getAllByText('I am').length).toBeGreaterThan(0);
     expect(screen.queryByText('✓ I am')).toBeNull();
   });

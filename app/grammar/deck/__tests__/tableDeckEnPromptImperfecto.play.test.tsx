@@ -1,6 +1,6 @@
-// az imperfecto táblakártyáján a prompt az angol alak ("I used to speak"), nem a puszta
-// "yo"; a spanyol főnévi igenév ("hablar") a súgó-gombra jelenik meg.
-// Mock-minta: tableDeckEnPromptInd10.play.test.tsx.
+// on the imperfecto's table card the prompt is the English form ("I used to speak"), not the bare
+// "yo"; the Spanish infinitive ("hablar") appears on the hint button.
+// Mock pattern: tableDeckEnPromptInd10.play.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({

@@ -1,6 +1,6 @@
-// a Nyelvtan fül listájában a lecke végi teszten átment
-// lecke "Test passed" jelet kap a %-jel mellett; a bukott vagy meg nem próbált nem.
-// Mock-minta: courseBrutal.test.tsx.
+// in the Grammar tab's list, a lesson that passed its end-of-lesson test
+// gets a "Test passed" mark next to the %; a failed or not-attempted one does not.
+// Mock pattern: courseBrutal.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({
