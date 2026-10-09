@@ -1,7 +1,7 @@
-// P0 (Play-vágás): a 💬 gomb koppintására nyíljon meg a Feedback
-// modal, és a küldés a flavor szerinti utat hívja (lib/buildFlavor.ts):
-// Drive-flavor → fetch a FEEDBACK_URL-re, Play-flavor → Share.share, egyik
-// se navigáljon el az appból (nincs router/Linking hívás ezen az úton).
+// Tapping the 💬 button should open the Feedback
+// modal, and sending should take the route given by the flavor (lib/buildFlavor.ts):
+// Drive flavor → fetch to FEEDBACK_URL, Play flavor → Share.share, neither
+// should navigate away from the app (no router/Linking call on this path).
 import { act, fireEvent, render, waitFor } from '@testing-library/react-native';
 import { Share } from 'react-native';
 import FeedbackButton from '../FeedbackModal';

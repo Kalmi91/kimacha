@@ -1,10 +1,10 @@
 import { Sticker } from '@/components/grammar/Brutal';
 import { t } from '@/lib/i18n';
 
-// az új feladat-fajták (hibakereső, szórend,
-// diktálás) csak két leckében élnek, ideiglenes "ÚJ · TESZT" jelöléssel, hogy a fejlesztő
-// kipróbálhassa és jóváhagyhassa. EGY helyről kivehető: a TRIAL_BADGES false-ra állításától
-// eltűnik minden jelvény (a feladat-gombokon, a feladatokon és a lecke-listán is).
+// The new task types (error-finder, word order,
+// dictation) exist only in two lessons, with a temporary "NEW · TEST" mark so that the developer
+// can try and approve them. Removable from ONE place: setting TRIAL_BADGES to false makes
+// every badge disappear (on the task buttons, on the tasks and on the lesson list too).
 const TRIAL_BADGES = true;
 
 export default function TrialBadge({ testID = 'trial-badge' }: { testID?: string }) {

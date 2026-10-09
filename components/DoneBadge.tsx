@@ -4,11 +4,11 @@ import CheckMark from '@/components/CheckMark';
 import { BrutalBox } from '@/components/grammar/Brutal';
 import { useGrammarColors } from '@/lib/grammarColors';
 
-// User feedback: „done for today nál legyen egy új kép, ami most
-// van nem megy a stílushoz". A 🎉 emoji helyett neo-brutalista jelvény, kép nélkül:
-// vastag ink keretű, eltolt árnyékos négyzet a kitöltés színén, benne a rajzolt pipa,
-// körülötte pár elforgatott konfetti-négyzet a két paletta-színben. Minden szín a
-// tokenből jön (useGrammarColors), külső kép nincs.
+// User feedback: "there should be a new picture at 'done for today', the current one
+// doesn't go with the style". Instead of the 🎉 emoji, a neo-brutalist badge with no image:
+// a square with a thick ink border and an offset shadow on the fill colour, the drawn checkmark inside,
+// around it a few rotated confetti squares in the two palette colours. Every colour comes from the
+// token (useGrammarColors), there is no external image.
 const CONFETTI: { top: number; left: number; size: number; rotate: string; fill: 'a' | 'b' | 'ink' | 'paper' }[] = [
   { top: 6, left: 18, size: 16, rotate: '18deg', fill: 'b' },
   { top: 0, left: 150, size: 12, rotate: '-24deg', fill: 'ink' },
@@ -42,8 +42,8 @@ export default function DoneBadge({ testID = 'done-badge' }: { testID?: string }
 }
 
 const styles = StyleSheet.create({
-  // a magasság a konfetti tényleges kiterjedéséhez igazítva (a legalsó 132 + 14 px), hogy a +5/+10/+15 sor
-  // a 💬 gomb fölé férjen.
+  // the height is matched to the confetti's actual extent (the lowest at 132 + 14 px), so that the +5/+10/+15 row
+  // fits above the 💬 button.
   wrap: { width: 240, height: 146, alignSelf: 'center' },
   center: { position: 'absolute', top: 18, left: 56 },
   box: { width: 112, height: 112, alignItems: 'center', justifyContent: 'center', borderWidth: 3 },

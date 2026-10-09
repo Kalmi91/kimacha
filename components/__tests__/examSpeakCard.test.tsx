@@ -1,7 +1,7 @@
-// a szóbeli tétel kártyája. A tanuló a
-// billentyűzet mikrofonjával diktál egy szövegmezőbe (a tesztben begépelt szöveg ugyanaz); az app
-// összeveti a várt mondattal. Helyes mondat után nincs visszajelzés, hibás után az eltérő szavak
-// ki vannak emelve, és a "Next" lép tovább. Az ékezet a "Accents count" beállítást követi.
+// The card of the oral item. The learner dictates into a text field with the
+// keyboard's microphone (in the test, typed text is the same); the app
+// compares it with the expected sentence. After a correct sentence there is no feedback, after a wrong one the differing words
+// are highlighted, and "Next" moves on. The accent follows the "Accents count" setting.
 
 import { fireEvent, render } from '@testing-library/react-native';
 

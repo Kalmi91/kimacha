@@ -9,8 +9,8 @@ import type { PcicLevel } from '@/data/pcic';
 
 type ColorScheme = (typeof Colors)['light'];
 
-// s1 (anki-ui-terv.html): egy sor a szint-választó lapon, a PCIC fejléc-chip
-// alulról felcsúszó lapján ÉS az onboarding szint-lépésén is.
+// One row of the level-picker sheet: on the sheet that slides up from the PCIC header chip
+// AND on the onboarding level step too.
 type Props = {
   level: PcicLevel;
   label: string;
@@ -23,12 +23,11 @@ type Props = {
 
 export default function LevelRow({ level, label, introduced, total, active, colors, onPress }: Props) {
   const pct = total > 0 ? (introduced / total) * 100 : 0;
-  // A
-  // sor korábban angolra égetve mutatta ezt a két szöveget, spanyol
-  // felületen is angolul maradt.
+  // The row used to show these two texts hardcoded in English, so they
+  // stayed English on a Spanish UI too.
   const s = t();
   const g = useGrammarColors();
-  // brutalista palettán doboz (aktív = a kitöltés) + szegmentált sáv.
+  // brutalist palette: a box (active = the fill) + a segmented bar.
   if (g.brutal) {
     const ink = active ? g.onFill : g.ink;
     return (

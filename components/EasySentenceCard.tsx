@@ -18,10 +18,10 @@ interface Props {
   onResult: (correct: boolean) => void;
   // speech locale of the learned language, so a placed tile can be heard.
   speechLocale?: string;
-  // a feladat-mondat (a kiinduló nyelven) a kártya megnyitásakor
-  // elhangzik, mint a szókártya promptja.
+  // The prompt sentence (in the source language) is spoken when the card opens,
+  // like the word card's prompt.
   sourceSpeechLocale?: string;
-  // a szókártya "Didn't know" / "Knew it" gombsora Check után (felülbírálja a kijelzett értékelést).
+  // The word card's "Didn't know" / "Knew it" button row after Check (overrides the displayed grade).
   gradeButtons?: boolean;
 }
 
@@ -39,7 +39,7 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
   // placed = bank indices, in the order the user tapped them.
   const [placed, setPlaced] = useState<number[]>([]);
   const [result, setResult] = useState<'correct' | 'wrong' | null>(null);
-  // a Check rossz építésre ítélt; a helyes mondat felülbírálás ("Knew it") után is látszik.
+  // Check judged the build wrong; the correct sentence is also shown after an override ("Knew it").
   const [missed, setMissed] = useState(false);
   const targetSentence = targetWords.join(' ');
 
@@ -53,8 +53,8 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
   const addWord = (bankIdx: number) => {
     if (result) return;
     setPlaced([...placed, bankIdx]);
-    // User feedback: "amikor beteszi felulre akkor ki is ejtse azt a
-    // szót amit betettem, hogy a kiejtést halljam". Only the single tile is
+    // User feedback: "when a tile is put up there, also pronounce the word I put in,
+    // so I can hear the pronunciation". Only the single tile is
     // spoken, so the whole sentence is never given away.
     if (speechLocale) {
       stopSpeech();
@@ -72,8 +72,8 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
     const isCorrect = sentenceBuildMatch(placed.map(i => bank[i]), targetWords);
     setResult(isCorrect ? 'correct' : 'wrong');
     setMissed(!isCorrect);
-    // a helyes mondat MINDIG elhangzik, jó és rossz építés
-    // után is (a rossz építésnél ráadásul látszik is).
+    // The correct sentence is ALWAYS spoken, after a good and after a bad
+    // build alike (after a bad build it is also shown).
     if (speechLocale) {
       stopSpeech();
       speakIn(targetSentence, speechLocale);
@@ -131,7 +131,7 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
         )}
       </View>
 
-      {/* minden kártyán ugyanaz a jó / rossz jelzés (szín + alak + ✓/✗ + szöveg). */}
+      {/* the same correct / wrong indicator on every card (colour + shape + ✓/✗ + text). */}
       {result && <ResultBadge correct={result === 'correct'} label={result === 'correct' ? s.card.correct : s.card.wrong} />}
 
       {result && gradeButtons && <SentenceGradeRow colors={colors} result={result} onOverride={(ok) => setResult(ok ? 'correct' : 'wrong')} />}

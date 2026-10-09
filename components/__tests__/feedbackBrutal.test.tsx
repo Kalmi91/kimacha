@@ -1,5 +1,5 @@
-// a chat-FAB és a Feedback modal brutalista palettán (négyzetes BrutalBox,
-// doboz-modal), classic palettán a mai kör-gomb. Mock-minta: FeedbackModal.test.tsx.
+// The chat FAB and the Feedback modal on the brutalist palette (square BrutalBox,
+// box modal), today's round button on the classic palette. Mock pattern: FeedbackModal.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/buildFlavor', () => ({ IS_PLAY_BUILD: false, FEEDBACK_URL: 'https://example.test/feedback' }));

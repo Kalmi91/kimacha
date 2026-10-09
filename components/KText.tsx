@@ -3,18 +3,18 @@ import { StyleSheet, Text as RNText, type TextProps, type TextStyle } from 'reac
 
 import { useSkin } from '@/lib/useSkin';
 
-// a Text-wrapper, ami az aktív téma betűjét alkalmazza. `variant`: 'title' =
-// app-cím / fejléc, 'word' = a szó a kártyán, 'body' (alap) = minden más szöveg. A téma betűje
-// (skin.fonts), betűmérete (fontScale, fontSizeOffset, displayScale), betűköze, sormagassága és
-// kis-/nagybetűs formája innen jön; ha a téma semmit nem ad (Neo-brutál body, Klasszikus), a
-// stílus érintetlenül megy tovább (a mai viselkedés).
+// The Text wrapper that applies the active theme's font. `variant`: 'title' =
+// app title / header, 'word' = the word on the card, 'body' (default) = all other text. The theme's font
+// (skin.fonts), font size (fontScale, fontSizeOffset, displayScale), letter spacing, line height and
+// casing come from here; if the theme gives nothing (Neo-brutal body, Classic), the
+// style passes through untouched (today's behaviour).
 export type KTextVariant = 'title' | 'word' | 'body';
 
 export type KTextProps = TextProps & { variant?: KTextVariant };
 
-// Beágyazott KText (egy szövegben egy másik): a betű, a betűköz, a sormagasság és a kis-/nagybetű
-// a külső szövegtől öröklődik (RN), ezért a belső ezeket nem állítja. A kontextus a külső szöveg
-// tényleges betűje (null = rendszer-font), hogy a belső is elhagyja a fontWeight-et, ha kell.
+// Nested KText (one inside another in a text): the font, letter spacing, line height and casing
+// are inherited from the outer text (RN), so the inner one does not set them. The context is the outer text's
+// actual font (null = system font), so the inner one also omits fontWeight when needed.
 const ParentFont = createContext<string | null | undefined>(undefined);
 
 const DEFAULT_SIZE = 14;
@@ -38,7 +38,7 @@ const KText = forwardRef<ComponentRef<typeof RNText>, KTextProps>(function KText
     next.fontFamily = themeFont;
     changed = true;
   }
-  // Egyedi betűnél a fontWeight elmarad: Androidon különben rendszer-fontra esne vissza.
+  // With a custom font fontWeight is left out: on Android it would otherwise fall back to the system font.
   if (family && next.fontWeight !== undefined) {
     delete next.fontWeight;
     changed = true;

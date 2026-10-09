@@ -1,5 +1,5 @@
-// a ragozás-drill címkéje ("Sustantivo") mellett zárójelben a
-// segítő tábla oszlop-fejléce is látszik ("Noun"), ha a felület nyelvén más a fejléc.
+// Next to the conjugation drill's label ("Sustantivo") the helper table's column header is
+// also shown in parentheses ("Noun"), if the header differs in the UI language.
 import { render, screen } from '@testing-library/react-native';
 
 import GrammarDrill from '../grammar/GrammarDrill';

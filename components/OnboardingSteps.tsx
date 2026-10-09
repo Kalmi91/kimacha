@@ -10,9 +10,9 @@ import { themeKeyFor } from '@/lib/skinTheme';
 import { useSkin } from '@/lib/useSkin';
 import { useTheme } from '@/lib/ThemeContext';
 
-// az onboarding két új lépése, a bevezető ("How it works") és az 5 témás választó.
-// A mai onboarding stílusában: közepre igazított tartalom, a cím a welcomeStyle (a hívó adja),
-// brutalista palettán BrutalButton, classic-on a mai kerek gomb.
+// The two new onboarding steps, the intro ("How it works") and the 5-theme picker.
+// In the style of today's onboarding: centred content, the title is welcomeStyle (given by the caller),
+// BrutalButton on the brutalist palette, today's round button on classic.
 
 function StartButton({ testID, label, onPress }: { testID: string; label: string; onPress: () => void }) {
   const { theme } = useTheme();
@@ -25,7 +25,7 @@ function StartButton({ testID, label, onPress }: { testID: string; label: string
   );
 }
 
-// A bevezető: az első pont és a "Don't overdo it" kiemelt doboz, a zárósor halvány.
+// The intro: the first point and the highlighted "Don't overdo it" box, the closing line faint.
 export function OnboardingIntro({ titleStyle, onStart }: { titleStyle: StyleProp<TextStyle>; onStart: () => void }) {
   const { theme } = useTheme();
   const g = useGrammarColors();
@@ -58,8 +58,8 @@ export function OnboardingIntro({ titleStyle, onStart }: { titleStyle: StyleProp
   );
 }
 
-// Egy téma-sor: a téma saját háttere, betűje (a szó + a gomb), kerete és a-színű "tudom" gombja,
-// a minta-szóval. Nem KText: a sor a SAJÁT témáját mutatja, nem az aktívat.
+// One theme row: the theme's own background, font (the word + the button), border and `a`-coloured "I know" button,
+// with the sample word. Not KText: the row shows ITS OWN theme, not the active one.
 function ThemeSampleRow({ id, selected, onPress }: { id: SkinId; selected: boolean; onPress: () => void }) {
   const { override, grammarPalette } = useTheme();
   const scheme = useColorScheme();
@@ -76,7 +76,7 @@ function ThemeSampleRow({ id, selected, onPress }: { id: SkinId; selected: boole
   if (skin.uppercaseWord) wordStyle.textTransform = 'uppercase';
   const knowStyle: TextStyle = { color: c.onA, fontSize: 14 };
   if (fonts.body) knowStyle.fontFamily = fonts.body;
-  // a téma neve kicsiben a minta-szó alatt.
+  // the theme name in small type under the sample word.
   const nameStyle: TextStyle = { color: c.mu, fontSize: 11 };
   if (fonts.body) nameStyle.fontFamily = fonts.body;
   return (
@@ -121,7 +121,7 @@ function ThemeSampleRow({ id, selected, onPress }: { id: SkinId; selected: boole
   );
 }
 
-// A téma-lépés: az 5 ajánlott téma; koppintásra azonnal alkalmazódik, a "Continue" viszi tovább.
+// The theme step: the 5 recommended themes; tapping applies one at once, "Continue" moves on.
 export function OnboardingThemeStep({ titleStyle, onNext }: { titleStyle: StyleProp<TextStyle>; onNext: () => void }) {
   const { theme, setSkin } = useTheme();
   const g = useGrammarColors();

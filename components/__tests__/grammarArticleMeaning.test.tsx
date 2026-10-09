@@ -1,6 +1,6 @@
-// User feedback: „itt legyenek angolul is a szavak, hogy mit jelentenek ha tippeltem": az el / la tételnél a főnév
-// jelentése (tr) a válasz után magától megjelenik (az F-gomb mögötti fordítás-sorban), a következő tételnél újra zárt;
-// a sima választós tételnél a fordítás továbbra is csak az F-gombra nyílik.
+// User feedback: "the words should be in English here too, so I know what they mean when I guessed": for an el / la item the noun's
+// meaning (tr) appears on its own after the answer (in the translation row behind the F button), and is closed again on the next item;
+// for a plain choice item the translation still opens only on the F button.
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 import { act, fireEvent, render, screen } from '@testing-library/react-native';
@@ -81,7 +81,7 @@ describe.each([
     await flush();
 
     expect(screen.queryByTestId('choice-translation')).toBeNull();
-    fireEvent.press(screen.getAllByTestId('grammar-option')[1]); // rossz tipp: la
+    fireEvent.press(screen.getAllByTestId('grammar-option')[1]); // wrong guess: la
     expect(screen.getByTestId('choice-translation')).toHaveTextContent('water');
   });
 
@@ -102,7 +102,7 @@ describe.each([
     render(drill(articleTopic, 'en'));
     await flush();
 
-    // a kör sorrendje seedelt: a megjelenített szóból tudjuk, melyik jelentés jár hozzá
+    // the round's order is seeded: from the displayed word we know which meaning belongs to it
     fireEvent.press(screen.getByTestId('choice-f'));
     expect(screen.getByTestId('choice-translation')).toBeTruthy();
     fireEvent.press(screen.getByTestId('choice-f'));

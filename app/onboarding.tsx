@@ -14,28 +14,26 @@ import PlacementEntry from '@/components/exam/PlacementEntry';
 import { BrutalButton } from '@/components/grammar/Brutal';
 import { OnboardingIntro, OnboardingThemeStep } from '@/components/OnboardingSteps';
 
-// Az
-// onboarding megint irányt kérdez, mint a régi (nem Kimacha Play) ág, de
-// csak a két támogatott párra (lib/languages.ts supportedPairs): angolból
-// tanulsz spanyolul (en→es), vagy spanyolból angolul (es→en). A választás a
-// felület nyelvét is eldönti (setLanguage a kiinduló nyelvre), az "Üdvözlés"
-// és a szint-választó lépés már ebben a nyelvben jelenik meg. Meglévő
-// telepítés ezt a screent sose látja (app/_layout.tsx a getOnboarding()
-// alapján dönt), tehát ott a választó nem jön elő (5. pont).
+// Onboarding asks for the direction again, like the old (non-Kimacha Play) branch, but
+// only for the two supported pairs (lib/languages.ts supportedPairs): learning Spanish
+// from English (en→es), or English from Spanish (es→en). The choice also decides the UI
+// language (setLanguage to the source language), so the "Welcome" and the level-picker
+// steps already appear in it. An existing installation never sees this screen
+// (app/_layout.tsx decides based on getOnboarding()), so the picker does not show up there.
 export default function OnboardingScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
-  // brutalista palettán nagy, nagybetűs, ink színű cím.
+  // on the brutalist palette a large, uppercase, ink-coloured title.
   const welcomeStyle = [styles.welcome, { color: colors.tint }, g.brutal && [styles.brutalWelcome, { color: g.ink }]];
   const s = t();
   const [step, setStep] = useState<'language' | 'welcome' | 'intro' | 'theme' | 'level'>('language');
   const [source, setSource] = useState<'en' | 'es'>('en');
   const [target, setTarget] = useState<PcicTarget>('es');
 
-  // 2. pont: "English" -> en→es (a mostani app, minden felirat angol);
-  // "Español" -> es→en (minden felirat spanyol). A felület nyelve és a PCIC
-  // aktív iránya azonnal vált, hogy az Üdvözlés képernyő már jó nyelven jöjjön.
+  // "English" -> en→es (today's app, every label in English);
+  // "Español" -> es→en (every label in Spanish). The UI language and the active PCIC
+  // direction switch immediately, so the Welcome screen already comes up in the right language.
   const handleChooseLanguage = (chosenSource: 'en' | 'es') => {
     const chosenTarget: PcicTarget = chosenSource === 'en' ? 'es' : 'en';
     setSource(chosenSource);
@@ -79,7 +77,7 @@ export default function OnboardingScreen() {
     );
   }
 
-  // üdvözlés után a bevezető, utána az 5 témás választó, csak aztán a szint.
+  // after the welcome comes the intro, then the 5-theme picker, only then the level.
   if (step === 'intro') {
     return <OnboardingIntro titleStyle={welcomeStyle} onStart={() => setStep('theme')} />;
   }
@@ -89,15 +87,13 @@ export default function OnboardingScreen() {
   }
 
   if (step === 'level') {
-    // 3. pont: en-es-ben A1/A2/B1 (a meglévő "0 tétel = ne kínáljuk fel"
-    // szűrő); es-en-ben csak A1, mindig felkínálva, akkor is, ha még üres (az
-    // 50 angol szó később jön) - ilyenkor a sor alatt egy mondat mondja ki.
-    // en-es-ben a választható nézet-szintek
-    // (A1/A2/B1/B2), nem a nyers PCIC_LEVELS.
-    // es-en-ben is A1 + A2 van adat, ugyanaz a szűrő mindkét irányra.
+    // en-es: A1/A2/B1 (the existing "0 items = don't offer it" filter); es-en: only A1,
+    // always offered, even while it is still empty (the 50 English words come later) - in that
+    // case a sentence under the row says so. In en-es the selectable view levels
+    // (A1/A2/B1/B2), not the raw PCIC_LEVELS.
+    // es-en also has A1 + A2 data, the same filter applies to both directions.
     const levels: PcicLevel[] = PCIC_VIEW_LEVELS.filter((lvl) => pcicItemsForLevel(lvl).length > 0);
-    // A
-    // feliratok a felület nyelvén (korábban angolra égetve volt).
+    // The labels are in the UI language (they used to be hardcoded in English).
     const levelLabels: Record<PcicLevel, string> = {
       A1: s.pcic.levelBeginner,
       A2: s.pcic.levelElementary,
@@ -126,7 +122,7 @@ export default function OnboardingScreen() {
             </View>
           );
         })}
-        {/* a szint-sorok alatt halk belépő a szintfelméréshez. */}
+        {/* a quiet entry to the placement test below the level rows. */}
         <PlacementEntry onPress={() => router.push('/placement')} />
       </View>
     );
@@ -166,7 +162,7 @@ const styles = StyleSheet.create({
   },
   brutalWelcome: { fontSize: 24, fontWeight: '500', textTransform: 'uppercase' },
   brutalBtn: { minWidth: 240 },
-  // 1. pont: a két nyelv-gomb egymás alatt, a meglévő startBtn stílussal.
+  // the two language buttons one under the other, with the existing startBtn style.
   langButtonGroup: {
     gap: 14,
     alignItems: 'center',
@@ -181,7 +177,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '700',
   },
-  // "még nincs szó" sor az üres A1 alatt (es→en, amíg az angol szólista nincs kész).
+  // "no words yet" row under the empty A1 (es→en, until the English word list is ready).
   noWordsYet: {
     fontSize: 13,
     textAlign: 'center',

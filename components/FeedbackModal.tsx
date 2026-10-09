@@ -23,7 +23,7 @@ interface Props {
   bottomOffset?: number;
 }
 
-// a modal doboza brutalista palettán BrutalBox, classic palettán a mai kártya.
+// The modal's box is a BrutalBox on the brutalist palette, today's card on the classic palette.
 function ModalBox({ children }: { children: ReactNode }) {
   const g = useGrammarColors();
   if (g.brutal) {
@@ -74,8 +74,8 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
     if (!text.trim()) return;
     setSending(true);
 
-    // User feedback: "állítsd be úgy hogy ha feedbackeket kapsz akkor lásd,
-    // hogy melyik kártyáról és melyik verziójú kimachaból kapod". The card was
+    // User feedback: "set it up so that when you get feedback you can see
+    // which card and which version of Kimacha it comes from". The card was
     // already sent; the build is new. It goes out twice on purpose: `appVersion`
     // is its own field for when the Apps Script grows a column, and the tag is
     // prefixed to `currentCard` so it shows up in the CURRENT sheet, whose
@@ -83,7 +83,7 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
     const build = feedbackBuildTag();
 
     if (IS_PLAY_BUILD) {
-      // Play-vágás: no server call (lib/buildFlavor.ts); the learner's own
+      // Play flavor: no server call (lib/buildFlavor.ts); the learner's own
       // share sheet sends the text wherever they pick (most often e-mail).
       try {
         await Share.share({ message: `${build} · ${currentCard}\n\n${text.trim()}` });
@@ -124,7 +124,7 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
         {...(draggable ? panResponder.panHandlers : {})}
       >
         {g.brutal ? (
-          // négyzetes BrutalBox a kitöltéssel a kör helyett.
+          // A square BrutalBox with the fill instead of the circle.
           <BrutalBox testID="feedback-fab" fill="a" boxStyle={styles.brutalFabBox}>
             <Text style={styles.fabText}>💬</Text>
           </BrutalBox>
@@ -135,8 +135,8 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
 
       <Modal visible={showThanks} transparent animationType="fade">
         <View style={styles.toastOverlay}>
-          {/* a zöld ✅ emoji helyett rajzolt pipa a tokenből,
-              vastag ink keretű, eltolt árnyékos dobozban (neo-brutalista stílus). */}
+          {/* a checkmark drawn from the token instead of the green ✅ emoji,
+              in a box with a thick ink border and an offset shadow (neo-brutalist style). */}
           <BrutalBox testID="feedback-thanks" fill="a" offset={5} boxStyle={styles.toastBox}>
             <CheckMark size={32} color={g.ink} thickness={7} />
             <Text style={[styles.toastText, { color: g.onFill }]}>{s.feedback.thanks}</Text>
@@ -220,7 +220,7 @@ const styles = StyleSheet.create({
     right: 24,
     left: undefined,
   },
-  // a Pressable átlátszó tartó, a doboz a BrutalBox (52 + 3 px árnyék).
+  // The Pressable is a transparent holder, the box is the BrutalBox (52 + 3 px shadow).
   brutalFab: {
     width: 55,
     height: 55,

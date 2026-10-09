@@ -1,6 +1,6 @@
-// a Brutal-komponensek (BrutalBox, Sticker, SegmentBar, BrutalButton, BrutalSwitch)
-// a keret-vastagságot / stílust / színt, a sarkot és az árnyékot az aktív téma `shape`-éből veszik;
-// a Neo-brutál téma mai értékei (themePalette.test.tsx) változatlanok.
+// The Brutal components (BrutalBox, Sticker, SegmentBar, BrutalButton, BrutalSwitch)
+// take the border width / style / colour, the corner and the shadow from the active theme's `shape`;
+// the Neo-brutal theme's current values (themePalette.test.tsx) are unchanged.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -113,7 +113,7 @@ describe('Brutal-komponensek: a forma a témából jön (PLAN-temak 2A)', () => 
     );
     expect(flat('st')).toMatchObject({ borderWidth: 2, borderRadius: 999 });
     expect(flat('bar-0')).toMatchObject({ borderWidth: 2, borderRadius: 4 });
-    // memphis shadowOffset = 6, így az offset={2} doboz árnyéka 4 px
+    // memphis shadowOffset = 6, so the shadow of an offset={2} box is 4 px
     expect(shadows().some((st) => st.left === 4 && st.top === 4)).toBe(true);
   });
 

@@ -17,9 +17,9 @@ import { colorsSourceOf, modesOfSource, themeKeyFor } from '@/lib/skinTheme';
 import { ThemeContext, useTheme } from '@/lib/ThemeContext';
 import { useSkin } from '@/lib/useSkin';
 
-// a Saját mix. Négy szekció (Colors / Font / Shape / Decor), mindegyik vízszintesen
-// görgethető chip-sor; fölötte az élő előnézet-kártya a minta-szóval. A választás egy piszkozat,
-// a "Use this mix" gomb menti (setSkinMix + setSkin('mix')).
+// My mix. Four sections (Colors / Font / Shape / Decor), each a horizontally
+// scrollable chip row; above them the live preview card with a sample word. The choice is a draft,
+// saved by the "Use this mix" button (setSkinMix + setSkin('mix')).
 
 function PreviewBody() {
   const g = useGrammarColors();
@@ -47,8 +47,8 @@ function PreviewBody() {
   );
 }
 
-// Az előnézet a piszkozat-mixszel felülírt kontextusban rajzol, így a téma-komponensek (BrutalBox,
-// dísz-helyek) a piszkozatot látják, nem az aktív témát.
+// The preview draws in a context overridden with the draft mix, so the theme components (BrutalBox,
+// decor slots) see the draft, not the active theme.
 function MixPreview({ draft }: { draft: SkinMix }) {
   const ctx = useTheme();
   const { mode } = useSkin();
@@ -89,8 +89,8 @@ export default function ThemeMixScreen() {
   const g = useGrammarColors();
   const { skinMix, setSkinMix, setSkin } = useTheme();
   const { mode } = useSkin();
-  // A piszkozat addig a mentett mix (a db-ből a képernyő megnyitása után is betöltődhet), amíg
-  // az első chip-koppintás felül nem írja.
+  // The draft is the saved mix (it may load from the db even after the screen opens) until
+  // the first chip tap overwrites it.
   const [edited, setDraft] = useState<SkinMix | null>(null);
   const draft = edited ?? skinMix;
 
