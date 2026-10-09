@@ -1019,10 +1019,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 8,
   },
-  emptySub: {
-    fontSize: 14,
-    textAlign: 'center',
-  },
   // FB317: színes done-képernyő, a components/DoneScreen.tsx vizuális
   // nyelvén (doneEmoji, statsGrid), de saját stílusokkal.
   doneContainer: {
@@ -1030,11 +1026,6 @@ const styles = StyleSheet.create({
   },
   doneHeader: {
     alignItems: 'center',
-  },
-  doneEmoji: {
-    fontSize: 52,
-    textAlign: 'center',
-    marginBottom: 8,
   },
   tilesRow: {
     flexDirection: 'row',

@@ -1,5 +1,4 @@
 import { buildGrammarRound, isChoiceRoundItem, wrongExplanation } from '../grammarChoice';
-import { markAnswerIndex, markTokens } from '../grammarMark';
 import { getGrammarTopics, isMarkItem, type GrammarGapItem, type GrammarTopicData } from '../content';
 
 function makeTopic(): GrammarTopicData {

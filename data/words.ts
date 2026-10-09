@@ -65,7 +65,7 @@ export function normalizeWordToken(raw: string): string {
 
 // PLAN-regi-szavak-ki 5. lépés: a szöveg szerinti keresés (glossza, kevert felolvasás)
 // a words-open kártyáin fut (data/openWords.ts), nem a régi szólistán.
-function allWordsFor(lang: string): WordEntry[] {
+function allWordsFor(): WordEntry[] {
   return openWords;
 }
 
@@ -95,7 +95,7 @@ function textIndexFor(lang: string, field: string): Map<string, WordEntry> {
   const cacheKey = `${lang}|${field}`;
   if (!textIndex[cacheKey]) {
     const map = new Map<string, WordEntry>();
-    for (const w of allWordsFor(lang)) {
+    for (const w of allWordsFor()) {
       const value = w[field];
       if (typeof value !== 'string') continue;
       // First card wins, so the lowest level owns a word shared by several cards.
