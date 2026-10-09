@@ -452,7 +452,6 @@ export default {
     levelElementary: 'Elementary',
     levelIntermediate: 'Intermediate',
     levelUpperIntermediate: 'Upper intermediate',
-    levelPlusSentences: '+1 · sentences',
     levelNotStarted: 'not started',
     levelRowIntroduced: (n: number, total: number) => `${n} / ${total} introduced`,
   },
@@ -552,7 +551,7 @@ export default {
   },
   // 5c: szófaj-chip a PCIC szó alatt (lib/pcicPos.ts).
   // FB361-362: a teljes WordPos-készlet felirata (nem csak noun/verb/phrase),
-  // + conj/prefix/suffix a PCIC-only Pos-értékekre.
+  // + conj/det/interj a PCIC-only Pos-értékekre.
   pos: {
     noun: 'noun',
     verb: 'verb',
@@ -565,8 +564,6 @@ export default {
     conj: 'conjunction',
     det: 'determiner',
     interj: 'interjection',
-    prefix: 'prefix',
-    suffix: 'suffix',
   },
   // PLAN-vizsga E. szakasz (15-16. lépés, Kálmán 2026-10-01): a próbavizsga (Stats "Practice exam"
   // kártya, intro, papírok, eredmény, átnézés). A felület sehol nem ír ki védjegyes vizsganevet.

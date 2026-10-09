@@ -11,7 +11,7 @@ import { getDb } from '@/lib/database';
 import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
 import { localDateString, DEFAULT_DAILY_NEW_LIMIT } from '@/lib/usageStats';
-import { pcicItemsForLevel, pcicItemsForViewLevel, findPcicItem, setPcicTarget, type PcicViewLevel, type PcicTarget } from '@/data/pcic';
+import { pcicItemsForLevel, findPcicItem, setPcicTarget, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import { gradePcicAnswer, gradeSentenceAnswer, suggestedGrade, type PcicGrade } from '@/lib/pcicMatch';
 import {
   ARTICLE_OPTIONS,
@@ -23,7 +23,7 @@ import {
 } from '@/lib/articlePicker';
 import { sm2Review, pickSm2Session, sm2MarkKnown, LEARNING_STEPS, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
 import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC, nextPcicNewBonus, pcicSessionNewLimit, practiceTopUpStep, PCIC_NEW_BONUS_STEP, PCIC_NEW_BONUS_STEPS, thinSentences, dropOrphanCards, countFinishedToday, dayProgressPercent, finishedInBatch } from '@/lib/pcicSession';
-import { cardsForViewLevel } from '@/lib/pcicLevels';
+import { cardsForLevel } from '@/lib/pcicLevels';
 import { applyLearnResume, buildLearnResume, isLearnResumeFor, loadLearnResume, saveLearnResume } from '@/lib/learnResume';
 import { posOf } from '@/lib/pcicPos';
 import FeedbackButton from '@/components/FeedbackModal';
@@ -56,11 +56,8 @@ const SHEET_CLOSE_MS = 500;
 // (again/hard/good/easy), az önálló SM-2 ütemezőn (lib/sm2.ts, 4. lépés).
 // Nem a FSRS `cards`/`sessionQueue` ütemezőt használja, azt nem érinti.
 
-// PLAN-fb0924 8. lépés (FB394/396): mondat-ritkítás (thinSentences) - de csak
-// NORMÁL szinten; az "A1+"/"A2+" nézet kizárólag mondatból áll, ott a ritkítás
-// mindent kidobna.
-function pcicIntroOrder(memberIds: string[], view: PcicViewLevel): string[] {
-  if (view === 'A1+' || view === 'A2+') return memberIds;
+// PLAN-fb0924 8. lépés (FB394/396): mondat-ritkítás (thinSentences).
+function pcicIntroOrder(memberIds: string[]): string[] {
   return thinSentences(memberIds, (id) => findPcicItem(id)?.kind, (id) => id);
 }
 
@@ -86,7 +83,7 @@ export default function PcicScreen() {
 
   const [loading, setLoading] = useState(true);
   const [today, setToday] = useState('');
-  const [level, setLevel] = useState<PcicViewLevel>('B1');
+  const [level, setLevel] = useState<PcicLevel>('B1');
   // PLAN-ketiranyu 4. lépés: az aktív pár célnyelve (onboarding.target),
   // ez dönti el a kártya prompt/válasz irányát, a TTS locale-t és a
   // névelő-gombsor/posOf megjelenését.
@@ -156,11 +153,11 @@ export default function PcicScreen() {
   // PLAN-play 10. lépés: `overrideLevel` a szint-választó lapról jövő azonnali
   // váltásnak, hogy ne kelljen a setLevel-re várni egy render-kört (a db-be
   // már ott az új szint, load() csak újraolvassa vele).
-  const load = useCallback(async (overrideLevel?: PcicViewLevel) => {
+  const load = useCallback(async (overrideLevel?: PcicLevel) => {
     const db = getDb();
     const day = localDateString();
     // PLAN-ketiranyu 4. lépés: az aktív pár célnyelve dönti el, melyik irány
-    // paklija épül (data/pcic.ts setPcicTarget); a pcicItemsForViewLevel
+    // paklija épül (data/pcic.ts setPcicTarget); a pcicItemsForLevel
     // hívás ELŐTT kell, különben a régi irány szavai jönnének.
     const onboarding = await db.getOnboarding();
     const dir = (onboarding?.target as PcicTarget) ?? 'es';
@@ -173,12 +170,12 @@ export default function PcicScreen() {
     // magától felnyílik, ugyanaz a lap, mint a fejléc-chipre koppintva.
     if (!overrideLevel && !(await db.hasPcicLevel())) setLevelSheetOpen(true);
     const lvl = overrideLevel ?? (await db.getPcicLevel());
-    const newOrder = pcicItemsForViewLevel(lvl).map((i) => i.id);
+    const newOrder = pcicItemsForLevel(lvl).map((i) => i.id);
     const rawCards = await db.getPcicCards();
     // PLAN-ketiranyu 2. lépés: a régi PCIC-korpusz árva SRS-sorait (a
     // betöltött korpuszban már nem létező item-id) kihagyja, mielőtt a
     // session belőlük épülne.
-    const cards = dropOrphanCards(cardsForViewLevel(rawCards, lvl), (id) => findPcicItem(id) !== undefined);
+    const cards = dropOrphanCards(cardsForLevel(rawCards, lvl), (id) => findPcicItem(id) !== undefined);
     const strict = await db.getStrictAccents();
     const newLimit = await db.getDailyNewLimit();
     const delaySec = await db.getAgainDelaySec();
@@ -205,7 +202,7 @@ export default function PcicScreen() {
     setAllCards(new Map(cards.map((c) => [c.itemId, c])));
     // FB470 (kártya-szintű folytatás): az újraépült sorra rákerül a mentett sorrend és az "again" időzítők (napváltáskor / szintváltáskor érvénytelen).
     const resume = await loadLearnResume(db);
-    setQueue(applyLearnResume(pickSm2Session(cards, pcicIntroOrder(newOrder, lvl), day, pcicSessionNewLimit({ limit: newLimit, bonus, introducedAllLevels, introducedThisLevel: introducedToday })), resume, day, lvl));
+    setQueue(applyLearnResume(pickSm2Session(cards, pcicIntroOrder(newOrder), day, pcicSessionNewLimit({ limit: newLimit, bonus, introducedAllLevels, introducedThisLevel: introducedToday })), resume, day, lvl));
     if (isLearnResumeFor(resume, day, lvl) && resume.base !== null) setBatchBase({ day, level: lvl, n: resume.base });
     setTypedAnswer('');
     setGrade(null);
@@ -231,7 +228,7 @@ export default function PcicScreen() {
 
   // s1: a szint-választó lapon koppintva azonnal a választott szint pakliját
   // adja (a lap előbb bezár, hogy a váltás ne tűnjön befagyottnak).
-  const handleSelectLevel = async (lvl: PcicViewLevel) => {
+  const handleSelectLevel = async (lvl: PcicLevel) => {
     setLevelSheetOpen(false);
     if (lvl === level) return;
     await getDb().setPcicLevel(lvl);
@@ -251,7 +248,7 @@ export default function PcicScreen() {
   // PLAN-vizsga C. szakasz (C1 a): a szintválasztó lap halk belépője az adaptív szintfelméréshez.
   const openPlacement = () => closeSheetThen(() => router.push('/placement'));
 
-  const newOrder = useMemo(() => pcicItemsForViewLevel(level).map((i) => i.id), [level]);
+  const newOrder = useMemo(() => pcicItemsForLevel(level).map((i) => i.id), [level]);
   const current = queue[0];
   const currentItem = current ? findPcicItem(current.itemId) : undefined;
 
@@ -403,7 +400,7 @@ export default function PcicScreen() {
       cards: cardsById.values(),
       tenses,
       findItem: findPcicItem,
-      vocab: () => pcicItemsForViewLevel(level).map((i) => (target === 'es' ? i.es : i.en)),
+      vocab: () => pcicItemsForLevel(level).map((i) => (target === 'es' ? i.es : i.en)),
     });
     setCadence(step.state);
     setSentenceCard(step.card);
@@ -458,7 +455,7 @@ export default function PcicScreen() {
     setQueue(
       pickSm2Session(
         activeCards,
-        pcicIntroOrder(newOrder, level),
+        pcicIntroOrder(newOrder),
         today,
         pcicSessionNewLimit({ limit: dailyNewLimit, bonus: next, introducedAllLevels, introducedThisLevel: introducedToday })
       )
@@ -468,7 +465,7 @@ export default function PcicScreen() {
   // FB499: a vizsga-sor "Practice words" gombja. Ha a mai keret elfogyott, a sorban kiírt hiányzó
   // szavakból bővíti (lib/pcicSession.ts practiceTopUpStep), és az új adag haladás-csíkja 0%-ról indul;
   // különben csak a szintre vált, mint eddig.
-  const handlePractice = async (lvl: PcicViewLevel, missing: number) => {
+  const handlePractice = async (lvl: PcicLevel, missing: number) => {
     const introducedAllLevels = cardsAllLevels.filter((c) => c.introducedAt === today).length;
     const step = practiceTopUpStep({ limit: dailyNewLimit, bonus: pcicBonus, introducedAllLevels, missing });
     if (step === 0) return handleSelectLevel(lvl);
@@ -476,7 +473,7 @@ export default function PcicScreen() {
     const db = getDb();
     await db.setPcicNewBonus(nextPcicNewBonus({ limit: dailyNewLimit, bonus: pcicBonus, introducedToday: introducedAllLevels }, step), today);
     if (lvl !== level) await db.setPcicLevel(lvl);
-    const levelCards = lvl === level ? [...allCards.values()] : cardsForViewLevel(allLevelCards, lvl);
+    const levelCards = lvl === level ? [...allCards.values()] : cardsForLevel(allLevelCards, lvl);
     setLoading(true);
     await load(lvl);
     setBatchBase({ day: today, level: lvl, n: countDoneToday(levelCards, today) });
@@ -489,9 +486,6 @@ export default function PcicScreen() {
   // PLAN-hibaim.md 4. lépés: a "Hibáim" belépő önálló komponens (saját
   // betöltéssel), hogy ez a fájl (785 sor) ne nőjön 800 fölé; csak akkor
   // renderel, ha van betöltött köteg.
-  // PLAN-fb0924 8. lépés (FB394/396): a fejléc chip a "+1" szinten "A1 +1"
-  // alakban olvasható (a belső azonosító "A1+", térköz nélkül).
-  const levelChipLabel = level === 'A1+' || level === 'A2+' ? `${level.slice(0, 2)} +1` : level;
 
   const headerRow = (
     <SkinHeader>
@@ -500,11 +494,11 @@ export default function PcicScreen() {
         {g.brutal ? (
           // NY19: a szint-chip doboz (aktív = a kitöltés).
           <BrutalBox testID="learn-level-chip" fill="a" offset={2} boxStyle={styles.brutalLevelChip} onPress={() => setLevelSheetOpen(true)}>
-            <Text style={[styles.levelChipText, { color: g.onFill, fontWeight: '500' }]}>{levelChipLabel} ▾</Text>
+            <Text style={[styles.levelChipText, { color: g.onFill, fontWeight: '500' }]}>{level} ▾</Text>
           </BrutalBox>
         ) : (
           <Pressable style={[styles.levelChip, { backgroundColor: colors.tint }]} onPress={() => setLevelSheetOpen(true)}>
-            <Text style={[styles.levelChipText, { color: colors.onTint }]}>{levelChipLabel} ▾</Text>
+            <Text style={[styles.levelChipText, { color: colors.onTint }]}>{level} ▾</Text>
           </Pressable>
         )}
         <BadgeRow
@@ -725,12 +719,6 @@ export default function PcicScreen() {
   // szabály/korpusz spanyol szóalakra épül, angol célnyelven nincs értelme).
   const pos = target === 'es' ? posOf(currentItem) : null;
 
-  // FB363/FB367: régió-chip (PCIC `[Régió]` zárójel tartalma) és mx-chip
-  // (spanyolországi/mexikói köznyelvi eltérés) a szófaj-chip mellett.
-  const regionChipLabel = currentItem.region
-    ? `${currentItem.region.toLowerCase() === 'méxico' ? '🇲🇽' : '🌎'} ${currentItem.region}`
-    : undefined;
-  const mxChipLabel = currentItem.mx ? `🇲🇽 ${currentItem.mx}` : undefined;
   const hasNote = !!currentItem.note || !!currentItem.image;
   const noteOpen = hasNote && noteOpenFor === currentItem.id;
 
@@ -819,16 +807,6 @@ export default function PcicScreen() {
                 <Text style={[styles.posChipText, { color: colors.tabIconDefault }]}>
                   {pos.gender ? `${s.pos[pos.pos]} · ${pos.gender}` : s.pos[pos.pos]}
                 </Text>
-              </View>
-            )}
-            {regionChipLabel && (
-              <View style={[styles.posChip, { backgroundColor: colors.background }, g.brutal && [styles.brutalPos, { borderColor: g.ink }]]}>
-                <Text style={[styles.posChipText, { color: colors.tabIconDefault }]}>{regionChipLabel}</Text>
-              </View>
-            )}
-            {mxChipLabel && (
-              <View style={[styles.posChip, { backgroundColor: colors.background }, g.brutal && [styles.brutalPos, { borderColor: g.ink }]]}>
-                <Text style={[styles.posChipText, { color: colors.tabIconDefault }]}>{mxChipLabel}</Text>
               </View>
             )}
             <Text style={[styles.sectionText, { color: colors.tabIconDefault }]}>{currentItem.section}</Text>

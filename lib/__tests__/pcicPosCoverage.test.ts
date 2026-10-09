@@ -42,9 +42,9 @@ describe('posOf lefedettseg (FB361-362)', () => {
     });
   }
 
-  it('sentence/pattern tetelre sose jar chip', () => {
+  it('sentence tetelre sose jar chip', () => {
     const withChip = OPEN_CARDS.filter(
-      (c) => c.sentence_es && (posOf({ es: c.sentence_es, kind: 'sentence' }) !== null || posOf({ es: c.sentence_es, kind: 'pattern' }) !== null),
+      (c) => c.sentence_es && posOf({ es: c.sentence_es, kind: 'sentence' }) !== null,
     ).map((c) => c.order);
     expect(withChip).toEqual([]);
   });

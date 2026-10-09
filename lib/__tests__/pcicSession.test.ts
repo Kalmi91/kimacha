@@ -298,7 +298,7 @@ describe('countIntroducedTodayByKind (FB387/395)', () => {
       reviewCard({ itemId: 'pat1', introducedAt: TODAY }),
       reviewCard({ itemId: 'chain-2', introducedAt: TODAY }), // lánc-tag, de kind: sentence
     ];
-    const kindOf = kindMap({ p1: 'phrase', pat1: 'pattern', 'chain-2': 'sentence' });
+    const kindOf = kindMap({ p1: 'phrase', pat1: 'word', 'chain-2': 'sentence' });
     expect(countIntroducedTodayByKind(cards, TODAY, kindOf)).toEqual({ words: 2, sentences: 1 });
   });
 

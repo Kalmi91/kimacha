@@ -21,8 +21,8 @@ import {
   type SchedulePreview,
   type ScheduleBucketKey,
 } from '@/lib/schedulePreview';
-import { PCIC_VIEW_LEVELS, pcicItemsForViewLevel, type PcicViewLevel } from '@/data/pcic';
-import { cardsForViewLevel } from '@/lib/pcicLevels';
+import { PCIC_VIEW_LEVELS, pcicItemsForLevel, type PcicLevel } from '@/data/pcic';
+import { cardsForLevel } from '@/lib/pcicLevels';
 import { countKnown, countGraduated, countLearned } from '@/lib/pcicStats';
 import { countDoneToday } from '@/lib/pcicSession';
 import FeedbackButton from '@/components/FeedbackModal';
@@ -62,10 +62,10 @@ export default function StatsScreen() {
   const [schedule, setSchedule] = useState<SchedulePreview>(EMPTY_SCHEDULE);
   // PLAN-play 12. lépés: a régi FSRS-szint (A0-C2) helyett a PCIC-szint
   // (A1-B2), amit a PCIC fül szint-választója állít.
-  const [pcicLevel, setPcicLevel] = useState<PcicViewLevel>('B1');
+  const [pcicLevel, setPcicLevel] = useState<PcicLevel>('B1');
   const [levelKnown, setLevelKnown] = useState(0);
   const [levelTotal, setLevelTotal] = useState(0);
-  const [otherLevels, setOtherLevels] = useState<{ level: PcicViewLevel; known: number }[]>([]);
+  const [otherLevels, setOtherLevels] = useState<{ level: PcicLevel; known: number }[]>([]);
   const [targetLang, setTargetLang] = useState('es');
   const [sourceLang, setSourceLang] = useState('en');
   // PLAN-vizsga E1 a: a próbavizsga kártya szintjei (irányfüggő) és a mentett eredmények.
@@ -99,11 +99,11 @@ export default function StatsScreen() {
         setReviewsToday(countDoneToday(cards, today));
         setKnown(countKnown(cards));
         setGraduated(countGraduated(cards));
-        const selCards = cardsForViewLevel(cards, lvl);
+        const selCards = cardsForLevel(cards, lvl);
         // FB406: a kártya a tanult szavakat számolja (nem a 21 napos küszöböt elért kevés szót).
         setLevelKnown(countLearned(selCards));
-        setLevelTotal(pcicItemsForViewLevel(lvl).length);
-        setOtherLevels(PCIC_VIEW_LEVELS.filter(l => pcicItemsForViewLevel(l).length > 0).map(l => ({ level: l, known: countLearned(cardsForViewLevel(cards, l)) })));
+        setLevelTotal(pcicItemsForLevel(lvl).length);
+        setOtherLevels(PCIC_VIEW_LEVELS.filter(l => pcicItemsForLevel(l).length > 0).map(l => ({ level: l, known: countLearned(cardsForLevel(cards, l)) })));
         // FB100 minta, PCIC-dátumokra: a bare 'YYYY-MM-DD' due-t helyi éjfélre
         // egészíti ki, különben `new Date('YYYY-MM-DD')` UTC-éjfélt parseol, és
         // negatív UTC-eltolású zónában (pl. CDMX) egy nappal korábbra csúszna.

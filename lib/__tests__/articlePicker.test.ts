@@ -123,8 +123,6 @@ describe('articleRowAppliesForPos (FB214 kiegészítés, PCIC chip)', () => {
     expect(articleRowAppliesForPos({ pos: 'num' })).toBe(false);
     expect(articleRowAppliesForPos({ pos: 'phrase' })).toBe(false);
     expect(articleRowAppliesForPos({ pos: 'conj' })).toBe(false);
-    expect(articleRowAppliesForPos({ pos: 'prefix' })).toBe(false);
-    expect(articleRowAppliesForPos({ pos: 'suffix' })).toBe(false);
   });
 });
 

@@ -1,4 +1,4 @@
-import { findPcicItem, pcicItemsForViewLevel, setPcicTarget, type PcicItem, type PcicTarget } from '@/data/pcic';
+import { findPcicItem, pcicItemsForLevel, setPcicTarget, type PcicItem, type PcicTarget } from '@/data/pcic';
 import { resetFormIndex } from '../grammar/tenseGate';
 import { unknownTokens } from '../knownSentence';
 import {
@@ -155,7 +155,7 @@ describe('real corpus: a produced sentence never has an unknown word', () => {
     it(`${target}: every card from a full deck walk-through passes the gate`, () => {
       setPcicTarget(target);
       resetFormIndex();
-      const order = levels.flatMap((l) => pcicItemsForViewLevel(l)).map((i) => i.id);
+      const order = levels.flatMap((l) => pcicItemsForLevel(l)).map((i) => i.id);
       const learned = new Map<string, Sm2Card>();
       let state = INITIAL_CADENCE;
       let produced = 0;

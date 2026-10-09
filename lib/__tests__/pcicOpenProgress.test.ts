@@ -5,7 +5,7 @@
 
 import { findPcicItem } from '@/data/pcic';
 import { getDb } from '../database.web';
-import { cardsForLevel, cardsForViewLevel } from '../pcicLevels';
+import { cardsForLevel } from '../pcicLevels';
 import { dropOrphanCards } from '../pcicSession';
 import { sm2NewCard } from '../sm2';
 
@@ -43,7 +43,7 @@ describe('régi w<id> haladás a words-open váltás után (PLAN-learn-words-ope
     expect(findPcicItem('w7')).toBeUndefined();
     expect(dropOrphanCards(cards, (id) => findPcicItem(id) !== undefined).map((c) => c.itemId)).toEqual(['o12']);
     for (const view of ['A1', 'A2', 'B1', 'B2'] as const) {
-      expect(cardsForViewLevel(cards, view).map((c) => c.itemId)).toEqual(view === 'A1' ? ['o12'] : []);
+      expect(cardsForLevel(cards, view).map((c) => c.itemId)).toEqual(view === 'A1' ? ['o12'] : []);
     }
 
     expect((await db.getPcicCards()).map((c) => c.itemId).sort()).toEqual(['o12', 'w7']);
