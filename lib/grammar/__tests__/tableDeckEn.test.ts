@@ -1,5 +1,5 @@
-// az es→en irány "szavak gyakorlása" paklija az angol
-// szókészletből épül (kérdés = spanyol szó, válasz = angol szó), a spanyol irány változatlan.
+// The es→en direction's "practise words" deck is built from the English
+// vocabulary (question = Spanish word, answer = English word); the Spanish direction is unchanged.
 import enA0 from '@/data/words/en/a0.json';
 import enA1 from '@/data/words/en/a1.json';
 import enA2 from '@/data/words/en/a2.json';
@@ -19,7 +19,7 @@ const A1 = enA1 as unknown as EnWord[];
 const A2 = enA2 as unknown as EnWord[];
 const l4 = (s: string): Lang4 => ({ hu: s, en: s, es: s, de: s });
 
-// Egyszavas angol szó, ami CSAK az A2 listán van (A1-en még nem tanított).
+// A single English word that is ONLY on the A2 list (not yet taught at A1).
 const seenLow = new Set([...A0, ...A1].map((w) => w.en.trim().toLowerCase()));
 const isSingle = (w: EnWord) => /^[a-z]+$/.test(w.en);
 const a2Only = A2.filter((w) => isSingle(w) && !seenLow.has(w.en) && w.pos !== 'phrase')[0];
@@ -47,7 +47,7 @@ describe('wordCellsForLesson es→en irány', () => {
       expect(c.es.trim()).not.toBe('');
       expect(c.en.trim()).not.toBe('');
       expect(c.es.toLowerCase()).not.toBe(c.en.toLowerCase());
-      // az angol oldal ASCII-betűs (nincs spanyol ékezet / ¿ ¡ a válaszban)
+      // the English side is ASCII-lettered (no Spanish accent / ¿ ¡ in the answer)
       expect(c.en).not.toMatch(/[áéíóúñ¿¡]/i);
     }
   });
@@ -106,10 +106,10 @@ describe('wordCellsForLesson es→en irány', () => {
     const colors = wordCellsForLesson(synthetic('A1', [], { topic: 'colors' }), 'en');
     expect(colors.length).toBeGreaterThanOrEqual(WORD_DECK_MIN_CARDS);
     expect(colors.every((c) => c.id.startsWith('topic::'))).toBe(true);
-    // az "travel" téma csak az A2 listán van: A1 leckében üres, A2 leckében van
+    // the "travel" topic is only on the A2 list: empty in an A1 lesson, present in an A2 lesson
     expect(wordCellsForLesson(synthetic('A1', [], { topic: 'travel' }), 'en')).toHaveLength(0);
     expect(wordCellsForLesson(synthetic('A2', [], { topic: 'travel' }), 'en').length).toBeGreaterThanOrEqual(WORD_DECK_MIN_CARDS);
-    // a focusTopic ugyanígy köt
+    // focusTopic binds in the same way
     expect(wordCellsForLesson(synthetic('A1', [], { focusTopic: 'colors' }), 'en').length).toBeGreaterThanOrEqual(WORD_DECK_MIN_CARDS);
   });
 
@@ -130,9 +130,9 @@ describe('wordCellsForLesson spanyol irány (en→es, hu→es) változatlan', ()
     }
   });
 
-  // a spanyol szó-pakli csak a tábla szavaiból
-  // épül, ezért a korábbi rögzített minták (ser-estar 30 kártya, glossary::boda...) helyett az
-  // invariáns: a kártyák egyike sem szószedet-only szó, és a számok a küszöb alatt vannak.
+  // the Spanish word deck is built only from the table's words,
+  // so instead of the earlier fixed samples (ser-estar 30 cards, glossary::boda...) the
+  // invariant: none of the cards is a glossary-only word, and the counts are below the threshold.
   it('a ser-estar, gustar, articulos-genero paklija már nem tartalmaz szószedet-only szót', () => {
     const cards = wordCellsForLesson(lessonFor('es', 'ser-estar'));
     expect(cards.some((c) => c.id === 'glossary::boda' || c.id === 'glossary::fiesta')).toBe(false);

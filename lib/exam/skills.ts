@@ -1,24 +1,24 @@
-// az eredmény-lap készségenként
-// (szó, nyelvtan, olvasás, szóbeli): pont és %, "erős" vagy "gyenge" (gyenge = a készség % az átmenési
-// küszöb alatt), és a gyenge nyelvtanhoz a leggyakrabban elrontott leckék (lecke-link). Tiszta
-// függvények, a képernyő (app/exam.tsx) csak megjeleníti.
+// The result sheet per skill
+// (words, grammar, reading, speaking): score and %, "strong" or "weak" (weak = the skill % is below
+// the pass threshold), and for weak grammar the most frequently missed lessons (lesson links). Pure
+// functions; the screen (app/exam.tsx) only displays them.
 
 import { examPassed, type ExamScore } from './score';
 import type { ExamItemResult, ExamSkill } from './types';
 
-/** A készségek sorrendje az eredmény-lapon; csak a vizsgában szerepelt készségek jelennek meg. */
+/** Order of the skills on the result sheet; only skills that appeared in the exam are shown. */
 const EXAM_SKILL_ORDER: readonly ExamSkill[] = ['words', 'grammar', 'reading', 'speaking'];
 
-/** Legfeljebb ennyi lecke-link jön a gyenge nyelvtan alá. */
+/** At most this many lesson links appear under weak grammar. */
 export const MAX_LESSON_LINKS = 3;
 
 export interface SkillResult {
   skill: ExamSkill;
   correct: number;
   total: number;
-  /** Egész százalék, lefelé kerekítve (79,9 -> 79), mint a teljes pontszámnál. */
+  /** Whole percent, rounded down (79.9 -> 79), as with the total score. */
   pct: number;
-  /** A készség % az átmenési küszöb alatt van. */
+  /** The skill % is below the pass threshold. */
   weak: boolean;
 }
 
@@ -40,11 +40,11 @@ export function skillResults(score: ExamScore): SkillResult[] {
 
 interface WeakLesson {
   topicId: string;
-  /** Ennyi tétel ment el a leckéből a vizsgában. */
+  /** Number of items from this lesson that were missed in the exam. */
   missed: number;
 }
 
-/** A leggyakrabban elrontott leckék (csak a hibás nyelvtani tételekből), a legtöbb hibás elöl; döntetlennél a vizsgabeli sorrend. */
+/** The most frequently missed lessons (from wrong grammar items only), most misses first; ties keep exam order. */
 export function weakLessons(results: ExamItemResult[], max: number = MAX_LESSON_LINKS): WeakLesson[] {
   const missed = new Map<string, number>();
   for (const { item, correct } of results) {

@@ -1,5 +1,5 @@
-// az angol tanterv (es→en irány) az angol
-// témafából generálódik, a spanyol tanterv pedig bájtra változatlan marad.
+// The English syllabus (es→en direction) is generated from the English
+// topic tree, while the Spanish syllabus stays byte-for-byte unchanged.
 
 import { createHash } from 'crypto';
 import {

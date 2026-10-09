@@ -1,5 +1,5 @@
-// a lecke-görgetés memóriája topicId szerint, hogy a ScrollView
-// fázisváltáskori újra-mountja után a pozíció visszaállítható legyen.
+// Per-topicId memory of the lesson scroll position, so that the position can be
+// restored after the ScrollView re-mounts on a phase change.
 
 import { clearScrollY, getScrollY, setScrollY } from '../scrollMemory';
 

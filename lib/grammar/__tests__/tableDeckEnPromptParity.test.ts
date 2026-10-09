@@ -1,17 +1,17 @@
-// minden ragozó táblakártya az angol alakot kérdezi ("I used to eat"), nem a puszta
-// "yo"-t; a spanyol főnévi igenév a súgó-gombra jelenik meg (lásd 91f9e4b, és
-// app/grammar/deck/[topic].tsx). Paritás-teszt: nincs táblakártya enPrompt nélkül.
+// Every conjugation table card asks for the English form ("I used to eat"), not the bare
+// "yo"; the Spanish infinitive appears on the hint button (see 91f9e4b, and
+// app/grammar/deck/[topic].tsx). Parity test: no table card without an enPrompt.
 
 import { GRAMMAR_SYLLABUS, lessonFor } from '../syllabus';
 import { tableCellsForLesson } from '../tableDeck';
 
-// Referencia-táblák (névmás / birtokos): a kártya promptja "yo · <oszlop-címke>" (pl.
-// "yo · Masculino singular"), teljes, nem a puszta személy, és nincs ige-alakja, amit angolul
-// lehetne kérdezni ("my" / "me" nem ragozás).
+// Reference tables (pronoun / possessive): the card prompt is "yo · <column label>" (e.g.
+// "yo · Masculino singular"), complete, not the bare person, and there is no verb form that could
+// be asked in English ("my" / "me" is not a conjugation).
 const REFERENCE_TABLES = new Set(['posesivos', 'posesivos-tonicos', 'pronombres-oi', 'pronombres-preposicion']);
 
-// Régi adat: az indefinido-irregular estar- és ser-táblája ugyanazt az angolt adja
-// ("I was"). Nem ennek a hatóköre; külön tétel.
+// Old data: the indefinido-irregular lesson's estar and ser tables give the same English
+// ("I was"). Out of scope here; a separate item.
 const KNOWN_AMBIGUOUS_LESSONS = new Set(['indefinido-irregular']);
 
 const lessons = GRAMMAR_SYLLABUS.map((t) => t.id)

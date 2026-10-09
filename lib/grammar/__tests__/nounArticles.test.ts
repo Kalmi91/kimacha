@@ -1,5 +1,5 @@
-// az articulos-genero lecke el / la feladata az app összes főneve. A feladat a főnév jelentését (tr) is
-// hordozza, a szó-pakli pedig megszűnt (a pakli ismét a lecke saját szavai).
+// The articulos-genero lesson's el / la exercise covers every noun in the app. The exercise also
+// carries the noun's meaning (tr), and the word deck is gone (the deck is again the lesson's own words).
 import { buildGrammarRound, grammarRoundItemKind } from '@/lib/games/grammarChoice';
 import { isArticleSetItem } from '@/lib/games/content';
 import { lessonFor, lessonKinds } from '@/lib/grammar/syllabus';
@@ -55,7 +55,7 @@ describe('articleNounItems (FB448)', () => {
     }
   });
 
-  // a főnév jelentése a words-open-ből (hu / en / de, es-nél az angol), a válasz után látszik.
+  // the noun's meaning from words-open (hu / en / de, English for es), shown after the answer.
   it('minden tételnek van jelentése (tr) mind a 4 nyelven, az angol a words-open en mezője', () => {
     for (const it of items) {
       for (const lang of LANGS) expect(it.tr?.[lang]?.trim()).toBeTruthy();

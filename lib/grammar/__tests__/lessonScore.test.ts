@@ -71,7 +71,7 @@ describe('lessonBadgePercent', () => {
   });
 });
 
-// a lecke %-a az összes fajta átlaga.
+// A lesson's % is the average over all kinds.
 import {
   betterBest,
   kindPercent,

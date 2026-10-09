@@ -1,4 +1,4 @@
-// a spanyol nyelvtani leckék felolvasása spanyol szó nélkül szól.
+// The read-aloud text of the Spanish grammar lessons contains no Spanish words.
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -28,7 +28,7 @@ describe('spanyol leckék felolvasása (FB414)', () => {
   it.each(lessons.map((l) => [l.name, l.lesson] as const))('%s: a felolvasás egyetlen angol szakasz, a tanult nyelvű (spanyol) szó nélkül', (_name, lesson) => {
     const segments = splitByMarkers(lesson.speak.en, { learnedLang: 'es', nativeLang: 'en' });
     expect(segments.every((s) => s.lang === 'en')).toBe(true);
-    // az angol szövegben sincs spanyol betű
+    // there are no Spanish letters in the English text either
     expect(lesson.speak.en).not.toMatch(/[áéíóúñ¿¡]/i);
   });
 });

@@ -1,6 +1,6 @@
-// a nyelvtani lecke végi teszt tiszta logikája:
-// gomb-feltétel (B1 b), 10 kérdés (B2 a), 80% határ, a lecke %-a nem változik (B3 a),
-// az eredmény mentése / visszaolvasása, a "Test passed" jelhez a lista.
+// Pure logic of the end-of-lesson grammar test:
+// button condition, 10 questions, 80% threshold, the lesson's % does not change,
+// saving / reading back the result, the list for the "Test passed" badge.
 
 import { getGrammarTopics, isTrialItem, type GrammarItem } from '@/lib/games/content';
 import { doneGrammarTopicProgress, lessonFor, scoredKinds } from '@/lib/grammar/syllabus';
@@ -82,7 +82,7 @@ describe('a teszt kérdései (B2 a)', () => {
     const used = new Set(first.map((q) => q.id));
     const retry = buildLessonTest(lesson(), { ...opts(2), avoid: used });
     const fresh = retry.filter((q) => !used.has(q.id)).length;
-    // legalább annyi friss tétel, amennyit a lecke még tartogat
+    // at least as many fresh items as the lesson still has left
     const pool = lesson().items.filter((it) => !isTrialItem(it as GrammarItem)).length;
     expect(fresh).toBeGreaterThanOrEqual(Math.min(LESSON_TEST_SIZE, pool - used.size) - 2);
     const missed = new Set(first.slice(0, 2).map((q) => q.id));
@@ -140,8 +140,8 @@ describe('minden tétel-fajta vizsga-kártyává alakul', () => {
   const all = (topic: string, lang = 'es', content = 'en') =>
     buildLessonTest(lessonFor(lang, topic)!, { seed: 5, learnedLang: lang, contentLang: content, size: 200 });
 
-  // A mai hibakereső / szórend tételek mind ideiglenesek (trial), ezért a teszt kihagyja őket;
-  // a jóváhagyás utáni állapotot a trial-jelzés nélküli másolat adja.
+  // The current error-spotting / word-order items are all temporary (trial), so the test skips them;
+  // the post-approval state is given by the copy without the trial flag.
   const approved = (topic: string) => {
     const l = lessonFor('es', topic)!;
     return { ...l, items: (l.items as GrammarItem[]).map((it) => ({ ...it, trial: undefined })) } as typeof l;
@@ -191,7 +191,7 @@ describe('minden tétel-fajta vizsga-kártyává alakul', () => {
     const why = qs.filter((q) => q.kind === 'why');
     expect(why.length).toBeGreaterThan(0);
     expect(why.every((q) => q.view.card === 'choice' && !!q.review.why)).toBe(true);
-    // az eredmény-lapon a kérdés szövege is látszik (pl. "Why «Escriben»?"), nem csak a mondat
+    // the result sheet also shows the question text (e.g. "Why «Escriben»?"), not just the sentence
     for (const q of why) {
       if (q.view.card !== 'choice') continue;
       expect(q.review.question).toBe(`${q.view.heading}\n${q.view.text}`);
