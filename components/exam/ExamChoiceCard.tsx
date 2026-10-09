@@ -11,7 +11,7 @@ import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
 import ExamButton from './ExamButton';
 
-// PLAN-vizsga A. szakasz 2. lépés (A5 c): feleletválasztós tétel (nyelvtani lyukas
+// feleletválasztós tétel (nyelvtani lyukas
 // mondat, olvasás). A koppintás azonnal válaszol: helyesnél a vizsga megy tovább,
 // hibásnál a helyes válasz kiemelve látszik, és a "Next" lép tovább.
 type Props = {

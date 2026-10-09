@@ -1,9 +1,9 @@
 import type { Sm2Card, Sm2Grade } from './sm2';
 import type { PcicKind } from '@/data/pcic';
 
-// SZ2 (SZAVAK.md): a sor léptetése értékelés után és visszavonáskor, tesztelhetően.
+// a sor léptetése értékelés után és visszavonáskor, tesztelhetően.
 
-// FB364 (PLAN-fb0923 5. lépés, D2): a rontott ("again") kártya eddig időzítő
+// a rontott ("again") kártya eddig időzítő
 // nélkül a sor VÉGÉRE ment, ezért sok új szó mögött sokára jött vissza.
 // Mostantól kap egy `returnAt` időbélyeget (most + N s); a következő kártya
 // kiválasztásakor (`reorderForReturn`) a lejárt returnAt-ú (vagy - ha nincs
@@ -80,7 +80,7 @@ export function requeueAfterUndo(
   return [before, ...rest];
 }
 
-// FB352: kiemelve tiszta függvénybe, hogy a napi haladás (a header-sor és a
+// kiemelve tiszta függvénybe, hogy a napi haladás (a header-sor és a
 // csík) tab-váltás/app-újraindítás után is a perzisztált `lastReview`-ból
 // számolt, valós napi számot mutassa, ne csak a (mountonként nullázódó)
 // menet-számlálót.
@@ -89,7 +89,7 @@ export function countDoneToday(cards: Sm2Card[], today: string): number {
 }
 
 export const PCIC_NEW_BONUS_STEP = 10;
-// FB449/FB451: a "kész mára" képernyő +5 / +10 / +15 új szó gombjai.
+// a "kész mára" képernyő +5 / +10 / +15 új szó gombjai.
 export const PCIC_NEW_BONUS_STEPS = [5, 10, 15] as const;
 
 interface PcicNewBudgetInput {
@@ -99,7 +99,7 @@ interface PcicNewBudgetInput {
 }
 
 /**
- * FB385/386: a "+10 új szó" bónusz eddig csak React-state-ben élt
+ * a "+10 új szó" bónusz eddig csak React-state-ben élt
  * (`extraNew`), amit a `load()` minden fókusz-váltásnál/új napon nullázott,
  * ÉS a flat +10-et adta a napi kerethez, függetlenül attól, hány szó lett
  * már bevezetve ma. Emiatt (limit 10, ma bevezetve 18) a "+10" 2 új kártyát
@@ -127,7 +127,7 @@ export function pcicNewBudget({ limit, bonus, introducedToday }: PcicNewBudgetIn
 }
 
 /**
- * FB452 ("new 42?"): a napi új-szó keret és a +N bónusz NAPI érték (egy sor a
+ * ("new 42?"): a napi új-szó keret és a +N bónusz NAPI érték (egy sor a
  * learn_settings-ben), de a ma bevezetett kártyákat a hívó a nézet szintjén
  * számolta. Ha a tanuló az A1-en háromszor kért "+10"-et, majd átváltott A2-re,
  * ott a szint 0 mai szava mellett a teljes bónuszos keret (limit + bónusz) új
@@ -152,10 +152,10 @@ export function pcicSessionNewLimit({
 }
 
 /**
- * FB499 ("azt írja, hogy van még 40 szó, miért nem dobja fel?"): a szint-választó vizsga-sora kiírja, mennyi
+ * ("azt írja, hogy van még 40 szó, miért nem dobja fel?"): a szint-választó vizsga-sora kiírja, mennyi
  * szó hiányzik a feloldáshoz ("N to go"), a "Practice words" gomb viszont a napi keret kimerülése után semmit
  * nem adott. Ha a mai keret (limit + bónusz) már elfogyott, a gomb a szint ÖSSZES hiányzó új szavát adja egy
- * koppintásra (Kálmán döntése, 2026-10-05: "mindet egyszerre"); ha még van keret, nem bővít (a szokásos napi
+ * koppintásra ("mindet egyszerre"); ha még van keret, nem bővít (a szokásos napi
  * adag jön). A visszaadott érték a kért bónusz-lépés (0 = nincs bővítés).
  */
 export function practiceTopUpStep({
@@ -173,7 +173,7 @@ export function practiceTopUpStep({
   return missing;
 }
 
-// FB387/395 (PLAN-fb0924 1b. lépés, D2 = b): a napi keret MINDEN kártyát számol
+// A napi keret MINDEN kártyát számol
 // (szó, kifejezés, mondat, lánc-tag), ahogy eddig - ez nem változik. Ami hiányzott:
 // a fejléc nem mutatta meg, MIBŐL áll a mai bevezetés, ezért egy 10-es keretnél a
 // "csak 6 vagy 8 jött" zavarba fulladt (a maradék a másik fajtára ment el, vagy
@@ -200,14 +200,14 @@ export function countIntroducedTodayByKind(
   return { words, sentences };
 }
 
-// PLAN-fb0924 7b. lépés (FB384): a szintek közti duplikátum-egyesítéskor
+// a szintek közti duplikátum-egyesítéskor
 // (lib/db/migrations.ts applyPcicDedup) ha MINDKÉT oldalon (a törölt és a
 // megmaradó item-id-n is) van SRS-haladás, az "erősebb" oldal nyer: több
 // sikeres ismétlés (reps - lapses), holtversenyben nagyobb interval, végül
 // a korábbi esedékesség (hogy az ismétlés ne csússzon ki). A `cardMerge.ts`
 // pickSurvivor-jának Sm2Card-megfelelője (az ottani `stability` mező itt
 // nincs, az FSRS-only `cards` táblára épült).
-// PLAN-fb0924 8. lépés (FB394/396): a bevezetendő új kártyák sorrendjében két
+// a bevezetendő új kártyák sorrendjében két
 // mondat (vagy csoport, ami `groupOf` szerint EGY egységnek számít) közt
 // legalább `minGap` nem-mondat kártyának kell lennie ("10 kártyánként max 1
 // mondat"). Ami idő előtt jönne, EBBŐL a hívásból kimarad (nem a sor végére
@@ -242,7 +242,7 @@ export function thinSentences(
   return result;
 }
 
-// PLAN-ketiranyu 2. lépés (2026-09-28): a régi PCIC-korpuszból itt maradt
+// a régi PCIC-korpuszból itt maradt
 // SRS-sorok (data/pcic.ts most már a data/words alapú korpuszt tölti be, a
 // régi "a1-..."/"b1-..." id-k nincsenek benne) a `matchesLevel` id-előtag
 // tartalékszabálya miatt továbbra is bekerülnének egy szint pakljába, holott
@@ -260,9 +260,9 @@ export function pickStrongerSm2Card(a: Sm2Card, b: Sm2Card): Sm2Card {
   return a.due <= b.due ? a : b;
 }
 
-// PLAN-fb1001 9. lépés (FB430, D1), Kálmán: „fenn a fekete csík, azt úgy akarom, hogy azt
+// User feedback: „fenn a fekete csík, azt úgy akarom, hogy azt
 // számolja, mennyi van még a pakliból, mikor fejeződik be, most nem tudom, mit számol,
-// mert újraindult". (Az FB401-es 10-es szettes sáv minden 10. kártyánál újraindult.) A sáv
+// mert újraindult". (Az eddigi 10-es szettes sáv minden 10. kártyánál újraindult.) A sáv
 // most a MAI adag hátralévőjét mutatja: az első kártyánál üres, a nap utolsó kártyájánál
 // tele, adag közben nem indul újra. A "kész" kártya = ma értékelt és már nincs a sorban
 // (egy "again" kártya a sorban marad, tehát még nem kész, az adag mérete nem ingadozik).
@@ -272,7 +272,7 @@ export function countFinishedToday(cards: Sm2Card[], queue: Sm2Card[], today: st
   return cards.filter((c) => c.lastReview === today && !inQueue.has(c.itemId)).length;
 }
 
-// FB456 ("+15 szó, bebugosodott a csík"): a "+N új szó" bővítés új adagot indít, de a
+// ("+15 szó, bebugosodott a csík"): a "+N új szó" bővítés új adagot indít, de a
 // `countFinishedToday` az egész nap kész kártyáit számolja, így a csík +N után nem 0-ról,
 // hanem pl. 78%-ról indult (a nap eddigi kész kártyái az új adagon is "készek" voltak).
 // A bővítéskor a hívó eltárolja a már kész kártyák számát (batchBase), a csík ehhez képest

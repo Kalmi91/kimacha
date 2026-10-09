@@ -1,4 +1,4 @@
-// Automata UI-átfedés teszt a web-buildre, témánként (PLAN-temak, F agent).
+// Automata UI-átfedés teszt a web-buildre, témánként (F agent).
 //
 // Menete: `npx expo export -p web` (dist) -> saját statikus szerver SPA-fallbackkel ->
 // headless Chrome remote-debugging-gal -> CDP (WebSocket) vezérlés. Kombináció =
@@ -54,7 +54,7 @@ const DIST = path.join(ROOT, 'dist');
 const SHOTS = path.join(ROOT, 'ui-shots');
 const REPORT = path.join(ROOT, 'ui-overlap-report.json');
 
-// Kálmán szabálya (CLAUDE.md, 2026-09-28): böngészős teszt némán, betöltés ELŐTT.
+// szabálya (CLAUDE.md, 2026-09-28): böngészős teszt némán, betöltés ELŐTT.
 const SPEECH_MUTE =
   "(()=>{const s=window.speechSynthesis;if(!s)return;s.speak=(u)=>setTimeout(()=>u.dispatchEvent(new Event('end')),0);})()";
 

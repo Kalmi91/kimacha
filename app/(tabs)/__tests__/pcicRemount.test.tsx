@@ -1,7 +1,7 @@
-// FB408/FB409 (PLAN-fb0929 2. lépés): a PCIC beviteli mező minden új kártyánál
+// a PCIC beviteli mező minden új kártyánál
 // ÚJRA mountol és autoFocus-szal indul, mert a Check után letiltott
 // (editable=false), majd újra engedélyezett natív mező nem hozta fel megbízhatóan
-// a billentyűzetet (FB408), és a törlés sem működött rajta (FB409).
+// a billentyűzetet, és a törlés sem működött rajta.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({

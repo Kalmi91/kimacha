@@ -6,7 +6,7 @@ import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { useSkin } from '@/lib/useSkin';
 
-// PLAN-temak 6E (E2), Kalocsai: öt színű virág-sor a fejléc alatt (a téma flower1..5 színei; más
+// Kalocsai: öt színű virág-sor a fejléc alatt (a téma flower1..5 színei; más
 // színekkel, Saját mixben a, b, c, ink, mu a tartalék), növény-ikon a kártya két felső sarkában.
 // A szaggatott a keret a téma formája, a másodlagos gomb szaggatott b kerete a Brutal.tsx-ben.
 

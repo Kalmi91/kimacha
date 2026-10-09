@@ -1,4 +1,4 @@
-// FB485 ("valamiért itt nem megy a progress bar", A2): a "+N új szó" adag-alapja (batchBase, FB456) egy
+// ("valamiért itt nem megy a progress bar", A2): a "+N új szó" adag-alapja (batchBase) egy
 // SZINTRE érvényes mérés volt, de szint-váltáskor is megmaradt. A1-en +15 után (alap = a nap addigi
 // kész kártyái az A1-en) a másik szinten a haladás-csík addig 0% maradt, amíg ott az alapnál több
 // kártya el nem készült. Mock-minta: pcicMoreNewSteps.test.tsx.

@@ -1,4 +1,4 @@
-// PLAN-temak 6E (Könnyű olvasás): a spanyol szótagoló.
+// (Könnyű olvasás): a spanyol szótagoló.
 import { syllabify, syllabifyPhrase } from '@/lib/syllables';
 
 describe('syllabify', () => {

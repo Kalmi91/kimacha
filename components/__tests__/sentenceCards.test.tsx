@@ -1,4 +1,4 @@
-// PLAN-ketiranyu 7. lépés: az összerakós és a begépelős mondatkártya viselkedése.
+// az összerakós és a begépelős mondatkártya viselkedése.
 import { fireEvent, render } from '@testing-library/react-native';
 import EasySentenceCard from '../EasySentenceCard';
 import TypedSentenceCard from '../TypedSentenceCard';
@@ -38,7 +38,7 @@ describe('EasySentenceCard (összerakós)', () => {
     fireEvent.press(getAllByText('mesa')[0]);
     fireEvent.press(getByText('Check'));
     expect(getByText('el libro y la mesa')).toBeTruthy();
-    // FB412: rossz építésnél is elhangzik a helyes mondat.
+    // rossz építésnél is elhangzik a helyes mondat.
     expect(speech.speak).toHaveBeenLastCalledWith('el libro y la mesa', 'es-MX');
     fireEvent.press(getByText(/Next/));
     expect(onResult).toHaveBeenCalledWith(false);
@@ -79,7 +79,7 @@ describe('TypedSentenceCard (begépelős)', () => {
     expect(getByText('El libro y la mesa.')).toBeTruthy();
     fireEvent.changeText(input, 'el libro');
     expect(queryByText('El libro y la mesa.')).toBeNull();
-    // FB412: a helyes mondat rossz válasz után is elhangzik (egyszer, a Check-nél).
+    // a helyes mondat rossz válasz után is elhangzik (egyszer, a Check-nél).
     expect(speech.speak).toHaveBeenCalledTimes(1);
     expect(speech.speak).toHaveBeenCalledWith('El libro y la mesa.', 'es-MX');
   });
@@ -96,7 +96,7 @@ describe('TypedSentenceCard (begépelős)', () => {
     expect(on.getByText('Está en casa.')).toBeTruthy();
   });
 
-  // FB399 (PLAN-fb0929 3. lépés): a névmás nélküli mondat is jó.
+  // a névmás nélküli mondat is jó.
   it('accepts the sentence without the leading subject pronoun', () => {
     const onResult = jest.fn();
     const { getByText, getByPlaceholderText } = render(
@@ -108,7 +108,7 @@ describe('TypedSentenceCard (begépelős)', () => {
     expect(onResult).toHaveBeenCalledWith(true);
   });
 
-  // FB397 (PLAN-fb0929 2. lépés): a Check nem a kártyán belüli gomb, hanem a
+  // a Check nem a kártyán belüli gomb, hanem a
   // dokkolt sáv (DockedAction) a billentyűzet fölött, mint a szókártyán, és a
   // szülő által adott emelés / hely szerint áll.
   it('the Check bar is the docked action, lifted by the keyboard height the parent passes', () => {
@@ -124,7 +124,7 @@ describe('TypedSentenceCard (begépelős)', () => {
   });
 });
 
-// FB455: a szókártya Check utáni "Didn't know" / "Knew it" gombsora a mondatkártyákon is; a
+// a szókártya Check utáni "Didn't know" / "Knew it" gombsora a mondatkártyákon is; a
 // koppintás a kijelzett értékelést írja át, a Next ezt adja tovább (a mondatkártya nem ír SRS-t).
 describe('FB455: Didn\'t know / Knew it a mondatkártyákon', () => {
   const easy = {
@@ -203,7 +203,7 @@ describe('FB455: Didn\'t know / Knew it a mondatkártyákon', () => {
   });
 });
 
-// PLAN-fb1001 10. lépés (FB434): a feladat-mondat a kártya megnyitásakor elhangzik (a
+// a feladat-mondat a kártya megnyitásakor elhangzik (a
 // kiinduló nyelven), mint a szókártya promptja; locale nélkül nem szól semmi.
 describe('a feladat-mondat felolvasása megnyitáskor (FB434)', () => {
   it('begépelős kártya: a forrás-mondat elhangzik angolul', () => {

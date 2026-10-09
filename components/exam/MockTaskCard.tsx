@@ -12,11 +12,11 @@ import { speechLang } from '@/lib/languages';
 import { speak, stop as stopSpeaking } from '@/lib/speech';
 import { useTheme } from '@/lib/ThemeContext';
 
-// PLAN-vizsga E. szakasz (15-16. lépés): egy próbavizsga-feladat a képernyőn. A régi
+// egy próbavizsga-feladat a képernyőn. A régi
 // (4afeb8c^) components/exam/ExamTaskCard.tsx szerkezete: az utasítás a CÉLNYELVEN, mint egy
 // valódi papíron (alatta a felület nyelvén egy rövid segítség), aztán a tételek. Semmi nem
 // mondja meg, jó-e a válasz: a vizsgán a végén derül ki. Az ismeretlen szóhoz szójegyzet
-// jár (Kálmán E5 c), koppintásra nyílik. A felvételes feladatnál a lejátszások száma a feladaté (alap: 2; az angol A1 első része egyszer).
+// jár, koppintásra nyílik. A felvételes feladatnál a lejátszások száma a feladaté (alap: 2; az angol A1 első része egyszer).
 
 type Props = {
   task: MockTask;

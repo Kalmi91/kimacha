@@ -1,4 +1,4 @@
-// PLAN-vizsga B. szakasz (B3 a): a Nyelvtan fül listájában a lecke végi teszten átment
+// a Nyelvtan fül listájában a lecke végi teszten átment
 // lecke "Test passed" jelet kap a %-jel mellett; a bukott vagy meg nem próbált nem.
 // Mock-minta: courseBrutal.test.tsx.
 

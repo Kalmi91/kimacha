@@ -1,4 +1,4 @@
-// FB443/FB445: a lecke body-ban egymás után álló, egyetlen igés ragozási
+// a lecke body-ban egymás után álló, egyetlen igés ragozási
 // táblákból (pl. indefinido-10-verbos: tíz tábla) egy füles csoport lesz, hogy
 // ne tíz táblányi helyet foglaljanak. Tiszta függvény, hogy tesztelhető legyen.
 import type { LessonBlock } from './lessonTypes';

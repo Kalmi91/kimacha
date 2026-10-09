@@ -1,6 +1,6 @@
 // Kimacha Play-vágás: the same source builds two flavors. The Drive-APK
-// (Kálmán's phone, /build_kimacha) keeps sending feedback to the Apps Script
-// endpoint; the Play build (AAB, 16. lépés) never makes that network call, so
+// (the maintainer's phone, /build_kimacha) keeps sending feedback to the Apps Script
+// endpoint; the Play build (AAB) never makes that network call, so
 // EXPO_PUBLIC_PLAY_STORE='1' (set on the bundleRelease command, Metro inlines
 // EXPO_PUBLIC_* at bundle time) switches it to the on-device share sheet.
 export const IS_PLAY_BUILD = process.env.EXPO_PUBLIC_PLAY_STORE === '1';
@@ -13,7 +13,7 @@ export const IS_PLAY_BUILD = process.env.EXPO_PUBLIC_PLAY_STORE === '1';
 // `null` and the string is dropped, not just left unreachable. Splitting this
 // into `IS_PLAY_BUILD ? null : URL_FROM_ANOTHER_MODULE` would leave the raw
 // URL sitting in that other module's output. Verified via the Play-bundle
-// grep in the build gate (see PLAN-play.md step 6).
+// grep in the build gate.
 export const FEEDBACK_URL =
   process.env.EXPO_PUBLIC_PLAY_STORE === '1'
     ? null

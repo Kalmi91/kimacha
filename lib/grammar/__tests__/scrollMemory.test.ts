@@ -1,4 +1,4 @@
-// FB327: a lecke-görgetés memóriája topicId szerint, hogy a ScrollView
+// a lecke-görgetés memóriája topicId szerint, hogy a ScrollView
 // fázisváltáskori újra-mountja után a pozíció visszaállítható legyen.
 
 import { clearScrollY, getScrollY, setScrollY } from '../scrollMemory';

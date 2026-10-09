@@ -10,7 +10,7 @@ import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
 import { useSkin } from '@/lib/useSkin';
 import { useTheme } from '@/lib/ThemeContext';
 
-// NY20: a neo-brutalista forma-elemek (NYELVTAN.md "Neo-brutalista stílus").
+// a neo-brutalista forma-elemek.
 // Csak akkor használjuk őket, ha useGrammarColors().brutal igaz; a classic
 // paletta a mai kinézetet adja, ezek nélkül.
 
@@ -41,7 +41,7 @@ export function inkButtonText(g: GrammarColors): string {
   return g.onInk;
 }
 
-// PLAN-temak 2A: a forma-szerepek (keret / árnyék színe) és a sarok-sugár a téma `shape`-éből.
+// a forma-szerepek (keret / árnyék színe) és a sarok-sugár a téma `shape`-éből.
 export function roleColor(g: GrammarColors, role: ColorRole = 'ink'): string {
   if (role === 'a') return g.a;
   if (role === 'b') return g.b;
@@ -61,7 +61,7 @@ function smallRadius(shape: SkinShape, maxRadius: number): ViewStyle {
   return typeof shape.buttonRadius === 'number' ? radiusStyle(Math.min(shape.buttonRadius, maxRadius)) : {};
 }
 
-// PLAN-temak 6E: a téma gomb-változata (a díszből). Alapból 'default': semmi nem változik.
+// a téma gomb-változata (a díszből). Alapból 'default': semmi nem változik.
 // stacked (senior): teljes szélesség, min. 48 magas; text (zen): csak szöveg; bevel (retro95):
 // a gomb első betűje aláhúzva (a 3D-perem a forma `bevel` jelzőjéből jön).
 type ButtonVariant = NonNullable<SkinDecor['buttonVariant']>;
@@ -92,7 +92,7 @@ function bevelColors(g: GrammarColors): ViewStyle {
 // Doboz: Neo-brutál témán 2,5 px ink keret, sarok 0, tömör eltolt árnyék (3 px jobbra + 3 px le,
 // ink színnel, elmosás nélkül). RN-ben nem elevation/shadow*: egy ink színű
 // hátsó View, a doboz mögé eltolva. Zárt (dashed) doboz: szaggatott keret,
-// árnyék nélkül. PLAN-temak 2A: a keret vastagsága / stílusa / színe, a sarok és az árnyék
+// árnyék nélkül. A keret vastagsága / stílusa / színe, a sarok és az árnyék
 // eltolása + színe az aktív téma `shape`-éből jön (az `offset` a 3 px-es alap arányában skálázódik).
 export function BrutalBox({
   children,
@@ -120,7 +120,7 @@ export function BrutalBox({
   boxStyle?: StyleProp<ViewStyle>;
   onPress?: () => void;
   disabled?: boolean;
-  // PLAN-temak 6E: push-gomb (BrutalButton, a Tudom / Nem tudom gombok): a téma gomb-változata érvényes rá.
+  // push-gomb (BrutalButton, a Tudom / Nem tudom gombok): a téma gomb-változata érvényes rá.
   action?: boolean;
   testID?: string;
   accessibilityLabel?: string;
@@ -233,7 +233,7 @@ export function Card({
   fill?: BrutalFill;
   style?: StyleProp<ViewStyle>;
   classicStyle?: StyleProp<ViewStyle>;
-  // NY19: a brutalista doboz belső stílusa (a default styles.card után).
+  // a brutalista doboz belső stílusa (a default styles.card után).
   boxStyle?: StyleProp<ViewStyle>;
   // Csak a brutalista dobozra kerül (a classic ág nem kap testID-t).
   testID?: string;
@@ -249,7 +249,7 @@ export function Card({
   return <View style={[{ backgroundColor: g.paper }, classicStyle, style]}>{children}</View>;
 }
 
-// NY19: a fő gomb (nagybetűs, 500 súly): ink kitöltés b / bg színű szöveggel, vagy
+// a fő gomb (nagybetűs, 500 súly): ink kitöltés b / bg színű szöveggel, vagy
 // a / b kitöltés #111 szöveggel.
 export function BrutalButton({
   label,
@@ -268,7 +268,7 @@ export function BrutalButton({
   testID?: string;
   accessibilityLabel?: string;
   style?: StyleProp<ViewStyle>;
-  // PLAN-temak 6E: a senior (stacked) témán a címke elé kerülő ikon; más témán nem látszik.
+  // a senior (stacked) témán a címke elé kerülő ikon; más témán nem látszik.
   icon?: string;
 }) {
   const g = useGrammarColors();
@@ -311,13 +311,13 @@ export function BrutalButton({
   );
 }
 
-// NY19: beviteli mező brutalista palettán: 2,5 px ink keret, sarok 0, papír háttér.
+// beviteli mező brutalista palettán: 2,5 px ink keret, sarok 0, papír háttér.
 export function brutalInputStyle(g: GrammarColors): TextStyle {
-  // PLAN-temak 6E: a téma saját beviteli mező-színe (retro95: fehér "mező"), ha van; különben a papír.
+  // a téma saját beviteli mező-színe (retro95: fehér "mező"), ha van; különben a papír.
   return { borderWidth: 2.5, borderColor: g.ink, borderRadius: 0, backgroundColor: g.extra.field ?? g.paper, color: g.ink };
 }
 
-// NY25: kapcsoló. Brutalista palettán téglalap sín (2,5 px ink keret, sarok 0), négyzetes
+// kapcsoló. Brutalista palettán téglalap sín (2,5 px ink keret, sarok 0), négyzetes
 // ink gomb, bekapcsolva a sín `a` kitöltésű; classic palettán a mai Switch.
 export function BrutalSwitch({
   value,
@@ -367,7 +367,7 @@ export function BrutalSwitch({
   );
 }
 
-// NY25: vissza-nyíl a képernyőbe rajzolt fejlécsorban: kis BrutalBox, ink nyíl.
+// vissza-nyíl a képernyőbe rajzolt fejlécsorban: kis BrutalBox, ink nyíl.
 export function BrutalBackButton({ onPress, testID }: { onPress: () => void; testID?: string }) {
   const g = useGrammarColors();
   return (

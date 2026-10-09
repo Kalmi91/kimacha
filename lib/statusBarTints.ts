@@ -1,4 +1,4 @@
-// FB83: a colored band behind the system clock and battery, so they stay
+// a colored band behind the system clock and battery, so they stay
 // readable over the app background. Tapping the band cycles through five
 // blues; the choice is stored as an index (user_meta.status_bar_tint).
 

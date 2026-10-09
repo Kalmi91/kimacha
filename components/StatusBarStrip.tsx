@@ -6,7 +6,7 @@ import { getDb } from '@/lib/database';
 import { nextTintIndex, tintColor } from '@/lib/statusBarTints';
 import { useGrammarColors } from '@/lib/grammarColors';
 
-// FB83: "az app tetejére szeretnék egy kékes csíkot hogy az óra a töltöttség
+// "az app tetejére szeretnék egy kékes csíkot hogy az óra a töltöttség
 // látható legyen ... ha rá kattintok akkor váltson a kékek között, legyen 5
 // különböző változat, és így körbe menjen".
 //
@@ -41,7 +41,7 @@ export default function StatusBarStrip() {
         style={[
           styles.band,
           { height: BAND_HEIGHT, backgroundColor: tintColor(tint) },
-          // NY25: brutalista palettán a sáv alján 2,5 px ink vonal.
+          // brutalista palettán a sáv alján 2,5 px ink vonal.
           g.brutal && { borderBottomWidth: 2.5, borderBottomColor: g.ink },
         ]}
         testID="status-bar-strip"

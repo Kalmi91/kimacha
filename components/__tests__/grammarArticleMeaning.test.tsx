@@ -1,4 +1,4 @@
-// FB493, Kálmán: „itt legyenek angolul is a szavak, hogy mit jelentenek ha tippeltem": az el / la tételnél a főnév
+// User feedback: „itt legyenek angolul is a szavak, hogy mit jelentenek ha tippeltem": az el / la tételnél a főnév
 // jelentése (tr) a válasz után magától megjelenik (az F-gomb mögötti fordítás-sorban), a következő tételnél újra zárt;
 // a sima választós tételnél a fordítás továbbra is csak az F-gombra nyílik.
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));

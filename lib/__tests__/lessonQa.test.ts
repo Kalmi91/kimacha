@@ -1,4 +1,4 @@
-// TASK-9 (PLAN-fb0917 12. lépés): a 17 schema-2 lecke gépi drill-QA-ja a
+// a 17 schema-2 lecke gépi drill-QA-ja a
 // kapu része legyen, ne csak kézzel futtatott szkript. `scripts/audit-games.mjs`
 // már minden schema-2 lecke item-jét ellenőrzi (choice correctIndex/egyediség/
 // önmagát-eláruló prompt, form tábla-cella egyezés, match párok, why szabályok,

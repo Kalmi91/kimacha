@@ -1,4 +1,4 @@
-// FB447 (PLAN-fb1002e 2. lépés): a szintfelmérő minden részén ott a visszajelzés-gomb, és a
+// a szintfelmérő minden részén ott a visszajelzés-gomb, és a
 // kártya-azonosító megmondja, melyik részről van szó (placement:<rész>). Minta: placement.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));

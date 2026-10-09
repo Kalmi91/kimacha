@@ -1,4 +1,4 @@
-// PLAN-vizsga C. szakasz (Kálmán, 2026-10-01, C1-C4): az adaptív szintfelmérő képernyője. A
+// az adaptív szintfelmérő képernyője. A
 // kérdés-építő itt egyszerű, ismert kérdéseket ad (a tartalmukat a lib/exam/__tests__ fedi), a
 // lépcsőt és a mentést a valódi modulok végzik. Mock-minta: app/__tests__/exam.test.tsx.
 

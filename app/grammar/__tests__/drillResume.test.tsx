@@ -1,5 +1,5 @@
-// FB470 (kártya-szintű folytatás): ha az app a lecke egy gyakorlatában (drill) záródott be, a lecke ugyanabban a
-// gyakorlatban nyílik meg (a kör a mentett futásból folytatódik, FB421); a leckéből kilépve a mentés törlődik.
+// (kártya-szintű folytatás): ha az app a lecke egy gyakorlatában (drill) záródott be, a lecke ugyanabban a
+// gyakorlatban nyílik meg (a kör a mentett futásból folytatódik); a leckéből kilépve a mentés törlődik.
 // Mock-minta: drillButtons.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));

@@ -36,7 +36,7 @@ describe('composeAnswer', () => {
   });
 
   it('leaves the body alone when no article is picked', () => {
-    // FB184 precedent: `correos` has no article, ⊘ has to stay possible.
+    // precedent: `correos` has no article, ⊘ has to stay possible.
     expect(composeAnswer('', 'correos')).toBe('correos');
   });
 
@@ -126,7 +126,7 @@ describe('articleRowAppliesForPos (FB214 kiegészítés, PCIC chip)', () => {
   });
 });
 
-// PLAN-tobbjelentes 3. lépés (S1): egy " / " alak, amelynek minden alternatívája
+// egy " / " alak, amelynek minden alternatívája
 // "névelő + egy szó", úgy viselkedik, mint az egyszavas főnév.
 describe('perjeles (" / ") válasz', () => {
   const answer = 'el carro / el coche / el auto';

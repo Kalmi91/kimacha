@@ -9,7 +9,7 @@ import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
 import ExamButton from './ExamButton';
 
-// PLAN-vizsga E. szakasz (Kálmán E1 a): a Stats fül "Practice exam" kártyája: szintenként egy
+// a Stats fül "Practice exam" kártyája: szintenként egy
 // gomb (A1, A2; az es→en irányban csak az A2), alatta a legutóbbi eredmény vagy a félbehagyott
 // vizsga jelzése. A gomb mindig viszi tovább (DESIGN 9/9).
 type Props = {

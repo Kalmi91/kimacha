@@ -1,5 +1,5 @@
-// NY3 (NYELVTAN.md "Első szelet"): mondat-átírás drill a lecke-drillben. A
-// `kinds={['transform']}` mintáját a grammarDrillWhy.test.tsx adja (D3, FB290).
+// mondat-átírás drill a lecke-drillben. A
+// `kinds={['transform']}` mintáját a grammarDrillWhy.test.tsx adja (D3).
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 

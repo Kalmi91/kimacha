@@ -1,4 +1,4 @@
-// FB316 (NYELVTAN.md NY10): a `pickTransformRound` egyetlen felelőssége, hogy
+// a `pickTransformRound` egyetlen felelőssége, hogy
 // legfeljebb `size` itemet adjon vissza, a legkevésbé gyakorolt előre sorolva.
 
 import { pickTransformRound } from '@/lib/grammar/transformRounds';

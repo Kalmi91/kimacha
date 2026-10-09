@@ -1,4 +1,4 @@
-// PLAN-fb1001 K4: a Learn kártya beírómezőjében szürke placeholder mondja meg, mit
+// a Learn kártya beírómezőjében szürke placeholder mondja meg, mit
 // kell írni ("Type in Spanish"); a nyelv neve az irány célnyelvéből jön
 // (es→en irányban "Type in English"). Mock-minta: pcicDirection.test.tsx.
 

@@ -1,4 +1,4 @@
-// PLAN-nyelvtan-en 5. lépés: a `to_be` lecke es→en irányban. A tanult nyelv az
+// a `to_be` lecke es→en irányban. A tanult nyelv az
 // angol (a mondatok angolul állnak és angolul olvasódnak fel), a magyarázat és
 // a fordítás a spanyol anyanyelvű tanulónak spanyolul jelenik meg.
 

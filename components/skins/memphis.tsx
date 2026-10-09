@@ -4,7 +4,7 @@ import { Triangle, Zigzag } from '@/components/skins/partsE2';
 import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 
-// PLAN-temak 6E (E2), Memphis: a háttérben cikcakk (b) jobb fent, sárga kör (a téma `yellow` színe,
+// Memphis: a háttérben cikcakk (b) jobb fent, sárga kör (a téma `yellow` színe,
 // tartalék: a papír) bal lent, türkiz (c) háromszög jobb lent. Mind a tartalom mögött áll.
 
 function MemphisBackdrop() {

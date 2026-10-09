@@ -1,4 +1,4 @@
-// PLAN-fb1002d (FB457, FB458): a zárt szócsoportok (alapszámok, napok, hónapok, évszakok, alapszínek, a
+// a zárt szócsoportok (alapszámok, napok, hónapok, évszakok, alapszínek, a
 // legszűkebb család, kérdőszavak) a words-openben egy szinten vannak: az A1-en. Új kártya/átrendezés után
 // is egyben kell maradniuk (a mozgatás az order-t és az id-t nem érinti, csak a fájlt).
 import { openWords } from '../openWords';

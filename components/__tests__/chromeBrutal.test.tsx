@@ -1,4 +1,4 @@
-// NY25: StatusBarStrip, UsageToast és MistakesEntry brutalista palettán
+// StatusBarStrip, UsageToast és MistakesEntry brutalista palettán
 // (SegmentBar / ink vonal / BrutalBox, sarok 0), classic palettán a mai kinézet.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));

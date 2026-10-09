@@ -1,11 +1,11 @@
-// GAMES.md F-1 (K6 DÖNTÉS, 2026-08-26): guards the pos/gender metadata that
+// F-1 (K6 DÖNTÉS, 2026-08-26): guards the pos/gender metadata that
 // the annotation puts into the word JSON files. Four future games
 // (bubble-pop, odd-one-out, conjugation-slot, grammar-choice) group vocabulary
 // by part of speech and grammatical gender, so a missing or invalid value is a
 // silent content bug (a word simply never shows up in its category, or shows
 // up in the wrong one).
 //
-// Scope: the live en branch. PLAN-regi-szavak-ki 7. lépés: the old shared Spanish
+// Scope: the live en branch. The old shared Spanish
 // set (a0..c2.json) and the hu branch are gone; the Spanish side is data/words-open
 // (its pos/gender mapping is covered by data/__tests__/openWords.test.ts).
 
@@ -17,7 +17,7 @@ import type { WordEntry } from '@/data/words';
 const VALID_POS = new Set(['noun', 'verb', 'adj', 'adv', 'pron', 'prep', 'num', 'phrase']);
 const VALID_GENDER = new Set(['m', 'f', 'mf', '-']);
 
-// Play-vágás 7. lépés (2026-09-23): the en branch no longer goes through
+// Play-vágás: the en branch no longer goes through
 // the loader (single en-es pair), so its annotation is checked straight off
 // the JSON files, the same way `svCorpus.test.ts` reads the Swedish track.
 function branchLevel(lang: string, level: string): WordEntry[] {

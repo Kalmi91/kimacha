@@ -15,15 +15,15 @@ interface Props {
   level: string;
   languagePair: string;
   currentCard: string;
-  // FB41: tree tab only, lets the user drag the button to the other side of
+  // tree tab only, lets the user drag the button to the other side of
   // the screen; the chosen side persists (learn_settings.feedback_btn_side).
   draggable?: boolean;
-  // FB173: extra room under the button, for screens that dock something along the
+  // extra room under the button, for screens that dock something along the
   // bottom edge (the learn card's Check bar) which the button would otherwise cover.
   bottomOffset?: number;
 }
 
-// NY19: a modal doboza brutalista palettán BrutalBox, classic palettán a mai kártya.
+// a modal doboza brutalista palettán BrutalBox, classic palettán a mai kártya.
 function ModalBox({ children }: { children: ReactNode }) {
   const g = useGrammarColors();
   if (g.brutal) {
@@ -74,7 +74,7 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
     if (!text.trim()) return;
     setSending(true);
 
-    // Kálmán 2026-08-20: "állítsd be úgy hogy ha feedbackeket kapsz akkor lásd,
+    // User feedback: "állítsd be úgy hogy ha feedbackeket kapsz akkor lásd,
     // hogy melyik kártyáról és melyik verziójú kimachaból kapod". The card was
     // already sent; the build is new. It goes out twice on purpose: `appVersion`
     // is its own field for when the Apps Script grows a column, and the tag is
@@ -124,7 +124,7 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
         {...(draggable ? panResponder.panHandlers : {})}
       >
         {g.brutal ? (
-          // NY19: négyzetes BrutalBox a kitöltéssel a kör helyett.
+          // négyzetes BrutalBox a kitöltéssel a kör helyett.
           <BrutalBox testID="feedback-fab" fill="a" boxStyle={styles.brutalFabBox}>
             <Text style={styles.fabText}>💬</Text>
           </BrutalBox>
@@ -135,7 +135,7 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
 
       <Modal visible={showThanks} transparent animationType="fade">
         <View style={styles.toastOverlay}>
-          {/* FB407 (PLAN-fb0929 6. lépés): a zöld ✅ emoji helyett rajzolt pipa a tokenből,
+          {/* a zöld ✅ emoji helyett rajzolt pipa a tokenből,
               vastag ink keretű, eltolt árnyékos dobozban (neo-brutalista stílus). */}
           <BrutalBox testID="feedback-thanks" fill="a" offset={5} boxStyle={styles.toastBox}>
             <CheckMark size={32} color={g.ink} thickness={7} />
@@ -145,7 +145,7 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
       </Modal>
 
       <Modal visible={visible} transparent animationType="fade">
-        {/* FB143: the dimmed area around the box is the "beside" the learner
+        {/* the dimmed area around the box is the "beside" the learner
             taps, so it closes the keyboard (the modal itself stays open, Cancel
             closes that). */}
         <Pressable style={styles.overlay} onPress={() => Keyboard.dismiss()}>
@@ -210,7 +210,7 @@ const styles = StyleSheet.create({
     elevation: 6,
     zIndex: 100,
   },
-  // FB41: draggable tree-tab button only, override fab's default right:24
+  // draggable tree-tab button only, override fab's default right:24
   // to switch sides (left clears the inherited right, and vice versa).
   fabLeft: {
     left: 24,
@@ -220,7 +220,7 @@ const styles = StyleSheet.create({
     right: 24,
     left: undefined,
   },
-  // NY19: a Pressable átlátszó tartó, a doboz a BrutalBox (52 + 3 px árnyék).
+  // a Pressable átlátszó tartó, a doboz a BrutalBox (52 + 3 px árnyék).
   brutalFab: {
     width: 55,
     height: 55,

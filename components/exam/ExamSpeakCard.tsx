@@ -12,7 +12,7 @@ import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
 import ExamButton from './ExamButton';
 
-// PLAN-vizsga D. szakasz 13. lépés (Kálmán, D1 b + D3): szóbeli tétel a billentyűzet mikrofonjával.
+// szóbeli tétel a billentyűzet mikrofonjával.
 // A tanuló a szövegmező billentyűzetének mikrofon-gombjával mondja el a mondatot, a diktált szöveg a
 // mezőbe kerül; az app összeveti a várt mondattal (lib/exam/dictation.ts). Saját beszédfelismerő,
 // mikrofon-engedély és natív kód nincs. Helyes mondat után NINCS visszajelzés (a vizsga megy
@@ -60,7 +60,7 @@ export default function ExamSpeakCard({ prompt, expected, mode, targetLang, stri
   };
   const missed = result !== null;
 
-  // FB461/FB464: a Check (és hibás válasz után a Next) a billentyűzet fölé dokkolt sáv, ahogy a szókártyán (DockSlot).
+  // a Check (és hibás válasz után a Next) a billentyűzet fölé dokkolt sáv, ahogy a szókártyán (DockSlot).
   const { docked, padBottom } = useDockedAction(
     missed
       ? { label: `${s.card.next} →`, tone: 'next', testID: 'exam-next', onPress: () => onDone(false) }

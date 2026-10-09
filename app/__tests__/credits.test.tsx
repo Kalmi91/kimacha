@@ -1,5 +1,5 @@
-// PLAN-credits.md 2. lépés: a Credits képernyő rendereli a CEFR-J attribúciót, és a
-// Settings-sor a Credits képernyőre navigál. PLAN-regi-szavak-ki 7. lépés: a
+// a Credits képernyő rendereli a CEFR-J attribúciót, és a
+// Settings-sor a Credits képernyőre navigál. A
 // FrequencyWords/OpenSubtitles/CC BY-SA szöveg a régi szólistával együtt kikerült.
 // Mock-minta: app/mistakes/__tests__/report.test.tsx.
 

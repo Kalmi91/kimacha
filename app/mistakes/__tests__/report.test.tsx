@@ -1,4 +1,4 @@
-// PLAN-hibaim.md 3. lépés ("Riport"): empty state, and a loaded batch's
+// empty state, and a loaded batch's
 // wrong-words / review-again (with and without a written lesson) / doubtful
 // sections. Mock-minta: app/(tabs)/__tests__/pcicCardShell.test.tsx.
 

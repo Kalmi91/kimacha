@@ -1,4 +1,4 @@
-// FB357 (grammar:indefinido-10-verbos:drill), Kálmán 2026-09-21: "get rid of
+// User feedback (grammar:indefinido-10-verbos:drill): "get rid of
 // vosotros from exercises". Vosotros stays in the lesson's reference tables
 // (body `table` blocks, lib/grammar/lessonTypes.ts LessonBlock); this module
 // is the ONE place that decides whether a DRILL ITEM counts as a vosotros
@@ -63,7 +63,7 @@ function hasVosotrosPronoun(text: string): boolean {
  * (e.g. presente-regular pr-06, teaching "this isn't it, that's vosotros")
  * is legitimate content, not an exercise that asks for vosotros. `match`
  * (see filterVosotrosPairs below, pair-level not item-level) and `why`
- * (out of FB357's scope, not an item the learner has to conjugate) are
+ * (out of that item's scope, not an item the learner has to conjugate) are
  * never excluded here.
  */
 export function isVosotrosItem(item: GrammarItem): boolean {
@@ -80,7 +80,7 @@ export function isVosotrosItem(item: GrammarItem): boolean {
       return hasVosotrosEnding(item.answer) || hasVosotrosPronoun(item.sentence);
     case 'match':
     case 'why':
-    // PLAN-fb0929 7. lépés (D1): az új fajták (hibakereső, szórend, diktálás) mondatai sosem vosotros-feladatok.
+    // az új fajták (hibakereső, szórend, diktálás) mondatai sosem vosotros-feladatok.
     case 'spot':
     case 'order':
     case 'dictation':

@@ -1,4 +1,4 @@
-// NY19: a Statisztika fül brutalista palettán (BrutalBox kártyák, szegmentált heti
+// a Statisztika fül brutalista palettán (BrutalBox kártyák, szegmentált heti
 // cél sáv), classic palettán a mai kinézet. Mock-minta: settingsPalette.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));

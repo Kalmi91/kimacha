@@ -1,4 +1,4 @@
-// PLAN-vizsga E. szakasz (Kálmán E1 a): a Stats fül "Practice exam" kártyája a próbavizsga belépője.
+// a Stats fül "Practice exam" kártyája a próbavizsga belépője.
 // Szintenként egy gomb (mindkét irányban A1 és A2; az angol irányon a felirat nemzetközi mintát jelöl,
 // nem hivatalosat), a gomb a /mock-exam képernyőre visz, alatta a legutóbbi eredmény
 // vagy a félbehagyott vizsga jelzése. Mock-minta: statsBrutal.test.tsx.

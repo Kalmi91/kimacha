@@ -32,7 +32,7 @@ describe('strictAnswerMatch', () => {
   });
 });
 
-// FB132, Kálmán 2026-08-15: "most spanyolba szeretném ha mostantól kezdve az
+// User feedback: "most spanyolba szeretném ha mostantól kezdve az
 // ékezetek is hibák lennének, pontosan akarom leírni ... de ezt egy ilyen ki be
 // kapcsolható dolognak akarom". Only the accents get stricter, case and
 // punctuation stay forgiven either way.
@@ -60,7 +60,7 @@ describe('strictAnswerMatch with strict accents (FB132)', () => {
   });
 });
 
-// FB137, Kálmán 2026-08-16 (easy:"The engine makes a lot of noise."): "nem hace
+// User feedback (easy:"The engine makes a lot of noise."): "nem hace
 // kellett volna?? ide szerintem rosszat raktam be és elfogadta". Tap-to-order has
 // no typing, so the typing cards' 2-character tolerance must not apply here.
 describe('sentenceBuildMatch (FB137)', () => {
@@ -164,7 +164,7 @@ describe('strictAnswerMatch, German spellings', () => {
   });
 });
 
-// FB215: két jelentésű kártyán mindkét ág helyes válasz.
+// két jelentésű kártyán mindkét ág helyes válasz.
 describe('alternative meanings', () => {
   it('accepts either side of a " / " gloss', () => {
     expect(strictAnswerMatch('padló', 'padló / emelet')).toBe(true);
@@ -206,7 +206,7 @@ describe('eitherArticle (PROMPT-POLICY 5, FB285)', () => {
   });
 });
 
-// FB356 (indefinido-10-verbos): a lecke saját szövege szerint Mexikóban a
+// (indefinido-10-verbos): a lecke saját szövege szerint Mexikóban a
 // vosotros alakot sosem használjuk, mindig ustedes van helyette, de a
 // vosotros-itemek `accept` listája eddig csak a vosotros alakot fogadta el;
 // egy ustedes-t begépelő tanuló jó válasza pirosra ment. A GrammarDrill

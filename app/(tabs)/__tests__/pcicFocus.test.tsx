@@ -1,6 +1,6 @@
-// FB391: a beviteli mező fókuszt kap minden ÚJ PCIC-lapnál (kinyílik a
+// a beviteli mező fókuszt kap minden ÚJ PCIC-lapnál (kinyílik a
 // billentyűzet), de a felfedés után nem nyílik újra. Mock-minta:
-// app/(tabs)/__tests__/pcicSpeak.test.tsx (ugyanaz a FB319 effekt viszi mindkettőt).
+// app/(tabs)/__tests__/pcicSpeak.test.tsx (ugyanaz az effekt viszi mindkettőt).
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -16,7 +16,7 @@ jest.mock('expo-router', () => ({
   },
 }));
 
-// FB350: useDockLift (a PCIC dokkolt sávja) most useSafeAreaInsets-et hív, ami
+// useDockLift (a PCIC dokkolt sávja) most useSafeAreaInsets-et hív, ami
 // SafeAreaProvider nélkül dob; itt a mérete nem számít, csak ne dobjon.
 jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, left: 0, right: 0, bottom: 0 }),

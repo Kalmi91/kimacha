@@ -1,4 +1,4 @@
-// PLAN-fb1005e (FB481/495/496/498): a data/words-open/notes.json (i) magyarázatai: minden kulcs egy
+// a data/words-open/notes.json (i) magyarázatai: minden kulcs egy
 // létező `o<order>` kártya, a szöveg angol, rövid, és a Learn-kártya hozzáfér (PcicItem.note).
 import notes from '../words-open/notes.json';
 import { findPcicItem, setPcicTarget } from '../pcic';

@@ -24,7 +24,7 @@ type Props = {
   children: ReactNode;
 };
 
-// PLAN-temak 2A: a téma dísz-kerete (CardFrame) a kártya körül; dísz nélkül az alap kártya.
+// a téma dísz-kerete (CardFrame) a kártya körül; dísz nélkül az alap kártya.
 export default function CardShell(props: Props) {
   return (
     <SkinCardFrame>
@@ -35,7 +35,7 @@ export default function CardShell(props: Props) {
 
 function CardBody({ compact, chip, chipTone = 'neutral', onPress, colors, children }: Props) {
   const g = useGrammarColors();
-  // NY19: brutalista palettán BrutalBox, a chip matrica (new = b kitöltés).
+  // brutalista palettán BrutalBox, a chip matrica (new = b kitöltés).
   if (g.brutal) {
     return (
       <BrutalBox testID="learn-card" onPress={onPress} boxStyle={[styles.brutalCard, compact && styles.brutalTyping]}>
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     shadowRadius: 12,
     elevation: 4,
   },
-  // FB172, Kálmán 2026-09-06: a rövid, gépelős kártya a tetejéhez simul,
+  // a rövid, gépelős kártya a tetejéhez simul,
   // nem a 260-as minHeight közepére lebeg (ld. TypingCardScreen eredeti
   // kommentje, a viselkedés innen költözött, változatlanul).
   typingCard: {

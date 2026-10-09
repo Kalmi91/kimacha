@@ -1,4 +1,4 @@
-// PLAN-temak 4C: az onboarding új lépései. Sorrend: nyelv -> üdvözlés -> bevezető ("How it works")
+// az onboarding új lépései. Sorrend: nyelv -> üdvözlés -> bevezető ("How it works")
 // -> téma (5 ajánlott) -> szint. A bevezetőn nincs Skip gomb, az első (biztató) pont és a zárósor látszik.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
@@ -115,7 +115,7 @@ describe('Onboarding: bevezető + témás lépés (PLAN-temak 4C)', () => {
     fireEvent.press(screen.getByText("Let's start"));
     const fonts = screen.getAllByText('el carro').map((n) => RN.StyleSheet.flatten(n.props.style).fontFamily);
     // ONBOARDING_SKINS sorrendje: ukiyoe, csillampony, szocreal, brutal, deco
-    // a brutal sor szó-betűje null = a mai rendszer-betű (PLAN-temak 6E 2a), ezért nincs fontFamily
+    // a brutal sor szó-betűje null = a mai rendszer-betű, ezért nincs fontFamily
     expect(fonts).toEqual(['Spectral-Light', 'Fredoka-Medium', 'Playfair-Black', undefined, 'PoiretOne']);
   });
 

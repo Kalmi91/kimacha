@@ -8,7 +8,7 @@ import type { WordImage } from '@/data/wordImages';
 
 type ColorScheme = (typeof Colors)['light'];
 
-// FB481/495/496/498/500: az (i) alatt kinyíló rész. A magyarázat (note) és/vagy a kártya képe;
+// az (i) alatt kinyíló rész. A magyarázat (note) és/vagy a kártya képe;
 // a kép alatt kis forrássor, ami koppintásra megnyitja a kép Commons fájl-oldalát (CC BY / BY-SA
 // forrásmegjelölés: link a forrásra; vágott képnél a sorban „(cropped)” / „(recortada)” jelzés).
 // Ha se kép, se magyarázat nincs, semmi nem renderel.

@@ -1,4 +1,4 @@
-// FB464 (PLAN-fb1002b 12. lépés), Kálmán: „ide is tegyél egy mondat fordítást": a választós (gap) és a jelölős
+// User feedback: „ide is tegyél egy mondat fordítást": a választós (gap) és a jelölős
 // (mark) tétel mondatának fordítása az F-gomb mögött van, ugyanúgy, mint az átírás-tételnél; ha a tételnek
 // nincs `tr`-je (scripts/grammar-translate.py még nem futott), nincs gomb. Kézzel írt `tr`-es fixture.
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));

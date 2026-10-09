@@ -4,7 +4,7 @@ import { Text } from '@/components/KText';
 
 import type { SkinDecor } from '@/components/skins/types';
 
-// PLAN-temak 4D, Csillámpóni: szivárvány-ív (6 sáv) a szó fölött, csillám-pöttyök és csillagok a
+// Csillámpóni: szivárvány-ív (6 sáv) a szó fölött, csillám-pöttyök és csillagok a
 // háttérben, ló-ikon a fejlécben. A szivárvány színei a spec fix színei (nem a téma a / b / c-je),
 // így a Saját mixben, más színekkel is szivárvány marad.
 

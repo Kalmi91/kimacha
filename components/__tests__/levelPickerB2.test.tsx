@@ -1,4 +1,4 @@
-// PLAN-learn-words-open 2. lépés: a szint-választó lap a valódi data/pcic-kel
+// a szint-választó lap a valódi data/pcic-kel
 // (nem mockolt) az en→es iránynál a B2-t is felkínálja, 1022 tétellel; az
 // es→en iránynál a B2 üres, ezért a "0 tétel = nem kínáljuk fel" szűrő kihagyja.
 

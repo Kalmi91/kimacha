@@ -1,4 +1,4 @@
-// NY22: a neo-brutalista drill (2. képernyő): szegmentált progress, combo-matrica
+// a neo-brutalista drill (2. képernyő): szegmentált progress, combo-matrica
 // (csak memóriában, hibánál nullázódik, x2-től látszik), 2x2 válasz-rács, a
 // helyes = a kitöltés + pipa, b kitöltésű visszajelző, "next →" gomb.
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
@@ -54,7 +54,7 @@ describe('GrammarDrill, neo-brutalista (NY22)', () => {
     const options = screen.getAllByTestId('grammar-option');
     expect(StyleSheet.flatten(options[items[0].correctIndex].props.style).backgroundColor).toBe(PALETTE_FILLS.brand.a);
     expect(screen.queryByText('perfect!')).toBeTruthy();
-    // FB403: a közös jó-jelzés (ResultBadge) is ✓-t mutat, ezért a helyes opción belül keressük.
+    // a közös jó-jelzés (ResultBadge) is ✓-t mutat, ezért a helyes opción belül keressük.
     expect(within(options[items[0].correctIndex]).queryByText(' ✓')).toBeTruthy();
     expect(screen.queryByTestId('grammar-combo')).toBeNull();
     fireEvent.press(screen.getByTestId('grammar-next'));
@@ -118,7 +118,7 @@ describe('GrammarDrill, neo-brutalista (NY22)', () => {
     expect(screen.queryAllByText(' ✓').length).toBeGreaterThan(0);
     expect(screen.queryByText('Not quite!')).toBeTruthy();
     fireEvent.press(screen.getByTestId('grammar-next'));
-    // FB423: a leckében két párosítás van; a másodikat hibátlanul oldjuk meg.
+    // a leckében két párosítás van; a másodikat hibátlanul oldjuk meg.
     const second = items.map((r) => r.item).filter((i) => (i as { kind?: string }).kind === 'match')[1] as unknown as {
       id: string;
       pairs: { en: string; es: string }[];
@@ -129,7 +129,7 @@ describe('GrammarDrill, neo-brutalista (NY22)', () => {
       fireEvent.press(screen.getByTestId(`match-right-${secondOrder.indexOf(li)}`));
     });
     fireEvent.press(screen.getByTestId('grammar-next'));
-    // FB420: a párosítás részpontot kap: az első 6 párból 5 (1 elrontott), a második 6/6 = 11/12 (nem 0).
+    // a párosítás részpontot kap: az első 6 párból 5 (1 elrontott), a második 6/6 = 11/12 (nem 0).
     expect(onFinish).toHaveBeenCalledWith(11, 12);
     view.unmount();
   });
@@ -140,7 +140,7 @@ describe('GrammarDrill, neo-brutalista (NY22)', () => {
     expect(dashedCount()).toBe(0);
     fireEvent.press(screen.getByTestId('formCheck'));
     expect(screen.queryByText('Not quite!')).toBeTruthy();
-    // a beviteli doboz + a szaggatott keretű ✗ jelzés (FB403: a rossz válasz alakja is más)
+    // a beviteli doboz + a szaggatott keretű ✗ jelzés (a rossz válasz alakja is más)
     expect(dashedCount()).toBe(2);
     fireEvent.press(screen.getByTestId('grammar-next'));
     expect(onFinish).not.toHaveBeenCalled();
@@ -186,7 +186,7 @@ describe('GrammarDrill, neo-brutalista (NY22)', () => {
     fireEvent.changeText(screen.getByTestId('transform-input'), 'nope');
     expect(dashedCount()).toBe(0);
     fireEvent.press(screen.getByTestId('transform-check'));
-    // a beviteli doboz + a szaggatott keretű ✗ jelzés (FB403)
+    // a beviteli doboz + a szaggatott keretű ✗ jelzés
     expect(dashedCount()).toBe(2);
     expect(screen.queryByText('Correct answer')).toBeTruthy();
     expect(StyleSheet.flatten(screen.getByTestId('transform-next').props.style).backgroundColor).toBe('#111111');

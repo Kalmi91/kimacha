@@ -1,4 +1,4 @@
-// PLAN-vizsga E. szakasz (Kálmán, 2026-10-01): a felület sehol nem ír ki vizsgáztatói vagy vizsga-nevet
+// a felület sehol nem ír ki vizsgáztatói vagy vizsga-nevet
 // (a szakmai kutatásban igen, a felületen nem). Az angol irányon a felirat "nemzetközi minta", nem "hivatalos".
 // Ellenőrzött felület: az i18n `mockExam` blokk (en és es, a függvényekkel együtt), a papírok és készségek
 // nevei, a szerzői utasítások és írás-feladatok. A korpusz-mondatokat nem nézzük (azokban lehet "key" szó).

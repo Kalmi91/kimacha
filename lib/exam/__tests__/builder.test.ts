@@ -1,4 +1,4 @@
-// PLAN-vizsga A. szakasz 2. lépés (4. követelmény, észak-csillag): a tétel-építő CSAK a
+// (4. követelmény, észak-csillag): a tétel-építő CSAK a
 // szint tanult szavaiból és a kész szint-leckékből épít; egy ismeretlen szó sem
 // kerülhet tételbe (a mondatok a lib/knownSentence.ts kapuján mennek át).
 

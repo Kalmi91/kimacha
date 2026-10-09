@@ -1,4 +1,4 @@
-// PLAN-vizsga E. szakasz (Kálmán, 2026-10-01): a próbavizsga pontozása, ahogy a régi
+// a próbavizsga pontozása, ahogy a régi
 // (4afeb8c^) lib/exam/score.ts: tételenként, aztán KÉSZSÉGENKÉNT a készség 25 pontjára skálázva
 // (a telefonos vizsga rövidebb a valódinál), aztán a vizsga átmenési szabálya szerint
 // (lib/exam/mock/types.ts MockRule):

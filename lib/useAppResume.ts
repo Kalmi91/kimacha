@@ -4,7 +4,7 @@ import { router, usePathname } from 'expo-router';
 import { getDb } from '@/lib/database';
 import { loadResumePath, resumablePath, resumeSteps, saveResumePath } from '@/lib/resumeRoute';
 
-// FB470: hidegindításkor a mentett helyre lép (csak ha az onboarding kész és az app a kezdőlapon indult), utána minden folytatható
+// hidegindításkor a mentett helyre lép (csak ha az onboarding kész és az app a kezdőlapon indult), utána minden folytatható
 // képernyő-váltást ment. A mentés a visszaállítás LEZÁRULTA után indul, és a visszaállító navigáció
 // kezdőpontját (a Learn kezdőlapot) nem írja a mentés helyére, mielőtt a navigáció megérkezne: különben a
 // kezdőlap felülírná a mentett helyet. Az `onboardingDone` null, amíg az indulási ellenőrzés fut.

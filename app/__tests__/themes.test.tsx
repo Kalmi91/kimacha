@@ -1,4 +1,4 @@
-// PLAN-temak 4D: a Témák képernyő (app/themes.tsx): a rács 24 témát + a Saját mix belépőt mutatja,
+// a Témák képernyő (app/themes.tsx): a rács 24 témát + a Saját mix belépőt mutatja,
 // csoportonként a spec sorrendjében; a koppintás azonnal ment; egymódú témánál nincs mód-választó.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));

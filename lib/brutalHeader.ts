@@ -3,11 +3,11 @@ import type { TextStyle, ViewStyle } from 'react-native';
 import type { Skin } from '@/constants/Skins';
 import type { GrammarColors } from '@/lib/grammarColors';
 
-// NY25: a natív fejléc (Tabs / Stack screenOptions) brutalista palettán: bg háttér,
+// a natív fejléc (Tabs / Stack screenOptions) brutalista palettán: bg háttér,
 // alul 2,5 px ink vonal, árnyék / elevation nélkül, nagybetűs 500-as ink cím.
 // Classic palettán üres: a mai fejléc marad. (headerShadowVisible: false nem
 // kerül bele, mert az a borderBottomWidth-et is nullázza.)
-// PLAN-temak 4C: a második paraméter az aktív téma; a title-betűje (egyedi betűnél fontWeight nélkül),
+// a második paraméter az aktív téma; a title-betűje (egyedi betűnél fontWeight nélkül),
 // betűköze és kis-/nagybetűs formája a natív fejléc címére kerül.
 export function brutalHeaderOptions(
   g: GrammarColors,

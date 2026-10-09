@@ -19,14 +19,14 @@ export interface UsageStats {
   daysActive: number;
 }
 
-// FB65: weekly study goal, measured against the rolling 7-day usage total.
+// weekly study goal, measured against the rolling 7-day usage total.
 // Default 7 hours a week (the target the user asked for), settable in Settings.
 export const DEFAULT_WEEKLY_GOAL_MINUTES = 420;
 export const MIN_WEEKLY_GOAL_MINUTES = 60;
 export const MAX_WEEKLY_GOAL_MINUTES = 2100; // 35 hours, 5 a day
 export const WEEKLY_GOAL_STEP_MINUTES = 60;
 
-// FB77: daily new-word budget. A topic full of unknown words is overwhelming,
+// daily new-word budget. A topic full of unknown words is overwhelming,
 // so only this many brand-new WORD cards enter the queue per day; the learner
 // can raise it for today with the "+5 new words" button (bonus, see database).
 export const DEFAULT_DAILY_NEW_LIMIT = 10;

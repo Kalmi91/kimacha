@@ -33,10 +33,9 @@ import { EXAM_LEVELS, type ExamItem, type ExamItemResult } from '@/lib/exam/type
 import { examStatusFor } from '@/lib/exam/unlock';
 import type { Sm2Card } from '@/lib/sm2';
 
-// PLAN-vizsga A. szakasz 2. lépés (Kálmán, 2026-10-01): a szintvizsga képernyője.
+// a szintvizsga képernyője.
 // Bevezető -> kérdések (nincs élet; helyes válasz után nincs visszajelzés, hibás után
-// a helyes látszik: A5 c) -> eredmény (átmenéskor gomb a következő szintre, Kálmán
-// dönt: A6 a; bukáskor pontszám + újrapróba). Az eredmény mentése: lib/exam/result.ts.
+// a helyes látszik: A5 c) -> eredmény (átmenéskor gomb a következő szintre, nincs automatikus váltás; bukáskor pontszám + újrapróba). Az eredmény mentése: lib/exam/result.ts.
 
 type Phase = 'loading' | 'locked' | 'empty' | 'intro' | 'running' | 'result';
 
@@ -101,7 +100,7 @@ export default function ExamScreen() {
   const colors = Colors[theme];
   const g = useGrammarColors();
   const s = t();
-  // FB461/FB464: a beírós kérdés Check / Next sávja a billentyűzet fölé dokkol (components/learn/DockSlot.tsx).
+  // a beírós kérdés Check / Next sávja a billentyűzet fölé dokkol (components/learn/DockSlot.tsx).
   const dock = useDockSlot(colors);
   const router = useRouter();
   const params = useLocalSearchParams<{ level?: string }>();
@@ -182,7 +181,7 @@ export default function ExamScreen() {
     const db = getDb();
     const today = localDateString();
     await db.saveExamResult(level, sc.pct, sc.passed, today);
-    // 5. lépés (2b): az elrontott szó-tétel kártyája `again`-nel visszamegy az SM-2 ismétlésbe
+    // az elrontott szó-tétel kártyája `again`-nel visszamegy az SM-2 ismétlésbe
     // (a nyelvtani hibának nincs kártyája, annak az eredmény-lap a lecke-linkje a visszacsatolás).
     // A friss kártyák a memóriában is frissülnek, hogy az újrapróba ne húzza újra a most elrontott szót.
     const back = source ? requeueWrongWords(source.cards, all, today) : [];
@@ -212,13 +211,13 @@ export default function ExamScreen() {
 
   const counts = (skill: ExamItem['skill']) => exam.filter((i) => i.skill === skill).length;
 
-  // 6. lépés (2c): a gyenge szó- (vagy olvasás-)pontnál a tanulófülre vissza, az aktuális szint paklijára.
+  // a gyenge szó- (vagy olvasás-)pontnál a tanulófülre vissza, az aktuális szint paklijára.
   const practiceWords = async () => {
     await getDb().setPcicLevel(level);
     router.back();
   };
 
-  // FB447: a szintvizsga minden részén ott a 💬; a `part` mondja meg a Feedback sheetben, pontosan
+  // a szintvizsga minden részén ott a 💬; a `part` mondja meg a Feedback sheetben, pontosan
   // melyik részről van szó (exam:<szint>:<rész>). Beírós kérdésnél a 💬 a dokkolt sáv fölé kerül.
   const pair = `${source?.target === 'en' ? 'es' : 'en'}→${source?.target ?? 'es'}`;
   const shell = (children: ReactNode, part?: string, bottomOffset?: number) => (
@@ -265,7 +264,7 @@ export default function ExamScreen() {
   }
 
   if (phase === 'result' && score) {
-    // 6. lépés (2c): készségenként pont és %, a gyenge pontoknál link (nyelvtan: a leggyakrabban elrontott
+    // készségenként pont és %, a gyenge pontoknál link (nyelvtan: a leggyakrabban elrontott
     // leckék; szó, olvasás: vissza a tanulófülre ezen a szinten).
     const skills = skillResults(score);
     const isWeak = (skill: ExamItem['skill']) => skills.some((r) => r.skill === skill && r.weak);

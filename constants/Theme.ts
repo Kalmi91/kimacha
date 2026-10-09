@@ -1,4 +1,4 @@
-// Design-tokenek, forrás: DESIGN.md. Új kód csak innen vesz méretet, ne inline számot.
+// Design-tokenek. Új kód csak innen vesz méretet, ne inline számot.
 
 import type { ViewStyle } from 'react-native';
 import Colors from './Colors';

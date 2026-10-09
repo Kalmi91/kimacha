@@ -1,4 +1,4 @@
-// PLAN-temak 2B: minden regisztrált betűhöz van fájl és licenc, a fájlok léteznek és
+// minden regisztrált betűhöz van fájl és licenc, a fájlok léteznek és
 // valódi betűfájlok (nem letöltési hibaoldal).
 
 import { existsSync, readFileSync, statSync } from 'fs';

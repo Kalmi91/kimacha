@@ -6,7 +6,7 @@ describe('backup export/import round-trip (memory db)', () => {
 
   it('exports every table and restores an identical state', async () => {
     await db.setOnboarding('hu', 'en');
-    // Play-vágás 7. lépés: the cards/card_attempts/user_level writers
+    // Play-vágás: the cards/card_attempts/user_level writers
     // (ensureCard, updateCard, recordAttempt, updateLevel) are gone, no
     // app-code caller; __setLevelForTest replaces updateLevel for fixtures.
     (db as any).__setLevelForTest('A1');
@@ -28,7 +28,7 @@ describe('backup export/import round-trip (memory db)', () => {
 
     await db.importAll(payload);
     const roundTrip = await db.exportAll();
-    // Play-vágás 7. lépés: restore forces the active pair to the single
+    // Play-vágás: restore forces the active pair to the single
     // supported one (en-es), so the onboarding row differs from the backup's
     // own hu-en; every other table round-trips byte for byte.
     expect(roundTrip.tables).toEqual({ ...payload.tables, onboarding: [{ id: 1, source: 'en', target: 'es' }] });
@@ -43,7 +43,7 @@ describe('backup export/import round-trip (memory db)', () => {
     expect(await db.getGameProgress('grammar')).toEqual([{ itemId: 'ser-estar:done', state: 'done', data: { correct: 3, total: 3 } }]);
   });
 
-  // Play-vágás 7. lépés: game_scores/game_settings/selected_topic lost their
+  // Play-vágás: game_scores/game_settings/selected_topic lost their
   // last DB method this step (no app-code caller); an older backup (e.g.
   // 4.0.25) can still carry them, and a restore must accept and skip them.
   // Same for the spelling-practice lists (the feature was removed).
@@ -68,14 +68,14 @@ describe('backup export/import round-trip (memory db)', () => {
     expect(() => validateBackupPayload(legacyPayload)).not.toThrow();
 
     await db.importAll(legacyPayload as any);
-    // Play-vágás 7. lépés: restore forces the active pair to en-es; the pt-es
+    // Play-vágás: restore forces the active pair to en-es; the pt-es
     // row is still there and reachable once that pair is active again.
     expect(await db.getOnboarding()).toEqual({ source: 'en', target: 'es' });
     await db.setOnboarding('pt', 'es');
     expect(await db.getGameProgress('grammar')).toEqual([{ itemId: 'ser-estar:done', state: 'done', data: undefined }]);
   });
 
-  // Play-vágás 7. lépés (2026-09-23): the exact scenario the step's own
+  // Play-vágás: the exact scenario the step's own
   // acceptance check names, an older-schema backup whose onboarding/active
   // pair is hu-es restores onto en-es, not onto the pair it was saved with.
   it('forces the active pair to en-es when the backup carries an older pair', async () => {

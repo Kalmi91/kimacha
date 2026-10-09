@@ -2,10 +2,10 @@
 // pick a voice the device actually owns, and hand Android a language tag it can
 // parse.
 //
-// FB144, Kálmán 2026-08-19 (hu→en, word:"brother"): "A fiú testvért nem ejti ki
+// (hu→en, word:"brother"): "A fiú testvért nem ejti ki
 // rendesen". The word ("fiútestvér") and the locale ("hu-HU") both looked right,
 // so the first fix only skipped speaking when the device listed no Hungarian
-// voice. Kálmán asked again on 2026-08-22, and the deeper cause turned up in
+// voice. It was reported again on 2026-08-22, and the deeper cause turned up in
 // expo-speech's own Android module (56.0.3, SpeechModule.kt `speakOut`):
 //
 //     textToSpeech.language = options.language?.let {
@@ -106,12 +106,12 @@ export function speechTag(locale: string): string {
 // es-MX must not be handed the Castilian voice just because it came first in the
 // list. Exact region wins, then any voice of the same language.
 export function voiceIdFor(locale: string): string | undefined {
-  // FB161, Kálmán 2026-08-26 (`word:the grandson`): "megváltoztattad az angol
-  // hangot, mintha más lenne? ha véletlenül igen változtasd vissza". The FB144
+  // (`word:the grandson`): "megváltoztattad az angol
+  // hangot, mintha más lenne? ha véletlenül igen változtasd vissza". The
   // pinning was aimed at Spanish (es-MX, not Castilian) and Hungarian; English
   // only came along for the ride and swapped the familiar system voice for an
   // "enhanced" one. English is therefore left to the engine's own default again;
-  // the locale still goes out, so nothing else about FB144 changes.
+  // the locale still goes out, so nothing else about that fix changes.
   if (baseLanguage(locale) === 'en') return undefined;
   const candidates = voicesByLanguage?.get(baseLanguage(locale));
   if (!candidates?.length) return undefined;
@@ -121,7 +121,7 @@ export function voiceIdFor(locale: string): string | undefined {
   return voice ? String(voice.identifier) : undefined;
 }
 
-// FB152, Kálmán 2026-08-23 (`word:¿Cuándo comes?`): "itt mint ha nem lenne jó a
+// (`word:¿Cuándo comes?`): "itt mint ha nem lenne jó a
 // kiejtés, az s mintha lemaradna". Android's TTS stops the audio stream on the
 // last phoneme boundary, so an utterance that ends in a fricative ("comes",
 // "hablas", "tres") gets its final /s/ clipped, the same complaint people file
@@ -131,7 +131,7 @@ function padForAndroid(text: string): string {
   return Platform.OS === 'android' ? `${text} ` : text;
 }
 
-// Kálmán, 2026-09-28: „valamelyik agent úgy tesztel, hogy kimondja a szavakat".
+// User feedback: „valamelyik agent úgy tesztel, hogy kimondja a szavakat".
 // A web-build böngészős tesztje (headless Chrome, CDP-ről vezérelve) a gép
 // hangszóróján felolvasott mindent. Headless böngészőt senki nem hallgat, ezért
 // ott a felolvasás néma; a befejező callback azért lefut, hogy a képernyő úgy
@@ -166,14 +166,14 @@ export function stop(): void {
   Speech.stop();
 }
 
-// LECKE-SEMA 3.3: a lecke-képernyő stop gombja ezt hívja (ugyanaz a gomb,
+// a lecke-képernyő stop gombja ezt hívja (ugyanaz a gomb,
 // ami elindította a felolvasást, play → stop). `stop()`-tól csak a névben
 // tér el, a képernyő oldalán olvashatóbb, mit csinál a gombnyomás.
 export function stopSpeaking(): void {
   stop();
 }
 
-// FB232, Kálmán 2026-09-11 (word:the fish): „ha sokat lépkedek ki-be az appból
+// User feedback (word:the fish): „ha sokat lépkedek ki-be az appból
 // ... az appnak ment el a hangja". Az Android TTS-motor egy háttérbe küldött,
 // félbehagyott utterance-en meg tud akadni, és utána némán marad. Ezért az app
 // minden állapotváltásánál (háttérbe / vissza előtérbe) leállítjuk a motort:
@@ -190,7 +190,7 @@ export function watchAppStateForSpeech(): () => void {
   };
 }
 
-// FB216: a kevert nyelvű szöveg szakaszonként más hanggal szól (lib/mixedSpeech.ts
+// a kevert nyelvű szöveg szakaszonként más hanggal szól (lib/mixedSpeech.ts
 // vágja szét). A szakaszok egymás UTÁN mennek: minden utterance `onDone`-jában
 // indul a következő, mert két nyelv két hangja párhuzamosan indítva egymásra
 // beszélne. Egy új felolvasás (vagy egy `stop()`) érvényteleníti az előző láncot.

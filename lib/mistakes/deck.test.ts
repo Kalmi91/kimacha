@@ -1,4 +1,4 @@
-// PLAN-hibaim.md 2. lépés (deck.ts teszt): kártya-építés a mintafájlból,
+// (deck.ts teszt): kártya-építés a mintafájlból,
 // session-választás és az előre kijelölt értékelés.
 
 import sample from './__fixtures__/sample.json';
@@ -73,7 +73,7 @@ describe('pickMistakeSession', () => {
 describe('suggestedMistakeGrade', () => {
   it('picks "good" on an exact match', () => {
     expect(suggestedMistakeGrade('Eso está bien.', 'Eso está bien.')).toBe('good');
-    // FB132-style accent forgiveness stays the default (strictAccents off).
+    // Lenient accent forgiveness stays the default (strictAccents off).
     expect(suggestedMistakeGrade('esta bien', 'está bien')).toBe('good');
   });
 

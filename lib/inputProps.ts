@@ -1,7 +1,7 @@
 // Shared TextInput props for every ANSWER field (typing card, practice field,
 // exam typing).
 //
-// FB145, Kálmán 2026-08-18: "azt meg tudod csinálni, hogy az applikációval
+// User feedback: "azt meg tudod csinálni, hogy az applikációval
 // kikapcsoltatod a telefonom auto complitjét? hogy itt felajánlja a szavakat ez
 // zavaró". The fields already carried `autoCorrect={false}`, which only turns
 // off the correction, not the suggestion strip or the autofill popup, so Gboard

@@ -11,18 +11,18 @@ import { BrutalBackButton, Card } from '@/components/grammar/Brutal';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
 import { FONT_LICENSES } from '@/constants/Fonts';
 
-// PLAN-temak 2B: a betű-súlyok (pl. Jost + Jost-Bold) egy családként szerepelnek.
+// a betű-súlyok (pl. Jost + Jost-Bold) egy családként szerepelnek.
 const FONT_CREDITS = Object.values(FONT_LICENSES).filter(
   (f, i, all) => all.findIndex((o) => o.url === f.url) === i,
 );
 
-// NY19: brutalista palettán a szöveg egy BrutalBox kártyában, classic palettán a mai sima elrendezés.
+// brutalista palettán a szöveg egy BrutalBox kártyában, classic palettán a mai sima elrendezés.
 function Wrap({ children }: { children: ReactNode }) {
   const g = useGrammarColors();
   return g.brutal ? <Card testID="credits-card">{children}</Card> : <>{children}</>;
 }
 
-// PLAN-credits.md: word-data attribution screen, entered from Settings.
+// word-data attribution screen, entered from Settings.
 // Pattern follows app/mistakes/index.tsx's header row (back arrow + centered title).
 export default function CreditsScreen() {
   const { theme } = useTheme();
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     lineHeight: 22,
     marginBottom: 20,
   },
-  // PLAN-temak 2B: a betű-licencek bekezdése (a main 1b1c0c6 a régi bodySpaced-et a
+  // a betű-licencek bekezdése (a main 1b1c0c6 a régi bodySpaced-et a
   // gyakorisági forrással együtt kivette; itt ugyanazzal az értékkel él tovább).
   bodySpaced: {
     marginTop: 8,

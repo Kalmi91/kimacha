@@ -1,4 +1,4 @@
-// PLAN-vizsga D. szakasz 13. lépés (Kálmán, D1 b + D3): a szóbeli tétel kártyája. A tanuló a
+// a szóbeli tétel kártyája. A tanuló a
 // billentyűzet mikrofonjával diktál egy szövegmezőbe (a tesztben begépelt szöveg ugyanaz); az app
 // összeveti a várt mondattal. Helyes mondat után nincs visszajelzés, hibás után az eltérő szavak
 // ki vannak emelve, és a "Next" lép tovább. Az ékezet a "Accents count" beállítást követi.

@@ -1,4 +1,4 @@
-// FB470: az app az utolsó folytatható helyet menti, és hidegindításkor oda lép vissza.
+// az app az utolsó folytatható helyet menti, és hidegindításkor oda lép vissza.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 

@@ -1,4 +1,4 @@
-// PLAN-vizsga C. szakasz (Kálmán, 2026-10-01, C3 b): a szintfelmérőben helyesen megválaszolt
+// a szintfelmérőben helyesen megválaszolt
 // szavak tudottnak számítanak, és kimaradnak a tanulásból: az adott words-open kártya SM-2
 // `review` állapotba kerül, a normál első intervallummal (egy "good" válasz, mint a
 // tanulófülön). A hibás vagy kihagyott szó kártyája nem változik; az már `review` kártyát

@@ -1,4 +1,4 @@
-// SZ7 (SZAVAK.md): FB188 névelő-gombsor a PCIC gépelős kártyán. Mock-minta:
+// névelő-gombsor a PCIC gépelős kártyán. Mock-minta:
 // pcicSpeak.test.tsx (db, router, speech, data/pcic).
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
@@ -15,7 +15,7 @@ jest.mock('expo-router', () => ({
   },
 }));
 
-// FB350: useDockLift (a PCIC dokkolt sávja) most useSafeAreaInsets-et hív, ami
+// useDockLift (a PCIC dokkolt sávja) most useSafeAreaInsets-et hív, ami
 // SafeAreaProvider nélkül dob; itt a mérete nem számít, csak ne dobjon.
 jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, left: 0, right: 0, bottom: 0 }),
@@ -23,7 +23,7 @@ jest.mock('react-native-safe-area-context', () => ({
 
 // Egy fix, névelős tétel, hogy a composeAnswer bemenete ellenőrizhető legyen
 // a valódi PCIC-korpusztól függetlenül.
-// PLAN-play 10. lépés: az id "b1-" előtaggal, mert lib/pcicLevels.ts a
+// az id "b1-" előtaggal, mert lib/pcicLevels.ts a
 // szint-szűrést az id-előtagból dönti el (a fül a B1 alap-szinten indul).
 const FIXTURE_ITEM = { id: 'b1-x1', es: 'el perro', en: 'dog', kind: 'word' as const, section: 'Test', order: 0 };
 jest.mock('@/data/pcic', () => ({

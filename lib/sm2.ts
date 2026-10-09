@@ -1,4 +1,4 @@
-// PLAN-pcic 4. lépés: SM-2 (Anki-módszerű) ütemező a PCIC fülhöz. Teljesen
+// SM-2 (Anki-módszerű) ütemező a PCIC fülhöz. Teljesen
 // független a meglévő FSRS `cards` tábla/`lib/sessionQueue.ts` ütemezőtől,
 // itt csak es→en tételek forognak. Tiszta függvények, I/O nélkül; a DB-hívó
 // oldal (lib/database.ts / lib/database.web.ts) tárolja a `Sm2Card`-okat.
@@ -17,10 +17,10 @@ export interface Sm2Card {
   due: string; // 'YYYY-MM-DD', new kártyánál üres string
   lastReview: string | null;
   introducedAt: string | null; // melyik napon lett először kérdezve
-  known?: boolean; // SZ3: Kálmán kézzel »tudott«-nak jelölte; ritka ellenőrzés, a statisztikában ismert
+  known?: boolean; // kézzel »tudott«-nak jelölte; ritka ellenőrzés, a statisztikában ismert
 }
 
-// Kálmán, 2026-09-26: egy helyes válasz elég a graduáláshoz (a korábbi 2 lépés
+// egy helyes válasz elég a graduáláshoz (a korábbi 2 lépés
 // idegesítő volt, ugyanazt a szót kétszer kellett jól leírni). Egy "good" a
 // learning állapotból egyenesen review-ba viszi a kártyát (interval =
 // GRADUATE_INTERVAL_DAYS); "again" változatlanul a menet végére kerül vissza
@@ -186,7 +186,7 @@ export function pickSm2Session(
   return [...dueReview, ...learning, ...newCards];
 }
 
-/** SZ3 (SZAVAK.md, Kálmán döntése 2026-09-18, (b) változat): a szó ismertnek számít,
+/** ((b) változat): a szó ismertnek számít,
  *  ritkán (KNOWN_INTERVAL_DAYS) mégis visszajön ellenőrzésre. Ease érintetlen. */
 export function sm2MarkKnown(card: Sm2Card, today: string): Sm2Card {
   return {

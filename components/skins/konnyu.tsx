@@ -7,7 +7,7 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { useFitFontSize } from '@/lib/fitText';
 import { syllabifyPhrase } from '@/lib/syllables';
 
-// PLAN-temak 6E, Könnyű olvasás: a spanyol szó szótagjai felváltva a / b színnel, alatta a
+// Könnyű olvasás: a spanyol szó szótagjai felváltva a / b színnel, alatta a
 // "ca – rro" sor. Csak spanyol szónál (a `lang` = 'es'); más nyelvű szót, vagy ha nincs nyelv megadva,
 // a dísz nem érint (az alap szó marad). A szó betűmérete a kártya FitText-jével azonos lépcsőzésű.
 

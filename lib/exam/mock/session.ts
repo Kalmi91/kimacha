@@ -1,4 +1,4 @@
-// PLAN-vizsga E. szakasz (Kálmán E4 b): a próbavizsga részenkénti mentése és az eredmény.
+// a próbavizsga részenkénti mentése és az eredmény.
 // A meglévő `game_progress` táblába ír, `mock-exam` játékkulccsal (nincs új tábla és
 // migráció, a backup magától viszi, lásd lib/exam/result.ts mintáját):
 //   - `<irány>-<szint>-session`: a félbehagyott vizsga (mag + a kész papírok válaszai)

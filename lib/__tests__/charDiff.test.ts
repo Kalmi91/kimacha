@@ -10,7 +10,7 @@ describe('charDiff', () => {
     expect(charDiff('quiero', 'quiero').every(d => !d.wrong)).toBe(true);
   });
 
-  // FB84: the dropped letter itself has to show up, not just vanish.
+  // the dropped letter itself has to show up, not just vanish.
   it('marks a letter left out in the middle', () => {
     expect(render('we hve', 'we have')).toBe('we h[a]ve');
   });
@@ -33,7 +33,7 @@ describe('charDiff', () => {
     expect(charDiff('años', 'años', false).some(d => d.wrong)).toBe(false);
   });
 
-  // FB98: the sentence-final punctuation is never the mistake.
+  // the sentence-final punctuation is never the mistake.
   it('does not mark the missing full stop', () => {
     expect(render('Yo trabajo', 'Yo trabajo.')).toBe('Yo trabajo');
     expect(charDiff('Yo trabajo', 'Yo trabajo.').some(d => d.wrong)).toBe(false);
@@ -54,7 +54,7 @@ describe('charDiff', () => {
   });
 });
 
-// FB98: the PCIC grader uses this, it is the only thing standing
+// the PCIC grader uses this, it is the only thing standing
 // between a byte-for-byte comparison and a full stop counting as a mistake.
 describe('stripTrailingPunct', () => {
   it('drops the closing punctuation', () => {
@@ -69,7 +69,7 @@ describe('stripTrailingPunct', () => {
   });
 });
 
-// FB132: with the difficulty switch on, the diff must paint the dropped accent
+// with the difficulty switch on, the diff must paint the dropped accent
 // instead of folding it away, while case stays forgiven.
 describe('charDiff with accents strict (FB132)', () => {
   it('marks a missing accent as a mistake', () => {

@@ -1,8 +1,7 @@
-// FB380 -> FB415 / FB420 / FB421 (PLAN-fb0929 4. lépés, Kálmán 2026-09-29):
-//  - FB415: a lecke %-a az ÖSSZES feladat-fajta átlaga, a meg nem csinált 0;
+//  - a lecke %-a az ÖSSZES feladat-fajta átlaga, a meg nem csinált 0;
 //    a lecke-lista és a lecke-képernyő ugyanazt a számot adja (lessonScore).
-//  - FB420: a párosítás részpontot kap (1 hiba 6 párból = 5/6, nem 0).
-//  - FB421: a félbehagyott feladat elmentődik ("3/10 · 20%"), újranyitva onnan
+//  - a párosítás részpontot kap (1 hiba 6 párból = 5/6, nem 0).
+//  - a félbehagyott feladat elmentődik ("3/10 · 20%"), újranyitva onnan
 //    folytatódik, a jobb eredmény felülírja a régit.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
@@ -46,8 +45,7 @@ const flush = async (times = 3) => {
 // MatchDrillItem), so it is exactly reproducible here.
 const RIGHT_ORDER = shuffleNoFixedPoints(6, hashString('se-match-01'));
 
-// ser-estar's 12 form items minus the 2 vosotros ones (se-form-09/10,
-// FB357), in authored order, buildGrammarRound does not shuffle form items.
+// ser-estar's 12 form items minus the 2 vosotros ones (se-form-09/10), in authored order, buildGrammarRound does not shuffle form items.
 const FORM_ANSWERS = ['soy', 'estoy', 'eres', 'estás', 'es', 'está', 'somos', 'estamos', 'son', 'están'];
 
 const KIND_COUNT = lessonKinds('es', 'ser-estar').length;

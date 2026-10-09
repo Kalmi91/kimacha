@@ -1,4 +1,4 @@
-// PLAN-temak 6E (Könnyű olvasás téma): spanyol szótagoló. Egy szót szótagokra bont úgy, hogy az
+// (Könnyű olvasás téma): spanyol szótagoló. Egy szót szótagokra bont úgy, hogy az
 // eredeti betűk (kis-/nagybetű, ékezet) megmaradnak: syllabify('carro') -> ['ca', 'rro'].
 // Egyszerűsített, de a gyakori szabályokat tudja: diftongus / triftongus egy magban, hiátus
 // (két erős magánhangzó vagy ékezetes í / ú) két szótag, ch / ll / rr / qu / gu(e,i) egy hang,

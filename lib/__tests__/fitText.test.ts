@@ -9,14 +9,14 @@ describe('fitFontSize', () => {
   });
 
   it('a hosszú, törhetetlen szó kisebb lépcsőt kap, mint amennyire kilógna', () => {
-    // FB404: "(justification)" 15 karakter, 32-es betűn ~300 dp, nem fér 226-ba
+    // "(justification)" 15 karakter, 32-es betűn ~300 dp, nem fér 226-ba
     const size = fitFontSize('reason (justification)', { base: 32, width: W });
     expect(size).toBeLessThan(32);
     expect(size * 0.62 * '(justification)'.length).toBeLessThanOrEqual(W);
   });
 
   it('több szóból álló mondat törik, nem zsugorodik feleslegesen', () => {
-    // FB413: "they are going to arrive" két-három sorba törhet 32-esen is
+    // "they are going to arrive" két-három sorba törhet 32-esen is
     expect(fitFontSize('they are going to arrive', { base: 32, width: W, maxLines: 3 })).toBe(32);
   });
 

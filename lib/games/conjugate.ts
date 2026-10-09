@@ -1,11 +1,11 @@
-// GAMES.md 4.7 (F5, conjugation-slot). Verb-form generation: RULE-BASED for
+// (F5, conjugation-slot). Verb-form generation: RULE-BASED for
 // regular -ar/-er/-ir verbs (endings generated, not hand-listed per verb) and
 // a hand-verified TABLE for the 15 core irregulars named in the spec (ser,
 // estar, ir, tener, hacer, poder, decir, ver, dar, saber, querer, venir,
 // poner, salir, haber). K15: Spanish only, callers show "soon" for every
 // other learned language.
 //
-// GAMES.md's own words: "A ragozási alakok tényállítások: ha egy alakban
+// The spec's own words: "A ragozási alakok tényállítások: ha egy alakban
 // bizonytalan vagy, inkább hagyd ki azt az igét vagy igeidőt, mint hogy
 // hibás alakot taníts." So a verb that is NOT in the irregular table and NOT
 // confidently plain-regular (stem-changing e→ie/o→ue/e→i, -uir y-insertion,
@@ -40,7 +40,7 @@ function toForms(tuple: FormTuple): ConjugationForm[] {
 }
 
 // ---------------------------------------------------------------------------
-// The 15 core irregulars (GAMES.md 4.7). Hand-verified, standard Spanish.
+// The 15 core irregulars. Hand-verified, standard Spanish.
 // ---------------------------------------------------------------------------
 
 const IRREGULAR: Record<string, Record<Tense, FormTuple>> = {

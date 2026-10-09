@@ -16,11 +16,11 @@ import { getWebTestParams } from '@/lib/webTestHooks';
 
 type Theme = 'light' | 'dark';
 type ThemeOverride = Theme | 'system';
-// NY20: brutalista palettánál a `theme` a `<paletta>-light|dark` kulcs
+// brutalista palettánál a `theme` a `<paletta>-light|dark` kulcs
 // (Colors['brand-light'] ...), így a meglévő `Colors[theme]` hívók külön
 // átírás nélkül váltanak; classic esetén a mai 'light' | 'dark'. A mód
 // (papír / tinta) az Auto / Light / Dark beállítást követi.
-// PLAN-temak 2A: a többi téma `<téma-id>-<mód>` kulcson (constants/Skins.ts); egy módú
+// a többi téma `<téma-id>-<mód>` kulcson (constants/Skins.ts); egy módú
 // témánál a mód a témáé, az Auto / Light / Dark hatástalan.
 export type ThemeKey = keyof typeof Colors;
 
@@ -31,7 +31,7 @@ export const ThemeContext = createContext<{
   setOverride: (o: ThemeOverride) => void;
   grammarPalette: GrammarPaletteId;
   setGrammarPalette: (p: GrammarPaletteId) => void;
-  // PLAN-temak 2A: az aktív téma (a mentett, vagy régi felhasználónál a paletta szerinti),
+  // az aktív téma (a mentett, vagy régi felhasználónál a paletta szerinti),
   // a Saját mix négy forrása, és a váltásuk (a db-be is mentenek).
   skin: SkinSelection;
   setSkin: (s: SkinSelection) => void;

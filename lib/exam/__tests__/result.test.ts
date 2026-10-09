@@ -1,4 +1,4 @@
-// PLAN-vizsga A. szakasz 2. lépés (A6 a): a szintvizsga eredménye (átment-e, legjobb
+// a szintvizsga eredménye (átment-e, legjobb
 // pontszám, szintenként) a memory DB-n; a natív lib/database.ts ugyanezt a két segédet
 // (lib/exam/result.ts) hívja, ezért ez a teszt a közös viselkedést fedi.
 

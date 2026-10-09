@@ -1,4 +1,4 @@
-// PLAN-pcic 4. lépés: SM-2 (Anki-módszerű) ütemező tiszta függvényei.
+// SM-2 (Anki-módszerű) ütemező tiszta függvényei.
 
 import { sm2NewCard, sm2Review, sm2PreviewDays, pickSm2Session, sm2MarkKnown, addDays, KNOWN_INTERVAL_DAYS, DEFAULT_NEW_LIMIT, type Sm2Card } from '../sm2';
 
@@ -170,7 +170,7 @@ describe('pickSm2Session', () => {
   });
 });
 
-// FB314: a "+10 új szó" gomb a newLimit paramétert emeli meg futásidőben.
+// a "+10 új szó" gomb a newLimit paramétert emeli meg futásidőben.
 describe('pickSm2Session, newLimit határeset (FB314)', () => {
   it('25 új tétel, 20 ma bevezetett: alap keret 0 új, newLimit 30 az 5 maradékot adja, a 20 learning a sor elején marad', () => {
     const newOrder = Array.from({ length: 25 }, (_, i) => `n${i}`);

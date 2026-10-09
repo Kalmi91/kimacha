@@ -13,7 +13,7 @@ import { hashString, shuffleArray } from '@/lib/shuffle';
 import { useTheme } from '@/lib/ThemeContext';
 import ExamButton from './ExamButton';
 
-// PLAN-vizsga A. szakasz 2. lépés (A5 c): mondat-összerakás csempékkel. A kiinduló
+// mondat-összerakás csempékkel. A kiinduló
 // nyelvű mondatot a célnyelvre kell összerakni; a csapda-csempék tanult szavakból jönnek.
 // Helyes építés után nincs visszajelzés (megy tovább), hibás után a helyes mondat látszik.
 type Props = {

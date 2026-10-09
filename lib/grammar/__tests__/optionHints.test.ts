@@ -1,4 +1,4 @@
-// FB410 + FB411 (PLAN-fb0929 5. lépés): a ser/estar "miért" feladat minden szabály-opciója
+// a ser/estar "miért" feladat minden szabály-opciója
 // alatt van kisbetűs példa-sor, négy nyelven.
 import esSerEstar from '@/data/games/grammar/es/ser-estar.json';
 import enToBe from '@/data/games/grammar/en/to-be.json';

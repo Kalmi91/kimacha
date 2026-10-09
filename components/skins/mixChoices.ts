@@ -2,7 +2,7 @@ import { SKIN_DECOR } from '@/components/skins';
 import type { FillPaletteId, GrammarPaletteId } from '@/constants/GrammarPalettes';
 import { SKIN_GROUPS, SKINS, type SkinId } from '@/constants/Skins';
 
-// PLAN-temak 4D: a Saját mix chip-sorainak tartalma (app/theme-mix.tsx).
+// a Saját mix chip-sorainak tartalma (app/theme-mix.tsx).
 
 // Az összes téma a Beállítások csoport-sorrendjében.
 export const SKIN_ORDER: SkinId[] = SKIN_GROUPS.flatMap((group) => group.skins);

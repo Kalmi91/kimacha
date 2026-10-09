@@ -7,7 +7,7 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalBox, actionTextColor, useButtonVariant } from '@/components/grammar/Brutal';
 import { legibleOn } from '@/constants/Skins';
 
-// FB455: a szókártya Check utáni "Didn't know" / "Knew it" felülbíráló gombsora
+// a szókártya Check utáni "Didn't know" / "Knew it" felülbíráló gombsora
 // (PcicRevealedAnswer.tsx) a mondatkártyákon is, ugyanazzal a megjelenéssel. A mondatkártya
 // nem ír SRS-t (K3), ezért itt nincs intervallum-előnézet: a koppintás a kijelzett
 // értékelést (jelvény, keret, Next szín) írja át, a Next utána ezt adja tovább.

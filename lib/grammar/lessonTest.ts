@@ -1,4 +1,4 @@
-// PLAN-vizsga B. szakasz (8. lépés, Kálmán 2026-10-01: B1 b, B2 a, B3 a, B4 a): a nyelvtani
+// a nyelvtani
 // lecke végi teszt. 10 kérdés a lecke SAJÁT tételeiből (a lecke mondatai mehetnek, N1),
 // vegyes fajtával; az átmenés 80% (mint a szintvizsgánál); a teszt NEM számít a lecke
 // %-ába (lib/grammar/lessonScore.ts), külön "Test passed" jelet kap; a bukás nem zár le semmit.
@@ -101,7 +101,7 @@ export function lessonTestPassedTopics(rows: Row[]): Set<string> {
 function hadRound(rows: Row[], topicId: string, kind: GrammarKind): boolean {
   const p = kindProgressFromRows(rows, topicId, kind);
   if (p.best || p.legacy) return true;
-  // A FB290-es "kész" sor: `${topic}:${kind}` (>= 80%-os kör) vagy a régi, egész-lecke sor (`${topic}`).
+  // A "kész" sor: `${topic}:${kind}` (>= 80%-os kör) vagy a régi, egész-lecke sor (`${topic}`).
   return rows.some((r) => r.state === 'done' && (r.itemId === `${topicId}:${kind}` || r.itemId === topicId));
 }
 

@@ -1,5 +1,5 @@
-// GAMES.md 3. (F0): authored-JSON content loading, grammar-choice (4.11) only.
-// Play-vágás 7. lépés (2026-09-23): story/chat/confusables/myth/ccat
+// authored-JSON content loading, grammar-choice (4.11) only.
+// Play-vágás: story/chat/confusables/myth/ccat
 // (4.5/4.6/4.12/4.13/4.10) removed, no caller since their tabs left in
 // earlier steps. The grammar types mirror the JSON format verbatim so a new
 // topic is a pure-data change: add `data/games/grammar/<lang>/<id>.json`,
@@ -16,14 +16,14 @@ import { isVosotrosItem } from '../grammar/vosotros';
 // corpus-resolved word only gets the "isNew" dotted-underline treatment when
 // it is genuinely outside the level's taught vocabulary, not for every word
 // the screen didn't personally track via vocabPool (grammar-choice/confusables
-// don't draw from the pool, GAMES.md 3.6's audit script is their gate instead).
+// don't draw from the pool, the audit script is their gate instead).
 const cumulativeIdsCache = new Map<string, Set<number>>();
 
 export function cumulativeCorpusWordIds(level: Level, lang: string): Set<number> {
   const key = `${lang}:${level}`;
   const cached = cumulativeIdsCache.get(key);
   if (cached) return cached;
-  // PLAN-regi-szavak-ki 5. lépés: a words-open kártyái (id = order), A0 → A1, C1/C2 → B2.
+  // a words-open kártyái (id = order), A0 → A1, C1/C2 → B2.
   const ids = new Set<number>();
   for (const w of getOpenWordsUpToLevel(level)) ids.add(w.id);
   cumulativeIdsCache.set(key, ids);
@@ -40,7 +40,7 @@ export function cumulativeCorpusWordIds(level: Level, lang: string): Set<number>
 // fájl plusz egy sor itt, nem nyolc szerkesztés ebben a fájlban, tehát a két
 // sáv munkája nem ér össze.
 
-// Play-vágás 7. lépés (2026-09-23): story/chat/confusables/myth/ccat fields
+// Play-vágás: story/chat/confusables/myth/ccat fields
 // removed, no caller since their tabs left in earlier steps.
 export interface LanguageContentBundle {
   grammarTopics: GrammarTopicData[];
@@ -68,7 +68,7 @@ function byLang<K extends keyof LanguageContentBundle>(
 // grammar-choice (4.11)
 // ---------------------------------------------------------------------------
 //
-// F3 MEGVALÓSÍTÁSI JEGYZET: the GAMES.md 4.11 example JSON showed `why` as a
+// F3 MEGVALÓSÍTÁSI JEGYZET: the example JSON showed `why` as a
 // single hu-only string plus a `wrong` sub-object. K21/the top-level i18n×4
 // rule need the explanation (why the correct option IS right, and why each
 // wrong option ISN'T) in all 4 native languages, so both are restructured to
@@ -92,7 +92,7 @@ interface GrammarItemBase {
   wrong: GrammarWrongExplanation; // wrong[optionText][lang] = why that option is wrong here
   examples: string[]; // 2 target-language example sentences illustrating the same rule
   /**
-   * FB464: a mondat fordítása négy nyelven (a tanult nyelvi oldal a kitöltött mondat maga); a drill az F-gombbal
+   * a mondat fordítása négy nyelven (a tanult nyelvi oldal a kitöltött mondat maga); a drill az F-gombbal
    * mutatja, mint az átírás-tételnél. Opcionális: scripts/grammar-translate.py tölti, ami még nincs, ott nincs gomb.
    */
   tr?: Lang4;
@@ -105,7 +105,7 @@ export interface GrammarGapItem extends GrammarItemBase {
   options: string[]; // target-language option texts
   correct: number; // index into options
   tense?: { from: TenseId; to: TenseId };
-  /** FB419: 'article' = a névelő-választó (el / la) feladat-készlet tétele, saját gombbal. */
+  /** 'article' = a névelő-választó (el / la) feladat-készlet tétele, saját gombbal. */
   set?: 'article';
 }
 
@@ -113,7 +113,7 @@ export function isArticleSetItem(item: GrammarItem): boolean {
   return (item as GrammarGapItem).set === 'article';
 }
 
-// FB219, Kálmán 2026-09-09 (grammar:clases-de-palabras:drill): „vagy lehetne
+// User feedback (grammar:clases-de-palabras:drill): „vagy lehetne
 // olyan hogy egy momdat és kijelölni az igét vagy a advarbet vagy hogy egy
 // momdat és akkor hol van benne a mi, vagy valami életszerű feladatot". A
 // lyukas mondat izolált szót kérdez; ez a típus egy KÉSZ mondatot ad, és a
@@ -137,7 +137,7 @@ export interface GrammarMarkItem extends GrammarItemBase {
   answerIndex?: number;
 }
 
-// LECKE-SEMA 1-2. szakasz: match/form a body-blokkos LessonV2 új feladat-
+// match/form a body-blokkos LessonV2 új feladat-
 // fajtái, ide is bekerülnek, hogy egy GrammarItem-fogyasztó (a választós
 // játék köre) minden lecke-item-fajtát ismerjen, még ha egyelőre csak a
 // gap/mark kettőt dolgozza is fel (lib/games/grammarChoice.ts szűri ki a
@@ -156,12 +156,12 @@ export function isFormItem(item: GrammarItem): item is FormItem {
   return item.kind === 'form';
 }
 
-// TASK-8 (D4, FB288): a "miért ez a mondat" feladat-fajta.
+// a "miért ez a mondat" feladat-fajta.
 export function isWhyItem(item: GrammarItem): item is WhyItem {
   return item.kind === 'why';
 }
 
-// PLAN-fb0929 7. lépés (D1): a három új feladat-fajta (hibakereső, szórend, diktálás).
+// a három új feladat-fajta (hibakereső, szórend, diktálás).
 export function isSpotItem(item: GrammarItem): item is SpotItem {
   return item.kind === 'spot';
 }
@@ -179,21 +179,21 @@ export function isTrialItem(item: GrammarItem): boolean {
   return (item as { trial?: boolean }).trial === true;
 }
 
-// NY3 (NYELVTAN.md): az igeidő-drill mondat-átírás feladat-fajtája.
+// az igeidő-drill mondat-átírás feladat-fajtája.
 export function isTransformItem(item: GrammarItem): item is TransformItem {
   return item.kind === 'transform';
 }
 
-// LECKE-SEMA D3 (FB290, 2026-09-17): a lecke feladatai fajtánként külön
+// a lecke feladatai fajtánként külön
 // indíthatók (a mondat-feladatok, a párosítás és a ragozás nem egy gombban
 // megy), ehhez kell tudni fajtánként, hány item van egy leckében.
-// FB419 (PLAN-fb0929 5. lépés): 'article' = a névelő-választó (el / la) külön gomb: gap
+// 'article' = a névelő-választó (el / la) külön gomb: gap
 // tételek `set: 'article'` jelöléssel, a saját gombjukon, nem a mondat-feladatok közt.
 export type GrammarKind = 'choice' | 'article' | 'match' | 'form' | 'why' | 'transform' | 'spot' | 'order' | 'dictation';
 
 export function grammarKindCounts(topic: GrammarTopicData): Record<GrammarKind, number> {
   const counts: Record<GrammarKind, number> = { choice: 0, article: 0, match: 0, form: 0, why: 0, transform: 0, spot: 0, order: 0, dictation: 0 };
-  // FB357: the button label counts the round the learner actually plays, so a
+  // the button label counts the round the learner actually plays, so a
   // vosotros item dropped from buildGrammarRound (lib/games/grammarChoice.ts)
   // does not inflate a "Mondatok (N)"-style count.
   for (const item of topic.items as GrammarItem[]) {
@@ -211,10 +211,10 @@ export function grammarKindCounts(topic: GrammarTopicData): Record<GrammarKind, 
   return counts;
 }
 
-// LECKE-SEMA: minden lecke LessonV2 (schema 2); a régi rule/more alak megszűnt.
+// minden lecke LessonV2 (schema 2); a régi rule/more alak megszűnt.
 export type GrammarTopicData = LessonV2;
 
-// Q1 (A1 alapok), GAMES.md 10. szekció token-burn queue.
+// Q1 (A1 alapok), token-burn queue.
 // A2, the past and future the course was missing.
 
 const grammarTopicsByLang: Partial<Record<string, GrammarTopicData[]>> = byLang('grammarTopics');

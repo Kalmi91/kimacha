@@ -1,4 +1,4 @@
-// PLAN-vizsga A. szakasz (Kálmán, 2026-10-01, A3 a): az átmenés 80%, ugyanaz,
+// az átmenés 80%, ugyanaz,
 // mint a feloldás küszöbe és a nyelvtani lecke küszöbe. Egész számokkal számol,
 // hogy 79,9% soha ne kerekedjen 80-ra.
 

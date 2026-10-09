@@ -8,7 +8,7 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
 
-// PLAN-vizsga C. szakasz (C2): a szintfelmérő feleletválasztós kérdése. A koppintás azonnal
+// a szintfelmérő feleletválasztós kérdése. A koppintás azonnal
 // válaszol, visszajelzés nincs (a felmérő nem tanít, és a hossz a válaszoktól függ); az
 // "I don't know" hibának számít, de külön nem büntet.
 type Props = {

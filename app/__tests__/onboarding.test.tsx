@@ -1,10 +1,10 @@
-// PLAN-play 10. lépés: az onboarding üdvözlés után egy szint-lépést kap
-// (Kálmán döntése, s1 anki-ui-terv.html). Ez a screen csak új telepítésnél
+// az onboarding üdvözlés után egy szint-lépést kap
+// Ez a screen csak új telepítésnél
 // fut le egyáltalán (app/_layout.tsx a getOnboarding() alapján dönt), tehát
 // az "csak új telepítés látja" feltétel a root-layout felelőssége, nem ezé a
 // screené; itt a screen SAJÁT lépéseit (nyelv-választás -> üdvözlés ->
 // szint-választás) teszteljük. Mock-minta: app/(tabs)/__tests__/pcicSpeak.test.tsx.
-// PLAN-ketiranyu 4. lépés (2026-09-28): a nyelv-választás lépés a jóváhagyott
+// a nyelv-választás lépés a jóváhagyott
 // vázlat 1-3. pontja szerint bekerült a "Get Started" elé.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
@@ -39,7 +39,7 @@ describe('OnboardingScreen: nyelv- és szint-lépés (PLAN-ketiranyu 4. lépés)
 
     expect(queryByText('Choose level')).toBeNull();
     fireEvent.press(getByText('Get Started'));
-    // PLAN-temak 4C: a "Get Started" után a bevezető és a téma-lépés jön, csak aztán a szint.
+    // a "Get Started" után a bevezető és a téma-lépés jön, csak aztán a szint.
     fireEvent.press(getByText("Let's start"));
     fireEvent.press(getByText('Continue'));
 
@@ -48,7 +48,7 @@ describe('OnboardingScreen: nyelv- és szint-lépés (PLAN-ketiranyu 4. lépés)
     expect(getByText('Beginner')).toBeTruthy();
     expect(getByText('A2')).toBeTruthy();
     expect(getByText('B1')).toBeTruthy();
-    // PLAN-learn-words-open 2. lépés: a B2 is választható (words-open b2.json, 150 tétel).
+    // a B2 is választható (words-open b2.json, 150 tétel).
     expect(getByText('B2')).toBeTruthy();
     expect(getByText('Upper intermediate')).toBeTruthy();
   });
@@ -70,7 +70,7 @@ describe('OnboardingScreen: nyelv- és szint-lépés (PLAN-ketiranyu 4. lépés)
     expect(mockReplace).toHaveBeenCalledWith('/(tabs)');
   });
 
-  // PLAN-vizsga C. szakasz (C1 a): a szint-sorok alatt halk belépő a szintfelméréshez; a sorok maradnak.
+  // a szint-sorok alatt halk belépő a szintfelméréshez; a sorok maradnak.
   it('a szint-lépésen a sorok alatt ott a szintfelmérő-belépő, és a felmérő képernyőjére visz', () => {
     const { getByText, getByTestId } = render(<OnboardingScreen />);
     fireEvent.press(getByText('English'));
@@ -98,11 +98,11 @@ describe('OnboardingScreen: nyelv- és szint-lépés (PLAN-ketiranyu 4. lépés)
     expect(getByText('A1')).toBeTruthy();
     expect(getByText('Principiante')).toBeTruthy();
     expect(getByText('A2')).toBeTruthy();
-    // PLAN-enb1: B1 = en/b1.json, ezért az es→en irányban is felkínált.
+    // B1 = en/b1.json, ezért az es→en irányban is felkínált.
     expect(getByText('B1')).toBeTruthy();
-    // PLAN-esen: A1 = en a0+a1, A2 = en a2, a "még nincs szó" sor nem jelenik meg.
+    // A1 = en a0+a1, A2 = en a2, a "még nincs szó" sor nem jelenik meg.
     expect(queryByText('Todavía no hay palabras.')).toBeNull();
-    // PLAN-learn-words-open 2. lépés: az es→en B2 üres, a "0 tétel = nem kínáljuk fel" szűrő kihagyja.
+    // az es→en B2 üres, a "0 tétel = nem kínáljuk fel" szűrő kihagyja.
     expect(queryByText('B2')).toBeNull();
   });
 

@@ -1,10 +1,10 @@
-// FB149, Kálmán 2026-08-20 (settings-tab): "1 óra után 15 percenként gratuláljon
+// User feedback (settings-tab): "1 óra után 15 percenként gratuláljon
 // az app és. indig más szöveggel. legyen benne valami kreativitás".
 //
-// FB63 fired the daily celebration at 30 and 60 minutes and then went quiet for
+// fired the daily celebration at 30 and 60 minutes and then went quiet for
 // the rest of the day. Past the first hour the day's total keeps crossing a
 // milestone every quarter hour, and those crossings get their own pool of lines
-// (picked at random, so they come back over time like the FB108 midnight pool)
+// (picked at random, so they come back over time like the midnight pool)
 // instead of the single "{min} minutes today" template.
 
 const DAILY_MILESTONES = [30, 60];

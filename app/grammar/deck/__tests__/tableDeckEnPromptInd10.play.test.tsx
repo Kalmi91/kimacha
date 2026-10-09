@@ -1,4 +1,4 @@
-// FB444: a indefinido-10-verbos táblakártyáján a prompt az angol alak ("I went"),
+// a indefinido-10-verbos táblakártyáján a prompt az angol alak ("I went"),
 // nem a puszta "yo"; a spanyol főnévi igenév ("ir") a súgó-gombra jelenik meg.
 // Mock-minta: tableDeckEnPrompt.play.test.tsx.
 

@@ -15,7 +15,7 @@ import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
 import { useSkin } from '@/lib/useSkin';
 
-// PLAN-temak 4D: a témaválasztó. Csoportonként 4 oszlopos rács (a téma háttere, "Aa" a title-betűvel,
+// a témaválasztó. Csoportonként 4 oszlopos rács (a téma háttere, "Aa" a title-betűvel,
 // 5 px-es a-sáv, alatta a név); koppintásra azonnal alkalmazódik. Legfelül a Saját mix belépő; a
 // kétmódú témánál az Auto / Light / Dark választó, az egymódúnál egy sor a helyén; a Neo-brutál
 // alatt a mai 5 al-paletta.
@@ -184,7 +184,7 @@ const styles = StyleSheet.create({
   chevron: { fontSize: 22, fontWeight: '700' },
   modeRow: { flexDirection: 'row', gap: 10, marginBottom: 16 },
   flex1: { flex: 1 },
-  // PLAN-temak 7F (FB428): mód-gomb (3 oszlop): ikon fent (16), kisebb egysoros felirat (11).
+  // mód-gomb (3 oszlop): ikon fent (16), kisebb egysoros felirat (11).
   modeIcon: { fontSize: 16 },
   oneLook: { fontSize: 13, marginBottom: 16 },
   groupTitle: { fontSize: 12, fontWeight: '600', textTransform: 'uppercase', letterSpacing: 1, marginTop: 8, marginBottom: 8 },

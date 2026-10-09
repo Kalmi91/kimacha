@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { getDb } from '@/lib/database';
 
-// PLAN-temak 6E: az y2k (streak-chip) és a gamer (LVL / kombó) díszek valós adatai. Betöltéskor és
+// az y2k (streak-chip) és a gamer (LVL / kombó) díszek valós adatai. Betöltéskor és
 // félpercenként frissülnek (mint a szocreál "Napi terv" sáv); hiba esetén marad a 0.
 const REFRESH_MS = 30000;
 
