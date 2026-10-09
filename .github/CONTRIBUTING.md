@@ -1,89 +1,60 @@
 # Contributing
 
-Kimacha has one long-lived branch, `main`, and it is always releasable.
+Kimacha is maintained by one person and the source is published for viewing and evaluation (see
+[LICENSE](../LICENSE)). Open an issue before anything larger than a small fix. `main` is always releasable.
 
-## Working on a change
-
-Every change goes through a short-lived branch and a pull request. That used to
-be reserved for larger work, because the repository had a single author; with
-two language tracks live at once, a direct push to `main` is what makes the
-other track's next rebase painful, so the branch is not optional any more.
-
-Name the branch after the work, and use the language code when the change
-belongs to one track: `feat/sv-a1-words`, `fix/exam-listening-replay`.
-
-Rebase your branch on `main` rather than merging `main` into it. The word
-corpora are large JSON files, and a merge commit in the middle of them makes
-the history unreadable exactly where it is hardest to review.
-
-The gate is the same either way, so run it before pushing:
+## Setup
 
 ```bash
-npm run typecheck:ci   # tsc --noEmit
-npm run lint           # expo lint
-npm run test:ci        # jest
-```
-
-CI runs the same three on every push to `main` and on every pull request.
-`main` is protected: no force pushes, no deletion, and the checks must pass.
-
-## Who owns what
-
-`.github/CODEOWNERS` routes review by path. Each direction has its own word set:
-there is no corpus shared between tracks, and even A0 is the target language's
-own hundred most useful words, because what a beginner needs differs by language
-and even by direction (hu to en is not en to hu). `data/words-open/` is the
-Spanish track's set; `data/words/<lang>/` is a track's own. A track writes under its own
-directories only (`data/**/<lang>/`, `lib/i18n/<lang>.ts`).
-
-Nobody regenerates a word corpus wholesale: word data cannot be reviewed by eye,
-so a regenerated file is an unreviewable diff.
-
-## First thing after cloning
-
-```bash
+git clone https://github.com/Kalmi91/kimacha.git
+cd kimacha
+npm ci
 git config core.hooksPath .githooks
 ```
 
-That turns on two local guards: agent working documents cannot be committed
-here, no file can be tracked and ignored at the same time, and the commit
-message has to be a Conventional Commit. `Repo hygiene` in CI checks the same
-rules again on every push and pull request, so a missed hook is caught, not
-merged.
+The last line turns on two local guards: Conventional Commit messages, and no agent working documents.
+`Repo hygiene` in CI checks the same rules again.
 
-## Commits
+## The gate
 
-[Conventional Commits](https://www.conventionalcommits.org/), which is what the
-existing history uses:
+Run all three before you push. CI runs them on every pull request.
 
-```
-feat(learn): one Check button, docked above the keyboard
-fix(games): no side effects inside state updaters
-chore(release): 3.1.15 (49)
+```bash
+npm run typecheck:ci   # tsc --noEmit
+npm run lint           # expo lint, 0 errors, no new warnings
+npm run test:ci        # jest
 ```
 
-Scope is the area of the app (`learn`, `games`, `exam`, `grammar`, `web`, `ci`,
-`store`, …) or the language code when the change belongs to one track (`sv`,
-`de`, `en`). Write the subject as what the change does for the user, not what
-the diff touches.
+Try a UI change in the web build (`npm run web`) or on a device too.
+
+## Branches and commits
+
+- One short-lived branch per change, named after the work: `feat/exam-listening-replay`.
+- Open a pull request into `main`. Do not push to `main` directly.
+- Rebase on `main` instead of merging `main` into your branch: merge commits make the large JSON
+  word lists unreadable to review.
+- Commits follow [Conventional Commits](https://www.conventionalcommits.org/) (`feat`, `fix`, `chore`,
+  `docs`, `test`, `refactor`, `build`, `ci`, `perf`, `style`, `revert`). The subject says what the change
+  does for the user: `feat(learn): one Check button, docked above the keyboard`.
+- No AI attribution lines in commit messages or pull request text, such as a `Co-Authored-By` naming
+  an AI or "Generated with". The commit hook and CI reject them in commit messages.
+
+## Data rules
+
+The product rules are in [docs/NORTH-STAR.md](../docs/NORTH-STAR.md). The ones that decide most reviews:
+
+- **Never a sentence with an unknown word.** Every word in an example sentence is taught by that level
+  or carries a gloss, and a sentence stays inside the grammar its level has unlocked.
+  `node scripts/audit-games.mjs` checks lessons against the Spanish deck. CI does not run it.
+- **Data lives in JSON.** Spanish words are in `data/words-open/{a1,a2,b1,b2}.json`, English words in
+  `data/words/en/`, grammar lessons in `data/games/grammar/<lang>/`. The `.ts` files next to them
+  only wire the data up. After editing the Spanish word list run `node scripts/words-open-check.mjs`.
+- **Never regenerate a word list wholesale.** Word data cannot be reviewed by eye: add and edit entries.
+- **Strings exist in English and Spanish** (`lib/i18n/en.ts`, `lib/i18n/es.ts`). Spanish content uses
+  Mexican usage. The vocabulary ceiling is C1.
 
 ## Releases
 
-A release is a `chore(release): X.Y.Z (versionCode)` commit that bumps the
-version in `app.json` and `android/app/build.gradle`, tagged `vX.Y.Z`.
-
-The APK is built locally by the maintainer, not by CI. `android/` is not in this
-repository, and the signing keystore exists only on the maintainer's machine, so
-`.github/workflows/android-release.yml` is manual-dispatch only until both of
-those change.
-
-## Agent working documents
-
-`AGENTS.md`, `BUILD.md`, `GAMES.md`, `BUGS.md` and friends are symlinks into a
-private workspace repository and are not part of this repository. If they are
-missing after a fresh clone, the tooling that reads them will not find them,
-which is expected for anyone but the maintainer.
-
-What those documents carry that a contributor genuinely needs, the product rules
-the code is built to, lives in `docs/NORTH-STAR.md`, which is public and does
-not depend on the symlinks.
+The maintainer cuts releases (version bump in `app.json`, local build, Google Play upload, `vX.Y.Z` tag
+and GitHub Release). The steps are in the README. Security problems go to [SECURITY.md](SECURITY.md),
+not to a public issue.

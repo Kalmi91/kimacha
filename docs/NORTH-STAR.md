@@ -4,11 +4,6 @@ The product rules the code is built to. Everything else in this repository is
 an implementation detail that can change; these are the things a change should
 not quietly break.
 
-The maintainer's day-to-day working documents (`AGENTS.md`, `BUILD.md`,
-`GAMES.md`, `BUGS.md`) are symlinks into a private repository and will be
-missing from your clone. This file is the public stand-in: it carries what a
-contributor actually needs, and it does not depend on those symlinks.
-
 ## One engine, not two
 
 Kimacha is a vocabulary app in which grammar is what you *do* with the words,
@@ -49,15 +44,15 @@ Levels follow XLex-style cumulative bands (A1 around 1200 words, C1 around
 - **Data lives in JSON.** `data/words.ts`, `data/topics.ts` and friends hold
   types, imports and wiring only. A `.ts` file with word data in it will be
   asked to move.
-- **Every user-facing string exists in four languages** (`hu`, `en`, `es`,
-  `de`). A missing translation is a content bug, not a fallback.
+- **Every user-facing string exists in English and Spanish** (`en`, `es`).
+  A missing translation is a content bug, not a fallback.
 - **A word corpus is never regenerated wholesale.** Word data cannot be
   reviewed by eye, so a regenerated file is an unreviewable diff. Add and edit
   entries; do not rewrite the file.
 - **Every direction has its own word set.** There is no corpus shared between
   tracks. Even A0 is the target language's own hundred most useful words, not a
-  common tourist set: what a beginner needs differs by language, and hu to en is
-  not the same list as en to hu. Above A0 a track's words are the ones its exams
+  common tourist set: what a beginner needs differs by language, and es to en is
+  not the same list as en to es. Above A0 a track's words are the ones its exams
   ask for.
 - **Language tracks do not touch each other's files.** A track owns
   `data/**/<lang>/` and `lib/i18n/<lang>.ts`. `data/words-open/` is the Spanish
@@ -68,7 +63,8 @@ Levels follow XLex-style cumulative bands (A1 around 1200 words, C1 around
 
 ## Releases
 
-The APK is built locally by the maintainer and distributed by hand. `android/`
-is not in this repository and the signing key exists on one machine, so the
-release workflow is manual-dispatch only. A contributor never needs to build an
-APK; the gate in `.github/CONTRIBUTING.md` is what a pull request has to pass.
+The maintainer builds releases locally and uploads them to Google Play (the
+steps are in the README). `android/` is hand-maintained (not generated) and is not
+committed, and the signing key stays on the maintainer's machine. A contributor
+never needs to build a release; the gate in `.github/CONTRIBUTING.md` is what a
+pull request has to pass.

@@ -1,5 +1,6 @@
 {
   "name": "kimacha",
+  "description": "Spaced-repetition vocabulary and grammar trainer for learning Spanish and English",
   "main": "expo-router/entry",
   "version": "4.1.1",
   "dependencies": {
@@ -51,6 +52,11 @@
     "test": "jest",
     "test:ci": "jest --ci --coverage --maxWorkers=2",
     "ui:overlap": "node scripts/ui-overlap.mjs"
+  },
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kalmi91/kimacha"
   },
   "private": true
 }

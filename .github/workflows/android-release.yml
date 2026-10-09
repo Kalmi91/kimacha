@@ -1,21 +1,27 @@
 name: Android Release
 
-# Signed Android build + release. The keystore + passwords come from repo Secrets
-# (the user generates the keystore once, see docs/DEVOPS.md "Runtime / user
-# inputs"). Runs on demand; on a v* tag it would also publish a GitHub Release
-# with the signed APK + AAB attached and auto-generated notes.
-# KIKAPCSOLVA a tag-indítás (Kálmán, 2026-09-09). Két dolog hiányzik ahhoz, hogy
-# ez a workflow egyáltalán le tudjon futni, és amíg bármelyik hiányzik, a v* tag
-# push csak egy piros pipát tesz a zöld CI mellé:
-#   1. az `/android` mappa nincs a repóban (`.gitignore`, „generated native
-#      folders"), ezért a `setup-java` gradle-cache lépése nem talál .gradle
-#      fájlt, és ott elhal. A kiadás natív oldala kézzel karbantartott, nem
-#      generált: a `prebuild` tiltott, mert felülírná az aláíró keystore-t.
-#   2. a négy aláíró secret (ANDROID_KEYSTORE_*) nincs feltöltve a repóba.
-# Addig a kiadási út a helyi build + Drive-feltöltés (`/build_kimacha` skill).
-# Visszakapcsolás: állítsd vissza a `push: tags: - 'v*'` blokkot.
+# Signed Android build + release. The keystore and passwords come from repository
+# secrets (ANDROID_KEYSTORE_B64, ANDROID_KEYSTORE_PASSWORD, ANDROID_KEY_ALIAS,
+# ANDROID_KEY_PASSWORD): generate the keystore once and store it base64-encoded.
+# Runs on demand; on a v* tag it would also publish a GitHub Release with the
+# signed APK + AAB attached and auto-generated notes.
+# The tag trigger is switched off (maintainer, 2026-09-09). Two things stop this
+# workflow from running at all, and until both are fixed a v* tag push would only
+# add a red check next to the green CI:
+#   1. `android/` is not in the repository (generated native folders are in
+#      `.gitignore`), so the `setup-java` Gradle cache step finds no Gradle files
+#      when it runs and fails there. The native side of a release is hand-maintained,
+#      not generated: `expo prebuild` would overwrite the signing keystore, so
+#      releases are built locally.
+#   2. The four signing secrets (ANDROID_KEYSTORE_*) are not uploaded to the
+#      repository.
+# Until then, releases are built locally (see the README, "Release process").
+# To switch the tag trigger back on, restore the `push: tags: - 'v*'` block.
 on:
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 concurrency:
   group: android-release-${{ github.ref }}
@@ -28,20 +34,20 @@ jobs:
     permissions:
       contents: write   # create a GitHub Release on v* tags
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262  # v4.4.0
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020  # v4.4.0
         with:
           node-version: 20
           cache: npm
 
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3  # v4.9.1
         with:
           distribution: temurin
           java-version: 17
           cache: gradle
 
-      - uses: android-actions/setup-android@v3
+      - uses: android-actions/setup-android@9fc6c4e9069bf8d3d10b2204b1fb8f6ef7065407  # v3.2.2
 
       - name: Install dependencies
         run: npm ci
@@ -102,7 +108,7 @@ jobs:
             "$RUNNER_TEMP/kimacha-release.aab" "${ANDROID_KEY_ALIAS}"
 
       - name: Upload signed artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4.6.2
         with:
           name: kimacha-release-signed
           path: |
@@ -113,7 +119,7 @@ jobs:
       # On a v* tag, publish a GitHub Release with the signed artifacts attached.
       - name: Publish GitHub Release
         if: startsWith(github.ref, 'refs/tags/v')
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65  # v2.6.2
         with:
           files: |
             ${{ runner.temp }}/kimacha-release.apk
