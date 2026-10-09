@@ -1,6 +1,5 @@
-// Az elrontott SZÓ-tétel kártyája `again` értékeléssel
-// visszakerül az SM-2 ismétlésbe (azonnal esedékes); az elrontott nyelvtani (és olvasás-) tétel
-// nem kap SM-2 változást.
+// The card of a failed WORD item goes back into SM-2 review with an `again` rating (due
+// immediately); a failed grammar (or reading) item gets no SM-2 change.
 
 import { sm2NewCard, sm2Review, type Sm2Card } from '@/lib/sm2';
 import { requeueWrongWords, wrongWordItemIds } from '../requeue';

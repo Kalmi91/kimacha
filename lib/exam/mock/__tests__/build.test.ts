@@ -1,6 +1,6 @@
-// a próbavizsga feladatsor-építője a valódi szint-szavakon
-// (data/words-open es-irányban, data/words/en az en-irányban). A feladatsor a szint
-// szavaiból áll; ugyanaz a seed ugyanazt a vizsgát adja (a részenkénti mentés ebből folytat).
+// The practice exam task-set builder on the real level words
+// (data/words-open in the es direction, data/words/en in the en direction). The task set is made of the level's
+// words; the same seed gives the same exam (part-by-part saving resumes from it).
 
 import { pcicItemsForLevel, setPcicTarget, type PcicItem } from '@/data/pcic';
 import { AVERAGE_PASS_PCT, getMockBlueprint, mockAvailable, MOCK_LEVELS, TOTAL_PASS_POINTS } from '../blueprint';

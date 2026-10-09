@@ -1,24 +1,24 @@
-// az adaptív szintfelmérő lépcsője.
-// Tiszta függvények, I/O nélkül: a hívó (app/placement.tsx) a válaszokat egyenként adja,
-// a kérdéseket a lib/exam/placementQuestions.ts építi.
+// The step of the adaptive placement test.
+// Pure functions, no I/O: the caller (app/placement.tsx) supplies the answers one by one,
+// the questions are built by lib/exam/placementQuestions.ts.
 //
-// Menete: A2-ről indul, lépcsőnként 5 kérdés. Egy szinten a találat 80% fölött (5-ből 4)
-// = feljebb, 40% alatt vagy annyi (5-ből 2) = lejjebb. A köztes eredmény (5-ből 3) még
-// nem dönt: ugyanazon a szinten kap még egy lépcsőt, a két lépcső együtt dönt (10-ből 8+
-// feljebb, 4- lejjebb, a köztes már megáll). Megáll, ha eldőlt két szomszédos szint
-// között, ha a legfelső szintről nincs feljebb, a legalsóról nincs lejjebb, vagy 20
-// kérdésnél. A javasolt szint a legmagasabb nem megbukott szint.
+// Flow: it starts at A2, 5 questions per step. On a level, a result of 80% or more (4 out of 5)
+// = up, 40% or less (2 out of 5) = down. The in-between result (3 out of 5) does not
+// decide yet: the same level gets one more step, and the two steps together decide (8+ out of 10
+// up, 4 or fewer down, in between it stops). It stops when it is decided between two adjacent levels,
+// when there is no level above the top one or below the bottom one, or at 20
+// questions. The suggested level is the highest level that was not failed.
 
 import type { PcicLevel } from '@/data/pcic';
 
 export const PLACEMENT_BLOCK = 5;
 export const PLACEMENT_MAX_QUESTIONS = 20;
 const PLACEMENT_START_LEVEL: PcicLevel = 'A2';
-/** Ennyi %-tól "feljebb" (4/5, 8/10). */
+/** From this % on: "up" (4/5, 8/10). */
 const PLACEMENT_PASS_PCT = 80;
-/** Ennyi %-ig "lejjebb" (2/5, 4/10). */
+/** Up to this %: "down" (2/5, 4/10). */
 const PLACEMENT_FAIL_PCT = 40;
-/** Egy szinten legfeljebb ennyi lépcső (a köztes eredmény egyszer ismétel). */
+/** At most this many steps on one level (the in-between result repeats once). */
 const PLACEMENT_MAX_BLOCKS_PER_LEVEL = 2;
 
 export interface PlacementTally {
@@ -29,20 +29,20 @@ export interface PlacementTally {
 type PlacementVerdict = 'pass' | 'mixed' | 'fail';
 
 export interface PlacementState {
-  /** A mérhető szintek növekvő sorrendben (csak amihez van adat). */
+  /** The measurable levels in ascending order (only those with data). */
   levels: PcicLevel[];
   current: PcicLevel;
   tallies: Partial<Record<PcicLevel, PlacementTally>>;
-  /** Eddig feltett kérdések (a végösszeg nem látszik a felhasználónak, mert a válaszoktól függ). */
+  /** Questions asked so far (the total is not shown to the user, because it depends on the answers). */
   asked: number;
-  /** A jelenlegi lépcsőn eddig megválaszolt kérdések (0..PLACEMENT_BLOCK-1). */
+  /** Questions answered so far on the current step (0..PLACEMENT_BLOCK-1). */
   blockAsked: number;
   done: boolean;
-  /** A javasolt kezdő szint; csak `done` után van. */
+  /** The suggested starting level; only present after `done`. */
   placed: PcicLevel | null;
 }
 
-/** A lépcső kezdőállapota. A kezdő szint az A2, ha nincs rá adat, akkor a legalsó mérhető. */
+/** The initial state of the staircase. The starting level is A2, or if there is no data for it, the lowest measurable one. */
 export function placementStart(levels: PcicLevel[]): PlacementState {
   const current = levels.includes(PLACEMENT_START_LEVEL) ? PLACEMENT_START_LEVEL : levels[0];
   return { levels, current, tallies: {}, asked: 0, blockAsked: 0, done: levels.length === 0, placed: null };
@@ -56,7 +56,7 @@ export function placementVerdict(tally: PlacementTally | undefined): PlacementVe
   return 'mixed';
 }
 
-/** A legmagasabb nem megbukott mért szint; ha mind megbukott (vagy semmi nincs mérve), a legalsó szint. */
+/** The highest measured level that was not failed; if all failed (or nothing is measured), the lowest level. */
 export function placedLevel(state: Pick<PlacementState, 'levels' | 'tallies'>): PcicLevel {
   const ok = state.levels.filter((l) => state.tallies[l] && placementVerdict(state.tallies[l]) !== 'fail');
   return ok.length > 0 ? ok[ok.length - 1] : state.levels[0];
@@ -66,7 +66,7 @@ function settle(state: PlacementState): PlacementState {
   return { ...state, done: true, placed: placedLevel(state) };
 }
 
-/** Egy lépcső végén dönt: marad (ismétel), feljebb, lejjebb, vagy megáll. */
+/** Decides at the end of a step: stay (repeat), up, down, or stop. */
 function decide(state: PlacementState): PlacementState {
   const { levels, current, tallies } = state;
   if (state.asked >= PLACEMENT_MAX_QUESTIONS) return settle(state);
@@ -77,12 +77,12 @@ function decide(state: PlacementState): PlacementState {
     return (tally?.asked ?? 0) < PLACEMENT_BLOCK * PLACEMENT_MAX_BLOCKS_PER_LEVEL ? state : settle(state);
   }
   const next = levels[verdict === 'pass' ? at + 1 : at - 1];
-  // Nincs több szint arra, vagy a szomszéd már le van mérve (onnan jöttünk): eldőlt.
+  // There is no further level in that direction, or the neighbour is already measured (we came from there): it is decided.
   if (!next || tallies[next]) return settle(state);
   return { ...state, current: next };
 }
 
-/** Rögzíti egy kérdés eredményét; a lépcső végén a következő lépést is meghatározza. */
+/** Records the result of a question; at the end of a step it also determines the next move. */
 export function placementAnswer(state: PlacementState, correct: boolean): PlacementState {
   if (state.done) return state;
   const prev = state.tallies[state.current] ?? { asked: 0, correct: 0 };
@@ -96,12 +96,12 @@ export function placementAnswer(state: PlacementState, correct: boolean): Placem
   return decide({ ...next, blockAsked: 0 });
 }
 
-/** Idő előtti lezárás (pl. elfogyott a kérdés-készlet): az eddigi mérésből ad javaslatot. */
+/** Early termination (e.g. the question pool ran out): it gives a suggestion from the measurements so far. */
 export function placementFinish(state: PlacementState): PlacementState {
   return state.done ? state : settle(state);
 }
 
-/** Szintenként a találat az eredmény-képernyőhöz (csak a mért szintek, a szintek sorrendjében). */
+/** The hits per level for the result screen (only the measured levels, in level order). */
 export function placementBreakdown(state: Pick<PlacementState, 'levels' | 'tallies'>): { level: PcicLevel; correct: number; asked: number }[] {
   return state.levels.flatMap((level) => {
     const t = state.tallies[level];

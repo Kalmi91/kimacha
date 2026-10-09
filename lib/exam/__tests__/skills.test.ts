@@ -1,5 +1,5 @@
-// készségenkénti pontozás (pont, %, erős / gyenge) és a
-// gyenge nyelvtanhoz a leggyakrabban elrontott leckék (a lecke-link célja).
+// Per-skill scoring (points, %, strong / weak) and, for weak grammar, the most often
+// failed lessons (the target of the lesson link).
 
 import { scoreExam } from '../score';
 import { MAX_LESSON_LINKS, skillResults, weakLessons } from '../skills';

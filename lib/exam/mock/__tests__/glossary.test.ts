@@ -1,6 +1,6 @@
-// a feladat a szint szavaiból áll, az ISMERETLEN
-// (még nem tanult) szóhoz szójegyzet jár; a tanult szóhoz nem; a hallás szövege nem látszik,
-// ahhoz nincs szójegyzet.
+// The task is made of the level's words; an UNKNOWN (not yet learned) word gets a glossary
+// entry, a learned word does not; the listening text is not shown, so it has
+// no glossary.
 
 import type { PcicItem } from '@/data/pcic';
 import { pcicItemsForLevel, setPcicTarget } from '@/data/pcic';

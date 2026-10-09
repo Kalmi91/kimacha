@@ -1,9 +1,8 @@
-// a vizsga nyelvtani tételei a szint KÉSZ
-// leckéinek lyukas-mondat (gap) tételeiből jönnek (4. követelmény). A lecke maga
-// tanítja a szavait (glossary + a korpusz-audit), ezért a lecke-tételt nem szűrjük
-// a tanult szavak kapuján, mint a szó-példamondatot (lib/exam/builder.ts): a
-// tanuló pont ezeken a mondatokon gyakorolt, és a kapu a leckék szókincsén
-// (data/words) áll, nem a words-open 150 kártyáján.
+// The exam's grammar items come from the gap-sentence items of the level's FINISHED lessons.
+// The lesson itself teaches its words (glossary + the corpus audit), so we do not filter a lesson item
+// through the learned-word gate, as we do with the word example sentence (lib/exam/builder.ts): the
+// learner practised on exactly these sentences, and the gate rests on the lessons' vocabulary
+// (data/words), not on the 150 cards of words-open.
 
 import {
   isDictationItem,
@@ -43,7 +42,7 @@ function isGapChoice(item: GrammarItem): item is GrammarGapItem {
   );
 }
 
-/** A szint kész leckéinek gap tételei (a vosotros-tételek nélkül, mint a lecke-körben). */
+/** Gap items of the level's finished lessons (without the vosotros items, as in the lesson round). */
 export function gapSourcesForLevel(level: PcicLevel, lang: string, doneTopicIds: Iterable<string>): GapSource[] {
   const out: GapSource[] = [];
   for (const topicId of doneLessonsOfLevel(level, lang, doneTopicIds)) {

@@ -1,52 +1,52 @@
-// az irányonkénti, szintenkénti vizsga-alak (papírok, percek, átmenési
-// szabály, tételszámok).
+// The exam shape per direction and per level (papers, minutes, pass
+// rule, item counts).
 //
-// es irány (angolul beszélő tanul spanyolt): a hivatalos A1 / A2 felépítés a régi (4afeb8c^)
-// lib/exam/blueprint.ts-ből (2026-09-08 ellenőrzött kiírások): négy papír készségenként, mind 25
-// pont, két csoport (olvasás + írás, hallás + szóbeli), csoportonként 30 / 50 kell.
+// es direction (English speaker learning Spanish): the official A1 / A2 structure from the old (4afeb8c^)
+// lib/exam/blueprint.ts (specifications verified on 2026-09-08): four papers, one per skill, all 25
+// points, two groups (reading + writing, listening + speaking), 30 / 50 required per group.
 //
-// en irány (spanyolul beszélő tanul angolt): a Kimacha vizsga-kutatása (2026-10-01, a vizsgáztatók
-// saját dokumentumaiból) nemzetközi mintái:
-//  - A1: az írásbeli egy 1 óra 15 perces papír (hallás + olvasás + írás), a szóbeli külön (~3,5 perc);
-//    négy készség x 25 = 100 pont, átmenet 50 / 100, részenkénti minimum nincs: a készségek kompenzálnak;
-//    a hallás első része egyszer, a többi kétszer hallható.
-//  - A2: Olvasás + Írás egy közös 60 perces papír, Hallás ~30 perc (minden szöveg kétszer), szóbeli
-//    8-10 perc páros (a kutatás szerint egyéni forma a reális). Négy készség egyenlő súllyal, az átlag
-//    számít; a küszöböt a vizsgáztató nem publikálja, ezért közelítő érték (AVERAGE_PASS_PCT).
+// en direction (Spanish speaker learning English): international samples from Kimacha's exam research (2026-10-01,
+// from the examiner's own documents):
+//  - A1: the written exam is one 1 hour 15 minute paper (listening + reading + writing), speaking is separate (~3.5 minutes);
+//    four skills x 25 = 100 points, pass 50 / 100, no per-skill minimum: the skills compensate each other;
+//    the first part of listening can be heard once, the rest twice.
+//  - A2: Reading + Writing is one shared 60 minute paper, Listening ~30 minutes (every text twice), speaking
+//    8-10 minutes in pairs (according to the research an individual format is the realistic one). Four skills with equal
+//    weight, the average counts; the examiner does not publish the threshold, so it is an approximate value (AVERAGE_PASS_PCT).
 //
-// A telefonos feladatsor rövidebb a valódinál, ezért egy készség nyers találata a 25 pontjára
-// skálázódik (lib/exam/mock/score.ts). A felület sehol nem ír ki védjegyes nevet.
+// The phone task set is shorter than the real one, so the raw hits of a skill are
+// scaled to its 25 points (lib/exam/mock/score.ts). The UI never prints a trademarked name.
 
 import type { MockLevel, MockRule, MockSkill, MockTarget } from './types';
 
 /**
- * DÖNTÉS KELL (2026-10-01): az angol A2 átmenési küszöbe százalékban. A vizsgáztató nem publikál
- * pass-mark-ot (a kutatás: nyers-pont küszöb a 120-as skálaponthoz ⚠ nem ellenőrzött), ezért ez egy
- * közelítő alapérték, a felületen "approximate" jelzéssel. Egy helyen állítható.
+ * Open question (2026-10-01): the English A2 pass threshold in percent. The examiner does not publish a
+ * pass mark (the research: a raw-score threshold for the 120 scale score ⚠ not verified), so this is an
+ * approximate default, labelled "approximate" in the UI. Adjustable in one place.
  */
 export const AVERAGE_PASS_PCT = 70;
 
-/** Az angol A1 összpont-küszöbe 100-ból (a kutatás szerint a hivatalos: 50). */
+/** The English A1 total-score threshold out of 100 (according to the research, the official one: 50). */
 export const TOTAL_PASS_POINTS = 50;
 
 interface MockCounts {
-  /** A mondat célnyelvi szószáma legfeljebb ennyi (a szint nyelvtanán belül marad). */
+  /** The target-language word count of a sentence is at most this (it stays within the level's grammar). */
   maxWords: number;
   readPassages: number;
   readMatch: number;
   readTrueFalse: number;
-  /** Az igaz/hamis szöveg mondatszáma, és ebből az igaz állítások száma. */
+  /** The sentence count of a true/false text, and of that the number of true statements. */
   readTextSentences: number;
   readTrue: number;
   readGaps: number;
-  /** Begépelős (nyílt) hézagok az olvasásban. */
+  /** Typed (open) gaps in reading. */
   readGapType: number;
   listenMc: number;
   listenMatch: number;
   listenDialogue: number;
-  /** Hallás utáni jegyzet-kiegészítés (begépelős hézag felvétellel). */
+  /** Note completion after listening (a typed gap with a recording). */
   listenFill: number;
-  /** Diktált mondatok száma (0 = nincs diktálás). */
+  /** Number of dictated sentences (0 = no dictation). */
   dictationSentences: number;
 }
 
@@ -58,15 +58,15 @@ interface MockPaperSpec {
   placeholder?: boolean;
 }
 
-/** Melyik feladat-kiosztás tartozik a vizsgához (lib/exam/mock/build.ts). */
+/** Which task allocation belongs to the exam (lib/exam/mock/build.ts). */
 type MockPlan = 'es-official' | 'en-a1' | 'en-a2';
 
 interface MockBlueprint {
   plan: MockPlan;
-  /** Hivatalos felépítés (spanyol) vagy nemzetközi minta (angol): a felület másképp jelöli. */
+  /** Official structure (Spanish) or international sample (English): the UI labels it differently. */
   official: boolean;
   papers: MockPaperSpec[];
-  /** A készségek neve a célnyelven. */
+  /** The names of the skills in the target language. */
   skillNames: Record<MockSkill, string>;
   rule: MockRule;
   counts: MockCounts;
@@ -103,8 +103,8 @@ const ES_COUNTS: Record<MockLevel, MockCounts> = {
   },
 };
 
-// Angol A1: 5 rövid közlés (egyszer), diktálás (2 mondat), 4 hallás utáni hézag; olvasás: 5 feleletválasztós hézag,
-// 3 szöveg, 5 begépelős hézag; írás: két szerzői üzenet (lib/exam/mock/author.ts).
+// English A1: 5 short announcements (once), dictation (2 sentences), 4 gaps after listening; reading: 5 multiple-choice gaps,
+// 3 texts, 5 typed gaps; writing: two authored messages (lib/exam/mock/author.ts).
 const EN_A1_COUNTS: MockCounts = {
   maxWords: 8,
   readPassages: 3,
@@ -121,8 +121,8 @@ const EN_A1_COUNTS: MockCounts = {
   dictationSentences: 2,
 };
 
-// Angol A2: olvasás 6 szöveg, párosítás, igaz/hamis, 6 feleletválasztós és 6 begépelős hézag; hallás 5 rövid
-// közlés, 5 hallás utáni hézag, párbeszéd, párosítás; írás: két szerzői üzenet.
+// English A2: reading 6 texts, matching, true/false, 6 multiple-choice and 6 typed gaps; listening 5 short
+// announcements, 5 gaps after listening, a dialogue, matching; writing: two authored messages.
 const EN_A2_COUNTS: MockCounts = {
   maxWords: 12,
   readPassages: 6,
@@ -139,7 +139,7 @@ const EN_A2_COUNTS: MockCounts = {
   dictationSentences: 0,
 };
 
-// es irány: a papír-nevek spanyolul.
+// es direction: the paper names are in Spanish.
 const ES_NAMES: Record<MockSkill, string> = {
   reading: 'Comprensión de lectura',
   writing: 'Expresión e interacción escritas',
@@ -154,7 +154,7 @@ const EN_NAMES: Record<MockSkill, string> = {
   speaking: 'Speaking',
 };
 
-// A régi blueprint.ts percei: es A1 45 / 25 / 25 / 10, es A2 60 / 45 / 40 / 12.
+// The minutes of the old blueprint.ts: es A1 45 / 25 / 25 / 10, es A2 60 / 45 / 40 / 12.
 const ES_MINUTES: Record<MockLevel, Record<MockSkill, number>> = {
   A1: { reading: 45, writing: 25, listening: 25, speaking: 10 },
   A2: { reading: 60, writing: 45, listening: 40, speaking: 12 },

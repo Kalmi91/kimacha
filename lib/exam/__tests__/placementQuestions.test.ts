@@ -1,5 +1,5 @@
-// a szintfelmérő kérdései a valódi
-// data/words-open készletből és a szintek nyelvtani leckéiből, mindkét irányban.
+// The placement questions are built from the real data/words-open set and the grammar
+// lessons of each level, in both directions.
 
 import { PCIC_LEVELS, pcicItemsForLevel, setPcicTarget, type PcicItem, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import {
@@ -49,7 +49,7 @@ describe('buildPlacementQuestion: szó-kérdés', () => {
       expect(q.options).toHaveLength(4);
       expect(new Set(q.options.map(norm)).size).toBe(4);
       expect(q.options[q.correctIndex]).toBe(meaning.trim());
-      // Azonos írású másik szó jelentése nem lehet csapda (az is jó válasz lenne).
+      // The meaning of another word with the same spelling cannot be a trap (it would also be a correct answer).
       const homographMeanings = items
         .filter((i) => i.id !== item.id && norm((target === 'es' ? i.es : i.en).split(' / ')[0]) === norm(q.word))
         .map((i) => norm(target === 'es' ? i.en : i.es));
@@ -59,7 +59,7 @@ describe('buildPlacementQuestion: szó-kérdés', () => {
       used.add(placementQuestionKey(q));
       built++;
     }
-    // Az utolsó néhány szónak nincs elég csapdája csak ha a készlet szinte üres; itt a szint szavainak (szinte) mind kérdés lesz.
+    // The last few words lack enough traps only when the pool is almost empty; here (nearly) all of the level's words become questions.
     expect(built).toBeGreaterThanOrEqual(items.length - 5);
     expect(used.size).toBe(built);
   });
@@ -109,7 +109,7 @@ describe('buildPlacementQuestion: nyelvtan és sorrend', () => {
     expect(pool.gaps.length).toBeGreaterThan(10);
     const used = new Set<string>();
     const kinds: string[] = [];
-    // 4 lépcsőnyi (20) kérdés ugyanazon a szinten.
+    // Four steps' worth (20) of questions on the same level.
     for (let n = 0; n < 20; n++) {
       const q = buildPlacementQuestion({ level: 'A1', position: n % 5, target: 'es', pool, used, seed: 5 }) as PlacementQuestion;
       expect(q).toBeDefined();

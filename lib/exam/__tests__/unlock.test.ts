@@ -1,5 +1,5 @@
-// a szintvizsga
-// akkor nyílik, ha a szint kártyáinak 80%-a TANULT (SM-2 `review`) ÉS van kész szint-lecke.
+// The level exam opens when 80% of the level's cards are LEARNED (SM-2 `review`) AND
+// there is a finished level lesson.
 
 import { pcicItemsForLevel, setPcicTarget } from '@/data/pcic';
 import { syllabusForLevel } from '@/lib/grammar/syllabus';
@@ -91,7 +91,7 @@ describe('examStatusFor (a valódi A1 words-open pakli + a kész leckék)', () =
   });
 
   it('a fajtánkénti sorok közül csak a teljesen kész lecke számít (doneGrammarTopicProgress)', () => {
-    // presente-regular fajtái közül csak egy kész: nem kész lecke.
+    // Only one of the presente-regular task kinds is done: the lesson is not finished.
     const partial = [{ itemId: 'presente-regular:choice', state: 'done', data: { correct: 1, total: 1 } }];
     expect(examStatusFor('A1', 'es', a1().map(review), partial).lessonDone).toBe(false);
   });

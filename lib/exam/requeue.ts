@@ -1,18 +1,17 @@
-// az elrontott SZÓ-tétel kártyája
-// visszakerül az SM-2 ismétlésbe: `again` értékelést kap (azonnal esedékes, a tanulófül
-// következő menetében előkerül), mintha a tanulófülön rontotta volna el. A8 a: az elrontott
-// NYELVTANI tételnek nincs SM-2 kártyája, ott csak lecke-link jön az eredményen
-// (lib/exam/skills.ts), ezért ez a modul a nyelvtani, olvasás- és szóbeli tételt nem érinti.
+// The card of a failed WORD item goes back into SM-2 review: it gets an `again` rating (due
+// immediately, it comes up in the Learn tab's next round), as if the learner had failed it on the Learn tab.
+// A failed GRAMMAR item has no SM-2 card, there only a lesson link appears on the result
+// (lib/exam/skills.ts), so this module does not touch grammar, reading or speaking items.
 
 import { sm2Review, type Sm2Card } from '@/lib/sm2';
 import type { ExamItemResult } from './types';
 
-/** A hibásan megoldott szó-tételek kártya-azonosítói, egyszer-egyszer, a vizsga sorrendjében. */
+/** Card ids of the word items solved wrongly, once each, in exam order. */
 export function wrongWordItemIds(results: ExamItemResult[]): string[] {
   const ids: string[] = [];
   for (const { item, correct } of results) {
     if (correct || item.skill !== 'words') continue;
-    // A párosítás egy tétel: elrontva mind a négy szava visszamegy (a hibás párt a tétel nem különíti el).
+    // Matching is one item: if failed, all four of its words go back (the item does not isolate the wrong pair).
     if (item.kind === 'match') ids.push(...item.itemIds);
     else if (item.kind === 'word_type' || item.kind === 'sent_order' || item.kind === 'sent_type') ids.push(item.itemId);
   }
@@ -20,8 +19,8 @@ export function wrongWordItemIds(results: ExamItemResult[]): string[] {
 }
 
 /**
- * A visszaküldendő kártyák: a hibás szavak meglévő SM-2 kártyája `again` értékeléssel, `today`-re
- * esedékesen. Amelyiknek nincs kártyája, azt kihagyja (vizsgába csak kártyás, tanult szó kerül).
+ * The cards to send back: the existing SM-2 card of the wrong words with an `again` rating, due
+ * `today`. A word without a card is skipped (only learned words that have cards get into the exam).
  */
 export function requeueWrongWords(cards: Sm2Card[], results: ExamItemResult[], today: string): Sm2Card[] {
   const byId = new Map(cards.map((c) => [c.itemId, c]));

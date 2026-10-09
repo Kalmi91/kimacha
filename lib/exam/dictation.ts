@@ -1,60 +1,59 @@
-// a szóbeli tétel a billentyűzet
-// mikrofonjával megy, az app saját beszédfelismerőt nem használ. A diktált szöveg egy szövegmezőbe
-// kerül; ez az összevető a diktált szöveget veti össze a várt mondattal és megmondja, mely szavak
-// térnek el (explicit visszajelzés). Tiszta függvény, a próbavizsga szóbeli része és a későbbi
-// beszéd-gyakorló is ezt használja.
+// The speaking item works through the keyboard's microphone; the app has no speech recognizer of its own.
+// The dictated text goes into a text field; this comparer compares the dictated text with the expected
+// sentence and tells which words differ (explicit feedback). A pure function, also used by the speaking
+// part of the practice exam and by the later speaking practice.
 //
-// Szabály: kis- és nagybetű, valamint írásjel nem számít (a billentyűzet maga teszi a pontot és a
-// nagybetűt). Az ékezet a meglévő "Accents count" beállítást követi (lib/pcicMatch.ts): bekapcsolva
-// az ékezethiba hiba, kikapcsolva nem; az ñ külön betű, nem ékezet (año ≠ ano). A spanyol
-// mondat elején álló alany-névmás elhagyható (mint a begépelt mondatnál).
+// Rule: case and punctuation do not count (the keyboard itself inserts the period and the
+// capital letter). Accents follow the existing "Accents count" setting (lib/pcicMatch.ts): when on,
+// an accent error is an error, when off it is not; ñ is a separate letter, not an accent (año ≠ ano). A Spanish
+// sentence-initial subject pronoun may be omitted (as with a typed sentence).
 
 import { withoutLeadingSubjectPronoun } from '@/lib/pcicMatch';
 
 export interface DictationWord {
-  /** A szó ahogy a mondatban áll (a hozzá tapadó írásjellel együtt, a megjelenítéshez). */
+  /** The word as it appears in the sentence (with its attached punctuation, for display). */
   text: string;
-  /** Igaz, ha a másik oldalon van párja; hamis = eltérő (várt oldalon: hiányzik, diktált oldalon: felesleges). */
+  /** True if it has a match on the other side; false = differs (on the expected side: missing, on the dictated side: extra). */
   ok: boolean;
 }
 
 export interface DictationResult {
-  /** Minden szó egyezik (a beállított szabály szerint). */
+  /** Every word matches (under the configured rule). */
   correct: boolean;
-  /** A várt mondat szavai, `ok: false` = az a szó nem hangzott el (vagy más szó hangzott el helyette). */
+  /** The words of the expected sentence, `ok: false` = that word was not said (or a different word was said instead). */
   expected: DictationWord[];
-  /** A diktált szöveg szavai, `ok: false` = felesleges vagy téves szó. */
+  /** The words of the dictated text, `ok: false` = an extra or wrong word. */
   heard: DictationWord[];
-  /** A várt mondatból hiányzó szavak, a mondat sorrendjében. */
+  /** Words missing from the expected sentence, in sentence order. */
   missing: string[];
-  /** A diktált szövegből a várt mondatba nem illő szavak, az elhangzás sorrendjében. */
+  /** Words of the dictated text that do not fit the expected sentence, in the order they were said. */
   extra: string[];
 }
 
 interface DictationOptions {
-  /** A "Accents count" beállítás: igaz = az ékezet számít. */
+  /** The "Accents count" setting: true = accents count. */
   strictAccents: boolean;
-  /** Spanyol célnyelvnél igaz: a mondat eleji alany-névmás elhagyható. */
+  /** True for a Spanish target language: a sentence-initial subject pronoun may be omitted. */
   subjectDrop?: boolean;
 }
 
-// Írásjel, ami sosem hiba (a billentyűzet teszi, vagy a tanuló nem mondja ki). Az aposztróf és a
-// kötőjel marad (angolul "don't", "well-known" a szó része), mint a lib/pcicMatch.ts-ben.
+// Punctuation that is never an error (the keyboard inserts it, or the learner does not say it). The apostrophe and the
+// hyphen stay (in English "don't" and "well-known" are part of the word), as in lib/pcicMatch.ts.
 const PUNCT = /[¿?¡!.,;:…"“”«»()[\]{}\u2014\u2013]/g;
 
 function foldAccents(s: string): string {
-  // Az ñ külön betű: NFD előtt védjük, különben "año" és "ano" egynek számítana.
+  // ñ is a separate letter: we protect it before NFD, otherwise "año" and "ano" would count as the same.
   return s.normalize('NFC').replace(/ñ/g, '\uE000').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\uE000/g, 'ñ');
 }
 
-/** A szó összevetési kulcsa: kisbetű, írásjel nélkül, ékezet-szigor KI mellett ékezet nélkül. */
+/** The comparison key of a word: lower case, no punctuation, and with strict accents OFF, no accents. */
 function keyOf(token: string, strictAccents: boolean): string {
-  // A gördülő aposztróf (’) a billentyűzettől jöhet, ugyanaz, mint az egyenes.
+  // The curly apostrophe (’) may come from the keyboard; it is the same as the straight one.
   const lower = token.toLowerCase().replace(/[’‘]/g, "'").replace(PUNCT, '').trim();
   return strictAccents ? lower.normalize('NFC') : foldAccents(lower);
 }
 
-/** A szöveg szavai: szóközzel tördelve, a csak írásjelből (vagy magányos kötőjelből, aposztrófból) álló darabok nélkül. */
+/** The words of the text: split on spaces, without pieces made only of punctuation (or a lone hyphen or apostrophe). */
 function tokens(text: string, strictAccents: boolean): { text: string; key: string }[] {
   return text
     .split(/\s+/)
@@ -62,7 +61,7 @@ function tokens(text: string, strictAccents: boolean): { text: string; key: stri
     .filter((t) => /[^-']/.test(t.key));
 }
 
-/** A leghosszabb közös részsorozat: melyik várt és diktált szónak van párja (a sorrendet megtartva). */
+/** The longest common subsequence: which expected and dictated words have a match (keeping the order). */
 function alignedPairs(expected: string[], heard: string[]): Set<string> {
   const n = expected.length;
   const m = heard.length;
@@ -101,13 +100,13 @@ function diff(heardText: string, expectedText: string, strictAccents: boolean): 
   return { correct: missing.length === 0 && extra.length === 0 && exp.length > 0, expected, heard: heardWords, missing, extra };
 }
 
-/** A diktált szöveg összevetése a várt mondattal; az eltérő szavak mindkét oldalon megjelölve. */
+/** Compares the dictated text with the expected sentence; differing words are marked on both sides. */
 export function compareDictation(heard: string, expected: string, options: DictationOptions): DictationResult {
   const full = diff(heard, expected, options.strictAccents);
   if (full.correct || !options.subjectDrop) return full;
   const short = withoutLeadingSubjectPronoun(expected);
   if (short && diff(heard, short, options.strictAccents).correct) {
-    // A névmás nélküli mondat is jó: a hiányzó névmás nem hiba, minden szó párosítva.
+    // A sentence without the pronoun is fine too: the missing pronoun is not an error, every word is matched.
     return { correct: true, expected: full.expected.map((w) => ({ ...w, ok: true })), heard: full.heard.map((w) => ({ ...w, ok: true })), missing: [], extra: [] };
   }
   return full;

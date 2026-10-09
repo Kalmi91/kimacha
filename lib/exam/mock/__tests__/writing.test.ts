@@ -1,7 +1,7 @@
-// Az írás-pontozás ne legyen laza.
-// Üres, egyszavas, értelmetlen ("asdf"), ismételt szavas vagy a feladat szövegéből bemásolt válasz
-// NEM kap pontot; a jó válasz magas pontot kap; a pontozás arányos marad (a félig jó válasz fél
-// pontot, a rövid de őszinte válasz a tartalmi pontokat kapja, a szószám-jegyet nem).
+// Writing scoring must not be lax.
+// Empty, one-word, nonsense ("asdf"), repeated-word or answers pasted from the task text get NO
+// points; a good answer gets high points; scoring stays proportional (a half-good answer gets half the
+// points, a short but honest answer gets the content points but not the word-count mark).
 
 import { PCIC_LEVELS, pcicItemsForLevel, setPcicTarget } from '@/data/pcic';
 import { MOCK_WRITING } from '../author';
@@ -30,7 +30,7 @@ const GOOD =
 
 const scoreMsg = (text: string, lexicon: ReadonlySet<string> | undefined = LEX_ES) => scoreMockTask(message, { text }, { lexicon });
 
-// 40 különböző, de értelmetlen "szó" (magánhangzós, nem betűhalmaz, nincs a szótárban).
+// 40 distinct but meaningless "words" (with vowels, not a jumble of letters, not in the dictionary).
 const GIBBERISH = Array.from({ length: 40 }, (_, i) => `${['zo', 'ku', 'fe', 'bi', 'nu'][i % 5]}${['kafe', 'lupo', 'minu', 'torka'][i % 4]}${['xa', 'qui', 'zo', 'vu', 'ye', 'jo', 'ha', 'wu'][(i * 3) % 8]}`).join(' ');
 
 describe('írás-üzenet: ami NEM kap pontot', () => {
@@ -100,7 +100,7 @@ describe('írás-üzenet: a jó válasz magas pontot kap, a pontozás arányos',
     const r = scoreMsg(half);
     expect(r.correct).toBeGreaterThanOrEqual(2);
     expect(r.correct).toBeLessThan(r.total);
-    expect(r.items[r.items.length - 1].ok).toBe(true); // a szószám megvan
+    expect(r.items[r.items.length - 1].ok).toBe(true); // the word count is met
   });
 
   it('a feladat szövegének természetes visszhangja (a "fines de semana" kifejezés) nem veszi el a pontot', () => {
@@ -130,7 +130,7 @@ describe('űrlap: kitöltve ÉS értelmes értékkel', () => {
   });
 
   it('mezőnként a fajtának megfelelő érték kell', () => {
-    expect(checkField(fields.nombre, 'Ana')).toBe(false); // nombre y apellidos: két szó
+    expect(checkField(fields.nombre, 'Ana')).toBe(false); // nombre y apellidos: two words
     expect(checkField(fields.nombre, 'Ana Kovács')).toBe(true);
     expect(checkField(fields.nombre, 'asdf asdf')).toBe(false);
     expect(checkField(fields.nombre, 'Ana 3')).toBe(false);
@@ -145,7 +145,7 @@ describe('űrlap: kitöltve ÉS értelmes értékkel', () => {
     expect(checkField(fields.correo, 'ana@example.com')).toBe(true);
     expect(checkField(fields.nivel, 'zz')).toBe(false);
     expect(checkField(fields.nivel, 'a1')).toBe(true);
-    expect(checkField(fields.direccion, 'Calle Ficticia')).toBe(false); // szám nélkül nem cím
+    expect(checkField(fields.direccion, 'Calle Ficticia')).toBe(false); // without a number it is not an address
     expect(checkField(fields.direccion, 'qwerty 1234')).toBe(false);
     expect(checkField(fields.nacionalidad, 'asdf')).toBe(false);
     expect(checkField(fields.nacionalidad, 'húngara')).toBe(true);
@@ -166,7 +166,7 @@ describe('papír szinten: az értelmetlen írás 0 pont, a jó 25', () => {
     expect(pts(answers(asdfForm, 'asdf '.repeat(60)))).toBe(0);
     expect(pts(answers(asdfForm, `${(msgTask as MockShortMessageTask).prompt} ${(msgTask as MockShortMessageTask).prompt}`))).toBe(0);
     expect(pts(answers(goodForm, GOOD))).toBe(25);
-    // Félig kitöltve fél körüli pont: a jó űrlap + üres üzenet = 7 / 12 jegy.
+    // Half filled in gives about half the points: the good form + an empty message = 7 / 12 marks.
     const half = pts(answers(goodForm, ''));
     expect(half).toBeGreaterThan(0);
     expect(half).toBeLessThan(25);

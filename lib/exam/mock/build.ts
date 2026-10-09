@@ -1,14 +1,14 @@
-// a próbavizsga feladatsorának építője.
-// A régi (4afeb8c^) lib/exam/buildMockExam.ts kézzel írt JSON-ból és a régi szókészletből
-// épített; ez a szint szavaiból (a hívó adja a `pcicItemsForLevel` tételeit) és a tételek
-// példamondataiból. A tanult-állapot NEM számít: a feladatsor a szint szavaiból áll, az
-// ismeretlen szóhoz a felület szójegyzetet ad (lib/exam/mock/glossary.ts). Ugyanaz a seed
-// ugyanazt a vizsgát adja (a részenkénti mentés ebből tud folytatni).
+// Builder of the practice exam task set.
+// The old (4afeb8c^) lib/exam/buildMockExam.ts built from hand-written JSON and the old vocabulary;
+// this one builds from the level's words (the caller supplies the `pcicItemsForLevel` items) and the
+// items' example sentences. The learned state does NOT matter: the task set is made of the level's words, and for an
+// unknown word the UI gives a glossary (lib/exam/mock/glossary.ts). The same seed
+// gives the same exam (part-by-part saving can resume from it).
 //
-// A feladat-kiosztást a blueprint `plan`-ja adja (lib/exam/mock/blueprint.ts): a spanyol hivatalos
-// alak, az angol A1 és az angol A2 más-más feladatokat és papír-beosztást kér.
+// The task allocation comes from the blueprint `plan` (lib/exam/mock/blueprint.ts): the official Spanish
+// shape, English A1 and English A2 each ask for different tasks and paper layouts.
 //
-// Tiszta modul: nincs adatbázis, nincs betöltött korpusz, a hívó adja az adatot.
+// Pure module: no database, no loaded corpus, the caller supplies the data.
 
 import type { PcicItem } from '@/data/pcic';
 import { hashString, shuffleArray, shuffleOptions } from '@/lib/shuffle';
@@ -32,7 +32,7 @@ import {
 interface MockBuildInput {
   target: MockTarget;
   level: MockLevel;
-  /** A szint kártyái (`pcicItemsForLevel`, az aktív irányé). */
+  /** The level's cards (`pcicItemsForLevel`, those of the active direction). */
   items: PcicItem[];
   seed: number;
 }
@@ -49,14 +49,14 @@ const ARTICLE: Record<MockTarget, RegExp> = {
   es: /^(el|la|los|las|un|una)\s+/i,
   en: /^(to|the|a|an)\s+/i,
 };
-// Számnév, névmás, elöljáró és kötőszó több válaszra is illene: azok sem gazda, sem csapda a hézagokban.
+// Numerals, pronouns, prepositions and conjunctions would fit several answers: they are neither a host nor a trap in the gaps.
 const AMBIGUOUS_POS = new Set(['num', 'pron', 'prep', 'conj']);
 
 export function sentenceWords(sentence: string): string[] {
   return sentence.replace(PUNCT, ' ').split(/\s+/).filter(Boolean);
 }
 
-/** A tétel célnyelvi alakja névelő / "to" és zárójel nélkül, egy szavas formában; különben null. */
+/** The item's target-language form without article / "to" and parentheses, as a single word; otherwise null. */
 export function singleWordForm(item: PcicItem, target: MockTarget): string | null {
   const raw = (target === 'es' ? item.es : item.en).split(' / ')[0].replace(/\(.*?\)/g, '').trim();
   const bare = raw.replace(ARTICLE[target], '').trim().toLowerCase();
@@ -64,7 +64,7 @@ export function singleWordForm(item: PcicItem, target: MockTarget): string | nul
   return bare;
 }
 
-/** A mondatban a szó egyetlen előfordulása helyén `___`; ha nincs vagy többször van, null. */
+/** The sentence with the word's single occurrence replaced by `___`; null if it is absent or occurs more than once. */
 function gapSentence(sentence: string, word: string): string | null {
   const tokens = sentence.split(/\s+/);
   const hits: number[] = [];
@@ -78,7 +78,7 @@ function gapSentence(sentence: string, word: string): string | null {
   return tokens.join(' ');
 }
 
-/** Egy lyukas mondat: a gazda mondat, a hézagos szöveg, a kihagyott szó és (ha kérték) a 3 válasz. */
+/** A gap sentence: the host sentence, the gapped text, the omitted word and (if requested) the 3 answers. */
 interface GapEntry {
   sentence: Sentence;
   text: string;
@@ -89,10 +89,10 @@ interface GapEntry {
 
 type MockBody = MockTask extends infer T ? (T extends MockTask ? Omit<T, 'id' | 'instruction' | 'skill'> : never) : never;
 
-/** A feladat kész váza: az id-t és az utasítást a papír-összeállítás adja (a sorszám a papíron belüli helyből jön). */
+/** The finished skeleton of a task: the id and the instruction come from the paper assembly (the number comes from its position within the paper). */
 interface Draft {
   skill: MockSkill;
-  /** Az utasítás fajtája; az authored feladatnál null (ott a szerzői szöveg marad). */
+  /** The kind of instruction; null for an authored task (the authored text stays there). */
   instruction: MockInstructionKind | null;
   task: MockTask;
 }
@@ -106,8 +106,8 @@ export function buildMockExam(input: MockBuildInput): MockExam {
   const key = `${target}:${level}:${seed}`;
   const rank = (part: string) => hashString(`${key}:${part}`);
 
-  // Mondat-készlet: a szint kártyáinak példamondata, a szint nyelvtanán belül (szószám-plafon),
-  // a kiinduló nyelvi mondatok egyediek (nem lesz két egyforma válasz-lehetőség).
+  // Sentence pool: the example sentences of the level's cards, within the level's grammar (word-count cap),
+  // the source-language sentences are unique (no two identical answer options).
   const seenSource = new Set<string>();
   const pool: Sentence[] = [];
   for (const it of shuffleArray(items, rank('pool'))) {
@@ -133,7 +133,7 @@ export function buildMockExam(input: MockBuildInput): MockExam {
     }
     return out;
   };
-  // Rossz válasz-lehetőségek: bármely más mondat kiinduló nyelvi alakja (nem kell "elhasználni").
+  // Wrong answer options: the source-language form of any other sentence (it need not be "used up").
   const decoys = (avoid: Sentence[], n: number, part: string): Sentence[] => {
     const skip = new Set(avoid.map((s) => s.itemId));
     return shuffleArray(
@@ -146,7 +146,7 @@ export function buildMockExam(input: MockBuildInput): MockExam {
     return { options, correct: correctIndex };
   };
 
-  // --- Hézagos mondatok: előre lefoglalva, mert kevés mondat alkalmas (egy szavas, egyszer szereplő célszó).
+  // --- Gap sentences: reserved up front, because few sentences qualify (single-word, a target word that occurs once).
   const gapWordOf = new Map<string, string>();
   for (const it of items) {
     const w = singleWordForm(it, target);
@@ -180,8 +180,8 @@ export function buildMockExam(input: MockBuildInput): MockExam {
         ),
         rank(`gapw:${s.itemId}`),
       );
-      // Az egyik csapda azonos szófajú (hihető), a másik más szófajú (nyelvtanilag nem illik), hogy
-      // ne legyen két egyformán jó válasz.
+      // One trap has the same part of speech (plausible), the other a different one (does not fit grammatically), so
+      // that there are not two equally good answers.
       const same = others.filter((i) => host?.pos && i.pos === host.pos);
       const diff = others.filter((i) => !(host?.pos && i.pos === host.pos));
       const picked = [same[0], diff[0], same[1], diff[1]].filter((i): i is PcicItem => !!i).slice(0, 2);
@@ -196,14 +196,14 @@ export function buildMockExam(input: MockBuildInput): MockExam {
   const gapTypeHosts = reserveGaps(c.readGapType, false);
   const gapListenHosts = reserveGaps(c.listenFill, false);
 
-  // --- Feladat-vázak (az id-t és az utasítást az összeállítás adja).
+  // --- Task skeletons (the id and the instruction come from the assembly).
   const draft = (skill: MockSkill, instruction: MockInstructionKind, task: MockBody): Draft => ({
     skill,
     instruction,
     task: { id: '', instruction: '', skill, ...task } as MockTask,
   });
 
-  // Olvasás: két mondatos szöveg, a jó válasz a két mondat kiinduló nyelvi fordítása.
+  // Reading: a two-sentence text, the right answer is the source-language translation of the two sentences.
   const readMc = (): Draft | null => {
     const passages: MockReadMcTask['passages'] = [];
     for (let k = 0; k < c.readPassages; k++) {
@@ -216,7 +216,7 @@ export function buildMockExam(input: MockBuildInput): MockExam {
     return passages.length ? draft('reading', 'read_mc', { kind: 'read_mc', passages }) : null;
   };
 
-  // Mondatok párosítása a jelentésükkel (egy jelentés több), olvasva vagy hallva.
+  // Matching sentences to their meanings (one extra meaning), read or heard.
   const matchDraft = (kind: 'match' | 'listen_match', n: number, part: string, plays?: number): Draft | null => {
     const picked = take(n);
     if (picked.length < 3) return null;
@@ -239,7 +239,7 @@ export function buildMockExam(input: MockBuildInput): MockExam {
     return draft(kind === 'match' ? 'reading' : 'listening', kind, body);
   };
 
-  // Háromsoros szöveg, állítások (az igaz a szöveg mondatának fordítása, a hamis másé).
+  // A three-line text and statements (a true one is the translation of a sentence from the text, a false one of another).
   const trueFalse = (): Draft | null => {
     const text = take(c.readTextSentences);
     if (text.length < 2) return null;
@@ -262,7 +262,7 @@ export function buildMockExam(input: MockBuildInput): MockExam {
   const gapType = (): Draft | null =>
     gapTypeHosts.length >= 2 ? draft('reading', 'gap_type', { kind: 'gap_type', gaps: gapTypeHosts.map((g) => ({ text: g.text, answer: g.word, hint: g.word[0] })) }) : null;
 
-  // Hallás után kitöltött hézag: a mondatokat felolvassák, a képernyőn a lyukas szöveg áll.
+  // Gap filled after listening: the sentences are read aloud, the gapped text is on screen.
   const listenFill = (plays: number): Draft | null =>
     gapListenHosts.length >= 2
       ? draft('listening', 'listen_fill', {
@@ -273,7 +273,7 @@ export function buildMockExam(input: MockBuildInput): MockExam {
         })
       : null;
 
-  // Rövid közlések / párbeszéd: soronként egy kérdés ("mit hallottál").
+  // Short announcements / dialogue: one question per line ("what did you hear").
   const listenDraft = (kind: 'listen_mc' | 'listen_dialogue', n: number, part: string, plays: number): Draft | null => {
     const picked = take(n);
     if (picked.length < 2) return null;
@@ -285,7 +285,7 @@ export function buildMockExam(input: MockBuildInput): MockExam {
     return draft('listening', kind, body);
   };
 
-  // Diktálás: a mondatokat szó szerint le kell írni (hallás ÉS írás pont).
+  // Dictation: the sentences must be written down verbatim (counts as a listening AND a writing mark).
   const dictation = (plays: number): Draft | null => {
     if (c.dictationSentences <= 0) return null;
     const picked = take(c.dictationSentences);
@@ -293,7 +293,7 @@ export function buildMockExam(input: MockBuildInput): MockExam {
     return draft('listening', 'dictation', { kind: 'dictation', audio: picked.map((s) => s.target), plays, text: picked.map((s) => s.target).join(' ') });
   };
 
-  // --- Az írás: a szerzői feladatok (utasítással, tartalmi pontokkal); a sorszámot az összeállítás adja.
+  // --- Writing: the authored tasks (with instruction and content points); the number comes from the assembly.
   const writing: Draft[] = (MOCK_WRITING[`${target}:${level}`] ?? []).map((w) => ({
     skill: 'writing' as const,
     instruction: null,
@@ -309,7 +309,7 @@ export function buildMockExam(input: MockBuildInput): MockExam {
       listenDraft('listen_dialogue', c.listenDialogue, 'ld', DEFAULT_PLAYS),
     ];
   } else if (bp.plan === 'en-a1') {
-    // A hallás első része egyszer, a diktálás és a hézagok kétszer hallhatók; a papír sorrendje: hallás, olvasás, írás.
+    // The first part of listening can be heard once, the dictation and the gaps twice; paper order: listening, reading, writing.
     drafts.listening = [listenDraft('listen_mc', c.listenMc, 'lm', 1), dictation(DEFAULT_PLAYS), listenFill(DEFAULT_PLAYS)];
     drafts.reading = [gapMc(), readMc(), gapType()];
   } else {
@@ -322,7 +322,7 @@ export function buildMockExam(input: MockBuildInput): MockExam {
     ];
   }
 
-  // --- Papírok: a papír készségeinek feladatai egymás után, a feladat sorszáma a papíron belüli helye.
+  // --- Papers: the tasks of the paper's skills one after another, a task's number is its position within the paper.
   const papers: MockPaper[] = bp.papers.map((spec) => {
     const tasks: MockTask[] = [];
     for (const skill of spec.skills) {
@@ -340,7 +340,7 @@ export function buildMockExam(input: MockBuildInput): MockExam {
   return { target, level, seed, official: bp.official, papers, skillNames: bp.skillNames, rule: bp.rule };
 }
 
-/** A feladatsor tartalmi ujjlenyomata: a mentett vizsga csak akkor folytatható, ha ugyanezt a sort kapjuk vissza. */
+/** The content fingerprint of the task set: a saved exam can be resumed only if we get this same set back. */
 export function mockExamSignature(exam: MockExam): string {
   return String(hashString(JSON.stringify(exam.papers.map((p) => p.tasks))));
 }
