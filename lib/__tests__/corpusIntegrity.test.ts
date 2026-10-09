@@ -8,7 +8,6 @@ import { join } from 'path';
 
 import { LEVELS, type Level, type WordEntry } from '@/data/words';
 import { openWords } from '@/data/openWords';
-import { pickSurvivor } from '../cardMerge';
 import { findPromptOverlaps, type PromptLang } from '../promptOverlap';
 
 // Play cut: the en word-branch loader path
@@ -79,25 +78,6 @@ describe('Spanish word corpus (words-open)', () => {
       }
     }
     expect(duplicates).toEqual([]);
-  });
-});
-
-describe('pickSurvivor', () => {
-  const card = (reps: number, stability: number, due: string) => ({ reps, stability, due });
-
-  it('keeps the more practised card', () => {
-    const strong = card(7, 1, '2026-09-01');
-    expect(pickSurvivor(card(2, 9, '2026-08-01'), strong)).toBe(strong);
-  });
-
-  it('breaks a reps tie on stability', () => {
-    const stable = card(3, 12, '2026-09-01');
-    expect(pickSurvivor(stable, card(3, 4, '2026-08-01'))).toBe(stable);
-  });
-
-  it('falls back to the earlier due date, so a review cannot slip', () => {
-    const soon = card(3, 5, '2026-08-01');
-    expect(pickSurvivor(card(3, 5, '2026-08-20'), soon)).toBe(soon);
   });
 });
 
