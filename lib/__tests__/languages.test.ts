@@ -1,4 +1,4 @@
-import { isPairSupported, needsPairCorrection, FORCED_PAIR, speechLang, supportedPairs, languages } from '../languages';
+import { needsPairCorrection, FORCED_PAIR, speechLang, supportedPairs, languages } from '../languages';
 import { getOpenWordsForLevel } from '@/data/openWords';
 
 describe('languages', () => {
@@ -32,23 +32,6 @@ describe('languages', () => {
     });
   });
 
-  describe('isPairSupported', () => {
-    it('accepts the active en-es pair', () => {
-      expect(isPairSupported('en', 'es')).toBe(true);
-    });
-
-    it('rejects a same-language pair', () => {
-      expect(isPairSupported('es', 'es')).toBe(false);
-    });
-
-    it('rejects a pair involving a language no longer offered (hu/de/fr/pt)', () => {
-      expect(isPairSupported('es', 'hu')).toBe(false);
-      expect(isPairSupported('en', 'de')).toBe(false);
-      expect(isPairSupported('es', 'fr')).toBe(false);
-      expect(isPairSupported('pt', 'en')).toBe(false);
-    });
-  });
-
   // PLAN-ketiranyu 4. lépés: a régi (onboarding kész, pár nélküli/elavult
   // pár) állapot en-es-nek számít, a FORCED_PAIR ezt kényszeríti ki
   // (app/_layout.tsx needsPairCorrection); az új es-en párt NEM javítja át.
@@ -59,6 +42,11 @@ describe('languages', () => {
 
     it('egy elavult pár (pl. régi hu-es ág) javításra szorul', () => {
       expect(needsPairCorrection({ source: 'hu', target: 'es' })).toBe(true);
+    });
+
+    it('önmagával vagy ismeretlen céllal alkotott pár javításra szorul', () => {
+      expect(needsPairCorrection({ source: 'es', target: 'es' })).toBe(true);
+      expect(needsPairCorrection({ source: 'en', target: 'de' })).toBe(true);
     });
 
     it('az en-es pár nem szorul javításra', () => {
@@ -72,7 +60,6 @@ describe('languages', () => {
 
   describe('speechLang', () => {
     it('maps a known code to its BCP-47 locale', () => {
-      expect(speechLang('hu')).toBe('hu-HU');
       expect(speechLang('en')).toBe('en-US');
     });
 

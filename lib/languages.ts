@@ -22,10 +22,6 @@ export const supportedPairs: [string, string][] = [
   ['es', 'en'],
 ];
 
-export function isPairSupported(source: string, target: string): boolean {
-  return supportedPairs.some(([s, t]) => s === source && t === target);
-}
-
 // Play-vágás 7. lépés (2026-09-23): the pair onboarding is forced to whenever
 // it drifts from the single supported pair, whether at startup (an older
 // install still on hu-es/es-hu/hu-en/...) or after a backup restore (an
@@ -33,7 +29,7 @@ export function isPairSupported(source: string, target: string): boolean {
 export const FORCED_PAIR = { source: 'en', target: 'es' } as const;
 
 export function needsPairCorrection(pair: { source: string; target: string }): boolean {
-  return !isPairSupported(pair.source, pair.target);
+  return !supportedPairs.some(([s, t]) => s === pair.source && t === pair.target);
 }
 
 // Full BCP-47 locales for text-to-speech, i.e. what iOS wants. Android cannot
@@ -47,12 +43,7 @@ const SPEECH_LOCALE: Record<string, string> = {
   // celular). A phone without an es-MX voice falls back to the best Spanish
   // voice it has, see voiceIdFor in lib/speech.ts.
   es: 'es-MX',
-  hu: 'hu-HU',
   en: 'en-US',
-  de: 'de-DE',
-  fr: 'fr-FR',
-  sv: 'sv-SE',
-  pt: 'pt-PT',
 };
 
 export function speechLang(code: string): string {

@@ -48,16 +48,12 @@ export default function TabLayout() {
         // sit between the learn card's docked Check and the keys. It steps aside
         // while typing and comes back when the keyboard closes.
         tabBarHideOnKeyboard: true,
-        // K1 DÖNTÉS (GAMES.md 2.1): 6 fül fér a sávba, de 360 dp széles
-        // kijelzőn a felirat 6 fülnél tördel a default méretnél.
         tabBarLabelStyle: {
           fontSize: 10,
           // PLAN-temak 4C: a fül-címke a téma title-betűjét kapja.
           ...(skin.fonts.title ? { fontFamily: skin.fonts.title } : null),
         },
-        // Az Átbeszélő a 7. fül (Kálmán döntése, 2026-09-08). 7 feliratot már
-        // nem lehet kiolvasni 360 dp-n, ezért a sáv innentől csak ikon. A
-        // feliratok maguk megmaradnak (s.tabs.*), a képernyők fejlécében.
+        // A sáv csak ikon; a feliratok (s.tabs.*) a képernyők fejlécében vannak.
         tabBarShowLabel: false,
         headerStyle: {
           backgroundColor: colors.background,
