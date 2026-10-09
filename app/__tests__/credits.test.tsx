@@ -9,7 +9,8 @@ jest.mock('expo-router', () => ({
   useRouter: () => ({ back: mockBack, push: mockPush }),
 }));
 
-import { render } from '@testing-library/react-native';
+import { Linking } from 'react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 
 import CreditsScreen from '../credits';
 
@@ -30,5 +31,16 @@ describe('CreditsScreen (app/credits.tsx)', () => {
     expect(getAllByTestId('credits-font')).toHaveLength(26);
     expect(getByText('Permanent Marker · Apache License 2.0')).toBeTruthy();
     expect(getByText('OpenDyslexic · SIL Open Font License 1.1')).toBeTruthy();
+  });
+
+  it('Play-előkészítés: a Wikimedia Commons fotó-sor és az Adatvédelmi tájékoztató sor megnyitja a hirdetett URL-t', () => {
+    const openURL = jest.spyOn(Linking, 'openURL').mockResolvedValue(true);
+    const { getByText, getByTestId } = render(<CreditsScreen />);
+
+    expect(getByText(/Wikimedia Commons/)).toBeTruthy();
+    expect(getByText('Privacy policy')).toBeTruthy();
+    fireEvent.press(getByTestId('credits-privacy'));
+    expect(openURL).toHaveBeenCalledWith('https://kalmi91.github.io/kimacha/privacy-policy.html');
+    openURL.mockRestore();
   });
 });

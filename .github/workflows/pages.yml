@@ -1,0 +1,49 @@
+name: Pages
+
+# Publishes ONLY the privacy policy for the Play listing:
+#   https://kalmi91.github.io/kimacha/privacy-policy.html
+# Needs Settings -> Pages -> Source: GitHub Actions (one-time, repo owner).
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - store/privacy-policy.html
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy privacy policy
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      # Nothing else from store/ (PLAYSTORE.md, TEENDOK.md, graphics) goes public.
+      - name: Stage the policy
+        run: |
+          mkdir _site
+          cp store/privacy-policy.html _site/privacy-policy.html
+          cp store/privacy-policy.html _site/index.html
+
+      - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

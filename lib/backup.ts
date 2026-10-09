@@ -166,6 +166,13 @@ export function validateBackupPayload(raw: unknown): BackupPayload {
       if (!row || typeof row !== 'object' || Array.isArray(row)) {
         throw new Error(`Backup file has an invalid row in table ${table} at index ${i}`);
       }
+      // importAll builds the INSERT column list from these keys, so a key that is
+      // not a plain column identifier would end up inside the SQL text.
+      for (const col of Object.keys(row)) {
+        if (!/^[a-z_][a-z0-9_]*$/.test(col)) {
+          throw new Error(`Backup file has an invalid column name in table ${table} at index ${i}`);
+        }
+      }
       for (const [col, spec] of Object.entries(columns)) {
         if (!(col in (row as any))) continue;
         const value = (row as any)[col];
