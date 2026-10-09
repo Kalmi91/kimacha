@@ -30,7 +30,7 @@ describe('LevelPickerSheet: placement-test entry', () => {
     const onPlacement = jest.fn();
     const { getByText, getByTestId } = renderSheet(jest.fn(), onPlacement);
 
-    expect(getByText('Not sure? Take the 3 minute placement test')).toBeTruthy();
+    expect(getByText('Not sure? Take the 3-minute placement test')).toBeTruthy();
     fireEvent.press(getByTestId('placement-entry'));
     expect(onPlacement).toHaveBeenCalledTimes(1);
   });

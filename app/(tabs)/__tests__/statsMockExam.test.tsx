@@ -61,7 +61,7 @@ describe('Stats tab: Practice exam card', () => {
   it('es→en direction: A1 and A2 button too, with an international-sample label (not "official")', async () => {
     await getDb().setOnboarding('es', 'en');
     const view = await renderStats();
-    expect(view.getByText('A full practice exam modelled on an international format: reading, listening, writing and speaking.')).toBeTruthy();
+    expect(view.getByText('A full practice exam modeled on an international format: reading, listening, writing and speaking.')).toBeTruthy();
     expect(view.queryByText(/official/i)).toBeNull();
     fireEvent.press(view.getByTestId('mock-exam-start-A1'));
     expect(mockPush).toHaveBeenCalledWith({ pathname: '/mock-exam', params: { level: 'A1' } });

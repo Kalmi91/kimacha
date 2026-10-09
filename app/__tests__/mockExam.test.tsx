@@ -564,7 +564,7 @@ describe('Mock exam: es→en direction (international sample, UI in Spanish)', (
     mockLevel = 'A1';
     mockExam = enExam('A1');
     const s = await mount();
-    expect(s.getByText('Practice exam modelled on an international A1 format')).toBeTruthy();
+    expect(s.getByText('Practice exam modeled on an international A1 format')).toBeTruthy();
     expect(s.queryByText(/official/i)).toBeNull();
     expect(s.getByText('To pass: at least 50 of 100 points in total. One skill can make up for another.')).toBeTruthy();
     s.unmount();

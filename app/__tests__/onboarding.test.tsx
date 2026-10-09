@@ -4,7 +4,7 @@
 // "only a fresh install sees it" condition is the root layout's responsibility, not this
 // screen's; here we test the screen's OWN steps (language choice -> welcome ->
 // level choice). Mock pattern: app/(tabs)/__tests__/pcicSpeak.test.tsx.
-// The language choice step was added before "Get Started".
+// The language choice step was added before "Get started".
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -32,13 +32,13 @@ describe('OnboardingScreen: language and level step', () => {
     expect(getByText('Español')).toBeTruthy();
   });
 
-  it('"English" -> en→es: greeting, then the level picker after "Get Started"', () => {
+  it('"English" -> en→es: greeting, then the level picker after "Get started"', () => {
     const { getByText, queryByText } = render(<OnboardingScreen />);
     fireEvent.press(getByText('English'));
 
     expect(queryByText('Choose level')).toBeNull();
-    fireEvent.press(getByText('Get Started'));
-    // After "Get Started" come the intro and the theme step, only then the level.
+    fireEvent.press(getByText('Get started'));
+    // After "Get started" come the intro and the theme step, only then the level.
     fireEvent.press(getByText("Let's start"));
     fireEvent.press(getByText('Continue'));
 
@@ -55,7 +55,7 @@ describe('OnboardingScreen: language and level step', () => {
   it('choosing the en→es level saves the onboarding + the PCIC level, and navigates to the tabs', async () => {
     const { getByText } = render(<OnboardingScreen />);
     fireEvent.press(getByText('English'));
-    fireEvent.press(getByText('Get Started'));
+    fireEvent.press(getByText('Get started'));
     fireEvent.press(getByText("Let's start"));
     fireEvent.press(getByText('Continue'));
 
@@ -73,12 +73,12 @@ describe('OnboardingScreen: language and level step', () => {
   it('on the level step, under the rows there is the placement-test entry, and it leads to the placement screen', () => {
     const { getByText, getByTestId } = render(<OnboardingScreen />);
     fireEvent.press(getByText('English'));
-    fireEvent.press(getByText('Get Started'));
+    fireEvent.press(getByText('Get started'));
     fireEvent.press(getByText("Let's start"));
     fireEvent.press(getByText('Continue'));
 
     expect(getByText('Elementary')).toBeTruthy();
-    expect(getByText('Not sure? Take the 3 minute placement test')).toBeTruthy();
+    expect(getByText('Not sure? Take the 3-minute placement test')).toBeTruthy();
     fireEvent.press(getByTestId('placement-entry'));
     expect(mockPush).toHaveBeenCalledWith('/placement');
     expect(mockReplace).not.toHaveBeenCalled();
