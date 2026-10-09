@@ -304,7 +304,8 @@ class SQLiteDB implements DB {
   // what one local calendar day added up to, for the midnight celebration.
   // `words` is the number of PCIC words first introduced that local day
   // (introduced_at = date, the same rule as the daily new-word limit), so a
-  // word drilled five times still reads as one word learned.
+  // word drilled five times still reads as one word learned. Unlike the daily
+  // budget it does not drop orphaned cards (ids no longer in the corpus).
   async getDayStats(date: string): Promise<{ minutes: number; words: number }> {
     const db = await this.open();
     const usage = await db.getFirstAsync<any>('SELECT minutes FROM usage_minutes WHERE date = ?', [date]);
@@ -464,6 +465,8 @@ class SQLiteDB implements DB {
     }
     // user_id (NOT NULL, key stays) is a leftover identifier of older installs: never export it.
     tables.user_meta = tables.user_meta.map((r: any) => ({ ...r, user_id: '' }));
+    // pcic_cards.known was added with a bare ALTER (no default): rows from before it keep NULL.
+    tables.pcic_cards = tables.pcic_cards.map((r: any) => ({ ...r, known: r.known ? 1 : 0 }));
     return {
       schemaVersion: BACKUP_SCHEMA_VERSION,
       exportedAt: new Date().toISOString(),
