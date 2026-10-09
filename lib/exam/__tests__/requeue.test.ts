@@ -1,4 +1,4 @@
-// (2b + A8 a): az elrontott SZÓ-tétel kártyája `again` értékeléssel
+// Az elrontott SZÓ-tétel kártyája `again` értékeléssel
 // visszakerül az SM-2 ismétlésbe (azonnal esedékes); az elrontott nyelvtani (és olvasás-) tétel
 // nem kap SM-2 változást.
 

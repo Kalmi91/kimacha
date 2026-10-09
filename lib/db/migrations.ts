@@ -391,7 +391,7 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
   const ob = await db.getFirstAsync<any>('SELECT source, target FROM onboarding WHERE id = 1');
   if (ob) activePair = `${ob.source}-${ob.target}`;
 
-  // Migration pcic_level a
+  // Migration: pcic_level a
   // user_meta szingliton oszlopból a learn_settings pár-szerinti sorába
   // költözik, hogy a két irány (en-es / es-en) külön szintet őrizzen meg
   // egymástól. A régi érték mindig az en-es párhoz tartozott (az egyetlen
@@ -426,7 +426,7 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
       // a COALESCE a MAI ismétlés dátumát írta be, így a
       // frissítés utáni első indításkor a mai keret azonnal elfogyott ("azt írja hogy 0").
       // A régi lapok MINDIG a múltba kerülnek, ahogy a fenti komment ígéri.
-      // A 3 itt szám szerint történelmi migráció a
+      // A 3 itt szám szerint történelmi migráció: a
       // LEARNED_PASSES konstans megszűnt, ez a hely az utolsó, ahol a régi
       // reps−lapses származtatás előfordul.
       `UPDATE cards SET learned_at = ?
@@ -463,7 +463,7 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
       ALTER TABLE cards_new RENAME TO cards;
     `);
   }
-  // Migration: Szándékosan a pair-rebuild UTÁN áll: a
+  // Migration: szándékosan a pair-rebuild UTÁN áll: a
   // rebuild a régi (lap nélküli) táblát másolja, ez a blokk adja hozzá az
   // oszlopokat és tölti vissza őket. A lap-állás eddig a reps−lapses
   // különbségből volt származtatva (lib/wordPhase.ts), ez itt az utolsó hely,
@@ -490,7 +490,7 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
   await db.runAsync(
     "UPDATE cards SET lap = 3 WHERE type = 'word' AND state >= 2 AND lap < 3"
   );
-  // Migration:, started_at oszlop (DBs created before the daily
+  // Migration: started_at oszlop (DBs created before the daily
   // keret az 1. lap feljovetelekor fogy, nem a megtanuláskor).
   const startedAtCol = await db.getFirstAsync<any>("SELECT * FROM pragma_table_info('cards') WHERE name = 'started_at'");
   if (!startedAtCol) {

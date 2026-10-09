@@ -60,7 +60,7 @@ const ACCENT_ADD: Record<string, string> = { a: 'á', e: 'é', i: 'í', o: 'ó',
 /**
  * Egy kártya „tanult"-e: legalább egyszer helyesen megválaszolták (review
  * állapotba került, vagy volt már lapse-a, vagyis review-ból esett vissza), vagy
- * kézzel tudottnak jelölte.
+ * a tanuló kézzel tudottnak jelölte.
  */
 export function isLearnedCard(card: Sm2Card): boolean {
   return card.known === true || card.state === 'review' || card.lapses > 0;

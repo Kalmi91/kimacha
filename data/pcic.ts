@@ -6,8 +6,8 @@
 
 import type { Pos } from '@/lib/pcicPos';
 import type { WordEntry } from '@/data/words';
-// (D-A döntés, 2026-09-26: "a", a régi angol-célnyelvű
-// ág kész, ellenőrzött kártyái, ~0 token). Csak ez a modul importálja, e<id>
+// A régi angol-célnyelvű
+// ág kész, ellenőrzött kártyái (~0 token). Csak ez a modul importálja, e<id>
 // id-térrel (lásd itemsFromWords). A1 = a0 + a1, A2 = a2.
 import enA0 from '@/data/words/en/a0.json';
 import enA1 from '@/data/words/en/a1.json';
@@ -60,7 +60,7 @@ export interface PcicItem {
 const LEADING_ARTICLE_RE = /^(el|la|los|las|un|una)\s+/i;
 
 // `kind`: 'phrase', ha a névelő levágása után is több szó marad, különben 'word'.
-// perjeles " / " alaknál minden alternatívát külön
+// Perjeles " / " alaknál minden alternatívát külön
 // nézünk ("el carro / el coche" egy szavas főnévként 'word', nem 'phrase').
 export function kindOfEs(es: string): PcicKind {
   const isPhrase = es.split(' / ').some((alt) => {
@@ -76,7 +76,7 @@ function noteField(word: WordEntry, key: 'hint_es'): string | undefined {
 }
 
 // A vosotros-jelzésű (vosotros: true) kártya kimarad, ahogy a nyelvtani leckéknél is.
-// az 'e' előtag különbözteti meg a két irány id-terét
+// Az 'e' előtag különbözteti meg a két irány id-terét
 // a KÖZÖS pcic_cards táblában (nincs pár-oszlop): en→es 'o<order>' (itemsFromOpen), es→en 'e<id>'.
 function itemsFromWords(entries: WordEntry[]): PcicItem[] {
   return entries

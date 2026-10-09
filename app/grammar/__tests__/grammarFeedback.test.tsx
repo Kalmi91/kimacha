@@ -164,7 +164,7 @@ describe.each(['brand', 'classic'] as const)('nyelvtani lecke: 💬 minden rész
     await press('grammar-start-choice');
     expect(card()).toMatch(new RegExp(`^grammar:${TOPIC}:drill(:.+)? \\| en→es \\| A1 \\| (-|\\d+)$`));
     await answerChoiceRound();
-    // ezt hiányolta, a feladat végén (eredmény-lap) nem volt 💬.
+    // ezt hiányolta a fejlesztő, a feladat végén (eredmény-lap) nem volt 💬.
     expect(screen.getByTestId('grammar-start-lessontest')).toBeTruthy();
     expect(card()).toBe(`grammar:${TOPIC}:done | en→es | A1 | -`);
     view.unmount();

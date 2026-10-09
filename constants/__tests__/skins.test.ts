@@ -31,7 +31,7 @@ import type { ThemeKey } from '@/lib/ThemeContext';
 const MIN = 4.5;
 
 // Kivételek: olyan pár, ami ténylegesen bukik és ezért itt rögzített (a teszt ellenőrzi, hogy még
-// bukik; ha javítják, a kivételt törölni kell). Utána üres: a classic sötét onA / a
+// bukik; ha javítják, a kivételt törölni kell). Azóta üres: a classic sötét onA / a
 // (fehér a #3B82F6-on 3,68) a fehér helyett a sötét alap-színt kapta (4,85).
 const KNOWN_EXEMPT = new Set<string>();
 

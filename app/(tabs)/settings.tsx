@@ -126,7 +126,7 @@ export default function SettingsScreen() {
   // grader forgives a missing á/é/ñ, on = it counts as a mistake.
   const [strictAccents, setStrictAccents] = useState(false);
   // névelő-gombsor a gépelős spanyol főnév-kártyán. Alapból be, mert
-  // kérte; a kapcsoló a visszaút, ha kipróbálva mégsem válik be.
+  // a fejlesztő kérte; a kapcsoló a visszaút, ha kipróbálva mégsem válik be.
   const [articlePicker, setArticlePicker] = useState(true);
   // User feedback: "legyen egy szöveg ami gratulál, hogy elértem a
   // heti limitet ami a cél, valami hatalmas nagy. és a célnál írja is ki hogy
@@ -181,7 +181,7 @@ export default function SettingsScreen() {
     await getDb().setArticlePicker(v);
   };
 
-  // irányváltás. 
+  // Irányváltás:
   // nincs megerősítő kérdés, mert visszaváltható és a haladás nem vész el (a
   // két irány külön id-térrel/pair-rel és külön pár-szintű szinttel él,
   // lib/database.ts getPcicLevel/hasPcicLevel). Ha az új irányban még nincs

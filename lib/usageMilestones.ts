@@ -1,7 +1,7 @@
 // User feedback (settings-tab): "1 óra után 15 percenként gratuláljon
 // az app és. indig más szöveggel. legyen benne valami kreativitás".
 //
-// fired the daily celebration at 30 and 60 minutes and then went quiet for
+// The first version fired the daily celebration at 30 and 60 minutes and then went quiet for
 // the rest of the day. Past the first hour the day's total keeps crossing a
 // milestone every quarter hour, and those crossings get their own pool of lines
 // (picked at random, so they come back over time like the midnight pool)

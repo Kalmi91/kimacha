@@ -207,7 +207,7 @@ export function buildExam(input: ExamBuildInput): ExamItem[] {
     }
   }
 
-  // Szóbeli ugyanazon a mondat-kapun átment tanult mondat, a kiinduló nyelvről kell elmondani.
+  // Szóbeli: ugyanazon a mondat-kapun átment tanult mondat, a kiinduló nyelvről kell elmondani.
   const speakBlock: ExamItem[] = spoken.map((p) => ({ kind: 'speak', skill: 'speaking', itemId: p.itemId, prompt: p.source, expected: p.target, mode: 'translate' }));
 
   return [...wordsBlock, ...grammarBlock, ...readingBlock, ...speakBlock];

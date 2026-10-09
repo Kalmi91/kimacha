@@ -426,7 +426,7 @@ export default {
     // sm2Preview-ban magyarul égetve be, minden nyelven).
     intervalToday: '<1 day',
     intervalDays: (n: number) => `${n} ${n === 1 ? 'day' : 'days'}`,
-    // (s1/s2, anki-ui-terv.html): szint-választó + Next.
+    // Szint-választó + Next.
     chooseLevel: 'Choose level',
     next: (label: string) => `Next → ${label}`,
     accentForgiven: 'Missing accent, counted as correct',
@@ -541,7 +541,7 @@ export default {
     emptyBody: 'There is not enough material for a placement test yet.',
   },
   // 5c: szófaj-chip a PCIC szó alatt (lib/pcicPos.ts).
-  // a teljes WordPos-készlet felirata (nem csak noun/verb/phrase),
+  // A teljes WordPos-készlet felirata (nem csak noun/verb/phrase),
   // + conj/det/interj a PCIC-only Pos-értékekre.
   pos: {
     noun: 'noun',

@@ -136,7 +136,7 @@ export default function PcicRevealedAnswer({
         )}
         {/* példamondat a megoldás alatt, csak Check
             után és csak ha van egyezés a korpuszban (currentItem.exampleEs).
-            célnyelven szól, a másik nyelv a gloss. */}
+            Célnyelven szól, a másik nyelv a gloss. */}
         {example && (
           <>
             <View style={[styles.frontRow, styles.exampleRow]}>
@@ -160,7 +160,7 @@ export default function PcicRevealedAnswer({
           if (g.brutal) {
             // doboz (good = a, again = b). A két gomb
             // egyforma (azonos árnyék-eltolás, a sor a kártya teljes szélességén).
-            // a téma gomb-változata: senior = egymás alatt + ikon, zen = csak szöveg,
+            // A téma gomb-változata: senior = egymás alatt + ikon, zen = csak szöveg,
             // a "Tudom" aláhúzva.
             const fill = gr === 'good' ? 'a' : 'b';
             const labelColor = actionTextColor(g, fill, variant);
@@ -283,7 +283,7 @@ const styles = StyleSheet.create({
   brutalGradesRow: { alignSelf: 'stretch' },
   brutalGrade: { flex: 1 },
   brutalGradeBox: { flex: 1, paddingVertical: 8, alignItems: 'center', justifyContent: 'center' },
-  // (senior): a két gomb egymás alatt, teljes szélességben.
+  // Senior: a két gomb egymás alatt, teljes szélességben.
   gradesStacked: { flexDirection: 'column' },
   brutalGradeStacked: { alignSelf: 'stretch' },
   brutalGradeBoxStacked: { paddingVertical: 10, alignItems: 'center', justifyContent: 'center' },

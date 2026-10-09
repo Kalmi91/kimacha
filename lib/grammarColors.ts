@@ -29,7 +29,7 @@ export type GrammarColors = {
 // képzett kulcsok a nyelvtan-képernyőknek. classic esetén a mai Colors[theme]
 // értékeiből képez ugyanilyen kulcsokat (brutal = false). Csak a `theme`-től
 // függ, ezért a `useTheme`-et mockoló tesztekben ('light') a classic ág fut.
-// a `<téma-id>-<mód>` kulcsok (constants/Skins.ts) a téma színeit adják.
+// A `<téma-id>-<mód>` kulcsok (constants/Skins.ts) a téma színeit adják.
 export function grammarColorsFor(theme: ThemeKey): GrammarColors {
   if (theme === 'light' || theme === 'dark') {
     const c = Colors[theme];

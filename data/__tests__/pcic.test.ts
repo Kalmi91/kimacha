@@ -50,7 +50,7 @@ describe('data/pcic.ts: irány-tudatos korpusz (PLAN-ketiranyu 4. lépés)', () 
     expect(findPcicItem('o883')?.pos).toBe('interj');
   });
 
-  // (D-A döntés a): az A1 az data/words/en/a0.json
+  // Az A1 az data/words/en/a0.json
   // első 50 kártyáját adja, e<id> id-térrel; A2/B1/B2 marad üres (nincs rájuk terv).
   // B1 = data/words/en/b1.json (CEFR-J), e10000-től; B2 üres.
   it('setPcicTarget("en")-re vált: A1 = en a0+a1, A2 = en a2, B1 = en b1, e<id>, angol szó egyszer; B2 üres', () => {

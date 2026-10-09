@@ -67,7 +67,7 @@ export default function TypedSentenceCard({
     Keyboard.dismiss();
     // Graded like the word card, on the sentence without its punctuation (the
     // tile card drops it too).
-    // a névmás nélküli válasz is jó ("Como en casa." a "Yo como en casa." helyett).
+    // A névmás nélküli válasz is jó ("Como en casa." a "Yo como en casa." helyett).
     const grade = gradeSentenceAnswer(stripSentencePunct(typed), stripSentencePunct(targetSentence), strictAccents);
     const isCorrect = suggestedGrade(grade) === 'good';
     setResult(isCorrect ? 'correct' : 'wrong');

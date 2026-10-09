@@ -7,7 +7,7 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { useTheme } from '@/lib/ThemeContext';
 
 // a vizsga-képernyők gombja. Classic palettán a
-// A terv szerinti elsődleges (tint + onTint) vagy másodlagos (card +
+// terv szerinti elsődleges (tint + onTint) vagy másodlagos (card +
 // border + text) gomb, brutalista palettán a meglévő BrutalButton.
 type Props = {
   label: string;

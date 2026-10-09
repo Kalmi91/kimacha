@@ -20,7 +20,7 @@ type ThemeOverride = Theme | 'system';
 // (Colors['brand-light'] ...), így a meglévő `Colors[theme]` hívók külön
 // átírás nélkül váltanak; classic esetén a mai 'light' | 'dark'. A mód
 // (papír / tinta) az Auto / Light / Dark beállítást követi.
-// a többi téma `<téma-id>-<mód>` kulcson (constants/Skins.ts); egy módú
+// A többi téma `<téma-id>-<mód>` kulcson (constants/Skins.ts); egy módú
 // témánál a mód a témáé, az Auto / Light / Dark hatástalan.
 export type ThemeKey = keyof typeof Colors;
 

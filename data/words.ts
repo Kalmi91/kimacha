@@ -41,7 +41,7 @@ export interface WordEntry {
   gender?: WordGender;
   region?: WordRegion;
   plural?: WordPlural;
-  // (grammar:indefinido-10-verbos:drill): a lecke szűri ki a szót a
+  // indefinido-10-verbos drill: a lecke szűri ki a szót a
   // fókusz-módból/lessonWordIds()-ból, a kártya maga marad, haladás nem vész el.
   vosotros?: boolean;
   [key: string]: string | number | boolean | undefined;
@@ -49,7 +49,7 @@ export interface WordEntry {
 
 import { findOpenWordByForm, openWords } from './openWords';
 
-// (`sentence:El calabacín es una verdura verde.`):
+// User feedback (`sentence:El calabacín es una verdura verde.`):
 // "ha rákattintok ... akár arra hogy calabacín akár arra hogy courset ... bele
 // tegye az olyan szavak közé, ahol ezeknek a helyesírását tudom gyakorolni".
 // A tap lands on a token of running text, the spelling list stores word ids, so

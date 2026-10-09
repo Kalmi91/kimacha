@@ -32,7 +32,7 @@ export default function ResultBadge({
   const s = t();
   const fill = correct ? colors.successFill : colors.danger;
   // Sötét szöveg a kitöltésen (token: ON_FILL; siker-zöld 7.8:1, a sötét mód danger-je 5.0:1).
-  // a világos módú danger (#DC2626) a sötét szövegen 3.9:1 volt, a felirat (18 px) nem
+  // A világos módú danger (#DC2626) a sötét szövegen 3.9:1 volt, a felirat (18 px) nem
   // "nagy" szöveg (egyedi betűnél nincs félkövér), ezért 4.5 kell: ott a fehér (4.8:1) a jobb.
   const ink = bestOn(fill, [ON_FILL, '#FFFFFF']);
   const text = label ?? (correct ? s.games.correctFeedback : s.games.wrongFeedback);

@@ -15,7 +15,7 @@ import type { MistakesBatch } from '@/lib/mistakes/format';
 
 type ColorScheme = (typeof Colors)['light'];
 
-// (PCIC-belépő): önálló, adatot is maga tölt, hogy az
+// PCIC-belépő: önálló, adatot is maga tölt, hogy az
 // app/(tabs)/index.tsx (785 sor) ne nőjön 800 fölé egy állapot+betöltés miatt.
 // Csak akkor renderel, ha van legalább egy betöltött "Hibáim" köteg; a PCIC
 // meglévő mezői/gombjai (BadgeRow, chip-ek) érintetlenek maradnak.

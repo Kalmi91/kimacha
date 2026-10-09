@@ -1,6 +1,6 @@
 // a PCIC haladás szintenkénti elkülönítése. Minden PCIC
 // tétel id-je (eredetileg) a saját szintjével kezdődik ("b1-...", "a2-...").
-// a szint-igazítás mozgathat egy szót egy
+// A szint-igazítás mozgathat egy szót egy
 // másik szint fájljába anélkül, hogy az id-je (és ezzel az előtagja) változna
 // - a tényleges szintet innentől `levelOfItem` (data/pcic.ts, a betöltött
 // korpusz alapján) dönti el, az id-előtag csak tartalék, ha az id nincs a

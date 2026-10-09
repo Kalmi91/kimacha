@@ -1,4 +1,4 @@
-// („ebbe a leckébe akarom azt a feladatot, hogy feljön egy szó,
+// User feedback („ebbe a leckébe akarom azt a feladatot, hogy feljön egy szó,
 // mondjuk agua, és ki kell választani, hogy la vagy el … és az összes nount akarom ebbe a feladatba,
 // ami az appba van, és egy kártya paklit akarok belőle”): az articulos-genero lecke el / la
 // feladata és szó-paklija az app SAJÁT főneveiből (data/words-open, minden szint), futásidőben

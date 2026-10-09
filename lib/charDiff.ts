@@ -1,5 +1,5 @@
 // char-level diff for typed answers, highlights the mistyped letters.
-// a letter the user left out used to be skipped silently, so "we hav"
+// A letter the user left out used to be skipped silently, so "we hav"
 // looked flawless next to "we have". Missing letters are emitted too, flagged
 // `missing`, so the UI can show which character was dropped.
 //

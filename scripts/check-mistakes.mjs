@@ -1,4 +1,4 @@
-// (utólagos kiegészítés, 2026-09-23): a /hibaim skill
+// A /hibaim skill
 // (laptop) ezzel ellenőrzi a batch JSON-t a repo SAJÁT validátorával
 // (lib/mistakes/format.ts), mielőtt a Drive-ra tenné, hogy ne duplikálja a
 // szabályokat egy második, laptopon karbantartott másolatban.

@@ -1,10 +1,10 @@
 import { findWordByText, normalizeWordToken } from '@/data/words';
 import { openWords } from '@/data/openWords';
 
-// (`sentence:El calabacín es una verdura verde.`): a tap
+// User feedback (`sentence:El calabacín es una verdura verde.`): a tap
 // on any word of a sentence has to find that word's card, so it can go into the
 // spelling list.
-// a szöveg szerinti keresés a words-open kártyáin fut
+// A szöveg szerinti keresés a words-open kártyáin fut
 // (id = a kártya order-e): yo = 1, tal vez = 436.
 describe('word lookup by text', () => {
   it('finds a headword through case and sentence punctuation', () => {

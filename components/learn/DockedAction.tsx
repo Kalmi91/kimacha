@@ -9,7 +9,7 @@ import { legibleOn } from '@/constants/Skins';
 
 type ColorScheme = (typeof Colors)['light'];
 
-// (a TypingCardScreen-ből költözött, 1:1): a billentyűzet felső élén
+// A TypingCardScreen-ből költözött (1:1): a billentyűzet felső élén
 // ülő egyetlen Check/→ sáv. A `dockedAction`/`inlineCheckBtn` stílusértékek
 // változatlanok, csak ide költöztek, hogy a PCIC is használhassa.
 export const DOCK_RESERVE = 76;
