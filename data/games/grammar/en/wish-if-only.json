@@ -3,42 +3,32 @@
   "topic": "wish_if_only",
   "level": "B2",
   "title": {
-    "hu": "Kívánság és sajnálat (I wish / If only)",
     "en": "Wishes and Regrets (I wish / If only)",
-    "es": "Deseos y arrepentimientos (I wish / If only)",
-    "de": "Wünsche und Bedauern (I wish / If only)"
+    "es": "Deseos y arrepentimientos (I wish / If only)"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "Az I wish és az If only olyan kívánságot vagy sajnálatot fejez ki, ami nem teljesül. Az igeidő egyet hátrébb lép: jelenre past simple („I wish I had more time.”), múltra past perfect („I wish I had studied more.”), változtatni kívánt dologra would („I wish it would stop raining.”). A spanyol „ojalá tuviera”, „ojalá hubiera sabido”, „ojalá dejara de llover” szerkezetek pontosan ezeknek felelnek meg.",
         "en": "I wish and If only express a wish or regret that does not come true. The tense steps one back: past simple for the present (“I wish I had more time.”), past perfect for the past (“I wish I had studied more.”), would for something you want to change (“I wish it would stop raining.”). The Spanish “ojalá tuviera”, “ojalá hubiera sabido” and “ojalá dejara de llover” match these closely.",
-        "es": "I wish y If only expresan un deseo o un arrepentimiento que no se cumple. El tiempo verbal retrocede un paso: pasado simple para el presente («I wish I had more time.»), past perfect para el pasado («I wish I had studied more.»), would para algo que se quiere cambiar («I wish it would stop raining.»). El «ojalá tuviera», el «ojalá hubiera sabido» y el «ojalá dejara de llover» del español les corresponden de cerca.",
-        "de": "I wish und If only drücken einen Wunsch oder ein Bedauern aus, das sich nicht erfüllt. Die Zeitform geht einen Schritt zurück: Past Simple für die Gegenwart („I wish I had more time.“), Past Perfect für die Vergangenheit („I wish I had studied more.“), would für etwas, das man ändern möchte („I wish it would stop raining.“). Das spanische „ojalá tuviera“, „ojalá hubiera sabido“ und „ojalá dejara de llover“ entsprechen ihnen eng."
+        "es": "I wish y If only expresan un deseo o un arrepentimiento que no se cumple. El tiempo verbal retrocede un paso: pasado simple para el presente («I wish I had more time.»), past perfect para el pasado («I wish I had studied more.»), would para algo que se quiere cambiar («I wish it would stop raining.»). El «ojalá tuviera», el «ojalá hubiera sabido» y el «ojalá dejara de llover» del español les corresponden de cerca."
       }
     },
     {
       "kind": "table",
       "id": "wsh-forms",
       "title": {
-        "hu": "Melyik alak?",
         "en": "Which form?",
-        "es": "¿Qué forma uso?",
-        "de": "Welche Form?"
+        "es": "¿Qué forma uso?"
       },
       "header": [
         {
-          "hu": "Helyzet",
           "en": "Situation",
-          "es": "Situación",
-          "de": "Situation"
+          "es": "Situación"
         },
         {
-          "hu": "forma",
           "en": "form",
-          "es": "forma",
-          "de": "Form"
+          "es": "forma"
         }
       ],
       "rows": [
@@ -71,64 +61,50 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Jelenbeli sajnálat: wish + past simple",
         "en": "Regret about the present: wish + past simple",
-        "es": "Arrepentimiento sobre el presente: wish + pasado simple",
-        "de": "Bedauern über die Gegenwart: wish + Past Simple"
+        "es": "Arrepentimiento sobre el presente: wish + pasado simple"
       },
       "items": [
         {
           "text": {
-            "hu": "A jelenlegi helyzet nem olyan, amilyennek szeretnéd. A be igénél a were a formális, a was a mindennapi alak: „I wish I were taller.”",
             "en": "The present situation is not what you want. With be, were is the formal form and was is the everyday form: “I wish I were taller.”",
-            "es": "La situación actual no es la que quieres. Con be, were es la forma formal y was la cotidiana: «I wish I were taller.»",
-            "de": "Die jetzige Lage ist nicht die, die man will. Bei be ist were die formelle und was die alltägliche Form: „I wish I were taller.“"
+            "es": "La situación actual no es la que quieres. Con be, were es la forma formal y was la cotidiana: «I wish I were taller.»"
           },
           "examples": [
             {
               "es": "I wish I had more free time.",
               "tr": {
-                "hu": "Bárcsak több szabadidőm lenne.",
                 "en": "I wish I had more free time.",
-                "es": "Ojalá tuviera más tiempo libre.",
-                "de": "Ich wünschte, ich hätte mehr Freizeit."
+                "es": "Ojalá tuviera más tiempo libre."
               }
             },
             {
               "es": "I wish I didn't have to work today.",
               "tr": {
-                "hu": "Bárcsak ma nem kellene dolgoznom.",
                 "en": "I wish I didn't have to work today.",
-                "es": "Ojalá no tuviera que trabajar hoy.",
-                "de": "Ich wünschte, ich müsste heute nicht arbeiten."
+                "es": "Ojalá no tuviera que trabajar hoy."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Ha a lehetetlen képességet kívánod, could áll: „I wish I could fly.” Jövőbeli lehetőségre nem wish, hanem hope kell: „I hope you can come.”",
             "en": "To wish for an ability you do not have, use could: “I wish I could fly.” For a real future possibility use hope, not wish: “I hope you can come.”",
-            "es": "Para desear una habilidad que no tienes se usa could: «I wish I could fly.» Para una posibilidad real en el futuro se usa hope, no wish: «I hope you can come.»",
-            "de": "Für eine Fähigkeit, die man nicht hat, steht could: „I wish I could fly.“ Für eine reale Möglichkeit in der Zukunft steht hope, nicht wish: „I hope you can come.“"
+            "es": "Para desear una habilidad que no tienes se usa could: «I wish I could fly.» Para una posibilidad real en el futuro se usa hope, no wish: «I hope you can come.»"
           },
           "examples": [
             {
               "es": "I wish I could speak French.",
               "tr": {
-                "hu": "Bárcsak tudnék franciául.",
                 "en": "I wish I could speak French.",
-                "es": "Ojalá pudiera hablar francés.",
-                "de": "Ich wünschte, ich könnte Französisch sprechen."
+                "es": "Ojalá pudiera hablar francés."
               }
             },
             {
               "es": "I hope you can come tomorrow.",
               "tr": {
-                "hu": "Remélem, el tudsz jönni holnap.",
                 "en": "I hope you can come tomorrow.",
-                "es": "Espero que puedas venir mañana.",
-                "de": "Ich hoffe, du kannst morgen kommen."
+                "es": "Espero que puedas venir mañana."
               }
             }
           ]
@@ -138,36 +114,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Múltbeli sajnálat: wish + past perfect",
         "en": "Regret about the past: wish + past perfect",
-        "es": "Arrepentimiento sobre el pasado: wish + past perfect",
-        "de": "Bedauern über die Vergangenheit: wish + Past Perfect"
+        "es": "Arrepentimiento sobre el pasado: wish + past perfect"
       },
       "items": [
         {
           "text": {
-            "hu": "Valami megtörtént (vagy nem történt meg), és szeretnéd, ha másképp lett volna: wish + had + igenév.",
             "en": "Something happened (or did not happen) and you want it to have been different: wish + had + participle.",
-            "es": "Algo ocurrió (o no ocurrió) y quieres que hubiera sido distinto: wish + had + participio.",
-            "de": "Etwas geschah (oder geschah nicht), und man möchte, dass es anders gewesen wäre: wish + had + Partizip."
+            "es": "Algo ocurrió (o no ocurrió) y quieres que hubiera sido distinto: wish + had + participio."
           },
           "examples": [
             {
               "es": "I wish I had studied more.",
               "tr": {
-                "hu": "Bárcsak többet tanultam volna.",
                 "en": "I wish I had studied more.",
-                "es": "Ojalá hubiera estudiado más.",
-                "de": "Ich wünschte, ich hätte mehr gelernt."
+                "es": "Ojalá hubiera estudiado más."
               }
             },
             {
               "es": "She wishes she hadn't said that.",
               "tr": {
-                "hu": "Bárcsak ne mondta volna ezt.",
                 "en": "She wishes she hadn't said that.",
-                "es": "Ojalá ella no hubiera dicho eso.",
-                "de": "Sie wünschte, sie hätte das nicht gesagt."
+                "es": "Ojalá ella no hubiera dicho eso."
               }
             }
           ]
@@ -177,36 +145,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Panasz, változtatni vágyott dolog: wish + would",
         "en": "A complaint, something you want changed: wish + would",
-        "es": "Una queja, algo que quieres cambiar: wish + would",
-        "de": "Eine Klage, etwas, das man ändern will: wish + would"
+        "es": "Una queja, algo que quieres cambiar: wish + would"
       },
       "items": [
         {
           "text": {
-            "hu": "Mások viselkedésére vagy olyan dologra, amin nem tudsz változtatni, would áll. Saját magadra nem: nem „I wish I would”, hanem „I wish I could”.",
             "en": "For other people’s behavior or things you cannot control, use would. Not for yourself: not “I wish I would”, but “I wish I could”.",
-            "es": "Para la conducta de otras personas o cosas que no controlas se usa would. No para uno mismo: no «I wish I would», sino «I wish I could».",
-            "de": "Für das Verhalten anderer oder Dinge, die man nicht kontrollieren kann, steht would. Nicht für sich selbst: nicht „I wish I would“, sondern „I wish I could“."
+            "es": "Para la conducta de otras personas o cosas que no controlas se usa would. No para uno mismo: no «I wish I would», sino «I wish I could»."
           },
           "examples": [
             {
               "es": "I wish it would stop raining.",
               "tr": {
-                "hu": "Bárcsak elállna az eső.",
                 "en": "I wish it would stop raining.",
-                "es": "Ojalá dejara de llover.",
-                "de": "Ich wünschte, es würde aufhören zu regnen."
+                "es": "Ojalá dejara de llover."
               }
             },
             {
               "es": "I wish you would stop talking.",
               "tr": {
-                "hu": "Bárcsak abbahagynád a beszédet.",
                 "en": "I wish you would stop talking.",
-                "es": "Ojalá dejaras de hablar.",
-                "de": "Ich wünschte, du würdest aufhören zu reden."
+                "es": "Ojalá dejaras de hablar."
               }
             }
           ]
@@ -216,36 +176,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "If only: erősebb kívánság",
         "en": "If only: a stronger wish",
-        "es": "If only: un deseo más fuerte",
-        "de": "If only: ein stärkerer Wunsch"
+        "es": "If only: un deseo más fuerte"
       },
       "items": [
         {
           "text": {
-            "hu": "Az If only ugyanazokat az igeidőket kéri, mint a wish, de érzelmesebb: „If only I had listened!”",
             "en": "If only takes the same tenses as wish, but it is more emotional: “If only I had listened!”",
-            "es": "If only pide los mismos tiempos que wish, pero es más emotivo: «If only I had listened!»",
-            "de": "If only verlangt dieselben Zeitformen wie wish, ist aber gefühlvoller: „If only I had listened!“"
+            "es": "If only pide los mismos tiempos que wish, pero es más emotivo: «If only I had listened!»"
           },
           "examples": [
             {
               "es": "If only I had more money!",
               "tr": {
-                "hu": "Bárcsak több pénzem lenne!",
                 "en": "If only I had more money!",
-                "es": "¡Si tan solo tuviera más dinero!",
-                "de": "Hätte ich nur mehr Geld!"
+                "es": "¡Si tan solo tuviera más dinero!"
               }
             },
             {
               "es": "If only I had listened!",
               "tr": {
-                "hu": "Bárcsak hallgattam volna!",
                 "en": "If only I had listened!",
-                "es": "¡Si tan solo hubiera escuchado!",
-                "de": "Hätte ich nur zugehört!"
+                "es": "¡Si tan solo hubiera escuchado!"
               }
             }
           ]
@@ -255,135 +207,105 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "A wish után nincs will és nincs jelen idő: nem „I wish I have more time”, hanem „I wish I had more time”. A „hátralépés” akkor is megmarad, ha a sajnálat jelenre vonatkozik.",
         "en": "After wish there is no will and no present tense: not “I wish I have more time”, but “I wish I had more time”. The step back stays even when the regret is about the present.",
-        "es": "Después de wish no va will ni presente: no «I wish I have more time», sino «I wish I had more time». El retroceso se mantiene aunque el arrepentimiento sea sobre el presente.",
-        "de": "Nach wish steht weder will noch Präsens: nicht „I wish I have more time“, sondern „I wish I had more time“. Der Schritt zurück bleibt, auch wenn das Bedauern die Gegenwart betrifft."
+        "es": "Después de wish no va will ni presente: no «I wish I have more time», sino «I wish I had more time». El retroceso se mantiene aunque el arrepentimiento sea sobre el presente."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A spanyol „ojalá puedas venir” (valós esély) hope, az „ojalá pudieras venir” (kevés esély) wish: „I hope you can come” és „I wish you could come”.",
         "en": "The Spanish “ojalá puedas venir” (a real chance) is hope, and “ojalá pudieras venir” (little chance) is wish: “I hope you can come” and “I wish you could come”.",
-        "es": "El «ojalá puedas venir» (hay posibilidad real) es hope, y el «ojalá pudieras venir» (poca posibilidad) es wish: «I hope you can come» y «I wish you could come».",
-        "de": "Das spanische „ojalá puedas venir“ (reale Chance) ist hope, und „ojalá pudieras venir“ (kaum Chance) ist wish: „I hope you can come“ und „I wish you could come“."
+        "es": "El «ojalá puedas venir» (hay posibilidad real) es hope, y el «ojalá pudieras venir» (poca posibilidad) es wish: «I hope you can come» y «I wish you could come»."
       }
     }
   ],
   "speak": {
-    "hu": "Az «I wish» és az «If only» olyan kívánságot vagy sajnálatot fejez ki, ami nem teljesül. Az igeidő egyet hátrébb lép. Jelenre past simple áll: «I wish I had more time». Múltra past perfect áll: «I wish I had studied more». Változtatni kívánt dologra «would» áll: «I wish it would stop raining». Lehetetlen képességre «could» áll: «I wish I could fly». Valós jövőbeli esélyre nem «wish», hanem «hope» kell: «I hope you can come».",
     "en": "«I wish» and «If only» express a wish or regret that does not come true. The tense steps one back. For the present, the past simple is used: «I wish I had more time». For the past, the past perfect is used: «I wish I had studied more». For something you want to change, «would» is used: «I wish it would stop raining». For an ability you do not have, «could» is used: «I wish I could fly». For a real chance in the future you need «hope», not «wish»: «I hope you can come».",
-    "es": "«I wish» y «If only» expresan un deseo o un arrepentimiento que no se cumple. El tiempo verbal retrocede un paso. Para el presente se usa el pasado simple: «I wish I had more time». Para el pasado se usa el past perfect: «I wish I had studied more». Para algo que se quiere cambiar se usa «would»: «I wish it would stop raining». Para una habilidad que no se tiene se usa «could»: «I wish I could fly». Para una posibilidad real en el futuro hace falta «hope», no «wish»: «I hope you can come».",
-    "de": "«I wish» und «If only» drücken einen Wunsch oder ein Bedauern aus, das sich nicht erfüllt. Die Zeitform geht einen Schritt zurück. Für die Gegenwart steht das Past Simple: «I wish I had more time». Für die Vergangenheit steht das Past Perfect: «I wish I had studied more». Für etwas, das man ändern will, steht «would»: «I wish it would stop raining». Für eine Fähigkeit, die man nicht hat, steht «could»: «I wish I could fly». Für eine reale Chance in der Zukunft braucht man «hope», nicht «wish»: «I hope you can come»."
+    "es": "«I wish» y «If only» expresan un deseo o un arrepentimiento que no se cumple. El tiempo verbal retrocede un paso. Para el presente se usa el pasado simple: «I wish I had more time». Para el pasado se usa el past perfect: «I wish I had studied more». Para algo que se quiere cambiar se usa «would»: «I wish it would stop raining». Para una habilidad que no se tiene se usa «could»: «I wish I could fly». Para una posibilidad real en el futuro hace falta «hope», no «wish»: «I hope you can come»."
   },
   "glossary": [
     {
       "word": "forgotten",
       "gloss": {
-        "hu": "elfelejtett (a forget igenéve)",
         "en": "participle of forget",
-        "es": "olvidado (participio de forget)",
-        "de": "vergessen (Partizip von forget)"
+        "es": "olvidado (participio de forget)"
       }
     },
     {
       "word": "french",
       "gloss": {
-        "hu": "francia (nyelv)",
         "en": "the French language",
-        "es": "francés (idioma)",
-        "de": "Französisch"
+        "es": "francés (idioma)"
       }
     },
     {
       "word": "gone",
       "gloss": {
-        "hu": "elment (a go igenéve)",
         "en": "participle of go",
-        "es": "ido (participio de go)",
-        "de": "gegangen (Partizip von go)"
+        "es": "ido (participio de go)"
       }
     },
     {
       "word": "hadn't",
       "gloss": {
-        "hu": "nem volt (had not)",
         "en": "had not",
-        "es": "no había (had not)",
-        "de": "hatte nicht (had not)"
+        "es": "no había (had not)"
       }
     },
     {
       "word": "knew",
       "gloss": {
-        "hu": "tudta (a know múltja)",
         "en": "past form of know",
-        "es": "sabía (pasado de know)",
-        "de": "wusste (Past von know)"
+        "es": "sabía (pasado de know)"
       }
     },
     {
       "word": "sam",
       "gloss": {
-        "hu": "Sam (férfinév)",
         "en": "Sam (male first name)",
-        "es": "Sam (nombre de hombre)",
-        "de": "Sam (Männername)"
+        "es": "Sam (nombre de hombre)"
       }
     },
     {
       "word": "sell",
       "gloss": {
-        "hu": "elad",
         "en": "to sell",
-        "es": "vender",
-        "de": "verkaufen"
+        "es": "vender"
       }
     },
     {
       "word": "sold",
       "gloss": {
-        "hu": "eladott (a sell múltja)",
         "en": "past form of sell",
-        "es": "vendió (pasado de sell)",
-        "de": "verkaufte (Past von sell)"
+        "es": "vendió (pasado de sell)"
       }
     },
     {
       "word": "stay",
       "gloss": {
-        "hu": "marad",
         "en": "to stay",
-        "es": "quedarse",
-        "de": "bleiben"
+        "es": "quedarse"
       }
     },
     {
       "word": "stopping",
       "gloss": {
-        "hu": "abbahagy (ige-ing alak)",
         "en": "-ing form of stop",
-        "es": "dejando de (forma -ing de stop)",
-        "de": "aufhören (-ing-Form von stop)"
+        "es": "dejando de (forma -ing de stop)"
       }
     },
     {
       "word": "would",
       "gloss": {
-        "hu": "lenne, volna (feltételes)",
         "en": "conditional or past of will",
-        "es": "condicional o pasado de will",
-        "de": "würde (Konditional)"
+        "es": "condicional o pasado de will"
       }
     },
     {
       "word": "wouldn't",
       "gloss": {
-        "hu": "nem lenne, nem tenne (would not)",
         "en": "would not",
-        "es": "no habría, no sería (would not)",
-        "de": "würde nicht (would not)"
+        "es": "no habría, no sería (would not)"
       }
     }
   ],
@@ -398,30 +320,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Jelenbeli sajnálat: wish + past simple.",
         "en": "Regret about the present: wish + past simple.",
-        "es": "Arrepentimiento sobre el presente: wish + pasado simple.",
-        "de": "Bedauern über die Gegenwart: wish + Past Simple."
+        "es": "Arrepentimiento sobre el presente: wish + pasado simple."
       },
       "wrong": {
         "have": {
-          "hu": "A wish után nem jelen idő áll, hanem past simple (had).",
           "en": "After wish comes the past simple, not the present (had).",
-          "es": "Después de wish va el pasado simple, no el presente (had).",
-          "de": "Nach wish steht das Past Simple, nicht das Präsens (had)."
+          "es": "Después de wish va el pasado simple, no el presente (had)."
         },
         "will have": {
-          "hu": "A wish után nem áll will; a kívánság past simple-t kér.",
           "en": "After wish there is no will; the wish takes the past simple.",
-          "es": "Después de wish no va will; el deseo pide el pasado simple.",
-          "de": "Nach wish steht kein will; der Wunsch verlangt das Past Simple."
+          "es": "Después de wish no va will; el deseo pide el pasado simple."
         }
       },
       "examples": [
         "I wish I had a car.",
         "She wishes she had more time."
       ],
-      "tr": { "hu": "Bárcsak több szabadidőm lenne.", "en": "I wish I had more free time.", "es": "Desearía tener más tiempo libre.", "de": "Ich wünschte, ich hätte mehr Freizeit." }
+      "tr": { "en": "I wish I had more free time.", "es": "Desearía tener más tiempo libre." }
     },
     {
       "id": "wsh-02",
@@ -433,30 +349,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Jelenbeli sajnálat: wish + past simple (knew).",
         "en": "Regret about the present: wish + past simple (knew).",
-        "es": "Arrepentimiento sobre el presente: wish + pasado simple (knew).",
-        "de": "Bedauern über die Gegenwart: wish + Past Simple (knew)."
+        "es": "Arrepentimiento sobre el presente: wish + pasado simple (knew)."
       },
       "wrong": {
         "know": {
-          "hu": "A wish után nem jelen idő áll; past simple kell (knew).",
           "en": "After wish comes the past simple, not the present (knew).",
-          "es": "Después de wish va el pasado simple, no el presente (knew).",
-          "de": "Nach wish steht das Past Simple, nicht das Präsens (knew)."
+          "es": "Después de wish va el pasado simple, no el presente (knew)."
         },
         "will know": {
-          "hu": "A wish után nem áll will; past simple kell (knew).",
           "en": "After wish there is no will; you need the past simple (knew).",
-          "es": "Después de wish no va will; hace falta el pasado simple (knew).",
-          "de": "Nach wish steht kein will; man braucht das Past Simple (knew)."
+          "es": "Después de wish no va will; hace falta el pasado simple (knew)."
         }
       },
       "examples": [
         "I wish I knew his name.",
         "He wishes he knew more."
       ],
-      "tr": { "hu": "Bárcsak tudnám a választ. Nem tudok segíteni.", "en": "I wish I knew the answer. I can't help you.", "es": "Desearía saber la respuesta. No puedo ayudarte.", "de": "Ich wünschte, ich wüsste die Antwort. Ich kann dir nicht helfen." }
+      "tr": { "en": "I wish I knew the answer. I can't help you.", "es": "Desearía saber la respuesta. No puedo ayudarte." }
     },
     {
       "id": "wsh-03",
@@ -468,30 +378,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Múltbeli sajnálat: wish + had + igenév.",
         "en": "Regret about the past: wish + had + participle.",
-        "es": "Arrepentimiento sobre el pasado: wish + had + participio.",
-        "de": "Bedauern über die Vergangenheit: wish + had + Partizip."
+        "es": "Arrepentimiento sobre el pasado: wish + had + participio."
       },
       "wrong": {
         "has": {
-          "hu": "A has studied present perfect; a last year múltra utal, ezért had studied kell.",
           "en": "Has studied is the present perfect; last year points to the past, so you need had studied.",
-          "es": "Has studied es el presente perfecto; last year apunta al pasado, por eso hace falta had studied.",
-          "de": "Has studied ist das Present Perfect; last year verweist auf die Vergangenheit, deshalb braucht man had studied."
+          "es": "Has studied es el presente perfecto; last year apunta al pasado, por eso hace falta had studied."
         },
         "was": {
-          "hu": "A was studied nem illik ide; a múltbeli sajnálathoz had + igenév kell.",
           "en": "Was studied does not fit here; a past regret needs had + participle.",
-          "es": "Was studied no cabe aquí; un arrepentimiento pasado necesita had + participio.",
-          "de": "Was studied passt hier nicht; ein vergangenes Bedauern braucht had + Partizip."
+          "es": "Was studied no cabe aquí; un arrepentimiento pasado necesita had + participio."
         }
       },
       "examples": [
         "I wish I had called.",
         "He wishes he had stayed."
       ],
-      "tr": { "hu": "Bárcsak többet tanult volna tavaly.", "en": "She wishes she had studied more last year.", "es": "Ella desearía haber estudiado más el año pasado.", "de": "Sie wünschte, sie hätte letztes Jahr mehr gelernt." }
+      "tr": { "en": "She wishes she had studied more last year.", "es": "Ella desearía haber estudiado más el año pasado." }
     },
     {
       "id": "wsh-04",
@@ -503,30 +407,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Jelenbeli sajnálat tagadva: wish + didn’t have to.",
         "en": "A negative regret about the present: wish + didn’t have to.",
-        "es": "Un arrepentimiento negativo sobre el presente: wish + didn’t have to.",
-        "de": "Ein verneintes Bedauern über die Gegenwart: wish + didn’t have to."
+        "es": "Un arrepentimiento negativo sobre el presente: wish + didn’t have to."
       },
       "wrong": {
         "don't have": {
-          "hu": "A wish után nem jelen idő áll; past simple kell (didn’t have).",
           "en": "After wish comes the past simple, not the present (didn’t have).",
-          "es": "Después de wish va el pasado simple, no el presente (didn’t have).",
-          "de": "Nach wish steht das Past Simple, nicht das Präsens (didn’t have)."
+          "es": "Después de wish va el pasado simple, no el presente (didn’t have)."
         },
         "won't have": {
-          "hu": "A wish után nem áll will; past simple kell (didn’t have).",
           "en": "After wish there is no will; you need the past simple (didn’t have).",
-          "es": "Después de wish no va will; hace falta el pasado simple (didn’t have).",
-          "de": "Nach wish steht kein will; man braucht das Past Simple (didn’t have)."
+          "es": "Después de wish no va will; hace falta el pasado simple (didn’t have)."
         }
       },
       "examples": [
         "I wish I didn't have a meeting.",
         "She wishes she didn't have to go."
       ],
-      "tr": { "hu": "Bárcsak ne kellene ma dolgoznom. Fáradt vagyok.", "en": "I wish I didn't have to work today. I'm tired.", "es": "Desearía no tener que trabajar hoy. Estoy cansado.", "de": "Ich wünschte, ich müsste heute nicht arbeiten. Ich bin müde." }
+      "tr": { "en": "I wish I didn't have to work today. I'm tired.", "es": "Desearía no tener que trabajar hoy. Estoy cansado." }
     },
     {
       "id": "wsh-05",
@@ -538,30 +436,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Változtatni kívánt dolog (az eső): wish + would.",
         "en": "Something you want to change (the rain): wish + would.",
-        "es": "Algo que quieres cambiar (la lluvia): wish + would.",
-        "de": "Etwas, das man ändern will (der Regen): wish + would."
+        "es": "Algo que quieres cambiar (la lluvia): wish + would."
       },
       "wrong": {
         "will": {
-          "hu": "A wish után nem áll will; a változtatási vágyhoz would kell.",
           "en": "After wish there is no will; the wish for change takes would.",
-          "es": "Después de wish no va will; el deseo de cambio lleva would.",
-          "de": "Nach wish steht kein will; der Wunsch nach Veränderung nimmt would."
+          "es": "Después de wish no va will; el deseo de cambio lleva would."
         },
         "is": {
-          "hu": "Az is stop nem létezik; a would a kívánság segédigéje.",
           "en": "“Is stop” does not exist; would is the helper verb of the wish.",
-          "es": "«Is stop» no existe; would es el verbo auxiliar del deseo.",
-          "de": "„Is stop“ gibt es nicht; would ist das Hilfsverb des Wunsches."
+          "es": "«Is stop» no existe; would es el verbo auxiliar del deseo."
         }
       },
       "examples": [
         "I wish he would call.",
         "I wish they would leave."
       ],
-      "tr": { "hu": "Bárcsak elállna az eső!", "en": "I wish it would stop raining!", "es": "¡Ojalá dejara de llover!", "de": "Ich wünschte, es würde aufhören zu regnen!" }
+      "tr": { "en": "I wish it would stop raining!", "es": "¡Ojalá dejara de llover!" }
     },
     {
       "id": "wsh-06",
@@ -573,30 +465,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Jelenbeli sajnálat: wish + past simple (weren’t).",
         "en": "Regret about the present: wish + past simple (weren’t).",
-        "es": "Arrepentimiento sobre el presente: wish + pasado simple (weren’t).",
-        "de": "Bedauern über die Gegenwart: wish + Past Simple (weren’t)."
+        "es": "Arrepentimiento sobre el presente: wish + pasado simple (weren’t)."
       },
       "wrong": {
         "aren't": {
-          "hu": "A wish után nem jelen idő áll; past simple kell (weren’t).",
           "en": "After wish comes the past simple, not the present (weren’t).",
-          "es": "Después de wish va el pasado simple, no el presente (weren’t).",
-          "de": "Nach wish steht das Past Simple, nicht das Präsens (weren’t)."
+          "es": "Después de wish va el pasado simple, no el presente (weren’t)."
         },
         "won't be": {
-          "hu": "A wish után nem áll will; past simple kell (weren’t).",
           "en": "After wish there is no will; you need the past simple (weren’t).",
-          "es": "Después de wish no va will; hace falta el pasado simple (weren’t).",
-          "de": "Nach wish steht kein will; man braucht das Past Simple (weren’t)."
+          "es": "Después de wish no va will; hace falta el pasado simple (weren’t)."
         }
       },
       "examples": [
         "I wish it weren't so cold.",
         "She wishes they weren't late."
       ],
-      "tr": { "hu": "Bárcsak ne lennének ilyen hangosak a szomszédaim.", "en": "I wish my neighbors weren't so loud.", "es": "Desearía que mis vecinos no fueran tan ruidosos.", "de": "Ich wünschte, meine Nachbarn wären nicht so laut." }
+      "tr": { "en": "I wish my neighbors weren't so loud.", "es": "Desearía que mis vecinos no fueran tan ruidosos." }
     },
     {
       "id": "wsh-07",
@@ -608,30 +494,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Jelenbeli sajnálat a be igével: wish + were.",
         "en": "Regret about the present with be: wish + were.",
-        "es": "Arrepentimiento sobre el presente con be: wish + were.",
-        "de": "Bedauern über die Gegenwart mit be: wish + were."
+        "es": "Arrepentimiento sobre el presente con be: wish + were."
       },
       "wrong": {
         "am": {
-          "hu": "A wish után nem jelen idő áll; were kell.",
           "en": "After wish comes were, not the present.",
-          "es": "Después de wish va were, no el presente.",
-          "de": "Nach wish steht were, nicht das Präsens."
+          "es": "Después de wish va were, no el presente."
         },
         "will be": {
-          "hu": "A wish után nem áll will; were kell.",
           "en": "After wish there is no will; you need were.",
-          "es": "Después de wish no va will; hace falta were.",
-          "de": "Nach wish steht kein will; man braucht were."
+          "es": "Después de wish no va will; hace falta were."
         }
       },
       "examples": [
         "I wish he were here.",
         "She wishes she were older."
       ],
-      "tr": { "hu": "Bárcsak magasabb lennék.", "en": "I wish I were taller.", "es": "Desearía ser más alto.", "de": "Ich wünschte, ich wäre größer." }
+      "tr": { "en": "I wish I were taller.", "es": "Desearía ser más alto." }
     },
     {
       "id": "wsh-08",
@@ -643,30 +523,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Múltbeli sajnálat: If only + hadn’t + igenév.",
         "en": "Regret about the past: If only + hadn’t + participle.",
-        "es": "Arrepentimiento sobre el pasado: If only + hadn’t + participio.",
-        "de": "Bedauern über die Vergangenheit: If only + hadn’t + Partizip."
+        "es": "Arrepentimiento sobre el pasado: If only + hadn’t + participio."
       },
       "wrong": {
         "haven't missed": {
-          "hu": "A haven’t missed present perfect; a múltbeli sajnálathoz hadn’t missed kell.",
           "en": "Haven’t missed is the present perfect; a past regret needs hadn’t missed.",
-          "es": "Haven’t missed es el presente perfecto; un arrepentimiento pasado necesita hadn’t missed.",
-          "de": "Haven’t missed ist das Present Perfect; ein vergangenes Bedauern braucht hadn’t missed."
+          "es": "Haven’t missed es el presente perfecto; un arrepentimiento pasado necesita hadn’t missed."
         },
         "wouldn't miss": {
-          "hu": "A wouldn’t miss jelenre vagy jövőre vonatkozik; a mondat múltbeli esetről szól.",
           "en": "Wouldn’t miss refers to the present or the future; the sentence is about a past event.",
-          "es": "Wouldn’t miss se refiere al presente o al futuro; la oración trata de un hecho pasado.",
-          "de": "Wouldn’t miss bezieht sich auf Gegenwart oder Zukunft; der Satz handelt von einem vergangenen Ereignis."
+          "es": "Wouldn’t miss se refiere al presente o al futuro; la oración trata de un hecho pasado."
         }
       },
       "examples": [
         "If only I hadn't forgotten!",
         "If only she hadn't left."
       ],
-      "tr": { "hu": "Bárcsak ne késtem volna le a buszt! Most elkéstem.", "en": "If only I hadn't missed the bus! Now I am late.", "es": "¡Si tan solo no hubiera perdido el camión! Ahora voy tarde.", "de": "Hätte ich bloß den Bus nicht verpasst! Jetzt bin ich zu spät." }
+      "tr": { "en": "If only I hadn't missed the bus! Now I am late.", "es": "¡Si tan solo no hubiera perdido el camión! Ahora voy tarde." }
     },
     {
       "id": "wsh-09",
@@ -678,30 +552,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Jelenbeli sajnálat: If only + past simple.",
         "en": "Regret about the present: If only + past simple.",
-        "es": "Arrepentimiento sobre el presente: If only + pasado simple.",
-        "de": "Bedauern über die Gegenwart: If only + Past Simple."
+        "es": "Arrepentimiento sobre el presente: If only + pasado simple."
       },
       "wrong": {
         "have": {
-          "hu": "Az If only után nem jelen idő áll; past simple kell (had).",
           "en": "After If only comes the past simple, not the present (had).",
-          "es": "Después de If only va el pasado simple, no el presente (had).",
-          "de": "Nach If only steht das Past Simple, nicht das Präsens (had)."
+          "es": "Después de If only va el pasado simple, no el presente (had)."
         },
         "will have": {
-          "hu": "Az If only után nem áll will; past simple kell (had).",
           "en": "After If only there is no will; you need the past simple (had).",
-          "es": "Después de If only no va will; hace falta el pasado simple (had).",
-          "de": "Nach If only steht kein will; man braucht das Past Simple (had)."
+          "es": "Después de If only no va will; hace falta el pasado simple (had)."
         }
       },
       "examples": [
         "If only I had a car!",
         "If only we had time!"
       ],
-      "tr": { "hu": "Bárcsak több pénzem lenne!", "en": "If only I had more money!", "es": "¡Si tan solo tuviera más dinero!", "de": "Hätte ich bloß mehr Geld!" }
+      "tr": { "en": "If only I had more money!", "es": "¡Si tan solo tuviera más dinero!" }
     },
     {
       "id": "wsh-10",
@@ -713,30 +581,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Kevés esélyű vágy: wish + could.",
         "en": "A wish with little chance: wish + could.",
-        "es": "Un deseo con poca posibilidad: wish + could.",
-        "de": "Ein Wunsch mit kaum Chance: wish + could."
+        "es": "Un deseo con poca posibilidad: wish + could."
       },
       "wrong": {
         "can": {
-          "hu": "A wish után a can helyett could áll, mert a tempus egyet hátralép.",
           "en": "After wish, could stands in place of can, because the tense steps back.",
-          "es": "Después de wish, could ocupa el lugar de can, porque el tiempo verbal retrocede.",
-          "de": "Nach wish steht could statt can, weil die Zeitform einen Schritt zurückgeht."
+          "es": "Después de wish, could ocupa el lugar de can, porque el tiempo verbal retrocede."
         },
         "will": {
-          "hu": "A wish után nem áll will; could vagy would kell.",
           "en": "After wish there is no will; you need could or would.",
-          "es": "Después de wish no va will; hace falta could o would.",
-          "de": "Nach wish steht kein will; man braucht could oder would."
+          "es": "Después de wish no va will; hace falta could o would."
         }
       },
       "examples": [
         "I wish she could stay.",
         "We wish they could help."
       ],
-      "tr": { "hu": "Bárcsak el tudnál jönni a holnapi bulimba.", "en": "I wish you could come to my party tomorrow.", "es": "Desearía que pudieras venir a mi fiesta mañana.", "de": "Ich wünschte, du könntest morgen zu meiner Party kommen." }
+      "tr": { "en": "I wish you could come to my party tomorrow.", "es": "Desearía que pudieras venir a mi fiesta mañana." }
     },
     {
       "id": "wsh-11",
@@ -748,30 +610,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Valós esély: hope + jelen idejű alak, nincs hátralépés.",
         "en": "A real chance: hope + a present form, with no step back.",
-        "es": "Una posibilidad real: hope + una forma de presente, sin retroceso.",
-        "de": "Eine reale Chance: hope + Präsensform, ohne Schritt zurück."
+        "es": "Una posibilidad real: hope + una forma de presente, sin retroceso."
       },
       "wrong": {
         "did": {
-          "hu": "A hope után nem past simple áll; valós esélynél jelen idő kell (can).",
           "en": "After hope comes no past simple; a real chance takes the present (can).",
-          "es": "Después de hope no va el pasado simple; una posibilidad real lleva el presente (can).",
-          "de": "Nach hope steht kein Past Simple; eine reale Chance nimmt das Präsens (can)."
+          "es": "Después de hope no va el pasado simple; una posibilidad real lleva el presente (can)."
         },
         "had": {
-          "hu": "A had come múltra utal; a tomorrow jövőt jelez, ezért can kell.",
           "en": "Had come points to the past; tomorrow points to the future, so you need can.",
-          "es": "Had come apunta al pasado; tomorrow señala el futuro, por eso hace falta can.",
-          "de": "Had come verweist auf die Vergangenheit; tomorrow weist auf die Zukunft, deshalb braucht man can."
+          "es": "Had come apunta al pasado; tomorrow señala el futuro, por eso hace falta can."
         }
       },
       "examples": [
         "I hope she can help.",
         "We hope you can stay."
       ],
-      "tr": { "hu": "Remélem, el tudsz jönni a holnapi bulimba.", "en": "I hope you can come to my party tomorrow.", "es": "Espero que puedas venir a mi fiesta mañana.", "de": "Ich hoffe, du kannst morgen zu meiner Party kommen." }
+      "tr": { "en": "I hope you can come to my party tomorrow.", "es": "Espero que puedas venir a mi fiesta mañana." }
     },
     {
       "id": "wsh-12",
@@ -783,30 +639,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Múltbeli sajnálat tagadva: wish + hadn’t + igenév.",
         "en": "A negative regret about the past: wish + hadn’t + participle.",
-        "es": "Un arrepentimiento negativo sobre el pasado: wish + hadn’t + participio.",
-        "de": "Ein verneintes Bedauern über die Vergangenheit: wish + hadn’t + Partizip."
+        "es": "Un arrepentimiento negativo sobre el pasado: wish + hadn’t + participio."
       },
       "wrong": {
         "doesn't eat": {
-          "hu": "A doesn’t eat jelen idejű; a last night múltat jelez.",
           "en": "Doesn’t eat is present; last night points to the past.",
-          "es": "Doesn’t eat es presente; last night señala el pasado.",
-          "de": "Doesn’t eat ist Gegenwart; last night weist auf die Vergangenheit."
+          "es": "Doesn’t eat es presente; last night señala el pasado."
         },
         "wouldn't eat": {
-          "hu": "A wouldn’t eat jelenre vagy jövőre vonatkozik; a last night múltat jelez.",
           "en": "Wouldn’t eat refers to the present or the future; last night points to the past.",
-          "es": "Wouldn’t eat se refiere al presente o al futuro; last night señala el pasado.",
-          "de": "Wouldn’t eat bezieht sich auf Gegenwart oder Zukunft; last night weist auf die Vergangenheit."
+          "es": "Wouldn’t eat se refiere al presente o al futuro; last night señala el pasado."
         }
       },
       "examples": [
         "I wish I hadn't said it.",
         "She wishes she hadn't gone."
       ],
-      "tr": { "hu": "Bárcsak ne evett volna annyit tegnap este.", "en": "He wishes he hadn't eaten so much last night.", "es": "Él desearía no haber comido tanto anoche.", "de": "Er wünschte, er hätte gestern Abend nicht so viel gegessen." }
+      "tr": { "en": "He wishes he hadn't eaten so much last night.", "es": "Él desearía no haber comido tanto anoche." }
     },
     {
       "id": "wsh-13",
@@ -818,30 +668,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Múltbeli sajnálat: wish + had + igenév.",
         "en": "Regret about the past: wish + had + participle.",
-        "es": "Arrepentimiento sobre el pasado: wish + had + participio.",
-        "de": "Bedauern über die Vergangenheit: wish + had + Partizip."
+        "es": "Arrepentimiento sobre el pasado: wish + had + participio."
       },
       "wrong": {
         "pass": {
-          "hu": "A wish után az alapige nem áll; a múltbeli sajnálathoz had passed kell.",
           "en": "After wish the base verb does not stand; a past regret needs had passed.",
-          "es": "Después de wish el verbo base no va; un arrepentimiento pasado necesita had passed.",
-          "de": "Nach wish steht die Grundform nicht; ein vergangenes Bedauern braucht had passed."
+          "es": "Después de wish el verbo base no va; un arrepentimiento pasado necesita had passed."
         },
         "would pass": {
-          "hu": "A would pass jövőbeli vagy jelenbeli változtatást jelent; itt múltbeli sajnálat van.",
           "en": "Would pass means a change in the future or the present; here it is a past regret.",
-          "es": "Would pass significa un cambio en el futuro o el presente; aquí es un arrepentimiento pasado.",
-          "de": "Would pass bedeutet eine Änderung in der Zukunft oder Gegenwart; hier ist es ein vergangenes Bedauern."
+          "es": "Would pass significa un cambio en el futuro o el presente; aquí es un arrepentimiento pasado."
         }
       },
       "examples": [
         "I wish I had won.",
         "She wishes she had gone."
       ],
-      "tr": { "hu": "Bárcsak átmentem volna a vizsgán. Most újra meg kell csinálnom.", "en": "I wish I had passed the exam. Now I must take it again.", "es": "Desearía haber pasado el examen. Ahora tengo que presentarlo de nuevo.", "de": "Ich wünschte, ich hätte die Prüfung bestanden. Jetzt muss ich sie noch einmal machen." }
+      "tr": { "en": "I wish I had passed the exam. Now I must take it again.", "es": "Desearía haber pasado el examen. Ahora tengo que presentarlo de nuevo." }
     },
     {
       "id": "wsh-14",
@@ -853,30 +697,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Hiányzó képesség: wish + could.",
         "en": "An ability you do not have: wish + could.",
-        "es": "Una habilidad que no se tiene: wish + could.",
-        "de": "Eine Fähigkeit, die man nicht hat: wish + could."
+        "es": "Una habilidad que no se tiene: wish + could."
       },
       "wrong": {
         "can": {
-          "hu": "A wish után a can helyett could áll.",
           "en": "After wish, could stands in place of can.",
-          "es": "Después de wish, could ocupa el lugar de can.",
-          "de": "Nach wish steht could statt can."
+          "es": "Después de wish, could ocupa el lugar de can."
         },
         "is": {
-          "hu": "Az is speak nem létezik; a wish után could + alapige áll.",
           "en": "“Is speak” does not exist; after wish comes could + base verb.",
-          "es": "«Is speak» no existe; después de wish va could + verbo base.",
-          "de": "„Is speak“ gibt es nicht; nach wish steht could + Grundform."
+          "es": "«Is speak» no existe; después de wish va could + verbo base."
         }
       },
       "examples": [
         "I wish I could dance.",
         "She wishes she could swim."
       ],
-      "tr": { "hu": "Sam bárcsak tudna franciául.", "en": "Sam wishes he could speak French.", "es": "Sam desearía poder hablar francés.", "de": "Sam wünschte, er könnte Französisch sprechen." }
+      "tr": { "en": "Sam wishes he could speak French.", "es": "Sam desearía poder hablar francés." }
     },
     {
       "id": "wsh-15",
@@ -888,30 +726,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Múltbeli sajnálat tagadva: wish + hadn’t + igenév.",
         "en": "A negative regret about the past: wish + hadn’t + participle.",
-        "es": "Un arrepentimiento negativo sobre el pasado: wish + hadn’t + participio.",
-        "de": "Ein verneintes Bedauern über die Vergangenheit: wish + hadn’t + Partizip."
+        "es": "Un arrepentimiento negativo sobre el pasado: wish + hadn’t + participio."
       },
       "wrong": {
         "haven't sold": {
-          "hu": "A haven’t sold present perfect; a last year múltra utal, ezért hadn’t sold kell.",
           "en": "Haven’t sold is the present perfect; last year points to the past, so you need hadn’t sold.",
-          "es": "Haven’t sold es el presente perfecto; last year apunta al pasado, por eso hace falta hadn’t sold.",
-          "de": "Haven’t sold ist das Present Perfect; last year verweist auf die Vergangenheit, deshalb braucht man hadn’t sold."
+          "es": "Haven’t sold es el presente perfecto; last year apunta al pasado, por eso hace falta hadn’t sold."
         },
         "won't sell": {
-          "hu": "A wish után nem áll will; a mondat múltbeli sajnálat.",
           "en": "After wish there is no will; the sentence is a past regret.",
-          "es": "Después de wish no va will; la oración es un arrepentimiento pasado.",
-          "de": "Nach wish steht kein will; der Satz ist ein vergangenes Bedauern."
+          "es": "Después de wish no va will; la oración es un arrepentimiento pasado."
         }
       },
       "examples": [
         "I wish we hadn't left.",
         "She wishes he hadn't called."
       ],
-      "tr": { "hu": "Bárcsak ne adták volna el a házat tavaly.", "en": "They wish they hadn't sold the house last year.", "es": "Ellos desearían no haber vendido la casa el año pasado.", "de": "Sie wünschten, sie hätten das Haus letztes Jahr nicht verkauft." }
+      "tr": { "en": "They wish they hadn't sold the house last year.", "es": "Ellos desearían no haber vendido la casa el año pasado." }
     },
     {
       "id": "wsh-16",
@@ -923,30 +755,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Múltbeli sajnálat: wish + had + igenév.",
         "en": "Regret about the past: wish + had + participle.",
-        "es": "Arrepentimiento sobre el pasado: wish + had + participio.",
-        "de": "Bedauern über die Vergangenheit: wish + had + Partizip."
+        "es": "Arrepentimiento sobre el pasado: wish + had + participio."
       },
       "wrong": {
         "learn": {
-          "hu": "A wish után az alapige nem áll; had learned kell.",
           "en": "After wish the base verb does not stand; you need had learned.",
-          "es": "Después de wish el verbo base no va; hace falta had learned.",
-          "de": "Nach wish steht die Grundform nicht; man braucht had learned."
+          "es": "Después de wish el verbo base no va; hace falta had learned."
         },
         "would learn": {
-          "hu": "A would learn változtatási vágyat jelöl; itt múltbeli sajnálat van (at school).",
           "en": "Would learn marks a wish for change; here it is a past regret (at school).",
-          "es": "Would learn marca un deseo de cambio; aquí es un arrepentimiento pasado (at school).",
-          "de": "Would learn markiert einen Veränderungswunsch; hier ist es ein vergangenes Bedauern (at school)."
+          "es": "Would learn marca un deseo de cambio; aquí es un arrepentimiento pasado (at school)."
         }
       },
       "examples": [
         "What do you wish you had said?",
         "I wish I had studied."
       ],
-      "tr": { "hu": "Mit bárcsak megtanultál volna az iskolában?", "en": "What do you wish you had learned at school?", "es": "¿Qué desearías haber aprendido en la escuela?", "de": "Was hättest du dir gewünscht, in der Schule gelernt zu haben?" }
+      "tr": { "en": "What do you wish you had learned at school?", "es": "¿Qué desearías haber aprendido en la escuela?" }
     },
     {
       "id": "wsh-17",
@@ -958,30 +784,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Panasz valaki viselkedésére: wish + would + alapige.",
         "en": "A complaint about someone’s behavior: wish + would + base verb.",
-        "es": "Una queja sobre la conducta de alguien: wish + would + verbo base.",
-        "de": "Eine Klage über das Verhalten von jemandem: wish + would + Grundform."
+        "es": "Una queja sobre la conducta de alguien: wish + would + verbo base."
       },
       "wrong": {
         "will stop": {
-          "hu": "A wish után nem áll will; would kell.",
           "en": "After wish there is no will; you need would.",
-          "es": "Después de wish no va will; hace falta would.",
-          "de": "Nach wish steht kein will; man braucht would."
+          "es": "Después de wish no va will; hace falta would."
         },
         "are stopping": {
-          "hu": "Az are stopping jelen idejű; a wish után would + alapige kell.",
           "en": "Are stopping is present; after wish you need would + base verb.",
-          "es": "Are stopping es presente; después de wish hace falta would + verbo base.",
-          "de": "Are stopping ist Gegenwart; nach wish braucht man would + Grundform."
+          "es": "Are stopping es presente; después de wish hace falta would + verbo base."
         }
       },
       "examples": [
         "I wish he would listen.",
         "I wish they would wait."
       ],
-      "tr": { "hu": "Bárcsak abbahagynád a beszélést. Aludni próbálok.", "en": "I wish you would stop talking. I'm trying to sleep.", "es": "Desearía que dejaras de hablar. Estoy tratando de dormir.", "de": "Ich wünschte, du würdest aufhören zu reden. Ich versuche zu schlafen." }
+      "tr": { "en": "I wish you would stop talking. I'm trying to sleep.", "es": "Desearía que dejaras de hablar. Estoy tratando de dormir." }
     },
     {
       "id": "wsh-18",
@@ -1043,46 +863,34 @@
       "es": "I wish I had more time.",
       "target": "had",
       "tr": {
-        "hu": "Bárcsak több időm lenne.",
         "en": "I wish I had more time.",
-        "es": "Ojalá tuviera más tiempo.",
-        "de": "Ich wünschte, ich hätte mehr Zeit."
+        "es": "Ojalá tuviera más tiempo."
       },
       "options": [
         {
           "text": {
-            "hu": "múltbeli sajnálat: past perfect",
             "en": "a past regret: past perfect",
-            "es": "un arrepentimiento pasado: past perfect",
-            "de": "ein vergangenes Bedauern: Past Perfect"
+            "es": "un arrepentimiento pasado: past perfect"
           },
           "wrong": {
-            "hu": "A past perfect had + igenév lenne (had had); itt a had a past simple alakja.",
             "en": "The past perfect would be had + participle (had had); here had is the past simple.",
-            "es": "El past perfect sería had + participio (had had); aquí had es el pasado simple.",
-            "de": "Das Past Perfect wäre had + Partizip (had had); hier ist had das Past Simple."
+            "es": "El past perfect sería had + participio (had had); aquí had es el pasado simple."
           }
         },
         {
           "text": {
-            "hu": "jelenbeli sajnálat: past simple",
             "en": "a present regret: past simple",
-            "es": "un arrepentimiento presente: pasado simple",
-            "de": "ein gegenwärtiges Bedauern: Past Simple"
+            "es": "un arrepentimiento presente: pasado simple"
           }
         },
         {
           "text": {
-            "hu": "jövőbeli változás: would",
             "en": "a future change: would",
-            "es": "un cambio futuro: would",
-            "de": "eine künftige Änderung: would"
+            "es": "un cambio futuro: would"
           },
           "wrong": {
-            "hu": "Itt nincs would; a had a past simple, és a jelenlegi helyzetre vonatkozik.",
             "en": "There is no would here; had is the past simple, about the present situation.",
-            "es": "Aquí no hay would; had es el pasado simple, sobre la situación actual.",
-            "de": "Hier gibt es kein would; had ist das Past Simple, bezogen auf die jetzige Lage."
+            "es": "Aquí no hay would; had es el pasado simple, sobre la situación actual."
           }
         }
       ],
@@ -1094,46 +902,34 @@
       "es": "I wish I had studied more.",
       "target": "had studied",
       "tr": {
-        "hu": "Bárcsak többet tanultam volna.",
         "en": "I wish I had studied more.",
-        "es": "Ojalá hubiera estudiado más.",
-        "de": "Ich wünschte, ich hätte mehr gelernt."
+        "es": "Ojalá hubiera estudiado más."
       },
       "options": [
         {
           "text": {
-            "hu": "jelenbeli sajnálat: past simple",
             "en": "a present regret: past simple",
-            "es": "un arrepentimiento presente: pasado simple",
-            "de": "ein gegenwärtiges Bedauern: Past Simple"
+            "es": "un arrepentimiento presente: pasado simple"
           },
           "wrong": {
-            "hu": "A past simple egyetlen igealak (studied); a had studied past perfect, múltbeli sajnálat.",
             "en": "The past simple is a single verb form (studied); had studied is the past perfect, a past regret.",
-            "es": "El pasado simple es una sola forma verbal (studied); had studied es el past perfect, un arrepentimiento pasado.",
-            "de": "Das Past Simple ist eine einzelne Verbform (studied); had studied ist das Past Perfect, ein vergangenes Bedauern."
+            "es": "El pasado simple es una sola forma verbal (studied); had studied es el past perfect, un arrepentimiento pasado."
           }
         },
         {
           "text": {
-            "hu": "múltbeli sajnálat: past perfect",
             "en": "a past regret: past perfect",
-            "es": "un arrepentimiento pasado: past perfect",
-            "de": "ein vergangenes Bedauern: Past Perfect"
+            "es": "un arrepentimiento pasado: past perfect"
           }
         },
         {
           "text": {
-            "hu": "panasz: would",
             "en": "a complaint: would",
-            "es": "una queja: would",
-            "de": "eine Klage: would"
+            "es": "una queja: would"
           },
           "wrong": {
-            "hu": "Itt nincs would; a had studied múltbeli sajnálatot fejez ki.",
             "en": "There is no would here; had studied expresses a past regret.",
-            "es": "Aquí no hay would; had studied expresa un arrepentimiento pasado.",
-            "de": "Hier gibt es kein would; had studied drückt ein vergangenes Bedauern aus."
+            "es": "Aquí no hay would; had studied expresa un arrepentimiento pasado."
           }
         }
       ],
@@ -1145,46 +941,34 @@
       "es": "I wish it would stop raining.",
       "target": "would stop",
       "tr": {
-        "hu": "Bárcsak elállna az eső.",
         "en": "I wish it would stop raining.",
-        "es": "Ojalá dejara de llover.",
-        "de": "Ich wünschte, es würde aufhören zu regnen."
+        "es": "Ojalá dejara de llover."
       },
       "options": [
         {
           "text": {
-            "hu": "múltbeli sajnálat",
             "en": "a past regret",
-            "es": "un arrepentimiento pasado",
-            "de": "ein vergangenes Bedauern"
+            "es": "un arrepentimiento pasado"
           },
           "wrong": {
-            "hu": "Múltbeli sajnálathoz had + igenév kell; a would stop a jövőbeli változást kívánja.",
             "en": "A past regret needs had + participle; would stop wishes for a change in the future.",
-            "es": "Un arrepentimiento pasado necesita had + participio; would stop desea un cambio en el futuro.",
-            "de": "Ein vergangenes Bedauern braucht had + Partizip; would stop wünscht eine Änderung in der Zukunft."
+            "es": "Un arrepentimiento pasado necesita had + participio; would stop desea un cambio en el futuro."
           }
         },
         {
           "text": {
-            "hu": "olyan dolog megváltozását kívánja, amin nem tudsz változtatni",
             "en": "a wish for a change in something you cannot control",
-            "es": "un deseo de cambio en algo que no controlas",
-            "de": "ein Wunsch nach Änderung bei etwas, das man nicht kontrollieren kann"
+            "es": "un deseo de cambio en algo que no controlas"
           }
         },
         {
           "text": {
-            "hu": "saját képességet kíván",
             "en": "a wish for your own ability",
-            "es": "un deseo de tu propia habilidad",
-            "de": "ein Wunsch nach der eigenen Fähigkeit"
+            "es": "un deseo de tu propia habilidad"
           },
           "wrong": {
-            "hu": "Saját képességre could áll; a would stop más dologra vagy személyre vonatkozik.",
             "en": "Your own ability takes could; would stop refers to something or someone else.",
-            "es": "La habilidad propia lleva could; would stop se refiere a otra cosa o persona.",
-            "de": "Die eigene Fähigkeit nimmt could; would stop bezieht sich auf etwas oder jemand anderen."
+            "es": "La habilidad propia lleva could; would stop se refiere a otra cosa o persona."
           }
         }
       ],
@@ -1196,46 +980,34 @@
       "es": "I hope you can come tomorrow.",
       "target": "hope",
       "tr": {
-        "hu": "Remélem, holnap el tudsz jönni.",
         "en": "I hope you can come tomorrow.",
-        "es": "Espero que puedas venir mañana.",
-        "de": "Ich hoffe, du kannst morgen kommen."
+        "es": "Espero que puedas venir mañana."
       },
       "options": [
         {
           "text": {
-            "hu": "valós esély: a hope után nincs hátralépés",
             "en": "a real chance: no step back after hope",
-            "es": "una posibilidad real: sin retroceso después de hope",
-            "de": "eine reale Chance: kein Schritt zurück nach hope"
+            "es": "una posibilidad real: sin retroceso después de hope"
           }
         },
         {
           "text": {
-            "hu": "valótlan helyzet: a tempus hátralép",
             "en": "an unreal situation: the tense steps back",
-            "es": "una situación irreal: el tiempo retrocede",
-            "de": "eine irreale Situation: die Zeitform geht zurück"
+            "es": "una situación irreal: el tiempo retrocede"
           },
           "wrong": {
-            "hu": "A hope valós esélyt jelöl; a hátralépés a wish-re jellemző.",
             "en": "Hope marks a real chance; the step back is typical of wish.",
-            "es": "Hope marca una posibilidad real; el retroceso es propio de wish.",
-            "de": "Hope markiert eine reale Chance; der Schritt zurück ist für wish typisch."
+            "es": "Hope marca una posibilidad real; el retroceso es propio de wish."
           }
         },
         {
           "text": {
-            "hu": "múltbeli sajnálat",
             "en": "a past regret",
-            "es": "un arrepentimiento pasado",
-            "de": "ein vergangenes Bedauern"
+            "es": "un arrepentimiento pasado"
           },
           "wrong": {
-            "hu": "Itt a tomorrow jövőt jelez, nem múltat.",
             "en": "Here tomorrow points to the future, not the past.",
-            "es": "Aquí tomorrow señala el futuro, no el pasado.",
-            "de": "Hier weist tomorrow auf die Zukunft, nicht auf die Vergangenheit."
+            "es": "Aquí tomorrow señala el futuro, no el pasado."
           }
         }
       ],
@@ -1247,46 +1019,34 @@
       "es": "If only I had listened!",
       "target": "If only",
       "tr": {
-        "hu": "Bárcsak hallgattam volna!",
         "en": "If only I had listened!",
-        "es": "¡Si tan solo hubiera escuchado!",
-        "de": "Hätte ich nur zugehört!"
+        "es": "¡Si tan solo hubiera escuchado!"
       },
       "options": [
         {
           "text": {
-            "hu": "udvarias kérés",
             "en": "a polite request",
-            "es": "una petición cortés",
-            "de": "eine höfliche Bitte"
+            "es": "una petición cortés"
           },
           "wrong": {
-            "hu": "Az If only nem kérés; kívánságot vagy sajnálatot fejez ki.",
             "en": "If only is not a request; it expresses a wish or a regret.",
-            "es": "If only no es una petición; expresa un deseo o un arrepentimiento.",
-            "de": "If only ist keine Bitte; es drückt einen Wunsch oder ein Bedauern aus."
+            "es": "If only no es una petición; expresa un deseo o un arrepentimiento."
           }
         },
         {
           "text": {
-            "hu": "olyan feltétel, ami még teljesülhet",
             "en": "a condition that may still come true",
-            "es": "una condición que aún puede cumplirse",
-            "de": "eine Bedingung, die noch eintreten kann"
+            "es": "una condición que aún puede cumplirse"
           },
           "wrong": {
-            "hu": "A had listened múltbeli, már nem változtatható helyzet.",
             "en": "Had listened is a past situation that can no longer change.",
-            "es": "Had listened es una situación pasada que ya no puede cambiar.",
-            "de": "Had listened ist eine vergangene Situation, die sich nicht mehr ändern lässt."
+            "es": "Had listened es una situación pasada que ya no puede cambiar."
           }
         },
         {
           "text": {
-            "hu": "erősebb kívánság, ugyanazokkal az igeidőkkel, mint a wish",
             "en": "a stronger wish, with the same tenses as wish",
-            "es": "un deseo más fuerte, con los mismos tiempos que wish",
-            "de": "ein stärkerer Wunsch, mit denselben Zeitformen wie wish"
+            "es": "un deseo más fuerte, con los mismos tiempos que wish"
           }
         }
       ],

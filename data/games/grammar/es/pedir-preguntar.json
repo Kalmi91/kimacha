@@ -3,194 +3,152 @@
   "topic": "pedir-preguntar",
   "level": "A2",
   "title": {
-    "hu": "Pedir vagy preguntar?",
     "en": "Pedir or preguntar?",
-    "es": "¿Pedir o preguntar?",
-    "de": "Pedir oder preguntar?"
+    "es": "¿Pedir o preguntar?"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "A spanyolban két külön ige van arra, amit az angol egyetlen szóval, az ask igével mond. A pedir azt jelenti: valamit kérni vagy rendelni, például egy kávét, a számlát, segítséget vagy engedélyt. A preguntar azt jelenti: kérdést feltenni, és választ várni, például hol van valami, mennyibe kerül, vagy igen-e vagy nem. A magyar kérni és kérdezni párosa pontosan ezt a két igét követi.",
         "en": "Spanish has two separate verbs for what English says with the single verb ask. Pedir means to ask FOR something or to order it: a coffee, the bill, help or permission. Preguntar means to ask a question and wait for an answer: where something is, how much it costs, yes or no. If you think in English, remember: ask for a thing is pedir, ask a question is preguntar.",
-        "es": "El español tiene dos verbos distintos para lo que el inglés dice con un solo verbo, ask. Pedir es pedir o encargar algo: un café, la cuenta, ayuda, permiso. Preguntar es hacer una pregunta y esperar una respuesta: dónde está algo, cuánto cuesta, sí o no. Si piensas en inglés, recuerda: ask for something es pedir, ask a question es preguntar.",
-        "de": "Das Spanische hat zwei getrennte Verben für das, was das Englische mit dem einen Verb ask sagt. Pedir heißt, um etwas bitten oder etwas bestellen: einen Kaffee, die Rechnung, Hilfe oder Erlaubnis. Preguntar heißt, eine Frage stellen und eine Antwort erwarten: wo etwas ist, was es kostet, ja oder nein. Das deutsche bitten um und fragen entsprechen genau diesen zwei Verben."
+        "es": "El español tiene dos verbos distintos para lo que el inglés dice con un solo verbo, ask. Pedir es pedir o encargar algo: un café, la cuenta, ayuda, permiso. Preguntar es hacer una pregunta y esperar una respuesta: dónde está algo, cuánto cuesta, sí o no. Si piensas en inglés, recuerda: ask for something es pedir, ask a question es preguntar."
       }
     },
     {
       "kind": "usage",
       "title": {
-        "hu": "Mikor melyiket",
         "en": "When to use which",
-        "es": "Cuándo usar cada uno",
-        "de": "Wann welches"
+        "es": "Cuándo usar cada uno"
       },
       "points": [
         {
           "text": {
-            "hu": "A pedir dolgot kér vagy rendel: ételt, italt, a számlát, pénzt, segítséget. Amit kérsz, az a mondat tárgya, nem kérdés.",
             "en": "Pedir asks for or orders a thing: food, a drink, the bill, money, help. What you ask for is the object of the sentence, not a question.",
-            "es": "Pedir es pedir o encargar una cosa: comida, una bebida, la cuenta, dinero, ayuda. Lo que se pide es el objeto de la frase, no una pregunta.",
-            "de": "Pedir bedeutet, um etwas bitten oder etwas bestellen: Essen, ein Getränk, die Rechnung, Geld, Hilfe. Was man erbittet, ist das Objekt des Satzes, keine Frage."
+            "es": "Pedir es pedir o encargar una cosa: comida, una bebida, la cuenta, dinero, ayuda. Lo que se pide es el objeto de la frase, no una pregunta."
           },
           "examples": [
             {
               "es": "Pido un café con leche.",
               "tr": {
-                "hu": "Kérek egy tejeskávét.",
                 "en": "I ask for a coffee with milk.",
-                "es": "Pido un café con leche.",
-                "de": "Ich bestelle einen Milchkaffee."
+                "es": "Pido un café con leche."
               }
             },
             {
               "es": "Pedimos la cuenta.",
               "tr": {
-                "hu": "Kérjük a számlát.",
                 "en": "We ask for the bill.",
-                "es": "Pedimos la cuenta.",
-                "de": "Wir bitten um die Rechnung."
+                "es": "Pedimos la cuenta."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A pedir hangsúlyos tövében e helyett i áll: pido, pides, pide, piden; a nosotros alak (pedimos) szabályos. A preguntar teljesen szabályos: pregunto, preguntas, pregunta, preguntamos, preguntan.",
             "en": "Pedir changes e to i in the stressed forms: pido, pides, pide, piden; the nosotros form (pedimos) is regular. Preguntar is fully regular: pregunto, preguntas, pregunta, preguntamos, preguntan.",
-            "es": "Pedir cambia la e por i en las formas con acento en la raíz: pido, pides, pide, piden; la forma de nosotros (pedimos) es regular. Preguntar es totalmente regular: pregunto, preguntas, pregunta, preguntamos, preguntan.",
-            "de": "Pedir wechselt in den betonten Formen von e zu i: pido, pides, pide, piden; die nosotros-Form (pedimos) ist regelmäßig. Preguntar ist ganz regelmäßig: pregunto, preguntas, pregunta, preguntamos, preguntan."
+            "es": "Pedir cambia la e por i en las formas con acento en la raíz: pido, pides, pide, piden; la forma de nosotros (pedimos) es regular. Preguntar es totalmente regular: pregunto, preguntas, pregunta, preguntamos, preguntan."
           },
           "examples": [
             {
               "es": "¿Qué pides de postre?",
               "tr": {
-                "hu": "Mit kérsz desszertnek?",
                 "en": "What do you order for dessert?",
-                "es": "¿Qué pides de postre?",
-                "de": "Was bestellst du als Nachtisch?"
+                "es": "¿Qué pides de postre?"
               }
             },
             {
               "es": "Mis amigos piden pizza.",
               "tr": {
-                "hu": "A barátaim pizzát rendelnek.",
                 "en": "My friends order pizza.",
-                "es": "Mis amigos piden pizza.",
-                "de": "Meine Freunde bestellen Pizza."
+                "es": "Mis amigos piden pizza."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Ha azt is megmondod, kitől kérsz, a személy le (a) jelölést kap, a dolog marad a tárgy: le pido ayuda a mi vecino. Gyakori szerkezetek: pedir un favor (szívességet kérni), pedir permiso (engedélyt kérni), pedir perdón (bocsánatot kérni).",
             "en": "If you also say whom you ask, the person takes le (a) and the thing stays the object: le pido ayuda a mi vecino. Common phrases: pedir un favor (ask a favor), pedir permiso (ask permission), pedir perdón (apologize).",
-            "es": "Si dices también a quién se lo pides, la persona lleva le (a) y la cosa sigue siendo el objeto: le pido ayuda a mi vecino. Frases frecuentes: pedir un favor, pedir permiso, pedir perdón.",
-            "de": "Wenn man auch sagt, wen man bittet, steht die Person mit le (a) und die Sache bleibt das Objekt: le pido ayuda a mi vecino. Häufige Wendungen: pedir un favor (um einen Gefallen bitten), pedir permiso (um Erlaubnis bitten), pedir perdón (um Verzeihung bitten)."
+            "es": "Si dices también a quién se lo pides, la persona lleva le (a) y la cosa sigue siendo el objeto: le pido ayuda a mi vecino. Frases frecuentes: pedir un favor, pedir permiso, pedir perdón."
           },
           "examples": [
             {
               "es": "Le pido ayuda a mi vecino.",
               "tr": {
-                "hu": "Segítséget kérek a szomszédomtól.",
                 "en": "I ask my neighbor for help.",
-                "es": "Le pido ayuda a mi vecino.",
-                "de": "Ich bitte meinen Nachbarn um Hilfe."
+                "es": "Le pido ayuda a mi vecino."
               }
             },
             {
               "es": "Mi hijo le pide perdón a su madre.",
               "tr": {
-                "hu": "A fiam bocsánatot kér az anyjától.",
                 "en": "My son asks his mother for forgiveness.",
-                "es": "Mi hijo le pide perdón a su madre.",
-                "de": "Mein Sohn bittet seine Mutter um Verzeihung."
+                "es": "Mi hijo le pide perdón a su madre."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A preguntar kérdést tesz fel, és választ vár: utána kérdőszó (dónde, cuándo, cuánto) vagy si (azt, hogy van-e, igen-e) jön. Akit kérdezel, azt le (a) jelöli.",
             "en": "Preguntar asks a question and waits for an answer: it is followed by a question word (dónde, cuándo, cuánto) or by si (whether). The person you ask takes le (a).",
-            "es": "Preguntar es hacer una pregunta y esperar una respuesta: después va una palabra interrogativa (dónde, cuándo, cuánto) o si. La persona a quien se pregunta lleva le (a).",
-            "de": "Preguntar stellt eine Frage und erwartet eine Antwort: danach folgt ein Fragewort (dónde, cuándo, cuánto) oder si (ob). Die gefragte Person steht mit le (a)."
+            "es": "Preguntar es hacer una pregunta y esperar una respuesta: después va una palabra interrogativa (dónde, cuándo, cuánto) o si. La persona a quien se pregunta lleva le (a)."
           },
           "examples": [
             {
               "es": "Le pregunto a un policía dónde está la estación.",
               "tr": {
-                "hu": "Megkérdezem egy rendőrtől, hol van az állomás.",
                 "en": "I ask a police officer where the station is.",
-                "es": "Le pregunto a un policía dónde está la estación.",
-                "de": "Ich frage einen Polizisten, wo der Bahnhof ist."
+                "es": "Le pregunto a un policía dónde está la estación."
               }
             },
             {
               "es": "Preguntamos si hay mesa.",
               "tr": {
-                "hu": "Megkérdezzük, van-e asztal.",
                 "en": "We ask whether there is a table.",
-                "es": "Preguntamos si hay mesa.",
-                "de": "Wir fragen, ob es einen Tisch gibt."
+                "es": "Preguntamos si hay mesa."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A preguntar por azt jelenti, hogy valaki vagy valami felől érdeklődsz, vagy egy helyen valakit keresel: a por után a személy vagy a dolog neve áll.",
             "en": "Preguntar por means to ask about someone or something, or to ask for a person at a place: after por comes the name of the person or thing.",
-            "es": "Preguntar por es interesarse por alguien o algo, o buscar a una persona en un lugar: después de por va el nombre de la persona o de la cosa.",
-            "de": "Preguntar por heißt, nach jemandem oder etwas fragen oder an einem Ort nach einer Person fragen: nach por steht der Name der Person oder der Sache."
+            "es": "Preguntar por es interesarse por alguien o algo, o buscar a una persona en un lugar: después de por va el nombre de la persona o de la cosa."
           },
           "examples": [
             {
               "es": "Mi madre pregunta por ti.",
               "tr": {
-                "hu": "Anyám érdeklődik utánad.",
                 "en": "My mother is asking about you.",
-                "es": "Mi madre pregunta por ti.",
-                "de": "Meine Mutter fragt nach dir."
+                "es": "Mi madre pregunta por ti."
               }
             },
             {
               "es": "En la oficina pregunto por el jefe.",
               "tr": {
-                "hu": "Az irodában a főnököt keresem.",
                 "en": "At the office I ask for the boss.",
-                "es": "En la oficina pregunto por el jefe.",
-                "de": "Im Büro frage ich nach dem Chef."
+                "es": "En la oficina pregunto por el jefe."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Ha a pregunta főnevet használod, mellé a hacer ige jön: hacer una pregunta. A „preguntar una pregunta” ismételné önmagát, ezért nem mondjuk.",
             "en": "When you use the noun pregunta, the verb that goes with it is hacer: hacer una pregunta. “Preguntar una pregunta” would repeat itself, so it is not said.",
-            "es": "Cuando se usa el sustantivo pregunta, el verbo que lo acompaña es hacer: hacer una pregunta. “Preguntar una pregunta” se repite a sí mismo, por eso no se dice.",
-            "de": "Mit dem Nomen pregunta steht das Verb hacer: hacer una pregunta (eine Frage stellen). „Preguntar una pregunta“ würde sich selbst wiederholen, deshalb sagt man es nicht."
+            "es": "Cuando se usa el sustantivo pregunta, el verbo que lo acompaña es hacer: hacer una pregunta. “Preguntar una pregunta” se repite a sí mismo, por eso no se dice."
           },
           "examples": [
             {
               "es": "Quiero hacer una pregunta.",
               "tr": {
-                "hu": "Szeretnék feltenni egy kérdést.",
                 "en": "I want to ask a question.",
-                "es": "Quiero hacer una pregunta.",
-                "de": "Ich möchte eine Frage stellen."
+                "es": "Quiero hacer una pregunta."
               }
             },
             {
               "es": "El profesor me hace una pregunta.",
               "tr": {
-                "hu": "A tanár feltesz nekem egy kérdést.",
                 "en": "The teacher asks me a question.",
-                "es": "El profesor me hace una pregunta.",
-                "de": "Der Lehrer stellt mir eine Frage."
+                "es": "El profesor me hace una pregunta."
               }
             }
           ]
@@ -201,23 +159,17 @@
       "kind": "table",
       "id": "pedir-preguntar-formas",
       "title": {
-        "hu": "Pedir vagy preguntar: melyik alak kell?",
         "en": "Pedir or preguntar: which form is needed?",
-        "es": "Pedir o preguntar: ¿qué forma hace falta?",
-        "de": "Pedir oder preguntar: welche Form wird gebraucht?"
+        "es": "Pedir o preguntar: ¿qué forma hace falta?"
       },
       "header": [
         {
-          "hu": "helyzet",
           "en": "situation",
-          "es": "situación",
-          "de": "Situation"
+          "es": "situación"
         },
         {
-          "hu": "igealak",
           "en": "verb form",
-          "es": "forma verbal",
-          "de": "Verbform"
+          "es": "forma verbal"
         }
       ],
       "rows": [
@@ -274,38 +226,30 @@
     {
       "kind": "contrast",
       "title": {
-        "hu": "Hasonló, mégis más",
         "en": "Similar, yet different",
-        "es": "Parecido, pero distinto",
-        "de": "Ähnlich, aber anders"
+        "es": "Parecido, pero distinto"
       },
       "pairs": [
         {
           "a": "pedir",
           "b": "preguntar",
           "note": {
-            "hu": "A pedir azt kéri, amit kapni szeretnél: egy dolgot, segítséget, engedélyt. A preguntar azt kérdezi, amit tudni szeretnél: helyet, árat, időt, igent vagy nemet. Ugyanaz a helyzet, két mondat: pido la cuenta (kérem a számlát), pregunto cuánto es (megkérdezem, mennyi).",
             "en": "Pedir asks for what you want to receive: a thing, help, permission. Preguntar asks for what you want to know: a place, a price, a time, yes or no. The same situation, two sentences: pido la cuenta (I ask for the bill), pregunto cuánto es (I ask how much it is).",
-            "es": "Pedir es pedir lo que quieres recibir: una cosa, ayuda, permiso. Preguntar es preguntar lo que quieres saber: un lugar, un precio, una hora, sí o no. La misma situación, dos frases: pido la cuenta, pregunto cuánto es.",
-            "de": "Pedir bittet um das, was man bekommen möchte: eine Sache, Hilfe, Erlaubnis. Preguntar fragt nach dem, was man wissen möchte: einen Ort, einen Preis, eine Zeit, ja oder nein. Dieselbe Situation, zwei Sätze: pido la cuenta (ich bitte um die Rechnung), pregunto cuánto es (ich frage, wie viel es ist)."
+            "es": "Pedir es pedir lo que quieres recibir: una cosa, ayuda, permiso. Preguntar es preguntar lo que quieres saber: un lugar, un precio, una hora, sí o no. La misma situación, dos frases: pido la cuenta, pregunto cuánto es."
           },
           "examples": [
             {
               "es": "Pido ayuda en la tienda.",
               "tr": {
-                "hu": "Segítséget kérek a boltban.",
                 "en": "I ask for help in the shop.",
-                "es": "Pido ayuda en la tienda.",
-                "de": "Ich bitte im Laden um Hilfe."
+                "es": "Pido ayuda en la tienda."
               }
             },
             {
               "es": "Pregunto dónde está el baño.",
               "tr": {
-                "hu": "Megkérdezem, hol van a mosdó.",
                 "en": "I ask where the bathroom is.",
-                "es": "Pregunto dónde está el baño.",
-                "de": "Ich frage, wo die Toilette ist."
+                "es": "Pregunto dónde está el baño."
               }
             }
           ]
@@ -314,28 +258,22 @@
           "a": "preguntar",
           "b": "hacer una pregunta",
           "note": {
-            "hu": "Mindkettő kérdezést jelent. A preguntar mellé a kérdés tartalma kerül (dónde, si…), a hacer mellé maga a főnév: una pregunta. Ugyanaz a jelentés, két szerkezet.",
             "en": "Both mean asking a question. After preguntar comes the content of the question (dónde, si…); after hacer comes the noun itself: una pregunta. Same meaning, two structures.",
-            "es": "Los dos significan hacer una pregunta. Con preguntar va el contenido de la pregunta (dónde, si…); con hacer va el sustantivo: una pregunta. El mismo significado, dos estructuras.",
-            "de": "Beide bedeuten, eine Frage zu stellen. Nach preguntar kommt der Inhalt der Frage (dónde, si…); nach hacer kommt das Nomen selbst: una pregunta. Dieselbe Bedeutung, zwei Strukturen."
+            "es": "Los dos significan hacer una pregunta. Con preguntar va el contenido de la pregunta (dónde, si…); con hacer va el sustantivo: una pregunta. El mismo significado, dos estructuras."
           },
           "examples": [
             {
               "es": "Le pregunto a mi madre si viene.",
               "tr": {
-                "hu": "Megkérdezem anyámtól, jön-e.",
                 "en": "I ask my mother whether she is coming.",
-                "es": "Le pregunto a mi madre si viene.",
-                "de": "Ich frage meine Mutter, ob sie kommt."
+                "es": "Le pregunto a mi madre si viene."
               }
             },
             {
               "es": "Quiero hacer una pregunta.",
               "tr": {
-                "hu": "Szeretnék feltenni egy kérdést.",
                 "en": "I want to ask a question.",
-                "es": "Quiero hacer una pregunta.",
-                "de": "Ich möchte eine Frage stellen."
+                "es": "Quiero hacer una pregunta."
               }
             }
           ]
@@ -345,18 +283,14 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Kérdezd meg magadtól: kapni akarok valamit, vagy tudni akarok valamit? Ha kapni (kávé, számla, segítség, engedély): pedir. Ha tudni (hol, mikor, mennyi, igen-e): preguntar. Ha valaki felől érdeklődsz: preguntar por.",
         "en": "Ask yourself: do I want to receive something, or know something? To receive (coffee, bill, help, permission): pedir. To know (where, when, how much, yes or no): preguntar. To ask about a person: preguntar por.",
-        "es": "Pregúntate: ¿quiero recibir algo o quiero saber algo? Recibir (café, cuenta, ayuda, permiso): pedir. Saber (dónde, cuándo, cuánto, sí o no): preguntar. Si es por una persona: preguntar por.",
-        "de": "Frag dich: Möchte ich etwas bekommen oder etwas wissen? Bekommen (Kaffee, Rechnung, Hilfe, Erlaubnis): pedir. Wissen (wo, wann, wie viel, ja oder nein): preguntar. Wenn es um eine Person geht: preguntar por."
+        "es": "Pregúntate: ¿quiero recibir algo o quiero saber algo? Recibir (café, cuenta, ayuda, permiso): pedir. Saber (dónde, cuándo, cuánto, sí o no): preguntar. Si es por una persona: preguntar por."
       }
     }
   ],
   "speak": {
-    "hu": "Két ige, két feladat. Az egyik azt jelenti, hogy valamit kérsz vagy rendelsz: egy italt, a számlát, segítséget vagy engedélyt. A másik azt jelenti, hogy kérdést teszel fel, és választ vársz: hol van valami, mennyibe kerül, igen-e vagy nem. A magyar kérni és kérdezni párosa pontosan ezt a két igét követi, az angol viszont mindkettőre ugyanazt az egy igét használja, ezért oda kell figyelni. Ha valaki felől érdeklődsz, a kérdezős ige után egy kis szó és a személy neve jön. Ha magát a kérdés főnevet használod, mellé a csinálni ige tartozik.",
     "en": "Two verbs, two jobs. One means to ask for something or to order it: a drink, the bill, help or permission. The other means to ask a question and wait for an answer: where something is, how much it costs, yes or no. English uses the single verb ask for both, so pay attention. If you ask about a person, the question verb is followed by a small word and the person's name. If you use the noun for a question, the verb that goes with it is the one that means to do or to make.",
-    "es": "Dos verbos, dos tareas. Uno significa pedir algo o encargarlo: una bebida, la cuenta, ayuda o permiso. El otro significa hacer una pregunta y esperar una respuesta: dónde está algo, cuánto cuesta, sí o no. El inglés usa un solo verbo para los dos, así que hay que prestar atención. Si preguntas por una persona, después del verbo de preguntar va una palabra pequeña y el nombre de la persona. Si usas el sustantivo pregunta, el verbo que lo acompaña es el de hacer.",
-    "de": "Zwei Verben, zwei Aufgaben. Das eine bedeutet, um etwas zu bitten oder etwas zu bestellen: ein Getränk, die Rechnung, Hilfe oder Erlaubnis. Das andere bedeutet, eine Frage zu stellen und eine Antwort zu erwarten: wo etwas ist, was es kostet, ja oder nein. Das Englische benutzt für beides dasselbe eine Verb, deshalb muss man aufpassen. Wenn man sich nach einer Person erkundigt, folgt auf das Fragen-Verb ein kleines Wort und der Name der Person. Wenn man das Nomen für Frage benutzt, gehört das Verb für tun oder machen dazu."
+    "es": "Dos verbos, dos tareas. Uno significa pedir algo o encargarlo: una bebida, la cuenta, ayuda o permiso. El otro significa hacer una pregunta y esperar una respuesta: dónde está algo, cuánto cuesta, sí o no. El inglés usa un solo verbo para los dos, así que hay que prestar atención. Si preguntas por una persona, después del verbo de preguntar va una palabra pequeña y el nombre de la persona. Si usas el sustantivo pregunta, el verbo que lo acompaña es el de hacer."
   },
   "items": [
     {
@@ -369,30 +303,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A számla olyan dolog, amit kérsz, nem kérdés, amire választ várnál: kérem a számlát, vagyis pido.",
         "en": "The bill is a thing you ask for, not a question waiting for an answer: I ask for the bill, so pido.",
-        "es": "La cuenta es una cosa que se pide, no una pregunta que espera respuesta: pido la cuenta.",
-        "de": "Die Rechnung ist eine Sache, um die man bittet, keine Frage, die eine Antwort erwartet: ich bitte um die Rechnung, also pido."
+        "es": "La cuenta es una cosa que se pide, no una pregunta que espera respuesta: pido la cuenta."
       },
       "wrong": {
         "pregunto": {
-          "hu": "A \"pregunto la cuenta\" nem létezik: a preguntar kérdést tesz fel (pregunto cuánto es), a számlát viszont kérni kell. Ide ez illik: pido.",
           "en": "\"Pregunto la cuenta\" does not exist: preguntar asks a question (pregunto cuánto es), while the bill has to be asked for. It needs: pido.",
-          "es": "\"Pregunto la cuenta\" no existe: preguntar hace una pregunta (pregunto cuánto es), y la cuenta se pide. Hace falta: pido.",
-          "de": "\"Pregunto la cuenta\" gibt es nicht: preguntar stellt eine Frage (pregunto cuánto es), die Rechnung dagegen erbittet man. Richtig ist: pido."
+          "es": "\"Pregunto la cuenta\" no existe: preguntar hace una pregunta (pregunto cuánto es), y la cuenta se pide. Hace falta: pido."
         },
         "hago": {
-          "hu": "A \"hago la cuenta\" azt jelentené, hogy magam számolom ki az összeget; itt viszont a számlát kérjük az étteremtől. Ide ez illik: pido.",
           "en": "\"Hago la cuenta\" would mean I work out the sum myself; but here we ask the restaurant for the bill. It needs: pido.",
-          "es": "\"Hago la cuenta\" significaría que hago la suma yo mismo; pero aquí se pide la cuenta al restaurante. Hace falta: pido.",
-          "de": "\"Hago la cuenta\" würde bedeuten, dass ich die Summe selbst ausrechne; hier bittet man aber das Restaurant um die Rechnung. Richtig ist: pido."
+          "es": "\"Hago la cuenta\" significaría que hago la suma yo mismo; pero aquí se pide la cuenta al restaurante. Hace falta: pido."
         }
       },
       "examples": [
         "Pido agua, por favor.",
         "Pedimos la cuenta."
       ],
-      "tr": { "hu": "Az étteremben kérem a számlát.", "en": "In the restaurant, I ask for the bill, please.", "es": "En el restaurante pido la cuenta, por favor.", "de": "Im Restaurant bitte ich um die Rechnung." }
+      "tr": { "en": "In the restaurant, I ask for the bill, please.", "es": "En el restaurante pido la cuenta, por favor." }
     },
     {
       "id": "pp-02",
@@ -404,30 +332,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Azt akarom megtudni, hol van az állomás: ez kérdés, amire választ várok, ezért pregunto.",
         "en": "I want to find out where the station is: that is a question waiting for an answer, so pregunto.",
-        "es": "Quiero saber dónde está la estación: es una pregunta que espera respuesta, por eso pregunto.",
-        "de": "Ich will wissen, wo der Bahnhof ist: Das ist eine Frage, die eine Antwort erwartet, also pregunto."
+        "es": "Quiero saber dónde está la estación: es una pregunta que espera respuesta, por eso pregunto."
       },
       "wrong": {
         "pido": {
-          "hu": "A \"le pido a un policía\" azt jelentené, hogy valamit kérek tőle (pénzt, segítséget); itt viszont információt akarok megtudni. Ide ez illik: pregunto.",
           "en": "\"Le pido a un policía\" would mean I ask him for something (money, help); but here I want a piece of information. It needs: pregunto.",
-          "es": "\"Le pido a un policía\" significaría que le pido algo (dinero, ayuda); pero aquí quiero una información. Hace falta: pregunto.",
-          "de": "\"Le pido a un policía\" würde bedeuten, dass ich ihn um etwas bitte (Geld, Hilfe); hier will ich aber eine Information. Richtig ist: pregunto."
+          "es": "\"Le pido a un policía\" significaría que le pido algo (dinero, ayuda); pero aquí quiero una información. Hace falta: pregunto."
         },
         "llamo": {
-          "hu": "A \"le llamo a un policía\" azt jelentené, hogy felhívom a rendőrt (például telefonon); itt viszont személyesen kérdezek tőle valamit. Ide ez illik: pregunto.",
           "en": "\"Le llamo a un policía\" would mean I call the police officer (for example by phone); here I ask him something in person. It needs: pregunto.",
-          "es": "\"Le llamo a un policía\" significaría que llamo al policía (por ejemplo por teléfono); aquí le pregunto algo en persona. Hace falta: pregunto.",
-          "de": "\"Le llamo a un policía\" würde bedeuten, dass ich den Polizisten anrufe (zum Beispiel per Telefon); hier frage ich ihn persönlich etwas. Richtig ist: pregunto."
+          "es": "\"Le llamo a un policía\" significaría que llamo al policía (por ejemplo por teléfono); aquí le pregunto algo en persona. Hace falta: pregunto."
         }
       },
       "examples": [
         "Le pregunto a mi madre dónde está mi libro.",
         "Pregunto dónde está el baño."
       ],
-      "tr": { "hu": "Nem tudom, hol van az állomás. Megkérdezek egy rendőrt.", "en": "I don't know where the station is. I'll ask a police officer.", "es": "No sé dónde está la estación. Le pregunto a un policía.", "de": "Ich weiß nicht, wo der Bahnhof ist. Ich frage einen Polizisten." }
+      "tr": { "en": "I don't know where the station is. I'll ask a police officer.", "es": "No sé dónde está la estación. Le pregunto a un policía." }
     },
     {
       "id": "pp-03",
@@ -439,30 +361,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A preguntar por azt jelenti, hogy valaki felől érdeklődik: az anyám téged kérdez, vagyis pregunta por ti.",
         "en": "Preguntar por means to ask about someone: my mother is asking after you, so pregunta por ti.",
-        "es": "Preguntar por es interesarse por alguien: mi madre se interesa por ti, así que pregunta por ti.",
-        "de": "Preguntar por heißt, sich nach jemandem zu erkundigen: meine Mutter fragt nach dir, also pregunta por ti."
+        "es": "Preguntar por es interesarse por alguien: mi madre se interesa por ti, así que pregunta por ti."
       },
       "wrong": {
         "pide": {
-          "hu": "A \"pide por ti\" azt jelentené, hogy érted kér valamit (például imádkozik érted); az nem érdeklődés. Ide ez illik: pregunta.",
           "en": "\"Pide por ti\" would mean she asks for something on your behalf (for example prays for you); that is not asking after you. It needs: pregunta.",
-          "es": "\"Pide por ti\" significaría que pide algo en tu favor (por ejemplo, reza por ti); eso no es interesarse por ti. Hace falta: pregunta.",
-          "de": "\"Pide por ti\" würde bedeuten, dass sie etwas zu deinen Gunsten erbittet (zum Beispiel für dich betet); das ist keine Nachfrage nach dir. Richtig ist: pregunta."
+          "es": "\"Pide por ti\" significaría que pide algo en tu favor (por ejemplo, reza por ti); eso no es interesarse por ti. Hace falta: pregunta."
         },
         "habla": {
-          "hu": "A \"habla por ti\" azt jelentené, hogy helyetted, a nevedben beszél; itt viszont rólad érdeklődik. Ide ez illik: pregunta.",
           "en": "\"Habla por ti\" would mean she speaks on your behalf; but here she is asking after you. It needs: pregunta.",
-          "es": "\"Habla por ti\" significaría que habla en tu nombre; pero aquí se interesa por ti. Hace falta: pregunta.",
-          "de": "\"Habla por ti\" würde bedeuten, dass sie in deinem Namen spricht; hier erkundigt sie sich aber nach dir. Richtig ist: pregunta."
+          "es": "\"Habla por ti\" significaría que habla en tu nombre; pero aquí se interesa por ti. Hace falta: pregunta."
         }
       },
       "examples": [
         "En la oficina pregunto por el jefe.",
         "Mis amigos preguntan por ti."
       ],
-      "tr": { "hu": "Anyukám felőled kérdezősködik. Mikor jössz haza?", "en": "My mother is asking about you. When are you coming home?", "es": "Mi madre pregunta por ti. ¿Cuándo vienes a casa?", "de": "Meine Mutter fragt nach dir. Wann kommst du nach Hause?" }
+      "tr": { "en": "My mother is asking about you. When are you coming home?", "es": "Mi madre pregunta por ti. ¿Cuándo vienes a casa?" }
     },
     {
       "id": "pp-04",
@@ -474,30 +390,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A szívesség olyasmi, amit kérsz: pedir un favor. Kérdés nincs benne.",
         "en": "A favor is something you ask for: pedir un favor. There is no question in it.",
-        "es": "Un favor es algo que se pide: pedir un favor. No hay ninguna pregunta en él.",
-        "de": "Ein Gefallen ist etwas, um das man bittet: pedir un favor. Eine Frage steckt nicht darin."
+        "es": "Un favor es algo que se pide: pedir un favor. No hay ninguna pregunta en él."
       },
       "wrong": {
         "preguntar": {
-          "hu": "A \"preguntar un favor\" nem létezik: a preguntar kérdést tesz fel, a szívességet kérni kell. Ide ez illik: pedir.",
           "en": "\"Preguntar un favor\" does not exist: preguntar asks a question, a favor has to be asked for. It needs: pedir.",
-          "es": "\"Preguntar un favor\" no existe: preguntar hace una pregunta, y un favor se pide. Hace falta: pedir.",
-          "de": "\"Preguntar un favor\" gibt es nicht: preguntar stellt eine Frage, um einen Gefallen bittet man. Richtig ist: pedir."
+          "es": "\"Preguntar un favor\" no existe: preguntar hace una pregunta, y un favor se pide. Hace falta: pedir."
         },
         "hacer": {
-          "hu": "A \"hacer un favor a mi jefe\" azt jelentené, hogy én teszek szívességet a főnökömnek; itt viszont én kérek tőle. Ide ez illik: pedir.",
           "en": "\"Hacer un favor a mi jefe\" would mean I do my boss a favor; here I am the one asking him. It needs: pedir.",
-          "es": "\"Hacer un favor a mi jefe\" significaría que yo le hago un favor a mi jefe; aquí soy yo quien se lo pide. Hace falta: pedir.",
-          "de": "\"Hacer un favor a mi jefe\" würde bedeuten, dass ich meinem Chef einen Gefallen tue; hier bin aber ich es, der ihn bittet. Richtig ist: pedir."
+          "es": "\"Hacer un favor a mi jefe\" significaría que yo le hago un favor a mi jefe; aquí soy yo quien se lo pide. Hace falta: pedir."
         }
       },
       "examples": [
         "Le pido un favor a mi hermano.",
         "Quiero pedir ayuda."
       ],
-      "tr": { "hu": "Van egy problémám, és szívességet szeretnék kérni a főnökömtől.", "en": "I have a problem and I want to ask my boss for a favor.", "es": "Tengo un problema y quiero pedir un favor a mi jefe.", "de": "Ich habe ein Problem und möchte meinen Chef um einen Gefallen bitten." }
+      "tr": { "en": "I have a problem and I want to ask my boss for a favor.", "es": "Tengo un problema y quiero pedir un favor a mi jefe." }
     },
     {
       "id": "pp-05",
@@ -509,30 +419,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Az engedély olyasmi, amit kérsz: a fiam engedélyt kér az apjától, vagyis pide permiso.",
         "en": "Permission is something you ask for: my son asks his father for permission, so pide permiso.",
-        "es": "El permiso es algo que se pide: mi hijo le pide permiso a su padre, por eso pide permiso.",
-        "de": "Eine Erlaubnis erbittet man: mein Sohn bittet seinen Vater um Erlaubnis, also pide permiso."
+        "es": "El permiso es algo que se pide: mi hijo le pide permiso a su padre, por eso pide permiso."
       },
       "wrong": {
         "da": {
-          "hu": "A \"da permiso\" azt jelentené, hogy ő adja meg az engedélyt; itt viszont a fiú az, aki kéri. Ide ez illik: pide.",
           "en": "\"Da permiso\" would mean he gives the permission; here the son is the one asking for it. It needs: pide.",
-          "es": "\"Da permiso\" significaría que él da el permiso; aquí el hijo es quien lo pide. Hace falta: pide.",
-          "de": "\"Da permiso\" würde bedeuten, dass er die Erlaubnis gibt; hier bittet der Sohn darum. Richtig ist: pide."
+          "es": "\"Da permiso\" significaría que él da el permiso; aquí el hijo es quien lo pide. Hace falta: pide."
         },
         "pregunta": {
-          "hu": "A \"pregunta permiso\" nem használatos: ha kérdezne, az pregunta si puede ir lenne (megkérdezi, mehet-e). Magát az engedélyt kérni kell: pide.",
           "en": "\"Pregunta permiso\" is not used: a question would be \"pregunta si puede ir\" (he asks whether he may go). The permission itself is asked for: pide.",
-          "es": "\"Pregunta permiso\" no se usa: una pregunta sería \"pregunta si puede ir\". El permiso mismo se pide: pide.",
-          "de": "\"Pregunta permiso\" wird nicht gesagt: eine Frage wäre \"pregunta si puede ir\" (er fragt, ob er gehen darf). Die Erlaubnis selbst erbittet man: pide."
+          "es": "\"Pregunta permiso\" no se usa: una pregunta sería \"pregunta si puede ir\". El permiso mismo se pide: pide."
         }
       },
       "examples": [
         "Pido permiso al profesor.",
         "Mi hija pide permiso a su madre."
       ],
-      "tr": { "hu": "A fiam engedélyt kér az apjától, hogy elmenjen a parkba.", "en": "My son is asking his father for permission to go to the park.", "es": "Mi hijo pide permiso a su padre para ir al parque.", "de": "Mein Sohn bittet seinen Vater um Erlaubnis, in den Park zu gehen." }
+      "tr": { "en": "My son is asking his father for permission to go to the park.", "es": "Mi hijo pide permiso a su padre para ir al parque." }
     },
     {
       "id": "pp-06",
@@ -544,30 +448,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A pregunta főnév mellé a hacer ige jön: hacer una pregunta, vagyis kérdést feltenni.",
         "en": "The noun pregunta takes the verb hacer: hacer una pregunta, to ask a question.",
-        "es": "El sustantivo pregunta lleva el verbo hacer: hacer una pregunta.",
-        "de": "Zum Nomen pregunta gehört das Verb hacer: hacer una pregunta (eine Frage stellen)."
+        "es": "El sustantivo pregunta lleva el verbo hacer: hacer una pregunta."
       },
       "wrong": {
         "pedir": {
-          "hu": "A \"pedir una pregunta\" azt jelentené, hogy egy kérdést kérek, mintha dolog volna; a kérdést viszont feltesszük, nem kérjük. Ide ez illik: hacer.",
           "en": "\"Pedir una pregunta\" would mean asking for a question as if it were a thing; but a question is asked, not requested. It needs: hacer.",
-          "es": "\"Pedir una pregunta\" significaría pedir una pregunta como si fuera una cosa; pero una pregunta se hace, no se pide. Hace falta: hacer.",
-          "de": "\"Pedir una pregunta\" würde bedeuten, eine Frage wie eine Sache zu erbitten; eine Frage stellt man aber, man erbittet sie nicht. Richtig ist: hacer."
+          "es": "\"Pedir una pregunta\" significaría pedir una pregunta como si fuera una cosa; pero una pregunta se hace, no se pide. Hace falta: hacer."
         },
         "preguntar": {
-          "hu": "A \"preguntar una pregunta\" ismételné önmagát: a preguntar és a pregunta ugyanazt jelenti. Ide ez illik: hacer una pregunta.",
           "en": "\"Preguntar una pregunta\" repeats itself: preguntar and pregunta mean the same thing. It needs: hacer una pregunta.",
-          "es": "\"Preguntar una pregunta\" se repite a sí mismo: preguntar y pregunta significan lo mismo. Hace falta: hacer una pregunta.",
-          "de": "\"Preguntar una pregunta\" wiederholt sich selbst: preguntar und pregunta bedeuten dasselbe. Richtig ist: hacer una pregunta."
+          "es": "\"Preguntar una pregunta\" se repite a sí mismo: preguntar y pregunta significan lo mismo. Hace falta: hacer una pregunta."
         }
       },
       "examples": [
         "El profesor me hace una pregunta.",
         "Mis hijos hacen muchas preguntas."
       ],
-      "tr": { "hu": "Tanár úr, szeretnék feltenni egy kérdést.", "en": "Teacher, I want to ask a question.", "es": "Profesor, quiero hacer una pregunta.", "de": "Herr Lehrer, ich möchte eine Frage stellen." }
+      "tr": { "en": "Teacher, I want to ask a question.", "es": "Profesor, quiero hacer una pregunta." }
     },
     {
       "id": "pp-07",
@@ -579,30 +477,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A si (hogy van-e) kérdést vezet be: megkérdezzük, van-e asztal, vagyis preguntamos si.",
         "en": "Si (whether) introduces a question: we ask whether there is a table, so preguntamos si.",
-        "es": "Si introduce una pregunta: preguntamos si hay mesa, por eso preguntamos.",
-        "de": "Si (ob) leitet eine Frage ein: wir fragen, ob es einen Tisch gibt, also preguntamos si."
+        "es": "Si introduce una pregunta: preguntamos si hay mesa, por eso preguntamos."
       },
       "wrong": {
         "pedimos": {
-          "hu": "A \"pedimos si hay mesa\" nem működik: a pedir mellé dolog jön (pedimos una mesa = asztalt kérünk). Ide ez illik: preguntamos.",
           "en": "\"Pedimos si hay mesa\" does not work: pedir takes a thing (pedimos una mesa = we ask for a table). It needs: preguntamos.",
-          "es": "\"Pedimos si hay mesa\" no funciona: pedir lleva una cosa (pedimos una mesa). Hace falta: preguntamos.",
-          "de": "\"Pedimos si hay mesa\" funktioniert nicht: pedir braucht eine Sache (pedimos una mesa = wir bitten um einen Tisch). Richtig ist: preguntamos."
+          "es": "\"Pedimos si hay mesa\" no funciona: pedir lleva una cosa (pedimos una mesa). Hace falta: preguntamos."
         },
         "hacemos": {
-          "hu": "A \"hacemos si hay mesa\" nem értelmes: a hacer mellé főnév jön (hacemos una pregunta = kérdést teszünk fel), si-s mellékmondat nem. Ide ez illik: preguntamos.",
           "en": "\"Hacemos si hay mesa\" makes no sense: hacer takes a noun (hacemos una pregunta = we ask a question), not a clause with si. It needs: preguntamos.",
-          "es": "\"Hacemos si hay mesa\" no tiene sentido: hacer lleva un sustantivo (hacemos una pregunta), no una oración con si. Hace falta: preguntamos.",
-          "de": "\"Hacemos si hay mesa\" ergibt keinen Sinn: hacer braucht ein Nomen (hacemos una pregunta = wir stellen eine Frage), keinen si-Satz. Richtig ist: preguntamos."
+          "es": "\"Hacemos si hay mesa\" no tiene sentido: hacer lleva un sustantivo (hacemos una pregunta), no una oración con si. Hace falta: preguntamos."
         }
       },
       "examples": [
         "Mis amigos preguntan si hay fiesta hoy.",
         "Preguntamos si hay pizza."
       ],
-      "tr": { "hu": "Megkérdezzük, hogy van-e asztal két főre.", "en": "We are asking if there is a table for two.", "es": "Nosotros preguntamos si hay mesa para dos.", "de": "Wir fragen, ob es einen Tisch für zwei Personen gibt." }
+      "tr": { "en": "We are asking if there is a table for two.", "es": "Nosotros preguntamos si hay mesa para dos." }
     },
     {
       "id": "pp-08",
@@ -614,30 +506,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A segítség olyasmi, amit kérsz: a barátaim segítséget kérnek apámtól, vagyis le piden ayuda.",
         "en": "Help is something you ask for: my friends ask my father for help, so le piden ayuda.",
-        "es": "La ayuda es algo que se pide: mis amigos le piden ayuda a mi padre, por eso piden.",
-        "de": "Hilfe erbittet man: meine Freunde bitten meinen Vater um Hilfe, also le piden ayuda."
+        "es": "La ayuda es algo que se pide: mis amigos le piden ayuda a mi padre, por eso piden."
       },
       "wrong": {
         "preguntan": {
-          "hu": "A \"le preguntan ayuda\" nem létezik: a preguntan után kérdés jön (preguntan si puede ayudar), a segítséget kérni kell. Ide ez illik: piden.",
           "en": "\"Le preguntan ayuda\" does not exist: after preguntan comes a question (preguntan si puede ayudar), help has to be asked for. It needs: piden.",
-          "es": "\"Le preguntan ayuda\" no existe: después de preguntan va una pregunta (preguntan si puede ayudar), y la ayuda se pide. Hace falta: piden.",
-          "de": "\"Le preguntan ayuda\" gibt es nicht: nach preguntan folgt eine Frage (preguntan si puede ayudar), Hilfe erbittet man. Richtig ist: piden."
+          "es": "\"Le preguntan ayuda\" no existe: después de preguntan va una pregunta (preguntan si puede ayudar), y la ayuda se pide. Hace falta: piden."
         },
         "dan": {
-          "hu": "A \"le dan ayuda\" azt jelentené, hogy ők adnak segítséget apámnak; de nekik van problémájuk, tehát ők kérnek. Ide ez illik: piden.",
           "en": "\"Le dan ayuda\" would mean they give help to my father; but they are the ones with the problem, so they ask. It needs: piden.",
-          "es": "\"Le dan ayuda\" significaría que ellos le dan ayuda a mi padre; pero son ellos quienes tienen el problema, así que piden. Hace falta: piden.",
-          "de": "\"Le dan ayuda\" würde bedeuten, dass sie meinem Vater Hilfe geben; sie haben aber das Problem, also bitten sie. Richtig ist: piden."
+          "es": "\"Le dan ayuda\" significaría que ellos le dan ayuda a mi padre; pero son ellos quienes tienen el problema, así que piden. Hace falta: piden."
         }
       },
       "examples": [
         "Le pido ayuda a mi vecino.",
         "Mis hijos piden dinero a su padre."
       ],
-      "tr": { "hu": "A barátaimnak problémájuk van, és segítséget kérnek az apámtól.", "en": "My friends have a problem and are asking my father for help.", "es": "Mis amigos tienen un problema y le piden ayuda a mi padre.", "de": "Meine Freunde haben ein Problem und bitten meinen Vater um Hilfe." }
+      "tr": { "en": "My friends have a problem and are asking my father for help.", "es": "Mis amigos tienen un problema y le piden ayuda a mi padre." }
     },
     {
       "id": "pp-09",
@@ -649,30 +535,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Az ár információ, amit meg akarok tudni: megkérdezem az árat, vagyis pregunto el precio.",
         "en": "The price is information I want to find out: I ask the price, so pregunto el precio.",
-        "es": "El precio es una información que quiero saber: pregunto el precio.",
-        "de": "Der Preis ist eine Information, die ich erfahren will: ich frage nach dem Preis, also pregunto el precio."
+        "es": "El precio es una información que quiero saber: pregunto el precio."
       },
       "wrong": {
         "veo": {
-          "hu": "A \"le veo el precio al vendedor\" nem értelmes: a ver azt jelentené, hogy látom az árat (például a cédulán), a vendedor-tól viszont kérdezni lehet. Ide ez illik: pregunto.",
           "en": "\"Le veo el precio al vendedor\" does not work: ver would mean I see the price (for example on the label), but you ask the seller. It needs: pregunto.",
-          "es": "\"Le veo el precio al vendedor\" no funciona: ver significaría que veo el precio (por ejemplo en la etiqueta), pero al vendedor se le pregunta. Hace falta: pregunto.",
-          "de": "\"Le veo el precio al vendedor\" geht nicht: ver würde bedeuten, dass ich den Preis sehe (zum Beispiel auf dem Schild), den Verkäufer aber fragt man. Richtig ist: pregunto."
+          "es": "\"Le veo el precio al vendedor\" no funciona: ver significaría que veo el precio (por ejemplo en la etiqueta), pero al vendedor se le pregunta. Hace falta: pregunto."
         },
         "pido": {
-          "hu": "A \"pido el precio\" azt jelentené, hogy egy árat kérek, mintha termék volna; az ár viszont csak adat. Ide ez illik: pregunto.",
           "en": "\"Pido el precio\" would mean I ask for a price as if it were a product; but a price is only information. It needs: pregunto.",
-          "es": "\"Pido el precio\" significaría que pido un precio como si fuera un producto; pero un precio es solo información. Hace falta: pregunto.",
-          "de": "\"Pido el precio\" würde bedeuten, dass ich einen Preis wie ein Produkt erbitte; ein Preis ist aber nur eine Information. Richtig ist: pregunto."
+          "es": "\"Pido el precio\" significaría que pido un precio como si fuera un producto; pero un precio es solo información. Hace falta: pregunto."
         }
       },
       "examples": [
         "Mi madre pregunta el precio del vino.",
         "Preguntamos el precio en la tienda."
       ],
-      "tr": { "hu": "A boltban megkérdezem az eladótól az árat.", "en": "In the store, I ask the clerk for the price.", "es": "En la tienda le pregunto el precio al vendedor.", "de": "Im Geschäft frage ich den Verkäufer nach dem Preis." }
+      "tr": { "en": "In the store, I ask the clerk for the price.", "es": "En la tienda le pregunto el precio al vendedor." }
     },
     {
       "id": "pp-10",
@@ -684,30 +564,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A kedvezmény olyasmi, amit kérsz: kérhetek kedvezményt? Vagyis pedir un descuento.",
         "en": "A discount is something you ask for: can I ask for a discount? So pedir un descuento.",
-        "es": "Un descuento es algo que se pide: ¿puedo pedir un descuento?",
-        "de": "Einen Rabatt erbittet man: kann ich um einen Rabatt bitten? Also pedir un descuento."
+        "es": "Un descuento es algo que se pide: ¿puedo pedir un descuento?"
       },
       "wrong": {
         "hacer": {
-          "hu": "A \"hacer un descuento\" azt jelentené, hogy én adok kedvezményt (az eladó mondja ezt); itt viszont én kérem. Ide ez illik: pedir.",
           "en": "\"Hacer un descuento\" would mean I give a discount (what the seller says); here I am the one asking for it. It needs: pedir.",
-          "es": "\"Hacer un descuento\" significaría que yo hago un descuento (lo que dice el vendedor); aquí soy yo quien lo pide. Hace falta: pedir.",
-          "de": "\"Hacer un descuento\" würde bedeuten, dass ich einen Rabatt gebe (was der Verkäufer sagt); hier bin ich es, der darum bittet. Richtig ist: pedir."
+          "es": "\"Hacer un descuento\" significaría que yo hago un descuento (lo que dice el vendedor); aquí soy yo quien lo pide. Hace falta: pedir."
         },
         "preguntar": {
-          "hu": "A \"preguntar un descuento\" nem létezik: azt lehet kérdezni, van-e kedvezmény (preguntar si hay descuento), magát a kedvezményt kérni kell. Ide ez illik: pedir.",
           "en": "\"Preguntar un descuento\" does not exist: you can ask whether there is one (preguntar si hay descuento), but the discount itself is asked for. It needs: pedir.",
-          "es": "\"Preguntar un descuento\" no existe: se puede preguntar si hay uno (preguntar si hay descuento), pero el descuento mismo se pide. Hace falta: pedir.",
-          "de": "\"Preguntar un descuento\" gibt es nicht: man kann fragen, ob es einen gibt (preguntar si hay descuento), den Rabatt selbst erbittet man. Richtig ist: pedir."
+          "es": "\"Preguntar un descuento\" no existe: se puede preguntar si hay uno (preguntar si hay descuento), pero el descuento mismo se pide. Hace falta: pedir."
         }
       },
       "examples": [
         "¿Puedo pedir un café con leche?",
         "Quiero pedir ayuda."
       ],
-      "tr": { "hu": "Nincs sok pénzem. Kérhetek kedvezményt?", "en": "I don't have much money. Can I ask for a discount?", "es": "No tengo mucho dinero. ¿Puedo pedir un descuento?", "de": "Ich habe nicht viel Geld. Kann ich nach einem Rabatt fragen?" }
+      "tr": { "en": "I don't have much money. Can I ask for a discount?", "es": "No tengo mucho dinero. ¿Puedo pedir un descuento?" }
     },
     {
       "id": "pp-11",
@@ -719,30 +593,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A qué kérdést vezet be: a gyerekek azt kérdezik, mi van enni, vagyis preguntan qué hay de comer.",
         "en": "Qué introduces a question: the children ask what there is to eat, so preguntan qué hay de comer.",
-        "es": "Qué introduce una pregunta: los hijos preguntan qué hay de comer.",
-        "de": "Qué leitet eine Frage ein: die Kinder fragen, was es zu essen gibt, also preguntan qué hay de comer."
+        "es": "Qué introduce una pregunta: los hijos preguntan qué hay de comer."
       },
       "wrong": {
         "ven": {
-          "hu": "A \"le ven a su mamá qué hay de comer\" nem értelmes: a ver azt jelentené, hogy ők maguk nézik meg, mi van enni, anyától viszont kérdezni lehet. Ide ez illik: preguntan.",
           "en": "\"Le ven a su mamá qué hay de comer\" does not work: ver would mean they look and see for themselves what there is to eat, but you ask your mother. It needs: preguntan.",
-          "es": "\"Le ven a su mamá qué hay de comer\" no funciona: ver significaría que miran ellos mismos qué hay de comer, pero a la mamá se le pregunta. Hace falta: preguntan.",
-          "de": "\"Le ven a su mamá qué hay de comer\" geht nicht: ver würde bedeuten, dass sie selbst nachsehen, was es zu essen gibt, die Mutter aber fragt man. Richtig ist: preguntan."
+          "es": "\"Le ven a su mamá qué hay de comer\" no funciona: ver significaría que miran ellos mismos qué hay de comer, pero a la mamá se le pregunta. Hace falta: preguntan."
         },
         "piden": {
-          "hu": "A \"piden qué hay de comer\" nem működik: a pedir után dolog jön (piden pizza = pizzát kérnek), kérdés nem. Ide ez illik: preguntan.",
           "en": "\"Piden qué hay de comer\" does not work: pedir takes a thing (piden pizza = they ask for pizza), not a question. It needs: preguntan.",
-          "es": "\"Piden qué hay de comer\" no funciona: pedir lleva una cosa (piden pizza), no una pregunta. Hace falta: preguntan.",
-          "de": "\"Piden qué hay de comer\" funktioniert nicht: nach pedir folgt eine Sache (piden pizza = sie wollen Pizza), keine Frage. Richtig ist: preguntan."
+          "es": "\"Piden qué hay de comer\" no funciona: pedir lleva una cosa (piden pizza), no una pregunta. Hace falta: preguntan."
         }
       },
       "examples": [
         "Mi madre pregunta qué hay de comer.",
         "Mis amigos preguntan qué hay de postre."
       ],
-      "tr": { "hu": "A gyerekeim mindig megkérdezik az anyukájukat, hogy mi az ebéd.", "en": "My children always ask their mom what there is to eat.", "es": "Mis hijos siempre le preguntan a su mamá qué hay de comer.", "de": "Meine Kinder fragen ihre Mutter immer, was es zu essen gibt." }
+      "tr": { "en": "My children always ask their mom what there is to eat.", "es": "Mis hijos siempre le preguntan a su mamá qué hay de comer." }
     },
     {
       "id": "pp-12",
@@ -754,30 +622,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A kínálatból rendelsz valamit: a kérdés az, mit kérsz desszertnek, vagyis ¿qué pides?",
         "en": "You order something from what is on offer: the question is what you ask for as dessert, so ¿qué pides?",
-        "es": "Se pide algo de lo que hay: la pregunta es qué quieres de postre, por eso ¿qué pides?",
-        "de": "Man bestellt etwas aus dem Angebot: die Frage ist, was du als Nachtisch bestellst, also ¿qué pides?"
+        "es": "Se pide algo de lo que hay: la pregunta es qué quieres de postre, por eso ¿qué pides?"
       },
       "wrong": {
         "preguntas": {
-          "hu": "A \"¿qué preguntas de postre?\" azt jelentené, hogy mit kérdezel a desszertről; te viszont nem kérdezni akarsz, hanem rendelni. Ide ez illik: pides.",
           "en": "\"¿Qué preguntas de postre?\" would mean what you ask about dessert; but you do not want to ask, you want to order. It needs: pides.",
-          "es": "\"¿Qué preguntas de postre?\" significaría qué preguntas sobre el postre; pero no quieres preguntar, quieres pedir. Hace falta: pides.",
-          "de": "\"¿Qué preguntas de postre?\" würde bedeuten, was du zum Nachtisch fragst; du willst aber nicht fragen, sondern bestellen. Richtig ist: pides."
+          "es": "\"¿Qué preguntas de postre?\" significaría qué preguntas sobre el postre; pero no quieres preguntar, quieres pedir. Hace falta: pides."
         },
         "das": {
-          "hu": "A \"¿qué das de postre?\" azt jelentené, hogy te adsz desszertet a vendégeknek; itt viszont te rendelsz. Ide ez illik: pides.",
           "en": "\"¿Qué das de postre?\" would mean what you serve as dessert; here you are the one ordering. It needs: pides.",
-          "es": "\"¿Qué das de postre?\" significaría qué sirves de postre; aquí eres tú quien pide. Hace falta: pides.",
-          "de": "\"¿Qué das de postre?\" würde bedeuten, was du als Nachtisch servierst; hier bestellst aber du. Richtig ist: pides."
+          "es": "\"¿Qué das de postre?\" significaría qué sirves de postre; aquí eres tú quien pide. Hace falta: pides."
         }
       },
       "examples": [
         "¿Qué pides de comer?",
         "Pido helado de postre."
       ],
-      "tr": { "hu": "Van fagyi és gyümölcs. Te mit kérsz desszertnek?", "en": "There is ice cream and fruit. What are you ordering for dessert?", "es": "Hay helado y fruta. ¿Qué pides tú de postre?", "de": "Es gibt Eis und Obst. Was bestellst du als Nachtisch?" }
+      "tr": { "en": "There is ice cream and fruit. What are you ordering for dessert?", "es": "Hay helado y fruta. ¿Qué pides tú de postre?" }
     },
     {
       "id": "pp-match-01",
@@ -911,46 +773,34 @@
       "es": "Pido la cuenta, por favor.",
       "target": "Pido",
       "tr": {
-        "hu": "Kérem a számlát, legyen szíves.",
         "en": "I would like the bill, please.",
-        "es": "Pido la cuenta, por favor.",
-        "de": "Die Rechnung, bitte."
+        "es": "Pido la cuenta, por favor."
       },
       "options": [
         {
           "text": {
-            "hu": "pedir: valamit kérni (dolog, segítség, engedély)",
             "en": "pedir: asking FOR something (a thing, help, permission)",
-            "es": "pedir: pedir algo (una cosa, ayuda, permiso)",
-            "de": "pedir: um etwas bitten (Sache, Hilfe, Erlaubnis)"
+            "es": "pedir: pedir algo (una cosa, ayuda, permiso)"
           }
         },
         {
           "text": {
-            "hu": "preguntar: kérdést feltenni (dónde, cuánto, si)",
             "en": "preguntar: asking a question (dónde, cuánto, si)",
-            "es": "preguntar: hacer una pregunta (dónde, cuánto, si)",
-            "de": "preguntar: eine Frage stellen (dónde, cuánto, si)"
+            "es": "preguntar: hacer una pregunta (dónde, cuánto, si)"
           },
           "wrong": {
-            "hu": "A preguntar kérdést tenne fel (például: mennyi a számla?), de itt a számlát kérem, nem kérdezek semmit.",
             "en": "Preguntar would ask a question (for example: how much is the bill?), but here I ask for the bill, I am not asking anything.",
-            "es": "Preguntar haría una pregunta (por ejemplo: ¿cuánto es la cuenta?), pero aquí pido la cuenta, no pregunto nada.",
-            "de": "Preguntar würde eine Frage stellen (zum Beispiel: Wie viel ist die Rechnung?), aber hier bitte ich um die Rechnung, ich frage nichts."
+            "es": "Preguntar haría una pregunta (por ejemplo: ¿cuánto es la cuenta?), pero aquí pido la cuenta, no pregunto nada."
           }
         },
         {
           "text": {
-            "hu": "preguntar por: valaki vagy valami felől érdeklődni",
             "en": "preguntar por: asking about someone or something",
-            "es": "preguntar por: interesarse por alguien o algo",
-            "de": "preguntar por: sich nach jemandem oder etwas erkundigen"
+            "es": "preguntar por: interesarse por alguien o algo"
           },
           "wrong": {
-            "hu": "A preguntar por valaki felől érdeklődne; a mondatban nincs személy, akiről kérdeznék, a számlát kérem.",
             "en": "Preguntar por would be asking about someone; there is no person to ask about in this sentence, I am asking for the bill.",
-            "es": "Preguntar por sería interesarse por alguien; en la frase no hay ninguna persona por quien preguntar, pido la cuenta.",
-            "de": "Preguntar por würde heißen, sich nach jemandem zu erkundigen; im Satz gibt es keine Person, nach der ich frage, ich bitte um die Rechnung."
+            "es": "Preguntar por sería interesarse por alguien; en la frase no hay ninguna persona por quien preguntar, pido la cuenta."
           }
         }
       ],
@@ -962,46 +812,34 @@
       "es": "Le pregunto dónde vive.",
       "target": "pregunto",
       "tr": {
-        "hu": "Megkérdezem tőle, hol lakik.",
         "en": "I ask him where he lives.",
-        "es": "Le pregunto dónde vive.",
-        "de": "Ich frage ihn, wo er wohnt."
+        "es": "Le pregunto dónde vive."
       },
       "options": [
         {
           "text": {
-            "hu": "pedir: valamit kérni (dolog, segítség, engedély)",
             "en": "pedir: asking FOR something (a thing, help, permission)",
-            "es": "pedir: pedir algo (una cosa, ayuda, permiso)",
-            "de": "pedir: um etwas bitten (Sache, Hilfe, Erlaubnis)"
+            "es": "pedir: pedir algo (una cosa, ayuda, permiso)"
           },
           "wrong": {
-            "hu": "A pedir dolgot kérne tőle (például pénzt); itt viszont a lakhelyét akarom tudni, vagyis információt kérdezek.",
             "en": "Pedir would ask him for a thing (for example money); here I want to know his address, that is, I ask for information.",
-            "es": "Pedir le pediría una cosa (por ejemplo dinero); aquí quiero saber dónde vive, es decir, pregunto por una información.",
-            "de": "Pedir würde ihn um eine Sache bitten (zum Beispiel Geld); hier will ich seine Adresse wissen, also frage ich nach einer Information."
+            "es": "Pedir le pediría una cosa (por ejemplo dinero); aquí quiero saber dónde vive, es decir, pregunto por una información."
           }
         },
         {
           "text": {
-            "hu": "preguntar: kérdést feltenni (dónde, cuánto, si)",
             "en": "preguntar: asking a question (dónde, cuánto, si)",
-            "es": "preguntar: hacer una pregunta (dónde, cuánto, si)",
-            "de": "preguntar: eine Frage stellen (dónde, cuánto, si)"
+            "es": "preguntar: hacer una pregunta (dónde, cuánto, si)"
           }
         },
         {
           "text": {
-            "hu": "preguntar por: valaki vagy valami felől érdeklődni",
             "en": "preguntar por: asking about someone or something",
-            "es": "preguntar por: interesarse por alguien o algo",
-            "de": "preguntar por: sich nach jemandem oder etwas erkundigen"
+            "es": "preguntar por: interesarse por alguien o algo"
           },
           "wrong": {
-            "hu": "A preguntar por valaki felől érdeklődne; itt a kérdés tartalma a dónde vive, nem egy személy neve a por után.",
             "en": "Preguntar por would ask about someone; here the content of the question is dónde vive, not a person's name after por.",
-            "es": "Preguntar por sería interesarse por alguien; aquí el contenido de la pregunta es dónde vive, no el nombre de una persona después de por.",
-            "de": "Preguntar por würde heißen, sich nach jemandem zu erkundigen; hier ist der Inhalt der Frage dónde vive, nicht der Name einer Person nach por."
+            "es": "Preguntar por sería interesarse por alguien; aquí el contenido de la pregunta es dónde vive, no el nombre de una persona después de por."
           }
         }
       ],
@@ -1013,46 +851,34 @@
       "es": "Mi madre pregunta por ti.",
       "target": "pregunta por",
       "tr": {
-        "hu": "Anyám érdeklődik utánad.",
         "en": "My mother is asking about you.",
-        "es": "Mi madre pregunta por ti.",
-        "de": "Meine Mutter fragt nach dir."
+        "es": "Mi madre pregunta por ti."
       },
       "options": [
         {
           "text": {
-            "hu": "pedir: valamit kérni (dolog, segítség, engedély)",
             "en": "pedir: asking FOR something (a thing, help, permission)",
-            "es": "pedir: pedir algo (una cosa, ayuda, permiso)",
-            "de": "pedir: um etwas bitten (Sache, Hilfe, Erlaubnis)"
+            "es": "pedir: pedir algo (una cosa, ayuda, permiso)"
           },
           "wrong": {
-            "hu": "A pedir valamit kérne (például a számlát); itt egy személy felől érdeklődik, nem kér semmit.",
             "en": "Pedir would ask for something (for example the bill); here she asks after a person, she does not ask for anything.",
-            "es": "Pedir pediría algo (por ejemplo la cuenta); aquí pregunta por una persona, no pide nada.",
-            "de": "Pedir würde um etwas bitten (zum Beispiel um die Rechnung); hier erkundigt sie sich nach einer Person, sie bittet um nichts."
+            "es": "Pedir pediría algo (por ejemplo la cuenta); aquí pregunta por una persona, no pide nada."
           }
         },
         {
           "text": {
-            "hu": "preguntar: kérdést feltenni (dónde, cuánto, si)",
             "en": "preguntar: asking a question (dónde, cuánto, si)",
-            "es": "preguntar: hacer una pregunta (dónde, cuánto, si)",
-            "de": "preguntar: eine Frage stellen (dónde, cuánto, si)"
+            "es": "preguntar: hacer una pregunta (dónde, cuánto, si)"
           },
           "wrong": {
-            "hu": "A sima preguntar kérdőszót vagy si-t kívánna (preguntar dónde, preguntar si); itt a por után egy személy áll.",
             "en": "Plain preguntar would want a question word or si (preguntar dónde, preguntar si); here a person follows por.",
-            "es": "Preguntar solo pediría una palabra interrogativa o si (preguntar dónde, preguntar si); aquí después de por va una persona.",
-            "de": "Preguntar allein verlangt ein Fragewort oder si (preguntar dónde, preguntar si); hier folgt nach por eine Person."
+            "es": "Preguntar solo pediría una palabra interrogativa o si (preguntar dónde, preguntar si); aquí después de por va una persona."
           }
         },
         {
           "text": {
-            "hu": "preguntar por: valaki vagy valami felől érdeklődni",
             "en": "preguntar por: asking about someone or something",
-            "es": "preguntar por: interesarse por alguien o algo",
-            "de": "preguntar por: sich nach jemandem oder etwas erkundigen"
+            "es": "preguntar por: interesarse por alguien o algo"
           }
         }
       ],
@@ -1064,46 +890,34 @@
       "es": "Le pido ayuda a mi vecino.",
       "target": "pido",
       "tr": {
-        "hu": "Segítséget kérek a szomszédomtól.",
         "en": "I ask my neighbor for help.",
-        "es": "Le pido ayuda a mi vecino.",
-        "de": "Ich bitte meinen Nachbarn um Hilfe."
+        "es": "Le pido ayuda a mi vecino."
       },
       "options": [
         {
           "text": {
-            "hu": "preguntar por: valaki vagy valami felől érdeklődni",
             "en": "preguntar por: asking about someone or something",
-            "es": "preguntar por: interesarse por alguien o algo",
-            "de": "preguntar por: sich nach jemandem oder etwas erkundigen"
+            "es": "preguntar por: interesarse por alguien o algo"
           },
           "wrong": {
-            "hu": "A preguntar por a szomszéd felől érdeklődne; itt viszont tőle kérek valamit, nem róla kérdezek.",
             "en": "Preguntar por would ask about the neighbor; but here I ask him for something, I am not asking about him.",
-            "es": "Preguntar por sería interesarse por el vecino; pero aquí le pido algo, no pregunto por él.",
-            "de": "Preguntar por würde heißen, sich nach dem Nachbarn zu erkundigen; hier bitte ich ihn aber um etwas, ich frage nicht nach ihm."
+            "es": "Preguntar por sería interesarse por el vecino; pero aquí le pido algo, no pregunto por él."
           }
         },
         {
           "text": {
-            "hu": "preguntar: kérdést feltenni (dónde, cuánto, si)",
             "en": "preguntar: asking a question (dónde, cuánto, si)",
-            "es": "preguntar: hacer una pregunta (dónde, cuánto, si)",
-            "de": "preguntar: eine Frage stellen (dónde, cuánto, si)"
+            "es": "preguntar: hacer una pregunta (dónde, cuánto, si)"
           },
           "wrong": {
-            "hu": "A preguntar kérdést tenne fel; itt a segítség az, amit kérek, nem kérdés.",
             "en": "Preguntar would ask a question; here help is the thing I ask for, not a question.",
-            "es": "Preguntar haría una pregunta; aquí la ayuda es lo que pido, no una pregunta.",
-            "de": "Preguntar würde eine Frage stellen; hier ist die Hilfe das, worum ich bitte, keine Frage."
+            "es": "Preguntar haría una pregunta; aquí la ayuda es lo que pido, no una pregunta."
           }
         },
         {
           "text": {
-            "hu": "pedir: valamit kérni (dolog, segítség, engedély)",
             "en": "pedir: asking FOR something (a thing, help, permission)",
-            "es": "pedir: pedir algo (una cosa, ayuda, permiso)",
-            "de": "pedir: um etwas bitten (Sache, Hilfe, Erlaubnis)"
+            "es": "pedir: pedir algo (una cosa, ayuda, permiso)"
           }
         }
       ],
@@ -1115,46 +929,34 @@
       "es": "Mis hijos preguntan si hay pizza.",
       "target": "preguntan",
       "tr": {
-        "hu": "A gyerekeim azt kérdezik, van-e pizza.",
         "en": "My children ask whether there is pizza.",
-        "es": "Mis hijos preguntan si hay pizza.",
-        "de": "Meine Kinder fragen, ob es Pizza gibt."
+        "es": "Mis hijos preguntan si hay pizza."
       },
       "options": [
         {
           "text": {
-            "hu": "pedir: valamit kérni (dolog, segítség, engedély)",
             "en": "pedir: asking FOR something (a thing, help, permission)",
-            "es": "pedir: pedir algo (una cosa, ayuda, permiso)",
-            "de": "pedir: um etwas bitten (Sache, Hilfe, Erlaubnis)"
+            "es": "pedir: pedir algo (una cosa, ayuda, permiso)"
           },
           "wrong": {
-            "hu": "A pedir pizzát kérne (piden pizza); itt a si hay pizza kérdés, amire választ várnak.",
             "en": "Pedir would ask for pizza (piden pizza); here si hay pizza is a question waiting for an answer.",
-            "es": "Pedir pediría pizza (piden pizza); aquí si hay pizza es una pregunta que espera respuesta.",
-            "de": "Pedir würde um Pizza bitten (piden pizza); hier ist si hay pizza eine Frage, die eine Antwort erwartet."
+            "es": "Pedir pediría pizza (piden pizza); aquí si hay pizza es una pregunta que espera respuesta."
           }
         },
         {
           "text": {
-            "hu": "preguntar por: valaki vagy valami felől érdeklődni",
             "en": "preguntar por: asking about someone or something",
-            "es": "preguntar por: interesarse por alguien o algo",
-            "de": "preguntar por: sich nach jemandem oder etwas erkundigen"
+            "es": "preguntar por: interesarse por alguien o algo"
           },
           "wrong": {
-            "hu": "A preguntar por után egy személy vagy dolog neve állna; itt egy si-s kérdés áll, nem név a por után.",
             "en": "After preguntar por would come the name of a person or thing; here a question with si follows, not a name after por.",
-            "es": "Después de preguntar por iría el nombre de una persona o cosa; aquí sigue una pregunta con si, no un nombre después de por.",
-            "de": "Nach preguntar por würde der Name einer Person oder Sache stehen; hier folgt eine Frage mit si, kein Name nach por."
+            "es": "Después de preguntar por iría el nombre de una persona o cosa; aquí sigue una pregunta con si, no un nombre después de por."
           }
         },
         {
           "text": {
-            "hu": "preguntar: kérdést feltenni (dónde, cuánto, si)",
             "en": "preguntar: asking a question (dónde, cuánto, si)",
-            "es": "preguntar: hacer una pregunta (dónde, cuánto, si)",
-            "de": "preguntar: eine Frage stellen (dónde, cuánto, si)"
+            "es": "preguntar: hacer una pregunta (dónde, cuánto, si)"
           }
         }
       ],
@@ -1166,46 +968,34 @@
       "es": "En la oficina pregunto por el jefe.",
       "target": "pregunto por",
       "tr": {
-        "hu": "Az irodában a főnököt keresem.",
         "en": "At the office I ask for the boss.",
-        "es": "En la oficina pregunto por el jefe.",
-        "de": "Im Büro frage ich nach dem Chef."
+        "es": "En la oficina pregunto por el jefe."
       },
       "options": [
         {
           "text": {
-            "hu": "preguntar por: valaki vagy valami felől érdeklődni",
             "en": "preguntar por: asking about someone or something",
-            "es": "preguntar por: interesarse por alguien o algo",
-            "de": "preguntar por: sich nach jemandem oder etwas erkundigen"
+            "es": "preguntar por: interesarse por alguien o algo"
           }
         },
         {
           "text": {
-            "hu": "pedir: valamit kérni (dolog, segítség, engedély)",
             "en": "pedir: asking FOR something (a thing, help, permission)",
-            "es": "pedir: pedir algo (una cosa, ayuda, permiso)",
-            "de": "pedir: um etwas bitten (Sache, Hilfe, Erlaubnis)"
+            "es": "pedir: pedir algo (una cosa, ayuda, permiso)"
           },
           "wrong": {
-            "hu": "A pedir valamit kérne a főnöktől; itt a főnök a por után áll, őt keresem, tőle nem kérek semmit.",
             "en": "Pedir would ask the boss for something; here the boss comes after por, I am looking for him, I am not asking him for anything.",
-            "es": "Pedir le pediría algo al jefe; aquí el jefe va después de por, lo busco a él, no le pido nada.",
-            "de": "Pedir würde den Chef um etwas bitten; hier steht der Chef nach por, ich suche ihn, ich bitte ihn um nichts."
+            "es": "Pedir le pediría algo al jefe; aquí el jefe va después de por, lo busco a él, no le pido nada."
           }
         },
         {
           "text": {
-            "hu": "preguntar: kérdést feltenni (dónde, cuánto, si)",
             "en": "preguntar: asking a question (dónde, cuánto, si)",
-            "es": "preguntar: hacer una pregunta (dónde, cuánto, si)",
-            "de": "preguntar: eine Frage stellen (dónde, cuánto, si)"
+            "es": "preguntar: hacer una pregunta (dónde, cuánto, si)"
           },
           "wrong": {
-            "hu": "A por után egy személy neve áll, nem kérdőszó vagy si, ezért ez nem a sima preguntar.",
             "en": "A person follows por, not a question word or si, so this is not plain preguntar.",
-            "es": "Después de por va una persona, no una palabra interrogativa ni si, por eso no es el preguntar sencillo.",
-            "de": "Nach por steht eine Person, kein Fragewort und kein si, also ist es nicht das einfache preguntar."
+            "es": "Después de por va una persona, no una palabra interrogativa ni si, por eso no es el preguntar sencillo."
           }
         }
       ],
@@ -1217,46 +1007,34 @@
       "es": "Mi hijo pide permiso para ir al cine.",
       "target": "pide",
       "tr": {
-        "hu": "A fiam engedélyt kér, hogy moziba mehessen.",
         "en": "My son asks for permission to go to the cinema.",
-        "es": "Mi hijo pide permiso para ir al cine.",
-        "de": "Mein Sohn bittet um Erlaubnis, ins Kino zu gehen."
+        "es": "Mi hijo pide permiso para ir al cine."
       },
       "options": [
         {
           "text": {
-            "hu": "preguntar: kérdést feltenni (dónde, cuánto, si)",
             "en": "preguntar: asking a question (dónde, cuánto, si)",
-            "es": "preguntar: hacer una pregunta (dónde, cuánto, si)",
-            "de": "preguntar: eine Frage stellen (dónde, cuánto, si)"
+            "es": "preguntar: hacer una pregunta (dónde, cuánto, si)"
           },
           "wrong": {
-            "hu": "A preguntar kérdést tenne fel (pregunta si puede ir); az engedélyt viszont kérni kell, nem megkérdezni.",
             "en": "Preguntar would ask a question (pregunta si puede ir); but permission is asked for, not asked.",
-            "es": "Preguntar haría una pregunta (pregunta si puede ir); pero el permiso se pide, no se pregunta.",
-            "de": "Preguntar würde eine Frage stellen (pregunta si puede ir); die Erlaubnis erbittet man aber, man fragt sie nicht."
+            "es": "Preguntar haría una pregunta (pregunta si puede ir); pero el permiso se pide, no se pregunta."
           }
         },
         {
           "text": {
-            "hu": "pedir: valamit kérni (dolog, segítség, engedély)",
             "en": "pedir: asking FOR something (a thing, help, permission)",
-            "es": "pedir: pedir algo (una cosa, ayuda, permiso)",
-            "de": "pedir: um etwas bitten (Sache, Hilfe, Erlaubnis)"
+            "es": "pedir: pedir algo (una cosa, ayuda, permiso)"
           }
         },
         {
           "text": {
-            "hu": "preguntar por: valaki vagy valami felől érdeklődni",
             "en": "preguntar por: asking about someone or something",
-            "es": "preguntar por: interesarse por alguien o algo",
-            "de": "preguntar por: sich nach jemandem oder etwas erkundigen"
+            "es": "preguntar por: interesarse por alguien o algo"
           },
           "wrong": {
-            "hu": "A preguntar por valaki felől érdeklődne; itt senkiről nem kérdez, az engedélyt kéri.",
             "en": "Preguntar por would ask about someone; here he asks about nobody, he asks for permission.",
-            "es": "Preguntar por sería interesarse por alguien; aquí no pregunta por nadie, pide permiso.",
-            "de": "Preguntar por würde heißen, sich nach jemandem zu erkundigen; hier fragt er nach niemandem, er bittet um Erlaubnis."
+            "es": "Preguntar por sería interesarse por alguien; aquí no pregunta por nadie, pide permiso."
           }
         }
       ],

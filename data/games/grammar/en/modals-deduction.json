@@ -3,42 +3,32 @@
   "topic": "modals_deduction",
   "level": "B1",
   "title": {
-    "hu": "Feltevés és következtetés (must, might, can’t)",
     "en": "Deduction and Possibility (must, might, can’t)",
-    "es": "Deducción y posibilidad (must, might, can’t)",
-    "de": "Schlussfolgerung und Möglichkeit (must, might, can’t)"
+    "es": "Deducción y posibilidad (must, might, can’t)"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "Ha valamiről nem tudjuk biztosan, de a jelekből következtetünk, módbeli igét használunk. Must: biztos vagyok benne, hogy igaz („She must be at home”). Can’t: biztos vagyok benne, hogy nem igaz („That can’t be Carlos”). Might, may, could: lehetséges, de nem biztos („It might rain”). A spanyol „debe de estar”, „tiene que ser” a must be-nek felel meg, a „no puede ser” a can’t be-nek, a „puede que” a might / may-nek.",
         "en": "When we don’t know something for sure but conclude it from the signs, we use a modal verb. Must: I am sure it is true (“She must be at home”). Can’t: I am sure it is not true (“That can’t be Carlos”). Might, may, could: it is possible but not certain (“It might rain”). The Spanish “debe de estar”, “tiene que ser” match must be, “no puede ser” matches can’t be, “puede que” matches might / may.",
-        "es": "Cuando no sabemos algo con seguridad pero lo deducimos por las señales, usamos un verbo modal. Must: estoy seguro de que es verdad («She must be at home»). Can’t: estoy seguro de que no es verdad («That can’t be Carlos»). Might, may, could: es posible pero no seguro («It might rain»). El «debe de estar», «tiene que ser» del español equivale a must be, el «no puede ser» a can’t be, el «puede que» a might / may.",
-        "de": "Wenn wir etwas nicht sicher wissen, es aber aus Anzeichen schließen, benutzen wir ein Modalverb. Must: Ich bin sicher, dass es stimmt („She must be at home“). Can’t: Ich bin sicher, dass es nicht stimmt („That can’t be Carlos“). Might, may, could: Es ist möglich, aber nicht sicher („It might rain“). Das spanische „debe de estar“, „tiene que ser“ entspricht must be, „no puede ser“ entspricht can’t be, „puede que“ entspricht might / may."
+        "es": "Cuando no sabemos algo con seguridad pero lo deducimos por las señales, usamos un verbo modal. Must: estoy seguro de que es verdad («She must be at home»). Can’t: estoy seguro de que no es verdad («That can’t be Carlos»). Might, may, could: es posible pero no seguro («It might rain»). El «debe de estar», «tiene que ser» del español equivale a must be, el «no puede ser» a can’t be, el «puede que» a might / may."
       }
     },
     {
       "kind": "table",
       "id": "md-forms",
       "title": {
-        "hu": "Mennyire vagyok biztos?",
         "en": "How sure am I?",
-        "es": "¿Qué tan seguro estoy?",
-        "de": "Wie sicher bin ich?"
+        "es": "¿Qué tan seguro estoy?"
       },
       "header": [
         {
-          "hu": "Helyzet",
           "en": "Situation",
-          "es": "Situación",
-          "de": "Situation"
+          "es": "Situación"
         },
         {
-          "hu": "forma",
           "en": "form",
-          "es": "forma",
-          "de": "Form"
+          "es": "forma"
         }
       ],
       "rows": [
@@ -71,92 +61,72 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Következtetés a jelenről",
         "en": "Deduction about the present",
-        "es": "Deducción sobre el presente",
-        "de": "Schlussfolgerung über die Gegenwart"
+        "es": "Deducción sobre el presente"
       },
       "items": [
         {
           "text": {
-            "hu": "Must + be / alapige: erős bizonyíték alapján biztos vagyok benne, hogy igaz.",
             "en": "Must + be / base verb: I am sure it is true, based on strong evidence.",
-            "es": "Must + be / verbo base: estoy seguro de que es verdad, por una evidencia fuerte.",
-            "de": "Must + be / Grundform: Ich bin sicher, dass es stimmt, aufgrund starker Anzeichen."
+            "es": "Must + be / verbo base: estoy seguro de que es verdad, por una evidencia fuerte."
           },
           "examples": [
             {
               "es": "The lights are on. She must be at home.",
               "tr": {
-                "hu": "Világos van. Biztosan otthon van.",
                 "en": "The lights are on. She must be at home.",
-                "es": "Las luces están prendidas. Debe de estar en casa.",
-                "de": "Das Licht ist an. Sie muss zu Hause sein."
+                "es": "Las luces están prendidas. Debe de estar en casa."
               }
             },
             {
               "es": "He has been working all day. He must be tired.",
               "tr": {
-                "hu": "Egész nap dolgozott. Biztosan fáradt.",
                 "en": "He has been working all day. He must be tired.",
-                "es": "Ha estado trabajando todo el día. Debe de estar cansado.",
-                "de": "Er hat den ganzen Tag gearbeitet. Er muss müde sein."
+                "es": "Ha estado trabajando todo el día. Debe de estar cansado."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Can’t + be / alapige: biztos vagyok benne, hogy nem igaz. A must tagadása ebben a jelentésben can’t, nem mustn’t.",
             "en": "Can’t + be / base verb: I am sure it is not true. The negative of must in this meaning is can’t, not mustn’t.",
-            "es": "Can’t + be / verbo base: estoy seguro de que no es verdad. La negación de must con este significado es can’t, no mustn’t.",
-            "de": "Can’t + be / Grundform: Ich bin sicher, dass es nicht stimmt. Die Verneinung von must in dieser Bedeutung ist can’t, nicht mustn’t."
+            "es": "Can’t + be / verbo base: estoy seguro de que no es verdad. La negación de must con este significado es can’t, no mustn’t."
           },
           "examples": [
             {
               "es": "That can't be Carlos. He is in Madrid.",
               "tr": {
-                "hu": "Az nem lehet Carlos. Madridban van.",
                 "en": "That can't be Carlos. He is in Madrid.",
-                "es": "Ese no puede ser Carlos. Está en Madrid.",
-                "de": "Das kann nicht Carlos sein. Er ist in Madrid."
+                "es": "Ese no puede ser Carlos. Está en Madrid."
               }
             },
             {
               "es": "Her car isn't here. She can't be at home.",
               "tr": {
-                "hu": "Az autója nincs itt. Nem lehet otthon.",
                 "en": "Her car isn't here. She can't be at home.",
-                "es": "Su carro no está aquí. No puede estar en casa.",
-                "de": "Ihr Auto ist nicht hier. Sie kann nicht zu Hause sein."
+                "es": "Su carro no está aquí. No puede estar en casa."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Might, may, could + be / alapige: lehetséges, de nem biztos. Tagadás: might not, may not (a could not más jelentésű).",
             "en": "Might, may, could + be / base verb: possible but not sure. Negative: might not, may not (could not has a different meaning).",
-            "es": "Might, may, could + be / verbo base: posible pero no seguro. Negación: might not, may not (could not tiene otro significado).",
-            "de": "Might, may, could + be / Grundform: möglich, aber nicht sicher. Verneinung: might not, may not (could not hat eine andere Bedeutung)."
+            "es": "Might, may, could + be / verbo base: posible pero no seguro. Negación: might not, may not (could not tiene otro significado)."
           },
           "examples": [
             {
               "es": "I am not sure. It might rain later.",
               "tr": {
-                "hu": "Nem vagyok biztos benne. Lehet, hogy később esik.",
                 "en": "I am not sure. It might rain later.",
-                "es": "No estoy seguro. Puede que llueva más tarde.",
-                "de": "Ich bin nicht sicher. Es könnte später regnen."
+                "es": "No estoy seguro. Puede que llueva más tarde."
               }
             },
             {
               "es": "Maria may come to the party, but I don’t know yet.",
               "tr": {
-                "hu": "Maria talán eljön a buliba, de még nem tudom.",
                 "en": "Maria may come to the party, but I don’t know yet.",
-                "es": "María a lo mejor viene a la fiesta, pero todavía no sé.",
-                "de": "Maria kommt vielleicht zur Party, aber ich weiß es noch nicht."
+                "es": "María a lo mejor viene a la fiesta, pero todavía no sé."
               }
             }
           ]
@@ -166,36 +136,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Következtetés a múltról",
         "en": "Deduction about the past",
-        "es": "Deducción sobre el pasado",
-        "de": "Schlussfolgerung über die Vergangenheit"
+        "es": "Deducción sobre el pasado"
       },
       "items": [
         {
           "text": {
-            "hu": "Must / can’t / might + have + igenév: következtetés arról, mi történt. A have után az igenév áll.",
             "en": "Must / can’t / might + have + participle: a deduction about what happened. After have comes the participle.",
-            "es": "Must / can’t / might + have + participio: una deducción sobre lo que pasó. Después de have va el participio.",
-            "de": "Must / can’t / might + have + Partizip: eine Schlussfolgerung darüber, was passiert ist. Nach have steht das Partizip."
+            "es": "Must / can’t / might + have + participio: una deducción sobre lo que pasó. Después de have va el participio."
           },
           "examples": [
             {
               "es": "The window is open. Someone must have opened it.",
               "tr": {
-                "hu": "Nyitva az ablak. Valaki biztosan kinyitotta.",
                 "en": "The window is open. Someone must have opened it.",
-                "es": "La ventana está abierta. Alguien debió de abrirla.",
-                "de": "Das Fenster ist offen. Jemand muss es geöffnet haben."
+                "es": "La ventana está abierta. Alguien debió de abrirla."
               }
             },
             {
               "es": "He can't have forgotten. He never forgets.",
               "tr": {
-                "hu": "Nem felejthette el. Ő sosem felejt.",
                 "en": "He can't have forgotten. He never forgets.",
-                "es": "No puede haberlo olvidado. Él nunca olvida.",
-                "de": "Er kann es nicht vergessen haben. Er vergisst nie."
+                "es": "No puede haberlo olvidado. Él nunca olvida."
               }
             }
           ]
@@ -205,72 +167,56 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "A must tagadása következtetésnél can’t, nem mustn’t. „Her car isn’t here. She can’t be at home.” A mustn’t tilalmat jelent („You mustn’t park here”), nem következtetést.",
         "en": "The negative of must for deduction is can’t, not mustn’t. “Her car isn’t here. She can’t be at home.” Mustn’t means a prohibition (“You mustn’t park here”), not a deduction.",
-        "es": "La negación de must en la deducción es can’t, no mustn’t. «Her car isn’t here. She can’t be at home.» Mustn’t significa una prohibición («You mustn’t park here»), no una deducción.",
-        "de": "Die Verneinung von must bei der Schlussfolgerung ist can’t, nicht mustn’t. „Her car isn’t here. She can’t be at home.“ Mustn’t bedeutet ein Verbot („You mustn’t park here“), keine Schlussfolgerung."
+        "es": "La negación de must en la deducción es can’t, no mustn’t. «Her car isn’t here. She can’t be at home.» Mustn’t significa una prohibición («You mustn’t park here»), no una deducción."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A must kétféle: kötelesség („You must wear a seat belt”) és következtetés („She must be tired”). A mondat tartalma dönti el, melyik. A következtetésnél általában be áll utána, vagy have + igenév.",
         "en": "Must has two meanings: obligation (“You must wear a seat belt”) and deduction (“She must be tired”). The content of the sentence decides which one. For deduction it is usually followed by be, or by have + participle.",
-        "es": "Must tiene dos significados: obligación («You must wear a seat belt») y deducción («She must be tired»). El contenido de la oración decide cuál es. En la deducción suele ir seguido de be, o de have + participio.",
-        "de": "Must hat zwei Bedeutungen: Pflicht („You must wear a seat belt“) und Schlussfolgerung („She must be tired“). Der Inhalt des Satzes entscheidet, welche es ist. Bei der Schlussfolgerung folgt meist be oder have + Partizip."
+        "es": "Must tiene dos significados: obligación («You must wear a seat belt») y deducción («She must be tired»). El contenido de la oración decide cuál es. En la deducción suele ir seguido de be, o de have + participio."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A „puede ser” lehetőségnél might / may / could, nem can. Ne mondj „It can be true” helyett „It could be true” vagy „It might be true”, ha nem vagy biztos benne.",
         "en": "For possibility the Spanish “puede ser” is might / may / could, not can. Say “It could be true” or “It might be true” when you are not sure.",
-        "es": "Para la posibilidad, el «puede ser» español es might / may / could, no can. Di «It could be true» o «It might be true» cuando no estás seguro.",
-        "de": "Für die Möglichkeit ist das spanische „puede ser“ might / may / could, nicht can. Sag „It could be true“ oder „It might be true“, wenn du nicht sicher bist."
+        "es": "Para la posibilidad, el «puede ser» español es might / may / could, no can. Di «It could be true» o «It might be true» cuando no estás seguro."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A módbeli ige után nincs to és nincs -s: nem „She musts be” és nem „It might to rain”. Múltra have + igenév: nem „must have went”, hanem „must have gone”.",
         "en": "After a modal verb there is no to and no -s: not “She musts be” and not “It might to rain”. For the past use have + participle: not “must have went” but “must have gone”.",
-        "es": "Después de un verbo modal no hay to ni -s: no «She musts be» ni «It might to rain». Para el pasado se usa have + participio: no «must have went» sino «must have gone».",
-        "de": "Nach einem Modalverb steht kein to und kein -s: nicht „She musts be“ und nicht „It might to rain“. Für die Vergangenheit nimmt man have + Partizip: nicht „must have went“, sondern „must have gone“."
+        "es": "Después de un verbo modal no hay to ni -s: no «She musts be» ni «It might to rain». Para el pasado se usa have + participio: no «must have went» sino «must have gone»."
       }
     }
   ],
   "speak": {
-    "hu": "Ha valamit nem tudunk biztosan, de következtetünk rá, módbeli igét használunk. A «must» azt jelenti, hogy biztos vagyok benne, hogy igaz: «She must be at home». A «can't» azt jelenti, hogy biztos vagyok benne, hogy nem igaz: «That can't be Carlos». A «might», a «may» és a «could» lehetőséget jelent: «It might rain later». Vigyázat: következtetésnél a «must» tagadása «can't», nem «mustn't». Múltra «must have» plusz igenév áll: «Someone must have opened the window».",
     "en": "When we don't know something for sure but conclude it, we use a modal verb. «Must» means I am sure it is true: «She must be at home». «Can't» means I am sure it is not true: «That can't be Carlos». «Might», «may» and «could» mean a possibility: «It might rain later». Careful: for deduction the negative of «must» is «can't», not «mustn't». For the past, «must have» plus the participle is used: «Someone must have opened the window».",
-    "es": "Cuando no sabemos algo con seguridad pero lo deducimos, usamos un verbo modal. «Must» significa que estoy seguro de que es verdad: «She must be at home». «Can't» significa que estoy seguro de que no es verdad: «That can't be Carlos». «Might», «may» y «could» significan una posibilidad: «It might rain later». Cuidado: en la deducción la negación de «must» es «can't», no «mustn't». Para el pasado se usa «must have» más el participio: «Someone must have opened the window».",
-    "de": "Wenn wir etwas nicht sicher wissen, es aber schließen, benutzen wir ein Modalverb. «Must» bedeutet, dass ich sicher bin, dass es stimmt: «She must be at home». «Can't» bedeutet, dass ich sicher bin, dass es nicht stimmt: «That can't be Carlos». «Might», «may» und «could» bedeuten eine Möglichkeit: «It might rain later». Vorsicht: Bei der Schlussfolgerung ist die Verneinung von «must» «can't», nicht «mustn't». Für die Vergangenheit nimmt man «must have» plus Partizip: «Someone must have opened the window»."
+    "es": "Cuando no sabemos algo con seguridad pero lo deducimos, usamos un verbo modal. «Must» significa que estoy seguro de que es verdad: «She must be at home». «Can't» significa que estoy seguro de que no es verdad: «That can't be Carlos». «Might», «may» y «could» significan una posibilidad: «It might rain later». Cuidado: en la deducción la negación de «must» es «can't», no «mustn't». Para el pasado se usa «must have» más el participio: «Someone must have opened the window»."
   },
   "glossary": [
     {
       "word": "might",
       "gloss": {
-        "hu": "lehet, hogy (lehetőség)",
         "en": "used for a possibility",
-        "es": "puede que (posibilidad)",
-        "de": "könnte (Möglichkeit)"
+        "es": "puede que (posibilidad)"
       }
     },
     {
       "word": "true",
       "gloss": {
-        "hu": "igaz",
         "en": "correct, real",
-        "es": "verdadero",
-        "de": "wahr"
+        "es": "verdadero"
       }
     },
     {
       "word": "forgotten",
       "gloss": {
-        "hu": "elfelejtett (a forget igenéve)",
         "en": "participle of forget",
-        "es": "olvidado (participio de forget)",
-        "de": "vergessen (Partizip von forget)"
+        "es": "olvidado (participio de forget)"
       }
     }
   ],
@@ -285,30 +231,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A világos jel, hogy otthon van; biztos vagyok benne: Ana must be at home.",
         "en": "The light is a sign that she is home; I am sure: Ana must be at home.",
-        "es": "Las luces son una señal de que está en casa; estoy seguro: Ana must be at home.",
-        "de": "Das Licht ist ein Zeichen, dass sie zu Hause ist; ich bin sicher: Ana must be at home."
+        "es": "Las luces son una señal de que está en casa; estoy seguro: Ana must be at home."
       },
       "wrong": {
         "can't": {
-          "hu": "A can’t azt jelentené, hogy biztosan nincs otthon; a világos viszont az ellenkezőjére utal.",
           "en": "Can’t would mean she is surely not at home; but the light points to the opposite.",
-          "es": "Can’t significaría que seguro no está en casa; pero la luz apunta a lo contrario.",
-          "de": "Can’t würde heißen, dass sie sicher nicht zu Hause ist; das Licht deutet aber auf das Gegenteil."
+          "es": "Can’t significaría que seguro no está en casa; pero la luz apunta a lo contrario."
         },
         "mustn't": {
-          "hu": "A mustn’t tilalmat jelent (nem szabad otthon lennie), nem következtetést.",
           "en": "Mustn’t means a prohibition (she is not allowed to be home), not a deduction.",
-          "es": "Mustn’t significa una prohibición (no se permite que esté en casa), no una deducción.",
-          "de": "Mustn’t bedeutet ein Verbot (sie darf nicht zu Hause sein), keine Schlussfolgerung."
+          "es": "Mustn’t significa una prohibición (no se permite que esté en casa), no una deducción."
         }
       },
       "examples": [
         "He must be at work.",
         "She must be home."
       ],
-      "tr": { "hu": "Égnek a lámpák. Ana biztosan otthon van.", "en": "The lights are on. Ana must be at home.", "es": "Las luces están prendidas. Ana debe estar en casa.", "de": "Das Licht ist an. Ana muss zu Hause sein." }
+      "tr": { "en": "The lights are on. Ana must be at home.", "es": "Las luces están prendidas. Ana debe estar en casa." }
     },
     {
       "id": "mde-02",
@@ -320,30 +260,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Egész nap dolgozott, biztos vagyok benne, hogy fáradt: he must be tired.",
         "en": "He has worked all day; I am sure he is tired: he must be tired.",
-        "es": "Ha trabajado todo el día; estoy seguro de que está cansado: he must be tired.",
-        "de": "Er hat den ganzen Tag gearbeitet; ich bin sicher, dass er müde ist: he must be tired."
+        "es": "Ha trabajado todo el día; estoy seguro de que está cansado: he must be tired."
       },
       "wrong": {
         "can't": {
-          "hu": "A can’t azt jelentené, hogy biztosan nem fáradt; az egész napos munka mást sugall.",
           "en": "Can’t would mean he is surely not tired; working all day suggests otherwise.",
-          "es": "Can’t significaría que seguro no está cansado; trabajar todo el día sugiere lo contrario.",
-          "de": "Can’t würde heißen, dass er sicher nicht müde ist; den ganzen Tag zu arbeiten spricht dagegen."
+          "es": "Can’t significaría que seguro no está cansado; trabajar todo el día sugiere lo contrario."
         },
         "might to": {
-          "hu": "A might után nincs to; a „might to be” helytelen, és a bizonyosságot sem fejezi ki.",
           "en": "After might there is no to; “might to be” is incorrect and does not express certainty either.",
-          "es": "Después de might no hay to; «might to be» es incorrecto y tampoco expresa certeza.",
-          "de": "Nach might steht kein to; „might to be“ ist falsch und drückt auch keine Sicherheit aus."
+          "es": "Después de might no hay to; «might to be» es incorrecto y tampoco expresa certeza."
         }
       },
       "examples": [
         "She must be hungry.",
         "They must be tired."
       ],
-      "tr": { "hu": "Egész nap dolgozott. Biztosan fáradt.", "en": "He has been working all day. He must be tired.", "es": "Ha estado trabajando todo el día. Debe estar cansado.", "de": "Er hat den ganzen Tag gearbeitet. Er muss müde sein." }
+      "tr": { "en": "He has been working all day. He must be tired.", "es": "Ha estado trabajando todo el día. Debe estar cansado." }
     },
     {
       "id": "mde-03",
@@ -355,30 +289,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Biztos vagyok benne, hogy nem ő az (Madridban van): that can’t be Carlos.",
         "en": "I am sure it is not him (he is in Madrid): that can’t be Carlos.",
-        "es": "Estoy seguro de que no es él (está en Madrid): that can’t be Carlos.",
-        "de": "Ich bin sicher, dass er es nicht ist (er ist in Madrid): that can’t be Carlos."
+        "es": "Estoy seguro de que no es él (está en Madrid): that can’t be Carlos."
       },
       "wrong": {
         "must": {
-          "hu": "A must azt jelentené, hogy biztosan Carlos; a mondat második fele (Madridban van) ellentmond ennek.",
           "en": "Must would mean it is surely Carlos; the second half (he is in Madrid) contradicts that.",
-          "es": "Must significaría que seguro es Carlos; la segunda parte (está en Madrid) lo contradice.",
-          "de": "Must würde heißen, dass es sicher Carlos ist; die zweite Satzhälfte (er ist in Madrid) widerspricht dem."
+          "es": "Must significaría que seguro es Carlos; la segunda parte (está en Madrid) lo contradice."
         },
         "mustn't": {
-          "hu": "A mustn’t tilalmat jelentene; következtetésnél a must tagadása can’t.",
           "en": "Mustn’t would be a prohibition; for deduction the negative of must is can’t.",
-          "es": "Mustn’t sería una prohibición; en la deducción la negación de must es can’t.",
-          "de": "Mustn’t wäre ein Verbot; bei der Schlussfolgerung ist die Verneinung von must can’t."
+          "es": "Mustn’t sería una prohibición; en la deducción la negación de must es can’t."
         }
       },
       "examples": [
         "That can't be true.",
         "She can't be sick."
       ],
-      "tr": { "hu": "Az nem lehet Carlos. Ő Madridban van.", "en": "That can't be Carlos. He is in Madrid.", "es": "Ese no puede ser Carlos. Él está en Madrid.", "de": "Das kann nicht Carlos sein. Er ist in Madrid." }
+      "tr": { "en": "That can't be Carlos. He is in Madrid.", "es": "Ese no puede ser Carlos. Él está en Madrid." }
     },
     {
       "id": "mde-04",
@@ -390,30 +318,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Nem vagyok biztos benne, csak lehetséges: it might rain.",
         "en": "I am not sure, it is only possible: it might rain.",
-        "es": "No estoy seguro, solo es posible: it might rain.",
-        "de": "Ich bin nicht sicher, es ist nur möglich: it might rain."
+        "es": "No estoy seguro, solo es posible: it might rain."
       },
       "wrong": {
         "must": {
-          "hu": "A must biztosságot fejezne ki; a „I am not sure” éppen az ellenkezőjét mondja.",
           "en": "Must would express certainty; “I am not sure” says the opposite.",
-          "es": "Must expresaría certeza; «I am not sure» dice lo contrario.",
-          "de": "Must würde Sicherheit ausdrücken; „I am not sure“ sagt das Gegenteil."
+          "es": "Must expresaría certeza; «I am not sure» dice lo contrario."
         },
         "can't": {
-          "hu": "A can’t azt jelentené, hogy biztosan nem esik; a mondat bizonytalan, ezért might.",
           "en": "Can’t would mean it surely won’t rain; the sentence is uncertain, so might.",
-          "es": "Can’t significaría que seguro no va a llover; la oración es incierta, por eso might.",
-          "de": "Can’t würde heißen, dass es sicher nicht regnet; der Satz ist unsicher, deshalb might."
+          "es": "Can’t significaría que seguro no va a llover; la oración es incierta, por eso might."
         }
       },
       "examples": [
         "She might come.",
         "It might be true."
       ],
-      "tr": { "hu": "Nem vagyok benne biztos. Később talán esni fog.", "en": "I am not sure. It might rain later.", "es": "No estoy seguro. Podría llover más tarde.", "de": "Ich bin mir nicht sicher. Es könnte später regnen." }
+      "tr": { "en": "I am not sure. It might rain later.", "es": "No estoy seguro. Podría llover más tarde." }
     },
     {
       "id": "mde-05",
@@ -425,30 +347,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Az autója nincs itt, biztos vagyok benne, hogy nincs otthon: she can’t be at home.",
         "en": "Her car is not here; I am sure she is not at home: she can’t be at home.",
-        "es": "Su carro no está aquí; estoy seguro de que no está en casa: she can’t be at home.",
-        "de": "Ihr Auto ist nicht hier; ich bin sicher, dass sie nicht zu Hause ist: she can’t be at home."
+        "es": "Su carro no está aquí; estoy seguro de que no está en casa: she can’t be at home."
       },
       "wrong": {
         "mustn't": {
-          "hu": "A mustn’t tilalmat jelent; következtetésnél a must tagadása can’t.",
           "en": "Mustn’t means a prohibition; for deduction the negative of must is can’t.",
-          "es": "Mustn’t significa una prohibición; en la deducción la negación de must es can’t.",
-          "de": "Mustn’t bedeutet ein Verbot; bei der Schlussfolgerung ist die Verneinung von must can’t."
+          "es": "Mustn’t significa una prohibición; en la deducción la negación de must es can’t."
         },
         "doesn't have to": {
-          "hu": "A doesn’t have to azt jelenti, hogy nem kötelező; itt következtetés kell.",
           "en": "Doesn’t have to means it is not required; here you need a deduction.",
-          "es": "Doesn’t have to significa que no es obligatorio; aquí hace falta una deducción.",
-          "de": "Doesn’t have to bedeutet, dass es nicht Pflicht ist; hier braucht man eine Schlussfolgerung."
+          "es": "Doesn’t have to significa que no es obligatorio; aquí hace falta una deducción."
         }
       },
       "examples": [
         "He can't be here.",
         "They can't be sleeping."
       ],
-      "tr": { "hu": "Nincs itt az autója. Nem lehet otthon.", "en": "Her car isn't here. She can't be at home.", "es": "Su carro no está aquí. No puede estar en casa.", "de": "Ihr Auto ist nicht hier. Sie kann nicht zu Hause sein." }
+      "tr": { "en": "Her car isn't here. She can't be at home.", "es": "Su carro no está aquí. No puede estar en casa." }
     },
     {
       "id": "mde-06",
@@ -460,30 +376,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Múltra szóló következtetés: must have + igenév (valaki biztosan kinyitotta).",
         "en": "A deduction about the past: must have + participle (someone surely opened it).",
-        "es": "Una deducción sobre el pasado: must have + participio (alguien seguro la abrió).",
-        "de": "Eine Schlussfolgerung über die Vergangenheit: must have + Partizip (jemand hat es sicher geöffnet)."
+        "es": "Una deducción sobre el pasado: must have + participio (alguien seguro la abrió)."
       },
       "wrong": {
         "can't": {
-          "hu": "A can’t have opened azt jelentené, hogy biztosan senki nem nyitotta ki; az ablak azonban nyitva van.",
           "en": "Can’t have opened would mean nobody opened it; but the window is open.",
-          "es": "Can’t have opened significaría que nadie la abrió; pero la ventana está abierta.",
-          "de": "Can’t have opened würde heißen, dass niemand es geöffnet hat; das Fenster ist aber offen."
+          "es": "Can’t have opened significaría que nadie la abrió; pero la ventana está abierta."
         },
         "will": {
-          "hu": "A will have után nem a jelen helyzetre következtet; a „will have opened” jövőbeli kész eseményt jelentene.",
           "en": "Will have does not deduce about the present situation; “will have opened” would mean a future finished event.",
-          "es": "Will have no deduce sobre la situación presente; «will have opened» significaría un hecho futuro terminado.",
-          "de": "Will have schließt nicht auf die gegenwärtige Situation; „will have opened“ würde ein zukünftiges abgeschlossenes Ereignis bedeuten."
+          "es": "Will have no deduce sobre la situación presente; «will have opened» significaría un hecho futuro terminado."
         }
       },
       "examples": [
         "She must have left.",
         "They must have eaten."
       ],
-      "tr": { "hu": "Nyitva van az ablak. Valaki biztosan kinyitotta.", "en": "The window is open. Someone must have opened it.", "es": "La ventana está abierta. Alguien debe haberla abierto.", "de": "Das Fenster ist offen. Jemand muss es geöffnet haben." }
+      "tr": { "en": "The window is open. Someone must have opened it.", "es": "La ventana está abierta. Alguien debe haberla abierto." }
     },
     {
       "id": "mde-07",
@@ -495,30 +405,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Múltra szóló tagadó következtetés: it can’t have been Ana (Pueblában volt).",
         "en": "A negative deduction about the past: it can’t have been Ana (she was in Puebla).",
-        "es": "Una deducción negativa sobre el pasado: it can’t have been Ana (estaba en Puebla).",
-        "de": "Eine verneinte Schlussfolgerung über die Vergangenheit: it can’t have been Ana (sie war in Puebla)."
+        "es": "Una deducción negativa sobre el pasado: it can’t have been Ana (estaba en Puebla)."
       },
       "wrong": {
         "must": {
-          "hu": "A must have been azt jelentené, hogy biztosan Ana volt; a mondat második fele ellentmond.",
           "en": "Must have been would mean it was surely Ana; the second half contradicts that.",
-          "es": "Must have been significaría que seguro fue Ana; la segunda parte lo contradice.",
-          "de": "Must have been würde heißen, dass es sicher Ana war; die zweite Satzhälfte widerspricht dem."
+          "es": "Must have been significaría que seguro fue Ana; la segunda parte lo contradice."
         },
         "might to": {
-          "hu": "A might után nincs to, és a „might to have” helytelen alak.",
           "en": "After might there is no to, and “might to have” is an incorrect form.",
-          "es": "Después de might no hay to, y «might to have» es una forma incorrecta.",
-          "de": "Nach might steht kein to, und „might to have“ ist eine falsche Form."
+          "es": "Después de might no hay to, y «might to have» es una forma incorrecta."
         }
       },
       "examples": [
         "He can't have seen it.",
         "She can't have said that."
       ],
-      "tr": { "hu": "Nem lehetett Ana. Ő Pueblában volt.", "en": "It can't have been Ana. She was in Puebla.", "es": "No pudo haber sido Ana. Ella estaba en Puebla.", "de": "Das kann nicht Ana gewesen sein. Sie war in Puebla." }
+      "tr": { "en": "It can't have been Ana. She was in Puebla.", "es": "No pudo haber sido Ana. Ella estaba en Puebla." }
     },
     {
       "id": "mde-08",
@@ -530,30 +434,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A must után alapige áll: she must be happy.",
         "en": "After must comes the base verb: she must be happy.",
-        "es": "Después de must va el verbo base: she must be happy.",
-        "de": "Nach must steht die Grundform: she must be happy."
+        "es": "Después de must va el verbo base: she must be happy."
       },
       "wrong": {
         "is": {
-          "hu": "A módbeli ige után nem ragozott alak jön; a must után be áll, nem is.",
           "en": "After a modal verb no conjugated form follows; after must comes be, not is.",
-          "es": "Después de un verbo modal no va una forma conjugada; después de must va be, no is.",
-          "de": "Nach einem Modalverb folgt keine konjugierte Form; nach must steht be, nicht is."
+          "es": "Después de un verbo modal no va una forma conjugada; después de must va be, no is."
         },
         "being": {
-          "hu": "A must után alapige jön, nem -ing alak; a „must being” helytelen.",
           "en": "After must comes the base verb, not an -ing form; “must being” is incorrect.",
-          "es": "Después de must viene el verbo base, no una forma -ing; «must being» es incorrecto.",
-          "de": "Nach must kommt die Grundform, nicht eine -ing-Form; „must being“ ist falsch."
+          "es": "Después de must viene el verbo base, no una forma -ing; «must being» es incorrecto."
         }
       },
       "examples": [
         "He must be late.",
         "They must be here."
       ],
-      "tr": { "hu": "Biztosan nagyon boldog.", "en": "She must be very happy.", "es": "Debe estar muy feliz.", "de": "Sie muss sehr glücklich sein." }
+      "tr": { "en": "She must be very happy.", "es": "Debe estar muy feliz." }
     },
     {
       "id": "mde-09",
@@ -565,30 +463,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A must have után igenév áll: must have seen.",
         "en": "After must have comes the participle: must have seen.",
-        "es": "Después de must have va el participio: must have seen.",
-        "de": "Nach must have steht das Partizip: must have seen."
+        "es": "Después de must have va el participio: must have seen."
       },
       "wrong": {
         "see": {
-          "hu": "A „see” alapige; a must have után az igenév kell (seen).",
           "en": "“See” is the base verb; after must have you need the participle (seen).",
-          "es": "«See» es el verbo base; después de must have hace falta el participio (seen).",
-          "de": "„See“ ist die Grundform; nach must have braucht man das Partizip (seen)."
+          "es": "«See» es el verbo base; después de must have hace falta el participio (seen)."
         },
         "seeing": {
-          "hu": "A must have után az igenév kell, nem az -ing alak (seen).",
           "en": "After must have you need the participle, not the -ing form (seen).",
-          "es": "Después de must have hace falta el participio, no la forma -ing (seen).",
-          "de": "Nach must have braucht man das Partizip, nicht die -ing-Form (seen)."
+          "es": "Después de must have hace falta el participio, no la forma -ing (seen)."
         }
       },
       "examples": [
         "She must have seen it.",
         "He must have eaten."
       ],
-      "tr": { "hu": "Biztosan látta a híreket. Szomorúnak tűnik.", "en": "She must have seen the news. She looks sad.", "es": "Debe haber visto las noticias. Se ve triste.", "de": "Sie muss die Nachrichten gesehen haben. Sie sieht traurig aus." }
+      "tr": { "en": "She must have seen the news. She looks sad.", "es": "Debe haber visto las noticias. Se ve triste." }
     },
     {
       "id": "mde-10",
@@ -600,30 +492,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Lehetőség, nem biztos: Maria may come.",
         "en": "A possibility, not certain: Maria may come.",
-        "es": "Una posibilidad, no segura: Maria may come.",
-        "de": "Eine Möglichkeit, nicht sicher: Maria may come."
+        "es": "Una posibilidad, no segura: Maria may come."
       },
       "wrong": {
         "must": {
-          "hu": "A must bizonyosságot fejez ki; a „I don’t know yet” viszont bizonytalanságot mutat.",
           "en": "Must expresses certainty; “I don’t know yet” shows uncertainty.",
-          "es": "Must expresa certeza; «I don’t know yet» muestra incertidumbre.",
-          "de": "Must drückt Sicherheit aus; „I don’t know yet“ zeigt Unsicherheit."
+          "es": "Must expresa certeza; «I don’t know yet» muestra incertidumbre."
         },
         "can't": {
-          "hu": "A can’t azt jelentené, hogy biztosan nem jön; a mondat szerint még nem tudom.",
           "en": "Can’t would mean she surely won’t come; the sentence says I don’t know yet.",
-          "es": "Can’t significaría que seguro no viene; la oración dice que todavía no lo sé.",
-          "de": "Can’t würde heißen, dass sie sicher nicht kommt; der Satz sagt, dass ich es noch nicht weiß."
+          "es": "Can’t significaría que seguro no viene; la oración dice que todavía no lo sé."
         }
       },
       "examples": [
         "She may call.",
         "It may rain."
       ],
-      "tr": { "hu": "Maria lehet, hogy eljön a buliba, de még nem tudom.", "en": "Maria may come to the party, but I don't know yet.", "es": "Puede que Maria venga a la fiesta, pero aún no lo sé.", "de": "Maria kommt vielleicht zur Party, aber ich weiß es noch nicht." }
+      "tr": { "en": "Maria may come to the party, but I don't know yet.", "es": "Puede que Maria venga a la fiesta, pero aún no lo sé." }
     },
     {
       "id": "mde-11",
@@ -635,30 +521,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Lehetséges, de nem biztos: he could be in the kitchen.",
         "en": "It is possible but not certain: he could be in the kitchen.",
-        "es": "Es posible pero no seguro: he could be in the kitchen.",
-        "de": "Es ist möglich, aber nicht sicher: he could be in the kitchen."
+        "es": "Es posible pero no seguro: he could be in the kitchen."
       },
       "wrong": {
         "must": {
-          "hu": "A must bizonyosságot jelentene; az „I’m not sure” bizonytalanságot fejez ki.",
           "en": "Must would mean certainty; “I’m not sure” expresses uncertainty.",
-          "es": "Must significaría certeza; «I’m not sure» expresa incertidumbre.",
-          "de": "Must würde Sicherheit bedeuten; „I’m not sure“ drückt Unsicherheit aus."
+          "es": "Must significaría certeza; «I’m not sure» expresa incertidumbre."
         },
         "can't": {
-          "hu": "A can’t azt jelentené, hogy biztosan nincs a konyhában; a mondat csak lehetőséget mond.",
           "en": "Can’t would mean he is surely not in the kitchen; the sentence only gives a possibility.",
-          "es": "Can’t significaría que seguro no está en la cocina; la oración solo da una posibilidad.",
-          "de": "Can’t würde heißen, dass er sicher nicht in der Küche ist; der Satz nennt nur eine Möglichkeit."
+          "es": "Can’t significaría que seguro no está en la cocina; la oración solo da una posibilidad."
         }
       },
       "examples": [
         "He could be at work.",
         "She could be late."
       ],
-      "tr": { "hu": "Nem tudom biztosan, hol van Luis. Lehet, hogy a konyhában van.", "en": "I'm not sure where Luis is. He could be in the kitchen.", "es": "No estoy seguro de dónde está Luis. Podría estar en la cocina.", "de": "Ich bin mir nicht sicher, wo Luis ist. Er könnte in der Küche sein." }
+      "tr": { "en": "I'm not sure where Luis is. He could be in the kitchen.", "es": "No estoy seguro de dónde está Luis. Podría estar en la cocina." }
     },
     {
       "id": "mde-12",
@@ -670,30 +550,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A can’t után alapige áll: that story can’t be true.",
         "en": "After can’t comes the base verb: that story can’t be true.",
-        "es": "Después de can’t va el verbo base: that story can’t be true.",
-        "de": "Nach can’t steht die Grundform: that story can’t be true."
+        "es": "Después de can’t va el verbo base: that story can’t be true."
       },
       "wrong": {
         "is": {
-          "hu": "A módbeli ige után nem ragozott alak jön; a can’t után be áll.",
           "en": "After a modal verb no conjugated form follows; after can’t comes be.",
-          "es": "Después de un verbo modal no va una forma conjugada; después de can’t va be.",
-          "de": "Nach einem Modalverb folgt keine konjugierte Form; nach can’t steht be."
+          "es": "Después de un verbo modal no va una forma conjugada; después de can’t va be."
         },
         "being": {
-          "hu": "A can’t után alapige jön, nem -ing alak.",
           "en": "After can’t comes the base verb, not an -ing form.",
-          "es": "Después de can’t viene el verbo base, no una forma -ing.",
-          "de": "Nach can’t kommt die Grundform, nicht eine -ing-Form."
+          "es": "Después de can’t viene el verbo base, no una forma -ing."
         }
       },
       "examples": [
         "That can't be right.",
         "It can't be true."
       ],
-      "tr": { "hu": "Az a történet nem lehet igaz.", "en": "That story can't be true.", "es": "Esa historia no puede ser cierta.", "de": "Diese Geschichte kann nicht wahr sein." }
+      "tr": { "en": "That story can't be true.", "es": "Esa historia no puede ser cierta." }
     },
     {
       "id": "mde-13",
@@ -705,30 +579,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Egész nap nem evett, biztos vagyok benne, hogy éhes: he must be hungry.",
         "en": "He has not eaten all day; I am sure he is hungry: he must be hungry.",
-        "es": "No ha comido en todo el día; estoy seguro de que tiene hambre: he must be hungry.",
-        "de": "Er hat den ganzen Tag nichts gegessen; ich bin sicher, dass er Hunger hat: he must be hungry."
+        "es": "No ha comido en todo el día; estoy seguro de que tiene hambre: he must be hungry."
       },
       "wrong": {
         "can't": {
-          "hu": "A can’t azt jelentené, hogy biztosan nem éhes; ez ellentmond a mondat második felének.",
           "en": "Can’t would mean he is surely not hungry; that contradicts the second half.",
-          "es": "Can’t significaría que seguro no tiene hambre; eso contradice la segunda parte.",
-          "de": "Can’t würde heißen, dass er sicher keinen Hunger hat; das widerspricht der zweiten Satzhälfte."
+          "es": "Can’t significaría que seguro no tiene hambre; eso contradice la segunda parte."
         },
         "might not": {
-          "hu": "A might not csak lehetőséget mond arra, hogy nem éhes; a hosszú éhezés biztosabb következtetést enged.",
           "en": "Might not only gives a possibility that he is not hungry; going all day without food allows a stronger conclusion.",
-          "es": "Might not solo da la posibilidad de que no tenga hambre; pasar todo el día sin comer permite una conclusión más fuerte.",
-          "de": "Might not nennt nur die Möglichkeit, dass er keinen Hunger hat; ein ganzer Tag ohne Essen erlaubt einen sichereren Schluss."
+          "es": "Might not solo da la posibilidad de que no tenga hambre; pasar todo el día sin comer permite una conclusión más fuerte."
         }
       },
       "examples": [
         "You must be cold.",
         "He must be thirsty."
       ],
-      "tr": { "hu": "Biztosan éhes. Egész nap nem evett semmit.", "en": "He must be hungry. He hasn't eaten all day.", "es": "Debe tener hambre. No ha comido en todo el día.", "de": "Er muss hungrig sein. Er hat den ganzen Tag nichts gegessen." }
+      "tr": { "en": "He must be hungry. He hasn't eaten all day.", "es": "Debe tener hambre. No ha comido en todo el día." }
     },
     {
       "id": "mde-14",
@@ -740,30 +608,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Biztos vagyok benne, hogy nem orvos, mert semmit nem tud az orvostudományról: he can’t be a doctor.",
         "en": "I am sure he is not a doctor because he knows nothing about medicine: he can’t be a doctor.",
-        "es": "Estoy seguro de que no es doctor porque no sabe nada de medicina: he can’t be a doctor.",
-        "de": "Ich bin sicher, dass er kein Arzt ist, weil er nichts von Medizin versteht: he can’t be a doctor."
+        "es": "Estoy seguro de que no es doctor porque no sabe nada de medicina: he can’t be a doctor."
       },
       "wrong": {
         "must": {
-          "hu": "A must azt jelentené, hogy biztosan orvos; a mondat második fele ellentmond.",
           "en": "Must would mean he is surely a doctor; the second half contradicts that.",
-          "es": "Must significaría que seguro es doctor; la segunda parte lo contradice.",
-          "de": "Must würde heißen, dass er sicher Arzt ist; die zweite Satzhälfte widerspricht dem."
+          "es": "Must significaría que seguro es doctor; la segunda parte lo contradice."
         },
         "mustn't": {
-          "hu": "A mustn’t tilalmat jelentene (nem szabad orvosnak lennie); következtetésnél can’t kell.",
           "en": "Mustn’t would be a prohibition (he must not be a doctor); for deduction you need can’t.",
-          "es": "Mustn’t sería una prohibición (no debe ser doctor); para la deducción hace falta can’t.",
-          "de": "Mustn’t wäre ein Verbot (er darf kein Arzt sein); bei der Schlussfolgerung braucht man can’t."
+          "es": "Mustn’t sería una prohibición (no debe ser doctor); para la deducción hace falta can’t."
         }
       },
       "examples": [
         "She can't be a teacher.",
         "He can't be 40."
       ],
-      "tr": { "hu": "Nem lehet orvos. Semmit sem tud az orvostudományról.", "en": "He can't be a doctor. He knows nothing about medicine.", "es": "No puede ser doctor. No sabe nada de medicina.", "de": "Er kann kein Arzt sein. Er weiß nichts über Medizin." }
+      "tr": { "en": "He can't be a doctor. He knows nothing about medicine.", "es": "No puede ser doctor. No sabe nada de medicina." }
     },
     {
       "id": "mde-15",
@@ -775,30 +637,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Lehetséges magyarázat, de nem biztos: they might be busy.",
         "en": "A possible explanation, but not certain: they might be busy.",
-        "es": "Una explicación posible, pero no segura: they might be busy.",
-        "de": "Eine mögliche Erklärung, aber nicht sicher: they might be busy."
+        "es": "Una explicación posible, pero no segura: they might be busy."
       },
       "wrong": {
         "can't": {
-          "hu": "A can’t azt jelentené, hogy biztosan nem alszanak; a mondat csak a válasz hiányát látja (lehet, hogy elfoglaltak).",
           "en": "Can’t would mean they are surely not busy; the sentence only sees that nobody answers (they might be busy).",
-          "es": "Can’t significaría que seguro no están ocupados; la oración solo ve que nadie contesta.",
-          "de": "Can’t würde heißen, dass sie sicher nicht schlafen; der Satz sieht nur, dass niemand antwortet."
+          "es": "Can’t significaría que seguro no están ocupados; la oración solo ve que nadie contesta."
         },
         "mustn't": {
-          "hu": "A mustn’t tilalmat jelentene (nem szabad aludniuk), nem lehetőséget.",
           "en": "Mustn’t would be a prohibition (they must not be busy), not a possibility.",
-          "es": "Mustn’t sería una prohibición (no deben estar ocupados), no una posibilidad.",
-          "de": "Mustn’t wäre ein Verbot (sie dürfen nicht schlafen), keine Möglichkeit."
+          "es": "Mustn’t sería una prohibición (no deben estar ocupados), no una posibilidad."
         }
       },
       "examples": [
         "He might be late.",
         "She might be busy."
       ],
-      "tr": { "hu": "Nem válaszolnak. Talán elfoglaltak.", "en": "They are not answering. They might be busy.", "es": "No contestan. Podrían estar ocupados.", "de": "Sie antworten nicht. Sie könnten beschäftigt sein." }
+      "tr": { "en": "They are not answering. They might be busy.", "es": "No contestan. Podrían estar ocupados." }
     },
     {
       "id": "mde-16",
@@ -810,30 +666,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Biztos vagyok benne, hogy nem felejtette el: he can’t have forgotten.",
         "en": "I am sure he did not forget: he can’t have forgotten.",
-        "es": "Estoy seguro de que no lo olvidó: he can’t have forgotten.",
-        "de": "Ich bin sicher, dass er es nicht vergessen hat: he can’t have forgotten."
+        "es": "Estoy seguro de que no lo olvidó: he can’t have forgotten."
       },
       "wrong": {
         "must": {
-          "hu": "A must have forgotten azt jelentené, hogy biztosan elfelejtette; a „never forgets” ellentmond.",
           "en": "Must have forgotten would mean he surely forgot; “never forgets” contradicts that.",
-          "es": "Must have forgotten significaría que seguro lo olvidó; «never forgets» lo contradice.",
-          "de": "Must have forgotten würde heißen, dass er es sicher vergessen hat; „never forgets“ widerspricht dem."
+          "es": "Must have forgotten significaría que seguro lo olvidó; «never forgets» lo contradice."
         },
         "might to": {
-          "hu": "A might után nincs to; a „might to have” helytelen.",
           "en": "After might there is no to; “might to have” is incorrect.",
-          "es": "Después de might no hay to; «might to have» es incorrecto.",
-          "de": "Nach might steht kein to; „might to have“ ist falsch."
+          "es": "Después de might no hay to; «might to have» es incorrecto."
         }
       },
       "examples": [
         "She can't have seen me.",
         "They can't have left."
       ],
-      "tr": { "hu": "Nem felejthette el. Ő soha nem felejt.", "en": "He can't have forgotten. He never forgets.", "es": "No puede haberlo olvidado. Él nunca olvida.", "de": "Er kann es nicht vergessen haben. Er vergisst nie." }
+      "tr": { "en": "He can't have forgotten. He never forgets.", "es": "No puede haberlo olvidado. Él nunca olvida." }
     },
     {
       "id": "mde-17",
@@ -845,30 +695,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A kabátja nincs itt, biztosan elment: she must have left.",
         "en": "Her coat is not here; she surely left: she must have left.",
-        "es": "Su abrigo no está aquí; seguro se fue: she must have left.",
-        "de": "Ihr Mantel ist nicht hier; sie ist sicher gegangen: she must have left."
+        "es": "Su abrigo no está aquí; seguro se fue: she must have left."
       },
       "wrong": {
         "can't": {
-          "hu": "A can’t have left azt jelentené, hogy biztosan nem ment el; a kabát hiánya mást mutat.",
           "en": "Can’t have left would mean she surely did not leave; the missing coat shows otherwise.",
-          "es": "Can’t have left significaría que seguro no se fue; el abrigo que falta muestra lo contrario.",
-          "de": "Can’t have left würde heißen, dass sie sicher nicht gegangen ist; der fehlende Mantel zeigt das Gegenteil."
+          "es": "Can’t have left significaría que seguro no se fue; el abrigo que falta muestra lo contrario."
         },
         "will": {
-          "hu": "A will have left jövőbeli kész eseményt jelentene; itt múltra szóló következtetés kell (must have).",
           "en": "Will have left would mean a future finished event; here you need a deduction about the past (must have).",
-          "es": "Will have left significaría un hecho futuro terminado; aquí hace falta una deducción sobre el pasado (must have).",
-          "de": "Will have left würde ein zukünftiges abgeschlossenes Ereignis bedeuten; hier braucht man eine Schlussfolgerung über die Vergangenheit (must have)."
+          "es": "Will have left significaría un hecho futuro terminado; aquí hace falta una deducción sobre el pasado (must have)."
         }
       },
       "examples": [
         "He must have left home.",
         "They must have left."
       ],
-      "tr": { "hu": "Biztosan elment már. Nincs itt a kabátja.", "en": "She must have left already. Her coat isn't here.", "es": "Ya debe haberse ido. Su abrigo no está aquí.", "de": "Sie muss schon weggegangen sein. Ihr Mantel ist nicht hier." }
+      "tr": { "en": "She must have left already. Her coat isn't here.", "es": "Ya debe haberse ido. Su abrigo no está aquí." }
     },
     {
       "id": "mde-18",
@@ -939,46 +783,34 @@
       "es": "She must be at home. The lights are on.",
       "target": "must",
       "tr": {
-        "hu": "Biztosan otthon van. Világos van.",
         "en": "She must be at home. The lights are on.",
-        "es": "Debe de estar en casa. Las luces están prendidas.",
-        "de": "Sie muss zu Hause sein. Das Licht ist an."
+        "es": "Debe de estar en casa. Las luces están prendidas."
       },
       "options": [
         {
           "text": {
-            "hu": "kötelesség: kötelező otthon lennie",
             "en": "obligation: she is required to be home",
-            "es": "obligación: está obligada a estar en casa",
-            "de": "Pflicht: sie muss zu Hause sein, weil es Pflicht ist"
+            "es": "obligación: está obligada a estar en casa"
           },
           "wrong": {
-            "hu": "Itt nem szabályról van szó, hanem arról, hogy a világosból következtetek rá.",
             "en": "This is not about a rule but about a conclusion I draw from the light.",
-            "es": "Aquí no se trata de una regla sino de una conclusión que saco por la luz.",
-            "de": "Hier geht es nicht um eine Regel, sondern um einen Schluss, den ich aus dem Licht ziehe."
+            "es": "Aquí no se trata de una regla sino de una conclusión que saco por la luz."
           }
         },
         {
           "text": {
-            "hu": "következtetés: biztos vagyok benne, hogy igaz",
             "en": "deduction: I am sure it is true",
-            "es": "deducción: estoy seguro de que es verdad",
-            "de": "Schlussfolgerung: ich bin sicher, dass es stimmt"
+            "es": "deducción: estoy seguro de que es verdad"
           }
         },
         {
           "text": {
-            "hu": "tanács: jó lenne, ha otthon lenne",
             "en": "advice: it would be good if she were home",
-            "es": "consejo: sería bueno que estuviera en casa",
-            "de": "Rat: es wäre gut, wenn sie zu Hause wäre"
+            "es": "consejo: sería bueno que estuviera en casa"
           },
           "wrong": {
-            "hu": "A tanácsra should való; a must be itt a jelekből levont biztos következtetés.",
             "en": "Should is for advice; must be here is a sure conclusion drawn from signs.",
-            "es": "Should es para el consejo; must be aquí es una conclusión segura sacada de señales.",
-            "de": "Should ist für den Rat; must be ist hier ein sicherer Schluss aus Anzeichen."
+            "es": "Should es para el consejo; must be aquí es una conclusión segura sacada de señales."
           }
         }
       ],
@@ -990,46 +822,34 @@
       "es": "That can't be Carlos. He is in Madrid.",
       "target": "can't",
       "tr": {
-        "hu": "Az nem lehet Carlos. Madridban van.",
         "en": "That can't be Carlos. He is in Madrid.",
-        "es": "Ese no puede ser Carlos. Está en Madrid.",
-        "de": "Das kann nicht Carlos sein. Er ist in Madrid."
+        "es": "Ese no puede ser Carlos. Está en Madrid."
       },
       "options": [
         {
           "text": {
-            "hu": "képesség: nem tud Carlos lenni",
             "en": "ability: he is not able to be Carlos",
-            "es": "capacidad: no es capaz de ser Carlos",
-            "de": "Fähigkeit: er kann nicht Carlos sein"
+            "es": "capacidad: no es capaz de ser Carlos"
           },
           "wrong": {
-            "hu": "Itt nem képességről van szó, hanem arról, hogy biztos vagyok benne, hogy nem ő az.",
             "en": "This is not about ability but about being sure that it is not him.",
-            "es": "Aquí no se trata de capacidad sino de estar seguro de que no es él.",
-            "de": "Hier geht es nicht um Fähigkeit, sondern darum, sicher zu sein, dass er es nicht ist."
+            "es": "Aquí no se trata de capacidad sino de estar seguro de que no es él."
           }
         },
         {
           "text": {
-            "hu": "tiltás: nem szabad Carlosnak lennie",
             "en": "prohibition: he is not allowed to be Carlos",
-            "es": "prohibición: no se permite que sea Carlos",
-            "de": "Verbot: er darf nicht Carlos sein"
+            "es": "prohibición: no se permite que sea Carlos"
           },
           "wrong": {
-            "hu": "A tiltásra mustn’t való; a can’t be itt a biztos tagadó következtetés.",
             "en": "Mustn’t is for prohibition; can’t be here is the sure negative conclusion.",
-            "es": "Mustn’t es para la prohibición; can’t be aquí es la conclusión negativa segura.",
-            "de": "Mustn’t ist für das Verbot; can’t be ist hier der sichere verneinte Schluss."
+            "es": "Mustn’t es para la prohibición; can’t be aquí es la conclusión negativa segura."
           }
         },
         {
           "text": {
-            "hu": "tagadó következtetés: biztos vagyok benne, hogy nem igaz",
             "en": "negative deduction: I am sure it is not true",
-            "es": "deducción negativa: estoy seguro de que no es verdad",
-            "de": "verneinte Schlussfolgerung: ich bin sicher, dass es nicht stimmt"
+            "es": "deducción negativa: estoy seguro de que no es verdad"
           }
         }
       ],
@@ -1041,46 +861,34 @@
       "es": "It might rain later.",
       "target": "might",
       "tr": {
-        "hu": "Lehet, hogy később esik.",
         "en": "It might rain later.",
-        "es": "Puede que llueva más tarde.",
-        "de": "Es könnte später regnen."
+        "es": "Puede que llueva más tarde."
       },
       "options": [
         {
           "text": {
-            "hu": "lehetőség: lehetséges, de nem biztos",
             "en": "possibility: possible but not certain",
-            "es": "posibilidad: posible pero no seguro",
-            "de": "Möglichkeit: möglich, aber nicht sicher"
+            "es": "posibilidad: posible pero no seguro"
           }
         },
         {
           "text": {
-            "hu": "biztos következtetés",
             "en": "a sure deduction",
-            "es": "una deducción segura",
-            "de": "ein sicherer Schluss"
+            "es": "una deducción segura"
           },
           "wrong": {
-            "hu": "A biztos következtetésre must való; a might csak lehetőséget mond.",
             "en": "Must is for a sure conclusion; might only gives a possibility.",
-            "es": "Must es para una conclusión segura; might solo da una posibilidad.",
-            "de": "Must ist für einen sicheren Schluss; might nennt nur eine Möglichkeit."
+            "es": "Must es para una conclusión segura; might solo da una posibilidad."
           }
         },
         {
           "text": {
-            "hu": "múltbeli szokás",
             "en": "a past habit",
-            "es": "un hábito del pasado",
-            "de": "eine frühere Gewohnheit"
+            "es": "un hábito del pasado"
           },
           "wrong": {
-            "hu": "A might nem múltbeli szokást jelent, hanem jelenre vagy jövőre szóló lehetőséget; a szokásra used to való.",
             "en": "Might does not mean a past habit but a possibility about the present or future; used to is for a habit.",
-            "es": "Might no significa un hábito del pasado sino una posibilidad sobre el presente o el futuro; used to es para un hábito.",
-            "de": "Might bedeutet keine frühere Gewohnheit, sondern eine Möglichkeit für Gegenwart oder Zukunft; für eine Gewohnheit nimmt man used to."
+            "es": "Might no significa un hábito del pasado sino una posibilidad sobre el presente o el futuro; used to es para un hábito."
           }
         }
       ],
@@ -1092,46 +900,34 @@
       "es": "Someone must have opened the window.",
       "target": "must",
       "tr": {
-        "hu": "Valaki biztosan kinyitotta az ablakot.",
         "en": "Someone must have opened the window.",
-        "es": "Alguien debió de abrir la ventana.",
-        "de": "Jemand muss das Fenster geöffnet haben."
+        "es": "Alguien debió de abrir la ventana."
       },
       "options": [
         {
           "text": {
-            "hu": "kötelesség a múltban: nyitnia kellett",
             "en": "an obligation in the past: he had to open",
-            "es": "una obligación en el pasado: tenía que abrir",
-            "de": "eine Pflicht in der Vergangenheit: er musste öffnen"
+            "es": "una obligación en el pasado: tenía que abrir"
           },
           "wrong": {
-            "hu": "A múltbeli kötelességre had to való; a must have + igenév múltra szóló következtetés.",
             "en": "Had to is for a past obligation; must have + participle is a deduction about the past.",
-            "es": "Had to es para una obligación en el pasado; must have + participio es una deducción sobre el pasado.",
-            "de": "Had to ist für eine Pflicht in der Vergangenheit; must have + Partizip ist eine Schlussfolgerung über die Vergangenheit."
+            "es": "Had to es para una obligación en el pasado; must have + participio es una deducción sobre el pasado."
           }
         },
         {
           "text": {
-            "hu": "múltra szóló következtetés: must have + igenév",
             "en": "a deduction about the past: must have + participle",
-            "es": "una deducción sobre el pasado: must have + participio",
-            "de": "eine Schlussfolgerung über die Vergangenheit: must have + Partizip"
+            "es": "una deducción sobre el pasado: must have + participio"
           }
         },
         {
           "text": {
-            "hu": "present perfect: friss hír",
             "en": "present perfect: recent news",
-            "es": "presente perfecto: una noticia reciente",
-            "de": "Present Perfect: eine frische Nachricht"
+            "es": "presente perfecto: una noticia reciente"
           },
           "wrong": {
-            "hu": "Az igenév előtt must van, nem egyszerű have; a must have a múltra szóló biztos következtetés.",
             "en": "Before the participle comes must, not just have; must have is a sure deduction about the past.",
-            "es": "Antes del participio va must, no solo have; must have es una deducción segura sobre el pasado.",
-            "de": "Vor dem Partizip steht must, nicht nur have; must have ist ein sicherer Schluss über die Vergangenheit."
+            "es": "Antes del participio va must, no solo have; must have es una deducción segura sobre el pasado."
           }
         }
       ],
@@ -1143,46 +939,34 @@
       "es": "You must wear a seat belt.",
       "target": "must",
       "tr": {
-        "hu": "Biztonsági övet kell viselned.",
         "en": "You must wear a seat belt.",
-        "es": "Debes usar el cinturón de seguridad.",
-        "de": "Du musst einen Sicherheitsgurt tragen."
+        "es": "Debes usar el cinturón de seguridad."
       },
       "options": [
         {
           "text": {
-            "hu": "következtetés: biztos vagyok benne, hogy igaz",
             "en": "deduction: I am sure it is true",
-            "es": "deducción: estoy seguro de que es verdad",
-            "de": "Schlussfolgerung: ich bin sicher, dass es stimmt"
+            "es": "deducción: estoy seguro de que es verdad"
           },
           "wrong": {
-            "hu": "A mondat nem jelekből következtet, hanem szabályt mond; a must itt kötelességet jelent.",
             "en": "The sentence does not conclude from signs but states a rule; must here means obligation.",
-            "es": "La oración no concluye por señales sino que dice una regla; must aquí significa obligación.",
-            "de": "Der Satz schließt nicht aus Anzeichen, sondern nennt eine Regel; must bedeutet hier Pflicht."
+            "es": "La oración no concluye por señales sino que dice una regla; must aquí significa obligación."
           }
         },
         {
           "text": {
-            "hu": "kötelesség: szabály",
             "en": "obligation: a rule",
-            "es": "obligación: una regla",
-            "de": "Pflicht: eine Regel"
+            "es": "obligación: una regla"
           }
         },
         {
           "text": {
-            "hu": "lehetőség: lehet, hogy",
             "en": "possibility: it may be",
-            "es": "posibilidad: puede ser",
-            "de": "Möglichkeit: es kann sein"
+            "es": "posibilidad: puede ser"
           },
           "wrong": {
-            "hu": "A lehetőségre might / may / could való; a must itt nem bizonytalanságot, hanem szabályt fejez ki.",
             "en": "Might / may / could are for possibility; must here expresses a rule, not uncertainty.",
-            "es": "Might / may / could son para la posibilidad; must aquí expresa una regla, no incertidumbre.",
-            "de": "Might / may / could sind für die Möglichkeit; must drückt hier eine Regel aus, keine Unsicherheit."
+            "es": "Might / may / could son para la posibilidad; must aquí expresa una regla, no incertidumbre."
           }
         }
       ],

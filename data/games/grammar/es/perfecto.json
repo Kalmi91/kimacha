@@ -3,84 +3,60 @@
   "topic": "perfecto",
   "level": "A2",
   "title": {
-    "hu": "Közelmúlt (pretérito perfecto)",
     "en": "The present perfect",
-    "es": "El pretérito perfecto compuesto",
-    "de": "Das Perfekt"
+    "es": "El pretérito perfecto compuesto"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "A pretérito perfecto olyan helyzetről szól, ami a jelenig tart vagy a jelenig ismétlődik: mostanában, eddig, mindig, egész életemben. Alakja: a haber jelen ideje + participio: «he hablado», «has comido», «ha vivido». A lezárt, egyszeri eseményre (ma, ezen a héten, már, még nem, valaha) Mexikóban az indefinido jár: «Hoy comí tacos», «¿Ya comiste?».",
         "en": "The pretérito perfecto is for a situation that runs up to now or keeps repeating up to now: lately, so far, always, in my whole life. Its form: the present of haber plus a participle: «he hablado», «has comido», «ha vivido». For a closed, single event (today, this week, already, not yet, ever), Mexican Spanish uses the indefinido: «Hoy comí tacos», «¿Ya comiste?».",
-        "es": "El pretérito perfecto sirve para una situación que llega hasta ahora o que se repite hasta ahora: últimamente, hasta ahora, siempre, en toda mi vida. Su forma: el presente de haber más un participio: «he hablado», «has comido», «ha vivido». Para un hecho cerrado y único (hoy, esta semana, ya, todavía no, alguna vez), en México se usa el indefinido: «Hoy comí tacos», «¿Ya comiste?».",
-        "de": "Das pretérito perfecto beschreibt eine Situation, die bis jetzt reicht oder sich bis jetzt wiederholt: in letzter Zeit, bisher, immer, in meinem ganzen Leben. Seine Form: das Präsens von haber plus ein Partizip: «he hablado», «has comido», «ha vivido». Für ein abgeschlossenes, einmaliges Ereignis (heute, diese Woche, schon, noch nicht, jemals) nimmt man in Mexiko das indefinido: «Hoy comí tacos», «¿Ya comiste?»."
+        "es": "El pretérito perfecto sirve para una situación que llega hasta ahora o que se repite hasta ahora: últimamente, hasta ahora, siempre, en toda mi vida. Su forma: el presente de haber más un participio: «he hablado», «has comido», «ha vivido». Para un hecho cerrado y único (hoy, esta semana, ya, todavía no, alguna vez), en México se usa el indefinido: «Hoy comí tacos», «¿Ya comiste?»."
       }
     },
     {
       "kind": "table",
       "id": "perfecto",
       "title": {
-        "hu": "Pretérito perfecto ragozása",
         "en": "The pretérito perfecto, conjugated",
-        "es": "El pretérito perfecto, conjugado",
-        "de": "Das pretérito perfecto, konjugiert"
+        "es": "El pretérito perfecto, conjugado"
       },
       "header": [
         {
-          "hu": "Persona",
           "en": "Person",
-          "es": "Persona",
-          "de": "Person"
+          "es": "Persona"
         },
         {
-          "hu": "hablar",
           "en": "hablar",
-          "es": "hablar",
-          "de": "hablar"
+          "es": "hablar"
         },
         {
-          "hu": "comer",
           "en": "comer",
-          "es": "comer",
-          "de": "comer"
+          "es": "comer"
         },
         {
-          "hu": "vivir",
           "en": "vivir",
-          "es": "vivir",
-          "de": "vivir"
+          "es": "vivir"
         },
         {
-          "hu": "hacer",
           "en": "hacer",
-          "es": "hacer",
-          "de": "hacer"
+          "es": "hacer"
         },
         {
-          "hu": "ver",
           "en": "ver",
-          "es": "ver",
-          "de": "ver"
+          "es": "ver"
         },
         {
-          "hu": "decir",
           "en": "decir",
-          "es": "decir",
-          "de": "decir"
+          "es": "decir"
         },
         {
-          "hu": "escribir",
           "en": "escribir",
-          "es": "escribir",
-          "de": "escribir"
+          "es": "escribir"
         },
         {
-          "hu": "volver",
           "en": "volver",
-          "es": "volver",
-          "de": "volver"
+          "es": "volver"
         }
       ],
       "rows": [
@@ -163,184 +139,144 @@
     {
       "kind": "list",
       "title": {
-        "hu": "A szabályok",
         "en": "The rules",
-        "es": "Las reglas",
-        "de": "Die Regeln"
+        "es": "Las reglas"
       },
       "items": [
         {
           "text": {
-            "hu": "A haber jelen ideje: he, has, ha, hemos, habéis, han. Ehhez jön a participio: he hablado, has comido, ha vivido.",
             "en": "The present of haber: he, has, ha, hemos, habéis, han. The participle follows it: he hablado, has comido, ha vivido.",
-            "es": "El presente de haber: he, has, ha, hemos, habéis, han. Después va el participio: he hablado, has comido, ha vivido.",
-            "de": "Das Präsens von haber: he, has, ha, hemos, habéis, han. Danach folgt das Partizip: he hablado, has comido, ha vivido."
+            "es": "El presente de haber: he, has, ha, hemos, habéis, han. Después va el participio: he hablado, has comido, ha vivido."
           },
           "examples": [
             {
               "es": "Últimamente he hablado con mi jefe.",
               "tr": {
-                "hu": "Mostanában beszéltem a főnökömmel.",
                 "en": "Lately I have talked to my boss.",
-                "es": "Últimamente he hablado con mi jefe.",
-                "de": "In letzter Zeit habe ich mit meinem Chef gesprochen."
+                "es": "Últimamente he hablado con mi jefe."
               }
             },
             {
               "es": "Siempre hemos comido en casa.",
               "tr": {
-                "hu": "Mindig otthon ettünk.",
                 "en": "We have always eaten at home.",
-                "es": "Siempre hemos comido en casa.",
-                "de": "Wir haben immer zu Hause gegessen."
+                "es": "Siempre hemos comido en casa."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A participio: -ar → -ado, -er és -ir → -ido: hablar → hablado, comer → comido, vivir → vivido.",
             "en": "The participle: -ar → -ado, -er and -ir → -ido: hablar → hablado, comer → comido, vivir → vivido.",
-            "es": "El participio: -ar → -ado, -er e -ir → -ido: hablar → hablado, comer → comido, vivir → vivido.",
-            "de": "Das Partizip: -ar → -ado, -er und -ir → -ido: hablar → hablado, comer → comido, vivir → vivido."
+            "es": "El participio: -ar → -ado, -er e -ir → -ido: hablar → hablado, comer → comido, vivir → vivido."
           },
           "examples": [
             {
               "es": "Últimamente has trabajado mucho.",
               "tr": {
-                "hu": "Mostanában sokat dolgoztál.",
                 "en": "Lately you have worked a lot.",
-                "es": "Últimamente has trabajado mucho.",
-                "de": "In letzter Zeit hast du viel gearbeitet."
+                "es": "Últimamente has trabajado mucho."
               }
             },
             {
               "es": "Siempre hemos vivido con mi hermana.",
               "tr": {
-                "hu": "Mindig a nővéremmel laktunk.",
                 "en": "We have always lived with my sister.",
-                "es": "Siempre hemos vivido con mi hermana.",
-                "de": "Wir haben immer bei meiner Schwester gewohnt."
+                "es": "Siempre hemos vivido con mi hermana."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Rendhagyó participiók, amiket muszáj tudni: hacer → hecho, ver → visto, decir → dicho, escribir → escrito, poner → puesto, volver → vuelto, abrir → abierto, romper → roto, morir → muerto, cubrir → cubierto.",
             "en": "Irregular participles you simply have to know: hacer → hecho, ver → visto, decir → dicho, escribir → escrito, poner → puesto, volver → vuelto, abrir → abierto, romper → roto, morir → muerto, cubrir → cubierto.",
-            "es": "Participios irregulares imprescindibles: hacer → hecho, ver → visto, decir → dicho, escribir → escrito, poner → puesto, volver → vuelto, abrir → abierto, romper → roto, morir → muerto, cubrir → cubierto.",
-            "de": "Unregelmäßige Partizipien, die man können muss: hacer → hecho, ver → visto, decir → dicho, escribir → escrito, poner → puesto, volver → vuelto, abrir → abierto, romper → roto, morir → muerto, cubrir → cubierto."
+            "es": "Participios irregulares imprescindibles: hacer → hecho, ver → visto, decir → dicho, escribir → escrito, poner → puesto, volver → vuelto, abrir → abierto, romper → roto, morir → muerto, cubrir → cubierto."
           },
           "examples": [
             {
               "es": "Últimamente he escrito muchos correos.",
               "tr": {
-                "hu": "Mostanában sok e-mailt írtam.",
                 "en": "Lately I have written a lot of emails.",
-                "es": "Últimamente he escrito muchos correos.",
-                "de": "In letzter Zeit habe ich viele E-Mails geschrieben."
+                "es": "Últimamente he escrito muchos correos."
               }
             },
             {
               "es": "Siempre han hecho la tarea juntos.",
               "tr": {
-                "hu": "Mindig együtt csinálták meg a házi feladatot.",
                 "en": "They have always done the homework together.",
-                "es": "Siempre han hecho la tarea juntos.",
-                "de": "Sie haben die Hausaufgabe immer zusammen gemacht."
+                "es": "Siempre han hecho la tarea juntos."
               }
             },
             {
               "es": "Siempre he puesto la mesa.",
               "tr": {
-                "hu": "Mindig megterítettem az asztalt.",
                 "en": "I have always set the table.",
-                "es": "Siempre he puesto la mesa.",
-                "de": "Ich habe immer den Tisch gedeckt."
+                "es": "Siempre he puesto la mesa."
               }
             },
             {
               "es": "Últimamente han vuelto temprano.",
               "tr": {
-                "hu": "Mostanában korán visszajöttek.",
                 "en": "Lately they have come back early.",
-                "es": "Últimamente han vuelto temprano.",
-                "de": "In letzter Zeit sind sie früh zurückgekommen."
+                "es": "Últimamente han vuelto temprano."
               }
             },
             {
               "es": "Ella siempre ha abierto la puerta.",
               "tr": {
-                "hu": "Ő mindig kinyitotta az ajtót.",
                 "en": "She has always opened the door.",
-                "es": "Ella siempre ha abierto la puerta.",
-                "de": "Sie hat die Tür immer geöffnet."
+                "es": "Ella siempre ha abierto la puerta."
               }
             },
             {
               "es": "Hasta ahora no se ha roto nada.",
               "tr": {
-                "hu": "Eddig nem tört el semmi.",
                 "en": "So far nothing has broken.",
-                "es": "Hasta ahora no se ha roto nada.",
-                "de": "Bisher ist nichts zerbrochen."
+                "es": "Hasta ahora no se ha roto nada."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A két rész SOSEM válik szét: a no és a névmás a haber ELÉ megy. Nem «he no comido», hanem no he comido; nem «he lo visto», hanem lo he visto.",
             "en": "The two parts NEVER split: no and the pronoun go BEFORE haber. Not «he no comido» but no he comido; not «he lo visto» but lo he visto.",
-            "es": "Las dos partes NUNCA se separan: el no y el pronombre van ANTES de haber. No «he no comido», sino no he comido; no «he lo visto», sino lo he visto.",
-            "de": "Die zwei Teile trennen sich NIE: no und das Pronomen stehen VOR haber. Nicht «he no comido», sondern no he comido; nicht «he lo visto», sondern lo he visto."
+            "es": "Las dos partes NUNCA se separan: el no y el pronombre van ANTES de haber. No «he no comido», sino no he comido; no «he lo visto», sino lo he visto."
           },
           "examples": [
             {
               "es": "Hasta ahora no he comido nada.",
               "tr": {
-                "hu": "Eddig nem ettem semmit.",
                 "en": "So far I have not eaten anything.",
-                "es": "Hasta ahora no he comido nada.",
-                "de": "Bisher habe ich nichts gegessen."
+                "es": "Hasta ahora no he comido nada."
               }
             },
             {
               "es": "Hasta ahora no lo he visto.",
               "tr": {
-                "hu": "Eddig nem láttam.",
                 "en": "So far I have not seen it.",
-                "es": "Hasta ahora no lo he visto.",
-                "de": "Bisher habe ich es nicht gesehen."
+                "es": "Hasta ahora no lo he visto."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A participio itt SOSEM egyeztetődik: ellas han llegado, nem «llegadas».",
             "en": "The participle NEVER agrees here: ellas han llegado, not «llegadas».",
-            "es": "El participio aquí NUNCA concuerda: ellas han llegado, no «llegadas».",
-            "de": "Das Partizip wird hier NIE angeglichen: ellas han llegado, nicht «llegadas»."
+            "es": "El participio aquí NUNCA concuerda: ellas han llegado, no «llegadas»."
           },
           "examples": [
             {
               "es": "Últimamente mis amigas han venido juntas.",
               "tr": {
-                "hu": "Mostanában a barátnőim együtt jöttek.",
                 "en": "Lately my friends have come together.",
-                "es": "Últimamente mis amigas han venido juntas.",
-                "de": "In letzter Zeit sind meine Freundinnen zusammen gekommen."
+                "es": "Últimamente mis amigas han venido juntas."
               }
             },
             {
               "es": "Últimamente los niños han comido bien.",
               "tr": {
-                "hu": "Mostanában a gyerekek jól ettek.",
                 "en": "Lately the children have eaten well.",
-                "es": "Últimamente los niños han comido bien.",
-                "de": "In letzter Zeit haben die Kinder gut gegessen."
+                "es": "Últimamente los niños han comido bien."
               }
             }
           ]
@@ -350,203 +286,159 @@
     {
       "kind": "usage",
       "title": {
-        "hu": "Mikor használjuk",
         "en": "When do we use it",
-        "es": "Cuándo lo usamos",
-        "de": "Wann benutzen wir es"
+        "es": "Cuándo lo usamos"
       },
       "points": [
         {
           "text": {
-            "hu": "Jelenig tartó vagy jelenig ismétlődő helyzet: últimamente, hasta ahora, siempre.",
             "en": "A situation that runs up to now or repeats up to now: últimamente, hasta ahora, siempre.",
-            "es": "Una situación que llega hasta ahora o que se repite hasta ahora: últimamente, hasta ahora, siempre.",
-            "de": "Eine Situation, die bis jetzt reicht oder sich bis jetzt wiederholt: últimamente, hasta ahora, siempre."
+            "es": "Una situación que llega hasta ahora o que se repite hasta ahora: últimamente, hasta ahora, siempre."
           },
           "examples": [
             {
               "es": "Últimamente he dormido mal.",
               "tr": {
-                "hu": "Mostanában rosszul aludtam.",
                 "en": "Lately I have slept badly.",
-                "es": "Últimamente he dormido mal.",
-                "de": "In letzter Zeit habe ich schlecht geschlafen."
+                "es": "Últimamente he dormido mal."
               }
             },
             {
               "es": "Siempre he querido ir a Japón.",
               "tr": {
-                "hu": "Mindig el akartam menni Japánba.",
                 "en": "I have always wanted to go to Japan.",
-                "es": "Siempre he querido ir a Japón.",
-                "de": "Ich wollte schon immer nach Japan."
+                "es": "Siempre he querido ir a Japón."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Az egész eddigi élet: en toda mi vida, hasta hoy.",
             "en": "Your whole life so far: en toda mi vida, hasta hoy.",
-            "es": "Toda la vida hasta ahora: en toda mi vida, hasta hoy.",
-            "de": "Das ganze bisherige Leben: en toda mi vida, hasta hoy."
+            "es": "Toda la vida hasta ahora: en toda mi vida, hasta hoy."
           },
           "examples": [
             {
               "es": "En toda mi vida he visto algo así.",
               "tr": {
-                "hu": "Egész életemben nem láttam még ilyet.",
                 "en": "In my whole life I have seen nothing like it.",
-                "es": "En toda mi vida he visto algo así.",
-                "de": "In meinem ganzen Leben habe ich so etwas noch nicht gesehen."
+                "es": "En toda mi vida he visto algo así."
               }
             },
             {
               "es": "Hasta hoy siempre he trabajado en casa.",
               "tr": {
-                "hu": "Mostanáig mindig otthon dolgoztam.",
                 "en": "Up to today I have always worked at home.",
-                "es": "Hasta hoy siempre he trabajado en casa.",
-                "de": "Bis heute habe ich immer zu Hause gearbeitet."
+                "es": "Hasta hoy siempre he trabajado en casa."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Ami eddig nem történt meg: hasta ahora no, hasta ahorita no.",
             "en": "What has not happened so far: hasta ahora no, hasta ahorita no.",
-            "es": "Lo que no ha pasado hasta ahora: hasta ahora no, hasta ahorita no.",
-            "de": "Was bisher nicht geschehen ist: hasta ahora no, hasta ahorita no."
+            "es": "Lo que no ha pasado hasta ahora: hasta ahora no, hasta ahorita no."
           },
           "examples": [
             {
               "es": "Hasta ahora no ha llamado.",
               "tr": {
-                "hu": "Eddig nem hívott.",
                 "en": "So far he has not called.",
-                "es": "Hasta ahora no ha llamado.",
-                "de": "Bisher hat er nicht angerufen."
+                "es": "Hasta ahora no ha llamado."
               }
             },
             {
               "es": "Hasta ahorita no he comido nada.",
               "tr": {
-                "hu": "Eddig nem ettem semmit.",
                 "en": "So far I have not eaten anything.",
-                "es": "Hasta ahorita no he comido nada.",
-                "de": "Bisher habe ich nichts gegessen."
+                "es": "Hasta ahorita no he comido nada."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A jelenig tartó időszak: toda la semana, desde hace + időtartam.",
             "en": "A stretch of time that runs up to now: toda la semana, desde hace plus a length of time.",
-            "es": "Un periodo que llega hasta ahora: toda la semana, desde hace más una duración.",
-            "de": "Ein Zeitraum, der bis jetzt reicht: toda la semana, desde hace plus Zeitdauer."
+            "es": "Un periodo que llega hasta ahora: toda la semana, desde hace más una duración."
           },
           "examples": [
             {
               "es": "Ha llovido toda la semana.",
               "tr": {
-                "hu": "Egész héten esett.",
                 "en": "It has rained all week.",
-                "es": "Ha llovido toda la semana.",
-                "de": "Es hat die ganze Woche geregnet."
+                "es": "Ha llovido toda la semana."
               }
             },
             {
               "es": "Desde hace una semana no he dormido bien.",
               "tr": {
-                "hu": "Egy hete nem aludtam jól.",
                 "en": "I have not slept well for a week.",
-                "es": "Desde hace una semana no he dormido bien.",
-                "de": "Seit einer Woche habe ich nicht gut geschlafen."
+                "es": "Desde hace una semana no he dormido bien."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Lezárt, egyszeri esemény: Mexikóban indefinido, a jelölőtől függetlenül (hoy, esta semana, ya, todavía no, nunca, alguna vez).",
             "en": "A closed, single event: in Mexico the indefinido, whatever the marker (hoy, esta semana, ya, todavía no, nunca, alguna vez).",
-            "es": "Un hecho cerrado y único: en México, indefinido, sea cual sea la señal (hoy, esta semana, ya, todavía no, nunca, alguna vez).",
-            "de": "Ein abgeschlossenes, einmaliges Ereignis: in Mexiko das indefinido, egal bei welchem Signalwort (hoy, esta semana, ya, todavía no, nunca, alguna vez)."
+            "es": "Un hecho cerrado y único: en México, indefinido, sea cual sea la señal (hoy, esta semana, ya, todavía no, nunca, alguna vez)."
           },
           "examples": [
             {
               "es": "Hoy comí tacos.",
               "tr": {
-                "hu": "Ma tacót ettem.",
                 "en": "Today I ate tacos.",
-                "es": "Hoy comí tacos.",
-                "de": "Heute habe ich Tacos gegessen."
+                "es": "Hoy comí tacos."
               }
             },
             {
               "es": "¿Ya comiste?",
               "tr": {
-                "hu": "Ettél már?",
                 "en": "Have you eaten yet?",
-                "es": "¿Ya comiste?",
-                "de": "Hast du schon gegessen?"
+                "es": "¿Ya comiste?"
               }
             },
             {
               "es": "Nunca fui a Europa.",
               "tr": {
-                "hu": "Soha nem voltam Európában.",
                 "en": "I have never been to Europe.",
-                "es": "Nunca fui a Europa.",
-                "de": "Ich war noch nie in Europa."
+                "es": "Nunca fui a Europa."
               }
             },
             {
               "es": "¿Alguna vez probaste el mole?",
               "tr": {
-                "hu": "Kóstoltál már valaha mole-t?",
                 "en": "Have you ever tried mole?",
-                "es": "¿Alguna vez probaste el mole?",
-                "de": "Hast du schon einmal Mole probiert?"
+                "es": "¿Alguna vez probaste el mole?"
               }
             },
             {
               "es": "Todavía no terminé.",
               "tr": {
-                "hu": "Még nem fejeztem be.",
                 "en": "I have not finished yet.",
-                "es": "Todavía no terminé.",
-                "de": "Ich bin noch nicht fertig."
+                "es": "Todavía no terminé."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Spanyolországban: a hoy, esta semana, este año, ya mellett is perfecto jár, Mexikóban erre az indefinido a megszokott.",
             "en": "In Spain: the perfect is also used with hoy, esta semana, este año, ya; in Mexico the indefinido is the usual choice there.",
-            "es": "En España: también se usa el perfecto con hoy, esta semana, este año, ya; en México ahí lo normal es el indefinido.",
-            "de": "In Spanien: das Perfekt steht auch bei hoy, esta semana, este año, ya; in Mexiko ist dort das indefinido üblich."
+            "es": "En España: también se usa el perfecto con hoy, esta semana, este año, ya; en México ahí lo normal es el indefinido."
           },
           "examples": [
             {
               "es": "Hoy he comido paella.",
               "tr": {
-                "hu": "Ma paellát ettem.",
                 "en": "Today I have eaten paella.",
-                "es": "Hoy he comido paella.",
-                "de": "Heute habe ich Paella gegessen."
+                "es": "Hoy he comido paella."
               }
             },
             {
               "es": "¿Ya has comido?",
               "tr": {
-                "hu": "Ettél már?",
                 "en": "Have you eaten yet?",
-                "es": "¿Ya has comido?",
-                "de": "Hast du schon gegessen?"
+                "es": "¿Ya has comido?"
               }
             }
           ]
@@ -556,38 +448,30 @@
     {
       "kind": "contrast",
       "title": {
-        "hu": "Hasonló, mégis más",
         "en": "Similar, yet different",
-        "es": "Parecido, pero distinto",
-        "de": "Ähnlich, aber anders"
+        "es": "Parecido, pero distinto"
       },
       "pairs": [
         {
           "a": "Últimamente he viajado",
           "b": "El año pasado viajé",
           "note": {
-            "hu": "A perfecto a jelenig tartó helyzeté (últimamente), az indefinido a lezárt időpontoké (el año pasado): ha az idő már lezárult, indefinido kell.",
             "en": "The perfect is for a situation up to now (últimamente), the preterite for a closed time (el año pasado): once the time has ended, you need the preterite.",
-            "es": "El perfecto es de la situación hasta ahora (últimamente), el indefinido del tiempo cerrado (el año pasado): si el tiempo ya terminó, hace falta indefinido.",
-            "de": "Das Perfekt gehört zur Situation bis jetzt (últimamente), das Indefinido zur abgeschlossenen Zeit (el año pasado): ist die Zeit vorbei, braucht man das Indefinido."
+            "es": "El perfecto es de la situación hasta ahora (últimamente), el indefinido del tiempo cerrado (el año pasado): si el tiempo ya terminó, hace falta indefinido."
           },
           "examples": [
             {
               "es": "Últimamente he viajado mucho.",
               "tr": {
-                "hu": "Mostanában sokat utaztam.",
                 "en": "Lately I have travelled a lot.",
-                "es": "Últimamente he viajado mucho.",
-                "de": "In letzter Zeit bin ich viel gereist."
+                "es": "Últimamente he viajado mucho."
               }
             },
             {
               "es": "El año pasado viajé a México.",
               "tr": {
-                "hu": "Tavaly Mexikóba utaztam.",
                 "en": "Last year I travelled to Mexico.",
-                "es": "El año pasado viajé a México.",
-                "de": "Letztes Jahr bin ich nach Mexiko gereist."
+                "es": "El año pasado viajé a México."
               }
             }
           ]
@@ -596,28 +480,22 @@
           "a": "Últimamente he comido tarde",
           "b": "Hoy comí tarde",
           "note": {
-            "hu": "A jelenig ismétlődő helyzetre perfecto (últimamente), a mai, egyszeri, lezárt esetre Mexikóban indefinido (hoy comí).",
             "en": "A situation that keeps repeating up to now takes the perfect (últimamente); a single, closed event from today takes the preterite in Mexico (hoy comí).",
-            "es": "La situación que se repite hasta ahora lleva perfecto (últimamente); un hecho único y cerrado de hoy lleva indefinido en México (hoy comí).",
-            "de": "Eine Situation, die sich bis jetzt wiederholt, steht im Perfekt (últimamente); ein einmaliges, abgeschlossenes Ereignis von heute steht in Mexiko im Indefinido (hoy comí)."
+            "es": "La situación que se repite hasta ahora lleva perfecto (últimamente); un hecho único y cerrado de hoy lleva indefinido en México (hoy comí)."
           },
           "examples": [
             {
               "es": "Últimamente he comido tarde.",
               "tr": {
-                "hu": "Mostanában későn ebédeltem.",
                 "en": "Lately I have eaten late.",
-                "es": "Últimamente he comido tarde.",
-                "de": "In letzter Zeit habe ich spät gegessen."
+                "es": "Últimamente he comido tarde."
               }
             },
             {
               "es": "Hoy comí tarde.",
               "tr": {
-                "hu": "Ma későn ebédeltem.",
                 "en": "Today I ate late.",
-                "es": "Hoy comí tarde.",
-                "de": "Heute habe ich spät gegessen."
+                "es": "Hoy comí tarde."
               }
             }
           ]
@@ -627,27 +505,21 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Ne vágd szét a haber-t és a participiót, és a participio ne kapjon végződést: no he comido (nem «he no comido»), han llegado (nem «llegadas»). Mexikóban a lezárt, egyszeri eseményre indefinido jár: hoy comí, ya comiste.",
         "en": "Never split haber and the participle, and the participle takes no ending: no he comido (not «he no comido»), han llegado (not «llegadas»). In Mexico a closed, single event takes the indefinido: hoy comí, ya comiste.",
-        "es": "No separes haber y el participio, y el participio no lleva terminación: no he comido (no «he no comido»), han llegado (no «llegadas»). En México, un hecho cerrado y único lleva indefinido: hoy comí, ya comiste.",
-        "de": "Trenne haber und Partizip nie, und das Partizip bekommt keine Endung: no he comido (nicht «he no comido»), han llegado (nicht «llegadas»). In Mexiko steht für ein abgeschlossenes, einmaliges Ereignis das indefinido: hoy comí, ya comiste."
+        "es": "No separes haber y el participio, y el participio no lleva terminación: no he comido (no «he no comido»), han llegado (no «llegadas»). En México, un hecho cerrado y único lleva indefinido: hoy comí, ya comiste."
       }
     }
   ],
   "speak": {
-    "hu": "A közelmúlt igeidőt akkor használjuk, ha egy helyzet a jelenig tart, vagy a jelenig ismétlődik. Az alakja a birtoklást kifejező segédige jelen ideje plusz a melléknévi igenév. A melléknévi igenév ar végű igéknél ado, er és ir végű igéknél ido végű, néhány azonban rendhagyó. Jellemző jelzői a mostanában, az eddig, a mindig és az egész életemben. A két rész sosem válik szét, és a melléknévi igenév sosem egyezik. Mexikóban a lezárt, egyszeri eseményre, még a ma, a már és a valaha mellett is, a befejezett múltat használják.",
     "en": "You need the present perfect when a situation runs up to now, or keeps repeating up to now. Its form is the present of the helping verb for having plus the participle. The participle ends in ado for verbs ending in ar and in ido for verbs ending in er and ir, but a few are irregular. Typical signals are the words for lately, so far, always and in my whole life. The two parts never split, and the participle never agrees. In Mexico, a closed, single event takes the preterite, even with the words for today, already and ever.",
-    "es": "Necesitas el pretérito perfecto cuando una situación llega hasta ahora, o se repite hasta ahora. Su forma es el presente del verbo auxiliar que significa haber más el participio. El participio termina en ado para los verbos en ar y en ido para los verbos en er e ir, pero unos pocos son irregulares. Sus señales típicas son últimamente, hasta ahora, siempre y en toda mi vida. Las dos partes nunca se separan y el participio nunca concuerda. En México, un hecho cerrado y único lleva indefinido, incluso con hoy, ya y alguna vez.",
-    "de": "Das Perfekt braucht man, wenn eine Situation bis jetzt reicht oder sich bis jetzt wiederholt. Seine Form ist das Präsens des Hilfsverbs für haben plus das Partizip. Das Partizip endet bei Verben auf ar auf ado und bei Verben auf er und ir auf ido, einige sind aber unregelmäßig. Typische Signalwörter sind die Wörter für in letzter Zeit, bisher, immer und in meinem ganzen Leben. Die zwei Teile werden nie getrennt, und das Partizip stimmt nie überein. In Mexiko steht für ein abgeschlossenes, einmaliges Ereignis das Präteritum, auch bei den Wörtern für heute, schon und jemals."
+    "es": "Necesitas el pretérito perfecto cuando una situación llega hasta ahora, o se repite hasta ahora. Su forma es el presente del verbo auxiliar que significa haber más el participio. El participio termina en ado para los verbos en ar y en ido para los verbos en er e ir, pero unos pocos son irregulares. Sus señales típicas son últimamente, hasta ahora, siempre y en toda mi vida. Las dos partes nunca se separan y el participio nunca concuerda. En México, un hecho cerrado y único lleva indefinido, incluso con hoy, ya y alguna vez."
   },
   "glossary": [
     {
       "word": "tarea",
       "gloss": {
-        "hu": "házi feladat",
         "en": "homework",
-        "es": "la tarea",
-        "de": "Hausaufgabe"
+        "es": "la tarea"
       }
     }
   ],
@@ -662,23 +534,17 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A siempre az egész eddigi időt átfogja: perfecto.",
         "en": "Siempre covers the whole time up to now: the perfect.",
-        "es": "Siempre abarca todo el tiempo hasta ahora: perfecto.",
-        "de": "Siempre umfasst die ganze Zeit bis jetzt: Perfekt."
+        "es": "Siempre abarca todo el tiempo hasta ahora: perfecto."
       },
       "wrong": {
         "he tengo": {
-          "hu": "Ilyen szerkezet nincs: a haber után participio áll, nem jelen idejű alak; helyesen: Siempre he tenido mucho trabajo.",
           "en": "No such structure exists: after haber comes a participle, not a present-tense form; correctly: Siempre he tenido mucho trabajo.",
-          "es": "Esa estructura no existe: tras haber va un participio, no una forma de presente; correctamente: Siempre he tenido mucho trabajo.",
-          "de": "Diese Struktur gibt es nicht: nach haber steht ein Partizip, keine Präsensform; richtig: Siempre he tenido mucho trabajo."
+          "es": "Esa estructura no existe: tras haber va un participio, no una forma de presente; correctamente: Siempre he tenido mucho trabajo."
         },
         "has tenido": {
-          "hu": "Ezzel a mondat azt jelentené: \"neked mindig sok munkád volt (2. személy), a (yo) viszont engem jelöl\", ami nem illik ide; helyesen: Siempre he tenido mucho trabajo.",
           "en": "This would say: \"you have always had a lot of work (second person), but (yo) means I\", which does not fit here; correctly: Siempre he tenido mucho trabajo.",
-          "es": "Esto diría: \"tú siempre has tenido mucho trabajo (segunda persona), pero (yo) indica que soy yo\", lo cual no encaja aquí; correctamente: Siempre he tenido mucho trabajo.",
-          "de": "Das würde bedeuten: \"du hattest immer viel Arbeit (zweite Person), aber (yo) bedeutet ich\", was hier nicht passt; richtig: Siempre he tenido mucho trabajo."
+          "es": "Esto diría: \"tú siempre has tenido mucho trabajo (segunda persona), pero (yo) indica que soy yo\", lo cual no encaja aquí; correctamente: Siempre he tenido mucho trabajo."
         }
       },
       "examples": [
@@ -689,7 +555,7 @@
         "from": "presente",
         "to": "perfecto"
       },
-      "tr": { "hu": "Mindig is sok munkám volt.", "en": "I have always had a lot of work.", "es": "Siempre he tenido (yo) mucho trabajo.", "de": "Ich habe schon immer viel Arbeit gehabt." }
+      "tr": { "en": "I have always had a lot of work.", "es": "Siempre he tenido (yo) mucho trabajo." }
     },
     {
       "id": "pf-02",
@@ -701,23 +567,17 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A ver participiója rendhagyó: visto.",
         "en": "Ver has an irregular participle: visto.",
-        "es": "El participio de ver es irregular: visto.",
-        "de": "Das Partizip von ver ist unregelmäßig: visto."
+        "es": "El participio de ver es irregular: visto."
       },
       "wrong": {
         "Has ver": {
-          "hu": "Ilyen szerkezet nincs: a haber után nem főnévi igenév áll, hanem participio; helyesen: ¿Has visto a tu hermano últimamente?",
           "en": "No such structure exists: haber is followed by a participle, not an infinitive; correctly: ¿Has visto a tu hermano últimamente?",
-          "es": "Esa estructura no existe: después de haber va participio, no infinitivo; correctamente: ¿Has visto a tu hermano últimamente?",
-          "de": "Diese Struktur gibt es nicht: nach haber steht ein Partizip, kein Infinitiv; richtig: ¿Has visto a tu hermano últimamente?"
+          "es": "Esa estructura no existe: después de haber va participio, no infinitivo; correctamente: ¿Has visto a tu hermano últimamente?"
         },
         "Has vido": {
-          "hu": "Ilyen alak nincs: a ver participiója rendhagyó, visto, nem \"vido\"; helyesen: ¿Has visto a tu hermano últimamente?",
           "en": "No such form exists: the participle of ver is irregular, visto, not \"vido\"; correctly: ¿Has visto a tu hermano últimamente?",
-          "es": "Esa forma no existe: el participio de ver es irregular, visto, no «vido»; correctamente: ¿Has visto a tu hermano últimamente?",
-          "de": "Diese Form gibt es nicht: das Partizip von ver ist unregelmäßig, visto, nicht \"vido\"; richtig: ¿Has visto a tu hermano últimamente?"
+          "es": "Esa forma no existe: el participio de ver es irregular, visto, no «vido»; correctamente: ¿Has visto a tu hermano últimamente?"
         }
       },
       "examples": [
@@ -728,7 +588,7 @@
         "from": "presente",
         "to": "perfecto"
       },
-      "tr": { "hu": "Láttad a testvéredet mostanában?", "en": "Have you seen your brother lately?", "es": "¿Has visto (tú) a tu hermano últimamente?", "de": "Hast du deinen Bruder in letzter Zeit gesehen?" }
+      "tr": { "en": "Have you seen your brother lately?", "es": "¿Has visto (tú) a tu hermano últimamente?" }
     },
     {
       "id": "pf-03",
@@ -740,23 +600,17 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A hasta ahora no a mostanáig tartó időt nézi: még nem történt meg, ezért perfecto.",
         "en": "Hasta ahora no looks at the time up to now: it has not happened yet, so the perfect.",
-        "es": "Hasta ahora no mira el tiempo hasta ahora: aún no ha pasado, por eso perfecto.",
-        "de": "Hasta ahora no blickt auf die Zeit bis jetzt: es ist noch nicht passiert, also Perfekt."
+        "es": "Hasta ahora no mira el tiempo hasta ahora: aún no ha pasado, por eso perfecto."
       },
       "wrong": {
         "han recibido": {
-          "hu": "Ezzel a mondat azt jelentené: \"ők eddig nem kapták meg az eredményt (3. személy), a (nosotros) viszont mi-t kér\", ami nem illik ide; helyesen: Hasta ahora no hemos recibido el resultado.",
           "en": "This would say: \"they have not received the result so far (third person), but (nosotros) means we\", which does not fit here; correctly: Hasta ahora no hemos recibido el resultado.",
-          "es": "Esto diría: \"ellos hasta ahora no han recibido el resultado (tercera persona), pero (nosotros) indica que somos nosotros\", lo cual no encaja aquí; correctamente: Hasta ahora no hemos recibido el resultado.",
-          "de": "Das würde bedeuten: \"sie haben das Ergebnis bisher nicht erhalten (dritte Person), aber (nosotros) bedeutet wir\", was hier nicht passt; richtig: Hasta ahora no hemos recibido el resultado."
+          "es": "Esto diría: \"ellos hasta ahora no han recibido el resultado (tercera persona), pero (nosotros) indica que somos nosotros\", lo cual no encaja aquí; correctamente: Hasta ahora no hemos recibido el resultado."
         },
         "recibíamos": {
-          "hu": "Ezzel a mondat azt jelentené: \"nem szoktuk megkapni az eredményt (szokás)\", ami nem illik ide; helyesen: Hasta ahora no hemos recibido el resultado.",
           "en": "This would say: \"we did not use to receive the result (a habit)\", which does not fit here; correctly: Hasta ahora no hemos recibido el resultado.",
-          "es": "Diría: \"no solíamos recibir el resultado (costumbre)\", lo cual no encaja aquí; correctamente: Hasta ahora no hemos recibido el resultado.",
-          "de": "Das würde bedeuten: \"wir bekamen das Ergebnis gewöhnlich nicht (Gewohnheit)\", was hier nicht passt; richtig: Hasta ahora no hemos recibido el resultado."
+          "es": "Diría: \"no solíamos recibir el resultado (costumbre)\", lo cual no encaja aquí; correctamente: Hasta ahora no hemos recibido el resultado."
         }
       },
       "examples": [
@@ -767,7 +621,7 @@
         "from": "presente",
         "to": "perfecto"
       },
-      "tr": { "hu": "Mostanáig még nem kaptuk meg az eredményt.", "en": "Up until now we have not received the result.", "es": "Hasta ahora no hemos recibido (nosotros) el resultado.", "de": "Bis jetzt haben wir das Ergebnis noch nicht erhalten." }
+      "tr": { "en": "Up until now we have not received the result.", "es": "Hasta ahora no hemos recibido (nosotros) el resultado." }
     },
     {
       "id": "pf-04",
@@ -779,23 +633,17 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az en toda mi vida az egész eddigi életet átfogja: perfecto.",
         "en": "En toda mi vida covers your whole life so far: the perfect.",
-        "es": "En toda mi vida abarca toda la vida hasta ahora: perfecto.",
-        "de": "En toda mi vida umfasst das ganze bisherige Leben: Perfekt."
+        "es": "En toda mi vida abarca toda la vida hasta ahora: perfecto."
       },
       "wrong": {
         "has viajado": {
-          "hu": "Ezzel a mondat azt jelentené: \"te egész életedben kétszer utaztál repülővel (2. személy), a (yo) viszont engem jelöl\", ami nem illik ide; helyesen: En toda mi vida he viajado dos veces en avión.",
           "en": "This would say: \"in your whole life you have flown twice (second person), but (yo) means I\", which does not fit here; correctly: En toda mi vida he viajado dos veces en avión.",
-          "es": "Esto diría: \"en toda tu vida has viajado dos veces en avión (segunda persona), pero (yo) indica que soy yo\", lo cual no encaja aquí; correctamente: En toda mi vida he viajado dos veces en avión.",
-          "de": "Das würde bedeuten: \"du bist in deinem ganzen Leben zweimal geflogen (zweite Person), aber (yo) bedeutet ich\", was hier nicht passt; richtig: En toda mi vida he viajado dos veces en avión."
+          "es": "Esto diría: \"en toda tu vida has viajado dos veces en avión (segunda persona), pero (yo) indica que soy yo\", lo cual no encaja aquí; correctamente: En toda mi vida he viajado dos veces en avión."
         },
         "viajaba": {
-          "hu": "Ezzel a mondat azt jelentené: \"egész életemben kétszer szoktam repülővel utazni (múltbeli szokás)\", az en toda mi vida viszont a jelenig tart; helyesen: En toda mi vida he viajado dos veces en avión.",
           "en": "This would say: \"in my whole life I used to fly twice (a past habit)\", but en toda mi vida runs up to now; correctly: En toda mi vida he viajado dos veces en avión.",
-          "es": "Diría: \"en toda mi vida viajaba dos veces en avión (costumbre pasada)\", pero en toda mi vida llega hasta ahora; correctamente: En toda mi vida he viajado dos veces en avión.",
-          "de": "Das würde bedeuten: \"in meinem ganzen Leben reiste ich gewöhnlich zweimal mit dem Flugzeug (vergangene Gewohnheit)\", en toda mi vida reicht aber bis jetzt; richtig: En toda mi vida he viajado dos veces en avión."
+          "es": "Diría: \"en toda mi vida viajaba dos veces en avión (costumbre pasada)\", pero en toda mi vida llega hasta ahora; correctamente: En toda mi vida he viajado dos veces en avión."
         }
       },
       "examples": [
@@ -806,7 +654,7 @@
         "from": "presente",
         "to": "perfecto"
       },
-      "tr": { "hu": "Egész életemben kétszer utaztam repülővel.", "en": "In my whole life, I have traveled by plane twice.", "es": "En toda mi vida he viajado (yo) dos veces en avión.", "de": "In meinem ganzen Leben bin ich zweimal mit dem Flugzeug gereist." }
+      "tr": { "en": "In my whole life, I have traveled by plane twice.", "es": "En toda mi vida he viajado (yo) dos veces en avión." }
     },
     {
       "id": "pf-05",
@@ -818,23 +666,17 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az abrir participiója rendhagyó: abierto.",
         "en": "Abrir has an irregular participle: abierto.",
-        "es": "El participio de abrir es abierto.",
-        "de": "Das Partizip von abrir ist abierto."
+        "es": "El participio de abrir es abierto."
       },
       "wrong": {
         "ha abrido": {
-          "hu": "Ilyen alak nincs: az abrir participiója rendhagyó, abierto, nem \"abrido\"; helyesen: Mi mamá siempre ha abierto la puerta por la mañana.",
           "en": "No such form exists: the participle of abrir is irregular, abierto, not \"abrido\"; correctly: Mi mamá siempre ha abierto la puerta por la mañana.",
-          "es": "Esa forma no existe: el participio de abrir es irregular, abierto, no \"abrido\"; correctamente: Mi mamá siempre ha abierto la puerta por la mañana.",
-          "de": "Diese Form gibt es nicht: das Partizip von abrir ist unregelmäßig, abierto, nicht \"abrido\"; richtig: Mi mamá siempre ha abierto la puerta por la mañana."
+          "es": "Esa forma no existe: el participio de abrir es irregular, abierto, no \"abrido\"; correctamente: Mi mamá siempre ha abierto la puerta por la mañana."
         },
         "ha abierta": {
-          "hu": "Ilyen alak nincs: a haber utáni participio nem egyeztet a tárggyal (la puerta), nem \"abierta\"; helyesen: Mi mamá siempre ha abierto la puerta por la mañana.",
           "en": "No such form exists: the participle after haber does not agree with the object (la puerta), not \"abierta\"; correctly: Mi mamá siempre ha abierto la puerta por la mañana.",
-          "es": "Esa forma no existe: el participio tras haber no concuerda con el objeto (la puerta), no \"abierta\"; correctamente: Mi mamá siempre ha abierto la puerta por la mañana.",
-          "de": "Diese Form gibt es nicht: das Partizip nach haber wird dem Objekt (la puerta) nicht angeglichen, nicht \"abierta\"; richtig: Mi mamá siempre ha abierto la puerta por la mañana."
+          "es": "Esa forma no existe: el participio tras haber no concuerda con el objeto (la puerta), no \"abierta\"; correctamente: Mi mamá siempre ha abierto la puerta por la mañana."
         }
       },
       "examples": [
@@ -845,7 +687,7 @@
         "from": "presente",
         "to": "perfecto"
       },
-      "tr": { "hu": "Anyukám reggelente mindig kinyitotta az ajtót.", "en": "My mom has always opened the door in the morning.", "es": "Mi mamá siempre ha abierto la puerta por la mañana.", "de": "Meine Mutter hat morgens immer die Tür geöffnet." }
+      "tr": { "en": "My mom has always opened the door in the morning.", "es": "Mi mamá siempre ha abierto la puerta por la mañana." }
     },
     {
       "id": "pf-06",
@@ -857,23 +699,17 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A tagadószó a haber ELÉ megy, és a két rész nem válik szét: no he comido.",
         "en": "The negative goes BEFORE haber and the two parts stay together: no he comido.",
-        "es": "La negación va delante de haber y las partes no se separan: no he comido.",
-        "de": "Die Verneinung steht vor haber, die Teile bleiben zusammen: no he comido."
+        "es": "La negación va delante de haber y las partes no se separan: no he comido."
       },
       "wrong": {
         "comido he": {
-          "hu": "Ilyen szórend nincs: a haber áll elöl, a participio mögötte; helyesen: En toda la semana no he comido carne.",
           "en": "No such word order exists: haber comes first and the participle right behind it; correctly: En toda la semana no he comido carne.",
-          "es": "Ese orden no existe: haber va primero y el participio detrás; correctamente: En toda la semana no he comido carne.",
-          "de": "Diese Reihenfolge gibt es nicht: haber steht vorn, das Partizip dahinter; richtig: En toda la semana no he comido carne."
+          "es": "Ese orden no existe: haber va primero y el participio detrás; correctamente: En toda la semana no he comido carne."
         },
         "he no comido": {
-          "hu": "Ilyen szórend nincs: a no a haber ELÉ megy, nem közé; helyesen: En toda la semana no he comido carne.",
           "en": "No such word order exists: no goes BEFORE haber, not between the two parts; correctly: En toda la semana no he comido carne.",
-          "es": "Ese orden no existe: el no va ANTES de haber, no entre las dos partes; correctamente: En toda la semana no he comido carne.",
-          "de": "Diese Reihenfolge gibt es nicht: no steht VOR haber, nicht zwischen den zwei Teilen; richtig: En toda la semana no he comido carne."
+          "es": "Ese orden no existe: el no va ANTES de haber, no entre las dos partes; correctamente: En toda la semana no he comido carne."
         }
       },
       "examples": [
@@ -884,7 +720,7 @@
         "from": "presente",
         "to": "perfecto"
       },
-      "tr": { "hu": "Egész héten nem ettem húst.", "en": "I haven't eaten meat all week.", "es": "En toda la semana no he comido (yo) carne.", "de": "Die ganze Woche über habe ich kein Fleisch gegessen." }
+      "tr": { "en": "I haven't eaten meat all week.", "es": "En toda la semana no he comido (yo) carne." }
     },
     {
       "id": "pf-07",
@@ -896,23 +732,17 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az últimamente a jelenig tart, és a többes szám harmadik személy han + participio.",
         "en": "Últimamente runs up to now, and the third person plural is han plus the participle.",
-        "es": "Últimamente llega hasta ahora, y la tercera persona del plural es han más participio.",
-        "de": "Últimamente reicht bis jetzt, und die 3. Person Plural ist han plus Partizip."
+        "es": "Últimamente llega hasta ahora, y la tercera persona del plural es han más participio."
       },
       "wrong": {
         "ha venido": {
-          "hu": "Ezzel a mondat egyes számú alanyhoz illene (\"Mi padre ha venido mucho\"), itt viszont az alany többes szám (mis padres), ezért han kell; helyesen: Últimamente mis padres han venido mucho a México.",
           "en": "This would fit a singular subject (\"Mi padre ha venido mucho\"), but here the subject is plural (mis padres), so you need han; correctly: Últimamente mis padres han venido mucho a México.",
-          "es": "Encajaría con un sujeto singular (\"Mi padre ha venido mucho\"), pero aquí el sujeto es plural (mis padres), por eso hace falta han; correctamente: Últimamente mis padres han venido mucho a México.",
-          "de": "Das passte zu einem Singular-Subjekt (\"Mi padre ha venido mucho\"), hier ist das Subjekt aber Plural (mis padres), also braucht man han; richtig: Últimamente mis padres han venido mucho a México."
+          "es": "Encajaría con un sujeto singular (\"Mi padre ha venido mucho\"), pero aquí el sujeto es plural (mis padres), por eso hace falta han; correctamente: Últimamente mis padres han venido mucho a México."
         },
         "venían": {
-          "hu": "Ezzel a mondat azt jelentené: \"a szüleim szoktak jönni Mexikóba (szokás)\", ami nem illik ide; helyesen: Últimamente mis padres han venido mucho a México.",
           "en": "This would say: \"my parents used to come to Mexico (a habit)\", which does not fit here; correctly: Últimamente mis padres han venido mucho a México.",
-          "es": "Diría: \"mis padres solían venir a México (costumbre)\", lo cual no encaja aquí; correctamente: Últimamente mis padres han venido mucho a México.",
-          "de": "Das würde bedeuten: \"meine Eltern kamen gewöhnlich nach Mexiko (Gewohnheit)\", was hier nicht passt; richtig: Últimamente mis padres han venido mucho a México."
+          "es": "Diría: \"mis padres solían venir a México (costumbre)\", lo cual no encaja aquí; correctamente: Últimamente mis padres han venido mucho a México."
         }
       },
       "examples": [
@@ -923,7 +753,7 @@
         "from": "presente",
         "to": "perfecto"
       },
-      "tr": { "hu": "Mostanában a szüleim sokat jártak Mexikóba.", "en": "Lately my parents have come to Mexico a lot.", "es": "Últimamente mis padres han venido mucho a México.", "de": "In letzter Zeit sind meine Eltern oft nach Mexiko gekommen." }
+      "tr": { "en": "Lately my parents have come to Mexico a lot.", "es": "Últimamente mis padres han venido mucho a México." }
     },
     {
       "id": "pf-08",
@@ -935,23 +765,17 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A hacer participiója hecho, és az ustedes han-t kap.",
         "en": "Hacer's participle is hecho, and ustedes takes han.",
-        "es": "El participio de hacer es hecho, y ustedes lleva han.",
-        "de": "Das Partizip von hacer ist hecho, und ustedes nimmt han."
+        "es": "El participio de hacer es hecho, y ustedes lleva han."
       },
       "wrong": {
         "han hacido": {
-          "hu": "Ilyen alak nincs: a hacer participiója rendhagyó, hecho, nem \"hacido\"; helyesen: Hasta ahora ustedes no han hecho la reserva.",
           "en": "No such form exists: the participle of hacer is irregular, hecho, not \"hacido\"; correctly: Hasta ahora ustedes no han hecho la reserva.",
-          "es": "Esa forma no existe: el participio de hacer es irregular, hecho, no \"hacido\"; correctamente: Hasta ahora ustedes no han hecho la reserva.",
-          "de": "Diese Form gibt es nicht: das Partizip von hacer ist unregelmäßig, hecho, nicht \"hacido\"; richtig: Hasta ahora ustedes no han hecho la reserva."
+          "es": "Esa forma no existe: el participio de hacer es irregular, hecho, no \"hacido\"; correctamente: Hasta ahora ustedes no han hecho la reserva."
         },
         "ha hecho": {
-          "hu": "Ezzel a mondat egyes számú alanyhoz illene (\"Hasta ahora no ha hecho la reserva\", usted), itt viszont ustedes áll, többes szám, ezért han kell; helyesen: Hasta ahora ustedes no han hecho la reserva.",
           "en": "This would fit a singular subject (\"Hasta ahora no ha hecho la reserva\", usted), but here the subject is ustedes, plural, so you need han; correctly: Hasta ahora ustedes no han hecho la reserva.",
-          "es": "Encajaría con un sujeto singular (\"Hasta ahora no ha hecho la reserva\", usted), pero aquí el sujeto es ustedes, plural, por eso hace falta han; correctamente: Hasta ahora ustedes no han hecho la reserva.",
-          "de": "Das passte zu einem Singular-Subjekt (\"Hasta ahora no ha hecho la reserva\", usted), hier ist das Subjekt aber ustedes, Plural, also braucht man han; richtig: Hasta ahora ustedes no han hecho la reserva."
+          "es": "Encajaría con un sujeto singular (\"Hasta ahora no ha hecho la reserva\", usted), pero aquí el sujeto es ustedes, plural, por eso hace falta han; correctamente: Hasta ahora ustedes no han hecho la reserva."
         }
       },
       "examples": [
@@ -962,7 +786,7 @@
         "from": "presente",
         "to": "perfecto"
       },
-      "tr": { "hu": "Mostanáig még nem foglalták le a szállást.", "en": "Up until now you have not made the reservation.", "es": "Hasta ahora ustedes no han hecho la reserva.", "de": "Bis jetzt haben Sie die Reservierung noch nicht vorgenommen." }
+      "tr": { "en": "Up until now you have not made the reservation.", "es": "Hasta ahora ustedes no han hecho la reserva." }
     },
     {
       "id": "pf-09",
@@ -974,23 +798,17 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A romper participiója roto; a visszaható se a haber elé kerül.",
         "en": "Romper's participle is roto, and the reflexive se goes before haber.",
-        "es": "El participio de romper es roto, y el se va delante de haber.",
-        "de": "Das Partizip von romper ist roto, das se steht vor haber."
+        "es": "El participio de romper es roto, y el se va delante de haber."
       },
       "wrong": {
         "ha rompido": {
-          "hu": "Ilyen alak nincs: a romper participiója rendhagyó, roto, nem \"rompido\"; helyesen: Desde hace un mes no se ha roto nada.",
           "en": "No such form exists: the participle of romper is irregular, roto, not \"rompido\"; correctly: Desde hace un mes no se ha roto nada.",
-          "es": "Esa forma no existe: el participio de romper es irregular, roto, no \"rompido\"; correctamente: Desde hace un mes no se ha roto nada.",
-          "de": "Diese Form gibt es nicht: das Partizip von romper ist unregelmäßig, roto, nicht \"rompido\"; richtig: Desde hace un mes no se ha roto nada."
+          "es": "Esa forma no existe: el participio de romper es irregular, roto, no \"rompido\"; correctamente: Desde hace un mes no se ha roto nada."
         },
         "rompía": {
-          "hu": "Ezzel a mondat azt jelentené: \"semmi nem tört el (múltbeli folyamat)\", a desde hace un mes viszont a jelenig tart; helyesen: Desde hace un mes no se ha roto nada.",
           "en": "This would say: \"nothing was breaking (a past, ongoing action)\", but desde hace un mes runs up to now; correctly: Desde hace un mes no se ha roto nada.",
-          "es": "Diría: \"no se rompía nada (acción en curso en el pasado)\", pero desde hace un mes llega hasta ahora; correctamente: Desde hace un mes no se ha roto nada.",
-          "de": "Das würde bedeuten: \"nichts zerbrach gerade (vergangener Verlauf)\", desde hace un mes reicht aber bis jetzt; richtig: Desde hace un mes no se ha roto nada."
+          "es": "Diría: \"no se rompía nada (acción en curso en el pasado)\", pero desde hace un mes llega hasta ahora; correctamente: Desde hace un mes no se ha roto nada."
         }
       },
       "examples": [
@@ -1001,7 +819,7 @@
         "from": "presente",
         "to": "perfecto"
       },
-      "tr": { "hu": "Egy hónapja semmi sem tört el.", "en": "Nothing has broken for a month.", "es": "Desde hace un mes no se ha roto nada.", "de": "Seit einem Monat ist nichts mehr kaputtgegangen." }
+      "tr": { "en": "Nothing has broken for a month.", "es": "Desde hace un mes no se ha roto nada." }
     },
     {
       "id": "pf-10",
@@ -1013,23 +831,17 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A participio ebben a szerkezetben SOSEM egyeztetődik: han llegado.",
         "en": "The participle NEVER agrees in this structure: han llegado.",
-        "es": "El participio nunca concuerda aquí: han llegado.",
-        "de": "Das Partizip wird hier nie angeglichen: han llegado."
+        "es": "El participio nunca concuerda aquí: han llegado."
       },
       "wrong": {
         "han llegadas": {
-          "hu": "Ilyen alak nincs: a haber utáni participio nem kap sem nőnemű, sem többes végződést; helyesen: Toda la semana las chicas han llegado temprano.",
           "en": "No such form exists: the participle after haber takes neither a feminine nor a plural ending; correctly: Toda la semana las chicas han llegado temprano.",
-          "es": "Esa forma no existe: el participio tras haber no lleva ni femenino ni plural; correctamente: Toda la semana las chicas han llegado temprano.",
-          "de": "Diese Form gibt es nicht: das Partizip nach haber bekommt weder feminine noch Plural-Endung; richtig: Toda la semana las chicas han llegado temprano."
+          "es": "Esa forma no existe: el participio tras haber no lleva ni femenino ni plural; correctamente: Toda la semana las chicas han llegado temprano."
         },
         "ha llegado": {
-          "hu": "Ezzel a mondat egyes számú alanyhoz illene («Ella ha llegado temprano»), itt viszont az alany többes szám (las chicas), ezért han kell; helyesen: Toda la semana las chicas han llegado temprano.",
           "en": "This would fit a singular subject («Ella ha llegado temprano»), but here the subject is plural (las chicas), so you need han; correctly: Toda la semana las chicas han llegado temprano.",
-          "es": "Encajaría con un sujeto singular («Ella ha llegado temprano»), pero aquí el sujeto es plural (las chicas), por eso hace falta han; correctamente: Toda la semana las chicas han llegado temprano.",
-          "de": "Das passte zu einem Singular-Subjekt («Ella ha llegado temprano»), hier ist das Subjekt aber Plural (las chicas), also braucht man han; richtig: Toda la semana las chicas han llegado temprano."
+          "es": "Encajaría con un sujeto singular («Ella ha llegado temprano»), pero aquí el sujeto es plural (las chicas), por eso hace falta han; correctamente: Toda la semana las chicas han llegado temprano."
         }
       },
       "examples": [
@@ -1040,7 +852,7 @@
         "from": "presente",
         "to": "perfecto"
       },
-      "tr": { "hu": "Egész héten korán érkeztek a lányok.", "en": "All week the girls have arrived early.", "es": "Toda la semana las chicas han llegado temprano.", "de": "Die ganze Woche über sind die Mädchen früh angekommen." }
+      "tr": { "en": "All week the girls have arrived early.", "es": "Toda la semana las chicas han llegado temprano." }
     },
     {
       "id": "pf-11",
@@ -1052,23 +864,17 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A desde hace a mostanáig tartó időt jelöl: perfecto.",
         "en": "Desde hace marks a stretch that runs up to now: the perfect.",
-        "es": "Desde hace marca un periodo que llega hasta ahora: perfecto.",
-        "de": "Desde hace markiert einen Zeitraum bis jetzt: Perfekt."
+        "es": "Desde hace marca un periodo que llega hasta ahora: perfecto."
       },
       "wrong": {
         "vivimos ayer": {
-          "hu": "Ezzel a mondat azt jelentené: \"tegnap laktunk itt\", és az ayer lezárja az időt, ami ellentmond a desde hace un año-nak; helyesen: Nosotros hemos vivido aquí desde hace un año.",
           "en": "This would say: \"we lived here yesterday\", and ayer closes the time, which contradicts desde hace un año; correctly: Nosotros hemos vivido aquí desde hace un año.",
-          "es": "Diría: \"vivimos aquí ayer\", y ayer cierra el tiempo y contradice desde hace un año; correctamente: Nosotros hemos vivido aquí desde hace un año.",
-          "de": "Das würde bedeuten: \"wir wohnten gestern hier\", und ayer schließt die Zeit ab und widerspricht desde hace un año; richtig: Nosotros hemos vivido aquí desde hace un año."
+          "es": "Diría: \"vivimos aquí ayer\", y ayer cierra el tiempo y contradice desde hace un año; correctamente: Nosotros hemos vivido aquí desde hace un año."
         },
         "vivíamos": {
-          "hu": "Ezzel a mondat azt jelentené: \"egy éve itt laktunk, de már nem (múltbeli háttér)\"; helyesen: Nosotros hemos vivido aquí desde hace un año.",
           "en": "This would say: \"we lived here a year ago, but no longer (a past background)\"; correctly: Nosotros hemos vivido aquí desde hace un año.",
-          "es": "Diría: \"vivíamos aquí hace un año, pero ya no (fondo pasado)\"; correctamente: Nosotros hemos vivido aquí desde hace un año.",
-          "de": "Das würde bedeuten: \"wir wohnten vor einem Jahr hier, aber jetzt nicht mehr (vergangener Hintergrund)\"; richtig: Nosotros hemos vivido aquí desde hace un año."
+          "es": "Diría: \"vivíamos aquí hace un año, pero ya no (fondo pasado)\"; correctamente: Nosotros hemos vivido aquí desde hace un año."
         }
       },
       "examples": [
@@ -1079,7 +885,7 @@
         "from": "presente",
         "to": "perfecto"
       },
-      "tr": { "hu": "Egy éve lakunk itt.", "en": "We have lived here for a year.", "es": "Nosotros hemos vivido aquí desde hace un año.", "de": "Wir wohnen hier seit einem Jahr." }
+      "tr": { "en": "We have lived here for a year.", "es": "Nosotros hemos vivido aquí desde hace un año." }
     },
     {
       "id": "pf-12",
@@ -1091,23 +897,17 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A decir participiója dicho, és a névmás (me) a haber elé kerül.",
         "en": "Decir's participle is dicho, and the pronoun (me) goes before haber.",
-        "es": "El participio de decir es dicho, y el pronombre va delante de haber.",
-        "de": "Das Partizip von decir ist dicho, das Pronomen steht vor haber."
+        "es": "El participio de decir es dicho, y el pronombre va delante de haber."
       },
       "wrong": {
         "ha decido": {
-          "hu": "Ilyen alak nincs: a decir participiója dicho (a decidido a decidir igéhez tartozik, az más ige); helyesen: Últimamente el médico no me ha dicho nada.",
           "en": "No such form exists: the participle of decir is dicho (decidido belongs to decidir, a different verb); correctly: Últimamente el médico no me ha dicho nada.",
-          "es": "Esa forma no existe: el participio de decir es dicho (decidido es de decidir, otro verbo); correctamente: Últimamente el médico no me ha dicho nada.",
-          "de": "Diese Form gibt es nicht: das Partizip von decir ist dicho (decidido gehört zu decidir, einem anderen Verb); richtig: Últimamente el médico no me ha dicho nada."
+          "es": "Esa forma no existe: el participio de decir es dicho (decidido es de decidir, otro verbo); correctamente: Últimamente el médico no me ha dicho nada."
         },
         "decía": {
-          "hu": "Ezzel a mondat azt jelentené: \"az orvos nem mondott semmit nekem (múltbeli szokás)\", az últimamente viszont a jelenig tart; helyesen: Últimamente el médico no me ha dicho nada.",
           "en": "This would say: \"the doctor used to tell me nothing (a past habit)\", but últimamente runs up to now; correctly: Últimamente el médico no me ha dicho nada.",
-          "es": "Diría: \"el médico no me decía nada (costumbre pasada)\", pero últimamente llega hasta ahora; correctamente: Últimamente el médico no me ha dicho nada.",
-          "de": "Das würde bedeuten: \"der Arzt sagte mir gewöhnlich nichts (vergangene Gewohnheit)\", últimamente reicht aber bis jetzt; richtig: Últimamente el médico no me ha dicho nada."
+          "es": "Diría: \"el médico no me decía nada (costumbre pasada)\", pero últimamente llega hasta ahora; correctamente: Últimamente el médico no me ha dicho nada."
         }
       },
       "examples": [
@@ -1118,7 +918,7 @@
         "from": "presente",
         "to": "perfecto"
       },
-      "tr": { "hu": "Mostanában az orvos nem mondott nekem semmit.", "en": "Lately the doctor has not told me anything.", "es": "Últimamente el médico no me ha dicho nada.", "de": "In letzter Zeit hat der Arzt mir nichts gesagt." }
+      "tr": { "en": "Lately the doctor has not told me anything.", "es": "Últimamente el médico no me ha dicho nada." }
     },
     {
       "id": "pf-match-01",
@@ -1304,46 +1104,34 @@
       "es": "Últimamente he dormido mal.",
       "target": "Últimamente",
       "tr": {
-        "hu": "Mostanában rosszul aludtam.",
         "en": "Lately I have slept badly.",
-        "es": "Últimamente he dormido mal.",
-        "de": "In letzter Zeit habe ich schlecht geschlafen."
+        "es": "Últimamente he dormido mal."
       },
       "options": [
         {
           "text": {
-            "hu": "jelenig tartó helyzet → perfecto",
             "en": "a situation up to now → perfecto",
-            "es": "una situación hasta ahora → perfecto",
-            "de": "eine Situation bis jetzt → perfecto"
+            "es": "una situación hasta ahora → perfecto"
           }
         },
         {
           "text": {
-            "hu": "lezárt, egyszeri esemény → indefinido",
             "en": "a closed, single event → indefinido",
-            "es": "un hecho cerrado y único → indefinido",
-            "de": "ein abgeschlossenes, einmaliges Ereignis → indefinido"
+            "es": "un hecho cerrado y único → indefinido"
           },
           "wrong": {
-            "hu": "Ez a lezárt esemény szabálya lenne (ayer dormí mal), az últimamente viszont a jelenig tart.",
             "en": "This would be the rule for a closed event (ayer dormí mal), but últimamente runs up to now.",
-            "es": "Sería la regla del hecho cerrado (ayer dormí mal), pero últimamente llega hasta ahora.",
-            "de": "Das wäre die Regel für ein abgeschlossenes Ereignis (ayer dormí mal), últimamente reicht aber bis jetzt."
+            "es": "Sería la regla del hecho cerrado (ayer dormí mal), pero últimamente llega hasta ahora."
           }
         },
         {
           "text": {
-            "hu": "szokás vagy háttér a múltban → imperfecto",
             "en": "a habit or background in the past → imperfecto",
-            "es": "costumbre o fondo en el pasado → imperfecto",
-            "de": "Gewohnheit oder Hintergrund in der Vergangenheit → imperfecto"
+            "es": "costumbre o fondo en el pasado → imperfecto"
           },
           "wrong": {
-            "hu": "Ez a szokás szabálya lenne (dormía mal), de itt a helyzet a mostanáig tart, ez dönti el az igeidőt.",
             "en": "This would be the rule for a habit (dormía mal), but here the situation runs up to now, and that decides the tense.",
-            "es": "Sería la regla de la costumbre (dormía mal), pero aquí la situación llega hasta ahora, y eso decide el tiempo.",
-            "de": "Das wäre die Regel für eine Gewohnheit (dormía mal), hier reicht die Situation aber bis jetzt, und das entscheidet über die Zeitform."
+            "es": "Sería la regla de la costumbre (dormía mal), pero aquí la situación llega hasta ahora, y eso decide el tiempo."
           }
         }
       ],
@@ -1359,46 +1147,34 @@
       "es": "Siempre he vivido aquí.",
       "target": "Siempre",
       "tr": {
-        "hu": "Mindig itt éltem.",
         "en": "I have always lived here.",
-        "es": "Siempre he vivido aquí.",
-        "de": "Ich habe immer hier gewohnt."
+        "es": "Siempre he vivido aquí."
       },
       "options": [
         {
           "text": {
-            "hu": "lezárt, egyszeri esemény → indefinido",
             "en": "a closed, single event → indefinido",
-            "es": "un hecho cerrado y único → indefinido",
-            "de": "ein abgeschlossenes, einmaliges Ereignis → indefinido"
+            "es": "un hecho cerrado y único → indefinido"
           },
           "wrong": {
-            "hu": "Ez lezárt időpont lenne (el año pasado viví aquí), a siempre viszont a mostanáig tartó időt nézi.",
             "en": "This would be a closed point in time (el año pasado viví aquí), but siempre looks at the time up to now.",
-            "es": "Sería un momento cerrado (el año pasado viví aquí), pero siempre mira el tiempo hasta ahora.",
-            "de": "Das wäre ein abgeschlossener Zeitpunkt (el año pasado viví aquí), siempre blickt aber auf die Zeit bis jetzt."
+            "es": "Sería un momento cerrado (el año pasado viví aquí), pero siempre mira el tiempo hasta ahora."
           }
         },
         {
           "text": {
-            "hu": "jelenig tartó helyzet → perfecto",
             "en": "a situation up to now → perfecto",
-            "es": "una situación hasta ahora → perfecto",
-            "de": "eine Situation bis jetzt → perfecto"
+            "es": "una situación hasta ahora → perfecto"
           }
         },
         {
           "text": {
-            "hu": "szokás vagy háttér a múltban → imperfecto",
             "en": "a habit or background in the past → imperfecto",
-            "es": "costumbre o fondo en el pasado → imperfecto",
-            "de": "Gewohnheit oder Hintergrund in der Vergangenheit → imperfecto"
+            "es": "costumbre o fondo en el pasado → imperfecto"
           },
           "wrong": {
-            "hu": "Ez a szokás szabálya lenne (siempre vivía aquí, de már nem), itt viszont a helyzet a mostanáig tart.",
             "en": "This would be the rule for a habit (siempre vivía aquí, but no longer), but here the situation runs up to now.",
-            "es": "Sería la regla de la costumbre (siempre vivía aquí, pero ya no), pero aquí la situación llega hasta ahora.",
-            "de": "Das wäre die Regel für eine Gewohnheit (siempre vivía aquí, aber nicht mehr), hier reicht die Situation aber bis jetzt."
+            "es": "Sería la regla de la costumbre (siempre vivía aquí, pero ya no), pero aquí la situación llega hasta ahora."
           }
         }
       ],
@@ -1414,46 +1190,34 @@
       "es": "Hasta ahora no ha llamado.",
       "target": "Hasta ahora",
       "tr": {
-        "hu": "Eddig nem hívott.",
         "en": "So far he has not called.",
-        "es": "Hasta ahora no ha llamado.",
-        "de": "Bisher hat er nicht angerufen."
+        "es": "Hasta ahora no ha llamado."
       },
       "options": [
         {
           "text": {
-            "hu": "lezárt, egyszeri esemény → indefinido",
             "en": "a closed, single event → indefinido",
-            "es": "un hecho cerrado y único → indefinido",
-            "de": "ein abgeschlossenes, einmaliges Ereignis → indefinido"
+            "es": "un hecho cerrado y único → indefinido"
           },
           "wrong": {
-            "hu": "Ez lezárt időpont lenne (ayer no llamó), a hasta ahora viszont nyitva hagyja az időt.",
             "en": "This would be a closed point (ayer no llamó), while hasta ahora leaves the time open.",
-            "es": "Sería un momento cerrado (ayer no llamó), y hasta ahora deja el tiempo abierto.",
-            "de": "Das wäre ein abgeschlossener Zeitpunkt (ayer no llamó), hasta ahora lässt die Zeit aber offen."
+            "es": "Sería un momento cerrado (ayer no llamó), y hasta ahora deja el tiempo abierto."
           }
         },
         {
           "text": {
-            "hu": "szokás vagy háttér a múltban → imperfecto",
             "en": "a habit or background in the past → imperfecto",
-            "es": "costumbre o fondo en el pasado → imperfecto",
-            "de": "Gewohnheit oder Hintergrund in der Vergangenheit → imperfecto"
+            "es": "costumbre o fondo en el pasado → imperfecto"
           },
           "wrong": {
-            "hu": "Ez szokás lenne (no llamaba), itt viszont egy eddig be nem következett dolog van.",
             "en": "This would be a habit (no llamaba), but here it is something that has not happened so far.",
-            "es": "Sería una costumbre (no llamaba), pero aquí es algo que no ha pasado hasta ahora.",
-            "de": "Das wäre eine Gewohnheit (no llamaba), hier ist es aber etwas, das bisher nicht geschehen ist."
+            "es": "Sería una costumbre (no llamaba), pero aquí es algo que no ha pasado hasta ahora."
           }
         },
         {
           "text": {
-            "hu": "hasta ahora no: eddig nem történt meg → perfecto",
             "en": "hasta ahora no: it has not happened so far → perfecto",
-            "es": "hasta ahora no: no ha pasado hasta ahora → perfecto",
-            "de": "hasta ahora no: bisher nicht geschehen → perfecto"
+            "es": "hasta ahora no: no ha pasado hasta ahora → perfecto"
           }
         }
       ],
@@ -1469,46 +1233,34 @@
       "es": "Ayer comí con mi familia.",
       "target": "Ayer",
       "tr": {
-        "hu": "Tegnap a családommal ebédeltem.",
         "en": "Yesterday I ate with my family.",
-        "es": "Ayer comí con mi familia.",
-        "de": "Gestern habe ich mit meiner Familie gegessen."
+        "es": "Ayer comí con mi familia."
       },
       "options": [
         {
           "text": {
-            "hu": "jelenig tartó helyzet → perfecto",
             "en": "a situation up to now → perfecto",
-            "es": "una situación hasta ahora → perfecto",
-            "de": "eine Situation bis jetzt → perfecto"
+            "es": "una situación hasta ahora → perfecto"
           },
           "wrong": {
-            "hu": "Ez jelenig tartó helyzet lenne (últimamente he comido con mi familia), az ayer viszont lezárt nap.",
             "en": "This would mean a situation up to now (últimamente he comido con mi familia), but ayer is a closed day.",
-            "es": "Sería una situación hasta ahora (últimamente he comido con mi familia), pero ayer es un día cerrado.",
-            "de": "Das hieße eine Situation bis jetzt (últimamente he comido con mi familia), ayer ist aber ein abgeschlossener Tag."
+            "es": "Sería una situación hasta ahora (últimamente he comido con mi familia), pero ayer es un día cerrado."
           }
         },
         {
           "text": {
-            "hu": "lezárt, egyszeri esemény → indefinido",
             "en": "a closed, single event → indefinido",
-            "es": "un hecho cerrado y único → indefinido",
-            "de": "ein abgeschlossenes, einmaliges Ereignis → indefinido"
+            "es": "un hecho cerrado y único → indefinido"
           }
         },
         {
           "text": {
-            "hu": "szokás vagy háttér a múltban → imperfecto",
             "en": "a habit or background in the past → imperfecto",
-            "es": "costumbre o fondo en el pasado → imperfecto",
-            "de": "Gewohnheit oder Hintergrund in der Vergangenheit → imperfecto"
+            "es": "costumbre o fondo en el pasado → imperfecto"
           },
           "wrong": {
-            "hu": "Ez szokást jelentene (comía con mi familia), itt viszont egy konkrét nap van.",
             "en": "This would mean a habit (comía con mi familia), but here there is one specific day.",
-            "es": "Sería una costumbre (comía con mi familia), pero aquí hay un día concreto.",
-            "de": "Das hieße eine Gewohnheit (comía con mi familia), hier ist es aber ein bestimmter Tag."
+            "es": "Sería una costumbre (comía con mi familia), pero aquí hay un día concreto."
           }
         }
       ],
@@ -1524,46 +1276,34 @@
       "es": "Últimamente las chicas han llegado tarde.",
       "target": "han llegado",
       "tr": {
-        "hu": "Mostanában a lányok későn érkeztek meg.",
         "en": "Lately the girls have arrived late.",
-        "es": "Últimamente las chicas han llegado tarde.",
-        "de": "In letzter Zeit sind die Mädchen zu spät angekommen."
+        "es": "Últimamente las chicas han llegado tarde."
       },
       "options": [
         {
           "text": {
-            "hu": "a participio nem egyeztet",
             "en": "the participle does not agree",
-            "es": "el participio no concuerda",
-            "de": "das Partizip wird nicht angeglichen"
+            "es": "el participio no concuerda"
           }
         },
         {
           "text": {
-            "hu": "a participio egyeztet az alannyal",
             "en": "the participle agrees with the subject",
-            "es": "el participio concuerda con el sujeto",
-            "de": "das Partizip stimmt mit dem Subjekt überein"
+            "es": "el participio concuerda con el sujeto"
           },
           "wrong": {
-            "hu": "Ez tévedés: a haber utáni participio nem kap végződést, nem «llegadas».",
             "en": "That is a mistake: the participle after haber takes no ending, not «llegadas».",
-            "es": "Es un error: el participio tras haber no lleva terminación, no «llegadas».",
-            "de": "Das ist ein Fehler: das Partizip nach haber bekommt keine Endung, nicht «llegadas»."
+            "es": "Es un error: el participio tras haber no lleva terminación, no «llegadas»."
           }
         },
         {
           "text": {
-            "hu": "a participio a haber elé megy",
             "en": "the participle goes before haber",
-            "es": "el participio va antes de haber",
-            "de": "das Partizip steht vor haber"
+            "es": "el participio va antes de haber"
           },
           "wrong": {
-            "hu": "Ez fordított sorrend lenne («llegado han»), pedig a haber áll elöl.",
             "en": "That would be the reverse order («llegado han»), but haber comes first.",
-            "es": "Sería el orden inverso («llegado han»), pero haber va primero.",
-            "de": "Das wäre die umgekehrte Reihenfolge («llegado han»), haber steht aber vorn."
+            "es": "Sería el orden inverso («llegado han»), pero haber va primero."
           }
         }
       ],
@@ -1579,46 +1319,34 @@
       "es": "Hasta ahora no lo he visto.",
       "target": "lo he visto",
       "tr": {
-        "hu": "Eddig nem láttam.",
         "en": "So far I have not seen it.",
-        "es": "Hasta ahora no lo he visto.",
-        "de": "Bisher habe ich es nicht gesehen."
+        "es": "Hasta ahora no lo he visto."
       },
       "options": [
         {
           "text": {
-            "hu": "a névmás a participio után megy",
             "en": "the pronoun goes after the participle",
-            "es": "el pronombre va después del participio",
-            "de": "das Pronomen steht nach dem Partizip"
+            "es": "el pronombre va después del participio"
           },
           "wrong": {
-            "hu": "Ez «no he visto lo» lenne, ilyen nincs: a névmás nem áll a participio mögé.",
             "en": "That would be «no he visto lo», which does not exist: the pronoun does not follow the participle.",
-            "es": "Sería «no he visto lo», que no existe: el pronombre no va detrás del participio.",
-            "de": "Das wäre «no he visto lo», das gibt es nicht: das Pronomen folgt nicht dem Partizip."
+            "es": "Sería «no he visto lo», que no existe: el pronombre no va detrás del participio."
           }
         },
         {
           "text": {
-            "hu": "a névmás a haber és a participio közé megy",
             "en": "the pronoun goes between haber and the participle",
-            "es": "el pronombre va entre haber y el participio",
-            "de": "das Pronomen steht zwischen haber und Partizip"
+            "es": "el pronombre va entre haber y el participio"
           },
           "wrong": {
-            "hu": "Ez «no he lo visto» lenne, ilyen nincs: a két rész nem válik szét.",
             "en": "That would be «no he lo visto», which does not exist: the two parts never split.",
-            "es": "Sería «no he lo visto», que no existe: las dos partes no se separan.",
-            "de": "Das wäre «no he lo visto», das gibt es nicht: die zwei Teile trennen sich nie."
+            "es": "Sería «no he lo visto», que no existe: las dos partes no se separan."
           }
         },
         {
           "text": {
-            "hu": "a névmás a haber elé megy",
             "en": "the pronoun goes before haber",
-            "es": "el pronombre va antes de haber",
-            "de": "das Pronomen steht vor haber"
+            "es": "el pronombre va antes de haber"
           }
         }
       ],
@@ -1634,46 +1362,34 @@
       "es": "Hoy comí tarde.",
       "target": "comí",
       "tr": {
-        "hu": "Ma későn ebédeltem.",
         "en": "Today I ate late.",
-        "es": "Hoy comí tarde.",
-        "de": "Heute habe ich spät gegessen."
+        "es": "Hoy comí tarde."
       },
       "options": [
         {
           "text": {
-            "hu": "lezárt, egyszeri esemény: Mexikóban indefinido",
             "en": "a closed, single event: indefinido in Mexico",
-            "es": "un hecho cerrado y único: indefinido en México",
-            "de": "ein abgeschlossenes, einmaliges Ereignis: in Mexiko indefinido"
+            "es": "un hecho cerrado y único: indefinido en México"
           }
         },
         {
           "text": {
-            "hu": "a hoy mindig perfectót kér",
             "en": "hoy always needs the perfecto",
-            "es": "hoy siempre pide perfecto",
-            "de": "hoy verlangt immer das perfecto"
+            "es": "hoy siempre pide perfecto"
           },
           "wrong": {
-            "hu": "Ez a \"hoy mindig perfecto\" szabálya lenne, de Mexikóban a lezárt, egyszeri eseményre az indefinido jár, a hoy mellett is.",
             "en": "This would be the rule \"hoy always takes the perfect\", but in Mexico a closed, single event takes the indefinido, even with hoy.",
-            "es": "Sería la regla \"hoy siempre pide perfecto\", pero en México un hecho cerrado y único lleva indefinido, también con hoy.",
-            "de": "Das wäre die Regel \"hoy verlangt immer das Perfekt\", in Mexiko steht für ein abgeschlossenes, einmaliges Ereignis aber das indefinido, auch bei hoy."
+            "es": "Sería la regla \"hoy siempre pide perfecto\", pero en México un hecho cerrado y único lleva indefinido, también con hoy."
           }
         },
         {
           "text": {
-            "hu": "szokás vagy háttér a múltban → imperfecto",
             "en": "a habit or background in the past → imperfecto",
-            "es": "costumbre o fondo en el pasado → imperfecto",
-            "de": "Gewohnheit oder Hintergrund in der Vergangenheit → imperfecto"
+            "es": "costumbre o fondo en el pasado → imperfecto"
           },
           "wrong": {
-            "hu": "Ez szokás lenne (hoy comía tarde), itt viszont egyszeri, lezárt eset van.",
             "en": "This would be a habit (hoy comía tarde), but here it is a single, closed event.",
-            "es": "Sería una costumbre (hoy comía tarde), pero aquí es un hecho único y cerrado.",
-            "de": "Das wäre eine Gewohnheit (hoy comía tarde), hier ist es aber ein einmaliges, abgeschlossenes Ereignis."
+            "es": "Sería una costumbre (hoy comía tarde), pero aquí es un hecho único y cerrado."
           }
         }
       ],
@@ -1691,10 +1407,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Mostanában keveset beszélek a főnökömmel.",
         "en": "Lately I talk little with my boss.",
-        "es": "Últimamente hablo poco con mi jefe.",
-        "de": "In letzter Zeit rede ich wenig mit meinem Chef."
+        "es": "Últimamente hablo poco con mi jefe."
       },
       "answer": "Últimamente he hablado poco con mi jefe.",
       "accept": [
@@ -1710,10 +1424,8 @@
         "383"
       ],
       "why": {
-        "hu": "Jelenig tartó helyzet (últimamente): pretérito perfecto. A(z) hablar szabályos -ar ige, participio: hablado, itt: he hablado.",
         "en": "A situation that runs up to now (últimamente): pretérito perfecto. Hablar is a regular -ar verb, participle: hablado, here: he hablado.",
-        "es": "Una situación que llega hasta ahora (últimamente): pretérito perfecto. hablar es un verbo regular en -ar, participio: hablado, aquí: he hablado.",
-        "de": "Eine Situation, die bis jetzt reicht (últimamente): pretérito perfecto. hablar ist ein regelmäßiges -ar-Verb, Partizip: hablado, hier: he hablado."
+        "es": "Una situación que llega hasta ahora (últimamente): pretérito perfecto. hablar es un verbo regular en -ar, participio: hablado, aquí: he hablado."
       }
     },
     {
@@ -1724,10 +1436,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Mindig telefonon beszélsz az anyukáddal.",
         "en": "You always talk to your mom on the phone.",
-        "es": "Siempre hablas con tu mamá por teléfono.",
-        "de": "Du sprichst immer mit deiner Mama am Telefon."
+        "es": "Siempre hablas con tu mamá por teléfono."
       },
       "answer": "Siempre has hablado con tu mamá por teléfono.",
       "accept": [
@@ -1743,10 +1453,8 @@
         "122"
       ],
       "why": {
-        "hu": "Jelenig ismétlődő helyzet (siempre): pretérito perfecto. A(z) hablar szabályos -ar ige, participio: hablado, itt: has hablado.",
         "en": "A situation that keeps repeating up to now (siempre): pretérito perfecto. Hablar is a regular -ar verb, participle: hablado, here: has hablado.",
-        "es": "Una situación que se repite hasta ahora (siempre): pretérito perfecto. hablar es un verbo regular en -ar, participio: hablado, aquí: has hablado.",
-        "de": "Eine Situation, die sich bis jetzt wiederholt (siempre): pretérito perfecto. hablar ist ein regelmäßiges -ar-Verb, Partizip: hablado, hier: has hablado."
+        "es": "Una situación que se repite hasta ahora (siempre): pretérito perfecto. hablar es un verbo regular en -ar, participio: hablado, aquí: has hablado."
       }
     },
     {
@@ -1757,10 +1465,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Egy hónapja keveset beszélünk.",
         "en": "We've been talking little for a month now.",
-        "es": "Desde hace un mes hablamos poco.",
-        "de": "Seit einem Monat reden wir wenig."
+        "es": "Desde hace un mes hablamos poco."
       },
       "answer": "Desde hace un mes hemos hablado poco.",
       "accept": [
@@ -1775,10 +1481,8 @@
         "153"
       ],
       "why": {
-        "hu": "Valamikor kezdődött, és mostanáig tart (desde hace un mes): pretérito perfecto. A(z) hablar szabályos -ar ige, participio: hablado, itt: hemos hablado.",
         "en": "Something that began at some point and runs up to now (desde hace un mes): pretérito perfecto. Hablar is a regular -ar verb, participle: hablado, here: hemos hablado.",
-        "es": "Algo que empezó en un momento y llega hasta ahora (desde hace un mes): pretérito perfecto. hablar es un verbo regular en -ar, participio: hablado, aquí: hemos hablado.",
-        "de": "Etwas, das irgendwann begann und bis jetzt läuft (desde hace un mes): pretérito perfecto. hablar ist ein regelmäßiges -ar-Verb, Partizip: hablado, hier: hemos hablado."
+        "es": "Algo que empezó en un momento y llega hasta ahora (desde hace un mes): pretérito perfecto. hablar es un verbo regular en -ar, participio: hablado, aquí: hemos hablado."
       }
     },
     {
@@ -1789,10 +1493,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Nem beszélek vele. (eddig)",
         "en": "I don't talk to her. (so far)",
-        "es": "No hablo con ella. (hasta ahora)",
-        "de": "Ich spreche nicht mit ihr. (bisher)"
+        "es": "No hablo con ella. (hasta ahora)"
       },
       "answer": "Hasta ahora no he hablado con ella.",
       "accept": [
@@ -1806,10 +1508,8 @@
         "54"
       ],
       "why": {
-        "hu": "Ami eddig nem történt meg (hasta ahora): pretérito perfecto. A(z) hablar szabályos -ar ige, participio: hablado, itt: he hablado.",
         "en": "Something that has not happened so far (hasta ahora): pretérito perfecto. Hablar is a regular -ar verb, participle: hablado, here: he hablado.",
-        "es": "Algo que no ha pasado hasta ahora (hasta ahora): pretérito perfecto. hablar es un verbo regular en -ar, participio: hablado, aquí: he hablado.",
-        "de": "Etwas, das bisher nicht geschehen ist (hasta ahora): pretérito perfecto. hablar ist ein regelmäßiges -ar-Verb, Partizip: hablado, hier: he hablado."
+        "es": "Algo que no ha pasado hasta ahora (hasta ahora): pretérito perfecto. hablar es un verbo regular en -ar, participio: hablado, aquí: he hablado."
       }
     },
     {
@@ -1820,10 +1520,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Beszélsz mostanában a szomszéddal?",
         "en": "Do you talk to the neighbor lately?",
-        "es": "¿Hablas con el vecino últimamente?",
-        "de": "Sprichst du in letzter Zeit mit dem Nachbarn?"
+        "es": "¿Hablas con el vecino últimamente?"
       },
       "answer": "¿Has hablado con el vecino últimamente?",
       "accept": [
@@ -1838,10 +1536,8 @@
         "747"
       ],
       "why": {
-        "hu": "Jelenig tartó helyzet (últimamente): pretérito perfecto. A(z) hablar szabályos -ar ige, participio: hablado, itt: has hablado.",
         "en": "A situation that runs up to now (últimamente): pretérito perfecto. Hablar is a regular -ar verb, participle: hablado, here: has hablado.",
-        "es": "Una situación que llega hasta ahora (últimamente): pretérito perfecto. hablar es un verbo regular en -ar, participio: hablado, aquí: has hablado.",
-        "de": "Eine Situation, die bis jetzt reicht (últimamente): pretérito perfecto. hablar ist ein regelmäßiges -ar-Verb, Partizip: hablado, hier: has hablado."
+        "es": "Una situación que llega hasta ahora (últimamente): pretérito perfecto. hablar es un verbo regular en -ar, participio: hablado, aquí: has hablado."
       }
     },
     {
@@ -1852,10 +1548,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Egész héten halat eszünk.",
         "en": "All week we eat fish.",
-        "es": "Toda la semana comemos pescado.",
-        "de": "Die ganze Woche essen wir Fisch."
+        "es": "Toda la semana comemos pescado."
       },
       "answer": "Toda la semana hemos comido pescado.",
       "accept": [
@@ -1871,10 +1565,8 @@
         "263"
       ],
       "why": {
-        "hu": "Jelenig tartó helyzet (toda la semana): pretérito perfecto. A(z) comer szabályos -er ige, participio: comido, itt: hemos comido.",
         "en": "A situation that runs up to now (toda la semana): pretérito perfecto. Comer is a regular -er verb, participle: comido, here: hemos comido.",
-        "es": "Una situación que llega hasta ahora (toda la semana): pretérito perfecto. comer es un verbo regular en -er, participio: comido, aquí: hemos comido.",
-        "de": "Eine Situation, die bis jetzt reicht (toda la semana): pretérito perfecto. comer ist ein regelmäßiges -er-Verb, Partizip: comido, hier: hemos comido."
+        "es": "Una situación que llega hasta ahora (toda la semana): pretérito perfecto. comer es un verbo regular en -er, participio: comido, aquí: hemos comido."
       }
     },
     {
@@ -1885,10 +1577,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Nem eszem húst. (eddig)",
         "en": "I don't eat meat. (so far)",
-        "es": "No como carne. (hasta el momento)",
-        "de": "Ich esse kein Fleisch. (bisher)"
+        "es": "No como carne. (hasta el momento)"
       },
       "answer": "Hasta el momento no he comido carne.",
       "accept": [
@@ -1903,10 +1593,8 @@
         "130"
       ],
       "why": {
-        "hu": "Ami eddig nem történt meg (hasta el momento): pretérito perfecto. A(z) comer szabályos -er ige, participio: comido, itt: he comido.",
         "en": "Something that has not happened so far (hasta el momento): pretérito perfecto. Comer is a regular -er verb, participle: comido, here: he comido.",
-        "es": "Algo que no ha pasado hasta ahora (hasta el momento): pretérito perfecto. comer es un verbo regular en -er, participio: comido, aquí: he comido.",
-        "de": "Etwas, das bisher nicht geschehen ist (hasta el momento): pretérito perfecto. comer ist ein regelmäßiges -er-Verb, Partizip: comido, hier: he comido."
+        "es": "Algo que no ha pasado hasta ahora (hasta el momento): pretérito perfecto. comer es un verbo regular en -er, participio: comido, aquí: he comido."
       }
     },
     {
@@ -1917,10 +1605,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Mindig otthon eszem.",
         "en": "I always eat at home.",
-        "es": "Siempre como en casa.",
-        "de": "Ich esse immer zu Hause."
+        "es": "Siempre como en casa."
       },
       "answer": "Siempre he comido en casa.",
       "accept": [
@@ -1935,10 +1621,8 @@
         "19"
       ],
       "why": {
-        "hu": "Jelenig ismétlődő helyzet (siempre): pretérito perfecto. A(z) comer szabályos -er ige, participio: comido, itt: he comido.",
         "en": "A situation that keeps repeating up to now (siempre): pretérito perfecto. Comer is a regular -er verb, participle: comido, here: he comido.",
-        "es": "Una situación que se repite hasta ahora (siempre): pretérito perfecto. comer es un verbo regular en -er, participio: comido, aquí: he comido.",
-        "de": "Eine Situation, die sich bis jetzt wiederholt (siempre): pretérito perfecto. comer ist ein regelmäßiges -er-Verb, Partizip: comido, hier: he comido."
+        "es": "Una situación que se repite hasta ahora (siempre): pretérito perfecto. comer es un verbo regular en -er, participio: comido, aquí: he comido."
       }
     },
     {
@@ -1949,10 +1633,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Ezekben a napokban későn esznek.",
         "en": "These days they eat late.",
-        "es": "Estos días comen tarde.",
-        "de": "Dieser Tage essen sie spät."
+        "es": "Estos días comen tarde."
       },
       "answer": "Estos días han comido tarde.",
       "accept": [
@@ -1974,10 +1656,8 @@
         "174"
       ],
       "why": {
-        "hu": "Jelenig tartó helyzet (estos días): pretérito perfecto. A(z) comer szabályos -er ige, participio: comido, itt: han comido.",
         "en": "A situation that runs up to now (estos días): pretérito perfecto. Comer is a regular -er verb, participle: comido, here: han comido.",
-        "es": "Una situación que llega hasta ahora (estos días): pretérito perfecto. comer es un verbo regular en -er, participio: comido, aquí: han comido.",
-        "de": "Eine Situation, die bis jetzt reicht (estos días): pretérito perfecto. comer ist ein regelmäßiges -er-Verb, Partizip: comido, hier: han comido."
+        "es": "Una situación que llega hasta ahora (estos días): pretérito perfecto. comer es un verbo regular en -er, participio: comido, aquí: han comido."
       }
     },
     {
@@ -1988,10 +1668,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Jól eszel ezekben a napokban?",
         "en": "Do you eat well these days?",
-        "es": "¿Comes bien estos días?",
-        "de": "Isst du in diesen Tagen gut?"
+        "es": "¿Comes bien estos días?"
       },
       "answer": "¿Has comido bien estos días?",
       "accept": [
@@ -2007,10 +1685,8 @@
         "53"
       ],
       "why": {
-        "hu": "Jelenig tartó helyzet (estos días): pretérito perfecto. A(z) comer szabályos -er ige, participio: comido, itt: has comido.",
         "en": "A situation that runs up to now (estos días): pretérito perfecto. Comer is a regular -er verb, participle: comido, here: has comido.",
-        "es": "Una situación que llega hasta ahora (estos días): pretérito perfecto. comer es un verbo regular en -er, participio: comido, aquí: has comido.",
-        "de": "Eine Situation, die bis jetzt reicht (estos días): pretérito perfecto. comer ist ein regelmäßiges -er-Verb, Partizip: comido, hier: has comido."
+        "es": "Una situación que llega hasta ahora (estos días): pretérito perfecto. comer es un verbo regular en -er, participio: comido, aquí: has comido."
       }
     },
     {
@@ -2021,10 +1697,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Egész évben a nővéremmel lakunk.",
         "en": "All year we live with my sister.",
-        "es": "Todo el año vivimos con mi hermana.",
-        "de": "Das ganze Jahr wohnen wir bei meiner Schwester."
+        "es": "Todo el año vivimos con mi hermana."
       },
       "answer": "Todo el año hemos vivido con mi hermana.",
       "accept": [
@@ -2040,10 +1714,8 @@
         "42"
       ],
       "why": {
-        "hu": "Jelenig tartó helyzet (todo el año): pretérito perfecto. A(z) vivir szabályos -ir ige, participio: vivido, itt: hemos vivido.",
         "en": "A situation that runs up to now (todo el año): pretérito perfecto. Vivir is a regular -ir verb, participle: vivido, here: hemos vivido.",
-        "es": "Una situación que llega hasta ahora (todo el año): pretérito perfecto. vivir es un verbo regular en -ir, participio: vivido, aquí: hemos vivido.",
-        "de": "Eine Situation, die bis jetzt reicht (todo el año): pretérito perfecto. vivir ist ein regelmäßiges -ir-Verb, Partizip: vivido, hier: hemos vivido."
+        "es": "Una situación que llega hasta ahora (todo el año): pretérito perfecto. vivir es un verbo regular en -ir, participio: vivido, aquí: hemos vivido."
       }
     },
     {
@@ -2054,10 +1726,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Mindig a városban lakom.",
         "en": "I always live in the city.",
-        "es": "Siempre vivo en la ciudad.",
-        "de": "Ich wohne immer in der Stadt."
+        "es": "Siempre vivo en la ciudad."
       },
       "answer": "Siempre he vivido en la ciudad.",
       "accept": [
@@ -2072,10 +1742,8 @@
         "51"
       ],
       "why": {
-        "hu": "Jelenig ismétlődő helyzet (siempre): pretérito perfecto. A(z) vivir szabályos -ir ige, participio: vivido, itt: he vivido.",
         "en": "A situation that keeps repeating up to now (siempre): pretérito perfecto. Vivir is a regular -ir verb, participle: vivido, here: he vivido.",
-        "es": "Una situación que se repite hasta ahora (siempre): pretérito perfecto. vivir es un verbo regular en -ir, participio: vivido, aquí: he vivido.",
-        "de": "Eine Situation, die sich bis jetzt wiederholt (siempre): pretérito perfecto. vivir ist ein regelmäßiges -ir-Verb, Partizip: vivido, hier: he vivido."
+        "es": "Una situación que se repite hasta ahora (siempre): pretérito perfecto. vivir es un verbo regular en -ir, participio: vivido, aquí: he vivido."
       }
     },
     {
@@ -2086,10 +1754,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "A szüleim januártól a fivéremmel laknak.",
         "en": "My parents have been living with my brother since January.",
-        "es": "Mis padres viven con mi hermano desde enero.",
-        "de": "Meine Eltern wohnen seit Januar bei meinem Bruder."
+        "es": "Mis padres viven con mi hermano desde enero."
       },
       "answer": "Mis padres han vivido con mi hermano desde enero.",
       "accept": [
@@ -2103,10 +1769,8 @@
         "641"
       ],
       "why": {
-        "hu": "Valamikor kezdődött, és mostanáig tart (desde enero): pretérito perfecto. A(z) vivir szabályos -ir ige, participio: vivido, itt: han vivido.",
         "en": "Something that began at some point and runs up to now (desde enero): pretérito perfecto. Vivir is a regular -ir verb, participle: vivido, here: han vivido.",
-        "es": "Algo que empezó en un momento y llega hasta ahora (desde enero): pretérito perfecto. vivir es un verbo regular en -ir, participio: vivido, aquí: han vivido.",
-        "de": "Etwas, das irgendwann begann und bis jetzt läuft (desde enero): pretérito perfecto. vivir ist ein regelmäßiges -ir-Verb, Partizip: vivido, hier: han vivido."
+        "es": "Algo que empezó en un momento y llega hasta ahora (desde enero): pretérito perfecto. vivir es un verbo regular en -ir, participio: vivido, aquí: han vivido."
       }
     },
     {
@@ -2117,10 +1781,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Nem lakunk szállodában. (eddig)",
         "en": "We don't live in a hotel. (so far)",
-        "es": "No vivimos en un hotel. (hasta ahora)",
-        "de": "Wir wohnen nicht in einem Hotel. (bisher)"
+        "es": "No vivimos en un hotel. (hasta ahora)"
       },
       "answer": "Hasta ahora no hemos vivido en un hotel.",
       "accept": [
@@ -2135,10 +1797,8 @@
         "255"
       ],
       "why": {
-        "hu": "Ami eddig nem történt meg (hasta ahora): pretérito perfecto. A(z) vivir szabályos -ir ige, participio: vivido, itt: hemos vivido.",
         "en": "Something that has not happened so far (hasta ahora): pretérito perfecto. Vivir is a regular -ir verb, participle: vivido, here: hemos vivido.",
-        "es": "Algo que no ha pasado hasta ahora (hasta ahora): pretérito perfecto. vivir es un verbo regular en -ir, participio: vivido, aquí: hemos vivido.",
-        "de": "Etwas, das bisher nicht geschehen ist (hasta ahora): pretérito perfecto. vivir ist ein regelmäßiges -ir-Verb, Partizip: vivido, hier: hemos vivido."
+        "es": "Algo que no ha pasado hasta ahora (hasta ahora): pretérito perfecto. vivir es un verbo regular en -ir, participio: vivido, aquí: hemos vivido."
       }
     },
     {
@@ -2149,10 +1809,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Régóta a családjával lakik?",
         "en": "Has she been living with her family for some time now?",
-        "es": "¿Vive ella con su familia desde hace tiempo?",
-        "de": "Wohnt sie schon seit Langem bei ihrer Familie?"
+        "es": "¿Vive ella con su familia desde hace tiempo?"
       },
       "answer": "¿Ha vivido ella con su familia desde hace tiempo?",
       "accept": [
@@ -2166,10 +1824,8 @@
         "22"
       ],
       "why": {
-        "hu": "Valamikor kezdődött, és mostanáig tart (desde hace tiempo): pretérito perfecto. A(z) vivir szabályos -ir ige, participio: vivido, itt: ¿Ha vivido ella con su familia desde hace tiempo?.",
         "en": "Something that began at some point and runs up to now (desde hace tiempo): pretérito perfecto. Vivir is a regular -ir verb, participle: vivido, here: ¿Ha vivido ella con su familia desde hace tiempo?.",
-        "es": "Algo que empezó en un momento y llega hasta ahora (desde hace tiempo): pretérito perfecto. vivir es un verbo regular en -ir, participio: vivido, aquí: ¿Ha vivido ella con su familia desde hace tiempo?.",
-        "de": "Etwas, das irgendwann begann und bis jetzt läuft (desde hace tiempo): pretérito perfecto. vivir ist ein regelmäßiges -ir-Verb, Partizip: vivido, hier: ¿Ha vivido ella con su familia desde hace tiempo?."
+        "es": "Algo que empezó en un momento y llega hasta ahora (desde hace tiempo): pretérito perfecto. vivir es un verbo regular en -ir, participio: vivido, aquí: ¿Ha vivido ella con su familia desde hace tiempo?."
       }
     },
     {
@@ -2180,10 +1836,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Egész héten otthon dolgozom.",
         "en": "All week I work at home.",
-        "es": "Toda la semana trabajo en casa.",
-        "de": "Die ganze Woche arbeite ich zu Hause."
+        "es": "Toda la semana trabajo en casa."
       },
       "answer": "Toda la semana he trabajado en casa.",
       "accept": [
@@ -2199,10 +1853,8 @@
         "19"
       ],
       "why": {
-        "hu": "Jelenig tartó helyzet (toda la semana): pretérito perfecto. A(z) trabajar szabályos -ar ige, participio: trabajado, itt: he trabajado.",
         "en": "A situation that runs up to now (toda la semana): pretérito perfecto. Trabajar is a regular -ar verb, participle: trabajado, here: he trabajado.",
-        "es": "Una situación que llega hasta ahora (toda la semana): pretérito perfecto. trabajar es un verbo regular en -ar, participio: trabajado, aquí: he trabajado.",
-        "de": "Eine Situation, die bis jetzt reicht (toda la semana): pretérito perfecto. trabajar ist ein regelmäßiges -ar-Verb, Partizip: trabajado, hier: he trabajado."
+        "es": "Una situación que llega hasta ahora (toda la semana): pretérito perfecto. trabajar es un verbo regular en -ar, participio: trabajado, aquí: he trabajado."
       }
     },
     {
@@ -2213,10 +1865,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Ezekben a napokban későn dolgozunk.",
         "en": "These days we work late.",
-        "es": "Estos días trabajamos tarde.",
-        "de": "Dieser Tage arbeiten wir spät."
+        "es": "Estos días trabajamos tarde."
       },
       "answer": "Estos días hemos trabajado tarde.",
       "accept": [
@@ -2232,10 +1882,8 @@
         "174"
       ],
       "why": {
-        "hu": "Jelenig tartó helyzet (estos días): pretérito perfecto. A(z) trabajar szabályos -ar ige, participio: trabajado, itt: hemos trabajado.",
         "en": "A situation that runs up to now (estos días): pretérito perfecto. Trabajar is a regular -ar verb, participle: trabajado, here: hemos trabajado.",
-        "es": "Una situación que llega hasta ahora (estos días): pretérito perfecto. trabajar es un verbo regular en -ar, participio: trabajado, aquí: hemos trabajado.",
-        "de": "Eine Situation, die bis jetzt reicht (estos días): pretérito perfecto. trabajar ist ein regelmäßiges -ar-Verb, Partizip: trabajado, hier: hemos trabajado."
+        "es": "Una situación que llega hasta ahora (estos días): pretérito perfecto. trabajar es un verbo regular en -ar, participio: trabajado, aquí: hemos trabajado."
       }
     },
     {
@@ -2246,10 +1894,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Hétfőtől egy ügyfélnek dolgozol.",
         "en": "You have been working for a client since Monday.",
-        "es": "Desde el lunes trabajas para un cliente.",
-        "de": "Seit Montag arbeitest du für einen Kunden."
+        "es": "Desde el lunes trabajas para un cliente."
       },
       "answer": "Desde el lunes has trabajado para un cliente.",
       "accept": [
@@ -2264,10 +1910,8 @@
         "807"
       ],
       "why": {
-        "hu": "Valamikor kezdődött, és mostanáig tart (desde el lunes): pretérito perfecto. A(z) trabajar szabályos -ar ige, participio: trabajado, itt: has trabajado.",
         "en": "Something that began at some point and runs up to now (desde el lunes): pretérito perfecto. Trabajar is a regular -ar verb, participle: trabajado, here: has trabajado.",
-        "es": "Algo que empezó en un momento y llega hasta ahora (desde el lunes): pretérito perfecto. trabajar es un verbo regular en -ar, participio: trabajado, aquí: has trabajado.",
-        "de": "Etwas, das irgendwann begann und bis jetzt läuft (desde el lunes): pretérito perfecto. trabajar ist ein regelmäßiges -ar-Verb, Partizip: trabajado, hier: has trabajado."
+        "es": "Algo que empezó en un momento y llega hasta ahora (desde el lunes): pretérito perfecto. trabajar es un verbo regular en -ar, participio: trabajado, aquí: has trabajado."
       }
     },
     {
@@ -2278,10 +1922,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Nem dolgozom a projekten. (eddig)",
         "en": "I don't work on the project. (so far)",
-        "es": "No trabajo en el proyecto. (hasta el momento)",
-        "de": "Ich arbeite nicht am Projekt. (bisher)"
+        "es": "No trabajo en el proyecto. (hasta el momento)"
       },
       "answer": "Hasta el momento no he trabajado en el proyecto.",
       "accept": [
@@ -2296,10 +1938,8 @@
         "358"
       ],
       "why": {
-        "hu": "Ami eddig nem történt meg (hasta el momento): pretérito perfecto. A(z) trabajar szabályos -ar ige, participio: trabajado, itt: he trabajado.",
         "en": "Something that has not happened so far (hasta el momento): pretérito perfecto. Trabajar is a regular -ar verb, participle: trabajado, here: he trabajado.",
-        "es": "Algo que no ha pasado hasta ahora (hasta el momento): pretérito perfecto. trabajar es un verbo regular en -ar, participio: trabajado, aquí: he trabajado.",
-        "de": "Etwas, das bisher nicht geschehen ist (hasta el momento): pretérito perfecto. trabajar ist ein regelmäßiges -ar-Verb, Partizip: trabajado, hier: he trabajado."
+        "es": "Algo que no ha pasado hasta ahora (hasta el momento): pretérito perfecto. trabajar es un verbo regular en -ar, participio: trabajado, aquí: he trabajado."
       }
     },
     {
@@ -2310,10 +1950,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Hétfő óta otthon dolgozol?",
         "en": "Have you been working at home since Monday?",
-        "es": "¿Trabajas en casa desde el lunes?",
-        "de": "Arbeitest du seit Montag zu Hause?"
+        "es": "¿Trabajas en casa desde el lunes?"
       },
       "answer": "¿Has trabajado en casa desde el lunes?",
       "accept": [
@@ -2328,10 +1966,8 @@
         "639"
       ],
       "why": {
-        "hu": "Valamikor kezdődött, és mostanáig tart (desde el lunes): pretérito perfecto. A(z) trabajar szabályos -ar ige, participio: trabajado, itt: has trabajado.",
         "en": "Something that began at some point and runs up to now (desde el lunes): pretérito perfecto. Trabajar is a regular -ar verb, participle: trabajado, here: has trabajado.",
-        "es": "Algo que empezó en un momento y llega hasta ahora (desde el lunes): pretérito perfecto. trabajar es un verbo regular en -ar, participio: trabajado, aquí: has trabajado.",
-        "de": "Etwas, das irgendwann begann und bis jetzt läuft (desde el lunes): pretérito perfecto. trabajar ist ein regelmäßiges -ar-Verb, Partizip: trabajado, hier: has trabajado."
+        "es": "Algo que empezó en un momento y llega hasta ahora (desde el lunes): pretérito perfecto. trabajar es un verbo regular en -ar, participio: trabajado, aquí: has trabajado."
       }
     },
     {
@@ -2342,10 +1978,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Januártól repülővel utazom.",
         "en": "I have been traveling by plane since January.",
-        "es": "Desde enero viajo en avión.",
-        "de": "Seit Januar reise ich mit dem Flugzeug."
+        "es": "Desde enero viajo en avión."
       },
       "answer": "Desde enero he viajado en avión.",
       "accept": [
@@ -2360,10 +1994,8 @@
         "748"
       ],
       "why": {
-        "hu": "Valamikor kezdődött, és mostanáig tart (desde enero): pretérito perfecto. A(z) viajar szabályos -ar ige, participio: viajado, itt: he viajado.",
         "en": "Something that began at some point and runs up to now (desde enero): pretérito perfecto. Viajar is a regular -ar verb, participle: viajado, here: he viajado.",
-        "es": "Algo que empezó en un momento y llega hasta ahora (desde enero): pretérito perfecto. viajar es un verbo regular en -ar, participio: viajado, aquí: he viajado.",
-        "de": "Etwas, das irgendwann begann und bis jetzt läuft (desde enero): pretérito perfecto. viajar ist ein regelmäßiges -ar-Verb, Partizip: viajado, hier: he viajado."
+        "es": "Algo que empezó en un momento y llega hasta ahora (desde enero): pretérito perfecto. viajar es un verbo regular en -ar, participio: viajado, aquí: he viajado."
       }
     },
     {
@@ -2374,10 +2006,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Sokszor a tengerpartra utazunk.",
         "en": "We often travel to the beach.",
-        "es": "Muchas veces viajamos a la playa.",
-        "de": "Oft reisen wir an den Strand."
+        "es": "Muchas veces viajamos a la playa."
       },
       "answer": "Muchas veces hemos viajado a la playa.",
       "accept": [
@@ -2393,10 +2023,8 @@
         "391"
       ],
       "why": {
-        "hu": "Jelenig ismétlődő helyzet (muchas veces): pretérito perfecto. A(z) viajar szabályos -ar ige, participio: viajado, itt: hemos viajado.",
         "en": "A situation that keeps repeating up to now (muchas veces): pretérito perfecto. Viajar is a regular -ar verb, participle: viajado, here: hemos viajado.",
-        "es": "Una situación que se repite hasta ahora (muchas veces): pretérito perfecto. viajar es un verbo regular en -ar, participio: viajado, aquí: hemos viajado.",
-        "de": "Eine Situation, die sich bis jetzt wiederholt (muchas veces): pretérito perfecto. viajar ist ein regelmäßiges -ar-Verb, Partizip: viajado, hier: hemos viajado."
+        "es": "Una situación que se repite hasta ahora (muchas veces): pretérito perfecto. viajar es un verbo regular en -ar, participio: viajado, aquí: hemos viajado."
       }
     },
     {
@@ -2407,10 +2035,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Évek óta vonattal utazunk.",
         "en": "We have been traveling by train for years.",
-        "es": "Desde hace años viajamos en tren.",
-        "de": "Seit Jahren reisen wir mit dem Zug."
+        "es": "Desde hace años viajamos en tren."
       },
       "answer": "Desde hace años hemos viajado en tren.",
       "accept": [
@@ -2425,10 +2051,8 @@
         "628"
       ],
       "why": {
-        "hu": "Valamikor kezdődött, és mostanáig tart (desde hace años): pretérito perfecto. A(z) viajar szabályos -ar ige, participio: viajado, itt: hemos viajado.",
         "en": "Something that began at some point and runs up to now (desde hace años): pretérito perfecto. Viajar is a regular -ar verb, participle: viajado, here: hemos viajado.",
-        "es": "Algo que empezó en un momento y llega hasta ahora (desde hace años): pretérito perfecto. viajar es un verbo regular en -ar, participio: viajado, aquí: hemos viajado.",
-        "de": "Etwas, das irgendwann begann und bis jetzt läuft (desde hace años): pretérito perfecto. viajar ist ein regelmäßiges -ar-Verb, Partizip: viajado, hier: hemos viajado."
+        "es": "Algo que empezó en un momento y llega hasta ahora (desde hace años): pretérito perfecto. viajar es un verbo regular en -ar, participio: viajado, aquí: hemos viajado."
       }
     },
     {
@@ -2439,10 +2063,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Nem utazom busszal. (eddig)",
         "en": "I don't travel by bus. (so far)",
-        "es": "No viajo en autobús. (hasta ahora)",
-        "de": "Ich fahre nicht mit dem Bus. (bisher)"
+        "es": "No viajo en autobús. (hasta ahora)"
       },
       "answer": "Hasta ahora no he viajado en autobús.",
       "accept": [
@@ -2457,10 +2079,8 @@
         "671"
       ],
       "why": {
-        "hu": "Ami eddig nem történt meg (hasta ahora): pretérito perfecto. A(z) viajar szabályos -ar ige, participio: viajado, itt: he viajado.",
         "en": "Something that has not happened so far (hasta ahora): pretérito perfecto. Viajar is a regular -ar verb, participle: viajado, here: he viajado.",
-        "es": "Algo que no ha pasado hasta ahora (hasta ahora): pretérito perfecto. viajar es un verbo regular en -ar, participio: viajado, aquí: he viajado.",
-        "de": "Etwas, das bisher nicht geschehen ist (hasta ahora): pretérito perfecto. viajar ist ein regelmäßiges -ar-Verb, Partizip: viajado, hier: he viajado."
+        "es": "Algo que no ha pasado hasta ahora (hasta ahora): pretérito perfecto. viajar es un verbo regular en -ar, participio: viajado, aquí: he viajado."
       }
     },
     {
@@ -2471,10 +2091,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Régóta a barátnőddel utazol?",
         "en": "Have you been traveling with your girlfriend for some time now?",
-        "es": "¿Viajas con tu novia desde hace tiempo?",
-        "de": "Reist du schon seit Langem mit deiner Freundin?"
+        "es": "¿Viajas con tu novia desde hace tiempo?"
       },
       "answer": "¿Has viajado con tu novia desde hace tiempo?",
       "accept": [
@@ -2489,10 +2107,8 @@
         "22"
       ],
       "why": {
-        "hu": "Valamikor kezdődött, és mostanáig tart (desde hace tiempo): pretérito perfecto. A(z) viajar szabályos -ar ige, participio: viajado, itt: has viajado.",
         "en": "Something that began at some point and runs up to now (desde hace tiempo): pretérito perfecto. Viajar is a regular -ar verb, participle: viajado, here: has viajado.",
-        "es": "Algo que empezó en un momento y llega hasta ahora (desde hace tiempo): pretérito perfecto. viajar es un verbo regular en -ar, participio: viajado, aquí: has viajado.",
-        "de": "Etwas, das irgendwann begann und bis jetzt läuft (desde hace tiempo): pretérito perfecto. viajar ist ein regelmäßiges -ar-Verb, Partizip: viajado, hier: has viajado."
+        "es": "Algo que empezó en un momento y llega hasta ahora (desde hace tiempo): pretérito perfecto. viajar es un verbo regular en -ar, participio: viajado, aquí: has viajado."
       }
     },
     {
@@ -2503,10 +2119,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Hétfőtől a vizsgára tanulok.",
         "en": "I have been studying for the exam since Monday.",
-        "es": "Desde el lunes estudio para el examen.",
-        "de": "Seit Montag lerne ich für die Prüfung."
+        "es": "Desde el lunes estudio para el examen."
       },
       "answer": "Desde el lunes he estudiado para el examen.",
       "accept": [
@@ -2521,10 +2135,8 @@
         "610"
       ],
       "why": {
-        "hu": "Valamikor kezdődött, és mostanáig tart (desde el lunes): pretérito perfecto. A(z) estudiar szabályos -ar ige, participio: estudiado, itt: he estudiado.",
         "en": "Something that began at some point and runs up to now (desde el lunes): pretérito perfecto. Estudiar is a regular -ar verb, participle: estudiado, here: he estudiado.",
-        "es": "Algo que empezó en un momento y llega hasta ahora (desde el lunes): pretérito perfecto. estudiar es un verbo regular en -ar, participio: estudiado, aquí: he estudiado.",
-        "de": "Etwas, das irgendwann begann und bis jetzt läuft (desde el lunes): pretérito perfecto. estudiar ist ein regelmäßiges -ar-Verb, Partizip: estudiado, hier: he estudiado."
+        "es": "Algo que empezó en un momento y llega hasta ahora (desde el lunes): pretérito perfecto. estudiar es un verbo regular en -ar, participio: estudiado, aquí: he estudiado."
       }
     },
     {
@@ -2535,10 +2147,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Tegnap óta zenével tanulok.",
         "en": "I have been studying with music since yesterday.",
-        "es": "Desde ayer estudio con música.",
-        "de": "Seit gestern lerne ich mit Musik."
+        "es": "Desde ayer estudio con música."
       },
       "answer": "Desde ayer he estudiado con música.",
       "accept": [
@@ -2553,10 +2163,8 @@
         "283"
       ],
       "why": {
-        "hu": "Valamikor kezdődött, és mostanáig tart (desde ayer): pretérito perfecto. A(z) estudiar szabályos -ar ige, participio: estudiado, itt: he estudiado.",
         "en": "Something that began at some point and runs up to now (desde ayer): pretérito perfecto. Estudiar is a regular -ar verb, participle: estudiado, here: he estudiado.",
-        "es": "Algo que empezó en un momento y llega hasta ahora (desde ayer): pretérito perfecto. estudiar es un verbo regular en -ar, participio: estudiado, aquí: he estudiado.",
-        "de": "Etwas, das irgendwann begann und bis jetzt läuft (desde ayer): pretérito perfecto. estudiar ist ein regelmäßiges -ar-Verb, Partizip: estudiado, hier: he estudiado."
+        "es": "Algo que empezó en un momento y llega hasta ahora (desde ayer): pretérito perfecto. estudiar es un verbo regular en -ar, participio: estudiado, aquí: he estudiado."
       }
     },
     {
@@ -2567,10 +2175,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Egész hónapban angolt tanulunk a tanárral.",
         "en": "All month we study English with the teacher.",
-        "es": "Todo el mes estudiamos inglés con el profesor.",
-        "de": "Den ganzen Monat lernen wir Englisch mit dem Lehrer."
+        "es": "Todo el mes estudiamos inglés con el profesor."
       },
       "answer": "Todo el mes hemos estudiado inglés con el profesor.",
       "accept": [
@@ -2587,10 +2193,8 @@
         "245"
       ],
       "why": {
-        "hu": "Jelenig tartó helyzet (todo el mes): pretérito perfecto. A(z) estudiar szabályos -ar ige, participio: estudiado, itt: hemos estudiado.",
         "en": "A situation that runs up to now (todo el mes): pretérito perfecto. Estudiar is a regular -ar verb, participle: estudiado, here: hemos estudiado.",
-        "es": "Una situación que llega hasta ahora (todo el mes): pretérito perfecto. estudiar es un verbo regular en -ar, participio: estudiado, aquí: hemos estudiado.",
-        "de": "Eine Situation, die bis jetzt reicht (todo el mes): pretérito perfecto. estudiar ist ein regelmäßiges -ar-Verb, Partizip: estudiado, hier: hemos estudiado."
+        "es": "Una situación que llega hasta ahora (todo el mes): pretérito perfecto. estudiar es un verbo regular en -ar, participio: estudiado, aquí: hemos estudiado."
       }
     },
     {
@@ -2601,10 +2205,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Nem tanulom a szavakat. (egész héten)",
         "en": "I don't study the words. (all week)",
-        "es": "No estudio las palabras. (toda la semana)",
-        "de": "Ich lerne die Wörter nicht. (die ganze Woche)"
+        "es": "No estudio las palabras. (toda la semana)"
       },
       "answer": "Toda la semana no he estudiado las palabras.",
       "accept": [
@@ -2620,10 +2222,8 @@
         "127"
       ],
       "why": {
-        "hu": "Jelenig tartó helyzet (toda la semana): pretérito perfecto. A(z) estudiar szabályos -ar ige, participio: estudiado, itt: he estudiado.",
         "en": "A situation that runs up to now (toda la semana): pretérito perfecto. Estudiar is a regular -ar verb, participle: estudiado, here: he estudiado.",
-        "es": "Una situación que llega hasta ahora (toda la semana): pretérito perfecto. estudiar es un verbo regular en -ar, participio: estudiado, aquí: he estudiado.",
-        "de": "Eine Situation, die bis jetzt reicht (toda la semana): pretérito perfecto. estudiar ist ein regelmäßiges -ar-Verb, Partizip: estudiado, hier: he estudiado."
+        "es": "Una situación que llega hasta ahora (toda la semana): pretérito perfecto. estudiar es un verbo regular en -ar, participio: estudiado, aquí: he estudiado."
       }
     },
     {
@@ -2634,10 +2234,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Egy ideje a barátaiddal tanulsz?",
         "en": "Have you been studying with your friends for a while now?",
-        "es": "¿Estudias con tus amigos desde hace rato?",
-        "de": "Lernst du schon eine Weile mit deinen Freunden?"
+        "es": "¿Estudias con tus amigos desde hace rato?"
       },
       "answer": "¿Has estudiado con tus amigos desde hace rato?",
       "accept": [
@@ -2652,10 +2250,8 @@
         "878"
       ],
       "why": {
-        "hu": "Valamikor kezdődött, és mostanáig tart (desde hace rato): pretérito perfecto. A(z) estudiar szabályos -ar ige, participio: estudiado, itt: has estudiado.",
         "en": "Something that began at some point and runs up to now (desde hace rato): pretérito perfecto. Estudiar is a regular -ar verb, participle: estudiado, here: has estudiado.",
-        "es": "Algo que empezó en un momento y llega hasta ahora (desde hace rato): pretérito perfecto. estudiar es un verbo regular en -ar, participio: estudiado, aquí: has estudiado.",
-        "de": "Etwas, das irgendwann begann und bis jetzt läuft (desde hace rato): pretérito perfecto. estudiar ist ein regelmäßiges -ar-Verb, Partizip: estudiado, hier: has estudiado."
+        "es": "Algo que empezó en un momento y llega hasta ahora (desde hace rato): pretérito perfecto. estudiar es un verbo regular en -ar, participio: estudiado, aquí: has estudiado."
       }
     },
     {
@@ -2666,10 +2262,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Reggel óta kávét főzök mindenkinek.",
         "en": "I have been making coffee for everyone since this morning.",
-        "es": "Desde la mañana hago café para todos.",
-        "de": "Seit heute früh mache ich Kaffee für alle."
+        "es": "Desde la mañana hago café para todos."
       },
       "answer": "Desde la mañana he hecho café para todos.",
       "accept": [
@@ -2685,10 +2279,8 @@
         "97"
       ],
       "why": {
-        "hu": "Valamikor kezdődött, és mostanáig tart (desde la mañana): pretérito perfecto. A(z) hacer participiója rendhagyó: hecho, itt: he hecho.",
         "en": "Something that began at some point and runs up to now (desde la mañana): pretérito perfecto. The participle of hacer is irregular: hecho, here: he hecho.",
-        "es": "Algo que empezó en un momento y llega hasta ahora (desde la mañana): pretérito perfecto. El participio de hacer es irregular: hecho, aquí: he hecho.",
-        "de": "Etwas, das irgendwann begann und bis jetzt läuft (desde la mañana): pretérito perfecto. Das Partizip von hacer ist unregelmäßig: hecho, hier: he hecho."
+        "es": "Algo que empezó en un momento y llega hasta ahora (desde la mañana): pretérito perfecto. El participio de hacer es irregular: hecho, aquí: he hecho."
       }
     },
     {
@@ -2699,10 +2291,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Csütörtöktől vacsorát készítünk a családomnak.",
         "en": "We have been making dinner for my family since Thursday.",
-        "es": "Desde el jueves hacemos la cena para mi familia.",
-        "de": "Seit Donnerstag machen wir das Abendessen für meine Familie."
+        "es": "Desde el jueves hacemos la cena para mi familia."
       },
       "answer": "Desde el jueves hemos hecho la cena para mi familia.",
       "accept": [
@@ -2718,10 +2308,8 @@
         "873"
       ],
       "why": {
-        "hu": "Valamikor kezdődött, és mostanáig tart (desde el jueves): pretérito perfecto. A(z) hacer participiója rendhagyó: hecho, itt: hemos hecho.",
         "en": "Something that began at some point and runs up to now (desde el jueves): pretérito perfecto. The participle of hacer is irregular: hecho, here: hemos hecho.",
-        "es": "Algo que empezó en un momento y llega hasta ahora (desde el jueves): pretérito perfecto. El participio de hacer es irregular: hecho, aquí: hemos hecho.",
-        "de": "Etwas, das irgendwann begann und bis jetzt läuft (desde el jueves): pretérito perfecto. Das Partizip von hacer ist unregelmäßig: hecho, hier: hemos hecho."
+        "es": "Algo que empezó en un momento y llega hasta ahora (desde el jueves): pretérito perfecto. El participio de hacer es irregular: hecho, aquí: hemos hecho."
       }
     },
     {
@@ -2732,10 +2320,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Mindent megteszel a családodért. (máig)",
         "en": "You do everything for your family. (up to today)",
-        "es": "Haces todo por tu familia. (hasta hoy)",
-        "de": "Du tust alles für deine Familie. (bis heute)"
+        "es": "Haces todo por tu familia. (hasta hoy)"
       },
       "answer": "Hasta hoy has hecho todo por tu familia.",
       "accept": [
@@ -2751,10 +2337,8 @@
         "41"
       ],
       "why": {
-        "hu": "Jelenig tartó helyzet (hasta hoy): pretérito perfecto. A(z) hacer participiója rendhagyó: hecho, itt: has hecho.",
         "en": "A situation that runs up to now (hasta hoy): pretérito perfecto. The participle of hacer is irregular: hecho, here: has hecho.",
-        "es": "Una situación que llega hasta ahora (hasta hoy): pretérito perfecto. El participio de hacer es irregular: hecho, aquí: has hecho.",
-        "de": "Eine Situation, die bis jetzt reicht (hasta hoy): pretérito perfecto. Das Partizip von hacer ist unregelmäßig: hecho, hier: has hecho."
+        "es": "Una situación que llega hasta ahora (hasta hoy): pretérito perfecto. El participio de hacer es irregular: hecho, aquí: has hecho."
       }
     },
     {
@@ -2765,10 +2349,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Nem teszünk semmit a projektért. (eddig)",
         "en": "We do nothing for the project. (so far)",
-        "es": "No hacemos nada por el proyecto. (hasta el momento)",
-        "de": "Wir tun nichts für das Projekt. (bisher)"
+        "es": "No hacemos nada por el proyecto. (hasta el momento)"
       },
       "answer": "Hasta el momento no hemos hecho nada por el proyecto.",
       "accept": [
@@ -2784,10 +2366,8 @@
         "358"
       ],
       "why": {
-        "hu": "Ami eddig nem történt meg (hasta el momento): pretérito perfecto. A(z) hacer participiója rendhagyó: hecho, itt: hemos hecho.",
         "en": "Something that has not happened so far (hasta el momento): pretérito perfecto. The participle of hacer is irregular: hecho, here: hemos hecho.",
-        "es": "Algo que no ha pasado hasta ahora (hasta el momento): pretérito perfecto. El participio de hacer es irregular: hecho, aquí: hemos hecho.",
-        "de": "Etwas, das bisher nicht geschehen ist (hasta el momento): pretérito perfecto. Das Partizip von hacer ist unregelmäßig: hecho, hier: hemos hecho."
+        "es": "Algo que no ha pasado hasta ahora (hasta el momento): pretérito perfecto. El participio de hacer es irregular: hecho, aquí: hemos hecho."
       }
     },
     {
@@ -2798,10 +2378,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Önök péntek óta sportolnak?",
         "en": "Have you been exercising since Friday?",
-        "es": "¿Hacen ustedes ejercicio desde el viernes?",
-        "de": "Treiben Sie seit Freitag Sport?"
+        "es": "¿Hacen ustedes ejercicio desde el viernes?"
       },
       "answer": "¿Han hecho ustedes ejercicio desde el viernes?",
       "accept": [
@@ -2815,10 +2393,8 @@
         "708"
       ],
       "why": {
-        "hu": "Valamikor kezdődött, és mostanáig tart (desde el viernes): pretérito perfecto. A(z) hacer participiója rendhagyó: hecho, itt: ¿Han hecho ustedes ejercicio desde el viernes?.",
         "en": "Something that began at some point and runs up to now (desde el viernes): pretérito perfecto. The participle of hacer is irregular: hecho, here: ¿Han hecho ustedes ejercicio desde el viernes?.",
-        "es": "Algo que empezó en un momento y llega hasta ahora (desde el viernes): pretérito perfecto. El participio de hacer es irregular: hecho, aquí: ¿Han hecho ustedes ejercicio desde el viernes?.",
-        "de": "Etwas, das irgendwann begann und bis jetzt läuft (desde el viernes): pretérito perfecto. Das Partizip von hacer ist unregelmäßig: hecho, hier: ¿Han hecho ustedes ejercicio desde el viernes?."
+        "es": "Algo que empezó en un momento y llega hasta ahora (desde el viernes): pretérito perfecto. El participio de hacer es irregular: hecho, aquí: ¿Han hecho ustedes ejercicio desde el viernes?."
       }
     },
     {
@@ -2829,10 +2405,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Sokszor reggel nézem a híreket.",
         "en": "I often watch the news in the morning.",
-        "es": "Muchas veces veo las noticias en la mañana.",
-        "de": "Oft sehe ich morgens die Nachrichten."
+        "es": "Muchas veces veo las noticias en la mañana."
       },
       "answer": "Muchas veces he visto las noticias en la mañana.",
       "accept": [
@@ -2849,10 +2423,8 @@
         "173"
       ],
       "why": {
-        "hu": "Jelenig ismétlődő helyzet (muchas veces): pretérito perfecto. A(z) ver participiója rendhagyó: visto, itt: he visto.",
         "en": "A situation that keeps repeating up to now (muchas veces): pretérito perfecto. The participle of ver is irregular: visto, here: he visto.",
-        "es": "Una situación que se repite hasta ahora (muchas veces): pretérito perfecto. El participio de ver es irregular: visto, aquí: he visto.",
-        "de": "Eine Situation, die sich bis jetzt wiederholt (muchas veces): pretérito perfecto. Das Partizip von ver ist unregelmäßig: visto, hier: he visto."
+        "es": "Una situación que se repite hasta ahora (muchas veces): pretérito perfecto. El participio de ver es irregular: visto, aquí: he visto."
       }
     },
     {
@@ -2863,10 +2435,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Nem látom a szomszédomat. (máig)",
         "en": "I don't see my neighbor. (up to today)",
-        "es": "No veo a mi vecino. (hasta hoy)",
-        "de": "Ich sehe meinen Nachbarn nicht. (bis heute)"
+        "es": "No veo a mi vecino. (hasta hoy)"
       },
       "answer": "Hasta hoy no he visto a mi vecino.",
       "accept": [
@@ -2881,10 +2451,8 @@
         "385"
       ],
       "why": {
-        "hu": "Ami eddig nem történt meg (hasta hoy): pretérito perfecto. A(z) ver participiója rendhagyó: visto, itt: he visto.",
         "en": "Something that has not happened so far (hasta hoy): pretérito perfecto. The participle of ver is irregular: visto, here: he visto.",
-        "es": "Algo que no ha pasado hasta ahora (hasta hoy): pretérito perfecto. El participio de ver es irregular: visto, aquí: he visto.",
-        "de": "Etwas, das bisher nicht geschehen ist (hasta hoy): pretérito perfecto. Das Partizip von ver ist unregelmäßig: visto, hier: he visto."
+        "es": "Algo que no ha pasado hasta ahora (hasta hoy): pretérito perfecto. El participio de ver es irregular: visto, aquí: he visto."
       }
     },
     {
@@ -2895,10 +2463,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Márciustól angolul nézzük a filmeket.",
         "en": "We have been watching movies in English since March.",
-        "es": "Desde marzo vemos las películas en inglés.",
-        "de": "Seit März sehen wir die Filme auf Englisch."
+        "es": "Desde marzo vemos las películas en inglés."
       },
       "answer": "Desde marzo hemos visto las películas en inglés.",
       "accept": [
@@ -2914,10 +2480,8 @@
         "715"
       ],
       "why": {
-        "hu": "Valamikor kezdődött, és mostanáig tart (desde marzo): pretérito perfecto. A(z) ver participiója rendhagyó: visto, itt: hemos visto.",
         "en": "Something that began at some point and runs up to now (desde marzo): pretérito perfecto. The participle of ver is irregular: visto, here: hemos visto.",
-        "es": "Algo que empezó en un momento y llega hasta ahora (desde marzo): pretérito perfecto. El participio de ver es irregular: visto, aquí: hemos visto.",
-        "de": "Etwas, das irgendwann begann und bis jetzt läuft (desde marzo): pretérito perfecto. Das Partizip von ver ist unregelmäßig: visto, hier: hemos visto."
+        "es": "Algo que empezó en un momento y llega hasta ahora (desde marzo): pretérito perfecto. El participio de ver es irregular: visto, aquí: hemos visto."
       }
     },
     {
@@ -2928,10 +2492,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Régóta nem látjuk a barátaimat.",
         "en": "We haven't seen my friends for some time now.",
-        "es": "Desde hace tiempo no vemos a mis amigos.",
-        "de": "Seit Langem sehen wir meine Freunde nicht."
+        "es": "Desde hace tiempo no vemos a mis amigos."
       },
       "answer": "Desde hace tiempo no hemos visto a mis amigos.",
       "accept": [
@@ -2946,10 +2508,8 @@
         "40"
       ],
       "why": {
-        "hu": "Valamikor kezdődött, és mostanáig tart (desde hace tiempo): pretérito perfecto. A(z) ver participiója rendhagyó: visto, itt: hemos visto.",
         "en": "Something that began at some point and runs up to now (desde hace tiempo): pretérito perfecto. The participle of ver is irregular: visto, here: hemos visto.",
-        "es": "Algo que empezó en un momento y llega hasta ahora (desde hace tiempo): pretérito perfecto. El participio de ver es irregular: visto, aquí: hemos visto.",
-        "de": "Etwas, das irgendwann begann und bis jetzt läuft (desde hace tiempo): pretérito perfecto. Das Partizip von ver ist unregelmäßig: visto, hier: hemos visto."
+        "es": "Algo que empezó en un momento y llega hasta ahora (desde hace tiempo): pretérito perfecto. El participio de ver es irregular: visto, aquí: hemos visto."
       }
     },
     {
@@ -2960,10 +2520,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Látod a fivéredet? (január óta)",
         "en": "Do you see your brother? (since January)",
-        "es": "¿Ves a tu hermano? (desde enero)",
-        "de": "Siehst du deinen Bruder? (seit Januar)"
+        "es": "¿Ves a tu hermano? (desde enero)"
       },
       "answer": "¿Has visto a tu hermano desde enero?",
       "accept": [
@@ -2978,10 +2536,8 @@
         "641"
       ],
       "why": {
-        "hu": "Valamikor kezdődött, és mostanáig tart (desde enero): pretérito perfecto. A(z) ver participiója rendhagyó: visto, itt: has visto.",
         "en": "Something that began at some point and runs up to now (desde enero): pretérito perfecto. The participle of ver is irregular: visto, here: has visto.",
-        "es": "Algo que empezó en un momento y llega hasta ahora (desde enero): pretérito perfecto. El participio de ver es irregular: visto, aquí: has visto.",
-        "de": "Etwas, das irgendwann begann und bis jetzt läuft (desde enero): pretérito perfecto. Das Partizip von ver ist unregelmäßig: visto, hier: has visto."
+        "es": "Algo que empezó en un momento y llega hasta ahora (desde enero): pretérito perfecto. El participio de ver es irregular: visto, aquí: has visto."
       }
     },
     {
@@ -2992,10 +2548,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Sokszor köszönök a szomszédomnak.",
         "en": "I often say hello to my neighbor.",
-        "es": "Muchas veces digo hola a mi vecino.",
-        "de": "Oft sage ich meinem Nachbarn hallo."
+        "es": "Muchas veces digo hola a mi vecino."
       },
       "answer": "Muchas veces he dicho hola a mi vecino.",
       "accept": [
@@ -3012,10 +2566,8 @@
         "385"
       ],
       "why": {
-        "hu": "Jelenig ismétlődő helyzet (muchas veces): pretérito perfecto. A(z) decir participiója rendhagyó: dicho, itt: he dicho.",
         "en": "A situation that keeps repeating up to now (muchas veces): pretérito perfecto. The participle of decir is irregular: dicho, here: he dicho.",
-        "es": "Una situación que se repite hasta ahora (muchas veces): pretérito perfecto. El participio de decir es irregular: dicho, aquí: he dicho.",
-        "de": "Eine Situation, die sich bis jetzt wiederholt (muchas veces): pretérito perfecto. Das Partizip von decir ist unregelmäßig: dicho, hier: he dicho."
+        "es": "Una situación que se repite hasta ahora (muchas veces): pretérito perfecto. El participio de decir es irregular: dicho, aquí: he dicho."
       }
     },
     {
@@ -3026,10 +2578,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Tegnap este óta furcsa dolgokat mondasz.",
         "en": "You have been saying strange things since last night.",
-        "es": "Desde anoche dices cosas raras.",
-        "de": "Seit gestern Abend sagst du seltsame Dinge."
+        "es": "Desde anoche dices cosas raras."
       },
       "answer": "Desde anoche has dicho cosas raras.",
       "accept": [
@@ -3045,10 +2595,8 @@
         "879"
       ],
       "why": {
-        "hu": "Valamikor kezdődött, és mostanáig tart (desde anoche): pretérito perfecto. A(z) decir participiója rendhagyó: dicho, itt: has dicho.",
         "en": "Something that began at some point and runs up to now (desde anoche): pretérito perfecto. The participle of decir is irregular: dicho, here: has dicho.",
-        "es": "Algo que empezó en un momento y llega hasta ahora (desde anoche): pretérito perfecto. El participio de decir es irregular: dicho, aquí: has dicho.",
-        "de": "Etwas, das irgendwann begann und bis jetzt läuft (desde anoche): pretérito perfecto. Das Partizip von decir ist unregelmäßig: dicho, hier: has dicho."
+        "es": "Algo que empezó en un momento y llega hasta ahora (desde anoche): pretérito perfecto. El participio de decir es irregular: dicho, aquí: has dicho."
       }
     },
     {
@@ -3059,10 +2607,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Az orvos nem mond semmit. (máig)",
         "en": "The doctor says nothing. (up to today)",
-        "es": "El médico no dice nada. (hasta hoy)",
-        "de": "Der Arzt sagt nichts. (bis heute)"
+        "es": "El médico no dice nada. (hasta hoy)"
       },
       "answer": "Hasta hoy el médico no ha dicho nada.",
       "accept": [
@@ -3076,10 +2622,8 @@
         "98"
       ],
       "why": {
-        "hu": "Ami eddig nem történt meg (hasta hoy): pretérito perfecto. A(z) decir participiója rendhagyó: dicho, itt: ha dicho.",
         "en": "Something that has not happened so far (hasta hoy): pretérito perfecto. The participle of decir is irregular: dicho, here: ha dicho.",
-        "es": "Algo que no ha pasado hasta ahora (hasta hoy): pretérito perfecto. El participio de decir es irregular: dicho, aquí: ha dicho.",
-        "de": "Etwas, das bisher nicht geschehen ist (hasta hoy): pretérito perfecto. Das Partizip von decir ist unregelmäßig: dicho, hier: ha dicho."
+        "es": "Algo que no ha pasado hasta ahora (hasta hoy): pretérito perfecto. El participio de decir es irregular: dicho, aquí: ha dicho."
       }
     },
     {
@@ -3090,10 +2634,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Egy ideje nem mondunk semmit a tanárnak.",
         "en": "We haven't said anything to the teacher for a while now.",
-        "es": "Desde hace rato no decimos nada al profesor.",
-        "de": "Seit einer Weile sagen wir dem Lehrer nichts."
+        "es": "Desde hace rato no decimos nada al profesor."
       },
       "answer": "Desde hace rato no hemos dicho nada al profesor.",
       "accept": [
@@ -3109,10 +2651,8 @@
         "878"
       ],
       "why": {
-        "hu": "Valamikor kezdődött, és mostanáig tart (desde hace rato): pretérito perfecto. A(z) decir participiója rendhagyó: dicho, itt: hemos dicho.",
         "en": "Something that began at some point and runs up to now (desde hace rato): pretérito perfecto. The participle of decir is irregular: dicho, here: hemos dicho.",
-        "es": "Algo que empezó en un momento y llega hasta ahora (desde hace rato): pretérito perfecto. El participio de decir es irregular: dicho, aquí: hemos dicho.",
-        "de": "Etwas, das irgendwann begann und bis jetzt läuft (desde hace rato): pretérito perfecto. Das Partizip von decir ist unregelmäßig: dicho, hier: hemos dicho."
+        "es": "Algo que empezó en un momento y llega hasta ahora (desde hace rato): pretérito perfecto. El participio de decir es irregular: dicho, aquí: hemos dicho."
       }
     },
     {
@@ -3123,10 +2663,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Mit mond a tanár mostanában?",
         "en": "What does the teacher say lately?",
-        "es": "¿Qué dice el profesor últimamente?",
-        "de": "Was sagt der Lehrer in letzter Zeit?"
+        "es": "¿Qué dice el profesor últimamente?"
       },
       "answer": "¿Qué ha dicho el profesor últimamente?",
       "accept": [
@@ -3140,10 +2678,8 @@
         "747"
       ],
       "why": {
-        "hu": "Jelenig tartó helyzet (últimamente): pretérito perfecto. A(z) decir participiója rendhagyó: dicho, itt: ¿Qué ha dicho el profesor últimamente?.",
         "en": "A situation that runs up to now (últimamente): pretérito perfecto. The participle of decir is irregular: dicho, here: ¿Qué ha dicho el profesor últimamente?.",
-        "es": "Una situación que llega hasta ahora (últimamente): pretérito perfecto. El participio de decir es irregular: dicho, aquí: ¿Qué ha dicho el profesor últimamente?.",
-        "de": "Eine Situation, die bis jetzt reicht (últimamente): pretérito perfecto. Das Partizip von decir ist unregelmäßig: dicho, hier: ¿Qué ha dicho el profesor últimamente?."
+        "es": "Una situación que llega hasta ahora (últimamente): pretérito perfecto. El participio de decir es irregular: dicho, aquí: ¿Qué ha dicho el profesor últimamente?."
       }
     },
     {
@@ -3154,10 +2690,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Keddtől e-maileket írok a főnökömnek.",
         "en": "I have been writing emails to my boss since Tuesday.",
-        "es": "Desde el martes escribo correos a mi jefe.",
-        "de": "Seit Dienstag schreibe ich E-Mails an meinen Chef."
+        "es": "Desde el martes escribo correos a mi jefe."
       },
       "answer": "Desde el martes he escrito correos a mi jefe.",
       "accept": [
@@ -3173,10 +2707,8 @@
         "383"
       ],
       "why": {
-        "hu": "Valamikor kezdődött, és mostanáig tart (desde el martes): pretérito perfecto. A(z) escribir participiója rendhagyó: escrito, itt: he escrito.",
         "en": "Something that began at some point and runs up to now (desde el martes): pretérito perfecto. The participle of escribir is irregular: escrito, here: he escrito.",
-        "es": "Algo que empezó en un momento y llega hasta ahora (desde el martes): pretérito perfecto. El participio de escribir es irregular: escrito, aquí: he escrito.",
-        "de": "Etwas, das irgendwann begann und bis jetzt läuft (desde el martes): pretérito perfecto. Das Partizip von escribir ist unregelmäßig: escrito, hier: he escrito."
+        "es": "Algo que empezó en un momento y llega hasta ahora (desde el martes): pretérito perfecto. El participio de escribir es irregular: escrito, aquí: he escrito."
       }
     },
     {
@@ -3187,10 +2719,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Júniustól leveleket írsz a barátodnak.",
         "en": "You have been writing letters to your friend since June.",
-        "es": "Desde junio escribes cartas a tu amigo.",
-        "de": "Seit Juni schreibst du deinem Freund Briefe."
+        "es": "Desde junio escribes cartas a tu amigo."
       },
       "answer": "Desde junio has escrito cartas a tu amigo.",
       "accept": [
@@ -3206,10 +2736,8 @@
         "40"
       ],
       "why": {
-        "hu": "Valamikor kezdődött, és mostanáig tart (desde junio): pretérito perfecto. A(z) escribir participiója rendhagyó: escrito, itt: has escrito.",
         "en": "Something that began at some point and runs up to now (desde junio): pretérito perfecto. The participle of escribir is irregular: escrito, here: has escrito.",
-        "es": "Algo que empezó en un momento y llega hasta ahora (desde junio): pretérito perfecto. El participio de escribir es irregular: escrito, aquí: has escrito.",
-        "de": "Etwas, das irgendwann begann und bis jetzt läuft (desde junio): pretérito perfecto. Das Partizip von escribir ist unregelmäßig: escrito, hier: has escrito."
+        "es": "Algo que empezó en un momento y llega hasta ahora (desde junio): pretérito perfecto. El participio de escribir es irregular: escrito, aquí: has escrito."
       }
     },
     {
@@ -3220,10 +2748,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Áprilistól jelentéseket írunk az ügyféllel.",
         "en": "We have been writing reports with the client since April.",
-        "es": "Desde abril escribimos informes con el cliente.",
-        "de": "Seit April schreiben wir Berichte mit dem Kunden."
+        "es": "Desde abril escribimos informes con el cliente."
       },
       "answer": "Desde abril hemos escrito informes con el cliente.",
       "accept": [
@@ -3239,10 +2765,8 @@
         "875"
       ],
       "why": {
-        "hu": "Valamikor kezdődött, és mostanáig tart (desde abril): pretérito perfecto. A(z) escribir participiója rendhagyó: escrito, itt: hemos escrito.",
         "en": "Something that began at some point and runs up to now (desde abril): pretérito perfecto. The participle of escribir is irregular: escrito, here: hemos escrito.",
-        "es": "Algo que empezó en un momento y llega hasta ahora (desde abril): pretérito perfecto. El participio de escribir es irregular: escrito, aquí: hemos escrito.",
-        "de": "Etwas, das irgendwann begann und bis jetzt läuft (desde abril): pretérito perfecto. Das Partizip von escribir ist unregelmäßig: escrito, hier: hemos escrito."
+        "es": "Algo que empezó en un momento y llega hasta ahora (desde abril): pretérito perfecto. El participio de escribir es irregular: escrito, aquí: hemos escrito."
       }
     },
     {
@@ -3253,10 +2777,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Nem írom meg az üzenetet. (tegnap este óta)",
         "en": "I don't write the message. (since last night)",
-        "es": "No escribo el mensaje. (desde anoche)",
-        "de": "Ich schreibe die Nachricht nicht. (seit gestern Abend)"
+        "es": "No escribo el mensaje. (desde anoche)"
       },
       "answer": "Desde anoche no he escrito el mensaje.",
       "accept": [
@@ -3271,10 +2793,8 @@
         "277"
       ],
       "why": {
-        "hu": "Valamikor kezdődött, és mostanáig tart (desde anoche): pretérito perfecto. A(z) escribir participiója rendhagyó: escrito, itt: he escrito.",
         "en": "Something that began at some point and runs up to now (desde anoche): pretérito perfecto. The participle of escribir is irregular: escrito, here: he escrito.",
-        "es": "Algo que empezó en un momento y llega hasta ahora (desde anoche): pretérito perfecto. El participio de escribir es irregular: escrito, aquí: he escrito.",
-        "de": "Etwas, das irgendwann begann und bis jetzt läuft (desde anoche): pretérito perfecto. Das Partizip von escribir ist unregelmäßig: escrito, hier: he escrito."
+        "es": "Algo que empezó en un momento y llega hasta ahora (desde anoche): pretérito perfecto. El participio de escribir es irregular: escrito, aquí: he escrito."
       }
     },
     {
@@ -3285,10 +2805,8 @@
         "to": "perfecto"
       },
       "prompt": {
-        "hu": "Önök egy hónapja írnak az ügyfélnek?",
         "en": "Have you been writing to the client for a month now?",
-        "es": "¿Escriben ustedes al cliente desde hace un mes?",
-        "de": "Schreiben Sie seit einem Monat an den Kunden?"
+        "es": "¿Escriben ustedes al cliente desde hace un mes?"
       },
       "answer": "¿Han escrito ustedes al cliente desde hace un mes?",
       "accept": [
@@ -3302,10 +2820,8 @@
         "282"
       ],
       "why": {
-        "hu": "Valamikor kezdődött, és mostanáig tart (desde hace un mes): pretérito perfecto. A(z) escribir participiója rendhagyó: escrito, itt: ¿Han escrito ustedes al cliente desde hace un mes?.",
         "en": "Something that began at some point and runs up to now (desde hace un mes): pretérito perfecto. The participle of escribir is irregular: escrito, here: ¿Han escrito ustedes al cliente desde hace un mes?.",
-        "es": "Algo que empezó en un momento y llega hasta ahora (desde hace un mes): pretérito perfecto. El participio de escribir es irregular: escrito, aquí: ¿Han escrito ustedes al cliente desde hace un mes?.",
-        "de": "Etwas, das irgendwann begann und bis jetzt läuft (desde hace un mes): pretérito perfecto. Das Partizip von escribir ist unregelmäßig: escrito, hier: ¿Han escrito ustedes al cliente desde hace un mes?."
+        "es": "Algo que empezó en un momento y llega hasta ahora (desde hace un mes): pretérito perfecto. El participio de escribir es irregular: escrito, aquí: ¿Han escrito ustedes al cliente desde hace un mes?."
       }
     }
   ]

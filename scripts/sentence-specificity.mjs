@@ -32,8 +32,8 @@ const LEVELS = levels.length ? levels : ['a0', 'a1', 'a2'];
 
 // The language a card's example sentence is graded in: the branch teaches that
 // language, so that is the sentence the learner reads and repeats.
-const SENTENCE_FIELD = { es: 'sentence_es', en: 'sentence_en', hu: 'sentence_hu' }[branch] ?? 'sentence_es';
-const HEADWORD_FIELD = { es: 'es', en: 'en', hu: 'hu' }[branch] ?? 'es';
+const SENTENCE_FIELD = { es: 'sentence_es', en: 'sentence_en' }[branch] ?? 'sentence_es';
+const HEADWORD_FIELD = { es: 'es', en: 'en' }[branch] ?? 'es';
 
 // A frame this short carries no information about the word, whatever it is.
 const MIN_SENTENCE_WORDS = 5;

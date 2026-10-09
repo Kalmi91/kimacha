@@ -3,42 +3,32 @@
   "topic": "ability_past",
   "level": "B2",
   "title": {
-    "hu": "Múltbeli képesség (could / was able to / managed to)",
     "en": "Past Ability (could / was able to / managed to)",
-    "es": "La habilidad en el pasado (could / was able to / managed to)",
-    "de": "Fähigkeit in der Vergangenheit (could / was able to / managed to)"
+    "es": "La habilidad en el pasado (could / was able to / managed to)"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "Az angol a múltbeli képességnél két esetet választ szét. Általános képesség: could („When I was ten, I could swim.”), mint a spanyol „podía” vagy „sabía”. Egy konkrét alkalom sikere: was/were able to vagy managed to („Yesterday, I was able to fix the car.”), mint a spanyol „pude” vagy „logré”. Itt a could nem használható. A tagadás, a couldn’t, mindkét esetben jó.",
         "en": "English separates two cases for ability in the past. General ability: could (“When I was ten, I could swim.”), like the Spanish “podía” or “sabía”. Success on one specific occasion: was/were able to or managed to (“Yesterday, I was able to fix the car.”), like the Spanish “pude” or “logré”. Could does not work there. The negative, couldn’t, is correct in both cases.",
-        "es": "El inglés separa dos casos para la habilidad en el pasado. Habilidad general: could («When I was ten, I could swim.»), como el «podía» o el «sabía» del español. Un logro en una ocasión concreta: was/were able to o managed to («Yesterday, I was able to fix the car.»), como el «pude» o el «logré» del español. Ahí could no funciona. La negación, couldn’t, sirve en los dos casos.",
-        "de": "Das Englische trennt bei der Fähigkeit in der Vergangenheit zwei Fälle. Allgemeine Fähigkeit: could („When I was ten, I could swim.“), wie das spanische „podía“ oder „sabía“. Erfolg bei einer bestimmten Gelegenheit: was/were able to oder managed to („Yesterday, I was able to fix the car.“), wie das spanische „pude“ oder „logré“. Dort geht could nicht. Die Verneinung, couldn’t, passt in beiden Fällen."
+        "es": "El inglés separa dos casos para la habilidad en el pasado. Habilidad general: could («When I was ten, I could swim.»), como el «podía» o el «sabía» del español. Un logro en una ocasión concreta: was/were able to o managed to («Yesterday, I was able to fix the car.»), como el «pude» o el «logré» del español. Ahí could no funciona. La negación, couldn’t, sirve en los dos casos."
       }
     },
     {
       "kind": "table",
       "id": "abp-forms",
       "title": {
-        "hu": "Melyik alak?",
         "en": "Which form?",
-        "es": "¿Qué forma uso?",
-        "de": "Welche Form?"
+        "es": "¿Qué forma uso?"
       },
       "header": [
         {
-          "hu": "Helyzet",
           "en": "Situation",
-          "es": "Situación",
-          "de": "Situation"
+          "es": "Situación"
         },
         {
-          "hu": "forma",
           "en": "form",
-          "es": "forma",
-          "de": "Form"
+          "es": "forma"
         }
       ],
       "rows": [
@@ -71,36 +61,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Általános képesség: could",
         "en": "General ability: could",
-        "es": "Habilidad general: could",
-        "de": "Allgemeine Fähigkeit: could"
+        "es": "Habilidad general: could"
       },
       "items": [
         {
           "text": {
-            "hu": "Amit valaki egy időszakban általában meg tudott csinálni: could + alapige.",
             "en": "What someone was generally able to do during a period: could + base verb.",
-            "es": "Lo que alguien podía hacer en general durante una época: could + verbo base.",
-            "de": "Was jemand in einer Zeit im Allgemeinen konnte: could + Grundform."
+            "es": "Lo que alguien podía hacer en general durante una época: could + verbo base."
           },
           "examples": [
             {
               "es": "When I was ten, I could swim very fast.",
               "tr": {
-                "hu": "Tízéves koromban nagyon gyorsan tudtam úszni.",
                 "en": "When I was ten, I could swim very fast.",
-                "es": "A los diez años yo podía nadar muy rápido.",
-                "de": "Mit zehn konnte ich sehr schnell schwimmen."
+                "es": "A los diez años yo podía nadar muy rápido."
               }
             },
             {
               "es": "As a child, she could read before school.",
               "tr": {
-                "hu": "Gyerekként már az iskola előtt tudott olvasni.",
                 "en": "As a child, she could read before school.",
-                "es": "De niña ya podía leer antes de la escuela.",
-                "de": "Als Kind konnte sie schon vor der Schule lesen."
+                "es": "De niña ya podía leer antes de la escuela."
               }
             }
           ]
@@ -110,64 +92,50 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Egy konkrét alkalom sikere: was/were able to, managed to",
         "en": "One specific success: was/were able to, managed to",
-        "es": "Un logro concreto: was/were able to, managed to",
-        "de": "Ein bestimmter Erfolg: was/were able to, managed to"
+        "es": "Un logro concreto: was/were able to, managed to"
       },
       "items": [
         {
           "text": {
-            "hu": "Ha egyszer sikerült valami, was/were able to vagy managed to áll. A managed to nehézséget, erőfeszítést is kifejez.",
             "en": "When something worked out once, use was/were able to or managed to. Managed to also shows difficulty or effort.",
-            "es": "Cuando algo se logró una vez, se usa was/were able to o managed to. Managed to además muestra dificultad o esfuerzo.",
-            "de": "Wenn etwas einmal gelungen ist, steht was/were able to oder managed to. Managed to zeigt außerdem Schwierigkeit oder Mühe."
+            "es": "Cuando algo se logró una vez, se usa was/were able to o managed to. Managed to además muestra dificultad o esfuerzo."
           },
           "examples": [
             {
               "es": "The door was locked, but I managed to open it.",
               "tr": {
-                "hu": "Az ajtó be volt zárva, de sikerült kinyitnom.",
                 "en": "The door was locked, but I managed to open it.",
-                "es": "La puerta estaba cerrada con llave, pero logré abrirla.",
-                "de": "Die Tür war abgeschlossen, aber ich habe sie aufbekommen."
+                "es": "La puerta estaba cerrada con llave, pero logré abrirla."
               }
             },
             {
               "es": "Luckily, they were able to leave early.",
               "tr": {
-                "hu": "Szerencsére korán el tudtak indulni.",
                 "en": "Luckily, they were able to leave early.",
-                "es": "Por suerte pudieron salir temprano.",
-                "de": "Zum Glück konnten sie früh losgehen."
+                "es": "Por suerte pudieron salir temprano."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A managed után to + alapige áll, a succeeded után in + ige-ing: „She succeeded in finding a job.”",
             "en": "After managed comes to + base verb, after succeeded comes in + verb-ing: “She succeeded in finding a job.”",
-            "es": "Después de managed va to + verbo base, después de succeeded va in + verbo-ing: «She succeeded in finding a job.»",
-            "de": "Nach managed steht to + Grundform, nach succeeded steht in + Verb-ing: „She succeeded in finding a job.“"
+            "es": "Después de managed va to + verbo base, después de succeeded va in + verbo-ing: «She succeeded in finding a job.»"
           },
           "examples": [
             {
               "es": "She managed to pass the exam.",
               "tr": {
-                "hu": "Sikerült átmennie a vizsgán.",
                 "en": "She managed to pass the exam.",
-                "es": "Logró aprobar el examen.",
-                "de": "Sie hat die Prüfung geschafft."
+                "es": "Logró aprobar el examen."
               }
             },
             {
               "es": "He succeeded in finding a job.",
               "tr": {
-                "hu": "Sikerült munkát találnia.",
                 "en": "He succeeded in finding a job.",
-                "es": "Consiguió encontrar trabajo.",
-                "de": "Er hat es geschafft, Arbeit zu finden."
+                "es": "Consiguió encontrar trabajo."
               }
             }
           ]
@@ -177,36 +145,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Kivételek: couldn’t és az észlelést kifejező igék",
         "en": "Exceptions: couldn’t and perception verbs",
-        "es": "Excepciones: couldn’t y los verbos de percepción",
-        "de": "Ausnahmen: couldn’t und Wahrnehmungsverben"
+        "es": "Excepciones: couldn’t y los verbos de percepción"
       },
       "items": [
         {
           "text": {
-            "hu": "Tagadásban a couldn’t jó konkrét alkalomra is: „I couldn’t open the door.” A see, hear, smell, understand igék mellett az egyszeri esetnél is could áll.",
             "en": "In the negative, couldn’t works for one occasion too: “I couldn’t open the door.” With see, hear, smell, understand, could is used even for one occasion.",
-            "es": "En negativo, couldn’t sirve también para una ocasión: «I couldn’t open the door.» Con see, hear, smell, understand, could se usa incluso para una sola ocasión.",
-            "de": "In der Verneinung passt couldn’t auch für eine Gelegenheit: „I couldn’t open the door.“ Bei see, hear, smell, understand steht could sogar für einen einzelnen Fall."
+            "es": "En negativo, couldn’t sirve también para una ocasión: «I couldn’t open the door.» Con see, hear, smell, understand, could se usa incluso para una sola ocasión."
           },
           "examples": [
             {
               "es": "I couldn't open the door.",
               "tr": {
-                "hu": "Nem tudtam kinyitni az ajtót.",
                 "en": "I couldn't open the door.",
-                "es": "No pude abrir la puerta.",
-                "de": "Ich konnte die Tür nicht öffnen."
+                "es": "No pude abrir la puerta."
               }
             },
             {
               "es": "At the top, we could see the whole city.",
               "tr": {
-                "hu": "A csúcson az egész várost láttuk.",
                 "en": "At the top, we could see the whole city.",
-                "es": "Arriba pudimos ver toda la ciudad.",
-                "de": "Oben konnten wir die ganze Stadt sehen."
+                "es": "Arriba pudimos ver toda la ciudad."
               }
             }
           ]
@@ -216,36 +176,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Elszalasztott lehetőség: could have + igenév",
         "en": "A missed chance: could have + participle",
-        "es": "Una oportunidad perdida: could have + participio",
-        "de": "Eine verpasste Chance: could have + Partizip"
+        "es": "Una oportunidad perdida: could have + participio"
       },
       "items": [
         {
           "text": {
-            "hu": "Megvolt a lehetőség, de nem történt meg: „I could have won.” A couldn’t have + igenév azt jelenti, hogy lehetetlen volt.",
             "en": "You had the chance but it did not happen: “I could have won.” Couldn’t have + participle means it was impossible.",
-            "es": "Tenías la oportunidad pero no ocurrió: «I could have won.» Couldn’t have + participio significa que era imposible.",
-            "de": "Die Möglichkeit war da, aber es geschah nicht: „I could have won.“ Couldn’t have + Partizip heißt, dass es unmöglich war."
+            "es": "Tenías la oportunidad pero no ocurrió: «I could have won.» Couldn’t have + participio significa que era imposible."
           },
           "examples": [
             {
               "es": "I could have won the game, but I made a mistake.",
               "tr": {
-                "hu": "Megnyerhettem volna a meccset, de hibáztam.",
                 "en": "I could have won the game, but I made a mistake.",
-                "es": "Podría haber ganado el juego, pero cometí un error.",
-                "de": "Ich hätte das Spiel gewinnen können, aber ich habe einen Fehler gemacht."
+                "es": "Podría haber ganado el juego, pero cometí un error."
               }
             },
             {
               "es": "It couldn't have been Tom. He was away.",
               "tr": {
-                "hu": "Nem lehetett Tom. Távol volt.",
                 "en": "It couldn't have been Tom. He was away.",
-                "es": "No pudo haber sido Tom. Estaba fuera.",
-                "de": "Es kann nicht Tom gewesen sein. Er war weg."
+                "es": "No pudo haber sido Tom. Estaba fuera."
               }
             }
           ]
@@ -255,162 +207,126 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Nem „I didn’t could”: a could már maga múlt idejű, a tagadása couldn’t. A could után mindig alapige áll: „I could swim”, nem „I could swam”.",
         "en": "Not “I didn’t could”: could is already past, and its negative is couldn’t. After could there is always the base verb: “I could swim”, not “I could swam”.",
-        "es": "No «I didn’t could»: could ya es pasado, y su negación es couldn’t. Después de could siempre va el verbo base: «I could swim», no «I could swam».",
-        "de": "Nicht „I didn’t could“: could ist schon Vergangenheit, und die Verneinung ist couldn’t. Nach could steht immer die Grundform: „I could swim“, nicht „I could swam“."
+        "es": "No «I didn’t could»: could ya es pasado, y su negación es couldn’t. Después de could siempre va el verbo base: «I could swim», no «I could swam»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "Jó emlékeztető: a spanyol „podía” (képesség) általában could, a „pude” (konkrét siker) általában was able to vagy managed to. A „no pude” viszont couldn’t.",
         "en": "A good reminder: the Spanish “podía” (ability) is usually could, and “pude” (specific success) is usually was able to or managed to. But “no pude” is couldn’t.",
-        "es": "Un buen recordatorio: el «podía» (habilidad) suele ser could, y el «pude» (logro concreto) suele ser was able to o managed to. Pero «no pude» es couldn’t.",
-        "de": "Eine gute Merkhilfe: das spanische „podía“ (Fähigkeit) ist meist could, und „pude“ (bestimmter Erfolg) ist meist was able to oder managed to. Aber „no pude“ ist couldn’t."
+        "es": "Un buen recordatorio: el «podía» (habilidad) suele ser could, y el «pude» (logro concreto) suele ser was able to o managed to. Pero «no pude» es couldn’t."
       }
     }
   ],
   "speak": {
-    "hu": "Az angol a múltbeli képességnél két esetet választ szét. Általános képesség: «could», például «When I was ten, I could swim». Egy konkrét alkalom sikere: «was able to» vagy «managed to», például «Yesterday, I was able to fix the car». Itt a «could» nem használható. A tagadás, a «couldn't», mindkét esetben jó. Az észlelést kifejező igék, mint a «see» és a «hear», az egyszeri esetnél is «could» mellett állnak. Az elszalasztott lehetőséget a «could have» plusz igenév fejezi ki: «I could have won».",
     "en": "English separates two cases for ability in the past. General ability: «could», for example «When I was ten, I could swim». Success on one specific occasion: «was able to» or «managed to», for example «Yesterday, I was able to fix the car». «Could» does not work there. The negative, «couldn't», is correct in both cases. Perception verbs like «see» and «hear» take «could» even for one occasion. A missed chance is expressed by «could have» plus the participle: «I could have won».",
-    "es": "El inglés separa dos casos para la habilidad en el pasado. Habilidad general: «could», por ejemplo «When I was ten, I could swim». Un logro en una ocasión concreta: «was able to» o «managed to», por ejemplo «Yesterday, I was able to fix the car». Ahí «could» no funciona. La negación, «couldn't», sirve en los dos casos. Los verbos de percepción, como «see» y «hear», llevan «could» incluso para una sola ocasión. Una oportunidad perdida se expresa con «could have» más participio: «I could have won».",
-    "de": "Das Englische trennt bei der Fähigkeit in der Vergangenheit zwei Fälle. Allgemeine Fähigkeit: «could», zum Beispiel «When I was ten, I could swim». Erfolg bei einer bestimmten Gelegenheit: «was able to» oder «managed to», zum Beispiel «Yesterday, I was able to fix the car». Dort geht «could» nicht. Die Verneinung, «couldn't», passt in beiden Fällen. Wahrnehmungsverben wie «see» und «hear» stehen auch für einen einzelnen Fall mit «could». Eine verpasste Chance drückt «could have» plus Partizip aus: «I could have won»."
+    "es": "El inglés separa dos casos para la habilidad en el pasado. Habilidad general: «could», por ejemplo «When I was ten, I could swim». Un logro en una ocasión concreta: «was able to» o «managed to», por ejemplo «Yesterday, I was able to fix the car». Ahí «could» no funciona. La negación, «couldn't», sirve en los dos casos. Los verbos de percepción, como «see» y «hear», llevan «could» incluso para una sola ocasión. Una oportunidad perdida se expresa con «could have» más participio: «I could have won»."
   },
   "glossary": [
     {
       "word": "managed",
       "gloss": {
-        "hu": "sikerült neki (a manage múltja)",
         "en": "past form of manage (succeeded)",
-        "es": "logró (pasado de manage)",
-        "de": "schaffte (Past von manage)"
+        "es": "logró (pasado de manage)"
       }
     },
     {
       "word": "succeeded",
       "gloss": {
-        "hu": "sikerült (a succeed múltja)",
         "en": "past form of succeed",
-        "es": "consiguió (pasado de succeed)",
-        "de": "gelang (Past von succeed)"
+        "es": "consiguió (pasado de succeed)"
       }
     },
     {
       "word": "couldn't",
       "gloss": {
-        "hu": "nem tudott (could not)",
         "en": "could not",
-        "es": "no pudo (could not)",
-        "de": "konnte nicht (could not)"
+        "es": "no pudo (could not)"
       }
     },
     {
       "word": "catch",
       "gloss": {
-        "hu": "elkap, elér (járatot)",
         "en": "to catch (a bus)",
-        "es": "alcanzar, tomar (un camión)",
-        "de": "erwischen, nehmen (Bus)"
+        "es": "alcanzar, tomar (un camión)"
       }
     },
     {
       "word": "catching",
       "gloss": {
-        "hu": "elkap (ige-ing alak)",
         "en": "-ing form of catch",
-        "es": "forma -ing de catch",
-        "de": "-ing-Form von catch"
+        "es": "forma -ing de catch"
       }
     },
     {
       "word": "away",
       "gloss": {
-        "hu": "azonnal (right away)",
         "en": "at once (right away)",
-        "es": "de inmediato (right away)",
-        "de": "sofort (right away)"
+        "es": "de inmediato (right away)"
       }
     },
     {
       "word": "hill",
       "gloss": {
-        "hu": "domb",
         "en": "a small mountain",
-        "es": "cerro",
-        "de": "Hügel"
+        "es": "cerro"
       }
     },
     {
       "word": "hear",
       "gloss": {
-        "hu": "hall",
         "en": "to hear",
-        "es": "oír",
-        "de": "hören"
+        "es": "oír"
       }
     },
     {
       "word": "gone",
       "gloss": {
-        "hu": "elment (a go igenéve)",
         "en": "participle of go",
-        "es": "ido (participio de go)",
-        "de": "gegangen (Partizip von go)"
+        "es": "ido (participio de go)"
       }
     },
     {
       "word": "anything",
       "gloss": {
-        "hu": "bármi, semmi (tagadásban)",
         "en": "something (in negatives and questions)",
-        "es": "nada (en negativo)",
-        "de": "irgendetwas, nichts (verneint)"
+        "es": "nada (en negativo)"
       }
     },
     {
       "word": "noise",
       "gloss": {
-        "hu": "zaj",
         "en": "loud sound",
-        "es": "ruido",
-        "de": "Lärm"
+        "es": "ruido"
       }
     },
     {
       "word": "stopped",
       "gloss": {
-        "hu": "megállt (a stop múltja)",
         "en": "past form of stop",
-        "es": "se detuvo (pasado de stop)",
-        "de": "hörte auf (Past von stop)"
+        "es": "se detuvo (pasado de stop)"
       }
     },
     {
       "word": "keep",
       "gloss": {
-        "hu": "tart, megtart",
         "en": "to keep",
-        "es": "mantener",
-        "de": "halten"
+        "es": "mantener"
       }
     },
     {
       "word": "even",
       "gloss": {
-        "hu": "még, akár",
         "en": "even",
-        "es": "incluso",
-        "de": "sogar"
+        "es": "incluso"
       }
     },
     {
       "word": "though",
       "gloss": {
-        "hu": "bár, habár",
         "en": "although",
-        "es": "aunque",
-        "de": "obwohl"
+        "es": "aunque"
       }
     }
   ],
@@ -425,30 +341,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Általános képesség a múltban: could.",
         "en": "A general ability in the past: could.",
-        "es": "Habilidad general en el pasado: could.",
-        "de": "Allgemeine Fähigkeit in der Vergangenheit: could."
+        "es": "Habilidad general en el pasado: could."
       },
       "wrong": {
         "can": {
-          "hu": "A can jelen idejű; a mondat múltra (when I was ten) vonatkozik.",
           "en": "Can is present; the sentence is about the past (when I was ten).",
-          "es": "Can es presente; la oración trata del pasado (when I was ten).",
-          "de": "Can ist Gegenwart; der Satz betrifft die Vergangenheit (when I was ten)."
+          "es": "Can es presente; la oración trata del pasado (when I was ten)."
         },
         "will be able to": {
-          "hu": "A will be able to jövő idejű; a mondat múltra vonatkozik.",
           "en": "Will be able to is future; the sentence is about the past.",
-          "es": "Will be able to es futuro; la oración trata del pasado.",
-          "de": "Will be able to ist Zukunft; der Satz betrifft die Vergangenheit."
+          "es": "Will be able to es futuro; la oración trata del pasado."
         }
       },
       "examples": [
         "At six, she could read.",
         "He could run very fast as a boy."
       ],
-      "tr": { "hu": "Tízéves koromban nagyon gyorsan tudtam úszni.", "en": "When I was ten, I could swim very fast.", "es": "Cuando tenía diez años, podía nadar muy rápido.", "de": "Als ich zehn war, konnte ich sehr schnell schwimmen." }
+      "tr": { "en": "When I was ten, I could swim very fast.", "es": "Cuando tenía diez años, podía nadar muy rápido." }
     },
     {
       "id": "abp-02",
@@ -460,30 +370,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Egy konkrét alkalom sikere (megnyitottam): managed to.",
         "en": "Success on one specific occasion (I opened it): managed to.",
-        "es": "Un logro en una ocasión concreta (la abrí): managed to.",
-        "de": "Erfolg bei einer bestimmten Gelegenheit (ich habe sie geöffnet): managed to."
+        "es": "Un logro en una ocasión concreta (la abrí): managed to."
       },
       "wrong": {
         "could": {
-          "hu": "A could általános képességet jelöl; itt egyetlen sikeres alkalomról van szó. Köznyelvben hallani a could-ot, de konkrét sikerre a standard a was able to / managed to.",
           "en": "Could marks a general ability; here it is one successful occasion. In casual speech you hear could, but for one concrete success the standard is was able to / managed to.",
-          "es": "Could marca una habilidad general; aquí se trata de una sola ocasión lograda. En el habla informal se oye could, pero para un logro concreto el estándar pide was able to / managed to.",
-          "de": "Could markiert eine allgemeine Fähigkeit; hier geht es um eine einzelne gelungene Gelegenheit. In der Umgangssprache hört man could, aber für einen konkreten Erfolg ist was able to / managed to der Standard."
+          "es": "Could marca una habilidad general; aquí se trata de una sola ocasión lograda. En el habla informal se oye could, pero para un logro concreto el estándar pide was able to / managed to."
         },
         "can": {
-          "hu": "A can jelen idejű; a mondat múltra (was locked) vonatkozik.",
           "en": "Can is present; the sentence is about the past (was locked).",
-          "es": "Can es presente; la oración trata del pasado (was locked).",
-          "de": "Can ist Gegenwart; der Satz betrifft die Vergangenheit (was locked)."
+          "es": "Can es presente; la oración trata del pasado (was locked)."
         }
       },
       "examples": [
         "He managed to fix the car.",
         "We managed to catch the bus."
       ],
-      "tr": { "hu": "Az ajtó zárva volt, de sikerült kinyitnom egy késsel.", "en": "The door was locked, but I managed to open it with a knife.", "es": "La puerta estaba con llave, pero logré abrirla con un cuchillo.", "de": "Die Tür war verschlossen, aber ich habe es geschafft, sie mit einem Messer zu öffnen." }
+      "tr": { "en": "The door was locked, but I managed to open it with a knife.", "es": "La puerta estaba con llave, pero logré abrirla con un cuchillo." }
     },
     {
       "id": "abp-03",
@@ -495,30 +399,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Egy konkrét múltbeli alkalom (yesterday), sikeres: was able to.",
         "en": "One specific occasion in the past (yesterday), and it worked: was able to.",
-        "es": "Una ocasión concreta del pasado (yesterday), y salió bien: was able to.",
-        "de": "Eine bestimmte Gelegenheit in der Vergangenheit (yesterday), und sie gelang: was able to."
+        "es": "Una ocasión concreta del pasado (yesterday), y salió bien: was able to."
       },
       "wrong": {
         "could": {
-          "hu": "A could általános képességet jelöl; a yesterday egy konkrét alkalmat jelez. Köznyelvben hallani a could-ot, de konkrét sikerre a standard a was able to / managed to.",
           "en": "Could marks a general ability; yesterday points to one specific occasion. In casual speech you hear could, but for one concrete success the standard is was able to / managed to.",
-          "es": "Could marca una habilidad general; yesterday señala una ocasión concreta. En el habla informal se oye could, pero para un logro concreto el estándar pide was able to / managed to.",
-          "de": "Could markiert eine allgemeine Fähigkeit; yesterday weist auf eine bestimmte Gelegenheit. In der Umgangssprache hört man could, aber für einen konkreten Erfolg ist was able to / managed to der Standard."
+          "es": "Could marca una habilidad general; yesterday señala una ocasión concreta. En el habla informal se oye could, pero para un logro concreto el estándar pide was able to / managed to."
         },
         "can": {
-          "hu": "A can jelen idejű; a yesterday múltat jelez.",
           "en": "Can is present; yesterday points to the past.",
-          "es": "Can es presente; yesterday señala el pasado.",
-          "de": "Can ist Gegenwart; yesterday weist auf die Vergangenheit."
+          "es": "Can es presente; yesterday señala el pasado."
         }
       },
       "examples": [
         "She was able to call him yesterday.",
         "They were able to leave early."
       ],
-      "tr": { "hu": "Tegnap az orvos azonnal tudott segíteni nekünk.", "en": "Yesterday, the doctor was able to help us right away.", "es": "Ayer, el doctor nos pudo ayudar de inmediato.", "de": "Gestern konnte uns der Arzt sofort helfen." }
+      "tr": { "en": "Yesterday, the doctor was able to help us right away.", "es": "Ayer, el doctor nos pudo ayudar de inmediato." }
     },
     {
       "id": "abp-04",
@@ -530,30 +428,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Múltbeli tagadás: couldn’t.",
         "en": "A negative in the past: couldn’t.",
-        "es": "Un negativo en el pasado: couldn’t.",
-        "de": "Eine Verneinung in der Vergangenheit: couldn’t."
+        "es": "Un negativo en el pasado: couldn’t."
       },
       "wrong": {
         "isn't able to": {
-          "hu": "Az isn’t able to jelen idejű; a last night múltat jelez.",
           "en": "Isn’t able to is present; last night points to the past.",
-          "es": "Isn’t able to es presente; last night señala el pasado.",
-          "de": "Isn’t able to ist Gegenwart; last night weist auf die Vergangenheit."
+          "es": "Isn’t able to es presente; last night señala el pasado."
         },
         "can't": {
-          "hu": "A can’t jelen idejű; a mondat múltra (last night) vonatkozik.",
           "en": "Can’t is present; the sentence is about the past (last night).",
-          "es": "Can’t es presente; la oración trata del pasado (last night).",
-          "de": "Can’t ist Gegenwart; der Satz betrifft die Vergangenheit (last night)."
+          "es": "Can’t es presente; la oración trata del pasado (last night)."
         }
       },
       "examples": [
         "I couldn't open the door.",
         "He couldn't sleep last night."
       ],
-      "tr": { "hu": "Tegnap este nem tudta befejezni a jelentést. Túl hosszú volt.", "en": "She couldn't finish the report last night. It was too long.", "es": "Ella no pudo terminar el informe anoche. Era demasiado largo.", "de": "Sie konnte den Bericht gestern Abend nicht fertigstellen. Er war zu lang." }
+      "tr": { "en": "She couldn't finish the report last night. It was too long.", "es": "Ella no pudo terminar el informe anoche. Era demasiado largo." }
     },
     {
       "id": "abp-05",
@@ -565,30 +457,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Észlelést kifejező ige (see): még egy pillanatra is could.",
         "en": "A perception verb (see): could is used even for one moment.",
-        "es": "Un verbo de percepción (see): could se usa incluso para un solo momento.",
-        "de": "Ein Wahrnehmungsverb (see): could steht auch für einen einzelnen Moment."
+        "es": "Un verbo de percepción (see): could se usa incluso para un solo momento."
       },
       "wrong": {
         "can": {
-          "hu": "A can jelen idejű; a mondat múltra vonatkozik.",
           "en": "Can is present; the sentence is about the past.",
-          "es": "Can es presente; la oración trata del pasado.",
-          "de": "Can ist Gegenwart; der Satz betrifft die Vergangenheit."
+          "es": "Can es presente; la oración trata del pasado."
         },
         "are able to": {
-          "hu": "Az are able to jelen idejű; a mondat múltra vonatkozik.",
           "en": "Are able to is present; the sentence is about the past.",
-          "es": "Are able to es presente; la oración trata del pasado.",
-          "de": "Are able to ist Gegenwart; der Satz betrifft die Vergangenheit."
+          "es": "Are able to es presente; la oración trata del pasado."
         }
       },
       "examples": [
         "We could hear the music.",
         "I could smell the food."
       ],
-      "tr": { "hu": "A domb tetejéről az egész várost láthattuk.", "en": "At the top of the hill, we could see the whole city.", "es": "En la cima de la colina, podíamos ver toda la ciudad.", "de": "Oben auf dem Hügel konnten wir die ganze Stadt sehen." }
+      "tr": { "en": "At the top of the hill, we could see the whole city.", "es": "En la cima de la colina, podíamos ver toda la ciudad." }
     },
     {
       "id": "abp-06",
@@ -600,30 +486,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A succeeded után in + ige-ing áll.",
         "en": "After succeeded comes in + verb-ing.",
-        "es": "Después de succeeded va in + verbo-ing.",
-        "de": "Nach succeeded steht in + Verb-ing."
+        "es": "Después de succeeded va in + verbo-ing."
       },
       "wrong": {
         "to": {
-          "hu": "A succeeded után nem to jön, hanem in + ige-ing (a to a managed to mellett áll).",
           "en": "After succeeded the word is not to but in + verb-ing (to goes with managed).",
-          "es": "Después de succeeded no va to sino in + verbo-ing (to va con managed).",
-          "de": "Nach succeeded steht nicht to, sondern in + Verb-ing (to gehört zu managed)."
+          "es": "Después de succeeded no va to sino in + verbo-ing (to va con managed)."
         },
         "at": {
-          "hu": "Az at nem áll a succeeded után; in + ige-ing kell.",
           "en": "At does not follow succeeded; you need in + verb-ing.",
-          "es": "At no va después de succeeded; hace falta in + verbo-ing.",
-          "de": "At folgt nicht auf succeeded; man braucht in + Verb-ing."
+          "es": "At no va después de succeeded; hace falta in + verbo-ing."
         }
       },
       "examples": [
         "She succeeded in passing the exam.",
         "He succeeded in finding a job."
       ],
-      "tr": { "hu": "Hosszú keresgélés után sikerült olcsó lakást találniuk.", "en": "After a long search, they succeeded in finding a cheap apartment.", "es": "Después de una larga búsqueda, lograron encontrar un departamento barato.", "de": "Nach langer Suche gelang es ihnen, eine günstige Wohnung zu finden." }
+      "tr": { "en": "After a long search, they succeeded in finding a cheap apartment.", "es": "Después de una larga búsqueda, lograron encontrar un departamento barato." }
     },
     {
       "id": "abp-07",
@@ -635,30 +515,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A managed után to + alapige áll.",
         "en": "After managed comes to + base verb.",
-        "es": "Después de managed va to + verbo base.",
-        "de": "Nach managed steht to + Grundform."
+        "es": "Después de managed va to + verbo base."
       },
       "wrong": {
         "in": {
-          "hu": "Az in a succeeded mellett áll (succeeded in passing), a managed mellett to kell.",
           "en": "In goes with succeeded (succeeded in passing); managed takes to.",
-          "es": "In va con succeeded (succeeded in passing); managed lleva to.",
-          "de": "In gehört zu succeeded (succeeded in passing); managed braucht to."
+          "es": "In va con succeeded (succeeded in passing); managed lleva to."
         },
         "for": {
-          "hu": "A for nem áll a managed után; to + alapige kell.",
           "en": "For does not follow managed; you need to + base verb.",
-          "es": "For no va después de managed; hace falta to + verbo base.",
-          "de": "For folgt nicht auf managed; man braucht to + Grundform."
+          "es": "For no va después de managed; hace falta to + verbo base."
         }
       },
       "examples": [
         "They managed to win.",
         "I managed to sleep."
       ],
-      "tr": { "hu": "Sikerült átmennie a vizsgán.", "en": "She managed to pass the exam.", "es": "Ella logró pasar el examen.", "de": "Sie hat es geschafft, die Prüfung zu bestehen." }
+      "tr": { "en": "She managed to pass the exam.", "es": "Ella logró pasar el examen." }
     },
     {
       "id": "abp-08",
@@ -670,30 +544,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Múltbeli tagadás: wasn’t able to.",
         "en": "A negative in the past: wasn’t able to.",
-        "es": "Un negativo en el pasado: wasn’t able to.",
-        "de": "Eine Verneinung in der Vergangenheit: wasn’t able to."
+        "es": "Un negativo en el pasado: wasn’t able to."
       },
       "wrong": {
         "couldn't": {
-          "hu": "A couldn’t mellett nem áll able to; a couldn’t önmagában is képességet fejez ki.",
           "en": "Couldn’t does not take able to; couldn’t already expresses the ability by itself.",
-          "es": "Couldn’t no lleva able to; couldn’t ya expresa la habilidad por sí solo.",
-          "de": "Couldn’t steht nicht mit able to; couldn’t drückt die Fähigkeit schon selbst aus."
+          "es": "Couldn’t no lleva able to; couldn’t ya expresa la habilidad por sí solo."
         },
         "isn't": {
-          "hu": "Az isn’t jelen idejű; a mondat múltra (was stuck) vonatkozik.",
           "en": "Isn’t is present; the sentence is about the past (was stuck).",
-          "es": "Isn’t es presente; la oración trata del pasado (was stuck).",
-          "de": "Isn’t ist Gegenwart; der Satz betrifft die Vergangenheit (was stuck)."
+          "es": "Isn’t es presente; la oración trata del pasado (was stuck)."
         }
       },
       "examples": [
         "She wasn't able to come.",
         "They weren't able to leave."
       ],
-      "tr": { "hu": "Nem tudta kinyitni az ablakot, mert be volt szorulva.", "en": "He wasn't able to open the window because it was stuck.", "es": "Él no pudo abrir la ventana porque estaba atorada.", "de": "Er konnte das Fenster nicht öffnen, weil es klemmte." }
+      "tr": { "en": "He wasn't able to open the window because it was stuck.", "es": "Él no pudo abrir la ventana porque estaba atorada." }
     },
     {
       "id": "abp-09",
@@ -705,30 +573,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Elszalasztott lehetőség: could have + igenév (nyerhettem volna).",
         "en": "A missed chance: could have + participle (I could have won).",
-        "es": "Una oportunidad perdida: could have + participio (podría haber ganado).",
-        "de": "Eine verpasste Chance: could have + Partizip (ich hätte gewinnen können)."
+        "es": "Una oportunidad perdida: could have + participio (podría haber ganado)."
       },
       "wrong": {
         "could": {
-          "hu": "A could won nem lehetséges; a could után alapige jönne, az elszalasztott lehetőséghez could have + igenév kell.",
           "en": "Could won is not possible; could would take a base verb, and a missed chance needs could have + participle.",
-          "es": "Could won no es posible; could llevaría el verbo base, y una oportunidad perdida necesita could have + participio.",
-          "de": "Could won ist nicht möglich; could würde die Grundform nehmen, und eine verpasste Chance braucht could have + Partizip."
+          "es": "Could won no es posible; could llevaría el verbo base, y una oportunidad perdida necesita could have + participio."
         },
         "can": {
-          "hu": "A can won nem lehetséges; elszalasztott lehetőséghez could have kell.",
           "en": "Can won is not possible; a missed chance needs could have.",
-          "es": "Can won no es posible; una oportunidad perdida necesita could have.",
-          "de": "Can won ist nicht möglich; eine verpasste Chance braucht could have."
+          "es": "Can won no es posible; una oportunidad perdida necesita could have."
         }
       },
       "examples": [
         "She could have gone with us.",
         "We could have waited."
       ],
-      "tr": { "hu": "Megnyerhettem volna a játékot, de hibáztam.", "en": "I could have won the game, but I made a mistake.", "es": "Pude haber ganado el juego, pero cometí un error.", "de": "Ich hätte das Spiel gewinnen können, aber ich habe einen Fehler gemacht." }
+      "tr": { "en": "I could have won the game, but I made a mistake.", "es": "Pude haber ganado el juego, pero cometí un error." }
     },
     {
       "id": "abp-10",
@@ -740,30 +602,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Múltbeli tagadás: couldn’t.",
         "en": "A negative in the past: couldn’t.",
-        "es": "Un negativo en el pasado: couldn’t.",
-        "de": "Eine Verneinung in der Vergangenheit: couldn’t."
+        "es": "Un negativo en el pasado: couldn’t."
       },
       "wrong": {
         "can't": {
-          "hu": "A can’t jelen idejű; a last night múltat jelez.",
           "en": "Can’t is present; last night points to the past.",
-          "es": "Can’t es presente; last night señala el pasado.",
-          "de": "Can’t ist Gegenwart; last night weist auf die Vergangenheit."
+          "es": "Can’t es presente; last night señala el pasado."
         },
         "won't be able to": {
-          "hu": "A won’t be able to jövő idejű; a last night múltat jelez.",
           "en": "Won’t be able to is future; last night points to the past.",
-          "es": "Won’t be able to es futuro; last night señala el pasado.",
-          "de": "Won’t be able to ist Zukunft; last night weist auf die Vergangenheit."
+          "es": "Won’t be able to es futuro; last night señala el pasado."
         }
       },
       "examples": [
         "I couldn't see anything.",
         "She couldn't hear him."
       ],
-      "tr": { "hu": "Tegnap este semmit sem hallottam a zajtól.", "en": "Last night, I couldn't hear anything because of the noise.", "es": "Anoche no pude escuchar nada por el ruido.", "de": "Gestern Abend konnte ich wegen des Lärms nichts hören." }
+      "tr": { "en": "Last night, I couldn't hear anything because of the noise.", "es": "Anoche no pude escuchar nada por el ruido." }
     },
     {
       "id": "abp-11",
@@ -775,30 +631,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Általános képesség a múltban: could.",
         "en": "A general ability in the past: could.",
-        "es": "Habilidad general en el pasado: could.",
-        "de": "Allgemeine Fähigkeit in der Vergangenheit: could."
+        "es": "Habilidad general en el pasado: could."
       },
       "wrong": {
         "can": {
-          "hu": "A can jelen idejű; az as a child múltra utal.",
           "en": "Can is present; as a child points to the past.",
-          "es": "Can es presente; as a child apunta al pasado.",
-          "de": "Can ist Gegenwart; as a child verweist auf die Vergangenheit."
+          "es": "Can es presente; as a child apunta al pasado."
         },
         "is able to": {
-          "hu": "Az is able to jelen idejű; az as a child múltra utal.",
           "en": "Is able to is present; as a child points to the past.",
-          "es": "Is able to es presente; as a child apunta al pasado.",
-          "de": "Is able to ist Gegenwart; as a child verweist auf die Vergangenheit."
+          "es": "Is able to es presente; as a child apunta al pasado."
         }
       },
       "examples": [
         "He could swim at five.",
         "We could play all day."
       ],
-      "tr": { "hu": "Gyerekként már azelőtt tudott olvasni, hogy iskolába ment volna.", "en": "As a child, she could read before she started school.", "es": "De niña, ella podía leer antes de empezar la escuela.", "de": "Als Kind konnte sie schon lesen, bevor sie in die Schule kam." }
+      "tr": { "en": "As a child, she could read before she started school.", "es": "De niña, ella podía leer antes de empezar la escuela." }
     },
     {
       "id": "abp-12",
@@ -810,30 +660,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Egy konkrét alkalom sikere (a végén befejezték): were able to.",
         "en": "Success on one specific occasion (in the end they finished): were able to.",
-        "es": "Un logro en una ocasión concreta (al final terminaron): were able to.",
-        "de": "Erfolg bei einer bestimmten Gelegenheit (am Ende wurden sie fertig): were able to."
+        "es": "Un logro en una ocasión concreta (al final terminaron): were able to."
       },
       "wrong": {
         "could": {
-          "hu": "A could általános képességet jelöl; itt egyetlen sikeres alkalom van (in the end). Köznyelvben hallani a could-ot, de konkrét sikerre a standard a was able to / managed to.",
           "en": "Could marks a general ability; here it is one successful occasion (in the end). In casual speech you hear could, but for one concrete success the standard is was able to / managed to.",
-          "es": "Could marca una habilidad general; aquí es una sola ocasión lograda (in the end). En el habla informal se oye could, pero para un logro concreto el estándar pide was able to / managed to.",
-          "de": "Could markiert eine allgemeine Fähigkeit; hier ist es eine einzelne gelungene Gelegenheit (in the end). In der Umgangssprache hört man could, aber für einen konkreten Erfolg ist was able to / managed to der Standard."
+          "es": "Could marca una habilidad general; aquí es una sola ocasión lograda (in the end). En el habla informal se oye could, pero para un logro concreto el estándar pide was able to / managed to."
         },
         "can": {
-          "hu": "A can jelen idejű; a mondat múltra vonatkozik.",
           "en": "Can is present; the sentence is about the past.",
-          "es": "Can es presente; la oración trata del pasado.",
-          "de": "Can ist Gegenwart; der Satz betrifft die Vergangenheit."
+          "es": "Can es presente; la oración trata del pasado."
         }
       },
       "examples": [
         "We were able to leave early.",
         "She was able to help."
       ],
-      "tr": { "hu": "Végül elállt az eső, és be tudták fejezni a játékot.", "en": "In the end, the rain stopped and they were able to finish the game.", "es": "Al final, la lluvia paró y pudieron terminar el juego.", "de": "Am Ende hörte der Regen auf und sie konnten das Spiel zu Ende spielen." }
+      "tr": { "en": "In the end, the rain stopped and they were able to finish the game.", "es": "Al final, la lluvia paró y pudieron terminar el juego." }
     },
     {
       "id": "abp-13",
@@ -845,30 +689,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A be able to kérdésben a be fordul meg: Were you able to…?",
         "en": "In a be able to question the be comes first: Were you able to…?",
-        "es": "En una pregunta con be able to, be va primero: Were you able to…?",
-        "de": "In einer Frage mit be able to steht be vorn: Were you able to…?"
+        "es": "En una pregunta con be able to, be va primero: Were you able to…?"
       },
       "wrong": {
         "Did": {
-          "hu": "A did után alapige jönne; az able előtt a be ige kell.",
           "en": "After did comes the base verb; before able you need the verb be.",
-          "es": "Después de did va el verbo base; antes de able hace falta el verbo be.",
-          "de": "Nach did steht die Grundform; vor able braucht man das Verb be."
+          "es": "Después de did va el verbo base; antes de able hace falta el verbo be."
         },
         "Could": {
-          "hu": "A could you able to hibás; a could már képességet fejez ki, mellette nem áll able.",
           "en": "Could you able to is wrong; could already expresses ability and does not take able.",
-          "es": "Could you able to es incorrecto; could ya expresa habilidad y no lleva able.",
-          "de": "Could you able to ist falsch; could drückt schon Fähigkeit aus und steht nicht mit able."
+          "es": "Could you able to es incorrecto; could ya expresa habilidad y no lleva able."
         }
       },
       "examples": [
         "Was she able to call?",
         "Were they able to come?"
       ],
-      "tr": { "hu": "Tudtál beszélni vele tegnap?", "en": "Were you able to speak to her yesterday?", "es": "¿Pudiste hablar con ella ayer?", "de": "Konntest du gestern mit ihr sprechen?" }
+      "tr": { "en": "Were you able to speak to her yesterday?", "es": "¿Pudiste hablar con ella ayer?" }
     },
     {
       "id": "abp-14",
@@ -880,30 +718,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Múltbeli tagadás: couldn’t.",
         "en": "A negative in the past: couldn’t.",
-        "es": "Un negativo en el pasado: couldn’t.",
-        "de": "Eine Verneinung in der Vergangenheit: couldn’t."
+        "es": "Un negativo en el pasado: couldn’t."
       },
       "wrong": {
         "didn't could": {
-          "hu": "A didn’t could hibás: a could már múlt idejű, a tagadása couldn’t.",
           "en": "Didn’t could is wrong: could is already past, and its negative is couldn’t.",
-          "es": "Didn’t could es incorrecto: could ya es pasado, y su negación es couldn’t.",
-          "de": "Didn’t could ist falsch: could ist schon Vergangenheit, und die Verneinung ist couldn’t."
+          "es": "Didn’t could es incorrecto: could ya es pasado, y su negación es couldn’t."
         },
         "can't": {
-          "hu": "A can’t jelen idejű; a mondat múlt idejű (was so tired).",
           "en": "Can’t is present; the sentence is in the past (was so tired).",
-          "es": "Can’t es presente; la oración está en pasado (was so tired).",
-          "de": "Can’t ist Gegenwart; der Satz steht in der Vergangenheit (was so tired)."
+          "es": "Can’t es presente; la oración está en pasado (was so tired)."
         }
       },
       "examples": [
         "I couldn't eat anything.",
         "They couldn't find the key."
       ],
-      "tr": { "hu": "Olyan fáradt volt, hogy nem bírta nyitva tartani a szemét.", "en": "He was so tired that he couldn't keep his eyes open.", "es": "Él estaba tan cansado que no podía mantener los ojos abiertos.", "de": "Er war so müde, dass er seine Augen nicht offen halten konnte." }
+      "tr": { "en": "He was so tired that he couldn't keep his eyes open.", "es": "Él estaba tan cansado que no podía mantener los ojos abiertos." }
     },
     {
       "id": "abp-15",
@@ -915,30 +747,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A managed után to + alapige áll: managed to catch.",
         "en": "After managed comes to + base verb: managed to catch.",
-        "es": "Después de managed va to + verbo base: managed to catch.",
-        "de": "Nach managed steht to + Grundform: managed to catch."
+        "es": "Después de managed va to + verbo base: managed to catch."
       },
       "wrong": {
         "catching": {
-          "hu": "A managed után nem ige-ing áll (az in + ige-ing a succeeded mellett van).",
           "en": "After managed there is no verb-ing (in + verb-ing goes with succeeded).",
-          "es": "Después de managed no va verbo-ing (in + verbo-ing va con succeeded).",
-          "de": "Nach managed steht kein Verb-ing (in + Verb-ing gehört zu succeeded)."
+          "es": "Después de managed no va verbo-ing (in + verbo-ing va con succeeded)."
         },
         "catch": {
-          "hu": "A managed után az alapige előtt to kell.",
           "en": "After managed the base verb needs to before it.",
-          "es": "Después de managed, el verbo base necesita to delante.",
-          "de": "Nach managed braucht die Grundform ein to davor."
+          "es": "Después de managed, el verbo base necesita to delante."
         }
       },
       "examples": [
         "She managed to win.",
         "We managed to leave on time."
       ],
-      "tr": { "hu": "Sikerült elérniük az utolsó buszt, még annak ellenére is, hogy késtek.", "en": "They managed to catch the last bus even though they were late.", "es": "Lograron alcanzar el último autobús aunque se les hizo tarde.", "de": "Sie haben es geschafft, den letzten Bus zu erwischen, obwohl sie spät dran waren." }
+      "tr": { "en": "They managed to catch the last bus even though they were late.", "es": "Lograron alcanzar el último autobús aunque se les hizo tarde." }
     },
     {
       "id": "abp-16",
@@ -950,30 +776,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A be able után to + alapige áll.",
         "en": "After be able comes to + base verb.",
-        "es": "Después de be able va to + verbo base.",
-        "de": "Nach be able steht to + Grundform."
+        "es": "Después de be able va to + verbo base."
       },
       "wrong": {
         "for": {
-          "hu": "A for nem áll az able után; to + alapige kell.",
           "en": "For does not follow able; you need to + base verb.",
-          "es": "For no va después de able; hace falta to + verbo base.",
-          "de": "For folgt nicht auf able; man braucht to + Grundform."
+          "es": "For no va después de able; hace falta to + verbo base."
         },
         "in": {
-          "hu": "Az in nem áll az able után; to + alapige kell.",
           "en": "In does not follow able; you need to + base verb.",
-          "es": "In no va después de able; hace falta to + verbo base.",
-          "de": "In folgt nicht auf able; man braucht to + Grundform."
+          "es": "In no va después de able; hace falta to + verbo base."
         }
       },
       "examples": [
         "Were they able to come?",
         "He was able to help."
       ],
-      "tr": { "hu": "Fel tudott hívni téged tegnap?", "en": "Was she able to call you yesterday?", "es": "¿Ella te pudo llamar ayer?", "de": "Konnte sie dich gestern anrufen?" }
+      "tr": { "en": "Was she able to call you yesterday?", "es": "¿Ella te pudo llamar ayer?" }
     },
     {
       "id": "abp-17",
@@ -985,30 +805,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Elszalasztott lehetőség: could have + igenév (elmehettünk volna).",
         "en": "A missed chance: could have + participle (we could have gone).",
-        "es": "Una oportunidad perdida: could have + participio (podríamos haber ido).",
-        "de": "Eine verpasste Chance: could have + Partizip (wir hätten gehen können)."
+        "es": "Una oportunidad perdida: could have + participio (podríamos haber ido)."
       },
       "wrong": {
         "can": {
-          "hu": "A can have gone nem illik ide; az elszalasztott lehetőség múlt idejű: could have.",
           "en": "Can have gone does not fit here; a missed chance is past: could have.",
-          "es": "Can have gone no cabe aquí; una oportunidad perdida es del pasado: could have.",
-          "de": "Can have gone passt hier nicht; eine verpasste Chance ist vergangen: could have."
+          "es": "Can have gone no cabe aquí; una oportunidad perdida es del pasado: could have."
         },
         "will": {
-          "hu": "A will have gone jövőbeli befejezett cselekvés; a mondat múltbeli lehetőségről szól.",
           "en": "Will have gone is a future finished action; the sentence is about a past chance.",
-          "es": "Will have gone es una acción terminada en el futuro; la oración trata de una oportunidad pasada.",
-          "de": "Will have gone ist eine abgeschlossene Handlung in der Zukunft; der Satz handelt von einer vergangenen Chance."
+          "es": "Will have gone es una acción terminada en el futuro; la oración trata de una oportunidad pasada."
         }
       },
       "examples": [
         "I could have helped.",
         "She could have stayed."
       ],
-      "tr": { "hu": "Elmehettünk volna a buliba, de fáradtak voltunk.", "en": "We could have gone to the party, but we were tired.", "es": "Pudimos haber ido a la fiesta, pero estábamos cansados.", "de": "Wir hätten auf die Party gehen können, aber wir waren müde." }
+      "tr": { "en": "We could have gone to the party, but we were tired.", "es": "Pudimos haber ido a la fiesta, pero estábamos cansados." }
     },
     {
       "id": "abp-18",
@@ -1098,46 +912,34 @@
       "es": "When I was ten, I could swim.",
       "target": "could",
       "tr": {
-        "hu": "Tízéves koromban tudtam úszni.",
         "en": "When I was ten, I could swim.",
-        "es": "A los diez años yo podía nadar.",
-        "de": "Mit zehn konnte ich schwimmen."
+        "es": "A los diez años yo podía nadar."
       },
       "options": [
         {
           "text": {
-            "hu": "egy konkrét alkalom sikere",
             "en": "success on one specific occasion",
-            "es": "un logro en una ocasión concreta",
-            "de": "Erfolg bei einer bestimmten Gelegenheit"
+            "es": "un logro en una ocasión concreta"
           },
           "wrong": {
-            "hu": "Egy konkrét alkalomhoz was able to vagy managed to kell; a could itt egy időszak általános képességét jelzi.",
             "en": "One specific occasion needs was able to or managed to; here could shows a general ability over a period.",
-            "es": "Una ocasión concreta necesita was able to o managed to; aquí could muestra una habilidad general durante una época.",
-            "de": "Eine bestimmte Gelegenheit braucht was able to oder managed to; hier zeigt could eine allgemeine Fähigkeit über eine Zeit."
+            "es": "Una ocasión concreta necesita was able to o managed to; aquí could muestra una habilidad general durante una época."
           }
         },
         {
           "text": {
-            "hu": "általános képesség a múltban",
             "en": "a general ability in the past",
-            "es": "una habilidad general en el pasado",
-            "de": "eine allgemeine Fähigkeit in der Vergangenheit"
+            "es": "una habilidad general en el pasado"
           }
         },
         {
           "text": {
-            "hu": "elszalasztott lehetőség",
             "en": "a missed chance",
-            "es": "una oportunidad perdida",
-            "de": "eine verpasste Chance"
+            "es": "una oportunidad perdida"
           },
           "wrong": {
-            "hu": "Az elszalasztott lehetőséghez could have + igenév kell; itt a could mellett alapige áll.",
             "en": "A missed chance needs could have + participle; here could is followed by a base verb.",
-            "es": "Una oportunidad perdida necesita could have + participio; aquí could va con un verbo base.",
-            "de": "Eine verpasste Chance braucht could have + Partizip; hier steht could mit einer Grundform."
+            "es": "Una oportunidad perdida necesita could have + participio; aquí could va con un verbo base."
           }
         }
       ],
@@ -1149,46 +951,34 @@
       "es": "I managed to open the door.",
       "target": "managed to",
       "tr": {
-        "hu": "Sikerült kinyitnom az ajtót.",
         "en": "I managed to open the door.",
-        "es": "Logré abrir la puerta.",
-        "de": "Ich habe die Tür aufbekommen."
+        "es": "Logré abrir la puerta."
       },
       "options": [
         {
           "text": {
-            "hu": "egy konkrét alkalom sikere, erőfeszítéssel",
             "en": "success on one specific occasion, with effort",
-            "es": "un logro en una ocasión concreta, con esfuerzo",
-            "de": "Erfolg bei einer bestimmten Gelegenheit, mit Mühe"
+            "es": "un logro en una ocasión concreta, con esfuerzo"
           }
         },
         {
           "text": {
-            "hu": "általános képesség a múltban",
             "en": "a general ability in the past",
-            "es": "una habilidad general en el pasado",
-            "de": "eine allgemeine Fähigkeit in der Vergangenheit"
+            "es": "una habilidad general en el pasado"
           },
           "wrong": {
-            "hu": "Az általános képességhez could kell; a managed to egyetlen, sikeres alkalmat jelöl.",
             "en": "A general ability needs could; managed to marks one successful occasion.",
-            "es": "Una habilidad general necesita could; managed to marca una sola ocasión lograda.",
-            "de": "Eine allgemeine Fähigkeit braucht could; managed to markiert eine einzelne gelungene Gelegenheit."
+            "es": "Una habilidad general necesita could; managed to marca una sola ocasión lograda."
           }
         },
         {
           "text": {
-            "hu": "elszalasztott lehetőség",
             "en": "a missed chance",
-            "es": "una oportunidad perdida",
-            "de": "eine verpasste Chance"
+            "es": "una oportunidad perdida"
           },
           "wrong": {
-            "hu": "A managed to sikeres cselekvést jelöl, az elszalasztott lehetőséghez could have kell.",
             "en": "Managed to marks an action that worked; a missed chance needs could have.",
-            "es": "Managed to marca una acción que salió bien; una oportunidad perdida necesita could have.",
-            "de": "Managed to markiert eine gelungene Handlung; eine verpasste Chance braucht could have."
+            "es": "Managed to marca una acción que salió bien; una oportunidad perdida necesita could have."
           }
         }
       ],
@@ -1200,46 +990,34 @@
       "es": "I couldn't open the door.",
       "target": "couldn't",
       "tr": {
-        "hu": "Nem tudtam kinyitni az ajtót.",
         "en": "I couldn't open the door.",
-        "es": "No pude abrir la puerta.",
-        "de": "Ich konnte die Tür nicht öffnen."
+        "es": "No pude abrir la puerta."
       },
       "options": [
         {
           "text": {
-            "hu": "csak általános képesség",
             "en": "only a general ability",
-            "es": "solo una habilidad general",
-            "de": "nur eine allgemeine Fähigkeit"
+            "es": "solo una habilidad general"
           },
           "wrong": {
-            "hu": "A couldn’t konkrét alkalomnál is áll, nemcsak általános képességnél.",
             "en": "Couldn’t is used for one occasion too, not only for a general ability.",
-            "es": "Couldn’t se usa también para una ocasión, no solo para una habilidad general.",
-            "de": "Couldn’t steht auch für eine Gelegenheit, nicht nur für eine allgemeine Fähigkeit."
+            "es": "Couldn’t se usa también para una ocasión, no solo para una habilidad general."
           }
         },
         {
           "text": {
-            "hu": "tagadásban általános és konkrét alkalomra is jó",
             "en": "in the negative it works for a general ability and for one occasion",
-            "es": "en negativo sirve para una habilidad general y para una ocasión",
-            "de": "in der Verneinung passt es für eine allgemeine Fähigkeit und für eine Gelegenheit"
+            "es": "en negativo sirve para una habilidad general y para una ocasión"
           }
         },
         {
           "text": {
-            "hu": "csak elszalasztott lehetőség",
             "en": "only a missed chance",
-            "es": "solo una oportunidad perdida",
-            "de": "nur eine verpasste Chance"
+            "es": "solo una oportunidad perdida"
           },
           "wrong": {
-            "hu": "Az elszalasztott lehetőséghez could have + igenév kell; a couldn’t után alapige áll.",
             "en": "A missed chance needs could have + participle; couldn’t is followed by a base verb.",
-            "es": "Una oportunidad perdida necesita could have + participio; couldn’t va con un verbo base.",
-            "de": "Eine verpasste Chance braucht could have + Partizip; couldn’t steht mit einer Grundform."
+            "es": "Una oportunidad perdida necesita could have + participio; couldn’t va con un verbo base."
           }
         }
       ],
@@ -1251,46 +1029,34 @@
       "es": "I could have won the game.",
       "target": "could have",
       "tr": {
-        "hu": "Megnyerhettem volna a meccset.",
         "en": "I could have won the game.",
-        "es": "Podría haber ganado el juego.",
-        "de": "Ich hätte das Spiel gewinnen können."
+        "es": "Podría haber ganado el juego."
       },
       "options": [
         {
           "text": {
-            "hu": "megnyertem a meccset",
             "en": "I won the game",
-            "es": "gané el juego",
-            "de": "ich habe das Spiel gewonnen"
+            "es": "gané el juego"
           },
           "wrong": {
-            "hu": "A could have + igenév azt jelenti, hogy lehetett volna, de nem történt meg.",
             "en": "Could have + participle means it was possible but did not happen.",
-            "es": "Could have + participio significa que era posible pero no ocurrió.",
-            "de": "Could have + Partizip heißt, dass es möglich war, aber nicht geschah."
+            "es": "Could have + participio significa que era posible pero no ocurrió."
           }
         },
         {
           "text": {
-            "hu": "általános képesség a múltban",
             "en": "a general ability in the past",
-            "es": "una habilidad general en el pasado",
-            "de": "eine allgemeine Fähigkeit in der Vergangenheit"
+            "es": "una habilidad general en el pasado"
           },
           "wrong": {
-            "hu": "Az általános képességhez could + alapige kell; itt could have + igenév áll.",
             "en": "A general ability needs could + base verb; here it is could have + participle.",
-            "es": "Una habilidad general necesita could + verbo base; aquí es could have + participio.",
-            "de": "Eine allgemeine Fähigkeit braucht could + Grundform; hier steht could have + Partizip."
+            "es": "Una habilidad general necesita could + verbo base; aquí es could have + participio."
           }
         },
         {
           "text": {
-            "hu": "elszalasztott lehetőség: megvolt, de nem történt meg",
             "en": "a missed chance: it was possible but did not happen",
-            "es": "una oportunidad perdida: era posible pero no ocurrió",
-            "de": "eine verpasste Chance: es war möglich, geschah aber nicht"
+            "es": "una oportunidad perdida: era posible pero no ocurrió"
           }
         }
       ],
@@ -1302,46 +1068,34 @@
       "es": "At the top, we could see the whole city.",
       "target": "could",
       "tr": {
-        "hu": "A csúcson az egész várost láttuk.",
         "en": "At the top, we could see the whole city.",
-        "es": "Arriba pudimos ver toda la ciudad.",
-        "de": "Oben konnten wir die ganze Stadt sehen."
+        "es": "Arriba pudimos ver toda la ciudad."
       },
       "options": [
         {
           "text": {
-            "hu": "észlelést kifejező ige: még egy pillanatra is could",
             "en": "a perception verb: could even for one moment",
-            "es": "un verbo de percepción: could incluso para un solo momento",
-            "de": "ein Wahrnehmungsverb: could auch für einen einzelnen Moment"
+            "es": "un verbo de percepción: could incluso para un solo momento"
           }
         },
         {
           "text": {
-            "hu": "általános képesség egy időszakban",
             "en": "a general ability over a period",
-            "es": "una habilidad general durante una época",
-            "de": "eine allgemeine Fähigkeit über eine Zeit"
+            "es": "una habilidad general durante una época"
           },
           "wrong": {
-            "hu": "Az at the top egy pillanatot jelöl, nem egy időszakot; a see mellett ezért is could áll.",
             "en": "At the top marks one moment, not a period; the verb see takes could for that.",
-            "es": "At the top marca un momento, no una época; el verbo see lleva could para eso.",
-            "de": "At the top markiert einen Moment, keine Zeit; das Verb see nimmt dafür could."
+            "es": "At the top marca un momento, no una época; el verbo see lleva could para eso."
           }
         },
         {
           "text": {
-            "hu": "elszalasztott lehetőség",
             "en": "a missed chance",
-            "es": "una oportunidad perdida",
-            "de": "eine verpasste Chance"
+            "es": "una oportunidad perdida"
           },
           "wrong": {
-            "hu": "Elszalasztott lehetőséghez could have + igenév kell; itt a látás ténylegesen megtörtént.",
             "en": "A missed chance needs could have + participle; here the seeing really happened.",
-            "es": "Una oportunidad perdida necesita could have + participio; aquí el ver sí ocurrió.",
-            "de": "Eine verpasste Chance braucht could have + Partizip; hier ist das Sehen wirklich geschehen."
+            "es": "Una oportunidad perdida necesita could have + participio; aquí el ver sí ocurrió."
           }
         }
       ],

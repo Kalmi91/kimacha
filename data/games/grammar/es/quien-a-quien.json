@@ -3,117 +3,101 @@
   "topic": "quien-a-quien",
   "level": "A1",
   "title": {
-    "hu": "Ki kinek: te amo, me das",
     "en": "Who does what to whom: te amo, me das",
-    "es": "Quién a quién: te amo, me das",
-    "de": "Wer wem: te amo, me das"
+    "es": "Quién a quién: te amo, me das"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "A magyar „szeretlek” egyetlen szó, a spanyolban két jel adja ki ugyanezt: az ige VÉGZŐDÉSE mondja meg, KI cselekszik (amo = én, amas = te, ama = ő), az ige előtti NÉVMÁS pedig azt, KIT vagy KINEK (me, te, le, nos, les). A kettőt együtt kell olvasni: te amo = ÉN (amo) + TÉGED (te) = szeretlek.",
         "en": "Hungarian squeezes I-love-you into one word; Spanish uses two separate signals. The verb's ENDING says WHO acts (amo = I, amas = you, ama = he or she), and the PRONOUN before the verb says WHOM or TO WHOM (me, te, le, nos, les). Read the two together: te amo = I (amo) + you (te) = I love you.",
-        "es": "El húngaro mete „te amo” en una sola palabra; el español usa dos señales distintas. La TERMINACIÓN del verbo dice QUIÉN actúa (amo = yo, amas = tú, ama = él o ella), y el PRONOMBRE antes del verbo dice A QUIÉN (me, te, le, nos, les). Hay que leer los dos juntos: te amo = yo (amo) + a ti (te).",
-        "de": "Das Ungarische steckt „ich liebe dich” in ein einziges Wort; das Spanische braucht zwei getrennte Signale. Die ENDUNG des Verbs sagt, WER handelt (amo = ich, amas = du, ama = er oder sie), und das PRONOMEN vor dem Verb sagt, WEN oder WEM (me, te, le, nos, les). Man muss beides zusammen lesen: te amo = ich (amo) + dich (te) = ich liebe dich."
+        "es": "El húngaro mete „te amo” en una sola palabra; el español usa dos señales distintas. La TERMINACIÓN del verbo dice QUIÉN actúa (amo = yo, amas = tú, ama = él o ella), y el PRONOMBRE antes del verbo dice A QUIÉN (me, te, le, nos, les). Hay que leer los dos juntos: te amo = yo (amo) + a ti (te)."
       }
     },
     {
       "kind": "list",
       "title": {
-        "hu": "Melyik névmás mit jelöl",
         "en": "What each pronoun marks",
-        "es": "Qué marca cada pronombre",
-        "de": "Was jedes Pronomen markiert"
+        "es": "Qué marca cada pronombre"
       },
       "items": [
         {
           "text": {
-            "hu": "me = engem, nekem: amikor én vagyok a célpont vagy a címzett.",
             "en": "me = me, to me: when I am the target or the recipient.",
-            "es": "me = a mí: cuando yo soy el destino o el destinatario.",
-            "de": "me = mich, mir: wenn ich das Ziel oder der Empfänger bin."
+            "es": "me = a mí: cuando yo soy el destino o el destinatario."
           },
           "examples": [
             {
               "es": "Tú me amas.",
-              "tr": { "hu": "Szeretsz engem.", "en": "You love me.", "es": "Tú me amas.", "de": "Du liebst mich." }
+              "tr": { "en": "You love me.", "es": "Tú me amas." }
             },
             {
               "es": "Tú me das agua.",
-              "tr": { "hu": "Adsz nekem vizet.", "en": "You give me water.", "es": "Tú me das agua.", "de": "Du gibst mir Wasser." }
+              "tr": { "en": "You give me water.", "es": "Tú me das agua." }
             }
           ]
         },
         {
           "text": {
-            "hu": "te = téged, neked: amikor te vagy a célpont vagy a címzett.",
             "en": "te = you, to you: when you are the target or the recipient.",
-            "es": "te = a ti: cuando tú eres el destino o el destinatario.",
-            "de": "te = dich, dir: wenn du das Ziel oder der Empfänger bist."
+            "es": "te = a ti: cuando tú eres el destino o el destinatario."
           },
           "examples": [
             {
               "es": "Te amo.",
-              "tr": { "hu": "Szeretlek.", "en": "I love you.", "es": "Te amo.", "de": "Ich liebe dich." }
+              "tr": { "en": "I love you.", "es": "Te amo." }
             },
             {
               "es": "Yo te doy un libro.",
-              "tr": { "hu": "Adok neked egy könyvet.", "en": "I give you a book.", "es": "Yo te doy un libro.", "de": "Ich gebe dir ein Buch." }
+              "tr": { "en": "I give you a book.", "es": "Yo te doy un libro." }
             }
           ]
         },
         {
           "text": {
-            "hu": "le = neki: amikor egy harmadik személy a címzett.",
             "en": "le = to him or her: when a third person is the recipient.",
-            "es": "le = a él o a ella: cuando una tercera persona es el destinatario.",
-            "de": "le = ihm oder ihr: wenn eine dritte Person der Empfänger ist."
+            "es": "le = a él o a ella: cuando una tercera persona es el destinatario."
           },
           "examples": [
             {
               "es": "A él le escribo un mensaje.",
-              "tr": { "hu": "Neki írok egy üzenetet.", "en": "I write him a message.", "es": "A él le escribo un mensaje.", "de": "Ich schreibe ihm eine Nachricht." }
+              "tr": { "en": "I write him a message.", "es": "A él le escribo un mensaje." }
             },
             {
               "es": "A ella le doy un mensaje.",
-              "tr": { "hu": "Neki adok egy üzenetet.", "en": "I give her a message.", "es": "A ella le doy un mensaje.", "de": "Ich gebe ihr eine Nachricht." }
+              "tr": { "en": "I give her a message.", "es": "A ella le doy un mensaje." }
             }
           ]
         },
         {
           "text": {
-            "hu": "nos = minket, nekünk: amikor mi vagyunk a célpont vagy a címzett.",
             "en": "nos = us, to us: when we are the target or the recipient.",
-            "es": "nos = a nosotros: cuando nosotros somos el destino o el destinatario.",
-            "de": "nos = uns: wenn wir das Ziel oder der Empfänger sind."
+            "es": "nos = a nosotros: cuando nosotros somos el destino o el destinatario."
           },
           "examples": [
             {
               "es": "Ella nos dice la verdad.",
-              "tr": { "hu": "Ő elmondja nekünk az igazságot.", "en": "She tells us the truth.", "es": "Ella nos dice la verdad.", "de": "Sie sagt uns die Wahrheit." }
+              "tr": { "en": "She tells us the truth.", "es": "Ella nos dice la verdad." }
             },
             {
               "es": "Ella nos dice todo.",
-              "tr": { "hu": "Ő mindent elmond nekünk.", "en": "She tells us everything.", "es": "Ella nos dice todo.", "de": "Sie sagt uns alles." }
+              "tr": { "en": "She tells us everything.", "es": "Ella nos dice todo." }
             }
           ]
         },
         {
           "text": {
-            "hu": "les = nekik: amikor több harmadik személy a címzett.",
             "en": "les = to them: when several third persons are the recipients.",
-            "es": "les = a ellos o a ellas: cuando varias terceras personas son las destinatarias.",
-            "de": "les = ihnen: wenn mehrere dritte Personen die Empfänger sind."
+            "es": "les = a ellos o a ellas: cuando varias terceras personas son las destinatarias."
           },
           "examples": [
             {
               "es": "Ella les dice la verdad a ellos.",
-              "tr": { "hu": "Ő elmondja nekik az igazságot.", "en": "She tells them the truth.", "es": "Ella les dice la verdad a ellos.", "de": "Sie sagt ihnen die Wahrheit." }
+              "tr": { "en": "She tells them the truth.", "es": "Ella les dice la verdad a ellos." }
             },
             {
               "es": "A ellos les escribo.",
-              "tr": { "hu": "Nekik írok.", "en": "I write to them.", "es": "A ellos les escribo.", "de": "Ich schreibe ihnen." }
+              "tr": { "en": "I write to them.", "es": "A ellos les escribo." }
             }
           ]
         }
@@ -123,16 +107,14 @@
       "kind": "table",
       "id": "quien",
       "title": {
-        "hu": "Alany, tárgy, részeshatározó",
         "en": "Subject, direct and indirect object",
-        "es": "Sujeto, objeto directo e indirecto",
-        "de": "Subjekt, direktes und indirektes Objekt"
+        "es": "Sujeto, objeto directo e indirecto"
       },
       "header": [
-        { "hu": "Személy", "en": "Person", "es": "Persona", "de": "Person" },
-        { "hu": "végződés", "en": "ending", "es": "terminación", "de": "Endung" },
-        { "hu": "tárgy-névmás", "en": "direct object pronoun", "es": "objeto directo", "de": "direktes Objektpronomen" },
-        { "hu": "részes-névmás", "en": "indirect object pronoun", "es": "objeto indirecto", "de": "indirektes Objektpronomen" }
+        { "en": "Person", "es": "Persona" },
+        { "en": "ending", "es": "terminación" },
+        { "en": "direct object pronoun", "es": "objeto directo" },
+        { "en": "indirect object pronoun", "es": "objeto indirecto" }
       ],
       "rows": [
         ["yo", "amo", "me", "me"],
@@ -148,81 +130,71 @@
     {
       "kind": "usage",
       "title": {
-        "hu": "Hogyan épül fel a mondat",
         "en": "How the sentence is built",
-        "es": "Cómo se arma la frase",
-        "de": "Wie der Satz aufgebaut ist"
+        "es": "Cómo se arma la frase"
       },
       "points": [
         {
           "text": {
-            "hu": "A névmás kijelentő és kérdő mondatban mindig a ragozott ige ELŐTT áll, sosem utána.",
             "en": "In statements and questions the pronoun always goes BEFORE the conjugated verb, never after.",
-            "es": "En oraciones afirmativas e interrogativas el pronombre va SIEMPRE antes del verbo conjugado, nunca después.",
-            "de": "In Aussage- und Fragesätzen steht das Pronomen IMMER VOR dem konjugierten Verb, nie danach."
+            "es": "En oraciones afirmativas e interrogativas el pronombre va SIEMPRE antes del verbo conjugado, nunca después."
           },
           "examples": [
             {
               "es": "Te llamo mañana.",
-              "tr": { "hu": "Hívlak holnap.", "en": "I'll call you tomorrow.", "es": "Te llamo mañana.", "de": "Ich rufe dich morgen an." }
+              "tr": { "en": "I'll call you tomorrow.", "es": "Te llamo mañana." }
             },
             {
               "es": "Ella me llama todos los días.",
-              "tr": { "hu": "Ő mindennap hív engem.", "en": "She calls me every day.", "es": "Ella me llama todos los días.", "de": "Sie ruft mich jeden Tag an." }
+              "tr": { "en": "She calls me every day.", "es": "Ella me llama todos los días." }
             }
           ]
         },
         {
           "text": {
-            "hu": "Az alanyt (yo, tú, él) el lehet hagyni, mert a végződés már elárulja, ki cselekszik.",
             "en": "The subject (yo, tú, él) can be dropped, because the ending already reveals who acts.",
-            "es": "El sujeto (yo, tú, él) se puede omitir, porque la terminación ya revela quién actúa.",
-            "de": "Das Subjekt (yo, tú, él) kann wegfallen, weil die Endung schon verrät, wer handelt."
+            "es": "El sujeto (yo, tú, él) se puede omitir, porque la terminación ya revela quién actúa."
           },
           "examples": [
             {
               "es": "Te ayudo con la tarea.",
-              "tr": { "hu": "Segítek neked a házi feladatban.", "en": "I'll help you with the homework.", "es": "Te ayudo con la tarea.", "de": "Ich helfe dir mit den Hausaufgaben." }
+              "tr": { "en": "I'll help you with the homework.", "es": "Te ayudo con la tarea." }
             },
             {
               "es": "Te doy mi número.",
-              "tr": { "hu": "Megadom neked a számomat.", "en": "I'll give you my number.", "es": "Te doy mi número.", "de": "Ich gebe dir meine Nummer." }
+              "tr": { "en": "I'll give you my number.", "es": "Te doy mi número." }
             }
           ]
         },
         {
           "text": {
-            "hu": "Kiemeléshez a spanyol megduplázza a célpontot (a mí, a ti, a él…); ez nem hiba, hanem a beszélt nyelv normája.",
             "en": "To stress the target, Spanish doubles it (a mí, a ti, a él…); this is not a mistake, it's normal spoken Spanish.",
-            "es": "Para destacar el destino, el español lo duplica (a mí, a ti, a él…); esto no es un error, es lo normal al hablar.",
-            "de": "Zur Betonung verdoppelt das Spanische das Ziel (a mí, a ti, a él…); das ist kein Fehler, sondern normale gesprochene Sprache."
+            "es": "Para destacar el destino, el español lo duplica (a mí, a ti, a él…); esto no es un error, es lo normal al hablar."
           },
           "examples": [
             {
               "es": "A ti te amo.",
-              "tr": { "hu": "Téged szeretlek.", "en": "I love YOU.", "es": "A ti te amo.", "de": "DICH liebe ich." }
+              "tr": { "en": "I love YOU.", "es": "A ti te amo." }
             },
             {
               "es": "A mí me das agua.",
-              "tr": { "hu": "Nekem adsz vizet.", "en": "You give water to ME.", "es": "A mí me das agua.", "de": "MIR gibst du Wasser." }
+              "tr": { "en": "You give water to ME.", "es": "A mí me das agua." }
             }
           ]
         },
         {
           "text": {
-            "hu": "Főnévi igenév mellett a névmás a végére is tapadhat; mindkét sorrend helyes.",
             "en": "With an infinitive, the pronoun can also attach to the end; both orders are correct.",
-            "es": "Con un infinitivo, el pronombre también puede pegarse al final; los dos órdenes son correctos.",
-            "de": "Bei einem Infinitiv kann sich das Pronomen auch ans Ende hängen; beide Reihenfolgen sind korrekt."
+            "es": "Con un infinitivo, el pronombre también puede pegarse al final; los dos órdenes son correctos."
           },
           "examples": [
             {
               "es": "Quiero verte.",
-              "tr": { "hu": "Látni akarlak.", "en": "I want to see you.", "es": "Quiero verte.", "de": "Ich möchte dich sehen." }
+              "tr": { "en": "I want to see you.", "es": "Quiero verte." }
             },
             {
               "es": "Te quiero ver.",
-              "tr": { "hu": "Látni akarlak.", "en": "I want to see you.", "es": "Te quiero ver.", "de": "Ich möchte dich sehen." }
+              "tr": { "en": "I want to see you.", "es": "Te quiero ver." }
             }
           ]
         }
@@ -231,29 +203,25 @@
     {
       "kind": "contrast",
       "title": {
-        "hu": "Hasonló, mégis más",
         "en": "Similar, yet different",
-        "es": "Parecido, pero distinto",
-        "de": "Ähnlich, aber anders"
+        "es": "Parecido, pero distinto"
       },
       "pairs": [
         {
           "a": "te amo",
           "b": "me amas",
           "note": {
-            "hu": "A te amo azt jelenti, hogy ÉN szeretlek TÉGED; a me amas pedig azt, hogy TE szeretsz ENGEM: a végződés és a névmás szerepet cserél.",
             "en": "Te amo means I love you; me amas means you love me: the ending and the pronoun swap roles.",
-            "es": "Te amo significa que YO te quiero a TI; me amas significa que TÚ me quieres a MÍ: la terminación y el pronombre cambian de papel.",
-            "de": "Te amo bedeutet, ICH liebe DICH; me amas bedeutet, DU liebst MICH: Endung und Pronomen tauschen die Rollen."
+            "es": "Te amo significa que YO te quiero a TI; me amas significa que TÚ me quieres a MÍ: la terminación y el pronombre cambian de papel."
           },
           "examples": [
             {
               "es": "Te amo.",
-              "tr": { "hu": "Szeretlek.", "en": "I love you.", "es": "Te amo.", "de": "Ich liebe dich." }
+              "tr": { "en": "I love you.", "es": "Te amo." }
             },
             {
               "es": "Tú me amas.",
-              "tr": { "hu": "Szeretsz engem.", "en": "You love me.", "es": "Tú me amas.", "de": "Du liebst mich." }
+              "tr": { "en": "You love me.", "es": "Tú me amas." }
             }
           ]
         },
@@ -261,19 +229,17 @@
           "a": "le doy",
           "b": "lo veo",
           "note": {
-            "hu": "A le doy részes esetet használ: valamit ADOK neki (a dolog a tárgy, ő a címzett); a lo veo tárgyesetet: közvetlenül ŐT látom, nincs külön átadott dolog.",
             "en": "Le doy uses the indirect object: I give something TO him (the thing is the direct object, he is the recipient); lo veo uses the direct object: I see HIM directly, there is no separate thing being given.",
-            "es": "Le doy usa el objeto indirecto: le doy algo A ÉL (la cosa es el objeto directo, él es el destinatario); lo veo usa el objeto directo: lo veo A ÉL directamente, no hay una cosa aparte que se entregue.",
-            "de": "Le doy verwendet das indirekte Objekt: ich gebe IHM etwas (die Sache ist das direkte Objekt, er ist der Empfänger); lo veo verwendet das direkte Objekt: ich sehe IHN direkt, es gibt keine separate übergebene Sache."
+            "es": "Le doy usa el objeto indirecto: le doy algo A ÉL (la cosa es el objeto directo, él es el destinatario); lo veo usa el objeto directo: lo veo A ÉL directamente, no hay una cosa aparte que se entregue."
           },
           "examples": [
             {
               "es": "Le doy el libro.",
-              "tr": { "hu": "Odaadom neki a könyvet.", "en": "I give him the book.", "es": "Le doy el libro.", "de": "Ich gebe ihm das Buch." }
+              "tr": { "en": "I give him the book.", "es": "Le doy el libro." }
             },
             {
               "es": "Lo veo cada semana.",
-              "tr": { "hu": "Minden héten látom őt.", "en": "I see him every week.", "es": "Lo veo cada semana.", "de": "Ich sehe ihn jede Woche." }
+              "tr": { "en": "I see him every week.", "es": "Lo veo cada semana." }
             }
           ]
         }
@@ -282,167 +248,163 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "A magyar gondolkodásnak a spanyol sorrend fordítottnak tűnik: elöl áll, KIT érint (a névmás), és csak a szó végén derül ki, KI cselekszik (a végződés).",
         "en": "To a Hungarian speaker the Spanish order feels reversed: the target comes first (the pronoun), and only at the end of the word does it become clear who acts (the ending).",
-        "es": "Para un hablante húngaro el orden español parece invertido: primero va a quién afecta (el pronombre), y solo al final de la palabra se sabe quién actúa (la terminación).",
-        "de": "Für einen ungarischen Sprecher wirkt die spanische Reihenfolge umgekehrt: zuerst steht, wen es betrifft (das Pronomen), und erst am Ende des Wortes wird klar, wer handelt (die Endung)."
+        "es": "Para un hablante húngaro el orden español parece invertido: primero va a quién afecta (el pronombre), y solo al final de la palabra se sabe quién actúa (la terminación)."
       }
     }
   ],
   "speak": {
-    "hu": "A magyar egyetlen szóba sűríti azt, hogy szeretlek, a spanyolnak viszont két külön jelzés kell: a végződés megmondja, ki cselekszik, a névmás pedig azt, hogy kit vagy kinek. Ha azt mondod, hogy szeretlek, a névmás a téged, ha pedig azt, hogy szeretsz, a névmás az engem. A névmás kijelentő és kérdő mondatban mindig a ragozott ige elé kerül. A célszemély hangsúlyozására a spanyol megkettőzi egy kis elöljáróval, ami a beszélt spanyolban teljesen természetes. Főnévi igenévvel a névmás a végéhez is kapcsolódhat, mindkét változat helyes.",
     "en": "A language like Hungarian squeezes I-love-you into a single word, but Spanish needs two separate signals: the ending says who acts, and the pronoun says whom or to whom. When you say I love you, the pronoun is you, and when you say you love me, the pronoun is me. In statements and questions the pronoun always goes before the conjugated verb. To stress the target, Spanish doubles it with a small preposition, which is completely natural in spoken Spanish. With an infinitive the pronoun can also attach to the end, and both versions are correct.",
-    "es": "Un idioma como el húngaro comprime te quiero en una sola palabra, pero el español necesita dos señales separadas: la terminación dice quién actúa, y el pronombre dice a quién o para quién. Cuando dices te quiero, el pronombre es te, y cuando dices me quieres, el pronombre es me. En oraciones afirmativas e interrogativas el pronombre va siempre antes del verbo conjugado. Para destacar a la persona, el español la duplica con una preposición pequeña, algo completamente natural en el español hablado. Con un infinitivo el pronombre también puede unirse al final, y las dos versiones son correctas.",
-    "de": "Eine Sprache wie das Ungarische presst ich liebe dich in ein einziges Wort, das Spanische braucht aber zwei getrennte Signale: Die Endung sagt, wer handelt, und das Pronomen sagt, wen oder wem. Sagst du ich liebe dich, ist das Pronomen dich, sagst du du liebst mich, ist es mich. In Aussage- und Fragesätzen steht das Pronomen immer vor dem konjugierten Verb. Um die Zielperson zu betonen, verdoppelt das Spanische sie mit einer kleinen Präposition, was in der gesprochenen Sprache völlig natürlich ist. Beim Infinitiv kann das Pronomen auch ans Ende treten, beide Versionen sind richtig."
+    "es": "Un idioma como el húngaro comprime te quiero en una sola palabra, pero el español necesita dos señales separadas: la terminación dice quién actúa, y el pronombre dice a quién o para quién. Cuando dices te quiero, el pronombre es te, y cuando dices me quieres, el pronombre es me. En oraciones afirmativas e interrogativas el pronombre va siempre antes del verbo conjugado. Para destacar a la persona, el español la duplica con una preposición pequeña, algo completamente natural en el español hablado. Con un infinitivo el pronombre también puede unirse al final, y las dos versiones son correctas."
   },
   "glossary": [
     {
       "word": "amo",
-      "gloss": { "hu": "szeretek (én)", "en": "I love", "es": "yo amo", "de": "ich liebe" }
+      "gloss": { "en": "I love", "es": "yo amo" }
     },
     {
       "word": "amas",
-      "gloss": { "hu": "szeretsz (te)", "en": "you love", "es": "tú amas", "de": "du liebst" }
+      "gloss": { "en": "you love", "es": "tú amas" }
     },
     {
       "word": "ama",
-      "gloss": { "hu": "szeret (ő)", "en": "he or she loves", "es": "él o ella ama", "de": "er oder sie liebt" }
+      "gloss": { "en": "he or she loves", "es": "él o ella ama" }
     },
     {
       "word": "amamos",
-      "gloss": { "hu": "szeretünk (mi)", "en": "we love", "es": "nosotros amamos", "de": "wir lieben" }
+      "gloss": { "en": "we love", "es": "nosotros amamos" }
     },
     {
       "word": "amáis",
-      "gloss": { "hu": "szerettek (ti)", "en": "you (plural) love", "es": "vosotros amáis", "de": "ihr liebt" }
+      "gloss": { "en": "you (plural) love", "es": "vosotros amáis" }
     },
     {
       "word": "aman",
-      "gloss": { "hu": "szeretnek (ők)", "en": "they love", "es": "ellos aman", "de": "sie lieben" }
+      "gloss": { "en": "they love", "es": "ellos aman" }
     },
     {
       "word": "doy",
-      "gloss": { "hu": "adok (én)", "en": "I give", "es": "yo doy", "de": "ich gebe" }
+      "gloss": { "en": "I give", "es": "yo doy" }
     },
     {
       "word": "das",
-      "gloss": { "hu": "adsz (te)", "en": "you give", "es": "tú das", "de": "du gibst" }
+      "gloss": { "en": "you give", "es": "tú das" }
     },
     {
       "word": "da",
-      "gloss": { "hu": "ad (ő)", "en": "he or she gives", "es": "él o ella da", "de": "er oder sie gibt" }
+      "gloss": { "en": "he or she gives", "es": "él o ella da" }
     },
     {
       "word": "dan",
-      "gloss": { "hu": "adnak (ők)", "en": "they give", "es": "ellos dan", "de": "sie geben" }
+      "gloss": { "en": "they give", "es": "ellos dan" }
     },
     {
       "word": "llamo",
-      "gloss": { "hu": "hívok (én)", "en": "I call", "es": "yo llamo", "de": "ich rufe an" }
+      "gloss": { "en": "I call", "es": "yo llamo" }
     },
     {
       "word": "llamas",
-      "gloss": { "hu": "hívsz (te)", "en": "you call", "es": "tú llamas", "de": "du rufst an" }
+      "gloss": { "en": "you call", "es": "tú llamas" }
     },
     {
       "word": "llama",
-      "gloss": { "hu": "hív (ő)", "en": "he or she calls", "es": "él o ella llama", "de": "er oder sie ruft an" }
+      "gloss": { "en": "he or she calls", "es": "él o ella llama" }
     },
     {
       "word": "ayudo",
-      "gloss": { "hu": "segítek (én)", "en": "I help", "es": "yo ayudo", "de": "ich helfe" }
+      "gloss": { "en": "I help", "es": "yo ayudo" }
     },
     {
       "word": "ayudas",
-      "gloss": { "hu": "segítesz (te)", "en": "you help", "es": "tú ayudas", "de": "du hilfst" }
+      "gloss": { "en": "you help", "es": "tú ayudas" }
     },
     {
       "word": "ayuda",
-      "gloss": { "hu": "segít (ő)", "en": "he or she helps", "es": "él o ella ayuda", "de": "er oder sie hilft" }
+      "gloss": { "en": "he or she helps", "es": "él o ella ayuda" }
     },
     {
       "word": "ayudamos",
-      "gloss": { "hu": "segítünk (mi)", "en": "we help", "es": "nosotros ayudamos", "de": "wir helfen" }
+      "gloss": { "en": "we help", "es": "nosotros ayudamos" }
     },
     {
       "word": "ayudáis",
-      "gloss": { "hu": "segítetek (ti)", "en": "you (plural) help", "es": "vosotros ayudáis", "de": "ihr helft" }
+      "gloss": { "en": "you (plural) help", "es": "vosotros ayudáis" }
     },
     {
       "word": "dice",
-      "gloss": { "hu": "mond (ő)", "en": "he or she says", "es": "él o ella dice", "de": "er oder sie sagt" }
+      "gloss": { "en": "he or she says", "es": "él o ella dice" }
     },
     {
       "word": "veo",
-      "gloss": { "hu": "látok (én)", "en": "I see", "es": "yo veo", "de": "ich sehe" }
+      "gloss": { "en": "I see", "es": "yo veo" }
     },
     {
       "word": "ves",
-      "gloss": { "hu": "látsz (te)", "en": "you see", "es": "tú ves", "de": "du siehst" }
+      "gloss": { "en": "you see", "es": "tú ves" }
     },
     {
       "word": "ve",
-      "gloss": { "hu": "lát (ő)", "en": "he or she sees", "es": "él o ella ve", "de": "er oder sie sieht" }
+      "gloss": { "en": "he or she sees", "es": "él o ella ve" }
     },
     {
       "word": "escribo",
-      "gloss": { "hu": "írok (én)", "en": "I write", "es": "yo escribo", "de": "ich schreibe" }
+      "gloss": { "en": "I write", "es": "yo escribo" }
     },
     {
       "word": "me",
-      "gloss": { "hu": "engem, nekem", "en": "me, to me", "es": "a mí", "de": "mich, mir" }
+      "gloss": { "en": "me, to me", "es": "a mí" }
     },
     {
       "word": "te",
-      "gloss": { "hu": "téged, neked", "en": "you, to you", "es": "a ti", "de": "dich, dir" }
+      "gloss": { "en": "you, to you", "es": "a ti" }
     },
     {
       "word": "le",
-      "gloss": { "hu": "neki", "en": "to him or her", "es": "a él o a ella", "de": "ihm oder ihr" }
+      "gloss": { "en": "to him or her", "es": "a él o a ella" }
     },
     {
       "word": "lo",
-      "gloss": { "hu": "azt (tárgy)", "en": "it (the thing)", "es": "la cosa", "de": "es (die Sache)" }
+      "gloss": { "en": "it (the thing)", "es": "la cosa" }
     },
     {
       "word": "nos",
-      "gloss": { "hu": "minket, nekünk", "en": "us, to us", "es": "a nosotros", "de": "uns" }
+      "gloss": { "en": "us, to us", "es": "a nosotros" }
     },
     {
       "word": "les",
-      "gloss": { "hu": "nekik", "en": "to them", "es": "a ellos", "de": "ihnen" }
+      "gloss": { "en": "to them", "es": "a ellos" }
     },
     {
       "word": "mensaje",
-      "gloss": { "hu": "üzenet", "en": "message", "es": "mensaje", "de": "Nachricht" }
+      "gloss": { "en": "message", "es": "mensaje" }
     },
     {
       "word": "foto",
-      "gloss": { "hu": "fénykép", "en": "photo", "es": "foto", "de": "Foto" }
+      "gloss": { "en": "photo", "es": "foto" }
     },
     {
       "word": "verdad",
-      "gloss": { "hu": "igazság", "en": "truth", "es": "verdad", "de": "Wahrheit" }
+      "gloss": { "en": "truth", "es": "verdad" }
     },
     {
       "word": "siempre",
-      "gloss": { "hu": "mindig", "en": "always", "es": "siempre", "de": "immer" }
+      "gloss": { "en": "always", "es": "siempre" }
     },
     {
       "word": "ahora",
-      "gloss": { "hu": "most", "en": "now", "es": "ahora", "de": "jetzt" }
+      "gloss": { "en": "now", "es": "ahora" }
     },
     {
       "word": "número",
-      "gloss": { "hu": "szám, telefonszám", "en": "number, phone number", "es": "número, número de teléfono", "de": "Nummer, Telefonnummer" }
+      "gloss": { "en": "number, phone number", "es": "número, número de teléfono" }
     },
     {
       "word": "tarea",
-      "gloss": { "hu": "házi feladat, feladat", "en": "homework, task", "es": "tarea, deberes", "de": "Hausaufgabe, Aufgabe" }
+      "gloss": { "en": "homework, task", "es": "tarea, deberes" }
     },
     {
       "word": "mucho",
-      "gloss": { "hu": "sokat, nagyon", "en": "a lot, very", "es": "mucho", "de": "viel, sehr" }
+      "gloss": { "en": "a lot, very", "es": "mucho" }
     }
   ],
   "items": [
@@ -452,27 +414,21 @@
       "options": ["te", "me", "le"],
       "correct": 0,
       "why": {
-        "hu": "Az amo végződése (-o) azt mondja: ÉN. A te azt: TÉGED. Együtt: szeretlek.",
         "en": "The -o in amo says I. The te says you (object). Together: I love you.",
-        "es": "La -o de amo dice YO. El te dice A TI. Juntos: te amo.",
-        "de": "Das -o in amo sagt ICH, das te sagt DICH. Zusammen: ich liebe dich."
+        "es": "La -o de amo dice YO. El te dice A TI. Juntos: te amo."
       },
       "wrong": {
         "me": {
-          "hu": "A me engem jelentene, tehát me amo azt mondaná: szeretem magam; itt viszont a te vagy a célpont, ezért te kell.",
           "en": "Me would mean myself, so me amo would say I love myself; here you are the target, so te is needed.",
-          "es": "Me significaría a mí mismo, por eso me amo diría que me quiero a mí mismo; aquí tú eres el destino, así que hace falta te.",
-          "de": "Me hieße mich selbst, also würde me amo bedeuten, ich liebe mich selbst; hier bist du das Ziel, deshalb braucht es te."
+          "es": "Me significaría a mí mismo, por eso me amo diría que me quiero a mí mismo; aquí tú eres el destino, así que hace falta te."
         },
         "le": {
-          "hu": "A le egy harmadik személyt jelöl (neki), nem a beszélgetőpartneredet; ha őróla lenne szó, akkor is lo kellene (az amar tárgyas ige): A él lo amo.",
           "en": "Le marks a third person (to him/her), not the person you're talking to; if it were about him, lo would be needed (amar takes a direct object): A él lo amo.",
-          "es": "Le marca a una tercera persona (a él o a ella), no a la persona con la que hablas; si se tratara de él, haría falta lo (amar lleva objeto directo): A él lo amo.",
-          "de": "Le bezeichnet eine dritte Person (ihm oder ihr), nicht die Person, mit der du sprichst; ginge es um ihn, bräuchte es lo (amar hat ein direktes Objekt): A él lo amo."
+          "es": "Le marca a una tercera persona (a él o a ella), no a la persona con la que hablas; si se tratara de él, haría falta lo (amar lleva objeto directo): A él lo amo."
         }
       },
       "examples": ["A ti te amo.", "Te amo mucho."],
-      "tr": { "hu": "Téged szeretlek.", "en": "I love you.", "es": "A ti te amo.", "de": "Dich liebe ich." }
+      "tr": { "en": "I love you.", "es": "A ti te amo." }
     },
     {
       "id": "qq-02",
@@ -480,27 +436,21 @@
       "options": ["amas", "amo", "ama"],
       "correct": 0,
       "why": {
-        "hu": "Az alany tú, ezért -as végződés. A me azt mondja: engem.",
         "en": "The subject is tú, so the -as ending. Me says: me.",
-        "es": "El sujeto es tú, por eso -as. Me dice: a mí.",
-        "de": "Das Subjekt ist tú, daher -as. Me sagt: mich."
+        "es": "El sujeto es tú, por eso -as. Me dice: a mí."
       },
       "wrong": {
         "amo": {
-          "hu": "Az amo azt jelenti: ÉN szeretek, tehát me amo = szeretem magam; itt az alany tú, ezért amas kell.",
           "en": "Amo means I love, so me amo would mean I love myself; here the subject is tú, so amas is needed.",
-          "es": "Amo significa yo amo, por eso me amo diría que me quiero a mí mismo; aquí el sujeto es tú, así que hace falta amas.",
-          "de": "Amo bedeutet ich liebe, also würde me amo heißen, ich liebe mich selbst; hier ist das Subjekt tú, deshalb braucht es amas."
+          "es": "Amo significa yo amo, por eso me amo diría que me quiero a mí mismo; aquí el sujeto es tú, así que hace falta amas."
         },
         "ama": {
-          "hu": "Az ama azt jelenti: Ő szeret, nem te; ama akkor lenne helyes, ha egy harmadik személyről lenne szó: Él me ama.",
           "en": "Ama means he or she loves, not you; ama would be correct if it were about a third person: Él me ama.",
-          "es": "Ama significa él o ella ama, no tú; ama sería correcto si se tratara de una tercera persona: Él me ama.",
-          "de": "Ama bedeutet er oder sie liebt, nicht du; ama wäre korrekt, wenn es um eine dritte Person ginge: Él me ama."
+          "es": "Ama significa él o ella ama, no tú; ama sería correcto si se tratara de una tercera persona: Él me ama."
         }
       },
       "examples": ["Tú me amas.", "Tú me ves."],
-      "tr": { "hu": "Te szeretsz engem.", "en": "You love me.", "es": "Tú me amas.", "de": "Du liebst mich." }
+      "tr": { "en": "You love me.", "es": "Tú me amas." }
     },
     {
       "id": "qq-03",
@@ -508,27 +458,21 @@
       "options": ["doy", "das", "da"],
       "correct": 0,
       "why": {
-        "hu": "Yo az alany, ezért doy. A te azt mondja: neked.",
         "en": "Yo is the subject, so doy. Te says: to you.",
-        "es": "Yo es el sujeto, por eso doy. Te dice: a ti.",
-        "de": "Yo ist das Subjekt, daher doy. Te sagt: dir."
+        "es": "Yo es el sujeto, por eso doy. Te dice: a ti."
       },
       "wrong": {
         "das": {
-          "hu": "A das azt jelenti: TE adsz, de itt az alany yo, ezért doy kell; das akkor lenne helyes, ha te lennél a cselekvő: Tú me das un libro.",
           "en": "Das means you give, but here the subject is yo, so doy is needed; das would be correct if you were the one acting: Tú me das un libro.",
-          "es": "Das significa tú das, pero aquí el sujeto es yo, así que hace falta doy; das sería correcto si tú fueras quien actúa: Tú me das un libro.",
-          "de": "Das bedeutet du gibst, aber hier ist das Subjekt yo, deshalb braucht es doy; das wäre korrekt, wenn du handeln würdest: Tú me das un libro."
+          "es": "Das significa tú das, pero aquí el sujeto es yo, así que hace falta doy; das sería correcto si tú fueras quien actúa: Tú me das un libro."
         },
         "da": {
-          "hu": "A da azt jelenti: Ő ad, nem én; da akkor lenne helyes, ha egy harmadik személyről lenne szó: Él te da un libro.",
           "en": "Da means he or she gives, not I; da would be correct if it were about a third person: Él te da un libro.",
-          "es": "Da significa él o ella da, no yo; da sería correcto si se tratara de una tercera persona: Él te da un libro.",
-          "de": "Da bedeutet er oder sie gibt, nicht ich; da wäre korrekt, wenn es um eine dritte Person ginge: Él te da un libro."
+          "es": "Da significa él o ella da, no yo; da sería correcto si se tratara de una tercera persona: Él te da un libro."
         }
       },
       "examples": ["Yo te doy un libro.", "Te doy mi número."],
-      "tr": { "hu": "Adok neked egy könyvet.", "en": "I give you a book.", "es": "Yo te doy un libro.", "de": "Ich gebe dir ein Buch." }
+      "tr": { "en": "I give you a book.", "es": "Yo te doy un libro." }
     },
     {
       "id": "qq-04",
@@ -536,27 +480,21 @@
       "options": ["das", "doy", "dan"],
       "correct": 0,
       "why": {
-        "hu": "Tú az alany: das. A me azt mondja: nekem.",
         "en": "Tú is the subject: das. Me says: to me.",
-        "es": "Tú es el sujeto: das. Me dice: a mí.",
-        "de": "Tú ist das Subjekt: das. Me sagt: mir."
+        "es": "Tú es el sujeto: das. Me dice: a mí."
       },
       "wrong": {
         "doy": {
-          "hu": "A doy azt jelenti: ÉN adok, de itt az alany tú, ezért das kell; doy akkor lenne helyes, ha én lennék a cselekvő: Yo te doy agua.",
           "en": "Doy means I give, but here the subject is tú, so das is needed; doy would be correct if I were the one acting: Yo te doy agua.",
-          "es": "Doy significa yo doy, pero aquí el sujeto es tú, así que hace falta das; doy sería correcto si yo fuera quien actúa: Yo te doy agua.",
-          "de": "Doy bedeutet ich gebe, aber hier ist das Subjekt tú, deshalb braucht es das; doy wäre korrekt, wenn ich handeln würde: Yo te doy agua."
+          "es": "Doy significa yo doy, pero aquí el sujeto es tú, así que hace falta das; doy sería correcto si yo fuera quien actúa: Yo te doy agua."
         },
         "dan": {
-          "hu": "A dan azt jelenti: ŐK adnak, nem te egyedül; dan akkor lenne helyes, ha többen adnának: Ellos me dan agua.",
           "en": "Dan means they give, not you alone; dan would be correct if several people were giving: Ellos me dan agua.",
-          "es": "Dan significa ellos dan, no tú solo; dan sería correcto si varias personas dieran: Ellos me dan agua.",
-          "de": "Dan bedeutet sie geben, nicht du allein; dan wäre korrekt, wenn mehrere Personen geben würden: Ellos me dan agua."
+          "es": "Dan significa ellos dan, no tú solo; dan sería correcto si varias personas dieran: Ellos me dan agua."
         }
       },
       "examples": ["Tú me das agua.", "Me das la mano."],
-      "tr": { "hu": "Adsz nekem vizet.", "en": "You give me water.", "es": "Tú me das agua.", "de": "Du gibst mir Wasser." }
+      "tr": { "en": "You give me water.", "es": "Tú me das agua." }
     },
     {
       "id": "qq-05",
@@ -564,27 +502,21 @@
       "options": ["llama", "llamo", "llamas"],
       "correct": 0,
       "why": {
-        "hu": "Ella az alany: llama. A me azt mondja: engem.",
         "en": "Ella is the subject: llama. Me says: me.",
-        "es": "Ella es el sujeto: llama. Me dice: a mí.",
-        "de": "Ella ist das Subjekt: llama. Me sagt: mich."
+        "es": "Ella es el sujeto: llama. Me dice: a mí."
       },
       "wrong": {
         "llamo": {
-          "hu": "A llamo azt jelenti: ÉN hívok, de itt az alany ella, ezért llama kell; llamo akkor lenne helyes, ha én lennék a cselekvő: Yo la llamo.",
           "en": "Llamo means I call, but here the subject is ella, so llama is needed; llamo would be correct if I were the one acting: Yo la llamo.",
-          "es": "Llamo significa yo llamo, pero aquí el sujeto es ella, así que hace falta llama; llamo sería correcto si yo fuera quien actúa: Yo la llamo.",
-          "de": "Llamo bedeutet ich rufe an, aber hier ist das Subjekt ella, deshalb braucht es llama; llamo wäre korrekt, wenn ich handeln würde: Yo la llamo."
+          "es": "Llamo significa yo llamo, pero aquí el sujeto es ella, así que hace falta llama; llamo sería correcto si yo fuera quien actúa: Yo la llamo."
         },
         "llamas": {
-          "hu": "A llamas azt jelenti: TE hívsz, nem ő; llamas akkor lenne helyes, ha te lennél a cselekvő: Tú me llamas.",
           "en": "Llamas means you call, not her; llamas would be correct if you were the one acting: Tú me llamas.",
-          "es": "Llamas significa tú llamas, no ella; llamas sería correcto si tú fueras quien actúa: Tú me llamas.",
-          "de": "Llamas bedeutet du rufst an, nicht sie; llamas wäre korrekt, wenn du handeln würdest: Tú me llamas."
+          "es": "Llamas significa tú llamas, no ella; llamas sería correcto si tú fueras quien actúa: Tú me llamas."
         }
       },
       "examples": ["Ella me llama todos los días.", "Mi madre me llama."],
-      "tr": { "hu": "Minden nap felhív engem.", "en": "She calls me every day.", "es": "Ella me llama todos los días.", "de": "Sie ruft mich jeden Tag an." }
+      "tr": { "en": "She calls me every day.", "es": "Ella me llama todos los días." }
     },
     {
       "id": "qq-06",
@@ -592,27 +524,21 @@
       "options": ["llamo", "llamas", "llama"],
       "correct": 0,
       "why": {
-        "hu": "Yo az alany: llamo. A te azt mondja: téged.",
         "en": "Yo is the subject: llamo. Te says: you.",
-        "es": "Yo es el sujeto: llamo. Te dice: a ti.",
-        "de": "Yo ist das Subjekt: llamo. Te sagt: dich."
+        "es": "Yo es el sujeto: llamo. Te dice: a ti."
       },
       "wrong": {
         "llamas": {
-          "hu": "A llamas azt jelenti: TE hívsz, de itt az alany yo, ezért llamo kell; llamas akkor lenne helyes, ha te lennél a cselekvő: Tú me llamas mañana.",
           "en": "Llamas means you call, but here the subject is yo, so llamo is needed; llamas would be correct if you were the one acting: Tú me llamas mañana.",
-          "es": "Llamas significa tú llamas, pero aquí el sujeto es yo, así que hace falta llamo; llamas sería correcto si tú fueras quien actúa: Tú me llamas mañana.",
-          "de": "Llamas bedeutet du rufst an, aber hier ist das Subjekt yo, deshalb braucht es llamo; llamas wäre korrekt, wenn du handeln würdest: Tú me llamas mañana."
+          "es": "Llamas significa tú llamas, pero aquí el sujeto es yo, así que hace falta llamo; llamas sería correcto si tú fueras quien actúa: Tú me llamas mañana."
         },
         "llama": {
-          "hu": "A llama azt jelenti: Ő hív, nem én; llama akkor lenne helyes, ha egy harmadik személyről lenne szó: Él te llama mañana.",
           "en": "Llama means he or she calls, not I; llama would be correct if it were about a third person: Él te llama mañana.",
-          "es": "Llama significa él o ella llama, no yo; llama sería correcto si se tratara de una tercera persona: Él te llama mañana.",
-          "de": "Llama bedeutet er oder sie ruft an, nicht ich; llama wäre korrekt, wenn es um eine dritte Person ginge: Él te llama mañana."
+          "es": "Llama significa él o ella llama, no yo; llama sería correcto si se tratara de una tercera persona: Él te llama mañana."
         }
       },
       "examples": ["Yo te llamo mañana.", "Te llamo en la noche."],
-      "tr": { "hu": "Holnap felhívlak.", "en": "I will call you tomorrow.", "es": "Yo te llamo mañana.", "de": "Ich rufe dich morgen an." }
+      "tr": { "en": "I will call you tomorrow.", "es": "Yo te llamo mañana." }
     },
     {
       "id": "qq-07",
@@ -620,27 +546,21 @@
       "options": ["ayudas", "ayudo", "ayuda"],
       "correct": 0,
       "why": {
-        "hu": "Tú az alany: ayudas. A me azt mondja: nekem.",
         "en": "Tú is the subject: ayudas. Me says: me.",
-        "es": "Tú es el sujeto: ayudas. Me dice: a mí.",
-        "de": "Tú ist das Subjekt: ayudas. Me sagt: mir."
+        "es": "Tú es el sujeto: ayudas. Me dice: a mí."
       },
       "wrong": {
         "ayudo": {
-          "hu": "Az ayudo azt jelenti: ÉN segítek, de itt az alany tú, ezért ayudas kell; ayudo akkor lenne helyes, ha én lennék a cselekvő: Yo te ayudo.",
           "en": "Ayudo means I help, but here the subject is tú, so ayudas is needed; ayudo would be correct if I were the one acting: Yo te ayudo.",
-          "es": "Ayudo significa yo ayudo, pero aquí el sujeto es tú, así que hace falta ayudas; ayudo sería correcto si yo fuera quien actúa: Yo te ayudo.",
-          "de": "Ayudo bedeutet ich helfe, aber hier ist das Subjekt tú, deshalb braucht es ayudas; ayudo wäre korrekt, wenn ich handeln würde: Yo te ayudo."
+          "es": "Ayudo significa yo ayudo, pero aquí el sujeto es tú, así que hace falta ayudas; ayudo sería correcto si yo fuera quien actúa: Yo te ayudo."
         },
         "ayuda": {
-          "hu": "Az ayuda azt jelenti: Ő segít, nem te; ayuda akkor lenne helyes, ha egy harmadik személyről lenne szó: Ella me ayuda.",
           "en": "Ayuda means he or she helps, not you; ayuda would be correct if it were about a third person: Ella me ayuda.",
-          "es": "Ayuda significa él o ella ayuda, no tú; ayuda sería correcto si se tratara de una tercera persona: Ella me ayuda.",
-          "de": "Ayuda bedeutet er oder sie hilft, nicht du; ayuda wäre korrekt, wenn es um eine dritte Person ginge: Ella me ayuda."
+          "es": "Ayuda significa él o ella ayuda, no tú; ayuda sería correcto si se tratara de una tercera persona: Ella me ayuda."
         }
       },
       "examples": ["¿Tú me ayudas con esto?", "¿Me ayudas, por favor?"],
-      "tr": { "hu": "Segítesz nekem ebben?", "en": "Will you help me with this?", "es": "¿Tú me ayudas con esto?", "de": "Hilfst du mir dabei?" }
+      "tr": { "en": "Will you help me with this?", "es": "¿Tú me ayudas con esto?" }
     },
     {
       "id": "qq-08",
@@ -648,27 +568,21 @@
       "options": ["te", "me", "le"],
       "correct": 0,
       "why": {
-        "hu": "Az ayudo már mondja, hogy ÉN. Marad a célpont: te = neked.",
         "en": "Ayudo already says I. What is left is the target: te = you.",
-        "es": "Ayudo ya dice YO. Falta el destino: te = a ti.",
-        "de": "Ayudo sagt schon ICH. Es fehlt das Ziel: te = dir."
+        "es": "Ayudo ya dice YO. Falta el destino: te = a ti."
       },
       "wrong": {
         "me": {
-          "hu": "A me engem jelent, de az ayudo már az én cselekvésemet mutatja; a célpont itt te vagy, ezért te kell, nem me: me akkor lenne helyes, ha valaki más segítene nekem: Tú me ayudas siempre.",
           "en": "Me means me, but ayudo already shows I am the one acting; the target here is you, so te is needed, not me: me would be correct if someone else helped me: Tú me ayudas siempre.",
-          "es": "Me significa a mí, pero ayudo ya muestra que yo soy quien actúa; el destino aquí eres tú, así que hace falta te, no me: me sería correcto si otra persona me ayudara: Tú me ayudas siempre.",
-          "de": "Me heißt mir, aber ayudo zeigt schon, dass ich handle; das Ziel hier bist du, deshalb braucht es te, nicht me: me wäre korrekt, wenn mir jemand anderes hülfe: Tú me ayudas siempre."
+          "es": "Me significa a mí, pero ayudo ya muestra que yo soy quien actúa; el destino aquí eres tú, así que hace falta te, no me: me sería correcto si otra persona me ayudara: Tú me ayudas siempre."
         },
         "le": {
-          "hu": "A le egy harmadik személyt jelöl, nem téged; le akkor lenne helyes, ha őróla lenne szó: A él le ayudo siempre.",
           "en": "Le marks a third person, not you; le would be correct if it were about someone else: A él le ayudo siempre.",
-          "es": "Le marca a una tercera persona, no a ti; le sería correcto si se tratara de otra persona: A él le ayudo siempre.",
-          "de": "Le bezeichnet eine dritte Person, nicht dich; le wäre korrekt, wenn es um jemand anderen ginge: A él le ayudo siempre."
+          "es": "Le marca a una tercera persona, no a ti; le sería correcto si se tratara de otra persona: A él le ayudo siempre."
         }
       },
       "examples": ["A ti te ayudo siempre.", "Te ayudo con la tarea."],
-      "tr": { "hu": "Neked mindig segítek.", "en": "I always help you.", "es": "A ti te ayudo siempre.", "de": "Dir helfe ich immer." }
+      "tr": { "en": "I always help you.", "es": "A ti te ayudo siempre." }
     },
     {
       "id": "qq-09",
@@ -676,27 +590,21 @@
       "options": ["nos", "les", "me"],
       "correct": 0,
       "why": {
-        "hu": "A célpont nosotros, ezért nos. A dice azt mondja: ő.",
         "en": "The target is nosotros, so nos. Dice says: he or she.",
-        "es": "El destino es nosotros, por eso nos. Dice dice: él o ella.",
-        "de": "Das Ziel ist nosotros, daher nos. Dice sagt: er oder sie."
+        "es": "El destino es nosotros, por eso nos. Dice dice: él o ella."
       },
       "wrong": {
         "les": {
-          "hu": "A les nekik jelent, de itt a célpont mi vagyunk (a nosotros), ezért nos kell; les akkor lenne helyes, ha ők lennének a célpont: Ella les dice la verdad a ellos.",
           "en": "Les means to them, but here the target is us (a nosotros), so nos is needed; les would be correct if they were the target: Ella les dice la verdad a ellos.",
-          "es": "Les significa a ellos, pero aquí el destino somos nosotros, así que hace falta nos; les sería correcto si ellos fueran el destino: Ella les dice la verdad a ellos.",
-          "de": "Les heißt ihnen, aber hier ist das Ziel wir (a nosotros), deshalb braucht es nos; les wäre korrekt, wenn sie das Ziel wären: Ella les dice la verdad a ellos."
+          "es": "Les significa a ellos, pero aquí el destino somos nosotros, así que hace falta nos; les sería correcto si ellos fueran el destino: Ella les dice la verdad a ellos."
         },
         "me": {
-          "hu": "A me nekem jelent, egy személynek, itt viszont többünkről (nosotros) van szó, ezért nos kell; me akkor lenne helyes, ha csak nekem mondaná: Ella me dice la verdad.",
           "en": "Me means to me, one person, but here it is about several of us (nosotros), so nos is needed; me would be correct if she told only me: Ella me dice la verdad.",
-          "es": "Me significa a mí, una persona, pero aquí se trata de varios de nosotros, así que hace falta nos; me sería correcto si me lo dijera solo a mí: Ella me dice la verdad.",
-          "de": "Me heißt mir, eine Person, hier geht es aber um mehrere von uns (nosotros), deshalb braucht es nos; me wäre korrekt, wenn sie es nur mir sagen würde: Ella me dice la verdad."
+          "es": "Me significa a mí, una persona, pero aquí se trata de varios de nosotros, así que hace falta nos; me sería correcto si me lo dijera solo a mí: Ella me dice la verdad."
         }
       },
       "examples": ["Ella nos dice la verdad.", "Nos dice todo."],
-      "tr": { "hu": "Elmondja nekünk az igazat.", "en": "She tells us the truth.", "es": "Ella nos dice la verdad a nosotros.", "de": "Sie sagt uns die Wahrheit." }
+      "tr": { "en": "She tells us the truth.", "es": "Ella nos dice la verdad a nosotros." }
     },
     {
       "id": "qq-10",
@@ -704,27 +612,21 @@
       "options": ["veo", "ves", "ve"],
       "correct": 0,
       "why": {
-        "hu": "Yo az alany: veo. A te azt mondja: téged.",
         "en": "Yo is the subject: veo. Te says: you.",
-        "es": "Yo es el sujeto: veo. Te dice: a ti.",
-        "de": "Yo ist das Subjekt: veo. Te sagt: dich."
+        "es": "Yo es el sujeto: veo. Te dice: a ti."
       },
       "wrong": {
         "ves": {
-          "hu": "A ves azt jelenti: TE látsz, de itt az alany yo, ezért veo kell; ves akkor lenne helyes, ha te lennél a cselekvő: Tú me ves en la foto.",
           "en": "Ves means you see, but here the subject is yo, so veo is needed; ves would be correct if you were the one acting: Tú me ves en la foto.",
-          "es": "Ves significa tú ves, pero aquí el sujeto es yo, así que hace falta veo; ves sería correcto si tú fueras quien actúa: Tú me ves en la foto.",
-          "de": "Ves bedeutet du siehst, aber hier ist das Subjekt yo, deshalb braucht es veo; ves wäre korrekt, wenn du handeln würdest: Tú me ves en la foto."
+          "es": "Ves significa tú ves, pero aquí el sujeto es yo, así que hace falta veo; ves sería correcto si tú fueras quien actúa: Tú me ves en la foto."
         },
         "ve": {
-          "hu": "A ve azt jelenti: Ő lát, nem én; ve akkor lenne helyes, ha egy harmadik személyről lenne szó: Él te ve en la foto.",
           "en": "Ve means he or she sees, not I; ve would be correct if it were about a third person: Él te ve en la foto.",
-          "es": "Ve significa él o ella ve, no yo; ve sería correcto si se tratara de una tercera persona: Él te ve en la foto.",
-          "de": "Ve bedeutet er oder sie sieht, nicht ich; ve wäre korrekt, wenn es um eine dritte Person ginge: Él te ve en la foto."
+          "es": "Ve significa él o ella ve, no yo; ve sería correcto si se tratara de una tercera persona: Él te ve en la foto."
         }
       },
       "examples": ["Yo te veo en la foto.", "Te veo mañana."],
-      "tr": { "hu": "Látlak a fényképen.", "en": "I see you in the photo.", "es": "Yo te veo en la foto.", "de": "Ich sehe dich auf dem Foto." }
+      "tr": { "en": "I see you in the photo.", "es": "Yo te veo en la foto." }
     },
     {
       "id": "qq-11",
@@ -732,27 +634,21 @@
       "options": ["ves", "veo", "ve"],
       "correct": 0,
       "why": {
-        "hu": "Tú az alany: ves. A me azt mondja: engem.",
         "en": "Tú is the subject: ves. Me says: me.",
-        "es": "Tú es el sujeto: ves. Me dice: a mí.",
-        "de": "Tú ist das Subjekt: ves. Me sagt: mich."
+        "es": "Tú es el sujeto: ves. Me dice: a mí."
       },
       "wrong": {
         "veo": {
-          "hu": "A veo azt jelenti: ÉN látok, de itt az alany tú, ezért ves kell; veo akkor lenne helyes, ha én lennék a cselekvő: Yo te veo ahora.",
           "en": "Veo means I see, but here the subject is tú, so ves is needed; veo would be correct if I were the one acting: Yo te veo ahora.",
-          "es": "Veo significa yo veo, pero aquí el sujeto es tú, así que hace falta ves; veo sería correcto si yo fuera quien actúa: Yo te veo ahora.",
-          "de": "Veo bedeutet ich sehe, aber hier ist das Subjekt tú, deshalb braucht es ves; veo wäre korrekt, wenn ich handeln würde: Yo te veo ahora."
+          "es": "Veo significa yo veo, pero aquí el sujeto es tú, así que hace falta ves; veo sería correcto si yo fuera quien actúa: Yo te veo ahora."
         },
         "ve": {
-          "hu": "A ve azt jelenti: Ő lát, nem te; ve akkor lenne helyes, ha egy harmadik személyről lenne szó: Ella me ve ahora.",
           "en": "Ve means he or she sees, not you; ve would be correct if it were about a third person: Ella me ve ahora.",
-          "es": "Ve significa él o ella ve, no tú; ve sería correcto si se tratara de una tercera persona: Ella me ve ahora.",
-          "de": "Ve bedeutet er oder sie sieht, nicht du; ve wäre korrekt, wenn es um eine dritte Person ginge: Ella me ve ahora."
+          "es": "Ve significa él o ella ve, no tú; ve sería correcto si se tratara de una tercera persona: Ella me ve ahora."
         }
       },
       "examples": ["¿Tú me ves ahora?", "¿Me ves bien?"],
-      "tr": { "hu": "Látsz most engem?", "en": "Do you see me now?", "es": "¿Tú me ves ahora?", "de": "Siehst du mich jetzt?" }
+      "tr": { "en": "Do you see me now?", "es": "¿Tú me ves ahora?" }
     },
     {
       "id": "qq-12",
@@ -760,27 +656,21 @@
       "options": ["le", "lo", "les"],
       "correct": 0,
       "why": {
-        "hu": "Az escribo mondja: ÉN. A célpont a él, ezért le.",
         "en": "Escribo says I. The target is a él, so le.",
-        "es": "Escribo dice YO. El destino es a él, por eso le.",
-        "de": "Escribo sagt ICH. Das Ziel ist a él, daher le."
+        "es": "Escribo dice YO. El destino es a él, por eso le."
       },
       "wrong": {
         "lo": {
-          "hu": "A lo tárgyeset névmás (azt jelenti: azt), nem a címzettet jelöli; lo akkor lenne helyes, ha magát a dolgot helyettesítené: Lo escribo ahora.",
           "en": "Lo is a direct object pronoun (it), not the recipient; lo would be correct if it replaced the thing itself: Lo escribo ahora.",
-          "es": "Lo es un pronombre de objeto directo (eso), no el destinatario; lo sería correcto si sustituyera la cosa misma: Lo escribo ahora.",
-          "de": "Lo ist ein direktes Objektpronomen (es), nicht der Empfänger; lo wäre korrekt, wenn es die Sache selbst ersetzen würde: Lo escribo ahora."
+          "es": "Lo es un pronombre de objeto directo (eso), no el destinatario; lo sería correcto si sustituyera la cosa misma: Lo escribo ahora."
         },
         "les": {
-          "hu": "A les többeknek jelent, itt viszont egyetlen személyről (a él) van szó, ezért le kell; les akkor lenne helyes, ha többüknek írnék: A ellos les escribo.",
           "en": "Les means to several people, but here it is about one person (a él), so le is needed; les would be correct if I wrote to several: A ellos les escribo.",
-          "es": "Les significa a varias personas, pero aquí se trata de una sola persona (a él), así que hace falta le; les sería correcto si escribiera a varios: A ellos les escribo.",
-          "de": "Les heißt mehreren Personen, hier geht es aber um eine Person (a él), deshalb braucht es le; les wäre korrekt, wenn ich mehreren schreiben würde: A ellos les escribo."
+          "es": "Les significa a varias personas, pero aquí se trata de una sola persona (a él), así que hace falta le; les sería correcto si escribiera a varios: A ellos les escribo."
         }
       },
       "examples": ["A él le escribo un mensaje.", "Le escribo a mi madre."],
-      "tr": { "hu": "Írok neki egy üzenetet.", "en": "I am writing him a message.", "es": "A él le escribo un mensaje.", "de": "Ich schreibe ihm eine Nachricht." }
+      "tr": { "en": "I am writing him a message.", "es": "A él le escribo un mensaje." }
     },
     {
       "id": "qq-match-01",
@@ -879,42 +769,32 @@
       "id": "qq-why-01",
       "es": "Nosotros ayudamos mucho.",
       "target": "ayudamos",
-      "tr": { "hu": "Sokat segítünk.", "en": "We help a lot.", "es": "Nosotros ayudamos mucho.", "de": "Wir helfen viel." },
+      "tr": { "en": "We help a lot.", "es": "Nosotros ayudamos mucho." },
       "options": [
         {
           "text": {
-            "hu": "a végződés mutatja az alanyt",
             "en": "the ending shows the subject",
-            "es": "la terminación indica el sujeto",
-            "de": "die Endung zeigt das Subjekt"
+            "es": "la terminación indica el sujeto"
           }
         },
         {
           "text": {
-            "hu": "a névmás a tárgyat mutatja (kit érint)",
             "en": "the pronoun shows the direct object (whom it affects)",
-            "es": "el pronombre indica el objeto directo (a quién afecta)",
-            "de": "das Pronomen zeigt das direkte Objekt (wen es betrifft)"
+            "es": "el pronombre indica el objeto directo (a quién afecta)"
           },
           "wrong": {
-            "hu": "Ebben a mondatban nincs tárgy-névmás, csak a mucho határozó áll; a -amos végződés maga mutatja, hogy mi vagyunk az alany.",
             "en": "There is no direct object pronoun in this sentence, only the adverb mucho; the -amos ending itself shows that we are the subject.",
-            "es": "En esta frase no hay pronombre de objeto directo, solo el adverbio mucho; la propia terminación -amos indica que nosotros somos el sujeto.",
-            "de": "In diesem Satz gibt es kein direktes Objektpronomen, nur das Adverb mucho; die Endung -amos selbst zeigt, dass wir das Subjekt sind."
+            "es": "En esta frase no hay pronombre de objeto directo, solo el adverbio mucho; la propia terminación -amos indica que nosotros somos el sujeto."
           }
         },
         {
           "text": {
-            "hu": "a névmás a címzettet mutatja (kinek szól)",
             "en": "the pronoun shows the indirect object (to whom it is addressed)",
-            "es": "el pronombre indica el objeto indirecto (a quién se dirige)",
-            "de": "das Pronomen zeigt das indirekte Objekt (wem es gilt)"
+            "es": "el pronombre indica el objeto indirecto (a quién se dirige)"
           },
           "wrong": {
-            "hu": "Nincs a mondatban címzett névmás sem, senkinek nem adunk vagy mondunk semmit; csak az alanyt (mi) jelzi a végződés.",
             "en": "There is no recipient pronoun either, we are not giving or telling anything to anyone; only the ending marks the subject (we).",
-            "es": "Tampoco hay pronombre de destinatario, no le damos ni decimos nada a nadie; solo la terminación marca el sujeto (nosotros).",
-            "de": "Es gibt auch kein Empfänger-Pronomen, wir geben oder sagen niemandem etwas; nur die Endung markiert das Subjekt (wir)."
+            "es": "Tampoco hay pronombre de destinatario, no le damos ni decimos nada a nadie; solo la terminación marca el sujeto (nosotros)."
           }
         }
       ],
@@ -925,42 +805,32 @@
       "id": "qq-why-02",
       "es": "Ustedes ayudan siempre.",
       "target": "ayudan",
-      "tr": { "hu": "Ti mindig segítetek.", "en": "You (plural) always help.", "es": "Ustedes ayudan siempre.", "de": "Ihr helft immer." },
+      "tr": { "en": "You (plural) always help.", "es": "Ustedes ayudan siempre." },
       "options": [
         {
           "text": {
-            "hu": "a végződés mutatja az alanyt",
             "en": "the ending shows the subject",
-            "es": "la terminación indica el sujeto",
-            "de": "die Endung zeigt das Subjekt"
+            "es": "la terminación indica el sujeto"
           }
         },
         {
           "text": {
-            "hu": "a névmás a tárgyat mutatja (kit érint)",
             "en": "the pronoun shows the direct object (whom it affects)",
-            "es": "el pronombre indica el objeto directo (a quién afecta)",
-            "de": "das Pronomen zeigt das direkte Objekt (wen es betrifft)"
+            "es": "el pronombre indica el objeto directo (a quién afecta)"
           },
           "wrong": {
-            "hu": "Itt sincs tárgy-névmás a mondatban; az -an végződés mutatja, hogy ti vagytok az alany, nem egy névmás.",
             "en": "There is no direct object pronoun here either; the -an ending shows that you (plural) are the subject, not a pronoun.",
-            "es": "Tampoco aquí hay pronombre de objeto directo; la terminación -an indica que ustedes son el sujeto, no un pronombre.",
-            "de": "Auch hier gibt es kein direktes Objektpronomen; die Endung -an zeigt, dass ihr das Subjekt seid, nicht ein Pronomen."
+            "es": "Tampoco aquí hay pronombre de objeto directo; la terminación -an indica que ustedes son el sujeto, no un pronombre."
           }
         },
         {
           "text": {
-            "hu": "a névmás a címzettet mutatja (kinek szól)",
             "en": "the pronoun shows the indirect object (to whom it is addressed)",
-            "es": "el pronombre indica el objeto indirecto (a quién se dirige)",
-            "de": "das Pronomen zeigt das indirekte Objekt (wem es gilt)"
+            "es": "el pronombre indica el objeto indirecto (a quién se dirige)"
           },
           "wrong": {
-            "hu": "Nincs címzett névmás sem, a mondat nem ad vagy mond át semmit senkinek; az -an végződés önmagában mutatja az alanyt.",
             "en": "There is no recipient pronoun either, the sentence does not give or tell anything to anyone; the -an ending alone shows the subject.",
-            "es": "Tampoco hay pronombre de destinatario, la frase no le da ni dice nada a nadie; la terminación -an por sí sola indica el sujeto.",
-            "de": "Es gibt auch kein Empfänger-Pronomen, der Satz gibt oder sagt niemandem etwas; die Endung -an allein zeigt das Subjekt."
+            "es": "Tampoco hay pronombre de destinatario, la frase no le da ni dice nada a nadie; la terminación -an por sí sola indica el sujeto."
           }
         }
       ],
@@ -971,42 +841,32 @@
       "id": "qq-why-03",
       "es": "Te veo mañana.",
       "target": "Te",
-      "tr": { "hu": "Holnap látlak.", "en": "I'll see you tomorrow.", "es": "Te veo mañana.", "de": "Ich sehe dich morgen." },
+      "tr": { "en": "I'll see you tomorrow.", "es": "Te veo mañana." },
       "options": [
         {
           "text": {
-            "hu": "a végződés mutatja az alanyt",
             "en": "the ending shows the subject",
-            "es": "la terminación indica el sujeto",
-            "de": "die Endung zeigt das Subjekt"
+            "es": "la terminación indica el sujeto"
           },
           "wrong": {
-            "hu": "A -o végződés (veo) valóban az alanyt (én) mutatja, de nem erről van itt szó; a te mutatja meg, KIT látok, ez pedig tárgy-névmás.",
             "en": "The -o ending (veo) does show the subject (I), but that is not the point here; te shows WHOM I see, which is the direct object pronoun.",
-            "es": "La terminación -o (veo) sí indica el sujeto (yo), pero no es eso lo que se pregunta aquí; te indica A QUIÉN veo, y eso es el objeto directo.",
-            "de": "Die Endung -o (veo) zeigt zwar das Subjekt (ich), aber darum geht es hier nicht; te zeigt, WEN ich sehe, das ist das direkte Objekt."
+            "es": "La terminación -o (veo) sí indica el sujeto (yo), pero no es eso lo que se pregunta aquí; te indica A QUIÉN veo, y eso es el objeto directo."
           }
         },
         {
           "text": {
-            "hu": "a névmás a tárgyat mutatja (kit érint)",
             "en": "the pronoun shows the direct object (whom it affects)",
-            "es": "el pronombre indica el objeto directo (a quién afecta)",
-            "de": "das Pronomen zeigt das direkte Objekt (wen es betrifft)"
+            "es": "el pronombre indica el objeto directo (a quién afecta)"
           }
         },
         {
           "text": {
-            "hu": "a névmás a címzettet mutatja (kinek szól)",
             "en": "the pronoun shows the indirect object (to whom it is addressed)",
-            "es": "el pronombre indica el objeto indirecto (a quién se dirige)",
-            "de": "das Pronomen zeigt das indirekte Objekt (wem es gilt)"
+            "es": "el pronombre indica el objeto indirecto (a quién se dirige)"
           },
           "wrong": {
-            "hu": "A ver nem ad át semmit senkinek, közvetlenül a személyt érinti; részes névmás (le/les) akkor kellene, ha valamit adnék vagy mondanék valakinek.",
             "en": "Ver does not give anything to anyone, it directly targets the person; an indirect object pronoun (le/les) would be needed if something were being given or said to someone.",
-            "es": "Ver no le entrega nada a nadie, afecta directamente a la persona; haría falta un pronombre de objeto indirecto (le/les) si se diera o dijera algo a alguien.",
-            "de": "Ver übergibt niemandem etwas, es betrifft die Person direkt; ein indirektes Objektpronomen (le/les) bräuchte es nur, wenn jemandem etwas gegeben oder gesagt würde."
+            "es": "Ver no le entrega nada a nadie, afecta directamente a la persona; haría falta un pronombre de objeto indirecto (le/les) si se diera o dijera algo a alguien."
           }
         }
       ],
@@ -1017,42 +877,32 @@
       "id": "qq-why-04",
       "es": "Ella me ayuda mucho.",
       "target": "me",
-      "tr": { "hu": "Ő sokat segít nekem.", "en": "She helps me a lot.", "es": "Ella me ayuda mucho.", "de": "Sie hilft mir viel." },
+      "tr": { "en": "She helps me a lot.", "es": "Ella me ayuda mucho." },
       "options": [
         {
           "text": {
-            "hu": "a végződés mutatja az alanyt",
             "en": "the ending shows the subject",
-            "es": "la terminación indica el sujeto",
-            "de": "die Endung zeigt das Subjekt"
+            "es": "la terminación indica el sujeto"
           },
           "wrong": {
-            "hu": "Az -a végződés (ayuda) valóban azt mutatja, hogy ő cselekszik, de itt a me a lényeg: az mutatja meg, KIT segít, ez pedig tárgy-névmás.",
             "en": "The -a ending (ayuda) does show that she is acting, but here me is the point: it shows WHOM she helps, which is the direct object pronoun.",
-            "es": "La terminación -a (ayuda) sí indica que ella actúa, pero aquí lo importante es me: indica A QUIÉN ayuda, y eso es el objeto directo.",
-            "de": "Die Endung -a (ayuda) zeigt zwar, dass sie handelt, aber hier ist me wichtig: es zeigt, WEN sie hilft, das ist das direkte Objekt."
+            "es": "La terminación -a (ayuda) sí indica que ella actúa, pero aquí lo importante es me: indica A QUIÉN ayuda, y eso es el objeto directo."
           }
         },
         {
           "text": {
-            "hu": "a névmás a tárgyat mutatja (kit érint)",
             "en": "the pronoun shows the direct object (whom it affects)",
-            "es": "el pronombre indica el objeto directo (a quién afecta)",
-            "de": "das Pronomen zeigt das direkte Objekt (wen es betrifft)"
+            "es": "el pronombre indica el objeto directo (a quién afecta)"
           }
         },
         {
           "text": {
-            "hu": "a névmás a címzettet mutatja (kinek szól)",
             "en": "the pronoun shows the indirect object (to whom it is addressed)",
-            "es": "el pronombre indica el objeto indirecto (a quién se dirige)",
-            "de": "das Pronomen zeigt das indirekte Objekt (wem es gilt)"
+            "es": "el pronombre indica el objeto indirecto (a quién se dirige)"
           },
           "wrong": {
-            "hu": "Az ayudar nem ad át semmit senkinek, közvetlenül a személyt érinti; részes névmás akkor kellene, ha valamit adna vagy mondana valakinek.",
             "en": "Ayudar does not give anything to anyone, it directly targets the person; an indirect object pronoun would be needed if she were giving or telling something to someone.",
-            "es": "Ayudar no le entrega nada a nadie, afecta directamente a la persona; haría falta un pronombre de objeto indirecto si ella diera o dijera algo a alguien.",
-            "de": "Ayudar übergibt niemandem etwas, es betrifft die Person direkt; ein indirektes Objektpronomen bräuchte es nur, wenn sie jemandem etwas gäbe oder sagte."
+            "es": "Ayudar no le entrega nada a nadie, afecta directamente a la persona; haría falta un pronombre de objeto indirecto si ella diera o dijera algo a alguien."
           }
         }
       ],
@@ -1063,42 +913,32 @@
       "id": "qq-why-05",
       "es": "A él le escribo un mensaje.",
       "target": "le",
-      "tr": { "hu": "Neki írok egy üzenetet.", "en": "I'm writing him a message.", "es": "A él le escribo un mensaje.", "de": "Ich schreibe ihm eine Nachricht." },
+      "tr": { "en": "I'm writing him a message.", "es": "A él le escribo un mensaje." },
       "options": [
         {
           "text": {
-            "hu": "a végződés mutatja az alanyt",
             "en": "the ending shows the subject",
-            "es": "la terminación indica el sujeto",
-            "de": "die Endung zeigt das Subjekt"
+            "es": "la terminación indica el sujeto"
           },
           "wrong": {
-            "hu": "Az -o végződés (escribo) az alanyt (én) mutatja, de itt nem ez a kérdés; a le mutatja meg, KINEK írok, ez pedig részes névmás.",
             "en": "The -o ending (escribo) shows the subject (I), but that is not the point here; le shows TO WHOM I write, which is the indirect object pronoun.",
-            "es": "La terminación -o (escribo) indica el sujeto (yo), pero no es eso lo que se pregunta aquí; le indica A QUIÉN le escribo, y eso es el objeto indirecto.",
-            "de": "Die Endung -o (escribo) zeigt das Subjekt (ich), aber darum geht es hier nicht; le zeigt, WEM ich schreibe, das ist das indirekte Objekt."
+            "es": "La terminación -o (escribo) indica el sujeto (yo), pero no es eso lo que se pregunta aquí; le indica A QUIÉN le escribo, y eso es el objeto indirecto."
           }
         },
         {
           "text": {
-            "hu": "a névmás a tárgyat mutatja (kit érint)",
             "en": "the pronoun shows the direct object (whom it affects)",
-            "es": "el pronombre indica el objeto directo (a quién afecta)",
-            "de": "das Pronomen zeigt das direkte Objekt (wen es betrifft)"
+            "es": "el pronombre indica el objeto directo (a quién afecta)"
           },
           "wrong": {
-            "hu": "A közvetlen tárgy itt un mensaje (amit írok), nem a le; a le a címzettet jelöli, aki kapja az üzenetet.",
             "en": "The direct object here is un mensaje (the thing written), not le; le marks the recipient who gets the message.",
-            "es": "El objeto directo aquí es un mensaje (lo que se escribe), no le; le marca al destinatario que recibe el mensaje.",
-            "de": "Das direkte Objekt hier ist un mensaje (was geschrieben wird), nicht le; le markiert den Empfänger, der die Nachricht bekommt."
+            "es": "El objeto directo aquí es un mensaje (lo que se escribe), no le; le marca al destinatario que recibe el mensaje."
           }
         },
         {
           "text": {
-            "hu": "a névmás a címzettet mutatja (kinek szól)",
             "en": "the pronoun shows the indirect object (to whom it is addressed)",
-            "es": "el pronombre indica el objeto indirecto (a quién se dirige)",
-            "de": "das Pronomen zeigt das indirekte Objekt (wem es gilt)"
+            "es": "el pronombre indica el objeto indirecto (a quién se dirige)"
           }
         }
       ],
@@ -1109,42 +949,32 @@
       "id": "qq-why-06",
       "es": "Tú me das un libro.",
       "target": "me",
-      "tr": { "hu": "Adsz nekem egy könyvet.", "en": "You give me a book.", "es": "Tú me das un libro.", "de": "Du gibst mir ein Buch." },
+      "tr": { "en": "You give me a book.", "es": "Tú me das un libro." },
       "options": [
         {
           "text": {
-            "hu": "a végződés mutatja az alanyt",
             "en": "the ending shows the subject",
-            "es": "la terminación indica el sujeto",
-            "de": "die Endung zeigt das Subjekt"
+            "es": "la terminación indica el sujeto"
           },
           "wrong": {
-            "hu": "A -as végződés (das) az alanyt (te) mutatja, de itt nem ez a kérdés; a me mutatja meg, KINEK adsz, ez pedig részes névmás.",
             "en": "The -as ending (das) shows the subject (you), but that is not the point here; me shows TO WHOM you give, which is the indirect object pronoun.",
-            "es": "La terminación -as (das) indica el sujeto (tú), pero no es eso lo que se pregunta aquí; me indica A QUIÉN le das, y eso es el objeto indirecto.",
-            "de": "Die Endung -as (das) zeigt das Subjekt (du), aber darum geht es hier nicht; me zeigt, WEM du gibst, das ist das indirekte Objekt."
+            "es": "La terminación -as (das) indica el sujeto (tú), pero no es eso lo que se pregunta aquí; me indica A QUIÉN le das, y eso es el objeto indirecto."
           }
         },
         {
           "text": {
-            "hu": "a névmás a tárgyat mutatja (kit érint)",
             "en": "the pronoun shows the direct object (whom it affects)",
-            "es": "el pronombre indica el objeto directo (a quién afecta)",
-            "de": "das Pronomen zeigt das direkte Objekt (wen es betrifft)"
+            "es": "el pronombre indica el objeto directo (a quién afecta)"
           },
           "wrong": {
-            "hu": "A közvetlen tárgy itt un libro (amit adsz), nem a me; a me a címzettet jelöli, aki kapja a könyvet.",
             "en": "The direct object here is un libro (the thing given), not me; me marks the recipient who gets the book.",
-            "es": "El objeto directo aquí es un libro (lo que se da), no me; me marca al destinatario que recibe el libro.",
-            "de": "Das direkte Objekt hier ist un libro (was gegeben wird), nicht me; me markiert den Empfänger, der das Buch bekommt."
+            "es": "El objeto directo aquí es un libro (lo que se da), no me; me marca al destinatario que recibe el libro."
           }
         },
         {
           "text": {
-            "hu": "a névmás a címzettet mutatja (kinek szól)",
             "en": "the pronoun shows the indirect object (to whom it is addressed)",
-            "es": "el pronombre indica el objeto indirecto (a quién se dirige)",
-            "de": "das Pronomen zeigt das indirekte Objekt (wem es gilt)"
+            "es": "el pronombre indica el objeto indirecto (a quién se dirige)"
           }
         }
       ],

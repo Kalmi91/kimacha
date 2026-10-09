@@ -3,42 +3,32 @@
   "topic": "third_conditional",
   "level": "B2",
   "title": {
-    "hu": "Harmadik feltételes mód (If I had known, I would have called)",
     "en": "The Third Conditional (If I had known, I would have called)",
-    "es": "El tercer condicional (If I had known, I would have called)",
-    "de": "Das dritte Konditional (If I had known, I would have called)"
+    "es": "El tercer condicional (If I had known, I would have called)"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "A harmadik feltételes mód a múltról szól, ami már nem változtatható: if + past perfect, would have + igenév. „If I had known, I would have called you.” (Ha tudtam volna, felhívtalak volna.) A spanyol „Si lo hubiera sabido, te habría llamado” szerkezete pontosan ugyanez: a hubiera + igenév az if-mondatnak, a habría + igenév az eredménynek felel meg.",
         "en": "The third conditional talks about the past, which can no longer change: if + past perfect, would have + participle. “If I had known, I would have called you.” The Spanish “Si lo hubiera sabido, te habría llamado” has the same structure: hubiera + participle matches the if-clause, and habría + participle matches the result.",
-        "es": "El tercer condicional habla del pasado, que ya no se puede cambiar: if + past perfect, would have + participio. «If I had known, I would have called you.» (Si lo hubiera sabido, te habría llamado.) El «Si lo hubiera sabido, te habría llamado» del español tiene la misma estructura: hubiera + participio corresponde a la cláusula con if, y habría + participio corresponde al resultado.",
-        "de": "Das dritte Konditional spricht über die Vergangenheit, die sich nicht mehr ändern lässt: if + Past Perfect, would have + Partizip. „If I had known, I would have called you.“ (Hätte ich es gewusst, hätte ich dich angerufen.) Das spanische „Si lo hubiera sabido, te habría llamado“ hat dieselbe Struktur: hubiera + Partizip entspricht dem if-Satz, habría + Partizip dem Ergebnis."
+        "es": "El tercer condicional habla del pasado, que ya no se puede cambiar: if + past perfect, would have + participio. «If I had known, I would have called you.» (Si lo hubiera sabido, te habría llamado.) El «Si lo hubiera sabido, te habría llamado» del español tiene la misma estructura: hubiera + participio corresponde a la cláusula con if, y habría + participio corresponde al resultado."
       }
     },
     {
       "kind": "table",
       "id": "tcn-forms",
       "title": {
-        "hu": "Melyik alak?",
         "en": "Which form?",
-        "es": "¿Qué forma uso?",
-        "de": "Welche Form?"
+        "es": "¿Qué forma uso?"
       },
       "header": [
         {
-          "hu": "Helyzet",
           "en": "Situation",
-          "es": "Situación",
-          "de": "Situation"
+          "es": "Situación"
         },
         {
-          "hu": "forma",
           "en": "form",
-          "es": "forma",
-          "de": "Form"
+          "es": "forma"
         }
       ],
       "rows": [
@@ -71,64 +61,50 @@
     {
       "kind": "list",
       "title": {
-        "hu": "A szerkezet: if + past perfect, would have + igenév",
         "en": "The structure: if + past perfect, would have + participle",
-        "es": "La estructura: if + past perfect, would have + participio",
-        "de": "Die Struktur: if + Past Perfect, would have + Partizip"
+        "es": "La estructura: if + past perfect, would have + participio"
       },
       "items": [
         {
           "text": {
-            "hu": "Az if-mondatban had + igenév áll, az eredményben would have + igenév. A két rész felcserélhető; ha az if-mondat áll elöl, vessző kell utána.",
             "en": "The if-clause has had + participle, the result has would have + participle. The two parts can swap; if the if-clause comes first, a comma follows it.",
-            "es": "La cláusula con if lleva had + participio, el resultado lleva would have + participio. Las dos partes pueden cambiar de lugar; si la cláusula con if va primero, lleva coma.",
-            "de": "Der if-Satz hat had + Partizip, das Ergebnis would have + Partizip. Die beiden Teile können getauscht werden; steht der if-Satz vorn, folgt ein Komma."
+            "es": "La cláusula con if lleva had + participio, el resultado lleva would have + participio. Las dos partes pueden cambiar de lugar; si la cláusula con if va primero, lleva coma."
           },
           "examples": [
             {
               "es": "If she had studied, she would have passed.",
               "tr": {
-                "hu": "Ha tanult volna, átment volna.",
                 "en": "If she had studied, she would have passed.",
-                "es": "Si hubiera estudiado, habría aprobado.",
-                "de": "Hätte sie gelernt, hätte sie bestanden."
+                "es": "Si hubiera estudiado, habría aprobado."
               }
             },
             {
               "es": "I would have called you if I had known.",
               "tr": {
-                "hu": "Felhívtalak volna, ha tudtam volna.",
                 "en": "I would have called you if I had known.",
-                "es": "Te habría llamado si lo hubiera sabido.",
-                "de": "Ich hätte dich angerufen, wenn ich es gewusst hätte."
+                "es": "Te habría llamado si lo hubiera sabido."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Tagadás: hadn’t + igenév az if-mondatban, wouldn’t have + igenév az eredményben. Lehetőségnél could have vagy might have is állhat.",
             "en": "Negatives: hadn’t + participle in the if-clause, wouldn’t have + participle in the result. For a possibility, could have or might have can stand.",
-            "es": "Negativos: hadn’t + participio en la cláusula con if, wouldn’t have + participio en el resultado. Para una posibilidad pueden ir could have o might have.",
-            "de": "Verneinung: hadn’t + Partizip im if-Satz, wouldn’t have + Partizip im Ergebnis. Für eine Möglichkeit können could have oder might have stehen."
+            "es": "Negativos: hadn’t + participio en la cláusula con if, wouldn’t have + participio en el resultado. Para una posibilidad pueden ir could have o might have."
           },
           "examples": [
             {
               "es": "If we hadn't left early, we would have missed the flight.",
               "tr": {
-                "hu": "Ha nem indulunk korán, lekéstük volna a járatot.",
                 "en": "If we hadn't left early, we would have missed the flight.",
-                "es": "Si no hubiéramos salido temprano, habríamos perdido el vuelo.",
-                "de": "Wären wir nicht früh losgegangen, hätten wir den Flug verpasst."
+                "es": "Si no hubiéramos salido temprano, habríamos perdido el vuelo."
               }
             },
             {
               "es": "If you had asked, I could have helped.",
               "tr": {
-                "hu": "Ha megkérdezted volna, segíthettem volna.",
                 "en": "If you had asked, I could have helped.",
-                "es": "Si hubieras preguntado, habría podido ayudar.",
-                "de": "Hättest du gefragt, hätte ich helfen können."
+                "es": "Si hubieras preguntado, habría podido ayudar."
               }
             }
           ]
@@ -138,36 +114,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Vegyes feltételes: múltbeli feltétel, jelenbeli eredmény",
         "en": "Mixed conditional: a past condition, a present result",
-        "es": "Condicional mixto: una condición pasada, un resultado presente",
-        "de": "Gemischtes Konditional: eine vergangene Bedingung, ein gegenwärtiges Ergebnis"
+        "es": "Condicional mixto: una condición pasada, un resultado presente"
       },
       "items": [
         {
           "text": {
-            "hu": "Ha a feltétel a múltra vonatkozik, de az eredmény a mostanra, az eredmény would + alapige: „If I had taken that job, I would be rich now.”",
             "en": "If the condition is about the past but the result is about now, the result is would + base verb: “If I had taken that job, I would be rich now.”",
-            "es": "Si la condición es del pasado pero el resultado es de ahora, el resultado es would + verbo base: «If I had taken that job, I would be rich now.»",
-            "de": "Wenn die Bedingung die Vergangenheit betrifft, das Ergebnis aber das Jetzt, ist das Ergebnis would + Grundform: „If I had taken that job, I would be rich now.“"
+            "es": "Si la condición es del pasado pero el resultado es de ahora, el resultado es would + verbo base: «If I had taken that job, I would be rich now.»"
           },
           "examples": [
             {
               "es": "If I had taken that job, I would be rich now.",
               "tr": {
-                "hu": "Ha elvállaltam volna azt a munkát, most gazdag lennék.",
                 "en": "If I had taken that job, I would be rich now.",
-                "es": "Si hubiera tomado ese trabajo, ahora sería rico.",
-                "de": "Hätte ich den Job genommen, wäre ich jetzt reich."
+                "es": "Si hubiera tomado ese trabajo, ahora sería rico."
               }
             },
             {
               "es": "If she had slept more, she would not be tired now.",
               "tr": {
-                "hu": "Ha többet aludt volna, most nem lenne fáradt.",
                 "en": "If she had slept more, she would not be tired now.",
-                "es": "Si hubiera dormido más, ahora no estaría cansada.",
-                "de": "Hätte sie mehr geschlafen, wäre sie jetzt nicht müde."
+                "es": "Si hubiera dormido más, ahora no estaría cansada."
               }
             }
           ]
@@ -177,36 +145,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Formális változat: Had I known…",
         "en": "Formal version: Had I known…",
-        "es": "Versión formal: Had I known…",
-        "de": "Formelle Variante: Had I known…"
+        "es": "Versión formal: Had I known…"
       },
       "items": [
         {
           "text": {
-            "hu": "Az if elhagyható, ha a had az alany elé kerül: „Had I known, I would have called.” Jelentése ugyanaz, mint az „If I had known…” mondaté.",
             "en": "The if can be dropped if had goes before the subject: “Had I known, I would have called.” It means the same as “If I had known…”.",
-            "es": "Se puede quitar el if si had va antes del sujeto: «Had I known, I would have called.» Significa lo mismo que «If I had known…».",
-            "de": "Das if kann wegfallen, wenn had vor das Subjekt rückt: „Had I known, I would have called.“ Es bedeutet dasselbe wie „If I had known…“."
+            "es": "Se puede quitar el if si had va antes del sujeto: «Had I known, I would have called.» Significa lo mismo que «If I had known…»."
           },
           "examples": [
             {
               "es": "Had I known, I would have called.",
               "tr": {
-                "hu": "Ha tudtam volna, felhívtam volna.",
                 "en": "Had I known, I would have called.",
-                "es": "De haberlo sabido, habría llamado.",
-                "de": "Hätte ich es gewusst, hätte ich angerufen."
+                "es": "De haberlo sabido, habría llamado."
               }
             },
             {
               "es": "Had we left earlier, we wouldn't have missed it.",
               "tr": {
-                "hu": "Ha korábban indulunk, nem késtük volna le.",
                 "en": "Had we left earlier, we wouldn't have missed it.",
-                "es": "De haber salido antes, no lo habríamos perdido.",
-                "de": "Wären wir früher losgegangen, hätten wir es nicht verpasst."
+                "es": "De haber salido antes, no lo habríamos perdido."
               }
             }
           ]
@@ -216,189 +176,147 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Az if-mondatban nincs would have: nem „If I would have known”, hanem „If I had known”. A would have az eredménymondatba kerül.",
         "en": "There is no would have in the if-clause: not “If I would have known”, but “If I had known”. Would have goes in the result clause.",
-        "es": "En la cláusula con if no va would have: no «If I would have known», sino «If I had known». Would have va en la cláusula del resultado.",
-        "de": "Im if-Satz steht kein would have: nicht „If I would have known“, sondern „If I had known“. Would have steht im Ergebnissatz."
+        "es": "En la cláusula con if no va would have: no «If I would have known», sino «If I had known». Would have va en la cláusula del resultado."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A would have + igenév mindig azt jelenti, hogy nem történt meg. Ha csak lehetséges volt, de bizonytalan, might have áll; ha a képesség volt meg, could have.",
         "en": "Would have + participle always means it did not happen. If it was only possible but uncertain, might have is used; if the ability was there, could have.",
-        "es": "Would have + participio siempre significa que no ocurrió. Si solo era posible pero incierto, se usa might have; si estaba la capacidad, could have.",
-        "de": "Would have + Partizip heißt immer, dass es nicht geschah. War es nur möglich, aber unsicher, steht might have; war die Fähigkeit da, could have."
+        "es": "Would have + participio siempre significa que no ocurrió. Si solo era posible pero incierto, se usa might have; si estaba la capacidad, could have."
       }
     }
   ],
   "speak": {
-    "hu": "A harmadik feltételes mód a múltról szól, ami már nem változtatható. Az «if» mondatban «had» plusz igenév áll, az eredményben «would have» plusz igenév: «If I had known, I would have called you». Tagadásban «hadn't» és «wouldn't have». A vegyes feltételesnél a feltétel múltbeli, az eredmény mostani: «If I had taken that job, I would be rich now». Formális változata: «Had I known, I would have called».",
     "en": "The third conditional talks about the past, which can no longer change. The «if» clause has «had» plus the participle, the result has «would have» plus the participle: «If I had known, I would have called you». In the negative: «hadn't» and «wouldn't have». In the mixed conditional the condition is in the past and the result is now: «If I had taken that job, I would be rich now». The formal version is «Had I known, I would have called».",
-    "es": "El tercer condicional habla del pasado, que ya no se puede cambiar. La cláusula con «if» lleva «had» más participio, y el resultado lleva «would have» más participio: «If I had known, I would have called you». En negativo: «hadn't» y «wouldn't have». En el condicional mixto la condición es del pasado y el resultado es de ahora: «If I had taken that job, I would be rich now». La versión formal es «Had I known, I would have called».",
-    "de": "Das dritte Konditional spricht über die Vergangenheit, die sich nicht mehr ändern lässt. Der «if»-Satz hat «had» plus Partizip, das Ergebnis hat «would have» plus Partizip: «If I had known, I would have called you». In der Verneinung: «hadn't» und «wouldn't have». Beim gemischten Konditional liegt die Bedingung in der Vergangenheit und das Ergebnis im Jetzt: «If I had taken that job, I would be rich now». Die formelle Variante ist «Had I known, I would have called»."
+    "es": "El tercer condicional habla del pasado, que ya no se puede cambiar. La cláusula con «if» lleva «had» más participio, y el resultado lleva «would have» más participio: «If I had known, I would have called you». En negativo: «hadn't» y «wouldn't have». En el condicional mixto la condición es del pasado y el resultado es de ahora: «If I had taken that job, I would be rich now». La versión formal es «Had I known, I would have called»."
   },
   "glossary": [
     {
       "word": "would",
       "gloss": {
-        "hu": "lenne, volna (feltételes)",
         "en": "conditional or past of will",
-        "es": "condicional o pasado de will",
-        "de": "würde (Konditional)"
+        "es": "condicional o pasado de will"
       }
     },
     {
       "word": "wouldn't",
       "gloss": {
-        "hu": "nem lenne, nem tenne (would not)",
         "en": "would not",
-        "es": "no habría, no sería (would not)",
-        "de": "würde nicht (would not)"
+        "es": "no habría, no sería (would not)"
       }
     },
     {
       "word": "hadn't",
       "gloss": {
-        "hu": "nem volt (had not)",
         "en": "had not",
-        "es": "no había (had not)",
-        "de": "hatte nicht (had not)"
+        "es": "no había (had not)"
       }
     },
     {
       "word": "known",
       "gloss": {
-        "hu": "ismert, tudott (a know igenéve)",
         "en": "participle of know",
-        "es": "sabido (participio de know)",
-        "de": "gewusst (Partizip von know)"
+        "es": "sabido (participio de know)"
       }
     },
     {
       "word": "gone",
       "gloss": {
-        "hu": "elment (a go igenéve)",
         "en": "participle of go",
-        "es": "ido (participio de go)",
-        "de": "gegangen (Partizip von go)"
+        "es": "ido (participio de go)"
       }
     },
     {
       "word": "given",
       "gloss": {
-        "hu": "adott (a give igenéve)",
         "en": "participle of give",
-        "es": "dado (participio de give)",
-        "de": "gegeben (Partizip von give)"
+        "es": "dado (participio de give)"
       }
     },
     {
       "word": "taken",
       "gloss": {
-        "hu": "elvállalt, vett (a take igenéve)",
         "en": "participle of take",
-        "es": "tomado (participio de take)",
-        "de": "genommen (Partizip von take)"
+        "es": "tomado (participio de take)"
       }
     },
     {
       "word": "forgotten",
       "gloss": {
-        "hu": "elfelejtett (a forget igenéve)",
         "en": "participle of forget",
-        "es": "olvidado (participio de forget)",
-        "de": "vergessen (Partizip von forget)"
+        "es": "olvidado (participio de forget)"
       }
     },
     {
       "word": "born",
       "gloss": {
-        "hu": "született (a bear igenéve)",
         "en": "participle of bear (be born)",
-        "es": "nacido (be born)",
-        "de": "geboren (be born)"
+        "es": "nacido (be born)"
       }
     },
     {
       "word": "tried",
       "gloss": {
-        "hu": "megpróbálta (a try múltja)",
         "en": "past form of try",
-        "es": "intentó (pasado de try)",
-        "de": "versuchte (Past von try)"
+        "es": "intentó (pasado de try)"
       }
     },
     {
       "word": "solved",
       "gloss": {
-        "hu": "megoldotta (a solve múltja)",
         "en": "past form of solve",
-        "es": "resolvió (pasado de solve)",
-        "de": "löste (Past von solve)"
+        "es": "resolvió (pasado de solve)"
       }
     },
     {
       "word": "stopped",
       "gloss": {
-        "hu": "megállt (a stop múltja)",
         "en": "past form of stop",
-        "es": "se detuvo (pasado de stop)",
-        "de": "hörte auf (Past von stop)"
+        "es": "se detuvo (pasado de stop)"
       }
     },
     {
       "word": "believe",
       "gloss": {
-        "hu": "hisz, elhisz",
         "en": "to believe",
-        "es": "creer",
-        "de": "glauben"
+        "es": "creer"
       }
     },
     {
       "word": "earlier",
       "gloss": {
-        "hu": "korábban",
         "en": "before, sooner",
-        "es": "antes, más temprano",
-        "de": "früher"
+        "es": "antes, más temprano"
       }
     },
     {
       "word": "other",
       "gloss": {
-        "hu": "másik",
         "en": "another one",
-        "es": "otro",
-        "de": "andere"
+        "es": "otro"
       }
     },
     {
       "word": "rich",
       "gloss": {
-        "hu": "gazdag",
         "en": "with a lot of money",
-        "es": "rico",
-        "de": "reich"
+        "es": "rico"
       }
     },
     {
       "word": "road",
       "gloss": {
-        "hu": "út, országút",
         "en": "a way for cars",
-        "es": "camino",
-        "de": "Straße"
+        "es": "camino"
       }
     },
     {
       "word": "spanish",
       "gloss": {
-        "hu": "spanyol",
         "en": "the Spanish language",
-        "es": "español (idioma)",
-        "de": "Spanisch"
+        "es": "español (idioma)"
       }
     }
   ],
@@ -413,30 +331,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Az if-mondatban had + igenév áll: If I had known.",
         "en": "The if-clause has had + participle: If I had known.",
-        "es": "La cláusula con if lleva had + participio: If I had known.",
-        "de": "Der if-Satz hat had + Partizip: If I had known."
+        "es": "La cláusula con if lleva had + participio: If I had known."
       },
       "wrong": {
         "have": {
-          "hu": "Az If I have known jelenre vonatkozó, valós feltétel lenne; a would have called múltbeli, ki nem használt lehetőséget jelez, ezért had kell.",
           "en": "If I have known would be a real condition about the present; would have called shows a past chance that was not used, so you need had.",
-          "es": "If I have known sería una condición real sobre el presente; would have called muestra una oportunidad pasada que no se usó, por eso hace falta had.",
-          "de": "If I have known wäre eine reale Bedingung über die Gegenwart; would have called zeigt eine vergangene, ungenutzte Chance, deshalb braucht man had."
+          "es": "If I have known sería una condición real sobre el presente; would have called muestra una oportunidad pasada que no se usó, por eso hace falta had."
         },
         "did": {
-          "hu": "A did known nem létezik; a known mellé had kell.",
           "en": "“Did known” does not exist; known needs had next to it.",
-          "es": "«Did known» no existe; known necesita had a su lado.",
-          "de": "„Did known“ gibt es nicht; known braucht had an seiner Seite."
+          "es": "«Did known» no existe; known necesita had a su lado."
         }
       },
       "examples": [
         "If she had known, she would have come.",
         "If we had known, we would have waited."
       ],
-      "tr": { "hu": "Ha tudtam volna, felhívtalak volna.", "en": "If I had known, I would have called you.", "es": "Si hubiera sabido, te habría llamado.", "de": "Wenn ich das gewusst hätte, hätte ich dich angerufen." }
+      "tr": { "en": "If I had known, I would have called you.", "es": "Si hubiera sabido, te habría llamado." }
     },
     {
       "id": "tcn-02",
@@ -448,30 +360,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Harmadik feltételes eredmény: would have + igenév.",
         "en": "The third conditional result: would have + participle.",
-        "es": "El resultado del tercer condicional: would have + participio.",
-        "de": "Das Ergebnis des dritten Konditionals: would have + Partizip."
+        "es": "El resultado del tercer condicional: would have + participio."
       },
       "wrong": {
         "would pass": {
-          "hu": "A would pass alapigét kér, jelenre vagy jövőre; a last Friday múltra vonatkozik, ezért would have passed kell.",
           "en": "Would pass takes a base verb, for the present or the future; last Friday is in the past, so you need would have passed.",
-          "es": "Would pass lleva el verbo base, para el presente o el futuro; last Friday es del pasado, por eso hace falta would have passed.",
-          "de": "Would pass nimmt die Grundform, für Gegenwart oder Zukunft; last Friday liegt in der Vergangenheit, deshalb braucht man would have passed."
+          "es": "Would pass lleva el verbo base, para el presente o el futuro; last Friday es del pasado, por eso hace falta would have passed."
         },
         "will have passed": {
-          "hu": "A will have passed jövőbeli befejezett cselekvés; a mondat múltbeli, ki nem használt lehetőségről szól.",
           "en": "Will have passed is a finished action in the future; the sentence is about a past chance that was not used.",
-          "es": "Will have passed es una acción terminada en el futuro; la oración trata de una oportunidad pasada que no se usó.",
-          "de": "Will have passed ist eine abgeschlossene Handlung in der Zukunft; der Satz handelt von einer vergangenen, ungenutzten Chance."
+          "es": "Will have passed es una acción terminada en el futuro; la oración trata de una oportunidad pasada que no se usó."
         }
       },
       "examples": [
         "If I had left, I would have missed it.",
         "If he had tried, he would have won."
       ],
-      "tr": { "hu": "Ha tanult volna, átment volna a múlt pénteki vizsgán.", "en": "If she had studied, she would have passed the exam last Friday.", "es": "Si ella hubiera estudiado, habría pasado el examen el viernes pasado.", "de": "Wenn sie gelernt hätte, hätte sie die Prüfung am letzten Freitag bestanden." }
+      "tr": { "en": "If she had studied, she would have passed the exam last Friday.", "es": "Si ella hubiera estudiado, habría pasado el examen el viernes pasado." }
     },
     {
       "id": "tcn-03",
@@ -483,30 +389,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Harmadik feltételes eredmény: would have missed.",
         "en": "The third conditional result: would have missed.",
-        "es": "El resultado del tercer condicional: would have missed.",
-        "de": "Das Ergebnis des dritten Konditionals: would have missed."
+        "es": "El resultado del tercer condicional: would have missed."
       },
       "wrong": {
         "would miss": {
-          "hu": "A would miss alapigés alak; a that day múltra vonatkozik, ezért would have missed kell.",
           "en": "Would miss is a base verb form; that day is in the past, so you need would have missed.",
-          "es": "Would miss es una forma con verbo base; that day es del pasado, por eso hace falta would have missed.",
-          "de": "Would miss ist eine Form mit Grundform; that day liegt in der Vergangenheit, deshalb braucht man would have missed."
+          "es": "Would miss es una forma con verbo base; that day es del pasado, por eso hace falta would have missed."
         },
         "hadn't missed": {
-          "hu": "A hadn’t missed az if-mondat alakja; az eredménymondatban would have kell.",
           "en": "Hadn’t missed is the form of an if-clause; the result clause needs would have.",
-          "es": "Hadn’t missed es la forma de una cláusula con if; la cláusula del resultado necesita would have.",
-          "de": "Hadn’t missed ist die Form eines if-Satzes; der Ergebnissatz braucht would have."
+          "es": "Hadn’t missed es la forma de una cláusula con if; la cláusula del resultado necesita would have."
         }
       },
       "examples": [
         "If he hadn't called, I would have forgotten.",
         "If it hadn't rained, we would have gone."
       ],
-      "tr": { "hu": "Ha nem indultunk volna el korán aznap, lekéstük volna a járatot.", "en": "If we hadn't left early that day, we would have missed the flight.", "es": "Si no nos hubiéramos ido temprano ese día, habríamos perdido el vuelo.", "de": "Wenn wir an jenem Tag nicht früh aufgebrochen wären, hätten wir den Flug verpasst." }
+      "tr": { "en": "If we hadn't left early that day, we would have missed the flight.", "es": "Si no nos hubiéramos ido temprano ese día, habríamos perdido el vuelo." }
     },
     {
       "id": "tcn-04",
@@ -518,30 +418,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Tagadott eredmény a harmadik feltételesben: wouldn’t have + igenév.",
         "en": "A negative result in the third conditional: wouldn’t have + participle.",
-        "es": "Un resultado negativo en el tercer condicional: wouldn’t have + participio.",
-        "de": "Ein verneintes Ergebnis im dritten Konditional: wouldn’t have + Partizip."
+        "es": "Un resultado negativo en el tercer condicional: wouldn’t have + participio."
       },
       "wrong": {
         "wouldn't": {
-          "hu": "A wouldn’t been nem létezik; a been előtt have kell: wouldn’t have been.",
           "en": "“Wouldn’t been” does not exist; before been you need have: wouldn’t have been.",
-          "es": "«Wouldn’t been» no existe; antes de been hace falta have: wouldn’t have been.",
-          "de": "„Wouldn’t been“ gibt es nicht; vor been braucht man have: wouldn’t have been."
+          "es": "«Wouldn’t been» no existe; antes de been hace falta have: wouldn’t have been."
         },
         "hadn't": {
-          "hu": "A hadn’t been late az if-mondat alakja lenne; az eredményben wouldn’t have kell.",
           "en": "Hadn’t been late would be the form of an if-clause; the result needs wouldn’t have.",
-          "es": "Hadn’t been late sería la forma de una cláusula con if; el resultado necesita wouldn’t have.",
-          "de": "Hadn’t been late wäre die Form eines if-Satzes; das Ergebnis braucht wouldn’t have."
+          "es": "Hadn’t been late sería la forma de una cláusula con if; el resultado necesita wouldn’t have."
         }
       },
       "examples": [
         "She wouldn't have gone alone.",
         "We wouldn't have waited."
       ],
-      "tr": { "hu": "Nem késtem volna el, ha taxit fogok.", "en": "I wouldn't have been late if I had taken a taxi.", "es": "No habría llegado tarde si hubiera tomado un taxi.", "de": "Ich wäre nicht zu spät gekommen, wenn ich ein Taxi genommen hätte." }
+      "tr": { "en": "I wouldn't have been late if I had taken a taxi.", "es": "No habría llegado tarde si hubiera tomado un taxi." }
     },
     {
       "id": "tcn-05",
@@ -553,30 +447,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Harmadik feltételes eredmény: would have helped.",
         "en": "The third conditional result: would have helped.",
-        "es": "El resultado del tercer condicional: would have helped.",
-        "de": "Das Ergebnis des dritten Konditionals: would have helped."
+        "es": "El resultado del tercer condicional: would have helped."
       },
       "wrong": {
         "would": {
-          "hu": "A would helped nem létezik; a would után alapige jön, a múltbeli lehetőséghez would have + igenév kell.",
           "en": "“Would helped” does not exist; after would comes a base verb, and a past chance needs would have + participle.",
-          "es": "«Would helped» no existe; después de would va un verbo base, y una oportunidad pasada necesita would have + participio.",
-          "de": "„Would helped“ gibt es nicht; nach would kommt die Grundform, und eine vergangene Chance braucht would have + Partizip."
+          "es": "«Would helped» no existe; después de would va un verbo base, y una oportunidad pasada necesita would have + participio."
         },
         "had": {
-          "hu": "A had helped az if-mondat alakja; az eredménymondatban would have kell.",
           "en": "Had helped is the form of an if-clause; the result clause needs would have.",
-          "es": "Had helped es la forma de una cláusula con if; la cláusula del resultado necesita would have.",
-          "de": "Had helped ist die Form eines if-Satzes; der Ergebnissatz braucht would have."
+          "es": "Had helped es la forma de una cláusula con if; la cláusula del resultado necesita would have."
         }
       },
       "examples": [
         "I would have called.",
         "She would have stayed."
       ],
-      "tr": { "hu": "Ha kértél volna, segítettem volna neked.", "en": "If you had asked me, I would have helped you.", "es": "Si me hubieras pedido, te habría ayudado.", "de": "Wenn du mich gefragt hättest, hätte ich dir geholfen." }
+      "tr": { "en": "If you had asked me, I would have helped you.", "es": "Si me hubieras pedido, te habría ayudado." }
     },
     {
       "id": "tcn-06",
@@ -588,30 +476,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Formális változat: Had I known… (az if elmarad, a had az alany elé kerül).",
         "en": "The formal version: Had I known… (the if is dropped and had goes before the subject).",
-        "es": "La versión formal: Had I known… (se quita el if y had va antes del sujeto).",
-        "de": "Die formelle Variante: Had I known… (das if fällt weg und had steht vor dem Subjekt)."
+        "es": "La versión formal: Had I known… (se quita el if y had va antes del sujeto)."
       },
       "wrong": {
         "Have": {
-          "hu": "A Have I known jelen idejű, valós kérdésnek hangzik; a múlt feltételhez Had kell.",
           "en": "Have I known sounds like a present, real question; the past condition needs Had.",
-          "es": "Have I known suena a una pregunta real en presente; la condición pasada necesita Had.",
-          "de": "Have I known klingt wie eine reale Frage in der Gegenwart; die vergangene Bedingung braucht Had."
+          "es": "Have I known suena a una pregunta real en presente; la condición pasada necesita Had."
         },
         "Would": {
-          "hu": "A Would I known nem létezik; az if nélküli alak had-del kezdődik.",
           "en": "“Would I known” does not exist; the form without if starts with had.",
-          "es": "«Would I known» no existe; la forma sin if empieza con had.",
-          "de": "„Would I known“ gibt es nicht; die Form ohne if beginnt mit had."
+          "es": "«Would I known» no existe; la forma sin if empieza con had."
         }
       },
       "examples": [
         "Had she asked, I would have helped.",
         "Had we known, we would have stayed."
       ],
-      "tr": { "hu": "Ha tudtam volna, telefonáltam volna.", "en": "Had I known, I would have called.", "es": "Si hubiera sabido, habría llamado.", "de": "Hätte ich es gewusst, hätte ich angerufen." }
+      "tr": { "en": "Had I known, I would have called.", "es": "Si hubiera sabido, habría llamado." }
     },
     {
       "id": "tcn-07",
@@ -623,30 +505,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Vegyes feltételes: múltbeli feltétel, jelenbeli eredmény (now): would + alapige.",
         "en": "Mixed conditional: a past condition, a present result (now): would + base verb.",
-        "es": "Condicional mixto: una condición pasada, un resultado presente (now): would + verbo base.",
-        "de": "Gemischtes Konditional: vergangene Bedingung, gegenwärtiges Ergebnis (now): would + Grundform."
+        "es": "Condicional mixto: una condición pasada, un resultado presente (now): would + verbo base."
       },
       "wrong": {
         "would have been": {
-          "hu": "A would have been múltbeli eredményt jelöl; a now jelenre vonatkozik, ezért would be kell.",
           "en": "Would have been marks a past result; now refers to the present, so you need would be.",
-          "es": "Would have been marca un resultado pasado; now se refiere al presente, por eso hace falta would be.",
-          "de": "Would have been markiert ein vergangenes Ergebnis; now bezieht sich auf die Gegenwart, deshalb braucht man would be."
+          "es": "Would have been marca un resultado pasado; now se refiere al presente, por eso hace falta would be."
         },
         "had been": {
-          "hu": "A had been az if-mondat alakja; az eredménymondatban would kell.",
           "en": "Had been is the form of an if-clause; the result clause needs would.",
-          "es": "Had been es la forma de una cláusula con if; la cláusula del resultado necesita would.",
-          "de": "Had been ist die Form eines if-Satzes; der Ergebnissatz braucht would."
+          "es": "Had been es la forma de una cláusula con if; la cláusula del resultado necesita would."
         }
       },
       "examples": [
         "If I had slept, I would be fine now.",
         "If we had left, we would be home now."
       ],
-      "tr": { "hu": "Ha elvállaltam volna azt a munkát, most gazdag lennék.", "en": "If I had taken that job, I would be rich now.", "es": "Si hubiera aceptado ese trabajo, ahora sería rico.", "de": "Wenn ich diesen Job angenommen hätte, wäre ich jetzt reich." }
+      "tr": { "en": "If I had taken that job, I would be rich now.", "es": "Si hubiera aceptado ese trabajo, ahora sería rico." }
     },
     {
       "id": "tcn-08",
@@ -658,30 +534,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Harmadik feltételes eredmény, múlt (last night): wouldn’t have been.",
         "en": "The third conditional result, in the past (last night): wouldn’t have been.",
-        "es": "El resultado del tercer condicional, en el pasado (last night): wouldn’t have been.",
-        "de": "Das Ergebnis des dritten Konditionals, in der Vergangenheit (last night): wouldn’t have been."
+        "es": "El resultado del tercer condicional, en el pasado (last night): wouldn’t have been."
       },
       "wrong": {
         "wouldn't be stuck": {
-          "hu": "A wouldn’t be jelenre vagy jövőre vonatkozik; a last night múltat jelez.",
           "en": "Wouldn’t be refers to the present or the future; last night points to the past.",
-          "es": "Wouldn’t be se refiere al presente o al futuro; last night señala el pasado.",
-          "de": "Wouldn’t be bezieht sich auf Gegenwart oder Zukunft; last night weist auf die Vergangenheit."
+          "es": "Wouldn’t be se refiere al presente o al futuro; last night señala el pasado."
         },
         "hadn't been stuck": {
-          "hu": "A hadn’t been az if-mondat alakja; az eredményben wouldn’t have kell.",
           "en": "Hadn’t been is the form of an if-clause; the result needs wouldn’t have.",
-          "es": "Hadn’t been es la forma de una cláusula con if; el resultado necesita wouldn’t have.",
-          "de": "Hadn’t been ist die Form eines if-Satzes; das Ergebnis braucht wouldn’t have."
+          "es": "Hadn’t been es la forma de una cláusula con if; el resultado necesita wouldn’t have."
         }
       },
       "examples": [
         "She wouldn't have gone.",
         "They wouldn't have waited."
       ],
-      "tr": { "hu": "Ha korábban indultak volna, nem ragadtak volna be a forgalomba tegnap este.", "en": "If they had left earlier, they wouldn't have been stuck in traffic last night.", "es": "Si hubieran salido más temprano, no se habrían quedado atorados en el tráfico anoche.", "de": "Wenn sie früher losgefahren wären, hätten sie gestern Abend nicht im Stau gestanden." }
+      "tr": { "en": "If they had left earlier, they wouldn't have been stuck in traffic last night.", "es": "Si hubieran salido más temprano, no se habrían quedado atorados en el tráfico anoche." }
     },
     {
       "id": "tcn-09",
@@ -693,30 +563,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Harmadik feltételes eredmény, múlt (yesterday): would have gone.",
         "en": "The third conditional result, in the past (yesterday): would have gone.",
-        "es": "El resultado del tercer condicional, en el pasado (yesterday): would have gone.",
-        "de": "Das Ergebnis des dritten Konditionals, in der Vergangenheit (yesterday): would have gone."
+        "es": "El resultado del tercer condicional, en el pasado (yesterday): would have gone."
       },
       "wrong": {
         "would go": {
-          "hu": "A would go jelenre vagy jövőre vonatkozik; a yesterday múltat jelez.",
           "en": "Would go refers to the present or the future; yesterday points to the past.",
-          "es": "Would go se refiere al presente o al futuro; yesterday señala el pasado.",
-          "de": "Would go bezieht sich auf Gegenwart oder Zukunft; yesterday weist auf die Vergangenheit."
+          "es": "Would go se refiere al presente o al futuro; yesterday señala el pasado."
         },
         "will have gone": {
-          "hu": "A will have gone jövőbeli befejezett cselekvés; a yesterday múltat jelez.",
           "en": "Will have gone is a finished action in the future; yesterday points to the past.",
-          "es": "Will have gone es una acción terminada en el futuro; yesterday señala el pasado.",
-          "de": "Will have gone ist eine abgeschlossene Handlung in der Zukunft; yesterday weist auf die Vergangenheit."
+          "es": "Will have gone es una acción terminada en el futuro; yesterday señala el pasado."
         }
       },
       "examples": [
         "If I had gone, I would have seen it.",
         "If she had come, we would have talked."
       ],
-      "tr": { "hu": "Ha nem esett volna, tegnap kimentünk volna a strandra.", "en": "If it hadn't rained, we would have gone to the beach yesterday.", "es": "Si no hubiera llovido, habríamos ido a la playa ayer.", "de": "Wenn es nicht geregnet hätte, wären wir gestern zum Strand gegangen." }
+      "tr": { "en": "If it hadn't rained, we would have gone to the beach yesterday.", "es": "Si no hubiera llovido, habríamos ido a la playa ayer." }
     },
     {
       "id": "tcn-10",
@@ -728,30 +592,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Az if-mondatban had + igenév áll: if she had left.",
         "en": "The if-clause has had + participle: if she had left.",
-        "es": "La cláusula con if lleva had + participio: if she had left.",
-        "de": "Der if-Satz hat had + Partizip: if she had left."
+        "es": "La cláusula con if lleva had + participio: if she had left."
       },
       "wrong": {
         "left": {
-          "hu": "A left egyszerű múlt; a wouldn’t have missed mellé had left kell.",
           "en": "Left is the simple past; wouldn’t have missed needs had left next to it.",
-          "es": "Left es el pasado simple; wouldn’t have missed necesita had left a su lado.",
-          "de": "Left ist das einfache Past; wouldn’t have missed braucht had left an seiner Seite."
+          "es": "Left es el pasado simple; wouldn’t have missed necesita had left a su lado."
         },
         "would have left": {
-          "hu": "A would have az eredménymondat alakja; az if-mondatban had kell.",
           "en": "Would have is the form of the result clause; the if-clause needs had.",
-          "es": "Would have es la forma de la cláusula del resultado; la cláusula con if necesita had.",
-          "de": "Would have ist die Form des Ergebnissatzes; der if-Satz braucht had."
+          "es": "Would have es la forma de la cláusula del resultado; la cláusula con if necesita had."
         }
       },
       "examples": [
         "I would have won if I had tried.",
         "He would have come if he had known."
       ],
-      "tr": { "hu": "Nem késte volna le a buszt, ha korábban indul.", "en": "She wouldn't have missed the bus if she had left earlier.", "es": "Ella no habría perdido el camión si hubiera salido más temprano.", "de": "Sie hätte den Bus nicht verpasst, wenn sie früher losgegangen wäre." }
+      "tr": { "en": "She wouldn't have missed the bus if she had left earlier.", "es": "Ella no habría perdido el camión si hubiera salido más temprano." }
     },
     {
       "id": "tcn-11",
@@ -763,30 +621,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Az if-mondatban had + igenév áll: if you had asked.",
         "en": "The if-clause has had + participle: if you had asked.",
-        "es": "La cláusula con if lleva had + participio: if you had asked.",
-        "de": "Der if-Satz hat had + Partizip: if you had asked."
+        "es": "La cláusula con if lleva had + participio: if you had asked."
       },
       "wrong": {
         "have asked": {
-          "hu": "A have asked present perfect; a could have helped múltbeli lehetőség mellé had asked kell.",
           "en": "Have asked is the present perfect; next to the past chance could have helped you need had asked.",
-          "es": "Have asked es el presente perfecto; junto a la oportunidad pasada could have helped hace falta had asked.",
-          "de": "Have asked ist das Present Perfect; neben der vergangenen Chance could have helped braucht man had asked."
+          "es": "Have asked es el presente perfecto; junto a la oportunidad pasada could have helped hace falta had asked."
         },
         "would have asked": {
-          "hu": "A would have az eredménymondat alakja; az if-mondatban had kell.",
           "en": "Would have is the form of the result clause; the if-clause needs had.",
-          "es": "Would have es la forma de la cláusula del resultado; la cláusula con if necesita had.",
-          "de": "Would have ist die Form des Ergebnissatzes; der if-Satz braucht had."
+          "es": "Would have es la forma de la cláusula del resultado; la cláusula con if necesita had."
         }
       },
       "examples": [
         "If you had called, I could have come.",
         "If he had said, we could have waited."
       ],
-      "tr": { "hu": "Ha kértél volna, tudtam volna segíteni neked.", "en": "If you had asked me, I could have helped you.", "es": "Si me hubieras pedido, te habría podido ayudar.", "de": "Wenn du mich gefragt hättest, hätte ich dir helfen können." }
+      "tr": { "en": "If you had asked me, I could have helped you.", "es": "Si me hubieras pedido, te habría podido ayudar." }
     },
     {
       "id": "tcn-12",
@@ -798,30 +650,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Tagadott eredmény: wouldn’t have + igenév.",
         "en": "A negative result: wouldn’t have + participle.",
-        "es": "Un resultado negativo: wouldn’t have + participio.",
-        "de": "Ein verneintes Ergebnis: wouldn’t have + Partizip."
+        "es": "Un resultado negativo: wouldn’t have + participio."
       },
       "wrong": {
         "hadn't": {
-          "hu": "A hadn’t have lied nem létezik; az eredményben wouldn’t have áll.",
           "en": "“Hadn’t have lied” does not exist; the result takes wouldn’t have.",
-          "es": "«Hadn’t have lied» no existe; el resultado lleva wouldn’t have.",
-          "de": "„Hadn’t have lied“ gibt es nicht; das Ergebnis nimmt wouldn’t have."
+          "es": "«Hadn’t have lied» no existe; el resultado lleva wouldn’t have."
         },
         "didn't": {
-          "hu": "A didn’t have lied nem létezik; a have után igenév kell, és az eredményben wouldn’t áll.",
           "en": "“Didn’t have lied” does not exist; after have a participle is needed, and the result takes wouldn’t.",
-          "es": "«Didn’t have lied» no existe; después de have hace falta un participio, y el resultado lleva wouldn’t.",
-          "de": "„Didn’t have lied“ gibt es nicht; nach have braucht man ein Partizip, und das Ergebnis nimmt wouldn’t."
+          "es": "«Didn’t have lied» no existe; después de have hace falta un participio, y el resultado lleva wouldn’t."
         }
       },
       "examples": [
         "She wouldn't have said that.",
         "I wouldn't have gone."
       ],
-      "tr": { "hu": "Ha tudta volna az igazat, nem hazudott volna.", "en": "If he had known the truth, he wouldn't have lied.", "es": "Si él hubiera sabido la verdad, no habría mentido.", "de": "Wenn er die Wahrheit gewusst hätte, hätte er nicht gelogen." }
+      "tr": { "en": "If he had known the truth, he wouldn't have lied.", "es": "Si él hubiera sabido la verdad, no habría mentido." }
     },
     {
       "id": "tcn-13",
@@ -833,30 +679,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Az if-mondatban hadn’t + igenév áll: if I hadn’t been.",
         "en": "The if-clause has hadn’t + participle: if I hadn’t been.",
-        "es": "La cláusula con if lleva hadn’t + participio: if I hadn’t been.",
-        "de": "Der if-Satz hat hadn’t + Partizip: if I hadn’t been."
+        "es": "La cláusula con if lleva hadn’t + participio: if I hadn’t been."
       },
       "wrong": {
         "wouldn't have been": {
-          "hu": "A wouldn’t have been az eredménymondat alakja; az if-mondatban hadn’t kell.",
           "en": "Wouldn’t have been is the form of the result clause; the if-clause needs hadn’t.",
-          "es": "Wouldn’t have been es la forma de la cláusula del resultado; la cláusula con if necesita hadn’t.",
-          "de": "Wouldn’t have been ist die Form des Ergebnissatzes; der if-Satz braucht hadn’t."
+          "es": "Wouldn’t have been es la forma de la cláusula del resultado; la cláusula con if necesita hadn’t."
         },
         "haven't been": {
-          "hu": "A haven’t been present perfect; a would have gone múltbeli eredmény mellé hadn’t been kell.",
           "en": "Haven’t been is the present perfect; next to the past result would have gone you need hadn’t been.",
-          "es": "Haven’t been es el presente perfecto; junto al resultado pasado would have gone hace falta hadn’t been.",
-          "de": "Haven’t been ist das Present Perfect; neben dem vergangenen Ergebnis would have gone braucht man hadn’t been."
+          "es": "Haven’t been es el presente perfecto; junto al resultado pasado would have gone hace falta hadn’t been."
         }
       },
       "examples": [
         "If I hadn't seen it, I wouldn't believe it.",
         "If she hadn't called, I would have left."
       ],
-      "tr": { "hu": "Ha nem lettem volna olyan fáradt, veled mentem volna.", "en": "If I hadn't been so tired, I would have gone with you.", "es": "Si no hubiera estado tan cansado, habría ido contigo.", "de": "Wenn ich nicht so müde gewesen wäre, wäre ich mit dir gegangen." }
+      "tr": { "en": "If I hadn't been so tired, I would have gone with you.", "es": "Si no hubiera estado tan cansado, habría ido contigo." }
     },
     {
       "id": "tcn-14",
@@ -868,30 +708,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Vegyes feltételes: jelenbeli eredmény (now): would + alapige.",
         "en": "Mixed conditional: a present result (now): would + base verb.",
-        "es": "Condicional mixto: un resultado presente (now): would + verbo base.",
-        "de": "Gemischtes Konditional: ein gegenwärtiges Ergebnis (now): would + Grundform."
+        "es": "Condicional mixto: un resultado presente (now): would + verbo base."
       },
       "wrong": {
         "would have": {
-          "hu": "A would have speak nem létezik; a have után igenév kell, és a now jelenre vonatkozik, ezért would speak kell.",
           "en": "“Would have speak” does not exist; after have you need a participle, and now refers to the present, so you need would speak.",
-          "es": "«Would have speak» no existe; después de have hace falta un participio, y now se refiere al presente, por eso hace falta would speak.",
-          "de": "„Would have speak“ gibt es nicht; nach have braucht man ein Partizip, und now bezieht sich auf die Gegenwart, deshalb braucht man would speak."
+          "es": "«Would have speak» no existe; después de have hace falta un participio, y now se refiere al presente, por eso hace falta would speak."
         },
         "had": {
-          "hu": "A had speak nem létezik; a would a jelenbeli eredmény segédigéje.",
           "en": "“Had speak” does not exist; would is the helper verb of the present result.",
-          "es": "«Had speak» no existe; would es el verbo auxiliar del resultado presente.",
-          "de": "„Had speak“ gibt es nicht; would ist das Hilfsverb des gegenwärtigen Ergebnisses."
+          "es": "«Had speak» no existe; would es el verbo auxiliar del resultado presente."
         }
       },
       "examples": [
         "If I had studied, I would know it now.",
         "If she had stayed, she would live here now."
       ],
-      "tr": { "hu": "Ha Mexikóban születtem volna, most beszélnék spanyolul.", "en": "If I had been born in Mexico, I would speak Spanish now.", "es": "Si hubiera nacido en México, ahora hablaría español.", "de": "Wenn ich in Mexiko geboren wäre, würde ich jetzt Spanisch sprechen." }
+      "tr": { "en": "If I had been born in Mexico, I would speak Spanish now.", "es": "Si hubiera nacido en México, ahora hablaría español." }
     },
     {
       "id": "tcn-15",
@@ -903,30 +737,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az if-mondatban had + igenév áll: if the bank had given.",
         "en": "The if-clause has had + participle: if the bank had given.",
-        "es": "La cláusula con if lleva had + participio: if the bank had given.",
-        "de": "Der if-Satz hat had + Partizip: if the bank had given."
+        "es": "La cláusula con if lleva had + participio: if the bank had given."
       },
       "wrong": {
         "have given": {
-          "hu": "A have given present perfect; a would have bought múltbeli eredmény mellé had given kell.",
           "en": "Have given is the present perfect; next to the past result would have bought you need had given.",
-          "es": "Have given es el presente perfecto; junto al resultado pasado would have bought hace falta had given.",
-          "de": "Have given ist das Present Perfect; neben dem vergangenen Ergebnis would have bought braucht man had given."
+          "es": "Have given es el presente perfecto; junto al resultado pasado would have bought hace falta had given."
         },
         "would have given": {
-          "hu": "A would have az eredménymondat alakja; az if-mondatban had kell.",
           "en": "Would have is the form of the result clause; the if-clause needs had.",
-          "es": "Would have es la forma de la cláusula del resultado; la cláusula con if necesita had.",
-          "de": "Would have ist die Form des Ergebnissatzes; der if-Satz braucht had."
+          "es": "Would have es la forma de la cláusula del resultado; la cláusula con if necesita had."
         }
       },
       "examples": [
         "They would have won if he had played.",
         "I would have gone if she had asked."
       ],
-      "tr": { "hu": "Megvettük volna, ha a bank adott volna pénzt.", "en": "We would have bought it if the bank had given us money.", "es": "Lo habríamos comprado si el banco nos hubiera dado dinero.", "de": "Wir hätten es gekauft, wenn die Bank uns Geld gegeben hätte." }
+      "tr": { "en": "We would have bought it if the bank had given us money.", "es": "Lo habríamos comprado si el banco nos hubiera dado dinero." }
     },
     {
       "id": "tcn-16",
@@ -938,30 +766,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Az if-mondatban had + igenév áll: if you had told.",
         "en": "The if-clause has had + participle: if you had told.",
-        "es": "La cláusula con if lleva had + participio: if you had told.",
-        "de": "Der if-Satz hat had + Partizip: if you had told."
+        "es": "La cláusula con if lleva had + participio: if you had told."
       },
       "wrong": {
         "have told": {
-          "hu": "A have told present perfect; a would have taken múltbeli eredmény mellé had told kell.",
           "en": "Have told is the present perfect; next to the past result would have taken you need had told.",
-          "es": "Have told es el presente perfecto; junto al resultado pasado would have taken hace falta had told.",
-          "de": "Have told ist das Present Perfect; neben dem vergangenen Ergebnis would have taken braucht man had told."
+          "es": "Have told es el presente perfecto; junto al resultado pasado would have taken hace falta had told."
         },
         "would tell": {
-          "hu": "A would tell nem állhat az if után; az if-mondatban had + igenév kell.",
           "en": "Would tell cannot follow if; the if-clause needs had + participle.",
-          "es": "Would tell no puede ir después de if; la cláusula con if necesita had + participio.",
-          "de": "Would tell kann nicht auf if folgen; der if-Satz braucht had + Partizip."
+          "es": "Would tell no puede ir después de if; la cláusula con if necesita had + participio."
         }
       },
       "examples": [
         "If he had said, I would have stopped.",
         "If we had known, we would have gone."
       ],
-      "tr": { "hu": "Ha szóltál volna, a másik utat választottam volna.", "en": "If you had told me, I would have taken the other road.", "es": "Si me hubieras dicho, habría tomado el otro camino.", "de": "Wenn du es mir gesagt hättest, hätte ich den anderen Weg genommen." }
+      "tr": { "en": "If you had told me, I would have taken the other road.", "es": "Si me hubieras dicho, habría tomado el otro camino." }
     },
     {
       "id": "tcn-17",
@@ -973,30 +795,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Lehetőség a múltban: could have + igenév.",
         "en": "A possibility in the past: could have + participle.",
-        "es": "Una posibilidad en el pasado: could have + participio.",
-        "de": "Eine Möglichkeit in der Vergangenheit: could have + Partizip."
+        "es": "Una posibilidad en el pasado: could have + participio."
       },
       "wrong": {
         "can": {
-          "hu": "A can have solved nem illik a múltbeli lehetőséghez; could have kell.",
           "en": "Can have solved does not fit a past possibility; you need could have.",
-          "es": "Can have solved no cabe en una posibilidad pasada; hace falta could have.",
-          "de": "Can have solved passt nicht zu einer vergangenen Möglichkeit; man braucht could have."
+          "es": "Can have solved no cabe en una posibilidad pasada; hace falta could have."
         },
         "had": {
-          "hu": "A had have solved nem létezik; az eredménymondatban could have áll.",
           "en": "“Had have solved” does not exist; the result clause takes could have.",
-          "es": "«Had have solved» no existe; la cláusula del resultado lleva could have.",
-          "de": "„Had have solved“ gibt es nicht; der Ergebnissatz nimmt could have."
+          "es": "«Had have solved» no existe; la cláusula del resultado lleva could have."
         }
       },
       "examples": [
         "If I had asked, I could have helped.",
         "If he had tried, he could have won."
       ],
-      "tr": { "hu": "Ha korábban telefonált volna, meg tudtuk volna oldani a problémát.", "en": "If she had called earlier, we could have solved the problem.", "es": "Si ella hubiera llamado antes, habríamos podido resolver el problema.", "de": "Wenn sie früher angerufen hätte, hätten wir das Problem lösen können." }
+      "tr": { "en": "If she had called earlier, we could have solved the problem.", "es": "Si ella hubiera llamado antes, habríamos podido resolver el problema." }
     },
     {
       "id": "tcn-18",
@@ -1064,46 +880,34 @@
       "es": "If I had known, I would have called you.",
       "target": "had known",
       "tr": {
-        "hu": "Ha tudtam volna, felhívtalak volna.",
         "en": "If I had known, I would have called you.",
-        "es": "Si lo hubiera sabido, te habría llamado.",
-        "de": "Hätte ich es gewusst, hätte ich dich angerufen."
+        "es": "Si lo hubiera sabido, te habría llamado."
       },
       "options": [
         {
           "text": {
-            "hu": "valós lehetőség a jövőben",
             "en": "a real possibility in the future",
-            "es": "una posibilidad real en el futuro",
-            "de": "eine reale Möglichkeit in der Zukunft"
+            "es": "una posibilidad real en el futuro"
           },
           "wrong": {
-            "hu": "A had known nem jövőre vonatkozik, hanem a múltra; a valós jövőhöz present simple kell.",
             "en": "Had known is not about the future but about the past; a real future needs the present simple.",
-            "es": "Had known no trata del futuro sino del pasado; un futuro real necesita el presente simple.",
-            "de": "Had known betrifft nicht die Zukunft, sondern die Vergangenheit; eine reale Zukunft braucht das Present Simple."
+            "es": "Had known no trata del futuro sino del pasado; un futuro real necesita el presente simple."
           }
         },
         {
           "text": {
-            "hu": "valószínűtlen helyzet a jelenben",
             "en": "an unlikely situation now",
-            "es": "una situación poco probable ahora",
-            "de": "eine unwahrscheinliche Situation jetzt"
+            "es": "una situación poco probable ahora"
           },
           "wrong": {
-            "hu": "A jelenbeli, valószínűtlen helyzethez past simple kell; a had known a múltra utal.",
             "en": "An unlikely situation now needs the past simple; had known points to the past.",
-            "es": "Una situación poco probable ahora necesita el pasado simple; had known apunta al pasado.",
-            "de": "Eine unwahrscheinliche Situation jetzt braucht das Past Simple; had known verweist auf die Vergangenheit."
+            "es": "Una situación poco probable ahora necesita el pasado simple; had known apunta al pasado."
           }
         },
         {
           "text": {
-            "hu": "valótlan helyzet a múltban: past perfect",
             "en": "an unreal situation in the past: past perfect",
-            "es": "una situación irreal en el pasado: past perfect",
-            "de": "eine irreale Situation in der Vergangenheit: Past Perfect"
+            "es": "una situación irreal en el pasado: past perfect"
           }
         }
       ],
@@ -1115,46 +919,34 @@
       "es": "I would have called you.",
       "target": "would have called",
       "tr": {
-        "hu": "Felhívtalak volna.",
         "en": "I would have called you.",
-        "es": "Te habría llamado.",
-        "de": "Ich hätte dich angerufen."
+        "es": "Te habría llamado."
       },
       "options": [
         {
           "text": {
-            "hu": "a képzelt eredmény a múltban, ami nem történt meg",
             "en": "the imagined result in the past, which did not happen",
-            "es": "el resultado imaginado en el pasado, que no ocurrió",
-            "de": "das gedachte Ergebnis in der Vergangenheit, das nicht geschah"
+            "es": "el resultado imaginado en el pasado, que no ocurrió"
           }
         },
         {
           "text": {
-            "hu": "jövőbeli terv",
             "en": "a plan for the future",
-            "es": "un plan para el futuro",
-            "de": "ein Plan für die Zukunft"
+            "es": "un plan para el futuro"
           },
           "wrong": {
-            "hu": "A would have called nem terv; azt jelzi, hogy a hívás nem történt meg.",
             "en": "Would have called is not a plan; it shows that the call did not happen.",
-            "es": "Would have called no es un plan; muestra que la llamada no ocurrió.",
-            "de": "Would have called ist kein Plan; es zeigt, dass der Anruf nicht stattfand."
+            "es": "Would have called no es un plan; muestra que la llamada no ocurrió."
           }
         },
         {
           "text": {
-            "hu": "múltbeli szokás",
             "en": "a habit in the past",
-            "es": "un hábito en el pasado",
-            "de": "eine Gewohnheit in der Vergangenheit"
+            "es": "un hábito en el pasado"
           },
           "wrong": {
-            "hu": "A múltbeli szokáshoz used to vagy would + alapige kell; a would have called egyszeri, nem megtörtént esetet jelöl.",
             "en": "A past habit needs used to or would + base verb; would have called marks a single case that did not happen.",
-            "es": "Un hábito pasado necesita used to o would + verbo base; would have called marca un caso único que no ocurrió.",
-            "de": "Eine vergangene Gewohnheit braucht used to oder would + Grundform; would have called markiert einen einzelnen Fall, der nicht geschah."
+            "es": "Un hábito pasado necesita used to o would + verbo base; would have called marca un caso único que no ocurrió."
           }
         }
       ],
@@ -1166,46 +958,34 @@
       "es": "If I had taken that job, I would be rich now.",
       "target": "would be",
       "tr": {
-        "hu": "Ha elvállaltam volna azt a munkát, most gazdag lennék.",
         "en": "If I had taken that job, I would be rich now.",
-        "es": "Si hubiera tomado ese trabajo, ahora sería rico.",
-        "de": "Hätte ich den Job genommen, wäre ich jetzt reich."
+        "es": "Si hubiera tomado ese trabajo, ahora sería rico."
       },
       "options": [
         {
           "text": {
-            "hu": "harmadik feltételes: mindkét rész múltbeli",
             "en": "third conditional: both parts are in the past",
-            "es": "tercer condicional: las dos partes son del pasado",
-            "de": "drittes Konditional: beide Teile liegen in der Vergangenheit"
+            "es": "tercer condicional: las dos partes son del pasado"
           },
           "wrong": {
-            "hu": "A would be a mostanra vonatkozik (now), ezért nem tisztán harmadik feltételes.",
             "en": "Would be refers to now, so it is not a pure third conditional.",
-            "es": "Would be se refiere a ahora (now), por eso no es un tercer condicional puro.",
-            "de": "Would be bezieht sich auf das Jetzt (now), deshalb ist es kein reines drittes Konditional."
+            "es": "Would be se refiere a ahora (now), por eso no es un tercer condicional puro."
           }
         },
         {
           "text": {
-            "hu": "vegyes feltételes: múltbeli feltétel, jelenbeli eredmény",
             "en": "mixed: a past condition, a present result",
-            "es": "mixto: una condición pasada, un resultado presente",
-            "de": "gemischt: eine vergangene Bedingung, ein gegenwärtiges Ergebnis"
+            "es": "mixto: una condición pasada, un resultado presente"
           }
         },
         {
           "text": {
-            "hu": "második feltételes: mindkét rész jelenbeli",
             "en": "second conditional: both parts are in the present",
-            "es": "segundo condicional: las dos partes son del presente",
-            "de": "zweites Konditional: beide Teile liegen in der Gegenwart"
+            "es": "segundo condicional: las dos partes son del presente"
           },
           "wrong": {
-            "hu": "A had taken a múltra utal; a második feltételesben past simple állna az if-mondatban.",
             "en": "Had taken points to the past; the second conditional would have the past simple in the if-clause.",
-            "es": "Had taken apunta al pasado; el segundo condicional tendría el pasado simple en la cláusula con if.",
-            "de": "Had taken verweist auf die Vergangenheit; das zweite Konditional hätte das Past Simple im if-Satz."
+            "es": "Had taken apunta al pasado; el segundo condicional tendría el pasado simple en la cláusula con if."
           }
         }
       ],
@@ -1217,46 +997,34 @@
       "es": "Had I known, I would have called.",
       "target": "Had I known",
       "tr": {
-        "hu": "Ha tudtam volna, felhívtam volna.",
         "en": "Had I known, I would have called.",
-        "es": "De haberlo sabido, habría llamado.",
-        "de": "Hätte ich es gewusst, hätte ich angerufen."
+        "es": "De haberlo sabido, habría llamado."
       },
       "options": [
         {
           "text": {
-            "hu": "kérdés",
             "en": "a question",
-            "es": "una pregunta",
-            "de": "eine Frage"
+            "es": "una pregunta"
           },
           "wrong": {
-            "hu": "Itt a had az if helyett áll, nem kérdést kezd; a mondat folytatása kijelentés.",
             "en": "Here had stands in place of if and does not start a question; the rest of the sentence is a statement.",
-            "es": "Aquí had está en lugar de if y no empieza una pregunta; el resto de la oración es una afirmación.",
-            "de": "Hier steht had anstelle von if und leitet keine Frage ein; der Rest des Satzes ist eine Aussage."
+            "es": "Aquí had está en lugar de if y no empieza una pregunta; el resto de la oración es una afirmación."
           }
         },
         {
           "text": {
-            "hu": "formális változat, jelentése: If I had known",
             "en": "a formal version meaning: If I had known",
-            "es": "una versión formal que significa: If I had known",
-            "de": "eine formelle Variante mit der Bedeutung: If I had known"
+            "es": "una versión formal que significa: If I had known"
           }
         },
         {
           "text": {
-            "hu": "valós feltétel a jelenben",
             "en": "a real condition in the present",
-            "es": "una condición real en el presente",
-            "de": "eine reale Bedingung in der Gegenwart"
+            "es": "una condición real en el presente"
           },
           "wrong": {
-            "hu": "A Had I known múltbeli, valótlan feltétel; a valós jelenhez present simple kell.",
             "en": "Had I known is a past, unreal condition; a real present needs the present simple.",
-            "es": "Had I known es una condición pasada e irreal; un presente real necesita el presente simple.",
-            "de": "Had I known ist eine vergangene, irreale Bedingung; eine reale Gegenwart braucht das Present Simple."
+            "es": "Had I known es una condición pasada e irreal; un presente real necesita el presente simple."
           }
         }
       ],
@@ -1268,46 +1036,34 @@
       "es": "If you had asked, I could have helped.",
       "target": "could have helped",
       "tr": {
-        "hu": "Ha megkérdezted volna, segíthettem volna.",
         "en": "If you had asked, I could have helped.",
-        "es": "Si hubieras preguntado, habría podido ayudar.",
-        "de": "Hättest du gefragt, hätte ich helfen können."
+        "es": "Si hubieras preguntado, habría podido ayudar."
       },
       "options": [
         {
           "text": {
-            "hu": "általános képesség",
             "en": "a general ability",
-            "es": "una habilidad general",
-            "de": "eine allgemeine Fähigkeit"
+            "es": "una habilidad general"
           },
           "wrong": {
-            "hu": "Az általános képességhez could + alapige kell; a could have helped elszalasztott lehetőséget jelöl.",
             "en": "A general ability needs could + base verb; could have helped marks a missed chance.",
-            "es": "Una habilidad general necesita could + verbo base; could have helped marca una oportunidad perdida.",
-            "de": "Eine allgemeine Fähigkeit braucht could + Grundform; could have helped markiert eine verpasste Chance."
+            "es": "Una habilidad general necesita could + verbo base; could have helped marca una oportunidad perdida."
           }
         },
         {
           "text": {
-            "hu": "ígéret holnapra",
             "en": "a promise for tomorrow",
-            "es": "una promesa para mañana",
-            "de": "ein Versprechen für morgen"
+            "es": "una promesa para mañana"
           },
           "wrong": {
-            "hu": "A could have helped múltra utal, nem holnapra; ígéretre will vagy shall áll.",
             "en": "Could have helped points to the past, not tomorrow; a promise takes will or shall.",
-            "es": "Could have helped apunta al pasado, no a mañana; una promesa lleva will o shall.",
-            "de": "Could have helped verweist auf die Vergangenheit, nicht auf morgen; ein Versprechen nimmt will oder shall."
+            "es": "Could have helped apunta al pasado, no a mañana; una promesa lleva will o shall."
           }
         },
         {
           "text": {
-            "hu": "megvolt a lehetőség, de nem történt meg",
             "en": "the chance existed but it did not happen",
-            "es": "la oportunidad existía pero no ocurrió",
-            "de": "die Chance bestand, aber es geschah nicht"
+            "es": "la oportunidad existía pero no ocurrió"
           }
         }
       ],

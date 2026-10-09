@@ -3,42 +3,32 @@
   "topic": "will_vs_going_to",
   "level": "B1",
   "title": {
-    "hu": "Will vagy going to? (I’ll help / I’m going to study)",
     "en": "Will or Going To? (I’ll help / I’m going to study)",
-    "es": "¿Will o going to? (I’ll help / I’m going to study)",
-    "de": "Will oder Going To? (I’ll help / I’m going to study)"
+    "es": "¿Will o going to? (I’ll help / I’m going to study)"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "A spanyolban a jövőre többnyire a „voy a + infinitivo” és a jelen idő megy, az angolban viszont a will és a going to nem cserélhető fel mindig. Going to: terv, amit már előtte eldöntöttél, vagy előrejelzés, amire most látsz bizonyítékot: „I’m going to study medicine”, „Look at those clouds! It’s going to rain.” Will: a beszéd pillanatában hozott döntés, ígéret, felajánlás, vélemény a jövőről: „I’ll answer it”, „I promise I will call you”, „I think it will be hot.”",
         "en": "In Spanish the future is mostly “voy a + infinitivo” and the present tense, but in English will and going to cannot always be swapped. Going to: a plan you decided earlier, or a prediction based on evidence you see now: “I’m going to study medicine”, “Look at those clouds! It’s going to rain.” Will: a decision made at the moment of speaking, a promise, an offer, an opinion about the future: “I’ll answer it”, “I promise I will call you”, “I think it will be hot.”",
-        "es": "En español el futuro se dice sobre todo con «voy a + infinitivo» y con el presente, pero en inglés will y going to no siempre se pueden cambiar. Going to: un plan que decidiste antes, o una predicción basada en una evidencia que ves ahora: «I’m going to study medicine», «Look at those clouds! It’s going to rain.» Will: una decisión tomada en el momento de hablar, una promesa, un ofrecimiento, una opinión sobre el futuro: «I’ll answer it», «I promise I will call you», «I think it will be hot.»",
-        "de": "Im Spanischen wird die Zukunft meist mit „voy a + infinitivo“ und mit dem Präsens ausgedrückt, im Englischen kann man will und going to aber nicht immer austauschen. Going to: ein Plan, den du früher beschlossen hast, oder eine Vorhersage aufgrund von Beweisen, die du jetzt siehst: „I’m going to study medicine“, „Look at those clouds! It’s going to rain.“ Will: eine Entscheidung im Moment des Sprechens, ein Versprechen, ein Angebot, eine Meinung über die Zukunft: „I’ll answer it“, „I promise I will call you“, „I think it will be hot.“"
+        "es": "En español el futuro se dice sobre todo con «voy a + infinitivo» y con el presente, pero en inglés will y going to no siempre se pueden cambiar. Going to: un plan que decidiste antes, o una predicción basada en una evidencia que ves ahora: «I’m going to study medicine», «Look at those clouds! It’s going to rain.» Will: una decisión tomada en el momento de hablar, una promesa, un ofrecimiento, una opinión sobre el futuro: «I’ll answer it», «I promise I will call you», «I think it will be hot.»"
       }
     },
     {
       "kind": "table",
       "id": "wg-uses",
       "title": {
-        "hu": "Melyiket használjam?",
         "en": "Which one do I use?",
-        "es": "¿Cuál uso?",
-        "de": "Welche nehme ich?"
+        "es": "¿Cuál uso?"
       },
       "header": [
         {
-          "hu": "Helyzet",
           "en": "Situation",
-          "es": "Situación",
-          "de": "Situation"
+          "es": "Situación"
         },
         {
-          "hu": "forma",
           "en": "form",
-          "es": "forma",
-          "de": "Form"
+          "es": "forma"
         }
       ],
       "rows": [
@@ -75,64 +65,50 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Going to: terv és bizonyíték",
         "en": "Going to: plans and evidence",
-        "es": "Going to: planes y evidencia",
-        "de": "Going to: Pläne und Beweise"
+        "es": "Going to: planes y evidencia"
       },
       "items": [
         {
           "text": {
-            "hu": "Terv vagy szándék, amit már a beszéd előtt eldöntöttél: be going to + alapige. Az előkészületek gyakran látszanak is.",
             "en": "A plan or intention you decided before speaking: be going to + base verb. The preparations are often visible too.",
-            "es": "Un plan o una intención que decidiste antes de hablar: be going to + verbo base. A menudo también se ven los preparativos.",
-            "de": "Ein Plan oder eine Absicht, die du vor dem Sprechen beschlossen hast: be going to + Grundform. Oft sieht man auch die Vorbereitungen."
+            "es": "Un plan o una intención que decidiste antes de hablar: be going to + verbo base. A menudo también se ven los preparativos."
           },
           "examples": [
             {
               "es": "I'm going to study medicine.",
               "tr": {
-                "hu": "Orvosi egyetemre fogok járni.",
                 "en": "I'm going to study medicine.",
-                "es": "Voy a estudiar medicina.",
-                "de": "Ich werde Medizin studieren."
+                "es": "Voy a estudiar medicina."
               }
             },
             {
               "es": "We have bought the tickets. We are going to visit Oaxaca.",
               "tr": {
-                "hu": "Megvettük a jegyeket. Oaxacába látogatunk.",
                 "en": "We have bought the tickets. We are going to visit Oaxaca.",
-                "es": "Compramos los boletos. Vamos a visitar Oaxaca.",
-                "de": "Wir haben die Tickets gekauft. Wir werden Oaxaca besuchen."
+                "es": "Compramos los boletos. Vamos a visitar Oaxaca."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Előrejelzés, amit most látható bizonyíték támaszt alá: Look! Be careful! A going to-t használjuk.",
             "en": "A prediction backed by evidence you can see now: Look! Be careful! Use going to.",
-            "es": "Una predicción apoyada en una evidencia que ves ahora: Look! Be careful! Se usa going to.",
-            "de": "Eine Vorhersage, die durch Beweise gestützt wird, die man jetzt sieht: Look! Be careful! Man nimmt going to."
+            "es": "Una predicción apoyada en una evidencia que ves ahora: Look! Be careful! Se usa going to."
           },
           "examples": [
             {
               "es": "Look at those clouds! It's going to rain.",
               "tr": {
-                "hu": "Nézd azokat a felhőket! Esni fog.",
                 "en": "Look at those clouds! It's going to rain.",
-                "es": "¡Mira esas nubes! Va a llover.",
-                "de": "Schau dir die Wolken an! Es wird regnen."
+                "es": "¡Mira esas nubes! Va a llover."
               }
             },
             {
               "es": "Be careful! You're going to fall.",
               "tr": {
-                "hu": "Vigyázz! Le fogsz esni.",
                 "en": "Be careful! You're going to fall.",
-                "es": "¡Ten cuidado! Te vas a caer.",
-                "de": "Vorsicht! Du wirst fallen."
+                "es": "¡Ten cuidado! Te vas a caer."
               }
             }
           ]
@@ -142,64 +118,50 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Will: pillanatnyi döntés, ígéret, vélemény",
         "en": "Will: a decision now, a promise, an opinion",
-        "es": "Will: una decisión ahora, una promesa, una opinión",
-        "de": "Will: eine Entscheidung jetzt, ein Versprechen, eine Meinung"
+        "es": "Will: una decisión ahora, una promesa, una opinión"
       },
       "items": [
         {
           "text": {
-            "hu": "Spontán döntés a beszéd pillanatában, felajánlás: will (’ll) + alapige. Nem tervezted előre.",
             "en": "A spontaneous decision at the moment of speaking, an offer: will (’ll) + base verb. You did not plan it before.",
-            "es": "Una decisión espontánea en el momento de hablar, un ofrecimiento: will (’ll) + verbo base. No lo planeaste antes.",
-            "de": "Eine spontane Entscheidung im Moment des Sprechens, ein Angebot: will (’ll) + Grundform. Du hast es nicht vorher geplant."
+            "es": "Una decisión espontánea en el momento de hablar, un ofrecimiento: will (’ll) + verbo base. No lo planeaste antes."
           },
           "examples": [
             {
               "es": "The phone is ringing. I'll answer it.",
               "tr": {
-                "hu": "Cseng a telefon. Felveszem.",
                 "en": "The phone is ringing. I'll answer it.",
-                "es": "Está sonando el teléfono. Yo contesto.",
-                "de": "Das Telefon klingelt. Ich gehe ran."
+                "es": "Está sonando el teléfono. Yo contesto."
               }
             },
             {
               "es": "Wait! I'll carry that bag for you.",
               "tr": {
-                "hu": "Várj! Elviszem neked azt a táskát.",
                 "en": "Wait! I'll carry that bag for you.",
-                "es": "¡Espera! Yo te cargo esa bolsa.",
-                "de": "Warte! Ich trage dir die Tasche."
+                "es": "¡Espera! Yo te cargo esa bolsa."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Ígéret és vélemény a jövőről: promise, I think, probably. Tagadás: won’t (will not).",
             "en": "A promise and an opinion about the future: promise, I think, probably. Negative: won’t (will not).",
-            "es": "Una promesa y una opinión sobre el futuro: promise, I think, probably. Negación: won’t (will not).",
-            "de": "Ein Versprechen und eine Meinung über die Zukunft: promise, I think, probably. Verneinung: won’t (will not)."
+            "es": "Una promesa y una opinión sobre el futuro: promise, I think, probably. Negación: won’t (will not)."
           },
           "examples": [
             {
               "es": "I promise I will call you tomorrow.",
               "tr": {
-                "hu": "Ígérem, hogy holnap felhívlak.",
                 "en": "I promise I will call you tomorrow.",
-                "es": "Te prometo que te llamo mañana.",
-                "de": "Ich verspreche, dass ich dich morgen anrufe."
+                "es": "Te prometo que te llamo mañana."
               }
             },
             {
               "es": "I think it will be hot tomorrow, but I'm not sure.",
               "tr": {
-                "hu": "Szerintem holnap meleg lesz, de nem vagyok biztos benne.",
                 "en": "I think it will be hot tomorrow, but I'm not sure.",
-                "es": "Creo que mañana hará calor, pero no estoy seguro.",
-                "de": "Ich glaube, es wird morgen heiß, aber ich bin nicht sicher."
+                "es": "Creo que mañana hará calor, pero no estoy seguro."
               }
             }
           ]
@@ -209,36 +171,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Present continuous: már megbeszélt dolog",
         "en": "Present continuous: something already arranged",
-        "es": "Presente continuo: algo ya acordado",
-        "de": "Present Continuous: etwas schon Verabredetes"
+        "es": "Presente continuo: algo ya acordado"
       },
       "items": [
         {
           "text": {
-            "hu": "Ha valakivel már megbeszéltél valamit, időponttal és hellyel, a present continuous is jó: „I’m meeting Ana at six.”",
             "en": "When you have already arranged something with someone, with a time and place, the present continuous also works: “I’m meeting Ana at six.”",
-            "es": "Cuando ya acordaste algo con alguien, con hora y lugar, también sirve el presente continuo: «I’m meeting Ana at six.»",
-            "de": "Wenn du mit jemandem schon etwas mit Zeit und Ort verabredet hast, geht auch das Present Continuous: „I’m meeting Ana at six.“"
+            "es": "Cuando ya acordaste algo con alguien, con hora y lugar, también sirve el presente continuo: «I’m meeting Ana at six.»"
           },
           "examples": [
             {
               "es": "I'm meeting Ana at six.",
               "tr": {
-                "hu": "Hatkor találkozom Anával.",
                 "en": "I'm meeting Ana at six.",
-                "es": "Quedé de verme con Ana a las seis.",
-                "de": "Ich treffe mich um sechs mit Ana."
+                "es": "Quedé de verme con Ana a las seis."
               }
             },
             {
               "es": "We're having dinner at my mother's tonight.",
               "tr": {
-                "hu": "Ma este anyámnál vacsorázunk.",
                 "en": "We're having dinner at my mother's tonight.",
-                "es": "Esta noche cenamos en casa de mi mamá.",
-                "de": "Heute Abend essen wir bei meiner Mutter."
+                "es": "Esta noche cenamos en casa de mi mamá."
               }
             }
           ]
@@ -248,45 +202,35 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Spontán döntésre ne használj going to-t: ha a telefon cseng, nem „I’m going to answer”, hanem „I’ll answer.” A going to azt mondja, hogy a döntés már megvolt.",
         "en": "Don’t use going to for a spontaneous decision: when the phone rings, it is not “I’m going to answer” but “I’ll answer.” Going to says the decision was already made.",
-        "es": "No uses going to para una decisión espontánea: cuando suena el teléfono, no es «I’m going to answer» sino «I’ll answer.» Going to dice que la decisión ya estaba tomada.",
-        "de": "Benutze going to nicht für eine spontane Entscheidung: Wenn das Telefon klingelt, heißt es nicht „I’m going to answer“, sondern „I’ll answer.“ Going to sagt, dass die Entscheidung schon getroffen war."
+        "es": "No uses going to para una decisión espontánea: cuando suena el teléfono, no es «I’m going to answer» sino «I’ll answer.» Going to dice que la decisión ya estaba tomada."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "Az „ahorita te ayudo” vagy „cuando llegue, te llamo” angolul sem „when I will arrive”: when, if, as soon as, before után a jövőt egyszerű jelennel mondjuk. „I’ll call you when I get home.”",
         "en": "“Cuando llegue, te llamo” is not “when I will arrive” in English: after when, if, as soon as, before the future is said with the simple present. “I’ll call you when I get home.”",
-        "es": "«Cuando llegue, te llamo» no es «when I will arrive» en inglés: después de when, if, as soon as, before el futuro se dice con el presente simple. «I’ll call you when I get home.»",
-        "de": "„Cuando llegue, te llamo“ heißt auf Englisch nicht „when I will arrive“: Nach when, if, as soon as, before steht die Zukunft im Present Simple. „I’ll call you when I get home.“"
+        "es": "«Cuando llegue, te llamo» no es «when I will arrive» en inglés: después de when, if, as soon as, before el futuro se dice con el presente simple. «I’ll call you when I get home.»"
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "Kérés és tagadás: a will az udvarias kérésnél is jó („Will you help me?”). A tagadó alakok: won’t (will not) és isn’t / aren’t going to: „I won’t tell anyone”, „She isn’t going to come.”",
         "en": "Requests and negatives: will also works for a polite request (“Will you help me?”). The negatives: won’t (will not) and isn’t / aren’t going to: “I won’t tell anyone”, “She isn’t going to come.”",
-        "es": "Peticiones y negaciones: will también sirve para una petición cortés («Will you help me?»). Las formas negativas: won’t (will not) y isn’t / aren’t going to: «I won’t tell anyone», «She isn’t going to come.»",
-        "de": "Bitten und Verneinungen: will passt auch für eine höfliche Bitte („Will you help me?“). Die Verneinungen: won’t (will not) und isn’t / aren’t going to: „I won’t tell anyone“, „She isn’t going to come.“"
+        "es": "Peticiones y negaciones: will también sirve para una petición cortés («Will you help me?»). Las formas negativas: won’t (will not) y isn’t / aren’t going to: «I won’t tell anyone», «She isn’t going to come.»"
       }
     }
   ],
   "speak": {
-    "hu": "A «going to» olyan tervre való, amit már előtte eldöntöttél, vagy olyan előrejelzésre, amire most látsz bizonyítékot: «I'm going to study medicine», «Look at those clouds! It's going to rain». A «will» a beszéd pillanatában hozott döntésre, ígéretre, felajánlásra és véleményre való: «I'll answer it», «I promise I will call you», «I think it will be hot». Megbeszélt találkozóra a present continuous is jó: «I'm meeting Ana at six». Vigyázat: a «when» és az «if» után nem «will» áll, hanem egyszerű jelen: «I'll call you when I get home».",
     "en": "«Going to» is for a plan you decided earlier, or for a prediction based on evidence you see now: «I'm going to study medicine», «Look at those clouds! It's going to rain». «Will» is for a decision made at the moment of speaking, a promise, an offer and an opinion: «I'll answer it», «I promise I will call you», «I think it will be hot». For an arranged meeting the present continuous also works: «I'm meeting Ana at six». Careful: after «when» and «if» there is no «will», but the simple present: «I'll call you when I get home».",
-    "es": "«Going to» sirve para un plan que decidiste antes, o para una predicción basada en una evidencia que ves ahora: «I'm going to study medicine», «Look at those clouds! It's going to rain». «Will» sirve para una decisión tomada en el momento de hablar, una promesa, un ofrecimiento y una opinión: «I'll answer it», «I promise I will call you», «I think it will be hot». Para una cita acordada también sirve el presente continuo: «I'm meeting Ana at six». Cuidado: después de «when» y «if» no va «will», sino el presente simple: «I'll call you when I get home».",
-    "de": "«Going to» ist für einen Plan, den du früher beschlossen hast, oder für eine Vorhersage aufgrund von Beweisen, die du jetzt siehst: «I'm going to study medicine», «Look at those clouds! It's going to rain». «Will» ist für eine Entscheidung im Moment des Sprechens, ein Versprechen, ein Angebot und eine Meinung: «I'll answer it», «I promise I will call you», «I think it will be hot». Für eine verabredete Sache geht auch das Present Continuous: «I'm meeting Ana at six». Vorsicht: Nach «when» und «if» steht kein «will», sondern das Present Simple: «I'll call you when I get home»."
+    "es": "«Going to» sirve para un plan que decidiste antes, o para una predicción basada en una evidencia que ves ahora: «I'm going to study medicine», «Look at those clouds! It's going to rain». «Will» sirve para una decisión tomada en el momento de hablar, una promesa, un ofrecimiento y una opinión: «I'll answer it», «I promise I will call you», «I think it will be hot». Para una cita acordada también sirve el presente continuo: «I'm meeting Ana at six». Cuidado: después de «when» y «if» no va «will», sino el presente simple: «I'll call you when I get home»."
   },
   "glossary": [
     {
       "word": "I'll",
       "gloss": {
-        "hu": "I will rövidítve",
         "en": "short for I will",
-        "es": "forma corta de I will",
-        "de": "Kurzform von I will"
+        "es": "forma corta de I will"
       }
     }
   ],
@@ -301,30 +245,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Van bizonyíték, amit most látsz (sötét felhők), ezért going to kell: it is going to rain.",
         "en": "There is evidence you can see now (dark clouds), so you need going to: it is going to rain.",
-        "es": "Hay una evidencia que ves ahora (nubes oscuras), así que hace falta going to: it is going to rain.",
-        "de": "Es gibt einen Beweis, den du jetzt siehst (dunkle Wolken), deshalb braucht man going to: it is going to rain."
+        "es": "Hay una evidencia que ves ahora (nubes oscuras), así que hace falta going to: it is going to rain."
       },
       "wrong": {
         "will": {
-          "hu": "A will véleményt vagy spontán döntést fejez ki; itt látható bizonyíték van, ezért going to jobb. (A will is hallható, de itt going to-t várunk.)",
           "en": "Will expresses an opinion or a spontaneous decision; here there is visible evidence, so going to is better. (Will is also heard, but here going to is expected.)",
-          "es": "Will expresa una opinión o una decisión espontánea; aquí hay una evidencia visible, por eso es mejor going to. (Will también se oye, pero aquí se espera going to.)",
-          "de": "Will drückt eine Meinung oder eine spontane Entscheidung aus; hier gibt es sichtbare Beweise, deshalb ist going to besser. (Will hört man auch, aber hier wird going to erwartet.)"
+          "es": "Will expresa una opinión o una decisión espontánea; aquí hay una evidencia visible, por eso es mejor going to. (Will también se oye, pero aquí se espera going to.)"
         },
         "rains": {
-          "hu": "A „rains” egyszerű jelen, szokásra való; előrejelzéshez going to kell.",
           "en": "“Rains” is the simple present, used for habits; a prediction needs going to.",
-          "es": "«Rains» es el presente simple, para hábitos; una predicción necesita going to.",
-          "de": "„Rains“ ist das Present Simple für Gewohnheiten; eine Vorhersage braucht going to."
+          "es": "«Rains» es el presente simple, para hábitos; una predicción necesita going to."
         }
       },
       "examples": [
         "It's going to snow.",
         "Look out! That car is going to hit us."
       ],
-      "tr": { "hu": "Nézd azokat a sötét felhőket! Esni fog.", "en": "Look at those dark clouds! It is going to rain.", "es": "¡Mira esas nubes oscuras! Va a llover.", "de": "Schau dir diese dunklen Wolken an! Es wird regnen." }
+      "tr": { "en": "Look at those dark clouds! It is going to rain.", "es": "¡Mira esas nubes oscuras! Va a llover." }
     },
     {
       "id": "wg-02",
@@ -336,30 +274,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Spontán döntés a beszéd pillanatában: I’ll answer it. A going to azt mondaná, hogy már előtte eldöntötted.",
         "en": "A spontaneous decision at the moment of speaking: I’ll answer it. Going to would say you decided earlier.",
-        "es": "Una decisión espontánea en el momento de hablar: I’ll answer it. Going to diría que lo decidiste antes.",
-        "de": "Eine spontane Entscheidung im Moment des Sprechens: I’ll answer it. Going to würde sagen, dass du es früher beschlossen hast."
+        "es": "Una decisión espontánea en el momento de hablar: I’ll answer it. Going to diría que lo decidiste antes."
       },
       "wrong": {
         "am going to": {
-          "hu": "A going to már megtervezett dolgot jelöl; a csörgő telefonra adott pillanatnyi reakcióhoz will kell.",
           "en": "Going to marks something already planned; a quick reaction to a ringing phone needs will.",
-          "es": "Going to marca algo ya planeado; una reacción rápida a un teléfono que suena necesita will.",
-          "de": "Going to kennzeichnet etwas schon Geplantes; eine schnelle Reaktion auf ein klingelndes Telefon braucht will."
+          "es": "Going to marca algo ya planeado; una reacción rápida a un teléfono que suena necesita will."
         },
         "am answering": {
-          "hu": "Az „am answering” azt mondaná, hogy éppen most veszed fel, vagy megbeszélt dolog; a döntést will fejezi ki.",
           "en": "“Am answering” would say you are answering right now, or it is arranged; will expresses the decision.",
-          "es": "«Am answering» diría que estás contestando ahora mismo, o que está acordado; will expresa la decisión.",
-          "de": "„Am answering“ würde sagen, dass du gerade abnimmst oder dass es verabredet ist; will drückt die Entscheidung aus."
+          "es": "«Am answering» diría que estás contestando ahora mismo, o que está acordado; will expresa la decisión."
         }
       },
       "examples": [
         "I'll open the window.",
         "Yes, I'll do it."
       ],
-      "tr": { "hu": "Csörög a telefon. Felveszem.", "en": "The phone is ringing. I will answer it.", "es": "Está sonando el teléfono. Yo contesto.", "de": "Das Telefon klingelt. Ich gehe ran." }
+      "tr": { "en": "The phone is ringing. I will answer it.", "es": "Está sonando el teléfono. Yo contesto." }
     },
     {
       "id": "wg-03",
@@ -371,30 +303,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A jegyek már megvannak, vagyis előre eldöntött terv van: we are going to visit.",
         "en": "The tickets are already bought, so it is a plan decided in advance: we are going to visit.",
-        "es": "Los boletos ya están comprados, así que es un plan decidido de antemano: we are going to visit.",
-        "de": "Die Tickets sind schon gekauft, also ist es ein im Voraus beschlossener Plan: we are going to visit."
+        "es": "Los boletos ya están comprados, así que es un plan decidido de antemano: we are going to visit."
       },
       "wrong": {
         "will": {
-          "hu": "A will pillanatnyi döntésre vagy véleményre jó; a már megvett jegyek előre eldöntött tervet mutatnak. (A will is hallható, de itt going to-t várunk.)",
           "en": "Will suits a decision made now or an opinion; the tickets already bought show a plan decided in advance. (Will is also heard, but here going to is expected.)",
-          "es": "Will sirve para una decisión de ahora o una opinión; los boletos ya comprados muestran un plan decidido de antemano. (Will también se oye, pero aquí se espera going to.)",
-          "de": "Will passt zu einer Entscheidung jetzt oder einer Meinung; die schon gekauften Tickets zeigen einen im Voraus beschlossenen Plan. (Will hört man auch, aber hier wird going to erwartet.)"
+          "es": "Will sirve para una decisión de ahora o una opinión; los boletos ya comprados muestran un plan decidido de antemano. (Will también se oye, pero aquí se espera going to.)"
         },
         "visit": {
-          "hu": "A „we visit” egyszerű jelen, menetrendre vagy szokásra való; az előre eldöntött tervhez going to kell.",
           "en": "“We visit” is the simple present, for timetables or habits; a plan decided in advance needs going to.",
-          "es": "«We visit» es el presente simple, para horarios o hábitos; un plan decidido de antemano necesita going to.",
-          "de": "„We visit“ ist das Present Simple für Fahrpläne oder Gewohnheiten; ein im Voraus beschlossener Plan braucht going to."
+          "es": "«We visit» es el presente simple, para horarios o hábitos; un plan decidido de antemano necesita going to."
         }
       },
       "examples": [
         "I'm going to buy a car.",
         "They are going to move next year."
       ],
-      "tr": { "hu": "Megvettük a jegyeket. Jövő hónapban meglátogatjuk Oaxacát.", "en": "We have bought the tickets. We are going to visit Oaxaca next month.", "es": "Ya compramos los boletos. Vamos a visitar Oaxaca el próximo mes.", "de": "Wir haben die Tickets gekauft. Wir werden nächsten Monat Oaxaca besuchen." }
+      "tr": { "en": "We have bought the tickets. We are going to visit Oaxaca next month.", "es": "Ya compramos los boletos. Vamos a visitar Oaxaca el próximo mes." }
     },
     {
       "id": "wg-04",
@@ -406,30 +332,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Az ígéretnél will áll: I promise I will never forget you.",
         "en": "A promise takes will: I promise I will never forget you.",
-        "es": "Una promesa lleva will: I promise I will never forget you.",
-        "de": "Ein Versprechen steht mit will: I promise I will never forget you."
+        "es": "Una promesa lleva will: I promise I will never forget you."
       },
       "wrong": {
         "am going to": {
-          "hu": "A going to terv, nem ígéret; a „promise” szó mellé will való.",
           "en": "Going to is a plan, not a promise; the word “promise” goes with will.",
-          "es": "Going to es un plan, no una promesa; la palabra «promise» va con will.",
-          "de": "Going to ist ein Plan, kein Versprechen; das Wort „promise“ gehört zu will."
+          "es": "Going to es un plan, no una promesa; la palabra «promise» va con will."
         },
         "forget": {
-          "hu": "Az alapige egyedül nem fejez ki ígéretet; ígérethez will kell: I will never forget you.",
           "en": "The base verb alone does not express a promise; a promise needs will: I will never forget you.",
-          "es": "El verbo base solo no expresa una promesa; una promesa necesita will: I will never forget you.",
-          "de": "Die Grundform allein drückt kein Versprechen aus; ein Versprechen braucht will: I will never forget you."
+          "es": "El verbo base solo no expresa una promesa; una promesa necesita will: I will never forget you."
         }
       },
       "examples": [
         "I promise I will help you.",
         "I promise I will be on time."
       ],
-      "tr": { "hu": "Ígérem, soha nem felejtelek el.", "en": "I promise I will never forget you.", "es": "Prometo que nunca te olvidaré.", "de": "Ich verspreche, dass ich dich nie vergessen werde." }
+      "tr": { "en": "I promise I will never forget you.", "es": "Prometo que nunca te olvidaré." }
     },
     {
       "id": "wg-05",
@@ -441,30 +361,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Vélemény a jövőről (I think): will rain.",
         "en": "An opinion about the future (I think): will rain.",
-        "es": "Una opinión sobre el futuro (I think): will rain.",
-        "de": "Eine Meinung über die Zukunft (I think): will rain."
+        "es": "Una opinión sobre el futuro (I think): will rain."
       },
       "wrong": {
         "rains": {
-          "hu": "A „rains” egyszerű jelen, de a tomorrow és az I think véleményt kér a jövőről: will rain.",
           "en": "“Rains” is the simple present, but tomorrow and I think ask for an opinion about the future: will rain.",
-          "es": "«Rains» es el presente simple, pero tomorrow y I think piden una opinión sobre el futuro: will rain.",
-          "de": "„Rains“ ist das Present Simple, aber tomorrow und I think verlangen eine Meinung über die Zukunft: will rain."
+          "es": "«Rains» es el presente simple, pero tomorrow y I think piden una opinión sobre el futuro: will rain."
         },
         "rained": {
-          "hu": "A „rained” múlt idő, de a tomorrow a jövőre utal.",
           "en": "“Rained” is past, but tomorrow points to the future.",
-          "es": "«Rained» es pasado, pero tomorrow apunta al futuro.",
-          "de": "„Rained“ ist Vergangenheit, aber tomorrow verweist auf die Zukunft."
+          "es": "«Rained» es pasado, pero tomorrow apunta al futuro."
         }
       },
       "examples": [
         "I think it will be hot.",
         "I think she will come."
       ],
-      "tr": { "hu": "Szerintem holnap esni fog, de nem vagyok benne biztos.", "en": "I think it will rain tomorrow, but I am not sure.", "es": "Creo que va a llover mañana, pero no estoy seguro.", "de": "Ich glaube, es wird morgen regnen, aber ich bin mir nicht sicher." }
+      "tr": { "en": "I think it will rain tomorrow, but I am not sure.", "es": "Creo que va a llover mañana, pero no estoy seguro." }
     },
     {
       "id": "wg-06",
@@ -476,30 +390,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Felajánlás a beszéd pillanatában: I’ll carry that bag.",
         "en": "An offer at the moment of speaking: I’ll carry that bag.",
-        "es": "Un ofrecimiento en el momento de hablar: I’ll carry that bag.",
-        "de": "Ein Angebot im Moment des Sprechens: I’ll carry that bag."
+        "es": "Un ofrecimiento en el momento de hablar: I’ll carry that bag."
       },
       "wrong": {
         "carry": {
-          "hu": "Az alapige egyedül nem fejez ki felajánlást; will kell hozzá.",
           "en": "The base verb alone does not express an offer; you need will.",
-          "es": "El verbo base solo no expresa un ofrecimiento; hace falta will.",
-          "de": "Die Grundform allein drückt kein Angebot aus; man braucht will."
+          "es": "El verbo base solo no expresa un ofrecimiento; hace falta will."
         },
         "am carrying": {
-          "hu": "Az „am carrying” a folyamatban lévő cselekvést jelenti; a felajánlást will fejezi ki.",
           "en": "“Am carrying” means an action in progress; will expresses the offer.",
-          "es": "«Am carrying» significa una acción en marcha; will expresa el ofrecimiento.",
-          "de": "„Am carrying“ bedeutet eine laufende Handlung; will drückt das Angebot aus."
+          "es": "«Am carrying» significa una acción en marcha; will expresa el ofrecimiento."
         }
       },
       "examples": [
         "I'll help you with that.",
         "Don't worry, I'll pay."
       ],
-      "tr": { "hu": "Várj! Elviszem neked azt a táskát.", "en": "Wait! I will carry that bag for you.", "es": "¡Espera! Yo te cargo esa bolsa.", "de": "Warte! Ich trage die Tasche für dich." }
+      "tr": { "en": "Wait! I will carry that bag for you.", "es": "¡Espera! Yo te cargo esa bolsa." }
     },
     {
       "id": "wg-07",
@@ -511,30 +419,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Már megbeszélt találkozó, időponttal: present continuous, I am meeting.",
         "en": "An arrangement already made, with a time: present continuous, I am meeting.",
-        "es": "Una cita ya acordada, con hora: presente continuo, I am meeting.",
-        "de": "Eine schon vereinbarte Verabredung mit Uhrzeit: Present Continuous, I am meeting."
+        "es": "Una cita ya acordada, con hora: presente continuo, I am meeting."
       },
       "wrong": {
         "meet": {
-          "hu": "A „meet” egyszerű jelen, szokásra vagy menetrendre való; megbeszélt találkozóhoz am meeting kell.",
           "en": "“Meet” is the simple present, for habits or timetables; an arranged meeting needs am meeting.",
-          "es": "«Meet» es el presente simple, para hábitos u horarios; una cita acordada necesita am meeting.",
-          "de": "„Meet“ ist das Present Simple für Gewohnheiten oder Fahrpläne; eine verabredete Sache braucht am meeting."
+          "es": "«Meet» es el presente simple, para hábitos u horarios; una cita acordada necesita am meeting."
         },
         "meets": {
-          "hu": "A „meets” az „I” mellett hibás (csak he, she, it után áll), és nem is a megbeszélt találkozó alakja.",
           "en": "“Meets” is wrong with “I” (it only goes after he, she, it), and it is not the form for an arranged meeting.",
-          "es": "«Meets» es incorrecto con «I» (solo va con he, she, it), y tampoco es la forma de una cita acordada.",
-          "de": "„Meets“ ist bei „I“ falsch (es steht nur bei he, she, it) und ist auch nicht die Form für eine Verabredung."
+          "es": "«Meets» es incorrecto con «I» (solo va con he, she, it), y tampoco es la forma de una cita acordada."
         }
       },
       "examples": [
         "We are having dinner at eight.",
         "She is flying to Madrid tomorrow."
       ],
-      "tr": { "hu": "Hatkor találkozom Anával. Tegnap beszéltük meg.", "en": "I am meeting Ana at six. We arranged it yesterday.", "es": "Me voy a ver con Ana a las seis. Lo arreglamos ayer.", "de": "Ich treffe mich um sechs mit Ana. Wir haben das gestern vereinbart." }
+      "tr": { "en": "I am meeting Ana at six. We arranged it yesterday.", "es": "Me voy a ver con Ana a las seis. Lo arreglamos ayer." }
     },
     {
       "id": "wg-08",
@@ -546,30 +448,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Ígéret tagadva: I won’t tell (will not).",
         "en": "A promise in the negative: I won’t tell (will not).",
-        "es": "Una promesa en negativo: I won’t tell (will not).",
-        "de": "Ein Versprechen in der Verneinung: I won’t tell (will not)."
+        "es": "Una promesa en negativo: I won’t tell (will not)."
       },
       "wrong": {
         "don't": {
-          "hu": "A „don’t” jelen idejű szokást tagadna; a jövőre szóló ígérethez won’t kell.",
           "en": "“Don’t” would negate a present habit; a promise about the future needs won’t.",
-          "es": "«Don’t» negaría un hábito presente; una promesa sobre el futuro necesita won’t.",
-          "de": "„Don’t“ würde eine Gewohnheit in der Gegenwart verneinen; ein Versprechen für die Zukunft braucht won’t."
+          "es": "«Don’t» negaría un hábito presente; una promesa sobre el futuro necesita won’t."
         },
         "didn't": {
-          "hu": "A „didn’t” múlt idejű; az ígéret a jövőre vonatkozik.",
           "en": "“Didn’t” is past; the promise is about the future.",
-          "es": "«Didn’t» es pasado; la promesa es sobre el futuro.",
-          "de": "„Didn’t“ ist Vergangenheit; das Versprechen betrifft die Zukunft."
+          "es": "«Didn’t» es pasado; la promesa es sobre el futuro."
         }
       },
       "examples": [
         "I won't be late.",
         "He won't forget."
       ],
-      "tr": { "hu": "Nem fogom elmondani a titkot. Megígérem.", "en": "I won't tell the secret. I promise.", "es": "No diré el secreto. Lo prometo.", "de": "Ich werde das Geheimnis nicht verraten. Ich verspreche es." }
+      "tr": { "en": "I won't tell the secret. I promise.", "es": "No diré el secreto. Lo prometo." }
     },
     {
       "id": "wg-09",
@@ -581,30 +477,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Udvarias kérés: Will you help me…? (a will kérésre is jó).",
         "en": "A polite request: Will you help me…? (will also works for requests).",
-        "es": "Una petición cortés: Will you help me…? (will también sirve para peticiones).",
-        "de": "Eine höfliche Bitte: Will you help me…? (will passt auch für Bitten)."
+        "es": "Una petición cortés: Will you help me…? (will también sirve para peticiones)."
       },
       "wrong": {
         "Are": {
-          "hu": "Az „Are you help” nem helyes; az Are után -ing alak kellene (Are you helping…?), ami mást jelentene.",
           "en": "“Are you help” is not correct; after Are you would need an -ing form (Are you helping…?), which means something else.",
-          "es": "«Are you help» no es correcto; después de Are haría falta una forma -ing (Are you helping…?), que significa otra cosa.",
-          "de": "„Are you help“ ist nicht korrekt; nach Are bräuchte man eine -ing-Form (Are you helping…?), was etwas anderes bedeutet."
+          "es": "«Are you help» no es correcto; después de Are haría falta una forma -ing (Are you helping…?), que significa otra cosa."
         },
         "Do": {
-          "hu": "A Do you help…? általános szokásra kérdez (Segítesz általában?), nem pillanatnyi kérésre.",
           "en": "“Do you help…?” asks about a general habit (Do you usually help?), not about a request right now.",
-          "es": "«Do you help…?» pregunta por un hábito general (¿Ayudas normalmente?), no por una petición ahora mismo.",
-          "de": "„Do you help…?“ fragt nach einer allgemeinen Gewohnheit (Hilfst du normalerweise?), nicht nach einer Bitte jetzt."
+          "es": "«Do you help…?» pregunta por un hábito general (¿Ayudas normalmente?), no por una petición ahora mismo."
         }
       },
       "examples": [
         "Will you open the window?",
         "Will you wait here?"
       ],
-      "tr": { "hu": "Segítenél nekem ezzel a dobozzal, kérlek?", "en": "Will you help me with this box, please?", "es": "¿Me ayudas con esta caja, por favor?", "de": "Hilfst du mir bitte mit dieser Kiste?" }
+      "tr": { "en": "Will you help me with this box, please?", "es": "¿Me ayudas con esta caja, por favor?" }
     },
     {
       "id": "wg-10",
@@ -616,30 +506,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A going to kérdésben az are áll elöl: What are you going to do…?",
         "en": "In a going to question, are comes first: What are you going to do…?",
-        "es": "En una pregunta con going to, are va primero: What are you going to do…?",
-        "de": "In einer going-to-Frage steht are vorn: What are you going to do…?"
+        "es": "En una pregunta con going to, are va primero: What are you going to do…?"
       },
       "wrong": {
         "will": {
-          "hu": "A will mellé nem jön going to; vagy What will you do…?, vagy What are you going to do…?",
           "en": "Will does not go with going to; either What will you do…? or What are you going to do…?",
-          "es": "Will no va con going to; o bien What will you do…? o bien What are you going to do…?",
-          "de": "Will steht nicht mit going to; entweder What will you do…? oder What are you going to do…?"
+          "es": "Will no va con going to; o bien What will you do…? o bien What are you going to do…?"
         },
         "do": {
-          "hu": "A „do you going to” helytelen; a going to szerkezetben a be ige (are) áll.",
           "en": "“Do you going to” is wrong; in the going to structure the verb be (are) is used.",
-          "es": "«Do you going to» es incorrecto; en la estructura going to se usa el verbo be (are).",
-          "de": "„Do you going to“ ist falsch; in der going-to-Struktur steht das Verb be (are)."
+          "es": "«Do you going to» es incorrecto; en la estructura going to se usa el verbo be (are)."
         }
       },
       "examples": [
         "What are they going to eat?",
         "Where is she going to live?"
       ],
-      "tr": { "hu": "Mit fogsz csinálni a hétvégén?", "en": "What are you going to do this weekend?", "es": "¿Qué vas a hacer este fin de semana?", "de": "Was machst du dieses Wochenende?" }
+      "tr": { "en": "What are you going to do this weekend?", "es": "¿Qué vas a hacer este fin de semana?" }
     },
     {
       "id": "wg-11",
@@ -651,30 +535,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A when után a jövőt egyszerű jelen fejezi ki: when I get home.",
         "en": "After when the future is expressed by the simple present: when I get home.",
-        "es": "Después de when el futuro se expresa con el presente simple: when I get home.",
-        "de": "Nach when wird die Zukunft durch das Present Simple ausgedrückt: when I get home."
+        "es": "Después de when el futuro se expresa con el presente simple: when I get home."
       },
       "wrong": {
         "will get": {
-          "hu": "A when után nem áll will; az „I will call you” a főmondat, a when-es rész egyszerű jelen.",
           "en": "After when there is no will; “I will call you” is the main clause, the when part uses the simple present.",
-          "es": "Después de when no va will; «I will call you» es la oración principal, la parte con when usa el presente simple.",
-          "de": "Nach when steht kein will; „I will call you“ ist der Hauptsatz, der when-Teil steht im Present Simple."
+          "es": "Después de when no va will; «I will call you» es la oración principal, la parte con when usa el presente simple."
         },
         "got": {
-          "hu": "A „got” múlt alak; a jövőre vonatkozó when-es időmondatban egyszerű jelen kell (get).",
           "en": "“Got” is a past form; a when time clause about the future needs the simple present (get).",
-          "es": "«Got» es una forma de pasado; una oración temporal con when sobre el futuro necesita el presente simple (get).",
-          "de": "„Got“ ist eine Vergangenheitsform; ein when-Zeitsatz über die Zukunft braucht das Present Simple (get)."
+          "es": "«Got» es una forma de pasado; una oración temporal con when sobre el futuro necesita el presente simple (get)."
         }
       },
       "examples": [
         "I'll call you when I arrive.",
         "She will phone when she gets there."
       ],
-      "tr": { "hu": "Felhívlak, amikor hazaérek.", "en": "I will call you when I get home.", "es": "Te llamaré cuando llegue a casa.", "de": "Ich rufe dich an, wenn ich nach Hause komme." }
+      "tr": { "en": "I will call you when I get home.", "es": "Te llamaré cuando llegue a casa." }
     },
     {
       "id": "wg-12",
@@ -686,30 +564,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Már előbb eldöntött terv (vizsgára tanulok): I am going to study.",
         "en": "A plan decided earlier (studying for an exam): I am going to study.",
-        "es": "Un plan decidido antes (estudiar para un examen): I am going to study.",
-        "de": "Ein früher beschlossener Plan (für eine Prüfung lernen): I am going to study."
+        "es": "Un plan decidido antes (estudiar para un examen): I am going to study."
       },
       "wrong": {
         "will": {
-          "hu": "A will spontán döntést jelezne; a vizsgára tanulás előre eldöntött terv, ezért going to. (A will is hallható, de itt going to-t várunk.)",
           "en": "Will would show a spontaneous decision; studying for an exam is a plan decided in advance, so going to. (Will is also heard, but here going to is expected.)",
-          "es": "Will mostraría una decisión espontánea; estudiar para un examen es un plan decidido de antemano, por eso going to. (Will también se oye, pero aquí se espera going to.)",
-          "de": "Will würde eine spontane Entscheidung zeigen; das Lernen für eine Prüfung ist ein im Voraus beschlossener Plan, deshalb going to. (Will hört man auch, aber hier wird going to erwartet.)"
+          "es": "Will mostraría una decisión espontánea; estudiar para un examen es un plan decidido de antemano, por eso going to. (Will también se oye, pero aquí se espera going to.)"
         },
         "study": {
-          "hu": "A „study” egyszerű jelen, szokásra való; a tervhez going to kell.",
           "en": "“Study” is the simple present, for habits; a plan needs going to.",
-          "es": "«Study» es el presente simple, para hábitos; un plan necesita going to.",
-          "de": "„Study“ ist das Present Simple für Gewohnheiten; ein Plan braucht going to."
+          "es": "«Study» es el presente simple, para hábitos; un plan necesita going to."
         }
       },
       "examples": [
         "I am going to work late.",
         "She is going to call him."
       ],
-      "tr": { "hu": "Sajnálom, ma este nem tudok jönni. Tanulni fogok egy vizsgára.", "en": "Sorry, I can't come tonight. I am going to study for an exam.", "es": "Lo siento, no puedo ir esta noche. Voy a estudiar para un examen.", "de": "Tut mir leid, ich kann heute Abend nicht kommen. Ich werde für eine Prüfung lernen." }
+      "tr": { "en": "Sorry, I can't come tonight. I am going to study for an exam.", "es": "Lo siento, no puedo ir esta noche. Voy a estudiar para un examen." }
     },
     {
       "id": "wg-13",
@@ -721,30 +593,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A be going to-s kérdésre a be ige a rövid válasz: Yes, I am.",
         "en": "The short answer to a be going to question is the verb be: Yes, I am.",
-        "es": "La respuesta corta a una pregunta con be going to es el verbo be: Yes, I am.",
-        "de": "Die Kurzantwort auf eine be-going-to-Frage ist das Verb be: Yes, I am."
+        "es": "La respuesta corta a una pregunta con be going to es el verbo be: Yes, I am."
       },
       "wrong": {
         "do": {
-          "hu": "A „do” a Do-val kezdődő kérdésekre válaszolna; az Are you going to…? kérdésre a be ige a rövid válasz.",
           "en": "“Do” answers questions that begin with Do; the short answer to Are you going to…? is the verb be.",
-          "es": "«Do» responde a preguntas que empiezan con Do; la respuesta corta a Are you going to…? es el verbo be.",
-          "de": "„Do“ antwortet auf Fragen mit Do; die Kurzantwort auf Are you going to…? ist das Verb be."
+          "es": "«Do» responde a preguntas que empiezan con Do; la respuesta corta a Are you going to…? es el verbo be."
         },
         "have": {
-          "hu": "A have a present perfect segédigéje; az Are you going to…? kérdésre a be ige (am / are) a rövid válasz.",
           "en": "Have is the helper of the present perfect; the short answer to Are you going to…? is the verb be (am / are).",
-          "es": "Have es el auxiliar del presente perfecto; la respuesta corta a Are you going to…? es el verbo be (am / are).",
-          "de": "Have ist das Hilfsverb des Present Perfect; die Kurzantwort auf Are you going to…? ist das Verb be (am / are)."
+          "es": "Have es el auxiliar del presente perfecto; la respuesta corta a Are you going to…? es el verbo be (am / are)."
         }
       },
       "examples": [
         "Yes, I am.",
         "No, they are not."
       ],
-      "tr": { "hu": "Eljössz? Igen, elmegyek.", "en": "Are you going to come? Yes, I am.", "es": "¿Vas a venir? Sí, voy a ir.", "de": "Wirst du kommen? Ja, das werde ich." }
+      "tr": { "en": "Are you going to come? Yes, I am.", "es": "¿Vas a venir? Sí, voy a ir." }
     },
     {
       "id": "wg-14",
@@ -756,30 +622,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A going to után alapige áll: going to have.",
         "en": "After going to comes the base verb: going to have.",
-        "es": "Después de going to va el verbo base: going to have.",
-        "de": "Nach going to steht die Grundform: going to have."
+        "es": "Después de going to va el verbo base: going to have."
       },
       "wrong": {
         "has": {
-          "hu": "A going to után nem ragozott alak jön (nem „going to has”), hanem az alapige: have.",
           "en": "After going to there is no conjugated form (not “going to has”) but the base verb: have.",
-          "es": "Después de going to no va una forma conjugada (no «going to has») sino el verbo base: have.",
-          "de": "Nach going to steht keine konjugierte Form (nicht „going to has“), sondern die Grundform: have."
+          "es": "Después de going to no va una forma conjugada (no «going to has») sino el verbo base: have."
         },
         "having": {
-          "hu": "A going to után az alapige áll, nem az -ing alak; a „going to having” helytelen.",
           "en": "After going to comes the base verb, not the -ing form; “going to having” is wrong.",
-          "es": "Después de going to va el verbo base, no la forma -ing; «going to having» es incorrecto.",
-          "de": "Nach going to steht die Grundform, nicht die -ing-Form; „going to having“ ist falsch."
+          "es": "Después de going to va el verbo base, no la forma -ing; «going to having» es incorrecto."
         }
       },
       "examples": [
         "She is going to buy a house.",
         "He is going to be late."
       ],
-      "tr": { "hu": "Júniusban babája lesz.", "en": "She is going to have a baby in June.", "es": "Ella va a tener un bebé en junio.", "de": "Sie bekommt im Juni ein Baby." }
+      "tr": { "en": "She is going to have a baby in June.", "es": "Ella va a tener un bebé en junio." }
     },
     {
       "id": "wg-15",
@@ -791,30 +651,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A liszt megvétele mutatja, hogy a terv már megvan: I am going to make a cake.",
         "en": "Buying the flour shows the plan already exists: I am going to make a cake.",
-        "es": "Comprar la harina muestra que el plan ya existe: I am going to make a cake.",
-        "de": "Das Mehl zu kaufen zeigt, dass der Plan schon besteht: I am going to make a cake."
+        "es": "Comprar la harina muestra que el plan ya existe: I am going to make a cake."
       },
       "wrong": {
         "will": {
-          "hu": "A will spontán döntés lenne; a liszt megvásárlása azt mutatja, hogy a terv már megvolt.",
           "en": "Will would be a spontaneous decision; buying the flour shows the plan was already there.",
-          "es": "Will sería una decisión espontánea; comprar la harina muestra que el plan ya estaba.",
-          "de": "Will wäre eine spontane Entscheidung; das Mehl zu kaufen zeigt, dass der Plan schon da war."
+          "es": "Will sería una decisión espontánea; comprar la harina muestra que el plan ya estaba."
         },
         "make": {
-          "hu": "Az alapige egyedül nem fejez ki jövőbeli tervet; going to kell hozzá.",
           "en": "The base verb alone does not express a future plan; you need going to.",
-          "es": "El verbo base solo no expresa un plan futuro; hace falta going to.",
-          "de": "Die Grundform allein drückt keinen zukünftigen Plan aus; man braucht going to."
+          "es": "El verbo base solo no expresa un plan futuro; hace falta going to."
         }
       },
       "examples": [
         "I am going to cook dinner.",
         "We are going to clean the room."
       ],
-      "tr": { "hu": "Miért veszel lisztet? Tortát fogok sütni.", "en": "Why are you buying flour? I am going to make a cake.", "es": "¿Por qué compras harina? Voy a hacer un pastel.", "de": "Warum kaufst du Mehl? Ich werde einen Kuchen backen." }
+      "tr": { "en": "Why are you buying flour? I am going to make a cake.", "es": "¿Por qué compras harina? Voy a hacer un pastel." }
     },
     {
       "id": "wg-16",
@@ -826,30 +680,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A he mellé is kell: he is going to be late.",
         "en": "With he you need is: he is going to be late.",
-        "es": "Con he hace falta is: he is going to be late.",
-        "de": "Bei he braucht man is: he is going to be late."
+        "es": "Con he hace falta is: he is going to be late."
       },
       "wrong": {
         "will": {
-          "hu": "A will után nem jön going to; vagy „he will be”, vagy „he is going to be”.",
           "en": "After will there is no going to; either “he will be” or “he is going to be”.",
-          "es": "Después de will no va going to; o bien «he will be» o bien «he is going to be».",
-          "de": "Nach will steht kein going to; entweder „he will be“ oder „he is going to be“."
+          "es": "Después de will no va going to; o bien «he will be» o bien «he is going to be»."
         },
         "does": {
-          "hu": "A „does going to” helytelen; a going to szerkezetben a be ige áll (is).",
           "en": "“Does going to” is wrong; in the going to structure the verb be is used (is).",
-          "es": "«Does going to» es incorrecto; en la estructura going to se usa el verbo be (is).",
-          "de": "„Does going to“ ist falsch; in der going-to-Struktur steht das Verb be (is)."
+          "es": "«Does going to» es incorrecto; en la estructura going to se usa el verbo be (is)."
         }
       },
       "examples": [
         "He is going to come.",
         "It is going to be good."
       ],
-      "tr": { "hu": "El fog késni a munkából.", "en": "He is going to be late for work.", "es": "Él va a llegar tarde al trabajo.", "de": "Er wird zu spät zur Arbeit kommen." }
+      "tr": { "en": "He is going to be late for work.", "es": "Él va a llegar tarde al trabajo." }
     },
     {
       "id": "wg-17",
@@ -861,30 +709,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A they mellé are kell: they are going to open.",
         "en": "With they you need are: they are going to open.",
-        "es": "Con they hace falta are: they are going to open.",
-        "de": "Bei they braucht man are: they are going to open."
+        "es": "Con they hace falta are: they are going to open."
       },
       "wrong": {
         "is": {
-          "hu": "Az is egyes számhoz kell (he, she, it); a they mellé are áll.",
           "en": "Is goes with the singular (he, she, it); with they you use are.",
-          "es": "Is va con el singular (he, she, it); con they se usa are.",
-          "de": "Is steht beim Singular (he, she, it); bei they benutzt man are."
+          "es": "Is va con el singular (he, she, it); con they se usa are."
         },
         "will": {
-          "hu": "A will után nem jön going to; vagy „they will open”, vagy „they are going to open”.",
           "en": "After will there is no going to; either “they will open” or “they are going to open”.",
-          "es": "Después de will no va going to; o bien «they will open» o bien «they are going to open».",
-          "de": "Nach will steht kein going to; entweder „they will open“ oder „they are going to open“."
+          "es": "Después de will no va going to; o bien «they will open» o bien «they are going to open»."
         }
       },
       "examples": [
         "We are going to win.",
         "You are going to like it."
       ],
-      "tr": { "hu": "Új üzletet fognak itt nyitni. Benne van a tévében.", "en": "They are going to open a new shop here. It is on TV.", "es": "Van a abrir una tienda nueva aquí. Salió en la tele.", "de": "Sie werden hier ein neues Geschäft eröffnen. Es kam im Fernsehen." }
+      "tr": { "en": "They are going to open a new shop here. It is on TV.", "es": "Van a abrir una tienda nueva aquí. Salió en la tele." }
     },
     {
       "id": "wg-18",
@@ -943,46 +785,34 @@
       "es": "Look at those clouds! It is going to rain.",
       "target": "going",
       "tr": {
-        "hu": "Nézd azokat a felhőket! Esni fog.",
         "en": "Look at those clouds! It is going to rain.",
-        "es": "¡Mira esas nubes! Va a llover.",
-        "de": "Schau dir die Wolken an! Es wird regnen."
+        "es": "¡Mira esas nubes! Va a llover."
       },
       "options": [
         {
           "text": {
-            "hu": "will: spontán döntés",
             "en": "will: a spontaneous decision",
-            "es": "will: una decisión espontánea",
-            "de": "will: eine spontane Entscheidung"
+            "es": "will: una decisión espontánea"
           },
           "wrong": {
-            "hu": "Itt nincs döntés, hanem látható bizonyítékra épülő előrejelzés; ehhez going to kell.",
             "en": "There is no decision here but a prediction based on visible evidence; that needs going to.",
-            "es": "Aquí no hay una decisión sino una predicción basada en una evidencia visible; eso necesita going to.",
-            "de": "Hier gibt es keine Entscheidung, sondern eine Vorhersage aufgrund sichtbarer Beweise; das braucht going to."
+            "es": "Aquí no hay una decisión sino una predicción basada en una evidencia visible; eso necesita going to."
           }
         },
         {
           "text": {
-            "hu": "going to: előrejelzés látható bizonyítékkal",
             "en": "going to: a prediction with visible evidence",
-            "es": "going to: una predicción con evidencia visible",
-            "de": "going to: eine Vorhersage mit sichtbarem Beweis"
+            "es": "going to: una predicción con evidencia visible"
           }
         },
         {
           "text": {
-            "hu": "present continuous: megbeszélt dolog",
             "en": "present continuous: something arranged",
-            "es": "presente continuo: algo acordado",
-            "de": "Present Continuous: etwas Verabredetes"
+            "es": "presente continuo: algo acordado"
           },
           "wrong": {
-            "hu": "Az esőt nem lehet megbeszélni; a felhők látszata miatt going to az előrejelzés alakja.",
             "en": "You cannot arrange rain; because of the visible clouds, going to is the form for the prediction.",
-            "es": "La lluvia no se puede acordar; por las nubes visibles, going to es la forma de la predicción.",
-            "de": "Regen kann man nicht verabreden; wegen der sichtbaren Wolken ist going to die Form der Vorhersage."
+            "es": "La lluvia no se puede acordar; por las nubes visibles, going to es la forma de la predicción."
           }
         }
       ],
@@ -994,46 +824,34 @@
       "es": "The phone is ringing. I will answer it.",
       "target": "will",
       "tr": {
-        "hu": "Cseng a telefon. Felveszem.",
         "en": "The phone is ringing. I will answer it.",
-        "es": "Está sonando el teléfono. Yo contesto.",
-        "de": "Das Telefon klingelt. Ich gehe ran."
+        "es": "Está sonando el teléfono. Yo contesto."
       },
       "options": [
         {
           "text": {
-            "hu": "going to: előre eldöntött terv",
             "en": "going to: a plan decided in advance",
-            "es": "going to: un plan decidido de antemano",
-            "de": "going to: ein im Voraus beschlossener Plan"
+            "es": "going to: un plan decidido de antemano"
           },
           "wrong": {
-            "hu": "A telefon csörgése most történik, a döntés is most születik; előre nem lehetett megtervezni.",
             "en": "The phone is ringing now and the decision is made now; it could not have been planned in advance.",
-            "es": "El teléfono suena ahora y la decisión se toma ahora; no se pudo planear de antemano.",
-            "de": "Das Telefon klingelt jetzt und die Entscheidung fällt jetzt; sie konnte nicht im Voraus geplant werden."
+            "es": "El teléfono suena ahora y la decisión se toma ahora; no se pudo planear de antemano."
           }
         },
         {
           "text": {
-            "hu": "egyszerű jelen: menetrend",
             "en": "present simple: a timetable",
-            "es": "presente simple: un horario",
-            "de": "Present Simple: ein Fahrplan"
+            "es": "presente simple: un horario"
           },
           "wrong": {
-            "hu": "A felvétel nem menetrend szerinti esemény; egy pillanatnyi döntés, amit will fejez ki.",
             "en": "Answering is not a timetabled event; it is a quick decision, expressed by will.",
-            "es": "Contestar no es un evento de horario; es una decisión rápida, que se expresa con will.",
-            "de": "Abnehmen ist kein Fahrplanereignis; es ist eine schnelle Entscheidung, die will ausdrückt."
+            "es": "Contestar no es un evento de horario; es una decisión rápida, que se expresa con will."
           }
         },
         {
           "text": {
-            "hu": "will: döntés a beszéd pillanatában",
             "en": "will: a decision at the moment of speaking",
-            "es": "will: una decisión en el momento de hablar",
-            "de": "will: eine Entscheidung im Moment des Sprechens"
+            "es": "will: una decisión en el momento de hablar"
           }
         }
       ],
@@ -1045,46 +863,34 @@
       "es": "I'm going to study medicine. I applied last week.",
       "target": "going",
       "tr": {
-        "hu": "Orvosi egyetemre fogok járni. Múlt héten jelentkeztem.",
         "en": "I'm going to study medicine. I applied last week.",
-        "es": "Voy a estudiar medicina. Me inscribí la semana pasada.",
-        "de": "Ich werde Medizin studieren. Ich habe mich letzte Woche beworben."
+        "es": "Voy a estudiar medicina. Me inscribí la semana pasada."
       },
       "options": [
         {
           "text": {
-            "hu": "going to: előre eldöntött terv",
             "en": "going to: a plan decided in advance",
-            "es": "going to: un plan decidido de antemano",
-            "de": "going to: ein im Voraus beschlossener Plan"
+            "es": "going to: un plan decidido de antemano"
           }
         },
         {
           "text": {
-            "hu": "will: spontán döntés",
             "en": "will: a spontaneous decision",
-            "es": "will: una decisión espontánea",
-            "de": "will: eine spontane Entscheidung"
+            "es": "will: una decisión espontánea"
           },
           "wrong": {
-            "hu": "A jelentkezés múlt héten volt, vagyis a döntés régen megszületett; ehhez going to illik.",
             "en": "The application was last week, so the decision was made long ago; going to fits that.",
-            "es": "La solicitud fue la semana pasada, así que la decisión se tomó hace tiempo; going to encaja con eso.",
-            "de": "Die Bewerbung war letzte Woche, die Entscheidung ist also schon lange gefallen; dazu passt going to."
+            "es": "La solicitud fue la semana pasada, así que la decisión se tomó hace tiempo; going to encaja con eso."
           }
         },
         {
           "text": {
-            "hu": "egyszerű múlt: lezárt esemény",
             "en": "past simple: a finished event",
-            "es": "pasado simple: un hecho terminado",
-            "de": "Past Simple: ein abgeschlossenes Ereignis"
+            "es": "pasado simple: un hecho terminado"
           },
           "wrong": {
-            "hu": "A tanulás még nem kezdődött el; a going to a jövőbeli tervre vonatkozik, nem lezárt múltra.",
             "en": "The studying has not started yet; going to refers to a future plan, not a finished past.",
-            "es": "El estudio todavía no ha empezado; going to se refiere a un plan futuro, no a un pasado terminado.",
-            "de": "Das Studium hat noch nicht begonnen; going to bezieht sich auf einen Plan für die Zukunft, nicht auf eine abgeschlossene Vergangenheit."
+            "es": "El estudio todavía no ha empezado; going to se refiere a un plan futuro, no a un pasado terminado."
           }
         }
       ],
@@ -1096,46 +902,34 @@
       "es": "I promise I will call you.",
       "target": "promise",
       "tr": {
-        "hu": "Ígérem, hogy felhívlak.",
         "en": "I promise I will call you.",
-        "es": "Te prometo que te llamo.",
-        "de": "Ich verspreche, dass ich dich anrufe."
+        "es": "Te prometo que te llamo."
       },
       "options": [
         {
           "text": {
-            "hu": "will: ígéret",
             "en": "will: a promise",
-            "es": "will: una promesa",
-            "de": "will: ein Versprechen"
+            "es": "will: una promesa"
           }
         },
         {
           "text": {
-            "hu": "going to: előrejelzés bizonyítékkal",
             "en": "going to: a prediction with evidence",
-            "es": "going to: una predicción con evidencia",
-            "de": "going to: eine Vorhersage mit Beweis"
+            "es": "going to: una predicción con evidencia"
           },
           "wrong": {
-            "hu": "Az ígéretnek nincs látható bizonyítéka; a „promise” mellé will áll.",
             "en": "A promise has no visible evidence; the word “promise” goes with will.",
-            "es": "Una promesa no tiene evidencia visible; la palabra «promise» va con will.",
-            "de": "Ein Versprechen hat keinen sichtbaren Beweis; das Wort „promise“ gehört zu will."
+            "es": "Una promesa no tiene evidencia visible; la palabra «promise» va con will."
           }
         },
         {
           "text": {
-            "hu": "egyszerű jelen: szokás",
             "en": "present simple: a habit",
-            "es": "presente simple: un hábito",
-            "de": "Present Simple: eine Gewohnheit"
+            "es": "presente simple: un hábito"
           },
           "wrong": {
-            "hu": "A mondat egy jövőbeli hívásra vonatkozik, nem szokásra; ezt a will fejezi ki.",
             "en": "The sentence is about a call in the future, not a habit; will expresses that.",
-            "es": "La oración trata de una llamada en el futuro, no de un hábito; will expresa eso.",
-            "de": "Der Satz betrifft einen Anruf in der Zukunft, keine Gewohnheit; das drückt will aus."
+            "es": "La oración trata de una llamada en el futuro, no de un hábito; will expresa eso."
           }
         }
       ],
@@ -1147,46 +941,34 @@
       "es": "I'm meeting Ana at six.",
       "target": "meeting",
       "tr": {
-        "hu": "Hatkor találkozom Anával.",
         "en": "I'm meeting Ana at six.",
-        "es": "Quedé de verme con Ana a las seis.",
-        "de": "Ich treffe mich um sechs mit Ana."
+        "es": "Quedé de verme con Ana a las seis."
       },
       "options": [
         {
           "text": {
-            "hu": "folyamatos jelen: éppen most találkozom",
             "en": "present continuous: I am meeting her right now",
-            "es": "presente continuo: me estoy viendo con ella ahora",
-            "de": "Present Continuous: ich treffe sie gerade jetzt"
+            "es": "presente continuo: me estoy viendo con ella ahora"
           },
           "wrong": {
-            "hu": "Az „at six” jövőbeli időpont, ezért ez nem a pillanatnyi cselekvés, hanem megbeszélt jövőbeli terv.",
             "en": "“At six” is a future time, so this is not an action right now but an arranged plan in the future.",
-            "es": "«At six» es una hora futura, por eso esto no es una acción de ahora sino un plan acordado en el futuro.",
-            "de": "„At six“ ist eine Zeit in der Zukunft, deshalb ist das keine Handlung jetzt, sondern ein verabredeter Plan."
+            "es": "«At six» es una hora futura, por eso esto no es una acción de ahora sino un plan acordado en el futuro."
           }
         },
         {
           "text": {
-            "hu": "present continuous: megbeszélt jövőbeli terv",
             "en": "present continuous: an arranged plan in the future",
-            "es": "presente continuo: un plan acordado en el futuro",
-            "de": "Present Continuous: ein verabredeter Plan in der Zukunft"
+            "es": "presente continuo: un plan acordado en el futuro"
           }
         },
         {
           "text": {
-            "hu": "will: spontán döntés",
             "en": "will: a spontaneous decision",
-            "es": "will: una decisión espontánea",
-            "de": "will: eine spontane Entscheidung"
+            "es": "will: una decisión espontánea"
           },
           "wrong": {
-            "hu": "A találkozót már megbeszélték; a spontán döntés alakja nem ez.",
             "en": "The meeting has already been arranged; this is not the form of a spontaneous decision.",
-            "es": "La cita ya está acordada; esta no es la forma de una decisión espontánea.",
-            "de": "Das Treffen ist schon verabredet; das ist nicht die Form einer spontanen Entscheidung."
+            "es": "La cita ya está acordada; esta no es la forma de una decisión espontánea."
           }
         }
       ],

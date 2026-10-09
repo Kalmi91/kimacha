@@ -1,14 +1,14 @@
 [
-  {"id": "negative_inversion", "order": 1, "subLevel": "C1.1", "type": "grammar", "icon": "🔃", "name_hu": "Fordított szórend tagadó határozókkal", "name_en": "Negative Inversion", "name_es": "Inversión con adverbios negativos", "name_de": "Inversion nach verneinenden Adverbien"},
-  {"id": "cleft_sentences", "order": 2, "subLevel": "C1.1", "type": "grammar", "icon": "🎯", "name_hu": "Kiemelő szerkezetek (It was … that)", "name_en": "Cleft Sentences", "name_es": "Oraciones enfáticas (cleft)", "name_de": "Spaltsätze"},
-  {"id": "conditional_inversion", "order": 3, "subLevel": "C1.1", "type": "grammar", "icon": "🔀", "name_hu": "Feltételes fordított szórend", "name_en": "Conditional Inversion", "name_es": "Inversión condicional", "name_de": "Konditionale Inversion"},
-  {"id": "subjunctive_hypothetical", "order": 4, "subLevel": "C1.2", "type": "grammar", "icon": "💭", "name_hu": "Kötőmód és hipotetikus szerkezetek", "name_en": "Subjunctive & Hypothetical Forms", "name_es": "Subjuntivo y formas hipotéticas", "name_de": "Subjunktiv und hypothetische Formen"},
-  {"id": "verb_patterns_advanced", "order": 5, "subLevel": "C1.2", "type": "grammar", "icon": "🧱", "name_hu": "Igemintázatok: haladó", "name_en": "Verb Patterns: Advanced", "name_es": "Patrones verbales avanzados", "name_de": "Verbmuster: fortgeschritten"},
-  {"id": "participle_clauses", "order": 6, "subLevel": "C1.2", "type": "grammar", "icon": "✂️", "name_hu": "Igenévi mellékmondatok", "name_en": "Participle Clauses", "name_es": "Cláusulas de participio", "name_de": "Partizipialsätze"},
-  {"id": "reduced_relative", "order": 7, "subLevel": "C1.2", "type": "grammar", "icon": "📎", "name_hu": "Rövidített vonatkozó mondatok", "name_en": "Reduced Relative Clauses", "name_es": "Oraciones de relativo reducidas", "name_de": "Verkürzte Relativsätze"},
-  {"id": "nominalization", "order": 8, "subLevel": "C1.3", "type": "grammar", "icon": "🏷️", "name_hu": "Főnevesítés (formális stílus)", "name_en": "Nominalization", "name_es": "Nominalización", "name_de": "Nominalisierung"},
-  {"id": "hedging_language", "order": 9, "subLevel": "C1.3", "type": "grammar", "icon": "🌫️", "name_hu": "Óvatos fogalmazás (hedging)", "name_en": "Hedging Language", "name_es": "Lenguaje atenuado (hedging)", "name_de": "Abschwächende Sprache"},
-  {"id": "discourse_markers", "order": 10, "subLevel": "C1.3", "type": "grammar", "icon": "🧭", "name_hu": "Diskurzusjelölők", "name_en": "Discourse Markers", "name_es": "Marcadores del discurso", "name_de": "Diskursmarker"},
-  {"id": "ellipsis_substitution", "order": 11, "subLevel": "C1.4", "type": "grammar", "icon": "♻️", "name_hu": "Kihagyás és helyettesítés", "name_en": "Ellipsis & Substitution", "name_es": "Elipsis y sustitución", "name_de": "Ellipse und Ersetzung"},
-  {"id": "phrasal_verbs_c1", "order": 12, "subLevel": "C1.4", "type": "grammar", "icon": "🪢", "name_hu": "Igekötős igék: C1", "name_en": "Phrasal Verbs: C1", "name_es": "Phrasal verbs: C1", "name_de": "Phrasal Verbs: C1"}
+  {"id": "negative_inversion", "order": 1, "subLevel": "C1.1", "type": "grammar", "icon": "🔃", "name_en": "Negative Inversion", "name_es": "Inversión con adverbios negativos"},
+  {"id": "cleft_sentences", "order": 2, "subLevel": "C1.1", "type": "grammar", "icon": "🎯", "name_en": "Cleft Sentences", "name_es": "Oraciones enfáticas (cleft)"},
+  {"id": "conditional_inversion", "order": 3, "subLevel": "C1.1", "type": "grammar", "icon": "🔀", "name_en": "Conditional Inversion", "name_es": "Inversión condicional"},
+  {"id": "subjunctive_hypothetical", "order": 4, "subLevel": "C1.2", "type": "grammar", "icon": "💭", "name_en": "Subjunctive & Hypothetical Forms", "name_es": "Subjuntivo y formas hipotéticas"},
+  {"id": "verb_patterns_advanced", "order": 5, "subLevel": "C1.2", "type": "grammar", "icon": "🧱", "name_en": "Verb Patterns: Advanced", "name_es": "Patrones verbales avanzados"},
+  {"id": "participle_clauses", "order": 6, "subLevel": "C1.2", "type": "grammar", "icon": "✂️", "name_en": "Participle Clauses", "name_es": "Cláusulas de participio"},
+  {"id": "reduced_relative", "order": 7, "subLevel": "C1.2", "type": "grammar", "icon": "📎", "name_en": "Reduced Relative Clauses", "name_es": "Oraciones de relativo reducidas"},
+  {"id": "nominalization", "order": 8, "subLevel": "C1.3", "type": "grammar", "icon": "🏷️", "name_en": "Nominalization", "name_es": "Nominalización"},
+  {"id": "hedging_language", "order": 9, "subLevel": "C1.3", "type": "grammar", "icon": "🌫️", "name_en": "Hedging Language", "name_es": "Lenguaje atenuado (hedging)"},
+  {"id": "discourse_markers", "order": 10, "subLevel": "C1.3", "type": "grammar", "icon": "🧭", "name_en": "Discourse Markers", "name_es": "Marcadores del discurso"},
+  {"id": "ellipsis_substitution", "order": 11, "subLevel": "C1.4", "type": "grammar", "icon": "♻️", "name_en": "Ellipsis & Substitution", "name_es": "Elipsis y sustitución"},
+  {"id": "phrasal_verbs_c1", "order": 12, "subLevel": "C1.4", "type": "grammar", "icon": "🪢", "name_en": "Phrasal Verbs: C1", "name_es": "Phrasal verbs: C1"}
 ]
