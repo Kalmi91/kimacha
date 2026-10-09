@@ -40,7 +40,7 @@ describe('English grammar syllabus (lang = en)', () => {
     expect(syllabusTopic('basic_verbs', 'en')?.unit).toBe('A1.1');
   });
 
-  it('groups topics into the sublevel units, each with a title in all four languages', () => {
+  it('groups topics into the sublevel units, each with a title in both languages', () => {
     expect(unitsForLevel('A1', 'en').map((u) => u.id)).toEqual(['A1.1', 'A1.2', 'A1.3', 'A1.4', 'A1.5', 'A1.6']);
     expect(unitsForLevel('A2', 'en').map((u) => u.id)).toEqual(['A2.1', 'A2.2', 'A2.3', 'A2.4', 'A2.5']);
     // B1.1-B1.4 are vocabulary sublevels, only the grammar ones are units.
@@ -50,10 +50,10 @@ describe('English grammar syllabus (lang = en)', () => {
     for (const lvl of syllabusLevels('en')) {
       for (const unit of unitsForLevel(lvl, 'en')) {
         expect(topicsForUnit(unit.id, 'en').length).toBeGreaterThan(0);
-        for (const l of ['hu', 'en', 'es', 'de']) expect(unit.title[l]).toBeTruthy();
+        for (const l of ['en', 'es']) expect(unit.title[l]).toBeTruthy();
       }
       for (const topic of syllabusForLevel(lvl, 'en')) {
-        for (const l of ['hu', 'en', 'es', 'de']) expect(topic.title[l]).toBeTruthy();
+        for (const l of ['en', 'es']) expect(topic.title[l]).toBeTruthy();
       }
     }
   });
@@ -127,7 +127,7 @@ describe('Spanish grammar syllabus (default lang) is unchanged', () => {
     expect({ units: GRAMMAR_UNITS.length, topics: GRAMMAR_SYLLABUS.length, fingerprint }).toEqual({
       units: 17,
       topics: 79,
-      fingerprint: 'aa0d25fd61fca9334cebe3c2f4cbb276fbb6a000',
+      fingerprint: '161e9d0419fcf1e1aecbc3c1dc756cab3f7098bc',
     });
   });
 });

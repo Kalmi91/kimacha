@@ -69,9 +69,9 @@ function byLang<K extends keyof LanguageContentBundle>(
 // ---------------------------------------------------------------------------
 //
 // IMPLEMENTATION NOTE: the example JSON showed `why` as a
-// single hu-only string plus a `wrong` sub-object. The top-level i18n×4
+// single hu-only string plus a `wrong` sub-object. The top-level i18n×2
 // rule needs the explanation (why the correct option IS right, and why each
-// wrong option ISN'T) in all 4 native languages, so both are restructured to
+// wrong option ISN'T) in both native languages, so both are restructured to
 // be lang-keyed: `why[lang]`, `wrong[optionText][lang]`. A `level` field was
 // also added (absent from the illustrative JSON) because the audit script's
 // P1 check needs to know which level's cumulative vocabulary an item's
@@ -83,7 +83,7 @@ function byLang<K extends keyof LanguageContentBundle>(
 // lib/games/gloss.ts's `overrides` param the same way.
 
 interface GrammarWrongExplanation {
-  [optionText: string]: Record<string, string>; // per native lang hu/en/es/de
+  [optionText: string]: Record<string, string>; // per native lang en/es
 }
 
 interface GrammarItemBase {
@@ -92,7 +92,7 @@ interface GrammarItemBase {
   wrong: GrammarWrongExplanation; // wrong[optionText][lang] = why that option is wrong here
   examples: string[]; // 2 target-language example sentences illustrating the same rule
   /**
-   * The sentence's translation in four languages (the learned-language side is the filled-in sentence itself); the drill shows it
+   * The sentence's translation in both content languages (the learned-language side is the filled-in sentence itself); the drill shows it
    * with the F button, as for the transform item. Optional: filled by scripts/grammar-translate.py; where it is missing, there is no button.
    */
   tr?: Lang4;

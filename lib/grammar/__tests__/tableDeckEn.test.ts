@@ -17,7 +17,7 @@ interface EnWord {
 const A0 = enA0 as unknown as EnWord[];
 const A1 = enA1 as unknown as EnWord[];
 const A2 = enA2 as unknown as EnWord[];
-const l4 = (s: string): Lang4 => ({ hu: s, en: s, es: s, de: s });
+const l4 = (s: string): Lang4 => ({ en: s, es: s });
 
 // A single English word that is ONLY on the A2 list (not yet taught at A1).
 const seenLow = new Set([...A0, ...A1].map((w) => w.en.trim().toLowerCase()));
@@ -93,8 +93,8 @@ describe('wordCellsForLesson es→en direction', () => {
   it("the glossary is the author's choice: the question is gloss.es, the answer the English word; a non-existent form is left out", () => {
     const lesson = synthetic('A1', [], {
       glossary: [
-        { word: 'university', gloss: { hu: 'egyetem', en: 'university', es: 'universidad', de: 'Universität' } },
-        { word: 'blorf', gloss: { hu: 'nem létező alak', en: 'not a real form', es: 'forma inexistente', de: 'keine reale Form' } },
+        { word: 'university', gloss: { en: 'university', es: 'universidad' } },
+        { word: 'blorf', gloss: { en: 'not a real form', es: 'forma inexistente' } },
       ],
     });
     const cards = wordCellsForLesson(lesson, 'en');

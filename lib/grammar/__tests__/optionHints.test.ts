@@ -1,5 +1,5 @@
 // Every rule option of the ser/estar "why" exercise
-// has a lowercase example line under it, in four languages.
+// has a lowercase example line under it, in both languages.
 import esSerEstar from '@/data/games/grammar/es/ser-estar.json';
 import enToBe from '@/data/games/grammar/en/to-be.json';
 import { OPTION_HINTS, optionHint } from '../optionHints';
@@ -9,9 +9,9 @@ const whyOptions = (lesson: LessonV2) =>
   lesson.items.flatMap((it) => (it.kind === 'why' ? it.options.map((o) => o.text) : []));
 
 describe('optionHint', () => {
-  it('every "why" option of the ser-estar lesson has an example row in all four languages', () => {
+  it('every "why" option of the ser-estar lesson has an example row in both languages', () => {
     for (const text of whyOptions(esSerEstar as unknown as LessonV2)) {
-      for (const lang of ['hu', 'en', 'es', 'de']) {
+      for (const lang of ['en', 'es']) {
         const hint = optionHint(text, lang);
         expect(hint).toBeTruthy();
         expect(hint).toContain('·');
@@ -32,7 +32,7 @@ describe('optionHint', () => {
   });
 
   it('gives no example row for an unknown option', () => {
-    expect(optionHint({ hu: 'x', en: 'no such rule', es: 'x', de: 'x' }, 'en')).toBeUndefined();
+    expect(optionHint({ en: 'no such rule', es: 'x' }, 'en')).toBeUndefined();
   });
 
   it('the hint starts with a lowercase letter (faint, small row, not a title)', () => {

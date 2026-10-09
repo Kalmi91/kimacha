@@ -21,13 +21,9 @@ interface OpenCard {
   pos: string;
   lemma: string;
   es: string;
-  hu: string;
   en: string;
-  de: string;
   sentence_es: string;
-  sentence_hu: string;
   sentence_en: string;
-  sentence_de: string;
   hint_en?: string;
 }
 
@@ -59,13 +55,9 @@ function toWord(c: OpenCard): OpenWord {
     id: c.order,
     level: c.level as Level,
     es: c.es,
-    hu: c.hu,
     en: c.en,
-    de: c.de,
     sentence_es: c.sentence_es,
-    sentence_hu: c.sentence_hu,
     sentence_en: c.sentence_en,
-    sentence_de: c.sentence_de,
     lemma: c.lemma,
     openPos: c.pos,
   };

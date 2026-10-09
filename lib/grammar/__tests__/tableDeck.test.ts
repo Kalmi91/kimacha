@@ -299,7 +299,7 @@ describe('mergeDeckState', () => {
 // pack made of the words here too" - the word-deck is for lessons without a table (no askable table).
 // The deck is built ONLY from the words of the lesson's
 // tables; glossary and example-sentence words do not count.
-const LANG4 = { hu: 'x', en: 'x', es: 'x', de: 'x' };
+const LANG4 = { en: 'x', es: 'x' };
 const tableFixture = (rows: string[][], over: Partial<LessonV2> = {}): LessonV2 => ({
   schema: 2,
   topic: 'zz-table-fixture',
@@ -309,7 +309,7 @@ const tableFixture = (rows: string[][], over: Partial<LessonV2> = {}): LessonV2 
     { kind: 'table', id: 't1', title: LANG4, header: [LANG4, LANG4], rows },
     { kind: 'text', text: { ...LANG4, es: 'Mi hermano tiene un perro y una ciudad.' } },
   ],
-  speak: { hu: '', en: '', de: '', es: '' },
+  speak: { en: '', es: '' },
   items: [],
   ...over,
 });

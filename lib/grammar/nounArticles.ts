@@ -58,72 +58,58 @@ export function articleNouns(): ArticleNoun[] {
       const noun = m[2];
       if (seen.has(noun)) continue;
       seen.add(noun);
-      out.push({ id: `${w.level.toLowerCase()}-${w.order}`, noun, article: m[1] as 'el' | 'la', es: w.es, en: w.en, tr: { hu: w.hu ?? w.en, en: w.en, es: w.en, de: w.de ?? w.en }, sentence: w.sentence_es });
+      out.push({ id: `${w.level.toLowerCase()}-${w.order}`, noun, article: m[1] as 'el' | 'la', es: w.es, en: w.en, tr: { en: w.en, es: w.en }, sentence: w.sentence_es });
     }
   }
   cache = out;
   return out;
 }
 
-type Lang4 = Record<'hu' | 'en' | 'es' | 'de', string>;
+type Lang4 = Record<'en' | 'es', string>;
 
 function whyText(n: ArticleNoun): Lang4 {
   const { noun: x, article: a } = n;
   if (a === 'el' && EL_FEMININE.has(x)) {
     return {
-      hu: `A(z) ${x} nőnemű, de hangsúlyos a- előtt egyes számban «el» áll: el ${x} (többes számban: las ${x}s).`,
       en: `«${x}» is feminine, but before a stressed a- the singular takes «el»: el ${x} (plural: las ${x}s).`,
       es: `«${x}» es femenino, pero ante «a» tónica el singular lleva «el»: el ${x} (plural: las ${x}s).`,
-      de: `«${x}» ist feminin, aber vor betontem a- steht im Singular «el»: el ${x} (Plural: las ${x}s).`,
     };
   }
   if (a === 'el' && /o$/.test(x)) {
     return {
-      hu: `A(z) ${x} -o végű, ezért hímnemű: el ${x}.`,
       en: `«${x}» ends in -o, so it is masculine: el ${x}.`,
       es: `«${x}» acaba en -o: es masculino, el ${x}.`,
-      de: `«${x}» endet auf -o, also maskulin: el ${x}.`,
     };
   }
   if (a === 'el' && /a$/.test(x)) {
     return {
-      hu: `A(z) ${x} -a végű, mégis hímnemű: el ${x}.`,
       en: `«${x}» ends in -a but is masculine: el ${x}.`,
       es: `«${x}» acaba en -a pero es masculino: el ${x}.`,
-      de: `«${x}» endet auf -a, ist aber maskulin: el ${x}.`,
     };
   }
   if (a === 'la' && /(ción|sión|dad|tad)$/.test(x)) {
     return {
-      hu: `A -ción, -sión, -dad, -tad végű szavak nőneműek: la ${x}.`,
       en: `Words ending in -ción, -sión, -dad, -tad are feminine: la ${x}.`,
       es: `Las palabras en -ción, -sión, -dad y -tad son femeninas: la ${x}.`,
-      de: `Wörter auf -ción, -sión, -dad, -tad sind feminin: la ${x}.`,
     };
   }
   if (a === 'la' && /a$/.test(x)) {
     return {
-      hu: `A(z) ${x} -a végű, ezért nőnemű: la ${x}.`,
       en: `«${x}» ends in -a, so it is feminine: la ${x}.`,
       es: `«${x}» acaba en -a: es femenino, la ${x}.`,
-      de: `«${x}» endet auf -a, also feminin: la ${x}.`,
     };
   }
   return {
-    hu: `Így helyes: ${a} ${x}. A főnevet mindig a névelőjével együtt tanuld.`,
     en: `The correct form is ${a} ${x}. Always learn a noun together with its article.`,
     es: `La forma correcta es ${a} ${x}. Aprende siempre el sustantivo junto con su artículo.`,
-    de: `Richtig ist ${a} ${x}. Lerne ein Nomen immer zusammen mit seinem Artikel.`,
   };
 }
 
 function wrongText(n: ArticleNoun, wrongArticle: 'el' | 'la'): Lang4 {
   const { noun: x, article: a } = n;
   return {
-    hu: `A «${wrongArticle} ${x}» nem helyes; helyesen: ${a} ${x}.`,
     en: `«${wrongArticle} ${x}» is not correct; the right form is ${a} ${x}.`,
     es: `«${wrongArticle} ${x}» no es correcto; lo correcto es ${a} ${x}.`,
-    de: `«${wrongArticle} ${x}» ist nicht richtig; richtig ist ${a} ${x}.`,
   };
 }
 

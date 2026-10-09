@@ -1,5 +1,5 @@
 // "Within a level and band, two words must not have a
-// prompt (English or Hungarian gloss) from which it cannot be decided which one is
+// prompt (English or Spanish gloss) from which it cannot be decided which one is
 // being asked." This module is the only place where the overlap rule lives: the
 // "prompt policy" description in lib/__tests__/corpusIntegrity.test.ts calls it.
 //

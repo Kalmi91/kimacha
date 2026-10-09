@@ -72,7 +72,7 @@ export default function GrammarSyllabusScreen() {
     const target = onboarding?.target ?? 'es';
     setLearnedLang(target);
     // Kimacha Play: UI always English, regardless of the
-    // stored source language; the syllabus data's hu/es/de fields stay unused.
+    // stored source language.
     // es→en: a learner whose native language is Spanish gets the explanation in Spanish.
     setContentLang(target === 'en' ? 'es' : 'en');
 

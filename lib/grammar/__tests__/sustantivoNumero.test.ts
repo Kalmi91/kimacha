@@ -24,13 +24,13 @@ describe('sustantivo-numero: el / la set', () => {
     }
   });
 
-  it('every item chooses between el / la, the right one is first (the round shuffles), and has an explanation in all four languages', () => {
+  it('every item chooses between el / la, the right one is first (the round shuffles), and has an explanation in both languages', () => {
     for (const item of articleItems) {
       expect(item.options).toHaveLength(2);
       expect(item.options.map((o) => o.toLowerCase()).sort()).toEqual(['el', 'la']);
       expect(item.sentence).toContain('___');
       expect(item.correct).toBe(0);
-      for (const lang of ['hu', 'en', 'es', 'de']) {
+      for (const lang of ['en', 'es']) {
         expect(item.why[lang]).toBeTruthy();
         expect(item.wrong[item.options[1]][lang]).toBeTruthy();
       }

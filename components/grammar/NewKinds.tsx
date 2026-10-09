@@ -21,7 +21,7 @@ import type { DictationItem, OrderItem, SpotItem } from '@/lib/grammar/lessonTyp
 // ser-estar (error spotting + dictation) and negacion (word order + error spotting) lessons. All three are 1 unit in
 // scoring (right or not), and the right sentence is spoken after the answer.
 
-type Lang = 'hu' | 'en' | 'es' | 'de';
+type Lang = 'en' | 'es';
 
 const PUNCT_TAIL = /[.,;:!?¡¿]+$/;
 

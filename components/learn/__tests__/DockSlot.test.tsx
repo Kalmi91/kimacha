@@ -98,7 +98,7 @@ describe('DockSlot: dictation in the grammar drill', () => {
     render(
       <Host>
         <DictationDrillItem
-          item={{ kind: 'dictation', id: 'dic-1', es: 'Yo soy Ana', tr: { hu: 'Ana vagyok', en: 'I am Ana', es: 'Yo soy Ana', de: 'Ich bin Ana' } }}
+          item={{ kind: 'dictation', id: 'dic-1', es: 'Yo soy Ana', tr: { en: 'I am Ana', es: 'Yo soy Ana' } }}
           learnedLang="es"
           contentLang="en"
           strictAccents={false}

@@ -56,8 +56,8 @@ describe('grammar syllabus map', () => {
     }
   });
 
-  it('names every topic and unit in all four languages', () => {
-    for (const lang of ['hu', 'en', 'es', 'de']) {
+  it('names every topic and unit in both languages', () => {
+    for (const lang of ['en', 'es']) {
       for (const topic of GRAMMAR_SYLLABUS) {
         expect(topic.title[lang]).toBeTruthy();
         expect(topic.blurb[lang]).toBeTruthy();

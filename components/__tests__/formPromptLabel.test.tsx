@@ -13,20 +13,20 @@ const lesson: LessonV2 = {
   schema: 2,
   topic: 'label-test',
   level: 'A1',
-  title: { hu: 't', en: 't', es: 't', de: 't' },
+  title: { en: 't', es: 't' },
   body: [
     {
       kind: 'table',
       id: 'derivacion',
-      title: { hu: 'd', en: 'd', es: 'd', de: 'd' },
+      title: { en: 'd', es: 'd' },
       header: [
-        { hu: 'Melléknév', en: 'Adjective', es: 'Adjetivo', de: 'Adjektiv' },
-        { hu: 'Főnév', en: 'Noun', es: 'Sustantivo', de: 'Nomen' },
+        { en: 'Adjective', es: 'Adjetivo' },
+        { en: 'Noun', es: 'Sustantivo' },
       ],
       rows: [['difícil', 'dificultad']],
     },
   ],
-  speak: { hu: 'h', en: 'e', es: 's', de: 'd' },
+  speak: { en: 'e', es: 's' },
   items: [{ id: 'f1', kind: 'form', verb: 'Sustantivo', person: 'difícil', answer: 'dificultad', table: 'derivacion' }],
 };
 
@@ -43,10 +43,10 @@ describe('GrammarDrill form: the label and the table header', () => {
         {
           kind: 'table',
           id: 'derivacion',
-          title: { hu: 'd', en: 'd', es: 'd', de: 'd' },
+          title: { en: 'd', es: 'd' },
           header: [
-            { hu: 'Melléknév', en: 'Adjective', es: 'Adjetivo', de: 'Adjektiv' },
-            { hu: 'Sustantivo', en: 'Sustantivo', es: 'Sustantivo', de: 'Sustantivo' },
+            { en: 'Adjective', es: 'Adjetivo' },
+            { en: 'Sustantivo', es: 'Sustantivo' },
           ],
           rows: [['difícil', 'dificultad']],
         },
