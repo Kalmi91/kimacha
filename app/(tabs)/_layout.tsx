@@ -19,7 +19,7 @@ export default function TabLayout() {
   const { HeaderOrnament } = useSkinDecor();
   const s = t();
 
-  // brutalista palettán az aktív ikon a kitöltésű, ink keretes négyzeten ül.
+  // On the brutalist palette the active icon sits on a filled square with an ink border.
   const tabIcon = (name: SymbolViewProps['name'], color: ColorValue, focused: boolean) => {
     const symbol = <SymbolView name={name} tintColor={g.brutal && focused ? g.onFill : color} size={28} />;
     if (!g.brutal) return symbol;
@@ -41,7 +41,7 @@ export default function TabLayout() {
         tabBarStyle: {
           backgroundColor: colors.background,
           borderTopColor: colors.card,
-          // brutalista palettán felső 2,5 px ink vonal.
+          // On the brutalist palette a 2.5 px ink line at the top.
           ...(g.brutal ? { borderTopColor: g.ink, borderTopWidth: 2.5 } : null),
         },
         // with the window resizing for the keyboard, a visible tab bar would
@@ -50,18 +50,18 @@ export default function TabLayout() {
         tabBarHideOnKeyboard: true,
         tabBarLabelStyle: {
           fontSize: 10,
-          // a fül-címke a téma title-betűjét kapja.
+          // the tab label takes the theme's title font.
           ...(skin.fonts.title ? { fontFamily: skin.fonts.title } : null),
         },
-        // A sáv csak ikon; a feliratok (s.tabs.*) a képernyők fejlécében vannak.
+        // The bar is icon-only; the labels (s.tabs.*) are in the screens' headers.
         tabBarShowLabel: false,
         headerStyle: {
           backgroundColor: colors.background,
         },
         headerTintColor: colors.text,
-        // brutalista palettán ink vonalas, nagybetűs fejléc (classic: üres).
+        // On the brutalist palette an ink-lined, uppercase header (classic: empty).
         ...brutalHeaderOptions(g, skin),
-        // dísz-fejléc (HeaderOrnament); dísz nélkül a natív cím marad.
+        // ornament header (HeaderOrnament); without an ornament the native title stays.
         ...(HeaderOrnament
           ? {
               headerTitle: ({ children }: { children: string }) => (
@@ -85,7 +85,7 @@ export default function TabLayout() {
         name="index"
         options={{
           title: s.tabs.pcic,
-          // Saját fejlécet rajzol, mint korábban is.
+          // Draws its own header, as before.
           headerShown: false,
           tabBarIcon: ({ color, focused }) => tabIcon({ ios: 'list.bullet', android: 'list', web: 'list' }, color, focused),
         }}
@@ -94,7 +94,7 @@ export default function TabLayout() {
         name="course"
         options={{
           title: s.tabs.grammar,
-          // a brutalista kurzus-lista saját fejlécet rajzol (cím + streak-matrica).
+          // the brutalist course list draws its own header (title + streak sticker).
           headerShown: grammarPalette === 'classic',
           tabBarIcon: ({ color, focused }) => tabIcon({ ios: 'book.fill', android: 'book', web: 'book' }, color, focused),
         }}

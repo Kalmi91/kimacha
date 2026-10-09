@@ -1,7 +1,7 @@
-// a Settings alján egy csak __DEV__-ben
-// látszó vezérlő beállít egy A1 állapotot (a szint kártyáinak 85%-a graduált + egy A1 lecke
-// kész), hogy a vizsga a web-előnézetben végigkattintható legyen. Release-buildben
-// (`__DEV__ === false`) nem jelenik meg. Mock-minta: settingsReset.test.tsx.
+// A control at the bottom of Settings, visible only in __DEV__,
+// sets up an A1 state (85% of the level's cards graduated + one A1 lesson
+// done) so the exam can be clicked through in the web preview. It does not appear in a
+// release build (`__DEV__ === false`). Mock pattern: settingsReset.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-router', () => ({

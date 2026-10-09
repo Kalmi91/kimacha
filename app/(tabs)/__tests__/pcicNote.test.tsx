@@ -1,6 +1,6 @@
-// az (i) gomb a Learn-kártyán, csak magyarázatos (note) kártyán;
-// koppintásra a magyarázat kinyílik, újra koppintásra becsukódik, kártyaváltáskor becsukva marad.
-// Mock-minta: app/(tabs)/__tests__/pcicHint.test.tsx.
+// The (i) button on the Learn card, only on a card with an explanation (note);
+// tapping opens the explanation, tapping again closes it, and it stays closed when the card changes.
+// Mock pattern: app/(tabs)/__tests__/pcicHint.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -20,7 +20,7 @@ jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, left: 0, right: 0, bottom: 0 }),
 }));
 
-// Két tétel: az 1. magyarázatos, a 2. nem.
+// Two items: the 1st has an explanation, the 2nd does not.
 jest.mock('@/data/pcic', () => {
   const items = [
     { id: 'o9001', es: 'la cena', en: 'dinner, supper', kind: 'word', section: '', order: 9001, note: 'Same meal, two English words.' },
@@ -109,7 +109,7 @@ describe('PCIC fül: (i) magyarázat (FB481/495/496/498)', () => {
     fireEvent.press(utils.getByText('Knew it'));
     await flush();
 
-    // 2. kártya: la mesa, nincs note.
+    // 2nd card: la mesa, no note.
     expect(utils.queryByTestId('learn-info')).toBeNull();
     expect(utils.queryByTestId('learn-note')).toBeNull();
   });

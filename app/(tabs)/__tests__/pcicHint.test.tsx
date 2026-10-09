@@ -1,6 +1,6 @@
-// a nagy szó alatti kis mondat (learn-hint, a `*…*`
-// rész kiemelve, csillag nélkül) és a Check utáni „also: b · c” sor (learn-also, perjeles
-// válasznál). Mock-minta: app/(tabs)/__tests__/pcicNote.test.tsx.
+// The small sentence below the big word (learn-hint, the `*…*`
+// part highlighted, without the asterisks) and the "also: b · c" row after Check (learn-also, for a
+// slash-separated answer). Mock pattern: app/(tabs)/__tests__/pcicNote.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -20,7 +20,7 @@ jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, left: 0, right: 0, bottom: 0 }),
 }));
 
-// Két tétel: az 1. perjeles válaszú és hintes, a 2. egy alakú és hint nélküli.
+// Two items: the 1st has a slash-separated answer and a hint, the 2nd has a single form and no hint.
 jest.mock('@/data/pcic', () => {
   const items = [
     { id: 'a1-hint0001', es: 'el carro / el coche / el auto', en: 'car', kind: 'word', section: 'Test', order: 0, hint: 'The *car* is red.' },
@@ -50,7 +50,7 @@ const flush = async (times = 4) => {
   }
 };
 
-// A beágyazott Text-ek szövege egy stringben (a children elemek is lehetnek).
+// Text of the nested Text elements in one string (the children can be elements too).
 const textOf = (node: unknown): string => {
   if (Array.isArray(node)) return node.map(textOf).join('');
   if (typeof node === 'string' || typeof node === 'number') return String(node);
@@ -103,14 +103,14 @@ describe('PCIC fül: hint és „also” sor (PLAN-tobbjelentes 3. lépés)', ()
     fireEvent.press(utils.getByText('Knew it'));
     await flush();
 
-    // 2. kártya: la mesa, nincs hint.
+    // 2nd card: la mesa, no hint.
     expect(utils.queryByTestId('learn-hint')).toBeNull();
   });
 
   it('perjeles válasznál a learn-also a többi alakot mutatja, a mutatott alak nélkül', async () => {
     const utils = render(<PcicScreen />);
     await flush();
-    expect(utils.queryByTestId('learn-also')).toBeNull(); // Check előtt nincs
+    expect(utils.queryByTestId('learn-also')).toBeNull(); // Not there before Check
 
     await typeAndCheck(utils, 'el coche');
     expect(textOf(utils.getByTestId('learn-also').props.children)).toBe('also: el carro · el auto');

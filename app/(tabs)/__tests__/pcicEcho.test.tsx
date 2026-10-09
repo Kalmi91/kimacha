@@ -1,7 +1,7 @@
-// helyes válasz után a szó csak egyszer látszik (a
-// rózsaszín sor a hangszóróval), a zöld visszhang (diff-sor) kimarad. Ha a beírt
-// válasz eltér (rossz, vagy ékezet nélkül elfogadott), mindkét sor megmarad.
-// Mock-minta: pcicBrutal.test.tsx.
+// After a correct answer the word is shown only once (the
+// pink row with the speaker), the green echo (diff row) is left out. If the typed
+// answer differs (wrong, or accepted without accents), both rows stay.
+// Mock pattern: pcicBrutal.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -84,7 +84,7 @@ describe('PCIC felfedés: a helyes válasz csak egyszer látszik (5a)', () => {
     view.unmount();
   });
 
-  // User feedback ("Not quite!" és a rontott szó közé kis hely): a jelvény alatt a beírt szó sora nem ér hozzá.
+  // User feedback (a small gap is needed between "Not quite!" and the misspelled word): the row of the typed word under the badge does not touch it.
   it('rossz válasz: a "Not quite!" jelvény és a beírt (rontott) szó között rés van (FB460)', async () => {
     const view = await revealWith('xyz');
     const gap = StyleSheet.flatten(view.getByTestId('pcic-diff-line').props.style).marginTop ?? 0;

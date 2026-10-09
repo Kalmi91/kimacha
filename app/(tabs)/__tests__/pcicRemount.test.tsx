@@ -1,7 +1,6 @@
-// a PCIC beviteli mező minden új kártyánál
-// ÚJRA mountol és autoFocus-szal indul, mert a Check után letiltott
-// (editable=false), majd újra engedélyezett natív mező nem hozta fel megbízhatóan
-// a billentyűzetet, és a törlés sem működött rajta.
+// The PCIC input field REMOUNTS and starts with autoFocus on every new card, because
+// a native field that was disabled after Check (editable=false) and then re-enabled
+// did not reliably bring up the keyboard, and deleting did not work on it either.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({

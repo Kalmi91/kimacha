@@ -1,6 +1,6 @@
-// User feedback ("new 42?"): a napi új-szó keret NAPI; az A1-en vett "+10" bónuszok és az ott ma bevezetett
-// szavak a másik szinten is számítanak, tehát a szintváltás után nem jön vissza a teljes bónuszos
-// keret új szóként. Mock-minta: pcicLevelPicker.test.tsx.
+// User feedback ("new 42?"): the daily new-word budget is DAILY; the "+10" bonuses taken on A1 and the
+// words introduced there today also count on the other level, so after a level switch the full bonus
+// budget does not come back as new words. Mock pattern: pcicLevelPicker.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({

@@ -1,5 +1,5 @@
-// a 🗑️ (haladás-nullázás) kikerült a Learn fejlécéből, a
-// Beállításokba költözött (settingsReset.test.tsx). Mock-minta: pcicFocus.test.tsx.
+// The 🗑️ (progress reset) was removed from the Learn header and
+// moved into Settings (settingsReset.test.tsx). Mock pattern: pcicFocus.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({

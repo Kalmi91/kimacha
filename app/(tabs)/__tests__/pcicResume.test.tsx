@@ -1,6 +1,6 @@
-// Kártya-szintű folytatás: az app újranyitásakor a Learn-kör ott folytatódik, ahol abbamaradt: ugyanaz a
-// soron lévő kártya, a rontott ("again") kártya a helyén (nem előre ugrik), a "+N új szó" adag csíkja ugyanott
-// áll. Az újranyitás = unmount + újra render (a DB marad, mint a perzisztált SQLite). Mock-minta:
+// Card-level resume: when the app is reopened, the Learn round continues where it stopped: the same
+// card is up next, the botched ("again") card stays in its place (does not jump ahead), and the bar of the "+N new words" batch
+// stays at the same point. Reopening = unmount + render again (the DB stays, like persisted SQLite). Mock pattern:
 // pcicMoreNewSteps.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
@@ -62,7 +62,7 @@ const flush = async (times = 8) => {
   }
 };
 
-// A mock-korpuszban a prompt az angol szó: "a1word<i>".
+// In the mock corpus the prompt is the English word: "a1word<i>".
 const promptShown = (screen: ReturnType<typeof render>, i: number) => screen.queryByText(`a1word${i}`) !== null;
 
 describe('PCIC fül: a kör újranyitáskor ott folytatódik, ahol abbamaradt (FB470)', () => {
@@ -80,7 +80,7 @@ describe('PCIC fül: a kör újranyitáskor ott folytatódik, ahol abbamaradt (F
     await flush();
     expect(promptShown(first, 0)).toBe(true);
 
-    // a0: rontott ("Didn't know"): a sor végére megy, időzítővel; a1 a soron lévő kártya
+    // a0: botched ("Didn't know"): goes to the end of the queue, with a timer; a1 is the card that is up next
     fireEvent.changeText(first.UNSAFE_getByType(TextInput), 'xyz');
     fireEvent.press(first.getByText('✓ Check'));
     await flush();
@@ -89,7 +89,7 @@ describe('PCIC fül: a kör újranyitáskor ott folytatódik, ahol abbamaradt (F
     expect(promptShown(first, 1)).toBe(true);
     first.unmount();
 
-    // újranyitás: a normál újraépítés a rontott (learning) a0-t a sor ELEJÉRE tenné
+    // reopening: the normal rebuild would put the botched (learning) a0 at the START of the queue
     const second = render(<PcicScreen />);
     await flush();
     expect(promptShown(second, 1)).toBe(true);
@@ -107,7 +107,7 @@ describe('PCIC fül: a kör újranyitáskor ott folytatódik, ahol abbamaradt (F
       await flush();
     }
     const before = StyleSheet.flatten(first.getByTestId('learn-progress-fill').props.style).width;
-    expect(parseFloat(before as string)).toBeCloseTo((2 / 4) * 100, 1); // 2 kész, 3 hátra: 2 / (5 - 1)
+    expect(parseFloat(before as string)).toBeCloseTo((2 / 4) * 100, 1); // 2 done, 3 to go: 2 / (5 - 1)
     first.unmount();
 
     const second = render(<PcicScreen />);
@@ -136,7 +136,7 @@ describe('PCIC fül: a kör újranyitáskor ott folytatódik, ahol abbamaradt (F
     await saveLearnResume(getDb(), buildLearnResume([ghost, sm2NewCard(mockA1Items[3].id)], today, 'A1', null));
     const screen = render(<PcicScreen />);
     await flush();
-    // a mentett (létező) a1-w3 jön előre, a nem létező kihagyva; nincs elakadás
+    // the saved (existing) a1-w3 comes first, the non-existent one is skipped; no stall
     expect(promptShown(screen, 3)).toBe(true);
     fireEvent.press(screen.getByText("Don't learn this"));
     await flush();

@@ -1,8 +1,7 @@
-// 5b (döntés 5/6b): a PCIC fül átveszi a Learn kártya-felületét (CardShell,
-// DockedAction). Felfedés
-// után a dokkolt sáv "Next"-re vált (a javasolt értékeléssel a feliratban),
-// a régi Tudtam/Nem tudtam gombsor a kártyában felülbírálásra marad. Mock-minta:
-// pcicSpeak.test.tsx (db, router, speech, data/pcic).
+// The PCIC tab takes over the Learn card surface (CardShell,
+// DockedAction). After the reveal the docked bar switches to "Next" (with the suggested
+// rating in its label), and the old Knew it / Didn't know button row stays in the card
+// for overriding. Mock pattern: pcicSpeak.test.tsx (db, router, speech, data/pcic).
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -18,15 +17,15 @@ jest.mock('expo-router', () => ({
   },
 }));
 
-// useDockLift (a PCIC dokkolt sávja) most useSafeAreaInsets-et hív, ami
-// SafeAreaProvider nélkül dob; itt a mérete nem számít, csak ne dobjon.
+// useDockLift (the PCIC docked bar) now calls useSafeAreaInsets, which
+// throws without a SafeAreaProvider; its size does not matter here, it just must not throw.
 jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, left: 0, right: 0, bottom: 0 }),
 }));
 
-// Egy fix tétel, hogy a teszt ne a valódi PCIC-korpusztól függjön.
-// Az id "b1-" előtaggal, mert lib/pcicLevels.ts a
-// szint-szűrést az id-előtagból dönti el (a fül a B1 alap-szinten indul).
+// One fixed item, so the test does not depend on the real PCIC corpus.
+// The id has a "b1-" prefix because lib/pcicLevels.ts decides the
+// level filter from the id prefix (the tab starts at the B1 base level).
 const FIXTURE_ITEM = { id: 'b1-x1', es: 'vida', en: 'life', kind: 'word' as const, section: 'Test', order: 0 };
 jest.mock('@/data/pcic', () => ({
   PCIC_LEVELS: ['B1'],
@@ -75,8 +74,8 @@ describe('PCIC fül: Learn kártya-felület (5b)', () => {
     expect(getByText('Next → Knew it')).toBeTruthy();
     expect(getByText('Knew it')).toBeTruthy();
     expect(getByText("Didn't know")).toBeTruthy();
-    // LEARNING_STEPS=1: "Didn't know" (again) marad ma esedékes (<1 day), de
-    // "Knew it" (good) egy lépésben graduál, interval 1 nap.
+    // LEARNING_STEPS=1: "Didn't know" (again) stays due today (<1 day), but
+    // "Knew it" (good) graduates in one step, interval 1 day.
     expect(getAllByText('<1 day').length).toBe(1);
     expect(getByText('1 day')).toBeTruthy();
   });

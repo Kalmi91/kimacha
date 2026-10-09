@@ -1,7 +1,7 @@
-// ha a kártya több választ fogad el ("el carro / el coche / el auto"), és a
-// tanuló üresen vagy rosszul Check-el, a felfedés MINDEN elfogadott szót ugyanolyan súllyal kiírja
-// (nem csak az elsőt egy kis „also” sorban); helyes válasznál marad a „also” sor. Mock-minta:
-// app/(tabs)/__tests__/pcicHint.test.tsx.
+// When a card accepts several answers ("el carro / el coche / el auto") and the
+// learner presses Check with an empty or wrong answer, the reveal shows EVERY accepted word with equal weight
+// (not just the first one in a small "also" line); on a correct answer the "also" line
+// stays. Mock pattern: app/(tabs)/__tests__/pcicHint.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -21,7 +21,7 @@ jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, left: 0, right: 0, bottom: 0 }),
 }));
 
-// Két tétel: az 1. háromalakú válaszú, a 2. egy alakú.
+// Two items: the 1st has an answer with three forms, the 2nd has a single form.
 jest.mock('@/data/pcic', () => {
   const items = [
     { id: 'o9101', es: 'el carro / el coche / el auto', en: 'car', kind: 'word', section: '', order: 9101 },
@@ -57,7 +57,7 @@ const textOf = (node: unknown): string => {
   return '';
 };
 
-// Az összes látható megoldás-sor szövege (az 1. + a további sorok), sorrendben.
+// Text of all visible solution rows (the 1st + the further rows), in order.
 function shownAnswers(utils: ReturnType<typeof render>): string[] {
   const out = [textOf(utils.getByTestId('pcic-correct-answer').props.children)];
   for (let i = 2; ; i++) {

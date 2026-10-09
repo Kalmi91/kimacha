@@ -1,5 +1,5 @@
-// a Beállítások fül brutalista palettán (BrutalBox sorok), classic palettán a
-// mai kártya-sorok. Mock-minta: settingsPalette.test.tsx.
+// The Settings tab on the brutalist palette (BrutalBox rows), today's
+// card rows on the classic palette. Mock pattern: settingsPalette.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-router', () => ({
@@ -43,7 +43,7 @@ describe('Beállítások fül, neo-brutalista (NY19)', () => {
     const view = render(<ThemeProvider><SettingsScreen /></ThemeProvider>);
     await flush();
     expect(view.queryAllByTestId('settings-row').length).toBe(0);
-    // a paletta-chipek a Témák képernyőre költöztek; a Beállításokban a Témák-sor van.
+    // the palette chips moved to the Themes screen; Settings has the Themes row.
     expect(view.queryByTestId('settings-theme-row')).toBeTruthy();
     view.unmount();
   });
