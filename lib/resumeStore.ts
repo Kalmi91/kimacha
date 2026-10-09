@@ -3,10 +3,10 @@ import { Platform } from 'react-native';
 import type { DB } from '@/lib/database';
 import { RESUME_GAME_ID } from '@/lib/resumeRoute';
 
-// Kártya-szintű folytatás: kis, tartós "hol tartottam" értékek a Learn-körnek és a nyelvtani drillnek.
-// Natívon a meglévő game_progress tábla (játék: RESUME_GAME_ID, tétel: a kulcs), weben a localStorage, mert a
-// webes DB memóriában él (újratöltéskor elvész). `null` érték = törölve. A mentés kényelmi funkció: hiba esetén
-// az app a normál úton megy tovább, nem állhat le miatta.
+// Card-level resume: small, persistent "where I was" values for the Learn round and the grammar drill.
+// On native it uses the existing game_progress table (game: RESUME_GAME_ID, item: the key), on web localStorage, because the
+// web DB lives in memory (lost on reload). A `null` value = deleted. Saving is a convenience: on error
+// the app carries on the normal way, it must not crash because of it.
 
 const WEB_PREFIX = 'kimacha-resume:';
 
@@ -33,6 +33,6 @@ export async function saveResumeValue(db: DB, key: string, value: unknown): Prom
     }
     await db.setGameProgress(RESUME_GAME_ID, key, value === null ? 'cleared' : 'saved', value);
   } catch {
-    // lásd a fájl tetején
+    // see the top of the file
   }
 }

@@ -1,5 +1,5 @@
-// User feedback: "valahol jeleznie kellene, hogy mennyi szó van hány
-// napra elrakva, meg higy mikor frissül."
+// Shows how many words are stored away for how many
+// days, and when the queue next refills.
 //
 // The FSRS due dates already hold that answer, they were just never shown. This
 // module turns a plain list of due timestamps into the buckets the Stats tab

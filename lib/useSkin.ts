@@ -8,22 +8,22 @@ import { composeSkin, skinIdOfTheme } from '@/lib/skinTheme';
 import { useTheme, type ThemeKey } from '@/lib/ThemeContext';
 
 type SkinState = {
-  // A kiválasztás ('mix' = Saját mix).
+  // The selection ('mix' = My mix).
   id: SkinSelection;
-  // Az aktív Skin (mixnél a négy forrásból összerakva).
+  // The active Skin (for a mix, composed from the four sources).
   skin: Skin;
-  // A feloldott színek az aktív módban (ugyanaz, mint a useGrammarColors()).
+  // The resolved colors in the active mode (same as useGrammarColors()).
   colors: GrammarColors;
   mode: SkinMode;
   theme: ThemeKey;
-  // true: egy módú téma, a világos / sötét beállítás hatástalan (a Beállítások elrejti).
+  // true: a single-mode theme, the light / dark setting has no effect (Settings hides it).
   modeLocked: boolean;
-  // A díszt adó téma (mixnél a mix.decor); 'none' = nincs dísz.
+  // The theme providing the decoration (mix.decor for a mix); 'none' = no decoration.
   decorId: SkinId | 'none';
 };
 
-// az aktív téma, a feloldott színekkel és móddal. A ThemeContextet csak a
-// `theme`-mel mockoló tesztekben (skin nélkül) a téma-kulcsból következtet.
+// The active theme, with the resolved colors and mode. In tests that mock ThemeContext with only a
+// `theme` (no skin), it is inferred from the theme key.
 export function useSkin(): SkinState {
   const ctx = useTheme();
   const colors = useGrammarColors();

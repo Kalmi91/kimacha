@@ -4,13 +4,13 @@ import { isGrammarPaletteId, type GrammarPaletteId } from '@/constants/GrammarPa
 import { isSkinSelection, parseSkinMix, type SkinMix, type SkinMode, type SkinSelection } from '@/constants/Skins';
 import type { DB } from '@/lib/database';
 
-// Web teszt-horgok az automata UI-átfedés teszthez (scripts/ui-overlap.mjs).
-// Csak Platform.OS === 'web' alatt élnek; natívon a getWebTestParams() null, semmi nem változik.
-// A window.location.search paraméterei:
-//   skin=<SkinId|mix>   a választott téma (mix mellé: mix=<colors>.<font>.<shape>.<decor>)
-//   mode=light|dark     a Beállítások Auto / Light / Dark felülírása
-//   pal=<al-paletta>    a Neo-brutál al-paletta (brand|electric|lime|cyan|orange|classic)
-//   onboarded=1         az onboarding kész-állapotba kerül alapadatokkal (en→es, A1)
+// Web test hooks for the automated UI-overlap test (scripts/ui-overlap.mjs).
+// They only live under Platform.OS === 'web'; on native getWebTestParams() is null, nothing changes.
+// Parameters of window.location.search:
+//   skin=<SkinId|mix>   the chosen theme (with mix: mix=<colors>.<font>.<shape>.<decor>)
+//   mode=light|dark     overrides the Settings Auto / Light / Dark
+//   pal=<sub-palette>   the Neo-brutalist sub-palette (brand|electric|lime|cyan|orange|classic)
+//   onboarded=1         puts onboarding into the done state with basic data (en→es, A1)
 type WebTestParams = {
   skin?: SkinSelection;
   mix?: SkinMix;
@@ -19,7 +19,7 @@ type WebTestParams = {
   onboarded?: boolean;
 };
 
-// Érvénytelen / ismeretlen paraméter kimarad; ha egy sem érvényes, null.
+// An invalid / unknown parameter is left out; if none is valid, null.
 export function parseWebTestParams(search: string): WebTestParams | null {
   const q = new URLSearchParams(search);
   const out: WebTestParams = {};
@@ -44,7 +44,7 @@ export function getWebTestParams(): WebTestParams | null {
   return parseWebTestParams(window.location.search);
 }
 
-// A db-be írja a paramétereket, még a ThemeProvider mountja ELŐTT (app/_layout.tsx check()).
+// Writes the parameters into the db, BEFORE the ThemeProvider mounts (check() in app/_layout.tsx).
 export async function applyWebTestParams(db: DB, p: WebTestParams): Promise<void> {
   if (p.onboarded) {
     await db.setOnboarding('en', 'es');

@@ -4,10 +4,10 @@ import { router, usePathname } from 'expo-router';
 import { getDb } from '@/lib/database';
 import { loadResumePath, resumablePath, resumeSteps, saveResumePath } from '@/lib/resumeRoute';
 
-// hidegindításkor a mentett helyre lép (csak ha az onboarding kész és az app a kezdőlapon indult), utána minden folytatható
-// képernyő-váltást ment. A mentés a visszaállítás LEZÁRULTA után indul, és a visszaállító navigáció
-// kezdőpontját (a Learn kezdőlapot) nem írja a mentés helyére, mielőtt a navigáció megérkezne: különben a
-// kezdőlap felülírná a mentett helyet. Az `onboardingDone` null, amíg az indulási ellenőrzés fut.
+// On cold start it steps to the saved place (only if onboarding is done and the app started on the home screen), then saves every resumable
+// screen change. Saving starts AFTER the restore has FINISHED, and the starting point of the restoring navigation
+// (the Learn home screen) is not written to the saved place before the navigation has arrived: otherwise the
+// home screen would overwrite the saved place. `onboardingDone` is null while the startup check is running.
 export function useAppResume(onboardingDone: boolean | null): void {
   const pathname = usePathname();
   const [settled, setSettled] = useState(false);
@@ -22,7 +22,7 @@ export function useAppResume(onboardingDone: boolean | null): void {
     if (onboardingDone === null) return;
     let alive = true;
     (async () => {
-      // Csak a kezdőlapon (Learn, '/') indult app áll vissza; egy mélylinkkel / más útvonalon induló nem.
+      // Only an app started on the home screen (Learn, '/') is restored; one started with a deep link / on another route is not.
       if (onboardingDone && pathRef.current === '/') {
         const db = getDb();
         const lang = (await db.getOnboarding())?.target ?? 'es';
