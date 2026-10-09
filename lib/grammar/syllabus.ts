@@ -1,10 +1,10 @@
 // The grammar syllabus: every grammar point the course intends to teach from
 // A1 to C1, in teaching order, grouped into units.
 //
-// User feedback: "minden szintnek van nyelvtani része is... tedd bele a
-// nyelvtant a szintekbe is. meg külön legyen egy nyelvtani tanulás rész ahol
-// szépen átveszi az összes nyelvtant... azt akarom, hogy átfogó legyen és
-// minden szükséges nyelvtan legyen benne."
+// User feedback: "every level has a grammar part too... put the
+// grammar into the levels as well. and there should also be a separate grammar study section where it
+// neatly takes over all the grammar... I want it to be comprehensive and
+// to contain all the necessary grammar."
 //
 // This module is the MAP. The lessons themselves live in the authored corpus
 // (data/games/grammar/<lang>/<topic>.json) which the drill game already uses,
@@ -32,23 +32,23 @@ export interface SyllabusUnit {
 }
 
 /**
- * Mélységi sáv: mennyire fontos egy nyelvtani pont, függetlenül attól, honnan
- * származik (PCIC, vizsga-blueprint, tankönyv). A súly három jelből áll össze:
- * hány mondat nem gyártható le nélküle, hány későbbi téma épül rá, és kéri-e a
- * vizsga. Egy témának egy sávja van, a legalacsonyabb, ahol először kell, és a
- * sávok kumulatívak: aki 'exam'-ot tanul, a 'core'-t is kapja.
+ * Depth band: how important a grammar point is, regardless of where it
+ * comes from (PCIC, exam blueprint, textbook). The weight is made up of three signals:
+ * how many sentences cannot be produced without it, how many later topics build on it, and
+ * whether the exam asks for it. A topic has one band, the lowest where it is first needed, and
+ * the bands are cumulative: whoever studies 'exam' gets 'core' too.
  *
- *   core+   (telt lila) a beszéd-mag: ser/estar, jelen, a két múlt és a
- *                   szembeállításuk, ir a + inf, modálok, névmások, condicional.
- *                   Ez épül LEGELŐBB, ez tömi be a beszéd-lyukat
- *   core    (lila)  beszélni nem lehet nélküle, ez épül elsőként A1-C1-ig
- *   exam    (kék)   vizsgához és helyes beszédhez kell, de nem blokkol
- *   full    (zöld)  PCIC-teljesség, csak a leltár kedvéért
- *   perfect (sárga) 100% helyesírás és nyelvtani finomság
+ *   core+   (solid purple) the speech core: ser/estar, present, the two pasts and
+ *                   their contrast, ir a + inf, modals, pronouns, conditional.
+ *                   This is built FIRST, it fills the speech gap
+ *   core    (purple)  you cannot speak without it, built first from A1 to C1
+ *   exam    (blue)    needed for the exam and for correct speech, but does not block
+ *   full    (green)   PCIC completeness, only for the sake of the inventory
+ *   perfect (yellow)  100% spelling and grammatical finesse
  */
 type GrammarTier = 'core-plus' | 'core' | 'exam' | 'full' | 'perfect';
 
-/** Sáv témánként. Ami nincs a listán, 'full' (a leltárban benne van, de nem sürgős). */
+/** Band per topic. Whatever is not on the list is 'full' (it is in the inventory but not urgent). */
 const GRAMMAR_TIER: Record<string, GrammarTier> = {
   // --- A1 ---
   'clases-de-palabras': 'exam',
@@ -79,8 +79,8 @@ const GRAMMAR_TIER: Record<string, GrammarTier> = {
   'indefinido-10-verbos': 'core-plus',
   imperfecto: 'core-plus',
   'indefinido-imperfecto': 'core-plus',
-  // Mexikóban a beszélt nyelv a pretéritót használja a perfecto helyett
-  // (comí, nem he comido), ezért nem a beszéd-magban van.
+  // In Mexico the spoken language uses the preterite instead of the perfecto
+  // (comí, not he comido), so it is not in the speech core.
   perfecto: 'exam',
   'perfecto-vs-indefinido': 'exam',
   'estar-gerundio': 'core-plus',
@@ -169,11 +169,11 @@ export const GRAMMAR_UNITS: SyllabusUnit[] = [
 
 export const GRAMMAR_SYLLABUS: SyllabusTopic[] = [
   // ========================= A1 =========================
-  // User feedback: „egy fontos része a nyelvtannal az szófajok
-  // megkülönböztetése erre is helyezz hansúlyt." A fejlesztő a játék MELLÉ a
-  // tananyagba is kérte, ezért a szófaj-áttekintés a tanterv legelső témája:
-  // minden későbbi szabály („a melléknév a főnév után áll", „az ige ragozódik")
-  // feltételezi, hogy ezeket a szó szintjén szét tudja választani.
+  // User feedback: "an important part of grammar is the
+  // distinction of the parts of speech, put emphasis on this too." The developer asked for it ALONGSIDE the game
+  // in the course material as well, so the part-of-speech overview is the very first topic of the syllabus:
+  // every later rule ("the adjective comes after the noun", "the verb is conjugated")
+  // assumes that the learner can tell these apart at the word level.
   {
     id: 'clases-de-palabras',
     level: 'A1',
@@ -742,8 +742,8 @@ export const SYLLABUS_LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
  */
 export const GRAMMAR_PROGRESS_KEY = 'grammar-course';
 
-// Nyelv-kulcs: 'es' (alap) = a spanyol tanterv fent, bájtra változatlan;
-// 'en' = az angol tanterv az angol témafából (lib/grammar/syllabusEn.ts).
+// Language key: 'es' (default) = the Spanish syllabus above, byte-for-byte unchanged;
+// 'en' = the English syllabus from the English topic tree (lib/grammar/syllabusEn.ts).
 const EN_SYLLABUS_LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
 
 function syllabusOf(lang: string): SyllabusTopic[] {
@@ -775,10 +775,10 @@ export function syllabusTopic(id: string, lang = 'es'): SyllabusTopic | undefine
 }
 
 /**
- * User feedback (drill Kész-képernyő): „tegyél bele egy gombot, hogy
- * kovetkező topicot lehessen tanulni". A tanterv sorrendjében a következő téma,
- * amihez MÁR VAN megírt lecke, tehát a gomb sosem visz üres képernyőre. A szint
- * határán nem áll meg: a tanterv folytatódik a következő szinten.
+ * User feedback (drill Done screen): "put in a button so that the
+ * next topic can be studied". The next topic in syllabus order that
+ * ALREADY HAS an authored lesson, so the button never leads to an empty screen. It does not
+ * stop at the level boundary: the syllabus continues at the next level.
  */
 export function nextWrittenTopic(lang: string, topicId: string): SyllabusTopic | undefined {
   const syllabus = syllabusOf(lang);
@@ -805,12 +805,12 @@ interface GrammarTopicProgress {
 const GRAMMAR_KINDS: GrammarKind[] = ['choice', 'match', 'form', 'transform'];
 
 /**
- * a lecke feladatai fajtánként külön indíthatók, a
- * game_progress itemId ezért egy `${topicId}:${kind}` sor (app/grammar/[topic]
- * csak >=80%-nál ír). A régi, egy-értékű sorok (itemId === topicId, a split
- * előtti korból) minden fajtát késznek jelentenek, hogy a meglévő kész
- * leckéi ne álljanak vissza nyitottra. Egy téma csak akkor kész, ha a
- * leckéjében LÉTEZŐ összes fajtájából van kész sor.
+ * The lesson's tasks can be started separately by kind, so the
+ * game_progress itemId is a `${topicId}:${kind}` row (app/grammar/[topic]
+ * writes only at >=80%). The old single-valued rows (itemId === topicId, from the era
+ * before the split) mean every kind is done, so the already finished
+ * lessons do not revert to open. A topic is done only if there is a done row for
+ * ALL the kinds that EXIST in its lesson.
  */
 export function doneGrammarTopicProgress(
   lang: string,
@@ -837,7 +837,7 @@ export function doneGrammarTopicProgress(
 
   const result = new Map(legacy);
   for (const [topicId, kinds] of perKind) {
-    if (result.has(topicId)) continue; // a régi sor már minden fajtát késznek jelent
+    if (result.has(topicId)) continue; // the old row already means every kind is done
     const lesson = lessonFor(lang, topicId);
     const required = lesson ? GRAMMAR_KINDS.filter((k) => grammarKindCounts(lesson)[k] > 0) : [];
     if (required.length === 0 || !required.every((k) => kinds.has(k))) continue;
@@ -854,23 +854,23 @@ export function doneGrammarTopicProgress(
 }
 
 /**
- * a lecke létező feladat-fajtái a lecke-oldal gombjainak
- * sorrendjében (a "why" is, ellentétben a "kész" feltétellel fentebb): a lecke %-a
- * ezek átlaga, a meg nem kezdett fajta 0.
+ * The existing task kinds of the lesson in the order of the lesson page's buttons
+ * (including "why", unlike the "done" condition above): the lesson's % is
+ * the average of these, a kind not yet started counts as 0.
  */
 const LESSON_KIND_ORDER: readonly GrammarKind[] = ['choice', 'article', 'match', 'form', 'why', 'transform', 'spot', 'order', 'dictation'];
 
-// az ideiglenes ("ÚJ · TESZT") fajták gombja megjelenik, de a
-// lecke %-át nem húzzák le (amíg a fejlesztő nem hagyja jóvá őket, nem részei a leckének).
+// The button of the temporary ("NEW · TEST") kinds appears, but they do not
+// pull down the lesson's % (until the developer approves them, they are not part of the lesson).
 const TRIAL_KINDS: readonly GrammarKind[] = ['spot', 'order', 'dictation'];
 
-/** A lecke gombjai: minden fajta, amiből van item. */
+/** The lesson's buttons: every kind that has items. */
 function lessonButtonKinds(lesson: GrammarTopicData): GrammarKind[] {
   const counts = grammarKindCounts(lesson);
   return LESSON_KIND_ORDER.filter((k) => counts[k] > 0);
 }
 
-/** A lecke %-ába számító fajták: a gombok fajtái, az ideiglenes (csupa trial itemű) fajták nélkül. */
+/** The kinds that count toward the lesson's %: the kinds of the buttons, without the temporary (all-trial-item) kinds. */
 export function scoredKinds(lesson: GrammarTopicData): GrammarKind[] {
   return lessonButtonKinds(lesson).filter(
     (k) => !TRIAL_KINDS.includes(k) || lesson.items.some((it) => (it as { kind?: string; trial?: boolean }).kind === k && !(it as { trial?: boolean }).trial)
@@ -882,7 +882,7 @@ export function lessonKinds(lang: string, topicId: string): GrammarKind[] {
   return lesson ? scoredKinds(lesson) : [];
 }
 
-/** Van a leckében ideiglenes ("ÚJ · TESZT") tétel? A lecke-lista ebből jelvényez. */
+/** Does the lesson have a temporary ("NEW · TEST") item? The lesson list shows a badge based on this. */
 export function lessonHasTrial(lesson: GrammarTopicData | null | undefined): boolean {
   return !!lesson && lesson.items.some((it) => (it as { trial?: boolean }).trial === true);
 }

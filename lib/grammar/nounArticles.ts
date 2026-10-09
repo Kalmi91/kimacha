@@ -1,8 +1,9 @@
-// User feedback („ebbe a leckébe akarom azt a feladatot, hogy feljön egy szó,
-// mondjuk agua, és ki kell választani, hogy la vagy el … és az összes nount akarom ebbe a feladatba,
-// ami az appba van, és egy kártya paklit akarok belőle”): az articulos-genero lecke el / la
-// feladata és szó-paklija az app SAJÁT főneveiből (data/words-open, minden szint), futásidőben
-// előállítva, így egy új szókészlet-bővítés (pl. words-open-2) magától bekerül.
+// User feedback ("I want this task in this lesson: a word comes up,
+// say agua, and I have to choose whether it is la or el … and I want all the nouns
+// that are in the app in this task, and I want a card deck from it"): the el / la
+// task and the word deck of the articulos-genero lesson from the app's OWN nouns
+// (data/words-open, all levels), built at runtime, so a new vocabulary expansion
+// (e.g. words-open-2) gets in by itself.
 import openA1 from '@/data/words-open/a1.json';
 import openA2 from '@/data/words-open/a2.json';
 import openB1 from '@/data/words-open/b1.json';
@@ -24,26 +25,26 @@ interface OpenWord {
 
 export const ARTICLE_LESSON_ID = 'articulos-genero';
 
-/** Az el / la feladat egy futása ennyi főnév (a teljes készletből seedelt minta). */
+/** One run of the el / la task is this many nouns (a sample seeded from the full set). */
 export const ARTICLE_ROUND_SIZE = 20;
 
 interface ArticleNoun {
-  id: string; // `${szint}-${order}`, a szintek közt egyedi
-  noun: string; // a főnév névelő nélkül: "agua"
+  id: string; // `${level}-${order}`, unique across levels
+  noun: string; // the noun without an article: "agua"
   article: 'el' | 'la';
-  es: string; // a kártya teljes spanyol oldala: "el agua" (vagy "el carro / el coche / el auto")
+  es: string; // the full Spanish side of the card: "el agua" (or "el carro / el coche / el auto")
   en: string;
-  /** a főnév jelentése a felület nyelvén (words-open hu / en / de; es-nél az angol); a válasz után látszik. */
+  /** the meaning of the noun in the interface language (words-open hu / en / de; English for es); visible after the answer. */
   tr: Lang4;
   sentence?: string;
 }
 
-// Nőnemű főnevek, amik egyes számban hangsúlyos a- előtt «el»-t kapnak.
+// Feminine nouns that take «el» in the singular before a stressed a-.
 const EL_FEMININE = new Set(['agua', 'águila', 'alma', 'arma', 'hada', 'hambre', 'área', 'aula', 'ala', 'asa', 'ancla']);
 
 let cache: ArticleNoun[] | null = null;
 
-/** Az app összes egyes számú főneve névelővel (el / la), szint és sorszám szerint. */
+/** All singular nouns of the app with their article (el / la), by level and order number. */
 export function articleNouns(): ArticleNoun[] {
   if (cache) return cache;
   const out: ArticleNoun[] = [];
@@ -53,7 +54,7 @@ export function articleNouns(): ArticleNoun[] {
       if (w.pos !== 'noun') continue;
       const first = w.es.split(' / ')[0].trim();
       const m = first.match(/^(el|la) ([^\s/]+)$/);
-      if (!m) continue; // többes (las vacaciones), "el/la" közös nemű, többszavas: nem kérdezhető egyetlen névelővel
+      if (!m) continue; // plural (las vacaciones), "el/la" common gender, multi-word: cannot be asked with a single article
       const noun = m[2];
       if (seen.has(noun)) continue;
       seen.add(noun);
@@ -126,7 +127,7 @@ function wrongText(n: ArticleNoun, wrongArticle: 'el' | 'la'): Lang4 {
   };
 }
 
-/** Az el / la választó tételei: „___ agua” -> el. A GrammarGapItem `article` készletének tagjai. */
+/** The items of the el / la chooser: "___ agua" -> el. Members of the `article` set of GrammarGapItem. */
 export function articleNounItems(): GrammarGapItem[] {
   return articleNouns().map((n) => {
     const wrong: 'el' | 'la' = n.article === 'el' ? 'la' : 'el';
@@ -144,7 +145,7 @@ export function articleNounItems(): GrammarGapItem[] {
   });
 }
 
-/** Az articulos-genero leckéhez hozzáadja az app összes főnevét el / la feladatként; más leckét nem érint. */
+/** Adds all nouns of the app to the articulos-genero lesson as an el / la task; does not touch other lessons. */
 export function withArticleNouns<T extends LessonV2>(lesson: T): T {
   if (lesson.topic !== ARTICLE_LESSON_ID) return lesson;
   return { ...lesson, items: [...lesson.items, ...articleNounItems()] };

@@ -2,7 +2,7 @@
 // lesson's tables should be repeatable, same UI as the PCIC card, one pass
 // through every word, then it resets; a wrong answer comes back a minute
 // later like Anki". This module is the pure logic: which table cells count
-// (conjugation tables only, decision (a): the reference GridTables are NOT
+// (conjugation tables only; the reference GridTables are NOT
 // included), the Anki-style scheduling (once right -> done, once wrong ->
 // due again in 60s, "learn ahead" shows the soonest wrong cell if nothing
 // else is due), and the reset once every cell has been answered right once.
@@ -64,11 +64,11 @@ export interface DeckState {
   shuffled: boolean;
 }
 
-// FELTEVÉS: a táblázat-pakli
-// "wrong answer comes back later" cooldownja UGYANABBÓL a beállításból
-// olvas, mint a PCIC "rontott szó" időzítője (lib/pcicSession.ts
-// again_delay_sec) - egy beállítás, két hely. A hívó (app/grammar/deck/
-// [topic].tsx) adja át `answerCell`-nek; ha nincs átadva, ez a régi 60s marad.
+// ASSUMPTION: the table deck's
+// "wrong answer comes back later" cooldown reads from the SAME setting
+// as the PCIC "failed word" timer (lib/pcicSession.ts
+// again_delay_sec) - one setting, two places. The caller (app/grammar/deck/
+// [topic].tsx) passes it to `answerCell`; if it is not passed, the old 60s stays.
 const COOLDOWN_MS = DEFAULT_AGAIN_DELAY_SEC * 1000;
 
 function normalizePerson(label: string): string {
@@ -82,7 +82,7 @@ function normalizePerson(label: string): string {
 const VOSOTROS_PERSONS = new Set(['vosotros', 'vosotros/vosotras']);
 
 /**
- * Every cell of every CONJUGATION table in a lesson (decision (a): reference
+ * Every cell of every CONJUGATION table in a lesson (reference
  * GridTables, e.g. hay-estar's article table, are excluded), vosotros rows
  * dropped, and the same person+verb pair counted once even if it somehow
  * repeats across two tables in the same lesson. A MEANING table
@@ -98,8 +98,8 @@ export function tableCellsForLesson(lesson: GrammarTopicData | null | undefined)
   const seen = new Set<string>();
   for (const block of lesson.body) {
     if (block.kind !== 'table') continue;
-    // a személy-tábla (Persona -> ir a + infinitivo, Sujeto -> névmás)
-    // ugyanúgy cella-kártyákat ad, mint a ragozási; a "verb" itt az oszlop-fejléc.
+    // a person table (Persona -> ir a + infinitivo, Sujeto -> pronoun)
+    // gives cell cards the same way as a conjugation table; the "verb" here is the column header.
     if (isConjugationTable(block.header, block.rows) || isPersonTable(block.header, block.rows)) {
       const verbHeaders = block.header.slice(1);
       block.rows.forEach((row, ri) => {
@@ -131,17 +131,16 @@ export function tableCellsForLesson(lesson: GrammarTopicData | null | undefined)
   return cells;
 }
 
-// a scheduler csak `id`-t néz, sose a kártya
-// tartalmát, ezért ugyanez a motor szolgálja ki a szó-paklit is
-// (wordCellsForLesson lent) a tábla-pakli mellett, forrás-tömb-tipizálás
-// nélkül duplikálva.
-// A tábla-pakli sorrendje eleinte a
-// tábla saját sor/oszlop-sorrendje volt (mindenki "yo · ser"-t látta
-// elsőnek), amitől a válasz a POZÍCIÓBÓL, nem a jelentésből tanulható meg.
-// Felülírja a fenti döntést: az 1. kör megint a
-// tábla sorrendjében jön (ahogy a tábla olvasható), a kevert sorrend egy
-// KÜLÖN, választható "Nehezebb: keverve" kör lett (resetDeckShuffled), nem
-// az alapértelmezett. A shuffle maga (a seed-elt permutáció) változatlan.
+// The scheduler only looks at `id`, never at the card's content, so the same engine
+// also serves the word deck (wordCellsForLesson below) next to the table deck, without
+// being duplicated or typed per source array.
+// The order of the table deck used to be the table's own
+// row/column order (everyone saw "yo · ser" first), which made it possible to
+// learn the answer from the POSITION, not from the meaning.
+// This reverses that: round 1 again comes in the
+// table's order (as the table reads), the shuffled order became a
+// SEPARATE, optional "Harder: shuffled" round (resetDeckShuffled), not
+// the default. The shuffle itself (the seeded permutation) is unchanged.
 // Sorted first, so the result depends only on the SET of ids, never on
 // whatever order they happened to arrive in, the order is a pure function
 // of (ids, lessonId, resetCount).
@@ -238,12 +237,12 @@ export function resetDeckShuffled(cells: { id: string }[], lessonId: string, res
 }
 
 // ---------------------------------------------------------------------------
-// "itt is legyen egy nyelvtanulós kártya
-// csomag a szavakból" - a lecke SAJÁT szavaiból egy pakli azoknak a
-// leckéknek, amiknek nincs ragozási táblájuk (tableCellsForLesson fent 0
-// cellát ad rájuk). A scheduler fent content-agnosztikus, ez a rész csak a
-// kártya-forrást adja: a lecke glosszáriuma ÉS a példamondatai (body+items),
-// PCIC angol jelentéssel, funkciószó nélkül.
+// "have a language-learning card
+// deck of the words here too" - a deck from the lesson's OWN words for the
+// lessons that have no conjugation table (tableCellsForLesson above gives
+// 0 cells for them). The scheduler above is content-agnostic, this part only
+// provides the card source: the lesson's glossary AND its example sentences (body+items),
+// with the PCIC English meaning, without function words.
 // ---------------------------------------------------------------------------
 
 /** The word-deck button only shows
@@ -259,11 +258,11 @@ interface WordDeckCard {
   es: string;
 }
 
-// Zárt osztályú szófajok (véges alak-lista): névelő, elöljáró, névmás,
-// kötőszó, plusz a "haber" segédige csupasz infinitivusa. Nyílt osztályú
-// szófajra (főnév/ige/melléknév/határozó/szám) nincs teljes lista, azt a
-// PCIC-egyezés dönti el; egy ragozott segédige-alak (es, ha, está...) amúgy
-// sem egyezik semmilyen PCIC infinitivussal, tehát magától kimarad.
+// Closed-class parts of speech (finite form list): article, preposition, pronoun,
+// conjunction, plus the bare infinitive of the auxiliary "haber". There is no complete list
+// for open-class parts of speech (noun/verb/adjective/adverb/number), the
+// PCIC match decides there; an inflected auxiliary form (es, ha, está...) does not
+// match any PCIC infinitive anyway, so it drops out by itself.
 const FUNCTION_WORDS_ES = new Set([
   'el', 'la', 'los', 'las', 'un', 'una', 'unos', 'unas', 'al', 'del',
   'a', 'ante', 'bajo', 'cabe', 'con', 'contra', 'de', 'desde', 'durante', 'en',
@@ -278,19 +277,19 @@ const FUNCTION_WORDS_ES = new Set([
   'haber',
 ]);
 
-// A lecke szintje-vagy-alatta (D5/a): a PCIC csak A1..B2-t fed, A0 az A1-re
-// esik, C1/C2 a B2-re (nincs feljebb PCIC-adat).
+// The lesson's level or below: PCIC only covers A1..B2, A0 maps to A1,
+// C1/C2 to B2 (there is no PCIC data above).
 const PCIC_LEVEL_CEILING: Record<Level, PcicLevel> = {
   A0: 'A1', A1: 'A1', A2: 'A2', B1: 'B1', B2: 'B2', C1: 'B2', C2: 'B2',
 };
 
 const pcicIndexCache = new Map<Level, Map<string, { es: string; en: string }>>();
 
-// Egyetlen szótári alakra kulcsolt (id, es, en) index, A1-től a lecke
-// szintjéig kumulatívan, csak egy-tokenes (szóköz nélküli) tételekkel: egy
-// mondatból szedett szó csak egy másik egy szavas PCIC-alakkal egyezhet
-// pontosan, a PCIC 'sentence' tételei és a többszavas kifejezések itt nem
-// forrás (azokat a szerző a glosszáriumba teheti, ha kellenek).
+// An index keyed on a single dictionary form (id, es, en), cumulative from A1 up to the
+// lesson's level, with single-token (space-free) entries only: a word taken from a
+// sentence can match exactly only another one-word PCIC form, the PCIC 'sentence'
+// entries and multi-word expressions are not a source here (the author can put
+// those in the glossary if needed).
 function pcicWordIndex(level: Level): Map<string, { es: string; en: string }> {
   const cached = pcicIndexCache.get(level);
   if (cached) return cached;
@@ -299,7 +298,7 @@ function pcicWordIndex(level: Level): Map<string, { es: string; en: string }> {
   for (let i = 0; i <= ceiling; i++) {
     for (const item of pcicItemsForLevel(PCIC_LEVELS[i])) {
       if (item.kind === 'sentence') continue;
-      const main = item.es.split(' / ')[0]; // perjeles válasznál (S1) a fő alak a szótári szó
+      const main = item.es.split(' / ')[0]; // for a slash answer the main form is the dictionary word
       if (main.includes(' ')) continue;
       const key = normalizeWordToken(main);
       if (!key || index.has(key)) continue;
@@ -310,10 +309,10 @@ function pcicWordIndex(level: Level): Map<string, { es: string; en: string }> {
   return index;
 }
 
-// a szó-pakli csak a
-// lecke TÁBLÁZATAINAK szavaiból épül (minden `table` blokk minden cellájának tokenjei, az
-// első előfordulás sorrendjében), nem a szószedetből és a példamondatok szavaiból.
-// A szeparátorok (szóköz, "/", "+", zárójel) tokenekre vágnak ("él/ella/usted", "ir a + inf.").
+// the word deck is built only from the words of the
+// lesson's TABLES (the tokens of every cell of every `table` block, in order of
+// first occurrence), not from the glossary and the words of the example sentences.
+// The separators (space, "/", "+", parentheses) cut into tokens ("él/ella/usted", "ir a + inf.").
 function tableWordKeys(lesson: LessonV2): string[] {
   const keys: string[] = [];
   const seen = new Set<string>();
@@ -333,13 +332,13 @@ function tableWordKeys(lesson: LessonV2): string[] {
   return keys;
 }
 
-// A szószedet-bejegyzés glosszája, ha nem létező alakot jelöl (a rossz válasz-opciókhoz kell).
+// The glossary entry's gloss, when it marks a non-existent form (needed for the wrong answer options).
 const NON_WORD_GLOSS = /^(not a real form|non-existent form)/i;
 
 /**
  * A word-deck source for a lesson: ONLY the words
  * of the lesson's tables (tableWordKeys), never the glossary-only or example-sentence words
- * ("itt miért vannak ilyen szavak? felesleges"). A table word that the glossary glosses
+ * ("why are there such words here? unnecessary"). A table word that the glossary glosses
  * (the author's own choice, so it skips the function-word filter - e.g. clases-de-palabras
  * glosses "mía"/"mío" on purpose) uses the glossary entry; any other table word counts if it
  * (a) is not a closed-class function word and (b) has an English meaning in the PCIC (at the
@@ -353,9 +352,9 @@ export function wordCellsForLesson(
   learnedLang: string = 'es'
 ): WordDeckCard[] {
   if (!lesson) return [];
-  // a lecke maga kéri, hogy ne legyen szó-pakli (lecke-szintű kikapcsolás).
+  // the lesson itself asks for no word deck (lesson-level switch-off).
   if (lesson.noWordDeck) return [];
-  // es→en irányban a pakli az angol szókészletből épül.
+  // in the es→en direction the deck is built from the English vocabulary.
   if (learnedLang === 'en') return wordCellsForEnglishLesson(lesson);
   const cards: WordDeckCard[] = [];
   const seen = new Set<string>();
@@ -365,8 +364,8 @@ export function wordCellsForLesson(
   for (const g of lesson.glossary ?? []) {
     const key = normalizeWordToken(g.word);
     if (!key || seen.has(key) || !inTable.has(key)) continue;
-    // a rossz opciók nem létező alakjai ("lápizes", "vezes")
-    // csak a hangolás miatt vannak a szószedetben (audit-games), nem szó-kártyának valók.
+    // the non-existent forms of the wrong options ("lápizes", "vezes")
+    // are in the glossary only for tuning (audit-games), they do not belong as word cards.
     if (NON_WORD_GLOSS.test(g.gloss.en)) continue;
     seen.add(key);
     cards.push({ id: `glossary::${key}`, es: g.word, en: g.gloss.en });
@@ -385,18 +384,19 @@ export function wordCellsForLesson(
 }
 
 // ---------------------------------------------------------------------------
-// Az es→en irány
-// szavak-gyakorlása. Eddig a pakli a spanyol PCIC-ből épült, ezért angol kérdést
-// adott és spanyol választ várt. Most a kérdés a spanyol szó, a válasz a begépelt
-// angol szó, a szavak az angol szókészletből (data/words/en/<szint>.json) jönnek,
-// a lecke szintjén belül és a leckéhez kötve, három forrásból (ebben a sorrendben):
-//   1. a lecke szószedete (glossary): a szerző saját választása, `word` az angol szó;
-//   2. a lecke témájához kötött szavak (a szólista `topic` mezője = a lecke `topic`-ja,
-//      vagy a `focusTopic`), a lecke saját szókincse, többszavas minta is lehet ("I am");
-//   3. a lecke angol példamondataiból az a tartalmas szó, amelyik egyszavas angol
-//      szólista-tétel (zárt osztályú szó nélkül).
-// Ha nincs elég szó (WORD_DECK_MIN_CARDS alatt), a hívó nem mutat paklit.
-// A spanyol irány (en→es, hu→es) ettől bájtra változatlan.
+// The es→en direction of
+// word practice. The deck used to be built from the Spanish PCIC, so it
+// asked an English question and expected a Spanish answer. Now the question is the Spanish word,
+// the answer is the typed English word, and the words come from the English vocabulary
+// (data/words/en/<level>.json), within the lesson's level and tied to the lesson,
+// from three sources (in this order):
+//   1. the lesson's glossary: the author's own choice, `word` is the English word;
+//   2. words tied to the lesson's topic (the `topic` field of the word list = the lesson's `topic`,
+//      or the `focusTopic`), the lesson's own vocabulary, may be a multi-word pattern ("I am");
+//   3. from the lesson's English example sentences, the content word that is a one-word
+//      English word-list entry (without closed-class words).
+// If there are not enough words (below WORD_DECK_MIN_CARDS), the caller shows no deck.
+// The Spanish direction (en→es, hu→es) is byte-for-byte unchanged by this.
 // ---------------------------------------------------------------------------
 
 interface EnWordEntry {
@@ -409,7 +409,7 @@ interface EnWordEntry {
 
 const EN_WORDS_BY_FILE: EnWordEntry[][] = [enA0, enA1, enA2, enB1] as unknown as EnWordEntry[][];
 
-// A lecke szintje-vagy-alatta: A0/A1 -> a0+a1, A2 -> +a2, B1 és fölötte -> +b1 (B2/C nincs angol lista).
+// The lesson's level or below: A0/A1 -> a0+a1, A2 -> +a2, B1 and above -> +b1 (there is no English list for B2/C).
 const EN_FILE_COUNT: Record<Level, number> = { A0: 2, A1: 2, A2: 3, B1: 4, B2: 4, C1: 4, C2: 4 };
 
 const enWordsCache = new Map<Level, EnWordEntry[]>();
@@ -424,13 +424,13 @@ function enWordsUpTo(level: Level): EnWordEntry[] {
 
 const enIndexCache = new Map<Level, Map<string, EnWordEntry>>();
 
-// Egyszavas angol tételek kulcsa a kisbetűs angol szó, az első (alacsonyabb szintű) előfordulás marad.
+// The key of one-word English entries is the lowercase English word; the first (lower-level) occurrence stays.
 function enWordIndex(level: Level): Map<string, EnWordEntry> {
   const cached = enIndexCache.get(level);
   if (cached) return cached;
   const index = new Map<string, EnWordEntry>();
   for (const w of enWordsUpTo(level)) {
-    const key = w.en.split(' / ')[0].trim().toLowerCase(); // perjeles válasznál (S1) a fő alak a szótári szó
+    const key = w.en.split(' / ')[0].trim().toLowerCase(); // for a slash answer the main form is the dictionary word
     if (!key || /\s/.test(key) || index.has(key)) continue;
     index.set(key, w);
   }
@@ -438,7 +438,7 @@ function enWordIndex(level: Level): Map<string, EnWordEntry> {
   return index;
 }
 
-// Zárt osztályú angol szavak (névelő, névmás, elöljáró, kötőszó, segédige, kérdőszó): ezek nem szó-kártyák.
+// Closed-class English words (article, pronoun, preposition, conjunction, auxiliary, question word): these are not word cards.
 const FUNCTION_WORDS_EN = new Set([
   'a', 'an', 'the',
   'i', 'you', 'he', 'she', 'it', 'we', 'they', 'me', 'him', 'her', 'us', 'them',
@@ -451,19 +451,19 @@ const FUNCTION_WORDS_EN = new Set([
   'what', 'who', 'whom', 'whose', 'which', 'where', 'why', 'how',
 ]);
 
-/** Egy angol szó-token kisbetűsen, a szélén lévő írásjel nélkül; '' ha nem egyszerű szó (szám, per-jel, ___ stb.). */
+/** An English word token in lowercase, without punctuation at the edge; '' if it is not a simple word (number, slash, ___ etc.). */
 function enToken(raw: string): string {
   const t = raw.toLowerCase().replace(/[’‘]/g, "'").replace(/^[^a-z]+|[^a-z]+$/g, '');
   return /^[a-z][a-z']*$/.test(t) ? t : '';
 }
 
 function pushEnExamples(out: string[], examples: ExamplePair[] | undefined): void {
-  // Az angol lecke konvenciója: az ExamplePair.es a TANULT (angol) mondat.
+  // Convention of the English lesson: ExamplePair.es is the LEARNED (English) sentence.
   for (const ex of examples ?? []) out.push(ex.es);
 }
 
-// A lecke angol (tanult nyelvű) mondatai és szavai. A Lang4 magyarázó szövegek a felület nyelvén
-// vannak (spanyolul), azok nem forrás; a táblák celláit itt is felvesszük (angolra nincs tábla-pakli).
+// The English (learned-language) sentences and words of the lesson. The Lang4 explanatory texts are in the
+// interface language (Spanish), those are not a source; the table cells are included here too (there is no table deck for English).
 function lessonSentencesEn(lesson: LessonV2): string[] {
   const out: string[] = [];
   for (const block of lesson.body) {
@@ -508,23 +508,23 @@ function lessonSentencesEn(lesson: LessonV2): string[] {
 
 function wordCellsForEnglishLesson(lesson: LessonV2): WordDeckCard[] {
   const cards: WordDeckCard[] = [];
-  const seen = new Set<string>(); // kisbetűs angol válasz: egy szó egyszer (mergeDeckState/answerCell id-re kulcsol)
+  const seen = new Set<string>(); // lowercase English answer: one word once (mergeDeckState/answerCell key on id)
   const push = (id: string, es: string, enRaw: string) => {
-    const en = enRaw.split(' / ')[0]; // perjeles válasznál (S1) a kártya a fő alakot kéri
+    const en = enRaw.split(' / ')[0]; // for a slash answer the card asks for the main form
     const key = en.trim().toLowerCase();
     if (!key || !es.trim() || seen.has(key)) return;
     seen.add(key);
     cards.push({ id, es, en });
   };
 
-  // 1) a szerző szószedete: `word` az angol szó, a gloss.es a spanyol kérdés
+  // 1) the author's glossary: `word` is the English word, gloss.es is the Spanish question
   for (const g of lesson.glossary ?? []) {
     if (NON_WORD_GLOSS.test(g.gloss.en)) continue;
     const key = enToken(g.word);
     if (key) push(`glossary::${key}`, g.gloss.es, g.word);
   }
 
-  // 2) a lecke témájához kötött szavak, a szintjén belül (a szólista topic mezője)
+  // 2) words tied to the lesson's topic, within its level (the topic field of the word list)
   const topics = new Set([lesson.topic, lesson.focusTopic].filter((t): t is string => !!t));
   if (topics.size > 0) {
     const linked = enWordsUpTo(lesson.level).filter((w) => w.topic && topics.has(w.topic));
@@ -532,7 +532,7 @@ function wordCellsForEnglishLesson(lesson: LessonV2): WordDeckCard[] {
     for (const w of linked) push(`topic::${w.id}`, w.es, w.en);
   }
 
-  // 3) a példamondatok tartalmas szavai, ha egyszavas angol szólista-tételek
+  // 3) the content words of the example sentences, if they are one-word English word-list entries
   const index = enWordIndex(lesson.level);
   for (const sentence of lessonSentencesEn(lesson)) {
     for (const raw of sentence.split(/\s+/)) {

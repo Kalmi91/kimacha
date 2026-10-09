@@ -11,12 +11,12 @@ export type GrammarColors = {
   a: string;
   b: string;
   onFill: string;
-  // Szöveg a papíron / bg-n (= ink).
+  // Text on the paper / bg (= ink).
   text: string;
-  // true: brutalista formák (BrutalBox, Sticker, SegmentBar); false: classic.
+  // true: brutalist shapes (BrutalBox, Sticker, SegmentBar); false: classic.
   brutal: boolean;
-  // szöveg az a / b / c kitöltésen (onFill = onA), a harmadik szín,
-  // a keret saját színe (alap: ink), szöveg ink kitöltésen, téma-specifikus színek.
+  // text on the a / b / c fill (onFill = onA), the third color,
+  // the border's own color (default: ink), text on the ink fill, theme-specific colors.
   onA: string;
   onB: string;
   c: string;
@@ -25,11 +25,11 @@ export type GrammarColors = {
   extra: Record<string, string>;
 };
 
-// a téma-kulcsból (`<paletta>-light|dark` vagy a classic 'light' | 'dark')
-// képzett kulcsok a nyelvtan-képernyőknek. classic esetén a mai Colors[theme]
-// értékeiből képez ugyanilyen kulcsokat (brutal = false). Csak a `theme`-től
-// függ, ezért a `useTheme`-et mockoló tesztekben ('light') a classic ág fut.
-// A `<téma-id>-<mód>` kulcsok (constants/Skins.ts) a téma színeit adják.
+// keys for the grammar screens, built from the theme key (`<palette>-light|dark` or the
+// classic 'light' | 'dark'). For classic it builds the same keys from today's
+// Colors[theme] values (brutal = false). It depends only on `theme`,
+// so in tests that mock `useTheme` ('light') the classic branch runs.
+// The `<theme-id>-<mode>` keys (constants/Skins.ts) give the theme's colors.
 export function grammarColorsFor(theme: ThemeKey): GrammarColors {
   if (theme === 'light' || theme === 'dark') {
     const c = Colors[theme];
@@ -44,7 +44,7 @@ export function grammarColorsFor(theme: ThemeKey): GrammarColors {
       text: c.text,
       brutal: false,
       onA: c.onTint,
-      // a rózsaszín (b) kitöltésen a fehér 3,53 volt, a fekete 5,2.
+      // contrast on the pink (b) fill was 3.53 for white and 5.2 for black.
       onB: bestOn(c.accent, [c.onTint, '#000000']),
       c: c.accent,
       border: c.text,
@@ -96,7 +96,7 @@ export function grammarColorsFor(theme: ThemeKey): GrammarColors {
 export function useGrammarColors(): GrammarColors {
   const { theme, skin, skinMix } = useTheme();
   const g = grammarColorsFor(theme);
-  // Saját mix: a formát a `shape` téma adja; classic forma = a mai kinézet (nem brutalista).
+  // Own mix: the shape comes from the `shape` theme; classic shape = today's look (not brutalist).
   if (skin === 'mix' && skinMix) return { ...g, brutal: skinMix.shape !== 'classic' };
   return g;
 }
