@@ -88,3 +88,7 @@ docs/UI-NEVEK.md
 # Claude Code state, settings and skills stay local; they are archived in the
 # private ai-workspace repo.
 /.claude/
+
+# Output of the audit scripts (regenerated on every run, not project state)
+/scripts/audit-prompts.md
+/scripts/audit-report-en.md
