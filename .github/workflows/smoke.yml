@@ -1,13 +1,16 @@
 name: Smoke
 
-# Kálmán, 2026-09-09: "nézd meg hogy nem bassza-e szét az egész main-t, de
-# nincs kedvem mindegyiket én buildelni". So every pull request answers the
+# The maintainer asked (2026-09-09) for a check that a change does not break
+# main, without building every branch by hand. So every pull request answers the
 # question the unit tests cannot: does the app still bundle.
 
 on:
   push:
     branches: [main]
   pull_request:
+
+permissions:
+  contents: read
 
 concurrency:
   group: smoke-${{ github.ref }}
@@ -19,9 +22,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262  # v4.4.0
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020  # v4.4.0
         with:
           node-version: 20
           cache: npm
@@ -33,4 +36,20 @@ jobs:
       # in a require path or a broken JSON pack dies here.
       - name: Bundle for Android
         run: npx expo export --platform android --output-dir dist-smoke
+
+      # The Play build must never carry the feedback endpoint (lib/buildFlavor.ts).
+      # Metro inlines EXPO_PUBLIC_PLAY_STORE at bundle time, so this bundle is
+      # what the Play flavour ships. The step fails if the endpoint host is in it.
+      # --clear drops the Metro cache of the previous step, which was bundled
+      # without the flag and would otherwise be reused as it is.
+      - name: Bundle the Play flavour and check it has no feedback endpoint
+        env:
+          EXPO_PUBLIC_PLAY_STORE: '1'
+        run: |
+          npx expo export --clear --platform android --output-dir dist-smoke-play
+          if grep -rlF "script.google.com" dist-smoke-play; then
+            echo "::error::script.google.com is in the Play bundle, see lib/buildFlavor.ts"
+            exit 1
+          fi
+          echo "Clean."
 
