@@ -193,14 +193,11 @@ class MemoryDB implements DB {
     return summarizeUsage(rows);
   }
 
-  // one local calendar day's totals, for the midnight celebration.
+  // one local calendar day's totals, for the midnight celebration. `words` =
+  // PCIC words first introduced that day (same rule as the native DB).
   async getDayStats(date: string): Promise<{ minutes: number; words: number }> {
-    const words = new Set(
-      this.attempts
-        .filter(a => a.type === 'word' && localDateString(new Date(a.timestamp)) === date)
-        .map(a => a.word_id)
-    );
-    return { minutes: this.usageMinutes.get(date) ?? 0, words: words.size };
+    const words = [...this.pcicCards.values()].filter(c => c.introducedAt === date).length;
+    return { minutes: this.usageMinutes.get(date) ?? 0, words };
   }
 
   // Game tab tables, scoped to the active pair like every
