@@ -21,7 +21,7 @@ type Person = 'yo' | 'tu' | 'el' | 'nosotros' | 'ellos';
 
 export const TENSES: Tense[] = ['presente', 'indefinido', 'imperfecto', 'futuro', 'condicional', 'subjuntivo_presente'];
 
-// The app's own Spanish grammar topics (data/topics/a1.json presente_ar/er/ir,
+// The app's own Spanish grammar topics (presente_ar/er/ir,
 // ser, estar…) teach a 5-person paradigm (yo/tú/él-ella/nosotros/ellos-ellas),
 // vosotros omitted (Latin-American convention: ustedes/ellos double up). This
 // module follows the same 5-person shape for consistency with the rest of
