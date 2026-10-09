@@ -71,7 +71,7 @@ const CHROME_CANDIDATES = [
 // Routes. `file`: the screen file providing the route; if it is not in the project, the route is skipped.
 // `steps`: buttons clicked through on a not-yet-onboarded (onboarded=0) route.
 const LANG = { testId: 'onboarding-lang-en', text: 'English' };
-const START = { testId: 'onboarding-start', text: 'Get Started' };
+const START = { testId: 'onboarding-start', text: 'Get started' };
 const INTRO_START = { testId: 'onboarding-intro-start' };
 const ROUTES = {
   learn: { path: '/', onboarded: true },
