@@ -19,7 +19,7 @@ const VALID_GENDER = new Set(['m', 'f', 'mf', '-']);
 
 // Play-vágás: the en branch no longer goes through
 // the loader (single en-es pair), so its annotation is checked straight off
-// the JSON files, the same way `svCorpus.test.ts` reads the Swedish track.
+// the JSON files.
 function branchLevel(lang: string, level: string): WordEntry[] {
   return JSON.parse(readFileSync(join(__dirname, '..', '..', 'data', 'words', lang, `${level}.json`), 'utf8'));
 }
