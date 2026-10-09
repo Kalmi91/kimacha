@@ -9,7 +9,8 @@
 import type { Level } from '@/data/words';
 import type { GrammarGapItem, GrammarMarkItem } from '../games/content';
 
-export type Lang4 = Record<'hu' | 'en' | 'es' | 'de', string>;
+// (the name is historical: the app has two content languages now, English and Spanish)
+export type Lang4 = Record<'en' | 'es', string>;
 
 // The tenses of the tense drill (8 + the 4 added later). The order here is the
 // source of TENSE_IDS, do not swap it.
@@ -45,32 +46,26 @@ export const TENSE_IDS: readonly TenseId[] = [
 // The tense name shown on the badge; `es` is the Spanish grammatical term, the others
 // are the everyday name (as in the syllabus topic titles).
 export const TENSE_NAMES: Record<TenseId, Lang4> = {
-  presente: { hu: 'jelen idő', en: 'present tense', es: 'Presente', de: 'Präsens' },
-  indefinido: { hu: 'befejezett múlt', en: 'preterite', es: 'Pretérito perfecto simple', de: 'Indefinido' },
-  imperfecto: { hu: 'folyamatos múlt', en: 'imperfect', es: 'Pretérito imperfecto', de: 'Imperfekt' },
-  perfecto: { hu: 'közelmúlt', en: 'present perfect', es: 'Pretérito perfecto compuesto', de: 'Perfekt' },
-  'futuro-simple': { hu: 'egyszerű jövő', en: 'simple future', es: 'Futuro simple', de: 'einfaches Futur' },
-  'ir-a': { hu: '„ir a" jövő', en: '"ir a" future', es: 'Ir a + infinitivo', de: '„ir a"-Zukunft' },
-  condicional: { hu: 'feltételes mód', en: 'conditional', es: 'Condicional simple', de: 'Konditional' },
+  presente: { en: 'present tense', es: 'Presente' },
+  indefinido: { en: 'preterite', es: 'Pretérito perfecto simple' },
+  imperfecto: { en: 'imperfect', es: 'Pretérito imperfecto' },
+  perfecto: { en: 'present perfect', es: 'Pretérito perfecto compuesto' },
+  'futuro-simple': { en: 'simple future', es: 'Futuro simple' },
+  'ir-a': { en: '"ir a" future', es: 'Ir a + infinitivo' },
+  condicional: { en: 'conditional', es: 'Condicional simple' },
   'subjuntivo-presente': {
-    hu: 'kötőmód jelen',
     en: 'present subjunctive',
     es: 'Presente de subjuntivo',
-    de: 'Subjuntivo Präsens',
   },
-  'imperativo-negativo': { hu: 'tiltó felszólító mód', en: 'negative imperative', es: 'Imperativo negativo', de: 'Verneinter Imperativ' },
-  pluscuamperfecto: { hu: 'régmúlt', en: 'past perfect', es: 'Pretérito pluscuamperfecto', de: 'Plusquamperfekt' },
+  'imperativo-negativo': { en: 'negative imperative', es: 'Imperativo negativo' },
+  pluscuamperfecto: { en: 'past perfect', es: 'Pretérito pluscuamperfecto' },
   'subjuntivo-perfecto': {
-    hu: 'kötőmód befejezett',
     en: 'present perfect subjunctive',
     es: 'Pretérito perfecto de subjuntivo',
-    de: 'Subjuntivo Perfekt',
   },
   'futuro-condicional-perfecto': {
-    hu: 'befejezett jövő és feltételes',
     en: 'future perfect and conditional perfect',
     es: 'Futuro perfecto y condicional perfecto',
-    de: 'Futur II und Konditional II',
   },
 };
 
@@ -176,7 +171,7 @@ export interface SpotItem {
   /** 3 correction options; the empty text means deleting the word. */
   options: string[];
   correctIndex: number;
-  /** Short explanation in four languages. */
+  /** Short explanation in both content languages. */
   explain: Lang4;
   /** Translation of the CORRECT sentence. */
   tr: Lang4;

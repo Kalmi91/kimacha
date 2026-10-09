@@ -14,15 +14,15 @@ const lesson: LessonV2 = {
   schema: 2,
   topic: 'test-v2',
   level: 'A1',
-  title: { hu: 't', en: 't', es: 't', de: 't' },
+  title: { en: 't', es: 't' },
   body: [
     {
       kind: 'table',
       id: 'ser-presente',
-      title: { hu: 'ser', en: 'ser', es: 'ser', de: 'ser' },
+      title: { en: 'ser', es: 'ser' },
       header: [
-        { hu: 'Személy', en: 'Person', es: 'Persona', de: 'Person' },
-        { hu: 'ser', en: 'ser', es: 'ser', de: 'ser' },
+        { en: 'Person', es: 'Persona' },
+        { en: 'ser', es: 'ser' },
       ],
       rows: [
         ['yo', 'soy'],
@@ -30,7 +30,7 @@ const lesson: LessonV2 = {
       ],
     },
   ],
-  speak: { hu: 'h', en: 'e', es: 's', de: 'd' },
+  speak: { en: 'e', es: 's' },
   items: [
     {
       id: 'match-01',
@@ -55,7 +55,7 @@ describe('GrammarDrill: match item', () => {
   it('is completed by tapping the correct pairs and reports correct', () => {
     const onFinish = jest.fn();
     render(
-      <GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['choice', 'match', 'form']} />
+      <GrammarDrill topic={lesson} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['choice', 'match', 'form']} />
     );
 
     // The right column is seeded-shuffled; find each right cell by its own
@@ -78,7 +78,7 @@ describe('GrammarDrill: form item', () => {
     const onFinish = jest.fn();
     const topic: LessonV2 = { ...lesson, items: [lesson.items[1]] }; // form only
     render(
-      <GrammarDrill topic={topic} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['choice', 'match', 'form']} />
+      <GrammarDrill topic={topic} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['choice', 'match', 'form']} />
     );
 
     expect(screen.queryByText('ser · nosotros')).toBeTruthy();
@@ -95,7 +95,7 @@ describe('GrammarDrill: form item', () => {
     const onFinish = jest.fn();
     const topic: LessonV2 = { ...lesson, items: [lesson.items[1]] };
     render(
-      <GrammarDrill topic={topic} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['choice', 'match', 'form']} />
+      <GrammarDrill topic={topic} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['choice', 'match', 'form']} />
     );
 
     fireEvent.changeText(screen.getByTestId('formInput'), 'somos');
@@ -111,7 +111,7 @@ describe('GrammarDrill: form item accept', () => {
 
   it('accepts an alternative form from accept, and still rejects other answers', () => {
     const onFinish = jest.fn();
-    render(<GrammarDrill topic={withAccept} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['form']} />);
+    render(<GrammarDrill topic={withAccept} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['form']} />);
     fireEvent.changeText(screen.getByTestId('formInput'), 'Somos también');
     fireEvent.press(screen.getByTestId('formCheck'));
     fireEvent.press(screen.getByTestId('grammar-next'));
@@ -120,7 +120,7 @@ describe('GrammarDrill: form item accept', () => {
 
   it('a wrong answer is still wrong when accept exists', () => {
     const onFinish = jest.fn();
-    render(<GrammarDrill topic={withAccept} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['form']} />);
+    render(<GrammarDrill topic={withAccept} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['form']} />);
     fireEvent.changeText(screen.getByTestId('formInput'), 'son');
     fireEvent.press(screen.getByTestId('formCheck'));
     fireEvent.press(screen.getByTestId('grammar-next'));
@@ -138,7 +138,7 @@ describe('GrammarDrill: kinds filter', () => {
         sentence: '___ soy',
         options: ['Yo', 'Tú'],
         correct: 0,
-        why: { hu: 'x', en: 'x', es: 'x', de: 'x' },
+        why: { en: 'x', es: 'x' },
         wrong: {},
         examples: [],
       },
@@ -149,7 +149,7 @@ describe('GrammarDrill: kinds filter', () => {
 
   it('kinds={["form"]} only puts form items in the round', () => {
     render(
-      <GrammarDrill topic={mixedLesson} learnedLang="es" contentLang="hu" onFinish={jest.fn()} kinds={['form']} />
+      <GrammarDrill topic={mixedLesson} learnedLang="es" contentLang="en" onFinish={jest.fn()} kinds={['form']} />
     );
     expect(screen.queryByTestId('formInput')).toBeTruthy();
     expect(screen.queryAllByTestId('grammar-option').length).toBe(0);
@@ -157,7 +157,7 @@ describe('GrammarDrill: kinds filter', () => {
   });
 
   it('without kinds, defaults to choice only', () => {
-    render(<GrammarDrill topic={mixedLesson} learnedLang="es" contentLang="hu" onFinish={jest.fn()} />);
+    render(<GrammarDrill topic={mixedLesson} learnedLang="es" contentLang="en" onFinish={jest.fn()} />);
     expect(screen.queryAllByTestId('grammar-option').length).toBeGreaterThan(0);
     expect(screen.queryByTestId('formInput')).toBeFalsy();
     expect(screen.queryByTestId('match-left-0')).toBeFalsy();

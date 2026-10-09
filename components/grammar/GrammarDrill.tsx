@@ -358,7 +358,7 @@ function FormDrillItem({
 }: {
   item: FormItem;
   table: Extract<LessonBlock, { kind: 'table' }> | undefined;
-  contentLang: 'hu' | 'en' | 'es' | 'de';
+  contentLang: 'en' | 'es';
   learnedLang: string;
   colors: (typeof Colors)['light'];
   s: ReturnType<typeof t>;
@@ -510,7 +510,7 @@ function WhyDrillItem({
 }: {
   item: WhyItem;
   learnedLang: string;
-  contentLang: 'hu' | 'en' | 'es' | 'de';
+  contentLang: 'en' | 'es';
   colors: (typeof Colors)['light'];
   s: ReturnType<typeof t>;
   onDone: (correct: boolean) => void;
@@ -731,7 +731,7 @@ function TransformDrillItem({
   onDone,
 }: {
   item: TransformItem;
-  contentLang: 'hu' | 'en' | 'es' | 'de';
+  contentLang: 'en' | 'es';
   strictAccents: boolean;
   colors: (typeof Colors)['light'];
   s: ReturnType<typeof t>;
@@ -1056,7 +1056,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             key={roundItem.item.id}
             item={roundItem.item}
             table={findFormTable(topic, roundItem.item.table)}
-            contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'}
+            contentLang={contentLang as 'en' | 'es'}
             learnedLang={learnedLang}
             colors={colors}
             s={s}
@@ -1067,7 +1067,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             key={roundItem.item.id}
             item={roundItem.item}
             learnedLang={learnedLang}
-            contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'}
+            contentLang={contentLang as 'en' | 'es'}
             colors={colors}
             s={s}
             onDone={completeItem}
@@ -1077,7 +1077,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             key={roundItem.item.id}
             item={roundItem.item}
             learnedLang={learnedLang}
-            contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'}
+            contentLang={contentLang as 'en' | 'es'}
             onDone={completeItem}
           />
         ) : isOrderItem(roundItem.item) ? (
@@ -1085,7 +1085,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             key={roundItem.item.id}
             item={roundItem.item}
             learnedLang={learnedLang}
-            contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'}
+            contentLang={contentLang as 'en' | 'es'}
             onDone={completeItem}
           />
         ) : isDictationItem(roundItem.item) ? (
@@ -1093,7 +1093,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
             key={roundItem.item.id}
             item={roundItem.item}
             learnedLang={learnedLang}
-            contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'}
+            contentLang={contentLang as 'en' | 'es'}
             strictAccents={strictAccents}
             onDone={completeItem}
           />
@@ -1101,7 +1101,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
           <TransformDrillItem
             key={roundItem.item.id}
             item={roundItem.item}
-            contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'}
+            contentLang={contentLang as 'en' | 'es'}
             strictAccents={strictAccents}
             colors={colors}
             s={s}
@@ -1155,7 +1155,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   // has no `tense` field (lessonTypes.ts).
   const badgeTense = !marking && !isMarkItem(current.item) ? current.item.tense : undefined;
   // the sentence's translation in the UI language (if the item has a `tr`).
-  const choiceTr = current.item.tr ? (current.item.tr[contentLang as 'hu' | 'en' | 'es' | 'de'] ?? current.item.tr.en) : undefined;
+  const choiceTr = current.item.tr ? (current.item.tr[contentLang as 'en' | 'es'] ?? current.item.tr.en) : undefined;
 
   // Neo-brutalist: the sentence in a box, the gap a b-filled block,
   // the answers in a 2x2 grid, the right one = fill + tick,

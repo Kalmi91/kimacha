@@ -13,24 +13,24 @@ const lesson: LessonV2 = {
   schema: 2,
   topic: 'test-why',
   level: 'A1',
-  title: { hu: 't', en: 't', es: 't', de: 't' },
+  title: { en: 't', es: 't' },
   body: [],
-  speak: { hu: 'h', en: 'e', es: 's', de: 'd' },
+  speak: { en: 'e', es: 's' },
   items: [
     {
       id: 'why-01',
       kind: 'why',
       es: 'Soy profesor.',
-      tr: { hu: 'Tanár vagyok.', en: 'I am a teacher.', es: 'Soy profesor.', de: 'Ich bin Lehrer.' },
+      tr: { en: 'I am a teacher.', es: 'Soy profesor.' },
       options: [
-        { text: { hu: 'foglalkozás', en: 'profession', es: 'profesión', de: 'Beruf' } },
+        { text: { en: 'profession', es: 'profesión' } },
         {
-          text: { hu: 'hely', en: 'location', es: 'ubicación', de: 'Ort' },
-          wrong: { hu: 'x hely x', en: 'x location x', es: 'x ubicación x', de: 'x Ort x' },
+          text: { en: 'location', es: 'ubicación' },
+          wrong: { en: 'x location x', es: 'x ubicación x' },
         },
         {
-          text: { hu: 'állapot', en: 'state', es: 'estado', de: 'Zustand' },
-          wrong: { hu: 'x állapot x', en: 'x state x', es: 'x estado x', de: 'x Zustand x' },
+          text: { en: 'state', es: 'estado' },
+          wrong: { en: 'x state x', es: 'x estado x' },
         },
       ],
       correctIndex: 0,
@@ -40,16 +40,16 @@ const lesson: LessonV2 = {
 
 describe('GrammarDrill: why item', () => {
   it('kinds={["why"]} only puts why items in the round', () => {
-    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={jest.fn()} kinds={['why']} />);
+    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="en" onFinish={jest.fn()} kinds={['why']} />);
     expect(screen.queryByText('Soy profesor.')).toBeTruthy();
     expect(screen.queryAllByTestId('grammar-option')).toHaveLength(3);
   });
 
   it('correct pick shows green feedback and "next" advances', () => {
     const onFinish = jest.fn();
-    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['why']} />);
+    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['why']} />);
 
-    fireEvent.press(screen.getByText('foglalkozás'));
+    fireEvent.press(screen.getByText('profession'));
     expect(screen.queryByText('Correct!')).toBeTruthy();
 
     fireEvent.press(screen.getByTestId('grammar-next'));
@@ -58,10 +58,10 @@ describe('GrammarDrill: why item', () => {
 
   it('wrong pick shows the wrong explanation for the picked option', () => {
     const onFinish = jest.fn();
-    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['why']} />);
+    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['why']} />);
 
-    fireEvent.press(screen.getByText('hely'));
-    expect(screen.queryByText('x hely x')).toBeTruthy();
+    fireEvent.press(screen.getByText('location'));
+    expect(screen.queryByText('x location x')).toBeTruthy();
 
     fireEvent.press(screen.getByTestId('grammar-next'));
     expect(onFinish).toHaveBeenCalledWith(0, 1);
@@ -72,21 +72,21 @@ describe('GrammarDrill: why item', () => {
 // button reveals it, and it shows on its own once the item is answered.
 describe('GrammarDrill: why item translation', () => {
   it('starts hidden behind a button', () => {
-    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={jest.fn()} kinds={['why']} />);
-    expect(screen.queryByText('Tanár vagyok.')).toBeNull();
+    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="en" onFinish={jest.fn()} kinds={['why']} />);
+    expect(screen.queryByText('I am a teacher.')).toBeNull();
     expect(screen.getByTestId('why-show-translation')).toBeTruthy();
   });
 
   it('shows after tapping the button', () => {
-    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={jest.fn()} kinds={['why']} />);
+    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="en" onFinish={jest.fn()} kinds={['why']} />);
     fireEvent.press(screen.getByTestId('why-show-translation'));
-    expect(screen.queryByText('Tanár vagyok.')).toBeTruthy();
+    expect(screen.queryByText('I am a teacher.')).toBeTruthy();
   });
 
   it('shows automatically once answered, even without tapping the button', () => {
-    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={jest.fn()} kinds={['why']} />);
-    fireEvent.press(screen.getByText('foglalkozás'));
-    expect(screen.queryByText('Tanár vagyok.')).toBeTruthy();
+    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="en" onFinish={jest.fn()} kinds={['why']} />);
+    fireEvent.press(screen.getByText('profession'));
+    expect(screen.queryByText('I am a teacher.')).toBeTruthy();
   });
 });
 
@@ -98,9 +98,9 @@ describe('GrammarDrill: why option order (R21)', () => {
   it('the correct option is not always the first one on screen', () => {
     const positions = new Set<number>();
     for (let k = 0; k < 12; k++) {
-      const view = render(<GrammarDrill topic={withId(`why-r21-${k}`)} learnedLang="es" contentLang="hu" onFinish={jest.fn()} kinds={['why']} />);
+      const view = render(<GrammarDrill topic={withId(`why-r21-${k}`)} learnedLang="es" contentLang="en" onFinish={jest.fn()} kinds={['why']} />);
       const opts = screen.getAllByTestId('grammar-option');
-      positions.add(opts.findIndex((o) => within(o).queryByText('foglalkozás') !== null));
+      positions.add(opts.findIndex((o) => within(o).queryByText('profession') !== null));
       view.unmount();
     }
     expect(positions.size).toBeGreaterThan(1);
@@ -109,12 +109,12 @@ describe('GrammarDrill: why option order (R21)', () => {
   it('the same item keeps its order, and the correct pick is still correct', () => {
     const onFinish = jest.fn();
     const topic = withId('why-r21-3');
-    const a = render(<GrammarDrill topic={topic} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['why']} />);
-    const first = screen.getAllByTestId('grammar-option').findIndex((o) => within(o).queryByText('foglalkozás') !== null);
+    const a = render(<GrammarDrill topic={topic} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['why']} />);
+    const first = screen.getAllByTestId('grammar-option').findIndex((o) => within(o).queryByText('profession') !== null);
     a.unmount();
-    render(<GrammarDrill topic={topic} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['why']} />);
-    expect(screen.getAllByTestId('grammar-option').findIndex((o) => within(o).queryByText('foglalkozás') !== null)).toBe(first);
-    fireEvent.press(screen.getByText('foglalkozás'));
+    render(<GrammarDrill topic={topic} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['why']} />);
+    expect(screen.getAllByTestId('grammar-option').findIndex((o) => within(o).queryByText('profession') !== null)).toBe(first);
+    fireEvent.press(screen.getByText('profession'));
     expect(screen.queryByText('Correct!')).toBeTruthy();
   });
 });

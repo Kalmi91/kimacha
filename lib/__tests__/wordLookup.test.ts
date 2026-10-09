@@ -27,7 +27,7 @@ describe('word lookup by text', () => {
 
   it('matches the language the tapped text is written in, on both sides of a card', () => {
     expect(findWordByText('I', 'en', 'es')?.id).toBe(1);
-    expect(findWordByText('én', 'hu', 'es')?.id).toBe(1);
+    expect(findWordByText('yo', 'es', 'es')?.id).toBe(1);
   });
 
   it('reports no card instead of guessing one', () => {
@@ -46,7 +46,7 @@ describe('word lookup by text', () => {
     expect(findWordByText('los amigos', 'es', 'es')?.id).toBe(40);
     expect(findWordByText('nuevas', 'es', 'es')?.id).toBe(67);
     expect(findWordByText('ciudades', 'es', 'es')?.id).toBe(51);
-    expect(findWordByText('hablé', 'hu', 'es')).toBeUndefined();
+    expect(findWordByText('hablé', 'en', 'es')).toBeUndefined();
   });
 
   it('does not gloss a form of a word that is not in the list', () => {

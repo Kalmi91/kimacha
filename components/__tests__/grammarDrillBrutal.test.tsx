@@ -166,18 +166,18 @@ describe('GrammarDrill, neo-brutalist', () => {
       schema: 2,
       topic: 'test-transform-brutal',
       level: 'A2',
-      title: { hu: 't', en: 't', es: 't', de: 't' },
+      title: { en: 't', es: 't' },
       body: [],
-      speak: { hu: 'h', en: 'e', es: 's', de: 'd' },
+      speak: { en: 'e', es: 's' },
       items: [
         {
           kind: 'transform',
           id: 'tr-b1',
           tense: { from: 'presente', to: 'indefinido' },
-          prompt: { hu: 'Eszem kenyeret.', en: 'I eat bread.', es: 'Como pan.', de: 'Ich esse Brot.' },
+          prompt: { en: 'I eat bread.', es: 'Como pan.' },
           answer: 'Comí pan.',
           wordIds: ['1'],
-          why: { hu: 'ok', en: 'because', es: 'porque', de: 'weil' },
+          why: { en: 'because', es: 'porque' },
         },
       ],
     };

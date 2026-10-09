@@ -105,7 +105,7 @@ export default function GrammarLessonScreen() {
     const target = onboarding?.target ?? 'es';
     setLearnedLang(target);
     // Kimacha Play: UI always English, regardless of the
-    // stored source language; the lesson data's hu/es/de fields stay unused.
+    // stored source language.
     // es→en: a Spanish-native learner gets the Spanish explanation.
     setContentLang(target === 'en' ? 'es' : 'en');
     const levelData = await db.getLevel();
@@ -184,7 +184,7 @@ export default function GrammarLessonScreen() {
     );
   }
 
-  // title is Record<hu/en/es/de,string>-like in both schemas, but
+  // title is Record<en/es,string>-like in both schemas, but
   // LessonV2's Lang4 does not allow an arbitrary string index, hence the cast.
   const lessonTitle = (lesson.title as Record<string, string>)[contentLang] ?? lesson.title.en;
   const knownIds = cumulativeCorpusWordIds(lesson.level, learnedLang);
@@ -230,7 +230,7 @@ export default function GrammarLessonScreen() {
       setSpeaking(false);
       return;
     }
-    const text = lesson.speak[contentLang as 'hu' | 'en' | 'es' | 'de'] ?? lesson.speak.en;
+    const text = lesson.speak[contentLang as 'en' | 'es'] ?? lesson.speak.en;
     const segments = splitByMarkers(text, { learnedLang, nativeLang: contentLang }).map((seg) => ({
       text: seg.text,
       locale: speechLang(seg.lang),
@@ -654,7 +654,7 @@ export default function GrammarLessonScreen() {
           onPress={toggleLessonSpeech}
           hitSlop={10}
         />
-        <LessonBody blocks={lesson.body} contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'} learnedLang={learnedLang} />
+        <LessonBody blocks={lesson.body} contentLang={contentLang as 'en' | 'es'} learnedLang={learnedLang} />
 
         <Text style={[styles.sectionLabel, { color: accentText }]}>{s.grammar.examplesLabel}</Text>
         {worked.map((w, i) => (

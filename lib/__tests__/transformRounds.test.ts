@@ -9,10 +9,10 @@ function item(id: string): TransformItem {
     id,
     kind: 'transform',
     tense: { from: 'presente', to: 'indefinido' },
-    prompt: { es: `es-${id}`, hu: `hu-${id}`, en: `en-${id}`, de: `de-${id}` },
+    prompt: { es: `es-${id}`, en: `en-${id}` },
     answer: `answer-${id}`,
     wordIds: ['1'],
-    why: { hu: 'h', en: 'e', es: 's', de: 'd' },
+    why: { en: 'e', es: 's' },
   };
 }
 

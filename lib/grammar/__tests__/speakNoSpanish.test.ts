@@ -16,8 +16,8 @@ describe('reading Spanish lessons aloud', () => {
     expect(lessons).toHaveLength(79);
   });
 
-  it.each(lessons.map((l) => [l.name, l.lesson] as const))('%s: no marked Spanish section, text exists in all four languages', (_name, lesson) => {
-    for (const lang of ['hu', 'en', 'es', 'de'] as const) {
+  it.each(lessons.map((l) => [l.name, l.lesson] as const))('%s: no marked Spanish section, text exists in both languages', (_name, lesson) => {
+    for (const lang of ['en', 'es'] as const) {
       const text = lesson.speak[lang];
       expect(typeof text).toBe('string');
       expect(text.length).toBeGreaterThan(80);
