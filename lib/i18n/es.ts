@@ -49,7 +49,7 @@ const es: Strings = {
     settings: 'Ajustes',
     grammar: 'Gramática',
     stats: 'Estadísticas',
-    pcic: 'PCIC',
+    pcic: 'Aprender',
   },
   games: {
     understood: 'Entendido',
