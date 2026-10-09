@@ -2,9 +2,9 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import { skinColorsFor, type Skin, type SkinMode } from '@/constants/Skins';
 
-// egy téma mintája (a Témák rács csempéje és a Beállítások sor jelvénye): a téma
-// háttere, "Aa" a title-betűvel, alul 5 px-es a-színű sáv. A téma saját színeit rajzolja, nem az
-// aktív témáét, ezért a betűt közvetlenül (fontFamily) állítja, nem az aktív téma betűjén át.
+// a theme's swatch (the tile of the Themes grid and the badge of the Settings row): the theme's
+// background, "Aa" in the title font, a 5 px bar in the a colour at the bottom. It draws the theme's own colours, not those of the
+// active theme, so it sets the font directly (fontFamily) instead of through the active theme's font.
 export default function ThemeSwatch({
   skin,
   mode,

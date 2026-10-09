@@ -52,10 +52,9 @@ import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
 // the explanation appears after EVERY answer, right or wrong,
 // with the rule, why the picked wrong option is wrong, and two more examples.
 //
-// a lecke-drill a `kinds` propban
-// felsorolt fajtákat viszi végig, a lecke-oldal fajtánként külön indítja; a
-// Game fül grammar-choice-a a prop híján a régi gap/mark-only (`choice`) kört
-// kapja.
+// The lesson drill walks through the kinds listed in the `kinds` prop and the
+// lesson page starts each kind separately; without the prop, the Game tab's
+// grammar-choice screen gets the old gap/mark-only (`choice`) round.
 
 interface Props {
   topic: GrammarTopicData;
@@ -65,43 +64,43 @@ interface Props {
   onFinish: (correct: number, total: number, roundItemIds?: string[]) => void;
   /** Extra rows under the explanation (e.g. the course's "back to the rule"). */
   footer?: React.ReactNode;
-  /** mely fajták kerüljenek a körbe; hiányában csak a választós (Game fül). */
+  /** which kinds go into the round; without it, only the choice kind (Game tab). */
   kinds?: readonly GrammarKind[];
-  /** a "transform" kör legkevésbé-gyakorolt-elöl sorrendjéhez. */
+  /** for the "transform" round's least-practiced-first ordering. */
   transformSeen?: Record<string, number>;
-  /** a feedback-kontextushoz, az éppen látható item id-ja. */
+  /** for the feedback context: id of the item currently visible. */
   onItemChange?: (itemId: string) => void;
-  /** a kör statisztikája a kör végén (onFinish ELŐTT): legjobb combo, idő, az első rontott mondat. */
+  /** stats of the round at its end (BEFORE onFinish): best combo, time, the first mistaken sentence. */
   onRoundStats?: (stats: RoundStats) => void;
-  /** a brutalista fejléc bezáró X-e (a lecke-oldal ← gombjával azonos: vissza a leckéhez). */
+  /** the X closing the brutalist header (same as the lesson page's ← button: back to the lesson). */
   onClose?: () => void;
   /**
-   * egy félbehagyott kör folytatása: ugyanaz a seed és
-   * item-lista, onnan, ahol abbamaradt. Ha az item-lista már nem egyezik (a lecke
-   * változott), a kör elölről indul.
+   * resumes an unfinished round: same seed and item list, from where it
+   * stopped. If the item list no longer matches (the lesson changed), the
+   * round restarts from the beginning.
    */
   resume?: { seed: number; ids: string[]; index: number; correct: number };
-  /** minden megválaszolt tétel után a kör állapota, a szülő ezt menti. */
+  /** the round state after every answered item; the parent persists it. */
   onProgress?: (p: { seed: number; ids: string[]; index: number; correct: number; total: number }) => void;
 }
 
-// a kör-vége képernyő adatai; csak memóriában, nincs DB-írás.
+// data for the end-of-round screen; in memory only, no DB write.
 export interface RoundStats {
   bestCombo: number;
   seconds: number;
-  /** Az első rontott mondat a helyes alakkal (csak gap/mark és transform tételnél). */
+  /** The first mistaken sentence with the correct form (only for gap/mark and transform items). */
   miss: { sentence: string; highlight: string } | null;
 }
 
 const CHOICE_ONLY: readonly GrammarKind[] = ['choice'];
 
-// a kör hossza másodpercben (külön függvény, hogy ne render-időben hívjuk a Date.now-t).
+// the round length in seconds (a separate function so Date.now is not called at render time).
 const secondsSince = (startedAt: number) => Math.max(0, Math.round((Date.now() - startedAt) / 1000));
 
-// a nem-választós fajták közös brutalista elemei: b kitöltésű visszajelző
-// doboz (nagybetűs cím + egy mondat) és az ink kitöltésű gomb.
-// A jó / rossz jelzés a közös ResultBadge (szín + alak + ✓/✗ + szöveg),
-// a doboz fölött; a b kitöltésű doboz csak a magyarázatot hordozza (ha van).
+// shared brutalist elements of the non-choice kinds: the b-filled feedback
+// box (uppercase title + one sentence) and the ink-filled button.
+// The right / wrong signal is the shared ResultBadge (colour + shape + ✓/✗ + text)
+// above the box; the b-filled box only carries the explanation (if there is one).
 function BrutalFeedback({ title, correct, children }: { title: string; correct: boolean; children?: React.ReactNode }) {
   return (
     <>
@@ -123,9 +122,9 @@ function BrutalInkButton({ g, testID, label, onPress }: { g: GrammarColors; test
   );
 }
 
-// User feedback: „ide is tegyél egy mondat fordítást": a választós (gap / mark) tétel
-// mondatának fordítása ugyanúgy az F-gomb mögött van, mint az átírás-tételnél (transform-f). Csak akkor
-// rajzolódik ki, ha a tételnek van `tr`-je (scripts/grammar-translate.py tölti), különben nincs gomb.
+// The sentence translation of a choice (gap / mark) item sits behind the F button, just like
+// for the transform item (transform-f). It is only drawn when the item has a `tr`
+// (filled in by scripts/grammar-translate.py), otherwise there is no button.
 function ChoiceTranslation({
   text,
   show,
@@ -172,9 +171,9 @@ function findFormTable(topic: GrammarTopicData, tableId: string): Extract<Lesson
   return topic.body.find((b): b is Extract<LessonBlock, { kind: 'table' }> => b.kind === 'table' && b.id === tableId);
 }
 
-// párosítás. A bal oszlop (angol) az authored sorrendben áll,
-// a jobb oszlop (spanyol) egy seedelt keveréssel, hogy a teszt determinisztikus
-// maradjon (item.id-ból számolt seed, nem Date.now()).
+// matching. The left column (English) stays in authored order,
+// the right column (Spanish) uses a seeded shuffle so the test stays deterministic
+// (seed computed from item.id, not Date.now()).
 function MatchDrillItem({
   item,
   learnedLang,
@@ -186,7 +185,7 @@ function MatchDrillItem({
   learnedLang: string;
   colors: (typeof Colors)['light'];
   s: ReturnType<typeof t>;
-  // a második argumentum a jó párok száma (egy hiba = egy pár elveszik).
+  // the second argument is the number of right pairs (one mistake = one pair lost).
   onDone: (correct: boolean, correctUnits?: number) => void;
 }) {
   const [rightOrder] = useState(() => shuffleNoFixedPoints(item.pairs.length, hashString(item.id)));
@@ -194,12 +193,12 @@ function MatchDrillItem({
   const [matched, setMatched] = useState<Set<number>>(new Set());
   const [wrongPair, setWrongPair] = useState<{ left: number; right: number } | null>(null);
   const [hadWrong, setHadWrong] = useState(false);
-  // a párosítás részpontot kap: az a pár veszít, amelyiknél
-  // volt rossz koppintás (egy pár egyszer, akárhányszor tévesztett), a többi számít.
+  // matching earns partial credit: the pair that had a wrong tap loses
+  // (a pair once, however many times it was missed), the rest count.
   const [errLefts, setErrLefts] = useState<Set<number>>(new Set());
   const g = useGrammarColors();
-  // `pairs` {es, en} szó szerint spanyol/angol; a jobb oszlop a TANULT nyelv
-  // (es→en irányban az angol), a bal a másik.
+  // `pairs` {es, en} are literally Spanish/English; the right column is the LEARNED language
+  // (English in the es→en direction), the left one is the other.
   const leftText = (p: MatchItem['pairs'][number]) => (learnedLang === 'en' ? p.es : p.en);
   const rightText = (p: MatchItem['pairs'][number]) => (learnedLang === 'en' ? p.en : p.es);
 
@@ -229,8 +228,8 @@ function MatchDrillItem({
     }
   };
 
-  // brutalista párosítás: cella = doboz, a párosított = a kitöltés + pipa,
-  // a kijelölt = b kitöltés, a hibás = szaggatott keret halványan.
+  // brutalist matching: cell = box, matched = fill + tick,
+  // selected = b fill, wrong = dashed border, faded.
   if (g.brutal) {
     const cell = (
       key: string,
@@ -346,8 +345,8 @@ function MatchDrillItem({
   );
 }
 
-// ragozási drill. A táblázat egy összecsukott segítség (a
-// LessonBody UGYANAZON táblázat-blokkját rajzolja ki), nem a válasz.
+// inflection drill. The table is a collapsed hint (LessonBody
+// renders the SAME table block), not the answer.
 function FormDrillItem({
   item,
   table,
@@ -366,9 +365,9 @@ function FormDrillItem({
   onDone: (correct: boolean) => void;
 }) {
   const [tableOpen, setTableOpen] = useState(false);
-  // a kérdés-címke ("Sustantivo") spanyol, a segítő tábla oszlop-fejléce
-  // viszont a felület nyelvén ("Noun"), ezért a tanuló nem találta a táblában. Ha a fejléc más nyelven
-  // mást ír, a címke mellett zárójelben ott a táblabeli név is.
+  // the question label ("Sustantivo") is Spanish, while the hint table's column header
+  // is in the UI language ("Noun"), so the learner could not find it in the table. If the header
+  // differs in another language, the table's name is given in parentheses next to the label.
   const headerCell = table?.header.find((h) => h.es === item.verb);
   const localizedVerb = headerCell ? (headerCell[contentLang] ?? headerCell.en) : undefined;
   const verbLabel = localizedVerb && localizedVerb !== item.verb ? `${item.verb} (${localizedVerb})` : item.verb;
@@ -381,20 +380,20 @@ function FormDrillItem({
     const ok = [item.answer, ...(item.accept ?? [])].some((c) => value.trim().toLowerCase() === c.trim().toLowerCase());
     setCorrect(ok);
     setChecked(true);
-    // a helyes alak a Check után elhangzik, jó és rossz válasz után is, mint a
-    // szókártyán, a 🔊 ugyanaz a SpeakButton, mint ott; az átírás-tétel eddig is így tett.
+    // the correct form is spoken after Check, after right and wrong answers alike, as on the
+    // word card; the 🔊 is the same SpeakButton as there; the transform item already did this.
     speak(item.answer, speechLang(learnedLang));
   };
 
-  // a Check (és utána a Next) a billentyűzet fölé dokkolt sáv, ahogy a szókártyán (DockSlot).
+  // Check (and then Next) is a bar docked above the keyboard, as on the word card (DockSlot).
   const { docked, padBottom } = useDockedAction(
     checked
       ? { label: g.brutal ? s.grammar.nextArrow : s.games.understood, tone: 'next', testID: 'grammar-next', onPress: () => onDone(correct) }
       : { label: `✓ ${s.grammar.check}`, tone: 'check', testID: 'formCheck', onPress: check }
   );
 
-  // brutalista ragozás-drill: a prompt dobozban, a beviteli mező 2,5 px ink
-  // keretű, sarok 0; hibás válasz után szaggatott keret; b kitöltésű visszajelző.
+  // brutalist inflection drill: the prompt in a box, the input field has a 2.5 px ink
+  // border, corner 0; dashed border after a wrong answer; b-filled feedback.
   if (g.brutal) {
     return (
       <View style={styles.formBody}>
@@ -497,10 +496,10 @@ function FormDrillItem({
   );
 }
 
-// "Miért ez a mondat?", a tanuló nem a hiányzó szót
-// választja, hanem a szabályt, ami miatt a mondat úgy van, ahogy van. Egy
-// próbálkozás, mint a választós tételnél (2.3): jó → zöld + „következő"; rossz
-// → a választott piros, a jó zöld, alatta a választott opció `wrong` szövege.
+// "Why this sentence?": the learner does not choose the missing word
+// but the rule that makes the sentence the way it is. One
+// attempt, as for the choice item (2.3): right → green + "next"; wrong
+// → the chosen one red, the right one green, below it the chosen option's `wrong` text.
 function WhyDrillItem({
   item,
   learnedLang,
@@ -518,7 +517,7 @@ function WhyDrillItem({
 }) {
   const [selected, setSelected] = useState<number | null>(null);
   const [showTr, setShowTr] = useState(false);
-  // a helyes opció ne legyen mindig az első; seedelt keverés az item id-jából.
+  // the correct option should not always be the first; seeded shuffle from the item id.
   const [shown] = useState(() => shuffleOptions(item.options, item.correctIndex, hashString(item.id)));
   const answered = selected !== null;
   const isCorrect = answered && selected === shown.correctIndex;
@@ -529,13 +528,13 @@ function WhyDrillItem({
     setSelected(i);
   };
 
-  // ha van `target`, a mondatban kiemelve jelenik meg, és a kérdés-sor
-  // megnevezi, mire vonatkozik a kérdés (a felhasználó nem tudta kitalálni,
-  // melyik szóról van szó).
+  // if there is a `target`, it is shown highlighted in the sentence, and the question line
+  // names what the question refers to (the user could not figure out
+  // which word it was about).
   const targetSpan = item.target ? findWholeWord(item.es, item.target) : null;
 
-  // brutalista "miért" drill: mondat dobozban (a target b kitöltéssel),
-  // válaszok dobozként (helyes = a kitöltés + pipa, hibás = szaggatott, halvány).
+  // brutalist "why" drill: sentence in a box (the target with b fill),
+  // answers as boxes (right = fill + tick, wrong = dashed, faded).
   if (g.brutal) {
     return (
       <View style={styles.whyBody}>
@@ -590,7 +589,7 @@ function WhyDrillItem({
               >
                 <Text style={[styles.brutalOptionText, { color: hit ? g.onFill : g.ink }]}>{opt.text[contentLang] ?? opt.text.en}</Text>
                 {hit ? <Text style={[styles.brutalOptionText, { color: g.onFill }]}> ✓</Text> : null}
-                {/* kisbetűs példa-sor a szabály neve alatt, mi tartozik oda. */}
+                {/* lowercase example line under the rule's name, showing what belongs to it. */}
                 {optionHint(opt.text, contentLang) ? (
                   <Text testID="why-option-hint" style={[styles.optionHint, { color: hit ? g.onFill : g.mu }]}>
                     {optionHint(opt.text, contentLang)}
@@ -704,8 +703,8 @@ function WhyDrillItem({
   );
 }
 
-// igeidő-jelvény, minden fajtán megjelenik,
-// ahol az itemnek van `tense` mezője (choice/form/why/transform).
+// tense badge, shown on every kind
+// where the item has a `tense` field (choice/form/why/transform).
 function TenseBadge({ tense, colors }: { tense: { from: TenseId; to: TenseId }; colors: (typeof Colors)['light'] }) {
   const g = useGrammarColors();
   if (g.brutal) {
@@ -720,9 +719,9 @@ function TenseBadge({ tense, colors }: { tense: { from: TenseId; to: TenseId }; 
   );
 }
 
-// mondat-átírás egyik igeidőből a másikba.
-// A `key={item.id}` a hívó oldalon van (mint a többi ágnál),
-// hogy a beviteli mező üresen induljon a következő itemen.
+// sentence transformation from one tense to another.
+// The `key={item.id}` is on the caller's side (as with the other branches),
+// so the input field starts empty on the next item.
 function TransformDrillItem({
   item,
   contentLang,
@@ -747,21 +746,21 @@ function TransformDrillItem({
     const candidates = [item.answer, ...(item.accept ?? [])];
     const ok = candidates.some((c) => strictAnswerMatch(input, c, { strictAccents }));
     setResult(ok ? 'ok' : 'bad');
-    // a helyes mondat elhangzik, jó és rossz válasz után is.
+    // the correct sentence is spoken, after right and wrong answers alike.
     speak(item.answer, speechLang('es'));
   };
 
   const inputBorder = result === 'ok' ? '#22C55E' : result === 'bad' ? '#EF4444' : colors.tabIconDefault;
 
-  // a Check (és utána a Next) a billentyűzet fölé dokkolt sáv, ahogy a szókártyán (DockSlot).
+  // Check (and then Next) is a bar docked above the keyboard, as on the word card (DockSlot).
   const { docked, padBottom } = useDockedAction(
     result === null
       ? { label: `✓ ${s.grammar.check}`, tone: 'check', testID: 'transform-check', onPress: check }
       : { label: s.grammar.next, tone: 'next', testID: 'transform-next', onPress: () => onDone(result === 'ok') }
   );
 
-  // brutalista mondat-átírás: a mondat dobozban, az F gomb kis doboz, a
-  // beviteli mező 2,5 px ink keretű (hibás után szaggatott), b kitöltésű visszajelző.
+  // brutalist sentence transformation: the sentence in a box, the F button a small box, the
+  // input field has a 2.5 px ink border (dashed after a wrong answer), b-filled feedback.
   if (g.brutal) {
     return (
       <View style={styles.transformBody}>
@@ -912,12 +911,12 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   const [seed] = useState(() => resume?.seed ?? hashString(`${topic.topic}:${Date.now()}`));
   const fullRound = useMemo(() => buildGrammarRound(topic, seed), [topic, seed]);
   const transformPool = useMemo(() => fullRound.map((r) => r.item).filter(isTransformItem), [fullRound]);
-  // a körös (legkevésbé-gyakorolt-elöl, legfeljebb 10 itemes)
-  // adagolás csak akkor él, ha egy tiszta "csak mondat-átírás" indításnál
-  // TÉNYLEG több item van, mint egy kör; kisebb leckén (ahol az egy kör úgyis
-  // minden itemet lefed) a régi, szerzői sorrendű, seed nélküli viselkedés
-  // marad, hogy ne boruljon fel ok nélkül a többi fajta és a kis leckék
-  // determinisztikus sorrendje.
+  // round-based batching (least-practiced first, at most 10 items)
+  // only applies when a pure "sentence transformation only" start
+  // REALLY has more items than one round; on a smaller lesson (where one round covers
+  // every item anyway) the old authored-order, seedless behaviour
+  // stays, so the other kinds and the small lessons' deterministic
+  // order are not upset for no reason.
   const useTransformRounds = kinds.length === 1 && kinds[0] === 'transform' && transformPool.length > TRANSFORM_ROUND_SIZE;
   const round = useMemo(() => {
     if (useTransformRounds) {
@@ -925,9 +924,9 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
     }
     return fullRound.filter((r) => kinds.includes(grammarRoundItemKind(r)));
   }, [useTransformRounds, transformPool, transformSeen, seed, fullRound, kinds]);
-  // a kör tételeinek id-listája (a félbehagyott kör mentéséhez és a folytatás
-  // érvényesítéséhez) és a kör egységei: egy tétel 1 egység, a párosítás annyi, ahány
-  // párja van (a részpont a jó párok aránya, ezért a kör összesítője is párokban).
+  // id list of the round's items (for saving an unfinished round and for validating
+  // the resume) and the round's units: one item is 1 unit, matching is as many as it has
+  // pairs (the partial credit is the ratio of right pairs, so the round total is in pairs too).
   const roundIds = useMemo(() => round.map((r) => r.item.id), [round]);
   const totalUnits = useMemo(() => round.reduce((n, r) => n + (isMatchItem(r.item) ? r.item.pairs.length : 1), 0), [round]);
   const resumeOk =
@@ -939,10 +938,10 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   const [index, setIndex] = useState(resumeOk ? resume.index : 0);
   const [selected, setSelected] = useState<number | null>(null);
   const [correctCount, setCorrectCount] = useState(resumeOk ? resume.correct : 0);
-  // a választós tétel mondat-fordítása (F-gomb) nyitva van-e; új tételnél újra zárt.
+  // whether the choice item's sentence translation (F button) is open; closed again for a new item.
   const [showTr, setShowTr] = useState(false);
-  // egymás utáni helyes válaszok a körön belül, csak memóriában (nincs
-  // DB-írás); hibánál nullázódik, "x2"-től látszik a combo-matrica.
+  // consecutive right answers within the round, in memory only (no
+  // DB write); resets on a mistake, the combo sticker shows from "x2".
   const [combo, setCombo] = useState(0);
   const comboRef = useRef(0);
   const bestComboRef = useRef(0);
@@ -954,18 +953,18 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
     setCombo(comboRef.current);
     if (!wasCorrect && miss && !missRef.current) missRef.current = miss;
   };
-  // a Beállítások ékezet-szigor kapcsolója, egyszer lekérve, csak ha a
-  // körben van transform tétel (a többi ágnak nincs rá szüksége).
+  // the Settings accent-strictness switch, fetched once, only if the
+  // round has a transform item (the other branches don't need it).
   const [strictAccents, setStrictAccents] = useState(false);
-  // a diktálás is az ékezet-beállítást használja.
+  // dictation uses the accent setting too.
   const hasTransform = kinds.includes('transform') || kinds.includes('dictation');
   useEffect(() => {
     if (!hasTransform) return;
     getDb().getStrictAccents().then(setStrictAccents).catch(() => {});
   }, [hasTransform]);
 
-  // a szülő ebből tudja a feedback-kontextusba tenni,
-  // melyik itemre panaszkodott a tanuló.
+  // from this the parent knows which item the learner
+  // complained about, to put it in the feedback context.
   useEffect(() => {
     const id = round[index]?.item.id;
     if (id) onItemChange?.(id);
@@ -982,10 +981,10 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
       setShowTr(false);
       return;
     }
-    // a kör item-id-jei csak a körös adagolásnál kellenek (a
-    // szülő ebből számolja a `seen` térképet); a többi ág a korábbi
-    // 2-argumentumos hívást kapja, hogy a meglévő onFinish-tesztek
-    // (toHaveBeenCalledWith(correct, total)) ne törjenek.
+    // the round's item ids are only needed for round-based batching (the
+    // parent computes the `seen` map from them); the other branches get the earlier
+    // 2-argument call, so the existing onFinish tests
+    // (toHaveBeenCalledWith(correct, total)) don't break.
     onRoundStats?.({
       bestCombo: bestComboRef.current,
       seconds: secondsSince(startedAt),
@@ -1005,7 +1004,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   // Match/form score at COMPLETION time, in the same event as the "next" tap,
   // so correctCount's state update has not landed yet; the final tally is
   // computed locally instead of trusted from the (possibly stale) closure.
-  // `correctUnits` a részpont (a párosítás jó párjai); nélküle a tétel 1 egység, jó vagy nem.
+  // `correctUnits` is the partial credit (matching's right pairs); without it the item is 1 unit, right or not.
   const completeItem = (wasCorrect: boolean, correctUnits?: number) => {
     noteResult(
       wasCorrect,
@@ -1018,7 +1017,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
     advance(finalCount);
   };
 
-  // neo-brutalista fejléc: szegmentált progress + combo-matrica (b).
+  // neo-brutalist header: segmented progress + combo sticker (b).
   const progressText = s.games.grammarChoice.progress(index + 1, round.length);
   const header = g.brutal ? (
     <View style={styles.brutalHead}>
@@ -1117,9 +1116,9 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   const answered = selected !== null;
   const isCorrect = answered && selected === current.correctIndex;
   const pickedText = answered ? current.options[selected] : undefined;
-  // a jelölős feladatnál a mondat egészben áll, nincs mit kettévágni. A
-  // koppintható szavak sorszáma a `current.options`-be mutat (a round-építő a
-  // mondat szavait teszi oda), a szóközök és írásjelek kimaradnak belőle.
+  // in the mark task the sentence stays whole, there is nothing to split in two. The
+  // index of the tappable words points into `current.options` (the round builder puts
+  // the sentence's words there), spaces and punctuation are left out of it.
   const marking = isMarkItem(current.item);
   const [before, after] = marking ? ['', ''] : current.item.sentence.split('___');
   const markParts = marking ? markTokens(current.item.sentence) : [];
@@ -1133,10 +1132,10 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   const selectOption = (optIdx: number) => {
     if (answered) return;
     setSelected(optIdx);
-    // az el / la tételnél a főnév jelentése (tr) a válasz után magától kinyílik; az F-gomb ettől még kapcsol.
+    // for the el / la item the noun's meaning (tr) opens by itself after the answer; the F button still toggles.
     if (isArticleSetItem(current.item)) setShowTr(true);
     if (optIdx === current.correctIndex) setCorrectCount((c) => c + 1);
-    // a helyes, kitöltött mondat elhangzik, jó és rossz válasz után is.
+    // the correct, filled-in sentence is spoken, after right and wrong answers alike.
     speak(
       marking ? current.item.sentence : current.item.sentence.replace('___', current.options[current.correctIndex]),
       speechLang(learnedLang)
@@ -1152,15 +1151,15 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
     );
   };
 
-  // a jelvény csak a gap-ágon (choice) jelenik meg, a jelölős tételnek
-  // nincs `tense` mezője (lessonTypes.ts).
+  // the badge only shows on the gap branch (choice); the mark item
+  // has no `tense` field (lessonTypes.ts).
   const badgeTense = !marking && !isMarkItem(current.item) ? current.item.tense : undefined;
-  // a mondat fordítása a felület nyelvén (ha a tételnek van `tr`-je).
+  // the sentence's translation in the UI language (if the item has a `tr`).
   const choiceTr = current.item.tr ? (current.item.tr[contentLang as 'hu' | 'en' | 'es' | 'de'] ?? current.item.tr.en) : undefined;
 
-  // Neo-brutalista: a
-  // mondat dobozban, a hiány b kitöltésű blokk, a válaszok 2x2 rácsban, a
-  // helyes = a kitöltés + pipa, a visszajelző doboz b kitöltésű.
+  // Neo-brutalist: the sentence in a box, the gap a b-filled block,
+  // the answers in a 2x2 grid, the right one = fill + tick,
+  // the feedback box b-filled.
   if (g.brutal) {
     const blankFill = answered ? (isCorrect ? g.a : g.ink) : g.b;
     const blankColor = answered ? (isCorrect ? g.onA : g.bg) : g.onB;
@@ -1360,8 +1359,8 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
           <Text style={[styles.explainText, { color: colors.text }]}>{current.item.why[contentLang] ?? current.item.why.en}</Text>
           {!isCorrect && pickedText !== undefined ? (
             <Text style={[styles.explainText, { color: colors.tabIconDefault }]}>
-              {/* a mondatban bármelyik szóra koppinthat, tehát a jelölős
-                  feladatnak általános tartalék-indoklása van. */}
+              {/* any word in the sentence can be tapped, so the mark
+                  task has a generic fallback explanation. */}
               {wrongExplanation(current.item, pickedText, contentLang) ??
                 (marking ? s.games.grammarChoice.markWrong : '')}
             </Text>
@@ -1388,7 +1387,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
 const styles = StyleSheet.create({
   body: { padding: 20, gap: 12, paddingBottom: 60 },
   progress: { fontSize: 13, textAlign: 'center' },
-  // neo-brutalista drill (nagybetűs címek, 500 súly, sarok 0).
+  // neo-brutalist drill (uppercase titles, weight 500, corner 0).
   brutalHead: { gap: 4 },
   brutalHeadRow: { flexDirection: 'row', alignItems: 'center', gap: 12 },
   brutalSegments: { flex: 1 },
@@ -1399,7 +1398,7 @@ const styles = StyleSheet.create({
   brutalOptionInner: { paddingVertical: 16, paddingHorizontal: 8, flexDirection: 'row', justifyContent: 'center' },
   brutalOptionText: { fontSize: 17, fontWeight: '500', flexShrink: 1, textAlign: 'center' },
   brutalFeedback: { padding: 16, gap: 8 },
-  // A chat-gomb (FAB) alól is kigördül az utolsó elem.
+  // The last item also rolls out from under the chat button (FAB).
   brutalBodyPad: { paddingBottom: 130 },
   brutalClose: { width: 34, height: 34, alignItems: 'center', justifyContent: 'center' },
   brutalCloseText: { fontSize: 16, fontWeight: '500' },
@@ -1412,14 +1411,14 @@ const styles = StyleSheet.create({
   brutalAnswer: { fontSize: 20, fontWeight: '500', alignSelf: 'flex-start' },
   brutalQuestion: { fontSize: 15, fontWeight: '500', textTransform: 'uppercase', textAlign: 'center' },
   brutalWhyOptions: { gap: 12 },
-  // a szabály-opció alatti kisbetűs példa-sor (a wrap-sorban új sorba törik).
+  // lowercase example line under the rule option (wraps onto a new line in the wrap row).
   optionHint: { fontSize: 12, textAlign: 'center', flexBasis: '100%', marginTop: 2 },
   brutalWhyOption: { paddingVertical: 14, paddingHorizontal: 12, flexDirection: 'row', justifyContent: 'center', flexWrap: 'wrap' },
   brutalF: { width: 40, height: 40, alignItems: 'center', justifyContent: 'center' },
   brutalNext: { paddingVertical: 14, alignItems: 'center' },
   brutalNextText: { fontSize: 16, fontWeight: '500', textTransform: 'uppercase' },
   sentenceCard: { borderRadius: 16, padding: 20 },
-  // flexShrink, hogy a sor-konténerben (mondat + 🔊) is törjön, ne tolja ki a testvért.
+  // flexShrink so it wraps inside the row container (sentence + 🔊) too and does not push out its sibling.
   sentence: { fontSize: 20, lineHeight: 30, textAlign: 'center', flexShrink: 1 },
   options: { gap: 10 },
   hiddenOptions: { height: 0 },
@@ -1447,14 +1446,14 @@ const styles = StyleSheet.create({
   whyBody: { gap: 12 },
   whySentenceRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 10 },
   whyTranslation: { fontSize: 14, textAlign: 'center', marginTop: 6 },
-  // a `target` kiemelése a mondatban + a kérdés-sor, ami megnevezi.
+  // highlighting the `target` in the sentence + the question line that names it.
   whyTargetBold: { fontWeight: '800' },
   whyQuestion: { fontSize: 15, fontWeight: '700', textAlign: 'center' },
-  // a "why" fordítás rejtve indul, gombbal előhozható.
+  // the "why" translation starts hidden, can be brought up with a button.
   whyTrButton: { alignSelf: 'center', marginTop: 6, paddingVertical: 4, paddingHorizontal: 10 },
   whyTrButtonText: { fontSize: 13, fontWeight: '700' },
   speak: { fontSize: 18 },
-  // igeidő-jelvény + mondat-átírás drill.
+  // tense badge + sentence transformation drill.
   tenseBadge: { alignSelf: 'flex-start', paddingVertical: 6, paddingHorizontal: 12, borderRadius: 999 },
   tenseBadgeText: { fontSize: 13, fontWeight: '700' },
   transformBody: { gap: 12 },

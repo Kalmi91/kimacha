@@ -3,7 +3,7 @@ import { getDb } from './database';
 import { isDailyMilestone } from './usageMilestones';
 import { localDateString } from './usageStats';
 
-// Active-usage timer backing the "+1 perc wauuuuuuuu" toast + the stats tab.
+// Active-usage timer backing the "+1 min woooow" toast + the stats tab.
 //
 // A second only counts toward the running minute while the app is in the
 // foreground (AppState === 'active') AND the user interacted within the last
@@ -28,8 +28,8 @@ const MINUTE_SECONDS = 60;
 type UsageMilestone = { scope: 'session' | 'daily'; minutes: number };
 const SESSION_MILESTONES = [30];
 
-// User feedback: "ha éjfélkor játszunk a játékkal, és pont átfordul
-// akkor a napi statot írja ki és gratuláljon". The tick loop is already running
+// Midnight case: if the learner is playing right as the day turns over, the app should
+// show the daily stat and congratulate. The tick loop is already running
 // while the learner plays, so it is also the thing that can notice the calendar
 // day turning over under them; it then reports the FINISHED day's totals.
 type DayRollover = { date: string; minutes: number; words: number };

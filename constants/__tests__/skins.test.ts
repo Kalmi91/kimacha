@@ -1,5 +1,5 @@
-// a téma-motor adata: kontraszt-kapu (minden téma × minden módja), nevek (en + es),
-// csoportok, onboarding-lista, Colors-kulcsok, a mai classic / brutal értékek egyezése.
+// the theme engine data: contrast gate (every theme × each of its modes), names (en + es),
+// groups, onboarding list, Colors keys, match with today's classic / brutal values.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -30,9 +30,9 @@ import type { ThemeKey } from '@/lib/ThemeContext';
 
 const MIN = 4.5;
 
-// Kivételek: olyan pár, ami ténylegesen bukik és ezért itt rögzített (a teszt ellenőrzi, hogy még
-// bukik; ha javítják, a kivételt törölni kell). Azóta üres: a classic sötét onA / a
-// (fehér a #3B82F6-on 3,68) a fehér helyett a sötét alap-színt kapta (4,85).
+// Exemptions: pairs that actually fail and are therefore recorded here (the test checks that they still
+// fail; if one gets fixed, the exemption must be deleted). Empty since then: the classic dark onA / a
+// (white on #3B82F6 is 3.68) got the dark base color instead of white (4.85).
 const KNOWN_EXEMPT = new Set<string>();
 
 function pairs(c: SkinColors): [string, string, string][] {
@@ -40,7 +40,7 @@ function pairs(c: SkinColors): [string, string, string][] {
     ['ink/bg', c.ink, c.bg],
     ['ink/paper', c.ink, c.paper],
     ['mu/bg', c.mu, c.bg],
-    // a halvány szöveg a kártyán és a beviteli mezőben (placeholder) is olvasható
+    // the muted text is readable on the card and in the input field (placeholder) too
     ['mu/paper', c.mu, c.paper],
     ['onA/a', c.onA, c.a],
   ];
@@ -49,7 +49,7 @@ function pairs(c: SkinColors): [string, string, string][] {
   return list;
 }
 
-describe('kontraszt-kapu (PLAN-temak Téma-spec)', () => {
+describe('contrast gate (theme spec)', () => {
   for (const id of SKIN_IDS) {
     for (const mode of SKINS[id].modes) {
       it(`${id} / ${mode}: ink/bg, ink/paper, mu/bg, mu/paper, mu/field, onA/a, onB/b >= ${MIN}`, () => {
@@ -65,7 +65,7 @@ describe('kontraszt-kapu (PLAN-temak Téma-spec)', () => {
     }
   }
 
-  it('a Neo-brutál al-paletták (brand, electric, lime, cyan, orange) is átmennek mindkét módban', () => {
+  it('the Neo-brutalist sub-palettes (brand, electric, lime, cyan, orange) pass in both modes too', () => {
     for (const p of Object.keys(PALETTE_FILLS) as FillPaletteId[]) {
       const colors = brutalSkinColors(p);
       for (const mode of ['light', 'dark'] as SkinMode[]) {
@@ -76,7 +76,7 @@ describe('kontraszt-kapu (PLAN-temak Téma-spec)', () => {
     }
   });
 
-  it('a b kitöltésen (onB nélkül is) olvasható a szöveg, az onB / b arány >= 4,5', () => {
+  it('on the b fill (even without onB) the text is legible, the onB / b ratio >= 4.5', () => {
     for (const id of SKIN_IDS) {
       if (id === 'classic') continue;
       for (const mode of SKINS[id].modes) {
@@ -86,12 +86,12 @@ describe('kontraszt-kapu (PLAN-temak Téma-spec)', () => {
     }
   });
 
-  it('bestOn a jobb kontrasztú jelöltet adja', () => {
+  it('bestOn gives the candidate with better contrast', () => {
     expect(bestOn('#B8FF5C', ['#B8FF5C', '#111111'])).toBe('#111111');
     expect(bestOn('#3FA08C', ['#F3E9D2', '#0E1A2B'])).toBe('#0E1A2B');
   });
 
-  it('legibleOn: az átmenő szín változatlan, a bukó azonos árnyalaton sötétedik / világosodik', () => {
+  it('legibleOn: a passing color is unchanged, a failing one darkens / lightens on the same hue', () => {
     expect(legibleOn('#15803D', '#FFFFFF')).toBe('#15803D');
     for (const [fg, bg] of [['#EAB308', '#FFFFFF'], ['#7C3AED', '#1E293B'], ['#38BDF8', '#FFFFFF'], ['#F472B6', '#FFFFFF']]) {
       const out = legibleOn(fg, bg);
@@ -103,8 +103,8 @@ describe('kontraszt-kapu (PLAN-temak Téma-spec)', () => {
   });
 });
 
-describe('téma-lista', () => {
-  it('24 téma, mindegyiknek van en + es neve, és a Saját mixnek is', () => {
+describe('theme list', () => {
+  it('24 themes, each has an en + es name, and so does Custom mix', () => {
     expect(SKIN_IDS).toHaveLength(24);
     for (const id of [...SKIN_IDS, 'mix'] as const) {
       expect(en.skins.names[id]).toBeTruthy();
@@ -116,19 +116,19 @@ describe('téma-lista', () => {
     }
   });
 
-  it('a spanyol nevekben nincs fordított ¿ vagy ¡', () => {
+  it('no inverted ¿ or ¡ in the Spanish names', () => {
     const all = [...Object.values(es.skins.names), ...Object.values(es.skins.groups)].join(' ');
     expect(all).not.toMatch(/[¿¡]/);
   });
 
-  it('az onboarding-ajánlat 5 érvényes téma, az alapértelmezés a brutal', () => {
+  it('the onboarding offer is 5 valid themes, the default is brutal', () => {
     expect(ONBOARDING_SKINS).toEqual(['ukiyoe', 'csillampony', 'szocreal', 'brutal', 'deco']);
     expect(ONBOARDING_SKINS).toHaveLength(5);
     for (const id of ONBOARDING_SKINS) expect(SKINS[id]).toBeDefined();
     expect(DEFAULT_SKIN).toBe('brutal');
   });
 
-  it('a csoportok együtt pontosan a 24 id-t fedik, ismétlés nélkül, és a téma saját csoportja egyezik', () => {
+  it("the groups together cover exactly the 24 ids, without repetition, and a theme's own group matches", () => {
     const flat = SKIN_GROUPS.flatMap((g) => g.skins);
     expect(flat).toHaveLength(24);
     expect([...flat].sort()).toEqual([...SKIN_IDS].sort());
@@ -138,7 +138,7 @@ describe('téma-lista', () => {
     expect(SKIN_GROUPS.map((g) => g.id)).toEqual(['ajanlott', 'muveszet', 'kultura', 'hangulat', 'olvasas']);
   });
 
-  it('a betű-nevek a regisztrált 28 név egyikei (a ShipporiMincho helyett Spectral-Light)', () => {
+  it('the font names are among the 28 registered names (Spectral-Light instead of ShipporiMincho)', () => {
     const registered = new Set([
       'PoiretOne', 'JosefinSans', 'AlfaSlabOne', 'Atkinson', 'Atkinson-Bold', 'Lexend', 'VT323',
       'Syne-ExtraBold', 'Fredoka-Medium', 'Orbitron-Bold', 'Cormorant-MediumItalic', 'Spectral-Light', 'Playfair-Black',
@@ -152,11 +152,11 @@ describe('téma-lista', () => {
     }
   });
 
-  it('brutal: title / word / body betű null, a mai rendszer-betű (PLAN-temak 6E, Kálmán 2a)', () => {
+  it('brutal: title / word / body font null, the current system font', () => {
     expect(SKINS.brutal.fonts).toEqual({ title: null, word: null, body: null });
   });
 
-  it('egy módú témák: loteria, retro95, y2k, kawaii, gamer, szocreal, plakat, csillampony, bauhaus, popart, szecesszio, kalocsai, memphis, kodex, graffiti', () => {
+  it('single-mode themes: loteria, retro95, y2k, kawaii, gamer, szocreal, plakat, csillampony, bauhaus, popart, szecesszio, kalocsai, memphis, kodex, graffiti', () => {
     const single = SKIN_IDS.filter((id) => SKINS[id].modes.length === 1).sort();
     expect(single).toEqual(
       ['loteria', 'retro95', 'y2k', 'kawaii', 'gamer', 'szocreal', 'plakat', 'csillampony', 'bauhaus', 'popart', 'szecesszio', 'kalocsai', 'memphis', 'kodex', 'graffiti'].sort()
@@ -167,8 +167,8 @@ describe('téma-lista', () => {
   });
 });
 
-describe('Colors-kulcsok', () => {
-  it('minden téma × módjához van `<id>-<mód>` kulcs (brutal: al-paletta, classic: light / dark), semmi más', () => {
+describe('Colors keys', () => {
+  it('for each theme × mode there is a `<id>-<mode>` key (brutal: sub-palette, classic: light / dark), nothing else', () => {
     const expected: string[] = ['light', 'dark'];
     for (const p of Object.keys(PALETTE_FILLS)) expected.push(`${p}-light`, `${p}-dark`);
     for (const id of SKIN_IDS) {
@@ -178,7 +178,7 @@ describe('Colors-kulcsok', () => {
     expect(Object.keys(Colors).sort()).toEqual(expected.sort());
   });
 
-  it('a Colors-bejegyzés a téma színeit adja (text = ink, background = bg, tint = a, card = paper, onTint = onA)', () => {
+  it('the Colors entry gives the theme colors (text = ink, background = bg, tint = a, card = paper, onTint = onA)', () => {
     for (const id of SKIN_IDS) {
       if (id === 'brutal' || id === 'classic') continue;
       for (const mode of SKINS[id].modes) {
@@ -198,7 +198,7 @@ describe('Colors-kulcsok', () => {
     }
   });
 
-  it('a classic téma színei a mai Colors.light / Colors.dark értékei', () => {
+  it('the colors of the classic theme are the current Colors.light / Colors.dark values', () => {
     for (const mode of ['light', 'dark'] as SkinMode[]) {
       const c = SKINS.classic.colors[mode] as SkinColors;
       const entry = Colors[mode];
@@ -214,15 +214,15 @@ describe('Colors-kulcsok', () => {
     }
   });
 
-  it('a brutal téma a mai BASE + brand értékek, onA = onB = ON_FILL', () => {
+  it('the brutal theme is the current BASE + brand values, onA = onB = ON_FILL', () => {
     for (const mode of ['light', 'dark'] as SkinMode[]) {
       expect(SKINS.brutal.colors[mode]).toMatchObject({ ...BASE[mode], a: PALETTE_FILLS.brand.a, b: PALETTE_FILLS.brand.b, onA: '#111111', onB: '#111111' });
     }
   });
 });
 
-describe('mód-feloldás és mix-segédek', () => {
-  it('egy módú témánál a beállítás hatástalan, kétmódúnál az Auto / Light / Dark', () => {
+describe('mode resolution and mix helpers', () => {
+  it('for a single-mode theme the setting has no effect, for a dual-mode one Auto / Light / Dark', () => {
     expect(resolveMode(['light'], 'dark', 'dark')).toBe('light');
     expect(resolveMode(['dark'], 'light', 'light')).toBe('dark');
     expect(resolveMode(['light', 'dark'], 'system', 'dark')).toBe('dark');
@@ -230,7 +230,7 @@ describe('mód-feloldás és mix-segédek', () => {
     expect(resolveMode(['dark', 'light'], 'light', 'dark')).toBe('light');
   });
 
-  it('isSkinMix / parseSkinMix: érvényes mix átmegy, érvénytelen null', () => {
+  it('isSkinMix / parseSkinMix: a valid mix passes, an invalid one null', () => {
     const mix = { colors: 'electric', font: 'deco', shape: 'memphis', decor: 'none' };
     expect(isSkinMix(mix)).toBe(true);
     expect(isSkinMix({ ...mix, colors: 'ukiyoe', decor: 'kodex' })).toBe(true);
@@ -242,7 +242,7 @@ describe('mód-feloldás és mix-segédek', () => {
     expect(parseSkinMix(null)).toBeNull();
   });
 
-  it('régi felhasználó: classic paletta → classic, minden más → brutal', () => {
+  it('old user: classic palette → classic, anything else → brutal', () => {
     expect(legacySkinFor('classic')).toBe('classic');
     for (const p of ['brand', 'electric', 'lime', 'cyan', 'orange'] as const) expect(legacySkinFor(p)).toBe('brutal');
   });

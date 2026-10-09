@@ -8,10 +8,10 @@ import { BrutalBox, textOnFill, type BrutalFill } from '@/components/grammar/Bru
 
 type ColorScheme = (typeof Colors)['light'];
 
-// 5b: a LearnChrome-ban ma nincs kiemelhető `badge` chip-stílus (az ITER5
-// refaktor a régi jelvény-sort egy egysoros státusz-sorra vonta össze), ezért
-// ez új komponens, a jóváhagyott terv (anki-ui-terv.html) `.badge` értékeivel:
-// 13-as betű, 999 radius, halvány háttér, félkövér, szín-változatok.
+// LearnChrome currently has no highlightable `badge` chip style (an earlier
+// refactor merged the old badge row into a single-line status row), so
+// this is a new component with the approved design's `.badge` values:
+// 13 px font, 999 radius, faint background, bold, colour variants.
 type Tone = 'default' | 'blue' | 'green' | 'pink';
 
 type BadgeItem = {
@@ -31,7 +31,7 @@ type Props = {
   colors: ColorScheme;
 };
 
-// brutalista palettán kis dobozok (a due = b, a done = a kitöltés).
+// small boxes on the brutalist palette (due = b, done = a fill).
 const TONE_FILL: Record<Tone, BrutalFill> = { default: 'paper', blue: 'b', green: 'paper', pink: 'a' };
 
 export default function BadgeRow({ items, colors }: Props) {
@@ -68,8 +68,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: 6,
-    // a spanyol feliratú chipek összege szélesebb a képernyőnél; enélkül a
-    // sor nem szűkül a szülőjéhez, így sosem tördelt, és az utolsó chip kilógott.
+    // the sum of the Spanish-labelled chips is wider than the screen; without this the
+    // row does not shrink to its parent, so it never wrapped and the last chip stuck out.
     flexShrink: 1,
   },
   badge: {

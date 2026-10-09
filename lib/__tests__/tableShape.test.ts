@@ -57,9 +57,9 @@ describe('splitStemEnding', () => {
   });
 });
 
-// minden oszlop (ige) saját színt kap, index szerint, nem
-// igeosztály szerint (tener/poder/hacer korábban egy színt kapott, mert
-// mind -er végű, holott 3 külön ige).
+// every column (verb) gets its own color, by index, not
+// by verb class (tener/poder/hacer used to get one color because
+// they all end in -er, although they are 3 separate verbs).
 describe('verbColumnColor', () => {
   it('gives four different columns four different colours, light and dark', () => {
     const light = [0, 1, 2, 3].map((i) => verbColumnColor(i, false));

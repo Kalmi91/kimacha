@@ -40,7 +40,7 @@ const flush = async (times = 3) => {
 
 const cells = tableCellsForLesson(lessonFor('es', 'indefinido-regular')!);
 
-describe('table-deck screen: enPrompt (FB378)', () => {
+describe('table-deck screen: enPrompt', () => {
   beforeEach(async () => {
     jest.clearAllMocks();
     const db = getDb();
@@ -63,7 +63,7 @@ describe('table-deck screen: enPrompt (FB378)', () => {
     const first = cells.find((c) => screen.queryByText(c.enPrompt!) !== null);
     expect(first).toBeTruthy();
     expect(screen.getByText('translate to Spanish')).toBeTruthy();
-    // az infinitivus alapból rejtett, a súgó-gomb mutatja.
+    // the infinitive is hidden by default, the hint button shows it.
     expect(screen.queryByText(first!.verb)).toBeNull();
     fireEvent.press(screen.getByTestId('tabledeck-hint'));
     expect(screen.getByText(first!.verb)).toBeTruthy();

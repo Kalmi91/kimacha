@@ -12,11 +12,10 @@ import { hashString, shuffleArray } from '@/lib/shuffle';
 import { useTheme } from '@/lib/ThemeContext';
 import ExamButton from './ExamButton';
 
-// párosítás. Bal oszlop = a tanult nyelv
-// szavai, alul a kiinduló nyelvű jelentések; a kijelölt bal sorhoz a jelentésre
-// koppintva rendel párt (a sor a következő párosítatlanra lép). A "Check" csak akkor
-// él, ha minden sornak van párja; csupa jó pár után a vizsga megy tovább, különben a
-// helyes párok látszanak, és a "Next" lép tovább.
+// matching. Left column = words of the learned language, the source-language meanings below;
+// tapping a meaning assigns it as the pair of the selected left row (the selection then moves to
+// the next unpaired row). "Check" is only enabled when every row has a pair; if all pairs are
+// right the exam moves on, otherwise the correct pairs are shown and "Next" moves on.
 type Props = {
   pairs: { left: string; right: string }[];
   onDone: (correct: boolean) => void;
@@ -33,7 +32,7 @@ export default function ExamMatchCard({ pairs, onDone }: Props) {
       hashString(pairs.map((p) => p.left).join('|')),
     ),
   );
-  // assigned[leftIdx] = a hozzárendelt jelentés (a pairs indexe), vagy null.
+  // assigned[leftIdx] = the assigned meaning (an index into pairs), or null.
   const [assigned, setAssigned] = useState<(number | null)[]>(() => pairs.map(() => null));
   const [selected, setSelected] = useState<number | null>(0);
   const [missed, setMissed] = useState(false);

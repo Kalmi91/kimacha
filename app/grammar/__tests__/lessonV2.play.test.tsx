@@ -1,6 +1,6 @@
-// a V2 pilot lecke (ser-estar) a lecke-képernyőn: a body
-// (LessonBody) renderel, és a felolvasás egyetlen play<->stop gombbal megy,
-// nem a lib/speech valódi motorjával, azt itt kimockoljuk.
+// the V2 pilot lesson (ser-estar) on the lesson screen: the body
+// (LessonBody) renders, and reading aloud goes through a single play<->stop button,
+// not through the real engine of lib/speech, which is mocked out here.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({

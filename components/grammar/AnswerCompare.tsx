@@ -5,13 +5,13 @@ import { charDiff } from '@/lib/charDiff';
 import { t } from '@/lib/i18n';
 import type { GrammarColors } from '@/lib/grammarColors';
 
-// hibás válasznál a tanuló saját válasza és a
-// helyes egymás alatt, a különbség kiemelve mindkét sorban: a saját sorban a
-// rossz betűk fordított (sötét) mezőn és áthúzva, a helyes sorban a hiányzó /
-// eltérő betűk a kitöltés színén és aláhúzva. Az alak (fordított mező, áthúzás,
-// aláhúzás) is jelez, nem csak a szín. A kis- és nagybetű eltérése nem hiba,
-// az ékezeté igen (ugyanaz, mint a ragozás-drill bírálata és a table-deck diffje).
-// Karakter-szintű összevetés: lib/charDiff.ts.
+// on a wrong answer the learner's own answer and the correct one appear one under the other, with
+// the difference highlighted in both rows: in the own row the wrong letters on an inverted (dark)
+// field and struck through, in the correct row the missing / differing letters on the fill colour
+// and underlined. The shape (inverted field, strikethrough, underline) signals too, not only the
+// colour. A difference in case is not a mistake, one in accents is (the same as the grading of the
+// conjugation drill and the diff of the table deck).
+// Character-level comparison: lib/charDiff.ts.
 export default function AnswerCompare({
   typed,
   correct,
@@ -21,17 +21,17 @@ export default function AnswerCompare({
   typed: string;
   correct: string;
   g: GrammarColors;
-  // true, ha színes kitöltésű doboz (pl. b) belsejében áll: a szöveg on-fill színű.
+  // true if it sits inside a box with a coloured fill (e.g. b): the text uses the on-fill colour.
   onFill?: boolean;
 }) {
   const s = t();
   const base = onFill ? g.onB : g.ink;
   const muted = onFill ? g.onB : g.mu;
   const fold = { case: true, accents: false };
-  // A saját sor: a nem-egyező betűk jelölve; a kihagyott betűk (missing) nem a
-  // tanuló írásai, ezért nem jelennek meg itt, csak a helyes sorban.
+  // The own row: the non-matching letters are marked; the omitted letters (missing) are not the
+  // learner's writing, so they do not appear here, only in the correct row.
   const typedChars = typed.trim().length > 0 ? charDiff(typed, correct, fold).filter((d) => !d.missing) : [];
-  // A helyes sor: amelyik betű nincs meg a tanuló válaszában, az ki van emelve.
+  // The correct row: a letter that is not in the learner's answer is highlighted.
   const correctChars = charDiff(correct, typed, fold).filter((d) => !d.missing);
 
   return (

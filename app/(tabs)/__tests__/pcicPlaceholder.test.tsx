@@ -1,6 +1,6 @@
-// a Learn kártya beírómezőjében szürke placeholder mondja meg, mit
-// kell írni ("Type in Spanish"); a nyelv neve az irány célnyelvéből jön
-// (es→en irányban "Type in English"). Mock-minta: pcicDirection.test.tsx.
+// The input field of the Learn card has a gray placeholder that tells what
+// to type ("Type in Spanish"); the language name comes from the target language of the direction
+// (in the es→en direction "Type in English"). Mock pattern: pcicDirection.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -43,12 +43,12 @@ const flush = async (times = 4) => {
   }
 };
 
-describe('PCIC fül: a beírómező placeholdere (PLAN-fb1001 K4)', () => {
+describe('PCIC tab: the input field placeholder', () => {
   beforeEach(async () => {
     await getDb().resetPcicCards();
   });
 
-  it('en→es irányban "Type in Spanish"', async () => {
+  it('in the en→es direction "Type in Spanish"', async () => {
     await getDb().setOnboarding('en', 'es');
     const { UNSAFE_getByType } = render(<PcicScreen />);
     await flush();
@@ -56,7 +56,7 @@ describe('PCIC fül: a beírómező placeholdere (PLAN-fb1001 K4)', () => {
     expect(UNSAFE_getByType(TextInput).props.placeholder).toBe('Type in Spanish');
   });
 
-  it('es→en irányban "Type in English"', async () => {
+  it('in the es→en direction "Type in English"', async () => {
     await getDb().setOnboarding('es', 'en');
     const { UNSAFE_getByType } = render(<PcicScreen />);
     await flush();

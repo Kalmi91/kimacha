@@ -1,5 +1,5 @@
-// a chat-FAB és a Feedback modal brutalista palettán (négyzetes BrutalBox,
-// doboz-modal), classic palettán a mai kör-gomb. Mock-minta: FeedbackModal.test.tsx.
+// The chat FAB and the Feedback modal on the brutalist palette (square BrutalBox,
+// box modal), today's round button on the classic palette. Mock pattern: FeedbackModal.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/buildFlavor', () => ({ IS_PLAY_BUILD: false, FEEDBACK_URL: 'https://example.test/feedback' }));
@@ -20,8 +20,8 @@ const flush = async (times = 6) => {
   }
 };
 
-describe('Feedback FAB, neo-brutalista (NY19)', () => {
-  it('brand palettán négyzetes BrutalBox FAB, a modal is doboz', async () => {
+describe('Feedback FAB, neo-brutalist', () => {
+  it('with the brand palette a square BrutalBox FAB, the modal is a box too', async () => {
     await getDb().setGrammarPalette('brand');
     const view = render(<ThemeProvider><FeedbackButton level="B1" languagePair="es-en" currentCard="pcic" /></ThemeProvider>);
     await flush();
@@ -31,7 +31,7 @@ describe('Feedback FAB, neo-brutalista (NY19)', () => {
     view.unmount();
   });
 
-  it('classic palettán a mai kör-gomb: nincs BrutalBox', async () => {
+  it('with the classic palette the current round button: no BrutalBox', async () => {
     await getDb().setGrammarPalette('classic');
     const view = render(<ThemeProvider><FeedbackButton level="B1" languagePair="es-en" currentCard="pcic" /></ThemeProvider>);
     await flush();

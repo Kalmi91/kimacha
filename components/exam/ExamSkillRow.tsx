@@ -9,8 +9,8 @@ import type { SkillResult } from '@/lib/exam/skills';
 
 type ColorScheme = (typeof Colors)['light'];
 
-// az eredmény-lap egy készség-sora: felirat,
-// pont és %, "Strong" vagy "Weak" jelzés (gyenge = a % az átmenési küszöb alatt) és egy sáv.
+// one skill row of the result sheet: caption, points and %, a "Strong" or "Weak" marker
+// (weak = the % is below the pass threshold) and a bar.
 type Props = {
   result: SkillResult;
   label: string;

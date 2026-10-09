@@ -1,15 +1,15 @@
-// a words-open kártyák ragozott alakjai (ragozott alak -> lemma
-// index). Tiszta modul (csak relatív import), hogy a `data/openWords.ts` glossza-keresője és a
-// `scripts/audit-games.mjs` tartalom-kapuja ugyanazt az alak-készletet használja.
+// the inflected forms of the words-open cards (inflected form -> lemma
+// index). A pure module (relative imports only), so that the gloss lookup of `data/openWords.ts` and the
+// content gate of `scripts/audit-games.mjs` use the same form set.
 //
-// A `lib/games/conjugate` motor a tőhangváltó és rendhagyó igéket szándékosan nem ragozza (a
-// gyakorló-játék csak biztos alakot tanít). Itt a KERESÉSHEZ kell az alak, nem a tanításhoz, ezért
-// azokra az igékre, amelyekre a motor null-t ad, a tőváltozatok szerinti bő (túlgeneráló) alakkészlet
-// megy: a hibás tőváltozat egy tanult ige hibás alakjaként is a tanult ige alakja, ugyanaz az
-// elv, mint a scripts/words-open-check.mjs R6 helyi generálásánál.
+// The `lib/games/conjugate` engine deliberately does not conjugate stem-changing and irregular verbs (the
+// practice game only teaches certain forms). Here the form is needed for LOOKUP, not for teaching, so
+// for the verbs the engine returns null for, a broad (over-generating) form set
+// built from the stem variants is used: even a wrong stem variant, as a wrong form of a learned verb, is still a form of that verb, the same
+// principle as in the local generation of R6 in scripts/words-open-check.mjs.
 
-// A ragozó motor és a főnév/melléknév-szabályok a hívótól jönnek (deps), így a modulnak nincs
-// importja, és a Node (scripts/audit-games.mjs) kiterjesztés nélküli relatív import nélkül tölti.
+// The conjugation engine and the noun/adjective rules come from the caller (deps), so the module has no
+// imports and Node (scripts/audit-games.mjs) loads it without an extensionless relative import.
 
 interface FormDeps {
   conjugate: (infinitive: string, tense: any) => { person: string; form: string }[] | null;
@@ -32,7 +32,7 @@ const CONDITIONAL = ['ía', 'ías', 'ía', 'íamos', 'ían'];
 
 const ACCENTED: Record<string, string> = { a: 'á', e: 'é', i: 'í', o: 'ó', u: 'ú' };
 
-/** Az ige lehetséges tövei: tőhangváltás (e>ie, e>i, o>ue, u>ue, o>u), c/g/z helyesírás-váltás, y-beszúrás. */
+/** The possible stems of the verb: stem change (e>ie, e>i, o>ue, u>ue, o>u), c/g/z spelling change, y insertion. */
 function stemVariants(stem: string, cls: 'ar' | 'er' | 'ir'): string[] {
   const out = new Set<string>([stem]);
   const swapLast = (s: string, ch: string, rep: string) => {
@@ -59,7 +59,7 @@ function stemVariants(stem: string, cls: 'ar' | 'er' | 'ir'): string[] {
   return [...out];
 }
 
-/** Bő alakkészlet a motor által nem ragozott igéhez (jelen, múlt, folyamatos múlt, jövő, feltételes, kötőmód jelen, gerundium, kötőmód múlt). */
+/** A broad form set for a verb the engine does not conjugate (present, preterite, imperfect, future, conditional, present subjunctive, gerund, past subjunctive). */
 export function looseVerbForms(infinitive: string): string[] {
   const cls = infinitive.slice(-2);
   if ((cls !== 'ar' && cls !== 'er' && cls !== 'ir') || infinitive.length < 4) return [];
@@ -72,11 +72,11 @@ export function looseVerbForms(infinitive: string): string[] {
   for (const e of FUTURE) out.push(infinitive + e);
   for (const e of CONDITIONAL) out.push(infinitive + e);
   for (const s of variants) out.push(s + (cls === 'ar' ? 'ando' : 'iendo'));
-  // -ir/-er tőre végződő magánhangzó: leyendo, creyendo; a trayendo-féle y-alak a stemVariants y-ágából
+  // a vowel ending an -ir/-er stem: leyendo, creyendo; the trayendo-type y form comes from the y branch of stemVariants
   for (const s of variants) {
     if (s.endsWith('y')) out.push(`${s}endo`);
   }
-  // kötőmód múlt: a múlt idő 3. szám többes alakjából (-ron)
+  // past subjunctive: from the 3rd person plural of the preterite (-ron)
   for (const s of variants) {
     const stems = cls === 'ar' ? [`${s}a`] : [`${s}ie`, `${s}ye`];
     for (const b of stems) out.push(...subjuntivoImperfecto(`${b}ron`));
@@ -86,7 +86,7 @@ export function looseVerbForms(infinitive: string): string[] {
 
 const VOSOTROS_IRREGULAR: Record<string, string> = { ir: 'vais', ser: 'sois', ver: 'veis', dar: 'dais' };
 
-/** A vosotros jelen idejű alakja az infinitívből (hablar > habláis, tener > tenéis, vivir > vivís). */
+/** The present vosotros form from the infinitive (hablar > habláis, tener > tenéis, vivir > vivís). */
 export function vosotrosPresente(infinitive: string): string[] {
   if (VOSOTROS_IRREGULAR[infinitive]) return [VOSOTROS_IRREGULAR[infinitive]];
   const cls = infinitive.slice(-2);
@@ -98,7 +98,7 @@ export function vosotrosPresente(infinitive: string): string[] {
   return [];
 }
 
-/** A múlt idő 3. szám többes alakjából a kötőmód múlt alakjai (hablaron > hablara, habláramos). */
+/** The past subjunctive forms from the 3rd person plural of the preterite (hablaron > hablara, habláramos). */
 export function subjuntivoImperfecto(pretérito3pl: string): string[] {
   if (!pretérito3pl.endsWith('ron')) return [];
   const base = pretérito3pl.slice(0, -3);
@@ -107,7 +107,7 @@ export function subjuntivoImperfecto(pretérito3pl: string): string[] {
   return [`${base}ra`, `${base}ras`, `${base}ran`, `${nos}ramos`];
 }
 
-// Rendhagyó melléknévi igenév, a végződés szerint (a toldott igék is: devolver > devuelto).
+// Irregular past participle, by ending (prefixed verbs too: devolver > devuelto).
 const IRREGULAR_PARTICIPLE_ENDINGS: [string, string][] = [
   ['poner', 'puesto'],
   ['hacer', 'hecho'],
@@ -121,7 +121,7 @@ const IRREGULAR_PARTICIPLE_ENDINGS: [string, string][] = [
   ['morir', 'muerto'],
 ];
 
-/** Az ige igenevei (melléknévi, hímnem/nőnem, egyes/többes): hablado, hablada, hablados, habladas. */
+/** The participles of the verb (past participle, masculine/feminine, singular/plural): hablado, hablada, hablados, habladas. */
 export function participleForms(infinitive: string): string[] {
   const cls = infinitive.slice(-2);
   const stem = infinitive.slice(0, -2);
@@ -142,8 +142,8 @@ export function participleForms(infinitive: string): string[] {
 }
 
 /**
- * Egy words-open kártya (`es` + `pos`) ragozott/többes/nemi alakjai a tőalakon (a fejszó) KÍVÜL.
- * Igénél a motor alakjai és a bő tőváltozat-készlet, az igenevek és a kötőmód múlt; főnévnél és melléknévnél a többes, melléknévnél a nemi alak.
+ * The inflected/plural/gendered forms of a words-open card (`es` + `pos`) besides the base form (the headword).
+ * For a verb: the engine's forms and the broad stem-variant set, the participles and the past subjunctive; for a noun and an adjective the plural, for an adjective the gendered form.
  */
 export function formsOfCard(es: string, pos: string, deps: FormDeps): string[] {
   const { conjugate, TENSES, esPlural, esFeminine } = deps;
@@ -151,7 +151,7 @@ export function formsOfCard(es: string, pos: string, deps: FormDeps): string[] {
   for (const alt of es.split(' / ')) {
     const written = alt.trim().toLowerCase();
     if (!written) continue;
-    // a visszaható ige (levantarse) a tő-infinitív alakjait adja (me levanto, se levantó)
+    // a reflexive verb (levantarse) gives the forms of its base infinitive (me levanto, se levantó)
     const head = pos === 'verb' && /(ar|er|ir)se$/.test(written) ? written.slice(0, -2) : written;
     if (pos === 'verb') {
       if (!ES_INFINITIVE.test(head)) continue;
@@ -167,8 +167,8 @@ export function formsOfCard(es: string, pos: string, deps: FormDeps): string[] {
         }
       }
       if (any) out.push(`${head.slice(0, -2)}${head.endsWith('ar') ? 'ando' : /[aeo]er$|[aeo]ir$/.test(head) ? 'yendo' : 'iendo'}`);
-      // a motor-lista a régi korpuszra szabott: a tőhangváltó igék egy része (acordar, caber) benne szabályosként
-      // szerepel, ezért a bő készlet minden igéhez hozzájön, nem csak a motor által elutasítottakhoz
+      // the engine list was tailored to the old corpus: some of the stem-changing verbs (acordar, caber) appear in it as regular,
+      // so the broad set is added for every verb, not only for those the engine rejected
       out.push(...looseVerbForms(head));
       out.push(...participleForms(head), ...vosotrosPresente(head));
     } else if (pos === 'noun' || pos === 'adj') {
@@ -192,8 +192,8 @@ export function formsOfCard(es: string, pos: string, deps: FormDeps): string[] {
 const ENCLITIC_PRONOUNS = ['melo', 'mela', 'selo', 'sela', 'telo', 'tela', 'nos', 'les', 'los', 'las', 'me', 'te', 'se', 'le', 'lo', 'la'];
 
 /**
- * Az igéhez írt névmás levágása (verlo, ayúdame, repetirlo, visitarnos): a lehetséges tövek
- * (legalább 3 betű). A hívó dönti el, melyik tő ige-alak (a keresés kulcsa ékezet nélküli).
+ * Stripping the pronoun attached to a verb (verlo, ayúdame, repetirlo, visitarnos): the possible stems
+ * (at least 3 letters). The caller decides which stem is a verb form (the lookup key has no accents).
  */
 export function encliticBases(word: string): string[] {
   const out: string[] = [];

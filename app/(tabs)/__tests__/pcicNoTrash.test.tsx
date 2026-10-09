@@ -1,5 +1,5 @@
-// a 🗑️ (haladás-nullázás) kikerült a Learn fejlécéből, a
-// Beállításokba költözött (settingsReset.test.tsx). Mock-minta: pcicFocus.test.tsx.
+// The 🗑️ (progress reset) was removed from the Learn header and
+// moved into Settings (settingsReset.test.tsx). Mock pattern: pcicFocus.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -41,8 +41,8 @@ const flush = async (times = 4) => {
   }
 };
 
-describe('PCIC fül: nincs 🗑️ a fejlécben (PLAN-fb1001 K1)', () => {
-  it('a Learn fejléc nem mutat nullázó gombot', async () => {
+describe('PCIC tab: no 🗑️ in the header', () => {
+  it('the Learn header shows no reset button', async () => {
     await getDb().resetPcicCards();
     const { queryByText } = render(<PcicScreen />);
     await flush();

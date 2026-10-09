@@ -1,6 +1,6 @@
-// a szint-választó lap a valódi data/pcic-kel
-// (nem mockolt) az en→es iránynál a B2-t is felkínálja, 1022 tétellel; az
-// es→en iránynál a B2 üres, ezért a "0 tétel = nem kínáljuk fel" szűrő kihagyja.
+// the level picker sheet, with the real data/pcic (not mocked), also offers B2 for the en→es
+// direction, with 1022 items; for es→en B2 is empty, so the "0 items = don't offer it" filter
+// leaves it out.
 
 import { fireEvent, render } from '@testing-library/react-native';
 
@@ -26,7 +26,7 @@ const renderSheet = (target: 'es' | 'en', onSelect = jest.fn(), cards = [sm2NewC
 describe('LevelPickerSheet: B2 (words-open)', () => {
   afterEach(() => setPcicTarget('es'));
 
-  it('en→es: a B2 sor ott van, "Upper intermediate", és választható', () => {
+  it('en→es: the B2 row is there, "Upper intermediate", and selectable', () => {
     setPcicTarget('es');
     const onSelect = jest.fn();
     const { getByText } = renderSheet('es', onSelect);
@@ -36,7 +36,7 @@ describe('LevelPickerSheet: B2 (words-open)', () => {
     expect(onSelect).toHaveBeenCalledWith('B2');
   });
 
-  it('en→es: a B2 sor a 1022 tételhez méri a haladást (a B2-höz tartozó o451 kártya "introduced")', () => {
+  it('en→es: the B2 row measures progress against 1022 items (the o451 card belonging to B2 is "introduced")', () => {
     setPcicTarget('es');
     const introduced = { ...sm2NewCard('o451'), state: 'learning' as const };
     const { getByText } = renderSheet('es', jest.fn(), [introduced]);
@@ -44,7 +44,7 @@ describe('LevelPickerSheet: B2 (words-open)', () => {
     expect(getByText('1 / 1022 introduced')).toBeTruthy();
   });
 
-  it('es→en: a B2 üres, nem kínáljuk fel', () => {
+  it('es→en: B2 is empty, we do not offer it', () => {
     setPcicTarget('en');
     const { queryByText } = renderSheet('en');
 

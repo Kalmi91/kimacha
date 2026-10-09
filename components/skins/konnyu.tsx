@@ -7,9 +7,9 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { useFitFontSize } from '@/lib/fitText';
 import { syllabifyPhrase } from '@/lib/syllables';
 
-// Könnyű olvasás: a spanyol szó szótagjai felváltva a / b színnel, alatta a
-// "ca – rro" sor. Csak spanyol szónál (a `lang` = 'es'); más nyelvű szót, vagy ha nincs nyelv megadva,
-// a dísz nem érint (az alap szó marad). A szó betűmérete a kártya FitText-jével azonos lépcsőzésű.
+// Easy reading: the syllables of the Spanish word alternate between colors a / b, with the
+// "ca – rro" line below. Only for a Spanish word (`lang` = 'es'); a word in another language, or one with no language given,
+// is left untouched by the decor (the plain word stays). The word's font size steps like the card's FitText.
 
 const WORD_BASE = 32;
 const WORD_RESERVE = 150;
@@ -46,7 +46,7 @@ function KonnyuWord({ word, lang, children }: { word: string; lang?: string; chi
 }
 
 const styles = StyleSheet.create({
-  // flexShrink: a FitText a sor-konténerben összemegy, ezért a burkolója is.
+  // flexShrink: FitText shrinks inside the row container, so its wrapper must too.
   word: { flexShrink: 1, alignItems: 'center', gap: 4 },
 });
 

@@ -1,6 +1,6 @@
-// az adaptív szintfelmérő képernyője. A
-// kérdés-építő itt egyszerű, ismert kérdéseket ad (a tartalmukat a lib/exam/__tests__ fedi), a
-// lépcsőt és a mentést a valódi modulok végzik. Mock-minta: app/__tests__/exam.test.tsx.
+// The adaptive placement test screen. The
+// question builder here returns simple, known questions (their content is covered by lib/exam/__tests__), the
+// ladder and the saving are done by the real modules. Mock pattern: app/__tests__/exam.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -10,8 +10,8 @@ jest.mock('expo-router', () => ({
   useRouter: () => ({ back: mockBack, replace: mockReplace, push: jest.fn() }),
 }));
 
-// Páratlan helyen (a lépcsőn belül 1, 3) nyelvtani, különben szó-kérdés. A szó-kérdés azonosítója
-// a sorszámból jön (o100, o102, ...), a jó válasz mindig a 0. opció.
+// At odd positions (1, 3 within the ladder) a grammar question, otherwise a word question. The word question's id
+// comes from the ordinal (o100, o102, ...), the correct answer is always option 0.
 jest.mock('@/lib/exam/placementQuestions', () => ({
   ...jest.requireActual('@/lib/exam/placementQuestions'),
   buildPlacementQuestion: (input: { level: string; position: number; used: Set<string> }) =>
@@ -42,7 +42,7 @@ const press = async (screen: Screen, testID: string) => {
   await flush();
 };
 
-/** Végigmegy a kérdéseken: a `right(n)` dönti el, hogy az n. kérdésre (0-tól) jó válasz megy-e. */
+/** Goes through the questions: `right(n)` decides whether the n-th question (from 0) gets a correct answer. */
 const play = async (screen: Screen, right: (n: number) => boolean) => {
   for (let n = 0; n < 40 && screen.queryByTestId('placement-dont-know'); n++) {
     await press(screen, right(n) ? 'placement-option-0' : 'placement-dont-know');
@@ -51,14 +51,14 @@ const play = async (screen: Screen, right: (n: number) => boolean) => {
 
 const cardsById = async () => new Map((await getDb().getPcicCards()).map((c) => [c.itemId, c]));
 
-describe('PlacementScreen (onboarding: még nincs mentett irány)', () => {
-  it('"Start at" az onboardingban rögzíti az irányt és a szintet, és a fülekre lép (C1 a)', async () => {
+describe('PlacementScreen (onboarding: no saved direction yet)', () => {
+  it('"Start at" in onboarding records the direction and the level, and goes to the tabs', async () => {
     const screen = render(<PlacementScreen />);
     await flush();
     await play(screen, () => true);
 
     expect(screen.getByTestId('placement-result').props.children).toBe('Suggested start: B2');
-    // C3 b: a 9 helyesen megválaszolt szó tudott lett (üres adatbázison az összes új graduál).
+    // The 9 correctly answered words became known (on an empty database all the new ones graduate).
     expect(screen.getByTestId('placement-known').props.children).toBe('9 words you already know will not come back as new.');
     await press(screen, 'placement-start');
 
@@ -75,7 +75,7 @@ describe('PlacementScreen', () => {
     mockReplace.mockClear();
   });
 
-  it('A2-ről indul; kérdés-sorszám, négy szint-pont, szó-kérdés 4 válasszal + "I don\'t know" (C2 b)', async () => {
+  it('starts from A2; question number, four level dots, word question with 4 answers + "I don\'t know"', async () => {
     const screen = render(<PlacementScreen />);
     await flush();
 
@@ -85,16 +85,16 @@ describe('PlacementScreen', () => {
     for (const i of [0, 1, 2, 3]) expect(screen.getByTestId(`placement-option-${i}`)).toBeTruthy();
     expect(screen.getByText("I don't know")).toBeTruthy();
 
-    // A következő hely nyelvtan: lyukas mondat, a feladat felirata fölötte.
+    // The next position is grammar: a gap-fill sentence, the task caption above it.
     await press(screen, 'placement-option-0');
     expect(screen.getByTestId('placement-counter').props.children).toBe('Question 2');
     expect(screen.getByText('Choose the word that fits')).toBeTruthy();
     expect(screen.getByTestId('placement-text').props.children).toBe('Yo ___ español.');
-    // Nincs visszajelzés és nincs "Next": a következő kérdés azonnal jön.
+    // There is no feedback and no "Next": the next question comes immediately.
     expect(screen.queryByTestId('exam-next')).toBeNull();
   });
 
-  it('mind jó -> B2 15 kérdés után; a helyes szavak graduálnak, a nyelvtan-kérdés nem hoz kártyát (C3 b)', async () => {
+  it('all right -> B2 after 15 questions; correct words graduate, a grammar question brings no card', async () => {
     const screen = render(<PlacementScreen />);
     await flush();
     await play(screen, () => true);
@@ -102,7 +102,7 @@ describe('PlacementScreen', () => {
     expect(screen.getByTestId('placement-result').props.children).toBe('Suggested start: B2');
     expect(screen.getByTestId('placement-breakdown').props.children).toBe('A2 5/5, B1 5/5, B2 5/5');
 
-    // A 15 kérdésből a 0., 2., 4., 5., 7., 9., 10., 12., 14. szó-kérdés (o100 + sorszám).
+    // Of the 15 questions, the 0th, 2nd, 4th, 5th, 7th, 9th, 10th, 12th, 14th are word questions (o100 + ordinal).
     const cards = await cardsById();
     for (const n of [0, 2, 4, 5, 7, 9, 10, 12, 14]) {
       expect(cards.get(`o${100 + n}`)).toMatchObject({ state: 'review', interval: 1 });
@@ -110,7 +110,7 @@ describe('PlacementScreen', () => {
     expect(cards.size).toBeGreaterThanOrEqual(9);
   });
 
-  it('mind rossz ("I don\'t know") -> A1 10 kérdés után; a szavak kártyái nem változnak', async () => {
+  it('all wrong ("I don\'t know") -> A1 after 10 questions; word cards do not change', async () => {
     const before = await getDb().getPcicCards();
     const screen = render(<PlacementScreen />);
     await flush();
@@ -122,7 +122,7 @@ describe('PlacementScreen', () => {
     expect(await getDb().getPcicCards()).toEqual(before);
   });
 
-  it('a javasolt szint felülírható: "Choose another level" a szint-sorokat mutatja, a koppintás menti és visszalép (C3)', async () => {
+  it('the suggested level can be overridden: "Choose another level" shows the level rows, tapping saves and goes back', async () => {
     const screen = render(<PlacementScreen />);
     await flush();
     await play(screen, () => true);
@@ -137,7 +137,7 @@ describe('PlacementScreen', () => {
     expect(mockBack).toHaveBeenCalledTimes(1);
   });
 
-  it('"Start at" a mentett irányú felhasználónál a szintet menti és visszalép a tanulófülre', async () => {
+  it('"Start at" for a user with a saved direction saves the level and goes back to the Learn tab', async () => {
     const screen = render(<PlacementScreen />);
     await flush();
     await play(screen, () => true);
@@ -148,7 +148,7 @@ describe('PlacementScreen', () => {
     expect(mockReplace).not.toHaveBeenCalled();
   });
 
-  it('"Take it again" új felmérést indít', async () => {
+  it('"Take it again" starts a new placement test', async () => {
     const screen = render(<PlacementScreen />);
     await flush();
     await play(screen, () => false);
@@ -158,7 +158,7 @@ describe('PlacementScreen', () => {
     expect(screen.getByTestId('placement-counter').props.children).toBe('Question 1');
   });
 
-  it('kilépés (X) a megerősítés után visszalép, és semmi nem mentődik', async () => {
+  it('exit (X) goes back after confirmation, and nothing is saved', async () => {
     const before = await getDb().getPcicCards();
     const levelBefore = await getDb().getPcicLevel();
     const screen = render(<PlacementScreen />);

@@ -1,6 +1,6 @@
-// a feladat a szint szavaiból áll, az ISMERETLEN
-// (még nem tanult) szóhoz szójegyzet jár; a tanult szóhoz nem; a hallás szövege nem látszik,
-// ahhoz nincs szójegyzet.
+// The task is made of the level's words; an UNKNOWN (not yet learned) word gets a glossary
+// entry, a learned word does not; the listening text is not shown, so it has
+// no glossary.
 
 import type { PcicItem } from '@/data/pcic';
 import { pcicItemsForLevel, setPcicTarget } from '@/data/pcic';
@@ -26,10 +26,10 @@ const match: MockTask = {
   answer: { p1: 'a' },
 };
 
-describe('mockGlossary: szójegyzet az ismeretlen szóhoz', () => {
+describe('mockGlossary: glossary for an unknown word', () => {
   const index = buildGlossaryIndex(ITEMS, 'es');
 
-  it('az ismeretlen szó jelentése a kiinduló nyelven, a megjelenés sorrendjében', () => {
+  it('the meaning of the unknown word in the source language, in order of appearance', () => {
     const g = mockGlossary(match, index, new Set());
     expect(g.map((e) => [e.term, e.meaning])).toEqual([
       ['ventana', 'the window'],
@@ -38,29 +38,29 @@ describe('mockGlossary: szójegyzet az ismeretlen szóhoz', () => {
     ]);
   });
 
-  it('a tanult szóhoz nem jár szójegyzet', () => {
+  it('a learned word gets no glossary entry', () => {
     const g = mockGlossary(match, index, new Set(['1', '3']));
     expect(g.map((e) => e.itemId)).toEqual(['2']);
     expect(mockGlossary(match, index, new Set(['1', '2', '3']))).toEqual([]);
   });
 
-  it('ugyanaz a szó egyszer szerepel, a névelőt nem nézi', () => {
+  it('the same word appears once, the article is ignored', () => {
     const t: MockTask = { ...match, prompts: [{ id: 'p1', text: 'La casa. La casa. Una casa.' }] } as MockTask;
     expect(mockGlossary(t, index, new Set()).map((e) => e.term)).toEqual(['casa']);
   });
 
-  it('a lyukas mondat lehetőségei is szerepelnek (a kihagyott szó jelentése is)', () => {
+  it('the options of the gap sentence appear too (the meaning of the omitted word as well)', () => {
     const gap: MockTask = { id: 'g', skill: 'reading', kind: 'gap_mc', instruction: '', gaps: [{ text: 'Quiero ___ agua.', options: ['beber', 'casa', 'zzz'], correct: 0 }] };
     expect(mockGlossary(gap, index, new Set()).map((e) => e.term)).toEqual(['beber', 'casa']);
   });
 
-  it('hallás: a felolvasott szöveg nem látszik, ezért nincs szójegyzet hozzá', () => {
+  it('listening: the read-aloud text is not visible, so there is no glossary for it', () => {
     const listen: MockTask = { id: 'l', skill: 'listening', kind: 'listen_mc', instruction: 'TAREA 1. Va a escuchar.', audio: ['La ventana está abierta.'], questions: [{ options: ['a', 'b'], correct: 0 }] };
     expect(mockTaskTexts(listen)).toEqual([]);
     expect(mockGlossary(listen, index, new Set())).toEqual([]);
   });
 
-  it('az angol irányban a célnyelvi alak az angol szó, a jelentés a spanyol ("to" nélkül)', () => {
+  it('in the English direction the target-language form is the English word, the meaning is the Spanish one (without "to")', () => {
     const en = buildGlossaryIndex(ITEMS, 'en');
     const t: MockTask = { ...match, prompts: [{ id: 'p1', text: 'I want to drink water in the house.' }] } as MockTask;
     expect(mockGlossary(t, en, new Set()).map((e) => [e.term, e.meaning])).toEqual([
@@ -70,8 +70,8 @@ describe('mockGlossary: szójegyzet az ismeretlen szóhoz', () => {
   });
 });
 
-describe('mockGlossary: valódi feladatsoron', () => {
-  it('minden tanulatlan szóhoz jár bejegyzés, tanult szavaknál eltűnik; hallásnál üres', () => {
+describe('mockGlossary: on a real task set', () => {
+  it('every unlearned word gets an entry, it disappears for learned words; empty for listening', () => {
     setPcicTarget('es');
     const items = pcicItemsForLevel('A1');
     const exam = buildMockExam({ target: 'es', level: 'A1', items, seed: 4 });
@@ -85,10 +85,10 @@ describe('mockGlossary: valódi feladatsoron', () => {
   });
 });
 
-describe('mockGlossary: az új feladat-fajták', () => {
+describe('mockGlossary: the new task kinds', () => {
   const index = buildGlossaryIndex(ITEMS, 'es');
 
-  it('begépelős hézag: a lyukas mondat szavaihoz jár szójegyzet, a hiányzó szóhoz nem', () => {
+  it('typed gap: the words of the gap sentence get a glossary, the missing word does not', () => {
     const gap: MockTask = {
       id: 'gt',
       skill: 'reading',
@@ -99,7 +99,7 @@ describe('mockGlossary: az új feladat-fajták', () => {
     expect(mockGlossary(gap, index, new Set()).map((e) => e.term)).toEqual(['casa']);
   });
 
-  it('hallás utáni hézag és diktálás: a felolvasott szöveg nem látszik; a hézag lyukas mondata igen', () => {
+  it('gap after listening and dictation: the read-aloud text is not visible; the gap sentence is', () => {
     const fill: MockTask = {
       id: 'lf',
       skill: 'listening',

@@ -1,6 +1,6 @@
-// a loteria, senior, konnyu, retro95, y2k, kawaii, gamer, botanikus és zen téma
-// díszei és egyedi elrendezése: a slotok kirajzolják a díszt az alap tartalom körül, a gomb-változatok
-// (senior egymás alatt, retro95 3D + aláhúzott első betű, zen csak szöveg) a BrutalButton / BrutalBox-on át.
+// the decorations and custom layouts of the loteria, senior, konnyu, retro95, y2k, kawaii, gamer, botanikus and zen themes:
+// the slots draw the decoration around the base content, the button variants
+// (senior stacked, retro95 3D + underlined first letter, zen text only) through BrutalButton / BrutalBox.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -45,7 +45,7 @@ async function mountUi(skin: SkinId, ui: ReactElement) {
   return view;
 }
 
-// A négy slot egymás mellett (mint a decor.test.tsx-ben), az alap tartalom a dísz körül marad.
+// The four slots side by side (as in decor.test.tsx), the base content stays around the decoration.
 async function mountSkin(skin: SkinId, lang?: string) {
   const view = await mountUi(
     skin,
@@ -67,7 +67,7 @@ async function mountSkin(skin: SkinId, lang?: string) {
   return view;
 }
 
-// A PCIC felfedett-állapot blokk (Tudtam / Nem tudtam gombsor) minimális tartalommal.
+// The PCIC revealed-state block (Knew it / Didn't know button row) with minimal content.
 async function mountGrades(skin: SkinId) {
   const item = { id: 'x-1', es: 'casa', en: 'house', kind: 'word', section: 's', order: 1 } as PcicItem;
   const card: Sm2Card = {
@@ -93,7 +93,7 @@ async function mountGrades(skin: SkinId) {
 
 const E1: SkinId[] = ['loteria', 'senior', 'konnyu', 'retro95', 'y2k', 'kawaii', 'gamer', 'botanikus', 'zen'];
 
-describe('a 9 E1 téma díszei (PLAN-temak 6E)', () => {
+describe('decor of the 9 E1 themes', () => {
   let scheme: jest.SpyInstance;
   beforeEach(async () => {
     scheme = jest.spyOn(RN, 'useColorScheme').mockReturnValue('light');
@@ -104,7 +104,7 @@ describe('a 9 E1 téma díszei (PLAN-temak 6E)', () => {
     await getDb().setSkin(null);
   });
 
-  it('a regiszter a 9 témát tölti, mindegyiknek van legalább egy slotja vagy gomb-változata', () => {
+  it('the registry fills the 9 themes, each has at least one slot or button variant', () => {
     for (const id of E1) {
       const decor = SKIN_DECOR[id];
       expect(decor).toBeDefined();
@@ -112,7 +112,7 @@ describe('a 9 E1 téma díszei (PLAN-temak 6E)', () => {
     }
   });
 
-  it('loteria: papel picado zászló-sor a spec színeivel, piros sorszám a lapon, a szó vonal fölött', async () => {
+  it('loteria: papel picado banner row with the spec colors, red number on the card, the word above a line', async () => {
     const view = await mountSkin('loteria');
     expect(view.getByTestId('decor-loteria-flags')).toBeTruthy();
     expect(PAPEL_PICADO).toEqual(['#E4007C', '#FF8200', '#00A651', '#0072CE', '#FFD100']);
@@ -122,7 +122,7 @@ describe('a 9 E1 téma díszei (PLAN-temak 6E)', () => {
     view.unmount();
   });
 
-  it('loteria: a lap sorszáma a szóból számolt (1-54), a kártya és a szó kontextuson át osztozik rajta', async () => {
+  it('loteria: the card number is computed from the word (1-54), the card and the word share it through context', async () => {
     const view = await mountUi(
       'loteria',
       <SkinCardFrame>
@@ -139,7 +139,7 @@ describe('a 9 E1 téma díszei (PLAN-temak 6E)', () => {
     view.unmount();
   });
 
-  it('senior: a push-gombok teljes szélességben, min. 48 magasan, ikonnal; a hang-gomb mellett "Read aloud"', async () => {
+  it('senior: push buttons full width, min. 48 tall, with an icon; "Read aloud" next to the sound button', async () => {
     const view = await mountUi(
       'senior',
       <>
@@ -153,14 +153,14 @@ describe('a 9 E1 téma díszei (PLAN-temak 6E)', () => {
     view.unmount();
   });
 
-  it('senior: ha a felirat már tartalmazza az ikont (a dokkolt "✓ Check"), nincs dupla pipa', async () => {
+  it('senior: if the label already contains the icon (the docked "✓ Check"), no double check mark', async () => {
     const view = await mountUi('senior', <BrutalButton testID="btn" label="✓ Check" icon="✓" onPress={() => {}} />);
     expect(view.getByText('✓ Check')).toBeTruthy();
     expect(view.queryByText('✓  ✓ Check')).toBeNull();
     view.unmount();
   });
 
-  it('retro95: a dokkolt Check-sáv a spec szerint a-színű (sötétkék, fehér szöveg); a Neo-brutálon ink marad', async () => {
+  it('retro95: the docked Check bar is a-colored per the spec (dark blue, white text); on Neo-brutalist ink stays', async () => {
     const ui = <DockedAction label="✓ Check" tone="check" bottom={0} colors={Colors.light} onPress={() => {}} />;
     const retro = await mountUi('retro95', ui);
     const c = SKINS.retro95.colors.light!;
@@ -172,7 +172,7 @@ describe('a 9 E1 téma díszei (PLAN-temak 6E)', () => {
     brutal.unmount();
   });
 
-  it('senior: a Neo-brutál téma gombja változatlan (nincs ikon, nincs min. 48), nincs hang-felirat', async () => {
+  it('senior: the Neo-brutalist theme button is unchanged (no icon, no min. 48), no sound label', async () => {
     const view = await mountUi(
       'brutal',
       <>
@@ -186,7 +186,7 @@ describe('a 9 E1 téma díszei (PLAN-temak 6E)', () => {
     view.unmount();
   });
 
-  it('konnyu: spanyol szónál a szótagok felváltva a / b színnel, alatta a "ca – rro" sor', async () => {
+  it('konnyu: on a Spanish word the syllables alternate in a / b color, below it the "ca – rro" row', async () => {
     const view = await mountUi(
       'konnyu',
       <SkinWord word="carro" lang="es">
@@ -201,7 +201,7 @@ describe('a 9 E1 téma díszei (PLAN-temak 6E)', () => {
     view.unmount();
   });
 
-  it('konnyu: nem spanyol szónál (en, vagy nincs nyelv) az alap szó marad', async () => {
+  it('konnyu: on a non-Spanish word (en, or no language) the base word stays', async () => {
     for (const lang of ['en', undefined]) {
       const view = await mountSkin('konnyu', lang);
       expect(view.getByText('casa')).toBeTruthy();
@@ -210,7 +210,7 @@ describe('a 9 E1 téma díszei (PLAN-temak 6E)', () => {
     }
   });
 
-  it('konnyu: kifejezésnél minden spanyol szó szótagolt, a szótagszínezés folyamatos', async () => {
+  it('konnyu: in a phrase every Spanish word is syllabified, the syllable coloring is continuous', async () => {
     const view = await mountUi(
       'konnyu',
       <SkinWord word="el carro" lang="es">
@@ -222,7 +222,7 @@ describe('a 9 E1 téma díszei (PLAN-temak 6E)', () => {
     view.unmount();
   });
 
-  it('retro95: "kimacha.exe" címsor-sáv x-gombbal, 3D-perem a dobozon, a gomb első betűje aláhúzva', async () => {
+  it('retro95: "kimacha.exe" title bar with an x button, 3D bevel on the box, first letter of the button underlined', async () => {
     const view = await mountUi(
       'retro95',
       <>
@@ -252,7 +252,7 @@ describe('a 9 E1 téma díszei (PLAN-temak 6E)', () => {
     view.unmount();
   });
 
-  it('y2k: +8° matrica "new word", csillagok, streak-chip a valós sorozattal', async () => {
+  it('y2k: +8° "new word" sticker, stars, streak chip with the real streak', async () => {
     await getDb().updateStreak();
     const view = await mountSkin('y2k');
     const sticker = view.getByTestId('decor-y2k-sticker');
@@ -264,7 +264,7 @@ describe('a 9 E1 téma díszei (PLAN-temak 6E)', () => {
     view.unmount();
   });
 
-  it('kawaii: mosolygó arc a szó fölött, szív a fejlécben, a téma rózsaszín ikon-színével', async () => {
+  it("kawaii: smiling face above the word, heart in the header, with the theme's pink icon color", async () => {
     const view = await mountSkin('kawaii');
     const icon = SKINS.kawaii.colors.light?.extra?.icon;
     expect(flat(view.getByTestId('decor-kawaii-face').props.style).borderColor).toBe(icon);
@@ -273,7 +273,7 @@ describe('a 9 E1 téma díszei (PLAN-temak 6E)', () => {
     view.unmount();
   });
 
-  it('gamer: XP-sáv "LVL n" a valós percekből, kombó "x1" streak nélkül, "+15 XP" a kártyán', async () => {
+  it('gamer: XP bar "LVL n" from the real minutes, combo "x1" without a streak, "+15 XP" on the card', async () => {
     for (let i = 0; i < 4; i++) await getDb().addUsageMinute();
     const view = await mountSkin('gamer');
     expect(view.getByTestId('skin-gamer-level').props.children.join('')).toBe('LVL 1');
@@ -283,7 +283,7 @@ describe('a 9 E1 téma díszei (PLAN-temak 6E)', () => {
     view.unmount();
   });
 
-  it('botanikus: levél a fejlécben, növény a kártya sarkában (világos és sötét módban is)', async () => {
+  it('botanikus: leaf in the header, plant in the card corner (in light and dark mode too)', async () => {
     for (const mode of ['light', 'dark'] as const) {
       scheme.mockReturnValue(mode);
       const view = await mountSkin('botanikus');
@@ -293,7 +293,7 @@ describe('a 9 E1 téma díszei (PLAN-temak 6E)', () => {
     }
   });
 
-  it('zen: piros pont a szó fölött (dot szín), rövid vonal alatta; sötét módban a sötét pont-szín', async () => {
+  it('zen: red dot above the word (dot color), short line below it; in dark mode the dark dot color', async () => {
     const view = await mountSkin('zen');
     expect(flat(view.getByTestId('decor-zen-dot').props.style).backgroundColor).toBe(SKINS.zen.colors.light?.extra?.dot);
     expect(view.getByTestId('decor-zen-line')).toBeTruthy();
@@ -304,7 +304,7 @@ describe('a 9 E1 téma díszei (PLAN-temak 6E)', () => {
     dark.unmount();
   });
 
-  it('zen: a gombok csak szöveg (átlátszó, keret nélkül, ink szöveg), a "Tudom" (a kitöltés) aláhúzva', async () => {
+  it('zen: the buttons are text only (transparent, no border, ink text), the "Knew it" (the fill) underlined', async () => {
     const view = await mountUi(
       'zen',
       <>
@@ -320,20 +320,20 @@ describe('a 9 E1 téma díszei (PLAN-temak 6E)', () => {
     view.unmount();
   });
 
-  it('senior: a Tudtam / Nem tudtam gombok egymás alatt, ikonnal, min. 48 magasan; a hang-gomb alatt "Read aloud"', async () => {
+  it('senior: the Knew it / Didn\'t know buttons one under the other, with an icon, min. 48 tall; "Read aloud" under the sound button', async () => {
     const view = await mountGrades('senior');
     expect(view.getByText(`✓  ${t().pcic.good}`)).toBeTruthy();
     expect(view.getByText(`✗  ${t().pcic.again}`)).toBeTruthy();
     for (const gr of ['good', 'again']) {
       expect(flat(view.getByTestId(`pcic-grade-${gr}`).props.style)).toMatchObject({ minHeight: 48 });
     }
-    // a sor oszlopban: a két gomb szülője column irányú
+    // the row is a column: the two buttons' parent has column direction
     expect(flat(view.getByTestId('pcic-grades').props.style).flexDirection).toBe('column');
     expect(view.getAllByTestId('skin-speak-label').length).toBeGreaterThanOrEqual(1);
     view.unmount();
   });
 
-  it('zen: a Tudtam gomb szövege aláhúzva, a gombok átlátszók; a Neo-brutál sor változatlan (sorban, ikon nélkül)', async () => {
+  it('zen: the Knew it button text underlined, the buttons transparent; the Neo-brutalist row unchanged (in a row, no icon)', async () => {
     const zen = await mountGrades('zen');
     expect(flat(zen.getByText(t().pcic.good).props.style)).toMatchObject({ textDecorationLine: 'underline' });
     expect(flat(zen.getByText(t().pcic.again).props.style).textDecorationLine).toBeUndefined();
@@ -348,7 +348,7 @@ describe('a 9 E1 téma díszei (PLAN-temak 6E)', () => {
     brutal.unmount();
   });
 
-  it('az új díszek fájljai csak View / Text-et használnak: nincs SVG, expo-image vagy más natív függőség', () => {
+  it('the new decor files use only View / Text: no SVG, expo-image or other native dependency', () => {
     const dir = path.join(__dirname, '..');
     for (const file of ['loteria.tsx', 'senior.tsx', 'konnyu.tsx', 'retro95.tsx', 'y2k.tsx', 'kawaii.tsx', 'gamer.tsx', 'botanikus.tsx', 'zen.tsx']) {
       const src = fs.readFileSync(path.join(dir, file), 'utf8');

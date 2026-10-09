@@ -1,9 +1,9 @@
-// a próbavizsga részenkénti mentése és az eredmény.
-// A meglévő `game_progress` táblába ír, `mock-exam` játékkulccsal (nincs új tábla és
-// migráció, a backup magától viszi, lásd lib/exam/result.ts mintáját):
-//   - `<irány>-<szint>-session`: a félbehagyott vizsga (mag + a kész papírok válaszai)
-//   - `<irány>-<szint>`: a legutóbbi eredmény (a Stats "Practice exam" kártya ezt mutatja)
-// Papíronként mentünk: egy kész papír válaszai megmaradnak, a félbehagyott papír elölről indul.
+// Part-by-part saving of the practice exam and the result.
+// It writes into the existing `game_progress` table under the `mock-exam` game key (no new table or
+// migration, the backup carries it automatically, see the pattern of lib/exam/result.ts):
+//   - `<direction>-<level>-session`: the abandoned exam (core + the answers of the finished papers)
+//   - `<direction>-<level>`: the latest result (the Stats "Practice exam" card shows this)
+// We save paper by paper: the answers of a finished paper are kept, an abandoned paper starts over.
 
 import type { MockResult } from './score';
 import type { MockAnswers, MockLevel, MockTarget } from './types';
@@ -11,23 +11,23 @@ import type { MockAnswers, MockLevel, MockTarget } from './types';
 export const MOCK_EXAM_PROGRESS_KEY = 'mock-exam';
 
 export interface MockSession {
-  /** A feladatsor magja: ugyanabból ugyanaz a vizsga épül (lib/exam/mock/build.ts). */
+  /** The core of the task set: the same exam is built from the same core (lib/exam/mock/build.ts). */
   seed: number;
-  /** A feladatsor ujjlenyomata: csak egyezéskor folytatható (változott a szókészlet = új vizsga). */
+  /** The fingerprint of the task set: resumable only on a match (changed vocabulary = new exam). */
   sig: string;
-  /** A már lezárt papírok azonosítói (lib/exam/mock/types.ts MockPaper.id). */
+  /** Ids of the papers already closed (lib/exam/mock/types.ts MockPaper.id). */
   done: string[];
-  /** A lezárt papírok feladatainak válaszai. */
+  /** The answers to the tasks of the closed papers. */
   answers: MockAnswers;
 }
 
 export interface MockLast {
   passed: boolean;
-  /** Igaz, ha a szóbeli helyőrző volt (E2 a). */
+  /** True if speaking was a placeholder. */
   provisional: boolean;
   /** YYYY-MM-DD. */
   date: string;
-  /** Az átmenési szabály számai: csoportonként, vagy egyetlen sor az összpontból / az átlag-százalékból. */
+  /** The numbers of the pass rule: per group, or a single entry from the total score / the average percentage. */
   groups: { points: number; needed: number; of: number }[];
 }
 
@@ -52,7 +52,7 @@ function isLast(data: unknown): data is MockLast {
   return !!d && typeof d.passed === 'boolean' && typeof d.date === 'string' && Array.isArray(d.groups);
 }
 
-/** Az irány összes szintjének mentett állapota (a Stats kártya egyetlen olvasással). */
+/** The saved state of all levels of the direction (for the Stats card in a single read). */
 export async function readMockOverview(store: ProgressStore, target: MockTarget, levels: readonly MockLevel[]): Promise<MockOverview> {
   const rows = await store.getGameProgress(MOCK_EXAM_PROGRESS_KEY);
   const out: MockOverview = {};
@@ -92,9 +92,9 @@ export async function saveMockLast(store: ProgressStore, target: MockTarget, lev
   return last;
 }
 
-// --- Óra: időbélyegből számol, nem tick-számlálóból, hogy a háttérbe küldött app se csússzon el.
+// --- Clock: computed from a timestamp, not from a tick counter, so that an app sent to the background does not drift.
 
-/** Hány másodperc van hátra egy papírból (nem megy 0 alá). */
+/** How many seconds are left of a paper (never goes below 0). */
 export function secondsLeft(startedAt: number, minutes: number, now: number): number {
   return Math.max(0, Math.ceil((startedAt + minutes * 60_000 - now) / 1000));
 }
@@ -105,5 +105,5 @@ export function formatClock(totalSeconds: number): string {
   return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
 }
 
-/** Ennyi hátralévő másodperc alatt kap figyelmeztető színt az óra. */
+/** Below this many remaining seconds the clock gets a warning colour. */
 export const CLOCK_WARNING_SECONDS = 60;

@@ -1,5 +1,5 @@
-// a Credits képernyő brutalista palettán (BrutalBox / BrutalButton),
-// classic palettán a mai kinézet. Mock-minta: credits.test.tsx, onboarding.test.tsx.
+// The Credits screen on the brutalist palette (BrutalBox / BrutalButton),
+// today's look on the classic palette. Mock pattern: credits.test.tsx, onboarding.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -31,8 +31,8 @@ const flush = async (times = 6) => {
   }
 };
 
-describe('Credits, neo-brutalista (NY19)', () => {
-  it('Credits: brand palettán BrutalBox kártya, classic palettán nincs', async () => {
+describe('Credits, neo-brutalist', () => {
+  it('Credits: with the brand palette a BrutalBox card, with the classic palette none', async () => {
     await getDb().setGrammarPalette('brand');
     const brand = render(<ThemeProvider><CreditsScreen /></ThemeProvider>);
     await flush();

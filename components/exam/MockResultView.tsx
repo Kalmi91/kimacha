@@ -10,9 +10,9 @@ import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
 import ExamButton from './ExamButton';
 
-// a próbavizsga eredmény-lapja (ítélet, papíronkénti sávok,
-// csoportonkénti sorok, rövidítés-megjegyzés) és az átnézés (tételenként a kérdés, a te
-// válaszod, a helyes válasz). A szóbeli ebben a szeletben "nem beszámított" (E2 a).
+// the mock exam's result sheet (verdict, per-paper bars, per-group rows, abbreviation note) and the
+// review (per item the question, your answer, the correct answer). The oral part is "not counted"
+// in this slice.
 
 type Props = {
   result: MockResult;

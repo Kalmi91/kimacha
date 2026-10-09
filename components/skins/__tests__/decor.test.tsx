@@ -1,5 +1,5 @@
-// a 4 kezdő téma díszei (deco, szocreal, csillampony, ukiyoe): a slotok kirajzolják
-// a díszt az alap tartalom körül, sima View/Text, SVG és új natív függőség nélkül.
+// the decorations of the 4 starter themes (deco, szocreal, csillampony, ukiyoe): the slots draw
+// the decoration around the base content, with plain View/Text, no SVG and no new native dependency.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -46,12 +46,12 @@ async function mountSkin(skin: SkinId) {
     </ThemeProvider>,
   );
   await flush();
-  // az alap tartalom mindig megmarad a dísz körül
+  // the base content always stays around the decoration
   for (const text of ['fejlec', 'kartya', 'casa']) expect(view.getByText(text)).toBeTruthy();
   return view;
 }
 
-describe('a 4 kezdő téma díszei (PLAN-temak 4D)', () => {
+describe('decor of the 4 starter themes', () => {
   let scheme: jest.SpyInstance;
   beforeEach(async () => {
     scheme = jest.spyOn(RN, 'useColorScheme').mockReturnValue('light');
@@ -62,7 +62,7 @@ describe('a 4 kezdő téma díszei (PLAN-temak 4D)', () => {
     await getDb().setSkin(null);
   });
 
-  it('a regiszter a 4 témát tölti, mindegyiknek van legalább egy slotja', () => {
+  it('the registry fills the 4 themes, each has at least one slot', () => {
     for (const id of ['deco', 'szocreal', 'csillampony', 'ukiyoe'] as const) {
       const decor = SKIN_DECOR[id];
       expect(decor).toBeDefined();
@@ -70,7 +70,7 @@ describe('a 4 kezdő téma díszei (PLAN-temak 4D)', () => {
     }
   });
 
-  it('deco: dupla keret (külső + 4 px rés + belső 1 px a), napsugár-legyező, rombusz-elválasztó', async () => {
+  it('deco: double border (outer + 4 px gap + inner 1 px a), sunburst fan, diamond divider', async () => {
     const view = await mountSkin('deco');
     const a = SKINS.deco.colors.light?.a;
     expect(view.getByTestId('skin-deco-frame')).toBeTruthy();
@@ -87,7 +87,7 @@ describe('a 4 kezdő téma díszei (PLAN-temak 4D)', () => {
     view.unmount();
   });
 
-  it('szocreal: belső 3 px b keret a 4 px ink keret alatt, felkelő nap, Élmunkás jelvény, Napi terv sáv', async () => {
+  it('szocreal: inner 3 px b border under the 4 px ink border, rising sun, Shock Worker badge, Daily plan bar', async () => {
     const view = await mountSkin('szocreal');
     expect(flat(view.getByTestId('decor-szocreal-inner').props.style)).toMatchObject({
       top: 7,
@@ -102,7 +102,7 @@ describe('a 4 kezdő téma díszei (PLAN-temak 4D)', () => {
     view.unmount();
   });
 
-  it('szocreal: a Napi terv a mai percekből számol, a felirat 100% fölé is megy, a sáv 100%-nál megáll', async () => {
+  it("szocreal: the Daily plan computes from today's minutes, the label goes above 100% too, the bar stops at 100%", async () => {
     await getDb().setWeeklyGoalMinutes(60);
     for (let i = 0; i < 9; i++) await getDb().addUsageMinute();
     const view = await mountSkin('szocreal');
@@ -111,12 +111,12 @@ describe('a 4 kezdő téma díszei (PLAN-temak 4D)', () => {
     view.unmount();
   });
 
-  it('csillampony: 6 sávos szivárvány a spec színeivel, csillám-pöttyök, ló-ikon a fejlécben', async () => {
+  it('csillampony: 6-band rainbow with the spec colors, glitter dots, horse icon in the header', async () => {
     const view = await mountSkin('csillampony');
     const bands = view.getAllByTestId('decor-csillampony-band');
     expect(bands.map((b) => flat(b.props.style).borderColor)).toEqual(RAINBOW);
     expect(RAINBOW).toEqual(['#FF6EC7', '#FFB347', '#FFE066', '#7BE0AD', '#7FB8FF', '#C9A7FF']);
-    // a külső sáv a legnagyobb félkör
+    // the outer band is the largest semicircle
     const widths = bands.map((b) => flat(b.props.style).width as number);
     expect([...widths].sort((x, y) => y - x)).toEqual(widths);
     expect(view.getByTestId('decor-csillampony-sparkles')).toBeTruthy();
@@ -124,7 +124,7 @@ describe('a 4 kezdő téma díszei (PLAN-temak 4D)', () => {
     view.unmount();
   });
 
-  it('ukiyoe: két sor félkör-hullám a kártya alján, piros pecsét (語) jobb fent', async () => {
+  it('ukiyoe: two rows of semicircle waves at the card bottom, red seal (語) top right', async () => {
     const view = await mountSkin('ukiyoe');
     const discs = view.getAllByTestId('decor-ukiyoe-disc');
     expect(discs).toHaveLength(40);
@@ -136,7 +136,7 @@ describe('a 4 kezdő téma díszei (PLAN-temak 4D)', () => {
     view.unmount();
   });
 
-  it('sötét módban a téma saját dísz-színeit használja (ukiyoe hullám + pecsét)', async () => {
+  it("in dark mode it uses the theme's own decor colors (ukiyoe wave + seal)", async () => {
     await getDb().setSkin('ukiyoe');
     scheme.mockReturnValue('dark');
     const view = render(
@@ -153,7 +153,7 @@ describe('a 4 kezdő téma díszei (PLAN-temak 4D)', () => {
     view.unmount();
   });
 
-  it('a díszek fájljai csak View / Text-et használnak: nincs SVG, expo-image vagy más natív függőség', () => {
+  it('the decor files use only View / Text: no SVG, expo-image or other native dependency', () => {
     const dir = path.join(__dirname, '..');
     for (const file of ['parts.tsx', 'deco.tsx', 'szocreal.tsx', 'csillampony.tsx', 'ukiyoe.tsx']) {
       const src = fs.readFileSync(path.join(dir, file), 'utf8');

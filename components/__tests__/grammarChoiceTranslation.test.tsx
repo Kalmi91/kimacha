@@ -1,6 +1,6 @@
-// User feedback: „ide is tegyél egy mondat fordítást": a választós (gap) és a jelölős
-// (mark) tétel mondatának fordítása az F-gomb mögött van, ugyanúgy, mint az átírás-tételnél; ha a tételnek
-// nincs `tr`-je (scripts/grammar-translate.py még nem futott), nincs gomb. Kézzel írt `tr`-es fixture.
+// User feedback: "put a sentence translation here too": the translation of the sentence of a choice (gap) and a marking
+// (mark) item is behind the F button, just like for the rewrite item; if the item has
+// no `tr` (scripts/grammar-translate.py has not run yet), there is no button. Fixture with a hand-written `tr`.
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 import { act, fireEvent, render, screen } from '@testing-library/react-native';
@@ -77,12 +77,12 @@ const drill = (topic: GrammarTopicData, contentLang = 'en') => (
 describe.each([
   ['classic', 'classic'],
   ['brutal', 'brand'],
-])('választós tétel mondat-fordítása (FB464), %s paletta', (_name, palette) => {
+])('sentence translation of a choice item, %s palette', (_name, palette) => {
   beforeEach(async () => {
     await getDb().setGrammarPalette(palette as 'classic' | 'brand');
   });
 
-  it('van tr: az F-gomb ott van, a fordítás alapból rejtett, az F-re a felület nyelvén megjelenik, újra F-re eltűnik', async () => {
+  it('with tr: the F button is there, the translation is hidden by default, shows on F in the UI language, disappears on F again', async () => {
     render(drill(withTr, 'hu'));
     await flush();
 
@@ -93,28 +93,28 @@ describe.each([
     expect(screen.queryByTestId('choice-translation')).toBeNull();
   });
 
-  it('a felület nyelvén kívüli nyelvnél az angol fordítás a tartalék', async () => {
+  it('for a language other than the UI language the English translation is the fallback', async () => {
     render(drill(withTr, 'xx'));
     await flush();
     fireEvent.press(screen.getByTestId('choice-f'));
     expect(screen.getByTestId('choice-translation')).toHaveTextContent(TR.en);
   });
 
-  it('nincs tr: nincs F-gomb és nincs fordítás', async () => {
+  it('without tr: no F button and no translation', async () => {
     render(drill(withoutTr));
     await flush();
     expect(screen.queryByTestId('choice-f')).toBeNull();
     expect(screen.queryByTestId('choice-translation')).toBeNull();
   });
 
-  it('a jelölős (mark) tételnél is ugyanígy', async () => {
+  it('the same for a mark item', async () => {
     render(drill(markWithTr, 'de'));
     await flush();
     fireEvent.press(screen.getByTestId('choice-f'));
     expect(screen.getByTestId('choice-translation')).toHaveTextContent('Meine Schwester isst einen Apfel.');
   });
 
-  it('a fordítás válasz után is ott marad, és a következő tételnél újra zárt', async () => {
+  it('the translation stays after answering, and is closed again on the next item', async () => {
     const topic: GrammarTopicData = { ...withTr, items: [gap('g1', TR), gap('g3', TR)] };
     render(drill(topic, 'en'));
     await flush();

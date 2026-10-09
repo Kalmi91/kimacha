@@ -52,27 +52,27 @@ export default function StatsScreen() {
   const router = useRouter();
   const [usage, setUsage] = useState<UsageStats>(EMPTY_STATS);
   const [streak, setStreak] = useState(0);
-  // "known" = interval >= 21 nap, globálisan (a 4
-  // PCIC szint összesítve); "graduated" = túljutott a tanuló-lépéseken
-  // (state 'review'), a küszöb alatt is (lib/pcicStats.ts).
+  // "known" = interval >= 21 days, globally (the 4
+  // PCIC levels combined); "graduated" = got past the learning steps
+  // (state 'review'), even below the threshold (lib/pcicStats.ts).
   const [known, setKnown] = useState(0);
   const [graduated, setGraduated] = useState(0);
   const [reviewsToday, setReviewsToday] = useState(0);
   const [weeklyGoal, setWeeklyGoal] = useState(DEFAULT_WEEKLY_GOAL_MINUTES);
   const [schedule, setSchedule] = useState<SchedulePreview>(EMPTY_SCHEDULE);
-  // a régi FSRS-szint (A0-C2) helyett a PCIC-szint
-  // (A1-B2), amit a PCIC fül szint-választója állít.
+  // The PCIC level (A1-B2), set by the PCIC tab's level picker,
+  // instead of the old FSRS level (A0-C2).
   const [pcicLevel, setPcicLevel] = useState<PcicLevel>('B1');
   const [levelKnown, setLevelKnown] = useState(0);
   const [levelTotal, setLevelTotal] = useState(0);
   const [otherLevels, setOtherLevels] = useState<{ level: PcicLevel; known: number }[]>([]);
   const [targetLang, setTargetLang] = useState('es');
   const [sourceLang, setSourceLang] = useState('en');
-  // a próbavizsga kártya szintjei (irányfüggő) és a mentett eredmények.
+  // The mock exam card's levels (direction-dependent) and the saved results.
   const [mockLevels, setMockLevels] = useState<readonly MockLevel[]>(MOCK_LEVELS.es);
   const [mockOverview, setMockOverview] = useState<MockOverview>({});
   const [mockOfficial, setMockOfficial] = useState(true);
-  // a napi oszlop 60 perc fölött órában áll, koppintásra percre vált.
+  // The daily bar is shown in hours above 60 minutes, and switches to minutes on tap.
   const [chartInMinutes, setChartInMinutes] = useState(false);
 
   // Refresh every time the tab gains focus so numbers stay current across app-wide activity.
@@ -90,8 +90,8 @@ export default function StatsScreen() {
         setMockOfficial(mockTarget === 'es');
         readMockOverview(db, mockTarget, MOCK_LEVELS[mockTarget]).then(setMockOverview);
       });
-      // minden PCIC-számítás egyetlen getPcicCards()
-      // hívásból (mint a PCIC fülön), a szűrés/összegzés tiszta függvényekben.
+      // All PCIC computation comes from a single getPcicCards()
+      // call (as on the PCIC tab); the filtering/aggregation is in pure functions.
       db.getPcicLevel().then(async lvl => {
         setPcicLevel(lvl);
         const cards = await db.getPcicCards();
@@ -100,13 +100,13 @@ export default function StatsScreen() {
         setKnown(countKnown(cards));
         setGraduated(countGraduated(cards));
         const selCards = cardsForLevel(cards, lvl);
-        // a kártya a tanult szavakat számolja (nem a 21 napos küszöböt elért kevés szót).
+        // The card counts learned words (not the few words that reached the 21-day threshold).
         setLevelKnown(countLearned(selCards));
         setLevelTotal(pcicItemsForLevel(lvl).length);
         setOtherLevels(PCIC_VIEW_LEVELS.filter(l => pcicItemsForLevel(l).length > 0).map(l => ({ level: l, known: countLearned(cardsForLevel(cards, l)) })));
-        // minta, PCIC-dátumokra: a bare 'YYYY-MM-DD' due-t helyi éjfélre
-        // egészíti ki, különben `new Date('YYYY-MM-DD')` UTC-éjfélt parseol, és
-        // negatív UTC-eltolású zónában (pl. CDMX) egy nappal korábbra csúszna.
+        // Pattern for PCIC dates: completes the bare 'YYYY-MM-DD' due to local midnight,
+        // otherwise `new Date('YYYY-MM-DD')` parses UTC midnight and in a zone with a
+        // negative UTC offset (e.g. CDMX) it would slip a day earlier.
         const dueDates = selCards.filter(c => c.due).map(c => `${c.due}T00:00:00`);
         setSchedule(buildSchedulePreview(dueDates, new Date()));
       });
@@ -117,7 +117,7 @@ export default function StatsScreen() {
   const sourceLangInfo = languages.find(l => l.code === sourceLang);
 
   const g = useGrammarColors();
-  // brutalista palettán a nagy számok tintával, 500 súllyal (az a / b szín a papíron olvashatatlan lehet).
+  // On the brutalist palette the big numbers are in ink at weight 500 (the a / b color may be unreadable on paper).
   const tileValueStyle = (c: string) => [styles.tileValue, g.brutal ? { color: g.ink, fontWeight: '500' as const } : { color: c }];
   const maxMinutes = Math.max(1, ...usage.last7Days.map(d => d.minutes));
   const hasChartData = usage.last7Days.some(d => d.minutes > 0);
@@ -140,7 +140,7 @@ export default function StatsScreen() {
     later: s.stats.scheduleLater,
   };
 
-  // "mikor frissül" in the learner's own words: a clock time while the
+  // "when does it refresh" in the learner's own words: a clock time while the
   // next card is close, a day count once it is further out.
   const nextRefreshLabel = (iso: string) => {
     const due = new Date(iso);
@@ -162,8 +162,8 @@ export default function StatsScreen() {
       <ScrollView style={styles.container} contentContainerStyle={[styles.content, g.brutal && styles.brutalContent]}>
         <Text variant="title" style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.stats.title}</Text>
 
-      {/* a PCIC-szint jelvénye + known/total (interval
-          >= 21 nap), alatta a másik 3 PCIC-szint known-száma. */}
+      {/* badge of the PCIC level + known/total (interval
+          >= 21 days), below it the known count of the other 3 PCIC levels. */}
       <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }]}>{s.progress.wordsKnown}</Text>
       <Card classicStyle={styles.levelCard} style={styles.gapBottom}>
         <View style={styles.levelCardHead}>
@@ -344,8 +344,8 @@ export default function StatsScreen() {
       )}
       </ScrollView>
 
-      {/* a gomb a ScrollView-n KÍVÜL lebeg, mint a settings fülön, nem a
-          lista aljára ragadva. */}
+      {/* the button floats OUTSIDE the ScrollView, as on the settings tab, not
+          stuck to the bottom of the list. */}
       <FeedbackButton level="-" languagePair="-" currentCard="stats-tab" draggable />
     </View>
   );
@@ -379,13 +379,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     alignItems: 'center',
   },
-  // brutalista doboz belseje.
+  // inside of the brutalist box.
   tileBox: { paddingVertical: 14, paddingHorizontal: 12, alignItems: 'center' },
   gapBottom: { marginBottom: 20 },
   goalOuter: { marginBottom: 24 },
   scheduleOuter: { marginBottom: 12 },
   goalBox: { padding: 16, gap: 10 },
-  // A chat-gomb (FAB) alól is kigördül az utolsó kártya.
+  // The last card also scrolls out from under the chat button (FAB).
   brutalContent: { paddingBottom: 100 },
   brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   brutalValue: { fontWeight: '500' },
@@ -400,7 +400,7 @@ const styles = StyleSheet.create({
     marginTop: 4,
     textAlign: 'center',
   },
-  // szint-badge + know/total kartya.
+  // level badge + known/total card.
   levelCard: {
     borderRadius: 14,
     padding: 16,
@@ -430,7 +430,7 @@ const styles = StyleSheet.create({
     fontSize: 13,
     marginTop: 6,
   },
-  // a másik 3 PCIC-szint known-száma, a pár-sor alatt.
+  // the known count of the other 3 PCIC levels, under the pair row.
   levelCardOthers: {
     fontSize: 12,
     marginTop: 8,

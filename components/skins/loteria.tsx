@@ -6,11 +6,11 @@ import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { useSkin } from '@/lib/useSkin';
 
-// Lotería: papel picado zászló-sor a fejlécben (a spec 5 színe), a kártya egy
-// lotería-lap: piros sorszám bal fent, a szó alul egy vonal fölött. A lap sorszáma a szóból számolt
-// (1-54, mint a lotería-paklin), a CardFrame és a WordRenderer egy kontextuson át osztozik rajta.
+// Lotería: a row of papel picado flags in the header (the 5 fixed colors), the card is a
+// lotería card: a red number at the top left, the word at the bottom above a line. The card number is computed from the
+// word (1-54, like the lotería deck), CardFrame and WordRenderer share it through a context.
 
-// A spec fix színei (a téma extra.flag1-5-je ugyanez); Saját mixben, más színekkel is ezek.
+// The fixed colors (the theme's extra.flag1-5 are the same); they are used with other colors too, in My mix.
 export const PAPEL_PICADO = ['#E4007C', '#FF8200', '#00A651', '#0072CE', '#FFD100'];
 
 const FLAG_COUNT = 10;
@@ -20,7 +20,7 @@ const TOOTH_H = 6;
 const BADGE = 26;
 const BADGE_INSET = 4;
 
-// A lap sorszáma: a szó betűiből képzett, 1 és 54 közötti szám (ugyanaz a szó, ugyanaz a szám).
+// The card number: a number between 1 and 54 derived from the letters of the word (same word, same number).
 export function loteriaNumber(word: string): number {
   let h = 0;
   for (const ch of word) h = (h * 31 + ch.charCodeAt(0)) % 54;
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
   },
   badge: { position: 'absolute', minWidth: BADGE, height: BADGE, paddingHorizontal: 4, alignItems: 'center', justifyContent: 'center' },
   badgeText: { fontSize: 14, fontWeight: '700' },
-  // flexShrink: a FitText a sor-konténerben összemegy, ezért a burkolója is.
+  // flexShrink: FitText shrinks inside the row container, so its wrapper must too.
   word: { flexShrink: 1, alignItems: 'center', gap: 6 },
   line: { height: 3, alignSelf: 'stretch' },
 });

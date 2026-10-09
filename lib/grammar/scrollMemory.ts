@@ -1,8 +1,8 @@
-// a lecke-body ScrollView (app/grammar/[topic].tsx) újra-mountol,
-// amikor a képernyő fázist vált (lesson -> drill -> lesson), mert a drill és
-// a done fázis egy másik JSX-ágat rajzol ki, a ScrollView-t nem tartalmazza.
-// Ez a modul-szintű memória topicId szerint tartja a görgetési pozíciót, hogy
-// a lecke-fázisba visszatérve visszaállítható legyen, ne ugorjon a tetejére.
+// The lesson-body ScrollView (app/grammar/[topic].tsx) re-mounts
+// when the screen changes phase (lesson -> drill -> lesson), because the drill and
+// the done phase render another JSX branch that does not contain the ScrollView.
+// This module-level memory keeps the scroll position by topicId so it can be
+// restored on returning to the lesson phase instead of jumping to the top.
 const positions = new Map<string, number>();
 
 export function getScrollY(topicId: string): number {

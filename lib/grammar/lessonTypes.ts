@@ -1,18 +1,18 @@
-// a lecke sémája, blokk-alapú törzzsel (body) és a
-// két új feladat-fajtával (match, form). A szerkezet adat, nem prózából
-// kitalált; minden lecke ilyen (`GrammarTopicData = LessonV2`, lib/games/content.ts).
+// The lesson schema, with a block-based body and the two new task
+// kinds (match, form). The structure is data, not made up from prose; every
+// lesson looks like this (`GrammarTopicData = LessonV2`, lib/games/content.ts).
 //
-// `Level` és a gap/mark item-típusok a content.ts-ből jönnek (ott a
-// „törzs" a régi típusoknak), hogy ne legyen két hely, ahol egy gap-item
-// alakja definiálva van.
+// `Level` and the gap/mark item types come from content.ts (where the old
+// types keep their "body"), so there is no second place where the shape
+// of a gap item is defined.
 
 import type { Level } from '@/data/words';
 import type { GrammarGapItem, GrammarMarkItem } from '../games/content';
 
 export type Lang4 = Record<'hu' | 'en' | 'es' | 'de', string>;
 
-// az igeidő-drill igeidői (8 + a később
-// hozzáadott 4). A sorrend itt a TENSE_IDS forrása, ne cseréld fel.
+// The tenses of the tense drill (8 + the 4 added later). The order here is the
+// source of TENSE_IDS, do not swap it.
 export type TenseId =
   | 'presente'
   | 'indefinido'
@@ -42,8 +42,8 @@ export const TENSE_IDS: readonly TenseId[] = [
   'futuro-condicional-perfecto',
 ];
 
-// A jelvényen mutatott igeidő-név; `es` a spanyol nyelvtani terminus, a többi
-// a hétköznapi név (mint a syllabus témacímekben).
+// The tense name shown on the badge; `es` is the Spanish grammatical term, the others
+// are the everyday name (as in the syllabus topic titles).
 export const TENSE_NAMES: Record<TenseId, Lang4> = {
   presente: { hu: 'jelen idő', en: 'present tense', es: 'Presente', de: 'Präsens' },
   indefinido: { hu: 'befejezett múlt', en: 'preterite', es: 'Pretérito perfecto simple', de: 'Indefinido' },
@@ -74,12 +74,12 @@ export const TENSE_NAMES: Record<TenseId, Lang4> = {
   },
 };
 
-// spanyol mondat + fordítás; `es` maga a mondat (vagy egy parafrázisa, ha a
-// blokk-pont maga nem mondat, hanem egy jelenség leírása).
-// Mezőkonvenció angol célnyelvnél (es→en irány): `ExamplePair.es` és
-// `WhyItem.es` a TANULT nyelvű (angol) mondat, `tr` a fordítások (tr.en ===
-// maga a mondat); `MatchItem.pairs` {es, en} szó szerint marad (es = spanyol,
-// en = angol), a renderer a tanult nyelvű oldalt learnedLang szerint választja.
+// A Spanish sentence + translation; `es` is the sentence itself (or a paraphrase of it when
+// the block point is not itself a sentence but the description of a phenomenon).
+// Field convention for an English target language (es->en direction): `ExamplePair.es` and
+// `WhyItem.es` hold the sentence in the LEARNED language (English), `tr` holds the translations
+// (tr.en === the sentence itself); `MatchItem.pairs` {es, en} stays literal (es = Spanish,
+// en = English), the renderer picks the learned-language side by learnedLang.
 export interface ExamplePair {
   es: string;
   tr: Lang4;
@@ -108,47 +108,47 @@ export type LessonBlock =
     }
   | { kind: 'tip'; text: Lang4 };
 
-// párosítás, angol <-> spanyol.
+// Matching, English <-> Spanish.
 export interface MatchItem {
   kind: 'match';
   id: string;
-  pairs: { es: string; en: string }[]; // 5-6 pár
+  pairs: { es: string; en: string }[]; // 5-6 pairs
 }
 
-// ragozási drill, a `table` mezővel a body egyik `table`
-// blokkjának id-jára hivatkozva (onnan jönnek a lehetséges alakok).
+// Conjugation drill; the `table` field refers to the id of one of the body's `table`
+// blocks (the possible forms come from there).
 export interface FormItem {
   kind: 'form';
   id: string;
   verb: string;
   person: string;
   answer: string;
-  // további elfogadott alakok (ahol két alak is helyes: hablara / hablase).
+  // further accepted forms (where two forms are correct: hablara / hablase).
   accept?: string[];
-  table: string; // a body egyik `table` blokkjának id-ja
+  table: string; // id of one of the body's `table` blocks
   tense?: { from: TenseId; to: TenseId };
 }
 
-// "miért ez a mondat", a
-// tanuló nem a hiányzó szót választja, hanem azt, MELYIK SZABÁLY miatt van a
-// mondat úgy, ahogy van (pl. "Soy profesor." → "foglalkozás / identitás").
+// "Why this sentence": the
+// learner does not pick the missing word but WHICH RULE makes the
+// sentence the way it is (e.g. "Soy profesor." -> "occupation / identity").
 export interface WhyItem {
   kind: 'why';
   id: string;
-  es: string; // a mondat spanyolul, pl. "Soy profesor."
-  // a mondat pontos része, amire a kérdés vonatkozik (pl. "perro",
-  // több szó is lehet: "está cansado"); szóhatárral kell szerepelnie az
-  // `es` mezőben, lásd lib/grammar/whyTarget.ts.
+  es: string; // the sentence in Spanish, e.g. "Soy profesor."
+  // the exact part of the sentence the question is about (e.g. "perro",
+  // can be several words: "está cansado"); it must appear in the
+  // `es` field at a word boundary, see lib/grammar/whyTarget.ts.
   target?: string;
-  tr: Lang4; // a mondat fordítása; tr.es === es, a felolvasás miatt egységesen
-  options: { text: Lang4; wrong?: Lang4 }[]; // 3 szabály-név; a nem jó opciókon `wrong` kötelező
+  tr: Lang4; // translation of the sentence; tr.es === es, uniform for the read-aloud
+  options: { text: Lang4; wrong?: Lang4 }[]; // 3 rule names; `wrong` is mandatory on the incorrect options
   correctIndex: number;
   tense?: { from: TenseId; to: TenseId };
 }
 
-// az igeidő-drill item-fajtája, mondat-átírás egyik igeidőből a
-// másikba. A `wordIds` a mondat kártyáira
-// hivatkozik, ez hajtja az unlockot.
+// the item kind of the tense drill, sentence rewriting from one tense into
+// another. The `wordIds` refer to the sentence's cards; this drives
+// the unlock.
 export interface TransformItem {
   kind: 'transform';
   id: string;
@@ -160,46 +160,46 @@ export interface TransformItem {
   why: Lang4;
 }
 
-// három új feladat-fajta, EGYELŐRE csak két
-// leckében, ideiglenes "ÚJ · TESZT" jelöléssel (`trial: true`), hogy a fejlesztő kipróbálhassa
-// és jóváhagyhassa. A jelölés egy helyről kivehető (components/TrialBadge.tsx: TRIAL_BADGES).
+// three new task kinds, FOR NOW only in two
+// lessons, with a temporary "NEW · TEST" mark (`trial: true`) so the developer can try them out
+// and approve them. The mark can be removed in one place (components/TrialBadge.tsx: TRIAL_BADGES).
 
-/** Hibakereső: a mondatban egy tipikus hiba van; a tanuló a rossz szóra bök, aztán 3 opcióból kiválasztja a jót. */
+/** Error finder: the sentence contains one typical mistake; the learner taps the wrong word, then picks the right fix from 3 options. */
 export interface SpotItem {
   kind: 'spot';
   id: string;
   trial?: boolean;
-  /** A hibás mondat, szóközönként tördelve koppintható szavakra (írásjel a szó része). */
+  /** The faulty sentence, split by spaces into tappable words (punctuation is part of the word). */
   es: string;
-  /** A hibás szó sorszáma a mondatban (0-tól). */
+  /** Index of the faulty word in the sentence (0-based). */
   wrongIndex: number;
-  /** 3 javítás-opció; az üres szöveg a szó törlését jelenti. */
+  /** 3 correction options; the empty text means deleting the word. */
   options: string[];
   correctIndex: number;
-  /** Rövid magyarázat négy nyelven. */
+  /** Short explanation in four languages. */
   explain: Lang4;
-  /** A HELYES mondat fordítása. */
+  /** Translation of the CORRECT sentence. */
   tr: Lang4;
 }
 
-/** Szórend: felül a mondat a felület nyelvén, alatta keverve a spanyol szócsempék; koppintással sorba rakja. */
+/** Word order: the sentence in the interface language on top, the shuffled Spanish word tiles below; tapping puts them in order. */
 export interface OrderItem {
   kind: 'order';
   id: string;
   trial?: boolean;
-  /** A mondat a felület nyelvén. */
+  /** The sentence in the interface language. */
   prompt: Lang4;
-  /** A helyes spanyol mondat (a csempék a szavaiból lesznek). */
+  /** The correct Spanish sentence (the tiles are made from its words). */
   es: string;
 }
 
-/** Diktálás: a mondat elhangzik (újrajátszható, lassabban is), a tanuló begépeli. */
+/** Dictation: the sentence is played (replayable, also slower), the learner types it in. */
 export interface DictationItem {
   kind: 'dictation';
   id: string;
   trial?: boolean;
   es: string;
-  /** A mondat fordítása, a válasz után mutatjuk. */
+  /** Translation of the sentence, shown after the answer. */
   tr: Lang4;
 }
 
@@ -209,9 +209,9 @@ export interface LessonV2 {
   level: Level;
   title: Lang4;
   body: LessonBlock[];
-  speak: Lang4; // felolvasásra írt szöveg, a spanyol szakaszok «...» közt
+  speak: Lang4; // text written for the read-aloud, the Spanish stretches between «...»
   glossary?: { word: string; gloss: Lang4 }[];
   items: (GrammarGapItem | GrammarMarkItem | MatchItem | FormItem | WhyItem | TransformItem | SpotItem | OrderItem | DictationItem)[];
-  focusTopic?: string; // szó-témakör, aminek a kártyái a lecke szó-halmazába tartoznak a transform-szavak mellett
-  noWordDeck?: boolean; // ennél a leckénél nincs "Practice the words" pakli (az automatikus szó-pakli kikapcsolása)
+  focusTopic?: string; // word topic whose cards belong to the lesson's word set alongside the transform words
+  noWordDeck?: boolean; // this lesson has no "Practice the words" deck (switches off the automatic word deck)
 }

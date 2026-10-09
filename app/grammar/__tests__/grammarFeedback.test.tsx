@@ -1,8 +1,8 @@
-// a nyelvtani lecke-folyam MINDEN részén ott a 💬, és a kártya-azonosító
-// megmondja, melyik részről van szó (grammar:<lecke>:<rész>): Nyelvtan fül listája, lecke-áttekintés,
-// feladat közben, feladat VÉGE (done), lecke-teszt (kérdés / kilépés / eredmény), pakli (kártya / vége /
-// üres), és a még meg nem írt lecke lapja. Beírós kérdésnél a 💬 a dokkolt Check-sáv fölött áll
-// (bottomOffset). Minta: app/__tests__/examFeedback.test.tsx + lessonTest.test.tsx + tableDeck.play.test.tsx.
+// the 💬 is on EVERY part of the grammar lesson flow, and the card id
+// says which part it is (grammar:<lesson>:<part>): the Grammar tab list, lesson overview,
+// during a task, task END (done), lesson test (question / exit / result), deck (card / end /
+// empty), and the page of a not-yet-written lesson. On a type-in question the 💬 sits above the docked Check bar
+// (bottomOffset). Pattern: app/__tests__/examFeedback.test.tsx + lessonTest.test.tsx + tableDeck.play.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({
@@ -67,7 +67,7 @@ const press = async (testID: string) => {
   fireEvent.press(screen.getByTestId(testID));
   await flush();
 };
-// Pontosan egy 💬 van a képernyőn (getByTestId többesnél dob), ezt olvassuk ki.
+// There is exactly one 💬 on the screen (getByTestId throws on several), we read that out.
 const card = () => screen.getByTestId('fb-card').props.children as string;
 
 const seedBest = async (kinds: string[]) => {
@@ -76,7 +76,7 @@ const seedBest = async (kinds: string[]) => {
   }
 };
 
-// Végigjátszik egy "choice" kört (az első opciót választja), amíg a done-lap fel nem tűnik.
+// Plays through a "choice" round (picks the first option) until the done page appears.
 const answerChoiceRound = async () => {
   for (let i = 0; i < 40 && !screen.queryByTestId('grammar-start-lessontest'); i++) {
     const opt = screen.queryAllByTestId('grammar-option')[0];
@@ -100,7 +100,7 @@ const playChoiceRound = async () => {
 const expectedQuestions = (): LessonTestQuestion[] =>
   buildLessonTest(lessonFor('es', TOPIC)!, { seed: NOW, learnedLang: 'es', contentLang: 'en' });
 
-// Egy kérdés helyes megoldása a vizsga-kártyán.
+// Solving one question correctly on the exam card.
 const solveOk = async (q: LessonTestQuestion) => {
   const v = q.view;
   if (v.card === 'choice') {
@@ -116,7 +116,7 @@ const solveOk = async (q: LessonTestQuestion) => {
   }
 };
 
-describe.each(['brand', 'classic'] as const)('nyelvtani lecke: 💬 minden részen (%s paletta)', (palette) => {
+describe.each(['brand', 'classic'] as const)('grammar lesson: 💬 on every part (%s palette)', (palette) => {
   beforeEach(async () => {
     jest.clearAllMocks();
     jest.spyOn(Date, 'now').mockReturnValue(NOW);
@@ -129,7 +129,7 @@ describe.each(['brand', 'classic'] as const)('nyelvtani lecke: 💬 minden rész
   });
   afterEach(() => (Date.now as jest.Mock).mockRestore());
 
-  it('Nyelvtan fül listája: grammar-syllabus', async () => {
+  it('Grammar tab list: grammar-syllabus', async () => {
     const view = render(
       <ThemeProvider>
         <GrammarSyllabusScreen />
@@ -140,7 +140,7 @@ describe.each(['brand', 'classic'] as const)('nyelvtani lecke: 💬 minden rész
     view.unmount();
   });
 
-  it('még meg nem írt lecke lapja: grammar:<lecke>:soon', async () => {
+  it('page of a lesson not yet written: grammar:<lesson>:soon', async () => {
     mockTopicId = 'no-such-lesson';
     const view = render(
       <ThemeProvider>
@@ -152,7 +152,7 @@ describe.each(['brand', 'classic'] as const)('nyelvtani lecke: 💬 minden rész
     view.unmount();
   });
 
-  it('áttekintés, feladat közben, feladat VÉGE (done): mind saját azonosítóval', async () => {
+  it('overview, during an exercise, exercise END (done): all with their own identifier', async () => {
     await seedBest(['match', 'form', 'why']);
     const view = render(
       <ThemeProvider>
@@ -164,13 +164,13 @@ describe.each(['brand', 'classic'] as const)('nyelvtani lecke: 💬 minden rész
     await press('grammar-start-choice');
     expect(card()).toMatch(new RegExp(`^grammar:${TOPIC}:drill(:.+)? \\| en→es \\| A1 \\| (-|\\d+)$`));
     await answerChoiceRound();
-    // ezt hiányolta a fejlesztő, a feladat végén (eredmény-lap) nem volt 💬.
+    // this was missing: there was no 💬 at the end of a task (result page).
     expect(screen.getByTestId('grammar-start-lessontest')).toBeTruthy();
     expect(card()).toBe(`grammar:${TOPIC}:done | en→es | A1 | -`);
     view.unmount();
   });
 
-  it('lecke-teszt: kérdés (beírósnál a dokkolt sáv fölött), kilépés, vissza, eredmény', async () => {
+  it('lesson test: question (above the docked bar for typed ones), exit, back, result', async () => {
     await seedBest(['match', 'form', 'why']);
     const view = render(
       <ThemeProvider>
@@ -185,14 +185,14 @@ describe.each(['brand', 'classic'] as const)('nyelvtani lecke: 💬 minden rész
     const prefix = (i: number) => `grammar:${TOPIC}:lessontest:q${i + 1}:${qs[i].id} | en→es | A1 | `;
     expect(card().startsWith(prefix(0))).toBe(true);
 
-    // Kilépés-megerősítés, majd vissza ugyanarra a kérdésre.
+    // Exit confirmation, then back to the same question.
     await press('lesson-test-close');
     expect(card()).toBe(`grammar:${TOPIC}:lessontest:leave | en→es | A1 | -`);
     await press('lesson-test-keep-going');
     expect(card().startsWith(prefix(0))).toBe(true);
 
     for (let i = 0; i < qs.length; i++) {
-      // Beírós kérdésnél dokkolt Check-sáv van: a 💬 a sáv magasságával följebb áll; másnál alap helyzet.
+      // On a type-in question there is a docked Check bar: the 💬 sits higher by the bar's height; otherwise the default position.
       expect(card().startsWith(prefix(i))).toBe(true);
       const offset = card().slice(prefix(i).length);
       if (qs[i].view.card === 'type') expect(offset).toMatch(/^[1-9]\d*$/);
@@ -204,7 +204,7 @@ describe.each(['brand', 'classic'] as const)('nyelvtani lecke: 💬 minden rész
   });
 });
 
-describe('nyelvtani pakli (deck): 💬 kártyán, a pakli végén, üres lapon', () => {
+describe('grammar deck: 💬 on a card, at the end of the deck, on an empty sheet', () => {
   const cells = tableCellsForLesson(lessonFor('es', 'ser-estar')!);
 
   beforeEach(async () => {
@@ -216,7 +216,7 @@ describe('nyelvtani pakli (deck): 💬 kártyán, a pakli végén, üres lapon',
     await db.resetGameProgress(GRAMMAR_PROGRESS_KEY);
   });
 
-  it('kártya: grammar:<lecke>:tabledeck:<cella>, a dokkolt sáv fölött', async () => {
+  it('card: grammar:<lesson>:tabledeck:<cell>, above the docked bar', async () => {
     mockTopicId = 'ser-estar';
     const view = render(<TableDeckScreen />);
     await flush();
@@ -224,7 +224,7 @@ describe('nyelvtani pakli (deck): 💬 kártyán, a pakli végén, üres lapon',
     view.unmount();
   });
 
-  it('pakli vége: grammar:<lecke>:tabledeck', async () => {
+  it('end of deck: grammar:<lesson>:tabledeck', async () => {
     mockTopicId = 'ser-estar';
     await getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, 'ser-estar:tabledeck', 'progress', {
       cells: cells.map((c) => ({ id: c.id, done: true, dueAt: null })),
@@ -238,7 +238,7 @@ describe('nyelvtani pakli (deck): 💬 kártyán, a pakli végén, üres lapon',
     view.unmount();
   });
 
-  it('üres pakli (nincs cella és nincs szó-pakli): grammar:<lecke>:tabledeck:empty', async () => {
+  it('empty deck (no cell and no word deck): grammar:<lesson>:tabledeck:empty', async () => {
     mockTopicId = 'no-such-lesson';
     const view = render(<TableDeckScreen />);
     await flush();

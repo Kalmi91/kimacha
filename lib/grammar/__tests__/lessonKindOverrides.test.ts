@@ -1,5 +1,5 @@
 // per-lesson content decisions from the feedback sheet.
-//  - indefinido-imperfecto: no `form` drill ("ez a feladat típus ide nem kell")
+//  - indefinido-imperfecto: no `form` drill ("this exercise type is not needed here")
 //  - perfecto-vs-indefinido: no "Practice the words" deck and no matching drill
 // The word deck is switched off by the lesson-level flag `noWordDeck`, only for that lesson.
 
@@ -8,7 +8,7 @@ import { lessonFor } from '../syllabus';
 import { grammarKindCounts } from '../../games/content';
 import { WORD_DECK_MIN_CARDS, wordCellsForLesson } from '../tableDeck';
 
-describe('indefinido-imperfecto (FB469)', () => {
+describe('indefinido-imperfecto', () => {
   const lesson = lessonFor('es', 'indefinido-imperfecto')!;
 
   it('has no form items, so no form drill button', () => {
@@ -25,7 +25,7 @@ describe('indefinido-imperfecto (FB469)', () => {
   });
 });
 
-describe('perfecto-vs-indefinido (FB471, FB472)', () => {
+describe('perfecto-vs-indefinido', () => {
   const lesson = lessonFor('es', 'perfecto-vs-indefinido')!;
 
   it('has no matching drill', () => {

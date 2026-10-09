@@ -1,8 +1,8 @@
-// a „csak tanult szó" kapu. Egy mondat akkor lehet
-// mondatkártya, ha MINDEN szava ismert: tanult szó (a pakliban legalább
-// egyszer helyesen megválaszolt tétel célnyelvi alakja), annak többes/nemi
-// alakja, feloldott igeidőben ragozott tanult ige, vagy szabad szó (névelő,
-// elöljáró, kötőszó). Tiszta modul: nincs adatbázis, nincs korpusz-import.
+// the "learned words only" gate. A sentence can become a
+// sentence card only if EVERY one of its words is known: a learned word (the target-language
+// form of an item answered correctly at least once in the deck), its plural/gender
+// form, a learned verb conjugated in an unlocked tense, or a free word (article,
+// preposition, conjunction). A pure module: no database, no corpus import.
 
 import { esFeminine, esPlural } from '@/lib/esInflect';
 import { conjugate, TENSES, type Tense } from '@/lib/games/conjugate';
@@ -11,23 +11,23 @@ import type { Sm2Card } from '@/lib/sm2';
 
 type KnownLang = 'es' | 'en';
 
-/** A feloldható igeidők: a `conjugate` hat igeideje + a kötőmód imperfecto. */
+/** The unlockable tenses: the six tenses of `conjugate` + the subjunctive imperfecto. */
 export type ResolvedTense = Tense | 'subjuntivo_imperfecto';
 
 export interface LearnedEntry {
-  /** A tétel célnyelvi alakja úgy, ahogy a pakliban áll („el libro", „yo hablo", „to be"). */
+  /** The target-language form of the item as it stands in the deck ("el libro", "yo hablo", "to be"). */
   text: string;
-  /** A tétel szófaja, ha ismert (a nemi alak csak melléknévre, a ragozás csak igére hat). */
+  /** The item's part of speech, if known (the gender form only affects adjectives, the conjugation only verbs). */
   pos?: string;
 }
 
 interface KnownContext {
   learned: Iterable<string | LearnedEntry>;
-  /** Csak spanyolnál: a nyelvtani leckékkel feloldott igeidők. */
+  /** Spanish only: the tenses unlocked by the grammar lessons. */
   tenses?: ReadonlySet<ResolvedTense>;
 }
 
-// Szabad szavak: igét nem tartalmaz, a tanulónak nem kell külön megtanulnia.
+// Free words: contain no verb, the learner does not have to learn them separately.
 const FREE_WORDS: Record<KnownLang, ReadonlySet<string>> = {
   es: new Set([
     'el', 'la', 'los', 'las', 'un', 'una', 'unos', 'unas',
@@ -36,7 +36,7 @@ const FREE_WORDS: Record<KnownLang, ReadonlySet<string>> = {
   en: new Set(['the', 'a', 'an', 'of', 'to', 'in', 'on', 'and', 'or']),
 };
 
-// Az angol be/have/do/go alakjai, ha az alapige tanult.
+// The forms of English be/have/do/go, if the base verb is learned.
 const EN_IRREGULAR_FORMS: Record<string, string[]> = {
   be: ['am', 'is', 'are', 'was', 'were', 'been', 'being'],
   have: ['has', 'had', 'having'],
@@ -44,8 +44,8 @@ const EN_IRREGULAR_FORMS: Record<string, string[]> = {
   go: ['goes', 'went', 'gone', 'going'],
 };
 
-// Amit a tenseGate felismer, de a feloldott igeidők (ResolvedTense) nem fedik:
-// összetett igeidők és felszólítás. Ilyen szerkezet nem kerülhet mondatkártyára.
+// What tenseGate recognises but the unlocked tenses (ResolvedTense) do not cover:
+// compound tenses and the imperative. Such a structure must not land on a sentence card.
 const UNMODELED_STRUCTURES: ReadonlySet<Structure> = new Set<Structure>([
   'perfecto',
   'pluscuamperfecto',
@@ -58,20 +58,20 @@ const ES_INFINITIVE = /^[a-záéíóúñü]+(ar|er|ir)$/;
 const ACCENT_ADD: Record<string, string> = { a: 'á', e: 'é', i: 'í', o: 'ó', u: 'ú' };
 
 /**
- * Egy kártya „tanult"-e: legalább egyszer helyesen megválaszolták (review
- * állapotba került, vagy volt már lapse-a, vagyis review-ból esett vissza), vagy
- * a tanuló kézzel tudottnak jelölte.
+ * Whether a card is "learned": it has been answered correctly at least once (it reached the
+ * review state, or already had a lapse, i.e. fell back from review), or
+ * the learner marked it as known by hand.
  */
 export function isLearnedCard(card: Sm2Card): boolean {
   return card.known === true || card.state === 'review' || card.lapses > 0;
 }
 
 /**
- * A nyelvtani leckék teljesítéséből (`doneGrammarTopicProgress` kulcsai) a
- * feloldott igeidők. presente ← presente-regular/presente-irregular,
+ * The unlocked tenses, from the completion of the grammar lessons (the keys of `doneGrammarTopicProgress`).
+ * presente ← presente-regular/presente-irregular,
  * indefinido ← indefinido-*, imperfecto ← imperfecto,
  * futuro ← futuro-simple, condicional ← condicional-simple,
- * kötőmód presente ← subjuntivo-presente-forma, kötőmód imperfecto ← subjuntivo-imperfecto.
+ * subjunctive presente ← subjuntivo-presente-forma, subjunctive imperfecto ← subjuntivo-imperfecto.
  */
 export function resolvedTensesFromLessons(doneTopicIds: Iterable<string>): Set<ResolvedTense> {
   const done = new Set(doneTopicIds);
@@ -112,7 +112,7 @@ function enTokenize(text: string): string[] {
     .filter(Boolean);
 }
 
-// Kötőmód imperfecto: a 3. személy többes indefinido tövéből (-ron helyett -ra…).
+// Subjunctive imperfecto: from the stem of the 3rd person plural indefinido (-ra instead of -ron…).
 function subjuntivoImperfecto(infinitive: string): string[] | null {
   const ellos = conjugate(infinitive, 'indefinido')?.[4]?.form;
   if (!ellos || !ellos.endsWith('ron')) return null;
@@ -153,15 +153,15 @@ function addSpanish(known: Set<string>, entry: LearnedEntry, tenses: ReadonlySet
 function addEnglish(known: Set<string>, entry: LearnedEntry) {
   const tokens = enEntryTokens(entry.text.trim());
   for (const token of tokens) known.add(token);
-  // A ragozó végződések csak egyszavas tételre (vagy „to X"-re) hatnak; egy
-  // kifejezés („good morning") szavai nem kapnak -ing/-ed alakot.
+  // The conjugation endings only apply to a one-word item (or "to X"); the words of a
+  // phrase ("good morning") do not get an -ing/-ed form.
   if (tokens.length !== 1) return;
   const [base] = tokens;
   for (const suffix of ['s', 'es', 'ed', 'ing', 'd']) known.add(`${base}${suffix}`);
   for (const form of EN_IRREGULAR_FORMS[base] ?? []) known.add(form);
 }
 
-/** A tanult szavakból az összes elfogadott (kisbetűs) token. */
+/** All accepted (lowercase) tokens from the learned words. */
 export function knownTokens(lang: KnownLang, ctx: KnownContext): Set<string> {
   const known = new Set<string>(FREE_WORDS[lang]);
   const tenses = ctx.tenses ?? new Set<ResolvedTense>();
@@ -173,7 +173,7 @@ export function knownTokens(lang: KnownLang, ctx: KnownContext): Set<string> {
   return known;
 }
 
-/** A mondat tokenjei, amiket a kapu nem fogad el. Üres = minden szó ismert. */
+/** The tokens of the sentence that the gate does not accept. Empty = every word is known. */
 export function unknownTokens(sentence: string, lang: KnownLang, ctx: KnownContext): string[] {
   const known = knownTokens(lang, ctx);
   const tokens = lang === 'es' ? tokenize(sentence) : enTokenize(sentence);
@@ -181,9 +181,9 @@ export function unknownTokens(sentence: string, lang: KnownLang, ctx: KnownConte
 }
 
 /**
- * Mondatkártyára csak olyan mondat kerülhet, aminek minden szava tanult vagy
- * szabad, és (spanyolnál) nem használ olyan szerkezetet, amit a nyelvtan még nem
- * tanított: összetett igeidőt vagy felszólítást.
+ * Only a sentence whose every word is learned or free may land on a sentence card,
+ * and (for Spanish) which does not use a structure the grammar has not yet taught:
+ * a compound tense or an imperative.
  */
 export function isSentenceKnown(sentence: string, lang: KnownLang, ctx: KnownContext): boolean {
   if (!sentence.trim()) return false;

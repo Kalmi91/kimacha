@@ -8,13 +8,13 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
 
-// a szintfelmérő feleletválasztós kérdése. A koppintás azonnal
-// válaszol, visszajelzés nincs (a felmérő nem tanít, és a hossz a válaszoktól függ); az
-// "I don't know" hibának számít, de külön nem büntet.
+// the multiple-choice question of the placement test. A tap answers immediately, there is no
+// feedback (the test does not teach, and its length depends on the answers); "I don't know"
+// counts as a mistake but is not penalised separately.
 type Props = {
-  /** A kérdés fölötti rövid felirat (nyelvtannál a feladat, szónál üres). */
+  /** The short caption above the question (the task for grammar, empty for a word). */
   heading?: string;
-  /** A kérdés vagy a lyukas mondat. */
+  /** The question or the gap sentence. */
   text: string;
   options: string[];
   correctIndex: number;

@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { getDb } from '@/lib/database';
 
-// az y2k (streak-chip) és a gamer (LVL / kombó) díszek valós adatai. Betöltéskor és
-// félpercenként frissülnek (mint a szocreál "Napi terv" sáv); hiba esetén marad a 0.
+// the real data for the y2k (streak chip) and gamer (LVL / combo) decors. Refreshed on load and
+// every half minute (like the socialist realism "Daily plan" bar); on error it stays 0.
 const REFRESH_MS = 30000;
 
 function usePolled(load: () => Promise<number>): number {
@@ -30,12 +30,12 @@ function usePolled(load: () => Promise<number>): number {
 const loadStreak = async () => (await getDb().getStreak())?.current_count ?? 0;
 const loadMinutes = async () => (await getDb().getUsageStats()).allTimeTotal;
 
-// A napi streak (egymást követő napok száma).
+// The daily streak (number of consecutive days).
 export function useStreakCount(): number {
   return usePolled(loadStreak);
 }
 
-// Az összes aktív tanulási perc (a gamer XP-je ebből számolódik).
+// All active learning minutes (the gamer's XP is computed from this).
 export function useActiveMinutes(): number {
   return usePolled(loadMinutes);
 }

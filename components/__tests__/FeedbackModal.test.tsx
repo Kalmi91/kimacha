@@ -1,7 +1,7 @@
-// P0 (Play-vágás): a 💬 gomb koppintására nyíljon meg a Feedback
-// modal, és a küldés a flavor szerinti utat hívja (lib/buildFlavor.ts):
-// Drive-flavor → fetch a FEEDBACK_URL-re, Play-flavor → Share.share, egyik
-// se navigáljon el az appból (nincs router/Linking hívás ezen az úton).
+// Tapping the 💬 button should open the Feedback
+// modal, and sending should take the route given by the flavor (lib/buildFlavor.ts):
+// Drive flavor → fetch to FEEDBACK_URL, Play flavor → Share.share, neither
+// should navigate away from the app (no router/Linking call on this path).
 import { act, fireEvent, render, waitFor } from '@testing-library/react-native';
 import { Share } from 'react-native';
 import FeedbackButton from '../FeedbackModal';
@@ -38,7 +38,7 @@ describe('FeedbackModal (FeedbackButton)', () => {
     expect(getByPlaceholderText('Share your thoughts...')).toBeTruthy();
   });
 
-  it('Drive-flavorban a küldés fetch-csel megy a FEEDBACK_URL-re, nem Share-rel', async () => {
+  it('in the Drive flavor sending goes by fetch to FEEDBACK_URL, not by Share', async () => {
     const shareSpy = jest.spyOn(Share, 'share').mockResolvedValue({ action: 'sharedAction' } as never);
     global.fetch = jest.fn().mockResolvedValue({ ok: true } as never);
 
@@ -57,7 +57,7 @@ describe('FeedbackModal (FeedbackButton)', () => {
     expect(shareSpy).not.toHaveBeenCalled();
   });
 
-  it('Play-flavorban a küldés a megosztás-lapot hívja, nem fetch-et', async () => {
+  it('in the Play flavor sending calls the share sheet, not fetch', async () => {
     const buildFlavor = require('@/lib/buildFlavor');
     buildFlavor.IS_PLAY_BUILD = true;
     buildFlavor.FEEDBACK_URL = null;

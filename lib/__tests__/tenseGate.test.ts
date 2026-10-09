@@ -4,7 +4,7 @@ beforeEach(() => resetFormIndex());
 
 describe('detectStructures', () => {
   it('names the compound tenses by their auxiliary and participle', () => {
-    // A hiba kiváltó esete: „The clients have arrived" spanyol párja.
+    // The case that triggered the bug: the Spanish counterpart of "The clients have arrived".
     expect([...detectStructures('Los clientes han llegado temprano hoy.')]).toContain('perfecto');
     expect([...detectStructures('¿No habías estado aquí antes?')]).toContain('pluscuamperfecto');
     expect([...detectStructures('Habré terminado el trabajo.')]).toContain('futuro_perfecto');
@@ -20,8 +20,8 @@ describe('detectStructures', () => {
   });
 
   it('does not mistake a noun for a verb form it happens to share', () => {
-    // estudio = tanulmány ÉS estudiar jelen ideje; entre = között ÉS entrar kötőmódja;
-    // viaje = utazás ÉS viajar kötőmódja. (A words-openben nincs "vino".)
+    // estudio = study (noun) AND the present of estudiar; entre = between AND the subjunctive of entrar;
+    // viaje = trip AND the subjunctive of viajar. (There is no "vino" in words-open.)
     expect(detectStructures('El estudio de España.').has('presente')).toBe(false);
     expect(detectStructures('El gato está entre la mesa y la silla.').has('subjuntivo_presente')).toBe(false);
     expect(detectStructures('Estoy emocionado por el viaje.').has('subjuntivo_presente')).toBe(false);

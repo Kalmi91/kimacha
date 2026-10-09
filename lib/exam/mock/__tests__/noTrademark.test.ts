@@ -1,7 +1,7 @@
-// a felület sehol nem ír ki vizsgáztatói vagy vizsga-nevet
-// (a szakmai kutatásban igen, a felületen nem). Az angol irányon a felirat "nemzetközi minta", nem "hivatalos".
-// Ellenőrzött felület: az i18n `mockExam` blokk (en és es, a függvényekkel együtt), a papírok és készségek
-// nevei, a szerzői utasítások és írás-feladatok. A korpusz-mondatokat nem nézzük (azokban lehet "key" szó).
+// The UI never prints an examiner or exam name (the background research may name them, the UI may not).
+// In the English direction the label is "international sample", not "official".
+// Checked surface: the i18n `mockExam` block (en and es, including the functions), the names of the papers and skills,
+// the authoring instructions and writing tasks. Corpus sentences are not checked (they may contain the word "key").
 
 import { pcicItemsForLevel, setPcicTarget } from '@/data/pcic';
 import en from '@/lib/i18n/en';
@@ -12,7 +12,7 @@ import type { MockLevel, MockTarget } from '../types';
 
 afterAll(() => setPcicTarget('es'));
 
-// A DELE csak nagybetűvel márka (a spanyol "dele" ige, pl. "dele las gracias", törvényes szó).
+// DELE is a brand only in capitals (the Spanish verb "dele", e.g. "dele las gracias", is a legitimate word).
 const TRADEMARK_WORDS = /pearson|peic|cambridge|\bkey\b|siele|cervantes|ielts|toefl|toeic|trinity|oxford|languagecert|\bket\b|goethe/i;
 const TRADEMARK_CAPS = /\bDELE\b/;
 const clean = (text: string) => !TRADEMARK_WORDS.test(text) && !TRADEMARK_CAPS.test(text);
@@ -20,7 +20,7 @@ const clean = (text: string) => !TRADEMARK_WORDS.test(text) && !TRADEMARK_CAPS.t
 function strings(value: unknown, out: string[] = []): string[] {
   if (typeof value === 'string') out.push(value);
   else if (typeof value === 'function') {
-    // A feliratfüggvényeket mintaértékekkel hívjuk meg (szint, számok, igaz/hamis).
+    // The label functions are called with sample values (level, numbers, true/false).
     for (const args of [['A1', 3, 4, 5, true, false], ['A2', 60, 30, 50, false, true]]) {
       const text = (value as (...a: unknown[]) => unknown)(...args);
       if (typeof text === 'string') out.push(text);
@@ -29,8 +29,8 @@ function strings(value: unknown, out: string[] = []): string[] {
   return out;
 }
 
-describe('a felület nem ír ki védjegyes vizsganevet', () => {
-  it('i18n mockExam (en és es): nincs védjegyes név', () => {
+describe('the UI does not print a trademarked exam name', () => {
+  it('i18n mockExam (en and es): no trademarked name', () => {
     for (const block of [en.mockExam, es.mockExam]) {
       const all = strings(block);
       expect(all.length).toBeGreaterThan(50);
@@ -38,7 +38,7 @@ describe('a felület nem ír ki védjegyes vizsganevet', () => {
     }
   });
 
-  it('a papírok, készségek, utasítások és írás-feladatok szövege mind a négy vizsgán tiszta', () => {
+  it('the text of the papers, skills, instructions and writing tasks is clean on all four exams', () => {
     for (const [target, level] of [['es', 'A1'], ['es', 'A2'], ['en', 'A1'], ['en', 'A2']] as [MockTarget, MockLevel][]) {
       setPcicTarget(target);
       const e = buildMockExam({ target, level, items: pcicItemsForLevel(level), seed: 3 });
@@ -57,7 +57,7 @@ describe('a felület nem ír ki védjegyes vizsganevet', () => {
     }
   });
 
-  it('az angol irányon a felirat nemzetközi minta, a hivatalos felirat csak a spanyol irányé', () => {
+  it('in the English direction the label is international sample, the official label belongs only to the Spanish direction', () => {
     expect(en.mockExam.modelNoteIntl('A1')).toBe('Practice exam modelled on an international A1 format');
     expect(en.mockExam.cardBodyIntl).not.toMatch(/official/i);
     expect(es.mockExam.modelNoteIntl('A2')).not.toMatch(/oficial/i);
@@ -65,7 +65,7 @@ describe('a felület nem ír ki védjegyes vizsganevet', () => {
     expect(en.mockExam.modelNote('A1')).toMatch(/official/i);
   });
 
-  it('a közelítő átmenési küszöb a felületen jelölve: becslés, nem hivatalos szabály', () => {
+  it('the approximate pass threshold is flagged in the UI: an estimate, not an official rule', () => {
     expect(en.mockExam.passRuleAverage(50)).toMatch(/estimate/);
     expect(en.mockExam.averageLine(51, 50, true, true)).toMatch(/estimate/);
     expect(es.mockExam.passRuleAverage(50)).toMatch(/estimación/);

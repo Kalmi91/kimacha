@@ -1,7 +1,7 @@
-// a
-// szintvizsga akkor nyílik, ha a szint words-open kártyáinak legalább 80%-a
-// TANULT, ÉS a szint legalább egy nyelvtani leckéje kész. Tiszta függvények, I/O
-// nélkül; a hívó adja a kártyákat és a lecke-sorokat.
+// The
+// level exam unlocks when at least 80% of the level's words-open cards are
+// LEARNED, AND at least one grammar lesson of the level is done. Pure functions, no I/O;
+// the caller supplies the cards and the lesson rows.
 
 import { pcicItemsForLevel, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import { doneGrammarTopicProgress, hasLesson, syllabusForLevel, syllabusTopic } from '@/lib/grammar/syllabus';
@@ -11,11 +11,11 @@ import type { ExamResult } from './types';
 export const EXAM_UNLOCK_PCT = 80;
 
 /**
- * "Tanult" szó (A2 b): az SM-2-ben graduált, vagyis `review` állapotú kártya, nem
- * csak bemutatott (`learning`) és nem új. A `known` jelölés (sm2MarkKnown) is
- * `review`-ba teszi a kártyát, tehát azt ez külön nélkül lefedi. A visszaesett
- * (lapse után újra `learning`) kártya nem tanult, amíg újra nem graduál; szigorúbb,
- * mint lib/knownSentence.ts isLearnedCard-ja, ami a mondatkártya-kapuhoz kell.
+ * A "learned" word: a card that has graduated in SM-2, i.e. is in the `review` state, not
+ * merely introduced (`learning`) and not new. The `known` mark (sm2MarkKnown) also puts
+ * the card into `review`, so it is covered without special handling. A lapsed card
+ * (back to `learning` after a lapse) is not learned until it graduates again; this is stricter
+ * than isLearnedCard in lib/knownSentence.ts, which serves the sentence-card gate.
  */
 export function isExamLearned(card: Sm2Card): boolean {
   return card.state === 'review';
@@ -23,15 +23,15 @@ export function isExamLearned(card: Sm2Card): boolean {
 
 export interface ExamUnlock {
   level: PcicLevel;
-  /** A szint kártyáinak száma. */
+  /** Number of cards in the level. */
   total: number;
-  /** Ebből tanult. */
+  /** Of these, learned. */
   learned: number;
-  /** Ennyi tanult szó kell a feloldáshoz (a total 80%-a, felfelé kerekítve). */
+  /** Number of learned words needed to unlock (80% of total, rounded up). */
   needed: number;
-  /** Még ennyi hiányzik a szavakból (0, ha elég). */
+  /** How many more words are still missing (0 if enough). */
   missing: number;
-  /** Van-e kész nyelvtani lecke a szinten. */
+  /** Whether the level has a finished grammar lesson. */
   lessonDone: boolean;
   unlocked: boolean;
 }
@@ -45,14 +45,14 @@ export function examUnlock(level: PcicLevel, levelItemIds: string[], cards: Sm2C
   return { level, total, learned, needed, missing, lessonDone, unlocked: total > 0 && missing === 0 && lessonDone };
 }
 
-/** A kész leckék közül azok, amik a megadott szint tantervében vannak. */
+/** Of the finished lessons, those that are in the given level's syllabus. */
 export function doneLessonsOfLevel(level: PcicLevel, lang: string, doneTopicIds: Iterable<string>): string[] {
   return [...doneTopicIds].filter((id) => syllabusTopic(id, lang)?.level === level);
 }
 
 /**
- * Van-e a szinten megírt lecke az adott irányban. Ha nincs (pl. es→en B1), a vizsga sosem nyílhatna
- * (A4 b: kell egy kész lecke), ezért a szintválasztó nem is kínál ott vizsga-sort.
+ * Whether a lesson is written for the level in the given direction. If not (e.g. es→en B1), the exam could never unlock
+ * (a finished lesson is required), so the level picker does not offer an exam row there.
  */
 export function levelHasLesson(level: PcicLevel, lang: string): boolean {
   return syllabusForLevel(level, lang).some((topic) => hasLesson(lang, topic.id));
@@ -61,8 +61,8 @@ export function levelHasLesson(level: PcicLevel, lang: string): boolean {
 export type ExamLevelStatus = ExamUnlock & { result?: ExamResult };
 
 /**
- * A szintválasztó lap vizsga-sorának adata: a feloldás állapota + a mentett eredmény.
- * A szint kártyái a betöltött korpuszból jönnek (`setPcicTarget` után az aktív irányé).
+ * Data for the exam row of the level picker: the unlock state + the saved result.
+ * The level's cards come from the loaded corpus (after `setPcicTarget`, that of the active direction).
  */
 export function examStatusFor(
   level: PcicLevel,

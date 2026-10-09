@@ -1,6 +1,6 @@
-// a színválasztó; választás után a téma-kontextus értéke változik, és a választás a db-be
-// kerül. A paletta-chipek a Beállítások helyett a Témák képernyőn vannak
-// (app/themes.tsx), az állítások ugyanazok. Mock-minta: pcicLevelPicker.test.tsx.
+// The color picker; after choosing, the value of the theme context changes, and the choice goes
+// into the db. The palette chips are on the Themes screen instead of Settings
+// (app/themes.tsx), the assertions are the same. Mock pattern: pcicLevelPicker.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-router', () => ({
@@ -38,8 +38,8 @@ const flush = async () => {
   }
 };
 
-describe('Témák képernyő: színválasztó (NY12)', () => {
-  it('6 opció, a választás átállítja a kontextust és perzisztál', async () => {
+describe('Themes screen: color picker', () => {
+  it('6 options, the choice switches the context and persists', async () => {
     const { getByTestId, getByText } = render(
       <ThemeProvider>
         <Probe />

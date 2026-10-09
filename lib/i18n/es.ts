@@ -1,12 +1,12 @@
 import en from './en';
 
-// teljes felület-fordítás, az en.ts
-// minden kulcsával (a `Strings` típus ezt kikényszeríti: ha egy kulcs
-// hiányzik vagy a típusa eltér, a fájl nem fordul). Ez a felület nyelve az
-// es→en párban (spanyolból tanulsz angolul), tegező, természetes mexikói/
-// semleges spanyollal; a ¿/¡ jelek itt rendben vannak (ez felület-szöveg,
-// nem a fejlesztő nevében írt szöveg). Az `usage` blokk (célnyelvi toastok) a
-// Kimacha Play en-es korából változatlan, azt a `stringsFor('es')` olvassa.
+// complete interface translation, with every key of en.ts
+// (the `Strings` type enforces this: if a key is
+// missing or its type differs, the file does not compile). This is the interface language in the
+// es→en pair (you learn English from Spanish), informal "tú", natural Mexican/
+// neutral Spanish; the ¿/¡ marks are fine here (this is interface text,
+// not text written on the developer's behalf). The `usage` block (target-language toasts) is
+// unchanged from the Kimacha Play en-es era, `stringsFor('es')` reads that.
 type Strings = typeof en;
 
 const es: Strings = {
@@ -39,7 +39,7 @@ const es: Strings = {
     wrong: 'Incorrecto',
     next: 'Siguiente',
     typeSentence: 'Escribe la frase',
-    // a válasz-beírómező szürke placeholdere, a célnyelv nevével.
+    // the grey placeholder of the answer input field, with the name of the target language.
     typeIn: (lang: string): string => (lang === 'es' ? 'Escribe en español' : 'Escribe en inglés'),
   },
   done: {
@@ -126,13 +126,13 @@ const es: Strings = {
     lessonPercent: (n: number) => `Hasta ahora: ${n}% correcto`,
     practiceTable: (n: number) => `Practicar la tabla · ${n} celdas`,
     practiceWords: (n: number) => `Practicar las palabras · ${n} tarjetas`,
-    // a saját válasz a helyes fölött a hibás ragozásnál (AnswerCompare).
+    // the learner's own answer above the correct one for a wrong conjugation (AnswerCompare).
     yourAnswer: 'Tu respuesta',
-    // a félbehagyott feladat sora a gomb alatt, pl. "3/10 · 30%".
+    // the line of an abandoned task under the button, e.g. "3/10 · 30%".
     runProgress: (done: number, total: number, pct: number) => `${done}/${total} · ${pct}%`,
-    // az el / la névelő-választó feladat gombja (csak ott, ahol van ilyen készlet).
+    // button of the el / la article-chooser task (only where such a set exists).
     startArticle: (n: number) => `¿El o la? (${n})`,
-    // ideiglenes, új feladat-fajták (hibakereső, szórend, diktálás).
+    // temporary, new task kinds (error finder, word order, dictation).
     trialBadge: 'NUEVO · PRUEBA',
     startSpot: (n: number) => `Encuentra el error (${n})`,
     startOrder: (n: number) => `Orden de palabras (${n})`,
@@ -155,14 +155,14 @@ const es: Strings = {
     paletteBrand: 'Kimacha',
     paletteCyan: 'Cian + violeta',
     paletteOrange: 'Naranja + turquesa',
-    // la cuadrícula de temas (app/themes.tsx), Mi mezcla (app/theme-mix.tsx) y los textos de los adornos.
+    // the theme grid (app/themes.tsx), My mix (app/theme-mix.tsx) and the theme decor texts.
     themes: {
       title: 'Temas',
       oneLook: 'Este tema tiene un solo estilo.',
       posterSlogan: 'APRENDER, APRENDER, APRENDER',
       sample: 'the car',
       know: 'Lo sé',
-      // los textos de los adornos de los temas E1 (senior, retro95, y2k, gamer).
+      // the theme decor texts (senior, retro95, y2k, gamer).
       readAloud: 'Escuchar',
       retroTitle: 'kimacha.exe',
       newWord: 'palabra nueva',
@@ -194,17 +194,17 @@ const es: Strings = {
     directionEnEs: 'Inglés → Español',
     directionEsEn: 'Español → Inglés',
     credits: 'Créditos',
-    // a nyelvtan-haladás nullázó sora és megerősítése.
+    // the row that resets the grammar progress, and its confirmation.
     resetGrammar: '🗑️ Reiniciar progreso de gramática',
     resetGrammarTitle: 'Reiniciar progreso de gramática',
     resetGrammarMessage: 'Esto borra todo el progreso de lecciones y práctica de gramática. ¿Estás seguro?',
-    // az újrakezdő sorok egy lenyíló szekcióban.
+    // the restart rows in a collapsible section.
     resetSection: '🗑️ Reiniciar progreso',
-    // a __DEV__-only vizsga-vezérlő (csak fejlesztői buildben látszik).
+    // the __DEV__-only exam control (visible only in a development build).
     devSeedExamA1: 'DEV: preparar el estado del examen (A1-B2)',
     devSeedExamA1Done: 'DEV: estado del examen listo (A1-B2), abre la hoja de niveles',
   },
-  // nombres de los temas (skins) y de los grupos para la cuadrícula de temas en Ajustes.
+  // theme (skin) names and group names for the Settings theme grid.
   skins: {
     names: {
       brutal: 'Neobrutal',
@@ -311,7 +311,7 @@ const es: Strings = {
     plusOneMinute: '¡+1 minuto, guau!',
     milestoneSession: '🔥 ¡Guau, {min} minutos seguidos!',
     milestoneDaily: '🎉 ¡{min} minutos hoy, lo estás haciendo genial!',
-    // pasada la primera hora, cada cuarto de hora, línea al azar.
+    // past the first hour, every quarter of an hour, random line.
     milestoneLong: [
       '🔥 ¡{hours} horas hoy! Esto ya no es estudiar, es entrenar.',
       '💪 {min} minutos de botín. El idioma ya no puede escaparse.',
@@ -323,8 +323,8 @@ const es: Strings = {
       '🎯 {hours} horas en la sesión de hoy. El que mete tanto, saca tanto.',
     ],
     dailyGreeting: '👋 ¡Hola! ¡Empecemos el estudio de hoy!',
-    // cambio de día a medianoche, resumen del día cerrado + felicitación.
-    // Se elige al azar, así que las frases vuelven a aparecer con el tiempo.
+    // midnight rollover, the finished day's stats plus a celebration.
+    // Picked at random, so the lines come back around over time.
     dayRollover: [
       '🌙 ¡Medianoche! Ayer: {words} palabras, {min} minutos. Quien estudia a medianoche no lo hace por casualidad.',
       '✨ Día cerrado con {words} palabras y {min} minutos. La ciudad duerme y tú sueñas en español.',
@@ -373,8 +373,8 @@ const es: Strings = {
     badgeDue: (n: number) => `pendientes ${n}`,
     badgeNew: (n: number) => `nuevas ${n}`,
     badgeDone: (n: number) => `hechas ${n}`,
-    // "oración" -> "oraciones" nem sima "+es" ragozás (az ékezet elmarad a
-    // többesben), ezért a teljes szó vált, nem toldalék (elírás-javítás:
+    // "oración" -> "oraciones" is not a plain "+es" inflection (the accent drops in the
+    // plural), so the whole word switches, not a suffix (typo fix:
     // "oraciónes" -> "oraciones").
     badgeIntroducedToday: (words: number, sentences: number, budget: number) =>
       `hoy: ${words} palabra${words === 1 ? '' : 's'} · ${sentences} ${sentences === 1 ? 'oración' : 'oraciones'} / ${budget}`,
@@ -385,7 +385,7 @@ const es: Strings = {
     doneTitle: 'Listo por hoy',
     resetConfirmTitle: 'Reiniciar progreso',
     resetConfirmYes: 'Reiniciar',
-    // a Beállítások sor, a nullázódó szint nevével.
+    // the Settings row, with the name of the level being reset.
     resetRow: (level: string) => `🗑️ Reiniciar progreso (${level})`,
     resetConfirmLevel: (level: string) => `Esto borra todo el progreso del mazo ${level}. ¿Estás seguro?`,
     undo: 'Deshacer',
@@ -405,7 +405,7 @@ const es: Strings = {
     next: (label: string) => `Siguiente → ${label}`,
     accentForgiven: 'Falta el acento, se cuenta como correcto',
     alsoLabel: 'también',
-    // az (i) magyarázat-gomb kisegítő felirata.
+    // accessibility label of the (i) explanation button.
     noteLabel: 'Más información',
     photoCredit: (author: string, license: string, cropped: boolean) => `Foto: ${author}, ${license}, Wikimedia Commons${cropped ? ' (recortada)' : ''}`,
     photoCreditHint: 'Abre la página de la foto en Wikimedia Commons',
@@ -610,10 +610,10 @@ const es: Strings = {
     promptCaption: 'persona · verbo',
     wordChip: 'PALABRA',
     wordPromptCaption: 'significado',
-    // es→en irányban a kérdés a spanyol szó, a válasz az angol szó.
+    // in the es→en direction the question is the Spanish word, the answer is the English word.
     wordPromptCaptionEn: '¿Cómo se dice en inglés?',
     promptCaptionEn: 'traducir al español',
-    // a ragozó kártyán az infinitivus rejtett, a súgó-gomb mutatja.
+    // on the conjugation card the infinitive is hidden, the hint button shows it.
     showVerb: 'Ver el verbo',
     progress: (done: number, total: number) => `${done} / ${total} hechas`,
     completeTitle: (n: number) => `Las ${n} celdas hechas 🎉`,

@@ -5,8 +5,8 @@ import { fontSize, fontWeight, spacing, tapTarget } from '@/constants/Theme';
 import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
 
-// a halk belépő a szint-sorok alatt, az onboarding szint-lépésén
-// és a szintválasztó lapon is; a szint-sorok közvetlenül választhatók maradnak.
+// the quiet entry under the level rows, on the onboarding level step and on the level picker sheet
+// too; the level rows stay directly selectable.
 export default function PlacementEntry({ onPress }: { onPress: () => void }) {
   const { theme } = useTheme();
   const colors = Colors[theme];

@@ -1,6 +1,6 @@
-// A tétel-építő CSAK a
-// szint tanult szavaiból és a kész szint-leckékből épít; egy ismeretlen szó sem
-// kerülhet tételbe (a mondatok a lib/knownSentence.ts kapuján mennek át).
+// The exam item builder builds ONLY from the
+// learned words of the level and the finished level lessons; no unknown word can
+// get into an item (sentences go through the lib/knownSentence.ts gate).
 
 import { pcicItemsForLevel, setPcicTarget, type PcicItem } from '@/data/pcic';
 import { knownTokens, resolvedTensesFromLessons, unknownTokens } from '@/lib/knownSentence';
@@ -22,7 +22,7 @@ function setup(target: 'es' | 'en', learnedCount?: number, lessons: string[] = L
   const items = pcicItemsForLevel('A1');
   const all = a1SeedCards(items.map((i) => i.id), TODAY);
   const learned = learnedCount === undefined ? all : all.slice(0, learnedCount);
-  // A többi kártya létezik, de nem graduált (bemutatott vagy új): az ő szavaik nem kerülhetnek tételbe.
+  // The other cards exist but are not graduated (introduced or new): their words must not get into an item.
   const rest = items.slice(learned.length).map((it, i) => (i % 2 ? { ...sm2NewCard(it.id), state: 'learning' as const } : sm2NewCard(it.id)));
   const cards = [...learned, ...rest];
   const input = {
@@ -38,13 +38,13 @@ function setup(target: 'es' | 'en', learnedCount?: number, lessons: string[] = L
 
 afterAll(() => setPcicTarget('es'));
 
-describe('buildExam: az A1 vizsga felépítése (en→es)', () => {
+describe('buildExam: the A1 exam build (en→es)', () => {
   const { items, cards, input } = setup('es');
   const exam = buildExam(input);
   const byId = new Map(items.map((i) => [i.id, i]));
   const learned = learnedIds(cards);
 
-  it('a terv szerinti tételszámokat adja (szó, párosítás, összerakás, beírás, nyelvtan, olvasás)', () => {
+  it('gives the item counts per the plan (word, matching, build, typing, grammar, reading)', () => {
     const k = kinds(exam);
     expect(k.word_type).toBe(EXAM_BLUEPRINT.wordType);
     expect(k.match).toBe(EXAM_BLUEPRINT.match);
@@ -55,19 +55,19 @@ describe('buildExam: az A1 vizsga felépítése (en→es)', () => {
     expect(k.reading_mc).toBeLessThanOrEqual(EXAM_BLUEPRINT.reading);
   });
 
-  it('készség-sorrend: szavak, nyelvtan, olvasás, szóbeli', () => {
+  it('skill order: words, grammar, reading, spoken', () => {
     const skills = ['words', 'grammar', 'reading', 'speaking'];
     const order = exam.map((i) => i.skill);
     expect(order).toEqual([...order].sort((a, b) => skills.indexOf(a) - skills.indexOf(b)));
   });
 
-  it('a szóbeli tételek száma az EXAM_SPEAK_COUNT (alapérték 4), és az összes tétel a 30-ban marad', () => {
+  it('the spoken item count is EXAM_SPEAK_COUNT (default 4), and all items stay within 30', () => {
     expect(EXAM_SPEAK_COUNT).toBe(4);
     expect(kinds(exam).speak).toBe(EXAM_SPEAK_COUNT);
     expect(exam).toHaveLength(30);
   });
 
-  it('a szóbeli tétel tanult mondat: a kiinduló nyelvű prompt, a célnyelvi várt mondat, a mondat-kapun átmegy', () => {
+  it('the spoken item is a learned sentence: the source-language prompt, the target-language expected sentence, passes the sentence gate', () => {
     const ctx = { learned: learnedEntries(cards, 'es', (id) => byId.get(id)), tenses: input.tenses };
     const spoken = exam.filter((i): i is Extract<ExamItem, { kind: 'speak' }> => i.kind === 'speak');
     expect(spoken).toHaveLength(EXAM_SPEAK_COUNT);
@@ -82,19 +82,19 @@ describe('buildExam: az A1 vizsga felépítése (en→es)', () => {
     }
   });
 
-  it('a szóbeli mondatok nem ismétlődnek más mondat-tétellel (összerakás, beírás, olvasás)', () => {
+  it('the spoken sentences do not repeat with another sentence item (build, typing, reading)', () => {
     const owners = exam.flatMap((i) => (i.kind === 'sent_order' || i.kind === 'sent_type' || i.kind === 'speak' ? [i.itemId] : i.kind === 'reading_mc' ? i.itemIds : []));
     expect(new Set(owners).size).toBe(owners.length);
   });
 
-  it('minden szó-alapú tétel tanult kártyából jön (egy ismeretlen szó se kerül tételbe)', () => {
+  it('every word-based item comes from a learned card (no unknown word ends up in an item)', () => {
     const ids = exam.flatMap((i) => ('itemId' in i ? [i.itemId] : 'itemIds' in i ? i.itemIds : []));
     expect(ids.length).toBeGreaterThan(0);
     for (const id of ids) expect(learned.has(id)).toBe(true);
   });
 
-  it('a tanulatlan kártyák szavai sehol nem szerepelnek a tételekben', () => {
-    // A kártyák 15%-a nem tanult: azok célnyelvi szavai (amik a tanult szavak között nincsenek) nem lehetnek a vizsgában.
+  it('the words of unlearned cards appear nowhere in the items', () => {
+    // 15% of the cards are not learned: their target-language words (which are not among the learned words) must not be in the exam.
     const known = knownTokens('es', { learned: learnedEntries(cards, 'es', (id) => byId.get(id)), tenses: input.tenses });
     const texts = exam.flatMap((i) => {
       switch (i.kind) {
@@ -117,7 +117,7 @@ describe('buildExam: az A1 vizsga felépítése (en→es)', () => {
     expect(leaked).toEqual([]);
   });
 
-  it('a mondat-tételek (összerakás, beírás, olvasás) minden szava tanult vagy szabad, a csempék is', () => {
+  it('every word of the sentence items (build, typing, reading) is learned or free, the tiles too', () => {
     const ctx = { learned: learnedEntries(cards, 'es', (id) => byId.get(id)), tenses: input.tenses };
     const known = knownTokens('es', ctx);
     const sentences = exam.flatMap((i) =>
@@ -132,7 +132,7 @@ describe('buildExam: az A1 vizsga felépítése (en→es)', () => {
     }
   });
 
-  it('az összerakós tétel az eredeti mondatot is viszi (nagybetű, írásjel), a csempék ennek a szavai', () => {
+  it('the build item also carries the original sentence (capitalization, punctuation), the tiles are its words', () => {
     const orders = exam.filter((i): i is Extract<ExamItem, { kind: 'sent_order' }> => i.kind === 'sent_order');
     expect(orders.length).toBeGreaterThan(0);
     for (const o of orders) {
@@ -142,7 +142,7 @@ describe('buildExam: az A1 vizsga felépítése (en→es)', () => {
     }
   });
 
-  it('a nyelvtani tételek csak a kész leckékből jönnek, 3 válasszal és érvényes jó indexszel', () => {
+  it('grammar items come only from finished lessons, with 3 answers and a valid correct index', () => {
     const gaps = exam.filter((i): i is Extract<ExamItem, { kind: 'gap_mc' }> => i.kind === 'gap_mc');
     expect(gaps.length).toBeGreaterThan(0);
     for (const g of gaps) {
@@ -154,7 +154,7 @@ describe('buildExam: az A1 vizsga felépítése (en→es)', () => {
     }
   });
 
-  it('a párosítás 4 egyedi párból áll, mindkét oldal szó', () => {
+  it('matching consists of 4 unique pairs, both sides are words', () => {
     const matches = exam.filter((i): i is Extract<ExamItem, { kind: 'match' }> => i.kind === 'match');
     for (const m of matches) {
       expect(m.pairs).toHaveLength(MATCH_PAIRS);
@@ -163,7 +163,7 @@ describe('buildExam: az A1 vizsga felépítése (en→es)', () => {
     }
   });
 
-  it('az olvasás jó válasza a két mondat fordítása, és az opciók különböznek', () => {
+  it('the correct answer of reading is the translation of the two sentences, and the options differ', () => {
     const readings = exam.filter((i): i is Extract<ExamItem, { kind: 'reading_mc' }> => i.kind === 'reading_mc');
     for (const r of readings) {
       expect(new Set(r.options).size).toBe(r.options.length);
@@ -173,19 +173,19 @@ describe('buildExam: az A1 vizsga felépítése (en→es)', () => {
     }
   });
 
-  it('ugyanaz a seed ugyanazt a vizsgát adja, másik seed mást', () => {
+  it('the same seed gives the same exam, a different seed a different one', () => {
     expect(buildExam(input)).toEqual(exam);
     expect(buildExam({ ...input, seed: 8 })).not.toEqual(exam);
   });
 
-  it('egy szó legfeljebb egyszer szerepel a szó-részben', () => {
+  it('a word appears at most once in the word part', () => {
     const ids = exam.flatMap((i) => (i.kind === 'word_type' || i.kind === 'sent_order' || i.kind === 'sent_type' ? [i.itemId] : i.kind === 'match' ? i.itemIds : []));
     expect(new Set(ids).size).toBe(ids.length);
   });
 });
 
-describe('buildExam: ha kevés a feltétel', () => {
-  it('nincs kész igeidő-lecke: kevés a mondat, a hiányzó mondat-tételek szó-beírásra cserélődnek, nyelvtan nincs', () => {
+describe('buildExam: when conditions are scarce', () => {
+  it('no finished tense lesson: few sentences, the missing sentence items are replaced by word typing, no grammar', () => {
     const { input } = setup('es', undefined, []);
     const exam = buildExam(input);
     const k = kinds(exam);
@@ -195,14 +195,14 @@ describe('buildExam: ha kevés a feltétel', () => {
     expect(k.word_type).toBe(EXAM_BLUEPRINT.wordType + EXAM_BLUEPRINT.sentOrder + EXAM_BLUEPRINT.sentType - sentences);
   });
 
-  it('nincs tanult szó: nincs szó- és olvasás-tétel (a vizsga amúgy sem nyílna ki)', () => {
+  it('no learned word: no word and reading items (the exam would not open anyway)', () => {
     const { input } = setup('es', 0);
     const exam = buildExam(input);
     expect(exam.every((i) => i.skill === 'grammar')).toBe(true);
     expect(buildExam({ ...input, gapSources: [] })).toEqual([]);
   });
 
-  it('a nem graduált (learning, új) kártyák szava nem kerül tételbe', () => {
+  it('the words of non-graduated (learning, new) cards do not go into an item', () => {
     const { items, input } = setup('es');
     const cards: Sm2Card[] = items.map((it, i) => (i < 40 ? { ...sm2NewCard(it.id), state: 'review' as const } : { ...sm2NewCard(it.id), state: i % 2 ? ('learning' as const) : ('new' as const) }));
     const exam = buildExam({ ...input, cards });
@@ -213,8 +213,8 @@ describe('buildExam: ha kevés a feltétel', () => {
   });
 });
 
-describe('buildExam: es→en irány', () => {
-  it('a prompt a kiinduló (spanyol), a válasz a célnyelvi (angol) szó, a mondatok az angol kapun mennek át', () => {
+describe('buildExam: es→en direction', () => {
+  it('the prompt is the source (Spanish), the answer is the target-language (English) word, the sentences go through the English gate', () => {
     const { items, cards, input } = setup('en');
     const exam = buildExam(input);
     expect(exam.length).toBeGreaterThan(0);

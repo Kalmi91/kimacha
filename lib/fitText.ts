@@ -1,40 +1,40 @@
 import { useWindowDimensions } from 'react-native';
 
-// a spanyol szavak és a spanyol felület
-// feliratai hosszabbak az angolnál, és a natív Text egy sor-konténerben nem
-// törik a hosszú szót, ezért a nagy betűs szövegek kilógtak vagy a bal széle
-// levágódott ("reason (justification)" -> "eason"). A web nem ismeri az
-// `adjustsFontSizeToFit`-et, ezért ez a közös helper hossz szerint lépcsőzi a
-// betűméretet: a legnagyobb lépcsőt választja, amin a leghosszabb szó még
-// elfér egy sorban, és a teljes szöveg legfeljebb `maxLines` sorba törik.
+// Spanish words and Spanish UI
+// labels are longer than English ones, and native Text in a row container does not
+// break a long word, so large-type texts overflowed or had their left edge
+// clipped ("reason (justification)" -> "eason"). The web does not support
+// `adjustsFontSizeToFit`, so this shared helper steps the font size down by
+// text length: it picks the largest step at which the longest word still
+// fits on one line and the whole text wraps into at most `maxLines` lines.
 
-// A Theme.fontSize skála + a kártyák 32-es nagy szava.
+// The Theme.fontSize scale + the 32 px large word on the cards.
 export const FIT_STEPS = [32, 28, 22, 18, 16, 14, 12] as const;
 
-// Egy karakter átlagos szélessége em-ben (latin, félkövér / normál), szándékosan
-// óvatos: inkább egy lépcsővel kisebb betű, mint egy levágott szó.
+// Average width of one character in em (Latin, bold / regular), deliberately
+// conservative: better a font one step smaller than a clipped word.
 const CHAR_EM_BOLD = 0.62;
 const CHAR_EM_REGULAR = 0.55;
 const CAPS_EXTRA_EM = 0.08;
 
 interface FitOptions {
-  /** A kívánt (legnagyobb) betűméret. */
+  /** The desired (largest) font size. */
   base: number;
-  /** Az elérhető szélesség dp-ben (ablak-szélesség mínusz padding / testvérek). */
+  /** The available width in dp (window width minus padding / siblings). */
   width: number;
-  /** Legfeljebb ennyi sor (alap: 3). */
+  /** At most this many lines (default: 3). */
   maxLines?: number;
-  /** Rendszer-betűméret szorzó (alap: 1). */
+  /** System font-size multiplier (default: 1). */
   fontScale?: number;
-  /** Félkövér szöveg (alap: igen). */
+  /** Bold text (default: yes). */
   bold?: boolean;
-  /** A legkisebb megengedett méret (alap: 12). */
+  /** The smallest allowed size (default: 12). */
   min?: number;
-  /** Nagybetűs megjelenítés (textTransform: uppercase): a betűk szélesebbek. */
+  /** Uppercase display (textTransform: uppercase): the letters are wider. */
   caps?: boolean;
 }
 
-// Szóhatárok: szóköz, per-jel és kötőjel után törhet a sor (a natív Text is így tör).
+// Word boundaries: a line may break after a space, slash or hyphen (native Text breaks the same way).
 function tokens(text: string): string[] {
   return (text.match(/[^\s/-]+[\s/-]*/g) ?? []).map((w) => w.replace(/\s+$/, ''));
 }
@@ -51,7 +51,7 @@ export function fitFontSize(text: string, opts: FitOptions): number {
     if (perLine < 1) continue;
     const longest = Math.max(...words.map((w) => w.length));
     if (longest > perLine) continue;
-    // mohó sortörés a becsült karakterszámmal
+    // greedy line wrapping using the estimated character count
     let lines = 1;
     let used = 0;
     for (const w of words) {
@@ -68,8 +68,8 @@ export function fitFontSize(text: string, opts: FitOptions): number {
   return Math.min(candidates[candidates.length - 1], base);
 }
 
-// Hook: az ablak-szélességből és a rendszer betűméretből számol. `reserve` a
-// szélesség, amit a paddingek / testvér elemek visznek el.
+// Hook: computes from the window width and the system font size. `reserve` is the
+// width taken up by paddings / sibling elements.
 export function useFitFontSize(
   text: string,
   opts: { base: number; reserve?: number; maxLines?: number; bold?: boolean; min?: number; caps?: boolean },

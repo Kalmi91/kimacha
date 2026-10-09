@@ -1,17 +1,17 @@
-// válasz-egyeztetés a PCIC fülhöz. Az es alak sokszor
-// "/"-alternatívát hordoz ("tocar/sentir frío") vagy zárójeles opcionális
-// részt ("al final (de)"); mindkettő elfogadott alaknak számít. Az ékezet
-// számít a helyesíráshoz ("csak simán a szavak helyesírása"), de egy
-// szóvégi rag/betű-eltérés (pl. "bueno"/"buena") nyelvtanilag fontos, ezért
-// nem near, hanem wrong, még ha a szerkesztési távolság csak 1 is.
+// Answer matching for the PCIC tab. The es form often carries a
+// "/" alternative ("tocar/sentir frío") or a parenthesized optional
+// part ("al final (de)"); both count as accepted forms. Accents
+// count for spelling ("just the plain spelling of the words"), but a word-final ending/letter difference (e.g. "bueno"/"buena")
+// matters grammatically, so it is
+// wrong, not near, even if the edit distance is only 1.
 
 import { levenshtein } from './levenshtein';
 import { stripTrailingPunct } from './charDiff';
 import type { Sm2Grade } from './sm2';
 
-// a kérdő- és felkiáltójel, a pont és a vessző sosem
-// hiba, se elöl (¿ ¡), se hátul (? ! .), se a mondat közepén (vessző). Az
-// aposztróf és a kötőjel marad (angolul "don't", "well-known" a szó része).
+// question and exclamation marks, the period and the comma are never
+// an error, neither at the start (¿ ¡), nor at the end (? ! .), nor mid-sentence (comma). The
+// apostrophe and the hyphen stay (in English "don't", "well-known" they are part of the word).
 const IGNORED_PUNCT = /[¿?¡!.,;:…]/g;
 
 function normalize(s: string): string {
@@ -22,8 +22,8 @@ function foldAccents(s: string): string {
   return s.normalize('NFD').replace(/[̀-ͯ]/g, '');
 }
 
-// Egyetlen zárójeles opciós szegmenst old fel: a tartalommal együtt és
-// nélküle is előáll egy-egy alak ("al final (de)" -> "al final de", "al final").
+// Resolves a single parenthesized optional segment: one form is produced with the content and
+// one without ("al final (de)" -> "al final de", "al final").
 function expandParens(s: string): string[] {
   const match = s.match(/\s*\(([^)]*)\)/);
   if (!match || match.index === undefined) return [s];
@@ -34,9 +34,9 @@ function expandParens(s: string): string[] {
   return [withInner, withoutInner];
 }
 
-// A "/" mindig egy szó-pozíción belül van ("tocar/sentir frío",
-// "asiento/fila de un teatro"): a szóközzel tokenizált alak azon eleme
-// cserélődik, amelyikben a "/" szerepel, a többi szó változatlan marad.
+// A "/" is always inside a single word position ("tocar/sentir frío",
+// "asiento/fila de un teatro"): in the space-tokenized form, the token that
+// contains the "/" is replaced; the other words stay unchanged.
 function expandSlashes(s: string): string[] {
   const tokens = s.split(' ');
   const slashAt = tokens.reduce<number[]>((acc, tok, i) => (tok.includes('/') ? [...acc, i] : acc), []);
@@ -55,9 +55,9 @@ function expandSlashes(s: string): string[] {
   return variants.map((v) => v.join(' '));
 }
 
-// a " / " (szóköz-per-szóköz) elválasztó teljes
-// alternatívákat választ el ("el carro / el coche / el auto"); a szóközmentes
-// "a/b" a fenti szó-pozíción belüli felbontásként marad, ahogy volt.
+// the " / " (space-slash-space) separator splits whole
+// alternatives ("el carro / el coche / el auto"); the space-free
+// "a/b" stays as the within-word-position split above, as it was.
 export function pcicAlternatives(answer: string): string[] {
   const withParens = answer.split(' / ').flatMap(expandParens);
   const all = withParens.flatMap(expandSlashes).map((v) => v.trim());
@@ -67,27 +67,26 @@ export function pcicAlternatives(answer: string): string[] {
 export interface PcicGrade {
   match: 'exact' | 'near' | 'wrong';
   best: string;
-  // csak akkor igaz, ha az eltérés KIZÁRÓLAG ékezet, és
-  // az ékezet-szigor KI van kapcsolva (különben ez a helyzet 'wrong'). A UI
-  // ez alapján írja ki a "Missing accent, counted as correct" sort.
+  // true only when the difference is EXCLUSIVELY an accent and
+  // strict accents is OFF (otherwise this case is 'wrong'). The UI uses this
+  // to show the "Missing accent, counted as correct" line.
   accentOnly?: boolean;
 }
 
-// Egy szóvégi rag/betű-eltérés (utolsó 2 karakter eltér) nem "elgépelés".
+// A word-final ending/letter difference (the last 2 characters differ) is not a "typo".
 function isWordFinalDiff(a: string, b: string): boolean {
   return a.slice(-2) !== b.slice(-2);
 }
 
-// Ha az ékezet-mentesítés után a két alak megegyezik, a különbség tisztán
-// ékezethiba, ez marad near akkor is, ha épp a szó végén van.
+// If the two forms are equal after stripping accents, the difference is purely
+// an accent error; this stays near even when it falls on the end of the word.
 function isAccentOnlyDiff(a: string, b: string): boolean {
   return a !== b && foldAccents(a) === foldAccents(b);
 }
 
-// a `target` (korábban `es`) a CÉLNYELVI helyes
-// alak, akármelyik irányban; a normalizálás (ékezet, kis/nagybetű, "/" és
-// zárójel-alternatívák) nyelvfüggetlen, angolra is jó (jóváhagyott
-// vázlat, 3. pont).
+// `target` (formerly `es`) is the correct form in the TARGET
+// language, in either direction; the normalization (accents, case, "/" and
+// parenthesis alternatives) is language-independent and works for English too.
 export function gradePcicAnswer(typed: string, target: string, strictAccents = false): PcicGrade {
   const alternatives = pcicAlternatives(target);
   const typedNorm = stripTrailingPunct(normalize(typed));
@@ -113,9 +112,9 @@ export function gradePcicAnswer(typed: string, target: string, strictAccents = f
 
   if (bestDist <= 1) {
     if (isAccentOnlyDiff(typedNorm, bestNorm)) {
-      // s2 (anki-ui-terv.html): a Beállítások ékezet-szigor kapcsolója dönt.
-      // KI: a csak-ékezet eltérés 100%-nak számít. BE: valódi hiba, mint egy
-      // másik betűeltérés.
+      // The strict-accents switch in Settings decides.
+      // OFF: an accent-only difference counts as 100%. ON: a real error, like any
+      // other letter difference.
       return strictAccents ? { match: 'wrong', best } : { match: 'near', best, accentOnly: true };
     }
     if (isWordFinalDiff(typedNorm, bestNorm)) return { match: 'wrong', best };
@@ -125,24 +124,24 @@ export function gradePcicAnswer(typed: string, target: string, strictAccents = f
   return { match: 'wrong', best };
 }
 
-// s2 (anki-ui-terv.html): a dokkolt "Next" ezt hajtja végre automatikusan, és
-// ez adja a manuális Tudtam/Nem tudtam gomb kereteszelt (isPre) javaslatát is.
-// Szabály: 100% helyes válasz (exact, vagy ékezet-szigor KI melletti
-// csak-ékezet near) -> Tudtam; minden más (hibás vagy üres) -> Nem tudtam.
+// The docked "Next" button applies this automatically, and
+// it also gives the pre-selected (isPre) suggestion of the manual Knew it / Didn't know it buttons.
+// Rule: a 100% correct answer (exact, or accent-only near with strict accents OFF)
+// -> Knew it; anything else (wrong or empty) -> Didn't know it.
 export function suggestedGrade(grade: PcicGrade): Sm2Grade {
   if (grade.match === 'exact') return 'good';
   if (grade.match === 'near' && grade.accentOnly) return 'good';
   return 'again';
 }
 
-// a spanyol mondatban az alany-névmás elhagyható
-// ("Yo como en casa." helyett "Como en casa." is jó). Csak az ELSŐ szó számít, és
-// pontosan ékezettel: "él" névmás, "el" névelő; "tú" névmás, "tu" birtokos.
+// The subject pronoun may be dropped in a Spanish sentence
+// ("Como en casa." is fine instead of "Yo como en casa."). Only the FIRST word counts, and
+// accents must be exact: "él" is a pronoun, "el" an article; "tú" is a pronoun, "tu" a possessive.
 const SUBJECT_PRONOUNS = new Set([
   'yo', 'tú', 'él', 'ella', 'usted', 'nosotros', 'nosotras', 'vosotros', 'vosotras', 'ellos', 'ellas', 'ustedes',
 ]);
 
-/** A mondat az elején álló alany-névmás nélkül, vagy null, ha nem névmással kezdődik. */
+/** The sentence without its leading subject pronoun, or null if it does not start with a pronoun. */
 export function withoutLeadingSubjectPronoun(sentence: string): string | null {
   const match = sentence.trim().match(/^[¿¡"']*([^\s,]+)[,]?\s+(\S[\s\S]*)$/);
   if (!match) return null;
@@ -153,9 +152,10 @@ export function withoutLeadingSubjectPronoun(sentence: string): string | null {
 const GRADE_RANK: Record<PcicGrade['match'], number> = { exact: 2, near: 1, wrong: 0 };
 
 /**
- * Mondat-bírálat: a szó-kártya bírálata (gradePcicAnswer), de a névmás nélküli
- * válasz is elfogadott, ha a helyes mondat névmással kezdődik. A jobbik
- * bírálat számít; a `best` a mutatott helyes alak (a teljes mondat marad).
+ * Sentence grading: grades like a word card (gradePcicAnswer), but an answer
+ * without the pronoun is also accepted when the correct sentence starts with a
+ * pronoun. The better grade counts; `best` is the correct form shown (the full
+ * sentence stays).
  */
 export function gradeSentenceAnswer(typed: string, target: string, strictAccents = false): PcicGrade {
   const full = gradePcicAnswer(typed, target, strictAccents);

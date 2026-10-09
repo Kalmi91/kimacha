@@ -1,5 +1,5 @@
-// a lecke-oldal fajtánként külön gombot ad, csak
-// azokra a fajtákra, amikből ténylegesen van item a leckében.
+// the lesson page gives a separate button per kind, only for
+// the kinds the lesson actually has items for.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({
@@ -102,11 +102,11 @@ describe('grammar lesson screen: per-kind drill buttons', () => {
     view.unmount();
   });
 
-  // az 50 transform itemes lecke a régi "Átírás
-  // (n)" helyett a körös "10 / 50" gombot mutatja (a szám-pár nyelvfüggetlen,
-  // az UI nyelve ebben a tesztkörnyezetben en), és egy kör végén egy "10"-et
-  // említő gomb kínálja a folytatást. 4 az 50-ből vosotros volt,
-  // azóta ustedes-item, a körös nevező ezért 50.
+  // the 50-transform-item lesson shows the round-based "10 / 50" button instead of the old
+  // "Rewrite (n)" (the number pair is language-independent,
+  // the UI language is en in this test environment), and at the end of a round a button
+  // mentioning "10" offers to continue. 4 of the 50 used to be vosotros,
+  // since then they are ustedes items, so the round denominator is 50.
   it('indefinido-10-verbos (50 transform items) shows a 10/50 round button, and finishing a round offers 10 more', async () => {
     mockTopicId = 'indefinido-10-verbos';
     const now = 1700000000000;
@@ -137,7 +137,7 @@ describe('grammar lesson screen: per-kind drill buttons', () => {
 
     expect(within(screen.getByTestId('grammar-more-round')).getByText(/10/)).toBeTruthy();
 
-    // a kör 10 itemje "gyakoroltnak" számít, egy írással a kör végén.
+    // the round's 10 items count as "practiced", with one write at the end of the round.
     const rows = await getDb().getGameProgress(GRAMMAR_PROGRESS_KEY);
     const seenRow = rows.find((r) => r.itemId === 'indefinido-10-verbos:transform:seen');
     const seen = seenRow?.data as Record<string, number>;

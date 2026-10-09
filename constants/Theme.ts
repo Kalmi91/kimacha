@@ -1,4 +1,4 @@
-// Design-tokenek. Új kód csak innen vesz méretet, ne inline számot.
+// Design tokens. New code takes sizes only from here, no inline numbers.
 
 import type { ViewStyle } from 'react-native';
 import Colors from './Colors';

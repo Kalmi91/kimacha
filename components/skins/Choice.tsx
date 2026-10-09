@@ -5,10 +5,10 @@ import { Text } from '@/components/KText';
 import { BrutalBox } from '@/components/grammar/Brutal';
 import { useGrammarColors } from '@/lib/grammarColors';
 
-// egy választó-gomb / chip a Témák és a Saját mix képernyőn: brutalista témán
-// BrutalBox, classic témán sima kártya. A kijelölt kitöltése `a`, szövege `onA`, előtte "✓"
-// (nem csak a szín jelzi a választást). `stacked` = a ✓ + előtag (ikon) a
-// felirat FÖLÖTT külön sorban, kisebb egysoros felirattal, hogy 3 oszlopban se csússzon ki.
+// a picker button / chip on the Themes and My mix screens: a BrutalBox on the
+// brutalist theme, a plain card on the classic theme. The selected one is filled with `a`, its text is `onA`, preceded by "✓"
+// (colour alone does not signal the selection). `stacked` = the ✓ + prefix (icon) on a
+// separate row ABOVE the label, with a smaller one-line label, so it does not overflow even in 3 columns.
 export default function Choice({
   selected,
   onPress,
@@ -74,8 +74,8 @@ const styles = StyleSheet.create({
   plain: { borderRadius: 14 },
   text: { fontSize: 14, fontWeight: '600' },
   check: { fontSize: 14, fontWeight: '700' },
-  // flex: 1 + középre: az előlap kitölti a magasabb szomszéd miatt nyújtott külső dobozt
-  // (különben az árnyék lelógna a doboz alól).
+  // flex: 1 + centred: the front face fills the outer box stretched by the taller sibling
+  // (otherwise the shadow would hang below the box).
   stackBox: { flexDirection: 'column', gap: 2, flex: 1 },
   stackTop: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6 },
   stackText: { fontSize: 11, textAlign: 'center' },

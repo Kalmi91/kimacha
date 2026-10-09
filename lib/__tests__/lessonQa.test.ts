@@ -1,9 +1,9 @@
-// a 17 schema-2 lecke gépi drill-QA-ja a
-// kapu része legyen, ne csak kézzel futtatott szkript. `scripts/audit-games.mjs`
-// már minden schema-2 lecke item-jét ellenőrzi (choice correctIndex/egyediség/
-// önmagát-eláruló prompt, form tábla-cella egyezés, match párok, why szabályok,
-// lásd a szkript fejléc-kommentjét); ez a teszt csak lefuttatja és a kapuhoz
-// köti az eredményét, hogy egy jövőbeli adat-regresszió jest alatt is elbukjon.
+// The automated drill QA of the 17 schema-2 lessons should be
+// part of the gate, not just a script run by hand. `scripts/audit-games.mjs`
+// already checks every item of every schema-2 lesson (choice correctIndex/uniqueness/
+// a prompt that gives itself away, form table-cell match, match pairs, why rules,
+// see the script's header comment); this test only runs it and ties
+// its result to the gate, so a future data regression fails under jest too.
 import { spawnSync } from 'child_process';
 import path from 'path';
 

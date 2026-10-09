@@ -1,5 +1,5 @@
-// a Tanulás fül brutalista palettán (BrutalBox kártya, szint-doboz, dokkolt
-// gomb, szegmentált progress), classic palettán a mai kinézet. Mock-minta:
+// The Learn tab on the brutalist palette (BrutalBox card, level box, docked
+// button, segmented progress), and today's look on the classic palette. Mock pattern:
 // pcicCardShell.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
@@ -20,9 +20,9 @@ jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, left: 0, right: 0, bottom: 0 }),
 }));
 
-// Egy fix tétel, hogy a teszt ne a valódi PCIC-korpusztól függjön.
-// Az id "b1-" előtaggal, mert lib/pcicLevels.ts a
-// szint-szűrést az id-előtagból dönti el (a fül a B1 alap-szinten indul).
+// One fixed item, so the test does not depend on the real PCIC corpus.
+// The id has a "b1-" prefix because lib/pcicLevels.ts decides the
+// level filter from the id prefix (the tab starts at the B1 base level).
 const FIXTURE_ITEM = { id: 'b1-x1', es: 'vida', en: 'life', kind: 'word' as const, section: 'Test', order: 0 };
 jest.mock('@/data/pcic', () => ({
   PCIC_LEVELS: ['B1'],
@@ -49,12 +49,12 @@ const flush = async (times = 6) => {
 
 jest.setTimeout(30000);
 
-describe('Tanulás fül, neo-brutalista (NY19)', () => {
+describe('Learn tab, neo-brutalist', () => {
   beforeEach(async () => {
     await getDb().resetPcicCards();
   });
 
-  it('brand palettán BrutalBox kártya, szint-doboz, dokkolt gomb és szegmentált sáv jelenik meg', async () => {
+  it('with the brand palette a BrutalBox card, level box, docked button and segmented bar appear', async () => {
     await getDb().setGrammarPalette('brand');
     const view = render(<ThemeProvider><PcicScreen /></ThemeProvider>);
     await flush();
@@ -65,10 +65,10 @@ describe('Tanulás fül, neo-brutalista (NY19)', () => {
     view.unmount();
   });
 
-  // a "Didn't know" / "Knew it" gomb egyforma: azonos
-  // árnyék-eltolás (a külső burkoló margója), a doboz kitölti a sort (flex: 1),
-  // a felirat középre igazított, és a sor a kártya teljes szélességén fut.
-  it('brand palettán a két értékelő gomb egyforma: azonos eltolás, kitöltő doboz, középre igazított felirat', async () => {
+  // The "Didn't know" / "Knew it" buttons are identical: same
+  // shadow offset (the margin of the outer wrapper), the box fills the row (flex: 1),
+  // the label is centered, and the row spans the full width of the card.
+  it('with the brand palette the two rating buttons are identical: same offset, fill box, centered label', async () => {
     await getDb().setGrammarPalette('brand');
     const view = render(<ThemeProvider><PcicScreen /></ThemeProvider>);
     await flush();
@@ -90,7 +90,7 @@ describe('Tanulás fül, neo-brutalista (NY19)', () => {
     view.unmount();
   });
 
-  it('classic palettán a mai kinézet: nincs BrutalBox', async () => {
+  it('with the classic palette the current look stays: no BrutalBox', async () => {
     await getDb().setGrammarPalette('classic');
     const view = render(<ThemeProvider><PcicScreen /></ThemeProvider>);
     await flush();

@@ -34,8 +34,8 @@ import { SkinBackdrop, SkinHeader } from '@/components/skins/Slots';
 
 // The grammar course: the whole syllabus from A1 to C1, in teaching order.
 //
-// User feedback: "külön legyen egy nyelvtani tanulás rész ahol szépen
-// átveszi az összes nyelvtant... azt akarom, hogy átfogó legyen".
+// User feedback: "there should be a separate grammar learning section that neatly
+// takes in all the grammar... I want it to be comprehensive".
 //
 // The level the learner is on is open by default; every other level can be
 // opened, because a grammar point is worth reading ahead of schedule and worth
@@ -60,11 +60,11 @@ export default function GrammarSyllabusScreen() {
   const [level, setLevel] = useState<Level>('A1');
   const [openLevel, setOpenLevel] = useState<Level | null>(null);
   const [progress, setProgress] = useState<Map<string, TopicProgress>>(new Map());
-  // leckénkénti kumulált helyes-arány, a sor jobb szélén lévő NN% jelvényhez.
+  // cumulative correct rate per lesson, for the NN% badge at the right edge of the row.
   const [percents, setPercents] = useState<Map<string, number>>(new Map());
-  // a lecke végi teszten átment leckék ("Test passed" jel).
+  // lessons that passed the end-of-lesson test ("Test passed" mark).
   const [testPassed, setTestPassed] = useState<Set<string>>(new Set());
-  // streak-matrica + heti cél doboz (a meglévő getStreak / heti cél / használat értékeiből).
+  // streak sticker + weekly goal box (from the existing getStreak / weekly goal / usage values).
   const [streak, setStreak] = useState(0);
   const [weeklyGoal, setWeeklyGoal] = useState(DEFAULT_WEEKLY_GOAL_MINUTES);
   const [weekMinutes, setWeekMinutes] = useState(0);
@@ -76,7 +76,7 @@ export default function GrammarSyllabusScreen() {
     setLearnedLang(target);
     // Kimacha Play: UI always English, regardless of the
     // stored source language; the syllabus data's hu/es/de fields stay unused.
-    // es→en: a spanyol anyanyelvű tanuló spanyol magyarázatot kap.
+    // es→en: a learner whose native language is Spanish gets the explanation in Spanish.
     setContentLang(target === 'en' ? 'es' : 'en');
 
     const levelData = await db.getLevel();
@@ -84,12 +84,12 @@ export default function GrammarSyllabusScreen() {
     setLevel(lvl);
     setOpenLevel((current) => current ?? (LEVELS.includes(lvl) && lvl !== 'A0' ? lvl : 'A1'));
 
-    // egy téma csak akkor "kész", ha a leckéjében létező összes
-    // fajtájából van kész sor (doneGrammarTopicProgress, lib/grammar/syllabus.ts).
+    // A topic is only "done" if there is a finished row for every
+    // kind that exists in its lesson (doneGrammarTopicProgress, lib/grammar/syllabus.ts).
     const rows = await db.getGameProgress(GRAMMAR_PROGRESS_KEY);
     setProgress(doneGrammarTopicProgress(target, rows));
-    // ugyanabból a lekérésből, külön DB-hívás nélkül.
-    // A lecke %-a az összes fajta átlaga (a meg nem csinált 0), nem a kumulált jó-arány.
+    // Taken from the same query, without a separate DB call.
+    // The lesson's % is the average over all kinds (the ones not done count as 0), not the cumulative correct rate.
     setPercents(lessonScoresByTopic(rows, (id) => lessonKinds(target, id)));
     setTestPassed(lessonTestPassedTopics(rows));
     setStreak((await db.getStreak())?.current_count ?? 0);
@@ -106,8 +106,8 @@ export default function GrammarSyllabusScreen() {
   const coverage = lessonCoverage(learnedLang);
   const doneCount = [...progress.values()].filter((p) => p.state === 'done').length;
 
-  // Neo-brutalista:
-  // a classic paletta a lenti mai kinézetet adja.
+  // Neo-brutalist:
+  // the classic palette renders today's look below.
   if (g.brutal) {
     const shownLevel: Level = openLevel ?? 'A1';
     const shownTopics = syllabusForLevel(shownLevel, learnedLang);
@@ -198,11 +198,11 @@ export default function GrammarSyllabusScreen() {
                         {testPassed.has(topic.id) ? (
                           <Sticker testID={`grammar-test-passed-${topic.id}`} label={s.lessonTest.passedTag} fill="b" rotate={-3} />
                         ) : null}
-                        {/* az új feladat-fajtás két lecke jelvénye. */}
+                        {/* badge of the two lessons with the new exercise kind. */}
                         {hasTrial ? <TrialBadge testID={`trial-badge-${topic.id}`} /> : null}
                       </View>
                     ) : null}
-                    {/* 7F/G2: nincs numberOfLines-vágás: a széles / magas betűjű téma 3+ sorba tördeli, nem csonkítjuk. */}
+                    {/* No numberOfLines clipping: a theme with a wide / tall font wraps onto 3+ lines, we do not truncate it. */}
                     <Text style={[styles.brutalBlurb, { color: textColor }]}>
                       {topic.blurb[contentLang] ?? topic.blurb.en}
                     </Text>
@@ -243,8 +243,8 @@ export default function GrammarSyllabusScreen() {
 
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
-      {/* K33 (play-vágás): ez már a Nyelvtan fül gyökere, nem push-olt képernyő,
-          a cím+vissza sort a tab-navigátor saját fejléce adja (s.tabs.grammar). */}
+      {/* This is now the root of the Grammar tab, not a pushed screen,
+          the title+back row comes from the tab navigator's own header (s.tabs.grammar). */}
       <Text style={[styles.subtitle, { color: colors.tabIconDefault, marginTop: 12 }]}>
         {s.grammar.coverage(doneCount, coverage.written, coverage.planned)}
       </Text>
@@ -285,11 +285,11 @@ export default function GrammarSyllabusScreen() {
                       {topicsForUnit(unit.id, learnedLang).map((topic) => {
                         const written2 = hasLesson(learnedLang, topic.id);
                         const p = progress.get(topic.id);
-                        // null amíg egyetlen kör sincs lejátszva a témán.
+                        // null until a round has been played on the topic.
                         const pct = percents.get(topic.id) ?? null;
-                        // EGY jelvény, nem kettő. Kész témán a kumulált
-                        // százalék (vagy a régi haladásnál a kör eredménye)
-                        // ül a ✓ mellett; elkezdett, nem kész témán önmagában.
+                        // ONE badge, not two. On a done topic the cumulative
+                        // percentage (or, for the old progress, the round's result)
+                        // sits next to the ✓; on a started, not done topic it stands alone.
                         const badgePct = lessonBadgePercent(pct, p?.correct, p?.total);
                         const badge = !written2
                           ? s.grammar.soon
@@ -390,7 +390,7 @@ const styles = StyleSheet.create({
   topicRow: { flexDirection: 'row', alignItems: 'center', gap: 10, borderRadius: 12, padding: 12 },
   topicTitleRow: { flexDirection: 'row', alignItems: 'center', gap: 6, flexWrap: 'wrap' },
   topicTitle: { fontSize: 15, fontWeight: '600' },
-  // Telt lila: a beszéd-mag, ez épül legelőbb.
+  // Filled purple: the speech core, this gets built first.
   corePlusTag: {
     fontSize: 10,
     fontWeight: '700',
@@ -401,8 +401,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 5,
     paddingVertical: 1,
   },
-  // Lila jelölés: ez a téma kell ahhoz, hogy beszélni tudjon, akkor is látszik,
-  // ha a lecke még nincs megírva.
+  // Purple marker: this topic is needed to be able to speak, and it shows even
+  // if the lesson is not written yet.
   coreTag: {
     fontSize: 10,
     fontWeight: '700',
@@ -417,8 +417,8 @@ const styles = StyleSheet.create({
   topicBlurb: { fontSize: 12, marginTop: 2, lineHeight: 17 },
   topicBadgeCol: { alignItems: 'flex-end', gap: 2 },
   topicBadge: { fontSize: 12, fontWeight: '700' },
-  // neo-brutalista forma-stílusok (címek, gombok nagybetűsek, 500 súly).
-  // paddingBottom: az utolsó kártya a chat-gomb (FAB) alól is kigördül.
+  // neo-brutalist form styles (titles and buttons uppercase, weight 500).
+  // paddingBottom: the last card can also scroll clear of the chat button (FAB).
   brutalBody: { padding: 16, paddingBottom: 130, gap: 10 },
   brutalHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   brutalTitle: { fontSize: 30, fontWeight: '500', textTransform: 'uppercase' },

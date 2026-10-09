@@ -1,4 +1,4 @@
-// F-1 (K6 DÖNTÉS, 2026-08-26): guards the pos/gender metadata that
+// F-1 (K6 DECISION, 2026-08-26): guards the pos/gender metadata that
 // the annotation puts into the word JSON files. Four future games
 // (bubble-pop, odd-one-out, conjugation-slot, grammar-choice) group vocabulary
 // by part of speech and grammatical gender, so a missing or invalid value is a
@@ -17,7 +17,7 @@ import type { WordEntry } from '@/data/words';
 const VALID_POS = new Set(['noun', 'verb', 'adj', 'adv', 'pron', 'prep', 'num', 'phrase']);
 const VALID_GENDER = new Set(['m', 'f', 'mf', '-']);
 
-// Play-vágás: the en branch no longer goes through
+// Play cut: the en branch no longer goes through
 // the loader (single en-es pair), so its annotation is checked straight off
 // the JSON files.
 function branchLevel(lang: string, level: string): WordEntry[] {

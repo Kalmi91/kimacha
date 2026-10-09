@@ -8,23 +8,23 @@ const LANGS: Record<string, Strings> = { en, es };
 let current: Strings = en;
 let currentCode = 'en';
 
-// a felület nyelve mostantól a pár
-// KIINDULÓ nyelve (onboarding.source), nem mindig angol; setLanguage() innentől
-// tényleg vált, nem no-op. Az app/_layout.tsx hívja a betöltéskor kapott
-// source-szal, app/onboarding.tsx a választáskor, a Settings irányváltó sora
-// a váltáskor.
+// the interface language is now the pair's
+// SOURCE language (onboarding.source), not always English; setLanguage() now
+// really switches, it is no longer a no-op. app/_layout.tsx calls it with the
+// source loaded at startup, app/onboarding.tsx on choosing, the Settings
+// direction-switch row on switching.
 export function initI18n() {}
 
 export function t(): Strings {
   return current;
 }
 
-// Csak a két támogatott pár nyelvére vált (lib/languages.ts supportedPairs);
-// ismeretlen kódra angolra esik vissza, hogy a felület sose maradjon üresen.
-// Önmagában NEM értesíti a listenereket (lásd notifyLanguageChange lent): az
-// onboarding a saját lépései közt is hívja ezt, élő előnézetnek, és az a
-// remount, amit a notify kivált (app/_layout.tsx), elpusztítaná az
-// OnboardingScreen saját `step`-állapotát.
+// Switches only to the languages of the two supported pairs (lib/languages.ts supportedPairs);
+// an unknown code falls back to English, so the UI never stays empty.
+// It does NOT notify the listeners by itself (see notifyLanguageChange below): the
+// onboarding also calls this between its own steps, as a live preview, and the
+// remount that the notify triggers (app/_layout.tsx) would destroy the
+// OnboardingScreen's own `step` state.
 export function setLanguage(code: string) {
   current = LANGS[code] ?? en;
   currentCode = code;
@@ -34,10 +34,9 @@ export function currentLanguage(): string {
   return currentCode;
 }
 
-// A Settings irányváltó sora ezt hívja meg setLanguage() UTÁN (nem maga
-// setLanguage), hogy csak egy VÉGLEGESÍTETT váltás váltsa ki a teljes fa
-// remountját (app/_layout.tsx `key={langVersion}`), az onboarding közbeni
-// próba-váltás ne.
+// The Settings direction-switch row calls this AFTER setLanguage() (not setLanguage
+// itself), so that only a COMMITTED switch triggers the remount of the whole tree
+// (app/_layout.tsx `key={langVersion}`), a trial switch during onboarding does not.
 type Listener = () => void;
 const listeners = new Set<Listener>();
 

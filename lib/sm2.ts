@@ -1,30 +1,30 @@
-// SM-2 (Anki-módszerű) ütemező a PCIC fülhöz. Teljesen
-// független a meglévő FSRS `cards` tábla/`lib/sessionQueue.ts` ütemezőtől,
-// itt csak es→en tételek forognak. Tiszta függvények, I/O nélkül; a DB-hívó
-// oldal (lib/database.ts / lib/database.web.ts) tárolja a `Sm2Card`-okat.
+// SM-2 (Anki-style) scheduler for the PCIC tab. Completely
+// independent of the existing FSRS `cards` table/`lib/sessionQueue.ts` scheduler,
+// only es→en items go through here. Pure functions, no I/O; the DB caller
+// side (lib/database.ts / lib/database.web.ts) stores the `Sm2Card`s.
 
 export type Sm2Grade = 'again' | 'hard' | 'good' | 'easy';
 export type Sm2State = 'new' | 'learning' | 'review';
 
 export interface Sm2Card {
-  itemId: string; // PCIC tétel id, pl. "b1-0184"
+  itemId: string; // PCIC item id, e.g. "b1-0184"
   state: Sm2State;
-  step: number; // learning lépés indexe (0..), csak learning állapotban értelmes
-  ease: number; // 2.5-ről indul, padló 1.3
-  interval: number; // napokban, review állapotban
+  step: number; // index of the learning step (0..), only meaningful in the learning state
+  ease: number; // starts at 2.5, floor 1.3
+  interval: number; // in days, in the review state
   reps: number;
   lapses: number;
-  due: string; // 'YYYY-MM-DD', new kártyánál üres string
+  due: string; // 'YYYY-MM-DD', an empty string for a new card
   lastReview: string | null;
-  introducedAt: string | null; // melyik napon lett először kérdezve
-  known?: boolean; // a tanuló kézzel »tudott«-nak jelölte; ritka ellenőrzés, a statisztikában ismert
+  introducedAt: string | null; // on which day it was first asked
+  known?: boolean; // the learner marked it as "known" by hand; rare check, counted as known in the statistics
 }
 
-// egy helyes válasz elég a graduáláshoz (a korábbi 2 lépés
-// idegesítő volt, ugyanazt a szót kétszer kellett jól leírni). Egy "good" a
-// learning állapotból egyenesen review-ba viszi a kártyát (interval =
-// GRADUATE_INTERVAL_DAYS); "again" változatlanul a menet végére kerül vissza
-// (lásd pickSm2Session), és onnan ugyanígy egy jó válasszal graduál.
+// one correct answer is enough to graduate (the earlier 2 steps
+// were annoying, the same word had to be written correctly twice). A "good" takes the card
+// from the learning state straight to review (interval =
+// GRADUATE_INTERVAL_DAYS); "again" still goes back to the end of the round
+// (see pickSm2Session), and graduates from there the same way with one good answer.
 export const LEARNING_STEPS = 1;
 const EASE_FLOOR = 1.3;
 const DEFAULT_EASE = 2.5;
@@ -108,7 +108,7 @@ export function sm2Review(card: Sm2Card, grade: Sm2Grade, today: string): Sm2Car
     return next;
   }
 
-  // review állapot
+  // review state
   switch (grade) {
     case 'again':
       next.lapses = card.lapses + 1;
@@ -141,9 +141,9 @@ export function sm2Review(card: Sm2Card, grade: Sm2Grade, today: string): Sm2Car
   return next;
 }
 
-// Mind a 4 gomb intervallum-előnézete napokban (0 = még ma), a sm2Review-t
-// hívja meg hipotetikusan minden grade-re, hogy a szám sose csúszhasson el a
-// tényleges ütemezéstől. A feliratot (i18n) a hívó oldal formázza.
+// Interval preview of all 4 buttons in days (0 = still today); it calls sm2Review
+// hypothetically for every grade, so the number can never drift from the
+// actual scheduling. The label (i18n) is formatted by the caller side.
 export function sm2PreviewDays(card: Sm2Card, today: string): Record<Sm2Grade, number> {
   const grades: Sm2Grade[] = ['again', 'hard', 'good', 'easy'];
   const days = {} as Record<Sm2Grade, number>;
@@ -154,10 +154,10 @@ export function sm2PreviewDays(card: Sm2Card, today: string): Record<Sm2Grade, n
   return days;
 }
 
-// Sorrend: (1) esedékes review, due szerint növekvő; (2) learning kártyák
-// (due <= today); (3) új kártyák a newOrder (fájl-sorrend) szerint, legfeljebb
-// newLimit − (ma már bevezetett új kártyák száma). Review korlátlan, a napi
-// keret csak az új kártyák bevezetését korlátozza.
+// Order: (1) due review cards, ascending by due; (2) learning cards
+// (due <= today); (3) new cards in newOrder (file order), at most
+// newLimit − (number of new cards already introduced today). Reviews are unlimited, the daily
+// budget only limits the introduction of new cards.
 export function pickSm2Session(
   cards: Sm2Card[],
   newOrder: string[],
@@ -179,15 +179,15 @@ export function pickSm2Session(
   for (const itemId of newOrder) {
     if (newCards.length >= newBudget) break;
     const existing = byId.get(itemId);
-    if (existing && existing.state !== 'new') continue; // már learning/review, máshol szerepel
+    if (existing && existing.state !== 'new') continue; // already learning/review, listed elsewhere
     newCards.push(existing ?? sm2NewCard(itemId));
   }
 
   return [...dueReview, ...learning, ...newCards];
 }
 
-/** A szó ismertnek számít,
- *  ritkán (KNOWN_INTERVAL_DAYS) mégis visszajön ellenőrzésre. Ease érintetlen. */
+/** The word counts as known,
+ *  but still comes back for a check rarely (KNOWN_INTERVAL_DAYS). Ease untouched. */
 export function sm2MarkKnown(card: Sm2Card, today: string): Sm2Card {
   return {
     ...card,

@@ -39,15 +39,15 @@ import CardShell from '@/components/learn/CardShell';
 import DockedAction, { DOCK_RESERVE, FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
 
-// A lecke ragozó
-// tábláinak celláit gyakorolja, a PCIC-kártya felületén (CardShell,
-// DockedAction), Anki-szerű ütemezéssel (lib/grammar/tableDeck.ts). A
-// haladás a game_progress-be perzisztál, ${topic}:tabledeck kulccsal, ugyanaz
-// a game_id (GRAMMAR_PROGRESS_KEY), mint a lecke-pontszámoké.
+// Practices the cells of the lesson's conjugation
+// tables on the PCIC card surface (CardShell,
+// DockedAction), with Anki-like scheduling (lib/grammar/tableDeck.ts).
+// Progress persists to game_progress under the ${topic}:tabledeck key, the same
+// game_id (GRAMMAR_PROGRESS_KEY) as the lesson scores.
 //
-// tábla nélküli leckén a kártya-forrás a lecke
-// saját szavai (wordCellsForLesson), nem a ragozási tábla; a scheduler és a
-// képernyő ugyanaz, csak a promptBig szövege és a chip-felirat vált módonként.
+// On a table-less lesson the card source is the lesson's
+// own words (wordCellsForLesson), not the conjugation table; the scheduler and
+// the screen are the same, only the promptBig text and the chip label differ by mode.
 
 const progressKeyFor = (topicId: string) => `${topicId}:tabledeck`;
 
@@ -66,8 +66,8 @@ interface DeckItem {
   enPrompt?: string;
   /** The table cell's infinitive, shown under an enPrompt. */
   verb?: string;
-  /** a ragozó cella infinitivusa rejtett, a súgó-gombra (vagy
-   *  a Check után) látszik; oszlop-fejlécnél (személy-tábla) és szó-paklinál nincs. */
+  /** the conjugation cell's infinitive is hidden, shown on the hint button (or
+   *  after Check); there is none for a column header (person table) or a word deck. */
   hintVerb?: boolean;
 }
 
@@ -84,22 +84,22 @@ export default function TableDeckScreen() {
   const [learnedLang, setLearnedLang] = useState('es');
   const [level, setLevel] = useState<Level>('A1');
   const [strictAccents, setStrictAccents] = useState(false);
-  // egy beállítás, két hely, lásd
-  // lib/grammar/tableDeck.ts fejét.
+  // one setting, two places, see the head of
+  // lib/grammar/tableDeck.ts.
   const [againDelaySec, setAgainDelaySec] = useState(DEFAULT_AGAIN_DELAY_SEC);
   const [mode, setMode] = useState<DeckMode>('table');
   const [items, setItems] = useState<DeckItem[]>([]);
   const [deck, setDeck] = useState<DeckState>({ cells: [], resetCount: 0, shuffled: false });
   const [typed, setTyped] = useState('');
   const [checked, setChecked] = useState<{ correct: boolean } | null>(null);
-  // annak a cellának az id-je, amihez a súgó-gombot megnyomták
-  // (kártyaváltáskor levezetve "nincs megnyomva", nincs reset-effekt).
+  // id of the cell for which the hint button was pressed
+  // (derived as "not pressed" on a card change, so no reset effect).
   const [hintFor, setHintFor] = useState<string | null>(null);
-  // a beviteli mező minden új cellánál újra mountol
-  // (a `key` ezt a számlálót tartalmazza), különben az `autoFocus` csak az első
-  // cellánál fut, és a Check után letiltott (`editable={false}`), majd újra
-  // engedélyezett natív mezőn Next után nem jön fel a billentyűzet. Ugyanaz az
-  // ok és javítás, mint a PCIC-kártyán (app/(tabs)/index.tsx cardSeq).
+  // the input field remounts for every new cell
+  // (the `key` contains this counter), otherwise `autoFocus` only runs on the first
+  // cell, and on a native field that is disabled after Check (`editable={false}`) and then
+  // re-enabled, the keyboard does not come up after Next. Same cause and
+  // fix as on the PCIC card (app/(tabs)/index.tsx cardSeq).
   const [cellSeq, setCellSeq] = useState(0);
   const [dockH, setDockH] = useState(DOCK_RESERVE);
   const { dockLift } = useDockLift();
@@ -125,13 +125,13 @@ export default function TableDeckScreen() {
         ? tableCells.map((c) => ({
             id: c.id,
             answer: c.answer,
-            // a rejtett infinitivus nincs a promptban (súgó-gomb mutatja).
+            // the hidden infinitive is not in the prompt (the hint button shows it).
             promptBig: c.enPrompt ?? (isInfinitive(c.verb) ? c.person : `${c.person} · ${c.verb}`),
             enPrompt: c.enPrompt,
             verb: c.verb,
             hintVerb: isInfinitive(c.verb),
           }))
-        : // es→en irányban a kérdés a spanyol szó, a válasz az angol szó.
+        : // in es→en the question is the Spanish word, the answer is the English word.
           wordCellsForLesson(lesson, target).map((c) =>
             target === 'en' ? { id: c.id, answer: c.en, promptBig: c.es } : { id: c.id, answer: c.es, promptBig: c.en }
           );
@@ -165,10 +165,10 @@ export default function TableDeckScreen() {
   };
 
   const entry = syllabusTopic(String(topicId), learnedLang);
-  // es→en irányban (spanyol felület) a cím a felület nyelvén, nem mindig angolul.
+  // in es→en (Spanish UI) the title is in the UI language, not always English.
   const lessonTitle = entry?.title[learnedLang === 'en' ? 'es' : 'en'] ?? entry?.title.en ?? String(topicId);
 
-  // A FeedbackButton párcímkéje az aktív iránnyal (en→es vagy es→en).
+  // The FeedbackButton's pair label with the active direction (en→es or es→en).
   const deckPair = learnedLang === 'en' ? 'es→en' : 'en→es';
 
   const currentId = nextCellId(deck, now);
@@ -214,7 +214,7 @@ export default function TableDeckScreen() {
     setNow(Date.now());
   };
 
-  // brutalista palettán vissza-doboz, nagybetűs cím, a haladás matrica.
+  // on the brutalist palette a back box, uppercase title, the progress sticker.
   const header = (
     <View style={[styles.header, brutalHeaderRowStyle(g)]}>
       {g.brutal ? (
@@ -294,7 +294,7 @@ export default function TableDeckScreen() {
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         {header}
-        {/* az üres pakli lapján is ott a 💬. */}
+        {/* the 💬 is there on the empty deck's page too. */}
         <FeedbackButton level={level} languagePair={deckPair} currentCard={`grammar:${topicId}:tabledeck:empty`} />
       </View>
     );
@@ -424,7 +424,7 @@ const styles = StyleSheet.create({
   // the infinitive under the English prompt, pulled up into promptBig's
   // bottom margin so the two read as one prompt block.
   promptInfinitive: { fontSize: 15, fontStyle: 'italic', textAlign: 'center', marginTop: -12, marginBottom: 12 },
-  // A rejtett infinitivus súgó-gombja: középen a prompt alatt.
+  // The hidden infinitive's hint button: centered under the prompt.
   hintBtn: { flexDirection: 'row', alignSelf: 'center', alignItems: 'center', gap: 6, paddingVertical: 4, paddingHorizontal: 10, marginTop: -8, marginBottom: 12 },
   hintBtnBrutal: { alignSelf: 'center', marginTop: -8, marginBottom: 12 },
   hintLabel: { fontSize: 14, fontWeight: '600' },

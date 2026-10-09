@@ -1,12 +1,12 @@
-// a szintvizsga tételeinek építője. A régi (4afeb8c^) lib/examBuilder.ts a régi
-// data/words szókészletből és a data/exams JSON-ból épített; ez CSAK a szint
-// TANULT szavaiból (SM-2 `review`) és a szint kész nyelvtani leckéiből.
+// Builder of the level exam items. The old (4afeb8c^) lib/examBuilder.ts built from the old
+// data/words vocabulary and the data/exams JSON; this one builds ONLY from the level's
+// LEARNED words (SM-2 `review`) and the level's finished grammar lessons.
 //
-// Észak-csillag (docs/NORTH-STAR.md): soha mondat ismeretlen szóval. A szó-alapú
-// mondatok (összerakás, beírás, olvasás) a lib/knownSentence.ts kapuján mennek át
-// (tanult szó + a kész leckékkel feloldott igeidő + szabad szavak; a tenseGate
-// szerkezet-szabálya is ott fut), a csapda-csempék a tanult szavakból jönnek.
-// Tiszta modul: nincs adatbázis, nincs betöltött korpusz, a hívó adja az adatot.
+// North star (docs/NORTH-STAR.md): never a sentence with an unknown word. Word-based
+// sentences (assembling, typing, reading) pass through the gate in lib/knownSentence.ts
+// (learned word + the tenses unlocked by finished lessons + free words; the tenseGate
+// structure rule runs there too), the trap tiles come from learned words.
+// Pure module: no database, no loaded corpus, the caller supplies the data.
 
 import type { PcicItem, PcicTarget } from '@/data/pcic';
 import { nearMissDistractors } from '@/lib/distractors';
@@ -19,11 +19,11 @@ import type { ExamItem } from './types';
 import { isExamLearned } from './unlock';
 
 /**
- * Szóbeli tétel a vizsgában. DÖNTÉS KELL: hány legyen a 30-ból, ez még nincs eldöntve; az
- * alapérték 4. A szóbeli a szó (-2) és a nyelvtan (-2) rovására kerül a 30-ba, hogy az összes tétel ne nőjön.
+ * Speaking items in the exam. Open question: how many of the 30 should be speaking is not
+ * decided yet; the default is 4. Speaking takes its slots from words (-2) and grammar (-2) so the total does not grow.
  */
 export const EXAM_SPEAK_COUNT = 4;
-/** Tételszám fajtánként: 10 szó, 10 nyelvtan, 6 olvasás, EXAM_SPEAK_COUNT szóbeli = 30. */
+/** Item count per kind: 10 word, 10 grammar, 6 reading, EXAM_SPEAK_COUNT speaking = 30. */
 export const EXAM_BLUEPRINT = { wordType: 5, match: 2, sentOrder: 2, sentType: 1, speak: EXAM_SPEAK_COUNT, gap: 10, reading: 6 } as const;
 export const MATCH_PAIRS = 4;
 const MIN_SENTENCE_WORDS = 3;
@@ -31,17 +31,17 @@ const MAX_SENTENCE_WORDS = 9;
 
 interface ExamBuildInput {
   target: PcicTarget;
-  /** A szint kártyái (a hívó a betöltött korpuszból adja). */
+  /** The level's cards (the caller supplies them from the loaded corpus). */
   items: PcicItem[];
-  /** Az összes SM-2 kártya; csak a szint tanult kártyái számítanak. */
+  /** All SM-2 cards; only the level's learned cards count. */
   cards: Sm2Card[];
-  /** A kész leckékkel feloldott igeidők (csak spanyol célnyelven számít). */
+  /** Tenses unlocked by finished lessons (matters only for a Spanish target language). */
   tenses: ReadonlySet<ResolvedTense>;
-  /** A szint kész leckéinek gap tételei (lib/exam/grammarItems.ts). */
+  /** Gap items of the level's finished lessons (lib/exam/grammarItems.ts). */
   gapSources: GapSource[];
   /**
-   * Tétel az azonosítóból. A mondat-kapu szókincse MINDEN tanult szóból épül, a korábbi szintekéből is
-   * (egy A2 mondatban ott az A1 szó): ha nincs megadva, a szint tételei számítanak (A1-nél ez ugyanaz).
+   * Item lookup by id. The vocabulary of the sentence gate is built from ALL learned words, earlier levels' too
+   * (an A2 sentence contains A1 words): if not given, the level's items count (for A1 this is the same).
    */
   lookup?: (id: string) => PcicItem | undefined;
   seed: number;
@@ -61,7 +61,7 @@ export function buildExam(input: ExamBuildInput): ExamItem[] {
   const { target, items, cards, gapSources, seed } = input;
   const byId = new Map(items.map((i) => [i.id, i]));
   const learnedCards = cards.filter((c) => byId.has(c.itemId) && isExamLearned(c));
-  // A szóforrás-sorrend a seedből keveredik: ugyanaz a seed ugyanazt a vizsgát adja.
+  // The word source order is shuffled from the seed: the same seed gives the same exam.
   const learned = shuffleArray(
     learnedCards.map((c) => byId.get(c.itemId)!),
     hashString(`words:${seed}`),
@@ -69,7 +69,7 @@ export function buildExam(input: ExamBuildInput): ExamItem[] {
   const promptOf = (it: PcicItem) => (target === 'es' ? it.en : it.es);
   const answerOf = (it: PcicItem) => (target === 'es' ? it.es : it.en);
 
-  // Mondat-készlet: csak olyan példamondat, aminek minden szava tanult vagy szabad.
+  // Sentence pool: only example sentences whose every word is learned or free.
   const ctx = {
     learned: learnedEntries(cards.filter(isExamLearned), target, input.lookup ?? ((id) => byId.get(id))),
     tenses: target === 'es' ? input.tenses : undefined,
@@ -101,8 +101,8 @@ export function buildExam(input: ExamBuildInput): ExamItem[] {
   const typed = takeSentences(EXAM_BLUEPRINT.sentType);
   const spoken = takeSentences(EXAM_BLUEPRINT.speak);
 
-  // Olvasás (A7 b): két tanult mondatból álló célnyelvi szöveg; a jó válasz a két mondat kiinduló
-  // nyelvű fordítása, a rossz válaszokban az egyik fele más tanult mondat fordítása.
+  // Reading: a target-language text made of two learned sentences; the correct answer is the source-language
+  // translation of both sentences, in the wrong answers one half is the translation of a different learned sentence.
   const rest = pool.filter((p) => !usedSentences.has(p.itemId));
   const readingBlock: ExamItem[] = [];
   const readingCount = Math.min(EXAM_BLUEPRINT.reading, Math.floor(rest.length / 2));
@@ -130,12 +130,12 @@ export function buildExam(input: ExamBuildInput): ExamItem[] {
     });
   }
 
-  // Ha a mondat-készlet kevés (pl. még nincs kész igeidő-lecke), a hiányzó mondat-tételek
-  // szó-beírásra cserélődnek, hogy a szó-rész hossza ne essen vissza.
+  // If the sentence pool is small (e.g. no finished tense lesson yet), the missing sentence items
+  // are replaced with word typing so that the word section does not get shorter.
   const sentenceShortfall = EXAM_BLUEPRINT.sentOrder + EXAM_BLUEPRINT.sentType - ordered.length - typed.length;
   const usedWords = new Set<string>();
   const wordType: ExamItem[] = [];
-  // A mondat-tételek gazda-szava nem kérdezhető külön is (a csempe / a szöveg elárulná a választ).
+  // The host word of a sentence item cannot also be asked on its own (the tile / the text would give away the answer).
   const askable = learned.filter((it) => !usedSentences.has(it.id));
   for (const it of askable) {
     if (wordType.length >= EXAM_BLUEPRINT.wordType + sentenceShortfall) break;
@@ -143,8 +143,8 @@ export function buildExam(input: ExamBuildInput): ExamItem[] {
     wordType.push({ kind: 'word_type', skill: 'words', itemId: it.id, prompt: promptOf(it), hint: it.hint, answer: answerOf(it) });
   }
 
-  // Párosítás: egyértelmű, egy jelentésű szavak (nincs hint, perjeles alternatíva, zárójel),
-  // egy csoporton belül egyik oldalon sincs ismétlődés.
+  // Matching: unambiguous, single-meaning words (no hint, slash alternative or parenthesis);
+  // within a group there is no repetition on either side.
   const matchable = (it: PcicItem) => {
     const a = answerOf(it);
     const p = promptOf(it);
@@ -191,7 +191,7 @@ export function buildExam(input: ExamBuildInput): ExamItem[] {
 
   const wordsBlock = shuffleArray([...wordType, ...matches, ...sentOrder, ...sentType], hashString(`order:${seed}`));
 
-  // Nyelvtan: a kész leckék gap tételei, leckénként körbe-körbe véve, hogy ne egy lecke adja az egészet.
+  // Grammar: the gap items of the finished lessons, taken round-robin per lesson so that one lesson does not supply everything.
   const queues = new Map<string, GapSource[]>();
   for (const g of shuffleArray(gapSources, hashString(`gap:${seed}`))) {
     queues.set(g.topicId, [...(queues.get(g.topicId) ?? []), g]);
@@ -207,7 +207,7 @@ export function buildExam(input: ExamBuildInput): ExamItem[] {
     }
   }
 
-  // Szóbeli: ugyanazon a mondat-kapun átment tanult mondat, a kiinduló nyelvről kell elmondani.
+  // Speaking: a learned sentence that passed the same sentence gate, to be said from the source language.
   const speakBlock: ExamItem[] = spoken.map((p) => ({ kind: 'speak', skill: 'speaking', itemId: p.itemId, prompt: p.source, expected: p.target, mode: 'translate' }));
 
   return [...wordsBlock, ...grammarBlock, ...readingBlock, ...speakBlock];

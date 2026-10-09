@@ -1,7 +1,7 @@
-// a mondatkártya kadenciája és a mondat-választás a
-// pakli-menetben. Tiszta modul: a pakli-képernyő (app/(tabs)/index.tsx) adja be
-// a kártyákat, a keresőt és a szókincs-listát, itt nincs állapot és nincs
-// adatbázis. A kártya eredménye nem ír SRS-t (K3): csak gyakorlás.
+// Cadence of the sentence card and the sentence choice in the
+// deck run. A pure module: the deck screen (app/(tabs)/index.tsx) supplies
+// the cards, the lookup and the vocabulary list, there is no state and no
+// database here. The result of the card does not write SRS: practice only.
 
 import type { PcicItem, PcicTarget } from '@/data/pcic';
 import { nearMissDistractors } from '@/lib/distractors';
@@ -9,15 +9,15 @@ import { isLearnedCard, isSentenceKnown, type LearnedEntry, type ResolvedTense }
 import { posOf } from '@/lib/pcicPos';
 import type { Sm2Card } from '@/lib/sm2';
 
-/** Ennyi ÚJ szó után jön egy mondatkártya (az ismétlő kártyák nem számítanak). */
+/** After this many NEW words comes a sentence card (review cards do not count). */
 export const NEW_WORDS_PER_SENTENCE = 4;
 
 export type SentenceKind = 'tiles' | 'typing';
 
 export interface CadenceState {
-  /** A mondatot még nem kapott legutóbbi új szavak id-je (a számláló). */
+  /** The ids of the latest new words that have not yet received a sentence (the counter). */
   recent: string[];
-  /** A következő mondatkártya fajtája; csak akkor vált, ha kártya jelent meg. */
+  /** The kind of the next sentence card; it only switches when a card appeared. */
   next: SentenceKind;
 }
 
@@ -29,16 +29,16 @@ export type SentenceCardData =
 
 export interface SentenceDeps {
   target: PcicTarget;
-  /** A pakli minden kártyája, a most értékelt is (a „tanult" kapu ebből épül). */
+  /** Every card of the deck, including the one just rated (the "learned" gate is built from it). */
   cards: Iterable<Sm2Card>;
-  /** A nyelvtani leckékkel feloldott igeidők (csak spanyol célnyelven számít). */
+  /** The tenses unlocked by the grammar lessons (only matters with Spanish as the target language). */
   tenses?: ReadonlySet<ResolvedTense>;
   findItem: (id: string) => PcicItem | undefined;
-  /** A csapda-csempék forrása: az aktuális szint célnyelvi szavai (K4). */
+  /** Source of the trap tiles: the target-language words of the current level. */
   vocab: () => string[];
 }
 
-/** A tanult kártyákból a kapu szókincse: célnyelvi alak + szófaj. */
+/** From the learned cards, the vocabulary of the gate: target-language form + part of speech. */
 export function learnedEntries(
   cards: Iterable<Sm2Card>,
   target: PcicTarget,
@@ -59,14 +59,14 @@ export function learnedEntries(
 
 const SENTENCE_PUNCT = /[.!?¡¿,;:]/g;
 
-/** A mondat írásjel nélkül, egyetlen szóközzel (összerakós és begépelős kártya közös alakja). */
+/** The sentence without punctuation, with single spaces (the common form of the assemble and the type-in card). */
 export function stripSentencePunct(sentence: string): string {
   return sentence.replace(SENTENCE_PUNCT, '').replace(/\s+/g, ' ').trim();
 }
 
 /**
- * A csempék: a mondat szavai írásjel nélkül, az első kisbetűvel (a nagy
- * kezdőbetű elárulná, melyik csempe áll elöl; a bírálás kisbetű-független).
+ * The tiles: the words of the sentence without punctuation, the first one lowercased (a capital
+ * initial would give away which tile comes first; grading is case-insensitive).
  */
 export function tileWords(sentence: string): string[] {
   return sentence
@@ -84,10 +84,10 @@ function sentencePair(item: PcicItem, target: PcicTarget): { source: string; tar
 }
 
 /**
- * Egy új szó értékelése után lép a kadencia: a NEW_WORDS_PER_SENTENCE-edik új
- * szónál a csoport szavainak saját példamondataiból az első, ami átmegy a
- * „csak tanult szó" kapun, mondatkártya lesz. Ha egy sem megy át, nincs kártya,
- * a számláló nullázódik, és a következő csoportnál újra próbál.
+ * The cadence advances after a new word is rated: at the NEW_WORDS_PER_SENTENCE-th new
+ * word, the first of the group's own example sentences that passes the
+ * "learned words only" gate becomes a sentence card. If none passes, there is no card,
+ * the counter resets, and it tries again at the next group.
  */
 export function nextSentenceStep(
   state: CadenceState,

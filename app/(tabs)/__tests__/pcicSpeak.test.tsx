@@ -1,4 +1,4 @@
-// automatikus felolvasás a PCIC fülön. Mock-minta:
+// Automatic read-aloud on the PCIC tab. Mock pattern:
 // app/grammar/__tests__/learnWordsButton.test.tsx (db, router, i18n).
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
@@ -15,15 +15,15 @@ jest.mock('expo-router', () => ({
   },
 }));
 
-// useDockLift (a PCIC dokkolt sávja) most useSafeAreaInsets-et hív, ami
-// SafeAreaProvider nélkül dob; itt a mérete nem számít, csak ne dobjon.
+// useDockLift (the PCIC docked bar) now calls useSafeAreaInsets, which
+// throws without a SafeAreaProvider; its size does not matter here, it just must not throw.
 jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, left: 0, right: 0, bottom: 0 }),
 }));
 
-// Egy fix tétel, hogy a teszt ne a valódi PCIC-korpusztól függjön.
-// Az id "b1-" előtaggal, mert lib/pcicLevels.ts a
-// szint-szűrést az id-előtagból dönti el (a fül a B1 alap-szinten indul).
+// One fixed item, so the test does not depend on the real PCIC corpus.
+// The id has a "b1-" prefix because lib/pcicLevels.ts decides the
+// level filter from the id prefix (the tab starts at the B1 base level).
 const FIXTURE_ITEM = { id: 'b1-x1', es: 'vida', en: 'life', kind: 'word' as const, section: 'Test', order: 0 };
 jest.mock('@/data/pcic', () => ({
   PCIC_LEVELS: ['B1'],
@@ -50,20 +50,20 @@ const flush = async (times = 4) => {
   }
 };
 
-describe('PCIC fül: automatikus felolvasás (FB319/FB321)', () => {
+describe('PCIC tab: automatic read-aloud', () => {
   beforeEach(async () => {
     await getDb().resetPcicCards();
     mockSpeak.mockClear();
   });
 
-  it('új lap megjelenésekor angolul mondja ki a promptot', async () => {
+  it('when a new card appears, it speaks the prompt in English', async () => {
     render(<PcicScreen />);
     await flush();
 
     expect(mockSpeak).toHaveBeenCalledWith('life', 'en-US');
   });
 
-  it('felfedéskor spanyolul mondja ki a helyes alakot', async () => {
+  it('on reveal it speaks the correct form in Spanish', async () => {
     const { UNSAFE_getByType, getByText } = render(<PcicScreen />);
     await flush();
     mockSpeak.mockClear();

@@ -1,7 +1,7 @@
-// User feedback ("azt írja a játék, hogy van még 40 szó, miért nem dobja fel?"): a szint-választó lap vizsga-sora
-// kiírja, mennyi szó hiányzik ("N / M words learned, K to go"), a "Practice words" koppintás viszont a
-// napi keret kimerülése után nem adott egy szót sem (az aktív szintnél a lap csak bezárult, a "kész mára"
-// képernyő maradt). Most az összes hiányzó új szót adja egy koppintásra ("mindet egyszerre"). A valódi words-open korpusszal fut. Mock-minta: pcicExamRow.test.tsx.
+// User feedback ("the game says there are 40 more words, why doesn't it serve them?"): the exam row of the level picker sheet
+// shows how many words are missing ("N / M words learned, K to go"), but tapping "Practice words" gave
+// no word at all once the daily budget was used up (on the active level the sheet just closed and the "done for today"
+// screen stayed). Now it serves all the missing new words with one tap ("all at once"). Runs against the real words-open corpus. Mock pattern: pcicExamRow.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -42,10 +42,10 @@ const flush = async (times = 8) => {
   }
 };
 
-describe('Tanulófül: a vizsga-sor "Practice words" gombja a hiányzó szavakból ad (FB499)', () => {
+describe('Learn tab: the exam row "Practice words" button draws from the missing words', () => {
   const today = localDateString();
 
-  // A napi keret (10) ki van merítve: ma 10 A1 szó bevezetve és tanult (review), a sor üres.
+  // The daily budget (10) is used up: 10 A1 words introduced and learned (review) today, the queue is empty.
   beforeEach(async () => {
     setPcicTarget('es');
     await getDb().setOnboarding('en', 'es');
@@ -57,7 +57,7 @@ describe('Tanulófül: a vizsga-sor "Practice words" gombja a hiányzó szavakb�
     await getDb().setPcicLevel('A1');
   });
 
-  it('keret kimerítve, az aktív A1 szinten: a koppintás után új szavak jönnek, nem a "kész mára" képernyő', async () => {
+  it('budget used up, on the active A1 level: tapping brings new words, not the "done for today" screen', async () => {
     const needed = Math.ceil(0.8 * pcicItemsForLevel('A1').length);
     const screen = render(<PcicScreen />);
     await flush();
@@ -76,10 +76,10 @@ describe('Tanulófül: a vizsga-sor "Practice words" gombja a hiányzó szavakb�
     expect(await getDb().getPcicNewBonus(today)).toBe(needed - 10);
   });
 
-  it('kevés hiányzó szó: pontosan annyit ad, amennyi hiányzik (3)', async () => {
+  it('few missing words: gives exactly as many as are missing (3)', async () => {
     const ids = pcicItemsForLevel('A1').map((i) => i.id);
     const needed = Math.ceil(0.8 * ids.length);
-    // 80% - 3 tanult szó (a korábbi napokon bevezetve, holnapra esedékes), ma bevezetve 10 (a keret kimerült).
+    // 80% - 3 learned words (introduced on earlier days, due tomorrow), 10 introduced today (the budget is used up).
     for (const id of ids.slice(10, needed - 3)) {
       await getDb().upsertPcicCard({ ...sm2Review(sm2NewCard(id), 'good', today), introducedAt: '2026-10-01' });
     }
@@ -95,7 +95,7 @@ describe('Tanulófül: a vizsga-sor "Practice words" gombja a hiányzó szavakb�
     expect(screen.getByText('new 3')).toBeTruthy();
   });
 
-  it('a lap vizsga-sora a menet közben tanult szavakat is számolja (nem a betöltéskori állapotot)', async () => {
+  it('the sheet exam row also counts words learned during the session (not the state at load)', async () => {
     await getDb().resetPcicCards();
     const needed = Math.ceil(0.8 * pcicItemsForLevel('A1').length);
     const screen = render(<PcicScreen />);
@@ -109,7 +109,7 @@ describe('Tanulófül: a vizsga-sor "Practice words" gombja a hiányzó szavakb�
     );
   });
 
-  it('van még napi keret: a koppintás nem bővíti a keretet (a szint a szokásos napi adagot adja)', async () => {
+  it('daily budget remains: tapping does not extend the budget (the level gives the usual daily batch)', async () => {
     await getDb().resetPcicCards();
     const screen = render(<PcicScreen />);
     await flush();

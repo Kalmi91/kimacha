@@ -1,6 +1,6 @@
-// a data/words-open/images.json kapuja. Minden bejegyzés egy létező
-// `o<order>` kártya, van szerzője + licence + Commons forrás-URL-je, a kép-fájl létezik, a mérete rendben,
-// és a data/wordImages.ts require-térképe pont ezeket a fájlokat tudja.
+// the gate of data/words-open/images.json. Every entry is an existing
+// `o<order>` card, has an author + licence + Commons source URL, the image file exists, its size is fine,
+// and the require map of data/wordImages.ts knows exactly these files.
 import fs from 'node:fs';
 import path from 'node:path';
 import images from '../words-open/images.json';
@@ -11,14 +11,14 @@ const ROOT = path.resolve(__dirname, '..', '..');
 const entries = Object.entries(images as Record<string, Record<string, unknown>>);
 const MAX_BYTES = 60 * 1024;
 
-describe('data/words-open/images.json kártya-képek', () => {
+describe('data/words-open/images.json card images', () => {
   afterEach(() => setPcicTarget('es'));
 
-  it('van legalább egy kép', () => {
+  it('there is at least one image', () => {
     expect(entries.length).toBeGreaterThan(0);
   });
 
-  it('minden bejegyzésnek van szerzője, licence és Wikimedia Commons forrás-URL-je', () => {
+  it('every entry has an author, a license and a Wikimedia Commons source URL', () => {
     const bad: string[] = [];
     for (const [id, e] of entries) {
       for (const k of ['author', 'license', 'sourceUrl', 'file'] as const) {
@@ -32,7 +32,7 @@ describe('data/words-open/images.json kártya-képek', () => {
     expect(bad).toEqual([]);
   });
 
-  it('a kép-fájl létezik, legfeljebb 60 KB, és a require-térkép ismeri', () => {
+  it('the image file exists, at most 60 KB, and the require map knows it', () => {
     const bad: string[] = [];
     for (const [id, e] of entries) {
       const file = path.join(ROOT, 'assets', 'word-images', String(e.file));
@@ -43,12 +43,12 @@ describe('data/words-open/images.json kártya-képek', () => {
     expect(bad).toEqual([]);
   });
 
-  it('a require-térképben nincs árva fájl', () => {
+  it('there is no orphan file in the require map', () => {
     const used = new Set(entries.map(([, e]) => String(e.file)));
     expect(Object.keys(IMAGE_SOURCES).filter((f) => !used.has(f))).toEqual([]);
   });
 
-  it('minden kulcs egy létező o<order> kártya, és a PcicItem.image a képet hozza', () => {
+  it('every key is an existing o<order> card, and PcicItem.image brings the image', () => {
     setPcicTarget('es');
     const bad: string[] = [];
     for (const [id] of entries) {
@@ -59,7 +59,7 @@ describe('data/words-open/images.json kártya-képek', () => {
     expect(bad).toEqual([]);
   });
 
-  it('a cropped jelző az images.json modified mezőjéből jön, és van vágott és nem vágott kép is', () => {
+  it('the cropped flag comes from the modified field of images.json, and there are both cropped and uncropped images', () => {
     setPcicTarget('es');
     const flags = entries.map(([id, e]) => [id, wordImageFor(id)?.cropped, /cropped/i.test(String(e.modified ?? ''))] as const);
     expect(flags.filter(([, got, want]) => got !== want).map(([id]) => id)).toEqual([]);
@@ -67,7 +67,7 @@ describe('data/words-open/images.json kártya-képek', () => {
     expect(flags.some(([, c]) => !c)).toBe(true);
   });
 
-  it('a képtelen kártyán nincs image', () => {
+  it('a card without an image has no image', () => {
     setPcicTarget('es');
     expect(findPcicItem('o1')?.image).toBeUndefined();
     expect(wordImageFor('o1')).toBeUndefined();

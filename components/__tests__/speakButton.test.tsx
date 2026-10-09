@@ -1,6 +1,6 @@
-// a közös 🔊 / ⏹ gomb: brutalista palettán a játékok ikon-gombjaival
-// egyező doboz (ink keret, BrutalBox), classic palettán a mai sima gomb.
-// Mock-minta: feedbackBrutal.test.tsx.
+// the shared 🔊 / ⏹ button: on the brutalist palette a box matching the games' icon buttons
+// (ink border, BrutalBox), on the classic palette today's plain button.
+// Mock pattern: feedbackBrutal.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -21,8 +21,8 @@ const flush = async (times = 6) => {
   }
 };
 
-describe('SpeakButton (PLAN-fb1001 K2)', () => {
-  it('brand palettán doboz (2,5 px ink keret), a koppintás hív, ⏹ szóláskor', async () => {
+describe('SpeakButton', () => {
+  it('with the brand palette a box (2.5 px ink border), tapping calls, ⏹ while speaking', async () => {
     await getDb().setGrammarPalette('brand');
     const onPress = jest.fn();
     const view = render(
@@ -45,7 +45,7 @@ describe('SpeakButton (PLAN-fb1001 K2)', () => {
     view.unmount();
   });
 
-  it('classic palettán nincs doboz, a felirat ott marad az ikon mellett', async () => {
+  it('with the classic palette no box, the label stays next to the icon', async () => {
     await getDb().setGrammarPalette('classic');
     const onPress = jest.fn();
     const view = render(

@@ -1,12 +1,12 @@
-// "Known" = a PCIC-tétel
-// ismétlési ideje (interval) >= KNOWN_THRESHOLD_DAYS; "graduated" = túljutott
-// a tanuló-lépéseken (state 'review', SM-2 "learning" fázison már túl van),
-// de a küszöb alatt. Tiszta függvények a már betöltött Sm2Card[]-on, a
-// lib/pcicLevels.ts mintáját követve (a hívó adja a kártyákat, itt csak szűrés).
+// "Known" = a PCIC item whose
+// review interval is >= KNOWN_THRESHOLD_DAYS; "graduated" = past
+// the learning steps (state 'review', beyond the SM-2 "learning" phase),
+// but below the threshold. Pure functions over the already loaded Sm2Card[],
+// following the pattern of lib/pcicLevels.ts (the caller supplies the cards, this only filters).
 //
-// A kézzel "Ezt nem tanulom"-mal jelölt tételek (sm2MarkKnown, `known: true`)
-// egyik számba sem mennek bele: azok nem repetíció útján lettek ismertek,
-// hanem a tanuló mondta ki egyszer, hogy tudja őket.
+// Items marked by hand as "Don't learn this" (sm2MarkKnown, `known: true`)
+// are not included in either count: they did not become known through repetition,
+// the learner just declared once that they know them.
 
 import type { Sm2Card } from './sm2';
 
@@ -16,24 +16,24 @@ function isGraduatedNaturally(card: Sm2Card): boolean {
   return card.state === 'review' && !card.known;
 }
 
-/** Túljutott a tanuló-lépéseken (state === 'review'), a kézzel "ismertnek"
- *  jelölt tételek nélkül. Tartalmazza a `countKnown` halmazát is. */
+/** Past the learning steps (state === 'review'), excluding items marked
+ *  "known" by hand. Also includes the set of `countKnown`. */
 export function countGraduated(cards: Sm2Card[]): number {
   return cards.filter(isGraduatedNaturally).length;
 }
 
-/** A `thresholdDays` napos ismétlési időt (interval) elért, graduált tételek
- *  száma. */
+/** Number of graduated items that reached a review interval of
+ *  `thresholdDays` days. */
 export function countKnown(cards: Sm2Card[], thresholdDays: number = KNOWN_THRESHOLD_DAYS): number {
   return cards.filter((c) => isGraduatedNaturally(c) && c.interval >= thresholdDays).length;
 }
 
 /**
- * a "Words Known" kártya száma. A 21 napos küszöb
- * (`countKnown`) egy kezdőnél hetekig 0-t adott, holott már tanult szavakat, ezért a
- * kártya a TANULT szavakat számolja: amelyik túljutott a tanuló-lépéseken (state
- * 'review'), vagy amit ő maga jelölt ismertnek ("Ezt nem tanulom"). A stabil (21+
- * napos) szám külön csempén marad.
+ * The count of the "Words Known" card. The 21-day threshold
+ * (`countKnown`) gave 0 for weeks for a beginner even though they had already learned words, so the
+ * card counts LEARNED words: those past the learning steps (state
+ * 'review'), or those the learner marked as known ("Don't learn this"). The stable (21+
+ * day) number stays on a separate tile.
  */
 export function countLearned(cards: Sm2Card[]): number {
   return cards.filter((c) => c.known || c.state === 'review').length;

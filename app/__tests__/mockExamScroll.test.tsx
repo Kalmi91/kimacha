@@ -1,8 +1,8 @@
-// a próbavizsgán a "Next task" után a következő feladat ugyanabban a
-// görgetési helyzetben nyílt, mint ahol az előző véget ért, ezért a feladat eleje (az utasítás, a
-// párosítás A-F szövegei) a képernyőn kívül volt, a "Next task" gomb pedig pontosan ugyanott maradt az
-// ujj alatt: a feladat "kimaradt", az átnézésben "No answer" lett. A javítás: minden feladat saját
-// (újramountolt) görgetőt kap, így az mindig a tetejéről indul. Mock-minta: mockExam.test.tsx.
+// On the mock exam, after "Next task" the next task opened at the same
+// scroll position where the previous one ended, so the start of the task (the instruction, the
+// A-F texts of the matching) was off screen, and the "Next task" button stayed exactly in the same place
+// under the finger: the task was "skipped", and became "No answer" in the review. The fix: every task gets its own
+// (remounted) scroller, so it always starts from the top. Mock pattern: mockExam.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -78,7 +78,7 @@ afterEach(() => {
   jest.useRealTimers();
 });
 
-describe('Próbavizsga: a feladatváltás a görgető tetejére visz (FB491)', () => {
+describe('Mock exam: switching tasks goes to the top of the scroll view', () => {
   beforeEach(async () => {
     jest.useFakeTimers({ doNotFake: ['nextTick', 'setImmediate', 'queueMicrotask'] });
     setPcicTarget('es');
@@ -87,7 +87,7 @@ describe('Próbavizsga: a feladatváltás a görgető tetejére visz (FB491)', (
     await getDb().resetPcicCards();
   });
 
-  it('minden új feladat friss görgetőt kap (nem örökli az előző görgetési helyzetét)', async () => {
+  it('every new task gets a fresh scroll view (it does not inherit the previous scroll position)', async () => {
     const s = render(
       <ThemeProvider>
         <MockExamScreen />
@@ -104,8 +104,8 @@ describe('Próbavizsga: a feladatváltás a görgető tetejére visz (FB491)', (
     await press(s, 'mock-next-task');
     expect(s.getByTestId('mock-task-counter').props.children).toBe('Task 2 / 3');
     const second = scroller();
-    // Ugyanaz a görgető-példány = a 2. feladat az 1. feladat görgetési helyzetében nyílik (a feladat
-    // eleje kicsúszik felül); az újramountolt görgető mindig a tetejéről indul.
+    // The same scroller instance = the 2nd task opens at the scroll position of the 1st task (the start of
+    // the task slides out at the top); a remounted scroller always starts from the top.
     expect(second).not.toBe(first);
 
     await press(s, 'mock-next-task');

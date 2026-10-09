@@ -2,8 +2,8 @@
 // pick a voice the device actually owns, and hand Android a language tag it can
 // parse.
 //
-// User feedback (hu→en, word:"brother"): "A fiú testvért nem ejti ki
-// rendesen". The word ("fiútestvér") and the locale ("hu-HU") both looked right,
+// Reported (hu→en, word:"brother"): the Hungarian word was not pronounced
+// properly. The word ("fiútestvér") and the locale ("hu-HU") both looked right,
 // so the first fix only skipped speaking when the device listed no Hungarian
 // voice. It was reported again on 2026-08-22, and the deeper cause turned up in
 // expo-speech's own Android module (56.0.3, SpeechModule.kt `speakOut`):
@@ -106,8 +106,8 @@ export function speechTag(locale: string): string {
 // es-MX must not be handed the Castilian voice just because it came first in the
 // list. Exact region wins, then any voice of the same language.
 export function voiceIdFor(locale: string): string | undefined {
-  // User feedback (`word:the grandson`): "megváltoztattad az angol
-  // hangot, mintha más lenne? ha véletlenül igen változtasd vissza". The
+  // Reported (`word:the grandson`): the English voice seemed to have changed
+  // ("did you change it? if so, change it back"). The
   // pinning was aimed at Spanish (es-MX, not Castilian) and Hungarian; English
   // only came along for the ride and swapped the familiar system voice for an
   // "enhanced" one. English is therefore left to the engine's own default again;
@@ -121,8 +121,8 @@ export function voiceIdFor(locale: string): string | undefined {
   return voice ? String(voice.identifier) : undefined;
 }
 
-// User feedback (`word:¿Cuándo comes?`): "itt mint ha nem lenne jó a
-// kiejtés, az s mintha lemaradna". Android's TTS stops the audio stream on the
+// Reported (`word:¿Cuándo comes?`): the pronunciation seemed off, as if the
+// final s were missing. Android's TTS stops the audio stream on the
 // last phoneme boundary, so an utterance that ends in a fricative ("comes",
 // "hablas", "tres") gets its final /s/ clipped, the same complaint people file
 // against Google TTS itself. Padding the utterance gives the engine something
@@ -131,12 +131,12 @@ function padForAndroid(text: string): string {
   return Platform.OS === 'android' ? `${text} ` : text;
 }
 
-// User feedback: „valamelyik agent úgy tesztel, hogy kimondja a szavakat".
-// A web-build böngészős tesztje (headless Chrome, CDP-ről vezérelve) a gép
-// hangszóróján felolvasott mindent. Headless böngészőt senki nem hallgat, ezért
-// ott a felolvasás néma; a befejező callback azért lefut, hogy a képernyő úgy
-// haladjon tovább, mintha a hang elszólt volna. A `navigator.webdriver` itt nem
-// segít: a CDP-vel indított headless Chrome-ban `false` (mérve 2026-09-28).
+// Some agent's test run spoke the words aloud.
+// The browser test of the web build (headless Chrome driven over CDP) read everything out
+// on the machine's speakers. Nobody listens to a headless browser, so
+// speech is silent there; the completion callback still fires, so the screen
+// advances as if the audio had played. `navigator.webdriver` does not
+// help here: it is `false` in a headless Chrome started via CDP (measured 2026-09-28).
 function isHeadlessWeb(): boolean {
   if (Platform.OS !== 'web') return false;
   const ua = (globalThis as { navigator?: { userAgent?: string } }).navigator?.userAgent;
@@ -162,23 +162,23 @@ export function speak(text: string, locale: string, options: Speech.SpeechOption
 }
 
 export function stop(): void {
-  speakingRun += 1; // egy futó szakasz-lánc se folytassa a stop után
+  speakingRun += 1; // no running segment chain may continue after the stop
   Speech.stop();
 }
 
-// a lecke-képernyő stop gombja ezt hívja (ugyanaz a gomb,
-// ami elindította a felolvasást, play → stop). `stop()`-tól csak a névben
-// tér el, a képernyő oldalán olvashatóbb, mit csinál a gombnyomás.
+// The lesson screen's stop button calls this (the same button
+// that started the speech, play → stop). It differs from `stop()` only in the
+// name; on the screen side it is more readable what the button press does.
 export function stopSpeaking(): void {
   stop();
 }
 
-// User feedback (word:the fish): „ha sokat lépkedek ki-be az appból
-// ... az appnak ment el a hangja". Az Android TTS-motor egy háttérbe küldött,
-// félbehagyott utterance-en meg tud akadni, és utána némán marad. Ezért az app
-// minden állapotváltásánál (háttérbe / vissza előtérbe) leállítjuk a motort:
-// háttérben úgysem szólhat tovább, előtérbe érve pedig tiszta lappal indul a
-// következő speak(). A gyökér-layout köti be, az usageTimer mintájára.
+// Reported (word:the fish): after switching in and out of the app a lot,
+// the app lost its sound. The Android TTS engine can get stuck on a half-finished utterance
+// sent to the background, and stay silent afterwards. Therefore on every app state
+// change (to the background / back to the foreground) we stop the engine:
+// it cannot keep speaking in the background anyway, and in the foreground the
+// next speak() starts with a clean slate. The root layout wires it up, following the usageTimer pattern.
 let appStateSub: { remove(): void } | null = null;
 
 export function watchAppStateForSpeech(): () => void {
@@ -190,10 +190,10 @@ export function watchAppStateForSpeech(): () => void {
   };
 }
 
-// a kevert nyelvű szöveg szakaszonként más hanggal szól (lib/mixedSpeech.ts
-// vágja szét). A szakaszok egymás UTÁN mennek: minden utterance `onDone`-jában
-// indul a következő, mert két nyelv két hangja párhuzamosan indítva egymásra
-// beszélne. Egy új felolvasás (vagy egy `stop()`) érvényteleníti az előző láncot.
+// Mixed-language text is spoken with a different voice per segment (lib/mixedSpeech.ts
+// splits it up). The segments run one AFTER another: the next starts in the `onDone` of each utterance,
+// because the voices of two languages started in parallel would talk over each other.
+// A new speech (or a `stop()`) invalidates the previous chain.
 let speakingRun = 0;
 
 interface SpeechRunSegment {
@@ -208,16 +208,16 @@ export function speakSequence(segments: SpeechRunSegment[], onEnd?: () => void):
   const queue = segments.filter((seg) => seg.text.trim());
 
   const next = (index: number) => {
-    if (run !== speakingRun) return; // közben elindult egy másik felolvasás
+    if (run !== speakingRun) return; // another speech started in the meantime
     const segment = queue[index];
     if (!segment) {
       onEnd?.();
       return;
     }
     if (!hasVoiceFor(segment.locale)) {
-      // Nincs hang ehhez a nyelvhez: a szakasz kimarad, a többi megy tovább
-      // (a Beállítások a missingVoiceLanguages() alapján ajánlja fel a
-      // telepítést, ugyanúgy, mint az egy-nyelvű speak()-nél).
+      // No voice for this language: the segment is skipped, the rest carry on
+      // (Settings offers the installation based on missingVoiceLanguages(),
+      // the same way as for the single-language speak()).
       missing.add(baseLanguage(segment.locale));
       next(index + 1);
       return;

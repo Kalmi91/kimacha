@@ -4,7 +4,7 @@ import { Text } from '@/components/KText';
 
 import type { SkinDecor } from '@/components/skins/types';
 
-// Botanikus: levél-ikon a fejlécben, növény-ikon a kártya jobb alsó sarkában.
+// Botanikus: a leaf icon in the header, a plant icon in the bottom right corner of the card.
 
 function BotanikusHeader({ children }: { children: ReactNode }) {
   return (

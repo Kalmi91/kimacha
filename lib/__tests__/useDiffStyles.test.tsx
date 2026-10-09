@@ -1,5 +1,5 @@
-// a charDiff-sor jelölései olvashatók minden témán (kihagyott betű: sötét szöveg a
-// borostyánon; rossz betű: fehér, ha átmegy, egyedi betűnél sötét).
+// The charDiff row markers are readable on every theme (missed letter: dark text on
+// amber; wrong letter: white if it passes, dark on a custom typeface).
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -39,7 +39,7 @@ async function styles(skin: SkinId) {
   };
 }
 
-describe('useDiffStyles (PLAN-temak 7H)', () => {
+describe('useDiffStyles', () => {
   let scheme: jest.SpyInstance;
   beforeEach(async () => {
     scheme = jest.spyOn(RN, 'useColorScheme').mockReturnValue('light');
@@ -48,20 +48,20 @@ describe('useDiffStyles (PLAN-temak 7H)', () => {
   });
   afterEach(() => scheme.mockRestore());
 
-  it('classic: a rossz betű fehér marad (20 px félkövér nagy szöveg, 3,76:1), a kihagyotté sötét', async () => {
+  it('classic: the wrong letter stays white (20 px bold large text, 3.76:1), the omitted one dark', async () => {
     const { wrong, missing } = await styles('classic');
     expect(wrong).toMatchObject({ backgroundColor: '#EF4444', color: '#FFFFFF' });
     expect(missing).toMatchObject({ backgroundColor: '#EAB308', textDecorationLine: 'underline' });
     expect(contrastRatio(missing.color as string, '#EAB308')).toBeGreaterThanOrEqual(4.5);
   });
 
-  it('egyedi betűs téma (deco): a rossz betű szövege 4,5 felett, nem fehér', async () => {
+  it('custom-font theme (deco): the wrong letter text is above 4.5, not white', async () => {
     const { wrong } = await styles('deco');
     expect(wrong.color).not.toBe('#FFFFFF');
     expect(contrastRatio(wrong.color as string, '#EF4444')).toBeGreaterThanOrEqual(4.5);
   });
 
-  it('textContrastMin: rendszer-betűn a 20 px félkövér nagy (3), egyedi betűn nem (4,5)', () => {
+  it('textContrastMin: on a system font 20 px bold is large (3), on a custom font it is not (4.5)', () => {
     expect(textContrastMin(SKINS.classic, 'body', 20, true)).toBe(3);
     expect(textContrastMin(SKINS.deco, 'body', 20, true)).toBe(4.5);
     expect(textContrastMin(SKINS.classic, 'body', 14, true)).toBe(4.5);

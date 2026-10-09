@@ -1,5 +1,5 @@
-// fejlécek brutalista palettán (bg háttér, 2,5 px ink alsó vonal, nagybetűs 500-as cím,
-// vissza-nyíl BrutalBox-ban), classic palettán a mai fejléc.
+// Headers on the brutalist palette (bg background, 2.5 px ink bottom line, uppercase weight-500 title,
+// back arrow in a BrutalBox), and today's header on the classic palette.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-router', () => ({
@@ -25,8 +25,8 @@ const flush = async (times = 6) => {
   }
 };
 
-describe('Fejlécek, neo-brutalista (NY25)', () => {
-  it('brutalHeaderOptions: brand palettán ink vonal + nagybetűs 500-as cím', () => {
+describe('Headers, neo-brutalist', () => {
+  it('brutalHeaderOptions: with the brand palette an ink line + uppercase 500-weight title', () => {
     const g = grammarColorsFor('brand-light');
     const o = brutalHeaderOptions(g);
     expect(o.headerStyle).toMatchObject({ backgroundColor: g.bg, borderBottomWidth: 2.5, borderBottomColor: g.ink, elevation: 0, shadowOpacity: 0 });
@@ -34,21 +34,21 @@ describe('Fejlécek, neo-brutalista (NY25)', () => {
     expect(brutalHeaderRowStyle(g)).toMatchObject({ borderBottomWidth: 2.5, borderBottomColor: g.ink });
   });
 
-  it('brutalHeaderOptions: classic palettán üres', () => {
+  it('brutalHeaderOptions: empty with the classic palette', () => {
     const g = grammarColorsFor('light');
     expect(brutalHeaderOptions(g)).toEqual({});
     expect(brutalHeaderRowStyle(g)).toBeNull();
   });
 
-  // a téma title-betűje a natív fejléc címére.
-  it('brutalHeaderOptions + téma: egyedi betű (fontWeight nélkül), betűköz, nagybetű; classic-on továbbra is üres', () => {
+  // the theme's title font on the native header's title.
+  it('brutalHeaderOptions + theme: custom font (without fontWeight), letter spacing, uppercase; still empty on classic', () => {
     const g = grammarColorsFor('deco-dark');
     const o = brutalHeaderOptions(g, SKINS.deco);
     expect(o.headerTitleStyle).toMatchObject({ color: g.ink, fontFamily: 'PoiretOne', letterSpacing: 3, textTransform: 'uppercase' });
     expect(o.headerTitleStyle).not.toHaveProperty('fontWeight');
 
     const brutal = brutalHeaderOptions(grammarColorsFor('brand-light'), SKINS.brutal);
-    // a brutal title betűje null = a mai rendszer-betű, fontWeight-tel.
+    // the brutal title font is null = today's system font, with fontWeight.
     expect(brutal.headerTitleStyle).toMatchObject({ fontWeight: '500', textTransform: 'uppercase' });
     expect(brutal.headerTitleStyle).not.toHaveProperty('fontFamily');
     expect(brutal.headerStyle).toMatchObject({ borderBottomWidth: 2.5 });
@@ -56,7 +56,7 @@ describe('Fejlécek, neo-brutalista (NY25)', () => {
     expect(brutalHeaderOptions(grammarColorsFor('light'), SKINS.classic)).toEqual({});
   });
 
-  it('Credits: brand palettán a vissza-nyíl BrutalBox, classic palettán nem', async () => {
+  it('Credits: with the brand palette the back arrow is a BrutalBox, with the classic palette it is not', async () => {
     await getDb().setGrammarPalette('brand');
     const brand = render(<ThemeProvider><CreditsScreen /></ThemeProvider>);
     await flush();

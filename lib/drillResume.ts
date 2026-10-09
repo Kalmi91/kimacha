@@ -1,11 +1,11 @@
 import type { DB } from '@/lib/database';
 import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
 
-// Kártya-szintű folytatás: ha az app a nyelvtani lecke egy gyakorlatában (drill) záródott be, a
-// következő hidegindításkor (lib/useAppResume.ts a leckére lép) a lecke ugyanabban a gyakorlatban nyílik meg;
-// a gyakorlat maga a mentett körből (a haladás-sor `run` mezője) ugyanazt a tételt adja. A leckéből
-// kilépve (a képernyő unmountol) a mentés törlődik, így a leckét később a listából megnyitva nem ugrik a drillbe.
-// Napváltáskor érvénytelen.
+// Card-level resume: if the app was closed during one exercise (drill) of a grammar lesson, on the
+// next cold start (lib/useAppResume.ts navigates to the lesson) the lesson opens in the same exercise;
+// the exercise itself gives the same item from the saved round (the `run` field of the progress row). When the lesson
+// is left (the screen unmounts) the save is deleted, so opening the lesson later from the list does not jump into the drill.
+// Invalid after a day change.
 
 const DRILL_KEY = 'drill';
 
@@ -32,7 +32,7 @@ export async function clearDrillResume(db: DB): Promise<void> {
   await saveResumeValue(db, DRILL_KEY, null);
 }
 
-/** A mentett gyakorlat, ha ehhez a leckéhez és mai naphoz tartozik, és a lecke még kínálja ezt a fajtát. */
+/** The saved exercise, if it belongs to this lesson and today, and the lesson still offers this kind. */
 export function drillToResume<K extends string>(saved: DrillResume | null, topicId: string, day: string, availableKinds: readonly K[]): K | null {
   if (!saved || saved.topicId !== topicId || saved.day !== day) return null;
   return availableKinds.find((k) => k === saved.kind) ?? null;

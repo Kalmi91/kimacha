@@ -1,7 +1,7 @@
 import { sentenceBuildMatch, strictAnswerMatch } from '../answerMatch';
 
 describe('strictAnswerMatch', () => {
-  it('rejects a missing verb ending (FB6: "she speak" for "She speaks")', () => {
+  it('rejects a missing verb ending ("she speak" for "She speaks")', () => {
     expect(strictAnswerMatch('she speak', 'She speaks.')).toBe(false);
   });
 
@@ -14,7 +14,7 @@ describe('strictAnswerMatch', () => {
     expect(strictAnswerMatch('Yo hablo español', 'yo hablo español.')).toBe(true);
   });
 
-  it('forgives a stray space typed inside a word (FB34)', () => {
+  it('forgives a stray space typed inside a word', () => {
     expect(strictAnswerMatch('Yo trabajo en una ofi cina.', 'Yo trabajo en una oficina.')).toBe(true);
   });
 
@@ -32,11 +32,11 @@ describe('strictAnswerMatch', () => {
   });
 });
 
-// User feedback: "most spanyolba szeretném ha mostantól kezdve az
-// ékezetek is hibák lennének, pontosan akarom leírni ... de ezt egy ilyen ki be
-// kapcsolható dolognak akarom". Only the accents get stricter, case and
+// User feedback: "for Spanish I want accents to count as mistakes from now
+// on, I want to write them exactly ... but as something I can switch on and
+// off". Only the accents get stricter, case and
 // punctuation stay forgiven either way.
-describe('strictAnswerMatch with strict accents (FB132)', () => {
+describe('strictAnswerMatch with strict accents', () => {
   it('fails a missing accent that the default grader forgives', () => {
     expect(strictAnswerMatch('como estas', '¿Cómo estás?')).toBe(true);
     expect(strictAnswerMatch('como estas', '¿Cómo estás?', { strictAccents: true })).toBe(false);
@@ -51,19 +51,19 @@ describe('strictAnswerMatch with strict accents (FB132)', () => {
     expect(strictAnswerMatch('cómo estás', '¿Cómo estás?', { strictAccents: true })).toBe(true);
   });
 
-  it('still forgives a stray space inside a word (FB34)', () => {
+  it('still forgives a stray space inside a word', () => {
     expect(strictAnswerMatch('la ofi cina', 'La oficina.', { strictAccents: true })).toBe(true);
   });
 
-  it('keeps rejecting a wrong letter (FB6)', () => {
+  it('keeps rejecting a wrong letter', () => {
     expect(strictAnswerMatch('she speak', 'She speaks', { strictAccents: true })).toBe(false);
   });
 });
 
-// User feedback (easy:"The engine makes a lot of noise."): "nem hace
-// kellett volna?? ide szerintem rosszat raktam be és elfogadta". Tap-to-order has
+// User feedback (easy:"The engine makes a lot of noise."): "shouldn't it have
+// been hace?? I think I put the wrong one in here and it accepted it". Tap-to-order has
 // no typing, so the typing cards' 2-character tolerance must not apply here.
-describe('sentenceBuildMatch (FB137)', () => {
+describe('sentenceBuildMatch', () => {
   const target = ['El', 'motor', 'hace', 'mucho', 'ruido.'];
 
   it('rejects a trap tile one character away from the right one', () => {
@@ -89,12 +89,12 @@ describe('sentenceBuildMatch (FB137)', () => {
     expect(sentenceBuildMatch(['¿Tú', 'hablas?'], ['Tú', 'hablas'])).toBe(true);
   });
 
-  it('keeps rejecting a missing accent, the tiles carry it (FB132 spirit)', () => {
+  it('keeps rejecting a missing accent, the tiles carry it', () => {
     expect(sentenceBuildMatch(['El', 'camion', 'es', 'grande.'], ['El', 'camión', 'es', 'grande.'])).toBe(false);
   });
 });
 
-describe('strictAnswerMatch, parenthetical gloss (BUG-001)', () => {
+describe('strictAnswerMatch, parenthetical gloss', () => {
   it('accepts the answer without the gloss', () => {
     expect(strictAnswerMatch('van', 'van (ő)')).toBe(true);
     expect(strictAnswerMatch('óra', 'óra (idő)')).toBe(true);
@@ -113,7 +113,7 @@ describe('strictAnswerMatch, parenthetical gloss (BUG-001)', () => {
     expect(strictAnswerMatch('vagyok', 'van (ő)')).toBe(false);
   });
 
-  it('keeps the FB6 strictness inside the bare form', () => {
+  it('keeps the strictness inside the bare form', () => {
     expect(strictAnswerMatch('she speak', 'she speaks (now)')).toBe(false);
   });
 });
@@ -147,7 +147,7 @@ describe('strictAnswerMatch, German spellings', () => {
     expect(strictAnswerMatch('Mutter', 'Mütter', de)).toBe(true); // accents forgiven, as everywhere
   });
 
-  it('holds every word to FB6 strictness', () => {
+  it('holds every word to the same strictness', () => {
     expect(strictAnswerMatch('Ich gehe Haus', 'Ich gehe nach Hause', de)).toBe(false);
     expect(strictAnswerMatch('der Tasche', 'die Tasche', de)).toBe(false);
   });
@@ -164,7 +164,7 @@ describe('strictAnswerMatch, German spellings', () => {
   });
 });
 
-// két jelentésű kártyán mindkét ág helyes válasz.
+// On a card with two meanings, both sides are a correct answer.
 describe('alternative meanings', () => {
   it('accepts either side of a " / " gloss', () => {
     expect(strictAnswerMatch('padló', 'padló / emelet')).toBe(true);
@@ -179,11 +179,11 @@ describe('alternative meanings', () => {
     expect(strictAnswerMatch('ablak', 'padló / emelet')).toBe(false);
   });
 
-  it('keeps FB6 strictness inside an alternative', () => {
+  it('keeps the strictness inside an alternative', () => {
     expect(strictAnswerMatch('emelete', 'padló / emelet')).toBe(false);
   });
 
-  it('combines with the BUG-001 gloss rule', () => {
+  it('combines with the parenthetical gloss rule', () => {
     expect(strictAnswerMatch('folytatni', 'folytatni / követni (te folytatod)')).toBe(true);
     expect(strictAnswerMatch('követni', 'folytatni / követni (te folytatod)')).toBe(true);
   });
@@ -194,7 +194,7 @@ describe('alternative meanings', () => {
 });
 
 
-describe('eitherArticle (PROMPT-POLICY 5, FB285)', () => {
+describe('eitherArticle (PROMPT-POLICY 5)', () => {
   it('accepts the other article on a common-gender noun', () => {
     expect(strictAnswerMatch('la guardia', 'el guardia', { eitherArticle: true })).toBe(true);
     expect(strictAnswerMatch('el guardia', 'el guardia', { eitherArticle: true })).toBe(true);
@@ -206,13 +206,13 @@ describe('eitherArticle (PROMPT-POLICY 5, FB285)', () => {
   });
 });
 
-// indefinido-10-verbos: a lecke saját szövege szerint Mexikóban a
-// vosotros alakot sosem használjuk, mindig ustedes van helyette, de a
-// vosotros-itemek `accept` listája eddig csak a vosotros alakot fogadta el;
-// egy ustedes-t begépelő tanuló jó válasza pirosra ment. A GrammarDrill
-// `check()`-je (components/grammar/GrammarDrill.tsx) pontosan így vizsgál
-// egy transform itemet: `[item.answer, ...(item.accept ?? [])]` bármelyikére.
-describe('indefinido-10-verbos transform accept lists (FB356)', () => {
+// indefinido-10-verbos: according to the lesson's own text, in Mexico the
+// vosotros form is never used and ustedes always replaces it, but the `accept`
+// list of the vosotros items used to accept only the vosotros form;
+// a learner who typed the ustedes form got a correct answer marked red. The
+// GrammarDrill `check()` (components/grammar/GrammarDrill.tsx) checks
+// a transform item in exactly this way: against any of `[item.answer, ...(item.accept ?? [])]`.
+describe('indefinido-10-verbos transform accept lists', () => {
   it('accepts the Mexican ustedes form alongside the taught vosotros form', () => {
     const candidates = ['Mirasteis la película tarde.', 'Vosotros mirasteis la película tarde.', 'Ustedes miraron la película tarde.'];
     expect(candidates.some((c) => strictAnswerMatch('Ustedes miraron la película tarde.', c))).toBe(true);

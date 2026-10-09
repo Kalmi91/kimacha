@@ -1,7 +1,7 @@
-// a témák betűi. Statikus TTF/OTF (a variable font Androidon nem jó),
-// a kulcs a `useFonts` neve, vagyis a `fontFamily` értéke. A forrás a Google Fonts
-// (@expo-google-fonts statikus példányai), az OpenDyslexic a saját repójából.
-// ShipporiMincho (8,6 MB) helyett Spectral-Light (a terv szerint).
+// the fonts of the themes. Static TTF/OTF (a variable font does not work on Android),
+// the key is the `useFonts` name, that is, the value of `fontFamily`. The source is Google Fonts
+// (the static instances of @expo-google-fonts), OpenDyslexic comes from its own repo.
+// Spectral-Light is used instead of ShipporiMincho (8.6 MB).
 
 export const FONT_NAMES = [
   'PoiretOne',

@@ -15,10 +15,10 @@ import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
 import { useSkin } from '@/lib/useSkin';
 
-// a témaválasztó. Csoportonként 4 oszlopos rács (a téma háttere, "Aa" a title-betűvel,
-// 5 px-es a-sáv, alatta a név); koppintásra azonnal alkalmazódik. Legfelül a Saját mix belépő; a
-// kétmódú témánál az Auto / Light / Dark választó, az egymódúnál egy sor a helyén; a Neo-brutál
-// alatt a mai 5 al-paletta.
+// The theme picker. A 4-column grid per group (the theme's background, "Aa" in the title font,
+// a 5 px `a`-colour stripe, the name below it); tapping applies it at once. At the top the My mix entry; for a
+// two-mode theme the Auto / Light / Dark picker, for a single-mode theme a single line in its place; under Neo-brutal
+// the 5 current sub-palettes.
 
 const PALETTE_ORDER: FillPaletteId[] = ['brand', 'electric', 'lime', 'cyan', 'orange'];
 
@@ -66,11 +66,11 @@ export default function ThemesScreen() {
     cyan: s.settings.paletteCyan,
     orange: s.settings.paletteOrange,
   };
-  // A régi 'classic' paletta-érték a Neo-brutálnál a 'brand'-del egyenlő.
+  // The old 'classic' palette value equals 'brand' under Neo-brutal.
   const activePalette = grammarPalette === 'classic' ? 'brand' : grammarPalette;
 
-  // A Classic csempe a régi 'classic' paletta-értéket is beállítja (a mai viselkedés); a Neo-brutál
-  // csempe a classic-ból visszalépve a 'brand' al-palettát.
+  // The Classic tile also sets the old 'classic' palette value (today's behaviour); the Neo-brutal
+  // tile, when stepping back from classic, sets the 'brand' sub-palette.
   const pick = (id: SkinId) => {
     setSkin(id);
     if (id === 'classic') setGrammarPalette('classic');
@@ -184,7 +184,7 @@ const styles = StyleSheet.create({
   chevron: { fontSize: 22, fontWeight: '700' },
   modeRow: { flexDirection: 'row', gap: 10, marginBottom: 16 },
   flex1: { flex: 1 },
-  // mód-gomb (3 oszlop): ikon fent (16), kisebb egysoros felirat (11).
+  // mode button (3 columns): icon on top (16), smaller one-line label (11).
   modeIcon: { fontSize: 16 },
   oneLook: { fontSize: 13, marginBottom: 16 },
   groupTitle: { fontSize: 12, fontWeight: '600', textTransform: 'uppercase', letterSpacing: 1, marginTop: 8, marginBottom: 8 },

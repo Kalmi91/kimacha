@@ -1,6 +1,6 @@
-// authored-JSON content loading, grammar-choice (4.11) only.
-// Play-vágás: story/chat/confusables/myth/ccat
-// (4.5/4.6/4.12/4.13/4.10) removed, no caller since their tabs left in
+// Authored-JSON content loading, grammar-choice only.
+// Play cut: story/chat/confusables/myth/ccat
+// removed, no caller since their tabs left in
 // earlier steps. The grammar types mirror the JSON format verbatim so a new
 // topic is a pure-data change: add `data/games/grammar/<lang>/<id>.json`,
 // statically import it in `lib/games/content/<lang>.ts`, push it into
@@ -23,7 +23,7 @@ export function cumulativeCorpusWordIds(level: Level, lang: string): Set<number>
   const key = `${lang}:${level}`;
   const cached = cumulativeIdsCache.get(key);
   if (cached) return cached;
-  // a words-open kártyái (id = order), A0 → A1, C1/C2 → B2.
+  // The words-open cards (id = order), A0 → A1, C1/C2 → B2.
   const ids = new Set<number>();
   for (const w of getOpenWordsUpToLevel(level)) ids.add(w.id);
   cumulativeIdsCache.set(key, ids);
@@ -35,12 +35,12 @@ export function cumulativeCorpusWordIds(level: Level, lang: string): Set<number>
 // Per-language content bundles (issue #3)
 // ---------------------------------------------------------------------------
 //
-// Egy nyelv játék-tartalma egy köteg-fájlban lakik (`lib/games/content/<lang>.ts`),
-// és ez a tábla fűzi őket a nyelv-kulcsos mapekbe. Egy új nyelvi sáv így egy új
-// fájl plusz egy sor itt, nem nyolc szerkesztés ebben a fájlban, tehát a két
-// sáv munkája nem ér össze.
+// One language's game content lives in a bundle file (`lib/games/content/<lang>.ts`),
+// and this table stitches them into the language-keyed maps. A new language lane is
+// thus one new file plus one line here, not eight edits in this file, so the work of
+// two lanes does not collide.
 
-// Play-vágás: story/chat/confusables/myth/ccat fields
+// Play cut: story/chat/confusables/myth/ccat fields
 // removed, no caller since their tabs left in earlier steps.
 export interface LanguageContentBundle {
   grammarTopics: GrammarTopicData[];
@@ -65,12 +65,12 @@ function byLang<K extends keyof LanguageContentBundle>(
 }
 
 // ---------------------------------------------------------------------------
-// grammar-choice (4.11)
+// grammar-choice
 // ---------------------------------------------------------------------------
 //
-// F3 MEGVALÓSÍTÁSI JEGYZET: the example JSON showed `why` as a
-// single hu-only string plus a `wrong` sub-object. K21/the top-level i18n×4
-// rule need the explanation (why the correct option IS right, and why each
+// IMPLEMENTATION NOTE: the example JSON showed `why` as a
+// single hu-only string plus a `wrong` sub-object. The top-level i18n×4
+// rule needs the explanation (why the correct option IS right, and why each
 // wrong option ISN'T) in all 4 native languages, so both are restructured to
 // be lang-keyed: `why[lang]`, `wrong[optionText][lang]`. A `level` field was
 // also added (absent from the illustrative JSON) because the audit script's
@@ -92,20 +92,20 @@ interface GrammarItemBase {
   wrong: GrammarWrongExplanation; // wrong[optionText][lang] = why that option is wrong here
   examples: string[]; // 2 target-language example sentences illustrating the same rule
   /**
-   * a mondat fordítása négy nyelven (a tanult nyelvi oldal a kitöltött mondat maga); a drill az F-gombbal
-   * mutatja, mint az átírás-tételnél. Opcionális: scripts/grammar-translate.py tölti, ami még nincs, ott nincs gomb.
+   * The sentence's translation in four languages (the learned-language side is the filled-in sentence itself); the drill shows it
+   * with the F button, as for the transform item. Optional: filled by scripts/grammar-translate.py; where it is missing, there is no button.
    */
   tr?: Lang4;
 }
 
-/** A klasszikus „melyik illik a lyukba" feladat. */
+/** The classic "which one fits the gap" exercise. */
 export interface GrammarGapItem extends GrammarItemBase {
   kind?: 'gap';
   sentence: string; // target language, blank marked "___"
   options: string[]; // target-language option texts
   correct: number; // index into options
   tense?: { from: TenseId; to: TenseId };
-  /** 'article' = a névelő-választó (el / la) feladat-készlet tétele, saját gombbal. */
+  /** 'article' = an item of the article-choice (el / la) exercise set, with its own button. */
   set?: 'article';
 }
 
@@ -113,12 +113,12 @@ export function isArticleSetItem(item: GrammarItem): boolean {
   return (item as GrammarGapItem).set === 'article';
 }
 
-// User feedback (grammar:clases-de-palabras:drill): „vagy lehetne
-// olyan hogy egy momdat és kijelölni az igét vagy a advarbet vagy hogy egy
-// momdat és akkor hol van benne a mi, vagy valami életszerű feladatot". A
-// lyukas mondat izolált szót kérdez; ez a típus egy KÉSZ mondatot ad, és a
-// tanuló abban koppint rá a kért szófajra, tehát a mondat egészében kell
-// felismernie, nem két felkínált szó közül választ.
+// Learner request: an exercise where, in a sentence, you pick out the verb or
+// the adverb, or find where a given word class is in it, i.e. a more
+// life-like task. A gap sentence asks about an isolated word; this type gives a
+// COMPLETE sentence and the learner taps the requested word class in it, so they
+// have to recognise it within the whole sentence rather than choose between two
+// offered words.
 export type GrammarWordClass =
   | 'noun'
   | 'verb'
@@ -131,17 +131,17 @@ export type GrammarWordClass =
 export interface GrammarMarkItem extends GrammarItemBase {
   kind: 'mark';
   sentence: string; // target language, WHOLE sentence, no blank
-  target: GrammarWordClass; // melyik szófajt kell megjelölni
-  answer: string; // a mondat azon szava, amire koppintani kell
-  /** Ha a szó többször szerepel: hányadik előfordulás (0-tól). */
+  target: GrammarWordClass; // which word class to mark
+  answer: string; // the word of the sentence to tap
+  /** If the word occurs more than once: which occurrence (0-based). */
   answerIndex?: number;
 }
 
-// match/form a body-blokkos LessonV2 új feladat-
-// fajtái, ide is bekerülnek, hogy egy GrammarItem-fogyasztó (a választós
-// játék köre) minden lecke-item-fajtát ismerjen, még ha egyelőre csak a
-// gap/mark kettőt dolgozza is fel (lib/games/grammarChoice.ts szűri ki a
-// match/form-ot a köréből, azok a lecke-képernyőn jelennek meg, step 3-4).
+// match/form are new exercise kinds of the body-block LessonV2; they are
+// included here too, so that any GrammarItem consumer (the round of the
+// choice game) knows every lesson item kind, even if for now it only handles
+// the gap/mark pair (lib/games/grammarChoice.ts filters match/form out of its
+// round; those appear on the lesson screen).
 export type GrammarItem = GrammarGapItem | GrammarMarkItem | MatchItem | FormItem | WhyItem | TransformItem | SpotItem | OrderItem | DictationItem;
 
 export function isMarkItem(item: GrammarItem): item is GrammarMarkItem {
@@ -156,12 +156,12 @@ export function isFormItem(item: GrammarItem): item is FormItem {
   return item.kind === 'form';
 }
 
-// a "miért ez a mondat" feladat-fajta.
+// The "why this sentence" exercise kind.
 export function isWhyItem(item: GrammarItem): item is WhyItem {
   return item.kind === 'why';
 }
 
-// a három új feladat-fajta (hibakereső, szórend, diktálás).
+// The three new exercise kinds (error spotting, word order, dictation).
 export function isSpotItem(item: GrammarItem): item is SpotItem {
   return item.kind === 'spot';
 }
@@ -174,28 +174,28 @@ export function isDictationItem(item: GrammarItem): item is DictationItem {
   return item.kind === 'dictation';
 }
 
-/** Ideiglenes ("ÚJ · TESZT") tétel? */
+/** A temporary ("NEW · TEST") item? */
 export function isTrialItem(item: GrammarItem): boolean {
   return (item as { trial?: boolean }).trial === true;
 }
 
-// az igeidő-drill mondat-átírás feladat-fajtája.
+// The sentence-rewriting exercise kind of the tense drill.
 export function isTransformItem(item: GrammarItem): item is TransformItem {
   return item.kind === 'transform';
 }
 
-// a lecke feladatai fajtánként külön
-// indíthatók (a mondat-feladatok, a párosítás és a ragozás nem egy gombban
-// megy), ehhez kell tudni fajtánként, hány item van egy leckében.
-// 'article' = a névelő-választó (el / la) külön gomb: gap
-// tételek `set: 'article'` jelöléssel, a saját gombjukon, nem a mondat-feladatok közt.
+// A lesson's exercises can be started
+// per kind (the sentence exercises, matching and conjugation do not go behind a
+// single button), which requires knowing how many items of each kind a lesson has.
+// 'article' = the article-choice (el / la) button, separate: gap
+// items marked `set: 'article'`, on their own button, not among the sentence exercises.
 export type GrammarKind = 'choice' | 'article' | 'match' | 'form' | 'why' | 'transform' | 'spot' | 'order' | 'dictation';
 
 export function grammarKindCounts(topic: GrammarTopicData): Record<GrammarKind, number> {
   const counts: Record<GrammarKind, number> = { choice: 0, article: 0, match: 0, form: 0, why: 0, transform: 0, spot: 0, order: 0, dictation: 0 };
   // the button label counts the round the learner actually plays, so a
   // vosotros item dropped from buildGrammarRound (lib/games/grammarChoice.ts)
-  // does not inflate a "Mondatok (N)"-style count.
+  // does not inflate a "Sentences (N)"-style count.
   for (const item of topic.items as GrammarItem[]) {
     if (isVosotrosItem(item)) continue;
     if (isMatchItem(item)) counts.match++;
@@ -211,11 +211,8 @@ export function grammarKindCounts(topic: GrammarTopicData): Record<GrammarKind, 
   return counts;
 }
 
-// minden lecke LessonV2 (schema 2); a régi rule/more alak megszűnt.
+// Every lesson is LessonV2 (schema 2); the old rule/more shape is gone.
 export type GrammarTopicData = LessonV2;
-
-// Q1 (A1 alapok), token-burn queue.
-// A2, the past and future the course was missing.
 
 const grammarTopicsByLang: Partial<Record<string, GrammarTopicData[]>> = byLang('grammarTopics');
 

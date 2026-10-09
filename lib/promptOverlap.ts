@@ -1,11 +1,11 @@
-// "Egy szinten és sávon belül két szónak nem lehet olyan
-// prompt (angol vagy magyar gloss)ja, amelyből nem dönthető el, melyik a
-// kérdezett." Ez a modul az egyetlen hely, ahol az átfedés-szabály él: a
-// lib/__tests__/corpusIntegrity.test.ts "prompt policy" leírása ezt hívja.
+// "Within a level and band, two words must not have a
+// prompt (English or Hungarian gloss) from which it cannot be decided which one is
+// being asked." This module is the only place where the overlap rule lives: the
+// "prompt policy" description in lib/__tests__/corpusIntegrity.test.ts calls it.
 //
-// a ragozott-alak tételek ("ir (fuimos)") nem számítanak
-// átfedésnek, a zárójeles alak már egyértelműsít, ezeket a hívó szűri ki
-// isConjugatedForm-mal, mielőtt findPromptOverlaps-nak átadná.
+// Conjugated-form items ("ir (fuimos)") do not count as an
+// overlap, the parenthesized form already disambiguates; the caller filters them out
+// with isConjugatedForm before passing the list to findPromptOverlaps.
 
 export type PromptLang = 'en' | 'es' | 'hu';
 
@@ -17,8 +17,8 @@ interface PromptOverlapWord {
 
 interface PromptOverlapCluster {
   kind: 'exact' | 'partial';
-  // partial esetén az átfedő normalizált sense, ami miatt a fürt összeállt;
-  // exact esetén null (ott a teljes prompt azonos, nincs egyetlen "ok" sense).
+  // for partial: the overlapping normalized sense that formed the cluster;
+  // for exact: null (the whole prompt is identical, so there is no single "reason" sense).
   sense: string | null;
   words: PromptOverlapWord[];
 }
@@ -42,9 +42,9 @@ function normalizeSense(raw: string, lang: PromptLang): string {
   return stripArticle(raw.trim().toLowerCase(), lang).replace(/[.\s]+$/, '').trim();
 }
 
-// A prompt " / "-vel elválasztott glosszai, mindegyik normalizálva. A
-// zárójel a jelentés-egyértelműsítés része, ezért ITT
-// megmarad, csak a bareSense() vágja le.
+// The " / "-separated glosses of the prompt, each normalized. The
+// parenthesis is part of the sense disambiguation, so it is kept
+// HERE; only bareSense() strips it.
 export function promptSenses(prompt: string, lang: PromptLang): string[] {
   return prompt
     .split(' / ')
@@ -52,9 +52,9 @@ export function promptSenses(prompt: string, lang: PromptLang): string[] {
     .filter(Boolean);
 }
 
-// "time (clock)" -> "time": a zárójel levágása utáni csupasz alak, ez adja
-// a "zárójel levágása után azonos" esetét (pl. "time" vs
-// "time (clock)" a tanulónak ugyanúgy kétértelmű).
+// "time (clock)" -> "time": the bare form after stripping the parenthesis, this gives
+// the "identical after stripping the parenthesis" case (e.g. "time" vs
+// "time (clock)" is just as ambiguous for the learner).
 export function bareSense(sense: string): string {
   return sense.replace(/\s*\([^)]*\)\s*$/, '').trim();
 }
@@ -64,14 +64,14 @@ export function normalizedPrompt(prompt: string, lang: PromptLang): string {
 }
 
 /**
- * Egy szinten belüli szólista átfedés-fürtjei. A hívó már egy (sáv, szint)
- * párra szűrt, ragozott-alak nélküli listát ad át. Két menetben dolgozik:
- *   1. EXACT, a teljes normalizált prompt (senses összefűzve) szó szerint azonos.
- *   2. PARTIAL, a maradék szavak közül, akiknek legalább egy normalizált
- *      sense-e (vagy annak csupasz, zárójel nélküli alakja) megegyezik egy
- *      másikéval (névelő-levágás, " / "-bontás, zárójel).
- * Egy szó csak egy fürtbe kerül (exact elsőbbséget élvez), így a két darabszám
- * (exact/partial) diszjunkt, ez adja a riport-számait.
+ * Overlap clusters of a word list within a level. The caller passes a list already
+ * filtered to one (band, level) pair, without conjugated forms. It works in two passes:
+ *   1. EXACT, the whole normalized prompt (senses joined) is identical word for word.
+ *   2. PARTIAL, among the remaining words, those where at least one normalized
+ *      sense (or its bare form without the parenthesis) equals one of
+ *      another word (article stripping, " / " splitting, parenthesis).
+ * A word goes into only one cluster (exact takes precedence), so the two counts
+ * (exact/partial) are disjoint, and this gives the numbers of the report.
  */
 export function findPromptOverlaps(words: PromptOverlapWord[], lang: PromptLang): PromptOverlapCluster[] {
   const active = words.filter((w) => !isConjugatedForm(w.headword) && w.prompt.trim());
@@ -92,14 +92,14 @@ export function findPromptOverlaps(words: PromptOverlapWord[], lang: PromptLang)
     for (const w of list) exactIds.add(w.id);
   }
 
-  // 2) PARTIAL, csak azok közt, akik nem már exact-duplikátumok.
+  // 2) PARTIAL, only among those that are not already exact duplicates.
   const rest = active.filter((w) => !exactIds.has(w.id));
-  // Három index: a teljes sense (zárójellel együtt), a CSUPASZ sense-ek
-  // (nincs zárójel), és a zárójeles sense-ek levágott alakja. Két szó akkor
-  // ütközik, ha egy teljes sense-ük azonos, VAGY az egyik csupasz sense-e
-  // egyenlő a másik zárójeles sense-ének levágott alakjával ("time" vs
-  // "time (clock)"). Két KÜLÖNBÖZŐ zárójeles alak ("cold (illness)" vs
-  // "cold (temperature)") nem ütközik: pont ez a megoldás.
+  // Three indexes: the full sense (with the parenthesis), the BARE senses
+  // (no parenthesis), and the stripped form of the parenthesized senses. Two words
+  // collide if a full sense of theirs is identical, OR the bare sense of one
+  // equals the stripped form of the other's parenthesized sense ("time" vs
+  // "time (clock)"). Two DIFFERENT parenthesized forms ("cold (illness)" vs
+  // "cold (temperature)") do not collide: that is exactly the point.
   const keyIndex = new Map<string, PromptOverlapWord[]>();
   const bareIndex = new Map<string, PromptOverlapWord[]>();
   const parenIndex = new Map<string, PromptOverlapWord[]>();
@@ -116,7 +116,7 @@ export function findPromptOverlaps(words: PromptOverlapWord[], lang: PromptLang)
       else push(parenIndex, bare, w);
     }
   }
-  // Union-find a `rest` listán.
+  // Union-find over the `rest` list.
   const indexOf = new Map(rest.map((w, i) => [w.id, i] as const));
   const parent = rest.map((_, i) => i);
   const find = (i: number): number => {
@@ -161,7 +161,7 @@ export function findPromptOverlaps(words: PromptOverlapWord[], lang: PromptLang)
       }
     }
     if (sense === null) {
-      // csupasz vs zárójeles ütközés: a közös levágott alak a címke
+      // bare vs parenthesized collision: the shared stripped form is the label
       for (const [bare, bareWords] of bareIndex) {
         const parenWords = parenIndex.get(bare) ?? [];
         if (bareWords.some((w) => groupIds.has(w.id)) && parenWords.some((w) => groupIds.has(w.id))) {
@@ -176,15 +176,15 @@ export function findPromptOverlaps(words: PromptOverlapWord[], lang: PromptLang)
   return clusters;
 }
 
-// az angol prompt sosem tartalmazhatja a spanyol címszót,
-// mert elárulja a választ. A címszó a normalizált "es" mező: névelő, zárójel
-// és a " / " utáni alternatíva nélkül, kisbetűsítve (ugyanazokkal a segédekkel,
-// mint a többi szabály); 3 betűnél rövidebb címszóra nem fut (pl. "no", túl
-// sok véletlen angol egyezést adna). A cognate-kártyák (pl.
-// "el hotel" / "the hotel") nem hibák: kizárva, ha a levágott en prompt
-// egésze, vagy annak "/" vagy ","-tagja (a korpusz mindkét alak-elválasztót
-// használja, ld. a fájl "senses" helperét a corpusIntegrity.test.ts-ben),
-// maga a címszó.
+// the English prompt must never contain the Spanish headword,
+// because it gives away the answer. The headword is the normalized "es" field: without the article, parenthesis
+// and the alternative after " / ", lowercased (with the same helpers
+// as the other rules); it does not run for a headword shorter than 3 letters (e.g. "no", it would
+// give too many accidental English matches). Cognate cards (e.g.
+// "el hotel" / "the hotel") are not errors: excluded if the stripped en prompt
+// as a whole, or its "/" or ","-separated member (the corpus uses both form separators,
+// see the "senses" helper of the file in corpusIntegrity.test.ts),
+// is the headword itself.
 export function headwordLeaks(
   words: PromptOverlapWord[],
   lang: PromptLang

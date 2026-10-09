@@ -1,28 +1,28 @@
-// Az Anki-fül paklijai: en→es irányban a data/words-open (o<order> id-tér), es→en
-// irányban a data/words/en (e<id> id-tér). A PCIC-korpusz
-// és a régi spanyol szólista (w<id>) kikerült, a modul neve és API-ja a fogyasztók
-// (lib/pcicLevels.ts, lib/pcicSession.ts, lib/grammar/tableDeck.ts, app/(tabs)/index.tsx,
-// app/onboarding.tsx, components/LevelPickerSheet.tsx, ...) miatt maradt.
+// The decks of the Anki tab: for en→es the data/words-open cards (o<order> id space), for
+// es→en the data/words/en cards (e<id> id space). The PCIC corpus
+// and the old Spanish word list (w<id>) are gone; the module name and API stayed because of
+// their consumers (lib/pcicLevels.ts, lib/pcicSession.ts, lib/grammar/tableDeck.ts, app/(tabs)/index.tsx,
+// app/onboarding.tsx, components/LevelPickerSheet.tsx, ...).
 
 import type { Pos } from '@/lib/pcicPos';
 import type { WordEntry } from '@/data/words';
-// A régi angol-célnyelvű
-// ág kész, ellenőrzött kártyái (~0 token). Csak ez a modul importálja, e<id>
-// id-térrel (lásd itemsFromWords). A1 = a0 + a1, A2 = a2.
+// The finished, verified cards (~0 tokens) of the old English-target
+// branch. Only this module imports them, with the e<id>
+// id space (see itemsFromWords). A1 = a0 + a1, A2 = a2.
 import enA0 from '@/data/words/en/a0.json';
 import enA1 from '@/data/words/en/a1.json';
 import enA2 from '@/data/words/en/a2.json';
 import enB1 from '@/data/words/en/b1.json';
-// az en→es pakli forrása az új, 600
-// kártyás data/words-open (o<order> id-tér, lásd itemsFromOpen).
+// the source of the en→es deck is the new 600-card
+// data/words-open (o<order> id space, see itemsFromOpen).
 import openA1 from '@/data/words-open/a1.json';
 import openA2 from '@/data/words-open/a2.json';
 import openB1 from '@/data/words-open/b1.json';
 import openB2 from '@/data/words-open/b2.json';
-// kézzel írt (i) magyarázat egyes kártyákra, `o<order>` kulccsal,
-// angol szöveggel; a Learn-kártya kis (i) gombja nyitja (PcicItem.note).
+// hand-written (i) explanation for some cards, keyed by `o<order>`,
+// in English; opened by the small (i) button of the Learn card (PcicItem.note).
 import openNotes from '@/data/words-open/notes.json';
-// kép egyes kártyákhoz (Wikimedia Commons), az (i) alatt a magyarázat mellett.
+// image for some cards (Wikimedia Commons), shown under the (i) next to the explanation.
 import { wordImageFor, type WordImage } from '@/data/wordImages';
 
 export type PcicKind = 'word' | 'phrase' | 'sentence';
@@ -30,9 +30,9 @@ export type PcicLevel = 'A1' | 'A2' | 'B1' | 'B2';
 
 export const PCIC_LEVELS: PcicLevel[] = ['A1', 'A2', 'B1', 'B2'];
 
-// a B2 is választható (en→es 150 tétel); az
-// es→en iránynál B2 üres, ott a szint-választók a "0 tétel = nem kínáljuk fel"
-// szűrővel kihagyják.
+// B2 is selectable too (en→es: 150 items); in the
+// es→en direction B2 is empty, and the level pickers skip it with the
+// "0 items = not offered" filter.
 export const PCIC_VIEW_LEVELS: PcicLevel[] = ['A1', 'A2', 'B1', 'B2'];
 
 export interface PcicItem {
@@ -43,25 +43,25 @@ export interface PcicItem {
   section: string;
   order: number;
   pos?: Pos;
-  // példamondat a korpuszból, csak ha van egyezés;
-  // a Check utáni felfedésen jelenik meg.
+  // example sentence from the corpus, only when there is a match;
+  // shown in the reveal after Check.
   exampleEs?: string;
   exampleEn?: string;
-  // kis mondat a kérdés-szó alatt, ha a kérdésnek
-  // több jelentése van (words-open hint_en / angol track hint_es); a kérdezett szó
-  // `*csillag*` között áll.
+  // short sentence under the question word when the question
+  // has several meanings (words-open hint_en / English track hint_es); the word being
+  // asked is wrapped in `*asterisks*`.
   hint?: string;
-  // (i) magyarázat (angol, rövid), csak a kézzel jegyzetelt kártyákon van.
+  // (i) explanation (English, short), only on the cards with a hand-written note.
   note?: string;
-  // a kártya képe (szerzővel és licenccel), csak a képpel ellátott kártyákon van.
+  // the card's image (with author and licence), only on the cards that have one.
   image?: WordImage;
 }
 
 const LEADING_ARTICLE_RE = /^(el|la|los|las|un|una)\s+/i;
 
-// `kind`: 'phrase', ha a névelő levágása után is több szó marad, különben 'word'.
-// Perjeles " / " alaknál minden alternatívát külön
-// nézünk ("el carro / el coche" egy szavas főnévként 'word', nem 'phrase').
+// `kind`: 'phrase' if more than one word is left after stripping the article, otherwise 'word'.
+// For a slash form " / " every alternative is checked
+// separately ("el carro / el coche" counts as the one-word noun 'word', not 'phrase').
 export function kindOfEs(es: string): PcicKind {
   const isPhrase = es.split(' / ').some((alt) => {
     const stripped = alt.trim().replace(LEADING_ARTICLE_RE, '');
@@ -75,9 +75,9 @@ function noteField(word: WordEntry, key: 'hint_es'): string | undefined {
   return typeof value === 'string' && value.length > 0 ? value : undefined;
 }
 
-// A vosotros-jelzésű (vosotros: true) kártya kimarad, ahogy a nyelvtani leckéknél is.
-// Az 'e' előtag különbözteti meg a két irány id-terét
-// a KÖZÖS pcic_cards táblában (nincs pár-oszlop): en→es 'o<order>' (itemsFromOpen), es→en 'e<id>'.
+// A card marked vosotros (vosotros: true) is left out, as in the grammar lessons.
+// The 'e' prefix tells the id spaces of the two directions apart
+// in the SHARED pcic_cards table (no pair column): en→es 'o<order>' (itemsFromOpen), es→en 'e<id>'.
 function itemsFromWords(entries: WordEntry[]): PcicItem[] {
   return entries
     .filter((w) => !w.vosotros)
@@ -95,10 +95,10 @@ function itemsFromWords(entries: WordEntry[]): PcicItem[] {
     }));
 }
 
-// a data/words-open kártyáiból (a1/a2/b1/b2.json, A1 =
-// csak a1.json, nincs külön A0). Id-tér: o<order> (a fájl `order` mezője,
-// 1-600), hogy ne ütközzön a régi w<id> és az es→en e<id> id-kkel. A words-open
-// pos-ából minden szófaj átmegy az app Pos-ába (a det és interj is chipet kap).
+// from the cards of data/words-open (a1/a2/b1/b2.json, A1 =
+// a1.json only, there is no separate A0). Id space: o<order> (the `order` field of the file,
+// 1-600), so it does not clash with the old w<id> and the es→en e<id> ids. From the
+// words-open pos every part of speech passes into the app's Pos (det and interj get a chip too).
 type OpenCard = { order: number; pos: string; es: string; en: string; sentence_es: string; sentence_en: string; hint_en?: string };
 
 const OPEN_POS_TO_PCIC: Partial<Record<string, Pos>> = {
@@ -138,12 +138,12 @@ const ITEMS_BY_LEVEL_ES: Record<PcicLevel, PcicItem[]> = {
   B2: itemsFromOpen(openB2 as OpenCard[]),
 };
 
-// az es→en irány A1 paklija = data/words/en/a0.json +
-// a1.json (külön A0 nincs), A2 = a2.json (e<id> id-tér, a régi első 50 id-je
-// nem változik). Ugyanaz az angol szó csak egyszer, az első előfordulásánál
-// (alacsonyabb szinten) marad. B1 = en/b1.json (CEFR-J szólista,
-// e10000-től); B2 üres (nincs rá tartalom), a szint-választók a "0 tétel =
-// nem kínáljuk fel" szabállyal kihagyják.
+// the es→en deck for A1 = data/words/en/a0.json +
+// a1.json (there is no separate A0), A2 = a2.json (e<id> id space, the ids of the old first 50
+// do not change). The same English word stays only once, at its first occurrence
+// (on the lower level). B1 = en/b1.json (CEFR-J word list,
+// from e10000); B2 is empty (no content for it), and the level pickers skip it with the
+// "0 items = not offered" rule.
 function dedupeByEn(levels: WordEntry[][]): WordEntry[][] {
   const seen = new Set<string>();
   return levels.map((entries) =>
@@ -169,10 +169,10 @@ const ITEMS_BY_LEVEL_EN: Record<PcicLevel, PcicItem[]> = {
   B2: [],
 };
 
-// melyik irány paklija aktív (app/_layout.tsx az
-// induláskor, app/onboarding.tsx a választáskor, a Settings irányváltó sora
-// a váltáskor állítja, az onboarding.target kódjával: 'es' = en→es, 'en' =
-// es→en). Modul-szintű állapot, mint a lib/database.ts activePair-je.
+// which direction's deck is active (set by app/_layout.tsx at
+// startup, by app/onboarding.tsx on selection and by the direction switch row of Settings
+// on switching, with the onboarding.target code: 'es' = en→es, 'en' =
+// es→en). Module-level state, like activePair in lib/database.ts.
 export type PcicTarget = 'es' | 'en';
 
 let activeTarget: PcicTarget = 'es';
@@ -216,8 +216,8 @@ export function findPcicItem(id: string): PcicItem | undefined {
   return indexesByTarget(activeTarget).itemById.get(id);
 }
 
-/** A betöltött korpuszban élő item TÉNYLEGES szintje, vagy undefined, ha az
- *  id nincs a korpuszban (pl. a régi PCIC-korpusz árva SRS-sora). */
+/** The ACTUAL level of the item living in the loaded corpus, or undefined if the
+ *  id is not in the corpus (e.g. an orphaned SRS row of the old PCIC corpus). */
 export function levelOfItem(id: string): PcicLevel | undefined {
   return indexesByTarget(activeTarget).levelById.get(id);
 }

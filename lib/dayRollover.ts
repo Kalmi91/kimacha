@@ -1,8 +1,8 @@
-// User feedback: "legyen olyan, hogy ha éjfélkor játszunk a
-// játékkal, és pont átfordul akkor a napi statot írja ki és gratuláljon, a
-// játékosnak, valami nagyon menő szöveggel, legyen nagyon kreatív, és irjaon
-// valami nagyon szépet és sok különböző szöveg legyen de legyen benne
-// ismétlödes is."
+// User feedback: "there should be something so that if we play at midnight
+// with the game, and it exactly rolls over, it prints the daily stats and congratulates
+// the player, with something really cool, be very creative, and write
+// something really nice and let there be many different texts but let there be
+// repetition too."
 //
 // Hence: a pool of celebration lines, picked at RANDOM (not round-robin), so
 // lines do come back over time, exactly the repetition that was asked for.

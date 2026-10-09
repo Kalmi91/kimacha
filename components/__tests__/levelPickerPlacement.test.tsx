@@ -1,5 +1,5 @@
-// a szintválasztó lapon a szint-sorok mellett
-// ott a halk szintfelmérő-belépő; a kézi szintválasztás továbbra is működik.
+// on the level picker sheet, beside the level rows, there is the quiet placement-test entry;
+// manual level selection still works.
 
 import { fireEvent, render } from '@testing-library/react-native';
 
@@ -23,10 +23,10 @@ const renderSheet = (onSelect = jest.fn(), onPlacement?: () => void) =>
     />,
   );
 
-describe('LevelPickerSheet: szintfelmérő-belépő', () => {
+describe('LevelPickerSheet: placement-test entry', () => {
   beforeEach(() => setPcicTarget('es'));
 
-  it('a szint-sorok alatt ott a belépő, és koppintásra elindul', () => {
+  it('the entry is under the level rows, and tapping starts it', () => {
     const onPlacement = jest.fn();
     const { getByText, getByTestId } = renderSheet(jest.fn(), onPlacement);
 
@@ -35,7 +35,7 @@ describe('LevelPickerSheet: szintfelmérő-belépő', () => {
     expect(onPlacement).toHaveBeenCalledTimes(1);
   });
 
-  it('a kézi szintválasztás megmarad: a sor koppintása a szintet választja, a belépő nem', () => {
+  it('manual level choice stays: tapping the row selects the level, the entry does not', () => {
     const onSelect = jest.fn();
     const onPlacement = jest.fn();
     const { getByText } = renderSheet(onSelect, onPlacement);
@@ -45,7 +45,7 @@ describe('LevelPickerSheet: szintfelmérő-belépő', () => {
     expect(onPlacement).not.toHaveBeenCalled();
   });
 
-  it('belépő nélkül (onPlacement nincs) a sor sem jelenik meg', () => {
+  it('without the entry (no onPlacement) the row does not show either', () => {
     const { queryByTestId } = renderSheet();
     expect(queryByTestId('placement-entry')).toBeNull();
   });

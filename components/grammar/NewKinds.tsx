@@ -18,22 +18,22 @@ import { hashString, shuffleOptions } from '@/lib/shuffle';
 import { speak, stopSpeaking } from '@/lib/speech';
 import type { DictationItem, OrderItem, SpotItem } from '@/lib/grammar/lessonTypes';
 
-// három új feladat-fajta, EGYELŐRE csak a
-// ser-estar (hibakereső + diktálás) és a negacion (szórend + hibakereső) leckében, az
-// ideiglenes "ÚJ · TESZT" jelöléssel (components/TrialBadge.tsx). Mindhárom 1 egység a
-// pontozásban (jó vagy nem), és a helyes mondat a válasz után elhangzik.
+// three new task kinds, FOR NOW only in the
+// ser-estar (error spotting + dictation) and negacion (word order + error spotting) lessons, with the
+// temporary "ÚJ · TESZT" ("NEW · TEST") label (components/TrialBadge.tsx). All three are 1 unit in
+// scoring (right or not), and the right sentence is spoken after the answer.
 
 type Lang = 'hu' | 'en' | 'es' | 'de';
 
 const PUNCT_TAIL = /[.,;:!?¡¿]+$/;
 
-/** A szó a végén álló írásjel nélkül és az írásjel külön. */
+/** The word without the punctuation at its end, and the punctuation separately. */
 function splitPunct(token: string): { core: string; tail: string } {
   const m = token.match(PUNCT_TAIL);
   return m ? { core: token.slice(0, -m[0].length), tail: m[0] } : { core: token, tail: '' };
 }
 
-/** A javított mondat: a hibás szó az opcióra cserélve (vagy törölve, ha az opció üres), az írásjel a helyén marad. */
+/** The corrected sentence: the wrong word replaced by the option (or removed if the option is empty), the punctuation stays in place. */
 export function fixedSentence(es: string, wrongIndex: number, fix: string): string {
   const words = es.split(/\s+/).filter(Boolean);
   const wrong = words[wrongIndex] ?? '';
@@ -60,7 +60,7 @@ function ItemHead({ trial, title }: { trial?: boolean; title: string }) {
   );
 }
 
-// ---------------------------------------------------------------- hibakereső
+// ---------------------------------------------------------------- error spotting
 export function SpotDrillItem({
   item,
   learnedLang,
@@ -97,7 +97,7 @@ export function SpotDrillItem({
   const pick = (i: number) => {
     if (phase !== 'fix') return;
     setPicked(i);
-    // a helyes (javított) mondat elhangzik, jó és rossz válasz után is
+    // the right (corrected) sentence is spoken, after right and wrong answers alike
     speak(fixed, speechLang(learnedLang));
   };
 
@@ -158,10 +158,10 @@ export function SpotDrillItem({
   );
 }
 
-// ---------------------------------------------------------------- szórend
-// A meglévő koppintásos csempe-kártyát (EasySentenceCard) használja újra: a felül álló
-// mondat a felület nyelvén van, alatta a spanyol szavak csempéi; a Check és a Next a
-// kártya saját gombja, a helyes mondat elhangzik.
+// ---------------------------------------------------------------- word order
+// It reuses the existing tap-tile card (EasySentenceCard): the sentence at
+// the top is in the UI language, below it the tiles of the Spanish words; Check and Next are
+// the card's own buttons, the right sentence is spoken.
 export function OrderDrillItem({
   item,
   learnedLang,
@@ -189,7 +189,7 @@ export function OrderDrillItem({
   );
 }
 
-// ---------------------------------------------------------------- diktálás
+// ---------------------------------------------------------------- dictation
 export function DictationDrillItem({
   item,
   learnedLang,
@@ -209,7 +209,7 @@ export function DictationDrillItem({
   const [typed, setTyped] = useState('');
   const [result, setResult] = useState<{ correct: boolean } | null>(null);
 
-  // A mondat egyszer elhangzik, amikor a feladat megjelenik.
+  // The sentence is spoken once, when the task appears.
   useEffect(() => {
     speak(item.es, locale);
     return () => stopSpeaking();
@@ -217,14 +217,14 @@ export function DictationDrillItem({
 
   const check = () => {
     if (result) return;
-    // Elnéző ellenőrzés (írásjel, névmás nélküli mondat, ékezet-beállítás), mint a mondatkártyán.
+    // Lenient check (punctuation, sentence without a pronoun, accent setting), as on the sentence card.
     const grade = gradeSentenceAnswer(typed, item.es, strictAccents);
     const ok = suggestedGrade(grade) === 'good';
     setResult({ correct: ok });
-    speak(item.es, locale); // a helyes mondat a válasz után is elhangzik
+    speak(item.es, locale); // the right sentence is also spoken after the answer
   };
 
-  // a Check (és utána a Next) a billentyűzet fölé dokkolt sáv, ahogy a szókártyán (DockSlot).
+  // Check (and then Next) is a bar docked above the keyboard, as on the word card (DockSlot).
   const { docked, padBottom } = useDockedAction(
     result
       ? { label: s.grammar.nextArrow, tone: 'next', testID: 'grammar-next', onPress: () => onDone(result.correct) }

@@ -26,9 +26,9 @@ export default {
     later: 'Later you can pick from 24 in Settings.',
     next: 'Continue',
   },
-  // Play-vágás: the flashcard-review keys (word/sentence prompts,
+  // Play cut: the flashcard-review keys (word/sentence prompts,
   // typing, skip, borrowed-from-topic, new/review tags, spelling-tap hint)
-  // are gone with the Learn tab (step 3); correct/wrong/check still label the
+  // are gone with the Learn tab; correct/wrong/check still label the
   // PCIC screen's feedback.
   card: {
     check: 'Check',
@@ -36,11 +36,11 @@ export default {
     wrong: 'Wrong',
     next: 'Next',
     typeSentence: 'Type the sentence',
-    // a válasz-beírómező szürke placeholdere, a célnyelv nevével.
+    // the grey placeholder of the answer input field, with the name of the target language.
     typeIn: (lang: string): string => (lang === 'es' ? 'Type in Spanish' : 'Type in English'),
   },
   done: {
-    // K33 (play-vágás, 2026-09-22): the Learn tab (Done screen) is gone, this
+    // Play cut: the Learn tab (Done screen) is gone, this
     // key stays, the Stats tab's daily-streak tile uses it.
     streak: 'day streak',
   },
@@ -50,9 +50,9 @@ export default {
     stats: 'Stats',
     pcic: 'Learn',
   },
-  // K33 (play-vágás, 2026-09-22): a Game/Talk fülek kikerültek, ez a
-  // namespace csak a components/grammar/GrammarDrill.tsx feedback- és
-  // mark-item-feliratait tartja meg (a hub/confusables/myth/… kulcsok mentek).
+  // Play cut: the Game/Talk tabs were removed, this
+  // namespace keeps only the feedback and mark-item labels of components/grammar/GrammarDrill.tsx
+  // (the hub/confusables/myth/… keys went).
   games: {
     understood: 'Got it',
     correctFeedback: 'Correct!',
@@ -70,8 +70,8 @@ export default {
         preposition: 'PREPOSITION',
       } as Record<string, string>,
       markWrong: 'Not this one. Look for the word that plays that role.',
-      // a `why` drill kérdés-sora, ha az itemnek van `target` mezője
-      // (a kiemelt szó/szerkezet, amire a kérdés vonatkozik).
+      // the question line of the `why` drill, if the item has a `target` field
+      // (the highlighted word/structure the question is about).
       whyQuestion: (target: string) => `Why «${target}»?`,
     },
   },
@@ -118,9 +118,9 @@ export default {
     backToSyllabus: 'Back to the course',
     doneGood: 'That rule is sitting well.',
     doneAgain: 'Worth reading the rule once more before the next one.',
-    // kevert nyelvű felolvasás a lecke-szövegre.
+    // mixed-language read-aloud of the lesson text.
     readAloud: 'Read aloud',
-    // match/form feladat-fajták.
+    // match/form task kinds.
     matchHint: 'Match the words',
     formHint: 'Type the correct form',
     showTable: 'Table',
@@ -144,13 +144,13 @@ export default {
     // the word-deck button, only on table-less
     // lessons with >= 8 word cards (lib/grammar/tableDeck.ts wordCellsForLesson).
     practiceWords: (n: number) => `Practice the words · ${n} cards`,
-    // a saját válasz a helyes fölött a hibás ragozásnál (AnswerCompare).
+    // the learner's own answer above the correct one for a wrong conjugation (AnswerCompare).
     yourAnswer: 'Your answer',
-    // a félbehagyott feladat sora a gomb alatt, pl. "3/10 · 30%".
+    // the line of an abandoned task under the button, e.g. "3/10 · 30%".
     runProgress: (done: number, total: number, pct: number) => `${done}/${total} · ${pct}%`,
-    // az el / la névelő-választó feladat gombja (csak ott, ahol van ilyen készlet).
+    // button of the el / la article-chooser task (only where such a set exists).
     startArticle: (n: number) => `El or la? (${n})`,
-    // ideiglenes, új feladat-fajták (hibakereső, szórend, diktálás).
+    // temporary, new task kinds (error finder, word order, dictation).
     trialBadge: 'NEW · TEST',
     startSpot: (n: number) => `Spot the mistake (${n})`,
     startOrder: (n: number) => `Word order (${n})`,
@@ -165,7 +165,7 @@ export default {
     dictationSlow: 'Slower',
   },
   settings: {
-    // a téma-választó gombok (korábban settings.tsx-ben angolra égetve).
+    // the theme-picker buttons (previously hard-coded in English in settings.tsx).
     themeAuto: 'Auto',
     themeLight: 'Light',
     themeDark: 'Dark',
@@ -182,7 +182,7 @@ export default {
       posterSlogan: 'LEARN, LEARN, LEARN!',
       sample: 'el carro',
       know: 'I know',
-      // the E1 theme decor texts (senior, retro95, y2k, gamer).
+      // the theme decor texts (senior, retro95, y2k, gamer).
       readAloud: 'Read aloud',
       retroTitle: 'kimacha.exe',
       newWord: 'new word',
@@ -207,23 +207,23 @@ export default {
     strictAccentsHint: 'A missing accent (á, é, ñ) is a mistake when typing.',
     articlePicker: 'Article buttons',
     articlePickerHint: 'On Spanish noun cards you pick el/la/los/las instead of typing it. ⊘ means no article.',
-    // a PCIC "again" kártya visszatérési ideje.
+    // return time of a PCIC "again" card.
     missedWordDelay: 'Missed word comes back after',
     missedWordDelaySeconds: (n: string) => `${n} s`,
-    // a tanulási irány váltó sora + a hozzá tartozó
-    // lap (Settings, a Backup sor fölött).
+    // the row that switches the learning direction + its
+    // sheet (Settings, above the Backup row).
     learningDirection: 'Learning direction',
     chooseDirection: 'Choose learning direction',
     directionEnEs: 'English → Spanish',
     directionEsEn: 'Spanish → English',
     credits: 'Credits',
-    // a nyelvtan-haladás nullázó sora és megerősítése.
+    // the row that resets the grammar progress, and its confirmation.
     resetGrammar: '🗑️ Reset grammar progress',
     resetGrammarTitle: 'Reset grammar progress',
     resetGrammarMessage: 'This clears all grammar lesson and practice progress. Are you sure?',
-    // az újrakezdő sorok egy lenyíló szekcióban.
+    // the restart rows in a collapsible section.
     resetSection: '🗑️ Restart progress',
-    // a __DEV__-only vizsga-vezérlő (csak fejlesztői buildben látszik).
+    // the __DEV__-only exam control (visible only in a development build).
     devSeedExamA1: 'DEV: set up the exam state (A1-B2)',
     devSeedExamA1Done: 'DEV: exam state is set (A1-B2), open the level sheet',
   },
@@ -298,9 +298,9 @@ export default {
     wordsKnown: 'Words Known',
   },
   // the small tag on top of every card.
-  // K33 (play-vágás, 2026-09-22): the Learn tab's header (three numbers +
+  // Play cut: the Learn tab's header (three numbers +
   // focus session) is gone; levelProgress stays, Stats still uses it.
-  // Play-vágás: close had no caller left either, removed.
+  // Play cut: close had no caller left either, removed.
   header: {
     levelProgress: (known: number, total: number) => `${known} / ${total} words`,
   },
@@ -372,8 +372,8 @@ export default {
     noData: 'No usage yet, go learn something!',
     learningProgress: 'Learning Progress',
     reviewsToday: 'Reviews Today',
-    // "known" = interval >= 21 nap, "graduated" =
-    // túljutott a tanuló-lépéseken (lib/pcicStats.ts).
+    // "known" = interval >= 21 days, "graduated" =
+    // passed the learning steps (lib/pcicStats.ts).
     known21: 'Known (21+ days)',
     graduatedLabel: 'Learning → Graduated',
     knownAtLevel: (level: string, known: number) => `${level} ${known}`,
@@ -395,13 +395,13 @@ export default {
   },
   // the PCIC tab (English -> Spanish typing, Anki buttons).
   pcic: {
-    // 5b: a BadgeRow chip-sorának négy külön felirata (anki-ui-terv.html).
+    // the four separate labels of the BadgeRow chip line.
     badgeTotal: (n: number) => `${n} words`,
     badgeDue: (n: number) => `due ${n}`,
     badgeNew: (n: number) => `new ${n}`,
     badgeDone: (n: number) => `done ${n}`,
-    // a mai bevezetés szó/mondat bontásban +
-    // a mai teljes keret (napi limit + az 1a "+10" bónusz), pl. "today: 6 words · 4 sentences / 10".
+    // today's introduction split into words/sentences +
+    // today's full allowance (daily limit + the "+10" bonus), e.g. "today: 6 words · 4 sentences / 10".
     badgeIntroducedToday: (words: number, sentences: number, budget: number) =>
       `today: ${words} word${words === 1 ? '' : 's'} · ${sentences} sentence${sentences === 1 ? '' : 's'} / ${budget}`,
     // T1 only shows again/good (index.tsx GRADES), but `s.pcic[g]` indexes by
@@ -413,7 +413,7 @@ export default {
     doneTitle: 'Done for today',
     resetConfirmTitle: 'Reset progress',
     resetConfirmYes: 'Reset',
-    // a Beállítások sor, a nullázódó szint nevével.
+    // the Settings row, with the name of the level being reset.
     resetRow: (level: string) => `🗑️ Reset progress (${level})`,
     resetConfirmLevel: (level: string) => `This clears all progress on the ${level} deck. Are you sure?`,
     undo: 'Undo',
@@ -427,23 +427,23 @@ export default {
     tileNew: 'New',
     tileAgain: 'Again',
     introduced: (n: number, total: number) => `${n} / ${total} words introduced`,
-    // commit: a gombsor intervallum-előnézete (korábban lib/sm2.ts
-    // sm2Preview-ban magyarul égetve be, minden nyelven).
+    // commit: the interval preview of the button row (previously hard-coded
+    // in Hungarian in sm2Preview of lib/sm2.ts, for every language).
     intervalToday: '<1 day',
     intervalDays: (n: number) => `${n} ${n === 1 ? 'day' : 'days'}`,
-    // Szint-választó + Next.
+    // Level picker + Next.
     chooseLevel: 'Choose level',
     next: (label: string) => `Next → ${label}`,
     accentForgiven: 'Missing accent, counted as correct',
-    // a Check utáni „also: b · c” sor felirata (perjeles válasz).
+    // label of the "also: b · c" line after Check (slash answer).
     alsoLabel: 'also',
-    // az (i) magyarázat-gomb kisegítő felirata.
+    // accessibility label of the (i) explanation button.
     noteLabel: 'More info',
-    // a kártya képének forrássora (Wikimedia Commons).
+    // the source line of the card's image (Wikimedia Commons).
     photoCredit: (author: string, license: string, cropped: boolean) => `Photo: ${author}, ${license}, Wikimedia Commons${cropped ? ' (cropped)' : ''}`,
     photoCreditHint: 'Opens the photo page on Wikimedia Commons',
-    // a szint-választó lap feliratai és sorai (korábban data/pcic.ts
-    // LEVEL_LABELS-ben és components/LevelRow.tsx-ben angolra égetve).
+    // labels and rows of the level-picker sheet (previously hard-coded in English
+    // in LEVEL_LABELS of data/pcic.ts and in components/LevelRow.tsx).
     levelBeginner: 'Beginner',
     levelElementary: 'Elementary',
     levelIntermediate: 'Intermediate',
@@ -451,7 +451,7 @@ export default {
     levelNotStarted: 'not started',
     levelRowIntroduced: (n: number, total: number) => `${n} / ${total} introduced`,
   },
-  // a nyelvtani lecke végi teszt feliratai.
+  // labels of the end-of-lesson grammar quiz.
   lessonTest: {
     take: 'Take the lesson test',
     rules: (n: number, pct: number) => `${n} ${n === 1 ? 'question' : 'questions'}, pass ${pct}%`,
@@ -463,8 +463,8 @@ export default {
     missedTitle: 'Missed questions',
     whyHeading: 'Why is the sentence like this?',
   },
-  // a szintvizsga feliratai (szintválasztó sor,
-  // bevezető, kérdések, eredmény). A felület sehol nem írja ki a vizsga hivatalos nevét.
+  // labels of the level exam (level-picker row,
+  // intro, questions, result). The UI never shows the exam's official name anywhere.
   exam: {
     rowTitle: (level: string) => `Level exam ${level}`,
     rowLocked: (learned: number, needed: number, missing: number) => `${learned} / ${needed} words learned, ${missing} to go`,
@@ -504,7 +504,7 @@ export default {
     lockedBody: 'Learn more words and finish a grammar lesson first.',
     emptyBody: 'There is not enough material for the exam yet.',
     back: 'Back',
-    // az eredmény készségenként; a gyenge pontoknál link a leckére / a szavakra.
+    // the result per skill; for the weak points a link to the lesson / the words.
     skillWords: 'Words',
     skillGrammar: 'Grammar',
     skillReading: 'Reading',
@@ -513,7 +513,7 @@ export default {
     skillReviewLesson: (title: string) => `Review lesson: ${title}`,
     skillReviewWords: 'Review these words',
     skillPracticeSentences: 'Practice sentences',
-    // szóbeli tétel a billentyűzet mikrofonjával diktálva.
+    // spoken item dictated with the keyboard's microphone.
     introSpeaking: (n: number) => `Speaking: ${n} ${n === 1 ? 'question' : 'questions'}`,
     skillSpeaking: 'Speaking',
     speakTranslate: (lang: string): string => (lang === 'es' ? 'Say it in Spanish' : 'Say it in English'),
@@ -522,8 +522,8 @@ export default {
     speakPlaceholder: 'Your spoken words appear here',
     speakYouSaid: 'You said',
   },
-  // az adaptív szintfelmérő feliratai
-  // (belépő a szintválasztón, kérdések, eredmény).
+  // labels of the adaptive level assessment
+  // (entry on the level picker, questions, result).
   placement: {
     entry: 'Not sure? Take the 3 minute placement test',
     question: (i: number) => `Question ${i}`,
@@ -545,9 +545,9 @@ export default {
     again: 'Take it again',
     emptyBody: 'There is not enough material for a placement test yet.',
   },
-  // 5c: szófaj-chip a PCIC szó alatt (lib/pcicPos.ts).
-  // A teljes WordPos-készlet felirata (nem csak noun/verb/phrase),
-  // + conj/det/interj a PCIC-only Pos-értékekre.
+  // part-of-speech chip under the PCIC word (lib/pcicPos.ts).
+  // The label of the full WordPos set (not only noun/verb/phrase),
+  // + conj/det/interj for the PCIC-only Pos values.
   pos: {
     noun: 'noun',
     verb: 'verb',
@@ -561,8 +561,8 @@ export default {
     det: 'determiner',
     interj: 'interjection',
   },
-  // a próbavizsga (Stats "Practice exam"
-  // kártya, intro, papírok, eredmény, átnézés). A felület sehol nem ír ki védjegyes vizsganevet.
+  // the practice exam (Stats "Practice exam"
+  // card, intro, papers, result, review). The UI never shows a trademarked exam name anywhere.
   mockExam: {
     cardTitle: 'Practice exam',
     cardBody: 'A full practice exam in the official format: reading, listening, writing and speaking.',
@@ -657,15 +657,15 @@ export default {
   tableDeck: {
     chip: 'TABLE',
     promptCaption: 'person · verb',
-    // a tábla nélküli leckék szó-paklija
-    // ugyanezt a képernyőt használja, csak ez a két string vált.
+    // the word deck of table-less lessons
+    // uses the same screen, only these two strings change.
     wordChip: 'WORD',
     wordPromptCaption: 'meaning',
-    // es→en irányban a kérdés a spanyol szó, a válasz az angol szó.
+    // in the es→en direction the question is the Spanish word, the answer is the English word.
     wordPromptCaptionEn: 'How do you say it in English?',
     // caption for a cell with an English prompt (translate to Spanish).
     promptCaptionEn: 'translate to Spanish',
-    // a ragozó kártyán az infinitivus rejtett, a súgó-gomb mutatja.
+    // on the conjugation card the infinitive is hidden, the hint button shows it.
     showVerb: 'Show the verb',
     progress: (done: number, total: number) => `${done} / ${total} done`,
     completeTitle: (n: number) => `All ${n} cells done 🎉`,

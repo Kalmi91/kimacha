@@ -1,9 +1,9 @@
-// a próbavizsga szerzői szövegei célnyelven, mint egy valódi papíron.
-// A feladat-utasítások rövid, szint-hű mondatok; az írás-feladatokat a régi (4afeb8c^)
-// data/exams/mock/{es/a1,es/a2}.json hivatalos felépítést követő, kézzel írt írás-részéből emeltük át
-// (a tartalmi pontok kulcsszavai változatlanok); az angol írás-feladatok újak, a Kimacha angol
-// vizsga-kutatásának két szintjéhez írva. Az olvasás
-// és a hallás tartalma nem innen jön: azt lib/exam/mock/build.ts építi a szint szavaiból.
+// The practice exam's authored texts in the target language, as on a real paper.
+// The task instructions are short, level-faithful sentences; the writing tasks were carried over from the hand-written
+// writing part of the old (4afeb8c^) data/exams/mock/{es/a1,es/a2}.json that follows the official structure
+// (the keywords of the content points are unchanged); the English writing tasks are new, written for the two levels
+// of Kimacha's English exam research. The reading
+// and listening content does not come from here: lib/exam/mock/build.ts builds it from the level's words.
 
 import { DEFAULT_PLAYS, type MockFormFillTask, type MockShortMessageTask, type MockTarget } from './types';
 
@@ -19,7 +19,7 @@ export type MockInstructionKind =
   | 'listen_fill'
   | 'dictation';
 
-// A {times} helyére a lejátszások száma kerül szóban (egyszer / kétszer).
+// {times} is replaced by the number of plays in words (once / twice).
 const INSTRUCTIONS: Record<MockTarget, Record<MockInstructionKind, string>> = {
   es: {
     read_mc: 'Lea los textos y marque la opción correcta.',
@@ -52,7 +52,7 @@ const TIMES: Record<MockTarget, Record<number, string>> = {
   en: { 1: 'once', 2: 'twice' },
 };
 
-/** A feladat sorszáma a papíron: spanyolul "TAREA 2.", angolul "PART 2."; a felvételes feladatban a lejátszások száma. */
+/** The task number on the paper: in Spanish "TAREA 2.", in English "PART 2."; for a recorded task, the number of plays. */
 export function mockInstruction(target: MockTarget, kind: MockInstructionKind, taskNumber: number, plays: number = DEFAULT_PLAYS): string {
   const text = INSTRUCTIONS[target][kind].replace('{times}', TIMES[target][plays] ?? TIMES[target][DEFAULT_PLAYS]);
   return `${target === 'es' ? 'TAREA' : 'PART'} ${taskNumber}. ${text}`;
@@ -60,7 +60,7 @@ export function mockInstruction(target: MockTarget, kind: MockInstructionKind, t
 
 type WritingTask = Omit<MockFormFillTask, 'id' | 'skill'> | Omit<MockShortMessageTask, 'id' | 'skill'>;
 
-/** Az írás-papír feladatai (kulcs: `<irány>:<szint>`). */
+/** The tasks of the writing paper (key: `<direction>:<level>`). */
 export const MOCK_WRITING: Record<string, WritingTask[]> = {
   'es:A1': [
     {
@@ -116,7 +116,7 @@ export const MOCK_WRITING: Record<string, WritingTask[]> = {
       ],
     },
   ],
-  // Angol A1: két rövid szöveg (a nemzetközi minta 30-50 és 50-80 szavas írásának kicsinyített, kép nélküli változata).
+  // English A1: two short texts (a reduced, image-free version of the international sample's 30-50 and 50-80 word writing).
   'en:A1': [
     {
       kind: 'short_message',
@@ -143,7 +143,7 @@ export const MOCK_WRITING: Record<string, WritingTask[]> = {
       ],
     },
   ],
-  // Angol A2: irányított üzenet (legalább 25 szó, minden pontra válasz) és történet (legalább 35 szó).
+  // English A2: a guided message (at least 25 words, an answer to every point) and a story (at least 35 words).
   'en:A2': [
     {
       kind: 'short_message',

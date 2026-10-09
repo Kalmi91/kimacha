@@ -7,8 +7,8 @@ import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 
-// Y2K: elforgatott (+8°) matrica "new word / palabra nueva" a kártya jobb felső
-// sarkában, csillag-ikonok a kártya körül, a fejlécben streak-chip a valós napi sorozattal.
+// Y2K: a rotated (+8°) "new word / palabra nueva" sticker in the card's top right
+// corner, star icons around the card, a streak chip in the header with the real daily streak.
 
 const STICKER_FALLBACK = '#FF9BD2';
 

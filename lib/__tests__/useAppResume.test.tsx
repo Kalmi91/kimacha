@@ -1,5 +1,5 @@
-// hidegindításkor a mentett helyre lép (csak kész onboardingnál), utána minden folytatható váltást ment;
-// a mentést nem írja felül a kezdőlap, mielőtt a visszaállítás lefutott.
+// On a cold start it navigates to the saved place (only after finished onboarding), then saves every resumable switch;
+// the home screen does not overwrite the save before the restore has run.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -28,7 +28,7 @@ const flush = async (times = 8) => {
   }
 };
 
-describe('useAppResume (FB470)', () => {
+describe('useAppResume', () => {
   beforeEach(async () => {
     mockReplace.mockClear();
     mockPush.mockClear();
@@ -37,7 +37,7 @@ describe('useAppResume (FB470)', () => {
     await getDb().resetGameProgress(RESUME_GAME_ID);
   });
 
-  it('mentett lecke: hidegindításkor a Nyelvtan listára lép, arra a leckére; a Learn kezdőlap nem írja felül a mentést', async () => {
+  it('saved lesson: on cold start goes to the Grammar list, to that lesson; the Learn home does not overwrite the save', async () => {
     await saveResumePath(getDb(), `/grammar/${lessonId}`);
     renderHook(() => useAppResume(true));
     await flush();
@@ -46,7 +46,7 @@ describe('useAppResume (FB470)', () => {
     expect(await loadResumePath(getDb())).toBe(`/grammar/${lessonId}`);
   });
 
-  it('mentett fül: a fülre lép', async () => {
+  it('saved tab: goes to the tab', async () => {
     await saveResumePath(getDb(), '/stats');
     renderHook(() => useAppResume(true));
     await flush();
@@ -54,7 +54,7 @@ describe('useAppResume (FB470)', () => {
     expect(mockPush).not.toHaveBeenCalled();
   });
 
-  it('érvénytelen mentett hely (törölt lecke): nem navigál, a kezdőlap marad', async () => {
+  it('invalid saved place (deleted lesson): does not navigate, the home screen stays', async () => {
     await saveResumePath(getDb(), '/grammar/nincs-ilyen-lecke');
     renderHook(() => useAppResume(true));
     await flush();
@@ -62,7 +62,7 @@ describe('useAppResume (FB470)', () => {
     expect(mockPush).not.toHaveBeenCalled();
   });
 
-  it('nem a kezdőlapon indult app (mélylink / más útvonal): nem állít vissza, a mostani hely mentődik', async () => {
+  it('app not started on the home screen (deep link / other route): does not restore, the current place is saved', async () => {
     await saveResumePath(getDb(), '/stats');
     mockPathname = '/settings';
     renderHook(() => useAppResume(true));
@@ -72,7 +72,7 @@ describe('useAppResume (FB470)', () => {
     expect(await loadResumePath(getDb())).toBe('/settings');
   });
 
-  it('onboarding nélkül (első indítás) nem állít vissza semmit', async () => {
+  it('without onboarding (first launch) it restores nothing', async () => {
     await saveResumePath(getDb(), '/course');
     renderHook(() => useAppResume(false));
     await flush();
@@ -80,7 +80,7 @@ describe('useAppResume (FB470)', () => {
     expect(mockPush).not.toHaveBeenCalled();
   });
 
-  it('az indulási ellenőrzés közben (null) nem csinál semmit', async () => {
+  it('during the startup check (null) it does nothing', async () => {
     await saveResumePath(getDb(), '/course');
     renderHook(() => useAppResume(null));
     await flush();
@@ -88,7 +88,7 @@ describe('useAppResume (FB470)', () => {
     expect(await loadResumePath(getDb())).toBe('/course');
   });
 
-  it('a visszaállítás után a folytatható váltásokat menti, a vizsgát nem', async () => {
+  it('after the restore it saves the resumable switches, not the exam', async () => {
     const { rerender } = renderHook(() => useAppResume(true));
     await flush();
 
@@ -108,7 +108,7 @@ describe('useAppResume (FB470)', () => {
     expect(await loadResumePath(getDb())).toBe(`/grammar/${lessonId}`);
   });
 
-  it('a Learn fülre visszalépve a Learn az utolsó hely: a következő indulás a kezdőlapon marad', async () => {
+  it('returning to the Learn tab, Learn is the last place: the next launch stays on the home screen', async () => {
     await saveResumePath(getDb(), '/course');
     mockPathname = '/course';
     const { rerender } = renderHook(() => useAppResume(false));

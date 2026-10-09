@@ -1,5 +1,5 @@
-// a KText a téma betűjét (title / word / body), méretét, betűközét, sormagasságát és
-// kis-/nagybetűs formáját alkalmazza; a Klasszikus téma (és a Neo-brutál body) a mai viselkedés.
+// KText applies the theme's font (title / word / body), size, letter spacing, line height and
+// casing; the Classic theme (and the Neo-brutal body) is today's behaviour.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -27,7 +27,7 @@ async function renderWithSkin(skin: SkinId, ui: React.ReactElement) {
 
 const styleOf = (text: string) => RN.StyleSheet.flatten(screen.getByText(text).props.style);
 
-describe('KText: a téma betűje a szövegeken (PLAN-temak 4C)', () => {
+describe('KText: the theme font on texts', () => {
   let scheme: jest.SpyInstance;
   beforeEach(async () => {
     scheme = jest.spyOn(RN, 'useColorScheme').mockReturnValue('light');
@@ -36,17 +36,17 @@ describe('KText: a téma betűje a szövegeken (PLAN-temak 4C)', () => {
   });
   afterEach(() => scheme.mockRestore());
 
-  it('a Text néven is exportált', () => {
+  it('it is also exported as Text', () => {
     expect(Text).toBe(KText);
   });
 
-  it('classic: a stílus érintetlen (ugyanaz a referencia), nincs fontFamily', async () => {
+  it('classic: the style is untouched (same reference), no fontFamily', async () => {
     const style = { fontSize: 20, fontWeight: '700' as const };
     await renderWithSkin('classic', <KText variant="title" style={style}>cím</KText>);
     expect(screen.getByText('cím').props.style).toBe(style);
   });
 
-  it('brutal: a body, a title és a word is változatlan (a mai rendszer-betű, PLAN-temak 6E 2a)', async () => {
+  it('brutal: body, title and word are unchanged (the current system font)', async () => {
     await renderWithSkin(
       'brutal',
       <>
@@ -60,7 +60,7 @@ describe('KText: a téma betűje a szövegeken (PLAN-temak 4C)', () => {
     expect(styleOf('szó')).toEqual({ fontSize: 32, fontWeight: '700' });
   });
 
-  it('deco: title NAGYBETŰS + betűköz 3 + PoiretOne, body JosefinSans', async () => {
+  it('deco: title UPPERCASE + letter spacing 3 + PoiretOne, body JosefinSans', async () => {
     await renderWithSkin(
       'deco',
       <>
@@ -72,7 +72,7 @@ describe('KText: a téma betűje a szövegeken (PLAN-temak 4C)', () => {
     expect(styleOf('törzs')).toEqual({ fontSize: 14, fontFamily: 'JosefinSans' });
   });
 
-  it('senior: a betűméret 1,25-szörös (a mérettel nem rendelkező szöveg 14 alapról), Atkinson', async () => {
+  it('senior: font size 1.25x (text without a size from a base of 14), Atkinson', async () => {
     await renderWithSkin(
       'senior',
       <>
@@ -84,15 +84,15 @@ describe('KText: a téma betűje a szövegeken (PLAN-temak 4C)', () => {
     expect(styleOf('alap')).toMatchObject({ fontSize: 17.5, fontFamily: 'Atkinson' });
   });
 
-  it('retro95: minden betűméret +4 px, VT323', async () => {
+  it('retro95: every font size +4 px, VT323', async () => {
     await renderWithSkin('retro95', <KText style={{ fontSize: 16, lineHeight: 20 }}>törzs</KText>);
     const st = styleOf('törzs');
     expect(st).toMatchObject({ fontSize: 20, fontFamily: 'VT323' });
-    // a megadott sormagasság a mérettel arányosan nő
+    // the given line height grows in proportion to the size
     expect(st.lineHeight).toBeCloseTo(25);
   });
 
-  it('memphis: a cím + szó mérete 0,8-szoros, a body nem', async () => {
+  it('memphis: title + word size 0.8x, body not', async () => {
     await renderWithSkin(
       'memphis',
       <>
@@ -104,22 +104,22 @@ describe('KText: a téma betűje a szövegeken (PLAN-temak 4C)', () => {
     expect(styleOf('törzs')).toEqual({ fontSize: 20 });
   });
 
-  it('konnyu: betűköz 1,5 minden szövegen, sormagasság 1,6 × betűméret, Lexend', async () => {
+  it('konnyu: letter spacing 1.5 on all texts, line height 1.6 × font size, Lexend', async () => {
     await renderWithSkin('konnyu', <KText style={{ fontSize: 15 }}>törzs</KText>);
     expect(styleOf('törzs')).toMatchObject({ fontFamily: 'Lexend', letterSpacing: 1.5, lineHeight: 24 });
   });
 
-  it('a betűköz csak a cím + szón (display), ha a téma nem "all": deco body nem kap betűközt', async () => {
+  it('letter spacing only on title + word (display) when the theme is not "all": deco body gets no letter spacing', async () => {
     await renderWithSkin('deco', <KText style={{ fontSize: 14 }}>törzs</KText>);
     expect(styleOf('törzs').letterSpacing).toBeUndefined();
   });
 
-  it('bauhaus: a cím kisbetűs', async () => {
+  it('bauhaus: the title is lowercase', async () => {
     await renderWithSkin('bauhaus', <KText variant="title">cím</KText>);
     expect(styleOf('cím')).toMatchObject({ textTransform: 'lowercase', fontFamily: 'Jost-Bold' });
   });
 
-  it('loteria: a szó NAGYBETŰS, a cím nem', async () => {
+  it('loteria: the word is UPPERCASE, the title is not', async () => {
     await renderWithSkin(
       'loteria',
       <>
@@ -131,12 +131,12 @@ describe('KText: a téma betűje a szövegeken (PLAN-temak 4C)', () => {
     expect(styleOf('cím').textTransform).toBeUndefined();
   });
 
-  it('a saját fontFamily a stílusban erősebb, mint a témáé', async () => {
+  it("a fontFamily set explicitly in the style wins over the theme's", async () => {
     await renderWithSkin('deco', <KText variant="title" style={{ fontFamily: 'SpaceMono' }}>cím</KText>);
     expect(styleOf('cím').fontFamily).toBe('SpaceMono');
   });
 
-  it('beágyazott KText: a belső nem állít saját betűt / betűközt, de a fontWeight elmarad', async () => {
+  it('nested KText: the inner one sets no font / letter spacing of its own, but the fontWeight is dropped', async () => {
     await renderWithSkin(
       'deco',
       <KText variant="title" style={{ fontSize: 18 }}>

@@ -1,8 +1,8 @@
-// a PCIC haladás szintenkénti elkülönítése (id-előtag
-// alapján), amit a szint-választó lap N / total sorai is használnak.
-// A szint-igazítás óta egy item TÉNYLEGES
-// szintje a betöltött korpuszból jön (levelOfItem), az id-előtag csak
-// tartalék, ha az id nincs a korpuszban (lásd a fixture-tesztek lent).
+// Separating the PCIC progress per level (by id prefix),
+// which the N / total rows of the level-picker sheet also use.
+// Since the difficulty re-leveling, an item's ACTUAL
+// level comes from the loaded corpus (levelOfItem); the id prefix is only
+// a fallback when the id is not in the corpus (see the fixture tests below).
 
 import { matchesLevel, cardsForLevel, levelProgress } from '../pcicLevels';
 import { sm2NewCard } from '../sm2';
@@ -15,31 +15,31 @@ describe('matchesLevel', () => {
   });
 });
 
-// A szint-igazítás kritériuma: "teszt rá, hogy egy mozgatott, már tanult
-// tétel az új szinten a haladásával együtt jelenik meg". A DB-migráció
-// (lib/db/migrations.ts applyPcicLevelMoves) a lib/pcicLevelMoves.ts térkép
-// szerint átnevezi a pcic_cards.item_id oszlopot; ez a teszt a MIGRÁCIÓ UTÁNI
-// állapotot szimulálja (a kártya már az ÚJ id-n van), és azt bizonyítja, hogy
-// onnantól a haladás a helyes (új) szint alatt jelenik meg, nem a réginél.
-describe('a mozgatott szó haladása az új szinten jelenik meg (FB396, 7a)', () => {
-  // A konkrét példa: "morir" A2-ről A1-re mozgott.
+// The criterion of the difficulty re-leveling: "a test that a moved, already learned
+// item appears at the new level together with its progress". The DB migration
+// (lib/db/migrations.ts applyPcicLevelMoves) renames pcic_cards.item_id according
+// to the lib/pcicLevelMoves.ts map; this test simulates the state AFTER THE MIGRATION
+// (the card is already under the NEW id) and proves that from then on
+// the progress shows up under the correct (new) level, not under the old one.
+describe('the progress of a moved word shows up on the new level', () => {
+  // The concrete example: "morir" moved from A2 to A1.
   const oldId = 'a2-0bcfdca8';
   const newId = 'a1-46e12f1b';
 
-  it('a régi (megszűnt) id-n a haladás sem az A1, sem az A2 szűrőben nem jelenik meg', () => {
+  it('on the old (retired) id the progress shows in neither the A1 nor the A2 filter', () => {
     const staleCard = { ...sm2NewCard(oldId), state: 'review' as const };
-    // A régi id nem az igazi A1/A2 tagsághoz tartozik: mivel az id már nincs
-    // a betöltött korpuszban, matchesLevel az id-előtag tartalékra esik
-    // vissza, ami itt (véletlenül) A2-t adna - EZ a bug, amit a DB-migráció
-    // fut(tat)ása előz meg azzal, hogy sosem hagy a táblában régi id-t.
+    // The old id does not belong to the true A1/A2 membership: since the id is no longer
+    // in the loaded corpus, matchesLevel falls back to the id prefix,
+    // which here would (by accident) give A2 - THIS is the bug that running the DB migration
+    // prevents, by never leaving an old id in the table.
     expect(cardsForLevel([staleCard], 'A2').map((c) => c.itemId)).toEqual([oldId]);
   });
 
-  it('az új id-n (a migráció UTÁN) a haladás az A1 alatt jelenik meg, A2 alatt nem', () => {
+  it('on the new id (AFTER the migration) the progress shows under A1, not under A2', () => {
     const migratedCard = { ...sm2NewCard(newId), state: 'review' as const };
     expect(cardsForLevel([migratedCard], 'A1').map((c) => c.itemId)).toEqual([newId]);
     expect(cardsForLevel([migratedCard], 'A2')).toEqual([]);
-    expect(levelProgress([migratedCard], 'A1', 999)).toEqual({ introduced: 1, total: 999 }); // 999: tetszőleges total, csak a passthrough-t nézi
+    expect(levelProgress([migratedCard], 'A1', 999)).toEqual({ introduced: 1, total: 999 }); // 999: an arbitrary total, only the passthrough is checked
   });
 });
 

@@ -4,9 +4,9 @@ import { Text } from '@/components/KText';
 
 import type { SkinDecor } from '@/components/skins/types';
 
-// Csillámpóni: szivárvány-ív (6 sáv) a szó fölött, csillám-pöttyök és csillagok a
-// háttérben, ló-ikon a fejlécben. A szivárvány színei a spec fix színei (nem a téma a / b / c-je),
-// így a Saját mixben, más színekkel is szivárvány marad.
+// Csillámpóni (glitter pony): a rainbow arc (6 bands) above the word, glitter dots and stars in the
+// background, a horse icon in the header. The rainbow colours are the spec's fixed colours (not the theme's a / b / c),
+// so in My mix, with other colours too, it stays a rainbow.
 
 export const RAINBOW = ['#FF6EC7', '#FFB347', '#FFE066', '#7BE0AD', '#7FB8FF', '#C9A7FF'];
 
@@ -51,7 +51,7 @@ function CsillamponyBackdrop() {
   );
 }
 
-// A szivárvány-ív: 6 egymásba ágyazott félkör-gyűrű, a külső a legnagyobb, a fél-gyűrű 4 px vastag.
+// The rainbow arc: 6 nested half-circle rings, the outer one the largest, the half-ring is 4 px thick.
 function Rainbow() {
   const outer = 40;
   const band = 4;
@@ -110,7 +110,7 @@ function CsillamponyHeader({ children }: { children: ReactNode }) {
 }
 
 const styles = StyleSheet.create({
-  // flexShrink: a FitText a sor-konténerben összemegy, ezért a burkolója is.
+  // flexShrink: the FitText shrinks inside the row container, so its wrapper must too.
   word: { flexShrink: 1, alignItems: 'center', gap: 4 },
   arcRow: { flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'center', gap: 8 },
   star: { fontSize: 14 },

@@ -4,8 +4,8 @@ import { openWords } from '@/data/openWords';
 // User feedback (`sentence:El calabacín es una verdura verde.`): a tap
 // on any word of a sentence has to find that word's card, so it can go into the
 // spelling list.
-// A szöveg szerinti keresés a words-open kártyáin fut
-// (id = a kártya order-e): yo = 1, tal vez = 436.
+// The text lookup runs on the words-open cards
+// (id = the card's order): yo = 1, tal vez = 436.
 describe('word lookup by text', () => {
   it('finds a headword through case and sentence punctuation', () => {
     expect(findWordByText('YO', 'es', 'es')?.id).toBe(1);
@@ -35,9 +35,9 @@ describe('word lookup by text', () => {
     expect(findWordByText('   ', 'es', 'es')).toBeUndefined();
   });
 
-  // A words-open csak tőalakot hordoz; a ragozott, többes és nemi alak a tő kártyájához tartozik
-  // (hablar = 47, tener = 16, el amigo = 40, nuevo = 67, la ciudad = 51), de szót, ami nincs a
-  // words-openben, nem talál ki.
+  // words-open only carries the base form; the inflected, plural and gendered forms belong to the base card
+  // (hablar = 47, tener = 16, el amigo = 40, nuevo = 67, la ciudad = 51), but it does not make up a word that is not in
+  // words-open.
   it('finds the headword card of a conjugated, plural or feminine form', () => {
     expect(findWordByText('hablé', 'es', 'es')?.id).toBe(47);
     expect(findWordByText('Hablaremos.', 'es', 'es')?.id).toBe(47);

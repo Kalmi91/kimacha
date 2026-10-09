@@ -1,7 +1,7 @@
-// meaning-resolution for ANY token a game shows, the other
-// half of the user's kőbe vésett kritérium (0. szekció): "vagy amit már
-// tanultam, vagy ami új, annak ki van írva a jelentése, vagy kattintani lehet
-// rá és kiírja". components/games/GlossText.tsx renders what this module
+// Meaning-resolution for ANY token a game shows, the other
+// half of the user's set-in-stone criterion: "either I have already
+// learned it, or if it is new, its meaning is shown, or I can tap
+// it and it shows". components/games/GlossText.tsx renders what this module
 // resolves, it never looks anything up itself.
 
 import { findWordByText, normalizeWordToken } from '@/data/words';
@@ -10,7 +10,7 @@ export interface GlossInfo {
   wordId?: number; // absent for an authored-content override (proper nouns etc.)
   learned: string;
   native: string;
-  // TRUE = not yet in the caller's "known" set (pöttyözött aláhúzás a UI-ban).
+  // TRUE = not yet in the caller's "known" set (dotted underline in the UI).
   // A token resolved purely from an override is always treated as new: it is
   // by definition outside the learner's practiced vocabulary.
   isNew: boolean;

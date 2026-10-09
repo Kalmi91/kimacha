@@ -1,7 +1,7 @@
-// a PCIC fül irány-tudatos lett. Ez a
-// teszt az es→en irányt fedi: a prompt a kiinduló (spanyol) mező, a válasz
-// (bírálás + felolvasás) a célnyelvi (angol) mező - a pcicSpeak.test.tsx
-// en→es esetének tükörképe. Mock-minta: app/(tabs)/__tests__/pcicSpeak.test.tsx.
+// The PCIC tab became direction-aware. This
+// test covers the es→en direction: the prompt is the source (Spanish) field, the answer
+// (grading + read-aloud) is the target-language (English) field - the mirror image of the
+// en→es case in pcicSpeak.test.tsx. Mock pattern: app/(tabs)/__tests__/pcicSpeak.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -21,8 +21,8 @@ jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, left: 0, right: 0, bottom: 0 }),
 }));
 
-// Ugyanaz a fixture-alak, mint pcicSpeak.test.tsx-ben (es/en mező egyaránt
-// kitöltve); az irány dönti el, melyik a prompt és melyik a válasz.
+// Same fixture shape as in pcicSpeak.test.tsx (both the es and en fields
+// filled in); the direction decides which one is the prompt and which one is the answer.
 const FIXTURE_ITEM = { id: 'a1-x1', es: 'vida', en: 'life', kind: 'word' as const, section: 'Test', order: 0 };
 jest.mock('@/data/pcic', () => ({
   PCIC_LEVELS: ['A1'],
@@ -49,21 +49,21 @@ const flush = async (times = 4) => {
   }
 };
 
-describe('PCIC fül: es→en irány (PLAN-ketiranyu 4. lépés)', () => {
+describe('PCIC tab: es→en direction', () => {
   beforeEach(async () => {
     await getDb().resetPcicCards();
     await getDb().setOnboarding('es', 'en');
     mockSpeak.mockClear();
   });
 
-  it('új lap megjelenésekor a spanyol promptot mondja ki (a kiinduló nyelv)', async () => {
+  it('when a new card appears, it speaks the Spanish prompt (the source language)', async () => {
     render(<PcicScreen />);
     await flush();
 
     expect(mockSpeak).toHaveBeenCalledWith('vida', 'es-MX');
   });
 
-  it('felfedéskor angolul mondja ki a helyes (célnyelvi) alakot, "life"-ra bírál', async () => {
+  it('on reveal it speaks the correct (target-language) form in English, grades on "life"', async () => {
     const { UNSAFE_getByType, getByText } = render(<PcicScreen />);
     await flush();
     mockSpeak.mockClear();
@@ -75,11 +75,10 @@ describe('PCIC fül: es→en irány (PLAN-ketiranyu 4. lépés)', () => {
     expect(mockSpeak).toHaveBeenCalledWith('life', 'en-US');
   });
 
-  // Egy
-  // frissen váltott irányban, ahol még sose választottak szintet
-  // (db.hasPcicLevel() false), a főfül magától felnyitja a szint-választó
-  // lapot, ahelyett hogy csendben a fallback szintre ugorna.
-  it('szint nélkül landolva (hasPcicLevel false) magától felnyílik a szint-választó lap', async () => {
+  // In a freshly switched direction where no level has been chosen yet
+  // (db.hasPcicLevel() false), the main tab opens the level picker sheet by itself
+  // instead of silently jumping to the fallback level.
+  it('landing without a level (hasPcicLevel false), the level picker sheet opens by itself', async () => {
     const { getByText } = render(<PcicScreen />);
     await flush();
 

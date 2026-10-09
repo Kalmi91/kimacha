@@ -1,6 +1,6 @@
-// a lecke-oldal neo-brutalista formákkal: fejléc (vissza-doboz, cím,
-// szint-matrica), kártyák BrutalBox-ban, tábla-rács ink kerettel, kitöltésű
-// indító-gombok. A classic paletta a mai kinézet. Mock-minta: lessonV2.play.test.tsx.
+// the lesson page with neo-brutalist shapes: header (back box, title,
+// level sticker), cards in a BrutalBox, table grid with an ink border, filled
+// start buttons. The classic palette is today's look. Mock pattern: lessonV2.play.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({
@@ -39,7 +39,7 @@ const flush = async (times = 4) => {
   }
 };
 
-describe('lecke-oldal, neo-brutalista (NY23)', () => {
+describe('lesson page, neo-brutalist', () => {
   beforeEach(async () => {
     const db = getDb();
     await db.setOnboarding('en', 'es');
@@ -47,7 +47,7 @@ describe('lecke-oldal, neo-brutalista (NY23)', () => {
     await db.setGrammarPalette('brand');
   });
 
-  it('a vissza-doboz, a kitöltésű indító-gomb és a tábla megvan, a gomb az a-színnel', async () => {
+  it('the back box, the filled start button and the table are present, the button uses the a color', async () => {
     const view = render(<ThemeProvider><GrammarLessonScreen /></ThemeProvider>);
     await flush();
     expect(screen.queryByTestId('grammar-back')).toBeTruthy();
@@ -57,7 +57,7 @@ describe('lecke-oldal, neo-brutalista (NY23)', () => {
     view.unmount();
   });
 
-  it('classic palettával a mai oldal jelenik meg (nincs vissza-doboz)', async () => {
+  it('with the classic palette the current page shows (no back box)', async () => {
     await getDb().setGrammarPalette('classic');
     const view = render(<ThemeProvider><GrammarLessonScreen /></ThemeProvider>);
     await flush(6);

@@ -1,5 +1,5 @@
-// BrutalSwitch: brutalista palettán ink keretes téglalap sín (role switch + checked
-// állapot), classic palettán a mai Switch. Ugyanaz a value / onValueChange API.
+// BrutalSwitch: on the brutalist palette an ink-bordered rectangular track (role switch + checked
+// state), on the classic palette today's Switch. The same value / onValueChange API.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -20,8 +20,8 @@ const flush = async (times = 6) => {
   }
 };
 
-describe('BrutalSwitch (NY25)', () => {
-  it('brand palettán switch role + checked állapot, koppintásra az ellentett érték', async () => {
+describe('BrutalSwitch', () => {
+  it('with the brand palette switch role + checked state, tapping gives the opposite value', async () => {
     await getDb().setGrammarPalette('brand');
     const onChange = jest.fn();
     const view = render(
@@ -45,7 +45,7 @@ describe('BrutalSwitch (NY25)', () => {
     view.unmount();
   });
 
-  it('classic palettán a mai Switch', async () => {
+  it('with the classic palette the current Switch', async () => {
     await getDb().setGrammarPalette('classic');
     const view = render(
       <ThemeProvider>

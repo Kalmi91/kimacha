@@ -1,10 +1,10 @@
-// Duplikátum-takarítás (2026-08-07): amikor két szó-kártya ugyanarra a szóra
-// vonatkozott két szinten, a magasabb szintű törlődött a korpuszból. Ha a
-// tanulónak MINDKETTŐRE volt haladása, a két FSRS-sorból egyet kell csinálni.
+// Duplicate cleanup (2026-08-07): when two word cards referred to the same word
+// at two levels, the higher-level one was deleted from the corpus. If the
+// learner had progress on BOTH, the two FSRS rows have to be turned into one.
 //
-// Melyik nyer: a többet gyakorolt (reps), holtversenyben az erősebb emlék
-// (stability), végül a korábbi esedékesség, hogy az ismétlés ne csússzon ki.
-// Sose vesztünk haladást, a gyengébb sor esik ki.
+// Which one wins: the one practised more (reps), on a tie the stronger memory
+// (stability), finally the earlier due date, so the review does not slip away.
+// We never lose progress, the weaker row is dropped.
 
 interface MergeableCard {
   reps: number;

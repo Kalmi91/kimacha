@@ -19,7 +19,7 @@ export default function NotFoundScreen() {
         <Text variant="title" style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>This screen doesn&apos;t exist.</Text>
 
         {g.brutal ? (
-          // brutalista palettán fő gomb; a Link asChild adja a navigációt.
+          // main button on the brutalist palette; the Link asChild provides the navigation.
           <Link href="/" asChild>
             <BrutalButton testID="not-found-home" fill="a" label="Go to home screen!" onPress={() => {}} style={styles.brutalLink} />
           </Link>

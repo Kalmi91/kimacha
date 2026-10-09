@@ -1,6 +1,6 @@
-// a Check/grade menet, előre kijelölt
-// Knew it / Didn't know, "You said:" a régi hibás mondattal, üres pakli
-// esetén "All done for now". Mock-minta: pcicCardShell.test.tsx.
+// the Check/grade flow, preselected
+// Knew it / Didn't know, "You said:" with the old wrong sentence, "All done for now"
+// when the deck is empty. Mock pattern: pcicCardShell.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -41,19 +41,19 @@ async function seedBatch() {
   await getDb().saveMistakeBatch(result.batch.batchId, JSON.stringify(result.batch), '2026-09-23T10:00:00.000Z');
 }
 
-describe('Pakli (app/mistakes/deck.tsx)', () => {
-  it('üres pakli (nincs betöltött köteg) -> "All done for now"', async () => {
+describe('Deck (app/mistakes/deck.tsx)', () => {
+  it('empty deck (no batch loaded) -> "All done for now"', async () => {
     const { getByText } = render(<MistakesDeckScreen />);
     await flush();
     expect(getByText('All done for now')).toBeTruthy();
   });
 
-  it('a szó-kártya chipje "Word", Check után előre kijelölt "Knew it" pontos egyezésnél', async () => {
+  it('the word card chip is "Word", after Check "Knew it" is preselected on an exact match', async () => {
     await seedBatch();
     const { getByText, UNSAFE_getByType } = render(<MistakesDeckScreen />);
     await flush();
 
-    // Az első kártya (fájl-sorrend: mondatok, majd szavak, majd drillek) az s1 mondat.
+    // The first card (file order: sentences, then words, then drills) is the s1 sentence.
     expect(getByText('Sentence')).toBeTruthy();
     fireEvent.changeText(UNSAFE_getByType(TextInput), 'No tengo tomate.');
     fireEvent.press(getByText('✓ Check'));
@@ -62,12 +62,12 @@ describe('Pakli (app/mistakes/deck.tsx)', () => {
     expect(getByText('Next → Knew it')).toBeTruthy();
     expect(getByText('Knew it')).toBeTruthy();
     expect(getByText("Didn't know")).toBeTruthy();
-    // "You said:" a régi hibás mondattal.
+    // "You said:" with the old wrong sentence.
     expect(getByText('You said:')).toBeTruthy();
     expect(getByText('Pero no tienes tomate.')).toBeTruthy();
   });
 
-  it('rossz válasz -> előre kijelölt "Didn\'t know", a koppintás a következő kártyára visz', async () => {
+  it('wrong answer -> "Didn\'t know" preselected, tapping goes to the next card', async () => {
     await seedBatch();
     const { getByText, UNSAFE_getByType } = render(<MistakesDeckScreen />);
     await flush();
@@ -80,7 +80,7 @@ describe('Pakli (app/mistakes/deck.tsx)', () => {
     fireEvent.press(getByText("Didn't know"));
     await flush();
 
-    // Visszakerül a sor végére (due === today), a következő kártya jön: s2.
+    // It goes back to the end of the queue (due === today), the next card comes: s2.
     expect(getByText('✓ Check')).toBeTruthy();
   });
 });

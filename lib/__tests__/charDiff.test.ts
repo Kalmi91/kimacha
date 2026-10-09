@@ -71,7 +71,7 @@ describe('stripTrailingPunct', () => {
 
 // with the difficulty switch on, the diff must paint the dropped accent
 // instead of folding it away, while case stays forgiven.
-describe('charDiff with accents strict (FB132)', () => {
+describe('charDiff with accents strict', () => {
   it('marks a missing accent as a mistake', () => {
     const d = charDiff('estas', 'estás', { accents: false });
     expect(d.some(c => c.wrong)).toBe(true);

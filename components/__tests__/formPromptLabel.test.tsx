@@ -1,5 +1,5 @@
-// a ragozás-drill címkéje ("Sustantivo") mellett zárójelben a
-// segítő tábla oszlop-fejléce is látszik ("Noun"), ha a felület nyelvén más a fejléc.
+// Next to the conjugation drill's label ("Sustantivo") the helper table's column header is
+// also shown in parentheses ("Noun"), if the header differs in the UI language.
 import { render, screen } from '@testing-library/react-native';
 
 import GrammarDrill from '../grammar/GrammarDrill';
@@ -30,13 +30,13 @@ const lesson: LessonV2 = {
   items: [{ id: 'f1', kind: 'form', verb: 'Sustantivo', person: 'difícil', answer: 'dificultad', table: 'derivacion' }],
 };
 
-describe('GrammarDrill form: a címke és a tábla fejléce', () => {
-  it('angol felületen a címke mellett ott a tábla "Noun" fejléce', () => {
+describe('GrammarDrill form: the label and the table header', () => {
+  it('on the English UI the table "Noun" header is next to the label', () => {
     render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="en" onFinish={jest.fn()} kinds={['form']} />);
     expect(screen.getByText('Sustantivo (Noun) · difícil')).toBeTruthy();
   });
 
-  it('ha a fejléc ugyanaz, nincs zárójel', () => {
+  it('if the header is the same, no parentheses', () => {
     const same: LessonV2 = {
       ...lesson,
       body: [

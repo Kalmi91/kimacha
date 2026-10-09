@@ -1,7 +1,7 @@
-// a PCIC fejléc első chipje a
-// szint, koppintásra a szint-választó lap nyílik; választás után a fül
-// azonnal a választott szint pakliját adja, a haladás szintenként elkülönül.
-// Mock-minta: pcicSpeak.test.tsx (db, router, speech, data/pcic).
+// The first chip of the PCIC header is the
+// level; tapping it opens the level picker sheet; after choosing, the tab
+// immediately serves the deck of the chosen level, and progress is kept separate per level.
+// Mock pattern: pcicSpeak.test.tsx (db, router, speech, data/pcic).
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -21,15 +21,15 @@ jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, left: 0, right: 0, bottom: 0 }),
 }));
 
-// Két szint, egy-egy tétellel, hogy a váltás és az elkülönülés ellenőrizhető
-// legyen a valódi PCIC-korpusztól függetlenül.
+// Two levels, one item each, so that switching and separation can be checked
+// independently of the real PCIC corpus.
 const A1_ITEM = { id: 'a1-w1', es: 'hola', en: 'hello', kind: 'word' as const, section: 'Test', order: 0 };
 const B1_ITEM = { id: 'b1-w1', es: 'vida', en: 'life', kind: 'word' as const, section: 'Test', order: 0 };
 const ITEMS_BY_LEVEL: Record<string, typeof A1_ITEM[]> = { A1: [A1_ITEM], B1: [B1_ITEM] };
-// lib/pcicLevels.ts matchesLevel a mockolt data/pcic
-// levelOfItem-jét hívja (a valódi korpuszban ez dönti el egy item TÉNYLEGES
-// szintjét, nem az id-előtag); itt a rögzített ITEMS_BY_LEVEL fixture-ből
-// származtatva, hogy a mock a valódi modul alakját kövesse.
+// matchesLevel in lib/pcicLevels.ts calls levelOfItem of the mocked data/pcic
+// (in the real corpus this decides the ACTUAL level of an item, not the id
+// prefix); here it is derived from the fixed ITEMS_BY_LEVEL fixture
+// so that the mock follows the shape of the real module.
 jest.mock('@/data/pcic', () => ({
   PCIC_LEVELS: ['A1', 'B1'],
   PCIC_VIEW_LEVELS: ['A1', 'B1'],
@@ -53,18 +53,18 @@ const flush = async (times = 4) => {
   }
 };
 
-describe('PCIC fül: szint-választó (PLAN-play 10)', () => {
+describe('PCIC tab: level picker', () => {
   beforeEach(async () => {
     await getDb().resetPcicCards();
     await getDb().setPcicLevel('B1');
   });
 
-  it('a fejléc az aktív szintet mutatja, a lap a másik szintet is felkínálja', async () => {
+  it('the header shows the active level, the sheet also offers the other level', async () => {
     const { getByText } = render(<PcicScreen />);
     await flush();
 
     expect(getByText('B1 ▾')).toBeTruthy();
-    // A B1 tétel angol promptja látszik alapból.
+    // The English prompt of the B1 item is shown by default.
     expect(getByText('life')).toBeTruthy();
 
     fireEvent.press(getByText('B1 ▾'));
@@ -74,7 +74,7 @@ describe('PCIC fül: szint-választó (PLAN-play 10)', () => {
     expect(getByText('Intermediate')).toBeTruthy();
   });
 
-  it('másik szint választása azonnal annak pakliját adja, és perzisztálja a választást', async () => {
+  it('choosing another level immediately gives its deck, and persists the choice', async () => {
     const { getByText, queryByText } = render(<PcicScreen />);
     await flush();
 
@@ -89,25 +89,25 @@ describe('PCIC fül: szint-választó (PLAN-play 10)', () => {
     expect(await getDb().getPcicLevel()).toBe('A1');
   });
 
-  it('a haladás szintenként elkülönül: a B1 tétel "Knew it"-je nem tűnik el A1-re váltva, és A1-ről visszaváltva megmarad', async () => {
+  it('progress is separate per level: the B1 "Knew it" does not vanish when switching to A1, and survives switching back from A1', async () => {
     const { getByText, UNSAFE_getByType } = render(<PcicScreen />);
     await flush();
 
-    // B1 tételt "Knew it"-nek jelöl a dokkolt Next-tel.
+    // Marks the B1 item as "Knew it" with the docked Next.
     fireEvent.changeText(UNSAFE_getByType(TextInput), 'vida');
     fireEvent.press(getByText('✓ Check'));
     await flush();
     fireEvent.press(getByText('Next → Knew it'));
     await flush();
 
-    // Átvált A1-re.
+    // Switches to A1.
     fireEvent.press(getByText('B1 ▾'));
     await flush();
     fireEvent.press(getByText('Beginner'));
     await flush();
     expect(getByText('hello')).toBeTruthy();
 
-    // Vissza B1-re: a korábban "learning"-be lépett szó nem 'new' többé.
+    // Back to B1: the word that entered "learning" earlier is no longer 'new'.
     fireEvent.press(getByText('A1 ▾'));
     await flush();
     fireEvent.press(getByText('Intermediate'));

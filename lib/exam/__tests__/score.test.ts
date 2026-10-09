@@ -1,4 +1,4 @@
-// az átmenés 80%.
+// The pass mark is 80%.
 
 import { EXAM_PASS_PCT, examPassed, scoreExam } from '../score';
 import type { ExamItem, ExamItemResult, ExamSkill } from '../types';
@@ -16,9 +16,9 @@ const results = (correct: number, total: number, skill: ExamSkill = 'words'): Ex
   Array.from({ length: total }, (_, i) => ({ item: item(skill), correct: i < correct }));
 
 describe('examPassed (80%)', () => {
-  it('a küszöb 80', () => expect(EXAM_PASS_PCT).toBe(80));
+  it('the threshold is 80', () => expect(EXAM_PASS_PCT).toBe(80));
 
-  it('pontosan 80% átmegy, alatta bukik', () => {
+  it('exactly 80% passes, below it fails', () => {
     expect(examPassed(24, 30)).toBe(true);
     expect(examPassed(23, 30)).toBe(false);
     expect(examPassed(4, 5)).toBe(true);
@@ -27,24 +27,24 @@ describe('examPassed (80%)', () => {
     expect(examPassed(79, 100)).toBe(false);
   });
 
-  it('a 79,9% nem kerekedik 80-ra', () => {
+  it('79.9% does not round to 80', () => {
     expect(examPassed(799, 1000)).toBe(false);
   });
 
-  it('üres vizsga nem megy át', () => {
+  it('an empty exam does not pass', () => {
     expect(examPassed(0, 0)).toBe(false);
   });
 });
 
 describe('scoreExam', () => {
-  it('számol: jó / összes / egész százalék (lefelé) / átment', () => {
+  it('counts: right / total / whole percent (rounded down) / passed', () => {
     const score = scoreExam(results(24, 30));
     expect(score).toMatchObject({ correct: 24, total: 30, pct: 80, passed: true });
     const fail = scoreExam(results(23, 29));
     expect(fail).toMatchObject({ correct: 23, total: 29, pct: 79, passed: false });
   });
 
-  it('készségenként is összesít (az eredmény-lap későbbi lépéséhez)', () => {
+  it('also sums per skill (for a later step of the result sheet)', () => {
     const score = scoreExam([...results(2, 3, 'words'), ...results(1, 2, 'grammar'), ...results(1, 1, 'reading')]);
     expect(score.bySkill).toEqual({
       words: { correct: 2, total: 3 },
@@ -53,7 +53,7 @@ describe('scoreExam', () => {
     });
   });
 
-  it('üres lista: 0 pont, nem ment át', () => {
+  it('empty list: 0 points, not passed', () => {
     expect(scoreExam([])).toMatchObject({ correct: 0, total: 0, pct: 0, passed: false });
   });
 });

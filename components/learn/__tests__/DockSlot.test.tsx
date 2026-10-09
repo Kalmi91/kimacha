@@ -13,8 +13,8 @@ jest.mock('@/lib/speech', () => ({
   stopSpeaking: jest.fn(),
 }));
 
-// a beírós kártyák (vizsga, lecke-teszt) Check / Next gombja a billentyűzet fölé dokkolt sáv
-// (DockSlot), mint a szókártyán; host nélkül (önálló render) a régi inline gomb marad.
+// the Check / Next button of the typed cards (exam, lesson test) is a bar docked above the keyboard
+// (DockSlot), like on the word card; without a host (standalone render) the old inline button stays.
 
 function Host({ children }: { children: React.ReactNode }) {
   const dock = useDockSlot(Colors.light);
@@ -30,8 +30,8 @@ const typeCard = (onDone = jest.fn()) => (
   <ExamTypeCard prompt="to be" answer="ser" sentence={false} targetLang="es" strictAccents={false} onDone={onDone} />
 );
 
-describe('DockSlot: vizsga beírós kártya', () => {
-  it('host alatt a Check a dokkolt sávon van (nincs inline), üresen letiltott, a "nem tudom" a kártyában marad', () => {
+describe('DockSlot: exam typed-answer card', () => {
+  it('under the host the Check is on the docked bar (no inline), disabled when empty, the "I don\'t know" stays in the card', () => {
     render(<Host>{typeCard()}</Host>);
     expect(within(screen.getByTestId('learn-dock')).getByTestId('exam-check')).toBeTruthy();
     expect(screen.getAllByTestId('exam-check')).toHaveLength(1);
@@ -40,7 +40,7 @@ describe('DockSlot: vizsga beírós kártya', () => {
     expect(screen.getByTestId('exam-dont-know')).toBeTruthy();
   });
 
-  it('helyes válasz: a sáv Checkje továbbadja a választ; hibás válasz után ugyanott a Next', async () => {
+  it('correct answer: the Check of the bar passes the answer on; after a wrong answer the Next in the same place', async () => {
     const onDone = jest.fn();
     render(<Host>{typeCard(onDone)}</Host>);
 
@@ -57,7 +57,7 @@ describe('DockSlot: vizsga beírós kártya', () => {
     expect(onDone).toHaveBeenCalledWith(false);
   });
 
-  it('a sáv gombja mindig a legfrissebb beírt szöveggel értékel', () => {
+  it('the bar button always grades with the latest typed text', () => {
     const onDone = jest.fn();
     render(<Host>{typeCard(onDone)}</Host>);
     fireEvent.changeText(screen.getByTestId('exam-input'), 'se');
@@ -66,15 +66,15 @@ describe('DockSlot: vizsga beírós kártya', () => {
     expect(onDone).toHaveBeenCalledWith(true);
   });
 
-  it('host nélkül a régi inline Check marad (nincs dokkolt sáv)', () => {
+  it('without a host the old inline Check stays (no docked bar)', () => {
     render(typeCard());
     expect(screen.queryByTestId('learn-dock')).toBeNull();
     expect(screen.getByTestId('exam-check')).toBeTruthy();
   });
 });
 
-describe('DockSlot: szóbeli (diktálós) vizsga-kártya', () => {
-  it('a Check a dokkolt sávon van, hibás diktálás után ugyanott a Next', async () => {
+describe('DockSlot: spoken (dictation) exam card', () => {
+  it('the Check is on the docked bar, after a wrong dictation the Next in the same place', async () => {
     render(
       <Host>
         <ExamSpeakCard prompt="Yo soy" expected="Yo soy" mode="repeat" targetLang="es" strictAccents={false} onDone={jest.fn()} />
@@ -92,8 +92,8 @@ describe('DockSlot: szóbeli (diktálós) vizsga-kártya', () => {
   });
 });
 
-describe('DockSlot: diktálás a nyelvtani drillben', () => {
-  it('a Check a dokkolt sávon van (nincs inline), a Check után ugyanott a Next', async () => {
+describe('DockSlot: dictation in the grammar drill', () => {
+  it('the Check is on the docked bar (no inline), after the Check the Next in the same place', async () => {
     const onDone = jest.fn();
     render(
       <Host>

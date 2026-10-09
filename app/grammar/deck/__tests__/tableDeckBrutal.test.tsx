@@ -1,5 +1,5 @@
-// a tábla-gyakorló képernyő brutalista palettán (vissza-doboz, SegmentBar), classic
-// palettán a mai fejléc és sáv. Mock-minta: tableDeck.play.test.tsx.
+// the table-practice screen on the brutalist palette (back box, SegmentBar), on the classic
+// palette today's header and bar. Mock pattern: tableDeck.play.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({
@@ -36,14 +36,14 @@ const flush = async (times = 8) => {
   }
 };
 
-describe('Tábla-gyakorló, neo-brutalista (NY25)', () => {
+describe('Table drill, neo-brutalist', () => {
   beforeEach(async () => {
     const db = getDb();
     await db.setOnboarding('en', 'es');
     (db as any).__setLevelForTest('A1');
   });
 
-  it('brand palettán vissza-doboz + SegmentBar', async () => {
+  it('with the brand palette back box + SegmentBar', async () => {
     await getDb().setGrammarPalette('brand');
     const view = render(<ThemeProvider><TableDeckScreen /></ThemeProvider>);
     await flush();
@@ -52,7 +52,7 @@ describe('Tábla-gyakorló, neo-brutalista (NY25)', () => {
     view.unmount();
   });
 
-  it('classic palettán a mai fejléc: nincs doboz, nincs SegmentBar', async () => {
+  it('with the classic palette the current header: no box, no SegmentBar', async () => {
     await getDb().setGrammarPalette('classic');
     const view = render(<ThemeProvider><TableDeckScreen /></ThemeProvider>);
     await flush();

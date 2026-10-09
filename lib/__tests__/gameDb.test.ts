@@ -1,4 +1,4 @@
-// game_progress (memory db). Play-vágás
+// game_progress (memory db). Play cut
 // (2026-09-23): game_scores/game_settings and the vocabPool helper
 // (getAllWordCards) lost their last caller with the Game tab and are gone;
 // game_progress survives, now also used by the grammar drill.
@@ -20,7 +20,7 @@ describe('game_progress (memory db)', () => {
     );
   });
 
-  it('resetGameProgress clears one game only (PLAN-fb1001 FB431)', async () => {
+  it('resetGameProgress clears one game only', async () => {
     await db.setGameProgress('grammar-x', 'a', 'done');
     await db.setGameProgress('other-x', 'b', 'done');
     await db.resetGameProgress('grammar-x');

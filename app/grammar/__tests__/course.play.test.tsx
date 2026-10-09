@@ -94,9 +94,9 @@ describe('grammar course', () => {
 
   it('teaches the rule first, then drills it, then records the lesson as done', async () => {
     const lesson = lessonFor('es', 'legacy-fixture')!;
-    // a lecke csak >=80%-nál ír "kész" sort, ezért a teszt mindig
-    // a helyes választ nyomja meg. A GrammarDrill seedje Date.now()-ból jön,
-    // lemockolva előre kiszámítható ugyanazzal a `buildGrammarRound`-dal.
+    // a lesson only writes a "done" row at >=80%, so the test always
+    // presses the correct answer. GrammarDrill's seed comes from Date.now();
+    // with it mocked, it can be precomputed with the same `buildGrammarRound`.
     const now = 1700000000000;
     jest.spyOn(Date, 'now').mockReturnValue(now);
     const seed = hashString(`${lesson.topic}:${now}`);
@@ -136,9 +136,9 @@ describe('grammar course', () => {
     view.unmount();
   });
 
-  // es→en irányban az angol tanterv jelenik meg
-  // (A1, A2, B1, B2), a témák lecke nélkül „pronto” jelvénnyel, a spanyol témák nélkül.
-  it('es→en irányban az angol tantervet mutatja, spanyol téma nélkül', async () => {
+  // in es→en the English syllabus is shown
+  // (A1, A2, B1, B2), the lesson-less topics with a "pronto" badge, without the Spanish topics.
+  it('in the es→en direction shows the English syllabus, without Spanish topics', async () => {
     await getDb().setOnboarding('es', 'en');
     setLanguage('es');
     const view = render(<GrammarSyllabusScreen />);
@@ -151,7 +151,7 @@ describe('grammar course', () => {
     expect(screen.queryByTestId('grammar-level-C1')).toBeTruthy();
     expect(screen.queryByTestId('grammar-topic-presente-regular')).toBeNull();
     expect(screen.queryByTestId('grammar-topic-to_be')).toBeTruthy();
-    // az A0-A2 21 angol témához van lecke: egyik sem „próximamente”.
+    // all 21 English topics at A0-A2 have a lesson: none is "próximamente".
     expect(screen.getByTestId('grammar-percent-basic_verbs').props.children).not.toBe('próximamente');
     expect(screen.getByTestId('grammar-percent-to_be').props.children).not.toBe('próximamente');
 

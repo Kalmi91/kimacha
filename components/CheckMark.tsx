@@ -1,9 +1,9 @@
 import { View } from 'react-native';
 
-// rajzolt pipa (két elforgatott sáv),
-// hogy a "kész / helyes" jel ne emoji legyen (a ✅ zöld négyzete kilógott a
-// neo-brutalista stílusból), hanem a tokenből kapott színnel rajzolt forma.
-// Az alak maga is jelez (nem csak a szín): pipa = helyes / kész.
+// A drawn checkmark (two rotated bars), so the "done / correct" mark is not an emoji
+// (the green square of the ✅ stuck out of the neo-brutalist style) but a shape drawn
+// with the colour taken from the token.
+// The shape itself signals too (not only the colour): checkmark = correct / done.
 export default function CheckMark({ size = 28, color, thickness }: { size?: number; color: string; thickness?: number }) {
   const t = thickness ?? Math.max(3, Math.round(size / 6));
   const short = size * 0.36;

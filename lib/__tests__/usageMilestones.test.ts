@@ -2,10 +2,10 @@ import { isDailyMilestone, isLongHaulMilestone, pickMilestoneLine } from '@/lib/
 import en from '@/lib/i18n/en';
 import es from '@/lib/i18n/es';
 
-// User feedback: "1 óra után 15 percenként gratuláljon az app és.
-// indig más szöveggel."
+// User feedback: "after 1 hour the app should congratulate every 15 minutes,
+// always with a different text."
 describe('daily usage milestones', () => {
-  it('keeps the FB63 crossings at 30 and 60', () => {
+  it('keeps the crossings at 30 and 60', () => {
     expect(isDailyMilestone(30)).toBe(true);
     expect(isDailyMilestone(60)).toBe(true);
     expect(isDailyMilestone(45)).toBe(false);

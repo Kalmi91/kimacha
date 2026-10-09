@@ -1,5 +1,5 @@
-// A deck.ts tesztje: kártya-építés a mintafájlból,
-// session-választás és az előre kijelölt értékelés.
+// Test of deck.ts: card building from the sample file,
+// session selection and the pre-selected grading.
 
 import sample from './__fixtures__/sample.json';
 import { validateMistakesPayload } from './format';
@@ -13,7 +13,7 @@ function batch() {
 }
 
 describe('cardsForBatch', () => {
-  it('builds sentence/word/drill cards with the id scheme from PLAN-hibaim.md, skipping doubtful sentences', () => {
+  it('builds sentence/word/drill cards with the documented id scheme, skipping doubtful sentences', () => {
     const cards = cardsForBatch(batch());
 
     // 3 sentences in the fixture, 1 doubtful (s3) -> only 2 sentence cards.

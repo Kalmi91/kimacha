@@ -1,7 +1,7 @@
-// User feedback ("valamiért itt nem megy a progress bar", A2): a "+N új szó" adag-alapja (batchBase) egy
-// SZINTRE érvényes mérés volt, de szint-váltáskor is megmaradt. A1-en +15 után (alap = a nap addigi
-// kész kártyái az A1-en) a másik szinten a haladás-csík addig 0% maradt, amíg ott az alapnál több
-// kártya el nem készült. Mock-minta: pcicMoreNewSteps.test.tsx.
+// User feedback ("the progress bar doesn't work here for some reason", A2): the batch base (batchBase) of the "+N new words" batch was
+// a measurement valid for ONE LEVEL, but it also stayed in place after a level switch. After +15 on A1 (base = the cards
+// the day had finished so far on A1), the progress bar on the other level stayed at 0% until more cards than the base
+// had been finished there. Mock pattern: pcicMoreNewSteps.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -60,10 +60,10 @@ const flush = async (times = 8) => {
   }
 };
 
-describe('PCIC fül: a haladás-csík a másik szinten is halad (FB485)', () => {
+describe('PCIC tab: the progress bar also advances on the other level', () => {
   const today = localDateString();
 
-  // A1-en a napi keret (10) kimerítve: ma 10 szó kész, a sor üres, a "kész mára" képernyő jön.
+  // The daily budget (10) is used up on A1: 10 words done today, the queue is empty, the "done for today" screen shows up.
   beforeEach(async () => {
     await getDb().resetPcicCards();
     await getDb().setPcicNewBonus(0, today);
@@ -71,7 +71,7 @@ describe('PCIC fül: a haladás-csík a másik szinten is halad (FB485)', () => 
     await getDb().setPcicLevel('A1');
   });
 
-  it('A1-en +15 után, a B1-re váltva az első kész kártya már mozdítja a csíkot', async () => {
+  it('after +15 on A1, switching to B1: the first finished card already moves the bar', async () => {
     const { getByTestId, getByText } = render(<PcicScreen />);
     await flush();
     fireEvent.press(getByTestId('learn-more-new-15'));
@@ -89,11 +89,11 @@ describe('PCIC fül: a haladás-csík a másik szinten is halad (FB485)', () => 
       await flush();
     }
     const width = StyleSheet.flatten(getByTestId('learn-progress-fill').props.style).width as string;
-    // 5 kész, 10 hátra: 5 / (15 - 1).
+    // 5 done, 10 to go: 5 / (15 - 1).
     expect(parseFloat(width)).toBeCloseTo((5 / 14) * 100, 1);
   });
 
-  it('a +N adag-alapja a saját szintjén megmarad: A1-en +15 után, A1-en maradva a csík 0%-ról indul', async () => {
+  it('the +N batch base stays on its own level: after +15 on A1, staying on A1 the bar starts from 0%', async () => {
     const { getByTestId } = render(<PcicScreen />);
     await flush();
     fireEvent.press(getByTestId('learn-more-new-15'));

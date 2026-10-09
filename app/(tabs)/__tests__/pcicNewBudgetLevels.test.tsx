@@ -1,6 +1,6 @@
-// User feedback ("new 42?"): a napi új-szó keret NAPI; az A1-en vett "+10" bónuszok és az ott ma bevezetett
-// szavak a másik szinten is számítanak, tehát a szintváltás után nem jön vissza a teljes bónuszos
-// keret új szóként. Mock-minta: pcicLevelPicker.test.tsx.
+// User feedback ("new 42?"): the daily new-word budget is DAILY; the "+10" bonuses taken on A1 and the
+// words introduced there today also count on the other level, so after a level switch the full bonus
+// budget does not come back as new words. Mock pattern: pcicLevelPicker.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -58,7 +58,7 @@ const flush = async (times = 8) => {
   }
 };
 
-describe('PCIC fül: a napi új-szó keret szintek közt közös (FB452)', () => {
+describe('PCIC tab: the daily new-word budget is shared across levels', () => {
   const today = localDateString();
 
   beforeEach(async () => {
@@ -66,7 +66,7 @@ describe('PCIC fül: a napi új-szó keret szintek közt közös (FB452)', () =>
     await getDb().setPcicNewBonus(0, today);
   });
 
-  it('A1-en ma 40 szó bevezetve + 32 bónusz: a B1 fejléc nem 42, hanem a megmaradt 2 új szót mutatja', async () => {
+  it('40 words introduced on A1 today + 32 bonus: the B1 header shows the 2 remaining new words, not 42', async () => {
     for (const item of mockA1Items.slice(0, 40)) await getDb().upsertPcicCard(sm2Review(sm2NewCard(item.id), 'good', today));
     await getDb().setPcicNewBonus(32, today);
     await getDb().setPcicLevel('B1');
@@ -79,7 +79,7 @@ describe('PCIC fül: a napi új-szó keret szintek közt közös (FB452)', () =>
     expect(queryByText('new 42')).toBeNull();
   });
 
-  it('bónusz nélkül, másik szinten nem volt bevezetés: a szint a teljes napi keretet (10) kapja', async () => {
+  it('without a bonus, with no introductions on another level: the level gets the full daily budget (10)', async () => {
     await getDb().setPcicLevel('B1');
     const { getByText } = render(<PcicScreen />);
     await flush();
