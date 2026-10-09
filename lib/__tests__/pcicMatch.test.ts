@@ -56,7 +56,7 @@ describe('gradePcicAnswer', () => {
     expect(gradePcicAnswer('Buenos días', 'Buenos días.').match).toBe('exact');
   });
 
-  it('grades an empty answer as wrong, revealing the correct word (SZ5)', () => {
+  it('grades an empty answer as wrong, revealing the correct word', () => {
     const g = gradePcicAnswer('', 'hola');
     expect(g.match).toBe('wrong');
     expect(g.best).toBe('hola');
@@ -65,7 +65,7 @@ describe('gradePcicAnswer', () => {
 
 // The accent-strictness switch in Settings
 // also decides on PCIC typing, and it drives the suggestion of the Next button.
-describe('gradePcicAnswer strict accents (PLAN-play 10)', () => {
+describe('gradePcicAnswer strict accents', () => {
   it('a missing accent is near + accentOnly when strict is off (default)', () => {
     const g = gradePcicAnswer('cafe', 'café');
     expect(g.match).toBe('near');

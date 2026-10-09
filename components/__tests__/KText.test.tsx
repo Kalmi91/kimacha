@@ -131,12 +131,12 @@ describe('KText: the theme font on texts', () => {
     expect(styleOf('cím').textTransform).toBeUndefined();
   });
 
-  it('an own fontFamily in the style wins over the theme one', async () => {
+  it("a fontFamily set explicitly in the style wins over the theme's", async () => {
     await renderWithSkin('deco', <KText variant="title" style={{ fontFamily: 'SpaceMono' }}>cím</KText>);
     expect(styleOf('cím').fontFamily).toBe('SpaceMono');
   });
 
-  it('nested KText: the inner one sets no own font / letter spacing, but the fontWeight is dropped', async () => {
+  it('nested KText: the inner one sets no font / letter spacing of its own, but the fontWeight is dropped', async () => {
     await renderWithSkin(
       'deco',
       <KText variant="title" style={{ fontSize: 18 }}>

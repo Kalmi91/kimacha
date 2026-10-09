@@ -89,7 +89,7 @@ const withRun = (correct: number, total: number, index = 3, items = 10): KindPro
   run: { seed: 1, ids: Array.from({ length: items }, (_, i) => `i${i}`), index, correct, total },
 });
 
-describe('kindPercent (FB421)', () => {
+describe('kindPercent', () => {
   it('null if the kind has not been started', () => {
     expect(kindPercent(NO_KIND_PROGRESS)).toBeNull();
   });
@@ -112,7 +112,7 @@ describe('kindPercent (FB421)', () => {
   });
 });
 
-describe('lessonScore (FB415)', () => {
+describe('lessonScore', () => {
   it('null if no kind was touched', () => {
     expect(lessonScore([NO_KIND_PROGRESS, NO_KIND_PROGRESS, NO_KIND_PROGRESS, NO_KIND_PROGRESS])).toBeNull();
   });
@@ -134,7 +134,7 @@ describe('lessonScore (FB415)', () => {
   });
 });
 
-describe('betterBest (FB421)', () => {
+describe('betterBest', () => {
   it('the first finished round becomes the best', () => {
     expect(betterBest(null, { correct: 3, total: 10 })).toEqual({ correct: 3, total: 10 });
   });

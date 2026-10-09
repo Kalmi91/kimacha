@@ -45,7 +45,7 @@ describe('LessonBody', () => {
 
 // conjugation tables appear in person blocks, the stem dimmed, the ending separate in its own
 // Text (so that its style can be separate too).
-describe('LessonBody conjugation table (FB326)', () => {
+describe('LessonBody conjugation table', () => {
   it('renders 6 person blocks for presente-regular, hablamos split as stem + ending', () => {
     render(<LessonBody blocks={presenteRegular.body} contentLang="en" learnedLang="es" />);
     for (const person of ['yo', 'tú', 'él/ella/usted', 'nosotros', 'vosotros', 'ellos/ellas/ustedes']) {
@@ -63,7 +63,7 @@ describe('LessonBody conjugation table (FB326)', () => {
 // per verb class, so tener/poder/hacer -no longer share a colour just
 // because they are all -er verbs), and no stem/ending split on a table that
 // has no shared base (indefinido-irregular's "strong stem" table).
-describe('LessonBody conjugation table colouring (FB381-383)', () => {
+describe('LessonBody conjugation table colouring', () => {
   const indefinidoIrregular = indefinidoIrregularJson as unknown as LessonV2;
   const strongStemTable = indefinidoIrregular.body.filter((b) => b.kind === 'table' && b.id === 'indefinido-fuerte-1');
 

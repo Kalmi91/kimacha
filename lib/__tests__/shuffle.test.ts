@@ -31,7 +31,7 @@ describe('shuffleOptions', () => {
     expect(hashString('hola')).not.toBe(hashString('adios'));
   });
 
-  it('shuffleNoFixedPoints never leaves a pair in its own row and is deterministic (FB442)', () => {
+  it('shuffleNoFixedPoints never leaves a pair in its own row and is deterministic', () => {
     for (let n = 2; n <= 8; n++) {
       for (let seed = 0; seed < 100; seed++) {
         const o = shuffleNoFixedPoints(n, seed);

@@ -33,7 +33,7 @@ describe('groupTableRuns', () => {
   });
 });
 
-describe('LessonBody table tabs (FB443/FB445)', () => {
+describe('LessonBody table tabs', () => {
   it('shows one table at a time, switched by the verb chips', () => {
     render(<LessonBody blocks={ind10.body} contentLang="hu" learnedLang="es" />);
     expect(screen.queryByTestId('table-ind10-estar')).toBeTruthy();

@@ -39,7 +39,7 @@ async function styles(skin: SkinId) {
   };
 }
 
-describe('useDiffStyles (PLAN-temak 7H)', () => {
+describe('useDiffStyles', () => {
   let scheme: jest.SpyInstance;
   beforeEach(async () => {
     scheme = jest.spyOn(RN, 'useColorScheme').mockReturnValue('light');

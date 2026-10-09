@@ -20,7 +20,7 @@ const lessons = GRAMMAR_SYLLABUS.map((t) => t.id)
 
 const tableOf = (cellId: string) => cellId.split('::')[0];
 
-describe('table deck English prompts (FB463)', () => {
+describe('table deck English prompts', () => {
   it('finds the conjugation-table lessons', () => {
     expect(lessons.length).toBeGreaterThanOrEqual(25);
   });

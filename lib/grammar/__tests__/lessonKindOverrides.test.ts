@@ -8,7 +8,7 @@ import { lessonFor } from '../syllabus';
 import { grammarKindCounts } from '../../games/content';
 import { WORD_DECK_MIN_CARDS, wordCellsForLesson } from '../tableDeck';
 
-describe('indefinido-imperfecto (FB469)', () => {
+describe('indefinido-imperfecto', () => {
   const lesson = lessonFor('es', 'indefinido-imperfecto')!;
 
   it('has no form items, so no form drill button', () => {
@@ -25,7 +25,7 @@ describe('indefinido-imperfecto (FB469)', () => {
   });
 });
 
-describe('perfecto-vs-indefinido (FB471, FB472)', () => {
+describe('perfecto-vs-indefinido', () => {
   const lesson = lessonFor('es', 'perfecto-vs-indefinido')!;
 
   it('has no matching drill', () => {

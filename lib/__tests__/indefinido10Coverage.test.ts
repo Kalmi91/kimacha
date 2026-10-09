@@ -66,7 +66,7 @@ function classify(answer: string): { verb: string; person: string } | null {
   return null;
 }
 
-describe('indefinido-10-verbos, FB316 coverage', () => {
+describe('indefinido-10-verbos coverage', () => {
   it('has exactly 50 transform items', () => {
     expect(transformItems.length).toBe(50);
   });

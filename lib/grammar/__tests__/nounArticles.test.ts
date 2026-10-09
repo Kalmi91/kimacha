@@ -14,7 +14,7 @@ import type { LessonV2 } from '@/lib/grammar/lessonTypes';
 
 const LANGS = ['hu', 'en', 'es', 'de'] as const;
 
-describe('articleNouns (FB448)', () => {
+describe('articleNouns', () => {
   const nouns = articleNouns();
 
   it('nearly all nouns of the app: several hundred, unique', () => {
@@ -30,7 +30,7 @@ describe('articleNouns (FB448)', () => {
   });
 });
 
-describe('articleNounItems (FB448)', () => {
+describe('articleNounItems', () => {
   const items = articleNounItems();
 
   it('every item is a gap word, with el / la options, the right index is the article one', () => {

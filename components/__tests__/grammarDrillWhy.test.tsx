@@ -70,7 +70,7 @@ describe('GrammarDrill: why item', () => {
 
 // the translation gives away the answer, so it starts hidden, a
 // button reveals it, and it shows on its own once the item is answered.
-describe('GrammarDrill: why item translation (FB379)', () => {
+describe('GrammarDrill: why item translation', () => {
   it('starts hidden behind a button', () => {
     render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={jest.fn()} kinds={['why']} />);
     expect(screen.queryByText('Tanár vagyok.')).toBeNull();

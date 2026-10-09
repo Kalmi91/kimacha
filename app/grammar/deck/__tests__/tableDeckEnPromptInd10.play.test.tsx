@@ -39,7 +39,7 @@ const flush = async (times = 3) => {
 
 const cells = tableCellsForLesson(lessonFor('es', 'indefinido-10-verbos')!);
 
-describe('indefinido-10-verbos table deck: English prompt (FB444)', () => {
+describe('indefinido-10-verbos table deck: English prompt', () => {
   beforeEach(async () => {
     jest.clearAllMocks();
     const db = getDb();

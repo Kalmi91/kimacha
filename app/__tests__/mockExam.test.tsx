@@ -281,7 +281,7 @@ describe('Mock exam: flow', () => {
 describe('Mock exam: per-paper save and resume', () => {
   beforeEach(reset);
 
-  it('after quitting midway the finished paper answer stays, resume starts at the next paper', async () => {
+  it("after quitting midway the finished paper's answer stays, resume starts at the next paper", async () => {
     const first = await mount();
     await press(first, 'mock-begin');
     await solveReading(first); // reading done, correct

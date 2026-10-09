@@ -10,7 +10,7 @@ if (!lesson) throw new Error('indefinido-imperfecto must exist');
 const cells = tableCellsForLesson(lesson);
 const VERBS = ['hablar', 'comer', 'ser', 'ir', 'tener', 'hacer'];
 
-describe('indefinido-imperfecto verb tables (FB468)', () => {
+describe('indefinido-imperfecto verb tables', () => {
   it('has one indefinido + imperfecto table for each of the six verbs', () => {
     const ids = lesson.body.filter((b) => b.kind === 'table').map((b) => (b as { id: string }).id);
     expect(ids).toEqual(expect.arrayContaining(VERBS.map((v) => `ind-imp-${v}`)));

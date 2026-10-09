@@ -120,7 +120,7 @@ describe('palette infrastructure', () => {
   });
 });
 
-describe('BrutalBox / Sticker / SegmentBar (NY20)', () => {
+describe('BrutalBox / Sticker / SegmentBar', () => {
   it('behind the box goes a solid, offset ink back View (not shadow*)', () => {
     render(
       <ThemeProvider>
