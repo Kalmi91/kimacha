@@ -1,4 +1,4 @@
-// a words-open kártyák ragozott alakjai (lib/esForms.ts).
+// the inflected forms of the words-open cards (lib/esForms.ts).
 import { encliticBases, formsOfCard, looseVerbForms, participleForms, subjuntivoImperfecto, vosotrosPresente } from '../esForms';
 import { esFeminine, esPlural } from '../esInflect';
 import { conjugate, TENSES } from '../games/conjugate';

@@ -1,5 +1,5 @@
 // Card-level resume: when the app is reopened, the Learn round continues where it stopped: the same
-// card is up next, the botched ("again") card stays in its place (does not jump ahead), and the bar of the "+N new words" batch
+// card is up next, the missed ("again") card stays in its place (does not jump ahead), and the bar of the "+N new words" batch
 // stays at the same point. Reopening = unmount + render again (the DB stays, like persisted SQLite). Mock pattern:
 // pcicMoreNewSteps.test.tsx.
 
@@ -75,12 +75,12 @@ describe('PCIC tab: on reopening, the round resumes where it left off', () => {
     await getDb().setPcicLevel('A1');
   });
 
-  it('the failed card stays in place: the current card is the same after reopening (the failed one does not jump ahead)', async () => {
+  it('the missed card stays in place: the current card is the same after reopening (the missed one does not jump ahead)', async () => {
     const first = render(<PcicScreen />);
     await flush();
     expect(promptShown(first, 0)).toBe(true);
 
-    // a0: botched ("Didn't know"): goes to the end of the queue, with a timer; a1 is the card that is up next
+    // a0: missed ("Didn't know"): goes to the end of the queue, with a timer; a1 is the card that is up next
     fireEvent.changeText(first.UNSAFE_getByType(TextInput), 'xyz');
     fireEvent.press(first.getByText('✓ Check'));
     await flush();
@@ -89,7 +89,7 @@ describe('PCIC tab: on reopening, the round resumes where it left off', () => {
     expect(promptShown(first, 1)).toBe(true);
     first.unmount();
 
-    // reopening: the normal rebuild would put the botched (learning) a0 at the START of the queue
+    // reopening: the normal rebuild would put the missed (learning) a0 at the START of the queue
     const second = render(<PcicScreen />);
     await flush();
     expect(promptShown(second, 1)).toBe(true);

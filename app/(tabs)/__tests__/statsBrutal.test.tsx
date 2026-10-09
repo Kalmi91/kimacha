@@ -1,5 +1,5 @@
-// a Statisztika fül brutalista palettán (BrutalBox kártyák, szegmentált heti
-// cél sáv), classic palettán a mai kinézet. Mock-minta: settingsPalette.test.tsx.
+// the Statistics tab on the brutalist palette (BrutalBox cards, segmented weekly
+// goal bar), on the classic palette today's look. Mock pattern: settingsPalette.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-router', () => ({

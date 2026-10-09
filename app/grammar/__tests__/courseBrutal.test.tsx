@@ -1,7 +1,7 @@
-// a brutalista kurzus-lista: fejléc streak-matricával, szint-dobozok
-// (aktív = a), kész = DONE matrica, folyamatban = b kitöltés + szegmentált
-// sáv, zárt = szaggatott doboz. A classic paletta a mai kinézet.
-// Mock-minta: course.play.test.tsx.
+// the brutalist course list: header with a streak sticker, level boxes
+// (active = a), done = DONE sticker, in progress = b fill + segmented
+// bar, locked = dashed box. The classic palette is today's look.
+// Mock pattern: course.play.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({

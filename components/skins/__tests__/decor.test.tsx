@@ -136,7 +136,7 @@ describe('decor of the 4 starter themes', () => {
     view.unmount();
   });
 
-  it('in dark mode it uses the theme own decor colors (ukiyoe wave + seal)', async () => {
+  it("in dark mode it uses the theme's own decor colors (ukiyoe wave + seal)", async () => {
     await getDb().setSkin('ukiyoe');
     scheme.mockReturnValue('dark');
     const view = render(

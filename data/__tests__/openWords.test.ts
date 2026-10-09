@@ -1,4 +1,4 @@
-// a words-open WordEntry-alakú nézete (data/openWords.ts).
+// The WordEntry-shaped view of words-open (data/openWords.ts).
 import { getOpenWordsForLevel, getOpenWordsUpToLevel, openLevelOf, openWords } from '../openWords';
 
 describe('data/openWords.ts', () => {

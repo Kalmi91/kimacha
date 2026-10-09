@@ -126,7 +126,7 @@ export default function PcicScreen() {
   // persisted in the learn_settings.new_bonus/new_bonus_date columns (it
   // expires with the calendar day); load() reads it back from the DB, it does not reset it.
   const [pcicBonus, setPcicBonus] = useState(0);
-  // The Settings "Daily new words" (learn_settings.daily_new_limit,
+  // The Settings "New words a day" (learn_settings.daily_new_limit,
   // previously read only by the deleted Learn tab) now also sets the number of
   // PCIC daily new items; the header's "new" chip counts from it (queue state === 'new').
   const [dailyNewLimit, setDailyNewLimit] = useState(DEFAULT_DAILY_NEW_LIMIT);

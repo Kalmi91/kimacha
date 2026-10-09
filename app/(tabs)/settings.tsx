@@ -126,7 +126,7 @@ export default function SettingsScreen() {
   // grader forgives a missing á/é/ñ, on = it counts as a mistake.
   const [strictAccents, setStrictAccents] = useState(false);
   // Article button row on the typing Spanish noun card. On by default, because
-  // it was requested; the switch is the way back if it turns out not to work well in practice.
+  // the developer asked for it; the switch is the way back if it turns out not to work well in practice.
   const [articlePicker, setArticlePicker] = useState(true);
   // User feedback: "there should be a text that congratulates me for reaching the
   // weekly limit, which is the goal, something huge. and at the goal it should also write

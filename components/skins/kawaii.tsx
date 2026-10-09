@@ -5,8 +5,8 @@ import { Text } from '@/components/KText';
 import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 
-// Kawaii: mosolygó arc-ikon a szó fölött (kör, két szem, mosoly: View-kból, a téma
-// rózsaszín `icon` színével), szív a fejlécben.
+// Kawaii: a smiling face icon above the word (circle, two eyes, smile: made of Views, in the theme's
+// pink `icon` colour), a heart in the header.
 
 const FACE = 30;
 
@@ -45,7 +45,7 @@ function KawaiiHeader({ children }: { children: ReactNode }) {
 }
 
 const styles = StyleSheet.create({
-  // flexShrink: a FitText a sor-konténerben összemegy, ezért a burkolója is.
+  // flexShrink: the FitText shrinks inside the row container, so its wrapper has to as well.
   word: { flexShrink: 1, alignItems: 'center', gap: 6 },
   face: { width: FACE, height: FACE, borderRadius: FACE / 2, borderWidth: 2, alignItems: 'center', justifyContent: 'center' },
   eyes: { flexDirection: 'row', gap: 8, marginTop: -2 },

@@ -264,7 +264,7 @@ describe('decor of the 9 E1 themes', () => {
     view.unmount();
   });
 
-  it('kawaii: smiling face above the word, heart in the header, with the theme pink icon color', async () => {
+  it("kawaii: smiling face above the word, heart in the header, with the theme's pink icon color", async () => {
     const view = await mountSkin('kawaii');
     const icon = SKINS.kawaii.colors.light?.extra?.icon;
     expect(flat(view.getByTestId('decor-kawaii-face').props.style).borderColor).toBe(icon);

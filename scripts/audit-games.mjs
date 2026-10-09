@@ -54,7 +54,7 @@
  *   - a chat node with >=2 options where none is marked `good:true`
  *
  * Run: node scripts/audit-games.mjs
- * Exit 1 if any P1 is found (the build gate).
+ * Exit 1 if any P1 is found (the F3 gate).
  */
 
 import { readFileSync, readdirSync, existsSync } from 'fs';

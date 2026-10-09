@@ -69,7 +69,7 @@ export interface DB {
   // the selected PCIC level (A1-B2), app-wide, like the
   // status-bar tint. `levelPrefix` is optional: it clears only that level
   // (by the id list fetched from the loaded corpus, following lib/pcicLevels.ts
-  // matchesLevel: since the difficulty fit, the level is not
+  // matchesLevel: since the difficulty re-leveling, the level is not
   // a bare id prefix), without it the whole table, as before.
   getPcicLevel(): Promise<PcicLevel>;
   // whether the active pair has an EXPLICITLY chosen level

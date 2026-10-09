@@ -4,8 +4,8 @@ import { Triangle, Zigzag } from '@/components/skins/partsE2';
 import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 
-// Memphis: a háttérben cikcakk (b) jobb fent, sárga kör (a téma `yellow` színe,
-// tartalék: a papír) bal lent, türkiz (c) háromszög jobb lent. Mind a tartalom mögött áll.
+// Memphis: in the background a zigzag (b) at the top right, a yellow circle (the theme's `yellow` colour,
+// fallback: the paper) at the bottom left, a turquoise (c) triangle at the bottom right. All of them sit behind the content.
 
 function MemphisBackdrop() {
   const g = useGrammarColors();

@@ -1,6 +1,6 @@
 // Separating the PCIC progress per level (by id prefix),
 // which the N / total rows of the level-picker sheet also use.
-// Since the level alignment, an item's ACTUAL
+// Since the difficulty re-leveling, an item's ACTUAL
 // level comes from the loaded corpus (levelOfItem); the id prefix is only
 // a fallback when the id is not in the corpus (see the fixture tests below).
 
@@ -15,7 +15,7 @@ describe('matchesLevel', () => {
   });
 });
 
-// The criterion of the level alignment: "a test that a moved, already learned
+// The criterion of the difficulty re-leveling: "a test that a moved, already learned
 // item appears at the new level together with its progress". The DB migration
 // (lib/db/migrations.ts applyPcicLevelMoves) renames pcic_cards.item_id according
 // to the lib/pcicLevelMoves.ts map; this test simulates the state AFTER THE MIGRATION

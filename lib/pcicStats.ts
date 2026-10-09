@@ -4,7 +4,7 @@
 // but below the threshold. Pure functions over the already loaded Sm2Card[],
 // following the pattern of lib/pcicLevels.ts (the caller supplies the cards, this only filters).
 //
-// Items marked by hand as "I won't learn this" (sm2MarkKnown, `known: true`)
+// Items marked by hand as "Don't learn this" (sm2MarkKnown, `known: true`)
 // are not included in either count: they did not become known through repetition,
 // the learner just declared once that they know them.
 
@@ -32,7 +32,7 @@ export function countKnown(cards: Sm2Card[], thresholdDays: number = KNOWN_THRES
  * The count of the "Words Known" card. The 21-day threshold
  * (`countKnown`) gave 0 for weeks for a beginner even though they had already learned words, so the
  * card counts LEARNED words: those past the learning steps (state
- * 'review'), or those the learner marked as known ("I won't learn this"). The stable (21+
+ * 'review'), or those the learner marked as known ("Don't learn this"). The stable (21+
  * day) number stays on a separate tile.
  */
 export function countLearned(cards: Sm2Card[]): number {

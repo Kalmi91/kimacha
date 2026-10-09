@@ -40,7 +40,7 @@ describe('AnswerCompare', () => {
     expect(highlighted(screen.getByTestId('answer-compare-correct'))).toBe('á');
   });
 
-  it('highlights the omitted letter in the correct row, the extra letter in the own row', () => {
+  it('highlights the omitted letter in the correct row, the extra letter in your own row', () => {
     render(<AnswerCompare typed="son" correct="somos" g={g} />);
     expect(highlighted(screen.getByTestId('answer-compare-correct'))).toBe('mos');
     expect(highlighted(screen.getByTestId('answer-compare-typed'))).toBe('n');
@@ -52,7 +52,7 @@ describe('AnswerCompare', () => {
     expect(highlighted(screen.getByTestId('answer-compare-correct'))).toBe('');
   });
 
-  it('with an empty answer the own row is a dash', () => {
+  it('with an empty answer your own row is a dash', () => {
     render(<AnswerCompare typed="" correct="somos" g={g} />);
     expect(screen.getByTestId('answer-compare-typed').props.children).toBeTruthy();
   });
@@ -69,7 +69,7 @@ describe('GrammarDrill: wrong conjugation → comparison', () => {
     items: [{ id: 'form-cmp', kind: 'form', verb: 'ser', person: 'nosotros', answer: 'somos', table: 'x' }],
   };
 
-  it('under Not quite! the own and the correct answer show', () => {
+  it('under Not quite! your own and the correct answer show', () => {
     render(<GrammarDrill topic={topic} learnedLang="es" contentLang="en" onFinish={jest.fn()} kinds={['form']} />);
     fireEvent.changeText(screen.getByTestId('formInput'), 'son');
     fireEvent.press(screen.getByTestId('formCheck'));

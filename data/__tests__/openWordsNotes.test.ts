@@ -1,5 +1,5 @@
-// a data/words-open/notes.json (i) magyarázatai: minden kulcs egy
-// létező `o<order>` kártya, a szöveg angol, rövid, és a Learn-kártya hozzáfér (PcicItem.note).
+// the (i) explanations of data/words-open/notes.json: every key is an
+// existing `o<order>` card, the text is English and short, and the Learn card gives access to it (PcicItem.note).
 import notes from '../words-open/notes.json';
 import { findPcicItem, setPcicTarget } from '../pcic';
 
