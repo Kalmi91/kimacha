@@ -1,18 +1,17 @@
-// az írás-papír szigorítása (koordinátori észrevétel, 2026-10-01: a
-// kulcsszavas pontozás túl laza volt: egy beillesztett feladat-szöveg, egy sokszor ismételt szó
-// vagy értelmetlen betűhalmaz is kapott pontot a szószám miatt, az űrlap pedig bármilyen
-// kitöltött mezőt elfogadott).
+// Tightening of the writing paper: the keyword scoring used to be too lax: a pasted task text, a
+// much-repeated word or a meaningless jumble of letters also earned points because of the word
+// count, and the form accepted any filled-in field.
 //
-// Egy üzenet csak akkor ér pontot, ha ÉRTELMES szöveg: a feladat szövegéből bemásolt hosszú
-// szakaszok nem számítanak, az értelmetlen szavak (magánhangzó nélküli, ismételt betűs) nem
-// számítanak, a szöveg nem lehet szóismétlés, és (ha van szótár) a szavai nagyrészt a
-// célnyelv ismert szavai. A tartalmi pont a szöveg legalább fele minimum-szószámát követeli,
-// így egy-két szóba zsúfolt kulcsszó sem pontot. A hosszú, jó válasz továbbra is mind megkapja.
+// A message earns points only if it is MEANINGFUL text: long passages pasted from the task text
+// do not count, nonsense words (with no vowels, repeated letters) do not count, the text cannot be
+// a word repetition, and (if there is a dictionary) its words are mostly known words of the target
+// language. A content point requires the text to have at least half the minimum word count,
+// so a keyword crammed into a word or two does not earn a point either. A long, good answer still gets everything.
 
 import type { PcicItem } from '@/data/pcic';
 import type { MockFormField, MockTarget } from './types';
 
-/** Kis/nagybetű és ékezet nélküli összevetés a kulcsszavakhoz. */
+/** Comparison without case and accents for the keywords. */
 export function fold(text: string): string {
   return text
     .toLowerCase()
@@ -28,7 +27,7 @@ export function countWords(text: string): number {
   return trimmed ? trimmed.split(/\s+/).length : 0;
 }
 
-/** Az ékezet nélküli, kisbetűs szavak (csak betűk és aposztróf; a számok és írásjelek kiesnek). */
+/** Lower-case words without accents (letters and apostrophe only; numbers and punctuation drop out). */
 export function foldedTokens(text: string): string[] {
   return fold(text)
     .replace(/[^a-z'\s]/g, ' ')
@@ -37,16 +36,16 @@ export function foldedTokens(text: string): string[] {
     .filter(Boolean);
 }
 
-/** Minimum ennyi egymás utáni szó egyezése a feladat szövegével "bemásolt" szakasz (természetes visszhang ennél rövidebb). */
+/** At least this many consecutive words matching the task text make a "pasted" passage (a natural echo is shorter than this). */
 const COPY_RUN = 5;
-/** A szavak legalább ekkora hányada különböző (a sokszor ismételt szó nem szöveg). */
+/** At least this share of the words must be different (a much-repeated word is not text). */
 const MIN_DISTINCT_RATIO = 0.5;
-/** A szavak legalább ekkora hányada ismert szótári szó (csak ha van szótár). */
+/** At least this share of the words must be known dictionary words (only if there is a dictionary). */
 const MIN_KNOWN_RATIO = 0.4;
 
 const VOWELS = /[aeiouy]/;
 
-// A billentyűzet sorai: 4 egymás melletti billentyű ("asdf", "qwer", "zxcv", visszafelé is) nem szó.
+// Keyboard rows: 4 adjacent keys ("asdf", "qwer", "zxcv", also reversed) are not a word.
 const ROWS = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'];
 const KEY_RUNS = ROWS.flatMap((row) => {
   const out: string[] = [];
@@ -57,7 +56,7 @@ const KEY_RUNS = ROWS.flatMap((row) => {
   return out;
 });
 
-/** Értelmetlen szó: magánhangzó nélküli (3+ betű), ugyanaz a betű 4+ szer, 6+ mássalhangzó egymás után, vagy 4 egymás melletti billentyű. */
+/** Nonsense word: with no vowels (3+ letters), the same letter 4+ times, 6+ consonants in a row, or 4 adjacent keys. */
 export function isNonsenseToken(tok: string): boolean {
   if (tok.length >= 3 && !VOWELS.test(tok)) return true;
   if (/([a-z])\1{3,}/.test(tok)) return true;
@@ -65,7 +64,7 @@ export function isNonsenseToken(tok: string): boolean {
   return KEY_RUNS.some((run) => tok.includes(run));
 }
 
-// --- Szótár: a célnyelv ismert szavai a betöltött korpuszból + a leggyakoribb funkciószavak.
+// --- Dictionary: the known words of the target language from the loaded corpus + the most frequent function words.
 
 const FREE: Record<MockTarget, string> = {
   es: 'de la que el en y a los se del las un por con no una su para es al lo como mas pero sus le ya o fue este si porque esta entre cuando muy sin sobre tambien me hasta hay donde quien desde todo nos durante todos uno les ni contra otros ese eso ante ellos e esto mi antes algunos unos yo otro otras otra tanto esa estos mucho nada muchos cual poco ella estar estas algo nosotros mis tu te ti tus ellas soy eres somos son estoy estas esta estan tengo tiene tienen vivo vive trabajo quiero puedo voy va vamos hago hace gusta gustan llamo llama hola gracias adios por favor aqui alli hoy manana ayer',
@@ -74,7 +73,7 @@ const FREE: Record<MockTarget, string> = {
 
 const stripPunct = /[¿?¡!.,;:()"«»/]/g;
 
-/** A célnyelvi szótár: a korpusz tételeinek célnyelvi alakja + példamondatai (a hívó adja a szintek tételeit). */
+/** The target-language dictionary: the target-language forms of the corpus items + their example sentences (the caller supplies the items of the levels). */
 export function buildLexicon(items: PcicItem[], target: MockTarget): Set<string> {
   const lex = new Set<string>(FREE[target].split(' '));
   for (const it of items) {
@@ -87,7 +86,7 @@ export function buildLexicon(items: PcicItem[], target: MockTarget): Set<string>
   return lex;
 }
 
-/** Ragozott/többes alakok is ismertnek számítanak (a szótár a szótári alakokat és a példamondatokat tartalmazza). */
+/** Inflected/plural forms also count as known (the dictionary contains the dictionary forms and the example sentences). */
 function isKnown(tok: string, lex: ReadonlySet<string>): boolean {
   if (lex.has(tok)) return true;
   for (const suffix of ['s', 'es', 'ed', 'd', 'ing', 'a', 'as', 'o', 'os']) {
@@ -97,18 +96,18 @@ function isKnown(tok: string, lex: ReadonlySet<string>): boolean {
 }
 
 interface MessageAssessment {
-  /** Az értelmes, nem bemásolt szavak száma. */
+  /** The number of meaningful, non-pasted words. */
   words: number;
-  /** Egyáltalán szövegnek számít-e (különben semmi nem ér pontot). */
+  /** Whether it counts as text at all (otherwise nothing earns a point). */
   valid: boolean;
-  /** A számításba vett szavak, szóközzel összefűzve (a kulcsszavas egyeztetés ezen fut). */
+  /** The words taken into account, joined with spaces (the keyword matching runs on this). */
   text: string;
 }
 
 /**
- * Egy üzenet értékelése: a feladat szövegéből bemásolt szakaszokat és az értelmetlen szavakat
- * kihagyja, aztán ellenőrzi, hogy a maradék szöveg elég változatos és (ha van szótár) ismert
- * szavakból áll.
+ * Evaluating a message: it leaves out passages pasted from the task text and the nonsense words,
+ * then checks that the remaining text is varied enough and (if there is a dictionary) made of known
+ * words.
  */
 export function assessMessage(text: string, reference: string[], lexicon?: ReadonlySet<string>): MessageAssessment {
   const tokens = foldedTokens(text);
@@ -125,7 +124,7 @@ export function assessMessage(text: string, reference: string[], lexicon?: Reado
   return { words: kept.length, valid: kept.length > 0 && distinctOk && knownOk, text: kept.join(' ') };
 }
 
-/** Az űrlap egy mezőjének ellenőrzése: kitöltve és a mező fajtájának megfelelő, értelmes érték. */
+/** Checking one form field: filled in and a meaningful value matching the field's kind. */
 export function checkField(field: MockFormField, raw: string): boolean {
   const value = raw.trim();
   if (!value) return false;

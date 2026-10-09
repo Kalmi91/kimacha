@@ -1,11 +1,11 @@
-// a próbavizsga pontozása és az átmenési szabályok.
-// Készségenként a nyers találat a készség 25 pontjára skálázódik; az átmenést a vizsga szabálya dönti:
-//  - groups (es): mindkét csoportban 30 / 50 (olvasás + írás; hallás + szóbeli), a 2. csoport helyőrző
-//    szóbeli mellett = hallás x2, "provisional" jelzéssel;
-//  - total (en A1): 100-ból 50, részenkénti minimum nélkül (kompenzáló), a hiányzó szóbelit a másik három
-//    arányából számolja, "provisional";
-//  - average (en A2): a készségek százalékos átlaga a közelítő küszöbhöz mérve, részenkénti minimum nélkül.
-// Írás: régi kulcsszavas tartalmi pontozás (a szigorításról lásd writing.test.ts).
+// Practice exam scoring and the pass rules.
+// Per skill, the raw hits are scaled to the skill's 25 points; the exam's rule decides the pass:
+//  - groups (es): 30 / 50 in both groups (reading + writing; listening + speaking), with a placeholder
+//    speaking the 2nd group = listening x2, flagged "provisional";
+//  - total (en A1): 50 out of 100, no per-skill minimum (compensating), the missing speaking is computed from the
+//    ratio of the other three, "provisional";
+//  - average (en A2): the percentage average of the skills against the approximate threshold, no per-skill minimum.
+// Writing: the old keyword-based content scoring (for the tightening see writing.test.ts).
 
 import { pcicItemsForLevel, setPcicTarget } from '@/data/pcic';
 import { AVERAGE_PASS_PCT, TOTAL_PASS_POINTS } from '../blueprint';
@@ -26,14 +26,14 @@ const GROUPS: MockRule = {
 const TOTAL: MockRule = { kind: 'total', needed: TOTAL_PASS_POINTS, of: 100 };
 const AVERAGE: MockRule = { kind: 'average', passPct: AVERAGE_PASS_PCT, approximate: true };
 
-// Egy készség = egy feladat 25 tétellel: a találat = a pont, így a küszöbök pontosan vizsgálhatók.
+// One skill = one task with 25 items: hits = points, so the thresholds can be tested exactly.
 function task25(skill: MockSkill): MockTask {
   const id = skill.slice(0, 1);
   if (skill === 'writing') return { id, skill, kind: 'form_fill', instruction: '', context: '', fields: Array.from({ length: 25 }, (_, i) => ({ id: `f${i}`, label: `f${i}`, type: 'text' as const })) };
   return { id, skill, kind: 'listen_mc', instruction: '', audio: [], questions: Array.from({ length: 25 }, () => ({ options: ['a', 'b'], correct: 0 })) };
 }
 
-/** Négy készség; a szóbeli helyőrző (nincs feladata), hacsak nem kérik. */
+/** Four skills; speaking is a placeholder (it has no task) unless requested. */
 const synthetic = (rule: MockRule, withSpeaking = false): MockExam => ({
   target: 'en',
   level: 'A1',
@@ -131,13 +131,13 @@ describe('angol A1 szabály: összpont 50 / 100, a készségek kompenzálnak, a 
     expect(pass.passed).toBe(true);
     const fail = scoreMockExam(e, answers(25, 24, 0, 0));
     expect(fail.rule).toMatchObject({ points: 49, passed: false });
-    // Egy készségből nulla is mehet, ha a többi pótolja (nincs készségenkénti minimum).
+    // One skill can score zero if the others make up for it (no per-skill minimum).
     expect(scoreMockExam(e, answers(25, 25, 25, 0)).passed).toBe(true);
   });
 
   it('a szóbeli helyőrző: a három készség összege az arányos 100-ra skálázva (összeg / 75 x 100), provisional', () => {
     const e = synthetic(TOTAL);
-    // 38 / 75 = 50,7 -> 51 (átmegy), 37 / 75 = 49,3 -> 49 (nem).
+    // 38 / 75 = 50.7 -> 51 (passes), 37 / 75 = 49.3 -> 49 (does not).
     const ok = scoreMockExam(e, answers(13, 13, 12));
     expect(ok.rule).toMatchObject({ kind: 'total', points: 51, passed: true, provisional: true });
     expect(ok.provisional).toBe(true);
@@ -194,7 +194,7 @@ describe('diktálás: szavankénti pontozás, hallás ÉS írás jegy', () => {
 
   it('elírt vagy kihagyott szó nem pont, a többi igen; üres = 0', () => {
     const typo = scoreMockTask(dict(), { text: 'We go shoping on Saturday. There are no buses.' });
-    expect(typo.correct).toBe(typo.total - 2); // a "shopping" hallás- és írás-jegye
+    expect(typo.correct).toBe(typo.total - 2); // the listening and writing mark of "shopping"
     const missing = scoreMockTask(dict(), { text: 'We go shopping Saturday. There are buses.' });
     expect(missing.correct).toBe(missing.total - 4);
     expect(scoreMockTask(dict(), {}).correct).toBe(0);
@@ -256,7 +256,7 @@ describe('valódi feladatsorok: minden helyes válasszal átmennek', () => {
   }
 
   const GOOD_FORM = { fullname: 'Ana Kovács', word: 'húngara', address: 'Calle Ficticia 123', age: '30', phone: '5500000000', email: 'ana@example.com', level: 'A1' };
-  // 125 különböző, magánhangzós "szó" a szószám-jegyhez (a szó-ismétlés nem szöveg).
+  // 125 distinct "words" with vowels for the word-count mark (repeating a word is not text).
   const SYL = ['ba', 'de', 'fi', 'ko', 'mu'];
   const DISTINCT_WORDS = Array.from({ length: 125 }, (_, i) => `${SYL[i % 5]}${SYL[Math.floor(i / 5) % 5]}${SYL[Math.floor(i / 25) % 5]}n`);
 

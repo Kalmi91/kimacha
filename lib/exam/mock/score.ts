@@ -1,34 +1,34 @@
-// a próbavizsga pontozása, ahogy a régi
-// (4afeb8c^) lib/exam/score.ts: tételenként, aztán KÉSZSÉGENKÉNT a készség 25 pontjára skálázva
-// (a telefonos vizsga rövidebb a valódinál), aztán a vizsga átmenési szabálya szerint
+// Practice exam scoring, as in the old
+// (4afeb8c^) lib/exam/score.ts: per item, then PER SKILL scaled to the skill's 25 points
+// (the phone exam is shorter than the real one), then by the exam's pass rule
 // (lib/exam/mock/types.ts MockRule):
-//  - groups (spanyol): csoportonként 30 / 50, a 2. csoport helyőrző szóbeli mellett = hallás x2;
-//  - total (angol A1): összpont 100-ból, részenkénti minimum nélkül; a hiányzó szóbelit a másik
-//    három készség aránya pótolja (összeg / beszámított maximum x 100), "provisional" jelzéssel;
-//  - average (angol A2): a beszámított készségek százalékos átlaga egy küszöbhöz mérve (közelítő
-//    érték, lib/exam/mock/blueprint.ts AVERAGE_PASS_PCT), a hiányzó szóbeli itt is kimarad.
+//  - groups (Spanish): 30 / 50 per group, with a placeholder speaking the 2nd group = listening x2;
+//  - total (English A1): total out of 100, no per-skill minimum; the missing speaking is made up from the
+//    ratio of the other three skills (sum / counted maximum x 100), flagged "provisional";
+//  - average (English A2): the percentage average of the counted skills against a threshold (approximate
+//    value, lib/exam/mock/blueprint.ts AVERAGE_PASS_PCT), the missing speaking is left out here too.
 //
-// Írás-rész: nincs önértékelés, a régi kulcsszavas tartalmi pontozás marad (egy tartalmi
-// pont egy jegy, plusz egy jegy a szószám eléréséért), de csak értelmes szövegre: a bemásolt
-// feladat-szöveg, az értelmetlen vagy ismételt szó és a túl rövid szöveg nem kap pontot, az űrlap
-// mezői pedig a fajtájuknak megfelelő értéket kérik (lib/exam/mock/writing.ts). A szóbeli régi
-// önértékelése itt nincs.
+// Writing part: there is no self-assessment, the old keyword-based content scoring stays (one content
+// point is one mark, plus one mark for reaching the word count), but only for meaningful text: pasted
+// task text, nonsense or repeated words and too short a text get no points, and the form
+// fields are asked for a value matching their kind (lib/exam/mock/writing.ts). The old self-assessment of
+// speaking is not here.
 
 import { assessMessage, checkField, countWords, fold, foldedTokens } from './writing';
 import { mockTaskItemCount, type MockAnswers, type MockExam, type MockSkill, type MockTask, type MockTaskAnswer } from './types';
 
-/** Egy készség pontja a valódi vizsgán (mind a négy 25). */
+/** A skill's points on the real exam (all four are 25). */
 const SKILL_POINTS = 25;
 
 const SKILL_ORDER: MockSkill[] = ['reading', 'writing', 'listening', 'speaking'];
 
 interface MockItemResult {
-  /** Mit kérdezett a feladat (a célnyelvi szöveg vagy az állítás). */
+  /** What the task asked (the target-language text or the statement). */
   label: string;
   given: string;
   expected: string;
   ok: boolean;
-  /** Ha eltér a feladat készségétől (a diktálás szavai hallás- és írás-jegyet is adnak). */
+  /** If it differs from the task's skill (the words of a dictation give both a listening and a writing mark). */
   skill?: MockSkill;
 }
 
@@ -51,10 +51,10 @@ export interface MockSkillResult {
   name: string;
   correct: number;
   total: number;
-  /** A nyers találat a készség pontjára skálázva (nem beszámított készségnél 0). */
+  /** The raw hits scaled to the skill's points (0 for a skill that is not counted). */
   points: number;
   maxPoints: number;
-  /** False a helyőrző készségnél (szóbeli): nincs benne a pontozásban. */
+  /** False for the placeholder skill (speaking): it is not part of the scoring. */
   included: boolean;
 }
 
@@ -64,7 +64,7 @@ interface MockGroupResult {
   needed: number;
   of: number;
   passed: boolean;
-  /** Igaz, ha a csoport egy helyőrző készség helyett a másik készség dupláját kapta (E2 a). */
+  /** True if the group got double the other skill instead of a placeholder skill. */
   provisional: boolean;
 }
 
@@ -85,7 +85,7 @@ export interface MockResult {
 
 export { countWords, fold };
 
-/** A pontozás környezete: a célnyelvi szótár az írás értelmességének ellenőrzéséhez (nélküle ez a lépés kimarad). */
+/** The scoring context: the target-language dictionary for checking that the writing is meaningful (without it this step is skipped). */
 interface MockScoreContext {
   lexicon?: ReadonlySet<string>;
 }
@@ -100,8 +100,8 @@ function choiceItem(label: string, options: string[], correct: number, given: un
 }
 
 /**
- * Diktálás: a leírt szavak közül a helyes sorrendű közös részsorozat (LCS) a jó; minden várt szó
- * egy hallás- és egy írás-jegy. Az írásjel, a kis/nagybetű és az ékezet nem számít, a helyesírás igen.
+ * Dictation: of the written words, the common subsequence (LCS) in the correct order counts as right; every expected
+ * word is one listening and one writing mark. Punctuation, case and accents do not matter, spelling does.
  */
 function dictationItems(expectedText: string, typed: string): MockItemResult[] {
   const exp = foldedTokens(expectedText);
@@ -153,7 +153,7 @@ export function scoreMockTask(task: MockTask, answer: MockTaskAnswer = {}, ctx: 
       task.gaps.forEach((g, i) => items.push(choiceItem(g.text, g.options, g.correct, answer[String(i)])));
       break;
     case 'gap_type':
-      // Begépelt hézag: a hiányzó szó, kis/nagybetű és ékezet nélkül egyezve.
+      // Typed gap: the missing word, matched without case and accents.
       task.gaps.forEach((g, i) => {
         const given = String(answer[String(i)] ?? '').trim();
         const same = (x: string) => fold(x).replace(/'/g, '');
@@ -174,8 +174,8 @@ export function scoreMockTask(task: MockTask, answer: MockTaskAnswer = {}, ctx: 
       });
       break;
     case 'form_fill':
-      // Az űrlap a tanuló saját adata, igazságra nem pontozható: kitöltve és a mező fajtájának megfelelő,
-      // értelmes érték kell (szám a számnál, e-mail cím a címnél, két szavas név a névnél, nem betűhalmaz).
+      // The form is the learner's own data, it cannot be scored for truth: it needs a filled-in, meaningful value that matches
+      // the field's kind (a number for a number, an e-mail address for an address, a two-word name for a name, not a jumble of letters).
       for (const f of task.fields) {
         const raw = String(answer[f.id] ?? '').trim();
         items.push({ label: f.label, given: raw, expected: f.type === 'number' ? '123' : '…', ok: checkField(f, raw) });
@@ -183,13 +183,13 @@ export function scoreMockTask(task: MockTask, answer: MockTaskAnswer = {}, ctx: 
       break;
     case 'short_message': {
       const text = String(answer.text ?? '');
-      // A bemásolt feladat-szöveg nem számít: az utasítás és a feladat-szöveg a hivatkozás.
+      // Pasted task text does not count: the instruction and the task text are the reference.
       const a = assessMessage(text, [task.instruction, task.prompt], ctx.lexicon);
-      // Tartalmi pont csak értelmes és legalább a fele minimum-szószámú szövegre jár (két szóba zsúfolt kulcsszó nem).
+      // A content point is given only for meaningful text of at least half the minimum word count (a keyword crammed into two words does not count).
       const enough = a.valid && a.words >= Math.ceil(task.minWords / 2);
       const raw = fold(text);
       for (const p of task.points) {
-        // A csak írásjelből álló kulcsszó (kérdőjel) a nyers szövegen fut, mert a szavakból az írásjel kiesik.
+        // A keyword made only of punctuation (a question mark) runs on the raw text, because punctuation drops out of the words.
         const ok = enough && p.keywords.some((kw) => (/[a-z0-9]/.test(fold(kw)) ? a.text : raw).includes(fold(kw)));
         items.push({ label: p.label, given: ok ? '✓' : '✗', expected: p.keywords[0], ok });
       }
@@ -207,7 +207,7 @@ export function scoreMockExam(exam: MockExam, answers: MockAnswers, ctx: MockSco
     tasks: paper.tasks.map((task) => scoreMockTask(task, answers[task.id], ctx)),
   }));
 
-  // Készségenként: a feladatok tételei (a diktálás szavai két készségbe számítanak).
+  // Per skill: the tasks' items (the words of a dictation count into two skills).
   const tally = new Map<MockSkill, { correct: number; total: number }>();
   const hasTasks = new Set<MockSkill>();
   for (const paper of exam.papers) for (const task of paper.tasks) hasTasks.add(task.skill);
@@ -224,7 +224,7 @@ export function scoreMockExam(exam: MockExam, answers: MockAnswers, ctx: MockSco
   }
   const skills: MockSkillResult[] = SKILL_ORDER.map((skill) => {
     const { correct, total } = tally.get(skill) ?? { correct: 0, total: 0 };
-    // A helyőrző készség (nincs feladata: ma a szóbeli) nincs beszámítva; a feladattal vagy tétellel rendelkező mindig igen.
+    // A placeholder skill (no task: speaking today) is not counted; one with a task or an item always is.
     const included = hasTasks.has(skill) || tally.has(skill);
     const points = included && total > 0 ? Math.round((correct / total) * SKILL_POINTS) : 0;
     return { skill, name: exam.skillNames[skill], correct, total, points, maxPoints: SKILL_POINTS, included };
@@ -239,7 +239,7 @@ export function scoreMockExam(exam: MockExam, answers: MockAnswers, ctx: MockSco
     for (const group of exam.rule.groups) {
       const members = group.skills.map((s) => bySkill.get(s)).filter((p): p is MockSkillResult => !!p);
       const present = members.filter((p) => p.included && p.total > 0);
-      // Egy csoport, aminek egyik készségén sincs tartalom, nem buktathat: kiesik a szabályból.
+      // A group in which no skill has any content cannot fail: it drops out of the rule.
       if (present.length === 0) continue;
       const groupProvisional = members.some((p) => !p.included);
       const realMax = present.reduce((n, p) => n + p.maxPoints, 0);
@@ -249,13 +249,13 @@ export function scoreMockExam(exam: MockExam, answers: MockAnswers, ctx: MockSco
     }
     rule = { kind: 'groups', groups, passed: groups.every((g) => g.passed), provisional: groups.some((g) => g.provisional) };
   } else if (exam.rule.kind === 'total') {
-    // Összpont, részenkénti minimum nélkül; a hiányzó készséget a többi aránya pótolja.
+    // Total score, no per-skill minimum; the missing skill is made up from the ratio of the others.
     const max = real.reduce((n, s) => n + s.maxPoints, 0);
     const sum = real.reduce((n, s) => n + s.points, 0);
     const points = max > 0 ? Math.round((sum / max) * exam.rule.of) : 0;
     rule = { kind: 'total', points, needed: exam.rule.needed, of: exam.rule.of, passed: max > 0 && points >= exam.rule.needed, provisional };
   } else {
-    // A beszámított készségek százalékos átlaga (egyenlő súly).
+    // The percentage average of the counted skills (equal weight).
     const pct = real.length > 0 ? Math.round(real.reduce((n, s) => n + (s.points / s.maxPoints) * 100, 0) / real.length) : 0;
     rule = { kind: 'average', pct, passPct: exam.rule.passPct, approximate: true, passed: real.length > 0 && pct >= exam.rule.passPct, provisional };
   }

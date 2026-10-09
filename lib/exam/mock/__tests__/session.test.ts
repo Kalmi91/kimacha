@@ -1,5 +1,5 @@
-// a próbavizsga részenkénti mentése (félbehagyva
-// folytatható), a legutóbbi eredmény (a Stats kártya ezt mutatja) és a valódi vizsgaórák.
+// Part-by-part saving of the practice exam (an abandoned one can be
+// resumed), the latest result (the Stats card shows this) and the real exam clocks.
 
 import { buildMockExam, mockExamSignature } from '../build';
 import { scoreMockExam } from '../score';
@@ -18,7 +18,7 @@ import { pcicItemsForLevel, setPcicTarget } from '@/data/pcic';
 
 afterAll(() => setPcicTarget('es'));
 
-// Memória-tár ugyanazzal a két metódussal, mint a game_progress (lib/database*.ts).
+// In-memory store with the same two methods as game_progress (lib/database*.ts).
 function memoryStore() {
   const rows = new Map<string, { itemId: string; state: string; data: unknown }>();
   return {
@@ -27,7 +27,7 @@ function memoryStore() {
       return [...rows.entries()].filter(([k]) => k.startsWith(`${gameId}|`)).map(([, v]) => v);
     },
     async setGameProgress(gameId: string, itemId: string, state: string, data?: unknown) {
-      // Mint a valódi tábla: JSON-ba megy és vissza.
+      // Like the real table: goes into JSON and back.
       rows.set(`${gameId}|${itemId}`, { itemId, state, data: data === undefined ? undefined : JSON.parse(JSON.stringify(data)) });
     },
   };

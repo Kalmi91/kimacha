@@ -1,9 +1,9 @@
-// a próbavizsga a szint szavaiból áll, az ismeretlen
-// szóhoz szójegyzet jár: a feladat alatt a még nem tanult szavak jelentése (a felület
-// koppintásra nyitja). Tiszta modul: a hívó adja a szint tételeit és a tanult tételek id-it.
+// The practice exam is made of the level's words, and an unknown word gets a glossary
+// entry: under the task, the meanings of the words not yet learned (the UI opens it on
+// tap). Pure module: the caller supplies the level's items and the ids of the learned items.
 //
-// A felolvasott (hallás) szöveg nem látszik, ezért ahhoz nincs szójegyzet: az a hallott
-// mondat jelentését adná ki.
+// The read-aloud (listening) text is not shown, so it has no glossary: that would
+// give away the meaning of the sentence that was heard.
 
 import type { PcicItem } from '@/data/pcic';
 import { sentenceWords } from './build';
@@ -11,9 +11,9 @@ import type { MockTarget, MockTask } from './types';
 
 export interface GlossaryEntry {
   itemId: string;
-  /** A szó a szövegben (a tétel célnyelvi alakja). */
+  /** The word in the text (the item's target-language form). */
   term: string;
-  /** A jelentése a kiinduló nyelven. */
+  /** Its meaning in the source language. */
   meaning: string;
 }
 
@@ -28,7 +28,7 @@ const ARTICLE: Record<MockTarget, RegExp> = {
   en: /^(to|the|a|an)\s+/i,
 };
 
-/** Az index a szint tételeiből: egy szavas alakok szó szerint, többszavasak kifejezésként. */
+/** The index of the level's items: single-word forms verbatim, multi-word ones as phrases. */
 export function buildGlossaryIndex(items: PcicItem[], target: MockTarget): GlossaryIndex {
   const singles: GlossaryIndex['singles'] = new Map();
   const phrases: GlossaryIndex['phrases'] = [];
@@ -48,7 +48,7 @@ export function buildGlossaryIndex(items: PcicItem[], target: MockTarget): Gloss
   return { singles, phrases, target };
 }
 
-/** A feladat KÉPERNYŐN látszó célnyelvi szövegei (a felolvasott sorok és az utasítás nem: az utasításhoz a felület kiinduló nyelvi fordítást ad). */
+/** The target-language texts of the task that are visible ON SCREEN (not the read-aloud lines, nor the instruction: for the instruction the UI gives a source-language translation). */
 export function mockTaskTexts(task: MockTask): string[] {
   switch (task.kind) {
     case 'read_mc':
@@ -60,7 +60,7 @@ export function mockTaskTexts(task: MockTask): string[] {
     case 'gap_mc':
       return task.gaps.flatMap((g) => [g.text.replace('___', ' '), ...g.options]);
     case 'gap_type':
-      // A lyukas mondat látszik (a hiányzó szó nem); a felolvasott sorok nem.
+      // The gap sentence is visible (the missing word is not); the read-aloud lines are not.
       return task.gaps.map((g) => g.text.replace('___', ' '));
     case 'dictation':
     case 'listen_mc':
@@ -74,7 +74,7 @@ export function mockTaskTexts(task: MockTask): string[] {
   }
 }
 
-/** A feladat szövegeiben szereplő, még NEM tanult szint-szavak jelentése, a megjelenés sorrendjében. */
+/** Meanings of the level words that appear in the task's texts and are NOT learned yet, in order of appearance. */
 export function mockGlossary(task: MockTask, index: GlossaryIndex, learned: ReadonlySet<string>): GlossaryEntry[] {
   const out: GlossaryEntry[] = [];
   const seen = new Set<string>();

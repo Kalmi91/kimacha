@@ -1,6 +1,5 @@
-// a szintvizsga eredménye (átment-e, legjobb
-// pontszám, szintenként) a memory DB-n; a natív lib/database.ts ugyanezt a két segédet
-// (lib/exam/result.ts) hívja, ezért ez a teszt a közös viselkedést fedi.
+// The level exam result (passed or not, best score, per level) on the memory DB; the native
+// lib/database.ts calls the same two helpers (lib/exam/result.ts), so this test covers the shared behaviour.
 
 import { getDb } from '../../database.web';
 import { EXAM_PROGRESS_KEY, mergeExamResult } from '../result';

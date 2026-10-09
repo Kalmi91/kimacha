@@ -1,4 +1,4 @@
-// az átmenés 80%.
+// The pass mark is 80%.
 
 import { EXAM_PASS_PCT, examPassed, scoreExam } from '../score';
 import type { ExamItem, ExamItemResult, ExamSkill } from '../types';

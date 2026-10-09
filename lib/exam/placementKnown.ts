@@ -1,12 +1,11 @@
-// a szintfelmérőben helyesen megválaszolt
-// szavak tudottnak számítanak, és kimaradnak a tanulásból: az adott words-open kártya SM-2
-// `review` állapotba kerül, a normál első intervallummal (egy "good" válasz, mint a
-// tanulófülön). A hibás vagy kihagyott szó kártyája nem változik; az már `review` kártyát
-// sem írja át (a meglévő ütemezés többet tud, mint egy felmérő-találat).
+// Words answered correctly in the placement test count as known and are left out of
+// learning: the words-open card goes to SM-2 `review` state with the normal first interval
+// (one "good" answer, as on the Learn tab). The card of a wrong or skipped word does not change; nor does
+// it overwrite an already `review` card (the existing schedule knows more than a placement hit).
 
 import { sm2NewCard, sm2Review, type Sm2Card } from '@/lib/sm2';
 
-/** A graduálandó kártyák: csak azok, amik még nem `review` állapotúak. */
+/** The cards to graduate: only those not yet in `review` state. */
 export function graduateKnownWords(correctItemIds: Iterable<string>, cards: Sm2Card[], today: string): Sm2Card[] {
   const byId = new Map(cards.map((card) => [card.itemId, card]));
   const out: Sm2Card[] = [];
@@ -23,7 +22,7 @@ type CardStore = {
   upsertPcicCard(card: Sm2Card): Promise<void>;
 };
 
-/** Elmenti a graduált kártyákat; visszaadja, hány szó lett tudott. */
+/** Saves the graduated cards; returns how many words became known. */
 export async function saveKnownWords(store: CardStore, correctItemIds: Iterable<string>, today: string): Promise<number> {
   const graduated = graduateKnownWords(correctItemIds, await store.getPcicCards(), today);
   for (const card of graduated) await store.upsertPcicCard(card);
