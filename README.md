@@ -119,12 +119,13 @@ part of the normal release path.
 
 1. Bump `expo.version` and `expo.android.versionCode` in `app.json` and commit as
    `chore(release): X.Y.Z (versionCode)`.
-2. On the maintainer's machine, generate the native project with `npx expo prebuild --platform
-   android`. `android/` is generated and gitignored, so it is never committed.
-3. Build the Play bundle with Gradle (`:app:bundleRelease`) with `EXPO_PUBLIC_PLAY_STORE=1`. That
-   flag switches the Play flavour on (`lib/buildFlavor.ts`): feedback goes through the share sheet
-   instead of a network call. Sign with the upload key. Keys and passwords stay on the maintainer's
-   machine and never enter the repository.
+2. The native project is `android/`. It is hand-maintained, gitignored and kept only on the
+   maintainer's machine, so it is never committed. Do not run `npx expo prebuild` there: it
+   overwrites the signing setup.
+3. Build the Play bundle with Gradle (`:app:bundleRelease -PplayStore=true`) with
+   `EXPO_PUBLIC_PLAY_STORE=1`. That flag switches the Play flavour on (`lib/buildFlavor.ts`):
+   feedback goes through the share sheet instead of a network call. Sign with the upload key. Keys
+   and passwords stay on the maintainer's machine and never enter the repository.
 4. Upload the bundle in the Google Play Console.
 5. Tag the commit `vX.Y.Z` and publish a GitHub Release. `hygiene.yml` warns when a release commit has
    no tag.
