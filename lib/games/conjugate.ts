@@ -27,13 +27,6 @@ export const TENSES: Tense[] = ['presente', 'indefinido', 'imperfecto', 'futuro'
 // module follows the same 5-person shape for consistency with the rest of
 // the app's Spanish grammar content.
 export const PERSONS: Person[] = ['yo', 'tu', 'el', 'nosotros', 'ellos'];
-export const PERSON_LABEL: Record<Person, string> = {
-  yo: 'yo',
-  tu: 'tú',
-  el: 'él/ella',
-  nosotros: 'nosotros',
-  ellos: 'ellos/ellas',
-};
 
 export interface ConjugationForm {
   person: Person;
