@@ -7,7 +7,7 @@
 
 staged=$(git diff --cached --name-only --diff-filter=A)
 
-agent_docs=$(printf '%s\n' "$staged" | grep -E '^(AGENTS\.md|BUILD\.md|GAMES\.md|BUGS\.md|TASK\.md|ITER[^/]*|skills/|word_batches/|todo_[^/]*\.txt)' || true)
+agent_docs=$(printf '%s\n' "$staged" | grep -E '^(AGENTS\.md|BUILD\.md|GAMES\.md|BUGS\.md|TASK\.md|ITER[^/]*|skills/|word_batches/|todo_[^/]*\.txt)|(^|/)PLAN[^/]*\.md$|(^|/)REVIEW-[^/]*\.md$|^CLAUDE(\.local)?\.md$|^\.claude/' || true)
 if [ -n "$agent_docs" ]; then
   echo "Agent working documents belong in the private ai-workspace repo:"
   printf '  %s\n' $agent_docs

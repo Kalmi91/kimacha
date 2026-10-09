@@ -9,6 +9,9 @@ on:
     branches: [main]
   pull_request:
 
+permissions:
+  contents: read
+
 concurrency:
   group: hygiene-${{ github.ref }}
   cancel-in-progress: true
@@ -18,13 +21,13 @@ jobs:
     name: Repository hygiene
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262  # v4.4.0
         with:
           fetch-depth: 0
 
       - name: Agent working documents stay out of this repository
         run: |
-          found=$(git ls-files | grep -E '^(AGENTS\.md|BUILD\.md|GAMES\.md|BUGS\.md|TASK\.md|ITER[^/]*|skills/|word_batches/|todo_[^/]*\.txt)' || true)
+          found=$(git ls-files | grep -E '^(AGENTS\.md|BUILD\.md|GAMES\.md|BUGS\.md|TASK\.md|ITER[^/]*|skills/|word_batches/|todo_[^/]*\.txt)|(^|/)PLAN[^/]*\.md$|(^|/)REVIEW-[^/]*\.md$|^CLAUDE(\.local)?\.md$|^\.claude/' || true)
           if [ -n "$found" ]; then
             echo "::error::These belong in the private ai-workspace repo, not here:"
             echo "$found"
@@ -42,7 +45,7 @@ jobs:
           fi
           echo "Clean."
 
-      - name: Commit messages follow Conventional Commits
+      - name: Commit messages follow Conventional Commits and carry no AI attribution
         run: |
           if [ "${{ github.event_name }}" = "pull_request" ]; then
             range="origin/${{ github.base_ref }}..HEAD"
@@ -58,6 +61,10 @@ jobs:
             subject=$(git log -1 --format=%s "$sha")
             if ! printf '%s' "$subject" | grep -qE '^(feat|fix|chore|docs|test|refactor|build|ci|perf|style|revert)(\([a-z0-9 ._+-]+\))?!?: .+'; then
               echo "::error::Not a Conventional Commit: $sha $subject"
+              bad=1
+            fi
+            if git log -1 --format=%B "$sha" | grep -qiE 'Co-Authored-By:.*(Claude|Anthropic)|Generated with.*Claude|Claude-Session'; then
+              echo "::error::AI attribution line in the commit message: $sha $subject"
               bad=1
             fi
           done < /tmp/shas

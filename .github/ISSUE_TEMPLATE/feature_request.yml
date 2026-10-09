@@ -21,12 +21,11 @@ body:
     attributes:
       label: Area
       options:
-        - Learn (flashcards, typing, review)
-        - Games
-        - Exams and placement
+        - PCIC tab (word and sentence cards)
         - Grammar course
-        - Átbeszélő (topic packs)
-        - Settings, languages, UI
+        - Level exams, practice exams and placement
+        - Stats and goals
+        - Settings, languages, themes
         - Other
     validations:
       required: true
