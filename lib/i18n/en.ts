@@ -144,9 +144,6 @@ export default {
     // FB375 (PLAN-fb0923 6. lépés): the word-deck button, only on table-less
     // lessons with >= 8 word cards (lib/grammar/tableDeck.ts wordCellsForLesson).
     practiceWords: (n: number) => `Practice the words · ${n} cards`,
-    // PLAN-ketiranyu 4. lépés: es→en irányban a Grammar fül még nem tanít
-    // angol nyelvtant, csak ezt az egy sort mutatja a lecke-lista helyett.
-    enComingSoon: 'English grammar lessons are coming later.',
     // FB416: a saját válasz a helyes fölött a hibás ragozásnál (AnswerCompare).
     yourAnswer: 'Your answer',
     // FB421: a félbehagyott feladat sora a gomb alatt, pl. "3/10 · 30%".
@@ -174,13 +171,11 @@ export default {
     themeLight: 'Light',
     themeDark: 'Dark',
     // NY12: the color-palette picker below the theme buttons.
-    paletteTitle: 'Colors',
     paletteElectric: 'Electric blue',
     paletteLime: 'Lime + pink',
     paletteBrand: 'Kimacha',
     paletteCyan: 'Cyan + violet',
     paletteOrange: 'Orange + teal',
-    paletteClassic: 'Classic',
     // PLAN-temak 4D: the theme grid (app/themes.tsx), My mix (app/theme-mix.tsx) and the theme decor texts.
     themes: {
       title: 'Themes',
@@ -396,7 +391,6 @@ export default {
   },
   // PLAN-pcic step 5: the PCIC tab (English -> Spanish typing, Anki buttons).
   pcic: {
-    header: (due: number, newCount: number, doneToday: number, total: number) => `${total} words · due ${due} · new ${newCount} · done today ${doneToday}`,
     // 5b: a BadgeRow chip-sorának négy külön felirata (anki-ui-terv.html).
     badgeTotal: (n: number) => `${n} words`,
     badgeDue: (n: number) => `due ${n}`,
@@ -414,7 +408,6 @@ export default {
     easy: 'Easy',
     doneTitle: 'Done for today',
     resetConfirmTitle: 'Reset progress',
-    resetConfirmMessage: 'This clears all PCIC progress. Are you sure?',
     resetConfirmYes: 'Reset',
     // PLAN-fb1001 K1: a Beállítások sor, a nullázódó szint nevével.
     resetRow: (level: string) => `🗑️ Reset progress (${level})`,

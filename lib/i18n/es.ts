@@ -126,7 +126,6 @@ const es: Strings = {
     lessonPercent: (n: number) => `Hasta ahora: ${n}% correcto`,
     practiceTable: (n: number) => `Practicar la tabla · ${n} celdas`,
     practiceWords: (n: number) => `Practicar las palabras · ${n} tarjetas`,
-    enComingSoon: 'La gramática inglesa llegará más adelante.',
     // FB416: a saját válasz a helyes fölött a hibás ragozásnál (AnswerCompare).
     yourAnswer: 'Tu respuesta',
     // FB421: a félbehagyott feladat sora a gomb alatt, pl. "3/10 · 30%".
@@ -151,13 +150,11 @@ const es: Strings = {
     themeAuto: 'Automático',
     themeLight: 'Claro',
     themeDark: 'Oscuro',
-    paletteTitle: 'Colores',
     paletteElectric: 'Azul eléctrico',
     paletteLime: 'Lima + rosa',
     paletteBrand: 'Kimacha',
     paletteCyan: 'Cian + violeta',
     paletteOrange: 'Naranja + turquesa',
-    paletteClassic: 'Clásico',
     // PLAN-temak 4D: la cuadrícula de temas (app/themes.tsx), Mi mezcla (app/theme-mix.tsx) y los textos de los adornos.
     themes: {
       title: 'Temas',
@@ -367,7 +364,6 @@ const es: Strings = {
     scheduleEmpty: '¡Todavía no hay nada guardado, aprende algunas palabras!',
   },
   pcic: {
-    header: (due: number, newCount: number, doneToday: number, total: number) => `${total} palabras · pendientes ${due} · nuevas ${newCount} · hechas hoy ${doneToday}`,
     badgeTotal: (n: number) => `${n} palabras`,
     badgeDue: (n: number) => `pendientes ${n}`,
     badgeNew: (n: number) => `nuevas ${n}`,
@@ -383,7 +379,6 @@ const es: Strings = {
     easy: 'Fácil',
     doneTitle: 'Listo por hoy',
     resetConfirmTitle: 'Reiniciar progreso',
-    resetConfirmMessage: 'Esto borra todo el progreso de PCIC. ¿Estás seguro?',
     resetConfirmYes: 'Reiniciar',
     // PLAN-fb1001 K1: a Beállítások sor, a nullázódó szint nevével.
     resetRow: (level: string) => `🗑️ Reiniciar progreso (${level})`,
