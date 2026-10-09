@@ -1,4 +1,5 @@
 import { getDb } from '../database.web';
+import { sm2NewCard } from '../sm2';
 import { BACKUP_SCHEMA_VERSION, BACKUP_TABLES, validateBackupPayload } from '../backup';
 
 describe('backup export/import round-trip (memory db)', () => {
@@ -13,6 +14,14 @@ describe('backup export/import round-trip (memory db)', () => {
     await db.setFeedbackBtnSide('left');
     await db.setGrammarPalette('lime');
     await db.setGameProgress('grammar', 'ser-estar:done', 'done', { correct: 3, total: 3 });
+    // The main learning progress (schema v2): PCIC cards, the mistake deck, usage minutes.
+    const pcic = { ...sm2NewCard('b1-0001'), state: 'review' as const, interval: 4, reps: 2, due: '2026-10-12', lastReview: '2026-10-08', introducedAt: '2026-10-07', known: true };
+    await db.upsertPcicCard(pcic);
+    await db.upsertPcicCard({ ...sm2NewCard('b1-0002'), state: 'learning' as const, due: '2026-10-08', introducedAt: '2026-10-08' });
+    const mistake = { ...sm2NewCard('2026-09-23-claude:w:w1'), state: 'learning' as const, due: '2026-10-08', introducedAt: '2026-10-08' };
+    await db.upsertMistakeCard(mistake);
+    await db.saveMistakeBatch('2026-09-23-claude', '{"a":1}', '2026-09-23T10:00:00.000Z');
+    await db.addUsageMinute();
 
     const payload = await db.exportAll();
     expect(payload.schemaVersion).toBe(BACKUP_SCHEMA_VERSION);
@@ -21,10 +30,21 @@ describe('backup export/import round-trip (memory db)', () => {
     }
     expect(payload.tables.onboarding[0]).toMatchObject({ source: 'hu', target: 'en' });
     expect(payload.tables.game_progress).toHaveLength(1);
+    expect(payload.tables.pcic_cards).toHaveLength(2);
+    expect(payload.tables.pcic_cards.find((r: any) => r.item_id === 'b1-0001')).toMatchObject({ state: 'review', interval: 4, known: 1, introduced_at: '2026-10-07' });
+    expect(payload.tables.mistake_cards).toHaveLength(1);
+    expect(payload.tables.mistake_batches).toEqual([{ batch_id: '2026-09-23-claude', json: '{"a":1}', imported_at: '2026-09-23T10:00:00.000Z' }]);
+    expect(payload.tables.usage_minutes).toHaveLength(1);
+    // the dead FSRS tables are no longer exported
+    expect(payload.tables).not.toHaveProperty('cards');
+    expect(payload.tables).not.toHaveProperty('card_attempts');
+    expect(() => validateBackupPayload(JSON.parse(JSON.stringify(payload)))).not.toThrow();
 
     // Wreck the state, then restore from the payload.
     await db.setOnboarding('hu', 'es');
     await db.setGrammarPalette('classic');
+    await db.resetPcicCards();
+    await db.upsertMistakeCard({ ...mistake, itemId: 'stray' });
 
     await db.importAll(payload);
     const roundTrip = await db.exportAll();
@@ -34,6 +54,10 @@ describe('backup export/import round-trip (memory db)', () => {
     expect(roundTrip.tables).toEqual({ ...payload.tables, onboarding: [{ id: 1, source: 'en', target: 'es' }] });
     expect(await db.getOnboarding()).toEqual({ source: 'en', target: 'es' });
     expect(await db.getGrammarPalette()).toBe('lime');
+    expect((await db.getPcicCards()).find(c => c.itemId === 'b1-0001')).toEqual(pcic);
+    expect((await db.getMistakeCards()).map(c => c.itemId)).toEqual([mistake.itemId]);
+    expect((await db.getMistakeBatches()).map(b => b.batchId)).toEqual(['2026-09-23-claude']);
+    expect((await db.getDayStats(payload.tables.usage_minutes[0].date)).minutes).toBe(1);
 
     // The hu-en rows themselves are untouched, just no longer active: switching
     // back to that pair (not a restore, just a normal pair switch) reaches them.
@@ -75,6 +99,35 @@ describe('backup export/import round-trip (memory db)', () => {
     expect(await db.getGameProgress('grammar')).toEqual([{ itemId: 'ser-estar:done', state: 'done', data: undefined }]);
   });
 
+  // Schema v1 (before pcic_cards / mistake_* / usage_minutes joined the backup)
+  // still restores: it carried the since-dropped cards + card_attempts tables, and
+  // the progress the file knows nothing about is left as it is on the device.
+  it('restores a v1 backup and keeps the local pcic_cards, mistake_* and usage_minutes', async () => {
+    await db.setOnboarding('en', 'es');
+    await db.upsertPcicCard({ ...sm2NewCard('b1-0100'), state: 'learning' as const, due: '2026-10-08', introducedAt: '2026-10-08' });
+    await db.saveMistakeBatch('local-batch', '{}', '2026-10-01T00:00:00.000Z');
+    const { pcic_cards, mistake_batches, mistake_cards, usage_minutes, ...v2 } = (await db.exportAll()).tables;
+    const v1 = {
+      schemaVersion: 1,
+      exportedAt: '2026-09-20T10:00:00.000Z',
+      appVersion: '4.1.0',
+      tables: {
+        ...v2,
+        cards: [{ id: 1, word_id: 5001, type: 'word', pair: 'en-es', due: '2026-09-21', stability: 1, difficulty: 5, elapsed_days: 0, scheduled_days: 1, learning_steps: 0, reps: 1, lapses: 0, state: 2, last_review: null, buried: 0, learned_at: null, lap: 0, in_hand: 0, started_at: null }],
+        card_attempts: [{ id: 1, word_id: 5001, type: 'word', pair: 'en-es', correct: 1, response_time_ms: 900, timestamp: '2026-09-20T09:00:00.000Z' }],
+        streak: [{ id: 1, current_count: 9, last_date: '2026-09-20', longest_count: 12 }],
+      },
+    };
+    const payload = validateBackupPayload(v1);
+    await db.importAll(payload);
+    expect((await db.getStreak()).current_count).toBe(9);
+    expect((await db.getPcicCards()).map(c => c.itemId)).toContain('b1-0100');
+    expect((await db.getMistakeBatches()).map(b => b.batchId)).toContain('local-batch');
+    const after = (await db.exportAll()).tables;
+    expect(after).not.toHaveProperty('cards');
+    expect(after.pcic_cards.length).toBeGreaterThan(0);
+  });
+
   // Play cut: the exact scenario the step's own
   // acceptance check names, an older-schema backup whose onboarding/active
   // pair is hu-es restores onto en-es, not onto the pair it was saved with.
@@ -104,10 +157,27 @@ describe('validateBackupPayload', () => {
 
   it('rejects a payload with a missing table', () => {
     const tables = emptyTables();
-    delete tables.cards;
+    delete tables.streak;
     expect(() =>
       validateBackupPayload({ schemaVersion: BACKUP_SCHEMA_VERSION, exportedAt: 'x', appVersion: 'y', tables })
-    ).toThrow(/cards/);
+    ).toThrow(/streak/);
+  });
+
+  it('requires the v2 progress tables in a v2 file but not in a v1 file', () => {
+    const tables = emptyTables();
+    delete tables.pcic_cards;
+    expect(() =>
+      validateBackupPayload({ schemaVersion: BACKUP_SCHEMA_VERSION, exportedAt: 'x', appVersion: 'y', tables })
+    ).toThrow(/pcic_cards/);
+    expect(() => validateBackupPayload({ schemaVersion: 1, exportedAt: 'x', appVersion: 'y', tables })).not.toThrow();
+    delete tables.streak;
+    expect(() => validateBackupPayload({ schemaVersion: 1, exportedAt: 'x', appVersion: 'y', tables })).toThrow(/streak/);
+  });
+
+  it('still validates the v2 progress tables inside a v1 file when it carries them', () => {
+    const tables = emptyTables();
+    tables.pcic_cards = [{ item_id: 'b1-0001', ease: 'high' }];
+    expect(() => validateBackupPayload({ schemaVersion: 1, exportedAt: 'x', appVersion: 'y', tables })).toThrow(/wrong-type/);
   });
 
   it('accepts a well-formed payload', () => {
@@ -141,7 +211,7 @@ describe('validateBackupPayload', () => {
 
   it('rejects a wrong-type field (string where a number belongs)', () => {
     const tables = emptyTables();
-    tables.cards = [{ id: 1, word_id: 5001, type: 'word', pair: 'en-es', due: 'x', stability: 'not-a-number' }];
+    tables.pcic_cards = [{ item_id: 'b1-0001', state: 'new', ease: 'not-a-number' }];
     expect(() =>
       validateBackupPayload({ schemaVersion: BACKUP_SCHEMA_VERSION, exportedAt: 'x', appVersion: 'y', tables })
     ).toThrow(/wrong-type/);
@@ -169,6 +239,19 @@ describe('validateBackupPayload', () => {
     expect(() =>
       validateBackupPayload({ schemaVersion: BACKUP_SCHEMA_VERSION, exportedAt: 'x', appVersion: 'y', tables })
     ).toThrow(/invalid column name/);
+    tables.streak = [];
+    tables.pcic_cards = [{ item_id: 'b1-0001', 'known) VALUES (1); DROP TABLE pcic_cards; --': 1 }];
+    expect(() =>
+      validateBackupPayload({ schemaVersion: BACKUP_SCHEMA_VERSION, exportedAt: 'x', appVersion: 'y', tables })
+    ).toThrow(/invalid column name/);
+  });
+
+  it('rejects null in a non-nullable mistake_cards column', () => {
+    const tables = emptyTables();
+    tables.mistake_cards = [{ item_id: 'x', due: null }];
+    expect(() =>
+      validateBackupPayload({ schemaVersion: BACKUP_SCHEMA_VERSION, exportedAt: 'x', appVersion: 'y', tables })
+    ).toThrow(/wrong-type/);
   });
 
   it('keeps columns that are missing from the type table (again_delay_sec, pcic_level)', () => {

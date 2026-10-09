@@ -93,3 +93,73 @@ describe('getDayStats (native db)', () => {
     expect((await getDb().getDayStats('2026-10-08')).words).toBe(0);
   });
 });
+
+describe('exportAll / importAll (native db)', () => {
+  const seedAll = () => {
+    tables.game_progress = [{ pair: 'en-es', game_id: 'grammar', item_id: 'ser-estar:done', state: 'done', data_json: null }];
+    tables.learn_settings = [{ pair: 'en-es', words_only: null, daily_new_limit: 15 }];
+    tables.onboarding = [{ id: 1, source: 'en', target: 'es' }];
+    tables.streak = [{ id: 1, current_count: 4, last_date: '2026-10-08', longest_count: 6 }];
+    tables.user_level = [{ pair: 'en-es', level: 'A2', correct_streak: 1, mistakes_in_window: 0, fail_streak: 0 }];
+    tables.user_meta = [{ id: 1, user_id: 'old-install-id', first_use_date: '2026-09-01T00:00:00.000Z' }];
+    tables.pcic_cards = [pcicRow('b1-0001', '2026-10-08'), pcicRow('b1-0002', '2026-10-07')];
+    tables.mistake_batches = [{ batch_id: '2026-09-23-claude', json: '{"a":1}', imported_at: '2026-09-23T10:00:00.000Z' }];
+    tables.mistake_cards = [pcicRow('2026-09-23-claude:w:w1', '2026-10-08')];
+    tables.usage_minutes = [{ date: '2026-10-08', minutes: 12 }];
+    tables.cards = [{ id: 1, word_id: 5001 }];
+    tables.card_attempts = [{ id: 1, word_id: 5001 }];
+  };
+
+  it('exports pcic_cards, mistake_* and usage_minutes, not the dead FSRS tables, and restores them', async () => {
+    seedAll();
+    const payload = await getDb().exportAll();
+    expect(payload.schemaVersion).toBe(2);
+    expect(payload.tables.pcic_cards).toHaveLength(2);
+    expect(payload.tables.mistake_cards).toHaveLength(1);
+    expect(payload.tables.mistake_batches).toHaveLength(1);
+    expect(payload.tables.usage_minutes).toEqual([{ date: '2026-10-08', minutes: 12 }]);
+    expect(payload.tables.user_meta[0].user_id).toBe('');
+    expect(payload.tables).not.toHaveProperty('cards');
+    expect(payload.tables).not.toHaveProperty('card_attempts');
+
+    for (const t of Object.keys(tables)) delete tables[t];
+    await getDb().importAll(JSON.parse(JSON.stringify(payload)));
+    expect(tables.pcic_cards).toEqual(payload.tables.pcic_cards);
+    expect(tables.mistake_cards).toEqual(payload.tables.mistake_cards);
+    expect(tables.mistake_batches).toEqual(payload.tables.mistake_batches);
+    expect(tables.usage_minutes).toEqual(payload.tables.usage_minutes);
+    expect(tables.streak).toEqual(payload.tables.streak);
+    // the id moves / dedup of the PCIC progress run again after a restore
+    const migrations = jest.requireMock('../db/migrations');
+    expect(migrations.applyPcicLevelMoves).toHaveBeenCalled();
+    expect(migrations.applyPcicDedup).toHaveBeenCalled();
+  });
+
+  it('a v1 file leaves the local pcic_cards, mistake_* and usage_minutes alone', async () => {
+    seedAll();
+    const v1 = {
+      schemaVersion: 1,
+      exportedAt: '2026-09-20T10:00:00.000Z',
+      appVersion: '4.1.0',
+      tables: {
+        cards: [],
+        card_attempts: [],
+        game_progress: [],
+        learn_settings: [],
+        onboarding: [{ id: 1, source: 'en', target: 'es' }],
+        streak: [{ id: 1, current_count: 9, last_date: '2026-09-20', longest_count: 12 }],
+        user_level: [],
+        user_meta: [{ id: 1, user_id: '', first_use_date: '2026-09-01T00:00:00.000Z' }],
+      },
+    };
+    await getDb().importAll(v1 as any);
+    expect(tables.streak).toEqual(v1.tables.streak);
+    expect(tables.game_progress).toEqual([]);
+    expect(tables.pcic_cards).toHaveLength(2);
+    expect(tables.mistake_cards).toHaveLength(1);
+    expect(tables.mistake_batches).toHaveLength(1);
+    expect(tables.usage_minutes).toEqual([{ date: '2026-10-08', minutes: 12 }]);
+    // the dropped FSRS tables are skipped, not cleared or refilled
+    expect(tables.cards).toEqual([{ id: 1, word_id: 5001 }]);
+  });
+});
