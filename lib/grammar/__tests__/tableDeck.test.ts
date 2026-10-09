@@ -98,9 +98,9 @@ describe('tableCellsForLesson', () => {
     expect(cells.every((c) => c.verb === '')).toBe(true);
   });
 
-  // a személy-táblák (minden sor címkéje személy-névmás,
-  // a fejléc nem csupa infinitivus) kérdezhetők, így a szó-pakli fallback ("felesleges szavak")
-  // nem lép be.
+  // person tables (every row label is a personal pronoun,
+  // the header is not all infinitives) are askable, so the word-deck fallback ("redundant words")
+  // does not kick in.
   it('pronombres-oi: a Sujeto -> névmás tábla 5 cellát ad (vosotros kihagyva), nincs szó-pakli fallback', () => {
     const lesson = lessonFor('es', 'pronombres-oi')!;
     const cells = tableCellsForLesson(lesson);
@@ -128,12 +128,12 @@ describe('tableCellsForLesson', () => {
   });
 });
 
-// az 1. kör megint a tábla/forrás sorrendjében
-// jön (`tableOrder` = a cellák saját tömb-sorrendje), a kevert sorrend a
-// "Harder: shuffled" (resetDeckShuffled) külön útja. `shuffledOrder(...)`
-// lent ugyanazzal az elsődleges eszközzel (seed-elt shuffle) számolja ki azt
-// a permutációt, amit a resetDeckShuffled-nek adnia KELL, hogy ezek a
-// tesztek magát a shuffle-t is elkapják, ha megváltozna.
+// Round 1 again comes in the table/source order
+// (`tableOrder` = the cells' own array order); the shuffled order is the separate
+// path of "Harder: shuffled" (resetDeckShuffled). `shuffledOrder(...)`
+// below computes, with the same primary tool (seeded shuffle), the
+// permutation that resetDeckShuffled MUST produce, so that these
+// tests also catch the shuffle itself if it ever changed.
 const LESSON_ID = 'ser-estar';
 function shuffledOrder(lessonId: string, resetCount: number, ids: string[]): string[] {
   return shuffleArray(ids.slice().sort(), hashString(`${lessonId}:${resetCount}`));
@@ -227,9 +227,9 @@ describe('scheduling: initDeckState / nextCellId / answerCell / resetDeckInOrder
     expect(backToOrder.cells.map((c) => c.id)).not.toEqual(shuffled.cells.map((c) => c.id));
   });
 
-  // A korábbi tesztből ismert eset (interrogativos): ha egy táblának >= 2 cellája
-  // van, a shuffle sorrendje ténylegesen eltér a tábla-sorrendtől (nem
-  // véletlenül egyezik meg vele), ahogy a terv kéri.
+  // A case known from the earlier test (interrogativos): if a table has >= 2 cells,
+  // the shuffle order actually differs from the table order (it does not
+  // coincide with it by accident), as required.
   it('resetDeckShuffled ("Harder: shuffled") is a permutation of the same ids, not the table order, and bumps resetCount + shuffled', () => {
     const fresh = resetDeckShuffled(cells, LESSON_ID, 0);
     expect(fresh.resetCount).toBe(1);
@@ -284,9 +284,9 @@ describe('mergeDeckState', () => {
     expect(merged.cells.map((c) => c.id)).toEqual(shuffledOrder(LESSON_ID, 2, tableOrder));
   });
 
-  // régi mentés, még a `shuffled` mező bevezetése ELŐTTről (csak
-  // `cells` + `resetCount`) - ne dobjon hibát, és NE rendezze át hallgatólag
-  // a folyamatban lévő shuffled kört a tábla-sorrendre.
+  // an old save, from BEFORE the `shuffled` field was introduced (only
+  // `cells` + `resetCount`) - it must not throw, and must NOT silently
+  // reorder an in-progress shuffled round to table order.
   it('a persisted state without the `shuffled` field (pre-FB389 save) defaults to shuffled=true, not a reorder', () => {
     const oldPersisted = { cells: [], resetCount: 0 } as unknown as DeckState;
     const merged = mergeDeckState(cells, LESSON_ID, oldPersisted);
@@ -295,10 +295,10 @@ describe('mergeDeckState', () => {
   });
 });
 
-// "itt is legyen egy nyelvtanulós kártya
-// csomag a szavakból" - a word-deck a tábla nélküli (nem kérdezhető táblás) leckéknek.
-// A pakli CSAK a lecke
-// táblázatainak szavaiból épül, a szószedet és a példamondatok szavai nem számítanak.
+// "There should be a language-learning card
+// pack made of the words here too" - the word-deck is for lessons without a table (no askable table).
+// The deck is built ONLY from the words of the lesson's
+// tables; glossary and example-sentence words do not count.
 const LANG4 = { hu: 'x', en: 'x', es: 'x', de: 'x' };
 const tableFixture = (rows: string[][], over: Partial<LessonV2> = {}): LessonV2 => ({
   schema: 2,
@@ -313,7 +313,7 @@ const tableFixture = (rows: string[][], over: Partial<LessonV2> = {}): LessonV2 
   items: [],
   ...over,
 });
-// A lecke táblázat-celláinak tokenjei (a tableWordKeys elvárt működése, függetlenül írva).
+// The tokens of the lesson's table cells (the expected behaviour of tableWordKeys, written independently).
 const tableTokens = (lesson: LessonV2): Set<string> => {
   const out = new Set<string>();
   for (const b of lesson.body) {
@@ -333,8 +333,8 @@ describe('wordCellsForLesson (csak a tábla szavai)', () => {
     });
     const cards = wordCellsForLesson(lesson);
     const es = cards.map((c) => c.es.toLowerCase());
-    // tábla-szavak: comer (szószedet-glosszával), hablar, tener; a "zapato" (csak szószedet) és a
-    // mondat szavai (hermano, perro, ciudad) nincsenek benne, a névelők sem.
+    // table words: comer (with a glossary gloss), hablar, tener; "zapato" (glossary only) and the
+    // sentence words (hermano, perro, ciudad) are not in it, nor are the articles.
     expect(es.sort()).toEqual(['comer', 'hablar', 'tener']);
     expect(cards.find((c) => c.es === 'comer')?.en).toBe('to eat (glossary)');
   });
@@ -364,7 +364,7 @@ describe('wordCellsForLesson (csak a tábla szavai)', () => {
     }
   });
 
-  // (az articulos-genero ismét a lecke saját szavaiból áll, mint korábban; a főnevek csak az el / la feladatban vannak)
+  // (articulos-genero again consists of the lesson's own words, as before; the nouns are only in the el / la exercise)
   it('articulos-genero és társai elvesztették a paklit: a küszöb alatt maradnak, nincs belépő (a clases-de-palabras a lecke szintjére került szavakkal visszanyerte)', () => {
     for (const id of ['articulos-genero', 'sustantivo-numero', 'hay-estar', 'pronombres-od']) {
       expect(wordCellsForLesson(lessonFor('es', id)).length).toBeLessThan(WORD_DECK_MIN_CARDS);
@@ -378,7 +378,7 @@ describe('wordCellsForLesson (csak a tábla szavai)', () => {
   });
 });
 
-// a rossz opciók nem létező alakjai nem szó-kártyák.
+// The non-existent forms of wrong options are not word cards.
 describe('wordCellsForLesson: nem létező alakok kihagyása', () => {
   it('a sustantivo-numero szó-paklija nem tartalmaz "not a real form" kártyát', () => {
     const { lessonFor } = require('../syllabus');

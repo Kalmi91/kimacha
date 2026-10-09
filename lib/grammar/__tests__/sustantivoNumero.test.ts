@@ -1,4 +1,4 @@
-// A rendhagyó többes számok és az el / la névelő-választó a sustantivo-numero leckében.
+// Irregular plurals and the el / la article chooser in the sustantivo-numero lesson.
 import lessonJson from '@/data/games/grammar/es/sustantivo-numero.json';
 import { grammarKindCounts, isArticleSetItem, type GrammarGapItem } from '@/lib/games/content';
 import { buildGrammarRound, grammarRoundItemKind } from '@/lib/games/grammarChoice';

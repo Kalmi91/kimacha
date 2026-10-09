@@ -1,5 +1,5 @@
-// a ser/estar "miért" feladat minden szabály-opciója
-// alatt van kisbetűs példa-sor, négy nyelven.
+// Every rule option of the ser/estar "why" exercise
+// has a lowercase example line under it, in four languages.
 import esSerEstar from '@/data/games/grammar/es/ser-estar.json';
 import enToBe from '@/data/games/grammar/en/to-be.json';
 import { OPTION_HINTS, optionHint } from '../optionHints';

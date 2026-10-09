@@ -1,6 +1,6 @@
-// az indefinido-regular lecke feladataiban olyan igék és szavak is szerepeltek, amik a lecke tábláiban nem voltak.
-// A hiányzó 20 ige egy-igés táblát kapott (füles blokk), a 20 leggyakoribb hiányzó szó egy jelentés-táblát; mindkettő a
-// lecke táblapaklijában van, vosotros-kártya nélkül.
+// The exercises of the indefinido-regular lesson used verbs and words that were not in the lesson's tables.
+// The 20 missing verbs each got a one-verb table (tabbed block), the 20 most frequent missing words got a meaning table; both are in the
+// lesson's table deck, with no vosotros card.
 
 import { lessonFor } from '../syllabus';
 import { tableCellsForLesson } from '../tableDeck';

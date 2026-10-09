@@ -1,8 +1,8 @@
-// Az angol sáv játék-tartalmának regisztrációja (es→en irány: spanyol anyanyelvű
-// tanul angolt). Ugyanaz a köteg-minta, mint a `es.ts`: a `content.ts` csak
-// összefűzi. Új angol lecke = egy `data/games/grammar/en/<id>.json` + egy import
-// és egy sor a `grammarTopics`-ban ide. A témák, amikhez még nincs lecke, a
-// Nyelvtan fülön „próximamente” jelvényt kapnak.
+// Registration of the English lane's game content (es→en direction: a Spanish native
+// learns English). Same bundle pattern as `es.ts`: `content.ts` only stitches
+// them together. A new English lesson = one `data/games/grammar/en/<id>.json` + one import
+// and one line in `grammarTopics` here. Topics that do not have a lesson yet get a
+// "próximamente" badge on the Grammar tab.
 
 import type { GrammarTopicData, LanguageContentBundle } from '../content';
 

@@ -1,11 +1,11 @@
-// egy nyelvtan-téma csak akkor "kész", ha a
-// leckéjében LÉTEZŐ összes fajtájából van kész (>=80%) sor; a régi,
-// egy-értékű sorok mindent késznek jelentenek (visszamenőleges kompatibilitás).
+// A grammar topic is "done" only if every kind that EXISTS in its
+// lesson has a done (>=80%) row; the old, single-value
+// rows mean everything is done (backward compatibility).
 
 import { doneGrammarTopicProgress } from '../syllabus';
 
 describe('doneGrammarTopicProgress', () => {
-  // hay-estar (es): 12 choice + 2 match + 0 form item, tehát pont két fajtája van.
+  // hay-estar (es): 12 choice + 2 match + 0 form items, so it has exactly two kinds.
   it('needs every existing kind done, not just one', () => {
     const oneKindDone = [{ itemId: 'hay-estar:choice', state: 'done', data: { correct: 12, total: 12 } }];
     expect(doneGrammarTopicProgress('es', oneKindDone).has('hay-estar')).toBe(false);

@@ -1,4 +1,4 @@
-// hibakereső / szórend / diktálás, csak a ser-estar és a negacion leckében, trial jelöléssel.
+// Error spotting / word order / dictation, only in the ser-estar and negacion lessons, marked as trial.
 import { grammarKindCounts, isTrialItem } from '@/lib/games/content';
 import { buildGrammarRound, grammarRoundItemKind } from '@/lib/games/grammarChoice';
 import { lessonFor, lessonHasTrial, lessonKinds, scoredKinds } from '../syllabus';
