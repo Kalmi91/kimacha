@@ -1,5 +1,5 @@
-// az indefinido-10-verbos tíz egy-igés táblája egy füles, tömör
-// csoport: egyszerre egy tábla látszik, 2 oszlopos cellákkal.
+// the ten single-verb tables of indefinido-10-verbos form one tabbed, compact group: one table
+// is visible at a time, with 2-column cells.
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import LessonBody from '../grammar/LessonBody';
@@ -22,7 +22,7 @@ describe('groupTableRuns', () => {
     expect(tabs).toHaveLength(1);
     if (tabs[0].kind !== 'tabs') return;
     expect(tabs[0].tables).toHaveLength(10);
-    // a text + a tip marad külön blokk
+    // the text + the tip stay a separate block
     expect(entries.filter((e) => e.kind === 'block')).toHaveLength(2);
   });
 

@@ -1,4 +1,4 @@
-// a három új feladat-fajta végigjátszva (hibakereső, szórend, diktálás).
+// the three new item kinds played through (error spotting, word order, dictation).
 jest.mock('@/lib/speech', () => ({
   speak: jest.fn(),
   speakSequence: jest.fn(),
@@ -41,11 +41,11 @@ describe('hibakereső (spot)', () => {
     render(<GrammarDrill topic={only(negacion, 'spot')} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['spot']} />);
     await flush();
 
-    // ÚJ · TESZT jelvény a feladaton
+    // NEW · TEST badge on the item
     expect(screen.getByTestId('trial-badge')).toBeTruthy();
     expect(screen.getByText('Tap the word that is wrong')).toBeTruthy();
 
-    // "No veo algo." -> a 3. szó (algo, index 2) a hibás
+    // "No veo algo." -> the 3rd word (algo, index 2) is the wrong one
     fireEvent.press(screen.getByTestId('spot-word-2'));
     expect(screen.getByText('Pick the right form')).toBeTruthy();
     fireEvent.press(screen.getByText('nada'));
@@ -121,11 +121,11 @@ describe('diktálás (dictation)', () => {
 
     expect(speech.speak).toHaveBeenCalledWith('Estoy en casa.', 'es-MX');
     expect(screen.getByTestId('trial-badge')).toBeTruthy();
-    // lassabb lejátszás: rate 0.55
+    // slower playback: rate 0.55
     fireEvent.press(screen.getByTestId('dictation-slow'));
     expect(speech.speak).toHaveBeenCalledWith('Estoy en casa.', 'es-MX', { rate: 0.55 });
 
-    // írásjel nélkül, kisbetűvel is jó
+    // also fine without punctuation, in lowercase
     fireEvent.changeText(screen.getByTestId('dictation-input'), 'estoy en casa');
     fireEvent.press(screen.getByTestId('dictation-check'));
     expect(screen.getByTestId('dictation-result')).toBeTruthy();

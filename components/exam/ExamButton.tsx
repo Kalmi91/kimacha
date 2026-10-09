@@ -6,9 +6,9 @@ import { BrutalButton } from '@/components/grammar/Brutal';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { useTheme } from '@/lib/ThemeContext';
 
-// a vizsga-képernyők gombja. Classic palettán a
-// terv szerinti elsődleges (tint + onTint) vagy másodlagos (card +
-// border + text) gomb, brutalista palettán a meglévő BrutalButton.
+// the button of the exam screens. On the classic palette the primary (tint + onTint) or
+// secondary (card + border + text) button as designed, on the brutalist palette the existing
+// BrutalButton.
 type Props = {
   label: string;
   onPress: () => void;

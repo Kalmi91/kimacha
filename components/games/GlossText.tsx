@@ -8,15 +8,15 @@ import { speechLang } from '@/lib/languages';
 import { normalizeWordToken } from '@/data/words';
 import type { GlossInfo } from '@/lib/games/gloss';
 
-// the "kattints rá és kiírja" half of the user's kőbe vésett
-// kritérium (0. szekció). Every word is tappable; an `isNew` word additionally
+// the "tap a word and it is spelled out" half of the glossing requirement.
+// Every word is tappable; an `isNew` word additionally
 // gets a dotted underline so it reads as "this one is new" before the tap.
 //
-// K2 DÖNTÉS: a timed game's clock pauses while the bubble is open, this
+// Design decision: a timed game's clock pauses while the bubble is open, this
 // component doesn't own a clock, it just calls onOpenGloss/onCloseGloss, the
 // game screen wires those to its useGameSession().pause()/resume().
 //
-// F2 MEGVALÓSÍTÁSI JEGYZET (word-rain 4.1 / bubble-pop 4.2): a catchable/
+// Implementation note (word-rain / bubble-pop): a catchable/
 // poppable tile's own tap already means "catch"/"pop", so it can't ALSO open
 // this bubble on tap (word-rain's per-token onPress would fight the game's own
 // Pressable). `disableTap` + `forceOpen` + `onForceClose` let a caller drive

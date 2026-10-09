@@ -9,11 +9,10 @@ import type { ExamLevelStatus } from '@/lib/exam/unlock';
 
 type ColorScheme = (typeof Colors)['light'];
 
-// a szintválasztó lap
-// vizsga-sora a szint sora alatt. Zárva: lakat + mennyi hiányzik (szó, lecke);
-// koppintásra a hiányzó dologhoz visz (szavak gyakorlása / nyelvtani leckék), tehát
-// sosem "nincs adat" felirat gomb nélkül (DESIGN 9/9). Nyitva: "Ready" + a mentett
-// eredmény (átment-e, legjobb pontszám); koppintásra indul a vizsga.
+// the exam row of the level picker sheet, under the level's row. Locked: a padlock + how much is
+// missing (words, lessons); tapping leads to what is missing (word practice / grammar lessons),
+// so there is never a "no data" caption without a button. Open: "Ready" + the saved result
+// (passed or not, best score); tapping starts the exam.
 type Props = {
   status: ExamLevelStatus;
   colors: ColorScheme;

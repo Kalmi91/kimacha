@@ -1,6 +1,6 @@
-// a közös jó / rossz jelzés, a kész-jelvény és
-// a rajzolt pipa. A jó és a rossz színe ÉS alakja is különbözik (tömör vs szaggatott keret,
-// ✓ vs ✗, szöveg), a színek tokenből jönnek.
+// the shared right / wrong badge, the done badge and the drawn check mark. The colour AND the
+// shape of right and wrong differ (solid vs dashed border, ✓ vs ✗, text); the colours come
+// from tokens.
 import { render, screen } from '@testing-library/react-native';
 import { StyleSheet } from 'react-native';
 
@@ -66,7 +66,7 @@ describe('ResultBadge', () => {
 describe('CheckMark és DoneBadge', () => {
   it('a rajzolt pipa két sávból áll és a kapott színnel rajzol', () => {
     render(<CheckMark size={40} color="#123456" />);
-    // nincs emoji-szöveg: csak View-k
+    // no emoji text: only Views
     expect(screen.queryByText('✅')).toBeNull();
   });
 

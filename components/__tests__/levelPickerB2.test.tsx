@@ -1,6 +1,6 @@
-// a szint-választó lap a valódi data/pcic-kel
-// (nem mockolt) az en→es iránynál a B2-t is felkínálja, 1022 tétellel; az
-// es→en iránynál a B2 üres, ezért a "0 tétel = nem kínáljuk fel" szűrő kihagyja.
+// the level picker sheet, with the real data/pcic (not mocked), also offers B2 for the en→es
+// direction, with 1022 items; for es→en B2 is empty, so the "0 items = don't offer it" filter
+// leaves it out.
 
 import { fireEvent, render } from '@testing-library/react-native';
 

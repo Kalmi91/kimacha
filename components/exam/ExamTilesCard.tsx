@@ -13,13 +13,13 @@ import { hashString, shuffleArray } from '@/lib/shuffle';
 import { useTheme } from '@/lib/ThemeContext';
 import ExamButton from './ExamButton';
 
-// mondat-összerakás csempékkel. A kiinduló
-// nyelvű mondatot a célnyelvre kell összerakni; a csapda-csempék tanult szavakból jönnek.
-// Helyes építés után nincs visszajelzés (megy tovább), hibás után a helyes mondat látszik.
+// sentence assembly with tiles. The source-language sentence has to be built in the target
+// language; the decoy tiles come from learned words. After a correct build there is no feedback
+// (it moves on), after a wrong one the correct sentence is shown.
 type Props = {
   prompt: string;
   answerTokens: string[];
-  /** Az eredeti mondat nagybetűvel és írásjellel; a hibás válasz után ezt mutatja (ha nincs, a csempék összefűzése). */
+  /** The original sentence with capital letter and punctuation; shown after a wrong answer (if absent, the tiles joined together). */
   sentence?: string;
   distractors: string[];
   onDone: (correct: boolean) => void;
@@ -30,7 +30,7 @@ export default function ExamTilesCard({ prompt, answerTokens, sentence, distract
   const colors = Colors[theme];
   const g = useGrammarColors();
   const s = t();
-  // Egyszer keverve, a pozíciók nem változnak (ugyanaz a seed ugyanazt a sorrendet adja).
+  // Shuffled once, the positions do not change (the same seed gives the same order).
   const [bank] = useState(() => shuffleArray([...answerTokens, ...distractors], hashString(prompt)));
   const [placed, setPlaced] = useState<number[]>([]);
   const [missed, setMissed] = useState(false);
