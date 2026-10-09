@@ -1,4 +1,4 @@
-// PLAN-vizsga B. szakasz (8. lépés, Kálmán 2026-10-01: B1 b, B2 a, B3 a, B4 a): a nyelvtani
+// a nyelvtani
 // lecke végi teszt. 10 kérdés a lecke SAJÁT tételeiből (a lecke mondatai mehetnek, N1),
 // vegyes fajtával; az átmenés 80% (mint a szintvizsgánál); a teszt NEM számít a lecke
 // %-ába (lib/grammar/lessonScore.ts), külön "Test passed" jelet kap; a bukás nem zár le semmit.
@@ -11,7 +11,6 @@
 import { examPassed, EXAM_PASS_PCT } from '@/lib/exam/score';
 import {
   isFormItem,
-  isLessonV2,
   isMarkItem,
   isMatchItem,
   isOrderItem,
@@ -102,7 +101,7 @@ export function lessonTestPassedTopics(rows: Row[]): Set<string> {
 function hadRound(rows: Row[], topicId: string, kind: GrammarKind): boolean {
   const p = kindProgressFromRows(rows, topicId, kind);
   if (p.best || p.legacy) return true;
-  // A FB290-es "kész" sor: `${topic}:${kind}` (>= 80%-os kör) vagy a régi, egész-lecke sor (`${topic}`).
+  // A "kész" sor: `${topic}:${kind}` (>= 80%-os kör) vagy a régi, egész-lecke sor (`${topic}`).
   return rows.some((r) => r.state === 'done' && (r.itemId === `${topicId}:${kind}` || r.itemId === topicId));
 }
 
@@ -184,7 +183,7 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
     };
   }
   if (isFormItem(item)) {
-    const table = isLessonV2(ctx.topic) ? ctx.topic.body.find((b) => b.kind === 'table' && b.id === item.table) : undefined;
+    const table = ctx.topic.body.find((b) => b.kind === 'table' && b.id === item.table);
     const headerCell = table && table.kind === 'table' ? table.header.find((h) => h.es === item.verb) : undefined;
     const localized = headerCell ? pick(headerCell) : undefined;
     const verbLabel = localized && localized !== item.verb ? `${item.verb} (${localized})` : item.verb;
@@ -261,7 +260,7 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
   return null;
 }
 
-export interface BuildLessonTestOptions {
+interface BuildLessonTestOptions {
   seed: number;
   learnedLang: string;
   contentLang: string;

@@ -8,10 +8,10 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { xpLevel } from '@/lib/xp';
 
-// PLAN-temak 6E, Gamer: a fejlécben XP-sáv "LVL n" felirattal (az összes aktív percből, lib/xp.ts) és
+// Gamer: a fejlécben XP-sáv "LVL n" felirattal (az összes aktív percből, lib/xp.ts) és
 // kombó "x3" (a napi streakből, legalább x1); a kártya sarkában "+15 XP" dísz (nem valós adat).
 
-export const XP_GAIN = 15;
+const XP_GAIN = 15;
 
 function GamerHeader({ children }: { children: ReactNode }) {
   const g = useGrammarColors();

@@ -1,4 +1,4 @@
-// PLAN-vizsga C. szakasz (Kálmán, 2026-10-01, C2 b): a szintfelmérő kérdései a valódi
+// a szintfelmérő kérdései a valódi
 // data/words-open készletből és a szintek nyelvtani leckéiből, mindkét irányban.
 
 import { PCIC_LEVELS, pcicItemsForLevel, setPcicTarget, type PcicItem, type PcicLevel, type PcicTarget } from '@/data/pcic';

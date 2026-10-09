@@ -41,7 +41,7 @@ describe('nearMissDistractors', () => {
     expect(out.map((o) => o.toLowerCase())).not.toContain('yo hablo');
   });
 
-  // FB50: "They decide together." → "Ellos deciden juntos."; from the English
+  // "They decide together." → "Ellos deciden juntos."; from the English
   // side ellos/ellas are both correct, so the counterpart is barred as a trap.
   it('never offers the gender-counterpart pronoun (FB50: ellos vs ellas)', () => {
     const out = nearMissDistractors(

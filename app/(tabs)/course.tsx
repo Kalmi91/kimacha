@@ -34,7 +34,7 @@ import { SkinBackdrop, SkinHeader } from '@/components/skins/Slots';
 
 // The grammar course: the whole syllabus from A1 to C1, in teaching order.
 //
-// Kálmán, 2026-09-08: "külön legyen egy nyelvtani tanulás rész ahol szépen
+// User feedback: "külön legyen egy nyelvtani tanulás rész ahol szépen
 // átveszi az összes nyelvtant... azt akarom, hogy átfogó legyen".
 //
 // The level the learner is on is open by default; every other level can be
@@ -60,11 +60,11 @@ export default function GrammarSyllabusScreen() {
   const [level, setLevel] = useState<Level>('A1');
   const [openLevel, setOpenLevel] = useState<Level | null>(null);
   const [progress, setProgress] = useState<Map<string, TopicProgress>>(new Map());
-  // FB328: leckénkénti kumulált helyes-arány, a sor jobb szélén lévő NN% jelvényhez.
+  // leckénkénti kumulált helyes-arány, a sor jobb szélén lévő NN% jelvényhez.
   const [percents, setPercents] = useState<Map<string, number>>(new Map());
-  // PLAN-vizsga B. szakasz: a lecke végi teszten átment leckék ("Test passed" jel).
+  // a lecke végi teszten átment leckék ("Test passed" jel).
   const [testPassed, setTestPassed] = useState<Set<string>>(new Set());
-  // NY21: streak-matrica + heti cél doboz (a meglévő getStreak / heti cél / használat értékeiből).
+  // streak-matrica + heti cél doboz (a meglévő getStreak / heti cél / használat értékeiből).
   const [streak, setStreak] = useState(0);
   const [weeklyGoal, setWeeklyGoal] = useState(DEFAULT_WEEKLY_GOAL_MINUTES);
   const [weekMinutes, setWeekMinutes] = useState(0);
@@ -74,9 +74,9 @@ export default function GrammarSyllabusScreen() {
     const onboarding = await db.getOnboarding();
     const target = onboarding?.target ?? 'es';
     setLearnedLang(target);
-    // Kimacha Play: UI always English (Kálmán, 2026-09-22), regardless of the
+    // Kimacha Play: UI always English, regardless of the
     // stored source language; the syllabus data's hu/es/de fields stay unused.
-    // es→en (Kálmán, 2026-09-28): a spanyol anyanyelvű tanuló spanyol magyarázatot kap.
+    // es→en: a spanyol anyanyelvű tanuló spanyol magyarázatot kap.
     setContentLang(target === 'en' ? 'es' : 'en');
 
     const levelData = await db.getLevel();
@@ -84,12 +84,12 @@ export default function GrammarSyllabusScreen() {
     setLevel(lvl);
     setOpenLevel((current) => current ?? (LEVELS.includes(lvl) && lvl !== 'A0' ? lvl : 'A1'));
 
-    // D3 (FB290): egy téma csak akkor "kész", ha a leckéjében létező összes
+    // egy téma csak akkor "kész", ha a leckéjében létező összes
     // fajtájából van kész sor (doneGrammarTopicProgress, lib/grammar/syllabus.ts).
     const rows = await db.getGameProgress(GRAMMAR_PROGRESS_KEY);
     setProgress(doneGrammarTopicProgress(target, rows));
-    // FB328: ugyanabból a lekérésből, külön DB-hívás nélkül.
-    // FB415: a lecke %-a az összes fajta átlaga (a meg nem csinált 0), nem a kumulált jó-arány.
+    // ugyanabból a lekérésből, külön DB-hívás nélkül.
+    // A lecke %-a az összes fajta átlaga (a meg nem csinált 0), nem a kumulált jó-arány.
     setPercents(lessonScoresByTopic(rows, (id) => lessonKinds(target, id)));
     setTestPassed(lessonTestPassedTopics(rows));
     setStreak((await db.getStreak())?.current_count ?? 0);
@@ -106,7 +106,7 @@ export default function GrammarSyllabusScreen() {
   const coverage = lessonCoverage(learnedLang);
   const doneCount = [...progress.values()].filter((p) => p.state === 'done').length;
 
-  // NY21 (neo-brutalista, NYELVTAN.md "Neo-brutalista stílus" 1. képernyő):
+  // Neo-brutalista:
   // a classic paletta a lenti mai kinézetet adja.
   if (g.brutal) {
     const shownLevel: Level = openLevel ?? 'A1';
@@ -198,7 +198,7 @@ export default function GrammarSyllabusScreen() {
                         {testPassed.has(topic.id) ? (
                           <Sticker testID={`grammar-test-passed-${topic.id}`} label={s.lessonTest.passedTag} fill="b" rotate={-3} />
                         ) : null}
-                        {/* PLAN-fb0929 7. lépés (D1): az új feladat-fajtás két lecke jelvénye. */}
+                        {/* az új feladat-fajtás két lecke jelvénye. */}
                         {hasTrial ? <TrialBadge testID={`trial-badge-${topic.id}`} /> : null}
                       </View>
                     ) : null}
@@ -285,9 +285,9 @@ export default function GrammarSyllabusScreen() {
                       {topicsForUnit(unit.id, learnedLang).map((topic) => {
                         const written2 = hasLesson(learnedLang, topic.id);
                         const p = progress.get(topic.id);
-                        // FB328: null amíg egyetlen kör sincs lejátszva a témán.
+                        // null amíg egyetlen kör sincs lejátszva a témán.
                         const pct = percents.get(topic.id) ?? null;
-                        // FB328: EGY jelvény, nem kettő. Kész témán a kumulált
+                        // EGY jelvény, nem kettő. Kész témán a kumulált
                         // százalék (vagy a régi haladásnál a kör eredménye)
                         // ül a ✓ mellett; elkezdett, nem kész témán önmagában.
                         const badgePct = lessonBadgePercent(pct, p?.correct, p?.total);
@@ -417,7 +417,7 @@ const styles = StyleSheet.create({
   topicBlurb: { fontSize: 12, marginTop: 2, lineHeight: 17 },
   topicBadgeCol: { alignItems: 'flex-end', gap: 2 },
   topicBadge: { fontSize: 12, fontWeight: '700' },
-  // NY21: neo-brutalista forma-stílusok (címek, gombok nagybetűsek, 500 súly).
+  // neo-brutalista forma-stílusok (címek, gombok nagybetűsek, 500 súly).
   // paddingBottom: az utolsó kártya a chat-gomb (FAB) alól is kigördül.
   brutalBody: { padding: 16, paddingBottom: 130, gap: 10 },
   brutalHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },

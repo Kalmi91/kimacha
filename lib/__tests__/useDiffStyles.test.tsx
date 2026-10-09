@@ -1,4 +1,4 @@
-// PLAN-temak 7H: a charDiff-sor jelölései olvashatók minden témán (kihagyott betű: sötét szöveg a
+// a charDiff-sor jelölései olvashatók minden témán (kihagyott betű: sötét szöveg a
 // borostyánon; rossz betű: fehér, ha átmegy, egyedi betűnél sötét).
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));

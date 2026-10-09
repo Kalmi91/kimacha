@@ -1,4 +1,4 @@
-// GAMES.md 4.7 (conjugation-slot). The forms are FACTS (GAMES.md's own
+// Conjugation-slot. The forms are FACTS (the spec's own
 // words): this suite spot-checks every one of the 15 hand-tabled irregulars
 // across all 6 tenses, the regular rule generator (including the
 // -car/-gar/-zar spelling rule and the creer/leer vowel-stem preterite), and

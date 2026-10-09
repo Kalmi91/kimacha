@@ -1,10 +1,9 @@
-// PLAN-temak 2B: a témák betűi. Statikus TTF/OTF (a variable font Androidon nem jó),
+// a témák betűi. Statikus TTF/OTF (a variable font Androidon nem jó),
 // a kulcs a `useFonts` neve, vagyis a `fontFamily` értéke. A forrás a Google Fonts
 // (@expo-google-fonts statikus példányai), az OpenDyslexic a saját repójából.
-// ShipporiMincho (8,6 MB) helyett Spectral-Light (a PLAN-temak.md 2B/2. pontja szerint).
+// ShipporiMincho (8,6 MB) helyett Spectral-Light (a terv szerint).
 
 export const FONT_NAMES = [
-  'ArchivoBlack',
   'PoiretOne',
   'JosefinSans',
   'AlfaSlabOne',
@@ -35,10 +34,9 @@ export const FONT_NAMES = [
   'OpenDyslexic',
 ] as const;
 
-export type FontName = (typeof FONT_NAMES)[number];
+type FontName = (typeof FONT_NAMES)[number];
 
 export const FONT_FILES: Record<FontName, number> = {
-  ArchivoBlack: require('../assets/fonts/ArchivoBlack-Regular.ttf'),
   PoiretOne: require('../assets/fonts/PoiretOne-Regular.ttf'),
   JosefinSans: require('../assets/fonts/JosefinSans-Regular.ttf'),
   AlfaSlabOne: require('../assets/fonts/AlfaSlabOne-Regular.ttf'),
@@ -69,7 +67,7 @@ export const FONT_FILES: Record<FontName, number> = {
   OpenDyslexic: require('../assets/fonts/OpenDyslexic-Regular.otf'),
 };
 
-export type FontLicense = { family: string; license: string; url: string };
+type FontLicense = { family: string; license: string; url: string };
 
 const OFL = 'SIL Open Font License 1.1';
 const gf = (family: string, license: string = OFL): FontLicense => ({
@@ -79,7 +77,6 @@ const gf = (family: string, license: string = OFL): FontLicense => ({
 });
 
 export const FONT_LICENSES: Record<FontName, FontLicense> = {
-  ArchivoBlack: gf('Archivo Black'),
   PoiretOne: gf('Poiret One'),
   JosefinSans: gf('Josefin Sans'),
   AlfaSlabOne: gf('Alfa Slab One'),

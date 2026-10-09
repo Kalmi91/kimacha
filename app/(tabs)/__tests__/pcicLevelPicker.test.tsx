@@ -1,4 +1,4 @@
-// PLAN-play 10. lépés (s1, anki-ui-terv.html): a PCIC fejléc első chipje a
+// a PCIC fejléc első chipje a
 // szint, koppintásra a szint-választó lap nyílik; választás után a fül
 // azonnal a választott szint pakliját adja, a haladás szintenként elkülönül.
 // Mock-minta: pcicSpeak.test.tsx (db, router, speech, data/pcic).
@@ -13,7 +13,6 @@ jest.mock('@/lib/speech', () => ({
 jest.mock('expo-router', () => ({
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
   },
 }));
@@ -27,24 +26,16 @@ jest.mock('react-native-safe-area-context', () => ({
 const A1_ITEM = { id: 'a1-w1', es: 'hola', en: 'hello', kind: 'word' as const, section: 'Test', order: 0 };
 const B1_ITEM = { id: 'b1-w1', es: 'vida', en: 'life', kind: 'word' as const, section: 'Test', order: 0 };
 const ITEMS_BY_LEVEL: Record<string, typeof A1_ITEM[]> = { A1: [A1_ITEM], B1: [B1_ITEM] };
-// PLAN-fb0924 7a. lépés: lib/pcicLevels.ts matchesLevel a mockolt data/pcic
+// lib/pcicLevels.ts matchesLevel a mockolt data/pcic
 // levelOfItem-jét hívja (a valódi korpuszban ez dönti el egy item TÉNYLEGES
 // szintjét, nem az id-előtag); itt a rögzített ITEMS_BY_LEVEL fixture-ből
 // származtatva, hogy a mock a valódi modul alakját kövesse.
-// PLAN-fb0924 8. lépés: a szint-választó a "+1" virtuális szinteket is érti
-// (lib/pcicLevels.ts matchesViewLevel a mockolt isPlusSentence/realLevelOfView-t
-// hívja); ez a fixture nem tartalmaz mondatot, tehát isPlusSentence mindig false,
-// realLevelOfView pedig a 2 valódi szintre identitás.
 jest.mock('@/data/pcic', () => ({
   PCIC_LEVELS: ['A1', 'B1'],
   PCIC_VIEW_LEVELS: ['A1', 'B1'],
-  LEVEL_LABELS: { A1: 'Beginner', B1: 'Intermediate' },
   pcicItemsForLevel: (level: string) => ITEMS_BY_LEVEL[level] ?? [],
-  pcicItemsForViewLevel: (level: string) => ITEMS_BY_LEVEL[level] ?? [],
   findPcicItem: (id: string) => [A1_ITEM, B1_ITEM].find((i) => i.id === id),
   levelOfItem: (id: string) => (id === A1_ITEM.id ? 'A1' : id === B1_ITEM.id ? 'B1' : undefined),
-  isPlusSentence: () => false,
-  realLevelOfView: (level: string) => level,
   setPcicTarget: () => {},
 }));
 

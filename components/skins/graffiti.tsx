@@ -5,7 +5,7 @@ import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { useSkin } from '@/lib/useSkin';
 
-// PLAN-temak 6E (E2), Graffiti: a kártya -2°-ban megdöntve, két csorgás a keret alján (a szín), a
+// Graffiti: a kártya -2°-ban megdöntve, két csorgás a keret alján (a szín), a
 // szó b (sárga), a cím c (zöld) színnel. A színt a gyerek-elem stílusa kapja (a képernyők a
 // szöveg színét a stílusban adják), ezért a szín felülírása cloneElement-tel megy.
 

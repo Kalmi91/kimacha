@@ -1,4 +1,4 @@
-// PLAN-temak 2A: a téma-motor a téma-kontextuson át: a választás (skin / Saját mix) mentése és
+// a téma-motor a téma-kontextuson át: a választás (skin / Saját mix) mentése és
 // visszatöltése, régi felhasználó migrációja (skin NULL: classic → classic, brand → brutal),
 // egy módú téma mód-zárolása, a useSkin() és a díszkeret no-op alapértelmezése.
 
@@ -210,7 +210,7 @@ describe('téma-motor a kontextuson át (PLAN-temak 2A)', () => {
 
 describe('dísz-rétegek: dísz nélküli témán no-op (a mai kinézet változatlan)', () => {
   it('a Neo-brutálnak és a Classicnak nincs regisztrált díszük, a slotok az alap tartalmat adják', async () => {
-    // PLAN-temak 4D: a 4 kezdő téma díszt kapott; a mai kinézetet adó témák továbbra sem.
+    // a 4 kezdő téma díszt kapott; a mai kinézetet adó témák továbbra sem.
     expect(Object.keys(SKIN_DECOR)).toEqual(expect.arrayContaining(['deco', 'szocreal', 'csillampony', 'ukiyoe']));
     expect(Object.keys(SKIN_DECOR)).not.toContain('brutal');
     expect(Object.keys(SKIN_DECOR)).not.toContain('classic');

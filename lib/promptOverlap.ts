@@ -1,24 +1,21 @@
-// PROMPT-POLICY 1: "Egy szinten és sávon belül két szónak nem lehet olyan
+// "Egy szinten és sávon belül két szónak nem lehet olyan
 // prompt (angol vagy magyar gloss)ja, amelyből nem dönthető el, melyik a
 // kérdezett." Ez a modul az egyetlen hely, ahol az átfedés-szabály él: a
-// scripts/audit-prompts.mjs (node ESM, TS-t nem tud importálni, ezért a
-// logika ott duplikálva van, ld. a szkript fejléc-kommentjét, "keep in
-// sync") és a lib/__tests__/corpusIntegrity.test.ts "prompt policy" leírása
-// egyaránt ezt hívja/tükrözi.
+// lib/__tests__/corpusIntegrity.test.ts "prompt policy" leírása ezt hívja.
 //
-// PROMPT-POLICY 8: a ragozott-alak tételek ("ir (fuimos)") nem számítanak
+// a ragozott-alak tételek ("ir (fuimos)") nem számítanak
 // átfedésnek, a zárójeles alak már egyértelműsít, ezeket a hívó szűri ki
 // isConjugatedForm-mal, mielőtt findPromptOverlaps-nak átadná.
 
 export type PromptLang = 'en' | 'es' | 'hu';
 
-export interface PromptOverlapWord {
+interface PromptOverlapWord {
   id: number;
   headword: string;
   prompt: string;
 }
 
-export interface PromptOverlapCluster {
+interface PromptOverlapCluster {
   kind: 'exact' | 'partial';
   // partial esetén az átfedő normalizált sense, ami miatt a fürt összeállt;
   // exact esetén null (ott a teljes prompt azonos, nincs egyetlen "ok" sense).
@@ -41,12 +38,12 @@ function stripArticle(sense: string, lang: PromptLang): string {
   return re ? sense.replace(re, '') : sense;
 }
 
-export function normalizeSense(raw: string, lang: PromptLang): string {
+function normalizeSense(raw: string, lang: PromptLang): string {
   return stripArticle(raw.trim().toLowerCase(), lang).replace(/[.\s]+$/, '').trim();
 }
 
 // A prompt " / "-vel elválasztott glosszai, mindegyik normalizálva. A
-// zárójel a jelentés-egyértelműsítés része (PROMPT-POLICY 2), ezért ITT
+// zárójel a jelentés-egyértelműsítés része, ezért ITT
 // megmarad, csak a bareSense() vágja le.
 export function promptSenses(prompt: string, lang: PromptLang): string[] {
   return prompt
@@ -56,7 +53,7 @@ export function promptSenses(prompt: string, lang: PromptLang): string[] {
 }
 
 // "time (clock)" -> "time": a zárójel levágása utáni csupasz alak, ez adja
-// a PROMPT-POLICY 1 "zárójel levágása után azonos" esetét (pl. "time" vs
+// a "zárójel levágása után azonos" esetét (pl. "time" vs
 // "time (clock)" a tanulónak ugyanúgy kétértelmű).
 export function bareSense(sense: string): string {
   return sense.replace(/\s*\([^)]*\)\s*$/, '').trim();
@@ -72,9 +69,9 @@ export function normalizedPrompt(prompt: string, lang: PromptLang): string {
  *   1. EXACT, a teljes normalizált prompt (senses összefűzve) szó szerint azonos.
  *   2. PARTIAL, a maradék szavak közül, akiknek legalább egy normalizált
  *      sense-e (vagy annak csupasz, zárójel nélküli alakja) megegyezik egy
- *      másikéval (névelő-levágás, " / "-bontás, PROMPT-POLICY 2 zárójel).
+ *      másikéval (névelő-levágás, " / "-bontás, zárójel).
  * Egy szó csak egy fürtbe kerül (exact elsőbbséget élvez), így a két darabszám
- * (exact/partial) diszjunkt, ez adja a PROMPT-POLICY 9 riport-számait.
+ * (exact/partial) diszjunkt, ez adja a riport-számait.
  */
 export function findPromptOverlaps(words: PromptOverlapWord[], lang: PromptLang): PromptOverlapCluster[] {
   const active = words.filter((w) => !isConjugatedForm(w.headword) && w.prompt.trim());
@@ -102,7 +99,7 @@ export function findPromptOverlaps(words: PromptOverlapWord[], lang: PromptLang)
   // ütközik, ha egy teljes sense-ük azonos, VAGY az egyik csupasz sense-e
   // egyenlő a másik zárójeles sense-ének levágott alakjával ("time" vs
   // "time (clock)"). Két KÜLÖNBÖZŐ zárójeles alak ("cold (illness)" vs
-  // "cold (temperature)") nem ütközik: pont ez a PROMPT-POLICY 2 megoldása.
+  // "cold (temperature)") nem ütközik: pont ez a megoldás.
   const keyIndex = new Map<string, PromptOverlapWord[]>();
   const bareIndex = new Map<string, PromptOverlapWord[]>();
   const parenIndex = new Map<string, PromptOverlapWord[]>();
@@ -179,12 +176,12 @@ export function findPromptOverlaps(words: PromptOverlapWord[], lang: PromptLang)
   return clusters;
 }
 
-// PROMPT-POLICY 12: az angol prompt sosem tartalmazhatja a spanyol címszót,
+// az angol prompt sosem tartalmazhatja a spanyol címszót,
 // mert elárulja a választ. A címszó a normalizált "es" mező: névelő, zárójel
 // és a " / " utáni alternatíva nélkül, kisbetűsítve (ugyanazokkal a segédekkel,
 // mint a többi szabály); 3 betűnél rövidebb címszóra nem fut (pl. "no", túl
-// sok véletlen angol egyezést adna). A cognate-kártyák (PROMPT-POLICY 11/6,
-// pl. "el hotel" / "the hotel") nem hibák: kizárva, ha a levágott en prompt
+// sok véletlen angol egyezést adna). A cognate-kártyák (pl.
+// "el hotel" / "the hotel") nem hibák: kizárva, ha a levágott en prompt
 // egésze, vagy annak "/" vagy ","-tagja (a korpusz mindkét alak-elválasztót
 // használja, ld. a fájl "senses" helperét a corpusIntegrity.test.ts-ben),
 // maga a címszó.

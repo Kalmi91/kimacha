@@ -1,4 +1,4 @@
-// NY20: a brutalista paletta a téma-kontextuson át képződik le a Colors
+// a brutalista paletta a téma-kontextuson át képződik le a Colors
 // kulcsaira; az alapérték brand, a választás tartós (db), a mód (papír / tinta)
 // az Auto / Light / Dark beállítást követi, a classic a mai színeket adja.
 

@@ -1,4 +1,4 @@
-// PLAN-fb1001 K1: a 🗑️ (haladás-nullázás) kikerült a Learn fejlécéből, a
+// a 🗑️ (haladás-nullázás) kikerült a Learn fejlécéből, a
 // Beállításokba költözött (settingsReset.test.tsx). Mock-minta: pcicFocus.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
@@ -11,7 +11,6 @@ jest.mock('@/lib/speech', () => ({
 jest.mock('expo-router', () => ({
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
   },
 }));
@@ -24,12 +23,8 @@ const FIXTURE_ITEM = { id: 'b1-x1', es: 'vida', en: 'life', kind: 'word' as cons
 jest.mock('@/data/pcic', () => ({
   PCIC_LEVELS: ['B1'],
   PCIC_VIEW_LEVELS: ['B1'],
-  LEVEL_LABELS: { B1: 'Intermediate' },
   pcicItemsForLevel: () => [FIXTURE_ITEM],
-  pcicItemsForViewLevel: () => [FIXTURE_ITEM],
   findPcicItem: (id: string) => (id === 'b1-x1' ? FIXTURE_ITEM : undefined),
-  isPlusSentence: () => false,
-  realLevelOfView: (level: string) => level,
   setPcicTarget: () => {},
 }));
 

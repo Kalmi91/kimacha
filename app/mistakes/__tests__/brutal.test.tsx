@@ -1,4 +1,4 @@
-// NY19: a Hibák riport brutalista palettán (BrutalBox köteg-kártya), classic
+// a Hibák riport brutalista palettán (BrutalBox köteg-kártya), classic
 // palettán a mai kinézet. Mock-minta: report.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));

@@ -17,7 +17,7 @@ import { legibleOn, textContrastMin } from '@/constants/Skins';
 import { useDiffStyles } from '@/lib/useDiffStyles';
 import { useSkin } from '@/lib/useSkin';
 
-// PLAN-play 14. lépés: a PCIC kártya felfedett-állapot blokkja
+// a PCIC kártya felfedett-állapot blokkja
 // (app/(tabs)/index.tsx-ből kiemelve, felelősség szerinti szétvágás, nincs
 // viselkedés-változás): a Check utáni diff + helyes alak + példamondat, és a
 // Tudtam/Nem tudtam gombsor. A hívó csak `grade` truthy esetén rendereli.
@@ -45,13 +45,13 @@ export default function PcicRevealedAnswer({
   current: Sm2Card;
   currentItem: PcicItem;
   today: string;
-  // PLAN-ketiranyu 4. lépés: melyik irány aktív, hogy a felfedés (felolvasás,
+  // melyik irány aktív, hogy a felfedés (felolvasás,
   // példamondat, jelentés-lista) a célnyelvet mutassa, ne mindig a spanyolt.
   target: PcicTarget;
   onGrade: (g: Sm2Grade) => void;
 }) {
   // A régi gombsor intervallum-előnézete grade-enként (lib/sm2.ts
-  // sm2PreviewDays), i18n-nel formázva (FB350/5. commit: ne csak magyarul).
+  // sm2PreviewDays), i18n-nel formázva (ne csak magyarul).
   const g = useGrammarColors();
   const { skin } = useSkin();
   const diff = useDiffStyles();
@@ -64,17 +64,17 @@ export default function PcicRevealedAnswer({
   const example = target === 'es' ? currentItem?.exampleEs : currentItem?.exampleEn;
   const exampleGloss = target === 'es' ? currentItem?.exampleEn : currentItem?.exampleEs;
 
-  // PLAN-learn-words-open 5a: ha a beírt válasz betűre és ékezetre pontosan a cél
+  // ha a beírt válasz betűre és ékezetre pontosan a cél
   // (kis-nagybetűt és a széli szóközt nem számítva), a zöld visszhang kimarad, a
   // szó csak egyszer látszik (a rózsaszín sor a hangszóróval).
   const typedExact = typedAnswer.trim().toLowerCase() === grade.best.trim().toLowerCase();
 
-  // PLAN-tobbjelentes 3. lépés (SZ8): ha a válasznak több alternatívája van (S1, pl. "el carro /
+  // ha a válasznak több alternatívája van (S1, pl. "el carro /
   // el coche"), a mutatott helyes alak alatt a többi is látszik, hogy a tanuló tudja, melyik még jó.
   const alsoAlternatives = pcicAlternatives(target === 'es' ? currentItem.es : currentItem.en).filter(
     (alt) => alt !== grade.best
   );
-  // FB480 (PLAN-fb1005e): üres / rossz válasznál a mutatott alak mellett a többi elfogadott alak is
+  // üres / rossz válasznál a mutatott alak mellett a többi elfogadott alak is
   // ugyanolyan sorban látszik (nem csak egy kis „also” sorban); helyes válasznál marad az „also” sor.
   const answerColor = legibleOn(colors.tint, colors.card, textContrastMin(skin, 'word', 22, true));
   const showAllAccepted = nextGrade !== 'good';
@@ -82,7 +82,7 @@ export default function PcicRevealedAnswer({
   return (
     <>
       <View style={styles.resultSection}>
-        {/* FB403: egyetlen, minden kártyán azonos jó / rossz jelzés (szín + alak + ✓/✗ + szöveg). */}
+        {/* egyetlen, minden kártyán azonos jó / rossz jelzés (szín + alak + ✓/✗ + szöveg). */}
         <ResultBadge correct={nextGrade === 'good'} align="center" testID="pcic-result-badge" />
         {!typedExact && (
         <Text testID="pcic-diff-line" style={styles.diffLine}>
@@ -134,9 +134,9 @@ export default function PcicRevealedAnswer({
         {grade.accentOnly && (
           <Text style={[styles.accentNote, { color: colors.tabIconDefault }]}>{s.pcic.accentForgiven}</Text>
         )}
-        {/* PLAN-play 11. lépés: példamondat a megoldás alatt, csak Check
+        {/* példamondat a megoldás alatt, csak Check
             után és csak ha van egyezés a korpuszban (currentItem.exampleEs).
-            PLAN-ketiranyu 4. lépés: célnyelven szól, a másik nyelv a gloss. */}
+            Célnyelven szól, a másik nyelv a gloss. */}
         {example && (
           <>
             <View style={[styles.frontRow, styles.exampleRow]}>
@@ -151,16 +151,16 @@ export default function PcicRevealedAnswer({
         )}
       </View>
 
-      {/* Kálmán 2026-09-21: a régi (PR #27 előtti) Tudtam/Nem tudtam
+      {/* a régi (PR #27 előtti) Tudtam/Nem tudtam
           gombsor vissza, intervallum-előnézettel; a koppintás dönt és
           értékel, üres beküldés után is. */}
       <View testID="pcic-grades" style={[styles.gradesRow, g.brutal && styles.brutalGradesRow, g.brutal && stacked && styles.gradesStacked]}>
         {GRADES.map((gr) => {
           const isPre = nextGrade === gr;
           if (g.brutal) {
-            // NY19: doboz (good = a, again = b). PLAN-learn-words-open 5a: a két gomb
+            // doboz (good = a, again = b). A két gomb
             // egyforma (azonos árnyék-eltolás, a sor a kártya teljes szélességén).
-            // PLAN-temak 6E: a téma gomb-változata: senior = egymás alatt + ikon, zen = csak szöveg,
+            // A téma gomb-változata: senior = egymás alatt + ikon, zen = csak szöveg,
             // a "Tudom" aláhúzva.
             const fill = gr === 'good' ? 'a' : 'b';
             const labelColor = actionTextColor(g, fill, variant);
@@ -216,7 +216,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 16,
   },
-  // FB460: a "Not quite!" jelvény és a beírt (rontott) szó közt látható rés kell (régen 0 px volt, a két elem összeért).
+  // a "Not quite!" jelvény és a beírt (rontott) szó közt látható rés kell (régen 0 px volt, a két elem összeért).
   diffLine: {
     fontSize: 20,
     fontWeight: '700',
@@ -237,7 +237,7 @@ const styles = StyleSheet.create({
     gap: 8,
     marginTop: 8,
   },
-  // PLAN-tobbjelentes 3. lépés: "also: b · c" sor a helyes alak alatt.
+  // "also: b · c" sor a helyes alak alatt.
   alsoLine: {
     fontSize: 13,
     textAlign: 'center',
@@ -252,7 +252,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 4,
   },
-  // PLAN-play 11. lépés: példamondat a megoldás alatt, Check után.
+  // példamondat a megoldás alatt, Check után.
   exampleRow: {
     marginTop: 12,
   },
@@ -283,7 +283,7 @@ const styles = StyleSheet.create({
   brutalGradesRow: { alignSelf: 'stretch' },
   brutalGrade: { flex: 1 },
   brutalGradeBox: { flex: 1, paddingVertical: 8, alignItems: 'center', justifyContent: 'center' },
-  // PLAN-temak 6E (senior): a két gomb egymás alatt, teljes szélességben.
+  // Senior: a két gomb egymás alatt, teljes szélességben.
   gradesStacked: { flexDirection: 'column' },
   brutalGradeStacked: { alignSelf: 'stretch' },
   brutalGradeBoxStacked: { paddingVertical: 10, alignItems: 'center', justifyContent: 'center' },

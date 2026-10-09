@@ -1,4 +1,4 @@
-// NY19: a chat-FAB és a Feedback modal brutalista palettán (négyzetes BrutalBox,
+// a chat-FAB és a Feedback modal brutalista palettán (négyzetes BrutalBox,
 // doboz-modal), classic palettán a mai kör-gomb. Mock-minta: FeedbackModal.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));

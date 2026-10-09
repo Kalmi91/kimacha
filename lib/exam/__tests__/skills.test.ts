@@ -1,4 +1,4 @@
-// PLAN-vizsga A. szakasz 6. lépés (2c, A4 b): készségenkénti pontozás (pont, %, erős / gyenge) és a
+// készségenkénti pontozás (pont, %, erős / gyenge) és a
 // gyenge nyelvtanhoz a leggyakrabban elrontott leckék (a lecke-link célja).
 
 import { scoreExam } from '../score';

@@ -4,7 +4,7 @@ beforeEach(() => resetFormIndex());
 
 describe('detectStructures', () => {
   it('names the compound tenses by their auxiliary and participle', () => {
-    // FB196 kiváltó esete: „The clients have arrived" spanyol párja.
+    // A hiba kiváltó esete: „The clients have arrived" spanyol párja.
     expect([...detectStructures('Los clientes han llegado temprano hoy.')]).toContain('perfecto');
     expect([...detectStructures('¿No habías estado aquí antes?')]).toContain('pluscuamperfecto');
     expect([...detectStructures('Habré terminado el trabajo.')]).toContain('futuro_perfecto');

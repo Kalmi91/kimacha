@@ -10,7 +10,7 @@ import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
 import ExamButton from './ExamButton';
 
-// PLAN-vizsga E. szakasz (E5): a próbavizsga eredmény-lapja (ítélet, papíronkénti sávok,
+// a próbavizsga eredmény-lapja (ítélet, papíronkénti sávok,
 // csoportonkénti sorok, rövidítés-megjegyzés) és az átnézés (tételenként a kérdés, a te
 // válaszod, a helyes válasz). A szóbeli ebben a szeletben "nem beszámított" (E2 a).
 

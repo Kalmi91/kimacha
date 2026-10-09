@@ -1,4 +1,4 @@
-// FB480 (PLAN-fb1005e): ha a kártya több választ fogad el ("el carro / el coche / el auto"), és a
+// ha a kártya több választ fogad el ("el carro / el coche / el auto"), és a
 // tanuló üresen vagy rosszul Check-el, a felfedés MINDEN elfogadott szót ugyanolyan súllyal kiírja
 // (nem csak az elsőt egy kis „also” sorban); helyes válasznál marad a „also” sor. Mock-minta:
 // app/(tabs)/__tests__/pcicHint.test.tsx.
@@ -13,7 +13,6 @@ jest.mock('@/lib/speech', () => ({
 jest.mock('expo-router', () => ({
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
   },
 }));
@@ -31,12 +30,8 @@ jest.mock('@/data/pcic', () => {
   return {
     PCIC_LEVELS: ['B1'],
     PCIC_VIEW_LEVELS: ['B1'],
-    LEVEL_LABELS: { B1: 'Intermediate' },
     pcicItemsForLevel: () => items,
-    pcicItemsForViewLevel: () => items,
     findPcicItem: (id: string) => items.find((i) => i.id === id),
-    isPlusSentence: () => false,
-    realLevelOfView: (level: string) => level,
     setPcicTarget: () => {},
   };
 });

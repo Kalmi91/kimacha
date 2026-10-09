@@ -1,4 +1,4 @@
-// PLAN-fb1002 6. lépés (FB447): a próbavizsga minden részén ott a visszajelzés-gomb, és a
+// a próbavizsga minden részén ott a visszajelzés-gomb, és a
 // kártya-azonosító megmondja, melyik részről van szó (mock-exam:<szint>:<rész>).
 // Mock-minta: mockExam.test.tsx; a FeedbackModal itt csak a kapott `currentCard`-ot írja ki.
 

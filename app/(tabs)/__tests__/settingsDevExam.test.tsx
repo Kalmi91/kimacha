@@ -1,4 +1,4 @@
-// PLAN-vizsga A. szakasz 2. lépés (8. követelmény): a Settings alján egy csak __DEV__-ben
+// a Settings alján egy csak __DEV__-ben
 // látszó vezérlő beállít egy A1 állapotot (a szint kártyáinak 85%-a graduált + egy A1 lecke
 // kész), hogy a vizsga a web-előnézetben végigkattintható legyen. Release-buildben
 // (`__DEV__ === false`) nem jelenik meg. Mock-minta: settingsReset.test.tsx.
@@ -8,7 +8,6 @@ jest.mock('expo-router', () => ({
   useRouter: () => ({ push: jest.fn(), navigate: jest.fn(), back: jest.fn() }),
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
   },
 }));

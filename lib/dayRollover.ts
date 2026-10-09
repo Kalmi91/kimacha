@@ -1,4 +1,4 @@
-// FB108, Kálmán 2026-08-08: "legyen olyan, hogy ha éjfélkor játszunk a
+// User feedback: "legyen olyan, hogy ha éjfélkor játszunk a
 // játékkal, és pont átfordul akkor a napi statot írja ki és gratuláljon, a
 // játékosnak, valami nagyon menő szöveggel, legyen nagyon kreatív, és irjaon
 // valami nagyon szépet és sok különböző szöveg legyen de legyen benne
@@ -8,7 +8,7 @@
 // lines do come back over time, exactly the repetition that was asked for.
 // Pure module, the toast only renders what it gets back.
 
-export interface DayTotals {
+interface DayTotals {
   minutes: number;
   words: number;
 }

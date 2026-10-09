@@ -2,7 +2,7 @@ import { markAnswerIndex, markTokens } from '../grammarMark';
 import { buildGrammarRound, type GrammarChoiceRoundItem } from '../grammarChoice';
 import type { GrammarMarkItem, GrammarTopicData } from '../content';
 
-// LECKE-SEMA 2: buildGrammarRound most a match/form ágat is visszaadhatja
+// buildGrammarRound most a match/form ágat is visszaadhatja
 // (GrammarMatchFormRoundItem, options nélkül); ez a teszt csak jelölős
 // tételekkel dolgozik, tehát a round[0] mindig a choice-ág, a cast ezt fejezi ki.
 const choice = (r: ReturnType<typeof buildGrammarRound>[number]) => r as GrammarChoiceRoundItem;
@@ -74,10 +74,12 @@ describe('markAnswerIndex', () => {
 
 describe('buildGrammarRound with a mark item', () => {
   const topic = (item: GrammarMarkItem): GrammarTopicData => ({
+    schema: 2,
     topic: 'test',
     level: 'A1',
     title: { hu: 't', en: 't', es: 't', de: 't' },
-    rule: { hu: 'r', en: 'r', es: 'r', de: 'r' },
+    body: [],
+    speak: { hu: 's', en: 's', es: 's', de: 's' },
     items: [item],
   });
 

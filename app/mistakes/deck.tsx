@@ -25,11 +25,11 @@ import { BrutalBackButton, BrutalBox, BrutalButton, brutalInputStyle } from '@/c
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
 import { useDiffStyles } from '@/lib/useDiffStyles';
 
-// PLAN-hibaim.md 4. lépés ("Pakli"): the PCIC card surface (CardShell,
+// the PCIC card surface (CardShell,
 // DockedAction) over the cards lib/mistakes/deck.ts builds from every loaded
 // batch, scheduled with the same lib/sm2.ts SM-2 used on the PCIC tab, on its
 // own mistake_cards table. The grading buttons/labels and the pre-selected
-// grade are 1:1 with the PCIC tab's (PcicRevealedAnswer.tsx), per Kálmán's
+// grade are 1:1 with the PCIC tab's (PcicRevealedAnswer.tsx), per the maintainer's
 // "a PCIC szövegeivel" in the approved screen description.
 
 const GRADES: Sm2Grade[] = ['again', 'good'];

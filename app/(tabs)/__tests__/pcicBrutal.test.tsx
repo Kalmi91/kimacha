@@ -1,4 +1,4 @@
-// NY19: a Tanulás fül brutalista palettán (BrutalBox kártya, szint-doboz, dokkolt
+// a Tanulás fül brutalista palettán (BrutalBox kártya, szint-doboz, dokkolt
 // gomb, szegmentált progress), classic palettán a mai kinézet. Mock-minta:
 // pcicCardShell.test.tsx.
 
@@ -12,7 +12,6 @@ jest.mock('@/lib/speech', () => ({
 jest.mock('expo-router', () => ({
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
   },
 }));
@@ -22,18 +21,14 @@ jest.mock('react-native-safe-area-context', () => ({
 }));
 
 // Egy fix tétel, hogy a teszt ne a valódi PCIC-korpusztól függjön.
-// PLAN-play 10. lépés: az id "b1-" előtaggal, mert lib/pcicLevels.ts a
+// Az id "b1-" előtaggal, mert lib/pcicLevels.ts a
 // szint-szűrést az id-előtagból dönti el (a fül a B1 alap-szinten indul).
 const FIXTURE_ITEM = { id: 'b1-x1', es: 'vida', en: 'life', kind: 'word' as const, section: 'Test', order: 0 };
 jest.mock('@/data/pcic', () => ({
   PCIC_LEVELS: ['B1'],
   PCIC_VIEW_LEVELS: ['B1'],
-  LEVEL_LABELS: { B1: 'Intermediate' },
   pcicItemsForLevel: () => [FIXTURE_ITEM],
-  pcicItemsForViewLevel: () => [FIXTURE_ITEM],
   findPcicItem: (id: string) => (id === 'b1-x1' ? FIXTURE_ITEM : undefined),
-  isPlusSentence: () => false,
-  realLevelOfView: (level: string) => level,
   setPcicTarget: () => {},
 }));
 
@@ -70,7 +65,7 @@ describe('Tanulás fül, neo-brutalista (NY19)', () => {
     view.unmount();
   });
 
-  // PLAN-learn-words-open 5a: a "Didn't know" / "Knew it" gomb egyforma: azonos
+  // a "Didn't know" / "Knew it" gomb egyforma: azonos
   // árnyék-eltolás (a külső burkoló margója), a doboz kitölti a sort (flex: 1),
   // a felirat középre igazított, és a sor a kártya teljes szélességén fut.
   it('brand palettán a két értékelő gomb egyforma: azonos eltolás, kitöltő doboz, középre igazított felirat', async () => {

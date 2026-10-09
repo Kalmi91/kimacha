@@ -1,4 +1,4 @@
-// PLAN-hibaim.md 4. lépés ("Pakli"): a Check/grade menet, előre kijelölt
+// a Check/grade menet, előre kijelölt
 // Knew it / Didn't know, "You said:" a régi hibás mondattal, üres pakli
 // esetén "All done for now". Mock-minta: pcicCardShell.test.tsx.
 

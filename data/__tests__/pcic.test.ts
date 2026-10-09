@@ -1,4 +1,4 @@
-// PLAN-ketiranyu 4. lépés (2026-09-28): a data/pcic.ts irány-tudatos lett
+// a data/pcic.ts irány-tudatos lett
 // (en→es marad az alapértelmezett, es→en az újonnan bekötött második pár).
 // Ez a teszt a modul-szintű setPcicTarget/getPcicTarget viselkedését és a
 // két irány id-terének (w<id> / e<id>) elkülönülését fedi.
@@ -21,11 +21,11 @@ describe('data/pcic.ts: irány-tudatos korpusz (PLAN-ketiranyu 4. lépés)', () 
     expect(getPcicTarget()).toBe('es');
     const a1 = pcicItemsForLevel('A1');
     expect(a1.length).toBeGreaterThan(0);
-    // PLAN-learn-words-open: az en→es pakli id-tere o<order> (data/words-open).
+    // az en→es pakli id-tere o<order> (data/words-open).
     expect(a1.every((item) => item.id.startsWith('o'))).toBe(true);
   });
 
-  // PLAN-learn-words-open 1-2. lépés: a 4 szint 150-150 kártya a words-open
+  // a 4 szint 150-150 kártya a words-open
   // a1/a2/b1/b2.json-ból, order = a fájl order mezője (1-600), id = o<order>.
   it('en→es: A1/A2/B1/B2 = 512-1371-1537-1022 words-open kártya (601 = tocar), o<order> id, egyedi id', () => {
     const levels = (['A1', 'A2', 'B1', 'B2'] as const).map((l) => pcicItemsForLevel(l));
@@ -50,9 +50,9 @@ describe('data/pcic.ts: irány-tudatos korpusz (PLAN-ketiranyu 4. lépés)', () 
     expect(findPcicItem('o883')?.pos).toBe('interj');
   });
 
-  // PLAN-ketiranyu 5. lépés (D-A döntés a): az A1 az data/words/en/a0.json
+  // Az A1 az data/words/en/a0.json
   // első 50 kártyáját adja, e<id> id-térrel; A2/B1/B2 marad üres (nincs rájuk terv).
-  // PLAN-enb1: B1 = data/words/en/b1.json (CEFR-J), e10000-től; B2 üres.
+  // B1 = data/words/en/b1.json (CEFR-J), e10000-től; B2 üres.
   it('setPcicTarget("en")-re vált: A1 = en a0+a1, A2 = en a2, B1 = en b1, e<id>, angol szó egyszer; B2 üres', () => {
     setPcicTarget('en');
     expect(getPcicTarget()).toBe('en');

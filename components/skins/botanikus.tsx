@@ -4,7 +4,7 @@ import { Text } from '@/components/KText';
 
 import type { SkinDecor } from '@/components/skins/types';
 
-// PLAN-temak 6E, Botanikus: levél-ikon a fejlécben, növény-ikon a kártya jobb alsó sarkában.
+// Botanikus: levél-ikon a fejlécben, növény-ikon a kártya jobb alsó sarkában.
 
 function BotanikusHeader({ children }: { children: ReactNode }) {
   return (

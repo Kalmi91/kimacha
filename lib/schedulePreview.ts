@@ -1,4 +1,4 @@
-// FB100, Kálmán 2026-08-08: "valahol jeleznie kellene, hogy mennyi szó van hány
+// User feedback: "valahol jeleznie kellene, hogy mennyi szó van hány
 // napra elrakva, meg higy mikor frissül."
 //
 // The FSRS due dates already hold that answer, they were just never shown. This

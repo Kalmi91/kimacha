@@ -1,4 +1,4 @@
-// PLAN-vizsga E. szakasz (Kálmán E4 b, E3 a): a próbavizsga részenkénti mentése (félbehagyva
+// a próbavizsga részenkénti mentése (félbehagyva
 // folytatható), a legutóbbi eredmény (a Stats kártya ezt mutatja) és a valódi vizsgaórák.
 
 import { buildMockExam, mockExamSignature } from '../build';

@@ -1,4 +1,4 @@
-// FB447 (PLAN-fb1002e 2. lépés): a régi szintvizsga minden részén ott a visszajelzés-gomb, és a
+// a régi szintvizsga minden részén ott a visszajelzés-gomb, és a
 // kártya-azonosító megmondja, melyik részről van szó (exam:<szint>:<rész>); beírós kérdésnél a 💬
 // a dokkolt Check-sáv fölött áll (bottomOffset). Minta: mockExamFeedback.test.tsx + exam.test.tsx.
 

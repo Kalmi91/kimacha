@@ -1,4 +1,4 @@
-// NY25: fejlécek brutalista palettán (bg háttér, 2,5 px ink alsó vonal, nagybetűs 500-as cím,
+// fejlécek brutalista palettán (bg háttér, 2,5 px ink alsó vonal, nagybetűs 500-as cím,
 // vissza-nyíl BrutalBox-ban), classic palettán a mai fejléc.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
@@ -40,7 +40,7 @@ describe('Fejlécek, neo-brutalista (NY25)', () => {
     expect(brutalHeaderRowStyle(g)).toBeNull();
   });
 
-  // PLAN-temak 4C: a téma title-betűje a natív fejléc címére.
+  // a téma title-betűje a natív fejléc címére.
   it('brutalHeaderOptions + téma: egyedi betű (fontWeight nélkül), betűköz, nagybetű; classic-on továbbra is üres', () => {
     const g = grammarColorsFor('deco-dark');
     const o = brutalHeaderOptions(g, SKINS.deco);
@@ -48,7 +48,7 @@ describe('Fejlécek, neo-brutalista (NY25)', () => {
     expect(o.headerTitleStyle).not.toHaveProperty('fontWeight');
 
     const brutal = brutalHeaderOptions(grammarColorsFor('brand-light'), SKINS.brutal);
-    // PLAN-temak 6E (Kálmán 2a): a brutal title betűje null = a mai rendszer-betű, fontWeight-tel.
+    // a brutal title betűje null = a mai rendszer-betű, fontWeight-tel.
     expect(brutal.headerTitleStyle).toMatchObject({ fontWeight: '500', textTransform: 'uppercase' });
     expect(brutal.headerTitleStyle).not.toHaveProperty('fontFamily');
     expect(brutal.headerStyle).toMatchObject({ borderBottomWidth: 2.5 });

@@ -6,7 +6,7 @@ import { PCIC_DEDUP_MOVES } from '../pcicDedupMoves';
 import { pickStrongerSm2Card } from '../pcicSession';
 import type { Sm2Card } from '../sm2';
 
-// PLAN-play 14. lépés: a séma-létrehozás + minden ALTER/CREATE-migráció
+// a séma-létrehozás + minden ALTER/CREATE-migráció
 // (korábban SQLiteDB.open() és SQLiteDB.applyWordMerges(), lib/database.ts),
 // felelősség szerint ide kiemelve. Az osztály hívja induláskor; a SQL-sorrend
 // és minden migrációs lépés változatlan, csak a hely és a `this` hivatkozások
@@ -65,7 +65,7 @@ export async function applyWordMerges(db: SQLite.SQLiteDatabase) {
   );
 }
 
-// PLAN-fb0924 7a. lépés (FB396, D3): a nehézség-igazítás egy PCIC-szót
+// a nehézség-igazítás egy PCIC-szót
 // (a törölt scripts/pcic-level-fit.mjs generálta) a hozzá illő szint FÁJLJÁBA
 // mozgat, ÚJ id-vel (lib/pcicLevelMoves.ts, régi id -> új id). Tiszta
 // átnevezés: a cél id mindig frissen generált, nincs "iker"-ütközés a másik
@@ -73,7 +73,7 @@ export async function applyWordMerges(db: SQLite.SQLiteDatabase) {
 // Idempotens: a SELECT a második futástól 0 sort ad (a régi id-jű
 // pcic_cards-sor már nincs a táblában), a `pcic_cards` a backup-ból ki van
 // hagyva (lib/backup.ts), tehát csak itt, natív induláskor kell futnia.
-export async function applyPcicLevelMoves(db: SQLite.SQLiteDatabase) {
+async function applyPcicLevelMoves(db: SQLite.SQLiteDatabase) {
   const oldIds = Object.keys(PCIC_LEVEL_MOVES);
   if (oldIds.length === 0) return;
   const placeholders = oldIds.map(() => '?').join(',');
@@ -104,7 +104,7 @@ function pcicRowToSm2Card(row: any): Sm2Card {
   };
 }
 
-// PLAN-fb0924 7b. lépés (FB384, D3+D4): a szintek közti/szinten belüli
+// a szintek közti/szinten belüli
 // duplikátum-egyesítés (a törölt scripts/pcic-dedup.mjs generálta) egy törölt
 // (loser) item-id-t a megmaradó (winner) item-id-re képez le
 // (lib/pcicDedupMoves.ts). Több loser is mutathat ugyanarra a winnerre
@@ -112,7 +112,7 @@ function pcicRowToSm2Card(row: any): Sm2Card {
 // követve: ha mindkét oldalon van haladás, az erősebb (pickStrongerSm2Card)
 // nyer, a gyengébb sor törlődik. Idempotens: a második futástól a SELECT 0
 // sort ad. Csak natív induláskor kell futnia (lásd applyPcicLevelMoves fent).
-export async function applyPcicDedup(db: SQLite.SQLiteDatabase) {
+async function applyPcicDedup(db: SQLite.SQLiteDatabase) {
   const loserIds = Object.keys(PCIC_DEDUP_MOVES);
   if (loserIds.length === 0) return;
   const placeholders = loserIds.map(() => '?').join(',');
@@ -302,46 +302,46 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
   try {
     await db.execAsync('ALTER TABLE learn_settings ADD COLUMN random_topics INTEGER');
   } catch {}
-  // Migration: add strict_accents column (DBs created before the difficulty switches, FB132).
+  // Migration: add strict_accents column (DBs created before the difficulty switches).
   try {
     await db.execAsync('ALTER TABLE learn_settings ADD COLUMN strict_accents INTEGER');
   } catch {}
-  // Migration: add requeue_level column (DBs created before the difficulty dial, FB198).
+  // Migration: add requeue_level column (DBs created before the difficulty dial).
   try {
     await db.execAsync('ALTER TABLE learn_settings ADD COLUMN requeue_level TEXT');
   } catch {}
-  // Migration: add article_picker column (DBs created before the article chips, FB188).
+  // Migration: add article_picker column (DBs created before the article chips).
   try {
     await db.execAsync('ALTER TABLE learn_settings ADD COLUMN article_picker INTEGER');
   } catch {}
-  // Migration: add feedback_btn_side column (DBs created before the draggable feedback button, FB41).
+  // Migration: add feedback_btn_side column (DBs created before the draggable feedback button).
   try {
     await db.execAsync('ALTER TABLE learn_settings ADD COLUMN feedback_btn_side TEXT');
   } catch {}
-  // Migration: add weekly_goal_minutes column (DBs created before the weekly study goal, FB65).
+  // Migration: add weekly_goal_minutes column (DBs created before the weekly study goal).
   try {
     await db.execAsync('ALTER TABLE learn_settings ADD COLUMN weekly_goal_minutes INTEGER');
   } catch {}
-  // Migration: last_open_date column (DBs created before the daily greeting, FB76).
+  // Migration: last_open_date column (DBs created before the daily greeting).
   try {
     await db.execAsync('ALTER TABLE user_meta ADD COLUMN last_open_date TEXT');
   } catch {}
-  // Migration: status-bar tint index (DBs created before the blue strip, FB83).
+  // Migration: status-bar tint index (DBs created before the blue strip).
   try {
     await db.execAsync('ALTER TABLE user_meta ADD COLUMN status_bar_tint INTEGER');
   } catch {}
-  // Migration: app-wide color palette id (DBs created before the neon UI, NY11).
+  // Migration: app-wide color palette id (DBs created before the neon UI).
   try {
     await db.execAsync('ALTER TABLE user_meta ADD COLUMN grammar_palette TEXT');
   } catch {}
-  // Migration: chosen theme + "Saját mix" JSON (DBs created before the theme engine, PLAN-temak 2A).
+  // Migration: chosen theme + "Saját mix" JSON (DBs created before the theme engine).
   try {
     await db.execAsync('ALTER TABLE user_meta ADD COLUMN skin TEXT');
   } catch {}
   try {
     await db.execAsync('ALTER TABLE user_meta ADD COLUMN skin_mix TEXT');
   } catch {}
-  // Migration: daily new-word budget columns (FB77). daily_new_limit is the
+  // Migration: daily new-word budget columns. daily_new_limit is the
   // standing setting; new_bonus/new_bonus_date carry the "+5 new words" taps,
   // which only count while new_bonus_date is still today.
   try {
@@ -353,24 +353,24 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
   try {
     await db.execAsync('ALTER TABLE learn_settings ADD COLUMN new_bonus_date TEXT');
   } catch {}
-  // UTEMEZO 8: hand_cap (P) and gap_laps (R) columns (DBs created before the
-  // difficulty window, which replaces the FB198 requeue_level dial).
+  // hand_cap (P) and gap_laps (R) columns (DBs created before the
+  // difficulty window, which replaces the requeue_level dial).
   try {
     await db.execAsync('ALTER TABLE learn_settings ADD COLUMN hand_cap INTEGER');
   } catch {}
   try {
     await db.execAsync('ALTER TABLE learn_settings ADD COLUMN gap_laps INTEGER');
   } catch {}
-  // UTEMEZO 4.7: repair_gap (R_javítás), a rontott lap külön, rövid rése.
+  // repair_gap (R_javítás), a rontott lap külön, rövid rése.
   try {
     await db.execAsync('ALTER TABLE learn_settings ADD COLUMN repair_gap INTEGER');
   } catch {}
   // Migration: add again_delay_sec column (DBs created before the PCIC
-  // "missed word comes back after N seconds" setting, FB364).
+  // "missed word comes back after N seconds" setting).
   try {
     await db.execAsync('ALTER TABLE learn_settings ADD COLUMN again_delay_sec INTEGER');
   } catch {}
-  // Migration: pcic_cards.known column (DBs created before "Ezt nem tanulom", SZ3).
+  // Migration: pcic_cards.known column (DBs created before "Ezt nem tanulom").
   try {
     await db.execAsync('ALTER TABLE pcic_cards ADD COLUMN known INTEGER');
   } catch {}
@@ -391,7 +391,7 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
   const ob = await db.getFirstAsync<any>('SELECT source, target FROM onboarding WHERE id = 1');
   if (ob) activePair = `${ob.source}-${ob.target}`;
 
-  // Migration (PLAN-ketiranyu 4. lépés javítás, 2026-09-28): pcic_level a
+  // Migration: pcic_level a
   // user_meta szingliton oszlopból a learn_settings pár-szerinti sorába
   // költözik, hogy a két irány (en-es / es-en) külön szintet őrizzen meg
   // egymástól. A régi érték mindig az en-es párhoz tartozott (az egyetlen
@@ -415,7 +415,7 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
   if (!buriedCol) {
     await db.execAsync('ALTER TABLE cards ADD COLUMN buried INTEGER NOT NULL DEFAULT 0');
   }
-  // Migration: add learned_at (FB210, the daily new-word budget counts learned
+  // Migration: add learned_at (the daily new-word budget counts learned
   // words). Cards that already finished the ladder are stamped with a date in
   // the PAST, not today: they were learned on some earlier day, and dating them
   // today would eat a whole day's budget at once on the first launch.
@@ -423,10 +423,10 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
   if (!learnedAtCol) {
     await db.execAsync('ALTER TABLE cards ADD COLUMN learned_at TEXT');
     await db.runAsync(
-      // FB226, Kálmán 2026-09-10: a COALESCE a MAI ismétlés dátumát írta be, így a
+      // a COALESCE a MAI ismétlés dátumát írta be, így a
       // frissítés utáni első indításkor a mai keret azonnal elfogyott ("azt írja hogy 0").
       // A régi lapok MINDIG a múltba kerülnek, ahogy a fenti komment ígéri.
-      // A 3 itt szám szerint történelmi migráció (UTEMEZO 11. szakasz): a
+      // A 3 itt szám szerint történelmi migráció: a
       // LEARNED_PASSES konstans megszűnt, ez a hely az utolsó, ahol a régi
       // reps−lapses származtatás előfordul.
       `UPDATE cards SET learned_at = ?
@@ -463,7 +463,7 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
       ALTER TABLE cards_new RENAME TO cards;
     `);
   }
-  // Migration: UTEMEZO 11. szakasz. Szándékosan a pair-rebuild UTÁN áll: a
+  // Migration: szándékosan a pair-rebuild UTÁN áll: a
   // rebuild a régi (lap nélküli) táblát másolja, ez a blokk adja hozzá az
   // oszlopokat és tölti vissza őket. A lap-állás eddig a reps−lapses
   // különbségből volt származtatva (lib/wordPhase.ts), ez itt az utolsó hely,
@@ -478,19 +478,19 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
       UPDATE cards SET in_hand = 1 WHERE type = 'word' AND buried = 0 AND reps > 0 AND lap < 3;
     `);
   }
-  // Migration: UTEMEZO 12/4 (Kálmán, 2026-09-17), egy "ismert"-definíció. A fa
+  // Migration: egy "ismert"-definíció. A fa
   // csempéje és a téma-lezárás eddig FSRS Review-t (state >= 2) nézte, a
   // Stats-kártya a fenti lap-oszlopot (lap >= 3 OR buried); ezért lehetett a
   // szint 928/931, miközben egy téma 0/10. Innentől mindkettő a lap-oszlopot
   // nézi (lib/topicMastery.ts), de a fenti reps-lapses visszatöltés nem
   // találja meg azt a szót, ami az FSRS szerint már Review, mert a gépelős (3.)
-  // lap előtt is Review-ba léphetett (FB111). Idempotens (a WHERE a második
+  // lap előtt is Review-ba léphetett. Idempotens (a WHERE a második
   // futástól üres), a `applyWordMerges` mintája szerint minden induláskor fut.
   // A feltétel tiszta JS tükre + tesztje: lib/lap.ts needsReviewLapBackfill.
   await db.runAsync(
     "UPDATE cards SET lap = 3 WHERE type = 'word' AND state >= 2 AND lap < 3"
   );
-  // Migration: UTEMEZO 2.2, started_at oszlop (DBs created before the daily
+  // Migration: started_at oszlop (DBs created before the daily
   // keret az 1. lap feljovetelekor fogy, nem a megtanuláskor).
   const startedAtCol = await db.getFirstAsync<any>("SELECT * FROM pragma_table_info('cards') WHERE name = 'started_at'");
   if (!startedAtCol) {
@@ -513,7 +513,7 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
       ALTER TABLE user_level_new RENAME TO user_level;
     `);
   }
-  // Migration: per-pair attempt history (FB129). Without it the daily new-word
+  // Migration: per-pair attempt history. Without it the daily new-word
   // counter was shared by every language pair, so a day spent on one course
   // left the other with a zero budget and an empty queue.
   const attemptsPairCol = await db.getFirstAsync<any>("SELECT * FROM pragma_table_info('card_attempts') WHERE name = 'pair'");

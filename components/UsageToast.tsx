@@ -16,17 +16,17 @@ import { isLongHaulMilestone, pickMilestoneLine } from '@/lib/usageMilestones';
 // onActiveMinute), fades/slides in, sits for a couple seconds, fades out.
 // Mounted once in the root layout so it can appear over any screen/tab.
 //
-// FB63: the same pill doubles as the milestone celebration (30 min in one go,
+// the same pill doubles as the milestone celebration (30 min in one go,
 // 30/60 min today). A milestone stays up longer and is written in the language
 // being LEARNED, not the UI language.
 
 const VISIBLE_MS = 2000;
 const MILESTONE_VISIBLE_MS = 4000;
-// FB108: the midnight line carries the day's numbers, so it needs reading time.
+// the midnight line carries the day's numbers, so it needs reading time.
 const ROLLOVER_VISIBLE_MS = 8000;
 const ANIM_MS = 250;
 
-// PLAN-temak 7F: `hidden` (az onboarding alatt) nem rajzol semmit, hogy ne takarja el a címet.
+// `hidden` (az onboarding alatt) nem rajzol semmit, hogy ne takarja el a címet.
 export default function UsageToast({ hidden = false }: { hidden?: boolean }) {
   const { theme } = useTheme();
   const colors = Colors[theme];
@@ -43,12 +43,12 @@ export default function UsageToast({ hidden = false }: { hidden?: boolean }) {
   const [opacity] = useState(() => new Animated.Value(0));
   const [translateY] = useState(() => new Animated.Value(-16));
   const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  // FB63: language being learned, for the milestone text. Read once on mount,
+  // language being learned, for the milestone text. Read once on mount,
   // it only changes on the onboarding screen (before this toast can fire).
   const learnedLang = useRef<string>('es');
 
-  // FB76: greet on the first app open of each calendar day, in the language
-  // being learned (FB63 pattern). claimDailyGreeting() is the day marker, so
+  // greet on the first app open of each calendar day, in the language
+  // being learned (same pattern). claimDailyGreeting() is the day marker, so
   // the pill shows once a day even if the app is reopened later.
   const [greeting, setGreeting] = useState<string | null>(null);
   const greetedRef = useRef(false);
@@ -88,7 +88,7 @@ export default function UsageToast({ hidden = false }: { hidden?: boolean }) {
     const unsubscribeMinute = onActiveMinute(() => show(t().usage.plusOneMinute, false));
     const unsubscribeMilestone = onUsageMilestone(({ scope, minutes }) => {
       const learned = stringsFor(learnedLang.current).usage;
-      // FB149: the quarter-hour crossings past the first hour draw from their own
+      // the quarter-hour crossings past the first hour draw from their own
       // pool, so an hours-long day never repeats the same congratulation.
       if (scope === 'daily' && isLongHaulMilestone(minutes)) {
         show(pickMilestoneLine(learned.milestoneLong, minutes), true);
@@ -97,13 +97,13 @@ export default function UsageToast({ hidden = false }: { hidden?: boolean }) {
       const template = scope === 'session' ? learned.milestoneSession : learned.milestoneDaily;
       show(template.replace('{min}', String(minutes)), true);
     });
-    // FB108: playing THROUGH midnight, the finished day's stats + a celebration,
-    // in the language being learned (FB63 pattern), one line out of a pool.
+    // playing THROUGH midnight, the finished day's stats + a celebration,
+    // in the language being learned (same pattern), one line out of a pool.
     const unsubscribeRollover = onDayRollover(({ minutes, words }) => {
       const learned = stringsFor(learnedLang.current).usage;
       show(pickDayRolloverMessage(learned.dayRollover, { minutes, words }), true, ROLLOVER_VISIBLE_MS);
     });
-    // FB76: the day's greeting, shown once per app start (greetedRef keeps a
+    // the day's greeting, shown once per app start (greetedRef keeps a
     // re-subscribe from repeating it).
     if (greeting && !greetedRef.current) {
       greetedRef.current = true;
@@ -122,7 +122,7 @@ export default function UsageToast({ hidden = false }: { hidden?: boolean }) {
 
   if (!visible || hidden) return null;
 
-  // NY25: brutalista palettán BrutalBox (sarok 0, tömör árnyék), nem pirula.
+  // brutalista palettán BrutalBox (sarok 0, tömör árnyék), nem pirula.
   if (g.brutal) {
     const fill = isMilestone ? 'b' : 'a';
     return (
@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '700',
   },
-  // FB63: a milestone gets a wider, bolder pill than the every-minute toast.
+  // a milestone gets a wider, bolder pill than the every-minute toast.
   milestonePill: {
     maxWidth: '90%',
     paddingHorizontal: 24,

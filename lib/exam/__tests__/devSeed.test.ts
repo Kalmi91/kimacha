@@ -1,4 +1,4 @@
-// PLAN-vizsga A. szakasz 2. lépés (8. követelmény): a __DEV__-only vezérlő által beállított
+// a __DEV__-only vezérlő által beállított
 // A1 állapot nyitja a vizsgát (a szint kártyáinak legalább 80%-a graduált + egy A1 lecke kész).
 
 import { pcicItemsForLevel, setPcicTarget } from '@/data/pcic';

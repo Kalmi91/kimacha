@@ -1,4 +1,4 @@
-// PLAN-vizsga B. szakasz (8. lépés): a nyelvtani lecke végi teszt a lecke-képernyőn:
+// a nyelvtani lecke végi teszt a lecke-képernyőn:
 // a gomb a done-lapon (B1 b), 10 kérdés (B2 a), 80% határ, a lecke %-a nem változik (B3 a),
 // az eredmény mentése, "Test passed" jel, a bukás nem zár le semmit (B4 a).
 // Mock-minta: roundEndBrutal.test.tsx / drillButtons.test.tsx.
@@ -21,7 +21,6 @@ jest.mock('expo-router', () => ({
   usePathname: () => '/grammar',
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
   },
   useLocalSearchParams: () => ({ topic: 'presente-regular' }),

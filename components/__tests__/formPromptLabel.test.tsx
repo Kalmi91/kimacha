@@ -1,4 +1,4 @@
-// FB417 (PLAN-fb0929 5. lépés): a ragozás-drill címkéje ("Sustantivo") mellett zárójelben a
+// a ragozás-drill címkéje ("Sustantivo") mellett zárójelben a
 // segítő tábla oszlop-fejléce is látszik ("Noun"), ha a felület nyelvén más a fejléc.
 import { render, screen } from '@testing-library/react-native';
 

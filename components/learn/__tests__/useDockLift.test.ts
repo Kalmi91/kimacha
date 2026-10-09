@@ -2,7 +2,7 @@ import { act, renderHook } from '@testing-library/react-native';
 import { DeviceEventEmitter } from 'react-native';
 import { useDockLift } from '../useDockLift';
 
-// FB350: shared out of app/(tabs)/index.tsx (Learn) so the PCIC tab's docked
+// shared out of app/(tabs)/index.tsx (Learn) so the PCIC tab's docked
 // Check bar lifts above the keyboard the same way. `Keyboard.addListener`
 // registers on the shared `DeviceEventEmitter`, so tests drive it from there.
 jest.mock('react-native-safe-area-context', () => ({

@@ -5,7 +5,7 @@ import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { useSkin } from '@/lib/useSkin';
 
-// PLAN-temak 6E (E2), Pop art: Ben-Day pöttyök (a szín, 40%) a háttérben egy 10 x 14-es, soronként
+// Pop art: Ben-Day pöttyök (a szín, 40%) a háttérben egy 10 x 14-es, soronként
 // eltolt rácson (140 pötty, a méretük fentről lefelé kisebb), és a kártya (szövegbuborék) bal alsó
 // sarkán buborék-farok: egy ink háromszög, benne papír-színű, hogy a keret vonala vele folytatódjon.
 
@@ -19,7 +19,7 @@ const TAIL_EDGE = 3;
 type Pct = `${number}%`;
 type Dot = { left: Pct; top: Pct; size: number };
 
-export const DOTS: Dot[] = Array.from({ length: ROWS * COLS }, (_, i) => {
+const DOTS: Dot[] = Array.from({ length: ROWS * COLS }, (_, i) => {
   const row = Math.floor(i / COLS);
   const col = i % COLS;
   return {

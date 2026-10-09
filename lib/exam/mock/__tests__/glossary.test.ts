@@ -1,4 +1,4 @@
-// PLAN-vizsga E. szakasz (Kálmán E5 c): a feladat a szint szavaiból áll, az ISMERETLEN
+// a feladat a szint szavaiból áll, az ISMERETLEN
 // (még nem tanult) szóhoz szójegyzet jár; a tanult szóhoz nem; a hallás szövege nem látszik,
 // ahhoz nincs szójegyzet.
 

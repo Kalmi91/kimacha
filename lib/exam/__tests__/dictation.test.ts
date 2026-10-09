@@ -1,4 +1,4 @@
-// PLAN-vizsga D. szakasz 13. lépés (Kálmán, D1 b + D3): a billentyűzet mikrofonjával diktált szöveg
+// a billentyűzet mikrofonjával diktált szöveg
 // összevetése a várt mondattal: kis- és nagybetű és írásjel nem számít, az ékezet a "Accents count"
 // beállítást követi, az eltérő szavak mindkét oldalon ki vannak emelve.
 

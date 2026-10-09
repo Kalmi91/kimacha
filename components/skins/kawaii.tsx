@@ -5,7 +5,7 @@ import { Text } from '@/components/KText';
 import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 
-// PLAN-temak 6E, Kawaii: mosolygó arc-ikon a szó fölött (kör, két szem, mosoly: View-kból, a téma
+// Kawaii: mosolygó arc-ikon a szó fölött (kör, két szem, mosoly: View-kból, a téma
 // rózsaszín `icon` színével), szív a fejlécben.
 
 const FACE = 30;

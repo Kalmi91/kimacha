@@ -98,7 +98,7 @@ import grammarEsNumeralesOrdinales from '@/data/games/grammar/es/numerales-ordin
 
 // K33 (play-vágás, 2026-09-22): a Játék/Átbeszélő fülek és a hozzájuk tartozó
 // data/games/{ccat,myths,chats,stories,confusables} mappák kikerültek. A
-// 7. lépés (2026-09-23) a `LanguageContentBundle` mezőit is levágta erre az
+// Play-vágás a `LanguageContentBundle` mezőit is levágta erre az
 // egyre: stories/chats/confusables/myths/ccat* kikerült, grammarTopics maradt.
 export const esContent: LanguageContentBundle = {
     // The JSON's per-item literal shape (each `wrong` only has the one key that
@@ -114,7 +114,7 @@ export const esContent: LanguageContentBundle = {
     // beszéd-mag) témái ebben a sorban jönnek, A1-től B1-ig.
     grammarEsClasesDePalabras,
     grammarEsSustantivoNumero,
-    // FB448: az app összes főneve el / la feladatként is (lib/grammar/nounArticles.ts).
+    // az app összes főneve el / la feladatként is (lib/grammar/nounArticles.ts).
     withArticleNouns(grammarEsArticulosGenero as unknown as LessonV2),
     grammarEsAdjetivoConcordancia,
     grammarEsPresenteRegular,

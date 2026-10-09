@@ -12,7 +12,7 @@ import { hashString, shuffleArray } from '@/lib/shuffle';
 import { useTheme } from '@/lib/ThemeContext';
 import ExamButton from './ExamButton';
 
-// PLAN-vizsga A. szakasz 2. lépés (A5 c): párosítás. Bal oszlop = a tanult nyelv
+// párosítás. Bal oszlop = a tanult nyelv
 // szavai, alul a kiinduló nyelvű jelentések; a kijelölt bal sorhoz a jelentésre
 // koppintva rendel párt (a sor a következő párosítatlanra lép). A "Check" csak akkor
 // él, ha minden sornak van párja; csupa jó pár után a vizsga megy tovább, különben a

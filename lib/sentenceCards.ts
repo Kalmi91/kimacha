@@ -1,4 +1,4 @@
-// PLAN-ketiranyu 7. lépés: a mondatkártya kadenciája és a mondat-választás a
+// a mondatkártya kadenciája és a mondat-választás a
 // pakli-menetben. Tiszta modul: a pakli-képernyő (app/(tabs)/index.tsx) adja be
 // a kártyákat, a keresőt és a szókincs-listát, itt nincs állapot és nincs
 // adatbázis. A kártya eredménye nem ír SRS-t (K3): csak gyakorlás.
@@ -65,7 +65,7 @@ export function stripSentencePunct(sentence: string): string {
 }
 
 /**
- * A csempék: a mondat szavai írásjel nélkül, az első kisbetűvel (FB16: a nagy
+ * A csempék: a mondat szavai írásjel nélkül, az első kisbetűvel (a nagy
  * kezdőbetű elárulná, melyik csempe áll elöl; a bírálás kisbetű-független).
  */
 export function tileWords(sentence: string): string[] {

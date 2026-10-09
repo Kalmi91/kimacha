@@ -1,10 +1,9 @@
-// PLAN-play 13. lépés (s6): pure-logic tests for the table-deck (Anki-style
+// pure-logic tests for the table-deck (Anki-style
 // practice built from a lesson's conjugation tables). Uses the real lesson
 // data (ser-estar, presente-regular, hay-estar) so a corpus change that
 // breaks the deck is caught here, not just in a hand-rolled fixture.
 
 import { lessonFor } from '../syllabus';
-import { isLessonV2 } from '../../games/content';
 import type { LessonV2 } from '../lessonTypes';
 import { hashString, shuffleArray } from '../../shuffle';
 import { normalizeWordToken } from '@/data/words';
@@ -39,13 +38,6 @@ describe('tableCellsForLesson', () => {
     expect(tableCellsForLesson(lesson)).toEqual([]);
   });
 
-  it('a schema-1 (legacy) lesson has no body, so 0 cells', () => {
-    // PLAN-fb1001 11. lépés: a posesivos már schema-2 és személy-táblás (kérdezhető), ezért
-    // a régi-séma esetet egy schema 1-re állított másolat fedi.
-    const lesson = { ...lessonFor('es', 'ser-estar')!, schema: 1 } as unknown as Parameters<typeof tableCellsForLesson>[0];
-    expect(tableCellsForLesson(lesson)).toEqual([]);
-  });
-
   it('null/undefined lesson -> 0 cells', () => {
     expect(tableCellsForLesson(undefined)).toEqual([]);
     expect(tableCellsForLesson(null)).toEqual([]);
@@ -62,13 +54,12 @@ describe('tableCellsForLesson', () => {
 
   it('deduplicates the same person+verb pair across two tables in one lesson', () => {
     const lesson = lessonFor('es', 'ser-estar')!;
-    if (!isLessonV2(lesson)) throw new Error('ser-estar should be a schema-2 lesson');
     const tables = lesson.body.filter((b) => b.kind === 'table');
     const doubled = { ...lesson, body: [...lesson.body, ...tables] };
     expect(tableCellsForLesson(doubled)).toHaveLength(10);
   });
 
-  // FB378: a table's optional `enPrompt` (English sentence per cell) carries
+  // a table's optional `enPrompt` (English sentence per cell) carries
   // through to the cell the deck screen renders.
   it('carries a table\'s enPrompt through to the cell (indefinido-regular)', () => {
     const lesson = lessonFor('es', 'indefinido-regular')!;
@@ -77,7 +68,7 @@ describe('tableCellsForLesson', () => {
     expect(cells.find((c) => c.person === 'nosotros' && c.verb === 'escribir')?.enPrompt).toBe('we wrote');
   });
 
-  // FB463: ser-estar has an enPrompt now; posesivos (a reference table) is the one without.
+  // ser-estar has an enPrompt now; posesivos (a reference table) is the one without.
   it('a table without enPrompt leaves the cell field undefined (posesivos)', () => {
     const lesson = lessonFor('es', 'posesivos')!;
     const cells = tableCellsForLesson(lesson);
@@ -85,7 +76,7 @@ describe('tableCellsForLesson', () => {
     expect(cells.every((c) => c.enPrompt === undefined)).toBe(true);
   });
 
-  // FB390: interrogativos' table is a MEANING reference table (row[0] = "what",
+  // interrogativos' table is a MEANING reference table (row[0] = "what",
   // "who", ... ; row[1] = the Spanish term), not a conjugation table, so it used
   // to give 0 table cells and fall back to the word-deck - where the question
   // words themselves are filtered out as closed-class (FUNCTION_WORDS_ES),
@@ -107,7 +98,7 @@ describe('tableCellsForLesson', () => {
     expect(cells.every((c) => c.verb === '')).toBe(true);
   });
 
-  // PLAN-fb1001 11. lépés (FB437/FB438): a személy-táblák (minden sor címkéje személy-névmás,
+  // a személy-táblák (minden sor címkéje személy-névmás,
   // a fejléc nem csupa infinitivus) kérdezhetők, így a szó-pakli fallback ("felesleges szavak")
   // nem lép be.
   it('pronombres-oi: a Sujeto -> névmás tábla 5 cellát ad (vosotros kihagyva), nincs szó-pakli fallback', () => {
@@ -137,7 +128,7 @@ describe('tableCellsForLesson', () => {
   });
 });
 
-// FB389 (felülírja FB377-et): az 1. kör megint a tábla/forrás sorrendjében
+// az 1. kör megint a tábla/forrás sorrendjében
 // jön (`tableOrder` = a cellák saját tömb-sorrendje), a kevert sorrend a
 // "Harder: shuffled" (resetDeckShuffled) külön útja. `shuffledOrder(...)`
 // lent ugyanazzal az elsődleges eszközzel (seed-elt shuffle) számolja ki azt
@@ -236,9 +227,9 @@ describe('scheduling: initDeckState / nextCellId / answerCell / resetDeckInOrder
     expect(backToOrder.cells.map((c) => c.id)).not.toEqual(shuffled.cells.map((c) => c.id));
   });
 
-  // FB390-tesztből ismert eset (interrogativos): ha egy táblának >= 2 cellája
+  // A korábbi tesztből ismert eset (interrogativos): ha egy táblának >= 2 cellája
   // van, a shuffle sorrendje ténylegesen eltér a tábla-sorrendtől (nem
-  // véletlenül egyezik meg vele), ahogy a PLAN-fb0924 3. lépés kéri.
+  // véletlenül egyezik meg vele), ahogy a terv kéri.
   it('resetDeckShuffled ("Harder: shuffled") is a permutation of the same ids, not the table order, and bumps resetCount + shuffled', () => {
     const fresh = resetDeckShuffled(cells, LESSON_ID, 0);
     expect(fresh.resetCount).toBe(1);
@@ -293,7 +284,7 @@ describe('mergeDeckState', () => {
     expect(merged.cells.map((c) => c.id)).toEqual(shuffledOrder(LESSON_ID, 2, tableOrder));
   });
 
-  // FB389: régi mentés, még a `shuffled` mező bevezetése ELŐTTről (csak
+  // régi mentés, még a `shuffled` mező bevezetése ELŐTTről (csak
   // `cells` + `resetCount`) - ne dobjon hibát, és NE rendezze át hallgatólag
   // a folyamatban lévő shuffled kört a tábla-sorrendre.
   it('a persisted state without the `shuffled` field (pre-FB389 save) defaults to shuffled=true, not a reorder', () => {
@@ -304,9 +295,9 @@ describe('mergeDeckState', () => {
   });
 });
 
-// FB375 (PLAN-fb0923 6. lépés, D5/a): "itt is legyen egy nyelvtanulós kártya
+// "itt is legyen egy nyelvtanulós kártya
 // csomag a szavakból" - a word-deck a tábla nélküli (nem kérdezhető táblás) leckéknek.
-// PLAN-fb1001 16. lépés (FB437/FB438, Kálmán "b" döntése): a pakli CSAK a lecke
+// A pakli CSAK a lecke
 // táblázatainak szavaiból épül, a szószedet és a példamondatok szavai nem számítanak.
 const LANG4 = { hu: 'x', en: 'x', es: 'x', de: 'x' };
 const tableFixture = (rows: string[][], over: Partial<LessonV2> = {}): LessonV2 => ({
@@ -373,7 +364,7 @@ describe('wordCellsForLesson (csak a tábla szavai)', () => {
     }
   });
 
-  // (FB493: az articulos-genero ismét a lecke saját szavaiból áll, mint a FB448 előtt; a főnevek csak az el / la feladatban vannak)
+  // (az articulos-genero ismét a lecke saját szavaiból áll, mint korábban; a főnevek csak az el / la feladatban vannak)
   it('articulos-genero és társai elvesztették a paklit: a küszöb alatt maradnak, nincs belépő (a clases-de-palabras a lecke szintjére került szavakkal visszanyerte)', () => {
     for (const id of ['articulos-genero', 'sustantivo-numero', 'hay-estar', 'pronombres-od']) {
       expect(wordCellsForLesson(lessonFor('es', id)).length).toBeLessThan(WORD_DECK_MIN_CARDS);
@@ -387,7 +378,7 @@ describe('wordCellsForLesson (csak a tábla szavai)', () => {
   });
 });
 
-// FB418/FB419 (PLAN-fb0929 5. lépés): a rossz opciók nem létező alakjai nem szó-kártyák.
+// a rossz opciók nem létező alakjai nem szó-kártyák.
 describe('wordCellsForLesson: nem létező alakok kihagyása', () => {
   it('a sustantivo-numero szó-paklija nem tartalmaz "not a real form" kártyát', () => {
     const { lessonFor } = require('../syllabus');

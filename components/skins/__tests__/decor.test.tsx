@@ -1,4 +1,4 @@
-// PLAN-temak 4D: a 4 kezdő téma díszei (deco, szocreal, csillampony, ukiyoe): a slotok kirajzolják
+// a 4 kezdő téma díszei (deco, szocreal, csillampony, ukiyoe): a slotok kirajzolják
 // a díszt az alap tartalom körül, sima View/Text, SVG és új natív függőség nélkül.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));

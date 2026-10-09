@@ -1,4 +1,4 @@
-// PLAN-vizsga A. szakasz 2. lépés (Kálmán, 2026-10-01, A3 a): az átmenés 80%.
+// az átmenés 80%.
 
 import { EXAM_PASS_PCT, examPassed, scoreExam } from '../score';
 import type { ExamItem, ExamItemResult, ExamSkill } from '../types';

@@ -1,4 +1,4 @@
-// PLAN-vizsga C. szakasz (Kálmán, 2026-10-01, C1 a): a szintválasztó lapon a szint-sorok mellett
+// a szintválasztó lapon a szint-sorok mellett
 // ott a halk szintfelmérő-belépő; a kézi szintválasztás továbbra is működik.
 
 import { fireEvent, render } from '@testing-library/react-native';

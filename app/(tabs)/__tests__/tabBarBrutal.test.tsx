@@ -1,4 +1,4 @@
-// NY19: a tab-bar brutalista palettán (az aktív ikon kitöltésű dobozon), classic
+// a tab-bar brutalista palettán (az aktív ikon kitöltésű dobozon), classic
 // palettán a mai sima ikon. A Tabs mock csak a tabBarIcon-okat rendereli.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));

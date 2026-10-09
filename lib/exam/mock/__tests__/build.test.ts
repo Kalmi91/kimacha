@@ -1,5 +1,5 @@
-// PLAN-vizsga E. szakasz (15-16. lépés): a próbavizsga feladatsor-építője a valódi szint-szavakon
-// (data/words-open es-irányban, data/words/en az en-irányban). Kálmán E5 c: a feladatsor a szint
+// a próbavizsga feladatsor-építője a valódi szint-szavakon
+// (data/words-open es-irányban, data/words/en az en-irányban). A feladatsor a szint
 // szavaiból áll; ugyanaz a seed ugyanazt a vizsgát adja (a részenkénti mentés ebből folytat).
 
 import { pcicItemsForLevel, setPcicTarget, type PcicItem } from '@/data/pcic';

@@ -11,11 +11,11 @@ import { openWords } from '@/data/openWords';
 import { pickSurvivor } from '../cardMerge';
 import { findPromptOverlaps, type PromptLang } from '../promptOverlap';
 
-// Play-vágás 7. lépés (2026-09-23): the en word-branch loader path
+// Play-vágás: the en word-branch loader path
 // (getWordsForLevel(level, 'en')) is gone, so the cases below that guard
 // the actual en corpus content read these JSON files straight off disk
-// instead, the same way `svCorpus.test.ts` reads the Swedish track.
-// PLAN-regi-szavak-ki 7. lépés: a spanyol szólista (a0..c2.json) és a hu sáv kikerült, a
+// instead.
+// A spanyol szólista (a0..c2.json) és a hu sáv kikerült, a
 // spanyol oldal forrása a data/openWords.ts (words-open), a hu sáv őrei törölve. A words-open
 // teljességét és prompt-szabályait (hint-es többjelentés, mondat nélküli névmás/névelő kártyák)
 // a scripts/words-open-check.mjs kapu őrzi, ezért a spanyol sáv teljesség-, prompt- és
@@ -101,7 +101,7 @@ describe('pickSurvivor', () => {
   });
 });
 
-// FB184, Kálmán 2026-09-08 (word:the post office): „ennek van névelője angolba ott a
+// User feedback (word:the post office): „ennek van névelője angolba ott a
 // the spanyolba nincs el vagy la? ez hiba? ne legyen ott a the ha nincs el la".
 // A `correos` a spanyol oldalon névelő nélkül állt, a natív oldalon viszont
 // névelővel, ezért a kártya két fele ellentmondott egymásnak. Ez az őr azt tartja
@@ -147,12 +147,10 @@ describe('word entry completeness', () => {
   });
 });
 
-// PROMPT-POLICY 1: "Egy szinten és sávon belül két szónak nem lehet olyan
+// "Egy szinten és sávon belül két szónak nem lehet olyan
 // promptja, amelyből nem dönthető el, melyik a kérdezett." A 9.4 szerint a
 // korpusz-menet (2026-09-14/15) után ez az őr ÉLES: új szó nem hozhatja
-// vissza a hibát. A fürt-logika a lib/promptOverlap.ts-ben él, ugyanaz fut
-// itt és a scripts/audit-prompts.mjs-ben (ott duplikálva, mert az .mjs nem
-// importál TS-t). Az en sáv (Play-vágás 7. lépés óta a JSON-ból, nem a
+// vissza a hibát. A fürt-logika a lib/promptOverlap.ts-ben él. Az en sáv (Play-vágás óta a JSON-ból, nem a
 // betöltőből) csak azokra a szintekre ad szavakat, amik tényleg léteznek;
 // a hiányzó szintre üres lista jön, amin a fürt-keresés triviálisan üres.
 describe('prompt policy (PROMPT-POLICY 1)', () => {

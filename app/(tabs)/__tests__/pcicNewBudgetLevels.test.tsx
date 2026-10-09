@@ -1,4 +1,4 @@
-// FB452 ("new 42?"): a napi új-szó keret NAPI; az A1-en vett "+10" bónuszok és az ott ma bevezetett
+// User feedback ("new 42?"): a napi új-szó keret NAPI; az A1-en vett "+10" bónuszok és az ott ma bevezetett
 // szavak a másik szinten is számítanak, tehát a szintváltás után nem jön vissza a teljes bónuszos
 // keret új szóként. Mock-minta: pcicLevelPicker.test.tsx.
 
@@ -12,7 +12,6 @@ jest.mock('@/lib/speech', () => ({
 jest.mock('expo-router', () => ({
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
   },
 }));
@@ -36,13 +35,9 @@ const mockItemsByLevel: Record<string, ReturnType<typeof mkItems>> = { A1: mockA
 jest.mock('@/data/pcic', () => ({
   PCIC_LEVELS: ['A1', 'B1'],
   PCIC_VIEW_LEVELS: ['A1', 'B1'],
-  LEVEL_LABELS: { A1: 'Beginner', B1: 'Intermediate' },
   pcicItemsForLevel: (level: string) => mockItemsByLevel[level] ?? [],
-  pcicItemsForViewLevel: (level: string) => mockItemsByLevel[level] ?? [],
   findPcicItem: (id: string) => [...mockA1Items, ...mockB1Items].find((i) => i.id === id),
   levelOfItem: (id: string) => (id.startsWith('a1-') ? 'A1' : id.startsWith('b1-') ? 'B1' : undefined),
-  isPlusSentence: () => false,
-  realLevelOfView: (level: string) => level,
   setPcicTarget: () => {},
 }));
 

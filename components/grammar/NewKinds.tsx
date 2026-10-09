@@ -18,10 +18,10 @@ import { hashString, shuffleOptions } from '@/lib/shuffle';
 import { speak, stopSpeaking } from '@/lib/speech';
 import type { DictationItem, OrderItem, SpotItem } from '@/lib/grammar/lessonTypes';
 
-// PLAN-fb0929 7. lépés (D1, Kálmán 2026-09-29): három új feladat-fajta, EGYELŐRE csak a
+// három új feladat-fajta, EGYELŐRE csak a
 // ser-estar (hibakereső + diktálás) és a negacion (szórend + hibakereső) leckében, az
 // ideiglenes "ÚJ · TESZT" jelöléssel (components/TrialBadge.tsx). Mindhárom 1 egység a
-// pontozásban (jó vagy nem), és a helyes mondat a válasz után elhangzik (FB412).
+// pontozásban (jó vagy nem), és a helyes mondat a válasz után elhangzik.
 
 type Lang = 'hu' | 'en' | 'es' | 'de';
 
@@ -97,7 +97,7 @@ export function SpotDrillItem({
   const pick = (i: number) => {
     if (phase !== 'fix') return;
     setPicked(i);
-    // FB412: a helyes (javított) mondat elhangzik, jó és rossz válasz után is
+    // a helyes (javított) mondat elhangzik, jó és rossz válasz után is
     speak(fixed, speechLang(learnedLang));
   };
 
@@ -161,7 +161,7 @@ export function SpotDrillItem({
 // ---------------------------------------------------------------- szórend
 // A meglévő koppintásos csempe-kártyát (EasySentenceCard) használja újra: a felül álló
 // mondat a felület nyelvén van, alatta a spanyol szavak csempéi; a Check és a Next a
-// kártya saját gombja, a helyes mondat elhangzik (FB412).
+// kártya saját gombja, a helyes mondat elhangzik.
 export function OrderDrillItem({
   item,
   learnedLang,
@@ -221,10 +221,10 @@ export function DictationDrillItem({
     const grade = gradeSentenceAnswer(typed, item.es, strictAccents);
     const ok = suggestedGrade(grade) === 'good';
     setResult({ correct: ok });
-    speak(item.es, locale); // FB412: a helyes mondat a válasz után is elhangzik
+    speak(item.es, locale); // a helyes mondat a válasz után is elhangzik
   };
 
-  // FB461/FB464: a Check (és utána a Next) a billentyűzet fölé dokkolt sáv, ahogy a szókártyán (DockSlot).
+  // a Check (és utána a Next) a billentyűzet fölé dokkolt sáv, ahogy a szókártyán (DockSlot).
   const { docked, padBottom } = useDockedAction(
     result
       ? { label: s.grammar.nextArrow, tone: 'next', testID: 'grammar-next', onPress: () => onDone(result.correct) }

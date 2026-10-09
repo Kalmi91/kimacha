@@ -2,7 +2,7 @@ import type { TextStyle } from 'react-native';
 
 import type { Skin } from '@/constants/Skins';
 
-// PLAN-temak 4D: egy téma szöveg-stílusa a Saját mix élő előnézetéhez (betű, méret, kis-/nagybetű,
+// egy téma szöveg-stílusa a Saját mix élő előnézetéhez (betű, méret, kis-/nagybetű,
 // betűköz). Az előnézet a piszkozat-témát rajzolja, az alkalmazás szövegei pedig az aktív témáét
 // kapják, ezért ez a stílus közvetlenül a megadott Skinből számol.
 export function previewTextStyle(skin: Skin, role: 'title' | 'word' | 'body', base: number): TextStyle {

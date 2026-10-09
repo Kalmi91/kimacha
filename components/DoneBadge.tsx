@@ -4,7 +4,7 @@ import CheckMark from '@/components/CheckMark';
 import { BrutalBox } from '@/components/grammar/Brutal';
 import { useGrammarColors } from '@/lib/grammarColors';
 
-// FB402 (PLAN-fb0929 6. lépés), Kálmán: „done for today nál legyen egy új kép, ami most
+// User feedback: „done for today nál legyen egy új kép, ami most
 // van nem megy a stílushoz". A 🎉 emoji helyett neo-brutalista jelvény, kép nélkül:
 // vastag ink keretű, eltolt árnyékos négyzet a kitöltés színén, benne a rajzolt pipa,
 // körülötte pár elforgatott konfetti-négyzet a két paletta-színben. Minden szín a
@@ -42,7 +42,7 @@ export default function DoneBadge({ testID = 'done-badge' }: { testID?: string }
 }
 
 const styles = StyleSheet.create({
-  // FB449: a magasság a konfetti tényleges kiterjedéséhez igazítva (a legalsó 132 + 14 px), hogy a +5/+10/+15 sor
+  // a magasság a konfetti tényleges kiterjedéséhez igazítva (a legalsó 132 + 14 px), hogy a +5/+10/+15 sor
   // a 💬 gomb fölé férjen.
   wrap: { width: 240, height: 146, alignSelf: 'center' },
   center: { position: 'absolute', top: 18, left: 56 },

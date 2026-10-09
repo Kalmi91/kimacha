@@ -6,7 +6,7 @@ import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { useSkin } from '@/lib/useSkin';
 
-// PLAN-temak 6E, Lotería: papel picado zászló-sor a fejlécben (a spec 5 színe), a kártya egy
+// Lotería: papel picado zászló-sor a fejlécben (a spec 5 színe), a kártya egy
 // lotería-lap: piros sorszám bal fent, a szó alul egy vonal fölött. A lap sorszáma a szóból számolt
 // (1-54, mint a lotería-paklin), a CardFrame és a WordRenderer egy kontextuson át osztozik rajta.
 

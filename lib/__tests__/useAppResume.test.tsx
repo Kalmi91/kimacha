@@ -1,4 +1,4 @@
-// FB470: hidegindításkor a mentett helyre lép (csak kész onboardingnál), utána minden folytatható váltást ment;
+// hidegindításkor a mentett helyre lép (csak kész onboardingnál), utána minden folytatható váltást ment;
 // a mentést nem írja felül a kezdőlap, mielőtt a visszaállítás lefutott.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));

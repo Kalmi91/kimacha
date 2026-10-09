@@ -1,4 +1,4 @@
-// PLAN-vizsga A. szakasz 2. lépés (Kálmán, 2026-10-01, A1 a): a tanulófül szint-választó lapján
+// a tanulófül szint-választó lapján
 // az A1 sor alatt ott a vizsga-sor, az SM-2 adatból és a kész leckékből számolva; a koppintás
 // a vizsgára (nyitva), a szavak gyakorlására vagy a nyelvtani leckékre visz. A valódi
 // words-open korpusszal fut (nem mockolt data/pcic). Mock-minta: pcicLevelPicker.test.tsx.
@@ -15,7 +15,6 @@ jest.mock('expo-router', () => ({
   router: { push: (...args: unknown[]) => mockPush(...args) },
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
   },
 }));
@@ -51,7 +50,7 @@ const afterSheetClose = async () => {
   await flush();
 };
 
-// 4. lépés: A1-B2 mindegyik szint alatt van vizsga-sor, ezért a szint-sorok feliratai szintenként keresendők.
+// A1-B2 mindegyik szint alatt van vizsga-sor, ezért a szint-sorok feliratai szintenként keresendők.
 const a1 = (screen: ReturnType<typeof render>) => within(screen.getByTestId('exam-row-A1'));
 
 const openSheet = async () => {

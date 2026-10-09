@@ -1,4 +1,4 @@
-// FB196, Kálmán 2026-09-09 (easy:The clients have): „megint a have arrived os mondatot
+// User feedback (easy:The clients have): „megint a have arrived os mondatot
 // teszed be pedig még ezt a nyelvtani szerkezetet nem tanítottad ez a hiba töbazőr
 // előfordúlt erre figyelj old meg, hogy többszőr ne legyen. legyen olyan hogy bizonyos
 // nyelvtani szerkezeteket feloldunk és akkor lehet mondjuk vizsgára is menni, meg akkor
@@ -28,7 +28,7 @@ export type Structure =
   | 'imperativo';
 
 /** Melyik szinten TANÍTJUK a szerkezetet (lib/grammar/syllabus.ts sorrendje). */
-export const STRUCTURE_LEVEL: Record<Structure, Level> = {
+const STRUCTURE_LEVEL: Record<Structure, Level> = {
   // A jelen idő az alapállás: már az A0-s mondatok is ebben állnak, a tanterv
   // A1-es `presente-regular` témája a szabályt írja le, nem vezeti be a használatát.
   presente: 'A0',
@@ -103,7 +103,7 @@ function levelRank(level: Level): number {
 function buildFormIndex(): Map<string, Structure> {
   const index = new Map<string, Structure>();
   const infinitives = new Set<string>();
-  // PLAN-regi-szavak-ki 5. lépés: a words-open igéi; a perjeles alak ("volver / regresar")
+  // a words-open igéi; a perjeles alak ("volver / regresar")
   // minden alternatívája külön főnévi igenév.
   for (const w of openWords) {
     if (w.pos !== 'verb') continue;

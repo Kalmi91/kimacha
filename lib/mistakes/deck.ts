@@ -1,8 +1,7 @@
-// PLAN-hibaim.md 2. lépés (deck.ts): tiszta függvények, amik a betöltött
+// Tiszta függvények, amik a betöltött
 // kötegekből (MistakesBatch[]) kártyalistát építenek, és az SM-2 ütemezőt
 // (lib/sm2.ts, ugyanaz mint a PCIC fülön) a "Hibáim" pakli saját tábláján
-// futtatják. A kártya-id séma és a `doubtful` kizárás: PLAN-hibaim.md
-// "Formátum" szekció.
+// futtatják.
 
 import type { MistakesBatch, MistakePattern } from './format';
 import { DEFAULT_NEW_LIMIT, pickSm2Session, type Sm2Card } from '../sm2';
@@ -41,7 +40,7 @@ function patternIndex(batch: MistakesBatch): Map<string, MistakePattern> {
 
 /**
  * Egy köteg kártyái, fájl-sorrendben. `doubtful: true` mondat kimarad (a
- * riport ⚠-lel listázza, de nem kerül a paklibe, PLAN-hibaim.md "Formátum").
+ * riport ⚠-lel listázza, de nem kerül a paklibe).
  */
 export function cardsForBatch(batch: MistakesBatch): MistakeCard[] {
   const patterns = patternIndex(batch);
@@ -109,8 +108,7 @@ export function pickMistakeSession(
 
 /**
  * Előre kijelölt értékelés: pontos egyezés (`strictAnswerMatch`) esetén
- * "Knew it" (good), egyébként "Didn't know" (again). PLAN-hibaim.md
- * "Képernyők" 3. pont.
+ * "Knew it" (good), egyébként "Didn't know" (again).
  */
 export function suggestedMistakeGrade(typed: string, answer: string, opts: MatchOptions = {}): 'again' | 'good' {
   return typed.trim().length > 0 && strictAnswerMatch(typed, answer, opts) ? 'good' : 'again';

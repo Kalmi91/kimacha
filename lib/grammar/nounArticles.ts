@@ -1,4 +1,4 @@
-// PLAN-fb1002 13. lépés (FB448, Kálmán: „ebbe a leckébe akarom azt a feladatot, hogy feljön egy szó,
+// User feedback („ebbe a leckébe akarom azt a feladatot, hogy feljön egy szó,
 // mondjuk agua, és ki kell választani, hogy la vagy el … és az összes nount akarom ebbe a feladatba,
 // ami az appba van, és egy kártya paklit akarok belőle”): az articulos-genero lecke el / la
 // feladata és szó-paklija az app SAJÁT főneveiből (data/words-open, minden szint), futásidőben
@@ -27,13 +27,13 @@ export const ARTICLE_LESSON_ID = 'articulos-genero';
 /** Az el / la feladat egy futása ennyi főnév (a teljes készletből seedelt minta). */
 export const ARTICLE_ROUND_SIZE = 20;
 
-export interface ArticleNoun {
+interface ArticleNoun {
   id: string; // `${szint}-${order}`, a szintek közt egyedi
   noun: string; // a főnév névelő nélkül: "agua"
   article: 'el' | 'la';
   es: string; // a kártya teljes spanyol oldala: "el agua" (vagy "el carro / el coche / el auto")
   en: string;
-  /** FB493: a főnév jelentése a felület nyelvén (words-open hu / en / de; es-nél az angol); a válasz után látszik. */
+  /** a főnév jelentése a felület nyelvén (words-open hu / en / de; es-nél az angol); a válasz után látszik. */
   tr: Lang4;
   sentence?: string;
 }

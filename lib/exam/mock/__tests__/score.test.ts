@@ -1,4 +1,4 @@
-// PLAN-vizsga E. szakasz (Kálmán 2026-10-01): a próbavizsga pontozása és az átmenési szabályok.
+// a próbavizsga pontozása és az átmenési szabályok.
 // Készségenként a nyers találat a készség 25 pontjára skálázódik; az átmenést a vizsga szabálya dönti:
 //  - groups (es): mindkét csoportban 30 / 50 (olvasás + írás; hallás + szóbeli), a 2. csoport helyőrző
 //    szóbeli mellett = hallás x2, "provisional" jelzéssel;

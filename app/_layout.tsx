@@ -31,11 +31,10 @@ initI18n();
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
     ...FONT_FILES,
   });
   const [onboardingDone, setOnboardingDone] = useState<boolean | null>(null);
-  // PLAN-ketiranyu 4. lépés (7. pont): a Settings irányváltó sora setLanguage()-t
+  // a Settings irányváltó sora setLanguage()-t
   // hív, ami itt egy verziószámot léptet; a szám a lenti <RootLayoutNav key>-je,
   // tehát váltáskor az egész navigációs fa (a tab-fülek felirata is) frissen
   // rendereldik, nem csak a fókuszban lévő képernyő.
@@ -47,7 +46,7 @@ export default function RootLayout() {
 
   useEffect(() => subscribeLanguage(() => setLangVersion((v) => v + 1)), []);
 
-  // FB470: hidegindításkor az utoljára használt fülre / leckére lép vissza (lib/useAppResume.ts).
+  // hidegindításkor az utoljára használt fülre / leckére lép vissza (lib/useAppResume.ts).
   useAppResume(onboardingDone);
 
   useEffect(() => {
@@ -57,7 +56,7 @@ export default function RootLayout() {
       const testParams = getWebTestParams();
       if (testParams) await applyWebTestParams(db, testParams);
       let result = await db.getOnboarding();
-      // Kimacha Play: single en-es pair (Kálmán, 2026-09-22). An install that
+      // Kimacha Play: single en-es pair. An install that
       // still has an older pair (hu-es, es-hu, hu-en, ...) is corrected to
       // en-es here, silently, at startup; its old DB rows stay, they are just
       // no longer the active pair.
@@ -67,7 +66,7 @@ export default function RootLayout() {
       }
       if (result) {
         setLanguage(result.source);
-        // PLAN-ketiranyu 4. lépés: a PCIC-fül aktív iránya is a tárolt
+        // a PCIC-fül aktív iránya is a tárolt
         // target-tel induljon, ne mindig en-es-sel (data/pcic.ts activeTarget).
         setPcicTarget(result.target as PcicTarget);
       }
@@ -100,7 +99,7 @@ function RootLayoutNav() {
   const { theme } = useTheme();
   const g = useGrammarColors();
   const { skin } = useSkin();
-  // FB202: a rendszer navigációs sávja alá futó képernyők egy helyen kapják meg a
+  // a rendszer navigációs sávja alá futó képernyők egy helyen kapják meg a
   // rést, nem képernyőnkénti foltként (lib/bottomGutter.ts).
   const insets = useSafeAreaInsets();
   const segments = useSegments();
@@ -111,7 +110,7 @@ function RootLayoutNav() {
   // individual screen/handler needs to be patched.
   useEffect(() => {
     startUsageTimer();
-    // FB232: a TTS-motor háttérbe / előtérbe váltásnál leáll, hogy ne akadjon be.
+    // a TTS-motor háttérbe / előtérbe váltásnál leáll, hogy ne akadjon be.
     const unwatchSpeech = watchAppStateForSpeech();
     return () => {
       stopUsageTimer();

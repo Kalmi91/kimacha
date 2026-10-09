@@ -57,7 +57,7 @@ describe('splitStemEnding', () => {
   });
 });
 
-// FB381-383: minden oszlop (ige) saját színt kap, index szerint, nem
+// minden oszlop (ige) saját színt kap, index szerint, nem
 // igeosztály szerint (tener/poder/hacer korábban egy színt kapott, mert
 // mind -er végű, holott 3 külön ige).
 describe('verbColumnColor', () => {
@@ -97,7 +97,7 @@ describe('isConjugationTable', () => {
   });
 });
 
-// FB390: header[0].en === "Meaning" is the (deliberately narrow) signal for
+// header[0].en === "Meaning" is the (deliberately narrow) signal for
 // a quizzable "English meaning -> Spanish term" reference table.
 describe('isMeaningTable', () => {
   it('is true for interrogativos (Meaning | Question word | ...)', () => {

@@ -1,4 +1,4 @@
-// PLAN-vizsga B. szakasz (B3 a): a Nyelvtan fül listájában a lecke végi teszten átment
+// a Nyelvtan fül listájában a lecke végi teszten átment
 // lecke "Test passed" jelet kap a %-jel mellett; a bukott vagy meg nem próbált nem.
 // Mock-minta: courseBrutal.test.tsx.
 
@@ -13,7 +13,6 @@ jest.mock('expo-router', () => ({
   usePathname: () => '/grammar',
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
   },
 }));

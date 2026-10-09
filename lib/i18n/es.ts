@@ -1,11 +1,11 @@
 import en from './en';
 
-// PLAN-ketiranyu 4. lépés (2026-09-28): teljes felület-fordítás, az en.ts
+// teljes felület-fordítás, az en.ts
 // minden kulcsával (a `Strings` típus ezt kikényszeríti: ha egy kulcs
 // hiányzik vagy a típusa eltér, a fájl nem fordul). Ez a felület nyelve az
 // es→en párban (spanyolból tanulsz angolul), tegező, természetes mexikói/
 // semleges spanyollal; a ¿/¡ jelek itt rendben vannak (ez felület-szöveg,
-// nem Kálmán nevében írt szöveg). Az `usage` blokk (célnyelvi toastok) a
+// nem a fejlesztő nevében írt szöveg). Az `usage` blokk (célnyelvi toastok) a
 // Kimacha Play en-es korából változatlan, azt a `stringsFor('es')` olvassa.
 type Strings = typeof en;
 
@@ -39,7 +39,7 @@ const es: Strings = {
     wrong: 'Incorrecto',
     next: 'Siguiente',
     typeSentence: 'Escribe la frase',
-    // PLAN-fb1001 K4: a válasz-beírómező szürke placeholdere, a célnyelv nevével.
+    // a válasz-beírómező szürke placeholdere, a célnyelv nevével.
     typeIn: (lang: string): string => (lang === 'es' ? 'Escribe en español' : 'Escribe en inglés'),
   },
   done: {
@@ -49,11 +49,10 @@ const es: Strings = {
     settings: 'Ajustes',
     grammar: 'Gramática',
     stats: 'Estadísticas',
-    pcic: 'PCIC',
+    pcic: 'Aprender',
   },
   games: {
     understood: 'Entendido',
-    moreLabel: 'Más',
     correctFeedback: '¡Correcto!',
     wrongFeedback: '¡Casi!',
     grammarChoice: {
@@ -100,7 +99,6 @@ const es: Strings = {
     footNote: 'Toda la gramática del idioma, de A1 a C1, en orden de enseñanza. Las lecciones marcadas "próximamente" están planeadas, pero todavía no escritas.',
     ruleLabel: 'La regla',
     examplesLabel: 'Ejemplos',
-    exceptionsLabel: 'Excepciones y casos especiales',
     startChoice: (n: number) => `Oraciones (${n})`,
     startMatch: (n: number) => `Relacionar (${n})`,
     startForm: (n: number) => `Formas (${n})`,
@@ -128,14 +126,13 @@ const es: Strings = {
     lessonPercent: (n: number) => `Hasta ahora: ${n}% correcto`,
     practiceTable: (n: number) => `Practicar la tabla · ${n} celdas`,
     practiceWords: (n: number) => `Practicar las palabras · ${n} tarjetas`,
-    enComingSoon: 'La gramática inglesa llegará más adelante.',
-    // FB416: a saját válasz a helyes fölött a hibás ragozásnál (AnswerCompare).
+    // a saját válasz a helyes fölött a hibás ragozásnál (AnswerCompare).
     yourAnswer: 'Tu respuesta',
-    // FB421: a félbehagyott feladat sora a gomb alatt, pl. "3/10 · 30%".
+    // a félbehagyott feladat sora a gomb alatt, pl. "3/10 · 30%".
     runProgress: (done: number, total: number, pct: number) => `${done}/${total} · ${pct}%`,
-    // FB419: az el / la névelő-választó feladat gombja (csak ott, ahol van ilyen készlet).
+    // az el / la névelő-választó feladat gombja (csak ott, ahol van ilyen készlet).
     startArticle: (n: number) => `¿El o la? (${n})`,
-    // PLAN-fb0929 7. lépés (D1): ideiglenes, új feladat-fajták (hibakereső, szórend, diktálás).
+    // ideiglenes, új feladat-fajták (hibakereső, szórend, diktálás).
     trialBadge: 'NUEVO · PRUEBA',
     startSpot: (n: number) => `Encuentra el error (${n})`,
     startOrder: (n: number) => `Orden de palabras (${n})`,
@@ -153,21 +150,19 @@ const es: Strings = {
     themeAuto: 'Automático',
     themeLight: 'Claro',
     themeDark: 'Oscuro',
-    paletteTitle: 'Colores',
     paletteElectric: 'Azul eléctrico',
     paletteLime: 'Lima + rosa',
     paletteBrand: 'Kimacha',
     paletteCyan: 'Cian + violeta',
     paletteOrange: 'Naranja + turquesa',
-    paletteClassic: 'Clásico',
-    // PLAN-temak 4D: la cuadrícula de temas (app/themes.tsx), Mi mezcla (app/theme-mix.tsx) y los textos de los adornos.
+    // la cuadrícula de temas (app/themes.tsx), Mi mezcla (app/theme-mix.tsx) y los textos de los adornos.
     themes: {
       title: 'Temas',
       oneLook: 'Este tema tiene un solo estilo.',
       posterSlogan: 'APRENDER, APRENDER, APRENDER',
       sample: 'the car',
       know: 'Lo sé',
-      // PLAN-temak 6E: los textos de los adornos de los temas E1 (senior, retro95, y2k, gamer).
+      // los textos de los adornos de los temas E1 (senior, retro95, y2k, gamer).
       readAloud: 'Escuchar',
       retroTitle: 'kimacha.exe',
       newWord: 'palabra nueva',
@@ -199,17 +194,17 @@ const es: Strings = {
     directionEnEs: 'Inglés → Español',
     directionEsEn: 'Español → Inglés',
     credits: 'Créditos',
-    // PLAN-fb1001 7. lépés (FB431): a nyelvtan-haladás nullázó sora és megerősítése.
+    // a nyelvtan-haladás nullázó sora és megerősítése.
     resetGrammar: '🗑️ Reiniciar progreso de gramática',
     resetGrammarTitle: 'Reiniciar progreso de gramática',
     resetGrammarMessage: 'Esto borra todo el progreso de lecciones y práctica de gramática. ¿Estás seguro?',
-    // PLAN-fb1002 5. lépés (FB446): az újrakezdő sorok egy lenyíló szekcióban.
+    // az újrakezdő sorok egy lenyíló szekcióban.
     resetSection: '🗑️ Reiniciar progreso',
-    // PLAN-vizsga A. szakasz 2. lépés: a __DEV__-only vizsga-vezérlő (csak fejlesztői buildben látszik).
+    // a __DEV__-only vizsga-vezérlő (csak fejlesztői buildben látszik).
     devSeedExamA1: 'DEV: preparar el estado del examen (A1-B2)',
     devSeedExamA1Done: 'DEV: estado del examen listo (A1-B2), abre la hoja de niveles',
   },
-  // PLAN-temak 2A: nombres de los temas (skins) y de los grupos para la cuadrícula de temas en Ajustes.
+  // nombres de los temas (skins) y de los grupos para la cuadrícula de temas en Ajustes.
   skins: {
     names: {
       brutal: 'Neobrutal',
@@ -300,9 +295,9 @@ const es: Strings = {
     cancel: 'Cancelar',
     thanks: '¡Gracias!',
   },
-  // Kimacha Play: single en-es pair (Kálmán, 2026-09-22). This is no longer a
+  // Kimacha Play: single en-es pair. This is no longer a
   // full UI translation, the hu/es/de translation files were cut. This file
-  // survives only because FB63/76/108/149 want the usage toasts (per-minute
+  // survives only because the product wants the usage toasts (per-minute
   // pill, milestones, daily greeting, midnight rollover) to speak the
   // language being LEARNED, which for Kimacha Play is always Spanish.
   // `lib/i18n/index.ts`'s `stringsFor()` reads this `usage` object. Content
@@ -311,7 +306,7 @@ const es: Strings = {
     plusOneMinute: '¡+1 minuto, guau!',
     milestoneSession: '🔥 ¡Guau, {min} minutos seguidos!',
     milestoneDaily: '🎉 ¡{min} minutos hoy, lo estás haciendo genial!',
-    // FB149: pasada la primera hora, cada cuarto de hora, línea al azar.
+    // pasada la primera hora, cada cuarto de hora, línea al azar.
     milestoneLong: [
       '🔥 ¡{hours} horas hoy! Esto ya no es estudiar, es entrenar.',
       '💪 {min} minutos de botín. El idioma ya no puede escaparse.',
@@ -323,7 +318,7 @@ const es: Strings = {
       '🎯 {hours} horas en la sesión de hoy. El que mete tanto, saca tanto.',
     ],
     dailyGreeting: '👋 ¡Hola! ¡Empecemos el estudio de hoy!',
-    // FB108: cambio de día a medianoche, resumen del día cerrado + felicitación.
+    // cambio de día a medianoche, resumen del día cerrado + felicitación.
     // Se elige al azar, así que las frases vuelven a aparecer con el tiempo.
     dayRollover: [
       '🌙 ¡Medianoche! Ayer: {words} palabras, {min} minutos. Quien estudia a medianoche no lo hace por casualidad.',
@@ -369,14 +364,13 @@ const es: Strings = {
     scheduleEmpty: '¡Todavía no hay nada guardado, aprende algunas palabras!',
   },
   pcic: {
-    header: (due: number, newCount: number, doneToday: number, total: number) => `${total} palabras · pendientes ${due} · nuevas ${newCount} · hechas hoy ${doneToday}`,
     badgeTotal: (n: number) => `${n} palabras`,
     badgeDue: (n: number) => `pendientes ${n}`,
     badgeNew: (n: number) => `nuevas ${n}`,
     badgeDone: (n: number) => `hechas ${n}`,
     // "oración" -> "oraciones" nem sima "+es" ragozás (az ékezet elmarad a
-    // többesben), ezért a teljes szó vált, nem toldalék (elírás-javítás,
-    // 2026-09-28 review, 3. pont: "oraciónes" -> "oraciones").
+    // többesben), ezért a teljes szó vált, nem toldalék (elírás-javítás:
+    // "oraciónes" -> "oraciones").
     badgeIntroducedToday: (words: number, sentences: number, budget: number) =>
       `hoy: ${words} palabra${words === 1 ? '' : 's'} · ${sentences} ${sentences === 1 ? 'oración' : 'oraciones'} / ${budget}`,
     again: 'No lo sabía',
@@ -385,9 +379,8 @@ const es: Strings = {
     easy: 'Fácil',
     doneTitle: 'Listo por hoy',
     resetConfirmTitle: 'Reiniciar progreso',
-    resetConfirmMessage: 'Esto borra todo el progreso de PCIC. ¿Estás seguro?',
     resetConfirmYes: 'Reiniciar',
-    // PLAN-fb1001 K1: a Beállítások sor, a nullázódó szint nevével.
+    // a Beállítások sor, a nullázódó szint nevével.
     resetRow: (level: string) => `🗑️ Reiniciar progreso (${level})`,
     resetConfirmLevel: (level: string) => `Esto borra todo el progreso del mazo ${level}. ¿Estás seguro?`,
     undo: 'Deshacer',
@@ -407,7 +400,7 @@ const es: Strings = {
     next: (label: string) => `Siguiente → ${label}`,
     accentForgiven: 'Falta el acento, se cuenta como correcto',
     alsoLabel: 'también',
-    // FB481/495/496/498: az (i) magyarázat-gomb kisegítő felirata.
+    // az (i) magyarázat-gomb kisegítő felirata.
     noteLabel: 'Más información',
     photoCredit: (author: string, license: string, cropped: boolean) => `Foto: ${author}, ${license}, Wikimedia Commons${cropped ? ' (recortada)' : ''}`,
     photoCreditHint: 'Abre la página de la foto en Wikimedia Commons',
@@ -415,7 +408,6 @@ const es: Strings = {
     levelElementary: 'Elemental',
     levelIntermediate: 'Intermedio',
     levelUpperIntermediate: 'Intermedio alto',
-    levelPlusSentences: '+1 · oraciones',
     levelNotStarted: 'sin empezar',
     levelRowIntroduced: (n: number, total: number) => `${n} / ${total} presentadas`,
   },
@@ -518,8 +510,6 @@ const es: Strings = {
     conj: 'conjunción',
     det: 'determinante',
     interj: 'interjección',
-    prefix: 'prefijo',
-    suffix: 'sufijo',
   },
   mockExam: {
     cardTitle: 'Examen de práctica',
@@ -615,10 +605,10 @@ const es: Strings = {
     promptCaption: 'persona · verbo',
     wordChip: 'PALABRA',
     wordPromptCaption: 'significado',
-    // PLAN-fb0929 10. lépés: es→en irányban a kérdés a spanyol szó, a válasz az angol szó.
+    // es→en irányban a kérdés a spanyol szó, a válasz az angol szó.
     wordPromptCaptionEn: '¿Cómo se dice en inglés?',
     promptCaptionEn: 'traducir al español',
-    // PLAN-fb1001 13. lépés (FB440): a ragozó kártyán az infinitivus rejtett, a súgó-gomb mutatja.
+    // a ragozó kártyán az infinitivus rejtett, a súgó-gomb mutatja.
     showVerb: 'Ver el verbo',
     progress: (done: number, total: number) => `${done} / ${total} hechas`,
     completeTitle: (n: number) => `Las ${n} celdas hechas 🎉`,

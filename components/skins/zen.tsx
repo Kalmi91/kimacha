@@ -4,7 +4,7 @@ import { StyleSheet, View } from 'react-native';
 import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 
-// PLAN-temak 6E, Zen: piros pont a szó fölött (a téma `dot` színe), rövid vízszintes vonal a szó
+// Zen: piros pont a szó fölött (a téma `dot` színe), rövid vízszintes vonal a szó
 // alatt; a gombok csak szöveg, a fő ("Tudom") aláhúzva (buttonVariant 'text', BrutalBox / BrutalButton).
 
 const DOT = 10;

@@ -1,4 +1,4 @@
-// FB485 ("valamiért itt nem megy a progress bar", A2): a "+N új szó" adag-alapja (batchBase, FB456) egy
+// User feedback ("valamiért itt nem megy a progress bar", A2): a "+N új szó" adag-alapja (batchBase) egy
 // SZINTRE érvényes mérés volt, de szint-váltáskor is megmaradt. A1-en +15 után (alap = a nap addigi
 // kész kártyái az A1-en) a másik szinten a haladás-csík addig 0% maradt, amíg ott az alapnál több
 // kártya el nem készült. Mock-minta: pcicMoreNewSteps.test.tsx.
@@ -13,7 +13,6 @@ jest.mock('@/lib/speech', () => ({
 jest.mock('expo-router', () => ({
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
   },
 }));
@@ -37,13 +36,9 @@ const mockItemsByLevel: Record<string, ReturnType<typeof mkItems>> = { A1: mockA
 jest.mock('@/data/pcic', () => ({
   PCIC_LEVELS: ['A1', 'B1'],
   PCIC_VIEW_LEVELS: ['A1', 'B1'],
-  LEVEL_LABELS: { A1: 'Beginner', B1: 'Intermediate' },
   pcicItemsForLevel: (level: string) => mockItemsByLevel[level] ?? [],
-  pcicItemsForViewLevel: (level: string) => mockItemsByLevel[level] ?? [],
   findPcicItem: (id: string) => [...mockA1Items, ...mockB1Items].find((i) => i.id === id),
   levelOfItem: (id: string) => (id.startsWith('a1-') ? 'A1' : id.startsWith('b1-') ? 'B1' : undefined),
-  isPlusSentence: () => false,
-  realLevelOfView: (level: string) => level,
   setPcicTarget: () => {},
 }));
 

@@ -4,7 +4,7 @@ import { StyleSheet, View } from 'react-native';
 import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 
-// PLAN-temak 6E (E2), Diszlexia: olvasó-sáv, sárga csík a szó mögött, a szó-sor teljes szélességében.
+// Diszlexia: olvasó-sáv, sárga csík a szó mögött, a szó-sor teljes szélességében.
 // A sáv a téma `band` színe; más színekkel (Saját mix) a b szín halványítva a tartalék.
 
 function DiszlexiaWord({ children }: { word: string; children: ReactNode }) {

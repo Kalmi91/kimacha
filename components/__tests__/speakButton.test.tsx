@@ -1,4 +1,4 @@
-// PLAN-fb1001 K2: a közös 🔊 / ⏹ gomb: brutalista palettán a játékok ikon-gombjaival
+// a közös 🔊 / ⏹ gomb: brutalista palettán a játékok ikon-gombjaival
 // egyező doboz (ink keret, BrutalBox), classic palettán a mai sima gomb.
 // Mock-minta: feedbackBrutal.test.tsx.
 

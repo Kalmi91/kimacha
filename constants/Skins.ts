@@ -1,5 +1,5 @@
-// PLAN-temak 2A: a téma-motor adata. Egy téma (skin) = színek (módonként) + forma +
-// betű + dísz-azonosító. A színek, a forma és a betű-nevek a PLAN-temak.md "Téma-spec"
+// a téma-motor adata. Egy téma (skin) = színek (módonként) + forma +
+// betű + dísz-azonosító. A színek, a forma és a betű-nevek a téma-specifikáció
 // táblázatából jönnek 1:1, a kontraszt-szabály miatti módosítások kivételével (azok a
 // PLAN "Spec-eltérések" alatt vannak, régi → új értékkel). A betű-nevek stringek: a
 // betöltést (useFonts) a constants/Fonts.ts végzi ugyanezeken a neveken.
@@ -438,7 +438,7 @@ export const SKINS: Record<SkinId, Skin> = {
 
 export const SKIN_IDS = Object.keys(SKINS) as SkinId[];
 
-// Sorrend a Beállításokban (PLAN-temak.md csoportok).
+// Sorrend a Beállításokban (csoportok).
 export const SKIN_GROUPS: { id: SkinGroupId; skins: SkinId[] }[] = [
   { id: 'ajanlott', skins: ['brutal', 'deco', 'szocreal', 'csillampony', 'ukiyoe'] },
   { id: 'muveszet', skins: ['plakat', 'bauhaus', 'popart', 'szecesszio', 'memphis', 'kodex', 'graffiti'] },
@@ -528,7 +528,7 @@ export function bestOn(fill: string, candidates: string[]): string {
   return candidates.reduce((best, c) => (contrastRatio(c, fill) > contrastRatio(best, fill) ? c : best));
 }
 
-// PLAN-temak 7H: a WCAG-küszöb egy KText-szövegre. Nagy szövegnél (>= 24 px, vagy >= 18,66 px és
+// a WCAG-küszöb egy KText-szövegre. Nagy szövegnél (>= 24 px, vagy >= 18,66 px és
 // félkövér) 3, különben 4,5. A KText szabályai szerint: a méret a fontScale / displayScale (title
 // és word) / fontSizeOffset-tel skálázódik, egyedi betűnél (skin.fonts[variant]) a fontWeight
 // elmarad, vagyis ott nincs félkövér.
@@ -544,7 +544,7 @@ export function textContrastMin(
 
 const HEX6 = /^#[0-9a-f]{6}$/i;
 
-// PLAN-temak 7G: olvasható szín egy háttéren. Ha az `fg` a `bg`-n átmegy a küszöbön (alap WCAG AA
+// olvasható szín egy háttéren. Ha az `fg` a `bg`-n átmegy a küszöbön (alap WCAG AA
 // 4.5, jelnél / nagy szövegnél 3), változatlan marad (a mai kinézet nem változik); különben azonos
 // árnyalaton a bg-től távolodva feketébe / fehérbe keveri, a legkisebb változtatásig, ami átmegy.
 // Ugyanígy kitöltésre is: `legibleOn(fill, '#FFFFFF')` = a fehér szöveget elbíró kitöltés.

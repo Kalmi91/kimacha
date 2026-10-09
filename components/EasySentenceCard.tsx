@@ -16,12 +16,12 @@ interface Props {
   targetWords: string[];
   trapWords: string[];
   onResult: (correct: boolean) => void;
-  // FB118: speech locale of the learned language, so a placed tile can be heard.
+  // speech locale of the learned language, so a placed tile can be heard.
   speechLocale?: string;
-  // PLAN-fb1001 10. lépés (FB434): a feladat-mondat (a kiinduló nyelven) a kártya megnyitásakor
-  // elhangzik, mint a szókártya promptja (FB319).
+  // a feladat-mondat (a kiinduló nyelven) a kártya megnyitásakor
+  // elhangzik, mint a szókártya promptja.
   sourceSpeechLocale?: string;
-  // FB455: a szókártya "Didn't know" / "Knew it" gombsora Check után (felülbírálja a kijelzett értékelést).
+  // a szókártya "Didn't know" / "Knew it" gombsora Check után (felülbírálja a kijelzett értékelést).
   gradeButtons?: boolean;
 }
 
@@ -39,7 +39,7 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
   // placed = bank indices, in the order the user tapped them.
   const [placed, setPlaced] = useState<number[]>([]);
   const [result, setResult] = useState<'correct' | 'wrong' | null>(null);
-  // FB455: a Check rossz építésre ítélt; a helyes mondat felülbírálás ("Knew it") után is látszik.
+  // a Check rossz építésre ítélt; a helyes mondat felülbírálás ("Knew it") után is látszik.
   const [missed, setMissed] = useState(false);
   const targetSentence = targetWords.join(' ');
 
@@ -53,7 +53,7 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
   const addWord = (bankIdx: number) => {
     if (result) return;
     setPlaced([...placed, bankIdx]);
-    // FB118, Kálmán 2026-08-14: "amikor beteszi felulre akkor ki is ejtse azt a
+    // User feedback: "amikor beteszi felulre akkor ki is ejtse azt a
     // szót amit betettem, hogy a kiejtést halljam". Only the single tile is
     // spoken, so the whole sentence is never given away.
     if (speechLocale) {
@@ -68,11 +68,11 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
   };
 
   const handleCheck = () => {
-    // FB137: tile for tile, no character tolerance, see sentenceBuildMatch.
+    // tile for tile, no character tolerance, see sentenceBuildMatch.
     const isCorrect = sentenceBuildMatch(placed.map(i => bank[i]), targetWords);
     setResult(isCorrect ? 'correct' : 'wrong');
     setMissed(!isCorrect);
-    // FB412 (PLAN-fb0929 5. lépés): a helyes mondat MINDIG elhangzik, jó és rossz építés
+    // a helyes mondat MINDIG elhangzik, jó és rossz építés
     // után is (a rossz építésnél ráadásul látszik is).
     if (speechLocale) {
       stopSpeech();
@@ -131,7 +131,7 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
         )}
       </View>
 
-      {/* FB403: minden kártyán ugyanaz a jó / rossz jelzés (szín + alak + ✓/✗ + szöveg). */}
+      {/* minden kártyán ugyanaz a jó / rossz jelzés (szín + alak + ✓/✗ + szöveg). */}
       {result && <ResultBadge correct={result === 'correct'} label={result === 'correct' ? s.card.correct : s.card.wrong} />}
 
       {result && gradeButtons && <SentenceGradeRow colors={colors} result={result} onOverride={(ok) => setResult(ok ? 'correct' : 'wrong')} />}
@@ -179,7 +179,6 @@ const styles = StyleSheet.create({
   emptySlot: { backgroundColor: 'transparent', borderStyle: 'dashed' },
   hiddenText: { opacity: 0 },
   chipText: { color: '#FFF', fontSize: 16, fontWeight: '600' },
-  resultText: { fontSize: 18, fontWeight: '700' },
   correctLine: { fontSize: 14, fontWeight: '600', textAlign: 'center' },
   checkBtn: { paddingHorizontal: 32, paddingVertical: 12, borderRadius: 14, marginTop: 8 },
   checkBtnPrimary: { paddingHorizontal: 44, paddingVertical: 14, borderRadius: 24, alignSelf: 'center', shadowColor: '#000', shadowOffset: { width: 0, height: 3 }, shadowOpacity: 0.2, shadowRadius: 6, elevation: 4 },

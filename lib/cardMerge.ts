@@ -6,7 +6,7 @@
 // (stability), végül a korábbi esedékesség, hogy az ismétlés ne csússzon ki.
 // Sose vesztünk haladást, a gyengébb sor esik ki.
 
-export interface MergeableCard {
+interface MergeableCard {
   reps: number;
   stability: number;
   due: string;

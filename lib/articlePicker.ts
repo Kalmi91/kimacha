@@ -1,4 +1,4 @@
-// FB188, Kálmán 2026-09-08 (word:beef): „szeretnék egy olyat, hogy amikor ilyen szó
+// User feedback (word:beef): „szeretnék egy olyat, hogy amikor ilyen szó
 // van akkor ne begépelni kelljen a el la t hanem kiválasztani itt legyen 3 opcio el
 // le vagy none mármint egy kor áthúzva. […] a cél az hogy sokszór szó közben
 // változtatom meg és egyszerűen akarom változtatgatni".
@@ -26,7 +26,7 @@ const ARTICLES_BY_LANG: Record<string, readonly string[]> = {
  * Megjelenik-e a gombsor. Akkor, ha a beírandó nyelvnek van névelő-készlete, és
  * a kártya egy SZÓT kérdez (mondat-kártyán nincs mit névelőzni).
  *
- * FB214, Kálmán 2026-09-09 (word:contrary / opposite): „az a le la los las semmi
+ * User feedback (word:contrary / opposite): „az a le la los las semmi
  * rész legyen betéve oda is ahol igég vagy mellékneveket kell irni, mert pl most
  * is beletettem az el t pesig ide nem kell". A gombsor eddig csak főnév-kártyán
  * jelent meg, tehát igénél és melléknévnél kézzel gépelte oda a névelőt, és
@@ -40,14 +40,14 @@ export function articlePickerApplies(backLang: string, isWordCard: boolean, answ
 }
 
 /**
- * FB262-264, Kálmán 2026-09-12 (word:I am going to travel / you are going to eat):
+ * User feedback (word:I am going to travel / you are going to eat):
  * „ennél nem kell az el la los las rész mert több szó van. itt nem lehet
  * használni". Egy több szavas, névelőtlen alak (voy a viajar, van a llegar) nem
  * névelőzhető, ott a sor csak zaj. Egy szó (perro), vagy névelős több szó
  * (el fin de semana) továbbra is kapja a sort.
  */
 /**
- * FB291, Kálmán 2026-09-16 (word:The cat is on the table.): „a mondatokhoz nem
+ * User feedback (word:The cat is on the table.): „a mondatokhoz nem
  * kell el la los las sor". Egy mondat-záró írásjellel végződő vagy spanyol nyitó
  * jellel (¿/¡) kezdődő alak mondat, nem szó, a sor ott zaj marad akkor is, ha
  * névelővel kezdődik (El gato está en la mesa.).
@@ -58,11 +58,6 @@ function articleCanApply(answer: string): boolean {
   if (/[.?!…]$/.test(trimmed) || /^[¿¡]/.test(trimmed)) return false;
   if (articleOf(trimmed)) return true;
   return !/\s/.test(trimmed);
-}
-
-/** Az adott nyelv névelői, üres tömb, ha a nyelvnek nincs gombsora. */
-export function articlesFor(backLang: string): readonly string[] {
-  return ARTICLES_BY_LANG[backLang] ?? [];
 }
 
 /** Amit az értékelő lát: a választott névelő és a begépelt szó egy stringben. */
@@ -89,7 +84,7 @@ export function bodyOf(text: string): string {
 }
 
 /**
- * FB214 kiegészítés (javító kör, 2026-09-23): a PCIC-kártyán a szófaj-chip
+ * Kiegészítés (javító kör, 2026-09-23): a PCIC-kártyán a szófaj-chip
  * (lib/pcicPos.ts posOf()) már megmondja, ha a tétel nem főnév, ezért ott a
  * névelő-sor felesleges (és zavaró) volna nem-főnévnél is megkérdezni. A sor
  * csak akkor jár, ha a szófaj ismeretlen (`null`, ilyenkor még tanulság az

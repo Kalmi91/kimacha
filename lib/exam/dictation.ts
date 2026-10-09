@@ -1,4 +1,4 @@
-// PLAN-vizsga D. szakasz 13. lépés (Kálmán, 2026-10-01, D1 b + D3): a szóbeli tétel a billentyűzet
+// a szóbeli tétel a billentyűzet
 // mikrofonjával megy, az app saját beszédfelismerőt nem használ. A diktált szöveg egy szövegmezőbe
 // kerül; ez az összevető a diktált szöveget veti össze a várt mondattal és megmondja, mely szavak
 // térnek el (explicit visszajelzés). Tiszta függvény, a próbavizsga szóbeli része és a későbbi
@@ -7,7 +7,7 @@
 // Szabály: kis- és nagybetű, valamint írásjel nem számít (a billentyűzet maga teszi a pontot és a
 // nagybetűt). Az ékezet a meglévő "Accents count" beállítást követi (lib/pcicMatch.ts): bekapcsolva
 // az ékezethiba hiba, kikapcsolva nem; az ñ külön betű, nem ékezet (año ≠ ano). A spanyol
-// mondat elején álló alany-névmás elhagyható (FB399, mint a begépelt mondatnál).
+// mondat elején álló alany-névmás elhagyható (mint a begépelt mondatnál).
 
 import { withoutLeadingSubjectPronoun } from '@/lib/pcicMatch';
 
@@ -31,7 +31,7 @@ export interface DictationResult {
   extra: string[];
 }
 
-export interface DictationOptions {
+interface DictationOptions {
   /** A "Accents count" beállítás: igaz = az ékezet számít. */
   strictAccents: boolean;
   /** Spanyol célnyelvnél igaz: a mondat eleji alany-névmás elhagyható. */

@@ -1,6 +1,6 @@
-// GENERÁLT FÁJL (a generáló scripts/pcic-level-fit.mjs a PLAN-regi-szavak-ki 6. lépésében kikerült), ne szerkeszd kézzel.
+// GENERÁLT FÁJL (a generáló scripts/pcic-level-fit.mjs kikerült), ne szerkeszd kézzel.
 //
-// PLAN-fb0924 7a. lépés (FB396, D3): a nehézség-igazítás régi PCIC-item-id ->
+// a nehézség-igazítás régi PCIC-item-id ->
 // új PCIC-item-id térképe (a régi és az új id KÜLÖNBÖZŐ szintet jelöl - lásd
 // lib/pcicLevels.ts matchesLevel/levelOfItem). A DB-migráció (lib/db/migrations.ts
 // applyPcicLevelMoves, natív induláskor) ezen a térképen viszi át a meglévő

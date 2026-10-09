@@ -1,4 +1,4 @@
-// PLAN-vizsga A. szakasz 3. lépés (Kálmán, 2026-10-01, A2 b + A3 a + A4 b): a
+// a
 // szintvizsga akkor nyílik, ha a szint words-open kártyáinak legalább 80%-a
 // TANULT, ÉS a szint legalább egy nyelvtani leckéje kész. Tiszta függvények, I/O
 // nélkül; a hívó adja a kártyákat és a lecke-sorokat.

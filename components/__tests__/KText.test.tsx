@@ -1,4 +1,4 @@
-// PLAN-temak 4C: a KText a téma betűjét (title / word / body), méretét, betűközét, sormagasságát és
+// a KText a téma betűjét (title / word / body), méretét, betűközét, sormagasságát és
 // kis-/nagybetűs formáját alkalmazza; a Klasszikus téma (és a Neo-brutál body) a mai viselkedés.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));

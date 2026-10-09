@@ -1,4 +1,4 @@
-// PLAN-fb1001 K1 + 7. lépés (FB431): a haladás-nullázás a Beállításokban él (a Learn
+// a haladás-nullázás a Beállításokban él (a Learn
 // fejlécből költözött): egy sor minden paklira (szintre), amin van haladás, és egy
 // sor a nyelvtanra; mind megerősítéssel. Mock-minta: settingsBrutal.test.tsx.
 
@@ -7,7 +7,6 @@ jest.mock('expo-router', () => ({
   useRouter: () => ({ push: jest.fn(), navigate: jest.fn(), back: jest.fn() }),
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
   },
 }));
@@ -36,7 +35,7 @@ const flush = async () => {
   }
 };
 
-// PLAN-fb1002 5. lépés (FB446): a nullázó sorok egy lenyíló szekcióban vannak, előbb ki kell nyitni.
+// a nullázó sorok egy lenyíló szekcióban vannak, előbb ki kell nyitni.
 const openReset = (r: { getByText: (t: string) => unknown }) => fireEvent.press(r.getByText('🗑️ Restart progress') as never);
 
 // A megerősítő Alert destruktív gombját nyomja meg (natív ág).
@@ -79,7 +78,7 @@ describe('Beállítások: haladás nullázása (PLAN-fb1001 K1 + FB431)', () => 
     const { getByText, queryByText } = r;
     await flush();
 
-    // FB446: zárva a sorok nem látszanak, a szekció-fejléc igen.
+    // zárva a sorok nem látszanak, a szekció-fejléc igen.
     expect(queryByText('🗑️ Reset progress (B1)')).toBeNull();
     openReset(r);
     expect(queryByText('🗑️ Reset progress (A2)')).toBeNull();
@@ -95,7 +94,7 @@ describe('Beállítások: haladás nullázása (PLAN-fb1001 K1 + FB431)', () => 
     expect(getByText('🗑️ Reset progress (B1)')).toBeTruthy();
   });
 
-  // FB470: a mentett Learn-kör pillanatképe a nullázott haladásra már nem érvényes.
+  // a mentett Learn-kör pillanatképe a nullázott haladásra már nem érvényes.
   it('a pakli nullázása a mentett Learn-kör pillanatképét is eldobja', async () => {
     await seedCard('A1');
     await saveLearnResume(getDb(), buildLearnResume([sm2NewCard(pcicItemsForLevel('A1')[0].id)], '2026-10-05', 'A1', null));

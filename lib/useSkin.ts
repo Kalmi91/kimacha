@@ -7,7 +7,7 @@ import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
 import { composeSkin, skinIdOfTheme } from '@/lib/skinTheme';
 import { useTheme, type ThemeKey } from '@/lib/ThemeContext';
 
-export type SkinState = {
+type SkinState = {
   // A kiválasztás ('mix' = Saját mix).
   id: SkinSelection;
   // Az aktív Skin (mixnél a négy forrásból összerakva).
@@ -22,7 +22,7 @@ export type SkinState = {
   decorId: SkinId | 'none';
 };
 
-// PLAN-temak 2A: az aktív téma, a feloldott színekkel és móddal. A ThemeContextet csak a
+// az aktív téma, a feloldott színekkel és móddal. A ThemeContextet csak a
 // `theme`-mel mockoló tesztekben (skin nélkül) a téma-kulcsból következtet.
 export function useSkin(): SkinState {
   const ctx = useTheme();

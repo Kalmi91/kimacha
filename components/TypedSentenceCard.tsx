@@ -20,19 +20,19 @@ interface Props {
   onResult: (correct: boolean) => void;
   // Speech locale of the learned language, the right sentence is read aloud.
   speechLocale?: string;
-  // PLAN-fb1001 10. lépés (FB434): a feladat-mondat (a kiinduló nyelven) a kártya megnyitásakor
-  // elhangzik, mint a szókártya promptja (FB319).
+  // a feladat-mondat (a kiinduló nyelven) a kártya megnyitásakor
+  // elhangzik, mint a szókártya promptja.
   sourceSpeechLocale?: string;
   // Same accent rule as the word card (Settings -> Difficulty).
   strictAccents?: boolean;
-  // FB397 (PLAN-fb0929 2. lépés): a Check/Next sáv ugyanaz a dokkolt sáv a
+  // a Check/Next sáv ugyanaz a dokkolt sáv a
   // billentyűzet fölött, mint a PCIC szókártyán (DockedAction). A szülő adja a
   // billentyűzet-emelést (useDockLift) és fogadja a sáv magasságát, hogy a 💬 gomb
   // fölé tudjon kerülni; alapértékkel önállóan (tesztben) is renderel.
   dockLift?: number;
   dockH?: number;
   onDockHeight?: (h: number) => void;
-  // FB455: a szókártya "Didn't know" / "Knew it" gombsora Check után (felülbírálja a kijelzett értékelést).
+  // a szókártya "Didn't know" / "Knew it" gombsora Check után (felülbírálja a kijelzett értékelést).
   gradeButtons?: boolean;
 }
 
@@ -55,7 +55,7 @@ export default function TypedSentenceCard({
 
   const [typed, setTyped] = useState('');
   const [result, setResult] = useState<'correct' | 'wrong' | null>(null);
-  // FB455: a Check rossz válaszra ítélt; a helyes mondat felülbírálás ("Knew it") után is látszik.
+  // a Check rossz válaszra ítélt; a helyes mondat felülbírálás ("Knew it") után is látszik.
   const [missed, setMissed] = useState(false);
 
   useEffect(() => {
@@ -67,12 +67,12 @@ export default function TypedSentenceCard({
     Keyboard.dismiss();
     // Graded like the word card, on the sentence without its punctuation (the
     // tile card drops it too).
-    // FB399: a névmás nélküli válasz is jó ("Como en casa." a "Yo como en casa." helyett).
+    // A névmás nélküli válasz is jó ("Como en casa." a "Yo como en casa." helyett).
     const grade = gradeSentenceAnswer(stripSentencePunct(typed), stripSentencePunct(targetSentence), strictAccents);
     const isCorrect = suggestedGrade(grade) === 'good';
     setResult(isCorrect ? 'correct' : 'wrong');
     setMissed(!isCorrect);
-    // FB412 (PLAN-fb0929 5. lépés): a helyes mondat MINDIG elhangzik, jó és rossz válasz után is.
+    // a helyes mondat MINDIG elhangzik, jó és rossz válasz után is.
     if (speechLocale) {
       stopSpeech();
       speak(targetSentence, speechLocale);
@@ -117,7 +117,7 @@ export default function TypedSentenceCard({
 
           {result && (result === 'wrong' || missed) && <Text style={[styles.correctLine, { color: colors.success }]}>{targetSentence}</Text>}
 
-          {/* FB403: minden kártyán ugyanaz a jó / rossz jelzés (szín + alak + ✓/✗ + szöveg). */}
+          {/* minden kártyán ugyanaz a jó / rossz jelzés (szín + alak + ✓/✗ + szöveg). */}
           {result && <ResultBadge correct={result === 'correct'} label={result === 'correct' ? s.card.correct : s.card.wrong} />}
 
           {result && gradeButtons && <SentenceGradeRow colors={colors} result={result} onOverride={(ok) => setResult(ok ? 'correct' : 'wrong')} />}
@@ -143,6 +143,5 @@ const styles = StyleSheet.create({
   scroll: { flex: 1 },
   sourceText: { fontSize: 20, fontWeight: '700', textAlign: 'center' },
   input: { width: '100%', borderWidth: 2, borderRadius: 12, paddingHorizontal: 12, paddingVertical: 10, fontSize: 16 },
-  resultText: { fontSize: 18, fontWeight: '700' },
   correctLine: { fontSize: 14, fontWeight: '600', textAlign: 'center' },
 });

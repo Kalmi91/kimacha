@@ -1,10 +1,6 @@
-// LECKE-SEMA 1-2. szakasz: a lecke új sémája, blokk-alapú törzzsel (body) és a
-// két új feladat-fajtával (match, form). A `rule`/`more` próza-mezőket a
-// `body` tömb váltja: a szerkezet innentől adat, nem a moreBlocks.ts-féle
-// prózából-találgatás. A régi (rule/more) leckék `lib/games/content.ts`-ben,
-// `LegacyLesson` néven élnek tovább, amíg a többi 20 téma is át nem költözik
-// erre a sémára; a két alak `GrammarTopicData = LegacyLesson | LessonV2`
-// unióban fér meg egymás mellett.
+// a lecke sémája, blokk-alapú törzzsel (body) és a
+// két új feladat-fajtával (match, form). A szerkezet adat, nem prózából
+// kitalált; minden lecke ilyen (`GrammarTopicData = LessonV2`, lib/games/content.ts).
 //
 // `Level` és a gap/mark item-típusok a content.ts-ből jönnek (ott a
 // „törzs" a régi típusoknak), hogy ne legyen két hely, ahol egy gap-item
@@ -15,7 +11,7 @@ import type { GrammarGapItem, GrammarMarkItem } from '../games/content';
 
 export type Lang4 = Record<'hu' | 'en' | 'es' | 'de', string>;
 
-// NY1 (NYELVTAN.md "Adatformátum"): az igeidő-drill igeidői (8 + a PLAN-fb1002 10. lépésében
+// az igeidő-drill igeidői (8 + a később
 // hozzáadott 4). A sorrend itt a TENSE_IDS forrása, ne cseréld fel.
 export type TenseId =
   | 'presente'
@@ -98,13 +94,12 @@ export type LessonBlock =
       title: Lang4;
       header: Lang4[];
       rows: string[][];
-      // FB378: english prompt per cell (rows x verb-columns, same shape as
+      // english prompt per cell (rows x verb-columns, same shape as
       // `rows` minus the person column), for the table-deck's "translate the
       // English sentence" mode; a table without it keeps the person·verb prompt.
       enPrompt?: string[][];
     }
   | { kind: 'usage'; title?: Lang4; points: { text: Lang4; examples: ExamplePair[] }[] }
-  | { kind: 'examples'; title?: Lang4; examples: ExamplePair[] }
   | {
       kind: 'contrast';
       title?: Lang4;
@@ -113,14 +108,14 @@ export type LessonBlock =
     }
   | { kind: 'tip'; text: Lang4 };
 
-// LECKE-SEMA 2.1: párosítás, angol <-> spanyol.
+// párosítás, angol <-> spanyol.
 export interface MatchItem {
   kind: 'match';
   id: string;
   pairs: { es: string; en: string }[]; // 5-6 pár
 }
 
-// LECKE-SEMA 2.2: ragozási drill, a `table` mezővel a body egyik `table`
+// ragozási drill, a `table` mezővel a body egyik `table`
 // blokkjának id-jára hivatkozva (onnan jönnek a lehetséges alakok).
 export interface FormItem {
   kind: 'form';
@@ -128,20 +123,20 @@ export interface FormItem {
   verb: string;
   person: string;
   answer: string;
-  // PLAN-fb1002 10. lépés: további elfogadott alakok (ahol két alak is helyes: hablara / hablase).
+  // további elfogadott alakok (ahol két alak is helyes: hablara / hablase).
   accept?: string[];
   table: string; // a body egyik `table` blokkjának id-ja
   tense?: { from: TenseId; to: TenseId };
 }
 
-// TASK-8 (PLAN-fb0917 D4, FB288, Kálmán 2026-09-15): "miért ez a mondat", a
+// "miért ez a mondat", a
 // tanuló nem a hiányzó szót választja, hanem azt, MELYIK SZABÁLY miatt van a
 // mondat úgy, ahogy van (pl. "Soy profesor." → "foglalkozás / identitás").
 export interface WhyItem {
   kind: 'why';
   id: string;
   es: string; // a mondat spanyolul, pl. "Soy profesor."
-  // FB376: a mondat pontos része, amire a kérdés vonatkozik (pl. "perro",
+  // a mondat pontos része, amire a kérdés vonatkozik (pl. "perro",
   // több szó is lehet: "está cansado"); szóhatárral kell szerepelnie az
   // `es` mezőben, lásd lib/grammar/whyTarget.ts.
   target?: string;
@@ -151,9 +146,9 @@ export interface WhyItem {
   tense?: { from: TenseId; to: TenseId };
 }
 
-// NY1: az igeidő-drill item-fajtája, mondat-átírás egyik igeidőből a
-// másikba (NYELVTAN.md "Adatformátum"). A `wordIds` a mondat kártyáira
-// hivatkozik, ez hajtja az NY2 unlockot.
+// az igeidő-drill item-fajtája, mondat-átírás egyik igeidőből a
+// másikba. A `wordIds` a mondat kártyáira
+// hivatkozik, ez hajtja az unlockot.
 export interface TransformItem {
   kind: 'transform';
   id: string;
@@ -165,8 +160,8 @@ export interface TransformItem {
   why: Lang4;
 }
 
-// PLAN-fb0929 7. lépés (D1, Kálmán 2026-09-29): három új feladat-fajta, EGYELŐRE csak két
-// leckében, ideiglenes "ÚJ · TESZT" jelöléssel (`trial: true`), hogy Kálmán kipróbálhassa
+// három új feladat-fajta, EGYELŐRE csak két
+// leckében, ideiglenes "ÚJ · TESZT" jelöléssel (`trial: true`), hogy a fejlesztő kipróbálhassa
 // és jóváhagyhassa. A jelölés egy helyről kivehető (components/TrialBadge.tsx: TRIAL_BADGES).
 
 /** Hibakereső: a mondatban egy tipikus hiba van; a tanuló a rossz szóra bök, aztán 3 opcióból kiválasztja a jót. */
@@ -214,9 +209,9 @@ export interface LessonV2 {
   level: Level;
   title: Lang4;
   body: LessonBlock[];
-  speak: Lang4; // LECKE-SEMA 3: felolvasásra írt szöveg, a spanyol szakaszok «...» közt
+  speak: Lang4; // felolvasásra írt szöveg, a spanyol szakaszok «...» közt
   glossary?: { word: string; gloss: Lang4 }[];
   items: (GrammarGapItem | GrammarMarkItem | MatchItem | FormItem | WhyItem | TransformItem | SpotItem | OrderItem | DictationItem)[];
-  focusTopic?: string; // FB318: szó-témakör (data/topics), aminek a kártyái a lecke szó-halmazába tartoznak a transform-szavak mellett
-  noWordDeck?: boolean; // FB471: ennél a leckénél nincs "Practice the words" pakli (az automatikus szó-pakli kikapcsolása)
+  focusTopic?: string; // szó-témakör, aminek a kártyái a lecke szó-halmazába tartoznak a transform-szavak mellett
+  noWordDeck?: boolean; // ennél a leckénél nincs "Practice the words" pakli (az automatikus szó-pakli kikapcsolása)
 }

@@ -16,7 +16,7 @@ describe('pcicAlternatives', () => {
     expect(pcicAlternatives('al final (de)')).toEqual(['al final de', 'al final']);
   });
 
-  // PLAN-tobbjelentes 3. lépés (S1): a " / " teljes alternatívákat választ el.
+  // a " / " teljes alternatívákat választ el.
   it('splits a " / " separated answer into whole alternatives', () => {
     expect(pcicAlternatives('el carro / el coche / el auto')).toEqual(['el carro', 'el coche', 'el auto']);
   });
@@ -63,7 +63,7 @@ describe('gradePcicAnswer', () => {
   });
 });
 
-// PLAN-play 10. lépés (s2, anki-ui-terv.html): a Beállítások ékezet-szigor
+// a Beállítások ékezet-szigor
 // kapcsolója a PCIC gépelésén is dönt, és ez adja a Next-gomb javaslatát.
 describe('gradePcicAnswer strict accents (PLAN-play 10)', () => {
   it('a missing accent is near + accentOnly when strict is off (default)', () => {
@@ -102,7 +102,7 @@ describe('suggestedGrade', () => {
   });
 });
 
-// FB400 (PLAN-fb0929 3. lépés): a kérdő- és felkiáltójel sosem hiba.
+// a kérdő- és felkiáltójel sosem hiba.
 describe('gradePcicAnswer: írásjelek (FB400)', () => {
   it('a hiányzó ¿ és ? nem hiba', () => {
     expect(gradePcicAnswer('Dónde estás', '¿Dónde estás?').match).toBe('exact');
@@ -128,7 +128,7 @@ describe('gradePcicAnswer: írásjelek (FB400)', () => {
   });
 });
 
-// FB399: a névmás nélküli mondat is jó.
+// a névmás nélküli mondat is jó.
 describe('gradeSentenceAnswer: alany-névmás (FB399)', () => {
   it('a névmás nélküli válasz elfogadott, ha a helyes mondat névmással kezdődik', () => {
     expect(gradeSentenceAnswer('como en casa', 'Yo como en casa').match).toBe('exact');

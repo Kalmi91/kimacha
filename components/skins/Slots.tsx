@@ -6,7 +6,7 @@ import { useSkinDecor } from '@/components/skins';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 
-// PLAN-temak 2A: a dísz-rétegek helyei a képernyőkben. Dísz nélkül (alapértelmezés) semmit
+// a dísz-rétegek helyei a képernyőkben. Dísz nélkül (alapértelmezés) semmit
 // nem renderelnek / az alap tartalmat adják vissza, így a mai kinézet változatlan.
 
 // A képernyő gyökér-View-jának első gyereke: a háttér-dísz a tartalom mögé kerül.
@@ -41,7 +41,7 @@ export function SkinWord({ word, lang, children }: { word: string; lang?: string
   );
 }
 
-// PLAN-temak 6E: a hang-gomb (🔊) alá kerülő szöveges felirat, ha a téma kéri (senior: "Felolvas").
+// a hang-gomb (🔊) alá kerülő szöveges felirat, ha a téma kéri (senior: "Felolvas").
 export function SkinSpeakLabel() {
   const { speakLabel } = useSkinDecor();
   const g = useGrammarColors();

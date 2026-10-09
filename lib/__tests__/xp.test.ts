@@ -1,4 +1,4 @@
-// PLAN-temak 6E (gamer): a perc -> XP -> szint számítás.
+// Gamer: a perc -> XP -> szint számítás.
 import { xpFromMinutes, xpLevel } from '@/lib/xp';
 
 describe('xp', () => {

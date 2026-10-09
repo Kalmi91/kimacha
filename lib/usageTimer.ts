@@ -15,24 +15,24 @@ import { localDateString } from './usageStats';
 // and every onActiveMinute() subscriber fires (the root layout uses this to
 // pop the toast).
 
-export const IDLE_TIMEOUT_MS = 30_000;
+const IDLE_TIMEOUT_MS = 30_000;
 const TICK_MS = 1000;
 const MINUTE_SECONDS = 60;
 
-// FB63: milestone celebrations on top of the per-minute toast.
+// milestone celebrations on top of the per-minute toast.
 // `session` counts the active minutes of THIS app run (a restart starts over),
 // `daily` reads the persisted day total, so its crossing (previous total was
 // one lower) can only happen once per calendar day even across restarts.
-// FB149: past the first hour the daily milestone repeats every 15 minutes, see
+// Past the first hour the daily milestone repeats every 15 minutes, see
 // lib/usageMilestones.ts.
-export type UsageMilestone = { scope: 'session' | 'daily'; minutes: number };
+type UsageMilestone = { scope: 'session' | 'daily'; minutes: number };
 const SESSION_MILESTONES = [30];
 
-// FB108, Kálmán 2026-08-08: "ha éjfélkor játszunk a játékkal, és pont átfordul
+// User feedback: "ha éjfélkor játszunk a játékkal, és pont átfordul
 // akkor a napi statot írja ki és gratuláljon". The tick loop is already running
 // while the learner plays, so it is also the thing that can notice the calendar
 // day turning over under them; it then reports the FINISHED day's totals.
-export type DayRollover = { date: string; minutes: number; words: number };
+type DayRollover = { date: string; minutes: number; words: number };
 
 type Listener = () => void;
 type MilestoneListener = (milestone: UsageMilestone) => void;
@@ -44,8 +44,8 @@ let appStateSub: { remove: () => void } | null = null;
 let appState: AppStateStatus = 'active';
 let lastInteractionAt = 0;
 let activeSeconds = 0; // partial progress toward the next full minute (0-59)
-let sessionMinutes = 0; // FB63: full active minutes accrued in this app run
-let currentDay: string | null = null; // FB108: local calendar day the ticks belong to
+let sessionMinutes = 0; // full active minutes accrued in this app run
+let currentDay: string | null = null; // local calendar day the ticks belong to
 
 const listeners = new Set<Listener>();
 const milestoneListeners = new Set<MilestoneListener>();
@@ -102,7 +102,7 @@ function emitMilestone(milestone: UsageMilestone) {
   }
 }
 
-// FB108: the first counted second of a new calendar day closes the previous one.
+// the first counted second of a new calendar day closes the previous one.
 // The very first tick of an app run only adopts today's date (nothing rolled
 // over, the learner just started), so a restart never fakes a celebration.
 function checkDayRollover() {
@@ -164,13 +164,13 @@ export function onActiveMinute(callback: Listener): () => void {
   return () => listeners.delete(callback);
 }
 
-// FB63: fires when a session (30 min) or daily (30/60 min) milestone is reached.
+// fires when a session (30 min) or daily (30/60 min) milestone is reached.
 export function onUsageMilestone(callback: MilestoneListener): () => void {
   milestoneListeners.add(callback);
   return () => milestoneListeners.delete(callback);
 }
 
-// FB108: fires once when the local calendar day turns over mid-play, carrying
+// fires once when the local calendar day turns over mid-play, carrying
 // the finished day's totals.
 export function onDayRollover(callback: DayRolloverListener): () => void {
   dayRolloverListeners.add(callback);

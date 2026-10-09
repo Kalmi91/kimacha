@@ -1,4 +1,4 @@
-// PLAN-vizsga E. szakasz (15-16. lépés, Kálmán E5 c): a próbavizsga feladatsorának építője.
+// a próbavizsga feladatsorának építője.
 // A régi (4afeb8c^) lib/exam/buildMockExam.ts kézzel írt JSON-ból és a régi szókészletből
 // épített; ez a szint szavaiból (a hívó adja a `pcicItemsForLevel` tételeit) és a tételek
 // példamondataiból. A tanult-állapot NEM számít: a feladatsor a szint szavaiból áll, az
@@ -29,7 +29,7 @@ import {
   type MockTrueFalseTask,
 } from './types';
 
-export interface MockBuildInput {
+interface MockBuildInput {
   target: MockTarget;
   level: MockLevel;
   /** A szint kártyái (`pcicItemsForLevel`, az aktív irányé). */

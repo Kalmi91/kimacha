@@ -7,7 +7,7 @@ import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { useSkin } from '@/lib/useSkin';
 
-// PLAN-temak 6E (E2), Kódex: dupla vékony keret (a téma kerete + belső 1 px-es, 3 px réssel) és
+// Kódex: dupla vékony keret (a téma kerete + belső 1 px-es, 3 px réssel) és
 // iniciálé: a szó első betűje arany (b) dobozban, piros (a) fraktúrával (a téma cím-betűje), a
 // többi betű a szó saját elemében (FitText), így a hosszú szó mérete továbbra is illeszkedik.
 

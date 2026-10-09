@@ -1,4 +1,4 @@
-// PLAN-fb1001 K4: a Learn kártya beírómezőjében szürke placeholder mondja meg, mit
+// a Learn kártya beírómezőjében szürke placeholder mondja meg, mit
 // kell írni ("Type in Spanish"); a nyelv neve az irány célnyelvéből jön
 // (es→en irányban "Type in English"). Mock-minta: pcicDirection.test.tsx.
 
@@ -12,7 +12,6 @@ jest.mock('@/lib/speech', () => ({
 jest.mock('expo-router', () => ({
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
   },
 }));
@@ -25,12 +24,8 @@ const FIXTURE_ITEM = { id: 'a1-x1', es: 'vida', en: 'life', kind: 'word' as cons
 jest.mock('@/data/pcic', () => ({
   PCIC_LEVELS: ['A1'],
   PCIC_VIEW_LEVELS: ['A1'],
-  LEVEL_LABELS: { A1: 'Beginner' },
   pcicItemsForLevel: () => [FIXTURE_ITEM],
-  pcicItemsForViewLevel: () => [FIXTURE_ITEM],
   findPcicItem: (id: string) => (id === 'a1-x1' ? FIXTURE_ITEM : undefined),
-  isPlusSentence: () => false,
-  realLevelOfView: (level: string) => level,
   setPcicTarget: () => {},
 }));
 

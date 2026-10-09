@@ -1,5 +1,5 @@
-// NY12: a színválasztó; választás után a téma-kontextus értéke változik, és a választás a db-be
-// kerül. PLAN-temak 4D: a paletta-chipek a Beállítások helyett a Témák képernyőn vannak
+// a színválasztó; választás után a téma-kontextus értéke változik, és a választás a db-be
+// kerül. A paletta-chipek a Beállítások helyett a Témák képernyőn vannak
 // (app/themes.tsx), az állítások ugyanazok. Mock-minta: pcicLevelPicker.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
@@ -7,7 +7,6 @@ jest.mock('expo-router', () => ({
   useRouter: () => ({ push: jest.fn(), navigate: jest.fn(), back: jest.fn() }),
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
   },
 }));

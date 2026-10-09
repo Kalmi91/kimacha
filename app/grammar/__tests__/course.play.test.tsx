@@ -21,7 +21,7 @@ jest.mock('expo-router', () => ({
   useLocalSearchParams: () => ({ topic: 'legacy-fixture' }),
 }));
 
-// No real schema:1 lesson is left in the corpus: a minimal legacy fixture
+// A minimal choice-only fixture lesson
 // (lib/__tests__/fixtures/legacy-lesson.json) is added to the content registry.
 jest.mock('@/lib/games/content', () => {
   const actual = jest.requireActual('@/lib/games/content');
@@ -40,7 +40,6 @@ import { act, fireEvent, render, screen } from '@testing-library/react-native';
 import { getDb } from '@/lib/database.web';
 import { setLanguage } from '@/lib/i18n';
 import { GRAMMAR_PROGRESS_KEY, lessonFor } from '@/lib/grammar/syllabus';
-import type { LegacyLesson } from '@/lib/games/content';
 import { buildGrammarRound, isChoiceRoundItem } from '@/lib/games/grammarChoice';
 import { hashString } from '@/lib/shuffle';
 import GrammarLessonScreen from '../[topic]';
@@ -66,7 +65,7 @@ describe('grammar course', () => {
     await flush(4);
 
     // The learner's own level is expanded, so its units and topics are visible.
-    // Kimacha Play: UI always English (Kálmán, 2026-09-22), regardless of the
+    // Kimacha Play: UI always English, regardless of the
     // stored source language, so the unit title renders in English.
     expect(screen.queryByText('The present tense')).toBeTruthy();
     expect(screen.queryByTestId('grammar-topic-presente-regular')).toBeTruthy();
@@ -94,10 +93,8 @@ describe('grammar course', () => {
   });
 
   it('teaches the rule first, then drills it, then records the lesson as done', async () => {
-    // LECKE-SEMA: a core+ leckék (presente-regular is) már LessonV2-n vannak, a
-    // rule/more-os régi utat a legacy-fixture lecke játssza.
-    const lesson = lessonFor('es', 'legacy-fixture')! as LegacyLesson;
-    // D3 (FB290): a lecke csak >=80%-nál ír "kész" sort, ezért a teszt mindig
+    const lesson = lessonFor('es', 'legacy-fixture')!;
+    // a lecke csak >=80%-nál ír "kész" sort, ezért a teszt mindig
     // a helyes választ nyomja meg. A GrammarDrill seedje Date.now()-ból jön,
     // lemockolva előre kiszámítható ugyanazzal a `buildGrammarRound`-dal.
     const now = 1700000000000;
@@ -109,8 +106,8 @@ describe('grammar course', () => {
     await flush(4);
 
     // The rule and worked examples come BEFORE any question. Kimacha Play: UI
-    // always English (Kálmán, 2026-09-22), regardless of the stored source.
-    expect(screen.queryByText(lesson.rule.en!)).toBeTruthy();
+    // always English, regardless of the stored source.
+    expect(screen.queryByText(lesson.speak.en)).toBeTruthy();
     expect(screen.queryAllByTestId('grammar-option').length).toBe(0);
 
     fireEvent.press(screen.getByTestId('grammar-start-choice'));
@@ -139,7 +136,7 @@ describe('grammar course', () => {
     view.unmount();
   });
 
-  // PLAN-nyelvtan-en 3-4. lépés: es→en irányban az angol tanterv jelenik meg
+  // es→en irányban az angol tanterv jelenik meg
   // (A1, A2, B1, B2), a témák lecke nélkül „pronto” jelvénnyel, a spanyol témák nélkül.
   it('es→en irányban az angol tantervet mutatja, spanyol téma nélkül', async () => {
     await getDb().setOnboarding('es', 'en');
@@ -163,7 +160,7 @@ describe('grammar course', () => {
   });
 
   it('shows the finished lesson as done when the syllabus comes back', async () => {
-    // FB328: no `${topic}:answered`/`${topic}:correct` rows here (old-style
+    // no `${topic}:answered`/`${topic}:correct` rows here (old-style
     // progress), so the badge falls back to this round's own correct/total.
     await getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, 'presente-regular', 'done', { correct: 10, total: 12 });
     const view = render(<GrammarSyllabusScreen />);

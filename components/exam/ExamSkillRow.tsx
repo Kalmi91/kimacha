@@ -9,7 +9,7 @@ import type { SkillResult } from '@/lib/exam/skills';
 
 type ColorScheme = (typeof Colors)['light'];
 
-// PLAN-vizsga A. szakasz 6. lépés (2c, A4 b): az eredmény-lap egy készség-sora: felirat,
+// az eredmény-lap egy készség-sora: felirat,
 // pont és %, "Strong" vagy "Weak" jelzés (gyenge = a % az átmenési küszöb alatt) és egy sáv.
 type Props = {
   result: SkillResult;

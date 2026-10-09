@@ -7,7 +7,7 @@ import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { useSkin } from '@/lib/useSkin';
 
-// PLAN-temak 6E (E2), Szecesszió: a kártya (2 px a keret, íves tető) körül 3 px rés után 1 px-es b
+// Szecesszió: a kártya (2 px a keret, íves tető) körül 3 px rés után 1 px-es b
 // külső keret; arany (b) virágok a cím két oldalán (ha a fejléc maga a cím; a többi fejlécnél
 // virág - vonal - virág sor fölötte), nagy virág a szó fölött.
 

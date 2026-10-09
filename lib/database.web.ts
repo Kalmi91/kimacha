@@ -4,78 +4,14 @@ import { FORCED_PAIR, needsPairCorrection } from './languages';
 import { WORD_MERGES } from './wordMerges';
 import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
 import { addDays, type Sm2Card } from './sm2';
-import { pcicItemsForLevel, type PcicLevel, type PcicViewLevel } from '@/data/pcic';
+import { pcicItemsForLevel, type PcicLevel } from '@/data/pcic';
 import { DEFAULT_AGAIN_DELAY_SEC } from './pcicSession';
 import type { MistakeBatchRow } from './mistakes/deck';
 import { DEFAULT_GRAMMAR_PALETTE, isGrammarPaletteId, type GrammarPaletteId } from '@/constants/GrammarPalettes';
 import { isSkinSelection, parseSkinMix, type SkinMix, type SkinSelection } from '@/constants/Skins';
 import { readExamResults, writeExamResult } from './exam/result';
 import type { ExamResult, ExamResults } from './exam/types';
-
-export interface DB {
-  getStreak(): Promise<{ current_count: number; last_date: string | null; longest_count: number }>;
-  getOnboarding(): Promise<{ source: string; target: string } | null>;
-  setOnboarding(source: string, target: string): Promise<void>;
-  getLevel(): Promise<{ level: string; correct_streak: number; mistakes_in_window: number; fail_streak: number }>;
-  claimDailyGreeting(): Promise<boolean>;
-  getStatusBarTint(): Promise<number>;
-  setStatusBarTint(index: number): Promise<void>;
-  getGrammarPalette(): Promise<GrammarPaletteId>;
-  setGrammarPalette(id: GrammarPaletteId): Promise<void>;
-  // PLAN-temak 2A: a választott téma és a Saját mix (null = még nincs választás; setSkin(null) visszaállít).
-  getSkin(): Promise<SkinSelection | null>;
-  setSkin(id: SkinSelection | null): Promise<void>;
-  getSkinMix(): Promise<SkinMix | null>;
-  setSkinMix(mix: SkinMix): Promise<void>;
-  // PLAN-play 12. lépés: napi streak-írás visszakerült, a PCIC-értékelés hívja.
-  updateStreak(): Promise<void>;
-  getStrictAccents(): Promise<boolean>;
-  setStrictAccents(v: boolean): Promise<void>;
-  // FB364: a PCIC "rontott" (again) kártya ennyi másodperc múlva jön
-  // mindenképp vissza (lib/pcicSession.ts).
-  getAgainDelaySec(): Promise<number>;
-  setAgainDelaySec(sec: number): Promise<void>;
-  getArticlePicker(): Promise<boolean>;
-  setArticlePicker(v: boolean): Promise<void>;
-  getWeeklyGoalMinutes(): Promise<number>;
-  setWeeklyGoalMinutes(minutes: number): Promise<void>;
-  getFeedbackBtnSide(): Promise<'left' | 'right'>;
-  setFeedbackBtnSide(side: 'left' | 'right'): Promise<void>;
-  getDailyNewLimit(): Promise<number>;
-  setDailyNewLimit(limit: number): Promise<void>;
-  // FB385/386: a PCIC "+10 új szó" bónusz, a naptári nappal lejár.
-  getPcicNewBonus(today: string): Promise<number>;
-  setPcicNewBonus(bonus: number, today: string): Promise<void>;
-  addUsageMinute(): Promise<number>;
-  getUsageStats(): Promise<UsageStats>;
-  // GAMES.md 3.5 (F0): Game fül tables, scoped to the active pair like every
-  // other per-pair setting/state in this interface.
-  getGameProgress(gameId: string): Promise<{ itemId: string; state: string; data: unknown }[]>;
-  setGameProgress(gameId: string, itemId: string, state: string, data?: unknown): Promise<void>;
-  // PLAN-fb1001 7. lépés (FB431): egy játék/kurzus (pl. a nyelvtan) teljes haladása az aktív párra.
-  resetGameProgress(gameId: string): Promise<void>;
-  // PLAN-vizsga A. szakasz 2. lépés (A6 a): a szintvizsga eredménye szintenként (átment-e, legjobb pontszám),
-  // a `level-exam` game_progress sorokban (lib/exam/result.ts); `save` a korábbival összevonva ment.
-  getExamResults(): Promise<ExamResults>;
-  saveExamResult(level: string, pct: number, passed: boolean, date: string): Promise<ExamResult>;
-  // PLAN-pcic 4. lépés: PCIC fül, SM-2, független a FSRS `cards`-tól
-  getPcicCards(): Promise<Sm2Card[]>;
-  upsertPcicCard(card: Sm2Card): Promise<void>;
-  getPcicStats(today: string): Promise<{ total: number; newIntroducedToday: number; dueToday: number; learned: number }>;
-  getPcicLevel(): Promise<PcicViewLevel>;
-  hasPcicLevel(): Promise<boolean>;
-  setPcicLevel(level: PcicViewLevel): Promise<void>;
-  resetPcicCards(levelPrefix?: string): Promise<void>;
-  // PLAN-hibaim.md 2. lépés: a "Hibáim" kötegek és a hozzájuk tartozó SM-2
-  // haladás, a pcic_cards-tól elkülönítve.
-  saveMistakeBatch(batchId: string, json: string, importedAt: string): Promise<void>;
-  getMistakeBatches(): Promise<MistakeBatchRow[]>;
-  getMistakeCards(): Promise<Sm2Card[]>;
-  upsertMistakeCard(card: Sm2Card): Promise<void>;
-  getMistakeDueCount(today: string): Promise<number>;
-  exportAll(): Promise<BackupPayload>;
-  importAll(payload: BackupPayload): Promise<void>;
-}
+import type { DB } from './dbTypes';
 
 class MemoryDB implements DB {
   private cards: Map<string, any> = new Map();
@@ -87,7 +23,7 @@ class MemoryDB implements DB {
     return { ...this.streak };
   }
 
-  // PLAN-play 12. lépés: visszahozva, a PCIC-értékelés hívja (mirrors the
+  // visszahozva, a PCIC-értékelés hívja (mirrors the
   // native SQLiteDB.updateStreak).
   async updateStreak() {
     const today = localDateString();
@@ -113,7 +49,7 @@ class MemoryDB implements DB {
     return { ...(this.userLevels.get(this.activePair) ?? { level: 'A0', correct_streak: 0, mistakes_in_window: 0, fail_streak: 0 }) };
   }
 
-  // Play-vágás 7. lépés: updateLevel (the only public setter) had no app-code
+  // Play-vágás: updateLevel (the only public setter) had no app-code
   // caller and is gone; grammar-screen fixtures that need a specific level
   // use this instead. Not on the DB interface, same pattern as the old
   // __setRequeueLevelForTest.
@@ -125,7 +61,7 @@ class MemoryDB implements DB {
 
   private meta = { userId: crypto.randomUUID?.() ?? Math.random().toString(36), firstUseDate: new Date().toISOString(), lastSyncDate: null as string | null };
 
-  // FB76: first open of the day (memory mirror; a web reload counts as a new day).
+  // first open of the day (memory mirror; a web reload counts as a new day).
   private lastOpenDate: string | null = null;
 
   async claimDailyGreeting(): Promise<boolean> {
@@ -135,19 +71,19 @@ class MemoryDB implements DB {
     return true;
   }
 
-  // FB83: status-bar tint index (memory mirror, like every other web setting).
+  // status-bar tint index (memory mirror, like every other web setting).
   private statusBarTint = 0;
 
   async getStatusBarTint(): Promise<number> { return this.statusBarTint; }
   async setStatusBarTint(index: number): Promise<void> { this.statusBarTint = index; }
 
-  // NY11: app-wide color palette (memory mirror of user_meta.grammar_palette).
+  // app-wide color palette (memory mirror of user_meta.grammar_palette).
   private grammarPalette: GrammarPaletteId = DEFAULT_GRAMMAR_PALETTE;
 
   async getGrammarPalette(): Promise<GrammarPaletteId> { return this.grammarPalette; }
   async setGrammarPalette(id: GrammarPaletteId): Promise<void> { this.grammarPalette = id; }
 
-  // PLAN-temak 2A: választott téma + Saját mix (memory mirror of user_meta.skin / skin_mix).
+  // választott téma + Saját mix (memory mirror of user_meta.skin / skin_mix).
   private skin: SkinSelection | null = null;
   private skinMix: SkinMix | null = null;
 
@@ -156,14 +92,14 @@ class MemoryDB implements DB {
   async getSkinMix(): Promise<SkinMix | null> { return this.skinMix; }
   async setSkinMix(mix: SkinMix): Promise<void> { this.skinMix = mix; }
 
-  // Play-vágás 7. lépés: getWordsOnly/setWordsOnly and getRandomTopics/
+  // Play-vágás: getWordsOnly/setWordsOnly and getRandomTopics/
   // setRandomTopics are gone (no caller since the Learn/Topics tabs left),
   // but the maps stay so an imported old backup's learn_settings.words_only /
   // .random_topics values still round-trip through exportAll unchanged.
   private wordsOnlyMap: Map<string, boolean> = new Map();
   private randomTopicsMap: Map<string, boolean> = new Map();
 
-  // FB132: difficulty switch, per pair (mirrors the SQLite side).
+  // difficulty switch, per pair (mirrors the SQLite side).
   private strictAccentsMap: Map<string, boolean> = new Map();
 
   async getStrictAccents(): Promise<boolean> {
@@ -174,7 +110,7 @@ class MemoryDB implements DB {
     this.strictAccentsMap.set(this.activePair, v);
   }
 
-  // FB364: memory mirror of the SQLite again_delay_sec column.
+  // memory mirror of the SQLite again_delay_sec column.
   private againDelaySecMap: Map<string, number> = new Map();
 
   async getAgainDelaySec(): Promise<number> {
@@ -185,7 +121,7 @@ class MemoryDB implements DB {
     this.againDelaySecMap.set(this.activePair, sec);
   }
 
-  // FB188: névelő-gombsor kapcsoló, per pár (a SQLite oldal tükre). Alapból be.
+  // névelő-gombsor kapcsoló, per pár (a SQLite oldal tükre). Alapból be.
   private articlePickerMap: Map<string, boolean> = new Map();
 
   async getArticlePicker(): Promise<boolean> {
@@ -196,7 +132,7 @@ class MemoryDB implements DB {
     this.articlePickerMap.set(this.activePair, v);
   }
 
-  // FB65: weekly study goal in minutes, per pair (mirrors the SQLite side).
+  // weekly study goal in minutes, per pair (mirrors the SQLite side).
   private weeklyGoalMap: Map<string, number> = new Map();
 
   async getWeeklyGoalMinutes(): Promise<number> {
@@ -217,7 +153,7 @@ class MemoryDB implements DB {
     this.feedbackBtnSideMap.set(this.activePair, side);
   }
 
-  // FB77: daily new-word budget (memory mirror of the SQLite columns).
+  // daily new-word budget (memory mirror of the SQLite columns).
   private dailyNewLimitMap: Map<string, number> = new Map();
 
   async getDailyNewLimit(): Promise<number> {
@@ -228,7 +164,7 @@ class MemoryDB implements DB {
     this.dailyNewLimitMap.set(this.activePair, limit);
   }
 
-  // FB385/386: memory mirror of the SQLite new_bonus/new_bonus_date columns.
+  // memory mirror of the SQLite new_bonus/new_bonus_date columns.
   private pcicNewBonusMap: Map<string, { bonus: number; date: string }> = new Map();
 
   async getPcicNewBonus(today: string): Promise<number> {
@@ -257,7 +193,7 @@ class MemoryDB implements DB {
     return summarizeUsage(rows);
   }
 
-  // FB108: one local calendar day's totals, for the midnight celebration.
+  // one local calendar day's totals, for the midnight celebration.
   async getDayStats(date: string): Promise<{ minutes: number; words: number }> {
     const words = new Set(
       this.attempts
@@ -267,7 +203,7 @@ class MemoryDB implements DB {
     return { minutes: this.usageMinutes.get(date) ?? 0, words: words.size };
   }
 
-  // GAMES.md 3.5 (F0): Game fül tables, scoped to the active pair like every
+  // Game fül tables, scoped to the active pair like every
   // other per-pair setting/state in this interface.
   private gameProgressMap: Map<string, Map<string, { state: string; data: unknown }>> = new Map();
 
@@ -297,7 +233,7 @@ class MemoryDB implements DB {
     this.gameProgressMap.delete(this.gameKey(gameId));
   }
 
-  // PLAN-vizsga A. szakasz 2. lépés (A6 a): a szintvizsga eredménye, lásd lib/exam/result.ts.
+  // a szintvizsga eredménye, lásd lib/exam/result.ts.
   async getExamResults(): Promise<ExamResults> {
     return readExamResults(this);
   }
@@ -306,7 +242,7 @@ class MemoryDB implements DB {
     return writeExamResult(this, level, pct, passed, date);
   }
 
-  // PLAN-pcic 4. lépés: PCIC fül, SM-2, független a FSRS `cards`-tól. Nem
+  // PCIC fül, SM-2, független a FSRS `cards`-tól. Nem
   // pair-hez kötött (a fül csak es→en tételekkel dolgozik), session-scoped
   // Map, mint a többi web-only állapot ebben a fájlban.
   private pcicCards: Map<string, Sm2Card> = new Map();
@@ -319,17 +255,7 @@ class MemoryDB implements DB {
     this.pcicCards.set(card.itemId, { ...card });
   }
 
-  async getPcicStats(today: string): Promise<{ total: number; newIntroducedToday: number; dueToday: number; learned: number }> {
-    const cards = [...this.pcicCards.values()];
-    return {
-      total: cards.length,
-      newIntroducedToday: cards.filter(c => c.introducedAt === today).length,
-      dueToday: cards.filter(c => (c.state === 'review' || c.state === 'learning') && c.due <= today).length,
-      learned: cards.filter(c => c.state === 'review' && c.interval >= 21).length,
-    };
-  }
-
-  // PLAN-fb0924 7a. lépés: lásd lib/database.ts resetPcicCards komment - a
+  // lásd lib/database.ts resetPcicCards komment - a
   // valódi id-listát a betöltött korpuszból kérjük, nem az id előtagjából.
   async resetPcicCards(levelPrefix?: string): Promise<void> {
     if (!levelPrefix) {
@@ -342,7 +268,7 @@ class MemoryDB implements DB {
     }
   }
 
-  // PLAN-hibaim.md 2. lépés: session-scoped Map-ek, mint a pcicCards/pcicLevel
+  // session-scoped Map-ek, mint a pcicCards/pcicLevel
   // fent, ugyanazzal a szignatúrával, mint a natív (SQLite) implementáció.
   private mistakeBatches: Map<string, { json: string; importedAt: string }> = new Map();
   private mistakeCards: Map<string, Sm2Card> = new Map();
@@ -365,20 +291,14 @@ class MemoryDB implements DB {
     this.mistakeCards.set(card.itemId, { ...card });
   }
 
-  async getMistakeDueCount(today: string): Promise<number> {
-    return [...this.mistakeCards.values()].filter(
-      (c) => (c.state === 'review' || c.state === 'learning') && c.due <= today
-    ).length;
-  }
-
-  // PLAN-play 10. lépés: a kiválasztott PCIC szint. PLAN-ketiranyu 4. lépés
-  // javítás: pár-szerinti Map (mint articlePickerMap), hogy irányváltáskor
+  // a kiválasztott PCIC szint.
+  // Pár-szerinti Map (mint articlePickerMap), hogy irányváltáskor
   // mindkét pár megőrizze a saját szintjét; alap B1 en-es-nek (meglévő
-  // "b1-..." progressz), A1 minden es→en irányú párnak (5. lépés adja az
+  // "b1-..." progressz), A1 minden es→en irányú párnak (ez adja az
   // egyetlen tartalommal bíró szintet).
-  private pcicLevelMap: Map<string, PcicViewLevel> = new Map();
+  private pcicLevelMap: Map<string, PcicLevel> = new Map();
 
-  async getPcicLevel(): Promise<PcicViewLevel> {
+  async getPcicLevel(): Promise<PcicLevel> {
     return this.pcicLevelMap.get(this.activePair) ?? (this.activePair.endsWith('-en') ? 'A1' : 'B1');
   }
 
@@ -386,7 +306,7 @@ class MemoryDB implements DB {
     return this.pcicLevelMap.has(this.activePair);
   }
 
-  async setPcicLevel(level: PcicViewLevel): Promise<void> {
+  async setPcicLevel(level: PcicLevel): Promise<void> {
     this.pcicLevelMap.set(this.activePair, level);
   }
 

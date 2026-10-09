@@ -1,4 +1,4 @@
-// FB441/FB442: a párosító drill (a) a lényeget párosítja (ii-match-01: csak az
+// a párosító drill (a) a lényeget párosítja (ii-match-01: csak az
 // igealak), (b) a jobb oszlopban egyetlen pár sem áll a saját sorában.
 import fs from 'fs';
 import path from 'path';
