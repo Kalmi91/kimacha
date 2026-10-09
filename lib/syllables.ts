@@ -5,7 +5,6 @@
 // mássalhangzó-csoport (pl, tr ...) együtt marad, mexikói tl együtt (a-tlas).
 
 const STRONG = 'aeoáéóàèò';
-const WEAK = 'iuüïy';
 const ACCENTED_WEAK = 'íú';
 const LETTERS = /[a-záéíóúüñàèòïç]/i;
 

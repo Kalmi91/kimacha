@@ -143,6 +143,5 @@ const styles = StyleSheet.create({
   scroll: { flex: 1 },
   sourceText: { fontSize: 20, fontWeight: '700', textAlign: 'center' },
   input: { width: '100%', borderWidth: 2, borderRadius: 12, paddingHorizontal: 12, paddingVertical: 10, fontSize: 16 },
-  resultText: { fontSize: 18, fontWeight: '700' },
   correctLine: { fontSize: 14, fontWeight: '600', textAlign: 'center' },
 });
