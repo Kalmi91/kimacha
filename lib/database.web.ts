@@ -11,71 +11,7 @@ import { DEFAULT_GRAMMAR_PALETTE, isGrammarPaletteId, type GrammarPaletteId } fr
 import { isSkinSelection, parseSkinMix, type SkinMix, type SkinSelection } from '@/constants/Skins';
 import { readExamResults, writeExamResult } from './exam/result';
 import type { ExamResult, ExamResults } from './exam/types';
-
-export interface DB {
-  getStreak(): Promise<{ current_count: number; last_date: string | null; longest_count: number }>;
-  getOnboarding(): Promise<{ source: string; target: string } | null>;
-  setOnboarding(source: string, target: string): Promise<void>;
-  getLevel(): Promise<{ level: string; correct_streak: number; mistakes_in_window: number; fail_streak: number }>;
-  claimDailyGreeting(): Promise<boolean>;
-  getStatusBarTint(): Promise<number>;
-  setStatusBarTint(index: number): Promise<void>;
-  getGrammarPalette(): Promise<GrammarPaletteId>;
-  setGrammarPalette(id: GrammarPaletteId): Promise<void>;
-  // PLAN-temak 2A: a választott téma és a Saját mix (null = még nincs választás; setSkin(null) visszaállít).
-  getSkin(): Promise<SkinSelection | null>;
-  setSkin(id: SkinSelection | null): Promise<void>;
-  getSkinMix(): Promise<SkinMix | null>;
-  setSkinMix(mix: SkinMix): Promise<void>;
-  // PLAN-play 12. lépés: napi streak-írás visszakerült, a PCIC-értékelés hívja.
-  updateStreak(): Promise<void>;
-  getStrictAccents(): Promise<boolean>;
-  setStrictAccents(v: boolean): Promise<void>;
-  // FB364: a PCIC "rontott" (again) kártya ennyi másodperc múlva jön
-  // mindenképp vissza (lib/pcicSession.ts).
-  getAgainDelaySec(): Promise<number>;
-  setAgainDelaySec(sec: number): Promise<void>;
-  getArticlePicker(): Promise<boolean>;
-  setArticlePicker(v: boolean): Promise<void>;
-  getWeeklyGoalMinutes(): Promise<number>;
-  setWeeklyGoalMinutes(minutes: number): Promise<void>;
-  getFeedbackBtnSide(): Promise<'left' | 'right'>;
-  setFeedbackBtnSide(side: 'left' | 'right'): Promise<void>;
-  getDailyNewLimit(): Promise<number>;
-  setDailyNewLimit(limit: number): Promise<void>;
-  // FB385/386: a PCIC "+10 új szó" bónusz, a naptári nappal lejár.
-  getPcicNewBonus(today: string): Promise<number>;
-  setPcicNewBonus(bonus: number, today: string): Promise<void>;
-  addUsageMinute(): Promise<number>;
-  getUsageStats(): Promise<UsageStats>;
-  // GAMES.md 3.5 (F0): Game fül tables, scoped to the active pair like every
-  // other per-pair setting/state in this interface.
-  getGameProgress(gameId: string): Promise<{ itemId: string; state: string; data: unknown }[]>;
-  setGameProgress(gameId: string, itemId: string, state: string, data?: unknown): Promise<void>;
-  // PLAN-fb1001 7. lépés (FB431): egy játék/kurzus (pl. a nyelvtan) teljes haladása az aktív párra.
-  resetGameProgress(gameId: string): Promise<void>;
-  // PLAN-vizsga A. szakasz 2. lépés (A6 a): a szintvizsga eredménye szintenként (átment-e, legjobb pontszám),
-  // a `level-exam` game_progress sorokban (lib/exam/result.ts); `save` a korábbival összevonva ment.
-  getExamResults(): Promise<ExamResults>;
-  saveExamResult(level: string, pct: number, passed: boolean, date: string): Promise<ExamResult>;
-  // PLAN-pcic 4. lépés: PCIC fül, SM-2, független a FSRS `cards`-tól
-  getPcicCards(): Promise<Sm2Card[]>;
-  upsertPcicCard(card: Sm2Card): Promise<void>;
-  getPcicStats(today: string): Promise<{ total: number; newIntroducedToday: number; dueToday: number; learned: number }>;
-  getPcicLevel(): Promise<PcicLevel>;
-  hasPcicLevel(): Promise<boolean>;
-  setPcicLevel(level: PcicLevel): Promise<void>;
-  resetPcicCards(levelPrefix?: string): Promise<void>;
-  // PLAN-hibaim.md 2. lépés: a "Hibáim" kötegek és a hozzájuk tartozó SM-2
-  // haladás, a pcic_cards-tól elkülönítve.
-  saveMistakeBatch(batchId: string, json: string, importedAt: string): Promise<void>;
-  getMistakeBatches(): Promise<MistakeBatchRow[]>;
-  getMistakeCards(): Promise<Sm2Card[]>;
-  upsertMistakeCard(card: Sm2Card): Promise<void>;
-  getMistakeDueCount(today: string): Promise<number>;
-  exportAll(): Promise<BackupPayload>;
-  importAll(payload: BackupPayload): Promise<void>;
-}
+import type { DB } from './dbTypes';
 
 class MemoryDB implements DB {
   private cards: Map<string, any> = new Map();
@@ -319,16 +255,6 @@ class MemoryDB implements DB {
     this.pcicCards.set(card.itemId, { ...card });
   }
 
-  async getPcicStats(today: string): Promise<{ total: number; newIntroducedToday: number; dueToday: number; learned: number }> {
-    const cards = [...this.pcicCards.values()];
-    return {
-      total: cards.length,
-      newIntroducedToday: cards.filter(c => c.introducedAt === today).length,
-      dueToday: cards.filter(c => (c.state === 'review' || c.state === 'learning') && c.due <= today).length,
-      learned: cards.filter(c => c.state === 'review' && c.interval >= 21).length,
-    };
-  }
-
   // PLAN-fb0924 7a. lépés: lásd lib/database.ts resetPcicCards komment - a
   // valódi id-listát a betöltött korpuszból kérjük, nem az id előtagjából.
   async resetPcicCards(levelPrefix?: string): Promise<void> {
@@ -363,12 +289,6 @@ class MemoryDB implements DB {
 
   async upsertMistakeCard(card: Sm2Card): Promise<void> {
     this.mistakeCards.set(card.itemId, { ...card });
-  }
-
-  async getMistakeDueCount(today: string): Promise<number> {
-    return [...this.mistakeCards.values()].filter(
-      (c) => (c.state === 'review' || c.state === 'learning') && c.due <= today
-    ).length;
   }
 
   // PLAN-play 10. lépés: a kiválasztott PCIC szint. PLAN-ketiranyu 4. lépés
