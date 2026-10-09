@@ -255,7 +255,7 @@ describe('valódi feladatsorok: minden helyes válasszal átmennek', () => {
     return all;
   }
 
-  const GOOD_FORM = { fullname: 'Ana Kovács', word: 'húngara', address: 'Calle Rébsamen 431', age: '30', phone: '5540990187', email: 'ana@example.com', level: 'A1' };
+  const GOOD_FORM = { fullname: 'Ana Kovács', word: 'húngara', address: 'Calle Ficticia 123', age: '30', phone: '5500000000', email: 'ana@example.com', level: 'A1' };
   // 125 különböző, magánhangzós "szó" a szószám-jegyhez (a szó-ismétlés nem szöveg).
   const SYL = ['ba', 'de', 'fi', 'ko', 'mu'];
   const DISTINCT_WORDS = Array.from({ length: 125 }, (_, i) => `${SYL[i % 5]}${SYL[Math.floor(i / 5) % 5]}${SYL[Math.floor(i / 25) % 5]}n`);

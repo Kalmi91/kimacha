@@ -116,7 +116,7 @@ describe('írás-üzenet: a jó válasz magas pontot kap, a pontozás arányos',
 
 describe('űrlap: kitöltve ÉS értelmes értékkel', () => {
   const fields = Object.fromEntries(form.fields.map((f) => [f.id, f]));
-  const GOOD_FORM = { nombre: 'Ana Kovács', edad: '30', nacionalidad: 'húngara', direccion: 'Calle Enrique Rébsamen 431', telefono: '55 4099 0187', correo: 'ana@example.com', nivel: 'A1' };
+  const GOOD_FORM = { nombre: 'Ana Kovács', edad: '30', nacionalidad: 'húngara', direccion: 'Calle Ficticia 123', telefono: '55 0000 0000', correo: 'ana@example.com', nivel: 'A1' };
 
   it('üres = 0, jó adatok = mind', () => {
     expect(scoreMockTask(form, {}).correct).toBe(0);
@@ -139,13 +139,13 @@ describe('űrlap: kitöltve ÉS értelmes értékkel', () => {
     expect(checkField(fields.edad, '4')).toBe(false);
     expect(checkField(fields.edad, '30')).toBe(true);
     expect(checkField(fields.telefono, '12')).toBe(false);
-    expect(checkField(fields.telefono, '5540990187')).toBe(true);
+    expect(checkField(fields.telefono, '5500000000')).toBe(true);
     expect(checkField(fields.correo, 'ana')).toBe(false);
     expect(checkField(fields.correo, 'ana@example')).toBe(false);
     expect(checkField(fields.correo, 'ana@example.com')).toBe(true);
     expect(checkField(fields.nivel, 'zz')).toBe(false);
     expect(checkField(fields.nivel, 'a1')).toBe(true);
-    expect(checkField(fields.direccion, 'Calle Rébsamen')).toBe(false); // szám nélkül nem cím
+    expect(checkField(fields.direccion, 'Calle Ficticia')).toBe(false); // szám nélkül nem cím
     expect(checkField(fields.direccion, 'qwerty 1234')).toBe(false);
     expect(checkField(fields.nacionalidad, 'asdf')).toBe(false);
     expect(checkField(fields.nacionalidad, 'húngara')).toBe(true);
@@ -160,7 +160,7 @@ describe('papír szinten: az értelmetlen írás 0 pont, a jó 25', () => {
     const [formTask, msgTask] = writing.tasks;
     const answers = (f: Record<string, string>, text: string): MockAnswers => ({ [formTask.id]: f, [msgTask.id]: { text } });
     const asdfForm = Object.fromEntries((formTask as MockFormFillTask).fields.map((f) => [f.id, 'asdf']));
-    const goodForm = { nombre: 'Ana Kovács', edad: '30', nacionalidad: 'húngara', direccion: 'Calle Enrique Rébsamen 431', telefono: '5540990187', correo: 'ana@example.com', nivel: 'A1' };
+    const goodForm = { nombre: 'Ana Kovács', edad: '30', nacionalidad: 'húngara', direccion: 'Calle Ficticia 123', telefono: '5500000000', correo: 'ana@example.com', nivel: 'A1' };
     const pts = (a: MockAnswers) => scoreMockExam(exam, a, { lexicon: LEX_ES }).skills.find((p) => p.skill === 'writing')!.points;
     expect(pts(answers({}, ''))).toBe(0);
     expect(pts(answers(asdfForm, 'asdf '.repeat(60)))).toBe(0);
