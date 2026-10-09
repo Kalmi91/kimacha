@@ -1,5 +1,5 @@
-// StatusBarStrip, UsageToast és MistakesEntry brutalista palettán
-// (SegmentBar / ink vonal / BrutalBox, sarok 0), classic palettán a mai kinézet.
+// StatusBarStrip, UsageToast and MistakesEntry on the brutalist palette
+// (SegmentBar / ink line / BrutalBox, corner 0), today's look on the classic palette.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-router', () => ({ router: { push: jest.fn() } }));

@@ -3,29 +3,29 @@ import { Pressable, StyleSheet, Text, type StyleProp, type TextStyle, type ViewS
 import { BrutalBox } from '@/components/grammar/Brutal';
 import { useGrammarColors } from '@/lib/grammarColors';
 
-// a közös 🔊 / ⏹ gomb. Brutalista palettán a játékok kis
-// ikon-gombjaival (✕ a GrammarDrill fejlécén, ← a lecke-oldalon) egyező doboz:
-// BrutalBox, offset 2, papír kitöltés, ink keret + eltolt árnyék. Classic
-// palettán a mai megjelenés: a hívó adja a stílusokat (style / iconStyle / labelStyle).
+// The shared 🔊 / ⏹ button. On the brutalist palette a box matching the small
+// icon buttons of the games (✕ in the GrammarDrill header, ← on the lesson page):
+// BrutalBox, offset 2, paper fill, ink border + offset shadow. On the classic
+// palette today's look: the caller supplies the styles (style / iconStyle / labelStyle).
 type Props = {
   onPress: () => void;
-  /** ⏹ a 🔊 helyett (a lecke-felolvasás play<->stop gombja). */
+  /** ⏹ instead of 🔊 (the play<->stop button of the lesson read-aloud). */
   speaking?: boolean;
-  /** más ikon (pl. 💡 a súgó-gombon), ugyanabban a játék-stílusban. */
+  /** a different icon (e.g. 💡 on the hint button), in the same game style. */
   icon?: string;
-  /** Ikon melletti felirat (a "Read aloud" sorok); nélküle csak ikon. */
+  /** Label next to the icon (the "Read aloud" rows); without it, icon only. */
   label?: string;
   testID?: string;
   accessibilityLabel?: string;
-  /** Classic: a Pressable stílusa. */
+  /** Classic: the Pressable's style. */
   style?: StyleProp<ViewStyle>;
-  /** Classic: az ikon stílusa. */
+  /** Classic: the icon's style. */
   iconStyle?: StyleProp<TextStyle>;
-  /** A felirat stílusa (brutalistán a színt az ink felülírja). */
+  /** The label's style (on brutalist the colour is overridden by ink). */
   labelStyle?: StyleProp<TextStyle>;
-  /** Brutalista: a doboz külső (elrendezési) stílusa. */
+  /** Brutalist: the box's outer (layout) style. */
   brutalStyle?: StyleProp<ViewStyle>;
-  /** Classic: hitSlop (px), ahol a mai gombnak van. */
+  /** Classic: hitSlop (px), where today's button has one. */
   hitSlop?: number;
 };
 

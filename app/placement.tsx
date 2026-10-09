@@ -28,11 +28,11 @@ import {
   type PlacementQuestion,
 } from '@/lib/exam/placementQuestions';
 
-// az adaptív szintfelmérő
-// képernyője. A belépő az onboarding szint-lépésén és a szintválasztó lapon van; ide a kérdések
-// jönnek rögtön (lépcsős, A2-ről indul, legfeljebb 20), visszajelzés nélkül; a végén javasolt kezdő
-// szint, ami felülírható. A helyes szavak graduálódnak (lib/exam/placementKnown.ts), a szintet a
-// "Start at" menti. Az onboardingban (még nincs mentett irány) a mentés az irányt is rögzíti.
+// The adaptive placement-test screen. The entry points are the onboarding level step and the level-picker
+// sheet; the questions come right here (stepped, starting from A2, at most 20) with no feedback; at the end
+// a suggested starting level is shown, which can be overridden. Correctly answered words graduate
+// (lib/exam/placementKnown.ts), the level is saved by "Start at". In onboarding (no saved
+// direction yet) saving also records the direction.
 
 interface Run {
   target: PcicTarget;
@@ -81,7 +81,7 @@ export default function PlacementScreen() {
   const s = t();
   const router = useRouter();
 
-  // Az első renderen indul (a szint-adat már betöltött modul, a web-előnézetben is, seed nélkül).
+  // Starts on the first render (the level data is an already-loaded module, in the web preview too, without a seed).
   const [run, setRun] = useState<Run | null>(() => startRun(getPcicTarget(), Date.now()));
   const [leaving, setLeaving] = useState(false);
   const [known, setKnown] = useState(0);
@@ -109,7 +109,7 @@ export default function PlacementScreen() {
         used: new Set(used),
         seed: run.seed,
       });
-      // Elfogyott a kérdés-készlet: az eddigi mérésből ad javaslatot.
+      // The question pool is exhausted: gives a suggestion from the measurement so far.
       if (!question) placement = placementFinish(placement);
     }
     setRun({ ...run, placement, question, used, correctWords });
@@ -122,8 +122,8 @@ export default function PlacementScreen() {
     setRun(startRun(getPcicTarget(), Date.now()));
   };
 
-  // A javasolt vagy kézzel választott szint mentése. Az onboardingban (még nincs mentett irány)
-  // az irányt is rögzíti, és a fülekre lép; a szintválasztó lapról jövet visszalép a tanulófülre.
+  // Saves the suggested or manually chosen level. In onboarding (no saved direction yet)
+  // it also records the direction and moves on to the tabs; coming from the level-picker sheet it steps back to the learner tab.
   const chooseLevel = async (level: PcicLevel) => {
     const db = getDb();
     if (!(await db.getOnboarding())) {
@@ -137,8 +137,8 @@ export default function PlacementScreen() {
     router.back();
   };
 
-  // a szintfelmérő minden részén ott a 💬; a `part` mondja meg a Feedback sheetben, pontosan
-  // melyik részről van szó (placement:<rész>).
+  // The 💬 button is on every part of the placement test; `part` tells the Feedback sheet
+  // exactly which part it is about (placement:<part>).
   const fbTarget = run?.target ?? getPcicTarget();
   const pair = `${fbTarget === 'es' ? 'en' : 'es'}→${fbTarget}`;
   const shell = (children: ReactNode, part: string) => (

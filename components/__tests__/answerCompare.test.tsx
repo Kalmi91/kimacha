@@ -1,5 +1,5 @@
-// a hibás válasznál a saját és a helyes válasz
-// egymás alatt, a különbség kiemelve.
+// On a wrong answer the learner's own answer and the correct answer appear
+// one under the other, with the difference highlighted.
 import { fireEvent, render, screen } from '@testing-library/react-native';
 import type { ReactTestInstance } from 'react-test-renderer';
 
@@ -14,7 +14,7 @@ jest.mock('@/lib/ThemeContext', () => ({
 
 const g = grammarColorsFor('light');
 
-// Az egy-egy betűs, kiemelt (háttér-színes) gyerekek a sorban.
+// The single-letter, highlighted (background-coloured) children in the row.
 function highlighted(line: ReactTestInstance): string {
   return line
     .findAll((n) => typeof n.type === 'string' && n.props.style && flat(n.props.style).backgroundColor !== undefined)

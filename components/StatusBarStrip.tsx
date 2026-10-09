@@ -6,9 +6,9 @@ import { getDb } from '@/lib/database';
 import { nextTintIndex, tintColor } from '@/lib/statusBarTints';
 import { useGrammarColors } from '@/lib/grammarColors';
 
-// "az app tetejére szeretnék egy kékes csíkot hogy az óra a töltöttség
-// látható legyen ... ha rá kattintok akkor váltson a kékek között, legyen 5
-// különböző változat, és így körbe menjen".
+// "I'd like a bluish strip at the top of the app so that the clock and the battery
+// level are visible ... when I tap it, it should switch between the blues, there should be 5
+// different variants, and it should cycle round".
 //
 // The band sits above the navigator, so the app content no longer runs under
 // the system clock. Height is the status-bar inset: Android reports it, iOS
@@ -41,7 +41,7 @@ export default function StatusBarStrip() {
         style={[
           styles.band,
           { height: BAND_HEIGHT, backgroundColor: tintColor(tint) },
-          // brutalista palettán a sáv alján 2,5 px ink vonal.
+          // brutalist palette: a 2.5 px ink line at the bottom of the band.
           g.brutal && { borderBottomWidth: 2.5, borderBottomColor: g.ink },
         ]}
         testID="status-bar-strip"

@@ -1,6 +1,6 @@
-// User feedback: „ide is tegyél egy mondat fordítást": a választós (gap) és a jelölős
-// (mark) tétel mondatának fordítása az F-gomb mögött van, ugyanúgy, mint az átírás-tételnél; ha a tételnek
-// nincs `tr`-je (scripts/grammar-translate.py még nem futott), nincs gomb. Kézzel írt `tr`-es fixture.
+// User feedback: "put a sentence translation here too": the translation of the sentence of a choice (gap) and a marking
+// (mark) item is behind the F button, just like for the rewrite item; if the item has
+// no `tr` (scripts/grammar-translate.py has not run yet), there is no button. Fixture with a hand-written `tr`.
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 import { act, fireEvent, render, screen } from '@testing-library/react-native';

@@ -20,19 +20,18 @@ interface Props {
   onResult: (correct: boolean) => void;
   // Speech locale of the learned language, the right sentence is read aloud.
   speechLocale?: string;
-  // a feladat-mondat (a kiinduló nyelven) a kártya megnyitásakor
-  // elhangzik, mint a szókártya promptja.
+  // The prompt sentence (in the source language) is spoken when the card opens,
+  // like the word card's prompt.
   sourceSpeechLocale?: string;
   // Same accent rule as the word card (Settings -> Difficulty).
   strictAccents?: boolean;
-  // a Check/Next sáv ugyanaz a dokkolt sáv a
-  // billentyűzet fölött, mint a PCIC szókártyán (DockedAction). A szülő adja a
-  // billentyűzet-emelést (useDockLift) és fogadja a sáv magasságát, hogy a 💬 gomb
-  // fölé tudjon kerülni; alapértékkel önállóan (tesztben) is renderel.
+  // the Check/Next bar is the same docked bar above the keyboard as on the
+  // PCIC word card (DockedAction). The parent supplies the keyboard lift (useDockLift) and receives the
+  // bar's height so that the 💬 button can sit above it; with default values it also renders on its own (in a test).
   dockLift?: number;
   dockH?: number;
   onDockHeight?: (h: number) => void;
-  // a szókártya "Didn't know" / "Knew it" gombsora Check után (felülbírálja a kijelzett értékelést).
+  // The word card's "Didn't know" / "Knew it" button row after Check (overrides the displayed grade).
   gradeButtons?: boolean;
 }
 
@@ -55,7 +54,7 @@ export default function TypedSentenceCard({
 
   const [typed, setTyped] = useState('');
   const [result, setResult] = useState<'correct' | 'wrong' | null>(null);
-  // a Check rossz válaszra ítélt; a helyes mondat felülbírálás ("Knew it") után is látszik.
+  // Check judged the answer wrong; the correct sentence is also shown after an override ("Knew it").
   const [missed, setMissed] = useState(false);
 
   useEffect(() => {
@@ -67,21 +66,21 @@ export default function TypedSentenceCard({
     Keyboard.dismiss();
     // Graded like the word card, on the sentence without its punctuation (the
     // tile card drops it too).
-    // A névmás nélküli válasz is jó ("Como en casa." a "Yo como en casa." helyett).
+    // An answer without the pronoun is also correct ("Como en casa." instead of "Yo como en casa.").
     const grade = gradeSentenceAnswer(stripSentencePunct(typed), stripSentencePunct(targetSentence), strictAccents);
     const isCorrect = suggestedGrade(grade) === 'good';
     setResult(isCorrect ? 'correct' : 'wrong');
     setMissed(!isCorrect);
-    // a helyes mondat MINDIG elhangzik, jó és rossz válasz után is.
+    // The correct sentence is ALWAYS spoken, after a good and after a wrong answer alike.
     if (speechLocale) {
       stopSpeech();
       speak(targetSentence, speechLocale);
     }
   };
 
-  // Az input és a visszajelzés a görgethető kártyában marad; a Check / Next
-  // a képernyő aljára dokkolt sáv (a szülő KeyboardAvoidingView-jának közvetlen
-  // gyereke, mint a PCIC szókártyán), a billentyűzet felső élén.
+  // The input and the feedback stay in the scrollable card; Check / Next is
+  // a bar docked to the bottom of the screen (a direct child of the parent's KeyboardAvoidingView,
+  // like on the PCIC word card), on the keyboard's top edge.
   return (
     <>
       <ScrollView
@@ -117,7 +116,7 @@ export default function TypedSentenceCard({
 
           {result && (result === 'wrong' || missed) && <Text style={[styles.correctLine, { color: colors.success }]}>{targetSentence}</Text>}
 
-          {/* minden kártyán ugyanaz a jó / rossz jelzés (szín + alak + ✓/✗ + szöveg). */}
+          {/* the same correct / wrong indicator on every card (colour + shape + ✓/✗ + text). */}
           {result && <ResultBadge correct={result === 'correct'} label={result === 'correct' ? s.card.correct : s.card.wrong} />}
 
           {result && gradeButtons && <SentenceGradeRow colors={colors} result={result} onOverride={(ok) => setResult(ok ? 'correct' : 'wrong')} />}

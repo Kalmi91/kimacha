@@ -17,24 +17,24 @@ type ColorScheme = (typeof Colors)['light'];
 
 type ExamRow = { status: ExamLevelStatus; onStart: () => void; onPractice: () => void; onGrammar: () => void };
 
-// s1 (anki-ui-terv.html): a PCIC fejléc-chipjére koppintva felcsúszó lap,
-// négy sorral (A1-B2). Koppintás egy sorra -> a lap bezárul, azonnal a
-// választott szint pakliját adja (index.tsx handleSelectLevel).
+// A sheet that slides up when the PCIC header chip is tapped,
+// with four rows (A1-B2). Tapping a row -> the sheet closes and immediately gives
+// the deck of the chosen level (index.tsx handleSelectLevel).
 type Props = {
   visible: boolean;
   active: PcicLevel;
   cards: Sm2Card[];
   colors: ColorScheme;
   title: string;
-  // es→en-nél mindig A1-et kínálja fel,
-  // akkor is, ha még üres (mint app/onboarding.tsx szint-lépése), és a
-  // feliratok a felület nyelvén jelennek meg (nem az adatmodul angoljával).
+  // For es→en it always offers A1,
+  // even while it is still empty (like the level step in app/onboarding.tsx), and the
+  // labels appear in the UI language (not in the English of the data module).
   target: PcicTarget;
-  // a szint alatti vizsga-sor; csak azoknak a
-  // szinteknek van, amiknek van vizsgájuk (lib/exam/types.ts EXAM_LEVELS). Egy sor
-  // vagy szintenként egy (A1-B2); a sor a saját szintje (`status.level`) alatt jelenik meg.
+  // the exam row under a level; only levels that have an exam
+  // get one (lib/exam/types.ts EXAM_LEVELS). A single row
+  // or one per level (A1-B2); each row appears under its own level (`status.level`).
   exam?: ExamRow | ExamRow[];
-  // a szint-sorok alatti halk belépő az adaptív szintfelméréshez.
+  // a quiet entry to the adaptive placement test below the level rows.
   onPlacement?: () => void;
   onSelect: (level: PcicLevel) => void;
   onClose: () => void;
@@ -49,20 +49,20 @@ export default function LevelPickerSheet({ visible, active, cards, colors, title
     B1: s.pcic.levelIntermediate,
     B2: s.pcic.levelUpperIntermediate,
   };
-  // Ha egy szinthez nincs adat vagy nincs angol fordítás, ne kínáljuk fel;
-  // es→en-ben is ugyanez a szűrő (A1 + A2 van adat).
+  // If a level has no data or no English translation, do not offer it;
+  // es→en uses the same filter too (A1 + A2 have data).
   const levels: PcicLevel[] = PCIC_VIEW_LEVELS.filter((lvl) => pcicItemsForLevel(lvl).length > 0);
   const examRows: ExamRow[] = exam ? (Array.isArray(exam) ? exam : [exam]) : [];
 
   return (
     <Modal visible={visible} transparent animationType="slide" onRequestClose={onClose}>
       <Pressable style={styles.overlay} onPress={onClose}>
-        {/* A lap tartalma saját Pressable-lel nyeli el a koppintást, hogy a
-            sorok közti üres terület ne zárja be a lapot (mint az overlay). */}
+        {/* The sheet content swallows the tap with its own Pressable so that the
+            empty area between the rows does not close the sheet (as the overlay would). */}
         <Pressable style={[styles.sheet, { backgroundColor: colors.card }, g.brutal && [styles.brutalSheet, { borderColor: g.ink }]]} onPress={() => {}}>
           <Text variant="title" style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{title}</Text>
-          {/* négy szint + négy vizsga-sor nem fér egy rövid telefonra, ezért a sorok görgethetők
-              (a cím fent marad, a lap legfeljebb a képernyő 90%-a). */}
+          {/* four levels + four exam rows do not fit on a short phone, so the rows are scrollable
+              (the title stays on top, the sheet is at most 90% of the screen). */}
           <ScrollView showsVerticalScrollIndicator={false}>
           {levels.map((lvl) => {
             const total = pcicItemsForLevel(lvl).length;
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     paddingBottom: 32,
     maxHeight: '90%',
   },
-  // brutalista lap: sarok 0, felső 2,5 px ink vonal.
+  // brutalist sheet: corner 0, 2.5 px ink line on top.
   brutalSheet: { borderTopLeftRadius: 0, borderTopRightRadius: 0, borderTopWidth: 2.5 },
   brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   title: {
@@ -124,8 +124,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 16,
   },
-  // "még nincs szó" sor az üres A1 alatt (es→en,
-  // amíg az angol szólista nincs kész), mint app/onboarding.tsx szint-lépése.
+  // "no words yet" row under the empty A1 (es→en,
+  // until the English word list is ready), like the level step in app/onboarding.tsx.
   noWordsYet: {
     fontSize: 13,
     textAlign: 'center',

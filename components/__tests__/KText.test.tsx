@@ -1,5 +1,5 @@
-// a KText a téma betűjét (title / word / body), méretét, betűközét, sormagasságát és
-// kis-/nagybetűs formáját alkalmazza; a Klasszikus téma (és a Neo-brutál body) a mai viselkedés.
+// KText applies the theme's font (title / word / body), size, letter spacing, line height and
+// casing; the Classic theme (and the Neo-brutal body) is today's behaviour.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -88,7 +88,7 @@ describe('KText: a téma betűje a szövegeken (PLAN-temak 4C)', () => {
     await renderWithSkin('retro95', <KText style={{ fontSize: 16, lineHeight: 20 }}>törzs</KText>);
     const st = styleOf('törzs');
     expect(st).toMatchObject({ fontSize: 20, fontFamily: 'VT323' });
-    // a megadott sormagasság a mérettel arányosan nő
+    // the given line height grows in proportion to the size
     expect(st.lineHeight).toBeCloseTo(25);
   });
 
