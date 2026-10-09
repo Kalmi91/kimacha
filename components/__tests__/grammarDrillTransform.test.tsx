@@ -52,16 +52,18 @@ const lesson: LessonV2 = {
 };
 
 describe('GrammarDrill: transform item', () => {
-  it('kinds={["transform"]} shows the sentence, tense badge and input', () => {
+  it('kinds={["transform"]} shows the sentence, tense badge and input', async () => {
     render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={jest.fn()} kinds={['transform']} />);
+    await flush();
     expect(screen.queryByText('Como pan.')).toBeTruthy();
     expect(screen.queryByText('Presente → Pretérito perfecto simple')).toBeTruthy();
     expect(screen.queryByTestId('transform-input')).toBeTruthy();
   });
 
-  it('correct answer shows the "Correct" box + why, and next advances', () => {
+  it('correct answer shows the "Correct" box + why, and next advances', async () => {
     const onFinish = jest.fn();
     render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['transform']} />);
+    await flush();
 
     fireEvent.changeText(screen.getByTestId('transform-input'), 'Comí pan.');
     fireEvent.press(screen.getByTestId('transform-check'));
@@ -72,9 +74,10 @@ describe('GrammarDrill: transform item', () => {
     expect(screen.queryByText('Habla con su madre.')).toBeTruthy();
   });
 
-  it('wrong answer shows "Correct answer" + the answer + why', () => {
+  it('wrong answer shows "Correct answer" + the answer + why', async () => {
     const onFinish = jest.fn();
     render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['transform']} />);
+    await flush();
 
     fireEvent.changeText(screen.getByTestId('transform-input'), 'como cosas raras');
     fireEvent.press(screen.getByTestId('transform-check'));
@@ -106,8 +109,9 @@ describe('GrammarDrill: transform item', () => {
     await db.setStrictAccents(false);
   });
 
-  it('F toggles the translation on and off', () => {
+  it('F toggles the translation on and off', async () => {
     render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={jest.fn()} kinds={['transform']} />);
+    await flush();
     expect(screen.queryByText('Eszem kenyeret.')).toBeFalsy();
     fireEvent.press(screen.getByTestId('transform-f'));
     expect(screen.queryByText('Eszem kenyeret.')).toBeTruthy();
@@ -115,9 +119,10 @@ describe('GrammarDrill: transform item', () => {
     expect(screen.queryByText('Eszem kenyeret.')).toBeFalsy();
   });
 
-  it('next advances to the 2nd item with an empty input (key remount), then finishes', () => {
+  it('next advances to the 2nd item with an empty input (key remount), then finishes', async () => {
     const onFinish = jest.fn();
     render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['transform']} />);
+    await flush();
 
     fireEvent.changeText(screen.getByTestId('transform-input'), 'Comí pan.');
     fireEvent.press(screen.getByTestId('transform-check'));
