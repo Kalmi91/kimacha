@@ -103,7 +103,7 @@ const GLUE_WHITELIST = new Set([
 const GLUE_STRIPPED = new Set([...GLUE_WHITELIST].map((w) => removeAccents(w)));
 
 // Culturally transparent proper nouns, not taught vocabulary cards. The
-// character-name block is story/chat cast a name is a
+// character-name block is story/chat cast: a name is a
 // name in any language, glossing "María" scene after scene would be noise,
 // not a vocabulary lesson.
 const PROPER_NOUNS = new Set([
@@ -842,7 +842,7 @@ function auditTenseField(tense, itemPath) {
 // az igeidő-drill mondat-átírás item-fajtája. `wordIds` a mondat
 // kártyáira mutat (ez hajtja az unlockot), mindegyiknek léteznie kell és
 // a lecke szintjénél nem lehet magasabb szintű.
-// az új feladat-fajták (spot, order, dictation) ellenőrzése. A
+// Az új feladat-fajták (spot, order, dictation) ellenőrzése. A
 // mondatok szavainak tanítottnak / szószedettel ellátottnak kell lenniük (checkWords), a
 // magyarázatok és fordítások négy nyelven, a hibakereső hibás szava és opciói konzisztensek.
 function auditNewKindItem(item, itemPath, topic, checkWords) {
@@ -1007,7 +1007,7 @@ function auditGrammarTopic(topic, filePath, lang = 'es') {
           if (seenOpts.has(opt)) p1.push({ path: itemPath, issue: `duplicate option "${opt}"` });
           seenOpts.add(opt);
         }
-        // (2.3): önmagát eláruló tétel, ha a jó válasz
+        // Önmagát eláruló tétel, ha a jó válasz
         // szövege szó szerint (egész szóként, nem más szó részeként, pl.
         // "nos" a "nosotros"-ban) ott áll a mondatban a lyukon kívül. A
         // tárgy-/részeshatározó névmások (lo/la/los/las/le/les/me/te/se/

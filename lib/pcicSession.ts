@@ -127,7 +127,7 @@ export function pcicNewBudget({ limit, bonus, introducedToday }: PcicNewBudgetIn
 }
 
 /**
- * ("new 42?"): a napi új-szó keret és a +N bónusz NAPI érték (egy sor a
+ * User feedback ("new 42?"): a napi új-szó keret és a +N bónusz NAPI érték (egy sor a
  * learn_settings-ben), de a ma bevezetett kártyákat a hívó a nézet szintjén
  * számolta. Ha a tanuló az A1-en háromszor kért "+10"-et, majd átváltott A2-re,
  * ott a szint 0 mai szava mellett a teljes bónuszos keret (limit + bónusz) új
@@ -152,7 +152,7 @@ export function pcicSessionNewLimit({
 }
 
 /**
- * ("azt írja, hogy van még 40 szó, miért nem dobja fel?"): a szint-választó vizsga-sora kiírja, mennyi
+ * User feedback ("azt írja, hogy van még 40 szó, miért nem dobja fel?"): a szint-választó vizsga-sora kiírja, mennyi
  * szó hiányzik a feloldáshoz ("N to go"), a "Practice words" gomb viszont a napi keret kimerülése után semmit
  * nem adott. Ha a mai keret (limit + bónusz) már elfogyott, a gomb a szint ÖSSZES hiányzó új szavát adja egy
  * koppintásra ("mindet egyszerre"); ha még van keret, nem bővít (a szokásos napi
@@ -207,7 +207,7 @@ export function countIntroducedTodayByKind(
 // a korábbi esedékesség (hogy az ismétlés ne csússzon ki). A `cardMerge.ts`
 // pickSurvivor-jának Sm2Card-megfelelője (az ottani `stability` mező itt
 // nincs, az FSRS-only `cards` táblára épült).
-// a bevezetendő új kártyák sorrendjében két
+// A bevezetendő új kártyák sorrendjében két
 // mondat (vagy csoport, ami `groupOf` szerint EGY egységnek számít) közt
 // legalább `minGap` nem-mondat kártyának kell lennie ("10 kártyánként max 1
 // mondat"). Ami idő előtt jönne, EBBŐL a hívásból kimarad (nem a sor végére
@@ -272,7 +272,7 @@ export function countFinishedToday(cards: Sm2Card[], queue: Sm2Card[], today: st
   return cards.filter((c) => c.lastReview === today && !inQueue.has(c.itemId)).length;
 }
 
-// ("+15 szó, bebugosodott a csík"): a "+N új szó" bővítés új adagot indít, de a
+// User feedback ("+15 szó, bebugosodott a csík"): a "+N új szó" bővítés új adagot indít, de a
 // `countFinishedToday` az egész nap kész kártyáit számolja, így a csík +N után nem 0-ról,
 // hanem pl. 78%-ról indult (a nap eddigi kész kártyái az új adagon is "készek" voltak).
 // A bővítéskor a hívó eltárolja a már kész kártyák számát (batchBase), a csík ehhez képest

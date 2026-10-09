@@ -1,4 +1,4 @@
-// (kártya-szintű folytatás): az app újranyitásakor a Learn-kör ott folytatódik, ahol abbamaradt: ugyanaz a
+// Kártya-szintű folytatás: az app újranyitásakor a Learn-kör ott folytatódik, ahol abbamaradt: ugyanaz a
 // soron lévő kártya, a rontott ("again") kártya a helyén (nem előre ugrik), a "+N új szó" adag csíkja ugyanott
 // áll. Az újranyitás = unmount + újra render (a DB marad, mint a perzisztált SQLite). Mock-minta:
 // pcicMoreNewSteps.test.tsx.

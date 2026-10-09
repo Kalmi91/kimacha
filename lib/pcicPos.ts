@@ -1,15 +1,15 @@
-// (döntés 6b: nincs adat-generálás): a PCIC-tételnek
+// A PCIC-tételnek
 // (a régi PCIC-korpusz: id, order, es, kind, source, section,
 // headword) nincs szófaj-mezője. A (b) opciót választottuk:
 // olcsó szabály a spanyol alakból, generálás/adatbővítés nélkül. Ha egyszer
 // lesz valódi `pos` mező a tételen, ez a függvény azt olvassa előbb.
 //
-// (3. commit, 2026-09-21): a PCIC névelő nélkül tárolja a spanyol
+// A PCIC névelő nélkül tárolja a spanyol
 // alakot (`"es": "vida"`), ezért a főnevek a névelő-szabályból kimaradtak.
 // A fő szókorpusz viszont névelővel tárolja ("la vida"), és sokkal pontosabb,
 // mint az olcsó szabály. Mostantól ez a korpusz az elsődleges forrás, a
 // névelő/igevégződés-szabály csak akkor fut, ha a lemma nincs benne.
-// a fő korpusz a data/words-open (data/openWords.ts),
+// A fő korpusz a data/words-open (data/openWords.ts),
 // a főnév neme a névelőből jön (a régi annotáló is onnan vette).
 import type { PcicKind } from '@/data/pcic';
 import { openWords } from '@/data/openWords';
@@ -19,7 +19,7 @@ import type { WordGender, WordPos } from '@/data/words';
 // ezért a Pos lefedi a teljes WordPos-készletet. A `conj`
 // csak a PCIC oldalon létezik (kötőszó), a korpusz WordPos típusát ez nem
 // bővíti, azt kézzel írt PCIC `pos` mező adja; a lemma-index (korpuszból) csak a `conj`-ot adja (a words-open kötőszavai).
-// a words-open `det` (determináns) és `interj` (indulatszó) szófaja is chipet kap.
+// A words-open `det` (determináns) és `interj` (indulatszó) szófaja is chipet kap.
 export type Pos = WordPos | 'conj' | 'det' | 'interj';
 
 export interface PosInfo {

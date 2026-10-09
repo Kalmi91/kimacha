@@ -21,7 +21,7 @@ jest.mock('react-native-safe-area-context', () => ({
 }));
 
 // Egy fix tétel, hogy a teszt ne a valódi PCIC-korpusztól függjön.
-// az id "b1-" előtaggal, mert lib/pcicLevels.ts a
+// Az id "b1-" előtaggal, mert lib/pcicLevels.ts a
 // szint-szűrést az id-előtagból dönti el (a fül a B1 alap-szinten indul).
 const FIXTURE_ITEM = { id: 'b1-x1', es: 'vida', en: 'life', kind: 'word' as const, section: 'Test', order: 0 };
 jest.mock('@/data/pcic', () => ({

@@ -91,7 +91,7 @@ describe('PCIC fül: +5 / +10 / +15 új szó a "kész mára" képernyőn (FB449,
     expect(await getDb().getPcicNewBonus(today)).toBe(n);
   });
 
-  // ("nyomtam egy +15 szót és bebugosodott a csík"): a haladás-csík a +N után az ÚJ adagot méri,
+  // User feedback ("nyomtam egy +15 szót és bebugosodott a csík"): a haladás-csík a +N után az ÚJ adagot méri,
   // az első új kártyánál üres (régen a nap eddigi 10 kész kártyájától 42%-ról indult).
   it.each([
     ['learn-more-new-5', 5],

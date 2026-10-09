@@ -99,10 +99,10 @@ export const WORD_MERGES: Record<number, number> = {
   2908: 2169, // averiguar: B1 törölve, marad A2
   2932: 2120, // merecer: B1 törölve, marad A2
 
-  // (es A0-A1):
+  // es A0-A1:
   3912: 1522, // la venda: A1 törölve, marad A1 (el vendaje / la venda egy kártya, szinoníma)
 
-  // (es A2):
+  // es A2:
   3754: 709, // suerte: A2 duplikátum (névelő nélkül), marad "la suerte"
   3462: 2045, // diferentes: A2 szabályos többes, marad diferente
   1948: 1893, // suceder: A2 szinonima, marad ocurrir (ocurrir / suceder)
@@ -111,28 +111,28 @@ export const WORD_MERGES: Record<number, number> = {
   1964: 3730, // prisión: A2 szinonima, marad cárcel (la cárcel / la prisión)
   3659: 3473, // bienvenida: A2 szabályos nőnem, marad bienvenido
 
-  // (es B1):
+  // es B1:
   3799: 759, // completamente: B1 szinonima, marad totalmente (totalmente / completamente)
   3847: 3809, // la delito: B1 duplikátum hibás nemű cikkel, marad el delito
   2793: 2513, // el trozo: B1 szinonima, marad el pedazo (el pedazo / el trozo)
   2398: 2539, // el celular: B1 regionális duplikátum, marad el móvil (MX-alak a jegyzetben)
 
-  // (es B2-C2):
+  // es B2-C2:
   7341: 3399, // la placa solar: B2 szinonima, marad el panel solar (el panel solar / la placa solar)
   3247: 3226, // semejante: B2 szinonima (választékosabb), marad similar (similar / semejante)
   530: 3925, // rebatir: C1 szinonima, marad refutar (refutar / rebatir)
-  // (el/la -> el, a rejtett ikrek előkerültek):
+  // el/la -> el, a rejtett ikrek előkerültek:
   3804: 3601, // el testigo: B1 törölve, marad A2
   2584: 1854, // el jefe: B1 törölve, marad A1
 
-  // (es A1): szabályos többes, marad az
+  // es A1: szabályos többes, marad az
   // egyes iker; itt az egyes alak MAGASABB szinten élt (B2), ezért az
   // alacsonyabb szintű többes kártya alakult át egyes számúra, és a
   // magasabb szintű iker törlődött (a WORD_MERGES-konvenció szerint az
   // alacsonyabb szint marad meg).
   3054: 1078, // el zapato: B2 törölve, marad A1 (los zapatos -> el zapato)
 
-  // (es A2): szabályos többes, marad az egyes iker
+  // es A2: szabályos többes, marad az egyes iker
   3460: 3691, // el cielo: A2 többes törölve, marad A2
   3498: 3722, // la carta: A2 többes törölve, marad A2
   3525: 2085, // el animal: A2 többes törölve, marad A2
@@ -172,10 +172,10 @@ export const WORD_MERGES: Record<number, number> = {
   2178: 1977, // el momento: A2 többes törölve, marad A2
   2239: 2024, // el número: A2 többes törölve, marad A2
 
-  // (es A2): szint-inverzió, a magasabb szintű iker törölve
+  // es A2: szint-inverzió, a magasabb szintű iker törölve
   2408: 3466, // la regla: B1 törölve, marad A2 (las reglas -> la regla) [regla A2 játék-tartalomban is]
 
-  // (es B1): szabályos többes, marad az egyes iker
+  // es B1: szabályos többes, marad az egyes iker
   2292: 1385, // el pez: B1 többes törölve, marad A1
   2313: 2337, // la habilidad: B1 többes törölve, marad B1
   2316: 3630, // la operación: B1 többes törölve, marad A2
@@ -222,10 +222,10 @@ export const WORD_MERGES: Record<number, number> = {
   2997: 2332, // el objeto: B1 többes törölve, marad B1
   2999: 3141, // el término: B1 többes törölve, marad B2
 
-  // (es B1): szint-inverzió, a magasabb szintű iker törölve
+  // es B1: szint-inverzió, a magasabb szintű iker törölve
   6578: 2633, // el impuesto: C1 törölve, marad B1 (los impuestos -> el impuesto) [impuestos B1 mondatban is]
 
-  // (es B2): szabályos többes, marad az egyes iker
+  // es B2: szabályos többes, marad az egyes iker
   3010: 213, // la canción: B2 többes törölve, marad A2
   3011: 3729, // la decisión: B2 többes törölve, marad A2
   3035: 2101, // la intención: B2 többes törölve, marad A2

@@ -1,4 +1,4 @@
-// a Learn (PCIC) kártyák adat-javításai a visszajelzések nyomán
+// a Learn (PCIC) kártyák adat-javításai a visszajelzések nyomán.
 // Minden tétel egy-egy teszt, hogy a javítás ne csússzon vissza.
 import { gradePcicAnswer } from '@/lib/pcicMatch';
 import { dropOrphanCards } from '@/lib/pcicSession';

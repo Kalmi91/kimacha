@@ -44,7 +44,7 @@ export function lessonPercentsByTopic(rows: ProgressRow[]): Map<string, number> 
 }
 
 // the syllabus row's single badge percent. The
-// cumulative counters win when they exist; a topic marked `done` before
+// cumulative counters win when they exist; a topic marked `done` before this change
 // added them has no `${topic}:answered`/`${topic}:correct` rows yet, so the
 // badge falls back to that topic's last round result instead of showing
 // nothing.

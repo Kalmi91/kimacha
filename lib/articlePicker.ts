@@ -40,7 +40,7 @@ export function articlePickerApplies(backLang: string, isWordCard: boolean, answ
 }
 
 /**
- * (word:I am going to travel / you are going to eat):
+ * User feedback (word:I am going to travel / you are going to eat):
  * „ennél nem kell az el la los las rész mert több szó van. itt nem lehet
  * használni". Egy több szavas, névelőtlen alak (voy a viajar, van a llegar) nem
  * névelőzhető, ott a sor csak zaj. Egy szó (perro), vagy névelős több szó
@@ -84,7 +84,7 @@ export function bodyOf(text: string): string {
 }
 
 /**
- * kiegészítés (javító kör, 2026-09-23): a PCIC-kártyán a szófaj-chip
+ * Kiegészítés (javító kör, 2026-09-23): a PCIC-kártyán a szófaj-chip
  * (lib/pcicPos.ts posOf()) már megmondja, ha a tétel nem főnév, ezért ott a
  * névelő-sor felesleges (és zavaró) volna nem-főnévnél is megkérdezni. A sor
  * csak akkor jár, ha a szófaj ismeretlen (`null`, ilyenkor még tanulság az

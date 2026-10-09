@@ -86,7 +86,7 @@ describe('grammar lesson screen: table-deck button', () => {
   });
   // a szó-pakli csak a tábla szavaiból
   // épül; ahol így küszöb alatt marad, nincs pakli-belépő (és nincs crash).
-  // visszaállítja ezt az articulos-genero-ra: a korábbi, az app összes főnevéből
+  // Egy későbbi változtatás visszaállítja ezt az articulos-genero-ra: a korábbi, az app összes főnevéből
   // épített pakli megszűnt, a főnevek csak az el / la feladatban vannak, a pakli ismét a lecke saját szavai.
   it('articulos-genero (a tábla szavai a küszöb alatt) nem kap szó-pakli belépőt', async () => {
     mockTopicId = 'articulos-genero';

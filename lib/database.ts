@@ -38,7 +38,7 @@ class SQLiteDB implements DB {
     return await db.getFirstAsync<any>('SELECT * FROM streak WHERE id = 1');
   }
 
-  // visszahozva (a Tanulás fül vitte el a lépés 3-ban),
+  // visszahozva (a Tanulás fül vitte el egy korábbi lépésben),
   // a PCIC-értékelés hívja, napi első hívás számít csak (a last_date őrzi).
   async updateStreak() {
     const db = await this.open();
@@ -282,7 +282,7 @@ class SQLiteDB implements DB {
 
   // Usage-timer feature: one row per local calendar day, not scoped to a
   // language pair (it's app-wide active-use time, not learning progress).
-  // returns today's new total so the timer can spot a milestone crossing
+  // Returns today's new total so the timer can spot a milestone crossing
   // (30/60 minutes) without re-reading the whole usage table every minute.
   async addUsageMinute(): Promise<number> {
     const db = await this.open();

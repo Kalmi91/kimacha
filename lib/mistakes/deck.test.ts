@@ -1,4 +1,4 @@
-// (deck.ts teszt): kártya-építés a mintafájlból,
+// A deck.ts tesztje: kártya-építés a mintafájlból,
 // session-választás és az előre kijelölt értékelés.
 
 import sample from './__fixtures__/sample.json';

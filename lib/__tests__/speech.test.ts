@@ -189,7 +189,7 @@ describe('region-aware voice pick', () => {
   });
 });
 
-// (`word:¿Cuándo comes?`): "az s mintha lemaradna".
+// User feedback (`word:¿Cuándo comes?`): "az s mintha lemaradna".
 describe('final consonant clipping on android', () => {
   it('pads the utterance on android so a closing /s/ is not cut off', async () => {
     await withVoices(['es-MX']);

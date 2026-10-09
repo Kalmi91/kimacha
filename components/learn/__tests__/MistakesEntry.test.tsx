@@ -1,4 +1,4 @@
-// (PCIC-belépő): rejtve marad betöltött köteg nélkül,
+// PCIC-belépő: rejtve marad betöltött köteg nélkül,
 // és a due-számot mutatja, ha van köteg.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));

@@ -1,4 +1,4 @@
-// (F agent): a web teszt-horgok paraméter-értelmezője (lib/webTestHooks.ts).
+// A web teszt-horgok paraméter-értelmezője (lib/webTestHooks.ts).
 import { applyWebTestParams, getWebTestParams, parseWebTestParams } from '../webTestHooks';
 
 describe('parseWebTestParams', () => {

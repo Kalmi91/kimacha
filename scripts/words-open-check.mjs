@@ -147,7 +147,7 @@ for (const c of cards) {
 // ---------------------------------------------------------------- R11-R14 több jelentésű szavak (hint, perjeles válasz)
 // R11 bővítve: az `en` vessző/pontosvessző szerinti alternatívái, a zárójeles minősítő elhagyásával is ütköznek; a 882 régi kártya egymás
 // közti ütközése 50 fölött figyelmeztetés, nem hiba.
-// összetéveszthető csoportok (scripts/words-open-confusable.json): a tagok kártyáin akkor is kötelező a hint_en, ha a kérdésük
+// R15: összetéveszthető csoportok (scripts/words-open-confusable.json): a tagok kártyáin akkor is kötelező a hint_en, ha a kérdésük
 // nem azonos (while/when: mientras, cuando, cuándo); az R13 az ilyen kártyán megengedi a hintet. Minden tag létezik, egy halmaz legalább 2 tag, egy kártya egy halmazban.
 const confusableSets = JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts', 'words-open-confusable.json'), 'utf8')).sets;
 const byOrder = new Map(cards.map((c) => [c.order, c]));

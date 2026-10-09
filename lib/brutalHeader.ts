@@ -7,7 +7,7 @@ import type { GrammarColors } from '@/lib/grammarColors';
 // alul 2,5 px ink vonal, árnyék / elevation nélkül, nagybetűs 500-as ink cím.
 // Classic palettán üres: a mai fejléc marad. (headerShadowVisible: false nem
 // kerül bele, mert az a borderBottomWidth-et is nullázza.)
-// a második paraméter az aktív téma; a title-betűje (egyedi betűnél fontWeight nélkül),
+// A második paraméter az aktív téma; a title-betűje (egyedi betűnél fontWeight nélkül),
 // betűköze és kis-/nagybetűs formája a natív fejléc címére kerül.
 export function brutalHeaderOptions(
   g: GrammarColors,

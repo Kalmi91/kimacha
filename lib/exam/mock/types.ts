@@ -127,7 +127,7 @@ export interface MockPaper {
   minutes: number;
   /** A papírban szereplő készségek összpontja (készségenként 25). */
   points: number;
-  /** A szóbeli ebben a szeletben helyőrző nincs feladata, nem számít bele. */
+  /** A szóbeli ebben a szeletben helyőrző: nincs feladata, nem számít bele. */
   placeholder: boolean;
   tasks: MockTask[];
 }
