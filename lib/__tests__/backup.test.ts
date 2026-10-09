@@ -162,4 +162,21 @@ describe('validateBackupPayload', () => {
       validateBackupPayload({ schemaVersion: BACKUP_SCHEMA_VERSION, exportedAt: 'x', appVersion: 'y', tables })
     ).toThrow(/wrong-type/);
   });
+
+  it('rejects a row whose key is not a plain column name (SQL in the INSERT column list)', () => {
+    const tables = emptyTables();
+    tables.streak = [{ id: 1, current_count: 0, longest_count: 0, 'last_date) VALUES (1); DROP TABLE cards; --': 'x' }];
+    expect(() =>
+      validateBackupPayload({ schemaVersion: BACKUP_SCHEMA_VERSION, exportedAt: 'x', appVersion: 'y', tables })
+    ).toThrow(/invalid column name/);
+  });
+
+  it('keeps columns that are missing from the type table (again_delay_sec, pcic_level)', () => {
+    const tables = emptyTables();
+    tables.learn_settings = [{ pair: 'en-es', again_delay_sec: 30, pcic_level: 'a2' }];
+    tables.user_meta = [{ id: 1, user_id: '', first_use_date: '2026-10-08', pcic_level: 'a2' }];
+    const payload = validateBackupPayload({ schemaVersion: BACKUP_SCHEMA_VERSION, exportedAt: 'x', appVersion: 'y', tables });
+    expect(payload.tables.learn_settings[0]).toMatchObject({ again_delay_sec: 30, pcic_level: 'a2' });
+    expect(payload.tables.user_meta[0]).toMatchObject({ pcic_level: 'a2' });
+  });
 });
