@@ -145,7 +145,7 @@ describe('űrlap: kitöltve ÉS értelmes értékkel', () => {
     expect(checkField(fields.correo, 'ana@example.com')).toBe(true);
     expect(checkField(fields.nivel, 'zz')).toBe(false);
     expect(checkField(fields.nivel, 'a1')).toBe(true);
-    expect(checkField(fields.direccion, 'Calle Rébsamen')).toBe(false); // szám nélkül nem cím
+    expect(checkField(fields.direccion, 'Calle Ficticia')).toBe(false); // szám nélkül nem cím
     expect(checkField(fields.direccion, 'qwerty 1234')).toBe(false);
     expect(checkField(fields.nacionalidad, 'asdf')).toBe(false);
     expect(checkField(fields.nacionalidad, 'húngara')).toBe(true);

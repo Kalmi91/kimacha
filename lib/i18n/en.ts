@@ -316,6 +316,11 @@ export default {
     fontsBody:
       'Fonts used by the app themes. All are open source: SIL Open Font License 1.1, ' +
       'except Permanent Marker (Apache License 2.0).',
+    photosBody:
+      'Photos on some cards come from Wikimedia Commons. Each photo is credited on its card, ' +
+      'with author and licence.',
+    privacyLabel: 'Privacy policy',
+    privacyUrl: 'https://kalmi91.github.io/kimacha/privacy-policy.html',
   },
   feedback: {
     button: 'Feedback',

@@ -287,6 +287,11 @@ const es: Strings = {
     fontsBody:
       'Tipografías de los temas de la app. Todas son de código abierto: SIL Open Font License 1.1, ' +
       'salvo Permanent Marker (Apache License 2.0).',
+    photosBody:
+      'Las fotos de algunas tarjetas provienen de Wikimedia Commons. Cada foto lleva su crédito ' +
+      'en la tarjeta, con autor y licencia.',
+    privacyLabel: 'Política de privacidad',
+    privacyUrl: 'https://kalmi91.github.io/kimacha/privacy-policy.html',
   },
   feedback: {
     button: 'Comentarios',

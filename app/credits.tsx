@@ -63,6 +63,11 @@ export default function CreditsScreen() {
             </Text>
           </Pressable>
         ))}
+
+        <Text style={[styles.body, styles.bodySpaced, { color: colors.text }]}>{s.credits.photosBody}</Text>
+        <Pressable onPress={() => Linking.openURL(s.credits.privacyUrl)}>
+          <Text testID="credits-privacy" style={[styles.link, { color: linkColor }, g.brutal && styles.brutalLink]}>{s.credits.privacyLabel}</Text>
+        </Pressable>
         </Wrap>
       </ScrollView>
     </View>
