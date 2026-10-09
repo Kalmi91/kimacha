@@ -26,8 +26,8 @@ describe('CreditsScreen (app/credits.tsx)', () => {
   it('PLAN-temak 2B: listázza a betűk licencét, családonként egyszer', () => {
     const { getAllByTestId, getByText } = render(<CreditsScreen />);
 
-    // 29 betűfájl, de az Atkinson és a Jost két súllyal: 27 család.
-    expect(getAllByTestId('credits-font')).toHaveLength(27);
+    // 28 betűfájl, de az Atkinson és a Jost két súllyal: 26 család.
+    expect(getAllByTestId('credits-font')).toHaveLength(26);
     expect(getByText('Permanent Marker · Apache License 2.0')).toBeTruthy();
     expect(getByText('OpenDyslexic · SIL Open Font License 1.1')).toBeTruthy();
   });

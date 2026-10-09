@@ -138,9 +138,9 @@ describe('téma-lista', () => {
     expect(SKIN_GROUPS.map((g) => g.id)).toEqual(['ajanlott', 'muveszet', 'kultura', 'hangulat', 'olvasas']);
   });
 
-  it('a betű-nevek a regisztrált 29 név egyikei (a ShipporiMincho helyett Spectral-Light)', () => {
+  it('a betű-nevek a regisztrált 28 név egyikei (a ShipporiMincho helyett Spectral-Light)', () => {
     const registered = new Set([
-      'ArchivoBlack', 'PoiretOne', 'JosefinSans', 'AlfaSlabOne', 'Atkinson', 'Atkinson-Bold', 'Lexend', 'VT323',
+      'PoiretOne', 'JosefinSans', 'AlfaSlabOne', 'Atkinson', 'Atkinson-Bold', 'Lexend', 'VT323',
       'Syne-ExtraBold', 'Fredoka-Medium', 'Orbitron-Bold', 'Cormorant-MediumItalic', 'Spectral-Light', 'Playfair-Black',
       'Oswald-Bold', 'RussoOne', 'Pacifico', 'Jost', 'Jost-Bold', 'Bangers', 'CinzelDecorative-Bold', 'Marcellus',
       'YesevaOne', 'RubikMonoOne', 'UnifrakturMaguntia', 'IMFellEnglish', 'RubikSprayPaint', 'PermanentMarker', 'OpenDyslexic',
