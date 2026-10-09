@@ -71,9 +71,9 @@ export async function applyWordMerges(db: SQLite.SQLiteDatabase) {
 // rename: the target id is always freshly generated, there is no "twin" collision on the other
 // side, hence no pickSurvivor branch like in applyWordMerges above.
 // Idempotent: from the second run the SELECT returns 0 rows (the pcic_cards row
-// with the old id is no longer in the table), and `pcic_cards` is left out of
-// the backup (lib/backup.ts), so it only has to run here, on native startup.
-async function applyPcicLevelMoves(db: SQLite.SQLiteDatabase) {
+// with the old id is no longer in the table). It runs on native startup and again
+// after a restore (importAll), because the backup carries `pcic_cards` (lib/backup.ts).
+export async function applyPcicLevelMoves(db: SQLite.SQLiteDatabase) {
   const oldIds = Object.keys(PCIC_LEVEL_MOVES);
   if (oldIds.length === 0) return;
   const placeholders = oldIds.map(() => '?').join(',');
@@ -111,8 +111,8 @@ function pcicRowToSm2Card(row: any): Sm2Card {
 // (many-to-one), hence row by row, following the pattern of WORD_MERGES/applyWordMerges:
 // if both sides have progress, the stronger one (pickStrongerSm2Card)
 // wins, the weaker row is deleted. Idempotent: from the second run the SELECT returns 0
-// rows. It only has to run on native startup (see applyPcicLevelMoves above).
-async function applyPcicDedup(db: SQLite.SQLiteDatabase) {
+// rows. It runs on native startup and after a restore (see applyPcicLevelMoves above).
+export async function applyPcicDedup(db: SQLite.SQLiteDatabase) {
   const loserIds = Object.keys(PCIC_DEDUP_MOVES);
   if (loserIds.length === 0) return;
   const placeholders = loserIds.map(() => '?').join(',');

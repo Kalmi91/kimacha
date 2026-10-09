@@ -2,29 +2,48 @@ import Constants from 'expo-constants';
 
 // Q0: full learning-state backup. One JSON payload carrying every persisted
 // table; written by DB.exportAll(), consumed by DB.importAll().
-export const BACKUP_SCHEMA_VERSION = 1;
+// v2 adds the main learning progress (pcic_cards, the mistake_* tables) and the
+// usage minutes; a v1 file is still restored (see V1_BACKUP_TABLES).
+export const BACKUP_SCHEMA_VERSION = 2;
 
-// Every persisted table, in import order. importAll clears + refills each.
+// Every persisted table, in import order. importAll clears + refills each
+// table the payload carries.
 export const BACKUP_TABLES = [
-  'cards',
-  'card_attempts',
   'game_progress',
   'learn_settings',
   'onboarding',
   'streak',
   'user_level',
   'user_meta',
+  'pcic_cards',
+  'mistake_batches',
+  'mistake_cards',
+  'usage_minutes',
 ] as const;
 
 export type BackupTable = (typeof BACKUP_TABLES)[number];
+
+// The tables a v1 file carries (besides the legacy ones below). A v1 file has no
+// pcic_cards / mistake_* / usage_minutes: the restore leaves those local tables alone.
+const V1_BACKUP_TABLES: readonly BackupTable[] = [
+  'game_progress',
+  'learn_settings',
+  'onboarding',
+  'streak',
+  'user_level',
+  'user_meta',
+];
 
 // Play cut: tables an older backup (e.g. 4.0.25) may
 // still carry, but the app no longer reads or writes (their DB methods were
 // removed as dead: the Game tab's own score/settings tables, and the topic
 // picker). A restore accepts and skips them, so an old backup still loads.
 // The spelling-practice lists went the same way when the feature was removed
-// (the tables stay in the schema, nothing reads or writes them).
+// (the tables stay in the schema, nothing reads or writes them). cards and
+// card_attempts (the old FSRS progress, no writer or reader left) went with v2.
 const LEGACY_BACKUP_TABLES = [
+  'cards',
+  'card_attempts',
   'game_scores',
   'game_settings',
   'selected_topic',
@@ -53,36 +72,6 @@ interface ColumnSpec {
   nullable: boolean;
 }
 const TABLE_COLUMNS: Record<BackupTable, Record<string, ColumnSpec>> = {
-  cards: {
-    id: { type: 'number', nullable: false },
-    word_id: { type: 'number', nullable: false },
-    type: { type: 'string', nullable: false },
-    pair: { type: 'string', nullable: false },
-    due: { type: 'string', nullable: false },
-    stability: { type: 'number', nullable: false },
-    difficulty: { type: 'number', nullable: false },
-    elapsed_days: { type: 'number', nullable: false },
-    scheduled_days: { type: 'number', nullable: false },
-    learning_steps: { type: 'number', nullable: false },
-    reps: { type: 'number', nullable: false },
-    lapses: { type: 'number', nullable: false },
-    state: { type: 'number', nullable: false },
-    last_review: { type: 'string', nullable: true },
-    buried: { type: 'number', nullable: false },
-    learned_at: { type: 'string', nullable: true },
-    lap: { type: 'number', nullable: false },
-    in_hand: { type: 'number', nullable: false },
-    started_at: { type: 'string', nullable: true },
-  },
-  card_attempts: {
-    id: { type: 'number', nullable: false },
-    word_id: { type: 'number', nullable: false },
-    type: { type: 'string', nullable: false },
-    pair: { type: 'string', nullable: true },
-    correct: { type: 'number', nullable: false },
-    response_time_ms: { type: 'number', nullable: false },
-    timestamp: { type: 'string', nullable: false },
-  },
   game_progress: {
     pair: { type: 'string', nullable: false },
     game_id: { type: 'string', nullable: false },
@@ -135,6 +124,41 @@ const TABLE_COLUMNS: Record<BackupTable, Record<string, ColumnSpec>> = {
     skin: { type: 'string', nullable: true },
     skin_mix: { type: 'string', nullable: true },
   },
+  pcic_cards: {
+    item_id: { type: 'string', nullable: false },
+    state: { type: 'string', nullable: false },
+    step: { type: 'number', nullable: false },
+    ease: { type: 'number', nullable: false },
+    interval: { type: 'number', nullable: false },
+    reps: { type: 'number', nullable: false },
+    lapses: { type: 'number', nullable: false },
+    due: { type: 'string', nullable: false },
+    last_review: { type: 'string', nullable: true },
+    introduced_at: { type: 'string', nullable: true },
+    known: { type: 'number', nullable: false },
+  },
+  mistake_batches: {
+    batch_id: { type: 'string', nullable: false },
+    json: { type: 'string', nullable: false },
+    imported_at: { type: 'string', nullable: false },
+  },
+  mistake_cards: {
+    item_id: { type: 'string', nullable: false },
+    state: { type: 'string', nullable: false },
+    step: { type: 'number', nullable: false },
+    ease: { type: 'number', nullable: false },
+    interval: { type: 'number', nullable: false },
+    reps: { type: 'number', nullable: false },
+    lapses: { type: 'number', nullable: false },
+    due: { type: 'string', nullable: false },
+    last_review: { type: 'string', nullable: true },
+    introduced_at: { type: 'string', nullable: true },
+    known: { type: 'number', nullable: false },
+  },
+  usage_minutes: {
+    date: { type: 'string', nullable: false },
+    minutes: { type: 'number', nullable: false },
+  },
 };
 
 // Throws on anything that isn't a payload this app version can import.
@@ -145,7 +169,7 @@ export function validateBackupPayload(raw: unknown): BackupPayload {
     throw new Error('Not a Kimacha backup file');
   }
   const p = raw as any;
-  if (p.schemaVersion !== BACKUP_SCHEMA_VERSION) {
+  if (p.schemaVersion !== 1 && p.schemaVersion !== BACKUP_SCHEMA_VERSION) {
     throw new Error(`Unsupported backup schema version: ${p.schemaVersion}`);
   }
   if (!p.tables || typeof p.tables !== 'object' || Array.isArray(p.tables)) {
@@ -156,8 +180,10 @@ export function validateBackupPayload(raw: unknown): BackupPayload {
     if ((LEGACY_BACKUP_TABLES as readonly string[]).includes(key)) continue;
     throw new Error(`Backup file has an unknown table: ${key}`);
   }
+  const required: readonly BackupTable[] = p.schemaVersion === 1 ? V1_BACKUP_TABLES : BACKUP_TABLES;
   for (const table of BACKUP_TABLES) {
     const rows = p.tables[table];
+    if (rows === undefined && !required.includes(table)) continue;
     if (!Array.isArray(rows)) {
       throw new Error(`Backup file is missing table: ${table}`);
     }

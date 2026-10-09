@@ -6,8 +6,8 @@
 // (applyPcicLevelMoves in lib/db/migrations.ts, run on native startup) uses this
 // map to carry over the existing pcic_cards SRS progress, so that the
 // re-leveling does not discard what the learner has already learned. The
-// pcic_cards table is not part of the backup (lib/backup.ts), so no web-side
-// migration is needed. This is a pure rename (no "twin" cards; the target level
+// pcic_cards table is part of the backup since schema v2 (lib/backup.ts), so a
+// native restore runs the migration again; the web memory DB has none. This is a pure rename (no "twin" cards; the target level
 // always gets a fresh id).
 
 export const PCIC_LEVEL_MOVES: Record<string, string> = {
