@@ -212,6 +212,6 @@ export interface LessonV2 {
   speak: Lang4; // LECKE-SEMA 3: felolvasásra írt szöveg, a spanyol szakaszok «...» közt
   glossary?: { word: string; gloss: Lang4 }[];
   items: (GrammarGapItem | GrammarMarkItem | MatchItem | FormItem | WhyItem | TransformItem | SpotItem | OrderItem | DictationItem)[];
-  focusTopic?: string; // FB318: szó-témakör (data/topics), aminek a kártyái a lecke szó-halmazába tartoznak a transform-szavak mellett
+  focusTopic?: string; // FB318: szó-témakör, aminek a kártyái a lecke szó-halmazába tartoznak a transform-szavak mellett
   noWordDeck?: boolean; // FB471: ennél a leckénél nincs "Practice the words" pakli (az automatikus szó-pakli kikapcsolása)
 }
