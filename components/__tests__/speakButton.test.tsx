@@ -1,6 +1,6 @@
-// a közös 🔊 / ⏹ gomb: brutalista palettán a játékok ikon-gombjaival
-// egyező doboz (ink keret, BrutalBox), classic palettán a mai sima gomb.
-// Mock-minta: feedbackBrutal.test.tsx.
+// the shared 🔊 / ⏹ button: on the brutalist palette a box matching the games' icon buttons
+// (ink border, BrutalBox), on the classic palette today's plain button.
+// Mock pattern: feedbackBrutal.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 

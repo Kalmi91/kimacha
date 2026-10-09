@@ -12,22 +12,23 @@ import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
 import ExamButton from './ExamButton';
 
-// szóbeli tétel a billentyűzet mikrofonjával.
-// A tanuló a szövegmező billentyűzetének mikrofon-gombjával mondja el a mondatot, a diktált szöveg a
-// mezőbe kerül; az app összeveti a várt mondattal (lib/exam/dictation.ts). Saját beszédfelismerő,
-// mikrofon-engedély és natív kód nincs. Helyes mondat után NINCS visszajelzés (a vizsga megy
-// tovább); hibás után az eltérő szavak ki vannak emelve mindkét oldalon, és a "Next" lép tovább.
-// Újrahasználható: a próbavizsga szóbeli része és a későbbi beszéd-gyakorló is ezt a kártyát hívja.
+// oral item with the keyboard's microphone.
+// The learner says the sentence with the microphone button of the text field's keyboard, the
+// dictated text goes into the field; the app compares it to the expected sentence
+// (lib/exam/dictation.ts). There is no own speech recogniser, microphone permission or native
+// code. After a correct sentence there is NO feedback (the exam moves on); after a wrong one the
+// differing words are highlighted on both sides and "Next" moves on.
+// Reusable: the oral part of the mock exam and the later speaking practice both use this card.
 type Props = {
-  /** Amit a tanuló lát: `translate` módban a kiinduló nyelvű mondat, `repeat` módban a célnyelvi. */
+  /** What the learner sees: in `translate` mode the source-language sentence, in `repeat` mode the target-language one. */
   prompt: string;
-  /** A várt célnyelvi mondat. */
+  /** The expected target-language sentence. */
   expected: string;
-  /** `translate` = fordítsd le és mondd el; `repeat` = olvasd fel a látott mondatot. */
+  /** `translate` = translate it and say it; `repeat` = read aloud the sentence you see. */
   mode: 'translate' | 'repeat';
-  /** A tanult nyelv kódja: a felirathoz és a spanyol névmás-elhagyás szabályához. */
+  /** Code of the learned language: for the caption and for the Spanish pronoun-drop rule. */
   targetLang: string;
-  /** A "Accents count" beállítás. */
+  /** The "Accents count" setting. */
   strictAccents: boolean;
   onDone: (correct: boolean) => void;
 };
@@ -60,7 +61,7 @@ export default function ExamSpeakCard({ prompt, expected, mode, targetLang, stri
   };
   const missed = result !== null;
 
-  // a Check (és hibás válasz után a Next) a billentyűzet fölé dokkolt sáv, ahogy a szókártyán (DockSlot).
+  // Check (and Next after a wrong answer) is a bar docked above the keyboard, as on the word card (DockSlot).
   const { docked, padBottom } = useDockedAction(
     missed
       ? { label: `${s.card.next} →`, tone: 'next', testID: 'exam-next', onPress: () => onDone(false) }
@@ -76,8 +77,8 @@ export default function ExamSpeakCard({ prompt, expected, mode, targetLang, stri
         <Text testID="exam-speak-prompt" style={[styles.prompt, { color: colors.text }]}>
           {prompt}
         </Text>
-        {/* Szándékosan nincs answerInputProps: az kikapcsolja a javaslat-sávot, és vele a billentyűzet
-            mikrofon-gombját is eltüntetheti; a diktáláshoz az alap billentyűzet kell. */}
+        {/* Intentionally no answerInputProps: it would turn off the suggestion bar, and with it could
+            also hide the keyboard's microphone button; dictation needs the stock keyboard. */}
         <TextInput
           testID="exam-speak-input"
           style={[

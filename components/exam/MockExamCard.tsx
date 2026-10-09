@@ -9,13 +9,13 @@ import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
 import ExamButton from './ExamButton';
 
-// a Stats fül "Practice exam" kártyája: szintenként egy
-// gomb (A1, A2; az es→en irányban csak az A2), alatta a legutóbbi eredmény vagy a félbehagyott
-// vizsga jelzése. A gomb mindig viszi tovább (DESIGN 9/9).
+// the Stats tab's "Practice exam" card: one button per level (A1, A2; only A2 in the es→en
+// direction), with the latest result or the unfinished-exam marker under it. The button always
+// leads somewhere.
 type Props = {
   levels: readonly MockLevel[];
   overview: MockOverview;
-  /** Hivatalos felépítésű vizsga (spanyol irány) vagy nemzetközi minta (angol): a szöveg másképp jelöli. */
+  /** Exam with the official structure (Spanish direction) or an international sample (English): the text labels it differently. */
   official: boolean;
   onStart: (level: MockLevel) => void;
 };

@@ -1,5 +1,5 @@
-// mondat-átírás drill a lecke-drillben. A
-// `kinds={['transform']}` mintáját a grammarDrillWhy.test.tsx adja (D3).
+// sentence-transformation drill in the lesson drill. The pattern for `kinds={['transform']}`
+// comes from grammarDrillWhy.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -13,8 +13,8 @@ jest.mock('@/lib/ThemeContext', () => ({
   useTheme: () => ({ theme: 'light' }),
 }));
 
-// A `db.getStrictAccents()` a mount-effektben fut, egy mikrotaszk-fordulóval
-// később; a szigor-tesztnek meg kell várnia, mielőtt a mezőt kitölti.
+// `db.getStrictAccents()` runs in the mount effect, one microtask turn later; the strictness
+// test has to wait for it before it fills in the field.
 const flush = async () => {
   await act(async () => {
     await Promise.resolve();

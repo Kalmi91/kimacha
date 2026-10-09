@@ -11,13 +11,12 @@ import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
 import ExamButton from './ExamButton';
 
-// feleletválasztós tétel (nyelvtani lyukas
-// mondat, olvasás). A koppintás azonnal válaszol: helyesnél a vizsga megy tovább,
-// hibásnál a helyes válasz kiemelve látszik, és a "Next" lép tovább.
+// multiple-choice item (grammar gap sentence, reading). A tap answers immediately: if it is
+// correct the exam moves on, if wrong the correct answer is shown highlighted and "Next" moves on.
 type Props = {
-  /** A feladat rövid felirata a szöveg fölött. */
+  /** The short caption of the task above the text. */
   heading: string;
-  /** A lyukas mondat vagy az olvasandó szöveg. */
+  /** The gap sentence or the text to read. */
   text: string;
   options: string[];
   correctIndex: number;

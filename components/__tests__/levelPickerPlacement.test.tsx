@@ -1,5 +1,5 @@
-// a szintválasztó lapon a szint-sorok mellett
-// ott a halk szintfelmérő-belépő; a kézi szintválasztás továbbra is működik.
+// on the level picker sheet, beside the level rows, there is the quiet placement-test entry;
+// manual level selection still works.
 
 import { fireEvent, render } from '@testing-library/react-native';
 

@@ -1,6 +1,6 @@
-// a neo-brutalista drill (2. képernyő): szegmentált progress, combo-matrica
-// (csak memóriában, hibánál nullázódik, x2-től látszik), 2x2 válasz-rács, a
-// helyes = a kitöltés + pipa, b kitöltésű visszajelző, "next →" gomb.
+// the neo-brutalist drill (screen 2): segmented progress, combo sticker
+// (in memory only, resets on a mistake, shown from x2), 2x2 answer grid, the
+// correct one = the fill + a check mark, a feedback box with the b fill, "next →" button.
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 import { act, fireEvent, render, screen, within } from '@testing-library/react-native';
@@ -50,11 +50,11 @@ describe('GrammarDrill, neo-brutalista (NY22)', () => {
     expect(screen.queryByTestId('grammar-combo')).toBeNull();
 
     pick(items[0].correctIndex);
-    // helyes = a kitöltés + pipa, visszajelző + next gomb
+    // correct = the fill + a check mark, feedback box + next button
     const options = screen.getAllByTestId('grammar-option');
     expect(StyleSheet.flatten(options[items[0].correctIndex].props.style).backgroundColor).toBe(PALETTE_FILLS.brand.a);
     expect(screen.queryByText('perfect!')).toBeTruthy();
-    // a közös jó-jelzés (ResultBadge) is ✓-t mutat, ezért a helyes opción belül keressük.
+    // the shared "right" badge (ResultBadge) also shows a ✓, so we look inside the correct option.
     expect(within(options[items[0].correctIndex]).queryByText(' ✓')).toBeTruthy();
     expect(screen.queryByTestId('grammar-combo')).toBeNull();
     fireEvent.press(screen.getByTestId('grammar-next'));
@@ -105,7 +105,7 @@ describe('GrammarDrill, neo-brutalista (NY22)', () => {
       pairs: { en: string; es: string }[];
     };
     const rightOrder = shuffleNoFixedPoints(match.pairs.length, hashString(match.id));
-    // hibás pár: az 1. bal a 0. jobb (ha az nem az övé)
+    // wrong pair: left 1 with right 0 (if that one is not its match)
     const wrongPos = rightOrder.findIndex((p) => p !== 0);
     fireEvent.press(screen.getByTestId('match-left-0'));
     fireEvent.press(screen.getByTestId(`match-right-${wrongPos}`));
@@ -118,7 +118,7 @@ describe('GrammarDrill, neo-brutalista (NY22)', () => {
     expect(screen.queryAllByText(' ✓').length).toBeGreaterThan(0);
     expect(screen.queryByText('Not quite!')).toBeTruthy();
     fireEvent.press(screen.getByTestId('grammar-next'));
-    // a leckében két párosítás van; a másodikat hibátlanul oldjuk meg.
+    // the lesson has two matching items; we solve the second one without mistakes.
     const second = items.map((r) => r.item).filter((i) => (i as { kind?: string }).kind === 'match')[1] as unknown as {
       id: string;
       pairs: { en: string; es: string }[];
@@ -129,7 +129,7 @@ describe('GrammarDrill, neo-brutalista (NY22)', () => {
       fireEvent.press(screen.getByTestId(`match-right-${secondOrder.indexOf(li)}`));
     });
     fireEvent.press(screen.getByTestId('grammar-next'));
-    // a párosítás részpontot kap: az első 6 párból 5 (1 elrontott), a második 6/6 = 11/12 (nem 0).
+    // matching earns partial credit: 5 of the first 6 pairs (1 wrong), the second 6/6 = 11/12 (not 0).
     expect(onFinish).toHaveBeenCalledWith(11, 12);
     view.unmount();
   });
@@ -140,7 +140,7 @@ describe('GrammarDrill, neo-brutalista (NY22)', () => {
     expect(dashedCount()).toBe(0);
     fireEvent.press(screen.getByTestId('formCheck'));
     expect(screen.queryByText('Not quite!')).toBeTruthy();
-    // a beviteli doboz + a szaggatott keretű ✗ jelzés (a rossz válasz alakja is más)
+    // the input box + the ✗ badge with a dashed border (the wrong answer differs in shape too)
     expect(dashedCount()).toBe(2);
     fireEvent.press(screen.getByTestId('grammar-next'));
     expect(onFinish).not.toHaveBeenCalled();
@@ -152,7 +152,7 @@ describe('GrammarDrill, neo-brutalista (NY22)', () => {
     const { view } = await renderKind('why');
     const item = lesson.items.find((i) => i.kind === 'why') as unknown as { correctIndex: number };
     const options = screen.getAllByTestId('grammar-option');
-    // a nem-helyes elsőt nyomjuk meg
+    // we press the first option that is not correct
     const picked = options.findIndex((_, i) => i !== item.correctIndex);
     fireEvent.press(options[picked]);
     expect(StyleSheet.flatten(screen.getAllByTestId('grammar-option')[picked].props.style).borderStyle).toBe('dashed');
@@ -186,7 +186,7 @@ describe('GrammarDrill, neo-brutalista (NY22)', () => {
     fireEvent.changeText(screen.getByTestId('transform-input'), 'nope');
     expect(dashedCount()).toBe(0);
     fireEvent.press(screen.getByTestId('transform-check'));
-    // a beviteli doboz + a szaggatott keretű ✗ jelzés
+    // the input box + the ✗ badge with a dashed border
     expect(dashedCount()).toBe(2);
     expect(screen.queryByText('Correct answer')).toBeTruthy();
     expect(StyleSheet.flatten(screen.getByTestId('transform-next').props.style).backgroundColor).toBe('#111111');
