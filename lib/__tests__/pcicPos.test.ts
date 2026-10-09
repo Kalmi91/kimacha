@@ -1,6 +1,6 @@
 import { posOf } from '../pcicPos';
 
-describe('posOf (5c, FB348/351/358/359)', () => {
+describe('posOf', () => {
   // 'el perro'/'la mesa'/'una casa' are all in the main
   // corpus (data/words-open) with pos+gender, so they are now returned
   // by the corpus, gender included, not by the article rule.

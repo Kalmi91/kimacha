@@ -15,7 +15,7 @@ jest.mock('@/lib/ThemeContext', () => ({
 
 const lesson = lessonJson as unknown as LessonV2;
 
-describe('GrammarDrill: presente-irregular full playthrough (FB299)', () => {
+describe('GrammarDrill: presente-irregular full playthrough', () => {
   it('choice kind (12 item): "next" advances every item to onFinish', () => {
     const onFinish = jest.fn();
     const total = lesson.items.filter((i) => i.kind === undefined).length;

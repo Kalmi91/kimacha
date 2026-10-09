@@ -253,7 +253,7 @@ describe('mergeDeckState', () => {
   const cells = tableCellsForLesson(lessonFor('es', LESSON_ID)!);
   const tableOrder = cells.map((c) => c.id);
 
-  it('with no persisted state at all, everything starts fresh IN THE TABLE ORDER (FB389 default)', () => {
+  it('with no persisted state at all, everything starts fresh IN THE TABLE ORDER', () => {
     const merged = mergeDeckState(cells, LESSON_ID, undefined);
     expect(merged.cells).toHaveLength(10);
     expect(merged.shuffled).toBe(false);
@@ -287,7 +287,7 @@ describe('mergeDeckState', () => {
   // an old save, from BEFORE the `shuffled` field was introduced (only
   // `cells` + `resetCount`) - it must not throw, and must NOT silently
   // reorder an in-progress shuffled round to table order.
-  it('a persisted state without the `shuffled` field (pre-FB389 save) defaults to shuffled=true, not a reorder', () => {
+  it('a persisted state without the `shuffled` field (an older save) defaults to shuffled=true, not a reorder', () => {
     const oldPersisted = { cells: [], resetCount: 0 } as unknown as DeckState;
     const merged = mergeDeckState(cells, LESSON_ID, oldPersisted);
     expect(merged.shuffled).toBe(true);

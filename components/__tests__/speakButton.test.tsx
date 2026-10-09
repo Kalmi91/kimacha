@@ -21,7 +21,7 @@ const flush = async (times = 6) => {
   }
 };
 
-describe('SpeakButton (PLAN-fb1001 K2)', () => {
+describe('SpeakButton', () => {
   it('with the brand palette a box (2.5 px ink border), tapping calls, ⏹ while speaking', async () => {
     await getDb().setGrammarPalette('brand');
     const onPress = jest.fn();

@@ -149,7 +149,7 @@ describe('pickSm2Session', () => {
     expect(ids).not.toContain('r2'); // due only in the future, not in it
   });
 
-  it('newLimit held by counting today introducedAt', () => {
+  it("newLimit held by counting today's introducedAt", () => {
     const alreadyIntroduced: Sm2Card[] = ['a', 'b', 'c'].map(id => ({
       ...sm2NewCard(id),
       state: 'learning',

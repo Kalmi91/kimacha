@@ -39,7 +39,7 @@ const flush = async (times = 3) => {
 
 const cells = tableCellsForLesson(lessonFor('es', 'imperfecto')!);
 
-describe('imperfecto table deck: English prompt (FB463)', () => {
+describe('imperfecto table deck: English prompt', () => {
   beforeEach(async () => {
     jest.clearAllMocks();
     const db = getDb();

@@ -13,7 +13,7 @@ function batch() {
 }
 
 describe('cardsForBatch', () => {
-  it('builds sentence/word/drill cards with the id scheme from PLAN-hibaim.md, skipping doubtful sentences', () => {
+  it('builds sentence/word/drill cards with the documented id scheme, skipping doubtful sentences', () => {
     const cards = cardsForBatch(batch());
 
     // 3 sentences in the fixture, 1 doubtful (s3) -> only 2 sentence cards.

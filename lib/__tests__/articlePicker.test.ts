@@ -14,7 +14,7 @@ describe('articlePickerApplies', () => {
     expect(articlePickerApplies('es', true)).toBe(true);
   });
 
-  it('stays on verb and adjective cards too, where ⊘ is the right answer (FB214)', () => {
+  it('stays on verb and adjective cards too, where ⊘ is the right answer', () => {
     // The button row does not depend on the part of speech: it is up to the learner to decide whether an article is needed.
     expect(articlePickerApplies('es', true)).toBe(true);
   });
@@ -73,7 +73,7 @@ describe('articleOf / bodyOf', () => {
   });
 });
 
-describe('articlePickerApplies with the expected answer (FB262-264)', () => {
+describe('articlePickerApplies with the expected answer', () => {
   it('hides the chips on a bare multi-word phrase', () => {
     expect(articlePickerApplies('es', true, 'voy a viajar')).toBe(false);
     expect(articlePickerApplies('es', true, 'van a llegar')).toBe(false);
@@ -91,13 +91,13 @@ describe('articlePickerApplies with the expected answer (FB262-264)', () => {
   });
 });
 
-describe('articlePickerApplies on sentence cards (FB291)', () => {
+describe('articlePickerApplies on sentence cards', () => {
   it('hides the chips on a full sentence even when it starts with an article', () => {
     expect(articlePickerApplies('es', true, 'El gato está en la mesa.')).toBe(false);
     expect(articlePickerApplies('es', true, '¿Dónde está el baño?')).toBe(false);
   });
 
-  it('keeps the earlier word-level rules (FB262)', () => {
+  it('keeps the earlier word-level rules', () => {
     expect(articlePickerApplies('es', true, 'el fin de semana')).toBe(true);
     expect(articlePickerApplies('es', true, 'perro')).toBe(true);
     expect(articlePickerApplies('es', true, 'voy a viajar')).toBe(false);

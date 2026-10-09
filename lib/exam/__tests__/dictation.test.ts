@@ -37,7 +37,7 @@ describe('compareDictation: case, punctuation', () => {
     expect(compareDictation('i dont know', "I don't know.", loose).correct).toBe(false);
   });
 
-  it('the keyboard curly apostrophe (’) is the same as the straight one', () => {
+  it("the keyboard's curly apostrophe (’) is the same as the straight one", () => {
     expect(compareDictation('I don’t know', "I don't know.", loose).correct).toBe(true);
   });
 });

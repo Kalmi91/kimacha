@@ -20,7 +20,7 @@ describe('game_progress (memory db)', () => {
     );
   });
 
-  it('resetGameProgress clears one game only (PLAN-fb1001 FB431)', async () => {
+  it('resetGameProgress clears one game only', async () => {
     await db.setGameProgress('grammar-x', 'a', 'done');
     await db.setGameProgress('other-x', 'b', 'done');
     await db.resetGameProgress('grammar-x');

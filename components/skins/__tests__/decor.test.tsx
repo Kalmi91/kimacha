@@ -102,7 +102,7 @@ describe('decor of the 4 starter themes', () => {
     view.unmount();
   });
 
-  it('szocreal: the Daily plan computes from today minutes, the label goes above 100% too, the bar stops at 100%', async () => {
+  it("szocreal: the Daily plan computes from today's minutes, the label goes above 100% too, the bar stops at 100%", async () => {
     await getDb().setWeeklyGoalMinutes(60);
     for (let i = 0; i < 9; i++) await getDb().addUsageMinute();
     const view = await mountSkin('szocreal');

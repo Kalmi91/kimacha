@@ -159,7 +159,7 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
     }
   });
 
-  it('speak has all 4 languages, no «» sections (FB414: read aloud without Spanish), no digits or parentheses', () => {
+  it('speak has all 4 languages, no «» sections (read aloud without Spanish), no digits or parentheses', () => {
     for (const lang of LANGS) {
       const text = lesson.speak[lang];
       expect(text).toBeTruthy();

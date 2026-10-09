@@ -16,7 +16,7 @@ const NEW_VERBS = [
 
 const norm = (w: string) => w.toLowerCase().replace(/[¿?¡!.,;:()"«»]/g, '');
 
-describe('indefinido-regular: the verbs and words of the drills are in the tables (FB494)', () => {
+describe('indefinido-regular: the verbs and words of the drills are in the tables', () => {
   it('every one of the 20 added verbs has a one-verb table, and the six originals are still there', () => {
     const tables = lesson.body.filter((b) => b.kind === 'table');
     const verbHeaders = tables.flatMap((b) => (b.kind === 'table' && b.header.length === 2 ? [b.header[1].es] : []));

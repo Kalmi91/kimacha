@@ -70,7 +70,7 @@ describe('requeueAfterGrade', () => {
     expect(next).toEqual([graded]);
   });
 
-  it('the returned card graduates after "Knew it" and drops out of today queue (LEARNING_STEPS=1)', () => {
+  it('the returned card graduates after "Knew it" and drops out of today\'s queue (LEARNING_STEPS=1)', () => {
     const now = 1_000_000;
     const missed = sm2Review(sm2NewCard('b1-0020'), 'again', TODAY);
     const other1 = reviewCard({ itemId: 'b1-0021' });
@@ -221,7 +221,7 @@ describe('countDoneToday', () => {
 // only in React state (extraNew), so a tap after the day's introduced count
 // already ran past the limit (limit 10, introduced today 18) gave back only
 // 2 new cards instead of 10, and the bonus vanished on the next reload.
-describe('nextPcicNewBonus + pcicNewBudget (FB385/386)', () => {
+describe('nextPcicNewBonus + pcicNewBudget', () => {
   it('reproduces the bug case: limit 10, 18 already introduced today, "+10" gives 10 new cards, not 2', () => {
     const limit = 10;
     const introducedToday = 18;
@@ -279,7 +279,7 @@ function kindMap(map: Record<string, PcicKind>): (itemId: string) => PcicKind | 
   return (itemId) => map[itemId];
 }
 
-describe('countIntroducedTodayByKind (FB387/395)', () => {
+describe('countIntroducedTodayByKind', () => {
   it('separates the word and sentence cards introduced today', () => {
     const cards = [
       reviewCard({ itemId: 'w1', introducedAt: TODAY }),
@@ -302,7 +302,7 @@ describe('countIntroducedTodayByKind (FB387/395)', () => {
     expect(countIntroducedTodayByKind(cards, TODAY, kindOf)).toEqual({ words: 2, sentences: 1 });
   });
 
-  it('counts only cards introduced TODAY, not yesterday ones', () => {
+  it("counts only cards introduced TODAY, not yesterday's", () => {
     const cards = [
       reviewCard({ itemId: 'today1', introducedAt: TODAY }),
       reviewCard({ itemId: 'yesterday1', introducedAt: addDays(TODAY, -1) }),
@@ -317,7 +317,7 @@ describe('countIntroducedTodayByKind (FB387/395)', () => {
   });
 });
 
-describe('pickStrongerSm2Card (FB384, 7b)', () => {
+describe('pickStrongerSm2Card', () => {
   it('more successful repetitions (reps - lapses) wins', () => {
     const strong = reviewCard({ itemId: 'x', reps: 10, lapses: 1 }); // 9 successful
     const weak = reviewCard({ itemId: 'y', reps: 5, lapses: 0 }); // 5 successful
@@ -374,7 +374,7 @@ describe('thinSentences', () => {
 import { countFinishedToday, dayProgressPercent, finishedInBatch } from '../pcicSession';
 
 // after the "+N new words" extension the bar measures the new batch (relative to the number of cards done at the time of the extension).
-describe('finishedInBatch (FB456)', () => {
+describe('finishedInBatch', () => {
   it('after +15 it is 0% at the first new card, 100% at the last', () => {
     const base = 10; // at the time of the extension 10 cards were done today
     expect(dayProgressPercent(finishedInBatch(10, base), 15)).toBe(0);
@@ -387,7 +387,7 @@ describe('finishedInBatch (FB456)', () => {
   });
 });
 
-describe('dayProgressPercent (FB430)', () => {
+describe('dayProgressPercent', () => {
   it('empty at the first card', () => {
     expect(dayProgressPercent(0, 30)).toBe(0);
   });
@@ -417,7 +417,7 @@ describe('dayProgressPercent (FB430)', () => {
   });
 });
 
-describe('countFinishedToday (FB430)', () => {
+describe('countFinishedToday', () => {
   const card = (itemId: string, lastReview: string | null) => ({ ...sm2NewCard(itemId), lastReview });
 
   it('only cards rated today AND no longer in the queue count as done', () => {
@@ -430,7 +430,7 @@ describe('countFinishedToday (FB430)', () => {
 });
 
 // User feedback ("new 42?"): the daily limit is DAILY; "+10"s taken at another level must not come back as new words at the other level.
-describe('pcicSessionNewLimit (FB452)', () => {
+describe('pcicSessionNewLimit', () => {
   const introduced = (prefix: string, n: number) =>
     Array.from({ length: n }, (_, i) => sm2Review(sm2NewCard(`${prefix}-${i}`), 'good', TODAY));
   const fresh = (prefix: string, n: number) => Array.from({ length: n }, (_, i) => `${prefix}-new-${i}`);
@@ -471,7 +471,7 @@ describe('pcicSessionNewLimit (FB452)', () => {
 });
 
 // User feedback ("there are still 40 words, why doesn't it bring them up?"): the "Practice words" button gives from the missing words when the limit has run out.
-describe('practiceTopUpStep (FB499)', () => {
+describe('practiceTopUpStep', () => {
   it('exhausted budget: gives all missing words on one tap', () => {
     expect(practiceTopUpStep({ limit: 10, bonus: 0, introducedAllLevels: 10, missing: 40 })).toBe(40);
     expect(practiceTopUpStep({ limit: 10, bonus: 0, introducedAllLevels: 10, missing: 3 })).toBe(3);

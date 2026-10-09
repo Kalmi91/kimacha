@@ -28,7 +28,7 @@ const flush = async (times = 8) => {
   }
 };
 
-describe('useAppResume (FB470)', () => {
+describe('useAppResume', () => {
   beforeEach(async () => {
     mockReplace.mockClear();
     mockPush.mockClear();

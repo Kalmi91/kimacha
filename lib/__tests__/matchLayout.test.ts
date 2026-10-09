@@ -29,14 +29,14 @@ describe('match drill layout', () => {
     expect(items.length).toBeGreaterThan(50);
   });
 
-  it('FB442: no pair sits in its own row on the right-hand side', () => {
+  it('no pair sits in its own row on the right-hand side', () => {
     for (const it of items) {
       const order = shuffleNoFixedPoints(it.pairs!.length, hashString(it.id));
       order.forEach((p, i) => expect([it.id, p === i]).toEqual([it.id, false]));
     }
   });
 
-  it('FB441: ii-match-01 pairs the verb forms only (one Spanish word per pair)', () => {
+  it('ii-match-01 pairs the verb forms only (one Spanish word per pair)', () => {
     const it = items.find((i) => i.id === 'ii-match-01')!;
     expect(it.pairs!.length).toBeGreaterThanOrEqual(5);
     for (const p of it.pairs!) expect(p.es.trim().split(/\s+/)).toHaveLength(1);

@@ -85,7 +85,7 @@ async function clearProgress() {
   }
 }
 
-describe('grammar lesson screen: lesson % = average of ALL kinds (FB415)', () => {
+describe('grammar lesson screen: lesson % = average of ALL kinds', () => {
   beforeEach(clearProgress);
 
   it('one perfect kind out of several is NOT 100% for the lesson', async () => {
@@ -107,7 +107,7 @@ describe('grammar lesson screen: lesson % = average of ALL kinds (FB415)', () =>
     expect(screen.queryByTestId('grammar-kind-percent-form')).toBeNull();
   });
 
-  it('a match with one wrong pair out of six scores 5/6 = 83%, not 0 (FB420)', async () => {
+  it('a match with one wrong pair out of six scores 5/6 = 83%, not 0', async () => {
     render(<GrammarLessonScreen />);
     await flush(4);
 
@@ -121,7 +121,7 @@ describe('grammar lesson screen: lesson % = average of ALL kinds (FB415)', () =>
   });
 });
 
-describe('grammar lesson screen: a half-done round is saved and resumed (FB421)', () => {
+describe('grammar lesson screen: a half-done round is saved and resumed', () => {
   beforeEach(clearProgress);
 
   it('shows "3/10 · 20%" for 2 right of 3 answered, resumes at item 4, and a weaker restart does not lower the best', async () => {

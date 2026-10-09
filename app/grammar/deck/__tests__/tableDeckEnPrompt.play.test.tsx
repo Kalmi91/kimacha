@@ -40,7 +40,7 @@ const flush = async (times = 3) => {
 
 const cells = tableCellsForLesson(lessonFor('es', 'indefinido-regular')!);
 
-describe('table-deck screen: enPrompt (FB378)', () => {
+describe('table-deck screen: enPrompt', () => {
   beforeEach(async () => {
     jest.clearAllMocks();
     const db = getDb();
