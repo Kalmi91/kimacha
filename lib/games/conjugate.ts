@@ -17,7 +17,7 @@
 // not an attempt at an exhaustive Spanish grammar.
 
 export type Tense = 'presente' | 'indefinido' | 'imperfecto' | 'futuro' | 'condicional' | 'subjuntivo_presente';
-export type Person = 'yo' | 'tu' | 'el' | 'nosotros' | 'ellos';
+type Person = 'yo' | 'tu' | 'el' | 'nosotros' | 'ellos';
 
 export const TENSES: Tense[] = ['presente', 'indefinido', 'imperfecto', 'futuro', 'condicional', 'subjuntivo_presente'];
 
@@ -26,9 +26,9 @@ export const TENSES: Tense[] = ['presente', 'indefinido', 'imperfecto', 'futuro'
 // vosotros omitted (Latin-American convention: ustedes/ellos double up). This
 // module follows the same 5-person shape for consistency with the rest of
 // the app's Spanish grammar content.
-export const PERSONS: Person[] = ['yo', 'tu', 'el', 'nosotros', 'ellos'];
+const PERSONS: Person[] = ['yo', 'tu', 'el', 'nosotros', 'ellos'];
 
-export interface ConjugationForm {
+interface ConjugationForm {
   person: Person;
   form: string;
 }

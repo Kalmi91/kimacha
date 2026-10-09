@@ -11,7 +11,7 @@ import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
 
 const LEARN_KEY = 'learn';
 
-export interface LearnResume {
+interface LearnResume {
   day: string;
   level: string;
   /** A sor tételei sorrendben, az első a soron lévő kártya. */

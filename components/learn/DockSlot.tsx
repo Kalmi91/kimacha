@@ -15,7 +15,7 @@ type ColorScheme = (typeof Colors)['light'];
 // bejelenti, mi legyen rajta (useDockedAction), így a tétel nem kell ismerje a képernyő szerkezetét.
 // Host nélkül (önálló render, teszt) a tétel a régi inline gombot rajzolja.
 
-export interface DockSpec {
+interface DockSpec {
   label: string;
   onPress: () => void;
   tone: DockedActionTone;
@@ -32,7 +32,7 @@ interface DockContextValue {
 
 const DockContext = createContext<DockContextValue | null>(null);
 
-export interface DockSlotHost {
+interface DockSlotHost {
   value: DockContextValue;
   /** A dokkolt sáv, a képernyő-konténer KÖZVETLEN gyerekeként kell kirajzolni (absolute, bottom = a billentyűzet emelése). */
   node: ReactNode;

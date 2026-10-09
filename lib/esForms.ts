@@ -11,7 +11,7 @@
 // A ragozó motor és a főnév/melléknév-szabályok a hívótól jönnek (deps), így a modulnak nincs
 // importja, és a Node (scripts/audit-games.mjs) kiterjesztés nélküli relatív import nélkül tölti.
 
-export interface FormDeps {
+interface FormDeps {
   conjugate: (infinitive: string, tense: any) => { person: string; form: string }[] | null;
   TENSES: readonly any[];
   esPlural: (word: string) => string | null;
@@ -189,7 +189,7 @@ export function formsOfCard(es: string, pos: string, deps: FormDeps): string[] {
   return out;
 }
 
-export const ENCLITIC_PRONOUNS = ['melo', 'mela', 'selo', 'sela', 'telo', 'tela', 'nos', 'les', 'los', 'las', 'me', 'te', 'se', 'le', 'lo', 'la'];
+const ENCLITIC_PRONOUNS = ['melo', 'mela', 'selo', 'sela', 'telo', 'tela', 'nos', 'les', 'los', 'las', 'me', 'te', 'se', 'le', 'lo', 'la'];
 
 /**
  * Az igéhez írt névmás levágása (verlo, ayúdame, repetirlo, visitarnos): a lehetséges tövek

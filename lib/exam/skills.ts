@@ -7,7 +7,7 @@ import { examPassed, type ExamScore } from './score';
 import type { ExamItemResult, ExamSkill } from './types';
 
 /** A készségek sorrendje az eredmény-lapon; csak a vizsgában szerepelt készségek jelennek meg. */
-export const EXAM_SKILL_ORDER: readonly ExamSkill[] = ['words', 'grammar', 'reading', 'speaking'];
+const EXAM_SKILL_ORDER: readonly ExamSkill[] = ['words', 'grammar', 'reading', 'speaking'];
 
 /** Legfeljebb ennyi lecke-link jön a gyenge nyelvtan alá. */
 export const MAX_LESSON_LINKS = 3;
@@ -38,7 +38,7 @@ export function skillResults(score: ExamScore): SkillResult[] {
   return out;
 }
 
-export interface WeakLesson {
+interface WeakLesson {
   topicId: string;
   /** Ennyi tétel ment el a leckéből a vizsgában. */
   missed: number;

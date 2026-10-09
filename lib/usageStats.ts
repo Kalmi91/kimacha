@@ -34,7 +34,7 @@ export const MIN_DAILY_NEW_LIMIT = 5;
 export const MAX_DAILY_NEW_LIMIT = 100;
 export const DAILY_NEW_LIMIT_STEP = 5;
 
-export interface GoalProgress {
+interface GoalProgress {
   pct: number; // 0..1, clamped, for the progress bar
   behind: boolean; // still short of the goal for this 7-day window
   remaining: number; // minutes left to reach it (0 once reached)

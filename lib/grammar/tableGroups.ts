@@ -6,12 +6,12 @@ import { isConjugationTable } from './tableShape';
 
 export type TableBlock = Extract<LessonBlock, { kind: 'table' }>;
 
-export type BodyEntry =
+type BodyEntry =
   | { kind: 'block'; block: LessonBlock; index: number }
   | { kind: 'tabs'; tables: TableBlock[]; index: number };
 
 /** Ennyi, egymás utáni egy-igés ragozási táblától lesz füles csoport. */
-export const TABLE_TABS_MIN = 3;
+const TABLE_TABS_MIN = 3;
 
 function isSingleVerbConjugation(block: LessonBlock): block is TableBlock {
   return block.kind === 'table' && block.header.length === 2 && isConjugationTable(block.header, block.rows);

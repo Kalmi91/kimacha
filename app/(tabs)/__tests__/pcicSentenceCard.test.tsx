@@ -41,7 +41,6 @@ jest.mock('@/data/pcic', () => {
   return {
     PCIC_LEVELS: ['A1'],
     PCIC_VIEW_LEVELS: ['A1'],
-    LEVEL_LABELS: { A1: 'Beginner' },
     pcicItemsForLevel: () => ITEMS,
     findPcicItem: (id: string) => ITEMS.find((i) => i.id === id),
     levelOfItem: () => undefined,

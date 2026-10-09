@@ -12,13 +12,13 @@
 
 export type PromptLang = 'en' | 'es' | 'hu';
 
-export interface PromptOverlapWord {
+interface PromptOverlapWord {
   id: number;
   headword: string;
   prompt: string;
 }
 
-export interface PromptOverlapCluster {
+interface PromptOverlapCluster {
   kind: 'exact' | 'partial';
   // partial esetén az átfedő normalizált sense, ami miatt a fürt összeállt;
   // exact esetén null (ott a teljes prompt azonos, nincs egyetlen "ok" sense).
@@ -41,7 +41,7 @@ function stripArticle(sense: string, lang: PromptLang): string {
   return re ? sense.replace(re, '') : sense;
 }
 
-export function normalizeSense(raw: string, lang: PromptLang): string {
+function normalizeSense(raw: string, lang: PromptLang): string {
   return stripArticle(raw.trim().toLowerCase(), lang).replace(/[.\s]+$/, '').trim();
 }
 

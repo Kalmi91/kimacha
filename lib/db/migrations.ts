@@ -73,7 +73,7 @@ export async function applyWordMerges(db: SQLite.SQLiteDatabase) {
 // Idempotens: a SELECT a második futástól 0 sort ad (a régi id-jű
 // pcic_cards-sor már nincs a táblában), a `pcic_cards` a backup-ból ki van
 // hagyva (lib/backup.ts), tehát csak itt, natív induláskor kell futnia.
-export async function applyPcicLevelMoves(db: SQLite.SQLiteDatabase) {
+async function applyPcicLevelMoves(db: SQLite.SQLiteDatabase) {
   const oldIds = Object.keys(PCIC_LEVEL_MOVES);
   if (oldIds.length === 0) return;
   const placeholders = oldIds.map(() => '?').join(',');
@@ -112,7 +112,7 @@ function pcicRowToSm2Card(row: any): Sm2Card {
 // követve: ha mindkét oldalon van haladás, az erősebb (pickStrongerSm2Card)
 // nyer, a gyengébb sor törlődik. Idempotens: a második futástól a SELECT 0
 // sort ad. Csak natív induláskor kell futnia (lásd applyPcicLevelMoves fent).
-export async function applyPcicDedup(db: SQLite.SQLiteDatabase) {
+async function applyPcicDedup(db: SQLite.SQLiteDatabase) {
   const loserIds = Object.keys(PCIC_DEDUP_MOVES);
   if (loserIds.length === 0) return;
   const placeholders = loserIds.map(() => '?').join(',');

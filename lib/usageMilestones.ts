@@ -7,9 +7,9 @@
 // (picked at random, so they come back over time like the FB108 midnight pool)
 // instead of the single "{min} minutes today" template.
 
-export const DAILY_MILESTONES = [30, 60];
-export const LONG_HAUL_FROM = 60;
-export const LONG_HAUL_EVERY = 15;
+const DAILY_MILESTONES = [30, 60];
+const LONG_HAUL_FROM = 60;
+const LONG_HAUL_EVERY = 15;
 
 export function isDailyMilestone(minutes: number): boolean {
   if (DAILY_MILESTONES.includes(minutes)) return true;

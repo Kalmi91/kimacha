@@ -19,7 +19,7 @@ const TAIL_EDGE = 3;
 type Pct = `${number}%`;
 type Dot = { left: Pct; top: Pct; size: number };
 
-export const DOTS: Dot[] = Array.from({ length: ROWS * COLS }, (_, i) => {
+const DOTS: Dot[] = Array.from({ length: ROWS * COLS }, (_, i) => {
   const row = Math.floor(i / COLS);
   const col = i % COLS;
   return {

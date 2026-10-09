@@ -46,10 +46,10 @@ export interface SyllabusUnit {
  *   full    (zöld)  PCIC-teljesség, csak a leltár kedvéért
  *   perfect (sárga) 100% helyesírás és nyelvtani finomság
  */
-export type GrammarTier = 'core-plus' | 'core' | 'exam' | 'full' | 'perfect';
+type GrammarTier = 'core-plus' | 'core' | 'exam' | 'full' | 'perfect';
 
 /** Sáv témánként. Ami nincs a listán, 'full' (a leltárban benne van, de nem sürgős). */
-export const GRAMMAR_TIER: Record<string, GrammarTier> = {
+const GRAMMAR_TIER: Record<string, GrammarTier> = {
   // --- A1 ---
   'clases-de-palabras': 'exam',
   'sustantivo-numero': 'core',
@@ -796,7 +796,7 @@ export function hasLesson(lang: string, topicId: string): boolean {
   return getGrammarTopic(lang, topicId) !== undefined;
 }
 
-export interface GrammarTopicProgress {
+interface GrammarTopicProgress {
   state: 'done';
   correct: number;
   total: number;
@@ -858,14 +858,14 @@ export function doneGrammarTopicProgress(
  * sorrendjében (a "why" is, ellentétben a "kész" feltétellel fentebb): a lecke %-a
  * ezek átlaga, a meg nem kezdett fajta 0.
  */
-export const LESSON_KIND_ORDER: readonly GrammarKind[] = ['choice', 'article', 'match', 'form', 'why', 'transform', 'spot', 'order', 'dictation'];
+const LESSON_KIND_ORDER: readonly GrammarKind[] = ['choice', 'article', 'match', 'form', 'why', 'transform', 'spot', 'order', 'dictation'];
 
 // PLAN-fb0929 7. lépés (D1): az ideiglenes ("ÚJ · TESZT") fajták gombja megjelenik, de a
 // lecke %-át nem húzzák le (amíg Kálmán nem hagyja jóvá őket, nem részei a leckének).
 const TRIAL_KINDS: readonly GrammarKind[] = ['spot', 'order', 'dictation'];
 
 /** A lecke gombjai: minden fajta, amiből van item. */
-export function lessonButtonKinds(lesson: GrammarTopicData): GrammarKind[] {
+function lessonButtonKinds(lesson: GrammarTopicData): GrammarKind[] {
   const counts = grammarKindCounts(lesson);
   return LESSON_KIND_ORDER.filter((k) => counts[k] > 0);
 }

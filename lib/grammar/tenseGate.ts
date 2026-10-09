@@ -28,7 +28,7 @@ export type Structure =
   | 'imperativo';
 
 /** Melyik szinten TANÍTJUK a szerkezetet (lib/grammar/syllabus.ts sorrendje). */
-export const STRUCTURE_LEVEL: Record<Structure, Level> = {
+const STRUCTURE_LEVEL: Record<Structure, Level> = {
   // A jelen idő az alapállás: már az A0-s mondatok is ebben állnak, a tanterv
   // A1-es `presente-regular` témája a szabályt írja le, nem vezeti be a használatát.
   presente: 'A0',

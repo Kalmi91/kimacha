@@ -82,7 +82,7 @@ function byLang<K extends keyof LanguageContentBundle>(
 // the shared corpus at that level (mirrors story's `newWords`), consumed by
 // lib/games/gloss.ts's `overrides` param the same way.
 
-export interface GrammarWrongExplanation {
+interface GrammarWrongExplanation {
   [optionText: string]: Record<string, string>; // per native lang hu/en/es/de
 }
 

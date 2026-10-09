@@ -9,7 +9,7 @@ import { conjugate, TENSES, type Tense } from '@/lib/games/conjugate';
 import { detectStructures, tokenize, type Structure } from '@/lib/grammar/tenseGate';
 import type { Sm2Card } from '@/lib/sm2';
 
-export type KnownLang = 'es' | 'en';
+type KnownLang = 'es' | 'en';
 
 /** A feloldható igeidők: a `conjugate` hat igeideje + a kötőmód imperfecto. */
 export type ResolvedTense = Tense | 'subjuntivo_imperfecto';
@@ -21,7 +21,7 @@ export interface LearnedEntry {
   pos?: string;
 }
 
-export interface KnownContext {
+interface KnownContext {
   learned: Iterable<string | LearnedEntry>;
   /** Csak spanyolnál: a nyelvtani leckékkel feloldott igeidők. */
   tenses?: ReadonlySet<ResolvedTense>;

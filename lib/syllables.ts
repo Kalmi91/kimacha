@@ -107,7 +107,7 @@ export function syllabify(word: string): string[] {
 
 // Egy kifejezés (szóköz, kötőjel, írásjel): szavanként a szótagok; a nem betű részek külön elemek
 // (`syllables: null`), hogy a hívó változatlanul kirajzolhassa őket.
-export type PhrasePart = { text: string; syllables: string[] | null };
+type PhrasePart = { text: string; syllables: string[] | null };
 
 export function syllabifyPhrase(text: string): PhrasePart[] {
   const parts: PhrasePart[] = [];
