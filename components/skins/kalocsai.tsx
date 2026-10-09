@@ -6,9 +6,9 @@ import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { useSkin } from '@/lib/useSkin';
 
-// Kalocsai: öt színű virág-sor a fejléc alatt (a téma flower1..5 színei; más
-// színekkel, Saját mixben a, b, c, ink, mu a tartalék), növény-ikon a kártya két felső sarkában.
-// A szaggatott a keret a téma formája, a másodlagos gomb szaggatott b kerete a Brutal.tsx-ben.
+// Kalocsa folk: a row of five colored flowers under the header (the theme's flower1..5 colors; with other
+// colors, in My mix, a, b, c, ink, mu are the fallback), a plant icon in the card's two top corners.
+// The dashed a frame is the theme's shape; the secondary button's dashed b frame is in Brutal.tsx.
 
 const FLOWER_KEYS = ['flower1', 'flower2', 'flower3', 'flower4', 'flower5'];
 

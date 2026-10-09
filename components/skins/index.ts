@@ -27,10 +27,10 @@ import { zenDecor } from './zen';
 
 export type { SkinDecor } from './types';
 
-// A dísz-regiszter. Az első adag a 4 kezdő téma díszét tölti (deco, szocreal,
-// csillampony, ukiyoe), a második a loteria, senior, konnyu, retro95, y2k, kawaii, gamer, botanikus, zen,
-// a harmadik a diszlexia, plakat, bauhaus, popart, szecesszio, kalocsai, memphis, kodex, graffiti díszét.
-// A brutal és a classic szándékosan dísz nélküli (no-op).
+// The decor registry. It maps each theme to its decor: deco, szocreal, csillampony, ukiyoe, loteria,
+// senior, konnyu, retro95, y2k, kawaii, gamer, botanikus, zen,
+// diszlexia, plakat, bauhaus, popart, szecesszio, kalocsai, memphis, kodex, graffiti.
+// brutal and classic intentionally have no decor (no-op).
 export const SKIN_DECOR: Partial<Record<SkinId, SkinDecor>> = {
   deco: decoDecor,
   szocreal: szocrealDecor,
@@ -62,7 +62,7 @@ export function decorFor(id: SkinId | 'none'): SkinDecor {
   return (id !== 'none' && SKIN_DECOR[id]) || NO_DECOR;
 }
 
-// Az aktív téma (mixnél a mix.decor) díszei.
+// The active theme's decor (for My mix, mix.decor).
 export function useSkinDecor(): SkinDecor {
   return decorFor(useSkin().decorId);
 }

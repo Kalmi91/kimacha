@@ -7,9 +7,9 @@ import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { useSkin } from '@/lib/useSkin';
 
-// Kódex: dupla vékony keret (a téma kerete + belső 1 px-es, 3 px réssel) és
-// iniciálé: a szó első betűje arany (b) dobozban, piros (a) fraktúrával (a téma cím-betűje), a
-// többi betű a szó saját elemében (FitText), így a hosszú szó mérete továbbra is illeszkedik.
+// Codex: a double thin frame (the theme's frame plus an inner 1 px one, with a 3 px gap) and a
+// drop cap: the word's first letter in a gold (b) box with red (a) fraktur (the theme's title font), the
+// other letters in the word's own element (FitText), so a long word still fits.
 
 const FRAME_GAP = 3;
 
@@ -42,7 +42,7 @@ function KodexWord({ children }: { word: string; children: ReactNode }) {
 }
 
 const styles = StyleSheet.create({
-  // flexShrink: a FitText a sor-konténerben összemegy, ezért a burkolója is.
+  // flexShrink: FitText shrinks inside the row container, so its wrapper must too.
   word: { flexShrink: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6 },
   initial: { width: 42, height: 42, borderWidth: 1, alignItems: 'center', justifyContent: 'center' },
   initialText: { fontSize: 30, lineHeight: 36 },

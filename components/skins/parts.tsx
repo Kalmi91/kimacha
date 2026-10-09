@@ -1,11 +1,11 @@
 import { View, type StyleProp, type ViewStyle } from 'react-native';
 
-// a díszek közös építőkockái. Csak View, transform / borderRadius trükkökkel
-// (nincs SVG, nincs új natív függőség).
+// the shared building blocks of the decor. Only View, with transform / borderRadius
+// tricks (no SVG, no new native dependency).
 
-// Napsugár-legyező: a sugarak az alsó középpontból indulnak, -spread..+spread fok között (0 = fel).
-// A tartó 2*outer széles, outer magas; a sugár-tartók (2*outer magasak) a közepükön forognak,
-// azaz az alsó középpont körül, a tartó pedig levágja az alsó, üres felüket.
+// Sunburst fan: the rays start at the bottom center, between -spread..+spread degrees (0 = up).
+// The holder is 2*outer wide and outer high; the ray holders (2*outer high) rotate around their center,
+// that is, around the bottom center, and the holder clips their empty bottom halves.
 export function Rays({
   count,
   spread = 80,
@@ -50,7 +50,7 @@ export function Rays({
   );
 }
 
-// Félkör (sugár r): a lapos oldala lent.
+// Semicircle (radius r): the flat side at the bottom.
 export function HalfDisc({
   radius,
   color,
@@ -74,12 +74,12 @@ export function HalfDisc({
   );
 }
 
-// Rombusz: egy elforgatott négyzet.
+// Diamond: a rotated square.
 export function Diamond({ size, color }: { size: number; color: string }) {
   return <View style={{ width: size, height: size, backgroundColor: color, transform: [{ rotate: '45deg' }] }} />;
 }
 
-// Dupla vonal: két 1 px-es vonal 2 px réssel, a szülő szélességét kitölti (flex: 1).
+// Double line: two 1 px lines with a 2 px gap, fills the parent's width (flex: 1).
 export function DoubleLine({ color }: { color: string }) {
   return (
     <View style={{ flex: 1, gap: 2 }}>
@@ -89,7 +89,7 @@ export function DoubleLine({ color }: { color: string }) {
   );
 }
 
-// Belső keret a kártya fölé: a kártya külső kerete alatt, `inset` px-re a szélétől, nem fogad érintést.
+// Inner frame over the card: under the card's outer frame, `inset` px from its edge, does not receive touches.
 export function InnerFrame({
   inset,
   width,

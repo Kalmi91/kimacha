@@ -10,13 +10,13 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { useSkin } from '@/lib/useSkin';
 
-// Szocreál: belső 3 px-es b keret a 4 px-es ink keret alatt, felkelő nap (félkör +
-// sugarak, b színnel) a szó fölött, "Élmunkás" jelvény és "Napi terv n%" sáv a fejléc alatt.
+// Socialist realism: an inner 3 px b frame under the 4 px ink frame, a rising sun (semicircle +
+// rays, in color b) above the word, a "Shock worker" badge and a "Daily plan n%" bar under the header.
 
 const FRAME_GAP = 3;
 const REFRESH_MS = 30000;
 
-// A mai aktív percek a heti cél napi hetedéhez képest; betöltéskor és félpercenként frissül.
+// Today's active minutes relative to one seventh of the weekly goal; refreshed on load and every half minute.
 function useDailyPlanPercent(): number {
   const [pct, setPct] = useState(0);
   useEffect(() => {
@@ -94,7 +94,7 @@ function SzocrealHeader({ children }: { children: ReactNode }) {
 }
 
 const styles = StyleSheet.create({
-  // flexShrink: a FitText a sor-konténerben összemegy, ezért a burkolója is.
+  // flexShrink: FitText shrinks inside the row container, so its wrapper must too.
   word: { flexShrink: 1, alignItems: 'center', gap: 4 },
   strip: { flexDirection: 'row', alignItems: 'center', gap: 10, marginVertical: 8 },
   badge: { paddingHorizontal: 8, paddingVertical: 3, flexShrink: 1 },
