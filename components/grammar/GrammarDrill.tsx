@@ -102,7 +102,7 @@ const secondsSince = (startedAt: number) => Math.max(0, Math.round((Date.now() -
 // doboz (nagybetűs cím + egy mondat) és az ink kitöltésű gomb.
 // FB403 (PLAN-fb0929 6. lépés): a jó / rossz jelzés a közös ResultBadge (szín + alak + ✓/✗ + szöveg),
 // a doboz fölött; a b kitöltésű doboz csak a magyarázatot hordozza (ha van).
-function BrutalFeedback({ g, title, correct, children }: { g: GrammarColors; title: string; correct: boolean; children?: React.ReactNode }) {
+function BrutalFeedback({ title, correct, children }: { title: string; correct: boolean; children?: React.ReactNode }) {
   return (
     <>
       <ResultBadge correct={correct} label={title} />
@@ -282,7 +282,7 @@ function MatchDrillItem({
         </View>
         {done ? (
           <>
-            <BrutalFeedback g={g} correct={!hadWrong} title={hadWrong ? s.games.wrongFeedback : s.games.correctFeedback} />
+            <BrutalFeedback correct={!hadWrong} title={hadWrong ? s.games.wrongFeedback : s.games.correctFeedback} />
             <BrutalInkButton g={g} testID="grammar-next" label={s.grammar.nextArrow} onPress={() => onDone(!hadWrong, item.pairs.length - errLefts.size)} />
           </>
         ) : null}
@@ -433,7 +433,7 @@ function FormDrillItem({
           docked ? null : <BrutalInkButton g={g} testID="formCheck" label={s.grammar.check} onPress={check} />
         ) : (
           <>
-            <BrutalFeedback g={g} correct={correct} title={correct ? s.games.correctFeedback : s.games.wrongFeedback}>
+            <BrutalFeedback correct={correct} title={correct ? s.games.correctFeedback : s.games.wrongFeedback}>
               {!correct ? <AnswerCompare typed={value} correct={item.answer} g={g} onFill /> : null}
             </BrutalFeedback>
             <SpeakButton testID="form-speak" onPress={() => speak(item.answer, speechLang(learnedLang))} brutalStyle={styles.formSpeakBrutal} />
@@ -603,7 +603,7 @@ function WhyDrillItem({
 
         {answered ? (
           <>
-            <BrutalFeedback g={g} correct={isCorrect} title={isCorrect ? s.games.correctFeedback : s.games.wrongFeedback}>
+            <BrutalFeedback correct={isCorrect} title={isCorrect ? s.games.correctFeedback : s.games.wrongFeedback}>
               {!isCorrect ? (
                 <Text style={[styles.explainText, { color: g.onB }]}>
                   {shown.options[selected].wrong?.[contentLang] ?? shown.options[selected].wrong?.en ?? ''}
@@ -806,7 +806,7 @@ function TransformDrillItem({
           docked ? null : <BrutalInkButton g={g} testID="transform-check" label={s.grammar.check} onPress={check} />
         ) : (
           <>
-            <BrutalFeedback g={g} correct={result === 'ok'} title={result === 'ok' ? s.grammar.correct : s.grammar.correctAnswer}>
+            <BrutalFeedback correct={result === 'ok'} title={result === 'ok' ? s.grammar.correct : s.grammar.correctAnswer}>
               {result === 'bad' ? (
                 <Text style={[styles.brutalAnswer, { backgroundColor: g.a, color: g.onFill }]}> {item.answer} </Text>
               ) : null}
@@ -1399,7 +1399,6 @@ const styles = StyleSheet.create({
   brutalOptionInner: { paddingVertical: 16, paddingHorizontal: 8, flexDirection: 'row', justifyContent: 'center' },
   brutalOptionText: { fontSize: 17, fontWeight: '500', flexShrink: 1, textAlign: 'center' },
   brutalFeedback: { padding: 16, gap: 8 },
-  brutalFeedbackHead: { fontSize: 18, fontWeight: '500', textTransform: 'uppercase' },
   // A chat-gomb (FAB) alól is kigördül az utolsó elem.
   brutalBodyPad: { paddingBottom: 130 },
   brutalClose: { width: 34, height: 34, alignItems: 'center', justifyContent: 'center' },
@@ -1431,7 +1430,6 @@ const styles = StyleSheet.create({
   formSpeak: { alignSelf: 'center', padding: 4 },
   formSpeakIcon: { fontSize: 22 },
   formSpeakBrutal: { alignSelf: 'center' },
-  explainHeader: { fontSize: 16, fontWeight: '800' },
   explainText: { fontSize: 14, lineHeight: 20 },
   example: { fontSize: 14, fontStyle: 'italic', lineHeight: 20 },
   moreToggle: { fontSize: 13, fontWeight: '700' },

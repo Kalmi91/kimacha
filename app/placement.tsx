@@ -253,7 +253,6 @@ export default function PlacementScreen() {
 const styles = StyleSheet.create({
   screen: { flex: 1, paddingTop: spacing.xl },
   flex: { flex: 1 },
-  centered: { flex: 1 },
   body: { padding: spacing.lg, paddingBottom: FAB_CLEARANCE, gap: spacing.md },
   card: { borderRadius: radius.lg, padding: spacing.lg, gap: spacing.md },
   brutalCard: { padding: spacing.lg, gap: spacing.md },

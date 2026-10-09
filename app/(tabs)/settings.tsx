@@ -642,10 +642,6 @@ const styles = StyleSheet.create({
   brutalRow: { flexDirection: 'row', flexWrap: 'wrap', rowGap: 8, alignItems: 'center', justifyContent: 'space-between', paddingVertical: 12, paddingHorizontal: 14 },
   brutalStepOuter: { width: 38 },
   brutalStep: { width: 34, height: 34, alignItems: 'center', justifyContent: 'center' },
-  brutalOptionOuter: { flex: 1 },
-  // PLAN-fb1001 8. lépés (FB428): flex:1 + középre, hogy az előlap kitöltse a magasabb
-  // szomszéd miatt nyújtott külső dobozt (különben az árnyék lelógott a doboz alól).
-  brutalOption: { paddingVertical: 12, alignItems: 'center', justifyContent: 'center', flex: 1 },
   brutalOptionText: { fontWeight: '500', textTransform: 'uppercase' },
   brutalSheet: { borderTopLeftRadius: 0, borderTopRightRadius: 0, borderTopWidth: 2.5 },
   brutalSheetOptionOuter: { marginBottom: 10 },

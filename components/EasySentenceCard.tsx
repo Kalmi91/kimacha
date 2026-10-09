@@ -179,7 +179,6 @@ const styles = StyleSheet.create({
   emptySlot: { backgroundColor: 'transparent', borderStyle: 'dashed' },
   hiddenText: { opacity: 0 },
   chipText: { color: '#FFF', fontSize: 16, fontWeight: '600' },
-  resultText: { fontSize: 18, fontWeight: '700' },
   correctLine: { fontSize: 14, fontWeight: '600', textAlign: 'center' },
   checkBtn: { paddingHorizontal: 32, paddingVertical: 12, borderRadius: 14, marginTop: 8 },
   checkBtnPrimary: { paddingHorizontal: 44, paddingVertical: 14, borderRadius: 24, alignSelf: 'center', shadowColor: '#000', shadowOffset: { width: 0, height: 3 }, shadowOpacity: 0.2, shadowRadius: 6, elevation: 4 },
