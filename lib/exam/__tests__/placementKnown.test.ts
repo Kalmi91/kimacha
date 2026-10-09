@@ -1,5 +1,5 @@
-// a felmérőben helyesen megválaszolt szó
-// graduált (SM-2 review, a normál első intervallummal), a hibás vagy kihagyott nem változik.
+// A word answered correctly in the placement test is
+// graduated (SM-2 review, with the normal first interval), a wrong or skipped one does not change.
 
 import { sm2NewCard, type Sm2Card } from '@/lib/sm2';
 import { getDb } from '../../database.web';
@@ -44,7 +44,7 @@ describe('saveKnownWords (memory db)', () => {
     expect(n).toBe(2);
     expect(byId.get('o10')).toMatchObject({ state: 'review', interval: 1 });
     expect(byId.get('o11')).toMatchObject({ state: 'review', interval: 1 });
-    // Egy hibásan megválaszolt szó ('o12') nincs a listában: nem jön létre kártya.
+    // A word answered wrongly ('o12') is not in the list: no card is created.
     expect(byId.has('o12')).toBe(false);
     expect(byId.get('o20')).toMatchObject({ state: 'learning', reps: 2 });
   });

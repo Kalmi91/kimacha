@@ -1,5 +1,5 @@
-// a charDiff-sor jelölései olvashatók minden témán (kihagyott betű: sötét szöveg a
-// borostyánon; rossz betű: fehér, ha átmegy, egyedi betűnél sötét).
+// The charDiff row markers are readable on every theme (missed letter: dark text on
+// amber; wrong letter: white if it passes, dark on a custom typeface).
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 

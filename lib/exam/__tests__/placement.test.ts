@@ -1,6 +1,6 @@
-// az adaptív szintfelmérő lépcsője,
-// szimulált válaszsorokra: mind jó -> B2, mind rossz -> A1, vegyes -> köztes szint,
-// és soha nem több 20 kérdésnél.
+// The adaptive placement test's ladder step,
+// on simulated answer sequences: all right -> B2, all wrong -> A1, mixed -> intermediate level,
+// and never more than 20 questions.
 
 import type { PcicLevel } from '@/data/pcic';
 import { mulberry32 } from '@/lib/shuffle';
@@ -18,7 +18,7 @@ import {
 
 const LEVELS: PcicLevel[] = ['A1', 'A2', 'B1', 'B2'];
 
-/** Végigjátssza a lépcsőt: a `policy` a jelenlegi szint és a kérdés sorszáma alapján felel. */
+/** Plays through the ladder: the `policy` answers based on the current level and the question index. */
 function play(levels: PcicLevel[], policy: (level: PcicLevel, asked: number) => boolean): PlacementState {
   let state = placementStart(levels);
   for (let guard = 0; !state.done && guard < 100; guard++) {
@@ -27,10 +27,10 @@ function play(levels: PcicLevel[], policy: (level: PcicLevel, asked: number) => 
   return state;
 }
 
-/** Egy lépcsőnyi (5) válasz: a megadott számú jó, utána hibás. */
+/** The answers of one ladder step (5): the given number right, then wrong. */
 const answers = (right: number) => Array.from({ length: PLACEMENT_BLOCK }, (_, i) => i < right);
 
-/** A szinteken a megadott válaszsor, sorban elfogyasztva (szintenként külön). */
+/** The given answer sequence on the levels, consumed in order (separately per level). */
 function scripted(plan: Partial<Record<PcicLevel, boolean[]>>) {
   const used: Partial<Record<PcicLevel, number>> = {};
   return (level: PcicLevel) => {
@@ -147,7 +147,7 @@ describe('köztes eredmény (5-ből 3)', () => {
 
 describe('legfeljebb 20 kérdés (C4 a)', () => {
   it('a 4. lépcső után akkor is megáll, ha lenne feljebb', () => {
-    // A2: 3/5 + 5/5 = 8/10 feljebb; B1: 3/5 + 3/5 = 6/10 köztes: 20 kérdés.
+    // A2: 3/5 + 5/5 = 8/10 moves up; B1: 3/5 + 3/5 = 6/10 intermediate: 20 questions.
     const end = play(LEVELS, scripted({ A2: [...answers(3), ...answers(5)], B1: [...answers(3), ...answers(3)] }));
     expect(end.asked).toBe(PLACEMENT_MAX_QUESTIONS);
     expect(end.done).toBe(true);
@@ -157,7 +157,7 @@ describe('legfeljebb 20 kérdés (C4 a)', () => {
   it('véletlen válaszokkal soha nem lépi túl a 20 kérdést, és mindig eldől', () => {
     for (let seed = 1; seed <= 300; seed++) {
       const rng = mulberry32(seed);
-      // Szintenként más és más találati arány (0, 0.3, 0.6, 0.9 közül), hogy minden ág sorra kerüljön.
+      // A different hit rate per level (out of 0, 0.3, 0.6, 0.9), so that every branch gets its turn.
       const rate = Object.fromEntries(LEVELS.map((l) => [l, [0, 0.3, 0.6, 0.9][Math.floor(rng() * 4)]])) as Record<PcicLevel, number>;
       const end = play(LEVELS, (level) => rng() < rate[level]);
       expect(end.done).toBe(true);

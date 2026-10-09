@@ -21,22 +21,22 @@ export interface DB {
   setStatusBarTint(index: number): Promise<void>;
   getGrammarPalette(): Promise<GrammarPaletteId>;
   setGrammarPalette(id: GrammarPaletteId): Promise<void>;
-  // a választott téma és a Saját mix (null = még nincs választás; setSkin(null) visszaállít).
+  // the chosen theme and My mix (null = no choice yet; setSkin(null) resets).
   getSkin(): Promise<SkinSelection | null>;
   setSkin(id: SkinSelection | null): Promise<void>;
   getSkinMix(): Promise<SkinMix | null>;
   setSkinMix(mix: SkinMix): Promise<void>;
-  // napi streak-írás visszakerült (a Tanulás fül vitte
-  // el, a PCIC-értékelés az egyetlen hívó innentől, lásd app/(tabs)/index.tsx).
+  // the daily streak write is back (the Learn tab took
+  // it away, the PCIC grading is the only caller from now on, see app/(tabs)/index.tsx).
   updateStreak(): Promise<void>;
   getStrictAccents(): Promise<boolean>;
   setStrictAccents(v: boolean): Promise<void>;
-  // a PCIC "rontott" (again) kártya ennyi másodperc múlva jön
-  // mindenképp vissza (lib/pcicSession.ts); a táblázat-pakli cooldownja
-  // (lib/grammar/tableDeck.ts) is ugyanebből olvas.
+  // a PCIC "missed" (again) card comes back after this many seconds
+  // no matter what (lib/pcicSession.ts); the table-deck cooldown
+  // (lib/grammar/tableDeck.ts) reads from the same value.
   getAgainDelaySec(): Promise<number>;
   setAgainDelaySec(sec: number): Promise<void>;
-  // a névelő-gombsor a gépelős spanyol főnév-kártyán, ki-be kapcsolható.
+  // the article button row on the typed Spanish noun card, can be switched on and off.
   getArticlePicker(): Promise<boolean>;
   setArticlePicker(v: boolean): Promise<void>;
   getWeeklyGoalMinutes(): Promise<number>;
@@ -45,40 +45,40 @@ export interface DB {
   setFeedbackBtnSide(side: 'left' | 'right'): Promise<void>;
   getDailyNewLimit(): Promise<number>;
   setDailyNewLimit(limit: number): Promise<void>;
-  // a PCIC "+10 új szó" bónusz, a naptári nappal lejár (a `today`
-  // paramot a hívó adja); 0, ha `today`-re nincs
-  // perzisztált bónusz.
+  // the PCIC "+10 new words" bonus, expires with the calendar day (the `today`
+  // param is given by the caller); 0 if there is no
+  // persisted bonus for `today`.
   getPcicNewBonus(today: string): Promise<number>;
   setPcicNewBonus(bonus: number, today: string): Promise<void>;
   addUsageMinute(): Promise<number>;
   getUsageStats(): Promise<UsageStats>;
   getDayStats(date: string): Promise<{ minutes: number; words: number }>;
-  // Game fül tables, scoped to the active pair like every
+  // Game tab tables, scoped to the active pair like every
   // other per-pair setting/state in this interface.
   getGameProgress(gameId: string): Promise<{ itemId: string; state: string; data: unknown }[]>;
   setGameProgress(gameId: string, itemId: string, state: string, data?: unknown): Promise<void>;
-  // egy játék/kurzus (pl. a nyelvtan) teljes haladása az aktív párra.
+  // the complete progress of a game/course (e.g. grammar) for the active pair.
   resetGameProgress(gameId: string): Promise<void>;
-  // a szintvizsga eredménye szintenként (átment-e, legjobb pontszám),
-  // a `level-exam` game_progress sorokban (lib/exam/result.ts); `save` a korábbival összevonva ment.
+  // the level exam result per level (passed or not, best score),
+  // in the `level-exam` game_progress rows (lib/exam/result.ts); `save` saves merged with the previous one.
   getExamResults(): Promise<ExamResults>;
   saveExamResult(level: string, pct: number, passed: boolean, date: string): Promise<ExamResult>;
-  // PCIC fül, SM-2, független a FSRS `cards`-tól
+  // PCIC tab, SM-2, independent of the FSRS `cards`
   getPcicCards(): Promise<Sm2Card[]>;
   upsertPcicCard(card: Sm2Card): Promise<void>;
-  // a kiválasztott PCIC szint (A1-B2), app-szintű, mint a
-  // status-bar tint. `levelPrefix` opcionális: csak azt a szintet üríti ki
-  // (a betöltött korpuszból lekért id-lista szerint, lib/pcicLevels.ts
-  // matchesLevel mintájára: a szint-igazítás óta nem
-  // csupasz id-előtag), üresen az egész táblát, mint eddig.
+  // the selected PCIC level (A1-B2), app-wide, like the
+  // status-bar tint. `levelPrefix` is optional: it clears only that level
+  // (by the id list fetched from the loaded corpus, following lib/pcicLevels.ts
+  // matchesLevel: since the difficulty fit, the level is not
+  // a bare id prefix), without it the whole table, as before.
   getPcicLevel(): Promise<PcicLevel>;
-  // van-e KIFEJEZETTEN választott szintje az
-  // aktív párnak (a getPcicLevel fallbackja nem számít annak).
+  // whether the active pair has an EXPLICITLY chosen level
+  // (the getPcicLevel fallback does not count as one).
   hasPcicLevel(): Promise<boolean>;
   setPcicLevel(level: PcicLevel): Promise<void>;
   resetPcicCards(levelPrefix?: string): Promise<void>;
-  // a "Hibáim" kötegek (Settings -> Load my mistakes)
-  // és a hozzájuk tartozó SM-2 haladás, a pcic_cards-tól elkülönítve.
+  // the "My mistakes" batches (Settings -> Load my mistakes)
+  // and their SM-2 progress, kept separate from pcic_cards.
   saveMistakeBatch(batchId: string, json: string, importedAt: string): Promise<void>;
   getMistakeBatches(): Promise<MistakeBatchRow[]>;
   getMistakeCards(): Promise<Sm2Card[]>;

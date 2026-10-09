@@ -3,12 +3,12 @@ import type { TextStyle, ViewStyle } from 'react-native';
 import type { Skin } from '@/constants/Skins';
 import type { GrammarColors } from '@/lib/grammarColors';
 
-// a natív fejléc (Tabs / Stack screenOptions) brutalista palettán: bg háttér,
-// alul 2,5 px ink vonal, árnyék / elevation nélkül, nagybetűs 500-as ink cím.
-// Classic palettán üres: a mai fejléc marad. (headerShadowVisible: false nem
-// kerül bele, mert az a borderBottomWidth-et is nullázza.)
-// A második paraméter az aktív téma; a title-betűje (egyedi betűnél fontWeight nélkül),
-// betűköze és kis-/nagybetűs formája a natív fejléc címére kerül.
+// the native header (Tabs / Stack screenOptions) on the brutalist palette: bg background,
+// a 2.5 px ink line at the bottom, no shadow / elevation, an uppercase 500-weight ink title.
+// Empty on the classic palette: today's header stays. (headerShadowVisible: false is not
+// included, because it also zeroes borderBottomWidth.)
+// The second parameter is the active theme; the title's typeface (without fontWeight for a custom typeface),
+// letter spacing and upper/lower case form go onto the native header title.
 export function brutalHeaderOptions(
   g: GrammarColors,
   skin?: Pick<Skin, 'fonts' | 'letterSpacing' | 'uppercaseTitle' | 'lowercaseTitle'>,
@@ -42,7 +42,7 @@ export function brutalHeaderOptions(
   return Object.keys(title).length ? { ...base, headerTitleStyle: title } : base;
 }
 
-// Belső (képernyőbe rajzolt) fejlécsor alsó vonala brutalista palettán.
+// Bottom line of the inner header row (drawn into the screen) on the brutalist palette.
 export function brutalHeaderRowStyle(g: GrammarColors): ViewStyle | null {
   return g.brutal ? { borderBottomWidth: 2.5, borderBottomColor: g.ink, paddingBottom: 12 } : null;
 }

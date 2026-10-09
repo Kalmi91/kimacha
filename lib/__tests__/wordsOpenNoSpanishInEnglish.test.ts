@@ -1,6 +1,6 @@
-// User feedback („nem lehet spanyol szó az angol szók között”): a kártyák angol (és magyar / német)
-// jelentés-mezőjében nincs spanyol kifejezés. A tipikus szivárgás: „… ; tratar de = to try to”,
-// „(sin embargo)”, „(tener razón = …)”: az `=` jel és a spanyol ékezetes betűk az angol mezőben.
+// User feedback ("there must be no Spanish word among the English words"): the English (and Hungarian / German)
+// meaning fields of the cards contain no Spanish expression. The typical leak: "… ; tratar de = to try to",
+// "(sin embargo)", "(tener razón = …)": the `=` sign and Spanish accented letters in the English field.
 import openA1 from '@/data/words-open/a1.json';
 import openA2 from '@/data/words-open/a2.json';
 import openB1 from '@/data/words-open/b1.json';

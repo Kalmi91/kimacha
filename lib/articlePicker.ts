@@ -1,13 +1,13 @@
-// User feedback (word:beef): „szeretnék egy olyat, hogy amikor ilyen szó
-// van akkor ne begépelni kelljen a el la t hanem kiválasztani itt legyen 3 opcio el
-// le vagy none mármint egy kor áthúzva. […] a cél az hogy sokszór szó közben
-// változtatom meg és egyszerűen akarom változtatgatni".
+// User feedback (word:beef): "I would like it so that for a word like this
+// I do not have to type the el la but pick it, here let there be 3 options el
+// la or none, I mean a circle crossed out. […] the point is that I often
+// change it while in the middle of a word and I want to change it easily".
 //
-// Három gombot kért, de a korpuszban többes névelő is van (los zapatos, las gafas),
-// és ha a gombsor CSAK a névelős kártyákon jelenne meg, a puszta megjelenése
-// elmondaná, hogy kell névelő. Ezért öt gomb (el / la / los / las / ⊘), és minden
-// spanyol FŐNÉV-kártyán ott van, névelőstől-névelőtlenül. A ⊘ az alapállás, tehát
-// aki nem nyúl hozzá, ugyanúgy gépelhet, mint eddig.
+// Three buttons were asked for, but the corpus also has plural articles (los zapatos, las gafas),
+// and if the button row appeared ONLY on cards with an article, its mere appearance
+// would give away that an article is needed. Hence five buttons (el / la / los / las / ⊘), present on every
+// Spanish NOUN card, with and without an article. The ⊘ is the default, so
+// whoever does not touch it can type as before.
 
 import type { PosInfo } from '@/lib/pcicPos';
 
@@ -15,24 +15,24 @@ export const ARTICLE_OPTIONS = ['el', 'la', 'los', 'las'] as const;
 
 export type ArticlePick = '' | (typeof ARTICLE_OPTIONS)[number];
 
-// Issue #3: melyik nyelven van egyáltalán névelő-gombsor, és milyen alakokkal.
-// A svéd (en/ett) vagy a német (der/die/das) így egy bejegyzés, nem egy újabb
-// `||` ág ebben a függvényben.
+// Issue #3: which languages have an article button row at all, and with which forms.
+// Swedish (en/ett) or German (der/die/das) is thus one entry, not another
+// `||` branch in this function.
 const ARTICLES_BY_LANG: Record<string, readonly string[]> = {
   es: ARTICLE_OPTIONS,
 };
 
 /**
- * Megjelenik-e a gombsor. Akkor, ha a beírandó nyelvnek van névelő-készlete, és
- * a kártya egy SZÓT kérdez (mondat-kártyán nincs mit névelőzni).
+ * Whether the button row is shown. It is, if the language being typed has an article set and
+ * the card asks for a WORD (a sentence card has nothing to put an article on).
  *
- * User feedback (word:contrary / opposite): „az a le la los las semmi
- * rész legyen betéve oda is ahol igég vagy mellékneveket kell irni, mert pl most
- * is beletettem az el t pesig ide nem kell". A gombsor eddig csak főnév-kártyán
- * jelent meg, tehát igénél és melléknévnél kézzel gépelte oda a névelőt, és
- * elbukott vele. Innentől minden szó-kártyán ott a sor, a ⊘ pedig a nem-főnévnél
- * a HELYES válasz: az „ide nem kell névelő" is tanulnivaló, nem a sor hiánya
- * mondja meg.
+ * User feedback (word:contrary / opposite): "the el la los las none
+ * part should be there too where verbs or adjectives have to be written, because for example I just
+ * put the el in and here it is not needed". Until now the button row appeared only on noun cards,
+ * so for verbs and adjectives the learner typed the article in by hand and
+ * failed with it. From now on every word card has the row, and the ⊘ is the CORRECT
+ * answer for a non-noun: "no article needed here" is something to learn too, it is not the
+ * absence of the row that tells it.
  */
 export function articlePickerApplies(backLang: string, isWordCard: boolean, answer?: string): boolean {
   if (!ARTICLES_BY_LANG[backLang] || !isWordCard) return false;
@@ -41,16 +41,16 @@ export function articlePickerApplies(backLang: string, isWordCard: boolean, answ
 
 /**
  * User feedback (word:I am going to travel / you are going to eat):
- * „ennél nem kell az el la los las rész mert több szó van. itt nem lehet
- * használni". Egy több szavas, névelőtlen alak (voy a viajar, van a llegar) nem
- * névelőzhető, ott a sor csak zaj. Egy szó (perro), vagy névelős több szó
- * (el fin de semana) továbbra is kapja a sort.
+ * "the el la los las part is not needed here because there are several words. It can't
+ * be used here". A multi-word form without an article (voy a viajar, van a llegar) cannot
+ * take an article, there the row is just noise. A single word (perro), or a multi-word
+ * form with an article (el fin de semana) still gets the row.
  */
 /**
- * User feedback (word:The cat is on the table.): „a mondatokhoz nem
- * kell el la los las sor". Egy mondat-záró írásjellel végződő vagy spanyol nyitó
- * jellel (¿/¡) kezdődő alak mondat, nem szó, a sor ott zaj marad akkor is, ha
- * névelővel kezdődik (El gato está en la mesa.).
+ * User feedback (word:The cat is on the table.): "the el la los las row
+ * is not needed for sentences". A form ending in sentence-final punctuation or starting with the Spanish opening
+ * mark (¿/¡) is a sentence, not a word, and the row stays noise there even if it
+ * starts with an article (El gato está en la mesa.).
  */
 function articleCanApply(answer: string): boolean {
   const trimmed = answer.trim();
@@ -60,7 +60,7 @@ function articleCanApply(answer: string): boolean {
   return !/\s/.test(trimmed);
 }
 
-/** Amit az értékelő lát: a választott névelő és a begépelt szó egy stringben. */
+/** What the grader sees: the chosen article and the typed word in one string. */
 export function composeAnswer(pick: ArticlePick, typed: string): string {
   const body = typed.trim();
   if (!pick) return body;
@@ -69,26 +69,26 @@ export function composeAnswer(pick: ArticlePick, typed: string): string {
 }
 
 /**
- * A helyes alak névelője, hogy felfedéskor a gombsor a JÓ választ mutassa
- * (a tanuló lássa, mit kellett volna nyomnia).
+ * The article of the correct form, so that on reveal the button row shows the RIGHT answer
+ * (the learner sees what they should have pressed).
  */
 export function articleOf(text: string): ArticlePick {
   const first = text.trim().split(/\s+/)[0]?.toLowerCase() ?? '';
   return (ARTICLE_OPTIONS as readonly string[]).includes(first) ? (first as ArticlePick) : '';
 }
 
-/** A helyes alak névelő nélkül, a gépelős mező elvárt tartalma. */
+/** The correct form without an article, the expected content of the typing field. */
 export function bodyOf(text: string): string {
   const trimmed = text.trim();
   return articleOf(trimmed) ? trimmed.split(/\s+/).slice(1).join(' ') : trimmed;
 }
 
 /**
- * Kiegészítés (javító kör, 2026-09-23): a PCIC-kártyán a szófaj-chip
- * (lib/pcicPos.ts posOf()) már megmondja, ha a tétel nem főnév, ezért ott a
- * névelő-sor felesleges (és zavaró) volna nem-főnévnél is megkérdezni. A sor
- * csak akkor jár, ha a szófaj ismeretlen (`null`, ilyenkor még tanulság az
- * ⊘-válasz) vagy kifejezetten `noun`.
+ * Addendum (fix round, 2026-09-23): on the PCIC card the part-of-speech chip
+ * (lib/pcicPos.ts posOf()) already says when the item is not a noun, so asking about
+ * an article there would be superfluous (and confusing) for a non-noun. The row
+ * only applies when the part of speech is unknown (`null`, then the
+ * ⊘ answer is still a lesson) or explicitly `noun`.
  */
 export function articleRowAppliesForPos(pos: PosInfo | null): boolean {
   return !pos || pos.pos === 'noun';
