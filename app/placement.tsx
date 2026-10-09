@@ -9,7 +9,7 @@ import { getPcicTarget, pcicItemsForLevel, type PcicLevel, type PcicTarget } fro
 import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
-import { levelProgressView } from '@/lib/pcicLevels';
+import { levelProgress } from '@/lib/pcicLevels';
 import type { Sm2Card } from '@/lib/sm2';
 import { Card } from '@/components/grammar/Brutal';
 import LevelRow from '@/components/LevelRow';
@@ -194,7 +194,7 @@ export default function PlacementScreen() {
                 key={level}
                 level={level}
                 label={levelLabels[level]}
-                introduced={levelProgressView(cards, level, total).introduced}
+                introduced={levelProgress(cards, level, total).introduced}
                 total={total}
                 active={level === placed}
                 colors={colors}

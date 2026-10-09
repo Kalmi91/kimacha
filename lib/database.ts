@@ -4,7 +4,7 @@ import { FORCED_PAIR, needsPairCorrection } from './languages';
 import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
 import type { Sm2Card } from './sm2';
 import { addDays } from './sm2';
-import { pcicItemsForLevel, type PcicLevel, type PcicViewLevel } from '@/data/pcic';
+import { PCIC_LEVELS, pcicItemsForLevel, type PcicLevel } from '@/data/pcic';
 import type { MistakeBatchRow } from './mistakes/deck';
 import { runMigrations, applyWordMerges } from './db/migrations';
 import { DEFAULT_AGAIN_DELAY_SEC } from './pcicSession';
@@ -15,9 +15,7 @@ import type { ExamResult, ExamResults } from './exam/types';
 
 // PLAN-play 10. lépés: egy meglévő telepítésen a haladás ma "b1-..." id-kkel
 // forog, ezért az oszlop hiánya (régi DB) B1-re esik vissza, nem A1-re.
-// PLAN-fb0924 8. lépés: a perzisztált érték "A1+"/"A2+" is lehet (lásd
-// data/pcic.ts PcicViewLevel), a mezőt csak string-ként tárolja a DB.
-const DEFAULT_PCIC_LEVEL: PcicViewLevel = 'B1';
+const DEFAULT_PCIC_LEVEL: PcicLevel = 'B1';
 
 export interface DB {
   getStreak(): Promise<{ current_count: number; last_date: string | null; longest_count: number }>;
@@ -80,11 +78,11 @@ export interface DB {
   // (a betöltött korpuszból lekért id-lista szerint, lib/pcicLevels.ts
   // matchesLevel mintájára - PLAN-fb0924 7a. lépés, a szint-igazítás óta nem
   // csupasz id-előtag), üresen az egész táblát, mint eddig.
-  getPcicLevel(): Promise<PcicViewLevel>;
+  getPcicLevel(): Promise<PcicLevel>;
   // PLAN-ketiranyu 4. lépés javítás: van-e KIFEJEZETTEN választott szintje az
   // aktív párnak (a getPcicLevel fallbackja nem számít annak).
   hasPcicLevel(): Promise<boolean>;
-  setPcicLevel(level: PcicViewLevel): Promise<void>;
+  setPcicLevel(level: PcicLevel): Promise<void>;
   resetPcicCards(levelPrefix?: string): Promise<void>;
   // PLAN-hibaim.md 2. lépés: a "Hibáim" kötegek (Settings -> Load my mistakes)
   // és a hozzájuk tartozó SM-2 haladás, a pcic_cards-tól elkülönítve.
@@ -202,10 +200,11 @@ class SQLiteDB implements DB {
   // oszlop helyett a learn_settings pár-szerinti sorába költözött (mint a
   // többi tanulási beállítás), hogy irányváltáskor mindkét pár megőrizze a
   // SAJÁT szintjét. A régi (en-es) érték migrációja: runMigrations.
-  async getPcicLevel(): Promise<PcicViewLevel> {
+  async getPcicLevel(): Promise<PcicLevel> {
     const db = await this.open();
     const row = await db.getFirstAsync<any>('SELECT pcic_level FROM learn_settings WHERE pair = ?', [this.activePair]);
-    if (row?.pcic_level) return row.pcic_level as PcicViewLevel;
+    // Egy régebbi buildben választott, mára megszűnt szintnév (pl. "A1+") az alapra esik vissza.
+    if (row?.pcic_level && (PCIC_LEVELS as string[]).includes(row.pcic_level)) return row.pcic_level as PcicLevel;
     // es→en-nek (egyelőre) csak A1 kap tartalmat (5. lépés); minden más pár a
     // régi B1-alapértelmezésre esik vissza (meglévő "b1-..." progressz miatt).
     return this.activePair.endsWith('-en') ? 'A1' : DEFAULT_PCIC_LEVEL;
@@ -220,7 +219,7 @@ class SQLiteDB implements DB {
     return !!row?.pcic_level;
   }
 
-  async setPcicLevel(level: PcicViewLevel): Promise<void> {
+  async setPcicLevel(level: PcicLevel): Promise<void> {
     const db = await this.open();
     await db.runAsync(
       `INSERT INTO learn_settings (pair, pcic_level) VALUES (?, ?)

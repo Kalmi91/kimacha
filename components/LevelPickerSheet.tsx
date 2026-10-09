@@ -4,8 +4,8 @@ import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import { t } from '@/lib/i18n';
 import { useGrammarColors } from '@/lib/grammarColors';
-import { PCIC_VIEW_LEVELS, pcicItemsForViewLevel, type PcicViewLevel, type PcicTarget } from '@/data/pcic';
-import { levelProgressView } from '@/lib/pcicLevels';
+import { PCIC_VIEW_LEVELS, pcicItemsForLevel, type PcicLevel, type PcicTarget } from '@/data/pcic';
+import { levelProgress } from '@/lib/pcicLevels';
 import type { Sm2Card } from '@/lib/sm2';
 import LevelRow from './LevelRow';
 import ExamLevelRow from './exam/ExamLevelRow';
@@ -22,7 +22,7 @@ type ExamRow = { status: ExamLevelStatus; onStart: () => void; onPractice: () =>
 // választott szint pakliját adja (PLAN-play 10., index.tsx handleSelectLevel).
 type Props = {
   visible: boolean;
-  active: PcicViewLevel;
+  active: PcicLevel;
   cards: Sm2Card[];
   colors: ColorScheme;
   title: string;
@@ -36,24 +36,22 @@ type Props = {
   exam?: ExamRow | ExamRow[];
   // PLAN-vizsga C. szakasz (C1 a): a szint-sorok alatti halk belépő az adaptív szintfelméréshez.
   onPlacement?: () => void;
-  onSelect: (level: PcicViewLevel) => void;
+  onSelect: (level: PcicLevel) => void;
   onClose: () => void;
 };
 
 export default function LevelPickerSheet({ visible, active, cards, colors, title, target, exam, onPlacement, onSelect, onClose }: Props) {
   const s = t();
   const g = useGrammarColors();
-  const levelLabels: Partial<Record<PcicViewLevel, string>> = {
+  const levelLabels: Partial<Record<PcicLevel, string>> = {
     A1: s.pcic.levelBeginner,
     A2: s.pcic.levelElementary,
     B1: s.pcic.levelIntermediate,
     B2: s.pcic.levelUpperIntermediate,
-    'A1+': s.pcic.levelPlusSentences,
-    'A2+': s.pcic.levelPlusSentences,
   };
   // Ha egy szinthez nincs adat vagy nincs angol fordítás, ne kínáljuk fel;
   // PLAN-esen: es→en-ben is ugyanez a szűrő (A1 + A2 van adat).
-  const levels: PcicViewLevel[] = PCIC_VIEW_LEVELS.filter((lvl) => pcicItemsForViewLevel(lvl).length > 0);
+  const levels: PcicLevel[] = PCIC_VIEW_LEVELS.filter((lvl) => pcicItemsForLevel(lvl).length > 0);
   const examRows: ExamRow[] = exam ? (Array.isArray(exam) ? exam : [exam]) : [];
 
   return (
@@ -67,8 +65,8 @@ export default function LevelPickerSheet({ visible, active, cards, colors, title
               (a cím fent marad, a lap legfeljebb a képernyő 90%-a). */}
           <ScrollView showsVerticalScrollIndicator={false}>
           {levels.map((lvl) => {
-            const total = pcicItemsForViewLevel(lvl).length;
-            const { introduced } = levelProgressView(cards, lvl, total);
+            const total = pcicItemsForLevel(lvl).length;
+            const { introduced } = levelProgress(cards, lvl, total);
             const examRow = examRows.find((row) => row.status.level === lvl && EXAM_LEVELS.includes(row.status.level));
             return (
               <View key={lvl}>

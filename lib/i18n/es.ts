@@ -413,7 +413,6 @@ const es: Strings = {
     levelElementary: 'Elemental',
     levelIntermediate: 'Intermedio',
     levelUpperIntermediate: 'Intermedio alto',
-    levelPlusSentences: '+1 · oraciones',
     levelNotStarted: 'sin empezar',
     levelRowIntroduced: (n: number, total: number) => `${n} / ${total} presentadas`,
   },
@@ -516,8 +515,6 @@ const es: Strings = {
     conj: 'conjunción',
     det: 'determinante',
     interj: 'interjección',
-    prefix: 'prefijo',
-    suffix: 'sufijo',
   },
   mockExam: {
     cardTitle: 'Examen de práctica',

@@ -25,29 +25,22 @@ import openNotes from '@/data/words-open/notes.json';
 // FB498/500 (PLAN-fb1005i): kép egyes kártyákhoz (Wikimedia Commons), az (i) alatt a magyarázat mellett.
 import { wordImageFor, type WordImage } from '@/data/wordImages';
 
-export type PcicKind = 'word' | 'phrase' | 'sentence' | 'pattern';
+export type PcicKind = 'word' | 'phrase' | 'sentence';
 export type PcicLevel = 'A1' | 'A2' | 'B1' | 'B2';
 
 export const PCIC_LEVELS: PcicLevel[] = ['A1', 'A2', 'B1', 'B2'];
 
-// A gyakorisági korpusznak nincs `sentence` kind tétele (isPlusSentence
-// mindig false lent), ezért az "A1+"/"A2+" virtuális szint kiesik a
-// VÁLASZTHATÓ szintek közül. A `PcicViewLevel` típus marad A1+/A2+-szal
-// (LEVEL_LABELS, realLevelOfView visszakompatibilitás), csak a
-// PCIC_VIEW_LEVELS lista rövidült. PLAN-learn-words-open 2. lépés: a B2 is
-// választható (en→es 150 tétel); az es→en iránynál B2 üres, ott a szint-
-// választók a "0 tétel = nem kínáljuk fel" szűrővel kihagyják.
-export type PcicViewLevel = PcicLevel | 'A1+' | 'A2+';
-export const PCIC_VIEW_LEVELS: PcicViewLevel[] = ['A1', 'A2', 'B1', 'B2'];
+// PLAN-learn-words-open 2. lépés: a B2 is választható (en→es 150 tétel); az
+// es→en iránynál B2 üres, ott a szint-választók a "0 tétel = nem kínáljuk fel"
+// szűrővel kihagyják.
+export const PCIC_VIEW_LEVELS: PcicLevel[] = ['A1', 'A2', 'B1', 'B2'];
 
 // s1 (anki-ui-terv.html): a négy szint felirata a szint-választó lapon.
-export const LEVEL_LABELS: Record<PcicViewLevel, string> = {
+export const LEVEL_LABELS: Record<PcicLevel, string> = {
   A1: 'Beginner',
   A2: 'Elementary',
   B1: 'Intermediate',
   B2: 'Upper intermediate',
-  'A1+': '+1 · sentences',
-  'A2+': '+1 · sentences',
 };
 
 export interface PcicItem {
@@ -58,8 +51,6 @@ export interface PcicItem {
   section: string;
   order: number;
   pos?: Pos;
-  region?: string;
-  mx?: string;
   // PLAN-play 11. lépés: példamondat a korpuszból, csak ha van egyezés;
   // a Check utáni felfedésen jelenik meg.
   exampleEs?: string;
@@ -93,13 +84,13 @@ function noteField(word: WordEntry, key: 'hint_es'): string | undefined {
 }
 
 // FB357-jelzésű (vosotros: true) kártya kimarad, ahogy a nyelvtani leckéknél is.
-// PLAN-ketiranyu 4. lépés: `idPrefix` különbözteti meg a két irány id-terét
+// PLAN-ketiranyu 4. lépés: az 'e' előtag különbözteti meg a két irány id-terét
 // a KÖZÖS pcic_cards táblában (nincs pár-oszlop): en→es 'o<order>' (itemsFromOpen), es→en 'e<id>'.
-function itemsFromWords(entries: WordEntry[], idPrefix: 'w' | 'e' = 'w'): PcicItem[] {
+function itemsFromWords(entries: WordEntry[]): PcicItem[] {
   return entries
     .filter((w) => !w.vosotros)
     .map((w, index) => ({
-      id: `${idPrefix}${w.id}`,
+      id: `e${w.id}`,
       es: w.es,
       en: w.en,
       kind: kindOfEs(w.es),
@@ -180,9 +171,9 @@ const [EN_A1_WORDS, EN_A2_WORDS, EN_B1_WORDS] = dedupeByEn([
 ]);
 
 const ITEMS_BY_LEVEL_EN: Record<PcicLevel, PcicItem[]> = {
-  A1: itemsFromWords(EN_A1_WORDS, 'e'),
-  A2: itemsFromWords(EN_A2_WORDS, 'e'),
-  B1: itemsFromWords(EN_B1_WORDS, 'e'),
+  A1: itemsFromWords(EN_A1_WORDS),
+  A2: itemsFromWords(EN_A2_WORDS),
+  B1: itemsFromWords(EN_B1_WORDS),
   B2: [],
 };
 
@@ -237,25 +228,4 @@ export function findPcicItem(id: string): PcicItem | undefined {
  *  id nincs a korpuszban (pl. a régi PCIC-korpusz árva SRS-sora). */
 export function levelOfItem(id: string): PcicLevel | undefined {
   return indexesByTarget(activeTarget).levelById.get(id);
-}
-
-/** A gyakorisági korpusznak nincs `sentence` kind tétele, tehát a "+1"
- *  virtuális szint (a régi PCIC mondat-lánc funkciója) sose kap tartalmat. */
-export function isPlusSentence(_id: string): boolean {
-  return false;
-}
-
-/** A "+1" nézet mögötti valódi szint; a 4 valódi szintre önmagát adja vissza. */
-export function realLevelOfView(view: PcicViewLevel): PcicLevel {
-  if (view === 'A1+') return 'A1';
-  if (view === 'A2+') return 'A2';
-  return view;
-}
-
-/** Mint `pcicItemsForLevel`, de a "+1" virtuális szinteket is érti: mivel
- *  `isPlusSentence` mindig false, az "A1+"/"A2+" nézet mindig üres listát ad. */
-export function pcicItemsForViewLevel(view: PcicViewLevel): PcicItem[] {
-  const level = realLevelOfView(view);
-  const wantPlus = view === 'A1+' || view === 'A2+';
-  return itemsByTarget(activeTarget)[level].filter((it) => isPlusSentence(it.id) === wantPlus);
 }
