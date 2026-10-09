@@ -9,6 +9,9 @@ Use GitHub's private vulnerability reporting: open the repository's **Security**
 app it affects (Settings, bottom line). You can also start a report directly at
 https://github.com/Kalmi91/kimacha/security/advisories/new.
 
+If the **Report a vulnerability** option is not shown, open a public issue that only asks for a
+private way to reach the maintainer. Do not put any details of the vulnerability in it.
+
 The maintainer will acknowledge the report and follow up there.
 
 ## Supported versions
