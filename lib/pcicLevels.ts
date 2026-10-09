@@ -20,7 +20,7 @@ export function cardsForLevel(cards: Sm2Card[], level: PcicLevel): Sm2Card[] {
   return cards.filter((c) => matchesLevel(c.itemId, level));
 }
 
-export interface PcicLevelProgress {
+interface PcicLevelProgress {
   introduced: number;
   total: number;
 }

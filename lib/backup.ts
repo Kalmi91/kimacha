@@ -24,7 +24,7 @@ export type BackupTable = (typeof BACKUP_TABLES)[number];
 // picker). A restore accepts and skips them, so an old backup still loads.
 // The spelling-practice lists went the same way when the feature was removed
 // (the tables stay in the schema, nothing reads or writes them).
-export const LEGACY_BACKUP_TABLES = [
+const LEGACY_BACKUP_TABLES = [
   'game_scores',
   'game_settings',
   'selected_topic',

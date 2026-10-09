@@ -260,7 +260,7 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
   return null;
 }
 
-export interface BuildLessonTestOptions {
+interface BuildLessonTestOptions {
   seed: number;
   learnedLang: string;
   contentLang: string;

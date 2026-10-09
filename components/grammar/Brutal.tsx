@@ -64,7 +64,7 @@ function smallRadius(shape: SkinShape, maxRadius: number): ViewStyle {
 // PLAN-temak 6E: a téma gomb-változata (a díszből). Alapból 'default': semmi nem változik.
 // stacked (senior): teljes szélesség, min. 48 magas; text (zen): csak szöveg; bevel (retro95):
 // a gomb első betűje aláhúzva (a 3D-perem a forma `bevel` jelzőjéből jön).
-export type ButtonVariant = NonNullable<SkinDecor['buttonVariant']>;
+type ButtonVariant = NonNullable<SkinDecor['buttonVariant']>;
 
 export function useButtonVariant(): ButtonVariant {
   return useSkinDecor().buttonVariant ?? 'default';

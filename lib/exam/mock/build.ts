@@ -29,7 +29,7 @@ import {
   type MockTrueFalseTask,
 } from './types';
 
-export interface MockBuildInput {
+interface MockBuildInput {
   target: MockTarget;
   level: MockLevel;
   /** A szint kártyái (`pcicItemsForLevel`, az aktív irányé). */

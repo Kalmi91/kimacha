@@ -4,7 +4,7 @@
 
 import type { GrammarMarkItem } from './content';
 
-export interface MarkToken {
+interface MarkToken {
   /** A megjelenítendő darab, szóköz nélkül. */
   text: string;
   /** Szó-e (koppintható), vagy írásjel/szóköz. */

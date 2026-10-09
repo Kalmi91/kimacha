@@ -38,11 +38,11 @@ export function foldedTokens(text: string): string[] {
 }
 
 /** Minimum ennyi egymás utáni szó egyezése a feladat szövegével "bemásolt" szakasz (természetes visszhang ennél rövidebb). */
-export const COPY_RUN = 5;
+const COPY_RUN = 5;
 /** A szavak legalább ekkora hányada különböző (a sokszor ismételt szó nem szöveg). */
-export const MIN_DISTINCT_RATIO = 0.5;
+const MIN_DISTINCT_RATIO = 0.5;
 /** A szavak legalább ekkora hányada ismert szótári szó (csak ha van szótár). */
-export const MIN_KNOWN_RATIO = 0.4;
+const MIN_KNOWN_RATIO = 0.4;
 
 const VOWELS = /[aeiouy]/;
 
@@ -96,7 +96,7 @@ function isKnown(tok: string, lex: ReadonlySet<string>): boolean {
   return false;
 }
 
-export interface MessageAssessment {
+interface MessageAssessment {
   /** Az értelmes, nem bemásolt szavak száma. */
   words: number;
   /** Egyáltalán szövegnek számít-e (különben semmi nem ér pontot). */

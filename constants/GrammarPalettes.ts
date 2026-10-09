@@ -6,13 +6,13 @@
 export type GrammarPaletteId = 'brand' | 'electric' | 'lime' | 'cyan' | 'orange' | 'classic';
 export type FillPaletteId = Exclude<GrammarPaletteId, 'classic'>;
 
-export type PaletteFills = { a: string; b: string };
+type PaletteFills = { a: string; b: string };
 // bg = háttér, paper = kártya, ink = keret + szöveg, mu = halvány szöveg.
-export type PaletteBase = { bg: string; paper: string; ink: string; mu: string };
+type PaletteBase = { bg: string; paper: string; ink: string; mu: string };
 
 export const DEFAULT_GRAMMAR_PALETTE: GrammarPaletteId = 'brand';
 
-export const GRAMMAR_PALETTE_IDS: GrammarPaletteId[] = ['brand', 'electric', 'lime', 'cyan', 'orange', 'classic'];
+const GRAMMAR_PALETTE_IDS: GrammarPaletteId[] = ['brand', 'electric', 'lime', 'cyan', 'orange', 'classic'];
 
 export const ON_FILL = '#111111';
 

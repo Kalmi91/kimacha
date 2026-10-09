@@ -15,7 +15,7 @@ import type { ThemeKey } from '@/lib/ThemeContext';
 // összerakott Skin. Tiszta függvények, hogy a ThemeContext és a useSkin ugyanazt lássa.
 
 // A színek forrása: egy téma vagy (Saját mixben) egy Neo-brutál al-paletta.
-export type ColorsSource = SkinId | GrammarPaletteId;
+type ColorsSource = SkinId | GrammarPaletteId;
 
 export function colorsSourceOf(skin: SkinSelection, mix: SkinMix): ColorsSource {
   return skin === 'mix' ? mix.colors : skin;

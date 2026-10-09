@@ -8,7 +8,7 @@
 // byte-for-byte and every visual difference has to show up. Hence the `fold`
 // flag; the rendered characters are always the user's own.
 
-export interface DiffChar {
+interface DiffChar {
   ch: string;
   wrong: boolean;
   missing?: boolean;
@@ -28,7 +28,7 @@ const TRAILING_PUNCT = /[.!?…,;:¡¿"')]+$/;
 // FB132: with strict accents on (Settings -> Difficulty) a dropped tilde IS the
 // mistake, so the diff has to paint it, while case stays forgiven. Case and
 // accents therefore fold independently; `true`/`false` keep meaning "both".
-export interface FoldOptions {
+interface FoldOptions {
   case?: boolean;
   accents?: boolean;
 }

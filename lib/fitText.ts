@@ -17,7 +17,7 @@ const CHAR_EM_BOLD = 0.62;
 const CHAR_EM_REGULAR = 0.55;
 const CAPS_EXTRA_EM = 0.08;
 
-export interface FitOptions {
+interface FitOptions {
   /** A kívánt (legnagyobb) betűméret. */
   base: number;
   /** Az elérhető szélesség dp-ben (ablak-szélesség mínusz padding / testvérek). */

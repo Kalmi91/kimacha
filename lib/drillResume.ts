@@ -9,7 +9,7 @@ import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
 
 const DRILL_KEY = 'drill';
 
-export interface DrillResume {
+interface DrillResume {
   topicId: string;
   kind: string;
   day: string;

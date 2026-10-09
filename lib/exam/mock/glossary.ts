@@ -17,7 +17,7 @@ export interface GlossaryEntry {
   meaning: string;
 }
 
-export interface GlossaryIndex {
+interface GlossaryIndex {
   singles: Map<string, { item: PcicItem; form: string }>;
   phrases: { words: string; item: PcicItem; form: string }[];
   target: MockTarget;

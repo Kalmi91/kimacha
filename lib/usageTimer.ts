@@ -15,7 +15,7 @@ import { localDateString } from './usageStats';
 // and every onActiveMinute() subscriber fires (the root layout uses this to
 // pop the toast).
 
-export const IDLE_TIMEOUT_MS = 30_000;
+const IDLE_TIMEOUT_MS = 30_000;
 const TICK_MS = 1000;
 const MINUTE_SECONDS = 60;
 
@@ -25,14 +25,14 @@ const MINUTE_SECONDS = 60;
 // one lower) can only happen once per calendar day even across restarts.
 // FB149: past the first hour the daily milestone repeats every 15 minutes, see
 // lib/usageMilestones.ts.
-export type UsageMilestone = { scope: 'session' | 'daily'; minutes: number };
+type UsageMilestone = { scope: 'session' | 'daily'; minutes: number };
 const SESSION_MILESTONES = [30];
 
 // FB108, Kálmán 2026-08-08: "ha éjfélkor játszunk a játékkal, és pont átfordul
 // akkor a napi statot írja ki és gratuláljon". The tick loop is already running
 // while the learner plays, so it is also the thing that can notice the calendar
 // day turning over under them; it then reports the FINISHED day's totals.
-export type DayRollover = { date: string; minutes: number; words: number };
+type DayRollover = { date: string; minutes: number; words: number };
 
 type Listener = () => void;
 type MilestoneListener = (milestone: UsageMilestone) => void;

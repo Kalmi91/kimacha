@@ -196,7 +196,7 @@ export function watchAppStateForSpeech(): () => void {
 // beszélne. Egy új felolvasás (vagy egy `stop()`) érvényteleníti az előző láncot.
 let speakingRun = 0;
 
-export interface SpeechRunSegment {
+interface SpeechRunSegment {
   text: string;
   locale: string;
 }

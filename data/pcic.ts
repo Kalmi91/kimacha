@@ -35,14 +35,6 @@ export const PCIC_LEVELS: PcicLevel[] = ['A1', 'A2', 'B1', 'B2'];
 // szűrővel kihagyják.
 export const PCIC_VIEW_LEVELS: PcicLevel[] = ['A1', 'A2', 'B1', 'B2'];
 
-// s1 (anki-ui-terv.html): a négy szint felirata a szint-választó lapon.
-export const LEVEL_LABELS: Record<PcicLevel, string> = {
-  A1: 'Beginner',
-  A2: 'Elementary',
-  B1: 'Intermediate',
-  B2: 'Upper intermediate',
-};
-
 export interface PcicItem {
   id: string;
   es: string;

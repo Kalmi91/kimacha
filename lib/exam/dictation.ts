@@ -31,7 +31,7 @@ export interface DictationResult {
   extra: string[];
 }
 
-export interface DictationOptions {
+interface DictationOptions {
   /** A "Accents count" beállítás: igaz = az ékezet számít. */
   strictAccents: boolean;
   /** Spanyol célnyelvnél igaz: a mondat eleji alany-névmás elhagyható. */

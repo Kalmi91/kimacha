@@ -37,7 +37,6 @@ const mockItemsByLevel: Record<string, ReturnType<typeof mkItems>> = { A1: mockA
 jest.mock('@/data/pcic', () => ({
   PCIC_LEVELS: ['A1', 'B1'],
   PCIC_VIEW_LEVELS: ['A1', 'B1'],
-  LEVEL_LABELS: { A1: 'Beginner', B1: 'Intermediate' },
   pcicItemsForLevel: (level: string) => mockItemsByLevel[level] ?? [],
   findPcicItem: (id: string) => [...mockA1Items, ...mockB1Items].find((i) => i.id === id),
   levelOfItem: (id: string) => (id.startsWith('a1-') ? 'A1' : id.startsWith('b1-') ? 'B1' : undefined),

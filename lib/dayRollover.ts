@@ -8,7 +8,7 @@
 // lines do come back over time, exactly the repetition that was asked for.
 // Pure module, the toast only renders what it gets back.
 
-export interface DayTotals {
+interface DayTotals {
   minutes: number;
   words: number;
 }

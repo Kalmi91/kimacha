@@ -1,7 +1,7 @@
 import en from './en';
 import es from './es';
 
-export type Strings = typeof en;
+type Strings = typeof en;
 
 const LANGS: Record<string, Strings> = { en, es };
 

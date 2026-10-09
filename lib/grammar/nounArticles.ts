@@ -27,7 +27,7 @@ export const ARTICLE_LESSON_ID = 'articulos-genero';
 /** Az el / la feladat egy futása ennyi főnév (a teljes készletből seedelt minta). */
 export const ARTICLE_ROUND_SIZE = 20;
 
-export interface ArticleNoun {
+interface ArticleNoun {
   id: string; // `${szint}-${order}`, a szintek közt egyedi
   noun: string; // a főnév névelő nélkül: "agua"
   article: 'el' | 'la';

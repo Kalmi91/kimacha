@@ -25,7 +25,7 @@ import enA1 from '@/data/words/en/a1.json';
 import enA2 from '@/data/words/en/a2.json';
 import enB1 from '@/data/words/en/b1.json';
 
-export interface DeckCell {
+interface DeckCell {
   /** Stable within a lesson: `${tableId}::${person}::${verb}` (all lowercased). */
   id: string;
   /** The row's own label, e.g. "tú", "él/ella/usted". */
@@ -252,7 +252,7 @@ export function resetDeckShuffled(cells: { id: string }[], lessonId: string, res
  *  buttonless rather than offering a near-empty deck. */
 export const WORD_DECK_MIN_CARDS = 8;
 
-export interface WordDeckCard {
+interface WordDeckCard {
   id: string;
   /** English side. en→es direction: the prompt (the word's meaning); es→en direction: the answer to type. */
   en: string;

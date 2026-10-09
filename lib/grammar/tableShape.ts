@@ -7,7 +7,7 @@
 
 import type { Lang4 } from './lessonTypes';
 
-export type VerbClass = 'ar' | 'er' | 'ir';
+type VerbClass = 'ar' | 'er' | 'ir';
 
 // A hat személy + a data/games/grammar/es/*.json-ban ténylegesen előforduló
 // szét- és összevont változatok (usted/ustedes külön is). A kulcsok innen

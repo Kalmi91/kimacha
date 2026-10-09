@@ -11,7 +11,7 @@ import type { DB } from '@/lib/database';
 //   mode=light|dark     a Beállítások Auto / Light / Dark felülírása
 //   pal=<al-paletta>    a Neo-brutál al-paletta (brand|electric|lime|cyan|orange|classic)
 //   onboarded=1         az onboarding kész-állapotba kerül alapadatokkal (en→es, A1)
-export type WebTestParams = {
+type WebTestParams = {
   skin?: SkinSelection;
   mix?: SkinMix;
   mode?: SkinMode;
