@@ -16,12 +16,11 @@ import { openWords } from '@/data/openWords';
 import type { WordGender, WordPos } from '@/data/words';
 
 // FB361-362: a chip minden korpusz-szófajt kaphat (nem csak noun/verb/phrase),
-// ezért a Pos lefedi a teljes WordPos-készletet. A `conj`/`prefix`/`suffix`
-// csak a PCIC oldalon létezik (kötőszó, illetve képző-tétel, pl. "-ísimo"),
-// a korpusz WordPos típusát ez nem bővíti, azt kézzel írt PCIC `pos` mező
-// adja; a lemma-index (korpuszból) csak a `conj`-ot adja (a words-open kötőszavai).
+// ezért a Pos lefedi a teljes WordPos-készletet. A `conj`
+// csak a PCIC oldalon létezik (kötőszó), a korpusz WordPos típusát ez nem
+// bővíti, azt kézzel írt PCIC `pos` mező adja; a lemma-index (korpuszból) csak a `conj`-ot adja (a words-open kötőszavai).
 // FB482: a words-open `det` (determináns) és `interj` (indulatszó) szófaja is chipet kap.
-export type Pos = WordPos | 'conj' | 'det' | 'interj' | 'prefix' | 'suffix';
+export type Pos = WordPos | 'conj' | 'det' | 'interj';
 
 export interface PosInfo {
   pos: Pos;
@@ -85,9 +84,9 @@ function getLemmaIndex(): Map<string, PosInfo | null> {
 }
 
 export function posOf(item: { es: string; kind: PcicKind; pos?: Pos | null }): PosInfo | null {
-  // FB362: mondat- és minta-tételnek sose jár szófaj-chip, még akkor sem, ha
+  // FB362: mondat-tételnek sose jár szófaj-chip, még akkor sem, ha
   // volna `pos` mezője vagy a korpusz ismerné a spanyol alakot.
-  if (item.kind === 'sentence' || item.kind === 'pattern') return null;
+  if (item.kind === 'sentence') return null;
   if (item.pos) return { pos: item.pos };
 
   const es = item.es.trim();

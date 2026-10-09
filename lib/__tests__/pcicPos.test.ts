@@ -70,8 +70,7 @@ describe('posOf (5c, FB348/351/358/359)', () => {
 
   // FB362: "a mondatoknál nem kell szofaj", akkor sem, ha volna pos mező vagy
   // korpusz-egyezés.
-  it('sentence és pattern kindre sose ad chipet', () => {
+  it('sentence kindre sose ad chipet', () => {
     expect(posOf({ es: 'el perro', kind: 'sentence' })).toBe(null);
-    expect(posOf({ es: 'bueno', kind: 'pattern', pos: 'adj' })).toBe(null);
   });
 });

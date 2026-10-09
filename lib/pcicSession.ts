@@ -213,8 +213,7 @@ export function countIntroducedTodayByKind(
 // mondat"). Ami idő előtt jönne, EBBŐL a hívásból kimarad (nem a sor végére
 // kerül, hanem eldobódik): a
 // következő sor-építés (load()/handleMoreNew()) újra megvizsgálja, mert addigra
-// már más kártyák is bevezetődtek. Az "A1+"/"A2+" (csak mondatot tartalmazó)
-// szinten NEM hívandó (ott minden ritkítás mindent kidobna).
+// már más kártyák is bevezetődtek.
 export function thinSentences(
   orderedIds: string[],
   kindOf: (id: string) => PcicKind | undefined,

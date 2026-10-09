@@ -5,16 +5,14 @@ import Colors from '@/constants/Colors';
 import { t } from '@/lib/i18n';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalBox, SegmentBar, segmentsFilled } from '@/components/grammar/Brutal';
-import type { PcicViewLevel } from '@/data/pcic';
+import type { PcicLevel } from '@/data/pcic';
 
 type ColorScheme = (typeof Colors)['light'];
 
 // s1 (anki-ui-terv.html): egy sor a szint-választó lapon, a PCIC fejléc-chip
 // alulról felcsúszó lapján ÉS az onboarding szint-lépésén is (PLAN-play 10.).
-// PLAN-fb0924 8. lépés: a `level` "A1+"/"A2+" is lehet (a badge ekkor
-// térköz nélküli "A1+" alakot mutat, a `label` adja a "+1 · sentences" szöveget).
 type Props = {
-  level: PcicViewLevel;
+  level: PcicLevel;
   label: string;
   introduced: number;
   total: number;
