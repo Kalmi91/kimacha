@@ -60,11 +60,6 @@ function articleCanApply(answer: string): boolean {
   return !/\s/.test(trimmed);
 }
 
-/** Az adott nyelv névelői, üres tömb, ha a nyelvnek nincs gombsora. */
-export function articlesFor(backLang: string): readonly string[] {
-  return ARTICLES_BY_LANG[backLang] ?? [];
-}
-
 /** Amit az értékelő lát: a választott névelő és a begépelt szó egy stringben. */
 export function composeAnswer(pick: ArticlePick, typed: string): string {
   const body = typed.trim();
