@@ -15,7 +15,6 @@ jest.mock('expo-router', () => ({
   router: { push: (...args: unknown[]) => mockPush(...args) },
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
   },
 }));

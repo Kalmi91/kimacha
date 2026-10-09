@@ -13,7 +13,6 @@ jest.mock('@/lib/speech', () => ({
 jest.mock('expo-router', () => ({
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(cb, []);
     // A teszt ezzel tudja újra "fókuszba hozni" a fület (fülváltás és vissza).
     (globalThis as { __focusCb?: () => void }).__focusCb = cb;
