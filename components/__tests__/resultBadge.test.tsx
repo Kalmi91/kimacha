@@ -1,4 +1,4 @@
-// FB403 / FB402 / FB407 (PLAN-fb0929 6. lépés): a közös jó / rossz jelzés, a kész-jelvény és
+// a közös jó / rossz jelzés, a kész-jelvény és
 // a rajzolt pipa. A jó és a rossz színe ÉS alakja is különbözik (tömör vs szaggatott keret,
 // ✓ vs ✗, szöveg), a színek tokenből jönnek.
 import { render, screen } from '@testing-library/react-native';

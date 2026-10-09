@@ -1,4 +1,4 @@
-// PLAN-fb1002d (FB459): az összetéveszthető csoportok (scripts/words-open-confusable.json, pl. while/when:
+// az összetéveszthető csoportok (scripts/words-open-confusable.json, pl. while/when:
 // mientras, cuando, cuándo) minden tagján van kis mondat (hint_en), és a Learn-kártya hozzáfér (PcicItem.hint).
 // A scripts/words-open-check.mjs R15 ugyanezt őrzi, de a CI csak a jestet futtatja.
 import confusable from '../../scripts/words-open-confusable.json';

@@ -1,4 +1,4 @@
-// FB422 (PLAN-fb0929 2. lépés): a table-deck beviteli mezője minden új cellánál
+// a table-deck beviteli mezője minden új cellánál
 // újra mountol (autoFocus-szal), különben Check után a letiltott, majd újra
 // engedélyezett mezőn nem jött fel a billentyűzet. Mock-minta:
 // app/grammar/deck/__tests__/tableDeck.play.test.tsx.

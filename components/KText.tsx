@@ -3,7 +3,7 @@ import { StyleSheet, Text as RNText, type TextProps, type TextStyle } from 'reac
 
 import { useSkin } from '@/lib/useSkin';
 
-// PLAN-temak 4C: a Text-wrapper, ami az aktív téma betűjét alkalmazza. `variant`: 'title' =
+// a Text-wrapper, ami az aktív téma betűjét alkalmazza. `variant`: 'title' =
 // app-cím / fejléc, 'word' = a szó a kártyán, 'body' (alap) = minden más szöveg. A téma betűje
 // (skin.fonts), betűmérete (fontScale, fontSizeOffset, displayScale), betűköze, sormagassága és
 // kis-/nagybetűs formája innen jön; ha a téma semmit nem ad (Neo-brutál body, Klasszikus), a

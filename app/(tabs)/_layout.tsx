@@ -19,7 +19,7 @@ export default function TabLayout() {
   const { HeaderOrnament } = useSkinDecor();
   const s = t();
 
-  // NY19: brutalista palettán az aktív ikon a kitöltésű, ink keretes négyzeten ül.
+  // brutalista palettán az aktív ikon a kitöltésű, ink keretes négyzeten ül.
   const tabIcon = (name: SymbolViewProps['name'], color: ColorValue, focused: boolean) => {
     const symbol = <SymbolView name={name} tintColor={g.brutal && focused ? g.onFill : color} size={28} />;
     if (!g.brutal) return symbol;
@@ -41,16 +41,16 @@ export default function TabLayout() {
         tabBarStyle: {
           backgroundColor: colors.background,
           borderTopColor: colors.card,
-          // NY19: brutalista palettán felső 2,5 px ink vonal.
+          // brutalista palettán felső 2,5 px ink vonal.
           ...(g.brutal ? { borderTopColor: g.ink, borderTopWidth: 2.5 } : null),
         },
-        // FB175: with the window resizing for the keyboard, a visible tab bar would
+        // with the window resizing for the keyboard, a visible tab bar would
         // sit between the learn card's docked Check and the keys. It steps aside
         // while typing and comes back when the keyboard closes.
         tabBarHideOnKeyboard: true,
         tabBarLabelStyle: {
           fontSize: 10,
-          // PLAN-temak 4C: a fül-címke a téma title-betűjét kapja.
+          // a fül-címke a téma title-betűjét kapja.
           ...(skin.fonts.title ? { fontFamily: skin.fonts.title } : null),
         },
         // A sáv csak ikon; a feliratok (s.tabs.*) a képernyők fejlécében vannak.
@@ -59,9 +59,9 @@ export default function TabLayout() {
           backgroundColor: colors.background,
         },
         headerTintColor: colors.text,
-        // NY25: brutalista palettán ink vonalas, nagybetűs fejléc (classic: üres).
+        // brutalista palettán ink vonalas, nagybetűs fejléc (classic: üres).
         ...brutalHeaderOptions(g, skin),
-        // PLAN-temak 2A: dísz-fejléc (HeaderOrnament); dísz nélkül a natív cím marad.
+        // dísz-fejléc (HeaderOrnament); dísz nélkül a natív cím marad.
         ...(HeaderOrnament
           ? {
               headerTitle: ({ children }: { children: string }) => (
@@ -85,7 +85,7 @@ export default function TabLayout() {
         name="index"
         options={{
           title: s.tabs.pcic,
-          // Saját fejlécet rajzol, mint korábban is (FB123-minta).
+          // Saját fejlécet rajzol, mint korábban is.
           headerShown: false,
           tabBarIcon: ({ color, focused }) => tabIcon({ ios: 'list.bullet', android: 'list', web: 'list' }, color, focused),
         }}
@@ -94,7 +94,7 @@ export default function TabLayout() {
         name="course"
         options={{
           title: s.tabs.grammar,
-          // NY21: a brutalista kurzus-lista saját fejlécet rajzol (cím + streak-matrica).
+          // a brutalista kurzus-lista saját fejlécet rajzol (cím + streak-matrica).
           headerShown: grammarPalette === 'classic',
           tabBarIcon: ({ color, focused }) => tabIcon({ ios: 'book.fill', android: 'book', web: 'book' }, color, focused),
         }}

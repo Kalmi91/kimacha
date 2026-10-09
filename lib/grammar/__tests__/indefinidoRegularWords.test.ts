@@ -1,4 +1,4 @@
-// FB494: az indefinido-regular lecke feladataiban olyan igék és szavak is szerepeltek, amik a lecke tábláiban nem voltak.
+// az indefinido-regular lecke feladataiban olyan igék és szavak is szerepeltek, amik a lecke tábláiban nem voltak.
 // A hiányzó 20 ige egy-igés táblát kapott (füles blokk), a 20 leggyakoribb hiányzó szó egy jelentés-táblát; mindkettő a
 // lecke táblapaklijában van, vosotros-kártya nélkül.
 

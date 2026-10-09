@@ -6,7 +6,7 @@ import { useDockLift } from '@/components/learn/useDockLift';
 
 type ColorScheme = (typeof Colors)['light'];
 
-// FB461/FB462/FB464 (PLAN-fb1002b 3. lépés), Kálmán: „tegyed be a check gombot a klaviatúra felé,
+// User feedback: „tegyed be a check gombot a klaviatúra felé,
 // ahogy a kártyáknál van", „csináld meg, hogy a check gomb mindenhol a klaviatúra felett legyen".
 // A szókártya, a mondatkártya és a táblakártya a Check / Next sávot a képernyő aljára dokkolja
 // (DockedAction), a billentyűzet felső élén. A nyelvtani drill (ragozás, átírás, diktálás) és a

@@ -1,6 +1,6 @@
 import { View } from 'react-native';
 
-// FB407 / FB402 / FB403 (PLAN-fb0929 6. lépés): rajzolt pipa (két elforgatott sáv),
+// rajzolt pipa (két elforgatott sáv),
 // hogy a "kész / helyes" jel ne emoji legyen (a ✅ zöld négyzete kilógott a
 // neo-brutalista stílusból), hanem a tokenből kapott színnel rajzolt forma.
 // Az alak maga is jelez (nem csak a szín): pipa = helyes / kész.

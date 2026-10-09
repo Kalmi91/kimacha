@@ -1,6 +1,6 @@
-// PLAN-play 10. lépés: a PCIC haladás szintenkénti elkülönítése. Minden PCIC
+// a PCIC haladás szintenkénti elkülönítése. Minden PCIC
 // tétel id-je (eredetileg) a saját szintjével kezdődik ("b1-...", "a2-...").
-// PLAN-fb0924 7a. lépés (FB396, D3): a szint-igazítás mozgathat egy szót egy
+// a szint-igazítás mozgathat egy szót egy
 // másik szint fájljába anélkül, hogy az id-je (és ezzel az előtagja) változna
 // - a tényleges szintet innentől `levelOfItem` (data/pcic.ts, a betöltött
 // korpusz alapján) dönti el, az id-előtag csak tartalék, ha az id nincs a

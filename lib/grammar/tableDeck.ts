@@ -1,5 +1,4 @@
-// PLAN-play 13. lépés (s6, Kálmán 2026-09-23, jóváhagyó lap
-// https://claude.ai/artifact/HsKKPddM4KKt7wBQZmLVNo): "the words in the
+// User request: "the words in the
 // lesson's tables should be repeatable, same UI as the PCIC card, one pass
 // through every word, then it resets; a wrong answer comes back a minute
 // later like Anki". This module is the pure logic: which table cells count
@@ -36,7 +35,7 @@ interface DeckCell {
    *  "a / b" alternatives or parenthetical glosses on its own; this module
    *  does not need to split them out. */
   answer: string;
-  /** FB378: the cell's English prompt ("she spoke"), if the table has one;
+  /** the cell's English prompt ("she spoke"), if the table has one;
    *  the deck screen shows it instead of the bare person·verb prompt. */
   enPrompt?: string;
 }
@@ -52,11 +51,11 @@ export interface DeckCellState {
 
 export interface DeckState {
   cells: DeckCellState[];
-  /** FB377/FB389: bumped by resetDeckShuffled, part of the reshuffle seed so
+  /** bumped by resetDeckShuffled, part of the reshuffle seed so
    *  each shuffled pass through the deck gets a new (but still
    *  deterministic) order. Meaningless while `shuffled` is false. */
   resetCount: number;
-  /** FB389: false = the deck's own order (the table read top to bottom, or
+  /** false = the deck's own order (the table read top to bottom, or
    *  the word-deck's own order); true = the seeded shuffle keyed on
    *  `resetCount`. A fresh deck (no persisted state) starts false; an old
    *  persisted deck saved before this field existed defaults to true, so a
@@ -65,7 +64,7 @@ export interface DeckState {
   shuffled: boolean;
 }
 
-// FELTEVÉS (Kálmán vétózhatja, PLAN-fb0923 5. lépés/D2): a táblázat-pakli
+// FELTEVÉS: a táblázat-pakli
 // "wrong answer comes back later" cooldownja UGYANABBÓL a beállításból
 // olvas, mint a PCIC "rontott szó" időzítője (lib/pcicSession.ts
 // again_delay_sec) - egy beállítás, két hely. A hívó (app/grammar/deck/
@@ -76,7 +75,7 @@ function normalizePerson(label: string): string {
   return label.trim().toLowerCase();
 }
 
-// FB357 convention (lib/grammar/vosotros.ts): vosotros stays in the lesson's
+// convention (lib/grammar/vosotros.ts): vosotros stays in the lesson's
 // reference tables, but never in something the learner has to produce. A
 // table's row label is an exact, reliable signal here (unlike a drill item's
 // free-text answer), so a plain set beats guessing from the conjugated form.
@@ -86,7 +85,7 @@ const VOSOTROS_PERSONS = new Set(['vosotros', 'vosotros/vosotras']);
  * Every cell of every CONJUGATION table in a lesson (decision (a): reference
  * GridTables, e.g. hay-estar's article table, are excluded), vosotros rows
  * dropped, and the same person+verb pair counted once even if it somehow
- * repeats across two tables in the same lesson. FB390: a MEANING table
+ * repeats across two tables in the same lesson. A MEANING table
  * (isMeaningTable, e.g. interrogativos' "what -> qué" overview) is quizzed
  * the same way - prompt = the English meaning (row[0], shown via enPrompt),
  * answer = the Spanish term (row[1]) - instead of falling back to the
@@ -99,7 +98,7 @@ export function tableCellsForLesson(lesson: GrammarTopicData | null | undefined)
   const seen = new Set<string>();
   for (const block of lesson.body) {
     if (block.kind !== 'table') continue;
-    // PLAN-fb1001 11. lépés: a személy-tábla (Persona -> ir a + infinitivo, Sujeto -> névmás)
+    // a személy-tábla (Persona -> ir a + infinitivo, Sujeto -> névmás)
     // ugyanúgy cella-kártyákat ad, mint a ragozási; a "verb" itt az oszlop-fejléc.
     if (isConjugationTable(block.header, block.rows) || isPersonTable(block.header, block.rows)) {
       const verbHeaders = block.header.slice(1);
@@ -132,14 +131,14 @@ export function tableCellsForLesson(lesson: GrammarTopicData | null | undefined)
   return cells;
 }
 
-// FB375 (PLAN-fb0923 6. lépés): a scheduler csak `id`-t néz, sose a kártya
+// a scheduler csak `id`-t néz, sose a kártya
 // tartalmát, ezért ugyanez a motor szolgálja ki a szó-paklit is
 // (wordCellsForLesson lent) a tábla-pakli mellett, forrás-tömb-tipizálás
 // nélkül duplikálva.
-// FB377 (felülírva FB389-cel, lásd lent): a tábla-pakli sorrendje eleinte a
+// a tábla-pakli sorrendje eleinte a
 // tábla saját sor/oszlop-sorrendje volt (mindenki "yo · ser"-t látta
 // elsőnek), amitől a válasz a POZÍCIÓBÓL, nem a jelentésből tanulható meg.
-// FB389 (Kálmán 2026-09-08, felülírja a fenti döntést): az 1. kör megint a
+// (felülírja a fenti döntést): az 1. kör megint a
 // tábla sorrendjében jön (ahogy a tábla olvasható), a kevert sorrend egy
 // KÜLÖN, választható "Nehezebb: keverve" kör lett (resetDeckShuffled), nem
 // az alapértelmezett. A shuffle maga (a seed-elt permutáció) változatlan.
@@ -150,7 +149,7 @@ function shuffledIds(cellIds: string[], lessonId: string, resetCount: number): s
   return shuffleArray(cellIds.slice().sort(), hashString(`${lessonId}:${resetCount}`));
 }
 
-/** FB389: a fresh deck, in the SOURCE order (the table read top to bottom,
+/** a fresh deck, in the SOURCE order (the table read top to bottom,
  *  or the word-deck's own order) - no shuffle. */
 export function initDeckState(cells: { id: string }[]): DeckState {
   return { cells: cells.map((c) => ({ id: c.id, done: false, dueAt: null })), resetCount: 0, shuffled: false };
@@ -159,13 +158,13 @@ export function initDeckState(cells: { id: string }[]): DeckState {
 /**
  * Reconciles freshly-derived cells (from the lesson data) with a persisted
  * state (from game_progress). A cell the lesson no longer has is dropped; a
- * new cell the persisted state has never seen starts fresh. FB389: the order
+ * new cell the persisted state has never seen starts fresh. The order
  * follows the persisted `shuffled` flag - the SOURCE order (`cells`, as given)
  * when false, or the seeded shuffle (`lessonId` + the persisted reset count)
  * when true - never read off the persisted cell array itself, so a corpus
  * change (a cell added/removed) does not leave the new cell stuck at the end.
  * No persisted state at all (a lesson never opened before) defaults to the
- * SOURCE order (the new FB389 default); a persisted state saved before this
+ * SOURCE order (the new default); a persisted state saved before this
  * field existed has no `shuffled` key and defaults to true instead, so an
  * in-progress shuffled pass does not silently reorder on the next reload.
  */
@@ -218,7 +217,7 @@ export function answerCell(
   };
 }
 
-/** FB389: "Start again" - every cell answered right once (or the learner
+/** "Start again" - every cell answered right once (or the learner
  *  just wants a fresh pass) -> start over in the deck's own SOURCE order
  *  (the table read top to bottom / the word-deck's own order), same as a
  *  brand-new deck. Takes the canonical `cells` (not `state.cells`), because
@@ -228,7 +227,7 @@ export function resetDeckInOrder(cells: { id: string }[]): DeckState {
   return initDeckState(cells);
 }
 
-/** FB389: "Harder: shuffled" - every cell, again, in a fresh (still
+/** "Harder: shuffled" - every cell, again, in a fresh (still
  *  deterministic) shuffle, so a repeated shuffled pass is not the same
  *  order as the last one. `resetCount` is the PREVIOUS state's count
  *  (bumped here), so consecutive shuffles keep advancing the seed. */
@@ -239,7 +238,7 @@ export function resetDeckShuffled(cells: { id: string }[], lessonId: string, res
 }
 
 // ---------------------------------------------------------------------------
-// FB375 (PLAN-fb0923 6. lépés, D5/a): "itt is legyen egy nyelvtanulós kártya
+// "itt is legyen egy nyelvtanulós kártya
 // csomag a szavakból" - a lecke SAJÁT szavaiból egy pakli azoknak a
 // leckéknek, amiknek nincs ragozási táblájuk (tableCellsForLesson fent 0
 // cellát ad rájuk). A scheduler fent content-agnosztikus, ez a rész csak a
@@ -247,7 +246,7 @@ export function resetDeckShuffled(cells: { id: string }[], lessonId: string, res
 // PCIC angol jelentéssel, funkciószó nélkül.
 // ---------------------------------------------------------------------------
 
-/** FB375 (PLAN-fb0923 6. lépés/D5, step 3): the word-deck button only shows
+/** (step 3): the word-deck button only shows
  *  at this many cards or more; below it, a table-less lesson stays
  *  buttonless rather than offering a near-empty deck. */
 export const WORD_DECK_MIN_CARDS = 8;
@@ -311,7 +310,7 @@ function pcicWordIndex(level: Level): Map<string, { es: string; en: string }> {
   return index;
 }
 
-// PLAN-fb1001 16. lépés (FB437/FB438, Kálmán "b" döntése 2026-10-01): a szó-pakli csak a
+// a szó-pakli csak a
 // lecke TÁBLÁZATAINAK szavaiból épül (minden `table` blokk minden cellájának tokenjei, az
 // első előfordulás sorrendjében), nem a szószedetből és a példamondatok szavaiból.
 // A szeparátorok (szóköz, "/", "+", zárójel) tokenekre vágnak ("él/ella/usted", "ir a + inf.").
@@ -338,7 +337,7 @@ function tableWordKeys(lesson: LessonV2): string[] {
 const NON_WORD_GLOSS = /^(not a real form|non-existent form)/i;
 
 /**
- * A word-deck source for a lesson. PLAN-fb1001 16. lépés (Kálmán "b" döntése): ONLY the words
+ * A word-deck source for a lesson: ONLY the words
  * of the lesson's tables (tableWordKeys), never the glossary-only or example-sentence words
  * ("itt miért vannak ilyen szavak? felesleges"). A table word that the glossary glosses
  * (the author's own choice, so it skips the function-word filter - e.g. clases-de-palabras
@@ -354,9 +353,9 @@ export function wordCellsForLesson(
   learnedLang: string = 'es'
 ): WordDeckCard[] {
   if (!lesson) return [];
-  // FB471: a lecke maga kéri, hogy ne legyen szó-pakli (lecke-szintű kikapcsolás).
+  // a lecke maga kéri, hogy ne legyen szó-pakli (lecke-szintű kikapcsolás).
   if (lesson.noWordDeck) return [];
-  // PLAN-fb0929 10. lépés (Kálmán 2026-09-30): es→en irányban a pakli az angol szókészletből épül.
+  // es→en irányban a pakli az angol szókészletből épül.
   if (learnedLang === 'en') return wordCellsForEnglishLesson(lesson);
   const cards: WordDeckCard[] = [];
   const seen = new Set<string>();
@@ -366,7 +365,7 @@ export function wordCellsForLesson(
   for (const g of lesson.glossary ?? []) {
     const key = normalizeWordToken(g.word);
     if (!key || seen.has(key) || !inTable.has(key)) continue;
-    // FB419/FB418 (PLAN-fb0929 5. lépés): a rossz opciók nem létező alakjai ("lápizes", "vezes")
+    // a rossz opciók nem létező alakjai ("lápizes", "vezes")
     // csak a hangolás miatt vannak a szószedetben (audit-games), nem szó-kártyának valók.
     if (NON_WORD_GLOSS.test(g.gloss.en)) continue;
     seen.add(key);
@@ -386,7 +385,7 @@ export function wordCellsForLesson(
 }
 
 // ---------------------------------------------------------------------------
-// PLAN-fb0929 10. lépés (Kálmán 2026-09-30: "mehet a javítás"): az es→en irány
+// ("mehet a javítás"): az es→en irány
 // szavak-gyakorlása. Eddig a pakli a spanyol PCIC-ből épült, ezért angol kérdést
 // adott és spanyol választ várt. Most a kérdés a spanyol szó, a válasz a begépelt
 // angol szó, a szavak az angol szókészletből (data/words/en/<szint>.json) jönnek,

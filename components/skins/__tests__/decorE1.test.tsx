@@ -1,4 +1,4 @@
-// PLAN-temak 6E (E1): a loteria, senior, konnyu, retro95, y2k, kawaii, gamer, botanikus és zen téma
+// a loteria, senior, konnyu, retro95, y2k, kawaii, gamer, botanikus és zen téma
 // díszei és egyedi elrendezése: a slotok kirajzolják a díszt az alap tartalom körül, a gomb-változatok
 // (senior egymás alatt, retro95 3D + aláhúzott első betű, zen csak szöveg) a BrutalButton / BrutalBox-on át.
 

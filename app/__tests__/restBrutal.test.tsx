@@ -1,4 +1,4 @@
-// NY19: a Credits képernyő brutalista palettán (BrutalBox / BrutalButton),
+// a Credits képernyő brutalista palettán (BrutalBox / BrutalButton),
 // classic palettán a mai kinézet. Mock-minta: credits.test.tsx, onboarding.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));

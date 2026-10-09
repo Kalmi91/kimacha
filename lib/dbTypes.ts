@@ -21,22 +21,22 @@ export interface DB {
   setStatusBarTint(index: number): Promise<void>;
   getGrammarPalette(): Promise<GrammarPaletteId>;
   setGrammarPalette(id: GrammarPaletteId): Promise<void>;
-  // PLAN-temak 2A: a választott téma és a Saját mix (null = még nincs választás; setSkin(null) visszaállít).
+  // a választott téma és a Saját mix (null = még nincs választás; setSkin(null) visszaállít).
   getSkin(): Promise<SkinSelection | null>;
   setSkin(id: SkinSelection | null): Promise<void>;
   getSkinMix(): Promise<SkinMix | null>;
   setSkinMix(mix: SkinMix): Promise<void>;
-  // PLAN-play 12. lépés: napi streak-írás visszakerült (a Tanulás fül vitte
+  // napi streak-írás visszakerült (a Tanulás fül vitte
   // el, a PCIC-értékelés az egyetlen hívó innentől, lásd app/(tabs)/index.tsx).
   updateStreak(): Promise<void>;
   getStrictAccents(): Promise<boolean>;
   setStrictAccents(v: boolean): Promise<void>;
-  // FB364: a PCIC "rontott" (again) kártya ennyi másodperc múlva jön
+  // a PCIC "rontott" (again) kártya ennyi másodperc múlva jön
   // mindenképp vissza (lib/pcicSession.ts); a táblázat-pakli cooldownja
   // (lib/grammar/tableDeck.ts) is ugyanebből olvas.
   getAgainDelaySec(): Promise<number>;
   setAgainDelaySec(sec: number): Promise<void>;
-  // FB188: a névelő-gombsor a gépelős spanyol főnév-kártyán, ki-be kapcsolható.
+  // a névelő-gombsor a gépelős spanyol főnév-kártyán, ki-be kapcsolható.
   getArticlePicker(): Promise<boolean>;
   setArticlePicker(v: boolean): Promise<void>;
   getWeeklyGoalMinutes(): Promise<number>;
@@ -45,7 +45,7 @@ export interface DB {
   setFeedbackBtnSide(side: 'left' | 'right'): Promise<void>;
   getDailyNewLimit(): Promise<number>;
   setDailyNewLimit(limit: number): Promise<void>;
-  // FB385/386: a PCIC "+10 új szó" bónusz, a naptári nappal lejár (a `today`
+  // a PCIC "+10 új szó" bónusz, a naptári nappal lejár (a `today`
   // paramot a hívó adja); 0, ha `today`-re nincs
   // perzisztált bónusz.
   getPcicNewBonus(today: string): Promise<number>;
@@ -53,31 +53,31 @@ export interface DB {
   addUsageMinute(): Promise<number>;
   getUsageStats(): Promise<UsageStats>;
   getDayStats(date: string): Promise<{ minutes: number; words: number }>;
-  // GAMES.md 3.5 (F0): Game fül tables, scoped to the active pair like every
+  // Game fül tables, scoped to the active pair like every
   // other per-pair setting/state in this interface.
   getGameProgress(gameId: string): Promise<{ itemId: string; state: string; data: unknown }[]>;
   setGameProgress(gameId: string, itemId: string, state: string, data?: unknown): Promise<void>;
-  // PLAN-fb1001 7. lépés (FB431): egy játék/kurzus (pl. a nyelvtan) teljes haladása az aktív párra.
+  // egy játék/kurzus (pl. a nyelvtan) teljes haladása az aktív párra.
   resetGameProgress(gameId: string): Promise<void>;
-  // PLAN-vizsga A. szakasz 2. lépés (A6 a): a szintvizsga eredménye szintenként (átment-e, legjobb pontszám),
+  // a szintvizsga eredménye szintenként (átment-e, legjobb pontszám),
   // a `level-exam` game_progress sorokban (lib/exam/result.ts); `save` a korábbival összevonva ment.
   getExamResults(): Promise<ExamResults>;
   saveExamResult(level: string, pct: number, passed: boolean, date: string): Promise<ExamResult>;
-  // PLAN-pcic 4. lépés: PCIC fül, SM-2, független a FSRS `cards`-tól
+  // PCIC fül, SM-2, független a FSRS `cards`-tól
   getPcicCards(): Promise<Sm2Card[]>;
   upsertPcicCard(card: Sm2Card): Promise<void>;
-  // PLAN-play 10. lépés: a kiválasztott PCIC szint (A1-B2), app-szintű, mint a
+  // a kiválasztott PCIC szint (A1-B2), app-szintű, mint a
   // status-bar tint. `levelPrefix` opcionális: csak azt a szintet üríti ki
   // (a betöltött korpuszból lekért id-lista szerint, lib/pcicLevels.ts
-  // matchesLevel mintájára - PLAN-fb0924 7a. lépés, a szint-igazítás óta nem
+  // matchesLevel mintájára -, a szint-igazítás óta nem
   // csupasz id-előtag), üresen az egész táblát, mint eddig.
   getPcicLevel(): Promise<PcicLevel>;
-  // PLAN-ketiranyu 4. lépés javítás: van-e KIFEJEZETTEN választott szintje az
+  // van-e KIFEJEZETTEN választott szintje az
   // aktív párnak (a getPcicLevel fallbackja nem számít annak).
   hasPcicLevel(): Promise<boolean>;
   setPcicLevel(level: PcicLevel): Promise<void>;
   resetPcicCards(levelPrefix?: string): Promise<void>;
-  // PLAN-hibaim.md 2. lépés: a "Hibáim" kötegek (Settings -> Load my mistakes)
+  // a "Hibáim" kötegek (Settings -> Load my mistakes)
   // és a hozzájuk tartozó SM-2 haladás, a pcic_cards-tól elkülönítve.
   saveMistakeBatch(batchId: string, json: string, importedAt: string): Promise<void>;
   getMistakeBatches(): Promise<MistakeBatchRow[]>;

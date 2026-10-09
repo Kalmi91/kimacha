@@ -1,4 +1,4 @@
-// PLAN-vizsga E. szakasz: az írás-papír szigorítása (koordinátori észrevétel, 2026-10-01: a
+// az írás-papír szigorítása (koordinátori észrevétel, 2026-10-01: a
 // kulcsszavas pontozás túl laza volt: egy beillesztett feladat-szöveg, egy sokszor ismételt szó
 // vagy értelmetlen betűhalmaz is kapott pontot a szószám miatt, az űrlap pedig bármilyen
 // kitöltött mezőt elfogadott).

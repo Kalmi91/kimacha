@@ -1,4 +1,4 @@
-// FB469 / FB471 / FB472 (PLAN-fb1005a): per-lesson content decisions from the feedback sheet.
+// per-lesson content decisions from the feedback sheet.
 //  - indefinido-imperfecto: no `form` drill ("ez a feladat típus ide nem kell")
 //  - perfecto-vs-indefinido: no "Practice the words" deck and no matching drill
 // The word deck is switched off by the lesson-level flag `noWordDeck`, only for that lesson.

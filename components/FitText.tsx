@@ -3,7 +3,7 @@ import { Text, type KTextProps } from '@/components/KText';
 
 import { useFitFontSize } from '@/lib/fitText';
 
-// FB404/405/413: nagy betűs, hosszú-szavas szöveg (kártya-szó, csempe, cím),
+// nagy betűs, hosszú-szavas szöveg (kártya-szó, csempe, cím),
 // aminek a betűmérete a hossz szerint lépcsőzik (lib/fitText.ts), és ami egy
 // sor-konténerben is összemegy (`flexShrink: 1`), nem lóg ki és nem vágódik le.
 // Csak sima szöveget vesz (children: string); kiemelt / beágyazott részeknél

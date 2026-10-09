@@ -1,4 +1,4 @@
-// PLAN-vizsga C. szakasz (Kálmán, 2026-10-01, C4 a): az adaptív szintfelmérő lépcsője.
+// az adaptív szintfelmérő lépcsője.
 // Tiszta függvények, I/O nélkül: a hívó (app/placement.tsx) a válaszokat egyenként adja,
 // a kérdéseket a lib/exam/placementQuestions.ts építi.
 //

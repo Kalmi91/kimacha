@@ -1,4 +1,4 @@
-// PLAN-regi-szavak-ki 7b. lépés: a words-open kártyák ragozott alakjai (ragozott alak -> lemma
+// a words-open kártyák ragozott alakjai (ragozott alak -> lemma
 // index). Tiszta modul (csak relatív import), hogy a `data/openWords.ts` glossza-keresője és a
 // `scripts/audit-games.mjs` tartalom-kapuja ugyanazt az alak-készletet használja.
 //

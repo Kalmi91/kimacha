@@ -1,6 +1,6 @@
 import { View, type StyleProp, type ViewStyle } from 'react-native';
 
-// PLAN-temak 4D: a díszek közös építőkockái. Csak View, transform / borderRadius trükkökkel
+// a díszek közös építőkockái. Csak View, transform / borderRadius trükkökkel
 // (nincs SVG, nincs új natív függőség).
 
 // Napsugár-legyező: a sugarak az alsó középpontból indulnak, -spread..+spread fok között (0 = fel).

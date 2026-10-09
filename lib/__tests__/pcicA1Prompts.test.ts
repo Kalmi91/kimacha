@@ -1,5 +1,5 @@
-// PLAN-fb0923 1. lepes: A1 PCIC fordítás-audit (FB370-374) or-teszt.
-// PROMPT-POLICY 12-15. szakasz + 4. szakasz: az angol prompt ne legyen
+// 1. lepes: A1 PCIC fordítás-audit or-teszt.
+// az angol prompt ne legyen
 // felrevezeto a spanyol funkcioszavakhoz kepest (gracias/por favor/sin, es
 // forditva a "please"-re). Ha egy valodi kivetel adodik, ide egy explicit
 // EXCEPTIONS bejegyzes kell, kommenttel, nem a teszt lazitasa.
@@ -45,7 +45,7 @@ function collectPairs(): Pair[] {
 describe('PCIC A1 prompt audit (PROMPT-POLICY 4, 12-15. szakasz, FB370-374)', () => {
   const pairs = collectPairs().filter((p) => !EXCEPTIONS.has(p.id));
 
-  // PLAN-ketiranyu 2. lépés (2026-09-28): a gyakorisági korpusznak (data/pcic.ts)
+  // a gyakorisági korpusznak (data/pcic.ts)
   // nincs `kind: 'sentence'` tétele (csak word/phrase), a 'sentence-item' kategória
   // ezért állandóan üres - a nem-üresen-zöld önellenőrzés innentől csak a
   // (továbbra is élő és auditált) szó-példamondatokat követeli meg.

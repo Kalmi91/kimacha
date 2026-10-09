@@ -1,4 +1,4 @@
-// PLAN-vizsga A. szakasz 5. lépés (2b + A8 a): az elrontott SZÓ-tétel kártyája `again` értékeléssel
+// (2b + A8 a): az elrontott SZÓ-tétel kártyája `again` értékeléssel
 // visszakerül az SM-2 ismétlésbe (azonnal esedékes); az elrontott nyelvtani (és olvasás-) tétel
 // nem kap SM-2 változást.
 

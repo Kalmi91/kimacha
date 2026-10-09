@@ -1,4 +1,4 @@
-// PLAN-fb0929 10. lépés (Kálmán 2026-09-30): az es→en irány "szavak gyakorlása" paklija az angol
+// az es→en irány "szavak gyakorlása" paklija az angol
 // szókészletből épül (kérdés = spanyol szó, válasz = angol szó), a spanyol irány változatlan.
 import enA0 from '@/data/words/en/a0.json';
 import enA1 from '@/data/words/en/a1.json';
@@ -130,7 +130,7 @@ describe('wordCellsForLesson spanyol irány (en→es, hu→es) változatlan', ()
     }
   });
 
-  // PLAN-fb1001 16. lépés (Kálmán "b" döntése): a spanyol szó-pakli csak a tábla szavaiból
+  // a spanyol szó-pakli csak a tábla szavaiból
   // épül, ezért a korábbi rögzített minták (ser-estar 30 kártya, glossary::boda...) helyett az
   // invariáns: a kártyák egyike sem szószedet-only szó, és a számok a küszöb alatt vannak.
   it('a ser-estar, gustar, articulos-genero paklija már nem tartalmaz szószedet-only szót', () => {

@@ -2,7 +2,7 @@ import { needsPairCorrection, FORCED_PAIR, speechLang, supportedPairs, languages
 import { getOpenWordsForLevel } from '@/data/openWords';
 
 describe('languages', () => {
-  // Kimacha Play: single en-es pair (Kálmán, 2026-09-22).
+  // Kimacha Play: single en-es pair.
   it('lists exactly en and es', () => {
     expect(languages.map(l => l.code)).toEqual(['en', 'es']);
   });
@@ -12,7 +12,7 @@ describe('languages', () => {
       expect(supportedPairs.every(([s, t]) => s !== t)).toBe(true);
     });
 
-    // PLAN-ketiranyu 4. lépés (2026-09-28): a második irány, es→en, hozzáadva.
+    // a második irány, es→en, hozzáadva.
     it('lists the en-es and es-en pairs', () => {
       expect(supportedPairs).toEqual([['en', 'es'], ['es', 'en']]);
     });
@@ -32,7 +32,7 @@ describe('languages', () => {
     });
   });
 
-  // PLAN-ketiranyu 4. lépés: a régi (onboarding kész, pár nélküli/elavult
+  // a régi (onboarding kész, pár nélküli/elavult
   // pár) állapot en-es-nek számít, a FORCED_PAIR ezt kényszeríti ki
   // (app/_layout.tsx needsPairCorrection); az új es-en párt NEM javítja át.
   describe('needsPairCorrection + FORCED_PAIR', () => {
@@ -63,7 +63,7 @@ describe('languages', () => {
       expect(speechLang('en')).toBe('en-US');
     });
 
-    // Kálmán 2026-08-22: the Spanish course is for Mexico, so the voice must be
+    // the Spanish course is for Mexico, so the voice must be
     // Mexican and not Castilian (no "th" for c/z).
     it('speaks Mexican Spanish, not Castilian', () => {
       expect(speechLang('es')).toBe('es-MX');

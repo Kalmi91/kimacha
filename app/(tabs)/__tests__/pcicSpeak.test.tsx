@@ -1,4 +1,4 @@
-// FB319/FB321: automatikus felolvasás a PCIC fülön. Mock-minta:
+// automatikus felolvasás a PCIC fülön. Mock-minta:
 // app/grammar/__tests__/learnWordsButton.test.tsx (db, router, i18n).
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
@@ -15,14 +15,14 @@ jest.mock('expo-router', () => ({
   },
 }));
 
-// FB350: useDockLift (a PCIC dokkolt sávja) most useSafeAreaInsets-et hív, ami
+// useDockLift (a PCIC dokkolt sávja) most useSafeAreaInsets-et hív, ami
 // SafeAreaProvider nélkül dob; itt a mérete nem számít, csak ne dobjon.
 jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, left: 0, right: 0, bottom: 0 }),
 }));
 
 // Egy fix tétel, hogy a teszt ne a valódi PCIC-korpusztól függjön.
-// PLAN-play 10. lépés: az id "b1-" előtaggal, mert lib/pcicLevels.ts a
+// az id "b1-" előtaggal, mert lib/pcicLevels.ts a
 // szint-szűrést az id-előtagból dönti el (a fül a B1 alap-szinten indul).
 const FIXTURE_ITEM = { id: 'b1-x1', es: 'vida', en: 'life', kind: 'word' as const, section: 'Test', order: 0 };
 jest.mock('@/data/pcic', () => ({

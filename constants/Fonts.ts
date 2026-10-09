@@ -1,7 +1,7 @@
-// PLAN-temak 2B: a témák betűi. Statikus TTF/OTF (a variable font Androidon nem jó),
+// a témák betűi. Statikus TTF/OTF (a variable font Androidon nem jó),
 // a kulcs a `useFonts` neve, vagyis a `fontFamily` értéke. A forrás a Google Fonts
 // (@expo-google-fonts statikus példányai), az OpenDyslexic a saját repójából.
-// ShipporiMincho (8,6 MB) helyett Spectral-Light (a PLAN-temak.md 2B/2. pontja szerint).
+// ShipporiMincho (8,6 MB) helyett Spectral-Light (a terv szerint).
 
 export const FONT_NAMES = [
   'PoiretOne',

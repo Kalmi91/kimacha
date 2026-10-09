@@ -1,4 +1,4 @@
-// PLAN-fb0929 7. lépés (D1): a három új feladat-fajta végigjátszva (hibakereső, szórend, diktálás).
+// a három új feladat-fajta végigjátszva (hibakereső, szórend, diktálás).
 jest.mock('@/lib/speech', () => ({
   speak: jest.fn(),
   speakSequence: jest.fn(),

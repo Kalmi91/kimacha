@@ -1,4 +1,4 @@
-// PLAN-learn-words-open 5a: helyes válasz után a szó csak egyszer látszik (a
+// helyes válasz után a szó csak egyszer látszik (a
 // rózsaszín sor a hangszóróval), a zöld visszhang (diff-sor) kimarad. Ha a beírt
 // válasz eltér (rossz, vagy ékezet nélkül elfogadott), mindkét sor megmarad.
 // Mock-minta: pcicBrutal.test.tsx.
@@ -84,7 +84,7 @@ describe('PCIC felfedés: a helyes válasz csak egyszer látszik (5a)', () => {
     view.unmount();
   });
 
-  // FB460 ("Not quite!" és a rontott szó közé kis hely): a jelvény alatt a beírt szó sora nem ér hozzá.
+  // ("Not quite!" és a rontott szó közé kis hely): a jelvény alatt a beírt szó sora nem ér hozzá.
   it('rossz válasz: a "Not quite!" jelvény és a beírt (rontott) szó között rés van (FB460)', async () => {
     const view = await revealWith('xyz');
     const gap = StyleSheet.flatten(view.getByTestId('pcic-diff-line').props.style).marginTop ?? 0;

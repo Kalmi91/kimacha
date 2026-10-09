@@ -1,4 +1,4 @@
-// PLAN-vizsga E. szakasz (15-16. lépés): a próbavizsga adatmodellje. A régi (4afeb8c^)
+// a próbavizsga adatmodellje. A régi (4afeb8c^)
 // lib/exam/types.ts szerkezetét viszi tovább: papírok (saját órával), feladat-fajták, nincs
 // azonnali visszajelzés, készségenkénti pont és az átmenési szabály. A feladatok nem kézzel írt
 // JSON-ból, hanem a szint szavaiból épülnek (lib/exam/mock/build.ts), az irányt a `target` adja.
@@ -127,7 +127,7 @@ export interface MockPaper {
   minutes: number;
   /** A papírban szereplő készségek összpontja (készségenként 25). */
   points: number;
-  /** A szóbeli ebben a szeletben helyőrző (Kálmán E2 a): nincs feladata, nem számít bele. */
+  /** A szóbeli ebben a szeletben helyőrző nincs feladata, nem számít bele. */
   placeholder: boolean;
   tasks: MockTask[];
 }

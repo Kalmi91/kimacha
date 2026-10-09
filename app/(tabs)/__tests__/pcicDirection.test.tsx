@@ -1,4 +1,4 @@
-// PLAN-ketiranyu 4. lépés (2026-09-28): a PCIC fül irány-tudatos lett. Ez a
+// a PCIC fül irány-tudatos lett. Ez a
 // teszt az es→en irányt fedi: a prompt a kiinduló (spanyol) mező, a válasz
 // (bírálás + felolvasás) a célnyelvi (angol) mező - a pcicSpeak.test.tsx
 // en→es esetének tükörképe. Mock-minta: app/(tabs)/__tests__/pcicSpeak.test.tsx.
@@ -75,7 +75,7 @@ describe('PCIC fül: es→en irány (PLAN-ketiranyu 4. lépés)', () => {
     expect(mockSpeak).toHaveBeenCalledWith('life', 'en-US');
   });
 
-  // PLAN-ketiranyu 4. lépés javítás (2026-09-28 review, 2. pont): egy
+  // Egy
   // frissen váltott irányban, ahol még sose választottak szintet
   // (db.hasPcicLevel() false), a főfül magától felnyitja a szint-választó
   // lapot, ahelyett hogy csendben a fallback szintre ugorna.

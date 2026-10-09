@@ -1,4 +1,4 @@
-// FB196, Kálmán 2026-09-09 (easy:The clients have): „megint a have arrived os mondatot
+// User feedback (easy:The clients have): „megint a have arrived os mondatot
 // teszed be pedig még ezt a nyelvtani szerkezetet nem tanítottad ez a hiba töbazőr
 // előfordúlt erre figyelj old meg, hogy többszőr ne legyen. legyen olyan hogy bizonyos
 // nyelvtani szerkezeteket feloldunk és akkor lehet mondjuk vizsgára is menni, meg akkor
@@ -103,7 +103,7 @@ function levelRank(level: Level): number {
 function buildFormIndex(): Map<string, Structure> {
   const index = new Map<string, Structure>();
   const infinitives = new Set<string>();
-  // PLAN-regi-szavak-ki 5. lépés: a words-open igéi; a perjeles alak ("volver / regresar")
+  // a words-open igéi; a perjeles alak ("volver / regresar")
   // minden alternatívája külön főnévi igenév.
   for (const w of openWords) {
     if (w.pos !== 'verb') continue;

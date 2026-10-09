@@ -1,4 +1,4 @@
-// FB316 (NYELVTAN.md NY10): a mondat-átírás (transform) kör 10-es adagokban
+// a mondat-átírás (transform) kör 10-es adagokban
 // megy, a legkevésbé gyakorolt item elöl, hogy egy nagy lecke (pl. 50 tétel)
 // ne egyszerre ugorjon a tanuló elé. `seenCounts` a game_progress
 // `${topicId}:transform:seen` sorából jön (app/grammar/[topic].tsx).

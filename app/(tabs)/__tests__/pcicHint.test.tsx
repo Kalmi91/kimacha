@@ -1,4 +1,4 @@
-// PLAN-tobbjelentes 3. lépés (SZ8): a nagy szó alatti kis mondat (learn-hint, a `*…*`
+// a nagy szó alatti kis mondat (learn-hint, a `*…*`
 // rész kiemelve, csillag nélkül) és a Check utáni „also: b · c” sor (learn-also, perjeles
 // válasznál). Mock-minta: app/(tabs)/__tests__/pcicNote.test.tsx.
 

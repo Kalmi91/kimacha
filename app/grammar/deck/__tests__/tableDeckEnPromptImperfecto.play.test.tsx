@@ -1,4 +1,4 @@
-// FB463: az imperfecto táblakártyáján a prompt az angol alak ("I used to speak"), nem a puszta
+// az imperfecto táblakártyáján a prompt az angol alak ("I used to speak"), nem a puszta
 // "yo"; a spanyol főnévi igenév ("hablar") a súgó-gombra jelenik meg.
 // Mock-minta: tableDeckEnPromptInd10.play.test.tsx.
 

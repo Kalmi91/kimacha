@@ -23,7 +23,7 @@ class MemoryDB implements DB {
     return { ...this.streak };
   }
 
-  // PLAN-play 12. lépés: visszahozva, a PCIC-értékelés hívja (mirrors the
+  // visszahozva, a PCIC-értékelés hívja (mirrors the
   // native SQLiteDB.updateStreak).
   async updateStreak() {
     const today = localDateString();
@@ -49,7 +49,7 @@ class MemoryDB implements DB {
     return { ...(this.userLevels.get(this.activePair) ?? { level: 'A0', correct_streak: 0, mistakes_in_window: 0, fail_streak: 0 }) };
   }
 
-  // Play-vágás 7. lépés: updateLevel (the only public setter) had no app-code
+  // Play-vágás: updateLevel (the only public setter) had no app-code
   // caller and is gone; grammar-screen fixtures that need a specific level
   // use this instead. Not on the DB interface, same pattern as the old
   // __setRequeueLevelForTest.
@@ -61,7 +61,7 @@ class MemoryDB implements DB {
 
   private meta = { userId: crypto.randomUUID?.() ?? Math.random().toString(36), firstUseDate: new Date().toISOString(), lastSyncDate: null as string | null };
 
-  // FB76: first open of the day (memory mirror; a web reload counts as a new day).
+  // first open of the day (memory mirror; a web reload counts as a new day).
   private lastOpenDate: string | null = null;
 
   async claimDailyGreeting(): Promise<boolean> {
@@ -71,19 +71,19 @@ class MemoryDB implements DB {
     return true;
   }
 
-  // FB83: status-bar tint index (memory mirror, like every other web setting).
+  // status-bar tint index (memory mirror, like every other web setting).
   private statusBarTint = 0;
 
   async getStatusBarTint(): Promise<number> { return this.statusBarTint; }
   async setStatusBarTint(index: number): Promise<void> { this.statusBarTint = index; }
 
-  // NY11: app-wide color palette (memory mirror of user_meta.grammar_palette).
+  // app-wide color palette (memory mirror of user_meta.grammar_palette).
   private grammarPalette: GrammarPaletteId = DEFAULT_GRAMMAR_PALETTE;
 
   async getGrammarPalette(): Promise<GrammarPaletteId> { return this.grammarPalette; }
   async setGrammarPalette(id: GrammarPaletteId): Promise<void> { this.grammarPalette = id; }
 
-  // PLAN-temak 2A: választott téma + Saját mix (memory mirror of user_meta.skin / skin_mix).
+  // választott téma + Saját mix (memory mirror of user_meta.skin / skin_mix).
   private skin: SkinSelection | null = null;
   private skinMix: SkinMix | null = null;
 
@@ -92,14 +92,14 @@ class MemoryDB implements DB {
   async getSkinMix(): Promise<SkinMix | null> { return this.skinMix; }
   async setSkinMix(mix: SkinMix): Promise<void> { this.skinMix = mix; }
 
-  // Play-vágás 7. lépés: getWordsOnly/setWordsOnly and getRandomTopics/
+  // Play-vágás: getWordsOnly/setWordsOnly and getRandomTopics/
   // setRandomTopics are gone (no caller since the Learn/Topics tabs left),
   // but the maps stay so an imported old backup's learn_settings.words_only /
   // .random_topics values still round-trip through exportAll unchanged.
   private wordsOnlyMap: Map<string, boolean> = new Map();
   private randomTopicsMap: Map<string, boolean> = new Map();
 
-  // FB132: difficulty switch, per pair (mirrors the SQLite side).
+  // difficulty switch, per pair (mirrors the SQLite side).
   private strictAccentsMap: Map<string, boolean> = new Map();
 
   async getStrictAccents(): Promise<boolean> {
@@ -110,7 +110,7 @@ class MemoryDB implements DB {
     this.strictAccentsMap.set(this.activePair, v);
   }
 
-  // FB364: memory mirror of the SQLite again_delay_sec column.
+  // memory mirror of the SQLite again_delay_sec column.
   private againDelaySecMap: Map<string, number> = new Map();
 
   async getAgainDelaySec(): Promise<number> {
@@ -121,7 +121,7 @@ class MemoryDB implements DB {
     this.againDelaySecMap.set(this.activePair, sec);
   }
 
-  // FB188: névelő-gombsor kapcsoló, per pár (a SQLite oldal tükre). Alapból be.
+  // névelő-gombsor kapcsoló, per pár (a SQLite oldal tükre). Alapból be.
   private articlePickerMap: Map<string, boolean> = new Map();
 
   async getArticlePicker(): Promise<boolean> {
@@ -132,7 +132,7 @@ class MemoryDB implements DB {
     this.articlePickerMap.set(this.activePair, v);
   }
 
-  // FB65: weekly study goal in minutes, per pair (mirrors the SQLite side).
+  // weekly study goal in minutes, per pair (mirrors the SQLite side).
   private weeklyGoalMap: Map<string, number> = new Map();
 
   async getWeeklyGoalMinutes(): Promise<number> {
@@ -153,7 +153,7 @@ class MemoryDB implements DB {
     this.feedbackBtnSideMap.set(this.activePair, side);
   }
 
-  // FB77: daily new-word budget (memory mirror of the SQLite columns).
+  // daily new-word budget (memory mirror of the SQLite columns).
   private dailyNewLimitMap: Map<string, number> = new Map();
 
   async getDailyNewLimit(): Promise<number> {
@@ -164,7 +164,7 @@ class MemoryDB implements DB {
     this.dailyNewLimitMap.set(this.activePair, limit);
   }
 
-  // FB385/386: memory mirror of the SQLite new_bonus/new_bonus_date columns.
+  // memory mirror of the SQLite new_bonus/new_bonus_date columns.
   private pcicNewBonusMap: Map<string, { bonus: number; date: string }> = new Map();
 
   async getPcicNewBonus(today: string): Promise<number> {
@@ -193,7 +193,7 @@ class MemoryDB implements DB {
     return summarizeUsage(rows);
   }
 
-  // FB108: one local calendar day's totals, for the midnight celebration.
+  // one local calendar day's totals, for the midnight celebration.
   async getDayStats(date: string): Promise<{ minutes: number; words: number }> {
     const words = new Set(
       this.attempts
@@ -203,7 +203,7 @@ class MemoryDB implements DB {
     return { minutes: this.usageMinutes.get(date) ?? 0, words: words.size };
   }
 
-  // GAMES.md 3.5 (F0): Game fül tables, scoped to the active pair like every
+  // Game fül tables, scoped to the active pair like every
   // other per-pair setting/state in this interface.
   private gameProgressMap: Map<string, Map<string, { state: string; data: unknown }>> = new Map();
 
@@ -233,7 +233,7 @@ class MemoryDB implements DB {
     this.gameProgressMap.delete(this.gameKey(gameId));
   }
 
-  // PLAN-vizsga A. szakasz 2. lépés (A6 a): a szintvizsga eredménye, lásd lib/exam/result.ts.
+  // a szintvizsga eredménye, lásd lib/exam/result.ts.
   async getExamResults(): Promise<ExamResults> {
     return readExamResults(this);
   }
@@ -242,7 +242,7 @@ class MemoryDB implements DB {
     return writeExamResult(this, level, pct, passed, date);
   }
 
-  // PLAN-pcic 4. lépés: PCIC fül, SM-2, független a FSRS `cards`-tól. Nem
+  // PCIC fül, SM-2, független a FSRS `cards`-tól. Nem
   // pair-hez kötött (a fül csak es→en tételekkel dolgozik), session-scoped
   // Map, mint a többi web-only állapot ebben a fájlban.
   private pcicCards: Map<string, Sm2Card> = new Map();
@@ -255,7 +255,7 @@ class MemoryDB implements DB {
     this.pcicCards.set(card.itemId, { ...card });
   }
 
-  // PLAN-fb0924 7a. lépés: lásd lib/database.ts resetPcicCards komment - a
+  // lásd lib/database.ts resetPcicCards komment - a
   // valódi id-listát a betöltött korpuszból kérjük, nem az id előtagjából.
   async resetPcicCards(levelPrefix?: string): Promise<void> {
     if (!levelPrefix) {
@@ -268,7 +268,7 @@ class MemoryDB implements DB {
     }
   }
 
-  // PLAN-hibaim.md 2. lépés: session-scoped Map-ek, mint a pcicCards/pcicLevel
+  // session-scoped Map-ek, mint a pcicCards/pcicLevel
   // fent, ugyanazzal a szignatúrával, mint a natív (SQLite) implementáció.
   private mistakeBatches: Map<string, { json: string; importedAt: string }> = new Map();
   private mistakeCards: Map<string, Sm2Card> = new Map();
@@ -291,10 +291,10 @@ class MemoryDB implements DB {
     this.mistakeCards.set(card.itemId, { ...card });
   }
 
-  // PLAN-play 10. lépés: a kiválasztott PCIC szint. PLAN-ketiranyu 4. lépés
+  // a kiválasztott PCIC szint.
   // javítás: pár-szerinti Map (mint articlePickerMap), hogy irányváltáskor
   // mindkét pár megőrizze a saját szintjét; alap B1 en-es-nek (meglévő
-  // "b1-..." progressz), A1 minden es→en irányú párnak (5. lépés adja az
+  // "b1-..." progressz), A1 minden es→en irányú párnak (ez adja az
   // egyetlen tartalommal bíró szintet).
   private pcicLevelMap: Map<string, PcicLevel> = new Map();
 

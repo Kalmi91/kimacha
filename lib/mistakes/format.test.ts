@@ -1,5 +1,5 @@
-// PLAN-hibaim.md 2. lépés: validateMistakesPayload against the fixture, plus
-// one negative case per rule in the "Formátum" section of PLAN-hibaim.md.
+// validateMistakesPayload against the fixture, plus
+// one negative case per rule in the "Formátum" section of.
 
 import sample from './__fixtures__/sample.json';
 import { validateMistakesPayload } from './format';

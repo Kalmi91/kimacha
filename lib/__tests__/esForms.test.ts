@@ -1,4 +1,4 @@
-// PLAN-regi-szavak-ki 7b. lépés: a words-open kártyák ragozott alakjai (lib/esForms.ts).
+// a words-open kártyák ragozott alakjai (lib/esForms.ts).
 import { encliticBases, formsOfCard, looseVerbForms, participleForms, subjuntivoImperfecto, vosotrosPresente } from '../esForms';
 import { esFeminine, esPlural } from '../esInflect';
 import { conjugate, TENSES } from '../games/conjugate';

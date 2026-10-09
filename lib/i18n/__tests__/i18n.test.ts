@@ -1,4 +1,4 @@
-// PLAN-ketiranyu 4. lépés (2026-09-28): lib/i18n/es.ts most már teljes
+// lib/i18n/es.ts most már teljes
 // felület-fordítás (nem csak a `usage` blokk), és t()/setLanguage() tényleg
 // vált, nem no-op. Ez a teszt a modul futásidejű viselkedését fedi; a kulcs-
 // egyezést maga a TypeScript is kikényszeríti (es.ts: Strings = typeof en),
@@ -53,7 +53,7 @@ describe('lib/i18n: es.ts teljes lefedettsége + t()/setLanguage() (PLAN-ketiran
     expect(stringsFor('en').usage.dailyGreeting).toBe(en.usage.dailyGreeting);
   });
 
-  // PLAN-learn-words-open 5a: "1 days" helyett egyes szám (1 day / 1 día); a többi szám marad többes.
+  // "1 days" helyett egyes szám (1 day / 1 día); a többi szám marad többes.
   it('a nap-feliratok egyes/többes száma: intervalDays és scheduleNextDays (en, es)', () => {
     expect(en.pcic.intervalDays(1)).toBe('1 day');
     expect(en.pcic.intervalDays(2)).toBe('2 days');
@@ -66,7 +66,7 @@ describe('lib/i18n: es.ts teljes lefedettsége + t()/setLanguage() (PLAN-ketiran
     expect(es.stats.scheduleNextDays(4)).toBe('en 4 días');
   });
 
-  // 2026-09-28 review, 1. pont: az elírás-javításkor a mondatszám kiesett a
+  // Az elírás-javításkor a mondatszám kiesett a
   // spanyol "hoy: ... palabras · oraciones / 10" sorból.
   it('a spanyol badgeIntroducedToday kiírja a mondatszámot (1 oración, 2 oraciones)', () => {
     expect(es.pcic.badgeIntroducedToday(3, 1, 10)).toBe('hoy: 3 palabras · 1 oración / 10');

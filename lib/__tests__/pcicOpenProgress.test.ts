@@ -1,4 +1,4 @@
-// PLAN-learn-words-open 3. lépés: az en→es pakli a data/words-open-re váltott
+// az en→es pakli a data/words-open-re váltott
 // (o<order> id-tér). A régi w<id> SRS-sorok a pcic_cards táblában maradnak
 // (a haladás nem vész el), csak a betöltött korpuszban nincsenek, ezért egyik
 // szint nézetében sem jelennek meg. Memory (web) DB, mint lib/__tests__/pcicDb.test.ts.

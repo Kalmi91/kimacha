@@ -1,8 +1,7 @@
-// FB499 ("azt írja a játék, hogy van még 40 szó, miért nem dobja fel?"): a szint-választó lap vizsga-sora
+// ("azt írja a játék, hogy van még 40 szó, miért nem dobja fel?"): a szint-választó lap vizsga-sora
 // kiírja, mennyi szó hiányzik ("N / M words learned, K to go"), a "Practice words" koppintás viszont a
 // napi keret kimerülése után nem adott egy szót sem (az aktív szintnél a lap csak bezárult, a "kész mára"
-// képernyő maradt). Most az összes hiányzó új szót adja egy koppintásra ("mindet egyszerre", Kálmán
-// 2026-10-05). A valódi words-open korpusszal fut. Mock-minta: pcicExamRow.test.tsx.
+// képernyő maradt). Most az összes hiányzó új szót adja egy koppintásra ("mindet egyszerre"). A valódi words-open korpusszal fut. Mock-minta: pcicExamRow.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({

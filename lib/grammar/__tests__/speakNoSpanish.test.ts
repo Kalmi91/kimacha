@@ -1,4 +1,4 @@
-// FB414 (PLAN-fb0929 5. lépés, D3): a spanyol nyelvtani leckék felolvasása spanyol szó nélkül szól.
+// a spanyol nyelvtani leckék felolvasása spanyol szó nélkül szól.
 import fs from 'node:fs';
 import path from 'node:path';
 

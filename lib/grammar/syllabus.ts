@@ -1,7 +1,7 @@
 // The grammar syllabus: every grammar point the course intends to teach from
 // A1 to C1, in teaching order, grouped into units.
 //
-// Kálmán, 2026-09-08: "minden szintnek van nyelvtani része is... tedd bele a
+// User feedback: "minden szintnek van nyelvtani része is... tedd bele a
 // nyelvtant a szintekbe is. meg külön legyen egy nyelvtani tanulás rész ahol
 // szépen átveszi az összes nyelvtant... azt akarom, hogy átfogó legyen és
 // minden szükséges nyelvtan legyen benne."
@@ -40,7 +40,7 @@ export interface SyllabusUnit {
  *
  *   core+   (telt lila) a beszéd-mag: ser/estar, jelen, a két múlt és a
  *                   szembeállításuk, ir a + inf, modálok, névmások, condicional.
- *                   Ez épül LEGELŐBB, ez tömi be a beszéd-lyukat (Kálmán, 2026-09-15)
+ *                   Ez épül LEGELŐBB, ez tömi be a beszéd-lyukat
  *   core    (lila)  beszélni nem lehet nélküle, ez épül elsőként A1-C1-ig
  *   exam    (kék)   vizsgához és helyes beszédhez kell, de nem blokkol
  *   full    (zöld)  PCIC-teljesség, csak a leltár kedvéért
@@ -80,7 +80,7 @@ const GRAMMAR_TIER: Record<string, GrammarTier> = {
   imperfecto: 'core-plus',
   'indefinido-imperfecto': 'core-plus',
   // Mexikóban a beszélt nyelv a pretéritót használja a perfecto helyett
-  // (comí, nem he comido), ezért nem a beszéd-magban van. Kálmán, 2026-09-15.
+  // (comí, nem he comido), ezért nem a beszéd-magban van.
   perfecto: 'exam',
   'perfecto-vs-indefinido': 'exam',
   'estar-gerundio': 'core-plus',
@@ -169,8 +169,8 @@ export const GRAMMAR_UNITS: SyllabusUnit[] = [
 
 export const GRAMMAR_SYLLABUS: SyllabusTopic[] = [
   // ========================= A1 =========================
-  // FB189, Kálmán 2026-09-08: „egy fontos része a nyelvtannal az szófajok
-  // megkülönböztetése erre is helyezz hansúlyt." Kálmán a játék MELLÉ a
+  // User feedback: „egy fontos része a nyelvtannal az szófajok
+  // megkülönböztetése erre is helyezz hansúlyt." A fejlesztő a játék MELLÉ a
   // tananyagba is kérte, ezért a szófaj-áttekintés a tanterv legelső témája:
   // minden későbbi szabály („a melléknév a főnév után áll", „az ige ragozódik")
   // feltételezi, hogy ezeket a szó szintjén szét tudja választani.
@@ -775,7 +775,7 @@ export function syllabusTopic(id: string, lang = 'es'): SyllabusTopic | undefine
 }
 
 /**
- * Kálmán 2026-09-09 (drill Kész-képernyő): „tegyél bele egy gombot, hogy
+ * (drill Kész-képernyő): „tegyél bele egy gombot, hogy
  * kovetkező topicot lehessen tanulni". A tanterv sorrendjében a következő téma,
  * amihez MÁR VAN megírt lecke, tehát a gomb sosem visz üres képernyőre. A szint
  * határán nem áll meg: a tanterv folytatódik a következő szinten.
@@ -805,10 +805,10 @@ interface GrammarTopicProgress {
 const GRAMMAR_KINDS: GrammarKind[] = ['choice', 'match', 'form', 'transform'];
 
 /**
- * D3 (FB290, 2026-09-17): a lecke feladatai fajtánként külön indíthatók, a
+ * a lecke feladatai fajtánként külön indíthatók, a
  * game_progress itemId ezért egy `${topicId}:${kind}` sor (app/grammar/[topic]
  * csak >=80%-nál ír). A régi, egy-értékű sorok (itemId === topicId, a split
- * előtti korból) minden fajtát késznek jelentenek, hogy Kálmán meglévő kész
+ * előtti korból) minden fajtát késznek jelentenek, hogy a meglévő kész
  * leckéi ne álljanak vissza nyitottra. Egy téma csak akkor kész, ha a
  * leckéjében LÉTEZŐ összes fajtájából van kész sor.
  */
@@ -854,14 +854,14 @@ export function doneGrammarTopicProgress(
 }
 
 /**
- * FB415 (PLAN-fb0929 4. lépés): a lecke létező feladat-fajtái a lecke-oldal gombjainak
+ * a lecke létező feladat-fajtái a lecke-oldal gombjainak
  * sorrendjében (a "why" is, ellentétben a "kész" feltétellel fentebb): a lecke %-a
  * ezek átlaga, a meg nem kezdett fajta 0.
  */
 const LESSON_KIND_ORDER: readonly GrammarKind[] = ['choice', 'article', 'match', 'form', 'why', 'transform', 'spot', 'order', 'dictation'];
 
-// PLAN-fb0929 7. lépés (D1): az ideiglenes ("ÚJ · TESZT") fajták gombja megjelenik, de a
-// lecke %-át nem húzzák le (amíg Kálmán nem hagyja jóvá őket, nem részei a leckének).
+// az ideiglenes ("ÚJ · TESZT") fajták gombja megjelenik, de a
+// lecke %-át nem húzzák le (amíg a fejlesztő nem hagyja jóvá őket, nem részei a leckének).
 const TRIAL_KINDS: readonly GrammarKind[] = ['spot', 'order', 'dictation'];
 
 /** A lecke gombjai: minden fajta, amiből van item. */

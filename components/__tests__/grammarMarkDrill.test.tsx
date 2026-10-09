@@ -1,4 +1,4 @@
-// FB219: the "tap the word class inside the sentence" drill, walked the way a
+// the "tap the word class inside the sentence" drill, walked the way a
 // learner walks it: read the prompt, tap a word, see the verdict.
 import { fireEvent, render, screen } from '@testing-library/react-native';
 

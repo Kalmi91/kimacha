@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-// Sentence specificity linter, from the 2026-08-25/26 feedback round (FB154/155/157).
+// Sentence specificity linter, from the 2026-08-25/26 feedback round.
 //
-// Kálmán, `word:Saturday`: "ezek a mondatok ... nem specifikus ... szombaton nem
+// `word:Saturday`: "ezek a mondatok ... nem specifikus ... szombaton nem
 // dolgozunk ezzel az a baj hogy vasárnap sem". Same for "el guisante es una
 // verdura verde", which is equally true of the courgette, and `word:home cooking`,
 // "eléggé rövid mondat és nem specifikus".

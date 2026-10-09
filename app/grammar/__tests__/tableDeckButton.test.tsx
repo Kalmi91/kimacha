@@ -1,4 +1,4 @@
-// PLAN-play 13. lépés (s6): the "Practice the table" button only where the
+// the "Practice the table" button only where the
 // lesson actually has a conjugation table (lib/grammar/tableDeck.ts already
 // excludes reference GridTables and legacy schema-1 lessons).
 
@@ -71,7 +71,7 @@ describe('grammar lesson screen: table-deck button', () => {
     view.unmount();
   });
 
-  // PLAN-fb1001 11. lépés (FB437/FB438): a személy-tábla (minden sor személy-névmás, a fejléc nem
+  // a személy-tábla (minden sor személy-névmás, a fejléc nem
   // csupa infinitivus) kérdezhető, ezért gombot kap; a régi "posesivos = schema-1, nincs gomb"
   // teszt a posesivos schema-2-re költözésekor elavult volt.
   it('a person table (pronombres-oi) gets the deck button, 5 cells (vosotros dropped)', async () => {
@@ -84,9 +84,9 @@ describe('grammar lesson screen: table-deck button', () => {
 
     view.unmount();
   });
-  // PLAN-fb1001 16. lépés (FB437/FB438, Kálmán "b" döntése): a szó-pakli csak a tábla szavaiból
+  // a szó-pakli csak a tábla szavaiból
   // épül; ahol így küszöb alatt marad, nincs pakli-belépő (és nincs crash).
-  // PLAN-fb1005b 2. lépés (FB493) visszaállítja ezt az articulos-genero-ra: a FB448-as, az app összes főnevéből
+  // visszaállítja ezt az articulos-genero-ra: a korábbi, az app összes főnevéből
   // épített pakli megszűnt, a főnevek csak az el / la feladatban vannak, a pakli ismét a lecke saját szavai.
   it('articulos-genero (a tábla szavai a küszöb alatt) nem kap szó-pakli belépőt', async () => {
     mockTopicId = 'articulos-genero';

@@ -1,4 +1,4 @@
-// PLAN-vizsga A. szakasz 6. lépés (2c, Kálmán, 2026-10-01, A4 b): az eredmény-lap készségenként
+// az eredmény-lap készségenként
 // (szó, nyelvtan, olvasás, szóbeli): pont és %, "erős" vagy "gyenge" (gyenge = a készség % az átmenési
 // küszöb alatt), és a gyenge nyelvtanhoz a leggyakrabban elrontott leckék (lecke-link). Tiszta
 // függvények, a képernyő (app/exam.tsx) csak megjeleníti.

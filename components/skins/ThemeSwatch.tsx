@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import { skinColorsFor, type Skin, type SkinMode } from '@/constants/Skins';
 
-// PLAN-temak 4D: egy téma mintája (a Témák rács csempéje és a Beállítások sor jelvénye): a téma
+// egy téma mintája (a Témák rács csempéje és a Beállítások sor jelvénye): a téma
 // háttere, "Aa" a title-betűvel, alul 5 px-es a-színű sáv. A téma saját színeit rajzolja, nem az
 // aktív témáét, ezért a betűt közvetlenül (fontFamily) állítja, nem az aktív téma betűjén át.
 export default function ThemeSwatch({

@@ -1,6 +1,6 @@
-// LECKE-SEMA 3-4: a V2 pilot lecke (ser-estar) a lecke-képernyőn: a body
+// a V2 pilot lecke (ser-estar) a lecke-képernyőn: a body
 // (LessonBody) renderel, és a felolvasás egyetlen play<->stop gombbal megy
-// (LECKE-SEMA 3.3), nem a lib/speech valódi motorjával, azt itt kimockoljuk.
+// nem a lib/speech valódi motorjával, azt itt kimockoljuk.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({

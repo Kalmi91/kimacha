@@ -11,7 +11,7 @@ const ARTICLES: Record<string, string[]> = {
   hu: ['a', 'az', 'egy'],
 };
 
-// FB50: subject-pronoun gender pairs the source sentence cannot disambiguate
+// subject-pronoun gender pairs the source sentence cannot disambiguate
 // ("They decide" → ellos/ellas are BOTH correct translations). Offering the
 // counterpart as a trap is unfair, so when the answer uses one member of a
 // pair, its partner is barred from the bank.
@@ -34,7 +34,7 @@ const AMBIGUOUS_PRONOUN_PAIRS: Record<string, [string, string][]> = {
 };
 
 /**
- * Near-miss distractors for the tap-to-order easy sentence card (FB1).
+ * Near-miss distractors for the tap-to-order easy sentence card.
  *
  * Instead of random vocabulary, prefer words that are genuinely easy to confuse
  * with the actual sentence words so the learner practises forms/endings:

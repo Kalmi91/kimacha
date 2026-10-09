@@ -5,7 +5,7 @@ import { charDiff } from '@/lib/charDiff';
 import { t } from '@/lib/i18n';
 import type { GrammarColors } from '@/lib/grammarColors';
 
-// FB416 (PLAN-fb0929 3. lépés): hibás válasznál a tanuló saját válasza és a
+// hibás válasznál a tanuló saját válasza és a
 // helyes egymás alatt, a különbség kiemelve mindkét sorban: a saját sorban a
 // rossz betűk fordított (sötét) mezőn és áthúzva, a helyes sorban a hiányzó /
 // eltérő betűk a kitöltés színén és aláhúzva. Az alak (fordított mező, áthúzás,

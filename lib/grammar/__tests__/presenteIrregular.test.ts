@@ -1,4 +1,4 @@
-// FB423 (PLAN-fb0929 5. lépés): a presente-irregular lecke a leggyakoribb rendhagyó igék mindegyikét tartalmazza.
+// a presente-irregular lecke a leggyakoribb rendhagyó igék mindegyikét tartalmazza.
 import lessonJson from '@/data/games/grammar/es/presente-irregular.json';
 import { lessonFor } from '../syllabus';
 import { tableCellsForLesson } from '../tableDeck';

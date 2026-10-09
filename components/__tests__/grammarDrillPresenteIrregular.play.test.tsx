@@ -1,7 +1,7 @@
-// TASK-9 (PLAN-fb0917 12. lépés, C): FB299 (sheet, 2026-09-17,
+// Bug report (sheet, 2026-09-17,
 // grammar:presente-irregular:drill) "itt megint bugos, nem jön be a
 // következő szó". Végigjátssza a valódi presente-irregular leckét mind a 4
-// fajtával (kinds egyesével, ahogy a 10. lépés óta a lecke-oldal fajtánként
+// fajtával (kinds egyesével, ahogy a lecke-oldal fajtánként
 // indítja), minden itemen megnyomva a "következő"-t; ha bárhol nem jelenik
 // meg vagy nem lép tovább, a teszt elakad/pirosra fut. Ha ez a teszt zöld,
 // a hiba nem reprodukálható a lecke-adatból és a GrammarDrill logikájából
@@ -37,7 +37,7 @@ describe('GrammarDrill: presente-irregular full playthrough (FB299)', () => {
   it('match kind (2 items): solving every pair reveals "következő" and it advances', () => {
     const onFinish = jest.fn();
     const matchItems = lesson.items.filter((i): i is MatchItem => i.kind === 'match');
-    expect(matchItems).toHaveLength(2); // FB423: a második párosítás az új igékkel
+    expect(matchItems).toHaveLength(2); // a második párosítás az új igékkel
     render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['match']} />);
 
     for (const matchItem of matchItems) {
@@ -47,7 +47,7 @@ describe('GrammarDrill: presente-irregular full playthrough (FB299)', () => {
       });
       fireEvent.press(screen.getByTestId('grammar-next'));
     }
-    // FB420: a kör egysége a pár: 2 x 6 pár, hiba nélkül 12/12.
+    // a kör egysége a pár: 2 x 6 pár, hiba nélkül 12/12.
     expect(onFinish).toHaveBeenCalledWith(12, 12);
   });
 

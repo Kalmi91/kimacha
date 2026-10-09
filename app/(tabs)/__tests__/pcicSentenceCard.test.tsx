@@ -1,4 +1,4 @@
-// PLAN-ketiranyu 7. lépés: minden 4. ÚJ szó után mondatkártya a pakli-menetben
+// minden 4. ÚJ szó után mondatkártya a pakli-menetben
 // (felváltva összerakós és begépelős), csak gyakorlás: nem ír SRS-t (K3).
 // Mock-minta: app/(tabs)/__tests__/pcicDirection.test.tsx.
 

@@ -1,4 +1,4 @@
-// PLAN-fb1005i 2./2c. lépés (FB498/500): az (i) alatti rész a kártya képét és forrássorát mutatja;
+// az (i) alatti rész a kártya képét és forrássorát mutatja;
 // a forrássor koppintásra megnyitja a kép Commons fájl-oldalát, vágott képnél jelzés van a sorban;
 // képtelen kártyán nincs kép-elem, és ha se kép, se magyarázat nincs, semmi nem renderel.
 import { Linking } from 'react-native';

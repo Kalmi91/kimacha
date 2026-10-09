@@ -1,5 +1,5 @@
-// FB463: minden ragozó táblakártya az angol alakot kérdezi ("I used to eat"), nem a puszta
-// "yo"-t; a spanyol főnévi igenév a súgó-gombra jelenik meg (lásd FB444, 91f9e4b, és
+// minden ragozó táblakártya az angol alakot kérdezi ("I used to eat"), nem a puszta
+// "yo"-t; a spanyol főnévi igenév a súgó-gombra jelenik meg (lásd 91f9e4b, és
 // app/grammar/deck/[topic].tsx). Paritás-teszt: nincs táblakártya enPrompt nélkül.
 
 import { GRAMMAR_SYLLABUS, lessonFor } from '../syllabus';
@@ -10,8 +10,8 @@ import { tableCellsForLesson } from '../tableDeck';
 // lehetne kérdezni ("my" / "me" nem ragozás).
 const REFERENCE_TABLES = new Set(['posesivos', 'posesivos-tonicos', 'pronombres-oi', 'pronombres-preposicion']);
 
-// Régi (FB378) adat: az indefinido-irregular estar- és ser-táblája ugyanazt az angolt adja
-// ("I was"). Nem FB463 hatóköre; külön tétel.
+// Régi adat: az indefinido-irregular estar- és ser-táblája ugyanazt az angolt adja
+// ("I was"). Nem ennek a hatóköre; külön tétel.
 const KNOWN_AMBIGUOUS_LESSONS = new Set(['indefinido-irregular']);
 
 const lessons = GRAMMAR_SYLLABUS.map((t) => t.id)

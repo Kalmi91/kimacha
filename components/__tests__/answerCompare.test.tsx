@@ -1,4 +1,4 @@
-// FB416 (PLAN-fb0929 3. lépés): a hibás válasznál a saját és a helyes válasz
+// a hibás válasznál a saját és a helyes válasz
 // egymás alatt, a különbség kiemelve.
 import { fireEvent, render, screen } from '@testing-library/react-native';
 import type { ReactTestInstance } from 'react-test-renderer';

@@ -1,4 +1,4 @@
-// FB443/FB445: az indefinido-10-verbos tíz egy-igés táblája egy füles, tömör
+// az indefinido-10-verbos tíz egy-igés táblája egy füles, tömör
 // csoport: egyszerre egy tábla látszik, 2 oszlopos cellákkal.
 import { fireEvent, render, screen } from '@testing-library/react-native';
 

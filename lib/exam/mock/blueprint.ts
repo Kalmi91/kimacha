@@ -1,4 +1,4 @@
-// PLAN-vizsga E. szakasz: az irányonkénti, szintenkénti vizsga-alak (papírok, percek, átmenési
+// az irányonkénti, szintenkénti vizsga-alak (papírok, percek, átmenési
 // szabály, tételszámok).
 //
 // es irány (angolul beszélő tanul spanyolt): a hivatalos A1 / A2 felépítés a régi (4afeb8c^)

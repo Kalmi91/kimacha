@@ -2,7 +2,7 @@ import { splitByMarkers } from '@/lib/mixedSpeech';
 
 const hu = { learnedLang: 'es', nativeLang: 'hu' };
 
-// LECKE-SEMA 3.2: a V2 `speak` mező «...»-jelölésből vágja a nyelvváltást,
+// a V2 `speak` mező «...»-jelölésből vágja a nyelvváltást,
 // nem korpusz-találgatásból.
 describe('splitByMarkers', () => {
   it('splits balanced markers into alternating native/learned segments', () => {

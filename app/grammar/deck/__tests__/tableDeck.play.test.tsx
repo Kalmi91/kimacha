@@ -1,4 +1,4 @@
-// PLAN-play 13. lépés (s6): end-to-end playthrough of the table-deck screen
+// end-to-end playthrough of the table-deck screen
 // on the real ser-estar lesson (2 conjugation tables, 10 cells after
 // vosotros is dropped). Mock pattern from
 // app/grammar/__tests__/lessonV2.play.test.tsx and
@@ -43,13 +43,13 @@ const flush = async (times = 3) => {
 
 const cells = tableCellsForLesson(lessonFor('es', 'ser-estar')!);
 
-// FB389 (felülírja FB377-et): az 1. kör (és a "Start again") megint a
+// az 1. kör (és a "Start again") megint a
 // tábla/forrás sorrendjében jön, tehát a képernyő a `cells` saját tömb-
 // sorrendjét mutatja; nincs shuffle-t kell újraszámolni a pass 0-hoz.
 const tableOrder = cells.map((c) => c.id);
 const cellAt = (i: number) => cells.find((c) => c.id === tableOrder[i])!;
 
-// FB463: a ser-estar táblának van angol promptja, ez látszik a puszta személy helyett.
+// a ser-estar táblának van angol promptja, ez látszik a puszta személy helyett.
 const promptOf = (c: { enPrompt?: string; person: string }) => c.enPrompt ?? c.person;
 
 const answerCurrent = async (typed: string) => {
@@ -67,8 +67,8 @@ describe('table-deck screen: ser-estar playthrough', () => {
     await db.setOnboarding('en', 'es');
     (db as any).__setLevelForTest('A1');
     // Each test starts a fresh deck; the web db's game_progress map otherwise
-    // carries state over between `it` blocks in this file. FB389: an
-    // explicit `shuffled: false` here (not the bare pre-FB389 `{ cells: [] }`
+    // carries state over between `it` blocks in this file. An
+    // explicit `shuffled: false` here (not the bare older `{ cells: [] }`
     // shape) so a reset test starts in the table order, same as a lesson
     // that was genuinely never opened before (mergeDeckState's `persisted
     // === undefined` branch) rather than the legacy-save fallback.
@@ -96,7 +96,7 @@ describe('table-deck screen: ser-estar playthrough', () => {
     view.unmount();
   });
 
-  // PLAN-fb1001 13. lépés (FB440): a ragozó kártyán az infinitivus ("ser") alapból rejtett,
+  // a ragozó kártyán az infinitivus ("ser") alapból rejtett,
   // a súgó-gomb mutatja; Check után magától látszik.
   it('the infinitive is hidden by default, the hint button shows it', async () => {
     const view = render(<TableDeckScreen />);
@@ -164,7 +164,7 @@ describe('table-deck screen: ser-estar playthrough', () => {
     view2.unmount();
   });
 
-  // FB389: the shared "answer every cell, once wrong first" walk used by
+  // the shared "answer every cell, once wrong first" walk used by
   // both the "Start again" and "Harder: shuffled" completion tests below.
   const finishTheDeck = async () => {
     // Fail the first deck cell once, then answer every other cell correctly
@@ -200,7 +200,7 @@ describe('table-deck screen: ser-estar playthrough', () => {
     fireEvent.press(screen.getByText('Start again'));
     await flush();
 
-    // FB389: "Start again" is the plain, in-order restart, so the very same
+    // "Start again" is the plain, in-order restart, so the very same
     // first cell as the initial pass comes back, not a new shuffle.
     expect(screen.getByText('0 / 10 done')).toBeTruthy();
     expect(screen.getByText(promptOf(cellAt(0)))).toBeTruthy();
@@ -217,7 +217,7 @@ describe('table-deck screen: ser-estar playthrough', () => {
     fireEvent.press(screen.getByText('Harder: shuffled'));
     await flush();
 
-    // FB389: resetDeckShuffled bumps resetCount to 1 off the persisted 0.
+    // resetDeckShuffled bumps resetCount to 1 off the persisted 0.
     const shuffled = shuffleArray(cells.map((c) => c.id).sort(), hashString('ser-estar:1'));
     const first = cells.find((c) => c.id === shuffled[0])!;
     expect(screen.getByText('0 / 10 done')).toBeTruthy();

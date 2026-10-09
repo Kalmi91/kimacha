@@ -6,7 +6,7 @@ import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { useSkin } from '@/lib/useSkin';
 
-// PLAN-temak 4D, Art deco: arany (a) vonalak. Dupla keret a kártya körül (külső = a téma 1 px-es
+// Art deco: arany (a) vonalak. Dupla keret a kártya körül (külső = a téma 1 px-es
 // kerete, 4 px rés, belső = InnerFrame), napsugár-legyező a szó fölött, a fejléc alatt dupla vonalak
 // két oldalt, középen rombusz-elválasztóval.
 

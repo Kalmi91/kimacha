@@ -1,4 +1,4 @@
-// PLAN-vizsga E. szakasz: a próbavizsga szerzői szövegei célnyelven, mint egy valódi papíron.
+// a próbavizsga szerzői szövegei célnyelven, mint egy valódi papíron.
 // A feladat-utasítások rövid, szint-hű mondatok; az írás-feladatokat a régi (4afeb8c^)
 // data/exams/mock/{es/a1,es/a2}.json hivatalos felépítést követő, kézzel írt írás-részéből emeltük át
 // (a tartalmi pontok kulcsszavai változatlanok); az angol írás-feladatok újak, a Kimacha angol

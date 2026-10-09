@@ -1,4 +1,4 @@
-// FB449 + FB451: a "kész mára" képernyőn +5 / +10 / +15 új szó gomb van (a +10 testID-ja: learn-more-new);
+// a "kész mára" képernyőn +5 / +10 / +15 új szó gomb van (a +10 testID-ja: learn-more-new);
 // minden gomb a napi kerethez ennyivel többet ad. Mock-minta: pcicNewBudgetLevels.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
@@ -91,7 +91,7 @@ describe('PCIC fül: +5 / +10 / +15 új szó a "kész mára" képernyőn (FB449,
     expect(await getDb().getPcicNewBonus(today)).toBe(n);
   });
 
-  // FB456 ("nyomtam egy +15 szót és bebugosodott a csík"): a haladás-csík a +N után az ÚJ adagot méri,
+  // ("nyomtam egy +15 szót és bebugosodott a csík"): a haladás-csík a +N után az ÚJ adagot méri,
   // az első új kártyánál üres (régen a nap eddigi 10 kész kártyájától 42%-ról indult).
   it.each([
     ['learn-more-new-5', 5],

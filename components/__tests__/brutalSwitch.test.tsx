@@ -1,4 +1,4 @@
-// NY25: BrutalSwitch: brutalista palettán ink keretes téglalap sín (role switch + checked
+// BrutalSwitch: brutalista palettán ink keretes téglalap sín (role switch + checked
 // állapot), classic palettán a mai Switch. Ugyanaz a value / onValueChange API.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));

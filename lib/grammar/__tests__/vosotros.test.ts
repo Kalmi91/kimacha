@@ -1,4 +1,4 @@
-// FB357 (grammar:indefinido-10-verbos:drill), Kálmán 2026-09-21: "get rid of
+// User feedback (grammar:indefinido-10-verbos:drill): "get rid of
 // vosotros from exercises". Unit fixtures for isVosotrosItem/filterVosotros/
 // filterVosotrosPairs, plus a couple of corpus-anchored checks (the real
 // indefinido-10-verbos lesson, and the two known false-positive words) so a
@@ -143,7 +143,7 @@ describe('indefinido-10-verbos (real lesson)', () => {
   const lesson = lessonFor('es', 'indefinido-10-verbos');
   if (!lesson) throw new Error('indefinido-10-verbos lesson not found');
 
-  // FB466: the 4 vosotros transform items became ustedes items, nothing is dropped any more.
+  // the 4 vosotros transform items became ustedes items, nothing is dropped any more.
   it('has no vosotros transform item left, all 50 are played', () => {
     const all = lesson.items as TransformItem[];
     expect(all).toHaveLength(50);

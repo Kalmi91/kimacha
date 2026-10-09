@@ -1,4 +1,4 @@
-// PLAN-nyelvtan-en 3-4. lépés: az angol tanterv (es→en irány) az angol
+// az angol tanterv (es→en irány) az angol
 // témafából generálódik, a spanyol tanterv pedig bájtra változatlan marad.
 
 import { createHash } from 'crypto';

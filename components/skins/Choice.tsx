@@ -5,9 +5,9 @@ import { Text } from '@/components/KText';
 import { BrutalBox } from '@/components/grammar/Brutal';
 import { useGrammarColors } from '@/lib/grammarColors';
 
-// PLAN-temak 4D: egy választó-gomb / chip a Témák és a Saját mix képernyőn: brutalista témán
+// egy választó-gomb / chip a Témák és a Saját mix képernyőn: brutalista témán
 // BrutalBox, classic témán sima kártya. A kijelölt kitöltése `a`, szövege `onA`, előtte "✓"
-// (nem csak a szín jelzi a választást). PLAN-temak 7F (FB428): `stacked` = a ✓ + előtag (ikon) a
+// (nem csak a szín jelzi a választást). `stacked` = a ✓ + előtag (ikon) a
 // felirat FÖLÖTT külön sorban, kisebb egysoros felirattal, hogy 3 oszlopban se csússzon ki.
 export default function Choice({
   selected,

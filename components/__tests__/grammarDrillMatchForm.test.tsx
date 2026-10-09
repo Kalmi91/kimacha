@@ -1,7 +1,7 @@
-// LECKE-SEMA 2.1-2.2/D3 (FB290): match/form feladatok a lecke-drillben. A
+// match/form feladatok a lecke-drillben. A
 // `kinds={['choice','match','form']}` kell, különben a régi (gap/mark-only)
-// kör futna, ahogy a Game fül grammar-choice-ánál is marad (LECKE-SEMA 6.3 D
-// pont, `kinds` prop nélkül).
+// kör futna, ahogy a Game fül grammar-choice-ánál is marad
+// (`kinds` prop nélkül).
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import GrammarDrill from '../grammar/GrammarDrill';
@@ -106,7 +106,7 @@ describe('GrammarDrill: form item', () => {
   });
 });
 
-// PLAN-fb1002 10. lépés: a form item `accept` mezője működik (két helyes alak).
+// a form item `accept` mezője működik (két helyes alak).
 describe('GrammarDrill: form item accept', () => {
   const withAccept: LessonV2 = { ...lesson, items: [{ ...(lesson.items[1] as object), accept: ['somos también'] } as LessonV2['items'][number]] };
 
@@ -129,7 +129,7 @@ describe('GrammarDrill: form item accept', () => {
   });
 });
 
-// D3 (FB290, 2026-09-17): a `kinds` prop szűri a kört a kért fajtákra.
+// a `kinds` prop szűri a kört a kért fajtákra.
 describe('GrammarDrill: kinds filter', () => {
   const mixedLesson: LessonV2 = {
     ...lesson,

@@ -1,4 +1,4 @@
-// PLAN-vizsga A. szakasz 2. lépés (A6 a): a szintvizsga eredménye (átment-e,
+// a szintvizsga eredménye (átment-e,
 // legjobb pontszám, szintenként) a meglévő `game_progress` táblában tárolódik,
 // `level-exam` játékként, itemId = a szint. Nincs új tábla és migráció, a mentés
 // pár-szintű, és a backup (exportAll/importAll) magától viszi. A DB-osztályok
