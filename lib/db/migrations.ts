@@ -380,11 +380,9 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
   } catch {}
   const meta = await db.getFirstAsync<any>('SELECT id FROM user_meta WHERE id = 1');
   if (!meta) {
-    const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
-      const r = Math.random() * 16 | 0;
-      return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
-    });
-    await db.runAsync('INSERT INTO user_meta (id, user_id, first_use_date) VALUES (1, ?, ?)', [uuid, new Date().toISOString()]);
+    // user_id is NOT NULL but nothing reads it (the analytics that sent it are gone),
+    // so a new install gets an empty value, not a persistent random identifier.
+    await db.runAsync('INSERT INTO user_meta (id, user_id, first_use_date) VALUES (1, ?, ?)', ['', new Date().toISOString()]);
   }
 
   // Resolve the active pair from onboarding before running migrations.
