@@ -10,7 +10,9 @@ name: Android Release
 # add a red check next to the green CI:
 #   1. `android/` is not in the repository (generated native folders are in
 #      `.gitignore`), so the `setup-java` Gradle cache step finds no Gradle files
-#      when it runs and fails there.
+#      when it runs and fails there. The native side of a release is hand-maintained,
+#      not generated: `expo prebuild` would overwrite the signing keystore, so
+#      releases are built locally.
 #   2. The four signing secrets (ANDROID_KEYSTORE_*) are not uploaded to the
 #      repository.
 # Until then, releases are built locally (see the README, "Release process").
