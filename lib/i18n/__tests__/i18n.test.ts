@@ -34,7 +34,7 @@ describe('lib/i18n: full coverage of es.ts + t()/setLanguage()', () => {
   it('after setLanguage("en") t() gives the English text', () => {
     setLanguage('en');
     expect(currentLanguage()).toBe('en');
-    expect(t().onboarding.start).toBe('Get Started');
+    expect(t().onboarding.start).toBe('Get started');
   });
 
   it('after setLanguage("es") t() gives the Spanish text', () => {
@@ -45,7 +45,7 @@ describe('lib/i18n: full coverage of es.ts + t()/setLanguage()', () => {
 
   it('for an unknown code it falls back to English', () => {
     setLanguage('xx');
-    expect(t().onboarding.start).toBe('Get Started');
+    expect(t().onboarding.start).toBe('Get started');
   });
 
   it('stringsFor gives the usage block of the requested language (for the toasts of the learned language)', () => {

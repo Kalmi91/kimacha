@@ -58,7 +58,7 @@ describe('the UI does not print a trademarked exam name', () => {
   });
 
   it('in the English direction the label is international sample, the official label belongs only to the Spanish direction', () => {
-    expect(en.mockExam.modelNoteIntl('A1')).toBe('Practice exam modelled on an international A1 format');
+    expect(en.mockExam.modelNoteIntl('A1')).toBe('Practice exam modeled on an international A1 format');
     expect(en.mockExam.cardBodyIntl).not.toMatch(/official/i);
     expect(es.mockExam.modelNoteIntl('A2')).not.toMatch(/oficial/i);
     expect(es.mockExam.cardBodyIntl).not.toMatch(/oficial/i);

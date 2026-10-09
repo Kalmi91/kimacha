@@ -3,7 +3,7 @@ export default {
     welcome: 'Welcome to Kimacha! Thank you for using the app, it means a lot.',
     // Kimacha Play: single en-es pair, no more language
     // picker here, just a way to start the course.
-    start: 'Get Started',
+    start: 'Get started',
   },
   // the intro step after the welcome, and the theme step after it.
   intro: {
@@ -116,7 +116,7 @@ export default {
     practiceAgain: 'Practice again',
     nextTopic: 'Next topic',
     backToSyllabus: 'Back to the course',
-    doneGood: 'That rule is sitting well.',
+    doneGood: 'You have that rule down.',
     doneAgain: 'Worth reading the rule once more before the next one.',
     // mixed-language read-aloud of the lesson text.
     readAloud: 'Read aloud',
@@ -200,7 +200,7 @@ export default {
     weeklyGoal: 'Weekly study goal',
     weeklyGoalHours: (h: string) => `${h} hours / week`,
     weeklyGoalDoneTag: '✓ DONE',
-    missingVoice: (langs: string) => `⚠️ No installed voice for: ${langs}. Download it in the phone's text-to-speech settings; until then the app stays silent in that language.`,
+    missingVoice: (langs: string) => `⚠️ No voice installed for: ${langs}. Download it in the phone's text-to-speech settings; until then the app stays silent in that language.`,
     dailyNewLimit: 'New words a day',
     dailyNewLimitWords: (n: string) => `${n} words / day`,
     strictAccents: 'Accents count',
@@ -269,7 +269,7 @@ export default {
     restore: 'Restore',
     confirmTitle: 'Restore',
     confirmMessage: 'This overwrites your current progress with the backup contents. Are you sure?',
-    confirmYes: 'Restore Now',
+    confirmYes: 'Restore now',
     doneTitle: 'Restored!',
     errorTitle: 'Error',
     exportError: 'The backup could not be created.',
@@ -295,7 +295,7 @@ export default {
     allDone: 'All done for now',
   },
   progress: {
-    wordsKnown: 'Words Known',
+    wordsKnown: 'Words known',
   },
   // the small tag on top of every card.
   // Play cut: the Learn tab's header (three numbers +
@@ -318,7 +318,7 @@ export default {
       'except Permanent Marker (Apache License 2.0).',
     photosBody:
       'Photos on some cards come from Wikimedia Commons. Each photo is credited on its card, ' +
-      'with author and licence.',
+      'with author and license.',
     privacyLabel: 'Privacy policy',
     privacyUrl: 'https://kalmi91.github.io/kimacha/privacy-policy.html',
   },
@@ -327,7 +327,7 @@ export default {
     placeholder: 'Share your thoughts...',
     send: 'Send',
     cancel: 'Cancel',
-    thanks: 'Thank You!',
+    thanks: 'Thank you!',
   },
   usage: {
     plusOneMinute: '+1 minute wooo!',
@@ -357,25 +357,25 @@ export default {
     ],
   },
   stats: {
-    title: 'Usage Stats',
+    title: 'Usage stats',
     today: 'Today',
-    thisWeek: 'This Week',
-    allTime: 'All-Time Total',
-    bestDay: 'Best Day',
-    daysActive: 'Days Active',
+    thisWeek: 'This week',
+    allTime: 'All-time total',
+    bestDay: 'Best day',
+    daysActive: 'Days active',
     minutes: (n: number) => `${n} min`,
-    last7Days: 'Last 7 Days',
-    weeklyGoal: 'Weekly Goal',
+    last7Days: 'Last 7 days',
+    weeklyGoal: 'Weekly goal',
     goalProgress: (done: string, goal: string) => `${done} / ${goal} hours`,
     goalBehind: (left: string) => `⚠️ ${left} hours left to your goal`,
     goalReached: '🏆 Weekly goal reached!',
     noData: 'No usage yet, go learn something!',
-    learningProgress: 'Learning Progress',
-    reviewsToday: 'Reviews Today',
+    learningProgress: 'Learning progress',
+    reviewsToday: 'Reviews today',
     // "known" = interval >= 21 days, "graduated" =
     // passed the learning steps (lib/pcicStats.ts).
     known21: 'Known (21+ days)',
-    graduatedLabel: 'Learning → Graduated',
+    graduatedLabel: 'Learning → graduated',
     knownAtLevel: (level: string, known: number) => `${level} ${known}`,
     // how many words are put away for how long, and when they come back
     schedule: 'Schedule',
@@ -466,7 +466,7 @@ export default {
   // labels of the level exam (level-picker row,
   // intro, questions, result). The UI never shows the exam's official name anywhere.
   exam: {
-    rowTitle: (level: string) => `Level exam ${level}`,
+    rowTitle: (level: string) => `${level} level exam`,
     rowLocked: (learned: number, needed: number, missing: number) => `${learned} / ${needed} words learned, ${missing} to go`,
     rowNeedLesson: (level: string) => `Finish one ${level} grammar lesson to unlock`,
     rowReady: 'Ready',
@@ -525,7 +525,7 @@ export default {
   // labels of the adaptive level assessment
   // (entry on the level picker, questions, result).
   placement: {
-    entry: 'Not sure? Take the 3 minute placement test',
+    entry: 'Not sure? Take the 3-minute placement test',
     question: (i: number) => `Question ${i}`,
     wordQuestion: (word: string) => `What does «${word}» mean?`,
     dontKnow: "I don't know",
@@ -566,12 +566,12 @@ export default {
   mockExam: {
     cardTitle: 'Practice exam',
     cardBody: 'A full practice exam in the official format: reading, listening, writing and speaking.',
-    cardBodyIntl: 'A full practice exam modelled on an international format: reading, listening, writing and speaking.',
+    cardBodyIntl: 'A full practice exam modeled on an international format: reading, listening, writing and speaking.',
     cardLast: (level: string, passed: boolean, date: string) => `Last result ${level}: ${passed ? 'passed' : 'not passed'}, ${date}`,
     cardInProgress: (level: string) => `${level} exam in progress`,
     title: (level: string) => `${level} practice exam`,
     modelNote: (level: string) => `Modeled on the official ${level} exam format`,
-    modelNoteIntl: (level: string) => `Practice exam modelled on an international ${level} format`,
+    modelNoteIntl: (level: string) => `Practice exam modeled on an international ${level} format`,
     paperLine: (name: string, minutes: number, tasks: number, points: number) =>
       `${name}: ${minutes} min, ${tasks} ${tasks === 1 ? 'task' : 'tasks'}, ${points} points`,
     paperLineSoon: (name: string, minutes: number) => `${name}: ${minutes} min, microphone part coming soon`,
