@@ -23,9 +23,9 @@ const GROUPS: Record<string, string[]> = {
   kérdőszavak: ['cuándo', 'cuál'],
 };
 
-describe('data/words-open zárt szócsoportok egy szinten (FB457, FB458)', () => {
+describe('data/words-open closed word groups at one level', () => {
   for (const [name, list] of Object.entries(GROUPS)) {
-    it(`${name}: mind megvan, és mind A1`, () => {
+    it(`${name}: all present, and all A1`, () => {
       const rows = list.map((es) => ({ es, cards: openWords.filter((w) => w.es === es) }));
       expect(rows.filter((r) => r.cards.length !== 1).map((r) => r.es)).toEqual([]);
       expect(rows.filter((r) => r.cards[0].level !== 'A1').map((r) => `${r.es}:${r.cards[0].level}`)).toEqual([]);

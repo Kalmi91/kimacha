@@ -35,8 +35,8 @@ const flush = async () => {
 
 beforeEach(() => speech.speak.mockClear());
 
-describe('hibakereső (spot)', () => {
-  it('a rossz szóra bökve jön a javítás-választó, a jó opció után jó jelzés, javított mondat, elhangzik, a Next pontoz', async () => {
+describe('error spotting (spot)', () => {
+  it('poking the wrong word brings the fix chooser, after the right option a correct mark, the fixed sentence, it is spoken, Next scores', async () => {
     const onFinish = jest.fn();
     render(<GrammarDrill topic={only(negacion, 'spot')} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['spot']} />);
     await flush();
@@ -59,7 +59,7 @@ describe('hibakereső (spot)', () => {
     expect(onFinish).toHaveBeenCalledWith(1, 1);
   });
 
-  it('egy jó szóra bökés hiba: nem lesz pont, de a feladat végigvihető', async () => {
+  it('poking a right word is a mistake: no point, but the task can be completed', async () => {
     const onFinish = jest.fn();
     render(<GrammarDrill topic={only(negacion, 'spot')} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['spot']} />);
     await flush();
@@ -72,7 +72,7 @@ describe('hibakereső (spot)', () => {
     expect(onFinish).toHaveBeenCalledWith(0, 1);
   });
 
-  it('a rossz javítás-opció hibás jelzés', async () => {
+  it('the wrong fix option gives a wrong mark', async () => {
     const onFinish = jest.fn();
     render(<GrammarDrill topic={only(negacion, 'spot')} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['spot']} />);
     await flush();
@@ -83,7 +83,7 @@ describe('hibakereső (spot)', () => {
     expect(onFinish).toHaveBeenCalledWith(0, 1);
   });
 
-  it('a törlős javítás: "Nadie no viene."', async () => {
+  it('the deleting fix: "Nadie no viene."', async () => {
     const onFinish = jest.fn();
     const topic: LessonV2 = { ...negacion, items: negacion.items.filter((i) => i.id === 'neg-spot-03') };
     render(<GrammarDrill topic={topic} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['spot']} />);
@@ -96,8 +96,8 @@ describe('hibakereső (spot)', () => {
   });
 });
 
-describe('szórend (order)', () => {
-  it('a mondat a felület nyelvén, a csempék sorba rakva, a helyes mondat elhangzik, a Next pontoz', async () => {
+describe('word order (order)', () => {
+  it('the sentence in the UI language, the tiles in a row, the correct sentence is spoken, Next scores', async () => {
     const onFinish = jest.fn();
     render(<GrammarDrill topic={only(negacion, 'order')} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['order']} />);
     await flush();
@@ -113,8 +113,8 @@ describe('szórend (order)', () => {
   });
 });
 
-describe('diktálás (dictation)', () => {
-  it('a mondat elhangzik, a gépelt válasz elnéző, jó válasz után jó jelzés és a fordítás', async () => {
+describe('dictation (dictation)', () => {
+  it('the sentence is spoken, the typed answer is lenient, after a correct answer a correct mark and the translation', async () => {
     const onFinish = jest.fn();
     render(<GrammarDrill topic={only(serEstar, 'dictation')} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['dictation']} />);
     await flush();
@@ -136,7 +136,7 @@ describe('diktálás (dictation)', () => {
     expect(onFinish).toHaveBeenCalledWith(1, 1);
   });
 
-  it('rossz válasznál a különbség-kiemelés (Your answer / Correct answer) és nincs pont', async () => {
+  it('on a wrong answer the difference highlight (Your answer / Correct answer) and no point', async () => {
     const onFinish = jest.fn();
     render(<GrammarDrill topic={only(serEstar, 'dictation')} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['dictation']} />);
     await flush();

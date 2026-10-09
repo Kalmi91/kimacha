@@ -25,7 +25,7 @@ const flush = async () => {
   }
 };
 
-describe('GrammarDrill, neo-brutalista (NY22)', () => {
+describe('GrammarDrill, neo-brutalist', () => {
   const now = 1700000000000;
   beforeEach(async () => {
     await getDb().setGrammarPalette('brand');
@@ -37,7 +37,7 @@ describe('GrammarDrill, neo-brutalista (NY22)', () => {
     buildGrammarRound(lesson, hashString(`${lesson.topic}:${now}`)).filter(isChoiceRoundItem);
   const pick = (idx: number) => fireEvent.press(screen.getAllByTestId('grammar-option')[idx]);
 
-  it('a combo x2-től látszik, hibánál nullázódik; a helyes válasz a kitöltést és a pipát kapja', async () => {
+  it('the combo shows from x2, resets on a mistake; the correct answer gets the fill and the check mark', async () => {
     const items = roundItems();
     const view = render(
       <ThemeProvider>
@@ -70,7 +70,7 @@ describe('GrammarDrill, neo-brutalista (NY22)', () => {
     view.unmount();
   });
 
-  it('a bezáró X doboz a fejlécben van, és az onClose-t hívja (mint a ← gomb)', async () => {
+  it('the closing X box is in the header, and calls onClose (like the ← button)', async () => {
     const onClose = jest.fn();
     const view = render(
       <ThemeProvider>
@@ -97,7 +97,7 @@ describe('GrammarDrill, neo-brutalista (NY22)', () => {
     screen.UNSAFE_getAllByType(View).filter((v) => StyleSheet.flatten(v.props.style)?.borderStyle === 'dashed').length;
   const front = (id: string) => StyleSheet.flatten(screen.getByTestId(id).props.style);
 
-  it('match: a párosított cella a-kitöltés + pipa, a hibás szaggatott, visszajelző + next gomb', async () => {
+  it('match: the paired cell is a-fill + check mark, the wrong one dashed, feedback + next button', async () => {
     const { onFinish, view } = await renderKind('match');
     const items = buildGrammarRound(lesson, hashString(`${lesson.topic}:${now}`));
     const match = items.map((r) => r.item).find((i) => (i as { kind?: string }).kind === 'match') as unknown as {
@@ -134,7 +134,7 @@ describe('GrammarDrill, neo-brutalista (NY22)', () => {
     view.unmount();
   });
 
-  it('form: a beviteli mező dobozban, hibás válasz után szaggatott keret és b kitöltésű visszajelző', async () => {
+  it('form: the input field in a box, after a wrong answer a dashed border and b-fill feedback', async () => {
     const { onFinish, view } = await renderKind('form');
     fireEvent.changeText(screen.getByTestId('formInput'), 'zzz');
     expect(dashedCount()).toBe(0);
@@ -148,7 +148,7 @@ describe('GrammarDrill, neo-brutalista (NY22)', () => {
     view.unmount();
   });
 
-  it('why: a helyes válasz a-kitöltés + pipa, a hibás szaggatott', async () => {
+  it('why: the correct answer is a-fill + check mark, the wrong one dashed', async () => {
     const { view } = await renderKind('why');
     const item = lesson.items.find((i) => i.kind === 'why') as unknown as { correctIndex: number };
     const options = screen.getAllByTestId('grammar-option');
@@ -161,7 +161,7 @@ describe('GrammarDrill, neo-brutalista (NY22)', () => {
     view.unmount();
   });
 
-  it('transform: beviteli doboz, hibás után szaggatott + b kitöltésű visszajelző, ink next gomb', async () => {
+  it('transform: input box, after a wrong one dashed + b-fill feedback, ink next button', async () => {
     const transformLesson: LessonV2 = {
       schema: 2,
       topic: 'test-transform-brutal',
@@ -195,7 +195,7 @@ describe('GrammarDrill, neo-brutalista (NY22)', () => {
     view.unmount();
   });
 
-  it('classic palettával a mai drill jelenik meg (nincs szegmentált sáv)', async () => {
+  it('with the classic palette the current drill shows (no segmented bar)', async () => {
     await getDb().setGrammarPalette('classic');
     const view = render(
       <ThemeProvider>

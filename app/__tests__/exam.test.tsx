@@ -117,7 +117,7 @@ const seed = async () => {
   await seedA1ExamState(getDb(), 'es', '2026-10-01');
 };
 
-describe('szintvizsga képernyő (A1)', () => {
+describe('level exam screen (A1)', () => {
   beforeEach(async () => {
     mockBack.mockClear();
     mockPush.mockClear();
@@ -129,7 +129,7 @@ describe('szintvizsga képernyő (A1)', () => {
     await getDb().setPcicLevel('A1');
   });
 
-  it('zárva nem indul vizsga: lakat-lap és vissza gomb, tételek építése nélkül', async () => {
+  it('when locked no exam starts: lock sheet and back button, without building items', async () => {
     const screen = render(<ExamScreen />);
     await flush();
     expect(screen.getByText('Level exam locked')).toBeTruthy();
@@ -138,7 +138,7 @@ describe('szintvizsga képernyő (A1)', () => {
     expect(mockBack).toHaveBeenCalledTimes(1);
   });
 
-  it('nyitva: a bevezető kimondja a szabályt (nincs élet, 80%), és a felületen nincs DELE', async () => {
+  it('when open: the intro states the rule (no lives, 80%), and the UI has no DELE', async () => {
     await seed();
     const screen = render(<ExamScreen />);
     await flush();
@@ -153,7 +153,7 @@ describe('szintvizsga képernyő (A1)', () => {
     expect(mockBack).toHaveBeenCalledTimes(1);
   });
 
-  it('minden tétel helyes: nincs visszajelzés kérdés közben, átment, a gomb a következő szintre visz és az eredmény mentődik', async () => {
+  it('every item correct: no feedback during questions, passed, the button leads to the next level and the result is saved', async () => {
     await seed();
     const screen = render(<ExamScreen />);
     await flush();
@@ -171,7 +171,7 @@ describe('szintvizsga képernyő (A1)', () => {
     expect(mockBack).toHaveBeenCalledTimes(1);
   });
 
-  it('80% (5 / 6) még átmegy; a hibás tétel helyes megoldása látszik, a Next lép tovább', async () => {
+  it('80% (5 / 6) still passes; the correct solution of the wrong item shows, Next advances', async () => {
     await seed();
     const screen = render(<ExamScreen />);
     await flush();
@@ -181,7 +181,7 @@ describe('szintvizsga képernyő (A1)', () => {
     expect(screen.getByText('A1 passed')).toBeTruthy();
   });
 
-  it('hibás szó-válasznál a helyes megoldás és a "Next" látszik, a számláló csak a Next után lép', async () => {
+  it('on a wrong word answer the correct solution and "Next" show, the counter advances only after Next', async () => {
     await seed();
     const screen = render(<ExamScreen />);
     await flush();
@@ -193,7 +193,7 @@ describe('szintvizsga képernyő (A1)', () => {
     expect(screen.getByTestId('exam-counter').props.children).toBe('Question 2 / 6');
   });
 
-  it('hibás mondat-összerakásnál a helyes mondat az eredeti alakjában látszik (nagybetű, írásjel)', async () => {
+  it('on a wrong sentence build the correct sentence shows in its original form (capitalization, punctuation)', async () => {
     await seed();
     const screen = render(<ExamScreen />);
     await flush();
@@ -204,7 +204,7 @@ describe('szintvizsga képernyő (A1)', () => {
     expect(screen.getByTestId('exam-correct-answer').props.children).toBe('Yo como en casa.');
   });
 
-  it('a "nem tudom" hibásnak számít és mutatja a helyeset', async () => {
+  it('"I don\'t know" counts as wrong and shows the correct one', async () => {
     await seed();
     const screen = render(<ExamScreen />);
     await flush();
@@ -213,7 +213,7 @@ describe('szintvizsga képernyő (A1)', () => {
     expect(screen.getByTestId('exam-correct-answer').props.children).toBe('la ventana');
   });
 
-  it('bukás: pontszám + küszöb, nincs "következő szint" gomb, az újrapróba új vizsgát épít, az eredmény mentődik', async () => {
+  it('fail: score + threshold, no "next level" button, retry builds a new exam, the result is saved', async () => {
     await seed();
     const screen = render(<ExamScreen />);
     await flush();
@@ -232,7 +232,7 @@ describe('szintvizsga képernyő (A1)', () => {
     expect(screen.getByTestId('exam-counter').props.children).toBe('Question 1 / 6');
   });
 
-  it('az újrapróbán elért átmenés után a gyengébb próba nem veszi el az átmenést és a legjobb pontszámot', async () => {
+  it('after passing on a retry, the weaker attempt does not take away the pass and the best score', async () => {
     await seed();
     await getDb().saveExamResult('A1', 100, true, '2026-09-30');
     const screen = render(<ExamScreen />);
@@ -242,7 +242,7 @@ describe('szintvizsga képernyő (A1)', () => {
     expect((await getDb().getExamResults()).A1).toMatchObject({ passed: true, best: 100, last: 50 });
   });
 
-  it('kilépés: megerősítés kell, a félkész vizsga nem mentődik', async () => {
+  it('exit: confirmation needed, the unfinished exam is not saved', async () => {
     await seed();
     const screen = render(<ExamScreen />);
     await flush();
@@ -265,7 +265,7 @@ describe.each([
   ['A2', 'B1'],
   ['B1', 'B2'],
   ['B2', undefined],
-] as const)('szintvizsga képernyő (%s)', (level, next) => {
+] as const)('level exam screen (%s)', (level, next) => {
   beforeEach(async () => {
     mockBack.mockClear();
     mockBuildExam.mockClear();
@@ -281,7 +281,7 @@ describe.each([
     mockLevel = 'A1';
   });
 
-  it('zárva, amíg a szint szavai és egy lecke nincs meg (az A1 készen sem nyitja)', async () => {
+  it('locked until the level words and a lesson are done (A1 does not open even when ready)', async () => {
     await seedA1ExamState(getDb(), 'es', '2026-10-01');
     const screen = render(<ExamScreen />);
     await flush();
@@ -289,7 +289,7 @@ describe.each([
     expect(mockBuildExam).not.toHaveBeenCalled();
   });
 
-  it('feloldva a bevezető a szint nevét mutatja; minden tétel helyes: átment, mentődik, ajánlja a következő szintet (B2 után nincs)', async () => {
+  it('when unlocked the intro shows the level name; every item correct: passed, saved, recommends the next level (none after B2)', async () => {
     await seedExamState(getDb(), 'es', '2026-10-01');
     const screen = render(<ExamScreen />);
     await flush();
@@ -307,7 +307,7 @@ describe.each([
     }
   });
 
-  it('80% alatt nem megy át, nincs következő-szint gomb', async () => {
+  it('below 80% it does not pass, no next-level button', async () => {
     await seedExamState(getDb(), 'es', '2026-10-01');
     const screen = render(<ExamScreen />);
     await flush();
@@ -319,7 +319,7 @@ describe.each([
   });
 });
 
-describe('szintvizsga: elrontott szó vissza az SM-2-be (2b, A8 a)', () => {
+describe('level exam: a wrong word goes back into SM-2', () => {
   const realExam = (wordId: string) => [
     { kind: 'word_type', skill: 'words', itemId: wordId, prompt: 'the window', answer: 'la ventana' },
     { kind: 'gap_mc', skill: 'grammar', topicId: 'presente-regular', sentence: 'Yo ___ español.', options: ['hablo', 'hablas', 'habla'], correctIndex: 0 },
@@ -337,7 +337,7 @@ describe('szintvizsga: elrontott szó vissza az SM-2-be (2b, A8 a)', () => {
     await seed();
   });
 
-  it('a hibás szó kártyája `again`-t kap és ma esedékes; a nyelvtani hiba után a többi kártya érintetlen', async () => {
+  it('the wrong word card gets `again` and is due today; after a grammar error the other cards are untouched', async () => {
     const [wordId, otherId] = pcicItemsForLevel('A1').map((i) => i.id);
     const before = await getDb().getPcicCards();
     expect(before.find((c) => c.itemId === wordId)).toMatchObject({ state: 'review', lapses: 0 });
@@ -360,7 +360,7 @@ describe('szintvizsga: elrontott szó vissza az SM-2-be (2b, A8 a)', () => {
     expect(after.find((c) => c.itemId === otherId)).toEqual(before.find((c) => c.itemId === otherId));
   });
 
-  it('a helyes szó és a csak nyelvtani hiba nem változtat egy kártyát sem', async () => {
+  it('a correct word and a grammar-only error do not change any card', async () => {
     const [wordId] = pcicItemsForLevel('A1').map((i) => i.id);
     const before = await getDb().getPcicCards();
     mockBuildExam.mockReturnValueOnce(realExam(wordId) as never);
@@ -374,7 +374,7 @@ describe('szintvizsga: elrontott szó vissza az SM-2-be (2b, A8 a)', () => {
   });
 });
 
-describe('szintvizsga: eredmény készségenként, gyenge pontnál link (2c)', () => {
+describe('level exam: result per skill, link at the weak point', () => {
   beforeEach(async () => {
     mockBack.mockClear();
     mockPush.mockClear();
@@ -395,7 +395,7 @@ describe('szintvizsga: eredmény készségenként, gyenge pontnál link (2c)', (
     return screen;
   };
 
-  it('szó, nyelvtan, olvasás: pont, % és Strong / Weak; a gyenge nyelvtanhoz a lecke linkje, ami a leckére visz', async () => {
+  it('word, grammar, reading: score, % and Strong / Weak; for weak grammar the lesson link leads to the lesson', async () => {
     const screen = await finish([4]);
     expect(screen.getByTestId('exam-skill-words-score').props.children).toBe('4 / 4 · 100%');
     expect(screen.getByTestId('exam-skill-words-verdict').props.children).toBe('Strong');
@@ -412,7 +412,7 @@ describe('szintvizsga: eredmény készségenként, gyenge pontnál link (2c)', (
     expect(mockPush).toHaveBeenCalledWith('/grammar/presente-regular');
   });
 
-  it('gyenge szó: a "Review these words" a tanulófülre (a vizsga szintjére) visz, lecke-link nélkül', async () => {
+  it('weak word: "Review these words" leads to the Learn tab (at the exam level), without a lesson link', async () => {
     await getDb().setPcicLevel('A2');
     const screen = await finish([0, 1]);
     expect(screen.getByTestId('exam-skill-words-score').props.children).toBe('2 / 4 · 50%');
@@ -424,7 +424,7 @@ describe('szintvizsga: eredmény készségenként, gyenge pontnál link (2c)', (
     expect(mockBack).toHaveBeenCalledTimes(1);
   });
 
-  it('gyenge olvasás (szó erős): "Practice sentences" a tanulófülre', async () => {
+  it('weak reading (word strong): "Practice sentences" to the Learn tab', async () => {
     const screen = await finish([5]);
     expect(screen.getByTestId('exam-skill-reading-verdict').props.children).toBe('Weak');
     expect(screen.queryByTestId('exam-review-words')).toBeNull();
@@ -432,7 +432,7 @@ describe('szintvizsga: eredmény készségenként, gyenge pontnál link (2c)', (
     expect(mockBack).toHaveBeenCalledTimes(1);
   });
 
-  it('minden készség erős: nincs gyenge-pont gomb', async () => {
+  it('every skill strong: no weak-point button', async () => {
     const screen = await finish([]);
     expect(screen.queryByTestId('exam-review-words')).toBeNull();
     expect(screen.queryByTestId('exam-practice-sentences')).toBeNull();
@@ -441,7 +441,7 @@ describe('szintvizsga: eredmény készségenként, gyenge pontnál link (2c)', (
   });
 });
 
-describe('szintvizsga: szóbeli tétel a billentyűzet mikrofonjával (13. lépés)', () => {
+describe('level exam: spoken item with the keyboard microphone', () => {
   const speak = { kind: 'speak', skill: 'speaking', itemId: 'o1', prompt: 'I eat at home.', expected: 'Yo como en casa.', mode: 'translate' };
   const gap = { kind: 'gap_mc', skill: 'grammar', topicId: 'presente-regular', sentence: 'Yo ___ español.', options: ['hablo', 'hablas', 'habla'], correctIndex: 0 };
 
@@ -463,7 +463,7 @@ describe('szintvizsga: szóbeli tétel a billentyűzet mikrofonjával (13. lép�
     await press(screen, 'exam-check');
   };
 
-  it('a bevezető külön sorban mondja a szóbeli tételek számát, a tétel szövegmező a billentyűzet mikrofonjához', async () => {
+  it('the intro states the number of spoken items on a separate row, the item text field uses the keyboard microphone', async () => {
     mockBuildExam.mockReturnValueOnce([speak, gap] as never);
     const screen = render(<ExamScreen />);
     await flush();
@@ -474,7 +474,7 @@ describe('szintvizsga: szóbeli tétel a billentyűzet mikrofonjával (13. lép�
     expect(screen.getByTestId('exam-speak-input')).toBeTruthy();
   });
 
-  it('helyes diktálás után nincs visszajelzés, az eredményen a szóbeli készség külön sorban látszik', async () => {
+  it('after correct dictation there is no feedback, the spoken skill shows on a separate row of the result', async () => {
     mockBuildExam.mockReturnValueOnce([speak, gap] as never);
     const screen = render(<ExamScreen />);
     await flush();
@@ -490,7 +490,7 @@ describe('szintvizsga: szóbeli tétel a billentyűzet mikrofonjával (13. lép�
     expect(screen.getByText('Speaking')).toBeTruthy();
   });
 
-  it('hibás diktálás: az eltérő szavak ki vannak emelve, a szóbeli gyenge, és nincs SM-2 változás', async () => {
+  it('wrong dictation: differing words are highlighted, the spoken skill is weak, and there is no SM-2 change', async () => {
     const before = await getDb().getPcicCards();
     mockBuildExam.mockReturnValueOnce([speak, gap] as never);
     const screen = render(<ExamScreen />);
@@ -507,7 +507,7 @@ describe('szintvizsga: szóbeli tétel a billentyűzet mikrofonjával (13. lép�
     expect(await getDb().getPcicCards()).toEqual(before);
   });
 
-  it('az ékezet a mentett "Accents count" beállítást követi', async () => {
+  it('the accent follows the saved "Accents count" setting', async () => {
     const accent = { ...speak, prompt: 'She is here.', expected: 'Ella está aquí.' };
     await getDb().setStrictAccents(true);
     mockBuildExam.mockReturnValueOnce([accent, gap] as never);

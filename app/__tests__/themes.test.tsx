@@ -50,7 +50,7 @@ async function mount() {
   return view;
 }
 
-describe('Témák képernyő (PLAN-temak 4D)', () => {
+describe('Themes screen', () => {
   let scheme: jest.SpyInstance;
   beforeEach(async () => {
     scheme = jest.spyOn(RN, 'useColorScheme').mockReturnValue('light');
@@ -61,7 +61,7 @@ describe('Témák képernyő (PLAN-temak 4D)', () => {
   });
   afterEach(() => scheme.mockRestore());
 
-  it('24 téma + Saját mix belépő, csoportonként a spec sorrendjében', async () => {
+  it('24 themes + Custom mix entry, per group in spec order', async () => {
     const view = await mount();
 
     expect(view.getByTestId('themes-mix-entry')).toBeTruthy();
@@ -82,14 +82,14 @@ describe('Témák képernyő (PLAN-temak 4D)', () => {
     view.unmount();
   });
 
-  it('a Saját mix belépő a szerkesztő képernyőre visz', async () => {
+  it('the Custom mix entry leads to the editor screen', async () => {
     const view = await mount();
     fireEvent.press(view.getByTestId('themes-mix-entry'));
     expect(mockPush).toHaveBeenCalledWith('/theme-mix');
     view.unmount();
   });
 
-  it('koppintás azonnal alkalmaz és menti a témát; az aktív csempe kijelölt', async () => {
+  it('tapping applies and saves the theme immediately; the active tile is selected', async () => {
     const view = await mount();
     expect(ctx.skin).toBe('brutal');
     expect(view.getByTestId('theme-tile-brutal').props.accessibilityState).toMatchObject({ selected: true });
@@ -103,7 +103,7 @@ describe('Témák képernyő (PLAN-temak 4D)', () => {
     view.unmount();
   });
 
-  it('kétmódú témánál van Auto / Light / Dark választó, egymódúnál egy sor áll a helyén', async () => {
+  it('a dual-mode theme has an Auto / Light / Dark chooser, a single-mode one has one row in its place', async () => {
     const view = await mount();
     expect(view.queryByTestId('themes-mode')).toBeTruthy();
     expect(view.queryByTestId('themes-one-look')).toBeNull();
@@ -126,7 +126,7 @@ describe('Témák képernyő (PLAN-temak 4D)', () => {
     view.unmount();
   });
 
-  it('7F (FB428): a mód-gomb ikonja a felirat fölött, a felirat egysoros', async () => {
+  it('the mode button icon is above the label, the label is a single line', async () => {
     const view = await mount();
     for (const [value, label] of [['system', 'Auto'], ['light', 'Light'], ['dark', 'Dark']] as const) {
       const button = view.getByTestId(`themes-mode-${value}`);
@@ -138,7 +138,7 @@ describe('Témák képernyő (PLAN-temak 4D)', () => {
     view.unmount();
   });
 
-  it('az 5 al-paletta csak a Neo-brutál alatt látszik', async () => {
+  it('the 5 sub-palettes show only under Neo-brutalist', async () => {
     const view = await mount();
     for (const id of ['brand', 'electric', 'lime', 'cyan', 'orange']) {
       expect(view.getByTestId(`palette-${id}`)).toBeTruthy();

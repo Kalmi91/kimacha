@@ -41,7 +41,7 @@ const flush = async (times = 4) => {
   }
 };
 
-describe('kör vége, neo-brutalista (NY24)', () => {
+describe('round end, neo-brutalist', () => {
   const now = 1700000000000;
   beforeEach(async () => {
     const db = getDb();
@@ -71,7 +71,7 @@ describe('kör vége, neo-brutalista (NY24)', () => {
     return round.length;
   };
 
-  it('minden helyes: nagy arány, combo-matrica a legjobb sorozattal, nincs "practice this"', async () => {
+  it('everything correct: large ratio, combo sticker with the best streak, no "practice this"', async () => {
     const total = await play(null);
     expect(screen.getByTestId('grammar-score')).toHaveTextContent(new RegExp(`^${total}/${total}`));
     expect(screen.queryByText(`combo x${total}`)).toBeTruthy();
@@ -85,7 +85,7 @@ describe('kör vége, neo-brutalista (NY24)', () => {
     expect(screen.queryByText(/XP/)).toBeNull();
   });
 
-  it('egy rontás: a combo a rontás előtti / utáni legjobb sorozat, a rontott mondat a "practice this" dobozban', async () => {
+  it('one mistake: the combo is the best streak before / after the mistake, the mistaken sentence is in the "practice this" box', async () => {
     const total = await play(2);
     expect(screen.getByTestId('grammar-score')).toHaveTextContent(new RegExp(`^${total - 1}/${total}`));
     expect(screen.queryByTestId('grammar-practice-this')).toBeTruthy();

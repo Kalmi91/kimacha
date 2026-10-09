@@ -29,8 +29,8 @@ function strings(value: unknown, out: string[] = []): string[] {
   return out;
 }
 
-describe('a felület nem ír ki védjegyes vizsganevet', () => {
-  it('i18n mockExam (en és es): nincs védjegyes név', () => {
+describe('the UI does not print a trademarked exam name', () => {
+  it('i18n mockExam (en and es): no trademarked name', () => {
     for (const block of [en.mockExam, es.mockExam]) {
       const all = strings(block);
       expect(all.length).toBeGreaterThan(50);
@@ -38,7 +38,7 @@ describe('a felület nem ír ki védjegyes vizsganevet', () => {
     }
   });
 
-  it('a papírok, készségek, utasítások és írás-feladatok szövege mind a négy vizsgán tiszta', () => {
+  it('the text of the papers, skills, instructions and writing tasks is clean on all four exams', () => {
     for (const [target, level] of [['es', 'A1'], ['es', 'A2'], ['en', 'A1'], ['en', 'A2']] as [MockTarget, MockLevel][]) {
       setPcicTarget(target);
       const e = buildMockExam({ target, level, items: pcicItemsForLevel(level), seed: 3 });
@@ -57,7 +57,7 @@ describe('a felület nem ír ki védjegyes vizsganevet', () => {
     }
   });
 
-  it('az angol irányon a felirat nemzetközi minta, a hivatalos felirat csak a spanyol irányé', () => {
+  it('in the English direction the label is international sample, the official label belongs only to the Spanish direction', () => {
     expect(en.mockExam.modelNoteIntl('A1')).toBe('Practice exam modelled on an international A1 format');
     expect(en.mockExam.cardBodyIntl).not.toMatch(/official/i);
     expect(es.mockExam.modelNoteIntl('A2')).not.toMatch(/oficial/i);
@@ -65,7 +65,7 @@ describe('a felület nem ír ki védjegyes vizsganevet', () => {
     expect(en.mockExam.modelNote('A1')).toMatch(/official/i);
   });
 
-  it('a közelítő átmenési küszöb a felületen jelölve: becslés, nem hivatalos szabály', () => {
+  it('the approximate pass threshold is flagged in the UI: an estimate, not an official rule', () => {
     expect(en.mockExam.passRuleAverage(50)).toMatch(/estimate/);
     expect(en.mockExam.averageLine(51, 50, true, true)).toMatch(/estimate/);
     expect(es.mockExam.passRuleAverage(50)).toMatch(/estimación/);

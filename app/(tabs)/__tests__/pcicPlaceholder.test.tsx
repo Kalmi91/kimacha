@@ -43,12 +43,12 @@ const flush = async (times = 4) => {
   }
 };
 
-describe('PCIC fül: a beírómező placeholdere (PLAN-fb1001 K4)', () => {
+describe('PCIC tab: the input field placeholder', () => {
   beforeEach(async () => {
     await getDb().resetPcicCards();
   });
 
-  it('en→es irányban "Type in Spanish"', async () => {
+  it('in the en→es direction "Type in Spanish"', async () => {
     await getDb().setOnboarding('en', 'es');
     const { UNSAFE_getByType } = render(<PcicScreen />);
     await flush();
@@ -56,7 +56,7 @@ describe('PCIC fül: a beírómező placeholdere (PLAN-fb1001 K4)', () => {
     expect(UNSAFE_getByType(TextInput).props.placeholder).toBe('Type in Spanish');
   });
 
-  it('es→en irányban "Type in English"', async () => {
+  it('in the es→en direction "Type in English"', async () => {
     await getDb().setOnboarding('es', 'en');
     const { UNSAFE_getByType } = render(<PcicScreen />);
     await flush();

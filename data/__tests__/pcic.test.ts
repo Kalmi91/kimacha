@@ -11,13 +11,13 @@ import {
   levelOfItem,
 } from '../pcic';
 
-describe('data/pcic.ts: irány-tudatos korpusz (PLAN-ketiranyu 4. lépés)', () => {
+describe('data/pcic.ts: direction-aware corpus', () => {
   afterEach(() => {
     // Ne szivárogjon át a modul-szintű állapot a következő tesztfájlba.
     setPcicTarget('es');
   });
 
-  it('alapértelmezett cél "es" (en→es, a régi Kimacha Play viselkedés változatlan)', () => {
+  it('default target "es" (en→es, the old Kimacha Play behavior is unchanged)', () => {
     expect(getPcicTarget()).toBe('es');
     const a1 = pcicItemsForLevel('A1');
     expect(a1.length).toBeGreaterThan(0);
@@ -27,7 +27,7 @@ describe('data/pcic.ts: irány-tudatos korpusz (PLAN-ketiranyu 4. lépés)', () 
 
   // a 4 szint 150-150 kártya a words-open
   // a1/a2/b1/b2.json-ból, order = a fájl order mezője (1-600), id = o<order>.
-  it('en→es: A1/A2/B1/B2 = 512-1371-1537-1022 words-open kártya (601 = tocar), o<order> id, egyedi id', () => {
+  it('en→es: A1/A2/B1/B2 = 512-1371-1537-1022 words-open cards (601 = tocar), o<order> id, unique id', () => {
     const levels = (['A1', 'A2', 'B1', 'B2'] as const).map((l) => pcicItemsForLevel(l));
     expect(levels.map((items) => items.length)).toEqual([512, 1371, 1537, 1022]);
     const all = levels.flat();
@@ -42,7 +42,7 @@ describe('data/pcic.ts: irány-tudatos korpusz (PLAN-ketiranyu 4. lépés)', () 
     expect(findPcicItem('w1')).toBeUndefined();
   });
 
-  it('en→es: példamondat a sentence_es/en-ből, pos-leképezés (det és interj is, FB482)', () => {
+  it('en→es: example sentence from sentence_es/en, pos mapping (det and interj too)', () => {
     expect(findPcicItem('o3')).toMatchObject({ pos: 'adv', exampleEs: 'Yo estoy bien.', exampleEn: 'I am fine.' });
     expect(findPcicItem('o15')?.pos).toBe('conj');
     expect(findPcicItem('o20')?.pos).toBe('det');
@@ -53,7 +53,7 @@ describe('data/pcic.ts: irány-tudatos korpusz (PLAN-ketiranyu 4. lépés)', () 
   // Az A1 az data/words/en/a0.json
   // első 50 kártyáját adja, e<id> id-térrel; A2/B1/B2 marad üres (nincs rájuk terv).
   // B1 = data/words/en/b1.json (CEFR-J), e10000-től; B2 üres.
-  it('setPcicTarget("en")-re vált: A1 = en a0+a1, A2 = en a2, B1 = en b1, e<id>, angol szó egyszer; B2 üres', () => {
+  it('switches to setPcicTarget("en"): A1 = en a0+a1, A2 = en a2, B1 = en b1, e<id>, an English word once; B2 empty', () => {
     setPcicTarget('en');
     expect(getPcicTarget()).toBe('en');
     const a1 = pcicItemsForLevel('A1');
@@ -71,7 +71,7 @@ describe('data/pcic.ts: irány-tudatos korpusz (PLAN-ketiranyu 4. lépés)', () 
     expect(pcicItemsForLevel('B2')).toEqual([]);
   });
 
-  it('a két irány id-tere külön él: es-es id "en" célnyelven nem oldódik fel, és fordítva', () => {
+  it('the id spaces of the two directions live apart: an es-es id does not resolve on the "en" target language, and vice versa', () => {
     setPcicTarget('es');
     const esItem = pcicItemsForLevel('A1')[0];
     expect(findPcicItem(esItem.id)).toEqual(esItem);
@@ -81,7 +81,7 @@ describe('data/pcic.ts: irány-tudatos korpusz (PLAN-ketiranyu 4. lépés)', () 
     expect(levelOfItem(esItem.id)).toBeUndefined();
   });
 
-  it('irányváltás után visszaváltva az es korpusz változatlan marad', () => {
+  it('after switching direction and back the es corpus stays unchanged', () => {
     const before = pcicItemsForLevel('A1');
     setPcicTarget('en');
     setPcicTarget('es');

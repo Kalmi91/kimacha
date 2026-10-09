@@ -38,8 +38,8 @@ function synthetic(level: LessonV2['level'], sentences: string[], extra: Partial
   };
 }
 
-describe('wordCellsForLesson es→en irány', () => {
-  it('A1 lecke (to_be): a kérdés spanyol, a válasz angol, elég kártya van a pakli gombjához', () => {
+describe('wordCellsForLesson es→en direction', () => {
+  it('A1 lesson (to_be): the question is Spanish, the answer English, there are enough cards for the deck button', () => {
     const cards = wordCellsForLesson(lessonFor('en', 'to_be'), 'en');
     expect(cards.length).toBeGreaterThanOrEqual(WORD_DECK_MIN_CARDS);
     expect(cards[0]).toEqual({ id: expect.any(String), es: 'yo soy', en: 'I am' });
@@ -52,7 +52,7 @@ describe('wordCellsForLesson es→en irány', () => {
     }
   });
 
-  it('A2 lecke (going_to): a kártyák a lecke szintjén belülről és a leckéhez kötve jönnek', () => {
+  it('A2 lesson (going_to): the cards come from within the lesson level and tied to the lesson', () => {
     const lesson = lessonFor('en', 'going_to');
     expect(lesson).toBeDefined();
     expect(lesson!.level).toBe('A2');
@@ -62,7 +62,7 @@ describe('wordCellsForLesson es→en irány', () => {
     expect(enAnswers.has('am going to')).toBe(true);
   });
 
-  it('az id-k és az angol válaszok egyediek (a kártya-állapot id-re kulcsol)', () => {
+  it('the ids and the English answers are unique (the card state keys on the id)', () => {
     for (const id of ['to_be', 'articles', 'present_simple', 'going_to', 'past_simple_regular']) {
       const lesson = lessonFor('en', id);
       if (!lesson) continue;
@@ -72,7 +72,7 @@ describe('wordCellsForLesson es→en irány', () => {
     }
   });
 
-  it('a lecke szintjén belül: az A2-only szó A1 leckében nincs, A2 leckében van (mondatból)', () => {
+  it('within the lesson level: the A2-only word is not in an A1 lesson, it is in an A2 lesson (from a sentence)', () => {
     expect(a2Only).toBeDefined();
     const sentence = `We like ${a2Only.en} very much.`;
     const a1 = wordCellsForLesson(synthetic('A1', [sentence]), 'en');
@@ -81,7 +81,7 @@ describe('wordCellsForLesson es→en irány', () => {
     expect(a2.find((c) => c.en === a2Only.en)).toEqual({ id: `word::${a2Only.en}`, es: a2Only.es, en: a2Only.en });
   });
 
-  it('a mondat tartalmas egyszavas szavai kártyák, a zárt osztályú szavak nem', () => {
+  it('the content single words of the sentence are cards, the closed-class words are not', () => {
     const words = a1Nouns.map((w) => w.en);
     const cards = wordCellsForLesson(synthetic('A1', [`I am the ${words.slice(0, 6).join(' and ')}.`, `They are in ${words.slice(6, 12).join(', ')}.`]), 'en');
     for (const w of a1Nouns) expect(cards.some((c) => c.en === w.en && c.es === w.es)).toBe(true);
@@ -90,7 +90,7 @@ describe('wordCellsForLesson es→en irány', () => {
     }
   });
 
-  it('a szószedet a szerző választása: a kérdés a gloss.es, a válasz az angol szó; a nem létező alak kimarad', () => {
+  it('the glossary is the author choice: the question is gloss.es, the answer the English word; a non-existent form is left out', () => {
     const lesson = synthetic('A1', [], {
       glossary: [
         { word: 'university', gloss: { hu: 'egyetem', en: 'university', es: 'universidad', de: 'Universität' } },
@@ -102,7 +102,7 @@ describe('wordCellsForLesson es→en irány', () => {
     expect(cards.some((c) => c.en === 'blorf')).toBe(false);
   });
 
-  it('a lecke témájához kötött szavak, a szintjén belül (a szólista topic mezője)', () => {
+  it('words tied to the lesson topic, within its level (the topic field of the word list)', () => {
     const colors = wordCellsForLesson(synthetic('A1', [], { topic: 'colors' }), 'en');
     expect(colors.length).toBeGreaterThanOrEqual(WORD_DECK_MIN_CARDS);
     expect(colors.every((c) => c.id.startsWith('topic::'))).toBe(true);
@@ -113,7 +113,7 @@ describe('wordCellsForLesson es→en irány', () => {
     expect(wordCellsForLesson(synthetic('A1', [], { focusTopic: 'colors' }), 'en').length).toBeGreaterThanOrEqual(WORD_DECK_MIN_CARDS);
   });
 
-  it('ha nincs elég angol szó, a pakli a gomb küszöbe alatt marad (nem üres-fordított, hanem rejtett)', () => {
+  it('if there are not enough English words, the deck stays below the button threshold (not empty-reversed, but hidden)', () => {
     const few = wordCellsForLesson(synthetic('A1', ['It is fine.']), 'en');
     expect(few.length).toBeLessThan(WORD_DECK_MIN_CARDS);
     expect(wordCellsForLesson(null, 'en')).toEqual([]);
@@ -121,8 +121,8 @@ describe('wordCellsForLesson es→en irány', () => {
   });
 });
 
-describe('wordCellsForLesson spanyol irány (en→es, hu→es) változatlan', () => {
-  it('az alapértelmezett és az explicit "es" ugyanazt adja, és a kártyák a PCIC-ből / szószedetből jönnek: kérdés angol, válasz spanyol', () => {
+describe('wordCellsForLesson Spanish direction (en→es, hu→es) unchanged', () => {
+  it('the default and the explicit "es" give the same, and the cards come from PCIC / the glossary: the question is English, the answer Spanish', () => {
     for (const id of ['ser-estar', 'gustar', 'clases-de-palabras']) {
       const lesson = lessonFor('es', id);
       expect(wordCellsForLesson(lesson)).toEqual(wordCellsForLesson(lesson, 'es'));
@@ -133,7 +133,7 @@ describe('wordCellsForLesson spanyol irány (en→es, hu→es) változatlan', ()
   // the Spanish word deck is built only from the table's words,
   // so instead of the earlier fixed samples (ser-estar 30 cards, glossary::boda...) the
   // invariant: none of the cards is a glossary-only word, and the counts are below the threshold.
-  it('a ser-estar, gustar, articulos-genero paklija már nem tartalmaz szószedet-only szót', () => {
+  it('the deck of ser-estar, gustar, articulos-genero no longer contains glossary-only words', () => {
     const cards = wordCellsForLesson(lessonFor('es', 'ser-estar'));
     expect(cards.some((c) => c.id === 'glossary::boda' || c.id === 'glossary::fiesta')).toBe(false);
     expect(cards.length).toBeLessThan(WORD_DECK_MIN_CARDS);

@@ -50,20 +50,20 @@ const flush = async (times = 4) => {
   }
 };
 
-describe('PCIC fül: automatikus felolvasás (FB319/FB321)', () => {
+describe('PCIC tab: automatic read-aloud', () => {
   beforeEach(async () => {
     await getDb().resetPcicCards();
     mockSpeak.mockClear();
   });
 
-  it('új lap megjelenésekor angolul mondja ki a promptot', async () => {
+  it('when a new card appears, it speaks the prompt in English', async () => {
     render(<PcicScreen />);
     await flush();
 
     expect(mockSpeak).toHaveBeenCalledWith('life', 'en-US');
   });
 
-  it('felfedéskor spanyolul mondja ki a helyes alakot', async () => {
+  it('on reveal it speaks the correct form in Spanish', async () => {
     const { UNSAFE_getByType, getByText } = render(<PcicScreen />);
     await flush();
     mockSpeak.mockClear();

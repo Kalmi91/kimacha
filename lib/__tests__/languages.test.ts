@@ -40,20 +40,20 @@ describe('languages', () => {
       expect(FORCED_PAIR).toEqual({ source: 'en', target: 'es' });
     });
 
-    it('egy elavult pár (pl. régi hu-es ág) javításra szorul', () => {
+    it('an outdated pair (e.g. the old hu-es branch) needs repair', () => {
       expect(needsPairCorrection({ source: 'hu', target: 'es' })).toBe(true);
     });
 
-    it('önmagával vagy ismeretlen céllal alkotott pár javításra szorul', () => {
+    it('a pair made with itself or an unknown target needs repair', () => {
       expect(needsPairCorrection({ source: 'es', target: 'es' })).toBe(true);
       expect(needsPairCorrection({ source: 'en', target: 'de' })).toBe(true);
     });
 
-    it('az en-es pár nem szorul javításra', () => {
+    it('the en-es pair needs no repair', () => {
       expect(needsPairCorrection({ source: 'en', target: 'es' })).toBe(false);
     });
 
-    it('az új es-en pár sem szorul javításra', () => {
+    it('the new es-en pair needs no repair either', () => {
       expect(needsPairCorrection({ source: 'es', target: 'en' })).toBe(false);
     });
   });

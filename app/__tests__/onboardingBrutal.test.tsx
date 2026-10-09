@@ -22,8 +22,8 @@ const flush = async (times = 6) => {
   }
 };
 
-describe('Onboarding, neo-brutalista (NY19)', () => {
-  it('brand palettán a nyelv- és start-gomb BrutalBox, a lépések működnek', async () => {
+describe('Onboarding, neo-brutalist', () => {
+  it('with the brand palette the language and start buttons are BrutalBox, the steps work', async () => {
     await getDb().setGrammarPalette('brand');
     const view = render(<ThemeProvider><OnboardingScreen /></ThemeProvider>);
     await flush();
@@ -38,7 +38,7 @@ describe('Onboarding, neo-brutalista (NY19)', () => {
     view.unmount();
   });
 
-  it('classic palettán a mai kinézet: nincs BrutalBox gomb', async () => {
+  it('with the classic palette the current look stays: no BrutalBox button', async () => {
     await getDb().setGrammarPalette('classic');
     const view = render(<ThemeProvider><OnboardingScreen /></ThemeProvider>);
     await flush();

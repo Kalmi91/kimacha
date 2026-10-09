@@ -46,7 +46,7 @@ const flush = async (times = 4) => {
   }
 };
 
-describe('PCIC fül: friss beviteli mező minden új kártyánál (FB408, FB409)', () => {
+describe('PCIC tab: a fresh input field for every new card', () => {
   beforeEach(async () => {
     await getDb().resetPcicCards();
     jest.spyOn(TextInput.prototype, 'focus').mockImplementation(() => {});
@@ -56,13 +56,13 @@ describe('PCIC fül: friss beviteli mező minden új kártyánál (FB408, FB409)
     jest.restoreAllMocks();
   });
 
-  it('az első kártya mezője autoFocus-szal indul', async () => {
+  it('the first card field starts with autoFocus', async () => {
     const { UNSAFE_getByType } = render(<PcicScreen />);
     await flush();
     expect(UNSAFE_getByType(TextInput).props.autoFocus).toBe(true);
   });
 
-  it('Check után nem autoFocus-os (letiltott mező), a következő kártyánál ÚJ, autoFocus-os példány jön', async () => {
+  it('after Check it is not autoFocus (disabled field), on the next card a NEW autoFocus instance appears', async () => {
     const { UNSAFE_getByType, getByText } = render(<PcicScreen />);
     await flush();
     const first = UNSAFE_getByType(TextInput);

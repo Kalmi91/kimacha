@@ -7,7 +7,7 @@ import { findOpenWordByForm } from '../../data/openWords';
 const deps = { conjugate, TENSES, esPlural, esFeminine };
 
 describe('lib/esForms', () => {
-  it('a tőhangváltó ige bő alakkészletet kap: jelen, múlt 3. szám, gerundium, kötőmód múlt', () => {
+  it('a stem-changing verb gets a wide set of forms: present, past 3rd person, gerund, past subjunctive', () => {
     const forms = looseVerbForms('dormir');
     for (const f of ['duermo', 'duermes', 'dormimos', 'durmió', 'durmieron', 'durmiendo', 'durmiera', 'durmiéramos']) {
       expect(forms).toContain(f);
@@ -19,7 +19,7 @@ describe('lib/esForms', () => {
     expect(looseVerbForms('ir')).toEqual([]);
   });
 
-  it('az igenevek: szabályos, rendhagyó és toldott, nemben és számban', () => {
+  it('the participles: regular, irregular and extended, in gender and number', () => {
     expect(participleForms('hablar')).toEqual(['hablado', 'hablada', 'hablados', 'habladas']);
     expect(participleForms('leer')).toContain('leído');
     expect(participleForms('recibir')).toContain('recibida');
@@ -32,14 +32,14 @@ describe('lib/esForms', () => {
     expect(participleForms('ver')).toContain('visto');
   });
 
-  it('a kötőmód múlt a múlt idő 3. szám többes alakjából, ékezettel a nosotros alakban', () => {
+  it('the past subjunctive from the 3rd person plural past, with an accent in the nosotros form', () => {
     expect(subjuntivoImperfecto('tuvieron')).toEqual(['tuviera', 'tuvieras', 'tuvieran', 'tuviéramos']);
     expect(subjuntivoImperfecto('fueron')).toContain('fuéramos');
     expect(subjuntivoImperfecto('hablaron')).toContain('habláramos');
     expect(subjuntivoImperfecto('hablar')).toEqual([]);
   });
 
-  it('formsOfCard: a motor-ige alakjai, a kötőmód múlt és az igenév, a főnév többese, a melléknév nemi alakja', () => {
+  it('formsOfCard: the forms of an engine verb, the past subjunctive and the participle, the plural of a noun, the gender form of an adjective', () => {
     const tener = formsOfCard('tener', 'verb', deps);
     expect(tener).toEqual(expect.arrayContaining(['tengo', 'tuvieron', 'tuviera', 'tuviéramos', 'teniendo', 'tenido']));
     expect(formsOfCard('el abuelo', 'noun', deps)).toEqual(['abuelos']);
@@ -53,7 +53,7 @@ describe('lib/esForms', () => {
     expect(formsOfCard('rentar / alquilar', 'verb', deps)).toEqual(expect.arrayContaining(['rento', 'alquilan']));
   });
 
-  it('a vosotros jelen idejű alak az infinitívből, a rendhagyók táblából', () => {
+  it('the vosotros present form from the infinitive, the irregulars from a table', () => {
     expect(vosotrosPresente('hablar')).toEqual(['habláis']);
     expect(vosotrosPresente('tener')).toEqual(['tenéis']);
     expect(vosotrosPresente('vivir')).toEqual(['vivís']);
@@ -61,13 +61,13 @@ describe('lib/esForms', () => {
     expect(formsOfCard('ser', 'verb', deps)).toContain('sois');
   });
 
-  it('az igéhez írt névmás levágható (legalább 3 betű marad)', () => {
+  it('a pronoun attached to the verb can be cut off (at least 3 letters remain)', () => {
     expect(encliticBases('verlo')).toContain('ver');
     expect(encliticBases('ayudame')).toContain('ayuda');
     expect(encliticBases('vela')).toEqual([]);
   });
 
-  it('a glossza-index a tőhangváltó igék alakjait, az igenevet és az igéhez írt névmást is a lemmához köti', () => {
+  it('the gloss index ties the forms of stem-changing verbs, the participle and a pronoun attached to the verb to the lemma', () => {
     expect(findOpenWordByForm('duermo')?.lemma).toBe('dormir');
     expect(findOpenWordByForm('dormimos')?.lemma).toBe('dormir');
     expect(findOpenWordByForm('juegan')?.lemma).toBe('jugar');

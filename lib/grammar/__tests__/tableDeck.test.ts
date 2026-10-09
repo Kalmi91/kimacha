@@ -101,7 +101,7 @@ describe('tableCellsForLesson', () => {
   // person tables (every row label is a personal pronoun,
   // the header is not all infinitives) are askable, so the word-deck fallback ("redundant words")
   // does not kick in.
-  it('pronombres-oi: a Sujeto -> névmás tábla 5 cellát ad (vosotros kihagyva), nincs szó-pakli fallback', () => {
+  it('pronombres-oi: the Sujeto -> pronoun table gives 5 cells (vosotros left out), no word-deck fallback', () => {
     const lesson = lessonFor('es', 'pronombres-oi')!;
     const cells = tableCellsForLesson(lesson);
     expect(cells).toHaveLength(5);
@@ -110,14 +110,14 @@ describe('tableCellsForLesson', () => {
     expect(cells.some((c) => c.person.toLowerCase().includes('vosotros'))).toBe(false);
   });
 
-  it('ir-a-infinitivo: a Persona -> "ir a" tábla 5 cellát ad', () => {
+  it('ir-a-infinitivo: the Persona -> "ir a" table gives 5 cells', () => {
     const lesson = lessonFor('es', 'ir-a-infinitivo')!;
     const cells = tableCellsForLesson(lesson);
     expect(cells).toHaveLength(5);
     expect(cells.find((c) => c.person === 'nosotros')?.answer).toBe('vamos a');
   });
 
-  it('egy tábla, amiben nem minden sor személy (pronombres-od: me, te, lo, la...), továbbra sem kérdezett', () => {
+  it('a table in which not every row is a person (pronombres-od: me, te, lo, la...) is still not asked', () => {
     const lesson = lessonFor('es', 'pronombres-od')!;
     expect(tableCellsForLesson(lesson)).toEqual([]);
   });
@@ -323,8 +323,8 @@ const tableTokens = (lesson: LessonV2): Set<string> => {
   return out;
 };
 
-describe('wordCellsForLesson (csak a tábla szavai)', () => {
-  it('a táblás lecke paklija csak tábla-szó: a szószedet- és mondat-szavak kimaradnak', () => {
+describe('wordCellsForLesson (only the table words)', () => {
+  it('the deck of a table lesson is only table words: the glossary and sentence words are left out', () => {
     const lesson = tableFixture([['comer', 'el hablar'], ['tener', 'la comer']], {
       glossary: [
         { word: 'comer', gloss: { ...LANG4, en: 'to eat (glossary)' } },
@@ -339,7 +339,7 @@ describe('wordCellsForLesson (csak a tábla szavai)', () => {
     expect(cards.find((c) => c.es === 'comer')?.en).toBe('to eat (glossary)');
   });
 
-  it('tábla nélküli lecke: 0 kártya, akkor is, ha van szószedete és példamondata (nincs pakli-belépő)', () => {
+  it('lesson without a table: 0 cards, even if it has a glossary and example sentences (no deck entry)', () => {
     const lesson = tableFixture([], {
       body: [{ kind: 'text', text: { ...LANG4, es: 'Mi hermano quiere comer, hablar y tener una ciudad.' } }],
       glossary: [{ word: 'comer', gloss: { ...LANG4, en: 'to eat' } }],
@@ -347,12 +347,12 @@ describe('wordCellsForLesson (csak a tábla szavai)', () => {
     expect(wordCellsForLesson(lesson)).toEqual([]);
   });
 
-  it('egy tábla, amiben nincs ismert szó (csak ragozott alakok): 0 kártya, nincs crash', () => {
+  it('a table with no known word (only inflected forms): 0 cards, no crash', () => {
     const lesson = tableFixture([['soy', 'eres'], ['somos', 'son']]);
     expect(wordCellsForLesson(lesson)).toEqual([]);
   });
 
-  it('valódi leckék: minden kártya tábla-szó, és a nem-táblás szavakból nincs kártya', () => {
+  it('real lessons: every card is a table word, and there is no card from non-table words', () => {
     for (const id of ['marcadores-temporales', 'marcadores-discursivos', 'subjuntivo-relativo']) {
       const lesson = lessonFor('es', id)!;
       const tokens = tableTokens(lesson as LessonV2);
@@ -365,22 +365,22 @@ describe('wordCellsForLesson (csak a tábla szavai)', () => {
   });
 
   // (articulos-genero again consists of the lesson's own words, as before; the nouns are only in the el / la exercise)
-  it('articulos-genero és társai elvesztették a paklit: a küszöb alatt maradnak, nincs belépő (a clases-de-palabras a lecke szintjére került szavakkal visszanyerte)', () => {
+  it('articulos-genero and its peers lost the deck: they stay below the threshold, no entry (clases-de-palabras regained it with words moved to the lesson level)', () => {
     for (const id of ['articulos-genero', 'sustantivo-numero', 'hay-estar', 'pronombres-od']) {
       expect(wordCellsForLesson(lessonFor('es', id)).length).toBeLessThan(WORD_DECK_MIN_CARDS);
     }
     expect(wordCellsForLesson(lessonFor('es', 'clases-de-palabras')).length).toBeGreaterThanOrEqual(WORD_DECK_MIN_CARDS);
   });
 
-  it('nincs szó-pakli rossz bemenetre sem', () => {
+  it('no word deck even on bad input', () => {
     expect(wordCellsForLesson(null)).toEqual([]);
     expect(wordCellsForLesson(undefined)).toEqual([]);
   });
 });
 
 // The non-existent forms of wrong options are not word cards.
-describe('wordCellsForLesson: nem létező alakok kihagyása', () => {
-  it('a sustantivo-numero szó-paklija nem tartalmaz "not a real form" kártyát', () => {
+describe('wordCellsForLesson: skipping non-existent forms', () => {
+  it('the word deck of sustantivo-numero does not contain a "not a real form" card', () => {
     const { lessonFor } = require('../syllabus');
     const cells = wordCellsForLesson(lessonFor('es', 'sustantivo-numero'));
     expect(cells.some((c: { en: string }) => /real form/i.test(c.en))).toBe(false);

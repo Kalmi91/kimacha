@@ -38,8 +38,8 @@ const flush = async () => {
   }
 };
 
-describe('Témák képernyő: színválasztó (NY12)', () => {
-  it('6 opció, a választás átállítja a kontextust és perzisztál', async () => {
+describe('Themes screen: color picker', () => {
+  it('6 options, the choice switches the context and persists', async () => {
     const { getByTestId, getByText } = render(
       <ThemeProvider>
         <Probe />

@@ -37,8 +37,8 @@ const flush = async (times = 6) => {
   }
 };
 
-describe('Tab-bar, neo-brutalista (NY19)', () => {
-  it('brand palettán az aktív ikon dobozon ül', async () => {
+describe('Tab bar, neo-brutalist', () => {
+  it('with the brand palette the active icon sits in a box', async () => {
     await getDb().setGrammarPalette('brand');
     const view = render(<ThemeProvider><TabLayout /></ThemeProvider>);
     await flush();
@@ -46,7 +46,7 @@ describe('Tab-bar, neo-brutalista (NY19)', () => {
     view.unmount();
   });
 
-  it('classic palettán a mai ikon: nincs doboz', async () => {
+  it('with the classic palette the current icon: no box', async () => {
     await getDb().setGrammarPalette('classic');
     const view = render(<ThemeProvider><TabLayout /></ThemeProvider>);
     await flush();

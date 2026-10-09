@@ -40,8 +40,8 @@ const flush = async (times = 8) => {
   }
 };
 
-describe('Szintfelmérő: visszajelzés-gomb minden részen (FB447)', () => {
-  it('szó-kérdés, nyelvtani kérdés, kilépés, eredmény: mind saját azonosítóval', async () => {
+describe('Placement test: feedback button on every part', () => {
+  it('word question, grammar question, exit, result: all with their own identifier', async () => {
     const s = render(<PlacementScreen />);
     await flush();
     const card = () => s.getByTestId('fb-card').props.children as string;

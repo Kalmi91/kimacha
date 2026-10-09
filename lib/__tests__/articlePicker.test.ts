@@ -104,7 +104,7 @@ describe('articlePickerApplies on sentence cards (FB291)', () => {
   });
 });
 
-describe('articleRowAppliesForPos (FB214 kiegészítés, PCIC chip)', () => {
+describe('articleRowAppliesForPos (PCIC chip)', () => {
   it('applies when the pos is unknown (null), the ⊘ answer is still worth asking', () => {
     expect(articleRowAppliesForPos(null)).toBe(true);
   });
@@ -128,10 +128,10 @@ describe('articleRowAppliesForPos (FB214 kiegészítés, PCIC chip)', () => {
 
 // A " / " form whose every alternative is
 // "article + one word" behaves like a single-word noun.
-describe('perjeles (" / ") válasz', () => {
+describe('slash-separated (" / ") answer', () => {
   const answer = 'el carro / el coche / el auto';
 
-  it('kind: word, ha minden alternatíva névelő + egy szó; phrase, ha valamelyik több szavas', () => {
+  it('kind: word if every alternative is article + one word; phrase if any is multi-word', () => {
     expect(kindOfEs(answer)).toBe('word');
     expect(kindOfEs('hacer / ejecutar')).toBe('word');
     expect(kindOfEs('el fin de semana')).toBe('phrase');
@@ -139,11 +139,11 @@ describe('perjeles (" / ") válasz', () => {
     expect(kindOfEs('tocar/sentir frío')).toBe('phrase');
   });
 
-  it('a névelő-gombsor megjelenik', () => {
+  it('the article button row appears', () => {
     expect(articlePickerApplies('es', true, answer)).toBe(true);
   });
 
-  it('bármelyik alternatíva névelője + szava elfogadott (composeAnswer + értékelő)', () => {
+  it('the article + word of any alternative is accepted (composeAnswer + grader)', () => {
     expect(gradePcicAnswer(composeAnswer('el', 'coche'), answer).match).toBe('exact');
     expect(gradePcicAnswer(composeAnswer('el', 'auto'), answer).match).toBe('exact');
     expect(gradePcicAnswer(composeAnswer('la', 'obra'), 'la obra / el drama').match).toBe('exact');
@@ -151,7 +151,7 @@ describe('perjeles (" / ") válasz', () => {
     expect(gradePcicAnswer(composeAnswer('', 'coche'), answer).match).not.toBe('exact');
   });
 
-  it('hibás válasznál a legközelebbi alternatíva névelője kerül vissza a gombsorra', () => {
+  it('on a wrong answer the article of the nearest alternative goes back to the button row', () => {
     const g = gradePcicAnswer(composeAnswer('el', 'cochee'), answer);
     expect(articleOf(g.best)).toBe('el');
     expect(bodyOf(g.best)).toBe('coche');

@@ -12,7 +12,7 @@ describe('syllabify', () => {
     expect(syllabify(word)).toEqual(expected);
   });
 
-  it('mássalhangzó-csoportok: együtt maradó (pr, tr, bl) és szétváló (rt, nt, st)', () => {
+  it('consonant clusters: staying together (pr, tr, bl) and splitting (rt, nt, st)', () => {
     expect(syllabify('libro')).toEqual(['li', 'bro']);
     expect(syllabify('cuatro')).toEqual(['cua', 'tro']);
     expect(syllabify('tabla')).toEqual(['ta', 'bla']);
@@ -23,7 +23,7 @@ describe('syllabify', () => {
     expect(syllabify('construir')).toEqual(['cons', 'truir']);
   });
 
-  it('ch, ll, qu, gu egy hang', () => {
+  it('ch, ll, qu, gu are one sound', () => {
     expect(syllabify('mucho')).toEqual(['mu', 'cho']);
     expect(syllabify('calle')).toEqual(['ca', 'lle']);
     expect(syllabify('queso')).toEqual(['que', 'so']);
@@ -31,7 +31,7 @@ describe('syllabify', () => {
     expect(syllabify('agua')).toEqual(['a', 'gua']);
   });
 
-  it('diftongus egy szótag, hiátus kettő', () => {
+  it('a diphthong is one syllable, a hiatus is two', () => {
     expect(syllabify('bueno')).toEqual(['bue', 'no']);
     expect(syllabify('aire')).toEqual(['ai', 're']);
     expect(syllabify('leer')).toEqual(['le', 'er']);
@@ -40,7 +40,7 @@ describe('syllabify', () => {
     expect(syllabify('muy')).toEqual(['muy']);
   });
 
-  it('az eredeti betűk (nagybetű, ékezet) megmaradnak, az összefűzött szótagok a szót adják', () => {
+  it('the original letters (uppercase, accent) stay, the joined syllables give the word', () => {
     expect(syllabify('Carro')).toEqual(['Ca', 'rro']);
     expect(syllabify('ratón')).toEqual(['ra', 'tón']);
     for (const w of ['teléfono', 'mañana', 'universidad', 'Ciudad', 'televisión']) {
@@ -48,14 +48,14 @@ describe('syllabify', () => {
     }
   });
 
-  it('magánhangzó nélküli vagy üres szöveg: egy darab, illetve üres', () => {
+  it('text with no vowel or empty: one piece, or empty', () => {
     expect(syllabify('')).toEqual([]);
     expect(syllabify('pst')).toEqual(['pst']);
   });
 });
 
 describe('syllabifyPhrase', () => {
-  it('szavanként szótagol, a szóközt és az írásjelet külön elemként hagyja', () => {
+  it('syllabifies word by word, leaves the space and the punctuation as separate elements', () => {
     expect(syllabifyPhrase('el carro')).toEqual([
       { text: 'el', syllables: ['el'] },
       { text: ' ', syllables: null },

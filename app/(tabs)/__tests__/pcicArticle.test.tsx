@@ -48,19 +48,19 @@ const flush = async (times = 4) => {
   }
 };
 
-describe('PCIC fül: névelő-gombsor (SZ7)', () => {
+describe('PCIC tab: article button row', () => {
   beforeEach(async () => {
     await getDb().resetPcicCards();
   });
 
-  it('szó-tételen megjelenik a ⊘ (alapállás) chip', async () => {
+  it('the ⊘ (default) chip appears on a word item', async () => {
     const { getByText } = render(<PcicScreen />);
     await flush();
 
     expect(getByText('⊘')).toBeTruthy();
   });
 
-  it('el chip + gépelt szó a composeAnswer szerinti alakot adja a Check-nek', async () => {
+  it('the el chip + a typed word give Check the form per composeAnswer', async () => {
     const { getByText, UNSAFE_getByType } = render(<PcicScreen />);
     await flush();
 

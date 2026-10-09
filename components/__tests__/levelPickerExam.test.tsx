@@ -27,10 +27,10 @@ const renderSheet = (status?: ExamLevelStatus, handlers = { onStart: jest.fn(), 
     />,
   );
 
-describe('LevelPickerSheet: vizsga-sor (A1)', () => {
+describe('LevelPickerSheet: exam row (A1)', () => {
   beforeEach(() => setPcicTarget('es'));
 
-  it('zárva: lakat, a hiányzó szavak száma, és a gomb a szavak gyakorlására visz', () => {
+  it('locked: padlock, the number of missing words, and the button leads to word practice', () => {
     const handlers = { onStart: jest.fn(), onPractice: jest.fn(), onGrammar: jest.fn() };
     const { getByText, getByTestId, queryByText } = renderSheet(base, handlers);
 
@@ -44,7 +44,7 @@ describe('LevelPickerSheet: vizsga-sor (A1)', () => {
     expect(handlers.onStart).not.toHaveBeenCalled();
   });
 
-  it('zárva, 79%-on (119 / 150): még 1 szó hiányzik, nem indul vizsga', () => {
+  it('locked, at 79% (119 / 150): 1 more word is missing, no exam starts', () => {
     const handlers = { onStart: jest.fn(), onPractice: jest.fn(), onGrammar: jest.fn() };
     const { getByTestId } = renderSheet({ ...base, learned: 119, missing: 1 }, handlers);
     expect(getByTestId('exam-row-words').props.children).toBe('119 / 120 words learned, 1 to go');
@@ -52,7 +52,7 @@ describe('LevelPickerSheet: vizsga-sor (A1)', () => {
     expect(handlers.onStart).not.toHaveBeenCalled();
   });
 
-  it('zárva, mert a lecke hiányzik (a szavak megvannak): a lecke-sor látszik, a gomb a leckékre visz', () => {
+  it('locked because the lesson is missing (the words are done): the lesson row shows, the button leads to the lessons', () => {
     const handlers = { onStart: jest.fn(), onPractice: jest.fn(), onGrammar: jest.fn() };
     const { getByTestId, queryByTestId } = renderSheet({ ...base, learned: 130, missing: 0, lessonDone: false }, handlers);
     expect(queryByTestId('exam-row-words')).toBeNull();
@@ -61,7 +61,7 @@ describe('LevelPickerSheet: vizsga-sor (A1)', () => {
     expect(handlers.onGrammar).toHaveBeenCalledTimes(1);
   });
 
-  it('nyitva: "Ready", nincs lakat, koppintásra indul a vizsga', () => {
+  it('open: "Ready", no padlock, tapping starts the exam', () => {
     const handlers = { onStart: jest.fn(), onPractice: jest.fn(), onGrammar: jest.fn() };
     const open: ExamLevelStatus = { ...base, learned: 120, missing: 0, unlocked: true };
     const { getByTestId, queryByText, getByText } = renderSheet(open, handlers);
@@ -74,7 +74,7 @@ describe('LevelPickerSheet: vizsga-sor (A1)', () => {
     expect(handlers.onStart).toHaveBeenCalledTimes(1);
   });
 
-  it('nyitva, korábbi eredménnyel: átment-e és a legjobb pontszám látszik', () => {
+  it('open, with an earlier result: whether passed and the best score show', () => {
     const passed = { passed: true, best: 92, bestAt: '2026-10-01', last: 80, lastAt: '2026-10-02' };
     const { getByTestId, rerender } = renderSheet({ ...base, learned: 120, missing: 0, unlocked: true, result: passed });
     expect(getByTestId('exam-row-ready').props.children).toEqual(['Ready', ' · Passed · best 92%']);
@@ -100,7 +100,7 @@ describe('LevelPickerSheet: vizsga-sor (A1)', () => {
     expect(getByTestId('exam-row-ready').props.children).toEqual(['Ready', ' · Best 64%']);
   });
 
-  it('exam nélkül nincs vizsga-sor, és csak az A1 alatt van (a többi szinten nincs)', () => {
+  it('without exam there is no exam row, and only under A1 (not on the other levels)', () => {
     const none = renderSheet(undefined);
     expect(none.queryByTestId('exam-row-A1')).toBeNull();
     none.unmount();
@@ -111,7 +111,7 @@ describe('LevelPickerSheet: vizsga-sor (A1)', () => {
     expect(queryByTestId('exam-row-B1')).toBeNull();
   });
 
-  it('4. lépés: A1-B2 mindegyik szint alatt van vizsga-sor, és mindegyik a saját szintjével indul', () => {
+  it('step 4: every level A1-B2 has an exam row, and each starts with its own level', () => {
     const levels = ['A1', 'A2', 'B1', 'B2'] as const;
     const rows = levels.map((level) => ({
       status: { ...base, level, learned: 120, missing: 0, unlocked: true },
@@ -131,7 +131,7 @@ describe('LevelPickerSheet: vizsga-sor (A1)', () => {
     rows.forEach((row) => expect(row.onStart).toHaveBeenCalledTimes(1));
   });
 
-  it('4. lépés: a szint- és vizsga-sorok görgethető listában vannak, hogy rövid telefonon se vágódjon le az A1 sor', () => {
+  it('step 4: the level and exam rows are in a scrollable list, so the A1 row is not cut off even on a short phone', () => {
     const rows = (['A1', 'A2', 'B1', 'B2'] as const).map((level) => ({
       status: { ...base, level, learned: 120, missing: 0, unlocked: true },
       onStart: jest.fn(),
@@ -148,7 +148,7 @@ describe('LevelPickerSheet: vizsga-sor (A1)', () => {
     expect(list.queryByText('Level')).toBeNull();
   });
 
-  it('a felület sehol nem írja ki a DELE nevet', () => {
+  it('the UI never prints the DELE name', () => {
     const { toJSON } = renderSheet({ ...base, unlocked: true, learned: 120, missing: 0 });
     expect(JSON.stringify(toJSON())).not.toMatch(/DELE/i);
   });

@@ -41,8 +41,8 @@ const flush = async (times = 4) => {
   }
 };
 
-describe('PCIC fül: nincs 🗑️ a fejlécben (PLAN-fb1001 K1)', () => {
-  it('a Learn fejléc nem mutat nullázó gombot', async () => {
+describe('PCIC tab: no 🗑️ in the header', () => {
+  it('the Learn header shows no reset button', async () => {
     await getDb().resetPcicCards();
     const { queryByText } = render(<PcicScreen />);
     await flush();

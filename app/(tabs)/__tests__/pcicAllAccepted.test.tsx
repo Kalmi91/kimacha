@@ -74,7 +74,7 @@ async function check(utils: ReturnType<typeof render>, answer: string) {
   await flush();
 }
 
-describe('PCIC fül: üres / rossz válasznál minden elfogadott szó látszik (FB480)', () => {
+describe('PCIC tab: with an empty or wrong answer, every accepted word is shown', () => {
   beforeEach(async () => {
     await getDb().resetPcicCards();
     jest.spyOn(TextInput.prototype, 'focus').mockImplementation(() => {});
@@ -84,7 +84,7 @@ describe('PCIC fül: üres / rossz válasznál minden elfogadott szó látszik (
     jest.restoreAllMocks();
   });
 
-  it('üres Check: mind a három alak ugyanolyan sorban látszik, „also” sor nincs', async () => {
+  it('empty Check: all three forms show in the same row, no "also" row', async () => {
     const utils = render(<PcicScreen />);
     await flush();
     await check(utils, '');
@@ -93,7 +93,7 @@ describe('PCIC fül: üres / rossz válasznál minden elfogadott szó látszik (
     expect(utils.queryByTestId('learn-also')).toBeNull();
   });
 
-  it('rossz válasz: ugyanígy mind a három látszik', async () => {
+  it('wrong answer: all three are shown the same way', async () => {
     const utils = render(<PcicScreen />);
     await flush();
     await check(utils, 'xyzq');
@@ -102,7 +102,7 @@ describe('PCIC fül: üres / rossz válasznál minden elfogadott szó látszik (
     expect(utils.queryByTestId('learn-also')).toBeNull();
   });
 
-  it('helyes válasz: marad a mutatott alak + az „also” sor a többivel, nincs további sor', async () => {
+  it('correct answer: the shown form stays, plus the "also" row with the others, no further row', async () => {
     const utils = render(<PcicScreen />);
     await flush();
     await check(utils, 'el coche');
@@ -111,7 +111,7 @@ describe('PCIC fül: üres / rossz válasznál minden elfogadott szó látszik (
     expect(textOf(utils.getByTestId('learn-also').props.children)).toBe('also: el carro · el auto');
   });
 
-  it('egy alakú válasznál üres Check után is csak egy sor van', async () => {
+  it('with a single-form answer, only one row shows even after an empty Check', async () => {
     const utils = render(<PcicScreen />);
     await flush();
     await check(utils, 'el coche');

@@ -9,7 +9,7 @@ import { loadResumePath, resumablePath, resumeSteps, saveResumePath, RESUME_GAME
 const lessonId = syllabusForLevel('A1', 'es').find((t) => hasLesson('es', t.id))!.id;
 
 describe('resumablePath', () => {
-  it('a Learn fül, a három másik fül, a lecke és a táblás gyakorlata folytatható', () => {
+  it('the Learn tab, the three other tabs, the lesson and its table drill can be resumed', () => {
     expect(resumablePath('/')).toBe('/');
     expect(resumablePath('/course')).toBe('/course');
     expect(resumablePath('/stats')).toBe('/stats');
@@ -18,7 +18,7 @@ describe('resumablePath', () => {
     expect(resumablePath(`/grammar/deck/${lessonId}`)).toBe(`/grammar/deck/${lessonId}`);
   });
 
-  it('a vizsga, a szintfelmérés, az onboarding és a többi képernyő nem folytatható', () => {
+  it('the exam, the placement test, onboarding and the other screens cannot be resumed', () => {
     for (const p of ['/exam', '/mock-exam', '/placement', '/onboarding', '/themes', '/theme-mix', '/credits', '/mistakes', '/grammar', '/grammar/deck', '/nincs']) {
       expect(resumablePath(p)).toBeNull();
     }
@@ -26,21 +26,21 @@ describe('resumablePath', () => {
 });
 
 describe('resumeSteps', () => {
-  it('mentett fül: a fülre lép', () => {
+  it('saved tab: goes to the tab', () => {
     expect(resumeSteps('/course', 'es')).toEqual(['/(tabs)/course']);
     expect(resumeSteps('/stats', 'es')).toEqual(['/(tabs)/stats']);
     expect(resumeSteps('/settings', 'es')).toEqual(['/(tabs)/settings']);
   });
 
-  it('mentett lecke: a Nyelvtan listára lép, arra teszi a leckét (a Vissza a listára visz)', () => {
+  it('saved lesson: goes to the Grammar list, puts the lesson on it (Back leads to the list)', () => {
     expect(resumeSteps(`/grammar/${lessonId}`, 'es')).toEqual(['/(tabs)/course', `/grammar/${lessonId}`]);
   });
 
-  it('mentett táblás gyakorlat: lista, lecke, gyakorlat', () => {
+  it('saved table drill: list, lesson, drill', () => {
     expect(resumeSteps(`/grammar/deck/${lessonId}`, 'es')).toEqual(['/(tabs)/course', `/grammar/${lessonId}`, `/grammar/deck/${lessonId}`]);
   });
 
-  it('érvénytelen / hiányzó / Learn hely: nincs navigáció, a kezdőlap (Learn) marad', () => {
+  it('invalid / missing / Learn place: no navigation, the home screen (Learn) stays', () => {
     expect(resumeSteps(null, 'es')).toEqual([]);
     expect(resumeSteps('/', 'es')).toEqual([]);
     expect(resumeSteps('/exam', 'es')).toEqual([]);
@@ -51,16 +51,16 @@ describe('resumeSteps', () => {
   });
 });
 
-describe('mentés és visszaolvasás', () => {
+describe('save and read back', () => {
   beforeEach(async () => {
     await getDb().resetGameProgress(RESUME_GAME_ID);
   });
 
-  it('mentés nélkül null', async () => {
+  it('null without a save', async () => {
     expect(await loadResumePath(getDb())).toBeNull();
   });
 
-  it('a mentett hely visszaolvasható, az újabb felülírja', async () => {
+  it('the saved place can be read back, a newer one overwrites', async () => {
     await saveResumePath(getDb(), '/course');
     expect(await loadResumePath(getDb())).toBe('/course');
     await saveResumePath(getDb(), `/grammar/${lessonId}`);

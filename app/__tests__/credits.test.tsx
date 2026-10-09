@@ -15,7 +15,7 @@ import { fireEvent, render } from '@testing-library/react-native';
 import CreditsScreen from '../credits';
 
 describe('CreditsScreen (app/credits.tsx)', () => {
-  it('rendereli a CEFR-J szöveget, a FrequencyWords szöveg nélkül', () => {
+  it('renders the CEFR-J text, without the FrequencyWords text', () => {
     const { getAllByText, getByText, queryByText } = render(<CreditsScreen />);
 
     expect(getAllByText(/CEFR-J/).length).toBeGreaterThan(0);
@@ -24,7 +24,7 @@ describe('CreditsScreen (app/credits.tsx)', () => {
     expect(queryByText(/CC BY-SA/)).toBeNull();
   });
 
-  it('PLAN-temak 2B: listázza a betűk licencét, családonként egyszer', () => {
+  it('lists the font licenses, once per family', () => {
     const { getAllByTestId, getByText } = render(<CreditsScreen />);
 
     // 28 font files, but Atkinson and Jost come in two weights: 26 families.
@@ -33,7 +33,7 @@ describe('CreditsScreen (app/credits.tsx)', () => {
     expect(getByText('OpenDyslexic · SIL Open Font License 1.1')).toBeTruthy();
   });
 
-  it('Play-előkészítés: a Wikimedia Commons fotó-sor és az Adatvédelmi tájékoztató sor megnyitja a hirdetett URL-t', () => {
+  it('Play prep: the Wikimedia Commons photo row and the Privacy policy row open the advertised URL', () => {
     const openURL = jest.spyOn(Linking, 'openURL').mockResolvedValue(true);
     const { getByText, getByTestId } = render(<CreditsScreen />);
 

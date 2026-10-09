@@ -76,7 +76,7 @@ const ANSWERS: Record<string, string> = {
   'the light': 'la luz',
 };
 
-describe('PCIC fül: mondatkártya (PLAN-ketiranyu 7. lépés)', () => {
+describe('PCIC tab: sentence card', () => {
   beforeEach(async () => {
     await getDb().resetPcicCards();
     await getDb().resetGameProgress(RESUME_GAME_ID);
@@ -95,7 +95,7 @@ describe('PCIC fül: mondatkártya (PLAN-ketiranyu 7. lépés)', () => {
     await flush();
   };
 
-  it('a 4. új szó után összerakós kártya jön, a 8. után begépelős, és egyik sem ír SRS-t', async () => {
+  it('after the 4th new word a build-the-sentence card comes, after the 8th a type-it card, and neither writes SRS', async () => {
     const r = render(<PcicScreen />);
     await flush();
 
@@ -130,7 +130,7 @@ describe('PCIC fül: mondatkártya (PLAN-ketiranyu 7. lépés)', () => {
     expect((await getDb().getPcicCards()).length).toBe(8);
   });
 
-  it('a visszavonás (Undo) visszaadja a kadencia-számlálót: az újra értékelt 4. szó ismét mondatot ad', async () => {
+  it('Undo restores the cadence counter: the re-rated 4th word gives a sentence again', async () => {
     const r = render(<PcicScreen />);
     await flush();
     for (const prompt of ['the book', 'the table', 'the cat']) await answerWord(r, prompt);
@@ -149,7 +149,7 @@ describe('PCIC fül: mondatkártya (PLAN-ketiranyu 7. lépés)', () => {
     expect(r.getByText('The book and the table.')).toBeTruthy();
   });
 
-  it('a számláló fülváltáson át is számol: 3 új szó, fókusz-újratöltés, a 4. után jön a kártya', async () => {
+  it('the counter also counts across tab switches: 3 new words, focus reload, the card comes after the 4th', async () => {
     const r = render(<PcicScreen />);
     await flush();
     for (const prompt of ['the book', 'the table', 'the cat']) await answerWord(r, prompt);

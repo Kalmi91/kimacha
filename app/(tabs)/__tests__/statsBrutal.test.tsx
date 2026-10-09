@@ -26,8 +26,8 @@ const flush = async (times = 6) => {
   }
 };
 
-describe('Statisztika fül, neo-brutalista (NY19)', () => {
-  it('brand palettán a heti cél szegmentált sáv megjelenik', async () => {
+describe('Stats tab, neo-brutalist', () => {
+  it('with the brand palette the weekly-goal segmented bar appears', async () => {
     await getDb().setGrammarPalette('brand');
     const view = render(<ThemeProvider><StatsScreen /></ThemeProvider>);
     await flush();
@@ -35,7 +35,7 @@ describe('Statisztika fül, neo-brutalista (NY19)', () => {
     view.unmount();
   });
 
-  it('classic palettán a mai kinézet: nincs szegmentált sáv', async () => {
+  it('with the classic palette the current look stays: no segmented bar', async () => {
     await getDb().setGrammarPalette('classic');
     const view = render(<ThemeProvider><StatsScreen /></ThemeProvider>);
     await flush();

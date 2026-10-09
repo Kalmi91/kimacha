@@ -4,19 +4,19 @@
 import confusable from '../../scripts/words-open-confusable.json';
 import { findPcicItem, setPcicTarget } from '../pcic';
 
-describe('data/words-open összetéveszthető csoportok (FB459)', () => {
+describe('data/words-open confusable groups', () => {
   afterEach(() => setPcicTarget('es'));
 
   const sets = confusable.sets as { name: string; orders: number[] }[];
 
-  it('minden halmaznak legalább 2 tagja van, és egy kártya csak egy halmazban szerepel', () => {
+  it('every set has at least 2 members, and a card appears in only one set', () => {
     expect(sets.length).toBeGreaterThan(0);
     for (const s of sets) expect(s.orders.length).toBeGreaterThanOrEqual(2);
     const all = sets.flatMap((s) => s.orders);
     expect(new Set(all).size).toBe(all.length);
   });
 
-  it('minden tag létezik, és kis mondatot kap: pontosan egy *kiemelt* szóval', () => {
+  it('every member exists, and gets a short sentence: with exactly one *highlighted* word', () => {
     setPcicTarget('es');
     const bad: string[] = [];
     for (const s of sets) {
@@ -29,7 +29,7 @@ describe('data/words-open összetéveszthető csoportok (FB459)', () => {
     expect(bad).toEqual([]);
   });
 
-  it('a while (mientras) kártyán is van mondat, a when párjain is', () => {
+  it('the while (mientras) card has a sentence too, and so do its when counterparts', () => {
     expect(findPcicItem('o167')?.hint).toBe('I read *while* you cook.');
     expect(findPcicItem('o166')?.hint).toContain('*when*');
     expect(findPcicItem('o161')?.hint).toContain('*When*');

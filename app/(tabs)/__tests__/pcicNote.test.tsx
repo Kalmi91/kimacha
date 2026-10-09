@@ -56,7 +56,7 @@ const textOf = (node: unknown): string => {
   return '';
 };
 
-describe('PCIC fül: (i) magyarázat (FB481/495/496/498)', () => {
+describe('PCIC tab: (i) explanation', () => {
   beforeEach(async () => {
     await getDb().resetPcicCards();
     jest.spyOn(TextInput.prototype, 'focus').mockImplementation(() => {});
@@ -66,7 +66,7 @@ describe('PCIC fül: (i) magyarázat (FB481/495/496/498)', () => {
     jest.restoreAllMocks();
   });
 
-  it('magyarázatos kártyán van (i), de a szöveg koppintásig zárva', async () => {
+  it('a card with an explanation has (i), but the text stays closed until tapped', async () => {
     const utils = render(<PcicScreen />);
     await flush();
 
@@ -74,7 +74,7 @@ describe('PCIC fül: (i) magyarázat (FB481/495/496/498)', () => {
     expect(utils.queryByTestId('learn-note')).toBeNull();
   });
 
-  it('koppintásra látszik a magyarázat, újabb koppintásra becsukódik', async () => {
+  it('tapping shows the explanation, tapping again closes it', async () => {
     const utils = render(<PcicScreen />);
     await flush();
 
@@ -85,7 +85,7 @@ describe('PCIC fül: (i) magyarázat (FB481/495/496/498)', () => {
     expect(utils.queryByTestId('learn-note')).toBeNull();
   });
 
-  it('a megnyitott magyarázat a Check után is ott marad, a Check-sáv megmarad', async () => {
+  it('the opened explanation stays after Check, and the Check bar stays', async () => {
     const utils = render(<PcicScreen />);
     await flush();
 
@@ -98,7 +98,7 @@ describe('PCIC fül: (i) magyarázat (FB481/495/496/498)', () => {
     expect(utils.getByTestId('learn-dock')).toBeTruthy();
   });
 
-  it('magyarázat nélküli kártyán nincs (i), és a következő kártyán a nyitott magyarázat nem marad', async () => {
+  it('a card without an explanation has no (i), and an opened explanation does not carry over to the next card', async () => {
     const utils = render(<PcicScreen />);
     await flush();
 

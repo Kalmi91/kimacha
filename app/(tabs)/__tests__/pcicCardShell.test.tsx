@@ -49,12 +49,12 @@ const flush = async (times = 4) => {
   }
 };
 
-describe('PCIC fül: Learn kártya-felület (5b)', () => {
+describe('PCIC tab: Learn card surface', () => {
   beforeEach(async () => {
     await getDb().resetPcicCards();
   });
 
-  it('a Learn CardShell chipjét (new) és a dokkolt Check gombot mutatja gépeléskor', async () => {
+  it('shows the Learn CardShell chip (new) and the docked Check button while typing', async () => {
     const { getByText } = render(<PcicScreen />);
     await flush();
 
@@ -62,7 +62,7 @@ describe('PCIC fül: Learn kártya-felület (5b)', () => {
     expect(getByText('✓ Check')).toBeTruthy();
   });
 
-  it('felfedés után a dokkolt sáv "Next -> Knew it"-re vált, a régi gombok maradnak felülbírálásra', async () => {
+  it('after reveal the docked bar switches to "Next -> Knew it", the old buttons stay for override', async () => {
     const { getByText, queryByText, getAllByText, UNSAFE_getByType } = render(<PcicScreen />);
     await flush();
 
@@ -80,7 +80,7 @@ describe('PCIC fül: Learn kártya-felület (5b)', () => {
     expect(getByText('1 day')).toBeTruthy();
   });
 
-  it('üres beküldés is felfedi a helyes alakot, "Next -> Didn\'t know"-t javasol, a koppintás dönt', async () => {
+  it('an empty submit also reveals the correct form, suggests "Next -> Didn\'t know", the tap decides', async () => {
     const { getByText, getAllByText } = render(<PcicScreen />);
     await flush();
 

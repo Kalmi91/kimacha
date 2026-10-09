@@ -25,14 +25,14 @@ const flush = async (times = 6) => {
   }
 };
 
-describe('Hibák riport, neo-brutalista (NY19)', () => {
+describe('Mistakes report, neo-brutalist', () => {
   beforeAll(async () => {
     const result = validateMistakesPayload(sample);
     if (!result.ok) throw new Error(result.error);
     await getDb().saveMistakeBatch(result.batch.batchId, JSON.stringify(result.batch), '2026-09-23T10:00:00.000Z');
   });
 
-  it('brand palettán a köteg BrutalBox kártya', async () => {
+  it('with the brand palette the batch is a BrutalBox card', async () => {
     await getDb().setGrammarPalette('brand');
     const view = render(<ThemeProvider><MistakesReportScreen /></ThemeProvider>);
     await flush();
@@ -41,7 +41,7 @@ describe('Hibák riport, neo-brutalista (NY19)', () => {
     view.unmount();
   });
 
-  it('classic palettán a mai kinézet: nincs BrutalBox kártya', async () => {
+  it('with the classic palette the current look stays: no BrutalBox card', async () => {
     await getDb().setGrammarPalette('classic');
     const view = render(<ThemeProvider><MistakesReportScreen /></ThemeProvider>);
     await flush();

@@ -39,7 +39,7 @@ const flush = async (times = 3) => {
   }
 };
 
-describe('szavak-gyakorlása képernyő, es→en irány', () => {
+describe('word practice screen, es→en direction', () => {
   beforeEach(async () => {
     jest.clearAllMocks();
     mockTopic = 'to_be';
@@ -55,7 +55,7 @@ describe('szavak-gyakorlása képernyő, es→en irány', () => {
     setLanguage('en');
   });
 
-  it('a kérdés a spanyol szó, a válasz az angol szó; a jó válasz után angolul szólal meg', async () => {
+  it('the question is the Spanish word, the answer is the English word; after a correct answer it is spoken in English', async () => {
     render(<TableDeckScreen />);
     await flush();
 
@@ -76,7 +76,7 @@ describe('szavak-gyakorlása képernyő, es→en irány', () => {
     expect(screen.getByText('tú eres')).toBeTruthy();
   });
 
-  it('a spanyol válasz az angol kérdésre hibás (nem fordított pakli)', async () => {
+  it('a Spanish answer to the English question is wrong (not a reversed deck)', async () => {
     render(<TableDeckScreen />);
     await flush();
     fireEvent.changeText(screen.getByTestId('tabledeck-input'), 'yo soy');

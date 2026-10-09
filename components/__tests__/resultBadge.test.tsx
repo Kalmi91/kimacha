@@ -17,7 +17,7 @@ jest.mock('@/lib/ThemeContext', () => ({
 const style = (id: string) => StyleSheet.flatten(screen.getByTestId(id).props.style);
 
 describe('ResultBadge', () => {
-  it('helyes: tokenből vett zöld kitöltés, tömör keret, ✓ és a felület nyelvű szöveg', () => {
+  it('correct: green fill from a token, solid border, ✓ and text in the UI language', () => {
     render(<ResultBadge correct testID="b" />);
     const st = style('b');
     expect(st.backgroundColor).toBe(Colors['brand-light'].successFill);
@@ -26,7 +26,7 @@ describe('ResultBadge', () => {
     expect(screen.getByText('Correct!')).toBeTruthy();
   });
 
-  it('helytelen: tokenből vett piros kitöltés, szaggatott keret, ✗ és szöveg', () => {
+  it('incorrect: red fill from a token, dashed border, ✗ and text', () => {
     render(<ResultBadge correct={false} testID="b" />);
     const st = style('b');
     expect(st.backgroundColor).toBe(Colors['brand-light'].danger);
@@ -35,7 +35,7 @@ describe('ResultBadge', () => {
     expect(screen.getByText('Not quite!')).toBeTruthy();
   });
 
-  it('a felirat és a jel olvasható a kitöltésen (WCAG 4,5), mindkét állapotban (PLAN-temak 7H)', () => {
+  it('the label and the mark are legible on the fill (WCAG 4.5), in both states', () => {
     const { unmount } = render(<ResultBadge correct testID="ok" />);
     const okFill = Colors['brand-light'].successFill;
     expect(contrastRatio(StyleSheet.flatten(screen.getByText('Correct!').props.style).color, okFill)).toBeGreaterThanOrEqual(4.5);
@@ -47,7 +47,7 @@ describe('ResultBadge', () => {
     expect(contrastRatio(StyleSheet.flatten(screen.getByText('✗').props.style).color, badFill)).toBeGreaterThanOrEqual(4.5);
   });
 
-  it('a két állapot színe ÉS alakja különbözik (nem csak a szín jelez)', () => {
+  it('the two states differ in color AND shape (color is not the only signal)', () => {
     const { unmount } = render(<ResultBadge correct testID="ok" />);
     const ok = style('ok');
     unmount();
@@ -57,20 +57,20 @@ describe('ResultBadge', () => {
     expect(ok.borderStyle).not.toBe(bad.borderStyle);
   });
 
-  it('egyedi felirat felülírja az alapszöveget', () => {
+  it('a custom label overrides the default text', () => {
     render(<ResultBadge correct label="perfect!" />);
     expect(screen.getByText('perfect!')).toBeTruthy();
   });
 });
 
-describe('CheckMark és DoneBadge', () => {
-  it('a rajzolt pipa két sávból áll és a kapott színnel rajzol', () => {
+describe('CheckMark and DoneBadge', () => {
+  it('the drawn check mark consists of two strokes and draws in the given color', () => {
     render(<CheckMark size={40} color="#123456" />);
     // no emoji text: only Views
     expect(screen.queryByText('✅')).toBeNull();
   });
 
-  it('a kész-jelvény emoji nélkül, rajzolva jelenik meg', () => {
+  it('the done badge appears drawn, without emoji', () => {
     render(<DoneBadge />);
     expect(screen.getByTestId('done-badge', { includeHiddenElements: true })).toBeTruthy();
     expect(screen.queryByText('🎉')).toBeNull();

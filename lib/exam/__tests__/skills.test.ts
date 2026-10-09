@@ -11,7 +11,7 @@ const reading = (id: string): ExamItem => ({ kind: 'reading_mc', skill: 'reading
 const res = (item: ExamItem, correct: boolean): ExamItemResult => ({ item, correct });
 
 describe('skillResults', () => {
-  it('készségenként pont és %, a sorrend: szó, nyelvtan, olvasás', () => {
+  it('score and % per skill, order: word, grammar, reading', () => {
     const results = [
       res(reading('r1'), true),
       res(gap('t1'), true),
@@ -27,26 +27,26 @@ describe('skillResults', () => {
     ]);
   });
 
-  it('gyenge = a készség % az átmenési küszöb (80%) alatt: 4 / 5 még erős, 7 / 9 (77%) gyenge', () => {
+  it('weak = the skill % is below the pass threshold (80%): 4 / 5 is still strong, 7 / 9 (77%) is weak', () => {
     const four = Array.from({ length: 5 }, (_, i) => res(word(`w${i}`), i < 4));
     expect(skillResults(scoreExam(four))[0]).toMatchObject({ pct: 80, weak: false });
     const seven = Array.from({ length: 9 }, (_, i) => res(word(`w${i}`), i < 7));
     expect(skillResults(scoreExam(seven))[0]).toMatchObject({ pct: 77, weak: true });
   });
 
-  it('79 / 100 gyenge (nincs felfelé kerekítés 80-ra)', () => {
+  it('79 / 100 is weak (no rounding up to 80)', () => {
     const results = Array.from({ length: 100 }, (_, i) => res(word(`w${i}`), i < 79));
     expect(skillResults(scoreExam(results))[0]).toMatchObject({ pct: 79, weak: true });
   });
 
-  it('csak a vizsgában szerepelt készségek jelennek meg', () => {
+  it('only the skills that were in the exam appear', () => {
     expect(skillResults(scoreExam([res(word('w1'), true)])).map((r) => r.skill)).toEqual(['words']);
     expect(skillResults(scoreExam([]))).toEqual([]);
   });
 });
 
 describe('weakLessons', () => {
-  it('a hibás nyelvtani tételek leckéi, a legtöbbet elrontott elöl', () => {
+  it('the lessons of the wrong grammar items, the most-missed first', () => {
     const results = [res(gap('a'), false), res(gap('b'), false), res(gap('b'), false), res(gap('c'), true), res(gap('b'), false)];
     expect(weakLessons(results)).toEqual([
       { topicId: 'b', missed: 3 },
@@ -54,14 +54,14 @@ describe('weakLessons', () => {
     ]);
   });
 
-  it('döntetlennél a vizsgabeli sorrend marad, és legfeljebb MAX_LESSON_LINKS lecke jön', () => {
+  it('on a tie the exam order stays, and at most MAX_LESSON_LINKS lessons come', () => {
     const results = ['d', 'c', 'b', 'a'].map((id) => res(gap(id), false));
     expect(weakLessons(results).map((l) => l.topicId)).toEqual(['d', 'c', 'b']);
     expect(MAX_LESSON_LINKS).toBe(3);
     expect(weakLessons(results, 1)).toHaveLength(1);
   });
 
-  it('szó- és olvasás-hiba nem ad lecke-linket, helyes nyelvtani válasz sem', () => {
+  it('a word or reading error gives no lesson link, nor does a correct grammar answer', () => {
     expect(weakLessons([res(word('w1'), false), res(reading('r1'), false), res(gap('a'), true)])).toEqual([]);
   });
 });

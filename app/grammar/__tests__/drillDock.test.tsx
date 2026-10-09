@@ -63,8 +63,8 @@ async function openKind(topic: string, kind: string) {
 
 const dockBottom = () => StyleSheet.flatten(screen.getByTestId('learn-dock').props.style).bottom;
 
-describe('nyelvtani drill: a Check gomb a billentyűzet fölé dokkol (FB461, FB462, FB464)', () => {
-  it('ragozás (form): a Check a dokkolt sávon van, nincs másik inline Check, a Check után ugyanott a Next', async () => {
+describe('grammar drill: the Check button docks above the keyboard', () => {
+  it('conjugation (form): Check is on the docked bar, no other inline Check, after Check the Next is in the same place', async () => {
     await openKind('ser-estar', 'form');
 
     expect(within(screen.getByTestId('learn-dock')).getByTestId('formCheck')).toBeTruthy();
@@ -84,7 +84,7 @@ describe('nyelvtani drill: a Check gomb a billentyűzet fölé dokkol (FB461, FB
     expect(within(screen.getByTestId('learn-dock')).getByTestId('formCheck')).toBeTruthy();
   });
 
-  it('átírás (transform): a Check a dokkolt sávon van, a Check után ugyanott a Next', async () => {
+  it('rewrite (transform): Check is on the docked bar, after Check the Next is in the same place', async () => {
     await openKind('indefinido-10-verbos', 'transform');
 
     expect(within(screen.getByTestId('learn-dock')).getByTestId('transform-check')).toBeTruthy();
@@ -99,7 +99,7 @@ describe('nyelvtani drill: a Check gomb a billentyűzet fölé dokkol (FB461, FB
     expect(screen.getAllByTestId('transform-next')).toHaveLength(1);
   });
 
-  it('a sáv a billentyűzet felső élére emelkedik, és a billentyűzet nélkül a képernyő aljára ér vissza', async () => {
+  it('the bar rises to the top edge of the keyboard, and without the keyboard returns to the bottom of the screen', async () => {
     await openKind('ser-estar', 'form');
     expect(dockBottom()).toBe(0);
 
@@ -117,10 +117,10 @@ describe('nyelvtani drill: a Check gomb a billentyűzet fölé dokkol (FB461, FB
 
 // User feedback: "pronounce the words here too": the conjugation drill pronounces
 // the correct form after Check the same way as the word card (after a right and a wrong answer too), and the same 🔊 button can say it again.
-describe('nyelvtani drill: a ragozás helyes alakja elhangzik (FB462)', () => {
+describe('grammar drill: the correct conjugated form is spoken', () => {
   beforeEach(() => (speak as jest.Mock).mockClear());
 
-  it('rossz válasz után a helyes alak (soy) elhangzik, a 🔊 gomb újra elmondja', async () => {
+  it('after a wrong answer the correct form (soy) is spoken, the 🔊 button speaks it again', async () => {
     await openKind('ser-estar', 'form');
     expect(speak).not.toHaveBeenCalled(); // does not reveal the answer before Check
 
@@ -134,7 +134,7 @@ describe('nyelvtani drill: a ragozás helyes alakja elhangzik (FB462)', () => {
     expect(speak).toHaveBeenCalledWith('soy', speechLang('es'));
   });
 
-  it('jó válasz után is elhangzik', async () => {
+  it('it is spoken after a correct answer too', async () => {
     await openKind('ser-estar', 'form');
     fireEvent.changeText(screen.getByTestId('formInput'), 'soy');
     fireEvent.press(screen.getByTestId('formCheck'));

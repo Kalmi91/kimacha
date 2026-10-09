@@ -16,7 +16,7 @@ jest.mock('@/lib/ThemeContext', () => ({
 const lesson = lessonJson as unknown as LessonV2;
 
 describe('GrammarDrill: presente-irregular full playthrough (FB299)', () => {
-  it('choice kind (12 item): "következő" advances every item to onFinish', () => {
+  it('choice kind (12 item): "next" advances every item to onFinish', () => {
     const onFinish = jest.fn();
     const total = lesson.items.filter((i) => i.kind === undefined).length;
     expect(total).toBeGreaterThanOrEqual(10);
@@ -31,7 +31,7 @@ describe('GrammarDrill: presente-irregular full playthrough (FB299)', () => {
     expect(onFinish).toHaveBeenCalledWith(expect.any(Number), total);
   });
 
-  it('match kind (2 items): solving every pair reveals "következő" and it advances', () => {
+  it('match kind (2 items): solving every pair reveals "next" and it advances', () => {
     const onFinish = jest.fn();
     const matchItems = lesson.items.filter((i): i is MatchItem => i.kind === 'match');
     expect(matchItems).toHaveLength(2); // the second matching item, with the new verbs
@@ -48,7 +48,7 @@ describe('GrammarDrill: presente-irregular full playthrough (FB299)', () => {
     expect(onFinish).toHaveBeenCalledWith(12, 12);
   });
 
-  it('form kind (12 item): "következő" advances every item to onFinish', () => {
+  it('form kind (12 item): "next" advances every item to onFinish', () => {
     const onFinish = jest.fn();
     const total = lesson.items.filter((i) => i.kind === 'form').length;
     expect(total).toBeGreaterThanOrEqual(10);
@@ -63,7 +63,7 @@ describe('GrammarDrill: presente-irregular full playthrough (FB299)', () => {
     expect(onFinish).toHaveBeenCalledWith(expect.any(Number), total);
   });
 
-  it('why kind (7 item): "következő" advances every item to onFinish', () => {
+  it('why kind (7 item): "next" advances every item to onFinish', () => {
     const onFinish = jest.fn();
     const total = lesson.items.filter((i) => i.kind === 'why').length;
     expect(total).toBeGreaterThanOrEqual(6);

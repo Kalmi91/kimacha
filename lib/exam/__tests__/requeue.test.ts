@@ -30,49 +30,49 @@ const right = (item: ExamItem): ExamItemResult => ({ item, correct: true });
 const allCards = ['w1', 'm1', 'm2', 'm3', 'm4', 's1', 's2', 'r1', 'r2'].map(review);
 
 describe('wrongWordItemIds', () => {
-  it('a hibás szó-tételek kártyái: beírás, összerakás, mondat-beírás és az egész párosítás', () => {
+  it('the cards of the wrong word items: typing, build, sentence typing and the whole matching', () => {
     expect(wrongWordItemIds([wrong(wordType), wrong(match), wrong(sentOrder), wrong(sentType)])).toEqual(['w1', 'm1', 'm2', 'm3', 'm4', 's1', 's2']);
   });
 
-  it('a helyes válasz nem megy vissza', () => {
+  it('the right answer does not go back', () => {
     expect(wrongWordItemIds([right(wordType), right(match), wrong(sentType)])).toEqual(['s2']);
   });
 
-  it('nyelvtani és olvasás-tétel hibásan sem ad kártyát (A8 a)', () => {
+  it('a grammar or reading item gives no card even when wrong', () => {
     expect(wrongWordItemIds([wrong(gap), wrong(reading)])).toEqual([]);
   });
 
-  it('ugyanaz a szó csak egyszer szerepel', () => {
+  it('the same word appears only once', () => {
     expect(wrongWordItemIds([wrong(wordType), wrong(wordType)])).toEqual(['w1']);
   });
 });
 
 describe('requeueWrongWords', () => {
-  it('a hibás szó kártyája `again`-t kap: learning, ma esedékes, egy lapse', () => {
+  it('the card of the wrong word gets `again`: learning, due today, one lapse', () => {
     const [card] = requeueWrongWords(allCards, [wrong(wordType)], TODAY);
     expect(card).toEqual(sm2Review(review('w1'), 'again', TODAY));
     expect(card).toMatchObject({ itemId: 'w1', state: 'learning', due: TODAY, lapses: 1, lastReview: TODAY });
   });
 
-  it('a hibás szó nem számít többé tanultnak (nem `review`), ezért a tanulófül sorába kerül', () => {
+  it('the wrong word no longer counts as learned (not `review`), so it goes to the Learn tab queue', () => {
     const next = requeueWrongWords(allCards, [wrong(sentOrder)], TODAY);
     expect(next.map((c) => c.state)).toEqual(['learning']);
   });
 
-  it('csak a hibás szó-tételek kártyái változnak, a nyelvtani hiba után nincs SM-2 változás', () => {
+  it('only the cards of the wrong word items change, after a grammar error there is no SM-2 change', () => {
     const results = [right(wordType), wrong(gap), wrong(reading), right(match)];
     expect(requeueWrongWords(allCards, results, TODAY)).toEqual([]);
   });
 
-  it('a hibás párosítás mind a négy szavát visszaküldi', () => {
+  it('a wrong matching sends back all four of its words', () => {
     expect(requeueWrongWords(allCards, [wrong(match)], TODAY).map((c) => c.itemId)).toEqual(['m1', 'm2', 'm3', 'm4']);
   });
 
-  it('amelyik szónak nincs kártyája, azt kihagyja', () => {
+  it('a word that has no card is skipped', () => {
     expect(requeueWrongWords([review('s2')], [wrong(wordType), wrong(sentType)], TODAY).map((c) => c.itemId)).toEqual(['s2']);
   });
 
-  it('nem módosítja a kapott kártyákat', () => {
+  it('it does not modify the given cards', () => {
     const before = JSON.stringify(allCards);
     requeueWrongWords(allCards, [wrong(wordType)], TODAY);
     expect(JSON.stringify(allCards)).toBe(before);
