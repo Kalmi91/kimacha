@@ -5,8 +5,8 @@ import { Triangle } from '@/components/skins/partsE2';
 import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 
-// Bauhaus: kör-négyzet-háromszög (a, b, c szín) a fejléc fölött, a kártya jobb
-// felső sarkában sárga (c) kör, ami kilóg és a kártya szélén levágódik, a bal szélén kék (b) sáv.
+// Bauhaus: circle-square-triangle (a, b, c colours) above the header, in the card's top
+// right corner a yellow (c) circle that sticks out and is clipped at the card's edge, on the left edge a blue (b) bar.
 
 const SUN = 64;
 const SUN_SHIFT = 22;

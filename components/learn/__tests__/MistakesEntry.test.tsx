@@ -1,5 +1,5 @@
-// PCIC-belépő: rejtve marad betöltött köteg nélkül,
-// és a due-számot mutatja, ha van köteg.
+// PCIC entry point: stays hidden without a loaded batch,
+// and shows the due count when there is a batch.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-router', () => ({ router: { push: jest.fn() } }));
@@ -34,7 +34,7 @@ describe('MistakesEntry (PCIC-belépő)', () => {
     const { getByText } = render(<MistakesEntry colors={Colors.light} />);
     await flush();
 
-    // 2 sentence (1 doubtful kimarad) + 2 word + 3 drill = 7 kártya, mind új.
+    // 2 sentences (1 doubtful one drops out) + 2 words + 3 drills = 7 cards, all new.
     expect(getByText('📕 My mistakes (7)')).toBeTruthy();
   });
 });

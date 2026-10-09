@@ -6,9 +6,9 @@ import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { useSkin } from '@/lib/useSkin';
 
-// Art deco: arany (a) vonalak. Dupla keret a kártya körül (külső = a téma 1 px-es
-// kerete, 4 px rés, belső = InnerFrame), napsugár-legyező a szó fölött, a fejléc alatt dupla vonalak
-// két oldalt, középen rombusz-elválasztóval.
+// Art deco: gold (a) lines. A double frame around the card (outer = the theme's 1 px
+// border, 4 px gap, inner = InnerFrame), a sunburst fan above the word, double lines on both sides under the header,
+// with a diamond separator in the middle.
 
 const FRAME_GAP = 4;
 
@@ -48,7 +48,7 @@ function DecoHeader({ children }: { children: ReactNode }) {
 }
 
 const styles = StyleSheet.create({
-  // flexShrink: a FitText a sor-konténerben összemegy, ezért a burkolója is.
+  // flexShrink: the FitText shrinks inside the row container, so its wrapper must too.
   word: { flexShrink: 1, alignItems: 'center', gap: 4 },
   divider: { flexDirection: 'row', alignItems: 'center', gap: 10, marginVertical: 8, paddingHorizontal: 4 },
 });

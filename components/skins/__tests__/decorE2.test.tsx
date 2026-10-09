@@ -1,6 +1,6 @@
-// a diszlexia, plakat, bauhaus, popart, szecesszio, kalocsai, memphis, kodex és
-// graffiti dísze: a slotok kirajzolják a díszt az alap tartalom körül (testID-k: decor- = tiszta dísz,
-// skin- = tartalmat csomagoló / valós adatot mutató elem), sima View/Text, SVG nélkül.
+// the decoration of the diszlexia, plakat, bauhaus, popart, szecesszio, kalocsai, memphis, kodex and
+// graffiti themes: the slots draw the decoration around the base content (testIDs: decor- = pure decoration,
+// skin- = an element wrapping content / showing real data), plain View/Text, no SVG.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -50,7 +50,7 @@ async function mountSkin(skin: SkinId, extra?: React.ReactNode) {
     </ThemeProvider>,
   );
   await flush();
-  // a fejléc és a kártya alap tartalma mindig megmarad a dísz körül
+  // the header's and the card's base content always stays around the decoration
   for (const text of ['fejlec', 'kartya']) expect(view.getByText(text)).toBeTruthy();
   return view;
 }
@@ -111,7 +111,7 @@ describe('a 9 E2 téma díszei (PLAN-temak 6E)', () => {
     expect(view.getByText('📣')).toBeTruthy();
     expect(flat(view.getByText('szo').props.style).transform).toEqual([{ rotate: '-6deg' }]);
     expect(flat(view.getByText('torzs').props.style)?.transform).toBeUndefined();
-    // a Saját mix előnézete is forgatja a szót, a többi téma nem
+    // the My mix preview rotates the word too, the other themes do not
     expect(previewTextStyle(SKINS.plakat, 'word', 30).transform).toEqual([{ rotate: '-6deg' }]);
     expect(previewTextStyle(SKINS.plakat, 'body', 14).transform).toBeUndefined();
     expect(previewTextStyle(SKINS.bauhaus, 'word', 30).transform).toBeUndefined();
@@ -164,12 +164,12 @@ describe('a 9 E2 téma díszei (PLAN-temak 6E)', () => {
       borderBottomLeftRadius: 12,
     });
     expect(view.getAllByTestId('decor-szecesszio-bloom-petal')).toHaveLength(8);
-    // nem-cím fejlécnél: virág - vonal - virág sor
+    // on a non-title header: a flower - line - flower row
     expect(view.getByTestId('decor-szecesszio-ornament')).toBeTruthy();
     expect(view.getAllByTestId('decor-szecesszio-flower')).toHaveLength(2);
     view.unmount();
 
-    // a fejléc maga a cím: virág mindkét oldalán, sor nélkül
+    // the header is the title itself: a flower on both sides, no row
     await getDb().setSkin('szecesszio');
     const title = render(
       <ThemeProvider>
@@ -218,7 +218,7 @@ describe('a 9 E2 téma díszei (PLAN-temak 6E)', () => {
 
   it('kódex: belső keret, iniciálé arany dobozban piros betűvel, a többi betű a szó elemében', async () => {
     const view = await mountSkin('kodex');
-    // a mountSkin "casa" szava: C iniciálé + asa
+    // the mountSkin "casa" word: C drop cap + asa
     const c = light('kodex');
     expect(view.getByText('asa')).toBeTruthy();
     expect(view.getAllByTestId('skin-kodex-initial')).toHaveLength(1);

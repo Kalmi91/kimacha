@@ -10,11 +10,11 @@ import { SkinCardFrame } from '@/components/skins/Slots';
 
 type ColorScheme = (typeof Colors)['light'];
 
-// 5b (döntés 5/6b): a Learn (TypingCardScreen) és a PCIC kártya-doboza közös
-// héj. A `card`/`typingCard` értékek 1:1 a TypingCardScreen régi
-// StyleSheet-jéből jönnek (Learn kinézete nem változik), a `chip` az új,
-// tetején ülő lap/lépés-jelvény (PCIC: new / step 1/2), amit a Learn ma nem
-// használ (undefined marad, tehát nem is renderel semmit).
+// the shared shell of the card box of Learn (TypingCardScreen) and PCIC.
+// The `card`/`typingCard` values come 1:1 from TypingCardScreen's old
+// StyleSheet (Learn's look does not change), the `chip` is the new
+// card/step badge sitting on top (PCIC: new / step 1/2), which Learn does not
+// use today (stays undefined, so it renders nothing).
 type Props = {
   compact?: boolean;
   chip?: string;
@@ -24,7 +24,7 @@ type Props = {
   children: ReactNode;
 };
 
-// a téma dísz-kerete (CardFrame) a kártya körül; dísz nélkül az alap kártya.
+// the theme's decorative frame (CardFrame) around the card; without a decoration, the plain card.
 export default function CardShell(props: Props) {
   return (
     <SkinCardFrame>
@@ -35,7 +35,7 @@ export default function CardShell(props: Props) {
 
 function CardBody({ compact, chip, chipTone = 'neutral', onPress, colors, children }: Props) {
   const g = useGrammarColors();
-  // brutalista palettán BrutalBox, a chip matrica (new = b kitöltés).
+  // on the brutalist palette a BrutalBox, the chip a sticker (new = b fill).
   if (g.brutal) {
     return (
       <BrutalBox testID="learn-card" onPress={onPress} boxStyle={[styles.brutalCard, compact && styles.brutalTyping]}>
@@ -74,9 +74,9 @@ const styles = StyleSheet.create({
     shadowRadius: 12,
     elevation: 4,
   },
-  // a rövid, gépelős kártya a tetejéhez simul,
-  // nem a 260-as minHeight közepére lebeg (ld. TypingCardScreen eredeti
-  // kommentje, a viselkedés innen költözött, változatlanul).
+  // the short, typed card hugs the top,
+  // instead of floating in the middle of the 260 minHeight (see TypingCardScreen's original
+  // comment; the behaviour moved here, unchanged).
   typingCard: {
     minHeight: 0,
     justifyContent: 'flex-start',
