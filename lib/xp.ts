@@ -1,5 +1,5 @@
-// Gamer: játék-szint az aktív tanulási percekből. 1 perc = 10 XP, 100 XP = 1 szint
-// (a LVL 1-ről indul), a sáv az aktuális szinten belüli haladást mutatja (0-99%).
+// Gamer: game level from the active learning minutes. 1 minute = 10 XP, 100 XP = 1 level
+// (starts at LVL 1), the bar shows progress within the current level (0-99%).
 const XP_PER_MINUTE = 10;
 const XP_PER_LEVEL = 100;
 

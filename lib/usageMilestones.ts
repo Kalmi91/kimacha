@@ -1,5 +1,5 @@
-// User feedback (settings-tab): "1 óra után 15 percenként gratuláljon
-// az app és. indig más szöveggel. legyen benne valami kreativitás".
+// After the first hour the app should congratulate every 15 minutes,
+// always with different text, with some creativity in it (settings tab).
 //
 // The first version fired the daily celebration at 30 and 60 minutes and then went quiet for
 // the rest of the day. Past the first hour the day's total keeps crossing a
@@ -33,7 +33,7 @@ export function pickMilestoneLine(
   return template.replace('{min}', String(minutes)).replace('{hours}', hoursLabel(minutes));
 }
 
-// "75 perc" reads worse than "1,25 óra" at this length, so the pool can ask for
+// "75 minutes" reads worse than "1.25 hours" at this length, so the pool can ask for
 // whole/half hours instead: 75 -> "1.25", 90 -> "1.5", 120 -> "2".
 function hoursLabel(minutes: number): string {
   const hours = minutes / 60;

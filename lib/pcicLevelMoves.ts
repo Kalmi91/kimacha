@@ -1,13 +1,14 @@
-// GENERÁLT FÁJL (a generáló scripts/pcic-level-fit.mjs kikerült), ne szerkeszd kézzel.
+// GENERATED FILE (the generator scripts/pcic-level-fit.mjs has been removed), do not edit by hand.
 //
-// a nehézség-igazítás régi PCIC-item-id ->
-// új PCIC-item-id térképe (a régi és az új id KÜLÖNBÖZŐ szintet jelöl - lásd
-// lib/pcicLevels.ts matchesLevel/levelOfItem). A DB-migráció (lib/db/migrations.ts
-// applyPcicLevelMoves, natív induláskor) ezen a térképen viszi át a meglévő
-// pcic_cards SRS-haladást, hogy a szint-igazítás ne dobja el, amit a tanuló már
-// megtanult. A pcic_cards tábla nincs a backup-ban (lib/backup.ts), ezért web-
-// oldali migráció nem kell. Tiszta átnevezés (nincs "iker", a célszinten mindig
-// friss id jön).
+// Map from the old PCIC item id to the new PCIC item id produced by the
+// difficulty re-leveling (the old and the new id denote DIFFERENT levels - see
+// matchesLevel/levelOfItem in lib/pcicLevels.ts). The DB migration
+// (applyPcicLevelMoves in lib/db/migrations.ts, run on native startup) uses this
+// map to carry over the existing pcic_cards SRS progress, so that the
+// re-leveling does not discard what the learner has already learned. The
+// pcic_cards table is not part of the backup (lib/backup.ts), so no web-side
+// migration is needed. This is a pure rename (no "twin" cards; the target level
+// always gets a fresh id).
 
 export const PCIC_LEVEL_MOVES: Record<string, string> = {
   'a2-0120d4c0': 'a1-61f0b4f7', // garganta: A2 -> A1
