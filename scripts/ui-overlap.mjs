@@ -1,46 +1,45 @@
-// Automata UI-átfedés teszt a web-buildre, témánként (F agent).
+// Automated UI overlap test for the web build, per theme.
 //
-// Menete: `npx expo export -p web` (dist) -> saját statikus szerver SPA-fallbackkel ->
-// headless Chrome remote-debugging-gal -> CDP (WebSocket) vezérlés. Kombináció =
-// téma × módja × útvonal × nézet; a lapot a lib/webTestHooks.ts URL-paraméterei állítják
-// be (skin, mode, mix, onboarded). Minden kombináción a lapon fut a vizsgálat:
-//   clip     levágott szöveg: a szöveges levél-elem overflow hidden/clip mellett kisebb a
-//            clientWidth/Height-nál mint a scrollWidth/Height (+1), vagy egy overflow
-//            hidden/clip ős részben levágja a szöveget
-//   overlap  két látható szöveges vagy kattintható elem (nem ős-leszármazott, nem decor-)
-//            téglalapja 4 px²-nél jobban metszi egymást. Szövegnél a sor-téglalapok
-//            (Range) a számítottak, a line-height-ra szűkítve; a hivatkozott
-//            (kattintható) elemben lévő szöveg az okozó elemre vezet vissza (egy hiba = egy sor)
-//   overflow kilógás: szöveg vagy gomb jobb széle > a nézet szélessége (kapcsoló: offscreen)
-//   contrast olvashatóság (WCAG AA): a látható szöveges levél-elem színe vs. a tényleges háttér
-//            (az első nem átlátszó background-color az ősök közt, az átlátszóság / opacity
-//            beszámítva; kép / gradiens ős esetén kihagyva). Küszöb 4.5, nagy szövegnél (>= 24 px,
-//            vagy >= 18.66 px és >= 600 súly) és a betű / szám nélküli jelnél (•, →, ▾; WCAG 1.4.11
-//            grafikus elem) 3.0; a TextInput placeholdere
-//            (::placeholder) a mező hátterén 4.5. Letiltott (disabled / aria-disabled) elem,
-//            ikon-betű (magánhasználatú kódpont) és emoji kimarad
-//   load     a kombináció nem töltött be / a lépés nem találta a gombot
-// Útvonal-állapotok: a `learn-revealed` / `learn-revealed-ok` a Learn fülön a Check UTÁNI állapot
-// (rossz válasz "xyz", ill. a kártya helyes válasza, amit egy előzetes Check után a felfedésből
-// olvas ki, majd újratölt és begépel). Ott a vizsgálat kétszer fut: a görgetés tetején és a
-// görgető aljára állítva (a dokkolt sáv alá nyúló tartalom kiér-e alóla); a tetején a sáv alatti,
-// még görgethető rész nem átfedés. Forgatott ős (pl. Graffiti kártya) alatt az átfedés a
-// forgatás nélküli méretű téglalapokkal megy (a határoló téglalap 1-2 px-en átlógatná az éppen
-// összeérő sorokat / betűket).
-// A díszeket rajzoló elemek (data-testid="decor-...") és leszármazottaik kimaradnak; ugyanígy
-// az átmeneti, szándékosan a tartalom fölé rajzolt UsageToast (data-testid="usage-toast").
-// A lebegő 💬 gomb (data-testid="feedback-fab") a görgetés tetején kimarad (a görgetés megoldja),
-// a görgető aljára állított vizsgálatban viszont része az átfedés-vizsgálatnak.
+// How it works: `npx expo export -p web` (dist) -> own static server with SPA fallback ->
+// headless Chrome with remote debugging -> CDP (WebSocket) control. A combination =
+// theme × mode × route × viewport; the page is set up by the URL parameters of lib/webTestHooks.ts
+// (skin, mode, mix, onboarded). On every combination the checks run on the page:
+//   clip     clipped text: a text leaf element with overflow hidden/clip has a
+//            clientWidth/Height smaller than its scrollWidth/Height (+1), or an overflow
+//            hidden/clip ancestor partially cuts off the text
+//   overlap  the rectangles of two visible text or clickable elements (not ancestor-descendant, not decor-)
+//            intersect by more than 4 px². For text, the line rectangles
+//            (Range) are what is measured, narrowed to the line-height; text inside a clickable
+//            element is traced back to the causing element (one defect = one line)
+//   overflow overhang: the right edge of text or a button > the viewport width (switch: offscreen)
+//   contrast readability (WCAG AA): the colour of the visible text leaf element vs. the actual background
+//            (the first non-transparent background-color among the ancestors, transparency / opacity
+//            taken into account; skipped for an image / gradient ancestor). Threshold 4.5, 3.0 for large text (>= 24 px,
+//            or >= 18.66 px and weight >= 600) and for a sign without letters / digits (•, →, ▾; WCAG 1.4.11
+//            graphical object); the TextInput placeholder
+//            (::placeholder) on the field's background 4.5. Disabled (disabled / aria-disabled) elements,
+//            icon glyphs (private-use code points) and emoji are skipped
+//   load     the combination did not load / the step did not find the button
+// Route states: `learn-revealed` / `learn-revealed-ok` are the state AFTER Check on the Learn tab
+// (a wrong answer "xyz", or the card's correct answer, which is read from the reveal after a preliminary
+// Check, then the page is reloaded and the answer typed in). There the check runs twice: at the top of the scroll and
+// with the scroller set to the bottom (whether content reaching under the docked bar comes out from under it); at the top, the
+// still scrollable part under the bar is not an overlap. Under a rotated ancestor (e.g. the Graffiti card) the overlap
+// uses rectangles at their unrotated size (the bounding rectangle would make lines / letters that just
+// touch overlap by 1-2 px).
+// Elements that draw decorations (data-testid="decor-...") and their descendants are skipped; so is
+// the transient UsageToast, deliberately drawn over the content (data-testid="usage-toast").
+// The floating 💬 button (data-testid="feedback-fab") is skipped at the top of the scroll (scrolling solves it),
+// but in the check with the scroller set to the bottom it is part of the overlap check.
 //
-// Kimenet: ui-overlap-report.json + PNG a hibás kombinációkról az ui-shots/ mappába
-// (--shots: minden kombinációról). Kilépési kód: 0 = nincs hiba, 1 = van hiba, 2 = a teszt
-// maga hibázott.
+// Output: ui-overlap-report.json + PNGs of the failing combinations in the ui-shots/ folder
+// (--shots: of every combination). Exit code: 0 = no issues, 1 = issues found, 2 = the test
+// itself failed.
 //
-// Használat: node scripts/ui-overlap.mjs [--skins a,b|mix] [--routes r1,r2]
+// Usage: node scripts/ui-overlap.mjs [--skins a,b|mix] [--routes r1,r2]
 //            [--viewports 360x740,412x915] [--shots] [--no-build]
-//            [--checks clip,overlap,offscreen,contrast]   (alapból mind)
+//            [--checks clip,overlap,offscreen,contrast]   (all by default)
 // (npm run ui:overlap -- --skins brutal,deco)
-
 import { spawn, spawnSync } from 'node:child_process';
 import fs from 'node:fs';
 import http from 'node:http';
@@ -54,11 +53,11 @@ const DIST = path.join(ROOT, 'dist');
 const SHOTS = path.join(ROOT, 'ui-shots');
 const REPORT = path.join(ROOT, 'ui-overlap-report.json');
 
-// A projekt szabálya (CLAUDE.md, 2026-09-28): böngészős teszt némán, betöltés ELŐTT.
+// Project rule: browser tests run muted, set up BEFORE the page loads.
 const SPEECH_MUTE =
   "(()=>{const s=window.speechSynthesis;if(!s)return;s.speak=(u)=>setTimeout(()=>u.dispatchEvent(new Event('end')),0);})()";
 
-// A Saját mix minta: széles betű (Rubik Mono One), íves forma, másik téma színei és dísze.
+// The custom-mix sample: wide font (Rubik Mono One), curvy shape, colours and decor of other themes.
 const SAMPLE_MIX = { colors: 'ukiyoe', font: 'memphis', shape: 'szecesszio', decor: 'deco' };
 
 const VIEWPORTS = ['360x740', '412x915'];
@@ -69,8 +68,8 @@ const CHROME_CANDIDATES = [
   'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
 ].filter(Boolean);
 
-// Útvonalak. `file`: az útvonalat adó képernyő-fájl; ha nincs a projektben, az útvonal kimarad.
-// `steps`: onboarding nélküli (onboarded=0) útvonalon végigkattintott gombok.
+// Routes. `file`: the screen file providing the route; if it is not in the project, the route is skipped.
+// `steps`: buttons clicked through on a not-yet-onboarded (onboarded=0) route.
 const LANG = { testId: 'onboarding-lang-en', text: 'English' };
 const START = { testId: 'onboarding-start', text: 'Get Started' };
 const INTRO_START = { testId: 'onboarding-intro-start' };
@@ -83,16 +82,16 @@ const ROUTES = {
   'theme-mix': { path: '/theme-mix', onboarded: true, file: 'app/theme-mix.tsx' },
   'onboarding-intro': { path: '/', onboarded: false, steps: [LANG, START], ready: 'onboarding-intro' },
   'onboarding-theme': { path: '/', onboarded: false, steps: [LANG, START, INTRO_START], ready: 'onboarding-theme' },
-  // A Check utáni állapot: `reveal` = a válaszmezőbe gépelt szöveg (wrong: "xyz"; ok: a kártya helyes
-  // válasza, amit egy előzetes "xyz" + Check után a felfedett válaszból olvas ki, majd újratölt).
+  // The state after Check: `reveal` = the text typed into the answer field (wrong: "xyz"; ok: the card's correct
+  // answer, which is read from the revealed answer after a preliminary "xyz" + Check, then the page is reloaded).
   'learn-revealed': { path: '/', onboarded: true, reveal: 'wrong' },
   'learn-revealed-ok': { path: '/', onboarded: true, reveal: 'ok' },
 };
-// A Learn kártya dokkolt Check gombja: a Neo-brutál ágon testID, a Klasszikuson a felirat.
+// The docked Check button of the Learn card: a testID on the Neo-brutalist branch, the label on the Classic one.
 const CHECK = { testId: 'learn-docked-action', text: '✓ Check' };
 
 // ---------------------------------------------------------------------------------------------
-// Paraméterek
+// Parameters
 
 function parseArgs(argv) {
   const o = { skins: null, routes: null, viewports: null, checks: null, shots: false, build: true };
@@ -113,7 +112,7 @@ function parseArgs(argv) {
   return o;
 }
 
-// A témák és módjaik a constants/Skins.ts-ből (TS -> CJS a memóriában, nincs külön build).
+// The themes and their modes from constants/Skins.ts (TS -> CJS in memory, no separate build).
 function loadSkinsModule() {
   const cache = {};
   const load = (name) => {
@@ -131,7 +130,7 @@ function loadSkinsModule() {
 }
 
 // ---------------------------------------------------------------------------------------------
-// Statikus szerver (SPA-fallback)
+// Static server (SPA fallback)
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
@@ -163,14 +162,14 @@ function startServer() {
     try {
       urlPath = decodeURIComponent(new URL(req.url, 'http://x').pathname);
     } catch {
-      /* marad a gyökér */
+      /* the root stays */
     }
     const p = path.normalize(path.join(DIST, urlPath));
     let file = null;
     if (p.startsWith(DIST)) {
       file = [p, `${p}.html`, path.join(p, 'index.html')].find(isFile) ?? null;
     }
-    // Kiterjesztéses, hiányzó fájl (asset): 404; minden más útvonal: az SPA belépő.
+    // A missing file with an extension (asset): 404; every other route: the SPA entry.
     if (!file && path.extname(urlPath) && path.extname(urlPath) !== '.html') {
       res.writeHead(404).end();
       return;
@@ -216,7 +215,7 @@ async function launchChrome() {
     ],
     { stdio: 'ignore' },
   );
-  // A port a DevToolsActivePort fájl első sorából jön.
+  // The port comes from the first line of the DevToolsActivePort file.
   const portFile = path.join(userDir, 'DevToolsActivePort');
   let port = 0;
   for (let i = 0; i < 100 && !port; i++) {
@@ -230,7 +229,7 @@ async function launchChrome() {
       const list = await (await fetch(`http://127.0.0.1:${port}/json/list`)).json();
       wsUrl = list.find((t) => t.type === 'page')?.webSocketDebuggerUrl ?? '';
     } catch {
-      /* még nem áll fel */
+      /* not up yet */
     }
     if (!wsUrl) await sleep(100);
   }
@@ -241,7 +240,7 @@ async function launchChrome() {
     try {
       fs.rmSync(userDir, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 });
     } catch {
-      /* a lock miatt maradhat, a temp mappa */
+      /* the temp folder may remain because of a lock */
     }
   };
   return { wsUrl, stop };
@@ -273,7 +272,7 @@ function connectCdp(wsUrl) {
       pending.set(myId, { resolve, reject });
       ws.send(JSON.stringify({ id: myId, method, params }));
     });
-  // Esemény-várás: a hívó a kiváltó parancs ELŐTT hívja, a visszaadott promise a parancs után várható.
+  // Waiting for an event: the caller calls this BEFORE the triggering command; the returned promise is awaited after the command.
   const waitEvent = (method, timeoutMs) => {
     let w;
     const p = new Promise((resolve, reject) => {
@@ -293,9 +292,9 @@ function connectCdp(wsUrl) {
 }
 
 // ---------------------------------------------------------------------------------------------
-// A lapon futó kód (a függvények szövege megy át; nem hivatkozhatnak a modul változóira)
+// Code running on the page (the text of the functions is passed over; they cannot refer to the module's variables)
 
-// Megvárja a betűtípusokat és a render-csendet (a DOM-ban nincs szerkezeti / class-változás).
+// Waits for the fonts and for render quiet (no structural / class changes in the DOM).
 async function pageSettle(quietMs, maxMs) {
   const t0 = performance.now();
   let last = performance.now();
@@ -320,7 +319,7 @@ async function pageSettle(quietMs, maxMs) {
   }
 }
 
-// A célelem közepének koordinátája (görgetve), testID vagy a saját szöveg alapján; null, ha nincs.
+// The coordinates of the target element's centre (scrolled into view), by testID or its own text; null if there is none.
 function pageFindTarget(spec) {
   let el = spec.testId ? document.querySelector(`[data-testid="${spec.testId}"]`) : null;
   if (!el && spec.text) {
@@ -337,7 +336,7 @@ function pageFindTarget(spec) {
   return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
 }
 
-// A Learn válaszmezőt fókuszba teszi (a begépelés a CDP Input.insertText-tel megy); false, ha nincs.
+// Focuses the Learn answer field (typing goes through CDP Input.insertText); false if there is none.
 function pageFocusInput() {
   const el = [...document.querySelectorAll('input[placeholder], textarea[placeholder]')].find(
     (e) => e.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true }) && !e.readOnly && !e.disabled,
@@ -348,13 +347,13 @@ function pageFocusInput() {
   return true;
 }
 
-// A felfedett kártya helyes válasza (PcicRevealedAnswer), null, ha nincs.
+// The revealed card's correct answer (PcicRevealedAnswer), null if there is none.
 function pageCorrectAnswer() {
   return document.querySelector('[data-testid="pcic-correct-answer"]')?.textContent?.trim() || null;
 }
 
-// A Learn kártya görgetőjét a legaljára viszi (a dokkolt sáv alól kiérő tartalom vizsgálatához; a
-// válaszmező a görgetőn belül van); true, ha volt hova görgetni.
+// Scrolls the Learn card's scroller to the very bottom (to check content that comes out from under the docked bar;
+// the answer field is inside the scroller); true if there was somewhere to scroll.
 function pageScrollBottom() {
   const input = document.querySelector('input[placeholder], textarea[placeholder]');
   for (let a = input?.parentElement; a; a = a.parentElement) {
@@ -367,10 +366,10 @@ function pageScrollBottom() {
   return false;
 }
 
-// A vizsgálat: { issues: [{ type, text, other? }], stats }. opts.underDock: a görgetés tetején
-// a dokkolt sáv (learn-dock) alá lógó, még görgethető tartalom nem átfedés (az aljára görgetve
-// külön vizsgáljuk, hogy kiér-e a sáv alól). opts.fab: a 💬 gomb is része a vizsgálatnak (az aljára
-// görgetett állapotban semmi nem lóghat alá; a tetején a görgetés megoldja, ott kizárt).
+// The check: { issues: [{ type, text, other? }], stats }. opts.underDock: at the top of the scroll,
+// still scrollable content hanging under the docked bar (learn-dock) is not an overlap (with the scroller at
+// the bottom we check separately whether it comes out from under the bar). opts.fab: the 💬 button is part of the check
+// too (in the scrolled-to-bottom state nothing may hang under it; at the top scrolling solves it, so it is excluded there).
 function pageAnalyze(checks, opts = {}) {
   const want = new Set(checks);
   const vw = document.documentElement.clientWidth;
@@ -378,7 +377,7 @@ function pageAnalyze(checks, opts = {}) {
   const trunc = (s) => String(s).replace(/\s+/g, ' ').trim().slice(0, 40);
   const SKIP = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT', 'TITLE', 'META', 'LINK', 'HEAD']);
   const visible = (el) => el.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true });
-  // díszek + a szándékosan a tartalom fölé rajzolt lebegő elemek (UsageToast, 💬 gomb)
+  // decorations + floating elements deliberately drawn over the content (UsageToast, 💬 button)
   const IGNORE = `[data-testid^="decor-"], [data-testid^="usage-toast"]${opts.fab ? '' : ', [data-testid="feedback-fab"]'}`;
   const inDecor = (el) => !!el.closest(IGNORE) || (!opts.fab && (el.innerText ?? '').trim() === '💬');
   const desc = (el) => {
@@ -389,8 +388,8 @@ function pageAnalyze(checks, opts = {}) {
   const clips = (v) => v === 'hidden' || v === 'clip';
   const scrolls = (v) => v === 'auto' || v === 'scroll';
 
-  // A levágó (overflow nem visible) ősök a body alatt; hard = hidden / clip (a görgetős nem).
-  // A téglalap a padding-box (a szegély és a görgetősáv nélkül).
+  // The clipping (overflow not visible) ancestors below body; hard = hidden / clip (scrollable ones are not).
+  // The rectangle is the padding box (without the border and the scrollbar).
   const clippingAncestors = (el, includeSelf) => {
     const out = [];
     for (let a = includeSelf ? el : el.parentElement; a && a !== document.body; a = a.parentElement) {
@@ -405,7 +404,7 @@ function pageAnalyze(checks, opts = {}) {
     }
     return out;
   };
-  // A téglalapok a vágó ősök dobozaira vágva; ami teljesen kívülre esik, kiesik.
+  // The rectangles clipped to the boxes of the clipping ancestors; whatever falls entirely outside is dropped.
   const clipRects = (rects, list) => {
     const out = [];
     for (const r of rects) {
@@ -419,11 +418,11 @@ function pageAnalyze(checks, opts = {}) {
     return out;
   };
 
-  // Forgatott ős (pl. a Graffiti kártya): a határoló téglalap a forgatás miatt nagyobb a valódi
-  // dobozánál, így az egymáshoz éppen érő sorok / betűk 1-2 px-en átlógnának. Az átfedés-vizsgálat
-  // ezért a forgatás nélküli méretű, azonos középpontú téglalapot veszi (oraw): a határoló
-  // W = w·|cos| + h·|sin|, H = w·|sin| + h·|cos| visszafejtve (a középpontok távolsága a forgatással
-  // csak cos-szorosára csökken, ez elhanyagolható). Közel 45°-nál nem fejthető vissza: marad a határoló.
+  // Rotated ancestor (e.g. the Graffiti card): the bounding rectangle is bigger than the real
+  // box because of the rotation, so lines / letters that just touch would overlap by 1-2 px. The overlap check
+  // therefore takes the rectangle of unrotated size with the same centre (oraw): the bounding
+  // W = w·|cos| + h·|sin|, H = w·|sin| + h·|cos| solved back (the distance between the centres shrinks with the rotation
+  // only by a factor of cos, which is negligible). Near 45° it cannot be solved back: the bounding rectangle stays.
   const angleOf = (el) => {
     let th = 0;
     for (let a = el; a; a = a.parentElement) {
@@ -449,7 +448,7 @@ function pageAnalyze(checks, opts = {}) {
     return { l: cx - w / 2, t: cy - h / 2, r: cx + w / 2, b: cy + h / 2 };
   };
 
-  // --- szöveges elemek: sor-téglalapok (Range), a line-height-ra szűkítve
+  // --- text elements: line rectangles (Range), narrowed to the line-height
   const byEl = new Map();
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
   for (let n = walker.nextNode(); n; n = walker.nextNode()) {
@@ -480,13 +479,13 @@ function pageAnalyze(checks, opts = {}) {
       }
     }
     if (!raw.length) continue;
-    // a saját doboza is vág (numberOfLines: overflow hidden), a rejtett sorok nem számítanak
+    // its own box clips too (numberOfLines: overflow hidden); hidden lines do not count
     const cl = clippingAncestors(el, true);
     const th = angleOf(el);
     items.push({ kind: 'text', el, label: trunc(nodes.map((n) => n.nodeValue).join(' ')), raw, oraw: raw.map((r) => deinflate(th, r)), cl, cs });
   }
 
-  // --- kattintható elemek: a határoló téglalap
+  // --- clickable elements: the bounding rectangle
   const CLICK_SEL =
     'button, a[href], input, textarea, select, [role="button"], [role="link"], [role="tab"], ' +
     '[role="switch"], [role="checkbox"], [role="radio"], [role="menuitem"], [tabindex="0"]';
@@ -508,7 +507,7 @@ function pageAnalyze(checks, opts = {}) {
     items.push({ kind: 'click', el, label: trunc(label), raw: [rect], oraw: [deinflate(angleOf(el), rect)], cl: clippingAncestors(el, false), cs });
   }
   const clickEls = new Map(items.map((it, i) => [it.el, i]).filter(([, i]) => items[i].kind === 'click'));
-  // A szöveg legközelebbi kattintható őse (az okozó elemre vezetéshez).
+  // The text's nearest clickable ancestor (to trace back to the causing element).
   for (const it of items) {
     it.lift = -1;
     if (it.kind !== 'text') continue;
@@ -520,7 +519,7 @@ function pageAnalyze(checks, opts = {}) {
     }
   }
 
-  // (a) levágott szöveg
+  // (a) clipped text
   for (const it of items) {
     if (it.kind !== 'text') continue;
     const el = it.el;
@@ -530,9 +529,9 @@ function pageAnalyze(checks, opts = {}) {
       (el.scrollWidth > el.clientWidth + 1 || el.scrollHeight > el.clientHeight + 1);
     let cut = own;
     if (!cut) {
-      // ős vágja részben (egészben kívül eső: pager / rejtett oldal, nem hiba); tengelyenként csak
-      // a hidden / clip számít, és csak ha nincs köztük görgetős (auto / scroll) ős, ami a vágó ős
-      // élén belül van: a görgetés szélén félbevágott sor görgetéssel látható, nem levágott
+      // an ancestor clips it partially (entirely outside: pager / hidden page, not an error); per axis only
+      // hidden / clip counts, and only if there is no scrollable (auto / scroll) ancestor between them that lies within
+      // the edge of the clipping ancestor: a line cut in half at the edge of a scroller is visible by scrolling, it is not clipped
       const scrolled = (i, axis) =>
         it.cl.slice(0, i).some((s) =>
           axis === 'x'
@@ -556,7 +555,7 @@ function pageAnalyze(checks, opts = {}) {
     if (cut) issues.push({ type: 'clip', text: it.label, at: desc(it.el) });
   }
 
-  // (c) kilógás: jobb szél > a nézet szélessége (a látható részre; vízszintesen görgetős ős kivétel)
+  // (c) overhang: right edge > the viewport width (for the visible part; a horizontally scrolling ancestor is an exception)
   const hScrolls = (el) => {
     for (let a = el.parentElement; a && a !== document.body; a = a.parentElement) {
       const cs = getComputedStyle(a);
@@ -568,7 +567,7 @@ function pageAnalyze(checks, opts = {}) {
   for (const kind of ['click', 'text']) {
     items.forEach((it, i) => {
       if (it.kind !== kind) return;
-      if (kind === 'text' && outClicks.has(it.lift)) return; // a gombját már jelentettük
+      if (kind === 'text' && outClicks.has(it.lift)) return; // its button has already been reported
       const out = clipRects(it.raw, it.cl.filter((a) => a.hard)).some((r) => r.l < vw - 1 && r.r > vw + 1);
       if (!out || hScrolls(it.el)) return;
       if (kind === 'click') outClicks.add(i);
@@ -576,7 +575,7 @@ function pageAnalyze(checks, opts = {}) {
     });
   }
 
-  // (b) átfedés: két látható szöveges / kattintható elem, 4 px²-nél nagyobb metszet
+  // (b) overlap: two visible text / clickable elements, intersection larger than 4 px²
   const area = (a, b) => {
     const w = Math.min(a.r, b.r) - Math.max(a.l, b.l);
     const h = Math.min(a.b, b.b) - Math.max(a.t, b.t);
@@ -589,9 +588,9 @@ function pageAnalyze(checks, opts = {}) {
     b: Math.max(...rs.map((r) => r.b)),
   });
   for (const it of items) it.box = bbox(it.oraw);
-  // Egy elem látható téglalapjai a másikhoz képest: a közös ősök nem vágnak (egy görgetőn belül a
-  // lent lévő elemek is összevethetők), a másik elemet nem tartalmazó vágók igen (a görgető alól
-  // kilógó sor nem fed át egy fölötte lévő sávot).
+  // The visible rectangles of an element relative to the other: common ancestors do not clip (inside one scroller
+  // the elements further down can be compared too), clippers that do not contain the other element do (a line
+  // hanging out from under the scroller does not overlap a bar above it).
   const visFor = (it, other) => clipRects(it.oraw, it.cl.filter((a) => !a.el.contains(other.el)));
   const overlaps = (p, q) => {
     if (area(p.box, q.box) <= 4) return false;
@@ -615,7 +614,7 @@ function pageAnalyze(checks, opts = {}) {
         if (!want(p, q)) continue;
         if (p.el.contains(q.el) || q.el.contains(p.el)) continue;
         if (!overlaps(p, q)) continue;
-        // ugyanazt a hibát az okozó elemek már jelentették
+        // the causing elements have already reported the same defect
         const dup = lifts(i).some((a) => lifts(j).some((b) => a !== b && reported.has(key(a, b))));
         if (dup) continue;
         reported.add(key(i, j));
@@ -624,7 +623,7 @@ function pageAnalyze(checks, opts = {}) {
     }
   }
 
-  // (d) olvashatóság: WCAG AA kontraszt a tényleges háttéren
+  // (d) readability: WCAG AA contrast on the actual background
   if (want.has('contrast')) {
     const parseColor = (s) => {
       const m = /^rgba?\(([^)]+)\)$/.exec(String(s).trim());
@@ -653,8 +652,8 @@ function pageAnalyze(checks, opts = {}) {
     };
     const hex = (c) => `#${[c.r, c.g, c.b].map((v) => Math.round(v).toString(16).padStart(2, '0')).join('')}`;
     const TOAST = '[data-testid^="usage-toast"]';
-    // Az elem és ősei: a szülői opacity-k szorzata (a gyökértől lefelé számolva), és a hátterek
-    // az első teljesen fedő rétegig. null = kép / gradiens / dísz a háttérben (nem mérhető).
+    // The element and its ancestors: the product of the parents' opacities (computed from the root downwards), and the
+    // backgrounds up to the first fully covering layer. null = image / gradient / decor in the background (cannot be measured).
     const paint = (el) => {
       const chain = [];
       for (let a = el; a; a = a.parentElement) chain.push(a);
@@ -662,7 +661,7 @@ function pageAnalyze(checks, opts = {}) {
       const suffix = [];
       let p = 1;
       for (let i = chain.length - 1; i >= 0; i--) {
-        // a toast be- / kiúszó opacity-je átmeneti, nem a kontrasztja
+        // the toast's fade-in / fade-out opacity is transient, not its contrast
         p *= chain[i].matches(TOAST) ? 1 : parseFloat(css[i].opacity);
         suffix[i] = p;
       }
@@ -692,7 +691,7 @@ function pageAnalyze(checks, opts = {}) {
         other: `${r.toFixed(2)} < ${need} (${hex(fg)} / ${hex(bgc)})`,
       });
     };
-    // a szöveges elemek + az átmeneti toast szövege (saját háttere van, az olvashatóság számít)
+    // the text elements + the text of the transient toast (it has its own background, readability matters)
     const cands = items.filter((it) => it.kind === 'text').map((it) => ({ el: it.el, label: it.label, cs: it.cs }));
     for (const [el, nodes] of byEl) {
       if (!el.closest(TOAST) || el.closest('[data-testid^="decor-"]') || !visible(el)) continue;
@@ -711,7 +710,7 @@ function pageAnalyze(checks, opts = {}) {
       const size = parseFloat(it.cs.fontSize);
       const weight = parseInt(it.cs.fontWeight, 10) || 400;
       const large = size >= 24 || (size >= 18.66 && weight >= 600);
-      // betű / szám nélküli jel (•, →, ▾, ✓): grafikus elem, WCAG 1.4.11: 3.0
+      // a sign without letters / digits (•, →, ▾, ✓): graphical object, WCAG 1.4.11: 3.0
       const symbol = !/[\p{L}\p{N}]/u.test(raw);
       report(el, it.label, fg, pt.bg, large || symbol ? 3 : 4.5);
     }
@@ -725,7 +724,7 @@ function pageAnalyze(checks, opts = {}) {
       report(el, trunc(el.getAttribute('placeholder')), fg, pt.bg, 4.5);
     }
   }
-  // van-e még hova görgetni a legközelebbi függőleges görgetőben (az elem alatt még van tartalom)
+  // is there still somewhere to scroll in the nearest vertical scroller (there is still content below the element)
   const dock = document.querySelector('[data-testid="learn-dock"]');
   const canScroll = (el) => {
     for (let a = el.parentElement; a; a = a.parentElement) {
@@ -747,7 +746,7 @@ function pageAnalyze(checks, opts = {}) {
 }
 
 // ---------------------------------------------------------------------------------------------
-// Főprogram
+// Main program
 
 async function main() {
   const opt = parseArgs(process.argv.slice(2));
@@ -784,7 +783,7 @@ async function main() {
   }
   if (!isFile(path.join(DIST, 'index.html'))) throw new Error('Nincs dist/index.html (futtasd build-del).');
 
-  // kombinációk
+  // combinations
   const combos = [];
   for (const skin of skinList) {
     const modes = skin === 'mix' ? SKINS[SAMPLE_MIX.colors].modes : SKINS[skin].modes;
@@ -827,10 +826,10 @@ async function main() {
       const loaded = cdp.waitEvent('Page.loadEventFired', 60000);
       await cdp.send('Page.navigate', { url });
       await loaded;
-      // az app kirajzolása (a betűk betöltéséig üres)
+      // the app has rendered (empty until the fonts load)
       if (!(await poll('document.body.innerText.trim().length > 0', 30000))) throw new Error('nem renderelt semmit');
     };
-    // Begépeli a szöveget a Learn válaszmezőbe, megnyomja a Check-et, megvárja a felfedett állapotot.
+    // Types the text into the Learn answer field, presses Check, waits for the revealed state.
     const typeAndCheck = async (text) => {
       if (!(await poll(`(${pageFocusInput})()`, 15000))) throw new Error('nincs válaszmező');
       await cdp.send('Input.insertText', { text });
@@ -856,7 +855,7 @@ async function main() {
           const name = `${c.skin}-${c.mode}-${c.route}-${c.vp.name}${suffix}.png`;
           fs.writeFileSync(path.join(SHOTS, name), Buffer.from(shot.data, 'base64'));
         } catch {
-          /* a kép nem kritikus */
+          /* the screenshot is not critical */
         }
       };
       try {
@@ -867,7 +866,7 @@ async function main() {
           mobile: false,
         });
         await open(url);
-        // a betűk betöltése átrendezi az oldalt: a kattintás előtt megvárjuk (különben mellé kattint)
+        // loading the fonts reflows the page: we wait for it before clicking (otherwise the click lands beside the target)
         if (def.steps?.length || def.reveal) await settle();
         for (const step of def.steps ?? []) {
           const spec = JSON.stringify(step);
@@ -882,7 +881,7 @@ async function main() {
         if (def.reveal) {
           let typed = 'xyz';
           if (def.reveal === 'ok') {
-            // a helyes válasz a felfedésből olvasható; újratöltés után (nincs értékelés, ugyanaz a kártya) azt gépeljük
+            // the correct answer can be read from the reveal; after the reload (no grading, same card) we type that
             await typeAndCheck(typed);
             typed = await cdp.evaluate(`(${pageCorrectAnswer})()`);
             if (!typed) throw new Error('nincs helyes válasz a DOM-ban');
@@ -895,8 +894,8 @@ async function main() {
         const res = await cdp.evaluate(`(${pageAnalyze})(${JSON.stringify(checks)}, ${JSON.stringify({ underDock: !!def.reveal })})`);
         comboIssues.push(...res.issues);
         if (def.reveal) {
-          // a tartalom a dokkolt sáv alá nyúlik: az aljára görgetve kiér-e alóla (a tetején a sáv alatti,
-          // még görgethető rész nem hiba, lásd underDock). A kontraszt görgetéstől független, nem kell újra.
+          // the content reaches under the docked bar: whether it comes out from under it when scrolled to the bottom (at the top,
+          // the still scrollable part under the bar is not an error, see underDock). Contrast does not depend on scrolling, no need to repeat it.
           if (opt.shots || res.issues.length) await saveShot('');
           const rest = checks.filter((k) => k !== 'contrast');
           if (rest.length && (await cdp.evaluate(`(${pageScrollBottom})()`))) {
@@ -914,7 +913,7 @@ async function main() {
       for (const i of comboIssues) {
         issues.push({ skin: c.skin, mode: c.mode, route: c.route, viewport: c.vp.name, ...i });
       }
-      // a felfedett állapotnál a tetejéről a fenti kép (-bottom nélkül), az aljára görgetett külön fájl
+      // for the revealed state the screenshot from the top is the one above (without -bottom), the one scrolled to the bottom is a separate file
       if (def.reveal && !loadFailed) {
         if (opt.shots || bottomIssues.length) await saveShot('-bottom');
       } else if (opt.shots || comboIssues.length) {

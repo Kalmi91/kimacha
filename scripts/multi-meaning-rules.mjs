@@ -1,17 +1,17 @@
-// Több jelentésű szavak kapuja. Közös a két kapuban:
-// words-open-check.mjs (kérdés `en`, válasz `es`, hint `hint_en`) és validate-en-track.mjs (kérdés `es`, válasz `en`, hint `hint_es`).
-//   R11  ha egy normalizált kérdés legalább két kártyán szerepel, mindegyiknek kötelező a hint
-//   R12  a hintben pontosan egy *…* jelölés van, a jelölt szó első 2 betűje (kisbetű, ékezet nélkül) egyezik a kérdés
-//        valamelyik szavának első 2 betűjével (juego/jugar, llevo/llevar, played/play), legfeljebb 8 szó; az angol
-//        rendhagyó igealak is jó (be: am/is/are/was/were, have: has/had, do: does/did, go: goes/went)
-//   R13  hint csak R11 szerinti kártyán van, vagy olyan kártyán, amelynek order-e a `confusable` halmazban van (összetéveszthető csoport: scripts/words-open-confusable.json)
-//        splitAlternatives: a kérdést vesszőnél/pontosvesszőnél alternatívákra bontja; ha két kártya azonos alternatívát ad
-//        ("to try, to taste" és "to try, to attempt"), mindkettőn kötelező a hint (vagy összevonás). A régi kártyák (order <=
-//        legacyMaxOrder) egymás közti ütközéseit legfeljebb legacyWarnLimit darabig hibának, fölötte figyelmeztetésnek vesszük.
-//        stripQualifiers: az alternatívák összevetésekor a zárójeles minősítőt ("door lock (MX)" > "door lock") elhagyja, hogy
-//        a minősítő ne kerülje ki a kaput; az azonos alapszavú kártyáknak hint_en vagy összevonás kell.
-//   R14  a perjeles válaszban minden alternatíva nem üres, nincs ismétlés, az elválasztó pontosan " / "
-// A normalizálás: kisbetű, szóköz-összevonás, trim, vezető névelő nélkül (S3).
+// Gate for multi-meaning words. Shared by the two gates:
+// words-open-check.mjs (question `en`, answer `es`, hint `hint_en`) and validate-en-track.mjs (question `es`, answer `en`, hint `hint_es`).
+//   R11  if a normalized question appears on at least two cards, every one of them must have a hint
+//   R12  the hint contains exactly one *…* marker; the first 2 letters of the marked word (lowercase, accents stripped) match the
+//        first 2 letters of one of the question's words (juego/jugar, llevo/llevar, played/play), at most 8 words; an English
+//        irregular verb form is fine too (be: am/is/are/was/were, have: has/had, do: does/did, go: goes/went)
+//   R13  a hint is allowed only on a card covered by R11, or on a card whose order is in the `confusable` set (confusable group: scripts/words-open-confusable.json)
+//        splitAlternatives: splits the question into alternatives at commas/semicolons; if two cards share an alternative
+//        ("to try, to taste" and "to try, to attempt"), both must have a hint (or be merged). Collisions among old cards (order <=
+//        legacyMaxOrder) count as errors up to legacyWarnLimit, and as warnings above it.
+//        stripQualifiers: when comparing alternatives, the parenthesised qualifier ("door lock (MX)" > "door lock") is dropped so
+//        that the qualifier cannot get around the gate; cards with the same base word need hint_en or a merge.
+//   R14  in a slash-separated answer every alternative is non-empty, none repeats, and the separator is exactly " / "
+// Normalization: lowercase, whitespace collapsed, trimmed, without a leading article.
 
 const HINT_MAX_WORDS = 8;
 const fold = (w) => w.normalize('NFD').replace(/[̀-ͯ]/g, '');
@@ -38,7 +38,7 @@ export function checkMultiMeaning({
     if (k) count.set(k, (count.get(k) || 0) + 1);
   }
 
-  // alternatíva-szintű átfedés (splitAlternatives): alt -> kártyák
+  // alternative-level overlap (splitAlternatives): alt -> cards
   const altCards = new Map();
   const unqual = (s) => (stripQualifiers ? s.replace(/\([^)]*\)/g, ' ') : s);
   const altsOf = (c) => (splitAlternatives ? unqual(String(c[qKey] ?? '')).split(/[,;]/).map(norm).filter(Boolean) : []);
@@ -46,8 +46,8 @@ export function checkMultiMeaning({
     for (const c of cards) for (const a of new Set(altsOf(c))) altCards.set(a, [...(altCards.get(a) || []), c]);
   }
   const hasHintText = (c) => typeof c[hintKey] === 'string' && c[hintKey].trim() !== '';
-  const altMulti = new Set(); // a kártyák, amelyek alternatíva-átfedésben vannak
-  const altProblems = []; // [kártya, partner, alt, legacy?]
+  const altMulti = new Set(); // cards that overlap on an alternative
+  const altProblems = []; // [card, partner, alt, legacy?]
   for (const [a, cs] of altCards) {
     if (cs.length < 2) continue;
     cs.forEach((c) => altMulti.add(c));

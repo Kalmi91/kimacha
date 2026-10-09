@@ -1,19 +1,19 @@
-// Kapu a szabad szókészlethez (data/words-open/{a1,a2,b1,b2}.json), R1-R8.
-// Futtatás: node scripts/words-open-check.mjs [--level a1|a2|b1|b2] [--list-only]
-//   --list-only  csak R1-R2 és R11-R15 (a lista kész, a mondatok még nincsenek)
-//   --level X    az R3-R10 csak az X szint kártyáin fut (a keresésekhez mindig mind a 600 kártya betöltődik)
-//   --to N       az R3-R10 csak az order <= N kártyákon fut (félkész szint ellenőrzése)
-// Szabályonként kiírja a hibák számát és az első 5 példát, hibánál exit 1.
-// R1/R2 lazítás (több jelentés, 600 fölötti kártyák), R11-R14 (scripts/multi-meaning-rules.mjs).
-// R11 kibővítve (3. kör): az `en` vessző/pontosvessző szerinti alternatívái is ütköznek; két kártya azonos alternatívája mindkettőn hint_en-t kér
-// (vagy összevonást); a régi 882 kártya egymás közti ütközése 50 fölött figyelmeztetés, nem hiba.
+// Gate for the open vocabulary (data/words-open/{a1,a2,b1,b2}.json), R1-R8.
+// Usage: node scripts/words-open-check.mjs [--level a1|a2|b1|b2] [--list-only]
+//   --list-only  only R1-R2 and R11-R15 (the list is done, the sentences are not there yet)
+//   --level X    R3-R10 run only on the level X cards (lookups always load all 600 cards)
+//   --to N       R3-R10 run only on cards with order <= N (for checking a half-finished level)
+// Prints the error count per rule and the first 5 examples; exits 1 on any error.
+// R1/R2 relaxed (multiple meanings, cards beyond 600), R11-R14 (scripts/multi-meaning-rules.mjs).
+// R11 extended: the comma/semicolon-separated alternatives of `en` collide as well; an alternative shared by two cards requires hint_en on both
+// (or a merge); collisions among the old 882 cards are a warning above 50, not an error.
 //
-// R6 (szint-nyelvtan): a lib/grammar/tenseGate.ts NEM használható újra, mert az alak-térképét a régi
-// data/words korpusz igéiből építi (a szabad készlet így tőle függene) és TS-alias-importot használ.
-// Helyette: a lib/games/conjugate.ts (tiszta kód, adat nélkül) ragozó táblái + saját szabályos
-// alak-generálás a kizárt (tőhangváltó) igékre; a mondat igéit a sentence_lemmas alapján sorolja be.
-// Amit a script NEM lát: a táblákban és a generálásban nem szereplő rendhagyó alakok (ismeretlen alak
-// átengedve), a tú-felszólító (megegyezik a jelen 3. személlyel), a mondat természetessége.
+// R6 (level grammar): lib/grammar/tenseGate.ts can NOT be reused, because it builds its form map from the verbs of the old
+// data/words corpus (the open set would then depend on it) and uses TS alias imports.
+// Instead: the conjugation tables of lib/games/conjugate.ts (pure code, no data) plus its own regular
+// form generation for the excluded (stem-changing) verbs; the verbs of a sentence are classified by sentence_lemmas.
+// What the script does NOT see: irregular forms missing from the tables and from the generation (an unknown form
+// is let through), the tú imperative (identical to the 3rd person present), the naturalness of the sentence.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -33,12 +33,12 @@ const POS = new Set(['noun', 'verb', 'adj', 'adv', 'pron', 'det', 'prep', 'conj'
 const MAX_TOKENS = { A1: 8, A2: 10, B1: 12, B2: 14 };
 const EMPTY_SENTENCE_MAX_ORDER = 20;
 
-// ---------------------------------------------------------------- argumentumok
+// ---------------------------------------------------------------- arguments
 const args = process.argv.slice(2);
 const listOnly = args.includes('--list-only');
 let onlyLevel = null;
 const ti = args.indexOf('--to');
-const toOrder = ti !== -1 ? Number(args[ti + 1]) : Infinity; // csak az order <= N kártyákra futnak az R3-R10 (részkészlet-ellenőrzés)
+const toOrder = ti !== -1 ? Number(args[ti + 1]) : Infinity; // R3-R10 run only on cards with order <= N (subset check)
 const li = args.indexOf('--level');
 if (li !== -1) {
   onlyLevel = (args[li + 1] || '').toLowerCase();
@@ -48,7 +48,7 @@ if (li !== -1) {
   }
 }
 
-// ---------------------------------------------------------------- szabály-gyűjtő
+// ---------------------------------------------------------------- rule collector
 const RULES = {};
 const R10_STATS = [];
 const WARNINGS = [];
@@ -60,7 +60,7 @@ function warn(rule, msg) {
 }
 const tag = (c) => `#${c.order} ${c.lemma}`;
 
-// ---------------------------------------------------------------- betöltés
+// ---------------------------------------------------------------- loading
 const cards = [];
 const fileProblems = [];
 for (const lv of LEVELS) {
@@ -80,7 +80,7 @@ for (const lv of LEVELS) {
 }
 fileProblems.forEach((m) => fail('R2', m));
 
-// ---------------------------------------------------------------- R1 egyediség (a lemma+en és az es+en PÁR; egy lemma több jelentéssel több kártyán lehet)
+// ---------------------------------------------------------------- R1 uniqueness (the lemma+en and es+en PAIR; one lemma can appear on several cards with different meanings)
 function checkUnique(field) {
   const seen = new Map();
   for (const c of cards) {
@@ -94,13 +94,13 @@ function checkUnique(field) {
 checkUnique('lemma');
 checkUnique('es');
 
-// ---------------------------------------------------------------- R2 darabszám, sáv, kulcsok
+// ---------------------------------------------------------------- R2 count, band, keys
 for (const lv of LEVELS) {
   const n = cards.filter((c) => c.__file === lv).length;
   if (!fileProblems.some((m) => m.startsWith(lv)) && n < 150) fail('R2', `${lv}.json ${n} kártya (kell: legalább 150)`);
 }
-// order egyedi és hézagmentes 1..N (a tömbbeli hely nem számít: a 601-től új kártya a testvére mellé kerül);
-// a kikerült kártyák orderei (scripts/words-open-retired.json) a hézagból kivételek, és nem használhatók újra
+// order unique and gapless 1..N (position in the array does not matter: from 601 on a new card goes next to its sibling);
+// the orders of retired cards (scripts/words-open-retired.json) are exempt from the gap rule and cannot be reused
 const retiredOrders = new Set(
   JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts', 'words-open-retired.json'), 'utf8')).retired.map((r) => r.order),
 );
@@ -120,10 +120,10 @@ for (const c of cards) {
     fail('R2', `${c.__file}.json[${c.__idx}] order nem egész`);
     continue;
   }
-  // a szintet a fájl dönti el (a nyelvtanleckék szavai a lecke szintjére kerülnek, az order marad): a level mező = a fájl szintje
+  // the level is decided by the file (words of grammar lessons go to the lesson's level, the order stays): the level field = the file's level
   if (c.level !== c.__file.toUpperCase()) fail('R2', `${tag(c)}: ${c.__file}.json fájlban ${c.level} szint`);
   const keys = Object.keys(c).filter((k) => !k.startsWith('__'));
-  const wantKeys = keys.includes('hint_en') ? [...KEYS.slice(0, 8), 'hint_en', ...KEYS.slice(8)] : KEYS; // hint_en: opcionális 14. kulcs a de után
+  const wantKeys = keys.includes('hint_en') ? [...KEYS.slice(0, 8), 'hint_en', ...KEYS.slice(8)] : KEYS; // hint_en: optional 14th key after de
   if (keys.join(',') !== wantKeys.join(',')) fail('R2', `${tag(c)}: kulcsok/sorrend eltér: ${keys.join(',')}`);
   if (!POS.has(c.pos)) fail('R2', `${tag(c)}: pos "${c.pos}" érvénytelen`);
   for (const k of ['lemma', 'es', 'hu', 'en', 'de', 'sentence_es', 'sentence_hu', 'sentence_en', 'sentence_de']) {
@@ -134,7 +134,7 @@ for (const c of cards) {
   }
   if (typeof c.lemma === 'string') {
     if (!c.lemma || c.lemma !== c.lemma.toLowerCase() || /\s/.test(c.lemma)) fail('R2', `${tag(c)}: lemma nem csupasz kisbetűs szó`);
-    // perjeles es-nél (S1) a fő alak, vagyis az első alternatíva felel meg a lemmának
+    // with a slash-separated es, the main form, i.e. the first alternative, corresponds to the lemma
     const esMain = typeof c.es === 'string' ? c.es.split(' / ')[0] : c.es;
     if (c.pos === 'noun') {
       if (esMain !== `el ${c.lemma}` && esMain !== `la ${c.lemma}` && esMain !== `los ${c.lemma}` && esMain !== `las ${c.lemma}`) {
@@ -144,11 +144,11 @@ for (const c of cards) {
   }
 }
 
-// ---------------------------------------------------------------- R11-R14 több jelentésű szavak (hint, perjeles válasz)
-// R11 bővítve: az `en` vessző/pontosvessző szerinti alternatívái, a zárójeles minősítő elhagyásával is ütköznek; a 882 régi kártya egymás
-// közti ütközése 50 fölött figyelmeztetés, nem hiba.
-// R15: összetéveszthető csoportok (scripts/words-open-confusable.json): a tagok kártyáin akkor is kötelező a hint_en, ha a kérdésük
-// nem azonos (while/when: mientras, cuando, cuándo); az R13 az ilyen kártyán megengedi a hintet. Minden tag létezik, egy halmaz legalább 2 tag, egy kártya egy halmazban.
+// ---------------------------------------------------------------- R11-R14 multi-meaning words (hint, slash-separated answer)
+// R11 extended: the comma/semicolon-separated alternatives of `en` collide as well, even with the parenthesised qualifier dropped; collisions
+// among the 882 old cards are a warning above 50, not an error.
+// R15: confusable groups (scripts/words-open-confusable.json): the cards of the members require hint_en even if their question
+// differs (while/when: mientras, cuando, cuándo); R13 allows a hint on such a card. Every member exists, a set has at least 2 members, a card is in one set only.
 const confusableSets = JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts', 'words-open-confusable.json'), 'utf8')).sets;
 const byOrder = new Map(cards.map((c) => [c.order, c]));
 const confusable = new Set();
@@ -170,13 +170,13 @@ checkMultiMeaning({
   splitAlternatives: true, stripQualifiers: true, legacyMaxOrder: 882, legacyWarnLimit: 50, warn, confusable,
 });
 
-// ---------------------------------------------------------------- R3-R9 (csak ha nem --list-only)
+// ---------------------------------------------------------------- R3-R9 (only without --list-only)
 if (!listOnly) {
-  // lemma -> kártyák (egy lemma több jelentéssel több kártyán lehet)
+  // lemma -> cards (one lemma can appear on several cards with different meanings)
   const byLemma = new Map();
   for (const c of cards) if (typeof c.lemma === 'string') byLemma.set(c.lemma, [...(byLemma.get(c.lemma) || []), c]);
   const isVerb = (l) => byLemma.get(l)?.some((k) => k.pos === 'verb') ?? false;
-  // „már tanult”: az alacsonyabb szintű fájlok minden kártyája + a saját fájl tömbjében a kártya előtti (és a kártya maga)
+  // "already learned": every card of the lower-level files + the cards before it in its own file's array (and the card itself)
   const known = (k, c) => LEVEL_RANK[k.level] < LEVEL_RANK[c.level] || (k.level === c.level && k.__idx <= c.__idx);
   const target = cards.filter((c) => (!onlyLevel || c.__file === onlyLevel) && c.order <= toOrder);
 
@@ -184,7 +184,7 @@ if (!listOnly) {
     s.toLowerCase().replace(/[¿?¡!.,;:()"«»…]/g, ' ').split(/\s+/).filter(Boolean);
   const strip = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '');
 
-  // ----- R5 rendhagyó-alak lista: csak valódi (token>lemma) párok, ékezettel, kisbetűvel
+  // ----- R5 irregular-form list: only real (token>lemma) pairs, with accents, lowercase
   const IRREG_SRC = {
     ser: 'soy eres es somos son sois fui fuiste fue fuimos fueron era eras éramos eran sea seas seamos sean sido fuera fueras fuéramos fueran fuese',
     ir: 'voy vas va vamos van vais fui fuiste fue fuimos fueron iba ibas íbamos iban vaya vayas vayamos vayan ido fuera fueras fuéramos fueran fuese',
@@ -253,7 +253,7 @@ if (!listOnly) {
     return a.slice(0, n) === b.slice(0, n);
   };
 
-  // ----- R6 igeidő-besorolás: conjugate.ts táblái + saját szabályos generálás
+  // ----- R6 tense classification: the tables of conjugate.ts + own regular generation
   const { conjugate, TENSES } = await importTs(path.join(ROOT, 'lib', 'games', 'conjugate.ts'));
 
   const STRUCT_LEVEL = {
@@ -342,7 +342,7 @@ if (!listOnly) {
     return map;
   }
 
-  /** Visszaadja a mondat [szerkezet, token] párjait. A lemma-lista alapján dolgozik. */
+  /** Returns the [construction, token] pairs of the sentence. Works from the lemma list. */
   function detect(tokens, lemmas) {
     const found = [];
     tokens.forEach((t, i) => {
@@ -361,7 +361,7 @@ if (!listOnly) {
       }
       const tenses = paradigm(l).get(t);
       if (!tenses && GERUND_RE.test(t)) {
-        // előbb a ragozási tábla: entiendo, mando jelen idő, nem gerundium
+        // conjugation table first: entiendo, mando are present tense, not gerund
         found.push([prevL === 'estar' ? 'gerundio_estar' : 'gerundio', t]);
         return;
       }
@@ -380,7 +380,7 @@ if (!listOnly) {
     return found;
   }
 
-  // ----- a szabályok futtatása a célkártyákon
+  // ----- running the rules on the target cards
   const seenSentences = new Map();
   for (const c of target) {
     const isEmpty =
@@ -390,10 +390,10 @@ if (!listOnly) {
       c.sentence_es !== '' && c.sentence_hu !== '' && c.sentence_en !== '' && c.sentence_de !== '' &&
       Array.isArray(c.sentence_lemmas) && c.sentence_lemmas.length > 0;
 
-    // R9 (kiegészítés, nem a spec része): üres szó-glossza hiányzó fordítás
+    // R9 (addition, not in the original rule set): an empty word gloss is a missing translation
     for (const k of ['hu', 'en', 'de']) if (!c[k]) fail('R9', `${tag(c)}: üres ${k} glossza`);
 
-    // R7 üres mondat csak az elején
+    // R7 an empty sentence only at the start
     if (!isEmpty && !isFull) fail('R7', `${tag(c)}: a 4 sentence_* mező és a sentence_lemmas vagy mind üres, vagy mind kitöltött`);
     else if (isEmpty && c.order > EMPTY_SENTENCE_MAX_ORDER) fail('R7', `${tag(c)}: üres mondat order>${EMPTY_SENTENCE_MAX_ORDER}`);
     if (!isFull) continue;
@@ -402,13 +402,13 @@ if (!listOnly) {
     const tokens = tokenize(s);
     const lemmas = c.sentence_lemmas;
 
-    // R3 teljes mondat
+    // R3 complete sentence
     if (!/^[¿¡]*[A-ZÁÉÍÓÚÑÜ]/.test(s)) fail('R3', `${tag(c)}: nem nagybetűvel kezdődik: "${s}"`);
     if (!/[.!?]$/.test(s)) fail('R3', `${tag(c)}: nem . ! ? zárja: "${s}"`);
     if (tokens.length < 3) fail('R3', `${tag(c)}: ${tokens.length} szó-token (min 3): "${s}"`);
     if (!lemmas.some((l) => isVerb(l))) fail('R3', `${tag(c)}: nincs ige-lemma: "${s}"`);
 
-    // R4 csak tanult szó
+    // R4 only learned words
     if (tokens.length !== lemmas.length) {
       fail('R4', `${tag(c)}: ${tokens.length} token, ${lemmas.length} lemma: "${s}"`);
     } else {
@@ -420,14 +420,14 @@ if (!listOnly) {
     }
     if (!lemmas.includes(c.lemma)) fail('R4', `${tag(c)}: a kártya saját lemmája nincs a mondatban`);
 
-    // R5 lemma-hihetőség
+    // R5 lemma plausibility
     if (tokens.length === lemmas.length) {
       tokens.forEach((t, i) => {
         if (!plausible(t, lemmas[i])) fail('R5', `${tag(c)}: "${t}" > "${lemmas[i]}" nem hihető`);
       });
     }
 
-    // R6 hossz + igeidő
+    // R6 length + tense
     const rank = LEVEL_RANK[c.level];
     if (tokens.length > MAX_TOKENS[c.level]) fail('R6', `${tag(c)}: ${tokens.length} szó > ${MAX_TOKENS[c.level]} (${c.level}): "${s}"`);
     if (tokens.length === lemmas.length) {
@@ -436,12 +436,12 @@ if (!listOnly) {
       }
     }
 
-    // R8 azonos mondat
+    // R8 identical sentence
     if (seenSentences.has(s)) fail('R8', `${tag(c)}: "${s}" már: #${seenSentences.get(s)}`);
     else seenSentences.set(s, c.order);
   }
 
-  // R10 (kiegészítés, PLAN Minőség): alanyi névmással kezdődő mondat szintenként legfeljebb 25%.
+  // R10 (addition): at most 25% of the sentences per level may start with a subject pronoun.
   const SUBJECT_PRON = new Set(['yo', 'tú', 'él', 'ella', 'nosotros', 'ellos', 'usted']);
   for (const lv of LEVELS) {
     const inLevel = target.filter((c) => c.__file === lv && Array.isArray(c.sentence_lemmas) && c.sentence_lemmas.length > 0);
@@ -455,7 +455,7 @@ if (!listOnly) {
   }
 }
 
-// ---------------------------------------------------------------- jelentés
+// ---------------------------------------------------------------- report
 const ruleList = listOnly
   ? ['R1', 'R2', 'R11', 'R12', 'R13', 'R14', 'R15']
   : ['R1', 'R2', 'R3', 'R4', 'R5', 'R6', 'R7', 'R8', 'R9', 'R10', 'R11', 'R12', 'R13', 'R14', 'R15'];
