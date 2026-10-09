@@ -142,7 +142,6 @@ const es: Strings = {
     // button of the el / la article-chooser task (only where such a set exists).
     startArticle: (n: number) => `¿El o la? (${n})`,
     // temporary, new task kinds (error finder, word order, dictation).
-    trialBadge: 'NUEVO · PRUEBA',
     startSpot: (n: number) => `Encuentra el error (${n})`,
     startOrder: (n: number) => `Orden de palabras (${n})`,
     startDictation: (n: number) => `Dictado (${n})`,

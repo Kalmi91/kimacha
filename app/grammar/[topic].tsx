@@ -37,7 +37,6 @@ import LessonTest from '@/components/grammar/LessonTest';
 import FeedbackButton from '@/components/FeedbackModal';
 import FitText from '@/components/FitText';
 import SpeakButton from '@/components/SpeakButton';
-import TrialBadge from '@/components/TrialBadge';
 import { BrutalBox, Card, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
 import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
@@ -194,8 +193,6 @@ export default function GrammarLessonScreen() {
   // (e.g. hay-estar gets no conjugation button, since it has no form item).
   const kindCounts = grammarKindCounts(lesson);
   const availableKinds = KIND_ORDER.filter((k) => kindCounts[k] > 0);
-  // Provisional kinds (all trial items): their button gets a badge and they do not count toward the lesson %.
-  const trialKinds = new Set<GrammarKind>(availableKinds.filter((k) => !scoredKinds(lesson).includes(k)));
   // the deck button only where the lesson actually
   // has a conjugation table (lib/grammar/tableDeck.ts already excludes the
   // reference GridTables and vosotros rows).
@@ -720,12 +717,6 @@ export default function GrammarLessonScreen() {
                 true,
                 i === 0
               )}
-              {/* under the provisional kind's button, the "NEW · TEST" badge. */}
-              {trialKinds.has(kind) ? (
-                <View style={styles.trialRow}>
-                  <TrialBadge testID={`trial-badge-${kind}`} />
-                </View>
-              ) : null}
               {runInfo || kindPct !== null ? (
                 <Text testID={`grammar-kind-percent-${kind}`} style={[styles.kindPercentNote, { color: colors.tabIconDefault }]}>
                   {runInfo ? s.grammar.runProgress(runInfo.answered, runInfo.of, runInfo.percent) : s.grammar.lessonPercent(kindPct as number)}
@@ -835,7 +826,6 @@ const styles = StyleSheet.create({
   lessonPercentNote: { fontSize: 12, textAlign: 'center', marginTop: -6, marginBottom: 12 },
   // the same line style, under each kind's own button.
   kindPercentNote: { fontSize: 12, textAlign: 'center', marginTop: 2 },
-  trialRow: { alignItems: 'center', marginTop: 6 },
   // the line under the lesson-test button, and the lesson page's "Test passed" mark.
   lessonTestNote: { fontSize: 12, textAlign: 'center', marginTop: 4 },
   testPassedNote: { fontSize: 14, fontWeight: '700', marginTop: 10 },

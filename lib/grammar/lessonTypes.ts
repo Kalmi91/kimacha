@@ -161,8 +161,8 @@ export interface TransformItem {
 }
 
 // three new task kinds, FOR NOW only in two
-// lessons, with a temporary "NEW · TEST" mark (`trial: true`) so the developer can try them out
-// and approve them. The mark can be removed in one place (components/TrialBadge.tsx: TRIAL_BADGES).
+// lessons, marked `trial: true` so the developer can try them out and approve them; trial items
+// do not count toward the lesson % and are left out of the lesson test.
 
 /** Error finder: the sentence contains one typical mistake; the learner taps the wrong word, then picks the right fix from 3 options. */
 export interface SpotItem {

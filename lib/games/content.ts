@@ -174,7 +174,7 @@ export function isDictationItem(item: GrammarItem): item is DictationItem {
   return item.kind === 'dictation';
 }
 
-/** A temporary ("NEW · TEST") item? */
+/** A temporary (trial) item? */
 export function isTrialItem(item: GrammarItem): boolean {
   return (item as { trial?: boolean }).trial === true;
 }

@@ -860,7 +860,7 @@ export function doneGrammarTopicProgress(
  */
 const LESSON_KIND_ORDER: readonly GrammarKind[] = ['choice', 'article', 'match', 'form', 'why', 'transform', 'spot', 'order', 'dictation'];
 
-// The button of the temporary ("NEW · TEST") kinds appears, but they do not
+// The button of the temporary (trial) kinds appears, but they do not
 // pull down the lesson's % (until the developer approves them, they are not part of the lesson).
 const TRIAL_KINDS: readonly GrammarKind[] = ['spot', 'order', 'dictation'];
 
@@ -880,11 +880,6 @@ export function scoredKinds(lesson: GrammarTopicData): GrammarKind[] {
 export function lessonKinds(lang: string, topicId: string): GrammarKind[] {
   const lesson = lessonFor(lang, topicId);
   return lesson ? scoredKinds(lesson) : [];
-}
-
-/** Does the lesson have a temporary ("NEW · TEST") item? The lesson list shows a badge based on this. */
-export function lessonHasTrial(lesson: GrammarTopicData | null | undefined): boolean {
-  return !!lesson && lesson.items.some((it) => (it as { trial?: boolean }).trial === true);
 }
 
 /** How much of the syllabus is written, for the header line. */
