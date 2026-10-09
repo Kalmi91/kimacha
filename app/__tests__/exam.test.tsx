@@ -1,8 +1,8 @@
-// a szintvizsga képernyője.
-// A tétel-építő mockolt (a tételek tartalmát a lib/exam/__tests__/builder.test.ts fedi), itt a
-// folyamat: zárva nem indul; kérdés közben helyes válasz után nincs visszajelzés, hibás után
-// a helyes látszik; átmenéskor a gomb a következő szintre (nincs automatikus váltás); bukáskor
-// pontszám + újrapróba; az eredmény mentődik. Mock-minta: app/__tests__/onboarding.test.tsx.
+// The level exam screen.
+// The item builder is mocked (the items' content is covered by lib/exam/__tests__/builder.test.ts), here it is
+// the flow: closed does not start; during questions no feedback after a correct answer, after a wrong one
+// the correct answer is shown; on a pass the button goes to the next level (no automatic switch); on a fail
+// score + retry; the result is saved. Mock pattern: app/__tests__/onboarding.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -14,7 +14,7 @@ jest.mock('expo-router', () => ({
   useRouter: () => ({ back: mockBack, push: (...args: unknown[]) => mockPush(...args), replace: jest.fn() }),
 }));
 
-// Egy tétel minden fajtából: 5 / 6 jó = 83% (átment), 4 / 6 = 66% (bukik).
+// One item of each kind: 5 / 6 correct = 83% (pass), 4 / 6 = 66% (fail).
 const mockExam = [
   { kind: 'word_type', skill: 'words', itemId: 'o1', prompt: 'the window', answer: 'la ventana' },
   {
@@ -75,7 +75,7 @@ const typeAndCheck = async (screen: Screen, text: string) => {
   await press(screen, 'exam-check');
 };
 
-// A fajta helyes (ok) vagy hibás megoldása, a mockExam sorrendjében.
+// The kind's correct (ok) or wrong solution, in the order of mockExam.
 const solve = {
   word: async (s: Screen, ok: boolean) => typeAndCheck(s, ok ? 'la ventana' : 'el coche'),
   match: async (s: Screen, ok: boolean) => {
@@ -94,18 +94,18 @@ const solve = {
 };
 const steps = [solve.word, solve.match, solve.tiles, solve.sentence, solve.choice, solve.choice] as const;
 
-// Végigmegy a 6 tételen: `wrong` = a hibásan megoldott tételek sorszáma (0-tól).
+// Goes through the 6 items: `wrong` = the indices of the wrongly solved items (from 0).
 const runExam = async (screen: Screen, wrong: number[] = []) => {
   for (let i = 0; i < steps.length; i++) {
     expect(screen.getByTestId('exam-counter').props.children).toBe(`Question ${i + 1} / 6`);
     const ok = !wrong.includes(i);
     await steps[i](screen, ok);
     if (!ok) {
-      // Hibás válasz után látszik a helyes, és csak a Next lép tovább.
+      // After a wrong answer the correct one is shown, and only Next moves on.
       expect(screen.getByText('Not quite!')).toBeTruthy();
       await press(screen, 'exam-next');
     } else if (i < steps.length - 1) {
-      // A1/A5 c: helyes válasz után nincs visszajelzés, a vizsga megy tovább.
+      // After a correct answer there is no feedback, the exam goes on.
       expect(screen.queryByText('Not quite!')).toBeNull();
       expect(screen.queryByTestId('exam-next')).toBeNull();
     }
@@ -164,7 +164,7 @@ describe('szintvizsga képernyő (A1)', () => {
     expect(screen.getByText('A1 passed')).toBeTruthy();
     expect(await getDb().getExamResults()).toMatchObject({ A1: { passed: true, best: 100 } });
 
-    // Nincs automatikus váltás; a gomb vált.
+    // No automatic switch; the button switches.
     expect(await getDb().getPcicLevel()).toBe('A1');
     await press(screen, 'exam-continue');
     expect(await getDb().getPcicLevel()).toBe('A2');
@@ -355,7 +355,7 @@ describe('szintvizsga: elrontott szó vissza az SM-2-be (2b, A8 a)', () => {
     const after = await getDb().getPcicCards();
     expect(after).toHaveLength(before.length);
     expect(after.find((c) => c.itemId === wordId)).toMatchObject({ state: 'learning', due: localDateString(), lapses: 1, lastReview: localDateString() });
-    // Minden más kártya (a nyelvtani hiba nem kap SM-2 változást) változatlan.
+    // Every other card (a grammar mistake gets no SM-2 change) is unchanged.
     expect(after.filter((c) => c.itemId !== wordId)).toEqual(before.filter((c) => c.itemId !== wordId));
     expect(after.find((c) => c.itemId === otherId)).toEqual(before.find((c) => c.itemId === otherId));
   });

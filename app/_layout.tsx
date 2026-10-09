@@ -34,10 +34,9 @@ export default function RootLayout() {
     ...FONT_FILES,
   });
   const [onboardingDone, setOnboardingDone] = useState<boolean | null>(null);
-  // a Settings irányváltó sora setLanguage()-t
-  // hív, ami itt egy verziószámot léptet; a szám a lenti <RootLayoutNav key>-je,
-  // tehát váltáskor az egész navigációs fa (a tab-fülek felirata is) frissen
-  // rendereldik, nem csak a fókuszban lévő képernyő.
+  // The Settings direction-switch row calls setLanguage(), which bumps a version number here; the number is the key of <RootLayoutNav> below,
+  // so on a switch the whole navigation tree (including the tab labels) is re-rendered
+  // fresh, not just the focused screen.
   const [langVersion, setLangVersion] = useState(0);
 
   useEffect(() => {
@@ -46,13 +45,13 @@ export default function RootLayout() {
 
   useEffect(() => subscribeLanguage(() => setLangVersion((v) => v + 1)), []);
 
-  // hidegindításkor az utoljára használt fülre / leckére lép vissza (lib/useAppResume.ts).
+  // On a cold start it returns to the last used tab / lesson (lib/useAppResume.ts).
   useAppResume(onboardingDone);
 
   useEffect(() => {
     async function check() {
       const db = getDb();
-      // Web teszt-horog (scripts/ui-overlap.mjs): csak webes URL-paraméterekből, natívon null.
+      // Web test hook (scripts/ui-overlap.mjs): only from web URL parameters, null on native.
       const testParams = getWebTestParams();
       if (testParams) await applyWebTestParams(db, testParams);
       let result = await db.getOnboarding();
@@ -66,8 +65,8 @@ export default function RootLayout() {
       }
       if (result) {
         setLanguage(result.source);
-        // a PCIC-fül aktív iránya is a tárolt
-        // target-tel induljon, ne mindig en-es-sel (data/pcic.ts activeTarget).
+        // So the PCIC tab's active direction also starts with the stored
+        // target, not always with en-es (data/pcic.ts activeTarget).
         setPcicTarget(result.target as PcicTarget);
       }
       setOnboardingDone(!!result);
@@ -99,8 +98,8 @@ function RootLayoutNav() {
   const { theme } = useTheme();
   const g = useGrammarColors();
   const { skin } = useSkin();
-  // a rendszer navigációs sávja alá futó képernyők egy helyen kapják meg a
-  // rést, nem képernyőnkénti foltként (lib/bottomGutter.ts).
+  // Screens that run under the system navigation bar get the
+  // gap in one place, not as a per-screen patch (lib/bottomGutter.ts).
   const insets = useSafeAreaInsets();
   const segments = useSegments();
   const gutter = bottomGutter(segments as string[], insets.bottom);
@@ -110,7 +109,7 @@ function RootLayoutNav() {
   // individual screen/handler needs to be patched.
   useEffect(() => {
     startUsageTimer();
-    // a TTS-motor háttérbe / előtérbe váltásnál leáll, hogy ne akadjon be.
+    // The TTS engine stops when switching to the background / foreground, so it does not get stuck.
     const unwatchSpeech = watchAppStateForSpeech();
     return () => {
       stopUsageTimer();

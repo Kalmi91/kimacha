@@ -1,4 +1,4 @@
-// a "nincs ilyen képernyő" oldal brutalista palettán BrutalButton, classic palettán a mai link.
+// the "no such screen" page: BrutalButton on the brutalist palette, today's link on the classic palette.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-router', () => {

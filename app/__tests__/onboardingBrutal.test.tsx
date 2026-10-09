@@ -1,5 +1,5 @@
-// az onboarding brutalista palettán (nyelv-gombok dobozként), classic
-// palettán a mai gombok. Mock-minta: onboarding.test.tsx.
+// The onboarding on the brutalist palette (language buttons as boxes), today's buttons on the classic
+// palette. Mock pattern: onboarding.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-router', () => ({
@@ -31,7 +31,7 @@ describe('Onboarding, neo-brutalista (NY19)', () => {
     fireEvent.press(view.getByTestId('onboarding-lang-en'));
     expect(view.queryByTestId('onboarding-start')).toBeTruthy();
     fireEvent.press(view.getByTestId('onboarding-start'));
-    // bevezető + téma-lépés a szint előtt.
+    // intro + theme step before the level.
     fireEvent.press(view.getByTestId('onboarding-intro-start'));
     fireEvent.press(view.getByTestId('onboarding-theme-next'));
     expect(view.queryByText('Choose level')).toBeTruthy();

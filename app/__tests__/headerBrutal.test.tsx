@@ -1,5 +1,5 @@
-// fejlécek brutalista palettán (bg háttér, 2,5 px ink alsó vonal, nagybetűs 500-as cím,
-// vissza-nyíl BrutalBox-ban), classic palettán a mai fejléc.
+// Headers on the brutalist palette (bg background, 2.5 px ink bottom line, uppercase weight-500 title,
+// back arrow in a BrutalBox), and today's header on the classic palette.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-router', () => ({
@@ -40,7 +40,7 @@ describe('Fejlécek, neo-brutalista (NY25)', () => {
     expect(brutalHeaderRowStyle(g)).toBeNull();
   });
 
-  // a téma title-betűje a natív fejléc címére.
+  // the theme's title font on the native header's title.
   it('brutalHeaderOptions + téma: egyedi betű (fontWeight nélkül), betűköz, nagybetű; classic-on továbbra is üres', () => {
     const g = grammarColorsFor('deco-dark');
     const o = brutalHeaderOptions(g, SKINS.deco);
@@ -48,7 +48,7 @@ describe('Fejlécek, neo-brutalista (NY25)', () => {
     expect(o.headerTitleStyle).not.toHaveProperty('fontWeight');
 
     const brutal = brutalHeaderOptions(grammarColorsFor('brand-light'), SKINS.brutal);
-    // a brutal title betűje null = a mai rendszer-betű, fontWeight-tel.
+    // the brutal title font is null = today's system font, with fontWeight.
     expect(brutal.headerTitleStyle).toMatchObject({ fontWeight: '500', textTransform: 'uppercase' });
     expect(brutal.headerTitleStyle).not.toHaveProperty('fontFamily');
     expect(brutal.headerStyle).toMatchObject({ borderBottomWidth: 2.5 });

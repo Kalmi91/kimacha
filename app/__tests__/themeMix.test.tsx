@@ -1,5 +1,5 @@
-// a Saját mix képernyő (app/theme-mix.tsx): négy chip-sor, élő előnézet a
-// piszkozattal, a mentés (setSkinMix + setSkin('mix')) és a visszatöltés.
+// The My mix screen (app/theme-mix.tsx): four chip rows, a live preview with the
+// draft, saving (setSkinMix + setSkin('mix')) and reloading.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 const mockBack = jest.fn();
@@ -107,7 +107,7 @@ describe('Saját mix képernyő (PLAN-temak 4D)', () => {
     fireEvent.press(view.getByTestId('mix-decor-none'));
     await flush();
     expect(view.queryByTestId('decor-csillampony-rainbow')).toBeNull();
-    // a képernyő maga nem változott: a mentés előtt az aktív téma ugyanaz
+    // the screen itself did not change: before saving, the active theme is the same
     expect(ctx.skin).toBe('brutal');
     view.unmount();
   });
@@ -131,7 +131,7 @@ describe('Saját mix képernyő (PLAN-temak 4D)', () => {
     expect(await getDb().getSkinMix()).toEqual(mix);
     view.unmount();
 
-    // újranyitva a mentett mix van kijelölve
+    // on reopening, the saved mix is selected
     const again = await mount();
     expect(ctx.skin).toBe('mix');
     expect(again.getByTestId('mix-colors-ukiyoe-selected')).toBeTruthy();

@@ -1,5 +1,5 @@
-// a Credits képernyő brutalista palettán (BrutalBox / BrutalButton),
-// classic palettán a mai kinézet. Mock-minta: credits.test.tsx, onboarding.test.tsx.
+// The Credits screen on the brutalist palette (BrutalBox / BrutalButton),
+// today's look on the classic palette. Mock pattern: credits.test.tsx, onboarding.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({

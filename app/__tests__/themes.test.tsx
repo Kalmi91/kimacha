@@ -1,5 +1,5 @@
-// a Témák képernyő (app/themes.tsx): a rács 24 témát + a Saját mix belépőt mutatja,
-// csoportonként a spec sorrendjében; a koppintás azonnal ment; egymódú témánál nincs mód-választó.
+// The Themes screen (app/themes.tsx): the grid shows 24 themes + the My mix entry,
+// by group in the spec's order; tapping saves immediately; a single-mode theme has no mode selector.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 const mockPush = jest.fn();
@@ -75,7 +75,7 @@ describe('Témák képernyő (PLAN-temak 4D)', () => {
     }
     expect(view.getAllByTestId(/^theme-tile-/)).toHaveLength(24);
 
-    // csoport- és témanevek az i18n-ből
+    // group and theme names from i18n
     expect(view.getByText('Recommended')).toBeTruthy();
     expect(view.getByText('Ukiyo-e')).toBeTruthy();
     expect(view.getByText('Socialist realism')).toBeTruthy();

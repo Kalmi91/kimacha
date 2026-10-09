@@ -1,5 +1,5 @@
-// a szintfelmérő minden részén ott a visszajelzés-gomb, és a
-// kártya-azonosító megmondja, melyik részről van szó (placement:<rész>). Minta: placement.test.tsx.
+// The feedback button is on every part of the placement test, and the
+// card id says which part it is (placement:<part>). Pattern: placement.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -17,7 +17,7 @@ jest.mock('@/components/FeedbackModal', () => {
   };
 });
 
-// Páratlan helyen nyelvtani, különben szó-kérdés (mint a placement.test.tsx).
+// At odd positions grammar, otherwise a word question (as in placement.test.tsx).
 jest.mock('@/lib/exam/placementQuestions', () => ({
   ...jest.requireActual('@/lib/exam/placementQuestions'),
   buildPlacementQuestion: (input: { level: string; position: number; used: Set<string> }) =>
@@ -57,7 +57,7 @@ describe('Szintfelmérő: visszajelzés-gomb minden részen (FB447)', () => {
     expect(card()).toBe('placement:leave | en→es | A2');
     await press('placement-keep-going');
     expect(card()).toMatch(/^placement:q2:gap /);
-    // Végigmegy a kérdéseken (jó válaszokkal), míg az eredmény-lap meg nem jelenik.
+    // Goes through the questions (with correct answers) until the result page appears.
     for (let n = 0; n < 40 && s.queryByTestId('placement-dont-know'); n++) await press('placement-option-0');
     expect(s.getByTestId('placement-result')).toBeTruthy();
     expect(card()).toMatch(/^placement:result \| en→es \| /);

@@ -11,12 +11,12 @@ import { BrutalBackButton, Card } from '@/components/grammar/Brutal';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
 import { FONT_LICENSES } from '@/constants/Fonts';
 
-// a betű-súlyok (pl. Jost + Jost-Bold) egy családként szerepelnek.
+// the font weights (e.g. Jost + Jost-Bold) appear as one family.
 const FONT_CREDITS = Object.values(FONT_LICENSES).filter(
   (f, i, all) => all.findIndex((o) => o.url === f.url) === i,
 );
 
-// brutalista palettán a szöveg egy BrutalBox kártyában, classic palettán a mai sima elrendezés.
+// on the brutalist palette the text is in a BrutalBox card, on the classic palette today's plain layout.
 function Wrap({ children }: { children: ReactNode }) {
   const g = useGrammarColors();
   return g.brutal ? <Card testID="credits-card">{children}</Card> : <>{children}</>;
@@ -110,8 +110,8 @@ const styles = StyleSheet.create({
     lineHeight: 22,
     marginBottom: 20,
   },
-  // a betű-licencek bekezdése (a main 1b1c0c6 a régi bodySpaced-et a
-  // gyakorisági forrással együtt kivette; itt ugyanazzal az értékkel él tovább).
+  // the font licenses paragraph (main 1b1c0c6 removed the old bodySpaced along with the
+  // frequency source; here it lives on with the same value).
   bodySpaced: {
     marginTop: 8,
   },

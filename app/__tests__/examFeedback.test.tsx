@@ -1,6 +1,6 @@
-// a régi szintvizsga minden részén ott a visszajelzés-gomb, és a
-// kártya-azonosító megmondja, melyik részről van szó (exam:<szint>:<rész>); beírós kérdésnél a 💬
-// a dokkolt Check-sáv fölött áll (bottomOffset). Minta: mockExamFeedback.test.tsx + exam.test.tsx.
+// The feedback button is on every part of the old level exam, and the
+// card id says which part it is (exam:<level>:<part>); on a typing question the 💬
+// sits above the docked Check bar (bottomOffset). Pattern: mockExamFeedback.test.tsx + exam.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -71,7 +71,7 @@ describe('Szintvizsga: visszajelzés-gomb minden részen (FB447)', () => {
 
     expect(card()).toBe('exam:A1:intro | en→es | A1 | -');
     await press('exam-start');
-    // Beírós kérdés: dokkolt Check-sáv van, a 💬 a sáv magasságával följebb áll (nem takarja).
+    // Typing question: there is a docked Check bar, the 💬 sits higher by the bar's height (it does not cover it).
     expect(card()).toMatch(/^exam:A1:q1:word_type \| en→es \| A1 \| [1-9]\d*$/);
     await press('exam-close');
     expect(card()).toBe('exam:A1:leave | en→es | A1 | -');
@@ -79,7 +79,7 @@ describe('Szintvizsga: visszajelzés-gomb minden részen (FB447)', () => {
     expect(card()).toMatch(/^exam:A1:q1:word_type /);
     fireEvent.changeText(s.getByTestId('exam-input'), 'la ventana');
     await press('exam-check');
-    // Választós kérdés: nincs dokkolt sáv, alap helyzet.
+    // Multiple-choice question: no docked bar, base position.
     expect(card()).toBe('exam:A1:q2:gap_mc | en→es | A1 | -');
     await press('exam-option-0');
     expect(card()).toBe('exam:A1:result | en→es | A1 | -');

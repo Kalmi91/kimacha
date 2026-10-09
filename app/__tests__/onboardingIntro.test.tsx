@@ -1,5 +1,5 @@
-// az onboarding új lépései. Sorrend: nyelv -> üdvözlés -> bevezető ("How it works")
-// -> téma (5 ajánlott) -> szint. A bevezetőn nincs Skip gomb, az első (biztató) pont és a zárósor látszik.
+// The new steps of the onboarding. Order: language -> welcome -> intro ("How it works")
+// -> theme (5 recommended) -> level. The intro has no Skip button, the first (encouraging) point and the closing line are visible.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-router', () => ({
@@ -114,8 +114,8 @@ describe('Onboarding: bevezető + témás lépés (PLAN-temak 4C)', () => {
     await toIntro();
     fireEvent.press(screen.getByText("Let's start"));
     const fonts = screen.getAllByText('el carro').map((n) => RN.StyleSheet.flatten(n.props.style).fontFamily);
-    // ONBOARDING_SKINS sorrendje: ukiyoe, csillampony, szocreal, brutal, deco
-    // a brutal sor szó-betűje null = a mai rendszer-betű, ezért nincs fontFamily
+    // ONBOARDING_SKINS order: ukiyoe, csillampony, szocreal, brutal, deco
+    // the brutal row's word font is null = today's system font, so there is no fontFamily
     expect(fonts).toEqual(['Spectral-Light', 'Fredoka-Medium', 'Playfair-Black', undefined, 'PoiretOne']);
   });
 
