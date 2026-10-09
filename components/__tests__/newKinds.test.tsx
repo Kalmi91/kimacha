@@ -10,7 +10,7 @@ jest.mock('@/lib/ThemeContext', () => ({
 }));
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
-import { fireEvent, render, screen } from '@testing-library/react-native';
+import { act, fireEvent, render, screen } from '@testing-library/react-native';
 
 import GrammarDrill from '../grammar/GrammarDrill';
 import { lessonFor } from '@/lib/grammar/syllabus';
@@ -25,12 +25,21 @@ const only = (lesson: LessonV2, kind: string, count = 1): LessonV2 => ({
   items: lesson.items.filter((i) => i.kind === kind).slice(0, count),
 });
 
+// GrammarDrill reads the strict-accents setting on mount, one microtask later;
+// settle it inside act() so the update is not reported as unwrapped.
+const flush = async () => {
+  await act(async () => {
+    await Promise.resolve();
+  });
+};
+
 beforeEach(() => speech.speak.mockClear());
 
 describe('hibakereső (spot)', () => {
-  it('a rossz szóra bökve jön a javítás-választó, a jó opció után jó jelzés, javított mondat, elhangzik, a Next pontoz', () => {
+  it('a rossz szóra bökve jön a javítás-választó, a jó opció után jó jelzés, javított mondat, elhangzik, a Next pontoz', async () => {
     const onFinish = jest.fn();
     render(<GrammarDrill topic={only(negacion, 'spot')} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['spot']} />);
+    await flush();
 
     // ÚJ · TESZT jelvény a feladaton
     expect(screen.getByTestId('trial-badge')).toBeTruthy();
@@ -50,9 +59,10 @@ describe('hibakereső (spot)', () => {
     expect(onFinish).toHaveBeenCalledWith(1, 1);
   });
 
-  it('egy jó szóra bökés hiba: nem lesz pont, de a feladat végigvihető', () => {
+  it('egy jó szóra bökés hiba: nem lesz pont, de a feladat végigvihető', async () => {
     const onFinish = jest.fn();
     render(<GrammarDrill topic={only(negacion, 'spot')} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['spot']} />);
+    await flush();
     fireEvent.press(screen.getByTestId('spot-word-0'));
     expect(screen.getByText('That word is fine. Look again.')).toBeTruthy();
     fireEvent.press(screen.getByTestId('spot-word-2'));
@@ -62,9 +72,10 @@ describe('hibakereső (spot)', () => {
     expect(onFinish).toHaveBeenCalledWith(0, 1);
   });
 
-  it('a rossz javítás-opció hibás jelzés', () => {
+  it('a rossz javítás-opció hibás jelzés', async () => {
     const onFinish = jest.fn();
     render(<GrammarDrill topic={only(negacion, 'spot')} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['spot']} />);
+    await flush();
     fireEvent.press(screen.getByTestId('spot-word-2'));
     fireEvent.press(screen.getByText('nunca'));
     expect(screen.getByText('Not quite!')).toBeTruthy();
@@ -72,10 +83,11 @@ describe('hibakereső (spot)', () => {
     expect(onFinish).toHaveBeenCalledWith(0, 1);
   });
 
-  it('a törlős javítás: "Nadie no viene."', () => {
+  it('a törlős javítás: "Nadie no viene."', async () => {
     const onFinish = jest.fn();
     const topic: LessonV2 = { ...negacion, items: negacion.items.filter((i) => i.id === 'neg-spot-03') };
     render(<GrammarDrill topic={topic} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['spot']} />);
+    await flush();
     fireEvent.press(screen.getByTestId('spot-word-1'));
     fireEvent.press(screen.getByText('(remove it)'));
     expect(screen.getByText('Nadie viene.')).toBeTruthy();
@@ -85,9 +97,10 @@ describe('hibakereső (spot)', () => {
 });
 
 describe('szórend (order)', () => {
-  it('a mondat a felület nyelvén, a csempék sorba rakva, a helyes mondat elhangzik, a Next pontoz', () => {
+  it('a mondat a felület nyelvén, a csempék sorba rakva, a helyes mondat elhangzik, a Next pontoz', async () => {
     const onFinish = jest.fn();
     render(<GrammarDrill topic={only(negacion, 'order')} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['order']} />);
+    await flush();
 
     expect(screen.getByTestId('trial-badge')).toBeTruthy();
     expect(screen.getByText("I don't speak Spanish.")).toBeTruthy();
@@ -101,9 +114,10 @@ describe('szórend (order)', () => {
 });
 
 describe('diktálás (dictation)', () => {
-  it('a mondat elhangzik, a gépelt válasz elnéző, jó válasz után jó jelzés és a fordítás', () => {
+  it('a mondat elhangzik, a gépelt válasz elnéző, jó válasz után jó jelzés és a fordítás', async () => {
     const onFinish = jest.fn();
     render(<GrammarDrill topic={only(serEstar, 'dictation')} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['dictation']} />);
+    await flush();
 
     expect(speech.speak).toHaveBeenCalledWith('Estoy en casa.', 'es-MX');
     expect(screen.getByTestId('trial-badge')).toBeTruthy();
@@ -122,9 +136,10 @@ describe('diktálás (dictation)', () => {
     expect(onFinish).toHaveBeenCalledWith(1, 1);
   });
 
-  it('rossz válasznál a különbség-kiemelés (Your answer / Correct answer) és nincs pont', () => {
+  it('rossz válasznál a különbség-kiemelés (Your answer / Correct answer) és nincs pont', async () => {
     const onFinish = jest.fn();
     render(<GrammarDrill topic={only(serEstar, 'dictation')} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['dictation']} />);
+    await flush();
     fireEvent.changeText(screen.getByTestId('dictation-input'), 'estoy a casa');
     fireEvent.press(screen.getByTestId('dictation-check'));
     expect(screen.getByText('Not quite!')).toBeTruthy();
