@@ -61,6 +61,7 @@ export default function Choice({
   return (
     <Pressable
       testID={testID}
+      accessibilityRole="button"
       onPress={onPress}
       style={[boxStyle, styles.plain, { backgroundColor: selected ? g.a : g.paper }, style]}
     >

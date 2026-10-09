@@ -7,6 +7,7 @@ import { useSkinDecor } from '@/components/skins';
 import type { SkinDecor } from '@/components/skins/types';
 import type { ColorRole, CornerRadii, SkinShape } from '@/constants/Skins';
 import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
+import { t } from '@/lib/i18n';
 import { useSkin } from '@/lib/useSkin';
 import { useTheme } from '@/lib/ThemeContext';
 
@@ -164,6 +165,7 @@ export function BrutalBox({
       {onPress ? (
         <Pressable
           testID={testID}
+          accessibilityRole="button"
           accessibilityLabel={accessibilityLabel}
           disabled={disabled}
           onPress={onPress}
@@ -325,23 +327,26 @@ export function BrutalSwitch({
   onValueChange,
   disabled,
   testID,
+  accessibilityLabel,
 }: {
   value: boolean;
   onValueChange?: (value: boolean) => void;
   disabled?: boolean;
   testID?: string;
+  accessibilityLabel?: string;
 }) {
   const g = useGrammarColors();
   const { theme } = useTheme();
   const { shape } = useSkin().skin;
   if (!g.brutal) {
-    return <Switch testID={testID} value={value} onValueChange={onValueChange} disabled={disabled} trackColor={{ true: Colors[theme].tint }} />;
+    return <Switch testID={testID} accessibilityLabel={accessibilityLabel} value={value} onValueChange={onValueChange} disabled={disabled} trackColor={{ true: Colors[theme].tint }} />;
   }
   const round = smallRadius(shape, 14);
   return (
     <Pressable
       testID={testID}
       accessibilityRole="switch"
+      accessibilityLabel={accessibilityLabel}
       accessibilityState={{ checked: value, disabled: !!disabled }}
       disabled={disabled}
       onPress={() => onValueChange?.(!value)}
@@ -372,7 +377,7 @@ export function BrutalSwitch({
 export function BrutalBackButton({ onPress, testID }: { onPress: () => void; testID?: string }) {
   const g = useGrammarColors();
   return (
-    <BrutalBox testID={testID} onPress={onPress} offset={2} kind="button" boxStyle={styles.backBox}>
+    <BrutalBox testID={testID} accessibilityLabel={t().a11y.back} onPress={onPress} offset={2} kind="button" boxStyle={styles.backBox}>
       <Text style={[styles.backArrow, { color: g.ink }]}>←</Text>
     </BrutalBox>
   );

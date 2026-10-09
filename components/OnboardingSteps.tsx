@@ -19,7 +19,7 @@ function StartButton({ testID, label, onPress }: { testID: string; label: string
   const g = useGrammarColors();
   if (g.brutal) return <BrutalButton testID={testID} label={label} onPress={onPress} style={styles.brutalBtn} />;
   return (
-    <Pressable testID={testID} style={[styles.startBtn, { backgroundColor: Colors[theme].tint }]} onPress={onPress}>
+    <Pressable testID={testID} accessibilityRole="button" style={[styles.startBtn, { backgroundColor: Colors[theme].tint }]} onPress={onPress}>
       <Text style={[styles.startBtnText, { color: Colors[theme].onTint }]}>{label}</Text>
     </Pressable>
   );
@@ -84,6 +84,7 @@ function ThemeSampleRow({ id, selected, onPress }: { id: SkinId; selected: boole
       testID={`onboarding-theme-${id}`}
       onPress={onPress}
       accessibilityRole="button"
+      accessibilityLabel={t().skins.names[id]}
       accessibilityState={{ selected }}
       style={[styles.ring, { borderColor: selected ? active.ink : 'transparent' }]}
     >

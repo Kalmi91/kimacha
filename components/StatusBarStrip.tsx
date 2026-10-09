@@ -3,6 +3,7 @@ import { Platform, Pressable, StatusBar as RNStatusBar, StyleSheet } from 'react
 import { StatusBar } from 'expo-status-bar';
 
 import { getDb } from '@/lib/database';
+import { t } from '@/lib/i18n';
 import { nextTintIndex, tintColor } from '@/lib/statusBarTints';
 import { useGrammarColors } from '@/lib/grammarColors';
 
@@ -37,6 +38,8 @@ export default function StatusBarStrip() {
       {/* Light icons: every tint in the list is a dark-enough blue. */}
       <StatusBar style="light" />
       <Pressable
+        accessibilityRole="button"
+        accessibilityLabel={t().a11y.statusBarTint}
         onPress={cycle}
         style={[
           styles.band,

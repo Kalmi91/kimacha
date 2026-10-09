@@ -2,6 +2,7 @@ import { Pressable, StyleSheet, Text, type StyleProp, type TextStyle, type ViewS
 
 import { BrutalBox } from '@/components/grammar/Brutal';
 import { useGrammarColors } from '@/lib/grammarColors';
+import { t } from '@/lib/i18n';
 
 // The shared 🔊 / ⏹ button. On the brutalist palette a box matching the small
 // icon buttons of the games (✕ in the GrammarDrill header, ← on the lesson page):
@@ -44,11 +45,13 @@ export default function SpeakButton({
 }: Props) {
   const g = useGrammarColors();
   const icon = iconProp ?? (speaking ? '⏹' : '🔊');
+  // icon-only (no visible label): a spoken name for the screen reader.
+  const a11yLabel = accessibilityLabel ?? (label || iconProp ? undefined : speaking ? t().a11y.stopSpeaking : t().a11y.speak);
   if (g.brutal) {
     return (
       <BrutalBox
         testID={testID}
-        accessibilityLabel={accessibilityLabel}
+        accessibilityLabel={a11yLabel}
         offset={2}
         onPress={onPress}
         style={[styles.brutalOuter, brutalStyle]}
@@ -60,7 +63,7 @@ export default function SpeakButton({
     );
   }
   return (
-    <Pressable testID={testID} accessibilityLabel={accessibilityLabel} style={style} onPress={onPress} hitSlop={hitSlop}>
+    <Pressable testID={testID} accessibilityRole="button" accessibilityLabel={a11yLabel} style={style} onPress={onPress} hitSlop={hitSlop}>
       <Text style={iconStyle}>{icon}</Text>
       {label ? <Text style={labelStyle}>{label}</Text> : null}
     </Pressable>

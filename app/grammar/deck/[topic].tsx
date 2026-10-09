@@ -220,7 +220,7 @@ export default function TableDeckScreen() {
       {g.brutal ? (
         <BrutalBackButton testID="tabledeck-back" onPress={() => router.back()} />
       ) : (
-      <Pressable onPress={() => router.back()} hitSlop={12}>
+      <Pressable accessibilityRole="button" accessibilityLabel={s.a11y.back} onPress={() => router.back()} hitSlop={12}>
         <Text style={[styles.back, { color: colors.text }]}>←</Text>
       </Pressable>
       )}

@@ -51,6 +51,15 @@ const es: Strings = {
     stats: 'Estadísticas',
     pcic: 'Aprender',
   },
+  a11y: {
+    back: 'Atrás',
+    close: 'Cerrar',
+    speak: 'Reproducir audio',
+    stopSpeaking: 'Detener audio',
+    statusBarTint: 'Cambiar el color de la franja superior',
+    increase: (what: string): string => `Aumentar ${what.toLowerCase()}`,
+    decrease: (what: string): string => `Disminuir ${what.toLowerCase()}`,
+  },
   games: {
     understood: 'Entendido',
     correctFeedback: '¡Correcto!',

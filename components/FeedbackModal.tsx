@@ -113,6 +113,8 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
   return (
     <>
       <Pressable
+        accessibilityRole="button"
+        accessibilityLabel={s.feedback.button}
         style={[
           styles.fab,
           { backgroundColor: colors.tint },
