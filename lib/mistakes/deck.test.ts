@@ -1,5 +1,5 @@
-// A deck.ts tesztje: kártya-építés a mintafájlból,
-// session-választás és az előre kijelölt értékelés.
+// Test of deck.ts: card building from the sample file,
+// session selection and the pre-selected grading.
 
 import sample from './__fixtures__/sample.json';
 import { validateMistakesPayload } from './format';

@@ -57,7 +57,7 @@ function hasVosotrosPronoun(text: string): boolean {
 /**
  * True if a drill item IS a vosotros exercise. `form`: the `person` field
  * says so (the reliable signal for this kind), or its `answer` is a
- * vosotros-alak. `transform`: no person field, so the `answer`/`accept`
+ * vosotros form. `transform`: no person field, so the `answer`/`accept`
  * conjugation or the `prompt`'s pronoun decide. `choice` (gap/mark): only
  * the CORRECT answer counts, a vosotros form used as a WRONG distractor
  * (e.g. presente-regular pr-06, teaching "this isn't it, that's vosotros")
@@ -80,7 +80,7 @@ export function isVosotrosItem(item: GrammarItem): boolean {
       return hasVosotrosEnding(item.answer) || hasVosotrosPronoun(item.sentence);
     case 'match':
     case 'why':
-    // az új fajták (hibakereső, szórend, diktálás) mondatai sosem vosotros-feladatok.
+    // the sentences of the new kinds (error finder, word order, dictation) are never vosotros tasks.
     case 'spot':
     case 'order':
     case 'dictation':
@@ -102,8 +102,8 @@ export function filterVosotros<T extends GrammarItem>(items: T[]): T[] {
 
 /**
  * A `match` item keeps its shape but drops any pair whose Spanish side is a
- * vosotros form/pronoun ("A match itemek párjaiból a vosotros-pár esik ki, a
- * többi pár marad").
+ * vosotros form/pronoun (of the pairs of a match item the vosotros pair drops
+ * out, the other pairs stay).
  */
 export function filterVosotrosPairs<T extends { pairs: { es: string }[] }>(item: T): T {
   const pairs = item.pairs.filter((p) => !hasVosotrosEnding(p.es) && !hasVosotrosPronoun(p.es));

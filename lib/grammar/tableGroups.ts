@@ -1,6 +1,6 @@
-// a lecke body-ban egymás után álló, egyetlen igés ragozási
-// táblákból (pl. indefinido-10-verbos: tíz tábla) egy füles csoport lesz, hogy
-// ne tíz táblányi helyet foglaljanak. Tiszta függvény, hogy tesztelhető legyen.
+// Single-verb conjugation tables that follow each other in a lesson body
+// (e.g. indefinido-10-verbos: ten tables) become one tabbed group, so they
+// do not take up the space of ten tables. A pure function so it is testable.
 import type { LessonBlock } from './lessonTypes';
 import { isConjugationTable } from './tableShape';
 
@@ -10,7 +10,7 @@ type BodyEntry =
   | { kind: 'block'; block: LessonBlock; index: number }
   | { kind: 'tabs'; tables: TableBlock[]; index: number };
 
-/** Ennyi, egymás utáni egy-igés ragozási táblától lesz füles csoport. */
+/** From this many consecutive single-verb conjugation tables on, they become a tabbed group. */
 const TABLE_TABS_MIN = 3;
 
 function isSingleVerbConjugation(block: LessonBlock): block is TableBlock {

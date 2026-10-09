@@ -1,19 +1,19 @@
 import type { Lang4 } from './lessonTypes';
 
-// User feedback: „amable is identity?" és
-// „kisbetűvel tedd még oda mintának, mi számít identitásnak". A "miért ez a mondat"
-// feladat szabály-opciói (pl. „profesión, identidad (ser)") alatt kisbetűs, halvány sor
-// mutatja, mi tartozik oda, két-három példával. A kulcs az opció ANGOL szövege
-// (`text.en`), így a tanterv-adat (data/games/grammar/**) nem változik, és az új
-// leckék opciói itt bővíthetők.
+// User feedback ("is amable identity?" and
+// "put a lowercase example there to show what counts as identity"). Under the rule options
+// of the "why this sentence" task (e.g. "profesión, identidad (ser)") a lowercase, faint line
+// shows what belongs there, with two or three examples. The key is the ENGLISH text of the
+// option (`text.en`), so the syllabus data (data/games/grammar/**) does not change, and the
+// options of new lessons can be added here.
 //
-// Csak a ser/estar szabály-nevekhez van jelenleg (a `ser-estar` és a `to-be` lecke);
-// ahol nincs bejegyzés, nem jelenik meg semmi.
+// For now only for the ser/estar rule names (the `ser-estar` and the `to-be` lesson);
+// where there is no entry, nothing is shown.
 
 const traits = 'Soy Ana, es médico, es amable';
 
 export const OPTION_HINTS: Record<string, Lang4> = {
-  // --- spanyol lecke (ser-estar) ---
+  // --- Spanish lesson (ser-estar) ---
   'profession, identity (ser)': {
     hu: `név, foglalkozás, jellem · ${traits}`,
     en: `name, job, character · ${traits}`,
@@ -50,7 +50,7 @@ export const OPTION_HINTS: Record<string, Lang4> = {
     es: 'lo que queda tras una acción · La puerta está abierta',
     de: 'was nach einer Handlung übrig ist · La puerta está abierta',
   },
-  // --- angol lecke (to-be), a példák angolul ---
+  // --- English lesson (to-be), the examples in English ---
   'identity, profession (ser meaning)': {
     hu: 'név, foglalkozás, jellem · I am Ana, she is a doctor, he is kind',
     en: 'name, job, character · I am Ana, she is a doctor, he is kind',
@@ -77,7 +77,7 @@ export const OPTION_HINTS: Record<string, Lang4> = {
   },
 };
 
-/** A szabály-opció alatti példa-sor a lecke nyelvén, vagy undefined, ha nincs bejegyzés. */
+/** The example line under the rule option, in the lesson's language, or undefined if there is no entry. */
 export function optionHint(text: Lang4, lang: string): string | undefined {
   const hint = OPTION_HINTS[text.en];
   if (!hint) return undefined;

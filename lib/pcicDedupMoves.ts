@@ -1,10 +1,10 @@
-// GENERÁLT FÁJL (a generáló scripts/pcic-dedup.mjs kikerült), ne szerkeszd kézzel.
+// GENERATED FILE (the generating scripts/pcic-dedup.mjs was removed), do not edit by hand.
 //
-// törölt (magasabb szintű/szinten-belüli
-// duplikátum) PCIC-item-id -> a megmaradó (legalacsonyabb szintű) item-id. A DB-
-// migráció (lib/db/migrations.ts applyPcicDedup) ezen a térképen viszi át a
-// meglévő pcic_cards SRS-haladást; ha MINDKÉT oldalon van haladás, az erősebb
-// (több sikeres ismétlés, aztán nagyobb interval) nyer, a gyengébb sor törlődik.
+// deleted (higher-level / within-level
+// duplicate) PCIC item id -> the surviving (lowest-level) item id. The DB
+// migration (lib/db/migrations.ts applyPcicDedup) carries the existing pcic_cards SRS
+// progress over along this map; if there is progress on BOTH sides, the stronger one
+// (more successful repetitions, then larger interval) wins, the weaker row is deleted.
 
 export const PCIC_DEDUP_MOVES: Record<string, string> = {
   'a2-1ab1b3e3': 'a1-1ab1b3e3', // tener: A2 -> A1

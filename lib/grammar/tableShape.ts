@@ -1,18 +1,18 @@
-// tiszta helper a LessonBody
-// tábla-blokkjához. Eldönti, hogy egy `table` blokk ragozási tábla-e
-// (fejléc 2..n cellája mind infinitivus, a sorok címkéi személy-névmások),
-// és ha igen, szétvágja egy alakot tőre és végződésre (a tő halvány, a
-// végződés vastag és színes az igeosztály szerint a LessonBody-ban).
-// Nem ragozási (referencia) táblákra a régi rács-nézet marad.
+// Pure helper for the LessonBody's
+// table block. It decides whether a `table` block is a conjugation table
+// (cells 2..n of the header are all infinitives, the row labels are personal pronouns),
+// and if so, splits a form into stem and ending (the stem is faint, the
+// ending is bold and colored by verb class in the LessonBody).
+// For non-conjugation (reference) tables the old grid view stays.
 
 import type { Lang4 } from './lessonTypes';
 
 type VerbClass = 'ar' | 'er' | 'ir';
 
-// A hat személy + a data/games/grammar/es/*.json-ban ténylegesen előforduló
-// szét- és összevont változatok (usted/ustedes külön is). A kulcsok innen
-// adják az isConjugationTable személy-felismerését is, hogy a két hely ne
-// csússzon szét.
+// The six persons + the split and merged variants that actually occur in
+// data/games/grammar/es/*.json (usted/ustedes also separately). The keys here
+// also feed isConjugationTable's person detection, so the two places do not
+// drift apart.
 const PERSON_GLOSS: Record<string, Lang4> = {
   yo: { hu: 'én', en: 'I', es: 'yo', de: 'ich' },
   'tú': { hu: 'te', en: 'you', es: 'tú', de: 'du' },
@@ -32,8 +32,8 @@ function normalizePerson(label: string): string {
   return label.trim().toLowerCase();
 }
 
-// A tanuló nyelvén (contentLang) halvány glossza a személy mellé. Ismeretlen
-// címkére '' (nincs glossza-sor), nem találgatunk.
+// A faint gloss next to the person, in the learner's language (contentLang). '' for an unknown
+// label (no gloss line), we do not guess.
 export function personGloss(label: string, contentLang: 'hu' | 'en' | 'es' | 'de'): string {
   const entry = PERSON_GLOSS[normalizePerson(label)];
   return entry ? entry[contentLang] : '';
@@ -43,21 +43,21 @@ function isPersonLabel(label: string): boolean {
   return normalizePerson(label) in PERSON_GLOSS;
 }
 
-// Egy szó, -ar/-er/-ir végű infinitivus, opcionális visszaható "se" raggal
-// (levantarse). A tő rész `*`, mert az "ir" (menni) önmagában is infinitivus
-// (0 hosszú tő). Szóköz vagy "+" a cellában (pl. "ir a + infinitivo") kizárja.
+// One word, an infinitive ending in -ar/-er/-ir, with an optional reflexive "se" suffix
+// (levantarse). The stem part is `*`, because "ir" (to go) is an infinitive on its own
+// (stem of length 0). A space or "+" in the cell (e.g. "ir a + infinitivo") rules it out.
 const INFINITIVE_RE = /^[a-zàáâäèéêëìíîïòóôöùúûüñç]*(ar|er|ir)(se)?$/i;
 
-// exportálva, a táblakártya ebből tudja, hogy a címke egy infinitivus
-// (az rejtett marad, súgó-gombra látszik), nem oszlop-fejléc (az látszik).
+// exported, the table card uses it to know that the label is an infinitive
+// (that stays hidden, shown via the hint button), not a column header (that is visible).
 export function isInfinitive(word: string): boolean {
   return INFINITIVE_RE.test(word.trim());
 }
 
-// Igaz, ha a header 2..n cellájának `es` értéke mind infinitivus ÉS minden
-// sor címkéje személy-névmás. Referencia-táblákra (hay/estar, névmás-táblák,
-// "ir a + infinitivo") hamis, mert a fejlécük nem csupa infinitivus vagy a
-// sorcímkéjük nem a fenti hat (esetleg a felismerés nélkül).
+// True if the `es` values of cells 2..n of the header are all infinitives AND the label of
+// every row is a personal pronoun. False for reference tables (hay/estar, pronoun tables,
+// "ir a + infinitivo"), because their header is not all infinitives or their
+// row labels are not the six above (possibly without being recognised).
 export function isConjugationTable(header: Lang4[], rows: string[][]): boolean {
   if (header.length < 2 || rows.length === 0) return false;
   const verbHeaders = header.slice(1);
@@ -65,12 +65,12 @@ export function isConjugationTable(header: Lang4[], rows: string[][]): boolean {
   return rows.every((row) => isPersonLabel(row[0]));
 }
 
-// személy-tábla = minden sor címkéje személy-névmás
-// (yo, tú, él/ella/usted...), a fejléc 2..n cellája viszont NEM csupa infinitivus
-// (pl. "Sujeto -> pronombre de objeto indirecto", "Persona -> ir a + infinitivo",
-// "Persona -> Masculino singular | ..."). Az ilyen tábla egyértelműen kérdezhető
-// (személy x oszlop -> a cella), ezért a táblázat-pakli adja, nem a szó-pakli
-// fallback (szószedet + mondat-szavak), ami "felesleges szavakat" mutatott.
+// person table = the label of every row is a personal pronoun
+// (yo, tú, él/ella/usted...), but cells 2..n of the header are NOT all infinitives
+// (e.g. "Sujeto -> pronombre de objeto indirecto", "Persona -> ir a + infinitivo",
+// "Persona -> Masculino singular | ..."). Such a table can be quizzed unambiguously
+// (person x column -> the cell), so the table deck serves it, not the word-deck
+// fallback (glossary + sentence words), which showed "unnecessary words".
 export function isPersonTable(header: Lang4[], rows: string[][]): boolean {
   if (header.length < 2 || rows.length === 0) return false;
   if (isConjugationTable(header, rows)) return false;
@@ -86,16 +86,16 @@ export function isPersonTable(header: Lang4[], rows: string[][]): boolean {
 // way (interrogativos today; any future lesson with the same header wins
 // the same treatment automatically). Deliberately narrow: a table with a
 // different header (Person, Singular, Infinitive, ...) stays reference-only
-// and falls back to the word-deck, per the spec ("ha egy tábla
-// nem kérdezhető, ne erőltesd").
+// and falls back to the word-deck, per the spec ("if a table cannot
+// be quizzed, don't force it").
 export function isMeaningTable(header: Lang4[], rows: string[][]): boolean {
   if (header.length < 2 || rows.length === 0) return false;
   if (header[0].en.trim().toLowerCase() !== 'meaning') return false;
   return !isConjugationTable(header, rows);
 }
 
-// Az infinitivus utolsó 2 betűje nélkül számolt "névelő nélküli" igeosztály;
-// visszaható igénél a "se" előbb lekerül (levantarse -> levantar -> ar).
+// The verb class (ar/er/ir) from the last 2 letters of the infinitive;
+// for a reflexive verb the "se" comes off first (levantarse -> levantar -> ar).
 export function verbClassOf(infinitive: string): VerbClass | null {
   const base = infinitive.toLowerCase().endsWith('se') ? infinitive.slice(0, -2) : infinitive;
   const end = base.slice(-2).toLowerCase();
@@ -103,21 +103,21 @@ export function verbClassOf(infinitive: string): VerbClass | null {
   return null;
 }
 
-// A szabályos jelen idejű végződések igeosztályonként (mind a hat személy).
-// A splitStemEnding csak ide tartozó végződésre oszt, különben null (soy,
-// tengo, voy: a tő ugyan stimmelne, de a maradék nem szabályos végződés).
+// The regular present-tense endings per verb class (all six persons).
+// splitStemEnding only splits on an ending that belongs here, otherwise null (soy,
+// tengo, voy: the stem would fit, but the remainder is not a regular ending).
 const REGULAR_ENDINGS: Record<VerbClass, string[]> = {
   ar: ['o', 'as', 'a', 'amos', 'áis', 'an'],
   er: ['o', 'es', 'e', 'emos', 'éis', 'en'],
   ir: ['o', 'es', 'e', 'imos', 'ís', 'en'],
 };
 
-// A tő = infinitivus mínusz az utolsó 2 betű (hablar -> habl; visszaható
-// levantarse -> levant). Ha az alak (kis/nagybetű nélkül) a tővel kezdődik
-// ÉS a maradék egy szabályos végződés, oszt (hablamos -> habl + amos).
-// Ha nem, null (rendhagyó: soy, tengo, voy), a UI a teljes alakot mutatja
-// vastagon. Többszavas cellánál (me levanto) a vezető szó(ak) (a névmás) a
-// tő elé kerül(nek) a visszaadott stem mezőben: "me levant" + "o".
+// The stem = the infinitive minus its last 2 letters (hablar -> habl; reflexive
+// levantarse -> levant). If the form (case-insensitively) starts with the stem
+// AND the remainder is a regular ending, it splits (hablamos -> habl + amos).
+// If not, null (irregular: soy, tengo, voy), the UI shows the whole form
+// in bold. For a multi-word cell (me levanto) the leading word(s) (the pronoun) go
+// before the stem in the returned stem field: "me levant" + "o".
 export function splitStemEnding(form: string, infinitive: string): { stem: string; ending: string } | null {
   const verbClass = verbClassOf(infinitive);
   if (!verbClass) return null;
@@ -137,17 +137,17 @@ export function splitStemEnding(form: string, infinitive: string): { stem: strin
   return { stem, ending };
 }
 
-// minden IGE (oszlop) saját színt kap az oszlop-indexe szerint,
-// nem az igeosztálya szerint (hablar/comer/vivir addig 3 külön szín volt
-// véletlenül, de tener/estar/poder/hacer közül tener és poder és hacer mind
-// -er osztályú, tehát ugyanaz a szín jutott 3 különböző igének). Legalább 5
-// szín, világos/sötét pár, jó kontraszttal a kártya-háttéren; a régi 3 szín
-// (ar/er/ir) az első 3 index, hogy a meglévő táblák hangulata ne váltson.
+// every VERB (column) gets its own color by its column index,
+// not by its verb class (hablar/comer/vivir used to be 3 separate colors
+// by accident, but among tener/estar/poder/hacer, tener and poder and hacer are all
+// -er class, so the same color went to 3 different verbs). At least 5
+// colors, light/dark pairs, good contrast on the card background; the old 3 colors
+// (ar/er/ir) are the first 3 indexes, so the feel of the existing tables does not change.
 const VERB_COLUMN_COLORS: { light: string; dark: string }[] = [
-  { light: '#1D4ED8', dark: '#7FA3FF' }, // kék
+  { light: '#1D4ED8', dark: '#7FA3FF' }, // blue
   { light: '#0F766E', dark: '#4FD1B9' }, // teal
-  { light: '#7C3AED', dark: '#B899FF' }, // lila
-  { light: '#B45309', dark: '#FBBF24' }, // borostyán
+  { light: '#7C3AED', dark: '#B899FF' }, // purple
+  { light: '#B45309', dark: '#FBBF24' }, // amber
   { light: '#BE185D', dark: '#F472B6' }, // pink
   { light: '#4D7C0F', dark: '#A3E635' }, // lime
 ];

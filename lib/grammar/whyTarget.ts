@@ -1,9 +1,9 @@
-// a `why` item opcionális `target` mezője a
-// mondat pontos részét nevezi meg, amire a kérdés vonatkozik (WhyItem,
-// lessonTypes.ts). A keresés szóhatárral történik, hogy egy rövid target
-// (pl. "es") ne találjon rá egy hosszabb szó belsejére (pl. "profesor").
-// Ugyanez a logika megismétlődik scripts/audit-games.mjs-ben, mert az a
-// script nem importál TS fájlt.
+// The optional `target` field of a `why` item names the exact part of the
+// sentence the question is about (WhyItem,
+// lessonTypes.ts). The search works at word boundaries, so a short target
+// (e.g. "es") does not match inside a longer word (e.g. "profesor").
+// The same logic is repeated in scripts/audit-games.mjs, because that
+// script does not import TS files.
 export function findWholeWord(haystack: string, needle: string): { start: number; end: number } | null {
   if (!needle) return null;
   const escaped = needle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
