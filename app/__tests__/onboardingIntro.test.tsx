@@ -44,7 +44,7 @@ describe('Onboarding: intro + theme step', () => {
     setLanguage('en');
   });
 
-  it('"Get Started" leads to the intro: title, encouraging first point, list, highlighted "Don\'t overdo it", closing line', async () => {
+  it('"Get started" leads to the intro: title, encouraging first point, list, highlighted "Don\'t overdo it", closing line', async () => {
     await toIntro();
     expect(screen.getByText('How it works')).toBeTruthy();
     expect(screen.getByTestId('intro-first')).toBeTruthy();

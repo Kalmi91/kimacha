@@ -34,7 +34,7 @@ describe('LevelPickerSheet: exam row (A1)', () => {
     const handlers = { onStart: jest.fn(), onPractice: jest.fn(), onGrammar: jest.fn() };
     const { getByText, getByTestId, queryByText } = renderSheet(base, handlers);
 
-    expect(getByText(/Level exam A1/)).toBeTruthy();
+    expect(getByText(/A1 level exam/)).toBeTruthy();
     expect(getByText(/🔒/)).toBeTruthy();
     expect(getByTestId('exam-row-words').props.children).toBe('87 / 120 words learned, 33 to go');
     expect(queryByText(/Ready/)).toBeNull();
