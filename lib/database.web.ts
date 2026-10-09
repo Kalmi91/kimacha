@@ -123,7 +123,7 @@ class MemoryDB implements DB {
 
   private attempts: { word_id: number; type: string; pair?: string; correct: boolean; response_time_ms: number; timestamp: string }[] = [];
 
-  private meta = { userId: crypto.randomUUID?.() ?? Math.random().toString(36), firstUseDate: new Date().toISOString(), lastSyncDate: null as string | null };
+  private meta = { userId: '', firstUseDate: new Date().toISOString(), lastSyncDate: null as string | null };
 
   // FB76: first open of the day (memory mirror; a web reload counts as a new day).
   private lastOpenDate: string | null = null;
@@ -424,7 +424,7 @@ class MemoryDB implements DB {
         onboarding: this.onboarding ? [{ id: 1, ...this.onboarding }] : [],
         streak: [{ id: 1, ...this.streak }],
         user_level: [...this.userLevels].map(([pair, l]) => ({ pair, ...l })),
-        user_meta: [{ id: 1, user_id: this.meta.userId, first_use_date: this.meta.firstUseDate, last_sync_date: this.meta.lastSyncDate, grammar_palette: this.grammarPalette, skin: this.skin, skin_mix: this.skinMix ? JSON.stringify(this.skinMix) : null }],
+        user_meta: [{ id: 1, user_id: '', first_use_date: this.meta.firstUseDate, last_sync_date: this.meta.lastSyncDate, grammar_palette: this.grammarPalette, skin: this.skin, skin_mix: this.skinMix ? JSON.stringify(this.skinMix) : null }],
       },
     };
   }

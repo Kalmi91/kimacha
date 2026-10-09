@@ -577,6 +577,8 @@ class SQLiteDB implements DB {
     for (const table of BACKUP_TABLES) {
       tables[table] = await db.getAllAsync(`SELECT * FROM ${table}`);
     }
+    // user_id (NOT NULL, key stays) is a leftover identifier of older installs: never export it.
+    tables.user_meta = tables.user_meta.map((r: any) => ({ ...r, user_id: '' }));
     return {
       schemaVersion: BACKUP_SCHEMA_VERSION,
       exportedAt: new Date().toISOString(),
