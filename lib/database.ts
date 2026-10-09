@@ -6,7 +6,7 @@ import type { Sm2Card } from './sm2';
 import { addDays } from './sm2';
 import { PCIC_LEVELS, pcicItemsForLevel, type PcicLevel } from '@/data/pcic';
 import type { MistakeBatchRow } from './mistakes/deck';
-import { runMigrations, applyWordMerges, applyPcicLevelMoves, applyPcicDedup } from './db/migrations';
+import { runMigrations } from './db/migrations';
 import { DEFAULT_AGAIN_DELAY_SEC } from './pcicSession';
 import { DEFAULT_GRAMMAR_PALETTE, isGrammarPaletteId, type GrammarPaletteId } from '@/constants/GrammarPalettes';
 import { isSkinSelection, parseSkinMix, type SkinMix, type SkinSelection } from '@/constants/Skins';
@@ -504,10 +504,6 @@ class SQLiteDB implements DB {
     } else if (ob) {
       this.activePair = `${ob.source}-${ob.target}`;
     }
-    // A backup taken before the duplicate cleanup still carries the deleted ids.
-    await applyWordMerges(db);
-    await applyPcicLevelMoves(db);
-    await applyPcicDedup(db);
   }
 }
 
