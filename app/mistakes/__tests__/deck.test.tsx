@@ -1,6 +1,6 @@
-// a Check/grade menet, előre kijelölt
-// Knew it / Didn't know, "You said:" a régi hibás mondattal, üres pakli
-// esetén "All done for now". Mock-minta: pcicCardShell.test.tsx.
+// the Check/grade flow, preselected
+// Knew it / Didn't know, "You said:" with the old wrong sentence, "All done for now"
+// when the deck is empty. Mock pattern: pcicCardShell.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -53,7 +53,7 @@ describe('Pakli (app/mistakes/deck.tsx)', () => {
     const { getByText, UNSAFE_getByType } = render(<MistakesDeckScreen />);
     await flush();
 
-    // Az első kártya (fájl-sorrend: mondatok, majd szavak, majd drillek) az s1 mondat.
+    // The first card (file order: sentences, then words, then drills) is the s1 sentence.
     expect(getByText('Sentence')).toBeTruthy();
     fireEvent.changeText(UNSAFE_getByType(TextInput), 'No tengo tomate.');
     fireEvent.press(getByText('✓ Check'));
@@ -62,7 +62,7 @@ describe('Pakli (app/mistakes/deck.tsx)', () => {
     expect(getByText('Next → Knew it')).toBeTruthy();
     expect(getByText('Knew it')).toBeTruthy();
     expect(getByText("Didn't know")).toBeTruthy();
-    // "You said:" a régi hibás mondattal.
+    // "You said:" with the old wrong sentence.
     expect(getByText('You said:')).toBeTruthy();
     expect(getByText('Pero no tienes tomate.')).toBeTruthy();
   });
@@ -80,7 +80,7 @@ describe('Pakli (app/mistakes/deck.tsx)', () => {
     fireEvent.press(getByText("Didn't know"));
     await flush();
 
-    // Visszakerül a sor végére (due === today), a következő kártya jön: s2.
+    // It goes back to the end of the queue (due === today), the next card comes: s2.
     expect(getByText('✓ Check')).toBeTruthy();
   });
 });

@@ -1,7 +1,7 @@
 import { Stack } from 'expo-router';
 
-// a "Hibáim" riport + gyakorló pakli, ugyanaz a
-// mintázat, mint app/grammar/_layout.tsx.
+// the "My mistakes" report + practice deck, the same
+// pattern as app/grammar/_layout.tsx.
 export default function MistakesLayout() {
   return (
     <Stack screenOptions={{ headerShown: false }}>

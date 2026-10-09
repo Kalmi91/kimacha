@@ -1,7 +1,7 @@
 import { Stack } from 'expo-router';
 
-// K33 (play-vágás): a szillabusz maga a Nyelvtan fül lett
-// (app/(tabs)/course.tsx), ez a stack csak a leckét viszi.
+// The syllabus itself became the Grammar tab
+// (app/(tabs)/course.tsx), this stack only carries the lesson.
 export default function GrammarLayout() {
   return (
     <Stack screenOptions={{ headerShown: false }}>

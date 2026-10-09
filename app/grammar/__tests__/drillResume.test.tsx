@@ -1,6 +1,6 @@
-// Kártya-szintű folytatás: ha az app a lecke egy gyakorlatában (drill) záródott be, a lecke ugyanabban a
-// gyakorlatban nyílik meg (a kör a mentett futásból folytatódik); a leckéből kilépve a mentés törlődik.
-// Mock-minta: drillButtons.test.tsx.
+// Card-level resume: if the app was closed in one practice (drill) of the lesson, the lesson opens in the same
+// practice (the round continues from the saved run); on leaving the lesson the save is deleted.
+// Mock pattern: drillButtons.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({
@@ -57,7 +57,7 @@ describe('grammar lesson screen: a bezáráskor nyitott gyakorlat újranyitásko
     await flush();
     expect(screen.getByTestId('grammar-start-form')).toBeTruthy();
     expect(screen.queryByTestId('formInput')).toBeNull();
-    // a lecke-oldal nem ír mentést
+    // the lesson page does not write a save
     expect(await loadDrillResume(getDb())).toBeNull();
   });
 
@@ -93,7 +93,7 @@ describe('grammar lesson screen: a bezáráskor nyitott gyakorlat újranyitásko
     await flush();
     expect(await loadDrillResume(getDb())).toEqual({ topicId: 'ser-estar', kind: 'form', day: today });
 
-    // kilépés a képernyőből (unmount): a mentés törlődik, a lecke később a listából nem ugrik a drillbe
+    // leaving the screen (unmount): the save is deleted, and later the lesson does not jump into the drill from the list
     view.unmount();
     await flush();
     expect(await loadDrillResume(getDb())).toBeNull();

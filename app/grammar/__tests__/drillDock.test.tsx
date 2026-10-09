@@ -1,7 +1,7 @@
-// User feedback: „tegyed be a check gombot a klaviatúra felé, ahogy
-// a kártyáknál van", „csináld meg, hogy a check gomb mindenhol a klaviatúra felett legyen".
-// A nyelvtani drill beírós tételeinek (ragozás, átírás) Check gombja a szókártyával azonos, a képernyő
-// aljára dokkolt sáv (learn-dock, a billentyűzet felső élén), és a Check után ugyanott a Next jön.
+// User feedback: "put the check button toward the keyboard, like on the
+// cards", "make the check button always sit above the keyboard".
+// The Check button of the grammar drill's type-in items (conjugation, rewriting) is the same as on the word card: a bar
+// docked to the bottom of the screen (learn-dock, at the keyboard's top edge), and after Check the Next appears in the same place.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({
@@ -49,7 +49,7 @@ async function openKind(topic: string, kind: string) {
   const db = getDb();
   await db.setOnboarding('en', 'es');
   (db as any).__setLevelForTest('A1');
-  // tiszta lap: a félbehagyott kör elmentődik, a web DB pedig memóriában él a tesztek között
+  // clean slate: the abandoned round is saved, and the web DB lives in memory between the tests
   for (const k of ['choice', 'match', 'form', 'why', 'transform']) {
     for (const suffix of ['best', 'run', 'answered', 'correct']) {
       await db.setGameProgress(GRAMMAR_PROGRESS_KEY, `${topic}:${k}:${suffix}`, 'cleared', null);
@@ -78,7 +78,7 @@ describe('nyelvtani drill: a Check gomb a billentyűzet fölé dokkol (FB461, FB
     expect(within(screen.getByTestId('learn-dock')).getByTestId('grammar-next')).toBeTruthy();
     expect(screen.getAllByTestId('grammar-next')).toHaveLength(1);
 
-    // a Next a következő tételre lép, és a sáv újra Check
+    // Next steps to the next item, and the bar goes back to Check
     fireEvent.press(within(screen.getByTestId('learn-dock')).getByTestId('grammar-next'));
     await flush(1);
     expect(within(screen.getByTestId('learn-dock')).getByTestId('formCheck')).toBeTruthy();
@@ -115,14 +115,14 @@ describe('nyelvtani drill: a Check gomb a billentyűzet fölé dokkol (FB461, FB
   });
 });
 
-// User feedback: „itt is ejtse ki a szavakat": a ragozás-drill a szókártyával azonos
-// módon kiejti a helyes alakot a Check után (jó és rossz válasz után is), és ugyanazzal a 🔊 gombbal újra elmondható.
+// User feedback: "pronounce the words here too": the conjugation drill pronounces
+// the correct form after Check the same way as the word card (after a right and a wrong answer too), and the same 🔊 button can say it again.
 describe('nyelvtani drill: a ragozás helyes alakja elhangzik (FB462)', () => {
   beforeEach(() => (speak as jest.Mock).mockClear());
 
   it('rossz válasz után a helyes alak (soy) elhangzik, a 🔊 gomb újra elmondja', async () => {
     await openKind('ser-estar', 'form');
-    expect(speak).not.toHaveBeenCalled(); // Check előtt nem árulja el a választ
+    expect(speak).not.toHaveBeenCalled(); // does not reveal the answer before Check
 
     fireEvent.changeText(screen.getByTestId('formInput'), 'xxx');
     fireEvent.press(screen.getByTestId('formCheck'));
