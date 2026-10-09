@@ -1,10 +1,7 @@
 // PROMPT-POLICY 1: "Egy szinten és sávon belül két szónak nem lehet olyan
 // prompt (angol vagy magyar gloss)ja, amelyből nem dönthető el, melyik a
 // kérdezett." Ez a modul az egyetlen hely, ahol az átfedés-szabály él: a
-// scripts/audit-prompts.mjs (node ESM, TS-t nem tud importálni, ezért a
-// logika ott duplikálva van, ld. a szkript fejléc-kommentjét, "keep in
-// sync") és a lib/__tests__/corpusIntegrity.test.ts "prompt policy" leírása
-// egyaránt ezt hívja/tükrözi.
+// lib/__tests__/corpusIntegrity.test.ts "prompt policy" leírása ezt hívja.
 //
 // PROMPT-POLICY 8: a ragozott-alak tételek ("ir (fuimos)") nem számítanak
 // átfedésnek, a zárójeles alak már egyértelműsít, ezeket a hívó szűri ki

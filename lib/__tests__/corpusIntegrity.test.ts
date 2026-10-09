@@ -150,9 +150,7 @@ describe('word entry completeness', () => {
 // PROMPT-POLICY 1: "Egy szinten és sávon belül két szónak nem lehet olyan
 // promptja, amelyből nem dönthető el, melyik a kérdezett." A 9.4 szerint a
 // korpusz-menet (2026-09-14/15) után ez az őr ÉLES: új szó nem hozhatja
-// vissza a hibát. A fürt-logika a lib/promptOverlap.ts-ben él, ugyanaz fut
-// itt és a scripts/audit-prompts.mjs-ben (ott duplikálva, mert az .mjs nem
-// importál TS-t). Az en sáv (Play-vágás 7. lépés óta a JSON-ból, nem a
+// vissza a hibát. A fürt-logika a lib/promptOverlap.ts-ben él. Az en sáv (Play-vágás 7. lépés óta a JSON-ból, nem a
 // betöltőből) csak azokra a szintekre ad szavakat, amik tényleg léteznek;
 // a hiányzó szintre üres lista jön, amin a fürt-keresés triviálisan üres.
 describe('prompt policy (PROMPT-POLICY 1)', () => {
