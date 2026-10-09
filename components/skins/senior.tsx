@@ -1,9 +1,9 @@
 import type { SkinDecor } from '@/components/skins/types';
 
-// Senior: nincs rajzolt dísz. Az elrendezés a gombokban van: a push-gombok egymás
-// alatt, teljes szélességben, ikonnal + szöveggel, min. 48 magasan (buttonVariant 'stacked', a
-// BrutalBox / BrutalButton olvassa), és a hang-gomb mellett szöveges "Felolvas" felirat
-// (speakLabel, a SkinSpeakLabel rajzolja).
+// Senior: no drawn decor. The layout is in the buttons: push buttons stacked
+// vertically, full width, with icon + text, at least 48 high (buttonVariant 'stacked', read by
+// BrutalBox / BrutalButton), and next to the sound button a text label
+// "Read aloud" (speakLabel, drawn by SkinSpeakLabel).
 export const seniorDecor: SkinDecor = {
   buttonVariant: 'stacked',
   speakLabel: true,

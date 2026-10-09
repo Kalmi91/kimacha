@@ -5,9 +5,9 @@ import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { useSkin } from '@/lib/useSkin';
 
-// Pop art: Ben-Day pöttyök (a szín, 40%) a háttérben egy 10 x 14-es, soronként
-// eltolt rácson (140 pötty, a méretük fentről lefelé kisebb), és a kártya (szövegbuborék) bal alsó
-// sarkán buborék-farok: egy ink háromszög, benne papír-színű, hogy a keret vonala vele folytatódjon.
+// Pop art: Ben-Day dots (color a, 40%) in the background on a 10 x 14 grid with every
+// row offset (140 dots, their size decreasing from top to bottom), and a speech-bubble tail at the card's
+// (speech bubble's) bottom left corner: an ink triangle with a paper-colored one inside, so the frame line continues through it.
 
 const COLS = 10;
 const ROWS = 14;

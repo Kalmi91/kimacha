@@ -6,11 +6,11 @@ const navy = '#0F172A';
 const pink = '#EC4899';
 const cyan = '#06B6D4';
 
-// a brutalista paletta (GrammarPalettes) egy helyen képződik le a Colors
-// kulcsaira: a téma-kulcs `<paletta>-light|dark`, így a `Colors[theme]`-et olvasó
-// fájlok külön átírás nélkül váltanak (világos = papír, sötét = tinta).
-// tint/accent = a, secondary = b, border = ink, onTint = ON_FILL; a
-// success/danger/warning szemantikus marad a classic light/dark értékekkel.
+// the brutalist palette (GrammarPalettes) is mapped in one place onto the keys of
+// Colors: the theme key is `<palette>-light|dark`, so files that read `Colors[theme]`
+// switch without separate rewriting (light = paper, dark = ink).
+// tint/accent = a, secondary = b, border = ink, onTint = ON_FILL; the
+// success/danger/warning stay semantic with the classic light/dark values.
 function brutalColors(id: FillPaletteId, mode: 'light' | 'dark') {
   const base = BASE[mode];
   const fills = PALETTE_FILLS[id];
@@ -37,10 +37,10 @@ function brutalColors(id: FillPaletteId, mode: 'light' | 'dark') {
   };
 }
 
-// a téma-motor (constants/Skins.ts) témáihoz ugyanilyen Colors-bejegyzés,
-// `<téma-id>-<mód>` kulcson. tint/accent = a, secondary = b (ha nincs: a), card = paper,
-// border = a keret saját színe (ha nincs: ink), onTint = onA; a szemantikus színek
-// (success / danger / warning / info / overlay) a brutalista készletből jönnek.
+// the same kind of Colors entry for the themes of the theme engine (constants/Skins.ts),
+// under the key `<theme-id>-<mode>`. tint/accent = a, secondary = b (if missing: a), card = paper,
+// border = the frame's own color (if missing: ink), onTint = onA; the semantic colors
+// (success / danger / warning / info / overlay) come from the brutalist set.
 function skinColors(id: SkinId, mode: SkinMode) {
   const c = skinColorsFor(SKINS[id], mode);
   const { success, successFill, danger, warning, warningFill, info, overlay } = brutalColors('brand', mode);
@@ -66,7 +66,7 @@ function skinColors(id: SkinId, mode: SkinMode) {
   };
 }
 
-// A mód a classic light/dark kulcs-neveket követi.
+// The mode follows the classic light/dark key names.
 export const isDarkTheme = (theme: string) => theme === 'dark' || theme.endsWith('-dark');
 
 export default {
@@ -147,8 +147,8 @@ export default {
     info: '#38BDF8',
     border: '#334155',
     overlay: 'rgba(0,0,0,0.6)',
-    // a fehér a #3B82F6-on 3,68 volt; a sötét alap-szín 4,85 (a tint szövegként a
-    // sötét alapon marad, ezért a kitöltés szövege változott, nem a tint).
+    // white on #3B82F6 was 3.68; the dark base color gives 4.85 (the tint stays as text
+    // on the dark base, so it is the fill's text that changed, not the tint).
     onTint: navy,
   },
 };

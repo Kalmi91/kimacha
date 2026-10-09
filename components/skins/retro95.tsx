@@ -6,9 +6,9 @@ import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 
-// Retro 95: a 3D-perem (világos bal-fent, sötét jobb-lent) a kártyán és a gombokon a
-// forma `bevel` jelzőjéből jön (BrutalBox), a gombok első betűje aláhúzva (buttonVariant 'bevel',
-// BrutalButton). A dísz: "kimacha.exe" címsor-sáv a fejléc fölött (sötétkék = a szín), jobbra x-gombbal.
+// Retro 95: the 3D edge (light top-left, dark bottom-right) on the card and the buttons comes from the
+// shape's `bevel` flag (BrutalBox), the first letter of the buttons is underlined (buttonVariant 'bevel',
+// BrutalButton). The decor: a "kimacha.exe" title bar above the header (dark blue = color a), with an x button on the right.
 
 function RetroHeader({ children }: { children: ReactNode }) {
   const g = useGrammarColors();

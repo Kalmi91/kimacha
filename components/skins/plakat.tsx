@@ -6,9 +6,9 @@ import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 
-// Plakát: átlós piros sáv (-22°) és fekete kör jobb oldalt a háttérben, a
-// fejléc alatt szlogen-csík megafon-ikonnal. A szó -6°-os forgatása a téma `wordRotate` mezője
-// (KText). Sarló-kalapács és vörös csillag nincs (tiltott motívum).
+// Poster: a diagonal red band (-22°) and a black circle on the right in the background, a
+// slogan strip with a megaphone icon under the header. The word's -6° rotation is the theme's `wordRotate` field
+// (KText). No hammer and sickle or red star (forbidden motif).
 
 function PlakatBackdrop() {
   const g = useGrammarColors();

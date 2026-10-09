@@ -5,9 +5,9 @@ import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { useSkin } from '@/lib/useSkin';
 
-// Graffiti: a kártya -2°-ban megdöntve, két csorgás a keret alján (a szín), a
-// szó b (sárga), a cím c (zöld) színnel. A színt a gyerek-elem stílusa kapja (a képernyők a
-// szöveg színét a stílusban adják), ezért a szín felülírása cloneElement-tel megy.
+// Graffiti: the card is tilted by -2°, two drips at the bottom of the frame (color a), the
+// word in color b (yellow), the title in color c (green). The color comes from the child element's style (screens
+// set the text color in their style), so overriding the color is done with cloneElement.
 
 const DRIPS = [
   { left: '18%', length: 16 },
@@ -24,7 +24,7 @@ function paint(node: ReactNode, color: string): ReactNode {
   return cloneElement(node as ReactElement<Styled>, { style: [(node.props as Styled).style, { color }] });
 }
 
-// A fejlécben a `variant="title"` szövegek (a fül-cím) színe; a többi elem marad.
+// Color of the `variant="title"` texts in the header (the tab title); the other elements stay as they are.
 function paintTitles(node: ReactNode, color: string): ReactNode {
   return Children.map(node, (child) => {
     if (!isValidElement(child)) return child;
@@ -67,8 +67,8 @@ function GraffitiHeader({ children }: { children: ReactNode }) {
 }
 
 const styles = StyleSheet.create({
-  // A csorgásoknak hely a kártya alatt, a -2°-os döntésnek a kártya fölött és két oldalt (a görgető
-  // nézet levágná a megdöntött sarkokat).
+  // Room for the drips below the card, and for the -2° tilt above the card and on both sides (a scroll
+  // view would clip the tilted corners).
   frame: { marginTop: 6, marginHorizontal: 8, marginBottom: MAX_REACH, transform: [{ rotate: '-2deg' }] },
   drip: { position: 'absolute', width: DROP, alignItems: 'center' },
 });

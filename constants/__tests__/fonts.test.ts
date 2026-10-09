@@ -1,5 +1,5 @@
-// minden regisztrált betűhöz van fájl és licenc, a fájlok léteznek és
-// valódi betűfájlok (nem letöltési hibaoldal).
+// every registered font has a file and a license, the files exist and are
+// real font files (not a download error page).
 
 import { existsSync, readFileSync, statSync } from 'fs';
 import { join } from 'path';

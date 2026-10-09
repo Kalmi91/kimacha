@@ -1,5 +1,5 @@
-// a téma-motor adata: kontraszt-kapu (minden téma × minden módja), nevek (en + es),
-// csoportok, onboarding-lista, Colors-kulcsok, a mai classic / brutal értékek egyezése.
+// the theme engine data: contrast gate (every theme × each of its modes), names (en + es),
+// groups, onboarding list, Colors keys, match with today's classic / brutal values.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -30,9 +30,9 @@ import type { ThemeKey } from '@/lib/ThemeContext';
 
 const MIN = 4.5;
 
-// Kivételek: olyan pár, ami ténylegesen bukik és ezért itt rögzített (a teszt ellenőrzi, hogy még
-// bukik; ha javítják, a kivételt törölni kell). Azóta üres: a classic sötét onA / a
-// (fehér a #3B82F6-on 3,68) a fehér helyett a sötét alap-színt kapta (4,85).
+// Exemptions: pairs that actually fail and are therefore recorded here (the test checks that they still
+// fail; if one gets fixed, the exemption must be deleted). Empty since then: the classic dark onA / a
+// (white on #3B82F6 is 3.68) got the dark base color instead of white (4.85).
 const KNOWN_EXEMPT = new Set<string>();
 
 function pairs(c: SkinColors): [string, string, string][] {
@@ -40,7 +40,7 @@ function pairs(c: SkinColors): [string, string, string][] {
     ['ink/bg', c.ink, c.bg],
     ['ink/paper', c.ink, c.paper],
     ['mu/bg', c.mu, c.bg],
-    // a halvány szöveg a kártyán és a beviteli mezőben (placeholder) is olvasható
+    // the muted text is readable on the card and in the input field (placeholder) too
     ['mu/paper', c.mu, c.paper],
     ['onA/a', c.onA, c.a],
   ];

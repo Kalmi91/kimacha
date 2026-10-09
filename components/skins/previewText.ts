@@ -2,9 +2,9 @@ import type { TextStyle } from 'react-native';
 
 import type { Skin } from '@/constants/Skins';
 
-// egy téma szöveg-stílusa a Saját mix élő előnézetéhez (betű, méret, kis-/nagybetű,
-// betűköz). Az előnézet a piszkozat-témát rajzolja, az alkalmazás szövegei pedig az aktív témáét
-// kapják, ezért ez a stílus közvetlenül a megadott Skinből számol.
+// a theme's text style for the live preview of My mix (font, size, upper-/lowercase,
+// letter spacing). The preview draws the draft theme while the app's texts get the active theme's,
+// so this style is computed directly from the Skin passed in.
 export function previewTextStyle(skin: Skin, role: 'title' | 'word' | 'body', base: number): TextStyle {
   const font = skin.fonts[role];
   let size = base * skin.fontScale + (skin.fontSizeOffset ?? 0);

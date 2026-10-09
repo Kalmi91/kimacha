@@ -8,8 +8,8 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { xpLevel } from '@/lib/xp';
 
-// Gamer: a fejlécben XP-sáv "LVL n" felirattal (az összes aktív percből, lib/xp.ts) és
-// kombó "x3" (a napi streakből, legalább x1); a kártya sarkában "+15 XP" dísz (nem valós adat).
+// Gamer: an XP bar with an "LVL n" label in the header (from all active minutes, lib/xp.ts) and a
+// combo "x3" (from the daily streak, at least x1); a "+15 XP" decoration in the card's corner (not real data).
 
 const XP_GAIN = 15;
 

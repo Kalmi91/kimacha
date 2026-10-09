@@ -7,9 +7,9 @@ import type { SkinDecor } from '@/components/skins/types';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { useSkin } from '@/lib/useSkin';
 
-// Szecesszió: a kártya (2 px a keret, íves tető) körül 3 px rés után 1 px-es b
-// külső keret; arany (b) virágok a cím két oldalán (ha a fejléc maga a cím; a többi fejlécnél
-// virág - vonal - virág sor fölötte), nagy virág a szó fölött.
+// Art nouveau: around the card (2 px frame, arched top) a 1 px b outer frame after a 3 px gap;
+// gold (b) flowers on both sides of the title (when the header is itself the title; with the other headers a
+// flower - line - flower row above it), a big flower above the word.
 
 const GAP = 3;
 const OUTER = 1;
@@ -43,7 +43,7 @@ function SzecessioWord({ children }: { word: string; children: ReactNode }) {
   );
 }
 
-// A fejléc maga a cím (a fül-fejléc `Text variant="title"`-je): virágok két oldalt.
+// The header is itself the title (the tab header's `Text variant="title"`): flowers on both sides.
 const isTitle = (node: ReactNode) => isValidElement(node) && (node.props as { variant?: string }).variant === 'title';
 
 function SzecessioHeader({ children }: { children: ReactNode }) {
@@ -72,7 +72,7 @@ function SzecessioHeader({ children }: { children: ReactNode }) {
 
 const styles = StyleSheet.create({
   outer: { position: 'absolute' },
-  // flexShrink: a FitText a sor-konténerben összemegy, ezért a burkolója is.
+  // flexShrink: FitText shrinks inside the row container, so its wrapper must too.
   word: { flexShrink: 1, alignItems: 'center', gap: 4 },
   titleRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8 },
   ornament: { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 4 },

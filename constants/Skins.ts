@@ -1,8 +1,7 @@
-// a téma-motor adata. Egy téma (skin) = színek (módonként) + forma +
-// betű + dísz-azonosító. A színek, a forma és a betű-nevek a téma-specifikáció
-// táblázatából jönnek 1:1, a kontraszt-szabály miatti módosítások kivételével (azok a
-// PLAN "Spec-eltérések" alatt vannak, régi → új értékkel). A betű-nevek stringek: a
-// betöltést (useFonts) a constants/Fonts.ts végzi ugyanezeken a neveken.
+// the data of the theme engine. A theme (skin) = colors (per mode) + shape +
+// font + decor id. Colors, shape and font names are taken 1:1 from the theme design
+// table, except for adjustments made for the contrast rule. The font names are strings:
+// loading (useFonts) is done by constants/Fonts.ts under the same names.
 import { BASE, ON_FILL, PALETTE_FILLS, type FillPaletteId, type GrammarPaletteId } from './GrammarPalettes';
 
 export type SkinMode = 'light' | 'dark';
@@ -15,16 +14,16 @@ export type SkinId =
 
 export type SkinGroupId = 'ajanlott' | 'muveszet' | 'kultura' | 'hangulat' | 'olvasas';
 
-// Szín-szerep: a forma (keret, árnyék) színét szerep adja, így a "Saját mix" (szín egy
-// témából, forma egy másikból) is jó színt kap.
+// Color role: the color of the shape (frame, shadow) is given by a role, so "My mix" (colors from one
+// theme, shape from another) also gets a good color.
 export type ColorRole = 'ink' | 'a' | 'b' | 'c' | 'border';
 
-export type CornerRadii = [number, number, number, number]; // bal-fent, jobb-fent, jobb-lent, bal-lent
+export type CornerRadii = [number, number, number, number]; // top-left, top-right, bottom-right, bottom-left
 
-// bg = képernyő-háttér, paper = kártya, ink = szöveg (+ keret), mu = halvány szöveg,
-// a = elsődleges kitöltés, onA = szöveg a-n, b / c = második / harmadik szín (onB = szöveg
-// b-n), border = a keret saját színe (ahol nem az ink), extra = téma-specifikus színek
-// (matrica, pont, hullám, virágszínek ...).
+// bg = screen background, paper = card, ink = text (+ frame), mu = muted text,
+// a = primary fill, onA = text on a, b / c = second / third color (onB = text
+// on b), border = the frame's own color (where it is not ink), extra = theme-specific colors
+// (sticker, dot, wave, flower colors ...).
 export type SkinColors = {
   bg: string;
   paper: string;
@@ -45,51 +44,51 @@ export type SkinShape = {
   radius: number | CornerRadii;
   buttonRadius: number | CornerRadii;
   shadowOffset: number;
-  // A keret / az árnyék színe (szerep). Alap: ink.
+  // The color of the frame / shadow (a role). Default: ink.
   borderColor?: ColorRole;
   shadowColor?: ColorRole;
-  // A dísz-réteg (4D / 6E) olvassa: dupla keret, 3D-perem, gombok egymás alatt.
+  // Read by the decor layer: double frame, 3D edge, stacked buttons.
   doubleFrame?: boolean;
   bevel?: boolean;
   buttonsStacked?: boolean;
-  // kalocsai: a másodlagos (papír kitöltésű) gomb kerete ebben a színben; alap: a shape.borderColor.
+  // kalocsai: the frame of the secondary (paper-filled) button in this color; default: shape.borderColor.
   secondaryBorderColor?: ColorRole;
 };
 
 export type SkinFonts = { title: string | null; word: string | null; body: string | null };
 
 export type Skin = {
-  // 'mix' csak a Saját mixből összerakott Skinnél (lib/skinTheme.ts composeSkin).
+  // 'mix' only for a Skin composed from My mix (lib/skinTheme.ts composeSkin).
   id: SkinSelection;
   group: SkinGroupId;
-  // Az első elem az alap-mód. Egy elemű lista: a világos / sötét beállítás hatástalan.
+  // The first entry is the default mode. A single-entry list: the light / dark setting has no effect.
   modes: SkinMode[];
   colors: Partial<Record<SkinMode, SkinColors>>;
   shape: SkinShape;
   fonts: SkinFonts;
   fontScale: number;
-  // A téma-sor értéke; hol érvényes: cím + szó (spacingScope 'display', alap) vagy minden szöveg ('all').
+  // The theme table row's value; where it applies: title + word (spacingScope 'display', default) or all text ('all').
   letterSpacing: number;
   spacingScope?: 'display' | 'all';
   lineHeight?: number;
   uppercaseTitle?: boolean;
   lowercaseTitle?: boolean;
   uppercaseWord?: boolean;
-  // retro95: minden betűméret +4 px (a VT323 kicsi).
+  // retro95: every font size +4 px (VT323 is small).
   fontSizeOffset?: number;
-  // memphis: a cím + szó mérete szorzóval (a RubikMonoOne széles).
+  // memphis: the title + word size scaled by a multiplier (RubikMonoOne is wide).
   displayScale?: number;
-  // plakat: a szó (variant 'word') elforgatása fokban.
+  // plakat: rotation of the word (variant 'word') in degrees.
   wordRotate?: number;
 };
 
-// A ShipporiMincho TTF túl nagy (8,6 MB), ezért a 2B ügynök Spectral-Light-ot regisztrált helyette
-// (zen, ukiyoe); a név egy helyen.
+// The ShipporiMincho TTF is too large (8.6 MB), so Spectral-Light is registered instead
+// (zen, ukiyoe); the name lives in one place.
 const SERIF_LIGHT = 'Spectral-Light';
 
 const BRUTAL_SHAPE: SkinShape = { borderWidth: 2.5, borderStyle: 'solid', radius: 0, buttonRadius: 0, shadowOffset: 3 };
 
-// A brutalista szín-készlet egy al-palettából (a mai BASE + PALETTE_FILLS, onA = onB = ON_FILL).
+// The brutalist color set from a sub-palette (today's BASE + PALETTE_FILLS, onA = onB = ON_FILL).
 export function brutalSkinColors(id: FillPaletteId): Record<SkinMode, SkinColors> {
   const fills = PALETTE_FILLS[id];
   const make = (mode: SkinMode): SkinColors => ({ ...BASE[mode], a: fills.a, onA: ON_FILL, b: fills.b, onB: ON_FILL });
@@ -418,9 +417,9 @@ export const SKINS: Record<SkinId, Skin> = {
     fontScale: 1,
     letterSpacing: 0,
   },
-  // A mai Colors.light / Colors.dark értékei (a constants/Colors.ts ugyanezeket adja
-  // a 'light' / 'dark' kulcson; a skins.test.ts egyezést ellenőriz). Forma: a mai
-  // BrutalBox értékei, mert a Brutal-komponensek classic alatt is ezt rajzolnák.
+  // Today's Colors.light / Colors.dark values (constants/Colors.ts gives the same
+  // under the 'light' / 'dark' keys; skins.test.ts checks they match). Shape: today's
+  // BrutalBox values, because the Brutal components would draw these under classic too.
   classic: {
     id: 'classic',
     group: 'hangulat',
@@ -438,7 +437,7 @@ export const SKINS: Record<SkinId, Skin> = {
 
 export const SKIN_IDS = Object.keys(SKINS) as SkinId[];
 
-// Sorrend a Beállításokban (csoportok).
+// Order in Settings (groups).
 export const SKIN_GROUPS: { id: SkinGroupId; skins: SkinId[] }[] = [
   { id: 'ajanlott', skins: ['brutal', 'deco', 'szocreal', 'csillampony', 'ukiyoe'] },
   { id: 'muveszet', skins: ['plakat', 'bauhaus', 'popart', 'szecesszio', 'memphis', 'kodex', 'graffiti'] },
@@ -451,10 +450,10 @@ export const ONBOARDING_SKINS: SkinId[] = ['ukiyoe', 'csillampony', 'szocreal', 
 
 export const DEFAULT_SKIN: SkinId = 'brutal';
 
-// A kiválasztás: egy téma vagy a "Saját mix".
+// The selection: a theme or "My mix".
 export type SkinSelection = SkinId | 'mix';
 
-// Saját mix: szín + betű + forma + dísz külön. A szín lehet egy téma vagy egy Neo-brutál al-paletta.
+// My mix: color + font + shape + decor separately. The color can be a theme or a Neo-brutal sub-palette.
 export type SkinMix = { colors: SkinId | GrammarPaletteId; font: SkinId; shape: SkinId; decor: SkinId | 'none' };
 
 export const DEFAULT_SKIN_MIX: SkinMix = { colors: 'brutal', font: 'brutal', shape: 'brutal', decor: 'none' };
@@ -480,7 +479,7 @@ export function isSkinMix(v: unknown): v is SkinMix {
   );
 }
 
-// A db-ben JSON-ként tárolt mix; érvénytelen / hiányzó érték = null.
+// The mix stored as JSON in the db; an invalid / missing value = null.
 export function parseSkinMix(raw: unknown): SkinMix | null {
   try {
     const v = typeof raw === 'string' ? JSON.parse(raw) : null;
@@ -490,7 +489,7 @@ export function parseSkinMix(raw: unknown): SkinMix | null {
   }
 }
 
-// Régi felhasználó (skin NULL): a mentett paletta dönt (classic → classic, minden más → brutal).
+// Legacy user (skin NULL): the saved palette decides (classic → classic, everything else → brutal).
 export function legacySkinFor(palette: GrammarPaletteId): SkinId {
   return palette === 'classic' ? 'classic' : 'brutal';
 }
@@ -499,7 +498,7 @@ export function skinColorsFor(skin: Skin, mode: SkinMode): SkinColors {
   return (skin.colors[mode] ?? skin.colors[skin.modes[0]]) as SkinColors;
 }
 
-// Mód-feloldás: egy módú témánál a beállítás hatástalan; kétmódúnál a mai Auto / Light / Dark.
+// Mode resolution: for a single-mode theme the setting has no effect; for a two-mode one, today's Auto / Light / Dark.
 export function resolveMode(modes: SkinMode[], override: SkinMode | 'system', system: SkinMode): SkinMode {
   if (modes.length === 1) return modes[0];
   const wanted = override === 'system' ? system : override;
@@ -516,22 +515,22 @@ function luminance(hex: string): number {
   return 0.2126 * channel((n >> 16) & 255) + 0.7152 * channel((n >> 8) & 255) + 0.0722 * channel(n & 255);
 }
 
-// WCAG kontraszt-arány (#RRGGBB).
+// WCAG contrast ratio (#RRGGBB).
 export function contrastRatio(fg: string, bg: string): number {
   const l1 = luminance(fg);
   const l2 = luminance(bg);
   return (Math.max(l1, l2) + 0.05) / (Math.min(l1, l2) + 0.05);
 }
 
-// A szöveg színe egy kitöltésen, ha a téma nem ad explicit onB / onC-t: a jobb kontrasztú a jelöltek közül.
+// The text color on a fill, when the theme gives no explicit onB / onC: the better-contrast one among the candidates.
 export function bestOn(fill: string, candidates: string[]): string {
   return candidates.reduce((best, c) => (contrastRatio(c, fill) > contrastRatio(best, fill) ? c : best));
 }
 
-// a WCAG-küszöb egy KText-szövegre. Nagy szövegnél (>= 24 px, vagy >= 18,66 px és
-// félkövér) 3, különben 4,5. A KText szabályai szerint: a méret a fontScale / displayScale (title
-// és word) / fontSizeOffset-tel skálázódik, egyedi betűnél (skin.fonts[variant]) a fontWeight
-// elmarad, vagyis ott nincs félkövér.
+// the WCAG threshold for a KText text. 3 for large text (>= 24 px, or >= 18.66 px and
+// bold), otherwise 4.5. Following KText's rules: the size is scaled by fontScale / displayScale (title
+// and word) / fontSizeOffset, and with a custom font (skin.fonts[variant]) the fontWeight
+// is dropped, so there is no bold there.
 export function textContrastMin(
   skin: Pick<Skin, 'fonts' | 'fontScale' | 'displayScale' | 'fontSizeOffset'>,
   variant: 'title' | 'word' | 'body',
@@ -544,10 +543,10 @@ export function textContrastMin(
 
 const HEX6 = /^#[0-9a-f]{6}$/i;
 
-// olvasható szín egy háttéren. Ha az `fg` a `bg`-n átmegy a küszöbön (alap WCAG AA
-// 4.5, jelnél / nagy szövegnél 3), változatlan marad (a mai kinézet nem változik); különben azonos
-// árnyalaton a bg-től távolodva feketébe / fehérbe keveri, a legkisebb változtatásig, ami átmegy.
-// Ugyanígy kitöltésre is: `legibleOn(fill, '#FFFFFF')` = a fehér szöveget elbíró kitöltés.
+// a readable color on a background. If `fg` passes the threshold on `bg` (default WCAG AA
+// 4.5, for a symbol / large text 3), it stays unchanged (today's look does not change); otherwise, within the same
+// shade, it is mixed toward black / white, moving away from bg, by the smallest change that passes.
+// The same for fills: `legibleOn(fill, '#FFFFFF')` = a fill that can carry white text.
 export function legibleOn(fg: string, bg: string, min = 4.5): string {
   if (!HEX6.test(fg) || !HEX6.test(bg) || contrastRatio(fg, bg) >= min) return fg;
   const rgb = (h: string) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
