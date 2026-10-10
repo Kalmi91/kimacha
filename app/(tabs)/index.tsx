@@ -11,6 +11,7 @@ import { getDb } from '@/lib/database';
 import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
 import { localDateString, DEFAULT_DAILY_NEW_LIMIT } from '@/lib/usageStats';
+import { addXp, xpForGrade, DAILY_XP_GOAL, type DailyXp } from '@/lib/dailyXp';
 import { pcicItemsForLevel, findPcicItem, setPcicTarget, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import { gradePcicAnswer, gradeSentenceAnswer, suggestedGrade, type PcicGrade } from '@/lib/pcicMatch';
 import {
@@ -73,6 +74,8 @@ interface UndoEntry {
   counted: boolean;
   // The sentence-card cadence as it was before the grade.
   cadenceBefore: CadenceState;
+  // The XP this grade added (undo takes it back); absent when it added none.
+  xp?: { date: string; points: number };
 }
 
 export default function PcicScreen() {
@@ -116,6 +119,9 @@ export default function PcicScreen() {
   const [sessionNew, setSessionNew] = useState(0);
   const [sessionAgain, setSessionAgain] = useState(0);
   const [lastGraded, setLastGraded] = useState<UndoEntry | null>(null);
+  // Today's XP from the card grades (lib/dailyXp.ts); `date` tells when it was written,
+  // so a screen left open past midnight shows 0 again (see xpToday below).
+  const [dailyXp, setDailyXp] = useState<DailyXp>({ date: '', xp: 0 });
   // After every 4th new word, 1 sentence card (alternating
   // assemble and typing), practice only: it does not write SRS. `tenses` are the
   // tenses unlocked by completed grammar lessons (lib/knownSentence.ts).
@@ -198,6 +204,7 @@ export default function PcicScreen() {
     setDailyNewLimit(newLimit);
     setAgainDelaySec(delaySec);
     setToday(day);
+    setDailyXp({ date: day, xp: await db.getDailyXp(day) });
     setAllCards(new Map(cards.map((c) => [c.itemId, c])));
     // Card-level resume: the saved order and the "again" timers are put back on the rebuilt queue (invalid after a day change / level change).
     const resume = await loadLearnResume(db);
@@ -292,6 +299,7 @@ export default function PcicScreen() {
   const dueRemaining = queue.filter((c) => c.state !== 'new').length;
   const newRemaining = queue.filter((c) => c.state === 'new').length;
   const doneToday = countDoneToday([...allCards.values()], today);
+  const xpToday = dailyXp.date === localDateString() ? dailyXp.xp : 0;
   // The header shows WHAT today's introduction
   // consists of (word vs. sentence), plus today's total budget (limit + bonus).
   // The daily budget is DAILY, so "introduced today" counts across all levels: at the viewed level the live state
@@ -326,9 +334,13 @@ export default function PcicScreen() {
     // Learn tab, the only earlier caller, was removed); after the first call of the day the method is
     // a no-op, so it is safe on Again too.
     await getDb().updateStreak();
+    // "Knew it" earns XP (new word 3, review 2), "Didn't know" none.
+    const points = xpForGrade(wasNew, g);
+    const earned = points > 0 ? await addXp(points) : null;
+    if (earned) setDailyXp(earned);
 
     setAllCards((prev) => new Map(prev).set(next.itemId, next));
-    setLastGraded({ before, after: next, typed: typedAnswer, grade, wasNew, g, counted: true, cadenceBefore: cadence });
+    setLastGraded({ before, after: next, typed: typedAnswer, grade, wasNew, g, counted: true, cadenceBefore: cadence, xp: earned ? { date: earned.date, points } : undefined });
     setSessionAnswered((n) => n + 1);
     if (wasNew) setSessionNew((n) => n + 1);
     if (g === 'again') setSessionAgain((n) => n + 1);
@@ -408,6 +420,8 @@ export default function PcicScreen() {
   const handleUndo = async () => {
     if (!lastGraded) return;
     await getDb().upsertPcicCard(lastGraded.before);
+    // Take the grade's XP back, so undo + grade again cannot farm it.
+    if (lastGraded.xp) setDailyXp(await addXp(-lastGraded.xp.points, lastGraded.xp.date));
     setAllCards((prev) => new Map(prev).set(lastGraded.before.itemId, lastGraded.before));
     setQueue((prev) => requeueAfterUndo(prev, lastGraded.before, lastGraded.after, today));
     // The floor is 0 because it can be pressed during a session reset (load) too.
@@ -506,7 +520,8 @@ export default function PcicScreen() {
             { label: s.pcic.badgeTotal(newOrder.length) },
             { label: s.pcic.badgeDue(dueRemaining), tone: 'blue' },
             { label: s.pcic.badgeNew(newRemaining), tone: 'green' },
-            { label: s.pcic.badgeDone(doneToday), tone: 'pink' },
+            { label: s.pcic.badgeDone(doneToday) },
+            { label: s.pcic.badgeXp(xpToday, DAILY_XP_GOAL), tone: 'accent', accessibilityLabel: s.pcic.badgeXpA11y(xpToday, DAILY_XP_GOAL), tabular: true },
           ]}
         />
       </View>

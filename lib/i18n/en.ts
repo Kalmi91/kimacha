@@ -354,6 +354,7 @@ export default {
       '🎯 {hours} hours in today. Whoever puts that in, takes it out.',
     ],
     dailyGreeting: '👋 Hi! Let\'s start today\'s practice!',
+    dailyGoalReached: (goal: number) => `Daily goal reached! ${goal} XP`,
     // midnight rollover, the finished day's stats plus a celebration.
     // Picked at random, so the lines come back around over time.
     dayRollover: [
@@ -409,6 +410,9 @@ export default {
     badgeDue: (n: number) => `due ${n}`,
     badgeNew: (n: number) => `new ${n}`,
     badgeDone: (n: number) => `done ${n}`,
+    // today's XP chip: "XP 20/50", and "XP 63 ✓" once the daily goal is reached.
+    badgeXp: (xp: number, goal: number) => (xp >= goal ? `XP ${xp} ✓` : `XP ${xp}/${goal}`),
+    badgeXpA11y: (xp: number, goal: number) => `XP today: ${xp} of ${goal}`,
     // today's introduction split into words/sentences +
     // today's full allowance (daily limit + the "+10" bonus), e.g. "today: 6 words · 4 sentences / 10".
     badgeIntroducedToday: (words: number, sentences: number, budget: number) =>

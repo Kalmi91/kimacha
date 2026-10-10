@@ -133,6 +133,10 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
       date TEXT PRIMARY KEY,
       minutes INTEGER NOT NULL DEFAULT 0
     );
+    CREATE TABLE IF NOT EXISTS daily_xp (
+      date TEXT PRIMARY KEY,
+      xp INTEGER NOT NULL DEFAULT 0
+    );
     CREATE TABLE IF NOT EXISTS game_progress (
       pair TEXT NOT NULL,
       game_id TEXT NOT NULL,

@@ -223,6 +223,20 @@ class MemoryDB implements DB {
     return { minutes: this.usageMinutes.get(date) ?? 0, words };
   }
 
+  // Daily XP: one entry per local calendar day, app-wide, in memory like
+  // usageMinutes above; not part of the backup.
+  private dailyXp: Map<string, number> = new Map();
+
+  async getDailyXp(date: string): Promise<number> {
+    return this.dailyXp.get(date) ?? 0;
+  }
+
+  async addDailyXp(date: string, delta: number): Promise<number> {
+    const total = Math.max(0, (this.dailyXp.get(date) ?? 0) + delta);
+    this.dailyXp.set(date, total);
+    return total;
+  }
+
   // Game tab tables, scoped to the active pair like every
   // other per-pair setting/state in this interface.
   private gameProgressMap: Map<string, Map<string, { state: string; data: unknown }>> = new Map();

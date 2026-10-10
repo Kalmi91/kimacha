@@ -313,6 +313,23 @@ class SQLiteDB implements DB {
     return { minutes: usage?.minutes ?? 0, words: learned?.n ?? 0 };
   }
 
+  // Daily XP: one row per local calendar day, app-wide like usage_minutes. Not
+  // part of the backup (see lib/backup.ts).
+  async getDailyXp(date: string): Promise<number> {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT xp FROM daily_xp WHERE date = ?', [date]);
+    return row?.xp ?? 0;
+  }
+
+  async addDailyXp(date: string, delta: number): Promise<number> {
+    const db = await this.open();
+    await db.runAsync(
+      'INSERT INTO daily_xp (date, xp) VALUES (?, ?) ON CONFLICT(date) DO UPDATE SET xp = MAX(0, xp + ?)',
+      [date, Math.max(0, delta), delta]
+    );
+    return this.getDailyXp(date);
+  }
+
   // Game tab tables, scoped to the active pair like every
   // other per-pair setting/state in this interface.
   async getGameProgress(gameId: string) {
