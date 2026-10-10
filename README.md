@@ -138,7 +138,7 @@ part of the normal release path.
    Without further flags the release is signed with the public React Native debug key that the
    prebuild template ships. That is the sideload APK, and it keeps updating over the one already
    installed.
-4. Build the Play bundle with `.\gradlew.bat :app:bundleRelease -PplayStore=true` and
+4. Build the Play bundle, again from `android\`, with `.\gradlew.bat :app:bundleRelease -PplayStore=true` and
    `$env:EXPO_PUBLIC_PLAY_STORE = "1"`. That flag switches the Play flavour on (`lib/buildFlavor.ts`):
    feedback goes through the share sheet instead of a network call. Metro does not key its cache on
    the variable, so delete `$env:TEMP\metro-*` and `node_modules\.cache` first. `-PplayStore=true` makes
