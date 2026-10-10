@@ -9,6 +9,7 @@ import { BrutalBox, textOnFill } from '@/components/grammar/Brutal';
 import { t, stringsFor } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { onActiveMinute, onUsageMilestone, onDayRollover } from '@/lib/usageTimer';
+import { DAILY_XP_GOAL, onDailyGoalReached } from '@/lib/dailyXp';
 import { pickDayRolloverMessage } from '@/lib/dayRollover';
 import { isLongHaulMilestone, pickMilestoneLine } from '@/lib/usageMilestones';
 
@@ -103,6 +104,9 @@ export default function UsageToast({ hidden = false }: { hidden?: boolean }) {
       const learned = stringsFor(learnedLang.current).usage;
       show(pickDayRolloverMessage(learned.dayRollover, { minutes, words }), true, ROLLOVER_VISIBLE_MS);
     });
+    // the daily XP goal, reached once a day (lib/dailyXp.ts), in the UI language
+    // like the "+1 minute" pill, read when it fires.
+    const unsubscribeGoal = onDailyGoalReached(() => show(t().usage.dailyGoalReached(DAILY_XP_GOAL), true));
     // the day's greeting, shown once per app start (greetedRef keeps a
     // re-subscribe from repeating it).
     if (greeting && !greetedRef.current) {
@@ -114,6 +118,7 @@ export default function UsageToast({ hidden = false }: { hidden?: boolean }) {
       unsubscribeMinute();
       unsubscribeMilestone();
       unsubscribeRollover();
+      unsubscribeGoal();
       if (hideTimer.current) clearTimeout(hideTimer.current);
     };
     // opacity and translateY are stable useState values; they are listed only
