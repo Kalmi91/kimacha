@@ -118,7 +118,7 @@ export default function ThemeMixScreen() {
             <BrutalBackButton testID="mix-back" onPress={() => router.back()} />
           </View>
         ) : (
-          <Pressable onPress={() => router.back()} hitSlop={12} style={styles.exitBtn}>
+          <Pressable accessibilityRole="button" accessibilityLabel={s.a11y.back} onPress={() => router.back()} hitSlop={12} style={styles.exitBtn}>
             <Text style={[styles.exitIcon, { color: g.ink }]}>←</Text>
           </Pressable>
         )}

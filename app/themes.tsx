@@ -41,7 +41,7 @@ function MixEntry({ active, onPress }: { active: boolean; onPress: () => void })
     );
   }
   return (
-    <Pressable testID="themes-mix-entry" onPress={onPress} style={[styles.mixBox, styles.mixPlain, { backgroundColor: g.paper }]}>
+    <Pressable testID="themes-mix-entry" accessibilityRole="button" onPress={onPress} style={[styles.mixBox, styles.mixPlain, { backgroundColor: g.paper }]}>
       {content}
     </Pressable>
   );
@@ -86,7 +86,7 @@ export default function ThemesScreen() {
             <BrutalBackButton testID="themes-back" onPress={() => router.back()} />
           </View>
         ) : (
-          <Pressable onPress={() => router.back()} hitSlop={12} style={styles.exitBtn}>
+          <Pressable accessibilityRole="button" accessibilityLabel={s.a11y.back} onPress={() => router.back()} hitSlop={12} style={styles.exitBtn}>
             <Text style={[styles.exitIcon, { color: g.ink }]}>←</Text>
           </Pressable>
         )}
@@ -128,6 +128,7 @@ export default function ThemesScreen() {
                   <Pressable
                     key={id}
                     testID={`theme-tile-${id}`}
+                    accessibilityRole="button"
                     accessibilityState={{ selected }}
                     onPress={() => pick(id)}
                     style={styles.tile}

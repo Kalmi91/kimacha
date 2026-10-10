@@ -73,7 +73,7 @@ function Row({ onPress, children }: { onPress?: () => void; children: ReactNode 
   }
   const style = [styles.wordsOnlyRow, { backgroundColor: g.paper }];
   return onPress ? (
-    <Pressable style={style} onPress={onPress}>
+    <Pressable accessibilityRole="button" style={style} onPress={onPress}>
       {children}
     </Pressable>
   ) : (
@@ -82,17 +82,17 @@ function Row({ onPress, children }: { onPress?: () => void; children: ReactNode 
 }
 
 // The −/+ stepper button (a box on the brutalist palette).
-function StepBtn({ label, onPress }: { label: string; onPress: () => void }) {
+function StepBtn({ label, onPress, accessibilityLabel }: { label: string; onPress: () => void; accessibilityLabel: string }) {
   const g = useGrammarColors();
   if (g.brutal) {
     return (
-      <BrutalBox offset={2} onPress={onPress} style={styles.brutalStepOuter} boxStyle={styles.brutalStep}>
+      <BrutalBox offset={2} accessibilityLabel={accessibilityLabel} onPress={onPress} style={styles.brutalStepOuter} boxStyle={styles.brutalStep}>
         <Text style={[styles.goalBtnText, { color: g.ink }]}>{label}</Text>
       </BrutalBox>
     );
   }
   return (
-    <Pressable style={[styles.goalBtn, { borderColor: g.a }]} onPress={onPress}>
+    <Pressable accessibilityRole="button" accessibilityLabel={accessibilityLabel} style={[styles.goalBtn, { borderColor: g.a }]} onPress={onPress}>
       <Text style={[styles.goalBtnText, { color: g.a }]}>{label}</Text>
     </Pressable>
   );
@@ -407,12 +407,12 @@ export default function SettingsScreen() {
       <Row>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }, stepLabel]}>{s.settings.weeklyGoal}</Text>
         <View style={styles.goalStepper}>
-          <StepBtn label="−" onPress={() => handleWeeklyGoalChange(-WEEKLY_GOAL_STEP_MINUTES)} />
+          <StepBtn label="−" accessibilityLabel={s.a11y.decrease(s.settings.weeklyGoal)} onPress={() => handleWeeklyGoalChange(-WEEKLY_GOAL_STEP_MINUTES)} />
           <Text style={[styles.goalValue, { color: goalReached ? '#22C55E' : colors.text }]}>
             {s.settings.weeklyGoalHours(String(Math.round(weeklyGoal / 60)))}
             {goalReached ? ` ${s.settings.weeklyGoalDoneTag}` : ''}
           </Text>
-          <StepBtn label="+" onPress={() => handleWeeklyGoalChange(WEEKLY_GOAL_STEP_MINUTES)} />
+          <StepBtn label="+" accessibilityLabel={s.a11y.increase(s.settings.weeklyGoal)} onPress={() => handleWeeklyGoalChange(WEEKLY_GOAL_STEP_MINUTES)} />
         </View>
       </Row>
 
@@ -420,11 +420,11 @@ export default function SettingsScreen() {
       <Row>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }, stepLabel]}>{s.settings.dailyNewLimit}</Text>
         <View style={styles.goalStepper}>
-          <StepBtn label="−" onPress={() => handleDailyNewLimitChange(-DAILY_NEW_LIMIT_STEP)} />
+          <StepBtn label="−" accessibilityLabel={s.a11y.decrease(s.settings.dailyNewLimit)} onPress={() => handleDailyNewLimitChange(-DAILY_NEW_LIMIT_STEP)} />
           <Text style={[styles.goalValue, { color: colors.text }]}>
             {s.settings.dailyNewLimitWords(String(dailyNewLimit))}
           </Text>
-          <StepBtn label="+" onPress={() => handleDailyNewLimitChange(DAILY_NEW_LIMIT_STEP)} />
+          <StepBtn label="+" accessibilityLabel={s.a11y.increase(s.settings.dailyNewLimit)} onPress={() => handleDailyNewLimitChange(DAILY_NEW_LIMIT_STEP)} />
         </View>
       </Row>
 
@@ -433,11 +433,11 @@ export default function SettingsScreen() {
       <Row>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }, stepLabel]}>{s.settings.missedWordDelay}</Text>
         <View style={styles.goalStepper}>
-          <StepBtn label="−" onPress={() => handleAgainDelayChange(-AGAIN_DELAY_STEP_SEC)} />
+          <StepBtn label="−" accessibilityLabel={s.a11y.decrease(s.settings.missedWordDelay)} onPress={() => handleAgainDelayChange(-AGAIN_DELAY_STEP_SEC)} />
           <Text style={[styles.goalValue, { color: colors.text }]}>
             {s.settings.missedWordDelaySeconds(String(againDelaySec))}
           </Text>
-          <StepBtn label="+" onPress={() => handleAgainDelayChange(AGAIN_DELAY_STEP_SEC)} />
+          <StepBtn label="+" accessibilityLabel={s.a11y.increase(s.settings.missedWordDelay)} onPress={() => handleAgainDelayChange(AGAIN_DELAY_STEP_SEC)} />
         </View>
       </Row>
 
@@ -448,7 +448,7 @@ export default function SettingsScreen() {
           <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.strictAccents}</Text>
           <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>{s.settings.strictAccentsHint}</Text>
         </View>
-        <BrutalSwitch testID="settings-strict-accents" value={strictAccents} onValueChange={handleStrictAccentsToggle} />
+        <BrutalSwitch testID="settings-strict-accents" accessibilityLabel={s.settings.strictAccents} value={strictAccents} onValueChange={handleStrictAccentsToggle} />
       </Row>
 
       {/* article button row on the typing Spanish noun cards.
@@ -459,7 +459,7 @@ export default function SettingsScreen() {
             <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.articlePicker}</Text>
             <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>{s.settings.articlePickerHint}</Text>
           </View>
-          <BrutalSwitch testID="settings-article-picker" value={articlePicker} onValueChange={handleArticlePickerToggle} />
+          <BrutalSwitch testID="settings-article-picker" accessibilityLabel={s.settings.articlePicker} value={articlePicker} onValueChange={handleArticlePickerToggle} />
         </Row>
       )}
 
@@ -569,6 +569,7 @@ export default function SettingsScreen() {
               return (
                 <Pressable
                   key={src}
+                  accessibilityRole="button"
                   style={[styles.sheetOption, { backgroundColor: active ? colors.tint : colors.background }]}
                   onPress={() => handleSelectDirection(src, tgt)}
                 >

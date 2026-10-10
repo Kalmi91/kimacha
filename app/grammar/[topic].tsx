@@ -170,7 +170,7 @@ export default function GrammarLessonScreen() {
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         <View style={styles.header}>
-          <Pressable onPress={() => router.back()} hitSlop={12}>
+          <Pressable accessibilityRole="button" accessibilityLabel={s.a11y.back} onPress={() => router.back()} hitSlop={12}>
             <Text style={[styles.back, { color: colors.text }]}>←</Text>
           </Pressable>
           <FitText variant="title" base={17} maxLines={2} reserve={100} style={[styles.title, { color: colors.text }]}>
@@ -287,6 +287,7 @@ export default function GrammarLessonScreen() {
     <View style={styles.header}>
       <BrutalBox
         testID="grammar-back"
+        accessibilityLabel={s.a11y.back}
         boxStyle={styles.brutalBack}
         onPress={() => (phase === 'lesson' ? router.back() : setPhase('lesson'))}
       >
@@ -301,7 +302,7 @@ export default function GrammarLessonScreen() {
     </View>
   ) : (
     <View style={styles.header}>
-      <Pressable onPress={() => (phase === 'lesson' ? router.back() : setPhase('lesson'))} hitSlop={12}>
+      <Pressable accessibilityRole="button" accessibilityLabel={s.a11y.back} onPress={() => (phase === 'lesson' ? router.back() : setPhase('lesson'))} hitSlop={12}>
         <Text style={[styles.back, { color: colors.text }]}>←</Text>
       </Pressable>
       <FitText variant="title" base={17} maxLines={2} reserve={130} style={[styles.title, { color: colors.text }]}>
