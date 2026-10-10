@@ -407,12 +407,12 @@ export default function SettingsScreen() {
       <Row>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }, stepLabel]}>{s.settings.weeklyGoal}</Text>
         <View style={styles.goalStepper}>
-          <StepBtn label="−" accessibilityLabel={s.a11y.decrease(s.settings.weeklyGoal)} onPress={() => handleWeeklyGoalChange(-WEEKLY_GOAL_STEP_MINUTES)} />
+          <StepBtn label="−" accessibilityLabel={s.a11y.weeklyGoal.down} onPress={() => handleWeeklyGoalChange(-WEEKLY_GOAL_STEP_MINUTES)} />
           <Text style={[styles.goalValue, { color: goalReached ? '#22C55E' : colors.text }]}>
             {s.settings.weeklyGoalHours(String(Math.round(weeklyGoal / 60)))}
             {goalReached ? ` ${s.settings.weeklyGoalDoneTag}` : ''}
           </Text>
-          <StepBtn label="+" accessibilityLabel={s.a11y.increase(s.settings.weeklyGoal)} onPress={() => handleWeeklyGoalChange(WEEKLY_GOAL_STEP_MINUTES)} />
+          <StepBtn label="+" accessibilityLabel={s.a11y.weeklyGoal.up} onPress={() => handleWeeklyGoalChange(WEEKLY_GOAL_STEP_MINUTES)} />
         </View>
       </Row>
 
@@ -420,11 +420,11 @@ export default function SettingsScreen() {
       <Row>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }, stepLabel]}>{s.settings.dailyNewLimit}</Text>
         <View style={styles.goalStepper}>
-          <StepBtn label="−" accessibilityLabel={s.a11y.decrease(s.settings.dailyNewLimit)} onPress={() => handleDailyNewLimitChange(-DAILY_NEW_LIMIT_STEP)} />
+          <StepBtn label="−" accessibilityLabel={s.a11y.dailyNewLimit.down} onPress={() => handleDailyNewLimitChange(-DAILY_NEW_LIMIT_STEP)} />
           <Text style={[styles.goalValue, { color: colors.text }]}>
             {s.settings.dailyNewLimitWords(String(dailyNewLimit))}
           </Text>
-          <StepBtn label="+" accessibilityLabel={s.a11y.increase(s.settings.dailyNewLimit)} onPress={() => handleDailyNewLimitChange(DAILY_NEW_LIMIT_STEP)} />
+          <StepBtn label="+" accessibilityLabel={s.a11y.dailyNewLimit.up} onPress={() => handleDailyNewLimitChange(DAILY_NEW_LIMIT_STEP)} />
         </View>
       </Row>
 
@@ -433,11 +433,11 @@ export default function SettingsScreen() {
       <Row>
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }, stepLabel]}>{s.settings.missedWordDelay}</Text>
         <View style={styles.goalStepper}>
-          <StepBtn label="−" accessibilityLabel={s.a11y.decrease(s.settings.missedWordDelay)} onPress={() => handleAgainDelayChange(-AGAIN_DELAY_STEP_SEC)} />
+          <StepBtn label="−" accessibilityLabel={s.a11y.missedWordDelay.down} onPress={() => handleAgainDelayChange(-AGAIN_DELAY_STEP_SEC)} />
           <Text style={[styles.goalValue, { color: colors.text }]}>
             {s.settings.missedWordDelaySeconds(String(againDelaySec))}
           </Text>
-          <StepBtn label="+" accessibilityLabel={s.a11y.increase(s.settings.missedWordDelay)} onPress={() => handleAgainDelayChange(AGAIN_DELAY_STEP_SEC)} />
+          <StepBtn label="+" accessibilityLabel={s.a11y.missedWordDelay.up} onPress={() => handleAgainDelayChange(AGAIN_DELAY_STEP_SEC)} />
         </View>
       </Row>
 

@@ -57,8 +57,12 @@ const es: Strings = {
     speak: 'Reproducir audio',
     stopSpeaking: 'Detener audio',
     statusBarTint: 'Cambiar el color de la franja superior',
-    increase: (what: string): string => `Aumentar ${what.toLowerCase()}`,
-    decrease: (what: string): string => `Disminuir ${what.toLowerCase()}`,
+    weeklyGoal: { up: 'Aumentar el objetivo semanal de estudio', down: 'Disminuir el objetivo semanal de estudio' },
+    dailyNewLimit: { up: 'Aumentar palabras nuevas al día', down: 'Disminuir palabras nuevas al día' },
+    missedWordDelay: {
+      up: 'Aumentar la espera antes de que vuelva una palabra fallada',
+      down: 'Disminuir la espera antes de que vuelva una palabra fallada',
+    },
   },
   games: {
     understood: 'Entendido',

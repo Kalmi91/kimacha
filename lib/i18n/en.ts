@@ -57,8 +57,13 @@ export default {
     speak: 'Play audio',
     stopSpeaking: 'Stop audio',
     statusBarTint: 'Change the color of the top strip',
-    increase: (what: string): string => `Increase ${what.toLowerCase()}`,
-    decrease: (what: string): string => `Decrease ${what.toLowerCase()}`,
+    // the −/+ of the Settings steppers, one full phrase each (a template over the row label reads badly)
+    weeklyGoal: { up: 'Increase weekly study goal', down: 'Decrease weekly study goal' },
+    dailyNewLimit: { up: 'Increase new words a day', down: 'Decrease new words a day' },
+    missedWordDelay: {
+      up: 'Increase the wait before a missed word comes back',
+      down: 'Decrease the wait before a missed word comes back',
+    },
   },
   // Play cut: the Game/Talk tabs were removed, this
   // namespace keeps only the feedback and mark-item labels of components/grammar/GrammarDrill.tsx

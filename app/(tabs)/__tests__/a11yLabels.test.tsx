@@ -81,7 +81,7 @@ describe('a11y: Settings tab', () => {
       await getDb().setGrammarPalette(palette);
       const view = render(<ThemeProvider><SettingsScreen /></ThemeProvider>);
       await flush();
-      for (const what of ['weekly study goal', 'new words a day', 'missed word comes back after']) {
+      for (const what of ['weekly study goal', 'new words a day', 'the wait before a missed word comes back']) {
         expect(view.getByLabelText(`Increase ${what}`).props.accessibilityRole).toBe('button');
         expect(view.getByLabelText(`Decrease ${what}`).props.accessibilityRole).toBe('button');
       }
@@ -122,8 +122,9 @@ describe('a11y: Settings tab', () => {
     setLanguage('es');
     const view = render(<ThemeProvider><SettingsScreen /></ThemeProvider>);
     await flush();
-    expect(view.getByLabelText('Aumentar objetivo semanal de estudio')).toBeTruthy();
+    expect(view.getByLabelText('Aumentar el objetivo semanal de estudio')).toBeTruthy();
     expect(view.getByLabelText('Disminuir palabras nuevas al día')).toBeTruthy();
+    expect(view.getByLabelText('Aumentar la espera antes de que vuelva una palabra fallada')).toBeTruthy();
     expect(view.getByLabelText('Los acentos cuentan')).toBeTruthy();
     view.unmount();
   });
