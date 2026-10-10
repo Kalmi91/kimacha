@@ -331,6 +331,7 @@ const es: Strings = {
       '🎯 {hours} horas en la sesión de hoy. El que mete tanto, saca tanto.',
     ],
     dailyGreeting: '👋 ¡Hola! ¡Empecemos el estudio de hoy!',
+    dailyGoalReached: (goal: number) => `¡Objetivo diario cumplido! ${goal} XP`,
     // midnight rollover, the finished day's stats plus a celebration.
     // Picked at random, so the lines come back around over time.
     dayRollover: [
@@ -381,6 +382,8 @@ const es: Strings = {
     badgeDue: (n: number) => `pendientes ${n}`,
     badgeNew: (n: number) => `nuevas ${n}`,
     badgeDone: (n: number) => `hechas ${n}`,
+    badgeXp: (xp: number, goal: number) => (xp >= goal ? `XP ${xp} ✓` : `XP ${xp}/${goal}`),
+    badgeXpA11y: (xp: number, goal: number) => `XP de hoy: ${xp} de ${goal}`,
     // "oración" -> "oraciones" is not a plain "+es" inflection (the accent drops in the
     // plural), so the whole word switches, not a suffix (typo fix:
     // "oraciónes" -> "oraciones").

@@ -53,6 +53,10 @@ export interface DB {
   addUsageMinute(): Promise<number>;
   getUsageStats(): Promise<UsageStats>;
   getDayStats(date: string): Promise<{ minutes: number; words: number }>;
+  // XP earned on one local calendar day (card grades, lib/dailyXp.ts), app-wide.
+  // `delta` may be negative (undo); the day's total never drops below 0.
+  getDailyXp(date: string): Promise<number>;
+  addDailyXp(date: string, delta: number): Promise<number>;
   // Game tab tables, scoped to the active pair like every
   // other per-pair setting/state in this interface.
   getGameProgress(gameId: string): Promise<{ itemId: string; state: string; data: unknown }[]>;
