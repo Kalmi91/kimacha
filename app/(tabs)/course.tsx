@@ -17,8 +17,6 @@ import {
   hasLesson,
   lessonCoverage,
   lessonKinds,
-  lessonHasTrial,
-  lessonFor,
   getGrammarTier,
   syllabusForLevel,
   topicsForUnit,
@@ -26,7 +24,6 @@ import {
 } from '@/lib/grammar/syllabus';
 import { lessonBadgePercent, lessonScoresByTopic } from '@/lib/grammar/lessonScore';
 import { lessonTestPassedTopics } from '@/lib/grammar/lessonTest';
-import TrialBadge from '@/components/TrialBadge';
 import { DEFAULT_WEEKLY_GOAL_MINUTES } from '@/lib/usageStats';
 import FeedbackButton from '@/components/FeedbackModal';
 import { BrutalBox, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
@@ -75,7 +72,7 @@ export default function GrammarSyllabusScreen() {
     const target = onboarding?.target ?? 'es';
     setLearnedLang(target);
     // Kimacha Play: UI always English, regardless of the
-    // stored source language; the syllabus data's hu/es/de fields stay unused.
+    // stored source language.
     // es→en: a learner whose native language is Spanish gets the explanation in Spanish.
     setContentLang(target === 'en' ? 'es' : 'en');
 
@@ -170,7 +167,6 @@ export default function GrammarSyllabusScreen() {
                         ? s.grammar.started
                         : s.grammar.notStarted;
                 const tier = getGrammarTier(topic.id);
-                const hasTrial = written2 && lessonHasTrial(lessonFor(learnedLang, topic.id));
                 const textColor = inProgress ? g.onB : written2 ? g.ink : g.mu;
                 return (
                   <BrutalBox
@@ -187,7 +183,7 @@ export default function GrammarSyllabusScreen() {
                         {topic.title[contentLang] ?? topic.title.en}
                       </Text>
                     </View>
-                    {tier || isDone || hasTrial || testPassed.has(topic.id) ? (
+                    {tier || isDone || testPassed.has(topic.id) ? (
                       <View style={styles.brutalStickers}>
                         {tier === 'core-plus' ? (
                           <Sticker testID={`grammar-core-plus-${topic.id}`} label={s.grammar.corePlusTag} fill="paper" rotate={-4} />
@@ -198,8 +194,6 @@ export default function GrammarSyllabusScreen() {
                         {testPassed.has(topic.id) ? (
                           <Sticker testID={`grammar-test-passed-${topic.id}`} label={s.lessonTest.passedTag} fill="b" rotate={-3} />
                         ) : null}
-                        {/* badge of the two lessons with the new exercise kind. */}
-                        {hasTrial ? <TrialBadge testID={`trial-badge-${topic.id}`} /> : null}
                       </View>
                     ) : null}
                     {/* No numberOfLines clipping: a theme with a wide / tall font wraps onto 3+ lines, we do not truncate it. */}

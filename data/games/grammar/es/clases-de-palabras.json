@@ -3,76 +3,62 @@
   "topic": "clases-de-palabras",
   "level": "A1",
   "title": {
-    "hu": "Szófajok: mi micsoda",
     "en": "Word classes: what is what",
-    "es": "Clases de palabras",
-    "de": "Wortarten: was ist was"
+    "es": "Clases de palabras"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "A szófaj eldönti, mivel egyezik egy szó, hová kerül a mondatban, és melyik szótári alakot érdemes megjegyezni: egy főnévnek névelője és neme van, egy igének ragozott alakjai, egy melléknévnek nőnemű és hímnemű formája, egy határozószónak viszont csak egyetlen, változatlan alakja.",
         "en": "The word class decides what a word agrees with, where it goes in the sentence, and which dictionary form is worth learning: a noun has an article and a gender, a verb has conjugated forms, an adjective has feminine and masculine forms, while an adverb has only one, unchanging form.",
-        "es": "La clase de palabra decide con qué concuerda una palabra, dónde va en la frase, y qué forma de diccionario conviene aprender: un sustantivo tiene artículo y género, un verbo tiene formas conjugadas, un adjetivo tiene forma femenina y masculina, mientras que un adverbio tiene una sola forma, invariable.",
-        "de": "Die Wortart entscheidet, womit ein Wort übereinstimmt, wo es im Satz steht, und welche Wörterbuchform man sich merken sollte: ein Nomen hat einen Artikel und ein Genus, ein Verb hat konjugierte Formen, ein Adjektiv hat eine feminine und eine maskuline Form, während ein Adverb nur eine einzige, unveränderliche Form hat."
+        "es": "La clase de palabra decide con qué concuerda una palabra, dónde va en la frase, y qué forma de diccionario conviene aprender: un sustantivo tiene artículo y género, un verbo tiene formas conjugadas, un adjetivo tiene forma femenina y masculina, mientras que un adverbio tiene una sola forma, invariable."
       }
     },
     {
       "kind": "list",
       "title": {
-        "hu": "A négy szófaj felismerése",
         "en": "Recognizing the four word classes",
-        "es": "Cómo reconocer las cuatro clases de palabras",
-        "de": "Die vier Wortarten erkennen"
+        "es": "Cómo reconocer las cuatro clases de palabras"
       },
       "items": [
         {
           "text": {
-            "hu": "FŐNÉV: dolog vagy személy (casa, perro). Névelő állhat előtte: la casa.",
             "en": "NOUN: a thing or a person (casa, perro). An article can stand before it: la casa.",
-            "es": "SUSTANTIVO: una cosa o una persona (casa, perro). Puede llevar artículo delante: la casa.",
-            "de": "NOMEN: ein Ding oder eine Person (casa, perro). Ein Artikel kann davorstehen: la casa."
+            "es": "SUSTANTIVO: una cosa o una persona (casa, perro). Puede llevar artículo delante: la casa."
           },
           "examples": [
-            { "es": "El gato es pequeño.", "tr": { "hu": "A macska kicsi.", "en": "The cat is small.", "es": "El gato es pequeño.", "de": "Die Katze ist klein." } },
-            { "es": "La casa es blanca.", "tr": { "hu": "A ház fehér.", "en": "The house is white.", "es": "La casa es blanca.", "de": "Das Haus ist weiß." } }
+            { "es": "El gato es pequeño.", "tr": { "en": "The cat is small.", "es": "El gato es pequeño." } },
+            { "es": "La casa es blanca.", "tr": { "en": "The house is white.", "es": "La casa es blanca." } }
           ]
         },
         {
           "text": {
-            "hu": "IGE: mit csinál valaki (hablar → hablo, hablas). A végződése az alanyhoz igazodik.",
             "en": "VERB: what someone does (hablar → hablo, hablas). Its ending matches the subject.",
-            "es": "VERBO: lo que alguien hace (hablar → hablo, hablas). Su terminación concuerda con el sujeto.",
-            "de": "VERB: was jemand tut (hablar → hablo, hablas). Die Endung passt zum Subjekt."
+            "es": "VERBO: lo que alguien hace (hablar → hablo, hablas). Su terminación concuerda con el sujeto."
           },
           "examples": [
-            { "es": "Yo trabajo mucho.", "tr": { "hu": "Sokat dolgozom.", "en": "I work a lot.", "es": "Yo trabajo mucho.", "de": "Ich arbeite viel." } },
-            { "es": "Nosotros comemos aquí.", "tr": { "hu": "Itt eszünk.", "en": "We eat here.", "es": "Nosotros comemos aquí.", "de": "Wir essen hier." } }
+            { "es": "Yo trabajo mucho.", "tr": { "en": "I work a lot.", "es": "Yo trabajo mucho." } },
+            { "es": "Nosotros comemos aquí.", "tr": { "en": "We eat here.", "es": "Nosotros comemos aquí." } }
           ]
         },
         {
           "text": {
-            "hu": "MELLÉKNÉV: milyen valami (grande, blanco). Általában a főnév UTÁN áll, és egyezik vele nemben és számban: la casa blanca.",
             "en": "ADJECTIVE: what something is like (grande, blanco). It usually follows the noun and agrees with it in gender and number: la casa blanca.",
-            "es": "ADJETIVO: cómo es algo (grande, blanco). Normalmente va DETRÁS del sustantivo y concuerda con él en género y número: la casa blanca.",
-            "de": "ADJEKTIV: wie etwas ist (grande, blanco). Es steht meist NACH dem Nomen und stimmt mit ihm in Genus und Zahl überein: la casa blanca."
+            "es": "ADJETIVO: cómo es algo (grande, blanco). Normalmente va DETRÁS del sustantivo y concuerda con él en género y número: la casa blanca."
           },
           "examples": [
-            { "es": "El libro es rojo.", "tr": { "hu": "A könyv piros.", "en": "The book is red.", "es": "El libro es rojo.", "de": "Das Buch ist rot." } },
-            { "es": "Mi madre es alta.", "tr": { "hu": "Anyám magas.", "en": "My mother is tall.", "es": "Mi madre es alta.", "de": "Meine Mutter ist groß." } }
+            { "es": "El libro es rojo.", "tr": { "en": "The book is red.", "es": "El libro es rojo." } },
+            { "es": "Mi madre es alta.", "tr": { "en": "My mother is tall.", "es": "Mi madre es alta." } }
           ]
         },
         {
           "text": {
-            "hu": "HATÁROZÓSZÓ: hogyan, mikor, mennyire (bien, hoy, mucho). Az igéhez tartozik, és SOHA nem változik: ella canta bien, ellos cantan bien.",
             "en": "ADVERB: how, when, how much (bien, hoy, mucho). It belongs to the verb and NEVER changes: ella canta bien, ellos cantan bien.",
-            "es": "ADVERBIO: cómo, cuándo, cuánto (bien, hoy, mucho). Acompaña al verbo y NUNCA cambia: ella canta bien, ellos cantan bien.",
-            "de": "ADVERB: wie, wann, wie sehr (bien, hoy, mucho). Es gehört zum Verb und ändert sich NIE: ella canta bien, ellos cantan bien."
+            "es": "ADVERBIO: cómo, cuándo, cuánto (bien, hoy, mucho). Acompaña al verbo y NUNCA cambia: ella canta bien, ellos cantan bien."
           },
           "examples": [
-            { "es": "Hoy trabajo en casa.", "tr": { "hu": "Ma otthon dolgozom.", "en": "Today I work at home.", "es": "Hoy trabajo en casa.", "de": "Heute arbeite ich zu Hause." } },
-            { "es": "Ella habla mucho.", "tr": { "hu": "Sokat beszél.", "en": "She talks a lot.", "es": "Ella habla mucho.", "de": "Sie redet viel." } }
+            { "es": "Hoy trabajo en casa.", "tr": { "en": "Today I work at home.", "es": "Hoy trabajo en casa." } },
+            { "es": "Ella habla mucho.", "tr": { "en": "She talks a lot.", "es": "Ella habla mucho." } }
           ]
         }
       ]
@@ -80,46 +66,38 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Névmás, elöljáró, kötőszó röviden",
         "en": "Pronoun, preposition, conjunction, briefly",
-        "es": "Pronombre, preposición, conjunción, en breve",
-        "de": "Pronomen, Präposition, Konjunktion, kurz"
+        "es": "Pronombre, preposición, conjunción, en breve"
       },
       "items": [
         {
           "text": {
-            "hu": "NÉVMÁS: a főnév helyett áll, hogy ne kelljen megismételni (él, ella, mi, mía).",
             "en": "PRONOUN: stands in place of a noun so you don't repeat it (él, ella, mi, mía).",
-            "es": "PRONOMBRE: sustituye a un sustantivo para no repetirlo (él, ella, mi, mía).",
-            "de": "PRONOMEN: steht anstelle eines Nomens, damit man es nicht wiederholt (él, ella, mi, mía)."
+            "es": "PRONOMBRE: sustituye a un sustantivo para no repetirlo (él, ella, mi, mía)."
           },
           "examples": [
-            { "es": "La mesa es mía.", "tr": { "hu": "Az asztal az enyém.", "en": "The table is mine.", "es": "La mesa es mía.", "de": "Der Tisch ist meiner." } },
-            { "es": "Él trabaja aquí.", "tr": { "hu": "Ő itt dolgozik.", "en": "He works here.", "es": "Él trabaja aquí.", "de": "Er arbeitet hier." } }
+            { "es": "La mesa es mía.", "tr": { "en": "The table is mine.", "es": "La mesa es mía." } },
+            { "es": "Él trabaja aquí.", "tr": { "en": "He works here.", "es": "Él trabaja aquí." } }
           ]
         },
         {
           "text": {
-            "hu": "ELÖLJÁRÓSZÓ: két szót kapcsol össze, helyet vagy irányt is jelölhet (en, de, a).",
             "en": "PREPOSITION: connects two words, and can mark place or direction (en, de, a).",
-            "es": "PREPOSICIÓN: conecta dos palabras, y puede marcar lugar o dirección (en, de, a).",
-            "de": "PRÄPOSITION: verbindet zwei Wörter und kann Ort oder Richtung angeben (en, de, a)."
+            "es": "PREPOSICIÓN: conecta dos palabras, y puede marcar lugar o dirección (en, de, a)."
           },
           "examples": [
-            { "es": "Vivimos en la ciudad.", "tr": { "hu": "A városban élünk.", "en": "We live in the city.", "es": "Vivimos en la ciudad.", "de": "Wir leben in der Stadt." } },
-            { "es": "El libro es de mi hermano.", "tr": { "hu": "A könyv a testvéremé.", "en": "The book is my brother's.", "es": "El libro es de mi hermano.", "de": "Das Buch gehört meinem Bruder." } }
+            { "es": "Vivimos en la ciudad.", "tr": { "en": "We live in the city.", "es": "Vivimos en la ciudad." } },
+            { "es": "El libro es de mi hermano.", "tr": { "en": "The book is my brother's.", "es": "El libro es de mi hermano." } }
           ]
         },
         {
           "text": {
-            "hu": "KÖTŐSZÓ: két szót vagy mondatrészt köt össze (y, pero, o).",
             "en": "CONJUNCTION: joins two words or clauses (y, pero, o).",
-            "es": "CONJUNCIÓN: une dos palabras o partes de la frase (y, pero, o).",
-            "de": "KONJUNKTION: verbindet zwei Wörter oder Satzteile (y, pero, o)."
+            "es": "CONJUNCIÓN: une dos palabras o partes de la frase (y, pero, o)."
           },
           "examples": [
-            { "es": "Tengo un perro y un gato.", "tr": { "hu": "Van egy kutyám és egy macskám.", "en": "I have a dog and a cat.", "es": "Tengo un perro y un gato.", "de": "Ich habe einen Hund und eine Katze." } },
-            { "es": "Es pequeño pero fuerte.", "tr": { "hu": "Kicsi, de erős.", "en": "It's small but strong.", "es": "Es pequeño pero fuerte.", "de": "Er ist klein, aber stark." } }
+            { "es": "Tengo un perro y un gato.", "tr": { "en": "I have a dog and a cat.", "es": "Tengo un perro y un gato." } },
+            { "es": "Es pequeño pero fuerte.", "tr": { "en": "It's small but strong.", "es": "Es pequeño pero fuerte." } }
           ]
         }
       ]
@@ -127,46 +105,38 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Amikor egy szó két szófajban is megjelenik",
         "en": "When one word belongs to two classes",
-        "es": "Cuando una palabra pertenece a dos clases",
-        "de": "Wenn ein Wort zu zwei Wortarten gehört"
+        "es": "Cuando una palabra pertenece a dos clases"
       },
       "items": [
         {
           "text": {
-            "hu": "Egy szó alakja néha két szófajban is ugyanaz: a rápido lehet melléknév (un gato rápido) és határozószó is (él habla rápido). A különbség nem az alakban van, hanem abban, MIRE vonatkozik: főnévre vagy igére.",
             "en": "Sometimes one form belongs to two classes: rápido can be an adjective (un gato rápido) and an adverb (él habla rápido). The difference is not the form but WHAT it points at: a noun or a verb.",
-            "es": "A veces una misma forma pertenece a dos clases: rápido puede ser adjetivo (un gato rápido) y adverbio (él habla rápido). La diferencia no está en la forma, sino en A QUÉ se refiere: a un sustantivo o a un verbo.",
-            "de": "Manchmal gehört eine Form zu zwei Klassen: rápido kann Adjektiv sein (un gato rápido) und Adverb (él habla rápido). Der Unterschied liegt nicht in der Form, sondern darin, WORAUF es sich bezieht: auf ein Nomen oder ein Verb."
+            "es": "A veces una misma forma pertenece a dos clases: rápido puede ser adjetivo (un gato rápido) y adverbio (él habla rápido). La diferencia no está en la forma, sino en A QUÉ se refiere: a un sustantivo o a un verbo."
           },
           "examples": [
-            { "es": "Tengo un gato rápido.", "tr": { "hu": "Van egy gyors macskám.", "en": "I have a fast cat.", "es": "Tengo un gato rápido.", "de": "Ich habe eine schnelle Katze." } },
-            { "es": "Él habla rápido.", "tr": { "hu": "Gyorsan beszél.", "en": "He speaks fast.", "es": "Él habla rápido.", "de": "Er spricht schnell." } }
+            { "es": "Tengo un gato rápido.", "tr": { "en": "I have a fast cat.", "es": "Tengo un gato rápido." } },
+            { "es": "Él habla rápido.", "tr": { "en": "He speaks fast.", "es": "Él habla rápido." } }
           ]
         },
         {
           "text": {
-            "hu": "A mucho ugyanígy: mucho trabajo = sok munka (melléknévként egyezik: mucha agua), de trabajo mucho = sokat dolgozom (határozószóként nem változik).",
             "en": "Mucho works the same way: mucho trabajo = a lot of work (as an adjective it agrees: mucha agua), but trabajo mucho = I work a lot (as an adverb, never changing).",
-            "es": "Mucho funciona igual: mucho trabajo (como adjetivo concuerda: mucha agua), pero trabajo mucho (como adverbio, invariable).",
-            "de": "Mucho funktioniert genauso: mucho trabajo = viel Arbeit (als Adjektiv passt es sich an: mucha agua), aber trabajo mucho = ich arbeite viel (als Adverb, unveränderlich)."
+            "es": "Mucho funciona igual: mucho trabajo (como adjetivo concuerda: mucha agua), pero trabajo mucho (como adverbio, invariable)."
           },
           "examples": [
-            { "es": "Tengo mucho trabajo.", "tr": { "hu": "Sok munkám van.", "en": "I have a lot of work.", "es": "Tengo mucho trabajo.", "de": "Ich habe viel Arbeit." } },
-            { "es": "Bebo mucha agua.", "tr": { "hu": "Sok vizet iszom.", "en": "I drink a lot of water.", "es": "Bebo mucha agua.", "de": "Ich trinke viel Wasser." } }
+            { "es": "Tengo mucho trabajo.", "tr": { "en": "I have a lot of work.", "es": "Tengo mucho trabajo." } },
+            { "es": "Bebo mucha agua.", "tr": { "en": "I drink a lot of water.", "es": "Bebo mucha agua." } }
           ]
         },
         {
           "text": {
-            "hu": "A főnévi igenév (comer, hablar) ige-alak, de főnévként is szerepelhet: comer es necesario = enni szükséges.",
             "en": "The infinitive (comer, hablar) is a verb form, yet it can act as a noun: comer es necesario = eating is necessary.",
-            "es": "El infinitivo (comer, hablar) es forma verbal, pero puede funcionar como sustantivo: comer es necesario.",
-            "de": "Der Infinitiv (comer, hablar) ist eine Verbform, kann aber als Nomen dienen: comer es necesario = essen ist notwendig."
+            "es": "El infinitivo (comer, hablar) es forma verbal, pero puede funcionar como sustantivo: comer es necesario."
           },
           "examples": [
-            { "es": "Comer es bueno.", "tr": { "hu": "Enni jó.", "en": "Eating is good.", "es": "Comer es bueno.", "de": "Essen ist gut." } },
-            { "es": "Hablar bien es difícil.", "tr": { "hu": "Jól beszélni nehéz.", "en": "Speaking well is hard.", "es": "Hablar bien es difícil.", "de": "Gut sprechen ist schwer." } }
+            { "es": "Comer es bueno.", "tr": { "en": "Eating is good.", "es": "Comer es bueno." } },
+            { "es": "Hablar bien es difícil.", "tr": { "en": "Speaking well is hard.", "es": "Hablar bien es difícil." } }
           ]
         }
       ]
@@ -175,16 +145,14 @@
       "kind": "table",
       "id": "derivacion",
       "title": {
-        "hu": "Melléknévből határozószó és főnév",
         "en": "From adjective to adverb and noun",
-        "es": "Del adjetivo al adverbio y al sustantivo",
-        "de": "Vom Adjektiv zum Adverb und Nomen"
+        "es": "Del adjetivo al adverbio y al sustantivo"
       },
       "header": [
-        { "hu": "Melléknév (hímnem)", "en": "Adjective (masculine)", "es": "Adjetivo (masculino)", "de": "Adjektiv (maskulin)" },
-        { "hu": "Melléknév (nőnem)", "en": "Adjective (feminine)", "es": "Adjetivo (femenino)", "de": "Adjektiv (feminin)" },
-        { "hu": "Határozószó (-mente)", "en": "Adverb (-mente)", "es": "Adverbio (-mente)", "de": "Adverb (-mente)" },
-        { "hu": "Főnév", "en": "Noun", "es": "Sustantivo", "de": "Substantiv" }
+        { "en": "Adjective (masculine)", "es": "Adjetivo (masculino)" },
+        { "en": "Adjective (feminine)", "es": "Adjetivo (femenino)" },
+        { "en": "Adverb (-mente)", "es": "Adverbio (-mente)" },
+        { "en": "Noun", "es": "Sustantivo" }
       ],
       "rows": [
         ["rápido", "rápida", "rápidamente", "rapidez"],
@@ -204,38 +172,32 @@
     {
       "kind": "contrast",
       "title": {
-        "hu": "Hasonló, mégis más",
         "en": "Similar, yet different",
-        "es": "Parecido, pero distinto",
-        "de": "Ähnlich, aber anders"
+        "es": "Parecido, pero distinto"
       },
       "pairs": [
         {
           "a": "bueno",
           "b": "bien",
           "note": {
-            "hu": "A bueno MELLÉKNÉV, a főnévhez tartozik és egyezik vele: un buen padre, una buena madre. A bien HATÁROZÓSZÓ, az igéhez tartozik, és sosem változik: trabaja bien.",
             "en": "Bueno is an ADJECTIVE, it belongs to a noun and agrees with it: un buen padre, una buena madre. Bien is an ADVERB, it belongs to the verb and never changes: trabaja bien.",
-            "es": "Bueno es un ADJETIVO, acompaña a un sustantivo y concuerda con él: un buen padre, una buena madre. Bien es un ADVERBIO, acompaña al verbo y nunca cambia: trabaja bien.",
-            "de": "Bueno ist ein ADJEKTIV, es gehört zu einem Nomen und stimmt mit ihm überein: un buen padre, una buena madre. Bien ist ein ADVERB, es gehört zum Verb und ändert sich nie: trabaja bien."
+            "es": "Bueno es un ADJETIVO, acompaña a un sustantivo y concuerda con él: un buen padre, una buena madre. Bien es un ADVERBIO, acompaña al verbo y nunca cambia: trabaja bien."
           },
           "examples": [
-            { "es": "Es un buen padre.", "tr": { "hu": "Jó apa.", "en": "He is a good father.", "es": "Es un buen padre.", "de": "Er ist ein guter Vater." } },
-            { "es": "Trabaja bien.", "tr": { "hu": "Jól dolgozik.", "en": "He works well.", "es": "Trabaja bien.", "de": "Er arbeitet gut." } }
+            { "es": "Es un buen padre.", "tr": { "en": "He is a good father.", "es": "Es un buen padre." } },
+            { "es": "Trabaja bien.", "tr": { "en": "He works well.", "es": "Trabaja bien." } }
           ]
         },
         {
           "a": "mucho",
           "b": "muy",
           "note": {
-            "hu": "A mucho módosíthat főnevet (egyezik vele: mucha agua) vagy igét (nem változik: trabaja mucho). A muy csak melléknevet vagy határozószót módosít, és sosem változik: muy grande, muy bien.",
             "en": "Mucho can modify a noun (agreeing: mucha agua) or a verb (unchanging: trabaja mucho). Muy only modifies an adjective or adverb, and never changes: muy grande, muy bien.",
-            "es": "Mucho puede modificar a un sustantivo (concordando: mucha agua) o a un verbo (invariable: trabaja mucho). Muy solo modifica a un adjetivo o adverbio, y nunca cambia: muy grande, muy bien.",
-            "de": "Mucho kann ein Nomen (übereinstimmend: mucha agua) oder ein Verb (unveränderlich: trabaja mucho) modifizieren. Muy modifiziert nur ein Adjektiv oder Adverb und ändert sich nie: muy grande, muy bien."
+            "es": "Mucho puede modificar a un sustantivo (concordando: mucha agua) o a un verbo (invariable: trabaja mucho). Muy solo modifica a un adjetivo o adverbio, y nunca cambia: muy grande, muy bien."
           },
           "examples": [
-            { "es": "Tengo mucha agua.", "tr": { "hu": "Sok vizem van.", "en": "I have a lot of water.", "es": "Tengo mucha agua.", "de": "Ich habe viel Wasser." } },
-            { "es": "Es muy grande.", "tr": { "hu": "Nagyon nagy.", "en": "It's very big.", "es": "Es muy grande.", "de": "Es ist sehr groß." } }
+            { "es": "Tengo mucha agua.", "tr": { "en": "I have a lot of water.", "es": "Tengo mucha agua." } },
+            { "es": "Es muy grande.", "tr": { "en": "It's very big.", "es": "Es muy grande." } }
           ]
         }
       ]
@@ -243,60 +205,46 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "A gyors teszt: névelőt tudsz elé tenni → főnév. Ragozódik személyben → ige. Nemben-számban egyezik egy főnévvel → melléknév. Semmiben nem változik és az igére vonatkozik → határozószó.",
         "en": "The quick test: can you put an article in front → noun. Does it take person endings → verb. Does it agree with a noun in gender and number → adjective. Does it never change and point at the verb → adverb.",
-        "es": "La prueba rápida: ¿le puedes poner artículo? sustantivo. ¿Se conjuga? verbo. ¿Concuerda en género y número? adjetivo. ¿No cambia nunca y va con el verbo? adverbio.",
-        "de": "Der Schnelltest: Artikel davor möglich → Nomen. Personendungen → Verb. Angleichung an ein Nomen → Adjektiv. Nie veränderlich und zum Verb gehörig → Adverb."
+        "es": "La prueba rápida: ¿le puedes poner artículo? sustantivo. ¿Se conjuga? verbo. ¿Concuerda en género y número? adjetivo. ¿No cambia nunca y va con el verbo? adverbio."
       }
     }
   ],
   "speak": {
-    "hu": "Négy szófaj hordozza szinte az összes mondatot. A főnév dolog vagy személy, és névelő állhat előtte. Az ige azt mondja meg, mit tesz valaki, és a végződése illeszkedik az alanyhoz. A melléknév azt mondja meg, milyen valami, általában a főnév után áll, és egyezik vele. A határozószó azt mondja meg, hogyan vagy mennyire, és sosem változik, mert az igéhez tartozik. Néhány szó melléknév és határozószó is lehet, a különbség csak az, mire vonatkozik. A jó és a jól szavakat gyakran összekeverik: az egyik melléknév, a másik határozószó.",
     "en": "Four word classes carry almost every sentence. A noun is a thing or a person, and an article can stand before it. A verb says what someone does, and its ending matches the subject. An adjective says what something is like, usually follows the noun and agrees with it. An adverb says how or how much, and it never changes because it belongs to the verb. Some words can be both adjective and adverb, and the difference is only what they refer to. The words for good and well are often confused: one is an adjective, the other an adverb.",
-    "es": "Cuatro clases de palabras sostienen casi todas las oraciones. El sustantivo es una cosa o una persona, y delante puede ir un artículo. El verbo dice lo que hace alguien y su terminación concuerda con el sujeto. El adjetivo dice cómo es algo, normalmente va después del sustantivo y concuerda con él. El adverbio dice cómo o cuánto y nunca cambia, porque pertenece al verbo. Algunas palabras pueden ser adjetivo y adverbio, y la diferencia es solo a qué se refieren. Las palabras para bueno y bien se confunden a menudo: una es adjetivo y la otra adverbio.",
-    "de": "Vier Wortarten tragen fast jeden Satz. Ein Nomen ist ein Ding oder eine Person, davor kann ein Artikel stehen. Ein Verb sagt, was jemand tut, und seine Endung passt zum Subjekt. Ein Adjektiv sagt, wie etwas ist, steht meist nach dem Nomen und stimmt mit ihm überein. Ein Adverb sagt, wie oder wie sehr, und ändert sich nie, weil es zum Verb gehört. Manche Wörter können Adjektiv und Adverb sein, der Unterschied liegt nur darin, worauf sie sich beziehen. Bueno und bien werden oft verwechselt: das eine ist ein Adjektiv, das andere ein Adverb."
+    "es": "Cuatro clases de palabras sostienen casi todas las oraciones. El sustantivo es una cosa o una persona, y delante puede ir un artículo. El verbo dice lo que hace alguien y su terminación concuerda con el sujeto. El adjetivo dice cómo es algo, normalmente va después del sustantivo y concuerda con él. El adverbio dice cómo o cuánto y nunca cambia, porque pertenece al verbo. Algunas palabras pueden ser adjetivo y adverbio, y la diferencia es solo a qué se refieren. Las palabras para bueno y bien se confunden a menudo: una es adjetivo y la otra adverbio."
   },
   "glossary": [
     {
       "word": "mía",
       "gloss": {
-        "hu": "az enyém (nőnemű)",
-        "en": "mine (feminine)",
-        "de": "meine"
+        "en": "mine (feminine)"
       }
     },
     {
       "word": "mío",
       "gloss": {
-        "hu": "az enyém (hímnemű)",
-        "en": "mine (masculine)",
-        "de": "meiner"
+        "en": "mine (masculine)"
       }
     },
     {
       "word": "poco",
       "gloss": {
-        "hu": "keveset, kevés",
-        "en": "little, a little",
-        "de": "wenig"
+        "en": "little, a little"
       }
     },
     {
       "word": "fríamente",
       "gloss": {
-        "hu": "hidegen, ridegen (határozószó)",
         "en": "coldly (adverb)",
-        "es": "de manera fría (adverbio)",
-        "de": "kalt, kühl (Adverb)"
+        "es": "de manera fría (adverbio)"
       }
     },
     {
       "word": "rápidamente",
       "gloss": {
-        "hu": "gyorsan (határozószó)",
         "en": "quickly (adverb)",
-        "es": "de manera rápida (adverbio)",
-        "de": "schnell (Adverb)"
+        "es": "de manera rápida (adverbio)"
       }
     }
   ],
@@ -307,21 +255,17 @@
       "options": ["perro", "come"],
       "correct": 0,
       "why": {
-        "hu": "A névelő (el) után FŐNÉV áll: az, amiről beszélünk. A come ige, azt nem lehet névelőzni.",
         "en": "After an article (el) comes a NOUN, the thing you are talking about. Come is a verb, an article cannot go with it.",
-        "es": "Tras el artículo (el) va un SUSTANTIVO, la cosa de la que hablas. Come es un verbo y no lleva artículo.",
-        "de": "Nach dem Artikel (el) steht ein NOMEN, die Sache, über die du sprichst. Come ist ein Verb und bekommt keinen Artikel."
+        "es": "Tras el artículo (el) va un SUSTANTIVO, la cosa de la que hablas. Come es un verbo y no lleva artículo."
       },
       "wrong": {
         "come": {
-          "hu": "Ezzel a mondat azt jelentené, hogy El come es grande, de a come ige, nem főnév, egy névelő mögött főnév kell; helyesen: El perro es grande.",
           "en": "This would give El come es grande, but come is a verb, not a noun, and a noun is what belongs after an article; correctly: El perro es grande.",
-          "es": "Esto daría El come es grande, pero come es un verbo, no un sustantivo, y tras un artículo va un sustantivo; correctamente: El perro es grande.",
-          "de": "Das würde El come es grande ergeben, aber come ist ein Verb, kein Nomen, und nach einem Artikel steht ein Nomen; richtig: El perro es grande."
+          "es": "Esto daría El come es grande, pero come es un verbo, no un sustantivo, y tras un artículo va un sustantivo; correctamente: El perro es grande."
         }
       },
       "examples": ["El gato es pequeño.", "La casa es blanca."],
-      "tr": { "hu": "A kutya nagy.", "en": "The dog is big.", "es": "El perro es grande.", "de": "Der Hund ist groß." }
+      "tr": { "en": "The dog is big.", "es": "El perro es grande." }
     },
     {
       "id": "cp-02",
@@ -329,21 +273,17 @@
       "options": ["estudio", "estudiante"],
       "correct": 0,
       "why": {
-        "hu": "Az alany (yo) után IGE jön, az mondja meg, mit csinál: yo estudio. Az estudiante FŐNÉV (diák), az egy személy, nem cselekvés.",
         "en": "After the subject (yo) comes a VERB, saying what he/she does: yo estudio. Estudiante is a NOUN (student), a person, not an action.",
-        "es": "Tras el sujeto (yo) va un VERBO, que dice qué hace: yo estudio. Estudiante es un SUSTANTIVO (persona), no una acción.",
-        "de": "Nach dem Subjekt (yo) steht ein VERB, es sagt, was jemand tut: yo estudio. Estudiante ist ein NOMEN (Student), eine Person, keine Handlung."
+        "es": "Tras el sujeto (yo) va un VERBO, que dice qué hace: yo estudio. Estudiante es un SUSTANTIVO (persona), no una acción."
       },
       "wrong": {
         "estudiante": {
-          "hu": "Ezzel a mondat azt jelentené, hogy Yo estudiante español, de az estudiante főnév, nem ige, ide a cselekvést kifejező ige kell; helyesen: Yo estudio español.",
           "en": "This would give Yo estudiante español, but estudiante is a noun, not a verb, and the action needs a verb here; correctly: Yo estudio español.",
-          "es": "Esto daría Yo estudiante español, pero estudiante es un sustantivo, no un verbo, y aquí hace falta el verbo que exprese la acción; correctamente: Yo estudio español.",
-          "de": "Das würde Yo estudiante español ergeben, aber estudiante ist ein Nomen, kein Verb, und hier braucht es das Verb für die Handlung; richtig: Yo estudio español."
+          "es": "Esto daría Yo estudiante español, pero estudiante es un sustantivo, no un verbo, y aquí hace falta el verbo que exprese la acción; correctamente: Yo estudio español."
         }
       },
       "examples": ["Yo trabajo mucho.", "Yo soy estudiante."],
-      "tr": { "hu": "Minden nap tanulok spanyolul.", "en": "I study Spanish every day.", "es": "Yo estudio español todos los días.", "de": "Ich lerne jeden Tag Spanisch." }
+      "tr": { "en": "I study Spanish every day.", "es": "Yo estudio español todos los días." }
     },
     {
       "id": "cp-03",
@@ -351,21 +291,17 @@
       "options": ["blanca", "corre"],
       "correct": 0,
       "why": {
-        "hu": "A ser ige után itt MELLÉKNÉV kell: milyen a főnév. A corre ige.",
         "en": "After the verb ser, an ADJECTIVE is needed here: what the noun is like. Corre is a verb.",
-        "es": "Tras el verbo ser aquí hace falta un ADJETIVO: cómo es el sustantivo. Corre es un verbo.",
-        "de": "Nach dem Verb ser braucht es hier ein ADJEKTIV: wie das Nomen ist. Corre ist ein Verb."
+        "es": "Tras el verbo ser aquí hace falta un ADJETIVO: cómo es el sustantivo. Corre es un verbo."
       },
       "wrong": {
         "corre": {
-          "hu": "Ezzel a mondat azt jelentené, hogy La casa es corre, de a corre ige, a ser után tulajdonság (melléknév) kell, nem cselekvés; helyesen: La casa es blanca.",
           "en": "This would give La casa es corre, but corre is a verb, and after ser a quality (an adjective) is needed, not an action; correctly: La casa es blanca.",
-          "es": "Esto daría La casa es corre, pero corre es un verbo, y tras ser hace falta una cualidad (un adjetivo), no una acción; correctamente: La casa es blanca.",
-          "de": "Das würde La casa es corre ergeben, aber corre ist ein Verb, und nach ser braucht es eine Eigenschaft (ein Adjektiv), keine Handlung; richtig: La casa es blanca."
+          "es": "Esto daría La casa es corre, pero corre es un verbo, y tras ser hace falta una cualidad (un adjetivo), no una acción; correctamente: La casa es blanca."
         }
       },
       "examples": ["El libro es rojo.", "Mi madre es alta."],
-      "tr": { "hu": "A ház fehér.", "en": "The house is white.", "es": "La casa es blanca.", "de": "Das Haus ist weiß." }
+      "tr": { "en": "The house is white.", "es": "La casa es blanca." }
     },
     {
       "id": "cp-04",
@@ -373,21 +309,17 @@
       "options": ["bien", "buena"],
       "correct": 0,
       "why": {
-        "hu": "Az ige után HATÁROZÓSZÓ áll, az mondja meg, HOGYAN történik: canta bien = jól énekel. A bien az IGÉHEZ tartozik és sosem változik. A buena MELLÉKNÉV, az a FŐNÉVHEZ tartozik: una buena madre = jó anya. Tehát: bien + ige, buena + főnév.",
         "en": "After a verb comes an ADVERB, saying HOW it happens: canta bien = sings well. Bien belongs to the VERB and never changes. Buena is an ADJECTIVE and belongs to a NOUN: una buena madre = a good mother. So: bien + verb, buena + noun.",
-        "es": "Tras el verbo va un ADVERBIO, que dice CÓMO ocurre: canta bien. Bien acompaña al VERBO y nunca cambia. Buena es un ADJETIVO y acompaña a un SUSTANTIVO: una buena madre. Es decir: bien + verbo, buena + sustantivo.",
-        "de": "Nach dem Verb steht ein ADVERB, es sagt WIE etwas geschieht: canta bien = singt gut. Bien gehört zum VERB und ändert sich nie. Buena ist ein ADJEKTIV und gehört zu einem NOMEN: una buena madre = eine gute Mutter. Also: bien + Verb, buena + Nomen."
+        "es": "Tras el verbo va un ADVERBIO, que dice CÓMO ocurre: canta bien. Bien acompaña al VERBO y nunca cambia. Buena es un ADJETIVO y acompaña a un SUSTANTIVO: una buena madre. Es decir: bien + verbo, buena + sustantivo."
       },
       "wrong": {
         "buena": {
-          "hu": "Ezzel a mondat azt jelentené, hogy Ella canta buena, de a buena melléknév, főnevet írna le (una buena madre), az éneklés módját viszont határozószó mondja meg; helyesen: Ella canta bien.",
           "en": "This would give Ella canta buena, but buena is an adjective describing a noun (una buena madre), while the manner of singing needs an adverb; correctly: Ella canta bien.",
-          "es": "Esto daría Ella canta buena, pero buena es un adjetivo que describe a un sustantivo (una buena madre), y el modo de cantar necesita un adverbio; correctamente: Ella canta bien.",
-          "de": "Das würde Ella canta buena ergeben, aber buena ist ein Adjektiv, das ein Nomen beschreibt (una buena madre), während die Art des Singens ein Adverb braucht; richtig: Ella canta bien."
+          "es": "Esto daría Ella canta buena, pero buena es un adjetivo que describe a un sustantivo (una buena madre), y el modo de cantar necesita un adverbio; correctamente: Ella canta bien."
         }
       },
       "examples": ["Ella canta bien.", "Ella es una buena madre."],
-      "tr": { "hu": "Ő jól énekel.", "en": "She sings well.", "es": "Ella canta bien.", "de": "Sie singt gut." }
+      "tr": { "en": "She sings well.", "es": "Ella canta bien." }
     },
     {
       "id": "cp-05",
@@ -395,21 +327,17 @@
       "options": ["mesa", "comer"],
       "correct": 0,
       "why": {
-        "hu": "A birtokos névmás (mi) is FŐNEVET vezet be, ugyanúgy, mint a névelő.",
         "en": "A possessive (mi) introduces a NOUN too, just like an article does.",
-        "es": "El posesivo (mi) también introduce un SUSTANTIVO, igual que el artículo.",
-        "de": "Auch das Possessiv (mi) leitet ein NOMEN ein, genau wie der Artikel."
+        "es": "El posesivo (mi) también introduce un SUSTANTIVO, igual que el artículo."
       },
       "wrong": {
         "comer": {
-          "hu": "Ezzel a mondat azt jelentené, hogy Mi comer es vieja, de a comer főnévi igenév, ige-alak, a birtokos (mi) után viszont főnév áll; helyesen: Mi mesa es vieja.",
           "en": "This would give Mi comer es vieja, but comer is an infinitive, a verb form, while after a possessive (mi) comes a noun; correctly: Mi mesa es vieja.",
-          "es": "Esto daría Mi comer es vieja, pero comer es un infinitivo, una forma verbal, y tras el posesivo (mi) va un sustantivo; correctamente: Mi mesa es vieja.",
-          "de": "Das würde Mi comer es vieja ergeben, aber comer ist ein Infinitiv, eine Verbform, während nach dem Possessiv (mi) ein Nomen steht; richtig: Mi mesa es vieja."
+          "es": "Esto daría Mi comer es vieja, pero comer es un infinitivo, una forma verbal, y tras el posesivo (mi) va un sustantivo; correctamente: Mi mesa es vieja."
         }
       },
       "examples": ["Mi casa es grande.", "Mi libro es nuevo."],
-      "tr": { "hu": "Az asztalom régi.", "en": "My table is old.", "es": "Mi mesa es vieja.", "de": "Mein Tisch ist alt." }
+      "tr": { "en": "My table is old.", "es": "Mi mesa es vieja." }
     },
     {
       "id": "cp-06",
@@ -417,21 +345,17 @@
       "options": ["vivimos", "grande"],
       "correct": 0,
       "why": {
-        "hu": "Az alany után IGE kell, és a végződése (-mos) az alanyhoz igazodik.",
         "en": "The subject needs a VERB after it, and its ending (-mos) matches the subject.",
-        "es": "Tras el sujeto hace falta un VERBO, y su terminación (-mos) concuerda con él.",
-        "de": "Nach dem Subjekt braucht es ein VERB, dessen Endung (-mos) zum Subjekt passt."
+        "es": "Tras el sujeto hace falta un VERBO, y su terminación (-mos) concuerda con él."
       },
       "wrong": {
         "grande": {
-          "hu": "Ezzel a mondat azt jelentené, hogy Nosotros grande en la ciudad, de a grande melléknév, nem ragozódik személyhez, itt viszont ragozott ige kell; helyesen: Nosotros vivimos en la ciudad.",
           "en": "This would give Nosotros grande en la ciudad, but grande is an adjective, it does not conjugate for a person, and a conjugated verb is needed here; correctly: Nosotros vivimos en la ciudad.",
-          "es": "Esto daría Nosotros grande en la ciudad, pero grande es un adjetivo, no se conjuga según la persona, y aquí hace falta un verbo conjugado; correctamente: Nosotros vivimos en la ciudad.",
-          "de": "Das würde Nosotros grande en la ciudad ergeben, aber grande ist ein Adjektiv, es konjugiert nicht nach der Person, und hier braucht es ein konjugiertes Verb; richtig: Nosotros vivimos en la ciudad."
+          "es": "Esto daría Nosotros grande en la ciudad, pero grande es un adjetivo, no se conjuga según la persona, y aquí hace falta un verbo conjugado; correctamente: Nosotros vivimos en la ciudad."
         }
       },
       "examples": ["Nosotros comemos aquí.", "Ellos trabajan hoy."],
-      "tr": { "hu": "Mi a városban élünk.", "en": "We live in the city.", "es": "Nosotros vivimos en la ciudad.", "de": "Wir wohnen in der Stadt." }
+      "tr": { "en": "We live in the city.", "es": "Nosotros vivimos en la ciudad." }
     },
     {
       "id": "cp-07",
@@ -439,21 +363,17 @@
       "options": ["frío", "fríamente"],
       "correct": 0,
       "why": {
-        "hu": "Az estar után itt MELLÉKNÉV áll, az mondja meg, milyen most a kávé: está frío. A -mente végű szó HATÁROZÓSZÓ, az ige MÓDJÁRÓL szól, nem a dolog tulajdonságáról.",
         "en": "After estar, an ADJECTIVE fits here, saying what the coffee is like right now: está frío. A word ending in -mente is an ADVERB: it describes HOW an action is done, not a quality of the thing.",
-        "es": "Tras estar aquí va un ADJETIVO, que dice cómo está el café ahora: está frío. Una palabra en -mente es un ADVERBIO: describe CÓMO se hace algo, no una cualidad de la cosa.",
-        "de": "Nach estar steht hier ein ADJEKTIV, es sagt, wie der Kaffee gerade ist: está frío. Ein Wort auf -mente ist ein ADVERB: Es beschreibt, WIE etwas getan wird, nicht eine Eigenschaft der Sache."
+        "es": "Tras estar aquí va un ADJETIVO, que dice cómo está el café ahora: está frío. Una palabra en -mente es un ADVERBIO: describe CÓMO se hace algo, no una cualidad de la cosa."
       },
       "wrong": {
         "fríamente": {
-          "hu": "Ezzel a mondat azt jelentené, hogy El café está fríamente, de a -mente végű fríamente határozószó, az igéhez tartozik (hogyan történik), a café milyenségét viszont melléknév mondja meg; helyesen: El café está frío.",
           "en": "This would give El café está fríamente, but the -mente word fríamente is an adverb, belonging to a verb (how something is done), while what the coffee is like needs an adjective; correctly: El café está frío.",
-          "es": "Esto daría El café está fríamente, pero la palabra en -mente, fríamente, es un adverbio y acompaña a un verbo (cómo se hace algo), mientras que cómo es el café lo dice un adjetivo; correctamente: El café está frío.",
-          "de": "Das würde El café está fríamente ergeben, aber das Wort auf -mente, fríamente, ist ein Adverb und gehört zu einem Verb (wie etwas getan wird), während die Beschaffenheit des Kaffees ein Adjektiv braucht; richtig: El café está frío."
+          "es": "Esto daría El café está fríamente, pero la palabra en -mente, fríamente, es un adverbio y acompaña a un verbo (cómo se hace algo), mientras que cómo es el café lo dice un adjetivo; correctamente: El café está frío."
         }
       },
       "examples": ["El agua está fría.", "La sopa está caliente."],
-      "tr": { "hu": "A kávé hideg.", "en": "The coffee is cold.", "es": "El café está frío.", "de": "Der Kaffee ist kalt." }
+      "tr": { "en": "The coffee is cold.", "es": "El café está frío." }
     },
     {
       "id": "cp-08",
@@ -461,21 +381,17 @@
       "options": ["Hoy", "Día"],
       "correct": 0,
       "why": {
-        "hu": "A hoy HATÁROZÓSZÓ (ma), és magában megállja a helyét a mondat elején: Hoy leo un libro. Megmondja, MIKOR történik.",
         "en": "Hoy is an ADVERB (today) and can stand alone at the front of the sentence: Hoy leo un libro. It says WHEN it happens.",
-        "es": "Hoy es un ADVERBIO y puede ir solo al principio: Hoy leo un libro. Dice CUÁNDO ocurre.",
-        "de": "Hoy ist ein ADVERB (heute) und kann allein am Satzanfang stehen: Hoy leo un libro. Es sagt, WANN etwas geschieht."
+        "es": "Hoy es un ADVERBIO y puede ir solo al principio: Hoy leo un libro. Dice CUÁNDO ocurre."
       },
       "wrong": {
         "Día": {
-          "hu": "Ezzel a mondat azt jelentené, hogy Día leo un libro, de a día főnév, önmagában névelő vagy elöljáró nélkül nem állhat itt, az időpontot viszont határozószó fejezi ki; helyesen: Hoy leo un libro.",
           "en": "This would give Día leo un libro, but día is a noun, it cannot stand here alone without an article or preposition, while the time is expressed by an adverb; correctly: Hoy leo un libro.",
-          "es": "Esto daría Día leo un libro, pero día es un sustantivo, no puede ir aquí solo sin artículo o preposición, mientras que el momento lo expresa un adverbio; correctamente: Hoy leo un libro.",
-          "de": "Das würde Día leo un libro ergeben, aber día ist ein Nomen, es kann hier nicht allein ohne Artikel oder Präposition stehen, während der Zeitpunkt durch ein Adverb ausgedrückt wird; richtig: Hoy leo un libro."
+          "es": "Esto daría Día leo un libro, pero día es un sustantivo, no puede ir aquí solo sin artículo o preposición, mientras que el momento lo expresa un adverbio; correctamente: Hoy leo un libro."
         }
       },
       "examples": ["Hoy trabajo en casa.", "Cada día leo un libro."],
-      "tr": { "hu": "Ma olvasok egy könyvet.", "en": "Today I am reading a book.", "es": "Hoy leo un libro.", "de": "Heute lese ich ein Buch." }
+      "tr": { "en": "Today I am reading a book.", "es": "Hoy leo un libro." }
     },
     {
       "id": "cp-09",
@@ -483,21 +399,17 @@
       "options": ["pequeño", "siempre"],
       "correct": 0,
       "why": {
-        "hu": "A MELLÉKNÉV a spanyolban általában a főnév UTÁN áll, és vele egyezik nemben és számban.",
         "en": "In Spanish the ADJECTIVE usually goes AFTER the noun and agrees with it in gender and number.",
-        "es": "En español el ADJETIVO normalmente va DETRÁS del sustantivo y concuerda con él.",
-        "de": "Im Spanischen steht das ADJEKTIV meist NACH dem Nomen und richtet sich nach ihm."
+        "es": "En español el ADJETIVO normalmente va DETRÁS del sustantivo y concuerda con él."
       },
       "wrong": {
         "siempre": {
-          "hu": "Ezzel a mondat azt jelentené, hogy Tengo un gato siempre, de a siempre határozószó, az igéhez tartozik, a gato milyenségét viszont melléknév írja le; helyesen: Tengo un gato pequeño.",
           "en": "This would give Tengo un gato siempre, but siempre is an adverb, it belongs to the verb, while what the cat is like is described by an adjective; correctly: Tengo un gato pequeño.",
-          "es": "Esto daría Tengo un gato siempre, pero siempre es un adverbio, acompaña al verbo, mientras que cómo es el gato lo describe un adjetivo; correctamente: Tengo un gato pequeño.",
-          "de": "Das würde Tengo un gato siempre ergeben, aber siempre ist ein Adverb, es gehört zum Verb, während die Beschaffenheit der Katze ein Adjektiv beschreibt; richtig: Tengo un gato pequeño."
+          "es": "Esto daría Tengo un gato siempre, pero siempre es un adverbio, acompaña al verbo, mientras que cómo es el gato lo describe un adjetivo; correctamente: Tengo un gato pequeño."
         }
       },
       "examples": ["Tengo un libro nuevo.", "Es una casa blanca."],
-      "tr": { "hu": "Van egy kis macskám.", "en": "I have a small cat.", "es": "Tengo un gato pequeño.", "de": "Ich habe eine kleine Katze." }
+      "tr": { "en": "I have a small cat.", "es": "Tengo un gato pequeño." }
     },
     {
       "id": "cp-10",
@@ -505,21 +417,17 @@
       "options": ["beber", "bebo"],
       "correct": 0,
       "why": {
-        "hu": "A quiero (akarok) után a második ige FŐNÉVI IGENÉV marad (-ar, -er, -ir), nem ragozódik.",
         "en": "After quiero (I want) the second verb stays an INFINITIVE (-ar, -er, -ir), it is not conjugated.",
-        "es": "Tras quiero el segundo verbo queda en INFINITIVO (-ar, -er, -ir), sin conjugar.",
-        "de": "Nach quiero bleibt das zweite Verb im INFINITIV (-ar, -er, -ir), unkonjugiert."
+        "es": "Tras quiero el segundo verbo queda en INFINITIVO (-ar, -er, -ir), sin conjugar."
       },
       "wrong": {
         "bebo": {
-          "hu": "Ezzel a mondat azt jelentené, hogy Quiero bebo agua, de a bebo már ragozott alak, a quiero után nem jöhet másik ragozott ige, a második főnévi igenévben marad; helyesen: Quiero beber agua.",
           "en": "This would give Quiero bebo agua, but bebo is already conjugated, quiero cannot be followed by another conjugated verb, the second stays an infinitive; correctly: Quiero beber agua.",
-          "es": "Esto daría Quiero bebo agua, pero bebo ya está conjugado, tras quiero no va otro verbo conjugado, el segundo queda en infinitivo; correctamente: Quiero beber agua.",
-          "de": "Das würde Quiero bebo agua ergeben, aber bebo ist schon konjugiert, nach quiero steht kein zweites konjugiertes Verb, das zweite bleibt im Infinitiv; richtig: Quiero beber agua."
+          "es": "Esto daría Quiero bebo agua, pero bebo ya está conjugado, tras quiero no va otro verbo conjugado, el segundo queda en infinitivo; correctamente: Quiero beber agua."
         }
       },
       "examples": ["Quiero comer.", "Necesito trabajar."],
-      "tr": { "hu": "Vizet akarok inni.", "en": "I want to drink water.", "es": "Quiero beber agua.", "de": "Ich möchte Wasser trinken." }
+      "tr": { "en": "I want to drink water.", "es": "Quiero beber agua." }
     },
     {
       "id": "cp-11",
@@ -527,21 +435,17 @@
       "options": ["mucho", "grande"],
       "correct": 0,
       "why": {
-        "hu": "A HATÁROZÓSZÓ mennyiséget is mondhat az igéről: mennyit dolgozik.",
         "en": "An ADVERB can also state a quantity about the verb: how much she works.",
-        "es": "El ADVERBIO también puede indicar cantidad sobre el verbo: cuánto trabaja.",
-        "de": "Ein ADVERB kann auch eine Menge zum Verb angeben: wie viel sie arbeitet."
+        "es": "El ADVERBIO también puede indicar cantidad sobre el verbo: cuánto trabaja."
       },
       "wrong": {
         "grande": {
-          "hu": "Ezzel a mondat azt jelentené, hogy Mi madre trabaja grande, de a grande melléknév, egy főnév tulajdonságát írná le, az ige mértékét viszont határozószó mondja meg; helyesen: Mi madre trabaja mucho.",
           "en": "This would give Mi madre trabaja grande, but grande is an adjective, it would describe a noun's quality, while the extent of the verb is stated by an adverb; correctly: Mi madre trabaja mucho.",
-          "es": "Esto daría Mi madre trabaja grande, pero grande es un adjetivo, describiría la cualidad de un sustantivo, mientras que la medida del verbo la dice un adverbio; correctamente: Mi madre trabaja mucho.",
-          "de": "Das würde Mi madre trabaja grande ergeben, aber grande ist ein Adjektiv, es würde die Eigenschaft eines Nomens beschreiben, während das Ausmaß des Verbs ein Adverb angibt; richtig: Mi madre trabaja mucho."
+          "es": "Esto daría Mi madre trabaja grande, pero grande es un adjetivo, describiría la cualidad de un sustantivo, mientras que la medida del verbo la dice un adverbio; correctamente: Mi madre trabaja mucho."
         }
       },
       "examples": ["Ella habla mucho.", "Yo como poco."],
-      "tr": { "hu": "Az anyám sokat dolgozik.", "en": "My mother works a lot.", "es": "Mi madre trabaja mucho.", "de": "Meine Mutter arbeitet viel." }
+      "tr": { "en": "My mother works a lot.", "es": "Mi madre trabaja mucho." }
     },
     {
       "id": "cp-12",
@@ -549,21 +453,17 @@
       "options": ["casa", "vive"],
       "correct": 0,
       "why": {
-        "hu": "A névelő és a melléknév közé FŐNÉV kerül: a névelő és a jelző ugyanarra a szóra mutat.",
         "en": "A NOUN goes between the article and the adjective: both point at the same word.",
-        "es": "Entre el artículo y el adjetivo va un SUSTANTIVO: ambos señalan la misma palabra.",
-        "de": "Zwischen Artikel und Adjektiv steht ein NOMEN: beide zeigen auf dasselbe Wort."
+        "es": "Entre el artículo y el adjetivo va un SUSTANTIVO: ambos señalan la misma palabra."
       },
       "wrong": {
         "vive": {
-          "hu": "Ezzel a mondat azt jelentené, hogy La vive blanca es mía, de a vive ige, nem állhat névelő és melléknév közt, oda főnév kerül; helyesen: La casa blanca es mía.",
           "en": "This would give La vive blanca es mía, but vive is a verb, it cannot sit between an article and an adjective, a noun belongs there; correctly: La casa blanca es mía.",
-          "es": "Esto daría La vive blanca es mía, pero vive es un verbo, no puede ir entre artículo y adjetivo, ahí va un sustantivo; correctamente: La casa blanca es mía.",
-          "de": "Das würde La vive blanca es mía ergeben, aber vive ist ein Verb, es kann nicht zwischen Artikel und Adjektiv stehen, dort steht ein Nomen; richtig: La casa blanca es mía."
+          "es": "Esto daría La vive blanca es mía, pero vive es un verbo, no puede ir entre artículo y adjetivo, ahí va un sustantivo; correctamente: La casa blanca es mía."
         }
       },
       "examples": ["La mesa nueva es grande.", "El gato negro es mío."],
-      "tr": { "hu": "A fehér ház az enyém.", "en": "The white house is mine.", "es": "La casa blanca es mía.", "de": "Das weiße Haus gehört mir." }
+      "tr": { "en": "The white house is mine.", "es": "La casa blanca es mía." }
     },
     {
       "id": "cp-13",
@@ -572,27 +472,21 @@
       "target": "verb",
       "answer": "come",
       "why": {
-        "hu": "Az IGE a cselekvés: come (eszik). Ez mondja meg, mit csinál a hermana. A mondat többi szava személy (hermana), névelő (una) vagy dolog (manzana).",
         "en": "The VERB is the action: come (eats). It says what the hermana does. The other words are a person (hermana), an article (una) and a thing (manzana).",
-        "es": "El VERBO es la acción: come. Dice qué hace la hermana. Las demás palabras son persona (hermana), artículo (una) y cosa (manzana).",
-        "de": "Das VERB ist die Handlung: come (isst). Es sagt, was die hermana tut. Die anderen Wörter sind Person (hermana), Artikel (una) und Sache (manzana)."
+        "es": "El VERBO es la acción: come. Dice qué hace la hermana. Las demás palabras son persona (hermana), artículo (una) y cosa (manzana)."
       },
       "wrong": {
         "hermana": {
-          "hu": "Ha erre koppintasz, a hermana szót jelölöd meg, de az FŐNÉV, a személy, aki cselekszik; a keresett IGE, a cselekvés maga: come.",
           "en": "Tapping here marks hermana, but that is a NOUN, the person who acts; the VERB you are looking for, the action itself, is come.",
-          "es": "Si tocas aquí, marcas hermana, pero eso es un SUSTANTIVO, la persona que actúa; el VERBO buscado, la acción misma, es come.",
-          "de": "Tippst du hier, markierst du hermana, aber das ist ein NOMEN, die Person, die handelt; das gesuchte VERB, die Handlung selbst, ist come."
+          "es": "Si tocas aquí, marcas hermana, pero eso es un SUSTANTIVO, la persona que actúa; el VERBO buscado, la acción misma, es come."
         },
         "manzana": {
-          "hu": "Ha erre koppintasz, a manzana szót jelölöd meg, de az FŐNÉV, a dolog, amit megesznek; a keresett IGE maga a cselekvés: come.",
           "en": "Tapping here marks manzana, but that is a NOUN, the thing being eaten; the VERB you are looking for is the action itself: come.",
-          "es": "Si tocas aquí, marcas manzana, pero eso es un SUSTANTIVO, la cosa que se come; el VERBO buscado es la acción misma: come.",
-          "de": "Tippst du hier, markierst du manzana, aber das ist ein NOMEN, die Sache, die gegessen wird; das gesuchte VERB ist die Handlung selbst: come."
+          "es": "Si tocas aquí, marcas manzana, pero eso es un SUSTANTIVO, la cosa que se come; el VERBO buscado es la acción misma: come."
         }
       },
       "examples": ["Mi padre bebe agua.", "El niño lee un libro."],
-      "tr": { "hu": "A nővérem almát eszik.", "en": "My sister eats an apple.", "es": "Mi hermana come una manzana.", "de": "Meine Schwester isst einen Apfel." }
+      "tr": { "en": "My sister eats an apple.", "es": "Mi hermana come una manzana." }
     },
     {
       "id": "cp-14",
@@ -601,27 +495,21 @@
       "target": "adjective",
       "answer": "grande",
       "why": {
-        "hu": "A MELLÉKNÉV azt mondja meg, MILYEN a főnév: perro grande. A spanyolban általában a főnév UTÁN áll.",
         "en": "The ADJECTIVE says WHAT the noun is like: perro grande. In Spanish it usually comes AFTER the noun.",
-        "es": "El ADJETIVO dice CÓMO es el sustantivo: perro grande. En español normalmente va DESPUÉS del sustantivo.",
-        "de": "Das ADJEKTIV sagt, WIE das Nomen ist: perro grande. Im Spanischen steht es meist NACH dem Nomen."
+        "es": "El ADJETIVO dice CÓMO es el sustantivo: perro grande. En español normalmente va DESPUÉS del sustantivo."
       },
       "wrong": {
         "corre": {
-          "hu": "Ha erre koppintasz, a corre szót jelölöd meg, de az IGE, cselekvést fejez ki; a keresett MELLÉKNÉV egy tulajdonságot mond: grande.",
           "en": "Tapping here marks corre, but that is a VERB, expressing an action; the ADJECTIVE you are looking for names a quality: grande.",
-          "es": "Si tocas aquí, marcas corre, pero eso es un VERBO, expresa una acción; el ADJETIVO buscado nombra una cualidad: grande.",
-          "de": "Tippst du hier, markierst du corre, aber das ist ein VERB, es drückt eine Handlung aus; das gesuchte ADJEKTIV nennt eine Eigenschaft: grande."
+          "es": "Si tocas aquí, marcas corre, pero eso es un VERBO, expresa una acción; el ADJETIVO buscado nombra una cualidad: grande."
         },
         "perro": {
-          "hu": "Ha erre koppintasz, a perro szót jelölöd meg, de az FŐNÉV, maga a dolog; a keresett MELLÉKNÉV az, ami leírja: grande.",
           "en": "Tapping here marks perro, but that is a NOUN, the thing itself; the ADJECTIVE you are looking for is what describes it: grande.",
-          "es": "Si tocas aquí, marcas perro, pero eso es un SUSTANTIVO, la cosa misma; el ADJETIVO buscado es lo que la describe: grande.",
-          "de": "Tippst du hier, markierst du perro, aber das ist ein NOMEN, die Sache selbst; das gesuchte ADJEKTIV beschreibt sie: grande."
+          "es": "Si tocas aquí, marcas perro, pero eso es un SUSTANTIVO, la cosa misma; el ADJETIVO buscado es lo que la describe: grande."
         }
       },
       "examples": ["La casa blanca es mía.", "Tengo un gato pequeño."],
-      "tr": { "hu": "A nagy kutya fut a parkban.", "en": "The big dog runs in the park.", "es": "El perro grande corre en el parque.", "de": "Der große Hund rennt im Park." }
+      "tr": { "en": "The big dog runs in the park.", "es": "El perro grande corre en el parque." }
     },
     {
       "id": "cp-15",
@@ -630,27 +518,21 @@
       "target": "adverb",
       "answer": "mucho",
       "why": {
-        "hu": "A HATÁROZÓSZÓ az igéhez tartozik, és azt mondja meg, HOGYAN vagy MENNYIT: trabaja mucho. Sosem változik nemben és számban.",
         "en": "The ADVERB belongs to the verb and says HOW or HOW MUCH: trabaja mucho. It never changes for gender or number.",
-        "es": "El ADVERBIO acompaña al verbo y dice CÓMO o CUÁNTO: trabaja mucho. Nunca cambia de género ni de número.",
-        "de": "Das ADVERB gehört zum Verb und sagt WIE oder WIE VIEL: trabaja mucho. Es ändert sich nie nach Geschlecht oder Zahl."
+        "es": "El ADVERBIO acompaña al verbo y dice CÓMO o CUÁNTO: trabaja mucho. Nunca cambia de género ni de número."
       },
       "wrong": {
         "trabaja": {
-          "hu": "Ha erre koppintasz, a trabaja szót jelölöd meg, de az IGE, maga a cselekvés; a keresett HATÁROZÓSZÓ azt pontosítja, mennyit: mucho.",
           "en": "Tapping here marks trabaja, but that is the VERB, the action itself; the ADVERB you are looking for qualifies it, saying how much: mucho.",
-          "es": "Si tocas aquí, marcas trabaja, pero eso es el VERBO, la acción misma; el ADVERBIO buscado lo matiza, dice cuánto: mucho.",
-          "de": "Tippst du hier, markierst du trabaja, aber das ist das VERB, die Handlung selbst; das gesuchte ADVERB ergänzt es und sagt wie viel: mucho."
+          "es": "Si tocas aquí, marcas trabaja, pero eso es el VERBO, la acción misma; el ADVERBIO buscado lo matiza, dice cuánto: mucho."
         },
         "padre": {
-          "hu": "Ha erre koppintasz, a padre szót jelölöd meg, de az FŐNÉV, a személy, aki dolgozik; a keresett HATÁROZÓSZÓ az igéhez tartozik: mucho.",
           "en": "Tapping here marks padre, but that is a NOUN, the person who works; the ADVERB you are looking for belongs to the verb: mucho.",
-          "es": "Si tocas aquí, marcas padre, pero eso es un SUSTANTIVO, la persona que trabaja; el ADVERBIO buscado acompaña al verbo: mucho.",
-          "de": "Tippst du hier, markierst du padre, aber das ist ein NOMEN, die Person, die arbeitet; das gesuchte ADVERB gehört zum Verb: mucho."
+          "es": "Si tocas aquí, marcas padre, pero eso es un SUSTANTIVO, la persona que trabaja; el ADVERBIO buscado acompaña al verbo: mucho."
         }
       },
       "examples": ["Ella canta bien.", "Nosotros hablamos poco."],
-      "tr": { "hu": "Az apám sokat dolgozik.", "en": "My father works a lot.", "es": "Mi padre trabaja mucho.", "de": "Mein Vater arbeitet viel." }
+      "tr": { "en": "My father works a lot.", "es": "Mi padre trabaja mucho." }
     },
     {
       "id": "cp-16",
@@ -659,21 +541,17 @@
       "target": "article",
       "answer": "Los",
       "why": {
-        "hu": "A NÉVELŐ a főnév előtt áll, és megmutatja a nemét és a számát: los niños = hímnem, többes szám. A pan itt névelő nélkül áll, mert általánosságban beszélünk róla.",
         "en": "The ARTICLE stands before the noun and shows its gender and number: los niños = masculine plural. Pan has no article here because we mean it in general.",
-        "es": "El ARTÍCULO va delante del sustantivo y muestra género y número: los niños = masculino plural. Pan va sin artículo porque se habla en general.",
-        "de": "Der ARTIKEL steht vor dem Nomen und zeigt Geschlecht und Zahl: los niños = maskulin Plural. Pan steht hier ohne Artikel, weil es allgemein gemeint ist."
+        "es": "El ARTÍCULO va delante del sustantivo y muestra género y número: los niños = masculino plural. Pan va sin artículo porque se habla en general."
       },
       "wrong": {
         "niños": {
-          "hu": "Ha erre koppintasz, a niños szót jelölöd meg, de az FŐNÉV; a keresett NÉVELŐ a rövid szó előtte, ami a nemét és számát mutatja: los.",
           "en": "Tapping here marks niños, but that is the NOUN; the ARTICLE you are looking for is the short word before it, showing gender and number: los.",
-          "es": "Si tocas aquí, marcas niños, pero eso es el SUSTANTIVO; el ARTÍCULO buscado es la palabra corta que va delante, y muestra género y número: los.",
-          "de": "Tippst du hier, markierst du niños, aber das ist das NOMEN; der gesuchte ARTIKEL ist das kurze Wort davor, das Geschlecht und Zahl zeigt: los."
+          "es": "Si tocas aquí, marcas niños, pero eso es el SUSTANTIVO; el ARTÍCULO buscado es la palabra corta que va delante, y muestra género y número: los."
         }
       },
       "examples": ["La casa es grande.", "El perro come."],
-      "tr": { "hu": "A gyerekek kenyeret esznek.", "en": "The children eat bread.", "es": "Los niños comen pan.", "de": "Die Kinder essen Brot." }
+      "tr": { "en": "The children eat bread.", "es": "Los niños comen pan." }
     },
     {
       "id": "cp-match-01",
@@ -788,27 +666,23 @@
       "kind": "why",
       "es": "El perro corre en el parque.",
       "target": "perro",
-      "tr": { "hu": "A kutya fut a parkban.", "en": "The dog runs in the park.", "es": "El perro corre en el parque.", "de": "Der Hund läuft im Park." },
+      "tr": { "en": "The dog runs in the park.", "es": "El perro corre en el parque." },
       "options": [
         {
-          "text": { "hu": "IGE: ragozódik a személyhez", "en": "VERB: conjugates for the subject", "es": "VERBO: se conjuga según el sujeto", "de": "VERB: konjugiert nach dem Subjekt" },
+          "text": { "en": "VERB: conjugates for the subject", "es": "VERBO: se conjuga según el sujeto" },
           "wrong": {
-            "hu": "A perro nem ragozódik és nem fejez ki cselekvést, ez a corre szóra igaz, nem a perro-ra.",
             "en": "Perro does not conjugate and expresses no action, that is true of corre, not of perro.",
-            "es": "Perro no se conjuga ni expresa una acción, eso es cierto de corre, no de perro.",
-            "de": "Perro wird nicht konjugiert und drückt keine Handlung aus, das gilt für corre, nicht für perro."
+            "es": "Perro no se conjuga ni expresa una acción, eso es cierto de corre, no de perro."
           }
         },
         {
-          "text": { "hu": "FŐNÉV: névelő állhat előtte", "en": "NOUN: an article can go before it", "es": "SUSTANTIVO: puede llevar artículo delante", "de": "NOMEN: ein Artikel kann davorstehen" }
+          "text": { "en": "NOUN: an article can go before it", "es": "SUSTANTIVO: puede llevar artículo delante" }
         },
         {
-          "text": { "hu": "MELLÉKNÉV: egyezik a főnévvel", "en": "ADJECTIVE: agrees with the noun", "es": "ADJETIVO: concuerda con el sustantivo", "de": "ADJEKTIV: stimmt mit dem Nomen überein" },
+          "text": { "en": "ADJECTIVE: agrees with the noun", "es": "ADJETIVO: concuerda con el sustantivo" },
           "wrong": {
-            "hu": "A perro maga a főnév, nem igazodik másik szóhoz; egy melléknév, mint grande, igazodna hozzá.",
             "en": "Perro is itself the noun, it does not adapt to another word; an adjective like grande would adapt to it.",
-            "es": "Perro es el propio sustantivo, no se adapta a otra palabra; un adjetivo como grande se adaptaría a él.",
-            "de": "Perro ist selbst das Nomen, es richtet sich nicht nach einem anderen Wort; ein Adjektiv wie grande würde sich nach ihm richten."
+            "es": "Perro es el propio sustantivo, no se adapta a otra palabra; un adjetivo como grande se adaptaría a él."
           }
         }
       ],
@@ -819,27 +693,23 @@
       "kind": "why",
       "es": "Mi hermano trabaja mucho.",
       "target": "mucho",
-      "tr": { "hu": "A testvérem sokat dolgozik.", "en": "My brother works a lot.", "es": "Mi hermano trabaja mucho.", "de": "Mein Bruder arbeitet viel." },
+      "tr": { "en": "My brother works a lot.", "es": "Mi hermano trabaja mucho." },
       "options": [
         {
-          "text": { "hu": "MELLÉKNÉV: egyezik a főnévvel", "en": "ADJECTIVE: agrees with the noun", "es": "ADJETIVO: concuerda con el sustantivo", "de": "ADJEKTIV: stimmt mit dem Nomen überein" },
+          "text": { "en": "ADJECTIVE: agrees with the noun", "es": "ADJETIVO: concuerda con el sustantivo" },
           "wrong": {
-            "hu": "A mucho itt nem egyezik semmivel, nem is főnévhez tartozik, hanem az igéhez: azt mondja meg, mennyit.",
             "en": "Mucho here agrees with nothing and does not belong to a noun, but to the verb: it says how much.",
-            "es": "Mucho aquí no concuerda con nada ni acompaña a un sustantivo, sino al verbo: dice cuánto.",
-            "de": "Mucho stimmt hier mit nichts überein und gehört nicht zu einem Nomen, sondern zum Verb: es sagt wie viel."
+            "es": "Mucho aquí no concuerda con nada ni acompaña a un sustantivo, sino al verbo: dice cuánto."
           }
         },
         {
-          "text": { "hu": "HATÁROZÓSZÓ: sosem változik, az igéhez tartozik", "en": "ADVERB: never changes, belongs to the verb", "es": "ADVERBIO: nunca cambia, acompaña al verbo", "de": "ADVERB: ändert sich nie, gehört zum Verb" }
+          "text": { "en": "ADVERB: never changes, belongs to the verb", "es": "ADVERBIO: nunca cambia, acompaña al verbo" }
         },
         {
-          "text": { "hu": "FŐNÉV: névelő állhat előtte", "en": "NOUN: an article can go before it", "es": "SUSTANTIVO: puede llevar artículo delante", "de": "NOMEN: ein Artikel kann davorstehen" },
+          "text": { "en": "NOUN: an article can go before it", "es": "SUSTANTIVO: puede llevar artículo delante" },
           "wrong": {
-            "hu": "A mucho nem főnév, nem is áll névelő előtte; a hermano a mondat főneve.",
             "en": "Mucho is not a noun, and no article stands before it; hermano is the noun in the sentence.",
-            "es": "Mucho no es un sustantivo, y no lleva artículo delante; hermano es el sustantivo de la frase.",
-            "de": "Mucho ist kein Nomen, und es steht kein Artikel davor; hermano ist das Nomen im Satz."
+            "es": "Mucho no es un sustantivo, y no lleva artículo delante; hermano es el sustantivo de la frase."
           }
         }
       ],
@@ -850,27 +720,23 @@
       "kind": "why",
       "es": "El café está muy frío.",
       "target": "frío",
-      "tr": { "hu": "A kávé nagyon hideg.", "en": "The coffee is very cold.", "es": "El café está muy frío.", "de": "Der Kaffee ist sehr kalt." },
+      "tr": { "en": "The coffee is very cold.", "es": "El café está muy frío." },
       "options": [
         {
-          "text": { "hu": "IGE: ragozódik a személyhez", "en": "VERB: conjugates for the subject", "es": "VERBO: se conjuga según el sujeto", "de": "VERB: konjugiert nach dem Subjekt" },
+          "text": { "en": "VERB: conjugates for the subject", "es": "VERBO: se conjuga según el sujeto" },
           "wrong": {
-            "hu": "A frío nem ragozódik személy szerint, ez az está igére igaz, nem a frío-ra.",
             "en": "Frío does not conjugate for a person, that is true of está, not of frío.",
-            "es": "Frío no se conjuga según la persona, eso es cierto de está, no de frío.",
-            "de": "Frío wird nicht nach Person konjugiert, das gilt für está, nicht für frío."
+            "es": "Frío no se conjuga según la persona, eso es cierto de está, no de frío."
           }
         },
         {
-          "text": { "hu": "MELLÉKNÉV: egyezik a főnévvel", "en": "ADJECTIVE: agrees with the noun", "es": "ADJETIVO: concuerda con el sustantivo", "de": "ADJEKTIV: stimmt mit dem Nomen überein" }
+          "text": { "en": "ADJECTIVE: agrees with the noun", "es": "ADJETIVO: concuerda con el sustantivo" }
         },
         {
-          "text": { "hu": "HATÁROZÓSZÓ: sosem változik, az igéhez tartozik", "en": "ADVERB: never changes, belongs to the verb", "es": "ADVERBIO: nunca cambia, acompaña al verbo", "de": "ADVERB: ändert sich nie, gehört zum Verb" },
+          "text": { "en": "ADVERB: never changes, belongs to the verb", "es": "ADVERBIO: nunca cambia, acompaña al verbo" },
           "wrong": {
-            "hu": "A frío változik nemben és számban (fría, fríos, frías), egy határozószó viszont sosem; ezért nem lehet határozószó.",
             "en": "Frío changes for gender and number (fría, fríos, frías), an adverb never does; so it cannot be an adverb.",
-            "es": "Frío cambia de género y número (fría, fríos, frías), un adverbio nunca lo hace; por eso no puede ser adverbio.",
-            "de": "Frío ändert sich nach Genus und Zahl (fría, fríos, frías), ein Adverb nie; deshalb kann es kein Adverb sein."
+            "es": "Frío cambia de género y número (fría, fríos, frías), un adverbio nunca lo hace; por eso no puede ser adverbio."
           }
         }
       ],
@@ -881,27 +747,23 @@
       "kind": "why",
       "es": "Ella habla rápidamente.",
       "target": "rápidamente",
-      "tr": { "hu": "Gyorsan beszél.", "en": "She speaks quickly.", "es": "Ella habla rápidamente.", "de": "Sie spricht schnell." },
+      "tr": { "en": "She speaks quickly.", "es": "Ella habla rápidamente." },
       "options": [
         {
-          "text": { "hu": "FŐNÉV: névelő állhat előtte", "en": "NOUN: an article can go before it", "es": "SUSTANTIVO: puede llevar artículo delante", "de": "NOMEN: ein Artikel kann davorstehen" },
+          "text": { "en": "NOUN: an article can go before it", "es": "SUSTANTIVO: puede llevar artículo delante" },
           "wrong": {
-            "hu": "A rápidamente nem vehet fel névelőt, és nem is dolog vagy személy; az igéhez, a habla-hoz tartozik.",
             "en": "Rápidamente cannot take an article, and it is not a thing or a person; it belongs to the verb habla.",
-            "es": "Rápidamente no puede llevar artículo, y no es una cosa ni una persona; acompaña al verbo habla.",
-            "de": "Rápidamente kann keinen Artikel haben und ist kein Ding oder eine Person; es gehört zum Verb habla."
+            "es": "Rápidamente no puede llevar artículo, y no es una cosa ni una persona; acompaña al verbo habla."
           }
         },
         {
-          "text": { "hu": "-mente képzés a nőnemű melléknévből", "en": "-mente formed from the feminine adjective", "es": "-mente se forma del adjetivo femenino", "de": "-mente wird aus dem femininen Adjektiv gebildet" }
+          "text": { "en": "-mente formed from the feminine adjective", "es": "-mente se forma del adjetivo femenino" }
         },
         {
-          "text": { "hu": "IGE: ragozódik a személyhez", "en": "VERB: conjugates for the subject", "es": "VERBO: se conjuga según el sujeto", "de": "VERB: konjugiert nach dem Subjekt" },
+          "text": { "en": "VERB: conjugates for the subject", "es": "VERBO: se conjuga según el sujeto" },
           "wrong": {
-            "hu": "A rápidamente nem ragozódik, nem is fejez ki cselekvést; a cselekvés maga a habla.",
             "en": "Rápidamente does not conjugate and expresses no action itself; the action is habla.",
-            "es": "Rápidamente no se conjuga ni expresa una acción; la acción es habla.",
-            "de": "Rápidamente wird nicht konjugiert und drückt selbst keine Handlung aus; die Handlung ist habla."
+            "es": "Rápidamente no se conjuga ni expresa una acción; la acción es habla."
           }
         }
       ],
@@ -912,28 +774,24 @@
       "kind": "why",
       "es": "Comer es bueno.",
       "target": "Comer",
-      "tr": { "hu": "Enni jó.", "en": "Eating is good.", "es": "Comer es bueno.", "de": "Essen ist gut." },
+      "tr": { "en": "Eating is good.", "es": "Comer es bueno." },
       "options": [
         {
-          "text": { "hu": "IGE: ragozódik a személyhez", "en": "VERB: conjugates for the subject", "es": "VERBO: se conjuga según el sujeto", "de": "VERB: konjugiert nach dem Subjekt" },
+          "text": { "en": "VERB: conjugates for the subject", "es": "VERBO: se conjuga según el sujeto" },
           "wrong": {
-            "hu": "A comer itt nincs ragozva egy alanyhoz, hanem maga áll a mondat elején, alanyi szerepben, mint egy főnév.",
             "en": "Comer here is not conjugated for a subject, it stands at the start of the sentence itself, in a noun's role.",
-            "es": "Comer aquí no está conjugado para un sujeto, va al principio de la frase, en el papel de un sustantivo.",
-            "de": "Comer ist hier nicht für ein Subjekt konjugiert, es steht selbst am Satzanfang, in der Rolle eines Nomens."
+            "es": "Comer aquí no está conjugado para un sujeto, va al principio de la frase, en el papel de un sustantivo."
           }
         },
         {
-          "text": { "hu": "FŐNÉV: névelő állhat előtte", "en": "NOUN: an article can go before it", "es": "SUSTANTIVO: puede llevar artículo delante", "de": "NOMEN: ein Artikel kann davorstehen" },
+          "text": { "en": "NOUN: an article can go before it", "es": "SUSTANTIVO: puede llevar artículo delante" },
           "wrong": {
-            "hu": "A comer itt nem kap névelőt, mint egy rendes főnév (la casa); mégis főnévi szerepben áll, ez a főnévi igenév különleges esete.",
             "en": "Here comer takes no article the way a regular noun does (la casa); yet it stands in a noun's role, this is the special case of the infinitive.",
-            "es": "Aquí comer no lleva artículo como un sustantivo normal (la casa); aun así hace de sustantivo, es el caso especial del infinitivo.",
-            "de": "Comer bekommt hier keinen Artikel wie ein normales Nomen (la casa); trotzdem steht es in der Rolle eines Nomens, das ist der Sonderfall des Infinitivs."
+            "es": "Aquí comer no lleva artículo como un sustantivo normal (la casa); aun así hace de sustantivo, es el caso especial del infinitivo."
           }
         },
         {
-          "text": { "hu": "a főnévi igenév főnévként is állhat", "en": "the infinitive can also act as a noun", "es": "el infinitivo también puede ser sustantivo", "de": "der Infinitiv kann auch als Nomen stehen" }
+          "text": { "en": "the infinitive can also act as a noun", "es": "el infinitivo también puede ser sustantivo" }
         }
       ],
       "correctIndex": 2
@@ -943,27 +801,23 @@
       "kind": "why",
       "es": "La casa blanca es mía.",
       "target": "blanca",
-      "tr": { "hu": "A fehér ház az enyém.", "en": "The white house is mine.", "es": "La casa blanca es mía.", "de": "Das weiße Haus ist meins." },
+      "tr": { "en": "The white house is mine.", "es": "La casa blanca es mía." },
       "options": [
         {
-          "text": { "hu": "MELLÉKNÉV: egyezik a főnévvel", "en": "ADJECTIVE: agrees with the noun", "es": "ADJETIVO: concuerda con el sustantivo", "de": "ADJEKTIV: stimmt mit dem Nomen überein" }
+          "text": { "en": "ADJECTIVE: agrees with the noun", "es": "ADJETIVO: concuerda con el sustantivo" }
         },
         {
-          "text": { "hu": "HATÁROZÓSZÓ: sosem változik, az igéhez tartozik", "en": "ADVERB: never changes, belongs to the verb", "es": "ADVERBIO: nunca cambia, acompaña al verbo", "de": "ADVERB: ändert sich nie, gehört zum Verb" },
+          "text": { "en": "ADVERB: never changes, belongs to the verb", "es": "ADVERBIO: nunca cambia, acompaña al verbo" },
           "wrong": {
-            "hu": "A blanca egyezik a casa nemével és számával (blanco lenne hímnemre); egy határozószó sosem változna így.",
             "en": "Blanca agrees with casa's gender and number (it would be blanco for masculine); an adverb would never change like this.",
-            "es": "Blanca concuerda en género y número con casa (sería blanco en masculino); un adverbio nunca cambiaría así.",
-            "de": "Blanca stimmt in Genus und Zahl mit casa überein (im Maskulinum wäre es blanco); ein Adverb würde sich nie so ändern."
+            "es": "Blanca concuerda en género y número con casa (sería blanco en masculino); un adverbio nunca cambiaría así."
           }
         },
         {
-          "text": { "hu": "FŐNÉV: névelő állhat előtte", "en": "NOUN: an article can go before it", "es": "SUSTANTIVO: puede llevar artículo delante", "de": "NOMEN: ein Artikel kann davorstehen" },
+          "text": { "en": "NOUN: an article can go before it", "es": "SUSTANTIVO: puede llevar artículo delante" },
           "wrong": {
-            "hu": "Itt a blanca nem a dolog neve: a casa a mondat főneve, a blanca csak leírja.",
             "en": "Here blanca is not the name of the thing: casa is the noun of the sentence, blanca only describes it.",
-            "es": "Aquí blanca no nombra la cosa: casa es el sustantivo de la frase, blanca solo la describe.",
-            "de": "Blanca nennt hier nicht die Sache: casa ist das Nomen des Satzes, blanca beschreibt es nur."
+            "es": "Aquí blanca no nombra la cosa: casa es el sustantivo de la frase, blanca solo la describe."
           }
         }
       ],
@@ -974,27 +828,23 @@
       "kind": "why",
       "es": "Los niños comen pan.",
       "target": "comen",
-      "tr": { "hu": "A gyerekek kenyeret esznek.", "en": "The children eat bread.", "es": "Los niños comen pan.", "de": "Die Kinder essen Brot." },
+      "tr": { "en": "The children eat bread.", "es": "Los niños comen pan." },
       "options": [
         {
-          "text": { "hu": "FŐNÉV: névelő állhat előtte", "en": "NOUN: an article can go before it", "es": "SUSTANTIVO: puede llevar artículo delante", "de": "NOMEN: ein Artikel kann davorstehen" },
+          "text": { "en": "NOUN: an article can go before it", "es": "SUSTANTIVO: puede llevar artículo delante" },
           "wrong": {
-            "hu": "A comen nem vehet fel névelőt, és nem dolog vagy személy; a niños a mondat főneve.",
             "en": "Comen cannot take an article, and it is not a thing or a person; niños is the noun of the sentence.",
-            "es": "Comen no puede llevar artículo, y no es una cosa ni una persona; niños es el sustantivo de la frase.",
-            "de": "Comen kann keinen Artikel haben und ist kein Ding oder eine Person; niños ist das Nomen des Satzes."
+            "es": "Comen no puede llevar artículo, y no es una cosa ni una persona; niños es el sustantivo de la frase."
           }
         },
         {
-          "text": { "hu": "IGE: ragozódik a személyhez", "en": "VERB: conjugates for the subject", "es": "VERBO: se conjuga según el sujeto", "de": "VERB: konjugiert nach dem Subjekt" }
+          "text": { "en": "VERB: conjugates for the subject", "es": "VERBO: se conjuga según el sujeto" }
         },
         {
-          "text": { "hu": "MELLÉKNÉV: egyezik a főnévvel", "en": "ADJECTIVE: agrees with the noun", "es": "ADJETIVO: concuerda con el sustantivo", "de": "ADJEKTIV: stimmt mit dem Nomen überein" },
+          "text": { "en": "ADJECTIVE: agrees with the noun", "es": "ADJETIVO: concuerda con el sustantivo" },
           "wrong": {
-            "hu": "A comen nem egyezik egy főnévvel nemben-számban, hanem az alany személyéhez és számához igazodik; ez az ige tulajdonsága, nem a melléknévé.",
             "en": "Comen does not agree with a noun in gender and number, it matches the subject's person and number; that is a verb trait, not an adjective's.",
-            "es": "Comen no concuerda con un sustantivo en género y número, se ajusta a la persona y número del sujeto; es un rasgo del verbo, no del adjetivo.",
-            "de": "Comen stimmt nicht mit einem Nomen in Genus und Zahl überein, sondern richtet sich nach Person und Zahl des Subjekts; das ist ein Merkmal des Verbs, nicht des Adjektivs."
+            "es": "Comen no concuerda con un sustantivo en género y número, se ajusta a la persona y número del sujeto; es un rasgo del verbo, no del adjetivo."
           }
         }
       ],

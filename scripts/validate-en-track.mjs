@@ -6,8 +6,8 @@
  *  - topics: order contiguous from 1, unique ids, unique icons, type in
  *    {grammar,vocab}, all name_* + icon present, every subLevel referenced exists,
  *    sublevel orders contiguous from 1.
- *  - cards: required fields present + non-empty (id, level, es, hu, en, de, topic,
- *    topicOrder, sentence_{es,hu,en,de}); level matches file; id within the level's
+ *  - cards: required fields present + non-empty (id, level, es, en, topic,
+ *    topicOrder, sentence_{es,en}); level matches file; id within the level's
  *    reserved block(s); ids globally unique across the en track; card.topic exists in
  *    that level's topic list.
  *  - cross-level dedup: one English headword (normalized `en`) is taught in exactly
@@ -56,7 +56,7 @@ for (const lvl of LEVELS) {
   const subIds = new Set(S.map((s) => s.id));
   for (const t of T) {
     if (!['grammar', 'vocab'].includes(t.type)) err(`${lvl} topic ${t.id}: bad type ${t.type}`);
-    if (!(t.name_hu && t.name_en && t.name_es && t.name_de && t.icon)) err(`${lvl} topic ${t.id}: missing name/icon`);
+    if (!(t.name_en && t.name_es && t.icon)) err(`${lvl} topic ${t.id}: missing name/icon`);
     if (!subIds.has(t.subLevel)) err(`${lvl} topic ${t.id}: subLevel ${t.subLevel} not defined`);
   }
   if (!S.map((s) => s.order).every((o, i) => o === i + 1)) err(`${lvl} sublevels: order not contiguous from 1`);
@@ -64,7 +64,7 @@ for (const lvl of LEVELS) {
 }
 
 // --- cards ---
-const REQUIRED = ['id', 'level', 'es', 'hu', 'en', 'de', 'topic', 'topicOrder', 'sentence_es', 'sentence_hu', 'sentence_en', 'sentence_de'];
+const REQUIRED = ['id', 'level', 'es', 'en', 'topic', 'topicOrder', 'sentence_es', 'sentence_en'];
 const seenId = new Map();       // id → level
 const seenHeadword = new Map();  // normalized en → "level/topic"
 let totalCards = 0;

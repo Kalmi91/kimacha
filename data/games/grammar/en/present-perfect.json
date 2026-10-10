@@ -3,48 +3,36 @@
   "topic": "present_perfect",
   "level": "A2",
   "title": {
-    "hu": "A befejezett jelen (I have seen)",
     "en": "The Present Perfect (I have seen)",
-    "es": "El Presente Perfecto (I have seen)",
-    "de": "Das Present Perfect (I have seen)"
+    "es": "El Presente Perfecto (I have seen)"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "A present perfect szerkezete: have / has + igenév (past participle): „I have seen”, „she has eaten”. Hasonlít a spanyol „he visto”, „ha comido” alakhoz, de a használata más: az angolban tapasztalatra, friss eredményre és a mostanig tartó időre van, és NEM használjuk lezárt időpontnál (yesterday, last week, in 2020, two days ago): ott egyszerű múlt kell.",
         "en": "The present perfect is formed with have / has + past participle: “I have seen”, “she has eaten”. It looks like Spanish “he visto”, “ha comido”, but it is used differently: in English it is for experience, recent results and time up to now, and it is NOT used with a finished time (yesterday, last week, in 2020, two days ago): there you need the past simple.",
-        "es": "El presente perfecto se forma con have / has + participio: «I have seen», «she has eaten». Se parece a «he visto», «ha comido» del español, pero se usa distinto: en inglés sirve para la experiencia, los resultados recientes y el tiempo hasta ahora, y NO se usa con un tiempo terminado (yesterday, last week, in 2020, two days ago): ahí hace falta el pasado simple.",
-        "de": "Das Present Perfect wird mit have / has + Partizip gebildet: „I have seen“, „she has eaten“. Es sieht aus wie spanisch „he visto“, „ha comido“, wird aber anders gebraucht: Im Englischen steht es für Erfahrung, frische Ergebnisse und die Zeit bis jetzt, und es wird NICHT mit abgeschlossener Zeit benutzt (yesterday, last week, in 2020, two days ago): Dort braucht man das Past Simple."
+        "es": "El presente perfecto se forma con have / has + participio: «I have seen», «she has eaten». Se parece a «he visto», «ha comido» del español, pero se usa distinto: en inglés sirve para la experiencia, los resultados recientes y el tiempo hasta ahora, y NO se usa con un tiempo terminado (yesterday, last week, in 2020, two days ago): ahí hace falta el pasado simple."
       }
     },
     {
       "kind": "table",
       "id": "pf-forms",
       "title": {
-        "hu": "Az igenév (past participle)",
         "en": "The past participle",
-        "es": "El participio",
-        "de": "Das Partizip"
+        "es": "El participio"
       },
       "header": [
         {
-          "hu": "Ige",
           "en": "Verb",
-          "es": "Verbo",
-          "de": "Verb"
+          "es": "Verbo"
         },
         {
-          "hu": "past",
           "en": "past",
-          "es": "past",
-          "de": "past"
+          "es": "past"
         },
         {
-          "hu": "participle",
           "en": "participle",
-          "es": "participle",
-          "de": "participle"
+          "es": "participle"
         }
       ],
       "rows": [
@@ -118,64 +106,50 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Alak",
         "en": "Form",
-        "es": "Forma",
-        "de": "Form"
+        "es": "Forma"
       },
       "items": [
         {
           "text": {
-            "hu": "Állító: have / has + igenév. A szabályos igék igenéve megegyezik a múlt idővel (-ed); a rendhagyóké külön alak (seen, eaten, done). Rövid alak: I’ve, she’s.",
             "en": "Affirmative: have / has + participle. For regular verbs the participle equals the past form (-ed); irregular ones have their own form (seen, eaten, done). Short form: I’ve, she’s.",
-            "es": "Afirmativa: have / has + participio. En los verbos regulares el participio es igual que el pasado (-ed); los irregulares tienen su propia forma (seen, eaten, done). Forma corta: I’ve, she’s.",
-            "de": "Bejahend: have / has + Partizip. Bei regelmäßigen Verben ist das Partizip gleich der Vergangenheitsform (-ed); unregelmäßige haben eine eigene Form (seen, eaten, done). Kurzform: I’ve, she’s."
+            "es": "Afirmativa: have / has + participio. En los verbos regulares el participio es igual que el pasado (-ed); los irregulares tienen su propia forma (seen, eaten, done). Forma corta: I’ve, she’s."
           },
           "examples": [
             {
               "es": "I have seen that movie.",
               "tr": {
-                "hu": "Láttam azt a filmet.",
                 "en": "I have seen that movie.",
-                "es": "He visto esa película.",
-                "de": "Ich habe diesen Film gesehen."
+                "es": "He visto esa película."
               }
             },
             {
               "es": "She has eaten fish.",
               "tr": {
-                "hu": "Evett halat.",
                 "en": "She has eaten fish.",
-                "es": "Ella ha comido pescado.",
-                "de": "Sie hat Fisch gegessen."
+                "es": "Ella ha comido pescado."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Tagadás: haven’t / hasn’t + igenév. Kérdés: Have / Has + alany + igenév. Rövid válasz: Yes, I have. / No, I haven’t.",
             "en": "Negative: haven’t / hasn’t + participle. Question: Have / Has + subject + participle. Short answers: Yes, I have. / No, I haven’t.",
-            "es": "Negación: haven’t / hasn’t + participio. Pregunta: Have / Has + sujeto + participio. Respuesta corta: Yes, I have. / No, I haven’t.",
-            "de": "Verneinung: haven’t / hasn’t + Partizip. Frage: Have / Has + Subjekt + Partizip. Kurzantwort: Yes, I have. / No, I haven’t."
+            "es": "Negación: haven’t / hasn’t + participio. Pregunta: Have / Has + sujeto + participio. Respuesta corta: Yes, I have. / No, I haven’t."
           },
           "examples": [
             {
               "es": "We haven't been to Mexico.",
               "tr": {
-                "hu": "Nem jártunk Mexikóban.",
                 "en": "We haven't been to Mexico.",
-                "es": "No hemos estado en México.",
-                "de": "Wir waren noch nicht in Mexiko."
+                "es": "No hemos estado en México."
               }
             },
             {
               "es": "Have you ever been to Mexico?",
               "tr": {
-                "hu": "Jártál valaha Mexikóban?",
                 "en": "Have you ever been to Mexico?",
-                "es": "¿Has estado alguna vez en México?",
-                "de": "Warst du schon einmal in Mexiko?"
+                "es": "¿Has estado alguna vez en México?"
               }
             }
           ]
@@ -185,92 +159,72 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Mire használjuk",
         "en": "What we use it for",
-        "es": "Para qué se usa",
-        "de": "Wofür wir es benutzen"
+        "es": "Para qué se usa"
       },
       "items": [
         {
           "text": {
-            "hu": "Tapasztalat, időpont nélkül: I have been to Mexico. Jelzők: ever (valaha, kérdésben), never (soha), just (épp most), already (már).",
             "en": "Experience, with no time given: I have been to Mexico. Clues: ever (in questions), never, just, already.",
-            "es": "Experiencia, sin decir cuándo: I have been to Mexico. Pistas: ever (en preguntas), never, just, already.",
-            "de": "Erfahrung ohne Zeitangabe: I have been to Mexico. Hinweiswörter: ever (in Fragen), never, just, already."
+            "es": "Experiencia, sin decir cuándo: I have been to Mexico. Pistas: ever (en preguntas), never, just, already."
           },
           "examples": [
             {
               "es": "I have never eaten fish.",
               "tr": {
-                "hu": "Soha nem ettem halat.",
                 "en": "I have never eaten fish.",
-                "es": "Nunca he comido pescado.",
-                "de": "Ich habe noch nie Fisch gegessen."
+                "es": "Nunca he comido pescado."
               }
             },
             {
               "es": "He has just finished.",
               "tr": {
-                "hu": "Épp most fejezte be.",
                 "en": "He has just finished.",
-                "es": "Él acaba de terminar.",
-                "de": "Er ist gerade fertig geworden."
+                "es": "Él acaba de terminar."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A mostanig tartó idő: for + időtartam (for two years), since + kezdőpont (since 2020). A spanyol jelen idejű „vivo aquí desde hace dos años” angolul present perfect.",
             "en": "Time up to now: for + length (for two years), since + starting point (since 2020). Spanish present “vivo aquí desde hace dos años” is the present perfect in English.",
-            "es": "Tiempo hasta ahora: for + duración (for two years), since + punto de inicio (since 2020). El «vivo aquí desde hace dos años» del español, en presente, es presente perfecto en inglés.",
-            "de": "Zeit bis jetzt: for + Dauer (for two years), since + Anfangspunkt (since 2020). Spanisch „vivo aquí desde hace dos años“ im Präsens ist im Englischen das Present Perfect."
+            "es": "Tiempo hasta ahora: for + duración (for two years), since + punto de inicio (since 2020). El «vivo aquí desde hace dos años» del español, en presente, es presente perfecto en inglés."
           },
           "examples": [
             {
               "es": "I have lived here for two years.",
               "tr": {
-                "hu": "Két éve lakom itt.",
                 "en": "I have lived here for two years.",
-                "es": "Vivo aquí desde hace dos años.",
-                "de": "Ich wohne seit zwei Jahren hier."
+                "es": "Vivo aquí desde hace dos años."
               }
             },
             {
               "es": "She has lived here since 2020.",
               "tr": {
-                "hu": "2020 óta lakik itt.",
                 "en": "She has lived here since 2020.",
-                "es": "Ella vive aquí desde 2020.",
-                "de": "Sie wohnt seit 2020 hier."
+                "es": "Ella vive aquí desde 2020."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Lezárt időpontnál egyszerű múlt kell: I saw him yesterday (nem „I have seen him yesterday”).",
             "en": "With a finished time you need the past simple: I saw him yesterday (not “I have seen him yesterday”).",
-            "es": "Con un tiempo terminado hace falta el pasado simple: I saw him yesterday (no «I have seen him yesterday»).",
-            "de": "Bei abgeschlossener Zeit braucht man das Past Simple: I saw him yesterday (nicht „I have seen him yesterday“)."
+            "es": "Con un tiempo terminado hace falta el pasado simple: I saw him yesterday (no «I have seen him yesterday»)."
           },
           "examples": [
             {
               "es": "I saw him yesterday.",
               "tr": {
-                "hu": "Tegnap láttam.",
                 "en": "I saw him yesterday.",
-                "es": "Lo vi ayer.",
-                "de": "Ich habe ihn gestern gesehen."
+                "es": "Lo vi ayer."
               }
             },
             {
               "es": "We went to Mexico last year.",
               "tr": {
-                "hu": "Tavaly Mexikóban jártunk.",
                 "en": "We went to Mexico last year.",
-                "es": "Fuimos a México el año pasado.",
-                "de": "Wir waren letztes Jahr in Mexiko."
+                "es": "Fuimos a México el año pasado."
               }
             }
           ]
@@ -280,90 +234,70 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Lezárt időhatározóval ne használd a present perfectet. Ne mondd, hogy „I have seen him yesterday”, hanem: „I saw him yesterday”.",
         "en": "Do not use the present perfect with a finished time. Do not say “I have seen him yesterday”; say “I saw him yesterday”.",
-        "es": "No uses el presente perfecto con un tiempo terminado. No digas «I have seen him yesterday», di «I saw him yesterday».",
-        "de": "Benutze das Present Perfect nicht mit abgeschlossener Zeit. Sag nicht „I have seen him yesterday“, sondern „I saw him yesterday“."
+        "es": "No uses el presente perfecto con un tiempo terminado. No digas «I have seen him yesterday», di «I saw him yesterday»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A „desde hace / desde” angolul present perfect, nem jelen idő. Ne mondd, hogy „I live here since 2020”, hanem: „I have lived here since 2020”.",
         "en": "Spanish “desde hace / desde” takes the present perfect in English, not the present. Do not say “I live here since 2020”; say “I have lived here since 2020”.",
-        "es": "El «desde hace / desde» del español lleva presente perfecto en inglés, no presente. No digas «I live here since Monday», di «I have lived here since 2020».",
-        "de": "Spanisch „desde hace / desde“ steht im Englischen mit dem Present Perfect, nicht mit dem Präsens. Sag nicht „I live here since 2020“, sondern „I have lived here since 2020“."
+        "es": "El «desde hace / desde» del español lleva presente perfecto en inglés, no presente. No digas «I live here since Monday», di «I have lived here since 2020»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A rendhagyó igéknél az igenév nem mindig a múlt alak. Ne mondd, hogy „I have went” vagy „I have saw”, hanem: „I have gone” (vagy been) és „I have seen”.",
         "en": "With irregular verbs the participle is not always the past form. Do not say “I have went” or “I have saw”; say “I have gone” (or been) and “I have seen”.",
-        "es": "En los verbos irregulares el participio no siempre es la forma del pasado. No digas «I have went» ni «I have saw», di «I have gone» (o been) y «I have seen».",
-        "de": "Bei unregelmäßigen Verben ist das Partizip nicht immer die Vergangenheitsform. Sag nicht „I have went“ oder „I have saw“, sondern „I have gone“ (oder been) und „I have seen“."
+        "es": "En los verbos irregulares el participio no siempre es la forma del pasado. No digas «I have went» ni «I have saw», di «I have gone» (o been) y «I have seen»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A „been” és a „gone” különbözik: „She has been to Mexico” (járt ott, már visszajött), „She has gone to Mexico” (elment, most is ott van).",
         "en": "“Been” and “gone” are different: “She has been to Mexico” (she went there and came back), “She has gone to Mexico” (she went and is still there).",
-        "es": "«Been» y «gone» son distintos: «She has been to Mexico» (fue y volvió), «She has gone to Mexico» (se fue y sigue allí).",
-        "de": "„Been“ und „gone“ sind verschieden: „She has been to Mexico“ (sie war dort und ist zurück), „She has gone to Mexico“ (sie ist hingefahren und ist noch dort)."
+        "es": "«Been» y «gone» son distintos: «She has been to Mexico» (fue y volvió), «She has gone to Mexico» (se fue y sigue allí)."
       }
     }
   ],
   "speak": {
-    "hu": "A present perfect szerkezete: «have» vagy «has» plusz az ige igenéve: «I have seen», «she has eaten». Tapasztalatra használjuk: «I have never eaten fish». A mostanig tartó időnél «for» és «since» áll: «I have lived here for two years». Lezárt időpontnál viszont egyszerű múlt kell: «I saw him yesterday». Tagadás: «I haven't seen it». Kérdés: «Have you ever been to Mexico?». Vigyázat: nem «I have seen him yesterday», és nem «I live here since Monday».",
     "en": "The present perfect is «have» or «has» plus the past participle: «I have seen», «she has eaten». We use it for experience: «I have never eaten fish». For time up to now we use «for» and «since»: «I have lived here for two years». With a finished time you need the past simple: «I saw him yesterday». Negative: «I haven't seen it». Question: «Have you ever been to Mexico?». Careful: not «I have seen him yesterday», and not «I live here since Monday».",
-    "es": "El presente perfecto es «have» o «has» más el participio: «I have seen», «she has eaten». Se usa para la experiencia: «I have never eaten fish». Para el tiempo hasta ahora se usan «for» y «since»: «I have lived here for two years». Con un tiempo terminado hace falta el pasado simple: «I saw him yesterday». Negación: «I haven't seen it». Pregunta: «Have you ever been to Mexico?». Cuidado: no «I have seen him yesterday», y no «I live here since Monday».",
-    "de": "Das Present Perfect besteht aus «have» oder «has» plus Partizip: «I have seen», «she has eaten». Wir benutzen es für Erfahrung: «I have never eaten fish». Für die Zeit bis jetzt stehen «for» und «since»: «I have lived here for two years». Bei abgeschlossener Zeit braucht man das Past Simple: «I saw him yesterday». Verneinung: «I haven't seen it». Frage: «Have you ever been to Mexico?». Vorsicht: nicht «I have seen him yesterday» und nicht «I live here since Monday»."
+    "es": "El presente perfecto es «have» o «has» más el participio: «I have seen», «she has eaten». Se usa para la experiencia: «I have never eaten fish». Para el tiempo hasta ahora se usan «for» y «since»: «I have lived here for two years». Con un tiempo terminado hace falta el pasado simple: «I saw him yesterday». Negación: «I haven't seen it». Pregunta: «Have you ever been to Mexico?». Cuidado: no «I have seen him yesterday», y no «I live here since Monday»."
   },
   "glossary": [
     {
       "word": "ago",
       "gloss": {
-        "hu": "ennyivel ezelőtt",
         "en": "back in time",
-        "es": "hace",
-        "de": "vor (zeitlich)"
+        "es": "hace"
       }
     },
     {
       "word": "hasn't",
       "gloss": {
-        "hu": "nincs (has not)",
         "en": "has not",
-        "es": "no tiene (has not)",
-        "de": "nicht haben (has not)"
+        "es": "no tiene (has not)"
       }
     },
     {
       "word": "haven't",
       "gloss": {
-        "hu": "nincs (have not)",
         "en": "have not",
-        "es": "no tener (have not)",
-        "de": "nicht haben (have not)"
+        "es": "no tener (have not)"
       }
     },
     {
       "word": "gone",
       "gloss": {
-        "hu": "elment (go)",
         "en": "participle of go",
-        "es": "ido (go)",
-        "de": "gegangen (go)"
+        "es": "ido (go)"
       }
     },
     {
       "word": "taken",
       "gloss": {
-        "hu": "elvett (take)",
         "en": "participle of take",
-        "es": "tomado (take)",
-        "de": "genommen (take)"
+        "es": "tomado (take)"
       }
     }
   ],
@@ -378,30 +312,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A have után az igenév kell: I have seen a good movie.",
         "en": "After have you need the participle: I have seen a good movie.",
-        "es": "Después de have hace falta el participio: I have seen a good movie.",
-        "de": "Nach have braucht man das Partizip: I have seen a good movie."
+        "es": "Después de have hace falta el participio: I have seen a good movie."
       },
       "wrong": {
         "saw": {
-          "hu": "A „saw” az egyszerű múlt; a have után az igenév („seen”) áll.",
           "en": "“Saw” is the past simple; after have comes the participle (“seen”).",
-          "es": "«Saw» es el pasado simple; después de have va el participio («seen»).",
-          "de": "„Saw“ ist das Past Simple; nach have steht das Partizip („seen“)."
+          "es": "«Saw» es el pasado simple; después de have va el participio («seen»)."
         },
         "see": {
-          "hu": "A have után alapige nem elég; igenév kell: seen.",
           "en": "After have the base verb is not enough; you need the participle: seen.",
-          "es": "Después de have el verbo base no basta; hace falta el participio: seen.",
-          "de": "Nach have reicht die Grundform nicht; man braucht das Partizip: seen."
+          "es": "Después de have el verbo base no basta; hace falta el participio: seen."
         }
       },
       "examples": [
         "She has seen my brother.",
         "We have seen that dog."
       ],
-      "tr": { "hu": "Láttam egy jó filmet.", "en": "I have seen a good movie.", "es": "He visto una buena película.", "de": "Ich habe einen guten Film gesehen." }
+      "tr": { "en": "I have seen a good movie.", "es": "He visto una buena película." }
     },
     {
       "id": "pf-02",
@@ -413,30 +341,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A to be igenéve „been”: She has been to Mexico.",
         "en": "The participle of to be is “been”: She has been to Mexico.",
-        "es": "El participio de to be es «been»: She has been to Mexico.",
-        "de": "Das Partizip von to be ist „been“: She has been to Mexico."
+        "es": "El participio de to be es «been»: She has been to Mexico."
       },
       "wrong": {
         "was": {
-          "hu": "A „was” egyszerű múlt; a has után az igenév („been”) áll.",
           "en": "“Was” is the past simple; after has comes the participle (“been”).",
-          "es": "«Was» es pasado simple; después de has va el participio («been»).",
-          "de": "„Was“ ist Past Simple; nach has steht das Partizip („been“)."
+          "es": "«Was» es pasado simple; después de has va el participio («been»)."
         },
         "be": {
-          "hu": "A has után alapige nem elég; igenév kell: been.",
           "en": "After has the base verb is not enough; you need the participle: been.",
-          "es": "Después de has el verbo base no basta; hace falta el participio: been.",
-          "de": "Nach has reicht die Grundform nicht; man braucht das Partizip: been."
+          "es": "Después de has el verbo base no basta; hace falta el participio: been."
         }
       },
       "examples": [
         "I have been to school.",
         "They have been here."
       ],
-      "tr": { "hu": "Járt már Mexikóban.", "en": "She has been to Mexico.", "es": "Ella ha estado en México.", "de": "Sie war schon einmal in Mexiko." }
+      "tr": { "en": "She has been to Mexico.", "es": "Ella ha estado en México." }
     },
     {
       "id": "pf-17",
@@ -456,30 +378,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az eat igenéve „eaten”: They have eaten lunch already.",
         "en": "The participle of eat is “eaten”: They have eaten lunch already.",
-        "es": "El participio de eat es «eaten»: They have eaten lunch already.",
-        "de": "Das Partizip von eat ist „eaten“: They have eaten lunch already."
+        "es": "El participio de eat es «eaten»: They have eaten lunch already."
       },
       "wrong": {
         "ate": {
-          "hu": "Az „ate” egyszerű múlt; a have után az igenév („eaten”) áll.",
           "en": "“Ate” is the past simple; after have comes the participle (“eaten”).",
-          "es": "«Ate» es pasado simple; después de have va el participio («eaten»).",
-          "de": "„Ate“ ist Past Simple; nach have steht das Partizip („eaten“)."
+          "es": "«Ate» es pasado simple; después de have va el participio («eaten»)."
         },
         "eat": {
-          "hu": "A have után alapige nem elég; igenév kell: eaten.",
           "en": "After have the base verb is not enough; you need the participle: eaten.",
-          "es": "Después de have el verbo base no basta; hace falta el participio: eaten.",
-          "de": "Nach have reicht die Grundform nicht; man braucht das Partizip: eaten."
+          "es": "Después de have el verbo base no basta; hace falta el participio: eaten."
         }
       },
       "examples": [
         "She has eaten fish.",
         "We have eaten rice."
       ],
-      "tr": { "hu": "Már megebédeltek.", "en": "They have eaten lunch already.", "es": "Ellos ya comieron.", "de": "Sie haben bereits zu Mittag gegessen." }
+      "tr": { "en": "They have eaten lunch already.", "es": "Ellos ya comieron." }
     },
     {
       "id": "pf-04",
@@ -491,30 +407,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A do igenéve „done”: He has done his work.",
         "en": "The participle of do is “done”: He has done his work.",
-        "es": "El participio de do es «done»: He has done his work.",
-        "de": "Das Partizip von do ist „done“: He has done his work."
+        "es": "El participio de do es «done»: He has done his work."
       },
       "wrong": {
         "did": {
-          "hu": "A „did” egyszerű múlt; a has után az igenév („done”) áll.",
           "en": "“Did” is the past simple; after has comes the participle (“done”).",
-          "es": "«Did» es pasado simple; después de has va el participio («done»).",
-          "de": "„Did“ ist Past Simple; nach has steht das Partizip („done“)."
+          "es": "«Did» es pasado simple; después de has va el participio («done»)."
         },
         "do": {
-          "hu": "A has után alapige nem elég; igenév kell: done.",
           "en": "After has the base verb is not enough; you need the participle: done.",
-          "es": "Después de has el verbo base no basta; hace falta el participio: done.",
-          "de": "Nach has reicht die Grundform nicht; man braucht das Partizip: done."
+          "es": "Después de has el verbo base no basta; hace falta el participio: done."
         }
       },
       "examples": [
         "I have done my work.",
         "She has done it."
       ],
-      "tr": { "hu": "Elvégezte a munkáját.", "en": "He has done his work.", "es": "Él ha hecho su trabajo.", "de": "Er hat seine Arbeit erledigt." }
+      "tr": { "en": "He has done his work.", "es": "Él ha hecho su trabajo." }
     },
     {
       "kind": "why",
@@ -522,46 +432,34 @@
       "es": "I have seen that movie.",
       "target": "have",
       "tr": {
-        "hu": "Láttam azt a filmet.",
         "en": "I have seen that movie.",
-        "es": "He visto esa película.",
-        "de": "Ich habe diesen Film gesehen."
+        "es": "He visto esa película."
       },
       "options": [
         {
           "text": {
-            "hu": "present perfect: have / has + igenév, időpont nélküli tapasztalat",
             "en": "present perfect: have / has + participle, an experience with no time given",
-            "es": "presente perfecto: have / has + participio, una experiencia sin decir cuándo",
-            "de": "Present Perfect: have / has + Partizip, eine Erfahrung ohne Zeitangabe"
+            "es": "presente perfecto: have / has + participio, una experiencia sin decir cuándo"
           }
         },
         {
           "text": {
-            "hu": "egyszerű múlt: lezárt időponttal",
             "en": "past simple: with a finished time",
-            "es": "pasado simple: con un tiempo terminado",
-            "de": "Past Simple: mit abgeschlossener Zeit"
+            "es": "pasado simple: con un tiempo terminado"
           },
           "wrong": {
-            "hu": "A mondatban nincs lezárt időpont (yesterday, last week), ezért present perfect áll.",
             "en": "The sentence has no finished time (yesterday, last week), so the present perfect is used.",
-            "es": "La oración no tiene un tiempo terminado (yesterday, last week), por eso se usa el presente perfecto.",
-            "de": "Der Satz hat keine abgeschlossene Zeit (yesterday, last week), deshalb steht das Present Perfect."
+            "es": "La oración no tiene un tiempo terminado (yesterday, last week), por eso se usa el presente perfecto."
           }
         },
         {
           "text": {
-            "hu": "folyamatos jelen: éppen most nézem",
             "en": "present continuous: I am watching it right now",
-            "es": "presente continuo: lo estoy viendo ahora mismo",
-            "de": "Present Continuous: ich sehe ihn gerade jetzt"
+            "es": "presente continuo: lo estoy viendo ahora mismo"
           },
           "wrong": {
-            "hu": "A „have seen” befejezett tapasztalat, nem éppen zajló cselekvés (az -ing alak lenne).",
             "en": "“Have seen” is a completed experience, not an action in progress (that would be -ing).",
-            "es": "«Have seen» es una experiencia terminada, no una acción en curso (eso sería -ing).",
-            "de": "„Have seen“ ist eine abgeschlossene Erfahrung, keine laufende Handlung (das wäre -ing)."
+            "es": "«Have seen» es una experiencia terminada, no una acción en curso (eso sería -ing)."
           }
         }
       ],
@@ -577,30 +475,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A szabályos ige igenéve -ed: I have lived here for two years.",
         "en": "The participle of a regular verb ends in -ed: I have lived here for two years.",
-        "es": "El participio de un verbo regular termina en -ed: I have lived here for two years.",
-        "de": "Das Partizip eines regelmäßigen Verbs endet auf -ed: I have lived here for two years."
+        "es": "El participio de un verbo regular termina en -ed: I have lived here for two years."
       },
       "wrong": {
         "live": {
-          "hu": "A have után igenév kell, nem alapige: lived.",
           "en": "After have you need a participle, not the base verb: lived.",
-          "es": "Después de have hace falta un participio, no el verbo base: lived.",
-          "de": "Nach have braucht man ein Partizip, nicht die Grundform: lived."
+          "es": "Después de have hace falta un participio, no el verbo base: lived."
         },
         "living": {
-          "hu": "A have után nem az -ing alak áll, hanem az igenév: lived.",
           "en": "After have comes the participle, not the -ing form: lived.",
-          "es": "Después de have va el participio, no la forma -ing: lived.",
-          "de": "Nach have steht das Partizip, nicht die -ing-Form: lived."
+          "es": "Después de have va el participio, no la forma -ing: lived."
         }
       },
       "examples": [
         "She has worked here for a year.",
         "We have lived here for five years."
       ],
-      "tr": { "hu": "Két éve élek itt.", "en": "I have lived here for two years.", "es": "He vivido aquí por dos años.", "de": "Ich lebe seit zwei Jahren hier." }
+      "tr": { "en": "I have lived here for two years.", "es": "He vivido aquí por dos años." }
     },
     {
       "id": "pf-06",
@@ -612,30 +504,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A kezdőpont (2020) elé „since” kell: since 2020.",
         "en": "Before a starting point (2020) you need “since”: since 2020.",
-        "es": "Delante de un punto de inicio (2020) hace falta «since»: since 2020.",
-        "de": "Vor einem Anfangspunkt (2020) braucht man „since“: since 2020."
+        "es": "Delante de un punto de inicio (2020) hace falta «since»: since 2020."
       },
       "wrong": {
         "for": {
-          "hu": "A „for” időtartam elé való (for two years); a 2020 kezdőpont, ezért „since”.",
           "en": "“For” goes before a length of time (for two years); 2020 is a starting point, so “since”.",
-          "es": "«For» va delante de una duración (for two years); 2020 es un punto de inicio, por eso «since».",
-          "de": "„For“ steht vor einer Dauer (for two years); 2020 ist ein Anfangspunkt, deshalb „since“."
+          "es": "«For» va delante de una duración (for two years); 2020 es un punto de inicio, por eso «since»."
         },
         "ago": {
-          "hu": "Az „ago” a szám után áll és egyszerű múlttal megy (two years ago); itt „since” kell.",
           "en": "“Ago” follows a number and goes with the past simple (two years ago); here you need “since”.",
-          "es": "«Ago» va después de un número y con el pasado simple (two years ago); aquí hace falta «since».",
-          "de": "„Ago“ steht nach einer Zahl und geht mit dem Past Simple (two years ago); hier braucht man „since“."
+          "es": "«Ago» va después de un número y con el pasado simple (two years ago); aquí hace falta «since»."
         }
       },
       "examples": [
         "I have worked here since 2019.",
         "He has lived here since Monday."
       ],
-      "tr": { "hu": "2020 óta él itt.", "en": "She has lived here since 2020.", "es": "Ella ha vivido aquí desde el 2020.", "de": "Sie lebt seit 2020 hier." }
+      "tr": { "en": "She has lived here since 2020.", "es": "Ella ha vivido aquí desde el 2020." }
     },
     {
       "id": "pf-07",
@@ -647,30 +533,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az időtartam (two years) elé „for” kell: for two years.",
         "en": "Before a length of time (two years) you need “for”: for two years.",
-        "es": "Delante de una duración (two years) hace falta «for»: for two years.",
-        "de": "Vor einer Dauer (two years) braucht man „for“: for two years."
+        "es": "Delante de una duración (two years) hace falta «for»: for two years."
       },
       "wrong": {
         "since": {
-          "hu": "A „since” kezdőpont elé való (since 2020); a „two years” időtartam, ezért „for”.",
           "en": "“Since” goes before a starting point (since 2020); “two years” is a length of time, so “for”.",
-          "es": "«Since» va delante de un punto de inicio (since 2020); «two years» es una duración, por eso «for».",
-          "de": "„Since“ steht vor einem Anfangspunkt (since 2020); „two years“ ist eine Dauer, deshalb „for“."
+          "es": "«Since» va delante de un punto de inicio (since 2020); «two years» es una duración, por eso «for»."
         },
         "ago": {
-          "hu": "Az „ago” egyszerű múlttal megy (two years ago); a present perfect mellé „for” kell.",
           "en": "“Ago” goes with the past simple (two years ago); with the present perfect you need “for”.",
-          "es": "«Ago» va con el pasado simple (two years ago); con el presente perfecto hace falta «for».",
-          "de": "„Ago“ geht mit dem Past Simple (two years ago); beim Present Perfect braucht man „for“."
+          "es": "«Ago» va con el pasado simple (two years ago); con el presente perfecto hace falta «for»."
         }
       },
       "examples": [
         "I have worked here for a year.",
         "He has been here for a week."
       ],
-      "tr": { "hu": "Két éve él itt.", "en": "She has lived here for two years.", "es": "Ella ha vivido aquí por dos años.", "de": "Sie lebt seit zwei Jahren hier." }
+      "tr": { "en": "She has lived here for two years.", "es": "Ella ha vivido aquí por dos años." }
     },
     {
       "id": "pf-18",
@@ -690,30 +570,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A tapasztalat kérdésében az „ever” (valaha) áll: Have you ever been to Mexico?",
         "en": "In an experience question “ever” is used: Have you ever been to Mexico?",
-        "es": "En una pregunta sobre experiencia se usa «ever»: Have you ever been to Mexico?",
-        "de": "In einer Erfahrungsfrage steht „ever“: Have you ever been to Mexico?"
+        "es": "En una pregunta sobre experiencia se usa «ever»: Have you ever been to Mexico?"
       },
       "wrong": {
         "never": {
-          "hu": "A „never” önmagában tagad (I have never been); kérdésben az „ever” áll.",
           "en": "“Never” is a negative by itself (I have never been); in a question use “ever”.",
-          "es": "«Never» ya es negativo por sí solo (I have never been); en una pregunta se usa «ever».",
-          "de": "„Never“ ist für sich schon verneinend (I have never been); in der Frage steht „ever“."
+          "es": "«Never» ya es negativo por sí solo (I have never been); en una pregunta se usa «ever»."
         },
         "since": {
-          "hu": "A „since” után kezdőpont jön (since 2020); a „valaha” jelentésű szó az „ever”.",
           "en": "“Since” is followed by a starting point (since 2020); the word for “ever” is “ever”.",
-          "es": "Después de «since» va un punto de inicio (since 2020); la palabra para «alguna vez» es «ever».",
-          "de": "Nach „since“ folgt ein Anfangspunkt (since 2020); das Wort für „jemals“ ist „ever“."
+          "es": "Después de «since» va un punto de inicio (since 2020); la palabra para «alguna vez» es «ever»."
         }
       },
       "examples": [
         "Have you ever eaten fish?",
         "Have you ever seen a movie?"
       ],
-      "tr": { "hu": "Jártál már valaha Mexikóban?", "en": "Have you ever been to Mexico?", "es": "¿Alguna vez has estado en México?", "de": "Warst du schon einmal in Mexiko?" }
+      "tr": { "en": "Have you ever been to Mexico?", "es": "¿Alguna vez has estado en México?" }
     },
     {
       "id": "pf-09",
@@ -725,30 +599,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „soha” jelentésű szó a present perfectben „never”: I have never eaten fish.",
         "en": "The word for “never” in the present perfect is “never”: I have never eaten fish.",
-        "es": "La palabra para «nunca» en el presente perfecto es «never»: I have never eaten fish.",
-        "de": "Das Wort für „nie“ im Present Perfect ist „never“: I have never eaten fish."
+        "es": "La palabra para «nunca» en el presente perfecto es «never»: I have never eaten fish."
       },
       "wrong": {
         "ever": {
-          "hu": "Az „ever” kérdésben áll; a kijelentő „soha” jelentés „never”.",
           "en": "“Ever” is used in questions; the statement meaning “never” is “never”.",
-          "es": "«Ever» se usa en preguntas; el significado de «nunca» en una afirmación es «never».",
-          "de": "„Ever“ steht in Fragen; die Bedeutung „nie“ in einer Aussage ist „never“."
+          "es": "«Ever» se usa en preguntas; el significado de «nunca» en una afirmación es «never»."
         },
         "since": {
-          "hu": "A „since” kezdőpont előtt áll; a „soha” jelentés „never”.",
           "en": "“Since” goes before a starting point; the meaning “never” is “never”.",
-          "es": "«Since» va delante de un punto de inicio; el significado de «nunca» es «never».",
-          "de": "„Since“ steht vor einem Anfangspunkt; die Bedeutung „nie“ ist „never“."
+          "es": "«Since» va delante de un punto de inicio; el significado de «nunca» es «never»."
         }
       },
       "examples": [
         "She has never seen a dog.",
         "We have never been to Mexico."
       ],
-      "tr": { "hu": "Még soha nem ettem halat.", "en": "I have never eaten fish.", "es": "Nunca he comido pescado.", "de": "Ich habe noch nie Fisch gegessen." }
+      "tr": { "en": "I have never eaten fish.", "es": "Nunca he comido pescado." }
     },
     {
       "id": "pf-10",
@@ -760,30 +628,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „just” = épp most: He has just finished his work.",
         "en": "“Just” = a moment ago: He has just finished his work.",
-        "es": "«Just» = hace un momento: He has just finished his work.",
-        "de": "„Just“ = gerade eben: He has just finished his work."
+        "es": "«Just» = hace un momento: He has just finished his work."
       },
       "wrong": {
         "ago": {
-          "hu": "Az „ago” a szám után, a mondat végén áll (two hours ago); itt „just” kell.",
           "en": "“Ago” follows a number, at the end of the sentence (two hours ago); here you need “just”.",
-          "es": "«Ago» va después de un número, al final de la oración (two hours ago); aquí hace falta «just».",
-          "de": "„Ago“ steht nach einer Zahl, am Satzende (two hours ago); hier braucht man „just“."
+          "es": "«Ago» va después de un número, al final de la oración (two hours ago); aquí hace falta «just»."
         },
         "yesterday": {
-          "hu": "A „yesterday” lezárt idő, present perfect mellett nem használható.",
           "en": "“Yesterday” is a finished time and cannot be used with the present perfect.",
-          "es": "«Yesterday» es un tiempo terminado y no se puede usar con el presente perfecto.",
-          "de": "„Yesterday“ ist eine abgeschlossene Zeit und kann nicht mit dem Present Perfect benutzt werden."
+          "es": "«Yesterday» es un tiempo terminado y no se puede usar con el presente perfecto."
         }
       },
       "examples": [
         "She has just called me.",
         "We have just arrived."
       ],
-      "tr": { "hu": "Épp most fejezte be a munkáját.", "en": "He has just finished his work.", "es": "Acaba de terminar su trabajo.", "de": "Er hat gerade seine Arbeit beendet." }
+      "tr": { "en": "He has just finished his work.", "es": "Acaba de terminar su trabajo." }
     },
     {
       "kind": "why",
@@ -791,46 +653,34 @@
       "es": "I saw him yesterday.",
       "target": "saw",
       "tr": {
-        "hu": "Tegnap láttam.",
         "en": "I saw him yesterday.",
-        "es": "Lo vi ayer.",
-        "de": "Ich habe ihn gestern gesehen."
+        "es": "Lo vi ayer."
       },
       "options": [
         {
           "text": {
-            "hu": "lezárt időpont (yesterday): egyszerű múlt",
             "en": "a finished time (yesterday): past simple",
-            "es": "un tiempo terminado (yesterday): pasado simple",
-            "de": "abgeschlossene Zeit (yesterday): Past Simple"
+            "es": "un tiempo terminado (yesterday): pasado simple"
           }
         },
         {
           "text": {
-            "hu": "present perfect: have seen",
             "en": "present perfect: have seen",
-            "es": "presente perfecto: have seen",
-            "de": "Present Perfect: have seen"
+            "es": "presente perfecto: have seen"
           },
           "wrong": {
-            "hu": "A present perfect nem használható lezárt időponttal; a „yesterday” miatt egyszerű múlt kell.",
             "en": "The present perfect cannot be used with a finished time; “yesterday” calls for the past simple.",
-            "es": "El presente perfecto no se puede usar con un tiempo terminado; «yesterday» pide el pasado simple.",
-            "de": "Das Present Perfect kann nicht mit abgeschlossener Zeit benutzt werden; „yesterday“ verlangt das Past Simple."
+            "es": "El presente perfecto no se puede usar con un tiempo terminado; «yesterday» pide el pasado simple."
           }
         },
         {
           "text": {
-            "hu": "egyszerű jelen: I see him",
             "en": "present simple: I see him",
-            "es": "presente simple: I see him",
-            "de": "Present Simple: I see him"
+            "es": "presente simple: I see him"
           },
           "wrong": {
-            "hu": "A „yesterday” múltat jelez, az egyszerű jelen nem illik hozzá.",
             "en": "“Yesterday” shows the past, the present simple does not fit.",
-            "es": "«Yesterday» indica el pasado, el presente simple no encaja.",
-            "de": "„Yesterday“ zeigt die Vergangenheit, das Present Simple passt nicht."
+            "es": "«Yesterday» indica el pasado, el presente simple no encaja."
           }
         }
       ],
@@ -854,30 +704,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „yesterday” lezárt időpont, ezért egyszerű múlt kell: I saw him yesterday.",
         "en": "“Yesterday” is a finished time, so you need the past simple: I saw him yesterday.",
-        "es": "«Yesterday» es un tiempo terminado, por eso hace falta el pasado simple: I saw him yesterday.",
-        "de": "„Yesterday“ ist eine abgeschlossene Zeit, deshalb braucht man das Past Simple: I saw him yesterday."
+        "es": "«Yesterday» es un tiempo terminado, por eso hace falta el pasado simple: I saw him yesterday."
       },
       "wrong": {
         "have seen": {
-          "hu": "A „yesterday” mellett a present perfect nem használható; egyszerű múlt kell: saw.",
           "en": "The present perfect cannot be used with “yesterday”; you need the past simple: saw.",
-          "es": "El presente perfecto no se puede usar con «yesterday»; hace falta el pasado simple: saw.",
-          "de": "Mit „yesterday“ kann man das Present Perfect nicht benutzen; man braucht das Past Simple: saw."
+          "es": "El presente perfecto no se puede usar con «yesterday»; hace falta el pasado simple: saw."
         },
         "has seen": {
-          "hu": "A „has” a he, she, it mellé való, és a „yesterday” mellett egyszerű múlt kell: saw.",
           "en": "“Has” goes with he, she, it, and with “yesterday” you need the past simple: saw.",
-          "es": "«Has» va con he, she, it, y con «yesterday» hace falta el pasado simple: saw.",
-          "de": "„Has“ gehört zu he, she, it, und mit „yesterday“ braucht man das Past Simple: saw."
+          "es": "«Has» va con he, she, it, y con «yesterday» hace falta el pasado simple: saw."
         }
       },
       "examples": [
         "We went there last week.",
         "She called me yesterday."
       ],
-      "tr": { "hu": "Tegnap láttam őt.", "en": "I saw him yesterday.", "es": "Lo vi ayer.", "de": "Ich habe ihn gestern gesehen." }
+      "tr": { "en": "I saw him yesterday.", "es": "Lo vi ayer." }
     },
     {
       "id": "pf-12",
@@ -889,30 +733,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A you mellé a „have” kell, és a kérdésben elöl áll: Have you ever been to Mexico?",
         "en": "With you you need “have”, and it goes first in the question: Have you ever been to Mexico?",
-        "es": "Con you hace falta «have», y va primero en la pregunta: Have you ever been to Mexico?",
-        "de": "Bei you braucht man „have“, und in der Frage steht es vorn: Have you ever been to Mexico?"
+        "es": "Con you hace falta «have», y va primero en la pregunta: Have you ever been to Mexico?"
       },
       "wrong": {
         "Has": {
-          "hu": "A „Has” a he, she, it mellé való; a „you” mellé „Have” kell.",
           "en": "“Has” goes with he, she, it; with “you” you need “Have”.",
-          "es": "«Has» va con he, she, it; con «you» hace falta «Have».",
-          "de": "„Has“ gehört zu he, she, it; bei „you“ braucht man „Have“."
+          "es": "«Has» va con he, she, it; con «you» hace falta «Have»."
         },
         "Are": {
-          "hu": "Az „Are” a to be alakja; a present perfect kérdése „Have you…?”.",
           "en": "“Are” is a form of to be; the present perfect question is “Have you…?”.",
-          "es": "«Are» es una forma de to be; la pregunta en presente perfecto es «Have you…?».",
-          "de": "„Are“ ist eine Form von to be; die Present-Perfect-Frage lautet „Have you…?“."
+          "es": "«Are» es una forma de to be; la pregunta en presente perfecto es «Have you…?»."
         }
       },
       "examples": [
         "Have they seen it?",
         "Has she been here?"
       ],
-      "tr": { "hu": "Jártál már valaha Mexikóban?", "en": "Have you ever been to Mexico?", "es": "¿Alguna vez ha estado en México?", "de": "Waren Sie schon einmal in Mexiko?" }
+      "tr": { "en": "Have you ever been to Mexico?", "es": "¿Alguna vez ha estado en México?" }
     },
     {
       "id": "pf-26",
@@ -962,30 +800,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A she mellé a „has” kell: She has never eaten fish.",
         "en": "With she you need “has”: She has never eaten fish.",
-        "es": "Con she hace falta «has»: She has never eaten fish.",
-        "de": "Bei she braucht man „has“: She has never eaten fish."
+        "es": "Con she hace falta «has»: She has never eaten fish."
       },
       "wrong": {
         "have": {
-          "hu": "A „have” az I, you, we, they mellé való; a „she” mellé „has” kell.",
           "en": "“Have” goes with I, you, we, they; with “she” you need “has”.",
-          "es": "«Have» va con I, you, we, they; con «she» hace falta «has».",
-          "de": "„Have“ gehört zu I, you, we, they; bei „she“ braucht man „has“."
+          "es": "«Have» va con I, you, we, they; con «she» hace falta «has»."
         },
         "is": {
-          "hu": "Az „is” a to be alakja; a present perfect segédigéje a have / has.",
           "en": "“Is” is a form of to be; the helper of the present perfect is have / has.",
-          "es": "«Is» es una forma de to be; el auxiliar del presente perfecto es have / has.",
-          "de": "„Is“ ist eine Form von to be; das Hilfsverb des Present Perfect ist have / has."
+          "es": "«Is» es una forma de to be; el auxiliar del presente perfecto es have / has."
         }
       },
       "examples": [
         "He has never seen a movie.",
         "My mother has never been here."
       ],
-      "tr": { "hu": "Ő még soha nem evett halat.", "en": "She has never eaten fish.", "es": "Ella nunca ha comido pescado.", "de": "Sie hat noch nie Fisch gegessen." }
+      "tr": { "en": "She has never eaten fish.", "es": "Ella nunca ha comido pescado." }
     },
     {
       "id": "pf-14",
@@ -997,30 +829,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A we mellé a tagadás „haven’t”: We haven’t been to Mexico.",
         "en": "With we the negative is “haven’t”: We haven’t been to Mexico.",
-        "es": "Con we la negación es «haven’t»: We haven’t been to Mexico.",
-        "de": "Bei we lautet die Verneinung „haven’t“: We haven’t been to Mexico."
+        "es": "Con we la negación es «haven’t»: We haven’t been to Mexico."
       },
       "wrong": {
         "hasn't": {
-          "hu": "A „hasn’t” a he, she, it mellé való; a „we” mellé „haven’t” kell.",
           "en": "“Hasn’t” goes with he, she, it; with “we” you need “haven’t”.",
-          "es": "«Hasn’t» va con he, she, it; con «we» hace falta «haven’t».",
-          "de": "„Hasn’t“ gehört zu he, she, it; bei „we“ braucht man „haven’t“."
+          "es": "«Hasn’t» va con he, she, it; con «we» hace falta «haven’t»."
         },
         "didn't": {
-          "hu": "A „didn’t” után alapige jön (didn’t go); a „been” igenév mellé „haven’t” kell.",
           "en": "“Didn’t” is followed by the base verb (didn’t go); with the participle “been” you need “haven’t”.",
-          "es": "Después de «didn’t» va el verbo base (didn’t go); con el participio «been» hace falta «haven’t».",
-          "de": "Nach „didn’t“ folgt die Grundform (didn’t go); beim Partizip „been“ braucht man „haven’t“."
+          "es": "Después de «didn’t» va el verbo base (didn’t go); con el participio «been» hace falta «haven’t»."
         }
       },
       "examples": [
         "I haven't seen it.",
         "They haven't eaten."
       ],
-      "tr": { "hu": "Még nem voltunk Mexikóban.", "en": "We haven't been to Mexico.", "es": "No hemos estado en México.", "de": "Wir waren noch nicht in Mexiko." }
+      "tr": { "en": "We haven't been to Mexico.", "es": "No hemos estado en México." }
     },
     {
       "kind": "why",
@@ -1028,46 +854,34 @@
       "es": "She has lived here for two years.",
       "target": "for",
       "tr": {
-        "hu": "Két éve lakik itt.",
         "en": "She has lived here for two years.",
-        "es": "Ella vive aquí desde hace dos años.",
-        "de": "Sie wohnt seit zwei Jahren hier."
+        "es": "Ella vive aquí desde hace dos años."
       },
       "options": [
         {
           "text": {
-            "hu": "for + időtartam (two years)",
             "en": "for + a length of time (two years)",
-            "es": "for + una duración (two years)",
-            "de": "for + eine Dauer (two years)"
+            "es": "for + una duración (two years)"
           }
         },
         {
           "text": {
-            "hu": "since + időtartam",
             "en": "since + a length of time",
-            "es": "since + una duración",
-            "de": "since + eine Dauer"
+            "es": "since + una duración"
           },
           "wrong": {
-            "hu": "A „since” kezdőponthoz kell (since 2020); időtartam elé „for” áll.",
             "en": "“Since” is for a starting point (since 2020); before a length of time comes “for”.",
-            "es": "«Since» es para un punto de inicio (since 2020); delante de una duración va «for».",
-            "de": "„Since“ gehört zu einem Anfangspunkt (since 2020); vor einer Dauer steht „for“."
+            "es": "«Since» es para un punto de inicio (since 2020); delante de una duración va «for»."
           }
         },
         {
           "text": {
-            "hu": "ago + időtartam",
             "en": "ago + a length of time",
-            "es": "ago + una duración",
-            "de": "ago + eine Dauer"
+            "es": "ago + una duración"
           },
           "wrong": {
-            "hu": "Az „ago” a szám UTÁN áll és egyszerű múlttal megy (two years ago); itt „for” kell.",
             "en": "“Ago” comes AFTER the number and goes with the past simple (two years ago); here you need “for”.",
-            "es": "«Ago» va DESPUÉS del número y con el pasado simple (two years ago); aquí hace falta «for».",
-            "de": "„Ago“ steht NACH der Zahl und geht mit dem Past Simple (two years ago); hier braucht man „for“."
+            "es": "«Ago» va DESPUÉS del número y con el pasado simple (two years ago); aquí hace falta «for»."
           }
         }
       ],
@@ -1083,30 +897,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A buy igenéve megegyezik a múlt alakkal: bought. He has bought a new phone.",
         "en": "The participle of buy equals the past form: bought. He has bought a new phone.",
-        "es": "El participio de buy es igual que el pasado: bought. He has bought a new phone.",
-        "de": "Das Partizip von buy ist gleich der Vergangenheitsform: bought. He has bought a new phone."
+        "es": "El participio de buy es igual que el pasado: bought. He has bought a new phone."
       },
       "wrong": {
         "buyed": {
-          "hu": "A „buyed” nem létező alak; a buy rendhagyó: bought.",
           "en": "“Buyed” does not exist; buy is irregular: bought.",
-          "es": "«Buyed» no existe; buy es irregular: bought.",
-          "de": "„Buyed“ gibt es nicht; buy ist unregelmäßig: bought."
+          "es": "«Buyed» no existe; buy es irregular: bought."
         },
         "buy": {
-          "hu": "A has után igenév kell, nem alapige: bought.",
           "en": "After has you need a participle, not the base verb: bought.",
-          "es": "Después de has hace falta un participio, no el verbo base: bought.",
-          "de": "Nach has braucht man ein Partizip, nicht die Grundform: bought."
+          "es": "Después de has hace falta un participio, no el verbo base: bought."
         }
       },
       "examples": [
         "I have bought rice.",
         "She has bought a bag."
       ],
-      "tr": { "hu": "Vett egy új telefont.", "en": "He has bought a new phone.", "es": "Él compró un celular nuevo.", "de": "Er hat ein neues Handy gekauft." }
+      "tr": { "en": "He has bought a new phone.", "es": "Él compró un celular nuevo." }
     },
     {
       "id": "pf-21",
@@ -1126,30 +934,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Aki elment és még ott van, arra „has gone” áll: She has gone to the market.",
         "en": "For someone who left and is still there we say “has gone”: She has gone to the market.",
-        "es": "Para alguien que se fue y sigue allí se dice «has gone»: She has gone to the market.",
-        "de": "Für jemanden, der weg ist und noch dort ist, sagt man „has gone“: She has gone to the market."
+        "es": "Para alguien que se fue y sigue allí se dice «has gone»: She has gone to the market."
       },
       "wrong": {
         "been": {
-          "hu": "A „has been” azt jelenti, hogy járt ott és visszajött; itt még nincs itt, ezért „gone”.",
           "en": "“Has been” means she went there and came back; here she is not back yet, so “gone”.",
-          "es": "«Has been» significa que fue y volvió; aquí todavía no ha vuelto, por eso «gone».",
-          "de": "„Has been“ bedeutet, dass sie dort war und zurück ist; hier ist sie noch nicht zurück, deshalb „gone“."
+          "es": "«Has been» significa que fue y volvió; aquí todavía no ha vuelto, por eso «gone»."
         },
         "went": {
-          "hu": "A „went” egyszerű múlt; a has után az igenév („gone”) áll.",
           "en": "“Went” is the past simple; after has comes the participle (“gone”).",
-          "es": "«Went» es pasado simple; después de has va el participio («gone»).",
-          "de": "„Went“ ist Past Simple; nach has steht das Partizip („gone“)."
+          "es": "«Went» es pasado simple; después de has va el participio («gone»)."
         }
       },
       "examples": [
         "He has gone home.",
         "They have gone to school."
       ],
-      "tr": { "hu": "Elment a piacra. Nincs itt.", "en": "She has gone to the market. She is not here.", "es": "Ella se fue al mercado. No está aquí.", "de": "Sie ist zum Markt gegangen. Sie ist nicht hier." }
+      "tr": { "en": "She has gone to the market. She is not here.", "es": "Ella se fue al mercado. No está aquí." }
     },
     {
       "id": "pf-22",

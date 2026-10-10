@@ -14,7 +14,7 @@ import { TENSE_IDS, TENSE_NAMES } from '@/lib/grammar/lessonTypes';
 import type { GrammarGapItem } from '@/lib/games/content';
 import { findWholeWord } from '@/lib/grammar/whyTarget';
 
-const LANGS = ['hu', 'en', 'es', 'de'] as const;
+const LANGS = ['en', 'es'] as const;
 const DIR = path.join(__dirname, '..', '..', 'data', 'games', 'grammar', 'es');
 
 type TableBlock = Extract<LessonBlock, { kind: 'table' }>;
@@ -41,7 +41,7 @@ describe('schema 2 lessons', () => {
   });
 });
 
-// A badge name for every tense, in all 4
+// A badge name for every tense, in both
 // languages, so that TENSE_NAMES is not silently incomplete.
 describe('TENSE_IDS', () => {
   it('matches the copy in scripts/audit-games.mjs (the script cannot import the TS file)', () => {
@@ -54,9 +54,9 @@ describe('TENSE_IDS', () => {
 });
 
 describe('TENSE_NAMES', () => {
-  it('gives all 4 non-empty languages for every tense', () => {
+  it('gives both non-empty languages for every tense', () => {
     for (const tense of TENSE_IDS) {
-      for (const lang of ['hu', 'en', 'es', 'de'] as const) {
+      for (const lang of LANGS) {
         expect(TENSE_NAMES[tense][lang]?.trim()).toBeTruthy();
       }
     }
@@ -109,14 +109,12 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
     if (lesson.items.some((i) => i.kind === 'transform')) return;
     expect(pairs.length).toBeGreaterThan(0);
     for (const pair of pairs) {
-      for (const lang of ['hu', 'en', 'de'] as const) {
-        expect(pair.tr[lang]).toBeTruthy();
-        expect(pair.tr[lang].trim()).not.toBe(pair.es.trim());
-      }
+      expect(pair.tr.en).toBeTruthy();
+      expect(pair.tr.en.trim()).not.toBe(pair.es.trim());
     }
   });
 
-  it('every contrast pair has a 4-language note and at least 2 examples', () => {
+  it('every contrast pair has a note in both languages and at least 2 examples', () => {
     for (const block of lesson.body) {
       if (block.kind !== 'contrast') continue;
       for (const pair of block.pairs) {
@@ -159,7 +157,7 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
     }
   });
 
-  it('speak has all 4 languages, no «» sections (read aloud without Spanish), no digits or parentheses', () => {
+  it('speak has both languages, no «» sections (read aloud without Spanish), no digits or parentheses', () => {
     for (const lang of LANGS) {
       const text = lesson.speak[lang];
       expect(text).toBeTruthy();
@@ -176,7 +174,7 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
   // "why this sentence": the audit rules for these items, plus:
   // the text of the correct option does not appear verbatim in the sentence (otherwise the
   // task would give itself away).
-  it('why items (once authored) are 6-8, each with 3 unique-hu options and a translated sentence', () => {
+  it('why items (once authored) are 6-8, each with 3 unique-en options and a translated sentence', () => {
     const whyItems = lesson.items.filter((i) => i.kind === 'why');
     // the content is added lesson by lesson, in batches, AFTER the commit
     // that closes the code; a still untouched lesson has 0 why items, which is fine.
@@ -197,8 +195,8 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
       expect(item.correctIndex).toBeGreaterThanOrEqual(0);
       expect(item.correctIndex).toBeLessThan(3);
 
-      const huTexts = item.options.map((o) => o.text.hu);
-      expect(new Set(huTexts).size).toBe(3);
+      const enTexts = item.options.map((o) => o.text.en);
+      expect(new Set(enTexts).size).toBe(3);
 
       const esLower = item.es.toLowerCase();
       item.options.forEach((opt, i) => {
@@ -231,13 +229,13 @@ describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {
     }
   });
 
-  it("every gap item's wrong explanations are real sentences in 4 languages", () => {
+  it("every gap item's wrong explanations are real sentences in both languages", () => {
     const gapItems = lesson.items.filter((i): i is GrammarGapItem => i.kind === undefined) as GrammarGapItem[];
     // a transform lesson (e.g. indefinido-10-verbos) has no gap-based content;
     // the older lessons (no transform item) keep the strict rule.
     if (lesson.items.some((i) => i.kind === 'transform')) return;
     expect(gapItems.length).toBeGreaterThanOrEqual(10);
-    const bareWrong = /^(wrong|rossz|falsch|incorrecto)\.?$/i;
+    const bareWrong = /^(wrong|incorrecto)\.?$/i;
     for (const item of gapItems) {
       for (const optionText of Object.keys(item.wrong)) {
         for (const lang of LANGS) {

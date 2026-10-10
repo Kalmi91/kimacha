@@ -3,48 +3,36 @@
   "topic": "pronombres-preposicion",
   "level": "A2",
   "title": {
-    "hu": "Névmás elöljáró után: para mí, contigo",
     "en": "Pronouns after prepositions: para mí, contigo",
-    "es": "Pronombres después de preposición: para mí, contigo",
-    "de": "Pronomen nach Präposition: para mí, contigo"
+    "es": "Pronombres después de preposición: para mí, contigo"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "Az elöljáró (para, sin, de, a, en) után a névmás nem mindig ugyanaz, mint alanyként: az én helyett mí, a te helyett ti áll (para mí, sin ti), a többi személy változatlan (para él, sin ella). A con után saját szavak vannak: conmigo, contigo. Néhány szó után (entre, según, excepto) viszont visszajön az alanyi alak: entre tú y yo. Az a mí me gusta típusú mondatban pedig a mí csak kiemel, a me ott marad.",
         "en": "After a preposition (para, sin, de, a, en) the pronoun is not always the same as the subject pronoun: mí replaces yo and ti replaces tú (para mí, sin ti), while the other persons stay the same (para él, sin ella). After con there are words of their own: conmigo, contigo. After a few words (entre, según, excepto), however, the subject form comes back: entre tú y yo. And in a sentence like a mí me gusta, the mí only adds emphasis, and the me stays.",
-        "es": "Después de una preposición (para, sin, de, a, en) el pronombre no siempre es el mismo que el de sujeto: mí reemplaza a yo y ti reemplaza a tú (para mí, sin ti), y las demás personas no cambian (para él, sin ella). Después de con hay palabras propias: conmigo, contigo. Después de unas pocas palabras (entre, según, excepto) vuelve la forma de sujeto: entre tú y yo. Y en una frase como a mí me gusta, el mí solo da énfasis y el me se queda.",
-        "de": "Nach einer Präposition (para, sin, de, a, en) ist das Pronomen nicht immer dasselbe wie das Subjektpronomen: mí ersetzt yo und ti ersetzt tú (para mí, sin ti), die anderen Personen bleiben gleich (para él, sin ella). Nach con gibt es eigene Wörter: conmigo, contigo. Nach einigen wenigen Wörtern (entre, según, excepto) kommt dagegen die Subjektform zurück: entre tú y yo. Und in einem Satz wie a mí me gusta betont das mí nur, das me bleibt."
+        "es": "Después de una preposición (para, sin, de, a, en) el pronombre no siempre es el mismo que el de sujeto: mí reemplaza a yo y ti reemplaza a tú (para mí, sin ti), y las demás personas no cambian (para él, sin ella). Después de con hay palabras propias: conmigo, contigo. Después de unas pocas palabras (entre, según, excepto) vuelve la forma de sujeto: entre tú y yo. Y en una frase como a mí me gusta, el mí solo da énfasis y el me se queda."
       }
     },
     {
       "kind": "table",
       "id": "pronombres-preposicion",
       "title": {
-        "hu": "Névmások elöljáró után",
         "en": "Pronouns after a preposition",
-        "es": "Pronombres después de preposición",
-        "de": "Pronomen nach Präposition"
+        "es": "Pronombres después de preposición"
       },
       "header": [
         {
-          "hu": "Alany",
           "en": "Subject",
-          "es": "Sujeto",
-          "de": "Subjekt"
+          "es": "Sujeto"
         },
         {
-          "hu": "para, sin, de, en után",
           "en": "after para, sin, de, en",
-          "es": "después de para, sin, de, en",
-          "de": "nach para, sin, de, en"
+          "es": "después de para, sin, de, en"
         },
         {
-          "hu": "con után",
           "en": "after con",
-          "es": "después de con",
-          "de": "nach con"
+          "es": "después de con"
         }
       ],
       "rows": [
@@ -78,212 +66,166 @@
     {
       "kind": "usage",
       "title": {
-        "hu": "Mikor melyik alak",
         "en": "Which form when",
-        "es": "Cuándo va cada forma",
-        "de": "Wann welche Form"
+        "es": "Cuándo va cada forma"
       },
       "points": [
         {
           "text": {
-            "hu": "A para, sin, de, en és a legtöbb más elöljáró után az én helyett mí, a te helyett ti áll. A többi személynél ugyanaz a szó marad, mint alanyként: él, ella, usted, nosotros, ellos, ustedes. A para mí azt is jelentheti: szerintem.",
             "en": "After para, sin, de, en and most other prepositions, mí is used instead of yo and ti instead of tú. For the other persons the word stays the same as for the subject: él, ella, usted, nosotros, ellos, ustedes. Para mí can also mean: in my opinion.",
-            "es": "Después de para, sin, de, en y la mayoría de las demás preposiciones se usa mí en lugar de yo y ti en lugar de tú. En las otras personas la palabra es la misma que la del sujeto: él, ella, usted, nosotros, ellos, ustedes. Para mí también puede significar: en mi opinión.",
-            "de": "Nach para, sin, de, en und den meisten anderen Präpositionen steht mí statt yo und ti statt tú. Bei den anderen Personen bleibt das Wort wie beim Subjekt: él, ella, usted, nosotros, ellos, ustedes. Para mí kann auch bedeuten: meiner Meinung nach."
+            "es": "Después de para, sin, de, en y la mayoría de las demás preposiciones se usa mí en lugar de yo y ti en lugar de tú. En las otras personas la palabra es la misma que la del sujeto: él, ella, usted, nosotros, ellos, ustedes. Para mí también puede significar: en mi opinión."
           },
           "examples": [
             {
               "es": "Este regalo es para ti.",
               "tr": {
-                "hu": "Ez az ajándék neked szól.",
                 "en": "This gift is for you.",
-                "es": "Este regalo es para ti.",
-                "de": "Dieses Geschenk ist für dich."
+                "es": "Este regalo es para ti."
               }
             },
             {
               "es": "No quiero vivir sin ti.",
               "tr": {
-                "hu": "Nem akarok nélküled élni.",
                 "en": "I don't want to live without you.",
-                "es": "No quiero vivir sin ti.",
-                "de": "Ich will nicht ohne dich leben."
+                "es": "No quiero vivir sin ti."
               }
             },
             {
               "es": "Vivo cerca de ella.",
               "tr": {
-                "hu": "Közel lakom hozzá.",
                 "en": "I live near her.",
-                "es": "Vivo cerca de ella.",
-                "de": "Ich wohne in ihrer Nähe."
+                "es": "Vivo cerca de ella."
               }
             },
             {
               "es": "Para mí, el español es muy fácil.",
               "tr": {
-                "hu": "Nekem a spanyol nagyon könnyű.",
                 "en": "For me, Spanish is very easy.",
-                "es": "Para mí, el español es muy fácil.",
-                "de": "Für mich ist Spanisch sehr leicht."
+                "es": "Para mí, el español es muy fácil."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A con után az én és a te névmás egy szóvá olvad: conmigo és contigo (nem con mí, con ti). A többi személynél a con külön marad: con él, con ella, con nosotros, con ustedes.",
             "en": "After con, the pronouns for I and you merge into one word: conmigo and contigo (not con mí, con ti). For the other persons con stays separate: con él, con ella, con nosotros, con ustedes.",
-            "es": "Después de con, los pronombres de yo y tú se funden en una palabra: conmigo y contigo (no con mí, con ti). En las otras personas con va separado: con él, con ella, con nosotros, con ustedes.",
-            "de": "Nach con verschmelzen die Pronomen für ich und du zu einem Wort: conmigo und contigo (nicht con mí, con ti). Bei den anderen Personen bleibt con getrennt: con él, con ella, con nosotros, con ustedes."
+            "es": "Después de con, los pronombres de yo y tú se funden en una palabra: conmigo y contigo (no con mí, con ti). En las otras personas con va separado: con él, con ella, con nosotros, con ustedes."
           },
           "examples": [
             {
               "es": "¿Quieres ir al cine conmigo?",
               "tr": {
-                "hu": "Eljössz velem moziba?",
                 "en": "Do you want to go to the cinema with me?",
-                "es": "¿Quieres ir al cine conmigo?",
-                "de": "Willst du mit mir ins Kino gehen?"
+                "es": "¿Quieres ir al cine conmigo?"
               }
             },
             {
               "es": "Quiero hablar contigo.",
               "tr": {
-                "hu": "Beszélni akarok veled.",
                 "en": "I want to talk to you.",
-                "es": "Quiero hablar contigo.",
-                "de": "Ich will mit dir sprechen."
+                "es": "Quiero hablar contigo."
               }
             },
             {
               "es": "Mi hermano vive con nosotros.",
               "tr": {
-                "hu": "A testvérem velünk lakik.",
                 "en": "My brother lives with us.",
-                "es": "Mi hermano vive con nosotros.",
-                "de": "Mein Bruder wohnt bei uns."
+                "es": "Mi hermano vive con nosotros."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Az entre, según, excepto és salvo után nem a mí / ti alak áll, hanem az alanyi: yo és tú. Ezek a szavak elöljárók, de így viselkednek.",
             "en": "After entre, según, excepto and salvo, the forms are not mí / ti but the subject ones: yo and tú. These words are prepositions, but they behave this way.",
-            "es": "Después de entre, según, excepto y salvo no van las formas mí / ti sino las de sujeto: yo y tú. Estas palabras son preposiciones, pero se comportan así.",
-            "de": "Nach entre, según, excepto und salvo stehen nicht die Formen mí / ti, sondern die des Subjekts: yo und tú. Diese Wörter sind Präpositionen, verhalten sich aber so."
+            "es": "Después de entre, según, excepto y salvo no van las formas mí / ti sino las de sujeto: yo y tú. Estas palabras son preposiciones, pero se comportan así."
           },
           "examples": [
             {
               "es": "Es un secreto entre tú y yo.",
               "tr": {
-                "hu": "Ez egy titok kettőnk között.",
                 "en": "It is a secret between you and me.",
-                "es": "Es un secreto entre tú y yo.",
-                "de": "Das ist ein Geheimnis zwischen dir und mir."
+                "es": "Es un secreto entre tú y yo."
               }
             },
             {
               "es": "Según yo, la película empieza a las ocho.",
               "tr": {
-                "hu": "Szerintem a film nyolckor kezdődik.",
                 "en": "In my view, the film starts at eight.",
-                "es": "Según yo, la película empieza a las ocho.",
-                "de": "Meiner Meinung nach beginnt der Film um acht."
+                "es": "Según yo, la película empieza a las ocho."
               }
             },
             {
               "es": "Todos vienen, excepto yo.",
               "tr": {
-                "hu": "Mindenki jön, kivéve engem.",
                 "en": "Everyone is coming, except me.",
-                "es": "Todos vienen, excepto yo.",
-                "de": "Alle kommen, außer mir."
+                "es": "Todos vienen, excepto yo."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Az a mí, a ti, a ella, a nosotros, a ustedes kiemel, vagy ellentétet fejez ki. A rövid névmás (me, te, le, nos, les) viszont ott marad az igénél: a mí me gusta, nem a mí gusta.",
             "en": "A mí, a ti, a ella, a nosotros, a ustedes add emphasis or contrast. The short pronoun (me, te, le, nos, les) still stays next to the verb: a mí me gusta, not a mí gusta.",
-            "es": "A mí, a ti, a ella, a nosotros, a ustedes dan énfasis o contraste. El pronombre corto (me, te, le, nos, les) sigue junto al verbo: a mí me gusta, no a mí gusta.",
-            "de": "A mí, a ti, a ella, a nosotros, a ustedes betonen oder drücken einen Gegensatz aus. Das kurze Pronomen (me, te, le, nos, les) bleibt trotzdem beim Verb: a mí me gusta, nicht a mí gusta."
+            "es": "A mí, a ti, a ella, a nosotros, a ustedes dan énfasis o contraste. El pronombre corto (me, te, le, nos, les) sigue junto al verbo: a mí me gusta, no a mí gusta."
           },
           "examples": [
             {
               "es": "A mí me gusta el café, ¿y a ti?",
               "tr": {
-                "hu": "Nekem ízlik a kávé, és neked?",
                 "en": "I like coffee, and you?",
-                "es": "A mí me gusta el café, ¿y a ti?",
-                "de": "Mir schmeckt Kaffee, und dir?"
+                "es": "A mí me gusta el café, ¿y a ti?"
               }
             },
             {
               "es": "A ella le gusta cantar.",
               "tr": {
-                "hu": "Ő szeret énekelni.",
                 "en": "She likes singing.",
-                "es": "A ella le gusta cantar.",
-                "de": "Sie singt gern."
+                "es": "A ella le gusta cantar."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A mí névmás, ezért ékezetet kap. A mi birtokos szó (mi casa), főnév előtt áll, és nincs ékezete. A ti-n nincs ékezet.",
             "en": "Mí is a pronoun, so it takes an accent. Mi is a possessive word (mi casa), it stands before a noun and has no accent. Ti has no accent.",
-            "es": "Mí es un pronombre, por eso lleva tilde. Mi es un posesivo (mi casa), va delante de un sustantivo y no lleva tilde. Ti no lleva tilde.",
-            "de": "Mí ist ein Pronomen und bekommt deshalb einen Akzent. Mi ist ein Possessivwort (mi casa), es steht vor einem Nomen und hat keinen Akzent. Ti hat keinen Akzent."
+            "es": "Mí es un pronombre, por eso lleva tilde. Mi es un posesivo (mi casa), va delante de un sustantivo y no lleva tilde. Ti no lleva tilde."
           },
           "examples": [
             {
               "es": "Este café es para mí.",
               "tr": {
-                "hu": "Ez a kávé nekem való.",
                 "en": "This coffee is for me.",
-                "es": "Este café es para mí.",
-                "de": "Dieser Kaffee ist für mich."
+                "es": "Este café es para mí."
               }
             },
             {
               "es": "Este café es para mi hermano.",
               "tr": {
-                "hu": "Ez a kávé a testvéremnek való.",
                 "en": "This coffee is for my brother.",
-                "es": "Este café es para mi hermano.",
-                "de": "Dieser Kaffee ist für meinen Bruder."
+                "es": "Este café es para mi hermano."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Mexikóban egy csoportot megszólítva ustedes áll: para ustedes, con ustedes, de ustedes.",
             "en": "In Mexico, when you speak to a group you use ustedes: para ustedes, con ustedes, de ustedes.",
-            "es": "En México, cuando le hablas a un grupo, se usa ustedes: para ustedes, con ustedes, de ustedes.",
-            "de": "In Mexiko sagt man zu einer Gruppe ustedes: para ustedes, con ustedes, de ustedes."
+            "es": "En México, cuando le hablas a un grupo, se usa ustedes: para ustedes, con ustedes, de ustedes."
           },
           "examples": [
             {
               "es": "Esta mesa es para ustedes.",
               "tr": {
-                "hu": "Ez az asztal nektek való.",
                 "en": "This table is for you (all).",
-                "es": "Esta mesa es para ustedes.",
-                "de": "Dieser Tisch ist für euch."
+                "es": "Esta mesa es para ustedes."
               }
             },
             {
               "es": "Mi hermano va al cine con ustedes.",
               "tr": {
-                "hu": "A testvérem veletek megy moziba.",
                 "en": "My brother is going to the cinema with you.",
-                "es": "Mi hermano va al cine con ustedes.",
-                "de": "Mein Bruder geht mit euch ins Kino."
+                "es": "Mi hermano va al cine con ustedes."
               }
             }
           ]
@@ -293,38 +235,30 @@
     {
       "kind": "contrast",
       "title": {
-        "hu": "Hasonló, mégis más",
         "en": "Similar, yet different",
-        "es": "Parecido, pero distinto",
-        "de": "Ähnlich, aber anders"
+        "es": "Parecido, pero distinto"
       },
       "pairs": [
         {
           "a": "para mí",
           "b": "para mi hermano",
           "note": {
-            "hu": "A mí névmás: ékezettel, önállóan áll (para mí). A mi birtokos szó: ékezet nélkül, főnév előtt áll (para mi hermano).",
             "en": "Mí is a pronoun: it has an accent and stands alone (para mí). Mi is a possessive word: it has no accent and stands before a noun (para mi hermano).",
-            "es": "Mí es un pronombre: lleva tilde y va solo (para mí). Mi es un posesivo: no lleva tilde y va delante de un sustantivo (para mi hermano).",
-            "de": "Mí ist ein Pronomen: es hat einen Akzent und steht allein (para mí). Mi ist ein Possessivwort: es hat keinen Akzent und steht vor einem Nomen (para mi hermano)."
+            "es": "Mí es un pronombre: lleva tilde y va solo (para mí). Mi es un posesivo: no lleva tilde y va delante de un sustantivo (para mi hermano)."
           },
           "examples": [
             {
               "es": "Este regalo es para mí.",
               "tr": {
-                "hu": "Ez az ajándék nekem szól.",
                 "en": "This gift is for me.",
-                "es": "Este regalo es para mí.",
-                "de": "Dieses Geschenk ist für mich."
+                "es": "Este regalo es para mí."
               }
             },
             {
               "es": "Este regalo es para mi hermano.",
               "tr": {
-                "hu": "Ez az ajándék a testvéremnek szól.",
                 "en": "This gift is for my brother.",
-                "es": "Este regalo es para mi hermano.",
-                "de": "Dieses Geschenk ist für meinen Bruder."
+                "es": "Este regalo es para mi hermano."
               }
             }
           ]
@@ -333,28 +267,22 @@
           "a": "a mí me gusta",
           "b": "me gusta",
           "note": {
-            "hu": "A me gusta semleges: valami tetszik nekem. Az a mí me gusta kiemel: nekem igen (másnak talán nem).",
             "en": "Me gusta is neutral: I like something. A mí me gusta adds emphasis: I do (maybe others do not).",
-            "es": "Me gusta es neutro: algo me gusta. A mí me gusta da énfasis: a mí sí (quizás a otros no).",
-            "de": "Me gusta ist neutral: mir gefällt etwas. A mí me gusta betont: mir ja (anderen vielleicht nicht)."
+            "es": "Me gusta es neutro: algo me gusta. A mí me gusta da énfasis: a mí sí (quizás a otros no)."
           },
           "examples": [
             {
               "es": "Me gusta bailar.",
               "tr": {
-                "hu": "Szeretek táncolni.",
                 "en": "I like dancing.",
-                "es": "Me gusta bailar.",
-                "de": "Ich tanze gern."
+                "es": "Me gusta bailar."
               }
             },
             {
               "es": "A mí me gusta bailar, a ti no.",
               "tr": {
-                "hu": "Én szeretek táncolni, te nem.",
                 "en": "I like dancing, you do not.",
-                "es": "A mí me gusta bailar, a ti no.",
-                "de": "Ich tanze gern, du nicht."
+                "es": "A mí me gusta bailar, a ti no."
               }
             }
           ]
@@ -363,28 +291,22 @@
           "a": "entre tú y yo",
           "b": "para ti y para mí",
           "note": {
-            "hu": "Az entre után alanyi alak jön (tú, yo), a para után az elöljáró utáni alak (ti, mí).",
             "en": "After entre the subject form is used (tú, yo), after para the form for after a preposition (ti, mí).",
-            "es": "Después de entre va la forma de sujeto (tú, yo), después de para la forma de preposición (ti, mí).",
-            "de": "Nach entre steht die Subjektform (tú, yo), nach para die Form nach der Präposition (ti, mí)."
+            "es": "Después de entre va la forma de sujeto (tú, yo), después de para la forma de preposición (ti, mí)."
           },
           "examples": [
             {
               "es": "Entre tú y yo no hay problemas.",
               "tr": {
-                "hu": "Köztünk nincs gond.",
                 "en": "There are no problems between you and me.",
-                "es": "Entre tú y yo no hay problemas.",
-                "de": "Zwischen dir und mir gibt es keine Probleme."
+                "es": "Entre tú y yo no hay problemas."
               }
             },
             {
               "es": "El regalo es para ti y para mí.",
               "tr": {
-                "hu": "Az ajándék neked és nekem szól.",
                 "en": "The gift is for you and for me.",
-                "es": "El regalo es para ti y para mí.",
-                "de": "Das Geschenk ist für dich und für mich."
+                "es": "El regalo es para ti y para mí."
               }
             }
           ]
@@ -395,23 +317,17 @@
       "kind": "table",
       "id": "pronombres-preposicion-formas",
       "title": {
-        "hu": "Helyzetből a hiányzó szó",
         "en": "From the situation to the missing word",
-        "es": "De la situación a la palabra que falta",
-        "de": "Von der Situation zum fehlenden Wort"
+        "es": "De la situación a la palabra que falta"
       },
       "header": [
         {
-          "hu": "mondat és zárójelben a ki",
           "en": "sentence and, in brackets, the person",
-          "es": "frase y, entre paréntesis, la persona",
-          "de": "Satz und in Klammern die Person"
+          "es": "frase y, entre paréntesis, la persona"
         },
         {
-          "hu": "pronombre",
           "en": "pronoun",
-          "es": "pronombre",
-          "de": "Pronomen"
+          "es": "pronombre"
         }
       ],
       "rows": [
@@ -468,18 +384,14 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Gyors emlékeztető: a para, sin, de, en után mí és ti. A con után conmigo és contigo. Az entre, según, excepto után yo és tú.",
         "en": "Quick reminder: after para, sin, de, en use mí and ti. After con use conmigo and contigo. After entre, según, excepto use yo and tú.",
-        "es": "Recordatorio rápido: después de para, sin, de, en van mí y ti. Después de con van conmigo y contigo. Después de entre, según, excepto van yo y tú.",
-        "de": "Kurze Erinnerung: nach para, sin, de, en stehen mí und ti. Nach con stehen conmigo und contigo. Nach entre, según, excepto stehen yo und tú."
+        "es": "Recordatorio rápido: después de para, sin, de, en van mí y ti. Después de con van conmigo y contigo. Después de entre, según, excepto van yo y tú."
       }
     }
   ],
   "speak": {
-    "hu": "Az elöljáró után az én és a te névmásnak saját alakja van: az én rövid, ékezetes szóra változik, a te is új szót kap. A többi személynél a névmás ugyanaz marad, mint alanyként. A társaságot kifejező elöljáró az én és a te névmással egyetlen szóvá olvad össze: velem és veled. Néhány szó után, amely azt jelenti, hogy között, szerint vagy kivéve, viszont újra a megszokott alanyi alak áll. Ha valamit kiemelsz, a mondat elejére kerül egy kis elöljáró és a névmás, de a rövid névmás az igénél ott marad. Végül ne keverd az ékezetes névmást a birtokos szóval, amely főnév előtt áll, és nincs ékezete.",
     "en": "After a preposition, the words for I and you have forms of their own: the one for I becomes a short word with an accent, and the one for you also gets a new word. For the other persons the pronoun stays the same as for the subject. The preposition that expresses company merges with the pronouns for I and you into a single word: with me and with you. After a few words that mean between, according to or except, however, the usual subject form comes back. When you stress something, a small preposition and the pronoun go at the start of the sentence, but the short pronoun stays by the verb. Finally, do not mix up the pronoun that has an accent with the possessive word, which stands before a noun and has no accent.",
-    "es": "Después de una preposición, las palabras para yo y tú tienen formas propias: la de yo se vuelve una palabra corta con tilde, y la de tú también recibe una palabra nueva. En las otras personas el pronombre sigue igual que el de sujeto. La preposición de compañía se funde con los pronombres de yo y tú en una sola palabra: conmigo y contigo. Después de algunas palabras que significan entre, según o excepto, vuelve la forma de sujeto de siempre. Cuando quieres dar énfasis, al principio de la frase va una preposición pequeña con el pronombre, pero el pronombre corto sigue junto al verbo. Por último, no confundas el pronombre con tilde con el posesivo, que va delante de un sustantivo y no lleva tilde.",
-    "de": "Nach einer Präposition haben die Wörter für ich und du eigene Formen: das für ich wird zu einem kurzen Wort mit Akzent, und auch das für du bekommt ein neues Wort. Bei den anderen Personen bleibt das Pronomen wie beim Subjekt. Die Präposition für die Begleitung verschmilzt mit den Pronomen für ich und du zu einem einzigen Wort: mit mir und mit dir. Nach einigen Wörtern, die zwischen, laut oder außer bedeuten, kommt dagegen wieder die gewohnte Subjektform. Wenn du etwas betonst, stehen am Satzanfang eine kleine Präposition und das Pronomen, aber das kurze Pronomen bleibt beim Verb. Verwechsle schließlich das Pronomen mit Akzent nicht mit dem Possessivwort, das vor einem Nomen steht und keinen Akzent hat."
+    "es": "Después de una preposición, las palabras para yo y tú tienen formas propias: la de yo se vuelve una palabra corta con tilde, y la de tú también recibe una palabra nueva. En las otras personas el pronombre sigue igual que el de sujeto. La preposición de compañía se funde con los pronombres de yo y tú en una sola palabra: conmigo y contigo. Después de algunas palabras que significan entre, según o excepto, vuelve la forma de sujeto de siempre. Cuando quieres dar énfasis, al principio de la frase va una preposición pequeña con el pronombre, pero el pronombre corto sigue junto al verbo. Por último, no confundas el pronombre con tilde con el posesivo, que va delante de un sustantivo y no lleva tilde."
   },
   "items": [
     {
@@ -492,30 +404,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A para után az elöljáró utáni alak áll: a te helyett ti. A mondat anyának szól (mamá), ezért ti: Este regalo es para ti, mamá.",
         "en": "After para the form used after a preposition appears: ti instead of tú. The sentence is addressed to mom (mamá), so ti: Este regalo es para ti, mamá.",
-        "es": "Después de para va la forma de preposición: ti en lugar de tú. La frase se dirige a mamá, por eso ti: Este regalo es para ti, mamá.",
-        "de": "Nach para steht die Form nach der Präposition: ti statt tú. Der Satz richtet sich an die Mama (mamá), deshalb ti: Este regalo es para ti, mamá."
+        "es": "Después de para va la forma de preposición: ti en lugar de tú. La frase se dirige a mamá, por eso ti: Este regalo es para ti, mamá."
       },
       "wrong": {
         "tú": {
-          "hu": "tú: alanyi alak. A para után nem használjuk, ott ti jön. Helyesen: Este regalo es para ti, mamá.",
           "en": "tú: the subject form. It is not used after para, there ti comes. Correct: Este regalo es para ti, mamá.",
-          "es": "tú: forma de sujeto. No se usa después de para, ahí va ti. Correcto: Este regalo es para ti, mamá.",
-          "de": "tú: Subjektform. Sie steht nicht nach para, dort kommt ti. Richtig: Este regalo es para ti, mamá."
+          "es": "tú: forma de sujeto. No se usa después de para, ahí va ti. Correcto: Este regalo es para ti, mamá."
         },
         "te": {
-          "hu": "te: a rövid névmás, ami az igéhez tartozik. Elöljáró után nem állhat, ott a hangsúlyos ti kell. Helyesen: Este regalo es para ti, mamá.",
           "en": "te: the short pronoun that goes with a verb. It cannot stand after a preposition, there the stressed ti is needed. Correct: Este regalo es para ti, mamá.",
-          "es": "te: el pronombre corto que acompaña al verbo. No puede ir después de una preposición, ahí hace falta ti. Correcto: Este regalo es para ti, mamá.",
-          "de": "te: das kurze Pronomen beim Verb. Es kann nicht nach einer Präposition stehen, dort braucht man ti. Richtig: Este regalo es para ti, mamá."
+          "es": "te: el pronombre corto que acompaña al verbo. No puede ir después de una preposición, ahí hace falta ti. Correcto: Este regalo es para ti, mamá."
         }
       },
       "examples": [
         "Esta carta es para ti.",
         "El café es para ti."
       ],
-      "tr": { "hu": "Ez az ajándék neked van, anyu.", "en": "This gift is for you, mom.", "es": "Este regalo es para ti, mamá.", "de": "Dieses Geschenk ist für dich, Mama." }
+      "tr": { "en": "This gift is for you, mom.", "es": "Este regalo es para ti, mamá." }
     },
     {
       "id": "pp-02",
@@ -527,30 +433,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A con után az én névmás egy szóvá olvad: conmigo. A beszélő hívja meg Anát: Ana, ¿quieres ir al cine conmigo?",
         "en": "After con the pronoun for I merges into one word: conmigo. The speaker is inviting Ana: Ana, ¿quieres ir al cine conmigo?",
-        "es": "Después de con el pronombre de yo se funde en una sola palabra: conmigo. Quien habla invita a Ana: Ana, ¿quieres ir al cine conmigo?",
-        "de": "Nach con verschmilzt das Pronomen für ich zu einem Wort: conmigo. Der Sprecher lädt Ana ein: Ana, ¿quieres ir al cine conmigo?"
+        "es": "Después de con el pronombre de yo se funde en una sola palabra: conmigo. Quien habla invita a Ana: Ana, ¿quieres ir al cine conmigo?"
       },
       "wrong": {
         "con mí": {
-          "hu": "con mí: a con és a mí külön nem állhat, egy szóvá olvad. Helyesen: Ana, ¿quieres ir al cine conmigo?",
           "en": "con mí: con and mí cannot stand apart, they merge into one word. Correct: Ana, ¿quieres ir al cine conmigo?",
-          "es": "con mí: con y mí no pueden ir separados, se funden en una palabra. Correcto: Ana, ¿quieres ir al cine conmigo?",
-          "de": "con mí: con und mí stehen nicht getrennt, sie verschmelzen zu einem Wort. Richtig: Ana, ¿quieres ir al cine conmigo?"
+          "es": "con mí: con y mí no pueden ir separados, se funden en una palabra. Correcto: Ana, ¿quieres ir al cine conmigo?"
         },
         "con yo": {
-          "hu": "con yo: a yo alanyi alak, a con után nem állhat. A con + én alak conmigo. Helyesen: Ana, ¿quieres ir al cine conmigo?",
           "en": "con yo: yo is the subject form, it cannot stand after con. The form for con + I is conmigo. Correct: Ana, ¿quieres ir al cine conmigo?",
-          "es": "con yo: yo es la forma de sujeto, no puede ir después de con. La forma de con + yo es conmigo. Correcto: Ana, ¿quieres ir al cine conmigo?",
-          "de": "con yo: yo ist die Subjektform, sie kann nicht nach con stehen. Die Form für con + ich ist conmigo. Richtig: Ana, ¿quieres ir al cine conmigo?"
+          "es": "con yo: yo es la forma de sujeto, no puede ir después de con. La forma de con + yo es conmigo. Correcto: Ana, ¿quieres ir al cine conmigo?"
         }
       },
       "examples": [
         "¿Vienes conmigo?",
         "Mi hermano viene conmigo."
       ],
-      "tr": { "hu": "Anna, akarsz moziba jönni velem?", "en": "Ana, do you want to go to the cinema with me?", "es": "Ana, ¿quieres ir al cine conmigo?", "de": "Ana, möchtest du mit mir ins Kino gehen?" }
+      "tr": { "en": "Ana, do you want to go to the cinema with me?", "es": "Ana, ¿quieres ir al cine conmigo?" }
     },
     {
       "id": "pp-03",
@@ -562,30 +462,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A con után a te névmás egy szóvá olvad: contigo. Anát szólítom meg, és veled akarok tanulni: Ana, hoy quiero estudiar contigo.",
         "en": "After con the pronoun for you merges into one word: contigo. I am talking to Ana, and I want to study with you: Ana, hoy quiero estudiar contigo.",
-        "es": "Después de con el pronombre de tú se funde en una sola palabra: contigo. Le hablo a Ana y quiero estudiar contigo: Ana, hoy quiero estudiar contigo.",
-        "de": "Nach con verschmilzt das Pronomen für du zu einem Wort: contigo. Ich spreche Ana an und will mit dir lernen: Ana, hoy quiero estudiar contigo."
+        "es": "Después de con el pronombre de tú se funde en una sola palabra: contigo. Le hablo a Ana y quiero estudiar contigo: Ana, hoy quiero estudiar contigo."
       },
       "wrong": {
         "con ti": {
-          "hu": "con ti: a con és a ti külön nem állhat, egy szóvá olvad. Helyesen: Ana, hoy quiero estudiar contigo.",
           "en": "con ti: con and ti cannot stand apart, they merge into one word. Correct: Ana, hoy quiero estudiar contigo.",
-          "es": "con ti: con y ti no pueden ir separados, se funden en una palabra. Correcto: Ana, hoy quiero estudiar contigo.",
-          "de": "con ti: con und ti stehen nicht getrennt, sie verschmelzen zu einem Wort. Richtig: Ana, hoy quiero estudiar contigo."
+          "es": "con ti: con y ti no pueden ir separados, se funden en una palabra. Correcto: Ana, hoy quiero estudiar contigo."
         },
         "con tú": {
-          "hu": "con tú: a tú alanyi alak, a con után nem állhat. A con + te alak contigo. Helyesen: Ana, hoy quiero estudiar contigo.",
           "en": "con tú: tú is the subject form, it cannot stand after con. The form for con + you is contigo. Correct: Ana, hoy quiero estudiar contigo.",
-          "es": "con tú: tú es la forma de sujeto, no puede ir después de con. La forma de con + tú es contigo. Correcto: Ana, hoy quiero estudiar contigo.",
-          "de": "con tú: tú ist die Subjektform, sie kann nicht nach con stehen. Die Form für con + du ist contigo. Richtig: Ana, hoy quiero estudiar contigo."
+          "es": "con tú: tú es la forma de sujeto, no puede ir después de con. La forma de con + tú es contigo. Correcto: Ana, hoy quiero estudiar contigo."
         }
       },
       "examples": [
         "Quiero hablar contigo.",
         "Voy al cine contigo."
       ],
-      "tr": { "hu": "Anna, ma veled szeretnék tanulni.", "en": "Ana, today I want to study with you.", "es": "Ana, hoy quiero estudiar contigo.", "de": "Ana, heute möchte ich mit dir lernen." }
+      "tr": { "en": "Ana, today I want to study with you.", "es": "Ana, hoy quiero estudiar contigo." }
     },
     {
       "id": "pp-04",
@@ -597,30 +491,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A sin után az elöljáró utáni alak áll: az én helyett mí, ékezettel. Sin mí = nélkülem: Mi hermana nunca come sin mí.",
         "en": "After sin the form used after a preposition appears: mí instead of yo, with an accent. Sin mí = without me: Mi hermana nunca come sin mí.",
-        "es": "Después de sin va la forma de preposición: mí en lugar de yo, con tilde: sin mí, no sin yo. Mi hermana nunca come sin mí.",
-        "de": "Nach sin steht die Form nach der Präposition: mí statt yo, mit Akzent. Sin mí = ohne mich: Mi hermana nunca come sin mí."
+        "es": "Después de sin va la forma de preposición: mí en lugar de yo, con tilde: sin mí, no sin yo. Mi hermana nunca come sin mí."
       },
       "wrong": {
         "mi": {
-          "hu": "mi: birtokos szó (mi hermana), főnév előtt áll, és nincs ékezete. Itt névmás kell, ékezettel. Helyesen: Mi hermana nunca come sin mí.",
           "en": "mi: a possessive word (mi hermana), it stands before a noun and has no accent. Here a pronoun is needed, with an accent. Correct: Mi hermana nunca come sin mí.",
-          "es": "mi: un posesivo (mi hermana), va delante de un sustantivo y no lleva tilde. Aquí hace falta un pronombre, con tilde. Correcto: Mi hermana nunca come sin mí.",
-          "de": "mi: ein Possessivwort (mi hermana), es steht vor einem Nomen und hat keinen Akzent. Hier braucht man ein Pronomen, mit Akzent. Richtig: Mi hermana nunca come sin mí."
+          "es": "mi: un posesivo (mi hermana), va delante de un sustantivo y no lleva tilde. Aquí hace falta un pronombre, con tilde. Correcto: Mi hermana nunca come sin mí."
         },
         "yo": {
-          "hu": "yo: alanyi alak, a sin után nem állhat. Ott az elöljáró utáni alak jön: mí. Helyesen: Mi hermana nunca come sin mí.",
           "en": "yo: the subject form, it cannot stand after sin. There the form used after a preposition comes: mí. Correct: Mi hermana nunca come sin mí.",
-          "es": "yo: forma de sujeto, no puede ir después de sin. Ahí va la forma de preposición: mí. Correcto: Mi hermana nunca come sin mí.",
-          "de": "yo: Subjektform, sie kann nicht nach sin stehen. Dort kommt die Form nach der Präposition: mí. Richtig: Mi hermana nunca come sin mí."
+          "es": "yo: forma de sujeto, no puede ir después de sin. Ahí va la forma de preposición: mí. Correcto: Mi hermana nunca come sin mí."
         }
       },
       "examples": [
         "Sin mí no hay fiesta.",
         "No quiero vivir sin ti."
       ],
-      "tr": { "hu": "A lánytestvérem sosem eszik nélkülem; mindig megvár engem.", "en": "My sister never eats without me; she always waits for me.", "es": "Mi hermana nunca come sin mí; siempre me espera.", "de": "Meine Schwester isst nie ohne mich; sie wartet immer auf mich." }
+      "tr": { "en": "My sister never eats without me; she always waits for me.", "es": "Mi hermana nunca come sin mí; siempre me espera." }
     },
     {
       "id": "pp-05",
@@ -632,30 +520,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A con után a harmadik személyű névmás nem változik, ugyanaz, mint alanyként. Ana nő, egy személy, ezért ella: con ella.",
         "en": "After con the third-person pronoun does not change, it is the same as for the subject. Ana is a woman, one person, so ella: con ella.",
-        "es": "Después de con el pronombre de tercera persona no cambia, es el mismo que el de sujeto. Ana es una mujer, una persona, por eso ella: con ella.",
-        "de": "Nach con ändert sich das Pronomen der dritten Person nicht, es ist dasselbe wie beim Subjekt. Ana ist eine Frau, eine Person, deshalb ella: con ella."
+        "es": "Después de con el pronombre de tercera persona no cambia, es el mismo que el de sujeto. Ana es una mujer, una persona, por eso ella: con ella."
       },
       "wrong": {
         "él": {
-          "hu": "él: férfira utalna (con él). Ana nő, ezért ella: con ella.",
           "en": "él: it would refer to a man (con él). Ana is a woman, so ella: con ella.",
-          "es": "él: se referiría a un hombre (con él). Ana es una mujer, por eso ella: con ella.",
-          "de": "él: es würde sich auf einen Mann beziehen (con él). Ana ist eine Frau, deshalb ella: con ella."
+          "es": "él: se referiría a un hombre (con él). Ana es una mujer, por eso ella: con ella."
         },
         "ellos": {
-          "hu": "ellos: több személyre utalna (con ellos). Ana egy személy, ezért ella: con ella.",
           "en": "ellos: it would refer to several people (con ellos). Ana is one person, so ella: con ella.",
-          "es": "ellos: se referiría a varias personas (con ellos). Ana es una sola persona, por eso ella: con ella.",
-          "de": "ellos: es würde sich auf mehrere Personen beziehen (con ellos). Ana ist eine Person, deshalb ella: con ella."
+          "es": "ellos: se referiría a varias personas (con ellos). Ana es una sola persona, por eso ella: con ella."
         }
       },
       "examples": [
         "Voy con ella.",
         "Estudio con él."
       ],
-      "tr": { "hu": "Anna a barátnőm. Vele megyek moziba, mert szórakoztató.", "en": "Ana is my friend. I go to the cinema with her because she is fun.", "es": "Ana es mi amiga. Voy al cine con ella porque es divertida.", "de": "Ana ist meine Freundin. Ich gehe mit ihr ins Kino, weil sie lustig ist." }
+      "tr": { "en": "Ana is my friend. I go to the cinema with her because she is fun.", "es": "Ana es mi amiga. Voy al cine con ella porque es divertida." }
     },
     {
       "id": "pp-06",
@@ -667,30 +549,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A para után a névmás ugyanaz, mint alanyként. Két embert szólítasz meg (mamá y papá), és Mexikóban a csoport megszólítása ustedes: para ustedes.",
         "en": "After para the pronoun is the same as for the subject. You are speaking to two people (mamá y papá), and in Mexico the way to address a group is ustedes: para ustedes.",
-        "es": "Después de para el pronombre es el mismo que el de sujeto. Le hablas a dos personas (mamá y papá), y en México a un grupo se le dice ustedes: para ustedes.",
-        "de": "Nach para ist das Pronomen dasselbe wie beim Subjekt. Du sprichst mit zwei Personen (mamá y papá), und in Mexiko spricht man eine Gruppe mit ustedes an: para ustedes."
+        "es": "Después de para el pronombre es el mismo que el de sujeto. Le hablas a dos personas (mamá y papá), y en México a un grupo se le dice ustedes: para ustedes."
       },
       "wrong": {
         "usted": {
-          "hu": "usted: egy személyt szólítana meg. Itt két embert szólítasz meg, ezért ustedes: para ustedes.",
           "en": "usted: it would address one person. Here you are speaking to two people, so ustedes: para ustedes.",
-          "es": "usted: le hablaría a una persona. Aquí le hablas a dos personas, por eso ustedes: para ustedes.",
-          "de": "usted: es würde eine Person ansprechen. Hier sprichst du zwei Personen an, deshalb ustedes: para ustedes."
+          "es": "usted: le hablaría a una persona. Aquí le hablas a dos personas, por eso ustedes: para ustedes."
         },
         "les": {
-          "hu": "les: a rövid névmás, ami az igéhez tartozik. A para után nem állhat, ott hangsúlyos alak kell: ustedes.",
           "en": "les: the short pronoun that goes with a verb. It cannot stand after para, there a stressed form is needed: ustedes.",
-          "es": "les: el pronombre corto que acompaña al verbo. No puede ir después de para, ahí hace falta una forma tónica: ustedes.",
-          "de": "les: das kurze Pronomen beim Verb. Es kann nicht nach para stehen, dort braucht man eine betonte Form: ustedes."
+          "es": "les: el pronombre corto que acompaña al verbo. No puede ir después de para, ahí hace falta una forma tónica: ustedes."
         }
       },
       "examples": [
         "El regalo es para ustedes.",
         "Vamos al cine con ustedes."
       ],
-      "tr": { "hu": "Anya és apa, ez az asztal nektek van.", "en": "Mom and dad, this table is for you.", "es": "Mamá y papá, esta mesa es para ustedes.", "de": "Mama und Papa, dieser Tisch ist für euch." }
+      "tr": { "en": "Mom and dad, this table is for you.", "es": "Mamá y papá, esta mesa es para ustedes." }
     },
     {
       "id": "pp-07",
@@ -702,30 +578,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az entre után az alanyi alak áll: tú és yo. Anyához szólsz (mamá), ezért tú: entre tú y yo.",
         "en": "After entre the subject form is used: tú and yo. You are speaking to mom (mamá), so tú: entre tú y yo.",
-        "es": "Después de entre va la forma de sujeto: tú y yo. Le hablas a mamá, por eso tú: entre tú y yo.",
-        "de": "Nach entre steht die Subjektform: tú und yo. Du sprichst mit der Mama (mamá), deshalb tú: entre tú y yo."
+        "es": "Después de entre va la forma de sujeto: tú y yo. Le hablas a mamá, por eso tú: entre tú y yo."
       },
       "wrong": {
         "tu": {
-          "hu": "tu: ékezet nélkül birtokos szó (tu casa), főnév kell mögé. Itt névmás kell, ékezettel: tú.",
           "en": "tu: without an accent it is a possessive word (tu casa), it needs a noun after it. Here a pronoun is needed, with an accent: tú.",
-          "es": "tu: sin tilde es un posesivo (tu casa), necesita un sustantivo detrás. Aquí hace falta un pronombre, con tilde: tú.",
-          "de": "tu: ohne Akzent ist es ein Possessivwort (tu casa), es braucht ein Nomen dahinter. Hier braucht man ein Pronomen, mit Akzent: tú."
+          "es": "tu: sin tilde es un posesivo (tu casa), necesita un sustantivo detrás. Aquí hace falta un pronombre, con tilde: tú."
         },
         "te": {
-          "hu": "te: a rövid névmás, ami az igéhez tartozik. Az entre után hangsúlyos névmás kell, és az alanyi alak: tú.",
           "en": "te: the short pronoun that goes with a verb. After entre a stressed pronoun is needed, and it is the subject form: tú.",
-          "es": "te: el pronombre corto que acompaña al verbo. Después de entre hace falta un pronombre tónico, y es la forma de sujeto: tú.",
-          "de": "te: das kurze Pronomen beim Verb. Nach entre braucht man ein betontes Pronomen, und zwar die Subjektform: tú."
+          "es": "te: el pronombre corto que acompaña al verbo. Después de entre hace falta un pronombre tónico, y es la forma de sujeto: tú."
         }
       },
       "examples": [
         "Hay una diferencia entre tú y yo.",
         "No hay problemas entre tú y yo."
       ],
-      "tr": { "hu": "Anya, közted és köztem nincsenek titkok.", "en": "Mom, between you and me there are no secrets.", "es": "Mamá, entre tú y yo no hay secretos.", "de": "Mama, zwischen dir und mir gibt es keine Geheimnisse." }
+      "tr": { "en": "Mom, between you and me there are no secrets.", "es": "Mamá, entre tú y yo no hay secretos." }
     },
     {
       "id": "pp-08",
@@ -737,30 +607,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A según után az alanyi alak áll: yo és tú. Según yo = szerintem: Según yo, la película empieza a las ocho.",
         "en": "After según the subject form is used: yo and tú. Según yo = in my view: Según yo, la película empieza a las ocho.",
-        "es": "Después de según va la forma de sujeto: yo y tú. Según yo = en mi opinión: Según yo, la película empieza a las ocho.",
-        "de": "Nach según steht die Subjektform: yo und tú. Según yo = meiner Meinung nach: Según yo, la película empieza a las ocho."
+        "es": "Después de según va la forma de sujeto: yo y tú. Según yo = en mi opinión: Según yo, la película empieza a las ocho."
       },
       "wrong": {
         "mí": {
-          "hu": "mí: az elöljáró utáni alak, de a según után az alanyi alak jön: yo. Helyesen: Según yo, la película empieza a las ocho.",
           "en": "mí: the form used after a preposition, but after según the subject form comes: yo. Correct: Según yo, la película empieza a las ocho.",
-          "es": "mí: la forma de preposición, pero después de según va la forma de sujeto: yo. Correcto: Según yo, la película empieza a las ocho.",
-          "de": "mí: die Form nach der Präposition, aber nach según kommt die Subjektform: yo. Richtig: Según yo, la película empieza a las ocho."
+          "es": "mí: la forma de preposición, pero después de según va la forma de sujeto: yo. Correcto: Según yo, la película empieza a las ocho."
         },
         "me": {
-          "hu": "me: a rövid névmás, ami az igéhez tartozik. A según után hangsúlyos névmás kell, és az alanyi alak: yo. Helyesen: Según yo, la película empieza a las ocho.",
           "en": "me: the short pronoun that goes with a verb. After según a stressed pronoun is needed, and it is the subject form: yo. Correct: Según yo, la película empieza a las ocho.",
-          "es": "me: el pronombre corto que acompaña al verbo. Después de según hace falta un pronombre tónico, y es la forma de sujeto: yo. Correcto: Según yo, la película empieza a las ocho.",
-          "de": "me: das kurze Pronomen beim Verb. Nach según braucht man ein betontes Pronomen, und zwar die Subjektform: yo. Richtig: Según yo, la película empieza a las ocho."
+          "es": "me: el pronombre corto que acompaña al verbo. Después de según hace falta un pronombre tónico, y es la forma de sujeto: yo. Correcto: Según yo, la película empieza a las ocho."
         }
       },
       "examples": [
         "Según tú, ¿a qué hora es la fiesta?",
         "Según ella, el examen es fácil."
       ],
-      "tr": { "hu": "Szerintem a film nyolckor kezdődik.", "en": "According to me, the movie starts at eight.", "es": "Según yo, la película empieza a las ocho.", "de": "Meiner Meinung nach fängt der Film um acht an." }
+      "tr": { "en": "According to me, the movie starts at eight.", "es": "Según yo, la película empieza a las ocho." }
     },
     {
       "id": "pp-09",
@@ -772,30 +636,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A vélemény kifejezésére a para mí szolgál: nekem, szerintem. Para mí, el español es muy fácil.",
         "en": "To give an opinion you use para mí: for me, in my view. Para mí, el español es muy fácil.",
-        "es": "Para dar una opinión se usa para mí: para mí, en mi opinión. Para mí, el español es muy fácil.",
-        "de": "Eine Meinung drückt man mit para mí aus: für mich, meiner Meinung nach. Para mí, el español es muy fácil."
+        "es": "Para dar una opinión se usa para mí: para mí, en mi opinión. Para mí, el español es muy fácil."
       },
       "wrong": {
         "Por": {
-          "hu": "Por mí: azt jelenti, hogy rajtam nem múlik, nekem mindegy (Por mí, está bien). Véleményt nem fejez ki. Helyesen: Para mí, el español es muy fácil.",
           "en": "Por mí: it means it is up to me or I do not mind (Por mí, está bien). It does not express an opinion. Correct: Para mí, el español es muy fácil.",
-          "es": "Por mí: significa que por mí no hay problema (Por mí, está bien). No expresa una opinión. Correcto: Para mí, el español es muy fácil.",
-          "de": "Por mí: bedeutet, dass es an mir nicht liegt (Por mí, está bien). Es drückt keine Meinung aus. Richtig: Para mí, el español es muy fácil."
+          "es": "Por mí: significa que por mí no hay problema (Por mí, está bien). No expresa una opinión. Correcto: Para mí, el español es muy fácil."
         },
         "De": {
-          "hu": "De mí: azt jelenti, hogy rólam, belőlem (Habla de mí). Véleményt nem fejez ki. Helyesen: Para mí, el español es muy fácil.",
           "en": "De mí: it means about me or from me (Habla de mí). It does not express an opinion. Correct: Para mí, el español es muy fácil.",
-          "es": "De mí: significa sobre mí o de mi parte (Habla de mí). No expresa una opinión. Correcto: Para mí, el español es muy fácil.",
-          "de": "De mí: bedeutet über mich oder von mir (Habla de mí). Es drückt keine Meinung aus. Richtig: Para mí, el español es muy fácil."
+          "es": "De mí: significa sobre mí o de mi parte (Habla de mí). No expresa una opinión. Correcto: Para mí, el español es muy fácil."
         }
       },
       "examples": [
         "Para mí, es muy importante.",
         "Para ti, ¿qué es difícil?"
       ],
-      "tr": { "hu": "Nekem a spanyol nagyon könnyű.", "en": "For me, Spanish is very easy.", "es": "Para mí, el español es muy fácil.", "de": "Für mich ist Spanisch sehr einfach." }
+      "tr": { "en": "For me, Spanish is very easy.", "es": "Para mí, el español es muy fácil." }
     },
     {
       "id": "pp-10",
@@ -807,30 +665,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A kiemelő rész is az elöljáró utáni alakot kapja: a mí. A rövid me az igénél marad: a mí me gusta el café.",
         "en": "The emphasising part also takes the form used after a preposition: a mí. The short me stays by the verb: a mí me gusta el café.",
-        "es": "La parte que da énfasis también lleva la forma de preposición: a mí. El me corto se queda junto al verbo: a mí me gusta el café.",
-        "de": "Auch der betonende Teil bekommt die Form nach der Präposition: a mí. Das kurze me bleibt beim Verb: a mí me gusta el café."
+        "es": "La parte que da énfasis también lleva la forma de preposición: a mí. El me corto se queda junto al verbo: a mí me gusta el café."
       },
       "wrong": {
         "yo": {
-          "hu": "a yo: a yo alanyi alak, az a után nem állhat. Ott az elöljáró utáni alak jön: a mí. Helyesen: a mí me gusta el café.",
           "en": "a yo: yo is the subject form, it cannot stand after a. There the form used after a preposition comes: a mí. Correct: a mí me gusta el café.",
-          "es": "a yo: yo es la forma de sujeto, no puede ir después de a. Ahí va la forma de preposición: a mí. Correcto: a mí me gusta el café.",
-          "de": "a yo: yo ist die Subjektform, sie kann nicht nach a stehen. Dort kommt die Form nach der Präposition: a mí. Richtig: a mí me gusta el café."
+          "es": "a yo: yo es la forma de sujeto, no puede ir después de a. Ahí va la forma de preposición: a mí. Correcto: a mí me gusta el café."
         },
         "me": {
-          "hu": "a me: a me rövid névmás, az igéhez tartozik, az a után nem állhat. Az a után hangsúlyos alak kell: a mí.",
           "en": "a me: me is a short pronoun that goes with the verb, it cannot stand after a. After a a stressed form is needed: a mí.",
-          "es": "a me: me es un pronombre corto que acompaña al verbo, no puede ir después de a. Después de a hace falta una forma tónica: a mí.",
-          "de": "a me: me ist ein kurzes Pronomen beim Verb, es kann nicht nach a stehen. Nach a braucht man eine betonte Form: a mí."
+          "es": "a me: me es un pronombre corto que acompaña al verbo, no puede ir después de a. Después de a hace falta una forma tónica: a mí."
         }
       },
       "examples": [
         "A mí me gusta bailar.",
         "A ti te gusta cantar."
       ],
-      "tr": { "hu": "Te a teát szereted, én pedig a kávét szeretem.", "en": "You like tea; I like coffee.", "es": "A ti te gusta el té; a mí me gusta el café.", "de": "Du magst Tee; ich mag Kaffee." }
+      "tr": { "en": "You like tea; I like coffee.", "es": "A ti te gusta el té; a mí me gusta el café." }
     },
     {
       "id": "pp-11",
@@ -842,30 +694,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Aki válaszol, az a saját csoportjáról beszél: nosotros. Az a után a névmás ugyanaz, mint alanyként: a nosotros.",
         "en": "The person answering speaks about their own group: nosotros. After a the pronoun is the same as for the subject: a nosotros.",
-        "es": "Quien responde habla de su propio grupo: nosotros. Después de a el pronombre es el mismo que el de sujeto: a nosotros.",
-        "de": "Wer antwortet, spricht über die eigene Gruppe: nosotros. Nach a ist das Pronomen dasselbe wie beim Subjekt: a nosotros."
+        "es": "Quien responde habla de su propio grupo: nosotros. Después de a el pronombre es el mismo que el de sujeto: a nosotros."
       },
       "wrong": {
         "nos": {
-          "hu": "a nos: a nos rövid névmás, az igéhez tartozik, az a után nem állhat. Hangsúlyos alak kell: a nosotros.",
           "en": "a nos: nos is a short pronoun that goes with the verb, it cannot stand after a. A stressed form is needed: a nosotros.",
-          "es": "a nos: nos es un pronombre corto que acompaña al verbo, no puede ir después de a. Hace falta una forma tónica: a nosotros.",
-          "de": "a nos: nos ist ein kurzes Pronomen beim Verb, es kann nicht nach a stehen. Man braucht eine betonte Form: a nosotros."
+          "es": "a nos: nos es un pronombre corto que acompaña al verbo, no puede ir después de a. Hace falta una forma tónica: a nosotros."
         },
         "ustedes": {
-          "hu": "ustedes: a kérdezetteket jelenti. Aki válaszol, az a saját csoportjáról beszél, ezért nosotros.",
           "en": "ustedes: it means the people who were asked. The person answering speaks about their own group, so nosotros.",
-          "es": "ustedes: se refiere a las personas a las que se pregunta. Quien responde habla de su propio grupo, por eso nosotros.",
-          "de": "ustedes: es meint die Gefragten. Wer antwortet, spricht über die eigene Gruppe, deshalb nosotros."
+          "es": "ustedes: se refiere a las personas a las que se pregunta. Quien responde habla de su propio grupo, por eso nosotros."
         }
       },
       "examples": [
         "A nosotros nos gusta el cine.",
         "A ustedes les gusta el café."
       ],
-      "tr": { "hu": "Szerettek táncolni? Igen, mi nagyon szeretünk.", "en": "Do you like to dance? Yes, we like it very much.", "es": "¿A ustedes les gusta bailar? Sí, a nosotros nos gusta mucho.", "de": "Tanzt ihr gerne? Ja, wir tanzen sehr gerne." }
+      "tr": { "en": "Do you like to dance? Yes, we like it very much.", "es": "¿A ustedes les gusta bailar? Sí, a nosotros nos gusta mucho." }
     },
     {
       "id": "pp-12",
@@ -877,30 +723,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A hermano főnév előtt birtokos szó kell: mi, ékezet nélkül. Az ékezetes mí önálló névmás (para mí), nem áll főnév előtt.",
         "en": "Before the noun hermano a possessive word is needed: mi, without an accent. The accented mí is a pronoun on its own (para mí), it does not stand before a noun.",
-        "es": "Delante del sustantivo hermano hace falta un posesivo: mi, sin tilde. El mí con tilde es un pronombre solo (para mí), no va delante de un sustantivo.",
-        "de": "Vor dem Nomen hermano braucht man ein Possessivwort: mi, ohne Akzent. Das mí mit Akzent ist ein Pronomen allein (para mí), es steht nicht vor einem Nomen."
+        "es": "Delante del sustantivo hermano hace falta un posesivo: mi, sin tilde. El mí con tilde es un pronombre solo (para mí), no va delante de un sustantivo."
       },
       "wrong": {
         "mí": {
-          "hu": "mí: önálló névmás, nem állhat főnév (hermano) előtt: para mí, de para mi hermano.",
           "en": "mí: a pronoun on its own, it cannot stand before a noun (hermano): para mí, but para mi hermano.",
-          "es": "mí: un pronombre solo, no puede ir delante de un sustantivo (hermano): para mí, pero para mi hermano.",
-          "de": "mí: ein Pronomen allein, es kann nicht vor einem Nomen (hermano) stehen: para mí, aber para mi hermano."
+          "es": "mí: un pronombre solo, no puede ir delante de un sustantivo (hermano): para mí, pero para mi hermano."
         },
         "me": {
-          "hu": "me: a rövid névmás, ami az igéhez tartozik. A para után nem állhat, és a hermano elé birtokos szó kell: mi.",
           "en": "me: the short pronoun that goes with a verb. It cannot stand after para, and before hermano a possessive word is needed: mi.",
-          "es": "me: el pronombre corto que acompaña al verbo. No puede ir después de para, y delante de hermano hace falta un posesivo: mi.",
-          "de": "me: das kurze Pronomen beim Verb. Es kann nicht nach para stehen, und vor hermano braucht man ein Possessivwort: mi."
+          "es": "me: el pronombre corto que acompaña al verbo. No puede ir después de para, y delante de hermano hace falta un posesivo: mi."
         }
       },
       "examples": [
         "Esta carta es para mi mamá.",
         "Esta fiesta es para mi amigo."
       ],
-      "tr": { "hu": "Ez a levél a testvéremnek szól, nem neked.", "en": "This letter is for my brother, not for you.", "es": "Esta carta es para mi hermano, no para ti.", "de": "Dieser Brief ist für meinen Bruder, nicht für dich." }
+      "tr": { "en": "This letter is for my brother, not for you.", "es": "Esta carta es para mi hermano, no para ti." }
     },
     {
       "id": "pp-match-01",
@@ -1034,46 +874,34 @@
       "es": "Este regalo es para ti.",
       "target": "ti",
       "tr": {
-        "hu": "Ez az ajándék neked szól.",
         "en": "This gift is for you.",
-        "es": "Este regalo es para ti.",
-        "de": "Dieses Geschenk ist für dich."
+        "es": "Este regalo es para ti."
       },
       "options": [
         {
           "text": {
-            "hu": "con + mí / ti: egy szóvá olvad (conmigo, contigo)",
             "en": "con + mí / ti: it merges into one word (conmigo, contigo)",
-            "es": "con + mí / ti: se funde en una sola palabra (conmigo, contigo)",
-            "de": "con + mí / ti: verschmilzt zu einem Wort (conmigo, contigo)"
+            "es": "con + mí / ti: se funde en una sola palabra (conmigo, contigo)"
           },
           "wrong": {
-            "hu": "ez a con után igaz (conmigo, contigo), de a mondatban nincs con: a para után egyszerűen ti áll",
             "en": "this holds after con (conmigo, contigo), but there is no con in the sentence: after para it is simply ti",
-            "es": "esto vale después de con (conmigo, contigo), pero en la frase no hay con: después de para va simplemente ti",
-            "de": "das gilt nach con (conmigo, contigo), aber im Satz steht kein con: nach para steht einfach ti"
+            "es": "esto vale después de con (conmigo, contigo), pero en la frase no hay con: después de para va simplemente ti"
           }
         },
         {
           "text": {
-            "hu": "para, sin, de, en után: mí és ti (nem yo, tú), a többi személy változatlan",
             "en": "after para, sin, de, en: mí and ti (not yo, tú), the other persons stay the same",
-            "es": "después de para, sin, de, en: mí y ti (no yo, tú), las demás personas no cambian",
-            "de": "nach para, sin, de, en: mí und ti (nicht yo, tú), die anderen Personen bleiben gleich"
+            "es": "después de para, sin, de, en: mí y ti (no yo, tú), las demás personas no cambian"
           }
         },
         {
           "text": {
-            "hu": "entre, según, excepto, salvo után alanyi alak: yo, tú",
             "en": "after entre, según, excepto, salvo: the subject form, yo, tú",
-            "es": "después de entre, según, excepto, salvo: la forma de sujeto, yo, tú",
-            "de": "nach entre, según, excepto, salvo: die Subjektform, yo, tú"
+            "es": "después de entre, según, excepto, salvo: la forma de sujeto, yo, tú"
           },
           "wrong": {
-            "hu": "az entre, según, excepto után yo, tú áll; itt para áll, ezért ti, nem tú",
             "en": "after entre, según, excepto it is yo, tú; here it is para, so ti, not tú",
-            "es": "después de entre, según, excepto va yo, tú; aquí hay para, por eso ti y no tú",
-            "de": "nach entre, según, excepto steht yo, tú; hier steht para, deshalb ti und nicht tú"
+            "es": "después de entre, según, excepto va yo, tú; aquí hay para, por eso ti y no tú"
           }
         }
       ],
@@ -1085,46 +913,34 @@
       "es": "¿Quieres venir conmigo?",
       "target": "conmigo",
       "tr": {
-        "hu": "Akarsz velem jönni?",
         "en": "Do you want to come with me?",
-        "es": "¿Quieres venir conmigo?",
-        "de": "Willst du mit mir kommen?"
+        "es": "¿Quieres venir conmigo?"
       },
       "options": [
         {
           "text": {
-            "hu": "para, sin, de, en után: mí és ti (nem yo, tú), a többi személy változatlan",
             "en": "after para, sin, de, en: mí and ti (not yo, tú), the other persons stay the same",
-            "es": "después de para, sin, de, en: mí y ti (no yo, tú), las demás personas no cambian",
-            "de": "nach para, sin, de, en: mí und ti (nicht yo, tú), die anderen Personen bleiben gleich"
+            "es": "después de para, sin, de, en: mí y ti (no yo, tú), las demás personas no cambian"
           },
           "wrong": {
-            "hu": "ez a para, sin, de, en után igaz (para mí, sin ti), de a con külön szót ad: conmigo, nem con mí",
             "en": "this holds after para, sin, de, en (para mí, sin ti), but con gives its own word: conmigo, not con mí",
-            "es": "esto vale después de para, sin, de, en (para mí, sin ti), pero con da una palabra propia: conmigo, no con mí",
-            "de": "das gilt nach para, sin, de, en (para mí, sin ti), aber con bildet ein eigenes Wort: conmigo, nicht con mí"
+            "es": "esto vale después de para, sin, de, en (para mí, sin ti), pero con da una palabra propia: conmigo, no con mí"
           }
         },
         {
           "text": {
-            "hu": "entre, según, excepto, salvo után alanyi alak: yo, tú",
             "en": "after entre, según, excepto, salvo: the subject form, yo, tú",
-            "es": "después de entre, según, excepto, salvo: la forma de sujeto, yo, tú",
-            "de": "nach entre, según, excepto, salvo: die Subjektform, yo, tú"
+            "es": "después de entre, según, excepto, salvo: la forma de sujeto, yo, tú"
           },
           "wrong": {
-            "hu": "az entre, según, excepto után yo, tú áll; itt con áll, és az én alakja conmigo",
             "en": "after entre, según, excepto it is yo, tú; here it is con, and the form for I is conmigo",
-            "es": "después de entre, según, excepto va yo, tú; aquí hay con, y la forma de yo es conmigo",
-            "de": "nach entre, según, excepto steht yo, tú; hier steht con, und die Form für ich ist conmigo"
+            "es": "después de entre, según, excepto va yo, tú; aquí hay con, y la forma de yo es conmigo"
           }
         },
         {
           "text": {
-            "hu": "con + mí / ti: egy szóvá olvad (conmigo, contigo)",
             "en": "con + mí / ti: it merges into one word (conmigo, contigo)",
-            "es": "con + mí / ti: se funde en una sola palabra (conmigo, contigo)",
-            "de": "con + mí / ti: verschmilzt zu einem Wort (conmigo, contigo)"
+            "es": "con + mí / ti: se funde en una sola palabra (conmigo, contigo)"
           }
         }
       ],
@@ -1136,46 +952,34 @@
       "es": "Es un secreto entre tú y yo.",
       "target": "tú",
       "tr": {
-        "hu": "Ez egy titok kettőnk között.",
         "en": "It is a secret between you and me.",
-        "es": "Es un secreto entre tú y yo.",
-        "de": "Das ist ein Geheimnis zwischen dir und mir."
+        "es": "Es un secreto entre tú y yo."
       },
       "options": [
         {
           "text": {
-            "hu": "para, sin, de, en után: mí és ti (nem yo, tú), a többi személy változatlan",
             "en": "after para, sin, de, en: mí and ti (not yo, tú), the other persons stay the same",
-            "es": "después de para, sin, de, en: mí y ti (no yo, tú), las demás personas no cambian",
-            "de": "nach para, sin, de, en: mí und ti (nicht yo, tú), die anderen Personen bleiben gleich"
+            "es": "después de para, sin, de, en: mí y ti (no yo, tú), las demás personas no cambian"
           },
           "wrong": {
-            "hu": "ez a para, sin, de, en után igaz (para ti), de az entre után az alanyi alak áll: tú, nem ti",
             "en": "this holds after para, sin, de, en (para ti), but after entre the subject form is used: tú, not ti",
-            "es": "esto vale después de para, sin, de, en (para ti), pero después de entre se usa la forma de sujeto: tú, no ti",
-            "de": "das gilt nach para, sin, de, en (para ti), aber nach entre steht die Subjektform: tú, nicht ti"
+            "es": "esto vale después de para, sin, de, en (para ti), pero después de entre se usa la forma de sujeto: tú, no ti"
           }
         },
         {
           "text": {
-            "hu": "entre, según, excepto, salvo után alanyi alak: yo, tú",
             "en": "after entre, según, excepto, salvo: the subject form, yo, tú",
-            "es": "después de entre, según, excepto, salvo: la forma de sujeto, yo, tú",
-            "de": "nach entre, según, excepto, salvo: die Subjektform, yo, tú"
+            "es": "después de entre, según, excepto, salvo: la forma de sujeto, yo, tú"
           }
         },
         {
           "text": {
-            "hu": "con + mí / ti: egy szóvá olvad (conmigo, contigo)",
             "en": "con + mí / ti: it merges into one word (conmigo, contigo)",
-            "es": "con + mí / ti: se funde en una sola palabra (conmigo, contigo)",
-            "de": "con + mí / ti: verschmilzt zu einem Wort (conmigo, contigo)"
+            "es": "con + mí / ti: se funde en una sola palabra (conmigo, contigo)"
           },
           "wrong": {
-            "hu": "a con után olvad egy szóvá a névmás (contigo); itt nincs con, entre áll, és utána tú jön",
             "en": "the pronoun merges into one word after con (contigo); there is no con here, it is entre, and tú follows",
-            "es": "el pronombre se funde en una palabra después de con (contigo); aquí no hay con sino entre, y sigue tú",
-            "de": "das Pronomen verschmilzt nach con zu einem Wort (contigo); hier steht kein con, sondern entre, und tú folgt"
+            "es": "el pronombre se funde en una palabra después de con (contigo); aquí no hay con sino entre, y sigue tú"
           }
         }
       ],
@@ -1187,46 +991,34 @@
       "es": "A mí me gusta el café.",
       "target": "me",
       "tr": {
-        "hu": "Nekem ízlik a kávé.",
         "en": "I like coffee.",
-        "es": "A mí me gusta el café.",
-        "de": "Mir schmeckt Kaffee."
+        "es": "A mí me gusta el café."
       },
       "options": [
         {
           "text": {
-            "hu": "a mí, a ti: kiemelés, a rövid me, te névmás mellette is kell",
             "en": "a mí, a ti: emphasis, the short pronoun me, te is still needed next to it",
-            "es": "a mí, a ti: énfasis, el pronombre corto me, te sigue haciendo falta",
-            "de": "a mí, a ti: Betonung, das kurze Pronomen me, te wird trotzdem gebraucht"
+            "es": "a mí, a ti: énfasis, el pronombre corto me, te sigue haciendo falta"
           }
         },
         {
           "text": {
-            "hu": "con + mí / ti: egy szóvá olvad (conmigo, contigo)",
             "en": "con + mí / ti: it merges into one word (conmigo, contigo)",
-            "es": "con + mí / ti: se funde en una sola palabra (conmigo, contigo)",
-            "de": "con + mí / ti: verschmilzt zu einem Wort (conmigo, contigo)"
+            "es": "con + mí / ti: se funde en una sola palabra (conmigo, contigo)"
           },
           "wrong": {
-            "hu": "ez a con után igaz (conmigo); itt nincs con, a me a gustar névmása",
             "en": "this is about con (conmigo); there is no con here, the me is the pronoun of gustar",
-            "es": "esto es sobre con (conmigo); aquí no hay con, el me es el pronombre de gustar",
-            "de": "das betrifft con (conmigo); hier steht kein con, das me ist das Pronomen von gustar"
+            "es": "esto es sobre con (conmigo); aquí no hay con, el me es el pronombre de gustar"
           }
         },
         {
           "text": {
-            "hu": "entre, según, excepto, salvo után alanyi alak: yo, tú",
             "en": "after entre, según, excepto, salvo: the subject form, yo, tú",
-            "es": "después de entre, según, excepto, salvo: la forma de sujeto, yo, tú",
-            "de": "nach entre, según, excepto, salvo: die Subjektform, yo, tú"
+            "es": "después de entre, según, excepto, salvo: la forma de sujeto, yo, tú"
           },
           "wrong": {
-            "hu": "az entre, según, excepto után az alanyi alak jön; itt az a áll, és a me a gustar névmása",
             "en": "after entre, según, excepto the subject form comes; here it is a, and me is the pronoun of gustar",
-            "es": "después de entre, según, excepto va la forma de sujeto; aquí hay a, y me es el pronombre de gustar",
-            "de": "nach entre, según, excepto steht die Subjektform; hier steht aber a, und me ist das Pronomen von gustar"
+            "es": "después de entre, según, excepto va la forma de sujeto; aquí hay a, y me es el pronombre de gustar"
           }
         }
       ],
@@ -1238,46 +1030,34 @@
       "es": "Esta carta es para mi hermano.",
       "target": "mi",
       "tr": {
-        "hu": "Ez a levél a testvéremnek szól.",
         "en": "This letter is for my brother.",
-        "es": "Esta carta es para mi hermano.",
-        "de": "Dieser Brief ist für meinen Bruder."
+        "es": "Esta carta es para mi hermano."
       },
       "options": [
         {
           "text": {
-            "hu": "para, sin, de, en után: mí és ti (nem yo, tú), a többi személy változatlan",
             "en": "after para, sin, de, en: mí and ti (not yo, tú), the other persons stay the same",
-            "es": "después de para, sin, de, en: mí y ti (no yo, tú), las demás personas no cambian",
-            "de": "nach para, sin, de, en: mí und ti (nicht yo, tú), die anderen Personen bleiben gleich"
+            "es": "después de para, sin, de, en: mí y ti (no yo, tú), las demás personas no cambian"
           },
           "wrong": {
-            "hu": "ez a névmásra igaz (para mí), de itt a para után a hermano főnév áll, és előtte birtokos szó kell: mi",
             "en": "this holds for the pronoun (para mí), but here the noun hermano follows para, and a possessive word is needed before it: mi",
-            "es": "esto vale para el pronombre (para mí), pero aquí después de para viene el sustantivo hermano, y delante hace falta un posesivo: mi",
-            "de": "das gilt für das Pronomen (para mí), aber hier folgt auf para das Nomen hermano, und davor braucht man ein Possessivwort: mi"
+            "es": "esto vale para el pronombre (para mí), pero aquí después de para viene el sustantivo hermano, y delante hace falta un posesivo: mi"
           }
         },
         {
           "text": {
-            "hu": "mí: ékezetes névmás; mi: ékezet nélküli birtokos szó főnév előtt",
             "en": "mí: pronoun with an accent; mi: possessive word without an accent before a noun",
-            "es": "mí: pronombre con tilde; mi: posesivo sin tilde delante de un sustantivo",
-            "de": "mí: Pronomen mit Akzent; mi: Possessivwort ohne Akzent vor einem Nomen"
+            "es": "mí: pronombre con tilde; mi: posesivo sin tilde delante de un sustantivo"
           }
         },
         {
           "text": {
-            "hu": "entre, según, excepto, salvo után alanyi alak: yo, tú",
             "en": "after entre, según, excepto, salvo: the subject form, yo, tú",
-            "es": "después de entre, según, excepto, salvo: la forma de sujeto, yo, tú",
-            "de": "nach entre, según, excepto, salvo: die Subjektform, yo, tú"
+            "es": "después de entre, según, excepto, salvo: la forma de sujeto, yo, tú"
           },
           "wrong": {
-            "hu": "az entre, según, excepto után yo, tú áll; itt para áll, és a mi a hermano birtokos szava",
             "en": "after entre, según, excepto it is yo, tú; here it is para, and mi is the possessive of hermano",
-            "es": "después de entre, según, excepto va yo, tú; aquí hay para, y mi es el posesivo de hermano",
-            "de": "nach entre, según, excepto steht yo, tú; hier steht para, und mi ist das Possessivwort von hermano"
+            "es": "después de entre, según, excepto va yo, tú; aquí hay para, y mi es el posesivo de hermano"
           }
         }
       ],
@@ -1289,46 +1069,34 @@
       "es": "No voy sin ella.",
       "target": "ella",
       "tr": {
-        "hu": "Nélküle nem megyek.",
         "en": "I am not going without her.",
-        "es": "No voy sin ella.",
-        "de": "Ohne sie gehe ich nicht."
+        "es": "No voy sin ella."
       },
       "options": [
         {
           "text": {
-            "hu": "con + mí / ti: egy szóvá olvad (conmigo, contigo)",
             "en": "con + mí / ti: it merges into one word (conmigo, contigo)",
-            "es": "con + mí / ti: se funde en una sola palabra (conmigo, contigo)",
-            "de": "con + mí / ti: verschmilzt zu einem Wort (conmigo, contigo)"
+            "es": "con + mí / ti: se funde en una sola palabra (conmigo, contigo)"
           },
           "wrong": {
-            "hu": "a con után olvad egy szóvá az én és a te alak (conmigo, contigo); itt sin áll, és az ella nem változik",
             "en": "after con, the forms for I and you merge into one word (conmigo, contigo); here it is sin, and ella does not change",
-            "es": "después de con, las formas de yo y tú se funden en una palabra (conmigo, contigo); aquí hay sin, y ella no cambia",
-            "de": "nach con verschmelzen die Formen für ich und du zu einem Wort (conmigo, contigo); hier steht sin, und ella ändert sich nicht"
+            "es": "después de con, las formas de yo y tú se funden en una palabra (conmigo, contigo); aquí hay sin, y ella no cambia"
           }
         },
         {
           "text": {
-            "hu": "a mí, a ti: kiemelés, a rövid me, te névmás mellette is kell",
             "en": "a mí, a ti: emphasis, the short pronoun me, te is still needed next to it",
-            "es": "a mí, a ti: énfasis, el pronombre corto me, te sigue haciendo falta",
-            "de": "a mí, a ti: Betonung, das kurze Pronomen me, te wird trotzdem gebraucht"
+            "es": "a mí, a ti: énfasis, el pronombre corto me, te sigue haciendo falta"
           },
           "wrong": {
-            "hu": "az a mí, a ti kiemel, és mellette a me, te is kell; itt nincs a mí, és az ella mellé nem kell másik névmás",
             "en": "a mí, a ti add emphasis, and me, te is still needed next to them; there is no a mí here, and ella needs no other pronoun",
-            "es": "a mí, a ti dan énfasis y a su lado hace falta me, te; aquí no hay a mí, y ella no necesita otro pronombre",
-            "de": "a mí, a ti betonen, und daneben braucht man me, te; hier steht kein a mí, und ella braucht kein weiteres Pronomen"
+            "es": "a mí, a ti dan énfasis y a su lado hace falta me, te; aquí no hay a mí, y ella no necesita otro pronombre"
           }
         },
         {
           "text": {
-            "hu": "para, sin, de, en után: mí és ti (nem yo, tú), a többi személy változatlan",
             "en": "after para, sin, de, en: mí and ti (not yo, tú), the other persons stay the same",
-            "es": "después de para, sin, de, en: mí y ti (no yo, tú), las demás personas no cambian",
-            "de": "nach para, sin, de, en: mí und ti (nicht yo, tú), die anderen Personen bleiben gleich"
+            "es": "después de para, sin, de, en: mí y ti (no yo, tú), las demás personas no cambian"
           }
         }
       ],
@@ -1340,46 +1108,34 @@
       "es": "Todos trabajan hoy, salvo yo.",
       "target": "yo",
       "tr": {
-        "hu": "Ma mindenki dolgozik, kivéve engem.",
         "en": "Everyone is working today, except me.",
-        "es": "Todos trabajan hoy, salvo yo.",
-        "de": "Heute arbeiten alle, außer mir."
+        "es": "Todos trabajan hoy, salvo yo."
       },
       "options": [
         {
           "text": {
-            "hu": "entre, según, excepto, salvo után alanyi alak: yo, tú",
             "en": "after entre, según, excepto, salvo: the subject form, yo, tú",
-            "es": "después de entre, según, excepto, salvo: la forma de sujeto, yo, tú",
-            "de": "nach entre, según, excepto, salvo: die Subjektform, yo, tú"
+            "es": "después de entre, según, excepto, salvo: la forma de sujeto, yo, tú"
           }
         },
         {
           "text": {
-            "hu": "para, sin, de, en után: mí és ti (nem yo, tú), a többi személy változatlan",
             "en": "after para, sin, de, en: mí and ti (not yo, tú), the other persons stay the same",
-            "es": "después de para, sin, de, en: mí y ti (no yo, tú), las demás personas no cambian",
-            "de": "nach para, sin, de, en: mí und ti (nicht yo, tú), die anderen Personen bleiben gleich"
+            "es": "después de para, sin, de, en: mí y ti (no yo, tú), las demás personas no cambian"
           },
           "wrong": {
-            "hu": "ez a para, sin, de, en után igaz (para mí), de a salvo után az alanyi alak áll: yo, nem mí",
             "en": "this holds after para, sin, de, en (para mí), but after salvo the subject form is used: yo, not mí",
-            "es": "esto vale después de para, sin, de, en (para mí), pero después de salvo se usa la forma de sujeto: yo, no mí",
-            "de": "das gilt nach para, sin, de, en (para mí), aber nach salvo steht die Subjektform: yo, nicht mí"
+            "es": "esto vale después de para, sin, de, en (para mí), pero después de salvo se usa la forma de sujeto: yo, no mí"
           }
         },
         {
           "text": {
-            "hu": "a mí, a ti: kiemelés, a rövid me, te névmás mellette is kell",
             "en": "a mí, a ti: emphasis, the short pronoun me, te is still needed next to it",
-            "es": "a mí, a ti: énfasis, el pronombre corto me, te sigue haciendo falta",
-            "de": "a mí, a ti: Betonung, das kurze Pronomen me, te wird trotzdem gebraucht"
+            "es": "a mí, a ti: énfasis, el pronombre corto me, te sigue haciendo falta"
           },
           "wrong": {
-            "hu": "az a mí kiemel, és mellette a me is kell; itt nincs a mí, a salvo után pedig yo áll",
             "en": "a mí adds emphasis, and me is still needed next to it; there is no a mí here, and after salvo comes yo",
-            "es": "a mí da énfasis y a su lado hace falta me; aquí no hay a mí, y después de salvo va yo",
-            "de": "a mí betont, und daneben braucht man me; hier steht kein a mí, und nach salvo kommt yo"
+            "es": "a mí da énfasis y a su lado hace falta me; aquí no hay a mí, y después de salvo va yo"
           }
         }
       ],

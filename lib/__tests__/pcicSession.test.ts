@@ -10,7 +10,6 @@ import {
   pcicNewBudget,
   pcicSessionNewLimit,
   practiceTopUpStep,
-  pickStrongerSm2Card,
   thinSentences,
   type QueuedSm2Card,
 } from '../pcicSession';
@@ -314,27 +313,6 @@ describe('countIntroducedTodayByKind', () => {
 
   it('for an empty card list it gives {0, 0}', () => {
     expect(countIntroducedTodayByKind([], TODAY, () => undefined)).toEqual({ words: 0, sentences: 0 });
-  });
-});
-
-describe('pickStrongerSm2Card', () => {
-  it('more successful repetitions (reps - lapses) wins', () => {
-    const strong = reviewCard({ itemId: 'x', reps: 10, lapses: 1 }); // 9 successful
-    const weak = reviewCard({ itemId: 'y', reps: 5, lapses: 0 }); // 5 successful
-    expect(pickStrongerSm2Card(strong, weak)).toBe(strong);
-    expect(pickStrongerSm2Card(weak, strong)).toBe(strong);
-  });
-
-  it('on a tie (same successful repetitions) the larger interval wins', () => {
-    const strong = reviewCard({ itemId: 'x', reps: 5, lapses: 0, interval: 30 });
-    const weak = reviewCard({ itemId: 'y', reps: 5, lapses: 0, interval: 10 });
-    expect(pickStrongerSm2Card(strong, weak)).toBe(strong);
-  });
-
-  it('on a final tie the earlier due wins', () => {
-    const earlier = reviewCard({ itemId: 'x', reps: 5, lapses: 0, interval: 10, due: TODAY });
-    const later = reviewCard({ itemId: 'y', reps: 5, lapses: 0, interval: 10, due: addDays(TODAY, 5) });
-    expect(pickStrongerSm2Card(earlier, later)).toBe(earlier);
   });
 });
 

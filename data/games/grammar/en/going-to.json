@@ -3,42 +3,32 @@
   "topic": "going_to",
   "level": "A2",
   "title": {
-    "hu": "A jövő idő: be going to (voy a hacer)",
     "en": "The future: be going to (I am going to study)",
-    "es": "El futuro: be going to (voy a hacer)",
-    "de": "Die Zukunft: be going to (ich werde tun)"
+    "es": "El futuro: be going to (voy a hacer)"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "A „be going to” pontosan megfelel a spanyol „ir a + infinitivo” szerkezetnek: „Voy a estudiar” = „I am going to study”. Terveket, szándékokat és látható jelekből következő jóslatokat fejez ki. Az egyetlen nagy különbség: az „ir” helyett a to be megfelelő alakja kell (am, is, are), és a „a” helyett „to” áll, utána alapige.",
         "en": "“Be going to” matches Spanish “ir a + infinitivo” almost exactly: “Voy a estudiar” = “I am going to study”. It expresses plans, intentions and predictions based on what we can see. The one big difference: instead of “ir” you need the right form of to be (am, is, are), and “a” becomes “to”, followed by the base verb.",
-        "es": "«Be going to» equivale casi exactamente al «ir a + infinitivo» del español: «Voy a estudiar» = «I am going to study». Expresa planes, intenciones y predicciones basadas en lo que vemos. La única gran diferencia: en lugar de «ir» hace falta la forma correcta de to be (am, is, are), y la «a» se convierte en «to», seguida del verbo base.",
-        "de": "„Be going to“ entspricht fast genau dem spanischen „ir a + infinitivo“: „Voy a estudiar“ = „I am going to study“. Es drückt Pläne, Absichten und Vorhersagen aus, die auf sichtbaren Anzeichen beruhen. Der eine große Unterschied: Statt „ir“ braucht man die passende Form von to be (am, is, are), und aus „a“ wird „to“, danach folgt die Grundform."
+        "es": "«Be going to» equivale casi exactamente al «ir a + infinitivo» del español: «Voy a estudiar» = «I am going to study». Expresa planes, intenciones y predicciones basadas en lo que vemos. La única gran diferencia: en lugar de «ir» hace falta la forma correcta de to be (am, is, are), y la «a» se convierte en «to», seguida del verbo base."
       }
     },
     {
       "kind": "table",
       "id": "gt-forms",
       "title": {
-        "hu": "Be going to",
         "en": "Be going to",
-        "es": "Be going to",
-        "de": "Be going to"
+        "es": "Be going to"
       },
       "header": [
         {
-          "hu": "Személy",
           "en": "Person",
-          "es": "Persona",
-          "de": "Person"
+          "es": "Persona"
         },
         {
-          "hu": "be going to",
           "en": "be going to",
-          "es": "be going to",
-          "de": "be going to"
+          "es": "be going to"
         }
       ],
       "rows": [
@@ -68,29 +58,21 @@
       "kind": "table",
       "id": "gt-neg",
       "title": {
-        "hu": "Tagadás és kérdés",
         "en": "Negatives and questions",
-        "es": "Negación y pregunta",
-        "de": "Verneinung und Frage"
+        "es": "Negación y pregunta"
       },
       "header": [
         {
-          "hu": "Személy",
           "en": "Person",
-          "es": "Persona",
-          "de": "Person"
+          "es": "Persona"
         },
         {
-          "hu": "tagadás",
           "en": "negative",
-          "es": "negación",
-          "de": "Verneinung"
+          "es": "negación"
         },
         {
-          "hu": "kérdés",
           "en": "question",
-          "es": "pregunta",
-          "de": "Frage"
+          "es": "pregunta"
         }
       ],
       "rows": [
@@ -124,92 +106,72 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Hogyan használjuk",
         "en": "How we use it",
-        "es": "Cómo se usa",
-        "de": "Wie man es benutzt"
+        "es": "Cómo se usa"
       },
       "items": [
         {
           "text": {
-            "hu": "Terv, szándék: amit már eldöntöttél. Jelzők: tomorrow, tonight, next week, soon.",
             "en": "Plans and intentions: something you have already decided. Clues: tomorrow, tonight, next week, soon.",
-            "es": "Planes e intenciones: algo que ya has decidido. Pistas: tomorrow, tonight, next week, soon.",
-            "de": "Pläne und Absichten: etwas, das du schon beschlossen hast. Hinweiswörter: tomorrow, tonight, next week, soon."
+            "es": "Planes e intenciones: algo que ya has decidido. Pistas: tomorrow, tonight, next week, soon."
           },
           "examples": [
             {
               "es": "I am going to study tonight.",
               "tr": {
-                "hu": "Ma este tanulni fogok.",
                 "en": "I am going to study tonight.",
-                "es": "Voy a estudiar esta noche.",
-                "de": "Heute Abend werde ich lernen."
+                "es": "Voy a estudiar esta noche."
               }
             },
             {
               "es": "We are going to visit Mexico next year.",
               "tr": {
-                "hu": "Jövőre Mexikóba látogatunk.",
                 "en": "We are going to visit Mexico next year.",
-                "es": "Vamos a visitar México el año que viene.",
-                "de": "Nächstes Jahr werden wir Mexiko besuchen."
+                "es": "Vamos a visitar México el año que viene."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Jóslat, ha látod a jeleket: Look at the clouds! It is going to rain.",
             "en": "Predictions when you can see the signs: Look at the clouds! It is going to rain.",
-            "es": "Predicciones cuando ves las señales: Look at the clouds! It is going to rain.",
-            "de": "Vorhersagen, wenn man die Anzeichen sieht: Look at the clouds! It is going to rain."
+            "es": "Predicciones cuando ves las señales: Look at the clouds! It is going to rain."
           },
           "examples": [
             {
               "es": "Look at the clouds! It is going to rain.",
               "tr": {
-                "hu": "Nézd a felhőket! Esni fog.",
                 "en": "Look at the clouds! It is going to rain.",
-                "es": "¡Mira las nubes! Va a llover.",
-                "de": "Sieh dir die Wolken an! Es wird regnen."
+                "es": "¡Mira las nubes! Va a llover."
               }
             },
             {
               "es": "She is going to have a baby.",
               "tr": {
-                "hu": "Babát vár.",
                 "en": "She is going to have a baby.",
-                "es": "Ella va a tener un bebé.",
-                "de": "Sie bekommt ein Baby."
+                "es": "Ella va a tener un bebé."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Tagadás: az am / is / are után „not” (I’m not, isn’t, aren’t). Kérdés: az am / is / are kerül előre: Are you going to work?",
             "en": "Negative: “not” after am / is / are (I’m not, isn’t, aren’t). Question: am / is / are moves to the front: Are you going to work?",
-            "es": "Negación: «not» después de am / is / are (I’m not, isn’t, aren’t). Pregunta: am / is / are pasa al principio: Are you going to work?",
-            "de": "Verneinung: „not“ nach am / is / are (I’m not, isn’t, aren’t). Frage: am / is / are rückt nach vorn: Are you going to work?"
+            "es": "Negación: «not» después de am / is / are (I’m not, isn’t, aren’t). Pregunta: am / is / are pasa al principio: Are you going to work?"
           },
           "examples": [
             {
               "es": "She isn't going to eat here.",
               "tr": {
-                "hu": "Nem fog itt enni.",
                 "en": "She isn't going to eat here.",
-                "es": "Ella no va a comer aquí.",
-                "de": "Sie wird hier nicht essen."
+                "es": "Ella no va a comer aquí."
               }
             },
             {
               "es": "What are you going to do?",
               "tr": {
-                "hu": "Mit fogsz csinálni?",
                 "en": "What are you going to do?",
-                "es": "¿Qué vas a hacer?",
-                "de": "Was wirst du tun?"
+                "es": "¿Qué vas a hacer?"
               }
             }
           ]
@@ -219,54 +181,42 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Az am / is / are kötelező, a „going to” mellett nem hagyható el. Ne mondd, hogy „I going to study” vagy „She going to work”, hanem: „I am going to study”, „She is going to work”.",
         "en": "Am / is / are is required; you cannot drop it before “going to”. Do not say “I going to study” or “She going to work”; say “I am going to study”, “She is going to work”.",
-        "es": "Am / is / are es obligatorio; no se puede omitir delante de «going to». No digas «I going to study» ni «She going to work», di «I am going to study», «She is going to work».",
-        "de": "Am / is / are ist Pflicht; man kann es vor „going to“ nicht weglassen. Sag nicht „I going to study“ oder „She going to work“, sondern „I am going to study“, „She is going to work“."
+        "es": "Am / is / are es obligatorio; no se puede omitir delante de «going to». No digas «I going to study» ni «She going to work», di «I am going to study», «She is going to work»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A „to” után alapige áll. Ne mondd, hogy „I am going to studying” vagy „She is going to works”, hanem: „I am going to study”, „She is going to work”.",
         "en": "After “to” the base verb follows. Do not say “I am going to studying” or “She is going to works”; say “I am going to study”, “She is going to work”.",
-        "es": "Después de «to» va el verbo base. No digas «I am going to studying» ni «She is going to works», di «I am going to study», «She is going to work».",
-        "de": "Nach „to“ folgt die Grundform. Sag nicht „I am going to studying“ oder „She is going to works“, sondern „I am going to study“, „She is going to work“."
+        "es": "Después de «to» va el verbo base. No digas «I am going to studying» ni «She is going to works», di «I am going to study», «She is going to work»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "Ne fordítsd az „ir” igét „go”-ra jelen időben. Ne mondd, hogy „I go to study tomorrow”, hanem: „I am going to study tomorrow”.",
         "en": "Do not translate “ir” as “go” in the present tense. Do not say “I go to study tomorrow”; say “I am going to study tomorrow”.",
-        "es": "No traduzcas «ir» como «go» en presente. No digas «I go to study tomorrow», di «I am going to study tomorrow».",
-        "de": "Übersetze „ir“ nicht mit „go“ im Präsens. Sag nicht „I go to study tomorrow“, sondern „I am going to study tomorrow“."
+        "es": "No traduzcas «ir» como «go» en presente. No digas «I go to study tomorrow», di «I am going to study tomorrow»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "Időjárásnál és jelekből következő jóslatnál a „it” alany kötelező. Ne mondd, hogy „Is going to rain”, hanem: „It is going to rain”.",
         "en": "With weather and predictions the subject “it” is required. Do not say “Is going to rain”; say “It is going to rain”.",
-        "es": "Con el clima y las predicciones el sujeto «it» es obligatorio. No digas «Is going to rain», di «It is going to rain».",
-        "de": "Beim Wetter und bei Vorhersagen ist das Subjekt „it“ Pflicht. Sag nicht „Is going to rain“, sondern „It is going to rain“."
+        "es": "Con el clima y las predicciones el sujeto «it» es obligatorio. No digas «Is going to rain», di «It is going to rain»."
       }
     }
   ],
   "speak": {
-    "hu": "A «be going to» a spanyol «ir a + infinitivo». Terveket és jóslatokat fejez ki: «I am going to study tonight», «She is going to visit her mother», «It is going to rain». Az «am», «is» vagy «are» kötelező, utána «to» és az alapige jön. Tagadás: «I am not going to work tomorrow». Kérdés: «Are you going to study?», «What are you going to do?». Vigyázat: nem «I going to study», és nem «I go to study tomorrow».",
     "en": "The phrase «be going to» is the Spanish «ir a + infinitivo». It expresses plans and predictions: «I am going to study tonight», «She is going to visit her mother», «It is going to rain». «Am», «is» or «are» is required, followed by «to» and the base verb. Negative: «I am not going to work tomorrow». Questions: «Are you going to study?», «What are you going to do?». Careful: not «I going to study», and not «I go to study tomorrow».",
-    "es": "«Be going to» es el «ir a + infinitivo» del español. Expresa planes y predicciones: «I am going to study tonight», «She is going to visit her mother», «It is going to rain». «Am», «is» o «are» es obligatorio, seguido de «to» y el verbo base. Negación: «I am not going to work tomorrow». Pregunta: «Are you going to study?», «What are you going to do?». Cuidado: no «I going to study», y no «I go to study tomorrow».",
-    "de": "«Be going to» ist das spanische «ir a + infinitivo». Es drückt Pläne und Vorhersagen aus: «I am going to study tonight», «She is going to visit her mother», «It is going to rain». «Am», «is» oder «are» ist Pflicht, danach folgen «to» und die Grundform. Verneinung: «I am not going to work tomorrow». Fragen: «Are you going to study?», «What are you going to do?». Vorsicht: nicht «I going to study» und nicht «I go to study tomorrow»."
+    "es": "«Be going to» es el «ir a + infinitivo» del español. Expresa planes y predicciones: «I am going to study tonight», «She is going to visit her mother», «It is going to rain». «Am», «is» o «are» es obligatorio, seguido de «to» y el verbo base. Negación: «I am not going to work tomorrow». Pregunta: «Are you going to study?», «What are you going to do?». Cuidado: no «I going to study», y no «I go to study tomorrow»."
   },
   "glossary": [
     {
       "word": "ago",
       "gloss": {
-        "hu": "ennyivel ezelőtt",
         "en": "back in time",
-        "es": "hace",
-        "de": "vor (zeitlich)"
+        "es": "hace"
       }
     }
   ],
@@ -281,30 +231,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az „I” mellé az „am” kell: I am going to study tonight.",
         "en": "With “I” you need “am”: I am going to study tonight.",
-        "es": "Con «I» hace falta «am»: I am going to study tonight.",
-        "de": "Bei „I“ braucht man „am“: I am going to study tonight."
+        "es": "Con «I» hace falta «am»: I am going to study tonight."
       },
       "wrong": {
         "is": {
-          "hu": "Az „is” a he, she, it mellé való; az „I” mellé „am” kell.",
           "en": "“Is” goes with he, she, it; with “I” you need “am”.",
-          "es": "«Is» va con he, she, it; con «I» hace falta «am».",
-          "de": "„Is“ gehört zu he, she, it; bei „I“ braucht man „am“."
+          "es": "«Is» va con he, she, it; con «I» hace falta «am»."
         },
         "are": {
-          "hu": "Az „are” a you, we, they mellé való; az „I” mellé „am” kell.",
           "en": "“Are” goes with you, we, they; with “I” you need “am”.",
-          "es": "«Are» va con you, we, they; con «I» hace falta «am».",
-          "de": "„Are“ gehört zu you, we, they; bei „I“ braucht man „am“."
+          "es": "«Are» va con you, we, they; con «I» hace falta «am»."
         }
       },
       "examples": [
         "I am going to cook tonight.",
         "I am going to work tomorrow."
       ],
-      "tr": { "hu": "Ma este tanulni fogok.", "en": "I am going to study tonight.", "es": "Voy a estudiar esta noche.", "de": "Ich werde heute Abend lernen." }
+      "tr": { "en": "I am going to study tonight.", "es": "Voy a estudiar esta noche." }
     },
     {
       "id": "gg-02",
@@ -316,30 +260,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „she” mellé az „is” kell: She is going to visit her mother.",
         "en": "With “she” you need “is”: She is going to visit her mother.",
-        "es": "Con «she» hace falta «is»: She is going to visit her mother.",
-        "de": "Bei „she“ braucht man „is“: She is going to visit her mother."
+        "es": "Con «she» hace falta «is»: She is going to visit her mother."
       },
       "wrong": {
         "are": {
-          "hu": "Az „are” a you, we, they mellé való; a „she” mellé „is” kell.",
           "en": "“Are” goes with you, we, they; with “she” you need “is”.",
-          "es": "«Are» va con you, we, they; con «she» hace falta «is».",
-          "de": "„Are“ gehört zu you, we, they; bei „she“ braucht man „is“."
+          "es": "«Are» va con you, we, they; con «she» hace falta «is»."
         },
         "am": {
-          "hu": "Az „am” csak az „I” mellé való; a „she” mellé „is” kell.",
           "en": "“Am” goes only with “I”; with “she” you need “is”.",
-          "es": "«Am» va solo con «I»; con «she» hace falta «is».",
-          "de": "„Am“ gehört nur zu „I“; bei „she“ braucht man „is“."
+          "es": "«Am» va solo con «I»; con «she» hace falta «is»."
         }
       },
       "examples": [
         "He is going to call me.",
         "My sister is going to travel."
       ],
-      "tr": { "hu": "Meg fogja látogatni az édesanyját.", "en": "She is going to visit her mother.", "es": "Ella va a visitar a su mamá.", "de": "Sie wird ihre Mutter besuchen." }
+      "tr": { "en": "She is going to visit her mother.", "es": "Ella va a visitar a su mamá." }
     },
     {
       "id": "gg-15",
@@ -359,30 +297,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „they” mellé az „are” kell: They are going to travel next month.",
         "en": "With “they” you need “are”: They are going to travel next month.",
-        "es": "Con «they» hace falta «are»: They are going to travel next month.",
-        "de": "Bei „they“ braucht man „are“: They are going to travel next month."
+        "es": "Con «they» hace falta «are»: They are going to travel next month."
       },
       "wrong": {
         "is": {
-          "hu": "Az „is” a he, she, it mellé való; a „they” mellé „are” kell.",
           "en": "“Is” goes with he, she, it; with “they” you need “are”.",
-          "es": "«Is» va con he, she, it; con «they» hace falta «are».",
-          "de": "„Is“ gehört zu he, she, it; bei „they“ braucht man „are“."
+          "es": "«Is» va con he, she, it; con «they» hace falta «are»."
         },
         "do": {
-          "hu": "A „be going to” szerkezetben a to be áll, nem a „do”: They are going to travel.",
           "en": "In “be going to” it is to be, not “do”: They are going to travel.",
-          "es": "En «be going to» va to be, no «do»: They are going to travel.",
-          "de": "In „be going to“ steht to be, nicht „do“: They are going to travel."
+          "es": "En «be going to» va to be, no «do»: They are going to travel."
         }
       },
       "examples": [
         "We are going to eat here.",
         "You are going to like it."
       ],
-      "tr": { "hu": "Jövő hónapban utazni fognak.", "en": "They are going to travel next month.", "es": "Ellos van a viajar el próximo mes.", "de": "Sie werden nächsten Monat verreisen." }
+      "tr": { "en": "They are going to travel next month.", "es": "Ellos van a viajar el próximo mes." }
     },
     {
       "id": "gg-04",
@@ -394,30 +326,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „going” után „to” és az alapige áll: going to watch.",
         "en": "After “going” comes “to” and the base verb: going to watch.",
-        "es": "Después de «going» va «to» y el verbo base: going to watch.",
-        "de": "Nach „going“ folgen „to“ und die Grundform: going to watch."
+        "es": "Después de «going» va «to» y el verbo base: going to watch."
       },
       "wrong": {
         "for": {
-          "hu": "A „going for” mást jelent; a terv szerkezete: going to + alapige.",
           "en": "“Going for” means something else; the plan structure is: going to + base verb.",
-          "es": "«Going for» significa otra cosa; la estructura del plan es: going to + verbo base.",
-          "de": "„Going for“ bedeutet etwas anderes; die Struktur des Plans ist: going to + Grundform."
+          "es": "«Going for» significa otra cosa; la estructura del plan es: going to + verbo base."
         },
         "at": {
-          "hu": "Az „at” nem illik ide; a szerkezet: going to + alapige.",
           "en": "“At” does not fit here; the structure is: going to + base verb.",
-          "es": "«At» no encaja aquí; la estructura es: going to + verbo base.",
-          "de": "„At“ passt hier nicht; die Struktur lautet: going to + Grundform."
+          "es": "«At» no encaja aquí; la estructura es: going to + verbo base."
         }
       },
       "examples": [
         "We are going to eat now.",
         "They are going to play."
       ],
-      "tr": { "hu": "Meg fogunk nézni egy filmet.", "en": "We are going to watch a movie.", "es": "Vamos a ver una película.", "de": "Wir werden uns einen Film ansehen." }
+      "tr": { "en": "We are going to watch a movie.", "es": "Vamos a ver una película." }
     },
     {
       "kind": "why",
@@ -425,46 +351,34 @@
       "es": "I am going to study.",
       "target": "going",
       "tr": {
-        "hu": "Tanulni fogok.",
         "en": "I am going to study.",
-        "es": "Voy a estudiar.",
-        "de": "Ich werde lernen."
+        "es": "Voy a estudiar."
       },
       "options": [
         {
           "text": {
-            "hu": "terv, szándék: be going to + alapige",
             "en": "plan, intention: be going to + base verb",
-            "es": "plan, intención: be going to + verbo base",
-            "de": "Plan, Absicht: be going to + Grundform"
+            "es": "plan, intención: be going to + verbo base"
           }
         },
         {
           "text": {
-            "hu": "mozgás egy helyre: I am going to school",
             "en": "movement to a place: I am going to school",
-            "es": "movimiento a un lugar: I am going to school",
-            "de": "Bewegung zu einem Ort: I am going to school"
+            "es": "movimiento a un lugar: I am going to school"
           },
           "wrong": {
-            "hu": "A „to” után ige áll (study), nem hely, ezért ez terv, nem mozgás.",
             "en": "After “to” comes a verb (study), not a place, so this is a plan, not movement.",
-            "es": "Después de «to» va un verbo (study), no un lugar, así que es un plan, no un movimiento.",
-            "de": "Nach „to“ steht ein Verb (study), kein Ort, also ist es ein Plan, keine Bewegung."
+            "es": "Después de «to» va un verbo (study), no un lugar, así que es un plan, no un movimiento."
           }
         },
         {
           "text": {
-            "hu": "folyamatos jelen: éppen most tanulok",
             "en": "present continuous: I am studying right now",
-            "es": "presente continuo: estoy estudiando ahora mismo",
-            "de": "Present Continuous: ich lerne gerade jetzt"
+            "es": "presente continuo: estoy estudiando ahora mismo"
           },
           "wrong": {
-            "hu": "A „going to” + alapige jövőbeli tervet jelöl; az éppen zajló cselekvés -ing alakot kérne (studying).",
             "en": "“Going to” + base verb marks a future plan; an action in progress would take -ing (studying).",
-            "es": "«Going to» + verbo base marca un plan futuro; una acción en curso llevaría -ing (studying).",
-            "de": "„Going to“ + Grundform markiert einen Zukunftsplan; eine laufende Handlung bekäme -ing (studying)."
+            "es": "«Going to» + verbo base marca un plan futuro; una acción en curso llevaría -ing (studying)."
           }
         }
       ],
@@ -480,30 +394,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „to” után az ige alapalakja áll: I’m going to work tomorrow.",
         "en": "After “to” the verb stays in its base form: I’m going to work tomorrow.",
-        "es": "Después de «to» el verbo va en forma base: I’m going to work tomorrow.",
-        "de": "Nach „to“ steht das Verb in der Grundform: I’m going to work tomorrow."
+        "es": "Después de «to» el verbo va en forma base: I’m going to work tomorrow."
       },
       "wrong": {
         "working": {
-          "hu": "A „going to” után nincs -ing: going to work.",
           "en": "There is no -ing after “going to”: going to work.",
-          "es": "Después de «going to» no hay -ing: going to work.",
-          "de": "Nach „going to“ steht kein -ing: going to work."
+          "es": "Después de «going to» no hay -ing: going to work."
         },
         "works": {
-          "hu": "A „going to” után nem kap az ige -s-t: going to work.",
           "en": "After “going to” the verb takes no -s: going to work.",
-          "es": "Después de «going to» el verbo no lleva -s: going to work.",
-          "de": "Nach „going to“ bekommt das Verb kein -s: going to work."
+          "es": "Después de «going to» el verbo no lleva -s: going to work."
         }
       },
       "examples": [
         "He's going to work tomorrow.",
         "We are going to work."
       ],
-      "tr": { "hu": "Holnap dolgozni fogok.", "en": "I'm going to work tomorrow.", "es": "Voy a trabajar mañana.", "de": "Ich werde morgen arbeiten." }
+      "tr": { "en": "I'm going to work tomorrow.", "es": "Voy a trabajar mañana." }
     },
     {
       "id": "gg-06",
@@ -515,30 +423,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „to” után az ige alapalakja áll: He is going to make a cake.",
         "en": "After “to” the verb stays in its base form: He is going to make a cake.",
-        "es": "Después de «to» el verbo va en forma base: He is going to make a cake.",
-        "de": "Nach „to“ steht das Verb in der Grundform: He is going to make a cake."
+        "es": "Después de «to» el verbo va en forma base: He is going to make a cake."
       },
       "wrong": {
         "makes": {
-          "hu": "A „going to” után nem kap az ige -s-t, még a „he” mellett sem: make.",
           "en": "After “going to” the verb takes no -s, not even with “he”: make.",
-          "es": "Después de «going to» el verbo no lleva -s, ni siquiera con «he»: make.",
-          "de": "Nach „going to“ bekommt das Verb kein -s, auch nicht bei „he“: make."
+          "es": "Después de «going to» el verbo no lleva -s, ni siquiera con «he»: make."
         },
         "making": {
-          "hu": "A „going to” után nincs -ing: going to make.",
           "en": "There is no -ing after “going to”: going to make.",
-          "es": "Después de «going to» no hay -ing: going to make.",
-          "de": "Nach „going to“ steht kein -ing: going to make."
+          "es": "Después de «going to» no hay -ing: going to make."
         }
       },
       "examples": [
         "She is going to make dinner.",
         "I am going to make a party."
       ],
-      "tr": { "hu": "Tortát fog sütni.", "en": "He is going to make a cake.", "es": "Él va a hacer un pastel.", "de": "Er wird einen Kuchen backen." }
+      "tr": { "en": "He is going to make a cake.", "es": "Él va a hacer un pastel." }
     },
     {
       "id": "gg-16",
@@ -558,30 +460,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A tagadás: am not + going to: I am not going to work tomorrow.",
         "en": "The negative is: am not + going to: I am not going to work tomorrow.",
-        "es": "La negación es: am not + going to: I am not going to work tomorrow.",
-        "de": "Die Verneinung lautet: am not + going to: I am not going to work tomorrow."
+        "es": "La negación es: am not + going to: I am not going to work tomorrow."
       },
       "wrong": {
         "don't": {
-          "hu": "A „be going to” tagadásához a to be tagadása kell, nem a „don’t”: I am not going to.",
           "en": "The negative of “be going to” uses to be, not “don’t”: I am not going to.",
-          "es": "La negación de «be going to» usa to be, no «don’t»: I am not going to.",
-          "de": "Die Verneinung von „be going to“ benutzt to be, nicht „don’t“: I am not going to."
+          "es": "La negación de «be going to» usa to be, no «don’t»: I am not going to."
         },
         "no": {
-          "hu": "A „no” a spanyol minta másolata; angolul „am not” kell: I am not going to.",
           "en": "“No” copies the Spanish pattern; English needs “am not”: I am not going to.",
-          "es": "«No» copia el patrón del español; el inglés necesita «am not»: I am not going to.",
-          "de": "„No“ folgt dem spanischen Muster; das Englische braucht „am not“: I am not going to."
+          "es": "«No» copia el patrón del español; el inglés necesita «am not»: I am not going to."
         }
       },
       "examples": [
         "I am not going to eat here.",
         "I am not going to call."
       ],
-      "tr": { "hu": "Holnap nem fogok dolgozni. Vasárnap lesz.", "en": "I am not going to work tomorrow. It is Sunday.", "es": "No voy a trabajar mañana. Es domingo.", "de": "Ich werde morgen nicht arbeiten. Es ist Sonntag." }
+      "tr": { "en": "I am not going to work tomorrow. It is Sunday.", "es": "No voy a trabajar mañana. Es domingo." }
     },
     {
       "id": "gg-08",
@@ -593,30 +489,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „she” mellé az „isn’t” kell: She isn’t going to eat here.",
         "en": "With “she” you need “isn’t”: She isn’t going to eat here.",
-        "es": "Con «she» hace falta «isn’t»: She isn’t going to eat here.",
-        "de": "Bei „she“ braucht man „isn’t“: She isn’t going to eat here."
+        "es": "Con «she» hace falta «isn’t»: She isn’t going to eat here."
       },
       "wrong": {
         "aren't": {
-          "hu": "Az „aren’t” a you, we, they mellé való; a „she” mellé „isn’t” kell.",
           "en": "“Aren’t” goes with you, we, they; with “she” you need “isn’t”.",
-          "es": "«Aren’t» va con you, we, they; con «she» hace falta «isn’t».",
-          "de": "„Aren’t“ gehört zu you, we, they; bei „she“ braucht man „isn’t“."
+          "es": "«Aren’t» va con you, we, they; con «she» hace falta «isn’t»."
         },
         "doesn't": {
-          "hu": "A „be going to” tagadásához a to be tagadása kell, nem a „doesn’t”.",
           "en": "The negative of “be going to” uses to be, not “doesn’t”.",
-          "es": "La negación de «be going to» usa to be, no «doesn’t».",
-          "de": "Die Verneinung von „be going to“ benutzt to be, nicht „doesn’t“."
+          "es": "La negación de «be going to» usa to be, no «doesn’t»."
         }
       },
       "examples": [
         "He isn't going to work.",
         "It isn't going to rain."
       ],
-      "tr": { "hu": "Nem itt fog enni. Nem éhes.", "en": "She isn't going to eat here. She is not hungry.", "es": "Ella no va a comer aquí. No tiene hambre.", "de": "Sie wird nicht hier essen. Sie hat keinen Hunger." }
+      "tr": { "en": "She isn't going to eat here. She is not hungry.", "es": "Ella no va a comer aquí. No tiene hambre." }
     },
     {
       "id": "gg-09",
@@ -628,30 +518,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A kérdésben az „are” kerül előre: Are you going to study tonight?",
         "en": "In the question “are” moves to the front: Are you going to study tonight?",
-        "es": "En la pregunta «are» pasa al principio: Are you going to study tonight?",
-        "de": "In der Frage rückt „are“ nach vorn: Are you going to study tonight?"
+        "es": "En la pregunta «are» pasa al principio: Are you going to study tonight?"
       },
       "wrong": {
         "Do": {
-          "hu": "A „be going to” kérdésében a to be áll elöl, nem a „do”: Are you going to…?",
           "en": "In a “be going to” question to be comes first, not “do”: Are you going to…?",
-          "es": "En una pregunta con «be going to» va primero to be, no «do»: Are you going to…?",
-          "de": "In einer „be going to“-Frage steht to be vorn, nicht „do“: Are you going to…?"
+          "es": "En una pregunta con «be going to» va primero to be, no «do»: Are you going to…?"
         },
         "Is": {
-          "hu": "Az „Is” a he, she, it mellé való; a „you” mellé „Are” kell.",
           "en": "“Is” goes with he, she, it; with “you” you need “Are”.",
-          "es": "«Is» va con he, she, it; con «you» hace falta «Are».",
-          "de": "„Is“ gehört zu he, she, it; bei „you“ braucht man „Are“."
+          "es": "«Is» va con he, she, it; con «you» hace falta «Are»."
         }
       },
       "examples": [
         "Are they going to work?",
         "Is she going to call?"
       ],
-      "tr": { "hu": "Fogsz tanulni ma este?", "en": "Are you going to study tonight?", "es": "¿Vas a estudiar esta noche?", "de": "Wirst du heute Abend lernen?" }
+      "tr": { "en": "Are you going to study tonight?", "es": "¿Vas a estudiar esta noche?" }
     },
     {
       "kind": "why",
@@ -659,46 +543,34 @@
       "es": "She isn't going to eat.",
       "target": "isn't",
       "tr": {
-        "hu": "Nem fog enni.",
         "en": "She isn't going to eat.",
-        "es": "Ella no va a comer.",
-        "de": "Sie wird nicht essen."
+        "es": "Ella no va a comer."
       },
       "options": [
         {
           "text": {
-            "hu": "tagadás: a to be tagadása a going to előtt",
             "en": "negative: the negative of to be before going to",
-            "es": "negación: la negación de to be antes de going to",
-            "de": "Verneinung: die Verneinung von to be vor going to"
+            "es": "negación: la negación de to be antes de going to"
           }
         },
         {
           "text": {
-            "hu": "tagadás „doesn’t”-tel: doesn’t going to",
             "en": "negative with “doesn’t”: doesn’t going to",
-            "es": "negación con «doesn’t»: doesn’t going to",
-            "de": "Verneinung mit „doesn’t“: doesn’t going to"
+            "es": "negación con «doesn’t»: doesn’t going to"
           },
           "wrong": {
-            "hu": "A „be going to” szerkezetnek a to be a segédigéje, ezért „isn’t”, nem „doesn’t”.",
             "en": "The helper of “be going to” is to be, so “isn’t”, not “doesn’t”.",
-            "es": "El auxiliar de «be going to» es to be, por eso «isn’t», no «doesn’t».",
-            "de": "Das Hilfsverb von „be going to“ ist to be, deshalb „isn’t“, nicht „doesn’t“."
+            "es": "El auxiliar de «be going to» es to be, por eso «isn’t», no «doesn’t»."
           }
         },
         {
           "text": {
-            "hu": "tagadás a going után: going not to",
             "en": "negative after going: going not to",
-            "es": "negación después de going: going not to",
-            "de": "Verneinung nach going: going not to"
+            "es": "negación después de going: going not to"
           },
           "wrong": {
-            "hu": "A „not” az am / is / are után áll, nem a „going” után: isn’t going to.",
             "en": "“Not” comes after am / is / are, not after “going”: isn’t going to.",
-            "es": "«Not» va después de am / is / are, no después de «going»: isn’t going to.",
-            "de": "„Not“ steht nach am / is / are, nicht nach „going“: isn’t going to."
+            "es": "«Not» va después de am / is / are, no después de «going»: isn’t going to."
           }
         }
       ],
@@ -714,30 +586,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A kérdőszó után a to be jön: What are you going to do?",
         "en": "After the question word comes to be: What are you going to do?",
-        "es": "Después de la palabra interrogativa va to be: What are you going to do?",
-        "de": "Nach dem Fragewort folgt to be: What are you going to do?"
+        "es": "Después de la palabra interrogativa va to be: What are you going to do?"
       },
       "wrong": {
         "do": {
-          "hu": "A „going to” előtt a to be áll, nem a „do”: What are you going to do?",
           "en": "Before “going to” comes to be, not “do”: What are you going to do?",
-          "es": "Antes de «going to» va to be, no «do»: What are you going to do?",
-          "de": "Vor „going to“ steht to be, nicht „do“: What are you going to do?"
+          "es": "Antes de «going to» va to be, no «do»: What are you going to do?"
         },
         "is": {
-          "hu": "Az „is” a he, she, it mellé való; a „you” mellé „are” kell.",
           "en": "“Is” goes with he, she, it; with “you” you need “are”.",
-          "es": "«Is» va con he, she, it; con «you» hace falta «are».",
-          "de": "„Is“ gehört zu he, she, it; bei „you“ braucht man „are“."
+          "es": "«Is» va con he, she, it; con «you» hace falta «are»."
         }
       },
       "examples": [
         "What is she going to eat?",
         "What are they going to do?"
       ],
-      "tr": { "hu": "Mit fogsz csinálni?", "en": "What are you going to do?", "es": "¿Qué vas a hacer?", "de": "Was wirst du tun?" }
+      "tr": { "en": "What are you going to do?", "es": "¿Qué vas a hacer?" }
     },
     {
       "id": "gg-17",
@@ -757,30 +623,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „they” mellé az „are” kell: Where are they going to live?",
         "en": "With “they” you need “are”: Where are they going to live?",
-        "es": "Con «they» hace falta «are»: Where are they going to live?",
-        "de": "Bei „they“ braucht man „are“: Where are they going to live?"
+        "es": "Con «they» hace falta «are»: Where are they going to live?"
       },
       "wrong": {
         "do": {
-          "hu": "A „be going to” kérdésében a to be áll, nem a „do”: Where are they going to…?",
           "en": "In a “be going to” question it is to be, not “do”: Where are they going to…?",
-          "es": "En una pregunta con «be going to» va to be, no «do»: Where are they going to…?",
-          "de": "In einer „be going to“-Frage steht to be, nicht „do“: Where are they going to…?"
+          "es": "En una pregunta con «be going to» va to be, no «do»: Where are they going to…?"
         },
         "does": {
-          "hu": "A „does” nem illik a „they” mellé, és a szerkezet to be-vel megy: are.",
           "en": "“Does” does not fit “they”, and the structure uses to be: are.",
-          "es": "«Does» no encaja con «they», y la estructura usa to be: are.",
-          "de": "„Does“ passt nicht zu „they“, und die Struktur benutzt to be: are."
+          "es": "«Does» no encaja con «they», y la estructura usa to be: are."
         }
       },
       "examples": [
         "Where are you going to work?",
         "Where is he going to eat?"
       ],
-      "tr": { "hu": "Hol fognak lakni?", "en": "Where are they going to live?", "es": "¿Dónde van a vivir?", "de": "Wo werden sie wohnen?" }
+      "tr": { "en": "Where are they going to live?", "es": "¿Dónde van a vivir?" }
     },
     {
       "id": "gg-12",
@@ -792,30 +652,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az „it” mellé az „is” kell, és a felhők jelére épülő jóslat: It is going to rain.",
         "en": "With “it” you need “is”, and the clouds are a sign for the prediction: It is going to rain.",
-        "es": "Con «it» hace falta «is», y las nubes son la señal de la predicción: It is going to rain.",
-        "de": "Bei „it“ braucht man „is“, und die Wolken sind das Anzeichen für die Vorhersage: It is going to rain."
+        "es": "Con «it» hace falta «is», y las nubes son la señal de la predicción: It is going to rain."
       },
       "wrong": {
         "are": {
-          "hu": "Az „are” a you, we, they mellé való; az „it” mellé „is” kell.",
           "en": "“Are” goes with you, we, they; with “it” you need “is”.",
-          "es": "«Are» va con you, we, they; con «it» hace falta «is».",
-          "de": "„Are“ gehört zu you, we, they; bei „it“ braucht man „is“."
+          "es": "«Are» va con you, we, they; con «it» hace falta «is»."
         },
         "does": {
-          "hu": "A „be going to” szerkezetben a to be áll, nem a „does”: It is going to rain.",
           "en": "In “be going to” it is to be, not “does”: It is going to rain.",
-          "es": "En «be going to» va to be, no «does»: It is going to rain.",
-          "de": "In „be going to“ steht to be, nicht „does“: It is going to rain."
+          "es": "En «be going to» va to be, no «does»: It is going to rain."
         }
       },
       "examples": [
         "It is going to be hot.",
         "The baby is going to sleep."
       ],
-      "tr": { "hu": "Nézd azokat a felhőket! Esni fog.", "en": "Look at the clouds! It is going to rain.", "es": "¡Mira las nubes! Va a llover.", "de": "Schau dir die Wolken an! Es wird regnen." }
+      "tr": { "en": "Look at the clouds! It is going to rain.", "es": "¡Mira las nubes! Va a llover." }
     },
     {
       "kind": "why",
@@ -823,46 +677,34 @@
       "es": "Look! It is going to rain.",
       "target": "going",
       "tr": {
-        "hu": "Nézd! Esni fog.",
         "en": "Look! It is going to rain.",
-        "es": "¡Mira! Va a llover.",
-        "de": "Sieh mal! Es wird regnen."
+        "es": "¡Mira! Va a llover."
       },
       "options": [
         {
           "text": {
-            "hu": "jóslat olyan jelek alapján, amiket most látunk",
             "en": "a prediction from signs we can see now",
-            "es": "una predicción a partir de señales que vemos ahora",
-            "de": "eine Vorhersage aus Anzeichen, die wir jetzt sehen"
+            "es": "una predicción a partir de señales que vemos ahora"
           }
         },
         {
           "text": {
-            "hu": "menetrend vagy rögzített program",
             "en": "a timetable or fixed schedule",
-            "es": "un horario o programa fijo",
-            "de": "ein Fahrplan oder festes Programm"
+            "es": "un horario o programa fijo"
           },
           "wrong": {
-            "hu": "Az eső nem menetrend: a „Look!” jelzi, hogy a jelekből következtetünk.",
             "en": "Rain is not a timetable: “Look!” shows that we are concluding from signs.",
-            "es": "La lluvia no es un horario: «Look!» muestra que deducimos a partir de señales.",
-            "de": "Regen ist kein Fahrplan: „Look!“ zeigt, dass wir aus Anzeichen schließen."
+            "es": "La lluvia no es un horario: «Look!» muestra que deducimos a partir de señales."
           }
         },
         {
           "text": {
-            "hu": "szokás, ami gyakran ismétlődik",
             "en": "a habit that often repeats",
-            "es": "un hábito que se repite a menudo",
-            "de": "eine Gewohnheit, die sich oft wiederholt"
+            "es": "un hábito que se repite a menudo"
           },
           "wrong": {
-            "hu": "Ez egy konkrét, közeli esemény, nem szokás; szokásra az egyszerű jelen kell.",
             "en": "This is a specific, near event, not a habit; a habit needs the present simple.",
-            "es": "Es un hecho concreto y cercano, no un hábito; un hábito necesita el presente simple.",
-            "de": "Das ist ein konkretes, nahes Ereignis, keine Gewohnheit; eine Gewohnheit braucht das Present Simple."
+            "es": "Es un hecho concreto y cercano, no un hábito; un hábito necesita el presente simple."
           }
         }
       ],
@@ -908,30 +750,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A jövőre vonatkozó terv jövő idejű időhatározót kér: tomorrow.",
         "en": "A plan for the future needs a future time expression: tomorrow.",
-        "es": "Un plan para el futuro pide una expresión de tiempo futuro: tomorrow.",
-        "de": "Ein Plan für die Zukunft verlangt eine Zeitangabe der Zukunft: tomorrow."
+        "es": "Un plan para el futuro pide una expresión de tiempo futuro: tomorrow."
       },
       "wrong": {
         "yesterday": {
-          "hu": "A „yesterday” múlt; a „going to” jövőre mutat: tomorrow.",
           "en": "“Yesterday” is past; “going to” points to the future: tomorrow.",
-          "es": "«Yesterday» es pasado; «going to» apunta al futuro: tomorrow.",
-          "de": "„Yesterday“ ist Vergangenheit; „going to“ zeigt in die Zukunft: tomorrow."
+          "es": "«Yesterday» es pasado; «going to» apunta al futuro: tomorrow."
         },
         "last week": {
-          "hu": "A „last week” múlt; a „going to” jövőre mutat: tomorrow.",
           "en": "“Last week” is past; “going to” points to the future: tomorrow.",
-          "es": "«Last week» es pasado; «going to» apunta al futuro: tomorrow.",
-          "de": "„Last week“ ist Vergangenheit; „going to“ zeigt in die Zukunft: tomorrow."
+          "es": "«Last week» es pasado; «going to» apunta al futuro: tomorrow."
         }
       },
       "examples": [
         "We are going to eat tonight.",
         "He is going to work soon."
       ],
-      "tr": { "hu": "Holnap fel fog hívni.", "en": "She is going to call me tomorrow.", "es": "Ella me va a llamar mañana.", "de": "Sie wird mich morgen anrufen." }
+      "tr": { "en": "She is going to call me tomorrow.", "es": "Ella me va a llamar mañana." }
     },
     {
       "id": "gg-18",
@@ -951,30 +787,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A jövőre a „next week” mondjuk: They are going to arrive next week.",
         "en": "For the future we say “next week”: They are going to arrive next week.",
-        "es": "Para el futuro decimos «next week»: They are going to arrive next week.",
-        "de": "Für die Zukunft sagt man „next week“: They are going to arrive next week."
+        "es": "Para el futuro decimos «next week»: They are going to arrive next week."
       },
       "wrong": {
         "last": {
-          "hu": "A „last week” múlt; a „going to” jövőre mutat: next week.",
           "en": "“Last week” is past; “going to” points to the future: next week.",
-          "es": "«Last week» es pasado; «going to» apunta al futuro: next week.",
-          "de": "„Last week“ ist Vergangenheit; „going to“ zeigt in die Zukunft: next week."
+          "es": "«Last week» es pasado; «going to» apunta al futuro: next week."
         },
         "ago": {
-          "hu": "Az „ago” múltbeli időt jelöl, és a szám után áll (a week ago); jövőhöz „next week” kell.",
           "en": "“Ago” marks past time and follows a number (a week ago); for the future you need “next week”.",
-          "es": "«Ago» marca tiempo pasado y va después de un número (a week ago); para el futuro hace falta «next week».",
-          "de": "„Ago“ markiert vergangene Zeit und steht nach einer Zahl (a week ago); für die Zukunft braucht man „next week“."
+          "es": "«Ago» marca tiempo pasado y va después de un número (a week ago); para el futuro hace falta «next week»."
         }
       },
       "examples": [
         "We are going to visit next month.",
         "She is going to call next week."
       ],
-      "tr": { "hu": "Jövő héten fognak megérkezni.", "en": "They are going to arrive next week.", "es": "Ellos van a llegar la próxima semana.", "de": "Sie werden nächste Woche ankommen." }
+      "tr": { "en": "They are going to arrive next week.", "es": "Ellos van a llegar la próxima semana." }
     },
     {
       "id": "gg-19",

@@ -3,42 +3,32 @@
   "topic": "question_tags",
   "level": "B1",
   "title": {
-    "hu": "Kérdőfarok (You are tired, aren’t you?)",
     "en": "Question Tags (You are tired, aren’t you?)",
-    "es": "Question tags (You are tired, aren’t you?)",
-    "de": "Question Tags (You are tired, aren’t you?)"
+    "es": "Question tags (You are tired, aren’t you?)"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "A question tag egy rövid kérdés a mondat végén, amivel megerősítést kérünk: „You are tired, aren’t you?” (Fáradt vagy, ugye?) A spanyolban egyetlen változatlan szócska van erre („¿verdad?”, „¿no?”), az angolban viszont a tag minden mondatnál más: a mondat segédigéjét és alanyát ismétli meg, és ha a mondat állító, a tag tagadó, ha tagadó, a tag állító.",
         "en": "A question tag is a short question at the end of a sentence, used to ask for confirmation: “You are tired, aren’t you?” Spanish has one unchanging little word for this (“¿verdad?”, “¿no?”), but in English the tag is different for every sentence: it repeats the helper verb and the subject of the sentence, and if the sentence is positive the tag is negative, if the sentence is negative the tag is positive.",
-        "es": "Un question tag es una pregunta corta al final de una oración, con la que pedimos confirmación: «You are tired, aren’t you?» (Estás cansado, ¿verdad?) El español tiene una sola palabrita invariable para esto («¿verdad?», «¿no?»), pero en inglés el tag es distinto en cada oración: repite el verbo auxiliar y el sujeto de la oración, y si la oración es afirmativa el tag es negativo, si la oración es negativa el tag es afirmativo.",
-        "de": "Ein Question Tag ist eine kurze Frage am Satzende, mit der man um Bestätigung bittet: „You are tired, aren’t you?“ (Du bist müde, oder?) Das Spanische hat dafür ein einziges unveränderliches Wörtchen („¿verdad?“, „¿no?“), im Englischen ist der Tag aber in jedem Satz anders: Er wiederholt das Hilfsverb und das Subjekt des Satzes, und wenn der Satz bejahend ist, ist der Tag verneint, wenn der Satz verneint ist, ist der Tag bejaht."
+        "es": "Un question tag es una pregunta corta al final de una oración, con la que pedimos confirmación: «You are tired, aren’t you?» (Estás cansado, ¿verdad?) El español tiene una sola palabrita invariable para esto («¿verdad?», «¿no?»), pero en inglés el tag es distinto en cada oración: repite el verbo auxiliar y el sujeto de la oración, y si la oración es afirmativa el tag es negativo, si la oración es negativa el tag es afirmativo."
       }
     },
     {
       "kind": "table",
       "id": "qt-forms",
       "title": {
-        "hu": "Melyik segédige kerül a tagbe?",
         "en": "Which helper verb goes in the tag?",
-        "es": "¿Qué auxiliar va en el tag?",
-        "de": "Welches Hilfsverb steht im Tag?"
+        "es": "¿Qué auxiliar va en el tag?"
       },
       "header": [
         {
-          "hu": "Mondat",
           "en": "Sentence",
-          "es": "Oración",
-          "de": "Satz"
+          "es": "Oración"
         },
         {
-          "hu": "a tag segédigéje",
           "en": "the helper verb of the tag",
-          "es": "auxiliar del tag",
-          "de": "Hilfsverb des Tags"
+          "es": "auxiliar del tag"
         }
       ],
       "rows": [
@@ -71,64 +61,50 @@
     {
       "kind": "list",
       "title": {
-        "hu": "A szabály",
         "en": "The rule",
-        "es": "La regla",
-        "de": "Die Regel"
+        "es": "La regla"
       },
       "items": [
         {
           "text": {
-            "hu": "Állító mondat → tagadó tag. A tag a mondat segédigéjét ismétli (is → isn’t, can → can’t). Ha nincs segédige, do / does / did kell: „You like coffee, don’t you?”",
             "en": "Positive sentence → negative tag. The tag repeats the helper verb of the sentence (is → isn’t, can → can’t). If there is no helper verb, you need do / does / did: “You like coffee, don’t you?”",
-            "es": "Oración afirmativa → tag negativo. El tag repite el verbo auxiliar de la oración (is → isn’t, can → can’t). Si no hay auxiliar, hace falta do / does / did: «You like coffee, don’t you?»",
-            "de": "Bejahender Satz → verneinter Tag. Der Tag wiederholt das Hilfsverb des Satzes (is → isn’t, can → can’t). Gibt es kein Hilfsverb, braucht man do / does / did: „You like coffee, don’t you?“"
+            "es": "Oración afirmativa → tag negativo. El tag repite el verbo auxiliar de la oración (is → isn’t, can → can’t). Si no hay auxiliar, hace falta do / does / did: «You like coffee, don’t you?»"
           },
           "examples": [
             {
               "es": "It is cold today, isn't it?",
               "tr": {
-                "hu": "Ma hideg van, ugye?",
                 "en": "It is cold today, isn't it?",
-                "es": "Hoy hace frío, ¿verdad?",
-                "de": "Heute ist es kalt, oder?"
+                "es": "Hoy hace frío, ¿verdad?"
               }
             },
             {
               "es": "They went home, didn't they?",
               "tr": {
-                "hu": "Hazamentek, ugye?",
                 "en": "They went home, didn't they?",
-                "es": "Se fueron a casa, ¿no?",
-                "de": "Sie sind nach Hause gegangen, oder?"
+                "es": "Se fueron a casa, ¿no?"
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Tagadó mondat → állító tag: „You don’t like fish, do you?” Az állító tag ebben az esetben is a segédigét ismétli.",
             "en": "Negative sentence → positive tag: “You don’t like fish, do you?” The positive tag also repeats the helper verb.",
-            "es": "Oración negativa → tag afirmativo: «You don’t like fish, do you?» El tag afirmativo también repite el verbo auxiliar.",
-            "de": "Verneinter Satz → bejahter Tag: „You don’t like fish, do you?“ Der bejahte Tag wiederholt ebenfalls das Hilfsverb."
+            "es": "Oración negativa → tag afirmativo: «You don’t like fish, do you?» El tag afirmativo también repite el verbo auxiliar."
           },
           "examples": [
             {
               "es": "You don't like fish, do you?",
               "tr": {
-                "hu": "Nem szereted a halat, ugye?",
                 "en": "You don't like fish, do you?",
-                "es": "No te gusta el pescado, ¿verdad?",
-                "de": "Du magst keinen Fisch, oder?"
+                "es": "No te gusta el pescado, ¿verdad?"
               }
             },
             {
               "es": "She isn't here, is she?",
               "tr": {
-                "hu": "Ő nincs itt, ugye?",
                 "en": "She isn't here, is she?",
-                "es": "Ella no está aquí, ¿verdad?",
-                "de": "Sie ist nicht hier, oder?"
+                "es": "Ella no está aquí, ¿verdad?"
               }
             }
           ]
@@ -138,64 +114,50 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Különleges esetek",
         "en": "Special cases",
-        "es": "Casos especiales",
-        "de": "Sonderfälle"
+        "es": "Casos especiales"
       },
       "items": [
         {
           "text": {
-            "hu": "I am → aren’t I? (nem „amn’t I”). Let’s → shall we? Felszólítás → will you? There is → isn’t there?",
             "en": "I am → aren’t I? (not “amn’t I”). Let’s → shall we? Imperative → will you? There is → isn’t there?",
-            "es": "I am → aren’t I? (no «amn’t I»). Let’s → shall we? Imperativo → will you? There is → isn’t there?",
-            "de": "I am → aren’t I? (nicht „amn’t I“). Let’s → shall we? Imperativ → will you? There is → isn’t there?"
+            "es": "I am → aren’t I? (no «amn’t I»). Let’s → shall we? Imperativo → will you? There is → isn’t there?"
           },
           "examples": [
             {
               "es": "I'm late, aren't I?",
               "tr": {
-                "hu": "Elkéstem, ugye?",
                 "en": "I'm late, aren't I?",
-                "es": "Llego tarde, ¿verdad?",
-                "de": "Ich bin spät dran, oder?"
+                "es": "Llego tarde, ¿verdad?"
               }
             },
             {
               "es": "Let's go, shall we?",
               "tr": {
-                "hu": "Menjünk, jó?",
                 "en": "Let's go, shall we?",
-                "es": "Vámonos, ¿va?",
-                "de": "Gehen wir, ja?"
+                "es": "Vámonos, ¿va?"
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Többes alany (Ana and Luis) → they. A „nobody”, „somebody” mellé is they kerül. A nobody tagadó jelentésű, ezért állító tag jön: „Nobody called, did they?”",
             "en": "A plural subject (Ana and Luis) → they. Nobody and somebody also take they. Nobody has a negative meaning, so the tag is positive: “Nobody called, did they?”",
-            "es": "Un sujeto plural (Ana and Luis) → they. Nobody y somebody también llevan they. Nobody tiene sentido negativo, por eso el tag es afirmativo: «Nobody called, did they?»",
-            "de": "Ein Plural-Subjekt (Ana and Luis) → they. Auch nobody und somebody nehmen they. Nobody hat verneinende Bedeutung, deshalb ist der Tag bejaht: „Nobody called, did they?“"
+            "es": "Un sujeto plural (Ana and Luis) → they. Nobody y somebody también llevan they. Nobody tiene sentido negativo, por eso el tag es afirmativo: «Nobody called, did they?»"
           },
           "examples": [
             {
               "es": "Ana and Luis work here, don't they?",
               "tr": {
-                "hu": "Ana és Luis itt dolgoznak, ugye?",
                 "en": "Ana and Luis work here, don't they?",
-                "es": "Ana y Luis trabajan aquí, ¿verdad?",
-                "de": "Ana und Luis arbeiten hier, oder?"
+                "es": "Ana y Luis trabajan aquí, ¿verdad?"
               }
             },
             {
               "es": "Open the door, will you?",
               "tr": {
-                "hu": "Nyisd ki az ajtót, jó?",
                 "en": "Open the door, will you?",
-                "es": "Abre la puerta, ¿sí?",
-                "de": "Mach die Tür auf, ja?"
+                "es": "Abre la puerta, ¿sí?"
               }
             }
           ]
@@ -205,36 +167,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Hanglejtés",
         "en": "Intonation",
-        "es": "Entonación",
-        "de": "Intonation"
+        "es": "Entonación"
       },
       "items": [
         {
           "text": {
-            "hu": "Emelkedő hanglejtéssel valódi kérdés (nem tudom, tényleg kérdezem). Eső hanglejtéssel csak megerősítést kérek, mert szinte biztos vagyok benne.",
             "en": "With rising intonation it is a real question (I don’t know, I’m really asking). With falling intonation I only ask for confirmation because I am almost sure.",
-            "es": "Con entonación ascendente es una pregunta real (no sé, de verdad pregunto). Con entonación descendente solo pido confirmación porque estoy casi seguro.",
-            "de": "Mit steigender Intonation ist es eine echte Frage (ich weiß es nicht, ich frage wirklich). Mit fallender Intonation bitte ich nur um Bestätigung, weil ich fast sicher bin."
+            "es": "Con entonación ascendente es una pregunta real (no sé, de verdad pregunto). Con entonación descendente solo pido confirmación porque estoy casi seguro."
           },
           "examples": [
             {
               "es": "You're from Mexico, aren't you?",
               "tr": {
-                "hu": "Mexikói vagy, ugye?",
                 "en": "You're from Mexico, aren't you?",
-                "es": "Eres de México, ¿verdad?",
-                "de": "Du kommst aus Mexiko, oder?"
+                "es": "Eres de México, ¿verdad?"
               }
             },
             {
               "es": "It's a nice day, isn't it?",
               "tr": {
-                "hu": "Szép nap van, ugye?",
                 "en": "It's a nice day, isn't it?",
-                "es": "Es un lindo día, ¿verdad?",
-                "de": "Es ist ein schöner Tag, oder?"
+                "es": "Es un lindo día, ¿verdad?"
               }
             }
           ]
@@ -244,63 +198,49 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "A spanyol „¿verdad?” vagy „¿no?” nem fordítható mindig „isn’t it?”-nek. A tag a mondatból következik: „You like coffee, don’t you?”, nem „You like coffee, isn’t it?”. Nézd meg a segédigét és az alanyt.",
         "en": "The Spanish “¿verdad?” or “¿no?” is not always “isn’t it?” in English. The tag follows from the sentence: “You like coffee, don’t you?”, not “You like coffee, isn’t it?”. Look at the helper verb and the subject.",
-        "es": "El «¿verdad?» o «¿no?» del español no siempre es «isn’t it?» en inglés. El tag sale de la oración: «You like coffee, don’t you?», no «You like coffee, isn’t it?». Fíjate en el verbo auxiliar y en el sujeto.",
-        "de": "Das spanische „¿verdad?“ oder „¿no?“ ist im Englischen nicht immer „isn’t it?“. Der Tag ergibt sich aus dem Satz: „You like coffee, don’t you?“, nicht „You like coffee, isn’t it?“. Schau auf das Hilfsverb und das Subjekt."
+        "es": "El «¿verdad?» o «¿no?» del español no siempre es «isn’t it?» en inglés. El tag sale de la oración: «You like coffee, don’t you?», no «You like coffee, isn’t it?». Fíjate en el verbo auxiliar y en el sujeto."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A tag névmása az alanyra utal: Ana → she, my brother → he, the book → it, Ana and Luis → they. A „there is” mellé there kerül: „There is a bank here, isn’t there?”",
         "en": "The pronoun in the tag refers to the subject: Ana → she, my brother → he, the book → it, Ana and Luis → they. With “there is” the tag uses there: “There is a bank here, isn’t there?”",
-        "es": "El pronombre del tag se refiere al sujeto: Ana → she, my brother → he, the book → it, Ana and Luis → they. Con «there is» el tag usa there: «There is a bank here, isn’t there?»",
-        "de": "Das Pronomen im Tag bezieht sich auf das Subjekt: Ana → she, my brother → he, the book → it, Ana and Luis → they. Bei „there is“ benutzt der Tag there: „There is a bank here, isn’t there?“"
+        "es": "El pronombre del tag se refiere al sujeto: Ana → she, my brother → he, the book → it, Ana and Luis → they. Con «there is» el tag usa there: «There is a bank here, isn’t there?»"
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A köznyelvben egyszerűen „right?” is mondható („You’re coming, right?”), de vizsgán és írásban a rendes question tag kell.",
         "en": "In casual speech you can also simply say “right?” (“You’re coming, right?”), but on exams and in writing you need the regular question tag.",
-        "es": "En el habla informal también se puede decir simplemente «right?» («You’re coming, right?»), pero en exámenes y por escrito hace falta el question tag normal.",
-        "de": "In der Umgangssprache kann man auch einfach „right?“ sagen („You’re coming, right?“), aber in Prüfungen und schriftlich braucht man den regulären Question Tag."
+        "es": "En el habla informal también se puede decir simplemente «right?» («You’re coming, right?»), pero en exámenes y por escrito hace falta el question tag normal."
       }
     }
   ],
   "speak": {
-    "hu": "A question tag egy rövid kérdés a mondat végén, megerősítést kérünk vele: «You are tired, aren't you?». Ha a mondat állító, a tag tagadó. Ha a mondat tagadó, a tag állító: «You don't like fish, do you?». A tag a mondat segédigéjét ismétli meg: «She can swim, can't she?». Ha nincs segédige, a «do», «does» vagy «did» kell: «They went home, didn't they?». Különleges esetek: «I'm late, aren't I?», «Let's go, shall we?», «Open the door, will you?». A spanyol «verdad» angolul nem mindig «isn't it».",
     "en": "A question tag is a short question at the end of a sentence, used to ask for confirmation: «You are tired, aren't you?». If the sentence is positive, the tag is negative. If the sentence is negative, the tag is positive: «You don't like fish, do you?». The tag repeats the helper verb of the sentence: «She can swim, can't she?». If there is no helper verb, «do», «does» or «did» is needed: «They went home, didn't they?». Special cases: «I'm late, aren't I?», «Let's go, shall we?», «Open the door, will you?». The Spanish «verdad» is not always «isn't it» in English.",
-    "es": "Un question tag es una pregunta corta al final de una oración, con la que pedimos confirmación: «You are tired, aren't you?». Si la oración es afirmativa, el tag es negativo. Si la oración es negativa, el tag es afirmativo: «You don't like fish, do you?». El tag repite el verbo auxiliar de la oración: «She can swim, can't she?». Si no hay auxiliar, hace falta «do», «does» o «did»: «They went home, didn't they?». Casos especiales: «I'm late, aren't I?», «Let's go, shall we?», «Open the door, will you?». El «verdad» español no siempre es «isn't it» en inglés.",
-    "de": "Ein Question Tag ist eine kurze Frage am Satzende, mit der man um Bestätigung bittet: «You are tired, aren't you?». Ist der Satz bejahend, ist der Tag verneint. Ist der Satz verneint, ist der Tag bejaht: «You don't like fish, do you?». Der Tag wiederholt das Hilfsverb des Satzes: «She can swim, can't she?». Gibt es kein Hilfsverb, braucht man «do», «does» oder «did»: «They went home, didn't they?». Sonderfälle: «I'm late, aren't I?», «Let's go, shall we?», «Open the door, will you?». Das spanische «verdad» ist im Englischen nicht immer «isn't it»."
+    "es": "Un question tag es una pregunta corta al final de una oración, con la que pedimos confirmación: «You are tired, aren't you?». Si la oración es afirmativa, el tag es negativo. Si la oración es negativa, el tag es afirmativo: «You don't like fish, do you?». El tag repite el verbo auxiliar de la oración: «She can swim, can't she?». Si no hay auxiliar, hace falta «do», «does» o «did»: «They went home, didn't they?». Casos especiales: «I'm late, aren't I?», «Let's go, shall we?», «Open the door, will you?». El «verdad» español no siempre es «isn't it» en inglés."
   },
   "glossary": [
     {
       "word": "shall",
       "gloss": {
-        "hu": "javaslat: shall we? (menjünk?)",
         "en": "used in suggestions: shall we?",
-        "es": "se usa en sugerencias: shall we? (¿vamos?)",
-        "de": "für Vorschläge: shall we? (sollen wir?)"
+        "es": "se usa en sugerencias: shall we? (¿vamos?)"
       }
     },
     {
       "word": "let's",
       "gloss": {
-        "hu": "let us rövidítve (tegyük)",
         "en": "short for let us",
-        "es": "forma corta de let us (hagamos)",
-        "de": "Kurzform von let us (lass uns)"
+        "es": "forma corta de let us (hagamos)"
       }
     },
     {
       "word": "amn't",
       "gloss": {
-        "hu": "am not (nem használatos: aren’t I)",
         "en": "am not (not used: aren’t I)",
-        "es": "am not (no se usa: aren’t I)",
-        "de": "am not (nicht gebräuchlich: aren’t I)"
+        "es": "am not (no se usa: aren’t I)"
       }
     }
   ],
@@ -315,30 +255,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Állító mondat → tagadó tag, ugyanazzal a segédigével: aren’t you?",
         "en": "Positive sentence → negative tag, with the same helper verb: aren’t you?",
-        "es": "Oración afirmativa → tag negativo, con el mismo auxiliar: aren’t you?",
-        "de": "Bejahender Satz → verneinter Tag, mit demselben Hilfsverb: aren’t you?"
+        "es": "Oración afirmativa → tag negativo, con el mismo auxiliar: aren’t you?"
       },
       "wrong": {
         "are you": {
-          "hu": "Az „are you” állító tag; állító mondathoz tagadó tag kell (aren’t you).",
           "en": "“Are you” is a positive tag; a positive sentence needs a negative tag (aren’t you).",
-          "es": "«Are you» es un tag afirmativo; una oración afirmativa necesita un tag negativo (aren’t you).",
-          "de": "„Are you“ ist ein bejahter Tag; ein bejahender Satz braucht einen verneinten Tag (aren’t you)."
+          "es": "«Are you» es un tag afirmativo; una oración afirmativa necesita un tag negativo (aren’t you)."
         },
         "don't you": {
-          "hu": "A mondat be igét használ (are), ezért a tag is are-ral készül, nem do-val.",
           "en": "The sentence uses the verb be (are), so the tag is also made with are, not with do.",
-          "es": "La oración usa el verbo be (are), por eso el tag también se forma con are, no con do.",
-          "de": "Der Satz benutzt das Verb be (are), deshalb wird auch der Tag mit are gebildet, nicht mit do."
+          "es": "La oración usa el verbo be (are), por eso el tag también se forma con are, no con do."
         }
       },
       "examples": [
         "You are late, aren't you?",
         "They are here, aren't they?"
       ],
-      "tr": { "hu": "Fáradt vagy, ugye?", "en": "You are tired, aren't you?", "es": "Estás cansado, ¿verdad?", "de": "Du bist müde, nicht wahr?" }
+      "tr": { "en": "You are tired, aren't you?", "es": "Estás cansado, ¿verdad?" }
     },
     {
       "id": "qt-02",
@@ -350,30 +284,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Állító mondat → tagadó tag, a can segédigével: can’t she?",
         "en": "Positive sentence → negative tag, with the helper can: can’t she?",
-        "es": "Oración afirmativa → tag negativo, con el auxiliar can: can’t she?",
-        "de": "Bejahender Satz → verneinter Tag, mit dem Hilfsverb can: can’t she?"
+        "es": "Oración afirmativa → tag negativo, con el auxiliar can: can’t she?"
       },
       "wrong": {
         "can she": {
-          "hu": "A „can she” állító tag; állító mondathoz tagadó tag kell (can’t she).",
           "en": "“Can she” is a positive tag; a positive sentence needs a negative tag (can’t she).",
-          "es": "«Can she» es un tag afirmativo; una oración afirmativa necesita un tag negativo (can’t she).",
-          "de": "„Can she“ ist ein bejahter Tag; ein bejahender Satz braucht einen verneinten Tag (can’t she)."
+          "es": "«Can she» es un tag afirmativo; una oración afirmativa necesita un tag negativo (can’t she)."
         },
         "doesn't she": {
-          "hu": "A mondatban a can segédige van, ezért a tag is can-nel készül, nem does-szal.",
           "en": "The sentence has the helper can, so the tag is made with can, not with does.",
-          "es": "La oración tiene el auxiliar can, por eso el tag se forma con can, no con does.",
-          "de": "Der Satz hat das Hilfsverb can, deshalb wird der Tag mit can gebildet, nicht mit does."
+          "es": "La oración tiene el auxiliar can, por eso el tag se forma con can, no con does."
         }
       },
       "examples": [
         "He can cook, can't he?",
         "You can swim, can't you?"
       ],
-      "tr": { "hu": "Tud úszni, nem igaz?", "en": "She can swim, can't she?", "es": "Ella sabe nadar, ¿no?", "de": "Sie kann schwimmen, oder?" }
+      "tr": { "en": "She can swim, can't she?", "es": "Ella sabe nadar, ¿no?" }
     },
     {
       "id": "qt-03",
@@ -385,30 +313,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Egyszerű múlt, nincs segédige: did kell, tagadva: didn’t they?",
         "en": "Past simple, no helper verb: you need did, negative: didn’t they?",
-        "es": "Pasado simple, sin auxiliar: hace falta did, en negativo: didn’t they?",
-        "de": "Past Simple, kein Hilfsverb: man braucht did, verneint: didn’t they?"
+        "es": "Pasado simple, sin auxiliar: hace falta did, en negativo: didn’t they?"
       },
       "wrong": {
         "weren't they": {
-          "hu": "A „went” egyszerű múlt, nem be igés mondat; a tag did-del készül, nem were-rel.",
           "en": "“Went” is the past simple, not a sentence with be; the tag is made with did, not with were.",
-          "es": "«Went» es el pasado simple, no una oración con be; el tag se forma con did, no con were.",
-          "de": "„Went“ ist das Past Simple, kein Satz mit be; der Tag wird mit did gebildet, nicht mit were."
+          "es": "«Went» es el pasado simple, no una oración con be; el tag se forma con did, no con were."
         },
         "don't they": {
-          "hu": "A don’t jelen idejű; a mondat múlt idejű, ezért didn’t.",
           "en": "Don’t is present; the sentence is in the past, so didn’t.",
-          "es": "Don’t es presente; la oración está en pasado, por eso didn’t.",
-          "de": "Don’t ist Präsens; der Satz steht in der Vergangenheit, deshalb didn’t."
+          "es": "Don’t es presente; la oración está en pasado, por eso didn’t."
         }
       },
       "examples": [
         "She called, didn't she?",
         "You ate, didn't you?"
       ],
-      "tr": { "hu": "Hazamentek, ugye?", "en": "They went home, didn't they?", "es": "Se fueron a casa, ¿verdad?", "de": "Sie sind nach Hause gegangen, nicht wahr?" }
+      "tr": { "en": "They went home, didn't they?", "es": "Se fueron a casa, ¿verdad?" }
     },
     {
       "id": "qt-04",
@@ -420,30 +342,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Tagadó mondat → állító tag: do you?",
         "en": "Negative sentence → positive tag: do you?",
-        "es": "Oración negativa → tag afirmativo: do you?",
-        "de": "Verneinter Satz → bejahter Tag: do you?"
+        "es": "Oración negativa → tag afirmativo: do you?"
       },
       "wrong": {
         "don't you": {
-          "hu": "A „don’t you” tagadó tag; tagadó mondathoz állító tag kell (do you).",
           "en": "“Don’t you” is a negative tag; a negative sentence needs a positive tag (do you).",
-          "es": "«Don’t you» es un tag negativo; una oración negativa necesita un tag afirmativo (do you).",
-          "de": "„Don’t you“ ist ein verneinter Tag; ein verneinter Satz braucht einen bejahten Tag (do you)."
+          "es": "«Don’t you» es un tag negativo; una oración negativa necesita un tag afirmativo (do you)."
         },
         "aren't you": {
-          "hu": "A mondat do segédigét használ (don’t), ezért a tag is do-val készül, nem be igével.",
           "en": "The sentence uses the helper do (don’t), so the tag is also made with do, not with be.",
-          "es": "La oración usa el auxiliar do (don’t), por eso el tag también se forma con do, no con be.",
-          "de": "Der Satz benutzt das Hilfsverb do (don’t), deshalb wird auch der Tag mit do gebildet, nicht mit be."
+          "es": "La oración usa el auxiliar do (don’t), por eso el tag también se forma con do, no con be."
         }
       },
       "examples": [
         "You don't know, do you?",
         "She doesn't work here, does she?"
       ],
-      "tr": { "hu": "Nem szereted a halat, ugye?", "en": "You don't like fish, do you?", "es": "No te gusta el pescado, ¿verdad?", "de": "Du magst keinen Fisch, oder?" }
+      "tr": { "en": "You don't like fish, do you?", "es": "No te gusta el pescado, ¿verdad?" }
     },
     {
       "id": "qt-05",
@@ -455,30 +371,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Állító mondat → tagadó tag: isn’t it?",
         "en": "Positive sentence → negative tag: isn’t it?",
-        "es": "Oración afirmativa → tag negativo: isn’t it?",
-        "de": "Bejahender Satz → verneinter Tag: isn’t it?"
+        "es": "Oración afirmativa → tag negativo: isn’t it?"
       },
       "wrong": {
         "is it": {
-          "hu": "Az „is it” állító tag; állító mondathoz tagadó tag kell (isn’t it).",
           "en": "“Is it” is a positive tag; a positive sentence needs a negative tag (isn’t it).",
-          "es": "«Is it» es un tag afirmativo; una oración afirmativa necesita un tag negativo (isn’t it).",
-          "de": "„Is it“ ist ein bejahter Tag; ein bejahender Satz braucht einen verneinten Tag (isn’t it)."
+          "es": "«Is it» es un tag afirmativo; una oración afirmativa necesita un tag negativo (isn’t it)."
         },
         "doesn't it": {
-          "hu": "A mondat be igét használ (is), ezért a tag is is-szel készül, nem does-szal.",
           "en": "The sentence uses the verb be (is), so the tag is also made with is, not with does.",
-          "es": "La oración usa el verbo be (is), por eso el tag también se forma con is, no con does.",
-          "de": "Der Satz benutzt das Verb be (is), deshalb wird auch der Tag mit is gebildet, nicht mit does."
+          "es": "La oración usa el verbo be (is), por eso el tag también se forma con is, no con does."
         }
       },
       "examples": [
         "It is late, isn't it?",
         "That is nice, isn't it?"
       ],
-      "tr": { "hu": "Hideg van ma, nem?", "en": "It is cold today, isn't it?", "es": "Hace frío hoy, ¿no?", "de": "Es ist heute kalt, nicht wahr?" }
+      "tr": { "en": "It is cold today, isn't it?", "es": "Hace frío hoy, ¿no?" }
     },
     {
       "id": "qt-06",
@@ -490,30 +400,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Egyszerű jelen, nincs segédige: does kell, tagadva: doesn’t he?",
         "en": "Present simple, no helper verb: you need does, negative: doesn’t he?",
-        "es": "Presente simple, sin auxiliar: hace falta does, en negativo: doesn’t he?",
-        "de": "Present Simple, kein Hilfsverb: man braucht does, verneint: doesn’t he?"
+        "es": "Presente simple, sin auxiliar: hace falta does, en negativo: doesn’t he?"
       },
       "wrong": {
         "isn't he": {
-          "hu": "A „lives” nem be igés mondat; a tag does-szal készül, nem is-szel.",
           "en": "“Lives” is not a sentence with be; the tag is made with does, not with is.",
-          "es": "«Lives» no es una oración con be; el tag se forma con does, no con is.",
-          "de": "„Lives“ ist kein Satz mit be; der Tag wird mit does gebildet, nicht mit is."
+          "es": "«Lives» no es una oración con be; el tag se forma con does, no con is."
         },
         "does he": {
-          "hu": "A „does he” állító tag; állító mondathoz tagadó tag kell (doesn’t he).",
           "en": "“Does he” is a positive tag; a positive sentence needs a negative tag (doesn’t he).",
-          "es": "«Does he» es un tag afirmativo; una oración afirmativa necesita un tag negativo (doesn’t he).",
-          "de": "„Does he“ ist ein bejahter Tag; ein bejahender Satz braucht einen verneinten Tag (doesn’t he)."
+          "es": "«Does he» es un tag afirmativo; una oración afirmativa necesita un tag negativo (doesn’t he)."
         }
       },
       "examples": [
         "She works here, doesn't she?",
         "He likes it, doesn't he?"
       ],
-      "tr": { "hu": "Pueblában lakik, ugye?", "en": "He lives in Puebla, doesn't he?", "es": "Él vive en Puebla, ¿verdad?", "de": "Er wohnt in Puebla, nicht wahr?" }
+      "tr": { "en": "He lives in Puebla, doesn't he?", "es": "Él vive en Puebla, ¿verdad?" }
     },
     {
       "id": "qt-07",
@@ -525,30 +429,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A mondat have segédigét használ (have finished), ezért: haven’t we?",
         "en": "The sentence uses the helper have (have finished), so: haven’t we?",
-        "es": "La oración usa el auxiliar have (have finished), por eso: haven’t we?",
-        "de": "Der Satz benutzt das Hilfsverb have (have finished), deshalb: haven’t we?"
+        "es": "La oración usa el auxiliar have (have finished), por eso: haven’t we?"
       },
       "wrong": {
         "don't we": {
-          "hu": "A don’t do-val készül; a present perfect have segédigét ismétli (haven’t we).",
           "en": "Don’t is made with do; the present perfect repeats the helper have (haven’t we).",
-          "es": "Don’t se forma con do; el presente perfecto repite el auxiliar have (haven’t we).",
-          "de": "Don’t wird mit do gebildet; das Present Perfect wiederholt das Hilfsverb have (haven’t we)."
+          "es": "Don’t se forma con do; el presente perfecto repite el auxiliar have (haven’t we)."
         },
         "didn't we": {
-          "hu": "A didn’t egyszerű múlthoz való; a „have finished” present perfect, ezért haven’t we.",
           "en": "Didn’t is for the past simple; “have finished” is the present perfect, so haven’t we.",
-          "es": "Didn’t es para el pasado simple; «have finished» es presente perfecto, por eso haven’t we.",
-          "de": "Didn’t ist für das Past Simple; „have finished“ ist Present Perfect, deshalb haven’t we."
+          "es": "Didn’t es para el pasado simple; «have finished» es presente perfecto, por eso haven’t we."
         }
       },
       "examples": [
         "You have seen it, haven't you?",
         "She has left, hasn't she?"
       ],
-      "tr": { "hu": "Befejeztük, ugye?", "en": "We have finished, haven't we?", "es": "Ya terminamos, ¿no?", "de": "Wir sind fertig, oder?" }
+      "tr": { "en": "We have finished, haven't we?", "es": "Ya terminamos, ¿no?" }
     },
     {
       "id": "qt-08",
@@ -560,30 +458,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Tagadó mondat → állító tag: is she?",
         "en": "Negative sentence → positive tag: is she?",
-        "es": "Oración negativa → tag afirmativo: is she?",
-        "de": "Verneinter Satz → bejahter Tag: is she?"
+        "es": "Oración negativa → tag afirmativo: is she?"
       },
       "wrong": {
         "isn't she": {
-          "hu": "Az „isn’t she” tagadó tag; tagadó mondathoz állító tag kell (is she).",
           "en": "“Isn’t she” is a negative tag; a negative sentence needs a positive tag (is she).",
-          "es": "«Isn’t she» es un tag negativo; una oración negativa necesita un tag afirmativo (is she).",
-          "de": "„Isn’t she“ ist ein verneinter Tag; ein verneinter Satz braucht einen bejahten Tag (is she)."
+          "es": "«Isn’t she» es un tag negativo; una oración negativa necesita un tag afirmativo (is she)."
         },
         "does she": {
-          "hu": "A mondat be igét használ (isn’t), ezért a tag is is-szel készül, nem does-szal.",
           "en": "The sentence uses the verb be (isn’t), so the tag is also made with is, not with does.",
-          "es": "La oración usa el verbo be (isn’t), por eso el tag también se forma con is, no con does.",
-          "de": "Der Satz benutzt das Verb be (isn’t), deshalb wird auch der Tag mit is gebildet, nicht mit does."
+          "es": "La oración usa el verbo be (isn’t), por eso el tag también se forma con is, no con does."
         }
       },
       "examples": [
         "He isn't ready, is he?",
         "It isn't far, is it?"
       ],
-      "tr": { "hu": "Nincs itt, ugye?", "en": "She isn't here, is she?", "es": "Ella no está aquí, ¿verdad?", "de": "Sie ist nicht hier, oder?" }
+      "tr": { "en": "She isn't here, is she?", "es": "Ella no está aquí, ¿verdad?" }
     },
     {
       "id": "qt-09",
@@ -595,30 +487,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az I am tagje aren’t I? (az „amn’t I” nem használatos).",
         "en": "The tag of I am is aren’t I? (“amn’t I” is not used).",
-        "es": "El tag de I am es aren’t I? («amn’t I» no se usa).",
-        "de": "Der Tag von I am ist aren’t I? („amn’t I“ wird nicht benutzt)."
+        "es": "El tag de I am es aren’t I? («amn’t I» no se usa)."
       },
       "wrong": {
         "amn't I": {
-          "hu": "Az „amn’t I” nem létezik a standard angolban; helyette aren’t I áll.",
           "en": "“Amn’t I” does not exist in standard English; aren’t I is used instead.",
-          "es": "«Amn’t I» no existe en inglés estándar; en su lugar se usa aren’t I.",
-          "de": "„Amn’t I“ gibt es im Standardenglisch nicht; stattdessen steht aren’t I."
+          "es": "«Amn’t I» no existe en inglés estándar; en su lugar se usa aren’t I."
         },
         "isn't I": {
-          "hu": "Az „isn’t I” helytelen: az I mellé nem illik az is.",
           "en": "“Isn’t I” is incorrect: is does not go with I.",
-          "es": "«Isn’t I» es incorrecto: is no va con I.",
-          "de": "„Isn’t I“ ist falsch: is passt nicht zu I."
+          "es": "«Isn’t I» es incorrecto: is no va con I."
         }
       },
       "examples": [
         "I'm right, aren't I?",
         "I'm on time, aren't I?"
       ],
-      "tr": { "hu": "Elkestem, ugye?", "en": "I am late, aren't I?", "es": "Llegué tarde, ¿verdad?", "de": "Ich bin zu spät, oder?" }
+      "tr": { "en": "I am late, aren't I?", "es": "Llegué tarde, ¿verdad?" }
     },
     {
       "id": "qt-10",
@@ -630,30 +516,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A let’s mellé a tag shall we?",
         "en": "The tag after let’s is shall we?",
-        "es": "El tag después de let’s es shall we?",
-        "de": "Der Tag nach let’s ist shall we?"
+        "es": "El tag después de let’s es shall we?"
       },
       "wrong": {
         "will we": {
-          "hu": "A „will we” nem a let’s tagja; a javaslathoz shall we kell.",
           "en": "“Will we” is not the tag of let’s; a suggestion needs shall we.",
-          "es": "«Will we» no es el tag de let’s; una sugerencia necesita shall we.",
-          "de": "„Will we“ ist nicht der Tag von let’s; ein Vorschlag braucht shall we."
+          "es": "«Will we» no es el tag de let’s; una sugerencia necesita shall we."
         },
         "don't we": {
-          "hu": "A „don’t we” nem a let’s tagja; a javaslathoz shall we kell.",
           "en": "“Don’t we” is not the tag of let’s; a suggestion needs shall we.",
-          "es": "«Don’t we» no es el tag de let’s; una sugerencia necesita shall we.",
-          "de": "„Don’t we“ ist nicht der Tag von let’s; ein Vorschlag braucht shall we."
+          "es": "«Don’t we» no es el tag de let’s; una sugerencia necesita shall we."
         }
       },
       "examples": [
         "Let's eat, shall we?",
         "Let's start, shall we?"
       ],
-      "tr": { "hu": "Menjünk, jó?", "en": "Let's go, shall we?", "es": "Vámonos, ¿sí?", "de": "Lass uns gehen, ja?" }
+      "tr": { "en": "Let's go, shall we?", "es": "Vámonos, ¿sí?" }
     },
     {
       "id": "qt-11",
@@ -665,30 +545,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Felszólítás után a tag will you?",
         "en": "After an imperative the tag is will you?",
-        "es": "Después de un imperativo el tag es will you?",
-        "de": "Nach einem Imperativ ist der Tag will you?"
+        "es": "Después de un imperativo el tag es will you?"
       },
       "wrong": {
         "do you": {
-          "hu": "A „do you” nem a felszólítás tagja; a felszólítás után will you áll.",
           "en": "“Do you” is not the tag of an imperative; after an imperative comes will you.",
-          "es": "«Do you» no es el tag de un imperativo; después de un imperativo va will you.",
-          "de": "„Do you“ ist nicht der Tag eines Imperativs; nach einem Imperativ steht will you."
+          "es": "«Do you» no es el tag de un imperativo; después de un imperativo va will you."
         },
         "are you": {
-          "hu": "Az „are you” nem a felszólítás tagja; a felszólítás után will you áll.",
           "en": "“Are you” is not the tag of an imperative; after an imperative comes will you.",
-          "es": "«Are you» no es el tag de un imperativo; después de un imperativo va will you.",
-          "de": "„Are you“ ist nicht der Tag eines Imperativs; nach einem Imperativ steht will you."
+          "es": "«Are you» no es el tag de un imperativo; después de un imperativo va will you."
         }
       },
       "examples": [
         "Wait here, will you?",
         "Call me, will you?"
       ],
-      "tr": { "hu": "Nyisd ki az ajtót, légy szíves!", "en": "Open the door, will you?", "es": "Abre la puerta, ¿quieres?", "de": "Mach bitte die Tür auf, ja?" }
+      "tr": { "en": "Open the door, will you?", "es": "Abre la puerta, ¿quieres?" }
     },
     {
       "id": "qt-12",
@@ -700,30 +574,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A mondat will segédigét használ, ezért a tag: won’t you?",
         "en": "The sentence uses the helper will, so the tag is: won’t you?",
-        "es": "La oración usa el auxiliar will, por eso el tag es: won’t you?",
-        "de": "Der Satz benutzt das Hilfsverb will, deshalb ist der Tag: won’t you?"
+        "es": "La oración usa el auxiliar will, por eso el tag es: won’t you?"
       },
       "wrong": {
         "don't you": {
-          "hu": "A don’t you nem a will tagja; a mondat will-lel készült, ezért won’t you.",
           "en": "Don’t you is not the tag of will; the sentence is made with will, so won’t you.",
-          "es": "Don’t you no es el tag de will; la oración se formó con will, por eso won’t you.",
-          "de": "Don’t you ist nicht der Tag von will; der Satz ist mit will gebildet, deshalb won’t you."
+          "es": "Don’t you no es el tag de will; la oración se formó con will, por eso won’t you."
         },
         "aren't you": {
-          "hu": "Az aren’t you a be igéhez való; a mondat will-lel készült, ezért won’t you.",
           "en": "Aren’t you is for the verb be; the sentence is made with will, so won’t you.",
-          "es": "Aren’t you es para el verbo be; la oración se formó con will, por eso won’t you.",
-          "de": "Aren’t you gehört zum Verb be; der Satz ist mit will gebildet, deshalb won’t you."
+          "es": "Aren’t you es para el verbo be; la oración se formó con will, por eso won’t you."
         }
       },
       "examples": [
         "He will help, won't he?",
         "They will come, won't they?"
       ],
-      "tr": { "hu": "Eljössz, ugye?", "en": "You will come, won't you?", "es": "Vas a venir, ¿verdad?", "de": "Du kommst doch, oder?" }
+      "tr": { "en": "You will come, won't you?", "es": "Vas a venir, ¿verdad?" }
     },
     {
       "id": "qt-13",
@@ -735,30 +603,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A there is mondat alanya there, ezért a tag: isn’t there?",
         "en": "The subject of a there is sentence is there, so the tag is: isn’t there?",
-        "es": "El sujeto de una oración con there is es there, por eso el tag es: isn’t there?",
-        "de": "Das Subjekt eines there-is-Satzes ist there, deshalb ist der Tag: isn’t there?"
+        "es": "El sujeto de una oración con there is es there, por eso el tag es: isn’t there?"
       },
       "wrong": {
         "isn't it": {
-          "hu": "Az „isn’t it” a there is mondatnál hibás; az alany there, nem it.",
           "en": "“Isn’t it” is wrong for a there is sentence; the subject is there, not it.",
-          "es": "«Isn’t it» es incorrecto en una oración con there is; el sujeto es there, no it.",
-          "de": "„Isn’t it“ ist bei einem there-is-Satz falsch; das Subjekt ist there, nicht it."
+          "es": "«Isn’t it» es incorrecto en una oración con there is; el sujeto es there, no it."
         },
         "doesn't there": {
-          "hu": "A „doesn’t there” nem létezik; a there is mondat be igét használ.",
           "en": "“Doesn’t there” does not exist; a there is sentence uses the verb be.",
-          "es": "«Doesn’t there» no existe; una oración con there is usa el verbo be.",
-          "de": "„Doesn’t there“ gibt es nicht; ein there-is-Satz benutzt das Verb be."
+          "es": "«Doesn’t there» no existe; una oración con there is usa el verbo be."
         }
       },
       "examples": [
         "There are two, aren't there?",
         "There is time, isn't there?"
       ],
-      "tr": { "hu": "Van egy bank a közelben, ugye?", "en": "There is a bank near here, isn't there?", "es": "Hay un banco cerca de aquí, ¿no?", "de": "Es gibt hier in der Nähe eine Bank, nicht wahr?" }
+      "tr": { "en": "There is a bank near here, isn't there?", "es": "Hay un banco cerca de aquí, ¿no?" }
     },
     {
       "id": "qt-14",
@@ -770,30 +632,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Többes alany → they; egyszerű jelen: don’t they?",
         "en": "A plural subject → they; present simple: don’t they?",
-        "es": "Un sujeto plural → they; presente simple: don’t they?",
-        "de": "Ein Plural-Subjekt → they; Present Simple: don’t they?"
+        "es": "Un sujeto plural → they; presente simple: don’t they?"
       },
       "wrong": {
         "doesn't they": {
-          "hu": "A doesn’t egyes számhoz való (he, she, it); a they mellé don’t áll.",
           "en": "Doesn’t is for the singular (he, she, it); with they use don’t.",
-          "es": "Doesn’t es para el singular (he, she, it); con they se usa don’t.",
-          "de": "Doesn’t ist für den Singular (he, she, it); bei they benutzt man don’t."
+          "es": "Doesn’t es para el singular (he, she, it); con they se usa don’t."
         },
         "aren't they": {
-          "hu": "A mondat nem be igés (work), ezért a tag do-val készül, nem are-rel.",
           "en": "The sentence does not use be (work), so the tag is made with do, not with are.",
-          "es": "La oración no usa be (work), por eso el tag se forma con do, no con are.",
-          "de": "Der Satz benutzt nicht be (work), deshalb wird der Tag mit do gebildet, nicht mit are."
+          "es": "La oración no usa be (work), por eso el tag se forma con do, no con are."
         }
       },
       "examples": [
         "The kids play here, don't they?",
         "Your parents live here, don't they?"
       ],
-      "tr": { "hu": "Ana és Luis itt dolgoznak, ugye?", "en": "Ana and Luis work here, don't they?", "es": "Ana y Luis trabajan aquí, ¿verdad?", "de": "Ana und Luis arbeiten hier, oder?" }
+      "tr": { "en": "Ana and Luis work here, don't they?", "es": "Ana y Luis trabajan aquí, ¿verdad?" }
     },
     {
       "id": "qt-15",
@@ -805,30 +661,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Tagadó mondat → állító tag, a did segédigével: did he?",
         "en": "Negative sentence → positive tag, with the helper did: did he?",
-        "es": "Oración negativa → tag afirmativo, con el auxiliar did: did he?",
-        "de": "Verneinter Satz → bejahter Tag, mit dem Hilfsverb did: did he?"
+        "es": "Oración negativa → tag afirmativo, con el auxiliar did: did he?"
       },
       "wrong": {
         "didn't he": {
-          "hu": "A „didn’t he” tagadó tag; tagadó mondathoz állító tag kell (did he).",
           "en": "“Didn’t he” is a negative tag; a negative sentence needs a positive tag (did he).",
-          "es": "«Didn’t he» es un tag negativo; una oración negativa necesita un tag afirmativo (did he).",
-          "de": "„Didn’t he“ ist ein verneinter Tag; ein verneinter Satz braucht einen bejahten Tag (did he)."
+          "es": "«Didn’t he» es un tag negativo; una oración negativa necesita un tag afirmativo (did he)."
         },
         "does he": {
-          "hu": "A mondat múlt idejű (didn’t), ezért a tag is did-del készül, nem does-szal.",
           "en": "The sentence is in the past (didn’t), so the tag is also made with did, not with does.",
-          "es": "La oración está en pasado (didn’t), por eso el tag también se forma con did, no con does.",
-          "de": "Der Satz steht in der Vergangenheit (didn’t), deshalb wird auch der Tag mit did gebildet, nicht mit does."
+          "es": "La oración está en pasado (didn’t), por eso el tag también se forma con did, no con does."
         }
       },
       "examples": [
         "She didn't come, did she?",
         "You didn't see it, did you?"
       ],
-      "tr": { "hu": "Nem telefonált, ugye?", "en": "He didn't call, did he?", "es": "Él no llamó, ¿verdad?", "de": "Er hat nicht angerufen, oder?" }
+      "tr": { "en": "He didn't call, did he?", "es": "Él no llamó, ¿verdad?" }
     },
     {
       "id": "qt-16",
@@ -840,30 +690,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A mondat were-t használ, ezért a tag: weren’t you?",
         "en": "The sentence uses were, so the tag is: weren’t you?",
-        "es": "La oración usa were, por eso el tag es: weren’t you?",
-        "de": "Der Satz benutzt were, deshalb ist der Tag: weren’t you?"
+        "es": "La oración usa were, por eso el tag es: weren’t you?"
       },
       "wrong": {
         "didn't you": {
-          "hu": "A mondat be igés (were), ezért a tag is were-rel készül, nem did-del.",
           "en": "The sentence uses be (were), so the tag is also made with were, not with did.",
-          "es": "La oración usa be (were), por eso el tag también se forma con were, no con did.",
-          "de": "Der Satz benutzt be (were), deshalb wird auch der Tag mit were gebildet, nicht mit did."
+          "es": "La oración usa be (were), por eso el tag también se forma con were, no con did."
         },
         "wasn't you": {
-          "hu": "A you mellé were áll, nem was; a „wasn’t you” helytelen.",
           "en": "With you comes were, not was; “wasn’t you” is incorrect.",
-          "es": "Con you va were, no was; «wasn’t you» es incorrecto.",
-          "de": "Bei you steht were, nicht was; „wasn’t you“ ist falsch."
+          "es": "Con you va were, no was; «wasn’t you» es incorrecto."
         }
       },
       "examples": [
         "They were late, weren't they?",
         "We were there, weren't we?"
       ],
-      "tr": { "hu": "Ott voltál a buliban, ugye?", "en": "You were at the party, weren't you?", "es": "Estuviste en la fiesta, ¿verdad?", "de": "Du warst auf der Party, nicht wahr?" }
+      "tr": { "en": "You were at the party, weren't you?", "es": "Estuviste en la fiesta, ¿verdad?" }
     },
     {
       "id": "qt-17",
@@ -875,30 +719,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A nobody tagadó jelentésű, ezért állító tag jön, they névmással: did they?",
         "en": "Nobody has a negative meaning, so the tag is positive, with the pronoun they: did they?",
-        "es": "Nobody tiene sentido negativo, por eso el tag es afirmativo, con el pronombre they: did they?",
-        "de": "Nobody hat verneinende Bedeutung, deshalb ist der Tag bejaht, mit dem Pronomen they: did they?"
+        "es": "Nobody tiene sentido negativo, por eso el tag es afirmativo, con el pronombre they: did they?"
       },
       "wrong": {
         "didn't they": {
-          "hu": "A nobody már tagadó jelentésű; tagadó tag (didn’t they) a kétszeres tagadás miatt helytelen.",
           "en": "Nobody already has a negative meaning; a negative tag (didn’t they) would be a double negative, which is wrong.",
-          "es": "Nobody ya tiene sentido negativo; un tag negativo (didn’t they) sería una doble negación, lo cual es incorrecto.",
-          "de": "Nobody hat schon verneinende Bedeutung; ein verneinter Tag (didn’t they) wäre eine doppelte Verneinung, was falsch ist."
+          "es": "Nobody ya tiene sentido negativo; un tag negativo (didn’t they) sería una doble negación, lo cual es incorrecto."
         },
         "did he": {
-          "hu": "A nobody mellé a they névmás áll, nem a he.",
           "en": "With nobody the pronoun is they, not he.",
-          "es": "Con nobody el pronombre es they, no he.",
-          "de": "Bei nobody ist das Pronomen they, nicht he."
+          "es": "Con nobody el pronombre es they, no he."
         }
       },
       "examples": [
         "Nobody came, did they?",
         "Nobody knows, do they?"
       ],
-      "tr": { "hu": "Senki sem telefonált, ugye?", "en": "Nobody called, did they?", "es": "Nadie llamó, ¿verdad?", "de": "Niemand hat angerufen, oder?" }
+      "tr": { "en": "Nobody called, did they?", "es": "Nadie llamó, ¿verdad?" }
     },
     {
       "id": "qt-18",
@@ -954,46 +792,34 @@
       "es": "You are tired, aren't you?",
       "target": "aren't",
       "tr": {
-        "hu": "Fáradt vagy, ugye?",
         "en": "You are tired, aren't you?",
-        "es": "Estás cansado, ¿verdad?",
-        "de": "Du bist müde, oder?"
+        "es": "Estás cansado, ¿verdad?"
       },
       "options": [
         {
           "text": {
-            "hu": "állító tag: az állító mondatot megismétli",
             "en": "a positive tag: it repeats the positive sentence",
-            "es": "un tag afirmativo: repite la oración afirmativa",
-            "de": "ein bejahter Tag: er wiederholt den bejahenden Satz"
+            "es": "un tag afirmativo: repite la oración afirmativa"
           },
           "wrong": {
-            "hu": "Állító mondathoz ellentétes (tagadó) tag kell; az aren’t you tagadó.",
             "en": "A positive sentence needs the opposite (negative) tag; aren’t you is negative.",
-            "es": "Una oración afirmativa necesita el tag opuesto (negativo); aren’t you es negativo.",
-            "de": "Ein bejahender Satz braucht den gegenteiligen (verneinten) Tag; aren’t you ist verneint."
+            "es": "Una oración afirmativa necesita el tag opuesto (negativo); aren’t you es negativo."
           }
         },
         {
           "text": {
-            "hu": "tagadó tag állító mondat után",
             "en": "a negative tag after a positive sentence",
-            "es": "un tag negativo después de una oración afirmativa",
-            "de": "ein verneinter Tag nach einem bejahenden Satz"
+            "es": "un tag negativo después de una oración afirmativa"
           }
         },
         {
           "text": {
-            "hu": "felszólítás: will you",
             "en": "an imperative: will you",
-            "es": "un imperativo: will you",
-            "de": "ein Imperativ: will you"
+            "es": "un imperativo: will you"
           },
           "wrong": {
-            "hu": "A mondat nem felszólítás, hanem állítás (You are tired); a tagje aren’t you.",
             "en": "The sentence is not an imperative but a statement (You are tired); its tag is aren’t you.",
-            "es": "La oración no es un imperativo sino una afirmación (You are tired); su tag es aren’t you.",
-            "de": "Der Satz ist kein Imperativ, sondern eine Aussage (You are tired); sein Tag ist aren’t you."
+            "es": "La oración no es un imperativo sino una afirmación (You are tired); su tag es aren’t you."
           }
         }
       ],
@@ -1005,46 +831,34 @@
       "es": "You don't like fish, do you?",
       "target": "do",
       "tr": {
-        "hu": "Nem szereted a halat, ugye?",
         "en": "You don't like fish, do you?",
-        "es": "No te gusta el pescado, ¿verdad?",
-        "de": "Du magst keinen Fisch, oder?"
+        "es": "No te gusta el pescado, ¿verdad?"
       },
       "options": [
         {
           "text": {
-            "hu": "tagadó tag: a tagadó mondatot megismétli",
             "en": "a negative tag: it repeats the negative sentence",
-            "es": "un tag negativo: repite la oración negativa",
-            "de": "ein verneinter Tag: er wiederholt den verneinten Satz"
+            "es": "un tag negativo: repite la oración negativa"
           },
           "wrong": {
-            "hu": "Tagadó mondathoz ellentétes (állító) tag kell; a do you állító.",
             "en": "A negative sentence needs the opposite (positive) tag; do you is positive.",
-            "es": "Una oración negativa necesita el tag opuesto (afirmativo); do you es afirmativo.",
-            "de": "Ein verneinter Satz braucht den gegenteiligen (bejahten) Tag; do you ist bejaht."
+            "es": "Una oración negativa necesita el tag opuesto (afirmativo); do you es afirmativo."
           }
         },
         {
           "text": {
-            "hu": "állító tag tagadó mondat után",
             "en": "a positive tag after a negative sentence",
-            "es": "un tag afirmativo después de una oración negativa",
-            "de": "ein bejahter Tag nach einem verneinten Satz"
+            "es": "un tag afirmativo después de una oración negativa"
           }
         },
         {
           "text": {
-            "hu": "do, mert a mondat múlt idejű",
             "en": "do, because the sentence is in the past",
-            "es": "do, porque la oración está en pasado",
-            "de": "do, weil der Satz in der Vergangenheit steht"
+            "es": "do, porque la oración está en pasado"
           },
           "wrong": {
-            "hu": "Nem múlt idő: a „don’t like” jelen idejű, a do a jelen idejű mondat segédigéje.",
             "en": "The sentence is not in the past: “don’t like” is present, and do is the helper of a present sentence.",
-            "es": "La oración no está en pasado: «don’t like» es presente, y do es el auxiliar de una oración en presente.",
-            "de": "Der Satz steht nicht in der Vergangenheit: „don’t like“ ist Präsens, und do ist das Hilfsverb eines Satzes im Präsens."
+            "es": "La oración no está en pasado: «don’t like» es presente, y do es el auxiliar de una oración en presente."
           }
         }
       ],
@@ -1056,46 +870,34 @@
       "es": "She can swim, can't she?",
       "target": "can't",
       "tr": {
-        "hu": "Ő tud úszni, ugye?",
         "en": "She can swim, can't she?",
-        "es": "Ella sabe nadar, ¿verdad?",
-        "de": "Sie kann schwimmen, oder?"
+        "es": "Ella sabe nadar, ¿verdad?"
       },
       "options": [
         {
           "text": {
-            "hu": "a tag megismétli a mondat segédigéjét (can)",
             "en": "the tag repeats the helper verb of the sentence (can)",
-            "es": "el tag repite el auxiliar de la oración (can)",
-            "de": "der Tag wiederholt das Hilfsverb des Satzes (can)"
+            "es": "el tag repite el auxiliar de la oración (can)"
           }
         },
         {
           "text": {
-            "hu": "a tag mindig do / does",
             "en": "the tag is always do / does",
-            "es": "el tag siempre es do / does",
-            "de": "der Tag ist immer do / does"
+            "es": "el tag siempre es do / does"
           },
           "wrong": {
-            "hu": "A do / does csak akkor kell, ha nincs segédige; itt a can segédige van.",
             "en": "Do / does is only needed when there is no helper verb; here the helper can is present.",
-            "es": "Do / does solo hace falta cuando no hay auxiliar; aquí hay el auxiliar can.",
-            "de": "Do / does braucht man nur, wenn es kein Hilfsverb gibt; hier ist das Hilfsverb can da."
+            "es": "Do / does solo hace falta cuando no hay auxiliar; aquí hay el auxiliar can."
           }
         },
         {
           "text": {
-            "hu": "a tag mindig isn’t it",
             "en": "the tag is always isn’t it",
-            "es": "el tag siempre es isn’t it",
-            "de": "der Tag ist immer isn’t it"
+            "es": "el tag siempre es isn’t it"
           },
           "wrong": {
-            "hu": "A spanyol „¿verdad?” változatlan, de az angol tag a segédigétől és az alanytól függ.",
             "en": "The Spanish “¿verdad?” is unchanging, but the English tag depends on the helper verb and the subject.",
-            "es": "El «¿verdad?» español es invariable, pero el tag inglés depende del auxiliar y del sujeto.",
-            "de": "Das spanische „¿verdad?“ ist unveränderlich, aber der englische Tag hängt vom Hilfsverb und vom Subjekt ab."
+            "es": "El «¿verdad?» español es invariable, pero el tag inglés depende del auxiliar y del sujeto."
           }
         }
       ],
@@ -1107,46 +909,34 @@
       "es": "They went home, didn't they?",
       "target": "didn't",
       "tr": {
-        "hu": "Hazamentek, ugye?",
         "en": "They went home, didn't they?",
-        "es": "Se fueron a casa, ¿no?",
-        "de": "Sie sind nach Hause gegangen, oder?"
+        "es": "Se fueron a casa, ¿no?"
       },
       "options": [
         {
           "text": {
-            "hu": "a tag a be igével készül",
             "en": "the tag is made with be",
-            "es": "el tag se forma con be",
-            "de": "der Tag wird mit be gebildet"
+            "es": "el tag se forma con be"
           },
           "wrong": {
-            "hu": "A „went” nem be igés mondat; segédige nélküli múlt, ezért did-del készül a tag.",
             "en": "“Went” is not a sentence with be; it is a past with no helper verb, so the tag is made with did.",
-            "es": "«Went» no es una oración con be; es un pasado sin auxiliar, por eso el tag se forma con did.",
-            "de": "„Went“ ist kein Satz mit be; es ist eine Vergangenheit ohne Hilfsverb, deshalb wird der Tag mit did gebildet."
+            "es": "«Went» no es una oración con be; es un pasado sin auxiliar, por eso el tag se forma con did."
           }
         },
         {
           "text": {
-            "hu": "nincs segédige a múltban: did-del készül a tag",
             "en": "no helper verb in the past: the tag is made with did",
-            "es": "sin auxiliar en el pasado: el tag se forma con did",
-            "de": "kein Hilfsverb in der Vergangenheit: der Tag wird mit did gebildet"
+            "es": "sin auxiliar en el pasado: el tag se forma con did"
           }
         },
         {
           "text": {
-            "hu": "a tag jelen idejű",
             "en": "the tag is in the present",
-            "es": "el tag está en presente",
-            "de": "der Tag steht im Präsens"
+            "es": "el tag está en presente"
           },
           "wrong": {
-            "hu": "A tag ugyanabban az időben áll, mint a mondat; a mondat múlt, ezért a didn’t is múlt.",
             "en": "The tag is in the same tense as the sentence; the sentence is past, so didn’t is also past.",
-            "es": "El tag está en el mismo tiempo que la oración; la oración es pasado, por eso didn’t también es pasado.",
-            "de": "Der Tag steht in derselben Zeit wie der Satz; der Satz ist Vergangenheit, deshalb ist auch didn’t Vergangenheit."
+            "es": "El tag está en el mismo tiempo que la oración; la oración es pasado, por eso didn’t también es pasado."
           }
         }
       ],
@@ -1158,46 +948,34 @@
       "es": "Let's go, shall we?",
       "target": "shall",
       "tr": {
-        "hu": "Menjünk, jó?",
         "en": "Let's go, shall we?",
-        "es": "Vámonos, ¿va?",
-        "de": "Gehen wir, ja?"
+        "es": "Vámonos, ¿va?"
       },
       "options": [
         {
           "text": {
-            "hu": "különleges tag: a let’s mellé shall we áll",
             "en": "a special tag: let’s takes shall we",
-            "es": "un tag especial: let’s lleva shall we",
-            "de": "ein besonderer Tag: let’s nimmt shall we"
+            "es": "un tag especial: let’s lleva shall we"
           }
         },
         {
           "text": {
-            "hu": "szabályos tag: tagadó tag az állító mondathoz",
             "en": "a regular tag: a negative tag for a positive sentence",
-            "es": "un tag normal: un tag negativo para una oración afirmativa",
-            "de": "ein regulärer Tag: ein verneinter Tag für einen bejahenden Satz"
+            "es": "un tag normal: un tag negativo para una oración afirmativa"
           },
           "wrong": {
-            "hu": "A let’s javaslat, nem rendes állítás; ezért nem „don’t we”, hanem külön tag: shall we.",
             "en": "Let’s is a suggestion, not a regular statement; so it is not “don’t we” but its own tag: shall we.",
-            "es": "Let’s es una sugerencia, no una afirmación normal; por eso no es «don’t we» sino su propio tag: shall we.",
-            "de": "Let’s ist ein Vorschlag, keine normale Aussage; deshalb nicht „don’t we“, sondern ein eigener Tag: shall we."
+            "es": "Let’s es una sugerencia, no una afirmación normal; por eso no es «don’t we» sino su propio tag: shall we."
           }
         },
         {
           "text": {
-            "hu": "felszólítás tagje: will you",
             "en": "the tag of an imperative: will you",
-            "es": "el tag de un imperativo: will you",
-            "de": "der Tag eines Imperativs: will you"
+            "es": "el tag de un imperativo: will you"
           },
           "wrong": {
-            "hu": "A will you a felszólítás tagja; a let’s javaslathoz shall we kell.",
             "en": "Will you is the tag of an imperative; a let’s suggestion needs shall we.",
-            "es": "Will you es el tag de un imperativo; una sugerencia con let’s necesita shall we.",
-            "de": "Will you ist der Tag eines Imperativs; ein let’s-Vorschlag braucht shall we."
+            "es": "Will you es el tag de un imperativo; una sugerencia con let’s necesita shall we."
           }
         }
       ],

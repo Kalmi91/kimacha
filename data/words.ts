@@ -25,18 +25,14 @@ export type WordPlural = 'irregular' | 'only';
 // the hand-written type), so the promise is kept by a TEST: the
 // `lib/__tests__/corpusIntegrity.test.ts` case "every corpus entry carries…" checks
 // it for every corpus. A new language band takes on the same: today's
-// Spanish, English and Hungarian sets all carry all four surface languages.
+// Spanish and English sets both carry both surface languages.
 export interface WordEntry {
   id: number;
   level: Level;
   es: string;
-  hu: string;
   en: string;
-  de: string;
   sentence_es: string;
-  sentence_hu: string;
   sentence_en: string;
-  sentence_de: string;
   pos?: WordPos;
   gender?: WordGender;
   region?: WordRegion;

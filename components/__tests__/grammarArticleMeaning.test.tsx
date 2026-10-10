@@ -10,9 +10,9 @@ import type { GrammarTopicData } from '@/lib/games/content';
 import { getDb } from '@/lib/database';
 import { ThemeProvider } from '@/lib/ThemeContext';
 
-const four = (s: string) => ({ hu: s, en: s, es: s, de: s });
+const four = (s: string) => ({ en: s, es: s });
 
-const noun = (id: string, word: string, article: 'el' | 'la', meaning: { hu: string; en: string; es: string; de: string }) => ({
+const noun = (id: string, word: string, article: 'el' | 'la', meaning: { en: string; es: string }) => ({
   id,
   set: 'article' as const,
   sentence: `___ ${word}`,
@@ -24,8 +24,8 @@ const noun = (id: string, word: string, article: 'el' | 'la', meaning: { hu: str
   tr: meaning,
 });
 
-const AGUA = { hu: 'víz', en: 'water', es: 'water', de: 'Wasser' };
-const MESA = { hu: 'asztal', en: 'table', es: 'table', de: 'Tisch' };
+const AGUA = { en: 'water', es: 'agua' };
+const MESA = { en: 'table', es: 'mesa' };
 
 const articleTopic: GrammarTopicData = {
   schema: 2,
@@ -85,17 +85,11 @@ describe.each([
     expect(screen.getByTestId('choice-translation')).toHaveTextContent('water');
   });
 
-  it('on the hu / de UI the meaning is in its own language', async () => {
-    const view = render(drill({ ...articleTopic, items: [articleTopic.items[0]] }, 'hu'));
+  it('on the Spanish content language the meaning is in Spanish', async () => {
+    render(drill({ ...articleTopic, items: [articleTopic.items[0]] }, 'es'));
     await flush();
     fireEvent.press(screen.getAllByTestId('grammar-option')[0]);
-    expect(screen.getByTestId('choice-translation')).toHaveTextContent('víz');
-    view.unmount();
-
-    render(drill({ ...articleTopic, items: [articleTopic.items[0]] }, 'de'));
-    await flush();
-    fireEvent.press(screen.getAllByTestId('grammar-option')[0]);
-    expect(screen.getByTestId('choice-translation')).toHaveTextContent('Wasser');
+    expect(screen.getByTestId('choice-translation')).toHaveTextContent('agua');
   });
 
   it('the F button shows it even before answering, and it is closed again on the next item', async () => {

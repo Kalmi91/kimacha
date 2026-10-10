@@ -3,48 +3,36 @@
   "topic": "must_have_to",
   "level": "A2",
   "title": {
-    "hu": "Must és have to (kötelesség)",
     "en": "Must and have to (obligation)",
-    "es": "Must y have to (obligación)",
-    "de": "Must und have to (Pflicht)"
+    "es": "Must y have to (obligación)"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "A spanyol „tener que” angolul „have to”, a „deber” pedig többnyire „must”. A must erős, személyes vagy szabály jellegű kötelesség (You must stop). A have to külső kényszer: munka, szabály, helyzet (I have to work tomorrow). A nagy csapda a tagadás: a „mustn’t” TILTÁST jelent („nem szabad”), a „don’t have to” azt, hogy NEM KELL („no es necesario”). A spanyol „no tienes que” tehát NEM „you mustn’t”.",
         "en": "Spanish “tener que” is “have to” in English, and “deber” is mostly “must”. Must is a strong obligation, personal or from a rule (You must stop). Have to is an outside necessity: work, rules, circumstances (I have to work tomorrow). The big trap is the negative: “mustn’t” means PROHIBITION (“it is not allowed”), while “don’t have to” means NOT NECESSARY (“no es necesario”). So Spanish “no tienes que” is NOT “you mustn’t”.",
-        "es": "El «tener que» del español es «have to» en inglés, y el «deber» suele ser «must». Must es una obligación fuerte, personal o de una regla (You must stop). Have to es una necesidad externa: trabajo, reglas, circunstancias (I have to work tomorrow). La gran trampa es la negación: «mustn’t» significa PROHIBICIÓN («no está permitido»), mientras que «don’t have to» significa NO ES NECESARIO. Por eso el «no tienes que» del español NO es «you mustn’t».",
-        "de": "Spanisch „tener que“ ist im Englischen „have to“, und „deber“ ist meist „must“. Must ist eine starke Pflicht, persönlich oder durch eine Regel (You must stop). Have to ist ein äußerer Zwang: Arbeit, Regeln, Umstände (I have to work tomorrow). Die große Falle ist die Verneinung: „mustn’t“ bedeutet VERBOT („es ist nicht erlaubt“), „don’t have to“ dagegen NICHT NÖTIG („no es necesario“). Spanisch „no tienes que“ ist also NICHT „you mustn’t“."
+        "es": "El «tener que» del español es «have to» en inglés, y el «deber» suele ser «must». Must es una obligación fuerte, personal o de una regla (You must stop). Have to es una necesidad externa: trabajo, reglas, circunstancias (I have to work tomorrow). La gran trampa es la negación: «mustn’t» significa PROHIBICIÓN («no está permitido»), mientras que «don’t have to» significa NO ES NECESARIO. Por eso el «no tienes que» del español NO es «you mustn’t»."
       }
     },
     {
       "kind": "table",
       "id": "mh-forms",
       "title": {
-        "hu": "Must és have to",
         "en": "Must and have to",
-        "es": "Must y have to",
-        "de": "Must und have to"
+        "es": "Must y have to"
       },
       "header": [
         {
-          "hu": "Személy",
           "en": "Person",
-          "es": "Persona",
-          "de": "Person"
+          "es": "Persona"
         },
         {
-          "hu": "must",
           "en": "must",
-          "es": "must",
-          "de": "must"
+          "es": "must"
         },
         {
-          "hu": "have to",
           "en": "have to",
-          "es": "have to",
-          "de": "have to"
+          "es": "have to"
         }
       ],
       "rows": [
@@ -78,64 +66,50 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Must",
         "en": "Must",
-        "es": "Must",
-        "de": "Must"
+        "es": "Must"
       },
       "items": [
         {
           "text": {
-            "hu": "Modális ige: minden személynél ugyanaz, nincs -s, utána közvetlenül alapige áll (nincs „to”). Tagadás: mustn’t. Kérdésben ritka, helyette „Do I have to…?” a szokásos.",
             "en": "A modal verb: the same for every person, no -s, and the base verb follows directly (no “to”). Negative: mustn’t. It is rare in questions; “Do I have to…?” is the usual form.",
-            "es": "Verbo modal: igual para todas las personas, sin -s, y el verbo base va directamente detrás (sin «to»). Negación: mustn’t. En preguntas es raro; lo habitual es «Do I have to…?».",
-            "de": "Modalverb: für jede Person gleich, kein -s, und die Grundform folgt direkt (kein „to“). Verneinung: mustn’t. In Fragen ist es selten; üblich ist „Do I have to…?“."
+            "es": "Verbo modal: igual para todas las personas, sin -s, y el verbo base va directamente detrás (sin «to»). Negación: mustn’t. En preguntas es raro; lo habitual es «Do I have to…?»."
           },
           "examples": [
             {
               "es": "You must stop at a red light.",
               "tr": {
-                "hu": "Pirosnál meg kell állnod.",
                 "en": "You must stop at a red light.",
-                "es": "Debes parar en un semáforo en rojo.",
-                "de": "Du musst bei Rot anhalten."
+                "es": "Debes parar en un semáforo en rojo."
               }
             },
             {
               "es": "I must call my mother.",
               "tr": {
-                "hu": "Fel kell hívnom az anyámat.",
                 "en": "I must call my mother.",
-                "es": "Debo llamar a mi madre.",
-                "de": "Ich muss meine Mutter anrufen."
+                "es": "Debo llamar a mi madre."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Múlt: a must-nak nincs múltja, helyette „had to”: I had to work yesterday.",
             "en": "Past: must has no past form, so we use “had to”: I had to work yesterday.",
-            "es": "Pasado: must no tiene pasado, se usa «had to»: I had to work yesterday.",
-            "de": "Vergangenheit: must hat keine Vergangenheitsform, man nimmt „had to“: I had to work yesterday."
+            "es": "Pasado: must no tiene pasado, se usa «had to»: I had to work yesterday."
           },
           "examples": [
             {
               "es": "I had to work yesterday.",
               "tr": {
-                "hu": "Tegnap dolgoznom kellett.",
                 "en": "I had to work yesterday.",
-                "es": "Ayer tuve que trabajar.",
-                "de": "Ich musste gestern arbeiten."
+                "es": "Ayer tuve que trabajar."
               }
             },
             {
               "es": "She had to study.",
               "tr": {
-                "hu": "Tanulnia kellett.",
                 "en": "She had to study.",
-                "es": "Ella tuvo que estudiar.",
-                "de": "Sie musste lernen."
+                "es": "Ella tuvo que estudiar."
               }
             }
           ]
@@ -145,64 +119,50 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Have to",
         "en": "Have to",
-        "es": "Have to",
-        "de": "Have to"
+        "es": "Have to"
       },
       "items": [
         {
           "text": {
-            "hu": "Rendes ige: I / you / we / they have to, he / she / it HAS to. Tagadás: don’t / doesn’t have to. Kérdés: Do / Does + alany + have to…? Utána alapige áll.",
             "en": "A normal verb: I / you / we / they have to, he / she / it HAS to. Negative: don’t / doesn’t have to. Question: Do / Does + subject + have to…? The base verb follows.",
-            "es": "Verbo normal: I / you / we / they have to, he / she / it HAS to. Negación: don’t / doesn’t have to. Pregunta: Do / Does + sujeto + have to…? Después va el verbo base.",
-            "de": "Normales Verb: I / you / we / they have to, he / she / it HAS to. Verneinung: don’t / doesn’t have to. Frage: Do / Does + Subjekt + have to…? Danach folgt die Grundform."
+            "es": "Verbo normal: I / you / we / they have to, he / she / it HAS to. Negación: don’t / doesn’t have to. Pregunta: Do / Does + sujeto + have to…? Después va el verbo base."
           },
           "examples": [
             {
               "es": "She has to work tomorrow.",
               "tr": {
-                "hu": "Holnap dolgoznia kell.",
                 "en": "She has to work tomorrow.",
-                "es": "Ella tiene que trabajar mañana.",
-                "de": "Sie muss morgen arbeiten."
+                "es": "Ella tiene que trabajar mañana."
               }
             },
             {
               "es": "Do I have to go?",
               "tr": {
-                "hu": "Mennem kell?",
                 "en": "Do I have to go?",
-                "es": "¿Tengo que ir?",
-                "de": "Muss ich gehen?"
+                "es": "¿Tengo que ir?"
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Külső szabály vagy helyzet: We have to wear a uniform at school. Múlt: had to. Tagadó múlt: didn’t have to.",
             "en": "An outside rule or situation: We have to wear a uniform at school. Past: had to. Negative past: didn’t have to.",
-            "es": "Una regla o situación externa: We have to wear a uniform at school. Pasado: had to. Pasado negativo: didn’t have to.",
-            "de": "Eine äußere Regel oder Situation: We have to wear a uniform at school. Vergangenheit: had to. Verneinte Vergangenheit: didn’t have to."
+            "es": "Una regla o situación externa: We have to wear a uniform at school. Pasado: had to. Pasado negativo: didn’t have to."
           },
           "examples": [
             {
               "es": "We have to wear a uniform at school.",
               "tr": {
-                "hu": "Az iskolában egyenruhát kell viselnünk.",
                 "en": "We have to wear a uniform at school.",
-                "es": "En la escuela tenemos que llevar uniforme.",
-                "de": "In der Schule müssen wir eine Uniform tragen."
+                "es": "En la escuela tenemos que llevar uniforme."
               }
             },
             {
               "es": "What time do you have to get up?",
               "tr": {
-                "hu": "Hánykor kell felkelned?",
                 "en": "What time do you have to get up?",
-                "es": "¿A qué hora tienes que levantarte?",
-                "de": "Um wie viel Uhr musst du aufstehen?"
+                "es": "¿A qué hora tienes que levantarte?"
               }
             }
           ]
@@ -212,36 +172,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Tagadás: mustn’t vagy don’t have to?",
         "en": "Negatives: mustn’t or don’t have to?",
-        "es": "Negaciones: ¿mustn’t o don’t have to?",
-        "de": "Verneinungen: mustn’t oder don’t have to?"
+        "es": "Negaciones: ¿mustn’t o don’t have to?"
       },
       "items": [
         {
           "text": {
-            "hu": "MUSTN’T = tilos, nem szabad: You mustn’t park here. DON’T HAVE TO = nem szükséges, nem kell: You don’t have to pay, it is free.",
             "en": "MUSTN’T = it is forbidden: You mustn’t park here. DON’T HAVE TO = it is not necessary: You don’t have to pay, it is free.",
-            "es": "MUSTN’T = está prohibido: You mustn’t park here. DON’T HAVE TO = no es necesario: You don’t have to pay, it is free.",
-            "de": "MUSTN’T = es ist verboten: You mustn’t park here. DON’T HAVE TO = es ist nicht nötig: You don’t have to pay, it is free."
+            "es": "MUSTN’T = está prohibido: You mustn’t park here. DON’T HAVE TO = no es necesario: You don’t have to pay, it is free."
           },
           "examples": [
             {
               "es": "You mustn't park here.",
               "tr": {
-                "hu": "Itt nem szabad parkolni.",
                 "en": "You mustn't park here.",
-                "es": "No puedes aparcar aquí.",
-                "de": "Hier darfst du nicht parken."
+                "es": "No puedes aparcar aquí."
               }
             },
             {
               "es": "You don't have to pay. It is free.",
               "tr": {
-                "hu": "Nem kell fizetned. Ingyenes.",
                 "en": "You don't have to pay. It is free.",
-                "es": "No tienes que pagar. Es gratis.",
-                "de": "Du musst nicht bezahlen. Es ist kostenlos."
+                "es": "No tienes que pagar. Es gratis."
               }
             }
           ]
@@ -251,54 +203,42 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "A must sosem kap -s-t, és utána nincs „to”. Ne mondd, hogy „He musts go” vagy „I must to go”, hanem: „He must go”, „I must go”.",
         "en": "“Must” never takes -s, and there is no “to” after it. Do not say “He musts go” or “I must to go”; say “He must go”, “I must go”.",
-        "es": "«Must» nunca lleva -s, y después no hay «to». No digas «He musts go» ni «I must to go», di «He must go», «I must go».",
-        "de": "„Must“ bekommt nie ein -s, und danach steht kein „to“. Sag nicht „He musts go“ oder „I must to go“, sondern „He must go“, „I must go“."
+        "es": "«Must» nunca lleva -s, y después no hay «to». No digas «He musts go» ni «I must to go», di «He must go», «I must go»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A have to a he / she / it mellett „has to”. Ne mondd, hogy „She have to work”, hanem: „She has to work”.",
         "en": "Have to becomes “has to” with he / she / it. Do not say “She have to work”; say “She has to work”.",
-        "es": "Have to se convierte en «has to» con he / she / it. No digas «She have to work», di «She has to work».",
-        "de": "Have to wird bei he / she / it zu „has to“. Sag nicht „She have to work“, sondern „She has to work“."
+        "es": "Have to se convierte en «has to» con he / she / it. No digas «She have to work», di «She has to work»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A „no tienes que pagar” angolul „you don’t have to pay”, NEM „you mustn’t pay”. A „mustn’t” azt mondja: tilos.",
         "en": "“No tienes que pagar” is “you don’t have to pay”, NOT “you mustn’t pay”. “Mustn’t” says: it is forbidden.",
-        "es": "«No tienes que pagar» es «you don’t have to pay», NO «you mustn’t pay». «Mustn’t» dice: está prohibido.",
-        "de": "„No tienes que pagar“ heißt „you don’t have to pay“, NICHT „you mustn’t pay“. „Mustn’t“ sagt: Es ist verboten."
+        "es": "«No tienes que pagar» es «you don’t have to pay», NO «you mustn’t pay». «Mustn’t» dice: está prohibido."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "Múltban nem használjuk a must-ot. Ne mondd, hogy „I must work yesterday”, hanem: „I had to work yesterday”.",
         "en": "We do not use must in the past. Do not say “I must work yesterday”; say “I had to work yesterday”.",
-        "es": "No usamos must en pasado. No digas «I must work yesterday», di «I had to work yesterday».",
-        "de": "In der Vergangenheit benutzen wir must nicht. Sag nicht „I must work yesterday“, sondern „I had to work yesterday“."
+        "es": "No usamos must en pasado. No digas «I must work yesterday», di «I had to work yesterday»."
       }
     }
   ],
   "speak": {
-    "hu": "A «have to» a spanyol «tener que», a «must» erős kötelesség vagy szabály. A must minden személynél ugyanaz: «You must stop», «I must call my mother». A have to a he, she és it mellett «has to»: «She has to work tomorrow». Kérdés: «Do I have to go?». Múlt: «I had to work yesterday». A tagadásnál nagy a különbség: «You mustn't park here» azt jelenti, hogy tilos, «You don't have to pay» azt, hogy nem kell. Vigyázat: nem «he musts» és nem «I must to go».",
     "en": "The phrase «have to» is the Spanish «tener que», and «must» is a strong obligation or a rule. Must is the same for every person: «You must stop», «I must call my mother». Have to becomes «has to» with he, she and it: «She has to work tomorrow». Question: «Do I have to go?». Past: «I had to work yesterday». The negatives are very different: «You mustn't park here» means it is forbidden, «You don't have to pay» means it is not necessary. Careful: not «he musts» and not «I must to go».",
-    "es": "«Have to» es el «tener que» del español, y «must» es una obligación fuerte o una regla. Must es igual para todas las personas: «You must stop», «I must call my mother». Have to pasa a «has to» con he, she e it: «She has to work tomorrow». Pregunta: «Do I have to go?». Pasado: «I had to work yesterday». Las negaciones son muy distintas: «You mustn't park here» significa que está prohibido, «You don't have to pay» significa que no es necesario. Cuidado: no «he musts» y no «I must to go».",
-    "de": "«Have to» ist das spanische «tener que», und «must» ist eine starke Pflicht oder eine Regel. Must ist für jede Person gleich: «You must stop», «I must call my mother». Have to wird bei he, she und it zu «has to»: «She has to work tomorrow». Frage: «Do I have to go?». Vergangenheit: «I had to work yesterday». Die Verneinungen sind sehr verschieden: «You mustn't park here» heißt, es ist verboten, «You don't have to pay» heißt, es ist nicht nötig. Vorsicht: nicht «he musts» und nicht «I must to go»."
+    "es": "«Have to» es el «tener que» del español, y «must» es una obligación fuerte o una regla. Must es igual para todas las personas: «You must stop», «I must call my mother». Have to pasa a «has to» con he, she e it: «She has to work tomorrow». Pregunta: «Do I have to go?». Pasado: «I had to work yesterday». Las negaciones son muy distintas: «You mustn't park here» significa que está prohibido, «You don't have to pay» significa que no es necesario. Cuidado: no «he musts» y no «I must to go»."
   },
   "glossary": [
     {
       "word": "mustn't",
       "gloss": {
-        "hu": "nem szabad (must not)",
         "en": "must not",
-        "es": "no debe (must not)",
-        "de": "darf nicht (must not)"
+        "es": "no debe (must not)"
       }
     }
   ],
@@ -313,30 +253,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Szabály jellegű erős kötelesség: You must stop at a red light.",
         "en": "A strong obligation from a rule: You must stop at a red light.",
-        "es": "Una obligación fuerte por una regla: You must stop at a red light.",
-        "de": "Eine starke Pflicht durch eine Regel: You must stop at a red light."
+        "es": "Una obligación fuerte por una regla: You must stop at a red light."
       },
       "wrong": {
         "musts": {
-          "hu": "A „must” sosem kap -s-t, egyik személynél sem.",
           "en": "“Must” never takes -s, with any person.",
-          "es": "«Must» nunca lleva -s, con ninguna persona.",
-          "de": "„Must“ bekommt nie ein -s, bei keiner Person."
+          "es": "«Must» nunca lleva -s, con ninguna persona."
         },
         "must to": {
-          "hu": "A „must” után nincs „to”: must stop.",
           "en": "There is no “to” after “must”: must stop.",
-          "es": "Después de «must» no hay «to»: must stop.",
-          "de": "Nach „must“ steht kein „to“: must stop."
+          "es": "Después de «must» no hay «to»: must stop."
         }
       },
       "examples": [
         "We must go now.",
         "You must call your mother."
       ],
-      "tr": { "hu": "A piros lámpánál meg kell állni.", "en": "You must stop at a red light.", "es": "Debes detenerte en el semáforo en rojo.", "de": "Bei Rot musst du anhalten." }
+      "tr": { "en": "You must stop at a red light.", "es": "Debes detenerte en el semáforo en rojo." }
     },
     {
       "id": "mh-02",
@@ -348,30 +282,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A she mellé a „has to” kell: She has to work tomorrow.",
         "en": "With she you need “has to”: She has to work tomorrow.",
-        "es": "Con she hace falta «has to»: She has to work tomorrow.",
-        "de": "Bei she braucht man „has to“: She has to work tomorrow."
+        "es": "Con she hace falta «has to»: She has to work tomorrow."
       },
       "wrong": {
         "have": {
-          "hu": "A „have to” az I, you, we, they mellé való; a „she” mellé „has to” kell.",
           "en": "“Have to” goes with I, you, we, they; with “she” you need “has to”.",
-          "es": "«Have to» va con I, you, we, they; con «she» hace falta «has to».",
-          "de": "„Have to“ gehört zu I, you, we, they; bei „she“ braucht man „has to“."
+          "es": "«Have to» va con I, you, we, they; con «she» hace falta «has to»."
         },
         "must": {
-          "hu": "A „must” után nincs „to”: „must to work” hibás; „has to work” a helyes.",
           "en": "There is no “to” after “must”: “must to work” is wrong; “has to work” is right.",
-          "es": "Después de «must» no hay «to»: «must to work» es incorrecto; «has to work» es correcto.",
-          "de": "Nach „must“ steht kein „to“: „must to work“ ist falsch; „has to work“ ist richtig."
+          "es": "Después de «must» no hay «to»: «must to work» es incorrecto; «has to work» es correcto."
         }
       },
       "examples": [
         "He has to study.",
         "My mother has to work."
       ],
-      "tr": { "hu": "Holnap dolgoznia kell.", "en": "She has to work tomorrow.", "es": "Ella tiene que trabajar mañana.", "de": "Sie muss morgen arbeiten." }
+      "tr": { "en": "She has to work tomorrow.", "es": "Ella tiene que trabajar mañana." }
     },
     {
       "id": "mh-15",
@@ -391,30 +319,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az I mellé a „have to” kell: I have to go home now.",
         "en": "With I you need “have to”: I have to go home now.",
-        "es": "Con I hace falta «have to»: I have to go home now.",
-        "de": "Bei I braucht man „have to“: I have to go home now."
+        "es": "Con I hace falta «have to»: I have to go home now."
       },
       "wrong": {
         "has": {
-          "hu": "A „has to” a he, she, it mellé való; az „I” mellé „have to” kell.",
           "en": "“Has to” goes with he, she, it; with “I” you need “have to”.",
-          "es": "«Has to» va con he, she, it; con «I» hace falta «have to».",
-          "de": "„Has to“ gehört zu he, she, it; bei „I“ braucht man „have to“."
+          "es": "«Has to» va con he, she, it; con «I» hace falta «have to»."
         },
         "must": {
-          "hu": "A „must” után nincs „to”: „must to go” hibás.",
           "en": "There is no “to” after “must”: “must to go” is wrong.",
-          "es": "Después de «must» no hay «to»: «must to go» es incorrecto.",
-          "de": "Nach „must“ steht kein „to“: „must to go“ ist falsch."
+          "es": "Después de «must» no hay «to»: «must to go» es incorrecto."
         }
       },
       "examples": [
         "We have to work today.",
         "They have to study."
       ],
-      "tr": { "hu": "Most haza kell mennem.", "en": "I have to go home now.", "es": "Me tengo que ir a casa ahora.", "de": "Ich muss jetzt nach Hause gehen." }
+      "tr": { "en": "I have to go home now.", "es": "Me tengo que ir a casa ahora." }
     },
     {
       "id": "mh-04",
@@ -426,30 +348,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Ami tilos, arra a „mustn’t” áll: You mustn’t park here.",
         "en": "For something forbidden use “mustn’t”: You mustn’t park here.",
-        "es": "Para algo prohibido se usa «mustn’t»: You mustn’t park here.",
-        "de": "Für etwas Verbotenes steht „mustn’t“: You mustn’t park here."
+        "es": "Para algo prohibido se usa «mustn’t»: You mustn’t park here."
       },
       "wrong": {
         "don't have to": {
-          "hu": "A „don’t have to” azt jelenti, hogy nem szükséges, nem azt, hogy tilos.",
           "en": "“Don’t have to” means it is not necessary, not that it is forbidden.",
-          "es": "«Don’t have to» significa que no es necesario, no que está prohibido.",
-          "de": "„Don’t have to“ bedeutet, dass es nicht nötig ist, nicht, dass es verboten ist."
+          "es": "«Don’t have to» significa que no es necesario, no que está prohibido."
         },
         "must": {
-          "hu": "A „must” kötelességet jelent; a tiltás a „mustn’t”.",
           "en": "“Must” means obligation; a prohibition is “mustn’t”.",
-          "es": "«Must» significa obligación; una prohibición es «mustn’t».",
-          "de": "„Must“ bedeutet Pflicht; ein Verbot ist „mustn’t“."
+          "es": "«Must» significa obligación; una prohibición es «mustn’t»."
         }
       },
       "examples": [
         "You mustn't run here.",
         "We mustn't be late."
       ],
-      "tr": { "hu": "Itt tilos parkolni. Nem szabad.", "en": "You mustn't park here. It is not allowed.", "es": "No debes estacionarte aquí. No está permitido.", "de": "Hier darf man nicht parken. Es ist nicht erlaubt." }
+      "tr": { "en": "You mustn't park here. It is not allowed.", "es": "No debes estacionarte aquí. No está permitido." }
     },
     {
       "kind": "why",
@@ -457,46 +373,34 @@
       "es": "You must stop at a red light.",
       "target": "must",
       "tr": {
-        "hu": "Meg kell állnod pirosnál.",
         "en": "You must stop at a red light.",
-        "es": "Debes parar en un semáforo en rojo.",
-        "de": "Du musst bei Rot anhalten."
+        "es": "Debes parar en un semáforo en rojo."
       },
       "options": [
         {
           "text": {
-            "hu": "erős kötelesség vagy szabály: must + alapige",
             "en": "a strong obligation or rule: must + base verb",
-            "es": "una obligación fuerte o una regla: must + verbo base",
-            "de": "eine starke Pflicht oder Regel: must + Grundform"
+            "es": "una obligación fuerte o una regla: must + verbo base"
           }
         },
         {
           "text": {
-            "hu": "tiltás: mustn’t",
             "en": "a prohibition: mustn’t",
-            "es": "una prohibición: mustn’t",
-            "de": "ein Verbot: mustn’t"
+            "es": "una prohibición: mustn’t"
           },
           "wrong": {
-            "hu": "A mondat kötelességet mond (meg kell állni), nem tiltást; a tiltás a „mustn’t”.",
             "en": "The sentence states an obligation (you have to stop), not a prohibition; a prohibition is “mustn’t”.",
-            "es": "La oración expresa una obligación (hay que parar), no una prohibición; una prohibición es «mustn’t».",
-            "de": "Der Satz nennt eine Pflicht (man muss anhalten), kein Verbot; ein Verbot ist „mustn’t“."
+            "es": "La oración expresa una obligación (hay que parar), no una prohibición; una prohibición es «mustn’t»."
           }
         },
         {
           "text": {
-            "hu": "nem szükséges: don’t have to",
             "en": "not necessary: don’t have to",
-            "es": "no es necesario: don’t have to",
-            "de": "nicht nötig: don’t have to"
+            "es": "no es necesario: don’t have to"
           },
           "wrong": {
-            "hu": "A mondat éppen az ellenkezőjét mondja: kötelező megállni.",
             "en": "The sentence says the opposite: stopping is required.",
-            "es": "La oración dice lo contrario: parar es obligatorio.",
-            "de": "Der Satz sagt das Gegenteil: Anhalten ist Pflicht."
+            "es": "La oración dice lo contrario: parar es obligatorio."
           }
         }
       ],
@@ -512,30 +416,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Ami nem szükséges (ingyenes), arra a „don’t have to” áll: You don’t have to pay.",
         "en": "For something not necessary (it is free) use “don’t have to”: You don’t have to pay.",
-        "es": "Para algo no necesario (es gratis) se usa «don’t have to»: You don’t have to pay.",
-        "de": "Für etwas Unnötiges (es ist kostenlos) steht „don’t have to“: You don’t have to pay."
+        "es": "Para algo no necesario (es gratis) se usa «don’t have to»: You don’t have to pay."
       },
       "wrong": {
         "mustn't": {
-          "hu": "A „mustn’t” tiltást jelent; itt csak nem szükséges fizetni, nem tilos.",
           "en": "“Mustn’t” means prohibition; here paying is just not necessary, not forbidden.",
-          "es": "«Mustn’t» significa prohibición; aquí pagar simplemente no es necesario, no está prohibido.",
-          "de": "„Mustn’t“ bedeutet Verbot; hier ist das Bezahlen nur nicht nötig, nicht verboten."
+          "es": "«Mustn’t» significa prohibición; aquí pagar simplemente no es necesario, no está prohibido."
         },
         "must": {
-          "hu": "A „must” kötelességet jelent, de ingyenesnél nem kell fizetni.",
           "en": "“Must” means obligation, but when it is free you need not pay.",
-          "es": "«Must» significa obligación, pero cuando es gratis no hace falta pagar.",
-          "de": "„Must“ bedeutet Pflicht, aber wenn es kostenlos ist, muss man nicht zahlen."
+          "es": "«Must» significa obligación, pero cuando es gratis no hace falta pagar."
         }
       },
       "examples": [
         "You don't have to work today.",
         "We don't have to study."
       ],
-      "tr": { "hu": "Ingyenes. Nem kell fizetned.", "en": "It is free. You don't have to pay.", "es": "Es gratis. No tienes que pagar.", "de": "Es ist kostenlos. Du musst nicht bezahlen." }
+      "tr": { "en": "It is free. You don't have to pay.", "es": "Es gratis. No tienes que pagar." }
     },
     {
       "id": "mh-06",
@@ -547,30 +445,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „has to” tagadása doesn’t have to: He doesn’t have to work on Sunday.",
         "en": "The negative of “has to” is doesn’t have to: He doesn’t have to work on Sunday.",
-        "es": "La negación de «has to» es doesn’t have to: He doesn’t have to work on Sunday.",
-        "de": "Die Verneinung von „has to“ ist doesn’t have to: He doesn’t have to work on Sunday."
+        "es": "La negación de «has to» es doesn’t have to: He doesn’t have to work on Sunday."
       },
       "wrong": {
         "don't": {
-          "hu": "A „don’t” az I, you, we, they mellé való; a „he” mellé „doesn’t” kell.",
           "en": "“Don’t” goes with I, you, we, they; with “he” you need “doesn’t”.",
-          "es": "«Don’t» va con I, you, we, they; con «he» hace falta «doesn’t».",
-          "de": "„Don’t“ gehört zu I, you, we, they; bei „he“ braucht man „doesn’t“."
+          "es": "«Don’t» va con I, you, we, they; con «he» hace falta «doesn’t»."
         },
         "hasn't": {
-          "hu": "A „hasn’t have to” nem létezik; a tagadás „doesn’t have to”.",
           "en": "“Hasn’t have to” does not exist; the negative is “doesn’t have to”.",
-          "es": "«Hasn’t have to» no existe; la negación es «doesn’t have to».",
-          "de": "„Hasn’t have to“ gibt es nicht; die Verneinung ist „doesn’t have to“."
+          "es": "«Hasn’t have to» no existe; la negación es «doesn’t have to»."
         }
       },
       "examples": [
         "She doesn't have to come.",
         "My father doesn't have to work."
       ],
-      "tr": { "hu": "Vasárnap nem kell dolgoznia.", "en": "He doesn't have to work on Sunday.", "es": "Él no tiene que trabajar el domingo.", "de": "Er muss am Sonntag nicht arbeiten." }
+      "tr": { "en": "He doesn't have to work on Sunday.", "es": "Él no tiene que trabajar el domingo." }
     },
     {
       "id": "mh-16",
@@ -590,30 +482,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A have to kérdése „do” segédigével megy: Do I have to go now?",
         "en": "The question with “have to” uses the helper “do”: Do I have to go now?",
-        "es": "La pregunta con «have to» usa el auxiliar «do»: Do I have to go now?",
-        "de": "Die Frage mit „have to“ benutzt das Hilfsverb „do“: Do I have to go now?"
+        "es": "La pregunta con «have to» usa el auxiliar «do»: Do I have to go now?"
       },
       "wrong": {
         "Does": {
-          "hu": "A „Does” a he, she, it mellé való; az „I” mellé „Do” kell.",
           "en": "“Does” goes with he, she, it; with “I” you need “Do”.",
-          "es": "«Does» va con he, she, it; con «I» hace falta «Do».",
-          "de": "„Does“ gehört zu he, she, it; bei „I“ braucht man „Do“."
+          "es": "«Does» va con he, she, it; con «I» hace falta «Do»."
         },
         "Must": {
-          "hu": "A „Must I have to” hibás; a have to kérdése „Do I have to…?”.",
           "en": "“Must I have to” is wrong; the question with have to is “Do I have to…?”.",
-          "es": "«Must I have to» es incorrecto; la pregunta con have to es «Do I have to…?».",
-          "de": "„Must I have to“ ist falsch; die Frage mit have to lautet „Do I have to…?“."
+          "es": "«Must I have to» es incorrecto; la pregunta con have to es «Do I have to…?»."
         }
       },
       "examples": [
         "Do you have to work?",
         "Do they have to study?"
       ],
-      "tr": { "hu": "Most el kell mennem?", "en": "Do I have to go now?", "es": "¿Me tengo que ir ahora?", "de": "Muss ich jetzt gehen?" }
+      "tr": { "en": "Do I have to go now?", "es": "¿Me tengo que ir ahora?" }
     },
     {
       "id": "mh-08",
@@ -625,30 +511,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A she mellé „Does” kell: Does she have to work today?",
         "en": "With she you need “Does”: Does she have to work today?",
-        "es": "Con she hace falta «Does»: Does she have to work today?",
-        "de": "Bei she braucht man „Does“: Does she have to work today?"
+        "es": "Con she hace falta «Does»: Does she have to work today?"
       },
       "wrong": {
         "Do": {
-          "hu": "A „Do” az I, you, we, they mellé való; a „she” mellé „Does” kell.",
           "en": "“Do” goes with I, you, we, they; with “she” you need “Does”.",
-          "es": "«Do» va con I, you, we, they; con «she» hace falta «Does».",
-          "de": "„Do“ gehört zu I, you, we, they; bei „she“ braucht man „Does“."
+          "es": "«Do» va con I, you, we, they; con «she» hace falta «Does»."
         },
         "Has": {
-          "hu": "A „Has she have to” hibás; a have to kérdése „Does she have to…?”.",
           "en": "“Has she have to” is wrong; the question with have to is “Does she have to…?”.",
-          "es": "«Has she have to» es incorrecto; la pregunta con have to es «Does she have to…?».",
-          "de": "„Has she have to“ ist falsch; die Frage mit have to lautet „Does she have to…?“."
+          "es": "«Has she have to» es incorrecto; la pregunta con have to es «Does she have to…?»."
         }
       },
       "examples": [
         "Does he have to go?",
         "Does your mother have to work?"
       ],
-      "tr": { "hu": "Kell ma dolgoznia?", "en": "Does she have to work today?", "es": "¿Tiene ella que trabajar hoy?", "de": "Muss sie heute arbeiten?" }
+      "tr": { "en": "Does she have to work today?", "es": "¿Tiene ella que trabajar hoy?" }
     },
     {
       "id": "mh-09",
@@ -660,30 +540,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „yesterday” múltat jelez, ezért „had to” kell: I had to work yesterday.",
         "en": "“Yesterday” shows the past, so you need “had to”: I had to work yesterday.",
-        "es": "«Yesterday» indica pasado, por eso hace falta «had to»: I had to work yesterday.",
-        "de": "„Yesterday“ zeigt die Vergangenheit an, deshalb braucht man „had to“: I had to work yesterday."
+        "es": "«Yesterday» indica pasado, por eso hace falta «had to»: I had to work yesterday."
       },
       "wrong": {
         "have to": {
-          "hu": "A „have to” jelen idő; a „yesterday” múlt: had to.",
           "en": "“Have to” is present; “yesterday” is past: had to.",
-          "es": "«Have to» es presente; «yesterday» es pasado: had to.",
-          "de": "„Have to“ ist Präsens; „yesterday“ ist Vergangenheit: had to."
+          "es": "«Have to» es presente; «yesterday» es pasado: had to."
         },
         "must": {
-          "hu": "A must-nak nincs múltja; múltban „had to” kell.",
           "en": "Must has no past form; in the past you need “had to”.",
-          "es": "Must no tiene pasado; en pasado hace falta «had to».",
-          "de": "Must hat keine Vergangenheitsform; in der Vergangenheit braucht man „had to“."
+          "es": "Must no tiene pasado; en pasado hace falta «had to»."
         }
       },
       "examples": [
         "She had to study.",
         "We had to go home."
       ],
-      "tr": { "hu": "Tegnap dolgoznom kellett.", "en": "I had to work yesterday.", "es": "Tuve que trabajar ayer.", "de": "Ich musste gestern arbeiten." }
+      "tr": { "en": "I had to work yesterday.", "es": "Tuve que trabajar ayer." }
     },
     {
       "kind": "why",
@@ -691,46 +565,34 @@
       "es": "You mustn't park here.",
       "target": "mustn't",
       "tr": {
-        "hu": "Itt nem szabad parkolni.",
         "en": "You mustn't park here.",
-        "es": "No puedes aparcar aquí.",
-        "de": "Hier darfst du nicht parken."
+        "es": "No puedes aparcar aquí."
       },
       "options": [
         {
           "text": {
-            "hu": "tiltás: nem szabad",
             "en": "a prohibition: it is not allowed",
-            "es": "una prohibición: no está permitido",
-            "de": "ein Verbot: es ist nicht erlaubt"
+            "es": "una prohibición: no está permitido"
           }
         },
         {
           "text": {
-            "hu": "nem szükséges: nem kell",
             "en": "not necessary: you need not",
-            "es": "no es necesario: no hace falta",
-            "de": "nicht nötig: man braucht nicht"
+            "es": "no es necesario: no hace falta"
           },
           "wrong": {
-            "hu": "Ezt a „don’t have to” fejezi ki. A „mustn’t” erősebb: tilos.",
             "en": "That is expressed by “don’t have to”. “Mustn’t” is stronger: forbidden.",
-            "es": "Eso lo expresa «don’t have to». «Mustn’t» es más fuerte: prohibido.",
-            "de": "Das drückt „don’t have to“ aus. „Mustn’t“ ist stärker: verboten."
+            "es": "Eso lo expresa «don’t have to». «Mustn’t» es más fuerte: prohibido."
           }
         },
         {
           "text": {
-            "hu": "múltbeli kötelesség: had to",
             "en": "a past obligation: had to",
-            "es": "una obligación pasada: had to",
-            "de": "eine vergangene Pflicht: had to"
+            "es": "una obligación pasada: had to"
           },
           "wrong": {
-            "hu": "A mondat jelen idejű tiltás, nem múltbeli kötelesség.",
             "en": "The sentence is a present prohibition, not a past obligation.",
-            "es": "La oración es una prohibición en presente, no una obligación pasada.",
-            "de": "Der Satz ist ein Verbot in der Gegenwart, keine vergangene Pflicht."
+            "es": "La oración es una prohibición en presente, no una obligación pasada."
           }
         }
       ],
@@ -746,30 +608,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „has to” után az ige alapalakja áll: She has to work early.",
         "en": "After “has to” the verb stays in its base form: She has to work early.",
-        "es": "Después de «has to» el verbo va en forma base: She has to work early.",
-        "de": "Nach „has to“ steht das Verb in der Grundform: She has to work early."
+        "es": "Después de «has to» el verbo va en forma base: She has to work early."
       },
       "wrong": {
         "works": {
-          "hu": "A „has to” után nem kap az ige -s-t: work.",
           "en": "After “has to” the verb takes no -s: work.",
-          "es": "Después de «has to» el verbo no lleva -s: work.",
-          "de": "Nach „has to“ bekommt das Verb kein -s: work."
+          "es": "Después de «has to» el verbo no lleva -s: work."
         },
         "working": {
-          "hu": "A „has to” után nincs -ing: has to work.",
           "en": "There is no -ing after “has to”: has to work.",
-          "es": "Después de «has to» no hay -ing: has to work.",
-          "de": "Nach „has to“ steht kein -ing: has to work."
+          "es": "Después de «has to» no hay -ing: has to work."
         }
       },
       "examples": [
         "He has to study early.",
         "My mother has to work."
       ],
-      "tr": { "hu": "Korán kell dolgoznia.", "en": "She has to work early.", "es": "Ella tiene que trabajar temprano.", "de": "Sie muss früh arbeiten." }
+      "tr": { "en": "She has to work early.", "es": "Ella tiene que trabajar temprano." }
     },
     {
       "id": "mh-17",
@@ -789,30 +645,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „must” után az ige alapalakja áll: I must call my mother.",
         "en": "After “must” the verb stays in its base form: I must call my mother.",
-        "es": "Después de «must» el verbo va en forma base: I must call my mother.",
-        "de": "Nach „must“ steht das Verb in der Grundform: I must call my mother."
+        "es": "Después de «must» el verbo va en forma base: I must call my mother."
       },
       "wrong": {
         "calls": {
-          "hu": "A „must” után nem kap az ige -s-t: call.",
           "en": "After “must” the verb takes no -s: call.",
-          "es": "Después de «must» el verbo no lleva -s: call.",
-          "de": "Nach „must“ bekommt das Verb kein -s: call."
+          "es": "Después de «must» el verbo no lleva -s: call."
         },
         "to call": {
-          "hu": "A „must” után nincs „to”: must call.",
           "en": "There is no “to” after “must”: must call.",
-          "es": "Después de «must» no hay «to»: must call.",
-          "de": "Nach „must“ steht kein „to“: must call."
+          "es": "Después de «must» no hay «to»: must call."
         }
       },
       "examples": [
         "You must stop.",
         "We must go."
       ],
-      "tr": { "hu": "Fel kell hívnom anyámat.", "en": "I must call my mother.", "es": "Tengo que llamar a mi mamá.", "de": "Ich muss meine Mutter anrufen." }
+      "tr": { "en": "I must call my mother.", "es": "Tengo que llamar a mi mamá." }
     },
     {
       "id": "mh-12",
@@ -824,30 +674,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A we mellé a „have to” kell: We have to wear a uniform.",
         "en": "With we you need “have to”: We have to wear a uniform.",
-        "es": "Con we hace falta «have to»: We have to wear a uniform.",
-        "de": "Bei we braucht man „have to“: We have to wear a uniform."
+        "es": "Con we hace falta «have to»: We have to wear a uniform."
       },
       "wrong": {
         "has to": {
-          "hu": "A „has to” a he, she, it mellé való; a „we” mellé „have to” kell.",
           "en": "“Has to” goes with he, she, it; with “we” you need “have to”.",
-          "es": "«Has to» va con he, she, it; con «we» hace falta «have to».",
-          "de": "„Has to“ gehört zu he, she, it; bei „we“ braucht man „have to“."
+          "es": "«Has to» va con he, she, it; con «we» hace falta «have to»."
         },
         "must to": {
-          "hu": "A „must” után nincs „to”: „must to” hibás.",
           "en": "There is no “to” after “must”: “must to” is wrong.",
-          "es": "Después de «must» no hay «to»: «must to» es incorrecto.",
-          "de": "Nach „must“ steht kein „to“: „must to“ ist falsch."
+          "es": "Después de «must» no hay «to»: «must to» es incorrecto."
         }
       },
       "examples": [
         "They have to wear a uniform.",
         "You have to study."
       ],
-      "tr": { "hu": "Az iskolában egyenruhát kell viselnünk. Ez a szabály.", "en": "We have to wear a uniform at school. It is the rule.", "es": "Tenemos que usar uniforme en la escuela. Es la regla.", "de": "Wir müssen in der Schule eine Uniform tragen. Das ist die Regel." }
+      "tr": { "en": "We have to wear a uniform at school. It is the rule.", "es": "Tenemos que usar uniforme en la escuela. Es la regla." }
     },
     {
       "id": "mh-22",
@@ -889,30 +733,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „do you” után a have to áll: What time do you have to get up?",
         "en": "After “do you” comes have to: What time do you have to get up?",
-        "es": "Después de «do you» va have to: What time do you have to get up?",
-        "de": "Nach „do you“ steht have to: What time do you have to get up?"
+        "es": "Después de «do you» va have to: What time do you have to get up?"
       },
       "wrong": {
         "has to": {
-          "hu": "A „do you” után nem „has to”, hanem az alapalak, „have to” áll.",
           "en": "After “do you” comes the base form “have to”, not “has to”.",
-          "es": "Después de «do you» va la forma base «have to», no «has to».",
-          "de": "Nach „do you“ steht die Grundform „have to“, nicht „has to“."
+          "es": "Después de «do you» va la forma base «have to», no «has to»."
         },
         "must": {
-          "hu": "A „do you must” hibás; a „must” maga kérdez (Must I…?), de a szokásos alak: do you have to.",
           "en": "“Do you must” is wrong; “must” forms its own question (Must I…?), but the usual form is: do you have to.",
-          "es": "«Do you must» es incorrecto; «must» forma su propia pregunta (Must I…?), pero la forma habitual es: do you have to.",
-          "de": "„Do you must“ ist falsch; „must“ bildet seine eigene Frage (Must I…?), aber die übliche Form ist: do you have to."
+          "es": "«Do you must» es incorrecto; «must» forma su propia pregunta (Must I…?), pero la forma habitual es: do you have to."
         }
       },
       "examples": [
         "What do you have to do?",
         "Where do you have to go?"
       ],
-      "tr": { "hu": "Hánykor kell felkelned?", "en": "What time do you have to get up?", "es": "¿A qué hora te tienes que levantar?", "de": "Um wie viel Uhr musst du aufstehen?" }
+      "tr": { "en": "What time do you have to get up?", "es": "¿A qué hora te tienes que levantar?" }
     },
     {
       "kind": "why",
@@ -920,46 +758,34 @@
       "es": "You don't have to pay.",
       "target": "don't",
       "tr": {
-        "hu": "Nem kell fizetned.",
         "en": "You don't have to pay.",
-        "es": "No tienes que pagar.",
-        "de": "Du musst nicht bezahlen."
+        "es": "No tienes que pagar."
       },
       "options": [
         {
           "text": {
-            "hu": "nem szükséges: nincs kötelesség",
             "en": "not necessary: there is no obligation",
-            "es": "no es necesario: no hay obligación",
-            "de": "nicht nötig: es gibt keine Pflicht"
+            "es": "no es necesario: no hay obligación"
           }
         },
         {
           "text": {
-            "hu": "tiltás: nem szabad",
             "en": "a prohibition: it is not allowed",
-            "es": "una prohibición: no está permitido",
-            "de": "ein Verbot: es ist nicht erlaubt"
+            "es": "una prohibición: no está permitido"
           },
           "wrong": {
-            "hu": "Ez a „mustn’t”. A „don’t have to” csak azt mondja: nem kötelező, de nem is tilos.",
             "en": "That is “mustn’t”. “Don’t have to” only says: it is not required, but it is not forbidden either.",
-            "es": "Eso es «mustn’t». «Don’t have to» solo dice: no es obligatorio, pero tampoco está prohibido.",
-            "de": "Das ist „mustn’t“. „Don’t have to“ sagt nur: Es ist nicht Pflicht, aber auch nicht verboten."
+            "es": "Eso es «mustn’t». «Don’t have to» solo dice: no es obligatorio, pero tampoco está prohibido."
           }
         },
         {
           "text": {
-            "hu": "képesség hiánya: can’t",
             "en": "lack of ability: can’t",
-            "es": "falta de habilidad: can’t",
-            "de": "fehlende Fähigkeit: can’t"
+            "es": "falta de habilidad: can’t"
           },
           "wrong": {
-            "hu": "Nem arról van szó, hogy nem tudsz fizetni, hanem hogy nem szükséges.",
             "en": "It is not that you cannot pay, but that it is not necessary.",
-            "es": "No se trata de que no puedas pagar, sino de que no es necesario.",
-            "de": "Es geht nicht darum, dass du nicht bezahlen kannst, sondern dass es nicht nötig ist."
+            "es": "No se trata de que no puedas pagar, sino de que no es necesario."
           }
         }
       ],
@@ -983,30 +809,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „my brother” = he, ezért „has to”: My brother has to study tonight.",
         "en": "“My brother” = he, so “has to”: My brother has to study tonight.",
-        "es": "«My brother» = he, por eso «has to»: My brother has to study tonight.",
-        "de": "„My brother“ = he, deshalb „has to“: My brother has to study tonight."
+        "es": "«My brother» = he, por eso «has to»: My brother has to study tonight."
       },
       "wrong": {
         "have to": {
-          "hu": "A „have to” az I, you, we, they mellé való; a „my brother” = he, ezért „has to”.",
           "en": "“Have to” goes with I, you, we, they; “my brother” = he, so “has to”.",
-          "es": "«Have to» va con I, you, we, they; «my brother» = he, por eso «has to».",
-          "de": "„Have to“ gehört zu I, you, we, they; „my brother“ = he, deshalb „has to“."
+          "es": "«Have to» va con I, you, we, they; «my brother» = he, por eso «has to»."
         },
         "must to": {
-          "hu": "A „must” után nincs „to”: „must to” hibás.",
           "en": "There is no “to” after “must”: “must to” is wrong.",
-          "es": "Después de «must» no hay «to»: «must to» es incorrecto.",
-          "de": "Nach „must“ steht kein „to“: „must to“ ist falsch."
+          "es": "Después de «must» no hay «to»: «must to» es incorrecto."
         }
       },
       "examples": [
         "She has to work tonight.",
         "He has to call his mother."
       ],
-      "tr": { "hu": "A bátyámnak tanulnia kell ma este. Vizsgája lesz.", "en": "My brother has to study tonight. He has an exam.", "es": "Mi hermano tiene que estudiar esta noche. Tiene un examen.", "de": "Mein Bruder muss heute Abend lernen. Er hat eine Prüfung." }
+      "tr": { "en": "My brother has to study tonight. He has an exam.", "es": "Mi hermano tiene que estudiar esta noche. Tiene un examen." }
     },
     {
       "id": "mh-23",

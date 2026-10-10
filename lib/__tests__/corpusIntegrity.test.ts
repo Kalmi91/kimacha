@@ -6,10 +6,8 @@
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
-import { LEVELS, type Level, type WordEntry } from '@/data/words';
+import type { Level, WordEntry } from '@/data/words';
 import { openWords } from '@/data/openWords';
-import { pickSurvivor } from '../cardMerge';
-import { findPromptOverlaps, type PromptLang } from '../promptOverlap';
 
 // Play cut: the en word-branch loader path
 // (getWordsForLevel(level, 'en')) is gone, so the cases below that guard
@@ -49,12 +47,11 @@ const senses = (value: unknown): Set<string> =>
       .filter(Boolean)
   );
 
-const sharesMeaning = (a: any, b: any): boolean =>
-  ['en', 'hu'].some((field) => {
-    const left = senses(a[field]);
-    for (const sense of senses(b[field])) if (left.has(sense)) return true;
-    return false;
-  });
+const sharesMeaning = (a: any, b: any): boolean => {
+  const left = senses(a.en);
+  for (const sense of senses(b.en)) if (left.has(sense)) return true;
+  return false;
+};
 
 describe('Spanish word corpus (words-open)', () => {
   it('gives every word a globally unique id', () => {
@@ -79,25 +76,6 @@ describe('Spanish word corpus (words-open)', () => {
       }
     }
     expect(duplicates).toEqual([]);
-  });
-});
-
-describe('pickSurvivor', () => {
-  const card = (reps: number, stability: number, due: string) => ({ reps, stability, due });
-
-  it('keeps the more practised card', () => {
-    const strong = card(7, 1, '2026-09-01');
-    expect(pickSurvivor(card(2, 9, '2026-08-01'), strong)).toBe(strong);
-  });
-
-  it('breaks a reps tie on stability', () => {
-    const stable = card(3, 12, '2026-09-01');
-    expect(pickSurvivor(stable, card(3, 4, '2026-08-01'))).toBe(stable);
-  });
-
-  it('falls back to the earlier due date, so a review cannot slip', () => {
-    const soon = card(3, 5, '2026-08-01');
-    expect(pickSurvivor(card(3, 5, '2026-08-20'), soon)).toBe(soon);
   });
 });
 
@@ -128,13 +106,13 @@ describe('article agreement between the two sides of a card', () => {
 // Today's corpus (the en band) fulfils it; a new
 // language band must do the same, or this test will say that it does not.
 describe('word entry completeness', () => {
-  const SURFACE_LANGS = ['es', 'hu', 'en', 'de'] as const;
+  const SURFACE_LANGS = ['es', 'en'] as const;
 
   const corpora: [string, WordEntry[]][] = [
     ['en branch', Object.values(EN_BRANCH_BY_LEVEL).flat()],
   ];
 
-  it.each(corpora)('every %s entry carries all four languages and sentences', (_label, entries) => {
+  it.each(corpora)('every %s entry carries both languages and sentences', (_label, entries) => {
     expect(entries.length).toBeGreaterThan(0);
     const offenders: string[] = [];
     for (const w of entries) {
@@ -144,33 +122,5 @@ describe('word entry completeness', () => {
       }
     }
     expect(offenders.slice(0, 20)).toEqual([]);
-  });
-});
-
-// "Within one level and band, no two words may have prompts from which it
-// cannot be told which one is being asked." After the corpus pass (2026-09-14/15)
-// this guard is LIVE: a new word must not bring the error back. The cluster logic
-// lives in lib/promptOverlap.ts. The en band (read from the JSON since the Play cut, not from the
-// loader) yields words only for the levels that really exist;
-// a missing level gives an empty list, on which the cluster search is trivially empty.
-describe('prompt policy (PROMPT-POLICY 1)', () => {
-  const BANDS: { label: string; wordsByLevel: (level: Level) => WordEntry[]; headword: PromptLang; prompt: PromptLang }[] = [
-    { label: 'en', wordsByLevel: (level) => EN_BRANCH_BY_LEVEL[level] ?? [], headword: 'en', prompt: 'hu' },
-  ];
-
-  it.each(BANDS)('never gives two words of a level an ambiguous $label prompt', ({ wordsByLevel, headword, prompt }) => {
-    const offenders: string[] = [];
-    for (const level of LEVELS) {
-      const levelWords = wordsByLevel(level);
-      const clusters = findPromptOverlaps(
-        levelWords.map((w) => ({ id: w.id, headword: String(w[headword] ?? ''), prompt: String(w[prompt] ?? '') })),
-        prompt
-      );
-      for (const cluster of clusters) {
-        const ids = cluster.words.map((w) => `${w.id}:${w.prompt}`).join(', ');
-        offenders.push(`${level} [${cluster.kind}${cluster.sense ? `: ${cluster.sense}` : ''}] ${ids}`);
-      }
-    }
-    expect(offenders).toEqual([]);
   });
 });

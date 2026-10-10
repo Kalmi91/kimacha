@@ -11,7 +11,7 @@ import { grammarKindCounts } from '../../games/content';
 import { buildGrammarRound } from '../../games/grammarChoice';
 import { lessonFor } from '../syllabus';
 
-const lang4 = (v: string) => ({ hu: v, en: v, es: v, de: v });
+const lang4 = (v: string) => ({ en: v, es: v });
 
 function formItem(person: string, answer: string): FormItem {
   return { kind: 'form', id: 'f1', verb: 'hablar', person, answer, table: 't1' };

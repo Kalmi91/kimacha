@@ -5,9 +5,8 @@ interface Language {
 }
 
 // Kimacha Play: single en-es pair. The other language
-// tracks (hu, de, fr, pt, sv) no longer have an onboarding entry point; their
-// data files stay in the repo (what became
-// unreachable), just nothing routes a learner to them any more.
+// tracks (hu, de, fr, pt, sv) no longer have an onboarding entry point, and their
+// content is gone from the repo.
 export const languages: Language[] = [
   { code: 'en', name: 'English', flag: '🇬🇧' },
   { code: 'es', name: 'Español', flag: '🇪🇸' },

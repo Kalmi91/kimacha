@@ -26,8 +26,8 @@ const DIR = path.join(ROOT, 'data', 'words-open');
 const LEVELS = ['a1', 'a2', 'b1', 'b2'];
 const LEVEL_RANK = { A1: 1, A2: 2, B1: 3, B2: 4 };
 const KEYS = [
-  'order', 'level', 'pos', 'lemma', 'es', 'hu', 'en', 'de',
-  'sentence_es', 'sentence_hu', 'sentence_en', 'sentence_de', 'sentence_lemmas',
+  'order', 'level', 'pos', 'lemma', 'es', 'en',
+  'sentence_es', 'sentence_en', 'sentence_lemmas',
 ];
 const POS = new Set(['noun', 'verb', 'adj', 'adv', 'pron', 'det', 'prep', 'conj', 'num', 'interj']);
 const MAX_TOKENS = { A1: 8, A2: 10, B1: 12, B2: 14 };
@@ -123,10 +123,10 @@ for (const c of cards) {
   // the level is decided by the file (words of grammar lessons go to the lesson's level, the order stays): the level field = the file's level
   if (c.level !== c.__file.toUpperCase()) fail('R2', `${tag(c)}: ${c.__file}.json fájlban ${c.level} szint`);
   const keys = Object.keys(c).filter((k) => !k.startsWith('__'));
-  const wantKeys = keys.includes('hint_en') ? [...KEYS.slice(0, 8), 'hint_en', ...KEYS.slice(8)] : KEYS; // hint_en: optional 14th key after de
+  const wantKeys = keys.includes('hint_en') ? [...KEYS.slice(0, 6), 'hint_en', ...KEYS.slice(6)] : KEYS; // hint_en: optional key after en
   if (keys.join(',') !== wantKeys.join(',')) fail('R2', `${tag(c)}: kulcsok/sorrend eltér: ${keys.join(',')}`);
   if (!POS.has(c.pos)) fail('R2', `${tag(c)}: pos "${c.pos}" érvénytelen`);
-  for (const k of ['lemma', 'es', 'hu', 'en', 'de', 'sentence_es', 'sentence_hu', 'sentence_en', 'sentence_de']) {
+  for (const k of ['lemma', 'es', 'en', 'sentence_es', 'sentence_en']) {
     if (typeof c[k] !== 'string') fail('R2', `${tag(c)}: ${k} nem string`);
   }
   if (!Array.isArray(c.sentence_lemmas) || c.sentence_lemmas.some((x) => typeof x !== 'string')) {
@@ -384,17 +384,17 @@ if (!listOnly) {
   const seenSentences = new Map();
   for (const c of target) {
     const isEmpty =
-      c.sentence_es === '' && c.sentence_hu === '' && c.sentence_en === '' && c.sentence_de === '' &&
+      c.sentence_es === '' && c.sentence_en === '' &&
       Array.isArray(c.sentence_lemmas) && c.sentence_lemmas.length === 0;
     const isFull =
-      c.sentence_es !== '' && c.sentence_hu !== '' && c.sentence_en !== '' && c.sentence_de !== '' &&
+      c.sentence_es !== '' && c.sentence_en !== '' &&
       Array.isArray(c.sentence_lemmas) && c.sentence_lemmas.length > 0;
 
     // R9 (addition, not in the original rule set): an empty word gloss is a missing translation
-    for (const k of ['hu', 'en', 'de']) if (!c[k]) fail('R9', `${tag(c)}: üres ${k} glossza`);
+    for (const k of ['en']) if (!c[k]) fail('R9', `${tag(c)}: üres ${k} glossza`);
 
     // R7 an empty sentence only at the start
-    if (!isEmpty && !isFull) fail('R7', `${tag(c)}: a 4 sentence_* mező és a sentence_lemmas vagy mind üres, vagy mind kitöltött`);
+    if (!isEmpty && !isFull) fail('R7', `${tag(c)}: a 2 sentence_* mező és a sentence_lemmas vagy mind üres, vagy mind kitöltött`);
     else if (isEmpty && c.order > EMPTY_SENTENCE_MAX_ORDER) fail('R7', `${tag(c)}: üres mondat order>${EMPTY_SENTENCE_MAX_ORDER}`);
     if (!isFull) continue;
 

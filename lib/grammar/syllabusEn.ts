@@ -28,26 +28,20 @@ interface TreeTopic {
   order: number;
   subLevel: string;
   type: string;
-  name_hu: string;
   name_en: string;
   name_es: string;
-  name_de: string;
 }
 
 interface TreeSublevel {
   id: string;
   order: number;
-  name_hu: string;
   name_en: string;
   name_es: string;
-  name_de: string;
 }
 
-const names = (n: { name_hu: string; name_en: string; name_es: string; name_de: string }) => ({
-  hu: n.name_hu,
+const names = (n: { name_en: string; name_es: string }) => ({
   en: n.name_en,
   es: n.name_es,
-  de: n.name_de,
 });
 
 const grammarOf = (topics: unknown): TreeTopic[] =>

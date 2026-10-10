@@ -3,42 +3,32 @@
   "topic": "past_simple_regular",
   "level": "A2",
   "title": {
-    "hu": "Az egyszerű múlt: szabályos igék (worked)",
     "en": "The Past Simple: regular verbs (worked)",
-    "es": "El Pasado Simple: verbos regulares (worked)",
-    "de": "Das Past Simple: regelmäßige Verben (worked)"
+    "es": "El Pasado Simple: verbos regulares (worked)"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "Az egyszerű múlt (past simple) a lezárult múltbeli cselekvések ideje: „I worked yesterday”. A szabályos igéknél az alapigéhez -ed kerül, és MINDEN személynél ugyanaz az alak (I worked, she worked, they worked). Egyetlen angol alak felel meg a spanyol „trabajé” és sokszor a „trabajaba” alaknak is: nincs külön indefinido és imperfecto.",
         "en": "The past simple is the tense for finished actions in the past: “I worked yesterday”. With regular verbs you add -ed to the base verb, and the form is the SAME for every person (I worked, she worked, they worked). One English form covers Spanish “trabajé” and often “trabajaba” too: there is no separate indefinido and imperfecto.",
-        "es": "El pasado simple es el tiempo de las acciones terminadas en el pasado: «I worked yesterday». Con los verbos regulares se añade -ed al verbo base, y la forma es IGUAL para todas las personas (I worked, she worked, they worked). Una sola forma inglesa cubre el «trabajé» del español y a menudo también el «trabajaba»: no hay indefinido e imperfecto por separado.",
-        "de": "Das Past Simple ist die Zeit für abgeschlossene Handlungen in der Vergangenheit: „I worked yesterday“. Bei regelmäßigen Verben hängt man -ed an die Grundform, und die Form ist für JEDE Person gleich (I worked, she worked, they worked). Eine einzige englische Form deckt spanisch „trabajé“ und oft auch „trabajaba“ ab: Es gibt kein getrenntes Indefinido und Imperfecto."
+        "es": "El pasado simple es el tiempo de las acciones terminadas en el pasado: «I worked yesterday». Con los verbos regulares se añade -ed al verbo base, y la forma es IGUAL para todas las personas (I worked, she worked, they worked). Una sola forma inglesa cubre el «trabajé» del español y a menudo también el «trabajaba»: no hay indefinido e imperfecto por separado."
       }
     },
     {
       "kind": "table",
       "id": "pa-forms",
       "title": {
-        "hu": "Szabályos múlt idők",
         "en": "Regular past forms",
-        "es": "Formas regulares del pasado",
-        "de": "Regelmäßige Vergangenheitsformen"
+        "es": "Formas regulares del pasado"
       },
       "header": [
         {
-          "hu": "Ige",
           "en": "Verb",
-          "es": "Verbo",
-          "de": "Verb"
+          "es": "Verbo"
         },
         {
-          "hu": "past",
           "en": "past",
-          "es": "past",
-          "de": "past"
+          "es": "past"
         }
       ],
       "rows": [
@@ -87,92 +77,72 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Az -ed írása",
         "en": "Spelling the -ed ending",
-        "es": "Cómo se escribe -ed",
-        "de": "Schreibung der -ed-Endung"
+        "es": "Cómo se escribe -ed"
       },
       "items": [
         {
           "text": {
-            "hu": "A legtöbb ige: -ed (work → worked, play → played, watch → watched). Az -e végű igékhez csak -d (live → lived, dance → danced).",
             "en": "Most verbs: add -ed (work → worked, play → played, watch → watched). Verbs ending in -e only add -d (live → lived, dance → danced).",
-            "es": "Casi todos los verbos: añade -ed (work → worked, play → played, watch → watched). Los verbos que terminan en -e solo añaden -d (live → lived, dance → danced).",
-            "de": "Die meisten Verben: -ed anhängen (work → worked, play → played, watch → watched). Verben auf -e bekommen nur -d (live → lived, dance → danced)."
+            "es": "Casi todos los verbos: añade -ed (work → worked, play → played, watch → watched). Los verbos que terminan en -e solo añaden -d (live → lived, dance → danced)."
           },
           "examples": [
             {
               "es": "I watched TV last night.",
               "tr": {
-                "hu": "Tegnap este tévét néztem.",
                 "en": "I watched TV last night.",
-                "es": "Anoche vi la tele.",
-                "de": "Gestern Abend habe ich ferngesehen."
+                "es": "Anoche vi la tele."
               }
             },
             {
               "es": "She lived in Mexico City.",
               "tr": {
-                "hu": "Mexikóvárosban élt.",
                 "en": "She lived in Mexico City.",
-                "es": "Ella vivió en la Ciudad de México.",
-                "de": "Sie wohnte in Mexiko-Stadt."
+                "es": "Ella vivió en la Ciudad de México."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Mássalhangzó + y: az y helyére -ied kerül (study → studied, cry → cried). Magánhangzó + y esetén csak -ed (play → played).",
             "en": "Consonant + y: the y becomes -ied (study → studied, cry → cried). With vowel + y just add -ed (play → played).",
-            "es": "Consonante + y: la y cambia a -ied (study → studied, cry → cried). Con vocal + y solo se añade -ed (play → played).",
-            "de": "Konsonant + y: Das y wird zu -ied (study → studied, cry → cried). Bei Vokal + y einfach -ed (play → played)."
+            "es": "Consonante + y: la y cambia a -ied (study → studied, cry → cried). Con vocal + y solo se añade -ed (play → played)."
           },
           "examples": [
             {
               "es": "He studied English last year.",
               "tr": {
-                "hu": "Tavaly angolul tanult.",
                 "en": "He studied English last year.",
-                "es": "Él estudió inglés el año pasado.",
-                "de": "Er hat letztes Jahr Englisch gelernt."
+                "es": "Él estudió inglés el año pasado."
               }
             },
             {
               "es": "We played games yesterday.",
               "tr": {
-                "hu": "Tegnap játékokat játszottunk.",
                 "en": "We played games yesterday.",
-                "es": "Ayer jugamos juegos.",
-                "de": "Gestern haben wir Spiele gespielt."
+                "es": "Ayer jugamos juegos."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Rövid, egy szótagú, mássalhangzó + magánhangzó + mássalhangzó végű igéknél a végső mássalhangzó megkettőződik (stop → stopped, plan → planned).",
             "en": "Short one-syllable verbs ending in consonant + vowel + consonant double the last consonant (stop → stopped, plan → planned).",
-            "es": "Los verbos cortos de una sílaba que terminan en consonante + vocal + consonante duplican la última consonante (stop → stopped, plan → planned).",
-            "de": "Kurze einsilbige Verben auf Konsonant + Vokal + Konsonant verdoppeln den letzten Konsonanten (stop → stopped, plan → planned)."
+            "es": "Los verbos cortos de una sílaba que terminan en consonante + vocal + consonante duplican la última consonante (stop → stopped, plan → planned)."
           },
           "examples": [
             {
               "es": "The bus stopped at the station.",
               "tr": {
-                "hu": "A busz megállt az állomásnál.",
                 "en": "The bus stopped at the station.",
-                "es": "El autobús paró en la estación.",
-                "de": "Der Bus hielt am Bahnhof."
+                "es": "El autobús paró en la estación."
               }
             },
             {
               "es": "We planned a party.",
               "tr": {
-                "hu": "Bulit terveztünk.",
                 "en": "We planned a party.",
-                "es": "Planeamos una fiesta.",
-                "de": "Wir haben eine Party geplant."
+                "es": "Planeamos una fiesta."
               }
             }
           ]
@@ -182,64 +152,50 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Tagadás, kérdés, rövid válasz",
         "en": "Negatives, questions, short answers",
-        "es": "Negación, pregunta, respuesta corta",
-        "de": "Verneinung, Frage, Kurzantwort"
+        "es": "Negación, pregunta, respuesta corta"
       },
       "items": [
         {
           "text": {
-            "hu": "Tagadás: didn’t + alapige. A múlt jele a didn’t-ben van, ezért az ige nem kap -ed-et: She didn’t watch TV (nem „didn’t watched”).",
             "en": "Negative: didn’t + base verb. The past is marked in didn’t, so the verb takes no -ed: She didn’t watch TV (not “didn’t watched”).",
-            "es": "Negación: didn’t + verbo base. El pasado ya está en didn’t, por eso el verbo no lleva -ed: She didn’t watch TV (no «didn’t watched»).",
-            "de": "Verneinung: didn’t + Grundform. Die Vergangenheit steckt in didn’t, deshalb bekommt das Verb kein -ed: She didn’t watch TV (nicht „didn’t watched“)."
+            "es": "Negación: didn’t + verbo base. El pasado ya está en didn’t, por eso el verbo no lleva -ed: She didn’t watch TV (no «didn’t watched»)."
           },
           "examples": [
             {
               "es": "I didn't work yesterday.",
               "tr": {
-                "hu": "Tegnap nem dolgoztam.",
                 "en": "I didn't work yesterday.",
-                "es": "Ayer no trabajé.",
-                "de": "Gestern habe ich nicht gearbeitet."
+                "es": "Ayer no trabajé."
               }
             },
             {
               "es": "She didn't watch TV.",
               "tr": {
-                "hu": "Nem nézett tévét.",
                 "en": "She didn't watch TV.",
-                "es": "Ella no vio la tele.",
-                "de": "Sie hat nicht ferngesehen."
+                "es": "Ella no vio la tele."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Kérdés: Did + alany + alapige. Kérdőszóval: Where did you live? Rövid válasz: Yes, I did. / No, I didn’t.",
             "en": "Questions: Did + subject + base verb. With a question word: Where did you live? Short answers: Yes, I did. / No, I didn’t.",
-            "es": "Pregunta: Did + sujeto + verbo base. Con palabra interrogativa: Where did you live? Respuesta corta: Yes, I did. / No, I didn’t.",
-            "de": "Frage: Did + Subjekt + Grundform. Mit Fragewort: Where did you live? Kurzantwort: Yes, I did. / No, I didn’t."
+            "es": "Pregunta: Did + sujeto + verbo base. Con palabra interrogativa: Where did you live? Respuesta corta: Yes, I did. / No, I didn’t."
           },
           "examples": [
             {
               "es": "Did you work yesterday?",
               "tr": {
-                "hu": "Dolgoztál tegnap?",
                 "en": "Did you work yesterday?",
-                "es": "¿Trabajaste ayer?",
-                "de": "Hast du gestern gearbeitet?"
+                "es": "¿Trabajaste ayer?"
               }
             },
             {
               "es": "Did she call? No, she didn't.",
               "tr": {
-                "hu": "Hívott? Nem.",
                 "en": "Did she call? No, she didn't.",
-                "es": "¿Llamó ella? No.",
-                "de": "Hat sie angerufen? Nein."
+                "es": "¿Llamó ella? No."
               }
             }
           ]
@@ -249,36 +205,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Időhatározók",
         "en": "Time expressions",
-        "es": "Expresiones de tiempo",
-        "de": "Zeitangaben"
+        "es": "Expresiones de tiempo"
       },
       "items": [
         {
           "text": {
-            "hu": "yesterday (tegnap), last night / week / year (múlt éjjel / héten / évben), in 2020, valamint „ago” (ennyi ideje): two days ago. A „hace dos días” angolul „two days ago”, a mondat végén.",
             "en": "yesterday, last night / week / year, in 2020, and “ago”: two days ago. Spanish “hace dos días” is “two days ago” in English, at the end of the sentence.",
-            "es": "yesterday (ayer), last night / week / year (anoche / la semana pasada / el año pasado), in 2020, y «ago»: two days ago. El «hace dos días» del español es «two days ago» en inglés, al final de la oración.",
-            "de": "yesterday (gestern), last night / week / year (letzte Nacht / Woche / Jahr), in 2020 und „ago“: two days ago. Spanisch „hace dos días“ heißt „two days ago“, am Satzende."
+            "es": "yesterday (ayer), last night / week / year (anoche / la semana pasada / el año pasado), in 2020, y «ago»: two days ago. El «hace dos días» del español es «two days ago» en inglés, al final de la oración."
           },
           "examples": [
             {
               "es": "I called my mother two days ago.",
               "tr": {
-                "hu": "Két napja hívtam az anyámat.",
                 "en": "I called my mother two days ago.",
-                "es": "Llamé a mi madre hace dos días.",
-                "de": "Ich habe vor zwei Tagen meine Mutter angerufen."
+                "es": "Llamé a mi madre hace dos días."
               }
             },
             {
               "es": "We visited Mexico last year.",
               "tr": {
-                "hu": "Tavaly Mexikóban jártunk.",
                 "en": "We visited Mexico last year.",
-                "es": "Visitamos México el año pasado.",
-                "de": "Wir haben letztes Jahr Mexiko besucht."
+                "es": "Visitamos México el año pasado."
               }
             }
           ]
@@ -288,90 +236,70 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Kérdésben és tagadásban az ige nem kap -ed-et, mert a múlt jele a „did”-ben van. Ne mondd, hogy „Did you worked?” vagy „I didn’t worked”, hanem: „Did you work?” és „I didn’t work”.",
         "en": "In questions and negatives the verb takes no -ed, because the past is already in “did”. Do not say “Did you worked?” or “I didn’t worked”; say “Did you work?” and “I didn’t work”.",
-        "es": "En preguntas y negaciones el verbo no lleva -ed, porque el pasado ya está en «did». No digas «Did you worked?» ni «I didn’t worked», di «Did you work?» y «I didn’t work».",
-        "de": "In Fragen und Verneinungen bekommt das Verb kein -ed, weil die Vergangenheit schon in „did“ steckt. Sag nicht „Did you worked?“ oder „I didn’t worked“, sondern „Did you work?“ und „I didn’t work“."
+        "es": "En preguntas y negaciones el verbo no lleva -ed, porque el pasado ya está en «did». No digas «Did you worked?» ni «I didn’t worked», di «Did you work?» y «I didn’t work»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A múlt idő minden személynél ugyanaz. Ne tegyél -s-t: nem „she workeds”, hanem „she worked”.",
         "en": "The past form is the same for every person. Do not add -s: not “she workeds” but “she worked”.",
-        "es": "La forma del pasado es igual para todas las personas. No añadas -s: no «she workeds», sino «she worked».",
-        "de": "Die Vergangenheitsform ist für jede Person gleich. Häng kein -s an: nicht „she workeds“, sondern „she worked“."
+        "es": "La forma del pasado es igual para todas las personas. No añadas -s: no «she workeds», sino «she worked»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A spanyol „hace + idő” angolul „idő + ago”. Ne mondd, hogy „I called it makes two days”, hanem: „I called two days ago”.",
         "en": "Spanish “hace + time” is “time + ago” in English. Do not translate it word for word; say “I called two days ago”.",
-        "es": "El «hace + tiempo» del español es «tiempo + ago» en inglés. No lo traduzcas palabra por palabra; di «I called two days ago».",
-        "de": "Spanisch „hace + Zeit“ ist im Englischen „Zeit + ago“. Übersetze es nicht Wort für Wort; sag „I called two days ago“."
+        "es": "El «hace + tiempo» del español es «tiempo + ago» en inglés. No lo traduzcas palabra por palabra; di «I called two days ago»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A spanyol „trabajaba” (szokás a múltban) is gyakran egyszerű múlt angolul: „I worked there for years.” Nem kell külön alak, csak az időhatározóra figyelj.",
         "en": "Spanish “trabajaba” (a past habit) is often also the past simple in English: “I worked there for years.” No separate form is needed; just watch the time expression.",
-        "es": "El «trabajaba» del español (hábito en el pasado) también suele ser pasado simple en inglés: «I worked there for years.» No hace falta una forma aparte; fíjate solo en la expresión de tiempo.",
-        "de": "Spanisch „trabajaba“ (Gewohnheit in der Vergangenheit) ist im Englischen oft ebenfalls das Past Simple: „I worked there for years.“ Eine eigene Form braucht es nicht; achte nur auf die Zeitangabe."
+        "es": "El «trabajaba» del español (hábito en el pasado) también suele ser pasado simple en inglés: «I worked there for years.» No hace falta una forma aparte; fíjate solo en la expresión de tiempo."
       }
     }
   ],
   "speak": {
-    "hu": "Az egyszerű múlt lezárult cselekvést fejez ki. Szabályos igéknél -ed kerül az igére, minden személynél ugyanúgy: «I worked yesterday», «she watched TV», «they played games». Az -e végű igékhez csak -d jön: «live», «lived». Mássalhangzó plusz y után -ied lesz: «study», «studied». Rövid igéknél a mássalhangzó megkettőződik: «stop», «stopped». Tagadás: «I didn't work». Kérdés: «Did you work yesterday?». Vigyázat: nem «did you worked», hanem «did you work».",
     "en": "The past simple expresses a finished action. With regular verbs you add -ed to the verb, the same for every person: «I worked yesterday», «she watched TV», «they played games». Verbs ending in e only add -d: «live», «lived». After a consonant plus y it becomes -ied: «study», «studied». Short verbs double the consonant: «stop», «stopped». Negative: «I didn't work». Question: «Did you work yesterday?». Careful: not «did you worked» but «did you work».",
-    "es": "El pasado simple expresa una acción terminada. Con los verbos regulares se añade -ed al verbo, igual para todas las personas: «I worked yesterday», «she watched TV», «they played games». Los verbos que terminan en e solo añaden -d: «live», «lived». Después de consonante más y pasa a -ied: «study», «studied». Los verbos cortos duplican la consonante: «stop», «stopped». Negación: «I didn't work». Pregunta: «Did you work yesterday?». Cuidado: no «did you worked», sino «did you work».",
-    "de": "Das Past Simple drückt eine abgeschlossene Handlung aus. Bei regelmäßigen Verben hängt man -ed an das Verb, für jede Person gleich: «I worked yesterday», «she watched TV», «they played games». Verben auf e bekommen nur -d: «live», «lived». Nach Konsonant plus y wird es -ied: «study», «studied». Kurze Verben verdoppeln den Konsonanten: «stop», «stopped». Verneinung: «I didn't work». Frage: «Did you work yesterday?». Vorsicht: nicht «did you worked», sondern «did you work»."
+    "es": "El pasado simple expresa una acción terminada. Con los verbos regulares se añade -ed al verbo, igual para todas las personas: «I worked yesterday», «she watched TV», «they played games». Los verbos que terminan en e solo añaden -d: «live», «lived». Después de consonante más y pasa a -ied: «study», «studied». Los verbos cortos duplican la consonante: «stop», «stopped». Negación: «I didn't work». Pregunta: «Did you work yesterday?». Cuidado: no «did you worked», sino «did you work»."
   },
   "glossary": [
     {
       "word": "didn't",
       "gloss": {
-        "hu": "nem (did not)",
         "en": "did not",
-        "es": "no (did not)",
-        "de": "nicht (did not)"
+        "es": "no (did not)"
       }
     },
     {
       "word": "studied",
       "gloss": {
-        "hu": "tanult (study)",
         "en": "study + -ed",
-        "es": "estudió (study)",
-        "de": "lernte (study)"
+        "es": "estudió (study)"
       }
     },
     {
       "word": "stopped",
       "gloss": {
-        "hu": "megállt (stop)",
         "en": "stop + -ed",
-        "es": "paró (stop)",
-        "de": "hielt an (stop)"
+        "es": "paró (stop)"
       }
     },
     {
       "word": "planned",
       "gloss": {
-        "hu": "tervezett (plan)",
         "en": "plan + -ed",
-        "es": "planeó (plan)",
-        "de": "plante (plan)"
+        "es": "planeó (plan)"
       }
     },
     {
       "word": "ago",
       "gloss": {
-        "hu": "ennyivel ezelőtt",
         "en": "back in time",
-        "es": "hace",
-        "de": "vor (zeitlich)"
+        "es": "hace"
       }
     }
   ],
@@ -386,30 +314,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „last night” múltat jelez, ezért az ige -ed alakja kell: I watched TV last night.",
         "en": "“Last night” shows the past, so you need the -ed form: I watched TV last night.",
-        "es": "«Last night» indica pasado, por eso hace falta la forma -ed: I watched TV last night.",
-        "de": "„Last night“ zeigt die Vergangenheit an, deshalb braucht man die -ed-Form: I watched TV last night."
+        "es": "«Last night» indica pasado, por eso hace falta la forma -ed: I watched TV last night."
       },
       "wrong": {
         "watch": {
-          "hu": "A „watch” jelen idő; a „last night” múlt, ezért „watched”.",
           "en": "“Watch” is present; “last night” is past, so “watched”.",
-          "es": "«Watch» es presente; «last night» es pasado, por eso «watched».",
-          "de": "„Watch“ ist Präsens; „last night“ ist Vergangenheit, deshalb „watched“."
+          "es": "«Watch» es presente; «last night» es pasado, por eso «watched»."
         },
         "watching": {
-          "hu": "A „watching” -ing alak; a múlt egyszerű alakja „watched”.",
           "en": "“Watching” is an -ing form; the simple past is “watched”.",
-          "es": "«Watching» es una forma -ing; el pasado simple es «watched».",
-          "de": "„Watching“ ist eine -ing-Form; die einfache Vergangenheit ist „watched“."
+          "es": "«Watching» es una forma -ing; el pasado simple es «watched»."
         }
       },
       "examples": [
         "She watched a movie yesterday.",
         "We watched TV at night."
       ],
-      "tr": { "hu": "Tegnap este tévét néztem.", "en": "I watched TV last night.", "es": "Vi la tele anoche.", "de": "Ich habe gestern Abend ferngesehen." }
+      "tr": { "en": "I watched TV last night.", "es": "Vi la tele anoche." }
     },
     {
       "id": "pr-02",
@@ -421,30 +343,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „2020-ban” múltat jelez, és a live -e végű, ezért csak -d kell: lived.",
         "en": "“In 2020” shows the past, and live ends in -e, so only -d is added: lived.",
-        "es": "«In 2020» indica pasado, y live termina en -e, por eso solo se añade -d: lived.",
-        "de": "„In 2020“ zeigt die Vergangenheit an, und live endet auf -e, deshalb kommt nur -d dazu: lived."
+        "es": "«In 2020» indica pasado, y live termina en -e, por eso solo se añade -d: lived."
       },
       "wrong": {
         "live": {
-          "hu": "A „live” jelen idő; a „2020” múltat jelez: lived.",
           "en": "“Live” is present; “2020” shows the past: lived.",
-          "es": "«Live» es presente; «2020» indica pasado: lived.",
-          "de": "„Live“ ist Präsens; „2020“ zeigt die Vergangenheit: lived."
+          "es": "«Live» es presente; «2020» indica pasado: lived."
         },
         "lives": {
-          "hu": "A „lives” egyszerű jelen he / she / it mellé; a múlthoz „lived” kell.",
           "en": "“Lives” is the present simple for he / she / it; for the past you need “lived”.",
-          "es": "«Lives» es el presente simple para he / she / it; para el pasado hace falta «lived».",
-          "de": "„Lives“ ist das Present Simple für he / she / it; für die Vergangenheit braucht man „lived“."
+          "es": "«Lives» es el presente simple para he / she / it; para el pasado hace falta «lived»."
         }
       },
       "examples": [
         "He lived in a big city.",
         "They lived here in 2019."
       ],
-      "tr": { "hu": "2020-ban Mexikóvárosban élt.", "en": "She lived in Mexico City in 2020.", "es": "Ella vivió en la Ciudad de México en 2020.", "de": "Sie lebte 2020 in Mexiko-Stadt." }
+      "tr": { "en": "She lived in Mexico City in 2020.", "es": "Ella vivió en la Ciudad de México en 2020." }
     },
     {
       "id": "pr-16",
@@ -464,30 +380,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „yesterday” múltat jelez, ezért -ed kell: played.",
         "en": "“Yesterday” shows the past, so you need -ed: played.",
-        "es": "«Yesterday» indica pasado, por eso hace falta -ed: played.",
-        "de": "„Yesterday“ zeigt die Vergangenheit an, deshalb braucht man -ed: played."
+        "es": "«Yesterday» indica pasado, por eso hace falta -ed: played."
       },
       "wrong": {
         "play": {
-          "hu": "A „play” jelen idő; a „yesterday” múlt, ezért „played”.",
           "en": "“Play” is present; “yesterday” is past, so “played”.",
-          "es": "«Play» es presente; «yesterday» es pasado, por eso «played».",
-          "de": "„Play“ ist Präsens; „yesterday“ ist Vergangenheit, deshalb „played“."
+          "es": "«Play» es presente; «yesterday» es pasado, por eso «played»."
         },
         "plays": {
-          "hu": "A „plays” egyszerű jelen he / she / it mellé; a múlt minden személynél „played”.",
           "en": "“Plays” is the present simple for he / she / it; the past is “played” for every person.",
-          "es": "«Plays» es el presente simple para he / she / it; el pasado es «played» para todas las personas.",
-          "de": "„Plays“ ist das Present Simple für he / she / it; die Vergangenheit ist für jede Person „played“."
+          "es": "«Plays» es el presente simple para he / she / it; el pasado es «played» para todas las personas."
         }
       },
       "examples": [
         "The children played in the park.",
         "I played with my dog."
       ],
-      "tr": { "hu": "Tegnap játszottunk.", "en": "We played games yesterday.", "es": "Jugamos juegos ayer.", "de": "Wir haben gestern Spiele gespielt." }
+      "tr": { "en": "We played games yesterday.", "es": "Jugamos juegos ayer." }
     },
     {
       "id": "pr-04",
@@ -499,30 +409,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „yesterday” múltat jelez, ezért -ed kell: opened.",
         "en": "“Yesterday” shows the past, so you need -ed: opened.",
-        "es": "«Yesterday» indica pasado, por eso hace falta -ed: opened.",
-        "de": "„Yesterday“ zeigt die Vergangenheit an, deshalb braucht man -ed: opened."
+        "es": "«Yesterday» indica pasado, por eso hace falta -ed: opened."
       },
       "wrong": {
         "open": {
-          "hu": "Az „open” jelen idő; a „yesterday” múlt, ezért „opened”.",
           "en": "“Open” is present; “yesterday” is past, so “opened”.",
-          "es": "«Open» es presente; «yesterday» es pasado, por eso «opened».",
-          "de": "„Open“ ist Präsens; „yesterday“ ist Vergangenheit, deshalb „opened“."
+          "es": "«Open» es presente; «yesterday» es pasado, por eso «opened»."
         },
         "opens": {
-          "hu": "Az „opens” egyszerű jelen he / she / it mellé; a múlthoz „opened” kell.",
           "en": "“Opens” is the present simple for he / she / it; for the past you need “opened”.",
-          "es": "«Opens» es el presente simple para he / she / it; para el pasado hace falta «opened».",
-          "de": "„Opens“ ist das Present Simple für he / she / it; für die Vergangenheit braucht man „opened“."
+          "es": "«Opens» es el presente simple para he / she / it; para el pasado hace falta «opened»."
         }
       },
       "examples": [
         "She opened the window.",
         "I opened my bag."
       ],
-      "tr": { "hu": "Tegnap kinyitották az ajtót.", "en": "They opened the door yesterday.", "es": "Ellos abrieron la puerta ayer.", "de": "Sie haben gestern die Tür geöffnet." }
+      "tr": { "en": "They opened the door yesterday.", "es": "Ellos abrieron la puerta ayer." }
     },
     {
       "kind": "why",
@@ -530,46 +434,34 @@
       "es": "I watched TV last night.",
       "target": "watched",
       "tr": {
-        "hu": "Tegnap este tévét néztem.",
         "en": "I watched TV last night.",
-        "es": "Anoche vi la tele.",
-        "de": "Gestern Abend habe ich ferngesehen."
+        "es": "Anoche vi la tele."
       },
       "options": [
         {
           "text": {
-            "hu": "szabályos ige egyszerű múltja: ige + -ed",
             "en": "past simple of a regular verb: verb + -ed",
-            "es": "pasado simple de un verbo regular: verbo + -ed",
-            "de": "Past Simple eines regelmäßigen Verbs: Verb + -ed"
+            "es": "pasado simple de un verbo regular: verbo + -ed"
           }
         },
         {
           "text": {
-            "hu": "egyszerű jelen: az ige + -s",
             "en": "present simple: the verb + -s",
-            "es": "presente simple: el verbo + -s",
-            "de": "Present Simple: das Verb + -s"
+            "es": "presente simple: el verbo + -s"
           },
           "wrong": {
-            "hu": "A „last night” múltat jelez, és az -ed a múlt jele; az -s a he / she / it jelen idejéé.",
             "en": "“Last night” shows the past, and -ed is the mark of the past; -s belongs to the present of he / she / it.",
-            "es": "«Last night» indica pasado, y -ed es la marca del pasado; -s pertenece al presente de he / she / it.",
-            "de": "„Last night“ zeigt die Vergangenheit an, und -ed ist das Zeichen der Vergangenheit; -s gehört zum Präsens von he / she / it."
+            "es": "«Last night» indica pasado, y -ed es la marca del pasado; -s pertenece al presente de he / she / it."
           }
         },
         {
           "text": {
-            "hu": "did + ige, mint a kijelentésben is",
             "en": "did + verb, also in statements",
-            "es": "did + verbo, también en las afirmaciones",
-            "de": "did + Verb, auch in Aussagen"
+            "es": "did + verbo, también en las afirmaciones"
           },
           "wrong": {
-            "hu": "A kijelentésben az ige maga kap -ed-et; a „did” csak tagadásban és kérdésben kell.",
             "en": "In a statement the verb itself takes -ed; “did” is only needed in negatives and questions.",
-            "es": "En una afirmación el verbo mismo lleva -ed; «did» solo hace falta en negaciones y preguntas.",
-            "de": "In der Aussage bekommt das Verb selbst -ed; „did“ braucht man nur in Verneinung und Frage."
+            "es": "En una afirmación el verbo mismo lleva -ed; «did» solo hace falta en negaciones y preguntas."
           }
         }
       ],
@@ -585,30 +477,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A study mássalhangzó + y végű, ezért az y helyére -ied kerül: studied.",
         "en": "Study ends in consonant + y, so the y becomes -ied: studied.",
-        "es": "Study termina en consonante + y, por eso la y cambia a -ied: studied.",
-        "de": "Study endet auf Konsonant + y, deshalb wird das y zu -ied: studied."
+        "es": "Study termina en consonante + y, por eso la y cambia a -ied: studied."
       },
       "wrong": {
         "studyed": {
-          "hu": "Mássalhangzó + y után az y -ied lesz: studied, nem „studyed”.",
           "en": "After consonant + y the y becomes -ied: studied, not “studyed”.",
-          "es": "Después de consonante + y la y pasa a -ied: studied, no «studyed».",
-          "de": "Nach Konsonant + y wird das y zu -ied: studied, nicht „studyed“."
+          "es": "Después de consonante + y la y pasa a -ied: studied, no «studyed»."
         },
         "studys": {
-          "hu": "A „studys” nem létező alak, és a múlthoz -ied kell: studied.",
           "en": "“Studys” does not exist, and the past needs -ied: studied.",
-          "es": "«Studys» no existe, y el pasado necesita -ied: studied.",
-          "de": "„Studys“ gibt es nicht, und die Vergangenheit braucht -ied: studied."
+          "es": "«Studys» no existe, y el pasado necesita -ied: studied."
         }
       },
       "examples": [
         "She studied at night.",
         "We studied English at school."
       ],
-      "tr": { "hu": "Tavaly angolul tanult.", "en": "He studied English last year.", "es": "Él estudió inglés el año pasado.", "de": "Er hat letztes Jahr Englisch gelernt." }
+      "tr": { "en": "He studied English last year.", "es": "Él estudió inglés el año pasado." }
     },
     {
       "id": "pr-06",
@@ -620,30 +506,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „last night” múltat jelez, ezért -ed kell: listened.",
         "en": "“Last night” shows the past, so you need -ed: listened.",
-        "es": "«Last night» indica pasado, por eso hace falta -ed: listened.",
-        "de": "„Last night“ zeigt die Vergangenheit an, deshalb braucht man -ed: listened."
+        "es": "«Last night» indica pasado, por eso hace falta -ed: listened."
       },
       "wrong": {
         "listen": {
-          "hu": "A „listen” jelen idő; a „last night” múlt, ezért „listened”.",
           "en": "“Listen” is present; “last night” is past, so “listened”.",
-          "es": "«Listen» es presente; «last night» es pasado, por eso «listened».",
-          "de": "„Listen“ ist Präsens; „last night“ ist Vergangenheit, deshalb „listened“."
+          "es": "«Listen» es presente; «last night» es pasado, por eso «listened»."
         },
         "listens": {
-          "hu": "A „listens” egyszerű jelen he / she / it mellé; a múlthoz „listened” kell.",
           "en": "“Listens” is the present simple for he / she / it; for the past you need “listened”.",
-          "es": "«Listens» es el presente simple para he / she / it; para el pasado hace falta «listened».",
-          "de": "„Listens“ ist das Present Simple für he / she / it; für die Vergangenheit braucht man „listened“."
+          "es": "«Listens» es el presente simple para he / she / it; para el pasado hace falta «listened»."
         }
       },
       "examples": [
         "He listened to the radio.",
         "I listened to the teacher."
       ],
-      "tr": { "hu": "Tegnap este zenét hallgatott.", "en": "She listened to music last night.", "es": "Ella escuchó música anoche.", "de": "Sie hat gestern Abend Musik gehört." }
+      "tr": { "en": "She listened to music last night.", "es": "Ella escuchó música anoche." }
     },
     {
       "id": "pr-17",
@@ -663,30 +543,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „yesterday” múltat jelez, ezért -ed kell: cooked.",
         "en": "“Yesterday” shows the past, so you need -ed: cooked.",
-        "es": "«Yesterday» indica pasado, por eso hace falta -ed: cooked.",
-        "de": "„Yesterday“ zeigt die Vergangenheit an, deshalb braucht man -ed: cooked."
+        "es": "«Yesterday» indica pasado, por eso hace falta -ed: cooked."
       },
       "wrong": {
         "cook": {
-          "hu": "A „cook” jelen idő; a „yesterday” múlt, ezért „cooked”.",
           "en": "“Cook” is present; “yesterday” is past, so “cooked”.",
-          "es": "«Cook» es presente; «yesterday» es pasado, por eso «cooked».",
-          "de": "„Cook“ ist Präsens; „yesterday“ ist Vergangenheit, deshalb „cooked“."
+          "es": "«Cook» es presente; «yesterday» es pasado, por eso «cooked»."
         },
         "cooks": {
-          "hu": "A „cooks” egyszerű jelen; a múlthoz „cooked” kell.",
           "en": "“Cooks” is the present simple; for the past you need “cooked”.",
-          "es": "«Cooks» es el presente simple; para el pasado hace falta «cooked».",
-          "de": "„Cooks“ ist das Present Simple; für die Vergangenheit braucht man „cooked“."
+          "es": "«Cooks» es el presente simple; para el pasado hace falta «cooked»."
         }
       },
       "examples": [
         "She cooked lunch.",
         "We cooked a cake."
       ],
-      "tr": { "hu": "Anyám tegnap vacsorát főzött.", "en": "My mother cooked dinner yesterday.", "es": "Mi mamá cocinó la cena ayer.", "de": "Meine Mutter hat gestern das Abendessen gekocht." }
+      "tr": { "en": "My mother cooked dinner yesterday.", "es": "Mi mamá cocinó la cena ayer." }
     },
     {
       "id": "pr-08",
@@ -698,30 +572,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A múlt tagadása didn’t + alapige: I didn’t work yesterday.",
         "en": "The negative of the past is didn’t + base verb: I didn’t work yesterday.",
-        "es": "La negación del pasado es didn’t + verbo base: I didn’t work yesterday.",
-        "de": "Die Verneinung der Vergangenheit ist didn’t + Grundform: I didn’t work yesterday."
+        "es": "La negación del pasado es didn’t + verbo base: I didn’t work yesterday."
       },
       "wrong": {
         "don't": {
-          "hu": "A „don’t” jelen idő; a „yesterday” múltat jelez: didn’t.",
           "en": "“Don’t” is present; “yesterday” shows the past: didn’t.",
-          "es": "«Don’t» es presente; «yesterday» indica pasado: didn’t.",
-          "de": "„Don’t“ ist Präsens; „yesterday“ zeigt die Vergangenheit: didn’t."
+          "es": "«Don’t» es presente; «yesterday» indica pasado: didn’t."
         },
         "wasn't": {
-          "hu": "A „wasn’t” a to be múlt tagadása; a „work” rendes ige: didn’t work.",
           "en": "“Wasn’t” is the past negative of to be; “work” is a normal verb: didn’t work.",
-          "es": "«Wasn’t» es la negación pasada de to be; «work» es un verbo normal: didn’t work.",
-          "de": "„Wasn’t“ ist die Vergangenheitsverneinung von to be; „work“ ist ein normales Verb: didn’t work."
+          "es": "«Wasn’t» es la negación pasada de to be; «work» es un verbo normal: didn’t work."
         }
       },
       "examples": [
         "We didn't play yesterday.",
         "She didn't cook."
       ],
-      "tr": { "hu": "Tegnap nem dolgoztam.", "en": "I didn't work yesterday.", "es": "No trabajé ayer.", "de": "Ich habe gestern nicht gearbeitet." }
+      "tr": { "en": "I didn't work yesterday.", "es": "No trabajé ayer." }
     },
     {
       "id": "pr-09",
@@ -733,30 +601,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A didn’t után az ige alapalakja áll, -ed nélkül: She didn’t watch TV.",
         "en": "After didn’t the verb stays in its base form, with no -ed: She didn’t watch TV.",
-        "es": "Después de didn’t el verbo va en forma base, sin -ed: She didn’t watch TV.",
-        "de": "Nach didn’t steht das Verb in der Grundform, ohne -ed: She didn’t watch TV."
+        "es": "Después de didn’t el verbo va en forma base, sin -ed: She didn’t watch TV."
       },
       "wrong": {
         "watched": {
-          "hu": "A múlt jele már a „didn’t”-ben van; az igére nem kerül még egy -ed.",
           "en": "The past is already in “didn’t”; the verb does not take another -ed.",
-          "es": "El pasado ya está en «didn’t»; el verbo no lleva otro -ed.",
-          "de": "Die Vergangenheit steckt schon in „didn’t“; das Verb bekommt kein zweites -ed."
+          "es": "El pasado ya está en «didn’t»; el verbo no lleva otro -ed."
         },
         "watches": {
-          "hu": "A „didn’t” után nem kap az ige -s-t, az alapalak kell: watch.",
           "en": "After “didn’t” the verb takes no -s; the base form is needed: watch.",
-          "es": "Después de «didn’t» el verbo no lleva -s; hace falta la forma base: watch.",
-          "de": "Nach „didn’t“ bekommt das Verb kein -s; die Grundform ist nötig: watch."
+          "es": "Después de «didn’t» el verbo no lleva -s; hace falta la forma base: watch."
         }
       },
       "examples": [
         "I didn't call my mother.",
         "They didn't play."
       ],
-      "tr": { "hu": "Tegnap este nem nézett tévét.", "en": "She didn't watch TV last night.", "es": "Ella no vio la tele anoche.", "de": "Sie hat gestern Abend nicht ferngesehen." }
+      "tr": { "en": "She didn't watch TV last night.", "es": "Ella no vio la tele anoche." }
     },
     {
       "kind": "why",
@@ -764,46 +626,34 @@
       "es": "She didn't watch TV.",
       "target": "didn't",
       "tr": {
-        "hu": "Nem nézett tévét.",
         "en": "She didn't watch TV.",
-        "es": "Ella no vio la tele.",
-        "de": "Sie hat nicht ferngesehen."
+        "es": "Ella no vio la tele."
       },
       "options": [
         {
           "text": {
-            "hu": "didn’t + alapige: a múlt jele a didn’t-ben van",
             "en": "didn’t + base verb: the past is marked in didn’t",
-            "es": "didn’t + verbo base: el pasado está marcado en didn’t",
-            "de": "didn’t + Grundform: die Vergangenheit steckt in didn’t"
+            "es": "didn’t + verbo base: el pasado está marcado en didn’t"
           }
         },
         {
           "text": {
-            "hu": "didn’t + ige-ed: didn’t watched",
             "en": "didn’t + verb-ed: didn’t watched",
-            "es": "didn’t + verbo-ed: didn’t watched",
-            "de": "didn’t + Verb-ed: didn’t watched"
+            "es": "didn’t + verbo-ed: didn’t watched"
           },
           "wrong": {
-            "hu": "A múlt jele már a „didn’t”-ben van, ezért az ige nem kap -ed-et: didn’t watch.",
             "en": "The past is already in “didn’t”, so the verb takes no -ed: didn’t watch.",
-            "es": "El pasado ya está en «didn’t», por eso el verbo no lleva -ed: didn’t watch.",
-            "de": "Die Vergangenheit steckt schon in „didn’t“, deshalb bekommt das Verb kein -ed: didn’t watch."
+            "es": "El pasado ya está en «didn’t», por eso el verbo no lleva -ed: didn’t watch."
           }
         },
         {
           "text": {
-            "hu": "doesn’t + alapige",
             "en": "doesn’t + base verb",
-            "es": "doesn’t + verbo base",
-            "de": "doesn’t + Grundform"
+            "es": "doesn’t + verbo base"
           },
           "wrong": {
-            "hu": "A „doesn’t” jelen idő; a múltat a „didn’t” fejezi ki.",
             "en": "“Doesn’t” is present; the past is expressed by “didn’t”.",
-            "es": "«Doesn’t» es presente; el pasado se expresa con «didn’t».",
-            "de": "„Doesn’t“ ist Präsens; die Vergangenheit drückt „didn’t“ aus."
+            "es": "«Doesn’t» es presente; el pasado se expresa con «didn’t»."
           }
         }
       ],
@@ -819,30 +669,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A múlt kérdése Did-del indul: Did you work yesterday?",
         "en": "A past question starts with Did: Did you work yesterday?",
-        "es": "Una pregunta en pasado empieza con Did: Did you work yesterday?",
-        "de": "Eine Frage in der Vergangenheit beginnt mit Did: Did you work yesterday?"
+        "es": "Una pregunta en pasado empieza con Did: Did you work yesterday?"
       },
       "wrong": {
         "Do": {
-          "hu": "A „Do” jelen idő; a „yesterday” múltat jelez: Did.",
           "en": "“Do” is present; “yesterday” shows the past: Did.",
-          "es": "«Do» es presente; «yesterday» indica pasado: Did.",
-          "de": "„Do“ ist Präsens; „yesterday“ zeigt die Vergangenheit: Did."
+          "es": "«Do» es presente; «yesterday» indica pasado: Did."
         },
         "Were": {
-          "hu": "A „Were” a to be múltja; a „work” rendes ige, ezért „Did you work?”.",
           "en": "“Were” is the past of to be; “work” is a normal verb, so “Did you work?”.",
-          "es": "«Were» es el pasado de to be; «work» es un verbo normal, por eso «Did you work?».",
-          "de": "„Were“ ist die Vergangenheit von to be; „work“ ist ein normales Verb, deshalb „Did you work?“."
+          "es": "«Were» es el pasado de to be; «work» es un verbo normal, por eso «Did you work?»."
         }
       },
       "examples": [
         "Did she call you?",
         "Did they play games?"
       ],
-      "tr": { "hu": "Dolgoztál tegnap?", "en": "Did you work yesterday?", "es": "¿Trabajaste ayer?", "de": "Hast du gestern gearbeitet?" }
+      "tr": { "en": "Did you work yesterday?", "es": "¿Trabajaste ayer?" }
     },
     {
       "id": "pr-18",
@@ -862,30 +706,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A Did után az alapige áll, -ed nélkül: Did he close the door?",
         "en": "After Did the base verb follows, with no -ed: Did he close the door?",
-        "es": "Después de Did va el verbo base, sin -ed: Did he close the door?",
-        "de": "Nach Did folgt die Grundform, ohne -ed: Did he close the door?"
+        "es": "Después de Did va el verbo base, sin -ed: Did he close the door?"
       },
       "wrong": {
         "closed": {
-          "hu": "A múlt jele már a „Did”-ben van; az igére nem kerül -ed.",
           "en": "The past is already in “Did”; the verb takes no -ed.",
-          "es": "El pasado ya está en «Did»; el verbo no lleva -ed.",
-          "de": "Die Vergangenheit steckt schon in „Did“; das Verb bekommt kein -ed."
+          "es": "El pasado ya está en «Did»; el verbo no lleva -ed."
         },
         "closes": {
-          "hu": "A „Did” után nem kap az ige -s-t: close.",
           "en": "After “Did” the verb takes no -s: close.",
-          "es": "Después de «Did» el verbo no lleva -s: close.",
-          "de": "Nach „Did“ bekommt das Verb kein -s: close."
+          "es": "Después de «Did» el verbo no lleva -s: close."
         }
       },
       "examples": [
         "Did you open the window?",
         "Did she call her mother?"
       ],
-      "tr": { "hu": "Bezárta az ajtót?", "en": "Did he close the door?", "es": "¿Él cerró la puerta?", "de": "Hat er die Tür geschlossen?" }
+      "tr": { "en": "Did he close the door?", "es": "¿Él cerró la puerta?" }
     },
     {
       "id": "pr-12",
@@ -897,30 +735,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A múlt kérdésében kérdőszó + did + alany + alapige: Where did you live?",
         "en": "In a past question: question word + did + subject + base verb: Where did you live?",
-        "es": "En una pregunta en pasado: palabra interrogativa + did + sujeto + verbo base: Where did you live?",
-        "de": "In einer Frage in der Vergangenheit: Fragewort + did + Subjekt + Grundform: Where did you live?"
+        "es": "En una pregunta en pasado: palabra interrogativa + did + sujeto + verbo base: Where did you live?"
       },
       "wrong": {
         "do": {
-          "hu": "A „do” jelen idő; a „last year” múltat jelez: did.",
           "en": "“Do” is present; “last year” shows the past: did.",
-          "es": "«Do» es presente; «last year» indica pasado: did.",
-          "de": "„Do“ ist Präsens; „last year“ zeigt die Vergangenheit: did."
+          "es": "«Do» es presente; «last year» indica pasado: did."
         },
         "were": {
-          "hu": "A „were” a to be múltja; az „live” rendes ige, ezért „did you live”.",
           "en": "“Were” is the past of to be; “live” is a normal verb, so “did you live”.",
-          "es": "«Were» es el pasado de to be; «live» es un verbo normal, por eso «did you live».",
-          "de": "„Were“ ist die Vergangenheit von to be; „live“ ist ein normales Verb, deshalb „did you live“."
+          "es": "«Were» es el pasado de to be; «live» es un verbo normal, por eso «did you live»."
         }
       },
       "examples": [
         "Where did she work?",
         "What did they play?"
       ],
-      "tr": { "hu": "Hol éltél tavaly?", "en": "Where did you live last year?", "es": "¿Dónde viviste el año pasado?", "de": "Wo hast du letztes Jahr gewohnt?" }
+      "tr": { "en": "Where did you live last year?", "es": "¿Dónde viviste el año pasado?" }
     },
     {
       "id": "pr-24",
@@ -962,30 +794,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A rövid válasz a kérdés segédigéjét használja: Did you…? → No, I didn’t.",
         "en": "The short answer reuses the helper of the question: Did you…? → No, I didn’t.",
-        "es": "La respuesta corta reutiliza el auxiliar de la pregunta: Did you…? → No, I didn’t.",
-        "de": "Die Kurzantwort nimmt das Hilfsverb der Frage wieder auf: Did you…? → No, I didn’t."
+        "es": "La respuesta corta reutiliza el auxiliar de la pregunta: Did you…? → No, I didn’t."
       },
       "wrong": {
         "don't": {
-          "hu": "A „don’t” jelen idő; a „Did…?” kérdésre „didn’t” a válasz.",
           "en": "“Don’t” is present; a “Did…?” question is answered with “didn’t”.",
-          "es": "«Don’t» es presente; una pregunta con «Did…?» se responde con «didn’t».",
-          "de": "„Don’t“ ist Präsens; eine „Did…?“-Frage beantwortet man mit „didn’t“."
+          "es": "«Don’t» es presente; una pregunta con «Did…?» se responde con «didn’t»."
         },
         "wasn't": {
-          "hu": "A „wasn’t” a to be tagadása; a „Did…?” kérdésre „didn’t”-tel válaszolunk.",
           "en": "“Wasn’t” is the negative of to be; a “Did…?” question is answered with “didn’t”.",
-          "es": "«Wasn’t» es la negación de to be; una pregunta con «Did…?» se responde con «didn’t».",
-          "de": "„Wasn’t“ ist die Verneinung von to be; eine „Did…?“-Frage beantwortet man mit „didn’t“."
+          "es": "«Wasn’t» es la negación de to be; una pregunta con «Did…?» se responde con «didn’t»."
         }
       },
       "examples": [
         "Did she call? No, she didn't.",
         "Did they play? Yes, they did."
       ],
-      "tr": { "hu": "Dolgoztál tegnap? Nem.", "en": "Did you work yesterday? No, I didn't.", "es": "¿Trabajaste ayer? No, no lo hice.", "de": "Hast du gestern gearbeitet? Nein, habe ich nicht." }
+      "tr": { "en": "Did you work yesterday? No, I didn't.", "es": "¿Trabajaste ayer? No, no lo hice." }
     },
     {
       "id": "pr-19",
@@ -1001,46 +827,34 @@
       "es": "The bus stopped.",
       "target": "stopped",
       "tr": {
-        "hu": "A busz megállt.",
         "en": "The bus stopped.",
-        "es": "El autobús paró.",
-        "de": "Der Bus hielt an."
+        "es": "El autobús paró."
       },
       "options": [
         {
           "text": {
-            "hu": "rövid, egy szótagú ige: a mássalhangzó megkettőződik + -ed",
             "en": "short one-syllable verb: the consonant is doubled + -ed",
-            "es": "verbo corto de una sílaba: se duplica la consonante + -ed",
-            "de": "kurzes einsilbiges Verb: der Konsonant wird verdoppelt + -ed"
+            "es": "verbo corto de una sílaba: se duplica la consonante + -ed"
           }
         },
         {
           "text": {
-            "hu": "csak -ed kerül a végére",
             "en": "just -ed is added",
-            "es": "solo se añade -ed",
-            "de": "es wird nur -ed angehängt"
+            "es": "solo se añade -ed"
           },
           "wrong": {
-            "hu": "A stop rövid egy szótagú ige (mássalhangzó + magánhangzó + mássalhangzó), ezért a p megkettőződik.",
             "en": "Stop is a short one-syllable verb (consonant + vowel + consonant), so the p is doubled.",
-            "es": "Stop es un verbo corto de una sílaba (consonante + vocal + consonante), por eso la p se duplica.",
-            "de": "Stop ist ein kurzes einsilbiges Verb (Konsonant + Vokal + Konsonant), deshalb wird das p verdoppelt."
+            "es": "Stop es un verbo corto de una sílaba (consonante + vocal + consonante), por eso la p se duplica."
           }
         },
         {
           "text": {
-            "hu": "-e végű ige: csak -d kerül a végére",
             "en": "verb ending in -e: only -d is added",
-            "es": "verbo que termina en -e: solo se añade -d",
-            "de": "Verb auf -e: es wird nur -d angehängt"
+            "es": "verbo que termina en -e: solo se añade -d"
           },
           "wrong": {
-            "hu": "A stop nem -e végű; a -d szabály az -e végű igékre vonatkozik (live → lived).",
             "en": "Stop does not end in -e; the -d rule is for verbs ending in -e (live → lived).",
-            "es": "Stop no termina en -e; la regla de -d es para verbos que acaban en -e (live → lived).",
-            "de": "Stop endet nicht auf -e; die -d-Regel gilt für Verben auf -e (live → lived)."
+            "es": "Stop no termina en -e; la regla de -d es para verbos que acaban en -e (live → lived)."
           }
         }
       ],
@@ -1056,30 +870,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „hace dos días” angolul „two days ago”, a mondat végén: I called my mother two days ago.",
         "en": "Spanish “hace dos días” is “two days ago”, at the end of the sentence: I called my mother two days ago.",
-        "es": "El «hace dos días» del español es «two days ago», al final de la oración: I called my mother two days ago.",
-        "de": "Spanisch „hace dos días“ heißt „two days ago“, am Satzende: I called my mother two days ago."
+        "es": "El «hace dos días» del español es «two days ago», al final de la oración: I called my mother two days ago."
       },
       "wrong": {
         "before": {
-          "hu": "A „before” egy másik eseményhez viszonyít (before dinner); a mostanhoz képest „ago” kell.",
           "en": "“Before” relates to another event (before dinner); counting back from now needs “ago”.",
-          "es": "«Before» se refiere a otro hecho (before dinner); para contar hacia atrás desde ahora hace falta «ago».",
-          "de": "„Before“ bezieht sich auf ein anderes Ereignis (before dinner); vom Jetzt aus zurückgerechnet braucht man „ago“."
+          "es": "«Before» se refiere a otro hecho (before dinner); para contar hacia atrás desde ahora hace falta «ago»."
         },
         "last": {
-          "hu": "A „last” a főnév előtt áll (last week); a „two days” után „ago” jön.",
           "en": "“Last” goes before the noun (last week); after “two days” comes “ago”.",
-          "es": "«Last» va delante del nombre (last week); después de «two days» va «ago».",
-          "de": "„Last“ steht vor dem Nomen (last week); nach „two days“ kommt „ago“."
+          "es": "«Last» va delante del nombre (last week); después de «two days» va «ago»."
         }
       },
       "examples": [
         "We visited Mexico a year ago.",
         "She called a week ago."
       ],
-      "tr": { "hu": "Két nappal ezelőtt felhívtam az anyámat.", "en": "I called my mother two days ago.", "es": "Llamé a mi mamá hace dos días.", "de": "Ich habe meine Mutter vor zwei Tagen angerufen." }
+      "tr": { "en": "I called my mother two days ago.", "es": "Llamé a mi mamá hace dos días." }
     },
     {
       "id": "pr-15",
@@ -1091,30 +899,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A stop egy szótagú, mássalhangzó + magánhangzó + mássalhangzó: a p megkettőződik: stopped.",
         "en": "Stop has one syllable and ends in consonant + vowel + consonant: the p is doubled: stopped.",
-        "es": "Stop tiene una sílaba y termina en consonante + vocal + consonante: la p se duplica: stopped.",
-        "de": "Stop hat eine Silbe und endet auf Konsonant + Vokal + Konsonant: Das p wird verdoppelt: stopped."
+        "es": "Stop tiene una sílaba y termina en consonante + vocal + consonante: la p se duplica: stopped."
       },
       "wrong": {
         "stoped": {
-          "hu": "A rövid egy szótagú igéknél a végső mássalhangzó megkettőződik: stopped, nem „stoped”.",
           "en": "In short one-syllable verbs the last consonant is doubled: stopped, not “stoped”.",
-          "es": "En los verbos cortos de una sílaba se duplica la última consonante: stopped, no «stoped».",
-          "de": "Bei kurzen einsilbigen Verben wird der letzte Konsonant verdoppelt: stopped, nicht „stoped“."
+          "es": "En los verbos cortos de una sílaba se duplica la última consonante: stopped, no «stoped»."
         },
         "stopes": {
-          "hu": "A „stopes” nem létező alak; a stop múltja: stopped.",
           "en": "“Stopes” does not exist; the past of stop is stopped.",
-          "es": "«Stopes» no existe; el pasado de stop es stopped.",
-          "de": "„Stopes“ gibt es nicht; die Vergangenheit von stop ist stopped."
+          "es": "«Stopes» no existe; el pasado de stop es stopped."
         }
       },
       "examples": [
         "We stopped at the bank.",
         "She planned a party."
       ],
-      "tr": { "hu": "A busz megállt az állomáson.", "en": "The bus stopped at the station.", "es": "El camión se detuvo en la estación.", "de": "Der Bus hielt an der Haltestelle." }
+      "tr": { "en": "The bus stopped at the station.", "es": "El camión se detuvo en la estación." }
     },
     {
       "id": "pr-20",

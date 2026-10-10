@@ -3,72 +3,52 @@
   "topic": "basic_verbs",
   "level": "A0",
   "title": {
-    "hu": "Alapigék (be, have, go, want, need, live…)",
     "en": "Basic verbs (be, have, go, want, need, live…)",
-    "es": "Verbos básicos (be, have, go, want, need, live…)",
-    "de": "Grundverben (be, have, go, want, need, live…)"
+    "es": "Verbos básicos (be, have, go, want, need, live…)"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "Néhány ige minden mondathoz kell: be, have, go, come, want, need, like, eat, drink, live, work, speak. Ezekkel már sokat elmondhatsz. Az angol mondat felépítése: ALANY + IGE + a többi. Az alany kötelező (I, you, he, she, it, we, they), és az ige az I, you, we, they mellett az alapalak. Csak a he / she / it mellett változik: kap egy -s-t (wants, needs, lives), a go -es-t (goes), a have pedig has lesz. A „be” egyedi: am, is, are.",
         "en": "A few verbs are needed in almost every sentence: be, have, go, come, want, need, like, eat, drink, live, work, speak. With them you can already say a lot. The English sentence is built as SUBJECT + VERB + the rest. The subject is required (I, you, he, she, it, we, they), and the verb is in its base form with I, you, we, they. It changes only with he / she / it: it gets an -s (wants, needs, lives), go gets -es (goes), and have becomes has. “Be” is special: am, is, are.",
-        "es": "Unos pocos verbos hacen falta en casi todas las oraciones: be, have, go, come, want, need, like, eat, drink, live, work, speak. Con ellos ya puedes decir mucho. La oración inglesa se construye así: SUJETO + VERBO + el resto. El sujeto es obligatorio (I, you, he, she, it, we, they), y el verbo va en forma base con I, you, we, they. Solo cambia con he / she / it: recibe una -s (wants, needs, lives), go recibe -es (goes) y have pasa a has. «Be» es especial: am, is, are.",
-        "de": "Ein paar Verben braucht man in fast jedem Satz: be, have, go, come, want, need, like, eat, drink, live, work, speak. Damit kannst du schon viel sagen. Der englische Satz ist so aufgebaut: SUBJEKT + VERB + der Rest. Das Subjekt ist Pflicht (I, you, he, she, it, we, they), und das Verb steht bei I, you, we, they in der Grundform. Nur bei he / she / it ändert es sich: Es bekommt ein -s (wants, needs, lives), go bekommt -es (goes), und have wird zu has. „Be“ ist besonders: am, is, are."
+        "es": "Unos pocos verbos hacen falta en casi todas las oraciones: be, have, go, come, want, need, like, eat, drink, live, work, speak. Con ellos ya puedes decir mucho. La oración inglesa se construye así: SUJETO + VERBO + el resto. El sujeto es obligatorio (I, you, he, she, it, we, they), y el verbo va en forma base con I, you, we, they. Solo cambia con he / she / it: recibe una -s (wants, needs, lives), go recibe -es (goes) y have pasa a has. «Be» es especial: am, is, are."
       }
     },
     {
       "kind": "table",
       "id": "bv-forms",
       "title": {
-        "hu": "Alapigék",
         "en": "Basic verbs",
-        "es": "Verbos básicos",
-        "de": "Grundverben"
+        "es": "Verbos básicos"
       },
       "header": [
         {
-          "hu": "Személy",
           "en": "Person",
-          "es": "Persona",
-          "de": "Person"
+          "es": "Persona"
         },
         {
-          "hu": "be",
           "en": "be",
-          "es": "be",
-          "de": "be"
+          "es": "be"
         },
         {
-          "hu": "have",
           "en": "have",
-          "es": "have",
-          "de": "have"
+          "es": "have"
         },
         {
-          "hu": "go",
           "en": "go",
-          "es": "go",
-          "de": "go"
+          "es": "go"
         },
         {
-          "hu": "want",
           "en": "want",
-          "es": "want",
-          "de": "want"
+          "es": "want"
         },
         {
-          "hu": "need",
           "en": "need",
-          "es": "need",
-          "de": "need"
+          "es": "need"
         },
         {
-          "hu": "live",
           "en": "live",
-          "es": "live",
-          "de": "live"
+          "es": "live"
         }
       ],
       "rows": [
@@ -122,120 +102,94 @@
     {
       "kind": "list",
       "title": {
-        "hu": "A leggyakoribb igék",
         "en": "The most common verbs",
-        "es": "Los verbos más comunes",
-        "de": "Die häufigsten Verben"
+        "es": "Los verbos más comunes"
       },
       "items": [
         {
           "text": {
-            "hu": "BE = ser ÉS estar egyben: I am a doctor. I am tired. HAVE = tener: I have a phone. Az éhség, fázás, kor kifejezése „be”-vel megy: I am hungry, I am cold.",
             "en": "BE = ser AND estar in one: I am a doctor. I am tired. HAVE = tener: I have a phone. Hunger, cold and age use “be”: I am hungry, I am cold.",
-            "es": "BE = ser Y estar en uno: I am a doctor. I am tired. HAVE = tener: I have a phone. El hambre, el frío y la edad llevan «be»: I am hungry, I am cold.",
-            "de": "BE = ser UND estar in einem: I am a doctor. I am tired. HAVE = tener: I have a phone. Hunger, Kälte und Alter werden mit „be“ gebildet: I am hungry, I am cold."
+            "es": "BE = ser Y estar en uno: I am a doctor. I am tired. HAVE = tener: I have a phone. El hambre, el frío y la edad llevan «be»: I am hungry, I am cold."
           },
           "examples": [
             {
               "es": "I am happy.",
               "tr": {
-                "hu": "Boldog vagyok.",
                 "en": "I am happy.",
-                "es": "Estoy contento.",
-                "de": "Ich bin glücklich."
+                "es": "Estoy contento."
               }
             },
             {
               "es": "He has a new phone number.",
               "tr": {
-                "hu": "Új telefonszáma van.",
                 "en": "He has a new phone number.",
-                "es": "Él tiene un número de teléfono nuevo.",
-                "de": "Er hat eine neue Telefonnummer."
+                "es": "Él tiene un número de teléfono nuevo."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "GO = ir, COME = venir: I go to the market. She comes here. A hely előtt „to” áll: go to the bank.",
             "en": "GO = ir, COME = venir: I go to the market. She comes here. Before a place use “to”: go to the bank.",
-            "es": "GO = ir, COME = venir: I go to the market. She comes here. Delante de un lugar va «to»: go to the bank.",
-            "de": "GO = ir, COME = venir: I go to the market. She comes here. Vor einem Ort steht „to“: go to the bank."
+            "es": "GO = ir, COME = venir: I go to the market. She comes here. Delante de un lugar va «to»: go to the bank."
           },
           "examples": [
             {
               "es": "I go to the market today.",
               "tr": {
-                "hu": "Ma a piacra megyek.",
                 "en": "I go to the market today.",
-                "es": "Hoy voy al mercado.",
-                "de": "Heute gehe ich zum Markt."
+                "es": "Hoy voy al mercado."
               }
             },
             {
               "es": "She goes to the bank.",
               "tr": {
-                "hu": "A bankba megy.",
                 "en": "She goes to the bank.",
-                "es": "Ella va al banco.",
-                "de": "Sie geht zur Bank."
+                "es": "Ella va al banco."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "WANT = akar, NEED = szüksége van rá, LIKE = szeret, kedvel: I want water. He needs help. She likes her job.",
             "en": "WANT = wish for, NEED = must have, LIKE = enjoy: I want water. He needs help. She likes her job.",
-            "es": "WANT = querer, NEED = necesitar, LIKE = gustar (I like music = me gusta la música): I want water. He needs help. She likes her job.",
-            "de": "WANT = wollen / möchten, NEED = brauchen, LIKE = mögen: I want water. He needs help. She likes her job."
+            "es": "WANT = querer, NEED = necesitar, LIKE = gustar (I like music = me gusta la música): I want water. He needs help. She likes her job."
           },
           "examples": [
             {
               "es": "I want water.",
               "tr": {
-                "hu": "Vizet kérek.",
                 "en": "I want water.",
-                "es": "Quiero agua.",
-                "de": "Ich möchte Wasser."
+                "es": "Quiero agua."
               }
             },
             {
               "es": "He needs help.",
               "tr": {
-                "hu": "Segítségre van szüksége.",
                 "en": "He needs help.",
-                "es": "Él necesita ayuda.",
-                "de": "Er braucht Hilfe."
+                "es": "Él necesita ayuda."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "LIVE = lakik, WORK = dolgozik, EAT = eszik, DRINK = iszik, SPEAK = beszél: They live here. We work at the hotel. He speaks my language.",
             "en": "LIVE = to have your home, WORK = to do a job, EAT and DRINK = food and water, SPEAK = to talk: They live here. We work at the hotel. He speaks my language.",
-            "es": "LIVE = vivir, WORK = trabajar, EAT = comer, DRINK = beber, SPEAK = hablar: They live here. We work at the hotel. He speaks my language.",
-            "de": "LIVE = wohnen, WORK = arbeiten, EAT = essen, DRINK = trinken, SPEAK = sprechen: They live here. We work at the hotel. He speaks my language."
+            "es": "LIVE = vivir, WORK = trabajar, EAT = comer, DRINK = beber, SPEAK = hablar: They live here. We work at the hotel. He speaks my language."
           },
           "examples": [
             {
               "es": "They live in this city.",
               "tr": {
-                "hu": "Ebben a városban élnek.",
                 "en": "They live in this city.",
-                "es": "Ellos viven en esta ciudad.",
-                "de": "Sie wohnen in dieser Stadt."
+                "es": "Ellos viven en esta ciudad."
               }
             },
             {
               "es": "We eat food at the restaurant.",
               "tr": {
-                "hu": "Az étteremben eszünk.",
                 "en": "We eat food at the restaurant.",
-                "es": "Comemos en el restaurante.",
-                "de": "Wir essen im Restaurant."
+                "es": "Comemos en el restaurante."
               }
             }
           ]
@@ -245,99 +199,77 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "A he / she / it mellett az ige -s-t kap. Ne mondd, hogy „She want water” vagy „He live here”, hanem: „She wants water”, „He lives here”.",
         "en": "With he / she / it the verb takes -s. Do not say “She want water” or “He live here”; say “She wants water”, “He lives here”.",
-        "es": "Con he / she / it el verbo lleva -s. No digas «She want water» ni «He live here», di «She wants water», «He lives here».",
-        "de": "Bei he / she / it bekommt das Verb ein -s. Sag nicht „She want water“ oder „He live here“, sondern „She wants water“, „He lives here“."
+        "es": "Con he / she / it el verbo lleva -s. No digas «She want water» ni «He live here», di «She wants water», «He lives here»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A „tengo hambre / frío / sed” angolul „be”-vel megy. Ne mondd, hogy „I have hungry”, hanem: „I am hungry”.",
         "en": "“Tengo hambre / frío / sed” uses “be” in English. Do not say “I have hungry”; say “I am hungry”.",
-        "es": "«Tengo hambre / frío / sed» lleva «be» en inglés. No digas «I have hungry», di «I am hungry».",
-        "de": "„Tengo hambre / frío / sed“ wird im Englischen mit „be“ gebildet. Sag nicht „I have hungry“, sondern „I am hungry“."
+        "es": "«Tengo hambre / frío / sed» lleva «be» en inglés. No digas «I have hungry», di «I am hungry»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "Az alany kötelező, spanyolul elhagyható („Quiero agua”). Angolul nem: ne mondd, hogy „Want water”, hanem: „I want water”.",
         "en": "The subject is required; in Spanish it can be dropped (“Quiero agua”). In English it cannot: do not say “Want water”; say “I want water”.",
-        "es": "El sujeto es obligatorio; en español se puede omitir («Quiero agua»). En inglés no: no digas «Want water», di «I want water».",
-        "de": "Das Subjekt ist Pflicht; im Spanischen kann man es weglassen („Quiero agua“). Im Englischen nicht: Sag nicht „Want water“, sondern „I want water“."
+        "es": "El sujeto es obligatorio; en español se puede omitir («Quiero agua»). En inglés no: no digas «Want water», di «I want water»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "Ne keverd a „be”-t egy másik igével. Ne mondd, hogy „I am go” vagy „She is want”, hanem: „I go”, „She wants”. A tagadás és a kérdés a következő leckében (egyszerű jelen) jön.",
         "en": "Do not mix “be” with another verb. Do not say “I am go” or “She is want”; say “I go”, “She wants”. Negatives and questions come in the next lesson (the present simple).",
-        "es": "No mezcles «be» con otro verbo. No digas «I am go» ni «She is want», di «I go», «She wants». La negación y la pregunta llegan en la siguiente lección (presente simple).",
-        "de": "Mische „be“ nicht mit einem anderen Verb. Sag nicht „I am go“ oder „She is want“, sondern „I go“, „She wants“. Verneinung und Frage kommen in der nächsten Lektion (Present Simple)."
+        "es": "No mezcles «be» con otro verbo. No digas «I am go» ni «She is want», di «I go», «She wants». La negación y la pregunta llegan en la siguiente lección (presente simple)."
       }
     }
   ],
   "speak": {
-    "hu": "Néhány alapige: «be», «have», «go», «come», «want», «need», «live». Az «I» mellett: «I am», «I have», «I go», «I want». A he, she és it mellett az ige -s-t kap: «she wants», «he needs», «it lives». Kivétel: «go» és «goes», «have» és «has», «am», «is» és «are». Az alany kötelező: «I want water», nem «want water». Vigyázat: nem «I have hungry», hanem «I am hungry».",
     "en": "A few basic verbs: «be», «have», «go», «come», «want», «need», «live». With «I»: «I am», «I have», «I go», «I want». With he, she and it the verb takes -s: «she wants», «he needs», «it lives». Exceptions: «go» and «goes», «have» and «has», «am», «is» and «are». The subject is required: «I want water», not «want water». Careful: not «I have hungry» but «I am hungry».",
-    "es": "Algunos verbos básicos: «be», «have», «go», «come», «want», «need», «live». Con «I»: «I am», «I have», «I go», «I want». Con he, she e it el verbo lleva -s: «she wants», «he needs», «it lives». Excepciones: «go» y «goes», «have» y «has», «am», «is» y «are». El sujeto es obligatorio: «I want water», no «want water». Cuidado: no «I have hungry» sino «I am hungry».",
-    "de": "Einige Grundverben: «be», «have», «go», «come», «want», «need», «live». Bei «I»: «I am», «I have», «I go», «I want». Bei he, she und it bekommt das Verb ein -s: «she wants», «he needs», «it lives». Ausnahmen: «go» und «goes», «have» und «has», «am», «is» und «are». Das Subjekt ist Pflicht: «I want water», nicht «want water». Vorsicht: nicht «I have hungry», sondern «I am hungry»."
+    "es": "Algunos verbos básicos: «be», «have», «go», «come», «want», «need», «live». Con «I»: «I am», «I have», «I go», «I want». Con he, she e it el verbo lleva -s: «she wants», «he needs», «it lives». Excepciones: «go» y «goes», «have» y «has», «am», «is» y «are». El sujeto es obligatorio: «I want water», no «want water». Cuidado: no «I have hungry» sino «I am hungry»."
   },
   "glossary": [
     {
       "word": "has",
       "gloss": {
-        "hu": "van neki (have)",
         "en": "he / she / it form of have",
-        "es": "tiene (have)",
-        "de": "hat (have)"
+        "es": "tiene (have)"
       }
     },
     {
       "word": "speak",
       "gloss": {
-        "hu": "beszél",
         "en": "to speak",
-        "es": "hablar",
-        "de": "sprechen"
+        "es": "hablar"
       }
     },
     {
       "word": "eat",
       "gloss": {
-        "hu": "eszik",
         "en": "to eat",
-        "es": "comer",
-        "de": "essen"
+        "es": "comer"
       }
     },
     {
       "word": "like",
       "gloss": {
-        "hu": "szeret, kedvel",
         "en": "to like",
-        "es": "gustar, querer",
-        "de": "mögen"
+        "es": "gustar, querer"
       }
     },
     {
       "word": "work",
       "gloss": {
-        "hu": "dolgozik",
         "en": "to work",
-        "es": "trabajar",
-        "de": "arbeiten"
+        "es": "trabajar"
       }
     },
     {
       "word": "drink",
       "gloss": {
-        "hu": "iszik",
         "en": "to drink",
-        "es": "beber",
-        "de": "trinken"
+        "es": "beber"
       }
     }
   ],
@@ -352,30 +284,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az „I” mellé az „am” kell: I am happy.",
         "en": "With “I” you need “am”: I am happy.",
-        "es": "Con «I» hace falta «am»: I am happy.",
-        "de": "Bei „I“ braucht man „am“: I am happy."
+        "es": "Con «I» hace falta «am»: I am happy."
       },
       "wrong": {
         "is": {
-          "hu": "Az „is” a he, she, it mellé való; az „I” mellé „am” kell.",
           "en": "“Is” goes with he, she, it; with “I” you need “am”.",
-          "es": "«Is» va con he, she, it; con «I» hace falta «am».",
-          "de": "„Is“ gehört zu he, she, it; bei „I“ braucht man „am“."
+          "es": "«Is» va con he, she, it; con «I» hace falta «am»."
         },
         "are": {
-          "hu": "Az „are” a you, we, they mellé való; az „I” mellé „am” kell.",
           "en": "“Are” goes with you, we, they; with “I” you need “am”.",
-          "es": "«Are» va con you, we, they; con «I» hace falta «am».",
-          "de": "„Are“ gehört zu you, we, they; bei „I“ braucht man „am“."
+          "es": "«Are» va con you, we, they; con «I» hace falta «am»."
         }
       },
       "examples": [
         "I am tired.",
         "I am a doctor."
       ],
-      "tr": { "hu": "Boldog vagyok.", "en": "I am happy.", "es": "Estoy feliz.", "de": "Ich bin glücklich." }
+      "tr": { "en": "I am happy.", "es": "Estoy feliz." }
     },
     {
       "id": "bv-02",
@@ -387,30 +313,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „she” mellé az „is” kell, és az éhség „be”-vel megy: She is hungry.",
         "en": "With “she” you need “is”, and hunger uses “be”: She is hungry.",
-        "es": "Con «she» hace falta «is», y el hambre lleva «be»: She is hungry.",
-        "de": "Bei „she“ braucht man „is“, und Hunger wird mit „be“ gebildet: She is hungry."
+        "es": "Con «she» hace falta «is», y el hambre lleva «be»: She is hungry."
       },
       "wrong": {
         "are": {
-          "hu": "Az „are” a you, we, they mellé való; a „she” mellé „is” kell.",
           "en": "“Are” goes with you, we, they; with “she” you need “is”.",
-          "es": "«Are» va con you, we, they; con «she» hace falta «is».",
-          "de": "„Are“ gehört zu you, we, they; bei „she“ braucht man „is“."
+          "es": "«Are» va con you, we, they; con «she» hace falta «is»."
         },
         "has": {
-          "hu": "A spanyol „tener hambre” angolul nem „have”, hanem „be hungry”: She is hungry.",
           "en": "Spanish “tener hambre” is not “have” in English but “be hungry”: She is hungry.",
-          "es": "El «tener hambre» del español no es «have» en inglés, sino «be hungry»: She is hungry.",
-          "de": "Das spanische „tener hambre“ ist im Englischen nicht „have“, sondern „be hungry“: She is hungry."
+          "es": "El «tener hambre» del español no es «have» en inglés, sino «be hungry»: She is hungry."
         }
       },
       "examples": [
         "He is tired.",
         "She is thirsty."
       ],
-      "tr": { "hu": "Éhes.", "en": "She is hungry.", "es": "Ella tiene hambre.", "de": "Sie hat Hunger." }
+      "tr": { "en": "She is hungry.", "es": "Ella tiene hambre." }
     },
     {
       "id": "bv-20",
@@ -430,30 +350,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „we” mellé a „have” kell: We have a friend here.",
         "en": "With “we” you need “have”: We have a friend here.",
-        "es": "Con «we» hace falta «have»: We have a friend here.",
-        "de": "Bei „we“ braucht man „have“: We have a friend here."
+        "es": "Con «we» hace falta «have»: We have a friend here."
       },
       "wrong": {
         "has": {
-          "hu": "A „has” csak a he, she, it mellé való; a „we” mellé „have” kell.",
           "en": "“Has” goes only with he, she, it; with “we” you need “have”.",
-          "es": "«Has» va solo con he, she, it; con «we» hace falta «have».",
-          "de": "„Has“ gehört nur zu he, she, it; bei „we“ braucht man „have“."
+          "es": "«Has» va solo con he, she, it; con «we» hace falta «have»."
         },
         "are": {
-          "hu": "Az „are” a to be alakja; a birtoklás („tenemos un amigo”) a „have”.",
           "en": "“Are” is a form of to be; possession (“tenemos un amigo”) is “have”.",
-          "es": "«Are» es una forma de to be; la posesión («tenemos un amigo») es «have».",
-          "de": "„Are“ ist eine Form von to be; Besitz („tenemos un amigo“) heißt „have“."
+          "es": "«Are» es una forma de to be; la posesión («tenemos un amigo») es «have»."
         }
       },
       "examples": [
         "I have a friend.",
         "They have a hotel."
       ],
-      "tr": { "hu": "Van itt egy barátunk.", "en": "We have a friend here.", "es": "Tenemos un amigo aquí.", "de": "Wir haben hier einen Freund." }
+      "tr": { "en": "We have a friend here.", "es": "Tenemos un amigo aquí." }
     },
     {
       "id": "bv-04",
@@ -465,30 +379,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „he” mellé a „has” kell: He has a new phone number.",
         "en": "With “he” you need “has”: He has a new phone number.",
-        "es": "Con «he» hace falta «has»: He has a new phone number.",
-        "de": "Bei „he“ braucht man „has“: He has a new phone number."
+        "es": "Con «he» hace falta «has»: He has a new phone number."
       },
       "wrong": {
         "have": {
-          "hu": "A „have” az I, you, we, they mellé való; a „he” mellé „has” kell.",
           "en": "“Have” goes with I, you, we, they; with “he” you need “has”.",
-          "es": "«Have» va con I, you, we, they; con «he» hace falta «has».",
-          "de": "„Have“ gehört zu I, you, we, they; bei „he“ braucht man „has“."
+          "es": "«Have» va con I, you, we, they; con «he» hace falta «has»."
         },
         "is": {
-          "hu": "Az „is” a to be alakja; a birtoklás a „have / has”.",
           "en": "“Is” is a form of to be; possession is “have / has”.",
-          "es": "«Is» es una forma de to be; la posesión es «have / has».",
-          "de": "„Is“ ist eine Form von to be; Besitz heißt „have / has“."
+          "es": "«Is» es una forma de to be; la posesión es «have / has»."
         }
       },
       "examples": [
         "She has an email.",
         "My friend has a taxi."
       ],
-      "tr": { "hu": "Új telefonszáma van.", "en": "He has a new phone number.", "es": "Él tiene un nuevo número de teléfono.", "de": "Er hat eine neue Telefonnummer." }
+      "tr": { "en": "He has a new phone number.", "es": "Él tiene un nuevo número de teléfono." }
     },
     {
       "id": "bv-16",
@@ -504,46 +412,34 @@
       "es": "I am hungry.",
       "target": "am",
       "tr": {
-        "hu": "Éhes vagyok.",
         "en": "I am hungry.",
-        "es": "Tengo hambre.",
-        "de": "Ich habe Hunger."
+        "es": "Tengo hambre."
       },
       "options": [
         {
           "text": {
-            "hu": "állapot: be + melléknév (hungry, tired, cold)",
             "en": "a state: be + adjective (hungry, tired, cold)",
-            "es": "un estado: be + adjetivo (hungry, tired, cold)",
-            "de": "ein Zustand: be + Adjektiv (hungry, tired, cold)"
+            "es": "un estado: be + adjetivo (hungry, tired, cold)"
           }
         },
         {
           "text": {
-            "hu": "birtoklás: have + melléknév, mint a spanyolban (tengo hambre)",
             "en": "possession: have + adjective, as in Spanish (tengo hambre)",
-            "es": "posesión: have + adjetivo, como en español (tengo hambre)",
-            "de": "Besitz: have + Adjektiv wie im Spanischen (tengo hambre)"
+            "es": "posesión: have + adjetivo, como en español (tengo hambre)"
           },
           "wrong": {
-            "hu": "A spanyol „tener” szerkezetet nem lehet szó szerint átvenni: az angolban az állapotot a „be” fejezi ki.",
             "en": "The Spanish “tener” structure cannot be copied word for word: English expresses a state with “be”.",
-            "es": "La estructura «tener» del español no se puede copiar palabra por palabra: el inglés expresa un estado con «be».",
-            "de": "Die spanische „tener“-Struktur lässt sich nicht wörtlich übernehmen: Das Englische drückt einen Zustand mit „be“ aus."
+            "es": "La estructura «tener» del español no se puede copiar palabra por palabra: el inglés expresa un estado con «be»."
           }
         },
         {
           "text": {
-            "hu": "vágy: want + melléknév",
             "en": "wish: want + adjective",
-            "es": "deseo: want + adjetivo",
-            "de": "Wunsch: want + Adjektiv"
+            "es": "deseo: want + adjetivo"
           },
           "wrong": {
-            "hu": "A „want” vágyat fejez ki és főnevet vagy igét kér, nem melléknevet.",
             "en": "“Want” expresses a wish and takes a noun or verb, not an adjective.",
-            "es": "«Want» expresa un deseo y va con un nombre o verbo, no con un adjetivo.",
-            "de": "„Want“ drückt einen Wunsch aus und steht mit einem Nomen oder Verb, nicht mit einem Adjektiv."
+            "es": "«Want» expresa un deseo y va con un nombre o verbo, no con un adjetivo."
           }
         }
       ],
@@ -559,30 +455,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az „I” mellé a „go” alapalak kell: I go to the market today.",
         "en": "With “I” you need the base form “go”: I go to the market today.",
-        "es": "Con «I» hace falta la forma base «go»: I go to the market today.",
-        "de": "Bei „I“ braucht man die Grundform „go“: I go to the market today."
+        "es": "Con «I» hace falta la forma base «go»: I go to the market today."
       },
       "wrong": {
         "goes": {
-          "hu": "A „goes” csak a he, she, it mellé való; az „I” mellé „go” kell.",
           "en": "“Goes” goes only with he, she, it; with “I” you need “go”.",
-          "es": "«Goes» va solo con he, she, it; con «I» hace falta «go».",
-          "de": "„Goes“ gehört nur zu he, she, it; bei „I“ braucht man „go“."
+          "es": "«Goes» va solo con he, she, it; con «I» hace falta «go»."
         },
         "am": {
-          "hu": "Az „am” a to be alakja; a mozgás („voy”) a „go”.",
           "en": "“Am” is a form of to be; movement (“voy”) is “go”.",
-          "es": "«Am» es una forma de to be; el movimiento («voy») es «go».",
-          "de": "„Am“ ist eine Form von to be; Bewegung („voy“) heißt „go“."
+          "es": "«Am» es una forma de to be; el movimiento («voy») es «go»."
         }
       },
       "examples": [
         "We go to the bank.",
         "You go to the hotel."
       ],
-      "tr": { "hu": "Ma piacra megyek.", "en": "I go to the market today.", "es": "Hoy voy al mercado.", "de": "Ich gehe heute zum Markt." }
+      "tr": { "en": "I go to the market today.", "es": "Hoy voy al mercado." }
     },
     {
       "id": "bv-06",
@@ -594,30 +484,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „she” mellé a go -es végződést kap: goes.",
         "en": "With “she” go takes -es: goes.",
-        "es": "Con «she» go lleva -es: goes.",
-        "de": "Bei „she“ bekommt go -es: goes."
+        "es": "Con «she» go lleva -es: goes."
       },
       "wrong": {
         "go": {
-          "hu": "A „go” az I, you, we, they mellé való; a „she” mellé „goes” kell.",
           "en": "“Go” goes with I, you, we, they; with “she” you need “goes”.",
-          "es": "«Go» va con I, you, we, they; con «she» hace falta «goes».",
-          "de": "„Go“ gehört zu I, you, we, they; bei „she“ braucht man „goes“."
+          "es": "«Go» va con I, you, we, they; con «she» hace falta «goes»."
         },
         "gos": {
-          "hu": "Az -o végű igék nem sima -s-t kapnak, hanem -es-t: goes, sosem „gos”.",
           "en": "Verbs ending in -o do not take a plain -s but -es: goes, never “gos”.",
-          "es": "Los verbos que terminan en -o no llevan una simple -s sino -es: goes, nunca «gos».",
-          "de": "Verben auf -o bekommen kein einfaches -s, sondern -es: goes, niemals „gos“."
+          "es": "Los verbos que terminan en -o no llevan una simple -s sino -es: goes, nunca «gos»."
         }
       },
       "examples": [
         "He goes to the store.",
         "My friend goes to the hotel."
       ],
-      "tr": { "hu": "Most a bankba megy.", "en": "She goes to the bank now.", "es": "Ella va al banco ahora.", "de": "Sie geht jetzt zur Bank." }
+      "tr": { "en": "She goes to the bank now.", "es": "Ella va al banco ahora." }
     },
     {
       "id": "bv-17",
@@ -637,30 +521,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az „I” mellé a „want” alapalak kell: I want water.",
         "en": "With “I” you need the base form “want”: I want water.",
-        "es": "Con «I» hace falta la forma base «want»: I want water.",
-        "de": "Bei „I“ braucht man die Grundform „want“: I want water."
+        "es": "Con «I» hace falta la forma base «want»: I want water."
       },
       "wrong": {
         "wants": {
-          "hu": "A „wants” a he, she, it mellé való; az „I” mellé „want” kell.",
           "en": "“Wants” goes with he, she, it; with “I” you need “want”.",
-          "es": "«Wants» va con he, she, it; con «I» hace falta «want».",
-          "de": "„Wants“ gehört zu he, she, it; bei „I“ braucht man „want“."
+          "es": "«Wants» va con he, she, it; con «I» hace falta «want»."
         },
         "am want": {
-          "hu": "A „want” mellé nem kell a „be”: I want, nem „I am want”.",
           "en": "“Want” needs no “be”: I want, not “I am want”.",
-          "es": "«Want» no necesita «be»: I want, no «I am want».",
-          "de": "„Want“ braucht kein „be“: I want, nicht „I am want“."
+          "es": "«Want» no necesita «be»: I want, no «I am want»."
         }
       },
       "examples": [
         "You want food.",
         "We want water."
       ],
-      "tr": { "hu": "Vizet kérek.", "en": "I want water.", "es": "Quiero agua.", "de": "Ich möchte Wasser." }
+      "tr": { "en": "I want water.", "es": "Quiero agua." }
     },
     {
       "id": "bv-08",
@@ -672,30 +550,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „he” mellé az ige -s-t kap: He needs help.",
         "en": "With “he” the verb takes -s: He needs help.",
-        "es": "Con «he» el verbo lleva -s: He needs help.",
-        "de": "Bei „he“ bekommt das Verb ein -s: He needs help."
+        "es": "Con «he» el verbo lleva -s: He needs help."
       },
       "wrong": {
         "need": {
-          "hu": "A „need” az I, you, we, they mellé való; a „he” mellé „needs” kell.",
           "en": "“Need” goes with I, you, we, they; with “he” you need “needs”.",
-          "es": "«Need» va con I, you, we, they; con «he» hace falta «needs».",
-          "de": "„Need“ gehört zu I, you, we, they; bei „he“ braucht man „needs“."
+          "es": "«Need» va con I, you, we, they; con «he» hace falta «needs»."
         },
         "is need": {
-          "hu": "A „need” mellé nem kell a „be”: He needs, nem „He is need”.",
           "en": "“Need” needs no “be”: He needs, not “He is need”.",
-          "es": "«Need» no necesita «be»: He needs, no «He is need».",
-          "de": "„Need“ braucht kein „be“: He needs, nicht „He is need“."
+          "es": "«Need» no necesita «be»: He needs, no «He is need»."
         }
       },
       "examples": [
         "She needs a doctor.",
         "My friend needs money."
       ],
-      "tr": { "hu": "Segítségre van szüksége.", "en": "He needs help.", "es": "Él necesita ayuda.", "de": "Er braucht Hilfe." }
+      "tr": { "en": "He needs help.", "es": "Él necesita ayuda." }
     },
     {
       "id": "bv-18",
@@ -711,46 +583,34 @@
       "es": "She goes to the bank.",
       "target": "goes",
       "tr": {
-        "hu": "A bankba megy.",
         "en": "She goes to the bank.",
-        "es": "Ella va al banco.",
-        "de": "Sie geht zur Bank."
+        "es": "Ella va al banco."
       },
       "options": [
         {
           "text": {
-            "hu": "he / she / it mellett a go -es végződést kap",
             "en": "with he / she / it, go takes -es",
-            "es": "con he / she / it, go lleva -es",
-            "de": "bei he / she / it bekommt go -es"
+            "es": "con he / she / it, go lleva -es"
           }
         },
         {
           "text": {
-            "hu": "az alapalak marad, mint az I / you / we / they mellett",
             "en": "the base form stays, as with I / you / we / they",
-            "es": "la forma base se queda, como con I / you / we / they",
-            "de": "die Grundform bleibt wie bei I / you / we / they"
+            "es": "la forma base se queda, como con I / you / we / they"
           },
           "wrong": {
-            "hu": "A he / she / it mellett az ige változik: nem „she go”, hanem „she goes”.",
             "en": "With he / she / it the verb changes: not “she go” but “she goes”.",
-            "es": "Con he / she / it el verbo cambia: no «she go» sino «she goes».",
-            "de": "Bei he / she / it ändert sich das Verb: nicht „she go“, sondern „she goes“."
+            "es": "Con he / she / it el verbo cambia: no «she go» sino «she goes»."
           }
         },
         {
           "text": {
-            "hu": "sima -s: gos",
             "en": "a plain -s: gos",
-            "es": "una simple -s: gos",
-            "de": "ein einfaches -s: gos"
+            "es": "una simple -s: gos"
           },
           "wrong": {
-            "hu": "Az -o végű igék -es-t kapnak: goes, nem „gos”.",
             "en": "Verbs ending in -o take -es: goes, not “gos”.",
-            "es": "Los verbos que terminan en -o llevan -es: goes, no «gos».",
-            "de": "Verben auf -o bekommen -es: goes, nicht „gos“."
+            "es": "Los verbos que terminan en -o llevan -es: goes, no «gos»."
           }
         }
       ],
@@ -766,30 +626,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „they” mellé az ige alapalakja áll: They live in this city.",
         "en": "With “they” the verb stays in its base form: They live in this city.",
-        "es": "Con «they» el verbo va en forma base: They live in this city.",
-        "de": "Bei „they“ steht das Verb in der Grundform: They live in this city."
+        "es": "Con «they» el verbo va en forma base: They live in this city."
       },
       "wrong": {
         "lives": {
-          "hu": "A „lives” a he, she, it mellé való; a „they” mellé „live” kell.",
           "en": "“Lives” goes with he, she, it; with “they” you need “live”.",
-          "es": "«Lives» va con he, she, it; con «they» hace falta «live».",
-          "de": "„Lives“ gehört zu he, she, it; bei „they“ braucht man „live“."
+          "es": "«Lives» va con he, she, it; con «they» hace falta «live»."
         },
         "are live": {
-          "hu": "A „live” mellé nem kell a „be”: They live, nem „They are live”.",
           "en": "“Live” needs no “be”: They live, not “They are live”.",
-          "es": "«Live» no necesita «be»: They live, no «They are live».",
-          "de": "„Live“ braucht kein „be“: They live, nicht „They are live“."
+          "es": "«Live» no necesita «be»: They live, no «They are live»."
         }
       },
       "examples": [
         "We live here.",
         "You live near the station."
       ],
-      "tr": { "hu": "Ebben a városban laknak.", "en": "They live in this city.", "es": "Ellos viven en esta ciudad.", "de": "Sie wohnen in dieser Stadt." }
+      "tr": { "en": "They live in this city.", "es": "Ellos viven en esta ciudad." }
     },
     {
       "id": "bv-10",
@@ -801,30 +655,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „she” mellé az ige -s-t kap: She lives here.",
         "en": "With “she” the verb takes -s: She lives here.",
-        "es": "Con «she» el verbo lleva -s: She lives here.",
-        "de": "Bei „she“ bekommt das Verb ein -s: She lives here."
+        "es": "Con «she» el verbo lleva -s: She lives here."
       },
       "wrong": {
         "live": {
-          "hu": "A „live” az I, you, we, they mellé való; a „she” mellé „lives” kell.",
           "en": "“Live” goes with I, you, we, they; with “she” you need “lives”.",
-          "es": "«Live» va con I, you, we, they; con «she» hace falta «lives».",
-          "de": "„Live“ gehört zu I, you, we, they; bei „she“ braucht man „lives“."
+          "es": "«Live» va con I, you, we, they; con «she» hace falta «lives»."
         },
         "is live": {
-          "hu": "A „live” mellé nem kell a „be”: She lives, nem „She is live”.",
           "en": "“Live” needs no “be”: She lives, not “She is live”.",
-          "es": "«Live» no necesita «be»: She lives, no «She is live».",
-          "de": "„Live“ braucht kein „be“: She lives, nicht „She is live“."
+          "es": "«Live» no necesita «be»: She lives, no «She is live»."
         }
       },
       "examples": [
         "He lives near the hotel.",
         "My friend lives here."
       ],
-      "tr": { "hu": "Itt lakik.", "en": "She lives here.", "es": "Ella vive aquí.", "de": "Sie wohnt hier." }
+      "tr": { "en": "She lives here.", "es": "Ella vive aquí." }
     },
     {
       "id": "bv-19",
@@ -844,30 +692,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az egyes számú „the hotel” mellé az „is” kell: The hotel is far.",
         "en": "With the singular “the hotel” you need “is”: The hotel is far.",
-        "es": "Con el singular «the hotel» hace falta «is»: The hotel is far.",
-        "de": "Beim Singular „the hotel“ braucht man „is“: The hotel is far."
+        "es": "Con el singular «the hotel» hace falta «is»: The hotel is far."
       },
       "wrong": {
         "are": {
-          "hu": "Az „are” többes számhoz való (you, we, they); a „the hotel” egyes szám: is.",
           "en": "“Are” is for plurals (you, we, they); “the hotel” is singular: is.",
-          "es": "«Are» es para plurales (you, we, they); «the hotel» es singular: is.",
-          "de": "„Are“ steht für den Plural (you, we, they); „the hotel“ ist Singular: is."
+          "es": "«Are» es para plurales (you, we, they); «the hotel» es singular: is."
         },
         "am": {
-          "hu": "Az „am” csak az „I” mellé való.",
           "en": "“Am” goes only with “I”.",
-          "es": "«Am» va solo con «I».",
-          "de": "„Am“ gehört nur zu „I“."
+          "es": "«Am» va solo con «I»."
         }
       },
       "examples": [
         "The bank is near.",
         "The station is far."
       ],
-      "tr": { "hu": "A szálloda messze van.", "en": "The hotel is far.", "es": "El hotel está lejos.", "de": "Das Hotel ist weit weg." }
+      "tr": { "en": "The hotel is far.", "es": "El hotel está lejos." }
     },
     {
       "id": "bv-25",
@@ -909,30 +751,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „tengo hambre” angolul „be”-vel megy: I am hungry.",
         "en": "“Tengo hambre” uses “be” in English: I am hungry.",
-        "es": "«Tengo hambre» lleva «be» en inglés: I am hungry.",
-        "de": "„Tengo hambre“ wird im Englischen mit „be“ gebildet: I am hungry."
+        "es": "«Tengo hambre» lleva «be» en inglés: I am hungry."
       },
       "wrong": {
         "have": {
-          "hu": "A spanyol „tener hambre” angolul nem „have hungry”, hanem „be hungry”.",
           "en": "Spanish “tener hambre” is not “have hungry” in English but “be hungry”.",
-          "es": "El «tener hambre» del español no es «have hungry» en inglés, sino «be hungry».",
-          "de": "Das spanische „tener hambre“ ist im Englischen nicht „have hungry“, sondern „be hungry“."
+          "es": "El «tener hambre» del español no es «have hungry» en inglés, sino «be hungry»."
         },
         "want": {
-          "hu": "A „want” után főnév vagy ige jön (I want water); a „hungry” állapot, ahhoz „be” kell.",
           "en": "“Want” is followed by a noun or verb (I want water); “hungry” is a state, so it needs “be”.",
-          "es": "«Want» va seguido de un nombre o verbo (I want water); «hungry» es un estado, por eso necesita «be».",
-          "de": "Nach „want“ folgt ein Nomen oder Verb (I want water); „hungry“ ist ein Zustand, dafür braucht man „be“."
+          "es": "«Want» va seguido de un nombre o verbo (I want water); «hungry» es un estado, por eso necesita «be»."
         }
       },
       "examples": [
         "I am cold.",
         "We are thirsty."
       ],
-      "tr": { "hu": "Éhes vagyok.", "en": "I am hungry.", "es": "Tengo hambre.", "de": "Ich habe Hunger." }
+      "tr": { "en": "I am hungry.", "es": "Tengo hambre." }
     },
     {
       "id": "bv-21",
@@ -948,46 +784,34 @@
       "es": "He has a phone number.",
       "target": "has",
       "tr": {
-        "hu": "Van telefonszáma.",
         "en": "He has a phone number.",
-        "es": "Él tiene un número de teléfono.",
-        "de": "Er hat eine Telefonnummer."
+        "es": "Él tiene un número de teléfono."
       },
       "options": [
         {
           "text": {
-            "hu": "a have szabálytalan alakja he / she / it mellett: has",
             "en": "the irregular form of have with he / she / it: has",
-            "es": "la forma irregular de have con he / she / it: has",
-            "de": "die unregelmäßige Form von have bei he / she / it: has"
+            "es": "la forma irregular de have con he / she / it: has"
           }
         },
         {
           "text": {
-            "hu": "szabályos -s: haves",
             "en": "the regular -s: haves",
-            "es": "la -s regular: haves",
-            "de": "das regelmäßige -s: haves"
+            "es": "la -s regular: haves"
           },
           "wrong": {
-            "hu": "A have szabálytalan: nem „haves”, hanem „has”.",
             "en": "Have is irregular: not “haves” but “has”.",
-            "es": "Have es irregular: no «haves» sino «has».",
-            "de": "Have ist unregelmäßig: nicht „haves“, sondern „has“."
+            "es": "Have es irregular: no «haves» sino «has»."
           }
         },
         {
           "text": {
-            "hu": "a to be alakja: is",
             "en": "a form of to be: is",
-            "es": "una forma de to be: is",
-            "de": "eine Form von to be: is"
+            "es": "una forma de to be: is"
           },
           "wrong": {
-            "hu": "A birtoklás („van telefonszáma”) a „have / has”, nem a „be”.",
             "en": "Possession (“tiene un número”) is “have / has”, not “be”.",
-            "es": "La posesión («tiene un número») es «have / has», no «be».",
-            "de": "Besitz („er hat eine Nummer“) heißt „have / has“, nicht „be“."
+            "es": "La posesión («tiene un número») es «have / has», no «be»."
           }
         }
       ],
@@ -1003,30 +827,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „he” mellé az ige -s-t kap: He speaks my language.",
         "en": "With “he” the verb takes -s: He speaks my language.",
-        "es": "Con «he» el verbo lleva -s: He speaks my language.",
-        "de": "Bei „he“ bekommt das Verb ein -s: He speaks my language."
+        "es": "Con «he» el verbo lleva -s: He speaks my language."
       },
       "wrong": {
         "speak": {
-          "hu": "A „speak” az I, you, we, they mellé való; a „he” mellé „speaks” kell.",
           "en": "“Speak” goes with I, you, we, they; with “he” you need “speaks”.",
-          "es": "«Speak» va con I, you, we, they; con «he» hace falta «speaks».",
-          "de": "„Speak“ gehört zu I, you, we, they; bei „he“ braucht man „speaks“."
+          "es": "«Speak» va con I, you, we, they; con «he» hace falta «speaks»."
         },
         "is speak": {
-          "hu": "A „speak” mellé nem kell a „be”: He speaks, nem „He is speak”.",
           "en": "“Speak” needs no “be”: He speaks, not “He is speak”.",
-          "es": "«Speak» no necesita «be»: He speaks, no «He is speak».",
-          "de": "„Speak“ braucht kein „be“: He speaks, nicht „He is speak“."
+          "es": "«Speak» no necesita «be»: He speaks, no «He is speak»."
         }
       },
       "examples": [
         "She speaks my language.",
         "They speak my language."
       ],
-      "tr": { "hu": "Beszéli a nyelvemet.", "en": "He speaks my language.", "es": "Él habla mi idioma.", "de": "Er spricht meine Sprache." }
+      "tr": { "en": "He speaks my language.", "es": "Él habla mi idioma." }
     },
     {
       "id": "bv-14",
@@ -1038,30 +856,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „we” mellé az ige alapalakja áll: We eat food at the restaurant.",
         "en": "With “we” the verb stays in its base form: We eat food at the restaurant.",
-        "es": "Con «we» el verbo va en forma base: We eat food at the restaurant.",
-        "de": "Bei „we“ steht das Verb in der Grundform: We eat food at the restaurant."
+        "es": "Con «we» el verbo va en forma base: We eat food at the restaurant."
       },
       "wrong": {
         "eats": {
-          "hu": "Az „eats” a he, she, it mellé való; a „we” mellé „eat” kell.",
           "en": "“Eats” goes with he, she, it; with “we” you need “eat”.",
-          "es": "«Eats» va con he, she, it; con «we» hace falta «eat».",
-          "de": "„Eats“ gehört zu he, she, it; bei „we“ braucht man „eat“."
+          "es": "«Eats» va con he, she, it; con «we» hace falta «eat»."
         },
         "are eat": {
-          "hu": "Az „eat” mellé nem kell a „be”: We eat, nem „We are eat”.",
           "en": "“Eat” needs no “be”: We eat, not “We are eat”.",
-          "es": "«Eat» no necesita «be»: We eat, no «We are eat».",
-          "de": "„Eat“ braucht kein „be“: We eat, nicht „We are eat“."
+          "es": "«Eat» no necesita «be»: We eat, no «We are eat»."
         }
       },
       "examples": [
         "You eat food here.",
         "I eat at the hotel."
       ],
-      "tr": { "hu": "Az étteremben eszünk.", "en": "We eat food at the restaurant.", "es": "Comemos en el restaurante.", "de": "Wir essen im Restaurant." }
+      "tr": { "en": "We eat food at the restaurant.", "es": "Comemos en el restaurante." }
     },
     {
       "id": "bv-15",
@@ -1073,30 +885,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „they” mellé az ige alapalakja áll: They work at the hotel.",
         "en": "With “they” the verb stays in its base form: They work at the hotel.",
-        "es": "Con «they» el verbo va en forma base: They work at the hotel.",
-        "de": "Bei „they“ steht das Verb in der Grundform: They work at the hotel."
+        "es": "Con «they» el verbo va en forma base: They work at the hotel."
       },
       "wrong": {
         "works": {
-          "hu": "A „works” a he, she, it mellé való; a „they” mellé „work” kell.",
           "en": "“Works” goes with he, she, it; with “they” you need “work”.",
-          "es": "«Works» va con he, she, it; con «they» hace falta «work».",
-          "de": "„Works“ gehört zu he, she, it; bei „they“ braucht man „work“."
+          "es": "«Works» va con he, she, it; con «they» hace falta «work»."
         },
         "are work": {
-          "hu": "A „work” mellé nem kell a „be”: They work, nem „They are work”.",
           "en": "“Work” needs no “be”: They work, not “They are work”.",
-          "es": "«Work» no necesita «be»: They work, no «They are work».",
-          "de": "„Work“ braucht kein „be“: They work, nicht „They are work“."
+          "es": "«Work» no necesita «be»: They work, no «They are work»."
         }
       },
       "examples": [
         "I work at the bank.",
         "We work here."
       ],
-      "tr": { "hu": "A szállodában dolgoznak.", "en": "They work at the hotel.", "es": "Ellos trabajan en el hotel.", "de": "Sie arbeiten im Hotel." }
+      "tr": { "en": "They work at the hotel.", "es": "Ellos trabajan en el hotel." }
     },
     {
       "id": "bv-26",

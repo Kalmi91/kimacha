@@ -3,194 +3,152 @@
   "topic": "imperativo-negativo",
   "level": "A2",
   "title": {
-    "hu": "Felszólítás: tiltó alak",
     "en": "Imperative: negative",
-    "es": "Imperativo negativo",
-    "de": "Imperativ: verneint"
+    "es": "Imperativo negativo"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "A tiltó felszólítás azt mondja meg, mit NE tegyen valaki: ne csináld, ne menj, ne aggódj. Minden személynél ugyanazt a kötőmód-alakot használja, elé teszi a no szót, ezért nincs benne egy szótagú rendhagyó alak, mint az állítóban.",
         "en": "The negative imperative says what someone should NOT do: don't do it, don't go, don't worry. It uses the subjunctive form for every person with no in front, so it has none of the one-syllable irregular forms of the affirmative.",
-        "es": "El imperativo negativo dice qué NO debe hacer alguien: no lo hagas, no vayas, no te preocupes. Usa la forma del subjuntivo para todas las personas, con no delante, y por eso no tiene las formas irregulares de una sílaba del afirmativo.",
-        "de": "Der verneinte Imperativ sagt, was jemand NICHT tun soll: tu es nicht, geh nicht, mach dir keine Sorgen. Er nutzt für jede Person die Subjuntivo-Form mit no davor, darum hat er keine unregelmäßigen einsilbigen Formen wie der bejahte Imperativ."
+        "es": "El imperativo negativo dice qué NO debe hacer alguien: no lo hagas, no vayas, no te preocupes. Usa la forma del subjuntivo para todas las personas, con no delante, y por eso no tiene las formas irregulares de una sílaba del afirmativo."
       }
     },
     {
       "kind": "list",
       "title": {
-        "hu": "Hogyan képezzük a tiltó alakot",
         "en": "How the negative form is built",
-        "es": "Cómo se forma el imperativo negativo",
-        "de": "Wie die verneinte Form gebildet wird"
+        "es": "Cómo se forma el imperativo negativo"
       },
       "items": [
         {
           "text": {
-            "hu": "A tú-alak: no + a kötőmód tú-alakja. Az -ar igék -es végűek, az -er és -ir igék -as végűek, vagyis a végződés magánhangzója megfordul az állító alakhoz képest: hablar: no hables, comer: no comas, escribir: no escribas.",
             "en": "The tú form: no + the subjunctive tú form. -ar verbs end in -es, -er and -ir verbs end in -as, so the vowel of the ending flips compared to the affirmative: hablar: no hables, comer: no comas, escribir: no escribas.",
-            "es": "La forma de tú: no + la forma de tú del subjuntivo. Los verbos en -ar terminan en -es y los verbos en -er e -ir terminan en -as, es decir, la vocal de la terminación se invierte respecto al afirmativo: hablar: no hables, comer: no comas, escribir: no escribas.",
-            "de": "Die tú-Form: no + die tú-Form des Subjuntivo. Verben auf -ar enden auf -es, Verben auf -er und -ir enden auf -as, der Vokal der Endung kehrt sich also gegenüber dem bejahten Imperativ um: hablar: no hables, comer: no comas, escribir: no escribas."
+            "es": "La forma de tú: no + la forma de tú del subjuntivo. Los verbos en -ar terminan en -es y los verbos en -er e -ir terminan en -as, es decir, la vocal de la terminación se invierte respecto al afirmativo: hablar: no hables, comer: no comas, escribir: no escribas."
           },
           "examples": [
             {
               "es": "No hables tan rápido.",
               "tr": {
-                "hu": "Ne beszélj olyan gyorsan.",
                 "en": "Don't talk so fast.",
-                "es": "No hables tan rápido.",
-                "de": "Sprich nicht so schnell."
+                "es": "No hables tan rápido."
               }
             },
             {
               "es": "No comas eso ahora.",
               "tr": {
-                "hu": "Ne edd ezt most.",
                 "en": "Don't eat that now.",
-                "es": "No comas eso ahora.",
-                "de": "Iss das jetzt nicht."
+                "es": "No comas eso ahora."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Az usted és az ustedes alakja ugyanaz, mint az állító felszólításban: a kötőmód alak, elé a no: no hable, no hablen; no coma, no coman. Mexikóban az ustedes a többes szám, a vosotros nem használatos.",
             "en": "The usted and ustedes forms are the same as in the affirmative imperative: the subjunctive form with no in front: no hable, no hablen; no coma, no coman. In Mexico ustedes is the plural, vosotros is not used.",
-            "es": "Las formas de usted y ustedes son las mismas que en el imperativo afirmativo: la forma del subjuntivo con no delante: no hable, no hablen; no coma, no coman. En México ustedes es el plural y vosotros no se usa.",
-            "de": "Die Formen von usted und ustedes sind dieselben wie im bejahten Imperativ: die Subjuntivo-Form mit no davor: no hable, no hablen; no coma, no coman. In Mexiko ist ustedes der Plural, vosotros wird nicht benutzt."
+            "es": "Las formas de usted y ustedes son las mismas que en el imperativo afirmativo: la forma del subjuntivo con no delante: no hable, no hablen; no coma, no coman. En México ustedes es el plural y vosotros no se usa."
           },
           "examples": [
             {
               "es": "No hable tan rápido, doctor.",
               "tr": {
-                "hu": "Ne beszéljen olyan gyorsan, doktor úr.",
                 "en": "Don't talk so fast, doctor.",
-                "es": "No hable tan rápido, doctor.",
-                "de": "Sprechen Sie nicht so schnell, Herr Doktor."
+                "es": "No hable tan rápido, doctor."
               }
             },
             {
               "es": "No corran en la calle, niños.",
               "tr": {
-                "hu": "Ne fussatok az utcán, gyerekek.",
                 "en": "Don't run in the street, kids.",
-                "es": "No corran en la calle, niños.",
-                "de": "Rennt nicht auf der Straße, Kinder."
+                "es": "No corran en la calle, niños."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Rendhagyó igénél sincs külön tiltó alak: a kötőmód alakja jön, így az állító egy szótagú alakok (di, haz, ve) eltűnnek: decir: no digas, hacer: no hagas, ir: no vayas, poner: no pongas, salir: no salgas, ser: no seas, tener: no tengas, venir: no vengas.",
             "en": "Irregular verbs have no special negative form either: the subjunctive form is used, so the one-syllable affirmative forms (di, haz, ve) disappear: decir: no digas, hacer: no hagas, ir: no vayas, poner: no pongas, salir: no salgas, ser: no seas, tener: no tengas, venir: no vengas.",
-            "es": "Los verbos irregulares tampoco tienen una forma negativa especial: se usa la forma del subjuntivo, así que las formas afirmativas de una sílaba (di, haz, ve) desaparecen: decir: no digas, hacer: no hagas, ir: no vayas, poner: no pongas, salir: no salgas, ser: no seas, tener: no tengas, venir: no vengas.",
-            "de": "Auch unregelmäßige Verben haben keine besondere verneinte Form: Man nimmt die Subjuntivo-Form, die einsilbigen bejahten Formen (di, haz, ve) fallen also weg: decir: no digas, hacer: no hagas, ir: no vayas, poner: no pongas, salir: no salgas, ser: no seas, tener: no tengas, venir: no vengas."
+            "es": "Los verbos irregulares tampoco tienen una forma negativa especial: se usa la forma del subjuntivo, así que las formas afirmativas de una sílaba (di, haz, ve) desaparecen: decir: no digas, hacer: no hagas, ir: no vayas, poner: no pongas, salir: no salgas, ser: no seas, tener: no tengas, venir: no vengas."
           },
           "examples": [
             {
               "es": "No hagas eso aquí.",
               "tr": {
-                "hu": "Ne csináld ezt itt.",
                 "en": "Don't do that here.",
-                "es": "No hagas eso aquí.",
-                "de": "Tu das nicht hier."
+                "es": "No hagas eso aquí."
               }
             },
             {
               "es": "No vayas solo a la fiesta.",
               "tr": {
-                "hu": "Ne menj egyedül a buliba.",
                 "en": "Don't go to the party alone.",
-                "es": "No vayas solo a la fiesta.",
-                "de": "Geh nicht allein zur Party."
+                "es": "No vayas solo a la fiesta."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Ha az ige töve -car, -gar vagy -zar végű, a kötőmód miatt a helyesírás változik, hogy a hang megmaradjon: -car → -que (buscar: no busques), -gar → -gue (llegar: no llegues), -zar → -ce (cruzar: no cruces).",
             "en": "If the verb stem ends in -car, -gar or -zar, the spelling changes because of the subjunctive so that the sound stays the same: -car → -que (buscar: no busques), -gar → -gue (llegar: no llegues), -zar → -ce (cruzar: no cruces).",
-            "es": "Si la raíz del verbo termina en -car, -gar o -zar, la ortografía cambia por el subjuntivo para que el sonido siga igual: -car → -que (buscar: no busques), -gar → -gue (llegar: no llegues), -zar → -ce (cruzar: no cruces).",
-            "de": "Endet der Verbstamm auf -car, -gar oder -zar, ändert sich wegen des Subjuntivo die Schreibweise, damit der Laut gleich bleibt: -car → -que (buscar: no busques), -gar → -gue (llegar: no llegues), -zar → -ce (cruzar: no cruces)."
+            "es": "Si la raíz del verbo termina en -car, -gar o -zar, la ortografía cambia por el subjuntivo para que el sonido siga igual: -car → -que (buscar: no busques), -gar → -gue (llegar: no llegues), -zar → -ce (cruzar: no cruces)."
           },
           "examples": [
             {
               "es": "No llegues tarde, Laura.",
               "tr": {
-                "hu": "Ne késs el, Laura.",
                 "en": "Don't be late, Laura.",
-                "es": "No llegues tarde, Laura.",
-                "de": "Komm nicht zu spät, Laura."
+                "es": "No llegues tarde, Laura."
               }
             },
             {
               "es": "No cruces la calle sola.",
               "tr": {
-                "hu": "Ne menj át egyedül az utcán.",
                 "en": "Don't cross the street alone.",
-                "es": "No cruces la calle sola.",
-                "de": "Überquere die Straße nicht allein."
+                "es": "No cruces la calle sola."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A nosotros-alak („ne csináljuk”) szintén kötőmód: no hablemos, no comamos. Az ir igénél az állító vamos helyett a tiltásban no vayamos áll. A vosotros-alak (csak Spanyolországban) is kötőmód: no habléis, no comáis.",
             "en": "The nosotros form (\"let's not\") is also the subjunctive: no hablemos, no comamos. For ir, the prohibition uses no vayamos instead of the affirmative vamos. The vosotros form (only in Spain) is the subjunctive too: no habléis, no comáis.",
-            "es": "La forma de nosotros (\"no hagamos\") también es el subjuntivo: no hablemos, no comamos. En el verbo ir, la prohibición usa no vayamos en lugar del afirmativo vamos. La forma de vosotros (solo en España) también es el subjuntivo: no habléis, no comáis.",
-            "de": "Auch die nosotros-Form („lasst uns nicht“) ist der Subjuntivo: no hablemos, no comamos. Bei ir steht im Verbot no vayamos statt des bejahten vamos. Die vosotros-Form (nur in Spanien) ist ebenfalls der Subjuntivo: no habléis, no comáis."
+            "es": "La forma de nosotros (\"no hagamos\") también es el subjuntivo: no hablemos, no comamos. En el verbo ir, la prohibición usa no vayamos en lugar del afirmativo vamos. La forma de vosotros (solo en España) también es el subjuntivo: no habléis, no comáis."
           },
           "examples": [
             {
               "es": "No hablemos de eso ahora.",
               "tr": {
-                "hu": "Ne beszéljünk erről most.",
                 "en": "Let's not talk about that now.",
-                "es": "No hablemos de eso ahora.",
-                "de": "Lasst uns jetzt nicht darüber sprechen."
+                "es": "No hablemos de eso ahora."
               }
             },
             {
               "es": "No vayamos tarde a la fiesta.",
               "tr": {
-                "hu": "Ne menjünk későn a buliba.",
                 "en": "Let's not go late to the party.",
-                "es": "No vayamos tarde a la fiesta.",
-                "de": "Lasst uns nicht zu spät zur Party gehen."
+                "es": "No vayamos tarde a la fiesta."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Tiltásnál a névmás az ige ELÉ kerül, külön szóként, és az ige nem kap új ékezetet. Az állítónál a névmás hozzátapad (cómelo, siéntate), a tiltásnál nem: no lo comas, no te sientes. Két névmás esetén is a no után, az ige előtt állnak: no se lo digas.",
             "en": "In a prohibition the pronoun goes BEFORE the verb as a separate word, and the verb gets no new accent. In the affirmative the pronoun attaches (cómelo, siéntate), in the negative it does not: no lo comas, no te sientes. Even two pronouns stand after no, before the verb: no se lo digas.",
-            "es": "En la prohibición el pronombre va ANTES del verbo, como palabra separada, y el verbo no lleva tilde nueva. En el afirmativo el pronombre se pega (cómelo, siéntate), en el negativo no: no lo comas, no te sientes. Incluso dos pronombres van después de no, antes del verbo: no se lo digas.",
-            "de": "Im Verbot steht das Pronomen VOR dem Verb, als eigenes Wort, und das Verb bekommt keinen neuen Akzent. Im bejahten Imperativ hängt das Pronomen an (cómelo, siéntate), im verneinten nicht: no lo comas, no te sientes. Auch zwei Pronomen stehen nach no, vor dem Verb: no se lo digas."
+            "es": "En la prohibición el pronombre va ANTES del verbo, como palabra separada, y el verbo no lleva tilde nueva. En el afirmativo el pronombre se pega (cómelo, siéntate), en el negativo no: no lo comas, no te sientes. Incluso dos pronombres van después de no, antes del verbo: no se lo digas."
           },
           "examples": [
             {
               "es": "No te preocupes, Ana.",
               "tr": {
-                "hu": "Ne aggódj, Ana.",
                 "en": "Don't worry, Ana.",
-                "es": "No te preocupes, Ana.",
-                "de": "Mach dir keine Sorgen, Ana."
+                "es": "No te preocupes, Ana."
               }
             },
             {
               "es": "No se lo digas a nadie.",
               "tr": {
-                "hu": "Ne mondd el senkinek.",
                 "en": "Don't tell anyone.",
-                "es": "No se lo digas a nadie.",
-                "de": "Sag es niemandem."
+                "es": "No se lo digas a nadie."
               }
             }
           ]
@@ -201,83 +159,57 @@
       "kind": "table",
       "id": "imperativo-negativo",
       "title": {
-        "hu": "Felszólítás, tiltó alak",
         "en": "Imperative, negative form",
-        "es": "Imperativo negativo",
-        "de": "Imperativ, verneinte Form"
+        "es": "Imperativo negativo"
       },
       "header": [
         {
-          "hu": "Személy",
           "en": "Person",
-          "es": "Persona",
-          "de": "Person"
+          "es": "Persona"
         },
         {
-          "hu": "hablar",
           "en": "hablar",
-          "es": "hablar",
-          "de": "hablar"
+          "es": "hablar"
         },
         {
-          "hu": "comer",
           "en": "comer",
-          "es": "comer",
-          "de": "comer"
+          "es": "comer"
         },
         {
-          "hu": "escribir",
           "en": "escribir",
-          "es": "escribir",
-          "de": "escribir"
+          "es": "escribir"
         },
         {
-          "hu": "decir",
           "en": "decir",
-          "es": "decir",
-          "de": "decir"
+          "es": "decir"
         },
         {
-          "hu": "hacer",
           "en": "hacer",
-          "es": "hacer",
-          "de": "hacer"
+          "es": "hacer"
         },
         {
-          "hu": "ir",
           "en": "ir",
-          "es": "ir",
-          "de": "ir"
+          "es": "ir"
         },
         {
-          "hu": "poner",
           "en": "poner",
-          "es": "poner",
-          "de": "poner"
+          "es": "poner"
         },
         {
-          "hu": "salir",
           "en": "salir",
-          "es": "salir",
-          "de": "salir"
+          "es": "salir"
         },
         {
-          "hu": "ser",
           "en": "ser",
-          "es": "ser",
-          "de": "ser"
+          "es": "ser"
         },
         {
-          "hu": "tener",
           "en": "tener",
-          "es": "tener",
-          "de": "tener"
+          "es": "tener"
         },
         {
-          "hu": "venir",
           "en": "venir",
-          "es": "venir",
-          "de": "venir"
+          "es": "venir"
         }
       ],
       "rows": [
@@ -333,38 +265,30 @@
     {
       "kind": "contrast",
       "title": {
-        "hu": "Hasonló, mégis más",
         "en": "Similar, yet different",
-        "es": "Parecido, pero distinto",
-        "de": "Ähnlich, aber anders"
+        "es": "Parecido, pero distinto"
       },
       "pairs": [
         {
           "a": "habla",
           "b": "no hables",
           "note": {
-            "hu": "Az állító tú-alak a jelen idő ő-alakja (habla), a tiltó tú-alak viszont kötőmód (no hables): az -a végből -es lesz. A „no habla” tiltásnak hibás, az az ő jelen idejű tagadása.",
             "en": "The affirmative tú form is the present-tense he/she form (habla), but the negative tú form is the subjunctive (no hables): the -a ending becomes -es. \"No habla\" is wrong as a prohibition, it is the he/she present negation.",
-            "es": "La forma afirmativa de tú es la de él/ella en presente (habla), pero la forma negativa de tú es el subjuntivo (no hables): la terminación -a pasa a -es. \"No habla\" es incorrecto como prohibición, es la negación de él/ella en presente.",
-            "de": "Die bejahte tú-Form ist die er/sie-Form des Präsens (habla), die verneinte tú-Form dagegen der Subjuntivo (no hables): aus der Endung -a wird -es. \"No habla\" ist als Verbot falsch, es ist die Präsensverneinung für er/sie."
+            "es": "La forma afirmativa de tú es la de él/ella en presente (habla), pero la forma negativa de tú es el subjuntivo (no hables): la terminación -a pasa a -es. \"No habla\" es incorrecto como prohibición, es la negación de él/ella en presente."
           },
           "examples": [
             {
               "es": "Habla más despacio, por favor.",
               "tr": {
-                "hu": "Beszélj lassabban, kérlek.",
                 "en": "Talk more slowly, please.",
-                "es": "Habla más despacio, por favor.",
-                "de": "Sprich bitte langsamer."
+                "es": "Habla más despacio, por favor."
               }
             },
             {
               "es": "No hables tan rápido.",
               "tr": {
-                "hu": "Ne beszélj olyan gyorsan.",
                 "en": "Don't talk so fast.",
-                "es": "No hables tan rápido.",
-                "de": "Sprich nicht so schnell."
+                "es": "No hables tan rápido."
               }
             }
           ]
@@ -373,28 +297,22 @@
           "a": "no hablas",
           "b": "no hables",
           "note": {
-            "hu": "A „no hablas” kijelentés (te nem beszélsz), a „no hables” tiltás (ne beszélj): egyetlen betű dönt, és a mondat funkciója más.",
             "en": "The \"no hablas\" is a statement (you do not speak), \"no hables\" is a prohibition (do not speak): a single letter decides, and the function of the sentence is different.",
-            "es": "\"No hablas\" es una afirmación (tú no hablas), \"no hables\" es una prohibición (no hables): una sola letra decide, y la función de la frase cambia.",
-            "de": "\"No hablas\" ist eine Aussage (du sprichst nicht), \"no hables\" ein Verbot (sprich nicht): ein einziger Buchstabe entscheidet, und die Funktion des Satzes ist eine andere."
+            "es": "\"No hablas\" es una afirmación (tú no hablas), \"no hables\" es una prohibición (no hables): una sola letra decide, y la función de la frase cambia."
           },
           "examples": [
             {
               "es": "Tú no hablas inglés.",
               "tr": {
-                "hu": "Te nem beszélsz angolul.",
                 "en": "You don't speak English.",
-                "es": "Tú no hablas inglés.",
-                "de": "Du sprichst kein Englisch."
+                "es": "Tú no hablas inglés."
               }
             },
             {
               "es": "No hables inglés aquí.",
               "tr": {
-                "hu": "Ne beszélj itt angolul.",
                 "en": "Don't speak English here.",
-                "es": "No hables inglés aquí.",
-                "de": "Sprich hier kein Englisch."
+                "es": "No hables inglés aquí."
               }
             }
           ]
@@ -404,18 +322,14 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Tiltásnál a nyolc rendhagyó egy szótagú alak (di, haz, ve, pon, sal, sé, ten, ven) eltűnik: mindig a kötőmód-alak kell, és a névmás az ige elé kerül: ven → no vengas, dímelo → no me lo digas.",
         "en": "In a prohibition the eight irregular one-syllable forms (di, haz, ve, pon, sal, sé, ten, ven) disappear: you always need the subjunctive form, and the pronoun goes before the verb: ven → no vengas, dímelo → no me lo digas.",
-        "es": "En la prohibición desaparecen las ocho formas irregulares de una sílaba (di, haz, ve, pon, sal, sé, ten, ven): siempre hace falta la forma del subjuntivo y el pronombre va delante del verbo: ven → no vengas, dímelo → no me lo digas.",
-        "de": "Im Verbot fallen die acht unregelmäßigen einsilbigen Formen (di, haz, ve, pon, sal, sé, ten, ven) weg: Man braucht immer die Subjuntivo-Form, und das Pronomen steht vor dem Verb: ven → no vengas, dímelo → no me lo digas."
+        "es": "En la prohibición desaparecen las ocho formas irregulares de una sílaba (di, haz, ve, pon, sal, sé, ten, ven): siempre hace falta la forma del subjuntivo y el pronombre va delante del verbo: ven → no vengas, dímelo → no me lo digas."
       }
     }
   ],
   "speak": {
-    "hu": "A tiltó felszólítás azt mondja meg, mit ne tegyen valaki. Minden személynél a kötőmód alakját használjuk, és elé tesszük a tagadószót. Az egy személynek szóló, tegező alaknál a végződés magánhangzója megfordul az állítóhoz képest: az első igecsoport e betűt kap, a másik kettő a betűt. A rendhagyó egy szótagú alakok itt nem élnek, helyettük a kötőmód alakja áll. Az udvarias alak és a több személynek szóló alak ugyanaz, mint az állító felszólításban. Tiltásnál a névmás az ige elé kerül, külön szóként. Ha az ige töve c, g vagy z betűre végződik, a helyesírás megváltozik, hogy a hang ugyanaz maradjon.",
     "en": "The negative imperative says what someone should not do. For every person we use the subjunctive form and put the negative word in front of it. In the informal form for one person the vowel of the ending flips compared to the affirmative: verbs of the first group get an e, the other two groups get an a. The irregular one-syllable forms do not exist here, the subjunctive form takes their place. The polite form and the plural form are the same as in the affirmative imperative. In a prohibition the pronoun goes in front of the verb as a separate word. When the verb stem ends in c, g or z, the spelling changes so that the sound stays the same.",
-    "es": "El imperativo negativo dice lo que alguien no debe hacer. Para todas las personas se usa la forma del subjuntivo, con la palabra de negación delante. En la forma de tú, la vocal de la terminación se invierte respecto al afirmativo: los verbos del primer grupo llevan una e, y los otros dos grupos llevan una a. Las formas irregulares de una sílaba no existen aquí, y en su lugar va la forma del subjuntivo. La forma de cortesía y la de varias personas son las mismas que en el imperativo afirmativo. En la prohibición, el pronombre va delante del verbo, como una palabra separada. Si la raíz del verbo termina en c, g o z, la ortografía cambia para que el sonido siga igual.",
-    "de": "Der verneinte Imperativ sagt, was jemand nicht tun soll. Für alle Personen nimmt man die Form des Subjuntivo und setzt das Verneinungswort davor. In der vertrauten Form für eine Person kehrt sich der Vokal der Endung gegenüber dem bejahten Imperativ um: Verben der ersten Gruppe bekommen ein e, die anderen beiden Gruppen ein a. Die unregelmäßigen einsilbigen Formen gibt es hier nicht, an ihre Stelle tritt die Subjuntivo-Form. Die Höflichkeitsform und die Mehrzahlform sind dieselben wie im bejahten Imperativ. Beim Verbot steht das Pronomen vor dem Verb, als eigenes Wort. Endet der Verbstamm auf c, g oder z, ändert sich die Schreibweise, damit der Laut gleich bleibt."
+    "es": "El imperativo negativo dice lo que alguien no debe hacer. Para todas las personas se usa la forma del subjuntivo, con la palabra de negación delante. En la forma de tú, la vocal de la terminación se invierte respecto al afirmativo: los verbos del primer grupo llevan una e, y los otros dos grupos llevan una a. Las formas irregulares de una sílaba no existen aquí, y en su lugar va la forma del subjuntivo. La forma de cortesía y la de varias personas son las mismas que en el imperativo afirmativo. En la prohibición, el pronombre va delante del verbo, como una palabra separada. Si la raíz del verbo termina en c, g o z, la ortografía cambia para que el sonido siga igual."
   },
   "items": [
     {
@@ -428,30 +342,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A tiltó tú-alak a kötőmód: az -er igék -as végűek, ezért no comas.",
         "en": "The negative tú form is the subjunctive: -er verbs end in -as, so no comas.",
-        "es": "La forma negativa de tú es el subjuntivo: los verbos en -er terminan en -as, por eso no comas.",
-        "de": "Die verneinte tú-Form ist der Subjuntivo: Verben auf -er enden auf -as, also no comas."
+        "es": "La forma negativa de tú es el subjuntivo: los verbos en -er terminan en -as, por eso no comas."
       },
       "wrong": {
         "no come": {
-          "hu": "A \"no come\" a jelen idő ő-alakja; ha ide kerülne, azt jelentené, hogy Ő nem eszik, nem tiltás Anának. A tiltáshoz a kötőmód kell: no comas.",
           "en": "\"No come\" is the he/she present form; if used here it would mean HE/SHE does not eat, not a ban to Ana. A ban needs the subjunctive: no comas.",
-          "es": "\"No come\" es la forma de él/ella en presente; si se usara aquí significaría que ÉL/ELLA no come, no una prohibición para Ana. La prohibición necesita el subjuntivo: no comas.",
-          "de": "\"No come\" ist die er/sie-Präsensform; würde man sie hier verwenden, hieße es, dass ER/SIE nicht isst, kein Verbot an Ana. Das Verbot braucht den Subjuntivo: no comas."
+          "es": "\"No come\" es la forma de él/ella en presente; si se usara aquí significaría que ÉL/ELLA no come, no una prohibición para Ana. La prohibición necesita el subjuntivo: no comas."
         },
         "no comes": {
-          "hu": "A \"no comes\" jelen idejű tagadás (te nem eszel); ha ide kerülne, megállapítás lenne arról, hogy Ana nem eszik itt, nem kérés. A tiltó alak: no comas.",
           "en": "\"No comes\" is a present-tense negation (you do not eat); if used here it would state that Ana does not eat here, not make a request. The prohibition: no comas.",
-          "es": "\"No comes\" es una negación en presente (tú no comes); si se usara aquí afirmaría que Ana no come aquí, no sería una petición. La prohibición es: no comas.",
-          "de": "\"No comes\" ist eine Verneinung im Präsens (du isst nicht); an dieser Stelle würde es feststellen, dass Ana hier nicht isst, statt eine Bitte zu sein. Das Verbot lautet: no comas."
+          "es": "\"No comes\" es una negación en presente (tú no comes); si se usara aquí afirmaría que Ana no come aquí, no sería una petición. La prohibición es: no comas."
         }
       },
       "examples": [
         "No comas eso ahora.",
         "Niño, no comas tan rápido."
       ],
-      "tr": { "hu": "Ana, ne egyél itt, kérlek.", "en": "Ana, please do not eat here.", "es": "Ana, no comas aquí, por favor.", "de": "Ana, iss bitte hier nicht." }
+      "tr": { "en": "Ana, please do not eat here.", "es": "Ana, no comas aquí, por favor." }
     },
     {
       "id": "ineg-02",
@@ -463,30 +371,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A hacer tiltó tú-alakja a kötőmódból jön: no hagas. Az állító haz itt nem használható.",
         "en": "Hacer's negative tú form comes from the subjunctive: no hagas. The affirmative haz cannot be used here.",
-        "es": "La forma negativa de tú de hacer viene del subjuntivo: no hagas. El afirmativo haz no se puede usar aquí.",
-        "de": "Die verneinte tú-Form von hacer kommt vom Subjuntivo: no hagas. Das bejahte haz ist hier nicht möglich."
+        "es": "La forma negativa de tú de hacer viene del subjuntivo: no hagas. El afirmativo haz no se puede usar aquí."
       },
       "wrong": {
         "no hago": {
-          "hu": "A \"no hago\" az én jelen idejű alakom (nem csinálom); ha ide kerülne, azt jelentené, hogy ÉN nem csinálom ezt, nem tiltás Carlosnak. A tiltó alak: no hagas.",
           "en": "\"No hago\" is my (yo) present form (I do not do); if used here it would mean I do not do that, not a ban to Carlos. The prohibition is no hagas.",
-          "es": "\"No hago\" es mi forma (yo) en presente (no hago); si se usara aquí significaría que YO no hago eso, no una prohibición a Carlos. La prohibición es no hagas.",
-          "de": "\"No hago\" ist meine (yo) Präsensform (ich tue nicht); hier würde es heißen, dass ICH das nicht tue, kein Verbot an Carlos. Das Verbot ist no hagas."
+          "es": "\"No hago\" es mi forma (yo) en presente (no hago); si se usara aquí significaría que YO no hago eso, no una prohibición a Carlos. La prohibición es no hagas."
         },
         "no hace": {
-          "hu": "A \"no hace\" az ő jelen idejű tagadása; ha ide kerülne, azt jelentené, hogy Ő nem csinálja ezt, nem tiltás Carlosnak. A tiltó alak: no hagas.",
           "en": "\"No hace\" is the he/she present negation; if used here it would say HE/SHE does not do that, not forbid Carlos. The prohibition is no hagas.",
-          "es": "\"No hace\" es la negación en presente de él/ella; si se usara aquí diría que ÉL/ELLA no hace eso, no una prohibición a Carlos. La prohibición es no hagas.",
-          "de": "\"No hace\" ist die Präsensverneinung für er/sie; hier würde es sagen, dass ER/SIE das nicht tut, kein Verbot an Carlos. Das Verbot ist no hagas."
+          "es": "\"No hace\" es la negación en presente de él/ella; si se usara aquí diría que ÉL/ELLA no hace eso, no una prohibición a Carlos. La prohibición es no hagas."
         }
       },
       "examples": [
         "No hagas eso, por favor.",
         "No hagas ruido ahora."
       ],
-      "tr": { "hu": "Carlos, ne csináld ezt órán, kérlek.", "en": "Carlos, please do not do that in class.", "es": "Carlos, no hagas eso en clase, por favor.", "de": "Carlos, mach das im Unterricht bitte nicht." }
+      "tr": { "en": "Carlos, please do not do that in class.", "es": "Carlos, no hagas eso en clase, por favor." }
     },
     {
       "id": "ineg-03",
@@ -498,30 +400,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Az ir tiltó tú-alakja kötőmód: no vayas. Az állító ve itt nem használható.",
         "en": "Ir's negative tú form is the subjunctive: no vayas. The affirmative ve cannot be used here.",
-        "es": "La forma negativa de tú de ir es el subjuntivo: no vayas. El afirmativo ve no se puede usar aquí.",
-        "de": "Die verneinte tú-Form von ir ist der Subjuntivo: no vayas. Das bejahte ve ist hier nicht möglich."
+        "es": "La forma negativa de tú de ir es el subjuntivo: no vayas. El afirmativo ve no se puede usar aquí."
       },
       "wrong": {
         "no vas": {
-          "hu": "A \"no vas\" jelen idejű tagadás (nem mész); ha ide kerülne, megállapítás lenne arról, hogy Diego nem megy, nem tiltás. A tiltó alak: no vayas.",
           "en": "\"No vas\" is a present-tense negation (you are not going); if used here it would state that Diego is not going, not forbid it. The prohibition is no vayas.",
-          "es": "\"No vas\" es una negación en presente (tú no vas); si se usara aquí afirmaría que Diego no va, no sería una prohibición. La prohibición es no vayas.",
-          "de": "\"No vas\" ist eine Verneinung im Präsens (du gehst nicht); hier würde es feststellen, dass Diego nicht geht, kein Verbot. Das Verbot ist no vayas."
+          "es": "\"No vas\" es una negación en presente (tú no vas); si se usara aquí afirmaría que Diego no va, no sería una prohibición. La prohibición es no vayas."
         },
         "no ve": {
-          "hu": "A \"no ve\" a ver ige ő-alakja (nem lát), vagy az állító \"ve\" elé tett no; egyik sem tiltás Diegónak. A helyes alak: no vayas.",
           "en": "\"No ve\" is the he/she form of ver (does not see), or no in front of the affirmative \"ve\"; neither is a ban to Diego. The correct form is no vayas.",
-          "es": "\"No ve\" es la forma de él/ella de ver (no ve), o no delante del afirmativo \"ve\"; ninguna es una prohibición para Diego. La forma correcta es no vayas.",
-          "de": "\"No ve\" ist die er/sie-Form von ver (sieht nicht) oder no vor dem bejahten \"ve\"; beides ist kein Verbot an Diego. Die richtige Form ist no vayas."
+          "es": "\"No ve\" es la forma de él/ella de ver (no ve), o no delante del afirmativo \"ve\"; ninguna es una prohibición para Diego. La forma correcta es no vayas."
         }
       },
       "examples": [
         "No vayas solo a la calle.",
         "No vayas tarde a la clase."
       ],
-      "tr": { "hu": "Diego, ne menj egyedül a buliba, kérlek.", "en": "Diego, please do not go to the party alone.", "es": "Diego, no vayas solo a la fiesta, por favor.", "de": "Diego, geh bitte nicht allein zur Party." }
+      "tr": { "en": "Diego, please do not go to the party alone.", "es": "Diego, no vayas solo a la fiesta, por favor." }
     },
     {
       "id": "ineg-04",
@@ -533,30 +429,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A llegar tiltó tú-alakjánál a g mögé u kerül, hogy a hang megmaradjon: no llegues.",
         "en": "In llegar's negative tú form a u is added after g to keep the sound: no llegues.",
-        "es": "En la forma negativa de tú de llegar se añade una u después de g para mantener el sonido: no llegues.",
-        "de": "Bei der verneinten tú-Form von llegar kommt ein u nach dem g, damit der Laut bleibt: no llegues."
+        "es": "En la forma negativa de tú de llegar se añade una u después de g para mantener el sonido: no llegues."
       },
       "wrong": {
         "no llegas": {
-          "hu": "A \"no llegas\" jelen idejű tagadás (nem érkezel meg); ha ide kerülne, megállapítás lenne, nem kérés Laurának. A tiltó alak: no llegues.",
           "en": "\"No llegas\" is a present-tense negation (you do not arrive); if used here it would be a statement, not a request to Laura. The prohibition is no llegues.",
-          "es": "\"No llegas\" es una negación en presente (tú no llegas); si se usara aquí sería una afirmación, no una petición a Laura. La prohibición es no llegues.",
-          "de": "\"No llegas\" ist eine Verneinung im Präsens (du kommst nicht an); hier wäre es eine Aussage, keine Bitte an Laura. Das Verbot ist no llegues."
+          "es": "\"No llegas\" es una negación en presente (tú no llegas); si se usara aquí sería una afirmación, no una petición a Laura. La prohibición es no llegues."
         },
         "no llegue": {
-          "hu": "A \"no llegue\" az usted alakja; ha ide kerülne, magáznánk Laurát, pedig tegezzük. A helyes alak: no llegues.",
           "en": "\"No llegue\" is the usted form; if used here we would address Laura formally, but we use tú with her. The correct form is no llegues.",
-          "es": "\"No llegue\" es la forma de usted; si se usara aquí trataríamos a Laura de usted, pero con ella usamos tú. La forma correcta es no llegues.",
-          "de": "\"No llegue\" ist die usted-Form; hier würden wir Laura siezen, wir duzen sie aber. Die richtige Form ist no llegues."
+          "es": "\"No llegue\" es la forma de usted; si se usara aquí trataríamos a Laura de usted, pero con ella usamos tú. La forma correcta es no llegues."
         }
       },
       "examples": [
         "No llegues tarde, por favor.",
         "Laura, no llegues sin mí."
       ],
-      "tr": { "hu": "Laura, kislányom, kérlek, ne késs el az óráról.", "en": "Laura, honey, don't be late for class, please.", "es": "Laura, hija, no llegues tarde a la clase, por favor.", "de": "Laura, mein Kind, komm bitte nicht zu spät zum Unterricht." }
+      "tr": { "en": "Laura, honey, don't be late for class, please.", "es": "Laura, hija, no llegues tarde a la clase, por favor." }
     },
     {
       "id": "ineg-05",
@@ -568,30 +458,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Visszaható igénél a te az ige elé kerül külön szóként, az ige kötőmódban áll: no te preocupes.",
         "en": "With a reflexive verb, te goes in front of the verb as a separate word and the verb is in the subjunctive: no te preocupes.",
-        "es": "Con un verbo reflexivo, te va delante del verbo como palabra separada y el verbo va en subjuntivo: no te preocupes.",
-        "de": "Bei einem reflexiven Verb steht te als eigenes Wort vor dem Verb, und das Verb steht im Subjuntivo: no te preocupes."
+        "es": "Con un verbo reflexivo, te va delante del verbo como palabra separada y el verbo va en subjuntivo: no te preocupes."
       },
       "wrong": {
         "no preocupes": {
-          "hu": "A \"no preocupes\" névmás nélkül hibás: a preocuparse visszaható ige, ezért kell a te az ige elé: no te preocupes.",
           "en": "\"No preocupes\" without the pronoun is wrong: preocuparse is reflexive, so te is needed before the verb: no te preocupes.",
-          "es": "\"No preocupes\" sin el pronombre es incorrecto: preocuparse es reflexivo, por eso hace falta te delante del verbo: no te preocupes.",
-          "de": "\"No preocupes\" ohne Pronomen ist falsch: preocuparse ist reflexiv, darum braucht man te vor dem Verb: no te preocupes."
+          "es": "\"No preocupes\" sin el pronombre es incorrecto: preocuparse es reflexivo, por eso hace falta te delante del verbo: no te preocupes."
         },
         "no te preocupas": {
-          "hu": "A \"no te preocupas\" jelen idejű tagadás (nem aggódsz); ha ide kerülne, megállapítás lenne arról, hogy Rosa nem aggódik, nem kérés. A tiltó alak: no te preocupes.",
           "en": "\"No te preocupas\" is a present-tense negation (you do not worry); if used here it would state that Rosa does not worry, not make a request. The prohibition is no te preocupes.",
-          "es": "\"No te preocupas\" es una negación en presente (no te preocupas); si se usara aquí afirmaría que Rosa no se preocupa, no sería una petición. La prohibición es no te preocupes.",
-          "de": "\"No te preocupas\" ist eine Verneinung im Präsens (du machst dir keine Sorgen); hier würde es feststellen, dass Rosa sich keine Sorgen macht, statt zu bitten. Das Verbot ist no te preocupes."
+          "es": "\"No te preocupas\" es una negación en presente (no te preocupas); si se usara aquí afirmaría que Rosa no se preocupa, no sería una petición. La prohibición es no te preocupes."
         }
       },
       "examples": [
         "No te preocupes por mí.",
         "Rosa, no te preocupes tanto."
       ],
-      "tr": { "hu": "Rosa, kérlek, ne aggódj emiatt.", "en": "Rosa, please don't worry about that.", "es": "Rosa, no te preocupes por eso, por favor.", "de": "Rosa, mach dir bitte keine Sorgen deswegen." }
+      "tr": { "en": "Rosa, please don't worry about that.", "es": "Rosa, no te preocupes por eso, por favor." }
     },
     {
       "id": "ineg-06",
@@ -603,30 +487,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Tiltásnál a tárgy-névmás az ige ELÉ kerül külön szóként: no lo tomes.",
         "en": "In a prohibition the object pronoun goes BEFORE the verb as a separate word: no lo tomes.",
-        "es": "En la prohibición el pronombre de objeto va ANTES del verbo, como palabra separada: no lo tomes.",
-        "de": "Im Verbot steht das Objektpronomen VOR dem Verb, als eigenes Wort: no lo tomes."
+        "es": "En la prohibición el pronombre de objeto va ANTES del verbo, como palabra separada: no lo tomes."
       },
       "wrong": {
         "no los tomes": {
-          "hu": "A \"los\" többes számú tárgy-névmás; a kávé (el café) egyes szám, ezért lo kell: no lo tomes.",
           "en": "\"Los\" is a plural object pronoun; the coffee (el café) is singular, so you need lo: no lo tomes.",
-          "es": "\"Los\" es un pronombre de objeto en plural; el café es singular, por eso hace falta lo: no lo tomes.",
-          "de": "\"Los\" ist ein Objektpronomen im Plural; der Kaffee (el café) ist Singular, darum braucht man lo: no lo tomes."
+          "es": "\"Los\" es un pronombre de objeto en plural; el café es singular, por eso hace falta lo: no lo tomes."
         },
         "no tomes lo": {
-          "hu": "A \"no tomes lo\" hibás, mert a névmás nem állhat az ige után külön szóként. Tiltásnál az ige elé kerül: no lo tomes.",
           "en": "\"No tomes lo\" is wrong, because the pronoun cannot stand after the verb as a separate word. In a prohibition it goes before the verb: no lo tomes.",
-          "es": "\"No tomes lo\" es incorrecto, porque el pronombre no puede ir después del verbo como palabra separada. En la prohibición va delante del verbo: no lo tomes.",
-          "de": "\"No tomes lo\" ist falsch, weil das Pronomen nicht als eigenes Wort nach dem Verb stehen kann. Im Verbot steht es vor dem Verb: no lo tomes."
+          "es": "\"No tomes lo\" es incorrecto, porque el pronombre no puede ir después del verbo como palabra separada. En la prohibición va delante del verbo: no lo tomes."
         }
       },
       "examples": [
         "No lo tomes ahora.",
         "No lo compres, es caro."
       ],
-      "tr": { "hu": "Ana, ne idd meg most, forró a kávé.", "en": "Ana, don't drink it now, the coffee is hot.", "es": "Ana, no lo tomes ahora, el café está caliente.", "de": "Ana, trink ihn jetzt nicht, der Kaffee ist heiß." }
+      "tr": { "en": "Ana, don't drink it now, the coffee is hot.", "es": "Ana, no lo tomes ahora, el café está caliente." }
     },
     {
       "id": "ineg-07",
@@ -638,30 +516,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Az usted tiltó alakja a kötőmód 3. személyű alakja: no hable.",
         "en": "The negative usted form is the subjunctive third-person form: no hable.",
-        "es": "La forma negativa de usted es la forma de tercera persona del subjuntivo: no hable.",
-        "de": "Die verneinte usted-Form ist die Subjuntivo-Form der dritten Person: no hable."
+        "es": "La forma negativa de usted es la forma de tercera persona del subjuntivo: no hable."
       },
       "wrong": {
         "no hables": {
-          "hu": "A \"no hables\" a tú alakja; ha ide kerülne, tegeznénk a doktort, pedig magázzuk. A helyes alak: no hable.",
           "en": "\"No hables\" is the tú form; used here it would address the doctor informally, but he/she is addressed as usted. The correct form is no hable.",
-          "es": "\"No hables\" es la forma de tú; si se usara aquí trataría de tú al doctor, pero se le trata de usted. La forma correcta es no hable.",
-          "de": "\"No hables\" ist die tú-Form; hier würde der Arzt geduzt, er wird aber gesiezt. Die richtige Form ist no hable."
+          "es": "\"No hables\" es la forma de tú; si se usara aquí trataría de tú al doctor, pero se le trata de usted. La forma correcta es no hable."
         },
         "no habla": {
-          "hu": "A \"no habla\" a jelen idejű ő-alak (nem beszél); ha ide kerülne, azt jelentené, hogy a doktor nem beszél, nem kérés. A tiltó alak: no hable.",
           "en": "\"No habla\" is the present-tense he/she form (does not speak); if used here it would mean the doctor does not speak, not a request. The prohibition is no hable.",
-          "es": "\"No habla\" es la forma de él/ella en presente (no habla); si se usara aquí significaría que el doctor no habla, no una petición. La prohibición es no hable.",
-          "de": "\"No habla\" ist die Präsensform für er/sie (spricht nicht); hier hieße es, dass der Arzt nicht spricht, keine Bitte. Das Verbot ist no hable."
+          "es": "\"No habla\" es la forma de él/ella en presente (no habla); si se usara aquí significaría que el doctor no habla, no una petición. La prohibición es no hable."
         }
       },
       "examples": [
         "No hable tan rápido, doctor.",
         "Doctor, no hable ahora, por favor."
       ],
-      "tr": { "hu": "Doktor úr, kérem, ne beszéljen olyan gyorsan.", "en": "Doctor, please don't speak so fast.", "es": "Doctor, no hable tan rápido, por favor.", "de": "Herr Doktor, sprechen Sie bitte nicht so schnell." }
+      "tr": { "en": "Doctor, please don't speak so fast.", "es": "Doctor, no hable tan rápido, por favor." }
     },
     {
       "id": "ineg-08",
@@ -673,30 +545,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Az -ir igék tiltó usted-alakja -a végű kötőmód: abrir → no abra.",
         "en": "The negative usted form of -ir verbs ends in -a (subjunctive): abrir → no abra.",
-        "es": "La forma negativa de usted de los verbos en -ir termina en -a (subjuntivo): abrir → no abra.",
-        "de": "Die verneinte usted-Form der Verben auf -ir endet auf -a (Subjuntivo): abrir → no abra."
+        "es": "La forma negativa de usted de los verbos en -ir termina en -a (subjuntivo): abrir → no abra."
       },
       "wrong": {
         "no abras": {
-          "hu": "A \"no abras\" a tú alakja; ha ide kerülne, tegeznénk az urat, de a \"señor\" magázást kér. A helyes alak: no abra.",
           "en": "\"No abras\" is the tú form; used here it would address the gentleman informally, but \"señor\" calls for usted. The correct form is no abra.",
-          "es": "\"No abras\" es la forma de tú; si se usara aquí trataría de tú al señor, pero \"señor\" pide usted. La forma correcta es no abra.",
-          "de": "\"No abras\" ist die tú-Form; hier würde der Herr geduzt, \"señor\" verlangt aber usted. Die richtige Form ist no abra."
+          "es": "\"No abras\" es la forma de tú; si se usara aquí trataría de tú al señor, pero \"señor\" pide usted. La forma correcta es no abra."
         },
         "no abre": {
-          "hu": "A \"no abre\" a jelen idejű ő-alak (nem nyitja ki); ha ide kerülne, megállapítás lenne arról, hogy az úr nem nyitja ki az ajtót, nem kérés. A tiltó alak: no abra.",
           "en": "\"No abre\" is the present-tense he/she form (does not open); if used here it would state that the gentleman does not open the door, not a request. The prohibition is no abra.",
-          "es": "\"No abre\" es la forma de él/ella en presente (no abre); si se usara aquí afirmaría que el señor no abre la puerta, no una petición. La prohibición es no abra.",
-          "de": "\"No abre\" ist die Präsensform für er/sie (öffnet nicht); hier würde es feststellen, dass der Herr die Tür nicht öffnet, keine Bitte. Das Verbot ist no abra."
+          "es": "\"No abre\" es la forma de él/ella en presente (no abre); si se usara aquí afirmaría que el señor no abre la puerta, no una petición. La prohibición es no abra."
         }
       },
       "examples": [
         "No abra la ventana, por favor.",
         "Señorita, no abra la puerta."
       ],
-      "tr": { "hu": "Uram, kérem, ne nyissa ki az ajtót.", "en": "Sir, please do not open the door.", "es": "Señor, no abra la puerta, por favor.", "de": "Mein Herr, öffnen Sie bitte nicht die Tür." }
+      "tr": { "en": "Sir, please do not open the door.", "es": "Señor, no abra la puerta, por favor." }
     },
     {
       "id": "ineg-09",
@@ -708,30 +574,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A tener tiltó usted-alakja a kötőmód alakja a tengo tövéből: no tenga.",
         "en": "The negative usted form of tener is the subjunctive form from the stem of tengo: no tenga.",
-        "es": "La forma negativa de usted de tener es la del subjuntivo, de la raíz de tengo: no tenga.",
-        "de": "Die verneinte usted-Form von tener ist die Subjuntivo-Form vom Stamm von tengo: no tenga."
+        "es": "La forma negativa de usted de tener es la del subjuntivo, de la raíz de tengo: no tenga."
       },
       "wrong": {
         "no tengas": {
-          "hu": "A \"no tengas\" a tú alakja; ha ide kerülne, tegeznénk a hölgyet, pedig a \"señorita\" magázást kér. A helyes alak: no tenga.",
           "en": "\"No tengas\" is the tú form; used here it would address the lady informally, but \"señorita\" calls for usted. The correct form is no tenga.",
-          "es": "\"No tengas\" es la forma de tú; si se usara aquí trataría de tú a la señorita, pero \"señorita\" pide usted. La forma correcta es no tenga.",
-          "de": "\"No tengas\" ist die tú-Form; hier würde die Dame geduzt, \"señorita\" verlangt aber usted. Die richtige Form ist no tenga."
+          "es": "\"No tengas\" es la forma de tú; si se usara aquí trataría de tú a la señorita, pero \"señorita\" pide usted. La forma correcta es no tenga."
         },
         "no tiene": {
-          "hu": "A \"no tiene\" a jelen idejű ő-alak (nincs neki); ha ide kerülne, azt állítaná, hogy a hölgy nem fél, nem kérné rá. A tiltó alak: no tenga.",
           "en": "\"No tiene\" is the present-tense he/she form (does not have); if used here it would claim that the lady is not afraid, not ask her not to be. The prohibition is no tenga.",
-          "es": "\"No tiene\" es la forma de él/ella en presente (no tiene); si se usara aquí afirmaría que la señorita no tiene miedo, no se lo pediría. La prohibición es no tenga.",
-          "de": "\"No tiene\" ist die Präsensform für er/sie (hat nicht); hier würde es behaupten, dass die Dame keine Angst hat, statt sie darum zu bitten. Das Verbot ist no tenga."
+          "es": "\"No tiene\" es la forma de él/ella en presente (no tiene); si se usara aquí afirmaría que la señorita no tiene miedo, no se lo pediría. La prohibición es no tenga."
         }
       },
       "examples": [
         "No tenga miedo, señor.",
         "Doctor, no tenga prisa."
       ],
-      "tr": { "hu": "Kisasszony, kérem, ne féljen.", "en": "Miss, please don't be afraid.", "es": "Señorita, no tenga miedo, por favor.", "de": "Fräulein, haben Sie bitte keine Angst." }
+      "tr": { "en": "Miss, please don't be afraid.", "es": "Señorita, no tenga miedo, por favor." }
     },
     {
       "id": "ineg-10",
@@ -743,30 +603,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Az ustedes tiltó alakja a kötőmód többes száma: no corran (az -er igék -an végűek).",
         "en": "The negative ustedes form is the plural subjunctive: no corran (-er verbs end in -an).",
-        "es": "La forma negativa de ustedes es el subjuntivo en plural: no corran (los verbos en -er terminan en -an).",
-        "de": "Die verneinte ustedes-Form ist der Subjuntivo im Plural: no corran (Verben auf -er enden auf -an)."
+        "es": "La forma negativa de ustedes es el subjuntivo en plural: no corran (los verbos en -er terminan en -an)."
       },
       "wrong": {
         "no corras": {
-          "hu": "A \"no corras\" a tú alakja; ha ide kerülne, egyetlen gyereknek szólna, de itt többen vannak (niños). A helyes alak: no corran.",
           "en": "\"No corras\" is the tú form; used here it would speak to a single child, but there are several (niños). The correct form is no corran.",
-          "es": "\"No corras\" es la forma de tú; si se usara aquí hablaría a un solo niño, pero aquí son varios (niños). La forma correcta es no corran.",
-          "de": "\"No corras\" ist die tú-Form; hier würde sie sich an ein einzelnes Kind richten, es sind aber mehrere (niños). Die richtige Form ist no corran."
+          "es": "\"No corras\" es la forma de tú; si se usara aquí hablaría a un solo niño, pero aquí son varios (niños). La forma correcta es no corran."
         },
         "no corren": {
-          "hu": "A \"no corren\" jelen idejű tagadás (nem futnak); ha ide kerülne, megállapítás lenne arról, hogy a gyerekek nem futnak, nem tiltás nekik. A tiltó alak: no corran.",
           "en": "\"No corren\" is a present-tense negation (they do not run); if used here it would state that the children do not run, not forbid them. The prohibition is no corran.",
-          "es": "\"No corren\" es una negación en presente (ellos no corren); si se usara aquí afirmaría que los niños no corren, no sería una prohibición para ellos. La prohibición es no corran.",
-          "de": "\"No corren\" ist eine Verneinung im Präsens (sie rennen nicht); hier würde es feststellen, dass die Kinder nicht rennen, kein Verbot an sie. Das Verbot ist no corran."
+          "es": "\"No corren\" es una negación en presente (ellos no corren); si se usara aquí afirmaría que los niños no corren, no sería una prohibición para ellos. La prohibición es no corran."
         }
       },
       "examples": [
         "No corran en la clase.",
         "Niños, no corran tanto."
       ],
-      "tr": { "hu": "Gyerekek, kérlek, ne fussatok az utcán.", "en": "Children, please don't run in the street.", "es": "Niños, no corran en la calle, por favor.", "de": "Kinder, lauft bitte nicht auf der Straße." }
+      "tr": { "en": "Children, please don't run in the street.", "es": "Niños, no corran en la calle, por favor." }
     },
     {
       "id": "ineg-11",
@@ -778,30 +632,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A hacer ustedes tiltó alakja a kötőmódból jön: no hagan.",
         "en": "Hacer's negative ustedes form comes from the subjunctive: no hagan.",
-        "es": "La forma negativa de ustedes de hacer viene del subjuntivo: no hagan.",
-        "de": "Die verneinte ustedes-Form von hacer kommt vom Subjuntivo: no hagan."
+        "es": "La forma negativa de ustedes de hacer viene del subjuntivo: no hagan."
       },
       "wrong": {
         "no hacen": {
-          "hu": "A \"no hacen\" jelen idejű tagadás (nem csinálnak); ha ide kerülne, azt állítaná, hogy a gyerekek nem csapnak zajt, nem kérné rájuk. A tiltó alak: no hagan.",
           "en": "\"No hacen\" is a present-tense negation (they do not make); if used here it would claim that the children do not make noise, not ask them not to. The prohibition is no hagan.",
-          "es": "\"No hacen\" es una negación en presente (ellos no hacen); si se usara aquí afirmaría que los niños no hacen ruido, no se lo pediría. La prohibición es no hagan.",
-          "de": "\"No hacen\" ist eine Verneinung im Präsens (sie machen nicht); hier würde es behaupten, dass die Kinder keinen Lärm machen, statt sie darum zu bitten. Das Verbot ist no hagan."
+          "es": "\"No hacen\" es una negación en presente (ellos no hacen); si se usara aquí afirmaría que los niños no hacen ruido, no se lo pediría. La prohibición es no hagan."
         },
         "no hagas": {
-          "hu": "A \"no hagas\" a tú alakja; ha ide kerülne, egyetlen gyereknek szólna, de itt többen vannak (niños). A helyes alak: no hagan.",
           "en": "\"No hagas\" is the tú form; used here it would speak to a single child, but there are several (niños). The correct form is no hagan.",
-          "es": "\"No hagas\" es la forma de tú; si se usara aquí hablaría a un solo niño, pero aquí son varios (niños). La forma correcta es no hagan.",
-          "de": "\"No hagas\" ist die tú-Form; hier würde sie sich an ein einzelnes Kind richten, es sind aber mehrere (niños). Die richtige Form ist no hagan."
+          "es": "\"No hagas\" es la forma de tú; si se usara aquí hablaría a un solo niño, pero aquí son varios (niños). La forma correcta es no hagan."
         }
       },
       "examples": [
         "No hagan ruido, por favor.",
         "Niños, no hagan eso aquí."
       ],
-      "tr": { "hu": "Gyerekek, kérlek, ne zajongjatok.", "en": "Children, please don't make noise.", "es": "Niños, no hagan ruido, por favor.", "de": "Kinder, macht bitte keinen Lärm." }
+      "tr": { "en": "Children, please don't make noise.", "es": "Niños, no hagan ruido, por favor." }
     },
     {
       "id": "ineg-12",
@@ -813,30 +661,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A salir ustedes tiltó alakja a kötőmód alakja a salgo tövéből: no salgan.",
         "en": "The negative ustedes form of salir is the subjunctive form from the stem of salgo: no salgan.",
-        "es": "La forma negativa de ustedes de salir es la del subjuntivo, de la raíz de salgo: no salgan.",
-        "de": "Die verneinte ustedes-Form von salir ist die Subjuntivo-Form vom Stamm von salgo: no salgan."
+        "es": "La forma negativa de ustedes de salir es la del subjuntivo, de la raíz de salgo: no salgan."
       },
       "wrong": {
         "no salen": {
-          "hu": "A \"no salen\" jelen idejű tagadás (nem mennek ki); ha ide kerülne, megállapítás lenne a szülőkről, nem kérés hozzájuk. A tiltó alak: no salgan.",
           "en": "\"No salen\" is a present-tense negation (they do not go out); if used here it would be a statement about the parents, not a request to them. The prohibition is no salgan.",
-          "es": "\"No salen\" es una negación en presente (ellos no salen); si se usara aquí sería una afirmación sobre los padres, no una petición a ellos. La prohibición es no salgan.",
-          "de": "\"No salen\" ist eine Verneinung im Präsens (sie gehen nicht aus); hier wäre es eine Aussage über die Eltern, keine Bitte an sie. Das Verbot ist no salgan."
+          "es": "\"No salen\" es una negación en presente (ellos no salen); si se usara aquí sería una afirmación sobre los padres, no una petición a ellos. La prohibición es no salgan."
         },
         "no salgas": {
-          "hu": "A \"no salgas\" a tú alakja; ha ide kerülne, egyetlen személynek szólna, de itt két személy van (mamá y papá). A helyes alak: no salgan.",
           "en": "\"No salgas\" is the tú form; used here it would speak to one person, but there are two (mamá y papá). The correct form is no salgan.",
-          "es": "\"No salgas\" es la forma de tú; si se usara aquí hablaría a una sola persona, pero aquí son dos (mamá y papá). La forma correcta es no salgan.",
-          "de": "\"No salgas\" ist die tú-Form; hier würde sie sich an eine einzelne Person richten, es sind aber zwei (mamá y papá). Die richtige Form ist no salgan."
+          "es": "\"No salgas\" es la forma de tú; si se usara aquí hablaría a una sola persona, pero aquí son dos (mamá y papá). La forma correcta es no salgan."
         }
       },
       "examples": [
         "No salgan tarde, por favor.",
         "No salgan sin mí."
       ],
-      "tr": { "hu": "Anya, apa, kérlek, ne induljatok el későn.", "en": "Mom and Dad, please don't leave late.", "es": "Mamá y papá, no salgan tarde, por favor.", "de": "Mama und Papa, geht bitte nicht so spät los." }
+      "tr": { "en": "Mom and Dad, please don't leave late.", "es": "Mamá y papá, no salgan tarde, por favor." }
     },
     {
       "id": "ineg-match-01",
@@ -970,46 +812,34 @@
       "es": "No hables tan rápido.",
       "target": "hables",
       "tr": {
-        "hu": "Ne beszélj olyan gyorsan.",
         "en": "Don't talk so fast.",
-        "de": "Sprich nicht so schnell.",
         "es": "No hables tan rápido."
       },
       "options": [
         {
           "text": {
-            "hu": "tú, no + kötőmód alak (hables)",
             "en": "tú, no + the subjunctive form (hables)",
-            "es": "tú, no + forma del subjuntivo (hables)",
-            "de": "tú, no + Subjuntivo-Form (hables)"
+            "es": "tú, no + forma del subjuntivo (hables)"
           }
         },
         {
           "text": {
-            "hu": "no + az állító alak (habla)",
             "en": "no + the affirmative form (habla)",
-            "es": "no + la forma afirmativa (habla)",
-            "de": "no + die bejahte Form (habla)"
+            "es": "no + la forma afirmativa (habla)"
           },
           "wrong": {
-            "hu": "Az állító alak „habla” lenne, de tiltásnál nem használható: a mondatban „hables” áll, az -a végből -es lett.",
             "en": "The affirmative form would be \"habla\", but it cannot be used in a prohibition: the sentence has \"hables\", the -a ending became -es.",
-            "es": "La forma afirmativa sería \"habla\", pero no se puede usar en una prohibición: la frase tiene \"hables\", la terminación -a pasó a -es.",
-            "de": "Die bejahte Form wäre \"habla\", sie ist aber im Verbot nicht möglich: im Satz steht \"hables\", aus -a wurde -es."
+            "es": "La forma afirmativa sería \"habla\", pero no se puede usar en una prohibición: la frase tiene \"hables\", la terminación -a pasó a -es."
           }
         },
         {
           "text": {
-            "hu": "jelen idejű tagadás (no hablas)",
             "en": "present-tense negation (no hablas)",
-            "es": "negación en presente (no hablas)",
-            "de": "Verneinung im Präsens (no hablas)"
+            "es": "negación en presente (no hablas)"
           },
           "wrong": {
-            "hu": "A jelen idejű alak „hablas” lenne (-as végű); a „hables” -es végű, kötőmód, ezért tiltás.",
             "en": "The present form would be \"hablas\" (-as ending); \"hables\" ends in -es, it is the subjunctive, so it is a prohibition.",
-            "es": "La forma del presente sería \"hablas\" (terminación -as); \"hables\" termina en -es, es el subjuntivo, por eso es una prohibición.",
-            "de": "Die Präsensform wäre \"hablas\" (Endung -as); \"hables\" endet auf -es, ist der Subjuntivo und damit ein Verbot."
+            "es": "La forma del presente sería \"hablas\" (terminación -as); \"hables\" termina en -es, es el subjuntivo, por eso es una prohibición."
           }
         }
       ],
@@ -1021,46 +851,34 @@
       "es": "No vayas solo a la fiesta.",
       "target": "vayas",
       "tr": {
-        "hu": "Ne menj egyedül a buliba.",
         "en": "Don't go to the party alone.",
-        "de": "Geh nicht allein zur Party.",
         "es": "No vayas solo a la fiesta."
       },
       "options": [
         {
           "text": {
-            "hu": "az állító alak (ve) elé tett no",
             "en": "no in front of the affirmative form (ve)",
-            "es": "no delante de la forma afirmativa (ve)",
-            "de": "no vor der bejahten Form (ve)"
+            "es": "no delante de la forma afirmativa (ve)"
           },
           "wrong": {
-            "hu": "Az állító alak „ve” lenne, de tiltásnál nem áll meg: a „vayas” a kötőmód alakja.",
             "en": "The affirmative form would be \"ve\", but it does not work in a prohibition: \"vayas\" is the subjunctive form.",
-            "es": "La forma afirmativa sería \"ve\", pero no funciona en una prohibición: \"vayas\" es la forma del subjuntivo.",
-            "de": "Die bejahte Form wäre \"ve\", sie funktioniert im Verbot aber nicht: \"vayas\" ist die Subjuntivo-Form."
+            "es": "La forma afirmativa sería \"ve\", pero no funciona en una prohibición: \"vayas\" es la forma del subjuntivo."
           }
         },
         {
           "text": {
-            "hu": "kötőmód alak, nem az állító rendhagyó alak (vayas)",
             "en": "subjunctive form, not the irregular affirmative form (vayas)",
-            "es": "forma del subjuntivo, no la forma irregular afirmativa (vayas)",
-            "de": "Subjuntivo-Form, nicht die unregelmäßige bejahte Form (vayas)"
+            "es": "forma del subjuntivo, no la forma irregular afirmativa (vayas)"
           }
         },
         {
           "text": {
-            "hu": "jelen idejű tagadás (no vas)",
             "en": "present-tense negation (no vas)",
-            "es": "negación en presente (no vas)",
-            "de": "Verneinung im Präsens (no vas)"
+            "es": "negación en presente (no vas)"
           },
           "wrong": {
-            "hu": "A jelen idejű alak „vas” lenne (nem mész); a „vayas” kötőmód, ezért a mondat tilt, nem állít.",
             "en": "The present form would be \"vas\" (you are not going); \"vayas\" is the subjunctive, so the sentence forbids, it does not state.",
-            "es": "La forma del presente sería \"vas\" (no vas); \"vayas\" es el subjuntivo, por eso la frase prohíbe, no afirma.",
-            "de": "Die Präsensform wäre \"vas\" (du gehst nicht); \"vayas\" ist der Subjuntivo, der Satz verbietet also, statt etwas festzustellen."
+            "es": "La forma del presente sería \"vas\" (no vas); \"vayas\" es el subjuntivo, por eso la frase prohíbe, no afirma."
           }
         }
       ],
@@ -1072,46 +890,34 @@
       "es": "No se lo digas a nadie.",
       "target": "se lo",
       "tr": {
-        "hu": "Ne mondd el senkinek.",
         "en": "Don't tell anyone.",
-        "de": "Sag es niemandem.",
         "es": "No se lo digas a nadie."
       },
       "options": [
         {
           "text": {
-            "hu": "a névmások a no és az ige között állnak",
             "en": "the pronouns stand between no and the verb",
-            "es": "los pronombres van entre no y el verbo",
-            "de": "die Pronomen stehen zwischen no und dem Verb"
+            "es": "los pronombres van entre no y el verbo"
           }
         },
         {
           "text": {
-            "hu": "a névmások az igéhez tapadnak",
             "en": "the pronouns attach to the verb",
-            "es": "los pronombres se pegan al verbo",
-            "de": "die Pronomen hängen am Verb"
+            "es": "los pronombres se pegan al verbo"
           },
           "wrong": {
-            "hu": "Az igéhez tapadás az állító alaknál van (díselo); tiltásnál a névmások külön szóként az ige előtt állnak.",
             "en": "Attaching to the verb is for the affirmative (díselo); in a prohibition the pronouns stand before the verb as separate words.",
-            "es": "Pegarse al verbo es propio del afirmativo (díselo); en la prohibición los pronombres van delante del verbo como palabras separadas.",
-            "de": "Das Anhängen ans Verb gilt für den bejahten Imperativ (díselo); im Verbot stehen die Pronomen als eigene Wörter vor dem Verb."
+            "es": "Pegarse al verbo es propio del afirmativo (díselo); en la prohibición los pronombres van delante del verbo como palabras separadas."
           }
         },
         {
           "text": {
-            "hu": "a névmások a no elé kerülnek",
             "en": "the pronouns go before no",
-            "es": "los pronombres van antes de no",
-            "de": "die Pronomen stehen vor no"
+            "es": "los pronombres van antes de no"
           },
           "wrong": {
-            "hu": "A no marad az első szó: no se lo digas; a névmások a no mögött állnak, nem előtte.",
             "en": "No stays the first word: no se lo digas; the pronouns stand after no, not before it.",
-            "es": "No sigue siendo la primera palabra: no se lo digas; los pronombres van después de no, no antes.",
-            "de": "No bleibt das erste Wort: no se lo digas; die Pronomen stehen nach no, nicht davor."
+            "es": "No sigue siendo la primera palabra: no se lo digas; los pronombres van después de no, no antes."
           }
         }
       ],
@@ -1123,46 +929,34 @@
       "es": "No hable con él, por favor.",
       "target": "hable",
       "tr": {
-        "hu": "Ne beszéljen vele, kérem.",
         "en": "Don't talk to him, please.",
-        "de": "Sprechen Sie bitte nicht mit ihm.",
         "es": "No hable con él, por favor."
       },
       "options": [
         {
           "text": {
-            "hu": "tú, no + kötőmód alak (hables)",
             "en": "tú, no + the subjunctive form (hables)",
-            "es": "tú, no + forma del subjuntivo (hables)",
-            "de": "tú, no + Subjuntivo-Form (hables)"
+            "es": "tú, no + forma del subjuntivo (hables)"
           },
           "wrong": {
-            "hu": "A tú alakja „hables” lenne (-es végű); a mondatban „hable” áll, ami az usted alakja: a magázott személynek szól.",
             "en": "The tú form would be \"hables\" (-es ending); the sentence has \"hable\", which is the usted form: it speaks to someone addressed formally.",
-            "es": "La forma de tú sería \"hables\" (terminación -es); la frase tiene \"hable\", que es la forma de usted: se dirige a alguien tratado de usted.",
-            "de": "Die tú-Form wäre \"hables\" (Endung -es); im Satz steht \"hable\", das ist die usted-Form: Sie richtet sich an eine gesiezte Person."
+            "es": "La forma de tú sería \"hables\" (terminación -es); la frase tiene \"hable\", que es la forma de usted: se dirige a alguien tratado de usted."
           }
         },
         {
           "text": {
-            "hu": "usted, no + kötőmód alak (hable)",
             "en": "usted, no + the subjunctive form (hable)",
-            "es": "usted, no + forma del subjuntivo (hable)",
-            "de": "usted, no + Subjuntivo-Form (hable)"
+            "es": "usted, no + forma del subjuntivo (hable)"
           }
         },
         {
           "text": {
-            "hu": "jelen idejű tagadás (no habla)",
             "en": "present-tense negation (no habla)",
-            "es": "negación en presente (no habla)",
-            "de": "Verneinung im Präsens (no habla)"
+            "es": "negación en presente (no habla)"
           },
           "wrong": {
-            "hu": "A jelen idejű ő-alak „habla” lenne (-a végű); a „hable” -e végű, kötőmód, ezért kérés, nem megállapítás.",
             "en": "The present he/she form would be \"habla\" (-a ending); \"hable\" ends in -e, it is the subjunctive, so it is a request, not a statement.",
-            "es": "La forma de él/ella en presente sería \"habla\" (terminación -a); \"hable\" termina en -e, es el subjuntivo, por eso es una petición, no una afirmación.",
-            "de": "Die Präsensform für er/sie wäre \"habla\" (Endung -a); \"hable\" endet auf -e, ist der Subjuntivo und damit eine Bitte, keine Aussage."
+            "es": "La forma de él/ella en presente sería \"habla\" (terminación -a); \"hable\" termina en -e, es el subjuntivo, por eso es una petición, no una afirmación."
           }
         }
       ],
@@ -1174,46 +968,34 @@
       "es": "No vayamos tarde a la fiesta.",
       "target": "vayamos",
       "tr": {
-        "hu": "Ne menjünk későn a buliba.",
         "en": "Let's not go late to the party.",
-        "de": "Lasst uns nicht zu spät zur Party gehen.",
         "es": "No vayamos tarde a la fiesta."
       },
       "options": [
         {
           "text": {
-            "hu": "nosotros, no + kötőmód alak (vayamos)",
             "en": "nosotros, no + the subjunctive form (vayamos)",
-            "es": "nosotros, no + forma del subjuntivo (vayamos)",
-            "de": "nosotros, no + Subjuntivo-Form (vayamos)"
+            "es": "nosotros, no + forma del subjuntivo (vayamos)"
           }
         },
         {
           "text": {
-            "hu": "jelen idejű tagadás (no vamos)",
             "en": "present-tense negation (no vamos)",
-            "es": "negación en presente (no vamos)",
-            "de": "Verneinung im Präsens (no vamos)"
+            "es": "negación en presente (no vamos)"
           },
           "wrong": {
-            "hu": "A „no vamos” azt jelentené, hogy nem megyünk; a „vayamos” kötőmód, ezért javaslat: ne menjünk.",
             "en": "\"No vamos\" would mean we are not going; \"vayamos\" is the subjunctive, so it is a suggestion: let us not go.",
-            "es": "\"No vamos\" significaría que no vamos; \"vayamos\" es el subjuntivo, por eso es una propuesta: que no vayamos.",
-            "de": "\"No vamos\" würde heißen, dass wir nicht gehen; \"vayamos\" ist der Subjuntivo, also ein Vorschlag: gehen wir nicht."
+            "es": "\"No vamos\" significaría que no vamos; \"vayamos\" es el subjuntivo, por eso es una propuesta: que no vayamos."
           }
         },
         {
           "text": {
-            "hu": "ustedes, no + kötőmód alak (vayan)",
             "en": "ustedes, no + the subjunctive form (vayan)",
-            "es": "ustedes, no + forma del subjuntivo (vayan)",
-            "de": "ustedes, no + Subjuntivo-Form (vayan)"
+            "es": "ustedes, no + forma del subjuntivo (vayan)"
           },
           "wrong": {
-            "hu": "Az ustedes alakja „vayan” lenne (-n végű); a „vayamos” -mos végű, ezért mi (nosotros) vagyunk benne.",
             "en": "The ustedes form would be \"vayan\" (-n ending); \"vayamos\" ends in -mos, so we (nosotros) are included.",
-            "es": "La forma de ustedes sería \"vayan\" (terminación -n); \"vayamos\" termina en -mos, así que incluye a nosotros.",
-            "de": "Die ustedes-Form wäre \"vayan\" (Endung -n); \"vayamos\" endet auf -mos, also sind wir (nosotros) gemeint."
+            "es": "La forma de ustedes sería \"vayan\" (terminación -n); \"vayamos\" termina en -mos, así que incluye a nosotros."
           }
         }
       ],
@@ -1225,46 +1007,34 @@
       "es": "Ella no come carne.",
       "target": "come",
       "tr": {
-        "hu": "Ő nem eszik húst.",
         "en": "She doesn't eat meat.",
-        "de": "Sie isst kein Fleisch.",
         "es": "Ella no come carne."
       },
       "options": [
         {
           "text": {
-            "hu": "tiltó alak: no + kötőmód tú-alak (comas)",
             "en": "prohibition: no + the subjunctive tú form (comas)",
-            "es": "prohibición: no + forma de tú del subjuntivo (comas)",
-            "de": "Verbot: no + Subjuntivo-Form von tú (comas)"
+            "es": "prohibición: no + forma de tú del subjuntivo (comas)"
           },
           "wrong": {
-            "hu": "A tiltó tú-alak „comas” lenne; itt „come” áll, és a mondat alanya Ella: tényt állít, nem tilt.",
             "en": "The prohibition tú form would be \"comas\"; here \"come\" stands and the subject is Ella: the sentence states a fact, it does not forbid.",
-            "es": "La forma de prohibición de tú sería \"comas\"; aquí está \"come\" y el sujeto es Ella: la frase afirma un hecho, no prohíbe.",
-            "de": "Die tú-Form des Verbots wäre \"comas\"; hier steht \"come\" und das Subjekt ist Ella: Der Satz stellt eine Tatsache fest, er verbietet nichts."
+            "es": "La forma de prohibición de tú sería \"comas\"; aquí está \"come\" y el sujeto es Ella: la frase afirma un hecho, no prohíbe."
           }
         },
         {
           "text": {
-            "hu": "jelen idejű tagadás (no come)",
             "en": "present-tense negation (no come)",
-            "es": "negación en presente (no come)",
-            "de": "Verneinung im Präsens (no come)"
+            "es": "negación en presente (no come)"
           }
         },
         {
           "text": {
-            "hu": "tiltó alak: no + kötőmód usted-alak (coma)",
             "en": "prohibition: no + the subjunctive usted form (coma)",
-            "es": "prohibición: no + forma de usted del subjuntivo (coma)",
-            "de": "Verbot: no + Subjuntivo-Form von usted (coma)"
+            "es": "prohibición: no + forma de usted del subjuntivo (coma)"
           },
           "wrong": {
-            "hu": "A tiltó usted-alak „coma” lenne (-a végű); a „come” -e végű, jelen idő, ezért a mondat egy tényt állít.",
             "en": "The prohibition usted form would be \"coma\" (-a ending); \"come\" ends in -e, it is the present tense, so the sentence states a fact.",
-            "es": "La forma de prohibición de usted sería \"coma\" (terminación -a); \"come\" termina en -e, es el presente, por eso la frase afirma un hecho.",
-            "de": "Die usted-Form des Verbots wäre \"coma\" (Endung -a); \"come\" endet auf -e, ist Präsens, der Satz stellt also eine Tatsache fest."
+            "es": "La forma de prohibición de usted sería \"coma\" (terminación -a); \"come\" termina en -e, es el presente, por eso la frase afirma un hecho."
           }
         }
       ],
@@ -1276,46 +1046,34 @@
       "es": "No busques en mi bolso.",
       "target": "busques",
       "tr": {
-        "hu": "Ne keress a táskámban.",
         "en": "Don't look in my bag.",
-        "de": "Such nicht in meiner Tasche.",
         "es": "No busques en mi bolso."
       },
       "options": [
         {
           "text": {
-            "hu": "helyesírási változás: c → qu, hogy a hang megmaradjon",
             "en": "spelling change: c → qu so that the sound stays",
-            "es": "cambio ortográfico: c → qu para que el sonido siga igual",
-            "de": "Schreibweisenänderung: c → qu, damit der Laut gleich bleibt"
+            "es": "cambio ortográfico: c → qu para que el sonido siga igual"
           }
         },
         {
           "text": {
-            "hu": "rendhagyó tő, mint a „digas”",
             "en": "irregular stem, like \"digas\"",
-            "es": "raíz irregular, como \"digas\"",
-            "de": "unregelmäßiger Stamm, wie bei \"digas\""
+            "es": "raíz irregular, como \"digas\""
           },
           "wrong": {
-            "hu": "A buscar tője nem rendhagyó: csak a helyesírás igazodik, mert qu nélkül a c az e előtt s-nek hangzana.",
             "en": "The stem of buscar is not irregular: only the spelling adapts, because without qu the c before e would sound like s.",
-            "es": "La raíz de buscar no es irregular: solo se adapta la ortografía, porque sin qu la c delante de e sonaría como s.",
-            "de": "Der Stamm von buscar ist nicht unregelmäßig: Nur die Schreibweise passt sich an, denn ohne qu würde das c vor e wie s klingen."
+            "es": "La raíz de buscar no es irregular: solo se adapta la ortografía, porque sin qu la c delante de e sonaría como s."
           }
         },
         {
           "text": {
-            "hu": "az állító alak (busca) elé tett no",
             "en": "no in front of the affirmative form (busca)",
-            "es": "no delante de la forma afirmativa (busca)",
-            "de": "no vor der bejahten Form (busca)"
+            "es": "no delante de la forma afirmativa (busca)"
           },
           "wrong": {
-            "hu": "Az állító alak „busca” lenne, de tiltásnál a kötőmód kell: a „busques” az -a végből -es-t csinál, és a c qu lesz.",
             "en": "The affirmative form would be \"busca\", but a prohibition needs the subjunctive: \"busques\" turns the -a ending into -es, and c becomes qu.",
-            "es": "La forma afirmativa sería \"busca\", pero la prohibición necesita el subjuntivo: \"busques\" cambia la terminación -a por -es, y la c pasa a qu.",
-            "de": "Die bejahte Form wäre \"busca\", ein Verbot braucht aber den Subjuntivo: \"busques\" macht aus der Endung -a ein -es, und c wird zu qu."
+            "es": "La forma afirmativa sería \"busca\", pero la prohibición necesita el subjuntivo: \"busques\" cambia la terminación -a por -es, y la c pasa a qu."
           }
         }
       ],

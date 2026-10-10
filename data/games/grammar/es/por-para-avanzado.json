@@ -3,194 +3,152 @@
   "topic": "por-para-avanzado",
   "level": "B1",
   "title": {
-    "hu": "Por és para: haladó esetek",
     "en": "Por and para: advanced uses",
-    "es": "Por y para: usos avanzados",
-    "de": "Por und para: fortgeschritten"
+    "es": "Por y para: usos avanzados"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "A por és a para alapjai megvannak: a para a célt és a címzettet, a por az okot és az útvonalat jelöli. B1-en viszont sok szerkezet már nem ezt az egyszerű logikát követi: állandósult minták, igékhez tapadó elöljárók és olyan határesetek jönnek, ahol csak a jelentés dönt. Ezeket érdemes mintaként megtanulni, nem levezetni.",
         "en": "You already know the basics of por and para: para marks a goal or a recipient, por marks a cause or a route. At B1 many structures stop following that simple logic: set patterns, verbs that come with a fixed preposition, and borderline cases where only the meaning decides. These are best learned as patterns, not worked out each time.",
-        "es": "Ya conoces lo básico de por y para: para marca una meta o un destinatario, por marca una causa o una ruta. En el nivel B1 muchas estructuras dejan de seguir esa lógica sencilla: hay fórmulas fijas, verbos que llevan una preposición determinada y casos límite en los que solo decide el significado. Conviene aprenderlas como modelos, no deducirlas cada vez.",
-        "de": "Die Grundlagen von por und para kennst du schon: para nennt ein Ziel oder einen Empfänger, por eine Ursache oder einen Weg. Auf B1 folgen viele Strukturen dieser einfachen Logik nicht mehr: feste Wendungen, Verben mit festgelegter Präposition und Grenzfälle, in denen nur die Bedeutung entscheidet. Sie lernt man am besten als Muster, statt sie jedes Mal herzuleiten."
+        "es": "Ya conoces lo básico de por y para: para marca una meta o un destinatario, por marca una causa o una ruta. En el nivel B1 muchas estructuras dejan de seguir esa lógica sencilla: hay fórmulas fijas, verbos que llevan una preposición determinada y casos límite en los que solo decide el significado. Conviene aprenderlas como modelos, no deducirlas cada vez."
       }
     },
     {
       "kind": "usage",
       "title": {
-        "hu": "Por: haladó esetek",
         "en": "Por: advanced uses",
-        "es": "Por: usos avanzados",
-        "de": "Por: fortgeschrittene Verwendungen"
+        "es": "Por: usos avanzados"
       },
       "points": [
         {
           "text": {
-            "hu": "A por + főnévi igenév egy már megtörtént dolog okát adja meg: miért kapott valaki dicséretet, büntetést vagy köszönetet. A para + főnévi igenév ezzel szemben célt jelöl (azért, hogy).",
             "en": "Por + infinitive gives the reason for something that has already happened: why someone was praised, punished or thanked. Para + infinitive, by contrast, expresses a goal (in order to).",
-            "es": "Por + infinitivo da la razón de algo que ya ha pasado: por qué alguien recibe un elogio, un castigo o un agradecimiento. Para + infinitivo, en cambio, expresa una meta (con el fin de).",
-            "de": "Por + Infinitiv nennt den Grund für etwas, das schon geschehen ist: wofür jemand gelobt, bestraft oder bedankt wird. Para + Infinitiv dagegen drückt ein Ziel aus (um … zu)."
+            "es": "Por + infinitivo da la razón de algo que ya ha pasado: por qué alguien recibe un elogio, un castigo o un agradecimiento. Para + infinitivo, en cambio, expresa una meta (con el fin de)."
           },
           "examples": [
             {
               "es": "Gracias por venir.",
               "tr": {
-                "hu": "Köszönöm, hogy eljöttél.",
                 "en": "Thank you for coming.",
-                "es": "Gracias por venir.",
-                "de": "Danke fürs Kommen."
+                "es": "Gracias por venir."
               }
             },
             {
               "es": "Me regañaron por llegar tarde.",
               "tr": {
-                "hu": "Megszidtak, mert későn érkeztem.",
                 "en": "They scolded me for arriving late.",
-                "es": "Me regañaron por llegar tarde.",
-                "de": "Sie haben mich ausgeschimpft, weil ich zu spät kam."
+                "es": "Me regañaron por llegar tarde."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Az ir, venir, pasar és mandar igék után a por azt jelenti: valakiért vagy valamiért megyek, hogy elhozzam vagy felvegyem. Latin-Amerikában ez a szokásos forma (Spanyolországban: ir a por).",
             "en": "After ir, venir, pasar and mandar, por means going to get or pick up someone or something. This is the normal form in Latin America (in Spain: ir a por).",
-            "es": "Después de ir, venir, pasar y mandar, por significa ir a buscar o a recoger a alguien o algo. Es la forma habitual en América (en España: ir a por).",
-            "de": "Nach ir, venir, pasar und mandar bedeutet por: jemanden oder etwas abholen oder holen gehen. In Lateinamerika ist das die übliche Form (in Spanien: ir a por)."
+            "es": "Después de ir, venir, pasar y mandar, por significa ir a buscar o a recoger a alguien o algo. Es la forma habitual en América (en España: ir a por)."
           },
           "examples": [
             {
               "es": "Voy por el pan.",
               "tr": {
-                "hu": "Megyek kenyérért.",
                 "en": "I'm going to get bread.",
-                "es": "Voy por el pan.",
-                "de": "Ich hole Brot."
+                "es": "Voy por el pan."
               }
             },
             {
               "es": "Mi madre pasa por mí a las tres.",
               "tr": {
-                "hu": "Anyám háromkor értem jön.",
                 "en": "My mother picks me up at three.",
-                "es": "Mi madre pasa por mí a las tres.",
-                "de": "Meine Mutter holt mich um drei ab."
+                "es": "Mi madre pasa por mí a las tres."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A por arányt vagy gyakoriságot fejez ki: mennyi jut egyre, milyen sűrűn, milyen sebességgel. Ez a magyar „-ként, -onként”.",
             "en": "Por expresses a rate or frequency: how much for each one, how often, how fast. It corresponds to English per.",
-            "es": "Por expresa una proporción o una frecuencia: cuánto corresponde a cada uno, con qué frecuencia, a qué velocidad.",
-            "de": "Por drückt ein Verhältnis oder eine Häufigkeit aus: wie viel auf jeden entfällt, wie oft, wie schnell. Es entspricht dem deutschen pro."
+            "es": "Por expresa una proporción o una frecuencia: cuánto corresponde a cada uno, con qué frecuencia, a qué velocidad."
           },
           "examples": [
             {
               "es": "Mi madre me llama dos veces por semana.",
               "tr": {
-                "hu": "Anyám hetente kétszer hív.",
                 "en": "My mother calls me twice a week.",
-                "es": "Mi madre me llama dos veces por semana.",
-                "de": "Meine Mutter ruft mich zweimal pro Woche an."
+                "es": "Mi madre me llama dos veces por semana."
               }
             },
             {
               "es": "Son cien pesos por persona.",
               "tr": {
-                "hu": "Személyenként száz peso.",
                 "en": "It is a hundred pesos per person.",
-                "es": "Son cien pesos por persona.",
-                "de": "Es sind hundert Pesos pro Person."
+                "es": "Son cien pesos por persona."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A por hozzávetőleges helyet vagy időpontot jelöl, pontos megjelölés nélkül: valahol arra, valamikor körülbelül akkor.",
             "en": "Por marks an approximate place or time, with no exact point: somewhere around there, sometime around then.",
-            "es": "Por señala un lugar o un momento aproximado, sin un punto exacto: más o menos por ahí, más o menos en esa fecha.",
-            "de": "Por bezeichnet einen ungefähren Ort oder Zeitpunkt ohne genauen Punkt: irgendwo dort in der Gegend, irgendwann um diese Zeit."
+            "es": "Por señala un lugar o un momento aproximado, sin un punto exacto: más o menos por ahí, más o menos en esa fecha."
           },
           "examples": [
             {
               "es": "Hay una farmacia por aquí.",
               "tr": {
-                "hu": "Van egy gyógyszertár itt a környéken.",
                 "en": "There is a pharmacy around here.",
-                "es": "Hay una farmacia por aquí.",
-                "de": "Hier in der Nähe gibt es eine Apotheke."
+                "es": "Hay una farmacia por aquí."
               }
             },
             {
               "es": "Nos vemos por Navidad.",
               "tr": {
-                "hu": "Karácsony tájékán találkozunk.",
                 "en": "See you around Christmas.",
-                "es": "Nos vemos por Navidad.",
-                "de": "Wir sehen uns um Weihnachten herum."
+                "es": "Nos vemos por Navidad."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Egyes igék rögzítetten por-ral állnak, ezeket az igével együtt kell megtanulni: preocuparse por (aggódni valaki vagy valami miatt), interesarse por (érdeklődni valami iránt), votar por (szavazni valakire), luchar por (harcolni valamiért).",
             "en": "Some verbs always take por and are learned together with it: preocuparse por (to worry about), interesarse por (to be interested in), votar por (to vote for), luchar por (to fight for).",
-            "es": "Algunos verbos llevan siempre por y se aprenden junto con ella: preocuparse por, interesarse por, votar por, luchar por.",
-            "de": "Manche Verben stehen immer mit por und werden zusammen damit gelernt: preocuparse por (sich Sorgen machen um), interesarse por (sich interessieren für), votar por (wählen), luchar por (kämpfen für)."
+            "es": "Algunos verbos llevan siempre por y se aprenden junto con ella: preocuparse por, interesarse por, votar por, luchar por."
           },
           "examples": [
             {
               "es": "Me preocupo mucho por mis padres.",
               "tr": {
-                "hu": "Nagyon aggódom a szüleimért.",
                 "en": "I worry a lot about my parents.",
-                "es": "Me preocupo mucho por mis padres.",
-                "de": "Ich mache mir große Sorgen um meine Eltern."
+                "es": "Me preocupo mucho por mis padres."
               }
             },
             {
               "es": "Mi hermano se interesa por la música.",
               "tr": {
-                "hu": "A fivérem érdeklődik a zene iránt.",
                 "en": "My brother is interested in music.",
-                "es": "Mi hermano se interesa por la música.",
-                "de": "Mein Bruder interessiert sich für Musik."
+                "es": "Mi hermano se interesa por la música."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Az estar por (és a quedar por) + főnévi igenév azt fejezi ki, hogy valami még nincs megcsinálva, még várat magára. Rögzült kifejezés: está por ver (még kiderül).",
             "en": "Estar por (and quedar por) + infinitive says that something has not been done yet and is still pending. Fixed phrase: está por ver (it remains to be seen).",
-            "es": "Estar por (y quedar por) + infinitivo expresa que algo todavía no se ha hecho y está pendiente. Frase fija: está por ver.",
-            "de": "Estar por (und quedar por) + Infinitiv drückt aus, dass etwas noch nicht getan ist und noch aussteht. Feste Wendung: está por ver (das bleibt abzuwarten)."
+            "es": "Estar por (y quedar por) + infinitivo expresa que algo todavía no se ha hecho y está pendiente. Frase fija: está por ver."
           },
           "examples": [
             {
               "es": "Eso está por ver.",
               "tr": {
-                "hu": "Az még kiderül.",
                 "en": "That remains to be seen.",
-                "es": "Eso está por ver.",
-                "de": "Das bleibt abzuwarten."
+                "es": "Eso está por ver."
               }
             },
             {
               "es": "Todavía queda mucho por hacer.",
               "tr": {
-                "hu": "Még sok tennivaló van hátra.",
                 "en": "There is still a lot to do.",
-                "es": "Todavía queda mucho por hacer.",
-                "de": "Es bleibt noch viel zu tun."
+                "es": "Todavía queda mucho por hacer."
               }
             }
           ]
@@ -200,120 +158,94 @@
     {
       "kind": "usage",
       "title": {
-        "hu": "Para: haladó esetek",
         "en": "Para: advanced uses",
-        "es": "Para: usos avanzados",
-        "de": "Para: fortgeschrittene Verwendungen"
+        "es": "Para: usos avanzados"
       },
       "points": [
         {
           "text": {
-            "hu": "A para + ser vagy főnév azt fejezi ki, mihez képest van valami másképp, mint várnánk: a korhoz, az évszakhoz, a helyzethez képest.",
             "en": "Para + ser or a noun expresses how something differs from what you would expect: for his age, for the season, for the situation.",
-            "es": "Para + ser o un sustantivo expresa en qué se aparta algo de lo esperable: para su edad, para la época, para la situación.",
-            "de": "Para + ser oder ein Substantiv drückt aus, wie etwas von der Erwartung abweicht: für sein Alter, für die Jahreszeit, für die Lage."
+            "es": "Para + ser o un sustantivo expresa en qué se aparta algo de lo esperable: para su edad, para la época, para la situación."
           },
           "examples": [
             {
               "es": "Para ser enero, hace mucho calor.",
               "tr": {
-                "hu": "Januárhoz képest nagyon meleg van.",
                 "en": "For January, it is very warm.",
-                "es": "Para ser enero, hace mucho calor.",
-                "de": "Für Januar ist es sehr warm."
+                "es": "Para ser enero, hace mucho calor."
               }
             },
             {
               "es": "Para su edad, camina muy rápido.",
               "tr": {
-                "hu": "A korához képest nagyon gyorsan jár.",
                 "en": "For his age, he walks very fast.",
-                "es": "Para su edad, camina muy rápido.",
-                "de": "Für sein Alter geht er sehr schnell."
+                "es": "Para su edad, camina muy rápido."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A trabajar para azt mondja meg, kinek dolgozol: a munkáltatódat. Ha por áll, az azt jelenti: valaki helyett vagy valaki kedvéért.",
             "en": "Trabajar para names whom you work for: your employer. With por it would mean in someone's place or for someone's sake.",
-            "es": "Trabajar para dice para quién trabajas: tu empleador. Con por significaría en lugar de alguien o por el bien de alguien.",
-            "de": "Trabajar para nennt, für wen du arbeitest: deinen Arbeitgeber. Mit por hieße es an jemandes Stelle oder um jemandes willen."
+            "es": "Trabajar para dice para quién trabajas: tu empleador. Con por significaría en lugar de alguien o por el bien de alguien."
           },
           "examples": [
             {
               "es": "Trabajo para una empresa mexicana.",
               "tr": {
-                "hu": "Egy mexikói cégnek dolgozom.",
                 "en": "I work for a Mexican company.",
-                "es": "Trabajo para una empresa mexicana.",
-                "de": "Ich arbeite für eine mexikanische Firma."
+                "es": "Trabajo para una empresa mexicana."
               }
             },
             {
               "es": "Mi hermana trabaja para el gobierno.",
               "tr": {
-                "hu": "A testvérem az államnak dolgozik.",
                 "en": "My sister works for the government.",
-                "es": "Mi hermana trabaja para el gobierno.",
-                "de": "Meine Schwester arbeitet für die Regierung."
+                "es": "Mi hermana trabaja para el gobierno."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A ser bueno / malo para valami hatását fejezi ki: mire jó vagy mire káros valami.",
             "en": "Ser bueno / malo para expresses the effect on something: what it is good or bad for.",
-            "es": "Ser bueno / malo para expresa el efecto sobre algo: para qué es bueno o malo.",
-            "de": "Ser bueno / malo para drückt die Wirkung auf etwas aus: wofür etwas gut oder schlecht ist."
+            "es": "Ser bueno / malo para expresa el efecto sobre algo: para qué es bueno o malo."
           },
           "examples": [
             {
               "es": "El café es malo para el estómago.",
               "tr": {
-                "hu": "A kávé árt a gyomornak.",
                 "en": "Coffee is bad for the stomach.",
-                "es": "El café es malo para el estómago.",
-                "de": "Kaffee ist schlecht für den Magen."
+                "es": "El café es malo para el estómago."
               }
             },
             {
               "es": "El agua es buena para la piel.",
               "tr": {
-                "hu": "A víz jót tesz a bőrnek.",
                 "en": "Water is good for the skin.",
-                "es": "El agua es buena para la piel.",
-                "de": "Wasser ist gut für die Haut."
+                "es": "El agua es buena para la piel."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A no estar para + főnév azt jelenti: nincs hozzá kedvem vagy erőm, nem vagyok olyan állapotban.",
             "en": "No estar para + noun means you are not in the mood or in the state for something.",
-            "es": "No estar para + sustantivo significa que no tienes ganas o no estás en condiciones de algo.",
-            "de": "No estar para + Substantiv bedeutet: Dir fehlt die Lust oder die Kraft dazu, du bist nicht in der Verfassung dafür."
+            "es": "No estar para + sustantivo significa que no tienes ganas o no estás en condiciones de algo."
           },
           "examples": [
             {
               "es": "Hoy no estoy para bromas.",
               "tr": {
-                "hu": "Ma nincs kedvem viccelődni.",
                 "en": "I am not in the mood for jokes today.",
-                "es": "Hoy no estoy para bromas.",
-                "de": "Heute bin ich nicht für Scherze aufgelegt."
+                "es": "Hoy no estoy para bromas."
               }
             },
             {
               "es": "Mi madre no está para visitas hoy.",
               "tr": {
-                "hu": "Anyámnak ma nincs kedve vendégekhez.",
                 "en": "My mother is not up for visitors today.",
-                "es": "Mi madre no está para visitas hoy.",
-                "de": "Meine Mutter ist heute nicht für Besuch zu haben."
+                "es": "Mi madre no está para visitas hoy."
               }
             }
           ]
@@ -324,23 +256,17 @@
       "kind": "table",
       "id": "por-para-avanzado-expresiones",
       "title": {
-        "hu": "Rögzült kifejezések, haladó szint",
         "en": "Fixed expressions, advanced level",
-        "es": "Expresiones fijas, nivel avanzado",
-        "de": "Feste Ausdrücke, fortgeschrittenes Niveau"
+        "es": "Expresiones fijas, nivel avanzado"
       },
       "header": [
         {
-          "hu": "Mondat",
           "en": "Sentence",
-          "es": "frase",
-          "de": "Satz"
+          "es": "frase"
         },
         {
-          "hu": "Kifejezés",
           "en": "Expression",
-          "es": "expresión",
-          "de": "Ausdruck"
+          "es": "expresión"
         }
       ],
       "rows": [
@@ -397,38 +323,30 @@
     {
       "kind": "contrast",
       "title": {
-        "hu": "Hasonló, mégis más",
         "en": "Similar, yet different",
-        "es": "Parecido, pero distinto",
-        "de": "Ähnlich, aber anders"
+        "es": "Parecido, pero distinto"
       },
       "pairs": [
         {
           "a": "Trabajo por mi hermana",
           "b": "Trabajo para mi hermana",
           "note": {
-            "hu": "A por azt jelenti, hogy a testvérem helyett vagy a kedvéért dolgozom (például beugrok helyette); a para azt, hogy ő a munkáltatóm.",
             "en": "Por means I work in my sister's place or for her sake (for example I am covering for her); para means she is my employer.",
-            "es": "Por significa que trabajo en lugar de mi hermana o por su bien (por ejemplo, la sustituyo); para significa que ella es mi jefa.",
-            "de": "Por bedeutet, dass ich an der Stelle meiner Schwester oder ihr zuliebe arbeite (zum Beispiel springe ich ein); para bedeutet, dass sie meine Arbeitgeberin ist."
+            "es": "Por significa que trabajo en lugar de mi hermana o por su bien (por ejemplo, la sustituyo); para significa que ella es mi jefa."
           },
           "examples": [
             {
               "es": "Hoy trabajo por mi hermana, porque está enferma.",
               "tr": {
-                "hu": "Ma a testvérem helyett dolgozom, mert beteg.",
                 "en": "Today I work in my sister's place, because she is ill.",
-                "es": "Hoy trabajo por mi hermana, porque está enferma.",
-                "de": "Heute arbeite ich an der Stelle meiner Schwester, weil sie krank ist."
+                "es": "Hoy trabajo por mi hermana, porque está enferma."
               }
             },
             {
               "es": "Trabajo para mi hermana, ella tiene una tienda.",
               "tr": {
-                "hu": "A testvéremnek dolgozom, neki van egy boltja.",
                 "en": "I work for my sister, she has a shop.",
-                "es": "Trabajo para mi hermana, ella tiene una tienda.",
-                "de": "Ich arbeite für meine Schwester, sie hat einen Laden."
+                "es": "Trabajo para mi hermana, ella tiene una tienda."
               }
             }
           ]
@@ -437,28 +355,22 @@
           "a": "Me felicitaron por ganar",
           "b": "Entreno para ganar",
           "note": {
-            "hu": "A por + főnévi igenév azt mondja, miért történt valami (a nyerés már megtörtént, ezért dicsérnek); a para + főnévi igenév azt, mi a cél (a nyerés még előttem áll).",
             "en": "Por + infinitive says why something happened (the winning already happened, which is why I am praised); para + infinitive says what the goal is (the winning is still ahead).",
-            "es": "Por + infinitivo dice por qué ocurrió algo (ganar ya ocurrió, por eso me felicitan); para + infinitivo dice cuál es la meta (ganar todavía está por venir).",
-            "de": "Por + Infinitiv sagt, warum etwas geschah (das Gewinnen ist schon passiert, deshalb wird man gelobt); para + Infinitiv sagt, was das Ziel ist (das Gewinnen liegt noch vor mir)."
+            "es": "Por + infinitivo dice por qué ocurrió algo (ganar ya ocurrió, por eso me felicitan); para + infinitivo dice cuál es la meta (ganar todavía está por venir)."
           },
           "examples": [
             {
               "es": "Me felicitaron por ganar el partido.",
               "tr": {
-                "hu": "Gratuláltak, mert megnyertem a meccset.",
                 "en": "They congratulated me for winning the match.",
-                "es": "Me felicitaron por ganar el partido.",
-                "de": "Sie haben mir zum Sieg im Spiel gratuliert."
+                "es": "Me felicitaron por ganar el partido."
               }
             },
             {
               "es": "Entreno cada día para ganar el partido.",
               "tr": {
-                "hu": "Minden nap edzek, hogy megnyerjem a meccset.",
                 "en": "I train every day to win the match.",
-                "es": "Entreno cada día para ganar el partido.",
-                "de": "Ich trainiere jeden Tag, um das Spiel zu gewinnen."
+                "es": "Entreno cada día para ganar el partido."
               }
             }
           ]
@@ -467,28 +379,22 @@
           "a": "Voy por Ana",
           "b": "Voy para el centro",
           "note": {
-            "hu": "A voy por Ana azt jelenti: Anáért megyek, hogy felvegyem; a voy para el centro azt, hogy a belváros felé tartok. Az elsőnél egy személy vagy dolog áll, amiért megyek, a másodiknál egy úti cél.",
             "en": "Voy por Ana means I am going to pick Ana up; voy para el centro means I am heading toward downtown. After the first comes the person or thing you are fetching, after the second a destination.",
-            "es": "Voy por Ana significa que voy a recoger a Ana; voy para el centro significa que me dirijo hacia el centro. Tras la primera va la persona o cosa que se va a buscar, tras la segunda un destino.",
-            "de": "Voy por Ana heißt, dass ich Ana abholen gehe; voy para el centro heißt, dass ich Richtung Zentrum unterwegs bin. Nach der ersten steht die Person oder Sache, die man holt, nach der zweiten ein Ziel."
+            "es": "Voy por Ana significa que voy a recoger a Ana; voy para el centro significa que me dirijo hacia el centro. Tras la primera va la persona o cosa que se va a buscar, tras la segunda un destino."
           },
           "examples": [
             {
               "es": "Voy por Ana a su trabajo.",
               "tr": {
-                "hu": "Megyek Anáért a munkahelyére.",
                 "en": "I'm going to pick Ana up at her work.",
-                "es": "Voy por Ana a su trabajo.",
-                "de": "Ich hole Ana an ihrer Arbeit ab."
+                "es": "Voy por Ana a su trabajo."
               }
             },
             {
               "es": "Ya voy para el centro.",
               "tr": {
-                "hu": "Már úton vagyok a belváros felé.",
                 "en": "I'm already on my way downtown.",
-                "es": "Ya voy para el centro.",
-                "de": "Ich bin schon auf dem Weg ins Zentrum."
+                "es": "Ya voy para el centro."
               }
             }
           ]
@@ -498,18 +404,14 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Az ismert logikán túl három dolgot tanulj meg egyben: a rögzült igéket (preocuparse por, trabajar para), a rögzült kifejezéseket (por si acaso, para nada) és az arányt (por semana, por persona). Ezeknél nincs mit levezetni, csak emlékezni.",
         "en": "Beyond the familiar logic, learn three things as whole units: fixed verbs (preocuparse por, trabajar para), fixed expressions (por si acaso, para nada) and rates (por semana, por persona). There is nothing to work out, only to remember.",
-        "es": "Más allá de la lógica conocida, aprende tres cosas como bloques: los verbos fijos (preocuparse por, trabajar para), las expresiones fijas (por si acaso, para nada) y las proporciones (por semana, por persona). No hay nada que deducir, solo que recordar.",
-        "de": "Lerne über die bekannte Logik hinaus drei Dinge als Ganzes: feste Verben (preocuparse por, trabajar para), feste Ausdrücke (por si acaso, para nada) und Verhältnisse (por semana, por persona). Da gibt es nichts herzuleiten, nur zu merken."
+        "es": "Más allá de la lógica conocida, aprende tres cosas como bloques: los verbos fijos (preocuparse por, trabajar para), las expresiones fijas (por si acaso, para nada) y las proporciones (por semana, por persona). No hay nada que deducir, solo que recordar."
       }
     }
   ],
   "speak": {
-    "hu": "Az alapokat már tudod: az egyik kis szó célt és címzettet jelöl, a másik okot és útvonalat. Haladó szinten viszont sok minta nem ezt a logikát követi. Ha valakiért vagy valamiért mész, hogy elhozd, az a második szó. Ha gyakoriságot vagy arányt mondasz, például hetente kétszer, az is a második. Ha azt mondod, kinek a cégénél dolgozol, vagy mihez képest szokatlan valami, az az első. Sok ige és kifejezés rögzítve tartalmazza valamelyiket, ezeket egyben kell megtanulni, nem levezetni.",
     "en": "You already know the basics: one little word marks a goal and a recipient, the other a cause and a route. At a higher level, though, many patterns do not follow that logic. When you go to get someone or something, that is the second word. When you speak of frequency or a rate, such as twice a week, that is the second word too. When you say whom you work for, or what is unusual compared with an expectation, that is the first one. Many verbs and expressions carry one of them as a fixed part, so learn them as whole units instead of working them out.",
-    "es": "Ya sabes lo básico: una palabrita marca una meta y un destinatario, la otra una causa y una ruta. En un nivel más alto, sin embargo, muchos modelos no siguen esa lógica. Si vas a buscar a alguien o algo, esa es la segunda palabra. Si hablas de una frecuencia o de una proporción, por ejemplo dos veces a la semana, también es la segunda. Si dices para quién trabajas, o respecto a qué algo es inesperado, esa es la primera. Muchos verbos y expresiones llevan una de las dos como parte fija, así que se aprenden en bloque, no se deducen.",
-    "de": "Die Grundlagen kennst du schon: Ein kleines Wort bezeichnet ein Ziel und einen Empfänger, das andere eine Ursache und einen Weg. Auf höherem Niveau folgen viele Muster dieser Logik aber nicht. Wenn du jemanden oder etwas abholen gehst, ist es das zweite Wort. Wenn du von einer Häufigkeit oder einem Verhältnis sprichst, zum Beispiel zweimal pro Woche, ist es ebenfalls das zweite. Wenn du sagst, für wen du arbeitest, oder woran gemessen etwas unerwartet ist, ist es das erste. Viele Verben und Ausdrücke tragen eines von beiden als festen Bestandteil, also lernt man sie im Ganzen, statt sie herzuleiten."
+    "es": "Ya sabes lo básico: una palabrita marca una meta y un destinatario, la otra una causa y una ruta. En un nivel más alto, sin embargo, muchos modelos no siguen esa lógica. Si vas a buscar a alguien o algo, esa es la segunda palabra. Si hablas de una frecuencia o de una proporción, por ejemplo dos veces a la semana, también es la segunda. Si dices para quién trabajas, o respecto a qué algo es inesperado, esa es la primera. Muchos verbos y expresiones llevan una de las dos como parte fija, así que se aprenden en bloque, no se deducen."
   },
   "items": [
     {
@@ -521,24 +423,20 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A para + ser azt fejezi ki, mihez képest szokatlan valami: a fiatal korához képest beszél nagyon jól angolul.",
         "en": "Para + ser expresses what something is unusual compared with: for being so young, he speaks English very well.",
-        "es": "Para + ser expresa respecto a qué algo resulta inesperado: para ser tan joven, habla muy bien inglés.",
-        "de": "Para + ser drückt aus, woran gemessen etwas unerwartet ist: für sein junges Alter spricht er sehr gut Englisch."
+        "es": "Para + ser expresa respecto a qué algo resulta inesperado: para ser tan joven, habla muy bien inglés."
       },
       "wrong": {
         "Por": {
-          "hu": "A por ser azt jelentené: azért, mert fiatal (ok), mintha a fiatalság okozná, hogy jól beszél. A mondat viszont az elvárással veti össze: egy fiatalhoz képest jól. Helyes: Para ser tan joven, habla muy bien inglés.",
           "en": "Por ser would mean because he is young (a cause), as if youth made him speak well. The sentence compares with an expectation instead: good for someone so young. The correct form is: Para ser tan joven, habla muy bien inglés.",
-          "es": "Por ser significaría porque es joven (una causa), como si la juventud hiciera que hable bien. La frase compara con lo esperable: bien para alguien tan joven. Lo correcto es: Para ser tan joven, habla muy bien inglés.",
-          "de": "Por ser würde bedeuten, weil er jung ist (eine Ursache), als würde die Jugend ihn gut sprechen lassen. Der Satz vergleicht aber mit einer Erwartung: gut für jemanden, der so jung ist. Richtig ist: Para ser tan joven, habla muy bien inglés."
+          "es": "Por ser significaría porque es joven (una causa), como si la juventud hiciera que hable bien. La frase compara con lo esperable: bien para alguien tan joven. Lo correcto es: Para ser tan joven, habla muy bien inglés."
         }
       },
       "examples": [
         "Para un niño, lee muy bien.",
         "Para ser sábado, hay poca gente."
       ],
-      "tr": { "hu": "Ahhoz képest, hogy milyen fiatal, nagyon jól beszél angolul.", "en": "For being so young, he speaks English very well.", "es": "Para ser tan joven, habla muy bien inglés.", "de": "Dafür, dass er so jung ist, spricht er sehr gut Englisch." }
+      "tr": { "en": "For being so young, he speaks English very well.", "es": "Para ser tan joven, habla muy bien inglés." }
     },
     {
       "id": "ppa-02",
@@ -549,24 +447,20 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A por + főnévi igenév azt mondja meg, miért jár a díj: a befejezés már megtörtént.",
         "en": "Por + infinitive says what the prize is for: finishing has already happened.",
-        "es": "Por + infinitivo dice por qué se da el premio: terminar ya ocurrió.",
-        "de": "Por + Infinitiv sagt, wofür der Preis vergeben wird: das Beenden ist schon geschehen."
+        "es": "Por + infinitivo dice por qué se da el premio: terminar ya ocurrió."
       },
       "wrong": {
         "para": {
-          "hu": "A para terminar célt jelentene: azért kaptam a díjat, hogy befejezzem (ösztönzőként). De itt a befejezés már megtörtént, és ez az oka a díjnak. Helyes: me dio un premio por terminar el proyecto.",
           "en": "Para terminar would express a goal: I got the prize in order to finish (as an incentive). But here the finishing has already happened and is the reason for the prize. The correct form is: me dio un premio por terminar el proyecto.",
-          "es": "Para terminar expresaría una meta: recibí el premio con el fin de terminar (como incentivo). Pero aquí terminar ya ocurrió y es la razón del premio. Lo correcto es: me dio un premio por terminar el proyecto.",
-          "de": "Para terminar würde ein Ziel ausdrücken: ich bekam den Preis, um fertig zu werden (als Anreiz). Hier ist das Fertigwerden aber schon geschehen und der Grund für den Preis. Richtig ist: me dio un premio por terminar el proyecto."
+          "es": "Para terminar expresaría una meta: recibí el premio con el fin de terminar (como incentivo). Pero aquí terminar ya ocurrió y es la razón del premio. Lo correcto es: me dio un premio por terminar el proyecto."
         }
       },
       "examples": [
         "Gracias por esperarme tanto tiempo.",
         "Estoy muy contento por ganar el partido."
       ],
-      "tr": { "hu": "A főnököm jutalmat adott a projekt befejezéséért.", "en": "My boss gave me an award for finishing the project.", "es": "Mi jefe me dio un premio por terminar el proyecto.", "de": "Mein Chef hat mir eine Belohnung für den Abschluss des Projekts gegeben." }
+      "tr": { "en": "My boss gave me an award for finishing the project.", "es": "Mi jefe me dio un premio por terminar el proyecto." }
     },
     {
       "id": "ppa-03",
@@ -577,24 +471,20 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A pasar por valaki azt jelenti: érte megyek, hogy felvegyem. A por itt azt mondja meg, kiért megyek.",
         "en": "Pasar por someone means going to pick that person up. Here por says whom you are going to get.",
-        "es": "Pasar por alguien significa ir a recogerlo. Aquí por dice a quién se va a buscar.",
-        "de": "Pasar por jemanden heißt, ihn abholen zu gehen. Por sagt hier, wen man holt."
+        "es": "Pasar por alguien significa ir a recogerlo. Aquí por dice a quién se va a buscar."
       },
       "wrong": {
         "para": {
-          "hu": "A para ti azt jelentené: neked, a te javadra (címzett). Nem azt mondja, hogy érted megyek. Helyes: paso por ti.",
           "en": "Para ti would mean for you, for your benefit (a recipient). It does not say that I am coming to pick you up. The correct form is: paso por ti.",
-          "es": "Para ti significaría para ti, en tu beneficio (un destinatario). No dice que voy a recogerte. Lo correcto es: paso por ti.",
-          "de": "Para ti würde für dich bedeuten, zu deinem Nutzen (ein Empfänger). Es sagt nicht, dass ich dich abhole. Richtig ist: paso por ti."
+          "es": "Para ti significaría para ti, en tu beneficio (un destinatario). No dice que voy a recogerte. Lo correcto es: paso por ti."
         }
       },
       "examples": [
         "¿A qué hora vienes por los niños?",
         "Voy por mi hermana al aeropuerto."
       ],
-      "tr": { "hu": "Holnap nyolckor beugrom érted.", "en": "I'll pick you up tomorrow at eight.", "es": "Mañana paso por ti a las ocho.", "de": "Morgen hole ich dich um acht Uhr ab." }
+      "tr": { "en": "I'll pick you up tomorrow at eight.", "es": "Mañana paso por ti a las ocho." }
     },
     {
       "id": "ppa-04",
@@ -605,24 +495,20 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A trabajar para azt mondja meg, ki a munkáltató: egy nagy cégnek dolgozik.",
         "en": "Trabajar para names the employer: she works for a large company.",
-        "es": "Trabajar para nombra al empleador: la empresa grande es quien le paga.",
-        "de": "Trabajar para nennt den Arbeitgeber: sie arbeitet für eine große Firma."
+        "es": "Trabajar para nombra al empleador: la empresa grande es quien le paga."
       },
       "wrong": {
         "por": {
-          "hu": "A trabaja por una empresa azt jelentené: a cég helyett vagy a cég kedvéért dolgozik (például beugrik), nem azt, hogy ott van alkalmazásban. Helyes: trabaja para una empresa grande.",
           "en": "Trabaja por una empresa would mean she works in place of the company or for its sake, not that she is employed there. The correct form is: trabaja para una empresa grande.",
-          "es": "Trabaja por una empresa significaría que trabaja en lugar de la empresa o por su bien, no que está empleada allí. Lo correcto es: trabaja para una empresa grande.",
-          "de": "Trabaja por una empresa würde bedeuten, dass sie anstelle der Firma oder zu deren Wohl arbeitet, nicht dass sie dort angestellt ist. Richtig ist: trabaja para una empresa grande."
+          "es": "Trabaja por una empresa significaría que trabaja en lugar de la empresa o por su bien, no que está empleada allí. Lo correcto es: trabaja para una empresa grande."
         }
       },
       "examples": [
         "Mi amigo trabaja para una tienda de ropa.",
         "¿Para quién trabajas ahora?"
       ],
-      "tr": { "hu": "A nővérem egy nagy cégnél dolgozik.", "en": "My sister works for a large company.", "es": "Mi hermana trabaja para una empresa grande.", "de": "Meine Schwester arbeitet für ein großes Unternehmen." }
+      "tr": { "en": "My sister works for a large company.", "es": "Mi hermana trabaja para una empresa grande." }
     },
     {
       "id": "ppa-05",
@@ -633,24 +519,20 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A por gyakoriságot fejez ki: hányszor egy héten. Ez a magyar „hetente”.",
         "en": "Por expresses frequency: how many times in a week. It is the English per week.",
-        "es": "Por expresa frecuencia: cuántas veces en una semana.",
-        "de": "Por drückt eine Häufigkeit aus: wie oft in einer Woche. Es entspricht dem deutschen pro Woche."
+        "es": "Por expresa frecuencia: cuántas veces en una semana."
       },
       "wrong": {
         "para": {
-          "hu": "A para la semana határidőt jelentene (mikorra), nem gyakoriságot, és a tres veces után értelmetlen. Helyes: tres veces por semana.",
           "en": "Para la semana would express a deadline (by when), not a frequency, and makes no sense after tres veces. The correct form is: tres veces por semana.",
-          "es": "Para la semana expresaría un plazo (para cuándo), no una frecuencia, y no tiene sentido tras tres veces. Lo correcto es: tres veces por semana.",
-          "de": "Para la semana würde eine Frist ausdrücken (bis wann), keine Häufigkeit, und ergibt nach tres veces keinen Sinn. Richtig ist: tres veces por semana."
+          "es": "Para la semana expresaría un plazo (para cuándo), no una frecuencia, y no tiene sentido tras tres veces. Lo correcto es: tres veces por semana."
         }
       },
       "examples": [
         "Veo a mi abuela una vez por mes.",
         "Trabajo ocho horas por día."
       ],
-      "tr": { "hu": "Hetente háromszor edzem.", "en": "I train three times a week.", "es": "Entreno tres veces por semana.", "de": "Ich trainiere dreimal pro Woche." }
+      "tr": { "en": "I train three times a week.", "es": "Entreno tres veces por semana." }
     },
     {
       "id": "ppa-06",
@@ -661,24 +543,20 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A bueno para azt fejezi ki, mire hat jól valami: a séta az egészségnek jó.",
         "en": "Bueno para expresses what something is good for: walking is good for your health.",
-        "es": "Bueno para expresa sobre qué es bueno algo: caminar es bueno para la salud.",
-        "de": "Bueno para drückt aus, wofür etwas gut ist: Gehen ist gut für die Gesundheit."
+        "es": "Bueno para expresa sobre qué es bueno algo: caminar es bueno para la salud."
       },
       "wrong": {
         "por": {
-          "hu": "A por la salud azt jelentené: az egészség miatt vagy kedvéért teszünk valamit (például Camino por mi salud). A séta hatása az egészségre para-val megy. Helyes: bueno para la salud.",
           "en": "Por la salud would mean because of or for the sake of health (for example Camino por mi salud). The effect on health takes para. The correct form is: bueno para la salud.",
-          "es": "Por la salud significaría a causa de la salud o por el bien de ella (por ejemplo Camino por mi salud). El efecto sobre la salud lleva para. Lo correcto es: bueno para la salud.",
-          "de": "Por la salud würde wegen der Gesundheit oder um ihretwillen bedeuten (zum Beispiel Camino por mi salud). Die Wirkung auf die Gesundheit steht mit para. Richtig ist: bueno para la salud."
+          "es": "Por la salud significaría a causa de la salud o por el bien de ella (por ejemplo Camino por mi salud). El efecto sobre la salud lleva para. Lo correcto es: bueno para la salud."
         }
       },
       "examples": [
         "Dormir bien es bueno para todos.",
         "El ruido es malo para los niños."
       ],
-      "tr": { "hu": "A mindennapi séta nagyon jót tesz az egészségnek.", "en": "Walking every day is very good for your health.", "es": "Caminar todos los días es muy bueno para la salud.", "de": "Jeden Tag spazieren zu gehen ist sehr gut für die Gesundheit." }
+      "tr": { "en": "Walking every day is very good for your health.", "es": "Caminar todos los días es muy bueno para la salud." }
     },
     {
       "id": "ppa-07",
@@ -689,24 +567,20 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A no estar para + főnév azt fejezi ki, hogy nincs kedvem vagy erőm valamihez: nem vagyok bulizós hangulatban.",
         "en": "No estar para + noun expresses that you lack the mood or strength for something: I am not in a partying mood.",
-        "es": "No estar para + sustantivo expresa que no tienes ganas ni fuerzas para algo: no estoy de humor para fiestas.",
-        "de": "No estar para + Substantiv drückt aus, dass dir Lust oder Kraft für etwas fehlt: ich bin nicht in Partylaune."
+        "es": "No estar para + sustantivo expresa que no tienes ganas ni fuerzas para algo: no estoy de humor para fiestas."
       },
       "wrong": {
         "por": {
-          "hu": "A no estoy por fiestas inkább azt jelentené, hogy nem vagyok a bulik mellett, nem támogatom őket. A kedv vagy az erő hiánya para-val megy. Helyes: no estoy para fiestas.",
           "en": "No estoy por fiestas would rather mean that I am not in favour of parties. A lack of mood or strength takes para. The correct form is: no estoy para fiestas.",
-          "es": "No estoy por fiestas significaría más bien que no estoy a favor de las fiestas. La falta de ganas o de fuerzas lleva para. Lo correcto es: no estoy para fiestas.",
-          "de": "No estoy por fiestas würde eher bedeuten, dass ich nicht für Partys bin. Fehlende Lust oder Kraft steht mit para. Richtig ist: no estoy para fiestas."
+          "es": "No estoy por fiestas significaría más bien que no estoy a favor de las fiestas. La falta de ganas o de fuerzas lleva para. Lo correcto es: no estoy para fiestas."
         }
       },
       "examples": [
         "Estoy enfermo y no estoy para salir.",
         "Mis padres hoy no están para visitas."
       ],
-      "tr": { "hu": "Ma nagyon fáradt vagyok, nincs kedvem bulizni.", "en": "Today I am very tired and I am in no mood for parties.", "es": "Hoy estoy muy cansado y no estoy para fiestas.", "de": "Heute bin ich sehr müde und nicht in Partystimmung." }
+      "tr": { "en": "Today I am very tired and I am in no mood for parties.", "es": "Hoy estoy muy cansado y no estoy para fiestas." }
     },
     {
       "id": "ppa-08",
@@ -717,24 +591,20 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A preocuparse igével mindig por áll: aggódni valakiért. A por az igéhez tartozik, nem hordoz külön jelentést.",
         "en": "Preocuparse always takes por: to worry about someone. The por belongs to the verb and carries no separate meaning.",
-        "es": "Preocuparse lleva siempre por: preocuparse por alguien. El por forma parte del verbo y no aporta un significado aparte.",
-        "de": "Preocuparse steht immer mit por: sich um jemanden sorgen. Das por gehört zum Verb und trägt keine eigene Bedeutung."
+        "es": "Preocuparse lleva siempre por: preocuparse por alguien. El por forma parte del verbo y no aporta un significado aparte."
       },
       "wrong": {
         "para": {
-          "hu": "A para mí azt jelentené: szerintem vagy nekem szóló. Az aggódás tárgyát az ige por-ral köti hozzá. Helyes: se preocupan por mí.",
           "en": "Para mí would mean in my opinion or intended for me. The verb attaches the object of the worry with por. The correct form is: se preocupan por mí.",
-          "es": "Para mí significaría en mi opinión o destinado a mí. El verbo une el objeto de la preocupación con por. Lo correcto es: se preocupan por mí.",
-          "de": "Para mí würde meiner Meinung nach oder für mich bestimmt bedeuten. Das Verb verbindet den Gegenstand der Sorge mit por. Richtig ist: se preocupan por mí."
+          "es": "Para mí significaría en mi opinión o destinado a mí. El verbo une el objeto de la preocupación con por. Lo correcto es: se preocupan por mí."
         }
       },
       "examples": [
         "No te preocupes por el examen.",
         "Luchamos por nuestros hijos."
       ],
-      "tr": { "hu": "A szüleim nagyon aggódnak értem.", "en": "My parents worry a lot about me.", "es": "Mis padres se preocupan mucho por mí.", "de": "Meine Eltern machen sich große Sorgen um mich." }
+      "tr": { "en": "My parents worry a lot about me.", "es": "Mis padres se preocupan mucho por mí." }
     },
     {
       "id": "ppa-09",
@@ -745,24 +615,20 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Az ir para + hely azt mondja meg, merre tartasz: már úton vagyok a házad felé.",
         "en": "Ir para + place says which way you are heading: I am already on my way toward your house.",
-        "es": "Ir para + lugar dice hacia dónde te diriges: ya voy en camino hacia tu casa.",
-        "de": "Ir para + Ort sagt, wohin du unterwegs bist: ich bin schon auf dem Weg zu deinem Haus."
+        "es": "Ir para + lugar dice hacia dónde te diriges: ya voy en camino hacia tu casa."
       },
       "wrong": {
         "por": {
-          "hu": "A voy por tu casa azt jelentené: a házad környékén megyek át. Az úti célt a para jelöli. Helyes: voy para tu casa.",
           "en": "Voy por tu casa would mean I am passing around your house. A destination takes para. The correct form is: voy para tu casa.",
-          "es": "Voy por tu casa significaría que paso por los alrededores de tu casa. El destino lleva para. Lo correcto es: voy para tu casa.",
-          "de": "Voy por tu casa würde bedeuten, dass ich in der Gegend deines Hauses vorbeikomme. Ein Ziel steht mit para. Richtig ist: voy para tu casa."
+          "es": "Voy por tu casa significaría que paso por los alrededores de tu casa. El destino lleva para. Lo correcto es: voy para tu casa."
         }
       },
       "examples": [
         "¿Vas para el centro?",
         "Mi padre ya va para el trabajo."
       ],
-      "tr": { "hu": "Már megyek hozzád, tíz perc múlva ott vagyok.", "en": "I'm on my way to your house, I'll be there in ten minutes.", "es": "Ya voy para tu casa, llego en diez minutos.", "de": "Ich bin schon auf dem Weg zu dir nach Hause, ich bin in zehn Minuten da." }
+      "tr": { "en": "I'm on my way to your house, I'll be there in ten minutes.", "es": "Ya voy para tu casa, llego en diez minutos." }
     },
     {
       "id": "ppa-10",
@@ -773,24 +639,20 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Az está por ver rögzült szerkezet: még nem tudni, még kiderül.",
         "en": "Está por ver is a fixed expression: it is not known yet, it remains to be seen.",
-        "es": "Está por ver es una expresión fija: todavía no se sabe, está pendiente.",
-        "de": "Está por ver ist eine feste Wendung: man weiß es noch nicht, es bleibt abzuwarten."
+        "es": "Está por ver es una expresión fija: todavía no se sabe, está pendiente."
       },
       "wrong": {
         "para": {
-          "hu": "A para ver célt jelentene (azért, hogy lássuk), de a „még kiderül” jelentésű szerkezetben a por rögzült, a para nem cserélhető ide. Helyes: está por ver.",
           "en": "Para ver would express a goal (in order to see), but in the sense it remains to be seen the por is fixed and para cannot replace it. The correct form is: está por ver.",
-          "es": "Para ver expresaría una meta (con el fin de ver), pero en el sentido de está pendiente el por es fijo y para no puede sustituirlo. Lo correcto es: está por ver.",
-          "de": "Para ver würde ein Ziel ausdrücken (um zu sehen), aber im Sinn von es bleibt abzuwarten ist por fest, und para kann es nicht ersetzen. Richtig ist: está por ver."
+          "es": "Para ver expresaría una meta (con el fin de ver), pero en el sentido de está pendiente el por es fijo y para no puede sustituirlo. Lo correcto es: está por ver."
         }
       },
       "examples": [
         "La cama todavía está por hacer.",
         "Está por ver si Ana viene mañana."
       ],
-      "tr": { "hu": "Megnyertük a meccset? Ez még elválik.", "en": "Did we win the game? That remains to be seen.", "es": "¿Ganamos el partido? Eso está por ver.", "de": "Haben wir das Spiel gewonnen? Das wird sich noch zeigen." }
+      "tr": { "en": "Did we win the game? That remains to be seen.", "es": "¿Ganamos el partido? Eso está por ver." }
     },
     {
       "id": "ppa-11",
@@ -801,24 +663,20 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A para + főnévi igenév célt fejez ki: azért tanulok, hogy sikerüljön a vizsga.",
         "en": "Para + infinitive expresses a goal: I study so that I pass the exam.",
-        "es": "Para + infinitivo expresa una meta: estudio con el fin de aprobar el examen.",
-        "de": "Para + Infinitiv drückt ein Ziel aus: ich lerne, um die Prüfung zu bestehen."
+        "es": "Para + infinitivo expresa una meta: estudio con el fin de aprobar el examen."
       },
       "wrong": {
         "por": {
-          "hu": "A por aprobar azt jelentené, hogy már átmentem, és ez az oka valaminek (például dicséretnek). Itt a vizsga még előttem áll, vagyis cél. Helyes: para aprobar el examen.",
           "en": "Por aprobar would mean I have already passed and that is the reason for something (for example praise). Here the exam is still ahead, so it is a goal. The correct form is: para aprobar el examen.",
-          "es": "Por aprobar significaría que ya aprobé y que eso es la razón de algo (por ejemplo un elogio). Aquí el examen está por delante, así que es una meta. Lo correcto es: para aprobar el examen.",
-          "de": "Por aprobar würde bedeuten, dass ich schon bestanden habe und das der Grund für etwas ist (zum Beispiel Lob). Hier liegt die Prüfung noch vor mir, also ein Ziel. Richtig ist: para aprobar el examen."
+          "es": "Por aprobar significaría que ya aprobé y que eso es la razón de algo (por ejemplo un elogio). Aquí el examen está por delante, así que es una meta. Lo correcto es: para aprobar el examen."
         }
       },
       "examples": [
         "Ahorro dinero para comprar una casa.",
         "Salgo temprano para llegar a tiempo."
       ],
-      "tr": { "hu": "Minden nap tanulok, hogy átmenjek a vizsgán.", "en": "I study every day to pass the exam.", "es": "Estudio todos los días para aprobar el examen.", "de": "Ich lerne jeden Tag, um die Prüfung zu bestehen." }
+      "tr": { "en": "I study every day to pass the exam.", "es": "Estudio todos los días para aprobar el examen." }
     },
     {
       "id": "ppa-12",
@@ -829,24 +687,20 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A trabajar por valaki azt jelenti: a helyén dolgozom, beugrok helyette.",
         "en": "Trabajar por someone means working in that person's place: I am covering for him.",
-        "es": "Trabajar por alguien significa trabajar en su lugar: lo estoy sustituyendo.",
-        "de": "Trabajar por jemanden heißt, an seiner Stelle zu arbeiten: ich springe für ihn ein."
+        "es": "Trabajar por alguien significa trabajar en su lugar: lo estoy sustituyendo."
       },
       "wrong": {
         "para": {
-          "hu": "A trabajo para mi compañero azt jelentené, hogy a munkatársam a főnököm, neki dolgozom. A beteg kolléga helyett dolgozni por-ral megy. Helyes: trabajo por mi compañero.",
           "en": "Trabajo para mi compañero would mean my colleague is my employer and I work for him. Working in place of a sick colleague takes por. The correct form is: trabajo por mi compañero.",
-          "es": "Trabajo para mi compañero significaría que mi compañero es mi jefe y trabajo para él. Trabajar en lugar de un compañero enfermo lleva por. Lo correcto es: trabajo por mi compañero.",
-          "de": "Trabajo para mi compañero würde bedeuten, dass mein Kollege mein Chef ist und ich für ihn arbeite. An der Stelle eines kranken Kollegen zu arbeiten steht mit por. Richtig ist: trabajo por mi compañero."
+          "es": "Trabajo para mi compañero significaría que mi compañero es mi jefe y trabajo para él. Trabajar en lugar de un compañero enfermo lleva por. Lo correcto es: trabajo por mi compañero."
         }
       },
       "examples": [
         "Si no puedes ir, voy yo por ti.",
         "Mi hermana habló por todos."
       ],
-      "tr": { "hu": "Ma a kollégám helyett dolgozom, mert ő beteg.", "en": "Today I am working for my coworker because he is sick.", "es": "Hoy trabajo por mi compañero, porque está enfermo.", "de": "Heute arbeite ich für meinen Kollegen, weil er krank ist." }
+      "tr": { "en": "Today I am working for my coworker because he is sick.", "es": "Hoy trabajo por mi compañero, porque está enfermo." }
     },
     {
       "id": "ppa-match-01",
@@ -980,46 +834,34 @@
       "es": "Mi padre se enojó por perder el tren.",
       "target": "por perder",
       "tr": {
-        "hu": "Apám megharagudott, mert lekéste a vonatot.",
         "en": "My father got angry about missing the train.",
-        "es": "Mi padre se enojó por perder el tren.",
-        "de": "Mein Vater wurde wütend, weil er den Zug verpasst hat."
+        "es": "Mi padre se enojó por perder el tren."
       },
       "options": [
         {
           "text": {
-            "hu": "por + főnévi igenév: ok, ami már megtörtént",
             "en": "por + infinitive: a reason that already happened",
-            "es": "por + infinitivo: una razón que ya ocurrió",
-            "de": "por + Infinitiv: ein Grund, der schon eingetreten ist"
+            "es": "por + infinitivo: una razón que ya ocurrió"
           }
         },
         {
           "text": {
-            "hu": "para + főnévi igenév: cél, szándék",
             "en": "para + infinitive: goal, intent",
-            "es": "para + infinitivo: meta, intención",
-            "de": "para + Infinitiv: Ziel, Absicht"
+            "es": "para + infinitivo: meta, intención"
           },
           "wrong": {
-            "hu": "A para perder célt jelentene: azért haragudott meg, hogy lekésse a vonatot. De a lekésés már megtörtént, és ez az oka a haragnak.",
             "en": "Para perder would express a goal: he got angry in order to miss the train. But the missing already happened and is the reason for the anger.",
-            "es": "Para perder expresaría una meta: se enojó con el fin de perder el tren. Pero perderlo ya ocurrió y es la razón del enojo.",
-            "de": "Para perder würde ein Ziel ausdrücken: er wurde wütend, um den Zug zu verpassen. Das Verpassen ist aber schon geschehen und der Grund für die Wut."
+            "es": "Para perder expresaría una meta: se enojó con el fin de perder el tren. Pero perderlo ya ocurrió y es la razón del enojo."
           }
         },
         {
           "text": {
-            "hu": "por: gyakoriság, arány",
             "en": "por: frequency, rate",
-            "es": "por: frecuencia, proporción",
-            "de": "por: Häufigkeit, Verhältnis"
+            "es": "por: frecuencia, proporción"
           },
           "wrong": {
-            "hu": "Nem azt mondja, hányszor vagy milyen arányban történik valami, hanem azt, mi miatt haragudott meg.",
             "en": "It does not say how often or in what proportion something happens, but what he got angry about.",
-            "es": "No dice cuántas veces ni en qué proporción ocurre algo, sino por qué se enojó.",
-            "de": "Es sagt nicht, wie oft oder in welchem Verhältnis etwas geschieht, sondern worüber er wütend wurde."
+            "es": "No dice cuántas veces ni en qué proporción ocurre algo, sino por qué se enojó."
           }
         }
       ],
@@ -1031,46 +873,34 @@
       "es": "Voy por las tortillas.",
       "target": "por las tortillas",
       "tr": {
-        "hu": "Megyek a tortillákért.",
         "en": "I'm going to get the tortillas.",
-        "es": "Voy por las tortillas.",
-        "de": "Ich hole die Tortillas."
+        "es": "Voy por las tortillas."
       },
       "options": [
         {
           "text": {
-            "hu": "para: úti cél, merre",
             "en": "para: destination, which way",
-            "es": "para: destino, hacia dónde",
-            "de": "para: Ziel, wohin"
+            "es": "para: destino, hacia dónde"
           },
           "wrong": {
-            "hu": "Az úti célnál para áll, és egy helyre mutat (voy para el centro). Itt a tortillákat akarom elhozni, nem egy helyre tartok.",
             "en": "A destination takes para and points to a place (voy para el centro). Here I want to bring the tortillas back, I am not heading to a place.",
-            "es": "El destino lleva para y señala un lugar (voy para el centro). Aquí quiero traer las tortillas, no me dirijo a un lugar.",
-            "de": "Ein Ziel steht mit para und zeigt auf einen Ort (voy para el centro). Hier will ich die Tortillas holen, ich bin nicht zu einem Ort unterwegs."
+            "es": "El destino lleva para y señala un lugar (voy para el centro). Aquí quiero traer las tortillas, no me dirijo a un lugar."
           }
         },
         {
           "text": {
-            "hu": "por: útvonal, min át",
             "en": "por: route, through which place",
-            "es": "por: ruta, a través de qué lugar",
-            "de": "por: Weg, wodurch"
+            "es": "por: ruta, a través de qué lugar"
           },
           "wrong": {
-            "hu": "Az útvonalnál olyan helyen megyek át, ahol haladok (caminamos por el parque). A tortillák nem helyek, hanem amit el akarok hozni.",
             "en": "A route is a place I move through (caminamos por el parque). The tortillas are not a place but what I want to bring back.",
-            "es": "Una ruta es un lugar por el que me muevo (caminamos por el parque). Las tortillas no son un lugar, sino lo que quiero traer.",
-            "de": "Ein Weg ist ein Ort, durch den ich mich bewege (caminamos por el parque). Die Tortillas sind kein Ort, sondern das, was ich holen will."
+            "es": "Una ruta es un lugar por el que me muevo (caminamos por el parque). Las tortillas no son un lugar, sino lo que quiero traer."
           }
         },
         {
           "text": {
-            "hu": "por: érte menni, felvenni",
             "en": "por: going to get or pick up",
-            "es": "por: ir a buscar o a recoger",
-            "de": "por: holen oder abholen gehen"
+            "es": "por: ir a buscar o a recoger"
           }
         }
       ],
@@ -1082,46 +912,34 @@
       "es": "Para ser octubre, hace mucho calor hoy.",
       "target": "Para ser",
       "tr": {
-        "hu": "Októberhez képest ma nagyon meleg van.",
         "en": "For October, it is very warm today.",
-        "es": "Para ser octubre, hace mucho calor hoy.",
-        "de": "Für Oktober ist es heute sehr warm."
+        "es": "Para ser octubre, hace mucho calor hoy."
       },
       "options": [
         {
           "text": {
-            "hu": "para + főnévi igenév: cél, szándék",
             "en": "para + infinitive: goal, intent",
-            "es": "para + infinitivo: meta, intención",
-            "de": "para + Infinitiv: Ziel, Absicht"
+            "es": "para + infinitivo: meta, intención"
           },
           "wrong": {
-            "hu": "A ser itt nem cél, nem azt akarom elérni, hogy október legyen. A para + ser azt hasonlítja össze, mihez képest szokatlan a meleg.",
             "en": "The ser here is not a goal, I am not trying to make it October. Para + ser compares what the warmth is unusual for.",
-            "es": "El ser aquí no es una meta, no intento que sea octubre. Para + ser compara respecto a qué resulta inesperado el calor.",
-            "de": "Das ser ist hier kein Ziel, ich will nicht erreichen, dass es Oktober ist. Para + ser vergleicht, woran gemessen die Wärme unerwartet ist."
+            "es": "El ser aquí no es una meta, no intento que sea octubre. Para + ser compara respecto a qué resulta inesperado el calor."
           }
         },
         {
           "text": {
-            "hu": "para: összevetés az elvárással",
             "en": "para: comparison with an expectation",
-            "es": "para: comparación con lo esperable",
-            "de": "para: Vergleich mit der Erwartung"
+            "es": "para: comparación con lo esperable"
           }
         },
         {
           "text": {
-            "hu": "por: ok, miért",
             "en": "por: cause, why",
-            "es": "por: causa, por qué",
-            "de": "por: Ursache, warum"
+            "es": "por: causa, por qué"
           },
           "wrong": {
-            "hu": "A por ser octubre azt jelentené: azért, mert október van, mintha a hónap okozná a meleget. A mondat viszont az elvárással hasonlít össze.",
             "en": "Por ser octubre would mean because it is October, as if the month caused the heat. The sentence compares with an expectation instead.",
-            "es": "Por ser octubre significaría porque es octubre, como si el mes causara el calor. La frase compara con lo esperable.",
-            "de": "Por ser octubre würde bedeuten, weil es Oktober ist, als würde der Monat die Hitze verursachen. Der Satz vergleicht aber mit einer Erwartung."
+            "es": "Por ser octubre significaría porque es octubre, como si el mes causara el calor. La frase compara con lo esperable."
           }
         }
       ],
@@ -1133,46 +951,34 @@
       "es": "Hablo con mi abuela dos veces por mes.",
       "target": "por mes",
       "tr": {
-        "hu": "Havonta kétszer beszélek a nagymamámmal.",
         "en": "I talk to my grandmother twice a month.",
-        "es": "Hablo con mi abuela dos veces por mes.",
-        "de": "Ich spreche zweimal im Monat mit meiner Großmutter."
+        "es": "Hablo con mi abuela dos veces por mes."
       },
       "options": [
         {
           "text": {
-            "hu": "por: gyakoriság, arány",
             "en": "por: frequency, rate",
-            "es": "por: frecuencia, proporción",
-            "de": "por: Häufigkeit, Verhältnis"
+            "es": "por: frecuencia, proporción"
           }
         },
         {
           "text": {
-            "hu": "por: időtartam, mennyi ideig",
             "en": "por: duration, how long",
-            "es": "por: duración, cuánto tiempo",
-            "de": "por: Dauer, wie lange"
+            "es": "por: duración, cuánto tiempo"
           },
           "wrong": {
-            "hu": "Az időtartam azt mondja meg, mennyi ideig tart valami (por dos semanas). Itt azt, hányszor történik egy hónapban.",
             "en": "A duration says how long something lasts (por dos semanas). Here it says how many times it happens in a month.",
-            "es": "La duración dice cuánto dura algo (por dos semanas). Aquí dice cuántas veces ocurre en un mes.",
-            "de": "Eine Dauer sagt, wie lange etwas dauert (por dos semanas). Hier sagt es, wie oft es in einem Monat geschieht."
+            "es": "La duración dice cuánto dura algo (por dos semanas). Aquí dice cuántas veces ocurre en un mes."
           }
         },
         {
           "text": {
-            "hu": "para: határidő, mikorra",
             "en": "para: deadline, by when",
-            "es": "para: plazo, para cuándo",
-            "de": "para: Frist, bis wann"
+            "es": "para: plazo, para cuándo"
           },
           "wrong": {
-            "hu": "A határidőnél para áll (para el lunes), és azt mondja meg, mikorra kell kész lenni valaminek. Itt por áll, és a gyakoriságot adja.",
             "en": "A deadline takes para (para el lunes) and says by when something must be ready. Here por stands and gives the frequency.",
-            "es": "El plazo lleva para (para el lunes) y dice para cuándo debe estar listo algo. Aquí va por y da la frecuencia.",
-            "de": "Eine Frist steht mit para (para el lunes) und sagt, bis wann etwas fertig sein muss. Hier steht por und gibt die Häufigkeit an."
+            "es": "El plazo lleva para (para el lunes) y dice para cuándo debe estar listo algo. Aquí va por y da la frecuencia."
           }
         }
       ],
@@ -1184,46 +990,34 @@
       "es": "Mi tío trabaja para el gobierno.",
       "target": "para el gobierno",
       "tr": {
-        "hu": "A nagybátyám az államnak dolgozik.",
         "en": "My uncle works for the government.",
-        "es": "Mi tío trabaja para el gobierno.",
-        "de": "Mein Onkel arbeitet für die Regierung."
+        "es": "Mi tío trabaja para el gobierno."
       },
       "options": [
         {
           "text": {
-            "hu": "para: címzett, kinek",
             "en": "para: recipient, for whom",
-            "es": "para: destinatario, para quién",
-            "de": "para: Empfänger, für wen"
+            "es": "para: destinatario, para quién"
           },
           "wrong": {
-            "hu": "A címzett olyasvalaki, aki egy tárgyat vagy üzenetet kap (un regalo para ti). Itt az állam nem kap semmit, hanem ő a munkáltató.",
             "en": "A recipient is someone who receives an object or a message (un regalo para ti). Here the government receives nothing, it is the employer.",
-            "es": "Un destinatario es alguien que recibe un objeto o un mensaje (un regalo para ti). Aquí el gobierno no recibe nada, es el empleador.",
-            "de": "Ein Empfänger ist jemand, der einen Gegenstand oder eine Nachricht erhält (un regalo para ti). Hier erhält die Regierung nichts, sie ist der Arbeitgeber."
+            "es": "Un destinatario es alguien que recibe un objeto o un mensaje (un regalo para ti). Aquí el gobierno no recibe nada, es el empleador."
           }
         },
         {
           "text": {
-            "hu": "por: valaki helyett",
             "en": "por: in someone's place",
-            "es": "por: en lugar de alguien",
-            "de": "por: anstelle von jemandem"
+            "es": "por: en lugar de alguien"
           },
           "wrong": {
-            "hu": "A por el gobierno azt jelentené: az állam helyett dolgozik. Ez nem a munkáltatót, hanem egy helyettesítést fejezne ki.",
             "en": "Por el gobierno would mean he works in place of the government. That would express a substitution, not the employer.",
-            "es": "Por el gobierno significaría que trabaja en lugar del gobierno. Eso expresaría una sustitución, no al empleador.",
-            "de": "Por el gobierno würde bedeuten, dass er anstelle der Regierung arbeitet. Das würde eine Vertretung ausdrücken, nicht den Arbeitgeber."
+            "es": "Por el gobierno significaría que trabaja en lugar del gobierno. Eso expresaría una sustitución, no al empleador."
           }
         },
         {
           "text": {
-            "hu": "para: munkáltató, kinek dolgozik",
             "en": "para: employer, whom you work for",
-            "es": "para: empleador, para quién se trabaja",
-            "de": "para: Arbeitgeber, für wen man arbeitet"
+            "es": "para: empleador, para quién se trabaja"
           }
         }
       ],
@@ -1235,46 +1029,34 @@
       "es": "Los dulces son malos para los dientes.",
       "target": "para los dientes",
       "tr": {
-        "hu": "Az édesség árt a fogaknak.",
         "en": "Sweets are bad for your teeth.",
-        "es": "Los dulces son malos para los dientes.",
-        "de": "Süßigkeiten sind schlecht für die Zähne."
+        "es": "Los dulces son malos para los dientes."
       },
       "options": [
         {
           "text": {
-            "hu": "por: ok, miért",
             "en": "por: cause, why",
-            "es": "por: causa, por qué",
-            "de": "por: Ursache, warum"
+            "es": "por: causa, por qué"
           },
           "wrong": {
-            "hu": "Az ok azt mondja meg, miért történik valami (por la lluvia). Itt nem az okról van szó, hanem arról, mire hat a cukor.",
             "en": "A cause says why something happens (por la lluvia). Here it is not about a cause but about what the sugar affects.",
-            "es": "La causa dice por qué ocurre algo (por la lluvia). Aquí no se trata de una causa, sino de sobre qué actúa el azúcar.",
-            "de": "Eine Ursache sagt, warum etwas geschieht (por la lluvia). Hier geht es nicht um eine Ursache, sondern darum, worauf der Zucker wirkt."
+            "es": "La causa dice por qué ocurre algo (por la lluvia). Aquí no se trata de una causa, sino de sobre qué actúa el azúcar."
           }
         },
         {
           "text": {
-            "hu": "para: hatás, mire jó vagy káros",
             "en": "para: effect, what it is good or bad for",
-            "es": "para: efecto, para qué es bueno o malo",
-            "de": "para: Wirkung, wofür gut oder schlecht"
+            "es": "para: efecto, para qué es bueno o malo"
           }
         },
         {
           "text": {
-            "hu": "para: címzett, kinek",
             "en": "para: recipient, for whom",
-            "es": "para: destinatario, para quién",
-            "de": "para: Empfänger, für wen"
+            "es": "para: destinatario, para quién"
           },
           "wrong": {
-            "hu": "A fogak nem kapnak semmit, mint egy ajándék címzettje. A malo para azt fejezi ki, mire káros valami.",
             "en": "The teeth do not receive anything, like the recipient of a gift. Malo para expresses what something is harmful to.",
-            "es": "Los dientes no reciben nada, como el destinatario de un regalo. Malo para expresa para qué es dañino algo.",
-            "de": "Die Zähne erhalten nichts wie der Empfänger eines Geschenks. Malo para drückt aus, wofür etwas schädlich ist."
+            "es": "Los dientes no reciben nada, como el destinatario de un regalo. Malo para expresa para qué es dañino algo."
           }
         }
       ],
@@ -1286,46 +1068,34 @@
       "es": "Mi tía vive por el centro.",
       "target": "por el centro",
       "tr": {
-        "hu": "A nagynéném valahol a belváros környékén lakik.",
         "en": "My aunt lives somewhere around downtown.",
-        "es": "Mi tía vive por el centro.",
-        "de": "Meine Tante wohnt irgendwo in der Gegend des Zentrums."
+        "es": "Mi tía vive por el centro."
       },
       "options": [
         {
           "text": {
-            "hu": "por: hozzávetőleges hely",
             "en": "por: approximate place",
-            "es": "por: lugar aproximado",
-            "de": "por: ungefährer Ort"
+            "es": "por: lugar aproximado"
           }
         },
         {
           "text": {
-            "hu": "por: útvonal, min át",
             "en": "por: route, through which place",
-            "es": "por: ruta, a través de qué lugar",
-            "de": "por: Weg, wodurch"
+            "es": "por: ruta, a través de qué lugar"
           },
           "wrong": {
-            "hu": "Az útvonalnál mozgás van (caminamos por el parque), a lakik viszont nem mozgás: csak azt mondja, hozzávetőleg hol lakik.",
             "en": "A route involves movement (caminamos por el parque), but to live is not movement: it only says roughly where she lives.",
-            "es": "Una ruta implica movimiento (caminamos por el parque), pero vivir no es movimiento: solo dice más o menos dónde vive.",
-            "de": "Ein Weg bedeutet Bewegung (caminamos por el parque), wohnen ist aber keine Bewegung: es sagt nur ungefähr, wo sie wohnt."
+            "es": "Una ruta implica movimiento (caminamos por el parque), pero vivir no es movimiento: solo dice más o menos dónde vive."
           }
         },
         {
           "text": {
-            "hu": "para: úti cél, merre",
             "en": "para: destination, which way",
-            "es": "para: destino, hacia dónde",
-            "de": "para: Ziel, wohin"
+            "es": "para: destino, hacia dónde"
           },
           "wrong": {
-            "hu": "Az úti célt a para jelöli (voy para el centro), de a lakik nem megy sehova, ezért itt nincs úti cél.",
             "en": "A destination takes para (voy para el centro), but to live goes nowhere, so there is no destination here.",
-            "es": "El destino lleva para (voy para el centro), pero vivir no va a ningún sitio, así que aquí no hay destino.",
-            "de": "Ein Ziel steht mit para (voy para el centro), aber wohnen geht nirgendwohin, also gibt es hier kein Ziel."
+            "es": "El destino lleva para (voy para el centro), pero vivir no va a ningún sitio, así que aquí no hay destino."
           }
         }
       ],

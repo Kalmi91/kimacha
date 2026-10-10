@@ -3,166 +3,130 @@
   "topic": "pluscuamperfecto",
   "level": "B1",
   "title": {
-    "hu": "Régmúlt (pluscuamperfecto)",
     "en": "The past perfect",
-    "es": "El pluscuamperfecto",
-    "de": "Das Plusquamperfekt"
+    "es": "El pluscuamperfecto"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "A pluscuamperfecto (régmúlt) olyan cselekvésről szól, amely egy másik múltbeli pillanat vagy cselekvés előtt már megtörtént. Úgy képezzük, hogy a haber ige folyamatos múlt alakja (había, habías, había, habíamos, habíais, habían) után a participio áll, amely -ado vagy -ido végű. A participio soha nem változik, és a két rész közé nem kerülhet semmi: a névmás a había elé áll.",
         "en": "The pluscuamperfecto (past perfect) is for something that had already happened before another moment or action in the past. You form it with the imperfect of haber (había, habías, había, habíamos, habíais, habían) followed by the participle, which ends in -ado or -ido. The participle never changes, and nothing can come between the two parts: a pronoun goes before había.",
-        "es": "El pluscuamperfecto expresa una acción que ya había ocurrido antes de otro momento o de otra acción del pasado. Se forma con el imperfecto de haber (había, habías, había, habíamos, habíais, habían) y el participio, que termina en -ado o en -ido. El participio no cambia nunca, y entre las dos partes no puede ir nada: el pronombre va antes de había.",
-        "de": "Das Plusquamperfekt (pluscuamperfecto) drückt aus, dass etwas schon vor einem anderen Moment oder einer anderen Handlung in der Vergangenheit geschehen war. Es wird mit dem Imperfekt von haber (había, habías, había, habíamos, habíais, habían) und dem Partizip gebildet, das auf -ado oder -ido endet. Das Partizip ändert sich nie, und zwischen den beiden Teilen darf nichts stehen: Das Pronomen steht vor había."
+        "es": "El pluscuamperfecto expresa una acción que ya había ocurrido antes de otro momento o de otra acción del pasado. Se forma con el imperfecto de haber (había, habías, había, habíamos, habíais, habían) y el participio, que termina en -ado o en -ido. El participio no cambia nunca, y entre las dos partes no puede ir nada: el pronombre va antes de había."
       }
     },
     {
       "kind": "usage",
       "title": {
-        "hu": "Mikor használjuk",
         "en": "When to use it",
-        "es": "Cuándo se usa",
-        "de": "Wann man es benutzt"
+        "es": "Cuándo se usa"
       },
       "points": [
         {
           "text": {
-            "hu": "Había + participio = olyan cselekvés, amely egy másik múltbeli pillanat vagy cselekvés előtt már megtörtént. Az előbb történt dolog kapja ezt az alakot.",
             "en": "Había + participle = an action that had already happened before another moment or action in the past. The thing that happened first gets this form.",
-            "es": "Había + participio = una acción que ya había ocurrido antes de otro momento o de otra acción del pasado. Lo que ocurrió primero lleva esta forma.",
-            "de": "Había + Partizip = eine Handlung, die schon vor einem anderen Moment oder einer anderen Handlung in der Vergangenheit geschehen war. Was zuerst geschah, bekommt diese Form."
+            "es": "Había + participio = una acción que ya había ocurrido antes de otro momento o de otra acción del pasado. Lo que ocurrió primero lleva esta forma."
           },
           "examples": [
             {
               "es": "Cuando llegué, el tren ya había salido.",
               "tr": {
-                "hu": "Mire megérkeztem, a vonat már elment.",
                 "en": "When I arrived, the train had already left.",
-                "es": "Cuando llegué, el tren ya había salido.",
-                "de": "Als ich ankam, war der Zug schon abgefahren."
+                "es": "Cuando llegué, el tren ya había salido."
               }
             },
             {
               "es": "Ana ya había cenado cuando llamé.",
               "tr": {
-                "hu": "Ana már vacsorázott, mikor hívtam.",
                 "en": "Ana had already had dinner when I called.",
-                "es": "Ana ya había cenado cuando llamé.",
-                "de": "Ana hatte schon zu Abend gegessen, als ich anrief."
+                "es": "Ana ya había cenado cuando llamé."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Gyakori kísérői: ya (már), todavía no (még nem), nunca (soha). Egy múltbeli pillanatig tartó tapasztalatot vagy hiányt jelentenek: nunca había visto = addig még sosem láttam.",
             "en": "Common companions: ya (already), todavía no (not yet), nunca (never). They describe an experience or a lack up to a moment in the past: nunca había visto = I had never seen until then.",
-            "es": "Suele ir con ya, todavía no y nunca. Expresan una experiencia o una falta hasta un momento del pasado: nunca había visto = hasta entonces no había visto nunca.",
-            "de": "Häufige Begleiter: ya (schon), todavía no (noch nicht), nunca (nie). Sie beschreiben eine Erfahrung oder einen Mangel bis zu einem Moment in der Vergangenheit: nunca había visto = ich hatte bis dahin nie gesehen."
+            "es": "Suele ir con ya, todavía no y nunca. Expresan una experiencia o una falta hasta un momento del pasado: nunca había visto = hasta entonces no había visto nunca."
           },
           "examples": [
             {
               "es": "Todavía no habíamos terminado de comer.",
               "tr": {
-                "hu": "Még nem fejeztük be az evést.",
                 "en": "We had not finished eating yet.",
-                "es": "Todavía no habíamos terminado de comer.",
-                "de": "Wir waren noch nicht mit dem Essen fertig."
+                "es": "Todavía no habíamos terminado de comer."
               }
             },
             {
               "es": "Nunca había visto el mar.",
               "tr": {
-                "hu": "Addig még sosem láttam a tengert.",
                 "en": "I had never seen the sea.",
-                "es": "Nunca había visto el mar.",
-                "de": "Ich hatte das Meer noch nie gesehen."
+                "es": "Nunca había visto el mar."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Múlt idejű bevezető ige után (dijo que, me dijo que) a korábban történtet is ez az alak mondja: dijo que ya había comido = azt mondta, hogy már evett.",
             "en": "After a past reporting verb (dijo que, me dijo que), this form also expresses what had happened earlier: dijo que ya había comido = he said that he had already eaten.",
-            "es": "Después de un verbo de comunicación en pasado (dijo que, me dijo que), esta forma expresa también lo que ocurrió antes: dijo que ya había comido.",
-            "de": "Nach einem vergangenen Verb des Sagens (dijo que, me dijo que) steht diese Form auch für das früher Geschehene: dijo que ya había comido = er sagte, dass er schon gegessen hatte."
+            "es": "Después de un verbo de comunicación en pasado (dijo que, me dijo que), esta forma expresa también lo que ocurrió antes: dijo que ya había comido."
           },
           "examples": [
             {
               "es": "Ella dijo que ya había comido.",
               "tr": {
-                "hu": "Azt mondta, hogy már evett.",
                 "en": "She said that she had already eaten.",
-                "es": "Ella dijo que ya había comido.",
-                "de": "Sie sagte, dass sie schon gegessen hatte."
+                "es": "Ella dijo que ya había comido."
               }
             },
             {
               "es": "Mi madre dijo que habías llamado.",
               "tr": {
-                "hu": "Anyám azt mondta, hogy hívtál.",
                 "en": "My mother said that you had called.",
-                "es": "Mi madre dijo que habías llamado.",
-                "de": "Meine Mutter sagte, dass du angerufen hattest."
+                "es": "Mi madre dijo que habías llamado."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Néhány participio rendhagyó: hacer → hecho, decir → dicho, ver → visto, escribir → escrito, volver → vuelto, poner → puesto, abrir → abierto, romper → roto.",
             "en": "Some participles are irregular: hacer → hecho, decir → dicho, ver → visto, escribir → escrito, volver → vuelto, poner → puesto, abrir → abierto, romper → roto.",
-            "es": "Algunos participios son irregulares: hacer → hecho, decir → dicho, ver → visto, escribir → escrito, volver → vuelto, poner → puesto, abrir → abierto, romper → roto.",
-            "de": "Einige Partizipien sind unregelmäßig: hacer → hecho, decir → dicho, ver → visto, escribir → escrito, volver → vuelto, poner → puesto, abrir → abierto, romper → roto."
+            "es": "Algunos participios son irregulares: hacer → hecho, decir → dicho, ver → visto, escribir → escrito, volver → vuelto, poner → puesto, abrir → abierto, romper → roto."
           },
           "examples": [
             {
               "es": "Ya habíamos hecho la tarea antes de cenar.",
               "tr": {
-                "hu": "Vacsora előtt már megcsináltuk a házi feladatot.",
                 "en": "We had already done the homework before dinner.",
-                "es": "Ya habíamos hecho la tarea antes de cenar.",
-                "de": "Wir hatten die Hausaufgaben schon vor dem Abendessen gemacht."
+                "es": "Ya habíamos hecho la tarea antes de cenar."
               }
             },
             {
               "es": "Mi hermano ya había abierto la ventana.",
               "tr": {
-                "hu": "A testvérem már kinyitotta az ablakot.",
                 "en": "My brother had already opened the window.",
-                "es": "Mi hermano ya había abierto la ventana.",
-                "de": "Mein Bruder hatte das Fenster schon geöffnet."
+                "es": "Mi hermano ya había abierto la ventana."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A névmás a había elé kerül, a participio és a había közé soha: me había levantado, se habían ido.",
             "en": "The pronoun goes before había, never between the two parts: me había levantado, se habían ido.",
-            "es": "El pronombre va antes de había, nunca entre las dos partes: me había levantado, se habían ido.",
-            "de": "Das Pronomen steht vor había, nie zwischen den beiden Teilen: me había levantado, se habían ido."
+            "es": "El pronombre va antes de había, nunca entre las dos partes: me había levantado, se habían ido."
           },
           "examples": [
             {
               "es": "Ya me había levantado cuando sonó el teléfono.",
               "tr": {
-                "hu": "Már felkeltem, mikor megszólalt a telefon.",
                 "en": "I had already got up when the phone rang.",
-                "es": "Ya me había levantado cuando sonó el teléfono.",
-                "de": "Ich war schon aufgestanden, als das Telefon klingelte."
+                "es": "Ya me había levantado cuando sonó el teléfono."
               }
             },
             {
               "es": "Mis amigos se habían ido antes de la fiesta.",
               "tr": {
-                "hu": "A barátaim elmentek a buli előtt.",
                 "en": "My friends had left before the party.",
-                "es": "Mis amigos se habían ido antes de la fiesta.",
-                "de": "Meine Freunde waren schon vor der Party gegangen."
+                "es": "Mis amigos se habían ido antes de la fiesta."
               }
             }
           ]
@@ -173,65 +137,45 @@
       "kind": "table",
       "id": "pluscuamperfecto",
       "title": {
-        "hu": "A pluscuamperfecto ragozása",
         "en": "The pluscuamperfecto, conjugated",
-        "es": "El pluscuamperfecto, conjugado",
-        "de": "Das pluscuamperfecto, konjugiert"
+        "es": "El pluscuamperfecto, conjugado"
       },
       "header": [
         {
-          "hu": "Persona",
           "en": "Person",
-          "es": "Persona",
-          "de": "Person"
+          "es": "Persona"
         },
         {
-          "hu": "hablar",
           "en": "hablar",
-          "es": "hablar",
-          "de": "hablar"
+          "es": "hablar"
         },
         {
-          "hu": "comer",
           "en": "comer",
-          "es": "comer",
-          "de": "comer"
+          "es": "comer"
         },
         {
-          "hu": "vivir",
           "en": "vivir",
-          "es": "vivir",
-          "de": "vivir"
+          "es": "vivir"
         },
         {
-          "hu": "hacer",
           "en": "hacer",
-          "es": "hacer",
-          "de": "hacer"
+          "es": "hacer"
         },
         {
-          "hu": "ver",
           "en": "ver",
-          "es": "ver",
-          "de": "ver"
+          "es": "ver"
         },
         {
-          "hu": "decir",
           "en": "decir",
-          "es": "decir",
-          "de": "decir"
+          "es": "decir"
         },
         {
-          "hu": "escribir",
           "en": "escribir",
-          "es": "escribir",
-          "de": "escribir"
+          "es": "escribir"
         },
         {
-          "hu": "volver",
           "en": "volver",
-          "es": "volver",
-          "de": "volver"
+          "es": "volver"
         }
       ],
       "rows": [
@@ -314,38 +258,30 @@
     {
       "kind": "contrast",
       "title": {
-        "hu": "Gyakori párok",
         "en": "Common pairs",
-        "es": "Pares frecuentes",
-        "de": "Häufige Paare"
+        "es": "Pares frecuentes"
       },
       "pairs": [
         {
           "a": "había comido",
           "b": "he comido",
           "note": {
-            "hu": "Había comido: egy múltbeli pillanatig már megtörtént. He comido: a mostani időszakhoz, a mához kötődik.",
             "en": "Había comido: already done by a moment in the past. He comido: linked to the present period, to today.",
-            "es": "Había comido: ya hecho hasta un momento del pasado. He comido: unido al periodo actual, a hoy.",
-            "de": "Había comido: bis zu einem Moment in der Vergangenheit schon geschehen. He comido: mit dem jetzigen Zeitraum, mit heute verbunden."
+            "es": "Había comido: ya hecho hasta un momento del pasado. He comido: unido al periodo actual, a hoy."
           },
           "examples": [
             {
               "es": "Cuando llamaste, ya había comido.",
               "tr": {
-                "hu": "Mikor hívtál, már ettem.",
                 "en": "When you called, I had already eaten.",
-                "es": "Cuando llamaste, ya había comido.",
-                "de": "Als du anriefst, hatte ich schon gegessen."
+                "es": "Cuando llamaste, ya había comido."
               }
             },
             {
               "es": "Hoy he comido con mi madre.",
               "tr": {
-                "hu": "Ma az anyámmal ebédeltem.",
                 "en": "Today I have eaten with my mother.",
-                "es": "Hoy he comido con mi madre.",
-                "de": "Heute habe ich mit meiner Mutter gegessen."
+                "es": "Hoy he comido con mi madre."
               }
             }
           ]
@@ -354,28 +290,22 @@
           "a": "había salido",
           "b": "salió",
           "note": {
-            "hu": "Había salido: már korábban elment, mielőtt a másik dolog történt. Salió: elment, a másik esemény után vagy vele egy időben.",
             "en": "Había salido: had left earlier, before the other thing happened. Salió: left after the other event or at the same time.",
-            "es": "Había salido: se fue antes de que ocurriera lo otro. Salió: se fue después del otro hecho o a la vez.",
-            "de": "Había salido: war schon vorher gegangen, bevor das andere geschah. Salió: ging nach dem anderen Ereignis oder zugleich."
+            "es": "Había salido: se fue antes de que ocurriera lo otro. Salió: se fue después del otro hecho o a la vez."
           },
           "examples": [
             {
               "es": "Cuando llegué, Ana ya había salido.",
               "tr": {
-                "hu": "Mire megérkeztem, Ana már elment.",
                 "en": "When I arrived, Ana had already left.",
-                "es": "Cuando llegué, Ana ya había salido.",
-                "de": "Als ich ankam, war Ana schon gegangen."
+                "es": "Cuando llegué, Ana ya había salido."
               }
             },
             {
               "es": "Cuando llegué, Ana salió.",
               "tr": {
-                "hu": "Mikor megérkeztem, Ana elment.",
                 "en": "When I arrived, Ana left.",
-                "es": "Cuando llegué, Ana salió.",
-                "de": "Als ich ankam, ging Ana."
+                "es": "Cuando llegué, Ana salió."
               }
             }
           ]
@@ -384,28 +314,22 @@
           "a": "había preparado",
           "b": "preparaba",
           "note": {
-            "hu": "Había preparado: a munka már készen volt. Preparaba: épp folyamatban volt, még tartott.",
             "en": "Había preparado: the work was already finished. Preparaba: it was in progress, still going on.",
-            "es": "Había preparado: el trabajo ya estaba terminado. Preparaba: estaba en proceso, todavía seguía.",
-            "de": "Había preparado: die Arbeit war schon fertig. Preparaba: sie war im Gange, es dauerte noch an."
+            "es": "Había preparado: el trabajo ya estaba terminado. Preparaba: estaba en proceso, todavía seguía."
           },
           "examples": [
             {
               "es": "Cuando llegué, mi madre ya había preparado la cena.",
               "tr": {
-                "hu": "Mire megérkeztem, anyám már elkészítette a vacsorát.",
                 "en": "When I arrived, my mother had already prepared dinner.",
-                "es": "Cuando llegué, mi madre ya había preparado la cena.",
-                "de": "Als ich ankam, hatte meine Mutter das Abendessen schon zubereitet."
+                "es": "Cuando llegué, mi madre ya había preparado la cena."
               }
             },
             {
               "es": "Cuando llegué, mi madre preparaba la cena.",
               "tr": {
-                "hu": "Mikor megérkeztem, anyám a vacsorát készítette.",
                 "en": "When I arrived, my mother was preparing dinner.",
-                "es": "Cuando llegué, mi madre preparaba la cena.",
-                "de": "Als ich ankam, bereitete meine Mutter das Abendessen zu."
+                "es": "Cuando llegué, mi madre preparaba la cena."
               }
             }
           ]
@@ -415,18 +339,14 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Ha egy mondatban két múltbeli dolog van, kérdezd meg: melyik történt előbb? Az előbbi kapja a había + participiót, a későbbi a befejezett vagy a folyamatos múltat.",
         "en": "When a sentence has two past events, ask: which one happened first? The earlier one gets había + participle, the later one gets the preterite or the imperfect.",
-        "es": "Si en una frase hay dos hechos pasados, pregunta: ¿cuál ocurrió primero? El anterior lleva había + participio, el posterior lleva el indefinido o el imperfecto.",
-        "de": "Wenn ein Satz zwei vergangene Ereignisse enthält, frag dich: Welches geschah zuerst? Das frühere bekommt había + Partizip, das spätere das Indefinido oder das Imperfekt."
+        "es": "Si en una frase hay dos hechos pasados, pregunta: ¿cuál ocurrió primero? El anterior lleva había + participio, el posterior lleva el indefinido o el imperfecto."
       }
     }
   ],
   "speak": {
-    "hu": "A régmúlt olyan cselekvésről szól, amely egy másik múltbeli pillanat előtt már megtörtént. Úgy képezzük, hogy a segédige folyamatos múlt alakja után a melléknévi igenév áll. Ez az igenév sosem változik, és a két rész közé nem kerülhet semmi: a névmás az egész elé áll. Gyakran áll mellette a már, a még nem és a soha. Ha két múltbeli esemény van egy mondatban, az előbb történt kapja ezt az igeidőt, a későbbi pedig a befejezett vagy a folyamatos múltat. Jegyezd meg a rendhagyó igeneveket is.",
     "en": "The past perfect is for something that had already happened before another moment in the past. You build it from the past form of the helping verb, followed by the participle. The participle never changes, and nothing can come between the two parts: a pronoun goes in front of both. It often appears with the words already, not yet and never. When two past events are in one sentence, the earlier one gets this tense, and the later one gets the simple past or the imperfect. Learn the irregular participles too.",
-    "es": "El pluscuamperfecto expresa una acción que ya había ocurrido antes de otro momento del pasado. Se forma con el imperfecto del verbo auxiliar y el participio. El participio no cambia nunca, y entre las dos partes no puede ir nada: el pronombre va delante de todo. Suele aparecer con las palabras ya, todavía no y nunca. Cuando hay dos hechos pasados en la misma frase, el anterior lleva este tiempo y el posterior lleva el indefinido o el imperfecto. Aprende también los participios irregulares.",
-    "de": "Das Plusquamperfekt drückt aus, dass etwas schon vor einem anderen Moment in der Vergangenheit geschehen war. Es besteht aus der Vergangenheitsform des Hilfsverbs und dem Partizip. Das Partizip ändert sich nie, und zwischen den beiden Teilen darf nichts stehen: Das Pronomen steht vor beiden. Oft stehen dabei die Wörter schon, noch nicht und nie. Wenn zwei vergangene Ereignisse in einem Satz vorkommen, bekommt das frühere diese Zeit und das spätere das Präteritum oder das Imperfekt. Lerne auch die unregelmäßigen Partizipien."
+    "es": "El pluscuamperfecto expresa una acción que ya había ocurrido antes de otro momento del pasado. Se forma con el imperfecto del verbo auxiliar y el participio. El participio no cambia nunca, y entre las dos partes no puede ir nada: el pronombre va delante de todo. Suele aparecer con las palabras ya, todavía no y nunca. Cuando hay dos hechos pasados en la misma frase, el anterior lleva este tiempo y el posterior lleva el indefinido o el imperfecto. Aprende también los participios irregulares."
   },
   "items": [
     {
@@ -439,30 +359,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A ya és a megérkezés előtti esemény: había + participio.",
         "en": "Ya and an event before the arrival: había + participle.",
-        "es": "Ya y un hecho anterior a la llegada: había + participio.",
-        "de": "Ya und ein Ereignis vor der Ankunft: había + Partizip."
+        "es": "Ya y un hecho anterior a la llegada: había + participio."
       },
       "wrong": {
         "salió": {
-          "hu": "Salió külön eseményt mondana, amely a megérkezéskor vagy utána történt; itt a vonat már korábban elment; helyesen: Cuando llegué, el tren ya había salido.",
           "en": "Salió would name a separate event at or after my arrival; here the train had left earlier; correctly: Cuando llegué, el tren ya había salido.",
-          "es": "Salió nombraría un hecho aparte, al llegar o después; aquí el tren se había ido antes; correctamente: Cuando llegué, el tren ya había salido.",
-          "de": "Salió würde ein eigenes Ereignis bei oder nach der Ankunft nennen; hier war der Zug schon früher abgefahren; richtig: Cuando llegué, el tren ya había salido."
+          "es": "Salió nombraría un hecho aparte, al llegar o después; aquí el tren se había ido antes; correctamente: Cuando llegué, el tren ya había salido."
         },
         "ha salido": {
-          "hu": "Ha salido a közelmúlt (perfecto): a mához kötődik, a mondat viszont múltbeli pillanatra utal (llegué); helyesen: Cuando llegué, el tren ya había salido.",
           "en": "Ha salido is the present perfect: it is tied to the present, but the sentence points to a moment in the past (llegué); correctly: Cuando llegué, el tren ya había salido.",
-          "es": "Ha salido es el pretérito perfecto: va unido al presente, pero la frase señala un momento del pasado (llegué); correctamente: Cuando llegué, el tren ya había salido.",
-          "de": "Ha salido ist das Perfekt (perfecto): es hängt mit der Gegenwart zusammen, der Satz verweist aber auf einen Moment in der Vergangenheit (llegué); richtig: Cuando llegué, el tren ya había salido."
+          "es": "Ha salido es el pretérito perfecto: va unido al presente, pero la frase señala un momento del pasado (llegué); correctamente: Cuando llegué, el tren ya había salido."
         }
       },
       "examples": [
         "Cuando llamé, Ana ya había cenado.",
         "Antes de la clase, ya habíamos estudiado."
       ],
-      "tr": { "hu": "Amikor megérkeztem, a vonat már elment.", "en": "When I arrived, the train had already left.", "es": "Cuando llegué, el tren ya había salido.", "de": "Als ich ankam, war der Zug schon abgefahren." }
+      "tr": { "en": "When I arrived, the train had already left.", "es": "Cuando llegué, el tren ya había salido." }
     },
     {
       "id": "plu-ch-02",
@@ -474,30 +388,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A mis padres többes szám, és a tett a llegué előtt történt: habían hecho (a hecho rendhagyó).",
         "en": "Mis padres is plural and the deed came before llegué: habían hecho (hecho is irregular).",
-        "es": "Mis padres es plural y la acción es anterior a llegué: habían hecho (hecho es irregular).",
-        "de": "Mis padres ist Plural und die Handlung liegt vor llegué: habían hecho (hecho ist unregelmäßig)."
+        "es": "Mis padres es plural y la acción es anterior a llegué: habían hecho (hecho es irregular)."
       },
       "wrong": {
         "han hecho": {
-          "hu": "Han hecho a közelmúlt (perfecto): a mához kötődik, a mondat viszont múltbeli pillanatra utal (cuando llegué); helyesen: Mis padres ya habían hecho la cena cuando llegué.",
           "en": "Han hecho is the present perfect: it is tied to the present, but the sentence points to a moment in the past (cuando llegué); correctly: Mis padres ya habían hecho la cena cuando llegué.",
-          "es": "Han hecho es el pretérito perfecto: va unido al presente, pero la frase señala un momento del pasado (cuando llegué); correctamente: Mis padres ya habían hecho la cena cuando llegué.",
-          "de": "Han hecho ist das Perfekt (perfecto): es hängt mit der Gegenwart zusammen, der Satz verweist aber auf einen Moment in der Vergangenheit (cuando llegué); richtig: Mis padres ya habían hecho la cena cuando llegué."
+          "es": "Han hecho es el pretérito perfecto: va unido al presente, pero la frase señala un momento del pasado (cuando llegué); correctamente: Mis padres ya habían hecho la cena cuando llegué."
         },
         "había hecho": {
-          "hu": "Había hecho nem illik ide: egyes szám, a mis padres viszont többes szám; a megfelelő alak: habían hecho; helyesen: Mis padres ya habían hecho la cena cuando llegué.",
           "en": "Había hecho does not fit: it is singular, but mis padres is plural; the right form is habían hecho; correctly: Mis padres ya habían hecho la cena cuando llegué.",
-          "es": "Había hecho no encaja: es singular, pero mis padres es plural; la forma correcta es habían hecho; correctamente: Mis padres ya habían hecho la cena cuando llegué.",
-          "de": "Había hecho passt nicht: es ist Singular, mis padres ist aber Plural; die richtige Form ist habían hecho; richtig: Mis padres ya habían hecho la cena cuando llegué."
+          "es": "Había hecho no encaja: es singular, pero mis padres es plural; la forma correcta es habían hecho; correctamente: Mis padres ya habían hecho la cena cuando llegué."
         }
       },
       "examples": [
         "Ya habíamos hecho la tarea antes de cenar.",
         "Ellos ya habían hecho las maletas."
       ],
-      "tr": { "hu": "A szüleim már megfőzték a vacsorát, amikor megérkeztem.", "en": "My parents had already made dinner when I arrived.", "es": "Mis padres ya habían hecho la cena cuando llegué.", "de": "Meine Eltern hatten das Abendessen schon zubereitet, als ich ankam." }
+      "tr": { "en": "My parents had already made dinner when I arrived.", "es": "Mis padres ya habían hecho la cena cuando llegué." }
     },
     {
       "id": "plu-ch-03",
@@ -509,30 +417,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Az antes de ese viaje múltbeli pillanatig tartó tapasztalatot jelöl: no había visto nunca.",
         "en": "Antes de ese viaje marks an experience up to a moment in the past: no había visto nunca.",
-        "es": "Antes de ese viaje marca una experiencia hasta un momento del pasado: no había visto nunca.",
-        "de": "Antes de ese viaje markiert eine Erfahrung bis zu einem Moment in der Vergangenheit: no había visto nunca."
+        "es": "Antes de ese viaje marca una experiencia hasta un momento del pasado: no había visto nunca."
       },
       "wrong": {
         "he visto": {
-          "hu": "He visto a közelmúlt (perfecto): a mához kötődik, a mondat viszont múltbeli pillanatra utal (antes de ese viaje); helyesen: No había visto nunca el mar antes de ese viaje.",
           "en": "He visto is the present perfect: it is tied to the present, but the sentence points to a moment in the past (antes de ese viaje); correctly: No había visto nunca el mar antes de ese viaje.",
-          "es": "He visto es el pretérito perfecto: va unido al presente, pero la frase señala un momento del pasado (antes de ese viaje); correctamente: No había visto nunca el mar antes de ese viaje.",
-          "de": "He visto ist das Perfekt (perfecto): es hängt mit der Gegenwart zusammen, der Satz verweist aber auf einen Moment in der Vergangenheit (antes de ese viaje); richtig: No había visto nunca el mar antes de ese viaje."
+          "es": "He visto es el pretérito perfecto: va unido al presente, pero la frase señala un momento del pasado (antes de ese viaje); correctamente: No había visto nunca el mar antes de ese viaje."
         },
         "había vido": {
-          "hu": "A vido nem létezik: a ver participiója rendhagyó (visto); helyesen: No había visto nunca el mar antes de ese viaje.",
           "en": "Vido does not exist: the participle of ver is irregular (visto); correctly: No había visto nunca el mar antes de ese viaje.",
-          "es": "Vido no existe: el participio de ver es irregular (visto); correctamente: No había visto nunca el mar antes de ese viaje.",
-          "de": "Vido gibt es nicht: das Partizip von ver ist unregelmäßig (visto); richtig: No había visto nunca el mar antes de ese viaje."
+          "es": "Vido no existe: el participio de ver es irregular (visto); correctamente: No había visto nunca el mar antes de ese viaje."
         }
       },
       "examples": [
         "Nunca había viajado en avión.",
         "Nunca había estado en ese hotel."
       ],
-      "tr": { "hu": "Az előtt az utazás előtt még soha nem láttam a tengert.", "en": "I had never seen the sea before that trip.", "es": "No había visto nunca el mar antes de ese viaje.", "de": "Vor dieser Reise hatte ich das Meer noch nie gesehen." }
+      "tr": { "en": "I had never seen the sea before that trip.", "es": "No había visto nunca el mar antes de ese viaje." }
     },
     {
       "id": "plu-ch-04",
@@ -544,30 +446,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A névmás a había elé kerül, és a yo egyes szám: me había levantado.",
         "en": "The pronoun goes before había, and yo is singular: me había levantado.",
-        "es": "El pronombre va antes de había, y yo es singular: me había levantado.",
-        "de": "Das Pronomen steht vor había, und yo ist Singular: me había levantado."
+        "es": "El pronombre va antes de había, y yo es singular: me había levantado."
       },
       "wrong": {
         "había me": {
-          "hu": "A névmás sosem áll a había után, mindig elé kerül; helyesen: Cuando sonó el despertador, yo ya me había levantado.",
           "en": "The pronoun never follows había, it always goes before it; correctly: Cuando sonó el despertador, yo ya me había levantado.",
-          "es": "El pronombre nunca va después de había, siempre va antes; correctamente: Cuando sonó el despertador, yo ya me había levantado.",
-          "de": "Das Pronomen steht nie nach había, es steht immer davor; richtig: Cuando sonó el despertador, yo ya me había levantado."
+          "es": "El pronombre nunca va después de había, siempre va antes; correctamente: Cuando sonó el despertador, yo ya me había levantado."
         },
         "me habían": {
-          "hu": "Me habían nem illik ide: a habían többes szám (ellos), a yo viszont egyes szám; a megfelelő alak: me había; helyesen: Cuando sonó el despertador, yo ya me había levantado.",
           "en": "Me habían does not fit: habían is plural (ellos), but yo is singular; the right form is me había; correctly: Cuando sonó el despertador, yo ya me había levantado.",
-          "es": "Me habían no encaja: habían es plural (ellos), pero yo es singular; la forma correcta es me había; correctamente: Cuando sonó el despertador, yo ya me había levantado.",
-          "de": "Me habían passt nicht: habían ist Plural (ellos), yo ist aber Singular; die richtige Form ist me había; richtig: Cuando sonó el despertador, yo ya me había levantado."
+          "es": "Me habían no encaja: habían es plural (ellos), pero yo es singular; la forma correcta es me había; correctamente: Cuando sonó el despertador, yo ya me había levantado."
         }
       },
       "examples": [
         "Ya me había levantado cuando sonó el teléfono.",
         "Ellos se habían ido antes de la fiesta."
       ],
-      "tr": { "hu": "Amikor megszólalt az ébresztő, én már felkeltem.", "en": "When the alarm went off, I had already gotten up.", "es": "Cuando sonó el despertador, yo ya me había levantado.", "de": "Als der Wecker klingelte, war ich schon aufgestanden." }
+      "tr": { "en": "When the alarm went off, I had already gotten up.", "es": "Cuando sonó el despertador, yo ya me había levantado." }
     },
     {
       "id": "plu-ch-05",
@@ -579,30 +475,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A nosotros-hoz habíamos kell, és a ya a llegaron előtti eseményt jelöli.",
         "en": "Nosotros takes habíamos, and ya marks an event before llegaron.",
-        "es": "Nosotros pide habíamos, y ya marca un hecho anterior a llegaron.",
-        "de": "Nosotros verlangt habíamos, und ya markiert ein Ereignis vor llegaron."
+        "es": "Nosotros pide habíamos, y ya marca un hecho anterior a llegaron."
       },
       "wrong": {
         "habían cenado": {
-          "hu": "Habían cenado nem illik ide: a habían az ellos alakja, a nosotros-hoz viszont más kell; a megfelelő alak: habíamos; helyesen: Nosotros ya habíamos cenado cuando ellos llegaron.",
           "en": "Habían cenado does not fit: habían is the ellos form, but nosotros needs another one; the right form is habíamos; correctly: Nosotros ya habíamos cenado cuando ellos llegaron.",
-          "es": "Habían cenado no encaja: habían es la forma de ellos, pero nosotros pide otra; la forma correcta es habíamos; correctamente: Nosotros ya habíamos cenado cuando ellos llegaron.",
-          "de": "Habían cenado passt nicht: habían ist die Form für ellos, nosotros braucht aber eine andere; die richtige Form ist habíamos; richtig: Nosotros ya habíamos cenado cuando ellos llegaron."
+          "es": "Habían cenado no encaja: habían es la forma de ellos, pero nosotros pide otra; la forma correcta es habíamos; correctamente: Nosotros ya habíamos cenado cuando ellos llegaron."
         },
         "había cenado": {
-          "hu": "Había cenado nem illik ide: egyes számú alak (yo, él, ella), a nosotros viszont többes szám; a megfelelő alak: habíamos; helyesen: Nosotros ya habíamos cenado cuando ellos llegaron.",
           "en": "Había cenado does not fit: it is a singular form (yo, él, ella), but nosotros is plural; the right form is habíamos; correctly: Nosotros ya habíamos cenado cuando ellos llegaron.",
-          "es": "Había cenado no encaja: es una forma singular (yo, él, ella), pero nosotros es plural; la forma correcta es habíamos; correctamente: Nosotros ya habíamos cenado cuando ellos llegaron.",
-          "de": "Había cenado passt nicht: es ist eine Singularform (yo, él, ella), nosotros ist aber Plural; die richtige Form ist habíamos; richtig: Nosotros ya habíamos cenado cuando ellos llegaron."
+          "es": "Había cenado no encaja: es una forma singular (yo, él, ella), pero nosotros es plural; la forma correcta es habíamos; correctamente: Nosotros ya habíamos cenado cuando ellos llegaron."
         }
       },
       "examples": [
         "Ellos ya habían salido cuando llamé.",
         "Tú ya habías comido cuando llegué."
       ],
-      "tr": { "hu": "Mi már megvacsoráztunk, amikor ők megérkeztek.", "en": "We had already eaten dinner when they arrived.", "es": "Nosotros ya habíamos cenado cuando ellos llegaron.", "de": "Wir hatten schon zu Abend gegessen, als sie ankamen." }
+      "tr": { "en": "We had already eaten dinner when they arrived.", "es": "Nosotros ya habíamos cenado cuando ellos llegaron." }
     },
     {
       "id": "plu-ch-06",
@@ -614,30 +504,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Az összetett múlt a haber-rel készül: había comido.",
         "en": "The compound past is built with haber: había comido.",
-        "es": "El pasado compuesto se forma con haber: había comido.",
-        "de": "Die zusammengesetzte Vergangenheit wird mit haber gebildet: había comido."
+        "es": "El pasado compuesto se forma con haber: había comido."
       },
       "wrong": {
         "tenía": {
-          "hu": "A tener birtoklást jelent; az összetett igeidők a haber-rel készülnek, nem a tener-rel; helyesen: Ya había comido cuando me llamaste.",
           "en": "Tener means to have or to own; the compound tenses are built with haber, not with tener; correctly: Ya había comido cuando me llamaste.",
-          "es": "Tener significa poseer; los tiempos compuestos se forman con haber, no con tener; correctamente: Ya había comido cuando me llamaste.",
-          "de": "Tener heißt besitzen; die zusammengesetzten Zeiten werden mit haber gebildet, nicht mit tener; richtig: Ya había comido cuando me llamaste."
+          "es": "Tener significa poseer; los tiempos compuestos se forman con haber, no con tener; correctamente: Ya había comido cuando me llamaste."
         },
         "estaba": {
-          "hu": "Az estaba az estar folyamatos múltja, mellette a participio állapotot ír le; a régmúlt a haber-rel készül; helyesen: Ya había comido cuando me llamaste.",
           "en": "Estaba is the imperfect of estar, and a participle after it describes a state; the past perfect is built with haber; correctly: Ya había comido cuando me llamaste.",
-          "es": "Estaba es el imperfecto de estar, y un participio después describe un estado; el pluscuamperfecto se forma con haber; correctamente: Ya había comido cuando me llamaste.",
-          "de": "Estaba ist das Imperfekt von estar, und ein Partizip danach beschreibt einen Zustand; das Plusquamperfekt wird mit haber gebildet; richtig: Ya había comido cuando me llamaste."
+          "es": "Estaba es el imperfecto de estar, y un participio después describe un estado; el pluscuamperfecto se forma con haber; correctamente: Ya había comido cuando me llamaste."
         }
       },
       "examples": [
         "Ya había terminado la clase cuando llegaste.",
         "Ya habías abierto la puerta."
       ],
-      "tr": { "hu": "Már ettem, amikor hívtál.", "en": "I had already eaten when you called me.", "es": "Ya había comido cuando me llamaste.", "de": "Ich hatte schon gegessen, als du mich angerufen hast." }
+      "tr": { "en": "I had already eaten when you called me.", "es": "Ya había comido cuando me llamaste." }
     },
     {
       "id": "plu-ch-07",
@@ -649,30 +533,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A ya azt jelöli, hogy a megérkezés előtt már kész volt: había preparado.",
         "en": "Ya marks that it was already finished before I arrived: había preparado.",
-        "es": "Ya marca que ya estaba terminado antes de llegar: había preparado.",
-        "de": "Ya markiert, dass es vor meiner Ankunft schon fertig war: había preparado."
+        "es": "Ya marca que ya estaba terminado antes de llegar: había preparado."
       },
       "wrong": {
         "ha preparado": {
-          "hu": "Ha preparado a közelmúlt (perfecto): a mához kötődik, a mondat viszont múltbeli pillanatra utal (cuando llegué); helyesen: Cuando llegué, mi madre ya había preparado la cena.",
           "en": "Ha preparado is the present perfect: it is tied to the present, but the sentence points to a moment in the past (cuando llegué); correctly: Cuando llegué, mi madre ya había preparado la cena.",
-          "es": "Ha preparado es el pretérito perfecto: va unido al presente, pero la frase señala un momento del pasado (cuando llegué); correctamente: Cuando llegué, mi madre ya había preparado la cena.",
-          "de": "Ha preparado ist das Perfekt (perfecto): es hängt mit der Gegenwart zusammen, der Satz verweist aber auf einen Moment in der Vergangenheit (cuando llegué); richtig: Cuando llegué, mi madre ya había preparado la cena."
+          "es": "Ha preparado es el pretérito perfecto: va unido al presente, pero la frase señala un momento del pasado (cuando llegué); correctamente: Cuando llegué, mi madre ya había preparado la cena."
         },
         "preparó": {
-          "hu": "A preparó külön, lezárt eseményt mondana a megérkezéskor vagy utána; itt a vacsora már korábban elkészült; helyesen: Cuando llegué, mi madre ya había preparado la cena.",
           "en": "Preparó would name a separate finished event at or after my arrival; here dinner had been ready earlier; correctly: Cuando llegué, mi madre ya había preparado la cena.",
-          "es": "Preparó nombraría un hecho terminado aparte, al llegar o después; aquí la cena ya estaba lista antes; correctamente: Cuando llegué, mi madre ya había preparado la cena.",
-          "de": "Preparó würde ein eigenes abgeschlossenes Ereignis bei oder nach der Ankunft nennen; hier war das Abendessen schon früher fertig; richtig: Cuando llegué, mi madre ya había preparado la cena."
+          "es": "Preparó nombraría un hecho terminado aparte, al llegar o después; aquí la cena ya estaba lista antes; correctamente: Cuando llegué, mi madre ya había preparado la cena."
         }
       },
       "examples": [
         "Cuando llamé, mi hermano ya había comido.",
         "Ya habíamos preparado la cena."
       ],
-      "tr": { "hu": "Amikor megérkeztem, anyám már elkészítette a vacsorát.", "en": "When I arrived, my mother had already prepared dinner.", "es": "Cuando llegué, mi madre ya había preparado la cena.", "de": "Als ich ankam, hatte meine Mutter das Abendessen schon vorbereitet." }
+      "tr": { "en": "When I arrived, my mother had already prepared dinner.", "es": "Cuando llegué, mi madre ya había preparado la cena." }
     },
     {
       "id": "plu-ch-08",
@@ -684,30 +562,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Múlt idejű bevezető ige (dijo que) után a korábban történtet a había + participio mondja.",
         "en": "After a past reporting verb (dijo que), what had happened earlier is expressed with había + participle.",
-        "es": "Después de un verbo de comunicación en pasado (dijo que), lo anterior se expresa con había + participio.",
-        "de": "Nach einem vergangenen Verb des Sagens (dijo que) wird das früher Geschehene mit había + Partizip ausgedrückt."
+        "es": "Después de un verbo de comunicación en pasado (dijo que), lo anterior se expresa con había + participio."
       },
       "wrong": {
         "ha escrito": {
-          "hu": "Ha escrito a közelmúlt (perfecto): a mához kötődik, a mondat viszont múltbeli pillanatra utal (dijo); helyesen: Ella dijo que ya había escrito la carta.",
           "en": "Ha escrito is the present perfect: it is tied to the present, but the sentence points to a moment in the past (dijo); correctly: Ella dijo que ya había escrito la carta.",
-          "es": "Ha escrito es el pretérito perfecto: va unido al presente, pero la frase señala un momento del pasado (dijo); correctamente: Ella dijo que ya había escrito la carta.",
-          "de": "Ha escrito ist das Perfekt (perfecto): es hängt mit der Gegenwart zusammen, der Satz verweist aber auf einen Moment in der Vergangenheit (dijo); richtig: Ella dijo que ya había escrito la carta."
+          "es": "Ha escrito es el pretérito perfecto: va unido al presente, pero la frase señala un momento del pasado (dijo); correctamente: Ella dijo que ya había escrito la carta."
         },
         "había escribido": {
-          "hu": "Az escribido nem létezik: az escribir participiója rendhagyó (escrito); helyesen: Ella dijo que ya había escrito la carta.",
           "en": "Escribido does not exist: the participle of escribir is irregular (escrito); correctly: Ella dijo que ya había escrito la carta.",
-          "es": "Escribido no existe: el participio de escribir es irregular (escrito); correctamente: Ella dijo que ya había escrito la carta.",
-          "de": "Escribido gibt es nicht: das Partizip von escribir ist unregelmäßig (escrito); richtig: Ella dijo que ya había escrito la carta."
+          "es": "Escribido no existe: el participio de escribir es irregular (escrito); correctamente: Ella dijo que ya había escrito la carta."
         }
       },
       "examples": [
         "Dijo que ya había llamado a su madre.",
         "Ana me dijo que habías vuelto a casa."
       ],
-      "tr": { "hu": "Azt mondta, hogy már megírta a levelet.", "en": "She said she had already written the letter.", "es": "Ella dijo que ya había escrito la carta.", "de": "Sie sagte, dass sie den Brief schon geschrieben hatte." }
+      "tr": { "en": "She said she had already written the letter.", "es": "Ella dijo que ya había escrito la carta." }
     },
     {
       "id": "plu-ch-09",
@@ -719,30 +591,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A todavía no a llegó előtti hiányt jelöli, és a nosotros-hoz habíamos kell: habíamos terminado.",
         "en": "Todavía no marks a lack before llegó, and nosotros takes habíamos: habíamos terminado.",
-        "es": "Todavía no marca una falta antes de llegó, y nosotros pide habíamos: habíamos terminado.",
-        "de": "Todavía no markiert einen Mangel vor llegó, und nosotros verlangt habíamos: habíamos terminado."
+        "es": "Todavía no marca una falta antes de llegó, y nosotros pide habíamos: habíamos terminado."
       },
       "wrong": {
         "terminamos": {
-          "hu": "A terminamos lezárt eseményt mondana; a todavía no viszont azt jelenti, hogy a múltbeli pillanatig még nem volt kész; helyesen: Todavía no habíamos terminado de comer cuando llegó Ana.",
           "en": "Terminamos would name a finished event; todavía no means that up to the past moment it was not finished yet; correctly: Todavía no habíamos terminado de comer cuando llegó Ana.",
-          "es": "Terminamos nombraría un hecho terminado; todavía no significa que hasta el momento pasado aún no estaba terminado; correctamente: Todavía no habíamos terminado de comer cuando llegó Ana.",
-          "de": "Terminamos würde ein abgeschlossenes Ereignis nennen; todavía no heißt, dass es bis zum vergangenen Moment noch nicht fertig war; richtig: Todavía no habíamos terminado de comer cuando llegó Ana."
+          "es": "Terminamos nombraría un hecho terminado; todavía no significa que hasta el momento pasado aún no estaba terminado; correctamente: Todavía no habíamos terminado de comer cuando llegó Ana."
         },
         "hemos terminado": {
-          "hu": "Hemos terminado a közelmúlt (perfecto): a mához kötődik, a mondat viszont múltbeli pillanatra utal (cuando llegó Ana); helyesen: Todavía no habíamos terminado de comer cuando llegó Ana.",
           "en": "Hemos terminado is the present perfect: it is tied to the present, but the sentence points to a moment in the past (cuando llegó Ana); correctly: Todavía no habíamos terminado de comer cuando llegó Ana.",
-          "es": "Hemos terminado es el pretérito perfecto: va unido al presente, pero la frase señala un momento del pasado (cuando llegó Ana); correctamente: Todavía no habíamos terminado de comer cuando llegó Ana.",
-          "de": "Hemos terminado ist das Perfekt (perfecto): es hängt mit der Gegenwart zusammen, der Satz verweist aber auf einen Moment in der Vergangenheit (cuando llegó Ana); richtig: Todavía no habíamos terminado de comer cuando llegó Ana."
+          "es": "Hemos terminado es el pretérito perfecto: va unido al presente, pero la frase señala un momento del pasado (cuando llegó Ana); correctamente: Todavía no habíamos terminado de comer cuando llegó Ana."
         }
       },
       "examples": [
         "Todavía no habías llegado cuando sonó el teléfono.",
         "Todavía no había empezado la clase."
       ],
-      "tr": { "hu": "Még nem fejeztük be az evést, amikor Ana megérkezett.", "en": "We hadn't finished eating yet when Ana arrived.", "es": "Todavía no habíamos terminado de comer cuando llegó Ana.", "de": "Wir hatten noch nicht zu Ende gegessen, als Ana ankam." }
+      "tr": { "en": "We hadn't finished eating yet when Ana arrived.", "es": "Todavía no habíamos terminado de comer cuando llegó Ana." }
     },
     {
       "id": "plu-ch-10",
@@ -754,30 +620,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Az abrir participiója rendhagyó: abierto.",
         "en": "The participle of abrir is irregular: abierto.",
-        "es": "El participio de abrir es irregular: abierto.",
-        "de": "Das Partizip von abrir ist unregelmäßig: abierto."
+        "es": "El participio de abrir es irregular: abierto."
       },
       "wrong": {
         "abrido": {
-          "hu": "Az abrido nem létezik: az -ir igék participiója általában -ido, de az abrir rendhagyó; helyesen: Cuando llegué, mi hermano ya había abierto la ventana.",
           "en": "Abrido does not exist: -ir verbs usually take -ido, but abrir is irregular; correctly: Cuando llegué, mi hermano ya había abierto la ventana.",
-          "es": "Abrido no existe: los verbos en -ir suelen llevar -ido, pero abrir es irregular; correctamente: Cuando llegué, mi hermano ya había abierto la ventana.",
-          "de": "Abrido gibt es nicht: Verben auf -ir haben meist -ido, abrir ist aber unregelmäßig; richtig: Cuando llegué, mi hermano ya había abierto la ventana."
+          "es": "Abrido no existe: los verbos en -ir suelen llevar -ido, pero abrir es irregular; correctamente: Cuando llegué, mi hermano ya había abierto la ventana."
         },
         "abriendo": {
-          "hu": "Az abriendo gerundio; a había után mindig participio áll; helyesen: Cuando llegué, mi hermano ya había abierto la ventana.",
           "en": "Abriendo is a gerund; after había a participle always follows; correctly: Cuando llegué, mi hermano ya había abierto la ventana.",
-          "es": "Abriendo es un gerundio; después de había siempre va un participio; correctamente: Cuando llegué, mi hermano ya había abierto la ventana.",
-          "de": "Abriendo ist ein Gerundium; nach había folgt immer ein Partizip; richtig: Cuando llegué, mi hermano ya había abierto la ventana."
+          "es": "Abriendo es un gerundio; después de había siempre va un participio; correctamente: Cuando llegué, mi hermano ya había abierto la ventana."
         }
       },
       "examples": [
         "Ya habíamos escrito la carta cuando llegó el taxi.",
         "Ya habían roto la ventana."
       ],
-      "tr": { "hu": "Amikor megérkeztem, a testvérem már kinyitotta az ablakot.", "en": "When I arrived, my brother had already opened the window.", "es": "Cuando llegué, mi hermano ya había abierto la ventana.", "de": "Als ich ankam, hatte mein Bruder das Fenster schon geöffnet." }
+      "tr": { "en": "When I arrived, my brother had already opened the window.", "es": "Cuando llegué, mi hermano ya había abierto la ventana." }
     },
     {
       "id": "plu-ch-11",
@@ -789,30 +649,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Az esta semana még tartó időszak: he visto.",
         "en": "Esta semana is a period that is still open: he visto.",
-        "es": "Esta semana es un periodo que todavía está abierto: he visto.",
-        "de": "Esta semana ist ein Zeitraum, der noch offen ist: he visto."
+        "es": "Esta semana es un periodo que todavía está abierto: he visto."
       },
       "wrong": {
         "había visto": {
-          "hu": "A había visto múltbeli viszonyítási pontot kér (például cuando llegué), az esta semana viszont a mostani időszak; helyesen: Esta semana he visto tres películas.",
           "en": "Había visto needs a past reference point (for example cuando llegué), but esta semana is the current period; correctly: Esta semana he visto tres películas.",
-          "es": "Había visto pide un punto de referencia pasado (por ejemplo cuando llegué), pero esta semana es el periodo actual; correctamente: Esta semana he visto tres películas.",
-          "de": "Había visto verlangt einen vergangenen Bezugspunkt (zum Beispiel cuando llegué), esta semana ist aber der jetzige Zeitraum; richtig: Esta semana he visto tres películas."
+          "es": "Había visto pide un punto de referencia pasado (por ejemplo cuando llegué), pero esta semana es el periodo actual; correctamente: Esta semana he visto tres películas."
         },
         "veía": {
-          "hu": "A veía folyamatos múlt: szokást vagy háttérben zajló dolgot ír le, nem három lezárt filmet; helyesen: Esta semana he visto tres películas.",
           "en": "Veía is the imperfect: it describes a habit or something going on in the background, not three finished films; correctly: Esta semana he visto tres películas.",
-          "es": "Veía es el imperfecto: describe un hábito o algo de fondo, no tres películas terminadas; correctamente: Esta semana he visto tres películas.",
-          "de": "Veía ist das Imperfekt: es beschreibt eine Gewohnheit oder einen Hintergrund, keine drei abgeschlossenen Filme; richtig: Esta semana he visto tres películas."
+          "es": "Veía es el imperfecto: describe un hábito o algo de fondo, no tres películas terminadas; correctamente: Esta semana he visto tres películas."
         }
       },
       "examples": [
         "Esta semana hemos visto dos películas.",
         "Hoy he hablado con mi madre."
       ],
-      "tr": { "hu": "Ezen a héten három filmet láttam.", "en": "I have seen three movies this week.", "es": "Esta semana he visto tres películas.", "de": "Diese Woche habe ich drei Filme gesehen." }
+      "tr": { "en": "I have seen three movies this week.", "es": "Esta semana he visto tres películas." }
     },
     {
       "id": "plu-ch-12",
@@ -824,30 +678,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A mis amigos többes szám, és a ya a llegamos előtti eseményt jelöli: se habían ido.",
         "en": "Mis amigos is plural, and ya marks an event before llegamos: se habían ido.",
-        "es": "Mis amigos es plural, y ya marca un hecho anterior a llegamos: se habían ido.",
-        "de": "Mis amigos ist Plural, und ya markiert ein Ereignis vor llegamos: se habían ido."
+        "es": "Mis amigos es plural, y ya marca un hecho anterior a llegamos: se habían ido."
       },
       "wrong": {
         "se han ido": {
-          "hu": "Se han ido a közelmúlt (perfecto): a mához kötődik, a mondat viszont múltbeli pillanatra utal (cuando llegamos); helyesen: Mis amigos ya se habían ido cuando llegamos a la fiesta.",
           "en": "Se han ido is the present perfect: it is tied to the present, but the sentence points to a moment in the past (cuando llegamos); correctly: Mis amigos ya se habían ido cuando llegamos a la fiesta.",
-          "es": "Se han ido es el pretérito perfecto: va unido al presente, pero la frase señala un momento del pasado (cuando llegamos); correctamente: Mis amigos ya se habían ido cuando llegamos a la fiesta.",
-          "de": "Se han ido ist das Perfekt (perfecto): es hängt mit der Gegenwart zusammen, der Satz verweist aber auf einen Moment in der Vergangenheit (cuando llegamos); richtig: Mis amigos ya se habían ido cuando llegamos a la fiesta."
+          "es": "Se han ido es el pretérito perfecto: va unido al presente, pero la frase señala un momento del pasado (cuando llegamos); correctamente: Mis amigos ya se habían ido cuando llegamos a la fiesta."
         },
         "se había ido": {
-          "hu": "Se había ido nem illik ide: egyes szám, a mis amigos viszont többes szám; a megfelelő alak: se habían ido; helyesen: Mis amigos ya se habían ido cuando llegamos a la fiesta.",
           "en": "Se había ido does not fit: it is singular, but mis amigos is plural; the right form is se habían ido; correctly: Mis amigos ya se habían ido cuando llegamos a la fiesta.",
-          "es": "Se había ido no encaja: es singular, pero mis amigos es plural; la forma correcta es se habían ido; correctamente: Mis amigos ya se habían ido cuando llegamos a la fiesta.",
-          "de": "Se había ido passt nicht: es ist Singular, mis amigos ist aber Plural; die richtige Form ist se habían ido; richtig: Mis amigos ya se habían ido cuando llegamos a la fiesta."
+          "es": "Se había ido no encaja: es singular, pero mis amigos es plural; la forma correcta es se habían ido; correctamente: Mis amigos ya se habían ido cuando llegamos a la fiesta."
         }
       },
       "examples": [
         "Cuando llegué, ya se habían ido.",
         "Nos habíamos ido antes de la fiesta."
       ],
-      "tr": { "hu": "A barátaim már elmentek, amikor megérkeztünk a buliba.", "en": "My friends had already left when we arrived at the party.", "es": "Mis amigos ya se habían ido cuando llegamos a la fiesta.", "de": "Meine Freunde waren schon gegangen, als wir auf der Party ankamen." }
+      "tr": { "en": "My friends had already left when we arrived at the party.", "es": "Mis amigos ya se habían ido cuando llegamos a la fiesta." }
     },
     {
       "id": "plu-match-01",
@@ -981,46 +829,34 @@
       "es": "Cuando llegué, Ana ya había salido.",
       "target": "había salido",
       "tr": {
-        "hu": "Mire megérkeztem, Ana már elment.",
         "en": "When I arrived, Ana had already left.",
-        "es": "Cuando llegué, Ana ya había salido.",
-        "de": "Als ich ankam, war Ana schon gegangen."
+        "es": "Cuando llegué, Ana ya había salido."
       },
       "options": [
         {
           "text": {
-            "hu": "había + participio = egy korábbi múlt",
             "en": "había + participle = an earlier past",
-            "es": "había + participio = un pasado anterior",
-            "de": "había + Partizip = eine frühere Vergangenheit"
+            "es": "había + participio = un pasado anterior"
           }
         },
         {
           "text": {
-            "hu": "he + participio = a mához kötődik",
             "en": "he + participle = linked to now",
-            "es": "he + participio = unido al presente",
-            "de": "he + Partizip = mit der Gegenwart verbunden"
+            "es": "he + participio = unido al presente"
           },
           "wrong": {
-            "hu": "A he + participio a jelenhez kötődik: Ana ha salido = Ana most elment; itt viszont a llegué múltbeli pillanatot ad meg.",
             "en": "He + participle is linked to the present: Ana ha salido = Ana has left (now); here llegué gives a moment in the past.",
-            "es": "He + participio va unido al presente: Ana ha salido; aquí llegué da un momento del pasado.",
-            "de": "He + Partizip ist mit der Gegenwart verbunden: Ana ha salido = Ana ist (jetzt) gegangen; hier gibt llegué aber einen vergangenen Moment an."
+            "es": "He + participio va unido al presente: Ana ha salido; aquí llegué da un momento del pasado."
           }
         },
         {
           "text": {
-            "hu": "befejezett múlt = egy lezárt esemény",
             "en": "preterite = one finished event",
-            "es": "indefinido = un hecho terminado",
-            "de": "Indefinido = ein abgeschlossenes Ereignis"
+            "es": "indefinido = un hecho terminado"
           },
           "wrong": {
-            "hu": "A befejezett múlt egymás utáni eseményt mond: Ana salió = Ana elment a megérkezésemkor; itt a ya miatt már korábban elment.",
             "en": "The preterite names events in sequence: Ana salió = Ana left when I arrived; here ya shows she had gone earlier.",
-            "es": "El indefinido nombra hechos en sucesión: Ana salió; aquí ya muestra que se había ido antes.",
-            "de": "Das Indefinido nennt aufeinanderfolgende Ereignisse: Ana salió = Ana ging, als ich ankam; hier zeigt ya, dass sie schon früher gegangen war."
+            "es": "El indefinido nombra hechos en sucesión: Ana salió; aquí ya muestra que se había ido antes."
           }
         }
       ],
@@ -1032,46 +868,34 @@
       "es": "Hasta ese día, nunca había viajado en avión.",
       "target": "había viajado",
       "tr": {
-        "hu": "Addig a napig még sosem utaztam repülővel.",
         "en": "Until that day, I had never travelled by plane.",
-        "es": "Hasta ese día, nunca había viajado en avión.",
-        "de": "Bis zu diesem Tag war ich noch nie geflogen."
+        "es": "Hasta ese día, nunca había viajado en avión."
       },
       "options": [
         {
           "text": {
-            "hu": "he + participio = a mához kötődik",
             "en": "he + participle = linked to now",
-            "es": "he + participio = unido al presente",
-            "de": "he + Partizip = mit der Gegenwart verbunden"
+            "es": "he + participio = unido al presente"
           },
           "wrong": {
-            "hu": "A he + participio a mai napig tartó tapasztalatot mond: nunca he viajado = eddig még sosem utaztam; itt a hasta ese día múltbeli határpontot ad.",
             "en": "He + participle gives an experience up to today: nunca he viajado = I have never travelled so far; here hasta ese día gives a limit in the past.",
-            "es": "He + participio da una experiencia hasta hoy: nunca he viajado; aquí hasta ese día da un límite en el pasado.",
-            "de": "He + Partizip nennt eine Erfahrung bis heute: nunca he viajado = ich bin bis jetzt noch nie gereist; hier setzt hasta ese día eine Grenze in der Vergangenheit."
+            "es": "He + participio da una experiencia hasta hoy: nunca he viajado; aquí hasta ese día da un límite en el pasado."
           }
         },
         {
           "text": {
-            "hu": "folyamatos múlt = szokás vagy háttér",
             "en": "imperfect = a habit or background",
-            "es": "imperfecto = hábito o fondo",
-            "de": "Imperfekt = Gewohnheit oder Hintergrund"
+            "es": "imperfecto = hábito o fondo"
           },
           "wrong": {
-            "hu": "A nunca viajaba azt jelentené, hogy szokásból sosem utazott; itt azt mondjuk, hogy egy múltbeli napig nem volt még ilyen tapasztalata.",
             "en": "Nunca viajaba would mean that he never travelled out of habit; here we say that up to a day in the past there was no such experience yet.",
-            "es": "Nunca viajaba significaría que por costumbre nunca viajaba; aquí decimos que hasta un día del pasado no había tenido esa experiencia.",
-            "de": "Nunca viajaba würde bedeuten, dass er gewohnheitsmäßig nie reiste; hier sagen wir, dass es bis zu einem Tag in der Vergangenheit diese Erfahrung noch nicht gab."
+            "es": "Nunca viajaba significaría que por costumbre nunca viajaba; aquí decimos que hasta un día del pasado no había tenido esa experiencia."
           }
         },
         {
           "text": {
-            "hu": "había + participio = egy korábbi múlt",
             "en": "había + participle = an earlier past",
-            "es": "había + participio = un pasado anterior",
-            "de": "había + Partizip = eine frühere Vergangenheit"
+            "es": "había + participio = un pasado anterior"
           }
         }
       ],
@@ -1083,46 +907,34 @@
       "es": "Me dijo que ya había comido.",
       "target": "había comido",
       "tr": {
-        "hu": "Azt mondta nekem, hogy már evett.",
         "en": "He told me that he had already eaten.",
-        "es": "Me dijo que ya había comido.",
-        "de": "Er sagte mir, dass er schon gegessen hatte."
+        "es": "Me dijo que ya había comido."
       },
       "options": [
         {
           "text": {
-            "hu": "befejezett múlt = egy lezárt esemény",
             "en": "preterite = one finished event",
-            "es": "indefinido = un hecho terminado",
-            "de": "Indefinido = ein abgeschlossenes Ereignis"
+            "es": "indefinido = un hecho terminado"
           },
           "wrong": {
-            "hu": "A comió egy lezárt múltbeli eseményt nevezne meg, de az evés a dijo előtt történt, ezt ilyenkor a régmúlt jelöli.",
             "en": "Comió would name a finished past event, but the eating came before dijo, and the past perfect normally marks that.",
-            "es": "Comió nombraría un hecho pasado terminado, pero comer fue antes de dijo, y eso lo marca normalmente el pluscuamperfecto.",
-            "de": "Comió würde ein abgeschlossenes vergangenes Ereignis nennen, das Essen lag aber vor dijo, und das markiert normalerweise das Plusquamperfekt."
+            "es": "Comió nombraría un hecho pasado terminado, pero comer fue antes de dijo, y eso lo marca normalmente el pluscuamperfecto."
           }
         },
         {
           "text": {
-            "hu": "había + participio = egy korábbi múlt",
             "en": "había + participle = an earlier past",
-            "es": "había + participio = un pasado anterior",
-            "de": "había + Partizip = eine frühere Vergangenheit"
+            "es": "había + participio = un pasado anterior"
           }
         },
         {
           "text": {
-            "hu": "he + participio = a mához kötődik",
             "en": "he + participle = linked to now",
-            "es": "he + participio = unido al presente",
-            "de": "he + Partizip = mit der Gegenwart verbunden"
+            "es": "he + participio = unido al presente"
           },
           "wrong": {
-            "hu": "A he + participio a jelenre vonatkozna: dice que ya ha comido = azt mondja, hogy már evett (most); itt a me dijo múltbeli.",
             "en": "He + participle would refer to the present: dice que ya ha comido = he says he has already eaten (now); here me dijo is in the past.",
-            "es": "He + participio se referiría al presente: dice que ya ha comido; aquí me dijo está en pasado.",
-            "de": "He + Partizip würde sich auf die Gegenwart beziehen: dice que ya ha comido = er sagt, dass er schon gegessen hat (jetzt); hier steht me dijo in der Vergangenheit."
+            "es": "He + participio se referiría al presente: dice que ya ha comido; aquí me dijo está en pasado."
           }
         }
       ],
@@ -1134,46 +946,34 @@
       "es": "Hoy he comido con mi madre.",
       "target": "he comido",
       "tr": {
-        "hu": "Ma az anyámmal ebédeltem.",
         "en": "Today I have eaten with my mother.",
-        "es": "Hoy he comido con mi madre.",
-        "de": "Heute habe ich mit meiner Mutter gegessen."
+        "es": "Hoy he comido con mi madre."
       },
       "options": [
         {
           "text": {
-            "hu": "había + participio = egy korábbi múlt",
             "en": "había + participle = an earlier past",
-            "es": "había + participio = un pasado anterior",
-            "de": "había + Partizip = eine frühere Vergangenheit"
+            "es": "había + participio = un pasado anterior"
           },
           "wrong": {
-            "hu": "A había comido múltbeli viszonyítási pontot kér (például cuando llamaste); a hoy viszont a mostani időszak.",
             "en": "Había comido needs a past reference point (for example cuando llamaste); hoy is the current period.",
-            "es": "Había comido pide un punto de referencia pasado (por ejemplo cuando llamaste); hoy es el periodo actual.",
-            "de": "Había comido verlangt einen vergangenen Bezugspunkt (zum Beispiel cuando llamaste); hoy ist der jetzige Zeitraum."
+            "es": "Había comido pide un punto de referencia pasado (por ejemplo cuando llamaste); hoy es el periodo actual."
           }
         },
         {
           "text": {
-            "hu": "he + participio = a mához kötődik",
             "en": "he + participle = linked to now",
-            "es": "he + participio = unido al presente",
-            "de": "he + Partizip = mit der Gegenwart verbunden"
+            "es": "he + participio = unido al presente"
           }
         },
         {
           "text": {
-            "hu": "befejezett múlt = egy lezárt esemény",
             "en": "preterite = one finished event",
-            "es": "indefinido = un hecho terminado",
-            "de": "Indefinido = ein abgeschlossenes Ereignis"
+            "es": "indefinido = un hecho terminado"
           },
           "wrong": {
-            "hu": "A befejezett múlt inkább lezárt időszakot kér (ayer, el lunes); a hoy még tart.",
             "en": "The preterite prefers a closed period (ayer, el lunes); hoy is still going on.",
-            "es": "El indefinido prefiere un periodo cerrado (ayer, el lunes); hoy todavía sigue.",
-            "de": "Das Indefinido bevorzugt einen abgeschlossenen Zeitraum (ayer, el lunes); hoy dauert noch an."
+            "es": "El indefinido prefiere un periodo cerrado (ayer, el lunes); hoy todavía sigue."
           }
         }
       ],
@@ -1185,46 +985,34 @@
       "es": "Cuando llegué, Ana salió.",
       "target": "salió",
       "tr": {
-        "hu": "Mikor megérkeztem, Ana elment.",
         "en": "When I arrived, Ana left.",
-        "es": "Cuando llegué, Ana salió.",
-        "de": "Als ich ankam, ging Ana."
+        "es": "Cuando llegué, Ana salió."
       },
       "options": [
         {
           "text": {
-            "hu": "había + participio = egy korábbi múlt",
             "en": "había + participle = an earlier past",
-            "es": "había + participio = un pasado anterior",
-            "de": "había + Partizip = eine frühere Vergangenheit"
+            "es": "había + participio = un pasado anterior"
           },
           "wrong": {
-            "hu": "Az Ana ya había salido azt jelenti, hogy Ana már korábban elment; itt a salió a megérkezésemkor vagy utána történt, nincs korábbi esemény.",
             "en": "Ana ya había salido means that Ana had gone earlier; here salió happened when or after I arrived, there is no earlier event.",
-            "es": "Ana ya había salido significa que Ana se había ido antes; aquí salió ocurrió al llegar yo o después, no hay un hecho anterior.",
-            "de": "Ana ya había salido heißt, dass Ana schon früher gegangen war; hier geschah salió bei oder nach meiner Ankunft, es gibt kein früheres Ereignis."
+            "es": "Ana ya había salido significa que Ana se había ido antes; aquí salió ocurrió al llegar yo o después, no hay un hecho anterior."
           }
         },
         {
           "text": {
-            "hu": "he + participio = a mához kötődik",
             "en": "he + participle = linked to now",
-            "es": "he + participio = unido al presente",
-            "de": "he + Partizip = mit der Gegenwart verbunden"
+            "es": "he + participio = unido al presente"
           },
           "wrong": {
-            "hu": "A he + participio a jelenhez kötődik; a llegué múltbeli pillanat, nincs mai időszak a mondatban.",
             "en": "He + participle is linked to the present; llegué is a moment in the past, there is no current period in the sentence.",
-            "es": "He + participio va unido al presente; llegué es un momento del pasado, no hay un periodo actual en la frase.",
-            "de": "He + Partizip ist mit der Gegenwart verbunden; llegué ist ein vergangener Moment, im Satz gibt es keinen jetzigen Zeitraum."
+            "es": "He + participio va unido al presente; llegué es un momento del pasado, no hay un periodo actual en la frase."
           }
         },
         {
           "text": {
-            "hu": "befejezett múlt = egy lezárt esemény",
             "en": "preterite = one finished event",
-            "es": "indefinido = un hecho terminado",
-            "de": "Indefinido = ein abgeschlossenes Ereignis"
+            "es": "indefinido = un hecho terminado"
           }
         }
       ],
@@ -1236,46 +1024,34 @@
       "es": "Ya habíamos hecho la tarea.",
       "target": "hecho",
       "tr": {
-        "hu": "Már megcsináltuk a házi feladatot.",
         "en": "We had already done the homework.",
-        "es": "Ya habíamos hecho la tarea.",
-        "de": "Wir hatten die Hausaufgaben schon gemacht."
+        "es": "Ya habíamos hecho la tarea."
       },
       "options": [
         {
           "text": {
-            "hu": "rendhagyó participio: hacer → hecho",
             "en": "irregular participle: hacer → hecho",
-            "es": "participio irregular: hacer → hecho",
-            "de": "unregelmäßiges Partizip: hacer → hecho"
+            "es": "participio irregular: hacer → hecho"
           }
         },
         {
           "text": {
-            "hu": "szabályos participio: -ido végződés",
             "en": "regular participle: -ido ending",
-            "es": "participio regular: terminación -ido",
-            "de": "regelmäßiges Partizip: Endung -ido"
+            "es": "participio regular: terminación -ido"
           },
           "wrong": {
-            "hu": "A hacido nem létezik: a hacer rendhagyó, a participiója hecho; helyesen: Ya habíamos hecho la tarea.",
             "en": "Hacido does not exist: hacer is irregular and its participle is hecho; correctly: Ya habíamos hecho la tarea.",
-            "es": "Hacido no existe: hacer es irregular y su participio es hecho; correctamente: Ya habíamos hecho la tarea.",
-            "de": "Hacido gibt es nicht: hacer ist unregelmäßig und sein Partizip ist hecho; richtig: Ya habíamos hecho la tarea."
+            "es": "Hacido no existe: hacer es irregular y su participio es hecho; correctamente: Ya habíamos hecho la tarea."
           }
         },
         {
           "text": {
-            "hu": "főnévi igenév: -er végződés",
             "en": "infinitive: -er ending",
-            "es": "infinitivo: terminación -er",
-            "de": "Infinitiv: Endung -er"
+            "es": "infinitivo: terminación -er"
           },
           "wrong": {
-            "hu": "A habíamos hacer nem jó: a habíamos után nem főnévi igenév, hanem participio áll; helyesen: Ya habíamos hecho la tarea.",
             "en": "Habíamos hacer is wrong: after habíamos comes a participle, not an infinitive; correctly: Ya habíamos hecho la tarea.",
-            "es": "Habíamos hacer no es correcto: después de habíamos va un participio, no un infinitivo; correctamente: Ya habíamos hecho la tarea.",
-            "de": "Habíamos hacer ist falsch: nach habíamos steht ein Partizip, kein Infinitiv; richtig: Ya habíamos hecho la tarea."
+            "es": "Habíamos hacer no es correcto: después de habíamos va un participio, no un infinitivo; correctamente: Ya habíamos hecho la tarea."
           }
         }
       ],
@@ -1287,46 +1063,34 @@
       "es": "Ya me había levantado cuando llamaste.",
       "target": "me había",
       "tr": {
-        "hu": "Már felkeltem, mikor hívtál.",
         "en": "I had already got up when you called.",
-        "es": "Ya me había levantado cuando llamaste.",
-        "de": "Ich war schon aufgestanden, als du angerufen hast."
+        "es": "Ya me había levantado cuando llamaste."
       },
       "options": [
         {
           "text": {
-            "hu": "a névmás a participio után áll",
             "en": "the pronoun follows the participle",
-            "es": "el pronombre va después del participio",
-            "de": "das Pronomen steht nach dem Partizip"
+            "es": "el pronombre va después del participio"
           },
           "wrong": {
-            "hu": "A névmás a főnévi igenévhez vagy a gerundióhoz tapadhat (levantarme), de a ragozott había elé kerül, nem a participio után; helyesen: Ya me había levantado.",
             "en": "A pronoun can attach to an infinitive or a gerund (levantarme), but here it goes before the conjugated había, not after the participle; correctly: Ya me había levantado.",
-            "es": "El pronombre puede pegarse al infinitivo o al gerundio (levantarme), pero aquí va antes de había conjugado, no después del participio; correctamente: Ya me había levantado.",
-            "de": "Das Pronomen kann an den Infinitiv oder das Gerundium angehängt werden (levantarme), steht hier aber vor dem konjugierten había, nicht nach dem Partizip; richtig: Ya me había levantado."
+            "es": "El pronombre puede pegarse al infinitivo o al gerundio (levantarme), pero aquí va antes de había conjugado, no después del participio; correctamente: Ya me había levantado."
           }
         },
         {
           "text": {
-            "hu": "a névmás a había és a participio közé kerül",
             "en": "the pronoun goes between había and the participle",
-            "es": "el pronombre va entre había y el participio",
-            "de": "das Pronomen steht zwischen había und dem Partizip"
+            "es": "el pronombre va entre había y el participio"
           },
           "wrong": {
-            "hu": "A había és a participio közé semmi nem kerülhet; a névmás az egész elé áll; helyesen: Ya me había levantado.",
             "en": "Nothing can go between había and the participle; the pronoun goes in front of both; correctly: Ya me había levantado.",
-            "es": "Entre había y el participio no puede ir nada; el pronombre va delante de las dos partes; correctamente: Ya me había levantado.",
-            "de": "Zwischen había und dem Partizip darf nichts stehen; das Pronomen steht vor beiden; richtig: Ya me había levantado."
+            "es": "Entre había y el participio no puede ir nada; el pronombre va delante de las dos partes; correctamente: Ya me había levantado."
           }
         },
         {
           "text": {
-            "hu": "a névmás a había elé kerül",
             "en": "the pronoun goes before había",
-            "es": "el pronombre va antes de había",
-            "de": "das Pronomen steht vor había"
+            "es": "el pronombre va antes de había"
           }
         }
       ],

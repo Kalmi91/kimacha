@@ -3,42 +3,32 @@
   "topic": "purpose_result",
   "level": "B2",
   "title": {
-    "hu": "Cél és eredmény (to / so that / so … that / such … that / too … to)",
     "en": "Purpose and Result (to / so that / so … that / such … that / too … to)",
-    "es": "Finalidad y resultado (to / so that / so … that / such … that / too … to)",
-    "de": "Zweck und Folge (to / so that / so … that / such … that / too … to)"
+    "es": "Finalidad y resultado (to / so that / so … that / such … that / too … to)"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "A cél azt mondja meg, miért csinálunk valamit; az eredmény azt, mi lett belőle. Cél: to + alapige („I went to the store to buy milk.”), in order to, so as to, ha ugyanaz az alany, és so that + tagmondat, főleg más alanynál (azonos alanynál is, can/will/would-dal) („I speak slowly so that you can understand.”). Eredmény: so, therefore, as a result, consequently, valamint so + melléknév + that és such + (a) + főnév + that. A spanyol „para”, „para que”, „por lo tanto”, „tan … que” felel meg nekik.",
         "en": "Purpose says why we do something; result says what came of it. Purpose: to + base verb (“I went to the store to buy milk.”), in order to, so as to, when the subject is the same, and so that + clause, mostly with a different subject (also with the same subject plus can/will/would) (“I speak slowly so that you can understand.”). Result: so, therefore, as a result, consequently, and so + adjective + that and such + (a) + noun + that. The Spanish “para”, “para que”, “por lo tanto”, “tan … que” match them.",
-        "es": "La finalidad dice para qué hacemos algo; el resultado dice qué salió de ello. Finalidad: to + verbo base («I went to the store to buy milk.»), in order to, so as to, cuando el sujeto es el mismo, y so that + cláusula, sobre todo con otro sujeto (también con el mismo sujeto más can/will/would) («I speak slowly so that you can understand.»). Resultado: so, therefore, as a result, consequently, además de so + adjetivo + that y such + (a) + sustantivo + that. El «para», el «para que», el «por lo tanto» y el «tan … que» del español les corresponden.",
-        "de": "Der Zweck sagt, wozu wir etwas tun; die Folge sagt, was daraus wurde. Zweck: to + Grundform („I went to the store to buy milk.“), in order to, so as to, wenn das Subjekt gleich ist, und so that + Teilsatz, vor allem bei anderem Subjekt (auch bei gleichem Subjekt mit can/will/would) („I speak slowly so that you can understand.“). Folge: so, therefore, as a result, consequently sowie so + Adjektiv + that und such + (a) + Nomen + that. Das spanische „para“, „para que“, „por lo tanto“, „tan … que“ entsprechen ihnen."
+        "es": "La finalidad dice para qué hacemos algo; el resultado dice qué salió de ello. Finalidad: to + verbo base («I went to the store to buy milk.»), in order to, so as to, cuando el sujeto es el mismo, y so that + cláusula, sobre todo con otro sujeto (también con el mismo sujeto más can/will/would) («I speak slowly so that you can understand.»). Resultado: so, therefore, as a result, consequently, además de so + adjetivo + that y such + (a) + sustantivo + that. El «para», el «para que», el «por lo tanto» y el «tan … que» del español les corresponden."
       }
     },
     {
       "kind": "table",
       "id": "prs-forms",
       "title": {
-        "hu": "Melyik szó?",
         "en": "Which word?",
-        "es": "¿Qué palabra uso?",
-        "de": "Welches Wort?"
+        "es": "¿Qué palabra uso?"
       },
       "header": [
         {
-          "hu": "Jelentés",
           "en": "Meaning",
-          "es": "Significado",
-          "de": "Bedeutung"
+          "es": "Significado"
         },
         {
-          "hu": "forma",
           "en": "form",
-          "es": "forma",
-          "de": "Form"
+          "es": "forma"
         }
       ],
       "rows": [
@@ -71,64 +61,50 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Cél ugyanazzal az alannyal: to, in order to, so as to",
         "en": "Purpose with the same subject: to, in order to, so as to",
-        "es": "Finalidad con el mismo sujeto: to, in order to, so as to",
-        "de": "Zweck mit demselben Subjekt: to, in order to, so as to"
+        "es": "Finalidad con el mismo sujeto: to, in order to, so as to"
       },
       "items": [
         {
           "text": {
-            "hu": "A to + alapige a leggyakoribb; az in order to és a so as to formálisabb. Tagadás: in order not to, so as not to.",
             "en": "To + base verb is the most common; in order to and so as to are more formal. Negative: in order not to, so as not to.",
-            "es": "To + verbo base es lo más común; in order to y so as to son más formales. Negación: in order not to, so as not to.",
-            "de": "To + Grundform ist am üblichsten; in order to und so as to sind formeller. Verneinung: in order not to, so as not to."
+            "es": "To + verbo base es lo más común; in order to y so as to son más formales. Negación: in order not to, so as not to."
           },
           "examples": [
             {
               "es": "I went to the store to buy milk.",
               "tr": {
-                "hu": "Azért mentem a boltba, hogy tejet vegyek.",
                 "en": "I went to the store to buy milk.",
-                "es": "Fui a la tienda para comprar leche.",
-                "de": "Ich ging in den Laden, um Milch zu kaufen."
+                "es": "Fui a la tienda para comprar leche."
               }
             },
             {
               "es": "She whispered so as not to wake the baby.",
               "tr": {
-                "hu": "Suttogott, hogy ne ébressze fel a babát.",
                 "en": "She whispered so as not to wake the baby.",
-                "es": "Susurró para no despertar al bebé.",
-                "de": "Sie flüsterte, um das Baby nicht zu wecken."
+                "es": "Susurró para no despertar al bebé."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A for főnév előtt vagy -ing alak előtt áll, nem alapige előtt: „for a loan”, „a knife is for cutting”. Nem „for buy”.",
             "en": "For goes before a noun or an -ing form, not before a base verb: “for a loan”, “a knife is for cutting”. Not “for buy”.",
-            "es": "For va antes de un sustantivo o una forma -ing, no antes de un verbo base: «for a loan», «a knife is for cutting». No «for buy».",
-            "de": "For steht vor einem Nomen oder einer -ing-Form, nicht vor einer Grundform: „for a loan“, „a knife is for cutting“. Nicht „for buy“."
+            "es": "For va antes de un sustantivo o una forma -ing, no antes de un verbo base: «for a loan», «a knife is for cutting». No «for buy»."
           },
           "examples": [
             {
               "es": "I went to the bank for a loan.",
               "tr": {
-                "hu": "A bankba mentem hitelért.",
                 "en": "I went to the bank for a loan.",
-                "es": "Fui al banco por un préstamo.",
-                "de": "Ich ging zur Bank wegen eines Kredits."
+                "es": "Fui al banco por un préstamo."
               }
             },
             {
               "es": "A knife is for cutting.",
               "tr": {
-                "hu": "A kés vágásra való.",
                 "en": "A knife is for cutting.",
-                "es": "Un cuchillo sirve para cortar.",
-                "de": "Ein Messer ist zum Schneiden da."
+                "es": "Un cuchillo sirve para cortar."
               }
             }
           ]
@@ -138,45 +114,35 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Cél tagmondattal: so that",
         "en": "Purpose with a clause: so that",
-        "es": "Finalidad con una cláusula: so that",
-        "de": "Zweck mit Teilsatz: so that"
+        "es": "Finalidad con una cláusula: so that"
       },
       "items": [
         {
           "text": {
-            "hu": "A so that után alany és ige áll, jelen vagy jövő értelemben can/will, múltban could/would: „She left early so that she wouldn’t be late.” Azonos alanynál is áll, ha can/will/would kell.",
             "en": "After so that come a subject and a verb, with can/will for the present or future and could/would for the past: “She left early so that she wouldn’t be late.” It also works with the same subject when can/will/would is needed.",
-            "es": "Después de so that van un sujeto y un verbo, con can/will para el presente o futuro y could/would para el pasado: «She left early so that she wouldn’t be late.» También sirve con el mismo sujeto cuando hace falta can/will/would.",
-            "de": "Nach so that stehen Subjekt und Verb, mit can/will für Gegenwart oder Zukunft und could/would für die Vergangenheit: „She left early so that she wouldn’t be late.“ Es geht auch bei gleichem Subjekt, wenn can/will/would nötig ist."
+            "es": "Después de so that van un sujeto y un verbo, con can/will para el presente o futuro y could/would para el pasado: «She left early so that she wouldn’t be late.» También sirve con el mismo sujeto cuando hace falta can/will/would."
           },
           "examples": [
             {
               "es": "I speak slowly so that you can understand me.",
               "tr": {
-                "hu": "Lassan beszélek, hogy megérts.",
                 "en": "I speak slowly so that you can understand me.",
-                "es": "Hablo despacio para que me entiendas.",
-                "de": "Ich spreche langsam, damit du mich verstehst."
+                "es": "Hablo despacio para que me entiendas."
               }
             },
             {
               "es": "She left early so that she wouldn't be late.",
               "tr": {
-                "hu": "Korán elindult, hogy ne késsen el.",
                 "en": "She left early so that she wouldn't be late.",
-                "es": "Salió temprano para no llegar tarde.",
-                "de": "Sie ging früh, damit sie nicht zu spät kommt."
+                "es": "Salió temprano para no llegar tarde."
               }
             },
             {
               "es": "I am learning English so that I can get a better job.",
               "tr": {
-                "hu": "Azért tanulok angolul, hogy jobb munkát kaphassak.",
                 "en": "I am learning English so that I can get a better job.",
-                "es": "Estoy aprendiendo inglés para poder conseguir un mejor trabajo.",
-                "de": "Ich lerne Englisch, damit ich einen besseren Job bekomme."
+                "es": "Estoy aprendiendo inglés para poder conseguir un mejor trabajo."
               }
             }
           ]
@@ -186,36 +152,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Eredmény: so, therefore, as a result, consequently",
         "en": "Result: so, therefore, as a result, consequently",
-        "es": "Resultado: so, therefore, as a result, consequently",
-        "de": "Folge: so, therefore, as a result, consequently"
+        "es": "Resultado: so, therefore, as a result, consequently"
       },
       "items": [
         {
           "text": {
-            "hu": "A so a beszédben gyakori, a therefore, as a result, consequently írásban, új mondat elején, vesszővel.",
             "en": "So is common in speech; therefore, as a result and consequently are used in writing, at the start of a new sentence, with a comma.",
-            "es": "So es común al hablar; therefore, as a result y consequently se usan al escribir, al inicio de una oración nueva, con coma.",
-            "de": "So ist im Gespräch üblich; therefore, as a result und consequently stehen in der Schrift, am Anfang eines neuen Satzes, mit Komma."
+            "es": "So es común al hablar; therefore, as a result y consequently se usan al escribir, al inicio de una oración nueva, con coma."
           },
           "examples": [
             {
               "es": "It rained all day. As a result, the game was canceled.",
               "tr": {
-                "hu": "Egész nap esett. Ennek következtében elmaradt a meccs.",
                 "en": "It rained all day. As a result, the game was canceled.",
-                "es": "Llovió todo el día. Como resultado, se canceló el partido.",
-                "de": "Es regnete den ganzen Tag. Deshalb fiel das Spiel aus."
+                "es": "Llovió todo el día. Como resultado, se canceló el partido."
               }
             },
             {
               "es": "He didn't study. Therefore, he failed.",
               "tr": {
-                "hu": "Nem tanult. Ezért megbukott.",
                 "en": "He didn't study. Therefore, he failed.",
-                "es": "No estudió. Por lo tanto, reprobó.",
-                "de": "Er lernte nicht. Deshalb fiel er durch."
+                "es": "No estudió. Por lo tanto, reprobó."
               }
             }
           ]
@@ -225,45 +183,35 @@
     {
       "kind": "list",
       "title": {
-        "hu": "So … that és such … that",
         "en": "So … that and such … that",
-        "es": "So … that y such … that",
-        "de": "So … that und such … that"
+        "es": "So … that y such … that"
       },
       "items": [
         {
           "text": {
-            "hu": "So + melléknév vagy határozószó + that: „so cold that”. Such + (a) + főnév + that: „such a cold day that”. A such mindig főnévvel áll. Mennyiségnél so many / so much + főnév + that: „so many people that”; megszámlálhatatlan főnévnél nincs a: „such good news”.",
             "en": "So + adjective or adverb + that: “so cold that”. Such + (a) + noun + that: “such a cold day that”. Such always goes with a noun. For quantities use so many / so much + noun + that: “so many people that”; with an uncountable noun there is no a: “such good news”.",
-            "es": "So + adjetivo o adverbio + that: «so cold that». Such + (a) + sustantivo + that: «such a cold day that». Such siempre va con un sustantivo. Para cantidades se usa so many / so much + sustantivo + that: «so many people that»; con un sustantivo incontable no hay a: «such good news».",
-            "de": "So + Adjektiv oder Adverb + that: „so cold that“. Such + (a) + Nomen + that: „such a cold day that“. Such steht immer mit einem Nomen. Bei Mengen nimmt man so many / so much + Nomen + that: „so many people that“; bei einem unzählbaren Nomen steht kein a: „such good news“."
+            "es": "So + adjetivo o adverbio + that: «so cold that». Such + (a) + sustantivo + that: «such a cold day that». Such siempre va con un sustantivo. Para cantidades se usa so many / so much + sustantivo + that: «so many people that»; con un sustantivo incontable no hay a: «such good news»."
           },
           "examples": [
             {
               "es": "It was so cold that we stayed in.",
               "tr": {
-                "hu": "Olyan hideg volt, hogy bent maradtunk.",
                 "en": "It was so cold that we stayed in.",
-                "es": "Hacía tanto frío que nos quedamos adentro.",
-                "de": "Es war so kalt, dass wir drinnen blieben."
+                "es": "Hacía tanto frío que nos quedamos adentro."
               }
             },
             {
               "es": "It was such a cold day that we stayed in.",
               "tr": {
-                "hu": "Olyan hideg nap volt, hogy bent maradtunk.",
                 "en": "It was such a cold day that we stayed in.",
-                "es": "Fue un día tan frío que nos quedamos adentro.",
-                "de": "Es war ein so kalter Tag, dass wir drinnen blieben."
+                "es": "Fue un día tan frío que nos quedamos adentro."
               }
             },
             {
               "es": "There were so many people that we could not move.",
               "tr": {
-                "hu": "Annyi ember volt, hogy mozdulni sem tudtunk.",
                 "en": "There were so many people that we could not move.",
-                "es": "Había tanta gente que no podíamos movernos.",
-                "de": "Es waren so viele Leute da, dass wir uns nicht bewegen konnten."
+                "es": "Había tanta gente que no podíamos movernos."
               }
             }
           ]
@@ -273,36 +221,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Too … to és … enough to",
         "en": "Too … to and … enough to",
-        "es": "Too … to y … enough to",
-        "de": "Too … to und … enough to"
+        "es": "Too … to y … enough to"
       },
       "items": [
         {
           "text": {
-            "hu": "Too + melléknév + to: túlságosan ahhoz, hogy. Melléknév + enough + to: elég ahhoz, hogy.",
             "en": "Too + adjective + to: too much to. Adjective + enough + to: enough to.",
-            "es": "Too + adjetivo + to: demasiado para. Adjetivo + enough + to: lo bastante para.",
-            "de": "Too + Adjektiv + to: zu … um. Adjektiv + enough + to: genug, um."
+            "es": "Too + adjetivo + to: demasiado para. Adjetivo + enough + to: lo bastante para."
           },
           "examples": [
             {
               "es": "She is too tired to study.",
               "tr": {
-                "hu": "Túl fáradt ahhoz, hogy tanuljon.",
                 "en": "She is too tired to study.",
-                "es": "Está demasiado cansada para estudiar.",
-                "de": "Sie ist zu müde, um zu lernen."
+                "es": "Está demasiado cansada para estudiar."
               }
             },
             {
               "es": "He is old enough to vote.",
               "tr": {
-                "hu": "Elég idős ahhoz, hogy szavazzon.",
                 "en": "He is old enough to vote.",
-                "es": "Ya tiene edad suficiente para votar.",
-                "de": "Er ist alt genug, um zu wählen."
+                "es": "Ya tiene edad suficiente para votar."
               }
             }
           ]
@@ -312,207 +252,161 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Spanyol hatás: nem „I went to the store for buy milk”. A „para” + ige angolul to + alapige. A for csak főnév vagy -ing alak előtt állhat.",
         "en": "Spanish influence: not “I went to the store for buy milk”. The Spanish “para” + verb is to + base verb in English. For can only stand before a noun or an -ing form.",
-        "es": "Influencia del español: no «I went to the store for buy milk». El «para» + verbo del español es to + verbo base en inglés. For solo puede ir antes de un sustantivo o una forma -ing.",
-        "de": "Einfluss des Spanischen: nicht „I went to the store for buy milk“. Das spanische „para“ + Verb ist im Englischen to + Grundform. For kann nur vor einem Nomen oder einer -ing-Form stehen."
+        "es": "Influencia del español: no «I went to the store for buy milk». El «para» + verbo del español es to + verbo base en inglés. For solo puede ir antes de un sustantivo o una forma -ing."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A „tan … que” angolul so … that, a „tal … que” such … that. A so melléknévvel áll, a such főnévvel: „so tired”, de „such a tired man”.",
         "en": "The Spanish “tan … que” is so … that in English, and “tal … que” is such … that. So goes with an adjective, such with a noun: “so tired”, but “such a tired man”.",
-        "es": "El «tan … que» del español es so … that en inglés, y «tal … que» es such … that. So va con un adjetivo, such con un sustantivo: «so tired», pero «such a tired man».",
-        "de": "Das spanische „tan … que“ ist im Englischen so … that, und „tal … que“ ist such … that. So steht mit einem Adjektiv, such mit einem Nomen: „so tired“, aber „such a tired man“."
+        "es": "El «tan … que» del español es so … that en inglés, y «tal … que» es such … that. So va con un adjetivo, such con un sustantivo: «so tired», pero «such a tired man»."
       }
     }
   ],
   "speak": {
-    "hu": "A cél azt mondja meg, miért csinálunk valamit. Ugyanaz az alany: «to» plusz alapige, vagy formálisabban «in order to». Tagmondattal, főleg más alanynál: «so that» plusz tagmondat: «I speak slowly so that you can understand». A «for» csak főnév vagy -ing alak előtt áll. Eredmény: «therefore» és «as a result» új mondat elején. «So cold that» melléknévvel, «such a cold day that» főnévvel. «Too tired to study» és «old enough to vote».",
     "en": "Purpose says why we do something. With the same subject: «to» plus the base verb, or more formally «in order to». With a clause, mostly a different subject: «so that» plus a clause: «I speak slowly so that you can understand». «For» only goes before a noun or an -ing form. Result: «therefore» and «as a result» at the start of a new sentence. «So cold that» with an adjective, «such a cold day that» with a noun. «Too tired to study» and «old enough to vote».",
-    "es": "La finalidad dice para qué hacemos algo. Con el mismo sujeto: «to» más verbo base, o más formal «in order to». Con una cláusula, sobre todo con otro sujeto: «so that» más una cláusula: «I speak slowly so that you can understand». «For» solo va antes de un sustantivo o una forma -ing. Resultado: «therefore» y «as a result» al inicio de una oración nueva. «So cold that» con un adjetivo, «such a cold day that» con un sustantivo. «Too tired to study» y «old enough to vote».",
-    "de": "Der Zweck sagt, wozu wir etwas tun. Mit demselben Subjekt: «to» plus Grundform, oder formeller «in order to». Mit einem Teilsatz, vor allem bei anderem Subjekt: «so that» plus Teilsatz: «I speak slowly so that you can understand». «For» steht nur vor einem Nomen oder einer -ing-Form. Folge: «therefore» und «as a result» am Anfang eines neuen Satzes. «So cold that» mit einem Adjektiv, «such a cold day that» mit einem Nomen. «Too tired to study» und «old enough to vote»."
+    "es": "La finalidad dice para qué hacemos algo. Con el mismo sujeto: «to» más verbo base, o más formal «in order to». Con una cláusula, sobre todo con otro sujeto: «so that» más una cláusula: «I speak slowly so that you can understand». «For» solo va antes de un sustantivo o una forma -ing. Resultado: «therefore» y «as a result» al inicio de una oración nueva. «So cold that» con un adjetivo, «such a cold day that» con un sustantivo. «Too tired to study» y «old enough to vote»."
   },
   "glossary": [
     {
       "word": "quietly",
       "gloss": {
-        "hu": "halkan",
         "en": "in a quiet way",
-        "es": "en voz baja",
-        "de": "leise"
+        "es": "en voz baja"
       }
     },
     {
       "word": "sells",
       "gloss": {
-        "hu": "elad (he/she/it)",
         "en": "he/she/it sells",
-        "es": "vende (he/she/it)",
-        "de": "verkauft (er/sie/es)"
+        "es": "vende (he/she/it)"
       }
     },
     {
       "word": "swam",
       "gloss": {
-        "hu": "úszott (a swim múltja)",
         "en": "past form of swim",
-        "es": "nadó (pasado de swim)",
-        "de": "schwamm (Past von swim)"
+        "es": "nadó (pasado de swim)"
       }
     },
     {
       "word": "whispered",
       "gloss": {
-        "hu": "suttogott (a whisper múltja)",
         "en": "past form of whisper",
-        "es": "susurró (pasado de whisper)",
-        "de": "flüsterte (Past von whisper)"
+        "es": "susurró (pasado de whisper)"
       }
     },
     {
       "word": "although",
       "gloss": {
-        "hu": "bár, habár",
         "en": "but, in spite of the fact",
-        "es": "aunque",
-        "de": "obwohl"
+        "es": "aunque"
       }
     },
     {
       "word": "catch",
       "gloss": {
-        "hu": "elkap, elér (járatot)",
         "en": "to catch (a bus)",
-        "es": "alcanzar, tomar (un camión)",
-        "de": "erwischen, nehmen (Bus)"
+        "es": "alcanzar, tomar (un camión)"
       }
     },
     {
       "word": "consequently",
       "gloss": {
-        "hu": "következésképpen",
         "en": "as a result",
-        "es": "por consiguiente",
-        "de": "folglich"
+        "es": "por consiguiente"
       }
     },
     {
       "word": "cried",
       "gloss": {
-        "hu": "sírt (a cry múltja)",
         "en": "past form of cry",
-        "es": "lloró (pasado de cry)",
-        "de": "weinte (Past von cry)"
+        "es": "lloró (pasado de cry)"
       }
     },
     {
       "word": "cutting",
       "gloss": {
-        "hu": "vág (ige-ing alak)",
         "en": "-ing form of cut",
-        "es": "cortando (forma -ing de cut)",
-        "de": "schneiden (-ing-Form von cut)"
+        "es": "cortando (forma -ing de cut)"
       }
     },
     {
       "word": "despite",
       "gloss": {
-        "hu": "ellenére",
         "en": "in spite of",
-        "es": "a pesar de",
-        "de": "trotz"
+        "es": "a pesar de"
       }
     },
     {
       "word": "drive",
       "gloss": {
-        "hu": "vezet (autót)",
         "en": "to drive",
-        "es": "manejar",
-        "de": "fahren"
+        "es": "manejar"
       }
     },
     {
       "word": "hear",
       "gloss": {
-        "hu": "hall",
         "en": "to hear",
-        "es": "oír",
-        "de": "hören"
+        "es": "oír"
       }
     },
     {
       "word": "hid",
       "gloss": {
-        "hu": "elrejtett (a hide múltja)",
         "en": "past form of hide",
-        "es": "escondió (pasado de hide)",
-        "de": "versteckte (Past von hide)"
+        "es": "escondió (pasado de hide)"
       }
     },
     {
       "word": "however",
       "gloss": {
-        "hu": "azonban, viszont",
         "en": "but, in contrast",
-        "es": "sin embargo",
-        "de": "jedoch"
+        "es": "sin embargo"
       }
     },
     {
       "word": "hurried",
       "gloss": {
-        "hu": "sietett (a hurry múltja)",
         "en": "past form of hurry",
-        "es": "se apuró (pasado de hurry)",
-        "de": "beeilte sich (Past von hurry)"
+        "es": "se apuró (pasado de hurry)"
       }
     },
     {
       "word": "softly",
       "gloss": {
-        "hu": "halkan",
         "en": "in a quiet way",
-        "es": "suavemente, bajito",
-        "de": "leise"
+        "es": "suavemente, bajito"
       }
     },
     {
       "word": "such",
       "gloss": {
-        "hu": "olyan, ilyen",
         "en": "so, of this kind",
-        "es": "tal, tan",
-        "de": "so ein"
+        "es": "tal, tan"
       }
     },
     {
       "word": "therefore",
       "gloss": {
-        "hu": "ezért",
         "en": "as a result",
-        "es": "por lo tanto",
-        "de": "deshalb"
+        "es": "por lo tanto"
       }
     },
     {
       "word": "would",
       "gloss": {
-        "hu": "lenne, volna (feltételes)",
         "en": "conditional or past of will",
-        "es": "condicional o pasado de will",
-        "de": "würde (Konditional)"
+        "es": "condicional o pasado de will"
       }
     },
     {
       "word": "wouldn't",
       "gloss": {
-        "hu": "nem lenne, nem tenne (would not)",
         "en": "would not",
-        "es": "no habría, no sería (would not)",
-        "de": "würde nicht (would not)"
+        "es": "no habría, no sería (would not)"
       }
     }
   ],
@@ -527,30 +421,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Megszámlálható többes számú főnév előtt so many áll: so many people that.",
         "en": "Before a countable plural noun comes so many: so many people that.",
-        "es": "Antes de un sustantivo contable en plural va so many: so many people that.",
-        "de": "Vor einem zählbaren Nomen im Plural steht so many: so many people that."
+        "es": "Antes de un sustantivo contable en plural va so many: so many people that."
       },
       "wrong": {
         "much": {
-          "hu": "A so much megszámlálhatatlan főnévvel áll; a people megszámlálható.",
           "en": "So much goes with uncountable nouns; people is countable.",
-          "es": "So much va con sustantivos incontables; people es contable.",
-          "de": "So much steht bei unzählbaren Nomen; people ist zählbar."
+          "es": "So much va con sustantivos incontables; people es contable."
         },
         "such": {
-          "hu": "A such nem áll a so helyén ebben a szerkezetben; so many kell.",
           "en": "Such does not replace so in this structure; you need so many.",
-          "es": "Such no reemplaza a so en esta estructura; hace falta so many.",
-          "de": "Such ersetzt so in dieser Struktur nicht; man braucht so many."
+          "es": "Such no reemplaza a so en esta estructura; hace falta so many."
         }
       },
       "examples": [
         "There were so many cars that we waited.",
         "She has so many books that she sells some."
       ],
-      "tr": { "hu": "Olyan sokan voltak, hogy mozdulni sem tudtunk.", "en": "There were so many people that we could not move.", "es": "Había tanta gente que no podíamos movernos.", "de": "Es waren so viele Leute da, dass wir uns nicht bewegen konnten." }
+      "tr": { "en": "There were so many people that we could not move.", "es": "Había tanta gente que no podíamos movernos." }
     },
     {
       "id": "prs-02",
@@ -562,30 +450,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Formális cél: in order to.",
         "en": "A formal purpose: in order to.",
-        "es": "Una finalidad formal: in order to.",
-        "de": "Ein formeller Zweck: in order to."
+        "es": "Una finalidad formal: in order to."
       },
       "wrong": {
         "for": {
-          "hu": "A for order to nem létezik; in order to kell.",
           "en": "“For order to” does not exist; you need in order to.",
-          "es": "«For order to» no existe; hace falta in order to.",
-          "de": "„For order to“ gibt es nicht; man braucht in order to."
+          "es": "«For order to» no existe; hace falta in order to."
         },
         "at": {
-          "hu": "Az at order to nem létezik; in order to kell.",
           "en": "“At order to” does not exist; you need in order to.",
-          "es": "«At order to» no existe; hace falta in order to.",
-          "de": "„At order to“ gibt es nicht; man braucht in order to."
+          "es": "«At order to» no existe; hace falta in order to."
         }
       },
       "examples": [
         "He works in order to live.",
         "We left early in order to win."
       ],
-      "tr": { "hu": "Keményen tanul, hogy átmenjen a vizsgán.", "en": "She studies hard in order to pass the exam.", "es": "Ella estudia mucho para pasar el examen.", "de": "Sie lernt fleißig, um die Prüfung zu bestehen." }
+      "tr": { "en": "She studies hard in order to pass the exam.", "es": "Ella estudia mucho para pasar el examen." }
     },
     {
       "id": "prs-03",
@@ -597,30 +479,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Tagadott cél: so as not to.",
         "en": "A negative purpose: so as not to.",
-        "es": "Una finalidad negativa: so as not to.",
-        "de": "Ein verneinter Zweck: so as not to."
+        "es": "Una finalidad negativa: so as not to."
       },
       "wrong": {
         "in": {
-          "hu": "Az in as not to nem létezik; in order not to vagy so as not to kell.",
           "en": "“In as not to” does not exist; you need in order not to or so as not to.",
-          "es": "«In as not to» no existe; hace falta in order not to o so as not to.",
-          "de": "„In as not to“ gibt es nicht; man braucht in order not to oder so as not to."
+          "es": "«In as not to» no existe; hace falta in order not to o so as not to."
         },
         "for": {
-          "hu": "A for as not to nem létezik; so as not to kell.",
           "en": "“For as not to” does not exist; you need so as not to.",
-          "es": "«For as not to» no existe; hace falta so as not to.",
-          "de": "„For as not to“ gibt es nicht; man braucht so as not to."
+          "es": "«For as not to» no existe; hace falta so as not to."
         }
       },
       "examples": [
         "She spoke softly so as not to wake him.",
         "I ran so as not to miss it."
       ],
-      "tr": { "hu": "Korán elment, hogy ne késsen el.", "en": "He left early so as not to be late.", "es": "Él se fue temprano para no llegar tarde.", "de": "Er ist früh losgegangen, um nicht zu spät zu kommen." }
+      "tr": { "en": "He left early so as not to be late.", "es": "Él se fue temprano para no llegar tarde." }
     },
     {
       "id": "prs-04",
@@ -632,30 +508,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Más alany és tagmondat: so that + you can.",
         "en": "A different subject and a clause: so that + you can.",
-        "es": "Otro sujeto y una cláusula: so that + you can.",
-        "de": "Anderes Subjekt und ein Teilsatz: so that + you can."
+        "es": "Otro sujeto y una cláusula: so that + you can."
       },
       "wrong": {
         "in order to": {
-          "hu": "Az in order to után alapige áll, nem alany és ige (you can).",
           "en": "After in order to comes a base verb, not a subject and verb (you can).",
-          "es": "Después de in order to va un verbo base, no sujeto y verbo (you can).",
-          "de": "Nach in order to steht eine Grundform, nicht Subjekt und Verb (you can)."
+          "es": "Después de in order to va un verbo base, no sujeto y verbo (you can)."
         },
         "for": {
-          "hu": "A for után főnév vagy -ing alak áll, nem alany és ige.",
           "en": "After for comes a noun or an -ing form, not a subject and verb.",
-          "es": "Después de for va un sustantivo o una forma -ing, no sujeto y verbo.",
-          "de": "Nach for steht ein Nomen oder eine -ing-Form, nicht Subjekt und Verb."
+          "es": "Después de for va un sustantivo o una forma -ing, no sujeto y verbo."
         }
       },
       "examples": [
         "Speak up so that he can hear.",
         "Write it so that we remember."
       ],
-      "tr": { "hu": "Lassan beszélek, hogy megérts engem.", "en": "I speak slowly so that you can understand me.", "es": "Hablo despacio para que me entiendas.", "de": "Ich spreche langsam, damit du mich verstehen kannst." }
+      "tr": { "en": "I speak slowly so that you can understand me.", "es": "Hablo despacio para que me entiendas." }
     },
     {
       "id": "prs-05",
@@ -667,30 +537,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Múltbeli cél: so that + wouldn’t.",
         "en": "A purpose in the past: so that + wouldn’t.",
-        "es": "Una finalidad en el pasado: so that + wouldn’t.",
-        "de": "Ein Zweck in der Vergangenheit: so that + wouldn’t."
+        "es": "Una finalidad en el pasado: so that + wouldn’t."
       },
       "wrong": {
         "didn't": {
-          "hu": "A didn’t be late nem helyes; a so that után modális ige kell (wouldn’t).",
           "en": "“Didn’t be late” is not correct; after so that a modal verb is needed (wouldn’t).",
-          "es": "«Didn’t be late» no es correcto; después de so that hace falta un verbo modal (wouldn’t).",
-          "de": "„Didn’t be late“ ist nicht korrekt; nach so that braucht man ein Modalverb (wouldn’t)."
+          "es": "«Didn’t be late» no es correcto; después de so that hace falta un verbo modal (wouldn’t)."
         },
         "doesn't": {
-          "hu": "A doesn’t jelen idejű, és a so that után modális ige kell.",
           "en": "Doesn’t is present, and after so that a modal verb is needed.",
-          "es": "Doesn’t es presente, y después de so that hace falta un verbo modal.",
-          "de": "Doesn’t ist Präsens, und nach so that braucht man ein Modalverb."
+          "es": "Doesn’t es presente, y después de so that hace falta un verbo modal."
         }
       },
       "examples": [
         "He hurried so that he would not miss it.",
         "She ran so that she could catch it."
       ],
-      "tr": { "hu": "Korán elment, hogy ne késsen el.", "en": "She left early so that she wouldn't be late.", "es": "Ella se fue temprano para no llegar tarde.", "de": "Sie ist früh losgegangen, damit sie nicht zu spät kommt." }
+      "tr": { "en": "She left early so that she wouldn't be late.", "es": "Ella se fue temprano para no llegar tarde." }
     },
     {
       "id": "prs-06",
@@ -702,30 +566,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A tárgy rendeltetése: for + -ing.",
         "en": "The use of an object: for + -ing.",
-        "es": "El uso de un objeto: for + -ing.",
-        "de": "Der Zweck eines Gegenstands: for + -ing."
+        "es": "El uso de un objeto: for + -ing."
       },
       "wrong": {
         "to": {
-          "hu": "A to cutting nem helyes; az -ing alak előtt for áll.",
           "en": "“To cutting” is not correct; before an -ing form comes for.",
-          "es": "«To cutting» no es correcto; antes de una forma -ing va for.",
-          "de": "„To cutting“ ist nicht korrekt; vor einer -ing-Form steht for."
+          "es": "«To cutting» no es correcto; antes de una forma -ing va for."
         },
         "so": {
-          "hu": "A so cutting nem helyes; az -ing alak előtt for áll.",
           "en": "“So cutting” is not correct; before an -ing form comes for.",
-          "es": "«So cutting» no es correcto; antes de una forma -ing va for.",
-          "de": "„So cutting“ ist nicht korrekt; vor einer -ing-Form steht for."
+          "es": "«So cutting» no es correcto; antes de una forma -ing va for."
         }
       },
       "examples": [
         "A pen is for writing.",
         "A key is for opening."
       ],
-      "tr": { "hu": "A kés vágásra való.", "en": "A knife is for cutting.", "es": "Un cuchillo es para cortar.", "de": "Ein Messer ist zum Schneiden da." }
+      "tr": { "en": "A knife is for cutting.", "es": "Un cuchillo es para cortar." }
     },
     {
       "id": "prs-07",
@@ -737,30 +595,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Megszámlálhatatlan főnév előtt such áll (a nélkül): such good news.",
         "en": "Before an uncountable noun comes such (without a): such good news.",
-        "es": "Antes de un sustantivo incontable va such (sin a): such good news.",
-        "de": "Vor einem unzählbaren Nomen steht such (ohne a): such good news."
+        "es": "Antes de un sustantivo incontable va such (sin a): such good news."
       },
       "wrong": {
         "so": {
-          "hu": "A so melléknév előtt áll; főnév előtt such kell.",
           "en": "So goes before an adjective; before a noun you need such.",
-          "es": "So va antes de un adjetivo; antes de un sustantivo hace falta such.",
-          "de": "So steht vor einem Adjektiv; vor einem Nomen braucht man such."
+          "es": "So va antes de un adjetivo; antes de un sustantivo hace falta such."
         },
         "too": {
-          "hu": "A too good news nem helyes; főnév előtt such kell.",
           "en": "“Too good news” is not correct here; before a noun you need such.",
-          "es": "«Too good news» no es correcto aquí; antes de un sustantivo hace falta such.",
-          "de": "„Too good news“ ist hier nicht korrekt; vor einem Nomen braucht man such."
+          "es": "«Too good news» no es correcto aquí; antes de un sustantivo hace falta such."
         }
       },
       "examples": [
         "It was such nice weather that we swam.",
         "She gave such good advice that I stayed."
       ],
-      "tr": { "hu": "Olyan jó hír volt, hogy sírva fakadt.", "en": "It was such good news that she cried.", "es": "Fue una noticia tan buena que ella lloró.", "de": "Es war so eine gute Nachricht, dass sie weinte." }
+      "tr": { "en": "It was such good news that she cried.", "es": "Fue una noticia tan buena que ella lloró." }
     },
     {
       "id": "prs-08",
@@ -772,30 +624,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Eredmény új mondat elején: As a result,",
         "en": "A result at the start of a new sentence: As a result,",
-        "es": "Un resultado al inicio de una oración nueva: As a result,",
-        "de": "Eine Folge am Anfang eines neuen Satzes: As a result,"
+        "es": "Un resultado al inicio de una oración nueva: As a result,"
       },
       "wrong": {
         "Because": {
-          "hu": "A because okot vezet be, és tagmondatot kér, nem áll vessző előtt.",
           "en": "Because introduces a reason and needs a clause; it does not stand before a comma.",
-          "es": "Because introduce una razón y necesita una cláusula; no va antes de una coma.",
-          "de": "Because leitet einen Grund ein und braucht einen Teilsatz; es steht nicht vor einem Komma."
+          "es": "Because introduce una razón y necesita una cláusula; no va antes de una coma."
         },
         "In order": {
-          "hu": "Az in order önmagában nem áll; in order to + alapige kell.",
           "en": "In order does not stand alone; you need in order to + base verb.",
-          "es": "In order no va solo; hace falta in order to + verbo base.",
-          "de": "In order steht nicht allein; man braucht in order to + Grundform."
+          "es": "In order no va solo; hace falta in order to + verbo base."
         }
       },
       "examples": [
         "It snowed. As a result, we stayed.",
         "He lost. As a result, he cried."
       ],
-      "tr": { "hu": "Egész nap esett. Ennek következtében a meccs elmaradt.", "en": "It rained all day. As a result, the game was canceled.", "es": "Llovió todo el día. Como resultado, el juego se canceló.", "de": "Es hat den ganzen Tag geregnet. Infolgedessen wurde das Spiel abgesagt." }
+      "tr": { "en": "It rained all day. As a result, the game was canceled.", "es": "Llovió todo el día. Como resultado, el juego se canceló." }
     },
     {
       "id": "prs-09",
@@ -807,30 +653,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Eredmény új mondat elején: Therefore,",
         "en": "A result at the start of a new sentence: Therefore,",
-        "es": "Un resultado al inicio de una oración nueva: Therefore,",
-        "de": "Eine Folge am Anfang eines neuen Satzes: Therefore,"
+        "es": "Un resultado al inicio de una oración nueva: Therefore,"
       },
       "wrong": {
         "Although": {
-          "hu": "Az although ellentétet jelez, nem eredményt.",
           "en": "Although marks a contrast, not a result.",
-          "es": "Although marca un contraste, no un resultado.",
-          "de": "Although markiert einen Gegensatz, keine Folge."
+          "es": "Although marca un contraste, no un resultado."
         },
         "Despite": {
-          "hu": "A despite ellentétet jelez, és főnév vagy -ing alak követi.",
           "en": "Despite marks a contrast and is followed by a noun or an -ing form.",
-          "es": "Despite marca un contraste y lo sigue un sustantivo o una forma -ing.",
-          "de": "Despite markiert einen Gegensatz und wird von einem Nomen oder einer -ing-Form gefolgt."
+          "es": "Despite marca un contraste y lo sigue un sustantivo o una forma -ing."
         }
       },
       "examples": [
         "It was late. Therefore, we left.",
         "She won. Therefore, she smiled."
       ],
-      "tr": { "hu": "Nem tanult. Ezért megbukott.", "en": "He didn't study. Therefore, he failed.", "es": "Él no estudió. Por lo tanto, reprobó.", "de": "Er hat nicht gelernt. Deshalb ist er durchgefallen." }
+      "tr": { "en": "He didn't study. Therefore, he failed.", "es": "Él no estudió. Por lo tanto, reprobó." }
     },
     {
       "id": "prs-10",
@@ -842,30 +682,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Melléknév előtt so áll: so cold that.",
         "en": "Before an adjective comes so: so cold that.",
-        "es": "Antes de un adjetivo va so: so cold that.",
-        "de": "Vor einem Adjektiv steht so: so cold that."
+        "es": "Antes de un adjetivo va so: so cold that."
       },
       "wrong": {
         "such": {
-          "hu": "A such főnévvel áll (such a cold day); önmagában melléknév előtt nem.",
           "en": "Such goes with a noun (such a cold day); not before a bare adjective.",
-          "es": "Such va con un sustantivo (such a cold day); no antes de un adjetivo solo.",
-          "de": "Such steht mit einem Nomen (such a cold day); nicht vor einem bloßen Adjektiv."
+          "es": "Such va con un sustantivo (such a cold day); no antes de un adjetivo solo."
         },
         "too": {
-          "hu": "A too cold that nem helyes; a too után to + alapige áll.",
           "en": "“Too cold that” is not correct; after too comes to + base verb.",
-          "es": "«Too cold that» no es correcto; después de too va to + verbo base.",
-          "de": "„Too cold that“ ist nicht korrekt; nach too steht to + Grundform."
+          "es": "«Too cold that» no es correcto; después de too va to + verbo base."
         }
       },
       "examples": [
         "It was so hot that I left.",
         "She was so tired that she slept."
       ],
-      "tr": { "hu": "Olyan hideg volt, hogy bent maradtunk.", "en": "It was so cold that we stayed in.", "es": "Hacía tanto frío que nos quedamos adentro.", "de": "Es war so kalt, dass wir drinnen geblieben sind." }
+      "tr": { "en": "It was so cold that we stayed in.", "es": "Hacía tanto frío que nos quedamos adentro." }
     },
     {
       "id": "prs-11",
@@ -877,30 +711,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Főnév előtt such áll: such a cold day that.",
         "en": "Before a noun comes such: such a cold day that.",
-        "es": "Antes de un sustantivo va such: such a cold day that.",
-        "de": "Vor einem Nomen steht such: such a cold day that."
+        "es": "Antes de un sustantivo va such: such a cold day that."
       },
       "wrong": {
         "so": {
-          "hu": "A so a cold day nem helyes; főnév előtt such kell.",
           "en": "“So a cold day” is not correct; before a noun you need such.",
-          "es": "«So a cold day» no es correcto; antes de un sustantivo hace falta such.",
-          "de": "„So a cold day“ ist nicht korrekt; vor einem Nomen braucht man such."
+          "es": "«So a cold day» no es correcto; antes de un sustantivo hace falta such."
         },
         "too": {
-          "hu": "A too a cold day nem helyes; főnév előtt such kell.",
           "en": "“Too a cold day” is not correct; before a noun you need such.",
-          "es": "«Too a cold day» no es correcto; antes de un sustantivo hace falta such.",
-          "de": "„Too a cold day“ ist nicht korrekt; vor einem Nomen braucht man such."
+          "es": "«Too a cold day» no es correcto; antes de un sustantivo hace falta such."
         }
       },
       "examples": [
         "It was such a big house that we got lost.",
         "She is such a kind person."
       ],
-      "tr": { "hu": "Olyan hideg nap volt, hogy bent maradtunk.", "en": "It was such a cold day that we stayed in.", "es": "Fue un día tan frío que nos quedamos adentro.", "de": "Es war ein so kalter Tag, dass wir drinnen geblieben sind." }
+      "tr": { "en": "It was such a cold day that we stayed in.", "es": "Fue un día tan frío que nos quedamos adentro." }
     },
     {
       "id": "prs-12",
@@ -912,30 +740,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Túl sok ahhoz, hogy: too + melléknév + to.",
         "en": "More than needed for: too + adjective + to.",
-        "es": "Más de lo necesario para: too + adjetivo + to.",
-        "de": "Mehr als nötig, um: too + Adjektiv + to."
+        "es": "Más de lo necesario para: too + adjetivo + to."
       },
       "wrong": {
         "so": {
-          "hu": "A so tired to study nem helyes; a so után that-tagmondat jön.",
           "en": "“So tired to study” is not correct; after so comes a that-clause.",
-          "es": "«So tired to study» no es correcto; después de so viene una cláusula con that.",
-          "de": "„So tired to study“ ist nicht korrekt; nach so folgt ein that-Satz."
+          "es": "«So tired to study» no es correcto; después de so viene una cláusula con that."
         },
         "enough": {
-          "hu": "Az enough a melléknév után áll (tired enough), nem előtte.",
           "en": "Enough goes after the adjective (tired enough), not before it.",
-          "es": "Enough va después del adjetivo (tired enough), no antes.",
-          "de": "Enough steht nach dem Adjektiv (tired enough), nicht davor."
+          "es": "Enough va después del adjetivo (tired enough), no antes."
         }
       },
       "examples": [
         "He is too young to drive.",
         "It is too hot to work."
       ],
-      "tr": { "hu": "Túl fáradt ahhoz, hogy tanuljon.", "en": "She is too tired to study.", "es": "Ella está demasiado cansada para estudiar.", "de": "Sie ist zu müde, um zu lernen." }
+      "tr": { "en": "She is too tired to study.", "es": "Ella está demasiado cansada para estudiar." }
     },
     {
       "id": "prs-13",
@@ -947,30 +769,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Tagadott cél: in order not to + alapige.",
         "en": "A negative purpose: in order not to + base verb.",
-        "es": "Una finalidad negativa: in order not to + verbo base.",
-        "de": "Ein verneinter Zweck: in order not to + Grundform."
+        "es": "Una finalidad negativa: in order not to + verbo base."
       },
       "wrong": {
         "no": {
-          "hu": "Az in order no to nem létezik; a tagadás not.",
           "en": "“In order no to” does not exist; the negative is not.",
-          "es": "«In order no to» no existe; la negación es not.",
-          "de": "„In order no to“ gibt es nicht; die Verneinung ist not."
+          "es": "«In order no to» no existe; la negación es not."
         },
         "don't": {
-          "hu": "Az in order don’t to nem létezik; a tagadás not.",
           "en": "“In order don’t to” does not exist; the negative is not.",
-          "es": "«In order don’t to» no existe; la negación es not.",
-          "de": "„In order don’t to“ gibt es nicht; die Verneinung ist not."
+          "es": "«In order don’t to» no existe; la negación es not."
         }
       },
       "examples": [
         "He left in order not to be late.",
         "She whispered in order not to wake him."
       ],
-      "tr": { "hu": "Halkan beszélt, hogy fel ne ébressze a babát.", "en": "She spoke quietly in order not to wake the baby.", "es": "Ella habló bajito para no despertar al bebé.", "de": "Sie sprach leise, um das Baby nicht zu wecken." }
+      "tr": { "en": "She spoke quietly in order not to wake the baby.", "es": "Ella habló bajito para no despertar al bebé." }
     },
     {
       "id": "prs-14",
@@ -982,30 +798,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Melléknév előtt so áll: so difficult that.",
         "en": "Before an adjective comes so: so difficult that.",
-        "es": "Antes de un adjetivo va so: so difficult that.",
-        "de": "Vor einem Adjektiv steht so: so difficult that."
+        "es": "Antes de un adjetivo va so: so difficult that."
       },
       "wrong": {
         "such": {
-          "hu": "A such főnévvel áll (such a difficult test); itt a melléknév előtt so kell.",
           "en": "Such goes with a noun (such a difficult test); here before the adjective you need so.",
-          "es": "Such va con un sustantivo (such a difficult test); aquí antes del adjetivo hace falta so.",
-          "de": "Such steht mit einem Nomen (such a difficult test); hier braucht man vor dem Adjektiv so."
+          "es": "Such va con un sustantivo (such a difficult test); aquí antes del adjetivo hace falta so."
         },
         "too": {
-          "hu": "A too difficult that nem helyes; a too után to + alapige áll.",
           "en": "“Too difficult that” is not correct; after too comes to + base verb.",
-          "es": "«Too difficult that» no es correcto; después de too va to + verbo base.",
-          "de": "„Too difficult that“ ist nicht korrekt; nach too steht to + Grundform."
+          "es": "«Too difficult that» no es correcto; después de too va to + verbo base."
         }
       },
       "examples": [
         "The film was so long that I slept.",
         "It was so loud that we left."
       ],
-      "tr": { "hu": "A teszt olyan nehéz volt, hogy senki nem ment át.", "en": "The test was so difficult that nobody passed.", "es": "El examen estuvo tan difícil que nadie pasó.", "de": "Der Test war so schwierig, dass niemand bestanden hat." }
+      "tr": { "en": "The test was so difficult that nobody passed.", "es": "El examen estuvo tan difícil que nadie pasó." }
     },
     {
       "id": "prs-15",
@@ -1017,30 +827,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Főnév előtt such áll: such a good singer.",
         "en": "Before a noun comes such: such a good singer.",
-        "es": "Antes de un sustantivo va such: such a good singer.",
-        "de": "Vor einem Nomen steht such: such a good singer."
+        "es": "Antes de un sustantivo va such: such a good singer."
       },
       "wrong": {
         "so": {
-          "hu": "A so a good singer nem helyes; főnév előtt such kell.",
           "en": "“So a good singer” is not correct; before a noun you need such.",
-          "es": "«So a good singer» no es correcto; antes de un sustantivo hace falta such.",
-          "de": "„So a good singer“ ist nicht korrekt; vor einem Nomen braucht man such."
+          "es": "«So a good singer» no es correcto; antes de un sustantivo hace falta such."
         },
         "too": {
-          "hu": "A too a good singer nem helyes; főnév előtt such kell.",
           "en": "“Too a good singer” is not correct; before a noun you need such.",
-          "es": "«Too a good singer» no es correcto; antes de un sustantivo hace falta such.",
-          "de": "„Too a good singer“ ist nicht korrekt; vor einem Nomen braucht man such."
+          "es": "«Too a good singer» no es correcto; antes de un sustantivo hace falta such."
         }
       },
       "examples": [
         "He is such a nice man.",
         "It was such a long day."
       ],
-      "tr": { "hu": "Olyan jó énekesnő volt, hogy mindenki figyelt.", "en": "She was such a good singer that everyone listened.", "es": "Ella era tan buena cantante que todos escucharon.", "de": "Sie war eine so gute Sängerin, dass jeder zuhörte." }
+      "tr": { "en": "She was such a good singer that everyone listened.", "es": "Ella era tan buena cantante que todos escucharon." }
     },
     {
       "id": "prs-16",
@@ -1052,30 +856,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Más alany és tagmondat: so that she would know.",
         "en": "A different subject and a clause: so that she would know.",
-        "es": "Otro sujeto y una cláusula: so that she would know.",
-        "de": "Anderes Subjekt und ein Teilsatz: so that she would know."
+        "es": "Otro sujeto y una cláusula: so that she would know."
       },
       "wrong": {
         "in": {
-          "hu": "Az in that nem fejez ki célt ebben a szerkezetben; so that kell.",
           "en": "“In that” does not express a purpose in this structure; you need so that.",
-          "es": "«In that» no expresa una finalidad en esta estructura; hace falta so that.",
-          "de": "„In that“ drückt in dieser Struktur keinen Zweck aus; man braucht so that."
+          "es": "«In that» no expresa una finalidad en esta estructura; hace falta so that."
         },
         "for": {
-          "hu": "A for that nem fejez ki célt ebben a szerkezetben; so that kell.",
           "en": "“For that” does not express a purpose in this structure; you need so that.",
-          "es": "«For that» no expresa una finalidad en esta estructura; hace falta so that.",
-          "de": "„For that“ drückt in dieser Struktur keinen Zweck aus; man braucht so that."
+          "es": "«For that» no expresa una finalidad en esta estructura; hace falta so that."
         }
       },
       "examples": [
         "I wrote it so that you know.",
         "We hid it so that he would not see."
       ],
-      "tr": { "hu": "Hagytunk egy üzenetet, hogy tudja.", "en": "We left a note so that she would know.", "es": "Dejamos una nota para que ella supiera.", "de": "Wir haben eine Nachricht hinterlassen, damit sie es weiß." }
+      "tr": { "en": "We left a note so that she would know.", "es": "Dejamos una nota para que ella supiera." }
     },
     {
       "id": "prs-17",
@@ -1087,30 +885,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Eredmény új mondat elején: Consequently,",
         "en": "A result at the start of a new sentence: Consequently,",
-        "es": "Un resultado al inicio de una oración nueva: Consequently,",
-        "de": "Eine Folge am Anfang eines neuen Satzes: Consequently,"
+        "es": "Un resultado al inicio de una oración nueva: Consequently,"
       },
       "wrong": {
         "However": {
-          "hu": "A however ellentétet jelez, nem eredményt.",
           "en": "However marks a contrast, not a result.",
-          "es": "However marca un contraste, no un resultado.",
-          "de": "However markiert einen Gegensatz, keine Folge."
+          "es": "However marca un contraste, no un resultado."
         },
         "Although": {
-          "hu": "Az although ellentétet jelez, és tagmondatot vezet be.",
           "en": "Although marks a contrast and introduces a clause.",
-          "es": "Although marca un contraste e introduce una cláusula.",
-          "de": "Although markiert einen Gegensatz und leitet einen Teilsatz ein."
+          "es": "Although marca un contraste e introduce una cláusula."
         }
       },
       "examples": [
         "It was late. Consequently, we left.",
         "He was ill. Consequently, he stayed."
       ],
-      "tr": { "hu": "A bolt zárva volt. Következésképpen hazamentünk.", "en": "The shop was closed. Consequently, we went home.", "es": "La tienda estaba cerrada. Por consiguiente, nos fuimos a casa.", "de": "Der Laden war geschlossen. Infolgedessen sind wir nach Hause gegangen." }
+      "tr": { "en": "The shop was closed. Consequently, we went home.", "es": "La tienda estaba cerrada. Por consiguiente, nos fuimos a casa." }
     },
     {
       "id": "prs-18",
@@ -1179,46 +971,34 @@
       "es": "I went to the store to buy milk.",
       "target": "to buy",
       "tr": {
-        "hu": "Azért mentem a boltba, hogy tejet vegyek.",
         "en": "I went to the store to buy milk.",
-        "es": "Fui a la tienda para comprar leche.",
-        "de": "Ich ging in den Laden, um Milch zu kaufen."
+        "es": "Fui a la tienda para comprar leche."
       },
       "options": [
         {
           "text": {
-            "hu": "cél: to + alapige, ugyanaz az alany",
             "en": "purpose: to + base verb, the same subject",
-            "es": "finalidad: to + verbo base, el mismo sujeto",
-            "de": "Zweck: to + Grundform, dasselbe Subjekt"
+            "es": "finalidad: to + verbo base, el mismo sujeto"
           }
         },
         {
           "text": {
-            "hu": "irány: a bolt felé",
             "en": "a direction: towards the store",
-            "es": "una dirección: hacia la tienda",
-            "de": "eine Richtung: zum Laden"
+            "es": "una dirección: hacia la tienda"
           },
           "wrong": {
-            "hu": "A to buy ige előtt áll, ezért célt fejez ki, nem irányt.",
             "en": "To buy stands before a verb, so it expresses a purpose, not a direction.",
-            "es": "To buy va antes de un verbo, por eso expresa una finalidad, no una dirección.",
-            "de": "To buy steht vor einem Verb, deshalb drückt es einen Zweck aus, keine Richtung."
+            "es": "To buy va antes de un verbo, por eso expresa una finalidad, no una dirección."
           }
         },
         {
           "text": {
-            "hu": "eredmény: ezért vásárolt",
             "en": "a result: so he bought",
-            "es": "un resultado: por eso compró",
-            "de": "eine Folge: deshalb kaufte er"
+            "es": "un resultado: por eso compró"
           },
           "wrong": {
-            "hu": "A to buy célt fejez ki, nem eredményt.",
             "en": "To buy expresses a purpose, not a result.",
-            "es": "To buy expresa una finalidad, no un resultado.",
-            "de": "To buy drückt einen Zweck aus, keine Folge."
+            "es": "To buy expresa una finalidad, no un resultado."
           }
         }
       ],
@@ -1230,46 +1010,34 @@
       "es": "I speak slowly so that you can understand.",
       "target": "so that",
       "tr": {
-        "hu": "Lassan beszélek, hogy megérts.",
         "en": "I speak slowly so that you can understand.",
-        "es": "Hablo despacio para que me entiendas.",
-        "de": "Ich spreche langsam, damit du mich verstehst."
+        "es": "Hablo despacio para que me entiendas."
       },
       "options": [
         {
           "text": {
-            "hu": "ellentét",
             "en": "a contrast",
-            "es": "un contraste",
-            "de": "ein Gegensatz"
+            "es": "un contraste"
           },
           "wrong": {
-            "hu": "A so that célt jelez, nem ellentétet.",
             "en": "So that marks a purpose, not a contrast.",
-            "es": "So that marca una finalidad, no un contraste.",
-            "de": "So that markiert einen Zweck, keinen Gegensatz."
+            "es": "So that marca una finalidad, no un contraste."
           }
         },
         {
           "text": {
-            "hu": "cél tagmondattal: so that + tagmondat",
             "en": "purpose with a clause: so that + a clause",
-            "es": "finalidad con una cláusula: so that + una cláusula",
-            "de": "Zweck mit Teilsatz: so that + Teilsatz"
+            "es": "finalidad con una cláusula: so that + una cláusula"
           }
         },
         {
           "text": {
-            "hu": "to + alapige: ugyanaz a személy",
             "en": "to + base verb: the same person",
-            "es": "to + verbo base: la misma persona",
-            "de": "to + Grundform: dieselbe Person"
+            "es": "to + verbo base: la misma persona"
           },
           "wrong": {
-            "hu": "A to understand azt jelentené, hogy én értem meg; itt te érted meg (you can understand), ezért so that + tagmondat kell.",
             "en": "To understand would mean that I understand; here you understand (you can understand), so you need so that + a clause.",
-            "es": "To understand significaría que yo entiendo; aquí tú entiendes (you can understand), por eso hace falta so that + una cláusula.",
-            "de": "To understand würde heißen, dass ich verstehe; hier verstehst du (you can understand), deshalb braucht man so that + Teilsatz."
+            "es": "To understand significaría que yo entiendo; aquí tú entiendes (you can understand), por eso hace falta so that + una cláusula."
           }
         }
       ],
@@ -1281,46 +1049,34 @@
       "es": "It was so cold that we stayed in.",
       "target": "so cold that",
       "tr": {
-        "hu": "Olyan hideg volt, hogy bent maradtunk.",
         "en": "It was so cold that we stayed in.",
-        "es": "Hacía tanto frío que nos quedamos adentro.",
-        "de": "Es war so kalt, dass wir drinnen blieben."
+        "es": "Hacía tanto frío que nos quedamos adentro."
       },
       "options": [
         {
           "text": {
-            "hu": "cél",
             "en": "a purpose",
-            "es": "una finalidad",
-            "de": "ein Zweck"
+            "es": "una finalidad"
           },
           "wrong": {
-            "hu": "A so … that eredményt jelez, nem célt.",
             "en": "So … that marks a result, not a purpose.",
-            "es": "So … that marca un resultado, no una finalidad.",
-            "de": "So … that markiert eine Folge, keinen Zweck."
+            "es": "So … that marca un resultado, no una finalidad."
           }
         },
         {
           "text": {
-            "hu": "eredmény: so + melléknév + that",
             "en": "a result: so + adjective + that",
-            "es": "un resultado: so + adjetivo + that",
-            "de": "eine Folge: so + Adjektiv + that"
+            "es": "un resultado: so + adjetivo + that"
           }
         },
         {
           "text": {
-            "hu": "such + melléknév",
             "en": "such + adjective",
-            "es": "such + adjetivo",
-            "de": "such + Adjektiv"
+            "es": "such + adjetivo"
           },
           "wrong": {
-            "hu": "A such főnévvel áll; itt melléknév van, ezért so kell.",
             "en": "Such goes with a noun; here there is an adjective, so you need so.",
-            "es": "Such va con un sustantivo; aquí hay un adjetivo, por eso hace falta so.",
-            "de": "Such steht mit einem Nomen; hier steht ein Adjektiv, deshalb braucht man so."
+            "es": "Such va con un sustantivo; aquí hay un adjetivo, por eso hace falta so."
           }
         }
       ],
@@ -1332,46 +1088,34 @@
       "es": "It was such a cold day that we stayed in.",
       "target": "such a cold day",
       "tr": {
-        "hu": "Olyan hideg nap volt, hogy bent maradtunk.",
         "en": "It was such a cold day that we stayed in.",
-        "es": "Fue un día tan frío que nos quedamos adentro.",
-        "de": "Es war ein so kalter Tag, dass wir drinnen blieben."
+        "es": "Fue un día tan frío que nos quedamos adentro."
       },
       "options": [
         {
           "text": {
-            "hu": "so + főnév",
             "en": "so + noun",
-            "es": "so + sustantivo",
-            "de": "so + Nomen"
+            "es": "so + sustantivo"
           },
           "wrong": {
-            "hu": "A főnév előtt such áll, nem so.",
             "en": "Before a noun comes such, not so.",
-            "es": "Antes de un sustantivo va such, no so.",
-            "de": "Vor einem Nomen steht such, nicht so."
+            "es": "Antes de un sustantivo va such, no so."
           }
         },
         {
           "text": {
-            "hu": "such + a + melléknév + főnév + that",
             "en": "such + a + adjective + noun + that",
-            "es": "such + a + adjetivo + sustantivo + that",
-            "de": "such + a + Adjektiv + Nomen + that"
+            "es": "such + a + adjetivo + sustantivo + that"
           }
         },
         {
           "text": {
-            "hu": "too + főnév",
             "en": "too + noun",
-            "es": "too + sustantivo",
-            "de": "too + Nomen"
+            "es": "too + sustantivo"
           },
           "wrong": {
-            "hu": "A too melléknév előtt áll, és to + alapige követi.",
             "en": "Too goes before an adjective and is followed by to + base verb.",
-            "es": "Too va antes de un adjetivo y lo sigue to + verbo base.",
-            "de": "Too steht vor einem Adjektiv und wird von to + Grundform gefolgt."
+            "es": "Too va antes de un adjetivo y lo sigue to + verbo base."
           }
         }
       ],
@@ -1383,46 +1127,34 @@
       "es": "She is too tired to study.",
       "target": "too tired to",
       "tr": {
-        "hu": "Túl fáradt ahhoz, hogy tanuljon.",
         "en": "She is too tired to study.",
-        "es": "Está demasiado cansada para estudiar.",
-        "de": "Sie ist zu müde, um zu lernen."
+        "es": "Está demasiado cansada para estudiar."
       },
       "options": [
         {
           "text": {
-            "hu": "elég fáradt: tud tanulni",
             "en": "tired enough: she can study",
-            "es": "lo bastante cansada: puede estudiar",
-            "de": "müde genug: sie kann lernen"
+            "es": "lo bastante cansada: puede estudiar"
           },
           "wrong": {
-            "hu": "A too tired to azt jelenti, hogy nem tud tanulni.",
             "en": "Too tired to means she cannot study.",
-            "es": "Too tired to significa que no puede estudiar.",
-            "de": "Too tired to heißt, dass sie nicht lernen kann."
+            "es": "Too tired to significa que no puede estudiar."
           }
         },
         {
           "text": {
-            "hu": "cél: azért fáradt, hogy tanuljon",
             "en": "a purpose: tired so that she studies",
-            "es": "una finalidad: cansada para estudiar",
-            "de": "ein Zweck: müde, um zu lernen"
+            "es": "una finalidad: cansada para estudiar"
           },
           "wrong": {
-            "hu": "A too nem célt fejez ki; a túlzott mértéket.",
             "en": "Too does not express a purpose but an excessive degree.",
-            "es": "Too no expresa una finalidad sino un grado excesivo.",
-            "de": "Too drückt keinen Zweck aus, sondern ein übermäßiges Maß."
+            "es": "Too no expresa una finalidad sino un grado excesivo."
           }
         },
         {
           "text": {
-            "hu": "too + melléknév + to: túlságosan ahhoz, hogy",
             "en": "too + adjective + to: too much to",
-            "es": "too + adjetivo + to: demasiado para",
-            "de": "too + Adjektiv + to: zu … um"
+            "es": "too + adjetivo + to: demasiado para"
           }
         }
       ],

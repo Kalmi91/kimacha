@@ -3,42 +3,32 @@
   "topic": "hedging_language",
   "level": "C1",
   "title": {
-    "hu": "Óvatos fogalmazás (This may indicate …, It appears that …, tend to)",
     "en": "Hedging Language (This may indicate …, It appears that …, tend to)",
-    "es": "El lenguaje atenuado (This may indicate …, It appears that …, tend to)",
-    "de": "Abschwächende Sprache (This may indicate …, It appears that …, tend to)"
+    "es": "El lenguaje atenuado (This may indicate …, It appears that …, tend to)"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "Az óvatos fogalmazás (hedging) azt jelzi, hogy valami nem teljesen biztos vagy nem mindenkire igaz. Tudományos, szakmai és udvarias nyelvben gyakori: „This may indicate a problem.” (Ez problémára utalhat.) „Young people tend to use phones more.” (A fiatalok hajlamosak többet használni.) Eszközei: módbeli igék (may, might, could), igék (seem, appear, tend, suggest), határozószók (probably, arguably, generally), szerkezetek (it is likely that, to some extent). A spanyol „podría”, „parece que”, „tiende a”, „es probable que” felel meg nekik.",
         "en": "Hedging signals that something is not completely certain or not true for everyone. It is common in academic, professional and polite language: “This may indicate a problem.” “Young people tend to use phones more.” Its tools are modal verbs (may, might, could), verbs (seem, appear, tend, suggest), adverbs (probably, arguably, generally) and structures (it is likely that, to some extent). The Spanish “podría”, “parece que”, “tiende a” and “es probable que” match them.",
-        "es": "El lenguaje atenuado (hedging) indica que algo no es del todo seguro o no vale para todos. Es común en el lenguaje académico, profesional y cortés: «This may indicate a problem.» «Young people tend to use phones more.» Sus herramientas son los verbos modales (may, might, could), los verbos (seem, appear, tend, suggest), los adverbios (probably, arguably, generally) y las estructuras (it is likely that, to some extent). El «podría», el «parece que», el «tiende a» y el «es probable que» del español les corresponden.",
-        "de": "Abschwächende Sprache (Hedging) zeigt, dass etwas nicht ganz sicher oder nicht für alle wahr ist. Sie ist in akademischer, beruflicher und höflicher Sprache üblich: «This may indicate a problem.» «Young people tend to use phones more.» Ihre Mittel sind Modalverben (may, might, could), Verben (seem, appear, tend, suggest), Adverbien (probably, arguably, generally) und Strukturen (it is likely that, to some extent). Das spanische «podría», «parece que», «tiende a» und «es probable que» entsprechen ihnen."
+        "es": "El lenguaje atenuado (hedging) indica que algo no es del todo seguro o no vale para todos. Es común en el lenguaje académico, profesional y cortés: «This may indicate a problem.» «Young people tend to use phones more.» Sus herramientas son los verbos modales (may, might, could), los verbos (seem, appear, tend, suggest), los adverbios (probably, arguably, generally) y las estructuras (it is likely that, to some extent). El «podría», el «parece que», el «tiende a» y el «es probable que» del español les corresponden."
       }
     },
     {
       "kind": "table",
       "id": "hdg-forms",
       "title": {
-        "hu": "Melyik szó?",
         "en": "Which word?",
-        "es": "¿Qué palabra uso?",
-        "de": "Welches Wort?"
+        "es": "¿Qué palabra uso?"
       },
       "header": [
         {
-          "hu": "Jelentés",
           "en": "Meaning",
-          "es": "Significado",
-          "de": "Bedeutung"
+          "es": "Significado"
         },
         {
-          "hu": "forma",
           "en": "form",
-          "es": "forma",
-          "de": "Form"
+          "es": "forma"
         }
       ],
       "rows": [
@@ -71,36 +61,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Módbeli igék: may, might, could",
         "en": "Modal verbs: may, might, could",
-        "es": "Verbos modales: may, might, could",
-        "de": "Modalverben: may, might, could"
+        "es": "Verbos modales: may, might, could"
       },
       "items": [
         {
           "text": {
-            "hu": "A may, a might és a could lehetőséget jelez, nem biztosat. A will és a must biztosságot fejez ki, ezért óvatos szövegben ritkábbak: „This may be due to stress.” „It could suggest a problem.”",
             "en": "May, might and could mark a possibility, not a certainty. Will and must express certainty, so they are rarer in careful text: “This may be due to stress.” “It could suggest a problem.”",
-            "es": "May, might y could marcan una posibilidad, no una certeza. Will y must expresan certeza, por eso son más raros en un texto cuidadoso: «This may be due to stress.» «It could suggest a problem.»",
-            "de": "May, might und could markieren eine Möglichkeit, keine Gewissheit. Will und must drücken Gewissheit aus, deshalb sind sie in vorsichtigen Texten seltener: «This may be due to stress.» «It could suggest a problem.»"
+            "es": "May, might y could marcan una posibilidad, no una certeza. Will y must expresan certeza, por eso son más raros en un texto cuidadoso: «This may be due to stress.» «It could suggest a problem.»"
           },
           "examples": [
             {
               "es": "This may be caused by stress.",
               "tr": {
-                "hu": "Ezt a stressz okozhatja.",
                 "en": "This may be caused by stress.",
-                "es": "Esto puede estar causado por el estrés.",
-                "de": "Das könnte durch Stress verursacht sein."
+                "es": "Esto puede estar causado por el estrés."
               }
             },
             {
               "es": "It could suggest a deeper problem.",
               "tr": {
-                "hu": "Ez mélyebb problémára utalhat.",
                 "en": "It could suggest a deeper problem.",
-                "es": "Podría sugerir un problema más profundo.",
-                "de": "Das könnte auf ein tieferes Problem hindeuten."
+                "es": "Podría sugerir un problema más profundo."
               }
             }
           ]
@@ -110,64 +92,50 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Óvatos igék: seem, appear, tend, suggest, indicate",
         "en": "Hedging verbs: seem, appear, tend, suggest, indicate",
-        "es": "Verbos atenuantes: seem, appear, tend, suggest, indicate",
-        "de": "Abschwächende Verben: seem, appear, tend, suggest, indicate"
+        "es": "Verbos atenuantes: seem, appear, tend, suggest, indicate"
       },
       "items": [
         {
           "text": {
-            "hu": "A seem és az appear után to-infinitív vagy that-mondat áll. A tend to általános hajlamot jelent. A suggest és az indicate gyengébb, mint a prove: „The results suggest that the method works.”",
             "en": "After seem and appear comes a to-infinitive or a that-clause. Tend to means a general tendency. Suggest and indicate are weaker than prove: “The results suggest that the method works.”",
-            "es": "Después de seem y appear va un to-infinitivo o una cláusula con that. Tend to significa una tendencia general. Suggest e indicate son más débiles que prove: «The results suggest that the method works.»",
-            "de": "Nach seem und appear steht ein to-Infinitiv oder ein that-Satz. Tend to bedeutet eine allgemeine Neigung. Suggest und indicate sind schwächer als prove: «The results suggest that the method works.»"
+            "es": "Después de seem y appear va un to-infinitivo o una cláusula con that. Tend to significa una tendencia general. Suggest e indicate son más débiles que prove: «The results suggest that the method works.»"
           },
           "examples": [
             {
               "es": "The results suggest that the method works.",
               "tr": {
-                "hu": "Az eredmények arra utalnak, hogy a módszer működik.",
                 "en": "The results suggest that the method works.",
-                "es": "Los resultados sugieren que el método funciona.",
-                "de": "Die Ergebnisse deuten darauf hin, dass die Methode funktioniert."
+                "es": "Los resultados sugieren que el método funciona."
               }
             },
             {
               "es": "Young people tend to use phones more.",
               "tr": {
-                "hu": "A fiatalok hajlamosak többet használni a telefont.",
                 "en": "Young people tend to use phones more.",
-                "es": "Los jóvenes tienden a usar más el celular.",
-                "de": "Junge Leute neigen dazu, das Handy mehr zu benutzen."
+                "es": "Los jóvenes tienden a usar más el celular."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Személytelen forma: „It appears that prices will rise.” „The drug seems to be effective.”",
             "en": "An impersonal form: “It appears that prices will rise.” “The drug seems to be effective.”",
-            "es": "Una forma impersonal: «It appears that prices will rise.» «The drug seems to be effective.»",
-            "de": "Eine unpersönliche Form: «It appears that prices will rise.» «The drug seems to be effective.»"
+            "es": "Una forma impersonal: «It appears that prices will rise.» «The drug seems to be effective.»"
           },
           "examples": [
             {
               "es": "It appears that prices will rise.",
               "tr": {
-                "hu": "Úgy tűnik, az árak emelkedni fognak.",
                 "en": "It appears that prices will rise.",
-                "es": "Parece que los precios subirán.",
-                "de": "Es scheint, dass die Preise steigen werden."
+                "es": "Parece que los precios subirán."
               }
             },
             {
               "es": "The drug seems to be effective.",
               "tr": {
-                "hu": "A gyógyszer hatásosnak tűnik.",
                 "en": "The drug seems to be effective.",
-                "es": "El medicamento parece ser eficaz.",
-                "de": "Das Medikament scheint wirksam zu sein."
+                "es": "El medicamento parece ser eficaz."
               }
             }
           ]
@@ -177,36 +145,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Határozószók és kifejezések",
         "en": "Adverbs and phrases",
-        "es": "Adverbios y expresiones",
-        "de": "Adverbien und Wendungen"
+        "es": "Adverbios y expresiones"
       },
       "items": [
         {
           "text": {
-            "hu": "Probably, possibly, arguably, apparently, generally, relatively, somewhat; to some extent, in most cases, to a certain degree. Az absztrakt „always, never, all” helyett gyakran „often, rarely, most” áll.",
             "en": "Probably, possibly, arguably, apparently, generally, relatively, somewhat; to some extent, in most cases, to a certain degree. Instead of the absolute “always, never, all” you often use “often, rarely, most”.",
-            "es": "Probably, possibly, arguably, apparently, generally, relatively, somewhat; to some extent, in most cases, to a certain degree. En lugar de los absolutos «always, never, all» se usa a menudo «often, rarely, most».",
-            "de": "Probably, possibly, arguably, apparently, generally, relatively, somewhat; to some extent, in most cases, to a certain degree. Statt der absoluten «always, never, all» steht oft «often, rarely, most»."
+            "es": "Probably, possibly, arguably, apparently, generally, relatively, somewhat; to some extent, in most cases, to a certain degree. En lugar de los absolutos «always, never, all» se usa a menudo «often, rarely, most»."
           },
           "examples": [
             {
               "es": "Arguably, the situation has improved.",
               "tr": {
-                "hu": "Vitathatóan a helyzet javult.",
                 "en": "Arguably, the situation has improved.",
-                "es": "Podría decirse que la situación ha mejorado.",
-                "de": "Man kann sagen, dass sich die Lage verbessert hat."
+                "es": "Podría decirse que la situación ha mejorado."
               }
             },
             {
               "es": "In most cases, the treatment works.",
               "tr": {
-                "hu": "A legtöbb esetben a kezelés működik.",
                 "en": "In most cases, the treatment works.",
-                "es": "En la mayoría de los casos el tratamiento funciona.",
-                "de": "In den meisten Fällen wirkt die Behandlung."
+                "es": "En la mayoría de los casos el tratamiento funciona."
               }
             }
           ]
@@ -216,36 +176,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Személytelen szerkezetek és udvarias kérések",
         "en": "Impersonal structures and polite requests",
-        "es": "Estructuras impersonales y peticiones corteses",
-        "de": "Unpersönliche Strukturen und höfliche Bitten"
+        "es": "Estructuras impersonales y peticiones corteses"
       },
       "items": [
         {
           "text": {
-            "hu": "It is likely / possible / probable that…; there is some evidence that…; it could be argued that… Kérésnél: „I was wondering if you could help me.” „It might be better to wait.”",
             "en": "It is likely / possible / probable that…; there is some evidence that…; it could be argued that… For requests: “I was wondering if you could help me.” “It might be better to wait.”",
-            "es": "It is likely / possible / probable that…; there is some evidence that…; it could be argued that… Para peticiones: «I was wondering if you could help me.» «It might be better to wait.»",
-            "de": "It is likely / possible / probable that…; there is some evidence that…; it could be argued that… Bei Bitten: «I was wondering if you could help me.» «It might be better to wait.»"
+            "es": "It is likely / possible / probable that…; there is some evidence that…; it could be argued that… Para peticiones: «I was wondering if you could help me.» «It might be better to wait.»"
           },
           "examples": [
             {
               "es": "It is likely that the economy will recover.",
               "tr": {
-                "hu": "Valószínű, hogy a gazdaság talpra áll.",
                 "en": "It is likely that the economy will recover.",
-                "es": "Es probable que la economía se recupere.",
-                "de": "Es ist wahrscheinlich, dass sich die Wirtschaft erholt."
+                "es": "Es probable que la economía se recupere."
               }
             },
             {
               "es": "I was wondering if you could help me.",
               "tr": {
-                "hu": "Azon gondolkodtam, tudnál-e segíteni.",
                 "en": "I was wondering if you could help me.",
-                "es": "Me preguntaba si podrías ayudarme.",
-                "de": "Ich habe mich gefragt, ob du mir helfen könntest."
+                "es": "Me preguntaba si podrías ayudarme."
               }
             }
           ]
@@ -255,414 +207,322 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Az óvatos fogalmazás nem gyengeség, hanem pontosság: ha valami nem biztos, a will vagy az always túl erős. A túl sok hedge viszont bizonytalanná teszi a szöveget: elég egy vagy kettő mondatonként.",
         "en": "Hedging is not weakness but accuracy: if something is not certain, will or always is too strong. Too many hedges, however, make the text vague: one or two per sentence are enough.",
-        "es": "El lenguaje atenuado no es debilidad sino exactitud: si algo no es seguro, will o always es demasiado fuerte. Demasiados atenuantes, en cambio, vuelven vago el texto: basta uno o dos por oración.",
-        "de": "Abschwächende Sprache ist keine Schwäche, sondern Genauigkeit: Wenn etwas nicht sicher ist, ist will oder always zu stark. Zu viele Abschwächungen machen den Text aber vage: ein bis zwei pro Satz genügen."
+        "es": "El lenguaje atenuado no es debilidad sino exactitud: si algo no es seguro, will o always es demasiado fuerte. Demasiados atenuantes, en cambio, vuelven vago el texto: basta uno o dos por oración."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "Spanyol hatás: a „puede ser que” angolul it may be that, a „a lo mejor” perhaps. A „tiende a” angolban tends to, a többes számú alanynál tend to: „Young people tend to…”.",
         "en": "Spanish influence: the Spanish “puede ser que” is it may be that in English, and “a lo mejor” is perhaps. The Spanish “tiende a” is tends to, and with a plural subject tend to: “Young people tend to…”.",
-        "es": "Influencia del español: el «puede ser que» del español es it may be that en inglés, y «a lo mejor» es perhaps. El «tiende a» es tends to, y con sujeto plural tend to: «Young people tend to…».",
-        "de": "Einfluss des Spanischen: das spanische «puede ser que» ist im Englischen it may be that, und «a lo mejor» ist perhaps. Das spanische «tiende a» ist tends to, und bei Plural-Subjekt tend to: «Young people tend to…»."
+        "es": "Influencia del español: el «puede ser que» del español es it may be that en inglés, y «a lo mejor» es perhaps. El «tiende a» es tends to, y con sujeto plural tend to: «Young people tend to…»."
       }
     }
   ],
   "speak": {
-    "hu": "Az óvatos fogalmazás azt jelzi, hogy valami nem teljesen biztos vagy nem mindenkire igaz. Eszközei a «may», a «might» és a «could»: «This may indicate a problem». Az igék: «seem», «appear», «tend», «suggest»: «The results suggest that the method works», «Young people tend to use phones more». A szerkezetek: «it is likely that», «to some extent», «in most cases». Udvarias kérésnél: «I was wondering if you could help me».",
     "en": "Hedging signals that something is not completely certain or not true for everyone. Its tools are «may», «might» and «could»: «This may indicate a problem». The verbs are «seem», «appear», «tend», «suggest»: «The results suggest that the method works», «Young people tend to use phones more». The structures are «it is likely that», «to some extent», «in most cases». For a polite request: «I was wondering if you could help me».",
-    "es": "El lenguaje atenuado indica que algo no es del todo seguro o no vale para todos. Sus herramientas son «may», «might» y «could»: «This may indicate a problem». Los verbos son «seem», «appear», «tend», «suggest»: «The results suggest that the method works», «Young people tend to use phones more». Las estructuras son «it is likely that», «to some extent», «in most cases». Para una petición cortés: «I was wondering if you could help me».",
-    "de": "Abschwächende Sprache zeigt, dass etwas nicht ganz sicher oder nicht für alle wahr ist. Ihre Mittel sind «may», «might» und «could»: «This may indicate a problem». Die Verben sind «seem», «appear», «tend», «suggest»: «The results suggest that the method works», «Young people tend to use phones more». Die Strukturen sind «it is likely that», «to some extent», «in most cases». Bei einer höflichen Bitte: «I was wondering if you could help me»."
+    "es": "El lenguaje atenuado indica que algo no es del todo seguro o no vale para todos. Sus herramientas son «may», «might» y «could»: «This may indicate a problem». Los verbos son «seem», «appear», «tend», «suggest»: «The results suggest that the method works», «Young people tend to use phones more». Las estructuras son «it is likely that», «to some extent», «in most cases». Para una petición cortés: «I was wondering if you could help me»."
   },
   "glossary": [
     {
       "word": "apparently",
       "gloss": {
-        "hu": "úgy tűnik, állítólag",
         "en": "it seems",
-        "es": "al parecer",
-        "de": "anscheinend"
+        "es": "al parecer"
       }
     },
     {
       "word": "appear",
       "gloss": {
-        "hu": "tűnik, megjelenik",
         "en": "to seem",
-        "es": "parecer",
-        "de": "scheinen"
+        "es": "parecer"
       }
     },
     {
       "word": "appearing",
       "gloss": {
-        "hu": "tűnik (ige-ing alak)",
         "en": "-ing form of appear",
-        "es": "pareciendo (forma -ing de appear)",
-        "de": "scheinen (-ing-Form von appear)"
+        "es": "pareciendo (forma -ing de appear)"
       }
     },
     {
       "word": "appears",
       "gloss": {
-        "hu": "tűnik (he/she/it)",
         "en": "it seems",
-        "es": "parece",
-        "de": "scheint"
+        "es": "parece"
       }
     },
     {
       "word": "arguable",
       "gloss": {
-        "hu": "vitatható",
         "en": "open to argument",
-        "es": "discutible",
-        "de": "diskutabel"
+        "es": "discutible"
       }
     },
     {
       "word": "arguably",
       "gloss": {
-        "hu": "vitathatóan",
         "en": "one can argue",
-        "es": "podría decirse",
-        "de": "wohl"
+        "es": "podría decirse"
       }
     },
     {
       "word": "argue",
       "gloss": {
-        "hu": "érvel, vitatkozik",
         "en": "to give reasons",
-        "es": "argumentar",
-        "de": "argumentieren"
+        "es": "argumentar"
       }
     },
     {
       "word": "argued",
       "gloss": {
-        "hu": "érvelt (az argue múltja)",
         "en": "past form of argue",
-        "es": "argumentó (pasado de argue)",
-        "de": "argumentierte (Past von argue)"
+        "es": "argumentó (pasado de argue)"
       }
     },
     {
       "word": "arguing",
       "gloss": {
-        "hu": "érvel (ige-ing alak)",
         "en": "-ing form of argue",
-        "es": "argumentando (forma -ing de argue)",
-        "de": "argumentieren (-ing-Form von argue)"
+        "es": "argumentando (forma -ing de argue)"
       }
     },
     {
       "word": "bark",
       "gloss": {
-        "hu": "ugat",
         "en": "the sound a dog makes",
-        "es": "ladrar",
-        "de": "bellen"
+        "es": "ladrar"
       }
     },
     {
       "word": "caused",
       "gloss": {
-        "hu": "okozott (az cause múltja)",
         "en": "past form of cause",
-        "es": "causó (pasado de cause)",
-        "de": "verursachte (Past von cause)"
+        "es": "causó (pasado de cause)"
       }
     },
     {
       "word": "cases",
       "gloss": {
-        "hu": "esetek",
         "en": "examples of a situation",
-        "es": "casos",
-        "de": "Fälle"
+        "es": "casos"
       }
     },
     {
       "word": "data",
       "gloss": {
-        "hu": "adatok",
         "en": "facts and numbers",
-        "es": "datos",
-        "de": "Daten"
+        "es": "datos"
       }
     },
     {
       "word": "drug",
       "gloss": {
-        "hu": "gyógyszer",
         "en": "medicine",
-        "es": "medicamento",
-        "de": "Medikament"
+        "es": "medicamento"
       }
     },
     {
       "word": "entirety",
       "gloss": {
-        "hu": "teljesség",
         "en": "the whole",
-        "es": "totalidad",
-        "de": "Gesamtheit"
+        "es": "totalidad"
       }
     },
     {
       "word": "evident",
       "gloss": {
-        "hu": "nyilvánvaló",
         "en": "easy to see",
-        "es": "evidente",
-        "de": "offensichtlich"
+        "es": "evidente"
       }
     },
     {
       "word": "evidently",
       "gloss": {
-        "hu": "nyilvánvalóan",
         "en": "clearly",
-        "es": "evidentemente",
-        "de": "offensichtlich"
+        "es": "evidentemente"
       }
     },
     {
       "word": "extent",
       "gloss": {
-        "hu": "mérték",
         "en": "how far something goes",
-        "es": "medida, grado",
-        "de": "Ausmaß"
+        "es": "medida, grado"
       }
     },
     {
       "word": "facts",
       "gloss": {
-        "hu": "tények",
         "en": "things that are true",
-        "es": "hechos",
-        "de": "Tatsachen"
+        "es": "hechos"
       }
     },
     {
       "word": "fully",
       "gloss": {
-        "hu": "teljesen",
         "en": "completely",
-        "es": "por completo",
-        "de": "völlig"
+        "es": "por completo"
       }
     },
     {
       "word": "generalize",
       "gloss": {
-        "hu": "általánosít",
         "en": "to speak about all",
-        "es": "generalizar",
-        "de": "verallgemeinern"
+        "es": "generalizar"
       }
     },
     {
       "word": "indicate",
       "gloss": {
-        "hu": "jelez, utal",
         "en": "to show",
-        "es": "indicar",
-        "de": "anzeigen"
+        "es": "indicar"
       }
     },
     {
       "word": "knew",
       "gloss": {
-        "hu": "tudta (a know múltja)",
         "en": "past form of know",
-        "es": "sabía (pasado de know)",
-        "de": "wusste (Past von know)"
+        "es": "sabía (pasado de know)"
       }
     },
     {
       "word": "known",
       "gloss": {
-        "hu": "ismert, tudott (a know igenéve)",
         "en": "participle of know",
-        "es": "sabido (participio de know)",
-        "de": "gewusst (Partizip von know)"
+        "es": "sabido (participio de know)"
       }
     },
     {
       "word": "likely",
       "gloss": {
-        "hu": "valószínű",
         "en": "probable",
-        "es": "probable",
-        "de": "wahrscheinlich"
+        "es": "probable"
       }
     },
     {
       "word": "method",
       "gloss": {
-        "hu": "módszer",
         "en": "a way of doing",
-        "es": "método",
-        "de": "Methode"
+        "es": "método"
       }
     },
     {
       "word": "might",
       "gloss": {
-        "hu": "talán, lehet (módbeli)",
         "en": "maybe (modal)",
-        "es": "quizá (modal)",
-        "de": "könnte (Modal)"
+        "es": "quizá (modal)"
       }
     },
     {
       "word": "mostly",
       "gloss": {
-        "hu": "többnyire",
         "en": "mainly",
-        "es": "sobre todo",
-        "de": "meist"
+        "es": "sobre todo"
       }
     },
     {
       "word": "point",
       "gloss": {
-        "hu": "értelem, pont",
         "en": "the purpose of something",
-        "es": "sentido, punto",
-        "de": "Sinn, Punkt"
+        "es": "sentido, punto"
       }
     },
     {
       "word": "possibly",
       "gloss": {
-        "hu": "lehetséges, talán",
         "en": "maybe",
-        "es": "posiblemente",
-        "de": "möglicherweise"
+        "es": "posiblemente"
       }
     },
     {
       "word": "seem",
       "gloss": {
-        "hu": "tűnik",
         "en": "to appear",
-        "es": "parecer",
-        "de": "scheinen"
+        "es": "parecer"
       }
     },
     {
       "word": "seeming",
       "gloss": {
-        "hu": "látszó (ige-ing alak)",
         "en": "-ing form of seem",
-        "es": "aparentando (forma -ing de seem)",
-        "de": "scheinen (-ing-Form von seem)"
+        "es": "aparentando (forma -ing de seem)"
       }
     },
     {
       "word": "seems",
       "gloss": {
-        "hu": "tűnik (he/she/it)",
         "en": "it appears",
-        "es": "parece",
-        "de": "scheint"
+        "es": "parece"
       }
     },
     {
       "word": "situation",
       "gloss": {
-        "hu": "helyzet",
         "en": "how things are",
-        "es": "situación",
-        "de": "Lage"
+        "es": "situación"
       }
     },
     {
       "word": "smartphones",
       "gloss": {
-        "hu": "okostelefonok",
         "en": "phones with apps",
-        "es": "celulares inteligentes",
-        "de": "Smartphones"
+        "es": "celulares inteligentes"
       }
     },
     {
       "word": "somewhat",
       "gloss": {
-        "hu": "némileg",
         "en": "a little",
-        "es": "algo, un tanto",
-        "de": "etwas"
+        "es": "algo, un tanto"
       }
     },
     {
       "word": "somewhere",
       "gloss": {
-        "hu": "valahol",
         "en": "in a place",
-        "es": "en algún lugar",
-        "de": "irgendwo"
+        "es": "en algún lugar"
       }
     },
     {
       "word": "suggest",
       "gloss": {
-        "hu": "javasol",
         "en": "to say an idea",
-        "es": "sugerir",
-        "de": "vorschlagen"
+        "es": "sugerir"
       }
     },
     {
       "word": "suggesting",
       "gloss": {
-        "hu": "javasol (ige-ing alak)",
         "en": "-ing form of suggest",
-        "es": "sugiriendo (forma -ing de suggest)",
-        "de": "vorschlagen (-ing-Form von suggest)"
+        "es": "sugiriendo (forma -ing de suggest)"
       }
     },
     {
       "word": "suggests",
       "gloss": {
-        "hu": "arra utal (he/she/it)",
         "en": "it shows",
-        "es": "sugiere",
-        "de": "deutet an"
+        "es": "sugiere"
       }
     },
     {
       "word": "system",
       "gloss": {
-        "hu": "rendszer",
         "en": "a set of parts",
-        "es": "sistema",
-        "de": "System"
+        "es": "sistema"
       }
     },
     {
       "word": "true",
       "gloss": {
-        "hu": "igaz",
         "en": "not false",
-        "es": "verdadero",
-        "de": "wahr"
+        "es": "verdadero"
       }
     },
     {
       "word": "wiser",
       "gloss": {
-        "hu": "bölcsebb",
         "en": "more wise",
-        "es": "más sabio",
-        "de": "weiser"
+        "es": "más sabio"
       }
     }
   ],
@@ -677,30 +537,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A may óvatos lehetőséget jelez: this may be.",
         "en": "May marks a careful possibility: this may be.",
-        "es": "May marca una posibilidad cautelosa: this may be.",
-        "de": "May markiert eine vorsichtige Möglichkeit: this may be."
+        "es": "May marca una posibilidad cautelosa: this may be."
       },
       "wrong": {
         "may to": {
-          "hu": "A may után nincs to; alapige jön.",
           "en": "After may there is no to; the base verb follows.",
-          "es": "Después de may no va to; sigue el verbo base.",
-          "de": "Nach may steht kein to; die Grundform folgt."
+          "es": "Después de may no va to; sigue el verbo base."
         },
         "maybe": {
-          "hu": "A maybe határozószó („talán”); a módbeli ige két szóból áll (may be).",
           "en": "Maybe is an adverb (“perhaps”); the modal verb here is two words (may be).",
-          "es": "Maybe es un adverbio («quizá»); el verbo modal aquí es de dos palabras (may be).",
-          "de": "Maybe ist ein Adverb („vielleicht“); das Modalverb ist hier zweiteilig (may be)."
+          "es": "Maybe es un adverbio («quizá»); el verbo modal aquí es de dos palabras (may be)."
         }
       },
       "examples": [
         "It may rain later.",
         "She may know him."
       ],
-      "tr": { "hu": "Ezt okozhatja stressz is.", "en": "This may be caused by stress.", "es": "Esto puede ser causado por el estrés.", "de": "Dies kann durch Stress verursacht werden." }
+      "tr": { "en": "This may be caused by stress.", "es": "Esto puede ser causado por el estrés." }
     },
     {
       "id": "hdg-02",
@@ -712,30 +566,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Többes számú alany: the results suggest.",
         "en": "A plural subject: the results suggest.",
-        "es": "Un sujeto plural: the results suggest.",
-        "de": "Ein Plural-Subjekt: the results suggest."
+        "es": "Un sujeto plural: the results suggest."
       },
       "wrong": {
         "suggests": {
-          "hu": "A suggests egyes szám; a results többes szám.",
           "en": "Suggests is singular; results is plural.",
-          "es": "Suggests es singular; results es plural.",
-          "de": "Suggests ist Singular; results ist Plural."
+          "es": "Suggests es singular; results es plural."
         },
         "suggesting": {
-          "hu": "A suggesting nem ragozott ige; ragozott alak kell.",
           "en": "Suggesting is not a finite verb; you need a finite form.",
-          "es": "Suggesting no es un verbo conjugado; hace falta una forma conjugada.",
-          "de": "Suggesting ist kein finites Verb; man braucht eine finite Form."
+          "es": "Suggesting no es un verbo conjugado; hace falta una forma conjugada."
         }
       },
       "examples": [
         "The data suggest a trend.",
         "The facts suggest it."
       ],
-      "tr": { "hu": "Az eredmények azt sugallják, hogy a módszer működik.", "en": "The results suggest that the method works.", "es": "Los resultados sugieren que el método funciona.", "de": "Die Ergebnisse deuten darauf hin, dass die Methode funktioniert." }
+      "tr": { "en": "The results suggest that the method works.", "es": "Los resultados sugieren que el método funciona." }
     },
     {
       "id": "hdg-03",
@@ -747,30 +595,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Személytelen óvatos szerkezet: it appears that.",
         "en": "An impersonal hedge: it appears that.",
-        "es": "Un atenuante impersonal: it appears that.",
-        "de": "Eine unpersönliche Abschwächung: it appears that."
+        "es": "Un atenuante impersonal: it appears that."
       },
       "wrong": {
         "appear": {
-          "hu": "Az it appear nem helyes; az it egyes szám, appears kell.",
           "en": "“It appear” is not correct; it is singular, so you need appears.",
-          "es": "«It appear» no es correcto; it es singular, por eso hace falta appears.",
-          "de": "„It appear“ ist nicht korrekt; it ist Singular, deshalb braucht man appears."
+          "es": "«It appear» no es correcto; it es singular, por eso hace falta appears."
         },
         "appearing": {
-          "hu": "Az it appearing nem ragozott ige; ragozott alak kell.",
           "en": "“It appearing” is not a finite verb; you need a finite form.",
-          "es": "«It appearing» no es un verbo conjugado; hace falta una forma conjugada.",
-          "de": "„It appearing“ ist kein finites Verb; man braucht eine finite Form."
+          "es": "«It appearing» no es un verbo conjugado; hace falta una forma conjugada."
         }
       },
       "examples": [
         "It seems that he left.",
         "It appears that she won."
       ],
-      "tr": { "hu": "Úgy tűnik, hogy az árak emelkedni fognak.", "en": "It appears that prices will rise.", "es": "Parece que los precios van a subir.", "de": "Es scheint, dass die Preise steigen werden." }
+      "tr": { "en": "It appears that prices will rise.", "es": "Parece que los precios van a subir." }
     },
     {
       "id": "hdg-04",
@@ -782,30 +624,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Többes számú alany: young people tend to.",
         "en": "A plural subject: young people tend to.",
-        "es": "Un sujeto plural: young people tend to.",
-        "de": "Ein Plural-Subjekt: young people tend to."
+        "es": "Un sujeto plural: young people tend to."
       },
       "wrong": {
         "tends": {
-          "hu": "A tends egyes szám; a young people többes szám.",
           "en": "Tends is singular; young people is plural.",
-          "es": "Tends es singular; young people es plural.",
-          "de": "Tends ist Singular; young people ist Plural."
+          "es": "Tends es singular; young people es plural."
         },
         "tending": {
-          "hu": "A tending nem ragozott ige; ragozott alak kell.",
           "en": "Tending is not a finite verb; you need a finite form.",
-          "es": "Tending no es un verbo conjugado; hace falta una forma conjugada.",
-          "de": "Tending ist kein finites Verb; man braucht eine finite Form."
+          "es": "Tending no es un verbo conjugado; hace falta una forma conjugada."
         }
       },
       "examples": [
         "Dogs tend to bark.",
         "Prices tend to rise."
       ],
-      "tr": { "hu": "A fiatalok hajlamosak többet használni az okostelefonjukat.", "en": "Young people tend to use smartphones more.", "es": "Los jóvenes tienden a usar más los celulares.", "de": "Junge Leute neigen dazu, Smartphones mehr zu nutzen." }
+      "tr": { "en": "Young people tend to use smartphones more.", "es": "Los jóvenes tienden a usar más los celulares." }
     },
     {
       "id": "hdg-05",
@@ -817,30 +653,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Állandó kifejezés: to some extent.",
         "en": "A fixed phrase: to some extent.",
-        "es": "Una expresión fija: to some extent.",
-        "de": "Eine feste Wendung: to some extent."
+        "es": "Una expresión fija: to some extent."
       },
       "wrong": {
         "extends": {
-          "hu": "Az extends ige; a kifejezésben főnév kell (extent).",
           "en": "Extends is a verb; the phrase needs a noun (extent).",
-          "es": "Extends es un verbo; la expresión necesita un sustantivo (extent).",
-          "de": "Extends ist ein Verb; die Wendung braucht ein Nomen (extent)."
+          "es": "Extends es un verbo; la expresión necesita un sustantivo (extent)."
         },
         "extend": {
-          "hu": "Az extend ige; a kifejezésben főnév kell (extent).",
           "en": "Extend is a verb; the phrase needs a noun (extent).",
-          "es": "Extend es un verbo; la expresión necesita un sustantivo (extent).",
-          "de": "Extend ist ein Verb; die Wendung braucht ein Nomen (extent)."
+          "es": "Extend es un verbo; la expresión necesita un sustantivo (extent)."
         }
       },
       "examples": [
         "To some extent, he is right.",
         "To a large extent, it works."
       ],
-      "tr": { "hu": "Bizonyos mértékig a terv bevált.", "en": "To some extent, the plan has worked.", "es": "Hasta cierto punto, el plan ha funcionado.", "de": "Bis zu einem gewissen Grad hat der Plan funktioniert." }
+      "tr": { "en": "To some extent, the plan has worked.", "es": "Hasta cierto punto, el plan ha funcionado." }
     },
     {
       "id": "hdg-06",
@@ -852,30 +682,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Valószínűség: it is likely that.",
         "en": "Probability: it is likely that.",
-        "es": "Probabilidad: it is likely that.",
-        "de": "Wahrscheinlichkeit: it is likely that."
+        "es": "Probabilidad: it is likely that."
       },
       "wrong": {
         "like": {
-          "hu": "Az it is like that más jelentésű („ilyen”); likely kell.",
           "en": "“It is like that” has another meaning (“it is like that”); you need likely.",
-          "es": "«It is like that» tiene otro significado («es así»); hace falta likely.",
-          "de": "„It is like that“ hat eine andere Bedeutung („so ist es“); man braucht likely."
+          "es": "«It is like that» tiene otro significado («es así»); hace falta likely."
         },
         "liked": {
-          "hu": "Az it is liked that nem helyes; likely kell.",
           "en": "“It is liked that” is not correct; you need likely.",
-          "es": "«It is liked that» no es correcto; hace falta likely.",
-          "de": "„It is liked that“ ist nicht korrekt; man braucht likely."
+          "es": "«It is liked that» no es correcto; hace falta likely."
         }
       },
       "examples": [
         "It is likely that he knows.",
         "It is likely to rain."
       ],
-      "tr": { "hu": "Valószínű, hogy a gazdaság helyre fog állni.", "en": "It is likely that the economy will recover.", "es": "Es probable que la economía se recupere.", "de": "Es ist wahrscheinlich, dass sich die Wirtschaft erholen wird." }
+      "tr": { "en": "It is likely that the economy will recover.", "es": "Es probable que la economía se recupere." }
     },
     {
       "id": "hdg-07",
@@ -887,30 +711,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Szenvedő szerkezet: it could be argued that.",
         "en": "A passive structure: it could be argued that.",
-        "es": "Una estructura pasiva: it could be argued that.",
-        "de": "Eine Passivstruktur: it could be argued that."
+        "es": "Una estructura pasiva: it could be argued that."
       },
       "wrong": {
         "argue": {
-          "hu": "A be után igenév kell (argued), nem alapige.",
           "en": "After be you need a participle (argued), not the base verb.",
-          "es": "Después de be hace falta un participio (argued), no el verbo base.",
-          "de": "Nach be braucht man ein Partizip (argued), nicht die Grundform."
+          "es": "Después de be hace falta un participio (argued), no el verbo base."
         },
         "arguing": {
-          "hu": "A could be arguing folyamatos tevő alak lenne; a szerkezet szenvedő (argued).",
           "en": "“Could be arguing” would be a continuous active form; the structure is passive (argued).",
-          "es": "«Could be arguing» sería una forma activa continua; la estructura es pasiva (argued).",
-          "de": "„Could be arguing“ wäre eine aktive Verlaufsform; die Struktur ist passiv (argued)."
+          "es": "«Could be arguing» sería una forma activa continua; la estructura es pasiva (argued)."
         }
       },
       "examples": [
         "It could be said that he lied.",
         "It may be argued that it works."
       ],
-      "tr": { "hu": "Érvelhetnénk úgy is, hogy a politika kudarcot vallott.", "en": "It could be argued that the policy failed.", "es": "Se podría argumentar que la política falló.", "de": "Man könnte argumentieren, dass die Politik gescheitert ist." }
+      "tr": { "en": "It could be argued that the policy failed.", "es": "Se podría argumentar que la política falló." }
     },
     {
       "id": "hdg-08",
@@ -922,30 +740,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Többes számú alany: the results seem to.",
         "en": "A plural subject: the results seem to.",
-        "es": "Un sujeto plural: the results seem to.",
-        "de": "Ein Plural-Subjekt: the results seem to."
+        "es": "Un sujeto plural: the results seem to."
       },
       "wrong": {
         "seems": {
-          "hu": "A seems egyes szám; a results többes szám.",
           "en": "Seems is singular; results is plural.",
-          "es": "Seems es singular; results es plural.",
-          "de": "Seems ist Singular; results ist Plural."
+          "es": "Seems es singular; results es plural."
         },
         "seeming": {
-          "hu": "A seeming nem ragozott ige; ragozott alak kell.",
           "en": "Seeming is not a finite verb; you need a finite form.",
-          "es": "Seeming no es un verbo conjugado; hace falta una forma conjugada.",
-          "de": "Seeming ist kein finites Verb; man braucht eine finite Form."
+          "es": "Seeming no es un verbo conjugado; hace falta una forma conjugada."
         }
       },
       "examples": [
         "The signs seem to point there.",
         "The facts seem clear."
       ],
-      "tr": { "hu": "Az eredmények egyfajta trendet látszanak jelezni.", "en": "The results seem to indicate a trend.", "es": "Los resultados parecen indicar una tendencia.", "de": "Die Ergebnisse scheinen einen Trend anzuzeigen." }
+      "tr": { "en": "The results seem to indicate a trend.", "es": "Los resultados parecen indicar una tendencia." }
     },
     {
       "id": "hdg-09",
@@ -957,30 +769,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Óvatos mondatkezdő határozószó: Arguably,",
         "en": "A careful sentence-opening adverb: Arguably,",
-        "es": "Un adverbio cauteloso al inicio de la oración: Arguably,",
-        "de": "Ein vorsichtiges Adverb am Satzanfang: Arguably,"
+        "es": "Un adverbio cauteloso al inicio de la oración: Arguably,"
       },
       "wrong": {
         "Argue": {
-          "hu": "Az Argue alapige; mondatkezdő határozószó kell (Arguably).",
           "en": "Argue is a base verb; you need a sentence-opening adverb (Arguably).",
-          "es": "Argue es un verbo base; hace falta un adverbio al inicio de la oración (Arguably).",
-          "de": "Argue ist eine Grundform; man braucht ein Adverb am Satzanfang (Arguably)."
+          "es": "Argue es un verbo base; hace falta un adverbio al inicio de la oración (Arguably)."
         },
         "Arguable": {
-          "hu": "Az Arguable melléknév; határozószó kell (Arguably).",
           "en": "Arguable is an adjective; you need an adverb (Arguably).",
-          "es": "Arguable es un adjetivo; hace falta un adverbio (Arguably).",
-          "de": "Arguable ist ein Adjektiv; man braucht ein Adverb (Arguably)."
+          "es": "Arguable es un adjetivo; hace falta un adverbio (Arguably)."
         }
       },
       "examples": [
         "Apparently, he left.",
         "Possibly, she knows."
       ],
-      "tr": { "hu": "Vitatható, de a helyzet javult.", "en": "Arguably, the situation has improved.", "es": "Podría decirse que la situación ha mejorado.", "de": "Man kann wohl sagen, dass sich die Situation verbessert hat." }
+      "tr": { "en": "Arguably, the situation has improved.", "es": "Podría decirse que la situación ha mejorado." }
     },
     {
       "id": "hdg-10",
@@ -992,30 +798,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Főnév kell a some után: some evidence.",
         "en": "A noun is needed after some: some evidence.",
-        "es": "Después de some hace falta un sustantivo: some evidence.",
-        "de": "Nach some braucht man ein Nomen: some evidence."
+        "es": "Después de some hace falta un sustantivo: some evidence."
       },
       "wrong": {
         "evident": {
-          "hu": "Az evident melléknév; a some után főnév kell (evidence).",
           "en": "Evident is an adjective; after some you need a noun (evidence).",
-          "es": "Evident es un adjetivo; después de some hace falta un sustantivo (evidence).",
-          "de": "Evident ist ein Adjektiv; nach some braucht man ein Nomen (evidence)."
+          "es": "Evident es un adjetivo; después de some hace falta un sustantivo (evidence)."
         },
         "evidently": {
-          "hu": "Az evidently határozószó; a some után főnév kell (evidence).",
           "en": "Evidently is an adverb; after some you need a noun (evidence).",
-          "es": "Evidently es un adverbio; después de some hace falta un sustantivo (evidence).",
-          "de": "Evidently ist ein Adverb; nach some braucht man ein Nomen (evidence)."
+          "es": "Evidently es un adverbio; después de some hace falta un sustantivo (evidence)."
         }
       },
       "examples": [
         "There is little evidence of it.",
         "There is some proof."
       ],
-      "tr": { "hu": "Van némi bizonyíték arra, hogy a testmozgás segít.", "en": "There is some evidence that exercise helps.", "es": "Hay alguna evidencia de que el ejercicio ayuda.", "de": "Es gibt Hinweise darauf, dass Sport hilft." }
+      "tr": { "en": "There is some evidence that exercise helps.", "es": "Hay alguna evidencia de que el ejercicio ayuda." }
     },
     {
       "id": "hdg-11",
@@ -1027,30 +827,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Enyhítő határozószó: somewhat more efficient.",
         "en": "A softening adverb: somewhat more efficient.",
-        "es": "Un adverbio atenuante: somewhat more efficient.",
-        "de": "Ein abschwächendes Adverb: somewhat more efficient."
+        "es": "Un adverbio atenuante: somewhat more efficient."
       },
       "wrong": {
         "somewhere": {
-          "hu": "A somewhere helyet jelent („valahol”); somewhat kell.",
           "en": "Somewhere means a place (“somewhere”); you need somewhat.",
-          "es": "Somewhere significa un lugar («en algún lugar»); hace falta somewhat.",
-          "de": "Somewhere bedeutet einen Ort („irgendwo“); man braucht somewhat."
+          "es": "Somewhere significa un lugar («en algún lugar»); hace falta somewhat."
         },
         "some": {
-          "hu": "A some more efficient nem helyes; somewhat kell.",
           "en": "“Some more efficient” is not correct; you need somewhat.",
-          "es": "«Some more efficient» no es correcto; hace falta somewhat.",
-          "de": "„Some more efficient“ ist nicht korrekt; man braucht somewhat."
+          "es": "«Some more efficient» no es correcto; hace falta somewhat."
         }
       },
       "examples": [
         "It is somewhat cold.",
         "She is somewhat tired."
       ],
-      "tr": { "hu": "Az új rendszer valamivel hatékonyabb.", "en": "The new system is somewhat more efficient.", "es": "El nuevo sistema es algo más eficiente.", "de": "Das neue System ist etwas effizienter." }
+      "tr": { "en": "The new system is somewhat more efficient.", "es": "El nuevo sistema es algo más eficiente." }
     },
     {
       "id": "hdg-12",
@@ -1062,30 +856,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Enyhítő mondatkezdő határozószó: Generally,",
         "en": "A softening sentence-opening adverb: Generally,",
-        "es": "Un adverbio atenuante al inicio de la oración: Generally,",
-        "de": "Ein abschwächendes Adverb am Satzanfang: Generally,"
+        "es": "Un adverbio atenuante al inicio de la oración: Generally,"
       },
       "wrong": {
         "General": {
-          "hu": "A General melléknév; határozószó kell (Generally).",
           "en": "General is an adjective; you need an adverb (Generally).",
-          "es": "General es un adjetivo; hace falta un adverbio (Generally).",
-          "de": "General ist ein Adjektiv; man braucht ein Adverb (Generally)."
+          "es": "General es un adjetivo; hace falta un adverbio (Generally)."
         },
         "Generalize": {
-          "hu": "A Generalize ige; határozószó kell (Generally).",
           "en": "Generalize is a verb; you need an adverb (Generally).",
-          "es": "Generalize es un verbo; hace falta un adverbio (Generally).",
-          "de": "Generalize ist ein Verb; man braucht ein Adverb (Generally)."
+          "es": "Generalize es un verbo; hace falta un adverbio (Generally)."
         }
       },
       "examples": [
         "Generally, he is on time.",
         "Normally, she walks."
       ],
-      "tr": { "hu": "Általában a legtöbb diák az online órákat részesíti előnyben.", "en": "Generally, most students prefer online classes.", "es": "Generalmente, la mayoría de los estudiantes prefieren las clases en línea.", "de": "Im Allgemeinen bevorzugen die meisten Schüler Online-Unterricht." }
+      "tr": { "en": "Generally, most students prefer online classes.", "es": "Generalmente, la mayoría de los estudiantes prefieren las clases en línea." }
     },
     {
       "id": "hdg-13",
@@ -1097,30 +885,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Udvarias kérés: I was wondering if.",
         "en": "A polite request: I was wondering if.",
-        "es": "Una petición cortés: I was wondering if.",
-        "de": "Eine höfliche Bitte: I was wondering if."
+        "es": "Una petición cortés: I was wondering if."
       },
       "wrong": {
         "wonder": {
-          "hu": "Az I was wonder nem helyes; folyamatos alak kell (wondering).",
           "en": "“I was wonder” is not correct; you need the continuous form (wondering).",
-          "es": "«I was wonder» no es correcto; hace falta la forma continua (wondering).",
-          "de": "„I was wonder“ ist nicht korrekt; man braucht die Verlaufsform (wondering)."
+          "es": "«I was wonder» no es correcto; hace falta la forma continua (wondering)."
         },
         "wondered": {
-          "hu": "Az I was wondered nem helyes; folyamatos alak kell (wondering).",
           "en": "“I was wondered” is not correct; you need the continuous form (wondering).",
-          "es": "«I was wondered» no es correcto; hace falta la forma continua (wondering).",
-          "de": "„I was wondered“ ist nicht korrekt; man braucht die Verlaufsform (wondering)."
+          "es": "«I was wondered» no es correcto; hace falta la forma continua (wondering)."
         }
       },
       "examples": [
         "I was wondering if you knew.",
         "I was thinking of asking."
       ],
-      "tr": { "hu": "Azon tűnődtem, tudnál-e nekem segíteni.", "en": "I was wondering if you could help me.", "es": "Me preguntaba si podrías ayudarme.", "de": "Ich habe mich gefragt, ob du mir helfen könntest." }
+      "tr": { "en": "I was wondering if you could help me.", "es": "Me preguntaba si podrías ayudarme." }
     },
     {
       "id": "hdg-14",
@@ -1132,30 +914,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Óvatos javaslat: it might be better to.",
         "en": "A careful suggestion: it might be better to.",
-        "es": "Una sugerencia cautelosa: it might be better to.",
-        "de": "Ein vorsichtiger Vorschlag: it might be better to."
+        "es": "Una sugerencia cautelosa: it might be better to."
       },
       "wrong": {
         "more good": {
-          "hu": "A more good nem helyes; a good középfoka better.",
           "en": "“More good” is not correct; the comparative of good is better.",
-          "es": "«More good» no es correcto; el comparativo de good es better.",
-          "de": "„More good“ ist nicht korrekt; der Komparativ von good ist better."
+          "es": "«More good» no es correcto; el comparativo de good es better."
         },
         "well": {
-          "hu": "A well határozószó; a be után melléknév kell (better).",
           "en": "Well is an adverb; after be you need an adjective (better).",
-          "es": "Well es un adverbio; después de be hace falta un adjetivo (better).",
-          "de": "Well ist ein Adverb; nach be braucht man ein Adjektiv (better)."
+          "es": "Well es un adverbio; después de be hace falta un adjetivo (better)."
         }
       },
       "examples": [
         "It might be wiser to leave.",
         "It might be easier to ask."
       ],
-      "tr": { "hu": "Talán jobb lenne hétfőig várni.", "en": "It might be better to wait until Monday.", "es": "Podría ser mejor esperar hasta el lunes.", "de": "Es könnte besser sein, bis Montag zu warten." }
+      "tr": { "en": "It might be better to wait until Monday.", "es": "Podría ser mejor esperar hasta el lunes." }
     },
     {
       "id": "hdg-15",
@@ -1167,30 +943,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Enyhítő határozószó: not entirely true.",
         "en": "A softening adverb: not entirely true.",
-        "es": "Un adverbio atenuante: not entirely true.",
-        "de": "Ein abschwächendes Adverb: not entirely true."
+        "es": "Un adverbio atenuante: not entirely true."
       },
       "wrong": {
         "entire": {
-          "hu": "Az entire melléknév; melléknév előtt határozószó kell (entirely).",
           "en": "Entire is an adjective; before an adjective you need an adverb (entirely).",
-          "es": "Entire es un adjetivo; antes de un adjetivo hace falta un adverbio (entirely).",
-          "de": "Entire ist ein Adjektiv; vor einem Adjektiv braucht man ein Adverb (entirely)."
+          "es": "Entire es un adjetivo; antes de un adjetivo hace falta un adverbio (entirely)."
         },
         "entirety": {
-          "hu": "Az entirety főnév; melléknév előtt határozószó kell (entirely).",
           "en": "Entirety is a noun; before an adjective you need an adverb (entirely).",
-          "es": "Entirety es un sustantivo; antes de un adjetivo hace falta un adverbio (entirely).",
-          "de": "Entirety ist ein Nomen; vor einem Adjektiv braucht man ein Adverb (entirely)."
+          "es": "Entirety es un sustantivo; antes de un adjetivo hace falta un adverbio (entirely)."
         }
       },
       "examples": [
         "That is not completely clear.",
         "It is not fully known."
       ],
-      "tr": { "hu": "Ez nem teljesen igaz.", "en": "That is not entirely true.", "es": "Eso no es del todo cierto.", "de": "Das ist nicht ganz wahr." }
+      "tr": { "en": "That is not entirely true.", "es": "Eso no es del todo cierto." }
     },
     {
       "id": "hdg-16",
@@ -1202,30 +972,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A seem után to-infinitív áll: seems to be.",
         "en": "After seem comes a to-infinitive: seems to be.",
-        "es": "Después de seem va un to-infinitivo: seems to be.",
-        "de": "Nach seem steht ein to-Infinitiv: seems to be."
+        "es": "Después de seem va un to-infinitivo: seems to be."
       },
       "wrong": {
         "being": {
-          "hu": "A seems being nem helyes; to-infinitív kell.",
           "en": "“Seems being” is not correct; you need a to-infinitive.",
-          "es": "«Seems being» no es correcto; hace falta un to-infinitivo.",
-          "de": "„Seems being“ ist nicht korrekt; man braucht einen to-Infinitiv."
+          "es": "«Seems being» no es correcto; hace falta un to-infinitivo."
         },
         "be": {
-          "hu": "A seems be nem helyes; a to nem hagyható el.",
           "en": "“Seems be” is not correct; the to cannot be dropped.",
-          "es": "«Seems be» no es correcto; el to no se puede omitir.",
-          "de": "„Seems be“ ist nicht korrekt; das to kann nicht wegfallen."
+          "es": "«Seems be» no es correcto; el to no se puede omitir."
         }
       },
       "examples": [
         "She seems to know him.",
         "It seems to work."
       ],
-      "tr": { "hu": "A gyógyszer a legtöbb esetben hatásosnak tűnik.", "en": "The drug seems to be effective in most cases.", "es": "El medicamento parece ser efectivo en la mayoría de los casos.", "de": "Das Medikament scheint in den meisten Fällen wirksam zu sein." }
+      "tr": { "en": "The drug seems to be effective in most cases.", "es": "El medicamento parece ser efectivo en la mayoría de los casos." }
     },
     {
       "id": "hdg-17",
@@ -1237,30 +1001,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Enyhítő kifejezés: in most cases.",
         "en": "A softening phrase: in most cases.",
-        "es": "Una expresión atenuante: in most cases.",
-        "de": "Eine abschwächende Wendung: in most cases."
+        "es": "Una expresión atenuante: in most cases."
       },
       "wrong": {
         "most of": {
-          "hu": "Az in most of cases nem helyes; most of után határozott főnévi csoport kellene.",
           "en": "“In most of cases” is not correct; most of needs a definite noun phrase.",
-          "es": "«In most of cases» no es correcto; most of necesita un grupo nominal determinado.",
-          "de": "„In most of cases“ ist nicht korrekt; most of braucht eine bestimmte Nominalgruppe."
+          "es": "«In most of cases» no es correcto; most of necesita un grupo nominal determinado."
         },
         "mostly": {
-          "hu": "A mostly határozószó; főnév előtt determináns kell (most).",
           "en": "Mostly is an adverb; before a noun you need a determiner (most).",
-          "es": "Mostly es un adverbio; antes de un sustantivo hace falta un determinante (most).",
-          "de": "Mostly ist ein Adverb; vor einem Nomen braucht man ein Bestimmungswort (most)."
+          "es": "Mostly es un adverbio; antes de un sustantivo hace falta un determinante (most)."
         }
       },
       "examples": [
         "In some cases, it fails.",
         "In many cases, it helps."
       ],
-      "tr": { "hu": "A legtöbb esetben a kezelés működik.", "en": "In most cases, the treatment works.", "es": "En la mayoría de los casos, el tratamiento funciona.", "de": "In den meisten Fällen wirkt die Behandlung." }
+      "tr": { "en": "In most cases, the treatment works.", "es": "En la mayoría de los casos, el tratamiento funciona." }
     },
     {
       "id": "hdg-18",
@@ -1329,46 +1087,34 @@
       "es": "This may indicate a problem.",
       "target": "may indicate",
       "tr": {
-        "hu": "Ez problémára utalhat.",
         "en": "This may indicate a problem.",
-        "es": "Esto podría indicar un problema.",
-        "de": "Das könnte auf ein Problem hindeuten."
+        "es": "Esto podría indicar un problema."
       },
       "options": [
         {
           "text": {
-            "hu": "engedély: szabad jelezni",
             "en": "permission: you are allowed to indicate",
-            "es": "permiso: se permite indicar",
-            "de": "Erlaubnis: man darf anzeigen"
+            "es": "permiso: se permite indicar"
           },
           "wrong": {
-            "hu": "Itt a may nem engedély, hanem lehetőség.",
             "en": "Here may is not permission but possibility.",
-            "es": "Aquí may no es permiso sino posibilidad.",
-            "de": "Hier ist may keine Erlaubnis, sondern Möglichkeit."
+            "es": "Aquí may no es permiso sino posibilidad."
           }
         },
         {
           "text": {
-            "hu": "biztos tény",
             "en": "a certain fact",
-            "es": "un hecho seguro",
-            "de": "eine sichere Tatsache"
+            "es": "un hecho seguro"
           },
           "wrong": {
-            "hu": "A may nem biztosságot, hanem óvatos lehetőséget fejez ki.",
             "en": "May does not express certainty but a careful possibility.",
-            "es": "May no expresa certeza sino una posibilidad cautelosa.",
-            "de": "May drückt keine Gewissheit aus, sondern eine vorsichtige Möglichkeit."
+            "es": "May no expresa certeza sino una posibilidad cautelosa."
           }
         },
         {
           "text": {
-            "hu": "óvatos lehetőség, nem biztosság",
             "en": "a careful possibility, not certainty",
-            "es": "una posibilidad cautelosa, no certeza",
-            "de": "eine vorsichtige Möglichkeit, keine Gewissheit"
+            "es": "una posibilidad cautelosa, no certeza"
           }
         }
       ],
@@ -1380,46 +1126,34 @@
       "es": "The results suggest that the method works.",
       "target": "suggest",
       "tr": {
-        "hu": "Az eredmények arra utalnak, hogy a módszer működik.",
         "en": "The results suggest that the method works.",
-        "es": "Los resultados sugieren que el método funciona.",
-        "de": "Die Ergebnisse deuten darauf hin, dass die Methode funktioniert."
+        "es": "Los resultados sugieren que el método funciona."
       },
       "options": [
         {
           "text": {
-            "hu": "óvatos ige: gyengébb, mint a prove",
             "en": "a hedging verb: weaker than prove",
-            "es": "un verbo atenuante: más débil que prove",
-            "de": "ein abschwächendes Verb: schwächer als prove"
+            "es": "un verbo atenuante: más débil que prove"
           }
         },
         {
           "text": {
-            "hu": "tanácsot ad: azt tanácsolják",
             "en": "it gives advice: they advise",
-            "es": "da un consejo: aconsejan",
-            "de": "es gibt einen Rat: sie raten"
+            "es": "da un consejo: aconsejan"
           },
           "wrong": {
-            "hu": "Itt a suggest nem tanácsot, hanem következtetést jelent.",
             "en": "Here suggest does not mean advice but a conclusion.",
-            "es": "Aquí suggest no significa consejo sino una conclusión.",
-            "de": "Hier bedeutet suggest keinen Rat, sondern eine Schlussfolgerung."
+            "es": "Aquí suggest no significa consejo sino una conclusión."
           }
         },
         {
           "text": {
-            "hu": "bizonyíték: bebizonyították",
             "en": "proof: they proved it",
-            "es": "una prueba: lo probaron",
-            "de": "ein Beweis: sie haben es bewiesen"
+            "es": "una prueba: lo probaron"
           },
           "wrong": {
-            "hu": "A suggest gyengébb, mint a prove; nem bizonyítást jelent.",
             "en": "Suggest is weaker than prove; it does not mean proof.",
-            "es": "Suggest es más débil que prove; no significa prueba.",
-            "de": "Suggest ist schwächer als prove; es bedeutet keinen Beweis."
+            "es": "Suggest es más débil que prove; no significa prueba."
           }
         }
       ],
@@ -1431,46 +1165,34 @@
       "es": "It is likely that prices will rise.",
       "target": "It is likely that",
       "tr": {
-        "hu": "Valószínű, hogy az árak emelkedni fognak.",
         "en": "It is likely that prices will rise.",
-        "es": "Es probable que los precios suban.",
-        "de": "Es ist wahrscheinlich, dass die Preise steigen."
+        "es": "Es probable que los precios suban."
       },
       "options": [
         {
           "text": {
-            "hu": "személytelen óvatos szerkezet: valószínűség",
             "en": "an impersonal hedge: probability",
-            "es": "un atenuante impersonal: probabilidad",
-            "de": "eine unpersönliche Abschwächung: Wahrscheinlichkeit"
+            "es": "un atenuante impersonal: probabilidad"
           }
         },
         {
           "text": {
-            "hu": "biztos jóslat",
             "en": "a certain prediction",
-            "es": "una predicción segura",
-            "de": "eine sichere Vorhersage"
+            "es": "una predicción segura"
           },
           "wrong": {
-            "hu": "A likely nem biztosat, hanem valószínűt jelent.",
             "en": "Likely does not mean certain but probable.",
-            "es": "Likely no significa seguro sino probable.",
-            "de": "Likely bedeutet nicht sicher, sondern wahrscheinlich."
+            "es": "Likely no significa seguro sino probable."
           }
         },
         {
           "text": {
-            "hu": "parancs",
             "en": "a command",
-            "es": "una orden",
-            "de": "ein Befehl"
+            "es": "una orden"
           },
           "wrong": {
-            "hu": "Nem parancs; valószínűségről szól.",
             "en": "It is not a command; it is about probability.",
-            "es": "No es una orden; trata de probabilidad.",
-            "de": "Es ist kein Befehl; es geht um Wahrscheinlichkeit."
+            "es": "No es una orden; trata de probabilidad."
           }
         }
       ],
@@ -1482,46 +1204,34 @@
       "es": "Young people tend to use phones more.",
       "target": "tend to",
       "tr": {
-        "hu": "A fiatalok hajlamosak többet használni a telefont.",
         "en": "Young people tend to use phones more.",
-        "es": "Los jóvenes tienden a usar más el celular.",
-        "de": "Junge Leute neigen dazu, das Handy mehr zu benutzen."
+        "es": "Los jóvenes tienden a usar más el celular."
       },
       "options": [
         {
           "text": {
-            "hu": "minden egyes fiatalra igaz",
             "en": "it is true of every single young person",
-            "es": "es verdad de cada joven",
-            "de": "es gilt für jeden einzelnen jungen Menschen"
+            "es": "es verdad de cada joven"
           },
           "wrong": {
-            "hu": "A tend to általános hajlamot jelent, nem kivétel nélküli igazságot.",
             "en": "Tend to means a general tendency, not a rule without exceptions.",
-            "es": "Tend to significa una tendencia general, no una regla sin excepciones.",
-            "de": "Tend to bedeutet eine allgemeine Neigung, keine Regel ohne Ausnahmen."
+            "es": "Tend to significa una tendencia general, no una regla sin excepciones."
           }
         },
         {
           "text": {
-            "hu": "általános hajlam, nem mindenki",
             "en": "a general tendency, not everyone",
-            "es": "una tendencia general, no todos",
-            "de": "eine allgemeine Neigung, nicht alle"
+            "es": "una tendencia general, no todos"
           }
         },
         {
           "text": {
-            "hu": "jövőbeli terv",
             "en": "a future plan",
-            "es": "un plan futuro",
-            "de": "ein Zukunftsplan"
+            "es": "un plan futuro"
           },
           "wrong": {
-            "hu": "A tend to nem tervet, hanem szokást vagy tendenciát jelöl.",
             "en": "Tend to does not mark a plan but a habit or tendency.",
-            "es": "Tend to no marca un plan sino un hábito o tendencia.",
-            "de": "Tend to markiert keinen Plan, sondern eine Gewohnheit oder Tendenz."
+            "es": "Tend to no marca un plan sino un hábito o tendencia."
           }
         }
       ],
@@ -1533,46 +1243,34 @@
       "es": "I was wondering if you could help me.",
       "target": "was wondering",
       "tr": {
-        "hu": "Azon gondolkodtam, tudnál-e segíteni.",
         "en": "I was wondering if you could help me.",
-        "es": "Me preguntaba si podrías ayudarme.",
-        "de": "Ich habe mich gefragt, ob du mir helfen könntest."
+        "es": "Me preguntaba si podrías ayudarme."
       },
       "options": [
         {
           "text": {
-            "hu": "udvarias kérés enyhítése: a folyamatos múlt távolságot teremt",
             "en": "softening a polite request: the past continuous creates distance",
-            "es": "atenuar una petición cortés: el pasado continuo crea distancia",
-            "de": "Abschwächung einer höflichen Bitte: das Past Continuous schafft Distanz"
+            "es": "atenuar una petición cortés: el pasado continuo crea distancia"
           }
         },
         {
           "text": {
-            "hu": "csak múltbeli folyamatos cselekvés",
             "en": "only a past action in progress",
-            "es": "solo una acción pasada en marcha",
-            "de": "nur eine vergangene laufende Handlung"
+            "es": "solo una acción pasada en marcha"
           },
           "wrong": {
-            "hu": "Itt a was wondering nem múltat ír le, hanem udvarias kérést vezet be.",
             "en": "Here was wondering does not describe the past but introduces a polite request.",
-            "es": "Aquí was wondering no describe el pasado sino que introduce una petición cortés.",
-            "de": "Hier beschreibt was wondering nicht die Vergangenheit, sondern leitet eine höfliche Bitte ein."
+            "es": "Aquí was wondering no describe el pasado sino que introduce una petición cortés."
           }
         },
         {
           "text": {
-            "hu": "kérdés az időről",
             "en": "a question about time",
-            "es": "una pregunta sobre el tiempo",
-            "de": "eine Frage nach der Zeit"
+            "es": "una pregunta sobre el tiempo"
           },
           "wrong": {
-            "hu": "Nem időről kérdez; segítséget kér.",
             "en": "It does not ask about time; it asks for help.",
-            "es": "No pregunta por el tiempo; pide ayuda.",
-            "de": "Es fragt nicht nach der Zeit; es bittet um Hilfe."
+            "es": "No pregunta por el tiempo; pide ayuda."
           }
         }
       ],

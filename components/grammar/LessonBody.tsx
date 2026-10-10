@@ -16,10 +16,8 @@ import { groupTableRuns, type TableBlock } from '@/lib/grammar/tableGroups';
 // the short explanatory line under the legend, on every conjugation
 // table (not lesson data, so it lives here, not in a JSON body block).
 const LEGEND_CAPTION: Lang4 = {
-  hu: 'Minden sor egy személy, minden szín egy ige.',
   en: 'Each row is one person; each colour is one verb.',
   es: 'Cada fila es una persona, cada color es un verbo.',
-  de: 'Jede Zeile ist eine Person, jede Farbe ist ein Verb.',
 };
 
 // renderer for the LessonV2 body blocks. The JSON
@@ -28,7 +26,7 @@ const LEGEND_CAPTION: Lang4 = {
 
 interface Props {
   blocks: LessonBlock[];
-  contentLang: 'hu' | 'en' | 'es' | 'de';
+  contentLang: 'en' | 'es';
   learnedLang: string;
 }
 

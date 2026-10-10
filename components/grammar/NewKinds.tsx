@@ -4,7 +4,6 @@ import { Text } from '@/components/KText';
 
 import EasySentenceCard from '@/components/EasySentenceCard';
 import ResultBadge from '@/components/ResultBadge';
-import TrialBadge from '@/components/TrialBadge';
 import AnswerCompare from '@/components/grammar/AnswerCompare';
 import { BrutalBox, inkButtonText } from '@/components/grammar/Brutal';
 import { useDockedAction } from '@/components/learn/DockSlot';
@@ -19,11 +18,10 @@ import { speak, stopSpeaking } from '@/lib/speech';
 import type { DictationItem, OrderItem, SpotItem } from '@/lib/grammar/lessonTypes';
 
 // three new task kinds, FOR NOW only in the
-// ser-estar (error spotting + dictation) and negacion (word order + error spotting) lessons, with the
-// temporary "ÚJ · TESZT" ("NEW · TEST") label (components/TrialBadge.tsx). All three are 1 unit in
+// ser-estar (error spotting + dictation) and negacion (word order + error spotting) lessons. All three are 1 unit in
 // scoring (right or not), and the right sentence is spoken after the answer.
 
-type Lang = 'hu' | 'en' | 'es' | 'de';
+type Lang = 'en' | 'es';
 
 const PUNCT_TAIL = /[.,;:!?¡¿]+$/;
 
@@ -50,12 +48,11 @@ export function fixedSentence(es: string, wrongIndex: number, fix: string): stri
   return words.join(' ');
 }
 
-function ItemHead({ trial, title }: { trial?: boolean; title: string }) {
+function ItemHead({ title }: { title: string }) {
   const g = useGrammarColors();
   return (
     <View style={styles.head}>
       <Text style={[styles.headText, { color: g.mu }]}>{title}</Text>
-      {trial ? <TrialBadge /> : null}
     </View>
   );
 }
@@ -103,7 +100,7 @@ export function SpotDrillItem({
 
   return (
     <View style={styles.body} testID="spot-item">
-      <ItemHead trial={item.trial} title={phase === 'fix' ? s.grammar.spotPickFix : s.grammar.spotPrompt} />
+      <ItemHead title={phase === 'fix' ? s.grammar.spotPickFix : s.grammar.spotPrompt} />
       <BrutalBox boxStyle={styles.sentenceBox}>
         <View style={styles.wordRow}>
           {words.map((w, i) => {
@@ -176,7 +173,7 @@ export function OrderDrillItem({
   const s = t();
   return (
     <View style={styles.body} testID="order-item">
-      <ItemHead trial={item.trial} title={s.grammar.orderHint} />
+      <ItemHead title={s.grammar.orderHint} />
       <EasySentenceCard
         key={item.id}
         sourceSentence={item.prompt[contentLang] ?? item.prompt.en}
@@ -233,7 +230,7 @@ export function DictationDrillItem({
 
   return (
     <View style={styles.body} testID="dictation-item">
-      <ItemHead trial={item.trial} title={s.grammar.dictationHint} />
+      <ItemHead title={s.grammar.dictationHint} />
       <View style={styles.playRow}>
         <BrutalBox testID="dictation-play" fill="a" offset={3} boxStyle={styles.playBtn} onPress={() => speak(item.es, locale)} accessibilityLabel={s.grammar.dictationPlay}>
           <Text style={[styles.playText, { color: g.onFill }]}>🔊 {s.grammar.dictationPlay}</Text>

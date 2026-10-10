@@ -3,194 +3,152 @@
   "topic": "indefinidos",
   "level": "A2",
   "title": {
-    "hu": "Határozatlan szavak: algo, alguien, algún",
     "en": "Indefinites: algo, alguien, algún",
-    "es": "Indefinidos: algo, alguien, algún",
-    "de": "Indefinitpronomen: algo, alguien, algún"
+    "es": "Indefinidos: algo, alguien, algún"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "A határozatlan szavak nem mondják meg pontosan, ki vagy mi az: valami (algo), valaki (alguien), valamilyen (algún). Mindegyiknek van tagadó párja: semmi (nada), senki (nadie), egyetlen sem (ningún). A spanyolban a tagadó szó az ige UTÁN áll, és az ige elé még egy no is kerül: No quiero nada. Ez a kettős tagadás nem hiba, hanem szabály.",
         "en": "Indefinite words do not say exactly who or what: something (algo), someone (alguien), some (algún). Each has a negative partner: nothing (nada), no one (nadie), not one (ningún). In Spanish the negative word comes AFTER the verb, and a no goes before the verb as well: No quiero nada. This double negative is not a mistake, it is the rule.",
-        "es": "Los indefinidos no dicen exactamente quién o qué: algo, alguien, algún. Cada uno tiene su pareja negativa: nada, nadie, ningún. En español la palabra negativa va DESPUÉS del verbo, y antes del verbo va también un no: No quiero nada. Esta doble negación no es un error, es la regla.",
-        "de": "Indefinitpronomen sagen nicht genau, wer oder was: etwas (algo), jemand (alguien), irgendein (algún). Jedes hat ein verneintes Gegenstück: nichts (nada), niemand (nadie), kein (ningún). Im Spanischen steht das verneinende Wort NACH dem Verb, und vor dem Verb steht zusätzlich ein no: No quiero nada. Diese doppelte Verneinung ist kein Fehler, sondern die Regel."
+        "es": "Los indefinidos no dicen exactamente quién o qué: algo, alguien, algún. Cada uno tiene su pareja negativa: nada, nadie, ningún. En español la palabra negativa va DESPUÉS del verbo, y antes del verbo va también un no: No quiero nada. Esta doble negación no es un error, es la regla."
       }
     },
     {
       "kind": "usage",
       "title": {
-        "hu": "Mikor melyik határozatlan szó",
         "en": "Which indefinite word when",
-        "es": "Qué indefinido y cuándo",
-        "de": "Welches Indefinitwort wann"
+        "es": "Qué indefinido y cuándo"
       },
       "points": [
         {
           "text": {
-            "hu": "Algo = valami, nada = semmi. Dologra mondjuk őket, és soha nem változnak. Tagadó mondatban az ige elé no kerül: no + ige + nada.",
             "en": "Algo = something, nada = nothing. They stand for things and never change. In a negative sentence no goes before the verb: no + verb + nada.",
-            "es": "Algo = una cosa, nada = ninguna cosa. Se usan para cosas y nunca cambian. En una frase negativa va no antes del verbo: no + verbo + nada.",
-            "de": "Algo = etwas, nada = nichts. Sie stehen für Sachen und ändern sich nie. In einem verneinten Satz steht no vor dem Verb: no + Verb + nada."
+            "es": "Algo = una cosa, nada = ninguna cosa. Se usan para cosas y nunca cambian. En una frase negativa va no antes del verbo: no + verbo + nada."
           },
           "examples": [
             {
               "es": "¿Quieres algo de beber?",
               "tr": {
-                "hu": "Kérsz valamit inni?",
                 "en": "Do you want something to drink?",
-                "es": "¿Quieres algo de beber?",
-                "de": "Möchtest du etwas trinken?"
+                "es": "¿Quieres algo de beber?"
               }
             },
             {
               "es": "No quiero nada, gracias.",
               "tr": {
-                "hu": "Nem kérek semmit, köszönöm.",
                 "en": "I don't want anything, thanks.",
-                "es": "No quiero nada, gracias.",
-                "de": "Ich möchte nichts, danke."
+                "es": "No quiero nada, gracias."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Alguien = valaki, nadie = senki. Személyre mondjuk őket, és soha nem változnak. Ha a személy a tárgy, elé jön a személyes a: ¿Ves a alguien? No veo a nadie.",
             "en": "Alguien = someone, nadie = no one. They stand for people and never change. When the person is the object, the personal a goes before it: ¿Ves a alguien? No veo a nadie.",
-            "es": "Alguien = una persona, nadie = ninguna persona. Se usan para personas y nunca cambian. Si la persona es el objeto directo, delante va la a personal: ¿Ves a alguien? No veo a nadie.",
-            "de": "Alguien = jemand, nadie = niemand. Sie stehen für Personen und ändern sich nie. Ist die Person das Objekt, steht davor das persönliche a: ¿Ves a alguien? No veo a nadie."
+            "es": "Alguien = una persona, nadie = ninguna persona. Se usan para personas y nunca cambian. Si la persona es el objeto directo, delante va la a personal: ¿Ves a alguien? No veo a nadie."
           },
           "examples": [
             {
               "es": "¿Conoces a alguien en Oaxaca?",
               "tr": {
-                "hu": "Ismersz valakit Oaxacában?",
                 "en": "Do you know anyone in Oaxaca?",
-                "es": "¿Conoces a alguien en Oaxaca?",
-                "de": "Kennst du jemanden in Oaxaca?"
+                "es": "¿Conoces a alguien en Oaxaca?"
               }
             },
             {
               "es": "No veo a nadie en la calle.",
               "tr": {
-                "hu": "Senkit sem látok az utcán.",
                 "en": "I don't see anyone in the street.",
-                "es": "No veo a nadie en la calle.",
-                "de": "Ich sehe niemanden auf der Straße."
+                "es": "No veo a nadie en la calle."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Algún = valamilyen, ningún = egyetlen sem. Hímnemű egyes számú főnév előtt az o elmarad: algún día, ningún problema. Figyelem: a problema hímnemű. A ningún általában nem áll többes számban.",
             "en": "Algún = some, ningún = not one. Before a masculine singular noun the o drops: algún día, ningún problema. Note: problema is masculine. Ningún is normally not used in the plural.",
-            "es": "Algún y ningún van delante de un nombre masculino en singular y pierden la o: algún día, ningún problema. Ojo: problema es masculino. Ningún no suele usarse en plural.",
-            "de": "Algún = irgendein, ningún = kein. Vor einem maskulinen Nomen im Singular fällt das o weg: algún día, ningún problema. Achtung: problema ist maskulin. Ningún wird normalerweise nicht im Plural verwendet."
+            "es": "Algún y ningún van delante de un nombre masculino en singular y pierden la o: algún día, ningún problema. Ojo: problema es masculino. Ningún no suele usarse en plural."
           },
           "examples": [
             {
               "es": "Quiero visitar Oaxaca algún día.",
               "tr": {
-                "hu": "Valamikor szeretném meglátogatni Oaxacát.",
                 "en": "I want to visit Oaxaca some day.",
-                "es": "Quiero visitar Oaxaca algún día.",
-                "de": "Ich möchte Oaxaca irgendwann besuchen."
+                "es": "Quiero visitar Oaxaca algún día."
               }
             },
             {
               "es": "No tengo ningún problema con eso.",
               "tr": {
-                "hu": "Nincs ezzel semmi problémám.",
                 "en": "I have no problem with that.",
-                "es": "No tengo ningún problema con eso.",
-                "de": "Damit habe ich kein Problem."
+                "es": "No tengo ningún problema con eso."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Nőnemű főnév előtt a teljes alak áll: alguna pregunta, ninguna mesa. Az alguna többes számban is él (algunas preguntas), a ninguna általában nem.",
             "en": "Before a feminine noun the full form is used: alguna pregunta, ninguna mesa. Alguna has a plural (algunas preguntas), ninguna normally does not.",
-            "es": "Delante de un nombre femenino va la forma completa: alguna pregunta, ninguna mesa. Alguna tiene plural (algunas preguntas), ninguna normalmente no.",
-            "de": "Vor einem femininen Nomen steht die volle Form: alguna pregunta, ninguna mesa. Alguna hat einen Plural (algunas preguntas), ninguna normalerweise nicht."
+            "es": "Delante de un nombre femenino va la forma completa: alguna pregunta, ninguna mesa. Alguna tiene plural (algunas preguntas), ninguna normalmente no."
           },
           "examples": [
             {
               "es": "¿Tienes alguna pregunta?",
               "tr": {
-                "hu": "Van valamilyen kérdésed?",
                 "en": "Do you have any question?",
-                "es": "¿Tienes alguna pregunta?",
-                "de": "Hast du irgendeine Frage?"
+                "es": "¿Tienes alguna pregunta?"
               }
             },
             {
               "es": "No hay ninguna mesa libre.",
               "tr": {
-                "hu": "Egy szabad asztal sincs.",
                 "en": "There is not a single free table.",
-                "es": "No hay ninguna mesa libre.",
-                "de": "Es gibt keinen einzigen freien Tisch."
+                "es": "No hay ninguna mesa libre."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Ha a főnév kimarad, a hosszú alak áll, és a kihagyott főnév nemét követi: alguno / alguna, ninguno / ninguna. ¿Tienes libros? No tengo ninguno.",
             "en": "When the noun is left out, the long form is used and follows the gender of the omitted noun: alguno / alguna, ninguno / ninguna. ¿Tienes libros? No tengo ninguno.",
-            "es": "Cuando se omite el nombre, va la forma larga, que sigue el género del nombre omitido: alguno / alguna, ninguno / ninguna. ¿Tienes libros? No tengo ninguno.",
-            "de": "Fällt das Nomen weg, steht die lange Form, die dem Genus des weggelassenen Nomens folgt: alguno / alguna, ninguno / ninguna. ¿Tienes libros? No tengo ninguno."
+            "es": "Cuando se omite el nombre, va la forma larga, que sigue el género del nombre omitido: alguno / alguna, ninguno / ninguna. ¿Tienes libros? No tengo ninguno."
           },
           "examples": [
             {
               "es": "¿Hay cafés cerca de aquí? Sí, hay alguno.",
               "tr": {
-                "hu": "Vannak kávézók a közelben? Igen, van egy.",
                 "en": "Are there cafés nearby? Yes, there is one.",
-                "es": "¿Hay cafés cerca de aquí? Sí, hay alguno.",
-                "de": "Gibt es Cafés in der Nähe? Ja, es gibt eins."
+                "es": "¿Hay cafés cerca de aquí? Sí, hay alguno."
               }
             },
             {
               "es": "¿Hay mesas libres? No hay ninguna.",
               "tr": {
-                "hu": "Vannak szabad asztalok? Egy sincs.",
                 "en": "Are there free tables? There are none.",
-                "es": "¿Hay mesas libres? No hay ninguna.",
-                "de": "Gibt es freie Tische? Es gibt keinen."
+                "es": "¿Hay mesas libres? No hay ninguna."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Ha a tagadó szó az ige UTÁN áll, az ige elé no kell: no + ige + nada / nadie / ningún. Ha az ige ELŐTT áll, no nem kell: Nadie vino = No vino nadie.",
             "en": "When the negative word comes AFTER the verb, no is needed before the verb: no + verb + nada / nadie / ningún. When it comes BEFORE the verb, no is not needed: Nadie vino = No vino nadie.",
-            "es": "Si la palabra negativa va DESPUÉS del verbo, hace falta no antes del verbo: no + verbo + nada / nadie / ningún. Si va ANTES del verbo, no hace falta no: Nadie vino = No vino nadie.",
-            "de": "Steht das verneinende Wort NACH dem Verb, braucht man no vor dem Verb: no + Verb + nada / nadie / ningún. Steht es VOR dem Verb, ist kein no nötig: Nadie vino = No vino nadie."
+            "es": "Si la palabra negativa va DESPUÉS del verbo, hace falta no antes del verbo: no + verbo + nada / nadie / ningún. Si va ANTES del verbo, no hace falta no: Nadie vino = No vino nadie."
           },
           "examples": [
             {
               "es": "No vino nadie a la fiesta.",
               "tr": {
-                "hu": "Senki sem jött el a buliba.",
                 "en": "Nobody came to the party.",
-                "es": "No vino nadie a la fiesta.",
-                "de": "Niemand kam zur Party."
+                "es": "No vino nadie a la fiesta."
               }
             },
             {
               "es": "Nadie sabe nada.",
               "tr": {
-                "hu": "Senki sem tud semmit.",
                 "en": "Nobody knows anything.",
-                "es": "Nadie sabe nada.",
-                "de": "Niemand weiß etwas."
+                "es": "Nadie sabe nada."
               }
             }
           ]
@@ -201,29 +159,21 @@
       "kind": "table",
       "id": "indefinidos",
       "title": {
-        "hu": "Helyzet + határozatlan szó",
         "en": "Situation + indefinite word",
-        "es": "Situación + indefinido",
-        "de": "Situation + Indefinitwort"
+        "es": "Situación + indefinido"
       },
       "header": [
         {
-          "hu": "Mondat (a lyuk a határozatlan szó helye)",
           "en": "Sentence (the gap is the indefinite word)",
-          "es": "Frase (el hueco es el indefinido)",
-          "de": "Satz (die Lücke ist das Indefinitwort)"
+          "es": "Frase (el hueco es el indefinido)"
         },
         {
-          "hu": "Határozatlan szó",
           "en": "Indefinite word",
-          "es": "indefinido",
-          "de": "Indefinitwort"
+          "es": "indefinido"
         },
         {
-          "hu": "Mikor",
           "en": "When",
-          "es": "uso",
-          "de": "Wann"
+          "es": "uso"
         }
       ],
       "rows": [
@@ -292,38 +242,30 @@
     {
       "kind": "contrast",
       "title": {
-        "hu": "Gyakori párok",
         "en": "Common pairs",
-        "es": "Pares frecuentes",
-        "de": "Häufige Paare"
+        "es": "Pares frecuentes"
       },
       "pairs": [
         {
           "a": "algo",
           "b": "alguien",
           "note": {
-            "hu": "Algo = dolog, alguien = személy. Személy tárgy előtt személyes a áll: ¿Ves algo? ¿Ves a alguien?",
             "en": "Algo = a thing, alguien = a person. Before a person as object the personal a is used: ¿Ves algo? ¿Ves a alguien?",
-            "es": "Algo = una cosa, alguien = una persona. Delante de una persona como objeto va la a personal: ¿Ves algo? ¿Ves a alguien?",
-            "de": "Algo = eine Sache, alguien = eine Person. Vor einer Person als Objekt steht das persönliche a: ¿Ves algo? ¿Ves a alguien?"
+            "es": "Algo = una cosa, alguien = una persona. Delante de una persona como objeto va la a personal: ¿Ves algo? ¿Ves a alguien?"
           },
           "examples": [
             {
               "es": "¿Ves algo en la mesa?",
               "tr": {
-                "hu": "Látsz valamit az asztalon?",
                 "en": "Do you see anything on the table?",
-                "es": "¿Ves algo en la mesa?",
-                "de": "Siehst du etwas auf dem Tisch?"
+                "es": "¿Ves algo en la mesa?"
               }
             },
             {
               "es": "¿Ves a alguien en la calle?",
               "tr": {
-                "hu": "Látsz valakit az utcán?",
                 "en": "Do you see anyone in the street?",
-                "es": "¿Ves a alguien en la calle?",
-                "de": "Siehst du jemanden auf der Straße?"
+                "es": "¿Ves a alguien en la calle?"
               }
             }
           ]
@@ -332,28 +274,22 @@
           "a": "nada",
           "b": "nadie",
           "note": {
-            "hu": "Nada = semmi (dolog), nadie = senki (személy). Az ige után no kell eléjük, az ige előtt nem.",
             "en": "Nada = nothing (a thing), nadie = no one (a person). After the verb they need no before the verb, before the verb they do not.",
-            "es": "Nada = ninguna cosa, nadie = ninguna persona. Después del verbo necesitan no antes del verbo, antes del verbo no.",
-            "de": "Nada = nichts (eine Sache), nadie = niemand (eine Person). Nach dem Verb brauchen sie no vor dem Verb, vor dem Verb nicht."
+            "es": "Nada = ninguna cosa, nadie = ninguna persona. Después del verbo necesitan no antes del verbo, antes del verbo no."
           },
           "examples": [
             {
               "es": "No veo nada en la mesa.",
               "tr": {
-                "hu": "Semmit sem látok az asztalon.",
                 "en": "I don't see anything on the table.",
-                "es": "No veo nada en la mesa.",
-                "de": "Ich sehe nichts auf dem Tisch."
+                "es": "No veo nada en la mesa."
               }
             },
             {
               "es": "No veo a nadie en la calle.",
               "tr": {
-                "hu": "Senkit sem látok az utcán.",
                 "en": "I don't see anyone in the street.",
-                "es": "No veo a nadie en la calle.",
-                "de": "Ich sehe niemanden auf der Straße."
+                "es": "No veo a nadie en la calle."
               }
             }
           ]
@@ -362,28 +298,22 @@
           "a": "algún libro",
           "b": "alguno",
           "note": {
-            "hu": "Főnév előtt algún (rövid), főnév nélkül alguno (hosszú). Ugyanígy: ningún libro / ninguno.",
             "en": "Before a noun algún (short), without a noun alguno (long). The same for ningún libro / ninguno.",
-            "es": "Delante de un nombre, algún (corta); sin nombre, alguno (larga). Igual con ningún libro / ninguno.",
-            "de": "Vor einem Nomen algún (kurz), ohne Nomen alguno (lang). Genauso: ningún libro / ninguno."
+            "es": "Delante de un nombre, algún (corta); sin nombre, alguno (larga). Igual con ningún libro / ninguno."
           },
           "examples": [
             {
               "es": "¿Tienes algún libro de cocina?",
               "tr": {
-                "hu": "Van valamilyen szakácskönyved?",
                 "en": "Do you have any cookbook?",
-                "es": "¿Tienes algún libro de cocina?",
-                "de": "Hast du irgendein Kochbuch?"
+                "es": "¿Tienes algún libro de cocina?"
               }
             },
             {
               "es": "No, no tengo ninguno.",
               "tr": {
-                "hu": "Nem, egy sincs.",
                 "en": "No, I have none.",
-                "es": "No, no tengo ninguno.",
-                "de": "Nein, ich habe keins."
+                "es": "No, no tengo ninguno."
               }
             }
           ]
@@ -393,54 +323,42 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Algún / ningún csak hímnemű főnév előtt rövid: algún día, ningún problema (a problema hímnemű). Nőnemben alguna / ninguna. A tagadó szó az ige után: no + ige + nada / nadie / ningún; az ige előtt: no nélkül.",
         "en": "Algún / ningún are short only before a masculine noun: algún día, ningún problema (problema is masculine). Feminine: alguna / ninguna. A negative word after the verb: no + verb + nada / nadie / ningún; before the verb: without no.",
-        "es": "Algún / ningún se acortan solo delante de un nombre masculino: algún día, ningún problema (problema es masculino). En femenino: alguna / ninguna. Palabra negativa después del verbo: no + verbo + nada / nadie / ningún; antes del verbo: sin no.",
-        "de": "Algún / ningún sind nur vor einem maskulinen Nomen kurz: algún día, ningún problema (problema ist maskulin). Feminin: alguna / ninguna. Verneinendes Wort nach dem Verb: no + Verb + nada / nadie / ningún; vor dem Verb: ohne no."
+        "es": "Algún / ningún se acortan solo delante de un nombre masculino: algún día, ningún problema (problema es masculino). En femenino: alguna / ninguna. Palabra negativa después del verbo: no + verbo + nada / nadie / ningún; antes del verbo: sin no."
       }
     }
   ],
   "speak": {
-    "hu": "A határozatlan szavak azt mondják meg, hogy van-e valami vagy valaki, anélkül hogy megneveznék. Van külön szó a dologra és külön a személyre, és mindkettőnek van tagadó párja: semmi és senki. Főnév előtt a valamilyen és az egyetlen sem szó hímnemben rövidül, nőnemben megmarad a teljes alak. Ha a főnév kimarad, a hosszú alak áll, és a főnév neméhez igazodik. A spanyolban a tagadás kettős: ha a tagadó szó az ige után áll, az ige elé is kerül egy tagadószó. Ez nem hiba, hanem szabály. Ha a tagadó szó az ige előtt áll, nincs szükség rá. Személy tárgy előtt a személyes elöljáró is megjelenik.",
     "en": "Indefinite words tell you whether something or someone exists, without naming it. There is one word for things and one for people, and each has a negative partner: nothing and no one. Before a noun, the words for some and not one get shorter in the masculine, while the feminine keeps the full form. When the noun is left out, the long form is used and agrees with the gender of the noun. In Spanish the negation is doubled: when the negative word comes after the verb, a negative word also goes before the verb. This is not a mistake, it is the rule. When the negative word comes before the verb, the extra one is not needed. Before a person as the object, the personal preposition appears as well.",
-    "es": "Los indefinidos dicen si hay algo o alguien, sin nombrarlo. Hay una palabra para las cosas, algo, y otra para las personas, alguien, y cada una tiene su pareja negativa, nada y nadie. Delante de un nombre, algún y ningún se acortan en masculino, y en femenino queda la forma completa, alguna y ninguna. Si el nombre se omite, va la forma larga, que sigue el género del nombre. En español la negación es doble: si la palabra negativa va después del verbo, antes del verbo va también un no. Eso no es un error, es la regla. Si la palabra negativa va antes del verbo, no hace falta poner el no. Delante de una persona como objeto aparece también la preposición a.",
-    "de": "Indefinitpronomen sagen, ob es etwas oder jemanden gibt, ohne es zu nennen. Es gibt ein Wort für Sachen und eines für Personen, und jedes hat ein verneintes Gegenstück: nichts und niemand. Vor einem Nomen werden die Wörter für irgendein und kein im Maskulinum kürzer, im Femininum bleibt die volle Form. Fällt das Nomen weg, steht die lange Form, die sich nach dem Genus des Nomens richtet. Im Spanischen wird doppelt verneint: Steht das verneinende Wort nach dem Verb, steht vor dem Verb zusätzlich ein Verneinungswort. Das ist kein Fehler, sondern die Regel. Steht das verneinende Wort vor dem Verb, braucht man das zusätzliche nicht. Vor einer Person als Objekt erscheint außerdem die persönliche Präposition."
+    "es": "Los indefinidos dicen si hay algo o alguien, sin nombrarlo. Hay una palabra para las cosas, algo, y otra para las personas, alguien, y cada una tiene su pareja negativa, nada y nadie. Delante de un nombre, algún y ningún se acortan en masculino, y en femenino queda la forma completa, alguna y ninguna. Si el nombre se omite, va la forma larga, que sigue el género del nombre. En español la negación es doble: si la palabra negativa va después del verbo, antes del verbo va también un no. Eso no es un error, es la regla. Si la palabra negativa va antes del verbo, no hace falta poner el no. Delante de una persona como objeto aparece también la preposición a."
   },
   "glossary": [
     {
       "word": "alguno",
       "gloss": {
-        "hu": "valamelyik (főnév nélkül, hímnem)",
         "en": "some, any one (without a noun, masculine)",
-        "es": "uno entre varios (sin nombre, masculino)",
-        "de": "irgendeiner (ohne Nomen, maskulin)"
+        "es": "uno entre varios (sin nombre, masculino)"
       }
     },
     {
       "word": "alguna",
       "gloss": {
-        "hu": "valamelyik, valamilyen (nőnem)",
         "en": "some, any (feminine)",
-        "es": "alguno, en femenino",
-        "de": "irgendeine (feminin)"
+        "es": "alguno, en femenino"
       }
     },
     {
       "word": "ninguno",
       "gloss": {
-        "hu": "egy sem (főnév nélkül, hímnem)",
         "en": "none, not one (without a noun, masculine)",
-        "es": "ni uno (sin nombre, masculino)",
-        "de": "keiner (ohne Nomen, maskulin)"
+        "es": "ni uno (sin nombre, masculino)"
       }
     },
     {
       "word": "ninguna",
       "gloss": {
-        "hu": "egy sem (nőnem)",
         "en": "none, not one (feminine)",
-        "es": "ninguno, en femenino",
-        "de": "keine (feminin)"
+        "es": "ninguno, en femenino"
       }
     }
   ],
@@ -455,30 +373,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Dolog, kérdésben kínálunk valamit: algo.",
         "en": "A thing, offered in a question: algo.",
-        "es": "Una cosa, que se ofrece en una pregunta: algo.",
-        "de": "Eine Sache, die in einer Frage angeboten wird: algo."
+        "es": "Una cosa, que se ofrece en una pregunta: algo."
       },
       "wrong": {
         "nada": {
-          "hu": "A nada = semmi, tagadó szó; a kérdés itt valamit kínál, nem tagad; helyesen: ¿Quieres algo de beber?",
           "en": "Nada = nothing, a negative word; the question offers something, it does not negate; correctly: ¿Quieres algo de beber?",
-          "es": "Nada = ninguna cosa, una palabra negativa; la pregunta ofrece algo, no niega; correctamente: ¿Quieres algo de beber?",
-          "de": "Nada = nichts, ein verneinendes Wort; die Frage bietet etwas an, sie verneint nicht; richtig: ¿Quieres algo de beber?"
+          "es": "Nada = ninguna cosa, una palabra negativa; la pregunta ofrece algo, no niega; correctamente: ¿Quieres algo de beber?"
         },
         "alguien": {
-          "hu": "Az alguien = valaki, személy; inni dolgot kínálunk, nem személyt; helyesen: ¿Quieres algo de beber?",
           "en": "Alguien = someone, a person; you offer a thing to drink, not a person; correctly: ¿Quieres algo de beber?",
-          "es": "Alguien = una persona; se ofrece una cosa para beber, no una persona; correctamente: ¿Quieres algo de beber?",
-          "de": "Alguien = jemand, eine Person; man bietet etwas zu trinken an, keine Person; richtig: ¿Quieres algo de beber?"
+          "es": "Alguien = una persona; se ofrece una cosa para beber, no una persona; correctamente: ¿Quieres algo de beber?"
         }
       },
       "examples": [
         "¿Quieres algo de beber?",
         "Quiero algo de comer, tengo hambre."
       ],
-      "tr": { "hu": "Kérsz valamit inni?", "en": "Do you want something to drink?", "es": "¿Quieres algo de beber?", "de": "Möchtest du etwas trinken?" }
+      "tr": { "en": "Do you want something to drink?", "es": "¿Quieres algo de beber?" }
     },
     {
       "id": "indef-ch-02",
@@ -490,30 +402,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Tagadó mondat, dolog: no + ige + nada.",
         "en": "A negative sentence, a thing: no + verb + nada.",
-        "es": "Frase negativa, una cosa: no + verbo + nada.",
-        "de": "Verneinter Satz, eine Sache: no + Verb + nada."
+        "es": "Frase negativa, una cosa: no + verbo + nada."
       },
       "wrong": {
         "algo": {
-          "hu": "Tagadó mondatban az ige után nada áll, nem algo: No quiero nada más. Az algo pozitív mondatba való: Quiero algo más (még valamit kérek).",
           "en": "In a negative sentence nada follows the verb, not algo: No quiero nada más. Algo belongs in a positive sentence: Quiero algo más (I want something else).",
-          "es": "En una frase negativa va nada después del verbo, no algo: No quiero nada más. Algo va en una frase positiva: Quiero algo más.",
-          "de": "In einem verneinten Satz steht nach dem Verb nada, nicht algo: No quiero nada más. Algo gehört in einen positiven Satz: Quiero algo más (ich möchte noch etwas)."
+          "es": "En una frase negativa va nada después del verbo, no algo: No quiero nada más. Algo va en una frase positiva: Quiero algo más."
         },
         "nadie": {
-          "hu": "A nadie = senki, személy; itt dologról van szó (nem kérek semmit), ezért nada; helyesen: No quiero nada más, gracias.",
           "en": "Nadie = no one, a person; this is about a thing (I want nothing), so nada; correctly: No quiero nada más, gracias.",
-          "es": "Nadie = ninguna persona; aquí se habla de una cosa (no quiero ninguna cosa), por eso nada; correctamente: No quiero nada más, gracias.",
-          "de": "Nadie = niemand, eine Person; hier geht es um eine Sache (ich möchte nichts), deshalb nada; richtig: No quiero nada más, gracias."
+          "es": "Nadie = ninguna persona; aquí se habla de una cosa (no quiero ninguna cosa), por eso nada; correctamente: No quiero nada más, gracias."
         }
       },
       "examples": [
         "No quiero nada más, gracias.",
         "Hoy no necesito nada."
       ],
-      "tr": { "hu": "Nem kérek semmi mást, köszönöm.", "en": "I don't want anything else, thank you.", "es": "No quiero nada más, gracias.", "de": "Ich möchte nichts weiter, danke." }
+      "tr": { "en": "I don't want anything else, thank you.", "es": "No quiero nada más, gracias." }
     },
     {
       "id": "indef-ch-03",
@@ -525,30 +431,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Személy, kérdés, személyes a után: alguien.",
         "en": "A person, in a question, after the personal a: alguien.",
-        "es": "Una persona, en una pregunta, después de la a personal: alguien.",
-        "de": "Eine Person, in einer Frage, nach dem persönlichen a: alguien."
+        "es": "Una persona, en una pregunta, después de la a personal: alguien."
       },
       "wrong": {
         "algo": {
-          "hu": "Az algo dologra áll; az a után személy jön, és itt valakit kérdezünk; helyesen: ¿Conoces a alguien en Oaxaca?",
           "en": "Algo stands for things; a person follows the a, and here we ask about someone; correctly: ¿Conoces a alguien en Oaxaca?",
-          "es": "Algo se usa para cosas; después de la a viene una persona, y aquí se pregunta por alguien; correctamente: ¿Conoces a alguien en Oaxaca?",
-          "de": "Algo steht für Sachen; nach dem a folgt eine Person, und hier fragt man nach jemandem; richtig: ¿Conoces a alguien en Oaxaca?"
+          "es": "Algo se usa para cosas; después de la a viene una persona, y aquí se pregunta por alguien; correctamente: ¿Conoces a alguien en Oaxaca?"
         },
         "algún": {
-          "hu": "Az algún főnév előtt áll (algún amigo); főnév nélkül, személyre alguien kell; helyesen: ¿Conoces a alguien en Oaxaca?",
           "en": "Algún stands before a noun (algún amigo); for a person without a noun you need alguien; correctly: ¿Conoces a alguien en Oaxaca?",
-          "es": "Algún va delante de un nombre (algún amigo); para una persona sin nombre hace falta alguien; correctamente: ¿Conoces a alguien en Oaxaca?",
-          "de": "Algún steht vor einem Nomen (algún amigo); für eine Person ohne Nomen braucht man alguien; richtig: ¿Conoces a alguien en Oaxaca?"
+          "es": "Algún va delante de un nombre (algún amigo); para una persona sin nombre hace falta alguien; correctamente: ¿Conoces a alguien en Oaxaca?"
         }
       },
       "examples": [
         "¿Conoces a alguien en Oaxaca?",
         "¿Ves a alguien en la puerta?"
       ],
-      "tr": { "hu": "Ismersz valakit Oaxacában?", "en": "Do you know anyone in Oaxaca?", "es": "¿Conoces a alguien en Oaxaca?", "de": "Kennst du jemanden in Oaxaca?" }
+      "tr": { "en": "Do you know anyone in Oaxaca?", "es": "¿Conoces a alguien en Oaxaca?" }
     },
     {
       "id": "indef-ch-04",
@@ -560,30 +460,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Tagadó mondat, személy: no + ige + a nadie.",
         "en": "A negative sentence, a person: no + verb + a nadie.",
-        "es": "Frase negativa, una persona: no + verbo + a nadie.",
-        "de": "Verneinter Satz, eine Person: no + Verb + a nadie."
+        "es": "Frase negativa, una persona: no + verbo + a nadie."
       },
       "wrong": {
         "alguien": {
-          "hu": "Az alguien = valaki, pozitív szó; a no veo mellé senki kell: nadie. Az alguien-es mondat ezt jelentené: Veo a alguien en la calle (valakit látok).",
           "en": "Alguien = someone, a positive word; no veo needs no one: nadie. With alguien the sentence would mean: Veo a alguien en la calle (I see someone).",
-          "es": "Alguien = una persona, palabra positiva; con no veo hace falta nadie. Con alguien la frase diría: Veo a alguien en la calle.",
-          "de": "Alguien = jemand, ein positives Wort; zu no veo gehört nadie. Mit alguien hieße der Satz: Veo a alguien en la calle (ich sehe jemanden)."
+          "es": "Alguien = una persona, palabra positiva; con no veo hace falta nadie. Con alguien la frase diría: Veo a alguien en la calle."
         },
         "nada": {
-          "hu": "A nada = semmi, dolog; az a után személy jön, itt senkit sem látunk: nadie; helyesen: No veo a nadie en la calle.",
           "en": "Nada = nothing, a thing; a person follows the a, here we see no one: nadie; correctly: No veo a nadie en la calle.",
-          "es": "Nada = ninguna cosa; después de la a viene una persona, aquí no vemos a ninguna persona: nadie; correctamente: No veo a nadie en la calle.",
-          "de": "Nada = nichts, eine Sache; nach dem a folgt eine Person, hier sehen wir niemanden: nadie; richtig: No veo a nadie en la calle."
+          "es": "Nada = ninguna cosa; después de la a viene una persona, aquí no vemos a ninguna persona: nadie; correctamente: No veo a nadie en la calle."
         }
       },
       "examples": [
         "No veo a nadie en la calle.",
         "No conocí a nadie en la fiesta."
       ],
-      "tr": { "hu": "Senkit sem látok az utcán.", "en": "I don't see anyone on the street.", "es": "No veo a nadie en la calle.", "de": "Ich sehe niemanden auf der Straße." }
+      "tr": { "en": "I don't see anyone on the street.", "es": "No veo a nadie en la calle." }
     },
     {
       "id": "indef-ch-05",
@@ -595,30 +489,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Hímnemű főnév (día) előtt a rövid alak: algún.",
         "en": "Before a masculine noun (día) the short form: algún.",
-        "es": "Delante de un nombre masculino (día) va la forma corta: algún.",
-        "de": "Vor einem maskulinen Nomen (día) steht die Kurzform: algún."
+        "es": "Delante de un nombre masculino (día) va la forma corta: algún."
       },
       "wrong": {
         "alguno": {
-          "hu": "Az alguno főnév nélkül áll; itt a día főnév követi, ezért a rövid alak kell; helyesen: Quiero visitar Oaxaca algún día.",
           "en": "Alguno stands without a noun; here the noun día follows, so the short form is needed; correctly: Quiero visitar Oaxaca algún día.",
-          "es": "Alguno va sin nombre; aquí sigue el nombre día, por eso hace falta la forma corta; correctamente: Quiero visitar Oaxaca algún día.",
-          "de": "Alguno steht ohne Nomen; hier folgt das Nomen día, deshalb braucht man die Kurzform; richtig: Quiero visitar Oaxaca algún día."
+          "es": "Alguno va sin nombre; aquí sigue el nombre día, por eso hace falta la forma corta; correctamente: Quiero visitar Oaxaca algún día."
         },
         "alguien": {
-          "hu": "Az alguien = valaki, személy, és főnév elé nem kerül; a „valamikor” spanyolul algún día; helyesen: Quiero visitar Oaxaca algún día.",
           "en": "Alguien = someone, a person, and it does not stand before a noun; “some day” is algún día; correctly: Quiero visitar Oaxaca algún día.",
-          "es": "Alguien = una persona, y no va delante de un nombre; “algún día” expresa “en algún momento”; correctamente: Quiero visitar Oaxaca algún día.",
-          "de": "Alguien = jemand, eine Person, und steht nicht vor einem Nomen; „irgendwann“ heißt algún día; richtig: Quiero visitar Oaxaca algún día."
+          "es": "Alguien = una persona, y no va delante de un nombre; “algún día” expresa “en algún momento”; correctamente: Quiero visitar Oaxaca algún día."
         }
       },
       "examples": [
         "Quiero visitar Oaxaca algún día.",
         "Algún día vamos a viajar juntos."
       ],
-      "tr": { "hu": "Egy nap szeretnék ellátogatni Oaxacába.", "en": "I want to visit Oaxaca someday.", "es": "Quiero visitar Oaxaca algún día.", "de": "Eines Tages möchte ich Oaxaca besuchen." }
+      "tr": { "en": "I want to visit Oaxaca someday.", "es": "Quiero visitar Oaxaca algún día." }
     },
     {
       "id": "indef-ch-06",
@@ -630,30 +518,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Tagadó mondat, hímnemű főnév előtt: no + ige + ningún.",
         "en": "A negative sentence, before a masculine noun: no + verb + ningún.",
-        "es": "Frase negativa, delante de un nombre masculino: no + verbo + ningún.",
-        "de": "Verneinter Satz, vor einem maskulinen Nomen: no + Verb + ningún."
+        "es": "Frase negativa, delante de un nombre masculino: no + verbo + ningún."
       },
       "wrong": {
         "alguno": {
-          "hu": "Az alguno pozitív szó, és főnév előtt rövid alakban áll (algún problema); tagadó mondatban ningún kell; helyesen: No tengo ningún problema con eso.",
           "en": "Alguno is a positive word, and before a noun it takes the short form (algún problema); a negative sentence needs ningún; correctly: No tengo ningún problema con eso.",
-          "es": "Alguno es una palabra positiva, y delante de un nombre va en forma corta (algún problema); una frase negativa pide ningún; correctamente: No tengo ningún problema con eso.",
-          "de": "Alguno ist ein positives Wort, und vor einem Nomen steht die Kurzform (algún problema); ein verneinter Satz braucht ningún; richtig: No tengo ningún problema con eso."
+          "es": "Alguno es una palabra positiva, y delante de un nombre va en forma corta (algún problema); una frase negativa pide ningún; correctamente: No tengo ningún problema con eso."
         },
         "nada": {
-          "hu": "A nada önállóan áll (No tengo nada), főnév előtt nem; főnév előtt ningún kell; helyesen: No tengo ningún problema con eso.",
           "en": "Nada stands alone (No tengo nada), not before a noun; before a noun you need ningún; correctly: No tengo ningún problema con eso.",
-          "es": "Nada va solo (No tengo nada), no delante de un nombre; delante de un nombre hace falta ningún; correctamente: No tengo ningún problema con eso.",
-          "de": "Nada steht allein (No tengo nada), nicht vor einem Nomen; vor einem Nomen braucht man ningún; richtig: No tengo ningún problema con eso."
+          "es": "Nada va solo (No tengo nada), no delante de un nombre; delante de un nombre hace falta ningún; correctamente: No tengo ningún problema con eso."
         }
       },
       "examples": [
         "No tengo ningún problema con eso.",
         "No hay ningún café aquí."
       ],
-      "tr": { "hu": "Nincs ezzel semmi problémám.", "en": "I have no problem with that.", "es": "No tengo ningún problema con eso.", "de": "Ich habe damit kein Problem." }
+      "tr": { "en": "I have no problem with that.", "es": "No tengo ningún problema con eso." }
     },
     {
       "id": "indef-ch-07",
@@ -665,30 +547,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Nőnemű főnév (mesa) előtt a teljes alak: alguna.",
         "en": "Before a feminine noun (mesa) the full form: alguna.",
-        "es": "Delante de un nombre femenino (mesa) va la forma completa: alguna.",
-        "de": "Vor einem femininen Nomen (mesa) steht die volle Form: alguna."
+        "es": "Delante de un nombre femenino (mesa) va la forma completa: alguna."
       },
       "wrong": {
         "algún": {
-          "hu": "Az algún csak hímnemű főnév előtt áll (algún día); a mesa nőnemű; helyesen: ¿Hay alguna mesa libre en el restaurante?",
           "en": "Algún stands only before a masculine noun (algún día); mesa is feminine; correctly: ¿Hay alguna mesa libre en el restaurante?",
-          "es": "Algún va solo delante de un nombre masculino (algún día); mesa es femenino; correctamente: ¿Hay alguna mesa libre en el restaurante?",
-          "de": "Algún steht nur vor einem maskulinen Nomen (algún día); mesa ist feminin; richtig: ¿Hay alguna mesa libre en el restaurante?"
+          "es": "Algún va solo delante de un nombre masculino (algún día); mesa es femenino; correctamente: ¿Hay alguna mesa libre en el restaurante?"
         },
         "ninguna": {
-          "hu": "A ninguna = egy sem, tagadó szó; a kérdés itt azt kérdezi, van-e valamilyen szabad asztal; helyesen: ¿Hay alguna mesa libre en el restaurante?",
           "en": "Ninguna = not one, a negative word; the question asks whether there is any free table; correctly: ¿Hay alguna mesa libre en el restaurante?",
-          "es": "Ninguna = ni una, una palabra negativa; la pregunta quiere saber si hay alguna mesa libre; correctamente: ¿Hay alguna mesa libre en el restaurante?",
-          "de": "Ninguna = keine, ein verneinendes Wort; die Frage will wissen, ob es irgendeinen freien Tisch gibt; richtig: ¿Hay alguna mesa libre en el restaurante?"
+          "es": "Ninguna = ni una, una palabra negativa; la pregunta quiere saber si hay alguna mesa libre; correctamente: ¿Hay alguna mesa libre en el restaurante?"
         }
       },
       "examples": [
         "¿Hay alguna mesa libre en el restaurante?",
         "¿Tienes alguna pregunta?"
       ],
-      "tr": { "hu": "Van szabad asztal az étteremben?", "en": "Is there any free table in the restaurant?", "es": "¿Hay alguna mesa libre en el restaurante?", "de": "Gibt es einen freien Tisch im Restaurant?" }
+      "tr": { "en": "Is there any free table in the restaurant?", "es": "¿Hay alguna mesa libre en el restaurante?" }
     },
     {
       "id": "indef-ch-08",
@@ -700,30 +576,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Főnév nélkül, hímnemű (libros): ninguno.",
         "en": "Without a noun, masculine (libros): ninguno.",
-        "es": "Sin nombre, masculino (libros): ninguno.",
-        "de": "Ohne Nomen, maskulin (libros): ninguno."
+        "es": "Sin nombre, masculino (libros): ninguno."
       },
       "wrong": {
         "ninguna": {
-          "hu": "A ninguna nőnemű; a libros hímnemű, ezért ninguno; helyesen: No, no tengo ninguno.",
           "en": "Ninguna is feminine; libros is masculine, so ninguno; correctly: No, no tengo ninguno.",
-          "es": "Ninguna es femenino; libros es masculino, por eso ninguno; correctamente: No, no tengo ninguno.",
-          "de": "Ninguna ist feminin; libros ist maskulin, deshalb ninguno; richtig: No, no tengo ninguno."
+          "es": "Ninguna es femenino; libros es masculino, por eso ninguno; correctamente: No, no tengo ninguno."
         },
         "ningún": {
-          "hu": "A ningún főnév előtt áll (ningún libro); itt a főnév kimarad, ezért a hosszú alak kell: ninguno.",
           "en": "Ningún stands before a noun (ningún libro); here the noun is left out, so the long form is needed: ninguno.",
-          "es": "Ningún va delante de un nombre (ningún libro); aquí el nombre se omite, por eso hace falta la forma larga: ninguno.",
-          "de": "Ningún steht vor einem Nomen (ningún libro); hier fällt das Nomen weg, deshalb braucht man die lange Form: ninguno."
+          "es": "Ningún va delante de un nombre (ningún libro); aquí el nombre se omite, por eso hace falta la forma larga: ninguno."
         }
       },
       "examples": [
         "¿Tienes libros? No, no tengo ninguno.",
         "¿Hay cafés cerca? No hay ninguno."
       ],
-      "tr": { "hu": "Vannak könyveid? Nem, egy sincs.", "en": "Do you have books? No, I don't have any.", "es": "¿Tienes libros? No, no tengo ninguno.", "de": "Hast du Bücher? Nein, ich habe keine." }
+      "tr": { "en": "Do you have books? No, I don't have any.", "es": "¿Tienes libros? No, no tengo ninguno." }
     },
     {
       "id": "indef-ch-09",
@@ -735,30 +605,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Főnév nélkül, nőnemű (mesas): ninguna.",
         "en": "Without a noun, feminine (mesas): ninguna.",
-        "es": "Sin nombre, femenino (mesas): ninguna.",
-        "de": "Ohne Nomen, feminin (mesas): ninguna."
+        "es": "Sin nombre, femenino (mesas): ninguna."
       },
       "wrong": {
         "ninguno": {
-          "hu": "A ninguno hímnemű; a mesas nőnemű, ezért ninguna; helyesen: No hay ninguna.",
           "en": "Ninguno is masculine; mesas is feminine, so ninguna; correctly: No hay ninguna.",
-          "es": "Ninguno es masculino; mesas es femenino, por eso ninguna; correctamente: No hay ninguna.",
-          "de": "Ninguno ist maskulin; mesas ist feminin, deshalb ninguna; richtig: No hay ninguna."
+          "es": "Ninguno es masculino; mesas es femenino, por eso ninguna; correctamente: No hay ninguna."
         },
         "nadie": {
-          "hu": "A nadie = senki, személy; asztalról (dologról) van szó, ezért ninguna; helyesen: ¿Hay mesas libres? No hay ninguna.",
           "en": "Nadie = no one, a person; this is about tables (things), so ninguna; correctly: ¿Hay mesas libres? No hay ninguna.",
-          "es": "Nadie = ninguna persona; aquí se habla de mesas (cosas), por eso ninguna; correctamente: ¿Hay mesas libres? No hay ninguna.",
-          "de": "Nadie = niemand, eine Person; hier geht es um Tische (Sachen), deshalb ninguna; richtig: ¿Hay mesas libres? No hay ninguna."
+          "es": "Nadie = ninguna persona; aquí se habla de mesas (cosas), por eso ninguna; correctamente: ¿Hay mesas libres? No hay ninguna."
         }
       },
       "examples": [
         "¿Hay mesas libres? No hay ninguna.",
         "¿Hay preguntas? No, no hay ninguna."
       ],
-      "tr": { "hu": "Vannak szabad asztalok? Egy sincs.", "en": "Are there free tables? There aren't any.", "es": "¿Hay mesas libres? No hay ninguna.", "de": "Gibt es freie Tische? Es gibt keine." }
+      "tr": { "en": "Are there free tables? There aren't any.", "es": "¿Hay mesas libres? No hay ninguna." }
     },
     {
       "id": "indef-ch-10",
@@ -770,30 +634,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Személy, az ige előtt: nadie, no nélkül.",
         "en": "A person, before the verb: nadie, without no.",
-        "es": "Una persona, antes del verbo: nadie, sin no.",
-        "de": "Eine Person, vor dem Verb: nadie, ohne no."
+        "es": "Una persona, antes del verbo: nadie, sin no."
       },
       "wrong": {
         "alguien": {
-          "hu": "Az alguien = valaki; de mindenki a munkahelyen van, tehát senki sincs otthon: nadie; helyesen: Hoy nadie está en casa; todos están en el trabajo.",
           "en": "Alguien = someone; but everyone is at work, so no one is at home: nadie; correctly: Hoy nadie está en casa; todos están en el trabajo.",
-          "es": "Alguien = una persona; pero todos están en el trabajo, así que ninguna persona está en casa: nadie; correctamente: Hoy nadie está en casa; todos están en el trabajo.",
-          "de": "Alguien = jemand; aber alle sind bei der Arbeit, also ist niemand zu Hause: nadie; richtig: Hoy nadie está en casa; todos están en el trabajo."
+          "es": "Alguien = una persona; pero todos están en el trabajo, así que ninguna persona está en casa: nadie; correctamente: Hoy nadie está en casa; todos están en el trabajo."
         },
         "algo": {
-          "hu": "Az algo = valami, dolog; itt személyről van szó, és senki sincs otthon: nadie; helyesen: Hoy nadie está en casa; todos están en el trabajo.",
           "en": "Algo = something, a thing; this is about a person, and no one is at home: nadie; correctly: Hoy nadie está en casa; todos están en el trabajo.",
-          "es": "Algo = una cosa; aquí se habla de una persona, y nadie está en casa: nadie; correctamente: Hoy nadie está en casa; todos están en el trabajo.",
-          "de": "Algo = etwas, eine Sache; hier geht es um eine Person, und niemand ist zu Hause: nadie; richtig: Hoy nadie está en casa; todos están en el trabajo."
+          "es": "Algo = una cosa; aquí se habla de una persona, y nadie está en casa: nadie; correctamente: Hoy nadie está en casa; todos están en el trabajo."
         }
       },
       "examples": [
         "Hoy nadie está en casa; todos están en el trabajo.",
         "Hoy nadie trabaja aquí."
       ],
-      "tr": { "hu": "Ma senki sincs otthon; mindenki dolgozik.", "en": "Today nobody is at home; everyone is at work.", "es": "Hoy nadie está en casa; todos están en el trabajo.", "de": "Heute ist niemand zu Hause; alle sind bei der Arbeit." }
+      "tr": { "en": "Today nobody is at home; everyone is at work.", "es": "Hoy nadie está en casa; todos están en el trabajo." }
     },
     {
       "id": "indef-ch-11",
@@ -805,30 +663,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Tagadó mondat, dolog: no + ige + nada.",
         "en": "A negative sentence, a thing: no + verb + nada.",
-        "es": "Frase negativa, una cosa: no + verbo + nada.",
-        "de": "Verneinter Satz, eine Sache: no + Verb + nada."
+        "es": "Frase negativa, una cosa: no + verbo + nada."
       },
       "wrong": {
         "algo": {
-          "hu": "A no hay mellé az algo nem illik: tagadó mondatban az ige után nada áll. Az algo pozitív mondatba való: Hay algo en casa (van valami otthon).",
           "en": "Algo does not go with no hay: in a negative sentence nada follows the verb. Algo belongs in a positive sentence: Hay algo en casa (there is something at home).",
-          "es": "Algo no va con no hay: en una frase negativa va nada después del verbo. Algo va en una frase positiva: Hay algo en casa.",
-          "de": "Algo passt nicht zu no hay: in einem verneinten Satz steht nach dem Verb nada. Algo gehört in einen positiven Satz: Hay algo en casa (zu Hause ist etwas)."
+          "es": "Algo no va con no hay: en una frase negativa va nada después del verbo. Algo va en una frase positiva: Hay algo en casa."
         },
         "nadie": {
-          "hu": "A nadie = senki, személy; ennivalóról (dologról) van szó, ezért nada; helyesen: Tengo hambre, pero no hay nada en casa.",
           "en": "Nadie = no one, a person; this is about food (a thing), so nada; correctly: Tengo hambre, pero no hay nada en casa.",
-          "es": "Nadie = ninguna persona; aquí se habla de comida (una cosa), por eso nada; correctamente: Tengo hambre, pero no hay nada en casa.",
-          "de": "Nadie = niemand, eine Person; hier geht es um Essen (eine Sache), deshalb nada; richtig: Tengo hambre, pero no hay nada en casa."
+          "es": "Nadie = ninguna persona; aquí se habla de comida (una cosa), por eso nada; correctamente: Tengo hambre, pero no hay nada en casa."
         }
       },
       "examples": [
         "Tengo hambre, pero no hay nada en casa.",
         "No hay nada en la mesa."
       ],
-      "tr": { "hu": "Éhes vagyok, de nincs semmi otthon.", "en": "I'm hungry, but there is nothing at home.", "es": "Tengo hambre, pero no hay nada en casa.", "de": "Ich habe Hunger, aber es gibt nichts zu Hause." }
+      "tr": { "en": "I'm hungry, but there is nothing at home.", "es": "Tengo hambre, pero no hay nada en casa." }
     },
     {
       "id": "indef-ch-12",
@@ -840,30 +692,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Tagadó mondat, nőnemű főnév (clase) előtt: ninguna.",
         "en": "A negative sentence, before a feminine noun (clase): ninguna.",
-        "es": "Frase negativa, delante de un nombre femenino (clase): ninguna.",
-        "de": "Verneinter Satz, vor einem femininen Nomen (clase): ninguna."
+        "es": "Frase negativa, delante de un nombre femenino (clase): ninguna."
       },
       "wrong": {
         "ningún": {
-          "hu": "A ningún csak hímnemű főnév előtt rövid (ningún problema); a clase nőnemű; helyesen: Hoy no hay ninguna clase en la escuela.",
           "en": "Ningún is short only before a masculine noun (ningún problema); clase is feminine; correctly: Hoy no hay ninguna clase en la escuela.",
-          "es": "Ningún se acorta solo delante de un nombre masculino (ningún problema); clase es femenino; correctamente: Hoy no hay ninguna clase en la escuela.",
-          "de": "Ningún ist nur vor einem maskulinen Nomen kurz (ningún problema); clase ist feminin; richtig: Hoy no hay ninguna clase en la escuela."
+          "es": "Ningún se acorta solo delante de un nombre masculino (ningún problema); clase es femenino; correctamente: Hoy no hay ninguna clase en la escuela."
         },
         "ninguno": {
-          "hu": "A ninguno főnév nélkül áll; itt a clase főnév követi, és nőnemű: ninguna clase; helyesen: Hoy no hay ninguna clase en la escuela.",
           "en": "Ninguno stands without a noun; here the noun clase follows, and it is feminine: ninguna clase; correctly: Hoy no hay ninguna clase en la escuela.",
-          "es": "Ninguno va sin nombre; aquí sigue el nombre clase, que es femenino: ninguna clase; correctamente: Hoy no hay ninguna clase en la escuela.",
-          "de": "Ninguno steht ohne Nomen; hier folgt das Nomen clase, und es ist feminin: ninguna clase; richtig: Hoy no hay ninguna clase en la escuela."
+          "es": "Ninguno va sin nombre; aquí sigue el nombre clase, que es femenino: ninguna clase; correctamente: Hoy no hay ninguna clase en la escuela."
         }
       },
       "examples": [
         "Hoy no hay ninguna clase en la escuela.",
         "No tengo ninguna clase hoy."
       ],
-      "tr": { "hu": "Ma egyetlen óra sincs az iskolában.", "en": "Today there are no classes at school.", "es": "Hoy no hay ninguna clase en la escuela.", "de": "Heute gibt es keinen Unterricht in der Schule." }
+      "tr": { "en": "Today there are no classes at school.", "es": "Hoy no hay ninguna clase en la escuela." }
     },
     {
       "id": "indef-match-01",
@@ -997,46 +843,34 @@
       "es": "¿Quieres algo de beber?",
       "target": "algo",
       "tr": {
-        "hu": "Kérsz valamit inni?",
         "en": "Do you want something to drink?",
-        "es": "¿Quieres algo de beber?",
-        "de": "Möchtest du etwas trinken?"
+        "es": "¿Quieres algo de beber?"
       },
       "options": [
         {
           "text": {
-            "hu": "algo / nada = dolog (valami / semmi)",
             "en": "algo / nada = a thing (something / nothing)",
-            "es": "algo / nada = una cosa",
-            "de": "algo / nada = eine Sache (etwas / nichts)"
+            "es": "algo / nada = una cosa"
           }
         },
         {
           "text": {
-            "hu": "alguien / nadie = személy (valaki / senki)",
             "en": "alguien / nadie = a person (someone / no one)",
-            "es": "alguien / nadie = una persona",
-            "de": "alguien / nadie = eine Person (jemand / niemand)"
+            "es": "alguien / nadie = una persona"
           },
           "wrong": {
-            "hu": "Az alguien személyre áll; a mondat italról kérdez, az pedig dolog: algo.",
             "en": "Alguien stands for people; the sentence asks about a drink, which is a thing: algo.",
-            "es": "Alguien se usa para personas; la frase pregunta por una bebida, que es una cosa: algo.",
-            "de": "Alguien steht für Personen; der Satz fragt nach einem Getränk, und das ist eine Sache: algo."
+            "es": "Alguien se usa para personas; la frase pregunta por una bebida, que es una cosa: algo."
           }
         },
         {
           "text": {
-            "hu": "algún / ningún = hímnemű főnév előtt",
             "en": "algún / ningún = before a masculine noun",
-            "es": "algún / ningún = delante de un nombre masculino",
-            "de": "algún / ningún = vor einem maskulinen Nomen"
+            "es": "algún / ningún = delante de un nombre masculino"
           },
           "wrong": {
-            "hu": "Az algún főnév előtt áll (algún día); itt nincs főnév, a mondat dologról kérdez: algo.",
             "en": "Algún stands before a noun (algún día); there is no noun here, the sentence asks about a thing: algo.",
-            "es": "Algún va delante de un nombre (algún día); aquí no hay nombre, la frase pregunta por una cosa: algo.",
-            "de": "Algún steht vor einem Nomen (algún día); hier gibt es kein Nomen, der Satz fragt nach einer Sache: algo."
+            "es": "Algún va delante de un nombre (algún día); aquí no hay nombre, la frase pregunta por una cosa: algo."
           }
         }
       ],
@@ -1048,46 +882,34 @@
       "es": "No veo a nadie en la calle.",
       "target": "nadie",
       "tr": {
-        "hu": "Senkit sem látok az utcán.",
         "en": "I don't see anyone in the street.",
-        "es": "No veo a nadie en la calle.",
-        "de": "Ich sehe niemanden auf der Straße."
+        "es": "No veo a nadie en la calle."
       },
       "options": [
         {
           "text": {
-            "hu": "algo / nada = dolog (valami / semmi)",
             "en": "algo / nada = a thing (something / nothing)",
-            "es": "algo / nada = una cosa",
-            "de": "algo / nada = eine Sache (etwas / nichts)"
+            "es": "algo / nada = una cosa"
           },
           "wrong": {
-            "hu": "A nada dologra áll; az a után személy jön, itt senkit sem látunk: nadie.",
             "en": "Nada stands for things; a person follows the a, here we see no one: nadie.",
-            "es": "Nada se usa para cosas; después de la a viene una persona, aquí no vemos a nadie: nadie.",
-            "de": "Nada steht für Sachen; nach dem a folgt eine Person, hier sehen wir niemanden: nadie."
+            "es": "Nada se usa para cosas; después de la a viene una persona, aquí no vemos a nadie: nadie."
           }
         },
         {
           "text": {
-            "hu": "alguien / nadie = személy (valaki / senki)",
             "en": "alguien / nadie = a person (someone / no one)",
-            "es": "alguien / nadie = una persona",
-            "de": "alguien / nadie = eine Person (jemand / niemand)"
+            "es": "alguien / nadie = una persona"
           }
         },
         {
           "text": {
-            "hu": "alguno / ninguno = főnév nélkül",
             "en": "alguno / ninguno = without a noun",
-            "es": "alguno / ninguno = sin nombre",
-            "de": "alguno / ninguno = ohne Nomen"
+            "es": "alguno / ninguno = sin nombre"
           },
           "wrong": {
-            "hu": "Az alguno / ninguno egy főnévre utal vissza; itt nincs főnév, személyről van szó: nadie.",
             "en": "Alguno / ninguno refer back to a noun; there is no noun here, it is about a person: nadie.",
-            "es": "Alguno / ninguno remiten a un nombre; aquí no hay nombre, se habla de una persona: nadie.",
-            "de": "Alguno / ninguno verweisen auf ein Nomen; hier gibt es keins, es geht um eine Person: nadie."
+            "es": "Alguno / ninguno remiten a un nombre; aquí no hay nombre, se habla de una persona: nadie."
           }
         }
       ],
@@ -1099,46 +921,34 @@
       "es": "No tengo ningún problema.",
       "target": "ningún",
       "tr": {
-        "hu": "Nincs semmi problémám.",
         "en": "I have no problem.",
-        "es": "No tengo ningún problema.",
-        "de": "Ich habe kein Problem."
+        "es": "No tengo ningún problema."
       },
       "options": [
         {
           "text": {
-            "hu": "alguna / ninguna = nőnemű főnév előtt",
             "en": "alguna / ninguna = before a feminine noun",
-            "es": "alguna / ninguna = delante de un nombre femenino",
-            "de": "alguna / ninguna = vor einem femininen Nomen"
+            "es": "alguna / ninguna = delante de un nombre femenino"
           },
           "wrong": {
-            "hu": "A problema hímnemű (el problema), ezért a rövid alak kell; a ninguna nőnemű főnév elé való.",
             "en": "Problema is masculine (el problema), so the short form is needed; ninguna belongs before a feminine noun.",
-            "es": "Problema es masculino (el problema), por eso hace falta la forma corta; ninguna va delante de un nombre femenino.",
-            "de": "Problema ist maskulin (el problema), deshalb braucht man die Kurzform; ninguna steht vor einem femininen Nomen."
+            "es": "Problema es masculino (el problema), por eso hace falta la forma corta; ninguna va delante de un nombre femenino."
           }
         },
         {
           "text": {
-            "hu": "alguno / ninguno = főnév nélkül",
             "en": "alguno / ninguno = without a noun",
-            "es": "alguno / ninguno = sin nombre",
-            "de": "alguno / ninguno = ohne Nomen"
+            "es": "alguno / ninguno = sin nombre"
           },
           "wrong": {
-            "hu": "A ninguno főnév nélkül áll; itt a problema főnév követi: ningún.",
             "en": "Ninguno stands without a noun; here the noun problema follows: ningún.",
-            "es": "Ninguno va sin nombre; aquí sigue el nombre problema: ningún.",
-            "de": "Ninguno steht ohne Nomen; hier folgt das Nomen problema: ningún."
+            "es": "Ninguno va sin nombre; aquí sigue el nombre problema: ningún."
           }
         },
         {
           "text": {
-            "hu": "algún / ningún = hímnemű főnév előtt",
             "en": "algún / ningún = before a masculine noun",
-            "es": "algún / ningún = delante de un nombre masculino",
-            "de": "algún / ningún = vor einem maskulinen Nomen"
+            "es": "algún / ningún = delante de un nombre masculino"
           }
         }
       ],
@@ -1150,46 +960,34 @@
       "es": "¿Hay alguna mesa libre?",
       "target": "alguna",
       "tr": {
-        "hu": "Van esetleg szabad asztal?",
         "en": "Is there any free table?",
-        "es": "¿Hay alguna mesa libre?",
-        "de": "Gibt es einen freien Tisch?"
+        "es": "¿Hay alguna mesa libre?"
       },
       "options": [
         {
           "text": {
-            "hu": "alguna / ninguna = nőnemű főnév előtt",
             "en": "alguna / ninguna = before a feminine noun",
-            "es": "alguna / ninguna = delante de un nombre femenino",
-            "de": "alguna / ninguna = vor einem femininen Nomen"
+            "es": "alguna / ninguna = delante de un nombre femenino"
           }
         },
         {
           "text": {
-            "hu": "algún / ningún = hímnemű főnév előtt",
             "en": "algún / ningún = before a masculine noun",
-            "es": "algún / ningún = delante de un nombre masculino",
-            "de": "algún / ningún = vor einem maskulinen Nomen"
+            "es": "algún / ningún = delante de un nombre masculino"
           },
           "wrong": {
-            "hu": "Az algún csak hímnemű főnév előtt áll; a mesa nőnemű: alguna.",
             "en": "Algún stands only before a masculine noun; mesa is feminine: alguna.",
-            "es": "Algún va solo delante de un nombre masculino; mesa es femenino: alguna.",
-            "de": "Algún steht nur vor einem maskulinen Nomen; mesa ist feminin: alguna."
+            "es": "Algún va solo delante de un nombre masculino; mesa es femenino: alguna."
           }
         },
         {
           "text": {
-            "hu": "alguno / ninguno = főnév nélkül",
             "en": "alguno / ninguno = without a noun",
-            "es": "alguno / ninguno = sin nombre",
-            "de": "alguno / ninguno = ohne Nomen"
+            "es": "alguno / ninguno = sin nombre"
           },
           "wrong": {
-            "hu": "Az alguno / alguna főnév nélkül áll; itt a mesa főnév követi, ezért nem ez a szabály.",
             "en": "Alguno / alguna stand without a noun; here the noun mesa follows, so this is not the rule.",
-            "es": "Alguno / alguna van sin nombre; aquí sigue el nombre mesa, por eso no es esta la regla.",
-            "de": "Alguno / alguna stehen ohne Nomen; hier folgt das Nomen mesa, deshalb ist das nicht die Regel."
+            "es": "Alguno / alguna van sin nombre; aquí sigue el nombre mesa, por eso no es esta la regla."
           }
         }
       ],
@@ -1201,46 +999,34 @@
       "es": "¿Tienes libros? No tengo ninguno.",
       "target": "ninguno",
       "tr": {
-        "hu": "Vannak könyveid? Egy sincs.",
         "en": "Do you have books? I have none.",
-        "es": "¿Tienes libros? No tengo ninguno.",
-        "de": "Hast du Bücher? Ich habe keins."
+        "es": "¿Tienes libros? No tengo ninguno."
       },
       "options": [
         {
           "text": {
-            "hu": "algún / ningún = hímnemű főnév előtt",
             "en": "algún / ningún = before a masculine noun",
-            "es": "algún / ningún = delante de un nombre masculino",
-            "de": "algún / ningún = vor einem maskulinen Nomen"
+            "es": "algún / ningún = delante de un nombre masculino"
           },
           "wrong": {
-            "hu": "A ningún főnév előtt áll (ningún libro); itt a főnév kimarad: ninguno.",
             "en": "Ningún stands before a noun (ningún libro); here the noun is left out: ninguno.",
-            "es": "Ningún va delante de un nombre (ningún libro); aquí el nombre se omite: ninguno.",
-            "de": "Ningún steht vor einem Nomen (ningún libro); hier fällt das Nomen weg: ninguno."
+            "es": "Ningún va delante de un nombre (ningún libro); aquí el nombre se omite: ninguno."
           }
         },
         {
           "text": {
-            "hu": "alguno / ninguno = főnév nélkül",
             "en": "alguno / ninguno = without a noun",
-            "es": "alguno / ninguno = sin nombre",
-            "de": "alguno / ninguno = ohne Nomen"
+            "es": "alguno / ninguno = sin nombre"
           }
         },
         {
           "text": {
-            "hu": "alguna / ninguna = nőnemű főnév előtt",
             "en": "alguna / ninguna = before a feminine noun",
-            "es": "alguna / ninguna = delante de un nombre femenino",
-            "de": "alguna / ninguna = vor einem femininen Nomen"
+            "es": "alguna / ninguna = delante de un nombre femenino"
           },
           "wrong": {
-            "hu": "A ninguna nőnemű főnévre utal; a libros hímnemű: ninguno.",
             "en": "Ninguna refers to a feminine noun; libros is masculine: ninguno.",
-            "es": "Ninguna remite a un nombre femenino; libros es masculino: ninguno.",
-            "de": "Ninguna verweist auf ein feminines Nomen; libros ist maskulin: ninguno."
+            "es": "Ninguna remite a un nombre femenino; libros es masculino: ninguno."
           }
         }
       ],
@@ -1252,46 +1038,34 @@
       "es": "No quiero nada.",
       "target": "nada",
       "tr": {
-        "hu": "Nem kérek semmit.",
         "en": "I don't want anything.",
-        "es": "No quiero nada.",
-        "de": "Ich möchte nichts."
+        "es": "No quiero nada."
       },
       "options": [
         {
           "text": {
-            "hu": "tagadó szó az ige előtt: no nélkül",
             "en": "negative word before the verb: without no",
-            "es": "palabra negativa antes del verbo: sin no",
-            "de": "Verneinungswort vor dem Verb: ohne no"
+            "es": "palabra negativa antes del verbo: sin no"
           },
           "wrong": {
-            "hu": "Itt a nada az ige után áll, ezért kell elé a no; az ige előtti tagadó szó mellé nem kell no.",
             "en": "Here nada comes after the verb, so no is needed before it; a negative word before the verb needs no no.",
-            "es": "Aquí nada va después del verbo, por eso hace falta no antes; una palabra negativa antes del verbo no necesita no.",
-            "de": "Hier steht nada nach dem Verb, deshalb braucht man no davor; ein Verneinungswort vor dem Verb braucht kein no."
+            "es": "Aquí nada va después del verbo, por eso hace falta no antes; una palabra negativa antes del verbo no necesita no."
           }
         },
         {
           "text": {
-            "hu": "alguien / nadie = személy (valaki / senki)",
             "en": "alguien / nadie = a person (someone / no one)",
-            "es": "alguien / nadie = una persona",
-            "de": "alguien / nadie = eine Person (jemand / niemand)"
+            "es": "alguien / nadie = una persona"
           },
           "wrong": {
-            "hu": "Az alguien / nadie személyre áll; a nada dolgot jelent.",
             "en": "Alguien / nadie stand for people; nada means a thing.",
-            "es": "Alguien / nadie se usan para personas; nada significa una cosa.",
-            "de": "Alguien / nadie stehen für Personen; nada bedeutet eine Sache."
+            "es": "Alguien / nadie se usan para personas; nada significa una cosa."
           }
         },
         {
           "text": {
-            "hu": "no + ige + tagadó szó (kettős tagadás)",
             "en": "no + verb + negative word (double negative)",
-            "es": "no + verbo + palabra negativa (doble negación)",
-            "de": "no + Verb + Verneinungswort (doppelte Verneinung)"
+            "es": "no + verbo + palabra negativa (doble negación)"
           }
         }
       ],
@@ -1303,46 +1077,34 @@
       "es": "Hoy nadie está en casa.",
       "target": "nadie",
       "tr": {
-        "hu": "Ma senki sincs otthon.",
         "en": "Nobody is at home today.",
-        "es": "Hoy nadie está en casa.",
-        "de": "Heute ist niemand zu Hause."
+        "es": "Hoy nadie está en casa."
       },
       "options": [
         {
           "text": {
-            "hu": "tagadó szó az ige előtt: no nélkül",
             "en": "negative word before the verb: without no",
-            "es": "palabra negativa antes del verbo: sin no",
-            "de": "Verneinungswort vor dem Verb: ohne no"
+            "es": "palabra negativa antes del verbo: sin no"
           }
         },
         {
           "text": {
-            "hu": "no + ige + tagadó szó (kettős tagadás)",
             "en": "no + verb + negative word (double negative)",
-            "es": "no + verbo + palabra negativa (doble negación)",
-            "de": "no + Verb + Verneinungswort (doppelte Verneinung)"
+            "es": "no + verbo + palabra negativa (doble negación)"
           },
           "wrong": {
-            "hu": "Ez az ige UTÁNI tagadó szóra vonatkozik (No está nadie en casa); itt a nadie az ige előtt áll, ezért no nélkül.",
             "en": "This applies to a negative word AFTER the verb (No está nadie en casa); here nadie comes before the verb, so no no.",
-            "es": "Esto vale para una palabra negativa DESPUÉS del verbo (No está nadie en casa); aquí nadie va antes del verbo, por eso sin no.",
-            "de": "Das gilt für ein verneinendes Wort NACH dem Verb (No está nadie en casa); hier steht nadie vor dem Verb, deshalb ohne no."
+            "es": "Esto vale para una palabra negativa DESPUÉS del verbo (No está nadie en casa); aquí nadie va antes del verbo, por eso sin no."
           }
         },
         {
           "text": {
-            "hu": "algo / nada = dolog (valami / semmi)",
             "en": "algo / nada = a thing (something / nothing)",
-            "es": "algo / nada = una cosa",
-            "de": "algo / nada = eine Sache (etwas / nichts)"
+            "es": "algo / nada = una cosa"
           },
           "wrong": {
-            "hu": "A nada dologra áll; itt személyről van szó (senki sincs otthon): nadie.",
             "en": "Nada stands for things; here it is about people (no one is at home): nadie.",
-            "es": "Nada se usa para cosas; aquí se habla de personas (nadie está en casa): nadie.",
-            "de": "Nada steht für Sachen; hier geht es um Personen (niemand ist zu Hause): nadie."
+            "es": "Nada se usa para cosas; aquí se habla de personas (nadie está en casa): nadie."
           }
         }
       ],
