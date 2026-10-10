@@ -1,7 +1,5 @@
 import { BACKUP_SCHEMA_VERSION, getAppVersion, type BackupPayload } from './backup';
-import { pickSurvivor } from './cardMerge';
 import { FORCED_PAIR, needsPairCorrection } from './languages';
-import { WORD_MERGES } from './wordMerges';
 import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
 import { addDays, type Sm2Card } from './sm2';
 import { pcicItemsForLevel, type PcicLevel } from '@/data/pcic';
@@ -13,8 +11,35 @@ import { readExamResults, writeExamResult } from './exam/result';
 import type { ExamResult, ExamResults } from './exam/types';
 import type { DB } from './dbTypes';
 
+// pcic_cards / mistake_cards row <-> Sm2Card, the same shapes the SQLite side stores.
+const sm2ToRow = (c: Sm2Card) => ({
+  item_id: c.itemId,
+  state: c.state,
+  step: c.step,
+  ease: c.ease,
+  interval: c.interval,
+  reps: c.reps,
+  lapses: c.lapses,
+  due: c.due,
+  last_review: c.lastReview,
+  introduced_at: c.introducedAt,
+  known: c.known ? 1 : 0,
+});
+const rowToSm2 = (r: any): Sm2Card => ({
+  itemId: r.item_id,
+  state: r.state,
+  step: r.step,
+  ease: r.ease,
+  interval: r.interval,
+  reps: r.reps,
+  lapses: r.lapses,
+  due: r.due,
+  lastReview: r.last_review ?? null,
+  introducedAt: r.introduced_at ?? null,
+  known: !!r.known,
+});
+
 class MemoryDB implements DB {
-  private cards: Map<string, any> = new Map();
   private streak = { current_count: 0, last_date: null as string | null, longest_count: 0 };
   // Active language pair (e.g. "es-hu"); scopes cards + level so each pair keeps its own progress.
   private activePair = 'es-hu';
@@ -56,8 +81,6 @@ class MemoryDB implements DB {
   __setLevelForTest(level: string): void {
     this.userLevels.set(this.activePair, { level, correct_streak: 0, mistakes_in_window: 0, fail_streak: 0 });
   }
-
-  private attempts: { word_id: number; type: string; pair?: string; correct: boolean; response_time_ms: number; timestamp: string }[] = [];
 
   private meta = { userId: '', firstUseDate: new Date().toISOString(), lastSyncDate: null as string | null };
 
@@ -193,14 +216,11 @@ class MemoryDB implements DB {
     return summarizeUsage(rows);
   }
 
-  // one local calendar day's totals, for the midnight celebration.
+  // one local calendar day's totals, for the midnight celebration. `words` =
+  // PCIC words first introduced that day (same rule as the native DB).
   async getDayStats(date: string): Promise<{ minutes: number; words: number }> {
-    const words = new Set(
-      this.attempts
-        .filter(a => a.type === 'word' && localDateString(new Date(a.timestamp)) === date)
-        .map(a => a.word_id)
-    );
-    return { minutes: this.usageMinutes.get(date) ?? 0, words: words.size };
+    const words = [...this.pcicCards.values()].filter(c => c.introducedAt === date).length;
+    return { minutes: this.usageMinutes.get(date) ?? 0, words };
   }
 
   // Game tab tables, scoped to the active pair like every
@@ -330,8 +350,6 @@ class MemoryDB implements DB {
       exportedAt: new Date().toISOString(),
       appVersion: getAppVersion(),
       tables: {
-        cards: [...this.cards.values()].map(c => ({ ...c })),
-        card_attempts: this.attempts.map(a => ({ ...a, correct: a.correct ? 1 : 0 })),
         game_progress: [...this.gameProgressMap].flatMap(([key, items]) => {
           const sep = key.lastIndexOf(':');
           const pair = key.slice(0, sep), game_id = key.slice(sep + 1);
@@ -345,6 +363,10 @@ class MemoryDB implements DB {
         streak: [{ id: 1, ...this.streak }],
         user_level: [...this.userLevels].map(([pair, l]) => ({ pair, ...l })),
         user_meta: [{ id: 1, user_id: '', first_use_date: this.meta.firstUseDate, last_sync_date: this.meta.lastSyncDate, grammar_palette: this.grammarPalette, skin: this.skin, skin_mix: this.skinMix ? JSON.stringify(this.skinMix) : null }],
+        pcic_cards: [...this.pcicCards.values()].map(sm2ToRow),
+        mistake_batches: [...this.mistakeBatches].map(([batch_id, v]) => ({ batch_id, json: v.json, imported_at: v.importedAt })),
+        mistake_cards: [...this.mistakeCards.values()].map(sm2ToRow),
+        usage_minutes: [...this.usageMinutes].map(([date, minutes]) => ({ date, minutes })),
       },
     };
   }
@@ -352,8 +374,6 @@ class MemoryDB implements DB {
   // Q0: restore, replaces the whole in-memory state from the payload.
   async importAll(payload: BackupPayload): Promise<void> {
     const t = payload.tables;
-    this.cards = new Map(t.cards.map((c: any) => [`${c.pair}:${c.word_id}:${c.type}`, { ...c }]));
-    this.attempts = t.card_attempts.map((a: any) => ({ ...a, correct: !!a.correct }));
     // Re-keyed by `${pair}:${game_id}` directly (not via gameProgressFor,
     // which keys off the CURRENT activePair, a restore can carry rows for
     // several pairs at once).
@@ -397,27 +417,11 @@ class MemoryDB implements DB {
     this.grammarPalette = isGrammarPaletteId(um?.grammar_palette) ? um.grammar_palette : DEFAULT_GRAMMAR_PALETTE;
     this.skin = isSkinSelection(um?.skin) ? um.skin : null;
     this.skinMix = parseSkinMix(um?.skin_mix);
-    this.applyWordMerges();
-  }
-
-  // A backup taken before the duplicate cleanup (2026-08-07) still holds cards
-  // for word ids that no longer exist. Same rule as the native DB: the progress
-  // moves to the surviving twin, and if both sides have history the stronger one
-  // wins. Spanish-target pairs only, the en/hu tracks number their words apart.
-  private applyWordMerges() {
-    for (const [key, card] of [...this.cards]) {
-      const newId = WORD_MERGES[card.word_id];
-      if (!newId || !String(card.pair).endsWith('-es')) continue;
-      this.cards.delete(key);
-      const twinKey = `${card.pair}:${newId}:${card.type}`;
-      const twin = this.cards.get(twinKey);
-      if (twin && pickSurvivor(twin, card) === twin) continue;
-      this.cards.set(twinKey, { ...card, word_id: newId });
-    }
-    for (const attempt of this.attempts) {
-      const newId = WORD_MERGES[attempt.word_id];
-      if (newId) attempt.word_id = newId;
-    }
+    // A v1 file has no pcic_cards / mistake_* / usage_minutes: keep the local ones.
+    if (t.pcic_cards) this.pcicCards = new Map(t.pcic_cards.map((r: any) => [r.item_id, rowToSm2(r)]));
+    if (t.mistake_batches) this.mistakeBatches = new Map(t.mistake_batches.map((r: any) => [r.batch_id, { json: r.json, importedAt: r.imported_at }]));
+    if (t.mistake_cards) this.mistakeCards = new Map(t.mistake_cards.map((r: any) => [r.item_id, rowToSm2(r)]));
+    if (t.usage_minutes) this.usageMinutes = new Map(t.usage_minutes.map((r: any) => [r.date, r.minutes]));
   }
 }
 

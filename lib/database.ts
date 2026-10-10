@@ -6,7 +6,7 @@ import type { Sm2Card } from './sm2';
 import { addDays } from './sm2';
 import { PCIC_LEVELS, pcicItemsForLevel, type PcicLevel } from '@/data/pcic';
 import type { MistakeBatchRow } from './mistakes/deck';
-import { runMigrations, applyWordMerges } from './db/migrations';
+import { runMigrations, applyWordMerges, applyPcicLevelMoves, applyPcicDedup } from './db/migrations';
 import { DEFAULT_AGAIN_DELAY_SEC } from './pcicSession';
 import { DEFAULT_GRAMMAR_PALETTE, isGrammarPaletteId, type GrammarPaletteId } from '@/constants/GrammarPalettes';
 import { isSkinSelection, parseSkinMix, type SkinMix, type SkinSelection } from '@/constants/Skins';
@@ -302,18 +302,15 @@ class SQLiteDB implements DB {
   }
 
   // what one local calendar day added up to, for the midnight celebration.
-  // `words` counts DISTINCT word cards touched that day, not raw attempts, so a
-  // word drilled five times still reads as one word learned.
+  // `words` is the number of PCIC words first introduced that local day
+  // (introduced_at = date, the same rule as the daily new-word limit), so a
+  // word drilled five times still reads as one word learned. Unlike the daily
+  // budget it does not drop orphaned cards (ids no longer in the corpus).
   async getDayStats(date: string): Promise<{ minutes: number; words: number }> {
     const db = await this.open();
     const usage = await db.getFirstAsync<any>('SELECT minutes FROM usage_minutes WHERE date = ?', [date]);
-    const rows = await db.getAllAsync<any>(
-      "SELECT DISTINCT word_id, timestamp FROM card_attempts WHERE type = 'word'"
-    );
-    const words = new Set(
-      rows.filter((r: any) => localDateString(new Date(r.timestamp)) === date).map((r: any) => r.word_id)
-    );
-    return { minutes: usage?.minutes ?? 0, words: words.size };
+    const learned = await db.getFirstAsync<any>('SELECT COUNT(*) AS n FROM pcic_cards WHERE introduced_at = ?', [date]);
+    return { minutes: usage?.minutes ?? 0, words: learned?.n ?? 0 };
   }
 
   // Game tab tables, scoped to the active pair like every
@@ -468,6 +465,8 @@ class SQLiteDB implements DB {
     }
     // user_id (NOT NULL, key stays) is a leftover identifier of older installs: never export it.
     tables.user_meta = tables.user_meta.map((r: any) => ({ ...r, user_id: '' }));
+    // pcic_cards.known was added with a bare ALTER (no default): rows from before it keep NULL.
+    tables.pcic_cards = tables.pcic_cards.map((r: any) => ({ ...r, known: r.known ? 1 : 0 }));
     return {
       schemaVersion: BACKUP_SCHEMA_VERSION,
       exportedAt: new Date().toISOString(),
@@ -483,8 +482,11 @@ class SQLiteDB implements DB {
     const db = await this.open();
     await db.withTransactionAsync(async () => {
       for (const table of BACKUP_TABLES) {
+        // A v1 file has no pcic_cards / mistake_* / usage_minutes: keep the local ones.
+        const rows = payload.tables[table];
+        if (!rows) continue;
         await db.runAsync(`DELETE FROM ${table}`);
-        for (const row of payload.tables[table] ?? []) {
+        for (const row of rows) {
           const cols = Object.keys(row);
           await db.runAsync(
             `INSERT INTO ${table} (${cols.join(', ')}) VALUES (${cols.map(() => '?').join(', ')})`,
@@ -504,6 +506,8 @@ class SQLiteDB implements DB {
     }
     // A backup taken before the duplicate cleanup still carries the deleted ids.
     await applyWordMerges(db);
+    await applyPcicLevelMoves(db);
+    await applyPcicDedup(db);
   }
 }
 
