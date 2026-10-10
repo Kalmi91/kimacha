@@ -8,6 +8,7 @@ import openA1 from '@/data/words-open/a1.json';
 import openA2 from '@/data/words-open/a2.json';
 import openB1 from '@/data/words-open/b1.json';
 import openB2 from '@/data/words-open/b2.json';
+import openC1 from '@/data/words-open/c1.json';
 import type { GrammarGapItem } from '@/lib/games/content';
 import type { LessonV2 } from '@/lib/grammar/lessonTypes';
 
@@ -49,7 +50,7 @@ export function articleNouns(): ArticleNoun[] {
   if (cache) return cache;
   const out: ArticleNoun[] = [];
   const seen = new Set<string>();
-  for (const words of [openA1, openA2, openB1, openB2] as unknown as OpenWord[][]) {
+  for (const words of [openA1, openA2, openB1, openB2, openC1] as unknown as OpenWord[][]) {
     for (const w of words) {
       if (w.pos !== 'noun') continue;
       const first = w.es.split(' / ')[0].trim();

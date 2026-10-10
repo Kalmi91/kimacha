@@ -168,6 +168,7 @@ export default function PlacementScreen() {
       A2: s.pcic.levelElementary,
       B1: s.pcic.levelIntermediate,
       B2: s.pcic.levelUpperIntermediate,
+      C1: s.pcic.levelAdvanced,
     };
     const placed = placement.placed;
     return shell(

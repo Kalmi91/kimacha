@@ -19,6 +19,7 @@ import openA1 from '@/data/words-open/a1.json';
 import openA2 from '@/data/words-open/a2.json';
 import openB1 from '@/data/words-open/b1.json';
 import openB2 from '@/data/words-open/b2.json';
+import openC1 from '@/data/words-open/c1.json';
 // hand-written (i) explanation for some cards, keyed by `o<order>`,
 // in English; opened by the small (i) button of the Learn card (PcicItem.note).
 import openNotes from '@/data/words-open/notes.json';
@@ -26,14 +27,14 @@ import openNotes from '@/data/words-open/notes.json';
 import { wordImageFor, type WordImage } from '@/data/wordImages';
 
 export type PcicKind = 'word' | 'phrase' | 'sentence';
-export type PcicLevel = 'A1' | 'A2' | 'B1' | 'B2';
+export type PcicLevel = 'A1' | 'A2' | 'B1' | 'B2' | 'C1';
 
-export const PCIC_LEVELS: PcicLevel[] = ['A1', 'A2', 'B1', 'B2'];
+export const PCIC_LEVELS: PcicLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
 
-// B2 is selectable too (en→es: 150 items); in the
-// es→en direction B2 is empty, and the level pickers skip it with the
+// B2 and C1 are selectable too (en→es: 763 and 259 items); in the
+// es→en direction they are empty, and the level pickers skip them with the
 // "0 items = not offered" filter.
-export const PCIC_VIEW_LEVELS: PcicLevel[] = ['A1', 'A2', 'B1', 'B2'];
+export const PCIC_VIEW_LEVELS: PcicLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
 
 export interface PcicItem {
   id: string;
@@ -95,7 +96,7 @@ function itemsFromWords(entries: WordEntry[]): PcicItem[] {
     }));
 }
 
-// from the cards of data/words-open (a1/a2/b1/b2.json, A1 =
+// from the cards of data/words-open (a1/a2/b1/b2/c1.json, A1 =
 // a1.json only, there is no separate A0). Id space: o<order> (the `order` field of the file,
 // 1-600), so it does not clash with the old w<id> and the es→en e<id> ids. From the
 // words-open pos every part of speech passes into the app's Pos (det and interj get a chip too).
@@ -136,13 +137,14 @@ const ITEMS_BY_LEVEL_ES: Record<PcicLevel, PcicItem[]> = {
   A2: itemsFromOpen(openA2 as OpenCard[]),
   B1: itemsFromOpen(openB1 as OpenCard[]),
   B2: itemsFromOpen(openB2 as OpenCard[]),
+  C1: itemsFromOpen(openC1 as OpenCard[]),
 };
 
 // the es→en deck for A1 = data/words/en/a0.json +
 // a1.json (there is no separate A0), A2 = a2.json (e<id> id space, the ids of the old first 50
 // do not change). The same English word stays only once, at its first occurrence
 // (on the lower level). B1 = en/b1.json (CEFR-J word list,
-// from e10000); B2 is empty (no content for it), and the level pickers skip it with the
+// from e10000); B2 and C1 are empty (no content for them), and the level pickers skip them with the
 // "0 items = not offered" rule.
 function dedupeByEn(levels: WordEntry[][]): WordEntry[][] {
   const seen = new Set<string>();
@@ -167,6 +169,7 @@ const ITEMS_BY_LEVEL_EN: Record<PcicLevel, PcicItem[]> = {
   A2: itemsFromWords(EN_A2_WORDS),
   B1: itemsFromWords(EN_B1_WORDS),
   B2: [],
+  C1: [],
 };
 
 // which direction's deck is active (set by app/_layout.tsx at

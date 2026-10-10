@@ -264,7 +264,7 @@ describe('level exam screen (A1)', () => {
 describe.each([
   ['A2', 'B1'],
   ['B1', 'B2'],
-  ['B2', undefined],
+  ['B2', 'C1'],
 ] as const)('level exam screen (%s)', (level, next) => {
   beforeEach(async () => {
     mockBack.mockClear();
@@ -289,7 +289,7 @@ describe.each([
     expect(mockBuildExam).not.toHaveBeenCalled();
   });
 
-  it('when unlocked the intro shows the level name; every item correct: passed, saved, recommends the next level (none after B2)', async () => {
+  it('when unlocked the intro shows the level name; every item correct: passed, saved, recommends the next level (C1 after B2)', async () => {
     await seedExamState(getDb(), 'es', '2026-10-01');
     const screen = render(<ExamScreen />);
     await flush();

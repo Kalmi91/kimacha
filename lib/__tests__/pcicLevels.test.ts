@@ -13,7 +13,7 @@ describe('matchesLevel', () => {
   });
 
   it('matches an id that is not in the corpus (e.g. a retired "a1-..." id) to no level', () => {
-    for (const level of ['A1', 'A2', 'B1', 'B2'] as const) {
+    for (const level of ['A1', 'A2', 'B1', 'B2', 'C1'] as const) {
       expect(matchesLevel('b1-abc123', level)).toBe(false);
       expect(matchesLevel('a2-abc123', level)).toBe(false);
     }

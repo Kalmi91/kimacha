@@ -25,11 +25,11 @@ describe('data/pcic.ts: direction-aware corpus', () => {
     expect(a1.every((item) => item.id.startsWith('o'))).toBe(true);
   });
 
-  // the 4 levels have 150 cards each, from the words-open
-  // a1/a2/b1/b2.json, order = the file's order field (1-600), id = o<order>.
-  it('en→es: A1/A2/B1/B2 = 512-1371-1537-1022 words-open cards (601 = tocar), o<order> id, unique id', () => {
-    const levels = (['A1', 'A2', 'B1', 'B2'] as const).map((l) => pcicItemsForLevel(l));
-    expect(levels.map((items) => items.length)).toEqual([512, 1371, 1537, 1022]);
+  // the 5 levels, from the words-open
+  // a1/a2/b1/b2/c1.json, order = the file's order field, id = o<order>.
+  it('en→es: A1/A2/B1/B2/C1 = 512-1371-1537-763-259 words-open cards (601 = tocar), o<order> id, unique id', () => {
+    const levels = (['A1', 'A2', 'B1', 'B2', 'C1'] as const).map((l) => pcicItemsForLevel(l));
+    expect(levels.map((items) => items.length)).toEqual([512, 1371, 1537, 763, 259]);
     const all = levels.flat();
     expect(new Set(all.map((item) => item.id)).size).toBe(4442);
     expect(all.every((item) => item.id === `o${item.order}`)).toBe(true);
@@ -38,6 +38,9 @@ describe('data/pcic.ts: direction-aware corpus', () => {
     expect(levelOfItem('o151')).toBe('A2');
     expect(levelOfItem('o451')).toBe('B2');
     expect(levelOfItem('o600')).toBe('B2');
+    expect(levelOfItem('o4077')).toBe('B2');
+    expect(levelOfItem('o1357')).toBe('C1');
+    expect(levelOfItem('o3837')).toBe('C1');
     // The old w<id> id space is not in the loaded corpus (the DB rows stay, they just do not show up).
     expect(findPcicItem('w1')).toBeUndefined();
   });

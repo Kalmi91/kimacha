@@ -18,7 +18,7 @@ type ColorScheme = (typeof Colors)['light'];
 type ExamRow = { status: ExamLevelStatus; onStart: () => void; onPractice: () => void; onGrammar: () => void };
 
 // A sheet that slides up when the PCIC header chip is tapped,
-// with four rows (A1-B2). Tapping a row -> the sheet closes and immediately gives
+// with five rows (A1-C1). Tapping a row -> the sheet closes and immediately gives
 // the deck of the chosen level (index.tsx handleSelectLevel).
 type Props = {
   visible: boolean;
@@ -32,7 +32,7 @@ type Props = {
   target: PcicTarget;
   // the exam row under a level; only levels that have an exam
   // get one (lib/exam/types.ts EXAM_LEVELS). A single row
-  // or one per level (A1-B2); each row appears under its own level (`status.level`).
+  // or one per level (A1-B2, C1 has no exam yet); each row appears under its own level (`status.level`).
   exam?: ExamRow | ExamRow[];
   // a quiet entry to the adaptive placement test below the level rows.
   onPlacement?: () => void;
@@ -48,6 +48,7 @@ export default function LevelPickerSheet({ visible, active, cards, colors, title
     A2: s.pcic.levelElementary,
     B1: s.pcic.levelIntermediate,
     B2: s.pcic.levelUpperIntermediate,
+    C1: s.pcic.levelAdvanced,
   };
   // If a level has no data or no English translation, do not offer it;
   // es→en uses the same filter too (A1 + A2 have data).
@@ -61,7 +62,7 @@ export default function LevelPickerSheet({ visible, active, cards, colors, title
             empty area between the rows does not close the sheet (as the overlay would). */}
         <Pressable style={[styles.sheet, { backgroundColor: colors.card }, g.brutal && [styles.brutalSheet, { borderColor: g.ink }]]} onPress={() => {}}>
           <Text variant="title" style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{title}</Text>
-          {/* four levels + four exam rows do not fit on a short phone, so the rows are scrollable
+          {/* five levels + four exam rows do not fit on a short phone, so the rows are scrollable
               (the title stays on top, the sheet is at most 90% of the screen). */}
           <ScrollView showsVerticalScrollIndicator={false}>
           {levels.map((lvl) => {
