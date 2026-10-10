@@ -1,6 +1,6 @@
 // the level picker sheet, with the real data/pcic (not mocked), also offers B2 for the en→es
-// direction, with 1022 items; for es→en B2 is empty, so the "0 items = don't offer it" filter
-// leaves it out.
+// direction, with 763 items, and C1 with 259; for es→en both are empty, so the "0 items = don't offer it" filter
+// leaves them out.
 
 import { fireEvent, render } from '@testing-library/react-native';
 
@@ -36,12 +36,12 @@ describe('LevelPickerSheet: B2 (words-open)', () => {
     expect(onSelect).toHaveBeenCalledWith('B2');
   });
 
-  it('en→es: the B2 row measures progress against 1022 items (the o451 card belonging to B2 is "introduced")', () => {
+  it('en→es: the B2 row measures progress against 763 items (the o451 card belonging to B2 is "introduced")', () => {
     setPcicTarget('es');
     const introduced = { ...sm2NewCard('o451'), state: 'learning' as const };
     const { getByText } = renderSheet('es', jest.fn(), [introduced]);
 
-    expect(getByText('1 / 1022 introduced')).toBeTruthy();
+    expect(getByText('1 / 763 introduced')).toBeTruthy();
   });
 
   it('es→en: B2 is empty, we do not offer it', () => {
@@ -50,5 +50,35 @@ describe('LevelPickerSheet: B2 (words-open)', () => {
 
     expect(queryByText('B2')).toBeNull();
     expect(queryByText('Upper intermediate')).toBeNull();
+  });
+});
+
+describe('LevelPickerSheet: C1 (words-open)', () => {
+  afterEach(() => setPcicTarget('es'));
+
+  it('en→es: the C1 row is there, "Advanced", and selectable', () => {
+    setPcicTarget('es');
+    const onSelect = jest.fn();
+    const { getByText } = renderSheet('es', onSelect);
+
+    expect(getByText('C1')).toBeTruthy();
+    fireEvent.press(getByText('Advanced'));
+    expect(onSelect).toHaveBeenCalledWith('C1');
+  });
+
+  it('en→es: the C1 row measures progress against 259 items (the o1357 card belonging to C1 is "introduced")', () => {
+    setPcicTarget('es');
+    const introduced = { ...sm2NewCard('o1357'), state: 'learning' as const };
+    const { getByText } = renderSheet('es', jest.fn(), [introduced]);
+
+    expect(getByText('1 / 259 introduced')).toBeTruthy();
+  });
+
+  it('es→en: C1 is empty, we do not offer it', () => {
+    setPcicTarget('en');
+    const { queryByText } = renderSheet('en');
+
+    expect(queryByText('C1')).toBeNull();
+    expect(queryByText('Advanced')).toBeNull();
   });
 });

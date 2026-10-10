@@ -5,9 +5,10 @@ import openA1 from '@/data/words-open/a1.json';
 import openA2 from '@/data/words-open/a2.json';
 import openB1 from '@/data/words-open/b1.json';
 import openB2 from '@/data/words-open/b2.json';
+import openC1 from '@/data/words-open/c1.json';
 
 type Card = { order: number; level: string; es: string; en: string };
-const cards = [...openA1, ...openA2, ...openB1, ...openB2] as unknown as Card[];
+const cards = [...openA1, ...openA2, ...openB1, ...openB2, ...openC1] as unknown as Card[];
 
 describe('words-open: no Spanish expression in the meaning fields', () => {
   it('the English field has no Spanish accented letter and no "=" (expression explanation)', () => {

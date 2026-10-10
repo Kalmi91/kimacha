@@ -2,13 +2,14 @@
 import { getOpenWordsForLevel, getOpenWordsUpToLevel, openLevelOf, openWords } from '../openWords';
 
 describe('data/openWords.ts', () => {
-  it('4442 cards, unique id (= order), A1-B2 512-1371-1537-1022', () => {
+  it('4442 cards, unique id (= order), A1-C1 512-1371-1537-763-259', () => {
     expect(openWords).toHaveLength(4442);
     expect(new Set(openWords.map((w) => w.id)).size).toBe(4442);
     expect(getOpenWordsForLevel('A1')).toHaveLength(512);
     expect(getOpenWordsForLevel('A2')).toHaveLength(1371);
     expect(getOpenWordsForLevel('B1')).toHaveLength(1537);
-    expect(getOpenWordsForLevel('B2')).toHaveLength(1022);
+    expect(getOpenWordsForLevel('B2')).toHaveLength(763);
+    expect(getOpenWordsForLevel('C1')).toHaveLength(259);
     expect(getOpenWordsForLevel('A0')).toEqual([]);
   });
 
@@ -27,13 +28,15 @@ describe('data/openWords.ts', () => {
     expect(openWords.filter((w) => w.openPos !== 'noun' && w.gender !== undefined)).toEqual([]);
   });
 
-  it('A0 falls to A1, C1/C2 to B2, the cumulative set goes back down to A1', () => {
+  it('A0 falls to A1, C2 to C1, the cumulative set goes back down to A1', () => {
     expect(openLevelOf('A0')).toBe('A1');
-    expect(openLevelOf('C1')).toBe('B2');
-    expect(openLevelOf('C2')).toBe('B2');
+    expect(openLevelOf('C1')).toBe('C1');
+    expect(openLevelOf('C2')).toBe('C1');
     expect(openLevelOf('B1')).toBe('B1');
     expect(getOpenWordsUpToLevel('A0')).toHaveLength(512);
     expect(getOpenWordsUpToLevel('A2')).toHaveLength(1883);
+    expect(getOpenWordsUpToLevel('B2')).toHaveLength(4183);
+    expect(getOpenWordsUpToLevel('C1')).toHaveLength(4442);
     expect(getOpenWordsUpToLevel('C2')).toHaveLength(4442);
   });
 });

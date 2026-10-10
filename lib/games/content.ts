@@ -23,7 +23,7 @@ export function cumulativeCorpusWordIds(level: Level, lang: string): Set<number>
   const key = `${lang}:${level}`;
   const cached = cumulativeIdsCache.get(key);
   if (cached) return cached;
-  // The words-open cards (id = order), A0 → A1, C1/C2 → B2.
+  // The words-open cards (id = order), A0 → A1, C2 → C1.
   const ids = new Set<number>();
   for (const w of getOpenWordsUpToLevel(level)) ids.add(w.id);
   cumulativeIdsCache.set(key, ids);

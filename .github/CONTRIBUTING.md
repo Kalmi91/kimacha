@@ -46,7 +46,7 @@ The product rules are in [docs/NORTH-STAR.md](../docs/NORTH-STAR.md). The ones t
 - **Never a sentence with an unknown word.** Every word in an example sentence is taught by that level
   or carries a gloss, and a sentence stays inside the grammar its level has unlocked.
   `node scripts/audit-games.mjs` checks lessons against the Spanish deck. CI does not run it.
-- **Data lives in JSON.** Spanish words are in `data/words-open/{a1,a2,b1,b2}.json`, English words in
+- **Data lives in JSON.** Spanish words are in `data/words-open/{a1,a2,b1,b2,c1}.json`, English words in
   `data/words/en/`, grammar lessons in `data/games/grammar/<lang>/`. The `.ts` files next to them
   only wire the data up. After editing the Spanish word list run `node scripts/words-open-check.mjs`.
 - **Never regenerate a word list wholesale.** Word data cannot be reviewed by eye: add and edit entries.

@@ -277,10 +277,10 @@ const FUNCTION_WORDS_ES = new Set([
   'haber',
 ]);
 
-// The lesson's level or below: PCIC only covers A1..B2, A0 maps to A1,
-// C1/C2 to B2 (there is no PCIC data above).
+// The lesson's level or below: PCIC only covers A1..C1, A0 maps to A1,
+// C2 to C1 (there is no PCIC data above).
 const PCIC_LEVEL_CEILING: Record<Level, PcicLevel> = {
-  A0: 'A1', A1: 'A1', A2: 'A2', B1: 'B1', B2: 'B2', C1: 'B2', C2: 'B2',
+  A0: 'A1', A1: 'A1', A2: 'A2', B1: 'B1', B2: 'B2', C1: 'C1', C2: 'C1',
 };
 
 const pcicIndexCache = new Map<Level, Map<string, { es: string; en: string }>>();
