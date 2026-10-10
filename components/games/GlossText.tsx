@@ -4,6 +4,7 @@ import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { speak } from '@/lib/speech';
+import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
 import { normalizeWordToken } from '@/data/words';
 import type { GlossInfo } from '@/lib/games/gloss';
@@ -104,6 +105,8 @@ export default function GlossText({
             <Text style={[styles.native, { color: colors.tabIconDefault }]}>{shown?.native}</Text>
             <View style={styles.row}>
               <Pressable
+                accessibilityRole="button"
+                accessibilityLabel={t().a11y.speak}
                 style={[styles.iconBtn, { borderColor: colors.tabIconDefault }]}
                 onPress={() => shown && speak(shown.learned, speechLang(learnedLang))}
               >

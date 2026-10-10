@@ -85,6 +85,7 @@ export default function TabLayout() {
         name="index"
         options={{
           title: s.tabs.pcic,
+          tabBarAccessibilityLabel: s.tabs.pcic,
           // Draws its own header, as before.
           headerShown: false,
           tabBarIcon: ({ color, focused }) => tabIcon({ ios: 'list.bullet', android: 'list', web: 'list' }, color, focused),
@@ -94,6 +95,7 @@ export default function TabLayout() {
         name="course"
         options={{
           title: s.tabs.grammar,
+          tabBarAccessibilityLabel: s.tabs.grammar,
           // the brutalist course list draws its own header (title + streak sticker).
           headerShown: grammarPalette === 'classic',
           tabBarIcon: ({ color, focused }) => tabIcon({ ios: 'book.fill', android: 'book', web: 'book' }, color, focused),
@@ -103,6 +105,7 @@ export default function TabLayout() {
         name="stats"
         options={{
           title: s.tabs.stats,
+          tabBarAccessibilityLabel: s.tabs.stats,
           tabBarIcon: ({ color, focused }) => tabIcon({ ios: 'chart.bar.fill', android: 'bar_chart', web: 'bar_chart' }, color, focused),
         }}
       />
@@ -110,6 +113,7 @@ export default function TabLayout() {
         name="settings"
         options={{
           title: s.tabs.settings,
+          tabBarAccessibilityLabel: s.tabs.settings,
           tabBarIcon: ({ color, focused }) => tabIcon({ ios: 'gearshape.fill', android: 'settings', web: 'settings' }, color, focused),
         }}
       />

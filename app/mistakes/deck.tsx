@@ -118,7 +118,7 @@ export default function MistakesDeckScreen() {
           <BrutalBackButton testID="mistakes-deck-back" onPress={() => router.back()} />
         </View>
       ) : (
-      <Pressable onPress={() => router.back()} hitSlop={12}>
+      <Pressable accessibilityRole="button" accessibilityLabel={s.a11y.back} onPress={() => router.back()} hitSlop={12}>
         <Text style={[styles.back, { color: colors.text }]}>←</Text>
       </Pressable>
       )}
@@ -189,7 +189,7 @@ export default function MistakesDeckScreen() {
               </Text>
               <View style={styles.frontRow}>
                 <Text variant="word" style={[styles.correctAnswer, { color: colors.tint }]}>{currentCard.answer}</Text>
-                <Pressable onPress={() => speak(currentCard.answer, speechLang('es'))} style={styles.speakBtn}>
+                <Pressable accessibilityRole="button" accessibilityLabel={s.a11y.speak} onPress={() => speak(currentCard.answer, speechLang('es'))} style={styles.speakBtn}>
                   <Text style={styles.speakIcon}>🔊</Text>
                 </Pressable>
               </View>

@@ -64,10 +64,10 @@ export default function OnboardingScreen() {
             </View>
           ) : (
           <View style={styles.langButtonGroup}>
-            <Pressable style={[styles.startBtn, { backgroundColor: colors.tint }]} onPress={() => handleChooseLanguage('en')}>
+            <Pressable accessibilityRole="button" style={[styles.startBtn, { backgroundColor: colors.tint }]} onPress={() => handleChooseLanguage('en')}>
               <Text style={[styles.startBtnText, { color: colors.onTint }]}>English</Text>
             </Pressable>
-            <Pressable style={[styles.startBtn, { backgroundColor: colors.tint }]} onPress={() => handleChooseLanguage('es')}>
+            <Pressable accessibilityRole="button" style={[styles.startBtn, { backgroundColor: colors.tint }]} onPress={() => handleChooseLanguage('es')}>
               <Text style={[styles.startBtnText, { color: colors.onTint }]}>Español</Text>
             </Pressable>
           </View>
@@ -135,7 +135,7 @@ export default function OnboardingScreen() {
         {g.brutal ? (
           <BrutalButton testID="onboarding-start" label={s.onboarding.start} onPress={() => setStep('intro')} style={styles.brutalBtn} />
         ) : (
-        <Pressable style={[styles.startBtn, { backgroundColor: colors.tint }]} onPress={() => setStep('intro')}>
+        <Pressable accessibilityRole="button" style={[styles.startBtn, { backgroundColor: colors.tint }]} onPress={() => setStep('intro')}>
           <Text style={[styles.startBtnText, { color: colors.onTint }]}>{s.onboarding.start}</Text>
         </Pressable>
         )}
