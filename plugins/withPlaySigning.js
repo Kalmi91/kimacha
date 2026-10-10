@@ -6,6 +6,7 @@
 // upload key instead. The key is described by a keystore.properties file kept outside
 // the repository: path from the env var KIMACHA_KEYSTORE_PROPERTIES, default
 // <user home>/.kimacha/keystore.properties. A missing or incomplete file fails the build.
+// storeFile may be written with forward slashes or Windows backslashes.
 const { withAppBuildGradle } = require('expo/config-plugins');
 
 const MARKER = '// kimacha-play-signing';
@@ -21,7 +22,10 @@ const HELPER = [
   '    if (!propsFile.isFile()) {',
   '        throw new GradleException("Play Store build (-PplayStore=true) needs the upload keystore description at ${propsFile}, but that file does not exist. Create it (storeFile, storePassword, keyAlias, keyPassword; see README, Release process) or point KIMACHA_KEYSTORE_PROPERTIES at it.")',
   '    }',
-  '    propsFile.withInputStream { playKeystoreProps.load(it) }',
+  '    // In a .properties file a single backslash is an escape, so a Windows storeFile with single backslashes would load mangled.',
+  '    // Read the file as text and turn the backslashes of the storeFile line into forward slashes (doubled ones count as one) before loading.',
+  String.raw`    def propsText = propsFile.getText('UTF-8').readLines().collect { line -> line.matches(/\s*storeFile\s*[=:].*/) ? line.replace('\\\\', '\\').replace('\\', '/') : line }.join('\n')`,
+  '    playKeystoreProps.load(new StringReader(propsText))',
   "    ['storeFile', 'storePassword', 'keyAlias', 'keyPassword'].each { key ->",
   '        if (!playKeystoreProps.getProperty(key)) {',
   '            throw new GradleException("Play Store build: ${propsFile} has no value for ${key}.")',

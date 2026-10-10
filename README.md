@@ -144,7 +144,10 @@ part of the normal release path.
    the variable, so delete `$env:TEMP\metro-*` and `node_modules\.cache` first. `-PplayStore=true` makes
    `plugins/withPlaySigning.js` sign with the upload key. The key is described by a
    `keystore.properties` file (`storeFile`, `storePassword`, `keyAlias`, `keyPassword`; a relative
-   `storeFile` is resolved next to the properties file). Its path comes from the environment variable
+   `storeFile` is resolved next to the properties file). Write a Windows `storeFile` with forward slashes
+   (`C:/Users/me/.kimacha/upload.jks`) or doubled backslashes, because Java treats a single `\` in a
+   `.properties` file as an escape; the build also turns the backslashes of that one line into forward
+   slashes. The path of the properties file comes from the environment variable
    `KIMACHA_KEYSTORE_PROPERTIES`, default `%USERPROFILE%\.kimacha\keystore.properties`; the build fails
    with a message when it is missing. Keys and passwords stay on the maintainer's machine and never
    enter the repository (`*.jks` and `keystore.properties` are gitignored).
