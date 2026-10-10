@@ -3,42 +3,32 @@
   "topic": "negative_inversion",
   "level": "C1",
   "title": {
-    "hu": "Fordított szórend tagadó határozókkal (Never have I …, Not only did she …)",
     "en": "Negative Inversion (Never have I …, Not only did she …)",
-    "es": "La inversión con adverbios negativos (Never have I …, Not only did she …)",
-    "de": "Inversion nach verneinenden Adverbien (Never have I …, Not only did she …)"
+    "es": "La inversión con adverbios negativos (Never have I …, Not only did she …)"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "Ha egy tagadó vagy korlátozó határozó áll a mondat elején, a segédige az alany elé kerül: „Never have I seen such a view.” (Soha nem láttam még ilyen kilátást.) Ha nincs segédige, a do/does/did lép be: „Not only did she win, but she also broke the record.” A spanyolban ilyen szórendcsere nincs („Nunca había visto una vista así”), ezért az angolban tudatosan kell megtanulni. A forma hangsúlyos, választékos, írásban és beszédben egyaránt.",
         "en": "When a negative or restrictive adverbial opens the sentence, the auxiliary comes before the subject: “Never have I seen such a view.” If there is no auxiliary, do/does/did steps in: “Not only did she win, but she also broke the record.” Spanish has no such word-order change (“Nunca había visto una vista así”), so Spanish speakers must learn the pattern on purpose. The form is emphatic and polished, in writing and in speech.",
-        "es": "Cuando un adverbial negativo o restrictivo abre la oración, el auxiliar va antes del sujeto: «Never have I seen such a view.» Si no hay auxiliar, entra do/does/did: «Not only did she win, but she also broke the record.» El español no tiene este cambio de orden («Nunca había visto una vista así»), por eso en inglés hay que aprenderlo a propósito. La forma es enfática y elegante, tanto por escrito como al hablar.",
-        "de": "Steht ein verneinendes oder einschränkendes Adverbial am Satzanfang, rückt das Hilfsverb vor das Subjekt: „Never have I seen such a view.“ Gibt es kein Hilfsverb, tritt do/does/did ein: „Not only did she win, but she also broke the record.“ Das Spanische kennt diese Wortstellung nicht („Nunca había visto una vista así“), deshalb muss man sie im Englischen gezielt lernen. Die Form ist betont und gehoben, schriftlich wie mündlich."
+        "es": "Cuando un adverbial negativo o restrictivo abre la oración, el auxiliar va antes del sujeto: «Never have I seen such a view.» Si no hay auxiliar, entra do/does/did: «Not only did she win, but she also broke the record.» El español no tiene este cambio de orden («Nunca había visto una vista así»), por eso en inglés hay que aprenderlo a propósito. La forma es enfática y elegante, tanto por escrito como al hablar."
       }
     },
     {
       "kind": "table",
       "id": "neg-forms",
       "title": {
-        "hu": "Melyik kifejezés?",
         "en": "Which phrase?",
-        "es": "¿Qué expresión uso?",
-        "de": "Welcher Ausdruck?"
+        "es": "¿Qué expresión uso?"
       },
       "header": [
         {
-          "hu": "Jelentés",
           "en": "Meaning",
-          "es": "Significado",
-          "de": "Bedeutung"
+          "es": "Significado"
         },
         {
-          "hu": "forma",
           "en": "form",
-          "es": "forma",
-          "de": "Form"
+          "es": "forma"
         }
       ],
       "rows": [
@@ -71,64 +61,50 @@
     {
       "kind": "list",
       "title": {
-        "hu": "A szabály: tagadó határozó + segédige + alany",
         "en": "The rule: negative adverbial + auxiliary + subject",
-        "es": "La regla: adverbial negativo + auxiliar + sujeto",
-        "de": "Die Regel: verneinendes Adverbial + Hilfsverb + Subjekt"
+        "es": "La regla: adverbial negativo + auxiliar + sujeto"
       },
       "items": [
         {
           "text": {
-            "hu": "Ide tartozik a never, rarely, seldom, little, nowhere, at no time, in no way, under no circumstances. A segédige lehet have, be, a módbeli ige, vagy do/does/did.",
             "en": "This covers never, rarely, seldom, little, nowhere, at no time, in no way, under no circumstances. The auxiliary can be have, be, a modal verb, or do/does/did.",
-            "es": "Aquí entran never, rarely, seldom, little, nowhere, at no time, in no way, under no circumstances. El auxiliar puede ser have, be, un verbo modal, o do/does/did.",
-            "de": "Dazu gehören never, rarely, seldom, little, nowhere, at no time, in no way, under no circumstances. Das Hilfsverb kann have, be, ein Modalverb oder do/does/did sein."
+            "es": "Aquí entran never, rarely, seldom, little, nowhere, at no time, in no way, under no circumstances. El auxiliar puede ser have, be, un verbo modal, o do/does/did."
           },
           "examples": [
             {
               "es": "Never have I seen such a beautiful view.",
               "tr": {
-                "hu": "Soha nem láttam még ilyen szép kilátást.",
                 "en": "Never have I seen such a beautiful view.",
-                "es": "Nunca había visto una vista tan bonita.",
-                "de": "Nie habe ich eine so schöne Aussicht gesehen."
+                "es": "Nunca había visto una vista tan bonita."
               }
             },
             {
               "es": "Rarely do we get such good news.",
               "tr": {
-                "hu": "Ritkán kapunk ilyen jó hírt.",
                 "en": "Rarely do we get such good news.",
-                "es": "Rara vez recibimos tan buenas noticias.",
-                "de": "Selten bekommen wir so gute Nachrichten."
+                "es": "Rara vez recibimos tan buenas noticias."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Ha az eredeti mondatban nincs segédige, a do/does/did kerül az alany elé, az ige alapalakban marad: „Seldom does she complain.”",
             "en": "If the original sentence has no auxiliary, do/does/did goes before the subject and the verb stays in the base form: “Seldom does she complain.”",
-            "es": "Si la oración original no tiene auxiliar, do/does/did va antes del sujeto y el verbo queda en forma base: «Seldom does she complain.»",
-            "de": "Hat der ursprüngliche Satz kein Hilfsverb, steht do/does/did vor dem Subjekt, und das Verb bleibt in der Grundform: „Seldom does she complain.“"
+            "es": "Si la oración original no tiene auxiliar, do/does/did va antes del sujeto y el verbo queda en forma base: «Seldom does she complain.»"
           },
           "examples": [
             {
               "es": "Seldom does she complain about her job.",
               "tr": {
-                "hu": "Ritkán panaszkodik a munkájára.",
                 "en": "Seldom does she complain about her job.",
-                "es": "Rara vez se queja de su trabajo.",
-                "de": "Selten beschwert sie sich über ihren Job."
+                "es": "Rara vez se queja de su trabajo."
               }
             },
             {
               "es": "Little did they know about the problem.",
               "tr": {
-                "hu": "Sejtelmük sem volt a problémáról.",
                 "en": "Little did they know about the problem.",
-                "es": "No tenían ni idea del problema.",
-                "de": "Sie ahnten nichts von dem Problem."
+                "es": "No tenían ni idea del problema."
               }
             }
           ]
@@ -138,36 +114,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Hardly, scarcely, no sooner",
         "en": "Hardly, scarcely, no sooner",
-        "es": "Hardly, scarcely, no sooner",
-        "de": "Hardly, scarcely, no sooner"
+        "es": "Hardly, scarcely, no sooner"
       },
       "items": [
         {
           "text": {
-            "hu": "A két esemény gyors egymásutánja: had + igenév az első részben. A hardly és a scarcely után when, a no sooner után than áll.",
             "en": "Two events in quick succession: had + participle in the first part. After hardly and scarcely comes when, after no sooner comes than.",
-            "es": "Dos hechos en rápida sucesión: had + participio en la primera parte. Después de hardly y scarcely va when, después de no sooner va than.",
-            "de": "Zwei Ereignisse in schneller Folge: had + Partizip im ersten Teil. Nach hardly und scarcely steht when, nach no sooner steht than."
+            "es": "Dos hechos en rápida sucesión: had + participio en la primera parte. Después de hardly y scarcely va when, después de no sooner va than."
           },
           "examples": [
             {
               "es": "Hardly had we arrived when it started to rain.",
               "tr": {
-                "hu": "Alig értünk oda, amikor esni kezdett.",
                 "en": "Hardly had we arrived when it started to rain.",
-                "es": "Apenas habíamos llegado cuando empezó a llover.",
-                "de": "Kaum waren wir angekommen, da begann es zu regnen."
+                "es": "Apenas habíamos llegado cuando empezó a llover."
               }
             },
             {
               "es": "No sooner had she left than the phone rang.",
               "tr": {
-                "hu": "Alig ment el, megszólalt a telefon.",
                 "en": "No sooner had she left than the phone rang.",
-                "es": "En cuanto se fue, sonó el teléfono.",
-                "de": "Kaum war sie gegangen, klingelte das Telefon."
+                "es": "En cuanto se fue, sonó el teléfono."
               }
             }
           ]
@@ -177,36 +145,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Not only … but also és only + idő vagy feltétel",
         "en": "Not only … but also, and only + time or condition",
-        "es": "Not only … but also y only + tiempo o condición",
-        "de": "Not only … but also und only + Zeit oder Bedingung"
+        "es": "Not only … but also y only + tiempo o condición"
       },
       "items": [
         {
           "text": {
-            "hu": "A not only mondat elején fordított szórendet hoz létre: „Not only was he late, but he also forgot the documents.” Az only + időhatározó vagy only after/when szintén: „Only then did I understand.”",
             "en": "Not only at the start brings inversion: “Not only was he late, but he also forgot the documents.” Only + a time phrase or only after/when does too: “Only then did I understand.”",
-            "es": "Not only al inicio trae inversión: «Not only was he late, but he also forgot the documents.» Only + una frase de tiempo o only after/when también: «Only then did I understand.»",
-            "de": "Not only am Anfang bringt Inversion: „Not only was he late, but he also forgot the documents.“ Only + Zeitangabe oder only after/when ebenso: „Only then did I understand.“"
+            "es": "Not only al inicio trae inversión: «Not only was he late, but he also forgot the documents.» Only + una frase de tiempo o only after/when también: «Only then did I understand.»"
           },
           "examples": [
             {
               "es": "Not only did she win, but she also broke the record.",
               "tr": {
-                "hu": "Nemcsak nyert, hanem rekordot is döntött.",
                 "en": "Not only did she win, but she also broke the record.",
-                "es": "No solo ganó, sino que además batió el récord.",
-                "de": "Sie hat nicht nur gewonnen, sondern auch den Rekord gebrochen."
+                "es": "No solo ganó, sino que además batió el récord."
               }
             },
             {
               "es": "Only after the storm did we see the damage.",
               "tr": {
-                "hu": "Csak a vihar után láttuk a kárt.",
                 "en": "Only after the storm did we see the damage.",
-                "es": "Solo después de la tormenta vimos el daño.",
-                "de": "Erst nach dem Sturm sahen wir den Schaden."
+                "es": "Solo después de la tormenta vimos el daño."
               }
             }
           ]
@@ -216,36 +176,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Tiltás és korlátozás: under no circumstances, on no account",
         "en": "Prohibition and limits: under no circumstances, on no account",
-        "es": "Prohibición y límites: under no circumstances, on no account",
-        "de": "Verbot und Grenzen: under no circumstances, on no account"
+        "es": "Prohibición y límites: under no circumstances, on no account"
       },
       "items": [
         {
           "text": {
-            "hu": "Ezek a formális tiltás nyelvén gyakoriak, utánuk gyakran módbeli ige áll: „Under no circumstances should you open it.”",
             "en": "These are common in the language of formal prohibition, and a modal verb often follows: “Under no circumstances should you open it.”",
-            "es": "Son comunes en el lenguaje de la prohibición formal, y a menudo les sigue un verbo modal: «Under no circumstances should you open it.»",
-            "de": "Diese sind in der Sprache des formellen Verbots üblich, und oft folgt ein Modalverb: „Under no circumstances should you open it.“"
+            "es": "Son comunes en el lenguaje de la prohibición formal, y a menudo les sigue un verbo modal: «Under no circumstances should you open it.»"
           },
           "examples": [
             {
               "es": "Under no circumstances should you open that door.",
               "tr": {
-                "hu": "Semmilyen körülmények között ne nyisd ki azt az ajtót.",
                 "en": "Under no circumstances should you open that door.",
-                "es": "En ninguna circunstancia debes abrir esa puerta.",
-                "de": "Unter keinen Umständen darfst du diese Tür öffnen."
+                "es": "En ninguna circunstancia debes abrir esa puerta."
               }
             },
             {
               "es": "On no account must the machine be left on.",
               "tr": {
-                "hu": "A gépet semmiképp sem szabad bekapcsolva hagyni.",
                 "en": "On no account must the machine be left on.",
-                "es": "La máquina no debe dejarse encendida bajo ningún concepto.",
-                "de": "Die Maschine darf auf keinen Fall eingeschaltet bleiben."
+                "es": "La máquina no debe dejarse encendida bajo ningún concepto."
               }
             }
           ]
@@ -255,189 +207,147 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Spanyol hatás: nem „Never I have seen”. A tagadó határozó után a segédige az alany elé kerül: „Never have I seen”. Ha a határozó nem a mondat elején áll, nincs fordítás: „I have never seen”.",
         "en": "Spanish influence: not “Never I have seen”. After the negative adverbial the auxiliary goes before the subject: “Never have I seen”. If the adverbial is not at the start, there is no inversion: “I have never seen”.",
-        "es": "Influencia del español: no «Never I have seen». Después del adverbial negativo el auxiliar va antes del sujeto: «Never have I seen». Si el adverbial no está al inicio, no hay inversión: «I have never seen».",
-        "de": "Einfluss des Spanischen: nicht „Never I have seen“. Nach dem verneinenden Adverbial steht das Hilfsverb vor dem Subjekt: „Never have I seen“. Steht das Adverbial nicht am Anfang, gibt es keine Inversion: „I have never seen“."
+        "es": "Influencia del español: no «Never I have seen». Después del adverbial negativo el auxiliar va antes del sujeto: «Never have I seen». Si el adverbial no está al inicio, no hay inversión: «I have never seen»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "Az „alig … amikor” szerkezet: hardly had … when, no sooner had … than. A no sooner után a standard than áll, nem when.",
         "en": "The “hardly … when” pattern: hardly had … when, no sooner had … than. After no sooner the standard word is than, not when.",
-        "es": "La estructura «apenas … cuando»: hardly had … when, no sooner had … than. Después de no sooner la palabra estándar es than, no when.",
-        "de": "Das Muster „kaum … da“: hardly had … when, no sooner had … than. Nach no sooner steht standardmäßig than, nicht when."
+        "es": "La estructura «apenas … cuando»: hardly had … when, no sooner had … than. Después de no sooner la palabra estándar es than, no when."
       }
     }
   ],
   "speak": {
-    "hu": "Ha egy tagadó vagy korlátozó határozó áll a mondat elején, a segédige az alany elé kerül: «Never have I seen such a view». Ha nincs segédige, a «do», a «does» vagy a «did» lép be: «Not only did she win, but she also broke the record». A «hardly had» után «when» áll, a «no sooner had» után «than»: «Hardly had we arrived when it started to rain». Az «only then» és az «only after» is fordított szórendet hoz: «Only then did I understand». Tiltásnál gyakori: «Under no circumstances should you open it».",
     "en": "When a negative or restrictive adverbial opens the sentence, the auxiliary goes before the subject: «Never have I seen such a view». If there is no auxiliary, «do», «does» or «did» steps in: «Not only did she win, but she also broke the record». After «hardly had» comes «when», after «no sooner had» comes «than»: «Hardly had we arrived when it started to rain». «Only then» and «only after» also bring inversion: «Only then did I understand». For prohibition it is common: «Under no circumstances should you open it».",
-    "es": "Cuando un adverbial negativo o restrictivo abre la oración, el auxiliar va antes del sujeto: «Never have I seen such a view». Si no hay auxiliar, entra «do», «does» o «did»: «Not only did she win, but she also broke the record». Después de «hardly had» va «when», después de «no sooner had» va «than»: «Hardly had we arrived when it started to rain». «Only then» y «only after» también traen inversión: «Only then did I understand». Para prohibir es común: «Under no circumstances should you open it».",
-    "de": "Steht ein verneinendes oder einschränkendes Adverbial am Satzanfang, rückt das Hilfsverb vor das Subjekt: «Never have I seen such a view». Gibt es kein Hilfsverb, tritt «do», «does» oder «did» ein: «Not only did she win, but she also broke the record». Nach «hardly had» steht «when», nach «no sooner had» steht «than»: «Hardly had we arrived when it started to rain». «Only then» und «only after» bringen ebenfalls Inversion: «Only then did I understand». Beim Verbot ist üblich: «Under no circumstances should you open it»."
+    "es": "Cuando un adverbial negativo o restrictivo abre la oración, el auxiliar va antes del sujeto: «Never have I seen such a view». Si no hay auxiliar, entra «do», «does» o «did»: «Not only did she win, but she also broke the record». Después de «hardly had» va «when», después de «no sooner had» va «than»: «Hardly had we arrived when it started to rain». «Only then» y «only after» también traen inversión: «Only then did I understand». Para prohibir es común: «Under no circumstances should you open it»."
   },
   "glossary": [
     {
       "word": "began",
       "gloss": {
-        "hu": "elkezdődött (a begin múltja)",
         "en": "past form of begin",
-        "es": "empezó (pasado de begin)",
-        "de": "begann (Past von begin)"
+        "es": "empezó (pasado de begin)"
       }
     },
     {
       "word": "begun",
       "gloss": {
-        "hu": "elkezdődött (a begin igenéve)",
         "en": "participle of begin",
-        "es": "empezado (participio de begin)",
-        "de": "begonnen (Partizip von begin)"
+        "es": "empezado (participio de begin)"
       }
     },
     {
       "word": "broke",
       "gloss": {
-        "hu": "eltört, elromlott (a break múltja)",
         "en": "past form of break",
-        "es": "se rompió (pasado de break)",
-        "de": "brach (Past von break)"
+        "es": "se rompió (pasado de break)"
       }
     },
     {
       "word": "circumstances",
       "gloss": {
-        "hu": "körülmények",
         "en": "the conditions around an event",
-        "es": "circunstancias",
-        "de": "Umstände"
+        "es": "circunstancias"
       }
     },
     {
       "word": "complain",
       "gloss": {
-        "hu": "panaszkodik",
         "en": "to say you are not happy",
-        "es": "quejarse",
-        "de": "sich beschweren"
+        "es": "quejarse"
       }
     },
     {
       "word": "enter",
       "gloss": {
-        "hu": "belép",
         "en": "to go in",
-        "es": "entrar",
-        "de": "eintreten"
+        "es": "entrar"
       }
     },
     {
       "word": "funny",
       "gloss": {
-        "hu": "vicces",
         "en": "making you laugh",
-        "es": "gracioso",
-        "de": "lustig"
+        "es": "gracioso"
       }
     },
     {
       "word": "guests",
       "gloss": {
-        "hu": "vendégek",
         "en": "people invited",
-        "es": "invitados",
-        "de": "Gäste"
+        "es": "invitados"
       }
     },
     {
       "word": "rang",
       "gloss": {
-        "hu": "megszólalt (a ring múltja)",
         "en": "past form of ring",
-        "es": "sonó (pasado de ring)",
-        "de": "klingelte (Past von ring)"
+        "es": "sonó (pasado de ring)"
       }
     },
     {
       "word": "realize",
       "gloss": {
-        "hu": "felismer, rájön",
         "en": "to understand suddenly",
-        "es": "darse cuenta",
-        "de": "erkennen, begreifen"
+        "es": "darse cuenta"
       }
     },
     {
       "word": "scarcely",
       "gloss": {
-        "hu": "alig",
         "en": "almost not",
-        "es": "apenas",
-        "de": "kaum"
+        "es": "apenas"
       }
     },
     {
       "word": "seldom",
       "gloss": {
-        "hu": "ritkán",
         "en": "not often",
-        "es": "rara vez",
-        "de": "selten"
+        "es": "rara vez"
       }
     },
     {
       "word": "spoken",
       "gloss": {
-        "hu": "beszélt (a speak igenéve)",
         "en": "participle of speak",
-        "es": "hablado (participio de speak)",
-        "de": "gesprochen (Partizip von speak)"
+        "es": "hablado (participio de speak)"
       }
     },
     {
       "word": "such",
       "gloss": {
-        "hu": "olyan, ilyen",
         "en": "so, of this kind",
-        "es": "tal, tan",
-        "de": "so ein"
+        "es": "tal, tan"
       }
     },
     {
       "word": "then",
       "gloss": {
-        "hu": "akkor, addigra (by then)",
         "en": "at that time (by then)",
-        "es": "entonces, para entonces (by then)",
-        "de": "dann, bis dahin (by then)"
+        "es": "entonces, para entonces (by then)"
       }
     },
     {
       "word": "true",
       "gloss": {
-        "hu": "igaz",
         "en": "not false",
-        "es": "verdadero",
-        "de": "wahr"
+        "es": "verdadero"
       }
     },
     {
       "word": "way",
       "gloss": {
-        "hu": "út, mód",
         "en": "a road or a method",
-        "es": "camino, manera",
-        "de": "Weg"
+        "es": "camino, manera"
       }
     },
     {
       "word": "sooner",
       "gloss": {
-        "hu": "hamarabb (no sooner = alig, amint)",
         "en": "earlier (no sooner = as soon as)",
-        "es": "más pronto (no sooner = apenas)",
-        "de": "früher (no sooner = kaum)"
+        "es": "más pronto (no sooner = apenas)"
       }
     }
   ],
@@ -452,30 +362,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Fordított szórend: Never have I seen (have + alany + igenév).",
         "en": "Inversion: Never have I seen (have + subject + participle).",
-        "es": "Inversión: Never have I seen (have + sujeto + participio).",
-        "de": "Inversion: Never have I seen (have + Subjekt + Partizip)."
+        "es": "Inversión: Never have I seen (have + sujeto + participio)."
       },
       "wrong": {
         "did": {
-          "hu": "A did után alapige kell (did I see); a seen igenévhez have kell.",
           "en": "After did you need the base verb (did I see); the participle seen needs have.",
-          "es": "Después de did hace falta el verbo base (did I see); el participio seen necesita have.",
-          "de": "Nach did braucht man die Grundform (did I see); das Partizip seen braucht have."
+          "es": "Después de did hace falta el verbo base (did I see); el participio seen necesita have."
         },
         "do": {
-          "hu": "A do után alapige kell (do I see); a seen igenévhez have kell.",
           "en": "After do you need the base verb (do I see); the participle seen needs have.",
-          "es": "Después de do hace falta el verbo base (do I see); el participio seen necesita have.",
-          "de": "Nach do braucht man die Grundform (do I see); das Partizip seen braucht have."
+          "es": "Después de do hace falta el verbo base (do I see); el participio seen necesita have."
         }
       },
       "examples": [
         "Never have we met.",
         "Never have they lied."
       ],
-      "tr": { "hu": "Soha nem láttam még ilyen gyönyörű kilátást.", "en": "Never have I seen such a beautiful view.", "es": "Nunca he visto una vista tan hermosa.", "de": "Noch nie habe ich eine so schöne Aussicht gesehen." }
+      "tr": { "en": "Never have I seen such a beautiful view.", "es": "Nunca he visto una vista tan hermosa." }
     },
     {
       "id": "neg-02",
@@ -487,30 +391,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Segédige nélküli igénél a do kerül az alany elé: Rarely do we get.",
         "en": "With a verb that has no auxiliary, do goes before the subject: Rarely do we get.",
-        "es": "Con un verbo sin auxiliar, do va antes del sujeto: Rarely do we get.",
-        "de": "Bei einem Verb ohne Hilfsverb steht do vor dem Subjekt: Rarely do we get."
+        "es": "Con un verbo sin auxiliar, do va antes del sujeto: Rarely do we get."
       },
       "wrong": {
         "are": {
-          "hu": "Az are we get nem helyes; a get alapige do-t kér.",
           "en": "“Are we get” is not correct; the base verb get asks for do.",
-          "es": "«Are we get» no es correcto; el verbo base get pide do.",
-          "de": "„Are we get“ ist nicht korrekt; die Grundform get verlangt do."
+          "es": "«Are we get» no es correcto; el verbo base get pide do."
         },
         "have": {
-          "hu": "A have we get nem helyes; igenév (got) kellene, itt do kell.",
           "en": "“Have we get” is not correct; it would need a participle (got), here you need do.",
-          "es": "«Have we get» no es correcto; necesitaría un participio (got), aquí hace falta do.",
-          "de": "„Have we get“ ist nicht korrekt; es bräuchte ein Partizip (got), hier braucht man do."
+          "es": "«Have we get» no es correcto; necesitaría un participio (got), aquí hace falta do."
         }
       },
       "examples": [
         "Seldom do we meet.",
         "Rarely do they write."
       ],
-      "tr": { "hu": "Ritkán kapunk ilyen jó híreket.", "en": "Rarely do we get such good news.", "es": "Rara vez recibimos tan buenas noticias.", "de": "Selten erhalten wir so gute Nachrichten." }
+      "tr": { "en": "Rarely do we get such good news.", "es": "Rara vez recibimos tan buenas noticias." }
     },
     {
       "id": "neg-03",
@@ -522,30 +420,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Múlt idő, segédige nélküli ige: Not only did she win.",
         "en": "Past tense, a verb with no auxiliary: Not only did she win.",
-        "es": "Tiempo pasado, un verbo sin auxiliar: Not only did she win.",
-        "de": "Vergangenheit, ein Verb ohne Hilfsverb: Not only did she win."
+        "es": "Tiempo pasado, un verbo sin auxiliar: Not only did she win."
       },
       "wrong": {
         "does": {
-          "hu": "A does jelen idejű; a broke múltat jelez.",
           "en": "Does is present; broke points to the past.",
-          "es": "Does es presente; broke señala el pasado.",
-          "de": "Does ist Präsens; broke weist auf die Vergangenheit."
+          "es": "Does es presente; broke señala el pasado."
         },
         "had": {
-          "hu": "A had she win nem helyes; a had után igenév (won) kellene.",
           "en": "“Had she win” is not correct; after had a participle (won) would be needed.",
-          "es": "«Had she win» no es correcto; después de had haría falta un participio (won).",
-          "de": "„Had she win“ ist nicht korrekt; nach had bräuchte man ein Partizip (won)."
+          "es": "«Had she win» no es correcto; después de had haría falta un participio (won)."
         }
       },
       "examples": [
         "Not only did he come, but he stayed.",
         "Not only did they win."
       ],
-      "tr": { "hu": "Nemcsak nyert, hanem meg is döntötte a rekordot.", "en": "Not only did she win, but she also broke the record.", "es": "No solo ganó, sino que también rompió el récord.", "de": "Sie hat nicht nur gewonnen, sondern auch den Rekord gebrochen." }
+      "tr": { "en": "Not only did she win, but she also broke the record.", "es": "No solo ganó, sino que también rompió el récord." }
     },
     {
       "id": "neg-04",
@@ -557,30 +449,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Hardly + had + alany + igenév, utána when.",
         "en": "Hardly + had + subject + participle, then when.",
-        "es": "Hardly + had + sujeto + participio, luego when.",
-        "de": "Hardly + had + Subjekt + Partizip, dann when."
+        "es": "Hardly + had + sujeto + participio, luego when."
       },
       "wrong": {
         "did": {
-          "hu": "A did I arrived nem helyes; a did után alapige jönne.",
           "en": "“Did I arrived” is not correct; after did comes the base verb.",
-          "es": "«Did I arrived» no es correcto; después de did va el verbo base.",
-          "de": "„Did I arrived“ ist nicht korrekt; nach did kommt die Grundform."
+          "es": "«Did I arrived» no es correcto; después de did va el verbo base."
         },
         "have": {
-          "hu": "A have I arrived jelenre vonatkozik; a mondat múltbeli (started).",
           "en": "Have I arrived refers to the present; the sentence is in the past (started).",
-          "es": "Have I arrived se refiere al presente; la oración está en pasado (started).",
-          "de": "Have I arrived bezieht sich auf die Gegenwart; der Satz steht in der Vergangenheit (started)."
+          "es": "Have I arrived se refiere al presente; la oración está en pasado (started)."
         }
       },
       "examples": [
         "Hardly had she sat when he left.",
         "Hardly had we eaten when it rained."
       ],
-      "tr": { "hu": "Alighogy megérkeztem, eleredt az eső.", "en": "Hardly had I arrived when it started to rain.", "es": "Apenas había llegado cuando empezó a llover.", "de": "Kaum war ich angekommen, fing es an zu regnen." }
+      "tr": { "en": "Hardly had I arrived when it started to rain.", "es": "Apenas había llegado cuando empezó a llover." }
     },
     {
       "id": "neg-05",
@@ -592,30 +478,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A no sooner után than áll: no sooner … than.",
         "en": "After no sooner comes than: no sooner … than.",
-        "es": "Después de no sooner va than: no sooner … than.",
-        "de": "Nach no sooner steht than: no sooner … than."
+        "es": "Después de no sooner va than: no sooner … than."
       },
       "wrong": {
         "then": {
-          "hu": "A then időt jelöl („aztán”); a no sooner mellé than kell.",
           "en": "Then marks time (“afterwards”); no sooner needs than.",
-          "es": "Then marca tiempo («luego»); no sooner necesita than.",
-          "de": "Then markiert Zeit („danach“); no sooner braucht than."
+          "es": "Then marca tiempo («luego»); no sooner necesita than."
         },
         "as": {
-          "hu": "Az as nem tartozik a no sooner szerkezethez; than kell.",
           "en": "As does not belong to the no sooner pattern; you need than.",
-          "es": "As no pertenece a la estructura no sooner; hace falta than.",
-          "de": "As gehört nicht zum Muster no sooner; man braucht than."
+          "es": "As no pertenece a la estructura no sooner; hace falta than."
         }
       },
       "examples": [
         "No sooner had he arrived than it rained.",
         "No sooner had we left than it snowed."
       ],
-      "tr": { "hu": "Amint elment, megcsörrent a telefon.", "en": "No sooner had she left than the phone rang.", "es": "Tan pronto como se fue, sonó el teléfono.", "de": "Kaum war sie weg, klingelte das Telefon." }
+      "tr": { "en": "No sooner had she left than the phone rang.", "es": "Tan pronto como se fue, sonó el teléfono." }
     },
     {
       "id": "neg-06",
@@ -627,30 +507,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Only after + fordított szórend: did + alany + alapige.",
         "en": "Only after + inversion: did + subject + base verb.",
-        "es": "Only after + inversión: did + sujeto + verbo base.",
-        "de": "Only after + Inversion: did + Subjekt + Grundform."
+        "es": "Only after + inversión: did + sujeto + verbo base."
       },
       "wrong": {
         "were": {
-          "hu": "A were we realize nem helyes; a realize alapige did-ot kér.",
           "en": "“Were we realize” is not correct; the base verb realize asks for did.",
-          "es": "«Were we realize» no es correcto; el verbo base realize pide did.",
-          "de": "„Were we realize“ ist nicht korrekt; die Grundform realize verlangt did."
+          "es": "«Were we realize» no es correcto; el verbo base realize pide did."
         },
         "had": {
-          "hu": "A had we realize nem helyes; a had után igenév kellene.",
           "en": "“Had we realize” is not correct; after had a participle would be needed.",
-          "es": "«Had we realize» no es correcto; después de had haría falta un participio.",
-          "de": "„Had we realize“ ist nicht korrekt; nach had bräuchte man ein Partizip."
+          "es": "«Had we realize» no es correcto; después de had haría falta un participio."
         }
       },
       "examples": [
         "Only after dinner did we talk.",
         "Only after a week did she call."
       ],
-      "tr": { "hu": "Csak a vihar után döbbentünk rá, mekkora a kár.", "en": "Only after the storm did we realize how much damage there was.", "es": "Solo después de la tormenta nos dimos cuenta de cuánto daño hubo.", "de": "Erst nach dem Sturm wurde uns klar, wie groß der Schaden war." }
+      "tr": { "en": "Only after the storm did we realize how much damage there was.", "es": "Solo después de la tormenta nos dimos cuenta de cuánto daño hubo." }
     },
     {
       "id": "neg-07",
@@ -662,30 +536,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A little a mondat elején: Little did he know.",
         "en": "Little at the start of a sentence: Little did he know.",
-        "es": "Little al inicio de la oración: Little did he know.",
-        "de": "Little am Satzanfang: Little did he know."
+        "es": "Little al inicio de la oración: Little did he know."
       },
       "wrong": {
         "was": {
-          "hu": "A was he know nem helyes; a know alapige did-ot kér.",
           "en": "“Was he know” is not correct; the base verb know asks for did.",
-          "es": "«Was he know» no es correcto; el verbo base know pide did.",
-          "de": "„Was he know“ ist nicht korrekt; die Grundform know verlangt did."
+          "es": "«Was he know» no es correcto; el verbo base know pide did."
         },
         "had": {
-          "hu": "A had he know nem helyes; a had után igenév (known) kellene.",
           "en": "“Had he know” is not correct; after had a participle (known) would be needed.",
-          "es": "«Had he know» no es correcto; después de had haría falta un participio (known).",
-          "de": "„Had he know“ ist nicht korrekt; nach had bräuchte man ein Partizip (known)."
+          "es": "«Had he know» no es correcto; después de had haría falta un participio (known)."
         }
       },
       "examples": [
         "Little did she think about it.",
         "Little did they care."
       ],
-      "tr": { "hu": "Nem is sejtette, hogy az ajtó zárva van.", "en": "Little did he know that the door was locked.", "es": "Poco sabía él que la puerta estaba cerrada con llave.", "de": "Er ahnte nicht, dass die Tür verschlossen war." }
+      "tr": { "en": "Little did he know that the door was locked.", "es": "Poco sabía él que la puerta estaba cerrada con llave." }
     },
     {
       "id": "neg-08",
@@ -697,30 +565,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Tiltás: Under no circumstances should you + alapige.",
         "en": "Prohibition: Under no circumstances should you + base verb.",
-        "es": "Prohibición: Under no circumstances should you + verbo base.",
-        "de": "Verbot: Under no circumstances should you + Grundform."
+        "es": "Prohibición: Under no circumstances should you + verbo base."
       },
       "wrong": {
         "are": {
-          "hu": "Az are you open nem helyes; az open ige alapalakban módbeli igét kér.",
           "en": "“Are you open” is not correct; the verb open in the base form asks for a modal.",
-          "es": "«Are you open» no es correcto; el verbo open en forma base pide un modal.",
-          "de": "„Are you open“ ist nicht korrekt; das Verb open in der Grundform verlangt ein Modalverb."
+          "es": "«Are you open» no es correcto; el verbo open en forma base pide un modal."
         },
         "have": {
-          "hu": "A have you open nem helyes; módbeli ige kell (should).",
           "en": "“Have you open” is not correct; you need a modal (should).",
-          "es": "«Have you open» no es correcto; hace falta un modal (should).",
-          "de": "„Have you open“ ist nicht korrekt; man braucht ein Modalverb (should)."
+          "es": "«Have you open» no es correcto; hace falta un modal (should)."
         }
       },
       "examples": [
         "Under no circumstances should he go.",
         "Under no circumstances must you stop."
       ],
-      "tr": { "hu": "Semmilyen körülmények között ne nyisd ki ezt az ajtót.", "en": "Under no circumstances should you open this door.", "es": "Bajo ninguna circunstancia debes abrir esta puerta.", "de": "Unter keinen Umständen darfst du diese Tür öffnen." }
+      "tr": { "en": "Under no circumstances should you open this door.", "es": "Bajo ninguna circunstancia debes abrir esta puerta." }
     },
     {
       "id": "neg-09",
@@ -732,30 +594,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Egyes számú alany, múlt idő: At no time was the door open.",
         "en": "A singular subject, past tense: At no time was the door open.",
-        "es": "Un sujeto singular, tiempo pasado: At no time was the door open.",
-        "de": "Ein Singular-Subjekt, Vergangenheit: At no time was the door open."
+        "es": "Un sujeto singular, tiempo pasado: At no time was the door open."
       },
       "wrong": {
         "were": {
-          "hu": "A were többes szám; a door egyes szám, ezért was kell.",
           "en": "Were is plural; door is singular, so you need was.",
-          "es": "Were es plural; door es singular, por eso hace falta was.",
-          "de": "Were ist Plural; door ist Singular, deshalb braucht man was."
+          "es": "Were es plural; door es singular, por eso hace falta was."
         },
         "have": {
-          "hu": "A have the door open nem helyes; itt a be ige kell (was).",
           "en": "“Have the door open” is not correct here; you need the verb be (was).",
-          "es": "«Have the door open» no es correcto aquí; hace falta el verbo be (was).",
-          "de": "„Have the door open“ ist hier nicht korrekt; man braucht das Verb be (was)."
+          "es": "«Have the door open» no es correcto aquí; hace falta el verbo be (was)."
         }
       },
       "examples": [
         "At no time was she alone.",
         "At no time was it safe."
       ],
-      "tr": { "hu": "Az éjszaka folyamán egyszer sem volt nyitva az ajtó.", "en": "At no time was the door open during the night.", "es": "En ningún momento estuvo abierta la puerta durante la noche.", "de": "Zu keiner Zeit war die Tür während der Nacht offen." }
+      "tr": { "en": "At no time was the door open during the night.", "es": "En ningún momento estuvo abierta la puerta durante la noche." }
     },
     {
       "id": "neg-10",
@@ -767,30 +623,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Not until + fordított szórend: did + alany + alapige.",
         "en": "Not until + inversion: did + subject + base verb.",
-        "es": "Not until + inversión: did + sujeto + verbo base.",
-        "de": "Not until + Inversion: did + Subjekt + Grundform."
+        "es": "Not until + inversión: did + sujeto + verbo base."
       },
       "wrong": {
         "were": {
-          "hu": "A were the guests leave nem helyes; a leave alapige did-ot kér.",
           "en": "“Were the guests leave” is not correct; the base verb leave asks for did.",
-          "es": "«Were the guests leave» no es correcto; el verbo base leave pide did.",
-          "de": "„Were the guests leave“ ist nicht korrekt; die Grundform leave verlangt did."
+          "es": "«Were the guests leave» no es correcto; el verbo base leave pide did."
         },
         "had": {
-          "hu": "A had the guests leave nem helyes; a had után igenév (left) kellene.",
           "en": "“Had the guests leave” is not correct; after had a participle (left) would be needed.",
-          "es": "«Had the guests leave» no es correcto; después de had haría falta un participio (left).",
-          "de": "„Had the guests leave“ ist nicht korrekt; nach had bräuchte man ein Partizip (left)."
+          "es": "«Had the guests leave» no es correcto; después de had haría falta un participio (left)."
         }
       },
       "examples": [
         "Not until noon did he wake.",
         "Not until June did it rain."
       ],
-      "tr": { "hu": "A vendégek csak éjfélkor mentek el.", "en": "Not until midnight did the guests leave.", "es": "No fue sino hasta la medianoche que los invitados se fueron.", "de": "Erst um Mitternacht gingen die Gäste." }
+      "tr": { "en": "Not until midnight did the guests leave.", "es": "No fue sino hasta la medianoche que los invitados se fueron." }
     },
     {
       "id": "neg-11",
@@ -802,30 +652,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Segédige nélküli ige: Seldom does she complain.",
         "en": "A verb with no auxiliary: Seldom does she complain.",
-        "es": "Un verbo sin auxiliar: Seldom does she complain.",
-        "de": "Ein Verb ohne Hilfsverb: Seldom does she complain."
+        "es": "Un verbo sin auxiliar: Seldom does she complain."
       },
       "wrong": {
         "is": {
-          "hu": "Az is she complain nem helyes; a complain alapige does-t kér.",
           "en": "“Is she complain” is not correct; the base verb complain asks for does.",
-          "es": "«Is she complain» no es correcto; el verbo base complain pide does.",
-          "de": "„Is she complain“ ist nicht korrekt; die Grundform complain verlangt does."
+          "es": "«Is she complain» no es correcto; el verbo base complain pide does."
         },
         "has": {
-          "hu": "A has she complain nem helyes; a has után igenév kellene.",
           "en": "“Has she complain” is not correct; after has a participle would be needed.",
-          "es": "«Has she complain» no es correcto; después de has haría falta un participio.",
-          "de": "„Has she complain“ ist nicht korrekt; nach has bräuchte man ein Partizip."
+          "es": "«Has she complain» no es correcto; después de has haría falta un participio."
         }
       },
       "examples": [
         "Seldom does he smile.",
         "Seldom does it snow here."
       ],
-      "tr": { "hu": "Ritkán panaszkodik a munkájára.", "en": "Seldom does she complain about her job.", "es": "Rara vez se queja de su trabajo.", "de": "Selten beschwert sie sich über ihre Arbeit." }
+      "tr": { "en": "Seldom does she complain about her job.", "es": "Rara vez se queja de su trabajo." }
     },
     {
       "id": "neg-12",
@@ -837,30 +681,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Tiltás módbeli igével: On no account must the machine be left on.",
         "en": "Prohibition with a modal: On no account must the machine be left on.",
-        "es": "Prohibición con un modal: On no account must the machine be left on.",
-        "de": "Verbot mit Modalverb: On no account must the machine be left on."
+        "es": "Prohibición con un modal: On no account must the machine be left on."
       },
       "wrong": {
         "does": {
-          "hu": "A does the machine be nem helyes; a be előtt módbeli ige kell.",
           "en": "“Does the machine be” is not correct; before be you need a modal.",
-          "es": "«Does the machine be» no es correcto; antes de be hace falta un modal.",
-          "de": "„Does the machine be“ ist nicht korrekt; vor be braucht man ein Modalverb."
+          "es": "«Does the machine be» no es correcto; antes de be hace falta un modal."
         },
         "is": {
-          "hu": "Az is the machine be nem helyes; a be előtt módbeli ige kell.",
           "en": "“Is the machine be” is not correct; before be you need a modal.",
-          "es": "«Is the machine be» no es correcto; antes de be hace falta un modal.",
-          "de": "„Is the machine be“ ist nicht korrekt; vor be braucht man ein Modalverb."
+          "es": "«Is the machine be» no es correcto; antes de be hace falta un modal."
         }
       },
       "examples": [
         "On no account should you go.",
         "On no account may he enter."
       ],
-      "tr": { "hu": "A gépet semmi esetre sem szabad bekapcsolva hagyni.", "en": "On no account must the machine be left on.", "es": "Por ningún motivo se debe dejar la máquina encendida.", "de": "Auf keinen Fall darf die Maschine eingeschaltet bleiben." }
+      "tr": { "en": "On no account must the machine be left on.", "es": "Por ningún motivo se debe dejar la máquina encendida." }
     },
     {
       "id": "neg-13",
@@ -872,30 +710,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Nowhere + will + alany + alapige.",
         "en": "Nowhere + will + subject + base verb.",
-        "es": "Nowhere + will + sujeto + verbo base.",
-        "de": "Nowhere + will + Subjekt + Grundform."
+        "es": "Nowhere + will + sujeto + verbo base."
       },
       "wrong": {
         "are": {
-          "hu": "Az are you find nem helyes; a find alapige módbeli igét vagy do-t kér.",
           "en": "“Are you find” is not correct; the base verb find asks for a modal or do.",
-          "es": "«Are you find» no es correcto; el verbo base find pide un modal o do.",
-          "de": "„Are you find“ ist nicht korrekt; die Grundform find verlangt ein Modalverb oder do."
+          "es": "«Are you find» no es correcto; el verbo base find pide un modal o do."
         },
         "have": {
-          "hu": "A have you find nem helyes; a have után igenév (found) kellene.",
           "en": "“Have you find” is not correct; after have a participle (found) would be needed.",
-          "es": "«Have you find» no es correcto; después de have haría falta un participio (found).",
-          "de": "„Have you find“ ist nicht korrekt; nach have bräuchte man ein Partizip (found)."
+          "es": "«Have you find» no es correcto; después de have haría falta un participio (found)."
         }
       },
       "examples": [
         "Nowhere will you see that.",
         "Nowhere can we park."
       ],
-      "tr": { "hu": "Sehol nem találsz majd jobb árat.", "en": "Nowhere will you find a better price.", "es": "En ningún lugar encontrarás un mejor precio.", "de": "Nirgendwo wirst du einen besseren Preis finden." }
+      "tr": { "en": "Nowhere will you find a better price.", "es": "En ningún lugar encontrarás un mejor precio." }
     },
     {
       "id": "neg-14",
@@ -907,30 +739,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "No sooner had + alany + igenév, utána than.",
         "en": "No sooner had + subject + participle, then than.",
-        "es": "No sooner had + sujeto + participio, luego than.",
-        "de": "No sooner had + Subjekt + Partizip, dann than."
+        "es": "No sooner had + sujeto + participio, luego than."
       },
       "wrong": {
         "did": {
-          "hu": "A did the match started nem helyes; a did után alapige jönne.",
           "en": "“Did the match started” is not correct; after did comes the base verb.",
-          "es": "«Did the match started» no es correcto; después de did va el verbo base.",
-          "de": "„Did the match started“ ist nicht korrekt; nach did kommt die Grundform."
+          "es": "«Did the match started» no es correcto; después de did va el verbo base."
         },
         "has": {
-          "hu": "A has jelenre vonatkozik; a mondat múltbeli (began).",
           "en": "Has refers to the present; the sentence is in the past (began).",
-          "es": "Has se refiere al presente; la oración está en pasado (began).",
-          "de": "Has bezieht sich auf die Gegenwart; der Satz steht in der Vergangenheit (began)."
+          "es": "Has se refiere al presente; la oración está en pasado (began)."
         }
       },
       "examples": [
         "No sooner had it begun than it ended.",
         "No sooner had she called than he came."
       ],
-      "tr": { "hu": "Alighogy elkezdődött a meccs, eleredt az eső.", "en": "No sooner had the match started than it began to rain.", "es": "Apenas había comenzado el partido cuando empezó a llover.", "de": "Kaum hatte das Spiel begonnen, fing es an zu regnen." }
+      "tr": { "en": "No sooner had the match started than it began to rain.", "es": "Apenas había comenzado el partido cuando empezó a llover." }
     },
     {
       "id": "neg-15",
@@ -942,30 +768,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A be ige fordított szórendben: In no way am I responsible.",
         "en": "The verb be in inversion: In no way am I responsible.",
-        "es": "El verbo be en inversión: In no way am I responsible.",
-        "de": "Das Verb be in der Inversion: In no way am I responsible."
+        "es": "El verbo be en inversión: In no way am I responsible."
       },
       "wrong": {
         "do": {
-          "hu": "A do I responsible nem helyes; a melléknév mellé a be ige kell.",
           "en": "“Do I responsible” is not correct; the adjective needs the verb be.",
-          "es": "«Do I responsible» no es correcto; el adjetivo necesita el verbo be.",
-          "de": "„Do I responsible“ ist nicht korrekt; das Adjektiv braucht das Verb be."
+          "es": "«Do I responsible» no es correcto; el adjetivo necesita el verbo be."
         },
         "have": {
-          "hu": "A have I responsible nem helyes; a melléknév mellé a be ige kell.",
           "en": "“Have I responsible” is not correct; the adjective needs the verb be.",
-          "es": "«Have I responsible» no es correcto; el adjetivo necesita el verbo be.",
-          "de": "„Have I responsible“ ist nicht korrekt; das Adjektiv braucht das Verb be."
+          "es": "«Have I responsible» no es correcto; el adjetivo necesita el verbo be."
         }
       },
       "examples": [
         "In no way am I tired.",
         "In no way is it true."
       ],
-      "tr": { "hu": "Semmiképpen sem vagyok felelős a hibáért.", "en": "In no way am I responsible for the mistake.", "es": "De ninguna manera soy responsable del error.", "de": "In keiner Weise bin ich für den Fehler verantwortlich." }
+      "tr": { "en": "In no way am I responsible for the mistake.", "es": "De ninguna manera soy responsable del error." }
     },
     {
       "id": "neg-16",
@@ -977,30 +797,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Scarcely + had + alany + igenév, utána when.",
         "en": "Scarcely + had + subject + participle, then when.",
-        "es": "Scarcely + had + sujeto + participio, luego when.",
-        "de": "Scarcely + had + Subjekt + Partizip, dann when."
+        "es": "Scarcely + had + sujeto + participio, luego when."
       },
       "wrong": {
         "did": {
-          "hu": "A did he sat nem helyes; a did után alapige jönne.",
           "en": "“Did he sat” is not correct; after did comes the base verb.",
-          "es": "«Did he sat» no es correcto; después de did va el verbo base.",
-          "de": "„Did he sat“ ist nicht korrekt; nach did kommt die Grundform."
+          "es": "«Did he sat» no es correcto; después de did va el verbo base."
         },
         "was": {
-          "hu": "A was he sat nem helyes; a was után nem áll múlt idejű ige.",
           "en": "“Was he sat” is not correct; after was there is no past-tense verb.",
-          "es": "«Was he sat» no es correcto; después de was no va un verbo en pasado.",
-          "de": "„Was he sat“ ist nicht korrekt; nach was steht kein Verb in der Vergangenheit."
+          "es": "«Was he sat» no es correcto; después de was no va un verbo en pasado."
         }
       },
       "examples": [
         "Scarcely had we begun when he left.",
         "Scarcely had she spoken when it rang."
       ],
-      "tr": { "hu": "Alighogy leült, megcsörrent a telefon.", "en": "Scarcely had he sat down when the phone rang.", "es": "Apenas se había sentado cuando sonó el teléfono.", "de": "Kaum hatte er sich gesetzt, klingelte das Telefon." }
+      "tr": { "en": "Scarcely had he sat down when the phone rang.", "es": "Apenas se había sentado cuando sonó el teléfono." }
     },
     {
       "id": "neg-17",
@@ -1012,30 +826,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A be ige fordított szórendben: Not only was he late.",
         "en": "The verb be in inversion: Not only was he late.",
-        "es": "El verbo be en inversión: Not only was he late.",
-        "de": "Das Verb be in der Inversion: Not only was he late."
+        "es": "El verbo be en inversión: Not only was he late."
       },
       "wrong": {
         "did": {
-          "hu": "A did he late nem helyes; a melléknév mellé a be ige kell.",
           "en": "“Did he late” is not correct; the adjective needs the verb be.",
-          "es": "«Did he late» no es correcto; el adjetivo necesita el verbo be.",
-          "de": "„Did he late“ ist nicht korrekt; das Adjektiv braucht das Verb be."
+          "es": "«Did he late» no es correcto; el adjetivo necesita el verbo be."
         },
         "had": {
-          "hu": "A had he late nem helyes; a melléknév mellé a be ige kell.",
           "en": "“Had he late” is not correct; the adjective needs the verb be.",
-          "es": "«Had he late» no es correcto; el adjetivo necesita el verbo be.",
-          "de": "„Had he late“ ist nicht korrekt; das Adjektiv braucht das Verb be."
+          "es": "«Had he late» no es correcto; el adjetivo necesita el verbo be."
         }
       },
       "examples": [
         "Not only was she kind, but she was funny.",
         "Not only was it cold."
       ],
-      "tr": { "hu": "Nemcsak elkésett, hanem a dokumentumokat is elfelejtette.", "en": "Not only was he late, but he also forgot the documents.", "es": "No solo llegó tarde, sino que también olvidó los documentos.", "de": "Er war nicht nur zu spät, sondern er hatte auch die Dokumente vergessen." }
+      "tr": { "en": "Not only was he late, but he also forgot the documents.", "es": "No solo llegó tarde, sino que también olvidó los documentos." }
     },
     {
       "id": "neg-18",
@@ -1102,46 +910,34 @@
       "es": "Never have I seen such a view.",
       "target": "Never have I seen",
       "tr": {
-        "hu": "Soha nem láttam még ilyen kilátást.",
         "en": "Never have I seen such a view.",
-        "es": "Nunca había visto una vista así.",
-        "de": "Nie habe ich eine solche Aussicht gesehen."
+        "es": "Nunca había visto una vista así."
       },
       "options": [
         {
           "text": {
-            "hu": "rendes szórend: alany + segédige",
             "en": "normal order: subject + auxiliary",
-            "es": "orden normal: sujeto + auxiliar",
-            "de": "normale Reihenfolge: Subjekt + Hilfsverb"
+            "es": "orden normal: sujeto + auxiliar"
           },
           "wrong": {
-            "hu": "A tagadó határozó után a segédige az alany elé kerül (have I).",
             "en": "After the negative adverbial the auxiliary goes before the subject (have I).",
-            "es": "Después del adverbial negativo el auxiliar va antes del sujeto (have I).",
-            "de": "Nach dem verneinenden Adverbial steht das Hilfsverb vor dem Subjekt (have I)."
+            "es": "Después del adverbial negativo el auxiliar va antes del sujeto (have I)."
           }
         },
         {
           "text": {
-            "hu": "fordított szórend: segédige + alany a tagadó határozó után",
             "en": "inversion: auxiliary + subject after the negative adverbial",
-            "es": "inversión: auxiliar + sujeto después del adverbial negativo",
-            "de": "Inversion: Hilfsverb + Subjekt nach dem verneinenden Adverbial"
+            "es": "inversión: auxiliar + sujeto después del adverbial negativo"
           }
         },
         {
           "text": {
-            "hu": "kérdés",
             "en": "a question",
-            "es": "una pregunta",
-            "de": "eine Frage"
+            "es": "una pregunta"
           },
           "wrong": {
-            "hu": "Ez kijelentő mondat; a szórend csak a hangsúly miatt fordított.",
             "en": "This is a statement; the word order is inverted only for emphasis.",
-            "es": "Esto es una afirmación; el orden está invertido solo por énfasis.",
-            "de": "Das ist eine Aussage; die Wortstellung ist nur wegen der Betonung umgekehrt."
+            "es": "Esto es una afirmación; el orden está invertido solo por énfasis."
           }
         }
       ],
@@ -1153,46 +949,34 @@
       "es": "Not only did she win, but she also broke the record.",
       "target": "did she win",
       "tr": {
-        "hu": "Nemcsak nyert, hanem rekordot is döntött.",
         "en": "Not only did she win, but she also broke the record.",
-        "es": "No solo ganó, sino que además batió el récord.",
-        "de": "Sie hat nicht nur gewonnen, sondern auch den Rekord gebrochen."
+        "es": "No solo ganó, sino que además batió el récord."
       },
       "options": [
         {
           "text": {
-            "hu": "did + alany + alapige: do-támogatás, mert nincs segédige",
             "en": "did + subject + base verb: do-support, because there is no auxiliary",
-            "es": "did + sujeto + verbo base: apoyo de do, porque no hay auxiliar",
-            "de": "did + Subjekt + Grundform: do-Unterstützung, weil kein Hilfsverb da ist"
+            "es": "did + sujeto + verbo base: apoyo de do, porque no hay auxiliar"
           }
         },
         {
           "text": {
-            "hu": "did + alany + múlt idejű ige",
             "en": "did + subject + past verb",
-            "es": "did + sujeto + verbo en pasado",
-            "de": "did + Subjekt + Verb in der Vergangenheit"
+            "es": "did + sujeto + verbo en pasado"
           },
           "wrong": {
-            "hu": "A did után alapige jön, a múltat a did jelzi (did she win).",
             "en": "After did comes the base verb; the past is shown by did (did she win).",
-            "es": "Después de did va el verbo base; el pasado lo marca did (did she win).",
-            "de": "Nach did kommt die Grundform; die Vergangenheit zeigt did (did she win)."
+            "es": "Después de did va el verbo base; el pasado lo marca did (did she win)."
           }
         },
         {
           "text": {
-            "hu": "had + alany + igenév",
             "en": "had + subject + participle",
-            "es": "had + sujeto + participio",
-            "de": "had + Subjekt + Partizip"
+            "es": "had + sujeto + participio"
           },
           "wrong": {
-            "hu": "Itt nincs régmúlt; a win ige egyszerű múltban, did-dal áll.",
             "en": "There is no past perfect here; the verb win is in the simple past, with did.",
-            "es": "Aquí no hay past perfect; el verbo win está en pasado simple, con did.",
-            "de": "Hier gibt es kein Past Perfect; das Verb win steht im einfachen Past, mit did."
+            "es": "Aquí no hay past perfect; el verbo win está en pasado simple, con did."
           }
         }
       ],
@@ -1204,46 +988,34 @@
       "es": "No sooner had she left than the phone rang.",
       "target": "No sooner had she left than",
       "tr": {
-        "hu": "Alig ment el, megszólalt a telefon.",
         "en": "No sooner had she left than the phone rang.",
-        "es": "En cuanto se fue, sonó el teléfono.",
-        "de": "Kaum war sie gegangen, klingelte das Telefon."
+        "es": "En cuanto se fue, sonó el teléfono."
       },
       "options": [
         {
           "text": {
-            "hu": "no sooner + egyszerű múlt + when",
             "en": "no sooner + past simple + when",
-            "es": "no sooner + pasado simple + when",
-            "de": "no sooner + Past Simple + when"
+            "es": "no sooner + pasado simple + when"
           },
           "wrong": {
-            "hu": "A no sooner után had + igenév és than áll.",
             "en": "After no sooner comes had + participle and than.",
-            "es": "Después de no sooner va had + participio y than.",
-            "de": "Nach no sooner steht had + Partizip und than."
+            "es": "Después de no sooner va had + participio y than."
           }
         },
         {
           "text": {
-            "hu": "no sooner + had + igenév + than",
             "en": "no sooner + had + participle + than",
-            "es": "no sooner + had + participio + than",
-            "de": "no sooner + had + Partizip + than"
+            "es": "no sooner + had + participio + than"
           }
         },
         {
           "text": {
-            "hu": "no sooner + folyamatos jelen + than",
             "en": "no sooner + present continuous + than",
-            "es": "no sooner + presente continuo + than",
-            "de": "no sooner + Present Continuous + than"
+            "es": "no sooner + presente continuo + than"
           },
           "wrong": {
-            "hu": "A múltbeli gyors egymásutánhoz had + igenév kell.",
             "en": "A quick succession in the past needs had + participle.",
-            "es": "Una sucesión rápida en el pasado necesita had + participio.",
-            "de": "Eine schnelle Folge in der Vergangenheit braucht had + Partizip."
+            "es": "Una sucesión rápida en el pasado necesita had + participio."
           }
         }
       ],
@@ -1255,46 +1027,34 @@
       "es": "Only then did I understand.",
       "target": "Only then did I",
       "tr": {
-        "hu": "Csak akkor értettem meg.",
         "en": "Only then did I understand.",
-        "es": "Solo entonces entendí.",
-        "de": "Erst da verstand ich."
+        "es": "Solo entonces entendí."
       },
       "options": [
         {
           "text": {
-            "hu": "az only nem okoz fordított szórendet",
             "en": "only does not cause inversion",
-            "es": "only no provoca inversión",
-            "de": "only löst keine Inversion aus"
+            "es": "only no provoca inversión"
           },
           "wrong": {
-            "hu": "Az only + időhatározó a mondat elején fordított szórendet hoz.",
             "en": "Only + a time phrase at the start brings inversion.",
-            "es": "Only + una frase de tiempo al inicio trae inversión.",
-            "de": "Only + Zeitangabe am Anfang bringt Inversion."
+            "es": "Only + una frase de tiempo al inicio trae inversión."
           }
         },
         {
           "text": {
-            "hu": "az only + időhatározó a mondat elején fordított szórendet hoz",
             "en": "only + a time phrase at the start brings inversion",
-            "es": "only + una frase de tiempo al inicio trae inversión",
-            "de": "only + Zeitangabe am Anfang bringt Inversion"
+            "es": "only + una frase de tiempo al inicio trae inversión"
           }
         },
         {
           "text": {
-            "hu": "az only itt múlt időt jelöl",
             "en": "only here marks the past tense",
-            "es": "only aquí marca el pasado",
-            "de": "only markiert hier die Vergangenheit"
+            "es": "only aquí marca el pasado"
           },
           "wrong": {
-            "hu": "A múltat a did jelzi, nem az only.",
             "en": "The past is shown by did, not by only.",
-            "es": "El pasado lo marca did, no only.",
-            "de": "Die Vergangenheit zeigt did, nicht only."
+            "es": "El pasado lo marca did, no only."
           }
         }
       ],
@@ -1306,46 +1066,34 @@
       "es": "Under no circumstances should you open it.",
       "target": "should you",
       "tr": {
-        "hu": "Semmilyen körülmények között ne nyisd ki.",
         "en": "Under no circumstances should you open it.",
-        "es": "En ninguna circunstancia debes abrirlo.",
-        "de": "Unter keinen Umständen solltest du es öffnen."
+        "es": "En ninguna circunstancia debes abrirlo."
       },
       "options": [
         {
           "text": {
-            "hu": "a módbeli ige az alany után áll",
             "en": "the modal comes after the subject",
-            "es": "el modal va después del sujeto",
-            "de": "das Modalverb steht nach dem Subjekt"
+            "es": "el modal va después del sujeto"
           },
           "wrong": {
-            "hu": "A tagadó határozó után a módbeli ige is az alany elé kerül.",
             "en": "After the negative adverbial the modal also goes before the subject.",
-            "es": "Después del adverbial negativo el modal también va antes del sujeto.",
-            "de": "Nach dem verneinenden Adverbial steht auch das Modalverb vor dem Subjekt."
+            "es": "Después del adverbial negativo el modal también va antes del sujeto."
           }
         },
         {
           "text": {
-            "hu": "a módbeli ige az alany előtt áll: fordított szórend, nyomatékos tiltás",
             "en": "the modal comes before the subject: inversion, an emphatic prohibition",
-            "es": "el modal va antes del sujeto: inversión, una prohibición enfática",
-            "de": "das Modalverb steht vor dem Subjekt: Inversion, ein nachdrückliches Verbot"
+            "es": "el modal va antes del sujeto: inversión, una prohibición enfática"
           }
         },
         {
           "text": {
-            "hu": "udvarias kérés",
             "en": "a polite request",
-            "es": "una petición cortés",
-            "de": "eine höfliche Bitte"
+            "es": "una petición cortés"
           },
           "wrong": {
-            "hu": "Ez nyomatékos, formális tiltás, nem udvarias kérés.",
             "en": "This is an emphatic, formal prohibition, not a polite request.",
-            "es": "Esto es una prohibición enfática y formal, no una petición cortés.",
-            "de": "Das ist ein nachdrückliches, formelles Verbot, keine höfliche Bitte."
+            "es": "Esto es una prohibición enfática y formal, no una petición cortés."
           }
         }
       ],

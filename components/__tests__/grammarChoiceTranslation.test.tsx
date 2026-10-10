@@ -10,9 +10,9 @@ import type { GrammarTopicData } from '@/lib/games/content';
 import { getDb } from '@/lib/database';
 import { ThemeProvider } from '@/lib/ThemeContext';
 
-const four = (s: string) => ({ hu: s, en: s, es: s, de: s });
+const four = (s: string) => ({ en: s, es: s });
 
-const gap = (id: string, tr?: { hu: string; en: string; es: string; de: string }) => ({
+const gap = (id: string, tr?: { en: string; es: string }) => ({
   id,
   sentence: 'De niño, mi abuela siempre ___ pan los domingos.',
   options: ['hacía', 'hizo', 'hará'],
@@ -24,10 +24,8 @@ const gap = (id: string, tr?: { hu: string; en: string; es: string; de: string }
 });
 
 const TR = {
-  hu: 'Gyerekként a nagyim mindig kenyeret sütött vasárnaponként.',
   en: 'As a child, my grandmother always baked bread on Sundays.',
   es: 'De niño, mi abuela siempre hacía pan los domingos.',
-  de: 'Als Kind backte meine Großmutter sonntags immer Brot.',
 };
 
 const withTr: GrammarTopicData = {
@@ -55,7 +53,7 @@ const markWithTr: GrammarTopicData = {
       why: four('why'),
       wrong: { hermana: four('x') },
       examples: ['El niño lee un libro.'],
-      tr: { hu: 'A húgom almát eszik.', en: 'My sister eats an apple.', es: 'Mi hermana come una manzana.', de: 'Meine Schwester isst einen Apfel.' },
+      tr: { en: 'My sister eats an apple.', es: 'Mi hermana come una manzana.' },
     },
   ],
 };
@@ -83,12 +81,12 @@ describe.each([
   });
 
   it('with tr: the F button is there, the translation is hidden by default, shows on F in the UI language, disappears on F again', async () => {
-    render(drill(withTr, 'hu'));
+    render(drill(withTr, 'es'));
     await flush();
 
     expect(screen.queryByTestId('choice-translation')).toBeNull();
     fireEvent.press(screen.getByTestId('choice-f'));
-    expect(screen.getByTestId('choice-translation')).toHaveTextContent(TR.hu);
+    expect(screen.getByTestId('choice-translation')).toHaveTextContent(TR.es);
     fireEvent.press(screen.getByTestId('choice-f'));
     expect(screen.queryByTestId('choice-translation')).toBeNull();
   });
@@ -108,10 +106,10 @@ describe.each([
   });
 
   it('the same for a mark item', async () => {
-    render(drill(markWithTr, 'de'));
+    render(drill(markWithTr, 'en'));
     await flush();
     fireEvent.press(screen.getByTestId('choice-f'));
-    expect(screen.getByTestId('choice-translation')).toHaveTextContent('Meine Schwester isst einen Apfel.');
+    expect(screen.getByTestId('choice-translation')).toHaveTextContent('My sister eats an apple.');
   });
 
   it('the translation stays after answering, and is closed again on the next item', async () => {

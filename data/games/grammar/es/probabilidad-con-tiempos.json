@@ -3,194 +3,152 @@
   "topic": "probabilidad-con-tiempos",
   "level": "C1",
   "title": {
-    "hu": "Valószínűség igeidőkkel",
     "en": "Probability through tenses",
-    "es": "La probabilidad con los tiempos",
-    "de": "Wahrscheinlichkeit durch Zeiten"
+    "es": "La probabilidad con los tiempos"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "A spanyolban a bizonytalan dolgot igeidővel is ki lehet fejezni, külön szó nélkül (mint a valószínűleg). A tényt a jelen idő mondja (son las diez: tíz óra van), a találgatást a jövő idő (serán las diez: valószínűleg tíz óra van). A találgatás olyasmiről szól, amit most nem tudsz ellenőrizni, és négy alakja van: az egyszerű jövő a jelenről találgat (estará en casa), a befejezett jövő olyasmiről, ami már megtörtént (habrá llegado), az egyszerű feltételes mód a múlt egy pillanatáról (tendría veinte años), a befejezett feltételes mód pedig arról, ami egy múltbeli pillanat előtt történt (habría salido). Az alakok képzése a jövő és a feltételes mód saját leckéiben van, itt a jelentés a lényeg: mikor melyik.",
         "en": "In Spanish you can express uncertainty with a tense, without an extra word (like probably). A fact takes the present tense (son las diez: it is ten o'clock), a guess takes the future (serán las diez: it is probably ten o'clock). A guess is about something you cannot check right now, and it has four forms: the simple future guesses about the present (estará en casa), the future perfect about something that has already happened (habrá llegado), the simple conditional about a moment in the past (tendría veinte años), and the conditional perfect about something that happened before a past moment (habría salido). How the forms are built is in the lessons on the future and the conditional, here the meaning is what counts: when to use which.",
-        "es": "En español puedes expresar la duda con un tiempo verbal, sin una palabra más (como probablemente). Un hecho va en presente (son las diez), una conjetura va en futuro (serán las diez: probablemente son las diez). La conjetura trata de algo que no puedes comprobar ahora mismo y tiene cuatro formas: el futuro simple conjetura sobre el presente (estará en casa), el futuro compuesto sobre algo que ya ocurrió (habrá llegado), el condicional simple sobre un momento del pasado (tendría veinte años) y el condicional compuesto sobre algo anterior a un momento del pasado (habría salido). La formación de las formas está en las lecciones del futuro y del condicional; aquí importa el significado: cuándo va cada una.",
-        "de": "Im Spanischen kann man Unsicherheit mit einer Zeitform ausdrücken, ohne ein zusätzliches Wort (wie wahrscheinlich). Eine Tatsache steht im Präsens (son las diez: Es ist zehn Uhr), eine Vermutung im Futur (serán las diez: Es ist wohl zehn Uhr). Die Vermutung betrifft etwas, das man gerade nicht überprüfen kann, und hat vier Formen: Das einfache Futur vermutet über die Gegenwart (estará en casa), das Futur II über etwas, das schon geschehen ist (habrá llegado), das einfache Konditional über einen Moment in der Vergangenheit (tendría veinte años) und das Konditional II über etwas, das vor einem vergangenen Moment geschah (habría salido). Wie die Formen gebildet werden, steht in den Lektionen zu Futur und Konditional, hier zählt die Bedeutung: wann welche."
+        "es": "En español puedes expresar la duda con un tiempo verbal, sin una palabra más (como probablemente). Un hecho va en presente (son las diez), una conjetura va en futuro (serán las diez: probablemente son las diez). La conjetura trata de algo que no puedes comprobar ahora mismo y tiene cuatro formas: el futuro simple conjetura sobre el presente (estará en casa), el futuro compuesto sobre algo que ya ocurrió (habrá llegado), el condicional simple sobre un momento del pasado (tendría veinte años) y el condicional compuesto sobre algo anterior a un momento del pasado (habría salido). La formación de las formas está en las lecciones del futuro y del condicional; aquí importa el significado: cuándo va cada una."
       }
     },
     {
       "kind": "usage",
       "title": {
-        "hu": "A szabály pontjai",
         "en": "The rules",
-        "es": "Los puntos de la regla",
-        "de": "Die Regelpunkte"
+        "es": "Los puntos de la regla"
       },
       "points": [
         {
           "text": {
-            "hu": "Az egyszerű jövő a jelenről találgat: olyasmiről, ami most igaz, de nem tudod biztosan. Leggyakrabban állapotot kifejező igével áll (ser, estar, tener, haber). Az alak ugyanaz, mint a jövő időé, csak a jelentés más: a mondat nem a jövőről szól.",
             "en": "The simple future guesses about the present: about something that is true now but that you do not know for sure. It most often stands with verbs of state (ser, estar, tener, haber). The form is the same as the future tense, only the meaning differs: the sentence is not about the future.",
-            "es": "El futuro simple conjetura sobre el presente: sobre algo que es verdad ahora, pero que no sabes con seguridad. Aparece sobre todo con verbos de estado (ser, estar, tener, haber). La forma es la misma que la del tiempo futuro, solo cambia el significado: la frase no trata del futuro.",
-            "de": "Das einfache Futur vermutet über die Gegenwart: über etwas, das jetzt wahr ist, das man aber nicht sicher weiß. Es steht meistens bei Zustandsverben (ser, estar, tener, haber). Die Form ist dieselbe wie beim Futur, nur die Bedeutung ist eine andere: Der Satz handelt nicht von der Zukunft."
+            "es": "El futuro simple conjetura sobre el presente: sobre algo que es verdad ahora, pero que no sabes con seguridad. Aparece sobre todo con verbos de estado (ser, estar, tener, haber). La forma es la misma que la del tiempo futuro, solo cambia el significado: la frase no trata del futuro."
           },
           "examples": [
             {
               "es": "No tengo reloj, pero serán las diez.",
               "tr": {
-                "hu": "Nincs órám, de valószínűleg tíz óra van.",
                 "en": "I have no watch, but it is probably ten o'clock.",
-                "es": "No tengo reloj, pero serán las diez.",
-                "de": "Ich habe keine Uhr, aber es ist wohl zehn Uhr."
+                "es": "No tengo reloj, pero serán las diez."
               }
             },
             {
               "es": "Mi hermana no contesta: estará en el trabajo.",
               "tr": {
-                "hu": "A testvérem nem veszi fel: valószínűleg a munkahelyén van.",
                 "en": "My sister does not answer: she is probably at work.",
-                "es": "Mi hermana no contesta: estará en el trabajo.",
-                "de": "Meine Schwester geht nicht ran: Sie ist wohl bei der Arbeit."
+                "es": "Mi hermana no contesta: estará en el trabajo."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Kérdésben az egyszerű jövő azt jelenti, hogy magadtól kérdezed: vajon? Nem is feltétlenül vársz választ, és ha valaki felel, az is csak találgat.",
             "en": "In a question the simple future means you are asking yourself: I wonder. You do not necessarily expect an answer, and if someone answers, that person is only guessing too.",
-            "es": "En una pregunta el futuro simple significa que te lo preguntas a ti mismo: me pregunto. No esperas necesariamente una respuesta, y si alguien responde, también conjetura.",
-            "de": "In einer Frage bedeutet das einfache Futur, dass man sich selbst fragt: Ich frage mich. Man erwartet nicht unbedingt eine Antwort, und wenn jemand antwortet, vermutet er auch nur."
+            "es": "En una pregunta el futuro simple significa que te lo preguntas a ti mismo: me pregunto. No esperas necesariamente una respuesta, y si alguien responde, también conjetura."
           },
           "examples": [
             {
               "es": "¿Qué hora será?",
               "tr": {
-                "hu": "Vajon mennyi az idő?",
                 "en": "I wonder what time it is.",
-                "es": "¿Qué hora será?",
-                "de": "Wie spät mag es wohl sein?"
+                "es": "¿Qué hora será?"
               }
             },
             {
               "es": "¿Quién será a esta hora?",
               "tr": {
-                "hu": "Vajon ki lehet ez ilyenkor?",
                 "en": "I wonder who that is at this hour.",
-                "es": "¿Quién será a esta hora?",
-                "de": "Wer mag das um diese Zeit sein?"
+                "es": "¿Quién será a esta hora?"
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A befejezett jövő olyasmiről találgat, ami már megtörtént, a mostani pillanatból nézve: habrá llegado, valószínűleg már megérkezett. A haber után participio áll, és a névmás az egész alak elé kerül (se habrá dormido). Gyakori kísérője az ya.",
             "en": "The future perfect guesses about something that has already happened, seen from the present moment: habrá llegado, he has probably arrived. After haber comes a participle, and a pronoun goes in front of the whole form (se habrá dormido). Its usual companion is ya.",
-            "es": "El futuro compuesto conjetura sobre algo que ya ocurrió, visto desde el momento presente: habrá llegado, probablemente ya llegó. Después de haber va un participio, y el pronombre va delante de toda la forma (se habrá dormido). Lo acompaña a menudo ya.",
-            "de": "Das Futur II vermutet über etwas, das schon geschehen ist, vom jetzigen Moment aus gesehen: habrá llegado, er ist wohl schon angekommen. Nach haber steht ein Partizip, und das Pronomen steht vor der ganzen Form (se habrá dormido). Häufiger Begleiter ist ya."
+            "es": "El futuro compuesto conjetura sobre algo que ya ocurrió, visto desde el momento presente: habrá llegado, probablemente ya llegó. Después de haber va un participio, y el pronombre va delante de toda la forma (se habrá dormido). Lo acompaña a menudo ya."
           },
           "examples": [
             {
               "es": "Se habrá dormido.",
               "tr": {
-                "hu": "Valószínűleg elaludt.",
                 "en": "He has probably fallen asleep.",
-                "es": "Se habrá dormido.",
-                "de": "Er ist wohl eingeschlafen."
+                "es": "Se habrá dormido."
               }
             },
             {
               "es": "Habrá llovido toda la noche.",
               "tr": {
-                "hu": "Valószínűleg egész éjjel esett.",
                 "en": "It has probably rained all night.",
-                "es": "Habrá llovido toda la noche.",
-                "de": "Es hat wohl die ganze Nacht geregnet."
+                "es": "Habrá llovido toda la noche."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Az egyszerű feltételes mód a múlt egy pillanatáról találgat: azt mondja, hogy akkor valószínűleg így volt. A kiindulópont múlt idejű (cuando lo conocí, cuando salimos). A jelenről találgatáshoz az egyszerű jövő kell, nem a feltételes mód.",
             "en": "The simple conditional guesses about a moment in the past: it says that at that time things were probably so. The starting point is in the past (cuando lo conocí, cuando salimos). To guess about the present you need the simple future, not the conditional.",
-            "es": "El condicional simple conjetura sobre un momento del pasado: dice que entonces probablemente era así. El punto de partida está en el pasado (cuando lo conocí, cuando salimos). Para conjeturar sobre el presente hace falta el futuro simple, no el condicional.",
-            "de": "Das einfache Konditional vermutet über einen Moment in der Vergangenheit: Es sagt, dass es damals wohl so war. Der Ausgangspunkt liegt in der Vergangenheit (cuando lo conocí, cuando salimos). Für eine Vermutung über die Gegenwart braucht man das einfache Futur, nicht das Konditional."
+            "es": "El condicional simple conjetura sobre un momento del pasado: dice que entonces probablemente era así. El punto de partida está en el pasado (cuando lo conocí, cuando salimos). Para conjeturar sobre el presente hace falta el futuro simple, no el condicional."
           },
           "examples": [
             {
               "es": "Cuando lo conocí, tendría veinte años.",
               "tr": {
-                "hu": "Amikor megismertem, valószínűleg húszéves volt.",
                 "en": "When I met him, he was probably twenty.",
-                "es": "Cuando lo conocí, tendría veinte años.",
-                "de": "Als ich ihn kennenlernte, war er wohl zwanzig."
+                "es": "Cuando lo conocí, tendría veinte años."
               }
             },
             {
               "es": "Serían las doce cuando salimos.",
               "tr": {
-                "hu": "Valószínűleg tizenkét óra volt, amikor elindultunk.",
                 "en": "It was probably twelve when we left.",
-                "es": "Serían las doce cuando salimos.",
-                "de": "Es war wohl zwölf Uhr, als wir gingen."
+                "es": "Serían las doce cuando salimos."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A befejezett feltételes mód olyasmiről találgat, ami egy múltbeli pillanat előtt történt: azt mondja, hogy akkorra valószínűleg már megtörtént. A kiindulópont múlt idejű (cuando llegué), ezért nem a habrá, hanem a habría + participio áll. Ugyanez az alak egy másik leckében meg nem történt múltbeli dolgot is jelent (habría venido): itt a jelentés a valószínűség.",
             "en": "The conditional perfect guesses about something that happened before a past moment: it says that by then it had probably already happened. The starting point is in the past (cuando llegué), so habría + participle is used, not habrá. The same form also means an unreal past action in another lesson (habría venido): here the meaning is probability.",
-            "es": "El condicional compuesto conjetura sobre algo que ocurrió antes de un momento del pasado: dice que para entonces probablemente ya había ocurrido. El punto de partida está en el pasado (cuando llegué), por eso va habría + participio y no habrá. La misma forma significa también una acción pasada irreal en otra lección (habría venido): aquí el significado es la probabilidad.",
-            "de": "Das Konditional II vermutet über etwas, das vor einem vergangenen Moment geschah: Es sagt, dass es bis dahin wohl schon geschehen war. Der Ausgangspunkt liegt in der Vergangenheit (cuando llegué), deshalb steht habría + Partizip und nicht habrá. Dieselbe Form bedeutet in einer anderen Lektion auch eine irreale Handlung in der Vergangenheit (habría venido): Hier ist die Bedeutung die Wahrscheinlichkeit."
+            "es": "El condicional compuesto conjetura sobre algo que ocurrió antes de un momento del pasado: dice que para entonces probablemente ya había ocurrido. El punto de partida está en el pasado (cuando llegué), por eso va habría + participio y no habrá. La misma forma significa también una acción pasada irreal en otra lección (habría venido): aquí el significado es la probabilidad."
           },
           "examples": [
             {
               "es": "Cuando llegué, ya habría salido.",
               "tr": {
-                "hu": "Mire odaértem, valószínűleg már elment.",
                 "en": "By the time I arrived, he had probably already left.",
-                "es": "Cuando llegué, ya habría salido.",
-                "de": "Als ich ankam, war er wohl schon gegangen."
+                "es": "Cuando llegué, ya habría salido."
               }
             },
             {
               "es": "Cuando fuimos, ya habrían cerrado.",
               "tr": {
-                "hu": "Mire odamentünk, valószínűleg már bezártak.",
                 "en": "By the time we went, they had probably already closed.",
-                "es": "Cuando fuimos, ya habrían cerrado.",
-                "de": "Als wir hinkamen, hatten sie wohl schon geschlossen."
+                "es": "Cuando fuimos, ya habrían cerrado."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Ugyanaz a jövő alak terv és találgatás is lehet, a kísérő szó dönt. Jövőbeli időponttal (mañana, el viernes) terv vagy jóslat; ahora, ya vagy kérdés mellett találgatás. Ha látod vagy tudod a dolgot, nincs mit találgatni: jelen idő jön.",
             "en": "The same future form can be a plan or a guess, and the companion word decides. With a future time (mañana, el viernes) it is a plan or prediction; with ahora, ya or in a question it is a guess. If you see or know the thing, there is nothing to guess: the present tense comes.",
-            "es": "La misma forma de futuro puede ser un plan o una conjetura, y la palabra que la acompaña decide. Con un tiempo futuro (mañana, el viernes) es un plan o una predicción; con ahora, ya o en una pregunta es una conjetura. Si ves o sabes la cosa, no hay nada que conjeturar: va el presente.",
-            "de": "Dieselbe Futurform kann ein Plan oder eine Vermutung sein, und das Begleitwort entscheidet. Mit einer Zukunftsangabe (mañana, el viernes) ist sie ein Plan oder eine Vorhersage; mit ahora, ya oder in einer Frage ist sie eine Vermutung. Sieht oder weiß man die Sache, gibt es nichts zu vermuten: Es steht das Präsens."
+            "es": "La misma forma de futuro puede ser un plan o una conjetura, y la palabra que la acompaña decide. Con un tiempo futuro (mañana, el viernes) es un plan o una predicción; con ahora, ya o en una pregunta es una conjetura. Si ves o sabes la cosa, no hay nada que conjeturar: va el presente."
           },
           "examples": [
             {
               "es": "Mañana estará en casa todo el día.",
               "tr": {
-                "hu": "Holnap egész nap otthon lesz.",
                 "en": "Tomorrow he will be at home all day.",
-                "es": "Mañana estará en casa todo el día.",
-                "de": "Morgen ist er den ganzen Tag zu Hause."
+                "es": "Mañana estará en casa todo el día."
               }
             },
             {
               "es": "Ahora estará en casa.",
               "tr": {
-                "hu": "Most valószínűleg otthon van.",
                 "en": "Right now he is probably at home.",
-                "es": "Ahora estará en casa.",
-                "de": "Jetzt ist er wohl zu Hause."
+                "es": "Ahora estará en casa."
               }
             }
           ]
@@ -201,29 +159,21 @@
       "kind": "table",
       "id": "prob-forma",
       "title": {
-        "hu": "Mondat + találgató alak",
         "en": "Sentence + guessing form",
-        "es": "Frase + forma de conjetura",
-        "de": "Satz + Vermutungsform"
+        "es": "Frase + forma de conjetura"
       },
       "header": [
         {
-          "hu": "Mondat (a lyuk a találgató alak)",
           "en": "Sentence (the gap is the guessing form)",
-          "es": "Frase (el hueco es la forma)",
-          "de": "Satz (die Lücke ist die Vermutungsform)"
+          "es": "Frase (el hueco es la forma)"
         },
         {
-          "hu": "Alak",
           "en": "Form",
-          "es": "forma",
-          "de": "Form"
+          "es": "forma"
         },
         {
-          "hu": "Mikor",
           "en": "When",
-          "es": "uso",
-          "de": "Wann"
+          "es": "uso"
         }
       ],
       "rows": [
@@ -292,38 +242,30 @@
     {
       "kind": "contrast",
       "title": {
-        "hu": "Tény vagy találgatás, jelen vagy múlt",
         "en": "Fact or guess, present or past",
-        "es": "Hecho o conjetura, presente o pasado",
-        "de": "Tatsache oder Vermutung, Gegenwart oder Vergangenheit"
+        "es": "Hecho o conjetura, presente o pasado"
       },
       "pairs": [
         {
           "a": "son las diez",
           "b": "serán las diez",
           "note": {
-            "hu": "A son tényt mond: látod vagy tudod. A serán találgat: nem tudod ellenőrizni, ezért valószínűleg tíz óra van.",
             "en": "Son states a fact: you see it or know it. Serán guesses: you cannot check it, so it is probably ten o'clock.",
-            "es": "Son afirma un hecho: lo ves o lo sabes. Serán conjetura: no puedes comprobarlo, así que probablemente son las diez.",
-            "de": "Son nennt eine Tatsache: Man sieht oder weiß es. Serán vermutet: Man kann es nicht überprüfen, also ist es wohl zehn Uhr."
+            "es": "Son afirma un hecho: lo ves o lo sabes. Serán conjetura: no puedes comprobarlo, así que probablemente son las diez."
           },
           "examples": [
             {
               "es": "Lo veo en mi reloj: son las diez.",
               "tr": {
-                "hu": "Az órámon látom: tíz óra van.",
                 "en": "I see it on my watch: it is ten o'clock.",
-                "es": "Lo veo en mi reloj: son las diez.",
-                "de": "Ich sehe es auf meiner Uhr: Es ist zehn Uhr."
+                "es": "Lo veo en mi reloj: son las diez."
               }
             },
             {
               "es": "No tengo reloj, pero serán las diez.",
               "tr": {
-                "hu": "Nincs órám, de valószínűleg tíz óra van.",
                 "en": "I have no watch, but it is probably ten o'clock.",
-                "es": "No tengo reloj, pero serán las diez.",
-                "de": "Ich habe keine Uhr, aber es ist wohl zehn Uhr."
+                "es": "No tengo reloj, pero serán las diez."
               }
             }
           ]
@@ -332,28 +274,22 @@
           "a": "el viernes estará",
           "b": "ahora estará",
           "note": {
-            "hu": "Jövőbeli időponttal az estará terv vagy jóslat. Az ahora vagy egy mostani helyzet mellett ugyanez az alak a mostani helyről találgat.",
             "en": "With a future time, estará is a plan or prediction. With ahora or a present situation, the same form guesses about where he is now.",
-            "es": "Con un tiempo futuro, estará es un plan o una predicción. Con ahora o una situación presente, la misma forma conjetura sobre dónde está ahora.",
-            "de": "Mit einer Zukunftsangabe ist estará ein Plan oder eine Vorhersage. Mit ahora oder einer gegenwärtigen Situation vermutet dieselbe Form, wo er jetzt ist."
+            "es": "Con un tiempo futuro, estará es un plan o una predicción. Con ahora o una situación presente, la misma forma conjetura sobre dónde está ahora."
           },
           "examples": [
             {
               "es": "El viernes estará en Puebla.",
               "tr": {
-                "hu": "Pénteken Pueblában lesz.",
                 "en": "On Friday he will be in Puebla.",
-                "es": "El viernes estará en Puebla.",
-                "de": "Am Freitag ist er in Puebla."
+                "es": "El viernes estará en Puebla."
               }
             },
             {
               "es": "No contesta: ahora estará en Puebla.",
               "tr": {
-                "hu": "Nem veszi fel: most valószínűleg Pueblában van.",
                 "en": "He does not answer: right now he is probably in Puebla.",
-                "es": "No contesta: ahora estará en Puebla.",
-                "de": "Er geht nicht ran: Jetzt ist er wohl in Puebla."
+                "es": "No contesta: ahora estará en Puebla."
               }
             }
           ]
@@ -362,28 +298,22 @@
           "a": "tenía veinte años",
           "b": "tendría veinte años",
           "note": {
-            "hu": "A tenía tény, amit tudsz a múltról. A tendría találgat a múlt egy pillanatáról: valószínűleg húszéves volt.",
             "en": "Tenía is a fact you know about the past. Tendría guesses about a moment in the past: he was probably twenty.",
-            "es": "Tenía es un hecho que sabes del pasado. Tendría conjetura sobre un momento del pasado: probablemente tenía veinte años.",
-            "de": "Tenía ist eine Tatsache, die man über die Vergangenheit weiß. Tendría vermutet über einen Moment in der Vergangenheit: Er war wohl zwanzig."
+            "es": "Tenía es un hecho que sabes del pasado. Tendría conjetura sobre un momento del pasado: probablemente tenía veinte años."
           },
           "examples": [
             {
               "es": "Mi padre tenía veinte años cuando se casó.",
               "tr": {
-                "hu": "Az apám húszéves volt, amikor megnősült.",
                 "en": "My father was twenty when he got married.",
-                "es": "Mi padre tenía veinte años cuando se casó.",
-                "de": "Mein Vater war zwanzig, als er heiratete."
+                "es": "Mi padre tenía veinte años cuando se casó."
               }
             },
             {
               "es": "Mi abuelo tendría veinte años cuando se casó.",
               "tr": {
-                "hu": "A nagyapám valószínűleg húszéves volt, amikor megnősült.",
                 "en": "My grandfather was probably twenty when he got married.",
-                "es": "Mi abuelo tendría veinte años cuando se casó.",
-                "de": "Mein Großvater war wohl zwanzig, als er heiratete."
+                "es": "Mi abuelo tendría veinte años cuando se casó."
               }
             }
           ]
@@ -392,28 +322,22 @@
           "a": "habrá salido",
           "b": "habría salido",
           "note": {
-            "hu": "A habrá salido a mostani pillanatból néz: valószínűleg már elment. A habría salido egy múltbeli pillanatból néz: akkorra valószínűleg már elment.",
             "en": "Habrá salido looks from the present moment: he has probably already left. Habría salido looks from a past moment: by then he had probably already left.",
-            "es": "Habrá salido mira desde el momento presente: probablemente ya salió. Habría salido mira desde un momento del pasado: para entonces probablemente ya había salido.",
-            "de": "Habrá salido schaut vom jetzigen Moment aus: Er ist wohl schon gegangen. Habría salido schaut von einem vergangenen Moment aus: Bis dahin war er wohl schon gegangen."
+            "es": "Habrá salido mira desde el momento presente: probablemente ya salió. Habría salido mira desde un momento del pasado: para entonces probablemente ya había salido."
           },
           "examples": [
             {
               "es": "Son las ocho: ya habrá salido.",
               "tr": {
-                "hu": "Nyolc óra van: valószínűleg már elment.",
                 "en": "It is eight o'clock: he has probably already left.",
-                "es": "Son las ocho: ya habrá salido.",
-                "de": "Es ist acht Uhr: Er ist wohl schon gegangen."
+                "es": "Son las ocho: ya habrá salido."
               }
             },
             {
               "es": "Cuando llegué, ya habría salido.",
               "tr": {
-                "hu": "Mire odaértem, valószínűleg már elment.",
                 "en": "By the time I arrived, he had probably already left.",
-                "es": "Cuando llegué, ya habría salido.",
-                "de": "Als ich ankam, war er wohl schon gegangen."
+                "es": "Cuando llegué, ya habría salido."
               }
             }
           ]
@@ -423,54 +347,42 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Ökölszabály: nézd meg, honnan nézed a dolgot. A mostani pillanatból az egyszerű jövő (estará) vagy a befejezett jövő (habrá llegado) jön, egy múltbeli pillanatból az egyszerű feltételes (tendría) vagy a befejezett feltételes (habría salido). A találgatást szóval is ki lehet mondani (seguramente son las diez), az igeidő ugyanezt mondja egy szó nélkül.",
         "en": "Rule of thumb: check where you are looking from. From the present moment come the simple future (estará) or the future perfect (habrá llegado), from a past moment the simple conditional (tendría) or the conditional perfect (habría salido). A guess can also be said with a word (seguramente son las diez), the tense says the same without one.",
-        "es": "Regla práctica: fíjate desde dónde miras. Desde el momento presente van el futuro simple (estará) o el futuro compuesto (habrá llegado), desde un momento del pasado el condicional simple (tendría) o el condicional compuesto (habría salido). La conjetura también se puede decir con una palabra (seguramente son las diez), el tiempo verbal dice lo mismo sin ella.",
-        "de": "Faustregel: Prüfe, von wo aus du schaust. Vom jetzigen Moment aus stehen das einfache Futur (estará) oder das Futur II (habrá llegado), von einem vergangenen Moment aus das einfache Konditional (tendría) oder das Konditional II (habría salido). Eine Vermutung kann man auch mit einem Wort sagen (seguramente son las diez), die Zeitform sagt dasselbe ohne eines."
+        "es": "Regla práctica: fíjate desde dónde miras. Desde el momento presente van el futuro simple (estará) o el futuro compuesto (habrá llegado), desde un momento del pasado el condicional simple (tendría) o el condicional compuesto (habría salido). La conjetura también se puede decir con una palabra (seguramente son las diez), el tiempo verbal dice lo mismo sin ella."
       }
     }
   ],
   "speak": {
-    "hu": "A spanyolban a találgatást igeidővel is ki lehet fejezni, külön szó nélkül. A tényt a jelen idő mondja, a találgatást a jövő idő: ha nincs óránk, azt mondjuk, hogy valószínűleg ennyi az idő. Négy alak van. Az egyszerű jövő a jelenről találgat. A befejezett jövő olyasmiről, ami már megtörtént. Az egyszerű feltételes mód a múlt egy pillanatáról, a befejezett feltételes mód pedig arról, ami egy múltbeli pillanat előtt történt. Ha holnapra vagy egy későbbi időpontra gondolsz, ugyanaz a jövő alak valódi tervet jelent. Ha látod a dolgot, nincs találgatás, akkor jelen idő jön. Kérdésben az egyszerű jövő azt jelenti, hogy vajon.",
     "en": "In Spanish a guess can be expressed with a tense, without any extra word. A fact takes the present tense, a guess takes the future: when we have no watch, we say that it is probably that time. There are four forms. The simple future guesses about the present. The future perfect guesses about something that has already happened. The simple conditional guesses about a moment in the past, and the conditional perfect guesses about something that happened before a past moment. If you mean tomorrow or a later time, the same future form is a real plan. If you can see the thing, there is no guess, and the present tense comes. In a question, the simple future means I wonder.",
-    "es": "En español una conjetura puede expresarse con un tiempo verbal, sin ninguna palabra más. Un hecho va en presente, una conjetura va en futuro: si no tenemos reloj, decimos que probablemente es esa hora. Hay cuatro formas. El futuro simple conjetura sobre el presente. El futuro compuesto, sobre algo que ya ocurrió. El condicional simple, sobre un momento del pasado, y el condicional compuesto, sobre algo que ocurrió antes de un momento del pasado. Si piensas en mañana o en un momento posterior, la misma forma de futuro es un plan real. Si ves la cosa, no hay conjetura y va el presente. En una pregunta, el futuro simple significa me pregunto.",
-    "de": "Im Spanischen kann man eine Vermutung mit einer Zeitform ausdrücken, ohne ein zusätzliches Wort. Eine Tatsache steht im Präsens, eine Vermutung im Futur: Wenn wir keine Uhr haben, sagen wir, dass es wohl so spät ist. Es gibt vier Formen. Das einfache Futur vermutet über die Gegenwart. Das Futur II vermutet über etwas, das schon geschehen ist. Das einfache Konditional vermutet über einen Moment in der Vergangenheit, und das Konditional II über etwas, das vor einem vergangenen Moment geschah. Meint man morgen oder einen späteren Zeitpunkt, ist dieselbe Futurform ein echter Plan. Sieht man die Sache, gibt es keine Vermutung, dann steht das Präsens. In einer Frage bedeutet das einfache Futur: Ich frage mich."
+    "es": "En español una conjetura puede expresarse con un tiempo verbal, sin ninguna palabra más. Un hecho va en presente, una conjetura va en futuro: si no tenemos reloj, decimos que probablemente es esa hora. Hay cuatro formas. El futuro simple conjetura sobre el presente. El futuro compuesto, sobre algo que ya ocurrió. El condicional simple, sobre un momento del pasado, y el condicional compuesto, sobre algo que ocurrió antes de un momento del pasado. Si piensas en mañana o en un momento posterior, la misma forma de futuro es un plan real. Si ves la cosa, no hay conjetura y va el presente. En una pregunta, el futuro simple significa me pregunto."
   },
   "glossary": [
     {
       "word": "habría",
       "gloss": {
-        "hu": "haber feltételes alakja (habría: volna, lenne)",
         "en": "conditional of haber (habría: would have, there would be)",
-        "es": "habría (condicional de haber)",
-        "de": "Konditional von haber (habría: hätte, es gäbe)"
+        "es": "habría (condicional de haber)"
       }
     },
     {
       "word": "habrían",
       "gloss": {
-        "hu": "haber feltételes alakja, ellos (habrían: volnának)",
         "en": "conditional of haber, they (habrían: they would have)",
-        "es": "habrían (condicional de haber, ellos)",
-        "de": "Konditional von haber, sie (habrían: sie hätten)"
+        "es": "habrían (condicional de haber, ellos)"
       }
     },
     {
       "word": "tendría",
       "gloss": {
-        "hu": "tener feltételes alakja (tendría: lenne, volna)",
         "en": "conditional of tener (tendría: would have)",
-        "es": "tendría (condicional de tener)",
-        "de": "Konditional von tener (tendría: hätte)"
+        "es": "tendría (condicional de tener)"
       }
     },
     {
       "word": "saldrían",
       "gloss": {
-        "hu": "salir feltételes alakja, ellos (saldrían: kimennének)",
         "en": "conditional of salir, they (saldrían: they would leave)",
-        "es": "saldrían (condicional de salir, ellos)",
-        "de": "Konditional von salir, sie (saldrían: sie würden gehen)"
+        "es": "saldrían (condicional de salir, ellos)"
       }
     }
   ],
@@ -485,26 +397,20 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Nincs óra, ezért a mostani időről csak találgatni lehet: egyszerű jövő, serán.",
         "en": "Without a clock the present time can only be guessed: the simple future, serán.",
-        "es": "Sin reloj la hora de ahora solo se puede conjeturar: futuro simple, serán.",
-        "de": "Ohne Uhr kann man die jetzige Zeit nur vermuten: einfaches Futur, serán."
+        "es": "Sin reloj la hora de ahora solo se puede conjeturar: futuro simple, serán."
       },
       "wrong": {
         "son": {
-          "hu": "A son biztos tényt mond, a «No sé» viszont azt mutatja, hogy találgatsz; helyesen: No tengo reloj. No sé, serán las diez.",
           "en": "Son states a certain fact, but «No sé» shows that you are guessing; correctly: No tengo reloj. No sé, serán las diez.",
-          "es": "Son afirma un hecho seguro, pero «No sé» muestra que estás conjeturando; correctamente: No tengo reloj. No sé, serán las diez.",
-          "de": "Son nennt eine sichere Tatsache, «No sé» zeigt aber, dass du nur vermutest; richtig: No tengo reloj. No sé, serán las diez."
+          "es": "Son afirma un hecho seguro, pero «No sé» muestra que estás conjeturando; correctamente: No tengo reloj. No sé, serán las diez."
         },
         "serían": {
-          "hu": "A serían a múlt egy pillanatáról találgat, a mondat viszont a mostani időről szól; helyesen: No tengo reloj. No sé, serán las diez.",
           "en": "Serían guesses about a moment in the past, but the sentence is about the present time; correctly: No tengo reloj. No sé, serán las diez.",
-          "es": "Serían conjetura sobre un momento del pasado, pero la frase trata de la hora de ahora; correctamente: No tengo reloj. No sé, serán las diez.",
-          "de": "Serían vermutet über einen Moment in der Vergangenheit, der Satz handelt aber von der jetzigen Zeit; richtig: No tengo reloj. No sé, serán las diez."
+          "es": "Serían conjetura sobre un momento del pasado, pero la frase trata de la hora de ahora; correctamente: No tengo reloj. No sé, serán las diez."
         }
       },
-      "tr": { "hu": "Nincs órám. Nem tudom, talán tíz óra lehet.", "en": "I don't have a watch. I don't know, it must be around ten.", "es": "No tengo reloj. No sé, serán las diez.", "de": "Ich habe keine Uhr. Ich weiß nicht, es wird wohl zehn sein." }
+      "tr": { "en": "I don't have a watch. I don't know, it must be around ten.", "es": "No tengo reloj. No sé, serán las diez." }
     },
     {
       "id": "pt-ch-02",
@@ -516,26 +422,20 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az órán látod, tehát tény: jelen idő, son.",
         "en": "You read it on the clock, so it is a fact: present tense, son.",
-        "es": "Lo lees en el reloj, así que es un hecho: presente, son.",
-        "de": "Du liest es von der Uhr ab, also ist es eine Tatsache: Präsens, son."
+        "es": "Lo lees en el reloj, así que es un hecho: presente, son."
       },
       "wrong": {
         "serán": {
-          "hu": "A serán találgat, de az órán látod az időt, nincs mit találgatni; helyesen: Lo veo en mi reloj: son las nueve en punto.",
           "en": "Serán guesses, but you see the time on the clock, so there is nothing to guess; correctly: Lo veo en mi reloj: son las nueve en punto.",
-          "es": "Serán conjetura, pero ves la hora en el reloj, así que no hay nada que conjeturar; correctamente: Lo veo en mi reloj: son las nueve en punto.",
-          "de": "Serán vermutet, aber du siehst die Zeit auf der Uhr, also gibt es nichts zu vermuten; richtig: Lo veo en mi reloj: son las nueve en punto."
+          "es": "Serán conjetura, pero ves la hora en el reloj, así que no hay nada que conjeturar; correctamente: Lo veo en mi reloj: son las nueve en punto."
         },
         "serían": {
-          "hu": "A serían a múlt egy pillanatáról találgat, itt viszont a mostani tény áll; helyesen: Lo veo en mi reloj: son las nueve en punto.",
           "en": "Serían guesses about a moment in the past, but here a present fact stands; correctly: Lo veo en mi reloj: son las nueve en punto.",
-          "es": "Serían conjetura sobre un momento del pasado, pero aquí hay un hecho presente; correctamente: Lo veo en mi reloj: son las nueve en punto.",
-          "de": "Serían vermutet über einen Moment in der Vergangenheit, hier steht aber eine gegenwärtige Tatsache; richtig: Lo veo en mi reloj: son las nueve en punto."
+          "es": "Serían conjetura sobre un momento del pasado, pero aquí hay un hecho presente; correctamente: Lo veo en mi reloj: son las nueve en punto."
         }
       },
-      "tr": { "hu": "Látom az órámon: pontosan kilenc óra van.", "en": "I see it on my watch: it is exactly nine o'clock.", "es": "Lo veo en mi reloj: son las nueve en punto.", "de": "Ich sehe es auf meiner Uhr: Es ist genau neun Uhr." }
+      "tr": { "en": "I see it on my watch: it is exactly nine o'clock.", "es": "Lo veo en mi reloj: son las nueve en punto." }
     },
     {
       "id": "pt-ch-03",
@@ -547,26 +447,20 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Vajon hol lehet most: a jelenről kérdezel magadtól, egyszerű jövő, estará.",
         "en": "I wonder where she is now: you ask yourself about the present, simple future, estará.",
-        "es": "Te preguntas dónde está ahora: preguntas sobre el presente, futuro simple, estará.",
-        "de": "Du fragst dich, wo sie jetzt ist: eine Frage über die Gegenwart, einfaches Futur, estará."
+        "es": "Te preguntas dónde está ahora: preguntas sobre el presente, futuro simple, estará."
       },
       "wrong": {
         "estaba": {
-          "hu": "Az estaba múltbeli állapotot ír le, a kérdés viszont a mostani helyről szól; helyesen: ¿Dónde estará Ana? Hace una hora que no contesta.",
           "en": "Estaba describes a past state, but the question is about where she is now; correctly: ¿Dónde estará Ana? Hace una hora que no contesta.",
-          "es": "Estaba describe un estado pasado, pero la pregunta trata de dónde está ahora; correctamente: ¿Dónde estará Ana? Hace una hora que no contesta.",
-          "de": "Estaba beschreibt einen Zustand in der Vergangenheit, die Frage geht aber um den jetzigen Ort; richtig: ¿Dónde estará Ana? Hace una hora que no contesta."
+          "es": "Estaba describe un estado pasado, pero la pregunta trata de dónde está ahora; correctamente: ¿Dónde estará Ana? Hace una hora que no contesta."
         },
         "estuvo": {
-          "hu": "Az estuvo lezárt múltbeli esemény, a kérdés viszont a mostani helyről szól; helyesen: ¿Dónde estará Ana? Hace una hora que no contesta.",
           "en": "Estuvo is a closed past event, but the question is about where she is now; correctly: ¿Dónde estará Ana? Hace una hora que no contesta.",
-          "es": "Estuvo es un hecho pasado cerrado, pero la pregunta trata de dónde está ahora; correctamente: ¿Dónde estará Ana? Hace una hora que no contesta.",
-          "de": "Estuvo ist ein abgeschlossenes Ereignis der Vergangenheit, die Frage geht aber um den jetzigen Ort; richtig: ¿Dónde estará Ana? Hace una hora que no contesta."
+          "es": "Estuvo es un hecho pasado cerrado, pero la pregunta trata de dónde está ahora; correctamente: ¿Dónde estará Ana? Hace una hora que no contesta."
         }
       },
-      "tr": { "hu": "Vajon hol lehet Anna? Már egy órája nem válaszol.", "en": "Where could Ana be? She hasn't answered for an hour.", "es": "¿Dónde estará Ana? Hace una hora que no contesta.", "de": "Wo mag Ana nur sein? Sie antwortet seit einer Stunde nicht." }
+      "tr": { "en": "Where could Ana be? She hasn't answered for an hour.", "es": "¿Dónde estará Ana? Hace una hora que no contesta." }
     },
     {
       "id": "pt-ch-04",
@@ -578,26 +472,20 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Már megtörtént dologról találgatsz a mostani pillanatból nézve: befejezett jövő, habrá llegado.",
         "en": "You guess about something that has already happened, seen from the present moment: future perfect, habrá llegado.",
-        "es": "Conjeturas sobre algo que ya ocurrió, visto desde el momento presente: futuro compuesto, habrá llegado.",
-        "de": "Du vermutest über etwas, das schon geschehen ist, vom jetzigen Moment aus: Futur II, habrá llegado."
+        "es": "Conjeturas sobre algo que ya ocurrió, visto desde el momento presente: futuro compuesto, habrá llegado."
       },
       "wrong": {
         "habría llegado": {
-          "hu": "A habría llegado egy múltbeli pillanatból néz, itt viszont a kiindulópont a mostani óra (ya son las ocho); helyesen: Ya son las ocho: Ana ya habrá llegado a casa.",
           "en": "Habría llegado looks from a past moment, but here the starting point is the present time (ya son las ocho); correctly: Ya son las ocho: Ana ya habrá llegado a casa.",
-          "es": "Habría llegado mira desde un momento del pasado, pero aquí el punto de partida es la hora de ahora (ya son las ocho); correctamente: Ya son las ocho: Ana ya habrá llegado a casa.",
-          "de": "Habría llegado schaut von einem vergangenen Moment aus, hier ist der Ausgangspunkt aber die jetzige Uhrzeit (ya son las ocho); richtig: Ya son las ocho: Ana ya habrá llegado a casa."
+          "es": "Habría llegado mira desde un momento del pasado, pero aquí el punto de partida es la hora de ahora (ya son las ocho); correctamente: Ya son las ocho: Ana ya habrá llegado a casa."
         },
         "llegaría": {
-          "hu": "A llegaría nem azt mondja, hogy az érkezés már lezárult, nem találgat megtörtént dologról; helyesen: Ya son las ocho: Ana ya habrá llegado a casa.",
           "en": "Llegaría does not say that the arrival is already over, it does not guess about a finished event; correctly: Ya son las ocho: Ana ya habrá llegado a casa.",
-          "es": "Llegaría no dice que la llegada ya terminó, no conjetura sobre un hecho acabado; correctamente: Ya son las ocho: Ana ya habrá llegado a casa.",
-          "de": "Llegaría sagt nicht, dass die Ankunft schon vorbei ist, es vermutet nicht über ein abgeschlossenes Ereignis; richtig: Ya son las ocho: Ana ya habrá llegado a casa."
+          "es": "Llegaría no dice que la llegada ya terminó, no conjetura sobre un hecho acabado; correctamente: Ya son las ocho: Ana ya habrá llegado a casa."
         }
       },
-      "tr": { "hu": "Már nyolc óra van: Anna biztosan hazaért már.", "en": "It's already eight o'clock: Ana must have arrived home by now.", "es": "Ya son las ocho: Ana ya habrá llegado a casa.", "de": "Es ist schon acht Uhr: Ana wird wohl schon zu Hause angekommen sein." }
+      "tr": { "en": "It's already eight o'clock: Ana must have arrived home by now.", "es": "Ya son las ocho: Ana ya habrá llegado a casa." }
     },
     {
       "id": "pt-ch-05",
@@ -609,26 +497,20 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A pénztárca már elveszett, tehát megtörtént dologról találgatsz: befejezett jövő, la habré dejado.",
         "en": "The wallet is already lost, so you guess about something that happened: future perfect, la habré dejado.",
-        "es": "La cartera ya se perdió, así que conjeturas sobre algo que ocurrió: futuro compuesto, la habré dejado.",
-        "de": "Die Geldbörse ist schon weg, also vermutest du über etwas Geschehenes: Futur II, la habré dejado."
+        "es": "La cartera ya se perdió, así que conjeturas sobre algo que ocurrió: futuro compuesto, la habré dejado."
       },
       "wrong": {
         "la dejaré": {
-          "hu": "A la dejaré valódi jövőbeli cselekvés, a pénztárca viszont már elveszett; helyesen: No tengo mi cartera: la habré dejado en el taxi.",
           "en": "La dejaré is a real future action, but the wallet is already lost; correctly: No tengo mi cartera: la habré dejado en el taxi.",
-          "es": "La dejaré es una acción futura real, pero la cartera ya se perdió; correctamente: No tengo mi cartera: la habré dejado en el taxi.",
-          "de": "La dejaré ist eine echte zukünftige Handlung, die Geldbörse ist aber schon weg; richtig: No tengo mi cartera: la habré dejado en el taxi."
+          "es": "La dejaré es una acción futura real, pero la cartera ya se perdió; correctamente: No tengo mi cartera: la habré dejado en el taxi."
         },
         "la habría dejado": {
-          "hu": "A la habría dejado múltbeli pillanatból néz, a no tengo viszont mostani; helyesen: No tengo mi cartera: la habré dejado en el taxi.",
           "en": "La habría dejado looks from a past moment, but no tengo is in the present; correctly: No tengo mi cartera: la habré dejado en el taxi.",
-          "es": "La habría dejado mira desde un momento del pasado, pero no tengo está en presente; correctamente: No tengo mi cartera: la habré dejado en el taxi.",
-          "de": "La habría dejado schaut von einem vergangenen Moment aus, no tengo steht aber im Präsens; richtig: No tengo mi cartera: la habré dejado en el taxi."
+          "es": "La habría dejado mira desde un momento del pasado, pero no tengo está en presente; correctamente: No tengo mi cartera: la habré dejado en el taxi."
         }
       },
-      "tr": { "hu": "Nincs meg a pénztárcám: biztosan a taxiban hagytam.", "en": "I don't have my wallet: I must have left it in the taxi.", "es": "No tengo mi cartera: la habré dejado en el taxi.", "de": "Ich habe meine Brieftasche nicht: Ich werde sie wohl im Taxi gelassen haben." }
+      "tr": { "en": "I don't have my wallet: I must have left it in the taxi.", "es": "No tengo mi cartera: la habré dejado en el taxi." }
     },
     {
       "id": "pt-ch-06",
@@ -640,26 +522,20 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Egy múltbeli pillanat óráját találgatod: egyszerű feltételes, serían.",
         "en": "You guess the time at a past moment: simple conditional, serían.",
-        "es": "Conjeturas la hora de un momento del pasado: condicional simple, serían.",
-        "de": "Du vermutest die Uhrzeit eines vergangenen Moments: einfaches Konditional, serían."
+        "es": "Conjeturas la hora de un momento del pasado: condicional simple, serían."
       },
       "wrong": {
         "Serán": {
-          "hu": "A serán a mostani időről találgat, a salí viszont múlt idejű; helyesen: Serían las doce cuando salí del cine.",
           "en": "Serán guesses about the present time, but salí is in the past; correctly: Serían las doce cuando salí del cine.",
-          "es": "Serán conjetura sobre la hora de ahora, pero salí está en pasado; correctamente: Serían las doce cuando salí del cine.",
-          "de": "Serán vermutet über die jetzige Zeit, salí steht aber in der Vergangenheit; richtig: Serían las doce cuando salí del cine."
+          "es": "Serán conjetura sobre la hora de ahora, pero salí está en pasado; correctamente: Serían las doce cuando salí del cine."
         },
         "Son": {
-          "hu": "A son jelen idejű tény, a mondat viszont múltról szól; helyesen: Serían las doce cuando salí del cine.",
           "en": "Son is a present-tense fact, but the sentence is about the past; correctly: Serían las doce cuando salí del cine.",
-          "es": "Son es un hecho en presente, pero la frase trata del pasado; correctamente: Serían las doce cuando salí del cine.",
-          "de": "Son ist eine Tatsache im Präsens, der Satz handelt aber von der Vergangenheit; richtig: Serían las doce cuando salí del cine."
+          "es": "Son es un hecho en presente, pero la frase trata del pasado; correctamente: Serían las doce cuando salí del cine."
         }
       },
-      "tr": { "hu": "Körülbelül éjfél lehetett, amikor kijöttem a moziból.", "en": "It must have been around twelve when I left the cinema.", "es": "Serían las doce cuando salí del cine.", "de": "Es wird wohl gegen zwölf gewesen sein, als ich aus dem Kino kam." }
+      "tr": { "en": "It must have been around twelve when I left the cinema.", "es": "Serían las doce cuando salí del cine." }
     },
     {
       "id": "pt-ch-07",
@@ -671,26 +547,20 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A nagyapa korát egy múltbeli pillanatra becsülöd: egyszerű feltételes, tendría.",
         "en": "You estimate your grandfather's age at a past moment: simple conditional, tendría.",
-        "es": "Calculas la edad del abuelo en un momento del pasado: condicional simple, tendría.",
-        "de": "Du schätzt das Alter des Großvaters in einem vergangenen Moment: einfaches Konditional, tendría."
+        "es": "Calculas la edad del abuelo en un momento del pasado: condicional simple, tendría."
       },
       "wrong": {
         "tiene": {
-          "hu": "A tiene jelen idejű, a házasságkötés viszont múltbeli; helyesen: Mi abuelo tendría unos treinta años cuando se casó.",
           "en": "Tiene is in the present, but the wedding is in the past; correctly: Mi abuelo tendría unos treinta años cuando se casó.",
-          "es": "Tiene está en presente, pero la boda es del pasado; correctamente: Mi abuelo tendría unos treinta años cuando se casó.",
-          "de": "Tiene steht im Präsens, die Hochzeit liegt aber in der Vergangenheit; richtig: Mi abuelo tendría unos treinta años cuando se casó."
+          "es": "Tiene está en presente, pero la boda es del pasado; correctamente: Mi abuelo tendría unos treinta años cuando se casó."
         },
         "tendrá": {
-          "hu": "A tendrá a mostani korról találgat, a se casó viszont múltba tesz; helyesen: Mi abuelo tendría unos treinta años cuando se casó.",
           "en": "Tendrá guesses about the present age, but se casó puts it in the past; correctly: Mi abuelo tendría unos treinta años cuando se casó.",
-          "es": "Tendrá conjetura sobre la edad de ahora, pero se casó lo pone en el pasado; correctamente: Mi abuelo tendría unos treinta años cuando se casó.",
-          "de": "Tendrá vermutet über das jetzige Alter, se casó setzt es aber in die Vergangenheit; richtig: Mi abuelo tendría unos treinta años cuando se casó."
+          "es": "Tendrá conjetura sobre la edad de ahora, pero se casó lo pone en el pasado; correctamente: Mi abuelo tendría unos treinta años cuando se casó."
         }
       },
-      "tr": { "hu": "A nagyapám harminc év körüli lehetett, amikor megnősült.", "en": "My grandfather must have been about thirty years old when he got married.", "es": "Mi abuelo tendría unos treinta años cuando se casó.", "de": "Mein Großvater war wohl um die dreißig Jahre alt, als er heiratete." }
+      "tr": { "en": "My grandfather must have been about thirty years old when he got married.", "es": "Mi abuelo tendría unos treinta años cuando se casó." }
     },
     {
       "id": "pt-ch-08",
@@ -702,26 +572,20 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A kiindulópont múlt idejű (llegamos), és a találgatott dolog előtte történt: befejezett feltételes, habrían salido.",
         "en": "The starting point is in the past (llegamos), and the guessed event happened before it: conditional perfect, habrían salido.",
-        "es": "El punto de partida está en el pasado (llegamos) y lo conjeturado ocurrió antes: condicional compuesto, habrían salido.",
-        "de": "Der Ausgangspunkt liegt in der Vergangenheit (llegamos), und das Vermutete geschah davor: Konditional II, habrían salido."
+        "es": "El punto de partida está en el pasado (llegamos) y lo conjeturado ocurrió antes: condicional compuesto, habrían salido."
       },
       "wrong": {
         "saldrían": {
-          "hu": "A saldrían nem azt mondja, hogy a kimenetel már az érkezés előtt megtörtént; helyesen: Llegamos a las diez y la casa estaba vacía: ya habrían salido.",
           "en": "Saldrían does not say that leaving had already happened before the arrival; correctly: Llegamos a las diez y la casa estaba vacía: ya habrían salido.",
-          "es": "Saldrían no dice que la salida ya había ocurrido antes de la llegada; correctamente: Llegamos a las diez y la casa estaba vacía: ya habrían salido.",
-          "de": "Saldrían sagt nicht, dass das Weggehen schon vor der Ankunft geschehen war; richtig: Llegamos a las diez y la casa estaba vacía: ya habrían salido."
+          "es": "Saldrían no dice que la salida ya había ocurrido antes de la llegada; correctamente: Llegamos a las diez y la casa estaba vacía: ya habrían salido."
         },
         "habrán salido": {
-          "hu": "A habrán salido a mostani pillanatból néz, a történet viszont múlt idejű; helyesen: Llegamos a las diez y la casa estaba vacía: ya habrían salido.",
           "en": "Habrán salido looks from the present moment, but the story is in the past; correctly: Llegamos a las diez y la casa estaba vacía: ya habrían salido.",
-          "es": "Habrán salido mira desde el momento presente, pero el relato está en pasado; correctamente: Llegamos a las diez y la casa estaba vacía: ya habrían salido.",
-          "de": "Habrán salido schaut vom jetzigen Moment aus, die Geschichte steht aber in der Vergangenheit; richtig: Llegamos a las diez y la casa estaba vacía: ya habrían salido."
+          "es": "Habrán salido mira desde el momento presente, pero el relato está en pasado; correctamente: Llegamos a las diez y la casa estaba vacía: ya habrían salido."
         }
       },
-      "tr": { "hu": "Tízkor érkeztünk meg, és a ház üres volt: biztosan elmentek már.", "en": "We arrived at ten and the house was empty: they must have already gone out.", "es": "Llegamos a las diez y la casa estaba vacía: ya habrían salido.", "de": "Wir kamen um zehn an und das Haus war leer: Sie waren wohl schon ausgegangen." }
+      "tr": { "en": "We arrived at ten and the house was empty: they must have already gone out.", "es": "Llegamos a las diez y la casa estaba vacía: ya habrían salido." }
     },
     {
       "id": "pt-ch-09",
@@ -733,26 +597,20 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Az ár mostani, és nem tudod pontosan: egyszerű jövő, costará.",
         "en": "The price is the current one and you do not know exactly: simple future, costará.",
-        "es": "El precio es el de ahora y no lo sabes con exactitud: futuro simple, costará.",
-        "de": "Der Preis ist der jetzige und du weißt ihn nicht genau: einfaches Futur, costará."
+        "es": "El precio es el de ahora y no lo sabes con exactitud: futuro simple, costará."
       },
       "wrong": {
         "costaba": {
-          "hu": "A costaba múltbeli tény, a kérdés (cuesta) viszont mostani; helyesen: ¿Cuánto cuesta ese coche? No sé, costará unos cien mil.",
           "en": "Costaba is a past fact, but the question (cuesta) is in the present; correctly: ¿Cuánto cuesta ese coche? No sé, costará unos cien mil.",
-          "es": "Costaba es un hecho pasado, pero la pregunta (cuesta) está en presente; correctamente: ¿Cuánto cuesta ese coche? No sé, costará unos cien mil.",
-          "de": "Costaba ist eine Tatsache der Vergangenheit, die Frage (cuesta) steht aber im Präsens; richtig: ¿Cuánto cuesta ese coche? No sé, costará unos cien mil."
+          "es": "Costaba es un hecho pasado, pero la pregunta (cuesta) está en presente; correctamente: ¿Cuánto cuesta ese coche? No sé, costará unos cien mil."
         },
         "costaría": {
-          "hu": "A costaría a múlt egy pillanatáról találgat, itt a mostani árról van szó; helyesen: ¿Cuánto cuesta ese coche? No sé, costará unos cien mil.",
           "en": "Costaría guesses about a moment in the past, but here it is about the current price; correctly: ¿Cuánto cuesta ese coche? No sé, costará unos cien mil.",
-          "es": "Costaría conjetura sobre un momento del pasado, pero aquí se trata del precio de ahora; correctamente: ¿Cuánto cuesta ese coche? No sé, costará unos cien mil.",
-          "de": "Costaría vermutet über einen Moment in der Vergangenheit, hier geht es aber um den jetzigen Preis; richtig: ¿Cuánto cuesta ese coche? No sé, costará unos cien mil."
+          "es": "Costaría conjetura sobre un momento del pasado, pero aquí se trata del precio de ahora; correctamente: ¿Cuánto cuesta ese coche? No sé, costará unos cien mil."
         }
       },
-      "tr": { "hu": "Mennyibe kerül az az autó? Nem tudom, talán százezerbe.", "en": "How much does that car cost? I don't know, it probably costs about a hundred thousand.", "es": "¿Cuánto cuesta ese coche? No sé, costará unos cien mil.", "de": "Wie viel kostet dieses Auto? Ich weiß nicht, es wird wohl um die hunderttausend kosten." }
+      "tr": { "en": "How much does that car cost? I don't know, it probably costs about a hundred thousand.", "es": "¿Cuánto cuesta ese coche? No sé, costará unos cien mil." }
     },
     {
       "id": "pt-ch-10",
@@ -764,26 +622,20 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A mostani létszámot becsülöd: a haber egyszerű jövője, habrá.",
         "en": "You estimate the number of people now: the simple future of haber, habrá.",
-        "es": "Calculas cuántas personas hay ahora: el futuro simple de haber, habrá.",
-        "de": "Du schätzt die jetzige Zahl der Leute: das einfache Futur von haber, habrá."
+        "es": "Calculas cuántas personas hay ahora: el futuro simple de haber, habrá."
       },
       "wrong": {
         "había": {
-          "hu": "A había múltbeli tény, a kérdés (hay) viszont mostani; helyesen: ¿Cuánta gente hay en la fiesta? No sé, habrá unas cincuenta.",
           "en": "Había is a past fact, but the question (hay) is in the present; correctly: ¿Cuánta gente hay en la fiesta? No sé, habrá unas cincuenta.",
-          "es": "Había es un hecho pasado, pero la pregunta (hay) está en presente; correctamente: ¿Cuánta gente hay en la fiesta? No sé, habrá unas cincuenta.",
-          "de": "Había ist eine Tatsache der Vergangenheit, die Frage (hay) steht aber im Präsens; richtig: ¿Cuánta gente hay en la fiesta? No sé, habrá unas cincuenta."
+          "es": "Había es un hecho pasado, pero la pregunta (hay) está en presente; correctamente: ¿Cuánta gente hay en la fiesta? No sé, habrá unas cincuenta."
         },
         "habría": {
-          "hu": "A habría a múlt egy pillanatáról találgat, itt a mostani létszámról van szó; helyesen: ¿Cuánta gente hay en la fiesta? No sé, habrá unas cincuenta.",
           "en": "Habría guesses about a moment in the past, but here it is about the current number; correctly: ¿Cuánta gente hay en la fiesta? No sé, habrá unas cincuenta.",
-          "es": "Habría conjetura sobre un momento del pasado, pero aquí se trata de cuántas personas hay ahora; correctamente: ¿Cuánta gente hay en la fiesta? No sé, habrá unas cincuenta.",
-          "de": "Habría vermutet über einen Moment in der Vergangenheit, hier geht es aber um die jetzige Zahl; richtig: ¿Cuánta gente hay en la fiesta? No sé, habrá unas cincuenta."
+          "es": "Habría conjetura sobre un momento del pasado, pero aquí se trata de cuántas personas hay ahora; correctamente: ¿Cuánta gente hay en la fiesta? No sé, habrá unas cincuenta."
         }
       },
-      "tr": { "hu": "Hány ember van a buliban? Nem tudom, lehetnek vagy ötvenen.", "en": "How many people are at the party? I don't know, there must be about fifty.", "es": "¿Cuánta gente hay en la fiesta? No sé, habrá unas cincuenta.", "de": "Wie viele Leute sind auf der Party? Ich weiß nicht, es werden wohl um die fünfzig sein." }
+      "tr": { "en": "How many people are at the party? I don't know, there must be about fifty.", "es": "¿Cuánta gente hay en la fiesta? No sé, habrá unas cincuenta." }
     },
     {
       "id": "pt-ch-11",
@@ -795,26 +647,20 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Egy múltbeli pillanat helyzetét találgatod abból, hogy nem vette fel: egyszerű feltételes, estaría.",
         "en": "You guess the situation at a past moment from the fact that he did not answer: simple conditional, estaría.",
-        "es": "Conjeturas la situación de un momento del pasado a partir de que no contestó: condicional simple, estaría.",
-        "de": "Du vermutest die Lage in einem vergangenen Moment, weil er nicht abnahm: einfaches Konditional, estaría."
+        "es": "Conjeturas la situación de un momento del pasado a partir de que no contestó: condicional simple, estaría."
       },
       "wrong": {
         "estará": {
-          "hu": "Az estará a mostani helyről találgat, a llamé viszont múlt idejű; helyesen: Cuando lo llamé, estaría en el cine, porque no contestó.",
           "en": "Estará guesses about where he is now, but llamé is in the past; correctly: Cuando lo llamé, estaría en el cine, porque no contestó.",
-          "es": "Estará conjetura sobre dónde está ahora, pero llamé está en pasado; correctamente: Cuando lo llamé, estaría en el cine, porque no contestó.",
-          "de": "Estará vermutet über den jetzigen Ort, llamé steht aber in der Vergangenheit; richtig: Cuando lo llamé, estaría en el cine, porque no contestó."
+          "es": "Estará conjetura sobre dónde está ahora, pero llamé está en pasado; correctamente: Cuando lo llamé, estaría en el cine, porque no contestó."
         },
         "está": {
-          "hu": "Ezzel a mondat azt jelentené: „amikor felhívtam, moziban van (jelen idő)”, ami nem illik ide, mert a llamé múltba teszi; helyesen: Cuando lo llamé, estaría en el cine, porque no contestó.",
           "en": "This would say: “when I called him, he is at the cinema (present tense)”, which does not fit here, because llamé puts it in the past; correctly: Cuando lo llamé, estaría en el cine, porque no contestó.",
-          "es": "Esto diría: «cuando lo llamé, está en el cine» (presente), lo cual no encaja aquí, porque llamé lo sitúa en el pasado; correctamente: Cuando lo llamé, estaría en el cine, porque no contestó.",
-          "de": "Das würde bedeuten: „als ich ihn anrief, ist er im Kino“ (Präsens), was hier nicht passt, weil llamé es in die Vergangenheit setzt; richtig: Cuando lo llamé, estaría en el cine, porque no contestó."
+          "es": "Esto diría: «cuando lo llamé, está en el cine» (presente), lo cual no encaja aquí, porque llamé lo sitúa en el pasado; correctamente: Cuando lo llamé, estaría en el cine, porque no contestó."
         }
       },
-      "tr": { "hu": "Amikor hívtam, biztosan moziban volt, mert nem válaszolt.", "en": "When I called him, he must have been at the cinema, because he didn't answer.", "es": "Cuando lo llamé, estaría en el cine, porque no contestó.", "de": "Als ich ihn anrief, war er wohl im Kino, weil er nicht ranging." }
+      "tr": { "en": "When I called him, he must have been at the cinema, because he didn't answer.", "es": "Cuando lo llamé, estaría en el cine, porque no contestó." }
     },
     {
       "id": "pt-ch-12",
@@ -826,26 +672,20 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A férfi kilétére a mostani pillanatban találgatsz: egyszerű jövő, será.",
         "en": "You guess who the man is at the present moment: simple future, será.",
-        "es": "Conjeturas quién es el hombre en el momento presente: futuro simple, será.",
-        "de": "Du vermutest, wer der Mann jetzt ist: einfaches Futur, será."
+        "es": "Conjeturas quién es el hombre en el momento presente: futuro simple, será."
       },
       "wrong": {
         "fue": {
-          "hu": "A fue lezárt múltbeli esemény, találgatásra nem alkalmas; helyesen: ¿Quién es ese hombre? No lo sé, será un vecino nuevo.",
           "en": "Fue is a closed past event, it does not express a guess; correctly: ¿Quién es ese hombre? No lo sé, será un vecino nuevo.",
-          "es": "Fue es un hecho pasado cerrado, no expresa una conjetura; correctamente: ¿Quién es ese hombre? No lo sé, será un vecino nuevo.",
-          "de": "Fue ist ein abgeschlossenes Ereignis der Vergangenheit und drückt keine Vermutung aus; richtig: ¿Quién es ese hombre? No lo sé, será un vecino nuevo."
+          "es": "Fue es un hecho pasado cerrado, no expresa una conjetura; correctamente: ¿Quién es ese hombre? No lo sé, será un vecino nuevo."
         },
         "sería": {
-          "hu": "A sería a múlt egy pillanatáról találgat, a kérdés (es) viszont mostani; helyesen: ¿Quién es ese hombre? No lo sé, será un vecino nuevo.",
           "en": "Sería guesses about a moment in the past, but the question (es) is in the present; correctly: ¿Quién es ese hombre? No lo sé, será un vecino nuevo.",
-          "es": "Sería conjetura sobre un momento del pasado, pero la pregunta (es) está en presente; correctamente: ¿Quién es ese hombre? No lo sé, será un vecino nuevo.",
-          "de": "Sería vermutet über einen Moment in der Vergangenheit, die Frage (es) steht aber im Präsens; richtig: ¿Quién es ese hombre? No lo sé, será un vecino nuevo."
+          "es": "Sería conjetura sobre un momento del pasado, pero la pregunta (es) está en presente; correctamente: ¿Quién es ese hombre? No lo sé, será un vecino nuevo."
         }
       },
-      "tr": { "hu": "Ki az a férfi? Nem tudom, biztosan egy új szomszéd.", "en": "Who is that man? I don't know, he is probably a new neighbor.", "es": "¿Quién es ese hombre? No lo sé, será un vecino nuevo.", "de": "Wer ist dieser Mann? Ich weiß nicht, das wird wohl ein neuer Nachbar sein." }
+      "tr": { "en": "Who is that man? I don't know, he is probably a new neighbor.", "es": "¿Quién es ese hombre? No lo sé, será un vecino nuevo." }
     },
     {
       "kind": "match",
@@ -979,46 +819,34 @@
       "es": "No tengo reloj, pero serán las diez.",
       "target": "serán",
       "tr": {
-        "hu": "Nincs órám, de valószínűleg tíz óra van.",
         "en": "I have no watch, but it is probably ten o'clock.",
-        "es": "No tengo reloj, pero serán las diez.",
-        "de": "Ich habe keine Uhr, aber es ist wohl zehn Uhr."
+        "es": "No tengo reloj, pero serán las diez."
       },
       "options": [
         {
           "text": {
-            "hu": "egyszerű jövő: találgatás a jelenről",
             "en": "simple future: a guess about the present",
-            "es": "futuro simple: conjetura sobre el presente",
-            "de": "einfaches Futur: Vermutung über die Gegenwart"
+            "es": "futuro simple: conjetura sobre el presente"
           }
         },
         {
           "text": {
-            "hu": "egyszerű jövő: terv vagy jóslat, nem találgatás",
             "en": "simple future: a plan or prediction, not a guess",
-            "es": "futuro simple: un plan o una predicción, no una conjetura",
-            "de": "einfaches Futur: Plan oder Vorhersage, keine Vermutung"
+            "es": "futuro simple: un plan o una predicción, no una conjetura"
           },
           "wrong": {
-            "hu": "Nincs jövőbeli időpont, a mondat a mostani időről szól, ezért nem terv",
             "en": "There is no future time, the sentence is about the present time, so it is not a plan",
-            "es": "No hay un tiempo futuro, la frase trata de la hora de ahora, por eso no es un plan",
-            "de": "Es gibt keine Zukunftsangabe, der Satz handelt von der jetzigen Zeit, deshalb ist es kein Plan"
+            "es": "No hay un tiempo futuro, la frase trata de la hora de ahora, por eso no es un plan"
           }
         },
         {
           "text": {
-            "hu": "egyszerű feltételes: találgatás a múlt egy pillanatáról",
             "en": "simple conditional: a guess about a moment in the past",
-            "es": "condicional simple: conjetura sobre un momento del pasado",
-            "de": "einfaches Konditional: Vermutung über einen Moment in der Vergangenheit"
+            "es": "condicional simple: conjetura sobre un momento del pasado"
           },
           "wrong": {
-            "hu": "Nincs múlt idejű kiindulópont, a mondat a mostani időről szól",
             "en": "There is no past starting point, the sentence is about the present time",
-            "es": "No hay un punto de partida en pasado, la frase trata de la hora de ahora",
-            "de": "Es gibt keinen Ausgangspunkt in der Vergangenheit, der Satz handelt von der jetzigen Zeit"
+            "es": "No hay un punto de partida en pasado, la frase trata de la hora de ahora"
           }
         }
       ],
@@ -1030,46 +858,34 @@
       "es": "Mi hija habrá comido en la escuela.",
       "target": "habrá comido",
       "tr": {
-        "hu": "A lányom valószínűleg az iskolában evett.",
         "en": "My daughter has probably eaten at school.",
-        "es": "Mi hija habrá comido en la escuela.",
-        "de": "Meine Tochter hat wohl in der Schule gegessen."
+        "es": "Mi hija habrá comido en la escuela."
       },
       "options": [
         {
           "text": {
-            "hu": "egyszerű feltételes: találgatás a múlt egy pillanatáról",
             "en": "simple conditional: a guess about a moment in the past",
-            "es": "condicional simple: conjetura sobre un momento del pasado",
-            "de": "einfaches Konditional: Vermutung über einen Moment in der Vergangenheit"
+            "es": "condicional simple: conjetura sobre un momento del pasado"
           },
           "wrong": {
-            "hu": "A habrá jövő idejű alak, nem feltételes: a feltételes alak habría lenne",
             "en": "Habrá is a future form, not a conditional: the conditional would be habría",
-            "es": "Habrá es una forma de futuro, no de condicional: el condicional sería habría",
-            "de": "Habrá ist eine Futurform, kein Konditional: Das Konditional wäre habría"
+            "es": "Habrá es una forma de futuro, no de condicional: el condicional sería habría"
           }
         },
         {
           "text": {
-            "hu": "befejezett jövő: találgatás valamiről, ami már megtörtént",
             "en": "future perfect: a guess about something that already happened",
-            "es": "futuro compuesto: conjetura sobre algo que ya ocurrió",
-            "de": "Futur II: Vermutung über etwas, das schon geschehen ist"
+            "es": "futuro compuesto: conjetura sobre algo que ya ocurrió"
           }
         },
         {
           "text": {
-            "hu": "egyszerű jövő: terv vagy jóslat, nem találgatás",
             "en": "simple future: a plan or prediction, not a guess",
-            "es": "futuro simple: un plan o una predicción, no una conjetura",
-            "de": "einfaches Futur: Plan oder Vorhersage, keine Vermutung"
+            "es": "futuro simple: un plan o una predicción, no una conjetura"
           },
           "wrong": {
-            "hu": "A habrá + participio már megtörtént dolgot mond, nem jövőbeli tervet",
             "en": "Habrá + participle speaks about something that already happened, not a plan for the future",
-            "es": "Habrá + participio habla de algo que ya ocurrió, no de un plan futuro",
-            "de": "Habrá + Partizip spricht über etwas, das schon geschehen ist, nicht über einen Plan für die Zukunft"
+            "es": "Habrá + participio habla de algo que ya ocurrió, no de un plan futuro"
           }
         }
       ],
@@ -1081,46 +897,34 @@
       "es": "Cuando lo conocí, tendría veinte años.",
       "target": "tendría",
       "tr": {
-        "hu": "Amikor megismertem, valószínűleg húszéves volt.",
         "en": "When I met him, he was probably twenty.",
-        "es": "Cuando lo conocí, tendría veinte años.",
-        "de": "Als ich ihn kennenlernte, war er wohl zwanzig."
+        "es": "Cuando lo conocí, tendría veinte años."
       },
       "options": [
         {
           "text": {
-            "hu": "egyszerű jövő: találgatás a jelenről",
             "en": "simple future: a guess about the present",
-            "es": "futuro simple: conjetura sobre el presente",
-            "de": "einfaches Futur: Vermutung über die Gegenwart"
+            "es": "futuro simple: conjetura sobre el presente"
           },
           "wrong": {
-            "hu": "A kiindulópont múlt idejű (conocí), nem a mostani pillanat: a jelenről a tendrá találgatna",
             "en": "The starting point is in the past (conocí), not the present moment: tendrá would guess about the present",
-            "es": "El punto de partida está en el pasado (conocí), no en el presente: tendrá conjeturaría sobre el presente",
-            "de": "Der Ausgangspunkt liegt in der Vergangenheit (conocí), nicht im jetzigen Moment: Über die Gegenwart würde tendrá vermuten"
+            "es": "El punto de partida está en el pasado (conocí), no en el presente: tendrá conjeturaría sobre el presente"
           }
         },
         {
           "text": {
-            "hu": "egyszerű feltételes: találgatás a múlt egy pillanatáról",
             "en": "simple conditional: a guess about a moment in the past",
-            "es": "condicional simple: conjetura sobre un momento del pasado",
-            "de": "einfaches Konditional: Vermutung über einen Moment in der Vergangenheit"
+            "es": "condicional simple: conjetura sobre un momento del pasado"
           }
         },
         {
           "text": {
-            "hu": "befejezett feltételes: találgatás valamiről, ami egy múltbeli pillanat előtt történt",
             "en": "conditional perfect: a guess about something before a past moment",
-            "es": "condicional compuesto: conjetura sobre algo anterior a un momento del pasado",
-            "de": "Konditional II: Vermutung über etwas vor einem vergangenen Moment"
+            "es": "condicional compuesto: conjetura sobre algo anterior a un momento del pasado"
           },
           "wrong": {
-            "hu": "A tendría egyszerű alak, nincs benne participio: nem mond előbb történt dolgot",
             "en": "Tendría is a simple form, it has no participle: it does not speak about something earlier",
-            "es": "Tendría es una forma simple, no lleva participio: no habla de algo anterior",
-            "de": "Tendría ist eine einfache Form ohne Partizip: Es spricht nicht über etwas Früheres"
+            "es": "Tendría es una forma simple, no lleva participio: no habla de algo anterior"
           }
         }
       ],
@@ -1132,46 +936,34 @@
       "es": "Cuando llegamos, mis amigos ya habrían salido.",
       "target": "habrían salido",
       "tr": {
-        "hu": "Mire megérkeztünk, a barátaim valószínűleg már elmentek.",
         "en": "By the time we arrived, my friends had probably already left.",
-        "es": "Cuando llegamos, mis amigos ya habrían salido.",
-        "de": "Als wir ankamen, waren meine Freunde wohl schon gegangen."
+        "es": "Cuando llegamos, mis amigos ya habrían salido."
       },
       "options": [
         {
           "text": {
-            "hu": "befejezett jövő: találgatás valamiről, ami már megtörtént",
             "en": "future perfect: a guess about something that already happened",
-            "es": "futuro compuesto: conjetura sobre algo que ya ocurrió",
-            "de": "Futur II: Vermutung über etwas, das schon geschehen ist"
+            "es": "futuro compuesto: conjetura sobre algo que ya ocurrió"
           },
           "wrong": {
-            "hu": "A habrán salido a mostani pillanatból néz, itt viszont a kiindulópont múlt idejű (llegamos)",
             "en": "Habrán salido would look from the present moment, but here the starting point is in the past (llegamos)",
-            "es": "Habrán salido miraría desde el momento presente, pero aquí el punto de partida está en el pasado (llegamos)",
-            "de": "Habrán salido würde vom jetzigen Moment aus schauen, hier liegt der Ausgangspunkt aber in der Vergangenheit (llegamos)"
+            "es": "Habrán salido miraría desde el momento presente, pero aquí el punto de partida está en el pasado (llegamos)"
           }
         },
         {
           "text": {
-            "hu": "egyszerű feltételes: találgatás a múlt egy pillanatáról",
             "en": "simple conditional: a guess about a moment in the past",
-            "es": "condicional simple: conjetura sobre un momento del pasado",
-            "de": "einfaches Konditional: Vermutung über einen Moment in der Vergangenheit"
+            "es": "condicional simple: conjetura sobre un momento del pasado"
           },
           "wrong": {
-            "hu": "Az egyszerű feltételes nem mondja, hogy a dolog már az érkezés előtt megtörtént",
             "en": "The simple conditional does not say that the thing had already happened before the arrival",
-            "es": "El condicional simple no dice que la cosa ya había ocurrido antes de la llegada",
-            "de": "Das einfache Konditional sagt nicht, dass die Sache schon vor der Ankunft geschehen war"
+            "es": "El condicional simple no dice que la cosa ya había ocurrido antes de la llegada"
           }
         },
         {
           "text": {
-            "hu": "befejezett feltételes: találgatás valamiről, ami egy múltbeli pillanat előtt történt",
             "en": "conditional perfect: a guess about something before a past moment",
-            "es": "condicional compuesto: conjetura sobre algo anterior a un momento del pasado",
-            "de": "Konditional II: Vermutung über etwas vor einem vergangenen Moment"
+            "es": "condicional compuesto: conjetura sobre algo anterior a un momento del pasado"
           }
         }
       ],
@@ -1183,46 +975,34 @@
       "es": "Mañana estará en casa todo el día.",
       "target": "estará",
       "tr": {
-        "hu": "Holnap egész nap otthon lesz.",
         "en": "Tomorrow he will be at home all day.",
-        "es": "Mañana estará en casa todo el día.",
-        "de": "Morgen ist er den ganzen Tag zu Hause."
+        "es": "Mañana estará en casa todo el día."
       },
       "options": [
         {
           "text": {
-            "hu": "egyszerű jövő: találgatás a jelenről",
             "en": "simple future: a guess about the present",
-            "es": "futuro simple: conjetura sobre el presente",
-            "de": "einfaches Futur: Vermutung über die Gegenwart"
+            "es": "futuro simple: conjetura sobre el presente"
           },
           "wrong": {
-            "hu": "A mañana jövőbeli időpont: ez valódi terv, nem a mostani állapot találgatása",
             "en": "Mañana is a future time: this is a real plan, not a guess about the present state",
-            "es": "Mañana es un tiempo futuro: es un plan real, no una conjetura sobre el estado de ahora",
-            "de": "Mañana ist eine Zukunftsangabe: Das ist ein echter Plan, keine Vermutung über den jetzigen Zustand"
+            "es": "Mañana es un tiempo futuro: es un plan real, no una conjetura sobre el estado de ahora"
           }
         },
         {
           "text": {
-            "hu": "egyszerű jövő: terv vagy jóslat, nem találgatás",
             "en": "simple future: a plan or prediction, not a guess",
-            "es": "futuro simple: un plan o una predicción, no una conjetura",
-            "de": "einfaches Futur: Plan oder Vorhersage, keine Vermutung"
+            "es": "futuro simple: un plan o una predicción, no una conjetura"
           }
         },
         {
           "text": {
-            "hu": "befejezett jövő: találgatás valamiről, ami már megtörtént",
             "en": "future perfect: a guess about something that already happened",
-            "es": "futuro compuesto: conjetura sobre algo que ya ocurrió",
-            "de": "Futur II: Vermutung über etwas, das schon geschehen ist"
+            "es": "futuro compuesto: conjetura sobre algo que ya ocurrió"
           },
           "wrong": {
-            "hu": "Az estará egyszerű alak, nincs benne participio: nem mond már megtörtént dolgot",
             "en": "Estará is a simple form, it has no participle: it does not speak about something that already happened",
-            "es": "Estará es una forma simple, no lleva participio: no habla de algo que ya ocurrió",
-            "de": "Estará ist eine einfache Form ohne Partizip: Es spricht nicht über etwas, das schon geschehen ist"
+            "es": "Estará es una forma simple, no lleva participio: no habla de algo que ya ocurrió"
           }
         }
       ],
@@ -1234,46 +1014,34 @@
       "es": "Lo veo en mi reloj: son las nueve.",
       "target": "son",
       "tr": {
-        "hu": "Az órámon látom: kilenc óra van.",
         "en": "I see it on my watch: it is nine o'clock.",
-        "es": "Lo veo en mi reloj: son las nueve.",
-        "de": "Ich sehe es auf meiner Uhr: Es ist neun Uhr."
+        "es": "Lo veo en mi reloj: son las nueve."
       },
       "options": [
         {
           "text": {
-            "hu": "egyszerű jövő: találgatás a jelenről",
             "en": "simple future: a guess about the present",
-            "es": "futuro simple: conjetura sobre el presente",
-            "de": "einfaches Futur: Vermutung über die Gegenwart"
+            "es": "futuro simple: conjetura sobre el presente"
           },
           "wrong": {
-            "hu": "Az órán látod, nincs mit találgatni: tény",
             "en": "You see it on the watch, there is nothing to guess: it is a fact",
-            "es": "Lo ves en el reloj, no hay nada que conjeturar: es un hecho",
-            "de": "Du siehst es auf der Uhr, es gibt nichts zu vermuten: Es ist eine Tatsache"
+            "es": "Lo ves en el reloj, no hay nada que conjeturar: es un hecho"
           }
         },
         {
           "text": {
-            "hu": "egyszerű feltételes: találgatás a múlt egy pillanatáról",
             "en": "simple conditional: a guess about a moment in the past",
-            "es": "condicional simple: conjetura sobre un momento del pasado",
-            "de": "einfaches Konditional: Vermutung über einen Moment in der Vergangenheit"
+            "es": "condicional simple: conjetura sobre un momento del pasado"
           },
           "wrong": {
-            "hu": "A son jelen idejű, nem feltételes: a mondat a mostani időről szól",
             "en": "Son is in the present, not the conditional: the sentence is about the present time",
-            "es": "Son está en presente, no en condicional: la frase trata de la hora de ahora",
-            "de": "Son steht im Präsens, nicht im Konditional: Der Satz handelt von der jetzigen Zeit"
+            "es": "Son está en presente, no en condicional: la frase trata de la hora de ahora"
           }
         },
         {
           "text": {
-            "hu": "jelen idő: tény, amit tudsz vagy látsz",
             "en": "present tense: a fact you know or see",
-            "es": "presente: un hecho que sabes o ves",
-            "de": "Präsens: eine Tatsache, die man weiß oder sieht"
+            "es": "presente: un hecho que sabes o ves"
           }
         }
       ],
@@ -1285,46 +1053,34 @@
       "es": "¿Qué hora será?",
       "target": "será",
       "tr": {
-        "hu": "Vajon mennyi az idő?",
         "en": "I wonder what time it is.",
-        "es": "¿Qué hora será?",
-        "de": "Wie spät mag es wohl sein?"
+        "es": "¿Qué hora será?"
       },
       "options": [
         {
           "text": {
-            "hu": "egyszerű jövő kérdésben: vajon, magadtól kérdezed",
             "en": "simple future in a question: I wonder",
-            "es": "futuro simple en una pregunta: me pregunto",
-            "de": "einfaches Futur in einer Frage: ich frage mich"
+            "es": "futuro simple en una pregunta: me pregunto"
           }
         },
         {
           "text": {
-            "hu": "egyszerű jövő: terv vagy jóslat, nem találgatás",
             "en": "simple future: a plan or prediction, not a guess",
-            "es": "futuro simple: un plan o una predicción, no una conjetura",
-            "de": "einfaches Futur: Plan oder Vorhersage, keine Vermutung"
+            "es": "futuro simple: un plan o una predicción, no una conjetura"
           },
           "wrong": {
-            "hu": "A kérdés nem a jövőről szól, hanem a mostani időről: nem terv",
             "en": "The question is not about the future but about the present time: it is not a plan",
-            "es": "La pregunta no trata del futuro sino de la hora de ahora: no es un plan",
-            "de": "Die Frage geht nicht um die Zukunft, sondern um die jetzige Zeit: Es ist kein Plan"
+            "es": "La pregunta no trata del futuro sino de la hora de ahora: no es un plan"
           }
         },
         {
           "text": {
-            "hu": "befejezett jövő: találgatás valamiről, ami már megtörtént",
             "en": "future perfect: a guess about something that already happened",
-            "es": "futuro compuesto: conjetura sobre algo que ya ocurrió",
-            "de": "Futur II: Vermutung über etwas, das schon geschehen ist"
+            "es": "futuro compuesto: conjetura sobre algo que ya ocurrió"
           },
           "wrong": {
-            "hu": "A será egyszerű alak, nem mond már megtörtént dolgot",
             "en": "Será is a simple form, it does not speak about something that already happened",
-            "es": "Será es una forma simple, no habla de algo que ya ocurrió",
-            "de": "Será ist eine einfache Form, sie spricht nicht über etwas, das schon geschehen ist"
+            "es": "Será es una forma simple, no habla de algo que ya ocurrió"
           }
         }
       ],

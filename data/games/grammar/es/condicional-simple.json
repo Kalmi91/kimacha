@@ -3,110 +3,86 @@
   "topic": "condicional-simple",
   "level": "B1",
   "title": {
-    "hu": "Condicional simple: a spanyol „-nék, kellene, tudnál”",
     "en": "Condicional simple: the Spanish \"would / should\"",
-    "es": "Condicional simple: el „haría, debería, podría” del español",
-    "de": "Condicional simple: das spanische „würde / sollte”"
+    "es": "Condicional simple: el „haría, debería, podría” del español"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "A condicional simple azt fejezi ki, amit egy feltétel mellett tennél, vagy amit lágyan, udvariasan mondasz ki: kérés, tanács, feltételezés. Mindhárom igeragozásnál (-ar/-er/-ir) ugyanazok a végződések járnak, és a teljes főnévi igenévhez kapcsolódnak.",
         "en": "The condicional simple expresses what you would do under a condition, or something said in a soft, polite form: a request, advice, a hypothesis. All three conjugations (-ar/-er/-ir) take the same endings, attached to the whole infinitive.",
-        "es": "El condicional simple expresa lo que harías bajo una condición, o algo dicho de forma suave y cortés: una petición, un consejo, una hipótesis. Las tres conjugaciones (-ar/-er/-ir) llevan las mismas terminaciones, pegadas al infinitivo completo.",
-        "de": "Das condicional simple drückt aus, was du unter einer Bedingung tun würdest, oder etwas, das sanft und höflich gesagt wird: eine Bitte, ein Rat, eine Vermutung. Alle drei Konjugationen (-ar/-er/-ir) haben dieselben Endungen, die an den ganzen Infinitiv angehängt werden."
+        "es": "El condicional simple expresa lo que harías bajo una condición, o algo dicho de forma suave y cortés: una petición, un consejo, una hipótesis. Las tres conjugaciones (-ar/-er/-ir) llevan las mismas terminaciones, pegadas al infinitivo completo."
       }
     },
     {
       "kind": "list",
       "title": {
-        "hu": "Két csoport: szabályos és rövid tövű igék",
         "en": "Two groups: regular verbs and short-stem verbs",
-        "es": "Dos grupos: verbos regulares y de raíz corta",
-        "de": "Zwei Gruppen: regelmäßige Verben und Verben mit kurzem Stamm"
+        "es": "Dos grupos: verbos regulares y de raíz corta"
       },
       "items": [
         {
           "text": {
-            "hu": "A legtöbb ige szabályos: a teljes főnévi igenévhez -ía/-ías/-ía/-íamos/-íais/-ían kerül, ugyanaz mind a három ragozásnál.",
             "en": "Most verbs are regular: -ía/-ías/-ía/-íamos/-íais/-ían is added to the whole infinitive, the same for all three conjugations.",
-            "es": "La mayoría de los verbos son regulares: se añade -ía/-ías/-ía/-íamos/-íais/-ían al infinitivo completo, igual en las tres conjugaciones.",
-            "de": "Die meisten Verben sind regelmäßig: an den ganzen Infinitiv wird -ía/-ías/-ía/-íamos/-íais/-ían angehängt, gleich bei allen drei Konjugationen."
+            "es": "La mayoría de los verbos son regulares: se añade -ía/-ías/-ía/-íamos/-íais/-ían al infinitivo completo, igual en las tres conjugaciones."
           },
           "examples": [
             {
               "es": "Hablaría contigo si tuviera tiempo.",
               "tr": {
-                "hu": "Beszélnék veled, ha lenne időm.",
                 "en": "I would talk to you if I had time.",
-                "es": "Hablaría contigo si tuviera tiempo.",
-                "de": "Ich würde mit dir sprechen, wenn ich Zeit hätte."
+                "es": "Hablaría contigo si tuviera tiempo."
               }
             },
             {
               "es": "Viviríamos más cerca del centro.",
               "tr": {
-                "hu": "Közelebb élnénk a központhoz.",
                 "en": "We would live closer to downtown.",
-                "es": "Viviríamos más cerca del centro.",
-                "de": "Wir würden näher am Zentrum wohnen."
+                "es": "Viviríamos más cerca del centro."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Néhány ige rövidebb, rendhagyó tövet kap (tener → tendr-, poder → podr-, hacer → har-, decir → dir-), de utána ugyanaz a hat végződés jön.",
             "en": "A few verbs take a shorter, irregular stem (tener → tendr-, poder → podr-, hacer → har-, decir → dir-), but the same six endings still follow.",
-            "es": "Algunos verbos usan una raíz más corta e irregular (tener → tendr-, poder → podr-, hacer → har-, decir → dir-), pero llevan las mismas seis terminaciones.",
-            "de": "Manche Verben bekommen einen kürzeren, unregelmäßigen Stamm (tener → tendr-, poder → podr-, hacer → har-, decir → dir-), aber danach folgen dieselben sechs Endungen."
+            "es": "Algunos verbos usan una raíz más corta e irregular (tener → tendr-, poder → podr-, hacer → har-, decir → dir-), pero llevan las mismas seis terminaciones."
           },
           "examples": [
             {
               "es": "Tendría más tiempo libre en ese trabajo.",
               "tr": {
-                "hu": "Több szabadidőm lenne abban a munkában.",
                 "en": "I would have more free time in that job.",
-                "es": "Tendría más tiempo libre en ese trabajo.",
-                "de": "Ich hätte in diesem Job mehr Freizeit."
+                "es": "Tendría más tiempo libre en ese trabajo."
               }
             },
             {
               "es": "¿Qué dirías tú en mi lugar?",
               "tr": {
-                "hu": "Te mit mondanál a helyemben?",
                 "en": "What would you say in my place?",
-                "es": "¿Qué dirías tú en mi lugar?",
-                "de": "Was würdest du an meiner Stelle sagen?"
+                "es": "¿Qué dirías tú en mi lugar?"
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Ugyanez a rövidebb tő jelenik meg más igéknél is: poder → podr-, querer → querr-, saber → sabr-, haber → habr-, salir → saldr-, venir → vendr-, poner → pondr-.",
             "en": "The same shortened stem shows up in other verbs too: poder → podr-, querer → querr-, saber → sabr-, haber → habr-, salir → saldr-, venir → vendr-, poner → pondr-.",
-            "es": "La misma raíz corta aparece también en otros verbos: poder → podr-, querer → querr-, saber → sabr-, haber → habr-, salir → saldr-, venir → vendr-, poner → pondr-.",
-            "de": "Derselbe verkürzte Stamm zeigt sich auch bei anderen Verben: poder → podr-, querer → querr-, saber → sabr-, haber → habr-, salir → saldr-, venir → vendr-, poner → pondr-."
+            "es": "La misma raíz corta aparece también en otros verbos: poder → podr-, querer → querr-, saber → sabr-, haber → habr-, salir → saldr-, venir → vendr-, poner → pondr-."
           },
           "examples": [
             {
               "es": "Ellos vendrían si los invitas.",
               "tr": {
-                "hu": "Eljönnének, ha meghívod őket.",
                 "en": "They would come if you invite them.",
-                "es": "Ellos vendrían si los invitas.",
-                "de": "Sie würden kommen, wenn du sie einlädst."
+                "es": "Ellos vendrían si los invitas."
               }
             },
             {
               "es": "Con más dinero, saldríamos más.",
               "tr": {
-                "hu": "Több pénzzel gyakrabban mennénk el szórakozni.",
                 "en": "With more money, we would go out more.",
-                "es": "Con más dinero, saldríamos más.",
-                "de": "Mit mehr Geld würden wir öfter ausgehen."
+                "es": "Con más dinero, saldríamos más."
               }
             }
           ]
@@ -117,35 +93,25 @@
       "kind": "table",
       "id": "condicional-regular",
       "title": {
-        "hu": "Condicional simple, szabályos igék",
         "en": "Condicional simple, regular verbs",
-        "es": "Condicional simple, verbos regulares",
-        "de": "Condicional simple, regelmäßige Verben"
+        "es": "Condicional simple, verbos regulares"
       },
       "header": [
         {
-          "hu": "Személy",
           "en": "Person",
-          "es": "Persona",
-          "de": "Person"
+          "es": "Persona"
         },
         {
-          "hu": "hablar",
           "en": "hablar",
-          "es": "hablar",
-          "de": "hablar"
+          "es": "hablar"
         },
         {
-          "hu": "comer",
           "en": "comer",
-          "es": "comer",
-          "de": "comer"
+          "es": "comer"
         },
         {
-          "hu": "vivir",
           "en": "vivir",
-          "es": "vivir",
-          "de": "vivir"
+          "es": "vivir"
         }
       ],
       "rows": [
@@ -199,41 +165,29 @@
       "kind": "table",
       "id": "condicional-irregular",
       "title": {
-        "hu": "Condicional simple, rendhagyó tövű igék",
         "en": "Condicional simple, irregular-stem verbs",
-        "es": "Condicional simple, verbos de raíz irregular",
-        "de": "Condicional simple, Verben mit unregelmäßigem Stamm"
+        "es": "Condicional simple, verbos de raíz irregular"
       },
       "header": [
         {
-          "hu": "Személy",
           "en": "Person",
-          "es": "Persona",
-          "de": "Person"
+          "es": "Persona"
         },
         {
-          "hu": "tener",
           "en": "tener",
-          "es": "tener",
-          "de": "tener"
+          "es": "tener"
         },
         {
-          "hu": "poder",
           "en": "poder",
-          "es": "poder",
-          "de": "poder"
+          "es": "poder"
         },
         {
-          "hu": "hacer",
           "en": "hacer",
-          "es": "hacer",
-          "de": "hacer"
+          "es": "hacer"
         },
         {
-          "hu": "decir",
           "en": "decir",
-          "es": "decir",
-          "de": "decir"
+          "es": "decir"
         }
       ],
       "rows": [
@@ -292,148 +246,116 @@
     {
       "kind": "usage",
       "title": {
-        "hu": "Mikor használjuk a condicional simple-t?",
         "en": "When do we use the condicional simple?",
-        "es": "¿Cuándo usamos el condicional simple?",
-        "de": "Wann benutzen wir das condicional simple?"
+        "es": "¿Cuándo usamos el condicional simple?"
       },
       "points": [
         {
           "text": {
-            "hu": "Udvarias kérésre, amikor lágyabban, kevésbé nyersen szeretnél kérni valamit valakitől, főleg boltokban és hivatalokban.",
             "en": "For a polite request, when you want to ask for something more softly, less bluntly, especially in shops and offices.",
-            "es": "Para una petición cortés, cuando quieres pedir algo de forma más suave, menos directa, sobre todo en tiendas y oficinas.",
-            "de": "Für eine höfliche Bitte, wenn du etwas sanfter, weniger direkt erbitten möchtest, besonders in Läden und Ämtern."
+            "es": "Para una petición cortés, cuando quieres pedir algo de forma más suave, menos directa, sobre todo en tiendas y oficinas."
           },
           "examples": [
             {
               "es": "¿Me podría decir la hora?",
               "tr": {
-                "hu": "Meg tudná mondani, hány óra van?",
                 "en": "Could you tell me the time?",
-                "es": "¿Me podría decir la hora?",
-                "de": "Könnten Sie mir sagen, wie spät es ist?"
+                "es": "¿Me podría decir la hora?"
               }
             },
             {
               "es": "¿Podrías cerrar la ventana?",
               "tr": {
-                "hu": "Be tudnád csukni az ablakot?",
                 "en": "Could you close the window?",
-                "es": "¿Podrías cerrar la ventana?",
-                "de": "Könntest du das Fenster schließen?"
+                "es": "¿Podrías cerrar la ventana?"
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Puha tanácsra: a „deberías” sokkal enyhébb, mint a „tienes que” (kötelezettség); a „yo que tú” + condicional egy gyakori tanács-forma, jelentése: a te helyedben.",
             "en": "For soft advice: \"deberías\" is much gentler than \"tienes que\" (obligation); \"yo que tú\" + the conditional is a common way to give advice, meaning: in your place.",
-            "es": "Para un consejo suave: «deberías» es mucho más leve que «tienes que» (obligación); «yo que tú» + condicional es una forma habitual de aconsejar, significa: en tu lugar.",
-            "de": "Für sanften Rat: „deberías” ist viel milder als „tienes que” (Verpflichtung); „yo que tú” + Konditional ist eine übliche Art zu raten, bedeutet: an deiner Stelle."
+            "es": "Para un consejo suave: «deberías» es mucho más leve que «tienes que» (obligación); «yo que tú» + condicional es una forma habitual de aconsejar, significa: en tu lugar."
           },
           "examples": [
             {
               "es": "Deberías descansar más.",
               "tr": {
-                "hu": "Kellene több pihenned.",
                 "en": "You should rest more.",
-                "es": "Deberías descansar más.",
-                "de": "Du solltest mehr ausruhen."
+                "es": "Deberías descansar más."
               }
             },
             {
               "es": "Yo que tú, hablaría con ella.",
               "tr": {
-                "hu": "A helyedben beszélnék vele.",
                 "en": "In your place, I would talk to her.",
-                "es": "Yo que tú, hablaría con ella.",
-                "de": "An deiner Stelle würde ich mit ihr reden."
+                "es": "Yo que tú, hablaría con ella."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Feltételezett, még meg nem történt dologra, ami egy elképzelt körülménytől függ, akkor is, ha az „ha” rész nincs kimondva.",
             "en": "For a hypothesis, something not yet real that depends on an imagined circumstance, even when the \"if\" part is left unsaid.",
-            "es": "Para una hipótesis, algo aún no real que depende de una circunstancia imaginada, incluso si la parte del «si» no se dice.",
-            "de": "Für eine Hypothese, etwas noch nicht Reales, das von einem vorgestellten Umstand abhängt, auch wenn der „wenn”-Teil nicht ausgesprochen wird."
+            "es": "Para una hipótesis, algo aún no real que depende de una circunstancia imaginada, incluso si la parte del «si» no se dice."
           },
           "examples": [
             {
               "es": "Sería buena idea invitar a Ana.",
               "tr": {
-                "hu": "Jó ötlet lenne meghívni Anát.",
                 "en": "It would be a good idea to invite Ana.",
-                "es": "Sería buena idea invitar a Ana.",
-                "de": "Es wäre eine gute Idee, Ana einzuladen."
+                "es": "Sería buena idea invitar a Ana."
               }
             },
             {
               "es": "Sin su ayuda, no podríamos terminar.",
               "tr": {
-                "hu": "A segítsége nélkül nem tudnánk befejezni.",
                 "en": "Without her help, we could not finish.",
-                "es": "Sin su ayuda, no podríamos terminar.",
-                "de": "Ohne ihre Hilfe könnten wir nicht fertig werden."
+                "es": "Sin su ayuda, no podríamos terminar."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Egy múltban elhangzott mondat jövőjére, amikor beszámolunk arról, mit mondott valaki a saját jövőjéről: a jövő idő helyett condicional kerül a beágyazott mondatba.",
             "en": "For the future as seen from the past, when reporting what someone said about their own future: the conditional replaces the future tense inside the reported clause.",
-            "es": "Para el futuro visto desde el pasado, cuando contamos lo que alguien dijo sobre su propio futuro: el condicional sustituye al futuro dentro de la frase relatada.",
-            "de": "Für die Zukunft aus der Vergangenheit betrachtet, wenn wir wiedergeben, was jemand über seine eigene Zukunft gesagt hat: das Konditional ersetzt das Futur im wiedergegebenen Satz."
+            "es": "Para el futuro visto desde el pasado, cuando contamos lo que alguien dijo sobre su propio futuro: el condicional sustituye al futuro dentro de la frase relatada."
           },
           "examples": [
             {
               "es": "Dijo que vendría a la fiesta.",
               "tr": {
-                "hu": "Azt mondta, eljön a buliba.",
                 "en": "He said he would come to the party.",
-                "es": "Dijo que vendría a la fiesta.",
-                "de": "Er sagte, er würde zur Party kommen."
+                "es": "Dijo que vendría a la fiesta."
               }
             },
             {
               "es": "Pensé que sería más fácil.",
               "tr": {
-                "hu": "Azt hittem, könnyebb lesz.",
                 "en": "I thought it would be easier.",
-                "es": "Pensé que sería más fácil.",
-                "de": "Ich dachte, es würde einfacher sein."
+                "es": "Pensé que sería más fácil."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Lágy kívánságra a gustar-féle igékkel: a „me gustaría” sokkal udvariasabb, mint a „me gusta”, ha valamit szeretnél, nem csak arról beszélsz, mi tetszik.",
             "en": "For a soft wish with gustar-type verbs: \"me gustaría\" is much more polite than \"me gusta\" when you want something, not just talking about what you like.",
-            "es": "Para un deseo suave con verbos tipo gustar: «me gustaría» es mucho más cortés que «me gusta» cuando quieres algo, no solo hablas de lo que te gusta.",
-            "de": "Für einen sanften Wunsch mit gustar-Verben: „me gustaría” ist viel höflicher als „me gusta”, wenn du etwas möchtest, nicht nur sagst, was dir gefällt."
+            "es": "Para un deseo suave con verbos tipo gustar: «me gustaría» es mucho más cortés que «me gusta» cuando quieres algo, no solo hablas de lo que te gusta."
           },
           "examples": [
             {
               "es": "Me gustaría un café, por favor.",
               "tr": {
-                "hu": "Szeretnék egy kávét, kérem.",
                 "en": "I would like a coffee, please.",
-                "es": "Me gustaría un café, por favor.",
-                "de": "Ich hätte gern einen Kaffee, bitte."
+                "es": "Me gustaría un café, por favor."
               }
             },
             {
               "es": "Nos gustaría visitar Oaxaca.",
               "tr": {
-                "hu": "Szeretnénk meglátogatni Oaxacát.",
                 "en": "We would like to visit Oaxaca.",
-                "es": "Nos gustaría visitar Oaxaca.",
-                "de": "Wir würden gern Oaxaca besuchen."
+                "es": "Nos gustaría visitar Oaxaca."
               }
             }
           ]
@@ -443,38 +365,30 @@
     {
       "kind": "contrast",
       "title": {
-        "hu": "Hasonló alak, más jelentés: condicional és imperfecto",
         "en": "Similar shape, different meaning: conditional and imperfect",
-        "es": "Forma parecida, significado distinto: condicional e imperfecto",
-        "de": "Ähnliche Form, andere Bedeutung: Konditional und Imperfekt"
+        "es": "Forma parecida, significado distinto: condicional e imperfecto"
       },
       "pairs": [
         {
           "a": "debía",
           "b": "debería",
           "note": {
-            "hu": "A „debía” egy múltbeli kötelezettséget ír le (akkor kellett volna), a „debería” egy mai, lágy tanács, ami most is érvényes.",
             "en": "\"Debía\" describes a past obligation (should have, back then), \"debería\" is today's soft advice, still valid now.",
-            "es": "«Debía» describe una obligación pasada (debía entonces), «debería» es un consejo suave de ahora, todavía válido.",
-            "de": "„Debía” beschreibt eine vergangene Verpflichtung (hätte damals sollen), „debería” ist ein sanfter Rat von heute, der noch gilt."
+            "es": "«Debía» describe una obligación pasada (debía entonces), «debería» es un consejo suave de ahora, todavía válido."
           },
           "examples": [
             {
               "es": "De niño, debía acostarme temprano.",
               "tr": {
-                "hu": "Gyerekként korán kellett lefeküdnöm.",
                 "en": "As a child, I had to go to bed early.",
-                "es": "De niño, debía acostarme temprano.",
-                "de": "Als Kind musste ich früh ins Bett gehen."
+                "es": "De niño, debía acostarme temprano."
               }
             },
             {
               "es": "Deberías acostarte temprano hoy.",
               "tr": {
-                "hu": "Ma korán kellene lefeküdnöd.",
                 "en": "You should go to bed early today.",
-                "es": "Deberías acostarte temprano hoy.",
-                "de": "Du solltest heute früh ins Bett gehen."
+                "es": "Deberías acostarte temprano hoy."
               }
             }
           ]
@@ -483,28 +397,22 @@
           "a": "podía",
           "b": "podría",
           "note": {
-            "hu": "A „podía” azt jelenti, valaki KÉPES volt valamire régen (tényleges múltbeli képesség), a „podría” egy udvarias kérést vagy feltételezett lehetőséget fejez ki.",
             "en": "\"Podía\" means someone WAS ABLE to do something in the past (an actual past ability), \"podría\" expresses a polite request or a hypothetical possibility.",
-            "es": "«Podía» significa que alguien PODÍA hacer algo antes (una capacidad real en el pasado), «podría» expresa una petición cortés o una posibilidad hipotética.",
-            "de": "„Podía” bedeutet, jemand KONNTE früher etwas tun (eine tatsächliche vergangene Fähigkeit), „podría” drückt eine höfliche Bitte oder eine hypothetische Möglichkeit aus."
+            "es": "«Podía» significa que alguien PODÍA hacer algo antes (una capacidad real en el pasado), «podría» expresa una petición cortés o una posibilidad hipotética."
           },
           "examples": [
             {
               "es": "De joven, podía correr diez kilómetros.",
               "tr": {
-                "hu": "Fiatalon tíz kilométert tudtam futni.",
                 "en": "When I was young, I could run ten kilometers.",
-                "es": "De joven, podía correr diez kilómetros.",
-                "de": "Als ich jung war, konnte ich zehn Kilometer laufen."
+                "es": "De joven, podía correr diez kilómetros."
               }
             },
             {
               "es": "¿Podrías ayudarme con esto?",
               "tr": {
-                "hu": "Tudnál segíteni ebben?",
                 "en": "Could you help me with this?",
-                "es": "¿Podrías ayudarme con esto?",
-                "de": "Könntest du mir dabei helfen?"
+                "es": "¿Podrías ayudarme con esto?"
               }
             }
           ]
@@ -513,28 +421,22 @@
           "a": "hacía",
           "b": "haría",
           "note": {
-            "hu": "A „hacía” egy régi, ismétlődő cselekvést ír le, a „haría” egy feltételezett cselekvést, ami a valóságban nem történik meg (vagy egy adott feltétel mellett történne).",
             "en": "\"Hacía\" describes an old, repeated action, \"haría\" describes a hypothetical action that does not actually happen, or that would happen under a given condition.",
-            "es": "«Hacía» describe una acción antigua y repetida, «haría» describe una acción hipotética que no ocurre en realidad, o que ocurriría bajo cierta condición.",
-            "de": "„Hacía” beschreibt eine alte, wiederholte Handlung, „haría” beschreibt eine hypothetische Handlung, die tatsächlich nicht geschieht, oder die unter einer bestimmten Bedingung geschähe."
+            "es": "«Hacía» describe una acción antigua y repetida, «haría» describe una acción hipotética que no ocurre en realidad, o que ocurriría bajo cierta condición."
           },
           "examples": [
             {
               "es": "Antes hacía ejercicio cada mañana.",
               "tr": {
-                "hu": "Régen minden reggel edzettem.",
                 "en": "I used to exercise every morning.",
-                "es": "Antes hacía ejercicio cada mañana.",
-                "de": "Früher machte ich jeden Morgen Sport."
+                "es": "Antes hacía ejercicio cada mañana."
               }
             },
             {
               "es": "Yo haría eso por ti, pero no tengo tiempo.",
               "tr": {
-                "hu": "Megtenném ezt érted, de nincs időm.",
                 "en": "I would do that for you, but I do not have time.",
-                "es": "Yo haría eso por ti, pero no tengo tiempo.",
-                "de": "Ich würde das für dich tun, aber ich habe keine Zeit."
+                "es": "Yo haría eso por ti, pero no tengo tiempo."
               }
             }
           ]
@@ -544,198 +446,154 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Latin-Amerikában, így Mexikóban is, a vosotros helyett ustedes áll: ustedes hablarían, tendrían, nem hablaríais, tendríais.",
         "en": "In Latin America, Mexico included, ustedes replaces vosotros: ustedes hablarían, tendrían, not hablaríais, tendríais.",
-        "es": "En Latinoamérica, también en México, ustedes sustituye a vosotros: ustedes hablarían, tendrían, no hablaríais, tendríais.",
-        "de": "In Lateinamerika, auch in Mexiko, ersetzt ustedes das vosotros: ustedes hablarían, tendrían, nicht hablaríais, tendríais."
+        "es": "En Latinoamérica, también en México, ustedes sustituye a vosotros: ustedes hablarían, tendrían, no hablaríais, tendríais."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "Minden személyben van ékezet az í fölött (hablaría, tendrías, comeríamos), sosem marad el, még a rövidebb tövű igéknél sem.",
         "en": "Every person carries a written accent on the í (hablaría, tendrías, comeríamos), it never disappears, not even for the short-stem verbs.",
-        "es": "Toda persona lleva tilde sobre la í (hablaría, tendrías, comeríamos), nunca desaparece, ni siquiera en los verbos de raíz corta.",
-        "de": "Jede Person trägt einen Akzent auf dem í (hablaría, tendrías, comeríamos), er verschwindet nie, auch nicht bei den Verben mit kurzem Stamm."
+        "es": "Toda persona lleva tilde sobre la í (hablaría, tendrías, comeríamos), nunca desaparece, ni siquiera en los verbos de raíz corta."
       }
     }
   ],
   "speak": {
-    "hu": "A feltételes mód azt mondja meg, mit tennél egy feltétel esetén, vagy valamit kíméletesen, udvariasan fejez ki. A legtöbb igénél ugyanaz a hat végződés kapcsolódik a teljes főnévi igenévhez. Néhány ige rövidebb tövet használ, de a végződések ugyanazok. Használjuk udvarias kéréshez, szelíd tanácshoz és kívánsághoz, ami sokkal udvariasabban hangzik, mint a sima jelen idő. Mexikóban a ti alakot mindig a többes szám harmadik személy adja, sosem a Spanyolországban használt forma.",
     "en": "The conditional says what you would do under a condition, or something said in a soft, polite way. For most verbs the same six endings attach to the whole infinitive. A few verbs use a shorter stem, but the endings stay the same. It is used for a polite request, for soft advice, and for a wish, which sounds much more polite than the plain present. In Mexico the form for you all is always the third person plural, never the form used in Spain.",
-    "es": "El condicional dice lo que harías bajo una condición, o algo que se expresa de manera suave y cortés. En la mayoría de los verbos las mismas seis terminaciones se añaden al infinitivo completo. Unos pocos verbos usan una raíz más corta, pero las terminaciones son las mismas. Se usa para una petición cortés, para un consejo suave y para un deseo, que suena mucho más cortés que el presente simple. En México, la forma para ustedes es siempre la tercera persona del plural, nunca la que se usa en España.",
-    "de": "Der Konditional sagt, was du unter einer Bedingung tun würdest, oder er drückt etwas sanft und höflich aus. Bei den meisten Verben hängen dieselben sechs Endungen am ganzen Infinitiv. Einige Verben haben einen kürzeren Stamm, aber die Endungen bleiben gleich. Er dient der höflichen Bitte, dem sanften Rat und dem Wunsch, der viel höflicher klingt als das einfache Präsens. In Mexiko ist die Form für ihr immer die dritte Person Plural, nie die in Spanien gebräuchliche Form."
+    "es": "El condicional dice lo que harías bajo una condición, o algo que se expresa de manera suave y cortés. En la mayoría de los verbos las mismas seis terminaciones se añaden al infinitivo completo. Unos pocos verbos usan una raíz más corta, pero las terminaciones son las mismas. Se usa para una petición cortés, para un consejo suave y para un deseo, que suena mucho más cortés que el presente simple. En México, la forma para ustedes es siempre la tercera persona del plural, nunca la que se usa en España."
   },
   "glossary": [
     {
       "word": "debería",
       "gloss": {
-        "hu": "kellene neki/nekem",
         "en": "should (he/she/I)",
-        "es": "debería",
-        "de": "sollte"
+        "es": "debería"
       }
     },
     {
       "word": "deberías",
       "gloss": {
-        "hu": "kellene neked",
         "en": "you should",
-        "es": "deberías",
-        "de": "du solltest"
+        "es": "deberías"
       }
     },
     {
       "word": "podría",
       "gloss": {
-        "hu": "tudna, tudnék",
         "en": "could (he/she/I)",
-        "es": "podría",
-        "de": "könnte"
+        "es": "podría"
       }
     },
     {
       "word": "podrías",
       "gloss": {
-        "hu": "tudnál",
         "en": "you could",
-        "es": "podrías",
-        "de": "du könntest"
+        "es": "podrías"
       }
     },
     {
       "word": "podríamos",
       "gloss": {
-        "hu": "tudnánk",
         "en": "we could",
-        "es": "podríamos",
-        "de": "wir könnten"
+        "es": "podríamos"
       }
     },
     {
       "word": "gustaría",
       "gloss": {
-        "hu": "szeretnék, szeretne",
         "en": "would like",
-        "es": "gustaría",
-        "de": "würde gern mögen"
+        "es": "gustaría"
       }
     },
     {
       "word": "sería",
       "gloss": {
-        "hu": "lenne",
         "en": "it would be",
-        "es": "sería",
-        "de": "es wäre"
+        "es": "sería"
       }
     },
     {
       "word": "saldríamos",
       "gloss": {
-        "hu": "elmennénk, kimennénk",
         "en": "we would leave/go out",
-        "es": "saldríamos",
-        "de": "wir würden losgehen"
+        "es": "saldríamos"
       }
     },
     {
       "word": "haría",
       "gloss": {
-        "hu": "csinálnék, csinálna",
         "en": "would do (I/he/she)",
-        "es": "haría",
-        "de": "würde machen"
+        "es": "haría"
       }
     },
     {
       "word": "harías",
       "gloss": {
-        "hu": "csinálnál",
         "en": "you would do",
-        "es": "harías",
-        "de": "du würdest machen"
+        "es": "harías"
       }
     },
     {
       "word": "vendrían",
       "gloss": {
-        "hu": "eljönnének",
         "en": "they would come",
-        "es": "vendrían",
-        "de": "sie würden kommen"
+        "es": "vendrían"
       }
     },
     {
       "word": "tendría",
       "gloss": {
-        "hu": "lenne neki (birtokolna)",
         "en": "he/she would have",
-        "es": "tendría",
-        "de": "er/sie hätte"
+        "es": "tendría"
       }
     },
     {
       "word": "dinero",
       "gloss": {
-        "hu": "pénz",
         "en": "money",
-        "es": "el dinero",
-        "de": "Geld"
+        "es": "el dinero"
       }
     },
     {
       "word": "hora",
       "gloss": {
-        "hu": "óra, időpont",
         "en": "time, hour",
-        "es": "la hora",
-        "de": "Uhrzeit"
+        "es": "la hora"
       }
     },
     {
       "word": "invitar",
       "gloss": {
-        "hu": "meghívni",
         "en": "to invite",
-        "es": "invitar",
-        "de": "einladen"
+        "es": "invitar"
       }
     },
     {
       "word": "verte",
       "gloss": {
-        "hu": "látni téged",
         "en": "to see you",
-        "es": "verte",
-        "de": "dich sehen"
+        "es": "verte"
       }
     },
     {
       "word": "pudiéramos",
       "gloss": {
-        "hu": "tudnánk (kötőmód, múlt idejű feltétel)",
         "en": "we could (subjunctive, used in if-clauses)",
-        "es": "pudiéramos",
-        "de": "wir könnten (Konjunktiv, in Wenn-Sätzen)"
+        "es": "pudiéramos"
       }
     },
     {
       "word": "invitaras",
       "gloss": {
-        "hu": "meghívnád (kötőmód, múlt idejű feltétel)",
         "en": "you invited (subjunctive, used in if-clauses)",
-        "es": "invitaras",
-        "de": "du einladen würdest (Konjunktiv, in Wenn-Sätzen)"
+        "es": "invitaras"
       }
     },
     {
       "word": "ayudara",
       "gloss": {
-        "hu": "segítene (kötőmód, múlt idejű feltétel)",
         "en": "helped (subjunctive, used in if-clauses)",
-        "es": "ayudara",
-        "de": "helfen würde (Konjunktiv, in Wenn-Sätzen)"
+        "es": "ayudara"
       }
     }
   ],
@@ -750,23 +608,17 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Puha tanács tú-nak: deberías, nem kötelezettség.",
         "en": "Soft advice to tú: deberías, not an obligation.",
-        "es": "Consejo suave para tú: deberías, no una obligación.",
-        "de": "Sanfter Rat für tú: deberías, keine Verpflichtung."
+        "es": "Consejo suave para tú: deberías, no una obligación."
       },
       "wrong": {
         "Debes": {
-          "hu": "A „Debes” jelen idő: ezzel a mondat azt jelentené, hogy MUSZÁJ pihenned, kötelezettségként, nem egy lágy tanácsként, amit a deberías fejez ki.",
           "en": "\"Debes\" is present tense: with it the sentence would mean you MUST rest, as an obligation, not the soft advice that deberías expresses.",
-          "es": "«Debes» es presente: con él la frase diría que TIENES QUE descansar, como obligación, no el consejo suave que expresa deberías.",
-          "de": "„Debes” ist Präsens: damit würde der Satz bedeuten, dass du dich AUSRUHEN MUSST, als Verpflichtung, nicht der sanfte Rat, den deberías ausdrückt."
+          "es": "«Debes» es presente: con él la frase diría que TIENES QUE descansar, como obligación, no el consejo suave que expresa deberías."
         },
         "Debería": {
-          "hu": "A „Debería” helyes condicional alak, de yo/ő/ön számára: ezzel a mondat azt jelentené, hogy NEKEM vagy NEKI kellene pihennie, nem arról szólna, hogy TE.",
           "en": "\"Debería\" is a correct conditional form, but for yo/he-she-usted: with it the sentence would mean I or he/she should rest, not that YOU should.",
-          "es": "«Debería» es una forma correcta del condicional, pero para yo/él-ella-usted: con ella la frase diría que YO o ÉL/ELLA debería descansar, no que TÚ.",
-          "de": "„Debería” ist eine korrekte Konditionalform, aber für yo/er-sie-usted: damit würde der Satz bedeuten, dass ICH oder ER/SIE sich ausruhen sollte, nicht DU."
+          "es": "«Debería» es una forma correcta del condicional, pero para yo/él-ella-usted: con ella la frase diría que YO o ÉL/ELLA debería descansar, no que TÚ."
         }
       },
       "examples": [
@@ -777,7 +629,7 @@
         "from": "presente",
         "to": "condicional"
       },
-      "tr": { "hu": "Ez nem parancs, de többet kellene pihenned.", "en": "It's not an order, but you should rest more.", "es": "No es una orden, pero tú Deberías descansar más.", "de": "Es ist kein Befehl, aber du solltest mehr ruhen." }
+      "tr": { "en": "It's not an order, but you should rest more.", "es": "No es una orden, pero tú Deberías descansar más." }
     },
     {
       "id": "cd-02",
@@ -789,23 +641,17 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Udvarias kérés condicionalban: podrías.",
         "en": "A polite request in the conditional: podrías.",
-        "es": "Petición cortés en condicional: podrías.",
-        "de": "Eine höfliche Bitte im Konditional: podrías."
+        "es": "Petición cortés en condicional: podrías."
       },
       "wrong": {
         "Podemos": {
-          "hu": "A \"Podemos\" a nosotros alakja jelen időben: ezzel a mondat azt kérdezné, hogy MI segíthetünk-e nekem, ami értelmetlen, mert az ayudarme éppen engem jelent; a kérés a másik személyhez szól, ahogy a podrías (a te-alak udvarias formája).",
           "en": "\"Podemos\" is the nosotros form in the present: with it the sentence would ask whether WE can help me, which makes no sense, since ayudarme means help me; the request goes to the other person, as podrías does (the polite tú form).",
-          "es": "\"Podemos\" es la forma de nosotros en presente: con ella la frase preguntaría si NOSOTROS podemos ayudarme, lo cual no tiene sentido, porque ayudarme significa ayudar a mí; la petición va a la otra persona, como hace podrías (la forma cortés de tú).",
-          "de": "\"Podemos\" ist die nosotros-Form im Präsens: damit würde der Satz fragen, ob WIR mir helfen können, was keinen Sinn ergibt, denn ayudarme heißt mir helfen; die Bitte richtet sich an die andere Person, wie es podrías tut (die höfliche tú-Form)."
+          "es": "\"Podemos\" es la forma de nosotros en presente: con ella la frase preguntaría si NOSOTROS podemos ayudarme, lo cual no tiene sentido, porque ayudarme significa ayudar a mí; la petición va a la otra persona, como hace podrías (la forma cortés de tú)."
         },
         "Pudiste": {
-          "hu": "A \"Pudiste\" befejezett múlt: ezzel a mondat azt kérdezné, hogy egy múltbeli alkalommal SIKERÜLT-e segítened, ami nem fér össze a \"por favor\" kéréssel; a podrías egy mostani, udvarias kérés.",
           "en": "\"Pudiste\" is the preterite: with it the sentence would ask whether you MANAGED to help on a past occasion, which does not fit the request with \"por favor\"; podrías is a present, polite request.",
-          "es": "\"Pudiste\" es el perfecto simple: con él la frase preguntaría si en una ocasión pasada LOGRASTE ayudarme, lo cual no encaja con la petición con \"por favor\"; podrías es una petición cortés de ahora.",
-          "de": "\"Pudiste\" ist das Indefinido: damit würde der Satz fragen, ob es dir bei einer vergangenen Gelegenheit GELANG zu helfen, was nicht zur Bitte mit \"por favor\" passt; podrías ist eine höfliche Bitte von jetzt."
+          "es": "\"Pudiste\" es el perfecto simple: con él la frase preguntaría si en una ocasión pasada LOGRASTE ayudarme, lo cual no encaja con la petición con \"por favor\"; podrías es una petición cortés de ahora."
         }
       },
       "examples": [
@@ -816,7 +662,7 @@
         "from": "presente",
         "to": "condicional"
       },
-      "tr": { "hu": "Tudnál nekem segíteni ebben, kérlek?", "en": "Could you help me with this, please?", "es": "¿Podrías ayudarme con esto, por favor?", "de": "Könntest du mir bitte dabei helfen?" }
+      "tr": { "en": "Could you help me with this, please?", "es": "¿Podrías ayudarme con esto, por favor?" }
     },
     {
       "id": "cd-03",
@@ -828,23 +674,17 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Udvarias, lágy kívánság: me gustaría.",
         "en": "A polite, soft wish: me gustaría.",
-        "es": "Deseo cortés y suave: me gustaría.",
-        "de": "Ein höflicher, sanfter Wunsch: me gustaría."
+        "es": "Deseo cortés y suave: me gustaría."
       },
       "wrong": {
         "gusta": {
-          "hu": "A „gusta” jelen idő: ezzel a mondat egyszerű kijelentés lenne, „tetszik nekem egy kávé”, nem egy udvarias kérés, amit a gustaría fejez ki.",
           "en": "\"Gusta\" is present tense: with it the sentence would be a plain statement, \"a coffee pleases me\", not the polite request that gustaría expresses.",
-          "es": "«Gusta» es presente: con él la frase sería una afirmación simple, «me gusta un café», no la petición cortés que expresa gustaría.",
-          "de": "„Gusta” ist Präsens: damit wäre der Satz eine einfache Aussage, „mir gefällt ein Kaffee”, nicht die höfliche Bitte, die gustaría ausdrückt."
+          "es": "«Gusta» es presente: con él la frase sería una afirmación simple, «me gusta un café», no la petición cortés que expresa gustaría."
         },
         "gustaba": {
-          "hu": "A „gustaba” múlt idő: ezzel a mondat azt jelentené, hogy régen tetszett nekem egy kávé, egy elmúlt kedvelésről szólna, nem egy mostani kérésről.",
           "en": "\"Gustaba\" is past tense: with it the sentence would mean a coffee used to please me, about a past liking, not about a request right now.",
-          "es": "«Gustaba» es pasado: con él la frase significaría que antes me gustaba un café, sobre un gusto pasado, no sobre una petición de ahora.",
-          "de": "„Gustaba” ist Vergangenheit: damit würde der Satz bedeuten, dass mir früher ein Kaffee gefiel, über eine vergangene Vorliebe, nicht über eine jetzige Bitte."
+          "es": "«Gustaba» es pasado: con él la frase significaría que antes me gustaba un café, sobre un gusto pasado, no sobre una petición de ahora."
         }
       },
       "examples": [
@@ -855,7 +695,7 @@
         "from": "presente",
         "to": "condicional"
       },
-      "tr": { "hu": "Szeretnék egy kávét, kérem.", "en": "I would like a coffee, please.", "es": "Me gustaría un café, por favor.", "de": "Ich hätte gerne einen Kaffee, bitte." }
+      "tr": { "en": "I would like a coffee, please.", "es": "Me gustaría un café, por favor." }
     },
     {
       "id": "cd-04",
@@ -867,23 +707,17 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Feltételezett, még meg nem történt dolog: sería buena idea.",
         "en": "A hypothetical, not-yet-real thing: sería buena idea.",
-        "es": "Algo hipotético, aún no real: sería buena idea.",
-        "de": "Etwas Hypothetisches, noch nicht Reales: sería buena idea."
+        "es": "Algo hipotético, aún no real: sería buena idea."
       },
       "wrong": {
         "Es": {
-          "hu": "Az „Es” jelen idő: ezzel a mondat tényként állítaná, hogy jó ötlet meghívni Anát, nem egy óvatos feltételezésként, amit a sería fejez ki.",
           "en": "\"Es\" is present tense: with it the sentence would state as a fact that it is a good idea to invite Ana, not the cautious hypothesis that sería expresses.",
-          "es": "«Es» es presente: con él la frase afirmaría como hecho que es buena idea invitar a Ana, no la hipótesis cautelosa que expresa sería.",
-          "de": "„Es” ist Präsens: damit würde der Satz als Tatsache behaupten, dass es eine gute Idee ist, Ana einzuladen, nicht die vorsichtige Vermutung, die sería ausdrückt."
+          "es": "«Es» es presente: con él la frase afirmaría como hecho que es buena idea invitar a Ana, no la hipótesis cautelosa que expresa sería."
         },
         "Era": {
-          "hu": "Az „Era” múlt idő: ezzel a mondat azt jelentené, hogy régen volt jó ötlet meghívni Anát, nem azt, hogy most, feltételesen az lenne.",
           "en": "\"Era\" is past tense: with it the sentence would mean it used to be a good idea to invite Ana, not that it would be one now, hypothetically.",
-          "es": "«Era» es pasado: con él la frase significaría que antes era buena idea invitar a Ana, no que ahora, hipotéticamente, lo sería.",
-          "de": "„Era” ist Vergangenheit: damit würde der Satz bedeuten, dass es früher eine gute Idee war, Ana einzuladen, nicht dass es jetzt, hypothetisch, eine wäre."
+          "es": "«Era» es pasado: con él la frase significaría que antes era buena idea invitar a Ana, no que ahora, hipotéticamente, lo sería."
         }
       },
       "examples": [
@@ -894,7 +728,7 @@
         "from": "presente",
         "to": "condicional"
       },
-      "tr": { "hu": "A helyedben jó ötlet lenne meghívni Anát.", "en": "In your place, it would be a good idea to invite Ana.", "es": "En tu lugar, Sería buena idea invitar a Ana.", "de": "An deiner Stelle wäre es eine gute Idee, Ana einzuladen." }
+      "tr": { "en": "In your place, it would be a good idea to invite Ana.", "es": "En tu lugar, Sería buena idea invitar a Ana." }
     },
     {
       "id": "cd-05",
@@ -906,23 +740,17 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Nosotroshoz -íamos jár, a salir szabálytalan tövével: saldríamos.",
         "en": "Nosotros takes -íamos, with salir's irregular stem: saldríamos.",
-        "es": "A nosotros le corresponde -íamos, con la raíz irregular de salir: saldríamos.",
-        "de": "Zu nosotros gehört -íamos, mit dem unregelmäßigen Stamm von salir: saldríamos."
+        "es": "A nosotros le corresponde -íamos, con la raíz irregular de salir: saldríamos."
       },
       "wrong": {
         "salimos": {
-          "hu": "A „salimos” jelen (vagy múlt) idő: ezzel a mondat tényként állítaná, hogy holnap elmegyünk, nem egy feltételtől függő, bizonytalan tervet fejezne ki.",
           "en": "\"Salimos\" is present (or past) tense: with it the sentence would state as a fact that we leave tomorrow, not a plan depending on an uncertain condition.",
-          "es": "«Salimos» es presente (o pasado): con él la frase afirmaría como hecho que salimos mañana, no un plan que depende de una condición incierta.",
-          "de": "„Salimos” ist Präsens (oder Vergangenheit): damit würde der Satz als Tatsache behaupten, dass wir morgen losgehen, keinen von einer unsicheren Bedingung abhängigen Plan."
+          "es": "«Salimos» es presente (o pasado): con él la frase afirmaría como hecho que salimos mañana, no un plan que depende de una condición incierta."
         },
         "saldrán": {
-          "hu": "A „saldrán” az ellos alakja jövő időben: ezzel a mondat alanya nem illene a „Nosotros” szóhoz, hiszen más személyre utalna.",
           "en": "\"Saldrán\" is the ellos form in the future: with it the sentence's subject would not match \"Nosotros\", since it points to a different person.",
-          "es": "«Saldrán» es la forma de ellos en futuro: con ella el sujeto de la frase no encajaría con «Nosotros», pues señala a otra persona.",
-          "de": "„Saldrán” ist die ellos-Form im Futur: damit würde das Subjekt des Satzes nicht zu „Nosotros” passen, da es auf eine andere Person verweist."
+          "es": "«Saldrán» es la forma de ellos en futuro: con ella el sujeto de la frase no encajaría con «Nosotros», pues señala a otra persona."
         }
       },
       "examples": [
@@ -933,7 +761,7 @@
         "from": "presente",
         "to": "condicional"
       },
-      "tr": { "hu": "Több idővel holnap elmennénk.", "en": "With more time, we would leave tomorrow.", "es": "Con más tiempo, nosotros saldríamos mañana.", "de": "Mit mehr Zeit würden wir morgen gehen." }
+      "tr": { "en": "With more time, we would leave tomorrow.", "es": "Con más tiempo, nosotros saldríamos mañana." }
     },
     {
       "id": "cd-06",
@@ -945,23 +773,17 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Feltételes cselekvés, ami a valóságban nem történik meg: yo haría.",
         "en": "A conditional action that does not actually happen: yo haría.",
-        "es": "Una acción condicional que no ocurre en realidad: yo haría.",
-        "de": "Eine bedingte Handlung, die tatsächlich nicht passiert: yo haría."
+        "es": "Una acción condicional que no ocurre en realidad: yo haría."
       },
       "wrong": {
         "hago": {
-          "hu": "A „hago” jelen idő: ezzel a mondat azt állítaná, hogy TÉNYLEG csinálom ezt most, ami ellentmond a mondat másik felének, hogy nincs időm rá.",
           "en": "\"Hago\" is present tense: with it the sentence would claim I am ACTUALLY doing this now, which contradicts the other half saying I have no time.",
-          "es": "«Hago» es presente: con él la frase afirmaría que DE VERDAD lo hago ahora, lo cual contradice la otra parte, que dice que no tengo tiempo.",
-          "de": "„Hago” ist Präsens: damit würde der Satz behaupten, dass ich das jetzt TATSÄCHLICH tue, was der anderen Satzhälfte widerspricht, die sagt, ich hätte keine Zeit."
+          "es": "«Hago» es presente: con él la frase afirmaría que DE VERDAD lo hago ahora, lo cual contradice la otra parte, que dice que no tengo tiempo."
         },
         "hacía": {
-          "hu": "A „hacía” múlt idő: ezzel a mondat azt jelentené, hogy régen szoktam ezt csinálni, nem azt, hogy most, feltételesen megtenném, ha lenne időm.",
           "en": "\"Hacía\" is past tense: with it the sentence would mean I used to do this, not that I would do it now, hypothetically, if I had time.",
-          "es": "«Hacía» es pasado: con él la frase significaría que yo hacía esto antes, no que lo haría ahora, hipotéticamente, si tuviera tiempo.",
-          "de": "„Hacía” ist Vergangenheit: damit würde der Satz bedeuten, dass ich das früher tat, nicht dass ich es jetzt, hypothetisch, tun würde, wenn ich Zeit hätte."
+          "es": "«Hacía» es pasado: con él la frase significaría que yo hacía esto antes, no que lo haría ahora, hipotéticamente, si tuviera tiempo."
         }
       },
       "examples": [
@@ -972,7 +794,7 @@
         "from": "presente",
         "to": "condicional"
       },
-      "tr": { "hu": "Megtenném, de nincs időm.", "en": "I would do that, but I don't have time.", "es": "Yo haría eso, pero no tengo tiempo.", "de": "Das würde ich tun, aber ich habe keine Zeit." }
+      "tr": { "en": "I would do that, but I don't have time.", "es": "Yo haría eso, pero no tengo tiempo." }
     },
     {
       "id": "cd-07",
@@ -984,23 +806,17 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Feltételes szándék, szabálytalan tővel: vendrían.",
         "en": "A conditional intention, with the irregular stem: vendrían.",
-        "es": "Una intención condicional, con la raíz irregular: vendrían.",
-        "de": "Eine bedingte Absicht, mit dem unregelmäßigen Stamm: vendrían."
+        "es": "Una intención condicional, con la raíz irregular: vendrían."
       },
       "wrong": {
         "vienen": {
-          "hu": "A „vienen” jelen idő: ezzel a mondat azt állítaná, hogy TÉNYLEG eljönnek a buliba, nem azt, hogy feltételesen, meghívás esetén tennék meg.",
           "en": "\"Vienen\" is present tense: with it the sentence would claim they ACTUALLY come to the party, not that they would, conditionally, if invited.",
-          "es": "«Vienen» es presente: con él la frase afirmaría que DE VERDAD vienen a la fiesta, no que lo harían, condicionalmente, si los invitan.",
-          "de": "„Vienen” ist Präsens: damit würde der Satz behaupten, dass sie TATSÄCHLICH zur Party kommen, nicht dass sie es bedingt täten, wenn sie eingeladen würden."
+          "es": "«Vienen» es presente: con él la frase afirmaría que DE VERDAD vienen a la fiesta, no que lo harían, condicionalmente, si los invitan."
         },
         "venían": {
-          "hu": "A „venían” múlt idő (imperfecto): ezzel a mondat azt jelentené, hogy régen, rendszeresen eljöttek a buliba, nem egy mostani, feltételezett szándékról szólna.",
           "en": "\"Venían\" is past tense (imperfect): with it the sentence would mean they used to come to the party regularly, not describe a present, hypothetical intention.",
-          "es": "«Venían» es pasado (imperfecto): con él la frase significaría que antes venían a la fiesta con regularidad, no describiría una intención actual e hipotética.",
-          "de": "„Venían” ist Vergangenheit (Imperfekt): damit würde der Satz bedeuten, dass sie früher regelmäßig zur Party kamen, keine gegenwärtige, hypothetische Absicht beschreiben."
+          "es": "«Venían» es pasado (imperfecto): con él la frase significaría que antes venían a la fiesta con regularidad, no describiría una intención actual e hipotética."
         }
       },
       "examples": [
@@ -1011,7 +827,7 @@
         "from": "presente",
         "to": "condicional"
       },
-      "tr": { "hu": "Eljönnének a buliba, ha meghívnád őket.", "en": "They would come to the party if you invited them.", "es": "Ellos vendrían a la fiesta si los invitaras.", "de": "Sie würden zur Party kommen, wenn du sie einladen würdest." }
+      "tr": { "en": "They would come to the party if you invited them.", "es": "Ellos vendrían a la fiesta si los invitaras." }
     },
     {
       "id": "cd-08",
@@ -1023,23 +839,17 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Feltételezett helyzet: mit csinálnál te? harías.",
         "en": "A hypothetical situation: what would you do? harías.",
-        "es": "Una situación hipotética: ¿qué harías? harías.",
-        "de": "Eine hypothetische Situation: was würdest du tun? harías."
+        "es": "Una situación hipotética: ¿qué harías? harías."
       },
       "wrong": {
         "haces": {
-          "hu": "A „haces” jelen idő: ezzel a mondat egy valós helyzetről kérdezne, mit csinálsz éppen, nem egy elképzelt, feltételes helyzetről.",
           "en": "\"Haces\" is present tense: with it the sentence would ask about a real situation, what you are actually doing, not an imagined, hypothetical one.",
-          "es": "«Haces» es presente: con él la frase preguntaría por una situación real, qué haces de verdad, no por una imaginada e hipotética.",
-          "de": "„Haces” ist Präsens: damit würde der Satz nach einer realen Situation fragen, was du gerade tust, nicht nach einer vorgestellten, hypothetischen."
+          "es": "«Haces» es presente: con él la frase preguntaría por una situación real, qué haces de verdad, no por una imaginada e hipotética."
         },
         "hacías": {
-          "hu": "A „hacías” múlt idő: ezzel a mondat azt kérdezné, mit szoktál csinálni régen, nem azt, mit tennél most, egy elképzelt helyzetben.",
           "en": "\"Hacías\" is past tense: with it the sentence would ask what you used to do before, not what you would do now, in an imagined situation.",
-          "es": "«Hacías» es pasado: con él la frase preguntaría qué hacías antes, no qué harías ahora, en una situación imaginada.",
-          "de": "„Hacías” ist Vergangenheit: damit würde der Satz fragen, was du früher zu tun pflegtest, nicht was du jetzt, in einer vorgestellten Situation, tun würdest."
+          "es": "«Hacías» es pasado: con él la frase preguntaría qué hacías antes, no qué harías ahora, en una situación imaginada."
         }
       },
       "examples": [
@@ -1050,7 +860,7 @@
         "from": "presente",
         "to": "condicional"
       },
-      "tr": { "hu": "Mit tennél a helyemben?", "en": "What would you do in my place?", "es": "¿Qué harías tú en mi lugar?", "de": "Was würdest du an meiner Stelle tun?" }
+      "tr": { "en": "What would you do in my place?", "es": "¿Qué harías tú en mi lugar?" }
     },
     {
       "id": "cd-09",
@@ -1062,23 +872,17 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Feltételezett eredmény: tendría, szabálytalan tővel.",
         "en": "A hypothetical outcome: tendría, with the irregular stem.",
-        "es": "Un resultado hipotético: tendría, con la raíz irregular.",
-        "de": "Ein hypothetisches Ergebnis: tendría, mit dem unregelmäßigen Stamm."
+        "es": "Un resultado hipotético: tendría, con la raíz irregular."
       },
       "wrong": {
         "tiene": {
-          "hu": "A „tiene” jelen idő: ezzel a mondat azt állítaná, hogy TÉNYLEG sok pénze van ezzel a munkával, nem azt, hogy feltételesen lenne.",
           "en": "\"Tiene\" is present tense: with it the sentence would claim she ACTUALLY has a lot of money with that job, not that she would, hypothetically.",
-          "es": "«Tiene» es presente: con él la frase afirmaría que ELLA DE VERDAD tiene mucho dinero con ese trabajo, no que lo tendría, hipotéticamente.",
-          "de": "„Tiene” ist Präsens: damit würde der Satz behaupten, dass sie mit diesem Job TATSÄCHLICH viel Geld hat, nicht dass sie es hypothetisch hätte."
+          "es": "«Tiene» es presente: con él la frase afirmaría que ELLA DE VERDAD tiene mucho dinero con ese trabajo, no que lo tendría, hipotéticamente."
         },
         "tenía": {
-          "hu": "A „tenía” múlt idő: ezzel a mondat azt jelentené, hogy régen sok pénze volt azzal a munkával, nem azt, hogy egy feltételezett helyzetben lenne.",
           "en": "\"Tenía\" is past tense: with it the sentence would mean she used to have a lot of money with that job, not that she would in a hypothetical situation.",
-          "es": "«Tenía» es pasado: con él la frase significaría que ella tenía mucho dinero antes con ese trabajo, no que lo tendría en una situación hipotética.",
-          "de": "„Tenía” ist Vergangenheit: damit würde der Satz bedeuten, dass sie mit diesem Job früher viel Geld hatte, nicht dass sie es in einer hypothetischen Lage hätte."
+          "es": "«Tenía» es pasado: con él la frase significaría que ella tenía mucho dinero antes con ese trabajo, no que lo tendría en una situación hipotética."
         }
       },
       "examples": [
@@ -1089,7 +893,7 @@
         "from": "presente",
         "to": "condicional"
       },
-      "tr": { "hu": "Sok pénze lenne abból a munkából, ha többet dolgozna.", "en": "She would have a lot of money from that job if she worked more.", "es": "Ella tendría mucho dinero con ese trabajo si trabajara más.", "de": "Sie hätte viel Geld mit diesem Job, wenn sie mehr arbeiten würde." }
+      "tr": { "en": "She would have a lot of money from that job if she worked more.", "es": "Ella tendría mucho dinero con ese trabajo si trabajara más." }
     },
     {
       "id": "cd-10",
@@ -1101,23 +905,17 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Harmadik személyű puha tanács: debería.",
         "en": "Third-person soft advice: debería.",
-        "es": "Consejo suave en tercera persona: debería.",
-        "de": "Sanfter Rat in der dritten Person: debería."
+        "es": "Consejo suave en tercera persona: debería."
       },
       "wrong": {
         "debe": {
-          "hu": "A „debe” jelen idő: ezzel a mondat azt jelentené, hogy a bátyámnak MUSZÁJ többet tanulnia, kötelezettségként, nem lágy tanácsként.",
           "en": "\"Debe\" is present tense: with it the sentence would mean my brother MUST study more, as an obligation, not as soft advice.",
-          "es": "«Debe» es presente: con él la frase significaría que mi hermano TIENE QUE estudiar más, como obligación, no como consejo suave.",
-          "de": "„Debe” ist Präsens: damit würde der Satz bedeuten, dass mein Bruder mehr lernen MUSS, als Verpflichtung, nicht als sanfter Rat."
+          "es": "«Debe» es presente: con él la frase significaría que mi hermano TIENE QUE estudiar más, como obligación, no como consejo suave."
         },
         "debía": {
-          "hu": "A „debía” múlt idő: ezzel a mondat azt jelentené, hogy régen kellett volna többet tanulnia, nem azt, hogy most, jelenleg kellene.",
           "en": "\"Debía\" is past tense: with it the sentence would mean he was supposed to study more back then, not that he should now, in the present.",
-          "es": "«Debía» es pasado: con él la frase significaría que antes debía estudiar más, no que debería hacerlo ahora, en el presente.",
-          "de": "„Debía” ist Vergangenheit: damit würde der Satz bedeuten, dass er früher mehr hätte lernen sollen, nicht dass er es jetzt, in der Gegenwart, sollte."
+          "es": "«Debía» es pasado: con él la frase significaría que antes debía estudiar más, no que debería hacerlo ahora, en el presente."
         }
       },
       "examples": [
@@ -1128,7 +926,7 @@
         "from": "presente",
         "to": "condicional"
       },
-      "tr": { "hu": "A testvéremnek többet kellene tanulnia, de nem muszáj neki.", "en": "My brother should study more, but he doesn't have to.", "es": "Mi hermano debería estudiar más, pero no tiene que hacerlo.", "de": "Mein Bruder sollte mehr lernen, aber er muss es nicht." }
+      "tr": { "en": "My brother should study more, but he doesn't have to.", "es": "Mi hermano debería estudiar más, pero no tiene que hacerlo." }
     },
     {
       "id": "cd-11",
@@ -1140,23 +938,17 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Feltételezett képesség: podríamos, szabálytalan tővel.",
         "en": "A hypothetical ability: podríamos, with the irregular stem.",
-        "es": "Una capacidad hipotética: podríamos, con la raíz irregular.",
-        "de": "Eine hypothetische Fähigkeit: podríamos, mit dem unregelmäßigen Stamm."
+        "es": "Una capacidad hipotética: podríamos, con la raíz irregular."
       },
       "wrong": {
         "podemos": {
-          "hu": "A „podemos” jelen idő: ezzel a mondat azt állítaná, hogy TÉNYLEG nem tudjuk megcsinálni segítség nélkül, nem egy feltételezett képességről szólna.",
           "en": "\"Podemos\" is present tense: with it the sentence would claim we ACTUALLY cannot do it without help, not describe a hypothetical ability.",
-          "es": "«Podemos» es presente: con él la frase afirmaría que DE VERDAD no podemos hacerlo sin ayuda, no describiría una capacidad hipotética.",
-          "de": "„Podemos” ist Präsens: damit würde der Satz behaupten, dass wir es TATSÄCHLICH nicht ohne Hilfe schaffen, keine hypothetische Fähigkeit beschreiben."
+          "es": "«Podemos» es presente: con él la frase afirmaría que DE VERDAD no podemos hacerlo sin ayuda, no describiría una capacidad hipotética."
         },
         "pudimos": {
-          "hu": "A „pudimos” múlt idő (indefinido): ezzel a mondat azt jelentené, hogy egy konkrét, lezárt alkalommal NEM SIKERÜLT megcsinálnunk segítség nélkül, nem egy feltételezett helyzetről szólna.",
           "en": "\"Pudimos\" is past tense (preterite): with it the sentence would mean at one specific, closed occasion we did NOT manage without help, not describe a hypothetical situation.",
-          "es": "«Pudimos» es pasado (perfecto simple): con él la frase significaría que en una ocasión concreta y cerrada NO LOGRAMOS hacerlo sin ayuda, no describiría una situación hipotética.",
-          "de": "„Pudimos” ist Vergangenheit (Indefinido): damit würde der Satz bedeuten, dass wir es bei einem konkreten, abgeschlossenen Anlass NICHT ohne Hilfe schafften, keine hypothetische Situation beschreiben."
+          "es": "«Pudimos» es pasado (perfecto simple): con él la frase significaría que en una ocasión concreta y cerrada NO LOGRAMOS hacerlo sin ayuda, no describiría una situación hipotética."
         }
       },
       "examples": [
@@ -1167,7 +959,7 @@
         "from": "presente",
         "to": "condicional"
       },
-      "tr": { "hu": "Ha senki sem segítene nekünk, nem tudnánk megtenni.", "en": "If no one helped us, we wouldn't be able to do that.", "es": "Si nadie nos ayudara, nosotros no podríamos hacer eso.", "de": "Wenn uns niemand helfen würde, könnten wir das nicht tun." }
+      "tr": { "en": "If no one helped us, we wouldn't be able to do that.", "es": "Si nadie nos ayudara, nosotros no podríamos hacer eso." }
     },
     {
       "id": "cd-12",
@@ -1179,23 +971,17 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Udvarias hivatalos/boltos kérés usted-nek: me podría decir.",
         "en": "A polite formal request to usted, common in shops/offices: me podría decir.",
-        "es": "Petición cortés y formal a usted, común en tiendas/oficinas: me podría decir.",
-        "de": "Eine höfliche, formelle Bitte an usted, in Läden/Ämtern üblich: me podría decir."
+        "es": "Petición cortés y formal a usted, común en tiendas/oficinas: me podría decir."
       },
       "wrong": {
         "podemos": {
-          "hu": "A \"podemos\" a nosotros alakja: ezzel a mondat azt kérdezné, hogy MI mondhatjuk-e meg nekem az időt, ami értelmetlen, mert a \"me\" éppen engem jelöl; a kérés a másik személyhez szól, usted esetén a podría.",
           "en": "\"Podemos\" is the nosotros form: with it the sentence would ask whether WE can tell me the time, which makes no sense, since \"me\" is me; the request goes to the other person, for usted that is podría.",
-          "es": "\"Podemos\" es la forma de nosotros: con ella la frase preguntaría si NOSOTROS podemos decirme la hora, lo cual no tiene sentido, porque \"me\" soy yo; la petición va a la otra persona, y para usted es podría.",
-          "de": "\"Podemos\" ist die nosotros-Form: damit würde der Satz fragen, ob WIR mir die Uhrzeit sagen können, was keinen Sinn ergibt, denn \"me\" bin ich; die Bitte richtet sich an die andere Person, für usted ist das podría."
+          "es": "\"Podemos\" es la forma de nosotros: con ella la frase preguntaría si NOSOTROS podemos decirme la hora, lo cual no tiene sentido, porque \"me\" soy yo; la petición va a la otra persona, y para usted es podría."
         },
         "pudo": {
-          "hu": "A „pudo” múlt idő: ezzel a mondat azt kérdezné, egy múltbeli alkalommal SIKERÜLT-e megmondania az órát, nem egy mostani, udvarias kérést fejezne ki.",
           "en": "\"Pudo\" is past tense: with it the sentence would ask whether, on a past occasion, he or she managed to tell the time, not express a present, polite request.",
-          "es": "«Pudo» es pasado: con él la frase preguntaría si, en una ocasión pasada, él o ella LOGRÓ decir la hora, no expresaría una petición cortés de ahora.",
-          "de": "„Pudo” ist Vergangenheit: damit würde der Satz fragen, ob es ihm oder ihr bei einer vergangenen Gelegenheit GELANG, die Uhrzeit zu sagen, keine gegenwärtige, höfliche Bitte ausdrücken."
+          "es": "«Pudo» es pasado: con él la frase preguntaría si, en una ocasión pasada, él o ella LOGRÓ decir la hora, no expresaría una petición cortés de ahora."
         }
       },
       "examples": [
@@ -1206,7 +992,7 @@
         "from": "presente",
         "to": "condicional"
       },
-      "tr": { "hu": "Meg tudná mondani az időt, kérem?", "en": "Could you tell me the time, please?", "es": "¿Me podría decir la hora, por favor?", "de": "Könnten Sie mir bitte die Uhrzeit sagen?" }
+      "tr": { "en": "Could you tell me the time, please?", "es": "¿Me podría decir la hora, por favor?" }
     },
     {
       "id": "cd-match-01",
@@ -1392,46 +1178,34 @@
       "es": "Hablaría contigo si tuviera tiempo.",
       "target": "Hablaría",
       "tr": {
-        "hu": "Beszélnék veled, ha lenne időm.",
         "en": "I would talk to you if I had time.",
-        "es": "Hablaría contigo si tuviera tiempo.",
-        "de": "Ich würde mit dir sprechen, wenn ich Zeit hätte."
+        "es": "Hablaría contigo si tuviera tiempo."
       },
       "options": [
         {
           "text": {
-            "hu": "yo (én)",
             "en": "yo (I)",
-            "es": "yo",
-            "de": "yo (ich)"
+            "es": "yo"
           }
         },
         {
           "text": {
-            "hu": "tú (te)",
             "en": "tú (you)",
-            "es": "tú",
-            "de": "tú (du)"
+            "es": "tú"
           },
           "wrong": {
-            "hu": "Ha tú lenne, 'Hablarías conmigo si tuvieras tiempo' állna, azaz TE beszélnél velem, nem én veled.",
             "en": "If it were tú, it would say 'Hablarías conmigo si tuvieras tiempo', meaning YOU would talk to me, not me to you.",
-            "es": "Si fuera tú, diría 'Hablarías conmigo si tuvieras tiempo', o sea que TÚ hablarías conmigo, no yo contigo.",
-            "de": "Wäre es tú, hieße es 'Hablarías conmigo si tuvieras tiempo', also würdest DU mit mir sprechen, nicht ich mit dir."
+            "es": "Si fuera tú, diría 'Hablarías conmigo si tuvieras tiempo', o sea que TÚ hablarías conmigo, no yo contigo."
           }
         },
         {
           "text": {
-            "hu": "mi (nosotros)",
             "en": "we (nosotros)",
-            "es": "nosotros",
-            "de": "wir (nosotros)"
+            "es": "nosotros"
           },
           "wrong": {
-            "hu": "Ha nosotros lenne, 'Hablaríamos contigo si tuviéramos tiempo' állna, azaz TÖBBEN beszélnénk veled, nem csak én.",
             "en": "If it were nosotros, it would say 'Hablaríamos contigo si tuviéramos tiempo', meaning WE would talk to you, not just me.",
-            "es": "Si fuera nosotros, diría 'Hablaríamos contigo si tuviéramos tiempo', o sea que hablaríamos VARIOS, no solo yo.",
-            "de": "Wäre es nosotros, hieße es 'Hablaríamos contigo si tuviéramos tiempo', also würden WIR mehrere sprechen, nicht nur ich."
+            "es": "Si fuera nosotros, diría 'Hablaríamos contigo si tuviéramos tiempo', o sea que hablaríamos VARIOS, no solo yo."
           }
         }
       ],
@@ -1447,46 +1221,34 @@
       "es": "¿Podrías cerrar la ventana?",
       "target": "Podrías",
       "tr": {
-        "hu": "Be tudnád csukni az ablakot?",
         "en": "Could you close the window?",
-        "es": "¿Podrías cerrar la ventana?",
-        "de": "Könntest du das Fenster schließen?"
+        "es": "¿Podrías cerrar la ventana?"
       },
       "options": [
         {
           "text": {
-            "hu": "yo (én)",
             "en": "yo (I)",
-            "es": "yo",
-            "de": "yo (ich)"
+            "es": "yo"
           },
           "wrong": {
-            "hu": "Ha yo lenne, '¿Podría cerrar la ventana?' állna, azaz ÉN kérdezném, be tudom-e csukni, nem tőled kérném.",
             "en": "If it were yo, it would say '¿Podría cerrar la ventana?', meaning I would be asking whether I can close it, not asking you.",
-            "es": "Si fuera yo, diría '¿Podría cerrar la ventana?', o sea que preguntaría si YO puedo cerrarla, no te lo pediría a ti.",
-            "de": "Wäre es yo, hieße es '¿Podría cerrar la ventana?', also würde ICH fragen, ob ich es kann, nicht dich bitten."
+            "es": "Si fuera yo, diría '¿Podría cerrar la ventana?', o sea que preguntaría si YO puedo cerrarla, no te lo pediría a ti."
           }
         },
         {
           "text": {
-            "hu": "tú (te)",
             "en": "tú (you)",
-            "es": "tú",
-            "de": "tú (du)"
+            "es": "tú"
           }
         },
         {
           "text": {
-            "hu": "mi (nosotros)",
             "en": "we (nosotros)",
-            "es": "nosotros",
-            "de": "wir (nosotros)"
+            "es": "nosotros"
           },
           "wrong": {
-            "hu": "Ha nosotros lenne, '¿Podríamos cerrar la ventana?' állna, azaz MI kérdeznénk, be tudjuk-e csukni, nem egyedül tőled kérném.",
             "en": "If it were nosotros, it would say '¿Podríamos cerrar la ventana?', meaning WE would be asking whether we can close it, not asking just you.",
-            "es": "Si fuera nosotros, diría '¿Podríamos cerrar la ventana?', o sea que preguntaríamos si NOSOTROS podemos cerrarla, no te lo pediría solo a ti.",
-            "de": "Wäre es nosotros, hieße es '¿Podríamos cerrar la ventana?', also würden WIR fragen, ob wir es können, nicht dich allein bitten."
+            "es": "Si fuera nosotros, diría '¿Podríamos cerrar la ventana?', o sea que preguntaríamos si NOSOTROS podemos cerrarla, no te lo pediría solo a ti."
           }
         }
       ],
@@ -1502,46 +1264,34 @@
       "es": "Mi hermana tendría más tiempo si trabajara menos.",
       "target": "tendría",
       "tr": {
-        "hu": "A nővérem több ideje lenne, ha kevesebbet dolgozna.",
         "en": "My sister would have more time if she worked less.",
-        "es": "Mi hermana tendría más tiempo si trabajara menos.",
-        "de": "Meine Schwester hätte mehr Zeit, wenn sie weniger arbeiten würde."
+        "es": "Mi hermana tendría más tiempo si trabajara menos."
       },
       "options": [
         {
           "text": {
-            "hu": "yo (én)",
             "en": "yo (I)",
-            "es": "yo",
-            "de": "yo (ich)"
+            "es": "yo"
           },
           "wrong": {
-            "hu": "Ha yo lenne, a mondat alanya 'yo' lenne, nem 'mi hermana'; itt viszont kifejezetten a nővéremről van szó, harmadik személyben.",
             "en": "If it were yo, the sentence's subject would be 'yo', not 'mi hermana'; here it is explicitly about my sister, in the third person.",
-            "es": "Si fuera yo, el sujeto de la frase sería 'yo', no 'mi hermana'; aquí se habla explícitamente de mi hermana, en tercera persona.",
-            "de": "Wäre es yo, wäre das Subjekt des Satzes 'yo', nicht 'mi hermana'; hier ist explizit von meiner Schwester die Rede, in der dritten Person."
+            "es": "Si fuera yo, el sujeto de la frase sería 'yo', no 'mi hermana'; aquí se habla explícitamente de mi hermana, en tercera persona."
           }
         },
         {
           "text": {
-            "hu": "ő / Ön",
             "en": "he/she/you (usted)",
-            "es": "él/ella/usted",
-            "de": "er/sie/Sie"
+            "es": "él/ella/usted"
           }
         },
         {
           "text": {
-            "hu": "mi (nosotros)",
             "en": "we (nosotros)",
-            "es": "nosotros",
-            "de": "wir (nosotros)"
+            "es": "nosotros"
           },
           "wrong": {
-            "hu": "Ha nosotros lenne, 'Tendríamos más tiempo' állna, azaz MI, a nővéremmel együtt; itt viszont CSAK a nővéremről van szó, egyedül.",
             "en": "If it were nosotros, it would say 'Tendríamos más tiempo', meaning WE, together with my sister; here it is ONLY about my sister, alone.",
-            "es": "Si fuera nosotros, diría 'Tendríamos más tiempo', o sea NOSOTROS, junto con mi hermana; aquí se habla SOLO de mi hermana, sola.",
-            "de": "Wäre es nosotros, hieße es 'Tendríamos más tiempo', also WIR, zusammen mit meiner Schwester; hier geht es NUR um meine Schwester, allein."
+            "es": "Si fuera nosotros, diría 'Tendríamos más tiempo', o sea NOSOTROS, junto con mi hermana; aquí se habla SOLO de mi hermana, sola."
           }
         }
       ],
@@ -1557,46 +1307,34 @@
       "es": "Viviríamos más cerca del centro.",
       "target": "Viviríamos",
       "tr": {
-        "hu": "Közelebb élnénk a központhoz.",
         "en": "We would live closer to downtown.",
-        "es": "Viviríamos más cerca del centro.",
-        "de": "Wir würden näher am Zentrum wohnen."
+        "es": "Viviríamos más cerca del centro."
       },
       "options": [
         {
           "text": {
-            "hu": "yo (én)",
             "en": "yo (I)",
-            "es": "yo",
-            "de": "yo (ich)"
+            "es": "yo"
           },
           "wrong": {
-            "hu": "Ha yo lenne, 'Viviría más cerca del centro' állna, azaz ÉN élnék közelebb, nem mi.",
             "en": "If it were yo, it would say 'Viviría más cerca del centro', meaning I would live closer, not us.",
-            "es": "Si fuera yo, diría 'Viviría más cerca del centro', o sea que YO viviría, no nosotros.",
-            "de": "Wäre es yo, hieße es 'Viviría más cerca del centro', also würde ICH näher wohnen, nicht wir."
+            "es": "Si fuera yo, diría 'Viviría más cerca del centro', o sea que YO viviría, no nosotros."
           }
         },
         {
           "text": {
-            "hu": "mi (nosotros)",
             "en": "we (nosotros)",
-            "es": "nosotros",
-            "de": "wir (nosotros)"
+            "es": "nosotros"
           }
         },
         {
           "text": {
-            "hu": "ők / Önök",
             "en": "they/you all (ustedes)",
-            "es": "ellos/ellas/ustedes",
-            "de": "sie/Sie (Plural)"
+            "es": "ellos/ellas/ustedes"
           },
           "wrong": {
-            "hu": "Ha ellos lenne, 'Vivirían más cerca del centro' állna, azaz ŐK élnének közelebb, nem mi.",
             "en": "If it were ellos, it would say 'Vivirían más cerca del centro', meaning THEY would live closer, not us.",
-            "es": "Si fuera ellos, diría 'Vivirían más cerca del centro', o sea que ELLOS vivirían, no nosotros.",
-            "de": "Wäre es ellos, hieße es 'Vivirían más cerca del centro', also würden SIE näher wohnen, nicht wir."
+            "es": "Si fuera ellos, diría 'Vivirían más cerca del centro', o sea que ELLOS vivirían, no nosotros."
           }
         }
       ],
@@ -1612,46 +1350,34 @@
       "es": "Ellos vendrían si los invitaras.",
       "target": "vendrían",
       "tr": {
-        "hu": "Eljönnének, ha meghívnád őket.",
         "en": "They would come if you invited them.",
-        "es": "Ellos vendrían si los invitaras.",
-        "de": "Sie würden kommen, wenn du sie einladen würdest."
+        "es": "Ellos vendrían si los invitaras."
       },
       "options": [
         {
           "text": {
-            "hu": "yo (én)",
             "en": "yo (I)",
-            "es": "yo",
-            "de": "yo (ich)"
+            "es": "yo"
           },
           "wrong": {
-            "hu": "Ha yo lenne, 'Yo vendría si me invitaras' állna, azaz ÉN jönnék, nem ők.",
             "en": "If it were yo, it would say 'Yo vendría si me invitaras', meaning I would come, not them.",
-            "es": "Si fuera yo, diría 'Yo vendría si me invitaras', o sea que YO vendría, no ellos.",
-            "de": "Wäre es yo, hieße es 'Yo vendría si me invitaras', also würde ICH kommen, nicht sie."
+            "es": "Si fuera yo, diría 'Yo vendría si me invitaras', o sea que YO vendría, no ellos."
           }
         },
         {
           "text": {
-            "hu": "mi (nosotros)",
             "en": "we (nosotros)",
-            "es": "nosotros",
-            "de": "wir (nosotros)"
+            "es": "nosotros"
           },
           "wrong": {
-            "hu": "Ha nosotros lenne, 'Nosotros vendríamos si nos invitaras' állna, azaz MI jönnénk, nem ők.",
             "en": "If it were nosotros, it would say 'Nosotros vendríamos si nos invitaras', meaning WE would come, not them.",
-            "es": "Si fuera nosotros, diría 'Nosotros vendríamos si nos invitaras', o sea que NOSOTROS vendríamos, no ellos.",
-            "de": "Wäre es nosotros, hieße es 'Nosotros vendríamos si nos invitaras', also würden WIR kommen, nicht sie."
+            "es": "Si fuera nosotros, diría 'Nosotros vendríamos si nos invitaras', o sea que NOSOTROS vendríamos, no ellos."
           }
         },
         {
           "text": {
-            "hu": "ők / Önök",
             "en": "they/you all (ustedes)",
-            "es": "ellos/ellas/ustedes",
-            "de": "sie/Sie (Plural)"
+            "es": "ellos/ellas/ustedes"
           }
         }
       ],
@@ -1667,46 +1393,34 @@
       "es": "¿Qué dirías en mi lugar?",
       "target": "dirías",
       "tr": {
-        "hu": "Te mit mondanál a helyemben?",
         "en": "What would you say in my place?",
-        "es": "¿Qué dirías en mi lugar?",
-        "de": "Was würdest du an meiner Stelle sagen?"
+        "es": "¿Qué dirías en mi lugar?"
       },
       "options": [
         {
           "text": {
-            "hu": "mi (nosotros)",
             "en": "we (nosotros)",
-            "es": "nosotros",
-            "de": "wir (nosotros)"
+            "es": "nosotros"
           },
           "wrong": {
-            "hu": "Ha nosotros lenne, '¿Qué diríamos en mi lugar?' állna, azaz MI mondanánk, nem te egyedül.",
             "en": "If it were nosotros, it would say '¿Qué diríamos en mi lugar?', meaning WE would say it, not just you.",
-            "es": "Si fuera nosotros, diría '¿Qué diríamos en mi lugar?', o sea que NOSOTROS diríamos, no solo tú.",
-            "de": "Wäre es nosotros, hieße es '¿Qué diríamos en mi lugar?', also würden WIR es sagen, nicht nur du."
+            "es": "Si fuera nosotros, diría '¿Qué diríamos en mi lugar?', o sea que NOSOTROS diríamos, no solo tú."
           }
         },
         {
           "text": {
-            "hu": "tú (te)",
             "en": "tú (you)",
-            "es": "tú",
-            "de": "tú (du)"
+            "es": "tú"
           }
         },
         {
           "text": {
-            "hu": "ők / Önök",
             "en": "they/you all (ustedes)",
-            "es": "ellos/ellas/ustedes",
-            "de": "sie/Sie (Plural)"
+            "es": "ellos/ellas/ustedes"
           },
           "wrong": {
-            "hu": "Ha ellos lenne, '¿Qué dirían en mi lugar?' állna, azaz ŐK mondanák, nem te.",
             "en": "If it were ellos, it would say '¿Qué dirían en mi lugar?', meaning THEY would say it, not you.",
-            "es": "Si fuera ellos, diría '¿Qué dirían en mi lugar?', o sea que ELLOS dirían, no tú.",
-            "de": "Wäre es ellos, hieße es '¿Qué dirían en mi lugar?', also würden SIE es sagen, nicht du."
+            "es": "Si fuera ellos, diría '¿Qué dirían en mi lugar?', o sea que ELLOS dirían, no tú."
           }
         }
       ],
@@ -1724,10 +1438,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Először vele beszélek.",
         "en": "I talk to her first.",
-        "es": "Hablo con ella primero.",
-        "de": "Ich spreche zuerst mit ihr."
+        "es": "Hablo con ella primero."
       },
       "answer": "Hablaría con ella primero.",
       "accept": [
@@ -1739,10 +1451,8 @@
         "738"
       ],
       "why": {
-        "hu": "Feltételes helyzet (mi lenne, ha): condicional. A(z) hablar szabályos -ar ige, yo: hablaría.",
         "en": "A hypothetical situation (what would happen): condicional. Hablar is a regular -ar verb, yo: hablaría.",
-        "es": "Una situación hipotética (lo que pasaría): condicional. hablar es un verbo regular en -ar, yo: hablaría.",
-        "de": "Eine hypothetische Situation (was passieren würde): condicional. hablar ist ein regelmäßiges -ar-Verb, yo: hablaría."
+        "es": "Una situación hipotética (lo que pasaría): condicional. hablar es un verbo regular en -ar, yo: hablaría."
       }
     },
     {
@@ -1753,10 +1463,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Lassabban beszélsz?",
         "en": "Do you speak more slowly?",
-        "es": "¿Hablas más despacio?",
-        "de": "Sprichst du langsamer?"
+        "es": "¿Hablas más despacio?"
       },
       "answer": "¿Hablarías más despacio?",
       "accept": [
@@ -1767,10 +1475,8 @@
         "703"
       ],
       "why": {
-        "hu": "Udvarias kérés: condicional. A(z) hablar szabályos -ar ige, tú: hablarías.",
         "en": "A polite request: condicional. Hablar is a regular -ar verb, tú: hablarías.",
-        "es": "Una petición cortés: condicional. hablar es un verbo regular en -ar, tú: hablarías.",
-        "de": "Eine höfliche Bitte: condicional. hablar ist ein regelmäßiges -ar-Verb, tú: hablarías."
+        "es": "Una petición cortés: condicional. hablar es un verbo regular en -ar, tú: hablarías."
       }
     },
     {
@@ -1781,10 +1487,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "A problémáról beszélünk.",
         "en": "We talk about the problem.",
-        "es": "Hablamos del problema.",
-        "de": "Wir sprechen über das Problem."
+        "es": "Hablamos del problema."
       },
       "answer": "Hablaríamos del problema.",
       "accept": [
@@ -1795,10 +1499,8 @@
         "129"
       ],
       "why": {
-        "hu": "Feltételes helyzet (mi lenne, ha): condicional. A(z) hablar szabályos -ar ige, nosotros: hablaríamos.",
         "en": "A hypothetical situation (what would happen): condicional. Hablar is a regular -ar verb, nosotros: hablaríamos.",
-        "es": "Una situación hipotética (lo que pasaría): condicional. hablar es un verbo regular en -ar, nosotros: hablaríamos.",
-        "de": "Eine hypothetische Situation (was passieren würde): condicional. hablar ist ein regelmäßiges -ar-Verb, nosotros: hablaríamos."
+        "es": "Una situación hipotética (lo que pasaría): condicional. hablar es un verbo regular en -ar, nosotros: hablaríamos."
       }
     },
     {
@@ -1809,10 +1511,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Luis a szomszédokkal beszél.",
         "en": "Luis talks to the neighbors.",
-        "es": "Luis habla con los vecinos.",
-        "de": "Luis spricht mit den Nachbarn."
+        "es": "Luis habla con los vecinos."
       },
       "answer": "Luis hablaría con los vecinos.",
       "accept": [
@@ -1823,10 +1523,8 @@
         "385"
       ],
       "why": {
-        "hu": "Feltételes helyzet (mi lenne, ha): condicional. A(z) hablar szabályos -ar ige, él: hablaría.",
         "en": "A hypothetical situation (what would happen): condicional. Hablar is a regular -ar verb, él: hablaría.",
-        "es": "Una situación hipotética (lo que pasaría): condicional. hablar es un verbo regular en -ar, él: hablaría.",
-        "de": "Eine hypothetische Situation (was passieren würde): condicional. hablar ist ein regelmäßiges -ar-Verb, él: hablaría."
+        "es": "Una situación hipotética (lo que pasaría): condicional. hablar es un verbo regular en -ar, él: hablaría."
       }
     },
     {
@@ -1837,10 +1535,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Nem beszélnek erről.",
         "en": "They don't talk about that.",
-        "es": "No hablan de eso.",
-        "de": "Sie sprechen nicht darüber."
+        "es": "No hablan de eso."
       },
       "answer": "No hablarían de eso.",
       "accept": [
@@ -1852,10 +1548,8 @@
         "158"
       ],
       "why": {
-        "hu": "Tagadás feltételes módban, a no az ige elé kerül: condicional. A(z) hablar szabályos -ar ige, ellos: hablarían.",
         "en": "Negation in the conditional, no goes before the verb: condicional. Hablar is a regular -ar verb, ellos: hablarían.",
-        "es": "Negación en condicional, no va antes del verbo: condicional. hablar es un verbo regular en -ar, ellos: hablarían.",
-        "de": "Verneinung im Konditional, no steht vor dem Verb: condicional. hablar ist ein regelmäßiges -ar-Verb, ellos: hablarían."
+        "es": "Negación en condicional, no va antes del verbo: condicional. hablar es un verbo regular en -ar, ellos: hablarían."
       }
     },
     {
@@ -1866,10 +1560,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Eszem egy salátát.",
         "en": "I eat a salad.",
-        "es": "Como una ensalada.",
-        "de": "Ich esse einen Salat."
+        "es": "Como una ensalada."
       },
       "answer": "Comería una ensalada.",
       "accept": [
@@ -1880,10 +1572,8 @@
         "724"
       ],
       "why": {
-        "hu": "Vágy vagy elképzelt helyzet: condicional. A(z) comer szabályos -er ige, yo: comería.",
         "en": "A wish or an imagined situation: condicional. Comer is a regular -er verb, yo: comería.",
-        "es": "Un deseo o una situación imaginada: condicional. comer es un verbo regular en -er, yo: comería.",
-        "de": "Ein Wunsch oder eine vorgestellte Situation: condicional. comer ist ein regelmäßiges -er-Verb, yo: comería."
+        "es": "Un deseo o una situación imaginada: condicional. comer es un verbo regular en -er, yo: comería."
       }
     },
     {
@@ -1894,10 +1584,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Éjjel nem eszel annyit.",
         "en": "You don't eat that much at night.",
-        "es": "No comes tanto por la noche.",
-        "de": "Du isst nachts nicht so viel."
+        "es": "No comes tanto por la noche."
       },
       "answer": "No comerías tanto por la noche.",
       "accept": [
@@ -1911,10 +1599,8 @@
         "55"
       ],
       "why": {
-        "hu": "Lágy tanács: condicional. A(z) comer szabályos -er ige, tú: comerías.",
         "en": "Soft advice: condicional. Comer is a regular -er verb, tú: comerías.",
-        "es": "Un consejo suave: condicional. comer es un verbo regular en -er, tú: comerías.",
-        "de": "Ein sanfter Rat: condicional. comer ist ein regelmäßiges -er-Verb, tú: comerías."
+        "es": "Un consejo suave: condicional. comer es un verbo regular en -er, tú: comerías."
       }
     },
     {
@@ -1925,10 +1611,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Itt esznek?",
         "en": "Do they eat here?",
-        "es": "¿Comen aquí?",
-        "de": "Essen sie hier?"
+        "es": "¿Comen aquí?"
       },
       "answer": "¿Comerían aquí?",
       "accept": [
@@ -1939,10 +1623,8 @@
         "9"
       ],
       "why": {
-        "hu": "Kérdés feltételes módban: condicional. A(z) comer szabályos -er ige, ellos: comerían.",
         "en": "A question in the conditional: condicional. Comer is a regular -er verb, ellos: comerían.",
-        "es": "Una pregunta en condicional: condicional. comer es un verbo regular en -er, ellos: comerían.",
-        "de": "Eine Frage im Konditional: condicional. comer ist ein regelmäßiges -er-Verb, ellos: comerían."
+        "es": "Una pregunta en condicional: condicional. comer es un verbo regular en -er, ellos: comerían."
       }
     },
     {
@@ -1953,10 +1635,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "A központban eszünk.",
         "en": "We eat downtown.",
-        "es": "Comemos en el centro.",
-        "de": "Wir essen im Zentrum."
+        "es": "Comemos en el centro."
       },
       "answer": "Comeríamos en el centro.",
       "accept": [
@@ -1967,10 +1647,8 @@
         "635"
       ],
       "why": {
-        "hu": "Javaslat vagy lehetőség: condicional. A(z) comer szabályos -er ige, nosotros: comeríamos.",
         "en": "A suggestion or a possibility: condicional. Comer is a regular -er verb, nosotros: comeríamos.",
-        "es": "Una sugerencia o una posibilidad: condicional. comer es un verbo regular en -er, nosotros: comeríamos.",
-        "de": "Ein Vorschlag oder eine Möglichkeit: condicional. comer ist ein regelmäßiges -er-Verb, nosotros: comeríamos."
+        "es": "Una sugerencia o una posibilidad: condicional. comer es un verbo regular en -er, nosotros: comeríamos."
       }
     },
     {
@@ -1981,10 +1659,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Ő a kertben eszik.",
         "en": "She eats in the garden.",
-        "es": "Ella come en el jardín.",
-        "de": "Sie isst im Garten."
+        "es": "Ella come en el jardín."
       },
       "answer": "Ella comería en el jardín.",
       "accept": [
@@ -1995,10 +1671,8 @@
         "393"
       ],
       "why": {
-        "hu": "Feltételes helyzet (mi lenne, ha): condicional. A(z) comer szabályos -er ige, ella: comería.",
         "en": "A hypothetical situation (what would happen): condicional. Comer is a regular -er verb, ella: comería.",
-        "es": "Una situación hipotética (lo que pasaría): condicional. comer es un verbo regular en -er, ella: comería.",
-        "de": "Eine hypothetische Situation (was passieren würde): condicional. comer ist ein regelmäßiges -er-Verb, ella: comería."
+        "es": "Una situación hipotética (lo que pasaría): condicional. comer es un verbo regular en -er, ella: comería."
       }
     },
     {
@@ -2009,10 +1683,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "A tengerpart közelében élek.",
         "en": "I live near the beach.",
-        "es": "Vivo cerca de la playa.",
-        "de": "Ich wohne in der Nähe des Strandes."
+        "es": "Vivo cerca de la playa."
       },
       "answer": "Viviría cerca de la playa.",
       "accept": [
@@ -2024,10 +1696,8 @@
         "391"
       ],
       "why": {
-        "hu": "Vágy vagy elképzelt helyzet: condicional. A(z) vivir szabályos -ir ige, yo: viviría.",
         "en": "A wish or an imagined situation: condicional. Vivir is a regular -ir verb, yo: viviría.",
-        "es": "Un deseo o una situación imaginada: condicional. vivir es un verbo regular en -ir, yo: viviría.",
-        "de": "Ein Wunsch oder eine vorgestellte Situation: condicional. vivir ist ein regelmäßiges -ir-Verb, yo: viviría."
+        "es": "Un deseo o una situación imaginada: condicional. vivir es un verbo regular en -ir, yo: viviría."
       }
     },
     {
@@ -2038,10 +1708,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Egy lakásban vagy egy házban laksz?",
         "en": "Do you live in an apartment or in a house?",
-        "es": "¿Vives en un departamento o en una casa?",
-        "de": "Wohnst du in einer Wohnung oder in einem Haus?"
+        "es": "¿Vives en un departamento o en una casa?"
       },
       "answer": "¿Vivirías en un departamento o en una casa?",
       "accept": [
@@ -2053,10 +1721,8 @@
         "19"
       ],
       "why": {
-        "hu": "Kérdés feltételes módban: condicional. A(z) vivir szabályos -ir ige, tú: vivirías.",
         "en": "A question in the conditional: condicional. Vivir is a regular -ir verb, tú: vivirías.",
-        "es": "Una pregunta en condicional: condicional. vivir es un verbo regular en -ir, tú: vivirías.",
-        "de": "Eine Frage im Konditional: condicional. vivir ist ein regelmäßiges -ir-Verb, tú: vivirías."
+        "es": "Una pregunta en condicional: condicional. vivir es un verbo regular en -ir, tú: vivirías."
       }
     },
     {
@@ -2067,10 +1733,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Nyugodtabban élünk vidéken.",
         "en": "We live more calmly in the countryside.",
-        "es": "Vivimos más tranquilos en el campo.",
-        "de": "Wir leben auf dem Land ruhiger."
+        "es": "Vivimos más tranquilos en el campo."
       },
       "answer": "Viviríamos más tranquilos en el campo.",
       "accept": [
@@ -2083,10 +1747,8 @@
         "407"
       ],
       "why": {
-        "hu": "Vágy vagy elképzelt helyzet: condicional. A(z) vivir szabályos -ir ige, nosotros: viviríamos.",
         "en": "A wish or an imagined situation: condicional. Vivir is a regular -ir verb, nosotros: viviríamos.",
-        "es": "Un deseo o una situación imaginada: condicional. vivir es un verbo regular en -ir, nosotros: viviríamos.",
-        "de": "Ein Wunsch oder eine vorgestellte Situation: condicional. vivir ist ein regelmäßiges -ir-Verb, nosotros: viviríamos."
+        "es": "Un deseo o una situación imaginada: condicional. vivir es un verbo regular en -ir, nosotros: viviríamos."
       }
     },
     {
@@ -2097,10 +1759,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Nem ebben a városban él.",
         "en": "He doesn't live in this city.",
-        "es": "No vive en esta ciudad.",
-        "de": "Er wohnt nicht in dieser Stadt."
+        "es": "No vive en esta ciudad."
       },
       "answer": "No viviría en esta ciudad.",
       "accept": [
@@ -2113,10 +1773,8 @@
         "51"
       ],
       "why": {
-        "hu": "Tagadás feltételes módban, a no az ige elé kerül: condicional. A(z) vivir szabályos -ir ige, él/ella: viviría.",
         "en": "Negation in the conditional, no goes before the verb: condicional. Vivir is a regular -ir verb, él/ella: viviría.",
-        "es": "Negación en condicional, no va antes del verbo: condicional. vivir es un verbo regular en -ir, él/ella: viviría.",
-        "de": "Verneinung im Konditional, no steht vor dem Verb: condicional. vivir ist ein regelmäßiges -ir-Verb, él/ella: viviría."
+        "es": "Negación en condicional, no va antes del verbo: condicional. vivir es un verbo regular en -ir, él/ella: viviría."
       }
     },
     {
@@ -2127,10 +1785,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Jobban élnek egy másik országban.",
         "en": "They live better in another country.",
-        "es": "Viven mejor en otro país.",
-        "de": "Sie leben in einem anderen Land besser."
+        "es": "Viven mejor en otro país."
       },
       "answer": "Vivirían mejor en otro país.",
       "accept": [
@@ -2142,10 +1798,8 @@
         "252"
       ],
       "why": {
-        "hu": "Vágy vagy elképzelt helyzet: condicional. A(z) vivir szabályos -ir ige, ellos: vivirían.",
         "en": "A wish or an imagined situation: condicional. Vivir is a regular -ir verb, ellos: vivirían.",
-        "es": "Un deseo o una situación imaginada: condicional. vivir es un verbo regular en -ir, ellos: vivirían.",
-        "de": "Ein Wunsch oder eine vorgestellte Situation: condicional. vivir ist ein regelmäßiges -ir-Verb, ellos: vivirían."
+        "es": "Un deseo o una situación imaginada: condicional. vivir es un verbo regular en -ir, ellos: vivirían."
       }
     },
     {
@@ -2156,10 +1810,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Több időm van.",
         "en": "I have more time.",
-        "es": "Tengo más tiempo.",
-        "de": "Ich habe mehr Zeit."
+        "es": "Tengo más tiempo."
       },
       "answer": "Tendría más tiempo.",
       "accept": [
@@ -2170,10 +1822,8 @@
         "22"
       ],
       "why": {
-        "hu": "Vágy vagy elképzelt helyzet: condicional. A(z) tener rendhagyó tövű ige (tendr-), yo: tendría.",
         "en": "A wish or an imagined situation: condicional. Tener is an irregular-stem verb (tendr-), yo: tendría.",
-        "es": "Un deseo o una situación imaginada: condicional. tener es un verbo de raíz irregular (tendr-), yo: tendría.",
-        "de": "Ein Wunsch oder eine vorgestellte Situation: condicional. tener ist ein Verb mit unregelmäßigem Stamm (tendr-), yo: tendría."
+        "es": "Un deseo o una situación imaginada: condicional. tener es un verbo de raíz irregular (tendr-), yo: tendría."
       }
     },
     {
@@ -2184,10 +1834,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Van egy perced?",
         "en": "Do you have a moment?",
-        "es": "¿Tienes un momento?",
-        "de": "Hast du einen Moment?"
+        "es": "¿Tienes un momento?"
       },
       "answer": "¿Tendrías un momento?",
       "accept": [
@@ -2198,10 +1846,8 @@
         "280"
       ],
       "why": {
-        "hu": "Udvarias kérés: condicional. A(z) tener rendhagyó tövű ige (tendr-), tú: tendrías.",
         "en": "A polite request: condicional. Tener is an irregular-stem verb (tendr-), tú: tendrías.",
-        "es": "Una petición cortés: condicional. tener es un verbo de raíz irregular (tendr-), tú: tendrías.",
-        "de": "Eine höfliche Bitte: condicional. tener ist ein Verb mit unregelmäßigem Stamm (tendr-), tú: tendrías."
+        "es": "Una petición cortés: condicional. tener es un verbo de raíz irregular (tendr-), tú: tendrías."
       }
     },
     {
@@ -2212,10 +1858,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Neki igaza van.",
         "en": "She is right.",
-        "es": "Ella tiene razón.",
-        "de": "Sie hat recht."
+        "es": "Ella tiene razón."
       },
       "answer": "Ella tendría razón.",
       "accept": [
@@ -2226,10 +1870,8 @@
         "780"
       ],
       "why": {
-        "hu": "Óvatos feltételezés: condicional. A(z) tener rendhagyó tövű ige (tendr-), ella: tendría.",
         "en": "A cautious guess: condicional. Tener is an irregular-stem verb (tendr-), ella: tendría.",
-        "es": "Una suposición prudente: condicional. tener es un verbo de raíz irregular (tendr-), ella: tendría.",
-        "de": "Eine vorsichtige Vermutung: condicional. tener ist ein Verb mit unregelmäßigem Stamm (tendr-), ella: tendría."
+        "es": "Una suposición prudente: condicional. tener es un verbo de raíz irregular (tendr-), ella: tendría."
       }
     },
     {
@@ -2240,10 +1882,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Nincs gondunk az időbeosztással.",
         "en": "We have no problems with the schedule.",
-        "es": "No tenemos problemas con el horario.",
-        "de": "Wir haben keine Probleme mit dem Zeitplan."
+        "es": "No tenemos problemas con el horario."
       },
       "answer": "No tendríamos problemas con el horario.",
       "accept": [
@@ -2256,10 +1896,8 @@
         "880"
       ],
       "why": {
-        "hu": "Tagadás feltételes módban, a no az ige elé kerül: condicional. A(z) tener rendhagyó tövű ige (tendr-), nosotros: tendríamos.",
         "en": "Negation in the conditional, no goes before the verb: condicional. Tener is an irregular-stem verb (tendr-), nosotros: tendríamos.",
-        "es": "Negación en condicional, no va antes del verbo: condicional. tener es un verbo de raíz irregular (tendr-), nosotros: tendríamos.",
-        "de": "Verneinung im Konditional, no steht vor dem Verb: condicional. tener ist ein Verb mit unregelmäßigem Stamm (tendr-), nosotros: tendríamos."
+        "es": "Negación en condicional, no va antes del verbo: condicional. tener es un verbo de raíz irregular (tendr-), nosotros: tendríamos."
       }
     },
     {
@@ -2270,10 +1908,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Jobb ötletük van.",
         "en": "They have a better idea.",
-        "es": "Tienen una idea mejor.",
-        "de": "Sie haben eine bessere Idee."
+        "es": "Tienen una idea mejor."
       },
       "answer": "Tendrían una idea mejor.",
       "accept": [
@@ -2284,10 +1920,8 @@
         "249"
       ],
       "why": {
-        "hu": "Óvatos feltételezés: condicional. A(z) tener rendhagyó tövű ige (tendr-), ellos: tendrían.",
         "en": "A cautious guess: condicional. Tener is an irregular-stem verb (tendr-), ellos: tendrían.",
-        "es": "Una suposición prudente: condicional. tener es un verbo de raíz irregular (tendr-), ellos: tendrían.",
-        "de": "Eine vorsichtige Vermutung: condicional. tener ist ein Verb mit unregelmäßigem Stamm (tendr-), ellos: tendrían."
+        "es": "Una suposición prudente: condicional. tener es un verbo de raíz irregular (tendr-), ellos: tendrían."
       }
     },
     {
@@ -2298,10 +1932,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Tudsz segíteni nekem?",
         "en": "Can you help me?",
-        "es": "¿Puedes ayudarme?",
-        "de": "Kannst du mir helfen?"
+        "es": "¿Puedes ayudarme?"
       },
       "answer": "¿Podrías ayudarme?",
       "accept": [
@@ -2313,10 +1945,8 @@
         "148"
       ],
       "why": {
-        "hu": "Udvarias kérés: condicional. A(z) poder rendhagyó tövű ige (podr-), tú: podrías.",
         "en": "A polite request: condicional. Poder is an irregular-stem verb (podr-), tú: podrías.",
-        "es": "Una petición cortés: condicional. poder es un verbo de raíz irregular (podr-), tú: podrías.",
-        "de": "Eine höfliche Bitte: condicional. poder ist ein Verb mit unregelmäßigem Stamm (podr-), tú: podrías."
+        "es": "Una petición cortés: condicional. poder es un verbo de raíz irregular (podr-), tú: podrías."
       }
     },
     {
@@ -2327,10 +1957,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Nem tudok veled menni.",
         "en": "I can't go with you.",
-        "es": "No puedo ir contigo.",
-        "de": "Ich kann nicht mit dir gehen."
+        "es": "No puedo ir contigo."
       },
       "answer": "No podría ir contigo.",
       "accept": [
@@ -2342,10 +1970,8 @@
         "33"
       ],
       "why": {
-        "hu": "Udvarias elutasítás: condicional. A(z) poder rendhagyó tövű ige (podr-), yo: podría.",
         "en": "A polite refusal: condicional. Poder is an irregular-stem verb (podr-), yo: podría.",
-        "es": "Un rechazo cortés: condicional. poder es un verbo de raíz irregular (podr-), yo: podría.",
-        "de": "Eine höfliche Absage: condicional. poder ist ein Verb mit unregelmäßigem Stamm (podr-), yo: podría."
+        "es": "Un rechazo cortés: condicional. poder es un verbo de raíz irregular (podr-), yo: podría."
       }
     },
     {
@@ -2356,10 +1982,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Apám haza tud vinni.",
         "en": "My father can take you home.",
-        "es": "Mi padre puede llevarte a casa.",
-        "de": "Mein Vater kann dich nach Hause bringen."
+        "es": "Mi padre puede llevarte a casa."
       },
       "answer": "Mi padre podría llevarte a casa.",
       "accept": [
@@ -2372,10 +1996,8 @@
         "19"
       ],
       "why": {
-        "hu": "Udvarias ajánlat: condicional. A(z) poder rendhagyó tövű ige (podr-), él: podría.",
         "en": "A polite offer: condicional. Poder is an irregular-stem verb (podr-), él: podría.",
-        "es": "Un ofrecimiento cortés: condicional. poder es un verbo de raíz irregular (podr-), él: podría.",
-        "de": "Ein höfliches Angebot: condicional. poder ist ein Verb mit unregelmäßigem Stamm (podr-), él: podría."
+        "es": "Un ofrecimiento cortés: condicional. poder es un verbo de raíz irregular (podr-), él: podría."
       }
     },
     {
@@ -2386,10 +2008,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Korábban indulhatunk.",
         "en": "We can leave earlier.",
-        "es": "Podemos salir más temprano.",
-        "de": "Wir können früher losgehen."
+        "es": "Podemos salir más temprano."
       },
       "answer": "Podríamos salir más temprano.",
       "accept": [
@@ -2401,10 +2021,8 @@
         "176"
       ],
       "why": {
-        "hu": "Javaslat vagy lehetőség: condicional. A(z) poder rendhagyó tövű ige (podr-), nosotros: podríamos.",
         "en": "A suggestion or a possibility: condicional. Poder is an irregular-stem verb (podr-), nosotros: podríamos.",
-        "es": "Una sugerencia o una posibilidad: condicional. poder es un verbo de raíz irregular (podr-), nosotros: podríamos.",
-        "de": "Ein Vorschlag oder eine Möglichkeit: condicional. poder ist ein Verb mit unregelmäßigem Stamm (podr-), nosotros: podríamos."
+        "es": "Una sugerencia o una posibilidad: condicional. poder es un verbo de raíz irregular (podr-), nosotros: podríamos."
       }
     },
     {
@@ -2415,10 +2033,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Később hívhatnak.",
         "en": "They can call later.",
-        "es": "Pueden llamar después.",
-        "de": "Sie können später anrufen."
+        "es": "Pueden llamar después."
       },
       "answer": "Podrían llamar después.",
       "accept": [
@@ -2431,10 +2047,8 @@
         "170"
       ],
       "why": {
-        "hu": "Javaslat vagy lehetőség: condicional. A(z) poder rendhagyó tövű ige (podr-), ellos: podrían.",
         "en": "A suggestion or a possibility: condicional. Poder is an irregular-stem verb (podr-), ellos: podrían.",
-        "es": "Una sugerencia o una posibilidad: condicional. poder es un verbo de raíz irregular (podr-), ellos: podrían.",
-        "de": "Ein Vorschlag oder eine Möglichkeit: condicional. poder ist ein Verb mit unregelmäßigem Stamm (podr-), ellos: podrían."
+        "es": "Una sugerencia o una posibilidad: condicional. poder es un verbo de raíz irregular (podr-), ellos: podrían."
       }
     },
     {
@@ -2445,10 +2059,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Én készítem az ételt.",
         "en": "I make the meal.",
-        "es": "Hago la comida.",
-        "de": "Ich mache das Essen."
+        "es": "Hago la comida."
       },
       "answer": "Haría la comida.",
       "accept": [
@@ -2459,10 +2071,8 @@
         "26"
       ],
       "why": {
-        "hu": "Udvarias ajánlat: condicional. A(z) hacer rendhagyó tövű ige (har-), yo: haría.",
         "en": "A polite offer: condicional. Hacer is an irregular-stem verb (har-), yo: haría.",
-        "es": "Un ofrecimiento cortés: condicional. hacer es un verbo de raíz irregular (har-), yo: haría.",
-        "de": "Ein höfliches Angebot: condicional. hacer ist ein Verb mit unregelmäßigem Stamm (har-), yo: haría."
+        "es": "Un ofrecimiento cortés: condicional. hacer es un verbo de raíz irregular (har-), yo: haría."
       }
     },
     {
@@ -2473,10 +2083,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Megteszed ezt értem?",
         "en": "Do you do this for me?",
-        "es": "¿Haces esto por mí?",
-        "de": "Tust du das für mich?"
+        "es": "¿Haces esto por mí?"
       },
       "answer": "¿Harías esto por mí?",
       "accept": [
@@ -2487,10 +2095,8 @@
         "157"
       ],
       "why": {
-        "hu": "Udvarias kérés: condicional. A(z) hacer rendhagyó tövű ige (har-), tú: harías.",
         "en": "A polite request: condicional. Hacer is an irregular-stem verb (har-), tú: harías.",
-        "es": "Una petición cortés: condicional. hacer es un verbo de raíz irregular (har-), tú: harías.",
-        "de": "Eine höfliche Bitte: condicional. hacer ist ein Verb mit unregelmäßigem Stamm (har-), tú: harías."
+        "es": "Una petición cortés: condicional. hacer es un verbo de raíz irregular (har-), tú: harías."
       }
     },
     {
@@ -2501,10 +2107,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Ana elkészíti a tortát.",
         "en": "Ana makes the cake.",
-        "es": "Ana hace el pastel.",
-        "de": "Ana macht den Kuchen."
+        "es": "Ana hace el pastel."
       },
       "answer": "Ana haría el pastel.",
       "accept": [
@@ -2515,10 +2119,8 @@
         "698"
       ],
       "why": {
-        "hu": "Feltételes helyzet (mi lenne, ha): condicional. A(z) hacer rendhagyó tövű ige (har-), ella: haría.",
         "en": "A hypothetical situation (what would happen): condicional. Hacer is an irregular-stem verb (har-), ella: haría.",
-        "es": "Una situación hipotética (lo que pasaría): condicional. hacer es un verbo de raíz irregular (har-), ella: haría.",
-        "de": "Eine hypothetische Situation (was passieren würde): condicional. hacer ist ein Verb mit unregelmäßigem Stamm (har-), ella: haría."
+        "es": "Una situación hipotética (lo que pasaría): condicional. hacer es un verbo de raíz irregular (har-), ella: haría."
       }
     },
     {
@@ -2529,10 +2131,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Ezt nem csináljuk engedély nélkül.",
         "en": "We don't do that without permission.",
-        "es": "No hacemos eso sin permiso.",
-        "de": "Das machen wir nicht ohne Erlaubnis."
+        "es": "No hacemos eso sin permiso."
       },
       "answer": "No haríamos eso sin permiso.",
       "accept": [
@@ -2545,10 +2145,8 @@
         "755"
       ],
       "why": {
-        "hu": "Tagadás feltételes módban, a no az ige elé kerül: condicional. A(z) hacer rendhagyó tövű ige (har-), nosotros: haríamos.",
         "en": "Negation in the conditional, no goes before the verb: condicional. Hacer is an irregular-stem verb (har-), nosotros: haríamos.",
-        "es": "Negación en condicional, no va antes del verbo: condicional. hacer es un verbo de raíz irregular (har-), nosotros: haríamos.",
-        "de": "Verneinung im Konditional, no steht vor dem Verb: condicional. hacer ist ein Verb mit unregelmäßigem Stamm (har-), nosotros: haríamos."
+        "es": "Negación en condicional, no va antes del verbo: condicional. hacer es un verbo de raíz irregular (har-), nosotros: haríamos."
       }
     },
     {
@@ -2559,10 +2157,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Nyáron elutaznak.",
         "en": "They take a trip in the summer.",
-        "es": "Hacen un viaje en verano.",
-        "de": "Sie machen im Sommer eine Reise."
+        "es": "Hacen un viaje en verano."
       },
       "answer": "Harían un viaje en verano.",
       "accept": [
@@ -2575,10 +2171,8 @@
         "667"
       ],
       "why": {
-        "hu": "Feltételes helyzet (mi lenne, ha): condicional. A(z) hacer rendhagyó tövű ige (har-), ellos: harían.",
         "en": "A hypothetical situation (what would happen): condicional. Hacer is an irregular-stem verb (har-), ellos: harían.",
-        "es": "Una situación hipotética (lo que pasaría): condicional. hacer es un verbo de raíz irregular (har-), ellos: harían.",
-        "de": "Eine hypothetische Situation (was passieren würde): condicional. hacer ist ein Verb mit unregelmäßigem Stamm (har-), ellos: harían."
+        "es": "Una situación hipotética (lo que pasaría): condicional. hacer es un verbo de raíz irregular (har-), ellos: harían."
       }
     },
     {
@@ -2589,10 +2183,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Igazat mondok.",
         "en": "I tell the truth.",
-        "es": "Digo la verdad.",
-        "de": "Ich sage die Wahrheit."
+        "es": "Digo la verdad."
       },
       "answer": "Diría la verdad.",
       "accept": [
@@ -2603,10 +2195,8 @@
         "286"
       ],
       "why": {
-        "hu": "Feltételes helyzet (mi lenne, ha): condicional. A(z) decir rendhagyó tövű ige (dir-), yo: diría.",
         "en": "A hypothetical situation (what would happen): condicional. Decir is an irregular-stem verb (dir-), yo: diría.",
-        "es": "Una situación hipotética (lo que pasaría): condicional. decir es un verbo de raíz irregular (dir-), yo: diría.",
-        "de": "Eine hypothetische Situation (was passieren würde): condicional. decir ist ein Verb mit unregelmäßigem Stamm (dir-), yo: diría."
+        "es": "Una situación hipotética (lo que pasaría): condicional. decir es un verbo de raíz irregular (dir-), yo: diría."
       }
     },
     {
@@ -2617,10 +2207,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Nem mondasz semmit.",
         "en": "You don't say anything.",
-        "es": "No dices nada.",
-        "de": "Du sagst nichts."
+        "es": "No dices nada."
       },
       "answer": "No dirías nada.",
       "accept": [
@@ -2632,10 +2220,8 @@
         "98"
       ],
       "why": {
-        "hu": "Lágy tanács: condicional. A(z) decir rendhagyó tövű ige (dir-), tú: dirías.",
         "en": "Soft advice: condicional. Decir is an irregular-stem verb (dir-), tú: dirías.",
-        "es": "Un consejo suave: condicional. decir es un verbo de raíz irregular (dir-), tú: dirías.",
-        "de": "Ein sanfter Rat: condicional. decir ist ein Verb mit unregelmäßigem Stamm (dir-), tú: dirías."
+        "es": "Un consejo suave: condicional. decir es un verbo de raíz irregular (dir-), tú: dirías."
       }
     },
     {
@@ -2646,10 +2232,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Mit mond a főnök?",
         "en": "What does the boss say?",
-        "es": "¿Qué dice el jefe?",
-        "de": "Was sagt der Chef?"
+        "es": "¿Qué dice el jefe?"
       },
       "answer": "¿Qué diría el jefe?",
       "wordIds": [
@@ -2658,10 +2242,8 @@
         "383"
       ],
       "why": {
-        "hu": "Kérdés feltételes módban: condicional. A(z) decir rendhagyó tövű ige (dir-), él: diría.",
         "en": "A question in the conditional: condicional. Decir is an irregular-stem verb (dir-), él: diría.",
-        "es": "Una pregunta en condicional: condicional. decir es un verbo de raíz irregular (dir-), él: diría.",
-        "de": "Eine Frage im Konditional: condicional. decir ist ein Verb mit unregelmäßigem Stamm (dir-), él: diría."
+        "es": "Una pregunta en condicional: condicional. decir es un verbo de raíz irregular (dir-), él: diría."
       }
     },
     {
@@ -2672,10 +2254,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Igent mondunk.",
         "en": "We say yes.",
-        "es": "Decimos que sí.",
-        "de": "Wir sagen Ja."
+        "es": "Decimos que sí."
       },
       "answer": "Diríamos que sí.",
       "accept": [
@@ -2685,10 +2265,8 @@
         "79"
       ],
       "why": {
-        "hu": "Feltételes helyzet (mi lenne, ha): condicional. A(z) decir rendhagyó tövű ige (dir-), nosotros: diríamos.",
         "en": "A hypothetical situation (what would happen): condicional. Decir is an irregular-stem verb (dir-), nosotros: diríamos.",
-        "es": "Una situación hipotética (lo que pasaría): condicional. decir es un verbo de raíz irregular (dir-), nosotros: diríamos.",
-        "de": "Eine hypothetische Situation (was passieren würde): condicional. decir ist ein Verb mit unregelmäßigem Stamm (dir-), nosotros: diríamos."
+        "es": "Una situación hipotética (lo que pasaría): condicional. decir es un verbo de raíz irregular (dir-), nosotros: diríamos."
       }
     },
     {
@@ -2699,10 +2277,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "A barátaim mást mondanak.",
         "en": "My friends say something else.",
-        "es": "Mis amigos dicen otra cosa.",
-        "de": "Meine Freunde sagen etwas anderes."
+        "es": "Mis amigos dicen otra cosa."
       },
       "answer": "Mis amigos dirían otra cosa.",
       "wordIds": [
@@ -2712,10 +2288,8 @@
         "126"
       ],
       "why": {
-        "hu": "Feltételes helyzet (mi lenne, ha): condicional. A(z) decir rendhagyó tövű ige (dir-), ellos: dirían.",
         "en": "A hypothetical situation (what would happen): condicional. Decir is an irregular-stem verb (dir-), ellos: dirían.",
-        "es": "Una situación hipotética (lo que pasaría): condicional. decir es un verbo de raíz irregular (dir-), ellos: dirían.",
-        "de": "Eine hypothetische Situation (was passieren würde): condicional. decir ist ein Verb mit unregelmäßigem Stamm (dir-), ellos: dirían."
+        "es": "Una situación hipotética (lo que pasaría): condicional. decir es un verbo de raíz irregular (dir-), ellos: dirían."
       },
       "accept": [
         "Dirían otra cosa."
@@ -2729,10 +2303,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Itt boldog vagyok.",
         "en": "I am happy here.",
-        "es": "Soy feliz aquí.",
-        "de": "Ich bin hier glücklich."
+        "es": "Soy feliz aquí."
       },
       "answer": "Sería feliz aquí.",
       "accept": [
@@ -2745,10 +2317,8 @@
         "9"
       ],
       "why": {
-        "hu": "Vágy vagy elképzelt helyzet: condicional. A(z) ser szabályos -er ige, yo: sería.",
         "en": "A wish or an imagined situation: condicional. Ser is a regular -er verb, yo: sería.",
-        "es": "Un deseo o una situación imaginada: condicional. ser es un verbo regular en -er, yo: sería.",
-        "de": "Ein Wunsch oder eine vorgestellte Situation: condicional. ser ist ein regelmäßiges -er-Verb, yo: sería."
+        "es": "Un deseo o una situación imaginada: condicional. ser es un verbo regular en -er, yo: sería."
       }
     },
     {
@@ -2759,10 +2329,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Ez jó ötlet.",
         "en": "It is a good idea.",
-        "es": "Es una buena idea.",
-        "de": "Das ist eine gute Idee."
+        "es": "Es una buena idea."
       },
       "answer": "Sería una buena idea.",
       "accept": [
@@ -2774,10 +2342,8 @@
         "249"
       ],
       "why": {
-        "hu": "Javaslat vagy lehetőség: condicional. A(z) ser szabályos -er ige, él/ella: sería.",
         "en": "A suggestion or a possibility: condicional. Ser is a regular -er verb, él/ella: sería.",
-        "es": "Una sugerencia o una posibilidad: condicional. ser es un verbo regular en -er, él/ella: sería.",
-        "de": "Ein Vorschlag oder eine Möglichkeit: condicional. ser ist ein regelmäßiges -er-Verb, él/ella: sería."
+        "es": "Una sugerencia o una posibilidad: condicional. ser es un verbo regular en -er, él/ella: sería."
       }
     },
     {
@@ -2788,10 +2354,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Lehet kártyával fizetni?",
         "en": "Is it possible to pay by card?",
-        "es": "¿Es posible pagar con tarjeta?",
-        "de": "Kann man mit Karte zahlen?"
+        "es": "¿Es posible pagar con tarjeta?"
       },
       "answer": "¿Sería posible pagar con tarjeta?",
       "wordIds": [
@@ -2801,10 +2365,8 @@
         "808"
       ],
       "why": {
-        "hu": "Udvarias kérés: condicional. A(z) ser szabályos -er ige, él/ella: sería.",
         "en": "A polite request: condicional. Ser is a regular -er verb, él/ella: sería.",
-        "es": "Una petición cortés: condicional. ser es un verbo regular en -er, él/ella: sería.",
-        "de": "Eine höfliche Bitte: condicional. ser ist ein regelmäßiges -er-Verb, él/ella: sería."
+        "es": "Una petición cortés: condicional. ser es un verbo regular en -er, él/ella: sería."
       }
     },
     {
@@ -2815,10 +2377,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Nem mi vagyunk az elsők.",
         "en": "We are not the first.",
-        "es": "No somos los primeros.",
-        "de": "Wir sind nicht die Ersten."
+        "es": "No somos los primeros."
       },
       "answer": "No seríamos los primeros.",
       "accept": [
@@ -2830,10 +2390,8 @@
         "738"
       ],
       "why": {
-        "hu": "Tagadás feltételes módban, a no az ige elé kerül: condicional. A(z) ser szabályos -er ige, nosotros: seríamos.",
         "en": "Negation in the conditional, no goes before the verb: condicional. Ser is a regular -er verb, nosotros: seríamos.",
-        "es": "Negación en condicional, no va antes del verbo: condicional. ser es un verbo regular en -er, nosotros: seríamos.",
-        "de": "Verneinung im Konditional, no steht vor dem Verb: condicional. ser ist ein regelmäßiges -er-Verb, nosotros: seríamos."
+        "es": "Negación en condicional, no va antes del verbo: condicional. ser es un verbo regular en -er, nosotros: seríamos."
       }
     },
     {
@@ -2844,10 +2402,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Boldogabbak egy másik városban.",
         "en": "They are happier in another city.",
-        "es": "Son más felices en otra ciudad.",
-        "de": "Sie sind in einer anderen Stadt glücklicher."
+        "es": "Son más felices en otra ciudad."
       },
       "answer": "Serían más felices en otra ciudad.",
       "accept": [
@@ -2860,10 +2416,8 @@
         "51"
       ],
       "why": {
-        "hu": "Vágy vagy elképzelt helyzet: condicional. A(z) ser szabályos -er ige, ellos: serían.",
         "en": "A wish or an imagined situation: condicional. Ser is a regular -er verb, ellos: serían.",
-        "es": "Un deseo o una situación imaginada: condicional. ser es un verbo regular en -er, ellos: serían.",
-        "de": "Ein Wunsch oder eine vorgestellte Situation: condicional. ser ist ein regelmäßiges -er-Verb, ellos: serían."
+        "es": "Un deseo o una situación imaginada: condicional. ser es un verbo regular en -er, ellos: serían."
       }
     },
     {
@@ -2874,10 +2428,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Többet kell pihenned.",
         "en": "You must rest more.",
-        "es": "Debes descansar más.",
-        "de": "Du musst mehr ausruhen."
+        "es": "Debes descansar más."
       },
       "answer": "Deberías descansar más.",
       "accept": [
@@ -2888,10 +2440,8 @@
         "778"
       ],
       "why": {
-        "hu": "Lágy tanács: condicional. A(z) deber szabályos -er ige, tú: deberías.",
         "en": "Soft advice: condicional. Deber is a regular -er verb, tú: deberías.",
-        "es": "Un consejo suave: condicional. deber es un verbo regular en -er, tú: deberías.",
-        "de": "Ein sanfter Rat: condicional. deber ist ein regelmäßiges -er-Verb, tú: deberías."
+        "es": "Un consejo suave: condicional. deber es un verbo regular en -er, tú: deberías."
       }
     },
     {
@@ -2902,10 +2452,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Nem szabad ennyit költenem.",
         "en": "I must not spend so much.",
-        "es": "No debo gastar tanto.",
-        "de": "Ich darf nicht so viel ausgeben."
+        "es": "No debo gastar tanto."
       },
       "answer": "No debería gastar tanto.",
       "accept": [
@@ -2918,10 +2466,8 @@
         "700"
       ],
       "why": {
-        "hu": "Lágy tanács: condicional. A(z) deber szabályos -er ige, yo: debería.",
         "en": "Soft advice: condicional. Deber is a regular -er verb, yo: debería.",
-        "es": "Un consejo suave: condicional. deber es un verbo regular en -er, yo: debería.",
-        "de": "Ein sanfter Rat: condicional. deber ist ein regelmäßiges -er-Verb, yo: debería."
+        "es": "Un consejo suave: condicional. deber es un verbo regular en -er, yo: debería."
       }
     },
     {
@@ -2932,10 +2478,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Fel kell hívnia az anyját.",
         "en": "He must call his mother.",
-        "es": "Debe llamar a su madre.",
-        "de": "Er muss seine Mutter anrufen."
+        "es": "Debe llamar a su madre."
       },
       "answer": "Debería llamar a su madre.",
       "accept": [
@@ -2948,10 +2492,8 @@
         "38"
       ],
       "why": {
-        "hu": "Lágy tanács: condicional. A(z) deber szabályos -er ige, él: debería.",
         "en": "Soft advice: condicional. Deber is a regular -er verb, él: debería.",
-        "es": "Un consejo suave: condicional. deber es un verbo regular en -er, él: debería.",
-        "de": "Ein sanfter Rat: condicional. deber ist ein regelmäßiges -er-Verb, él: debería."
+        "es": "Un consejo suave: condicional. deber es un verbo regular en -er, él: debería."
       }
     },
     {
@@ -2962,10 +2504,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Várnunk kell egy kicsit?",
         "en": "Do we have to wait a little?",
-        "es": "¿Debemos esperar un poco?",
-        "de": "Müssen wir ein bisschen warten?"
+        "es": "¿Debemos esperar un poco?"
       },
       "answer": "¿Deberíamos esperar un poco?",
       "accept": [
@@ -2977,10 +2517,8 @@
         "153"
       ],
       "why": {
-        "hu": "Javaslat vagy lehetőség: condicional. A(z) deber szabályos -er ige, nosotros: deberíamos.",
         "en": "A suggestion or a possibility: condicional. Deber is a regular -er verb, nosotros: deberíamos.",
-        "es": "Una sugerencia o una posibilidad: condicional. deber es un verbo regular en -er, nosotros: deberíamos.",
-        "de": "Ein Vorschlag oder eine Möglichkeit: condicional. deber ist ein regelmäßiges -er-Verb, nosotros: deberíamos."
+        "es": "Una sugerencia o una posibilidad: condicional. deber es un verbo regular en -er, nosotros: deberíamos."
       }
     },
     {
@@ -2991,10 +2529,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Segítséget kell kérniük.",
         "en": "They must ask for help.",
-        "es": "Deben pedir ayuda.",
-        "de": "Sie müssen um Hilfe bitten."
+        "es": "Deben pedir ayuda."
       },
       "answer": "Deberían pedir ayuda.",
       "accept": [
@@ -3006,10 +2542,8 @@
         "881"
       ],
       "why": {
-        "hu": "Lágy tanács: condicional. A(z) deber szabályos -er ige, ellos: deberían.",
         "en": "Soft advice: condicional. Deber is a regular -er verb, ellos: deberían.",
-        "es": "Un consejo suave: condicional. deber es un verbo regular en -er, ellos: deberían.",
-        "de": "Ein sanfter Rat: condicional. deber ist ein regelmäßiges -er-Verb, ellos: deberían."
+        "es": "Un consejo suave: condicional. deber es un verbo regular en -er, ellos: deberían."
       }
     },
     {
@@ -3020,10 +2554,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Veled jövök.",
         "en": "I come with you.",
-        "es": "Vengo contigo.",
-        "de": "Ich komme mit dir."
+        "es": "Vengo contigo."
       },
       "answer": "Vendría contigo.",
       "accept": [
@@ -3033,10 +2565,8 @@
         "80"
       ],
       "why": {
-        "hu": "Vágy vagy elképzelt helyzet: condicional. A(z) venir rendhagyó tövű ige (vendr-), yo: vendría.",
         "en": "A wish or an imagined situation: condicional. Venir is an irregular-stem verb (vendr-), yo: vendría.",
-        "es": "Un deseo o una situación imaginada: condicional. venir es un verbo de raíz irregular (vendr-), yo: vendría.",
-        "de": "Ein Wunsch oder eine vorgestellte Situation: condicional. venir ist ein Verb mit unregelmäßigem Stamm (vendr-), yo: vendría."
+        "es": "Un deseo o una situación imaginada: condicional. venir es un verbo de raíz irregular (vendr-), yo: vendría."
       }
     },
     {
@@ -3047,10 +2577,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Eljössz a buliba?",
         "en": "Are you coming to the party?",
-        "es": "¿Vienes a la fiesta?",
-        "de": "Kommst du zur Party?"
+        "es": "¿Vienes a la fiesta?"
       },
       "answer": "¿Vendrías a la fiesta?",
       "accept": [
@@ -3061,10 +2589,8 @@
         "285"
       ],
       "why": {
-        "hu": "Meghívás: condicional. A(z) venir rendhagyó tövű ige (vendr-), tú: vendrías.",
         "en": "An invitation: condicional. Venir is an irregular-stem verb (vendr-), tú: vendrías.",
-        "es": "Una invitación cortés: condicional. venir es un verbo de raíz irregular (vendr-), tú: vendrías.",
-        "de": "Eine Einladung: condicional. venir ist ein Verb mit unregelmäßigem Stamm (vendr-), tú: vendrías."
+        "es": "Una invitación cortés: condicional. venir es un verbo de raíz irregular (vendr-), tú: vendrías."
       }
     },
     {
@@ -3075,10 +2601,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Carlos eljön a vacsorára.",
         "en": "Carlos comes to dinner.",
-        "es": "Carlos viene a la cena.",
-        "de": "Carlos kommt zum Abendessen."
+        "es": "Carlos viene a la cena."
       },
       "answer": "Carlos vendría a la cena.",
       "accept": [
@@ -3089,10 +2613,8 @@
         "261"
       ],
       "why": {
-        "hu": "Feltételes helyzet (mi lenne, ha): condicional. A(z) venir rendhagyó tövű ige (vendr-), él: vendría.",
         "en": "A hypothetical situation (what would happen): condicional. Venir is an irregular-stem verb (vendr-), él: vendría.",
-        "es": "Una situación hipotética (lo que pasaría): condicional. venir es un verbo de raíz irregular (vendr-), él: vendría.",
-        "de": "Eine hypothetische Situation (was passieren würde): condicional. venir ist ein Verb mit unregelmäßigem Stamm (vendr-), él: vendría."
+        "es": "Una situación hipotética (lo que pasaría): condicional. venir es un verbo de raíz irregular (vendr-), él: vendría."
       }
     },
     {
@@ -3103,10 +2625,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Később jövünk.",
         "en": "We come later.",
-        "es": "Venimos más tarde.",
-        "de": "Wir kommen später."
+        "es": "Venimos más tarde."
       },
       "answer": "Vendríamos más tarde.",
       "accept": [
@@ -3118,10 +2638,8 @@
         "174"
       ],
       "why": {
-        "hu": "Feltételes helyzet (mi lenne, ha): condicional. A(z) venir rendhagyó tövű ige (vendr-), nosotros: vendríamos.",
         "en": "A hypothetical situation (what would happen): condicional. Venir is an irregular-stem verb (vendr-), nosotros: vendríamos.",
-        "es": "Una situación hipotética (lo que pasaría): condicional. venir es un verbo de raíz irregular (vendr-), nosotros: vendríamos.",
-        "de": "Eine hypothetische Situation (was passieren würde): condicional. venir ist ein Verb mit unregelmäßigem Stamm (vendr-), nosotros: vendríamos."
+        "es": "Una situación hipotética (lo que pasaría): condicional. venir es un verbo de raíz irregular (vendr-), nosotros: vendríamos."
       }
     },
     {
@@ -3132,10 +2650,8 @@
         "to": "condicional"
       },
       "prompt": {
-        "hu": "Nem egyedül jönnek.",
         "en": "They don't come alone.",
-        "es": "No vienen solos.",
-        "de": "Sie kommen nicht allein."
+        "es": "No vienen solos."
       },
       "answer": "No vendrían solos.",
       "accept": [
@@ -3147,10 +2663,8 @@
         "141"
       ],
       "why": {
-        "hu": "Tagadás feltételes módban, a no az ige elé kerül: condicional. A(z) venir rendhagyó tövű ige (vendr-), ellos: vendrían.",
         "en": "Negation in the conditional, no goes before the verb: condicional. Venir is an irregular-stem verb (vendr-), ellos: vendrían.",
-        "es": "Negación en condicional, no va antes del verbo: condicional. venir es un verbo de raíz irregular (vendr-), ellos: vendrían.",
-        "de": "Verneinung im Konditional, no steht vor dem Verb: condicional. venir ist ein Verb mit unregelmäßigem Stamm (vendr-), ellos: vendrían."
+        "es": "Negación en condicional, no va antes del verbo: condicional. venir es un verbo de raíz irregular (vendr-), ellos: vendrían."
       }
     }
   ]

@@ -16,7 +16,7 @@ _spec = importlib.util.spec_from_file_location("grammar_debt_fix", SCRIPTS / "gr
 fix = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(fix)
 
-L4 = lambda v: {"hu": v, "en": v, "es": v, "de": v}  # noqa: E731
+L4 = lambda v: {"en": v, "es": v}  # noqa: E731
 
 
 class VosotrosDetector(unittest.TestCase):
@@ -210,7 +210,7 @@ def why_item():
         "options": [
             {"text": L4("él/ella"), },
             {"text": L4("nosotros"), "wrong": L4("Si fuera nosotros, diría 'Vivíamos en Puebla', no él o ella.")},
-            {"text": {"hu": "ti (vosotros, Spo.)", "en": "you all (vosotros, Spain)", "es": "vosotros", "de": "ihr (vosotros)"},
+            {"text": {"en": "you all (vosotros, Spain)", "es": "vosotros"},
              "wrong": L4("Si fuera vosotros, diría 'Vivíais en Puebla', no solo él o ella.")},
         ],
         "correctIndex": 0,
@@ -231,12 +231,10 @@ class VosotrosValidation(unittest.TestCase):
     def fixed_why(self):
         new = why_item()
         new["options"][2] = {
-            "text": {"hu": "ők / Önök (ellos/ustedes)", "en": "they / you all (ellos/ustedes)", "es": "ellos/ustedes", "de": "sie (ellos/ustedes)"},
+            "text": {"en": "they / you all (ellos/ustedes)", "es": "ellos/ustedes"},
             "wrong": {
-                "hu": "Ha ellos lenne, 'Vivían en Puebla' állna, azaz ők éltek ott, nem csak ő.",
                 "en": "If it were ellos, it would say 'Vivían en Puebla', meaning THEY lived there, not just him or her.",
                 "es": "Si fuera ellos, diría 'Vivían en Puebla', o sea que ELLOS vivían ahí, no solo él o ella.",
-                "de": "Wäre es ellos, hieße es 'Vivían en Puebla', also haben SIE dort gelebt, nicht nur er oder sie.",
             },
         }
         return new
@@ -255,16 +253,16 @@ class VosotrosValidation(unittest.TestCase):
         bad["correctIndex"] = 1
         self.assertIn("must not change", fix.validate_vosotros(old, bad)[1])
         bad = self.fixed_why()
-        bad["options"][0]["text"]["hu"] = "valaki más"
+        bad["options"][0]["text"]["en"] = "someone else"
         self.assertIn("correct option changed", fix.validate_vosotros(old, bad)[1])
         bad = self.fixed_why()
-        bad["options"][2]["wrong"]["de"] = "Nein."
+        bad["options"][2]["wrong"]["en"] = "No."
         self.assertIn("real sentences", fix.validate_vosotros(old, bad)[1])
         bad = self.fixed_why()
-        del bad["options"][2]["text"]["de"]
-        self.assertIn("4 languages", fix.validate_vosotros(old, bad)[1])
+        del bad["options"][2]["text"]["es"]
+        self.assertIn("2 languages", fix.validate_vosotros(old, bad)[1])
         bad = self.fixed_why()
-        bad["options"][2]["text"]["hu"] = "nosotros"
+        bad["options"][2]["text"]["en"] = "nosotros"
         self.assertIn("not unique", fix.validate_vosotros(old, bad)[1])
         bad = self.fixed_why()
         bad["es"] = "Vivían en Puebla."
@@ -305,20 +303,20 @@ class VosotrosValidation(unittest.TestCase):
 LESSON = """{
   "schema": 2,
   "topic": "demo",
-  "title": { "hu": "Demo", "en": "Demo", "es": "Demo", "de": "Demo" },
+  "title": { "en": "Demo", "es": "Demo" },
   "items": [
     {
       "id": "t-03",
       "sentence": "Nosotros ___ en la ciudad.",
       "options": ["vivimos", "vivís", "viven"],
       "correct": 0,
-      "why": { "hu": "a", "en": "b", "es": "c", "de": "d" },
+      "why": { "en": "b", "es": "c" },
       "wrong": {
-        "vivís": { "hu": "A vivís a vosotros alakja, Mexikóban nem használják.", "en": "Vivís is the vosotros form, not used in Mexico.", "es": "Vivís es de vosotros y no se usa en México.", "de": "Vivís ist die vosotros-Form, in Mexiko nicht üblich." },
-        "viven": { "hu": "A viven az ellos alakja, itt a nosotros áll a mondatban.", "en": "Viven is the ellos form, here the subject is nosotros.", "es": "Viven es de ellos, aquí hablamos de nosotros.", "de": "Viven ist die ellos-Form, hier steht nosotros im Satz." }
+        "vivís": { "en": "Vivís is the vosotros form, not used in Mexico.", "es": "Vivís es de vosotros y no se usa en México." },
+        "viven": { "en": "Viven is the ellos form, here the subject is nosotros.", "es": "Viven es de ellos, aquí hablamos de nosotros." }
       },
       "examples": ["Nosotros comemos a las dos."],
-      "tr": { "hu": "t", "en": "t", "es": "Vivimos en la ciudad.", "de": "t" }
+      "tr": { "en": "t", "es": "Vivimos en la ciudad." }
     },
     {
       "id": "t-04",

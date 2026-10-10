@@ -3,48 +3,36 @@
   "topic": "this_that",
   "level": "A1",
   "title": {
-    "hu": "This, that, these, those",
     "en": "This, that, these, those",
-    "es": "This, that, these, those (este, ese, aquel)",
-    "de": "This, that, these, those"
+    "es": "This, that, these, those (este, ese, aquel)"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "A this / that / these / those a mutató szavak: megmondják, melyik dologról beszélsz. Az angolban két távolság van: KÖZEL (this, these) és TÁVOL (that, those). A spanyolban három van (este, ese, aquel), ezért az „ese” és az „aquel” is „that” lesz. Nemük sincs: az „este libro” és az „esta casa” egyaránt „this”. Csak a számot kell figyelni: egyes szám this / that, többes szám these / those.",
         "en": "This / that / these / those are demonstratives: they point to the thing you are talking about. English has two distances: NEAR (this, these) and FAR (that, those). Spanish has three (este, ese, aquel), so both “ese” and “aquel” become “that”. There is no gender either: “este libro” and “esta casa” are both “this”. You only track number: singular this / that, plural these / those.",
-        "es": "This / that / these / those son demostrativos: señalan de qué cosa hablas. El inglés tiene dos distancias: CERCA (this, these) y LEJOS (that, those). El español tiene tres (este, ese, aquel), así que tanto «ese» como «aquel» se convierten en «that». Tampoco hay género: «este libro» y «esta casa» son ambos «this». Solo cuentas el número: singular this / that, plural these / those.",
-        "de": "This / that / these / those sind Demonstrativpronomen: Sie zeigen, über welche Sache du sprichst. Das Englische kennt zwei Entfernungen: NAH (this, these) und WEIT (that, those). Das Spanische hat drei (este, ese, aquel), deshalb werden „ese“ und „aquel“ beide zu „that“. Auch ein Genus gibt es nicht: „este libro“ und „esta casa“ sind beide „this“. Du achtest nur auf die Zahl: Singular this / that, Plural these / those."
+        "es": "This / that / these / those son demostrativos: señalan de qué cosa hablas. El inglés tiene dos distancias: CERCA (this, these) y LEJOS (that, those). El español tiene tres (este, ese, aquel), así que tanto «ese» como «aquel» se convierten en «that». Tampoco hay género: «este libro» y «esta casa» son ambos «this». Solo cuentas el número: singular this / that, plural these / those."
       }
     },
     {
       "kind": "table",
       "id": "tt-forms",
       "title": {
-        "hu": "This, that, these, those",
         "en": "This, that, these, those",
-        "es": "This, that, these, those",
-        "de": "This, that, these, those"
+        "es": "This, that, these, those"
       },
       "header": [
         {
-          "hu": "Távolság",
           "en": "Distance",
-          "es": "Distancia",
-          "de": "Entfernung"
+          "es": "Distancia"
         },
         {
-          "hu": "singular",
           "en": "singular",
-          "es": "singular",
-          "de": "Singular"
+          "es": "singular"
         },
         {
-          "hu": "plural",
           "en": "plural",
-          "es": "plural",
-          "de": "Plural"
+          "es": "plural"
         }
       ],
       "rows": [
@@ -63,120 +51,94 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Hogyan használjuk",
         "en": "How we use them",
-        "es": "Cómo se usan",
-        "de": "Wie man sie benutzt"
+        "es": "Cómo se usan"
       },
       "items": [
         {
           "text": {
-            "hu": "Főnév nélkül (névmásként): This is my bag. These are my friends. A this / that után „is”, a these / those után „are” áll.",
             "en": "On their own (as pronouns): This is my bag. These are my friends. After this / that use “is”, after these / those use “are”.",
-            "es": "Solos (como pronombres): This is my bag. These are my friends. Después de this / that va «is», después de these / those va «are».",
-            "de": "Allein (als Pronomen): This is my bag. These are my friends. Nach this / that steht „is“, nach these / those steht „are“."
+            "es": "Solos (como pronombres): This is my bag. These are my friends. Después de this / that va «is», después de these / those va «are»."
           },
           "examples": [
             {
               "es": "This is my bag.",
               "tr": {
-                "hu": "Ez az én táskám.",
                 "en": "This is my bag.",
-                "es": "Esta es mi bolsa.",
-                "de": "Das ist meine Tasche."
+                "es": "Esta es mi bolsa."
               }
             },
             {
               "es": "Those are my friends.",
               "tr": {
-                "hu": "Azok a barátaim.",
                 "en": "Those are my friends.",
-                "es": "Aquellos son mis amigos.",
-                "de": "Das sind meine Freunde."
+                "es": "Aquellos son mis amigos."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Főnév előtt (jelzőként): a this / that egyes számú, a these / those többes számú főnévvel áll. This book, de these books.",
             "en": "Before a noun (as determiners): this / that go with a singular noun, these / those with a plural noun. This book, but these books.",
-            "es": "Delante de un nombre (como determinantes): this / that van con un nombre singular, these / those con uno plural. This book, pero these books.",
-            "de": "Vor einem Nomen (als Begleiter): this / that stehen bei einem Singular-Nomen, these / those bei einem Plural-Nomen. This book, aber these books."
+            "es": "Delante de un nombre (como determinantes): this / that van con un nombre singular, these / those con uno plural. This book, pero these books."
           },
           "examples": [
             {
               "es": "This book is new.",
               "tr": {
-                "hu": "Ez a könyv új.",
                 "en": "This book is new.",
-                "es": "Este libro es nuevo.",
-                "de": "Dieses Buch ist neu."
+                "es": "Este libro es nuevo."
               }
             },
             {
               "es": "Those cars are red.",
               "tr": {
-                "hu": "Azok az autók pirosak.",
                 "en": "Those cars are red.",
-                "es": "Aquellos coches son rojos.",
-                "de": "Diese Autos dort sind rot."
+                "es": "Aquellos coches son rojos."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Kérdések: What’s this? Who is that? Is this your phone? A „that” személyre is mutathat, ha távol van.",
             "en": "Questions: What’s this? Who is that? Is this your phone? “That” can point to a person too, if the person is far away.",
-            "es": "Preguntas: What’s this? Who is that? Is this your phone? «That» también puede señalar a una persona, si está lejos.",
-            "de": "Fragen: What’s this? Who is that? Is this your phone? „That“ kann auch auf eine Person zeigen, wenn sie weit weg ist."
+            "es": "Preguntas: What’s this? Who is that? Is this your phone? «That» también puede señalar a una persona, si está lejos."
           },
           "examples": [
             {
               "es": "What's that?",
               "tr": {
-                "hu": "Mi az ott?",
                 "en": "What's that?",
-                "es": "¿Qué es eso?",
-                "de": "Was ist das dort?"
+                "es": "¿Qué es eso?"
               }
             },
             {
               "es": "Who is that man?",
               "tr": {
-                "hu": "Ki az a férfi?",
                 "en": "Who is that man?",
-                "es": "¿Quién es ese hombre?",
-                "de": "Wer ist dieser Mann dort?"
+                "es": "¿Quién es ese hombre?"
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Rövid válasz: a this / that helyett „it”, a these / those helyett „they” áll. Is this your bag? Yes, it is. Are those your books? No, they aren’t.",
             "en": "Short answers: “it” replaces this / that and “they” replaces these / those. Is this your bag? Yes, it is. Are those your books? No, they aren’t.",
-            "es": "Respuesta corta: «it» sustituye a this / that y «they» sustituye a these / those. Is this your bag? Yes, it is. Are those your books? No, they aren’t.",
-            "de": "Kurzantwort: „it“ ersetzt this / that und „they“ ersetzt these / those. Is this your bag? Yes, it is. Are those your books? No, they aren’t."
+            "es": "Respuesta corta: «it» sustituye a this / that y «they» sustituye a these / those. Is this your bag? Yes, it is. Are those your books? No, they aren’t."
           },
           "examples": [
             {
               "es": "Is this your phone? Yes, it is.",
               "tr": {
-                "hu": "Ez a te telefonod? Igen.",
                 "en": "Is this your phone? Yes, it is.",
-                "es": "¿Es este tu teléfono? Sí.",
-                "de": "Ist das dein Handy? Ja."
+                "es": "¿Es este tu teléfono? Sí."
               }
             },
             {
               "es": "Are those your keys? No, they aren't.",
               "tr": {
-                "hu": "Azok a te kulcsaid? Nem.",
                 "en": "Are those your keys? No, they aren't.",
-                "es": "¿Son esas tus llaves? No.",
-                "de": "Sind das deine Schlüssel? Nein."
+                "es": "¿Son esas tus llaves? No."
               }
             }
           ]
@@ -186,36 +148,28 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Vigyázat: a mutató szó a főnév számához igazodik. Ne mondd, hogy „this books”, hanem: „these books”; és ne „that houses”, hanem „those houses”.",
         "en": "Careful: the demonstrative agrees with the number of the noun. Do not say “this books”; say “these books”. Do not say “that houses”; say “those houses”.",
-        "es": "Cuidado: el demostrativo concuerda en número con el nombre. No digas «this books», di «these books»; y no «that houses», sino «those houses».",
-        "de": "Vorsicht: Das Demonstrativpronomen richtet sich nach der Zahl des Nomens. Sag nicht „this books“, sondern „these books“; und nicht „that houses“, sondern „those houses“."
+        "es": "Cuidado: el demostrativo concuerda en número con el nombre. No digas «this books», di «these books»; y no «that houses», sino «those houses»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A rövid válaszban ne ismételd a mutató szót: „Is this your bag? Yes, this is.” helyett mondd: „Yes, it is.”. Többesben: „Yes, they are.”",
         "en": "In a short answer do not repeat the demonstrative: instead of “Is this your bag? Yes, this is.” say “Yes, it is.” In the plural: “Yes, they are.”",
-        "es": "En la respuesta corta no repitas el demostrativo: en vez de «Is this your bag? Yes, this is.» di «Yes, it is.» En plural: «Yes, they are.»",
-        "de": "In der Kurzantwort wiederholst du das Demonstrativpronomen nicht: statt „Is this your bag? Yes, this is.“ sagst du „Yes, it is.“ Im Plural: „Yes, they are.“"
+        "es": "En la respuesta corta no repitas el demostrativo: en vez de «Is this your bag? Yes, this is.» di «Yes, it is.» En plural: «Yes, they are.»"
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A spanyol „ese” és „aquel” angolul egyaránt „that” (többesben „those”). Ha pontosítani akarod, tedd hozzá: that book there, that house over there.",
         "en": "Spanish “ese” and “aquel” are both “that” in English (“those” in the plural). If you need to be precise, add a place word: that book there, that house over there.",
-        "es": "El español «ese» y «aquel» son ambos «that» en inglés («those» en plural). Si quieres precisar, añade una palabra de lugar: that book there, that house over there.",
-        "de": "Spanisch „ese“ und „aquel“ sind im Englischen beide „that“ (im Plural „those“). Wenn du genauer sein willst, füge ein Ortswort hinzu: that book there, that house over there."
+        "es": "El español «ese» y «aquel» son ambos «that» en inglés («those» en plural). Si quieres precisar, añade una palabra de lugar: that book there, that house over there."
       }
     }
   ],
   "speak": {
-    "hu": "A this, that, these és those mutató szavak. A «this» és a «these» közeli dolgot jelöl, a «that» és a «those» távolit. Egyes szám: «this book», «that house». Többes szám: «these books», «those houses». Kérdés: «What is this?», «Who is that?». Rövid válaszban «it» vagy «they» áll: «Is this your bag? Yes, it is.» Vigyázat: ne mondd, hogy «this books», hanem «these books».",
     "en": "This, that, these and those point to things. «This» and «these» are for things that are near, «that» and «those» for things that are far. Singular: «this book», «that house». Plural: «these books», «those houses». Questions: «What is this?», «Who is that?». In a short answer use «it» or «they»: «Is this your bag? Yes, it is.» Careful: do not say «this books», say «these books».",
-    "es": "This, that, these y those son demostrativos. «This» y «these» son para cosas cercanas, «that» y «those» para cosas lejanas. Singular: «this book», «that house». Plural: «these books», «those houses». Preguntas: «What is this?», «Who is that?». En la respuesta corta se usa «it» o «they»: «Is this your bag? Yes, it is.» Cuidado: no digas «this books», di «these books».",
-    "de": "This, that, these und those sind Demonstrativpronomen. «This» und «these» stehen für nahe Dinge, «that» und «those» für weit entfernte. Singular: «this book», «that house». Plural: «these books», «those houses». Fragen: «What is this?», «Who is that?». In der Kurzantwort steht «it» oder «they»: «Is this your bag? Yes, it is.» Vorsicht: Sag nicht «this books», sondern «these books»."
+    "es": "This, that, these y those son demostrativos. «This» y «these» son para cosas cercanas, «that» y «those» para cosas lejanas. Singular: «this book», «that house». Plural: «these books», «those houses». Preguntas: «What is this?», «Who is that?». En la respuesta corta se usa «it» o «they»: «Is this your bag? Yes, it is.» Cuidado: no digas «this books», di «these books»."
   },
   "items": [
     {
@@ -228,30 +182,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „here” közeli dolgot jelez, a „book” egyes szám: This book here is new.",
         "en": "“Here” means near, and “book” is singular: This book here is new.",
-        "es": "«Here» indica cerca, y «book» es singular: This book here is new.",
-        "de": "„Here“ bedeutet nah, und „book“ ist Singular: This book here is new."
+        "es": "«Here» indica cerca, y «book» es singular: This book here is new."
       },
       "wrong": {
         "That": {
-          "hu": "A „that” távoli dolgot jelöl; a „here” közelit jelent: this.",
           "en": "“That” is for something far; “here” means near: this.",
-          "es": "«That» es para algo lejano; «here» indica cerca: this.",
-          "de": "„That“ steht für etwas Entferntes; „here“ bedeutet nah: this."
+          "es": "«That» es para algo lejano; «here» indica cerca: this."
         },
         "These": {
-          "hu": "A „these” többes szám; a „book” egyes szám: this book.",
           "en": "“These” is plural; “book” is singular: this book.",
-          "es": "«These» es plural; «book» es singular: this book.",
-          "de": "„These“ ist Plural; „book“ ist Singular: this book."
+          "es": "«These» es plural; «book» es singular: this book."
         }
       },
       "examples": [
         "This bag here is red.",
         "This house is big."
       ],
-      "tr": { "hu": "Ez a könyv itt új.", "en": "This book here is new.", "es": "Este libro de aquí es nuevo.", "de": "Dieses Buch hier ist neu." }
+      "tr": { "en": "This book here is new.", "es": "Este libro de aquí es nuevo." }
     },
     {
       "id": "tt-02",
@@ -263,30 +211,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A „there” távoli dolgot jelez, a „house” egyes szám: That house there is big.",
         "en": "“There” means far, and “house” is singular: That house there is big.",
-        "es": "«There» indica lejos, y «house» es singular: That house there is big.",
-        "de": "„There“ bedeutet weit, und „house“ ist Singular: That house there is big."
+        "es": "«There» indica lejos, y «house» es singular: That house there is big."
       },
       "wrong": {
         "This": {
-          "hu": "A „this” közeli dolgot jelöl; a „there” távolit jelent: that.",
           "en": "“This” is for something near; “there” means far: that.",
-          "es": "«This» es para algo cercano; «there» indica lejos: that.",
-          "de": "„This“ steht für etwas Nahes; „there“ bedeutet weit: that."
+          "es": "«This» es para algo cercano; «there» indica lejos: that."
         },
         "Those": {
-          "hu": "A „those” többes szám; a „house” egyes szám: that house.",
           "en": "“Those” is plural; “house” is singular: that house.",
-          "es": "«Those» es plural; «house» es singular: that house.",
-          "de": "„Those“ ist Plural; „house“ ist Singular: that house."
+          "es": "«Those» es plural; «house» es singular: that house."
         }
       },
       "examples": [
         "That car there is old.",
         "That man is my father."
       ],
-      "tr": { "hu": "Az a ház ott nagy.", "en": "That house there is big.", "es": "Esa casa de allá es grande.", "de": "Jenes Haus dort ist groß." }
+      "tr": { "en": "That house there is big.", "es": "Esa casa de allá es grande." }
     },
     {
       "id": "tt-15",
@@ -306,30 +248,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A „here” közelit jelent, a „books” többes szám: These books here are new.",
         "en": "“Here” means near, and “books” is plural: These books here are new.",
-        "es": "«Here» indica cerca, y «books» es plural: These books here are new.",
-        "de": "„Here“ bedeutet nah, und „books“ ist Plural: These books here are new."
+        "es": "«Here» indica cerca, y «books» es plural: These books here are new."
       },
       "wrong": {
         "This": {
-          "hu": "A „this” egyes szám; a „books” többes szám: these books.",
           "en": "“This” is singular; “books” is plural: these books.",
-          "es": "«This» es singular; «books» es plural: these books.",
-          "de": "„This“ ist Singular; „books“ ist Plural: these books."
+          "es": "«This» es singular; «books» es plural: these books."
         },
         "Those": {
-          "hu": "A „those” távoli dolgot jelöl; a „here” közelit jelent: these.",
           "en": "“Those” is for things far away; “here” means near: these.",
-          "es": "«Those» es para cosas lejanas; «here» indica cerca: these.",
-          "de": "„Those“ steht für weit entfernte Dinge; „here“ bedeutet nah: these."
+          "es": "«Those» es para cosas lejanas; «here» indica cerca: these."
         }
       },
       "examples": [
         "These bags here are red.",
         "These apples are big."
       ],
-      "tr": { "hu": "Ezek a könyvek itt újak.", "en": "These books here are new.", "es": "Estos libros de aquí son nuevos.", "de": "Diese Bücher hier sind neu." }
+      "tr": { "en": "These books here are new.", "es": "Estos libros de aquí son nuevos." }
     },
     {
       "id": "tt-04",
@@ -341,30 +277,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A „there” távolit jelent, a „cars” többes szám: Those cars there are red.",
         "en": "“There” means far, and “cars” is plural: Those cars there are red.",
-        "es": "«There» indica lejos, y «cars» es plural: Those cars there are red.",
-        "de": "„There“ bedeutet weit, und „cars“ ist Plural: Those cars there are red."
+        "es": "«There» indica lejos, y «cars» es plural: Those cars there are red."
       },
       "wrong": {
         "That": {
-          "hu": "A „that” egyes szám; a „cars” többes szám: those cars.",
           "en": "“That” is singular; “cars” is plural: those cars.",
-          "es": "«That» es singular; «cars» es plural: those cars.",
-          "de": "„That“ ist Singular; „cars“ ist Plural: those cars."
+          "es": "«That» es singular; «cars» es plural: those cars."
         },
         "These": {
-          "hu": "A „these” közeli dolgot jelöl; a „there” távolit jelent: those.",
           "en": "“These” is for things near; “there” means far: those.",
-          "es": "«These» es para cosas cercanas; «there» indica lejos: those.",
-          "de": "„These“ steht für nahe Dinge; „there“ bedeutet weit: those."
+          "es": "«These» es para cosas cercanas; «there» indica lejos: those."
         }
       },
       "examples": [
         "Those houses there are big.",
         "Those men are my brothers."
       ],
-      "tr": { "hu": "Azok az autók ott pirosak.", "en": "Those cars there are red.", "es": "Esos carros de allá son rojos.", "de": "Jene Autos dort sind rot." }
+      "tr": { "en": "Those cars there are red.", "es": "Esos carros de allá son rojos." }
     },
     {
       "kind": "why",
@@ -372,46 +302,34 @@
       "es": "Those are my friends.",
       "target": "Those",
       "tr": {
-        "hu": "Azok a barátaim.",
         "en": "Those are my friends.",
-        "es": "Aquellos son mis amigos.",
-        "de": "Das sind meine Freunde."
+        "es": "Aquellos son mis amigos."
       },
       "options": [
         {
           "text": {
-            "hu": "többes szám, távol: those",
             "en": "plural, far away: those",
-            "es": "plural, lejos: those",
-            "de": "Plural, weit weg: those"
+            "es": "plural, lejos: those"
           }
         },
         {
           "text": {
-            "hu": "többes szám, közel: these",
             "en": "plural, near: these",
-            "es": "plural, cerca: these",
-            "de": "Plural, nah: these"
+            "es": "plural, cerca: these"
           },
           "wrong": {
-            "hu": "A „these” a közeli dolgokra való; a „those” a távoliakra: Those are my friends (ott).",
             "en": "“These” is for near things; “those” is for far ones: Those are my friends (over there).",
-            "es": "«These» es para cosas cercanas; «those» para las lejanas: Those are my friends (allí).",
-            "de": "„These“ steht für nahe Dinge; „those“ für weit entfernte: Those are my friends (dort)."
+            "es": "«These» es para cosas cercanas; «those» para las lejanas: Those are my friends (allí)."
           }
         },
         {
           "text": {
-            "hu": "egyes szám, távol: that",
             "en": "singular, far away: that",
-            "es": "singular, lejos: that",
-            "de": "Singular, weit weg: that"
+            "es": "singular, lejos: that"
           },
           "wrong": {
-            "hu": "A „friends” és az „are” többes szám, ezért „those”, nem „that”.",
             "en": "“Friends” and “are” are plural, so “those”, not “that”.",
-            "es": "«Friends» y «are» son plural, por eso «those», no «that».",
-            "de": "„Friends“ und „are“ sind Plural, deshalb „those“, nicht „that“."
+            "es": "«Friends» y «are» son plural, por eso «those», no «that»."
           }
         }
       ],
@@ -427,30 +345,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az „are” és a „friends” többes szám, a „here” közelit jelent: These are my friends here.",
         "en": "“Are” and “friends” are plural, and “here” means near: These are my friends here.",
-        "es": "«Are» y «friends» son plural, y «here» indica cerca: These are my friends here.",
-        "de": "„Are“ und „friends“ sind Plural, und „here“ bedeutet nah: These are my friends here."
+        "es": "«Are» y «friends» son plural, y «here» indica cerca: These are my friends here."
       },
       "wrong": {
         "This": {
-          "hu": "A „this” egyes szám, mellé „is” kell: This is my friend.",
           "en": "“This” is singular and takes “is”: This is my friend.",
-          "es": "«This» es singular y lleva «is»: This is my friend.",
-          "de": "„This“ ist Singular und steht mit „is“: This is my friend."
+          "es": "«This» es singular y lleva «is»: This is my friend."
         },
         "That": {
-          "hu": "A „that” egyes szám és távolit jelöl: That is my friend.",
           "en": "“That” is singular and points far away: That is my friend.",
-          "es": "«That» es singular y señala lejos: That is my friend.",
-          "de": "„That“ ist Singular und zeigt in die Ferne: That is my friend."
+          "es": "«That» es singular y señala lejos: That is my friend."
         }
       },
       "examples": [
         "These are my brothers.",
         "These are my keys."
       ],
-      "tr": { "hu": "Itt vannak a barátaim.", "en": "These are my friends here.", "es": "Estos de aquí son mis amigos.", "de": "Das hier sind meine Freunde." }
+      "tr": { "en": "These are my friends here.", "es": "Estos de aquí son mis amigos." }
     },
     {
       "id": "tt-06",
@@ -462,30 +374,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A rövid válaszban a this / that helyett „it” áll: Yes, it is.",
         "en": "In a short answer “it” replaces this / that: Yes, it is.",
-        "es": "En la respuesta corta «it» sustituye a this / that: Yes, it is.",
-        "de": "In der Kurzantwort ersetzt „it“ this / that: Yes, it is."
+        "es": "En la respuesta corta «it» sustituye a this / that: Yes, it is."
       },
       "wrong": {
         "this": {
-          "hu": "A rövid válaszban nem ismételjük a „this”-t, hanem „it”-et mondunk.",
           "en": "In a short answer we do not repeat “this”; we say “it”.",
-          "es": "En la respuesta corta no se repite «this», se dice «it».",
-          "de": "In der Kurzantwort wiederholt man „this“ nicht, sondern sagt „it“."
+          "es": "En la respuesta corta no se repite «this», se dice «it»."
         },
         "that": {
-          "hu": "A „that” távolit jelöl; a válaszban „it” áll: Yes, it is.",
           "en": "“That” points far away; the answer uses “it”: Yes, it is.",
-          "es": "«That» señala lejos; la respuesta usa «it»: Yes, it is.",
-          "de": "„That“ zeigt in die Ferne; die Antwort nimmt „it“: Yes, it is."
+          "es": "«That» señala lejos; la respuesta usa «it»: Yes, it is."
         }
       },
       "examples": [
         "Is that your car? Yes, it is.",
         "Is this your phone? No, it is not."
       ],
-      "tr": { "hu": "Ez a te táskád? Igen, az.", "en": "Is this your bag? Yes, it is.", "es": "¿Esta es tu bolsa? Sí, lo es.", "de": "Ist das deine Tasche? Ja, das ist sie." }
+      "tr": { "en": "Is this your bag? Yes, it is.", "es": "¿Esta es tu bolsa? Sí, lo es." }
     },
     {
       "id": "tt-16",
@@ -505,30 +411,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A rövid válaszban a these / those helyett „they” áll: Yes, they are.",
         "en": "In a short answer “they” replaces these / those: Yes, they are.",
-        "es": "En la respuesta corta «they» sustituye a these / those: Yes, they are.",
-        "de": "In der Kurzantwort ersetzt „they“ these / those: Yes, they are."
+        "es": "En la respuesta corta «they» sustituye a these / those: Yes, they are."
       },
       "wrong": {
         "those": {
-          "hu": "A rövid válaszban nem ismételjük a „those”-t, hanem „they”-t mondunk.",
           "en": "In a short answer we do not repeat “those”; we say “they”.",
-          "es": "En la respuesta corta no se repite «those», se dice «they».",
-          "de": "In der Kurzantwort wiederholt man „those“ nicht, sondern sagt „they“."
+          "es": "En la respuesta corta no se repite «those», se dice «they»."
         },
         "these": {
-          "hu": "A „these” közelit jelöl; a válaszban „they” áll: Yes, they are.",
           "en": "“These” points near; the answer uses “they”: Yes, they are.",
-          "es": "«These» señala cerca; la respuesta usa «they»: Yes, they are.",
-          "de": "„These“ zeigt in die Nähe; die Antwort nimmt „they“: Yes, they are."
+          "es": "«These» señala cerca; la respuesta usa «they»: Yes, they are."
         }
       },
       "examples": [
         "Are these your keys? Yes, they are.",
         "Are those your friends? No, they are not."
       ],
-      "tr": { "hu": "Azok a te könyveid? Igen, azok.", "en": "Are those your books? Yes, they are.", "es": "¿Esos son tus libros? Sí, lo son.", "de": "Sind das deine Bücher? Ja, das sind sie." }
+      "tr": { "en": "Are those your books? Yes, they are.", "es": "¿Esos son tus libros? Sí, lo son." }
     },
     {
       "id": "tt-08",
@@ -540,30 +440,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az „over there” távolit jelent, és a „what’s” egyes szám: What’s that over there?",
         "en": "“Over there” means far, and “what’s” is singular: What’s that over there?",
-        "es": "«Over there» indica lejos, y «what’s» es singular: What’s that over there?",
-        "de": "„Over there“ bedeutet weit, und „what’s“ ist Singular: What’s that over there?"
+        "es": "«Over there» indica lejos, y «what’s» es singular: What’s that over there?"
       },
       "wrong": {
         "this": {
-          "hu": "A „this” közeli dolgot jelöl; az „over there” távolit jelent: that.",
           "en": "“This” is for something near; “over there” means far: that.",
-          "es": "«This» es para algo cercano; «over there» indica lejos: that.",
-          "de": "„This“ steht für etwas Nahes; „over there“ bedeutet weit: that."
+          "es": "«This» es para algo cercano; «over there» indica lejos: that."
         },
         "these": {
-          "hu": "A „these” többes szám; a „what’s” (what is) egyes szám: that.",
           "en": "“These” is plural; “what’s” (what is) is singular: that.",
-          "es": "«These» es plural; «what’s» (what is) es singular: that.",
-          "de": "„These“ ist Plural; „what’s“ (what is) ist Singular: that."
+          "es": "«These» es plural; «what’s» (what is) es singular: that."
         }
       },
       "examples": [
         "What's this?",
         "What's that on the table?"
       ],
-      "tr": { "hu": "Mi az ott?", "en": "What's that over there?", "es": "¿Qué es eso de allá?", "de": "Was ist das dort drüben?" }
+      "tr": { "en": "What's that over there?", "es": "¿Qué es eso de allá?" }
     },
     {
       "id": "tt-09",
@@ -575,30 +469,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A második táska távol van („over there”), és egyes szám: that.",
         "en": "The second bag is far away (“over there”) and singular: that.",
-        "es": "La segunda bolsa está lejos («over there») y es singular: that.",
-        "de": "Die zweite Tasche ist weit weg („over there“) und Singular: that."
+        "es": "La segunda bolsa está lejos («over there») y es singular: that."
       },
       "wrong": {
         "those": {
-          "hu": "A „those” többes szám; itt egy táskáról van szó, és az „is” egyes számot kíván.",
           "en": "“Those” is plural; here we talk about one bag, and “is” needs a singular.",
-          "es": "«Those» es plural; aquí se habla de una bolsa, y «is» pide un singular.",
-          "de": "„Those“ ist Plural; hier geht es um eine Tasche, und „is“ verlangt den Singular."
+          "es": "«Those» es plural; aquí se habla de una bolsa, y «is» pide un singular."
         },
         "these": {
-          "hu": "A „these” többes szám és közelit jelöl; az „is” egyes számot kíván, a táska pedig távol van.",
           "en": "“These” is plural and near; “is” needs a singular, and the bag is far away.",
-          "es": "«These» es plural y cercano; «is» pide un singular, y la bolsa está lejos.",
-          "de": "„These“ ist Plural und nah; „is“ verlangt den Singular, und die Tasche ist weit weg."
+          "es": "«These» es plural y cercano; «is» pide un singular, y la bolsa está lejos."
         }
       },
       "examples": [
         "This is my car, and that is your car.",
         "This is my house, and that is your house."
       ],
-      "tr": { "hu": "Ez az én táskám, az meg ott a te táskád.", "en": "This is my bag, and that is your bag over there.", "es": "Esta es mi bolsa y esa de allá es tu bolsa.", "de": "Das ist meine Tasche, und das dort drüben ist deine Tasche." }
+      "tr": { "en": "This is my bag, and that is your bag over there.", "es": "Esta es mi bolsa y esa de allá es tu bolsa." }
     },
     {
       "kind": "why",
@@ -606,46 +494,34 @@
       "es": "Is this your bag? Yes, it is.",
       "target": "it",
       "tr": {
-        "hu": "Ez a te táskád? Igen.",
         "en": "Is this your bag? Yes, it is.",
-        "es": "¿Es esta tu bolsa? Sí.",
-        "de": "Ist das deine Tasche? Ja."
+        "es": "¿Es esta tu bolsa? Sí."
       },
       "options": [
         {
           "text": {
-            "hu": "rövid válasz: az „it” helyettesíti a this / that szót",
             "en": "short answer: “it” replaces this / that",
-            "es": "respuesta corta: «it» sustituye a this / that",
-            "de": "Kurzantwort: „it“ ersetzt this / that"
+            "es": "respuesta corta: «it» sustituye a this / that"
           }
         },
         {
           "text": {
-            "hu": "rövid válasz: ismételjük a „this” szót",
             "en": "short answer: we repeat “this”",
-            "es": "respuesta corta: repetimos «this»",
-            "de": "Kurzantwort: wir wiederholen „this“"
+            "es": "respuesta corta: repetimos «this»"
           },
           "wrong": {
-            "hu": "A rövid válaszban nem ismételjük a mutató szót, hanem „it”-et mondunk: Yes, it is.",
             "en": "In a short answer we do not repeat the demonstrative; we say “it”: Yes, it is.",
-            "es": "En la respuesta corta no se repite el demostrativo, se dice «it»: Yes, it is.",
-            "de": "In der Kurzantwort wiederholt man das Demonstrativpronomen nicht, man sagt „it“: Yes, it is."
+            "es": "En la respuesta corta no se repite el demostrativo, se dice «it»: Yes, it is."
           }
         },
         {
           "text": {
-            "hu": "rövid válasz: „do” segédige",
             "en": "short answer: the helper verb “do”",
-            "es": "respuesta corta: el auxiliar «do»",
-            "de": "Kurzantwort: das Hilfsverb „do“"
+            "es": "respuesta corta: el auxiliar «do»"
           },
           "wrong": {
-            "hu": "A kérdés a to be-vel van („Is…”), ezért a válasz is: Yes, it is, nem „Yes, it does”.",
             "en": "The question uses to be (“Is…”), so the answer does too: Yes, it is, not “Yes, it does”.",
-            "es": "La pregunta usa to be («Is…»), así que la respuesta también: Yes, it is, no «Yes, it does».",
-            "de": "Die Frage benutzt to be („Is…“), also auch die Antwort: Yes, it is, nicht „Yes, it does“."
+            "es": "La pregunta usa to be («Is…»), así que la respuesta también: Yes, it is, no «Yes, it does»."
           }
         }
       ],
@@ -661,30 +537,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „man” egyes szám és távol van („over there”): that man.",
         "en": "“Man” is singular and far away (“over there”): that man.",
-        "es": "«Man» es singular y está lejos («over there»): that man.",
-        "de": "„Man“ ist Singular und weit weg („over there“): that man."
+        "es": "«Man» es singular y está lejos («over there»): that man."
       },
       "wrong": {
         "those": {
-          "hu": "A „those” többes szám; a „man” egyes szám: that man.",
           "en": "“Those” is plural; “man” is singular: that man.",
-          "es": "«Those» es plural; «man» es singular: that man.",
-          "de": "„Those“ ist Plural; „man“ ist Singular: that man."
+          "es": "«Those» es plural; «man» es singular: that man."
         },
         "these": {
-          "hu": "A „these” többes szám és közelit jelöl; a „man” egyes szám, és távol van: that man.",
           "en": "“These” is plural and near; “man” is singular and far away: that man.",
-          "es": "«These» es plural y cercano; «man» es singular y está lejos: that man.",
-          "de": "„These“ ist Plural und nah; „man“ ist Singular und weit weg: that man."
+          "es": "«These» es plural y cercano; «man» es singular y está lejos: that man."
         }
       },
       "examples": [
         "Who is that woman?",
         "Who is that boy over there?"
       ],
-      "tr": { "hu": "Ki az az ember ott?", "en": "Who is that man over there?", "es": "¿Quién es ese hombre de allá?", "de": "Wer ist dieser Mann dort drüben?" }
+      "tr": { "en": "Who is that man over there?", "es": "¿Quién es ese hombre de allá?" }
     },
     {
       "id": "tt-17",
@@ -704,30 +574,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A „these” után többes számú főnév áll: These houses are big.",
         "en": "After “these” comes a plural noun: These houses are big.",
-        "es": "Después de «these» va un nombre en plural: These houses are big.",
-        "de": "Nach „these“ steht ein Nomen im Plural: These houses are big."
+        "es": "Después de «these» va un nombre en plural: These houses are big."
       },
       "wrong": {
         "house": {
-          "hu": "A „these” többes szám, a „house” egyes szám: these houses.",
           "en": "“These” is plural, “house” is singular: these houses.",
-          "es": "«These» es plural, «house» es singular: these houses.",
-          "de": "„These“ ist Plural, „house“ ist Singular: these houses."
+          "es": "«These» es plural, «house» es singular: these houses."
         },
         "a house": {
-          "hu": "A „these” mellett nem áll „a”: az „a” egyes számú főnév előtt van.",
           "en": "There is no “a” after “these”: “a” goes before a singular noun.",
-          "es": "Después de «these» no va «a»: «a» va delante de un nombre singular.",
-          "de": "Nach „these“ steht kein „a“: „a“ steht vor einem Singular-Nomen."
+          "es": "Después de «these» no va «a»: «a» va delante de un nombre singular."
         }
       },
       "examples": [
         "Those dogs are big.",
         "These cars are old."
       ],
-      "tr": { "hu": "Ezek a házak nagyok.", "en": "These houses are big.", "es": "Estas casas son grandes.", "de": "Diese Häuser sind groß." }
+      "tr": { "en": "These houses are big.", "es": "Estas casas son grandes." }
     },
     {
       "id": "tt-12",
@@ -739,30 +603,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A „that” után egyes számú főnév áll: That cat is small.",
         "en": "After “that” comes a singular noun: That cat is small.",
-        "es": "Después de «that» va un nombre en singular: That cat is small.",
-        "de": "Nach „that“ steht ein Nomen im Singular: That cat is small."
+        "es": "Después de «that» va un nombre en singular: That cat is small."
       },
       "wrong": {
         "cats": {
-          "hu": "A „that” egyes szám, a „cats” többes szám: that cat.",
           "en": "“That” is singular, “cats” is plural: that cat.",
-          "es": "«That» es singular, «cats» es plural: that cat.",
-          "de": "„That“ ist Singular, „cats“ ist Plural: that cat."
+          "es": "«That» es singular, «cats» es plural: that cat."
         },
         "cates": {
-          "hu": "A „cates” nem létező alak; a „that” mellé az egyes szám kell: cat.",
           "en": "“Cates” does not exist; “that” needs the singular: cat.",
-          "es": "«Cates» no existe; «that» necesita el singular: cat.",
-          "de": "„Cates“ gibt es nicht; „that“ braucht den Singular: cat."
+          "es": "«Cates» no existe; «that» necesita el singular: cat."
         }
       },
       "examples": [
         "This dog is big.",
         "That house is old."
       ],
-      "tr": { "hu": "Az a macska kicsi.", "en": "That cat is small.", "es": "Ese gato es chico.", "de": "Jene Katze ist klein." }
+      "tr": { "en": "That cat is small.", "es": "Ese gato es chico." }
     },
     {
       "id": "tt-22",
@@ -804,30 +662,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „that’s” = that is, egyes számú, távoli személyre: That’s my brother over there.",
         "en": "“That’s” = that is, singular, for a person far away: That’s my brother over there.",
-        "es": "«That’s» = that is, singular, para una persona lejana: That’s my brother over there.",
-        "de": "„That’s“ = that is, Singular, für eine weit entfernte Person: That’s my brother over there."
+        "es": "«That’s» = that is, singular, para una persona lejana: That’s my brother over there."
       },
       "wrong": {
         "These": {
-          "hu": "A „these” többes szám, és mellé „are” kell; itt egy fivérről van szó.",
           "en": "“These” is plural and needs “are”; here we talk about one brother.",
-          "es": "«These» es plural y necesita «are»; aquí se habla de un hermano.",
-          "de": "„These“ ist Plural und braucht „are“; hier geht es um einen Bruder."
+          "es": "«These» es plural y necesita «are»; aquí se habla de un hermano."
         },
         "Those": {
-          "hu": "A „those” többes szám, és mellé „are” kell; itt egy fivérről van szó.",
           "en": "“Those” is plural and needs “are”; here we talk about one brother.",
-          "es": "«Those» es plural y necesita «are»; aquí se habla de un hermano.",
-          "de": "„Those“ ist Plural und braucht „are“; hier geht es um einen Bruder."
+          "es": "«Those» es plural y necesita «are»; aquí se habla de un hermano."
         }
       },
       "examples": [
         "That's my sister.",
         "That's my house over there."
       ],
-      "tr": { "hu": "Az ott a bátyám.", "en": "That's my brother over there.", "es": "Ese de allá es mi hermano.", "de": "Das dort drüben ist mein Bruder." }
+      "tr": { "en": "That's my brother over there.", "es": "Ese de allá es mi hermano." }
     },
     {
       "kind": "why",
@@ -835,46 +687,34 @@
       "es": "This is my sister here.",
       "target": "This",
       "tr": {
-        "hu": "Ő itt a húgom.",
         "en": "This is my sister here.",
-        "es": "Esta es mi hermana, aquí.",
-        "de": "Das ist meine Schwester hier."
+        "es": "Esta es mi hermana, aquí."
       },
       "options": [
         {
           "text": {
-            "hu": "egyes szám, közel: this (személy bemutatására is)",
             "en": "singular, near: this (also to introduce a person)",
-            "es": "singular, cerca: this (también para presentar a una persona)",
-            "de": "Singular, nah: this (auch, um eine Person vorzustellen)"
+            "es": "singular, cerca: this (también para presentar a una persona)"
           }
         },
         {
           "text": {
-            "hu": "egyes szám, távol: that",
             "en": "singular, far away: that",
-            "es": "singular, lejos: that",
-            "de": "Singular, weit weg: that"
+            "es": "singular, lejos: that"
           },
           "wrong": {
-            "hu": "A „here” közelit jelent, ezért „this”, nem „that”.",
             "en": "“Here” means near, so “this”, not “that”.",
-            "es": "«Here» indica cerca, por eso «this», no «that».",
-            "de": "„Here“ bedeutet nah, deshalb „this“, nicht „that“."
+            "es": "«Here» indica cerca, por eso «this», no «that»."
           }
         },
         {
           "text": {
-            "hu": "a „this” csak dologra mutathat, személyre nem",
             "en": "“this” can only point to things, not people",
-            "es": "«this» solo puede señalar cosas, no personas",
-            "de": "„this“ kann nur auf Dinge zeigen, nicht auf Personen"
+            "es": "«this» solo puede señalar cosas, no personas"
           },
           "wrong": {
-            "hu": "A „this” személyre is mutathat, főleg bemutatáskor: This is my sister.",
             "en": "“This” can point to people too, especially when introducing someone: This is my sister.",
-            "es": "«This» también puede señalar a personas, sobre todo al presentar a alguien: This is my sister.",
-            "de": "„This“ kann auch auf Personen zeigen, vor allem beim Vorstellen: This is my sister."
+            "es": "«This» también puede señalar a personas, sobre todo al presentar a alguien: This is my sister."
           }
         }
       ],
@@ -890,30 +730,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A „shoes” többes szám, a „here” közelit jelent: I like these shoes here.",
         "en": "“Shoes” is plural, and “here” means near: I like these shoes here.",
-        "es": "«Shoes» es plural, y «here» indica cerca: I like these shoes here.",
-        "de": "„Shoes“ ist Plural, und „here“ bedeutet nah: I like these shoes here."
+        "es": "«Shoes» es plural, y «here» indica cerca: I like these shoes here."
       },
       "wrong": {
         "this": {
-          "hu": "A „this” egyes szám; a „shoes” többes szám: these shoes.",
           "en": "“This” is singular; “shoes” is plural: these shoes.",
-          "es": "«This» es singular; «shoes» es plural: these shoes.",
-          "de": "„This“ ist Singular; „shoes“ ist Plural: these shoes."
+          "es": "«This» es singular; «shoes» es plural: these shoes."
         },
         "those": {
-          "hu": "A „those” távolit jelöl; a „here” közelit jelent: these.",
           "en": "“Those” points far away; “here” means near: these.",
-          "es": "«Those» señala lejos; «here» indica cerca: these.",
-          "de": "„Those“ zeigt in die Ferne; „here“ bedeutet nah: these."
+          "es": "«Those» señala lejos; «here» indica cerca: these."
         }
       },
       "examples": [
         "I like this hat.",
         "I like those shoes there."
       ],
-      "tr": { "hu": "Tetszik ez a cipő itt.", "en": "I like these shoes here.", "es": "Me gustan estos zapatos de aquí.", "de": "Ich mag diese Schuhe hier." }
+      "tr": { "en": "I like these shoes here.", "es": "Me gustan estos zapatos de aquí." }
     },
     {
       "id": "tt-18",

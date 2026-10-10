@@ -20,7 +20,7 @@ describe('GrammarDrill: presente-irregular full playthrough', () => {
     const onFinish = jest.fn();
     const total = lesson.items.filter((i) => i.kind === undefined).length;
     expect(total).toBeGreaterThanOrEqual(10);
-    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['choice']} />);
+    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['choice']} />);
 
     for (let i = 0; i < total; i++) {
       const options = screen.getAllByTestId('grammar-option');
@@ -35,7 +35,7 @@ describe('GrammarDrill: presente-irregular full playthrough', () => {
     const onFinish = jest.fn();
     const matchItems = lesson.items.filter((i): i is MatchItem => i.kind === 'match');
     expect(matchItems).toHaveLength(2); // the second matching item, with the new verbs
-    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['match']} />);
+    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['match']} />);
 
     for (const matchItem of matchItems) {
       matchItem.pairs.forEach((pair, li) => {
@@ -52,7 +52,7 @@ describe('GrammarDrill: presente-irregular full playthrough', () => {
     const onFinish = jest.fn();
     const total = lesson.items.filter((i) => i.kind === 'form').length;
     expect(total).toBeGreaterThanOrEqual(10);
-    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['form']} />);
+    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['form']} />);
 
     for (let i = 0; i < total; i++) {
       fireEvent.changeText(screen.getByTestId('formInput'), 'x');
@@ -67,7 +67,7 @@ describe('GrammarDrill: presente-irregular full playthrough', () => {
     const onFinish = jest.fn();
     const total = lesson.items.filter((i) => i.kind === 'why').length;
     expect(total).toBeGreaterThanOrEqual(6);
-    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['why']} />);
+    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['why']} />);
 
     for (let i = 0; i < total; i++) {
       const options = screen.getAllByTestId('grammar-option');

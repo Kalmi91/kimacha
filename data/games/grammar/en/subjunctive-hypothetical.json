@@ -3,42 +3,32 @@
   "topic": "subjunctive_hypothetical",
   "level": "C1",
   "title": {
-    "hu": "Kötőmód és hipotetikus szerkezetek (suggest that he see, It’s time we left, as if he knew)",
     "en": "The Subjunctive and Hypothetical Forms (suggest that he see, It’s time we left, as if he knew)",
-    "es": "El subjuntivo y las formas hipotéticas (suggest that he see, It’s time we left, as if he knew)",
-    "de": "Der Subjunktiv und hypothetische Formen (suggest that he see, It’s time we left, as if he knew)"
+    "es": "El subjuntivo y las formas hipotéticas (suggest that he see, It’s time we left, as if he knew)"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "Az angol kötőmód kicsi, de a spanyolul beszélők számára hasznos tudni, mert a spanyol „subjuntivo” gyakran itt is megjelenik. Három fő eset van. A felszólító kötőmód az insist, suggest, demand, recommend és az it is essential után: „I suggest that he see the doctor.” (az ige alapalak minden személyben). Az it’s time, would rather és as if után múlt idejű alak áll jelen értelemben: „It’s time we left.”, „I’d rather you stayed.”, „He talks as if he knew everything.”",
         "en": "The English subjunctive is small, but it is useful for Spanish speakers, because the Spanish “subjuntivo” often shows up here too. There are three main cases. The mandative subjunctive after insist, suggest, demand, recommend and it is essential: “I suggest that he see the doctor.” (the verb is the base form in every person). After it’s time, would rather and as if a past form is used with a present meaning: “It’s time we left.”, “I’d rather you stayed.”, “He talks as if he knew everything.”",
-        "es": "El subjuntivo del inglés es pequeño, pero útil para hispanohablantes, porque el «subjuntivo» del español suele aparecer también aquí. Hay tres casos principales. El subjuntivo mandativo después de insist, suggest, demand, recommend y it is essential: «I suggest that he see the doctor.» (el verbo va en forma base en todas las personas). Después de it’s time, would rather y as if se usa una forma de pasado con sentido de presente: «It’s time we left.», «I’d rather you stayed.», «He talks as if he knew everything.»",
-        "de": "Der englische Subjunktiv ist klein, aber für Spanischsprachige nützlich, weil auch der spanische „subjuntivo“ hier oft vorkommt. Es gibt drei Hauptfälle. Der Mandativ nach insist, suggest, demand, recommend und it is essential: „I suggest that he see the doctor.“ (das Verb steht in der Grundform bei allen Personen). Nach it’s time, would rather und as if steht eine Vergangenheitsform mit Gegenwartsbedeutung: „It’s time we left.“, „I’d rather you stayed.“, „He talks as if he knew everything.“"
+        "es": "El subjuntivo del inglés es pequeño, pero útil para hispanohablantes, porque el «subjuntivo» del español suele aparecer también aquí. Hay tres casos principales. El subjuntivo mandativo después de insist, suggest, demand, recommend y it is essential: «I suggest that he see the doctor.» (el verbo va en forma base en todas las personas). Después de it’s time, would rather y as if se usa una forma de pasado con sentido de presente: «It’s time we left.», «I’d rather you stayed.», «He talks as if he knew everything.»"
       }
     },
     {
       "kind": "table",
       "id": "sjv-forms",
       "title": {
-        "hu": "Melyik alak?",
         "en": "Which form?",
-        "es": "¿Qué forma uso?",
-        "de": "Welche Form?"
+        "es": "¿Qué forma uso?"
       },
       "header": [
         {
-          "hu": "Jelentés",
           "en": "Meaning",
-          "es": "Significado",
-          "de": "Bedeutung"
+          "es": "Significado"
         },
         {
-          "hu": "forma",
           "en": "form",
-          "es": "forma",
-          "de": "Form"
+          "es": "forma"
         }
       ],
       "rows": [
@@ -71,64 +61,50 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Felszólító kötőmód: suggest, insist, demand, recommend + that + alapalak",
         "en": "The mandative subjunctive: suggest, insist, demand, recommend + that + base form",
-        "es": "El subjuntivo mandativo: suggest, insist, demand, recommend + that + forma base",
-        "de": "Der Mandativ: suggest, insist, demand, recommend + that + Grundform"
+        "es": "El subjuntivo mandativo: suggest, insist, demand, recommend + that + forma base"
       },
       "items": [
         {
           "text": {
-            "hu": "A that-mondatban az ige alapalak minden személyben, a harmadik személyben is (nincs -s). Tagadás: not + alapige, a do nélkül. A brit angolban gyakori a should is: „I suggest that he should see…”.",
             "en": "In the that-clause the verb is the base form in every person, also in the third person (no -s). Negative: not + base verb, without do. British English often uses should too: “I suggest that he should see…”.",
-            "es": "En la cláusula con that el verbo va en forma base en todas las personas, también en la tercera (sin -s). Negación: not + verbo base, sin do. El inglés británico usa a menudo también should: «I suggest that he should see…».",
-            "de": "Im that-Satz steht das Verb in der Grundform bei allen Personen, auch bei der dritten (kein -s). Verneinung: not + Grundform, ohne do. Im britischen Englisch steht oft auch should: „I suggest that he should see…“."
+            "es": "En la cláusula con that el verbo va en forma base en todas las personas, también en la tercera (sin -s). Negación: not + verbo base, sin do. El inglés británico usa a menudo también should: «I suggest that he should see…»."
           },
           "examples": [
             {
               "es": "I suggest that he see the doctor.",
               "tr": {
-                "hu": "Azt javaslom, hogy keresse fel az orvost.",
                 "en": "I suggest that he see the doctor.",
-                "es": "Sugiero que vaya al médico.",
-                "de": "Ich schlage vor, dass er zum Arzt geht."
+                "es": "Sugiero que vaya al médico."
               }
             },
             {
               "es": "She insisted that he not be late.",
               "tr": {
-                "hu": "Ragaszkodott hozzá, hogy ne késsen el.",
                 "en": "She insisted that he not be late.",
-                "es": "Insistió en que no llegara tarde.",
-                "de": "Sie bestand darauf, dass er nicht zu spät kommt."
+                "es": "Insistió en que no llegara tarde."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Ugyanez áll a „it is essential / vital / important / necessary that” után: „It is essential that every student be present.”",
             "en": "The same applies after “it is essential / vital / important / necessary that”: “It is essential that every student be present.”",
-            "es": "Lo mismo vale después de «it is essential / vital / important / necessary that»: «It is essential that every student be present.»",
-            "de": "Dasselbe gilt nach „it is essential / vital / important / necessary that“: „It is essential that every student be present.“"
+            "es": "Lo mismo vale después de «it is essential / vital / important / necessary that»: «It is essential that every student be present.»"
           },
           "examples": [
             {
               "es": "It is essential that every student be present.",
               "tr": {
-                "hu": "Elengedhetetlen, hogy minden diák jelen legyen.",
                 "en": "It is essential that every student be present.",
-                "es": "Es esencial que todos los estudiantes estén presentes.",
-                "de": "Es ist wichtig, dass jeder Schüler anwesend ist."
+                "es": "Es esencial que todos los estudiantes estén presentes."
               }
             },
             {
               "es": "The manager demanded that the report be finished by Friday.",
               "tr": {
-                "hu": "A vezető azt követelte, hogy péntekre készüljön el a jelentés.",
                 "en": "The manager demanded that the report be finished by Friday.",
-                "es": "El gerente exigió que el reporte estuviera listo para el viernes.",
-                "de": "Der Manager verlangte, dass der Bericht bis Freitag fertig sei."
+                "es": "El gerente exigió que el reporte estuviera listo para el viernes."
               }
             }
           ]
@@ -138,36 +114,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "It’s time + múlt idő",
         "en": "It’s time + past simple",
-        "es": "It’s time + pasado simple",
-        "de": "It’s time + Past Simple"
+        "es": "It’s time + pasado simple"
       },
       "items": [
         {
           "text": {
-            "hu": "Az it’s time és az it’s high time után a múlt idejű alak jelen értelmű: most van itt az ideje. „It’s time we left.” Személytelenül: „It’s time to leave.”",
             "en": "After it’s time and it’s high time the past form has a present meaning: the time is now. “It’s time we left.” Impersonal: “It’s time to leave.”",
-            "es": "Después de it’s time e it’s high time la forma de pasado tiene sentido de presente: es hora ahora. «It’s time we left.» Impersonal: «It’s time to leave.»",
-            "de": "Nach it’s time und it’s high time hat die Vergangenheitsform Gegenwartsbedeutung: jetzt ist es Zeit. „It’s time we left.“ Unpersönlich: „It’s time to leave.“"
+            "es": "Después de it’s time e it’s high time la forma de pasado tiene sentido de presente: es hora ahora. «It’s time we left.» Impersonal: «It’s time to leave.»"
           },
           "examples": [
             {
               "es": "It's time we left.",
               "tr": {
-                "hu": "Ideje, hogy induljunk.",
                 "en": "It's time we left.",
-                "es": "Ya es hora de que nos vayamos.",
-                "de": "Es ist Zeit, dass wir gehen."
+                "es": "Ya es hora de que nos vayamos."
               }
             },
             {
               "es": "It's high time you started looking for a job.",
               "tr": {
-                "hu": "Legfőbb ideje, hogy munkát keress.",
                 "en": "It's high time you started looking for a job.",
-                "es": "Ya es más que hora de que empieces a buscar trabajo.",
-                "de": "Es ist höchste Zeit, dass du anfängst, einen Job zu suchen."
+                "es": "Ya es más que hora de que empieces a buscar trabajo."
               }
             }
           ]
@@ -177,36 +145,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Would rather + múlt idő",
         "en": "Would rather + past simple",
-        "es": "Would rather + pasado simple",
-        "de": "Would rather + Past Simple"
+        "es": "Would rather + pasado simple"
       },
       "items": [
         {
           "text": {
-            "hu": "Ha más személy cselekvéséről van szó: would rather + alany + múlt idő. Ha a saját cselekvésedről: would rather + alapige to nélkül.",
             "en": "For another person’s action: would rather + subject + past simple. For your own action: would rather + base verb without to.",
-            "es": "Para la acción de otra persona: would rather + sujeto + pasado simple. Para tu propia acción: would rather + verbo base sin to.",
-            "de": "Für die Handlung einer anderen Person: would rather + Subjekt + Past Simple. Für die eigene Handlung: would rather + Grundform ohne to."
+            "es": "Para la acción de otra persona: would rather + sujeto + pasado simple. Para tu propia acción: would rather + verbo base sin to."
           },
           "examples": [
             {
               "es": "I'd rather you stayed here tonight.",
               "tr": {
-                "hu": "Inkább azt szeretném, ha itt maradnál ma este.",
                 "en": "I'd rather you stayed here tonight.",
-                "es": "Preferiría que te quedaras aquí esta noche.",
-                "de": "Mir wäre lieber, du bliebest heute Abend hier."
+                "es": "Preferiría que te quedaras aquí esta noche."
               }
             },
             {
               "es": "I'd rather stay at home tonight.",
               "tr": {
-                "hu": "Inkább otthon maradnék ma este.",
                 "en": "I'd rather stay at home tonight.",
-                "es": "Prefiero quedarme en casa esta noche.",
-                "de": "Ich bleibe heute Abend lieber zu Hause."
+                "es": "Prefiero quedarme en casa esta noche."
               }
             }
           ]
@@ -216,36 +176,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "As if, as though és a rögzült kötőmódok",
         "en": "As if, as though and the fixed subjunctives",
-        "es": "As if, as though y los subjuntivos fijos",
-        "de": "As if, as though und die festen Subjunktive"
+        "es": "As if, as though y los subjuntivos fijos"
       },
       "items": [
         {
           "text": {
-            "hu": "Valótlan összehasonlításnál múlt idő vagy were áll, múltra vonatkozóan past perfect: „as if he knew”, „as if she had seen a ghost”. Rögzült alakok: „Long live the king!”, „Come what may”, „If need be”.",
             "en": "In an unreal comparison a past form or were is used, and for the past the past perfect: “as if he knew”, “as if she had seen a ghost”. Fixed forms: “Long live the king!”, “Come what may”, “If need be”.",
-            "es": "En una comparación irreal se usa una forma de pasado o were, y para el pasado el past perfect: «as if he knew», «as if she had seen a ghost». Formas fijas: «Long live the king!», «Come what may», «If need be».",
-            "de": "Bei einem unwirklichen Vergleich steht eine Vergangenheitsform oder were, für die Vergangenheit das Past Perfect: „as if he knew“, „as if she had seen a ghost“. Feste Formen: „Long live the king!“, „Come what may“, „If need be“."
+            "es": "En una comparación irreal se usa una forma de pasado o were, y para el pasado el past perfect: «as if he knew», «as if she had seen a ghost». Formas fijas: «Long live the king!», «Come what may», «If need be»."
           },
           "examples": [
             {
               "es": "He talks as if he knew everything.",
               "tr": {
-                "hu": "Úgy beszél, mintha mindent tudna.",
                 "en": "He talks as if he knew everything.",
-                "es": "Habla como si lo supiera todo.",
-                "de": "Er redet, als wüsste er alles."
+                "es": "Habla como si lo supiera todo."
               }
             },
             {
               "es": "Come what may, we will go.",
               "tr": {
-                "hu": "Történjék bármi, megyünk.",
                 "en": "Come what may, we will go.",
-                "es": "Pase lo que pase, iremos.",
-                "de": "Was auch kommt, wir gehen."
+                "es": "Pase lo que pase, iremos."
               }
             }
           ]
@@ -255,180 +207,140 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "A „that he sees” gyakori köznyelvben, de a választékos, standard forma az alapalak: „that he see”. A tagadás nem „doesn’t see”, hanem „not see”.",
         "en": "“That he sees” is common in casual speech, but the polished, standard form is the base form: “that he see”. The negative is not “doesn’t see” but “not see”.",
-        "es": "«That he sees» es común en el habla informal, pero la forma estándar y cuidada es la forma base: «that he see». La negación no es «doesn’t see» sino «not see».",
-        "de": "„That he sees“ ist umgangssprachlich üblich, aber die gehobene Standardform ist die Grundform: „that he see“. Die Verneinung ist nicht „doesn’t see“, sondern „not see“."
+        "es": "«That he sees» es común en el habla informal, pero la forma estándar y cuidada es la forma base: «that he see». La negación no es «doesn’t see» sino «not see»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "Spanyol hatás: a „quiero que vengas” szerkezet angolul nem kötőmód, hanem „I want you to come”. A want, expect és tell után tárgy + to-infinitív áll, nem that-mondat.",
         "en": "Spanish influence: the Spanish “quiero que vengas” is not a subjunctive in English but “I want you to come”. After want, expect and tell comes object + to-infinitive, not a that-clause.",
-        "es": "Influencia del español: el «quiero que vengas» del español no es subjuntivo en inglés sino «I want you to come». Después de want, expect y tell va objeto + to-infinitivo, no una cláusula con that.",
-        "de": "Einfluss des Spanischen: das spanische „quiero que vengas“ ist im Englischen kein Subjunktiv, sondern „I want you to come“. Nach want, expect und tell steht Objekt + to-Infinitiv, kein that-Satz."
+        "es": "Influencia del español: el «quiero que vengas» del español no es subjuntivo en inglés sino «I want you to come». Después de want, expect y tell va objeto + to-infinitivo, no una cláusula con that."
       }
     }
   ],
   "speak": {
-    "hu": "Az angol kötőmód kicsi, de hasznos. Az «insist», a «suggest», a «demand» és a «recommend» után, valamint az «it is essential that» után az ige alapalak minden személyben: «I suggest that he see the doctor». Az «it's time», a «would rather» és az «as if» után múlt idejű alak áll jelen értelemben: «It's time we left», «I'd rather you stayed», «He talks as if he knew everything». Rögzült alakok: «Long live the king» és «Come what may».",
     "en": "The English subjunctive is small but useful. After «insist», «suggest», «demand» and «recommend», and after «it is essential that», the verb is the base form in every person: «I suggest that he see the doctor». After «it's time», «would rather» and «as if» a past form is used with a present meaning: «It's time we left», «I'd rather you stayed», «He talks as if he knew everything». Fixed forms: «Long live the king» and «Come what may».",
-    "es": "El subjuntivo del inglés es pequeño pero útil. Después de «insist», «suggest», «demand» y «recommend», y después de «it is essential that», el verbo va en forma base en todas las personas: «I suggest that he see the doctor». Después de «it's time», «would rather» y «as if» se usa una forma de pasado con sentido de presente: «It's time we left», «I'd rather you stayed», «He talks as if he knew everything». Formas fijas: «Long live the king» y «Come what may».",
-    "de": "Der englische Subjunktiv ist klein, aber nützlich. Nach «insist», «suggest», «demand» und «recommend» sowie nach «it is essential that» steht das Verb in der Grundform bei allen Personen: «I suggest that he see the doctor». Nach «it's time», «would rather» und «as if» steht eine Vergangenheitsform mit Gegenwartsbedeutung: «It's time we left», «I'd rather you stayed», «He talks as if he knew everything». Feste Formen: «Long live the king» und «Come what may»."
+    "es": "El subjuntivo del inglés es pequeño pero útil. Después de «insist», «suggest», «demand» y «recommend», y después de «it is essential that», el verbo va en forma base en todas las personas: «I suggest that he see the doctor». Después de «it's time», «would rather» y «as if» se usa una forma de pasado con sentido de presente: «It's time we left», «I'd rather you stayed», «He talks as if he knew everything». Formas fijas: «Long live the king» y «Come what may»."
   },
   "glossary": [
     {
       "word": "advise",
       "gloss": {
-        "hu": "tanácsol",
         "en": "to say what someone should do",
-        "es": "aconsejar",
-        "de": "raten"
+        "es": "aconsejar"
       }
     },
     {
       "word": "cried",
       "gloss": {
-        "hu": "sírt (a cry múltja)",
         "en": "past form of cry",
-        "es": "lloró (pasado de cry)",
-        "de": "weinte (Past von cry)"
+        "es": "lloró (pasado de cry)"
       }
     },
     {
       "word": "freedom",
       "gloss": {
-        "hu": "szabadság",
         "en": "being free",
-        "es": "libertad",
-        "de": "Freiheit"
+        "es": "libertad"
       }
     },
     {
       "word": "getting",
       "gloss": {
-        "hu": "egyre ... lesz (get)",
         "en": "becoming (get)",
-        "es": "poniéndose, volviéndose (get)",
-        "de": "werden (get)"
+        "es": "poniéndose, volviéndose (get)"
       }
     },
     {
       "word": "ghost",
       "gloss": {
-        "hu": "szellem",
         "en": "the spirit of a dead person",
-        "es": "fantasma",
-        "de": "Geist"
+        "es": "fantasma"
       }
     },
     {
       "word": "i'd",
       "gloss": {
-        "hu": "én ...-nék (I would)",
         "en": "I would",
-        "es": "yo (condicional) (I would)",
-        "de": "ich würde (I would)"
+        "es": "yo (condicional) (I would)"
       }
     },
     {
       "word": "king",
       "gloss": {
-        "hu": "király",
         "en": "a man who rules a country",
-        "es": "rey",
-        "de": "König"
+        "es": "rey"
       }
     },
     {
       "word": "knew",
       "gloss": {
-        "hu": "tudta (a know múltja)",
         "en": "past form of know",
-        "es": "sabía (pasado de know)",
-        "de": "wusste (Past von know)"
+        "es": "sabía (pasado de know)"
       }
     },
     {
       "word": "postponed",
       "gloss": {
-        "hu": "elhalasztott",
         "en": "moved to a later time",
-        "es": "pospuesto",
-        "de": "verschoben"
+        "es": "pospuesto"
       }
     },
     {
       "word": "queen",
       "gloss": {
-        "hu": "királynő",
         "en": "a woman who rules a country",
-        "es": "reina",
-        "de": "Königin"
+        "es": "reina"
       }
     },
     {
       "word": "rather",
       "gloss": {
-        "hu": "inkább",
         "en": "more willingly",
-        "es": "más bien, preferir",
-        "de": "lieber"
+        "es": "más bien, preferir"
       }
     },
     {
       "word": "rich",
       "gloss": {
-        "hu": "gazdag",
         "en": "with a lot of money",
-        "es": "rico",
-        "de": "reich"
+        "es": "rico"
       }
     },
     {
       "word": "stay",
       "gloss": {
-        "hu": "marad",
         "en": "to stay",
-        "es": "quedarse",
-        "de": "bleiben"
+        "es": "quedarse"
       }
     },
     {
       "word": "staying",
       "gloss": {
-        "hu": "marad (ige-ing alak)",
         "en": "-ing form of stay",
-        "es": "quedándose (forma -ing de stay)",
-        "de": "bleiben (-ing-Form von stay)"
+        "es": "quedándose (forma -ing de stay)"
       }
     },
     {
       "word": "suggest",
       "gloss": {
-        "hu": "javasol",
         "en": "to say an idea",
-        "es": "sugerir",
-        "de": "vorschlagen"
+        "es": "sugerir"
       }
     },
     {
       "word": "though",
       "gloss": {
-        "hu": "bár, mégis",
         "en": "although",
-        "es": "aunque",
-        "de": "obwohl"
+        "es": "aunque"
       }
     },
     {
       "word": "vital",
       "gloss": {
-        "hu": "létfontosságú",
         "en": "very important",
-        "es": "vital",
-        "de": "lebenswichtig"
+        "es": "vital"
       }
     }
   ],
@@ -443,30 +355,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A suggest that után az ige alapalak: that he see.",
         "en": "After suggest that the verb is the base form: that he see.",
-        "es": "Después de suggest that el verbo va en forma base: that he see.",
-        "de": "Nach suggest that steht die Grundform: that he see."
+        "es": "Después de suggest that el verbo va en forma base: that he see."
       },
       "wrong": {
         "seeing": {
-          "hu": "A that he seeing nem helyes; ragozott vagy alapalak kell, -ing nem.",
           "en": "“That he seeing” is not correct; you need a finite or base form, not -ing.",
-          "es": "«That he seeing» no es correcto; hace falta una forma conjugada o base, no -ing.",
-          "de": "„That he seeing“ ist nicht korrekt; man braucht eine finite oder Grundform, kein -ing."
+          "es": "«That he seeing» no es correcto; hace falta una forma conjugada o base, no -ing."
         },
         "to see": {
-          "hu": "A that he to see nem helyes; a that után nincs to-infinitív.",
           "en": "“That he to see” is not correct; after that there is no to-infinitive.",
-          "es": "«That he to see» no es correcto; después de that no va to-infinitivo.",
-          "de": "„That he to see“ ist nicht korrekt; nach that steht kein to-Infinitiv."
+          "es": "«That he to see» no es correcto; después de that no va to-infinitivo."
         }
       },
       "examples": [
         "I suggest that she go.",
         "We recommend that he wait."
       ],
-      "tr": { "hu": "Azt javaslom, hogy menjen el orvoshoz.", "en": "I suggest that he see the doctor.", "es": "Sugiero que él vea al médico.", "de": "Ich schlage vor, dass er den Arzt aufsucht." }
+      "tr": { "en": "I suggest that he see the doctor.", "es": "Sugiero que él vea al médico." }
     },
     {
       "id": "sjv-02",
@@ -478,30 +384,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A kötőmód tagadása: not + alapige.",
         "en": "The negative of the subjunctive: not + base verb.",
-        "es": "La negación del subjuntivo: not + verbo base.",
-        "de": "Die Verneinung des Subjunktivs: not + Grundform."
+        "es": "La negación del subjuntivo: not + verbo base."
       },
       "wrong": {
         "didn't": {
-          "hu": "A didn’t be nem helyes; a be előtt didn’t nem állhat.",
           "en": "“Didn’t be” is not correct; didn’t cannot stand before be.",
-          "es": "«Didn’t be» no es correcto; didn’t no puede ir antes de be.",
-          "de": "„Didn’t be“ ist nicht korrekt; didn’t kann nicht vor be stehen."
+          "es": "«Didn’t be» no es correcto; didn’t no puede ir antes de be."
         },
         "won't": {
-          "hu": "A won’t be jövőre vonatkozik, és nem kötőmód.",
           "en": "Won’t be refers to the future and is not a subjunctive.",
-          "es": "Won’t be se refiere al futuro y no es subjuntivo.",
-          "de": "Won’t be bezieht sich auf die Zukunft und ist kein Subjunktiv."
+          "es": "Won’t be se refiere al futuro y no es subjuntivo."
         }
       },
       "examples": [
         "He insisted that she not go.",
         "I ask that you not tell."
       ],
-      "tr": { "hu": "Ragaszkodott hozzá, hogy a férfi ne késsen el.", "en": "She insisted that he not be late.", "es": "Ella insistió en que él no llegara tarde.", "de": "Sie bestand darauf, dass er nicht zu spät kommt." }
+      "tr": { "en": "She insisted that he not be late.", "es": "Ella insistió en que él no llegara tarde." }
     },
     {
       "id": "sjv-03",
@@ -513,30 +413,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az it is essential that után a be alapalak: that every student be.",
         "en": "After it is essential that the base form be: that every student be.",
-        "es": "Después de it is essential that la forma base be: that every student be.",
-        "de": "Nach it is essential that die Grundform be: that every student be."
+        "es": "Después de it is essential that la forma base be: that every student be."
       },
       "wrong": {
         "being": {
-          "hu": "A that every student being nem helyes; ragozott vagy alapalak kell.",
           "en": "“That every student being” is not correct; you need a finite or base form.",
-          "es": "«That every student being» no es correcto; hace falta una forma conjugada o base.",
-          "de": "„That every student being“ ist nicht korrekt; man braucht eine finite oder Grundform."
+          "es": "«That every student being» no es correcto; hace falta una forma conjugada o base."
         },
         "to be": {
-          "hu": "A that every student to be nem helyes; a that után nincs to-infinitív.",
           "en": "“That every student to be” is not correct; after that there is no to-infinitive.",
-          "es": "«That every student to be» no es correcto; después de that no va to-infinitivo.",
-          "de": "„That every student to be“ ist nicht korrekt; nach that steht kein to-Infinitiv."
+          "es": "«That every student to be» no es correcto; después de that no va to-infinitivo."
         }
       },
       "examples": [
         "It is vital that she be here.",
         "It is important that he be calm."
       ],
-      "tr": { "hu": "Alapvető fontosságú, hogy minden diák jelen legyen.", "en": "It is essential that every student be present.", "es": "Es esencial que cada estudiante esté presente.", "de": "Es ist wichtig, dass jeder Schüler anwesend ist." }
+      "tr": { "en": "It is essential that every student be present.", "es": "Es esencial que cada estudiante esté presente." }
     },
     {
       "id": "sjv-04",
@@ -548,30 +442,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A demand that után a be alapalak + igenév: that the report be finished.",
         "en": "After demand that the base form be + a participle: that the report be finished.",
-        "es": "Después de demand that la forma base be + un participio: that the report be finished.",
-        "de": "Nach demand that die Grundform be + ein Partizip: that the report be finished."
+        "es": "Después de demand that la forma base be + un participio: that the report be finished."
       },
       "wrong": {
         "been": {
-          "hu": "A that the report been finished nem helyes; a been előtt have kellene.",
           "en": "“That the report been finished” is not correct; before been you would need have.",
-          "es": "«That the report been finished» no es correcto; antes de been haría falta have.",
-          "de": "„That the report been finished“ ist nicht korrekt; vor been bräuchte man have."
+          "es": "«That the report been finished» no es correcto; antes de been haría falta have."
         },
         "being": {
-          "hu": "A that the report being finished nem helyes; alapalak kell (be).",
           "en": "“That the report being finished” is not correct; you need the base form (be).",
-          "es": "«That the report being finished» no es correcto; hace falta la forma base (be).",
-          "de": "„That the report being finished“ ist nicht korrekt; man braucht die Grundform (be)."
+          "es": "«That the report being finished» no es correcto; hace falta la forma base (be)."
         }
       },
       "examples": [
         "They demanded that it be done.",
         "She asked that the door be locked."
       ],
-      "tr": { "hu": "Az igazgató követelte, hogy a jelentés péntekre készüljön el.", "en": "The manager demanded that the report be finished by Friday.", "es": "El gerente exigió que el informe estuviera terminado para el viernes.", "de": "Der Manager verlangte, dass der Bericht bis Freitag fertiggestellt wird." }
+      "tr": { "en": "The manager demanded that the report be finished by Friday.", "es": "El gerente exigió que el informe estuviera terminado para el viernes." }
     },
     {
       "id": "sjv-05",
@@ -583,30 +471,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Az it’s time után múlt idejű alak jelen értelemben: It’s time we went.",
         "en": "After it’s time a past form with a present meaning: It’s time we went.",
-        "es": "Después de it’s time una forma de pasado con sentido de presente: It’s time we went.",
-        "de": "Nach it’s time eine Vergangenheitsform mit Gegenwartsbedeutung: It’s time we went."
+        "es": "Después de it’s time una forma de pasado con sentido de presente: It’s time we went."
       },
       "wrong": {
         "going": {
-          "hu": "Az it’s time we going nem helyes; ragozott igealak kell.",
           "en": "“It’s time we going” is not correct; you need a finite verb form.",
-          "es": "«It’s time we going» no es correcto; hace falta una forma verbal conjugada.",
-          "de": "„It’s time we going“ ist nicht korrekt; man braucht eine finite Verbform."
+          "es": "«It’s time we going» no es correcto; hace falta una forma verbal conjugada."
         },
         "to go": {
-          "hu": "Az it’s time we to go nem helyes; vagy it’s time to go, vagy it’s time we went.",
           "en": "“It’s time we to go” is not correct; either it’s time to go or it’s time we went.",
-          "es": "«It’s time we to go» no es correcto; o it’s time to go o it’s time we went.",
-          "de": "„It’s time we to go“ ist nicht korrekt; entweder it’s time to go oder it’s time we went."
+          "es": "«It’s time we to go» no es correcto; o it’s time to go o it’s time we went."
         }
       },
       "examples": [
         "It's time you slept.",
         "It's time we ate."
       ],
-      "tr": { "hu": "Ideje hazamennünk.", "en": "It's time we went home.", "es": "Es hora de que nos fuéramos a casa.", "de": "Es ist Zeit, dass wir nach Hause gehen." }
+      "tr": { "en": "It's time we went home.", "es": "Es hora de que nos fuéramos a casa." }
     },
     {
       "id": "sjv-06",
@@ -618,30 +500,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az it’s high time után múlt idejű alak: you started.",
         "en": "After it’s high time a past form: you started.",
-        "es": "Después de it’s high time una forma de pasado: you started.",
-        "de": "Nach it’s high time eine Vergangenheitsform: you started."
+        "es": "Después de it’s high time una forma de pasado: you started."
       },
       "wrong": {
         "starting": {
-          "hu": "Az it’s high time you starting nem helyes; ragozott igealak kell.",
           "en": "“It’s high time you starting” is not correct; you need a finite verb form.",
-          "es": "«It’s high time you starting» no es correcto; hace falta una forma verbal conjugada.",
-          "de": "„It’s high time you starting“ ist nicht korrekt; man braucht eine finite Verbform."
+          "es": "«It’s high time you starting» no es correcto; hace falta una forma verbal conjugada."
         },
         "to start": {
-          "hu": "Az it’s high time you to start nem helyes; it’s high time you started kell.",
           "en": "“It’s high time you to start” is not correct; you need it’s high time you started.",
-          "es": "«It’s high time you to start» no es correcto; hace falta it’s high time you started.",
-          "de": "„It’s high time you to start“ ist nicht korrekt; man braucht it’s high time you started."
+          "es": "«It’s high time you to start» no es correcto; hace falta it’s high time you started."
         }
       },
       "examples": [
         "It's high time he left.",
         "It's high time they paid."
       ],
-      "tr": { "hu": "Legfőbb ideje, hogy elkezdj munkát keresni.", "en": "It's high time you started looking for a job.", "es": "Ya es hora de que empezaras a buscar trabajo.", "de": "Es ist höchste Zeit, dass du anfängst, einen Job zu suchen." }
+      "tr": { "en": "It's high time you started looking for a job.", "es": "Ya es hora de que empezaras a buscar trabajo." }
     },
     {
       "id": "sjv-07",
@@ -653,30 +529,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Másik személy cselekvése: would rather + alany + múlt idő.",
         "en": "Another person’s action: would rather + subject + past simple.",
-        "es": "La acción de otra persona: would rather + sujeto + pasado simple.",
-        "de": "Die Handlung einer anderen Person: would rather + Subjekt + Past Simple."
+        "es": "La acción de otra persona: would rather + sujeto + pasado simple."
       },
       "wrong": {
         "staying": {
-          "hu": "Az I’d rather you staying nem helyes; ragozott igealak kell.",
           "en": "“I’d rather you staying” is not correct; you need a finite verb form.",
-          "es": "«I’d rather you staying» no es correcto; hace falta una forma verbal conjugada.",
-          "de": "„I’d rather you staying“ ist nicht korrekt; man braucht eine finite Verbform."
+          "es": "«I’d rather you staying» no es correcto; hace falta una forma verbal conjugada."
         },
         "to stay": {
-          "hu": "Az I’d rather you to stay nem helyes; a would rather után nincs to.",
           "en": "“I’d rather you to stay” is not correct; after would rather there is no to.",
-          "es": "«I’d rather you to stay» no es correcto; después de would rather no va to.",
-          "de": "„I’d rather you to stay“ ist nicht korrekt; nach would rather steht kein to."
+          "es": "«I’d rather you to stay» no es correcto; después de would rather no va to."
         }
       },
       "examples": [
         "I'd rather you called.",
         "I'd rather he waited."
       ],
-      "tr": { "hu": "Inkább szeretném, ha ma éjjel itt maradnál.", "en": "I'd rather you stayed here tonight.", "es": "Preferiría que te quedaras aquí esta noche.", "de": "Es wäre mir lieber, wenn du heute Nacht hier bliebest." }
+      "tr": { "en": "I'd rather you stayed here tonight.", "es": "Preferiría que te quedaras aquí esta noche." }
     },
     {
       "id": "sjv-08",
@@ -688,30 +558,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Saját cselekvés: would rather + alapige.",
         "en": "Your own action: would rather + base verb.",
-        "es": "Tu propia acción: would rather + verbo base.",
-        "de": "Die eigene Handlung: would rather + Grundform."
+        "es": "Tu propia acción: would rather + verbo base."
       },
       "wrong": {
         "stayed": {
-          "hu": "Az I’d rather stayed nem helyes; saját cselekvésnél alapige kell.",
           "en": "“I’d rather stayed” is not correct; for your own action you need the base verb.",
-          "es": "«I’d rather stayed» no es correcto; para tu propia acción hace falta el verbo base.",
-          "de": "„I’d rather stayed“ ist nicht korrekt; für die eigene Handlung braucht man die Grundform."
+          "es": "«I’d rather stayed» no es correcto; para tu propia acción hace falta el verbo base."
         },
         "to stay": {
-          "hu": "Az I’d rather to stay nem helyes; a would rather után nincs to.",
           "en": "“I’d rather to stay” is not correct; after would rather there is no to.",
-          "es": "«I’d rather to stay» no es correcto; después de would rather no va to.",
-          "de": "„I’d rather to stay“ ist nicht korrekt; nach would rather steht kein to."
+          "es": "«I’d rather to stay» no es correcto; después de would rather no va to."
         }
       },
       "examples": [
         "I'd rather walk.",
         "I'd rather wait."
       ],
-      "tr": { "hu": "Inkább otthon maradnék ma este.", "en": "I'd rather stay at home tonight.", "es": "Preferiría quedarme en casa esta noche.", "de": "Ich würde heute Abend lieber zu Hause bleiben." }
+      "tr": { "en": "I'd rather stay at home tonight.", "es": "Preferiría quedarme en casa esta noche." }
     },
     {
       "id": "sjv-09",
@@ -723,30 +587,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Valótlan összehasonlítás: as if + múlt idő.",
         "en": "An unreal comparison: as if + past simple.",
-        "es": "Una comparación irreal: as if + pasado simple.",
-        "de": "Ein unwirklicher Vergleich: as if + Past Simple."
+        "es": "Una comparación irreal: as if + pasado simple."
       },
       "wrong": {
         "knowing": {
-          "hu": "Az as if he knowing nem helyes; ragozott igealak kell.",
           "en": "“As if he knowing” is not correct; you need a finite verb form.",
-          "es": "«As if he knowing» no es correcto; hace falta una forma verbal conjugada.",
-          "de": "„As if he knowing“ ist nicht korrekt; man braucht eine finite Verbform."
+          "es": "«As if he knowing» no es correcto; hace falta una forma verbal conjugada."
         },
         "to know": {
-          "hu": "Az as if he to know nem helyes; ragozott igealak kell.",
           "en": "“As if he to know” is not correct; you need a finite verb form.",
-          "es": "«As if he to know» no es correcto; hace falta una forma verbal conjugada.",
-          "de": "„As if he to know“ ist nicht korrekt; man braucht eine finite Verbform."
+          "es": "«As if he to know» no es correcto; hace falta una forma verbal conjugada."
         }
       },
       "examples": [
         "She acts as if she owned it.",
         "He talks as if he knew me."
       ],
-      "tr": { "hu": "Úgy beszél, mintha mindent tudna.", "en": "He talks as if he knew everything.", "es": "Él habla como si lo supiera todo.", "de": "Er redet, als ob er alles wüsste." }
+      "tr": { "en": "He talks as if he knew everything.", "es": "Él habla como si lo supiera todo." }
     },
     {
       "id": "sjv-10",
@@ -758,30 +616,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Múltra vonatkozó valótlan összehasonlítás: as though + past perfect.",
         "en": "An unreal comparison about the past: as though + past perfect.",
-        "es": "Una comparación irreal sobre el pasado: as though + past perfect.",
-        "de": "Ein unwirklicher Vergleich über die Vergangenheit: as though + Past Perfect."
+        "es": "Una comparación irreal sobre el pasado: as though + past perfect."
       },
       "wrong": {
         "sees": {
-          "hu": "A sees jelen idejű; a looked múltat jelez.",
           "en": "Sees is present; looked points to the past.",
-          "es": "Sees es presente; looked señala el pasado.",
-          "de": "Sees ist Präsens; looked weist auf die Vergangenheit."
+          "es": "Sees es presente; looked señala el pasado."
         },
         "has seen": {
-          "hu": "A has seen jelenre kihat; a looked múltat jelez, ezért had seen kell.",
           "en": "Has seen has a result for now; looked points to the past, so you need had seen.",
-          "es": "Has seen tiene un resultado para ahora; looked señala el pasado, por eso hace falta had seen.",
-          "de": "Has seen hat ein Ergebnis für jetzt; looked weist auf die Vergangenheit, deshalb braucht man had seen."
+          "es": "Has seen tiene un resultado para ahora; looked señala el pasado, por eso hace falta had seen."
         }
       },
       "examples": [
         "He looked as if he had cried.",
         "She felt as though she had won."
       ],
-      "tr": { "hu": "Úgy nézett ki, mintha szellemet látott volna.", "en": "She looked as though she had seen a ghost.", "es": "Ella se veía como si hubiera visto un fantasma.", "de": "Sie sah aus, als hätte sie ein Gespenst gesehen." }
+      "tr": { "en": "She looked as though she had seen a ghost.", "es": "Ella se veía como si hubiera visto un fantasma." }
     },
     {
       "id": "sjv-11",
@@ -793,30 +645,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Valótlan összehasonlítás a be igével: as if he were.",
         "en": "An unreal comparison with be: as if he were.",
-        "es": "Una comparación irreal con be: as if he were.",
-        "de": "Ein unwirklicher Vergleich mit be: as if he were."
+        "es": "Una comparación irreal con be: as if he were."
       },
       "wrong": {
         "being": {
-          "hu": "Az as if he being nem helyes; ragozott igealak kell (were).",
           "en": "“As if he being” is not correct; you need a finite verb form (were).",
-          "es": "«As if he being» no es correcto; hace falta una forma verbal conjugada (were).",
-          "de": "„As if he being“ ist nicht korrekt; man braucht eine finite Verbform (were)."
+          "es": "«As if he being» no es correcto; hace falta una forma verbal conjugada (were)."
         },
         "to be": {
-          "hu": "Az as if he to be nem helyes; ragozott igealak kell (were).",
           "en": "“As if he to be” is not correct; you need a finite verb form (were).",
-          "es": "«As if he to be» no es correcto; hace falta una forma verbal conjugada (were).",
-          "de": "„As if he to be“ ist nicht korrekt; man braucht eine finite Verbform (were)."
+          "es": "«As if he to be» no es correcto; hace falta una forma verbal conjugada (were)."
         }
       },
       "examples": [
         "She acts as if she were queen.",
         "He talks as if he were rich."
       ],
-      "tr": { "hu": "Úgy viselkedik, mintha ő lenne a főnök.", "en": "He behaves as if he were the boss.", "es": "Él se comporta como si fuera el jefe.", "de": "Er führt sich auf, als wäre er der Chef." }
+      "tr": { "en": "He behaves as if he were the boss.", "es": "Él se comporta como si fuera el jefe." }
     },
     {
       "id": "sjv-12",
@@ -828,30 +674,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A recommend that után alapalak: that she get.",
         "en": "After recommend that the base form: that she get.",
-        "es": "Después de recommend that la forma base: that she get.",
-        "de": "Nach recommend that die Grundform: that she get."
+        "es": "Después de recommend that la forma base: that she get."
       },
       "wrong": {
         "getting": {
-          "hu": "A that she getting nem helyes; ragozott vagy alapalak kell.",
           "en": "“That she getting” is not correct; you need a finite or base form.",
-          "es": "«That she getting» no es correcto; hace falta una forma conjugada o base.",
-          "de": "„That she getting“ ist nicht korrekt; man braucht eine finite oder Grundform."
+          "es": "«That she getting» no es correcto; hace falta una forma conjugada o base."
         },
         "to get": {
-          "hu": "A that she to get nem helyes; a that után nincs to-infinitív.",
           "en": "“That she to get” is not correct; after that there is no to-infinitive.",
-          "es": "«That she to get» no es correcto; después de that no va to-infinitivo.",
-          "de": "„That she to get“ ist nicht korrekt; nach that steht kein to-Infinitiv."
+          "es": "«That she to get» no es correcto; después de that no va to-infinitivo."
         }
       },
       "examples": [
         "I recommend that he rest.",
         "They advise that she stay."
       ],
-      "tr": { "hu": "Az orvos azt javasolta, hogy pihenjen többet.", "en": "The doctor recommended that she get more rest.", "es": "El médico recomendó que ella descansara más.", "de": "Der Arzt empfahl, dass sie sich mehr ausruht." }
+      "tr": { "en": "The doctor recommended that she get more rest.", "es": "El médico recomendó que ella descansara más." }
     },
     {
       "id": "sjv-13",
@@ -863,30 +703,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Az it is vital that után alapalak: that nobody know.",
         "en": "After it is vital that the base form: that nobody know.",
-        "es": "Después de it is vital that la forma base: that nobody know.",
-        "de": "Nach it is vital that die Grundform: that nobody know."
+        "es": "Después de it is vital that la forma base: that nobody know."
       },
       "wrong": {
         "knowing": {
-          "hu": "A that nobody knowing nem helyes; ragozott vagy alapalak kell.",
           "en": "“That nobody knowing” is not correct; you need a finite or base form.",
-          "es": "«That nobody knowing» no es correcto; hace falta una forma conjugada o base.",
-          "de": "„That nobody knowing“ ist nicht korrekt; man braucht eine finite oder Grundform."
+          "es": "«That nobody knowing» no es correcto; hace falta una forma conjugada o base."
         },
         "to know": {
-          "hu": "A that nobody to know nem helyes; a that után nincs to-infinitív.",
           "en": "“That nobody to know” is not correct; after that there is no to-infinitive.",
-          "es": "«That nobody to know» no es correcto; después de that no va to-infinitivo.",
-          "de": "„That nobody to know“ ist nicht korrekt; nach that steht kein to-Infinitiv."
+          "es": "«That nobody to know» no es correcto; después de that no va to-infinitivo."
         }
       },
       "examples": [
         "It is vital that he know.",
         "It is crucial that she go."
       ],
-      "tr": { "hu": "Létfontosságú, hogy senki ne tudjon a tervről.", "en": "It is vital that nobody know about the plan.", "es": "Es vital que nadie sepa del plan.", "de": "Es ist lebenswichtig, dass niemand von dem Plan erfährt." }
+      "tr": { "en": "It is vital that nobody know about the plan.", "es": "Es vital que nadie sepa del plan." }
     },
     {
       "id": "sjv-14",
@@ -898,30 +732,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "A propose that után a be alapalak: that the meeting be postponed.",
         "en": "After propose that the base form be: that the meeting be postponed.",
-        "es": "Después de propose that la forma base be: that the meeting be postponed.",
-        "de": "Nach propose that die Grundform be: that the meeting be postponed."
+        "es": "Después de propose that la forma base be: that the meeting be postponed."
       },
       "wrong": {
         "being": {
-          "hu": "A that the meeting being postponed nem helyes; alapalak kell (be).",
           "en": "“That the meeting being postponed” is not correct; you need the base form (be).",
-          "es": "«That the meeting being postponed» no es correcto; hace falta la forma base (be).",
-          "de": "„That the meeting being postponed“ ist nicht korrekt; man braucht die Grundform (be)."
+          "es": "«That the meeting being postponed» no es correcto; hace falta la forma base (be)."
         },
         "been": {
-          "hu": "A that the meeting been postponed nem helyes; a been előtt have kellene.",
           "en": "“That the meeting been postponed” is not correct; before been you would need have.",
-          "es": "«That the meeting been postponed» no es correcto; antes de been haría falta have.",
-          "de": "„That the meeting been postponed“ ist nicht korrekt; vor been bräuchte man have."
+          "es": "«That the meeting been postponed» no es correcto; antes de been haría falta have."
         }
       },
       "examples": [
         "We propose that it be delayed.",
         "She moved that it be closed."
       ],
-      "tr": { "hu": "Azt javasolták, hogy halasszák el a találkozót.", "en": "They proposed that the meeting be postponed.", "es": "Propusieron que se pospusiera la reunión.", "de": "Sie schlugen vor, die Sitzung zu verschieben." }
+      "tr": { "en": "They proposed that the meeting be postponed.", "es": "Propusieron que se pospusiera la reunión." }
     },
     {
       "id": "sjv-15",
@@ -933,30 +761,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Rögzült kötőmód: Long live the king!",
         "en": "A fixed subjunctive: Long live the king!",
-        "es": "Un subjuntivo fijo: Long live the king!",
-        "de": "Ein fester Subjunktiv: Long live the king!"
+        "es": "Un subjuntivo fijo: Long live the king!"
       },
       "wrong": {
         "lives": {
-          "hu": "A long lives nem a rögzült alak; az alapalak live kell.",
           "en": "“Long lives” is not the fixed form; you need the base form live.",
-          "es": "«Long lives» no es la forma fija; hace falta la forma base live.",
-          "de": "„Long lives“ ist nicht die feste Form; man braucht die Grundform live."
+          "es": "«Long lives» no es la forma fija; hace falta la forma base live."
         },
         "living": {
-          "hu": "A long living nem a rögzült alak; az alapalak live kell.",
           "en": "“Long living” is not the fixed form; you need the base form live.",
-          "es": "«Long living» no es la forma fija; hace falta la forma base live.",
-          "de": "„Long living“ ist nicht die feste Form; man braucht die Grundform live."
+          "es": "«Long living» no es la forma fija; hace falta la forma base live."
         }
       },
       "examples": [
         "Long live the queen!",
         "Long live freedom!"
       ],
-      "tr": { "hu": "Éljen a király!", "en": "Long live the king!", "es": "¡Larga vida al rey!", "de": "Lang lebe der König!" }
+      "tr": { "en": "Long live the king!", "es": "¡Larga vida al rey!" }
     },
     {
       "id": "sjv-16",
@@ -968,30 +790,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Rögzült kifejezés: Come what may.",
         "en": "A fixed phrase: Come what may.",
-        "es": "Una expresión fija: Come what may.",
-        "de": "Eine feste Wendung: Come what may."
+        "es": "Una expresión fija: Come what may."
       },
       "wrong": {
         "will": {
-          "hu": "A come what will nem a rögzült kifejezés; may kell.",
           "en": "“Come what will” is not the fixed phrase; you need may.",
-          "es": "«Come what will» no es la expresión fija; hace falta may.",
-          "de": "„Come what will“ ist nicht die feste Wendung; man braucht may."
+          "es": "«Come what will» no es la expresión fija; hace falta may."
         },
         "does": {
-          "hu": "A come what does nem helyes; may kell.",
           "en": "“Come what does” is not correct; you need may.",
-          "es": "«Come what does» no es correcto; hace falta may.",
-          "de": "„Come what does“ ist nicht korrekt; man braucht may."
+          "es": "«Come what does» no es correcto; hace falta may."
         }
       },
       "examples": [
         "Come what may, I stay.",
         "Come what may, we win."
       ],
-      "tr": { "hu": "Történjék bármi, elmegyünk.", "en": "Come what may, we will go.", "es": "Pase lo que pase, iremos.", "de": "Komme, was wolle, wir werden gehen." }
+      "tr": { "en": "Come what may, we will go.", "es": "Pase lo que pase, iremos." }
     },
     {
       "id": "sjv-17",
@@ -1003,30 +819,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Rögzült kifejezés: If need be.",
         "en": "A fixed phrase: If need be.",
-        "es": "Una expresión fija: If need be.",
-        "de": "Eine feste Wendung: If need be."
+        "es": "Una expresión fija: If need be."
       },
       "wrong": {
         "is": {
-          "hu": "Az if need is nem a rögzült kifejezés; be kell.",
           "en": "“If need is” is not the fixed phrase; you need be.",
-          "es": "«If need is» no es la expresión fija; hace falta be.",
-          "de": "„If need is“ ist nicht die feste Wendung; man braucht be."
+          "es": "«If need is» no es la expresión fija; hace falta be."
         },
         "being": {
-          "hu": "Az if need being nem helyes; be kell.",
           "en": "“If need being” is not correct; you need be.",
-          "es": "«If need being» no es correcto; hace falta be.",
-          "de": "„If need being“ ist nicht korrekt; man braucht be."
+          "es": "«If need being» no es correcto; hace falta be."
         }
       },
       "examples": [
         "If need be, call me.",
         "If need be, we leave."
       ],
-      "tr": { "hu": "Ha szükség van rá, tovább is tudok maradni.", "en": "If need be, I can stay longer.", "es": "Si es necesario, puedo quedarme más tiempo.", "de": "Wenn nötig, kann ich länger bleiben." }
+      "tr": { "en": "If need be, I can stay longer.", "es": "Si es necesario, puedo quedarme más tiempo." }
     },
     {
       "id": "sjv-18",
@@ -1098,46 +908,34 @@
       "es": "I suggest that he see the doctor.",
       "target": "he see",
       "tr": {
-        "hu": "Azt javaslom, hogy keresse fel az orvost.",
         "en": "I suggest that he see the doctor.",
-        "es": "Sugiero que vaya al médico.",
-        "de": "Ich schlage vor, dass er zum Arzt geht."
+        "es": "Sugiero que vaya al médico."
       },
       "options": [
         {
           "text": {
-            "hu": "hiba, sees kellene",
             "en": "a mistake, it should be sees",
-            "es": "un error, debería ser sees",
-            "de": "ein Fehler, es müsste sees heißen"
+            "es": "un error, debería ser sees"
           },
           "wrong": {
-            "hu": "A suggest that után a standard forma az alapalak, harmadik személyben is.",
             "en": "After suggest that the standard form is the base form, also in the third person.",
-            "es": "Después de suggest that la forma estándar es la forma base, también en tercera persona.",
-            "de": "Nach suggest that ist die Standardform die Grundform, auch in der dritten Person."
+            "es": "Después de suggest that la forma estándar es la forma base, también en tercera persona."
           }
         },
         {
           "text": {
-            "hu": "felszólító kötőmód: alapalak minden személyben",
             "en": "the mandative subjunctive: base form in every person",
-            "es": "el subjuntivo mandativo: forma base en todas las personas",
-            "de": "der Mandativ: Grundform bei allen Personen"
+            "es": "el subjuntivo mandativo: forma base en todas las personas"
           }
         },
         {
           "text": {
-            "hu": "felszólító mód: See the doctor!",
             "en": "an imperative: See the doctor!",
-            "es": "un imperativo: See the doctor!",
-            "de": "ein Imperativ: See the doctor!"
+            "es": "un imperativo: See the doctor!"
           },
           "wrong": {
-            "hu": "Itt nem felszólítás, hanem egy that-mondat kötőmódja.",
             "en": "This is not an imperative but the subjunctive of a that-clause.",
-            "es": "Esto no es un imperativo sino el subjuntivo de una cláusula con that.",
-            "de": "Das ist kein Imperativ, sondern der Subjunktiv eines that-Satzes."
+            "es": "Esto no es un imperativo sino el subjuntivo de una cláusula con that."
           }
         }
       ],
@@ -1149,46 +947,34 @@
       "es": "It's time we left.",
       "target": "left",
       "tr": {
-        "hu": "Ideje, hogy induljunk.",
         "en": "It's time we left.",
-        "es": "Ya es hora de que nos vayamos.",
-        "de": "Es ist Zeit, dass wir gehen."
+        "es": "Ya es hora de que nos vayamos."
       },
       "options": [
         {
           "text": {
-            "hu": "múltbeli esemény",
             "en": "a past event",
-            "es": "un hecho pasado",
-            "de": "ein vergangenes Ereignis"
+            "es": "un hecho pasado"
           },
           "wrong": {
-            "hu": "A left itt jelen értelmű: most van itt az ideje.",
             "en": "Left here has a present meaning: the time is now.",
-            "es": "Left aquí tiene sentido de presente: es hora ahora.",
-            "de": "Left hat hier Gegenwartsbedeutung: jetzt ist es Zeit."
+            "es": "Left aquí tiene sentido de presente: es hora ahora."
           }
         },
         {
           "text": {
-            "hu": "múlt alak jelen értelemmel: most van itt az ideje",
             "en": "a past form with a present meaning: the time is now",
-            "es": "una forma de pasado con sentido de presente: es hora ahora",
-            "de": "eine Vergangenheitsform mit Gegenwartsbedeutung: jetzt ist es Zeit"
+            "es": "una forma de pasado con sentido de presente: es hora ahora"
           }
         },
         {
           "text": {
-            "hu": "present perfect",
             "en": "present perfect",
-            "es": "presente perfecto",
-            "de": "Present Perfect"
+            "es": "presente perfecto"
           },
           "wrong": {
-            "hu": "A left egyszerű múlt alak, nem present perfect.",
             "en": "Left is the simple past form, not the present perfect.",
-            "es": "Left es la forma de pasado simple, no el presente perfecto.",
-            "de": "Left ist die Form des Past Simple, nicht des Present Perfect."
+            "es": "Left es la forma de pasado simple, no el presente perfecto."
           }
         }
       ],
@@ -1200,46 +986,34 @@
       "es": "I'd rather you stayed.",
       "target": "rather you stayed",
       "tr": {
-        "hu": "Inkább azt szeretném, ha maradnál.",
         "en": "I'd rather you stayed.",
-        "es": "Preferiría que te quedaras.",
-        "de": "Mir wäre lieber, du bliebest."
+        "es": "Preferiría que te quedaras."
       },
       "options": [
         {
           "text": {
-            "hu": "saját cselekvés: would rather + alapige",
             "en": "your own action: would rather + base verb",
-            "es": "tu propia acción: would rather + verbo base",
-            "de": "die eigene Handlung: would rather + Grundform"
+            "es": "tu propia acción: would rather + verbo base"
           },
           "wrong": {
-            "hu": "Itt a másik személy cselekszik (you), ezért múlt idő kell.",
             "en": "Here the other person acts (you), so you need the past simple.",
-            "es": "Aquí actúa la otra persona (you), por eso hace falta el pasado simple.",
-            "de": "Hier handelt die andere Person (you), deshalb braucht man das Past Simple."
+            "es": "Aquí actúa la otra persona (you), por eso hace falta el pasado simple."
           }
         },
         {
           "text": {
-            "hu": "másik személy: would rather + alany + múlt idő",
             "en": "another person: would rather + subject + past simple",
-            "es": "otra persona: would rather + sujeto + pasado simple",
-            "de": "eine andere Person: would rather + Subjekt + Past Simple"
+            "es": "otra persona: would rather + sujeto + pasado simple"
           }
         },
         {
           "text": {
-            "hu": "would rather + to-infinitív",
             "en": "would rather + to-infinitive",
-            "es": "would rather + to-infinitivo",
-            "de": "would rather + to-Infinitiv"
+            "es": "would rather + to-infinitivo"
           },
           "wrong": {
-            "hu": "A would rather után nincs to.",
             "en": "After would rather there is no to.",
-            "es": "Después de would rather no va to.",
-            "de": "Nach would rather steht kein to."
+            "es": "Después de would rather no va to."
           }
         }
       ],
@@ -1251,46 +1025,34 @@
       "es": "He talks as if he knew everything.",
       "target": "as if he knew",
       "tr": {
-        "hu": "Úgy beszél, mintha mindent tudna.",
         "en": "He talks as if he knew everything.",
-        "es": "Habla como si lo supiera todo.",
-        "de": "Er redet, als wüsste er alles."
+        "es": "Habla como si lo supiera todo."
       },
       "options": [
         {
           "text": {
-            "hu": "múltbeli tény",
             "en": "a past fact",
-            "es": "un hecho pasado",
-            "de": "eine vergangene Tatsache"
+            "es": "un hecho pasado"
           },
           "wrong": {
-            "hu": "A knew itt nem múltbeli tény, hanem valótlan összehasonlítás.",
             "en": "Knew here is not a past fact but an unreal comparison.",
-            "es": "Knew aquí no es un hecho pasado sino una comparación irreal.",
-            "de": "Knew ist hier keine vergangene Tatsache, sondern ein unwirklicher Vergleich."
+            "es": "Knew aquí no es un hecho pasado sino una comparación irreal."
           }
         },
         {
           "text": {
-            "hu": "jóslat",
             "en": "a prediction",
-            "es": "una predicción",
-            "de": "eine Vorhersage"
+            "es": "una predicción"
           },
           "wrong": {
-            "hu": "Nem jóslat; az as if + múlt idő valótlan helyzetet fejez ki.",
             "en": "It is not a prediction; as if + past expresses an unreal situation.",
-            "es": "No es una predicción; as if + pasado expresa una situación irreal.",
-            "de": "Es ist keine Vorhersage; as if + Past drückt eine unwirkliche Lage aus."
+            "es": "No es una predicción; as if + pasado expresa una situación irreal."
           }
         },
         {
           "text": {
-            "hu": "valótlan összehasonlítás: as if + múlt idő",
             "en": "an unreal comparison: as if + past simple",
-            "es": "una comparación irreal: as if + pasado simple",
-            "de": "ein unwirklicher Vergleich: as if + Past Simple"
+            "es": "una comparación irreal: as if + pasado simple"
           }
         }
       ],
@@ -1302,46 +1064,34 @@
       "es": "Long live the king!",
       "target": "Long live",
       "tr": {
-        "hu": "Éljen soká a király!",
         "en": "Long live the king!",
-        "es": "¡Viva el rey!",
-        "de": "Es lebe der König!"
+        "es": "¡Viva el rey!"
       },
       "options": [
         {
           "text": {
-            "hu": "rögzült kötőmód: alapalak kívánságként",
             "en": "a fixed subjunctive: the base form as a wish",
-            "es": "un subjuntivo fijo: la forma base como deseo",
-            "de": "ein fester Subjunktiv: die Grundform als Wunsch"
+            "es": "un subjuntivo fijo: la forma base como deseo"
           }
         },
         {
           "text": {
-            "hu": "felszólítás -s-sel",
             "en": "an imperative with -s",
-            "es": "un imperativo con -s",
-            "de": "ein Imperativ mit -s"
+            "es": "un imperativo con -s"
           },
           "wrong": {
-            "hu": "A live itt alapalak, nincs -s, mert kívánság, nem tényállítás.",
             "en": "Live here is the base form, with no -s, because it is a wish, not a statement of fact.",
-            "es": "Live aquí es la forma base, sin -s, porque es un deseo, no una afirmación de hechos.",
-            "de": "Live ist hier die Grundform, ohne -s, weil es ein Wunsch ist, keine Tatsachenaussage."
+            "es": "Live aquí es la forma base, sin -s, porque es un deseo, no una afirmación de hechos."
           }
         },
         {
           "text": {
-            "hu": "kérdés",
             "en": "a question",
-            "es": "una pregunta",
-            "de": "eine Frage"
+            "es": "una pregunta"
           },
           "wrong": {
-            "hu": "Ez felkiáltás, nem kérdés.",
             "en": "This is an exclamation, not a question.",
-            "es": "Esto es una exclamación, no una pregunta.",
-            "de": "Das ist ein Ausruf, keine Frage."
+            "es": "Esto es una exclamación, no una pregunta."
           }
         }
       ],

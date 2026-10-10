@@ -3,7 +3,7 @@
 
 The choice drill ("which word fits the blank", "tap the verb") shows a sentence but had no
 translation of it, unlike the rewrite, why, spot, order and dictation items. This script adds
-`tr: { hu, en, es, de }` to every gap and mark item in data/games/grammar/<track>/*.json that
+`tr: { en, es }` to every gap and mark item in data/games/grammar/<track>/*.json that
 does not have one yet. The app shows it behind the F button (components/grammar/GrammarDrill.tsx).
 
 Run it from YOUR OWN terminal, never from an agent session (LLM translation in a session is
@@ -45,11 +45,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 GRAMMAR = ROOT / "data" / "games" / "grammar"
-LANGS = ("hu", "en", "es", "de")
+LANGS = ("en", "es")
 TRACKS = ("es", "en")  # directory = the language being learned (es: Spanish sentences, en: English sentences)
 DEFAULT_MODEL = "gemini-2.5-flash"
 ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
-LANG_NAMES = {"hu": "Hungarian", "en": "English", "de": "German", "es": "Spanish (Mexican)"}
+LANG_NAMES = {"en": "English", "es": "Spanish (Mexican)"}
 SOURCE_NAMES = {"es": "Spanish", "en": "English"}
 
 

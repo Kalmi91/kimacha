@@ -3,166 +3,130 @@
   "topic": "numeros-hora-fecha",
   "level": "A1",
   "title": {
-    "hu": "Számok, óra, dátum",
     "en": "Numbers, time, date",
-    "es": "Números, hora y fecha",
-    "de": "Zahlen, Uhrzeit, Datum"
+    "es": "Números, hora y fecha"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "A számok, az óra és a dátum egy turista vagy ügyfél első szavai: mikor van valami, mennyibe kerül, hányadika van, hány éves valaki. Enélkül nem lehet időpontot egyeztetni, se vásárolni.",
         "en": "Numbers, time and dates are the first words a tourist or customer needs: when something happens, how much it costs, what the date is, how old someone is. Without them you can't arrange a time or shop.",
-        "es": "Los números, la hora y la fecha son las primeras palabras que necesita un turista o un cliente: cuándo pasa algo, cuánto cuesta, qué fecha es, cuántos años tiene alguien. Sin esto no se puede quedar ni comprar.",
-        "de": "Zahlen, Uhrzeit und Datum sind die ersten Wörter, die ein Tourist oder Kunde braucht: wann etwas ist, wie viel es kostet, welches Datum es ist, wie alt jemand ist. Ohne das kann man sich weder verabreden noch einkaufen."
+        "es": "Los números, la hora y la fecha son las primeras palabras que necesita un turista o un cliente: cuándo pasa algo, cuánto cuesta, qué fecha es, cuántos años tiene alguien. Sin esto no se puede quedar ni comprar."
       }
     },
     {
       "kind": "usage",
       "title": {
-        "hu": "Szabályok",
         "en": "Rules",
-        "es": "Reglas",
-        "de": "Regeln"
+        "es": "Reglas"
       },
       "points": [
         {
           "text": {
-            "hu": "16-tól 29-ig a számokat egybeírjuk (dieciséis, veintiuno), utána 31-től 99-ig szóköz és 'y' köti össze a tízest és az egyest (treinta y dos). Az 'uno' hímnemű főnév előtt 'un'-ra rövidül (un libro, veintiún años), nőneműnél 'una' marad (una casa).",
             "en": "From sixteen to twenty-nine the numbers are written as one word (dieciséis, veintiuno), then from thirty-one to ninety-nine 'y' joins the tens and the units with spaces (treinta y dos). 'Uno' shortens to 'un' before a masculine noun (un libro, veintiún años), and stays 'una' before a feminine one (una casa).",
-            "es": "Del dieciséis al veintinueve los números se escriben en una sola palabra (dieciséis, veintiuno), y del treinta y uno al noventa y nueve 'y' une la decena y la unidad con espacios (treinta y dos). 'Uno' se convierte en 'un' ante un sustantivo masculino (un libro, veintiún años), y queda 'una' ante uno femenino (una casa).",
-            "de": "Von sechzehn bis neunundzwanzig werden die Zahlen als ein Wort geschrieben (dieciséis, veintiuno), danach verbindet von einunddreißig bis neunundneunzig 'y' mit Leerzeichen die Zehner und Einer (treinta y dos). 'Uno' verkürzt sich vor einem maskulinen Nomen zu 'un' (un libro, veintiún años), vor einem femininen bleibt es 'una' (una casa)."
+            "es": "Del dieciséis al veintinueve los números se escriben en una sola palabra (dieciséis, veintiuno), y del treinta y uno al noventa y nueve 'y' une la decena y la unidad con espacios (treinta y dos). 'Uno' se convierte en 'un' ante un sustantivo masculino (un libro, veintiún años), y queda 'una' ante uno femenino (una casa)."
           },
           "examples": [
             {
               "es": "Tengo veintidós años.",
               "tr": {
-                "hu": "Huszonkét éves vagyok.",
                 "en": "I am twenty-two years old.",
-                "es": "Tengo veintidós años.",
-                "de": "Ich bin zweiundzwanzig Jahre alt."
+                "es": "Tengo veintidós años."
               }
             },
             {
               "es": "Hay treinta y cinco personas aquí.",
               "tr": {
-                "hu": "Harmincöt ember van itt.",
                 "en": "There are thirty-five people here.",
-                "es": "Hay treinta y cinco personas aquí.",
-                "de": "Hier sind fünfunddreißig Personen."
+                "es": "Hay treinta y cinco personas aquí."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A cien önállóan áll egy főnév előtt (cien pesos), de ha egy másik szám követi, ciento lesz (ciento cinco). 200-tól 900-ig a százasok nemben egyeznek a főnévvel: doscientos pesos, de doscientas personas.",
             "en": "Cien stands alone before a noun (cien pesos), but becomes ciento when followed by another number (ciento cinco). From two hundred to nine hundred, the hundreds agree in gender with the noun: doscientos pesos, but doscientas personas.",
-            "es": "Cien va solo ante un sustantivo (cien pesos), pero se convierte en ciento cuando le sigue otro número (ciento cinco). Del doscientos al novecientos, las centenas concuerdan en género con el sustantivo: doscientos pesos, pero doscientas personas.",
-            "de": "Cien steht allein vor einem Nomen (cien pesos), wird aber zu ciento, wenn eine weitere Zahl folgt (ciento cinco). Von zweihundert bis neunhundert stimmen die Hunderter im Geschlecht mit dem Nomen überein: doscientos pesos, aber doscientas personas."
+            "es": "Cien va solo ante un sustantivo (cien pesos), pero se convierte en ciento cuando le sigue otro número (ciento cinco). Del doscientos al novecientos, las centenas concuerdan en género con el sustantivo: doscientos pesos, pero doscientas personas."
           },
           "examples": [
             {
               "es": "Cien estudiantes están en la clase.",
               "tr": {
-                "hu": "Száz diák van az osztályban.",
                 "en": "A hundred students are in the class.",
-                "es": "Cien estudiantes están en la clase.",
-                "de": "Hundert Studenten sind in der Klasse."
+                "es": "Cien estudiantes están en la clase."
               }
             },
             {
               "es": "Tenemos ciento veinte libros.",
               "tr": {
-                "hu": "Százhúsz könyvünk van.",
                 "en": "We have a hundred and twenty books.",
-                "es": "Tenemos ciento veinte libros.",
-                "de": "Wir haben hundertzwanzig Bücher."
+                "es": "Tenemos ciento veinte libros."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Az órát ser fejezi ki: Es la una (egy óra van), de Son las dos, Son las tres (kettőtől többes szám). A perceket y-jal adjuk hozzá (y cuarto, y media), 31 perctől a következő órából vonunk le menos-szal (menos cuarto). A napszakot de la mañana, de la tarde, de la noche jelzi. Egy időpontot a las fejez ki: a las ocho.",
             "en": "Telling time uses ser: Es la una (it is one o'clock), but Son las dos, Son las tres (plural from two on). Minutes are added with y (y cuarto, y media), and from minute 31 they are subtracted from the next hour with menos (menos cuarto). The part of day is marked with de la mañana, de la tarde, de la noche. A point in time uses a las: a las ocho.",
-            "es": "La hora se expresa con ser: Es la una, pero Son las dos, Son las tres (plural desde el dos). Los minutos se suman con y (y cuarto, y media), y desde el minuto treinta y uno se restan de la hora siguiente con menos (menos cuarto). La parte del día se marca con de la mañana, de la tarde, de la noche. Un momento concreto lleva a las: a las ocho.",
-            "de": "Die Uhrzeit wird mit ser ausgedrückt: Es la una, aber Son las dos, Son las tres (Plural ab zwei). Minuten werden mit y addiert (y cuarto, y media), und ab der einunddreißigsten Minute von der nächsten Stunde mit menos abgezogen (menos cuarto). Die Tageszeit wird mit de la mañana, de la tarde, de la noche markiert. Ein Zeitpunkt steht mit a las: a las ocho."
+            "es": "La hora se expresa con ser: Es la una, pero Son las dos, Son las tres (plural desde el dos). Los minutos se suman con y (y cuarto, y media), y desde el minuto treinta y uno se restan de la hora siguiente con menos (menos cuarto). La parte del día se marca con de la mañana, de la tarde, de la noche. Un momento concreto lleva a las: a las ocho."
           },
           "examples": [
             {
               "es": "Son las siete de la mañana.",
               "tr": {
-                "hu": "Reggel hét óra van.",
                 "en": "It is seven in the morning.",
-                "es": "Son las siete de la mañana.",
-                "de": "Es ist sieben Uhr morgens."
+                "es": "Son las siete de la mañana."
               }
             },
             {
               "es": "La clase empieza a las nueve.",
               "tr": {
-                "hu": "Az óra kilenckor kezdődik.",
                 "en": "The class starts at nine.",
-                "es": "La clase empieza a las nueve.",
-                "de": "Der Unterricht beginnt um neun."
+                "es": "La clase empieza a las nueve."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A dátumot el + szám + de + hónap adja: el cinco de mayo. A hónap első napja Mexikóban el primero de..., máshol el uno de... is előfordul. A mai napra: ¿Qué día es hoy? Hoy es lunes. A hónap- és napneveket kisbetűvel írjuk spanyolul.",
             "en": "The date is formed as el + number + de + month: el cinco de mayo. The first day of the month is el primero de... in Mexico, though el uno de... also occurs elsewhere. For today: ¿Qué día es hoy? Hoy es lunes. Month and day names are written lowercase in Spanish.",
-            "es": "La fecha se forma con el + número + de + mes: el cinco de mayo. El primer día del mes es el primero de... en México, aunque el uno de... también se usa en otros lugares. Para hoy: ¿Qué día es hoy? Hoy es lunes. Los nombres de meses y días se escriben con minúscula en español.",
-            "de": "Das Datum wird mit el + Zahl + de + Monat gebildet: el cinco de mayo. Der erste Tag des Monats heißt in Mexiko el primero de..., anderswo kommt auch el uno de... vor. Für heute: ¿Qué día es hoy? Hoy es lunes. Monats- und Wochentagsnamen werden im Spanischen kleingeschrieben."
+            "es": "La fecha se forma con el + número + de + mes: el cinco de mayo. El primer día del mes es el primero de... en México, aunque el uno de... también se usa en otros lugares. Para hoy: ¿Qué día es hoy? Hoy es lunes. Los nombres de meses y días se escriben con minúscula en español."
           },
           "examples": [
             {
               "es": "El examen es el once de octubre.",
               "tr": {
-                "hu": "A vizsga október tizenegyedikén van.",
                 "en": "The exam is on October eleventh.",
-                "es": "El examen es el once de octubre.",
-                "de": "Die Prüfung ist am elften Oktober."
+                "es": "El examen es el once de octubre."
               }
             },
             {
               "es": "Hoy es martes.",
               "tr": {
-                "hu": "Ma kedd van.",
                 "en": "Today is Tuesday.",
-                "es": "Hoy es martes.",
-                "de": "Heute ist Dienstag."
+                "es": "Hoy es martes."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Az életkort tener + szám + años fejezi ki: Tengo veinte años. Egy dolog árát costar adja: Cuesta cien pesos (a kasszánál viszont: ¿Cuánto es? Son cien pesos).",
             "en": "Age is expressed with tener + number + años: Tengo veinte años. The price of a thing is expressed with costar: Cuesta cien pesos (at the till, though: ¿Cuánto es? Son cien pesos).",
-            "es": "La edad se expresa con tener + número + años: Tengo veinte años. El precio de una cosa se expresa con costar: Cuesta cien pesos (en la caja, en cambio: ¿Cuánto es? Son cien pesos).",
-            "de": "Das Alter wird mit tener + Zahl + años ausgedrückt: Tengo veinte años. Der Preis einer Sache wird mit costar ausgedrückt: Cuesta cien pesos (an der Kasse aber: ¿Cuánto es? Son cien pesos)."
+            "es": "La edad se expresa con tener + número + años: Tengo veinte años. El precio de una cosa se expresa con costar: Cuesta cien pesos (en la caja, en cambio: ¿Cuánto es? Son cien pesos)."
           },
           "examples": [
             {
               "es": "Mi hija tiene quince años.",
               "tr": {
-                "hu": "A lányom tizenöt éves.",
                 "en": "My daughter is fifteen years old.",
-                "es": "Mi hija tiene quince años.",
-                "de": "Meine Tochter ist fünfzehn Jahre alt."
+                "es": "Mi hija tiene quince años."
               }
             },
             {
               "es": "El boleto cuesta cincuenta pesos.",
               "tr": {
-                "hu": "A jegy ötven pesóba kerül.",
                 "en": "The ticket costs fifty pesos.",
-                "es": "El boleto cuesta cincuenta pesos.",
-                "de": "Das Ticket kostet fünfzig Pesos."
+                "es": "El boleto cuesta cincuenta pesos."
               }
             }
           ]
@@ -173,23 +137,17 @@
       "kind": "table",
       "id": "numeros",
       "title": {
-        "hu": "Számok",
         "en": "Numbers",
-        "es": "Números",
-        "de": "Zahlen"
+        "es": "Números"
       },
       "header": [
         {
-          "hu": "Szám",
           "en": "Number",
-          "es": "Número",
-          "de": "Zahl"
+          "es": "Número"
         },
         {
-          "hu": "Szó",
           "en": "Word",
-          "es": "palabra",
-          "de": "Wort"
+          "es": "palabra"
         }
       ],
       "rows": [
@@ -237,38 +195,30 @@
     {
       "kind": "contrast",
       "title": {
-        "hu": "Hasonló, mégis más",
         "en": "Similar, yet different",
-        "es": "Parecido, pero distinto",
-        "de": "Ähnlich, aber anders"
+        "es": "Parecido, pero distinto"
       },
       "pairs": [
         {
           "a": "es la una",
           "b": "son las dos",
           "note": {
-            "hu": "Az es la csak az EGY órára vonatkozik (la una egyes szám), a son las a többi órára (kettőtől), mert azok többes számban állnak.",
             "en": "Es la is only used for ONE o'clock (la una is singular), son las for the other hours (from two on), because they are plural.",
-            "es": "Es la solo se usa para la una (singular), son las para las demás horas (desde las dos), porque están en plural.",
-            "de": "Es la wird nur für ein Uhr verwendet (la una ist Singular), son las für die anderen Stunden (ab zwei), weil sie im Plural stehen."
+            "es": "Es la solo se usa para la una (singular), son las para las demás horas (desde las dos), porque están en plural."
           },
           "examples": [
             {
               "es": "Es la una y cuarto.",
               "tr": {
-                "hu": "Negyed kettő van.",
                 "en": "It is a quarter past one.",
-                "es": "Es la una y cuarto.",
-                "de": "Es ist Viertel nach eins."
+                "es": "Es la una y cuarto."
               }
             },
             {
               "es": "Son las seis de la tarde.",
               "tr": {
-                "hu": "Este hat óra van.",
                 "en": "It is six in the evening.",
-                "es": "Son las seis de la tarde.",
-                "de": "Es ist sechs Uhr abends."
+                "es": "Son las seis de la tarde."
               }
             }
           ]
@@ -277,28 +227,22 @@
           "a": "a las ocho",
           "b": "son las ocho",
           "note": {
-            "hu": "Az a las egy IDŐPONTOT jelöl (mikor?, pl. a las ocho = nyolckor), a son las magát az ÓRÁT mondja meg (hány óra van most, pl. son las ocho = nyolc óra van).",
             "en": "A las marks a POINT IN TIME (when?, e.g. a las ocho = at eight), son las states the CURRENT hour (what time is it now, e.g. son las ocho = it is eight o'clock).",
-            "es": "A las marca un MOMENTO (¿cuándo?, p. ej. a las ocho = a las ocho en punto), son las dice la HORA actual (¿qué hora es?, p. ej. son las ocho = son las ocho).",
-            "de": "A las markiert einen ZEITPUNKT (wann?, z. B. a las ocho = um acht), son las nennt die AKTUELLE Uhrzeit (wie spät ist es, z. B. son las ocho = es ist acht Uhr)."
+            "es": "A las marca un MOMENTO (¿cuándo?, p. ej. a las ocho = a las ocho en punto), son las dice la HORA actual (¿qué hora es?, p. ej. son las ocho = son las ocho)."
           },
           "examples": [
             {
               "es": "Llegamos a las siete.",
               "tr": {
-                "hu": "Hétkor érkezünk.",
                 "en": "We arrive at seven.",
-                "es": "Llegamos a las siete.",
-                "de": "Wir kommen um sieben an."
+                "es": "Llegamos a las siete."
               }
             },
             {
               "es": "Son las siete ahora.",
               "tr": {
-                "hu": "Most hét óra van.",
                 "en": "It is seven o'clock now.",
-                "es": "Son las siete ahora.",
-                "de": "Es ist jetzt sieben Uhr."
+                "es": "Son las siete ahora."
               }
             }
           ]
@@ -308,99 +252,77 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "31 perctől a következő órából vonunk le 'menos'-szal (las tres menos veinte), Mexikóban gyakran a 'veinte para las tres' forma is él, ugyanazt jelenti.",
         "en": "From minute 31 you subtract from the next hour with 'menos' (las tres menos veinte); in Mexico the form 'veinte para las tres' is also common, meaning the same thing.",
-        "es": "Desde el minuto treinta y uno se resta de la hora siguiente con 'menos' (las tres menos veinte); en México también es común la forma 'veinte para las tres', que significa lo mismo.",
-        "de": "Ab der einunddreißigsten Minute wird mit 'menos' von der nächsten Stunde abgezogen (las tres menos veinte); in Mexiko ist auch die Form 'veinte para las tres' gebräuchlich, die dasselbe bedeutet."
+        "es": "Desde el minuto treinta y uno se resta de la hora siguiente con 'menos' (las tres menos veinte); en México también es común la forma 'veinte para las tres', que significa lo mismo."
       }
     }
   ],
   "speak": {
-    "hu": "A számok, az idő és a dátum a mindennapi boldoguláshoz kell: mikor találkozunk, mennyibe kerül valami, hányadika van ma. Tizenhattól huszonkilencig a számokat egy szóba írjuk, utána egy kis és szó köti össze a tízeseket és az egyeseket. Az óra kivétel: egy órakor az ige egyes szám, utána többes szám lesz. A perceket az és szóval adjuk hozzá, vagy a következő órából a mínusz szóval vonjuk le. A dátumhoz névelő és a birtokviszonyt jelző szócska kell. És ne felejtsd el az árat és a kort.",
     "en": "Numbers, the time and the date are what you need for everyday survival: when we meet, how much something costs, what today's date is. From sixteen to twenty-nine the numbers are written as one word, and after that a small word for and joins the tens and the units. The hour is an exception: for one o'clock the verb is singular, and after that it turns plural. Minutes are added with the word for and, or subtracted from the next hour with the word for minus. A date needs the article and the word for of. And don't forget price and age.",
-    "es": "Los números, la hora y la fecha son lo que necesitas para desenvolverte cada día: cuándo nos vemos, cuánto cuesta algo, qué fecha es hoy. Del dieciséis al veintinueve los números se escriben en una sola palabra, y después una palabrita que significa y une las decenas y las unidades. La hora es una excepción: para la una el verbo va en singular, y después pasa al plural. Los minutos se suman con la palabra y, o se restan de la hora siguiente con la palabra menos. Una fecha necesita el artículo y la palabra de. Y no olvides el precio y la edad.",
-    "de": "Zahlen, Uhrzeit und Datum braucht man im Alltag: wann wir uns treffen, was etwas kostet, welches Datum heute ist. Von sechzehn bis neunundzwanzig schreibt man die Zahlen in einem Wort, danach verbindet ein kleines Wort für und die Zehner und Einer. Die Uhrzeit ist eine Ausnahme: bei ein Uhr steht das Verb im Singular, danach im Plural. Minuten werden mit dem Wort für und addiert oder mit dem Wort für minus von der nächsten Stunde abgezogen. Ein Datum braucht den Artikel und das Wort für von. Und vergiss Preis und Alter nicht."
+    "es": "Los números, la hora y la fecha son lo que necesitas para desenvolverte cada día: cuándo nos vemos, cuánto cuesta algo, qué fecha es hoy. Del dieciséis al veintinueve los números se escriben en una sola palabra, y después una palabrita que significa y une las decenas y las unidades. La hora es una excepción: para la una el verbo va en singular, y después pasa al plural. Los minutos se suman con la palabra y, o se restan de la hora siguiente con la palabra menos. Una fecha necesita el artículo y la palabra de. Y no olvides el precio y la edad."
   },
   "glossary": [
     {
       "word": "cuatro",
       "gloss": {
-        "hu": "négy",
         "en": "four",
-        "es": "cuatro",
-        "de": "vier"
+        "es": "cuatro"
       }
     },
     {
       "word": "ciento",
       "gloss": {
-        "hu": "száz (másik szám előtt: ciento cinco)",
         "en": "hundred (before another number: ciento cinco)",
-        "es": "ciento (ante otro número: ciento cinco)",
-        "de": "hundert (vor einer weiteren Zahl: ciento cinco)"
+        "es": "ciento (ante otro número: ciento cinco)"
       }
     },
     {
       "word": "cuarto",
       "gloss": {
-        "hu": "negyed (óránál: y cuarto, menos cuarto)",
         "en": "quarter (of an hour: y cuarto, menos cuarto)",
-        "es": "cuarto (de hora: y cuarto, menos cuarto)",
-        "de": "Viertel (der Stunde: y cuarto, menos cuarto)"
+        "es": "cuarto (de hora: y cuarto, menos cuarto)"
       }
     },
     {
       "word": "media",
       "gloss": {
-        "hu": "fél (óránál: y media = és fél)",
         "en": "half (of an hour: y media = half past)",
-        "es": "media (de hora: y media)",
-        "de": "halb (der Stunde: y media)"
+        "es": "media (de hora: y media)"
       }
     },
     {
       "word": "primero",
       "gloss": {
-        "hu": "első (a hónap első napja: el primero de mayo)",
         "en": "first (the first day of the month: el primero de mayo)",
-        "es": "primero (el primer día del mes: el primero de mayo)",
-        "de": "erster (der erste Tag des Monats: el primero de mayo)"
+        "es": "primero (el primer día del mes: el primero de mayo)"
       }
     },
     {
       "word": "uno",
       "gloss": {
-        "hu": "egy (a számnév önálló alakja)",
         "en": "one (the standalone form of the numeral)",
-        "es": "uno (la forma del numeral usada sola)",
-        "de": "eins (die alleinstehende Form der Zahl)"
+        "es": "uno (la forma del numeral usada sola)"
       }
     },
     {
       "word": "veintiún",
       "gloss": {
-        "hu": "huszonegy (rövidült alak főnév előtt: veintiún años)",
         "en": "twenty-one (short form before a noun: veintiún años)",
-        "es": "veintiún (forma apocopada ante sustantivo: veintiún años)",
-        "de": "einundzwanzig (verkürzte Form vor einem Nomen: veintiún años)"
+        "es": "veintiún (forma apocopada ante sustantivo: veintiún años)"
       }
     },
     {
       "word": "cuesta",
       "gloss": {
-        "hu": "kerül (vmennyibe, a costar ige ragozott alakja)",
         "en": "it costs (from the verb costar)",
-        "es": "cuesta (del verbo costar)",
-        "de": "es kostet (von costar)"
+        "es": "cuesta (del verbo costar)"
       }
     },
     {
       "word": "peso",
       "gloss": {
-        "hu": "peso (mexikói pénznem)",
         "en": "peso (Mexican currency)",
-        "es": "el peso (moneda mexicana)",
-        "de": "Peso (mexikanische Währung)"
+        "es": "el peso (moneda mexicana)"
       }
     }
   ],
@@ -411,21 +333,17 @@
       "options": ["un", "una"],
       "correct": 0,
       "why": {
-        "hu": "A hermano hímnemű főnév, ezért un áll előtte, ami az uno rövidült alakja.",
         "en": "Hermano is a masculine noun, so un is used before it, the shortened form of uno.",
-        "es": "Hermano es un sustantivo masculino, por eso va un, la forma apocopada de uno.",
-        "de": "Hermano ist ein maskulines Nomen, deshalb steht davor un, die verkürzte Form von uno."
+        "es": "Hermano es un sustantivo masculino, por eso va un, la forma apocopada de uno."
       },
       "wrong": {
         "una": {
-          "hu": "Az una nőnemű főnév előtt áll (una hermana); a hermano hímnemű, ezért nem jó.",
           "en": "Una goes before a feminine noun (una hermana); hermano is masculine, so this is not correct.",
-          "es": "Una va ante un sustantivo femenino (una hermana); hermano es masculino, por eso no es correcto.",
-          "de": "Una steht vor einem femininen Nomen (una hermana); hermano ist maskulin, deshalb ist das nicht richtig."
+          "es": "Una va ante un sustantivo femenino (una hermana); hermano es masculino, por eso no es correcto."
         }
       },
       "examples": ["Tengo una hermana mayor.", "Compro un libro nuevo."],
-      "tr": { "hu": "Van egy bátyám.", "en": "I have an older brother.", "es": "Tengo un hermano mayor.", "de": "Ich habe einen älteren Bruder." }
+      "tr": { "en": "I have an older brother.", "es": "Tengo un hermano mayor." }
     },
     {
       "id": "nh-02",
@@ -433,21 +351,17 @@
       "options": ["dieciséis", "diez y seis"],
       "correct": 0,
       "why": {
-        "hu": "16-tól 29-ig a számokat egybeírjuk: dieciséis, ez a modern, sztenderd alak.",
         "en": "From sixteen to twenty-nine the numbers are written as one word: dieciséis, the modern, standard form.",
-        "es": "Del dieciséis al veintinueve los números se escriben en una sola palabra: dieciséis, la forma moderna y estándar.",
-        "de": "Von sechzehn bis neunundzwanzig werden die Zahlen als ein Wort geschrieben: dieciséis, die moderne Standardform."
+        "es": "Del dieciséis al veintinueve los números se escriben en una sola palabra: dieciséis, la forma moderna y estándar."
       },
       "wrong": {
         "diez y seis": {
-          "hu": "A diez y seis régies, három szóra bontott írásmód; ma a dieciséis az elfogadott forma.",
           "en": "Diez y seis is an old-fashioned, three-word spelling; today dieciséis is the accepted form.",
-          "es": "Diez y seis es una grafía anticuada en tres palabras; hoy la forma aceptada es dieciséis.",
-          "de": "Diez y seis ist eine altmodische, dreiteilige Schreibweise; heute ist dieciséis die anerkannte Form."
+          "es": "Diez y seis es una grafía anticuada en tres palabras; hoy la forma aceptada es dieciséis."
         }
       },
       "examples": ["Mi hermana tiene diecisiete años.", "Tenemos dieciocho años."],
-      "tr": { "hu": "A bátyám tizenhat éves.", "en": "My brother is sixteen years old.", "es": "Mi hermano tiene dieciséis años.", "de": "Mein Bruder ist sechzehn Jahre alt." }
+      "tr": { "en": "My brother is sixteen years old.", "es": "Mi hermano tiene dieciséis años." }
     },
     {
       "id": "nh-03",
@@ -455,21 +369,17 @@
       "options": ["treinta y dos", "treinta dos"],
       "correct": 0,
       "why": {
-        "hu": "31-től 99-ig a tízest és az egyest 'y' köti össze: treinta y dos.",
         "en": "From thirty-one to ninety-nine 'y' joins the tens and the units: treinta y dos.",
-        "es": "Del treinta y uno al noventa y nueve 'y' une la decena y la unidad: treinta y dos.",
-        "de": "Von einunddreißig bis neunundneunzig verbindet 'y' die Zehner und Einer: treinta y dos."
+        "es": "Del treinta y uno al noventa y nueve 'y' une la decena y la unidad: treinta y dos."
       },
       "wrong": {
         "treinta dos": {
-          "hu": "Hiányzik az 'y'; harminc fölött mindig kell az 'y' a tízes és az egyes közé.",
           "en": "The 'y' is missing; above thirty an 'y' is always needed between the tens and the unit.",
-          "es": "Falta la 'y'; por encima de treinta siempre hace falta la 'y' entre la decena y la unidad.",
-          "de": "Das 'y' fehlt; über dreißig braucht man immer das 'y' zwischen Zehner und Einer."
+          "es": "Falta la 'y'; por encima de treinta siempre hace falta la 'y' entre la decena y la unidad."
         }
       },
       "examples": ["Hay cuarenta y cinco personas.", "Compramos sesenta y ocho libros."],
-      "tr": { "hu": "Harminckét diákunk van az osztályban.", "en": "We have thirty-two students in the class.", "es": "Tenemos treinta y dos estudiantes en la clase.", "de": "Wir haben zweiunddreißig Schüler in der Klasse." }
+      "tr": { "en": "We have thirty-two students in the class.", "es": "Tenemos treinta y dos estudiantes en la clase." }
     },
     {
       "id": "nh-04",
@@ -477,21 +387,17 @@
       "options": ["cien", "ciento"],
       "correct": 0,
       "why": {
-        "hu": "A cien önállóan áll közvetlenül egy főnév előtt.",
         "en": "Cien stands alone directly before a noun.",
-        "es": "Cien va solo directamente ante un sustantivo.",
-        "de": "Cien steht allein direkt vor einem Nomen."
+        "es": "Cien va solo directamente ante un sustantivo."
       },
       "wrong": {
         "ciento": {
-          "hu": "A ciento csak akkor áll, ha egy másik szám követi (ciento cinco), nem áll közvetlenül a főnév előtt.",
           "en": "Ciento is only used when followed by another number (ciento cinco), not directly before a noun.",
-          "es": "Ciento solo se usa cuando le sigue otro número (ciento cinco), no directamente ante un sustantivo.",
-          "de": "Ciento wird nur verwendet, wenn eine weitere Zahl folgt (ciento cinco), nicht direkt vor einem Nomen."
+          "es": "Ciento solo se usa cuando le sigue otro número (ciento cinco), no directamente ante un sustantivo."
         }
       },
       "examples": ["Cien personas esperan el tren.", "Tenemos ciento diez libros."],
-      "tr": { "hu": "Száz diák van az osztályban.", "en": "There are one hundred students in the class.", "es": "Hay cien estudiantes en la clase.", "de": "Es sind hundert Schüler in der Klasse." }
+      "tr": { "en": "There are one hundred students in the class.", "es": "Hay cien estudiantes en la clase." }
     },
     {
       "id": "nh-05",
@@ -499,21 +405,17 @@
       "options": ["Es", "Son"],
       "correct": 0,
       "why": {
-        "hu": "La una egyes szám, ezért es a helyes ige.",
         "en": "La una is singular, so es is the correct verb.",
-        "es": "La una es singular, por eso es el verbo correcto.",
-        "de": "La una ist Singular, deshalb ist es das richtige Verb."
+        "es": "La una es singular, por eso es el verbo correcto."
       },
       "wrong": {
         "Son": {
-          "hu": "A son a többes számú órákra való (son las dos); la una egyes szám, ezért nem jó.",
           "en": "Son is for plural hours (son las dos); la una is singular, so this is not correct.",
-          "es": "Son es para las horas en plural (son las dos); la una es singular, por eso no es correcto.",
-          "de": "Son ist für die Stunden im Plural (son las dos); la una ist Singular, deshalb ist das nicht richtig."
+          "es": "Son es para las horas en plural (son las dos); la una es singular, por eso no es correcto."
         }
       },
       "examples": ["Es la una y media.", "Son las dos de la tarde."],
-      "tr": { "hu": "Délután egy óra van.", "en": "It is one o'clock in the afternoon.", "es": "Es la una de la tarde.", "de": "Es ist ein Uhr nachmittags." }
+      "tr": { "en": "It is one o'clock in the afternoon.", "es": "Es la una de la tarde." }
     },
     {
       "id": "nh-06",
@@ -521,21 +423,17 @@
       "options": ["a", "en"],
       "correct": 0,
       "why": {
-        "hu": "Egy konkrét időpontot a las fejez ki: a las ocho.",
         "en": "A specific point in time is expressed with a las: a las ocho.",
-        "es": "Un momento concreto se expresa con a las: a las ocho.",
-        "de": "Ein bestimmter Zeitpunkt wird mit a las ausgedrückt: a las ocho."
+        "es": "Un momento concreto se expresa con a las: a las ocho."
       },
       "wrong": {
         "en": {
-          "hu": "Az en nem használatos ebben a szerkezetben egy konkrét óra kifejezésére, csak a las.",
           "en": "En is not used in this construction to express an exact clock time, only a las is.",
-          "es": "En no se usa en esta construcción para expresar una hora exacta, solo a las.",
-          "de": "En wird in dieser Konstruktion nicht verwendet, um eine genaue Uhrzeit auszudrücken, nur a las."
+          "es": "En no se usa en esta construcción para expresar una hora exacta, solo a las."
         }
       },
       "examples": ["Salimos a las nueve.", "La clase empieza a las diez."],
-      "tr": { "hu": "A vonat nyolckor indul.", "en": "The train leaves at eight.", "es": "El tren sale a las ocho.", "de": "Der Zug fährt um acht Uhr ab." }
+      "tr": { "en": "The train leaves at eight.", "es": "El tren sale a las ocho." }
     },
     {
       "id": "nh-07",
@@ -543,21 +441,17 @@
       "options": ["Son", "Es"],
       "correct": 0,
       "why": {
-        "hu": "Las tres többes szám, ezért son a helyes ige, nem es.",
         "en": "Las tres is plural, so son is the correct verb, not es.",
-        "es": "Las tres es plural, por eso son es el verbo correcto, no es.",
-        "de": "Las tres ist Plural, deshalb ist son das richtige Verb, nicht es."
+        "es": "Las tres es plural, por eso son es el verbo correcto, no es."
       },
       "wrong": {
         "Es": {
-          "hu": "Az es csak az egyes számú la una mellett áll; las tres többes szám, ezért son kell.",
           "en": "Es only goes with the singular la una; las tres is plural, so son is needed.",
-          "es": "Es solo va con la una, singular; las tres es plural, por eso hace falta son.",
-          "de": "Es steht nur bei dem singularen la una; las tres ist Plural, deshalb braucht es son."
+          "es": "Es solo va con la una, singular; las tres es plural, por eso hace falta son."
         }
       },
       "examples": ["Son las cuatro y media.", "Son las nueve y media de la mañana."],
-      "tr": { "hu": "Délután fél négy van.", "en": "It is half past three in the afternoon.", "es": "Son las tres y media de la tarde.", "de": "Es ist halb vier Uhr nachmittags." }
+      "tr": { "en": "It is half past three in the afternoon.", "es": "Son las tres y media de la tarde." }
     },
     {
       "id": "nh-08",
@@ -565,21 +459,17 @@
       "options": ["cuarto", "media"],
       "correct": 0,
       "why": {
-        "hu": "A negyedórát menos cuarto fejezi ki: cuarto itt negyedórát jelent, nem szobát.",
         "en": "A quarter of an hour is expressed with menos cuarto: cuarto here means a quarter, not a room.",
-        "es": "El cuarto de hora se expresa con menos cuarto: cuarto aquí significa cuarto de hora, no habitación.",
-        "de": "Eine Viertelstunde wird mit menos cuarto ausgedrückt: cuarto bedeutet hier Viertel, nicht Zimmer."
+        "es": "El cuarto de hora se expresa con menos cuarto: cuarto aquí significa cuarto de hora, no habitación."
       },
       "wrong": {
         "media": {
-          "hu": "A media csak az y-nal áll (las tres y media); a menos mellé a negyedórára a cuarto kell: las tres menos cuarto.",
           "en": "Media only goes with y (las tres y media); after menos the quarter hour needs cuarto: las tres menos cuarto.",
-          "es": "Media solo va con y (las tres y media); después de menos el cuarto de hora pide cuarto: las tres menos cuarto.",
-          "de": "Media steht nur mit y (las tres y media); nach menos braucht die Viertelstunde cuarto: las tres menos cuarto."
+          "es": "Media solo va con y (las tres y media); después de menos el cuarto de hora pide cuarto: las tres menos cuarto."
         }
       },
       "examples": ["Salimos a las ocho menos cuarto.", "La clase empieza a las dos menos cuarto."],
-      "tr": { "hu": "Háromnegyed háromkor érkezünk meg.", "en": "We arrive at a quarter to three.", "es": "Llegamos a las tres menos cuarto.", "de": "Wir kommen um Viertel vor drei an." }
+      "tr": { "en": "We arrive at a quarter to three.", "es": "Llegamos a las tres menos cuarto." }
     },
     {
       "id": "nh-09",
@@ -587,21 +477,17 @@
       "options": ["de", "en"],
       "correct": 0,
       "why": {
-        "hu": "A dátumot el + szám + de + hónap adja: el cinco de mayo.",
         "en": "The date is formed as el + number + de + month: el cinco de mayo.",
-        "es": "La fecha se forma con el + número + de + mes: el cinco de mayo.",
-        "de": "Das Datum wird mit el + Zahl + de + Monat gebildet: el cinco de mayo."
+        "es": "La fecha se forma con el + número + de + mes: el cinco de mayo."
       },
       "wrong": {
         "en": {
-          "hu": "Az en nem áll a napszám és a hónapnév között; ott mindig de kell.",
           "en": "En does not go between the day number and the month name; de is always needed there.",
-          "es": "En no va entre el número del día y el nombre del mes; ahí siempre hace falta de.",
-          "de": "En steht nicht zwischen der Tageszahl und dem Monatsnamen; dort braucht man immer de."
+          "es": "En no va entre el número del día y el nombre del mes; ahí siempre hace falta de."
         }
       },
       "examples": ["El examen es el nueve de octubre.", "Llegamos el veinte de julio."],
-      "tr": { "hu": "Ma május ötödike van.", "en": "Today is the fifth of May.", "es": "Hoy es el cinco de mayo.", "de": "Heute ist der fünfte Mai." }
+      "tr": { "en": "Today is the fifth of May.", "es": "Hoy es el cinco de mayo." }
     },
     {
       "id": "nh-10",
@@ -609,21 +495,17 @@
       "options": ["primero", "un"],
       "correct": 0,
       "why": {
-        "hu": "Mexikóban a hónap első napját el primero de... formában mondják.",
         "en": "In Mexico, the first day of the month is said as el primero de...",
-        "es": "En México, el primer día del mes se dice el primero de...",
-        "de": "In Mexiko sagt man den ersten Tag des Monats als el primero de..."
+        "es": "En México, el primer día del mes se dice el primero de..."
       },
       "wrong": {
         "un": {
-          "hu": "Az un csak közvetlenül főnév előtt áll (un libro), dátumban nem használjuk: el primero de enero.",
           "en": "Un only stands directly before a noun (un libro); it is not used in a date: el primero de enero.",
-          "es": "Un solo va directamente ante un sustantivo (un libro); en una fecha no se usa: el primero de enero.",
-          "de": "Un steht nur direkt vor einem Nomen (un libro); in einem Datum wird es nicht benutzt: el primero de enero."
+          "es": "Un solo va directamente ante un sustantivo (un libro); en una fecha no se usa: el primero de enero."
         }
       },
       "examples": ["Mañana es el primero de marzo.", "El examen es el primero de agosto."],
-      "tr": { "hu": "Ma január elseje van.", "en": "Today is the first of January.", "es": "Hoy es el primero de enero.", "de": "Heute ist der erste Januar." }
+      "tr": { "en": "Today is the first of January.", "es": "Hoy es el primero de enero." }
     },
     {
       "id": "nh-11",
@@ -631,21 +513,17 @@
       "options": ["años", "año"],
       "correct": 0,
       "why": {
-        "hu": "A veintiún rövidült alak ellenére a főnév többes számban marad: veintiún años.",
         "en": "Even though veintiún looks shortened, the noun stays plural: veintiún años.",
-        "es": "Aunque veintiún tiene forma apocopada, el sustantivo sigue en plural: veintiún años.",
-        "de": "Obwohl veintiún verkürzt aussieht, bleibt das Nomen im Plural: veintiún años."
+        "es": "Aunque veintiún tiene forma apocopada, el sustantivo sigue en plural: veintiún años."
       },
       "wrong": {
         "año": {
-          "hu": "Az año egyes szám; huszonegytől fölfelé mindig többes számú főnév kell, ezért veintiún años a helyes.",
           "en": "Año is singular; from twenty-one up a plural noun is always needed, so veintiún años is correct.",
-          "es": "Año es singular; a partir de veintiuno siempre hace falta un sustantivo en plural, por eso veintiún años es correcto.",
-          "de": "Año ist Singular; ab einundzwanzig braucht man immer ein Nomen im Plural, deshalb ist veintiún años richtig."
+          "es": "Año es singular; a partir de veintiuno siempre hace falta un sustantivo en plural, por eso veintiún años es correcto."
         }
       },
       "examples": ["Mi hermana tiene veintiún años.", "Ella tiene veintiún años también."],
-      "tr": { "hu": "Huszonegy éves vagyok.", "en": "I am twenty-one years old.", "es": "Tengo veintiún años.", "de": "Ich bin einundzwanzig Jahre alt." }
+      "tr": { "en": "I am twenty-one years old.", "es": "Tengo veintiún años." }
     },
     {
       "id": "nh-12",
@@ -653,21 +531,17 @@
       "options": ["cuesta", "tiene"],
       "correct": 0,
       "why": {
-        "hu": "Egy dolog árát costar fejezi ki: el café cuesta treinta pesos.",
         "en": "The price of a thing is expressed with costar: el café cuesta treinta pesos.",
-        "es": "El precio de una cosa se expresa con costar: el café cuesta treinta pesos.",
-        "de": "Der Preis einer Sache wird mit costar ausgedrückt: el café cuesta treinta pesos."
+        "es": "El precio de una cosa se expresa con costar: el café cuesta treinta pesos."
       },
       "wrong": {
         "tiene": {
-          "hu": "A tiene a tener igéből jön, és az életkort fejezi ki (tiene veinte años), nem árat; az árra costar kell: el café cuesta treinta pesos.",
           "en": "Tiene comes from tener and expresses age (tiene veinte años), not price; a price needs costar: el café cuesta treinta pesos.",
-          "es": "Tiene viene de tener y expresa la edad (tiene veinte años), no el precio; para el precio hace falta costar: el café cuesta treinta pesos.",
-          "de": "Tiene kommt von tener und drückt das Alter aus (tiene veinte años), nicht den Preis; für den Preis braucht man costar: el café cuesta treinta pesos."
+          "es": "Tiene viene de tener y expresa la edad (tiene veinte años), no el precio; para el precio hace falta costar: el café cuesta treinta pesos."
         }
       },
       "examples": ["El libro cuesta cien pesos.", "La comida cuesta treinta pesos."],
-      "tr": { "hu": "A kávé harminc pesóba kerül.", "en": "The coffee costs thirty pesos.", "es": "El café cuesta treinta pesos.", "de": "Der Kaffee kostet dreißig Pesos." }
+      "tr": { "en": "The coffee costs thirty pesos.", "es": "El café cuesta treinta pesos." }
     },
     {
       "id": "nh-match-01",
@@ -699,46 +573,34 @@
       "es": "Tengo veintiún años.",
       "target": "veintiún",
       "tr": {
-        "hu": "Huszonegy éves vagyok.",
         "en": "I am twenty-one years old.",
-        "es": "Tengo veintiún años.",
-        "de": "Ich bin einundzwanzig Jahre alt."
+        "es": "Tengo veintiún años."
       },
       "options": [
         {
           "text": {
-            "hu": "un + hímnemű főnév (rövidülés)",
             "en": "un + masculine noun (apocope)",
-            "es": "un + sustantivo masculino (apócope)",
-            "de": "un + maskulines Nomen (Apokope)"
+            "es": "un + sustantivo masculino (apócope)"
           }
         },
         {
           "text": {
-            "hu": "es la / son las (óra)",
             "en": "es la / son las (telling time)",
-            "es": "es la / son las (la hora)",
-            "de": "es la / son las (Uhrzeit)"
+            "es": "es la / son las (la hora)"
           },
           "wrong": {
-            "hu": "Az es la/son las az órára vonatkozik (pl. Son las tres); itt viszont egy számnév rövidüléséről van szó egy főnév előtt.",
             "en": "Es la/son las applies to telling time (e.g. Son las tres); here it is about a numeral shortening before a noun.",
-            "es": "Es la/son las se aplica a la hora (p. ej. Son las tres); aquí se trata de la apócope de un numeral ante un sustantivo.",
-            "de": "Es la/son las betrifft die Uhrzeit (z. B. Son las tres); hier geht es um die Apokope einer Zahl vor einem Nomen."
+            "es": "Es la/son las se aplica a la hora (p. ej. Son las tres); aquí se trata de la apócope de un numeral ante un sustantivo."
           }
         },
         {
           "text": {
-            "hu": "el + de + hónap (dátum)",
             "en": "el + de + month (date)",
-            "es": "el + de + mes (fecha)",
-            "de": "el + de + Monat (Datum)"
+            "es": "el + de + mes (fecha)"
           },
           "wrong": {
-            "hu": "Az el+de+hónap a dátumra vonatkozik (pl. el cinco de mayo); itt nincs se el, se hónapnév.",
             "en": "El+de+month applies to dates (e.g. el cinco de mayo); here there is neither el nor a month name.",
-            "es": "El+de+mes se aplica a la fecha (p. ej. el cinco de mayo); aquí no hay ni el ni un nombre de mes.",
-            "de": "El+de+Monat betrifft das Datum (z. B. el cinco de mayo); hier gibt es weder el noch einen Monatsnamen."
+            "es": "El+de+mes se aplica a la fecha (p. ej. el cinco de mayo); aquí no hay ni el ni un nombre de mes."
           }
         }
       ],
@@ -750,46 +612,34 @@
       "es": "Es la una de la tarde.",
       "target": "Es la una",
       "tr": {
-        "hu": "Egy óra van délután.",
         "en": "It is one o'clock in the afternoon.",
-        "es": "Es la una de la tarde.",
-        "de": "Es ist ein Uhr nachmittags."
+        "es": "Es la una de la tarde."
       },
       "options": [
         {
           "text": {
-            "hu": "un + hímnemű főnév (rövidülés)",
             "en": "un + masculine noun (apocope)",
-            "es": "un + sustantivo masculino (apócope)",
-            "de": "un + maskulines Nomen (Apokope)"
+            "es": "un + sustantivo masculino (apócope)"
           },
           "wrong": {
-            "hu": "Itt nincs számnév egy főnév előtt rövidítve; la una az óra kifejezése, nem apokopé.",
             "en": "There is no numeral shortened before a noun here; la una is the way to tell one o'clock, not an apocope.",
-            "es": "Aquí no hay ningún numeral apocopado ante un sustantivo; la una es la forma de decir la hora, no una apócope.",
-            "de": "Hier wird kein Zahlwort vor einem Nomen verkürzt; la una ist die Art, die Uhrzeit zu sagen, keine Apokope."
+            "es": "Aquí no hay ningún numeral apocopado ante un sustantivo; la una es la forma de decir la hora, no una apócope."
           }
         },
         {
           "text": {
-            "hu": "es la / son las (óra)",
             "en": "es la / son las (telling time)",
-            "es": "es la / son las (la hora)",
-            "de": "es la / son las (Uhrzeit)"
+            "es": "es la / son las (la hora)"
           }
         },
         {
           "text": {
-            "hu": "el + de + hónap (dátum)",
             "en": "el + de + month (date)",
-            "es": "el + de + mes (fecha)",
-            "de": "el + de + Monat (Datum)"
+            "es": "el + de + mes (fecha)"
           },
           "wrong": {
-            "hu": "Nincs se hónapnév, se dátum-szerkezet a mondatban, csak az óra.",
             "en": "There is no month name or date structure in the sentence, only the time.",
-            "es": "No hay nombre de mes ni estructura de fecha en la frase, solo la hora.",
-            "de": "Es gibt weder einen Monatsnamen noch eine Datumsstruktur im Satz, nur die Uhrzeit."
+            "es": "No hay nombre de mes ni estructura de fecha en la frase, solo la hora."
           }
         }
       ],
@@ -801,46 +651,34 @@
       "es": "El examen es el once de noviembre.",
       "target": "el once de noviembre",
       "tr": {
-        "hu": "A vizsga november tizenegyedikén van.",
         "en": "The exam is on November eleventh.",
-        "es": "El examen es el once de noviembre.",
-        "de": "Die Prüfung ist am elften November."
+        "es": "El examen es el once de noviembre."
       },
       "options": [
         {
           "text": {
-            "hu": "un + hímnemű főnév (rövidülés)",
             "en": "un + masculine noun (apocope)",
-            "es": "un + sustantivo masculino (apócope)",
-            "de": "un + maskulines Nomen (Apokope)"
+            "es": "un + sustantivo masculino (apócope)"
           },
           "wrong": {
-            "hu": "Itt nincs uno/un szó, ez nem apokopé-eset.",
             "en": "There is no uno/un here, this is not a case of apocope.",
-            "es": "Aquí no hay uno/un, no es un caso de apócope.",
-            "de": "Hier gibt es kein uno/un, das ist kein Apokope-Fall."
+            "es": "Aquí no hay uno/un, no es un caso de apócope."
           }
         },
         {
           "text": {
-            "hu": "es la / son las (óra)",
             "en": "es la / son las (telling time)",
-            "es": "es la / son las (la hora)",
-            "de": "es la / son las (Uhrzeit)"
+            "es": "es la / son las (la hora)"
           },
           "wrong": {
-            "hu": "Nincs óra a mondatban, hanem egy dátum: el once de noviembre.",
             "en": "There is no time of day in the sentence, but a date: el once de noviembre.",
-            "es": "No hay hora en la frase, sino una fecha: el once de noviembre.",
-            "de": "Im Satz steht keine Uhrzeit, sondern ein Datum: el once de noviembre."
+            "es": "No hay hora en la frase, sino una fecha: el once de noviembre."
           }
         },
         {
           "text": {
-            "hu": "el + de + hónap (dátum)",
             "en": "el + de + month (date)",
-            "es": "el + de + mes (fecha)",
-            "de": "el + de + Monat (Datum)"
+            "es": "el + de + mes (fecha)"
           }
         }
       ],
@@ -852,46 +690,34 @@
       "es": "Mi hermano tiene treinta y un años.",
       "target": "treinta y un",
       "tr": {
-        "hu": "A testvérem harmincegy éves.",
         "en": "My brother is thirty-one years old.",
-        "es": "Mi hermano tiene treinta y un años.",
-        "de": "Mein Bruder ist einunddreißig Jahre alt."
+        "es": "Mi hermano tiene treinta y un años."
       },
       "options": [
         {
           "text": {
-            "hu": "un + hímnemű főnév (rövidülés)",
             "en": "un + masculine noun (apocope)",
-            "es": "un + sustantivo masculino (apócope)",
-            "de": "un + maskulines Nomen (Apokope)"
+            "es": "un + sustantivo masculino (apócope)"
           }
         },
         {
           "text": {
-            "hu": "es la / son las (óra)",
             "en": "es la / son las (telling time)",
-            "es": "es la / son las (la hora)",
-            "de": "es la / son las (Uhrzeit)"
+            "es": "es la / son las (la hora)"
           },
           "wrong": {
-            "hu": "Nincs óra a mondatban, hanem egy életkor: treinta y un años.",
             "en": "There is no time of day in the sentence, but an age: treinta y un años.",
-            "es": "No hay hora en la frase, sino una edad: treinta y un años.",
-            "de": "Im Satz steht keine Uhrzeit, sondern ein Alter: treinta y un años."
+            "es": "No hay hora en la frase, sino una edad: treinta y un años."
           }
         },
         {
           "text": {
-            "hu": "el + de + hónap (dátum)",
             "en": "el + de + month (date)",
-            "es": "el + de + mes (fecha)",
-            "de": "el + de + Monat (Datum)"
+            "es": "el + de + mes (fecha)"
           },
           "wrong": {
-            "hu": "Nincs se hónapnév, se el+de-szerkezet, ez egy életkor rövidülő számnévvel.",
             "en": "There is no month name or el+de structure, this is an age with a shortened numeral.",
-            "es": "No hay nombre de mes ni estructura el+de, es una edad con un numeral apocopado.",
-            "de": "Es gibt weder einen Monatsnamen noch die Struktur el+de, das ist ein Alter mit verkürzter Zahl."
+            "es": "No hay nombre de mes ni estructura el+de, es una edad con un numeral apocopado."
           }
         }
       ],
@@ -903,46 +729,34 @@
       "es": "Son las diez de la noche.",
       "target": "Son las diez",
       "tr": {
-        "hu": "Este tíz óra van.",
         "en": "It is ten o'clock at night.",
-        "es": "Son las diez de la noche.",
-        "de": "Es ist zehn Uhr abends."
+        "es": "Son las diez de la noche."
       },
       "options": [
         {
           "text": {
-            "hu": "un + hímnemű főnév (rövidülés)",
             "en": "un + masculine noun (apocope)",
-            "es": "un + sustantivo masculino (apócope)",
-            "de": "un + maskulines Nomen (Apokope)"
+            "es": "un + sustantivo masculino (apócope)"
           },
           "wrong": {
-            "hu": "Itt nincs uno/un szó, ez nem apokopé-eset.",
             "en": "There is no uno/un here, this is not a case of apocope.",
-            "es": "Aquí no hay uno/un, no es un caso de apócope.",
-            "de": "Hier gibt es kein uno/un, das ist kein Apokope-Fall."
+            "es": "Aquí no hay uno/un, no es un caso de apócope."
           }
         },
         {
           "text": {
-            "hu": "es la / son las (óra)",
             "en": "es la / son las (telling time)",
-            "es": "es la / son las (la hora)",
-            "de": "es la / son las (Uhrzeit)"
+            "es": "es la / son las (la hora)"
           }
         },
         {
           "text": {
-            "hu": "el + de + hónap (dátum)",
             "en": "el + de + month (date)",
-            "es": "el + de + mes (fecha)",
-            "de": "el + de + Monat (Datum)"
+            "es": "el + de + mes (fecha)"
           },
           "wrong": {
-            "hu": "Nincs se hónapnév, se el+de-szerkezet, ez az óra kifejezése.",
             "en": "There is no month name or el+de structure, this expresses the time.",
-            "es": "No hay nombre de mes ni estructura el+de, esto expresa la hora.",
-            "de": "Es gibt weder einen Monatsnamen noch die Struktur el+de, das drückt die Uhrzeit aus."
+            "es": "No hay nombre de mes ni estructura el+de, esto expresa la hora."
           }
         }
       ],
@@ -954,46 +768,34 @@
       "es": "Hoy es el cinco de mayo.",
       "target": "el cinco de mayo",
       "tr": {
-        "hu": "Ma május ötödike van.",
         "en": "Today is May fifth.",
-        "es": "Hoy es el cinco de mayo.",
-        "de": "Heute ist der fünfte Mai."
+        "es": "Hoy es el cinco de mayo."
       },
       "options": [
         {
           "text": {
-            "hu": "un + hímnemű főnév (rövidülés)",
             "en": "un + masculine noun (apocope)",
-            "es": "un + sustantivo masculino (apócope)",
-            "de": "un + maskulines Nomen (Apokope)"
+            "es": "un + sustantivo masculino (apócope)"
           },
           "wrong": {
-            "hu": "Itt nincs uno/un szó, ez nem apokopé-eset.",
             "en": "There is no uno/un here, this is not a case of apocope.",
-            "es": "Aquí no hay uno/un, no es un caso de apócope.",
-            "de": "Hier gibt es kein uno/un, das ist kein Apokope-Fall."
+            "es": "Aquí no hay uno/un, no es un caso de apócope."
           }
         },
         {
           "text": {
-            "hu": "es la / son las (óra)",
             "en": "es la / son las (telling time)",
-            "es": "es la / son las (la hora)",
-            "de": "es la / son las (Uhrzeit)"
+            "es": "es la / son las (la hora)"
           },
           "wrong": {
-            "hu": "Nincs óra a mondatban, hanem egy dátum: el cinco de mayo.",
             "en": "There is no time of day in the sentence, but a date: el cinco de mayo.",
-            "es": "No hay hora en la frase, sino una fecha: el cinco de mayo.",
-            "de": "Im Satz steht keine Uhrzeit, sondern ein Datum: el cinco de mayo."
+            "es": "No hay hora en la frase, sino una fecha: el cinco de mayo."
           }
         },
         {
           "text": {
-            "hu": "el + de + hónap (dátum)",
             "en": "el + de + month (date)",
-            "es": "el + de + mes (fecha)",
-            "de": "el + de + Monat (Datum)"
+            "es": "el + de + mes (fecha)"
           }
         }
       ],
@@ -1005,46 +807,34 @@
       "es": "Mi abuelo tiene noventa y un años.",
       "target": "noventa y un",
       "tr": {
-        "hu": "A nagyapám kilencvenegy éves.",
         "en": "My grandfather is ninety-one years old.",
-        "es": "Mi abuelo tiene noventa y un años.",
-        "de": "Mein Großvater ist einundneunzig Jahre alt."
+        "es": "Mi abuelo tiene noventa y un años."
       },
       "options": [
         {
           "text": {
-            "hu": "un + hímnemű főnév (rövidülés)",
             "en": "un + masculine noun (apocope)",
-            "es": "un + sustantivo masculino (apócope)",
-            "de": "un + maskulines Nomen (Apokope)"
+            "es": "un + sustantivo masculino (apócope)"
           }
         },
         {
           "text": {
-            "hu": "es la / son las (óra)",
             "en": "es la / son las (telling time)",
-            "es": "es la / son las (la hora)",
-            "de": "es la / son las (Uhrzeit)"
+            "es": "es la / son las (la hora)"
           },
           "wrong": {
-            "hu": "Nincs óra a mondatban, hanem egy életkor: noventa y un años.",
             "en": "There is no time of day in the sentence, but an age: noventa y un años.",
-            "es": "No hay hora en la frase, sino una edad: noventa y un años.",
-            "de": "Im Satz steht keine Uhrzeit, sondern ein Alter: noventa y un años."
+            "es": "No hay hora en la frase, sino una edad: noventa y un años."
           }
         },
         {
           "text": {
-            "hu": "el + de + hónap (dátum)",
             "en": "el + de + month (date)",
-            "es": "el + de + mes (fecha)",
-            "de": "el + de + Monat (Datum)"
+            "es": "el + de + mes (fecha)"
           },
           "wrong": {
-            "hu": "Nincs se hónapnév, se el+de-szerkezet, ez egy életkor rövidülő számnévvel.",
             "en": "There is no month name or el+de structure, this is an age with a shortened numeral.",
-            "es": "No hay nombre de mes ni estructura el+de, es una edad con un numeral apocopado.",
-            "de": "Es gibt weder einen Monatsnamen noch die Struktur el+de, das ist ein Alter mit verkürzter Zahl."
+            "es": "No hay nombre de mes ni estructura el+de, es una edad con un numeral apocopado."
           }
         }
       ],

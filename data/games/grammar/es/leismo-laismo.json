@@ -3,110 +3,86 @@
   "topic": "leismo-laismo",
   "level": "C1",
   "title": {
-    "hu": "Leísmo és laísmo",
     "en": "Leísmo and laísmo",
-    "es": "Leísmo y laísmo",
-    "de": "Leísmo und laísmo"
+    "es": "Leísmo y laísmo"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "Ha egy harmadik személyről beszélsz, két névmás-család áll rendelkezésre: lo, la, los, las (tárgyeset: kit vagy mit érint az ige) és le, les (részes eset: kinek történik). A latin-amerikai norma, így Mexikóban is, ezt következetesen megkülönbözteti. Spanyolország egyes részein viszont keverik őket, és erre három szakszó van: leísmo (le a tárgyeset helyén), laísmo (la a részes helyén) és loísmo (lo a részes helyén). A kérdés: melyik fogadható el, melyik hiba, és mit használj te.",
         "en": "When you talk about a third person you have two families of pronouns: lo, la, los, las (direct object: whom or what the verb affects) and le, les (indirect object: to whom or for whom it happens). The Latin American norm, Mexico included, keeps them consistently apart. In parts of Spain, however, they get mixed up, and there are three technical terms for that: leísmo (le in place of the direct object), laísmo (la in place of the indirect object) and loísmo (lo in place of the indirect object). The question is: which is accepted, which is an error, and what should you use.",
-        "es": "Cuando hablas de una tercera persona, tienes dos familias de pronombres: lo, la, los, las (objeto directo: a quién o qué afecta el verbo) y le, les (objeto indirecto: a quién le ocurre). La norma latinoamericana, México incluido, las distingue de forma consistente. En algunas zonas de España, en cambio, se mezclan, y para eso hay tres nombres: leísmo (le en lugar del objeto directo), laísmo (la en lugar del indirecto) y loísmo (lo en lugar del indirecto). La pregunta es cuál se acepta, cuál es un error y qué debes usar tú.",
-        "de": "Wenn du über eine dritte Person sprichst, gibt es zwei Pronomenfamilien: lo, la, los, las (direktes Objekt: wen oder was das Verb betrifft) und le, les (indirektes Objekt: wem es geschieht). Die lateinamerikanische Norm, auch in Mexiko, hält sie konsequent auseinander. In Teilen Spaniens werden sie dagegen vermischt, und dafür gibt es drei Fachbegriffe: leísmo (le statt des direkten Objekts), laísmo (la statt des indirekten Objekts) und loísmo (lo statt des indirekten Objekts). Die Frage ist: Was wird akzeptiert, was ist ein Fehler, und was sollst du verwenden."
+        "es": "Cuando hablas de una tercera persona, tienes dos familias de pronombres: lo, la, los, las (objeto directo: a quién o qué afecta el verbo) y le, les (objeto indirecto: a quién le ocurre). La norma latinoamericana, México incluido, las distingue de forma consistente. En algunas zonas de España, en cambio, se mezclan, y para eso hay tres nombres: leísmo (le en lugar del objeto directo), laísmo (la en lugar del indirecto) y loísmo (lo en lugar del indirecto). La pregunta es cuál se acepta, cuál es un error y qué debes usar tú."
       }
     },
     {
       "kind": "list",
       "title": {
-        "hu": "Három jelenség, három ítélet",
         "en": "Three phenomena, three verdicts",
-        "es": "Tres fenómenos, tres veredictos",
-        "de": "Drei Phänomene, drei Urteile"
+        "es": "Tres fenómenos, tres veredictos"
       },
       "items": [
         {
           "text": {
-            "hu": "Leísmo: le áll a lo/la helyén. Férfi, egyes számú személynél a norma elfogadja (ibériai leísmo de persona: le vi), Mexikóban és Latin-Amerikában viszont a lo a norma. A többes számú leísmo (les vi) még Spanyolországban is kevésbé elfogadott. Dolognál és nőnél a le sehol sem elfogadott.",
             "en": "Leísmo: le stands in place of lo/la. For a single man the norm accepts it (Iberian leísmo de persona: le vi), but in Mexico and Latin America lo is the norm. The plural leísmo (les vi) is less accepted even in Spain. For things and for women, le is accepted nowhere.",
-            "es": "Leísmo: le en lugar de lo/la. Con un solo hombre la norma lo admite (leísmo de persona ibérico: le vi), pero en México y en América lo normal es lo. El leísmo plural (les vi) se admite menos incluso en España. Con cosas y con mujeres, le no se admite en ningún sitio.",
-            "de": "Leísmo: le steht anstelle von lo/la. Bei einem einzelnen Mann akzeptiert die Norm es (iberischer Leísmo de persona: le vi), in Mexiko und Lateinamerika gilt aber lo als Norm. Der Plural-Leísmo (les vi) wird sogar in Spanien weniger akzeptiert. Bei Dingen und bei Frauen wird le nirgends akzeptiert."
+            "es": "Leísmo: le en lugar de lo/la. Con un solo hombre la norma lo admite (leísmo de persona ibérico: le vi), pero en México y en América lo normal es lo. El leísmo plural (les vi) se admite menos incluso en España. Con cosas y con mujeres, le no se admite en ningún sitio."
           },
           "examples": [
             {
               "es": "A mi tío lo vi ayer en el mercado.",
               "tr": {
-                "hu": "A nagybátyámat tegnap láttam a piacon.",
                 "en": "I saw my uncle yesterday at the market.",
-                "es": "A mi tío lo vi ayer en el mercado.",
-                "de": "Meinen Onkel habe ich gestern auf dem Markt gesehen."
+                "es": "A mi tío lo vi ayer en el mercado."
               }
             },
             {
               "es": "El libro lo leí en una semana.",
               "tr": {
-                "hu": "A könyvet egy hét alatt olvastam el.",
                 "en": "I read the book in a week.",
-                "es": "El libro lo leí en una semana.",
-                "de": "Das Buch habe ich in einer Woche gelesen."
+                "es": "El libro lo leí en una semana."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Laísmo: la áll a le helyén, ha a címzett nő (hibás: la dije la verdad, helyes: le dije la verdad). A norma nem fogadja el.",
             "en": "Laísmo: la stands in place of le when the recipient is a woman (wrong: la dije la verdad, right: le dije la verdad). The norm does not accept it.",
-            "es": "Laísmo: la en lugar de le cuando la destinataria es una mujer (incorrecto: la dije la verdad, correcto: le dije la verdad). La norma no lo admite.",
-            "de": "Laísmo: la steht anstelle von le, wenn die Empfängerin eine Frau ist (falsch: la dije la verdad, richtig: le dije la verdad). Die Norm akzeptiert es nicht."
+            "es": "Laísmo: la en lugar de le cuando la destinataria es una mujer (incorrecto: la dije la verdad, correcto: le dije la verdad). La norma no lo admite."
           },
           "examples": [
             {
               "es": "Le dije la verdad a mi hermana.",
               "tr": {
-                "hu": "Megmondtam az igazat a nővéremnek.",
                 "en": "I told my sister the truth.",
-                "es": "Le dije la verdad a mi hermana.",
-                "de": "Ich habe meiner Schwester die Wahrheit gesagt."
+                "es": "Le dije la verdad a mi hermana."
               }
             },
             {
               "es": "A mi tía le mandé un mensaje.",
               "tr": {
-                "hu": "A nagynénémnek küldtem egy üzenetet.",
                 "en": "I sent my aunt a message.",
-                "es": "A mi tía le mandé un mensaje.",
-                "de": "Meiner Tante habe ich eine Nachricht geschickt."
+                "es": "A mi tía le mandé un mensaje."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Loísmo: lo áll a le helyén, ha a címzett férfi (hibás: lo dije la verdad, helyes: le dije la verdad). Ezt sem fogadja el a norma.",
             "en": "Loísmo: lo stands in place of le when the recipient is a man (wrong: lo dije la verdad, right: le dije la verdad). The norm does not accept this either.",
-            "es": "Loísmo: lo en lugar de le cuando el destinatario es un hombre (incorrecto: lo dije la verdad, correcto: le dije la verdad). La norma tampoco lo admite.",
-            "de": "Loísmo: lo steht anstelle von le, wenn der Empfänger ein Mann ist (falsch: lo dije la verdad, richtig: le dije la verdad). Auch das akzeptiert die Norm nicht."
+            "es": "Loísmo: lo en lugar de le cuando el destinatario es un hombre (incorrecto: lo dije la verdad, correcto: le dije la verdad). La norma tampoco lo admite."
           },
           "examples": [
             {
               "es": "Le pedí un favor a mi jefe.",
               "tr": {
-                "hu": "Szívességet kértem a főnökömtől.",
                 "en": "I asked my boss for a favor.",
-                "es": "Le pedí un favor a mi jefe.",
-                "de": "Ich habe meinen Chef um einen Gefallen gebeten."
+                "es": "Le pedí un favor a mi jefe."
               }
             },
             {
               "es": "Le di un regalo a mi tío.",
               "tr": {
-                "hu": "Ajándékot adtam a nagybátyámnak.",
                 "en": "I gave my uncle a gift.",
-                "es": "Le di un regalo a mi tío.",
-                "de": "Ich habe meinem Onkel ein Geschenk gegeben."
+                "es": "Le di un regalo a mi tío."
               }
             }
           ]
@@ -117,41 +93,29 @@
       "kind": "table",
       "id": "leismo-laismo",
       "title": {
-        "hu": "Tárgyeset (lo, la) és részes (le, les) ugyanarra a személyre",
         "en": "Direct (lo, la) and indirect (le, les) for the same person",
-        "es": "Directo (lo, la) e indirecto (le, les) para la misma persona",
-        "de": "Direkt (lo, la) und indirekt (le, les) für dieselbe Person"
+        "es": "Directo (lo, la) e indirecto (le, les) para la misma persona"
       },
       "header": [
         {
-          "hu": "Személy",
           "en": "Person",
-          "es": "Persona",
-          "de": "Person"
+          "es": "Persona"
         },
         {
-          "hu": "ver",
           "en": "ver",
-          "es": "ver",
-          "de": "ver"
+          "es": "ver"
         },
         {
-          "hu": "invitar",
           "en": "invitar",
-          "es": "invitar",
-          "de": "invitar"
+          "es": "invitar"
         },
         {
-          "hu": "escribir",
           "en": "escribir",
-          "es": "escribir",
-          "de": "escribir"
+          "es": "escribir"
         },
         {
-          "hu": "preguntar",
           "en": "preguntar",
-          "es": "preguntar",
-          "de": "preguntar"
+          "es": "preguntar"
         }
       ],
       "rows": [
@@ -188,148 +152,116 @@
     {
       "kind": "usage",
       "title": {
-        "hu": "Hogyan döntsd el: lo/la vagy le?",
         "en": "How to decide: lo/la or le?",
-        "es": "Cómo decidir: ¿lo/la o le?",
-        "de": "So entscheidest du: lo/la oder le?"
+        "es": "Cómo decidir: ¿lo/la o le?"
       },
       "points": [
         {
           "text": {
-            "hu": "Kérdezd meg, mit csinál az ige a személlyel. Ha közvetlenül őt éri (látom, meghívom, keresem, várom, ismerem), tárgyeset: lo, la, los, las. Ha neki szól valami (mondom, adom, írom, kérem), részes: le, les.",
             "en": "Ask what the verb does to the person. If it affects him or her directly (I see, invite, look for, wait for, know), it is the direct object: lo, la, los, las. If something is meant for the person (I say, give, write, ask), it is the indirect object: le, les.",
-            "es": "Pregunta qué hace el verbo con la persona. Si la afecta directamente (veo, invito, busco, espero, conozco), es objeto directo: lo, la, los, las. Si algo va dirigido a la persona (digo, doy, escribo, pido), es objeto indirecto: le, les.",
-            "de": "Frage, was das Verb mit der Person macht. Betrifft es sie direkt (ich sehe, lade ein, suche, warte auf, kenne), ist es das direkte Objekt: lo, la, los, las. Ist etwas für die Person bestimmt (ich sage, gebe, schreibe, bitte), ist es das indirekte Objekt: le, les."
+            "es": "Pregunta qué hace el verbo con la persona. Si la afecta directamente (veo, invito, busco, espero, conozco), es objeto directo: lo, la, los, las. Si algo va dirigido a la persona (digo, doy, escribo, pido), es objeto indirecto: le, les."
           },
           "examples": [
             {
               "es": "A mi vecino lo vi ayer.",
               "tr": {
-                "hu": "A szomszédomat tegnap láttam.",
                 "en": "I saw my neighbor yesterday.",
-                "es": "A mi vecino lo vi ayer.",
-                "de": "Meinen Nachbarn habe ich gestern gesehen."
+                "es": "A mi vecino lo vi ayer."
               }
             },
             {
               "es": "A mis amigos los espero en la puerta.",
               "tr": {
-                "hu": "A barátaimat az ajtóban várom.",
                 "en": "I wait for my friends at the door.",
-                "es": "A mis amigos los espero en la puerta.",
-                "de": "Ich warte an der Tür auf meine Freunde."
+                "es": "A mis amigos los espero en la puerta."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Ha a mondatban kitett tárgy is áll (la verdad, un regalo, un favor, la atención), a személy részes: le, les. A tárgy már foglalt, a személy csak címzett.",
             "en": "If the sentence also has an explicit object (la verdad, un regalo, un favor, la atención), the person is indirect: le, les. The object slot is already taken, the person is only the recipient.",
-            "es": "Si la oración tiene además un objeto expreso (la verdad, un regalo, un favor, la atención), la persona es indirecta: le, les. El objeto ya está ocupado, la persona es solo destinataria.",
-            "de": "Steht im Satz zusätzlich ein ausdrückliches Objekt (la verdad, un regalo, un favor, la atención), ist die Person indirekt: le, les. Das Objekt ist schon vergeben, die Person ist nur Empfänger."
+            "es": "Si la oración tiene además un objeto expreso (la verdad, un regalo, un favor, la atención), la persona es indirecta: le, les. El objeto ya está ocupado, la persona es solo destinataria."
           },
           "examples": [
             {
               "es": "Le di un regalo a mi hermana.",
               "tr": {
-                "hu": "Ajándékot adtam a nővéremnek.",
                 "en": "I gave my sister a gift.",
-                "es": "Le di un regalo a mi hermana.",
-                "de": "Ich habe meiner Schwester ein Geschenk gegeben."
+                "es": "Le di un regalo a mi hermana."
               }
             },
             {
               "es": "Le llamé la atención a mi hijo.",
               "tr": {
-                "hu": "Megdorgáltam a fiamat.",
                 "en": "I told my son off.",
-                "es": "Le llamé la atención a mi hijo.",
-                "de": "Ich habe meinen Sohn zurechtgewiesen."
+                "es": "Le llamé la atención a mi hijo."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Sok ige mindig ugyanazt kéri a személlyel. Tárgyeset (lo/la): ver, conocer, buscar, esperar, invitar, visitar, querer. Részes (le/les): decir, dar, escribir, mandar, preguntar, pedir, hablar, obedecer, pagar, doler.",
             "en": "Many verbs always take the same one with a person. Direct (lo/la): ver, conocer, buscar, esperar, invitar, visitar, querer. Indirect (le/les): decir, dar, escribir, mandar, preguntar, pedir, hablar, obedecer, pagar, doler.",
-            "es": "Muchos verbos piden siempre lo mismo con una persona. Directo (lo/la): ver, conocer, buscar, esperar, invitar, visitar, querer. Indirecto (le/les): decir, dar, escribir, mandar, preguntar, pedir, hablar, obedecer, pagar, doler.",
-            "de": "Viele Verben verlangen bei einer Person immer dasselbe. Direkt (lo/la): ver, conocer, buscar, esperar, invitar, visitar, querer. Indirekt (le/les): decir, dar, escribir, mandar, preguntar, pedir, hablar, obedecer, pagar, doler."
+            "es": "Muchos verbos piden siempre lo mismo con una persona. Directo (lo/la): ver, conocer, buscar, esperar, invitar, visitar, querer. Indirecto (le/les): decir, dar, escribir, mandar, preguntar, pedir, hablar, obedecer, pagar, doler."
           },
           "examples": [
             {
               "es": "A mi abuela la visito cada domingo.",
               "tr": {
-                "hu": "A nagyanyámat minden vasárnap meglátogatom.",
                 "en": "I visit my grandmother every Sunday.",
-                "es": "A mi abuela la visito cada domingo.",
-                "de": "Meine Großmutter besuche ich jeden Sonntag."
+                "es": "A mi abuela la visito cada domingo."
               }
             },
             {
               "es": "Le pregunté la hora a un señor.",
               "tr": {
-                "hu": "Megkérdeztem az időt egy úrtól.",
                 "en": "I asked a gentleman the time.",
-                "es": "Le pregunté la hora a un señor.",
-                "de": "Ich habe einen Herrn nach der Uhrzeit gefragt."
+                "es": "Le pregunté la hora a un señor."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A nemet csak a tárgyeset névmás jelöli (lo/la, los/las). A részes névmás nem: a le és a les férfinak és nőnek is jár.",
             "en": "Only the direct object pronoun marks gender (lo/la, los/las). The indirect pronoun does not: le and les are used for men and women alike.",
-            "es": "Solo el pronombre de objeto directo marca el género (lo/la, los/las). El indirecto no: le y les valen para hombres y mujeres.",
-            "de": "Nur das direkte Objektpronomen markiert das Geschlecht (lo/la, los/las). Das indirekte nicht: le und les gelten für Männer und Frauen gleichermaßen."
+            "es": "Solo el pronombre de objeto directo marca el género (lo/la, los/las). El indirecto no: le y les valen para hombres y mujeres."
           },
           "examples": [
             {
               "es": "A Pedro lo veo y a Ana la veo.",
               "tr": {
-                "hu": "Pedrót látom, és Anát látom.",
                 "en": "I see Pedro and I see Ana.",
-                "es": "A Pedro lo veo y a Ana la veo.",
-                "de": "Pedro sehe ich, und Ana sehe ich."
+                "es": "A Pedro lo veo y a Ana la veo."
               }
             },
             {
               "es": "A Pedro le escribo y a Ana le escribo.",
               "tr": {
-                "hu": "Pedrónak írok, és Anának írok.",
                 "en": "I write to Pedro and I write to Ana.",
-                "es": "A Pedro le escribo y a Ana le escribo.",
-                "de": "Pedro schreibe ich, und Ana schreibe ich."
+                "es": "A Pedro le escribo y a Ana le escribo."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Ha a le vagy a les után lo, la, los vagy las következne, se lesz belőle: se lo, se la. Le lo vagy le la nem létezik.",
             "en": "If le or les would be followed by lo, la, los or las, it becomes se: se lo, se la. Le lo or le la does not exist.",
-            "es": "Si a le o les le siguiera lo, la, los o las, se convierte en se: se lo, se la. Le lo o le la no existe.",
-            "de": "Würde auf le oder les ein lo, la, los oder las folgen, wird daraus se: se lo, se la. Le lo oder le la gibt es nicht."
+            "es": "Si a le o les le siguiera lo, la, los o las, se convierte en se: se lo, se la. Le lo o le la no existe."
           },
           "examples": [
             {
               "es": "Se lo di a mi hermana.",
               "tr": {
-                "hu": "Odaadtam a nővéremnek.",
                 "en": "I gave it to my sister.",
-                "es": "Se lo di a mi hermana.",
-                "de": "Ich habe es meiner Schwester gegeben."
+                "es": "Se lo di a mi hermana."
               }
             },
             {
               "es": "Se la mandé a mi jefe.",
               "tr": {
-                "hu": "Elküldtem a főnökömnek.",
                 "en": "I sent it to my boss.",
-                "es": "Se la mandé a mi jefe.",
-                "de": "Ich habe es meinem Chef geschickt."
+                "es": "Se la mandé a mi jefe."
               }
             }
           ]
@@ -339,38 +271,30 @@
     {
       "kind": "contrast",
       "title": {
-        "hu": "Hasonló, mégis más",
         "en": "Similar, yet different",
-        "es": "Parecido, pero distinto",
-        "de": "Ähnlich, aber verschieden"
+        "es": "Parecido, pero distinto"
       },
       "pairs": [
         {
           "a": "lo vi",
           "b": "le vi",
           "note": {
-            "hu": "Férfi személynél az ibériai le vi elfogadott leísmo, a latin-amerikai norma viszont lo vi. Dolognál mindenhol lo vagy la áll: a le vi ott egyik normában sem helyes.",
             "en": "For a man, the Iberian le vi is an accepted leísmo, but the Latin American norm is lo vi. For things, lo or la is used everywhere: le vi is correct in neither norm there.",
-            "es": "Con un hombre, el le vi ibérico es un leísmo admitido, pero la norma latinoamericana es lo vi. Con cosas se usa lo o la en todas partes: le vi no es correcto en ninguna norma.",
-            "de": "Bei einem Mann ist das iberische le vi ein akzeptierter Leísmo, die lateinamerikanische Norm ist aber lo vi. Bei Dingen steht überall lo oder la: le vi ist dort in keiner Norm richtig."
+            "es": "Con un hombre, el le vi ibérico es un leísmo admitido, pero la norma latinoamericana es lo vi. Con cosas se usa lo o la en todas partes: le vi no es correcto en ninguna norma."
           },
           "examples": [
             {
               "es": "A mi primo lo vi en la fiesta.",
               "tr": {
-                "hu": "Az unokatestvéremet a bulin láttam.",
                 "en": "I saw my cousin at the party.",
-                "es": "A mi primo lo vi en la fiesta.",
-                "de": "Meinen Cousin habe ich auf der Party gesehen."
+                "es": "A mi primo lo vi en la fiesta."
               }
             },
             {
               "es": "La carta la leí anoche.",
               "tr": {
-                "hu": "A levelet tegnap este olvastam el.",
                 "en": "I read the letter last night.",
-                "es": "La carta la leí anoche.",
-                "de": "Den Brief habe ich gestern Abend gelesen."
+                "es": "La carta la leí anoche."
               }
             }
           ]
@@ -379,28 +303,22 @@
           "a": "le dije",
           "b": "la dije",
           "note": {
-            "hu": "A részes névmás nőnek is le: a la dije laísmo, és hibának számít.",
             "en": "The indirect pronoun is le for a woman too: la dije is laísmo and counts as an error.",
-            "es": "El pronombre indirecto es le también para una mujer: la dije es laísmo y se considera un error.",
-            "de": "Das indirekte Pronomen ist auch für eine Frau le: la dije ist Laísmo und gilt als Fehler."
+            "es": "El pronombre indirecto es le también para una mujer: la dije es laísmo y se considera un error."
           },
           "examples": [
             {
               "es": "A mi abuela le escribí una carta.",
               "tr": {
-                "hu": "A nagyanyámnak írtam egy levelet.",
                 "en": "I wrote my grandmother a letter.",
-                "es": "A mi abuela le escribí una carta.",
-                "de": "Meiner Großmutter habe ich einen Brief geschrieben."
+                "es": "A mi abuela le escribí una carta."
               }
             },
             {
               "es": "A mi tía le mandé flores.",
               "tr": {
-                "hu": "A nagynénémnek virágot küldtem.",
                 "en": "I sent my aunt flowers.",
-                "es": "A mi tía le mandé flores.",
-                "de": "Meiner Tante habe ich Blumen geschickt."
+                "es": "A mi tía le mandé flores."
               }
             }
           ]
@@ -410,27 +328,21 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Mexikóban az egyszerű, biztos szabály: tárgyesetben lo, la, los, las, részesben le, les. Ha spanyolországi beszélőtől férfira le vi-t hallasz, az leísmo: érted, de te mondj lo vi-t.",
         "en": "In Mexico the simple, safe rule is: lo, la, los, las for the direct object, le, les for the indirect. If you hear le vi for a man from a speaker in Spain, that is leísmo: you understand it, but you say lo vi.",
-        "es": "En México la regla simple y segura es: lo, la, los, las para el directo, le, les para el indirecto. Si oyes le vi para un hombre a un hablante de España, es leísmo: lo entiendes, pero tú di lo vi.",
-        "de": "In Mexiko gilt die einfache, sichere Regel: lo, la, los, las für das direkte Objekt, le, les für das indirekte. Hörst du von einem Sprecher aus Spanien le vi für einen Mann, ist das Leísmo: Du verstehst es, sagst aber selbst lo vi."
+        "es": "En México la regla simple y segura es: lo, la, los, las para el directo, le, les para el indirecto. Si oyes le vi para un hombre a un hablante de España, es leísmo: lo entiendes, pero tú di lo vi."
       }
     }
   ],
   "speak": {
-    "hu": "Ez a lecke a harmadik személyű névmások két családját választja szét. Az egyik család a tárgyat jelöli: kit vagy mit látok, hívok meg, keresek. A másik a címzettet: kinek mondok, adok, írok valamit. A latin-amerikai norma, így Mexikóban is, ezt következetesen betartja. Spanyolország egyes vidékein keverik őket: férfi személynél a tárgyeset helyén álló részes névmást elfogadják, nőnél és dolognál viszont hibának számít, a fordított csere pedig sehol sem helyes. A részes névmás soha nem jelöl nemet, ezért nőnek is ugyanaz jár, mint férfinak. Ha a mondatban kitett tárgy is van, a személy névmása részes. Te a latin-amerikai normát használd.",
     "en": "This lesson separates the two families of third person pronouns. One family marks the object: whom or what I see, invite, look for. The other marks the recipient: to whom I say, give or write something. The Latin American norm, Mexico included, keeps them apart consistently. In some parts of Spain they are mixed: for a man, an indirect pronoun in place of the direct one is accepted, but for a woman or a thing it counts as an error, and the reverse swap is correct nowhere. The indirect pronoun never marks gender, so a woman gets the same one as a man. If the sentence also has an explicit object, the pronoun for the person is indirect. You use the Latin American norm.",
-    "es": "Esta lección separa las dos familias de pronombres de tercera persona. Una familia marca el objeto: a quién o qué veo, invito, busco. La otra marca al destinatario: a quién le digo, doy o escribo algo. La norma latinoamericana, México incluido, las mantiene separadas de forma consistente. En algunas zonas de España se mezclan: con un hombre se admite el pronombre indirecto en lugar del directo, pero con una mujer o con una cosa se considera un error, y el cambio inverso no es correcto en ningún sitio. El pronombre indirecto nunca marca el género, así que una mujer recibe el mismo que un hombre. Si la oración tiene además un objeto expreso, el pronombre de la persona es indirecto. Tú, usa la norma latinoamericana.",
-    "de": "Diese Lektion trennt die zwei Familien der Pronomen der dritten Person. Eine Familie markiert das Objekt: wen oder was ich sehe, einlade, suche. Die andere markiert den Empfänger: wem ich etwas sage, gebe oder schreibe. Die lateinamerikanische Norm, auch in Mexiko, hält sie konsequent auseinander. In manchen Teilen Spaniens werden sie vermischt: Bei einem Mann wird das indirekte Pronomen anstelle des direkten akzeptiert, bei einer Frau oder einer Sache gilt es als Fehler, und der umgekehrte Tausch ist nirgends richtig. Das indirekte Pronomen markiert nie das Geschlecht, eine Frau bekommt also dasselbe wie ein Mann. Steht im Satz zusätzlich ein ausdrückliches Objekt, ist das Pronomen der Person indirekt. Du verwendest die lateinamerikanische Norm."
+    "es": "Esta lección separa las dos familias de pronombres de tercera persona. Una familia marca el objeto: a quién o qué veo, invito, busco. La otra marca al destinatario: a quién le digo, doy o escribo algo. La norma latinoamericana, México incluido, las mantiene separadas de forma consistente. En algunas zonas de España se mezclan: con un hombre se admite el pronombre indirecto en lugar del directo, pero con una mujer o con una cosa se considera un error, y el cambio inverso no es correcto en ningún sitio. El pronombre indirecto nunca marca el género, así que una mujer recibe el mismo que un hombre. Si la oración tiene además un objeto expreso, el pronombre de la persona es indirecto. Tú, usa la norma latinoamericana."
   },
   "glossary": [
     {
       "word": "conozco",
       "gloss": {
-        "hu": "ismerem (conocer)",
         "en": "I know (conocer, a person)",
-        "es": "yo conozco",
-        "de": "ich kenne (conocer)"
+        "es": "yo conozco"
       }
     }
   ],
@@ -445,26 +357,20 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A vi (láttam) tárgyas ige: kit láttam? A főnökömet, ez tárgyeset. Férfi, egyes szám: lo.",
         "en": "Vi (I saw) takes a direct object: whom did I see? My boss, a direct object. Masculine singular: lo.",
-        "es": "Vi lleva objeto directo: ¿a quién vi? A mi jefe, un objeto directo. Masculino singular: lo.",
-        "de": "Vi (ich sah) hat ein direktes Objekt: wen sah ich? Meinen Chef, ein direktes Objekt. Maskulin Singular: lo."
+        "es": "Vi lleva objeto directo: ¿a quién vi? A mi jefe, un objeto directo. Masculino singular: lo."
       },
       "wrong": {
         "le": {
-          "hu": "A le a részes eset névmása, itt viszont tárgyeset kell. Spanyolországban férfi személynél a le vi (leísmo) elfogadott, de a latin-amerikai norma, amit ez a lecke gyakoroltat, lo vi. A le akkor jó, ha a főnöknek mondasz vagy adsz valamit: Le pedí un favor a mi jefe.",
           "en": "Le is the indirect object pronoun, but a direct object is needed here. In Spain, le vi for a man (leísmo) is accepted, but the Latin American norm, which this lesson drills, is lo vi. Le is right when you say or give something to the boss: Le pedí un favor a mi jefe.",
-          "es": "Le es el pronombre de objeto indirecto, pero aquí hace falta el directo. En España le vi para un hombre (leísmo) se admite, pero la norma latinoamericana, que practica esta lección, es lo vi. Le es correcto cuando le dices o le das algo al jefe: Le pedí un favor a mi jefe.",
-          "de": "Le ist das indirekte Objektpronomen, hier braucht es aber das direkte. In Spanien wird le vi bei einem Mann (Leísmo) akzeptiert, die lateinamerikanische Norm, die diese Lektion übt, ist aber lo vi. Le ist richtig, wenn du dem Chef etwas sagst oder gibst: Le pedí un favor a mi jefe."
+          "es": "Le es el pronombre de objeto indirecto, pero aquí hace falta el directo. En España le vi para un hombre (leísmo) se admite, pero la norma latinoamericana, que practica esta lección, es lo vi. Le es correcto cuando le dices o le das algo al jefe: Le pedí un favor a mi jefe."
         },
         "la": {
-          "hu": "A la nőnemű személyre vagy dologra való, a főnök viszont férfi. Ha nőt láttál, akkor valóban la: A mi hermana la vi ayer en la calle.",
           "en": "La is for a feminine person or thing, but the boss is a man. If you saw a woman, la would be right: A mi hermana la vi ayer en la calle.",
-          "es": "La es para una persona o cosa femenina, pero el jefe es un hombre. Si viste a una mujer, la sí sería correcto: A mi hermana la vi ayer en la calle.",
-          "de": "La ist für eine feminine Person oder Sache, der Chef ist aber ein Mann. Hast du eine Frau gesehen, wäre la richtig: A mi hermana la vi ayer en la calle."
+          "es": "La es para una persona o cosa femenina, pero el jefe es un hombre. Si viste a una mujer, la sí sería correcto: A mi hermana la vi ayer en la calle."
         }
       },
-      "tr": { "hu": "A főnökömet tegnap láttam az utcán.", "en": "I saw my boss on the street yesterday.", "es": "A mi jefe lo vi ayer en la calle.", "de": "Ich habe meinen Chef gestern auf der Straße gesehen." }
+      "tr": { "en": "I saw my boss on the street yesterday.", "es": "A mi jefe lo vi ayer en la calle." }
     },
     {
       "id": "ll-ch-02",
@@ -476,26 +382,20 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Az invité (meghívtam) tárgyas ige: kit hívtam meg? A nővéremet, ez tárgyeset. Nőnemű, egyes szám: la.",
         "en": "Invité (I invited) takes a direct object: whom did I invite? My sister, a direct object. Feminine singular: la.",
-        "es": "Invité lleva objeto directo: ¿a quién invité? A mi hermana, un objeto directo. Femenino singular: la.",
-        "de": "Invité (ich lud ein) hat ein direktes Objekt: wen habe ich eingeladen? Meine Schwester, ein direktes Objekt. Feminin Singular: la."
+        "es": "Invité lleva objeto directo: ¿a quién invité? A mi hermana, un objeto directo. Femenino singular: la."
       },
       "wrong": {
         "le": {
-          "hu": "Tárgyesetben nőre a le sehol sem elfogadott: a leísmo de persona csak férfi, egyes számú személyre érvényes. A le a részes esethez kell: Le escribí a mi hermana.",
           "en": "For a woman in the direct object, le is accepted nowhere: the leísmo de persona only holds for a single man. Le belongs to the indirect object: Le escribí a mi hermana.",
-          "es": "Con una mujer en objeto directo, le no se admite en ningún sitio: el leísmo de persona solo vale para un hombre en singular. Le es para el objeto indirecto: Le escribí a mi hermana.",
-          "de": "Bei einer Frau im direkten Objekt wird le nirgends akzeptiert: Der Leísmo de persona gilt nur für einen einzelnen Mann. Le gehört zum indirekten Objekt: Le escribí a mi hermana."
+          "es": "Con una mujer en objeto directo, le no se admite en ningún sitio: el leísmo de persona solo vale para un hombre en singular. Le es para el objeto indirecto: Le escribí a mi hermana."
         },
         "las": {
-          "hu": "A las több nőre jár; egyetlen nővérről van szó, ezért egyes szám: la. Többes számnál: A mis hermanas las invité.",
           "en": "Las is for several women; this is one sister, so singular: la. With a plural: A mis hermanas las invité.",
-          "es": "Las es para varias mujeres; aquí es una sola hermana, por eso singular: la. Con plural: A mis hermanas las invité.",
-          "de": "Las steht für mehrere Frauen; hier ist es eine Schwester, also Singular: la. Beim Plural: A mis hermanas las invité."
+          "es": "Las es para varias mujeres; aquí es una sola hermana, por eso singular: la. Con plural: A mis hermanas las invité."
         }
       },
-      "tr": { "hu": "A nővéremet meghívtam a bulimba.", "en": "I invited my sister to my party.", "es": "A mi hermana la invité a mi fiesta.", "de": "Ich habe meine Schwester zu meiner Party eingeladen." }
+      "tr": { "en": "I invited my sister to my party.", "es": "A mi hermana la invité a mi fiesta." }
     },
     {
       "id": "ll-ch-03",
@@ -507,26 +407,20 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A veo (látom) tárgyas ige: kit látok? A szomszédaimat, ez tárgyeset. Hímnemű vagy vegyes többes szám: los.",
         "en": "Veo (I see) takes a direct object: whom do I see? My neighbors, a direct object. Masculine or mixed plural: los.",
-        "es": "Veo lleva objeto directo: ¿a quién veo? A mis vecinos, un objeto directo. Plural masculino o mixto: los.",
-        "de": "Veo (ich sehe) hat ein direktes Objekt: wen sehe ich? Meine Nachbarn, ein direktes Objekt. Maskulin oder gemischt Plural: los."
+        "es": "Veo lleva objeto directo: ¿a quién veo? A mis vecinos, un objeto directo. Plural masculino o mixto: los."
       },
       "wrong": {
         "les": {
-          "hu": "Tárgyesetben a les (többes számú leísmo) még Spanyolországban is kevésbé elfogadott, a latin-amerikai norma pedig nem ismeri: los veo. A les a részes esetre jó: Les escribo a mis vecinos.",
           "en": "The plural leísmo les in the direct object is less accepted even in Spain, and the Latin American norm does not know it: los veo. Les is for the indirect object: Les escribo a mis vecinos.",
-          "es": "El leísmo plural les en objeto directo se admite menos incluso en España, y la norma latinoamericana no lo conoce: los veo. Les es para el objeto indirecto: Les escribo a mis vecinos.",
-          "de": "Der Plural-Leísmo les im direkten Objekt wird sogar in Spanien weniger akzeptiert, und die lateinamerikanische Norm kennt ihn nicht: los veo. Les gehört zum indirekten Objekt: Les escribo a mis vecinos."
+          "es": "El leísmo plural les en objeto directo se admite menos incluso en España, y la norma latinoamericana no lo conoce: los veo. Les es para el objeto indirecto: Les escribo a mis vecinos."
         },
         "las": {
-          "hu": "A las csak nőkből álló csoportra jár; a vecinos hímnemű vagy vegyes csoport, ezért los. Nőknél: A mis vecinas las veo todos los días.",
           "en": "Las is only for a group of women; vecinos is masculine or mixed, so los. For women: A mis vecinas las veo todos los días.",
-          "es": "Las es solo para un grupo de mujeres; vecinos es masculino o mixto, por eso los. Con mujeres: A mis vecinas las veo todos los días.",
-          "de": "Las steht nur für eine Gruppe von Frauen; vecinos ist maskulin oder gemischt, also los. Bei Frauen: A mis vecinas las veo todos los días."
+          "es": "Las es solo para un grupo de mujeres; vecinos es masculino o mixto, por eso los. Con mujeres: A mis vecinas las veo todos los días."
         }
       },
-      "tr": { "hu": "A szomszédaimat minden nap látom.", "en": "I see my neighbors every day.", "es": "A mis vecinos los veo todos los días.", "de": "Ich sehe meine Nachbarn jeden Tag." }
+      "tr": { "en": "I see my neighbors every day.", "es": "A mis vecinos los veo todos los días." }
     },
     {
       "id": "ll-ch-04",
@@ -538,26 +432,20 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A regalo a vásárlás tárgya: mit vettem? Ez tárgyeset, hímnemű egyes szám: lo.",
         "en": "The regalo is the thing bought: what did I buy? A direct object, masculine singular: lo.",
-        "es": "El regalo es lo que compré: ¿qué compré? Un objeto directo, masculino singular: lo.",
-        "de": "Das Geschenk ist das Gekaufte: was habe ich gekauft? Ein direktes Objekt, maskulin Singular: lo."
+        "es": "El regalo es lo que compré: ¿qué compré? Un objeto directo, masculino singular: lo."
       },
       "wrong": {
         "la": {
-          "hu": "A la nőnemű dologra jár, a regalo viszont hímnemű. Nőnemű dolognál la: La casa la compré ayer.",
           "en": "La is for a feminine thing, but regalo is masculine. With a feminine thing, la: La casa la compré ayer.",
-          "es": "La es para una cosa femenina, pero regalo es masculino. Con una cosa femenina, la: La casa la compré ayer.",
-          "de": "La steht für eine feminine Sache, regalo ist aber maskulin. Bei einer femininen Sache la: La casa la compré ayer."
+          "es": "La es para una cosa femenina, pero regalo es masculino. Con una cosa femenina, la: La casa la compré ayer."
         },
         "le": {
-          "hu": "Dologra a le (leísmo de cosa) egyik normában sem elfogadott: a leísmo csak férfi személyeknél létezik. A regalo tárgy, nem címzett, ezért lo.",
           "en": "Le for a thing (leísmo de cosa) is accepted in no norm: leísmo only exists with male persons. The regalo is the object, not the recipient, so lo.",
-          "es": "Le con una cosa (leísmo de cosa) no se admite en ninguna norma: el leísmo solo existe con personas masculinas. El regalo es el objeto, no el destinatario, por eso lo.",
-          "de": "Le bei einer Sache (Leísmo de cosa) wird in keiner Norm akzeptiert: Leísmo gibt es nur bei männlichen Personen. Das Geschenk ist das Objekt, nicht der Empfänger, also lo."
+          "es": "Le con una cosa (leísmo de cosa) no se admite en ninguna norma: el leísmo solo existe con personas masculinas. El regalo es el objeto, no el destinatario, por eso lo."
         }
       },
-      "tr": { "hu": "Az ajándékot tegnap vettem a belvárosban.", "en": "I bought the gift downtown yesterday.", "es": "El regalo lo compré ayer en el centro.", "de": "Das Geschenk habe ich gestern in der Innenstadt gekauft." }
+      "tr": { "en": "I bought the gift downtown yesterday.", "es": "El regalo lo compré ayer en el centro." }
     },
     {
       "id": "ll-ch-05",
@@ -569,26 +457,20 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A la verdad a mondat tárgya (mit mondtam?), a nővérem a címzett (kinek?): részes eset, le. A le nem jelöl nemet, ezért nőnek is le jár.",
         "en": "La verdad is the object of the sentence (what did I say?), my sister is the recipient (to whom?): indirect object, le. Le does not mark gender, so a woman gets le too.",
-        "es": "La verdad es el objeto de la oración (¿qué dije?), mi hermana es la destinataria (¿a quién?): objeto indirecto, le. Le no marca el género, así que una mujer también recibe le.",
-        "de": "La verdad ist das Objekt des Satzes (was habe ich gesagt?), meine Schwester ist die Empfängerin (wem?): indirektes Objekt, le. Le markiert kein Geschlecht, auch eine Frau bekommt le."
+        "es": "La verdad es el objeto de la oración (¿qué dije?), mi hermana es la destinataria (¿a quién?): objeto indirecto, le. Le no marca el género, así que una mujer también recibe le."
       },
       "wrong": {
         "la": {
-          "hu": "Ez laísmo: a la tárgyesetet jelölne, a tárgy viszont már a la verdad. A norma nem fogadja el; helyesen: A mi hermana le dije la verdad.",
           "en": "This is laísmo: la would mark the direct object, but the object is already la verdad. The norm does not accept it; correctly: A mi hermana le dije la verdad.",
-          "es": "Esto es laísmo: la marcaría el objeto directo, pero el objeto ya es la verdad. La norma no lo admite; correcto: A mi hermana le dije la verdad.",
-          "de": "Das ist Laísmo: la würde das direkte Objekt markieren, das Objekt ist aber schon la verdad. Die Norm akzeptiert es nicht; richtig: A mi hermana le dije la verdad."
+          "es": "Esto es laísmo: la marcaría el objeto directo, pero el objeto ya es la verdad. La norma no lo admite; correcto: A mi hermana le dije la verdad."
         },
         "lo": {
-          "hu": "Ez loísmo (és hímnemű is, a nővérem viszont nő): a lo tárgyeset, a címzett viszont részes, ezért le.",
           "en": "This is loísmo (and masculine too, but my sister is a woman): lo is the direct object, but the recipient is indirect, so le.",
-          "es": "Esto es loísmo (y además masculino, pero mi hermana es una mujer): lo es objeto directo, pero la destinataria es indirecta, por eso le.",
-          "de": "Das ist Loísmo (und auch noch maskulin, meine Schwester ist aber eine Frau): lo ist das direkte Objekt, die Empfängerin ist aber indirekt, also le."
+          "es": "Esto es loísmo (y además masculino, pero mi hermana es una mujer): lo es objeto directo, pero la destinataria es indirecta, por eso le."
         }
       },
-      "tr": { "hu": "A nővéremnek megmondtam az igazat.", "en": "I told my sister the truth.", "es": "A mi hermana le dije la verdad.", "de": "Ich habe meiner Schwester die Wahrheit gesagt." }
+      "tr": { "en": "I told my sister the truth.", "es": "A mi hermana le dije la verdad." }
     },
     {
       "id": "ll-ch-06",
@@ -600,26 +482,20 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Az un favor a kért dolog (a tárgy), a főnök a címzett: részes eset, le.",
         "en": "Un favor is the thing asked for (the object), the boss is the recipient: indirect object, le.",
-        "es": "Un favor es lo que se pide (el objeto), el jefe es el destinatario: objeto indirecto, le.",
-        "de": "Un favor ist das Erbetene (das Objekt), der Chef ist der Empfänger: indirektes Objekt, le."
+        "es": "Un favor es lo que se pide (el objeto), el jefe es el destinatario: objeto indirecto, le."
       },
       "wrong": {
         "lo": {
-          "hu": "Ez loísmo: a lo tárgyesetet jelölne, a tárgy viszont már az un favor; a főnök részes, ezért le: Le pedí un favor.",
           "en": "This is loísmo: lo would mark the direct object, but the object is already un favor; the boss is indirect, so le: Le pedí un favor.",
-          "es": "Esto es loísmo: lo marcaría el objeto directo, pero el objeto ya es un favor; el jefe es indirecto, por eso le: Le pedí un favor.",
-          "de": "Das ist Loísmo: lo würde das direkte Objekt markieren, das Objekt ist aber schon un favor; der Chef ist indirekt, also le: Le pedí un favor."
+          "es": "Esto es loísmo: lo marcaría el objeto directo, pero el objeto ya es un favor; el jefe es indirecto, por eso le: Le pedí un favor."
         },
         "la": {
-          "hu": "A la nőnemű tárgyesetet jelölne, a főnök viszont nem tárgy, hanem címzett. Nő címzettnél is le marad: A mi tía le pedí un favor.",
           "en": "La would mark a feminine direct object, but the boss is not the object, he is the recipient. With a woman as recipient it stays le: A mi tía le pedí un favor.",
-          "es": "La marcaría un objeto directo femenino, pero el jefe no es el objeto, sino el destinatario. Con una mujer como destinataria sigue siendo le: A mi tía le pedí un favor.",
-          "de": "La würde ein feminines direktes Objekt markieren, der Chef ist aber nicht das Objekt, sondern der Empfänger. Auch bei einer Frau als Empfängerin bleibt es le: A mi tía le pedí un favor."
+          "es": "La marcaría un objeto directo femenino, pero el jefe no es el objeto, sino el destinatario. Con una mujer como destinataria sigue siendo le: A mi tía le pedí un favor."
         }
       },
-      "tr": { "hu": "A főnökömtől tegnap kértem egy szívességet.", "en": "I asked my boss for a favor yesterday.", "es": "A mi jefe le pedí un favor ayer.", "de": "Ich habe meinen Chef gestern um einen Gefallen gebeten." }
+      "tr": { "en": "I asked my boss for a favor yesterday.", "es": "A mi jefe le pedí un favor ayer." }
     },
     {
       "id": "ll-ch-07",
@@ -631,26 +507,20 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Az un mensaje a tárgy (mit küldtem?), a nagynénéim a címzettek: részes eset, többes szám: les.",
         "en": "Un mensaje is the object (what did I send?), my aunts are the recipients: indirect object, plural: les.",
-        "es": "Un mensaje es el objeto (¿qué mandé?), mis tías son las destinatarias: objeto indirecto, plural: les.",
-        "de": "Un mensaje ist das Objekt (was habe ich geschickt?), meine Tanten sind die Empfängerinnen: indirektes Objekt, Plural: les."
+        "es": "Un mensaje es el objeto (¿qué mandé?), mis tías son las destinatarias: objeto indirecto, plural: les."
       },
       "wrong": {
         "las": {
-          "hu": "Ez laísmo: a las tárgyesetű nőnemű többest jelölne, a tárgy viszont már az un mensaje. A címzettek részesek: les.",
           "en": "This is laísmo: las would mark a feminine plural direct object, but the object is already un mensaje. The recipients are indirect: les.",
-          "es": "Esto es laísmo: las marcaría un objeto directo femenino plural, pero el objeto ya es un mensaje. Las destinatarias son indirectas: les.",
-          "de": "Das ist Laísmo: las würde ein feminines direktes Objekt im Plural markieren, das Objekt ist aber schon un mensaje. Die Empfängerinnen sind indirekt: les."
+          "es": "Esto es laísmo: las marcaría un objeto directo femenino plural, pero el objeto ya es un mensaje. Las destinatarias son indirectas: les."
         },
         "le": {
-          "hu": "A le egyes számú címzettet jelöl; a mis tías többes szám, ezért les. Egy nagynénére: A mi tía le mandé un mensaje.",
           "en": "Le marks a singular recipient; mis tías is plural, so les. For one aunt: A mi tía le mandé un mensaje.",
-          "es": "Le marca a un destinatario singular; mis tías es plural, por eso les. Para una sola tía: A mi tía le mandé un mensaje.",
-          "de": "Le markiert einen Empfänger im Singular; mis tías ist Plural, also les. Bei einer Tante: A mi tía le mandé un mensaje."
+          "es": "Le marca a un destinatario singular; mis tías es plural, por eso les. Para una sola tía: A mi tía le mandé un mensaje."
         }
       },
-      "tr": { "hu": "A nagynénéimnek küldtem egy üzenetet tegnap este.", "en": "I sent my aunts a message last night.", "es": "A mis tías les mandé un mensaje anoche.", "de": "Ich habe meinen Tanten gestern Abend eine Nachricht geschickt." }
+      "tr": { "en": "I sent my aunts a message last night.", "es": "A mis tías les mandé un mensaje anoche." }
     },
     {
       "id": "ll-ch-08",
@@ -662,26 +532,20 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A llamar la atención kitett tárgyas kifejezés (megdorgálni valakit): a la atención a tárgy, a fiam a címzett. Részes eset: le.",
         "en": "Llamar la atención is a phrase with an explicit object (to tell someone off): la atención is the object, my son is the recipient. Indirect object: le.",
-        "es": "Llamar la atención es una expresión con objeto expreso (regañar a alguien): la atención es el objeto, mi hijo es el destinatario. Objeto indirecto: le.",
-        "de": "Llamar la atención ist eine Wendung mit ausdrücklichem Objekt (jemanden zurechtweisen): la atención ist das Objekt, mein Sohn ist der Empfänger. Indirektes Objekt: le."
+        "es": "Llamar la atención es una expresión con objeto expreso (regañar a alguien): la atención es el objeto, mi hijo es el destinatario. Objeto indirecto: le."
       },
       "wrong": {
         "lo": {
-          "hu": "A lo tárgyesetet jelölne, a tárgyat viszont már a la atención adja; a személy csak címzett, ezért le.",
           "en": "Lo would mark the direct object, but the object is already la atención; the person is only the recipient, so le.",
-          "es": "Lo marcaría el objeto directo, pero el objeto ya es la atención; la persona es solo destinataria, por eso le.",
-          "de": "Lo würde das direkte Objekt markieren, das Objekt ist aber schon la atención; die Person ist nur Empfänger, also le."
+          "es": "Lo marcaría el objeto directo, pero el objeto ya es la atención; la persona es solo destinataria, por eso le."
         },
         "la": {
-          "hu": "A la nőnemű tárgyeset lenne; a fiam férfi, és a tárgyat amúgy is a la atención adja. A személy névmása részes: le.",
           "en": "La would be a feminine direct object; my son is a man, and the object is la atención anyway. The pronoun of the person is indirect: le.",
-          "es": "La sería un objeto directo femenino; mi hijo es un hombre, y el objeto ya es la atención. El pronombre de la persona es indirecto: le.",
-          "de": "La wäre ein feminines direktes Objekt; mein Sohn ist ein Mann, und das Objekt ist ohnehin la atención. Das Pronomen der Person ist indirekt: le."
+          "es": "La sería un objeto directo femenino; mi hijo es un hombre, y el objeto ya es la atención. El pronombre de la persona es indirecto: le."
         }
       },
-      "tr": { "hu": "Megszidtam a fiamat, mert elkésett.", "en": "I scolded my son for arriving late.", "es": "A mi hijo le llamé la atención por llegar tarde.", "de": "Ich habe meinen Sohn ausgescholten, weil er zu spät gekommen ist." }
+      "tr": { "en": "I scolded my son for arriving late.", "es": "A mi hijo le llamé la atención por llegar tarde." }
     },
     {
       "id": "ll-ch-09",
@@ -693,26 +557,20 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Az obedecer részest kér a személlyel (kinek engedelmeskedem?). A névmás a maestra-ra utal, egyes szám: le. A le nem jelöl nemet, ezért a nőnek is le jár.",
         "en": "Obedecer takes the indirect object with a person (whom do I obey?). The pronoun refers to the maestra, singular: le. Le does not mark gender, so a woman gets le too.",
-        "es": "Obedecer pide el objeto indirecto con una persona (¿a quién obedezco?). El pronombre se refiere a la maestra, singular: le. Le no marca el género, así que una mujer también recibe le.",
-        "de": "Obedecer verlangt bei einer Person das indirekte Objekt (wem gehorche ich?). Das Pronomen bezieht sich auf die maestra, Singular: le. Le markiert kein Geschlecht, auch eine Frau bekommt le."
+        "es": "Obedecer pide el objeto indirecto con una persona (¿a quién obedezco?). El pronombre se refiere a la maestra, singular: le. Le no marca el género, así que una mujer también recibe le."
       },
       "wrong": {
         "la": {
-          "hu": "Ez laísmo: az obedecer részest kér, nem tárgyesetet (kinek engedelmeskedem?), ezért a la itt hiba. Helyesen: Los niños le obedecen a su maestra.",
           "en": "This is laísmo: obedecer takes the indirect object, not the direct one (whom do I obey?), so la is an error here. Correctly: Los niños le obedecen a su maestra.",
-          "es": "Esto es laísmo: obedecer pide objeto indirecto, no directo (¿a quién obedezco?), por eso la es un error aquí. Correcto: Los niños le obedecen a su maestra.",
-          "de": "Das ist Laísmo: obedecer verlangt das indirekte, nicht das direkte Objekt (wem gehorche ich?), la ist hier also ein Fehler. Richtig: Los niños le obedecen a su maestra."
+          "es": "Esto es laísmo: obedecer pide objeto indirecto, no directo (¿a quién obedezco?), por eso la es un error aquí. Correcto: Los niños le obedecen a su maestra."
         },
         "les": {
-          "hu": "A les többes számú címzettet jelölne, a su maestra viszont egyes számú, ezért le. Többes számnál: Los niños les obedecen a sus maestras.",
           "en": "Les would mark a plural recipient, but su maestra is singular, so le. With a plural: Los niños les obedecen a sus maestras.",
-          "es": "Les marcaría un destinatario plural, pero su maestra es singular, por eso le. Con plural: Los niños les obedecen a sus maestras.",
-          "de": "Les würde eine Empfängerin im Plural markieren, su maestra ist aber Singular, also le. Beim Plural: Los niños les obedecen a sus maestras."
+          "es": "Les marcaría un destinatario plural, pero su maestra es singular, por eso le. Con plural: Los niños les obedecen a sus maestras."
         }
       },
-      "tr": { "hu": "A gyerekek szót fogadnak a tanárnőjüknek.", "en": "The children obey their teacher.", "es": "Los niños le obedecen a su maestra.", "de": "Die Kinder gehorchen ihrer Lehrerin." }
+      "tr": { "en": "The children obey their teacher.", "es": "Los niños le obedecen a su maestra." }
     },
     {
       "id": "ll-ch-10",
@@ -724,26 +582,20 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A conocer tárgyas ige: kit ismerek? A barátnőimet, ez tárgyeset. Nőnemű többes szám: las.",
         "en": "Conocer takes a direct object: whom do I know? My girlfriends, a direct object. Feminine plural: las.",
-        "es": "Conocer lleva objeto directo: ¿a quién conozco? A mis amigas, un objeto directo. Plural femenino: las.",
-        "de": "Conocer hat ein direktes Objekt: wen kenne ich? Meine Freundinnen, ein direktes Objekt. Feminin Plural: las."
+        "es": "Conocer lleva objeto directo: ¿a quién conozco? A mis amigas, un objeto directo. Plural femenino: las."
       },
       "wrong": {
         "les": {
-          "hu": "Tárgyesetben a les (többes számú leísmo) még Spanyolországban is kevésbé elfogadott, és a barátnők nők: las. A les részes többes: Les escribo a mis amigas.",
           "en": "The plural leísmo les in the direct object is less accepted even in Spain, and these are women: las. Les is the indirect plural: Les escribo a mis amigas.",
-          "es": "El leísmo plural les en objeto directo se admite menos incluso en España, y son mujeres: las. Les es el plural indirecto: Les escribo a mis amigas.",
-          "de": "Der Plural-Leísmo les im direkten Objekt wird sogar in Spanien weniger akzeptiert, und es sind Frauen: las. Les ist der indirekte Plural: Les escribo a mis amigas."
+          "es": "El leísmo plural les en objeto directo se admite menos incluso en España, y son mujeres: las. Les es el plural indirecto: Les escribo a mis amigas."
         },
         "los": {
-          "hu": "A los hímnemű vagy vegyes csoportra jár; a mis amigas csak nőkből áll, ezért las.",
           "en": "Los is for a masculine or mixed group; mis amigas consists only of women, so las.",
-          "es": "Los es para un grupo masculino o mixto; mis amigas son solo mujeres, por eso las.",
-          "de": "Los steht für eine maskuline oder gemischte Gruppe; mis amigas besteht nur aus Frauen, also las."
+          "es": "Los es para un grupo masculino o mixto; mis amigas son solo mujeres, por eso las."
         }
       },
-      "tr": { "hu": "A barátnőimet az iskola óta ismerem.", "en": "I have known my friends since school.", "es": "A mis amigas las conozco desde la escuela.", "de": "Ich kenne meine Freundinnen seit der Schulzeit." }
+      "tr": { "en": "I have known my friends since school.", "es": "A mis amigas las conozco desde la escuela." }
     },
     {
       "id": "ll-ch-11",
@@ -755,26 +607,20 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A doler részest kér: kinek fáj? Az anyámnak: le. A fájó testrész (la cabeza) az alany. A le nem jelöl nemet, ezért a nőnek is le jár.",
         "en": "Doler takes the indirect object: who is in pain? My mother: le. The aching body part (la cabeza) is the subject. Le does not mark gender, so a woman gets le too.",
-        "es": "Doler pide el objeto indirecto: ¿a quién le duele? A mi mamá: le. La parte del cuerpo que duele (la cabeza) es el sujeto. Le no marca el género, así que una mujer también recibe le.",
-        "de": "Doler verlangt das indirekte Objekt: wem tut es weh? Meiner Mutter: le. Der schmerzende Körperteil (la cabeza) ist das Subjekt. Le markiert kein Geschlecht, auch eine Frau bekommt le."
+        "es": "Doler pide el objeto indirecto: ¿a quién le duele? A mi mamá: le. La parte del cuerpo que duele (la cabeza) es el sujeto. Le no marca el género, así que una mujer también recibe le."
       },
       "wrong": {
         "la": {
-          "hu": "Ez laísmo: a doler részest kér (kinek fáj?), a la tárgyeset lenne. Nőnél is le: A mi mamá le duele la cabeza.",
           "en": "This is laísmo: doler takes the indirect object (who is in pain?), la would be a direct object. For a woman it is le too: A mi mamá le duele la cabeza.",
-          "es": "Esto es laísmo: doler pide objeto indirecto (¿a quién le duele?), la sería objeto directo. Con una mujer también es le: A mi mamá le duele la cabeza.",
-          "de": "Das ist Laísmo: doler verlangt das indirekte Objekt (wem tut es weh?), la wäre ein direktes Objekt. Auch bei einer Frau ist es le: A mi mamá le duele la cabeza."
+          "es": "Esto es laísmo: doler pide objeto indirecto (¿a quién le duele?), la sería objeto directo. Con una mujer también es le: A mi mamá le duele la cabeza."
         },
         "lo": {
-          "hu": "Ez loísmo (és a mamá nő): a doler részest kér, ezért le.",
           "en": "This is loísmo (and the mamá is a woman): doler takes the indirect object, so le.",
-          "es": "Esto es loísmo (y la mamá es una mujer): doler pide objeto indirecto, por eso le.",
-          "de": "Das ist Loísmo (und die mamá ist eine Frau): doler verlangt das indirekte Objekt, also le."
+          "es": "Esto es loísmo (y la mamá es una mujer): doler pide objeto indirecto, por eso le."
         }
       },
-      "tr": { "hu": "Anyukámnak fáj a feje.", "en": "My mom has a headache.", "es": "A mi mamá le duele la cabeza.", "de": "Meine Mutter hat Kopfschmerzen." }
+      "tr": { "en": "My mom has a headache.", "es": "A mi mamá le duele la cabeza." }
     },
     {
       "id": "ll-ch-12",
@@ -786,26 +632,20 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A visitar tárgyas ige: kit látogatok meg? A nagyapámat, ez tárgyeset. Férfi, egyes szám: lo.",
         "en": "Visitar takes a direct object: whom do I visit? My grandfather, a direct object. Masculine singular: lo.",
-        "es": "Visitar lleva objeto directo: ¿a quién visito? A mi abuelo, un objeto directo. Masculino singular: lo.",
-        "de": "Visitar hat ein direktes Objekt: wen besuche ich? Meinen Großvater, ein direktes Objekt. Maskulin Singular: lo."
+        "es": "Visitar lleva objeto directo: ¿a quién visito? A mi abuelo, un objeto directo. Masculino singular: lo."
       },
       "wrong": {
         "le": {
-          "hu": "Spanyolországban férfi személynél a le visito (leísmo) elfogadott, de a latin-amerikai norma, amit ez a lecke gyakoroltat, lo visito. Dolognál és nőnél a le semmilyen normában sem jó.",
           "en": "In Spain, le visito for a man (leísmo) is accepted, but the Latin American norm, which this lesson drills, is lo visito. For things and women, le is correct in no norm.",
-          "es": "En España le visito para un hombre (leísmo) se admite, pero la norma latinoamericana, que practica esta lección, es lo visito. Con cosas y con mujeres, le no es correcto en ninguna norma.",
-          "de": "In Spanien wird le visito bei einem Mann (Leísmo) akzeptiert, die lateinamerikanische Norm, die diese Lektion übt, ist aber lo visito. Bei Dingen und Frauen ist le in keiner Norm richtig."
+          "es": "En España le visito para un hombre (leísmo) se admite, pero la norma latinoamericana, que practica esta lección, es lo visito. Con cosas y con mujeres, le no es correcto en ninguna norma."
         },
         "la": {
-          "hu": "A la nőre jár; a nagyapám férfi, ezért lo. Nagyanyánál: A mi abuela la visito cada domingo.",
           "en": "La is for a woman; my grandfather is a man, so lo. For a grandmother: A mi abuela la visito cada domingo.",
-          "es": "La es para una mujer; mi abuelo es un hombre, por eso lo. Con una abuela: A mi abuela la visito cada domingo.",
-          "de": "La steht für eine Frau; mein Großvater ist ein Mann, also lo. Bei einer Großmutter: A mi abuela la visito cada domingo."
+          "es": "La es para una mujer; mi abuelo es un hombre, por eso lo. Con una abuela: A mi abuela la visito cada domingo."
         }
       },
-      "tr": { "hu": "A nagyapámat minden vasárnap meglátogatom.", "en": "I visit my grandfather every Sunday.", "es": "A mi abuelo lo visito cada domingo.", "de": "Ich besuche meinen Großvater jeden Sonntag." }
+      "tr": { "en": "I visit my grandfather every Sunday.", "es": "A mi abuelo lo visito cada domingo." }
     },
     {
       "id": "ll-match-01",
@@ -939,46 +779,34 @@
       "es": "A Pedro lo espero en la puerta.",
       "target": "lo",
       "tr": {
-        "hu": "Pedrót az ajtóban várom.",
         "en": "I wait for Pedro at the door.",
-        "es": "A Pedro lo espero en la puerta.",
-        "de": "Ich warte an der Tür auf Pedro."
+        "es": "A Pedro lo espero en la puerta."
       },
       "options": [
         {
           "text": {
-            "hu": "részes eset: kinek történik",
             "en": "indirect object: to whom it happens",
-            "es": "objeto indirecto: a quién le ocurre",
-            "de": "indirektes Objekt: wem es geschieht"
+            "es": "objeto indirecto: a quién le ocurre"
           },
           "wrong": {
-            "hu": "Az esperar azt kérdezi: kit várok? Pedrót, ez tárgyeset. A részes (le) az olyan igékhez jár, ahol valaki kap vagy hall valamit.",
             "en": "Esperar asks: whom do I wait for? Pedro, a direct object. The indirect (le) goes with verbs where someone receives or hears something.",
-            "es": "Esperar pregunta: ¿a quién espero? A Pedro, un objeto directo. El indirecto (le) va con verbos en los que alguien recibe u oye algo.",
-            "de": "Esperar fragt: wen erwarte ich? Pedro, ein direktes Objekt. Das indirekte (le) steht bei Verben, bei denen jemand etwas bekommt oder hört."
+            "es": "Esperar pregunta: ¿a quién espero? A Pedro, un objeto directo. El indirecto (le) va con verbos en los que alguien recibe u oye algo."
           }
         },
         {
           "text": {
-            "hu": "tárgyeset: kit érint közvetlenül az ige",
             "en": "direct object: whom the verb affects directly",
-            "es": "objeto directo: a quién afecta directamente el verbo",
-            "de": "direktes Objekt: wen das Verb direkt betrifft"
+            "es": "objeto directo: a quién afecta directamente el verbo"
           }
         },
         {
           "text": {
-            "hu": "többes számú címzett: les",
             "en": "plural recipient: les",
-            "es": "destinatario plural: les",
-            "de": "Empfänger im Plural: les"
+            "es": "destinatario plural: les"
           },
           "wrong": {
-            "hu": "Egy személyről (Pedro) van szó, nem többesről, és a les részes névmás, itt viszont tárgyeset kell.",
             "en": "It is about one person (Pedro), not a plural, and les is an indirect pronoun, but here a direct one is needed.",
-            "es": "Se trata de una sola persona (Pedro), no de un plural, y les es un pronombre indirecto, pero aquí hace falta uno directo.",
-            "de": "Es geht um eine einzelne Person (Pedro), nicht um einen Plural, und les ist ein indirektes Pronomen, hier braucht es aber ein direktes."
+            "es": "Se trata de una sola persona (Pedro), no de un plural, y les es un pronombre indirecto, pero aquí hace falta uno directo."
           }
         }
       ],
@@ -990,46 +818,34 @@
       "es": "A mi profesor lo veo en la escuela.",
       "target": "lo",
       "tr": {
-        "hu": "A tanáromat az iskolában látom.",
         "en": "I see my teacher at school.",
-        "es": "A mi profesor lo veo en la escuela.",
-        "de": "Ich sehe meinen Lehrer in der Schule."
+        "es": "A mi profesor lo veo en la escuela."
       },
       "options": [
         {
           "text": {
-            "hu": "a részes névmás nem jelöl nemet",
             "en": "the indirect pronoun does not mark gender",
-            "es": "el pronombre indirecto no marca el género",
-            "de": "das indirekte Pronomen markiert kein Geschlecht"
+            "es": "el pronombre indirecto no marca el género"
           },
           "wrong": {
-            "hu": "Ez a le-re igaz; a lo tárgyeset névmás, és éppen jelöli a nemet (hímnemű).",
             "en": "That holds for le; lo is a direct object pronoun, and it does mark gender (masculine).",
-            "es": "Eso vale para le; lo es un pronombre de objeto directo, y sí marca el género (masculino).",
-            "de": "Das gilt für le; lo ist ein direktes Objektpronomen, und es markiert das Geschlecht (maskulin)."
+            "es": "Eso vale para le; lo es un pronombre de objeto directo, y sí marca el género (masculino)."
           }
         },
         {
           "text": {
-            "hu": "kitett tárgy mellett a személy részes",
             "en": "with an explicit object, the person is indirect",
-            "es": "con un objeto expreso, la persona es indirecta",
-            "de": "bei ausdrücklichem Objekt ist die Person indirekt"
+            "es": "con un objeto expreso, la persona es indirecta"
           },
           "wrong": {
-            "hu": "A mondatban nincs kitett tárgy a személy mellett; a veo tárgya maga a tanár.",
             "en": "There is no explicit object next to the person in the sentence; the object of veo is the teacher himself.",
-            "es": "En la oración no hay objeto expreso junto a la persona; el objeto de veo es el propio profesor.",
-            "de": "Im Satz steht neben der Person kein ausdrückliches Objekt; das Objekt von veo ist der Lehrer selbst."
+            "es": "En la oración no hay objeto expreso junto a la persona; el objeto de veo es el propio profesor."
           }
         },
         {
           "text": {
-            "hu": "latin-amerikai norma: férfire lo",
             "en": "Latin American norm: lo for a man",
-            "es": "norma latinoamericana: lo para un hombre",
-            "de": "lateinamerikanische Norm: lo für einen Mann"
+            "es": "norma latinoamericana: lo para un hombre"
           }
         }
       ],
@@ -1041,46 +857,34 @@
       "es": "A mi mamá le di un regalo.",
       "target": "le",
       "tr": {
-        "hu": "Anyámnak ajándékot adtam.",
         "en": "I gave my mother a gift.",
-        "es": "A mi mamá le di un regalo.",
-        "de": "Ich habe meiner Mutter ein Geschenk gegeben."
+        "es": "A mi mamá le di un regalo."
       },
       "options": [
         {
           "text": {
-            "hu": "latin-amerikai norma: férfire lo",
             "en": "Latin American norm: lo for a man",
-            "es": "norma latinoamericana: lo para un hombre",
-            "de": "lateinamerikanische Norm: lo für einen Mann"
+            "es": "norma latinoamericana: lo para un hombre"
           },
           "wrong": {
-            "hu": "A lo férfira jár tárgyesetben; itt nő a címzett, és részes esetről van szó.",
             "en": "Lo is for a man in the direct object; here the recipient is a woman, and it is the indirect object.",
-            "es": "Lo es para un hombre en objeto directo; aquí la destinataria es una mujer, y se trata del objeto indirecto.",
-            "de": "Lo steht für einen Mann im direkten Objekt; hier ist die Empfängerin eine Frau, und es geht um das indirekte Objekt."
+            "es": "Lo es para un hombre en objeto directo; aquí la destinataria es una mujer, y se trata del objeto indirecto."
           }
         },
         {
           "text": {
-            "hu": "kitett tárgy mellett a személy részes",
             "en": "with an explicit object, the person is indirect",
-            "es": "con un objeto expreso, la persona es indirecta",
-            "de": "bei ausdrücklichem Objekt ist die Person indirekt"
+            "es": "con un objeto expreso, la persona es indirecta"
           }
         },
         {
           "text": {
-            "hu": "tárgyeset: kit érint közvetlenül az ige",
             "en": "direct object: whom the verb affects directly",
-            "es": "objeto directo: a quién afecta directamente el verbo",
-            "de": "direktes Objekt: wen das Verb direkt betrifft"
+            "es": "objeto directo: a quién afecta directamente el verbo"
           },
           "wrong": {
-            "hu": "Az un regalo a tárgy (mit adtam?), az anyám csak címzett, ezért nem tárgyeset.",
             "en": "Un regalo is the object (what did I give?), my mother is only the recipient, so it is not the direct object.",
-            "es": "Un regalo es el objeto (¿qué di?), mi mamá es solo la destinataria, por eso no es objeto directo.",
-            "de": "Un regalo ist das Objekt (was habe ich gegeben?), meine Mutter ist nur Empfängerin, also kein direktes Objekt."
+            "es": "Un regalo es el objeto (¿qué di?), mi mamá es solo la destinataria, por eso no es objeto directo."
           }
         }
       ],
@@ -1092,46 +896,34 @@
       "es": "A mis tíos les escribo cada semana.",
       "target": "les",
       "tr": {
-        "hu": "A nagybátyáimnak minden héten írok.",
         "en": "I write to my uncles every week.",
-        "es": "A mis tíos les escribo cada semana.",
-        "de": "Ich schreibe meinen Onkeln jede Woche."
+        "es": "A mis tíos les escribo cada semana."
       },
       "options": [
         {
           "text": {
-            "hu": "kitett tárgy mellett a személy részes",
             "en": "with an explicit object, the person is indirect",
-            "es": "con un objeto expreso, la persona es indirecta",
-            "de": "bei ausdrücklichem Objekt ist die Person indirekt"
+            "es": "con un objeto expreso, la persona es indirecta"
           },
           "wrong": {
-            "hu": "A mondatban nincs kitett tárgy (nem írsz meg semmit megnevezve); a többes szám az, ami a les-t követeli.",
             "en": "There is no explicit object in the sentence (you do not name anything written); it is the plural that demands les.",
-            "es": "En la oración no hay objeto expreso (no nombras nada escrito); es el plural lo que pide les.",
-            "de": "Im Satz steht kein ausdrückliches Objekt (du nennst nichts Geschriebenes); der Plural verlangt les."
+            "es": "En la oración no hay objeto expreso (no nombras nada escrito); es el plural lo que pide les."
           }
         },
         {
           "text": {
-            "hu": "tárgyeset: kit érint közvetlenül az ige",
             "en": "direct object: whom the verb affects directly",
-            "es": "objeto directo: a quién afecta directamente el verbo",
-            "de": "direktes Objekt: wen das Verb direkt betrifft"
+            "es": "objeto directo: a quién afecta directamente el verbo"
           },
           "wrong": {
-            "hu": "Az escribir részest kér a személlyel (kinek írok?), nem tárgyesetet; a los vagy las itt hiba lenne.",
             "en": "Escribir takes the indirect object with a person (to whom do I write?), not the direct one; los or las would be an error here.",
-            "es": "Escribir pide el objeto indirecto con una persona (¿a quién escribo?), no el directo; los o las serían un error aquí.",
-            "de": "Escribir verlangt bei einer Person das indirekte Objekt (wem schreibe ich?), nicht das direkte; los oder las wären hier ein Fehler."
+            "es": "Escribir pide el objeto indirecto con una persona (¿a quién escribo?), no el directo; los o las serían un error aquí."
           }
         },
         {
           "text": {
-            "hu": "többes számú címzett: les",
             "en": "plural recipient: les",
-            "es": "destinatario plural: les",
-            "de": "Empfänger im Plural: les"
+            "es": "destinatario plural: les"
           }
         }
       ],
@@ -1143,46 +935,34 @@
       "es": "El libro lo leí ayer.",
       "target": "lo",
       "tr": {
-        "hu": "A könyvet tegnap olvastam el.",
         "en": "I read the book yesterday.",
-        "es": "El libro lo leí ayer.",
-        "de": "Das Buch habe ich gestern gelesen."
+        "es": "El libro lo leí ayer."
       },
       "options": [
         {
           "text": {
-            "hu": "latin-amerikai norma: férfire lo",
             "en": "Latin American norm: lo for a man",
-            "es": "norma latinoamericana: lo para un hombre",
-            "de": "lateinamerikanische Norm: lo für einen Mann"
+            "es": "norma latinoamericana: lo para un hombre"
           },
           "wrong": {
-            "hu": "A latin-amerikai lo-norma férfi személyre vonatkozik (a leísmo ellen); itt dolog a tárgy.",
             "en": "The Latin American lo norm concerns a male person (against leísmo); here the object is a thing.",
-            "es": "La norma latinoamericana de lo se refiere a una persona masculina (frente al leísmo); aquí el objeto es una cosa.",
-            "de": "Die lateinamerikanische lo-Norm betrifft eine männliche Person (gegen Leísmo); hier ist das Objekt eine Sache."
+            "es": "La norma latinoamericana de lo se refiere a una persona masculina (frente al leísmo); aquí el objeto es una cosa."
           }
         },
         {
           "text": {
-            "hu": "dologra nincs leísmo",
             "en": "no leísmo with things",
-            "es": "no hay leísmo con cosas",
-            "de": "kein Leísmo bei Dingen"
+            "es": "no hay leísmo con cosas"
           }
         },
         {
           "text": {
-            "hu": "részes eset: kinek történik",
             "en": "indirect object: to whom it happens",
-            "es": "objeto indirecto: a quién le ocurre",
-            "de": "indirektes Objekt: wem es geschieht"
+            "es": "objeto indirecto: a quién le ocurre"
           },
           "wrong": {
-            "hu": "A libro nem címzett (kinek olvastam?), hanem az, amit olvastam: tárgyeset.",
             "en": "The libro is not a recipient (to whom did I read?), it is what I read: the direct object.",
-            "es": "El libro no es un destinatario (¿a quién leí?), es lo que leí: el objeto directo.",
-            "de": "Das libro ist kein Empfänger (wem habe ich gelesen?), es ist das Gelesene: das direkte Objekt."
+            "es": "El libro no es un destinatario (¿a quién leí?), es lo que leí: el objeto directo."
           }
         }
       ],
@@ -1194,46 +974,34 @@
       "es": "A mi tía la conozco bien.",
       "target": "la",
       "tr": {
-        "hu": "A nagynénémet jól ismerem.",
         "en": "I know my aunt well.",
-        "es": "A mi tía la conozco bien.",
-        "de": "Meine Tante kenne ich gut."
+        "es": "A mi tía la conozco bien."
       },
       "options": [
         {
           "text": {
-            "hu": "tárgyeset: kit érint közvetlenül az ige",
             "en": "direct object: whom the verb affects directly",
-            "es": "objeto directo: a quién afecta directamente el verbo",
-            "de": "direktes Objekt: wen das Verb direkt betrifft"
+            "es": "objeto directo: a quién afecta directamente el verbo"
           }
         },
         {
           "text": {
-            "hu": "a részes névmás nem jelöl nemet",
             "en": "the indirect pronoun does not mark gender",
-            "es": "el pronombre indirecto no marca el género",
-            "de": "das indirekte Pronomen markiert kein Geschlecht"
+            "es": "el pronombre indirecto no marca el género"
           },
           "wrong": {
-            "hu": "Ez a részes névmásra (le) igaz; a la tárgyeset névmás, és éppen a nőnemet jelöli.",
             "en": "That holds for the indirect pronoun (le); la is a direct object pronoun, and it marks the feminine.",
-            "es": "Eso vale para el pronombre indirecto (le); la es un pronombre de objeto directo, y marca el femenino.",
-            "de": "Das gilt für das indirekte Pronomen (le); la ist ein direktes Objektpronomen, und es markiert das Femininum."
+            "es": "Eso vale para el pronombre indirecto (le); la es un pronombre de objeto directo, y marca el femenino."
           }
         },
         {
           "text": {
-            "hu": "kitett tárgy mellett a személy részes",
             "en": "with an explicit object, the person is indirect",
-            "es": "con un objeto expreso, la persona es indirecta",
-            "de": "bei ausdrücklichem Objekt ist die Person indirekt"
+            "es": "con un objeto expreso, la persona es indirecta"
           },
           "wrong": {
-            "hu": "A mondatban nincs kitett tárgy; a conocer tárgya maga a nagynéni, ezért tárgyeset.",
             "en": "There is no explicit object in the sentence; the object of conocer is the aunt herself, so it is the direct object.",
-            "es": "En la oración no hay objeto expreso; el objeto de conocer es la propia tía, por eso es objeto directo.",
-            "de": "Im Satz steht kein ausdrückliches Objekt; das Objekt von conocer ist die Tante selbst, also das direkte Objekt."
+            "es": "En la oración no hay objeto expreso; el objeto de conocer es la propia tía, por eso es objeto directo."
           }
         }
       ],
@@ -1245,46 +1013,34 @@
       "es": "A mi mamá le hablo todos los días.",
       "target": "le",
       "tr": {
-        "hu": "Anyámmal minden nap beszélek.",
         "en": "I talk to my mother every day.",
-        "es": "A mi mamá le hablo todos los días.",
-        "de": "Ich spreche jeden Tag mit meiner Mutter."
+        "es": "A mi mamá le hablo todos los días."
       },
       "options": [
         {
           "text": {
-            "hu": "a részes névmás nem jelöl nemet",
             "en": "the indirect pronoun does not mark gender",
-            "es": "el pronombre indirecto no marca el género",
-            "de": "das indirekte Pronomen markiert kein Geschlecht"
+            "es": "el pronombre indirecto no marca el género"
           }
         },
         {
           "text": {
-            "hu": "többes számú címzett: les",
             "en": "plural recipient: les",
-            "es": "destinatario plural: les",
-            "de": "Empfänger im Plural: les"
+            "es": "destinatario plural: les"
           },
           "wrong": {
-            "hu": "Egy személyről van szó (mi mamá), nem többesről, ezért nem les.",
             "en": "It is about one person (mi mamá), not a plural, so not les.",
-            "es": "Se trata de una persona (mi mamá), no de un plural, por eso no es les.",
-            "de": "Es geht um eine Person (mi mamá), nicht um einen Plural, also nicht les."
+            "es": "Se trata de una persona (mi mamá), no de un plural, por eso no es les."
           }
         },
         {
           "text": {
-            "hu": "latin-amerikai norma: férfire lo",
             "en": "Latin American norm: lo for a man",
-            "es": "norma latinoamericana: lo para un hombre",
-            "de": "lateinamerikanische Norm: lo für einen Mann"
+            "es": "norma latinoamericana: lo para un hombre"
           },
           "wrong": {
-            "hu": "A lo férfira jár tárgyesetben; itt nő a címzett, és részes esetről van szó.",
             "en": "Lo is for a man in the direct object; here the recipient is a woman, and it is the indirect object.",
-            "es": "Lo es para un hombre en objeto directo; aquí la destinataria es una mujer, y se trata del objeto indirecto.",
-            "de": "Lo steht für einen Mann im direkten Objekt; hier ist die Empfängerin eine Frau, und es geht um das indirekte Objekt."
+            "es": "Lo es para un hombre en objeto directo; aquí la destinataria es una mujer, y se trata del objeto indirecto."
           }
         }
       ],

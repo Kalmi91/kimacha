@@ -199,13 +199,6 @@ export function countIntroducedTodayByKind(
   return { words, sentences };
 }
 
-// When merging duplicates across levels
-// (applyPcicDedup in lib/db/migrations.ts), if there is SRS progress on BOTH sides (on the deleted and
-// the surviving item id), the "stronger" side wins: more
-// successful reviews (reps - lapses), on a tie the larger interval, finally
-// the earlier due date (so the review does not slip away). The Sm2Card equivalent of
-// pickSurvivor in `cardMerge.ts` (the `stability` field there does not exist
-// here; it was built for the FSRS-only `cards` table).
 // In the order of new cards to introduce, between two
 // sentences (or groups, which count as ONE unit per `groupOf`) there must be
 // at least `minGap` non-sentence cards ("max 1 sentence per 10
@@ -241,21 +234,11 @@ export function thinSentences(
   return result;
 }
 
-// SRS rows left over from the old PCIC corpus (data/pcic.ts now loads the
-// data/words based corpus, the old "a1-..."/"b1-..." ids are not in it) would still
-// end up in a level's deck through the id-prefix fallback rule of `matchesLevel`, even though
-// `findPcicItem` returns undefined for them. This filter skips them before the
-// session is built, so the deck does not get stuck on an empty/unrevealable card.
+// SRS rows whose id is not in the loaded corpus (data/pcic.ts) have no card to show. This
+// filter skips them before the session is built, so the deck does not get stuck on an
+// empty/unrevealable card.
 export function dropOrphanCards(cards: Sm2Card[], itemExists: (id: string) => boolean): Sm2Card[] {
   return cards.filter((c) => itemExists(c.itemId));
-}
-
-export function pickStrongerSm2Card(a: Sm2Card, b: Sm2Card): Sm2Card {
-  const aSuccess = a.reps - a.lapses;
-  const bSuccess = b.reps - b.lapses;
-  if (aSuccess !== bSuccess) return aSuccess > bSuccess ? a : b;
-  if (a.interval !== b.interval) return a.interval > b.interval ? a : b;
-  return a.due <= b.due ? a : b;
 }
 
 // The black bar at the top should count how much of the deck is left and when it

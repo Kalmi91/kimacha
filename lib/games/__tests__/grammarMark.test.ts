@@ -14,7 +14,7 @@ function markItem(over: Partial<GrammarMarkItem> = {}): GrammarMarkItem {
     sentence: 'Mi hermana come una manzana.',
     target: 'verb',
     answer: 'come',
-    why: { hu: 'w', en: 'w', es: 'w', de: 'w' },
+    why: { en: 'w', es: 'w' },
     wrong: {},
     examples: ['El niño lee un libro.'],
     ...over,
@@ -77,9 +77,9 @@ describe('buildGrammarRound with a mark item', () => {
     schema: 2,
     topic: 'test',
     level: 'A1',
-    title: { hu: 't', en: 't', es: 't', de: 't' },
+    title: { en: 't', es: 't' },
     body: [],
-    speak: { hu: 's', en: 's', es: 's', de: 's' },
+    speak: { en: 's', es: 's' },
     items: [item],
   });
 

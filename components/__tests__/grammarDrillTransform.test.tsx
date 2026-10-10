@@ -25,35 +25,35 @@ const lesson: LessonV2 = {
   schema: 2,
   topic: 'test-transform',
   level: 'A2',
-  title: { hu: 't', en: 't', es: 't', de: 't' },
+  title: { en: 't', es: 't' },
   body: [],
-  speak: { hu: 'h', en: 'e', es: 's', de: 'd' },
+  speak: { en: 'e', es: 's' },
   items: [
     {
       kind: 'transform',
       id: 'tr-01',
       tense: { from: 'presente', to: 'indefinido' },
-      prompt: { hu: 'Eszem kenyeret.', en: 'I eat bread.', es: 'Como pan.', de: 'Ich esse Brot.' },
+      prompt: { en: 'I eat bread.', es: 'Como pan.' },
       answer: 'Comí pan.',
       accept: ['Yo comí pan.'],
       wordIds: ['1', '2'],
-      why: { hu: 'ok', en: 'why', es: 'porque', de: 'weil' },
+      why: { en: 'why', es: 'porque' },
     },
     {
       kind: 'transform',
       id: 'tr-02',
       tense: { from: 'presente', to: 'indefinido' },
-      prompt: { hu: 'Beszél anyjával.', en: 'She talks to her mother.', es: 'Habla con su madre.', de: 'Sie spricht mit ihrer Mutter.' },
+      prompt: { en: 'She talks to her mother.', es: 'Habla con su madre.' },
       answer: 'Habló con su madre.',
       wordIds: ['3'],
-      why: { hu: 'ok2', en: 'why2', es: 'porque2', de: 'weil2' },
+      why: { en: 'why2', es: 'porque2' },
     },
   ],
 };
 
 describe('GrammarDrill: transform item', () => {
   it('kinds={["transform"]} shows the sentence, tense badge and input', async () => {
-    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={jest.fn()} kinds={['transform']} />);
+    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="en" onFinish={jest.fn()} kinds={['transform']} />);
     await flush();
     expect(screen.queryByText('Como pan.')).toBeTruthy();
     expect(screen.queryByText('Presente → Pretérito perfecto simple')).toBeTruthy();
@@ -62,13 +62,13 @@ describe('GrammarDrill: transform item', () => {
 
   it('correct answer shows the "Correct" box + why, and next advances', async () => {
     const onFinish = jest.fn();
-    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['transform']} />);
+    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['transform']} />);
     await flush();
 
     fireEvent.changeText(screen.getByTestId('transform-input'), 'Comí pan.');
     fireEvent.press(screen.getByTestId('transform-check'));
     expect(screen.queryByText('Correct')).toBeTruthy();
-    expect(screen.queryByText('ok')).toBeTruthy();
+    expect(screen.queryByText('why')).toBeTruthy();
 
     fireEvent.press(screen.getByTestId('transform-next'));
     expect(screen.queryByText('Habla con su madre.')).toBeTruthy();
@@ -76,14 +76,14 @@ describe('GrammarDrill: transform item', () => {
 
   it('wrong answer shows "Correct answer" + the answer + why', async () => {
     const onFinish = jest.fn();
-    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['transform']} />);
+    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['transform']} />);
     await flush();
 
     fireEvent.changeText(screen.getByTestId('transform-input'), 'como cosas raras');
     fireEvent.press(screen.getByTestId('transform-check'));
     expect(screen.queryByText('Correct answer')).toBeTruthy();
     expect(screen.queryByText('Comí pan.')).toBeTruthy();
-    expect(screen.queryByText('ok')).toBeTruthy();
+    expect(screen.queryByText('why')).toBeTruthy();
   });
 
   it('accepts a missing-accent answer loosely, rejects it under strict accents', async () => {
@@ -91,7 +91,7 @@ describe('GrammarDrill: transform item', () => {
     await db.setOnboarding('hu', 'es');
 
     await db.setStrictAccents(false);
-    const loose = render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={jest.fn()} kinds={['transform']} />);
+    const loose = render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="en" onFinish={jest.fn()} kinds={['transform']} />);
     await flush();
     fireEvent.changeText(screen.getByTestId('transform-input'), 'Comi pan.');
     fireEvent.press(screen.getByTestId('transform-check'));
@@ -99,7 +99,7 @@ describe('GrammarDrill: transform item', () => {
     loose.unmount();
 
     await db.setStrictAccents(true);
-    const strict = render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={jest.fn()} kinds={['transform']} />);
+    const strict = render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="en" onFinish={jest.fn()} kinds={['transform']} />);
     await flush();
     fireEvent.changeText(screen.getByTestId('transform-input'), 'Comi pan.');
     fireEvent.press(screen.getByTestId('transform-check'));
@@ -110,18 +110,18 @@ describe('GrammarDrill: transform item', () => {
   });
 
   it('F toggles the translation on and off', async () => {
-    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={jest.fn()} kinds={['transform']} />);
+    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="en" onFinish={jest.fn()} kinds={['transform']} />);
     await flush();
-    expect(screen.queryByText('Eszem kenyeret.')).toBeFalsy();
+    expect(screen.queryByText('I eat bread.')).toBeFalsy();
     fireEvent.press(screen.getByTestId('transform-f'));
-    expect(screen.queryByText('Eszem kenyeret.')).toBeTruthy();
+    expect(screen.queryByText('I eat bread.')).toBeTruthy();
     fireEvent.press(screen.getByTestId('transform-f'));
-    expect(screen.queryByText('Eszem kenyeret.')).toBeFalsy();
+    expect(screen.queryByText('I eat bread.')).toBeFalsy();
   });
 
   it('next advances to the 2nd item with an empty input (key remount), then finishes', async () => {
     const onFinish = jest.fn();
-    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="hu" onFinish={onFinish} kinds={['transform']} />);
+    render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['transform']} />);
     await flush();
 
     fireEvent.changeText(screen.getByTestId('transform-input'), 'Comí pan.');

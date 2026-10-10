@@ -63,9 +63,9 @@ describe('GrammarDrill: wrong conjugation → comparison', () => {
     schema: 2,
     topic: 'cmp',
     level: 'A1',
-    title: { hu: 't', en: 't', es: 't', de: 't' },
+    title: { en: 't', es: 't' },
     body: [],
-    speak: { hu: 'h', en: 'e', es: 's', de: 'd' },
+    speak: { en: 'e', es: 's' },
     items: [{ id: 'form-cmp', kind: 'form', verb: 'ser', person: 'nosotros', answer: 'somos', table: 'x' }],
   };
 

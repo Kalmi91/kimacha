@@ -3,54 +3,40 @@
   "topic": "have_got",
   "level": "A1",
   "title": {
-    "hu": "Have és have got (tener)",
     "en": "Have and have got (to possess)",
-    "es": "Have y have got (tener)",
-    "de": "Have und have got (haben, besitzen)"
+    "es": "Have y have got (tener)"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "A spanyol „tener” angolul „have”. Az amerikai angolban ez a szokásos alak: I have a dog. A „have got” ugyanazt jelenti, de beszélt nyelvi és főleg brit: I’ve got a dog. Mindkettő helyes, de a „have” a biztos választás. A „have got” csak birtoklásra használható (kutyám van, két fivérem van), tevékenységre nem (have breakfast).",
         "en": "The Spanish “tener” is “have” in English. In American English this is the normal form: I have a dog. “Have got” means the same but is spoken, informal and mainly British: I’ve got a dog. Both are correct, but “have” is the safe choice. “Have got” works only for possession (I have a dog, I have two brothers), not for actions (have breakfast).",
-        "es": "El «tener» del español es «have» en inglés. En inglés americano esta es la forma normal: I have a dog. «Have got» significa lo mismo, pero es coloquial y sobre todo británico: I’ve got a dog. Las dos son correctas, pero «have» es la opción segura. «Have got» solo sirve para poseer (tengo un perro, tengo dos hermanos), no para acciones (have breakfast).",
-        "de": "Das spanische „tener“ ist im Englischen „have“. Im amerikanischen Englisch ist das die normale Form: I have a dog. „Have got“ bedeutet dasselbe, ist aber umgangssprachlich und vor allem britisch: I’ve got a dog. Beide sind richtig, aber „have“ ist die sichere Wahl. „Have got“ gibt es nur für Besitz (ich habe einen Hund, ich habe zwei Brüder), nicht für Handlungen (have breakfast)."
+        "es": "El «tener» del español es «have» en inglés. En inglés americano esta es la forma normal: I have a dog. «Have got» significa lo mismo, pero es coloquial y sobre todo británico: I’ve got a dog. Las dos son correctas, pero «have» es la opción segura. «Have got» solo sirve para poseer (tengo un perro, tengo dos hermanos), no para acciones (have breakfast)."
       }
     },
     {
       "kind": "table",
       "id": "hg-forms",
       "title": {
-        "hu": "Have és have got",
         "en": "Have and have got",
-        "es": "Have y have got",
-        "de": "Have und have got"
+        "es": "Have y have got"
       },
       "header": [
         {
-          "hu": "Személy",
           "en": "Person",
-          "es": "Persona",
-          "de": "Person"
+          "es": "Persona"
         },
         {
-          "hu": "have",
           "en": "have",
-          "es": "have",
-          "de": "have"
+          "es": "have"
         },
         {
-          "hu": "have got",
           "en": "have got",
-          "es": "have got",
-          "de": "have got"
+          "es": "have got"
         },
         {
-          "hu": "rövid alak",
           "en": "short form",
-          "es": "forma corta",
-          "de": "Kurzform"
+          "es": "forma corta"
         }
       ],
       "rows": [
@@ -89,64 +75,50 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Have (amerikai angol, alap)",
         "en": "Have (American English, the default)",
-        "es": "Have (inglés americano, la opción base)",
-        "de": "Have (amerikanisches Englisch, Standard)"
+        "es": "Have (inglés americano, la opción base)"
       },
       "items": [
         {
           "text": {
-            "hu": "Állító mondat: I / you / we / they have, he / she / it HAS (nem „haves”). Tagadás és kérdés a „do” segédigével: I don’t have, she doesn’t have; Do you have…? Does she have…?",
             "en": "Affirmative: I / you / we / they have, he / she / it HAS (not “haves”). Negatives and questions use the helper “do”: I don’t have, she doesn’t have; Do you have…? Does she have…?",
-            "es": "Afirmativa: I / you / we / they have, he / she / it HAS (no «haves»). La negación y la pregunta usan el auxiliar «do»: I don’t have, she doesn’t have; Do you have…? Does she have…?",
-            "de": "Bejahend: I / you / we / they have, he / she / it HAS (nicht „haves“). Verneinung und Frage mit dem Hilfsverb „do“: I don’t have, she doesn’t have; Do you have…? Does she have…?"
+            "es": "Afirmativa: I / you / we / they have, he / she / it HAS (no «haves»). La negación y la pregunta usan el auxiliar «do»: I don’t have, she doesn’t have; Do you have…? Does she have…?"
           },
           "examples": [
             {
               "es": "She has a big family.",
               "tr": {
-                "hu": "Nagy családja van.",
                 "en": "She has a big family.",
-                "es": "Ella tiene una familia grande.",
-                "de": "Sie hat eine große Familie."
+                "es": "Ella tiene una familia grande."
               }
             },
             {
               "es": "He doesn't have a car.",
               "tr": {
-                "hu": "Neki nincs autója.",
                 "en": "He doesn't have a car.",
-                "es": "Él no tiene coche.",
-                "de": "Er hat kein Auto."
+                "es": "Él no tiene coche."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Rövid válasz a „do” segédigével: Do you have a pen? Yes, I do. / No, I don’t. Does she have a dog? Yes, she does. / No, she doesn’t.",
             "en": "Short answers use “do”: Do you have a pen? Yes, I do. / No, I don’t. Does she have a dog? Yes, she does. / No, she doesn’t.",
-            "es": "La respuesta corta usa «do»: Do you have a pen? Yes, I do. / No, I don’t. Does she have a dog? Yes, she does. / No, she doesn’t.",
-            "de": "Die Kurzantwort benutzt „do“: Do you have a pen? Yes, I do. / No, I don’t. Does she have a dog? Yes, she does. / No, she doesn’t."
+            "es": "La respuesta corta usa «do»: Do you have a pen? Yes, I do. / No, I don’t. Does she have a dog? Yes, she does. / No, she doesn’t."
           },
           "examples": [
             {
               "es": "Do you have a pen?",
               "tr": {
-                "hu": "Van tolled?",
                 "en": "Do you have a pen?",
-                "es": "¿Tienes un bolígrafo?",
-                "de": "Hast du einen Stift?"
+                "es": "¿Tienes un bolígrafo?"
               }
             },
             {
               "es": "Does she have a dog? No, she doesn't.",
               "tr": {
-                "hu": "Van kutyája? Nincs.",
                 "en": "Does she have a dog? No, she doesn't.",
-                "es": "¿Tiene un perro? No.",
-                "de": "Hat sie einen Hund? Nein."
+                "es": "¿Tiene un perro? No."
               }
             }
           ]
@@ -156,64 +128,50 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Have got (beszélt nyelv, brit)",
         "en": "Have got (spoken, British)",
-        "es": "Have got (coloquial, británico)",
-        "de": "Have got (gesprochen, britisch)"
+        "es": "Have got (coloquial, británico)"
       },
       "items": [
         {
           "text": {
-            "hu": "Ugyanaz a jelentés, más szerkezet: a „have” maga a segédige. Állító: I’ve got, she’s got. Tagadás: haven’t got, hasn’t got. Kérdés: Have you got…? Has she got…? Nincs „do”.",
             "en": "Same meaning, different structure: “have” itself is the helper. Affirmative: I’ve got, she’s got. Negative: haven’t got, hasn’t got. Question: Have you got…? Has she got…? There is no “do”.",
-            "es": "Mismo significado, otra estructura: «have» es el propio auxiliar. Afirmativa: I’ve got, she’s got. Negativa: haven’t got, hasn’t got. Pregunta: Have you got…? Has she got…? No hay «do».",
-            "de": "Gleiche Bedeutung, andere Struktur: „have“ selbst ist das Hilfsverb. Bejahend: I’ve got, she’s got. Verneinend: haven’t got, hasn’t got. Frage: Have you got…? Has she got…? Es gibt kein „do“."
+            "es": "Mismo significado, otra estructura: «have» es el propio auxiliar. Afirmativa: I’ve got, she’s got. Negativa: haven’t got, hasn’t got. Pregunta: Have you got…? Has she got…? No hay «do»."
           },
           "examples": [
             {
               "es": "I've got two brothers.",
               "tr": {
-                "hu": "Két fivérem van.",
                 "en": "I've got two brothers.",
-                "es": "Tengo dos hermanos.",
-                "de": "Ich habe zwei Brüder."
+                "es": "Tengo dos hermanos."
               }
             },
             {
               "es": "Have you got a pen? Yes, I have.",
               "tr": {
-                "hu": "Van tolled? Igen.",
                 "en": "Have you got a pen? Yes, I have.",
-                "es": "¿Tienes un bolígrafo? Sí.",
-                "de": "Hast du einen Stift? Ja."
+                "es": "¿Tienes un bolígrafo? Sí."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "A „got” sosem változik: she has got (nem „gots”). És nem keverjük: vagy „have”, vagy „have got” egy mondatban.",
             "en": "“Got” never changes: she has got (not “gots”). And we do not mix them: either “have” or “have got” in a sentence.",
-            "es": "«Got» nunca cambia: she has got (no «gots»). Y no se mezclan: en una oración, o «have» o «have got».",
-            "de": "„Got“ ändert sich nie: she has got (nicht „gots“). Und man mischt sie nicht: in einem Satz entweder „have“ oder „have got“."
+            "es": "«Got» nunca cambia: she has got (no «gots»). Y no se mezclan: en una oración, o «have» o «have got»."
           },
           "examples": [
             {
               "es": "She has got a car.",
               "tr": {
-                "hu": "Van autója.",
                 "en": "She has got a car.",
-                "es": "Ella tiene un coche.",
-                "de": "Sie hat ein Auto."
+                "es": "Ella tiene un coche."
               }
             },
             {
               "es": "They haven't got a house.",
               "tr": {
-                "hu": "Nincs házuk.",
                 "en": "They haven't got a house.",
-                "es": "Ellos no tienen una casa.",
-                "de": "Sie haben kein Haus."
+                "es": "Ellos no tienen una casa."
               }
             }
           ]
@@ -223,64 +181,50 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Amikor nem birtoklásról van szó",
         "en": "When it is not about possession",
-        "es": "Cuando no se trata de posesión",
-        "de": "Wenn es nicht um Besitz geht"
+        "es": "Cuando no se trata de posesión"
       },
       "items": [
         {
           "text": {
-            "hu": "Tevékenységnél csak „have” van: have breakfast, have lunch, have a shower. A „have got” itt nem működik.",
             "en": "For actions there is only “have”: have breakfast, have lunch, have a shower. “Have got” does not work here.",
-            "es": "Para acciones solo existe «have»: have breakfast, have lunch, have a shower. «Have got» no funciona aquí.",
-            "de": "Bei Handlungen gibt es nur „have“: have breakfast, have lunch, have a shower. „Have got“ funktioniert hier nicht."
+            "es": "Para acciones solo existe «have»: have breakfast, have lunch, have a shower. «Have got» no funciona aquí."
           },
           "examples": [
             {
               "es": "We have lunch at two.",
               "tr": {
-                "hu": "Kettőkor ebédelünk.",
                 "en": "We have lunch at two.",
-                "es": "Almorzamos a las dos.",
-                "de": "Wir essen um zwei zu Mittag."
+                "es": "Almorzamos a las dos."
               }
             },
             {
               "es": "I have breakfast at eight.",
               "tr": {
-                "hu": "Nyolckor reggelizem.",
                 "en": "I have breakfast at eight.",
-                "es": "Desayuno a las ocho.",
-                "de": "Ich frühstücke um acht."
+                "es": "Desayuno a las ocho."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Állapotokra („tengo hambre, frío, sed, 20 años”) a to be kell: I am hungry, I am cold, I am 20.",
             "en": "For states (“tengo hambre, frío, sed, 20 años”) you need to be: I am hungry, I am cold, I am 20.",
-            "es": "Para estados («tengo hambre, frío, sed, 20 años») hace falta to be: I am hungry, I am cold, I am 20.",
-            "de": "Für Zustände („tengo hambre, frío, sed, 20 años“) braucht man to be: I am hungry, I am cold, I am 20."
+            "es": "Para estados («tengo hambre, frío, sed, 20 años») hace falta to be: I am hungry, I am cold, I am 20."
           },
           "examples": [
             {
               "es": "I am hungry.",
               "tr": {
-                "hu": "Éhes vagyok.",
                 "en": "I am hungry.",
-                "es": "Tengo hambre.",
-                "de": "Ich habe Hunger."
+                "es": "Tengo hambre."
               }
             },
             {
               "es": "She is cold.",
               "tr": {
-                "hu": "Fázik.",
                 "en": "She is cold.",
-                "es": "Ella tiene frío.",
-                "de": "Ihr ist kalt."
+                "es": "Ella tiene frío."
               }
             }
           ]
@@ -290,108 +234,84 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "A he / she / it mellé „has” kell. Ne mondd, hogy „She have a car”, hanem: „She has a car” vagy „She has got a car”.",
         "en": "With he / she / it you need “has”. Do not say “She have a car”; say “She has a car” or “She has got a car”.",
-        "es": "Con he / she / it hace falta «has». No digas «She have a car», di «She has a car» o «She has got a car».",
-        "de": "Bei he / she / it braucht man „has“. Sag nicht „She have a car“, sondern „She has a car“ oder „She has got a car“."
+        "es": "Con he / she / it hace falta «has». No digas «She have a car», di «She has a car» o «She has got a car»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A „tengo hambre / frío / sed” angolul a to be-vel megy. Ne mondd, hogy „I have hunger”, hanem: „I am hungry”.",
         "en": "“Tengo hambre / frío / sed” uses to be in English. Do not say “I have hunger”; say “I am hungry”.",
-        "es": "«Tengo hambre / frío / sed» lleva to be en inglés. No digas «I have hunger», di «I am hungry».",
-        "de": "„Tengo hambre / frío / sed“ wird im Englischen mit to be gebildet. Sag nicht „I have hunger“, sondern „I am hungry“."
+        "es": "«Tengo hambre / frío / sed» lleva to be en inglés. No digas «I have hunger», di «I am hungry»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "Ne keverd a kettőt. Ne mondd, hogy „Do you have got a pen?” vagy „I don’t have got”, hanem: „Do you have a pen?” vagy „Have you got a pen?”.",
         "en": "Do not mix the two. Do not say “Do you have got a pen?” or “I don’t have got”; say “Do you have a pen?” or “Have you got a pen?”.",
-        "es": "No mezcles las dos. No digas «Do you have got a pen?» ni «I don’t have got», di «Do you have a pen?» o «Have you got a pen?».",
-        "de": "Mische die beiden nicht. Sag nicht „Do you have got a pen?“ oder „I don’t have got“, sondern „Do you have a pen?“ oder „Have you got a pen?“."
+        "es": "No mezcles las dos. No digas «Do you have got a pen?» ni «I don’t have got», di «Do you have a pen?» o «Have you got a pen?»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "Tevékenységre ne használj „have got”-ot. Ne mondd, hogy „I’ve got breakfast at eight”, hanem: „I have breakfast at eight”.",
         "en": "Do not use “have got” for actions. Do not say “I’ve got breakfast at eight”; say “I have breakfast at eight”.",
-        "es": "No uses «have got» para acciones. No digas «I’ve got breakfast at eight», di «I have breakfast at eight».",
-        "de": "Benutze „have got“ nicht für Handlungen. Sag nicht „I’ve got breakfast at eight“, sondern „I have breakfast at eight“."
+        "es": "No uses «have got» para acciones. No digas «I’ve got breakfast at eight», di «I have breakfast at eight»."
       }
     }
   ],
   "speak": {
-    "hu": "A spanyol «tener» angolul «have». Az amerikai angolban ez a szokásos alak: «I have a dog». A he, she és it mellé «has» kell: «She has a car». Tagadás és kérdés: «I don't have a car», «Do you have a pen?». A «have got» beszélt nyelvi változat, ugyanazt jelenti: «I've got a dog», «Have you got a pen?». Vigyázat: tevékenységnél nincs «got»: «I have breakfast at eight». Éhség, fázás: «I am hungry», soha nem «I have hunger».",
     "en": "The Spanish «tener» is «have» in English. In American English this is the normal form: «I have a dog». With he, she and it you need «has»: «She has a car». Negatives and questions: «I don't have a car», «Do you have a pen?». «Have got» is a spoken variant with the same meaning: «I've got a dog», «Have you got a pen?». Careful: for actions there is no «got»: «I have breakfast at eight». For hunger and cold use «I am hungry», never «I have hunger».",
-    "es": "El «tener» del español es «have» en inglés. En inglés americano esta es la forma normal: «I have a dog». Con he, she e it hace falta «has»: «She has a car». Negación y pregunta: «I don't have a car», «Do you have a pen?». «Have got» es una variante coloquial con el mismo significado: «I've got a dog», «Have you got a pen?». Cuidado: para acciones no hay «got»: «I have breakfast at eight». Para el hambre y el frío se usa «I am hungry», nunca «I have hunger».",
-    "de": "Das spanische «tener» ist im Englischen «have». Im amerikanischen Englisch ist das die normale Form: «I have a dog». Bei he, she und it braucht man «has»: «She has a car». Verneinung und Frage: «I don't have a car», «Do you have a pen?». «Have got» ist eine gesprochene Variante mit derselben Bedeutung: «I've got a dog», «Have you got a pen?». Vorsicht: Bei Handlungen gibt es kein «got»: «I have breakfast at eight». Für Hunger und Kälte sagt man «I am hungry», niemals «I have hunger»."
+    "es": "El «tener» del español es «have» en inglés. En inglés americano esta es la forma normal: «I have a dog». Con he, she e it hace falta «has»: «She has a car». Negación y pregunta: «I don't have a car», «Do you have a pen?». «Have got» es una variante coloquial con el mismo significado: «I've got a dog», «Have you got a pen?». Cuidado: para acciones no hay «got»: «I have breakfast at eight». Para el hambre y el frío se usa «I am hungry», nunca «I have hunger»."
   },
   "glossary": [
     {
       "word": "I've",
       "gloss": {
-        "hu": "van nekem (I have)",
         "en": "I have",
-        "es": "yo tengo (I have)",
-        "de": "ich habe (I have)"
+        "es": "yo tengo (I have)"
       }
     },
     {
       "word": "haven't",
       "gloss": {
-        "hu": "nincs (have not)",
         "en": "have not",
-        "es": "no tener (have not)",
-        "de": "nicht haben (have not)"
+        "es": "no tener (have not)"
       }
     },
     {
       "word": "we've",
       "gloss": {
-        "hu": "van nekünk (we have)",
         "en": "we have",
-        "es": "nosotros tenemos (we have)",
-        "de": "wir haben (we have)"
+        "es": "nosotros tenemos (we have)"
       }
     },
     {
       "word": "you've",
       "gloss": {
-        "hu": "van neked (you have)",
         "en": "you have",
-        "es": "tú tienes (you have)",
-        "de": "du hast (you have)"
+        "es": "tú tienes (you have)"
       }
     },
     {
       "word": "we've",
       "gloss": {
-        "hu": "van nekünk (we have)",
         "en": "we have",
-        "es": "nosotros tenemos (we have)",
-        "de": "wir haben (we have)"
+        "es": "nosotros tenemos (we have)"
       }
     },
     {
       "word": "you've",
       "gloss": {
-        "hu": "van neked (you have)",
         "en": "you have",
-        "es": "tú tienes (you have)",
-        "de": "du hast (you have)"
+        "es": "tú tienes (you have)"
       }
     },
     {
       "word": "hasn't",
       "gloss": {
-        "hu": "nincs (has not)",
         "en": "has not",
-        "es": "no tiene (has not)",
-        "de": "nicht haben (has not)"
+        "es": "no tiene (has not)"
       }
     }
   ],
@@ -406,30 +326,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az „I” mellé a „have” kell: I have a dog.",
         "en": "With “I” you need “have”: I have a dog.",
-        "es": "Con «I» hace falta «have»: I have a dog.",
-        "de": "Bei „I“ braucht man „have“: I have a dog."
+        "es": "Con «I» hace falta «have»: I have a dog."
       },
       "wrong": {
         "has": {
-          "hu": "A „has” csak a he, she, it mellé való; az „I” mellé „have” kell.",
           "en": "“Has” goes only with he, she, it; with “I” you need “have”.",
-          "es": "«Has» va solo con he, she, it; con «I» hace falta «have».",
-          "de": "„Has“ gehört nur zu he, she, it; bei „I“ braucht man „have“."
+          "es": "«Has» va solo con he, she, it; con «I» hace falta «have»."
         },
         "am": {
-          "hu": "Az „am” a to be alakja; birtoklásnál („tengo un perro”) a „have” kell.",
           "en": "“Am” is a form of to be; for possession (“tengo un perro”) you need “have”.",
-          "es": "«Am» es una forma de to be; para la posesión («tengo un perro») hace falta «have».",
-          "de": "„Am“ ist eine Form von to be; für Besitz („tengo un perro“) braucht man „have“."
+          "es": "«Am» es una forma de to be; para la posesión («tengo un perro») hace falta «have»."
         }
       },
       "examples": [
         "We have a car.",
         "You have a big house."
       ],
-      "tr": { "hu": "Van egy kutyám.", "en": "I have a dog.", "es": "Tengo un perro.", "de": "Ich habe einen Hund." }
+      "tr": { "en": "I have a dog.", "es": "Tengo un perro." }
     },
     {
       "id": "hg-02",
@@ -441,30 +355,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A he / she / it mellé „has” kell: She has a big family.",
         "en": "With he / she / it you need “has”: She has a big family.",
-        "es": "Con he / she / it hace falta «has»: She has a big family.",
-        "de": "Bei he / she / it braucht man „has“: She has a big family."
+        "es": "Con he / she / it hace falta «has»: She has a big family."
       },
       "wrong": {
         "have": {
-          "hu": "A „have” az I, you, we, they mellé való; a „she” mellé „has” kell.",
           "en": "“Have” goes with I, you, we, they; with “she” you need “has”.",
-          "es": "«Have» va con I, you, we, they; con «she» hace falta «has».",
-          "de": "„Have“ gehört zu I, you, we, they; bei „she“ braucht man „has“."
+          "es": "«Have» va con I, you, we, they; con «she» hace falta «has»."
         },
         "haves": {
-          "hu": "A have szabálytalan: nem „haves”, hanem „has”.",
           "en": "Have is irregular: not “haves” but “has”.",
-          "es": "Have es irregular: no «haves», sino «has».",
-          "de": "Have ist unregelmäßig: nicht „haves“, sondern „has“."
+          "es": "Have es irregular: no «haves», sino «has»."
         }
       },
       "examples": [
         "My brother has a dog.",
         "He has a new phone."
       ],
-      "tr": { "hu": "Nagy családja van.", "en": "She has a big family.", "es": "Ella tiene una familia grande.", "de": "Sie hat eine große Familie." }
+      "tr": { "en": "She has a big family.", "es": "Ella tiene una familia grande." }
     },
     {
       "id": "hg-15",
@@ -484,30 +392,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "A „they” mellé „have” kell: They have a house in Mexico.",
         "en": "With “they” you need “have”: They have a house in Mexico.",
-        "es": "Con «they» hace falta «have»: They have a house in Mexico.",
-        "de": "Bei „they“ braucht man „have“: They have a house in Mexico."
+        "es": "Con «they» hace falta «have»: They have a house in Mexico."
       },
       "wrong": {
         "has": {
-          "hu": "A „has” csak a he, she, it mellé való; a „they” mellé „have” kell.",
           "en": "“Has” goes only with he, she, it; with “they” you need “have”.",
-          "es": "«Has» va solo con he, she, it; con «they» hace falta «have».",
-          "de": "„Has“ gehört nur zu he, she, it; bei „they“ braucht man „have“."
+          "es": "«Has» va solo con he, she, it; con «they» hace falta «have»."
         },
         "haves": {
-          "hu": "A have szabálytalan, és a „they” mellé az alapalak kell: have.",
           "en": "Have is irregular, and “they” takes the base form: have.",
-          "es": "Have es irregular, y con «they» va la forma base: have.",
-          "de": "Have ist unregelmäßig, und bei „they“ steht die Grundform: have."
+          "es": "Have es irregular, y con «they» va la forma base: have."
         }
       },
       "examples": [
         "We have a big family.",
         "They have two cats."
       ],
-      "tr": { "hu": "Van egy házuk Mexikóban.", "en": "They have a house in Mexico.", "es": "Ellos tienen una casa en México.", "de": "Sie haben ein Haus in Mexiko." }
+      "tr": { "en": "They have a house in Mexico.", "es": "Ellos tienen una casa en México." }
     },
     {
       "id": "hg-04",
@@ -519,30 +421,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „have got” szerkezetben a „got” nem változik: She has got a new phone.",
         "en": "In “have got” the “got” never changes: She has got a new phone.",
-        "es": "En «have got» la palabra «got» nunca cambia: She has got a new phone.",
-        "de": "In „have got“ verändert sich „got“ nie: She has got a new phone."
+        "es": "En «have got» la palabra «got» nunca cambia: She has got a new phone."
       },
       "wrong": {
         "get": {
-          "hu": "A „get” alapalak; a szerkezet „has got”, ahol a „got” alak fix.",
           "en": "“Get” is the base form; the structure is “has got”, where “got” is fixed.",
-          "es": "«Get» es la forma base; la estructura es «has got», donde «got» es fijo.",
-          "de": "„Get“ ist die Grundform; die Struktur lautet „has got“, wobei „got“ fest ist."
+          "es": "«Get» es la forma base; la estructura es «has got», donde «got» es fijo."
         },
         "gots": {
-          "hu": "A „gots” nem létező alak; a „got” sosem kap -s-t.",
           "en": "“Gots” does not exist; “got” never takes an -s.",
-          "es": "«Gots» no existe; «got» nunca lleva -s.",
-          "de": "„Gots“ gibt es nicht; „got“ bekommt nie ein -s."
+          "es": "«Gots» no existe; «got» nunca lleva -s."
         }
       },
       "examples": [
         "He has got two cars.",
         "My sister has got a dog."
       ],
-      "tr": { "hu": "Van egy új telefonja.", "en": "She has got a new phone.", "es": "Ella tiene un celular nuevo.", "de": "Sie hat ein neues Handy." }
+      "tr": { "en": "She has got a new phone.", "es": "Ella tiene un celular nuevo." }
     },
     {
       "kind": "why",
@@ -550,46 +446,34 @@
       "es": "She has a car.",
       "target": "has",
       "tr": {
-        "hu": "Van autója.",
         "en": "She has a car.",
-        "es": "Ella tiene un coche.",
-        "de": "Sie hat ein Auto."
+        "es": "Ella tiene un coche."
       },
       "options": [
         {
           "text": {
-            "hu": "a have alakja a he / she / it mellett: has",
             "en": "the form of have with he / she / it: has",
-            "es": "la forma de have con he / she / it: has",
-            "de": "die Form von have bei he / she / it: has"
+            "es": "la forma de have con he / she / it: has"
           }
         },
         {
           "text": {
-            "hu": "a have alakja az I / you / we / they mellett: have",
             "en": "the form of have with I / you / we / they: have",
-            "es": "la forma de have con I / you / we / they: have",
-            "de": "die Form von have bei I / you / we / they: have"
+            "es": "la forma de have con I / you / we / they: have"
           },
           "wrong": {
-            "hu": "A „she” a he / she / it csoportba tartozik, ezért „has”, nem „have”.",
             "en": "“She” is in the he / she / it group, so “has”, not “have”.",
-            "es": "«She» está en el grupo he / she / it, por eso «has», no «have».",
-            "de": "„She“ gehört zur Gruppe he / she / it, deshalb „has“, nicht „have“."
+            "es": "«She» está en el grupo he / she / it, por eso «has», no «have»."
           }
         },
         {
           "text": {
-            "hu": "a to be alakja",
             "en": "a form of to be",
-            "es": "una forma de to be",
-            "de": "eine Form von to be"
+            "es": "una forma de to be"
           },
           "wrong": {
-            "hu": "A „has” itt a „have” alakja (birtoklás), nem a to be. A to be alakja „is” lenne.",
             "en": "“Has” here is a form of have (possession), not of to be. The to be form would be “is”.",
-            "es": "«Has» aquí es una forma de have (posesión), no de to be. La forma de to be sería «is».",
-            "de": "„Has“ ist hier eine Form von have (Besitz), nicht von to be. Die Form von to be wäre „is“."
+            "es": "«Has» aquí es una forma de have (posesión), no de to be. La forma de to be sería «is»."
           }
         }
       ],
@@ -605,30 +489,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az „I’ve got” = I have got: I’ve got two brothers.",
         "en": "“I’ve got” = I have got: I’ve got two brothers.",
-        "es": "«I’ve got» = I have got: I’ve got two brothers.",
-        "de": "„I’ve got“ = I have got: I’ve got two brothers."
+        "es": "«I’ve got» = I have got: I’ve got two brothers."
       },
       "wrong": {
         "get": {
-          "hu": "Az „I’ve” után a „got” áll, nem a „get”: I’ve got.",
           "en": "After “I’ve” comes “got”, not “get”: I’ve got.",
-          "es": "Después de «I’ve» va «got», no «get»: I’ve got.",
-          "de": "Nach „I’ve“ steht „got“, nicht „get“: I’ve got."
+          "es": "Después de «I’ve» va «got», no «get»: I’ve got."
         },
         "gets": {
-          "hu": "Az „I’ve” után a „got” fix alak áll, -s nélkül: I’ve got.",
           "en": "After “I’ve” the fixed form “got” follows, with no -s: I’ve got.",
-          "es": "Después de «I’ve» va la forma fija «got», sin -s: I’ve got.",
-          "de": "Nach „I’ve“ steht die feste Form „got“, ohne -s: I’ve got."
+          "es": "Después de «I’ve» va la forma fija «got», sin -s: I’ve got."
         }
       },
       "examples": [
         "We've got a big house.",
         "You've got a nice family."
       ],
-      "tr": { "hu": "Van két bátyám.", "en": "I've got two brothers.", "es": "Tengo dos hermanos.", "de": "Ich habe zwei Brüder." }
+      "tr": { "en": "I've got two brothers.", "es": "Tengo dos hermanos." }
     },
     {
       "id": "hg-06",
@@ -640,30 +518,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „have got” kérdésében a „have” kerül előre: Have you got a pen?",
         "en": "In a “have got” question “have” moves to the front: Have you got a pen?",
-        "es": "En una pregunta con «have got», «have» pasa al principio: Have you got a pen?",
-        "de": "In einer „have got“-Frage rückt „have“ nach vorn: Have you got a pen?"
+        "es": "En una pregunta con «have got», «have» pasa al principio: Have you got a pen?"
       },
       "wrong": {
         "Do": {
-          "hu": "A „got” mellett nincs „do”: Have you got…? A „do” a „have” alakhoz kell (Do you have…?).",
           "en": "With “got” there is no “do”: Have you got…? “Do” goes with plain “have” (Do you have…?).",
-          "es": "Con «got» no hay «do»: Have you got…? «Do» va con «have» solo (Do you have…?).",
-          "de": "Mit „got“ gibt es kein „do“: Have you got…? „Do“ gehört zum einfachen „have“ (Do you have…?)."
+          "es": "Con «got» no hay «do»: Have you got…? «Do» va con «have» solo (Do you have…?)."
         },
         "Are": {
-          "hu": "Az „Are” a to be alakja; a „have got” kérdése „Have you got…?”.",
           "en": "“Are” is a form of to be; the question with “have got” is “Have you got…?”.",
-          "es": "«Are» es una forma de to be; la pregunta con «have got» es «Have you got…?».",
-          "de": "„Are“ ist eine Form von to be; die Frage mit „have got“ lautet „Have you got…?“."
+          "es": "«Are» es una forma de to be; la pregunta con «have got» es «Have you got…?»."
         }
       },
       "examples": [
         "Have you got a phone?",
         "Have they got a car?"
       ],
-      "tr": { "hu": "Van tollad?", "en": "Have you got a pen?", "es": "¿Tienes una pluma?", "de": "Hast du einen Stift?" }
+      "tr": { "en": "Have you got a pen?", "es": "¿Tienes una pluma?" }
     },
     {
       "id": "hg-07",
@@ -675,30 +547,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „have” alakhoz a „do” segédige kell a kérdésben: Do you have a pen?",
         "en": "With plain “have” a question needs the helper “do”: Do you have a pen?",
-        "es": "Con «have» solo, la pregunta necesita el auxiliar «do»: Do you have a pen?",
-        "de": "Beim einfachen „have“ braucht die Frage das Hilfsverb „do“: Do you have a pen?"
+        "es": "Con «have» solo, la pregunta necesita el auxiliar «do»: Do you have a pen?"
       },
       "wrong": {
         "Have": {
-          "hu": "A „Have you have” hibás; ha nincs „got”, a kérdés „Do you have…?”.",
           "en": "“Have you have” is wrong; without “got” the question is “Do you have…?”.",
-          "es": "«Have you have» es incorrecto; sin «got» la pregunta es «Do you have…?».",
-          "de": "„Have you have“ ist falsch; ohne „got“ lautet die Frage „Do you have…?“."
+          "es": "«Have you have» es incorrecto; sin «got» la pregunta es «Do you have…?»."
         },
         "Are": {
-          "hu": "Az „Are” a to be alakja; a „have” kérdése „Do you have…?”.",
           "en": "“Are” is a form of to be; the question with “have” is “Do you have…?”.",
-          "es": "«Are» es una forma de to be; la pregunta con «have» es «Do you have…?».",
-          "de": "„Are“ ist eine Form von to be; die Frage mit „have“ lautet „Do you have…?“."
+          "es": "«Are» es una forma de to be; la pregunta con «have» es «Do you have…?»."
         }
       },
       "examples": [
         "Do you have a phone?",
         "Do they have a car?"
       ],
-      "tr": { "hu": "Van nálad toll?", "en": "Do you have a pen?", "es": "¿Tienes una pluma?", "de": "Hast du einen Stift?" }
+      "tr": { "en": "Do you have a pen?", "es": "¿Tienes una pluma?" }
     },
     {
       "id": "hg-16",
@@ -718,30 +584,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „doesn’t” után az ige alapalakja áll: He doesn’t have a car.",
         "en": "After “doesn’t” the verb stays in its base form: He doesn’t have a car.",
-        "es": "Después de «doesn’t» el verbo va en forma base: He doesn’t have a car.",
-        "de": "Nach „doesn’t“ steht das Verb in der Grundform: He doesn’t have a car."
+        "es": "Después de «doesn’t» el verbo va en forma base: He doesn’t have a car."
       },
       "wrong": {
         "has": {
-          "hu": "Az -s már a „doesn’t”-ben van; utána „have” áll, nem „has”.",
           "en": "The -s is already in “doesn’t”; after it comes “have”, not “has”.",
-          "es": "La -s ya está en «doesn’t»; después va «have», no «has».",
-          "de": "Das -s steckt schon in „doesn’t“; danach steht „have“, nicht „has“."
+          "es": "La -s ya está en «doesn’t»; después va «have», no «has»."
         },
         "got": {
-          "hu": "A „doesn’t got” nem szabályos; „doesn’t have” vagy „hasn’t got” a helyes.",
           "en": "“Doesn’t got” is not standard; the correct forms are “doesn’t have” or “hasn’t got”.",
-          "es": "«Doesn’t got» no es estándar; las formas correctas son «doesn’t have» o «hasn’t got».",
-          "de": "„Doesn’t got“ ist nicht standardsprachlich; richtig sind „doesn’t have“ oder „hasn’t got“."
+          "es": "«Doesn’t got» no es estándar; las formas correctas son «doesn’t have» o «hasn’t got»."
         }
       },
       "examples": [
         "I don't have a phone.",
         "She doesn't have a dog."
       ],
-      "tr": { "hu": "Nincs autója.", "en": "He doesn't have a car.", "es": "Él no tiene carro.", "de": "Er hat kein Auto." }
+      "tr": { "en": "He doesn't have a car.", "es": "Él no tiene carro." }
     },
     {
       "id": "hg-09",
@@ -753,30 +613,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „have got” tagadása: hasn’t got. She hasn’t got a car.",
         "en": "The negative of “have got” is “hasn’t got”: She hasn’t got a car.",
-        "es": "La negación de «have got» es «hasn’t got»: She hasn’t got a car.",
-        "de": "Die Verneinung von „have got“ ist „hasn’t got“: She hasn’t got a car."
+        "es": "La negación de «have got» es «hasn’t got»: She hasn’t got a car."
       },
       "wrong": {
         "have": {
-          "hu": "A „hasn’t have” hibás; a „hasn’t” után „got” áll.",
           "en": "“Hasn’t have” is wrong; after “hasn’t” comes “got”.",
-          "es": "«Hasn’t have» es incorrecto; después de «hasn’t» va «got».",
-          "de": "„Hasn’t have“ ist falsch; nach „hasn’t“ steht „got“."
+          "es": "«Hasn’t have» es incorrecto; después de «hasn’t» va «got»."
         },
         "get": {
-          "hu": "A „hasn’t get” hibás; a szerkezet „hasn’t got”.",
           "en": "“Hasn’t get” is wrong; the structure is “hasn’t got”.",
-          "es": "«Hasn’t get» es incorrecto; la estructura es «hasn’t got».",
-          "de": "„Hasn’t get“ ist falsch; die Struktur lautet „hasn’t got“."
+          "es": "«Hasn’t get» es incorrecto; la estructura es «hasn’t got»."
         }
       },
       "examples": [
         "They haven't got a house.",
         "I haven't got a pen."
       ],
-      "tr": { "hu": "Nincs autója.", "en": "She hasn't got a car.", "es": "Ella no tiene carro.", "de": "Sie hat kein Auto." }
+      "tr": { "en": "She hasn't got a car.", "es": "Ella no tiene carro." }
     },
     {
       "kind": "why",
@@ -784,46 +638,34 @@
       "es": "I have lunch at two.",
       "target": "have",
       "tr": {
-        "hu": "Kettőkor ebédelek.",
         "en": "I have lunch at two.",
-        "es": "Almuerzo a las dos.",
-        "de": "Ich esse um zwei zu Mittag."
+        "es": "Almuerzo a las dos."
       },
       "options": [
         {
           "text": {
-            "hu": "tevékenység (étkezés): csak „have”, „got” nélkül",
             "en": "an action (a meal): only “have”, with no “got”",
-            "es": "una acción (una comida): solo «have», sin «got»",
-            "de": "eine Handlung (Mahlzeit): nur „have“, ohne „got“"
+            "es": "una acción (una comida): solo «have», sin «got»"
           }
         },
         {
           "text": {
-            "hu": "birtoklás: „have got” is lehetne",
             "en": "possession: “have got” would also work",
-            "es": "posesión: «have got» también serviría",
-            "de": "Besitz: „have got“ würde auch gehen"
+            "es": "posesión: «have got» también serviría"
           },
           "wrong": {
-            "hu": "Itt nem birtoklásról van szó, hanem az ebédelésről; „I’ve got lunch” mást jelentene.",
             "en": "This is not about owning something but about eating lunch; “I’ve got lunch” would mean something else.",
-            "es": "Aquí no se trata de poseer algo sino de almorzar; «I’ve got lunch» significaría otra cosa.",
-            "de": "Hier geht es nicht um Besitz, sondern ums Mittagessen; „I’ve got lunch“ würde etwas anderes bedeuten."
+            "es": "Aquí no se trata de poseer algo sino de almorzar; «I’ve got lunch» significaría otra cosa."
           }
         },
         {
           "text": {
-            "hu": "segédige: I have eaten",
             "en": "helper verb: I have eaten",
-            "es": "auxiliar: I have eaten",
-            "de": "Hilfsverb: I have eaten"
+            "es": "auxiliar: I have eaten"
           },
           "wrong": {
-            "hu": "A „have” itt főige, nem segédige; utána nincs igeforma („eaten”), hanem főnév (lunch).",
             "en": "“Have” here is a main verb, not a helper; it is followed by a noun (lunch), not by a verb form (“eaten”).",
-            "es": "«Have» aquí es un verbo principal, no un auxiliar; después va un nombre (lunch), no una forma verbal («eaten»).",
-            "de": "„Have“ ist hier ein Hauptverb, kein Hilfsverb; danach folgt ein Nomen (lunch), keine Verbform („eaten“)."
+            "es": "«Have» aquí es un verbo principal, no un auxiliar; después va un nombre (lunch), no una forma verbal («eaten»)."
           }
         }
       ],
@@ -839,30 +681,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „they” mellé „have” kell: They have got a big house.",
         "en": "With “they” you need “have”: They have got a big house.",
-        "es": "Con «they» hace falta «have»: They have got a big house.",
-        "de": "Bei „they“ braucht man „have“: They have got a big house."
+        "es": "Con «they» hace falta «have»: They have got a big house."
       },
       "wrong": {
         "has": {
-          "hu": "A „has got” a he, she, it mellé való; a „they” mellé „have got” kell.",
           "en": "“Has got” goes with he, she, it; with “they” you need “have got”.",
-          "es": "«Has got» va con he, she, it; con «they» hace falta «have got».",
-          "de": "„Has got“ gehört zu he, she, it; bei „they“ braucht man „have got“."
+          "es": "«Has got» va con he, she, it; con «they» hace falta «have got»."
         },
         "are": {
-          "hu": "Az „are” a to be alakja; a birtoklás „have got”.",
           "en": "“Are” is a form of to be; possession is “have got”.",
-          "es": "«Are» es una forma de to be; la posesión es «have got».",
-          "de": "„Are“ ist eine Form von to be; Besitz heißt „have got“."
+          "es": "«Are» es una forma de to be; la posesión es «have got»."
         }
       },
       "examples": [
         "We have got two cars.",
         "You have got a nice house."
       ],
-      "tr": { "hu": "Van egy nagy házuk.", "en": "They have got a big house.", "es": "Ellos tienen una casa grande.", "de": "Sie haben ein großes Haus." }
+      "tr": { "en": "They have got a big house.", "es": "Ellos tienen una casa grande." }
     },
     {
       "id": "hg-11",
@@ -874,30 +710,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „my cat” = it, ezért „has got”: My cat has got green eyes.",
         "en": "“My cat” = it, so “has got”: My cat has got green eyes.",
-        "es": "«My cat» = it, por eso «has got»: My cat has got green eyes.",
-        "de": "„My cat“ = it, deshalb „has got“: My cat has got green eyes."
+        "es": "«My cat» = it, por eso «has got»: My cat has got green eyes."
       },
       "wrong": {
         "have": {
-          "hu": "A „have got” az I, you, we, they mellé való; a „my cat” = it, ezért „has got”.",
           "en": "“Have got” goes with I, you, we, they; “my cat” = it, so “has got”.",
-          "es": "«Have got» va con I, you, we, they; «my cat» = it, por eso «has got».",
-          "de": "„Have got“ gehört zu I, you, we, they; „my cat“ = it, deshalb „has got“."
+          "es": "«Have got» va con I, you, we, they; «my cat» = it, por eso «has got»."
         },
         "is": {
-          "hu": "Az „is got” nem létezik; a szerkezet „has got”.",
           "en": "“Is got” does not exist; the structure is “has got”.",
-          "es": "«Is got» no existe; la estructura es «has got».",
-          "de": "„Is got“ gibt es nicht; die Struktur lautet „has got“."
+          "es": "«Is got» no existe; la estructura es «has got»."
         }
       },
       "examples": [
         "My dog has got a big bed.",
         "The house has got a garden."
       ],
-      "tr": { "hu": "A macskámnak zöld szeme van.", "en": "My cat has got green eyes.", "es": "Mi gato tiene ojos verdes.", "de": "Meine Katze hat grüne Augen." }
+      "tr": { "en": "My cat has got green eyes.", "es": "Mi gato tiene ojos verdes." }
     },
     {
       "id": "hg-21",
@@ -939,30 +769,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „tengo hambre” angolul to be-vel megy: I am hungry.",
         "en": "“Tengo hambre” uses to be in English: I am hungry.",
-        "es": "«Tengo hambre» se dice con to be en inglés: I am hungry.",
-        "de": "„Tengo hambre“ wird im Englischen mit to be gebildet: I am hungry."
+        "es": "«Tengo hambre» se dice con to be en inglés: I am hungry."
       },
       "wrong": {
         "have": {
-          "hu": "A spanyol „tener hambre” angolul nem „have hungry”, hanem „be hungry”: I am hungry.",
           "en": "Spanish “tener hambre” is not “have hungry” in English but “be hungry”: I am hungry.",
-          "es": "El «tener hambre» del español no es «have hungry» en inglés, sino «be hungry»: I am hungry.",
-          "de": "Das spanische „tener hambre“ ist im Englischen nicht „have hungry“, sondern „be hungry“: I am hungry."
+          "es": "El «tener hambre» del español no es «have hungry» en inglés, sino «be hungry»: I am hungry."
         },
         "has": {
-          "hu": "A „has” a he, she, it mellé való, és a „hungry” mellett a to be kell: I am hungry.",
           "en": "“Has” goes with he, she, it, and with “hungry” you need to be: I am hungry.",
-          "es": "«Has» va con he, she, it, y con «hungry» hace falta to be: I am hungry.",
-          "de": "„Has“ gehört zu he, she, it, und bei „hungry“ braucht man to be: I am hungry."
+          "es": "«Has» va con he, she, it, y con «hungry» hace falta to be: I am hungry."
         }
       },
       "examples": [
         "She is hungry.",
         "We are cold."
       ],
-      "tr": { "hu": "Éhes vagyok.", "en": "I am hungry.", "es": "Tengo hambre.", "de": "Ich habe Hunger." }
+      "tr": { "en": "I am hungry.", "es": "Tengo hambre." }
     },
     {
       "id": "hg-17",
@@ -982,30 +806,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az étkezés tevékenység, itt csak „have” áll: We have lunch at two.",
         "en": "A meal is an action, and only “have” works here: We have lunch at two.",
-        "es": "Una comida es una acción, y aquí solo funciona «have»: We have lunch at two.",
-        "de": "Eine Mahlzeit ist eine Handlung, und hier funktioniert nur „have“: We have lunch at two."
+        "es": "Una comida es una acción, y aquí solo funciona «have»: We have lunch at two."
       },
       "wrong": {
         "has": {
-          "hu": "A „has” a he, she, it mellé való; a „we” mellé „have” kell.",
           "en": "“Has” goes with he, she, it; with “we” you need “have”.",
-          "es": "«Has» va con he, she, it; con «we» hace falta «have».",
-          "de": "„Has“ gehört zu he, she, it; bei „we“ braucht man „have“."
+          "es": "«Has» va con he, she, it; con «we» hace falta «have»."
         },
         "are": {
-          "hu": "Az „are” a to be alakja; az étkezés kifejezése „have lunch”.",
           "en": "“Are” is a form of to be; the phrase for a meal is “have lunch”.",
-          "es": "«Are» es una forma de to be; la expresión para una comida es «have lunch».",
-          "de": "„Are“ ist eine Form von to be; die Wendung für eine Mahlzeit lautet „have lunch“."
+          "es": "«Are» es una forma de to be; la expresión para una comida es «have lunch»."
         }
       },
       "examples": [
         "I have breakfast at eight.",
         "They have dinner at night."
       ],
-      "tr": { "hu": "Kettőkor ebédelünk.", "en": "We have lunch at two.", "es": "Almorzamos a las dos.", "de": "Wir essen um zwei Uhr zu Mittag." }
+      "tr": { "en": "We have lunch at two.", "es": "Almorzamos a las dos." }
     },
     {
       "kind": "why",
@@ -1013,46 +831,34 @@
       "es": "Do you have a pen?",
       "target": "Do",
       "tr": {
-        "hu": "Van tolled?",
         "en": "Do you have a pen?",
-        "es": "¿Tienes un bolígrafo?",
-        "de": "Hast du einen Stift?"
+        "es": "¿Tienes un bolígrafo?"
       },
       "options": [
         {
           "text": {
-            "hu": "a „have” kérdése a „do” segédigével (amerikai alap)",
             "en": "the question with plain “have” uses the helper “do” (American default)",
-            "es": "la pregunta con «have» usa el auxiliar «do» (base en inglés americano)",
-            "de": "die Frage mit einfachem „have“ nimmt das Hilfsverb „do“ (amerikanischer Standard)"
+            "es": "la pregunta con «have» usa el auxiliar «do» (base en inglés americano)"
           }
         },
         {
           "text": {
-            "hu": "a „have got” kérdése: Have you…?",
             "en": "the question with “have got”: Have you…?",
-            "es": "la pregunta con «have got»: Have you…?",
-            "de": "die Frage mit „have got“: Have you…?"
+            "es": "la pregunta con «have got»: Have you…?"
           },
           "wrong": {
-            "hu": "Ez a szerkezet „got”-tal együtt kell: Have you got a pen? „Do you have” mellett a segédige „do”.",
             "en": "That structure needs “got”: Have you got a pen? With “have” alone the helper is “do”.",
-            "es": "Esa estructura necesita «got»: Have you got a pen? Con «have» solo el auxiliar es «do».",
-            "de": "Diese Struktur braucht „got“: Have you got a pen? Beim einfachen „have“ ist das Hilfsverb „do“."
+            "es": "Esa estructura necesita «got»: Have you got a pen? Con «have» solo el auxiliar es «do»."
           }
         },
         {
           "text": {
-            "hu": "a to be kérdése: Are you…?",
             "en": "the question with to be: Are you…?",
-            "es": "la pregunta con to be: Are you…?",
-            "de": "die Frage mit to be: Are you…?"
+            "es": "la pregunta con to be: Are you…?"
           },
           "wrong": {
-            "hu": "A „have” birtoklást jelent, nem a to be-t; ezért „Do you have…?”, nem „Are you have…?”.",
             "en": "“Have” shows possession, not to be; so “Do you have…?”, not “Are you have…?”.",
-            "es": "«Have» expresa posesión, no to be; por eso «Do you have…?», no «Are you have…?».",
-            "de": "„Have“ drückt Besitz aus, nicht to be; also „Do you have…?“, nicht „Are you have…?“."
+            "es": "«Have» expresa posesión, no to be; por eso «Do you have…?», no «Are you have…?»."
           }
         }
       ],
@@ -1068,30 +874,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „Do you” után az ige alapalakja áll: Do you have a sister?",
         "en": "After “Do you” the verb stays in its base form: Do you have a sister?",
-        "es": "Después de «Do you» el verbo va en forma base: Do you have a sister?",
-        "de": "Nach „Do you“ steht das Verb in der Grundform: Do you have a sister?"
+        "es": "Después de «Do you» el verbo va en forma base: Do you have a sister?"
       },
       "wrong": {
         "has": {
-          "hu": "A „has” a he, she, it mellé való; a „do you” után az alapalak áll: have.",
           "en": "“Has” goes with he, she, it; after “do you” the base form is used: have.",
-          "es": "«Has» va con he, she, it; después de «do you» se usa la forma base: have.",
-          "de": "„Has“ gehört zu he, she, it; nach „do you“ steht die Grundform: have."
+          "es": "«Has» va con he, she, it; después de «do you» se usa la forma base: have."
         },
         "got": {
-          "hu": "A „Do you got” nem szabályos; vagy „Do you have…?”, vagy „Have you got…?”.",
           "en": "“Do you got” is not standard; say either “Do you have…?” or “Have you got…?”.",
-          "es": "«Do you got» no es estándar; di «Do you have…?» o «Have you got…?».",
-          "de": "„Do you got“ ist nicht standardsprachlich; sag entweder „Do you have…?“ oder „Have you got…?“."
+          "es": "«Do you got» no es estándar; di «Do you have…?» o «Have you got…?»."
         }
       },
       "examples": [
         "Do you have a brother?",
         "Do they have a dog?"
       ],
-      "tr": { "hu": "Van lánytestvéred?", "en": "Do you have a sister?", "es": "¿Tienes una hermana?", "de": "Hast du eine Schwester?" }
+      "tr": { "en": "Do you have a sister?", "es": "¿Tienes una hermana?" }
     },
     {
       "id": "hg-22",

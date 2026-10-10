@@ -48,9 +48,6 @@ const mockFakeDb = {
 jest.mock('expo-sqlite', () => ({ openDatabaseAsync: async () => mockFakeDb }));
 jest.mock('../db/migrations', () => ({
   runMigrations: async () => 'en-es',
-  applyWordMerges: jest.fn(async () => {}),
-  applyPcicLevelMoves: jest.fn(async () => {}),
-  applyPcicDedup: jest.fn(async () => {}),
 }));
 
 import { getDb } from '../database';
@@ -130,10 +127,6 @@ describe('exportAll / importAll (native db)', () => {
     expect(tables.mistake_batches).toEqual(payload.tables.mistake_batches);
     expect(tables.usage_minutes).toEqual(payload.tables.usage_minutes);
     expect(tables.streak).toEqual(payload.tables.streak);
-    // the id moves / dedup of the PCIC progress run again after a restore
-    const migrations = jest.requireMock('../db/migrations');
-    expect(migrations.applyPcicLevelMoves).toHaveBeenCalled();
-    expect(migrations.applyPcicDedup).toHaveBeenCalled();
   });
 
   it('exports a legacy pcic_cards row with known NULL as 0, so the backup still validates', async () => {

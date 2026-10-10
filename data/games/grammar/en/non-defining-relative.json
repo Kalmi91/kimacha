@@ -3,42 +3,32 @@
   "topic": "non_defining_relative",
   "level": "B2",
   "title": {
-    "hu": "Magyarázó vonatkozó mellékmondat (My sister, who lives in Madrid, …)",
     "en": "Non-defining Relative Clauses (My sister, who lives in Madrid, …)",
-    "es": "Las oraciones de relativo explicativas (My sister, who lives in Madrid, …)",
-    "de": "Nicht-einschränkende Relativsätze (My sister, who lives in Madrid, …)"
+    "es": "Las oraciones de relativo explicativas (My sister, who lives in Madrid, …)"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "A magyarázó vonatkozó mellékmondat további információt ad egy főnévről, amelyet már azonosítottunk. Vesszők közé kerül: „My sister, who lives in Madrid, is a nurse.” (Egy nővérem van, és ő Madridban él.) A meghatározó mondat nem kap vesszőt: „The woman who lives next door is a teacher.” A spanyol „mi hermana, que vive en Madrid, es enfermera” szerkezetnek felel meg, a „lo cual” pedig a which megfelelője.",
         "en": "A non-defining relative clause gives extra information about a noun we have already identified. It goes between commas: “My sister, who lives in Madrid, is a nurse.” (I have one sister, and she lives in Madrid.) A defining clause gets no commas: “The woman who lives next door is a teacher.” It matches the Spanish “mi hermana, que vive en Madrid, es enfermera”, and “lo cual” matches which.",
-        "es": "La oración de relativo explicativa da información adicional sobre un sustantivo que ya identificamos. Va entre comas: «My sister, who lives in Madrid, is a nurse.» (Tengo una sola hermana, y vive en Madrid.) La especificativa no lleva comas: «The woman who lives next door is a teacher.» Corresponde al «mi hermana, que vive en Madrid, es enfermera» del español, y «lo cual» corresponde a which.",
-        "de": "Ein nicht-einschränkender Relativsatz gibt zusätzliche Information über ein Nomen, das wir schon identifiziert haben. Er steht zwischen Kommas: „My sister, who lives in Madrid, is a nurse.“ (Ich habe eine Schwester, und sie lebt in Madrid.) Ein einschränkender Satz bekommt keine Kommas: „The woman who lives next door is a teacher.“ Er entspricht dem spanischen „mi hermana, que vive en Madrid, es enfermera“, und „lo cual“ entspricht which."
+        "es": "La oración de relativo explicativa da información adicional sobre un sustantivo que ya identificamos. Va entre comas: «My sister, who lives in Madrid, is a nurse.» (Tengo una sola hermana, y vive en Madrid.) La especificativa no lleva comas: «The woman who lives next door is a teacher.» Corresponde al «mi hermana, que vive en Madrid, es enfermera» del español, y «lo cual» corresponde a which."
       }
     },
     {
       "kind": "table",
       "id": "nrc-forms",
       "title": {
-        "hu": "Melyik szó?",
         "en": "Which word?",
-        "es": "¿Qué palabra uso?",
-        "de": "Welches Wort?"
+        "es": "¿Qué palabra uso?"
       },
       "header": [
         {
-          "hu": "Helyzet",
           "en": "Situation",
-          "es": "Situación",
-          "de": "Situation"
+          "es": "Situación"
         },
         {
-          "hu": "forma",
           "en": "form",
-          "es": "forma",
-          "de": "Form"
+          "es": "forma"
         }
       ],
       "rows": [
@@ -71,36 +61,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Meghatározó és magyarázó különbsége",
         "en": "Defining versus non-defining",
-        "es": "Especificativa y explicativa",
-        "de": "Einschränkend und nicht-einschränkend"
+        "es": "Especificativa y explicativa"
       },
       "items": [
         {
           "text": {
-            "hu": "A meghatározó mondat azt mondja meg, melyikről van szó, ezért nem hagyható el. A magyarázó csak többletet ad, vesszők között áll, és elhagyható.",
             "en": "A defining clause says which one we mean, so it cannot be left out. A non-defining clause only adds extra information, stands between commas, and can be left out.",
-            "es": "La especificativa dice de cuál hablamos, por eso no se puede quitar. La explicativa solo añade información, va entre comas y se puede quitar.",
-            "de": "Ein einschränkender Satz sagt, welchen wir meinen, deshalb kann er nicht weggelassen werden. Ein nicht-einschränkender fügt nur Information hinzu, steht zwischen Kommas und kann wegfallen."
+            "es": "La especificativa dice de cuál hablamos, por eso no se puede quitar. La explicativa solo añade información, va entre comas y se puede quitar."
           },
           "examples": [
             {
               "es": "My sister, who lives in Mexico City, is a nurse.",
               "tr": {
-                "hu": "A nővérem, aki Mexikóvárosban él, ápoló.",
                 "en": "My sister, who lives in Mexico City, is a nurse.",
-                "es": "Mi hermana, que vive en la Ciudad de México, es enfermera.",
-                "de": "Meine Schwester, die in Mexiko-Stadt lebt, ist Krankenschwester."
+                "es": "Mi hermana, que vive en la Ciudad de México, es enfermera."
               }
             },
             {
               "es": "The woman who lives next door is a teacher.",
               "tr": {
-                "hu": "A nő, aki a szomszédban lakik, tanár.",
                 "en": "The woman who lives next door is a teacher.",
-                "es": "La mujer que vive al lado es maestra.",
-                "de": "Die Frau, die nebenan wohnt, ist Lehrerin."
+                "es": "La mujer que vive al lado es maestra."
               }
             }
           ]
@@ -110,36 +92,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Névmások: who, which, whose, where, when",
         "en": "Pronouns: who, which, whose, where, when",
-        "es": "Pronombres: who, which, whose, where, when",
-        "de": "Pronomen: who, which, whose, where, when"
+        "es": "Pronombres: who, which, whose, where, when"
       },
       "items": [
         {
           "text": {
-            "hu": "Személyre who, dologra which, birtokra whose, helyre where, időre when. A that itt nem használható, és a névmás nem hagyható el.",
             "en": "Who for people, which for things, whose for possession, where for places, when for times. That cannot be used here, and the pronoun cannot be left out.",
-            "es": "Who para personas, which para cosas, whose para posesión, where para lugares, when para tiempos. Aquí no se puede usar that, y el pronombre no se puede omitir.",
-            "de": "Who für Personen, which für Dinge, whose für Besitz, where für Orte, when für Zeiten. That ist hier nicht möglich, und das Pronomen kann nicht wegfallen."
+            "es": "Who para personas, which para cosas, whose para posesión, where para lugares, when para tiempos. Aquí no se puede usar that, y el pronombre no se puede omitir."
           },
           "examples": [
             {
               "es": "My laptop, which I bought last year, is already slow.",
               "tr": {
-                "hu": "A laptopom, amit tavaly vettem, már lassú.",
                 "en": "My laptop, which I bought last year, is already slow.",
-                "es": "Mi laptop, que compré el año pasado, ya está lento.",
-                "de": "Mein Laptop, den ich letztes Jahr gekauft habe, ist schon langsam."
+                "es": "Mi laptop, que compré el año pasado, ya está lento."
               }
             },
             {
               "es": "Madrid, where I was born, is a big city.",
               "tr": {
-                "hu": "Madrid, ahol születtem, nagy város.",
                 "en": "Madrid, where I was born, is a big city.",
-                "es": "Madrid, donde nací, es una ciudad grande.",
-                "de": "Madrid, wo ich geboren wurde, ist eine große Stadt."
+                "es": "Madrid, donde nací, es una ciudad grande."
               }
             }
           ]
@@ -149,36 +123,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "A which egy egész mondatra utal",
         "en": "Which can refer to a whole clause",
-        "es": "Which puede referirse a toda una oración",
-        "de": "Which kann sich auf einen ganzen Satz beziehen"
+        "es": "Which puede referirse a toda una oración"
       },
       "items": [
         {
           "text": {
-            "hu": "Ha a which az előző egész mondatra vonatkozik, a spanyol „lo cual” felel meg neki.",
             "en": "When which refers to the whole previous clause, it matches the Spanish “lo cual”.",
-            "es": "Cuando which se refiere a toda la oración anterior, equivale al «lo cual» del español.",
-            "de": "Wenn which sich auf den ganzen vorherigen Satz bezieht, entspricht es dem spanischen „lo cual“."
+            "es": "Cuando which se refiere a toda la oración anterior, equivale al «lo cual» del español."
           },
           "examples": [
             {
               "es": "She passed the exam, which surprised everyone.",
               "tr": {
-                "hu": "Átment a vizsgán, ami mindenkit meglepett.",
                 "en": "She passed the exam, which surprised everyone.",
-                "es": "Aprobó el examen, lo cual sorprendió a todos.",
-                "de": "Sie hat die Prüfung bestanden, was alle überrascht hat."
+                "es": "Aprobó el examen, lo cual sorprendió a todos."
               }
             },
             {
               "es": "He said he was ill, which was not true.",
               "tr": {
-                "hu": "Azt mondta, beteg, ami nem volt igaz.",
                 "en": "He said he was ill, which was not true.",
-                "es": "Dijo que estaba enfermo, lo cual no era verdad.",
-                "de": "Er sagte, er sei krank, was nicht stimmte."
+                "es": "Dijo que estaba enfermo, lo cual no era verdad."
               }
             }
           ]
@@ -188,36 +154,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Elöljáró és mennyiség: to whom, two of whom",
         "en": "Prepositions and quantities: to whom, two of whom",
-        "es": "Preposiciones y cantidades: to whom, two of whom",
-        "de": "Präpositionen und Mengen: to whom, two of whom"
+        "es": "Preposiciones y cantidades: to whom, two of whom"
       },
       "items": [
         {
           "text": {
-            "hu": "Formálisan az elöljáró a névmás elé kerül: to whom, in which. Mennyiség után of whom (személy) vagy of which (dolog): „three brothers, two of whom”.",
             "en": "Formally the preposition goes before the pronoun: to whom, in which. After a quantity comes of whom (people) or of which (things): “three brothers, two of whom”.",
-            "es": "En forma formal la preposición va antes del pronombre: to whom, in which. Después de una cantidad va of whom (personas) o of which (cosas): «three brothers, two of whom».",
-            "de": "Formell steht die Präposition vor dem Pronomen: to whom, in which. Nach einer Menge steht of whom (Personen) oder of which (Dinge): „three brothers, two of whom“."
+            "es": "En forma formal la preposición va antes del pronombre: to whom, in which. Después de una cantidad va of whom (personas) o of which (cosas): «three brothers, two of whom»."
           },
           "examples": [
             {
               "es": "My boss, to whom I spoke yesterday, is away.",
               "tr": {
-                "hu": "A főnököm, akivel tegnap beszéltem, nincs bent.",
                 "en": "My boss, to whom I spoke yesterday, is away.",
-                "es": "Mi jefe, con quien hablé ayer, no está.",
-                "de": "Mein Chef, mit dem ich gestern gesprochen habe, ist nicht da."
+                "es": "Mi jefe, con quien hablé ayer, no está."
               }
             },
             {
               "es": "I have three brothers, two of whom live abroad.",
               "tr": {
-                "hu": "Három fivérem van, kettő külföldön él.",
                 "en": "I have three brothers, two of whom live abroad.",
-                "es": "Tengo tres hermanos, dos de los cuales viven en el extranjero.",
-                "de": "Ich habe drei Brüder, von denen zwei im Ausland leben."
+                "es": "Tengo tres hermanos, dos de los cuales viven en el extranjero."
               }
             }
           ]
@@ -227,225 +185,175 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "Nem „My sister, that lives in Madrid”: a magyarázó mondatban a that tilos, who vagy which kell. A vesszők is kötelezők: nélkülük a mondat jelentése megváltozik.",
         "en": "Not “My sister, that lives in Madrid”: in a non-defining clause that is not allowed, you need who or which. The commas are also required: without them the meaning of the sentence changes.",
-        "es": "No «My sister, that lives in Madrid»: en una explicativa that no se permite, hace falta who o which. Las comas también son obligatorias: sin ellas cambia el significado de la oración.",
-        "de": "Nicht „My sister, that lives in Madrid“: im nicht-einschränkenden Satz ist that nicht erlaubt, man braucht who oder which. Die Kommas sind ebenfalls Pflicht: ohne sie ändert sich die Bedeutung des Satzes."
+        "es": "No «My sister, that lives in Madrid»: en una explicativa that no se permite, hace falta who o which. Las comas también son obligatorias: sin ellas cambia el significado de la oración."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A vessző jelentést változtat: „My brother who lives in Madrid” azt sugallja, hogy több fivérem van, „My brother, who lives in Madrid” azt, hogy egy.",
         "en": "The comma changes the meaning: “My brother who lives in Madrid” suggests I have several brothers, “My brother, who lives in Madrid” suggests I have one.",
-        "es": "La coma cambia el significado: «My brother who lives in Madrid» sugiere que tengo varios hermanos, «My brother, who lives in Madrid» sugiere que tengo uno.",
-        "de": "Das Komma ändert die Bedeutung: „My brother who lives in Madrid“ deutet an, dass ich mehrere Brüder habe, „My brother, who lives in Madrid“ dass ich einen habe."
+        "es": "La coma cambia el significado: «My brother who lives in Madrid» sugiere que tengo varios hermanos, «My brother, who lives in Madrid» sugiere que tengo uno."
       }
     }
   ],
   "speak": {
-    "hu": "A magyarázó vonatkozó mellékmondat további információt ad egy főnévről, amelyet már azonosítottunk, és vesszők közé kerül: «My sister, who lives in Madrid, is a nurse». Személyre «who», dologra «which», birtokra «whose». A «that» itt nem használható, és a névmás nem hagyható el. A «which» egy egész mondatra is utalhat: «She passed the exam, which surprised everyone». Formálisan az elöljáró a névmás elé kerül: «to whom». Mennyiség után «of whom» vagy «of which» áll.",
     "en": "A non-defining relative clause gives extra information about a noun we have already identified, and it goes between commas: «My sister, who lives in Madrid, is a nurse». Use «who» for people, «which» for things, «whose» for possession. «That» cannot be used here, and the pronoun cannot be left out. «Which» can also refer to a whole clause: «She passed the exam, which surprised everyone». Formally the preposition goes before the pronoun: «to whom». After a quantity comes «of whom» or «of which».",
-    "es": "La oración de relativo explicativa da información adicional sobre un sustantivo que ya identificamos, y va entre comas: «My sister, who lives in Madrid, is a nurse». Se usa «who» para personas, «which» para cosas, «whose» para posesión. Aquí no se puede usar «that», y el pronombre no se puede omitir. «Which» también puede referirse a toda una oración: «She passed the exam, which surprised everyone». En forma formal la preposición va antes del pronombre: «to whom». Después de una cantidad va «of whom» o «of which».",
-    "de": "Ein nicht-einschränkender Relativsatz gibt zusätzliche Information über ein Nomen, das wir schon identifiziert haben, und steht zwischen Kommas: «My sister, who lives in Madrid, is a nurse». «Who» steht für Personen, «which» für Dinge, «whose» für Besitz. «That» ist hier nicht möglich, und das Pronomen kann nicht wegfallen. «Which» kann sich auch auf einen ganzen Satz beziehen: «She passed the exam, which surprised everyone». Formell steht die Präposition vor dem Pronomen: «to whom». Nach einer Menge steht «of whom» oder «of which»."
+    "es": "La oración de relativo explicativa da información adicional sobre un sustantivo que ya identificamos, y va entre comas: «My sister, who lives in Madrid, is a nurse». Se usa «who» para personas, «which» para cosas, «whose» para posesión. Aquí no se puede usar «that», y el pronombre no se puede omitir. «Which» también puede referirse a toda una oración: «She passed the exam, which surprised everyone». En forma formal la preposición va antes del pronombre: «to whom». Después de una cantidad va «of whom» o «of which»."
   },
   "glossary": [
     {
       "word": "ago",
       "gloss": {
-        "hu": "ennyivel ezelőtt",
         "en": "back in time",
-        "es": "hace",
-        "de": "vor (zeitlich)"
+        "es": "hace"
       }
     },
     {
       "word": "anna",
       "gloss": {
-        "hu": "Anna (női név)",
         "en": "Anna (female first name)",
-        "es": "Anna (nombre de mujer)",
-        "de": "Anna (Frauenname)"
+        "es": "Anna (nombre de mujer)"
       }
     },
     {
       "word": "away",
       "gloss": {
-        "hu": "távol, el",
         "en": "not here",
-        "es": "lejos, fuera",
-        "de": "weg"
+        "es": "lejos, fuera"
       }
     },
     {
       "word": "born",
       "gloss": {
-        "hu": "született (a bear igenéve)",
         "en": "participle of bear (be born)",
-        "es": "nacido (be born)",
-        "de": "geboren (be born)"
+        "es": "nacido (be born)"
       }
     },
     {
       "word": "both",
       "gloss": {
-        "hu": "mindkettő",
         "en": "the two together",
-        "es": "ambos",
-        "de": "beide"
+        "es": "ambos"
       }
     },
     {
       "word": "built",
       "gloss": {
-        "hu": "épített (a build múltja)",
         "en": "past form of build",
-        "es": "construyó (pasado de build)",
-        "de": "baute (Past von build)"
+        "es": "construyó (pasado de build)"
       }
     },
     {
       "word": "chile",
       "gloss": {
-        "hu": "Chile (ország)",
         "en": "Chile (country)",
-        "es": "Chile (país)",
-        "de": "Chile (Land)"
+        "es": "Chile (país)"
       }
     },
     {
       "word": "chilean",
       "gloss": {
-        "hu": "chilei",
         "en": "from Chile",
-        "es": "chileno",
-        "de": "chilenisch"
+        "es": "chileno"
       }
     },
     {
       "word": "eva",
       "gloss": {
-        "hu": "Eva (női név)",
         "en": "Eva (female first name)",
-        "es": "Eva (nombre de mujer)",
-        "de": "Eva (Frauenname)"
+        "es": "Eva (nombre de mujer)"
       }
     },
     {
       "word": "famous",
       "gloss": {
-        "hu": "híres",
         "en": "known by many people",
-        "es": "famoso",
-        "de": "berühmt"
+        "es": "famoso"
       }
     },
     {
       "word": "great",
       "gloss": {
-        "hu": "nagyszerű",
         "en": "very good",
-        "es": "genial",
-        "de": "großartig"
+        "es": "genial"
       }
     },
     {
       "word": "guests",
       "gloss": {
-        "hu": "vendégek",
         "en": "people invited",
-        "es": "invitados",
-        "de": "Gäste"
+        "es": "invitados"
       }
     },
     {
       "word": "paris",
       "gloss": {
-        "hu": "Párizs",
         "en": "Paris (city)",
-        "es": "París (ciudad)",
-        "de": "Paris (Stadt)"
+        "es": "París (ciudad)"
       }
     },
     {
       "word": "rich",
       "gloss": {
-        "hu": "gazdag",
         "en": "with a lot of money",
-        "es": "rico",
-        "de": "reich"
+        "es": "rico"
       }
     },
     {
       "word": "roof",
       "gloss": {
-        "hu": "tető",
         "en": "the top of a house",
-        "es": "techo",
-        "de": "Dach"
+        "es": "techo"
       }
     },
     {
       "word": "rude",
       "gloss": {
-        "hu": "durva, udvariatlan",
         "en": "not polite",
-        "es": "grosero",
-        "de": "unhöflich"
+        "es": "grosero"
       }
     },
     {
       "word": "sam",
       "gloss": {
-        "hu": "Sam (férfinév)",
         "en": "Sam (male first name)",
-        "es": "Sam (nombre de hombre)",
-        "de": "Sam (Männername)"
+        "es": "Sam (nombre de hombre)"
       }
     },
     {
       "word": "sold",
       "gloss": {
-        "hu": "eladott (a sell múltja)",
         "en": "past form of sell",
-        "es": "vendió (pasado de sell)",
-        "de": "verkaufte (Past von sell)"
+        "es": "vendió (pasado de sell)"
       }
     },
     {
       "word": "tom",
       "gloss": {
-        "hu": "Tom (férfinév)",
         "en": "Tom (male first name)",
-        "es": "Tom (nombre de hombre)",
-        "de": "Tom (Männername)"
+        "es": "Tom (nombre de hombre)"
       }
     },
     {
       "word": "true",
       "gloss": {
-        "hu": "igaz",
         "en": "not false",
-        "es": "verdadero",
-        "de": "wahr"
+        "es": "verdadero"
       }
     },
     {
       "word": "who's",
       "gloss": {
-        "hu": "ki az (who is)",
         "en": "who is",
-        "es": "quién es (who is)",
-        "de": "wer ist (who is)"
+        "es": "quién es (who is)"
       }
     },
     {
       "word": "whom",
       "gloss": {
-        "hu": "kit, akit (tárgyeset)",
         "en": "who as an object",
-        "es": "a quien (objeto)",
-        "de": "wen, dem (Objekt)"
+        "es": "a quien (objeto)"
       }
     }
   ],
@@ -460,30 +368,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Személyre, magyarázó mondatban: who.",
         "en": "For a person in a non-defining clause: who.",
-        "es": "Para una persona en una explicativa: who.",
-        "de": "Für eine Person im nicht-einschränkenden Satz: who."
+        "es": "Para una persona en una explicativa: who."
       },
       "wrong": {
         "that": {
-          "hu": "Vesszők közötti magyarázó mondatban a that nem használható.",
           "en": "In a non-defining clause between commas, that cannot be used.",
-          "es": "En una explicativa entre comas, that no se puede usar.",
-          "de": "Im nicht-einschränkenden Satz zwischen Kommas kann that nicht stehen."
+          "es": "En una explicativa entre comas, that no se puede usar."
         },
         "which": {
-          "hu": "A which dolgokra vonatkozik; a nővér személy, ezért who kell.",
           "en": "Which refers to things; a sister is a person, so you need who.",
-          "es": "Which se refiere a cosas; una hermana es una persona, por eso hace falta who.",
-          "de": "Which bezieht sich auf Dinge; eine Schwester ist eine Person, deshalb braucht man who."
+          "es": "Which se refiere a cosas; una hermana es una persona, por eso hace falta who."
         }
       },
       "examples": [
         "Tom, who is my friend, called.",
         "Anna, who works here, is Chilean."
       ],
-      "tr": { "hu": "A nővérem, aki Mexikóvárosban él, ápolónő.", "en": "My sister, who lives in Mexico City, is a nurse.", "es": "Mi hermana, que vive en la Ciudad de México, es enfermera.", "de": "Meine Schwester, die in Mexiko-Stadt lebt, ist Krankenschwester." }
+      "tr": { "en": "My sister, who lives in Mexico City, is a nurse.", "es": "Mi hermana, que vive en la Ciudad de México, es enfermera." }
     },
     {
       "id": "nrc-02",
@@ -495,30 +397,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Dologra, magyarázó mondatban: which.",
         "en": "For a thing in a non-defining clause: which.",
-        "es": "Para una cosa en una explicativa: which.",
-        "de": "Für eine Sache im nicht-einschränkenden Satz: which."
+        "es": "Para una cosa en una explicativa: which."
       },
       "wrong": {
         "that": {
-          "hu": "Vesszők közötti magyarázó mondatban a that nem használható.",
           "en": "In a non-defining clause between commas, that cannot be used.",
-          "es": "En una explicativa entre comas, that no se puede usar.",
-          "de": "Im nicht-einschränkenden Satz zwischen Kommas kann that nicht stehen."
+          "es": "En una explicativa entre comas, that no se puede usar."
         },
         "who": {
-          "hu": "A who személyre vonatkozik; a híd dolog, ezért which kell.",
           "en": "Who refers to people; a bridge is a thing, so you need which.",
-          "es": "Who se refiere a personas; un puente es una cosa, por eso hace falta which.",
-          "de": "Who bezieht sich auf Personen; eine Brücke ist eine Sache, deshalb braucht man which."
+          "es": "Who se refiere a personas; un puente es una cosa, por eso hace falta which."
         }
       },
       "examples": [
         "The film, which I saw, was good.",
         "The book, which is old, is mine."
       ],
-      "tr": { "hu": "A híd, amely régen épült, híres.", "en": "The bridge, which was built long ago, is famous.", "es": "El puente, que fue construido hace mucho tiempo, es famoso.", "de": "Die Brücke, die vor langer Zeit gebaut wurde, ist berühmt." }
+      "tr": { "en": "The bridge, which was built long ago, is famous.", "es": "El puente, que fue construido hace mucho tiempo, es famoso." }
     },
     {
       "id": "nrc-03",
@@ -530,30 +426,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Birtoklás: whose + főnév.",
         "en": "Possession: whose + noun.",
-        "es": "Posesión: whose + sustantivo.",
-        "de": "Besitz: whose + Nomen."
+        "es": "Posesión: whose + sustantivo."
       },
       "wrong": {
         "who's": {
-          "hu": "A who’s a who is rövidítése; birtokláshoz whose kell.",
           "en": "Who’s is short for who is; possession needs whose.",
-          "es": "Who’s es la forma corta de who is; la posesión necesita whose.",
-          "de": "Who’s ist die Kurzform von who is; Besitz braucht whose."
+          "es": "Who’s es la forma corta de who is; la posesión necesita whose."
         },
         "which": {
-          "hu": "A which car nem helyes személy birtokánál; whose kell.",
           "en": "“Which car” is not correct for a person’s possession; you need whose.",
-          "es": "«Which car» no es correcto para la posesión de una persona; hace falta whose.",
-          "de": "„Which car“ ist für den Besitz einer Person nicht korrekt; man braucht whose."
+          "es": "«Which car» no es correcto para la posesión de una persona; hace falta whose."
         }
       },
       "examples": [
         "Anna, whose son is ill, left.",
         "Tom, whose house is big, is rich."
       ],
-      "tr": { "hu": "A szomszédom, akinek piros az autója, nagyon kedves.", "en": "My neighbor, whose car is red, is very kind.", "es": "Mi vecino, cuyo carro es rojo, es muy amable.", "de": "Mein Nachbar, dessen Auto rot ist, ist sehr nett." }
+      "tr": { "en": "My neighbor, whose car is red, is very kind.", "es": "Mi vecino, cuyo carro es rojo, es muy amable." }
     },
     {
       "id": "nrc-04",
@@ -565,30 +455,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Az egész előző mondatra utal: which.",
         "en": "It refers to the whole previous clause: which.",
-        "es": "Se refiere a toda la oración anterior: which.",
-        "de": "Es bezieht sich auf den ganzen vorherigen Satz: which."
+        "es": "Se refiere a toda la oración anterior: which."
       },
       "wrong": {
         "that": {
-          "hu": "Vessző után a that nem használható.",
           "en": "After a comma, that cannot be used.",
-          "es": "Después de una coma, that no se puede usar.",
-          "de": "Nach einem Komma kann that nicht stehen."
+          "es": "Después de una coma, that no se puede usar."
         },
         "what": {
-          "hu": "A what nem vonatkozó névmás egy előző mondatra; which kell.",
           "en": "What is not a relative pronoun for a previous clause; you need which.",
-          "es": "What no es un pronombre relativo para una oración anterior; hace falta which.",
-          "de": "What ist kein Relativpronomen für einen vorherigen Satz; man braucht which."
+          "es": "What no es un pronombre relativo para una oración anterior; hace falta which."
         }
       },
       "examples": [
         "He left, which was sad.",
         "It rained, which was bad."
       ],
-      "tr": { "hu": "Átment a vizsgán, ami mindenkit meglepett.", "en": "She passed the exam, which surprised everyone.", "es": "Pasó el examen, lo cual sorprendió a todos.", "de": "Sie hat die Prüfung bestanden, was alle überraschte." }
+      "tr": { "en": "She passed the exam, which surprised everyone.", "es": "Pasó el examen, lo cual sorprendió a todos." }
     },
     {
       "id": "nrc-05",
@@ -600,30 +484,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Formális alak: elöljáró + whom.",
         "en": "The formal form: preposition + whom.",
-        "es": "La forma formal: preposición + whom.",
-        "de": "Die formelle Form: Präposition + whom."
+        "es": "La forma formal: preposición + whom."
       },
       "wrong": {
         "who": {
-          "hu": "Az elöljáró után a who nem áll; whom kell.",
           "en": "After a preposition, who does not stand; you need whom.",
-          "es": "Después de una preposición, who no va; hace falta whom.",
-          "de": "Nach einer Präposition steht who nicht; man braucht whom."
+          "es": "Después de una preposición, who no va; hace falta whom."
         },
         "which": {
-          "hu": "A which dologra vonatkozik; a főnök személy, ezért whom kell.",
           "en": "Which refers to things; a boss is a person, so you need whom.",
-          "es": "Which se refiere a cosas; un jefe es una persona, por eso hace falta whom.",
-          "de": "Which bezieht sich auf Dinge; ein Chef ist eine Person, deshalb braucht man whom."
+          "es": "Which se refiere a cosas; un jefe es una persona, por eso hace falta whom."
         }
       },
       "examples": [
         "Anna, with whom I work, is nice.",
         "Tom, for whom I did it, left."
       ],
-      "tr": { "hu": "A főnököm, akivel tegnap beszéltem, házon kívül van.", "en": "My boss, to whom I spoke yesterday, is away.", "es": "Mi jefe, con quien hablé ayer, no está.", "de": "Mein Chef, mit dem ich gestern gesprochen habe, ist weg." }
+      "tr": { "en": "My boss, to whom I spoke yesterday, is away.", "es": "Mi jefe, con quien hablé ayer, no está." }
     },
     {
       "id": "nrc-06",
@@ -635,30 +513,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Mennyiség + of whom (személyek).",
         "en": "A quantity + of whom (people).",
-        "es": "Una cantidad + of whom (personas).",
-        "de": "Eine Menge + of whom (Personen)."
+        "es": "Una cantidad + of whom (personas)."
       },
       "wrong": {
         "who": {
-          "hu": "Az of után a who nem áll; whom kell.",
           "en": "After of, who does not stand; you need whom.",
-          "es": "Después de of, who no va; hace falta whom.",
-          "de": "Nach of steht who nicht; man braucht whom."
+          "es": "Después de of, who no va; hace falta whom."
         },
         "which": {
-          "hu": "A which dologra vonatkozik; a fivérek személyek, ezért whom kell.",
           "en": "Which refers to things; brothers are people, so you need whom.",
-          "es": "Which se refiere a cosas; los hermanos son personas, por eso hace falta whom.",
-          "de": "Which bezieht sich auf Dinge; Brüder sind Personen, deshalb braucht man whom."
+          "es": "Which se refiere a cosas; los hermanos son personas, por eso hace falta whom."
         }
       },
       "examples": [
         "She has two sons, both of whom work.",
         "We met ten people, most of whom were kind."
       ],
-      "tr": { "hu": "Három bátyám van, kettő közülük külföldön él.", "en": "I have three brothers, two of whom live abroad.", "es": "Tengo tres hermanos, dos de los cuales viven en el extranjero.", "de": "Ich habe drei Brüder, von denen zwei im Ausland leben." }
+      "tr": { "en": "I have three brothers, two of whom live abroad.", "es": "Tengo tres hermanos, dos de los cuales viven en el extranjero." }
     },
     {
       "id": "nrc-07",
@@ -670,30 +542,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Mennyiség + of which (dolgok).",
         "en": "A quantity + of which (things).",
-        "es": "Una cantidad + of which (cosas).",
-        "de": "Eine Menge + of which (Dinge)."
+        "es": "Una cantidad + of which (cosas)."
       },
       "wrong": {
         "whom": {
-          "hu": "A whom személyre vonatkozik; a könyvek dolgok, ezért which kell.",
           "en": "Whom refers to people; books are things, so you need which.",
-          "es": "Whom se refiere a personas; los libros son cosas, por eso hace falta which.",
-          "de": "Whom bezieht sich auf Personen; Bücher sind Dinge, deshalb braucht man which."
+          "es": "Whom se refiere a personas; los libros son cosas, por eso hace falta which."
         },
         "that": {
-          "hu": "Az of után a that nem áll; which kell.",
           "en": "After of, that does not stand; you need which.",
-          "es": "Después de of, that no va; hace falta which.",
-          "de": "Nach of steht that nicht; man braucht which."
+          "es": "Después de of, that no va; hace falta which."
         }
       },
       "examples": [
         "She wrote five books, two of which sold.",
         "We have cars, one of which is old."
       ],
-      "tr": { "hu": "Sok könyvet vett, amelyek mind drágák voltak.", "en": "He bought many books, all of which were expensive.", "es": "Compró muchos libros, todos los cuales eran caros.", "de": "Er kaufte viele Bücher, die alle teuer waren." }
+      "tr": { "en": "He bought many books, all of which were expensive.", "es": "Compró muchos libros, todos los cuales eran caros." }
     },
     {
       "id": "nrc-08",
@@ -705,30 +571,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Helyre: where.",
         "en": "For a place: where.",
-        "es": "Para un lugar: where.",
-        "de": "Für einen Ort: where."
+        "es": "Para un lugar: where."
       },
       "wrong": {
         "which": {
-          "hu": "A which I was born nem helyes; a hely a mondatban határozó, ezért where kell.",
           "en": "“Which I was born” is not correct; the place is an adverbial here, so you need where.",
-          "es": "«Which I was born» no es correcto; el lugar es un complemento adverbial, por eso hace falta where.",
-          "de": "„Which I was born“ ist nicht korrekt; der Ort ist hier eine Adverbialbestimmung, deshalb braucht man where."
+          "es": "«Which I was born» no es correcto; el lugar es un complemento adverbial, por eso hace falta where."
         },
         "that": {
-          "hu": "Vesszők közötti magyarázó mondatban a that nem használható.",
           "en": "In a non-defining clause between commas, that cannot be used.",
-          "es": "En una explicativa entre comas, that no se puede usar.",
-          "de": "Im nicht-einschränkenden Satz zwischen Kommas kann that nicht stehen."
+          "es": "En una explicativa entre comas, that no se puede usar."
         }
       },
       "examples": [
         "Mexico City, where she lives, is big.",
         "Paris, where he works, is far."
       ],
-      "tr": { "hu": "Madrid, ahol születtem, egy nagyváros.", "en": "Madrid, where I was born, is a big city.", "es": "Madrid, donde nací, es una ciudad grande.", "de": "Madrid, wo ich geboren wurde, ist eine große Stadt." }
+      "tr": { "en": "Madrid, where I was born, is a big city.", "es": "Madrid, donde nací, es una ciudad grande." }
     },
     {
       "id": "nrc-09",
@@ -740,30 +600,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Időre: when.",
         "en": "For a time: when.",
-        "es": "Para un tiempo: when.",
-        "de": "Für eine Zeit: when."
+        "es": "Para un tiempo: when."
       },
       "wrong": {
         "which": {
-          "hu": "A which I moved here nem helyes; az idő határozó, ezért when kell.",
           "en": "“Which I moved here” is not correct; the time is an adverbial, so you need when.",
-          "es": "«Which I moved here» no es correcto; el tiempo es un complemento adverbial, por eso hace falta when.",
-          "de": "„Which I moved here“ ist nicht korrekt; die Zeit ist eine Adverbialbestimmung, deshalb braucht man when."
+          "es": "«Which I moved here» no es correcto; el tiempo es un complemento adverbial, por eso hace falta when."
         },
         "that": {
-          "hu": "Vesszők közötti magyarázó mondatban a that nem használható.",
           "en": "In a non-defining clause between commas, that cannot be used.",
-          "es": "En una explicativa entre comas, that no se puede usar.",
-          "de": "Im nicht-einschränkenden Satz zwischen Kommas kann that nicht stehen."
+          "es": "En una explicativa entre comas, that no se puede usar."
         }
       },
       "examples": [
         "Monday, when I work, is busy.",
         "Summer, when it is hot, is long."
       ],
-      "tr": { "hu": "Az a nyár, amikor ideköltöztem, forró volt.", "en": "That summer, when I moved here, was hot.", "es": "Aquel verano, cuando me mudé aquí, fue caluroso.", "de": "Jener Sommer, als ich hierher zog, war heiß." }
+      "tr": { "en": "That summer, when I moved here, was hot.", "es": "Aquel verano, cuando me mudé aquí, fue caluroso." }
     },
     {
       "id": "nrc-10",
@@ -775,30 +629,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Személyre: who (informális; formálisan: with whom).",
         "en": "For a person: who (informal; formally: with whom).",
-        "es": "Para una persona: who (informal; en forma formal: with whom).",
-        "de": "Für eine Person: who (umgangssprachlich; formell: with whom)."
+        "es": "Para una persona: who (informal; en forma formal: with whom)."
       },
       "wrong": {
         "that": {
-          "hu": "Vesszők közötti magyarázó mondatban a that nem használható.",
           "en": "In a non-defining clause between commas, that cannot be used.",
-          "es": "En una explicativa entre comas, that no se puede usar.",
-          "de": "Im nicht-einschränkenden Satz zwischen Kommas kann that nicht stehen."
+          "es": "En una explicativa entre comas, that no se puede usar."
         },
         "what": {
-          "hu": "A what nem vonatkozó névmás személyre; who kell.",
           "en": "What is not a relative pronoun for a person; you need who.",
-          "es": "What no es un pronombre relativo para una persona; hace falta who.",
-          "de": "What ist kein Relativpronomen für eine Person; man braucht who."
+          "es": "What no es un pronombre relativo para una persona; hace falta who."
         }
       },
       "examples": [
         "Tom, who I know, called.",
         "Eva, who I like, left."
       ],
-      "tr": { "hu": "Anna, akivel együtt dolgozom, chilei.", "en": "Anna, who I work with, is from Chile.", "es": "Anna, con quien trabajo, es de Chile.", "de": "Anna, mit der ich zusammenarbeite, kommt aus Chile." }
+      "tr": { "en": "Anna, who I work with, is from Chile.", "es": "Anna, con quien trabajo, es de Chile." }
     },
     {
       "id": "nrc-11",
@@ -810,30 +658,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Dologra, magyarázó mondatban: which.",
         "en": "For a thing in a non-defining clause: which.",
-        "es": "Para una cosa en una explicativa: which.",
-        "de": "Für eine Sache im nicht-einschränkenden Satz: which."
+        "es": "Para una cosa en una explicativa: which."
       },
       "wrong": {
         "that": {
-          "hu": "Vesszők közötti magyarázó mondatban a that nem használható.",
           "en": "In a non-defining clause between commas, that cannot be used.",
-          "es": "En una explicativa entre comas, that no se puede usar.",
-          "de": "Im nicht-einschränkenden Satz zwischen Kommas kann that nicht stehen."
+          "es": "En una explicativa entre comas, that no se puede usar."
         },
         "who": {
-          "hu": "A who személyre vonatkozik; a laptop dolog, ezért which kell.",
           "en": "Who refers to people; a laptop is a thing, so you need which.",
-          "es": "Who se refiere a personas; una laptop es una cosa, por eso hace falta which.",
-          "de": "Who bezieht sich auf Personen; ein Laptop ist eine Sache, deshalb braucht man which."
+          "es": "Who se refiere a personas; una laptop es una cosa, por eso hace falta which."
         }
       },
       "examples": [
         "My phone, which is new, is fast.",
         "The car, which I sold, was old."
       ],
-      "tr": { "hu": "A laptopom, amit tavaly vettem, már most lassú.", "en": "My laptop, which I bought last year, is already slow.", "es": "Mi laptop, que compré el año pasado, ya está lenta.", "de": "Mein Laptop, den ich letztes Jahr gekauft habe, ist schon langsam." }
+      "tr": { "en": "My laptop, which I bought last year, is already slow.", "es": "Mi laptop, que compré el año pasado, ya está lenta." }
     },
     {
       "id": "nrc-12",
@@ -845,30 +687,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Személyre, magyarázó mondatban: who.",
         "en": "For a person in a non-defining clause: who.",
-        "es": "Para una persona en una explicativa: who.",
-        "de": "Für eine Person im nicht-einschränkenden Satz: who."
+        "es": "Para una persona en una explicativa: who."
       },
       "wrong": {
         "which": {
-          "hu": "A which dologra vonatkozik; Tom személy, ezért who kell.",
           "en": "Which refers to things; Tom is a person, so you need who.",
-          "es": "Which se refiere a cosas; Tom es una persona, por eso hace falta who.",
-          "de": "Which bezieht sich auf Dinge; Tom ist eine Person, deshalb braucht man who."
+          "es": "Which se refiere a cosas; Tom es una persona, por eso hace falta who."
         },
         "whose": {
-          "hu": "A whose után főnév kell (whose friend); itt az ige követi, ezért who kell.",
           "en": "Whose needs a noun after it (whose friend); here a verb follows, so you need who.",
-          "es": "Whose necesita un sustantivo después (whose friend); aquí sigue un verbo, por eso hace falta who.",
-          "de": "Whose braucht danach ein Nomen (whose friend); hier folgt ein Verb, deshalb braucht man who."
+          "es": "Whose necesita un sustantivo después (whose friend); aquí sigue un verbo, por eso hace falta who."
         }
       },
       "examples": [
         "Eva, who is tall, left.",
         "Sam, who works here, is kind."
       ],
-      "tr": { "hu": "Tom, aki a legjobb barátom, Chilében él.", "en": "Tom, who is my best friend, lives in Chile.", "es": "Tom, quien es mi mejor amigo, vive en Chile.", "de": "Tom, der mein bester Freund ist, lebt in Chile." }
+      "tr": { "en": "Tom, who is my best friend, lives in Chile.", "es": "Tom, quien es mi mejor amigo, vive en Chile." }
     },
     {
       "id": "nrc-13",
@@ -880,30 +716,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Birtoklás: whose + főnév.",
         "en": "Possession: whose + noun.",
-        "es": "Posesión: whose + sustantivo.",
-        "de": "Besitz: whose + Nomen."
+        "es": "Posesión: whose + sustantivo."
       },
       "wrong": {
         "which": {
-          "hu": "A which roof nem helyes; a ház tetejéhez whose kell.",
           "en": "“Which roof” is not correct; the roof of the house needs whose.",
-          "es": "«Which roof» no es correcto; el techo de la casa necesita whose.",
-          "de": "„Which roof“ ist nicht korrekt; das Dach des Hauses braucht whose."
+          "es": "«Which roof» no es correcto; el techo de la casa necesita whose."
         },
         "that": {
-          "hu": "Vesszők közötti magyarázó mondatban a that nem használható.",
           "en": "In a non-defining clause between commas, that cannot be used.",
-          "es": "En una explicativa entre comas, that no se puede usar.",
-          "de": "Im nicht-einschränkenden Satz zwischen Kommas kann that nicht stehen."
+          "es": "En una explicativa entre comas, that no se puede usar."
         }
       },
       "examples": [
         "The car, whose door is red, is mine.",
         "The house, whose roof is new, is big."
       ],
-      "tr": { "hu": "A régi ház, amelynek megsérült a teteje, üres.", "en": "The old house, whose roof was damaged, is empty.", "es": "La casa vieja, cuyo techo estaba dañado, está vacía.", "de": "Das alte Haus, dessen Dach beschädigt war, ist leer." }
+      "tr": { "en": "The old house, whose roof was damaged, is empty.", "es": "La casa vieja, cuyo techo estaba dañado, está vacía." }
     },
     {
       "id": "nrc-14",
@@ -915,30 +745,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Az egész előző mondatra utal: which.",
         "en": "It refers to the whole previous clause: which.",
-        "es": "Se refiere a toda la oración anterior: which.",
-        "de": "Es bezieht sich auf den ganzen vorherigen Satz: which."
+        "es": "Se refiere a toda la oración anterior: which."
       },
       "wrong": {
         "what": {
-          "hu": "A what nem vonatkozó névmás egy előző mondatra; which kell.",
           "en": "What is not a relative pronoun for a previous clause; you need which.",
-          "es": "What no es un pronombre relativo para una oración anterior; hace falta which.",
-          "de": "What ist kein Relativpronomen für einen vorherigen Satz; man braucht which."
+          "es": "What no es un pronombre relativo para una oración anterior; hace falta which."
         },
         "that": {
-          "hu": "Vessző után a that nem használható.",
           "en": "After a comma, that cannot be used.",
-          "es": "Después de una coma, that no se puede usar.",
-          "de": "Nach einem Komma kann that nicht stehen."
+          "es": "Después de una coma, that no se puede usar."
         }
       },
       "examples": [
         "She laughed, which was rude.",
         "He won, which was great."
       ],
-      "tr": { "hu": "Azt mondta, hogy beteg, ami nem volt igaz.", "en": "He said he was ill, which was not true.", "es": "Dijo que estaba enfermo, lo cual no era cierto.", "de": "Er sagte, er sei krank, was nicht stimmte." }
+      "tr": { "en": "He said he was ill, which was not true.", "es": "Dijo que estaba enfermo, lo cual no era cierto." }
     },
     {
       "id": "nrc-15",
@@ -950,30 +774,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Személyre: who (informális; formálisan: with whom).",
         "en": "For a person: who (informal; formally: with whom).",
-        "es": "Para una persona: who (informal; en forma formal: with whom).",
-        "de": "Für eine Person: who (umgangssprachlich; formell: with whom)."
+        "es": "Para una persona: who (informal; en forma formal: with whom)."
       },
       "wrong": {
         "that": {
-          "hu": "Vesszők közötti magyarázó mondatban a that nem használható.",
           "en": "In a non-defining clause between commas, that cannot be used.",
-          "es": "En una explicativa entre comas, that no se puede usar.",
-          "de": "Im nicht-einschränkenden Satz zwischen Kommas kann that nicht stehen."
+          "es": "En una explicativa entre comas, that no se puede usar."
         },
         "whose": {
-          "hu": "A whose után főnév kell (whose house); itt az alany jön, ezért who kell.",
           "en": "Whose needs a noun after it (whose house); here the subject follows, so you need who.",
-          "es": "Whose necesita un sustantivo después (whose house); aquí sigue el sujeto, por eso hace falta who.",
-          "de": "Whose braucht danach ein Nomen (whose house); hier folgt das Subjekt, deshalb braucht man who."
+          "es": "Whose necesita un sustantivo después (whose house); aquí sigue el sujeto, por eso hace falta who."
         }
       },
       "examples": [
         "Tom, who I met, left.",
         "Eva, who I like, stayed."
       ],
-      "tr": { "hu": "A szüleim, akikkel együtt élek, nagyon kedvesek.", "en": "My parents, who I live with, are very kind.", "es": "Mis papás, con quienes vivo, son muy amables.", "de": "Meine Eltern, bei denen ich wohne, sind sehr nett." }
+      "tr": { "en": "My parents, who I live with, are very kind.", "es": "Mis papás, con quienes vivo, son muy amables." }
     },
     {
       "id": "nrc-16",
@@ -985,30 +803,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Elöljáró + which (dolgok).",
         "en": "A preposition + which (things).",
-        "es": "Una preposición + which (cosas).",
-        "de": "Eine Präposition + which (Dinge)."
+        "es": "Una preposición + which (cosas)."
       },
       "wrong": {
         "that": {
-          "hu": "Az elöljáró után a that nem áll; which kell.",
           "en": "After a preposition, that does not stand; you need which.",
-          "es": "Después de una preposición, that no va; hace falta which.",
-          "de": "Nach einer Präposition steht that nicht; man braucht which."
+          "es": "Después de una preposición, that no va; hace falta which."
         },
         "who": {
-          "hu": "A who személyre vonatkozik; a szálloda dolog, ezért which kell.",
           "en": "Who refers to people; a hotel is a thing, so you need which.",
-          "es": "Who se refiere a personas; un hotel es una cosa, por eso hace falta which.",
-          "de": "Who bezieht sich auf Personen; ein Hotel ist eine Sache, deshalb braucht man which."
+          "es": "Who se refiere a personas; un hotel es una cosa, por eso hace falta which."
         }
       },
       "examples": [
         "The room, in which I slept, was cold.",
         "The bag, in which it was, is old."
       ],
-      "tr": { "hu": "A szálloda, amelyben megszálltunk, olcsó volt.", "en": "The hotel, in which we stayed, was cheap.", "es": "El hotel en el que nos quedamos era barato.", "de": "Das Hotel, in dem wir übernachteten, war günstig." }
+      "tr": { "en": "The hotel, in which we stayed, was cheap.", "es": "El hotel en el que nos quedamos era barato." }
     },
     {
       "id": "nrc-17",
@@ -1020,30 +832,24 @@
       ],
       "correct": 2,
       "why": {
-        "hu": "Mennyiség + of whom (személyek).",
         "en": "A quantity + of whom (people).",
-        "es": "Una cantidad + of whom (personas).",
-        "de": "Eine Menge + of whom (Personen)."
+        "es": "Una cantidad + of whom (personas)."
       },
       "wrong": {
         "which": {
-          "hu": "A which dologra vonatkozik; a tanárok személyek, ezért whom kell.",
           "en": "Which refers to things; teachers are people, so you need whom.",
-          "es": "Which se refiere a cosas; los maestros son personas, por eso hace falta whom.",
-          "de": "Which bezieht sich auf Dinge; Lehrer sind Personen, deshalb braucht man whom."
+          "es": "Which se refiere a cosas; los maestros son personas, por eso hace falta whom."
         },
         "who": {
-          "hu": "Az of után a who nem áll; whom kell.",
           "en": "After of, who does not stand; you need whom.",
-          "es": "Después de of, who no va; hace falta whom.",
-          "de": "Nach of steht who nicht; man braucht whom."
+          "es": "Después de of, who no va; hace falta whom."
         }
       },
       "examples": [
         "She has friends, many of whom live here.",
         "We met guests, some of whom stayed."
       ],
-      "tr": { "hu": "A tanárai, akiknek a többsége nő volt, kedvesek voltak.", "en": "Her teachers, most of whom were women, were kind.", "es": "Sus maestros, la mayoría de los cuales eran mujeres, eran amables.", "de": "Ihre Lehrer, von denen die meisten Frauen waren, waren nett." }
+      "tr": { "en": "Her teachers, most of whom were women, were kind.", "es": "Sus maestros, la mayoría de los cuales eran mujeres, eran amables." }
     },
     {
       "id": "nrc-18",
@@ -1103,46 +909,34 @@
       "es": "My sister, who lives in Mexico City, is a nurse.",
       "target": "who lives in Mexico City",
       "tr": {
-        "hu": "A nővérem, aki Mexikóvárosban él, ápoló.",
         "en": "My sister, who lives in Mexico City, is a nurse.",
-        "es": "Mi hermana, que vive en la Ciudad de México, es enfermera.",
-        "de": "Meine Schwester, die in Mexiko-Stadt lebt, ist Krankenschwester."
+        "es": "Mi hermana, que vive en la Ciudad de México, es enfermera."
       },
       "options": [
         {
           "text": {
-            "hu": "meghatározó mondat: azt mondja meg, melyik nővér",
             "en": "a defining clause: it says which sister",
-            "es": "una especificativa: dice cuál hermana",
-            "de": "ein einschränkender Satz: er sagt, welche Schwester"
+            "es": "una especificativa: dice cuál hermana"
           },
           "wrong": {
-            "hu": "A vesszők magyarázó mondatot jeleznek; a meghatározó mondat nem kap vesszőt.",
             "en": "The commas mark a non-defining clause; a defining clause gets no commas.",
-            "es": "Las comas marcan una explicativa; una especificativa no lleva comas.",
-            "de": "Die Kommas markieren einen nicht-einschränkenden Satz; ein einschränkender bekommt keine Kommas."
+            "es": "Las comas marcan una explicativa; una especificativa no lleva comas."
           }
         },
         {
           "text": {
-            "hu": "magyarázó mondat: további információ vesszők között",
             "en": "a non-defining clause: extra information between commas",
-            "es": "una explicativa: información adicional entre comas",
-            "de": "ein nicht-einschränkender Satz: zusätzliche Information zwischen Kommas"
+            "es": "una explicativa: información adicional entre comas"
           }
         },
         {
           "text": {
-            "hu": "kérdés",
             "en": "a question",
-            "es": "una pregunta",
-            "de": "eine Frage"
+            "es": "una pregunta"
           },
           "wrong": {
-            "hu": "Ez kijelentő mondat; a who itt vonatkozó névmás, nem kérdőszó.",
             "en": "This is a statement; who is a relative pronoun here, not a question word.",
-            "es": "Esto es una afirmación; who es aquí un pronombre relativo, no una palabra interrogativa.",
-            "de": "Das ist eine Aussage; who ist hier ein Relativpronomen, kein Fragewort."
+            "es": "Esto es una afirmación; who es aquí un pronombre relativo, no una palabra interrogativa."
           }
         }
       ],
@@ -1154,46 +948,34 @@
       "es": "The woman who lives next door is a teacher.",
       "target": "who lives next door",
       "tr": {
-        "hu": "A nő, aki a szomszédban lakik, tanár.",
         "en": "The woman who lives next door is a teacher.",
-        "es": "La mujer que vive al lado es maestra.",
-        "de": "Die Frau, die nebenan wohnt, ist Lehrerin."
+        "es": "La mujer que vive al lado es maestra."
       },
       "options": [
         {
           "text": {
-            "hu": "magyarázó mondat: vesszők kellenek",
             "en": "a non-defining clause: commas are needed",
-            "es": "una explicativa: hacen falta comas",
-            "de": "ein nicht-einschränkender Satz: Kommas sind nötig"
+            "es": "una explicativa: hacen falta comas"
           },
           "wrong": {
-            "hu": "A mondat azt mondja meg, melyik nőről van szó, ezért meghatározó, vessző nélkül.",
             "en": "The clause says which woman we mean, so it is defining, without commas.",
-            "es": "La cláusula dice de cuál mujer hablamos, por eso es especificativa, sin comas.",
-            "de": "Der Satz sagt, welche Frau gemeint ist, deshalb ist er einschränkend, ohne Kommas."
+            "es": "La cláusula dice de cuál mujer hablamos, por eso es especificativa, sin comas."
           }
         },
         {
           "text": {
-            "hu": "meghatározó mondat: azt mondja meg, melyik nő, vessző nélkül",
             "en": "a defining clause: it says which woman, without commas",
-            "es": "una especificativa: dice cuál mujer, sin comas",
-            "de": "ein einschränkender Satz: er sagt, welche Frau, ohne Kommas"
+            "es": "una especificativa: dice cuál mujer, sin comas"
           }
         },
         {
           "text": {
-            "hu": "múlt idejű cselekvés",
             "en": "a past action",
-            "es": "una acción pasada",
-            "de": "eine vergangene Handlung"
+            "es": "una acción pasada"
           },
           "wrong": {
-            "hu": "A lives jelen idejű; a who-mondat itt a nőt azonosítja.",
             "en": "Lives is present; the who clause identifies the woman here.",
-            "es": "Lives es presente; la cláusula con who identifica aquí a la mujer.",
-            "de": "Lives ist Präsens; der who-Satz identifiziert hier die Frau."
+            "es": "Lives es presente; la cláusula con who identifica aquí a la mujer."
           }
         }
       ],
@@ -1205,46 +987,34 @@
       "es": "She passed the exam, which surprised everyone.",
       "target": "which",
       "tr": {
-        "hu": "Átment a vizsgán, ami mindenkit meglepett.",
         "en": "She passed the exam, which surprised everyone.",
-        "es": "Aprobó el examen, lo cual sorprendió a todos.",
-        "de": "Sie hat die Prüfung bestanden, was alle überrascht hat."
+        "es": "Aprobó el examen, lo cual sorprendió a todos."
       },
       "options": [
         {
           "text": {
-            "hu": "csak a vizsgára utal",
             "en": "it refers only to the exam",
-            "es": "se refiere solo al examen",
-            "de": "es bezieht sich nur auf die Prüfung"
+            "es": "se refiere solo al examen"
           },
           "wrong": {
-            "hu": "A which itt az egész előző mondatra (az átmenésre) utal, nem csak a vizsgára.",
             "en": "Which here refers to the whole previous clause (passing), not only to the exam.",
-            "es": "Which aquí se refiere a toda la oración anterior (aprobar), no solo al examen.",
-            "de": "Which bezieht sich hier auf den ganzen vorherigen Satz (das Bestehen), nicht nur auf die Prüfung."
+            "es": "Which aquí se refiere a toda la oración anterior (aprobar), no solo al examen."
           }
         },
         {
           "text": {
-            "hu": "az egész előző mondatra utal",
             "en": "it refers to the whole previous clause",
-            "es": "se refiere a toda la oración anterior",
-            "de": "es bezieht sich auf den ganzen vorherigen Satz"
+            "es": "se refiere a toda la oración anterior"
           }
         },
         {
           "text": {
-            "hu": "a what jelentése",
             "en": "it means what",
-            "es": "significa what",
-            "de": "es bedeutet what"
+            "es": "significa what"
           },
           "wrong": {
-            "hu": "A which és a what nem ugyanaz; itt which szükséges, vessző után.",
             "en": "Which and what are not the same; here you need which, after a comma.",
-            "es": "Which y what no son lo mismo; aquí hace falta which, después de una coma.",
-            "de": "Which und what sind nicht dasselbe; hier braucht man which, nach einem Komma."
+            "es": "Which y what no son lo mismo; aquí hace falta which, después de una coma."
           }
         }
       ],
@@ -1256,46 +1026,34 @@
       "es": "My boss, to whom I spoke, is away.",
       "target": "to whom",
       "tr": {
-        "hu": "A főnököm, akivel beszéltem, nincs bent.",
         "en": "My boss, to whom I spoke, is away.",
-        "es": "Mi jefe, con quien hablé, no está.",
-        "de": "Mein Chef, mit dem ich gesprochen habe, ist nicht da."
+        "es": "Mi jefe, con quien hablé, no está."
       },
       "options": [
         {
           "text": {
-            "hu": "formális: az elöljáró a whom elé kerül",
             "en": "formal: the preposition goes before whom",
-            "es": "formal: la preposición va antes de whom",
-            "de": "formell: die Präposition steht vor whom"
+            "es": "formal: la preposición va antes de whom"
           }
         },
         {
           "text": {
-            "hu": "birtokos szerkezet",
             "en": "a possessive structure",
-            "es": "una estructura posesiva",
-            "de": "eine Possessivstruktur"
+            "es": "una estructura posesiva"
           },
           "wrong": {
-            "hu": "A to whom nem birtoklást jelöl; a birtoklást whose fejezi ki.",
             "en": "To whom does not express possession; whose does.",
-            "es": "To whom no expresa posesión; whose sí.",
-            "de": "To whom drückt keinen Besitz aus; whose tut das."
+            "es": "To whom no expresa posesión; whose sí."
           }
         },
         {
           "text": {
-            "hu": "dolgokra vonatkozik",
             "en": "it refers to things",
-            "es": "se refiere a cosas",
-            "de": "es bezieht sich auf Dinge"
+            "es": "se refiere a cosas"
           },
           "wrong": {
-            "hu": "A whom személyekre vonatkozik; dolgokra which áll.",
             "en": "Whom refers to people; for things which is used.",
-            "es": "Whom se refiere a personas; para cosas se usa which.",
-            "de": "Whom bezieht sich auf Personen; für Dinge steht which."
+            "es": "Whom se refiere a personas; para cosas se usa which."
           }
         }
       ],
@@ -1307,46 +1065,34 @@
       "es": "I have three brothers, two of whom live abroad.",
       "target": "two of whom",
       "tr": {
-        "hu": "Három fivérem van, kettő külföldön él.",
         "en": "I have three brothers, two of whom live abroad.",
-        "es": "Tengo tres hermanos, dos de los cuales viven en el extranjero.",
-        "de": "Ich habe drei Brüder, von denen zwei im Ausland leben."
+        "es": "Tengo tres hermanos, dos de los cuales viven en el extranjero."
       },
       "options": [
         {
           "text": {
-            "hu": "birtoklás",
             "en": "possession",
-            "es": "posesión",
-            "de": "Besitz"
+            "es": "posesión"
           },
           "wrong": {
-            "hu": "Az of whom nem birtoklást, hanem a csoport egy részét jelöli.",
             "en": "Of whom does not mark possession but part of a group.",
-            "es": "Of whom no marca posesión sino una parte de un grupo.",
-            "de": "Of whom markiert keinen Besitz, sondern einen Teil einer Gruppe."
+            "es": "Of whom no marca posesión sino una parte de un grupo."
           }
         },
         {
           "text": {
-            "hu": "az összes fivér",
             "en": "all the brothers",
-            "es": "todos los hermanos",
-            "de": "alle Brüder"
+            "es": "todos los hermanos"
           },
           "wrong": {
-            "hu": "A two of whom a három fivér egy részét jelöli, nem mindet.",
             "en": "Two of whom marks part of the three brothers, not all.",
-            "es": "Two of whom marca una parte de los tres hermanos, no todos.",
-            "de": "Two of whom markiert einen Teil der drei Brüder, nicht alle."
+            "es": "Two of whom marca una parte de los tres hermanos, no todos."
           }
         },
         {
           "text": {
-            "hu": "mennyiség + of whom: a csoport egy része",
             "en": "quantity + of whom: part of the group",
-            "es": "cantidad + of whom: una parte del grupo",
-            "de": "Menge + of whom: ein Teil der Gruppe"
+            "es": "cantidad + of whom: una parte del grupo"
           }
         }
       ],

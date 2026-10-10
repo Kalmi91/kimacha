@@ -3,48 +3,36 @@
   "topic": "there_is_are",
   "level": "A1",
   "title": {
-    "hu": "There is / There are (hay)",
     "en": "There is / There are",
-    "es": "There is / There are (hay)",
-    "de": "There is / There are (es gibt)"
+    "es": "There is / There are (hay)"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "A spanyol „hay” egyetlen szó, akár egy, akár sok dologról van szó. Az angolban két alakja van: „there is” (egy dolog vagy nem számlálható) és „there are” (több dolog). Azt mondja meg, hogy valami LÉTEZIK vagy VAN valahol. Sosem „have”: a „hay un libro” angolul „There is a book”, nem „Have a book”.",
         "en": "Spanish “hay” is one word, whether there is one thing or many. English has two forms: “there is” (one thing or an uncountable) and “there are” (several things). It says that something EXISTS or is somewhere. It is never “have”: “hay un libro” is “There is a book”, not “Have a book”.",
-        "es": "El «hay» del español es una sola palabra, sea una cosa o muchas. El inglés tiene dos formas: «there is» (una cosa o algo incontable) y «there are» (varias cosas). Dice que algo EXISTE o está en algún lugar. Nunca es «have»: «hay un libro» es «There is a book», no «Have a book».",
-        "de": "Das spanische „hay“ ist ein einziges Wort, egal ob es eine Sache oder viele gibt. Das Englische hat zwei Formen: „there is“ (eine Sache oder etwas Unzählbares) und „there are“ (mehrere Sachen). Es sagt, dass etwas EXISTIERT oder irgendwo ist. Es ist nie „have“: „hay un libro“ heißt „There is a book“, nicht „Have a book“."
+        "es": "El «hay» del español es una sola palabra, sea una cosa o muchas. El inglés tiene dos formas: «there is» (una cosa o algo incontable) y «there are» (varias cosas). Dice que algo EXISTE o está en algún lugar. Nunca es «have»: «hay un libro» es «There is a book», no «Have a book»."
       }
     },
     {
       "kind": "table",
       "id": "te-forms",
       "title": {
-        "hu": "There is / There are",
         "en": "There is / There are",
-        "es": "There is / There are",
-        "de": "There is / There are"
+        "es": "There is / There are"
       },
       "header": [
         {
-          "hu": "Típus",
           "en": "Type",
-          "es": "Tipo",
-          "de": "Typ"
+          "es": "Tipo"
         },
         {
-          "hu": "singular",
           "en": "singular",
-          "es": "singular",
-          "de": "Singular"
+          "es": "singular"
         },
         {
-          "hu": "plural",
           "en": "plural",
-          "es": "plural",
-          "de": "Plural"
+          "es": "plural"
         }
       ],
       "rows": [
@@ -68,64 +56,50 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Is vagy are?",
         "en": "Is or are?",
-        "es": "¿Is o are?",
-        "de": "Is oder are?"
+        "es": "¿Is o are?"
       },
       "items": [
         {
           "text": {
-            "hu": "Egy dolog vagy nem számlálható főnév: there is. Több dolog: there are. A főnév számához igazodik, nem a „there”-hez.",
             "en": "One thing or an uncountable noun: there is. Several things: there are. The verb agrees with the noun, not with “there”.",
-            "es": "Una cosa o un nombre incontable: there is. Varias cosas: there are. El verbo concuerda con el nombre, no con «there».",
-            "de": "Eine Sache oder ein unzählbares Nomen: there is. Mehrere Sachen: there are. Das Verb richtet sich nach dem Nomen, nicht nach „there“."
+            "es": "Una cosa o un nombre incontable: there is. Varias cosas: there are. El verbo concuerda con el nombre, no con «there»."
           },
           "examples": [
             {
               "es": "There is a book on the table.",
               "tr": {
-                "hu": "Van egy könyv az asztalon.",
                 "en": "There is a book on the table.",
-                "es": "Hay un libro en la mesa.",
-                "de": "Auf dem Tisch liegt ein Buch."
+                "es": "Hay un libro en la mesa."
               }
             },
             {
               "es": "There are two chairs in the room.",
               "tr": {
-                "hu": "Két szék van a szobában.",
                 "en": "There are two chairs in the room.",
-                "es": "Hay dos sillas en la habitación.",
-                "de": "Im Zimmer gibt es zwei Stühle."
+                "es": "Hay dos sillas en la habitación."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Ha több dolgot sorolsz fel, az első főnévhez igazodsz: There is a table and two chairs. A rövid alak: there’s (a there’re nem használatos).",
             "en": "When you list several things, agree with the first noun: There is a table and two chairs. The short form is there’s (there’re is not used).",
-            "es": "Si enumeras varias cosas, concuerdas con el primer nombre: There is a table and two chairs. La forma corta es there’s (there’re no se usa).",
-            "de": "Wenn du mehrere Dinge aufzählst, richtest du dich nach dem ersten Nomen: There is a table and two chairs. Die Kurzform ist there’s (there’re wird nicht benutzt)."
+            "es": "Si enumeras varias cosas, concuerdas con el primer nombre: There is a table and two chairs. La forma corta es there’s (there’re no se usa)."
           },
           "examples": [
             {
               "es": "There is a table and two chairs.",
               "tr": {
-                "hu": "Van egy asztal és két szék.",
                 "en": "There is a table and two chairs.",
-                "es": "Hay una mesa y dos sillas.",
-                "de": "Es gibt einen Tisch und zwei Stühle."
+                "es": "Hay una mesa y dos sillas."
               }
             },
             {
               "es": "There's water in the glass.",
               "tr": {
-                "hu": "Van víz a pohárban.",
                 "en": "There's water in the glass.",
-                "es": "Hay agua en el vaso.",
-                "de": "Im Glas ist Wasser."
+                "es": "Hay agua en el vaso."
               }
             }
           ]
@@ -135,92 +109,72 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Tagadás, kérdés, rövid válasz",
         "en": "Negation, questions, short answers",
-        "es": "Negación, pregunta, respuesta corta",
-        "de": "Verneinung, Frage, Kurzantwort"
+        "es": "Negación, pregunta, respuesta corta"
       },
       "items": [
         {
           "text": {
-            "hu": "Tagadás: there isn’t (egy) és there aren’t (több).",
             "en": "Negation: there isn’t (one) and there aren’t (several).",
-            "es": "Negación: there isn’t (una) y there aren’t (varias).",
-            "de": "Verneinung: there isn’t (eine) und there aren’t (mehrere)."
+            "es": "Negación: there isn’t (una) y there aren’t (varias)."
           },
           "examples": [
             {
               "es": "There isn't a car here.",
               "tr": {
-                "hu": "Nincs itt autó.",
                 "en": "There isn't a car here.",
-                "es": "No hay un coche aquí.",
-                "de": "Hier ist kein Auto."
+                "es": "No hay un coche aquí."
               }
             },
             {
               "es": "There aren't people in the park.",
               "tr": {
-                "hu": "Nincsenek emberek a parkban.",
                 "en": "There aren't people in the park.",
-                "es": "No hay gente en el parque.",
-                "de": "Im Park sind keine Leute."
+                "es": "No hay gente en el parque."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Kérdés: az is / are a there ELÉ kerül, do nélkül. Rövid válasz: Yes, there is. / No, there isn’t. Többesben: Yes, there are. / No, there aren’t.",
             "en": "Questions: is / are goes BEFORE there, with no do. Short answers: Yes, there is. / No, there isn’t. In the plural: Yes, there are. / No, there aren’t.",
-            "es": "Pregunta: is / are va ANTES de there, sin do. Respuesta corta: Yes, there is. / No, there isn’t. En plural: Yes, there are. / No, there aren’t.",
-            "de": "Frage: is / are steht VOR there, ohne do. Kurzantwort: Yes, there is. / No, there isn’t. Im Plural: Yes, there are. / No, there aren’t."
+            "es": "Pregunta: is / are va ANTES de there, sin do. Respuesta corta: Yes, there is. / No, there isn’t. En plural: Yes, there are. / No, there aren’t."
           },
           "examples": [
             {
               "es": "Is there a bank near here?",
               "tr": {
-                "hu": "Van itt közel bank?",
                 "en": "Is there a bank near here?",
-                "es": "¿Hay un banco cerca de aquí?",
-                "de": "Gibt es hier in der Nähe eine Bank?"
+                "es": "¿Hay un banco cerca de aquí?"
               }
             },
             {
               "es": "Are there two beds? Yes, there are.",
               "tr": {
-                "hu": "Van két ágy? Igen.",
                 "en": "Are there two beds? Yes, there are.",
-                "es": "¿Hay dos camas? Sí.",
-                "de": "Gibt es zwei Betten? Ja."
+                "es": "¿Hay dos camas? Sí."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Mennyiségre így kérdezel: How many chairs are there? A válasz: There are four.",
             "en": "To ask about quantity: How many chairs are there? The answer: There are four.",
-            "es": "Para preguntar la cantidad: How many chairs are there? La respuesta: There are four.",
-            "de": "So fragst du nach der Menge: How many chairs are there? Die Antwort: There are four."
+            "es": "Para preguntar la cantidad: How many chairs are there? La respuesta: There are four."
           },
           "examples": [
             {
               "es": "How many chairs are there?",
               "tr": {
-                "hu": "Hány szék van?",
                 "en": "How many chairs are there?",
-                "es": "¿Cuántas sillas hay?",
-                "de": "Wie viele Stühle gibt es?"
+                "es": "¿Cuántas sillas hay?"
               }
             },
             {
               "es": "There are four.",
               "tr": {
-                "hu": "Négy van.",
                 "en": "There are four.",
-                "es": "Hay cuatro.",
-                "de": "Es gibt vier."
+                "es": "Hay cuatro."
               }
             }
           ]
@@ -230,45 +184,35 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "A „hay” nem „have”. Ne mondd, hogy „Have a book on the table” vagy „It has a book”, hanem: „There is a book on the table”.",
         "en": "“Hay” is not “have”. Do not say “Have a book on the table” or “It has a book”; say “There is a book on the table”.",
-        "es": "«Hay» no es «have». No digas «Have a book on the table» ni «It has a book», di «There is a book on the table».",
-        "de": "„Hay“ ist nicht „have“. Sag nicht „Have a book on the table“ oder „It has a book“, sondern „There is a book on the table“."
+        "es": "«Hay» no es «have». No digas «Have a book on the table» ni «It has a book», di «There is a book on the table»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "Több dolognál „are” kell. Ne mondd, hogy „There is two chairs”, hanem: „There are two chairs”.",
         "en": "With several things you need “are”. Do not say “There is two chairs”; say “There are two chairs”.",
-        "es": "Con varias cosas hace falta «are». No digas «There is two chairs», di «There are two chairs».",
-        "de": "Bei mehreren Dingen braucht man „are“. Sag nicht „There is two chairs“, sondern „There are two chairs“."
+        "es": "Con varias cosas hace falta «are». No digas «There is two chairs», di «There are two chairs»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A „there” kötelező, a „hay”-hoz hasonlóan sem hagyhatod el, és nem helyettesítheted „it”-tel. Ne mondd, hogy „Is a park in my city” vagy „It is a park in my city”, hanem: „There is a park in my city”.",
         "en": "The word “there” is required; you cannot drop it and you cannot replace it with “it”. Do not say “Is a park in my city” or “It is a park in my city”; say “There is a park in my city”.",
-        "es": "La palabra «there» es obligatoria: no se puede omitir ni sustituir por «it». No digas «Is a park in my city» ni «It is a park in my city», di «There is a park in my city».",
-        "de": "Das Wort „there“ ist Pflicht: Man kann es weder weglassen noch durch „it“ ersetzen. Sag nicht „Is a park in my city“ oder „It is a park in my city“, sondern „There is a park in my city“."
+        "es": "La palabra «there» es obligatoria: no se puede omitir ni sustituir por «it». No digas «Is a park in my city» ni «It is a park in my city», di «There is a park in my city»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "Kérdésben nem kell a „do”. Ne mondd, hogy „Do there is a bank?”, hanem: „Is there a bank?”.",
         "en": "In a question there is no “do”. Do not say “Do there is a bank?”; say “Is there a bank?”.",
-        "es": "En la pregunta no hace falta «do». No digas «Do there is a bank?», di «Is there a bank?».",
-        "de": "In der Frage braucht man kein „do“. Sag nicht „Do there is a bank?“, sondern „Is there a bank?“."
+        "es": "En la pregunta no hace falta «do». No digas «Do there is a bank?», di «Is there a bank?»."
       }
     }
   ],
   "speak": {
-    "hu": "A «there is» és a «there are» a spanyol «hay». Egy dolognál vagy nem számlálható főnévnél «there is»: «There is a book on the table», «There is water». Több dolognál «there are»: «There are two chairs in the room». Tagadás: «There isn't a car», «There aren't two beds». Kérdés: «Is there a bank near here?», «Are there two beds?». Rövid válasz: «Yes, there is» vagy «No, there isn't». Vigyázat: a «hay» nem «have».",
     "en": "The words «there is» and «there are» are the Spanish «hay». For one thing or an uncountable noun use «there is»: «There is a book on the table», «There is water». For several things use «there are»: «There are two chairs in the room». Negation: «There isn't a car», «There aren't two beds». Questions: «Is there a bank near here?», «Are there two beds?». Short answers: «Yes, there is» or «No, there isn't». Careful: «hay» is not «have».",
-    "es": "«There is» y «there are» son el «hay» del español. Para una cosa o un nombre incontable se usa «there is»: «There is a book on the table», «There is water». Para varias cosas se usa «there are»: «There are two chairs in the room». Negación: «There isn't a car», «There aren't two beds». Pregunta: «Is there a bank near here?», «Are there two beds?». Respuesta corta: «Yes, there is» o «No, there isn't». Cuidado: «hay» no es «have».",
-    "de": "«There is» und «there are» entsprechen dem spanischen «hay». Bei einer Sache oder einem unzählbaren Nomen benutzt du «there is»: «There is a book on the table», «There is water». Bei mehreren Sachen benutzt du «there are»: «There are two chairs in the room». Verneinung: «There isn't a car», «There aren't two beds». Fragen: «Is there a bank near here?», «Are there two beds?». Kurzantwort: «Yes, there is» oder «No, there isn't». Vorsicht: «hay» ist nicht «have»."
+    "es": "«There is» y «there are» son el «hay» del español. Para una cosa o un nombre incontable se usa «there is»: «There is a book on the table», «There is water». Para varias cosas se usa «there are»: «There are two chairs in the room». Negación: «There isn't a car», «There aren't two beds». Pregunta: «Is there a bank near here?», «Are there two beds?». Respuesta corta: «Yes, there is» o «No, there isn't». Cuidado: «hay» no es «have»."
   },
   "items": [
     {
@@ -281,30 +225,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Egy könyvről van szó (egyes szám), ezért „there is”: There is a book on the table.",
         "en": "It is one book (singular), so “there is”: There is a book on the table.",
-        "es": "Es un solo libro (singular), por eso «there is»: There is a book on the table.",
-        "de": "Es geht um ein Buch (Singular), deshalb „there is“: There is a book on the table."
+        "es": "Es un solo libro (singular), por eso «there is»: There is a book on the table."
       },
       "wrong": {
         "are": {
-          "hu": "Az „are” többes számhoz való; a „book” egyes szám: there is.",
           "en": "“Are” is for plurals; “book” is singular: there is.",
-          "es": "«Are» es para plurales; «book» es singular: there is.",
-          "de": "„Are“ steht für den Plural; „book“ ist Singular: there is."
+          "es": "«Are» es para plurales; «book» es singular: there is."
         },
         "have": {
-          "hu": "A spanyol „hay” angolul nem „have”, hanem „there is / there are”.",
           "en": "Spanish “hay” is not “have” in English but “there is / there are”.",
-          "es": "El «hay» del español no es «have» en inglés, sino «there is / there are».",
-          "de": "Das spanische „hay“ ist im Englischen nicht „have“, sondern „there is / there are“."
+          "es": "El «hay» del español no es «have» en inglés, sino «there is / there are»."
         }
       },
       "examples": [
         "There is a cat on the chair.",
         "There is a bag on the bed."
       ],
-      "tr": { "hu": "Van egy könyv az asztalon.", "en": "There is a book on the table.", "es": "Hay un libro sobre la mesa.", "de": "Da liegt ein Buch auf dem Tisch." }
+      "tr": { "en": "There is a book on the table.", "es": "Hay un libro sobre la mesa." }
     },
     {
       "id": "ta-02",
@@ -316,30 +254,24 @@
       ],
       "correct": 1,
       "why": {
-        "hu": "Két székről van szó (többes szám), ezért „there are”: There are two chairs in the room.",
         "en": "It is two chairs (plural), so “there are”: There are two chairs in the room.",
-        "es": "Son dos sillas (plural), por eso «there are»: There are two chairs in the room.",
-        "de": "Es geht um zwei Stühle (Plural), deshalb „there are“: There are two chairs in the room."
+        "es": "Son dos sillas (plural), por eso «there are»: There are two chairs in the room."
       },
       "wrong": {
         "is": {
-          "hu": "Az „is” egyes számhoz való; a „two chairs” többes szám: there are.",
           "en": "“Is” is for singulars; “two chairs” is plural: there are.",
-          "es": "«Is» es para singulares; «two chairs» es plural: there are.",
-          "de": "„Is“ steht für den Singular; „two chairs“ ist Plural: there are."
+          "es": "«Is» es para singulares; «two chairs» es plural: there are."
         },
         "have": {
-          "hu": "A spanyol „hay” angolul nem „have”, hanem „there is / there are”.",
           "en": "Spanish “hay” is not “have” in English but “there is / there are”.",
-          "es": "El «hay» del español no es «have» en inglés, sino «there is / there are».",
-          "de": "Das spanische „hay“ ist im Englischen nicht „have“, sondern „there is / there are“."
+          "es": "El «hay» del español no es «have» en inglés, sino «there is / there are»."
         }
       },
       "examples": [
         "There are two beds in the room.",
         "There are three cars here."
       ],
-      "tr": { "hu": "Van két szék a szobában.", "en": "There are two chairs in the room.", "es": "Hay dos sillas en el cuarto.", "de": "Es stehen zwei Stühle im Zimmer." }
+      "tr": { "en": "There are two chairs in the room.", "es": "Hay dos sillas en el cuarto." }
     },
     {
       "id": "ta-15",
@@ -359,30 +291,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „people” többes szám, ezért „there are”: There are three people here.",
         "en": "“People” is plural, so “there are”: There are three people here.",
-        "es": "«People» es plural, por eso «there are»: There are three people here.",
-        "de": "„People“ ist Plural, deshalb „there are“: There are three people here."
+        "es": "«People» es plural, por eso «there are»: There are three people here."
       },
       "wrong": {
         "is": {
-          "hu": "A „people” többes szám (three people), ezért nem „is”, hanem „are”.",
           "en": "“People” is plural (three people), so not “is” but “are”.",
-          "es": "«People» es plural (three people), por eso no «is», sino «are».",
-          "de": "„People“ ist Plural (three people), deshalb nicht „is“, sondern „are“."
+          "es": "«People» es plural (three people), por eso no «is», sino «are»."
         },
         "have": {
-          "hu": "A spanyol „hay” angolul nem „have”, hanem „there is / there are”.",
           "en": "Spanish “hay” is not “have” in English but “there is / there are”.",
-          "es": "El «hay» del español no es «have» en inglés, sino «there is / there are».",
-          "de": "Das spanische „hay“ ist im Englischen nicht „have“, sondern „there is / there are“."
+          "es": "El «hay» del español no es «have» en inglés, sino «there is / there are»."
         }
       },
       "examples": [
         "There are two men in the park.",
         "There are many people here."
       ],
-      "tr": { "hu": "Hárman vannak itt.", "en": "There are three people here.", "es": "Hay tres personas aquí.", "de": "Es sind drei Personen hier." }
+      "tr": { "en": "There are three people here.", "es": "Hay tres personas aquí." }
     },
     {
       "id": "ta-04",
@@ -394,30 +320,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Egy bankról kérdezünk (egyes szám), és az is a there elé kerül: Is there a bank near here?",
         "en": "We ask about one bank (singular), and is goes before there: Is there a bank near here?",
-        "es": "Preguntamos por un banco (singular), y is va antes de there: Is there a bank near here?",
-        "de": "Wir fragen nach einer Bank (Singular), und is steht vor there: Is there a bank near here?"
+        "es": "Preguntamos por un banco (singular), y is va antes de there: Is there a bank near here?"
       },
       "wrong": {
         "Are": {
-          "hu": "Az „Are” többes számhoz való; a „bank” egyes szám: Is there…?",
           "en": "“Are” is for plurals; “bank” is singular: Is there…?",
-          "es": "«Are» es para plurales; «bank» es singular: Is there…?",
-          "de": "„Are“ steht für den Plural; „bank“ ist Singular: Is there…?"
+          "es": "«Are» es para plurales; «bank» es singular: Is there…?"
         },
         "Do": {
-          "hu": "A there is / are kérdésében nincs „do”: az is / are megy előre (Is there…?).",
           "en": "Questions with there is / are have no “do”: is / are moves to the front (Is there…?).",
-          "es": "Las preguntas con there is / are no llevan «do»: is / are pasa al principio (Is there…?).",
-          "de": "Fragen mit there is / are haben kein „do“: is / are rückt nach vorn (Is there…?)."
+          "es": "Las preguntas con there is / are no llevan «do»: is / are pasa al principio (Is there…?)."
         }
       },
       "examples": [
         "Is there a park near here?",
         "Is there a cat in the garden?"
       ],
-      "tr": { "hu": "Van bank a közelben?", "en": "Is there a bank near here?", "es": "¿Hay un banco cerca de aquí?", "de": "Gibt es hier in der Nähe eine Bank?" }
+      "tr": { "en": "Is there a bank near here?", "es": "¿Hay un banco cerca de aquí?" }
     },
     {
       "kind": "why",
@@ -425,46 +345,34 @@
       "es": "There are two chairs in the room.",
       "target": "are",
       "tr": {
-        "hu": "Két szék van a szobában.",
         "en": "There are two chairs in the room.",
-        "es": "Hay dos sillas en la habitación.",
-        "de": "Im Zimmer gibt es zwei Stühle."
+        "es": "Hay dos sillas en la habitación."
       },
       "options": [
         {
           "text": {
-            "hu": "többes számú főnév: there are",
             "en": "plural noun: there are",
-            "es": "nombre plural: there are",
-            "de": "Nomen im Plural: there are"
+            "es": "nombre plural: there are"
           }
         },
         {
           "text": {
-            "hu": "egyes számú főnév: there is",
             "en": "singular noun: there is",
-            "es": "nombre singular: there is",
-            "de": "Nomen im Singular: there is"
+            "es": "nombre singular: there is"
           },
           "wrong": {
-            "hu": "A „two chairs” többes szám, ezért „are”. Az „is” egy dologhoz kell.",
             "en": "“Two chairs” is plural, so “are”. “Is” is for one thing.",
-            "es": "«Two chairs» es plural, por eso «are». «Is» es para una sola cosa.",
-            "de": "„Two chairs“ ist Plural, deshalb „are“. „Is“ ist für eine einzige Sache."
+            "es": "«Two chairs» es plural, por eso «are». «Is» es para una sola cosa."
           }
         },
         {
           "text": {
-            "hu": "birtoklás, mint a „have”",
             "en": "possession, like “have”",
-            "es": "posesión, como «have»",
-            "de": "Besitz wie bei „have“"
+            "es": "posesión, como «have»"
           },
           "wrong": {
-            "hu": "Itt nem birtoklásról van szó, hanem arról, hogy valami van valahol; ez a „there are”.",
             "en": "This is not about possession but about something being somewhere; that is “there are”.",
-            "es": "Aquí no se habla de posesión sino de que algo está en un lugar; eso es «there are».",
-            "de": "Hier geht es nicht um Besitz, sondern darum, dass etwas irgendwo ist; das ist „there are“."
+            "es": "Aquí no se habla de posesión sino de que algo está en un lugar; eso es «there are»."
           }
         }
       ],
@@ -480,30 +388,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Két ágyról kérdezünk (többes szám): Are there two beds in the room?",
         "en": "We ask about two beds (plural): Are there two beds in the room?",
-        "es": "Preguntamos por dos camas (plural): Are there two beds in the room?",
-        "de": "Wir fragen nach zwei Betten (Plural): Are there two beds in the room?"
+        "es": "Preguntamos por dos camas (plural): Are there two beds in the room?"
       },
       "wrong": {
         "Is": {
-          "hu": "Az „Is” egyes számhoz való; a „two beds” többes szám: Are there…?",
           "en": "“Is” is for singulars; “two beds” is plural: Are there…?",
-          "es": "«Is» es para singulares; «two beds» es plural: Are there…?",
-          "de": "„Is“ steht für den Singular; „two beds“ ist Plural: Are there…?"
+          "es": "«Is» es para singulares; «two beds» es plural: Are there…?"
         },
         "Do": {
-          "hu": "A there is / are kérdésében nincs „do”: az is / are megy előre.",
           "en": "Questions with there is / are have no “do”: is / are moves to the front.",
-          "es": "Las preguntas con there is / are no llevan «do»: is / are pasa al principio.",
-          "de": "Fragen mit there is / are haben kein „do“: is / are rückt nach vorn."
+          "es": "Las preguntas con there is / are no llevan «do»: is / are pasa al principio."
         }
       },
       "examples": [
         "Are there two cars here?",
         "Are there people in the park?"
       ],
-      "tr": { "hu": "Van két ágy a szobában?", "en": "Are there two beds in the room?", "es": "¿Hay dos camas en el cuarto?", "de": "Gibt es zwei Betten im Zimmer?" }
+      "tr": { "en": "Are there two beds in the room?", "es": "¿Hay dos camas en el cuarto?" }
     },
     {
       "id": "ta-06",
@@ -515,30 +417,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Egy autóról van szó (egyes szám), tagadva: There isn’t a car here.",
         "en": "It is one car (singular), negative: There isn’t a car here.",
-        "es": "Es un solo coche (singular), en negativa: There isn’t a car here.",
-        "de": "Es geht um ein Auto (Singular), verneint: There isn’t a car here."
+        "es": "Es un solo coche (singular), en negativa: There isn’t a car here."
       },
       "wrong": {
         "aren't": {
-          "hu": "Az „aren’t” többes számhoz való; a „car” egyes szám: there isn’t.",
           "en": "“Aren’t” is for plurals; “car” is singular: there isn’t.",
-          "es": "«Aren’t» es para plurales; «car» es singular: there isn’t.",
-          "de": "„Aren’t“ steht für den Plural; „car“ ist Singular: there isn’t."
+          "es": "«Aren’t» es para plurales; «car» es singular: there isn’t."
         },
         "don't": {
-          "hu": "A „hay” tagadása nem „don’t”, hanem „there isn’t / there aren’t”.",
           "en": "The negative of “hay” is not “don’t” but “there isn’t / there aren’t”.",
-          "es": "La negación de «hay» no es «don’t», sino «there isn’t / there aren’t».",
-          "de": "Die Verneinung von „hay“ ist nicht „don’t“, sondern „there isn’t / there aren’t“."
+          "es": "La negación de «hay» no es «don’t», sino «there isn’t / there aren’t»."
         }
       },
       "examples": [
         "There isn't a bank here.",
         "There isn't a cat in the garden."
       ],
-      "tr": { "hu": "Itt nincs autó.", "en": "There isn't a car here.", "es": "No hay un carro aquí.", "de": "Hier gibt es kein Auto." }
+      "tr": { "en": "There isn't a car here.", "es": "No hay un carro aquí." }
     },
     {
       "id": "ta-07",
@@ -550,30 +446,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „people” többes szám, tagadva: There aren’t people in the park.",
         "en": "“People” is plural, negative: There aren’t people in the park.",
-        "es": "«People» es plural, en negativa: There aren’t people in the park.",
-        "de": "„People“ ist Plural, verneint: There aren’t people in the park."
+        "es": "«People» es plural, en negativa: There aren’t people in the park."
       },
       "wrong": {
         "isn't": {
-          "hu": "Az „isn’t” egyes számhoz való; a „people” többes szám: there aren’t.",
           "en": "“Isn’t” is for singulars; “people” is plural: there aren’t.",
-          "es": "«Isn’t» es para singulares; «people» es plural: there aren’t.",
-          "de": "„Isn’t“ steht für den Singular; „people“ ist Plural: there aren’t."
+          "es": "«Isn’t» es para singulares; «people» es plural: there aren’t."
         },
         "don't": {
-          "hu": "A there is / are tagadásához nem a „do”, hanem a to be tagadása kell: there aren’t.",
           "en": "The negative of there is / are uses to be, not “do”: there aren’t.",
-          "es": "La negación de there is / are usa to be, no «do»: there aren’t.",
-          "de": "Die Verneinung von there is / are benutzt to be, nicht „do“: there aren’t."
+          "es": "La negación de there is / are usa to be, no «do»: there aren’t."
         }
       },
       "examples": [
         "There aren't cars here.",
         "There aren't beds in the room."
       ],
-      "tr": { "hu": "Nincsenek emberek a parkban.", "en": "There aren't people in the park.", "es": "No hay gente en el parque.", "de": "Es sind keine Leute im Park." }
+      "tr": { "en": "There aren't people in the park.", "es": "No hay gente en el parque." }
     },
     {
       "id": "ta-16",
@@ -593,30 +483,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A kérdés egyes számú (Is there…?), ezért a nemleges rövid válasz: No, there isn’t.",
         "en": "The question is singular (Is there…?), so the negative short answer is: No, there isn’t.",
-        "es": "La pregunta es singular (Is there…?), por eso la respuesta corta negativa es: No, there isn’t.",
-        "de": "Die Frage steht im Singular (Is there…?), deshalb lautet die verneinende Kurzantwort: No, there isn’t."
+        "es": "La pregunta es singular (Is there…?), por eso la respuesta corta negativa es: No, there isn’t."
       },
       "wrong": {
         "aren't": {
-          "hu": "Az „aren’t” többes számhoz való; a kérdés egyes számú: No, there isn’t.",
           "en": "“Aren’t” is for plurals; the question is singular: No, there isn’t.",
-          "es": "«Aren’t» es para plurales; la pregunta es singular: No, there isn’t.",
-          "de": "„Aren’t“ steht für den Plural; die Frage steht im Singular: No, there isn’t."
+          "es": "«Aren’t» es para plurales; la pregunta es singular: No, there isn’t."
         },
         "doesn't": {
-          "hu": "A „doesn’t” a rendes igék tagadása; a there is kérdésre „there isn’t” a válasz.",
           "en": "“Doesn’t” is the negative of a normal verb; a there is question is answered with “there isn’t”.",
-          "es": "«Doesn’t» es la negación de un verbo normal; una pregunta con there is se responde con «there isn’t».",
-          "de": "„Doesn’t“ ist die Verneinung eines normalen Verbs; eine there-is-Frage beantwortet man mit „there isn’t“."
+          "es": "«Doesn’t» es la negación de un verbo normal; una pregunta con there is se responde con «there isn’t»."
         }
       },
       "examples": [
         "Is there a cat here? No, there isn't.",
         "Is there a park? No, there isn't."
       ],
-      "tr": { "hu": "Van bank a közelben? Nem, nincs.", "en": "Is there a bank near here? No, there isn't.", "es": "¿Hay un banco cerca de aquí? No, no hay.", "de": "Gibt es hier in der Nähe eine Bank? Nein, es gibt keine." }
+      "tr": { "en": "Is there a bank near here? No, there isn't.", "es": "¿Hay un banco cerca de aquí? No, no hay." }
     },
     {
       "id": "ta-09",
@@ -628,30 +512,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A kérdés többes számú (Are there…?), ezért a nemleges rövid válasz: No, there aren’t.",
         "en": "The question is plural (Are there…?), so the negative short answer is: No, there aren’t.",
-        "es": "La pregunta es plural (Are there…?), por eso la respuesta corta negativa es: No, there aren’t.",
-        "de": "Die Frage steht im Plural (Are there…?), deshalb lautet die verneinende Kurzantwort: No, there aren’t."
+        "es": "La pregunta es plural (Are there…?), por eso la respuesta corta negativa es: No, there aren’t."
       },
       "wrong": {
         "isn't": {
-          "hu": "Az „isn’t” egyes számhoz való; a kérdés többes számú: No, there aren’t.",
           "en": "“Isn’t” is for singulars; the question is plural: No, there aren’t.",
-          "es": "«Isn’t» es para singulares; la pregunta es plural: No, there aren’t.",
-          "de": "„Isn’t“ steht für den Singular; die Frage steht im Plural: No, there aren’t."
+          "es": "«Isn’t» es para singulares; la pregunta es plural: No, there aren’t."
         },
         "don't": {
-          "hu": "A there are kérdésre nem a „do” tagadásával válaszolunk: No, there aren’t.",
           "en": "A there are question is not answered with a negative “do”: No, there aren’t.",
-          "es": "Una pregunta con there are no se responde con un «do» negativo: No, there aren’t.",
-          "de": "Eine there-are-Frage beantwortet man nicht mit einem verneinten „do“: No, there aren’t."
+          "es": "Una pregunta con there are no se responde con un «do» negativo: No, there aren’t."
         }
       },
       "examples": [
         "Are there cars here? No, there aren't.",
         "Are there people? No, there aren't."
       ],
-      "tr": { "hu": "Két ágy van? Nem, nincs.", "en": "Are there two beds? No, there aren't.", "es": "¿Hay dos camas? No, no hay.", "de": "Gibt es zwei Betten? Nein, gibt es nicht." }
+      "tr": { "en": "Are there two beds? No, there aren't.", "es": "¿Hay dos camas? No, no hay." }
     },
     {
       "kind": "why",
@@ -659,46 +537,34 @@
       "es": "Is there a bank near here?",
       "target": "Is",
       "tr": {
-        "hu": "Van itt közel bank?",
         "en": "Is there a bank near here?",
-        "es": "¿Hay un banco cerca de aquí?",
-        "de": "Gibt es hier in der Nähe eine Bank?"
+        "es": "¿Hay un banco cerca de aquí?"
       },
       "options": [
         {
           "text": {
-            "hu": "kérdés: az is / are a there elé kerül",
             "en": "question: is / are goes before there",
-            "es": "pregunta: is / are va antes de there",
-            "de": "Frage: is / are steht vor there"
+            "es": "pregunta: is / are va antes de there"
           }
         },
         {
           "text": {
-            "hu": "kérdés „do” segédigével: Do there…?",
             "en": "question with the helper “do”: Do there…?",
-            "es": "pregunta con el auxiliar «do»: Do there…?",
-            "de": "Frage mit dem Hilfsverb „do“: Do there…?"
+            "es": "pregunta con el auxiliar «do»: Do there…?"
           },
           "wrong": {
-            "hu": "A there is / are a to be-vel kérdez, nem a „do”-val: Is there…?, nem „Do there…?”.",
             "en": "There is / are asks with to be, not with “do”: Is there…?, not “Do there…?”.",
-            "es": "There is / are pregunta con to be, no con «do»: Is there…?, no «Do there…?».",
-            "de": "There is / are fragt mit to be, nicht mit „do“: Is there…?, nicht „Do there…?“."
+            "es": "There is / are pregunta con to be, no con «do»: Is there…?, no «Do there…?»."
           }
         },
         {
           "text": {
-            "hu": "kijelentés: There is a bank",
             "en": "statement: There is a bank",
-            "es": "afirmación: There is a bank",
-            "de": "Aussage: There is a bank"
+            "es": "afirmación: There is a bank"
           },
           "wrong": {
-            "hu": "Kérdésben a sorrend megfordul: Is there…?, nem „There is…?”.",
             "en": "In a question the order flips: Is there…?, not “There is…?”.",
-            "es": "En una pregunta se invierte el orden: Is there…?, no «There is…?».",
-            "de": "In der Frage dreht sich die Reihenfolge um: Is there…?, nicht „There is…?“."
+            "es": "En una pregunta se invierte el orden: Is there…?, no «There is…?»."
           }
         }
       ],
@@ -714,30 +580,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Egy macskáról van szó (egyes szám): There’s a cat on the chair.",
         "en": "It is one cat (singular): There’s a cat on the chair.",
-        "es": "Es un solo gato (singular): There’s a cat on the chair.",
-        "de": "Es geht um eine Katze (Singular): There’s a cat on the chair."
+        "es": "Es un solo gato (singular): There’s a cat on the chair."
       },
       "wrong": {
         "There are": {
-          "hu": "A „there are” többes számhoz való; a „cat” egyes szám: there’s / there is.",
           "en": "“There are” is for plurals; “cat” is singular: there’s / there is.",
-          "es": "«There are» es para plurales; «cat» es singular: there’s / there is.",
-          "de": "„There are“ steht für den Plural; „cat“ ist Singular: there’s / there is."
+          "es": "«There are» es para plurales; «cat» es singular: there’s / there is."
         },
         "It has": {
-          "hu": "Az „it has” birtoklást jelent; létezéshez („hay”) a „there is / there’s” kell.",
           "en": "“It has” shows possession; for existence (“hay”) you need “there is / there’s”.",
-          "es": "«It has» expresa posesión; para la existencia («hay») hace falta «there is / there’s».",
-          "de": "„It has“ drückt Besitz aus; für die Existenz („hay“) braucht man „there is / there’s“."
+          "es": "«It has» expresa posesión; para la existencia («hay») hace falta «there is / there’s»."
         }
       },
       "examples": [
         "There's a dog in the garden.",
         "There's a book on the table."
       ],
-      "tr": { "hu": "Van egy macska a széken.", "en": "There's a cat on the chair.", "es": "Hay un gato en la silla.", "de": "Da ist eine Katze auf dem Stuhl." }
+      "tr": { "en": "There's a cat on the chair.", "es": "Hay un gato en la silla." }
     },
     {
       "id": "ta-11",
@@ -749,30 +609,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Felsorolásnál az első főnévhez igazodunk (a table, egyes szám): There is a table and two chairs.",
         "en": "In a list we agree with the first noun (a table, singular): There is a table and two chairs.",
-        "es": "En una enumeración se concuerda con el primer nombre (a table, singular): There is a table and two chairs.",
-        "de": "Bei einer Aufzählung richtet man sich nach dem ersten Nomen (a table, Singular): There is a table and two chairs."
+        "es": "En una enumeración se concuerda con el primer nombre (a table, singular): There is a table and two chairs."
       },
       "wrong": {
         "are": {
-          "hu": "Az első főnév egyes szám (a table), ezért „is”; a „two chairs” nem számít.",
           "en": "The first noun is singular (a table), so “is”; “two chairs” does not count.",
-          "es": "El primer nombre es singular (a table), por eso «is»; «two chairs» no cuenta.",
-          "de": "Das erste Nomen ist Singular (a table), deshalb „is“; „two chairs“ zählt nicht."
+          "es": "El primer nombre es singular (a table), por eso «is»; «two chairs» no cuenta."
         },
         "have": {
-          "hu": "A spanyol „hay” angolul nem „have”, hanem „there is / there are”.",
           "en": "Spanish “hay” is not “have” in English but “there is / there are”.",
-          "es": "El «hay» del español no es «have» en inglés, sino «there is / there are».",
-          "de": "Das spanische „hay“ ist im Englischen nicht „have“, sondern „there is / there are“."
+          "es": "El «hay» del español no es «have» en inglés, sino «there is / there are»."
         }
       },
       "examples": [
         "There is a bed and two chairs.",
         "There is a cat and two dogs here."
       ],
-      "tr": { "hu": "Van egy asztal és két szék a konyhában.", "en": "There is a table and two chairs in the kitchen.", "es": "Hay una mesa y dos sillas en la cocina.", "de": "In der Küche stehen ein Tisch und zwei Stühle." }
+      "tr": { "en": "There is a table and two chairs in the kitchen.", "es": "Hay una mesa y dos sillas en la cocina." }
     },
     {
       "id": "ta-21",
@@ -814,30 +668,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „water” nem számlálható, ezért „there is”: There is water in the glass.",
         "en": "“Water” is uncountable, so “there is”: There is water in the glass.",
-        "es": "«Water» es incontable, por eso «there is»: There is water in the glass.",
-        "de": "„Water“ ist unzählbar, deshalb „there is“: There is water in the glass."
+        "es": "«Water» es incontable, por eso «there is»: There is water in the glass."
       },
       "wrong": {
         "are": {
-          "hu": "Az „are” többes számhoz való; a „water” nem számlálható, egyes számú igét kap: there is.",
           "en": "“Are” is for plurals; “water” is uncountable and takes a singular verb: there is.",
-          "es": "«Are» es para plurales; «water» es incontable y lleva verbo en singular: there is.",
-          "de": "„Are“ steht für den Plural; „water“ ist unzählbar und steht mit einem Singular-Verb: there is."
+          "es": "«Are» es para plurales; «water» es incontable y lleva verbo en singular: there is."
         },
         "have": {
-          "hu": "A spanyol „hay” angolul nem „have”, hanem „there is / there are”.",
           "en": "Spanish “hay” is not “have” in English but “there is / there are”.",
-          "es": "El «hay» del español no es «have» en inglés, sino «there is / there are».",
-          "de": "Das spanische „hay“ ist im Englischen nicht „have“, sondern „there is / there are“."
+          "es": "El «hay» del español no es «have» en inglés, sino «there is / there are»."
         }
       },
       "examples": [
         "There is milk in the glass.",
         "There is food on the table."
       ],
-      "tr": { "hu": "Víz van a pohárban.", "en": "There is water in the glass.", "es": "Hay agua en el vaso.", "de": "Es ist Wasser im Glas." }
+      "tr": { "en": "There is water in the glass.", "es": "Hay agua en el vaso." }
     },
     {
       "id": "ta-13",
@@ -849,30 +697,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „hay” angolul „there is”: In my city there is a big park.",
         "en": "Spanish “hay” is “there is” in English: In my city there is a big park.",
-        "es": "El «hay» del español es «there is» en inglés: In my city there is a big park.",
-        "de": "Das spanische „hay“ ist im Englischen „there is“: In my city there is a big park."
+        "es": "El «hay» del español es «there is» en inglés: In my city there is a big park."
       },
       "wrong": {
         "it is": {
-          "hu": "Az „it is” egy adott dologról mond valamit; a „hay” (valami létezik) „there is”.",
           "en": "“It is” says something about a given thing; “hay” (something exists) is “there is”.",
-          "es": "«It is» dice algo de una cosa concreta; «hay» (algo existe) es «there is».",
-          "de": "„It is“ sagt etwas über eine bestimmte Sache; „hay“ (etwas existiert) ist „there is“."
+          "es": "«It is» dice algo de una cosa concreta; «hay» (algo existe) es «there is»."
         },
         "has": {
-          "hu": "A „has” birtoklást jelent, és alany is kell elé; a „hay” = there is.",
           "en": "“Has” shows possession and needs a subject before it; “hay” = there is.",
-          "es": "«Has» expresa posesión y necesita un sujeto delante; «hay» = there is.",
-          "de": "„Has“ drückt Besitz aus und braucht ein Subjekt davor; „hay“ = there is."
+          "es": "«Has» expresa posesión y necesita un sujeto delante; «hay» = there is."
         }
       },
       "examples": [
         "In my house there is a big garden.",
         "In this street there is a bank."
       ],
-      "tr": { "hu": "A városomban van egy nagy park.", "en": "In my city there is a big park.", "es": "En mi ciudad hay un parque grande.", "de": "In meiner Stadt gibt es einen großen Park." }
+      "tr": { "en": "In my city there is a big park.", "es": "En mi ciudad hay un parque grande." }
     },
     {
       "id": "ta-17",
@@ -888,46 +730,34 @@
       "es": "There is a book on the table.",
       "target": "There",
       "tr": {
-        "hu": "Van egy könyv az asztalon.",
         "en": "There is a book on the table.",
-        "es": "Hay un libro en la mesa.",
-        "de": "Auf dem Tisch liegt ein Buch."
+        "es": "Hay un libro en la mesa."
       },
       "options": [
         {
           "text": {
-            "hu": "a there is = hay: valami létezik, van valahol",
             "en": "there is = hay: something exists, is somewhere",
-            "es": "there is = hay: algo existe, está en algún lugar",
-            "de": "there is = hay: etwas existiert, ist irgendwo"
+            "es": "there is = hay: algo existe, está en algún lugar"
           }
         },
         {
           "text": {
-            "hu": "a „there” itt azt jelenti: ott, azon a helyen",
             "en": "“there” here means: in that place, over there",
-            "es": "«there» aquí significa: allí, en aquel lugar",
-            "de": "„there“ bedeutet hier: dort, an jenem Ort"
+            "es": "«there» aquí significa: allí, en aquel lugar"
           },
           "wrong": {
-            "hu": "Itt a „there” nem helyet jelöl, hanem a „there is” része (hay). A hely az „on the table”.",
             "en": "Here “there” does not show a place; it is part of “there is” (hay). The place is “on the table”.",
-            "es": "Aquí «there» no indica un lugar; forma parte de «there is» (hay). El lugar es «on the table».",
-            "de": "Hier zeigt „there“ keinen Ort an; es gehört zu „there is“ (hay). Der Ort ist „on the table“."
+            "es": "Aquí «there» no indica un lugar; forma parte de «there is» (hay). El lugar es «on the table»."
           }
         },
         {
           "text": {
-            "hu": "elhagyható, mint a spanyolban",
             "en": "can be dropped, as in Spanish",
-            "es": "se puede omitir, como en español",
-            "de": "kann wie im Spanischen wegfallen"
+            "es": "se puede omitir, como en español"
           },
           "wrong": {
-            "hu": "A „there” kötelező: „Is a book on the table” hibás.",
             "en": "“There” is required: “Is a book on the table” is wrong.",
-            "es": "«There» es obligatorio: «Is a book on the table» es incorrecto.",
-            "de": "„There“ ist Pflicht: „Is a book on the table“ ist falsch."
+            "es": "«There» es obligatorio: «Is a book on the table» es incorrecto."
           }
         }
       ],
@@ -943,30 +773,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A „chairs” többes szám, ezért „are there”: How many chairs are there in the room?",
         "en": "“Chairs” is plural, so “are there”: How many chairs are there in the room?",
-        "es": "«Chairs» es plural, por eso «are there»: How many chairs are there in the room?",
-        "de": "„Chairs“ ist Plural, deshalb „are there“: How many chairs are there in the room?"
+        "es": "«Chairs» es plural, por eso «are there»: How many chairs are there in the room?"
       },
       "wrong": {
         "is": {
-          "hu": "Az „is” egyes számhoz való; a „chairs” többes szám: are there.",
           "en": "“Is” is for singulars; “chairs” is plural: are there.",
-          "es": "«Is» es para singulares; «chairs» es plural: are there.",
-          "de": "„Is“ steht für den Singular; „chairs“ ist Plural: are there."
+          "es": "«Is» es para singulares; «chairs» es plural: are there."
         },
         "do": {
-          "hu": "A there is / are kérdésében nincs „do”: How many chairs are there?",
           "en": "Questions with there is / are have no “do”: How many chairs are there?",
-          "es": "Las preguntas con there is / are no llevan «do»: How many chairs are there?",
-          "de": "Fragen mit there is / are haben kein „do“: How many chairs are there?"
+          "es": "Las preguntas con there is / are no llevan «do»: How many chairs are there?"
         }
       },
       "examples": [
         "How many beds are there?",
         "How many people are there here?"
       ],
-      "tr": { "hu": "Hány szék van a szobában?", "en": "How many chairs are there in the room?", "es": "¿Cuántas sillas hay en el cuarto?", "de": "Wie viele Stühle stehen im Zimmer?" }
+      "tr": { "en": "How many chairs are there in the room?", "es": "¿Cuántas sillas hay en el cuarto?" }
     },
     {
       "id": "ta-22",

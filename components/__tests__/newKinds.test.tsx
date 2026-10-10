@@ -41,8 +41,6 @@ describe('error spotting (spot)', () => {
     render(<GrammarDrill topic={only(negacion, 'spot')} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['spot']} />);
     await flush();
 
-    // NEW · TEST badge on the item
-    expect(screen.getByTestId('trial-badge')).toBeTruthy();
     expect(screen.getByText('Tap the word that is wrong')).toBeTruthy();
 
     // "No veo algo." -> the 3rd word (algo, index 2) is the wrong one
@@ -102,7 +100,6 @@ describe('word order (order)', () => {
     render(<GrammarDrill topic={only(negacion, 'order')} learnedLang="es" contentLang="en" onFinish={onFinish} kinds={['order']} />);
     await flush();
 
-    expect(screen.getByTestId('trial-badge')).toBeTruthy();
     expect(screen.getByText("I don't speak Spanish.")).toBeTruthy();
     for (const w of ['no', 'hablo', 'español']) fireEvent.press(screen.getAllByText(w)[0]);
     fireEvent.press(screen.getByText('Check'));
@@ -120,7 +117,6 @@ describe('dictation (dictation)', () => {
     await flush();
 
     expect(speech.speak).toHaveBeenCalledWith('Estoy en casa.', 'es-MX');
-    expect(screen.getByTestId('trial-badge')).toBeTruthy();
     // slower playback: rate 0.55
     fireEvent.press(screen.getByTestId('dictation-slow'));
     expect(speech.speak).toHaveBeenCalledWith('Estoy en casa.', 'es-MX', { rate: 0.55 });

@@ -3,42 +3,32 @@
   "topic": "past_simple_irregular",
   "level": "A2",
   "title": {
-    "hu": "Az egyszerű múlt: rendhagyó igék (went, saw, bought)",
     "en": "The Past Simple: irregular verbs (went, saw, bought)",
-    "es": "El Pasado Simple: verbos irregulares (went, saw, bought)",
-    "de": "Das Past Simple: unregelmäßige Verben (went, saw, bought)"
+    "es": "El Pasado Simple: verbos irregulares (went, saw, bought)"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "A rendhagyó igék múltja nem -ed végű, hanem külön alak, amit meg kell tanulni: go → went, buy → bought, see → saw. A spanyolban is vannak rendhagyó alakok (fui, hice, tuve), ezért az ötlet ismerős. A rendhagyó alak csak a kijelentő mondatban jelenik meg; tagadásban és kérdésben ugyanúgy „didn’t” és „did” kell, mint a szabályos igéknél, és az ige visszatér az alapalakra.",
         "en": "The past of irregular verbs does not end in -ed; it is a separate form you have to learn: go → went, buy → bought, see → saw. Spanish has irregular forms too (fui, hice, tuve), so the idea is familiar. The irregular form appears only in affirmative sentences; in negatives and questions you need “didn’t” and “did” exactly as with regular verbs, and the verb goes back to its base form.",
-        "es": "El pasado de los verbos irregulares no termina en -ed; es una forma aparte que hay que aprender: go → went, buy → bought, see → saw. El español también tiene formas irregulares (fui, hice, tuve), así que la idea es conocida. La forma irregular solo aparece en las oraciones afirmativas; en negaciones y preguntas hacen falta «didn’t» y «did» igual que con los verbos regulares, y el verbo vuelve a su forma base.",
-        "de": "Die Vergangenheit unregelmäßiger Verben endet nicht auf -ed; sie ist eine eigene Form, die man lernen muss: go → went, buy → bought, see → saw. Auch das Spanische hat unregelmäßige Formen (fui, hice, tuve), die Idee ist also vertraut. Die unregelmäßige Form erscheint nur im Aussagesatz; in Verneinung und Frage braucht man „didn’t“ und „did“ genau wie bei regelmäßigen Verben, und das Verb kehrt zur Grundform zurück."
+        "es": "El pasado de los verbos irregulares no termina en -ed; es una forma aparte que hay que aprender: go → went, buy → bought, see → saw. El español también tiene formas irregulares (fui, hice, tuve), así que la idea es conocida. La forma irregular solo aparece en las oraciones afirmativas; en negaciones y preguntas hacen falta «didn’t» y «did» igual que con los verbos regulares, y el verbo vuelve a su forma base."
       }
     },
     {
       "kind": "table",
       "id": "pi-forms",
       "title": {
-        "hu": "Rendhagyó múlt idők",
         "en": "Irregular past forms",
-        "es": "Formas irregulares del pasado",
-        "de": "Unregelmäßige Vergangenheitsformen"
+        "es": "Formas irregulares del pasado"
       },
       "header": [
         {
-          "hu": "Ige",
           "en": "Verb",
-          "es": "Verbo",
-          "de": "Verb"
+          "es": "Verbo"
         },
         {
-          "hu": "past",
           "en": "past",
-          "es": "past",
-          "de": "past"
+          "es": "past"
         }
       ],
       "rows": [
@@ -128,23 +118,17 @@
       "kind": "table",
       "id": "pi-be",
       "title": {
-        "hu": "A to be múltja",
         "en": "The past of to be",
-        "es": "El pasado de to be",
-        "de": "Die Vergangenheit von to be"
+        "es": "El pasado de to be"
       },
       "header": [
         {
-          "hu": "Személy",
           "en": "Person",
-          "es": "Persona",
-          "de": "Person"
+          "es": "Persona"
         },
         {
-          "hu": "be",
           "en": "be",
-          "es": "be",
-          "de": "be"
+          "es": "be"
         }
       ],
       "rows": [
@@ -173,64 +157,50 @@
     {
       "kind": "list",
       "title": {
-        "hu": "Kijelentés, tagadás, kérdés",
         "en": "Statements, negatives, questions",
-        "es": "Afirmación, negación, pregunta",
-        "de": "Aussage, Verneinung, Frage"
+        "es": "Afirmación, negación, pregunta"
       },
       "items": [
         {
           "text": {
-            "hu": "Kijelentés: a rendhagyó alak, minden személynél ugyanaz: I went, she went, they went.",
             "en": "Statement: the irregular form, the same for every person: I went, she went, they went.",
-            "es": "Afirmación: la forma irregular, igual para todas las personas: I went, she went, they went.",
-            "de": "Aussage: die unregelmäßige Form, für jede Person gleich: I went, she went, they went."
+            "es": "Afirmación: la forma irregular, igual para todas las personas: I went, she went, they went."
           },
           "examples": [
             {
               "es": "I went to the market yesterday.",
               "tr": {
-                "hu": "Tegnap a piacra mentem.",
                 "en": "I went to the market yesterday.",
-                "es": "Ayer fui al mercado.",
-                "de": "Gestern bin ich zum Markt gegangen."
+                "es": "Ayer fui al mercado."
               }
             },
             {
               "es": "She bought a new phone.",
               "tr": {
-                "hu": "Vett egy új telefont.",
                 "en": "She bought a new phone.",
-                "es": "Ella compró un teléfono nuevo.",
-                "de": "Sie hat ein neues Handy gekauft."
+                "es": "Ella compró un teléfono nuevo."
               }
             }
           ]
         },
         {
           "text": {
-            "hu": "Tagadás és kérdés: didn’t / did + ALAPIGE. Az ige nem marad múlt alakban: I didn’t go, Did you go? (nem „didn’t went”).",
             "en": "Negatives and questions: didn’t / did + BASE VERB. The verb does not stay in the past form: I didn’t go, Did you go? (not “didn’t went”).",
-            "es": "Negación y pregunta: didn’t / did + VERBO BASE. El verbo no se queda en pasado: I didn’t go, Did you go? (no «didn’t went»).",
-            "de": "Verneinung und Frage: didn’t / did + GRUNDFORM. Das Verb bleibt nicht in der Vergangenheitsform: I didn’t go, Did you go? (nicht „didn’t went“)."
+            "es": "Negación y pregunta: didn’t / did + VERBO BASE. El verbo no se queda en pasado: I didn’t go, Did you go? (no «didn’t went»)."
           },
           "examples": [
             {
               "es": "I didn't go to school.",
               "tr": {
-                "hu": "Nem mentem iskolába.",
                 "en": "I didn't go to school.",
-                "es": "No fui a la escuela.",
-                "de": "Ich bin nicht zur Schule gegangen."
+                "es": "No fui a la escuela."
               }
             },
             {
               "es": "Did you see the movie?",
               "tr": {
-                "hu": "Láttad a filmet?",
                 "en": "Did you see the movie?",
-                "es": "¿Viste la película?",
-                "de": "Hast du den Film gesehen?"
+                "es": "¿Viste la película?"
               }
             }
           ]
@@ -240,36 +210,28 @@
     {
       "kind": "list",
       "title": {
-        "hu": "A to be múltja: was / were",
         "en": "The past of to be: was / were",
-        "es": "El pasado de to be: was / were",
-        "de": "Die Vergangenheit von to be: was / were"
+        "es": "El pasado de to be: was / were"
       },
       "items": [
         {
           "text": {
-            "hu": "I / he / she / it: WAS. You / we / they: WERE. Tagadás: wasn’t, weren’t. Kérdés: Was / Were + alany. A to be-nél nincs „did”.",
             "en": "I / he / she / it: WAS. You / we / they: WERE. Negative: wasn’t, weren’t. Question: Was / Were + subject. There is no “did” with to be.",
-            "es": "I / he / she / it: WAS. You / we / they: WERE. Negación: wasn’t, weren’t. Pregunta: Was / Were + sujeto. Con to be no hay «did».",
-            "de": "I / he / she / it: WAS. You / we / they: WERE. Verneinung: wasn’t, weren’t. Frage: Was / Were + Subjekt. Bei to be gibt es kein „did“."
+            "es": "I / he / she / it: WAS. You / we / they: WERE. Negación: wasn’t, weren’t. Pregunta: Was / Were + sujeto. Con to be no hay «did»."
           },
           "examples": [
             {
               "es": "He was tired yesterday.",
               "tr": {
-                "hu": "Tegnap fáradt volt.",
                 "en": "He was tired yesterday.",
-                "es": "Ayer estaba cansado.",
-                "de": "Er war gestern müde."
+                "es": "Ayer estaba cansado."
               }
             },
             {
               "es": "Were you at home last night?",
               "tr": {
-                "hu": "Otthon voltál tegnap este?",
                 "en": "Were you at home last night?",
-                "es": "¿Estabas en casa anoche?",
-                "de": "Warst du gestern Abend zu Hause?"
+                "es": "¿Estabas en casa anoche?"
               }
             }
           ]
@@ -279,54 +241,42 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "A rendhagyó igékhez ne tegyél -ed-et. Ne mondd, hogy „I goed” vagy „She buyed”, hanem: „I went”, „She bought”.",
         "en": "Do not add -ed to irregular verbs. Do not say “I goed” or “She buyed”; say “I went”, “She bought”.",
-        "es": "No añadas -ed a los verbos irregulares. No digas «I goed» ni «She buyed», di «I went», «She bought».",
-        "de": "Häng bei unregelmäßigen Verben kein -ed an. Sag nicht „I goed“ oder „She buyed“, sondern „I went“, „She bought“."
+        "es": "No añadas -ed a los verbos irregulares. No digas «I goed» ni «She buyed», di «I went», «She bought»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "Kérdésben és tagadásban az ige alapalakban marad. Ne mondd, hogy „Did you went?” vagy „I didn’t saw”, hanem: „Did you go?” és „I didn’t see”.",
         "en": "In questions and negatives the verb stays in its base form. Do not say “Did you went?” or “I didn’t saw”; say “Did you go?” and “I didn’t see”.",
-        "es": "En preguntas y negaciones el verbo se queda en forma base. No digas «Did you went?» ni «I didn’t saw», di «Did you go?» y «I didn’t see».",
-        "de": "In Fragen und Verneinungen bleibt das Verb in der Grundform. Sag nicht „Did you went?“ oder „I didn’t saw“, sondern „Did you go?“ und „I didn’t see“."
+        "es": "En preguntas y negaciones el verbo se queda en forma base. No digas «Did you went?» ni «I didn’t saw», di «Did you go?» y «I didn’t see»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A to be múltja mellett nincs „did”, és minden személynek megvan a maga alakja. Ne mondd, hogy „I were” vagy „We was”, hanem: „I was”, „We were”.",
         "en": "With the past of to be there is no “did”, and each person has its own form. Do not say “I were” or “We was”; say “I was”, “We were”.",
-        "es": "Con el pasado de to be no hay «did», y cada persona tiene su forma. No digas «I were» ni «We was», di «I was», «We were».",
-        "de": "Beim Past von to be gibt es kein „did“, und jede Person hat ihre eigene Form. Sag nicht „I were“ oder „We was“, sondern „I was“, „We were“."
+        "es": "Con el pasado de to be no hay «did», y cada persona tiene su forma. No digas «I were» ni «We was», di «I was», «We were»."
       }
     },
     {
       "kind": "tip",
       "text": {
-        "hu": "A rendhagyó alakokat ismételve tanuld meg. A leggyakoribbak: was/were, had, went, did, saw, made, took, came, got, said.",
         "en": "Learn the irregular forms by repetition. The most frequent ones: was/were, had, went, did, saw, made, took, came, got, said.",
-        "es": "Aprende las formas irregulares repitiéndolas. Las más frecuentes: was/were, had, went, did, saw, made, took, came, got, said.",
-        "de": "Lerne die unregelmäßigen Formen durch Wiederholung. Die häufigsten: was/were, had, went, did, saw, made, took, came, got, said."
+        "es": "Aprende las formas irregulares repitiéndolas. Las más frecuentes: was/were, had, went, did, saw, made, took, came, got, said."
       }
     }
   ],
   "speak": {
-    "hu": "A rendhagyó igék múltja külön alak, amit meg kell tanulni: «go», «went», «buy», «bought», «see», «saw», «eat», «ate», «take», «took». Minden személynél ugyanaz: «I went», «she went», «they went». Tagadásban és kérdésben az ige visszatér az alapalakra: «I didn't go», «Did you go?». A to be múltja «was» vagy «were»: «I was», «you were», «he was», «we were». Vigyázat: nem «I goed», nem «did you went» és nem «I were».",
     "en": "The past of irregular verbs is a separate form you have to learn: «go», «went», «buy», «bought», «see», «saw», «eat», «ate», «take», «took». It is the same for every person: «I went», «she went», «they went». In negatives and questions the verb goes back to its base form: «I didn't go», «Did you go?». The past of to be is «was» or «were»: «I was», «you were», «he was», «we were». Careful: not «I goed», not «did you went» and not «I were».",
-    "es": "El pasado de los verbos irregulares es una forma aparte que hay que aprender: «go», «went», «buy», «bought», «see», «saw», «eat», «ate», «take», «took». Es igual para todas las personas: «I went», «she went», «they went». En negaciones y preguntas el verbo vuelve a su forma base: «I didn't go», «Did you go?». El pasado de to be es «was» o «were»: «I was», «you were», «he was», «we were». Cuidado: no «I goed», no «did you went» y no «I were».",
-    "de": "Die Vergangenheit unregelmäßiger Verben ist eine eigene Form, die man lernen muss: «go», «went», «buy», «bought», «see», «saw», «eat», «ate», «take», «took». Sie ist für jede Person gleich: «I went», «she went», «they went». In Verneinung und Frage kehrt das Verb zur Grundform zurück: «I didn't go», «Did you go?». Die Vergangenheit von to be ist «was» oder «were»: «I was», «you were», «he was», «we were». Vorsicht: nicht «I goed», nicht «did you went» und nicht «I were»."
+    "es": "El pasado de los verbos irregulares es una forma aparte que hay que aprender: «go», «went», «buy», «bought», «see», «saw», «eat», «ate», «take», «took». Es igual para todas las personas: «I went», «she went», «they went». En negaciones y preguntas el verbo vuelve a su forma base: «I didn't go», «Did you go?». El pasado de to be es «was» o «were»: «I was», «you were», «he was», «we were». Cuidado: no «I goed», no «did you went» y no «I were»."
   },
   "glossary": [
     {
       "word": "didn't",
       "gloss": {
-        "hu": "nem (did not)",
         "en": "did not",
-        "es": "no (did not)",
-        "de": "nicht (did not)"
+        "es": "no (did not)"
       }
     }
   ],
@@ -341,30 +291,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A go múltja rendhagyó: went. A „yesterday” múltat jelez: I went to the market.",
         "en": "The past of go is irregular: went. “Yesterday” shows the past: I went to the market.",
-        "es": "El pasado de go es irregular: went. «Yesterday» indica pasado: I went to the market.",
-        "de": "Die Vergangenheit von go ist unregelmäßig: went. „Yesterday“ zeigt die Vergangenheit an: I went to the market."
+        "es": "El pasado de go es irregular: went. «Yesterday» indica pasado: I went to the market."
       },
       "wrong": {
         "goed": {
-          "hu": "A „goed” nem létező alak; a go rendhagyó: went.",
           "en": "“Goed” does not exist; go is irregular: went.",
-          "es": "«Goed» no existe; go es irregular: went.",
-          "de": "„Goed“ gibt es nicht; go ist unregelmäßig: went."
+          "es": "«Goed» no existe; go es irregular: went."
         },
         "go": {
-          "hu": "A „go” jelen idő; a „yesterday” múlt, ezért „went”.",
           "en": "“Go” is present; “yesterday” is past, so “went”.",
-          "es": "«Go» es presente; «yesterday» es pasado, por eso «went».",
-          "de": "„Go“ ist Präsens; „yesterday“ ist Vergangenheit, deshalb „went“."
+          "es": "«Go» es presente; «yesterday» es pasado, por eso «went»."
         }
       },
       "examples": [
         "She went home by bus.",
         "We went to school."
       ],
-      "tr": { "hu": "Tegnap elmentem a piacra.", "en": "I went to the market yesterday.", "es": "Fui al mercado ayer.", "de": "Ich bin gestern auf den Markt gegangen." }
+      "tr": { "en": "I went to the market yesterday.", "es": "Fui al mercado ayer." }
     },
     {
       "id": "pi-02",
@@ -376,30 +320,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A buy múltja rendhagyó: bought.",
         "en": "The past of buy is irregular: bought.",
-        "es": "El pasado de buy es irregular: bought.",
-        "de": "Die Vergangenheit von buy ist unregelmäßig: bought."
+        "es": "El pasado de buy es irregular: bought."
       },
       "wrong": {
         "buyed": {
-          "hu": "A „buyed” nem létező alak; a buy rendhagyó: bought.",
           "en": "“Buyed” does not exist; buy is irregular: bought.",
-          "es": "«Buyed» no existe; buy es irregular: bought.",
-          "de": "„Buyed“ gibt es nicht; buy ist unregelmäßig: bought."
+          "es": "«Buyed» no existe; buy es irregular: bought."
         },
         "buy": {
-          "hu": "A „buy” jelen idő; a „last week” múlt, ezért „bought”.",
           "en": "“Buy” is present; “last week” is past, so “bought”.",
-          "es": "«Buy» es presente; «last week» es pasado, por eso «bought».",
-          "de": "„Buy“ ist Präsens; „last week“ ist Vergangenheit, deshalb „bought“."
+          "es": "«Buy» es presente; «last week» es pasado, por eso «bought»."
         }
       },
       "examples": [
         "He bought a car.",
         "I bought rice at the market."
       ],
-      "tr": { "hu": "Múlt héten vett egy új telefont.", "en": "She bought a new phone last week.", "es": "Ella compró un celular nuevo la semana pasada.", "de": "Sie hat letzte Woche ein neues Handy gekauft." }
+      "tr": { "en": "She bought a new phone last week.", "es": "Ella compró un celular nuevo la semana pasada." }
     },
     {
       "id": "pi-17",
@@ -419,30 +357,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "Az eat múltja rendhagyó: ate.",
         "en": "The past of eat is irregular: ate.",
-        "es": "El pasado de eat es irregular: ate.",
-        "de": "Die Vergangenheit von eat ist unregelmäßig: ate."
+        "es": "El pasado de eat es irregular: ate."
       },
       "wrong": {
         "eated": {
-          "hu": "Az „eated” nem létező alak; az eat rendhagyó: ate.",
           "en": "“Eated” does not exist; eat is irregular: ate.",
-          "es": "«Eated» no existe; eat es irregular: ate.",
-          "de": "„Eated“ gibt es nicht; eat ist unregelmäßig: ate."
+          "es": "«Eated» no existe; eat es irregular: ate."
         },
         "eat": {
-          "hu": "Az „eat” jelen idő; az ebéd itt múltbeli (ate).",
           "en": "“Eat” is present; the lunch here is in the past (ate).",
-          "es": "«Eat» es presente; el almuerzo aquí es pasado (ate).",
-          "de": "„Eat“ ist Präsens; das Mittagessen liegt hier in der Vergangenheit (ate)."
+          "es": "«Eat» es presente; el almuerzo aquí es pasado (ate)."
         }
       },
       "examples": [
         "She ate an apple.",
         "They ate at home."
       ],
-      "tr": { "hu": "Rizst ettünk ebédre.", "en": "We ate rice for lunch.", "es": "Comimos arroz para el almuerzo.", "de": "Wir haben Reis zu Mittag gegessen." }
+      "tr": { "en": "We ate rice for lunch.", "es": "Comimos arroz para el almuerzo." }
     },
     {
       "id": "pi-04",
@@ -454,30 +386,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A see múltja rendhagyó: saw.",
         "en": "The past of see is irregular: saw.",
-        "es": "El pasado de see es irregular: saw.",
-        "de": "Die Vergangenheit von see ist unregelmäßig: saw."
+        "es": "El pasado de see es irregular: saw."
       },
       "wrong": {
         "see": {
-          "hu": "A „see” jelen idő; a „yesterday” múlt, ezért „saw”.",
           "en": "“See” is present; “yesterday” is past, so “saw”.",
-          "es": "«See» es presente; «yesterday» es pasado, por eso «saw».",
-          "de": "„See“ ist Präsens; „yesterday“ ist Vergangenheit, deshalb „saw“."
+          "es": "«See» es presente; «yesterday» es pasado, por eso «saw»."
         },
         "sees": {
-          "hu": "A „sees” egyszerű jelen he / she / it mellé; a múlt „saw”.",
           "en": "“Sees” is the present simple for he / she / it; the past is “saw”.",
-          "es": "«Sees» es el presente simple para he / she / it; el pasado es «saw».",
-          "de": "„Sees“ ist das Present Simple für he / she / it; die Vergangenheit ist „saw“."
+          "es": "«Sees» es el presente simple para he / she / it; el pasado es «saw»."
         }
       },
       "examples": [
         "I saw my friends.",
         "She saw a big dog."
       ],
-      "tr": { "hu": "Tegnap megnézett egy filmet.", "en": "He saw a movie yesterday.", "es": "Él vio una película ayer.", "de": "Er hat gestern einen Film gesehen." }
+      "tr": { "en": "He saw a movie yesterday.", "es": "Él vio una película ayer." }
     },
     {
       "id": "pi-18",
@@ -493,46 +419,34 @@
       "es": "I went to Mexico last year.",
       "target": "went",
       "tr": {
-        "hu": "Tavaly Mexikóban voltam.",
         "en": "I went to Mexico last year.",
-        "es": "Fui a México el año pasado.",
-        "de": "Ich bin letztes Jahr nach Mexiko gefahren."
+        "es": "Fui a México el año pasado."
       },
       "options": [
         {
           "text": {
-            "hu": "rendhagyó ige: a go-nak saját múlt alakja van",
             "en": "irregular verb: go has its own past form",
-            "es": "verbo irregular: go tiene su propia forma de pasado",
-            "de": "unregelmäßiges Verb: go hat eine eigene Vergangenheitsform"
+            "es": "verbo irregular: go tiene su propia forma de pasado"
           }
         },
         {
           "text": {
-            "hu": "szabályos ige: go + -ed",
             "en": "regular verb: go + -ed",
-            "es": "verbo regular: go + -ed",
-            "de": "regelmäßiges Verb: go + -ed"
+            "es": "verbo regular: go + -ed"
           },
           "wrong": {
-            "hu": "A go rendhagyó, ezért nem „goed”, hanem „went”. Az ilyen igéket meg kell tanulni.",
             "en": "Go is irregular, so not “goed” but “went”. You have to learn such verbs.",
-            "es": "Go es irregular, por eso no «goed» sino «went». Estos verbos hay que aprenderlos.",
-            "de": "Go ist unregelmäßig, deshalb nicht „goed“, sondern „went“. Solche Verben muss man lernen."
+            "es": "Go es irregular, por eso no «goed» sino «went». Estos verbos hay que aprenderlos."
           }
         },
         {
           "text": {
-            "hu": "did + go: a múlt jele a did",
             "en": "did + go: the past is marked by did",
-            "es": "did + go: el pasado se marca con did",
-            "de": "did + go: die Vergangenheit steckt in did"
+            "es": "did + go: el pasado se marca con did"
           },
           "wrong": {
-            "hu": "Kijelentésben nincs „did”: a rendhagyó ige maga viseli a múltat (went).",
             "en": "In a statement there is no “did”: the irregular verb itself carries the past (went).",
-            "es": "En una afirmación no hay «did»: el propio verbo irregular lleva el pasado (went).",
-            "de": "In der Aussage gibt es kein „did“: das unregelmäßige Verb trägt die Vergangenheit selbst (went)."
+            "es": "En una afirmación no hay «did»: el propio verbo irregular lleva el pasado (went)."
           }
         }
       ],
@@ -548,30 +462,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A make múltja rendhagyó: made.",
         "en": "The past of make is irregular: made.",
-        "es": "El pasado de make es irregular: made.",
-        "de": "Die Vergangenheit von make ist unregelmäßig: made."
+        "es": "El pasado de make es irregular: made."
       },
       "wrong": {
         "maked": {
-          "hu": "A „maked” nem létező alak; a make rendhagyó: made.",
           "en": "“Maked” does not exist; make is irregular: made.",
-          "es": "«Maked» no existe; make es irregular: made.",
-          "de": "„Maked“ gibt es nicht; make ist unregelmäßig: made."
+          "es": "«Maked» no existe; make es irregular: made."
         },
         "make": {
-          "hu": "A „make” jelen idő; a „last Sunday” múlt, ezért „made”.",
           "en": "“Make” is present; “last Sunday” is past, so “made”.",
-          "es": "«Make» es presente; «last Sunday» es pasado, por eso «made».",
-          "de": "„Make“ ist Präsens; „last Sunday“ ist Vergangenheit, deshalb „made“."
+          "es": "«Make» es presente; «last Sunday» es pasado, por eso «made»."
         }
       },
       "examples": [
         "She made dinner.",
         "We made a party."
       ],
-      "tr": { "hu": "Múlt vasárnap sütöttek egy tortát.", "en": "They made a cake last Sunday.", "es": "Ellos hicieron un pastel el domingo pasado.", "de": "Sie haben letzten Sonntag einen Kuchen gebacken." }
+      "tr": { "en": "They made a cake last Sunday.", "es": "Ellos hicieron un pastel el domingo pasado." }
     },
     {
       "id": "pi-06",
@@ -583,30 +491,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A write múltja rendhagyó: wrote.",
         "en": "The past of write is irregular: wrote.",
-        "es": "El pasado de write es irregular: wrote.",
-        "de": "Die Vergangenheit von write ist unregelmäßig: wrote."
+        "es": "El pasado de write es irregular: wrote."
       },
       "wrong": {
         "writed": {
-          "hu": "A „writed” nem létező alak; a write rendhagyó: wrote.",
           "en": "“Writed” does not exist; write is irregular: wrote.",
-          "es": "«Writed» no existe; write es irregular: wrote.",
-          "de": "„Writed“ gibt es nicht; write ist unregelmäßig: wrote."
+          "es": "«Writed» no existe; write es irregular: wrote."
         },
         "write": {
-          "hu": "A „write” jelen idő; a mondat múltat fejez ki: wrote.",
           "en": "“Write” is present; the sentence is about the past: wrote.",
-          "es": "«Write» es presente; la oración habla del pasado: wrote.",
-          "de": "„Write“ ist Präsens; der Satz spricht über die Vergangenheit: wrote."
+          "es": "«Write» es presente; la oración habla del pasado: wrote."
         }
       },
       "examples": [
         "I wrote a book.",
         "He wrote his name."
       ],
-      "tr": { "hu": "Ráírta a nevét a papírra.", "en": "She wrote her name on the paper.", "es": "Ella escribió su nombre en el papel.", "de": "Sie schrieb ihren Namen auf das Papier." }
+      "tr": { "en": "She wrote her name on the paper.", "es": "Ella escribió su nombre en el papel." }
     },
     {
       "id": "pi-19",
@@ -626,30 +528,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A drink múltja rendhagyó: drank.",
         "en": "The past of drink is irregular: drank.",
-        "es": "El pasado de drink es irregular: drank.",
-        "de": "Die Vergangenheit von drink ist unregelmäßig: drank."
+        "es": "El pasado de drink es irregular: drank."
       },
       "wrong": {
         "drinked": {
-          "hu": "A „drinked” nem létező alak; a drink rendhagyó: drank.",
           "en": "“Drinked” does not exist; drink is irregular: drank.",
-          "es": "«Drinked» no existe; drink es irregular: drank.",
-          "de": "„Drinked“ gibt es nicht; drink ist unregelmäßig: drank."
+          "es": "«Drinked» no existe; drink es irregular: drank."
         },
         "drink": {
-          "hu": "A „drink” jelen idő; a múltat a „drank” fejezi ki.",
           "en": "“Drink” is present; the past is “drank”.",
-          "es": "«Drink» es presente; el pasado es «drank».",
-          "de": "„Drink“ ist Präsens; die Vergangenheit ist „drank“."
+          "es": "«Drink» es presente; el pasado es «drank»."
         }
       },
       "examples": [
         "She drank coffee.",
         "I drank milk."
       ],
-      "tr": { "hu": "Éjszaka vizet ivott.", "en": "He drank water at night.", "es": "Él bebió agua por la noche.", "de": "Er hat nachts Wasser getrunken." }
+      "tr": { "en": "He drank water at night.", "es": "Él bebió agua por la noche." }
     },
     {
       "id": "pi-08",
@@ -661,30 +557,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A come múltja rendhagyó: came.",
         "en": "The past of come is irregular: came.",
-        "es": "El pasado de come es irregular: came.",
-        "de": "Die Vergangenheit von come ist unregelmäßig: came."
+        "es": "El pasado de come es irregular: came."
       },
       "wrong": {
         "comed": {
-          "hu": "A „comed” nem létező alak; a come rendhagyó: came.",
           "en": "“Comed” does not exist; come is irregular: came.",
-          "es": "«Comed» no existe; come es irregular: came.",
-          "de": "„Comed“ gibt es nicht; come ist unregelmäßig: came."
+          "es": "«Comed» no existe; come es irregular: came."
         },
         "come": {
-          "hu": "A „come” jelen idő; a múltat a „came” fejezi ki.",
           "en": "“Come” is present; the past is “came”.",
-          "es": "«Come» es presente; el pasado es «came».",
-          "de": "„Come“ ist Präsens; die Vergangenheit ist „came“."
+          "es": "«Come» es presente; el pasado es «came»."
         }
       },
       "examples": [
         "She came home late.",
         "They came here."
       ],
-      "tr": { "hu": "Későn jöttünk haza.", "en": "We came home late.", "es": "Llegamos tarde a casa.", "de": "Wir sind spät nach Hause gekommen." }
+      "tr": { "en": "We came home late.", "es": "Llegamos tarde a casa." }
     },
     {
       "id": "pi-09",
@@ -696,30 +586,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A take múltja rendhagyó: took.",
         "en": "The past of take is irregular: took.",
-        "es": "El pasado de take es irregular: took.",
-        "de": "Die Vergangenheit von take ist unregelmäßig: took."
+        "es": "El pasado de take es irregular: took."
       },
       "wrong": {
         "taked": {
-          "hu": "A „taked” nem létező alak; a take rendhagyó: took.",
           "en": "“Taked” does not exist; take is irregular: took.",
-          "es": "«Taked» no existe; take es irregular: took.",
-          "de": "„Taked“ gibt es nicht; take ist unregelmäßig: took."
+          "es": "«Taked» no existe; take es irregular: took."
         },
         "take": {
-          "hu": "A „take” jelen idő; a múltat a „took” fejezi ki.",
           "en": "“Take” is present; the past is “took”.",
-          "es": "«Take» es presente; el pasado es «took».",
-          "de": "„Take“ ist Präsens; die Vergangenheit ist „took“."
+          "es": "«Take» es presente; el pasado es «took»."
         }
       },
       "examples": [
         "He took a bus.",
         "I took my bag."
       ],
-      "tr": { "hu": "Busszal ment iskolába.", "en": "She took a bus to school.", "es": "Ella tomó un camión a la escuela.", "de": "Sie ist mit dem Bus zur Schule gefahren." }
+      "tr": { "en": "She took a bus to school.", "es": "Ella tomó un camión a la escuela." }
     },
     {
       "id": "pi-20",
@@ -739,30 +623,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A didn’t után az ige alapalakja áll: I didn’t go to school.",
         "en": "After didn’t the verb stays in its base form: I didn’t go to school.",
-        "es": "Después de didn’t el verbo va en forma base: I didn’t go to school.",
-        "de": "Nach didn’t steht das Verb in der Grundform: I didn’t go to school."
+        "es": "Después de didn’t el verbo va en forma base: I didn’t go to school."
       },
       "wrong": {
         "went": {
-          "hu": "A múlt jele már a „didn’t”-ben van; utána az alapige kell: go, nem „went”.",
           "en": "The past is already in “didn’t”; the base verb follows: go, not “went”.",
-          "es": "El pasado ya está en «didn’t»; después va el verbo base: go, no «went».",
-          "de": "Die Vergangenheit steckt schon in „didn’t“; danach folgt die Grundform: go, nicht „went“."
+          "es": "El pasado ya está en «didn’t»; después va el verbo base: go, no «went»."
         },
         "goes": {
-          "hu": "A „didn’t” után nem kap az ige -s-t: go.",
           "en": "After “didn’t” the verb takes no -s: go.",
-          "es": "Después de «didn’t» el verbo no lleva -s: go.",
-          "de": "Nach „didn’t“ bekommt das Verb kein -s: go."
+          "es": "Después de «didn’t» el verbo no lleva -s: go."
         }
       },
       "examples": [
         "She didn't eat rice.",
         "We didn't see the movie."
       ],
-      "tr": { "hu": "Nem mentem iskolába.", "en": "I didn't go to school.", "es": "No fui a la escuela.", "de": "Ich bin nicht zur Schule gegangen." }
+      "tr": { "en": "I didn't go to school.", "es": "No fui a la escuela." }
     },
     {
       "kind": "why",
@@ -770,46 +648,34 @@
       "es": "Did you go there?",
       "target": "go",
       "tr": {
-        "hu": "Ott voltál?",
         "en": "Did you go there?",
-        "es": "¿Fuiste allí?",
-        "de": "Bist du dorthin gegangen?"
+        "es": "¿Fuiste allí?"
       },
       "options": [
         {
           "text": {
-            "hu": "a did után az ige alapalakban áll",
             "en": "after did the verb is in its base form",
-            "es": "después de did el verbo va en forma base",
-            "de": "nach did steht das Verb in der Grundform"
+            "es": "después de did el verbo va en forma base"
           }
         },
         {
           "text": {
-            "hu": "a did után a múlt alak áll: went",
             "en": "after did the past form follows: went",
-            "es": "después de did va la forma de pasado: went",
-            "de": "nach did folgt die Vergangenheitsform: went"
+            "es": "después de did va la forma de pasado: went"
           },
           "wrong": {
-            "hu": "A múlt jele már a „did”-ben van; ha az igét is múltba tennéd, kétszer jelölnéd: „Did you went?” hibás.",
             "en": "The past is already in “did”; putting the verb in the past too would mark it twice: “Did you went?” is wrong.",
-            "es": "El pasado ya está en «did»; poner también el verbo en pasado lo marcaría dos veces: «Did you went?» es incorrecto.",
-            "de": "Die Vergangenheit steckt schon in „did“; das Verb auch in die Vergangenheit zu setzen, würde sie doppelt markieren: „Did you went?“ ist falsch."
+            "es": "El pasado ya está en «did»; poner también el verbo en pasado lo marcaría dos veces: «Did you went?» es incorrecto."
           }
         },
         {
           "text": {
-            "hu": "a go itt jelen idő, mert a kérdés jelenre vonatkozik",
             "en": "go is present here, because the question is about now",
-            "es": "go es aquí presente, porque la pregunta es sobre ahora",
-            "de": "go ist hier Präsens, weil die Frage die Gegenwart betrifft"
+            "es": "go es aquí presente, porque la pregunta es sobre ahora"
           },
           "wrong": {
-            "hu": "A „did” múltat jelez; a „go” csak az alapalak, nem jelen idő.",
             "en": "“Did” shows the past; “go” is just the base form, not the present tense.",
-            "es": "«Did» indica el pasado; «go» es solo la forma base, no el presente.",
-            "de": "„Did“ zeigt die Vergangenheit; „go“ ist nur die Grundform, nicht das Präsens."
+            "es": "«Did» indica el pasado; «go» es solo la forma base, no el presente."
           }
         }
       ],
@@ -825,30 +691,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A múlt kérdése Did-del indul, utána az alapige áll: Did you go to the party?",
         "en": "A past question starts with Did, followed by the base verb: Did you go to the party?",
-        "es": "Una pregunta en pasado empieza con Did, seguido del verbo base: Did you go to the party?",
-        "de": "Eine Frage in der Vergangenheit beginnt mit Did, danach folgt die Grundform: Did you go to the party?"
+        "es": "Una pregunta en pasado empieza con Did, seguido del verbo base: Did you go to the party?"
       },
       "wrong": {
         "Do": {
-          "hu": "A „Do” jelen idő; a múlt kérdése „Did”.",
           "en": "“Do” is present; the past question uses “Did”.",
-          "es": "«Do» es presente; la pregunta en pasado usa «Did».",
-          "de": "„Do“ ist Präsens; die Frage in der Vergangenheit nimmt „Did“."
+          "es": "«Do» es presente; la pregunta en pasado usa «Did»."
         },
         "Were": {
-          "hu": "A „Were” a to be múltja; a „go” rendes ige, ezért „Did you go?”.",
           "en": "“Were” is the past of to be; “go” is a normal verb, so “Did you go?”.",
-          "es": "«Were» es el pasado de to be; «go» es un verbo normal, por eso «Did you go?».",
-          "de": "„Were“ ist die Vergangenheit von to be; „go“ ist ein normales Verb, deshalb „Did you go?“."
+          "es": "«Were» es el pasado de to be; «go» es un verbo normal, por eso «Did you go?»."
         }
       },
       "examples": [
         "Did she see the movie?",
         "Did they eat lunch?"
       ],
-      "tr": { "hu": "Elmentél a buliba?", "en": "Did you go to the party?", "es": "¿Fuiste a la fiesta?", "de": "Bist du zur Party gegangen?" }
+      "tr": { "en": "Did you go to the party?", "es": "¿Fuiste a la fiesta?" }
     },
     {
       "id": "pi-12",
@@ -860,30 +720,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A he mellé a to be múltja „was”: He was tired yesterday.",
         "en": "With he the past of to be is “was”: He was tired yesterday.",
-        "es": "Con he el pasado de to be es «was»: He was tired yesterday.",
-        "de": "Bei he lautet die Vergangenheit von to be „was“: He was tired yesterday."
+        "es": "Con he el pasado de to be es «was»: He was tired yesterday."
       },
       "wrong": {
         "were": {
-          "hu": "A „were” a you, we, they mellé való; a „he” mellé „was” kell.",
           "en": "“Were” goes with you, we, they; with “he” you need “was”.",
-          "es": "«Were» va con you, we, they; con «he» hace falta «was».",
-          "de": "„Were“ gehört zu you, we, they; bei „he“ braucht man „was“."
+          "es": "«Were» va con you, we, they; con «he» hace falta «was»."
         },
         "is": {
-          "hu": "Az „is” jelen idő; a „yesterday” múlt, ezért „was”.",
           "en": "“Is” is present; “yesterday” is past, so “was”.",
-          "es": "«Is» es presente; «yesterday» es pasado, por eso «was».",
-          "de": "„Is“ ist Präsens; „yesterday“ ist Vergangenheit, deshalb „was“."
+          "es": "«Is» es presente; «yesterday» es pasado, por eso «was»."
         }
       },
       "examples": [
         "I was at home.",
         "She was hungry."
       ],
-      "tr": { "hu": "Tegnap fáradt volt.", "en": "He was tired yesterday.", "es": "Él estaba cansado ayer.", "de": "Er war gestern müde." }
+      "tr": { "en": "He was tired yesterday.", "es": "Él estaba cansado ayer." }
     },
     {
       "id": "pi-22",
@@ -903,30 +757,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A we mellé a to be múltja „were”: We were at home last night.",
         "en": "With we the past of to be is “were”: We were at home last night.",
-        "es": "Con we el pasado de to be es «were»: We were at home last night.",
-        "de": "Bei we lautet die Vergangenheit von to be „were“: We were at home last night."
+        "es": "Con we el pasado de to be es «were»: We were at home last night."
       },
       "wrong": {
         "was": {
-          "hu": "A „was” az I, he, she, it mellé való; a „we” mellé „were” kell.",
           "en": "“Was” goes with I, he, she, it; with “we” you need “were”.",
-          "es": "«Was» va con I, he, she, it; con «we» hace falta «were».",
-          "de": "„Was“ gehört zu I, he, she, it; bei „we“ braucht man „were“."
+          "es": "«Was» va con I, he, she, it; con «we» hace falta «were»."
         },
         "are": {
-          "hu": "Az „are” jelen idő; a „last night” múlt, ezért „were”.",
           "en": "“Are” is present; “last night” is past, so “were”.",
-          "es": "«Are» es presente; «last night» es pasado, por eso «were».",
-          "de": "„Are“ ist Präsens; „last night“ ist Vergangenheit, deshalb „were“."
+          "es": "«Are» es presente; «last night» es pasado, por eso «were»."
         }
       },
       "examples": [
         "They were at school.",
         "You were tired."
       ],
-      "tr": { "hu": "Tegnap este otthon voltunk.", "en": "We were at home last night.", "es": "Estuvimos en casa anoche.", "de": "Wir waren gestern Abend zu Hause." }
+      "tr": { "en": "We were at home last night.", "es": "Estuvimos en casa anoche." }
     },
     {
       "id": "pi-14",
@@ -938,30 +786,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A Did után az ige alapalakja áll: Did she buy the book?",
         "en": "After Did the verb stays in its base form: Did she buy the book?",
-        "es": "Después de Did el verbo va en forma base: Did she buy the book?",
-        "de": "Nach Did steht das Verb in der Grundform: Did she buy the book?"
+        "es": "Después de Did el verbo va en forma base: Did she buy the book?"
       },
       "wrong": {
         "bought": {
-          "hu": "A múlt jele már a „Did”-ben van; az igének az alapalakban kell maradnia: buy.",
           "en": "The past is already in “Did”; the verb has to stay in the base form: buy.",
-          "es": "El pasado ya está en «Did»; el verbo tiene que quedarse en forma base: buy.",
-          "de": "Die Vergangenheit steckt schon in „Did“; das Verb muss in der Grundform bleiben: buy."
+          "es": "El pasado ya está en «Did»; el verbo tiene que quedarse en forma base: buy."
         },
         "buys": {
-          "hu": "A „Did” után nem kap az ige -s-t: buy.",
           "en": "After “Did” the verb takes no -s: buy.",
-          "es": "Después de «Did» el verbo no lleva -s: buy.",
-          "de": "Nach „Did“ bekommt das Verb kein -s: buy."
+          "es": "Después de «Did» el verbo no lleva -s: buy."
         }
       },
       "examples": [
         "Did he take the bus?",
         "Did you see her?"
       ],
-      "tr": { "hu": "Megvette a könyvet?", "en": "Did she buy the book?", "es": "¿Ella compró el libro?", "de": "Hat sie das Buch gekauft?" }
+      "tr": { "en": "Did she buy the book?", "es": "¿Ella compró el libro?" }
     },
     {
       "id": "pi-27",
@@ -1003,30 +845,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A meet múltja rendhagyó: met.",
         "en": "The past of meet is irregular: met.",
-        "es": "El pasado de meet es irregular: met.",
-        "de": "Die Vergangenheit von meet ist unregelmäßig: met."
+        "es": "El pasado de meet es irregular: met."
       },
       "wrong": {
         "meeted": {
-          "hu": "A „meeted” nem létező alak; a meet rendhagyó: met.",
           "en": "“Meeted” does not exist; meet is irregular: met.",
-          "es": "«Meeted» no existe; meet es irregular: met.",
-          "de": "„Meeted“ gibt es nicht; meet ist unregelmäßig: met."
+          "es": "«Meeted» no existe; meet es irregular: met."
         },
         "meet": {
-          "hu": "A „meet” jelen idő; a „last week” múlt, ezért „met”.",
           "en": "“Meet” is present; “last week” is past, so “met”.",
-          "es": "«Meet» es presente; «last week» es pasado, por eso «met».",
-          "de": "„Meet“ ist Präsens; „last week“ ist Vergangenheit, deshalb „met“."
+          "es": "«Meet» es presente; «last week» es pasado, por eso «met»."
         }
       },
       "examples": [
         "I met my teacher.",
         "We met at the bank."
       ],
-      "tr": { "hu": "Múlt héten találkozott a barátaival.", "en": "She met her friends last week.", "es": "Ella se reunió con sus amigos la semana pasada.", "de": "Sie hat letzte Woche ihre Freunde getroffen." }
+      "tr": { "en": "She met her friends last week.", "es": "Ella se reunió con sus amigos la semana pasada." }
     },
     {
       "id": "pi-23",
@@ -1046,30 +882,24 @@
       ],
       "correct": 0,
       "why": {
-        "hu": "A they mellé a to be múltja „were”, és a kérdésben elöl áll: Were they at school?",
         "en": "With they the past of to be is “were”, and it goes first in the question: Were they at school?",
-        "es": "Con they el pasado de to be es «were», y va primero en la pregunta: Were they at school?",
-        "de": "Bei they lautet die Vergangenheit von to be „were“, und in der Frage steht es vorn: Were they at school?"
+        "es": "Con they el pasado de to be es «were», y va primero en la pregunta: Were they at school?"
       },
       "wrong": {
         "Was": {
-          "hu": "A „Was” az I, he, she, it mellé való; a „they” mellé „Were” kell.",
           "en": "“Was” goes with I, he, she, it; with “they” you need “Were”.",
-          "es": "«Was» va con I, he, she, it; con «they» hace falta «Were».",
-          "de": "„Was“ gehört zu I, he, she, it; bei „they“ braucht man „Were“."
+          "es": "«Was» va con I, he, she, it; con «they» hace falta «Were»."
         },
         "Did": {
-          "hu": "A to be kérdésében nincs „did”: Were they…?",
           "en": "Questions with to be have no “did”: Were they…?",
-          "es": "Las preguntas con to be no llevan «did»: Were they…?",
-          "de": "Fragen mit to be haben kein „did“: Were they…?"
+          "es": "Las preguntas con to be no llevan «did»: Were they…?"
         }
       },
       "examples": [
         "Was he at home?",
         "Were you tired?"
       ],
-      "tr": { "hu": "Iskolában voltak tegnap?", "en": "Were they at school yesterday?", "es": "¿Estuvieron ellos en la escuela ayer?", "de": "Waren sie gestern in der Schule?" }
+      "tr": { "en": "Were they at school yesterday?", "es": "¿Estuvieron ellos en la escuela ayer?" }
     },
     {
       "id": "pi-21",
@@ -1085,46 +915,34 @@
       "es": "We were tired.",
       "target": "were",
       "tr": {
-        "hu": "Fáradtak voltunk.",
         "en": "We were tired.",
-        "es": "Estábamos cansados.",
-        "de": "Wir waren müde."
+        "es": "Estábamos cansados."
       },
       "options": [
         {
           "text": {
-            "hu": "a to be múltja we / you / they mellett: were",
             "en": "the past of to be with we / you / they: were",
-            "es": "el pasado de to be con we / you / they: were",
-            "de": "die Vergangenheit von to be bei we / you / they: were"
+            "es": "el pasado de to be con we / you / they: were"
           }
         },
         {
           "text": {
-            "hu": "a to be múltja I / he / she / it mellett: was",
             "en": "the past of to be with I / he / she / it: was",
-            "es": "el pasado de to be con I / he / she / it: was",
-            "de": "die Vergangenheit von to be bei I / he / she / it: was"
+            "es": "el pasado de to be con I / he / she / it: was"
           },
           "wrong": {
-            "hu": "A „we” többes szám, ezért „were”, nem „was”.",
             "en": "“We” is plural, so “were”, not “was”.",
-            "es": "«We» es plural, por eso «were», no «was».",
-            "de": "„We“ ist Plural, deshalb „were“, nicht „was“."
+            "es": "«We» es plural, por eso «were», no «was»."
           }
         },
         {
           "text": {
-            "hu": "a do múltja: did",
             "en": "the past of do: did",
-            "es": "el pasado de do: did",
-            "de": "die Vergangenheit von do: did"
+            "es": "el pasado de do: did"
           },
           "wrong": {
-            "hu": "A „tired” mellett a to be kell, nem a „do”: We were tired.",
             "en": "With “tired” you need to be, not “do”: We were tired.",
-            "es": "Con «tired» hace falta to be, no «do»: We were tired.",
-            "de": "Bei „tired“ braucht man to be, nicht „do“: We were tired."
+            "es": "Con «tired» hace falta to be, no «do»: We were tired."
           }
         }
       ],

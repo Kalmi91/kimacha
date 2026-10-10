@@ -35,7 +35,7 @@ describe('groupTableRuns', () => {
 
 describe('LessonBody table tabs', () => {
   it('shows one table at a time, switched by the verb chips', () => {
-    render(<LessonBody blocks={ind10.body} contentLang="hu" learnedLang="es" />);
+    render(<LessonBody blocks={ind10.body} contentLang="en" learnedLang="es" />);
     expect(screen.queryByTestId('table-ind10-estar')).toBeTruthy();
     expect(screen.queryByTestId('table-ind10-ir')).toBeNull();
     expect(screen.queryByText('estuvieron')).toBeTruthy();
@@ -47,7 +47,7 @@ describe('LessonBody table tabs', () => {
   });
 
   it('draws the six persons in compact cells (3 + 3)', () => {
-    render(<LessonBody blocks={ind10.body} contentLang="hu" learnedLang="es" />);
+    render(<LessonBody blocks={ind10.body} contentLang="en" learnedLang="es" />);
     expect(screen.getAllByTestId(/^compact-cell-/)).toHaveLength(6);
     for (const person of ['yo', 'tú', 'él/ella/usted', 'nosotros', 'vosotros', 'ellos/ellas/ustedes']) {
       expect(screen.queryByText(person)).toBeTruthy();

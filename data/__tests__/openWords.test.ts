@@ -14,7 +14,7 @@ describe('data/openWords.ts', () => {
 
   it('the fields come from the words-open card, the part of speech mapped to WordPos, the raw part of speech stays', () => {
     const yo = openWords.find((w) => w.id === 1)!;
-    expect(yo).toMatchObject({ es: 'yo', en: 'I', hu: 'én', de: 'ich', level: 'A1', pos: 'pron', openPos: 'pron', lemma: 'yo' });
+    expect(yo).toMatchObject({ es: 'yo', en: 'I', level: 'A1', pos: 'pron', openPos: 'pron', lemma: 'yo' });
     const y = openWords.find((w) => w.es === 'y')!;
     expect(y.openPos).toBe('conj');
     expect(y.pos).toBeUndefined();

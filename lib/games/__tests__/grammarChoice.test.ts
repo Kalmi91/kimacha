@@ -6,17 +6,17 @@ function makeTopic(): GrammarTopicData {
     schema: 2,
     topic: 'test-topic',
     level: 'A2',
-    title: { hu: 't', en: 't', es: 't', de: 't' },
+    title: { en: 't', es: 't' },
     body: [],
-    speak: { hu: 's', en: 's', es: 's', de: 's' },
+    speak: { en: 's', es: 's' },
     items: [
       {
         id: 'i1',
         sentence: 'Yo ___ estudiante.',
         options: ['soy', 'estoy'],
         correct: 0,
-        why: { hu: 'w', en: 'w', es: 'w', de: 'w' },
-        wrong: { estoy: { hu: 'x', en: 'x', es: 'x', de: 'x' } },
+        why: { en: 'w', es: 'w' },
+        wrong: { estoy: { en: 'x', es: 'x' } },
         examples: ['Ella es médica.'],
       },
       {
@@ -24,8 +24,8 @@ function makeTopic(): GrammarTopicData {
         sentence: '___ las tres.',
         options: ['Son', 'Están'],
         correct: 0,
-        why: { hu: 'w', en: 'w', es: 'w', de: 'w' },
-        wrong: { Están: { hu: 'x', en: 'x', es: 'x', de: 'x' } },
+        why: { en: 'w', es: 'w' },
+        wrong: { Están: { en: 'x', es: 'x' } },
         examples: ['Es la una.'],
       },
       {
@@ -33,8 +33,8 @@ function makeTopic(): GrammarTopicData {
         sentence: 'La fiesta ___ aquí.',
         options: ['es', 'está'],
         correct: 0,
-        why: { hu: 'w', en: 'w', es: 'w', de: 'w' },
-        wrong: { está: { hu: 'x', en: 'x', es: 'x', de: 'x' } },
+        why: { en: 'w', es: 'w' },
+        wrong: { está: { en: 'x', es: 'x' } },
         examples: ['El examen es aquí.'],
       },
     ],
@@ -84,8 +84,8 @@ describe('wrongExplanation', () => {
   it('looks up the explanation for a wrong option by its literal text', () => {
     const topic = makeTopic();
     const item = topic.items[0] as GrammarGapItem;
-    expect(wrongExplanation(item, 'estoy', 'hu')).toBe('x');
-    expect(wrongExplanation(item, 'nope', 'hu')).toBeUndefined();
+    expect(wrongExplanation(item, 'estoy', 'en')).toBe('x');
+    expect(wrongExplanation(item, 'nope', 'en')).toBeUndefined();
   });
 });
 

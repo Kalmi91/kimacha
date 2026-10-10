@@ -15,8 +15,8 @@
  * P1 (build-blocking):
  *   - a target-language content word that is neither taught nor glossed
  *   - a Record<lang,string> field (title/rule/more/why/wrong/gloss/hint/
- *     mnemonic/explanation) missing one of the 4 active languages
- *     (hu/en/es/de), or with an empty string for one
+ *     mnemonic/explanation) missing one of the 2 active languages
+ *     (en/es), or with an empty string for one
  *   - a grammar item whose `correct` index is out of range, or whose
  *     `sentence` has no "___" blank
  *   - a grammar item missing a `wrong[...]` explanation for one of its
@@ -64,7 +64,7 @@ import { importTs } from './lib/importTs.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
-const LANGS = ['hu', 'en', 'es', 'de'];
+const LANGS = ['en', 'es'];
 const LEVELS = ['A0', 'A1', 'A2', 'B1', 'B2', 'C1']; // C2 frozen, excluded
 
 // ---------------------------------------------------------------------------
@@ -765,8 +765,8 @@ function auditFormItem(item, itemPath, topic, tableIds) {
 }
 
 // "why this sentence", correctIndex valid, exactly 3
-// options, option texts unique (in hu), every option in all 4 languages, the non-
-// correct options have `wrong` in all 4 languages, `es` is not empty and `tr.es` === `es`.
+// options, option texts unique (in en), every option in both languages, the non-
+// correct options have `wrong` in both languages, `es` is not empty and `tr.es` === `es`.
 function auditWhyItem(item, itemPath, lang = 'es') {
   const options = Array.isArray(item.options) ? item.options : [];
   if (options.length !== 3) {
@@ -786,12 +786,12 @@ function auditWhyItem(item, itemPath, lang = 'es') {
     p1.push({ path: itemPath, issue: `why item target "${item.target}" not found as a whole word in es` });
   }
 
-  const huSeen = new Set();
+  const enSeen = new Set();
   options.forEach((opt, i) => {
     checkLangs(opt?.text, `${itemPath} option ${i} text`);
-    if (opt?.text?.hu) {
-      if (huSeen.has(opt.text.hu)) p1.push({ path: itemPath, issue: `duplicate why option text (hu) "${opt.text.hu}"` });
-      huSeen.add(opt.text.hu);
+    if (opt?.text?.en) {
+      if (enSeen.has(opt.text.en)) p1.push({ path: itemPath, issue: `duplicate why option text (en) "${opt.text.en}"` });
+      enSeen.add(opt.text.en);
     }
     if (i !== item.correctIndex) {
       if (!opt?.wrong) {
@@ -844,7 +844,7 @@ function auditTenseField(tense, itemPath) {
 // must not be of a higher level than the lesson's level.
 // Check of the new task kinds (spot, order, dictation). The
 // words of the sentences must be taught / provided with a glossary (checkWords), the
-// explanations and translations in four languages, the wrong word and options of the error-spotting task consistent.
+// explanations and translations in both languages, the wrong word and options of the error-spotting task consistent.
 function auditNewKindItem(item, itemPath, topic, checkWords) {
   if (item.trial !== undefined && typeof item.trial !== 'boolean') p1.push({ path: itemPath, issue: 'trial must be a boolean' });
   const es = typeof item.es === 'string' ? item.es.trim() : '';
@@ -1033,7 +1033,7 @@ function auditGrammarTopic(topic, filePath, lang = 'es') {
         checkLangs(item.wrong[opt], `${itemPath} wrong[${opt}]`);
       }
     }
-    // The `wrong` keys of the mark item are words of the sentence: whatever is there must be given in four
+    // The `wrong` keys of the mark item are words of the sentence: whatever is there must be given in both
     // languages, but it is not required to write one for every word (the screen has a
     // generic fallback text).
     for (const key of isMark ? Object.keys(item.wrong ?? {}) : []) {
@@ -1052,7 +1052,7 @@ function auditGrammarTopic(topic, filePath, lang = 'es') {
     }
     checkLength(item.sentence ?? '', topic.level, itemPath);
 
-    // translation of the sentence (optional, written by scripts/grammar-translate.py): in four languages, and the learned
+    // translation of the sentence (optional, written by scripts/grammar-translate.py): in both languages, and the learned
     // language side is the filled-in sentence itself (like tr.es === es for the why item).
     if (item.tr !== undefined) {
       checkLangs(item.tr, `${itemPath} tr`);

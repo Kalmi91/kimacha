@@ -4,42 +4,32 @@
   "level": "A2",
   "focusTopic": "indefinido_10_verbos",
   "title": {
-    "hu": "Befejezett múlt, a 10 leggyakoribb ige",
     "en": "Preterite, the 10 most frequent verbs",
-    "es": "Pretérito perfecto simple, los 10 verbos más frecuentes",
-    "de": "Indefinido, die 10 häufigsten Verben"
+    "es": "Pretérito perfecto simple, los 10 verbos más frecuentes"
   },
   "body": [
     {
       "kind": "text",
       "text": {
-        "hu": "Ez a tíz ige a beszélt spanyol gerince: leggyakrabban ezekkel mondasz el egy lezárt, befejezett eseményt a múltban. Öt rendhagyó (estar, ir, tener, saber, poder) és öt szabályos -ar ige (mirar, pasar, esperar, necesitar, gustar) teljes ragozását mutatja a tíz tábla.",
         "en": "These ten verbs are the backbone of spoken Spanish: they are the ones you reach for most when telling a finished, closed event in the past. The ten tables below show the full conjugation of five irregular verbs (estar, ir, tener, saber, poder) and five regular -ar verbs (mirar, pasar, esperar, necesitar, gustar).",
-        "es": "Estos diez verbos son la columna vertebral del español hablado: son los que más usas para contar un hecho terminado en el pasado. Las diez tablas siguientes muestran la conjugación completa de cinco verbos irregulares (estar, ir, tener, saber, poder) y cinco verbos regulares en -ar (mirar, pasar, esperar, necesitar, gustar).",
-        "de": "Diese zehn Verben sind das Rückgrat des gesprochenen Spanisch: Mit ihnen erzählst du am häufigsten von einem abgeschlossenen Ereignis in der Vergangenheit. Die folgenden zehn Tabellen zeigen die vollständige Konjugation von fünf unregelmäßigen Verben (estar, ir, tener, saber, poder) und fünf regelmäßigen -ar-Verben (mirar, pasar, esperar, necesitar, gustar)."
+        "es": "Estos diez verbos son la columna vertebral del español hablado: son los que más usas para contar un hecho terminado en el pasado. Las diez tablas siguientes muestran la conjugación completa de cinco verbos irregulares (estar, ir, tener, saber, poder) y cinco verbos regulares en -ar (mirar, pasar, esperar, necesitar, gustar)."
       }
     },
     {
       "kind": "table",
       "id": "ind10-estar",
       "title": {
-        "hu": "estar (indefinido)",
         "en": "estar (preterite)",
-        "es": "estar (perfecto simple)",
-        "de": "estar (Indefinido)"
+        "es": "estar (perfecto simple)"
       },
       "header": [
         {
-          "hu": "Személy",
           "en": "Person",
-          "es": "Persona",
-          "de": "Person"
+          "es": "Persona"
         },
         {
-          "hu": "estar",
           "en": "estar",
-          "es": "estar",
-          "de": "estar"
+          "es": "estar"
         }
       ],
       "rows": [
@@ -81,23 +71,17 @@
       "kind": "table",
       "id": "ind10-ir",
       "title": {
-        "hu": "ir (indefinido)",
         "en": "ir (preterite)",
-        "es": "ir (perfecto simple)",
-        "de": "ir (Indefinido)"
+        "es": "ir (perfecto simple)"
       },
       "header": [
         {
-          "hu": "Személy",
           "en": "Person",
-          "es": "Persona",
-          "de": "Person"
+          "es": "Persona"
         },
         {
-          "hu": "ir",
           "en": "ir",
-          "es": "ir",
-          "de": "ir"
+          "es": "ir"
         }
       ],
       "rows": [
@@ -139,23 +123,17 @@
       "kind": "table",
       "id": "ind10-tener",
       "title": {
-        "hu": "tener (indefinido)",
         "en": "tener (preterite)",
-        "es": "tener (perfecto simple)",
-        "de": "tener (Indefinido)"
+        "es": "tener (perfecto simple)"
       },
       "header": [
         {
-          "hu": "Személy",
           "en": "Person",
-          "es": "Persona",
-          "de": "Person"
+          "es": "Persona"
         },
         {
-          "hu": "tener",
           "en": "tener",
-          "es": "tener",
-          "de": "tener"
+          "es": "tener"
         }
       ],
       "rows": [
@@ -197,23 +175,17 @@
       "kind": "table",
       "id": "ind10-saber",
       "title": {
-        "hu": "saber (indefinido)",
         "en": "saber (preterite)",
-        "es": "saber (perfecto simple)",
-        "de": "saber (Indefinido)"
+        "es": "saber (perfecto simple)"
       },
       "header": [
         {
-          "hu": "Személy",
           "en": "Person",
-          "es": "Persona",
-          "de": "Person"
+          "es": "Persona"
         },
         {
-          "hu": "saber",
           "en": "saber",
-          "es": "saber",
-          "de": "saber"
+          "es": "saber"
         }
       ],
       "rows": [
@@ -255,23 +227,17 @@
       "kind": "table",
       "id": "ind10-poder",
       "title": {
-        "hu": "poder (indefinido)",
         "en": "poder (preterite)",
-        "es": "poder (perfecto simple)",
-        "de": "poder (Indefinido)"
+        "es": "poder (perfecto simple)"
       },
       "header": [
         {
-          "hu": "Személy",
           "en": "Person",
-          "es": "Persona",
-          "de": "Person"
+          "es": "Persona"
         },
         {
-          "hu": "poder",
           "en": "poder",
-          "es": "poder",
-          "de": "poder"
+          "es": "poder"
         }
       ],
       "rows": [
@@ -313,23 +279,17 @@
       "kind": "table",
       "id": "ind10-mirar",
       "title": {
-        "hu": "mirar (indefinido)",
         "en": "mirar (preterite)",
-        "es": "mirar (perfecto simple)",
-        "de": "mirar (Indefinido)"
+        "es": "mirar (perfecto simple)"
       },
       "header": [
         {
-          "hu": "Személy",
           "en": "Person",
-          "es": "Persona",
-          "de": "Person"
+          "es": "Persona"
         },
         {
-          "hu": "mirar",
           "en": "mirar",
-          "es": "mirar",
-          "de": "mirar"
+          "es": "mirar"
         }
       ],
       "rows": [
@@ -371,23 +331,17 @@
       "kind": "table",
       "id": "ind10-pasar",
       "title": {
-        "hu": "pasar (indefinido)",
         "en": "pasar (preterite)",
-        "es": "pasar (perfecto simple)",
-        "de": "pasar (Indefinido)"
+        "es": "pasar (perfecto simple)"
       },
       "header": [
         {
-          "hu": "Személy",
           "en": "Person",
-          "es": "Persona",
-          "de": "Person"
+          "es": "Persona"
         },
         {
-          "hu": "pasar",
           "en": "pasar",
-          "es": "pasar",
-          "de": "pasar"
+          "es": "pasar"
         }
       ],
       "rows": [
@@ -429,23 +383,17 @@
       "kind": "table",
       "id": "ind10-esperar",
       "title": {
-        "hu": "esperar (indefinido)",
         "en": "esperar (preterite)",
-        "es": "esperar (perfecto simple)",
-        "de": "esperar (Indefinido)"
+        "es": "esperar (perfecto simple)"
       },
       "header": [
         {
-          "hu": "Személy",
           "en": "Person",
-          "es": "Persona",
-          "de": "Person"
+          "es": "Persona"
         },
         {
-          "hu": "esperar",
           "en": "esperar",
-          "es": "esperar",
-          "de": "esperar"
+          "es": "esperar"
         }
       ],
       "rows": [
@@ -487,23 +435,17 @@
       "kind": "table",
       "id": "ind10-necesitar",
       "title": {
-        "hu": "necesitar (indefinido)",
         "en": "necesitar (preterite)",
-        "es": "necesitar (perfecto simple)",
-        "de": "necesitar (Indefinido)"
+        "es": "necesitar (perfecto simple)"
       },
       "header": [
         {
-          "hu": "Személy",
           "en": "Person",
-          "es": "Persona",
-          "de": "Person"
+          "es": "Persona"
         },
         {
-          "hu": "necesitar",
           "en": "necesitar",
-          "es": "necesitar",
-          "de": "necesitar"
+          "es": "necesitar"
         }
       ],
       "rows": [
@@ -545,23 +487,17 @@
       "kind": "table",
       "id": "ind10-gustar",
       "title": {
-        "hu": "gustar (indefinido)",
         "en": "gustar (preterite)",
-        "es": "gustar (perfecto simple)",
-        "de": "gustar (Indefinido)"
+        "es": "gustar (perfecto simple)"
       },
       "header": [
         {
-          "hu": "Személy",
           "en": "Person",
-          "es": "Persona",
-          "de": "Person"
+          "es": "Persona"
         },
         {
-          "hu": "gustar",
           "en": "gustar",
-          "es": "gustar",
-          "de": "gustar"
+          "es": "gustar"
         }
       ],
       "rows": [
@@ -602,18 +538,14 @@
     {
       "kind": "tip",
       "text": {
-        "hu": "A szabályos -ar igéknél az ékezet dönt: yo-alak -é-re, ő-alak -ó-ra végződik (miré/miró). A rendhagyóknál (estuve, fui, tuve, supe, pude) nincs ékezet egyik alakon sem.",
         "en": "For regular -ar verbs, the accent makes the difference: the yo-form ends in -é, the he-form in -ó (miré/miró). The irregulars (estuve, fui, tuve, supe, pude) carry no accent at all.",
-        "es": "En los verbos regulares en -ar, la tilde marca la diferencia: la forma de yo termina en -é, la de él en -ó (miré/miró). Los irregulares (estuve, fui, tuve, supe, pude) no llevan tilde en ninguna forma.",
-        "de": "Bei regelmäßigen -ar-Verben entscheidet der Akzent: die yo-Form endet auf -é, die er-Form auf -ó (miré/miró). Die unregelmäßigen Formen (estuve, fui, tuve, supe, pude) tragen gar keinen Akzent."
+        "es": "En los verbos regulares en -ar, la tilde marca la diferencia: la forma de yo termina en -é, la de él en -ó (miré/miró). Los irregulares (estuve, fui, tuve, supe, pude) no llevan tilde en ninguna forma."
       }
     }
   ],
   "speak": {
-    "hu": "Ez a lecke a tíz leggyakoribb spanyol ige befejezett múltját gyakoroltatja. Közülük öt rendhagyó, a valahol lenni, a menni, a birtokolni, a tudni és a képesnek lenni, és az alakjaikon nincs ékezet. A másik öt, a nézni, a benézni, a várni, a szükségelni és a tetszeni, szabályos ar végű ige, a szokásos végződésekkel. Az én alak és az ő alak között gyakran csak az ékezet tesz különbséget. Minden mondatban a jelen idejű igét kell a megfelelő múlt idejű alakra átírni. Mexikóban a Spanyolországban használt ti alakot soha nem használják.",
     "en": "This lesson drills the preterite forms of the ten most frequent Spanish verbs. Five of them are irregular, the ones meaning to be somewhere, to go, to have, to know and to be able, and their forms carry no accent mark. The other five, meaning to look, to stop by, to wait, to need and to please, are regular verbs ending in ar and take the usual endings. The form for I and the form for he or she are often told apart only by the accent. In every sentence you rewrite the present-tense verb into its matching past form. In Mexico the form used in Spain for you all is never used.",
-    "es": "Esta lección practica las formas del pretérito de los diez verbos más frecuentes del español. Cinco son irregulares, los que significan estar, ir, tener, saber y poder, y sus formas no llevan tilde. Los otros cinco, que significan mirar, pasar, esperar, necesitar y gustar, son verbos regulares en ar y toman las terminaciones habituales. La forma de yo y la de él o ella se distinguen muchas veces solo por la tilde. En cada oración reescribes el verbo de presente en su forma de pasado correspondiente. En México nunca se usa la forma para vosotros.",
-    "de": "Diese Lektion übt die Präteritumformen der zehn häufigsten spanischen Verben. Fünf davon sind unregelmäßig, die für sich befinden, gehen, haben, wissen und können, und ihre Formen tragen keinen Akzent. Die anderen fünf, die für schauen, vorbeischauen, warten, brauchen und gefallen, sind regelmäßige Verben auf ar mit den üblichen Endungen. Die Form für ich und die für er oder sie unterscheiden sich oft nur durch den Akzent. In jedem Satz schreibst du das Verb im Präsens in die passende Vergangenheitsform um. In Mexiko wird die in Spanien übliche Form für ihr nie benutzt."
+    "es": "Esta lección practica las formas del pretérito de los diez verbos más frecuentes del español. Cinco son irregulares, los que significan estar, ir, tener, saber y poder, y sus formas no llevan tilde. Los otros cinco, que significan mirar, pasar, esperar, necesitar y gustar, son verbos regulares en ar y toman las terminaciones habituales. La forma de yo y la de él o ella se distinguen muchas veces solo por la tilde. En cada oración reescribes el verbo de presente en su forma de pasado correspondiente. En México nunca se usa la forma para vosotros."
   },
   "items": [
     {
@@ -625,9 +557,7 @@
       },
       "prompt": {
         "es": "Hoy estoy en la playa.",
-        "hu": "Ma a strandon vagyok.",
-        "en": "Today I am at the beach.",
-        "de": "Heute bin ich am Strand."
+        "en": "Today I am at the beach."
       },
       "answer": "Hoy estuve en la playa.",
       "accept": [
@@ -642,10 +572,8 @@
         "391"
       ],
       "why": {
-        "hu": "Lezárt múltbeli állapot: indefinido. A hoy megmarad, mert a nap még nem telt el. Estar rendhagyó, yo: estuve.",
         "en": "A closed past state: indefinido. Hoy still works because the day isn't over yet. Estar is irregular, yo: estuve.",
-        "es": "Un estado pasado y terminado: perfecto simple. Hoy sigue funcionando porque el día no ha terminado. Estar es irregular, yo: estuve.",
-        "de": "Ein abgeschlossener Zustand in der Vergangenheit: indefinido. Hoy passt noch, weil der Tag nicht vorbei ist. Estar ist unregelmäßig, yo: estuve."
+        "es": "Un estado pasado y terminado: perfecto simple. Hoy sigue funcionando porque el día no ha terminado. Estar es irregular, yo: estuve."
       }
     },
     {
@@ -657,9 +585,7 @@
       },
       "prompt": {
         "es": "Vas al cine.",
-        "hu": "Moziba mész.",
-        "en": "You are going to the movies.",
-        "de": "Du gehst ins Kino."
+        "en": "You are going to the movies."
       },
       "answer": "Fuiste al cine.",
       "accept": [
@@ -670,10 +596,8 @@
         "632"
       ],
       "why": {
-        "hu": "Egyszeri, lezárt cselekvés: indefinido. Ir rendhagyó (mint a ser), tú: fuiste.",
         "en": "A single, finished action: indefinido. Ir is irregular (like ser), tú: fuiste.",
-        "es": "Una acción única y terminada: perfecto simple. Ir es irregular (como ser), tú: fuiste.",
-        "de": "Eine einzelne, abgeschlossene Handlung: indefinido. Ir ist unregelmäßig (wie ser), tú: fuiste."
+        "es": "Una acción única y terminada: perfecto simple. Ir es irregular (como ser), tú: fuiste."
       }
     },
     {
@@ -685,9 +609,7 @@
       },
       "prompt": {
         "es": "Tiene un problema.",
-        "hu": "Van egy problémája.",
-        "en": "He has a problem.",
-        "de": "Er hat ein Problem."
+        "en": "He has a problem."
       },
       "answer": "Tuvo un problema.",
       "accept": [
@@ -700,10 +622,8 @@
         "129"
       ],
       "why": {
-        "hu": "Lezárt múltbeli állapot: indefinido. Tener rendhagyó, él: tuvo.",
         "en": "A closed past state: indefinido. Tener is irregular, él: tuvo.",
-        "es": "Un estado pasado y terminado: perfecto simple. Tener es irregular, él: tuvo.",
-        "de": "Ein abgeschlossener Zustand in der Vergangenheit: indefinido. Tener ist unregelmäßig, er: tuvo."
+        "es": "Un estado pasado y terminado: perfecto simple. Tener es irregular, él: tuvo."
       }
     },
     {
@@ -715,9 +635,7 @@
       },
       "prompt": {
         "es": "Sé la verdad.",
-        "hu": "Tudom az igazságot.",
-        "en": "I know the truth.",
-        "de": "Ich weiß die Wahrheit."
+        "en": "I know the truth."
       },
       "answer": "Supe la verdad.",
       "accept": [
@@ -728,10 +646,8 @@
         "286"
       ],
       "why": {
-        "hu": "Indefinidóban a saber jelentése megváltozik: nem 'tudni', hanem 'megtudni' egy adott pillanatban. Rendhagyó, yo: supe.",
         "en": "In the preterite, saber shifts meaning from 'to know' to 'to find out' at a specific moment. Irregular, yo: supe.",
-        "es": "En perfecto simple, saber cambia de sentido: no es 'saber' sino 'enterarse' en un momento concreto. Es irregular, yo: supe.",
-        "de": "Im Indefinido bedeutet saber nicht 'wissen', sondern 'erfahren' in einem bestimmten Moment. Unregelmäßig, yo: supe."
+        "es": "En perfecto simple, saber cambia de sentido: no es 'saber' sino 'enterarse' en un momento concreto. Es irregular, yo: supe."
       }
     },
     {
@@ -743,9 +659,7 @@
       },
       "prompt": {
         "es": "Puedo ir a la fiesta.",
-        "hu": "El tudok menni a buliba.",
-        "en": "I can go to the party.",
-        "de": "Ich kann zur Party gehen."
+        "en": "I can go to the party."
       },
       "answer": "Pude ir a la fiesta.",
       "accept": [
@@ -757,10 +671,8 @@
         "285"
       ],
       "why": {
-        "hu": "Indefinidóban a poder jelentése 'sikerült megtenni valamit'. Rendhagyó, yo: pude.",
         "en": "In the preterite, poder means 'managed to' do something. Irregular, yo: pude.",
-        "es": "En perfecto simple, poder significa que algo se logró hacer. Es irregular, yo: pude.",
-        "de": "Im Indefinido bedeutet poder, dass etwas gelungen ist. Unregelmäßig, yo: pude."
+        "es": "En perfecto simple, poder significa que algo se logró hacer. Es irregular, yo: pude."
       }
     },
     {
@@ -772,9 +684,7 @@
       },
       "prompt": {
         "es": "Miras la película tarde.",
-        "hu": "Későn nézed a filmet.",
-        "en": "You watch the movie late.",
-        "de": "Du schaust dir den Film spät an."
+        "en": "You watch the movie late."
       },
       "answer": "Miraste la película tarde.",
       "accept": [
@@ -786,10 +696,8 @@
         "174"
       ],
       "why": {
-        "hu": "Lezárt cselekvés: indefinido. Mirar szabályos -ar ige, tú: miraste.",
         "en": "A finished action: indefinido. Mirar is a regular -ar verb, tú: miraste.",
-        "es": "Una acción terminada: perfecto simple. Mirar es un verbo regular en -ar, tú: miraste.",
-        "de": "Eine abgeschlossene Handlung: indefinido. Mirar ist ein regelmäßiges -ar-Verb, tú: miraste."
+        "es": "Una acción terminada: perfecto simple. Mirar es un verbo regular en -ar, tú: miraste."
       }
     },
     {
@@ -801,9 +709,7 @@
       },
       "prompt": {
         "es": "Pasa por la tienda.",
-        "hu": "Benéz a boltba.",
-        "en": "He stops by the store.",
-        "de": "Er schaut im Laden vorbei."
+        "en": "He stops by the store."
       },
       "answer": "Pasó por la tienda.",
       "accept": [
@@ -816,10 +722,8 @@
         "119"
       ],
       "why": {
-        "hu": "Lezárt, egyszeri esemény: indefinido. Pasar szabályos -ar ige, él: pasó.",
         "en": "A finished, one-time event: indefinido. Pasar is a regular -ar verb, él: pasó.",
-        "es": "Un hecho único y terminado: perfecto simple. Pasar es un verbo regular en -ar, él: pasó.",
-        "de": "Ein abgeschlossenes, einmaliges Ereignis: indefinido. Pasar ist ein regelmäßiges -ar-Verb, er: pasó."
+        "es": "Un hecho único y terminado: perfecto simple. Pasar es un verbo regular en -ar, él: pasó."
       }
     },
     {
@@ -831,9 +735,7 @@
       },
       "prompt": {
         "es": "Esperan en el parque.",
-        "hu": "A parkban várnak.",
-        "en": "They wait in the park.",
-        "de": "Sie warten im Park."
+        "en": "They wait in the park."
       },
       "answer": "Esperaron en el parque.",
       "accept": [
@@ -846,10 +748,8 @@
         "254"
       ],
       "why": {
-        "hu": "Lezárt várakozás: indefinido. Esperar szabályos -ar ige, ellos: esperaron.",
         "en": "A finished period of waiting: indefinido. Esperar is a regular -ar verb, ellos: esperaron.",
-        "es": "Una espera terminada: perfecto simple. Esperar es un verbo regular en -ar, ellos: esperaron.",
-        "de": "Ein abgeschlossenes Warten: indefinido. Esperar ist ein regelmäßiges -ar-Verb, sie: esperaron."
+        "es": "Una espera terminada: perfecto simple. Esperar es un verbo regular en -ar, ellos: esperaron."
       }
     },
     {
@@ -861,9 +761,7 @@
       },
       "prompt": {
         "es": "Necesitas dinero para el viaje.",
-        "hu": "Pénzre van szükséged az utazáshoz.",
-        "en": "You need money for the trip.",
-        "de": "Du brauchst Geld für die Reise."
+        "en": "You need money for the trip."
       },
       "answer": "Necesitaste dinero para el viaje.",
       "accept": [
@@ -875,10 +773,8 @@
         "259"
       ],
       "why": {
-        "hu": "Lezárt, konkrét szükséglet a múltban: indefinido. Necesitar szabályos -ar ige, tú: necesitaste.",
         "en": "A finished, specific need in the past: indefinido. Necesitar is a regular -ar verb, tú: necesitaste.",
-        "es": "Una necesidad concreta y terminada en el pasado: perfecto simple. Necesitar es un verbo regular en -ar, tú: necesitaste.",
-        "de": "Ein abgeschlossenes, konkretes Bedürfnis in der Vergangenheit: indefinido. Necesitar ist ein regelmäßiges -ar-Verb, tú: necesitaste."
+        "es": "Una necesidad concreta y terminada en el pasado: perfecto simple. Necesitar es un verbo regular en -ar, tú: necesitaste."
       }
     },
     {
@@ -890,9 +786,7 @@
       },
       "prompt": {
         "es": "Me gusta la música.",
-        "hu": "Szeretem a zenét.",
-        "en": "I like the music.",
-        "de": "Ich mag die Musik."
+        "en": "I like the music."
       },
       "answer": "Me gustó la música.",
       "accept": [
@@ -903,10 +797,8 @@
         "283"
       ],
       "why": {
-        "hu": "Egyszeri, lezárt tetszés-élmény: indefinido. Gustar esetén az alany a tetszés tárgya („la música”), ezért egyes szám 3.: gustó.",
         "en": "A single, finished moment of liking something: indefinido. With gustar the thing that pleases is the subject ('la música'), so third person singular: gustó.",
-        "es": "Un momento único y terminado de que algo gustó: perfecto simple. En gustar el sujeto es lo que gusta ('la música'), tercera persona singular: gustó.",
-        "de": "Ein einzelner, abgeschlossener Moment des Gefallens: indefinido. Bei gustar ist das, was gefällt, das Subjekt ('la música'), daher dritte Person Singular: gustó."
+        "es": "Un momento único y terminado de que algo gustó: perfecto simple. En gustar el sujeto es lo que gusta ('la música'), tercera persona singular: gustó."
       }
     },
     {
@@ -918,9 +810,7 @@
       },
       "prompt": {
         "es": "Están en la ciudad hoy.",
-        "hu": "Ma a városban vannak.",
-        "en": "They are in the city today.",
-        "de": "Sie sind heute in der Stadt."
+        "en": "They are in the city today."
       },
       "answer": "Estuvieron en la ciudad hoy.",
       "accept": [
@@ -938,10 +828,8 @@
         "52"
       ],
       "why": {
-        "hu": "Lezárt múltbeli állapot: indefinido. Estar rendhagyó, ellos: estuvieron.",
         "en": "A closed past state: indefinido. Estar is irregular, ellos: estuvieron.",
-        "es": "Un estado pasado y terminado: perfecto simple. Estar es irregular, ellos: estuvieron.",
-        "de": "Ein abgeschlossener Zustand in der Vergangenheit: indefinido. Estar ist unregelmäßig, sie: estuvieron."
+        "es": "Un estado pasado y terminado: perfecto simple. Estar es irregular, ellos: estuvieron."
       }
     },
     {
@@ -953,9 +841,7 @@
       },
       "prompt": {
         "es": "Tenemos un examen.",
-        "hu": "Van egy vizsgánk.",
-        "en": "We have an exam.",
-        "de": "Wir haben eine Prüfung."
+        "en": "We have an exam."
       },
       "answer": "Tuvimos un examen.",
       "accept": [
@@ -966,10 +852,8 @@
         "610"
       ],
       "why": {
-        "hu": "Lezárt múltbeli állapot: indefinido. Tener rendhagyó, nosotros: tuvimos.",
         "en": "A closed past state: indefinido. Tener is irregular, nosotros: tuvimos.",
-        "es": "Un estado pasado y terminado: perfecto simple. Tener es irregular, nosotros: tuvimos.",
-        "de": "Ein abgeschlossener Zustand in der Vergangenheit: indefinido. Tener ist unregelmäßig, wir: tuvimos."
+        "es": "Un estado pasado y terminado: perfecto simple. Tener es irregular, nosotros: tuvimos."
       }
     },
     {
@@ -981,9 +865,7 @@
       },
       "prompt": {
         "es": "No estás en el parque.",
-        "hu": "Nem vagy a parkban.",
-        "en": "You are not in the park.",
-        "de": "Du bist nicht im Park."
+        "en": "You are not in the park."
       },
       "answer": "No estuviste en el parque.",
       "accept": [
@@ -994,10 +876,8 @@
         "2"
       ],
       "why": {
-        "hu": "Tagadott, lezárt múltbeli állapot: indefinido. Estar rendhagyó, tú: estuviste.",
         "en": "A negated, closed past state: indefinido. Estar is irregular, tú: estuviste.",
-        "es": "Un estado pasado, terminado y negado: perfecto simple. Estar es irregular, tú: estuviste.",
-        "de": "Ein verneinter, abgeschlossener Zustand in der Vergangenheit: indefinido. Estar ist unregelmäßig, tú: estuviste."
+        "es": "Un estado pasado, terminado y negado: perfecto simple. Estar es irregular, tú: estuviste."
       }
     },
     {
@@ -1009,9 +889,7 @@
       },
       "prompt": {
         "es": "¿Está en la ciudad?",
-        "hu": "A városban van?",
-        "en": "Is he in the city?",
-        "de": "Ist er in der Stadt?"
+        "en": "Is he in the city?"
       },
       "answer": "¿Estuvo en la ciudad?",
       "accept": [
@@ -1024,10 +902,8 @@
         "2"
       ],
       "why": {
-        "hu": "Kérdés egy lezárt múltbeli állapotról: indefinido. Estar rendhagyó, él: estuvo.",
         "en": "A question about a closed past state: indefinido. Estar is irregular, él: estuvo.",
-        "es": "Una pregunta sobre un estado pasado y terminado: perfecto simple. Estar es irregular, él: estuvo.",
-        "de": "Eine Frage zu einem abgeschlossenen Zustand in der Vergangenheit: indefinido. Estar ist unregelmäßig, er: estuvo."
+        "es": "Una pregunta sobre un estado pasado y terminado: perfecto simple. Estar es irregular, él: estuvo."
       }
     },
     {
@@ -1039,9 +915,7 @@
       },
       "prompt": {
         "es": "Estamos en el examen hoy.",
-        "hu": "Ma a vizsgán vagyunk.",
-        "en": "We are at the exam today.",
-        "de": "Wir sind heute bei der Prüfung."
+        "en": "We are at the exam today."
       },
       "answer": "Estuvimos en el examen hoy.",
       "accept": [
@@ -1055,10 +929,8 @@
         "2"
       ],
       "why": {
-        "hu": "Lezárt múltbeli állapot: indefinido. Estar rendhagyó, nosotros: estuvimos.",
         "en": "A closed past state: indefinido. Estar is irregular, nosotros: estuvimos.",
-        "es": "Un estado pasado y terminado: perfecto simple. Estar es irregular, nosotros: estuvimos.",
-        "de": "Ein abgeschlossener Zustand in der Vergangenheit: indefinido. Estar ist unregelmäßig, wir: estuvimos."
+        "es": "Un estado pasado y terminado: perfecto simple. Estar es irregular, nosotros: estuvimos."
       }
     },
     {
@@ -1070,9 +942,7 @@
       },
       "prompt": {
         "es": "Voy a la fiesta.",
-        "hu": "Elmegyek a buliba.",
-        "en": "I am going to the party.",
-        "de": "Ich gehe zur Party."
+        "en": "I am going to the party."
       },
       "answer": "Fui a la fiesta.",
       "accept": [
@@ -1083,10 +953,8 @@
         "285"
       ],
       "why": {
-        "hu": "Egyszeri, lezárt cselekvés: indefinido. Ir rendhagyó (mint a ser), yo: fui.",
         "en": "A single, finished action: indefinido. Ir is irregular (like ser), yo: fui.",
-        "es": "Una acción única y terminada: perfecto simple. Ir es irregular (como ser), yo: fui.",
-        "de": "Eine einzelne, abgeschlossene Handlung: indefinido. Ir ist unregelmäßig (wie ser), yo: fui."
+        "es": "Una acción única y terminada: perfecto simple. Ir es irregular (como ser), yo: fui."
       }
     },
     {
@@ -1098,9 +966,7 @@
       },
       "prompt": {
         "es": "No va al parque.",
-        "hu": "Nem megy a parkba.",
-        "en": "He is not going to the park.",
-        "de": "Er geht nicht in den Park."
+        "en": "He is not going to the park."
       },
       "answer": "No fue al parque.",
       "accept": [
@@ -1113,10 +979,8 @@
         "254"
       ],
       "why": {
-        "hu": "Tagadott, lezárt cselekvés: indefinido. Ir rendhagyó, él: fue.",
         "en": "A negated, finished action: indefinido. Ir is irregular, él: fue.",
-        "es": "Una acción negada y terminada: perfecto simple. Ir es irregular, él: fue.",
-        "de": "Eine verneinte, abgeschlossene Handlung: indefinido. Ir ist unregelmäßig, er: fue."
+        "es": "Una acción negada y terminada: perfecto simple. Ir es irregular, él: fue."
       }
     },
     {
@@ -1128,9 +992,7 @@
       },
       "prompt": {
         "es": "¿Vamos al cine?",
-        "hu": "Moziba megyünk?",
-        "en": "Are we going to the movies?",
-        "de": "Gehen wir ins Kino?"
+        "en": "Are we going to the movies?"
       },
       "answer": "¿Fuimos al cine?",
       "accept": [
@@ -1141,10 +1003,8 @@
         "632"
       ],
       "why": {
-        "hu": "Kérdés egy lezárt cselekvésről: indefinido. Ir rendhagyó, nosotros: fuimos.",
         "en": "A question about a finished action: indefinido. Ir is irregular, nosotros: fuimos.",
-        "es": "Una pregunta sobre una acción terminada: perfecto simple. Ir es irregular, nosotros: fuimos.",
-        "de": "Eine Frage zu einer abgeschlossenen Handlung: indefinido. Ir ist unregelmäßig, wir: fuimos."
+        "es": "Una pregunta sobre una acción terminada: perfecto simple. Ir es irregular, nosotros: fuimos."
       }
     },
     {
@@ -1156,9 +1016,7 @@
       },
       "prompt": {
         "es": "Van a la tienda.",
-        "hu": "Elmennek a boltba.",
-        "en": "They are going to the store.",
-        "de": "Sie gehen zum Laden."
+        "en": "They are going to the store."
       },
       "answer": "Fueron a la tienda.",
       "accept": [
@@ -1171,10 +1029,8 @@
         "119"
       ],
       "why": {
-        "hu": "Egyszeri, lezárt cselekvés: indefinido. Ir rendhagyó, ellos: fueron.",
         "en": "A single, finished action: indefinido. Ir is irregular, ellos: fueron.",
-        "es": "Una acción única y terminada: perfecto simple. Ir es irregular, ellos: fueron.",
-        "de": "Eine einzelne, abgeschlossene Handlung: indefinido. Ir ist unregelmäßig, sie: fueron."
+        "es": "Una acción única y terminada: perfecto simple. Ir es irregular, ellos: fueron."
       }
     },
     {
@@ -1186,9 +1042,7 @@
       },
       "prompt": {
         "es": "Tengo un examen hoy.",
-        "hu": "Ma vizsgám van.",
-        "en": "I have an exam today.",
-        "de": "Ich habe heute eine Prüfung."
+        "en": "I have an exam today."
       },
       "answer": "Tuve un examen hoy.",
       "accept": [
@@ -1202,10 +1056,8 @@
         "52"
       ],
       "why": {
-        "hu": "Lezárt múltbeli állapot: indefinido. Tener rendhagyó, yo: tuve.",
         "en": "A closed past state: indefinido. Tener is irregular, yo: tuve.",
-        "es": "Un estado pasado y terminado: perfecto simple. Tener es irregular, yo: tuve.",
-        "de": "Ein abgeschlossener Zustand in der Vergangenheit: indefinido. Tener ist unregelmäßig, ich: tuve."
+        "es": "Un estado pasado y terminado: perfecto simple. Tener es irregular, yo: tuve."
       }
     },
     {
@@ -1217,9 +1069,7 @@
       },
       "prompt": {
         "es": "No tienes dinero.",
-        "hu": "Nincs pénzed.",
-        "en": "You don't have money.",
-        "de": "Du hast kein Geld."
+        "en": "You don't have money."
       },
       "answer": "No tuviste dinero.",
       "accept": [
@@ -1230,10 +1080,8 @@
         "123"
       ],
       "why": {
-        "hu": "Tagadott, lezárt múltbeli állapot: indefinido. Tener rendhagyó, tú: tuviste.",
         "en": "A negated, closed past state: indefinido. Tener is irregular, tú: tuviste.",
-        "es": "Un estado pasado, terminado y negado: perfecto simple. Tener es irregular, tú: tuviste.",
-        "de": "Ein verneinter, abgeschlossener Zustand in der Vergangenheit: indefinido. Tener ist unregelmäßig, du: tuviste."
+        "es": "Un estado pasado, terminado y negado: perfecto simple. Tener es irregular, tú: tuviste."
       }
     },
     {
@@ -1245,9 +1093,7 @@
       },
       "prompt": {
         "es": "¿Tienen un problema?",
-        "hu": "Van egy problémájuk?",
-        "en": "Do they have a problem?",
-        "de": "Haben sie ein Problem?"
+        "en": "Do they have a problem?"
       },
       "answer": "¿Tuvieron un problema?",
       "accept": [
@@ -1260,10 +1106,8 @@
         "129"
       ],
       "why": {
-        "hu": "Kérdés egy lezárt múltbeli állapotról: indefinido. Tener rendhagyó, ellos: tuvieron.",
         "en": "A question about a closed past state: indefinido. Tener is irregular, ellos: tuvieron.",
-        "es": "Una pregunta sobre un estado pasado y terminado: perfecto simple. Tener es irregular, ellos: tuvieron.",
-        "de": "Eine Frage zu einem abgeschlossenen Zustand in der Vergangenheit: indefinido. Tener ist unregelmäßig, sie: tuvieron."
+        "es": "Una pregunta sobre un estado pasado y terminado: perfecto simple. Tener es irregular, ellos: tuvieron."
       }
     },
     {
@@ -1275,9 +1119,7 @@
       },
       "prompt": {
         "es": "Sabes la verdad.",
-        "hu": "Tudod az igazságot.",
-        "en": "You know the truth.",
-        "de": "Du weißt die Wahrheit."
+        "en": "You know the truth."
       },
       "answer": "Supiste la verdad.",
       "accept": [
@@ -1288,10 +1130,8 @@
         "286"
       ],
       "why": {
-        "hu": "Indefinidóban a saber jelentése megváltozik: 'megtudni' egy adott pillanatban. Rendhagyó, tú: supiste.",
         "en": "In the preterite, saber shifts meaning to 'find out' at a specific moment. Irregular, tú: supiste.",
-        "es": "En perfecto simple, saber cambia de sentido a 'enterarse' en un momento concreto. Es irregular, tú: supiste.",
-        "de": "Im Indefinido bedeutet saber 'erfahren' in einem bestimmten Moment. Unregelmäßig, tú: supiste."
+        "es": "En perfecto simple, saber cambia de sentido a 'enterarse' en un momento concreto. Es irregular, tú: supiste."
       }
     },
     {
@@ -1303,9 +1143,7 @@
       },
       "prompt": {
         "es": "No sabe la verdad.",
-        "hu": "Nem tudja az igazságot.",
-        "en": "He doesn't know the truth.",
-        "de": "Er weiß die Wahrheit nicht."
+        "en": "He doesn't know the truth."
       },
       "answer": "No supo la verdad.",
       "accept": [
@@ -1318,10 +1156,8 @@
         "286"
       ],
       "why": {
-        "hu": "Tagadva: nem tudta meg az igazságot abban a pillanatban. Saber rendhagyó, él: supo.",
         "en": "Negated: he didn't find out the truth at that moment. Saber is irregular, él: supo.",
-        "es": "Negado: no se enteró de la verdad en ese momento. Saber es irregular, él: supo.",
-        "de": "Verneint: er hat die Wahrheit in dem Moment nicht erfahren. Saber ist unregelmäßig, er: supo."
+        "es": "Negado: no se enteró de la verdad en ese momento. Saber es irregular, él: supo."
       }
     },
     {
@@ -1333,9 +1169,7 @@
       },
       "prompt": {
         "es": "Sabemos del problema.",
-        "hu": "Tudunk a problémáról.",
-        "en": "We know about the problem.",
-        "de": "Wir wissen von dem Problem."
+        "en": "We know about the problem."
       },
       "answer": "Supimos del problema.",
       "accept": [
@@ -1346,10 +1180,8 @@
         "129"
       ],
       "why": {
-        "hu": "Egy adott pillanatban tudtuk meg: indefinido. Saber rendhagyó, nosotros: supimos.",
         "en": "We found out at a specific moment: indefinido. Saber is irregular, nosotros: supimos.",
-        "es": "Nos enteramos en un momento concreto: perfecto simple. Saber es irregular, nosotros: supimos.",
-        "de": "Wir haben es in einem bestimmten Moment erfahren: indefinido. Saber ist unregelmäßig, wir: supimos."
+        "es": "Nos enteramos en un momento concreto: perfecto simple. Saber es irregular, nosotros: supimos."
       }
     },
     {
@@ -1361,9 +1193,7 @@
       },
       "prompt": {
         "es": "¿Saben la verdad?",
-        "hu": "Tudják az igazságot?",
-        "en": "Do they know the truth?",
-        "de": "Wissen sie die Wahrheit?"
+        "en": "Do they know the truth?"
       },
       "answer": "¿Supieron la verdad?",
       "accept": [
@@ -1376,10 +1206,8 @@
         "286"
       ],
       "why": {
-        "hu": "Kérdés: megtudták-e egy adott pillanatban. Saber rendhagyó, ellos: supieron.",
         "en": "A question: did they find out at a specific moment. Saber is irregular, ellos: supieron.",
-        "es": "Una pregunta: si se enteraron en un momento concreto. Saber es irregular, ellos: supieron.",
-        "de": "Eine Frage: ob sie es in einem bestimmten Moment erfahren haben. Saber ist unregelmäßig, sie: supieron."
+        "es": "Una pregunta: si se enteraron en un momento concreto. Saber es irregular, ellos: supieron."
       }
     },
     {
@@ -1391,9 +1219,7 @@
       },
       "prompt": {
         "es": "Puedes mirar la película.",
-        "hu": "Megnézheted a filmet.",
-        "en": "You can watch the movie.",
-        "de": "Du kannst dir den Film ansehen."
+        "en": "You can watch the movie."
       },
       "answer": "Pudiste mirar la película.",
       "accept": [
@@ -1405,10 +1231,8 @@
         "284"
       ],
       "why": {
-        "hu": "Indefinidóban a poder jelentése 'sikerült megtenni valamit'. Rendhagyó, tú: pudiste.",
         "en": "In the preterite, poder means 'managed to' do something. Irregular, tú: pudiste.",
-        "es": "En perfecto simple, poder significa que algo se logró hacer. Es irregular, tú: pudiste.",
-        "de": "Im Indefinido bedeutet poder, dass etwas gelungen ist. Unregelmäßig, tú: pudiste."
+        "es": "En perfecto simple, poder significa que algo se logró hacer. Es irregular, tú: pudiste."
       }
     },
     {
@@ -1420,9 +1244,7 @@
       },
       "prompt": {
         "es": "No puede ir al parque.",
-        "hu": "Nem tud elmenni a parkba.",
-        "en": "He can't go to the park.",
-        "de": "Er kann nicht in den Park gehen."
+        "en": "He can't go to the park."
       },
       "answer": "No pudo ir al parque.",
       "accept": [
@@ -1436,10 +1258,8 @@
         "254"
       ],
       "why": {
-        "hu": "Tagadva: nem sikerült megtennie. Poder rendhagyó, él: pudo.",
         "en": "Negated: he didn't manage to do it. Poder is irregular, él: pudo.",
-        "es": "Negado: no logró hacerlo. Poder es irregular, él: pudo.",
-        "de": "Verneint: es ist ihm nicht gelungen. Poder ist unregelmäßig, er: pudo."
+        "es": "Negado: no logró hacerlo. Poder es irregular, él: pudo."
       }
     },
     {
@@ -1451,9 +1271,7 @@
       },
       "prompt": {
         "es": "¿Podemos esperar en la tienda?",
-        "hu": "Várhatunk a boltban?",
-        "en": "Can we wait in the store?",
-        "de": "Können wir im Laden warten?"
+        "en": "Can we wait in the store?"
       },
       "answer": "¿Pudimos esperar en la tienda?",
       "accept": [
@@ -1465,10 +1283,8 @@
         "119"
       ],
       "why": {
-        "hu": "Kérdés: sikerült-e megtenni. Poder rendhagyó, nosotros: pudimos.",
         "en": "A question: whether we managed to do it. Poder is irregular, nosotros: pudimos.",
-        "es": "Una pregunta: si logramos hacerlo. Poder es irregular, nosotros: pudimos.",
-        "de": "Eine Frage: ob es uns gelungen ist. Poder ist unregelmäßig, wir: pudimos."
+        "es": "Una pregunta: si logramos hacerlo. Poder es irregular, nosotros: pudimos."
       }
     },
     {
@@ -1480,9 +1296,7 @@
       },
       "prompt": {
         "es": "Pueden mirar la película.",
-        "hu": "Megnézhetik a filmet.",
-        "en": "They can watch the movie.",
-        "de": "Sie können sich den Film ansehen."
+        "en": "They can watch the movie."
       },
       "answer": "Pudieron mirar la película.",
       "accept": [
@@ -1496,10 +1310,8 @@
         "284"
       ],
       "why": {
-        "hu": "Sikerült megtenniük: indefinido. Poder rendhagyó, ellos: pudieron.",
         "en": "They managed to do it: indefinido. Poder is irregular, ellos: pudieron.",
-        "es": "Lograron hacerlo: perfecto simple. Poder es irregular, ellos: pudieron.",
-        "de": "Es ist ihnen gelungen: indefinido. Poder ist unregelmäßig, sie: pudieron."
+        "es": "Lograron hacerlo: perfecto simple. Poder es irregular, ellos: pudieron."
       }
     },
     {
@@ -1511,9 +1323,7 @@
       },
       "prompt": {
         "es": "Miro la película en la ciudad.",
-        "hu": "A városban nézem a filmet.",
-        "en": "I watch the movie in the city.",
-        "de": "Ich schaue mir den Film in der Stadt an."
+        "en": "I watch the movie in the city."
       },
       "answer": "Miré la película en la ciudad.",
       "accept": [
@@ -1525,10 +1335,8 @@
         "51"
       ],
       "why": {
-        "hu": "Lezárt cselekvés: indefinido. Mirar szabályos -ar ige, yo: miré.",
         "en": "A finished action: indefinido. Mirar is a regular -ar verb, yo: miré.",
-        "es": "Una acción terminada: perfecto simple. Mirar es un verbo regular en -ar, yo: miré.",
-        "de": "Eine abgeschlossene Handlung: indefinido. Mirar ist ein regelmäßiges -ar-Verb, ich: miré."
+        "es": "Una acción terminada: perfecto simple. Mirar es un verbo regular en -ar, yo: miré."
       }
     },
     {
@@ -1540,9 +1348,7 @@
       },
       "prompt": {
         "es": "No mira la tienda.",
-        "hu": "Nem nézi a boltot.",
-        "en": "He doesn't look at the store.",
-        "de": "Er schaut sich das Geschäft nicht an."
+        "en": "He doesn't look at the store."
       },
       "answer": "No miró la tienda.",
       "accept": [
@@ -1555,10 +1361,8 @@
         "119"
       ],
       "why": {
-        "hu": "Tagadott, lezárt cselekvés: indefinido. Mirar szabályos -ar ige, él: miró.",
         "en": "A negated, finished action: indefinido. Mirar is a regular -ar verb, él: miró.",
-        "es": "Una acción negada y terminada: perfecto simple. Mirar es un verbo regular en -ar, él: miró.",
-        "de": "Eine verneinte, abgeschlossene Handlung: indefinido. Mirar ist ein regelmäßiges -ar-Verb, er: miró."
+        "es": "Una acción negada y terminada: perfecto simple. Mirar es un verbo regular en -ar, él: miró."
       }
     },
     {
@@ -1570,9 +1374,7 @@
       },
       "prompt": {
         "es": "¿Miran la ciudad?",
-        "hu": "Nézik a várost?",
-        "en": "Are they looking at the city?",
-        "de": "Schauen sie sich die Stadt an?"
+        "en": "Are they looking at the city?"
       },
       "answer": "¿Miraron la ciudad?",
       "accept": [
@@ -1585,10 +1387,8 @@
         "51"
       ],
       "why": {
-        "hu": "Kérdés egy lezárt cselekvésről: indefinido. Mirar szabályos -ar ige, ellos: miraron.",
         "en": "A question about a finished action: indefinido. Mirar is a regular -ar verb, ellos: miraron.",
-        "es": "Una pregunta sobre una acción terminada: perfecto simple. Mirar es un verbo regular en -ar, ellos: miraron.",
-        "de": "Eine Frage zu einer abgeschlossenen Handlung: indefinido. Mirar ist ein regelmäßiges -ar-Verb, sie: miraron."
+        "es": "Una pregunta sobre una acción terminada: perfecto simple. Mirar es un verbo regular en -ar, ellos: miraron."
       }
     },
     {
@@ -1600,9 +1400,7 @@
       },
       "prompt": {
         "es": "Miran la película tarde.",
-        "hu": "Későn nézik a filmet.",
-        "en": "You (all) watch the movie late.",
-        "de": "Sie schauen sich den Film spät an."
+        "en": "You (all) watch the movie late."
       },
       "answer": "Miraron la película tarde.",
       "accept": [
@@ -1614,10 +1412,8 @@
         "174"
       ],
       "why": {
-        "hu": "Lezárt cselekvés: indefinido. Mirar szabályos -ar ige, ustedes: miraron.",
         "en": "A finished action: indefinido. Mirar is a regular -ar verb, ustedes: miraron.",
-        "es": "Una acción terminada: perfecto simple. Mirar es un verbo regular en -ar, ustedes: miraron.",
-        "de": "Eine abgeschlossene Handlung: indefinido. Mirar ist ein regelmäßiges -ar-Verb, ustedes: miraron."
+        "es": "Una acción terminada: perfecto simple. Mirar es un verbo regular en -ar, ustedes: miraron."
       }
     },
     {
@@ -1629,9 +1425,7 @@
       },
       "prompt": {
         "es": "Paso por el parque.",
-        "hu": "Benézek a parkba.",
-        "en": "I stop by the park.",
-        "de": "Ich schaue im Park vorbei."
+        "en": "I stop by the park."
       },
       "answer": "Pasé por el parque.",
       "accept": [
@@ -1642,10 +1436,8 @@
         "254"
       ],
       "why": {
-        "hu": "Lezárt, egyszeri esemény: indefinido. Pasar szabályos -ar ige, yo: pasé.",
         "en": "A finished, one-time event: indefinido. Pasar is a regular -ar verb, yo: pasé.",
-        "es": "Un hecho único y terminado: perfecto simple. Pasar es un verbo regular en -ar, yo: pasé.",
-        "de": "Ein abgeschlossenes, einmaliges Ereignis: indefinido. Pasar ist ein regelmäßiges -ar-Verb, ich: pasé."
+        "es": "Un hecho único y terminado: perfecto simple. Pasar es un verbo regular en -ar, yo: pasé."
       }
     },
     {
@@ -1657,9 +1449,7 @@
       },
       "prompt": {
         "es": "No pasas por la tienda.",
-        "hu": "Nem nézel be a boltba.",
-        "en": "You don't stop by the store.",
-        "de": "Du schaust nicht im Laden vorbei."
+        "en": "You don't stop by the store."
       },
       "answer": "No pasaste por la tienda.",
       "accept": [
@@ -1670,10 +1460,8 @@
         "119"
       ],
       "why": {
-        "hu": "Tagadott, lezárt esemény: indefinido. Pasar szabályos -ar ige, tú: pasaste.",
         "en": "A negated, finished event: indefinido. Pasar is a regular -ar verb, tú: pasaste.",
-        "es": "Un hecho negado y terminado: perfecto simple. Pasar es un verbo regular en -ar, tú: pasaste.",
-        "de": "Ein verneintes, abgeschlossenes Ereignis: indefinido. Pasar ist ein regelmäßiges -ar-Verb, du: pasaste."
+        "es": "Un hecho negado y terminado: perfecto simple. Pasar es un verbo regular en -ar, tú: pasaste."
       }
     },
     {
@@ -1685,9 +1473,7 @@
       },
       "prompt": {
         "es": "¿Pasan por el cine?",
-        "hu": "Benéznek a moziba?",
-        "en": "Do they stop by the movies?",
-        "de": "Schauen sie beim Kino vorbei?"
+        "en": "Do they stop by the movies?"
       },
       "answer": "¿Pasaron por el cine?",
       "accept": [
@@ -1700,10 +1486,8 @@
         "632"
       ],
       "why": {
-        "hu": "Kérdés egy lezárt eseményről: indefinido. Pasar szabályos -ar ige, ellos: pasaron.",
         "en": "A question about a finished event: indefinido. Pasar is a regular -ar verb, ellos: pasaron.",
-        "es": "Una pregunta sobre un hecho terminado: perfecto simple. Pasar es un verbo regular en -ar, ellos: pasaron.",
-        "de": "Eine Frage zu einem abgeschlossenen Ereignis: indefinido. Pasar ist ein regelmäßiges -ar-Verb, sie: pasaron."
+        "es": "Una pregunta sobre un hecho terminado: perfecto simple. Pasar es un verbo regular en -ar, ellos: pasaron."
       }
     },
     {
@@ -1715,9 +1499,7 @@
       },
       "prompt": {
         "es": "Pasan por la playa.",
-        "hu": "Benéznek a strandra.",
-        "en": "You (all) stop by the beach.",
-        "de": "Sie schauen am Strand vorbei."
+        "en": "You (all) stop by the beach."
       },
       "answer": "Pasaron por la playa.",
       "accept": [
@@ -1728,10 +1510,8 @@
         "391"
       ],
       "why": {
-        "hu": "Lezárt esemény: indefinido. Pasar szabályos -ar ige, ustedes: pasaron.",
         "en": "A finished event: indefinido. Pasar is a regular -ar verb, ustedes: pasaron.",
-        "es": "Un hecho terminado: perfecto simple. Pasar es un verbo regular en -ar, ustedes: pasaron.",
-        "de": "Ein abgeschlossenes Ereignis: indefinido. Pasar ist ein regelmäßiges -ar-Verb, ustedes: pasaron."
+        "es": "Un hecho terminado: perfecto simple. Pasar es un verbo regular en -ar, ustedes: pasaron."
       }
     },
     {
@@ -1743,9 +1523,7 @@
       },
       "prompt": {
         "es": "Espero en la playa.",
-        "hu": "A strandon várok.",
-        "en": "I wait at the beach.",
-        "de": "Ich warte am Strand."
+        "en": "I wait at the beach."
       },
       "answer": "Esperé en la playa.",
       "accept": [
@@ -1756,10 +1534,8 @@
         "391"
       ],
       "why": {
-        "hu": "Lezárt várakozás: indefinido. Esperar szabályos -ar ige, yo: esperé.",
         "en": "A finished period of waiting: indefinido. Esperar is a regular -ar verb, yo: esperé.",
-        "es": "Una espera terminada: perfecto simple. Esperar es un verbo regular en -ar, yo: esperé.",
-        "de": "Ein abgeschlossenes Warten: indefinido. Esperar ist ein regelmäßiges -ar-Verb, ich: esperé."
+        "es": "Una espera terminada: perfecto simple. Esperar es un verbo regular en -ar, yo: esperé."
       }
     },
     {
@@ -1771,9 +1547,7 @@
       },
       "prompt": {
         "es": "No esperas el examen.",
-        "hu": "Nem várod a vizsgát.",
-        "en": "You are not waiting for the exam.",
-        "de": "Du wartest nicht auf die Prüfung."
+        "en": "You are not waiting for the exam."
       },
       "answer": "No esperaste el examen.",
       "accept": [
@@ -1784,10 +1558,8 @@
         "610"
       ],
       "why": {
-        "hu": "Tagadott, lezárt várakozás: indefinido. Esperar szabályos -ar ige, tú: esperaste.",
         "en": "A negated, finished waiting: indefinido. Esperar is a regular -ar verb, tú: esperaste.",
-        "es": "Una espera negada y terminada: perfecto simple. Esperar es un verbo regular en -ar, tú: esperaste.",
-        "de": "Ein verneintes, abgeschlossenes Warten: indefinido. Esperar ist ein regelmäßiges -ar-Verb, du: esperaste."
+        "es": "Una espera negada y terminada: perfecto simple. Esperar es un verbo regular en -ar, tú: esperaste."
       }
     },
     {
@@ -1799,9 +1571,7 @@
       },
       "prompt": {
         "es": "¿Espera en el cine?",
-        "hu": "A moziban vár?",
-        "en": "Is he waiting at the movies?",
-        "de": "Wartet er im Kino?"
+        "en": "Is he waiting at the movies?"
       },
       "answer": "¿Esperó en el cine?",
       "accept": [
@@ -1814,10 +1584,8 @@
         "632"
       ],
       "why": {
-        "hu": "Kérdés egy lezárt várakozásról: indefinido. Esperar szabályos -ar ige, él: esperó.",
         "en": "A question about a finished waiting: indefinido. Esperar is a regular -ar verb, él: esperó.",
-        "es": "Una pregunta sobre una espera terminada: perfecto simple. Esperar es un verbo regular en -ar, él: esperó.",
-        "de": "Eine Frage zu einem abgeschlossenen Warten: indefinido. Esperar ist ein regelmäßiges -ar-Verb, er: esperó."
+        "es": "Una pregunta sobre una espera terminada: perfecto simple. Esperar es un verbo regular en -ar, él: esperó."
       }
     },
     {
@@ -1829,9 +1597,7 @@
       },
       "prompt": {
         "es": "Esperan la fiesta.",
-        "hu": "Várják a bulit.",
-        "en": "You (all) are waiting for the party.",
-        "de": "Sie warten auf die Party."
+        "en": "You (all) are waiting for the party."
       },
       "answer": "Esperaron la fiesta.",
       "accept": [
@@ -1842,10 +1608,8 @@
         "285"
       ],
       "why": {
-        "hu": "Lezárt várakozás: indefinido. Esperar szabályos -ar ige, ustedes: esperaron.",
         "en": "A finished waiting: indefinido. Esperar is a regular -ar verb, ustedes: esperaron.",
-        "es": "Una espera terminada: perfecto simple. Esperar es un verbo regular en -ar, ustedes: esperaron.",
-        "de": "Ein abgeschlossenes Warten: indefinido. Esperar ist ein regelmäßiges -ar-Verb, ustedes: esperaron."
+        "es": "Una espera terminada: perfecto simple. Esperar es un verbo regular en -ar, ustedes: esperaron."
       }
     },
     {
@@ -1857,9 +1621,7 @@
       },
       "prompt": {
         "es": "Necesito el dinero hoy.",
-        "hu": "Ma szükségem van a pénzre.",
-        "en": "I need the money today.",
-        "de": "Ich brauche heute das Geld."
+        "en": "I need the money today."
       },
       "answer": "Necesité el dinero hoy.",
       "accept": [
@@ -1873,10 +1635,8 @@
         "52"
       ],
       "why": {
-        "hu": "Lezárt, konkrét szükséglet: indefinido. Necesitar szabályos -ar ige, yo: necesité.",
         "en": "A finished, specific need: indefinido. Necesitar is a regular -ar verb, yo: necesité.",
-        "es": "Una necesidad concreta y terminada: perfecto simple. Necesitar es un verbo regular en -ar, yo: necesité.",
-        "de": "Ein abgeschlossenes, konkretes Bedürfnis: indefinido. Necesitar ist ein regelmäßiges -ar-Verb, ich: necesité."
+        "es": "Una necesidad concreta y terminada: perfecto simple. Necesitar es un verbo regular en -ar, yo: necesité."
       }
     },
     {
@@ -1888,9 +1648,7 @@
       },
       "prompt": {
         "es": "No necesita el examen.",
-        "hu": "Nincs szüksége a vizsgára.",
-        "en": "He doesn't need the exam.",
-        "de": "Er braucht die Prüfung nicht."
+        "en": "He doesn't need the exam."
       },
       "answer": "No necesitó el examen.",
       "accept": [
@@ -1903,10 +1661,8 @@
         "610"
       ],
       "why": {
-        "hu": "Tagadott, lezárt szükséglet: indefinido. Necesitar szabályos -ar ige, él: necesitó.",
         "en": "A negated, finished need: indefinido. Necesitar is a regular -ar verb, él: necesitó.",
-        "es": "Una necesidad negada y terminada: perfecto simple. Necesitar es un verbo regular en -ar, él: necesitó.",
-        "de": "Ein verneintes, abgeschlossenes Bedürfnis: indefinido. Necesitar ist ein regelmäßiges -ar-Verb, er: necesitó."
+        "es": "Una necesidad negada y terminada: perfecto simple. Necesitar es un verbo regular en -ar, él: necesitó."
       }
     },
     {
@@ -1918,9 +1674,7 @@
       },
       "prompt": {
         "es": "¿Necesitan la música?",
-        "hu": "Szükségük van a zenére?",
-        "en": "Do they need the music?",
-        "de": "Brauchen sie die Musik?"
+        "en": "Do they need the music?"
       },
       "answer": "¿Necesitaron la música?",
       "accept": [
@@ -1933,10 +1687,8 @@
         "283"
       ],
       "why": {
-        "hu": "Kérdés egy lezárt szükségletről: indefinido. Necesitar szabályos -ar ige, ellos: necesitaron.",
         "en": "A question about a finished need: indefinido. Necesitar is a regular -ar verb, ellos: necesitaron.",
-        "es": "Una pregunta sobre una necesidad terminada: perfecto simple. Necesitar es un verbo regular en -ar, ellos: necesitaron.",
-        "de": "Eine Frage zu einem abgeschlossenen Bedürfnis: indefinido. Necesitar ist ein regelmäßiges -ar-Verb, sie: necesitaron."
+        "es": "Una pregunta sobre una necesidad terminada: perfecto simple. Necesitar es un verbo regular en -ar, ellos: necesitaron."
       }
     },
     {
@@ -1948,9 +1700,7 @@
       },
       "prompt": {
         "es": "Necesitan el viaje.",
-        "hu": "Szükségük van az utazásra.",
-        "en": "You (all) need the trip.",
-        "de": "Sie brauchen die Reise."
+        "en": "You (all) need the trip."
       },
       "answer": "Necesitaron el viaje.",
       "accept": [
@@ -1961,10 +1711,8 @@
         "259"
       ],
       "why": {
-        "hu": "Lezárt szükséglet: indefinido. Necesitar szabályos -ar ige, ustedes: necesitaron.",
         "en": "A finished need: indefinido. Necesitar is a regular -ar verb, ustedes: necesitaron.",
-        "es": "Una necesidad terminada: perfecto simple. Necesitar es un verbo regular en -ar, ustedes: necesitaron.",
-        "de": "Ein abgeschlossenes Bedürfnis: indefinido. Necesitar ist ein regelmäßiges -ar-Verb, ustedes: necesitaron."
+        "es": "Una necesidad terminada: perfecto simple. Necesitar es un verbo regular en -ar, ustedes: necesitaron."
       }
     },
     {
@@ -1976,9 +1724,7 @@
       },
       "prompt": {
         "es": "¿Te gusta la playa?",
-        "hu": "Tetszik neked a strand?",
-        "en": "Do you like the beach?",
-        "de": "Gefällt dir der Strand?"
+        "en": "Do you like the beach?"
       },
       "answer": "¿Te gustó la playa?",
       "accept": [
@@ -1989,10 +1735,8 @@
         "391"
       ],
       "why": {
-        "hu": "Kérdés egy lezárt tetszés-élményről: indefinido. Gustar esetén az alany a tetszés tárgya („la playa”), egyes szám 3.: gustó.",
         "en": "A question about a single, finished moment of liking something: indefinido. With gustar the thing that pleases is the subject ('la playa'), third person singular: gustó.",
-        "es": "Una pregunta sobre un momento único y terminado de que algo gustó: perfecto simple. En gustar el sujeto es lo que gusta ('la playa'), tercera persona singular: gustó.",
-        "de": "Eine Frage zu einem einzelnen, abgeschlossenen Moment des Gefallens: indefinido. Bei gustar ist das, was gefällt, das Subjekt ('la playa'), dritte Person Singular: gustó."
+        "es": "Una pregunta sobre un momento único y terminado de que algo gustó: perfecto simple. En gustar el sujeto es lo que gusta ('la playa'), tercera persona singular: gustó."
       }
     },
     {
@@ -2004,9 +1748,7 @@
       },
       "prompt": {
         "es": "Le gusta el cine.",
-        "hu": "Neki tetszik a mozi.",
-        "en": "He likes the movies.",
-        "de": "Ihm gefällt das Kino."
+        "en": "He likes the movies."
       },
       "answer": "Le gustó el cine.",
       "accept": [
@@ -2019,10 +1761,8 @@
         "632"
       ],
       "why": {
-        "hu": "Egyszeri, lezárt tetszés-élmény: indefinido. Gustar esetén az alany a tetszés tárgya („el cine”), egyes szám 3.: gustó.",
         "en": "A single, finished moment of liking something: indefinido. With gustar the thing that pleases is the subject ('el cine'), third person singular: gustó.",
-        "es": "Un momento único y terminado de que algo gustó: perfecto simple. En gustar el sujeto es lo que gusta ('el cine'), tercera persona singular: gustó.",
-        "de": "Ein einzelner, abgeschlossener Moment des Gefallens: indefinido. Bei gustar ist das, was gefällt, das Subjekt ('el cine'), dritte Person Singular: gustó."
+        "es": "Un momento único y terminado de que algo gustó: perfecto simple. En gustar el sujeto es lo que gusta ('el cine'), tercera persona singular: gustó."
       }
     },
     {
@@ -2034,9 +1774,7 @@
       },
       "prompt": {
         "es": "No nos gusta la ciudad.",
-        "hu": "Nekünk nem tetszik a város.",
-        "en": "We don't like the city.",
-        "de": "Uns gefällt die Stadt nicht."
+        "en": "We don't like the city."
       },
       "answer": "No nos gustó la ciudad.",
       "accept": [
@@ -2047,10 +1785,8 @@
         "51"
       ],
       "why": {
-        "hu": "Tagadott, lezárt tetszés-élmény: indefinido. Gustar esetén az alany a tetszés tárgya („la ciudad”), egyes szám 3.: gustó.",
         "en": "A negated, finished moment of liking something: indefinido. With gustar the thing that pleases is the subject ('la ciudad'), third person singular: gustó.",
-        "es": "Un momento negado y terminado de que algo gustó: perfecto simple. En gustar el sujeto es lo que gusta ('la ciudad'), tercera persona singular: gustó.",
-        "de": "Ein verneinter, abgeschlossener Moment des Gefallens: indefinido. Bei gustar ist das, was gefällt, das Subjekt ('la ciudad'), dritte Person Singular: gustó."
+        "es": "Un momento negado y terminado de que algo gustó: perfecto simple. En gustar el sujeto es lo que gusta ('la ciudad'), tercera persona singular: gustó."
       }
     },
     {
@@ -2062,9 +1798,7 @@
       },
       "prompt": {
         "es": "Les gustan las películas.",
-        "hu": "Nekik tetszenek a filmek.",
-        "en": "They like the movies.",
-        "de": "Ihnen gefallen die Filme."
+        "en": "They like the movies."
       },
       "answer": "Les gustaron las películas.",
       "accept": [
@@ -2077,10 +1811,8 @@
         "284"
       ],
       "why": {
-        "hu": "Egyszeri, lezárt tetszés-élmény, többes alany: indefinido. Gustar esetén az alany a tetszés tárgya („las películas”), többes szám 3.: gustaron.",
         "en": "A single, finished moment of liking something, plural subject: indefinido. With gustar the thing that pleases is the subject ('las películas'), third person plural: gustaron.",
-        "es": "Un momento único y terminado de que algo gustó, sujeto plural: perfecto simple. En gustar el sujeto es lo que gusta ('las películas'), tercera persona plural: gustaron.",
-        "de": "Ein einzelner, abgeschlossener Moment des Gefallens, Plural-Subjekt: indefinido. Bei gustar ist das, was gefällt, das Subjekt ('las películas'), dritte Person Plural: gustaron."
+        "es": "Un momento único y terminado de que algo gustó, sujeto plural: perfecto simple. En gustar el sujeto es lo que gusta ('las películas'), tercera persona plural: gustaron."
       }
     }
   ]

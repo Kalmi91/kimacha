@@ -12,7 +12,7 @@ import {
 } from '@/lib/grammar/nounArticles';
 import type { LessonV2 } from '@/lib/grammar/lessonTypes';
 
-const LANGS = ['hu', 'en', 'es', 'de'] as const;
+const LANGS = ['en', 'es'] as const;
 
 describe('articleNouns', () => {
   const nouns = articleNouns();
@@ -45,7 +45,7 @@ describe('articleNounItems', () => {
     expect(new Set(items.map((i) => i.id)).size).toBe(items.length);
   });
 
-  it('the why and wrong explanations are filled in all 4 languages, wrong exists for the wrong option', () => {
+  it('the why and wrong explanations are filled in both languages, wrong exists for the wrong option', () => {
     for (const it of items) {
       const wrongOpt = it.options[1 - it.correct];
       for (const lang of LANGS) {
@@ -55,8 +55,8 @@ describe('articleNounItems', () => {
     }
   });
 
-  // the noun's meaning from words-open (hu / en / de, English for es), shown after the answer.
-  it('every item has a meaning (tr) in all 4 languages, the English one is the en field of words-open', () => {
+  // the noun's meaning from words-open (English for es), shown after the answer.
+  it('every item has a meaning (tr) in both languages, the English one is the en field of words-open', () => {
     for (const it of items) {
       for (const lang of LANGS) expect(it.tr?.[lang]?.trim()).toBeTruthy();
     }

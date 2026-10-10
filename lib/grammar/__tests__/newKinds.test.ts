@@ -1,7 +1,7 @@
 // Error spotting / word order / dictation, only in the ser-estar and negacion lessons, marked as trial.
 import { grammarKindCounts, isTrialItem } from '@/lib/games/content';
 import { buildGrammarRound, grammarRoundItemKind } from '@/lib/games/grammarChoice';
-import { lessonFor, lessonHasTrial, lessonKinds, scoredKinds } from '../syllabus';
+import { lessonFor, lessonKinds, scoredKinds } from '../syllabus';
 import { fixedSentence } from '@/components/grammar/NewKinds';
 import type { LessonV2 } from '../lessonTypes';
 
@@ -28,12 +28,10 @@ describe('new task kinds in the two trial lessons', () => {
       const fresh = lesson.items.filter((i) => ['spot', 'order', 'dictation'].includes(i.kind ?? ''));
       expect(fresh.length).toBe(lesson === serEstar ? 5 : 10);
       expect(fresh.every((i) => isTrialItem(i))).toBe(true);
-      expect(lessonHasTrial(lesson)).toBe(true);
     }
     const others = ['presente-irregular', 'sustantivo-numero', 'gustar', 'por-para', 'perfecto'];
     for (const id of others) {
       const l = lessonFor('es', id)!;
-      expect(lessonHasTrial(l)).toBe(false);
       const c = grammarKindCounts(l);
       expect(c.spot + c.order + c.dictation).toBe(0);
     }

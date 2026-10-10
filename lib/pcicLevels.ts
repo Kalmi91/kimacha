@@ -1,19 +1,13 @@
-// Per-level separation of PCIC progress. The id of every PCIC item
-// (originally) starts with its own level ("b1-...", "a2-...").
-// Difficulty re-leveling can move a word into another level's file
-// without changing its id (and thus its prefix)
-// - from now on the actual level is decided by `levelOfItem` (data/pcic.ts,
-// based on the loaded corpus); the id prefix is only a fallback when the id is
-// not in the corpus (e.g. a test fixture id that was never a real PCIC item).
+// Per-level separation of PCIC progress. The level of an item is decided by
+// `levelOfItem` (data/pcic.ts, based on the loaded corpus); an id that is not
+// in the corpus belongs to no level.
 // Pure functions, no I/O; the caller (app/(tabs)/index.tsx) supplies the cards.
 
 import { levelOfItem, type PcicLevel } from '@/data/pcic';
 import type { Sm2Card } from './sm2';
 
 export function matchesLevel(itemId: string, level: PcicLevel): boolean {
-  const actual = levelOfItem(itemId);
-  if (actual) return actual === level;
-  return itemId.startsWith(`${level.toLowerCase()}-`);
+  return levelOfItem(itemId) === level;
 }
 
 export function cardsForLevel(cards: Sm2Card[], level: PcicLevel): Sm2Card[] {

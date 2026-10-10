@@ -37,7 +37,6 @@ import LessonTest from '@/components/grammar/LessonTest';
 import FeedbackButton from '@/components/FeedbackModal';
 import FitText from '@/components/FitText';
 import SpeakButton from '@/components/SpeakButton';
-import TrialBadge from '@/components/TrialBadge';
 import { BrutalBox, Card, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
 import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
@@ -106,7 +105,7 @@ export default function GrammarLessonScreen() {
     const target = onboarding?.target ?? 'es';
     setLearnedLang(target);
     // Kimacha Play: UI always English, regardless of the
-    // stored source language; the lesson data's hu/es/de fields stay unused.
+    // stored source language.
     // es→en: a Spanish-native learner gets the Spanish explanation.
     setContentLang(target === 'en' ? 'es' : 'en');
     const levelData = await db.getLevel();
@@ -185,7 +184,7 @@ export default function GrammarLessonScreen() {
     );
   }
 
-  // title is Record<hu/en/es/de,string>-like in both schemas, but
+  // title is Record<en/es,string>-like in both schemas, but
   // LessonV2's Lang4 does not allow an arbitrary string index, hence the cast.
   const lessonTitle = (lesson.title as Record<string, string>)[contentLang] ?? lesson.title.en;
   const knownIds = cumulativeCorpusWordIds(lesson.level, learnedLang);
@@ -194,8 +193,6 @@ export default function GrammarLessonScreen() {
   // (e.g. hay-estar gets no conjugation button, since it has no form item).
   const kindCounts = grammarKindCounts(lesson);
   const availableKinds = KIND_ORDER.filter((k) => kindCounts[k] > 0);
-  // Provisional kinds (all trial items): their button gets a badge and they do not count toward the lesson %.
-  const trialKinds = new Set<GrammarKind>(availableKinds.filter((k) => !scoredKinds(lesson).includes(k)));
   // the deck button only where the lesson actually
   // has a conjugation table (lib/grammar/tableDeck.ts already excludes the
   // reference GridTables and vosotros rows).
@@ -233,7 +230,7 @@ export default function GrammarLessonScreen() {
       setSpeaking(false);
       return;
     }
-    const text = lesson.speak[contentLang as 'hu' | 'en' | 'es' | 'de'] ?? lesson.speak.en;
+    const text = lesson.speak[contentLang as 'en' | 'es'] ?? lesson.speak.en;
     const segments = splitByMarkers(text, { learnedLang, nativeLang: contentLang }).map((seg) => ({
       text: seg.text,
       locale: speechLang(seg.lang),
@@ -657,7 +654,7 @@ export default function GrammarLessonScreen() {
           onPress={toggleLessonSpeech}
           hitSlop={10}
         />
-        <LessonBody blocks={lesson.body} contentLang={contentLang as 'hu' | 'en' | 'es' | 'de'} learnedLang={learnedLang} />
+        <LessonBody blocks={lesson.body} contentLang={contentLang as 'en' | 'es'} learnedLang={learnedLang} />
 
         <Text style={[styles.sectionLabel, { color: accentText }]}>{s.grammar.examplesLabel}</Text>
         {worked.map((w, i) => (
@@ -720,12 +717,6 @@ export default function GrammarLessonScreen() {
                 true,
                 i === 0
               )}
-              {/* under the provisional kind's button, the "NEW · TEST" badge. */}
-              {trialKinds.has(kind) ? (
-                <View style={styles.trialRow}>
-                  <TrialBadge testID={`trial-badge-${kind}`} />
-                </View>
-              ) : null}
               {runInfo || kindPct !== null ? (
                 <Text testID={`grammar-kind-percent-${kind}`} style={[styles.kindPercentNote, { color: colors.tabIconDefault }]}>
                   {runInfo ? s.grammar.runProgress(runInfo.answered, runInfo.of, runInfo.percent) : s.grammar.lessonPercent(kindPct as number)}
@@ -835,7 +826,6 @@ const styles = StyleSheet.create({
   lessonPercentNote: { fontSize: 12, textAlign: 'center', marginTop: -6, marginBottom: 12 },
   // the same line style, under each kind's own button.
   kindPercentNote: { fontSize: 12, textAlign: 'center', marginTop: 2 },
-  trialRow: { alignItems: 'center', marginTop: 6 },
   // the line under the lesson-test button, and the lesson page's "Test passed" mark.
   lessonTestNote: { fontSize: 12, textAlign: 'center', marginTop: 4 },
   testPassedNote: { fontSize: 14, fontWeight: '700', marginTop: 10 },
