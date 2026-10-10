@@ -45,6 +45,12 @@ describe('withPlaySigning.patchBuildGradle', () => {
     expect(out).toContain('throw new GradleException');
   });
 
+  it('turns the backslashes of a Windows storeFile into forward slashes before loading the properties', () => {
+    expect(out).toContain(String.raw`line.matches(/\s*storeFile\s*[=:].*/)`);
+    expect(out).toContain(".replace('\\\\', '/')");
+    expect(out).toContain('playKeystoreProps.load(new StringReader(propsText))');
+  });
+
   it('puts the helper before the android block and is idempotent', () => {
     expect(out.indexOf('def playStoreBuild')).toBeLessThan(out.indexOf('\nandroid {'));
     expect(patchBuildGradle(out)).toBe(out);
