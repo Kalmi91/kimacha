@@ -102,7 +102,7 @@ function textIndexFor(lang: string, field: string): Map<string, WordEntry> {
   return textIndex[cacheKey];
 }
 
-// `field` is the language the tapped text is written in ('es', 'en', 'hu', 'de'),
+// `field` is the language the tapped text is written in ('es', 'en'),
 // `lang` the branch being learned (kept so the call sites need no change; the words-open deck is the only source).
 export function findWordByText(token: string, field: string, lang: string = 'es'): WordEntry | undefined {
   const norm = normalizeWordToken(token);

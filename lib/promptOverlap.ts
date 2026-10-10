@@ -7,7 +7,7 @@
 // overlap, the parenthesized form already disambiguates; the caller filters them out
 // with isConjugatedForm before passing the list to findPromptOverlaps.
 
-export type PromptLang = 'en' | 'es' | 'hu';
+export type PromptLang = 'en' | 'es';
 
 interface PromptOverlapWord {
   id: number;
@@ -26,7 +26,6 @@ interface PromptOverlapCluster {
 const ARTICLES: Record<PromptLang, RegExp | null> = {
   en: /^(the|a|an)\s+/,
   es: /^(el|la|los|las|un|una|unos|unas)\s+/,
-  hu: /^az?\s+/,
 };
 
 export function isConjugatedForm(headword: string): boolean {
