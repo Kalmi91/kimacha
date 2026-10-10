@@ -16,7 +16,7 @@ The repository is published for viewing and evaluation. It is not open source: s
 
 The app has four tabs.
 
-- **Learn** (the `PCIC` tab): a deck per level, A1 to B2. Word cards ask you to type the answer, and
+- **Learn** (the `PCIC` tab): a deck per level, A1 to C1. Word cards ask you to type the answer, and
   Spanish nouns come with an article picker. Sentence cards appear once you know the words in them.
   A daily limit caps the new cards. Cards can be read aloud. The tab also holds the level exams and
   the 3 minute placement test.
@@ -69,7 +69,7 @@ docs/         docs/NORTH-STAR.md, the product rules the code is built to
 assets/       fonts, images, word photos, branding
 ```
 
-Data layout: Spanish words are in `data/words-open/{a1,a2,b1,b2}.json`, English words in
+Data layout: Spanish words are in `data/words-open/{a1,a2,b1,b2,c1}.json`, English words in
 `data/words/en/`. Add or edit entries in those JSON files, never in the `.ts` wiring files.
 
 ## Getting started

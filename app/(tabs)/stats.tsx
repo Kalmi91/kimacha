@@ -60,7 +60,7 @@ export default function StatsScreen() {
   const [reviewsToday, setReviewsToday] = useState(0);
   const [weeklyGoal, setWeeklyGoal] = useState(DEFAULT_WEEKLY_GOAL_MINUTES);
   const [schedule, setSchedule] = useState<SchedulePreview>(EMPTY_SCHEDULE);
-  // The PCIC level (A1-B2), set by the PCIC tab's level picker,
+  // The PCIC level (A1-C1), set by the PCIC tab's level picker,
   // instead of the old FSRS level (A0-C2).
   const [pcicLevel, setPcicLevel] = useState<PcicLevel>('B1');
   const [levelKnown, setLevelKnown] = useState(0);

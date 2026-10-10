@@ -1,5 +1,5 @@
-// Gate for the open vocabulary (data/words-open/{a1,a2,b1,b2}.json), R1-R8.
-// Usage: node scripts/words-open-check.mjs [--level a1|a2|b1|b2] [--list-only]
+// Gate for the open vocabulary (data/words-open/{a1,a2,b1,b2,c1}.json), R1-R8.
+// Usage: node scripts/words-open-check.mjs [--level a1|a2|b1|b2|c1] [--list-only]
 //   --list-only  only R1-R2 and R11-R15 (the list is done, the sentences are not there yet)
 //   --level X    R3-R10 run only on the level X cards (lookups always load all 600 cards)
 //   --to N       R3-R10 run only on cards with order <= N (for checking a half-finished level)
@@ -23,14 +23,14 @@ import { importTs } from './lib/importTs.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIR = path.join(ROOT, 'data', 'words-open');
-const LEVELS = ['a1', 'a2', 'b1', 'b2'];
-const LEVEL_RANK = { A1: 1, A2: 2, B1: 3, B2: 4 };
+const LEVELS = ['a1', 'a2', 'b1', 'b2', 'c1'];
+const LEVEL_RANK = { A1: 1, A2: 2, B1: 3, B2: 4, C1: 5 };
 const KEYS = [
   'order', 'level', 'pos', 'lemma', 'es', 'en',
   'sentence_es', 'sentence_en', 'sentence_lemmas',
 ];
 const POS = new Set(['noun', 'verb', 'adj', 'adv', 'pron', 'det', 'prep', 'conj', 'num', 'interj']);
-const MAX_TOKENS = { A1: 8, A2: 10, B1: 12, B2: 14 };
+const MAX_TOKENS = { A1: 8, A2: 10, B1: 12, B2: 14, C1: 16 };
 const EMPTY_SENTENCE_MAX_ORDER = 20;
 
 // ---------------------------------------------------------------- arguments
@@ -43,7 +43,7 @@ const li = args.indexOf('--level');
 if (li !== -1) {
   onlyLevel = (args[li + 1] || '').toLowerCase();
   if (!LEVELS.includes(onlyLevel)) {
-    console.error('--level értéke a1|a2|b1|b2 lehet');
+    console.error('--level értéke a1|a2|b1|b2|c1 lehet');
     process.exit(2);
   }
 }

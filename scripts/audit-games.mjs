@@ -3,7 +3,7 @@
  * audit-games.mjs, the mechanical guard for the Game tab's
  * content-driven games (grammar-choice, confusables, and future kinds: story,
  * chat, myth), scoped to data/games/**.json. The
- * Spanish taught vocabulary is the open deck (data/words-open, A1-B2).
+ * Spanish taught vocabulary is the open deck (data/words-open, A1-C1).
  *
  * Guarantee (the user's set-in-stone criterion): every
  * content word is EITHER already taught (in the target level's cumulative
