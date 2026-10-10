@@ -119,15 +119,37 @@ part of the normal release path.
 
 1. Bump `expo.version` and `expo.android.versionCode` in `app.json` and commit as
    `chore(release): X.Y.Z (versionCode)`.
-2. The native project is `android/`. It is hand-maintained, gitignored and kept only on the
-   maintainer's machine, so it is never committed. Do not run `npx expo prebuild` there: it
-   overwrites the signing setup.
-3. Build the Play bundle with Gradle (`:app:bundleRelease -PplayStore=true`) with
-   `EXPO_PUBLIC_PLAY_STORE=1`. That flag switches the Play flavour on (`lib/buildFlavor.ts`):
-   feedback goes through the share sheet instead of a network call. Sign with the upload key. Keys
-   and passwords stay on the maintainer's machine and never enter the repository.
-4. Upload the bundle in the Google Play Console.
-5. Tag the commit `vX.Y.Z` and publish a GitHub Release. `hygiene.yml` warns when a release commit has
+2. The native project is `android/`. `npx expo prebuild --platform android --clean` generates it
+   from `app.json` and the config plugins in `plugins/`, so it is gitignored and never committed or
+   edited by hand. Native settings belong in `app.json` (permissions, R8 and resource shrinking
+   through `expo-build-properties`) or in a plugin (`withPlaySigning.js`, `withNativeDebugSymbols.js`).
+3. Build on Windows. It needs JDK 17 and the Android SDK (platform 36, build-tools 36, NDK 27.1.12297006,
+   licences accepted). In PowerShell:
+
+   ```powershell
+   $env:JAVA_HOME = "C:\Program Files\Microsoft\jdk-17.0.20.101-hotspot"   # any JDK 17
+   $env:ANDROID_HOME = "$env:LOCALAPPDATA\Android\Sdk"
+   npm ci
+   npx expo prebuild --platform android --clean
+   cd android
+   .\gradlew.bat assembleRelease   # android\app\build\outputs\apk\release\app-release.apk
+   ```
+
+   Without further flags the release is signed with the public React Native debug key that the
+   prebuild template ships. That is the sideload APK, and it keeps updating over the one already
+   installed.
+4. Build the Play bundle with `.\gradlew.bat :app:bundleRelease -PplayStore=true` and
+   `$env:EXPO_PUBLIC_PLAY_STORE = "1"`. That flag switches the Play flavour on (`lib/buildFlavor.ts`):
+   feedback goes through the share sheet instead of a network call. Metro does not key its cache on
+   the variable, so delete `$env:TEMP\metro-*` and `node_modules\.cache` first. `-PplayStore=true` makes
+   `plugins/withPlaySigning.js` sign with the upload key. The key is described by a
+   `keystore.properties` file (`storeFile`, `storePassword`, `keyAlias`, `keyPassword`; a relative
+   `storeFile` is resolved next to the properties file). Its path comes from the environment variable
+   `KIMACHA_KEYSTORE_PROPERTIES`, default `%USERPROFILE%\.kimacha\keystore.properties`; the build fails
+   with a message when it is missing. Keys and passwords stay on the maintainer's machine and never
+   enter the repository (`*.jks` and `keystore.properties` are gitignored).
+5. Upload the bundle in the Google Play Console.
+6. Tag the commit `vX.Y.Z` and publish a GitHub Release. `hygiene.yml` warns when a release commit has
    no tag.
 
 ## Privacy

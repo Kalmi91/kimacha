@@ -58,3 +58,12 @@ The product rules are in [docs/NORTH-STAR.md](../docs/NORTH-STAR.md). The ones t
 The maintainer cuts releases (version bump in `app.json`, local build, Google Play upload, `vX.Y.Z` tag
 and GitHub Release). The steps are in the README. Security problems go to [SECURITY.md](SECURITY.md),
 not to a public issue.
+
+## Building an APK locally (Windows)
+
+Install JDK 17 and the Android SDK (platform 36, build-tools 36, NDK 27.1.12297006) and set `JAVA_HOME`
+and `ANDROID_HOME`. Then `npx expo prebuild --platform android --clean` and `android\gradlew.bat assembleRelease`
+(from `android\`). `android/` is generated and gitignored: put native settings in `app.json` or in a config
+plugin under `plugins/`, never in the generated folder. Play bundles are signed by `plugins/withPlaySigning.js`
+when you pass `-PplayStore=true`, with the key described by `%USERPROFILE%\.kimacha\keystore.properties` (or the
+file named in `KIMACHA_KEYSTORE_PROPERTIES`). Never commit a keystore or that file. Details: README, Release process.
