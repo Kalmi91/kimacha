@@ -1,10 +1,10 @@
 // The single source of the Spanish words is
-// data/words-open (601 cards, A1-B2). The cards come in the shape of the old `WordEntry`
+// data/words-open (A1-C1). The cards come in the shape of the old `WordEntry`
 // (id = the card's `order`, 1-601), so that the lookups and their callers (glossary,
 // mixed read-aloud, part-of-speech index, verb-form map) live on with an unchanged signature.
-// words-open has no `id`, `gender` and A0/C1/C2 levels: the gender comes from the article
+// words-open has no `id`, `gender` and A0/C2 levels: the gender comes from the article
 // (the old annotating script took it from the article too), the edge levels
-// fall onto A1 and B2 (see openLevelOf, the same rule as PCIC_LEVEL_CEILING of tableDeck).
+// fall onto A1 and C1 (see openLevelOf, the same rule as PCIC_LEVEL_CEILING of tableDeck).
 
 import type { Level, WordEntry, WordGender, WordPos } from '@/data/words';
 import { encliticBases, formsOfCard } from '@/lib/esForms';
@@ -14,6 +14,7 @@ import openA1 from '@/data/words-open/a1.json';
 import openA2 from '@/data/words-open/a2.json';
 import openB1 from '@/data/words-open/b1.json';
 import openB2 from '@/data/words-open/b2.json';
+import openC1 from '@/data/words-open/c1.json';
 
 interface OpenCard {
   order: number;
@@ -30,7 +31,7 @@ interface OpenCard {
 /** A words-open card in WordEntry shape; `openPos` is the raw part of speech of words-open (conj, det, interj too). */
 type OpenWord = WordEntry & { lemma: string; openPos: string };
 
-const OPEN_LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2'];
+const OPEN_LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
 
 // The parts of speech that fall into WordPos; conj/det/interj cannot be mapped, those cards stay without `pos`.
 const OPEN_POS_TO_WORD_POS: Record<string, WordPos> = {
@@ -69,14 +70,14 @@ function toWord(c: OpenCard): OpenWord {
   return word;
 }
 
-const FILES: OpenCard[][] = [openA1, openA2, openB1, openB2] as OpenCard[][];
+const FILES: OpenCard[][] = [openA1, openA2, openB1, openB2, openC1] as OpenCard[][];
 
 export const openWords: OpenWord[] = FILES.flatMap((cards) => cards.map(toWord));
 
-/** The level in words-open: A0 → A1, C1/C2 → B2 (A1 is the lower, B2 the upper bound). */
+/** The level in words-open: A0 → A1, C2 → C1 (A1 is the lower, C1 the upper bound). */
 export function openLevelOf(level: Level): Level {
   if (level === 'A0') return 'A1';
-  if (level === 'C1' || level === 'C2') return 'B2';
+  if (level === 'C2') return 'C1';
   return level;
 }
 

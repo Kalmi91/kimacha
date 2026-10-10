@@ -1,4 +1,4 @@
-// Guard test: every A1-B2 word/phrase
+// Guard test: every A1-C1 word/phrase
 // item has a part of speech, and a sentence/pattern item never does.
 // The lemma index of posOf is data/words-open, so the
 // test runs on the items of the live deck (data/pcic.ts, en->es direction) instead of the former raw
@@ -10,6 +10,7 @@ import openA1 from '../../data/words-open/a1.json';
 import openA2 from '../../data/words-open/a2.json';
 import openB1 from '../../data/words-open/b1.json';
 import openB2 from '../../data/words-open/b2.json';
+import openC1 from '../../data/words-open/c1.json';
 
 interface OpenCard {
   order: number;
@@ -17,7 +18,7 @@ interface OpenCard {
   sentence_es: string;
 }
 
-const OPEN_CARDS = [...openA1, ...openA2, ...openB1, ...openB2] as OpenCard[];
+const OPEN_CARDS = [...openA1, ...openA2, ...openB1, ...openB2, ...openC1] as OpenCard[];
 const DET_INTERJ_IDS = new Set(OPEN_CARDS.filter((c) => c.pos === 'det' || c.pos === 'interj').map((c) => `o${c.order}`));
 
 describe('posOf coverage', () => {
@@ -25,7 +26,7 @@ describe('posOf coverage', () => {
 
   it('the det/interj cards (26 words, e.g. o883 adiós) also get a part-of-speech chip', () => {
     expect(DET_INTERJ_IDS.size).toBe(26);
-    const items = (['A1', 'A2', 'B1', 'B2'] as const).flatMap((l) => pcicItemsForLevel(l)).filter((i) => DET_INTERJ_IDS.has(i.id));
+    const items = (['A1', 'A2', 'B1', 'B2', 'C1'] as const).flatMap((l) => pcicItemsForLevel(l)).filter((i) => DET_INTERJ_IDS.has(i.id));
     expect(items).toHaveLength(26);
     expect(items.filter((i) => posOf({ es: i.es, kind: i.kind, pos: i.pos }) === null).map((i) => i.id)).toEqual([]);
     expect(posOf({ es: 'adiós', kind: 'word', pos: items.find((i) => i.id === 'o883')?.pos })?.pos).toBe('interj');

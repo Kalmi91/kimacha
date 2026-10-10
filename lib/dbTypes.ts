@@ -66,7 +66,7 @@ export interface DB {
   // PCIC tab, SM-2, independent of the FSRS `cards`
   getPcicCards(): Promise<Sm2Card[]>;
   upsertPcicCard(card: Sm2Card): Promise<void>;
-  // the selected PCIC level (A1-B2), app-wide, like the
+  // the selected PCIC level (A1-C1), app-wide, like the
   // status-bar tint. `levelPrefix` is optional: it clears only that level
   // (by the id list fetched from the loaded corpus, following lib/pcicLevels.ts
   // matchesLevel: since the difficulty re-leveling, the level is not

@@ -47,9 +47,11 @@ describe('OnboardingScreen: language and level step', () => {
     expect(getByText('Beginner')).toBeTruthy();
     expect(getByText('A2')).toBeTruthy();
     expect(getByText('B1')).toBeTruthy();
-    // B2 can also be chosen (words-open b2.json, 150 items).
+    // B2 and C1 can also be chosen (words-open b2.json, c1.json).
     expect(getByText('B2')).toBeTruthy();
     expect(getByText('Upper intermediate')).toBeTruthy();
+    expect(getByText('C1')).toBeTruthy();
+    expect(getByText('Advanced')).toBeTruthy();
   });
 
   it('choosing the en→es level saves the onboarding + the PCIC level, and navigates to the tabs', async () => {
@@ -101,8 +103,9 @@ describe('OnboardingScreen: language and level step', () => {
     expect(getByText('B1')).toBeTruthy();
     // A1 = en a0+a1, A2 = en a2, the "no words yet" row does not appear.
     expect(queryByText('Todavía no hay palabras.')).toBeNull();
-    // es→en B2 is empty, the "0 items = we do not offer it" filter skips it.
+    // es→en B2 and C1 are empty, the "0 items = we do not offer it" filter skips them.
     expect(queryByText('B2')).toBeNull();
+    expect(queryByText('C1')).toBeNull();
   });
 
   it('choosing es→en A1 saves "es"/"en", always with level A1', async () => {

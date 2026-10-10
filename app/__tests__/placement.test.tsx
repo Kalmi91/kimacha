@@ -57,13 +57,13 @@ describe('PlacementScreen (onboarding: no saved direction yet)', () => {
     await flush();
     await play(screen, () => true);
 
-    expect(screen.getByTestId('placement-result').props.children).toBe('Suggested start: B2');
-    // The 9 correctly answered words became known (on an empty database all the new ones graduate).
-    expect(screen.getByTestId('placement-known').props.children).toBe('9 words you already know will not come back as new.');
+    expect(screen.getByTestId('placement-result').props.children).toBe('Suggested start: C1');
+    // The 12 correctly answered words became known (on an empty database all the new ones graduate).
+    expect(screen.getByTestId('placement-known').props.children).toBe('12 words you already know will not come back as new.');
     await press(screen, 'placement-start');
 
     expect(await getDb().getOnboarding()).toEqual({ source: 'en', target: 'es' });
-    expect(await getDb().getPcicLevel()).toBe('B2');
+    expect(await getDb().getPcicLevel()).toBe('C1');
     expect(mockReplace).toHaveBeenCalledWith('/(tabs)');
     expect(mockBack).not.toHaveBeenCalled();
   });
@@ -75,12 +75,12 @@ describe('PlacementScreen', () => {
     mockReplace.mockClear();
   });
 
-  it('starts from A2; question number, four level dots, word question with 4 answers + "I don\'t know"', async () => {
+  it('starts from A2; question number, five level dots, word question with 4 answers + "I don\'t know"', async () => {
     const screen = render(<PlacementScreen />);
     await flush();
 
     expect(screen.getByTestId('placement-counter').props.children).toBe('Question 1');
-    for (const level of ['A1', 'A2', 'B1', 'B2']) expect(screen.getByText(level)).toBeTruthy();
+    for (const level of ['A1', 'A2', 'B1', 'B2', 'C1']) expect(screen.getByText(level)).toBeTruthy();
     expect(screen.getByTestId('placement-text').props.children).toBe('What does «la ventana» mean?');
     for (const i of [0, 1, 2, 3]) expect(screen.getByTestId(`placement-option-${i}`)).toBeTruthy();
     expect(screen.getByText("I don't know")).toBeTruthy();
@@ -94,20 +94,20 @@ describe('PlacementScreen', () => {
     expect(screen.queryByTestId('exam-next')).toBeNull();
   });
 
-  it('all right -> B2 after 15 questions; correct words graduate, a grammar question brings no card', async () => {
+  it('all right -> C1 after 20 questions; correct words graduate, a grammar question brings no card', async () => {
     const screen = render(<PlacementScreen />);
     await flush();
     await play(screen, () => true);
 
-    expect(screen.getByTestId('placement-result').props.children).toBe('Suggested start: B2');
-    expect(screen.getByTestId('placement-breakdown').props.children).toBe('A2 5/5, B1 5/5, B2 5/5');
+    expect(screen.getByTestId('placement-result').props.children).toBe('Suggested start: C1');
+    expect(screen.getByTestId('placement-breakdown').props.children).toBe('A2 5/5, B1 5/5, B2 5/5, C1 5/5');
 
-    // Of the 15 questions, the 0th, 2nd, 4th, 5th, 7th, 9th, 10th, 12th, 14th are word questions (o100 + ordinal).
+    // Of the 20 questions, the 0th, 2nd, 4th, 5th, 7th, 9th, 10th, 12th, 14th, 15th, 17th, 19th are word questions (o100 + ordinal).
     const cards = await cardsById();
-    for (const n of [0, 2, 4, 5, 7, 9, 10, 12, 14]) {
+    for (const n of [0, 2, 4, 5, 7, 9, 10, 12, 14, 15, 17, 19]) {
       expect(cards.get(`o${100 + n}`)).toMatchObject({ state: 'review', interval: 1 });
     }
-    expect(cards.size).toBeGreaterThanOrEqual(9);
+    expect(cards.size).toBeGreaterThanOrEqual(12);
   });
 
   it('all wrong ("I don\'t know") -> A1 after 10 questions; word cards do not change', async () => {
@@ -143,7 +143,7 @@ describe('PlacementScreen', () => {
     await play(screen, () => true);
     await press(screen, 'placement-start');
 
-    expect(await getDb().getPcicLevel()).toBe('B2');
+    expect(await getDb().getPcicLevel()).toBe('C1');
     expect(mockBack).toHaveBeenCalledTimes(1);
     expect(mockReplace).not.toHaveBeenCalled();
   });

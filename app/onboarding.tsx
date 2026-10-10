@@ -90,7 +90,7 @@ export default function OnboardingScreen() {
     // en-es: A1/A2/B1 (the existing "0 items = don't offer it" filter); es-en: only A1,
     // always offered, even while it is still empty (the 50 English words come later) - in that
     // case a sentence under the row says so. In en-es the selectable view levels
-    // (A1/A2/B1/B2), not the raw PCIC_LEVELS.
+    // (A1/A2/B1/B2/C1), not the raw PCIC_LEVELS.
     // es-en also has A1 + A2 data, the same filter applies to both directions.
     const levels: PcicLevel[] = PCIC_VIEW_LEVELS.filter((lvl) => pcicItemsForLevel(lvl).length > 0);
     // The labels are in the UI language (they used to be hardcoded in English).
@@ -99,6 +99,7 @@ export default function OnboardingScreen() {
       A2: s.pcic.levelElementary,
       B1: s.pcic.levelIntermediate,
       B2: s.pcic.levelUpperIntermediate,
+      C1: s.pcic.levelAdvanced,
     };
     return (
       <View style={[styles.container, { backgroundColor: colors.background }]}>

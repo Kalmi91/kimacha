@@ -17,9 +17,9 @@ const norm = (text: string) => text.trim().toLowerCase();
 afterEach(() => setPcicTarget('es'));
 
 describe('placementLevels', () => {
-  it('en→es: A1-B2, es→en: A1-B1 (B2 is empty)', () => {
+  it('en→es: A1-C1, es→en: A1-B1 (B2 and C1 are empty)', () => {
     setPcicTarget('es');
-    expect(placementLevels()).toEqual(['A1', 'A2', 'B1', 'B2']);
+    expect(placementLevels()).toEqual(['A1', 'A2', 'B1', 'B2', 'C1']);
     setPcicTarget('en');
     expect(placementLevels()).toEqual(['A1', 'A2', 'B1']);
   });
