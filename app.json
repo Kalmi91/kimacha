@@ -44,7 +44,18 @@
         }
       ],
       "expo-sqlite",
-      "expo-sharing"
+      "expo-sharing",
+      "./plugins/withPlaySigning",
+      "./plugins/withNativeDebugSymbols",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "enableMinifyInReleaseBuilds": true,
+            "enableShrinkResourcesInReleaseBuilds": true
+          }
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
