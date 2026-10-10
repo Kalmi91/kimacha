@@ -48,6 +48,7 @@
     "typecheck:ci": "tsc --noEmit",
     "test": "jest",
     "test:ci": "jest --ci --coverage --maxWorkers=2",
+    "audit:data": "node scripts/words-open-check.mjs && node scripts/validate-en-track.mjs && node scripts/audit-corpus-en.mjs && node scripts/audit-games.mjs",
     "ui:overlap": "node scripts/ui-overlap.mjs"
   },
   "license": "UNLICENSED",
