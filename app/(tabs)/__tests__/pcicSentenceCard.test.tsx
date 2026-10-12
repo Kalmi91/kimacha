@@ -50,6 +50,7 @@ jest.mock('@/data/pcic', () => {
 import { act, fireEvent, render } from '@testing-library/react-native';
 import { TextInput } from 'react-native';
 
+import { setBeta } from '@/lib/beta';
 import { getDb } from '@/lib/database';
 import { RESUME_GAME_ID } from '@/lib/resumeRoute';
 import { speak } from '@/lib/speech';
@@ -83,6 +84,10 @@ describe('PCIC tab: sentence card', () => {
     await getDb().setOnboarding('en', 'es');
     await getDb().setPcicLevel('A1');
     mockSpeak.mockClear();
+  });
+
+  afterEach(async () => {
+    await setBeta('sentenceTab', false);
   });
 
   // Answering a NEW word: types the correct form, Check, Next.
@@ -127,6 +132,20 @@ describe('PCIC tab: sentence card', () => {
     fireEvent.press(r.getByText(/^Next/));
     await flush();
 
+    expect((await getDb().getPcicCards()).length).toBe(8);
+  });
+
+  it('with the Sentences tab beta on, no sentence card comes on the Words tab (the cards live on that tab)', async () => {
+    await setBeta('sentenceTab', true);
+    const r = render(<PcicScreen />);
+    await flush();
+    for (const prompt of ['the book', 'the table', 'the cat', 'the house']) await answerWord(r, prompt);
+    // where the build card came on the 4th word, the 5th word's prompt shows now
+    expect(r.queryByText('The book and the table.')).toBeNull();
+    expect(r.getByText('the dog')).toBeTruthy();
+    for (const prompt of ['the dog', 'the chair', 'the glass', 'the light']) await answerWord(r, prompt);
+    expect(r.queryByPlaceholderText('Type the sentence')).toBeNull();
+    expect(r.queryByText('The chair and the table.')).toBeNull();
     expect((await getDb().getPcicCards()).length).toBe(8);
   });
 
