@@ -18,6 +18,10 @@ export interface Sm2Card {
   lastReview: string | null;
   introducedAt: string | null; // on which day it was first asked
   known?: boolean; // the learner marked it as "known" by hand; rare check, counted as known in the statistics
+  // practice-tab half-step counter (lib/practice/halfStep.ts): 2 halves = 1 full step; undefined = 0
+  halfSteps?: number;
+  // practice-tab streak of wrong typed answers (2 in a row = 1 step back); undefined = 0
+  wrongStreak?: number;
 }
 
 // one correct answer is enough to graduate (the earlier 2 steps
