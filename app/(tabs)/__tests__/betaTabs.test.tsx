@@ -42,7 +42,6 @@ import { BETA_FLAGS, __resetBetaForTest, getBeta, setBeta } from '@/lib/beta';
 import { setLanguage } from '@/lib/i18n';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import TabLayout from '../_layout';
-import SentencesScreen from '../sentences';
 import SettingsScreen from '../settings';
 
 jest.setTimeout(30000);
@@ -95,28 +94,6 @@ describe('tab bar: the two beta tabs', () => {
     expect(tabLine(view, 'practice')).toBe('practice|Práctica|hidden');
     expect(tabLine(view, 'sentences')).toBe('sentences|Frases|hidden');
     view.unmount();
-  });
-});
-
-describe('the placeholder screens', () => {
-  it('title + "Coming soon" (EN), "Próximamente" (ES)', async () => {
-    for (const [Screen, id, en, es] of [
-      [SentencesScreen, 'sentences-screen', 'Sentences', 'Frases'],
-    ] as const) {
-      const view = render(<ThemeProvider><Screen /></ThemeProvider>);
-      await flush();
-      expect(view.getByTestId(id)).toBeTruthy();
-      expect(view.getByText(en)).toBeTruthy();
-      expect(view.getByText('Coming soon')).toBeTruthy();
-      view.unmount();
-      setLanguage('es');
-      const viewEs = render(<ThemeProvider><Screen /></ThemeProvider>);
-      await flush();
-      expect(viewEs.getByText(es)).toBeTruthy();
-      expect(viewEs.getByText('Próximamente')).toBeTruthy();
-      viewEs.unmount();
-      setLanguage('en');
-    }
   });
 });
 

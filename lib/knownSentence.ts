@@ -173,11 +173,29 @@ export function knownTokens(lang: KnownLang, ctx: KnownContext): Set<string> {
   return known;
 }
 
+/** The (lowercase) tokens of a sentence, the way the gate reads it. */
+export function sentenceTokens(sentence: string, lang: KnownLang): string[] {
+  return lang === 'es' ? tokenize(sentence) : enTokenize(sentence);
+}
+
 /** The tokens of the sentence that the gate does not accept. Empty = every word is known. */
 export function unknownTokens(sentence: string, lang: KnownLang, ctx: KnownContext): string[] {
   const known = knownTokens(lang, ctx);
-  const tokens = lang === 'es' ? tokenize(sentence) : enTokenize(sentence);
-  return tokens.filter((token) => !known.has(token));
+  return sentenceTokens(sentence, lang).filter((token) => !known.has(token));
+}
+
+/**
+ * The same gate over an already built `knownTokens` set (many sentences against one learned
+ * vocabulary: the Sentences tab checks the whole corpus without rebuilding the set each time).
+ */
+export function isSentenceKnownIn(sentence: string, lang: KnownLang, known: ReadonlySet<string>): boolean {
+  if (!sentence.trim()) return false;
+  if (lang === 'es') {
+    for (const structure of detectStructures(sentence)) {
+      if (UNMODELED_STRUCTURES.has(structure)) return false;
+    }
+  }
+  return sentenceTokens(sentence, lang).every((token) => known.has(token));
 }
 
 /**
@@ -186,11 +204,5 @@ export function unknownTokens(sentence: string, lang: KnownLang, ctx: KnownConte
  * a compound tense or an imperative.
  */
 export function isSentenceKnown(sentence: string, lang: KnownLang, ctx: KnownContext): boolean {
-  if (!sentence.trim()) return false;
-  if (lang === 'es') {
-    for (const structure of detectStructures(sentence)) {
-      if (UNMODELED_STRUCTURES.has(structure)) return false;
-    }
-  }
-  return unknownTokens(sentence, lang, ctx).length === 0;
+  return isSentenceKnownIn(sentence, lang, knownTokens(lang, ctx));
 }
