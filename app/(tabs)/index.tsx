@@ -8,7 +8,7 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { getDb } from '@/lib/database';
-import { getBeta } from '@/lib/beta';
+import { getBeta, useBeta } from '@/lib/beta';
 import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
 import { localDateString, DEFAULT_DAILY_NEW_LIMIT } from '@/lib/usageStats';
@@ -63,9 +63,6 @@ function pcicIntroOrder(memberIds: string[]): string[] {
   return thinSentences(memberIds, (id) => findPcicItem(id)?.kind, (id) => id);
 }
 
-// beta: xpV2 (the XP v2 values, lib/dailyXp.ts); PLAN-harom-jatek step 6 binds it to useBeta('xpV2').
-const XP_V2 = false;
-
 // Snapshot of one undoable grade. `counted` = whether it also advanced the
 // counters (the "Don't learn this" button will write false here).
 interface UndoEntry {
@@ -87,6 +84,8 @@ export default function PcicScreen() {
   const colors = Colors[theme];
   const g = useGrammarColors();
   const s = t();
+  // beta: xpV2, the XP v2 values (lib/dailyXp.ts); off = the original 3/2 XP.
+  const xpV2 = useBeta('xpV2');
 
   const [loading, setLoading] = useState(true);
   const [today, setToday] = useState('');
@@ -339,7 +338,7 @@ export default function PcicScreen() {
     // a no-op, so it is safe on Again too.
     await getDb().updateStreak();
     // "Knew it" earns XP (new word 3, review 2; XP v2: lib/dailyXp.ts), "Didn't know" none.
-    const points = xpForCard({ isNew: wasNew, isDue: !wasNew && before.due <= today, reviewCount: before.reps, knew: g !== 'again' }, { v2: XP_V2 });
+    const points = xpForCard({ isNew: wasNew, isDue: !wasNew && before.due <= today, reviewCount: before.reps, knew: g !== 'again' }, { v2: xpV2 });
     const earned = points > 0 ? await addXp(points) : null;
     if (earned) setDailyXp(earned);
 
