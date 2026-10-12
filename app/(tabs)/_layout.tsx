@@ -10,6 +10,7 @@ import { useSkin } from '@/lib/useSkin';
 import { brutalHeaderOptions } from '@/lib/brutalHeader';
 import { useSkinDecor } from '@/components/skins';
 import { t } from '@/lib/i18n';
+import { useBeta } from '@/lib/beta';
 
 export default function TabLayout() {
   const { theme, grammarPalette } = useTheme();
@@ -18,6 +19,9 @@ export default function TabLayout() {
   const { skin } = useSkin();
   const { HeaderOrnament } = useSkinDecor();
   const s = t();
+  // the two beta tabs are hidden (href: null) while their switch is off.
+  const showPractice = useBeta('practiceTab');
+  const showSentences = useBeta('sentenceTab');
 
   // On the brutalist palette the active icon sits on a filled square with an ink border.
   const tabIcon = (name: SymbolViewProps['name'], color: ColorValue, focused: boolean) => {
@@ -99,6 +103,24 @@ export default function TabLayout() {
           // the brutalist course list draws its own header (title + streak sticker).
           headerShown: grammarPalette === 'classic',
           tabBarIcon: ({ color, focused }) => tabIcon({ ios: 'book.fill', android: 'book', web: 'book' }, color, focused),
+        }}
+      />
+      <Tabs.Screen
+        name="practice"
+        options={{
+          title: s.tabs.practice,
+          tabBarAccessibilityLabel: s.tabs.practice,
+          href: showPractice ? undefined : null,
+          tabBarIcon: ({ color, focused }) => tabIcon({ ios: 'dumbbell.fill', android: 'fitness_center', web: 'fitness_center' }, color, focused),
+        }}
+      />
+      <Tabs.Screen
+        name="sentences"
+        options={{
+          title: s.tabs.sentences,
+          tabBarAccessibilityLabel: s.tabs.sentences,
+          href: showSentences ? undefined : null,
+          tabBarIcon: ({ color, focused }) => tabIcon({ ios: 'text.bubble.fill', android: 'chat', web: 'chat' }, color, focused),
         }}
       />
       <Tabs.Screen

@@ -70,7 +70,12 @@ export interface DB {
   saveExamResult(level: string, pct: number, passed: boolean, date: string): Promise<ExamResult>;
   // PCIC tab, SM-2, independent of the FSRS `cards`
   getPcicCards(): Promise<Sm2Card[]>;
+  // one card by item id (null = no row yet); the practice tab reads it per answer.
+  getPcicCard(itemId: string): Promise<Sm2Card | null>;
   upsertPcicCard(card: Sm2Card): Promise<void>;
+  // the beta switches (lib/beta.ts), app-wide; only the flags ever set are present.
+  getBetaFlags(): Promise<Record<string, boolean>>;
+  setBetaFlag(flag: string, on: boolean): Promise<void>;
   // the selected PCIC level (A1-C1), app-wide, like the
   // status-bar tint. `levelPrefix` is optional: it clears only that level
   // (by the id list fetched from the loaded corpus, following lib/pcicLevels.ts

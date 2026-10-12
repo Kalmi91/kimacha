@@ -272,6 +272,18 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
     await db.execAsync('ALTER TABLE pcic_cards ADD COLUMN known INTEGER');
   } catch {}
   await migrateDailyXpTenths(db);
+  // Migration: practice-tab half-step counter + wrong-typed streak on the PCIC card
+  // (DBs created before the Practice tab; existing rows read as 0).
+  try {
+    await db.execAsync('ALTER TABLE pcic_cards ADD COLUMN half_steps INTEGER DEFAULT 0');
+  } catch {}
+  try {
+    await db.execAsync('ALTER TABLE pcic_cards ADD COLUMN wrong_streak INTEGER DEFAULT 0');
+  } catch {}
+  // Migration: beta feature switches as a JSON object (DBs created before the Beta settings section).
+  try {
+    await db.execAsync('ALTER TABLE user_meta ADD COLUMN beta_flags TEXT');
+  } catch {}
   // Migration: pcic_level column (DBs created before the A1-B2 level picker).
   try {
     await db.execAsync('ALTER TABLE user_meta ADD COLUMN pcic_level TEXT');

@@ -50,6 +50,9 @@ const es: Strings = {
     grammar: 'Gramática',
     stats: 'Estadísticas',
     pcic: 'Aprender',
+    practice: 'Práctica',
+    sentences: 'Frases',
+    comingSoon: 'Próximamente',
   },
   a11y: {
     back: 'Atrás',
@@ -195,6 +198,13 @@ const es: Strings = {
     missingVoice: (langs: string) => `⚠️ No hay voz instalada para: ${langs}. Descárgala en los ajustes de texto a voz del teléfono; hasta entonces la app se queda en silencio en ese idioma.`,
     dailyNewLimit: 'Palabras nuevas al día',
     dailyNewLimitWords: (n: string) => `${n} palabras / día`,
+    beta: {
+      title: 'Beta',
+      practiceTab: 'Pestaña Práctica',
+      sentenceTab: 'Pestaña Frases',
+      xpV2: 'Nuevos valores de XP',
+      levels: 'Niveles A1-C1',
+    },
     strictAccents: 'Los acentos cuentan',
     strictAccentsHint: 'Un acento que falta (á, é, ñ) cuenta como error al escribir.',
     articlePicker: 'Botones de artículo',

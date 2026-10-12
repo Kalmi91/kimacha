@@ -10,6 +10,7 @@ import { isSkinSelection, parseSkinMix, type SkinMix, type SkinSelection } from 
 import { readExamResults, writeExamResult } from './exam/result';
 import type { ExamResult, ExamResults } from './exam/types';
 import type { DB } from './dbTypes';
+import { parseBetaFlagMap } from './betaFlags';
 
 // pcic_cards / mistake_cards row <-> Sm2Card, the same shapes the SQLite side stores.
 const sm2ToRow = (c: Sm2Card) => ({
@@ -37,6 +38,15 @@ const rowToSm2 = (r: any): Sm2Card => ({
   lastReview: r.last_review ?? null,
   introducedAt: r.introduced_at ?? null,
   known: !!r.known,
+});
+
+// pcic_cards adds the practice-tab columns (mistake_cards has no such columns); a missing value = 0,
+// so a zero counter stays off the card object (as for a card that never got a half).
+const pcicToRow = (c: Sm2Card) => ({ ...sm2ToRow(c), half_steps: c.halfSteps ?? 0, wrong_streak: c.wrongStreak ?? 0 });
+const rowToPcic = (r: any): Sm2Card => ({
+  ...rowToSm2(r),
+  ...(r.half_steps ? { halfSteps: r.half_steps } : null),
+  ...(r.wrong_streak ? { wrongStreak: r.wrong_streak } : null),
 });
 
 class MemoryDB implements DB {
@@ -290,6 +300,22 @@ class MemoryDB implements DB {
     this.pcicCards.set(card.itemId, { ...card });
   }
 
+  async getPcicCard(itemId: string): Promise<Sm2Card | null> {
+    const c = this.pcicCards.get(itemId);
+    return c ? { ...c, halfSteps: c.halfSteps ?? 0, wrongStreak: c.wrongStreak ?? 0 } : null;
+  }
+
+  // beta switches (memory mirror of user_meta.beta_flags).
+  private betaFlags: Record<string, boolean> = {};
+
+  async getBetaFlags(): Promise<Record<string, boolean>> {
+    return { ...this.betaFlags };
+  }
+
+  async setBetaFlag(flag: string, on: boolean): Promise<void> {
+    this.betaFlags = { ...this.betaFlags, [flag]: on };
+  }
+
   // see the resetPcicCards comment in lib/database.ts - the
   // real id list is fetched from the loaded corpus, not from the id prefix.
   async resetPcicCards(levelPrefix?: string): Promise<void> {
@@ -377,8 +403,8 @@ class MemoryDB implements DB {
         onboarding: this.onboarding ? [{ id: 1, ...this.onboarding }] : [],
         streak: [{ id: 1, ...this.streak }],
         user_level: [...this.userLevels].map(([pair, l]) => ({ pair, ...l })),
-        user_meta: [{ id: 1, user_id: '', first_use_date: this.meta.firstUseDate, last_sync_date: this.meta.lastSyncDate, grammar_palette: this.grammarPalette, skin: this.skin, skin_mix: this.skinMix ? JSON.stringify(this.skinMix) : null }],
-        pcic_cards: [...this.pcicCards.values()].map(sm2ToRow),
+        user_meta: [{ id: 1, user_id: '', first_use_date: this.meta.firstUseDate, last_sync_date: this.meta.lastSyncDate, grammar_palette: this.grammarPalette, skin: this.skin, skin_mix: this.skinMix ? JSON.stringify(this.skinMix) : null, beta_flags: Object.keys(this.betaFlags).length ? JSON.stringify(this.betaFlags) : null }],
+        pcic_cards: [...this.pcicCards.values()].map(pcicToRow),
         mistake_batches: [...this.mistakeBatches].map(([batch_id, v]) => ({ batch_id, json: v.json, imported_at: v.importedAt })),
         mistake_cards: [...this.mistakeCards.values()].map(sm2ToRow),
         usage_minutes: [...this.usageMinutes].map(([date, minutes]) => ({ date, minutes })),
@@ -432,8 +458,9 @@ class MemoryDB implements DB {
     this.grammarPalette = isGrammarPaletteId(um?.grammar_palette) ? um.grammar_palette : DEFAULT_GRAMMAR_PALETTE;
     this.skin = isSkinSelection(um?.skin) ? um.skin : null;
     this.skinMix = parseSkinMix(um?.skin_mix);
+    this.betaFlags = parseBetaFlagMap(um?.beta_flags);
     // A v1 file has no pcic_cards / mistake_* / usage_minutes: keep the local ones.
-    if (t.pcic_cards) this.pcicCards = new Map(t.pcic_cards.map((r: any) => [r.item_id, rowToSm2(r)]));
+    if (t.pcic_cards) this.pcicCards = new Map(t.pcic_cards.map((r: any) => [r.item_id, rowToPcic(r)]));
     if (t.mistake_batches) this.mistakeBatches = new Map(t.mistake_batches.map((r: any) => [r.batch_id, { json: r.json, importedAt: r.imported_at }]));
     if (t.mistake_cards) this.mistakeCards = new Map(t.mistake_cards.map((r: any) => [r.item_id, rowToSm2(r)]));
     if (t.usage_minutes) this.usageMinutes = new Map(t.usage_minutes.map((r: any) => [r.date, r.minutes]));
