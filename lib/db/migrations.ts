@@ -25,6 +25,16 @@ export async function dropLegacyPcicRows(db: SQLite.SQLiteDatabase) {
   }
 }
 
+// Migration: daily_xp.xp_tenths (XP in integer tenths so 0.2 XP steps add up exactly).
+// Rows an older build wrote hold whole XP in `xp`: converted once (x10); rows already in
+// tenths are left alone, so a re-run changes nothing.
+export async function migrateDailyXpTenths(db: SQLite.SQLiteDatabase) {
+  try {
+    await db.execAsync('ALTER TABLE daily_xp ADD COLUMN xp_tenths INTEGER');
+  } catch {}
+  await db.runAsync('UPDATE daily_xp SET xp_tenths = xp * 10 WHERE xp_tenths IS NULL');
+}
+
 // Creates every table (if missing), runs each column/table migration, ensures
 // the singleton user_meta row, resolves the active language pair from
 // onboarding, and returns it so the caller (SQLiteDB.open()) can set
@@ -261,6 +271,7 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
   try {
     await db.execAsync('ALTER TABLE pcic_cards ADD COLUMN known INTEGER');
   } catch {}
+  await migrateDailyXpTenths(db);
   // Migration: pcic_level column (DBs created before the A1-B2 level picker).
   try {
     await db.execAsync('ALTER TABLE user_meta ADD COLUMN pcic_level TEXT');

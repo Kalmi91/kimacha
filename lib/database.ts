@@ -314,20 +314,22 @@ class SQLiteDB implements DB {
   }
 
   // Daily XP: one row per local calendar day, app-wide like usage_minutes. Not
-  // part of the backup (see lib/backup.ts).
-  async getDailyXp(date: string): Promise<number> {
+  // part of the backup (see lib/backup.ts). Kept in integer tenths of an XP
+  // (xp_tenths, 10 = 1 XP) so 0.2 XP steps add up exactly; rows an older build
+  // wrote (whole XP in `xp`) read as xp * 10 until migrateDailyXpTenths converts them.
+  async getDailyXpTenths(date: string): Promise<number> {
     const db = await this.open();
-    const row = await db.getFirstAsync<any>('SELECT xp FROM daily_xp WHERE date = ?', [date]);
-    return row?.xp ?? 0;
+    const row = await db.getFirstAsync<any>('SELECT COALESCE(xp_tenths, xp * 10) AS tenths FROM daily_xp WHERE date = ?', [date]);
+    return row?.tenths ?? 0;
   }
 
-  async addDailyXp(date: string, delta: number): Promise<number> {
+  async addDailyXpTenths(date: string, delta: number): Promise<number> {
     const db = await this.open();
     await db.runAsync(
-      'INSERT INTO daily_xp (date, xp) VALUES (?, ?) ON CONFLICT(date) DO UPDATE SET xp = MAX(0, xp + ?)',
+      'INSERT INTO daily_xp (date, xp_tenths) VALUES (?, ?) ON CONFLICT(date) DO UPDATE SET xp_tenths = MAX(0, COALESCE(xp_tenths, xp * 10) + ?)',
       [date, Math.max(0, delta), delta]
     );
-    return this.getDailyXp(date);
+    return this.getDailyXpTenths(date);
   }
 
   // Game tab tables, scoped to the active pair like every
