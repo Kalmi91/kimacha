@@ -49,6 +49,10 @@ export default {
     grammar: 'Grammar',
     stats: 'Stats',
     pcic: 'Learn',
+    // the two beta tabs (Settings -> Beta) and the line on their placeholder screens.
+    practice: 'Practice',
+    sentences: 'Sentences',
+    comingSoon: 'Coming soon',
   },
   // accessibility labels (screen readers) of the controls that show only an icon or a symbol.
   a11y: {
@@ -217,6 +221,14 @@ export default {
     missingVoice: (langs: string) => `⚠️ No voice installed for: ${langs}. Download it in the phone's text-to-speech settings; until then the app stays silent in that language.`,
     dailyNewLimit: 'New words a day',
     dailyNewLimitWords: (n: string) => `${n} words / day`,
+    // Settings -> Beta: early features, each one a switch; off = the app works as before.
+    beta: {
+      title: 'Beta',
+      practiceTab: 'Practice tab',
+      sentenceTab: 'Sentences tab',
+      xpV2: 'New XP values',
+      levels: 'Levels A1-C1',
+    },
     strictAccents: 'Accents count',
     strictAccentsHint: 'A missing accent (á, é, ñ) is a mistake when typing.',
     articlePicker: 'Article buttons',

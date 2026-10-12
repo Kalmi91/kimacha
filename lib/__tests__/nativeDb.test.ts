@@ -165,3 +165,37 @@ describe('exportAll / importAll (native db)', () => {
     expect(tables.cards).toEqual([{ id: 1, word_id: 5001 }]);
   });
 });
+
+describe('practice counters and beta flags (native db)', () => {
+  it('a pcic_cards row from before the practice tab reads with 0 counters, one with counters keeps them', async () => {
+    tables.pcic_cards = [pcicRow('b1-0001', '2026-10-08'), { ...pcicRow('b1-0002', '2026-10-08'), half_steps: 1, wrong_streak: 1 }, { ...pcicRow('b1-0003', '2026-10-08'), half_steps: null, wrong_streak: null }];
+    expect(await getDb().getPcicCard('b1-0001')).toMatchObject({ halfSteps: 0, wrongStreak: 0 });
+    expect(await getDb().getPcicCard('b1-0002')).toMatchObject({ halfSteps: 1, wrongStreak: 1 });
+    expect(await getDb().getPcicCard('b1-0003')).toMatchObject({ halfSteps: 0, wrongStreak: 0 });
+    expect(await getDb().getPcicCard('missing')).toBeNull();
+    expect((await getDb().getPcicCards()).map((c) => c.halfSteps)).toEqual([0, 1, 0]);
+  });
+
+  it('upsertPcicCard writes half_steps and wrong_streak (0 when the card has none)', async () => {
+    const card = { itemId: 'b1-0009', state: 'review' as const, step: 0, ease: 2.5, interval: 3, reps: 1, lapses: 0, due: '2026-10-15', lastReview: null, introducedAt: '2026-10-09' };
+    await getDb().upsertPcicCard({ ...card, halfSteps: 1, wrongStreak: 1 });
+    await getDb().upsertPcicCard({ ...card, itemId: 'b1-0010' });
+    expect(tables.pcic_cards.map((r) => [r.item_id, r.half_steps, r.wrong_streak])).toEqual([['b1-0009', 1, 1], ['b1-0010', 0, 0]]);
+  });
+
+  it('getBetaFlags reads the user_meta JSON; empty or broken = every flag unset', async () => {
+    tables.user_meta = [{ id: 1, beta_flags: '{"xpV2":true,"levels":false}' }];
+    expect(await getDb().getBetaFlags()).toEqual({ xpV2: true, levels: false });
+    tables.user_meta = [{ id: 1, beta_flags: null }];
+    expect(await getDb().getBetaFlags()).toEqual({});
+    tables.user_meta = [{ id: 1, beta_flags: '{broken' }];
+    expect(await getDb().getBetaFlags()).toEqual({});
+  });
+
+  it('setBetaFlag writes the merged JSON back to user_meta', async () => {
+    tables.user_meta = [{ id: 1, beta_flags: '{"xpV2":true}' }];
+    mockFakeDb.runAsync.mockClear();
+    await getDb().setBetaFlag('practiceTab', true);
+    expect(mockFakeDb.runAsync).toHaveBeenCalledWith('UPDATE user_meta SET beta_flags = ? WHERE id = 1', ['{"xpV2":true,"practiceTab":true}']);
+  });
+});

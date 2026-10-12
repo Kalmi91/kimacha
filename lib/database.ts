@@ -7,6 +7,7 @@ import { addDays } from './sm2';
 import { PCIC_LEVELS, pcicItemsForLevel, type PcicLevel } from '@/data/pcic';
 import type { MistakeBatchRow } from './mistakes/deck';
 import { runMigrations } from './db/migrations';
+import { parseBetaFlagMap } from './betaFlags';
 import { DEFAULT_AGAIN_DELAY_SEC } from './pcicSession';
 import { DEFAULT_GRAMMAR_PALETTE, isGrammarPaletteId, type GrammarPaletteId } from '@/constants/GrammarPalettes';
 import { isSkinSelection, parseSkinMix, type SkinMix, type SkinSelection } from '@/constants/Skins';
@@ -19,6 +20,23 @@ export type { DB };
 // on an existing installation the progress currently runs with "b1-..." ids,
 // so a missing column (old DB) falls back to B1, not A1.
 const DEFAULT_PCIC_LEVEL: PcicLevel = 'B1';
+
+// pcic_cards row -> Sm2Card; half_steps / wrong_streak are NULL or missing on rows from before the practice tab.
+const rowToPcicCard = (r: any): Sm2Card => ({
+  itemId: r.item_id,
+  state: r.state,
+  step: r.step,
+  ease: r.ease,
+  interval: r.interval,
+  reps: r.reps,
+  lapses: r.lapses,
+  due: r.due,
+  lastReview: r.last_review,
+  introducedAt: r.introduced_at,
+  known: !!r.known,
+  halfSteps: r.half_steps ?? 0,
+  wrongStreak: r.wrong_streak ?? 0,
+});
 
 class SQLiteDB implements DB {
   private db: SQLite.SQLiteDatabase | null = null;
@@ -381,33 +399,41 @@ class SQLiteDB implements DB {
   async getPcicCards(): Promise<Sm2Card[]> {
     const db = await this.open();
     const rows = await db.getAllAsync<any>('SELECT * FROM pcic_cards');
-    return rows.map((r: any) => ({
-      itemId: r.item_id,
-      state: r.state,
-      step: r.step,
-      ease: r.ease,
-      interval: r.interval,
-      reps: r.reps,
-      lapses: r.lapses,
-      due: r.due,
-      lastReview: r.last_review,
-      introducedAt: r.introduced_at,
-      known: !!r.known,
-    }));
+    return rows.map(rowToPcicCard);
+  }
+
+  async getPcicCard(itemId: string): Promise<Sm2Card | null> {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT * FROM pcic_cards WHERE item_id = ?', [itemId]);
+    return row ? rowToPcicCard(row) : null;
   }
 
   async upsertPcicCard(card: Sm2Card): Promise<void> {
     const db = await this.open();
     await db.runAsync(
-      `INSERT INTO pcic_cards (item_id, state, step, ease, interval, reps, lapses, due, last_review, introduced_at, known)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      `INSERT INTO pcic_cards (item_id, state, step, ease, interval, reps, lapses, due, last_review, introduced_at, known, half_steps, wrong_streak)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
        ON CONFLICT(item_id) DO UPDATE SET
          state = excluded.state, step = excluded.step, ease = excluded.ease,
          interval = excluded.interval, reps = excluded.reps, lapses = excluded.lapses,
          due = excluded.due, last_review = excluded.last_review, introduced_at = excluded.introduced_at,
-         known = excluded.known`,
-      [card.itemId, card.state, card.step, card.ease, card.interval, card.reps, card.lapses, card.due, card.lastReview, card.introducedAt, card.known ? 1 : 0]
+         known = excluded.known, half_steps = excluded.half_steps, wrong_streak = excluded.wrong_streak`,
+      [card.itemId, card.state, card.step, card.ease, card.interval, card.reps, card.lapses, card.due, card.lastReview, card.introducedAt, card.known ? 1 : 0, card.halfSteps ?? 0, card.wrongStreak ?? 0]
     );
+  }
+
+  // beta switches (lib/beta.ts), app-wide like the status-bar tint, so in user_meta
+  // as one JSON object; a missing / broken value reads as {} (every flag off).
+  async getBetaFlags(): Promise<Record<string, boolean>> {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT beta_flags FROM user_meta WHERE id = 1');
+    return parseBetaFlagMap(row?.beta_flags);
+  }
+
+  async setBetaFlag(flag: string, on: boolean): Promise<void> {
+    const db = await this.open();
+    const next = { ...(await this.getBetaFlags()), [flag]: on };
+    await db.runAsync('UPDATE user_meta SET beta_flags = ? WHERE id = 1', [JSON.stringify(next)]);
   }
 
   // `levelPrefix` (e.g. "a1") no longer gives the LIKE pattern
