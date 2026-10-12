@@ -29,9 +29,12 @@ import FeedbackButton from '@/components/FeedbackModal';
 import { Card, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
 import { SkinBackdrop } from '@/components/skins/Slots';
 import MockExamCard from '@/components/exam/MockExamCard';
+import LevelCard from '@/components/stats/LevelCard';
 import { MOCK_LEVELS } from '@/lib/exam/mock/blueprint';
 import { readMockOverview, type MockOverview } from '@/lib/exam/mock/session';
 import type { MockLevel, MockTarget } from '@/lib/exam/mock/types';
+import type { ProgressLevel } from '@/lib/progressLevel';
+import { readProgressLevel } from '@/lib/progressLevelDb';
 
 const EMPTY_SCHEDULE: SchedulePreview = { dueNow: 0, buckets: [], scheduled: 0, nextDue: null };
 
@@ -72,8 +75,12 @@ export default function StatsScreen() {
   const [mockLevels, setMockLevels] = useState<readonly MockLevel[]>(MOCK_LEVELS.es);
   const [mockOverview, setMockOverview] = useState<MockOverview>({});
   const [mockOfficial, setMockOfficial] = useState(true);
+  // The learner's level A1-C1 (lib/progressLevel.ts); read only while the card is shown.
+  const [progressLevel, setProgressLevel] = useState<ProgressLevel | null>(null);
   // The daily bar is shown in hours above 60 minutes, and switches to minutes on tap.
   const [chartInMinutes, setChartInMinutes] = useState(false);
+
+  const showLevels: boolean = false; // beta: levels
 
   // Refresh every time the tab gains focus so numbers stay current across app-wide activity.
   useFocusEffect(
@@ -89,6 +96,7 @@ export default function StatsScreen() {
         setMockLevels(MOCK_LEVELS[mockTarget]);
         setMockOfficial(mockTarget === 'es');
         readMockOverview(db, mockTarget, MOCK_LEVELS[mockTarget]).then(setMockOverview);
+        if (showLevels) readProgressLevel(db, mockTarget).then(setProgressLevel);
       });
       // All PCIC computation comes from a single getPcicCards()
       // call (as on the PCIC tab); the filtering/aggregation is in pure functions.
@@ -110,7 +118,7 @@ export default function StatsScreen() {
         const dueDates = selCards.filter(c => c.due).map(c => `${c.due}T00:00:00`);
         setSchedule(buildSchedulePreview(dueDates, new Date()));
       });
-    }, [])
+    }, [showLevels])
   );
 
   const targetLangInfo = languages.find(l => l.code === targetLang);
@@ -188,6 +196,8 @@ export default function StatsScreen() {
           {otherLevels.map(r => s.stats.knownAtLevel(r.level, r.known)).join('  ·  ')}
         </Text>
       </Card>
+
+      {showLevels && progressLevel && <LevelCard progress={progressLevel} />}
 
       <MockExamCard
         levels={mockLevels}
