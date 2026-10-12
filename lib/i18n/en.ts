@@ -420,6 +420,17 @@ export default {
     scheduleNextDays: (days: number) => `in ${days} ${days === 1 ? 'day' : 'days'}`,
     scheduleEmpty: 'Nothing put away yet, learn a few words!',
   },
+  // the Stats tab's level card (lib/progressLevel.ts): A1-C1, 80% of the words + every grammar topic.
+  levelCard: {
+    title: 'Your level',
+    level: (level: string) => `Level ${level}`,
+    heading: (level: string) => `Heading for ${level}`,
+    top: 'You have cleared the top level.',
+    goal: (level: string) => `To clear ${level}`,
+    rule: (pct: number) => `${pct}% of the level's words learned and every grammar topic done.`,
+    words: (known: number, needed: number, total: number, pct: number) => `Words learned: ${known} / ${needed} (${pct}% of ${total})`,
+    grammar: (done: number, total: number) => `Grammar topics done: ${done} / ${total}`,
+  },
   // the PCIC tab (English -> Spanish typing, Anki buttons).
   pcic: {
     // the four separate labels of the BadgeRow chip line.
