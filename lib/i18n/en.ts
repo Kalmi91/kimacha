@@ -493,6 +493,20 @@ export default {
     levelNotStarted: 'not started',
     levelRowIntroduced: (n: number, total: number) => `${n} / ${total} introduced`,
   },
+  // the Practice tab (beta): fill in the missing word of a sentence.
+  practiceTab: {
+    emptyTitle: 'Learn some words first',
+    progress: (n: number, total: number) => `${n}/${total}`,
+    progressLabel: (n: number, total: number) => `Sentence ${n} of ${total}`,
+    blankLabel: 'blank',
+    meaningHint: (meaning: string) => `Hint: ${meaning}`,
+    inputLabel: 'Type the missing word',
+    inputPlaceholder: 'Missing word',
+    correctForm: (word: string) => `Correct: ${word}`,
+    roundDone: 'Round done',
+    roundScore: (right: number, total: number) => `${right} of ${total} right`,
+    again: 'Practice again',
+  },
   // labels of the end-of-lesson grammar quiz.
   lessonTest: {
     take: 'Take the lesson test',

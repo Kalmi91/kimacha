@@ -42,7 +42,6 @@ import { BETA_FLAGS, __resetBetaForTest, getBeta, setBeta } from '@/lib/beta';
 import { setLanguage } from '@/lib/i18n';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import TabLayout from '../_layout';
-import PracticeScreen from '../practice';
 import SentencesScreen from '../sentences';
 import SettingsScreen from '../settings';
 
@@ -102,7 +101,6 @@ describe('tab bar: the two beta tabs', () => {
 describe('the placeholder screens', () => {
   it('title + "Coming soon" (EN), "Próximamente" (ES)', async () => {
     for (const [Screen, id, en, es] of [
-      [PracticeScreen, 'practice-screen', 'Practice', 'Práctica'],
       [SentencesScreen, 'sentences-screen', 'Sentences', 'Frases'],
     ] as const) {
       const view = render(<ThemeProvider><Screen /></ThemeProvider>);
