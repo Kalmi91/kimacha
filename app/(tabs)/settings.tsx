@@ -44,6 +44,7 @@ import { appBuildTag } from '@/lib/appBuild';
 import { loadVoices, hasVoiceFor } from '@/lib/speech';
 import { languages } from '@/lib/languages';
 import { clearLearnResume } from '@/lib/learnResume';
+import { useBeta, setBeta, BETA_FLAGS, type BetaFlag } from '@/lib/beta';
 
 const appVersionLabel = appBuildTag();
 
@@ -78,6 +79,18 @@ function Row({ onPress, children }: { onPress?: () => void; children: ReactNode 
     </Pressable>
   ) : (
     <View style={style}>{children}</View>
+  );
+}
+
+// One beta switch (lib/beta.ts); off = the old behavior.
+function BetaRow({ flag, label }: { flag: BetaFlag; label: string }) {
+  const { theme } = useTheme();
+  const on = useBeta(flag);
+  return (
+    <Row>
+      <Text style={[styles.wordsOnlyLabel, { color: Colors[theme].text }]}>{label}</Text>
+      <BrutalSwitch testID={`settings-beta-${flag}`} accessibilityLabel={label} value={on} onValueChange={(v) => setBeta(flag, v)} />
+    </Row>
   );
 }
 
@@ -490,6 +503,12 @@ export default function SettingsScreen() {
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.mistakes.load}</Text>
         <Text style={[styles.rowArrow, { color: arrowColor }]}>→</Text>
       </Row>
+
+      {/* early features, one switch each (lib/beta.ts). */}
+      <Text testID="settings-beta-title" style={[styles.sectionHint, { color: colors.textMuted, marginTop: 20, marginBottom: 0 }]}>{s.settings.beta.title}</Text>
+      {BETA_FLAGS.map((flag) => (
+        <BetaRow key={flag} flag={flag} label={s.settings.beta[flag]} />
+      ))}
 
       {/* progress reset with confirmation, per deck and for grammar. */}
       {(resetLevels.length > 0 || hasGrammarProgress) && (

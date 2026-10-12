@@ -123,6 +123,7 @@ const TABLE_COLUMNS: Record<BackupTable, Record<string, ColumnSpec>> = {
     grammar_palette: { type: 'string', nullable: true },
     skin: { type: 'string', nullable: true },
     skin_mix: { type: 'string', nullable: true },
+    beta_flags: { type: 'string', nullable: true },
   },
   pcic_cards: {
     item_id: { type: 'string', nullable: false },
@@ -136,6 +137,9 @@ const TABLE_COLUMNS: Record<BackupTable, Record<string, ColumnSpec>> = {
     last_review: { type: 'string', nullable: true },
     introduced_at: { type: 'string', nullable: true },
     known: { type: 'number', nullable: false },
+    // practice-tab counters; a backup from before the Practice tab has neither (= 0)
+    half_steps: { type: 'number', nullable: true },
+    wrong_streak: { type: 'number', nullable: true },
   },
   mistake_batches: {
     batch_id: { type: 'string', nullable: false },
