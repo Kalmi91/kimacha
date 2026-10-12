@@ -77,8 +77,8 @@ describe('Learn tab: XP today chip', () => {
     await getDb().resetGameProgress(RESUME_GAME_ID);
     await getDb().setPcicNewBonus(0, today);
     await getDb().setPcicLevel('A1');
-    await getDb().addDailyXp(today, -1000);
-    await getDb().addDailyXp(addDays(today, -1), -1000);
+    await getDb().addDailyXpTenths(today, -10000);
+    await getDb().addDailyXpTenths(addDays(today, -1), -10000);
   });
 
   afterEach(() => setLanguage('en'));
@@ -91,7 +91,7 @@ describe('Learn tab: XP today chip', () => {
   });
 
   it('shows the saved XP of today as XP 20/50 and the Spanish label in Spanish', async () => {
-    await getDb().addDailyXp(today, 20);
+    await getDb().addDailyXpTenths(today, 200);
     setLanguage('es');
     const screen = render(<PcicScreen />);
     await flush();
@@ -100,15 +100,27 @@ describe('Learn tab: XP today chip', () => {
   });
 
   it('after the goal the chip reads XP 63 ✓', async () => {
-    await getDb().addDailyXp(today, 63);
+    await getDb().addDailyXpTenths(today, 630);
     const screen = render(<PcicScreen />);
     await flush();
     expect(screen.getByText('XP 63 ✓')).toBeTruthy();
     expect(screen.getByLabelText('XP today: 63 of 50')).toBeTruthy();
   });
 
+  it('fractional XP shows rounded down: 49.8 reads XP 49/50, the goal mark only at 50', async () => {
+    await getDb().addDailyXpTenths(today, 498);
+    const screen = render(<PcicScreen />);
+    await flush();
+    expect(screen.getByText('XP 49/50')).toBeTruthy();
+    screen.unmount();
+    await getDb().addDailyXpTenths(today, 2);
+    const again = render(<PcicScreen />);
+    await flush();
+    expect(again.getByText('XP 50 ✓')).toBeTruthy();
+  });
+
   it('yesterday\'s XP does not count today (midnight reset)', async () => {
-    await getDb().addDailyXp(addDays(today, -1), 45);
+    await getDb().addDailyXpTenths(addDays(today, -1), 450);
     const screen = render(<PcicScreen />);
     await flush();
     expect(screen.getByText('XP 0/50')).toBeTruthy();
@@ -121,7 +133,7 @@ describe('Learn tab: XP today chip', () => {
     expect(screen.getByText('XP 0/50')).toBeTruthy();
     await gradeCard(screen, 'Knew it');
     expect(screen.getByText('XP 3/50')).toBeTruthy();
-    expect(await getDb().getDailyXp(today)).toBe(3);
+    expect(await getDb().getDailyXpTenths(today)).toBe(30);
   });
 
   it('"Knew it" on a review card adds 2', async () => {
@@ -150,6 +162,6 @@ describe('Learn tab: XP today chip', () => {
     fireEvent.press(screen.getByLabelText('Undo'));
     await flush();
     expect(screen.getByText('XP 0/50')).toBeTruthy();
-    expect(await getDb().getDailyXp(today)).toBe(0);
+    expect(await getDb().getDailyXpTenths(today)).toBe(0);
   });
 });

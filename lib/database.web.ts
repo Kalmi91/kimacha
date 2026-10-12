@@ -227,11 +227,12 @@ class MemoryDB implements DB {
   // usageMinutes above; not part of the backup.
   private dailyXp: Map<string, number> = new Map();
 
-  async getDailyXp(date: string): Promise<number> {
+  // The map holds integer tenths of an XP (10 = 1 XP).
+  async getDailyXpTenths(date: string): Promise<number> {
     return this.dailyXp.get(date) ?? 0;
   }
 
-  async addDailyXp(date: string, delta: number): Promise<number> {
+  async addDailyXpTenths(date: string, delta: number): Promise<number> {
     const total = Math.max(0, (this.dailyXp.get(date) ?? 0) + delta);
     this.dailyXp.set(date, total);
     return total;
